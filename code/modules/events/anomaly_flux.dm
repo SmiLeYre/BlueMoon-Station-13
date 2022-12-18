@@ -3,7 +3,7 @@
 	typepath = /datum/round_event/anomaly/anomaly_flux
 
 	min_players = 20
-	max_occurrences = 5
+	max_occurrences = 2
 	weight = 5
 
 /datum/round_event/anomaly/anomaly_flux

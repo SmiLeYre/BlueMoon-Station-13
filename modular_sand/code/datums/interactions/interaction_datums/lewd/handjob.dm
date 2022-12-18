@@ -16,7 +16,7 @@
 			"пыхтит и яростно дрочит [genital_name] <b>[partner]</b>.")]"
 	else
 		message = "[pick("крепко обхватывает и сжимает своей рукой [genital_name] <b>[partner]</b>.",
-			"максимально активно играется с <b>[partner]</b>, вздрачивая его [genital_name].")]"
+			"максимально активно играется с <b>[partner]</b>, в процессе вздрачивая [genital_name].")]"
 		partner.set_is_fucking(user, CUM_TARGET_HAND, partner.getorganslot(ORGAN_SLOT_PENIS))
 
 	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/bang1.ogg',
