@@ -2641,7 +2641,7 @@
 	},
 /obj/item/clothing/under/syndicate/baseball,
 /obj/item/clothing/head/beret/sec{
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0);
+	armor = list("melee"=0,"bullet"=0,"laser"=0,"energy"=0,"bomb"=0,"bio"=0,"rad"=0);
 	desc = "A replica beret resembling that of a special operations officer under Nanotrasen.";
 	name = "replica officer's beret"
 	},
@@ -2658,7 +2658,7 @@
 	dir = 4
 	},
 /obj/item/clothing/head/centhat{
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0);
+	armor = list("melee"=0,"bullet"=0,"laser"=0,"energy"=0,"bomb"=0,"bio"=0,"rad"=0);
 	desc = "A replica hat of a Central Commander's attire. It has a small tag on it saying, 'It's good to be emperor.'";
 	name = "Replica CentCom hat"
 	},
@@ -5474,6 +5474,9 @@
 	pixel_y = 23
 	},
 /obj/structure/closet/secure_closet/contraband/armory,
+/obj/effect/spawner/lootdrop/armory_contraband,
+/obj/effect/spawner/lootdrop/armory_contraband,
+/obj/effect/spawner/lootdrop/armory_contraband,
 /turf/open/floor/festive/wooden/wooden1,
 /area/ai_monitored/security/armory)
 "aoa" = (
@@ -35556,7 +35559,7 @@
 /obj/machinery/vending/dinnerware{
 	desc = "A vending machine stocked full of condiments to put on food.";
 	name = "\improper Condiments Dispenser";
-	products = list(/obj/item/storage/bag/tray = 10, /obj/item/kitchen/fork = 6, /obj/item/kitchen/knife = 6, /obj/item/reagent_containers/food/drinks/drinkingglass = 20, /obj/item/clothing/suit/apron/chef = 2, /obj/item/storage/box/cups = 10, /obj/item/reagent_containers/food/condiment/pack/ketchup = 20, /obj/item/reagent_containers/food/condiment/pack/mustard = 20, /obj/item/reagent_containers/food/condiment/pack/hotsauce = 20, /obj/item/reagent_containers/food/condiment/pack/astrotame = 20, /obj/item/reagent_containers/food/condiment/saltshaker = 20, /obj/item/reagent_containers/food/condiment/peppermill = 20, /obj/item/reagent_containers/glass/bowl = 30)
+	products = list(/obj/item/storage/bag/tray=10,/obj/item/kitchen/fork=6,/obj/item/kitchen/knife=6,/obj/item/reagent_containers/food/drinks/drinkingglass=20,/obj/item/clothing/suit/apron/chef=2,/obj/item/storage/box/cups=10,/obj/item/reagent_containers/food/condiment/pack/ketchup=20,/obj/item/reagent_containers/food/condiment/pack/mustard=20,/obj/item/reagent_containers/food/condiment/pack/hotsauce=20,/obj/item/reagent_containers/food/condiment/pack/astrotame=20,/obj/item/reagent_containers/food/condiment/saltshaker=20,/obj/item/reagent_containers/food/condiment/peppermill=20,/obj/item/reagent_containers/glass/bowl=30)
 	},
 /turf/open/floor/wood,
 /area/service/bar/atrium)
@@ -43307,42 +43310,42 @@
 	},
 /obj/item/reagent_containers/food/condiment/flour{
 	desc = "A large sack of flour for restaurants, not the home-baker!";
-	list_reagents = list(/datum/reagent/consumable/flour = 90);
+	list_reagents = list(/datum/reagent/consumable/flour=90);
 	name = "Large Flour Sack"
 	},
 /obj/item/reagent_containers/food/condiment/flour{
 	desc = "A large sack of flour for restaurants, not the home-baker!";
-	list_reagents = list(/datum/reagent/consumable/flour = 90);
+	list_reagents = list(/datum/reagent/consumable/flour=90);
 	name = "Large Flour Sack"
 	},
 /obj/item/reagent_containers/food/condiment/flour{
 	desc = "A large sack of flour for restaurants, not the home-baker!";
-	list_reagents = list(/datum/reagent/consumable/flour = 90);
+	list_reagents = list(/datum/reagent/consumable/flour=90);
 	name = "Large Flour Sack"
 	},
 /obj/item/reagent_containers/food/condiment/flour{
 	desc = "A large sack of flour for restaurants, not the home-baker!";
-	list_reagents = list(/datum/reagent/consumable/flour = 90);
+	list_reagents = list(/datum/reagent/consumable/flour=90);
 	name = "Large Flour Sack"
 	},
 /obj/item/reagent_containers/food/condiment/rice{
 	desc = "A huge sack of rice. Probably for restaurants that actually go through such a huge volume of it easily, not for the home cook.";
-	list_reagents = list(/datum/reagent/consumable/rice = 90);
+	list_reagents = list(/datum/reagent/consumable/rice=90);
 	name = "Large Rice Sack"
 	},
 /obj/item/reagent_containers/food/condiment/rice{
 	desc = "A huge sack of rice. Probably for restaurants that actually go through such a huge volume of it easily, not for the home cook.";
-	list_reagents = list(/datum/reagent/consumable/rice = 90);
+	list_reagents = list(/datum/reagent/consumable/rice=90);
 	name = "Large Rice Sack"
 	},
 /obj/item/reagent_containers/food/condiment/rice{
 	desc = "A huge sack of rice. Probably for restaurants that actually go through such a huge volume of it easily, not for the home cook.";
-	list_reagents = list(/datum/reagent/consumable/rice = 90);
+	list_reagents = list(/datum/reagent/consumable/rice=90);
 	name = "Large Rice Sack"
 	},
 /obj/item/reagent_containers/food/condiment/rice{
 	desc = "A huge sack of rice. Probably for restaurants that actually go through such a huge volume of it easily, not for the home cook.";
-	list_reagents = list(/datum/reagent/consumable/rice = 90);
+	list_reagents = list(/datum/reagent/consumable/rice=90);
 	name = "Large Rice Sack"
 	},
 /turf/open/floor/plasteel/freezer,

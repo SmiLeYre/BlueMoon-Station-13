@@ -10471,6 +10471,9 @@
 	lootcount = 8;
 	name = "8maintenance loot spawner"
 	},
+/obj/effect/spawner/lootdrop/armory_contraband,
+/obj/effect/spawner/lootdrop/armory_contraband,
+/obj/effect/spawner/lootdrop/armory_contraband,
 /turf/open/floor/engine,
 /area/ai_monitored/security/armory)
 "dGE" = (
