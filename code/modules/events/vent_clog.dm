@@ -31,7 +31,7 @@
 		/datum/reagent/water/holywater,
 		/datum/reagent/consumable/ethanol,
 		/datum/reagent/consumable/hot_coco,
-		/datum/reagent/toxin/acid,
+		/*/datum/reagent/toxin/acid, bluemoon removal*/
 		/datum/reagent/toxin/mindbreaker,
 		/datum/reagent/toxin/rotatium,
 		/datum/reagent/bluespace,
@@ -39,7 +39,7 @@
 		/datum/reagent/consumable/laughter,
 		/datum/reagent/concentrated_barbers_aid,
 		/datum/reagent/baldium,
-		/datum/reagent/colorful_reagent,
+		/*/datum/reagent/colorful_reagent, bluemoon removal*/
 		/datum/reagent/peaceborg_confuse,
 		/datum/reagent/peaceborg_tire,
 		/datum/reagent/consumable/sodiumchloride,
