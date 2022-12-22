@@ -44,7 +44,7 @@
 		/datum/reagent/peaceborg_tire,
 		/datum/reagent/consumable/sodiumchloride,
 		/datum/reagent/consumable/ethanol/beer,
-		/datum/reagent/hair_dye,
+		/*/datum/reagent/hair_dye, bluemoon removal*/
 		/datum/reagent/consumable/sugar,
 		/datum/reagent/glitter/white,
 		/datum/reagent/growthserum,
