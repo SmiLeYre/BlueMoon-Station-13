@@ -91,3 +91,22 @@
   - server: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u043A\u0430\
       \u0442\u0430\u043B\u043E\u0433\u0430 \u0434\u043B\u044F \u043A\u0430\u0440\u0442\
       \ \u0411\u043B\u044E\u043C\u0443\u043D\u0430"
+2022-12-17:
+  JerryWester:
+  - rscadd: Added the "Hungry and Thirsty" negative quirk, grants one point and doubles
+      the hunger/thirst modifier
+2022-12-21:
+  LunarFleet:
+  - soundadd: added a LOT of new barks
+2022-12-22:
+  LeDrascol:
+  - refactor: Modularized cursed blood effects
+2022-12-24:
+  JerryWester:
+  - code_imp: Tunnel Foxes rule!
+  - code_imp: We're the Tunnel Foxes!
+  - code_imp: That's us...
+  - code_imp: And we rule!
+  - rscdel: Removed open Tunnel Fox jacket
+  - tweak: Tunnel Fox jacket is now toggleable
+  - bugfix: Tunnel Fox jacket and HoP parade jacket now show up on digitigrade sprites

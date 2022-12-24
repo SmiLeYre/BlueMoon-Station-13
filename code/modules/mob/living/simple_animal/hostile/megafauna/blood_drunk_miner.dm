@@ -175,9 +175,6 @@ Difficulty: Medium
 	. = ..()
 	if(. && target && !targets_the_same)
 		wander = TRUE
-		if(HAS_TRAIT(target, TRAIT_CURSED_BLOOD))
-			say(pick("Hunter, you must accept your death, be freed from the night.","The night, and the dream, were long...","Beasts all over the shop... You'll be one of them, sooner or later...","The night blocks all sight..."))
-
 
 /mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/proc/dash_attack()
 	INVOKE_ASYNC(src, .proc/dash, target)

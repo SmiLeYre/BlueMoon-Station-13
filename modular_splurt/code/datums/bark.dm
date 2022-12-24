@@ -270,3 +270,195 @@
 	name = "Chittery Alt"
 	id = "chitter2"
 	soundpath = 'modular_splurt/sound/voice/moth/mothchitter2.ogg'
+
+// The Mayhem Special
+/datum/bark/whistle
+	name = "Whistle 1"
+	id = "whistle1"
+	soundpath = 'modular_splurt/sound/voice/barks/kazooie/birdwhistle.ogg'
+
+/datum/bark/whistle/alt1
+	name = "Whistle 2"
+	id = "whistle2"
+	soundpath = 'modular_splurt/sound/voice/barks/kazooie/birdwhistle2.ogg'
+
+/datum/bark/caw/alt1
+	name = "Caw 2"
+	id = "caw2"
+	soundpath = 'modular_splurt/sound/voice/barks/kazooie/caw.ogg'
+	minspeed = 4
+	maxspeed = 9
+
+/datum/bark/caw/alt2
+	name = "Caw 3"
+	id = "caw3"
+	soundpath = 'modular_splurt/sound/voice/barks/kazooie/caw2.ogg'
+	minspeed = 3
+	maxspeed = 9
+
+/datum/bark/caw/alt3
+	name = "Caw 4"
+	id = "caw4"
+	soundpath = 'modular_splurt/sound/voice/barks/kazooie/caw3.ogg'
+	minspeed = 3
+	maxspeed = 9
+
+/datum/bark/ehh
+	name = "Ehh 1"
+	id = "ehh1"
+	soundpath = 'modular_splurt/sound/voice/barks/kazooie/ehh.ogg'
+	minspeed = 3
+	maxspeed = 9
+
+/datum/bark/ehh/alt1
+	name = "Ehh 2"
+	id = "ehh2"
+	soundpath = 'modular_splurt/sound/voice/barks/kazooie/ehh2.ogg'
+
+/datum/bark/ehh/alt2
+	name = "Ehh 3"
+	id = "ehh3"
+	soundpath = 'modular_splurt/sound/voice/barks/kazooie/ehh3.ogg'
+
+/datum/bark/ehh/alt3
+	name = "Ehh 4"
+	id = "ehh4"
+	soundpath = 'modular_splurt/sound/voice/barks/kazooie/ehh4.ogg'
+	minspeed = 3
+	maxspeed = 9
+
+/datum/bark/ehh/alt5
+	name = "Ehh 5"
+	id = "ehh5"
+	soundpath = 'modular_splurt/sound/voice/barks/kazooie/ehh5.ogg'
+
+/datum/bark/eugh
+	name = "Eugh"
+	id = "eugh"
+	soundpath = 'modular_splurt/sound/voice/barks/kazooie/eugh.ogg'
+	minspeed = 6
+	maxspeed = 11
+
+/datum/bark/faucet
+	name = "Faucet 1"
+	id = "faucet1"
+	soundpath = 'modular_splurt/sound/voice/barks/kazooie/faucet.ogg'
+
+/datum/bark/faucet/alt1
+	name = "Faucet 2"
+	id = "faucet2"
+	soundpath = 'modular_splurt/sound/voice/barks/kazooie/faucet2.ogg'
+
+/datum/bark/haha
+	name = "Haha"
+	id = "haha"
+	soundpath = 'modular_splurt/sound/voice/barks/kazooie/haha.ogg'
+	minspeed = 7
+	maxspeed = 12
+
+/datum/bark/ribbit
+	name = "Ribbit"
+	id = "ribbit"
+	soundpath = 'modular_splurt/sound/voice/barks/kazooie/ribbit.ogg'
+
+/datum/bark/hoot
+	name = "Hoot"
+	id = "hoot"
+	soundpath = 'modular_splurt/sound/voice/barks/kazooie/hoot.ogg'
+	minspeed = 4
+	maxspeed = 9
+
+/datum/bark/tweet
+	name = "Tweet"
+	id = "tweet"
+	soundpath = 'modular_splurt/sound/voice/barks/kazooie/tweet.ogg'
+
+/datum/bark/ahuh
+	name = "Ahuh"
+	id = "ahuh"
+	soundpath = 'modular_splurt/sound/voice/barks/kazooie/ahuh.ogg'
+
+/datum/bark/cry
+	name = "Cry"
+	id = "cry"
+	soundpath = 'modular_splurt/sound/voice/barks/kazooie/cry.ogg'
+	minspeed = 3
+	maxspeed = 9
+
+/datum/bark/dwoop
+	name = "Dwoop"
+	id = "dwoop"
+	soundpath = 'modular_splurt/sound/voice/barks/kazooie/dwoop.ogg'
+	minspeed = 3
+	maxspeed = 9
+
+/datum/bark/growl
+	name = "Growl 1"
+	id = "growl1"
+	soundpath = 'modular_splurt/sound/voice/barks/kazooie/growl.ogg'
+	minspeed = 3
+	maxspeed = 9
+
+/datum/bark/growl/alt1
+	name = "Growl 2"
+	id = "growl2"
+	soundpath = 'modular_splurt/sound/voice/barks/kazooie/growl2.ogg'
+
+/datum/bark/moan
+	name = "Moan 1"
+	id = "moan1"
+	soundpath = 'modular_splurt/sound/voice/barks/kazooie/moan1.ogg'
+	minspeed = 5
+	maxspeed = 9
+
+/datum/bark/moan/alt1
+	name = "Moan 2"
+	id = "moan2"
+	soundpath = 'modular_splurt/sound/voice/barks/kazooie/moan2.ogg'
+	minspeed = 4
+	maxspeed = 9
+
+/datum/bark/moan/alt2
+	name = "Moan 3"
+	id = "moan3"
+	soundpath = 'modular_splurt/sound/voice/barks/kazooie/moan3.ogg'
+	minspeed = 5
+	maxspeed = 9
+
+/datum/bark/raah
+	name = "Raah 1"
+	id = "raah1"
+	soundpath = 'modular_splurt/sound/voice/barks/kazooie/raah1.ogg'
+	minspeed = 6
+	maxspeed = 10
+
+/datum/bark/raah/alt1
+	name = "Raah 2"
+	id = "raah2"
+	soundpath = 'modular_splurt/sound/voice/barks/kazooie/raah2.ogg'
+	minspeed = 5
+	maxspeed = 9
+
+/datum/bark/slurp
+	name = "Slurp"
+	id = "slurp"
+	soundpath = 'modular_splurt/sound/voice/barks/kazooie/slurp.ogg'
+
+/datum/bark/uhm
+	name = "Uhm"
+	id = "uhm"
+	soundpath = 'modular_splurt/sound/voice/barks/kazooie/uhm.ogg'
+
+/datum/bark/zap
+	name = "Zap"
+	id = "zap"
+	soundpath = 'modular_splurt/sound/voice/barks/kazooie/zap.ogg'
+	minspeed = 8
+	maxspeed = 12
+
+/datum/bark/poyo
+	name = "Belial"
+	id = "poyo"
+	soundpath = 'modular_splurt/sound/voice/barks/poyo.ogg'
+	minspeed = 3
+	maxspeed = 10

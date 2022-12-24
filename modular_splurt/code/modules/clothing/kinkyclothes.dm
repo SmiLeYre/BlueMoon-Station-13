@@ -136,7 +136,7 @@
 			SEND_SOUND(user, sound('modular_splurt/sound/effects/vaultsuit/InkSpotsSting.ogg', volume = 60))
 	return
 
-/obj/item/clothing/suit/tunnelfox
+/obj/item/clothing/suit/toggle/tunnelfox
 	name = "tunnel fox jacket"
 	desc = "Tunnel Foxes Rule!"
 	icon = 'modular_splurt/icons/obj/clothing/suits.dmi'
@@ -145,13 +145,5 @@
 	item_state = "tunnelfox"
 	body_parts_covered = CHEST|LEGS|ARMS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
-
-/obj/item/clothing/suit/tunnelfox_t
-	name = "opened tunnel fox jacket"
-	desc = "Tunnel Foxes Rule!"
-	icon = 'modular_splurt/icons/obj/clothing/suits.dmi'
-	icon_state = "tunnelfox_t"
-	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/suit.dmi'
-	item_state = "tunnelfox_t"
-	body_parts_covered = CHEST|LEGS|ARMS
-	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	togglename = "buttons"
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
