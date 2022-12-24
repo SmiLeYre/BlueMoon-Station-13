@@ -646,7 +646,7 @@ This is here to make the tiles around the station mininuke change when it's arme
 	. = ..()
 	AddComponent(/datum/component/stationloving, !fake)
 
-/obj/item/disk/nuclear/process()
+// /obj/item/disk/nuclear/process()
 	process_tick++
 	if(fake)
 		STOP_PROCESSING(SSobj, src)

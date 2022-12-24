@@ -9041,6 +9041,10 @@
 	},
 /obj/effect/turf_decal/stripes/line,
 /obj/structure/closet/secure_closet/contraband/armory,
+/obj/effect/spawner/lootdrop/armory_contraband,
+/obj/effect/spawner/lootdrop/armory_contraband,
+/obj/effect/spawner/lootdrop/armory_contraband,
+/obj/effect/spawner/lootdrop/armory_contraband,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "aqC" = (

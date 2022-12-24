@@ -7,7 +7,7 @@
 
 /obj/item/melee/baseball_bat/attack(mob/living/target, mob/living/user)
 	if (BODY_ZONE_PRECISE_GROIN && user.a_intent != INTENT_HARM) //ROUGH PRISON HUMILATION YAY
-		var/possessive_verb = user.p_their()
+		//var/possessive_verb = user.p_their()
 		var/message = ""
 		var/lust_amt = 0
 		if(ishuman(target) && (target?.client?.prefs?.toggles & VERB_CONSENT))
@@ -15,11 +15,11 @@
 				switch(hole)
 					if(CUM_TARGET_VAGINA)
 						if(target.has_vagina(REQUIRE_EXPOSED))
-							message = (user == target) ? pick("fucks [possessive_verb] own pussy with \the [src]","shoves \the [src] into [possessive_verb] pussy", "jams \the [src] into [possessive_verb] pussy") : pick("fucks [target] right in the pussy with \the [src]", "jams \the [src] right into [target]'s pussy")
+							message = (user == target) ? pick("закусывает свою губу и крепко хватается за собственную киску с '\the [src]'", "запихивает '\the [src]' в свою киску", "втыкает '\the [src]' в свою киску.") : pick("трахает <b>[target]</b> прямо в киску с помощью '\the [src]'", "засовывает '\the [src]' прямо в киску <b>[target]</b>.")
 							lust_amt = NORMAL_LUST
 					if(CUM_TARGET_ANUS)
 						if(target.has_anus(REQUIRE_EXPOSED))
-							message = (user == target) ? pick("fucks [possessive_verb] own ass with \the [src]","shoves \the [src] into [possessive_verb] ass", "jams \the [src] into [possessive_verb] ass") : pick("fucks [target]'s asshole with \the [src]", "jams \the [src] into [target]'s ass")
+							message = (user == target) ? pick("закусывает свою губу и крепко хватается за свою попку с '\the [src]'","запихивает '\the [src]' прямо в свою собственную попку.", "втыкает '\the [src]' прямо в свою попку.") : pick("трахает <b>[target]</b> прямо в попку '\the [src]'", "активно суёт '\the [src]' прямо в попку <b>[target]</b>.")
 							lust_amt = NORMAL_LUST
 		if(message)
 			user.visible_message("<span class='lewd'>[user] [message].</span>")

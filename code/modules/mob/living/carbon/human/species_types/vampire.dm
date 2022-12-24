@@ -57,8 +57,8 @@
 		return
 	if(C.blood_volume > 0.5)
 		C.blood_volume -= 0.5 //Will take roughly 19.5 minutes to die from standard blood volume, roughly 83 minutes to die from max blood volume.
-	else
-		C.dust(FALSE, TRUE)
+	else if(!istype(C.loc, /obj/structure/closet/crate/coffin))
+		C.adjustBruteLoss(1, 0)	//Vampires will slowly die without blood, instead of dusting
 
 	var/area/A = get_area(C)
 	if(istype(A, /area/service/chapel) && C.mind?.assigned_role != "Chaplain")

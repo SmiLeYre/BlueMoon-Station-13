@@ -1,7 +1,7 @@
 /datum/round_event_control/vent_clog
 	name = "Clogged Vents: Normal"
 	typepath = /datum/round_event/vent_clog
-	weight = 10
+	weight = 15
 	max_occurrences = 3
 
 /datum/round_event/vent_clog
@@ -31,7 +31,7 @@
 		/datum/reagent/water/holywater,
 		/datum/reagent/consumable/ethanol,
 		/datum/reagent/consumable/hot_coco,
-		/datum/reagent/toxin/acid,
+		/*/datum/reagent/toxin/acid, bluemoon removal*/
 		/datum/reagent/toxin/mindbreaker,
 		/datum/reagent/toxin/rotatium,
 		/datum/reagent/bluespace,
@@ -39,12 +39,12 @@
 		/datum/reagent/consumable/laughter,
 		/datum/reagent/concentrated_barbers_aid,
 		/datum/reagent/baldium,
-		/datum/reagent/colorful_reagent,
+		/*/datum/reagent/colorful_reagent, bluemoon removal*/
 		/datum/reagent/peaceborg_confuse,
 		/datum/reagent/peaceborg_tire,
 		/datum/reagent/consumable/sodiumchloride,
 		/datum/reagent/consumable/ethanol/beer,
-		/datum/reagent/hair_dye,
+		/*/datum/reagent/hair_dye, bluemoon removal*/
 		/datum/reagent/consumable/sugar,
 		/datum/reagent/glitter/white,
 		/datum/reagent/growthserum,
@@ -128,7 +128,8 @@
 /datum/round_event_control/vent_clog/beer
 	name = "Clogged Vents: Beer"
 	typepath = /datum/round_event/vent_clog/beer
-	max_occurrences = 0
+	weight = 30
+	max_occurrences = 4
 
 /datum/round_event/vent_clog/beer
 	reagentsAmount = 100

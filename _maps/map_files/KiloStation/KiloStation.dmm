@@ -6082,6 +6082,9 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/bot,
+/obj/effect/spawner/lootdrop/armory_contraband,
+/obj/effect/spawner/lootdrop/armory_contraband,
+/obj/effect/spawner/lootdrop/armory_contraband,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "akD" = (

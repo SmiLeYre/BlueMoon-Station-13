@@ -244,7 +244,7 @@
 			nuke_request(reason, usr)
 			to_chat(usr, span_notice("Request sent."))
 			usr.log_message("has requested the nuclear codes from CentCom with reason \"[reason]\"", LOG_SAY)
-			priority_announce("The codes for the on-station nuclear self-destruct have been requested by [usr]. Confirmation or denial of this request will be sent shortly.", "Nuclear Self-Destruct Codes Requested", SSstation.announcer.get_rand_report_sound())
+			priority_announce("Запрос на коды от ядерного заряда станции для активации протокола самоуничтожения были запрошены [usr]. Решение будет отправлено в ближайшее время.", "Запрошены коды ядерного самоуничтожения", SSstation.announcer.get_rand_report_sound())
 			playsound(src, 'sound/machines/terminal_prompt.ogg', 50, FALSE)
 			COOLDOWN_START(src, important_action_cooldown, IMPORTANT_ACTION_COOLDOWN)
 		if ("restoreBackupRoutingData")
@@ -351,8 +351,9 @@
 				log_game("[key_name(usr)] enabled emergency maintenance access.")
 				message_admins("[ADMIN_LOOKUPFLW(usr)] enabled emergency maintenance access.")
 				deadchat_broadcast(" enabled emergency maintenance access at [span_name("[get_area_name(usr, TRUE)]")].", span_name("[usr.real_name]"), usr, message_type = DEADCHAT_ANNOUNCEMENT)
-			var/boughtID = params["id"]
 
+		if("toggleBought")
+			var/boughtID = params["id"]
 			for(var/tracked_slave in GLOB.tracked_slaves)
 				var/obj/item/electropack/shockcollar/slave/C = tracked_slave
 				if (REF(C) == boughtID) // Get collar

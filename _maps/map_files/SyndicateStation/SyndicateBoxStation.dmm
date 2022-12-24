@@ -4865,6 +4865,13 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/security/brig)
+"akE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating,
+/area/maintenance/port/fore)
 "akF" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/turf_decal/tile/red,
@@ -10049,6 +10056,9 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plating,
 /area/maintenance/port/fore)
 "ayj" = (
@@ -12378,12 +12388,6 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
-"aFq" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/space/nearstation)
 "aFr" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -13013,15 +13017,6 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
-"aGX" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/space/nearstation)
 "aGY" = (
 /obj/machinery/airalarm{
 	pixel_y = 25
@@ -44170,6 +44165,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plating,
 /area/maintenance/port/aft)
+"ciV" = (
+/obj/structure/sign/poster/contraband/random,
+/turf/closed/wall/r_wall/syndicate,
+/area/command/meeting_room)
 "ciW" = (
 /obj/effect/landmark/blobstart,
 /turf/open/floor/plating,
@@ -49748,6 +49747,9 @@
 /obj/structure/sign/poster/contraband/random{
 	pixel_y = 32
 	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plating,
 /area/maintenance/port/fore)
 "cHf" = (
@@ -51258,6 +51260,11 @@
 	},
 /turf/open/floor/carpet/black,
 /area/commons/arcade)
+"dGi" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/sign/poster/contraband/random,
+/turf/closed/wall/r_wall/syndicate,
+/area/maintenance/fore/secondary)
 "dIu" = (
 /obj/structure/chair/sofa{
 	dir = 8
@@ -51738,6 +51745,10 @@
 	},
 /turf/open/floor/plating,
 /area/commons/fitness/recreation)
+"erj" = (
+/obj/structure/sign/poster/contraband/random,
+/turf/closed/wall/r_wall/syndicate,
+/area/command/bridge)
 "esK" = (
 /obj/machinery/door/airlock/maintenance/abandoned{
 	name = "Chemical Storage";
@@ -53240,6 +53251,10 @@
 "gjl" = (
 /turf/closed/wall/r_wall/syndicate,
 /area/cargo/warehouse)
+"gmj" = (
+/obj/structure/sign/poster/contraband/random,
+/turf/closed/wall/r_wall/syndicate,
+/area/service/bar)
 "gnf" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -54460,9 +54475,6 @@
 /obj/effect/turf_decal/tile/green,
 /turf/open/floor/mineral/plastitanium,
 /area/hallway/primary/starboard)
-"ivD" = (
-/turf/open/floor/plating,
-/area/space)
 "ivJ" = (
 /obj/structure/curtain{
 	pixel_y = -32
@@ -55756,6 +55768,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/mineral/plastitanium,
 /area/service/theater)
+"klv" = (
+/obj/structure/sign/poster/contraband/random,
+/turf/closed/wall/r_wall/syndicate,
+/area/science/robotics/lab)
 "klN" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -56173,6 +56189,10 @@
 /turf/open/floor/mineral/plastitanium,
 /turf/open/floor/carpet/blackred,
 /area/hallway/primary/central)
+"kPU" = (
+/obj/structure/sign/poster/contraband/random,
+/turf/closed/wall/r_wall/syndicate,
+/area/maintenance/port/aft)
 "kQa" = (
 /obj/machinery/door/airlock/medical/glass{
 	id_tag = "MedbayFoyer";
@@ -58500,6 +58520,15 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/security/prison/upper)
+"ojb" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating,
+/area/maintenance/port/fore)
 "oka" = (
 /obj/item/sealant,
 /turf/template_noop,
@@ -61975,6 +62004,10 @@
 /obj/effect/turf_decal/tile/green,
 /turf/open/floor/mineral/plastitanium,
 /area/security/prison/upper)
+"tID" = (
+/obj/structure/sign/poster/contraband/random,
+/turf/closed/wall/r_wall/syndicate,
+/area/security/checkpoint/supply)
 "tIE" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
@@ -63369,6 +63402,12 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/security/brig)
+"vIA" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating,
+/area/maintenance/port/fore)
 "vJu" = (
 /obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk{
@@ -79253,8 +79292,8 @@ upj
 amC
 nBI
 gJN
-amC
-auT
+vIA
+ojb
 aBI
 aDf
 aEK
@@ -79510,7 +79549,7 @@ amC
 aKY
 mbF
 cGf
-aKY
+akE
 aAw
 aBl
 aCZ
@@ -79766,7 +79805,7 @@ aKY
 ava
 gKo
 nBI
-amC
+auT
 azF
 azF
 azF
@@ -80023,7 +80062,7 @@ enJ
 enJ
 qlV
 nBI
-amC
+auT
 azF
 aAP
 aAP
@@ -89315,7 +89354,7 @@ bfm
 bwe
 bwe
 bwe
-bwe
+tID
 bwe
 bwe
 bAI
@@ -90324,7 +90363,7 @@ aJs
 pQN
 aYk
 aZM
-aZM
+ciV
 bbW
 bcX
 bcX
@@ -92374,7 +92413,7 @@ aLY
 aOF
 aTQ
 aTQ
-aTQ
+erj
 aTS
 aVf
 aWM
@@ -93444,7 +93483,7 @@ bKU
 cnB
 bNI
 bNI
-bCq
+kPU
 bCq
 bCq
 bCq
@@ -94410,7 +94449,7 @@ apl
 aqc
 aqc
 aqc
-aqc
+dGi
 aqc
 aqc
 awm
@@ -95715,7 +95754,7 @@ jux
 aOE
 aJn
 aaa
-aTQ
+erj
 aUe
 aVs
 aXa
@@ -101889,7 +101928,7 @@ aQc
 aXl
 fWi
 bai
-aJC
+gmj
 bbz
 dqB
 bet
@@ -106498,9 +106537,9 @@ apC
 aAr
 aBF
 apC
-ivD
-aFq
-aGX
+anf
+aCG
+aGW
 aIp
 sHx
 aKU
@@ -109346,7 +109385,7 @@ bbD
 bbz
 aXq
 bbz
-bfV
+klv
 bhw
 cHM
 wWT

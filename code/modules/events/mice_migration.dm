@@ -1,7 +1,9 @@
 /datum/round_event_control/mice_migration
 	name = "Mice Migration"
 	typepath = /datum/round_event/mice_migration
-	weight = 10
+	weight = 60
+	min_players = 10
+	max_occurrences = 3
 
 /datum/round_event/mice_migration
 	var/minimum_mice = 5

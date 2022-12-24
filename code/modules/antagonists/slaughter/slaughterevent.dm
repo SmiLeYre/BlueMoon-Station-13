@@ -3,8 +3,8 @@
 	typepath = /datum/round_event/ghost_role/slaughter
 	weight = 1 //Very rare
 	max_occurrences = 1
-	earliest_start = 1 HOURS
-	min_players = 20
+	earliest_start = 2 HOURS
+	min_players = 30
 
 /datum/round_event_control/slaughter/canSpawnEvent()
 	weight = initial(src.weight)
