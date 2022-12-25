@@ -125,16 +125,17 @@
 // Suicide acts, by request
 
 /obj/item/dildo/proc/manual_suicide(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] finally finishes deepthroating the [src], and their life.</span>")
-	user.adjustOxyLoss(200)
+	user.visible_message("<span class='suicide'>[user] finally finishes deepthroating the '[src]', and their life.</span>")
+	user.adjustOxyLoss(300)
 	user.death(0)
 
 /obj/item/dildo/suicide_act(mob/living/user)
 //	is_knotted = ((src.dildo_shape == "knotted")?"They swallowed the knot":"Their face is turning blue")
 	if(do_after(user,17,target=src))
-		user.visible_message("<span class='suicide'>[user] tears-up and gags as they shove [src] down their throat! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		user.visible_message("<span class='suicide'>[user] tears-up and gags as they shove '[src]' down their throat! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 		playsound(loc, 'sound/weapons/gagging.ogg', 50, 1, -1)
 		user.Stun(150)
+		user.adjustOxyLoss(300)
 		user.adjust_blurriness(8)
 		var/obj/item/organ/eyes/eyes = user.getorganslot(ORGAN_SLOT_EYES)
 		eyes?.applyOrganDamage(10)
@@ -145,6 +146,7 @@
 		user.visible_message("<span class='suicide'>[user] tears-up and gags as they try to deepthroat the [src]! WHY WOULD THEY DO THAT? It looks like [user.p_theyre()] trying to commit suicide!!</span>")
 		playsound(loc, 'sound/weapons/gagging.ogg', 50, 2, -1)
 		user.Stun(300)
+		user.adjustOxyLoss(300)
 		user.adjust_blurriness(8)
 	return MANUAL_SUICIDE
 

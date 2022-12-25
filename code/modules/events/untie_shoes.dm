@@ -2,7 +2,7 @@
 	name = "Untied Shoes"
 	typepath = /datum/round_event/untied_shoes
 	weight = 75
-	max_occurrences = 15
+	max_occurrences = 20
 	alert_observers = TRUE
 
 /datum/round_event/untied_shoes

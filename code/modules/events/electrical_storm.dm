@@ -1,8 +1,8 @@
 /datum/round_event_control/electrical_storm
 	name = "Electrical Storm"
 	typepath = /datum/round_event/electrical_storm
-	earliest_start = 20 MINUTES
-	min_players = 25
+	earliest_start = 15 MINUTES
+	min_players = 15
 	weight = 25
 	max_occurrences = 2
 	alert_observers = FALSE
@@ -14,9 +14,9 @@
 
 /datum/round_event/electrical_storm/announce(fake)
 	if(prob(50))
-		priority_announce("An electrical storm has been detected in your area, please repair potential electronic overloads.", "Electrical Storm Alert")
+		priority_announce("В вашем районе была обнаружена Электрическая Буря. Пожалуйста, устраните возможные перегрузки Осветительных Приборов.", "Предупреждение о Электрическом Шторме")
 	else
-		print_command_report("An electrical storm has been detected in your area, please repair potential electronic overloads.", "Electrical Storm")
+		print_command_report("В вашем районе была обнаружена Электрическая Буря. Пожалуйста, устраните возможные перегрузки Осветительных Приборов.", "Предупреждение о Электрическом Шторме")
 
 /datum/round_event/electrical_storm/start()
 	var/list/epicentreList = list()

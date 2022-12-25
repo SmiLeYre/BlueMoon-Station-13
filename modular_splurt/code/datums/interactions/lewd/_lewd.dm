@@ -467,7 +467,7 @@
 /mob/living/proc/smother_armpit(mob/living/target)
 	var/message
 	var/u_His = p_their()
-	var/list/musk = list("musky ", "sweaty ", "damp ", "smelly ", "")
+	var/list/musk = list("musky", "sweaty", "damp", "smelly")
 	var/list/lines = list(
 		"shoves \the <b>[target]</b>'s face in [u_His] [pick(musk)] armpit",
 		"squeezes \the <b>[target]</b>'s nose under [u_His] [pick(musk)] pit",

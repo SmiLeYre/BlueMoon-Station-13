@@ -198,7 +198,8 @@
 		"Researcher",
 		"Toxins Researcher",
 		"Research Intern",
-		"Junior Scientist"
+		"Junior Scientist",
+		"Rack Researcher"
 	)
 	LAZYADD(alt_titles, extra_titles)
 	. = ..()

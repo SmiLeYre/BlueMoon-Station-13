@@ -12,7 +12,7 @@
 	return 1
 
 /datum/game_mode/extended/generate_report()
-	return "The transmission mostly failed to mention your sector. It is possible that there is nothing in the Syndicate that could threaten your station during this shift."
+	return "В перехваченной передаче в основном не упоминался ваш сектор. Возможно, что в вашем Секторе Системы Синих Лун нет ничего, что могло бы угрожать вашему Объекту во время этой смены."
 
 /datum/game_mode/extended/announced
 	name = "extended"
@@ -30,4 +30,4 @@
 /datum/game_mode/extended/announced/send_intercept(report = 0)
 	if(flipseclevel) //CIT CHANGE - allows the sec level to be flipped roundstart
 		return ..()
-	priority_announce("Thanks to the tireless efforts of our security and intelligence divisions, there are currently no credible threats to [station_name()]. All station construction projects have been authorized. Have a secure shift!", "Security Report", SSstation.announcer.get_rand_report_sound())
+	priority_announce("Благодаря неустанным усилиям наших отделов Безопасности и Разведки, в настоящее время не существует достоверных угроз для '[station_name()]'. Все проекты по строительству на вашем Объекте были утверждены. Удачной смены! Развлекайтесь!!", "Отчет о безопасности.", SSstation.announcer.get_rand_report_sound())

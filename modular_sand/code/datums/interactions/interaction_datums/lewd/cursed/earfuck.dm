@@ -33,8 +33,7 @@
 				if(prob(25))
 					C.adjustOrganLoss(ORGAN_SLOT_EARS, rand(10,20))
 					C.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(7,15))
-				if(prob(1) && istype(partner))
-					partner.adjustBruteLoss(rand(5,7))
+					partner.adjustBruteLoss(rand(5,10))
 	else
 		message = "с силой загоняет свой орган внутрь ушной раковины \the <b>[partner]</b> и громко вздыхает."
 		user.set_is_fucking(partner, CUM_TARGET_EARS, user.getorganslot(ORGAN_SLOT_PENIS))

@@ -570,7 +570,7 @@
 	if(has_vagina(REQUIRE_EXPOSED))
 		dat += "...обладает вагиной."
 	if(has_anus(REQUIRE_EXPOSED))
-		dat += "...обладает анальным концом."
+		dat += "...обладает анальным кольцом."
 	if(has_feet(REQUIRE_EXPOSED))
 		switch(has_feet(REQUIRE_EXPOSED))
 			if(2)

@@ -1,6 +1,6 @@
 /datum/component/neckfire
 	var/mutable_appearance/neck_fire
-	
+
 	var/color
 
 	var/obj/effect/dummy/luminescent_glow/glowth //shamelessly copied from glowy which copied luminescents
@@ -10,7 +10,7 @@
 
 /datum/component/neckfire/Initialize(fire_color)
 	. = ..()
-	if(!isdullahan(parent))
+	if(!HAS_TRAIT(parent, TRAIT_DULLAHAN))
 		return COMPONENT_INCOMPATIBLE
 	neck_fire = mutable_appearance('modular_splurt/icons/mob/dullahan_neckfire.dmi')
 	neck_fire.icon_state = "neckfire"
@@ -63,11 +63,12 @@
 		N.glowth = new(N.parent)
 		N.glowth.set_light(N.light, N.light, N.color)
 		N.is_glowing = TRUE
-	else 
+	else
 		qdel(N.glowth)
 		N.is_glowing = FALSE
 
-/datum/species/dullahan/on_species_gain(mob/living/carbon/human/H, datum/species/old_species)
+/datum/quirk/dullahan/post_add()
 	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
 	if(H.dna.features["neckfire"] && !istype(H, /mob/living/carbon/human/dummy))
 		H.AddComponent(/datum/component/neckfire, H.dna.features["neckfire_color"])

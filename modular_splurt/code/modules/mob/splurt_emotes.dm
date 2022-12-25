@@ -870,3 +870,44 @@
 		return
 	user.nextsoundemote = world.time + 3 SECONDS
 	playsound(user, 'modular_splurt/sound/voice/missouri.ogg', 50, 0, -1)
+
+/datum/emote/living/facemetacarpus
+	key = "facehand" // Facepalm was taken
+	key_third_person = "facepalms"
+	// Message is generated from metacarpus_type below. You shouldn't see this!
+	message = "creates an error in the code."
+	emote_type = EMOTE_AUDIBLE // Hear a slapping sound
+	muzzle_ignore = TRUE // Not a spoken emote
+	restraint_check = TRUE // Uses your hands
+	mob_type_allowed_typecache = list(/mob/living/carbon) // Don't let borgs do this
+	// Defines appendage type for generated message
+	var/metacarpus_type = "palm" // Default to hands
+
+/datum/emote/living/facemetacarpus/run_emote(mob/user, params, type_override, intentional)
+	// Randomly pick a message using metacarpus_type for hand
+	message = pick(list(
+			"places [usr.p_their()] [metacarpus_type] across [usr.p_their()] face.",
+			"lowers [usr.p_their()] face into [usr.p_their()] [metacarpus_type].",
+			"face[metacarpus_type]s",
+		))
+	if(!(. = ..()))
+		return
+	if(user.nextsoundemote >= world.time)
+		return
+	user.nextsoundemote = world.time + 10
+	playsound(user, 'modular_splurt/sound/effects/slap.ogg', 50, 1, -1)
+
+/datum/emote/living/facemetacarpus/paw
+	key = "facepaw" // For furries
+	key_third_person = "facepaws"
+	metacarpus_type = "paw"
+
+/datum/emote/living/facemetacarpus/claw
+	key = "faceclaw" // For scalies and avians
+	key_third_person = "faceclaws"
+	metacarpus_type = "claw"
+
+/datum/emote/living/facemetacarpus/hoof
+	key = "facehoof" // For horse enthusiasts
+	key_third_person = "facehoofs"
+	metacarpus_type = "hoof"

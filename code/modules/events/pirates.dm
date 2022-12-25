@@ -2,9 +2,9 @@
 	name = "Space Pirates"
 	typepath = /datum/round_event/pirates
 	weight = 40
-	max_occurrences = 2
-	min_players = 15
-	earliest_start = 30 MINUTES
+	max_occurrences = 1
+	min_players = 25
+	earliest_start = 60 MINUTES
 	dynamic_should_hijack = TRUE
 
 #define PIRATES_ROGUES "Rogues"

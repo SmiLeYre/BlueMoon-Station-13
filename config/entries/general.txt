@@ -131,6 +131,8 @@ ALLOW_AI_MULTICAM
 ## Uncomment to prevent the security cyborg module from being chosen
 #DISABLE_SECBORG
 
+## Uncomment to allow choose the security cyborg module in any alertcode
+#BYPASS_SECBORG_CODE
 
 ## Peacekeeper Borg ###
 ## Uncomment to prevent the peacekeeper cyborg module from being chosen

@@ -22,10 +22,10 @@
 
 	if(user.is_fucking(partner, CUM_TARGET_EYES))
 		message = "[pick(
-			"крепко обхватывает голову \the <b>[partner]</b>'s и начинает долбиться в глаз.",
-			"яростно долбится в череп \the <b>[partner]</b>'s и довольно стонет.",
-			"раз за разом толкается в образованную дыру в глазу \the <b>[partner]</b>'s.",
-			"заходит своим влажным органом по самые яйца в череп \the <b>[partner]</b>'s снова и снова.")]"
+			"крепко обхватывает голову \the <b>[partner]</b> и начинает долбиться в глаз.",
+			"яростно долбится в череп \the <b>[partner]</b> и довольно стонет.",
+			"раз за разом толкается в образованную дыру в глазу \the <b>[partner]</b>.",
+			"заходит своим влажным органом по самые яйца в череп \the <b>[partner]</b> снова и снова.")]"
 		var/client/cli = partner.client
 		var/mob/living/carbon/C = partner
 		if(cli && istype(C))
@@ -33,12 +33,11 @@
 				if(prob(15))
 					C.bleed(2)
 				if(prob(25))
-					C.adjustOrganLoss(ORGAN_SLOT_EYES,rand(10,20))
+					C.adjustOrganLoss(ORGAN_SLOT_EYES, rand(10,20))
 					C.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(7,15))
-				if(prob(1) && istype(partner))
-					partner.adjustBruteLoss(rand(5,7))
+					partner.adjustBruteLoss(rand(5,10))
 	else
-		message = "forcefully slides [u_His] [genital_name] inbetween \the <b>[partner]</b>'s [partner.has_eyes() ? "eyelid":"eyesocket"]."
+		message = "с силой загоняет свой орган глубоко в глаз \the <b>[partner]</b> и громко вздыхает."
 		user.set_is_fucking(partner, CUM_TARGET_EYES, user.getorganslot(ORGAN_SLOT_PENIS))
 
 	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/champ1.ogg',
