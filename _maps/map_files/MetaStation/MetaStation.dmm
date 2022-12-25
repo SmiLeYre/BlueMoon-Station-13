@@ -8007,9 +8007,6 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
 "ayR" = (
-/obj/structure/window/reinforced/tinted{
-	dir = 8
-	},
 /obj/machinery/light{
 	dir = 1
 	},
@@ -10253,7 +10250,7 @@
 "aLk" = (
 /obj/structure/alien/weeds,
 /obj/structure/bed/nest,
-/turf/open/space/basic,
+/turf/open/floor/plasteel,
 /area/commons/dorms)
 "aLo" = (
 /obj/structure/lattice,
@@ -46596,7 +46593,7 @@
 /obj/structure/alien/egg/burst,
 /obj/item/clothing/mask/facehugger/impregnated,
 /obj/structure/alien/weeds/node,
-/turf/open/space/basic,
+/turf/open/floor/plasteel,
 /area/commons/dorms)
 "dkX" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
@@ -57000,7 +56997,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 10
 	},
-/turf/open/space/basic,
+/turf/open/floor/plasteel,
 /area/commons/dorms)
 "iwg" = (
 /obj/structure/sign/warning/pods,
@@ -57833,7 +57830,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 8
 	},
-/turf/open/space/basic,
+/turf/open/floor/plasteel,
 /area/commons/dorms)
 "iUm" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -61829,7 +61826,7 @@
 	dir = 1;
 	pixel_x = 5
 	},
-/turf/open/space/basic,
+/turf/open/floor/plasteel,
 /area/commons/dorms)
 "kZR" = (
 /obj/item/storage/book/bible,
@@ -69122,10 +69119,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
-"paQ" = (
-/obj/structure/alien/weeds,
-/turf/open/space/basic,
-/area/commons/dorms)
 "paS" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/cable/yellow{
@@ -74273,7 +74266,7 @@
 	specialfunctions = 4;
 	pixel_y = 25
 	},
-/turf/open/space/basic,
+/turf/open/floor/plasteel,
 /area/commons/dorms)
 "rJT" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -80700,10 +80693,7 @@
 /area/service/theater)
 "vqv" = (
 /obj/structure/alien/weeds,
-/obj/structure/window/reinforced/tinted{
-	dir = 8
-	},
-/turf/open/space/basic,
+/turf/open/floor/plasteel,
 /area/commons/dorms)
 "vqN" = (
 /obj/machinery/gateway/centerstation{
@@ -81273,7 +81263,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/open/floor/wood,
+/obj/structure/alien/weeds,
+/turf/open/floor/plasteel,
 /area/commons/dorms)
 "vJE" = (
 /obj/effect/turf_decal/stripes/line,
@@ -124131,7 +124122,7 @@ wfx
 ayR
 kyr
 wfx
-paQ
+vqv
 vqv
 pSY
 qqb

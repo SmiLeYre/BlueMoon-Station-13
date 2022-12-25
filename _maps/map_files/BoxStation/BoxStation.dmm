@@ -43746,7 +43746,7 @@
 /obj/structure/alien/weeds,
 /obj/structure/alien/egg/burst,
 /obj/structure/alien/weeds/node,
-/turf/open/space/basic,
+/turf/open/floor/plasteel/dark,
 /area/commons/dorms)
 "cZe" = (
 /obj/structure/cable{
@@ -45055,7 +45055,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 6
 	},
-/turf/open/space/basic,
+/turf/open/floor/plasteel/dark,
 /area/commons/dorms)
 "ebD" = (
 /obj/structure/cable{
@@ -46714,7 +46714,7 @@
 /obj/structure/alien/egg/burst,
 /obj/structure/alien/weeds/node,
 /obj/item/clothing/mask/facehugger/impregnated,
-/turf/open/space/basic,
+/turf/open/floor/plasteel/dark,
 /area/commons/dorms)
 "fAj" = (
 /obj/effect/turf_decal/tile/blue,
@@ -48423,7 +48423,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
-/turf/open/space/basic,
+/turf/open/floor/plasteel/dark,
 /area/commons/dorms)
 "gUu" = (
 /obj/structure/lattice,
@@ -48458,7 +48458,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 8
 	},
-/turf/open/space/basic,
+/turf/open/floor/plasteel/dark,
 /area/commons/dorms)
 "gXs" = (
 /obj/structure/lattice,
@@ -52122,7 +52122,7 @@
 /area/service/library)
 "kmx" = (
 /obj/structure/alien/weeds,
-/turf/open/space/basic,
+/turf/open/floor/plasteel/dark,
 /area/commons/dorms)
 "knm" = (
 /obj/effect/turf_decal/tile/blue{
@@ -53756,7 +53756,7 @@
 /obj/structure/window/reinforced/tinted{
 	dir = 1
 	},
-/turf/open/space/basic,
+/turf/open/floor/plasteel/dark,
 /area/commons/dorms)
 "lIg" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -55444,7 +55444,7 @@
 "nnd" = (
 /obj/structure/alien/weeds,
 /obj/structure/bed/nest,
-/turf/open/space/basic,
+/turf/open/floor/plasteel/dark,
 /area/commons/dorms)
 "nnp" = (
 /obj/structure/closet/secure_closet/medical1,
@@ -56981,7 +56981,7 @@
 "oyO" = (
 /obj/structure/alien/weeds,
 /obj/structure/window/reinforced/tinted,
-/turf/open/space/basic,
+/turf/open/floor/plasteel/dark,
 /area/commons/dorms)
 "oyX" = (
 /obj/machinery/atmospherics/components/binary/pump/on{
@@ -59242,7 +59242,8 @@
 	id_tag = "Xeno Dorms";
 	name = "Xeno Dorms"
 	},
-/turf/open/floor/carpet,
+/obj/structure/alien/weeds,
+/turf/open/floor/plasteel/dark,
 /area/commons/dorms)
 "qHH" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
