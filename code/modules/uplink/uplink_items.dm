@@ -142,6 +142,12 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 /datum/uplink_item/dangerous
 	category = "Conspicuous Weapons"
 
+/datum/uplink_item/ammo
+	category = "Ammunition"
+
+/datum/uplink_item/explosives
+	category = "Explosives"
+
 //Support and Mechs
 /datum/uplink_item/support
 	category = "Support and Exosuits"
@@ -151,6 +157,9 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 // Stealth Items
 /datum/uplink_item/stealthy_tools
 	category = "Stealth Gadgets"
+
+/datum/uplink_item/stealthy_weapons
+	category = "Stealthy Weapons"
 
 //Space Suits and Hardsuits
 /datum/uplink_item/suits
