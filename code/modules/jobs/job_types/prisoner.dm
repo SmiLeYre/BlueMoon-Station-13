@@ -14,8 +14,8 @@
 
 	display_order = JOB_DISPLAY_ORDER_PRISONER
 
-/datum/job/prisoner/get_latejoin_spawn_point()
-	return get_roundstart_spawn_point()
+/datum/job/prisoner/get_roundstart_spawn_point()
+	return get_latejoin_spawn_point()
 
 /datum/job/prisoner/after_spawn(mob/living/carbon/human/H, client/C)
 	. = ..()

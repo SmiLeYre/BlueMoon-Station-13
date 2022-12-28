@@ -527,7 +527,7 @@
 		if(INTENT_GRAB)
 			dat += "...ведёт себя грубо."
 		if(INTENT_HARM)
-			dat += "...готовность высокая! Сражается со всеми, кто приближается."
+			dat += "...выглядит агрессивно!"
 	//Here comes the fucking weird shit.
 	if(client)
 		var/client/cli = client

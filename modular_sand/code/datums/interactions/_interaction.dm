@@ -15,7 +15,7 @@
 	if(has_hands())
 		dat += "...обладает руками."
 	if(has_mouth())
-		dat += "...обладает ртом, который [mouth_is_free() ? "неприкрыт" : "прикрыт"]."
+		dat += "...обладает [mouth_is_free() ? "неприкрытым" : "прикрытым"] ртом."
 	return dat
 
 /// The base of all interactions

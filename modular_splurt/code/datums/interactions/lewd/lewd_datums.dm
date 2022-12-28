@@ -238,6 +238,17 @@
 
 	playlewdinteractionsound(user, 'sound/items/bikehorn.ogg', 40, 1, -1)
 
+/datum/interaction/lewd/bite/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
+	. = ..()
+	if(!isclownjob(user))
+		return
+
+	if(prob(50))
+		//var/genital_name = user.get_penetrating_genital_name(TRUE)
+		user.visible_message("<span class='lewd'>\ <b>[user]</b> забавно хонкает!</span>")
+
+	playlewdinteractionsound(user, 'sound/items/bikehorn.ogg', 40, 1, -1)
+
 /datum/interaction/lewd/eyefuck/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	. = ..()
 	if(!isclownjob(user))

@@ -1,40 +1,41 @@
 /datum/interaction/lewd/bite
 	description = "Искусать."
 	interaction_sound = null
-	require_user_hands = TRUE
+	require_user_mouth = TRUE
+	require_target_hands = TRUE
 	max_distance = 1
 	write_log_user = "bite"
 	write_log_target = "had their body bited by"
 	extreme = TRUE
 
-/datum/interaction/lewd/bite/display_interaction(mob/living/user)
+/datum/interaction/lewd/bite/display_interaction(mob/living/user, mob/living/partner)
 	var/message
 
-	if(user.a_intent == INTENT_HARM(user.is_fucking(partner, CUM_TARGET_HAND)))
-		message = "[pick("прижимается к <b>[target]</b>, раскрывает рот и начинает кусаться.",
-					"резко разрывает контакт своей челюсти с <b>[target]</b>, тем самым образом отрывая кусок плоти.",
-					"крепко прижимает <b>[target]</b> к своему телу и одновременно с этим прижимается зубами.",
-					"с силой закрепляется в <b>[target]</b> коготками и наносит укус за укусом.",
-					"максимально грубым образом закусывает плоть <b>[target]</b> до самой крови.")]"
+	if(user.a_intent == INTENT_HARM)
+		user.is_fucking(partner, CUM_TARGET_HAND)
+		partner.adjustBruteLoss(rand(8,16))
+		message = "[pick("прижимается к <b>[partner]</b>, раскрывает рот и начинает кусаться.",
+					"резко разрывает контакт своей челюсти с <b>[partner]</b>, тем самым образом отрывая кусок плоти.",
+					"крепко прижимает <b>[partner]</b> к своему телу и одновременно с этим прижимается зубами.",
+					"с силой закрепляется за <b>[partner]</b> своими ногтями и наносит укус за укусом.",
+					"максимально грубым образом закусывает плоть <b>[partner]</b> до самой крови.")]"
 	else
-		message = "[pick("нежно прижимается к <b>[target]</b>, раскрывает пасть и начинает кусаться.",
-					"медленно разрывает контакт своей челюсти с <b>[target]</b>, тем самым образом открывая свежую рану.",
-					"нежно прижимает <b>[target]</b> к своему телу и одновременно с этим прижимается зубами.",
-					"обхватывает <b>[target]</b> своими коготками и выставляет свою челюсть прямо на плечо.",
-					"аккуратно закусывает плотью <b>[target]</b> и впоследствии оставляет кровоподтёк.")]"
+		partner.adjustBruteLoss(rand(3,6))
+		message = "[pick("нежно прижимается к <b>[partner]</b>, раскрывает рот и начинает кусаться.",
+					"медленно разрывает контакт своей челюсти с <b>[partner]</b>, тем самым образом открывая свежую рану.",
+					"нежно прижимает <b>[partner]</b> к своему телу и одновременно с этим прижимается зубами.",
+					"обхватывает <b>[partner]</b> своими коготками и выставляет свою челюсть прямо на плечо.",
+					"аккуратно закусывает плотью <b>[partner]</b> и впоследствии оставляет кровоподтёк.")]"
 		var/client/cli = partner.client
 		var/mob/living/carbon/C = partner
 		if(cli && istype(C))
 			if(cli.prefs.extremeharm != "No")
-				if(prob(15))
-					C.bleed(2)
-				if(partner.a_intent == INTENT_HARM)
-					partner.adjustBruteLoss(rand(10,15))
-				else
-					partner.adjustBruteLoss(rand(3,6))
+				if(prob(75))
+					C.bleed(50)
+					C.add_splatter_floor(get_turf(BLOOD_COLOR_HUMAN), TRUE)
 
-	if(prob(5 + user.get_lust()))
-		user.visible_message("<span class='lewd'><b>\The [user]</b> [pick("дрожит от боли.",
+	if(prob(25 + partner.get_lust()))
+		partner.visible_message("<span class='lewd'><b>\The [partner]</b> [pick("дрожит от боли.",
 				"тихо вскрикивает.",
 				"выдыхает болезненный стон.",
 				"звучно вздыхает от боли.",
