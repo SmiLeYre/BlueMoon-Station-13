@@ -332,10 +332,12 @@ SUBSYSTEM_DEF(ticker)
 		if(gamemode in config.modes)
 			GLOB.master_mode = gamemode
 			SSticker.save_mode(gamemode)
+			to_chat("The gamemode has been set to [gamemode].")
 			message_admins("The gamemode has been set to [gamemode].")
 		else
 			GLOB.master_mode = "extended"
 			SSticker.save_mode("extended")
+			to_chat("The gamemode has been set to extended.")
 			message_admins("force_gamemode proc received an invalid gamemode, defaulting to extended.")
 
 /datum/controller/subsystem/ticker/proc/PostSetup()
