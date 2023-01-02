@@ -62,7 +62,7 @@
 		H.adjust_disgust(20)
 		to_chat(H, "<span class='warning'>I can't stand it anymore!</span>")
 	..()
-
+/* bluemoon removal start
 /datum/reagent/drug/copium/reaction_obj(obj/O, volume)
 	if ((!O) || (!volume))
 		return 0
@@ -74,3 +74,4 @@
 		var/temp = holder ? holder.chem_temp : T20C
 		T.atmos_spawn_air("copium=[volume];TEMP=[temp]")
 	return
+bluemoon removal end*/
