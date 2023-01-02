@@ -179,15 +179,31 @@
 	message = "gasps!"
 	emote_type = EMOTE_AUDIBLE
 	stat_allowed = UNCONSCIOUS
-
+//bluemoon add start
 /datum/emote/living/gasp/run_emote(mob/user, params)
 	. = ..()
 	var/mob/living/carbon/C = user
 	if(user.gender == FEMALE)
-		playsound(C, pick('sound/voice/gasp_female1.ogg', 'sound/voice/gasp_female2.ogg', 'sound/voice/gasp_female3.ogg', 'sound/voice/gasp_female4.ogg', 'sound/voice/gasp_female5.ogg', 'sound/voice/gasp_female6.ogg', 'sound/voice/gasp_female7.ogg'), 50, 1)
+		playsound(C, pick(
+			'sound/voice/gasp_female1.ogg',
+			'sound/voice/gasp_female2.ogg',
+			'sound/voice/gasp_female3.ogg',
+			'sound/voice/gasp_female4.ogg',
+			'sound/voice/gasp_female5.ogg',
+			'sound/voice/gasp_female6.ogg',
+			'sound/voice/gasp_female7.ogg'),
+		10, TRUE, extrarange = -13) //2 tiles around
 	else
-		playsound(C, pick('sound/voice/gasp_male1.ogg', 'sound/voice/gasp_male2.ogg', 'sound/voice/gasp_male3.ogg', 'sound/voice/gasp_male4.ogg', 'sound/voice/gasp_male5.ogg', 'sound/voice/gasp_male6.ogg', 'sound/voice/gasp_male7.ogg'), 50, 1)
-
+		playsound(C, pick(
+			'sound/voice/gasp_male1.ogg',
+			'sound/voice/gasp_male2.ogg',
+			'sound/voice/gasp_male3.ogg',
+			'sound/voice/gasp_male4.ogg',
+			'sound/voice/gasp_male5.ogg',
+			'sound/voice/gasp_male6.ogg',
+			'sound/voice/gasp_male7.ogg'),
+		50, TRUE, extrarange = -13) //2 tiles around
+//bluemoon add end
 /datum/emote/living/giggle
 	key = "giggle"
 	key_third_person = "giggles"
