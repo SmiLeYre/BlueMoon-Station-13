@@ -202,7 +202,7 @@
 			'sound/voice/gasp_male5.ogg',
 			'sound/voice/gasp_male6.ogg',
 			'sound/voice/gasp_male7.ogg'),
-		50, TRUE, extrarange = -13) //2 tiles around
+		10, TRUE, extrarange = -13) //2 tiles around
 //bluemoon add end
 /datum/emote/living/giggle
 	key = "giggle"
