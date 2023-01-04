@@ -18,5 +18,5 @@
 /datum/gear/donator/bm/modern_watch
 	name = "modern watch"
 	slot = ITEM_SLOT_GLOVES
-	path = /obj/item/clothing/wrists/bm/modern_watch
+	path = /obj/item/clothing/wrists/donator/bm/modern_watch
 	ckeywhitelist = list("zar_shef")
