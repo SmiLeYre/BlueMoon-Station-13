@@ -3841,6 +3841,7 @@
 #include "interface\skin.dmf"
 #include "modular_bluemoon\fluffs\code\donator.dm"
 #include "modular_bluemoon\fluffs\code\head.dm"
+#include "modular_bluemoon\fluffs\code\items.dm"
 #include "modular_bluemoon\fluffs\code\wrists.dm"
 #include "modular_bluemoon\phenyamomota\code\modules\clothing\labcoat.dm"
 #include "modular_bluemoon\phenyamomota\code\modules\clothing\under_med.dm"

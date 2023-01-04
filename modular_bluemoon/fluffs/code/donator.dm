@@ -20,3 +20,9 @@
 	slot = ITEM_SLOT_GLOVES
 	path = /obj/item/clothing/wrists/donator/bm/modern_watch
 	ckeywhitelist = list("zar_shef")
+
+/datum/gear/donator/bm/pt_crown
+	name = "Gaston"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/toy/plush/chaotic_toaster/gaston
+	ckeywhitelist = list("gastonix")
