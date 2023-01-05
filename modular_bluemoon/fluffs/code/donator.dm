@@ -26,3 +26,9 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/toy/plush/chaotic_toaster/gaston
 	ckeywhitelist = list("gastonix")
+
+/datum/gear/donator/bm/blueflame
+	name = "horns of blue flame"
+	slot = ITEM_SLOT_HEAD
+	path = /obj/item/clothing/head/donator/bm/blueflame
+	ckeywhitelist = list("weirdbutton")
