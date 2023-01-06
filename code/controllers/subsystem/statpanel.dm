@@ -18,7 +18,7 @@ SUBSYSTEM_DEF(statpanels)
 			"Map: [SSmapping.config?.map_name || "Loading..."]",
 			cached ? "Next Map: [cached.map_name]" : null,
 			"Round ID: [GLOB.round_id ? GLOB.round_id : "NULL"]",
-			"Game Mode: [GLOB.master_mode]", //BlueMoon edit !!!
+			"Game Mode: [GLOB.master_mode]",
 			"Connected Players: [GLOB.clients.len]",
 			" ",
 			"OOC: [GLOB.ooc_allowed ? "Enabled" : "Disabled"]",

@@ -5,7 +5,10 @@
 		/obj/item/clothing/suit/armor/vest/peacekeeper = 5,
 		/obj/item/clothing/suit/armor/vest/metrocop = 2,
 		/obj/item/clothing/head/helmet/metrocop = 2,
-		/obj/item/storage/bag/security = 5
+		/obj/item/storage/bag/security = 5,
+		/obj/item/clothing/head/helmet/blueshirt = 5,
+		/obj/item/clothing/under/rank/security/officer/blueshirt = 5,
+		/obj/item/clothing/suit/armor/vest/blueshirt = 5
 	)
 	var/list/extra_contraband = list(
 		/obj/item/storage/belt/slut = 5,
@@ -19,6 +22,13 @@
 	)
 	LAZYADD(products, extra_products)
 	LAZYADD(contraband, extra_contraband)
+
+	var/list/rem_premium = list(
+		/obj/item/clothing/head/helmet/blueshirt,
+		/obj/item/clothing/under/rank/security/officer/blueshirt,
+		/obj/item/clothing/suit/armor/vest/blueshirt
+	)
+	LAZYREMOVE(premium, rem_premium)
 	. = ..()
 
 /obj/machinery/vending/wardrobe/sec_wardrobe/Initialize()

@@ -23,11 +23,11 @@
 					/obj/item/storage/fancy/donut_box = 2,
 					/obj/item/storage/belt/sabre/secbelt = 1)
 	premium = list(/obj/item/coin/antagtoken = 1,
-					/obj/item/clothing/head/helmet/blueshirt = 5, //SPLURT edit, origional was 1
-					/obj/item/clothing/suit/armor/vest/blueshirt = 5, //SPLURT edit, origional was 1
-					/obj/item/clothing/under/rank/security/officer/blueshirt = 5, //SPLURT edit, origional was 1
-					/obj/item/clothing/gloves/tackler = 5,
-					/obj/item/grenade/stingbang = 2,
+					/obj/item/clothing/head/helmet/blueshirt = 5, //BlueMoon edit
+					/obj/item/clothing/suit/armor/vest/blueshirt = 5, //BlueMoon edit
+					/obj/item/clothing/under/rank/security/officer/blueshirt = 5, //BlueMoon edit
+					/obj/item/clothing/gloves/tackler = 5, //BlueMoon edit
+					/obj/item/grenade/stingbang = 2, //BlueMoon edit
 					/obj/item/ssword_kit = 1,
 					/obj/item/clothing/suit/armor/hos/platecarrier = 1,
 					/obj/item/storage/belt/bandolier = 2,

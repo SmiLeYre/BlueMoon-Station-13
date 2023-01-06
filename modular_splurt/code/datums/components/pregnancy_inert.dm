@@ -3,7 +3,6 @@
 /datum/component/ovipositor
 	dupe_mode = COMPONENT_DUPE_UNIQUE
 
-	var/egg_type = "chicken"
 	var/mob/living/carrier
 
 	var/egg_stage = 0
@@ -23,7 +22,6 @@
 	RegisterSignal(parent, COMSIG_ORGAN_REMOVED, .proc/on_removed)
 	if(carrier)
 		register_carrier()
-	egg_type = carrier?.client?.prefs?.egg_shell ? carrier.client.prefs.egg_shell : "chicken"
 
 /datum/component/ovipositor/proc/register_carrier()
 	RegisterSignal(carrier, COMSIG_LIVING_BIOLOGICAL_LIFE, .proc/handle_life)
@@ -99,7 +97,7 @@
 
 	eggo.AddComponent(/datum/component/organ_inflation, 2)
 
-	eggo.icon_state = "egg_" + egg_type
+	eggo.icon_state = carrier.client?.prefs?.egg_shell ? ("egg_" + carrier.client.prefs.egg_shell) : "egg_chicken"
 	eggo.update_appearance()
 
 	if(isorgan(location))

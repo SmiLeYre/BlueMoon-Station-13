@@ -52546,26 +52546,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/processing)
-"kHw" = (
-/obj/machinery/door/airlock/security/glass{
-	id_tag = "innerbrig";
-	name = "Brig";
-	req_access_txt = "1"
-	},
-/obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/red{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/red{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/security/brig)
 "kHN" = (
 /obj/structure/chair{
 	dir = 1
@@ -96982,7 +96962,7 @@ jyO
 ajC
 akC
 akX
-kHw
+alw
 amJ
 aoY
 rCl

@@ -1,3 +1,22 @@
+2023-01-01:
+  FromRussiaWithLove:
+  - rscadd: Displaying Game Mode in status panel
+2023-01-02:
+  zeroisthebiggay:
+  - imageadd: shading for ass sprites
+2023-01-03:
+  FelixRuin:
+  - bugfix: fixed inert egg was always has chicken egg sprite regardless of the pref
+      choice.
+  KeplerWasTaken:
+  - bugfix: Kilo Cargo Shuttle now has tiny fans!
+  - bugfix: Mining Points Vending Machine can no longer be exploited for infinite
+      points via transfer cards
+  - bugfix: Double doors at sec entrance in box station now have proper access requirements,
+      enjoy!
+  - rscadd: Improves Moth in Command to be an improved version of Commander and Chief
+  SpookyTheFox:
+  - tweak: moved blueshift themed sec gear out of premium pricing.
 2023-01-04:
   FeenieRU:
   - tgs: has something to do with tgs

@@ -147,12 +147,49 @@
 	boozepwr = 50
 	color = "#0919be"
 	quality = DRINK_FANTASTIC
+	value = REAGENT_VALUE_AMAZING
 	taste_description = "fuzz, warmth and comfort"
 	glass_icon = 'modular_splurt/icons/obj/drinks.dmi'
 	glass_icon_state = "mothinchief"
 	glass_name = "Moth in Chief"
 	glass_desc = "A simple yet elegant drink, inspires confidence in even the most pessimistic of men. The mantle rests well upon your shoulders."
+	can_synth = FALSE;
 
+//This drink gives the combined benefits of Stimulants, Regenerative Jelly, and Commander and Chief, and a mood buff similar to Copium; at least to an extent.
+/datum/reagent/consumable/ethanol/commander_and_chief/on_mob_life(mob/living/carbon/M)
+	if(M.mind && HAS_TRAIT(M.mind, TRAIT_CAPTAIN_METABOLISM))
+		M.heal_bodypart_damage(2,2,2)
+		M.adjustBruteLoss(-5,0)
+		M.adjustOxyLoss(-5,0)
+		M.adjustFireLoss(-5,0)
+		M.adjustToxLoss(-5,0,TRUE) //Heals Toxin Lovers
+		M.radiation = max(M.radiation - 25, 0)
+		. = 1
+	else
+		//Commander and Chief Effects, no need to be captain to receive the effect
+		M.heal_bodypart_damage(2,2,2)
+		M.adjustBruteLoss(-3.5,0)
+		M.adjustOxyLoss(-3.5,0)
+		M.adjustFireLoss(-3.5,0)
+		M.adjustToxLoss(-3.5,0,TRUE) //Heals Toxin Lovers
+		M.radiation = max(M.radiation - 25, 0)
+
+	//Stimulant Effects
+	M.AdjustAllImmobility(-60, FALSE)
+	M.AdjustUnconscious(-60, FALSE)
+	M.adjustStaminaLoss(-20*REAGENTS_EFFECT_MULTIPLIER, FALSE)
+	..()
+	. = 1
+
+/datum/reagent/medicine/stimulants/on_mob_metabolize(mob/living/L)
+	..()
+	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/stimulants)
+	ADD_TRAIT(L, TRAIT_TASED_RESISTANCE, type)
+
+/datum/reagent/medicine/stimulants/on_mob_end_metabolize(mob/living/L)
+	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/stimulants)
+	REMOVE_TRAIT(L, TRAIT_TASED_RESISTANCE, type)
+	..()
 
 // ~( Ported from TG )~
 /datum/reagent/consumable/ethanol/curacao
@@ -286,3 +323,41 @@
 	glass_name = "Tropical Storm"
 	glass_desc = "Less destructive than the real thing."
 
+/datum/reagent/consumable/ethanol/skullfucker_deluxe
+	name = "Skullfucker Deluxe"
+	description = "The Rosewater secret to becoming psychotically retarded. It has many warning labels."
+	boozepwr = 75
+	color = "#cb4d8b"
+	quality = DRINK_VERYGOOD
+	taste_description = "being violated by a tiny fish with crayons"
+	glass_icon = 'modular_splurt/icons/obj/drinks.dmi'
+	glass_icon_state = "skullfucker"
+	glass_name = "Skullfucker Deluxe"
+	glass_desc = "It has many warning labels, you might want to read them."
+	overdose_threshold = 25
+
+/datum/reagent/consumable/ethanol/skullfucker_deluxe/on_mob_life(mob/living/carbon/C)
+	. = ..()
+	//Do nothing if they haven't metabolized enough
+	if(!current_cycle >= 15)
+		return
+	//Make them giggle
+	if(prob(40))
+		C.emote("giggle")
+	//Make them jitter
+	if(prob(20))
+		C.jitteriness = max(C.jitteriness, 30)
+
+/datum/reagent/consumable/ethanol/skullfucker_deluxe/overdose_process(mob/living/M)
+	. = ..()
+	//Do nothing if they're already fwuffy OwO
+	var/obj/item/organ/tongue/T = M.getorganslot(ORGAN_SLOT_TONGUE)
+	if(istype(T, /obj/item/organ/tongue/fluffy))
+		return
+
+	//Replace their tongue with a fwuffy one
+	var/obj/item/organ/tongue/nT = new /obj/item/organ/tongue/fluffy
+	T.Remove()
+	nT.Insert(M)
+	T.moveToNullspace()//To valhalla
+	to_chat(M, "<span class='big warning'>Your tongue feels... weally fwuffy!!</span>")

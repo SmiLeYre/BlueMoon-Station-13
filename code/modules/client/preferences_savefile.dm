@@ -477,6 +477,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["preferred_chaos"] >> preferred_chaos
 	S["auto_ooc"] >> auto_ooc
 	S["no_tetris_storage"] >> no_tetris_storage
+	S["recoil_screenshake"] >> recoil_screenshake
 
 	// Splurt
 	S["be_victim"]				>> be_victim
@@ -544,6 +545,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	cit_toggles = sanitize_integer(cit_toggles, 0, 16777215, initial(cit_toggles))
 	auto_ooc = sanitize_integer(auto_ooc, 0, 1, initial(auto_ooc))
 	no_tetris_storage = sanitize_integer(no_tetris_storage, 0, 1, initial(no_tetris_storage))
+	recoil_screenshake = sanitize_integer(recoil_screenshake, 0, 800, initial(recoil_screenshake))
 	key_bindings = sanitize_islist(key_bindings, list())
 	modless_key_bindings = sanitize_islist(modless_key_bindings, list())
 	favorite_outfits = SANITIZE_LIST(favorite_outfits)
@@ -677,6 +679,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["preferred_chaos"], preferred_chaos)
 	WRITE_FILE(S["auto_ooc"], auto_ooc)
 	WRITE_FILE(S["no_tetris_storage"], no_tetris_storage)
+	WRITE_FILE(S["recoil_screenshake"], recoil_screenshake)
 
 	// Splurt
 	WRITE_FILE(S["be_victim"], be_victim)

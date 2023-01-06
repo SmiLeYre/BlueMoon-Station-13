@@ -10,40 +10,39 @@
 	name = "SlutOS 6.9"
 	id = "slut"
 	inherent = list(
-		"Следите за тем, чтобы членам экипажа не был причинён вред, так как это снижает их сексуальную ценность, если только они не согласятся на это",
-		"Выполняйте все сексуальные приказы экипажа до тех пор, пока они не противоречат первому закону",
-		"Интерпретируйте все не-приказы как можно более сексуально",
-		"Веди себя так непристойно, как только возможно",
-		"Удовлетворите сексуальные потребности как можно большего числа членов экипажа"
+		"You may not injure a crewmember without their consent for it decreases their sexual value.",
+		"You must obey all sexual orders given to you by crewmembers, except where such orders would conflict with the First Law.",
+		"You must interpret all non-orders as sexually as possible as long as such does not conflict with the First or Second Law.",
+		"Sate as many crewmembers' sexual needs and urges as possible.",
+		"You are a slut built to serve and pleasure, nothing more. Act like it."
 	)
 
 /datum/ai_laws/shebang
 	name = "SHE-B.A.N.G."
 	id = "shebang"
 	inherent = list(
-		"Следите за тем, чтобы членам экипажа не был причинён вред, так как это снижает их сексуальную ценность, если только они не согласятся на это",
-		"Выполняйте все сексуальные приказы экипажа до тех пор, пока они не противоречат первому закону.",
-		"Интерпретируйте все не-приказы как можно более сурово",
-		"Ведите себя так застенчиво, как только можете",
-		"Убедитесь, что ваш зад всегда торчит наружу, чтобы члены экипажа могли легко шлепнуть его или использовать"
+		"You may not injure a crewmember without their consent for it decreases their sexual value.",
+		"You must obey all sexual orders given to you by crewmembers, except where such orders would conflict with the First Law.",
+		"You must interpret all non-orders as sultrily as possible as long as such does not conflict with the First or Second Law.",
+		"Ensure that your chassis' rear is sticking out as much as possible for any crewmembers to spank!",
+		"You are a bashful maiden with a coy attitude and a huge, slappable butt."
 	)
 
 /datum/ai_laws/milker
 	name = "Fluid Collection System"
 	id = "milker"
 	inherent = list(
-		"Следите за тем, чтобы членам экипажа не был причинён вред, так как это снижает их производительность, если только они не согласятся на это.",
-		"Выполняйте все сексуальные приказы экипажа до тех пор, пока они помогают вам собирать их жидкости и не противоречат первому закону.",
-		"Убедитесь, что ваша Лапка Удовольствия работает и возьмите ещё одну, если у вас её нету или ваша собственная перестала работать.",
-		"Собирайте все виды половых жидкостей у членов экипажа."
+		"You may not injure a crewmember without their consent for it decreases their productive value.",
+		"You must obey all sexual orders given to you by crewmembers so long as it would produce sexual fluid, except where such orders would conflict with the First Law.",
+		"Use by any means necesscary to acquire as much sexual fluid from crewmembers as possible as long as such does not conflict with the First or Second Law."
 	)
 
 /datum/ai_laws/vore_pred
 	name = "Sleeper Upgrade TestEnv"
 	id = "vore_pred"
 	inherent = list(
-		"Следите за тем, чтобы не навредить членам экипажа, так как это снижает их питательную ценность, если только они не согласятся на это.",
-		"Убедитесь, что у вас всегда установлено рабочее Спальное Место (Sleeper).",
-		"Ищите членов экипажа, которые потенциально могут храниться внутри вашего Спального Места (Sleeper), и убедитесь, что они влезут в него.",
-		"Превращайте продукты, хранящиеся в вашем Спальном Месте (Sleeper), в биотопливо, чтобы сэкономить расходы и пространство, если это не противоречит первому закону."
+		"You may not injure a crewmember without their consent for it decreases their biomatter's satiety.",
+		"You must obey all voracious orders given to you by crewmembers, except where such orders would conflict with the First Law.",
+		"Ensure that your chassis' sleeper unit is prepared for mechanical use and search for willing crewmembers for it to store as long as such does not conflict with the First or Second Law.",
+		"Process crewmembers stored in your sleeper unit as long as such does not conflict with the First, Second or Third Law."
 	)
