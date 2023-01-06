@@ -74,7 +74,7 @@
 					if(CUM_TARGET_NIPPLE)
 						cumin = TRUE
 						if(partner.has_breasts())
-							message = "кончает в сосок \<b>[partner]</b>!."
+							message = "кончает в сосок <b>[partner]</b>!."
 							target_gen = partner.getorganslot(ORGAN_SLOT_BREASTS)
 						else
 							message = "кончает на грудь и шею <b>[partner]</b>."
@@ -789,13 +789,15 @@
 
 /mob/living/proc/do_crotchfart(mob/living/carbon/target)
 	var/message
-	//var/u_His = p_their()
+	/* Bluemoon edit - DON'T FUCKIN' TOUCH
+	var/u_His = p_their()
 	var/genital_name = "crotch"
 	if(target.has_penis(REQUIRE_EXPOSED) || target.has_strapon(REQUIRE_EXPOSED))
 		genital_name = target.get_penetrating_genital_name()
 	else if(target.has_vagina(REQUIRE_EXPOSED))
 		var/obj/item/organ/genital/vagina/genital = target.getorganslot(ORGAN_SLOT_VAGINA)
 		genital_name = genital.name
+	*/
 
 	//var/list/asscheeks = list("asscheeks", "buttcheeks", "ass buns", "booty pillows", "dumptruck spheres", "[pick(list("jiggly", "bouncy", "wobbly"))] buttocks")
 	//var/list/ass = list("ass", "butt", "dumptruck", "tush", "badonk", "booty", "rump")
@@ -928,12 +930,14 @@
 	//var/t_His = target.p_their()
 	//var/u_His = p_their()
 
+	/* Bluemoon edit - DON'T FUCKIN' TOUCH
 	var/genital_name = "crotch"
 	if(target.has_penis(REQUIRE_EXPOSED) || target.has_strapon(REQUIRE_EXPOSED))
 		genital_name = target.get_penetrating_genital_name()
 	else if(target.has_vagina(REQUIRE_EXPOSED))
 		var/obj/item/organ/genital/vagina/genital = target.getorganslot(ORGAN_SLOT_VAGINA)
 		genital_name = genital.name
+	*/
 
 	//var/list/asscheeks = list("asscheeks", "buttcheeks", "ass buns", "booty pillows", "dumptruck spheres", "[pick(list("jiggly", "bouncy", "wobbly"))] buttocks")
 	//var/list/ass = list("ass", "butt", "dumptruck", "tush", "badonk", "booty", "rump")
