@@ -6,7 +6,8 @@
 	name = "lightning holo-cloak"
 	desc = "When equipped, a strange hologram is activated, and the fabric of the cloak itself disappears, and lightning starts projecting all over the body."
 	icon_state = "lightning_holo"
-	item_state = "lightning_holo"
+	item_state = "lightning_holo_blue"
+	actions_types = list(/datum/action/item_action/adjust)
 	var/static/list/lightning_holocloak_designs
 	var/choice = null
 
@@ -14,10 +15,10 @@
 	.=..()
 	if(!lightning_holocloak_designs)
 		lightning_holocloak_designs = list(
-			"Blue lightnings" = image(icon = src.mob_overlay_icon, item_state = "lightning_holo_blue"),
-			"Pink lightnings" = image(icon = src.mob_overlay_icon, item_state = "lightning_holo_pink"),
-			"Red lightnings" = image(icon = src.mob_overlay_icon, item_state = "lightning_holo_red"),
-			"Yellow lightnings" = image(icon = src.mob_overlay_icon, item_state = "lightning_holo_yellow")
+			"Blue lightnings" = image(icon = src.icon, icon_state = "lightning_holo_blue"),
+			"Pink lightnings" = image(icon = src.icon, icon_state = "lightning_holo_pink"),
+			"Red lightnings" = image(icon = src.icon, icon_state = "lightning_holo_red"),
+			"Yellow lightnings" = image(icon = src.icon, icon_state = "lightning_holo_yellow")
 			)
 
 /obj/item/clothing/suit/donator/bm/lightning_holocloak/ui_action_click(mob/user)
