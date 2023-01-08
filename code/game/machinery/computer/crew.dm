@@ -51,6 +51,7 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 	jobs["Research Director"] = 30
 	jobs["Scientist"] = 31
 	jobs["Roboticist"] = 32
+	jobs["Expeditor"] = 33 //BlueMoon edit
 	// Engineering
 	jobs["Chief Engineer"] = 40
 	jobs["Station Engineer"] = 41

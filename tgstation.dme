@@ -3849,6 +3849,7 @@
 #include "modular_bluemoon\phenyamomota\code\modules\clothing\labcoat.dm"
 #include "modular_bluemoon\phenyamomota\code\modules\clothing\under_med.dm"
 #include "modular_bluemoon\phenyamomota\code\modules\clothing\under_sci.dm"
+#include "modular_bluemoon\phenyamomota\code\modules\jobs\job_types\expeditor.dm"
 #include "modular_bluemoon\phenyamomota\code\modules\jobs\job_types\research_director.dm"
 #include "modular_bluemoon\phenyamomota\code\modules\tools\tools.dm"
 #include "modular_bluemoon\SmiLeY\all_in\landmarks.dm"
