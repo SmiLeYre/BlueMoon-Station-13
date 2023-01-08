@@ -30,7 +30,7 @@
 	jobtype = /datum/job/expeditor
 	id = /obj/item/card/id
 	belt = /obj/item/storage/belt/military
-	ears = /obj/item/radio/headset/headset_exp
+	ears = /obj/item/radio/headset/headset_sci
 	uniform = /obj/item/clothing/under/syndicate/camo
 	suit = /obj/item/clothing/suit/armor/vest
 	head = /obj/item/clothing/head/helmet
@@ -43,10 +43,19 @@
 
 /obj/item/radio/headset/headset_exp
 	name = "expeditor's headset"
-	desc = "This is used by bridge officers."
-	icon_state = "sci_headset"
-	item_state = "sci_headset"
+	desc = "This is used by expeditors."
+	icon = 'modular_bluemoon/phenyamomota/icon/obj/radio.dmi'
+	mob_overlay_icon = 'modular_bluemoon/phenyamomota/icon/mob/ears.dmi'
+	icon_state = "exp_headset"
+	item_state = "exp_headset"
 	keyslot = new /obj/item/encryptionkey/headset_sci
+
+/obj/item/radio/headset/headset_exp/bowman
+	name = "expeditor's bowman headset"
+	desc = "This is used by expeditors. It protects from flashbangs"
+	icon_state = "exp_headset_alt"
+	item_state = "exp_headset_alt"
+	bowman = TRUE
 
 /obj/item/gun/energy/e_gun/mini/expeditor
 	name = "expeditor's miniature energy gun"
