@@ -1631,6 +1631,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				else
 					HTML += "<font color=red>[rank]</font></td><td><font color=red><b> \[NON-HUMAN\]</b></font></td></tr>"
 				continue
+			if(job.is_species_blacklisted(user.client))
+				HTML += "<font color=red>[rank]</font></td><td><font color=red><b> \[SPECIES BLACKLISTED\]</b></font></td></tr>"
+				continue
 			if((job_preferences["[SSjob.overflow_role]"] == JP_LOW) && (rank != SSjob.overflow_role) && !jobban_isbanned(user, SSjob.overflow_role))
 				HTML += "<font color=orange>[rank]</font></td><td></td></tr>"
 				continue

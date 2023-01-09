@@ -91,6 +91,8 @@ SUBSYSTEM_DEF(job)
 			return FALSE
 		if(job.required_playtime_remaining(player.client))
 			return FALSE
+		if(job.is_species_blacklisted(player.client))
+			return FALSE
 		var/position_limit = job.total_positions
 		if(!latejoin)
 			position_limit = job.spawn_positions
@@ -114,6 +116,9 @@ SUBSYSTEM_DEF(job)
 			JobDebug("FOC player not old enough, Player: [player]")
 			continue
 		if(job.required_playtime_remaining(player.client))
+			JobDebug("FOC player not enough xp, Player: [player]")
+			continue
+		if(job.is_species_blacklisted(player.client))
 			JobDebug("FOC player not enough xp, Player: [player]")
 			continue
 		if(!player.client.prefs.pref_species.qualifies_for_rank(job.title, player.client.prefs.features))
@@ -159,6 +164,10 @@ SUBSYSTEM_DEF(job)
 			continue
 
 		if(job.required_playtime_remaining(player.client))
+			JobDebug("GRJ player not enough xp, Player: [player]")
+			continue
+
+		if(job.is_species_blacklisted(player.client))
 			JobDebug("GRJ player not enough xp, Player: [player]")
 			continue
 
@@ -337,6 +346,10 @@ SUBSYSTEM_DEF(job)
 					continue
 
 				if(job.required_playtime_remaining(player.client))
+					JobDebug("DO player not enough xp, Player: [player], Job:[job.title]")
+					continue
+
+				if(job.is_species_blacklisted(player.client))
 					JobDebug("DO player not enough xp, Player: [player], Job:[job.title]")
 					continue
 
