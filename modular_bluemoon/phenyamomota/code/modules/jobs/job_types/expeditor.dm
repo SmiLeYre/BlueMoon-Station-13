@@ -73,6 +73,7 @@
 	desc = "Standart combat turtleneck with printed expiditionary marks."
 	icon_state = "tactical_exp"
 	item_state = "tactical_exp"
+	mutantrace_variation = STYLE_DIGITIGRADE|USE_SNEK_CLIP_MASK|USE_QUADRUPED_CLIP_MASK
 
 /obj/item/clothing/shoes/combat/exp
 	icon = 'modular_bluemoon/phenyamomota/icon/obj/clothing/shoes.dmi'
