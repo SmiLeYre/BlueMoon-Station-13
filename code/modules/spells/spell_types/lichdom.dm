@@ -129,20 +129,24 @@
 	if(!item_turf)
 		return "[src] is not at a turf? NULLSPACE!?"
 
-	var/mob/old_body = mind.current
-	var/mob/living/carbon/human/lich = new(item_turf)
+	var/mob/living/old_body = mind.current
+	var/mob/living/carbon/human/lich_fetch = new(mind.current)
+
+	lich_fetch.real_name = mind.name
+	var/mob/living/carbon/human/lich = lich_fetch
+	lich.set_species(/datum/species/skeleton/space)
+	lich.dna.update_dna_identity()
 
 	lich.equip_to_slot_or_del(new /obj/item/clothing/shoes/sandal/magic(lich), ITEM_SLOT_FEET)
 	lich.equip_to_slot_or_del(new /obj/item/clothing/under/color/black(lich), ITEM_SLOT_ICLOTHING)
 	lich.equip_to_slot_or_del(new /obj/item/clothing/suit/wizrobe/black(lich), ITEM_SLOT_OCLOTHING)
 	lich.equip_to_slot_or_del(new /obj/item/clothing/head/wizard/black(lich), ITEM_SLOT_HEAD)
 
-	lich.real_name = mind.name
 	mind.transfer_to(lich)
 	mind.grab_ghost(force=TRUE)
-	lich.hardset_dna(null,null,null,lich.real_name,null, new /datum/species/skeleton/space)
 	to_chat(lich, "<span class='warning'>Your bones clatter and shudder as you are pulled back into this world!</span>")
 	var/turf/body_turf = get_turf(old_body)
+	lich.forceMove(item_turf)
 	lich.DefaultCombatKnockdown(200 + 200*resurrections)
 	resurrections++
 	if(old_body && old_body.loc)
