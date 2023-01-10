@@ -44,3 +44,9 @@
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/donator/bm/lightning_holocloak
 	ckeywhitelist = list("weirdbutton")
+
+/datum/gear/donator/bm/case_ds
+	name = "military case"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/storage/box/donator/bm/case_ds
+	ckeywhitelist = list("phenyamomota")
