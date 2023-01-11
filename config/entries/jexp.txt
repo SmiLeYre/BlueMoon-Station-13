@@ -21,3 +21,8 @@
 #USE_EXP_RESTRICTIONS_OTHER
 ## Allows admins to bypass job playtime requirements.
 #USE_EXP_RESTRICTIONS_ADMIN_BYPASS
+
+##BLUE MOON CONFIGS AHEAD!!!
+
+##Forbids command positions for humans
+XENO_SUPERMACY

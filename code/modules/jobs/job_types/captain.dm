@@ -15,7 +15,6 @@
 	exp_type = EXP_TYPE_COMMAND
 	exp_type_department = EXP_TYPE_COMMAND
 	considered_combat_role = TRUE
-	species_blacklist = (SPECIES_HUMAN)
 
 	outfit = /datum/outfit/job/captain
 	plasma_outfit = /datum/outfit/plasmaman/captain
