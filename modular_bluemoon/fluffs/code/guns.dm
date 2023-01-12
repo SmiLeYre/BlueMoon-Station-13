@@ -1,11 +1,11 @@
-/obj/item/gun/ballistic/automatic/pistol/donator/bm/steyr
+/obj/item/gun/ballistic/automatic/pistol/steyr
 	name = "\improper Steyr M1912"
 	desc = "Self-loading pistol manufactured by Austria-Hungary. Modified to 10mm."
 	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
 	icon_state = "steyr_m1912"
 	can_suppress = FALSE
 
-/obj/item/gun/ballistic/automatic/pistol/donator/bm/steyr/update_icon_state()
+/obj/item/gun/ballistic/automatic/pistol/steyr/update_icon_state()
 	if(current_skin)
 		icon_state = "[unique_reskin[current_skin]][chambered ? "" : "-e"]"
 	else
@@ -40,7 +40,7 @@
 	desc = "A storage case for a Steyr M1912. Bullets for everyone! !"
 
 /obj/item/storage/secure/briefcase/hos/steyr/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/pistol/donator/bm/steyr(src)
+	new /obj/item/gun/ballistic/automatic/pistol/steyr(src)
 	new /obj/item/ammo_box/magazine/m10mm(src)
 	new /obj/item/ammo_box/magazine/m10mm(src)
 	new /obj/item/ammo_box/magazine/m10mm(src)
