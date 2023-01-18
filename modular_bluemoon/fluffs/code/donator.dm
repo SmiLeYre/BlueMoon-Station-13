@@ -62,3 +62,15 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/under/syndicate/rus_army_alt
 	ckeywhitelist = list("No_Terra-Vi-Ja")
+
+/datum/gear/donator/bm/cerberus_helmet
+	name = "cerberus helmet"
+	slot = ITEM_SLOT_HEAD
+	path = /obj/item/clothing/head/donator/bm/cerberus_helmet
+	ckeywhitelist = list("krashly")
+
+/datum/gear/donator/bm/cerberus_suit
+	name = "cerberus suit"
+	slot = ITEM_SLOT_OCLOTHING
+	path = /obj/item/clothing/suit/donator/bm/cerberus_suit
+	ckeywhitelist = list("krashly")

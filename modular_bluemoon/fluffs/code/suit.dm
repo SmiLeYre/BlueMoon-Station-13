@@ -30,3 +30,9 @@
 			"name" = "yellow lightning holo-cloak"
 		)
 	)
+
+/obj/item/clothing/suit/donator/bm/cerberus_suit
+	name = "cerberus coat"
+	desc = "Бронированое пальто болотного цвета с кучей пуговиц. Ходят слухи, что новых уже давно не делают, а те что имеются - снимают с трупов для дальнейшего ношения. От него пованивает тухлым мясом."
+	icon_state = "cerberussuit_mob"
+	item_state = "cerberussuit_mob"
