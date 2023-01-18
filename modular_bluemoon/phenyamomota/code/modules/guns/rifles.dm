@@ -33,6 +33,32 @@
 	max_ammo = 30
 	multiple_sprites = 2
 
+/obj/item/gun/ballistic/automatic/m16a4/tactical
+	name = "\improper tactical M16A4 rifle"
+	desc = "Aт american automatic rifle chambered for the 5.56 round, designed for use by Special Ops."
+	icon_state = "m16_tactical"
+	burst_size = 5
+	fire_delay = 10
+
+/obj/item/gun/ballistic/automatic/m16a4/tactical/update_icon_state()
+	if(magazine)
+		icon_state = "m16_tactical"
+	else
+		icon_state = "m16_tactical-e"
+
+/obj/item/gun/ballistic/automatic/m16a4/stock
+	name = "\improper stock M16A4 rifle"
+	desc = "Aт american automatic rifle chambered for the 5.56 round, just bought from nearest gun-shop."
+	icon_state = "m16_stock"
+	burst_size = 3
+	fire_delay = 4
+
+/obj/item/gun/ballistic/automatic/m16a4/stock/update_icon_state()
+	if(magazine)
+		icon_state = "m16_stock"
+	else
+		icon_state = "m16_stock-e"
+
 //AK-47
 
 /obj/item/gun/ballistic/automatic/ak47
@@ -63,7 +89,31 @@
 	desc = "a banana-shaped double-stack magazine able to hold 30 rounds of 7.62 ammo."
 	icon = 'modular_bluemoon/phenyamomota/icon/obj/guns/ammo.dmi'
 	icon_state = "ak47"
-	ammo_type = /obj/item/ammo_casing/a762
-	caliber = "a762"
+	ammo_type = /obj/item/ammo_casing/a762x39
+	caliber = "a762x39"
 	max_ammo = 30
 	multiple_sprites = 2
+
+/obj/item/gun/ballistic/automatic/ak47/akm
+	name = "\improper AKM rifle"
+	desc = "A timeless human design of a carbine chambered for the 7.62 ammo. Imported from far-far-away frontier spaces."
+	icon_state = "akm"
+
+/obj/item/gun/ballistic/automatic/ak47/akm/update_icon_state()
+	if(magazine)
+		icon_state = "akm"
+	else
+		icon_state = "akm-e"
+
+/obj/item/gun/ballistic/automatic/ak47/homemade
+	name = "\improper HomeMade AK-47 rifle"
+	desc = "Totally created by some fun of guns for school-shooting by the 7.62 ammo."
+	icon_state = "ak47_hm"
+	burst_size = 3
+	fire_delay = 5
+
+/obj/item/gun/ballistic/automatic/ak47/homemade/update_icon_state()
+	if(magazine)
+		icon_state = "ak47_hm"
+	else
+		icon_state = "ak47_hm-e"
