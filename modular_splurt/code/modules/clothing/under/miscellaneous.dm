@@ -34,6 +34,7 @@
 	mob_overlay_icon = 'modular_splurt/icons/mobs/suits.dmi'
 	can_adjust = FALSE
 	mutantrace_variation = NONE
+	body_parts_covered = NONE
 
 /obj/item/clothing/under/lumberjack
 	name = "lumberjack outfit"

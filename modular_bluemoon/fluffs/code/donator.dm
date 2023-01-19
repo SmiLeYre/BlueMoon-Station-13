@@ -79,4 +79,4 @@
 	name = "Kovac Gun"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/Kovac_Kit
-	ckeywhitelist = list("Stgs")
+	ckeywhitelist = list("stgs")
