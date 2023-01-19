@@ -25,4 +25,4 @@
 ##BLUE MOON CONFIGS AHEAD!!!
 
 ##Forbids command positions for humans
-XENO_SUPERMACY
+#XENO_SUPREMACY

@@ -16,6 +16,7 @@
 	exp_type_department = EXP_TYPE_COMMAND
 	considered_combat_role = TRUE
 
+
 	outfit = /datum/outfit/job/captain
 	plasma_outfit = /datum/outfit/plasmaman/captain
 

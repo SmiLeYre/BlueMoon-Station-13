@@ -225,7 +225,7 @@
 			var/exclusive_candidate = FALSE
 			for(var/role in exclusive_roles)
 				var/datum/job/job = SSjob.GetJob(role)
-				if((role in candidate_client.prefs.job_preferences) && !jobban_isbanned(candidate_player.ckey, role) && !job.required_playtime_remaining(candidate_client)  && !job.is_species_blacklisted(candidate_client))
+				if((role in candidate_client.prefs.job_preferences) && !jobban_isbanned(candidate_player.ckey, role) && !job.required_playtime_remaining(candidate_client) /*BLUEMOON*/&& !job.is_species_blacklisted(candidate_client)/*BLUEMOON*/)
 					exclusive_candidate = TRUE
 					break
 
