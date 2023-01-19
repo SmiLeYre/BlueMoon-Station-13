@@ -3843,6 +3843,7 @@
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
+#include "modular_bluemoon\code\modules\jobs\job_types\job.dm"
 #include "modular_bluemoon\code\modules\mob\bluemoon_emotes.dm"
 #include "modular_bluemoon\fluffs\code\accessories.dm"
 #include "modular_bluemoon\fluffs\code\donator.dm"
