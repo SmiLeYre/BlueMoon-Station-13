@@ -238,7 +238,7 @@
 	key = "growl2"
 	key_third_person = "growls2"
 	message = "growls aggressively."
-	sound = 'sound/voice/growl.ogg'
+	sound = 'sound/voice/growl2.ogg'
 
 /datum/emote/sound/human/protect
 	key = "protect"

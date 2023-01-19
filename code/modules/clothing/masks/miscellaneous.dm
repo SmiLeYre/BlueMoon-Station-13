@@ -29,7 +29,7 @@
 	visor_flags_cover = MASKCOVERSMOUTH
 	gas_transfer_coefficient = 0.9
 	permeability_coefficient = 0.01
-	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 25, RAD = 0, FIRE = 0, ACID = 0)
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 100, RAD = 0, FIRE = 0, ACID = 0)
 	actions_types = list(/datum/action/item_action/adjust)
 	mutantrace_variation = STYLE_MUZZLE
 
@@ -41,7 +41,7 @@
 	visor_flags_inv = null
 	visor_flags_cover = null
 	permeability_coefficient = 1
-	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0)
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 100, RAD = 0, FIRE = 0, ACID = 0)
 
 /obj/item/clothing/mask/surgical/attack_self(mob/user)
 	adjustmask(user)
@@ -156,6 +156,19 @@
         return
     adjustmask(user)
     return TRUE
+
+/obj/item/clothing/mask/magickitsune
+	name = "Magical Kitsune Mask"
+	desc = "An oriental styled porcelain mask, this one is white and red. You can feel ancient power emitting from it!"
+	icon_state = "magickitsunemask"
+	item_state = "magickitsunemask"
+	clothing_flags = ALLOWINTERNALS
+	w_class = WEIGHT_CLASS_TINY
+	flags_cover = MASKCOVERSMOUTH
+	flags_inv = HIDEFACE|HIDEFACIALHAIR
+	visor_flags_inv = HIDEFACE|HIDEFACIALHAIR
+	visor_flags_cover = MASKCOVERSMOUTH
+	slot_flags = ITEM_SLOT_MASK
 
 /obj/item/clothing/mask/pig
 	name = "pig mask"
