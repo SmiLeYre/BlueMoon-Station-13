@@ -78,6 +78,8 @@
 	var/list/extra_titles = list(
 		"Science Administrator",
 		"Cybersun Industries Specialist",
+		"CEO of Sex",
+		"Sex Research Director",
 		"Research Manager"
 	)
 	LAZYADD(alt_titles, extra_titles)

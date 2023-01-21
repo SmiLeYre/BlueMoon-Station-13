@@ -38,7 +38,7 @@
 		if(victim.glasses == src)
 			victim.cure_trauma_type(/datum/brain_trauma/induced_hypnosis, TRAUMA_RESILIENCE_BASIC)
 
-/obj/item/clothing/glasses/hypno/attack_self(mob/user) //Setting up hypnotising phrase
+/obj/item/clothing/glasses/hypno/attack_self(mob/user) //Setting up hypnotizing phrase
 	. = ..()
 	codephrase = stripped_input(user, "Change the hypnotic phrase")
 	// Notice to the user that this shouldn't be used outside of kink related purpose.

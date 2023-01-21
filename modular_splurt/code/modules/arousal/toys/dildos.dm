@@ -1,8 +1,10 @@
 /obj/item/dildo/flared/gigantic
-	name 				= "bitch breaker"
+	name 				= "Bitch Breaker"
 	desc 				= "You can barely carry this thing! Meant for... \"advanced\" interrogation techniques."
-	dildo_size 			= 5
+	dildo_size 			= 4
+	force				= 10
 	attack_verb 		= list("penetrated", "slapped", "gaped", "prolapsed", "inseminated", "destroyed", "broke", "demolished", "whacked")
+	hitsound = 'sound/weapons/klonk.ogg'
 
 /obj/item/dildo/flared/gigantic/suicide_act(mob/living/user)
 	if(do_after(user,45,target=src))

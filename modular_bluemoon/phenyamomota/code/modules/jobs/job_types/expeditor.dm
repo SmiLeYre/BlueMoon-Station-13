@@ -20,7 +20,7 @@
 	minimal_access = list(ACCESS_ROBOTICS, ACCESS_RESEARCH, ACCESS_MINERAL_STOREROOM, ACCESS_TECH_STORAGE, ACCESS_GATEWAY, ACCESS_EVA, ACCESS_TELEPORTER)
 	paycheck = PAYCHECK_HARD
 	paycheck_department = ACCOUNT_SCI
-	alt_titles = list("Space Expeditor", "Gateway Explorer", "Space Explorer", "Dildo Explorer", "Exploration Field Medic", "Exploration Engineer", "Exploration Mercenary", "Exploration Operative")
+	alt_titles = list("Space Expeditor", "Gateway Explorer", "Space Explorer", "Sexplorer", "Sexpeditor", "Exploration Field Medic", "Exploration Engineer", "Exploration Mercenary", "Exploration Operative")
 	display_order = JOB_DISPLAY_ORDER_EXPEDITOR
 	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/prosopagnosia, /datum/quirk/insanity)
 	threat = 2
@@ -91,6 +91,23 @@
 	desc = "Base armor vest designed for ordinary expeditors. With cool speedy violet vertical line."
 	icon_state = "vest_exp"
 	item_state = "vest_exp"
+	unique_reskin = list(
+		"Standart" = list(
+			"icon_state" = "vest_exp",
+			"item_state" = "vest_exp",
+			"name" = "expeditionary armor vest"
+		),
+		"Forest" = list(
+			"icon_state" = "vest_exp_forest",
+			"item_state" = "vest_exp_forest",
+			"name" = "forest expeditionary armor vest"
+		),
+		"Desert" = list(
+			"icon_state" = "vest_exp_desert",
+			"item_state" = "vest_exp_desert",
+			"name" = "desert expeditionary armor vest"
+		)
+	)
 
 /obj/item/clothing/head/helmet/exp
 	icon = 'modular_bluemoon/phenyamomota/icon/obj/clothing/head.dmi'
@@ -99,3 +116,20 @@
 	desc = "Sturdy ballistic helmet with violet protective glass."
 	icon_state = "helmet_exp"
 	item_state = "helmet_exp"
+	unique_reskin = list(
+		"Standart" = list(
+			"icon_state" = "helmet_exp",
+			"item_state" = "helmet_exp",
+			"name" = "expeditionary helmet"
+		),
+		"Forest" = list(
+			"icon_state" = "helmet_exp_forest",
+			"item_state" = "helmet_exp_forest",
+			"name" = "forest expeditionary helmet"
+		),
+		"Desert" = list(
+			"icon_state" = "helmet_exp_desert",
+			"item_state" = "helmet_exp_desert",
+			"name" = "desert expeditionary helmet"
+		)
+	)

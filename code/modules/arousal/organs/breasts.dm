@@ -14,8 +14,8 @@
 	shape = DEF_BREASTS_SHAPE
 	genital_flags = CAN_MASTURBATE_WITH|CAN_CLIMAX_WITH|GENITAL_FUID_PRODUCTION|GENITAL_CAN_AROUSE|UPDATE_OWNER_APPEARANCE|GENITAL_UNDIES_HIDDEN|CAN_CUM_INTO|HAS_EQUIPMENT
 	masturbation_verb = "massage"
-	arousal_verb = "Your breasts start feeling sensitive"
-	unarousal_verb = "Your breasts no longer feel sensitive"
+	arousal_verb = "Ваши соски становятся намного более чувствительными и твёрдыми"
+	unarousal_verb = "Ваши сокси больше не такие твёрдые и чувствительные"
 	orgasm_verb = "leaking"
 	fluid_transfer_factor = 0.5
 	layer_index = BREASTS_LAYER_INDEX

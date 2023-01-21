@@ -18,7 +18,7 @@
 		/obj/item/clothing/suit/armor/vest/stripper/bikini = 5,
 		/obj/item/clothing/neck/petcollar/locked/security = 5,
 		/obj/item/grenade/secbed = 3,
-		/obj/item/dildo/flared/gigantic = 1
+		/obj/item/dildo/flared/gigantic = 3
 	)
 	LAZYADD(products, extra_products)
 	LAZYADD(contraband, extra_contraband)

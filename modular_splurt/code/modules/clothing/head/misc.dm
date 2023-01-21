@@ -26,7 +26,7 @@
 	name = "press helmet"
 	icon_state = "press_helmet"
 	item_state = "press_helmet"
-	desc = "A lightweight helmet for reporting on security. You swear up and down it is made of kevlar and not old cloth and plastic."
+	desc = "A lightweight helmet for reporting on security. You swear up and down it is made of Kevlar and not old cloth and plastic."
 	icon = 'modular_splurt/icons/obj/clothing/head.dmi'
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/head.dmi'
 	flags_inv = HIDEHAIR
@@ -81,7 +81,7 @@
 
 /datum/design/cbrn/mopphood
 	name = "MOPP Hood"
-	desc = "A MOPP hood with an intergreted helmet"
+	desc = "A MOPP hood with an integrated helmet"
 	id = "mopp_hood"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/plastic = 200, /datum/material/uranium = 50, /datum/material/iron = 200)

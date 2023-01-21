@@ -11,7 +11,7 @@
 	supervisors = "the captain"
 	selection_color = "#509ed1"
 	req_admin_notify = 1
-	minimal_player_age = 10
+	minimal_player_age = 35
 	exp_requirements = 180
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_MEDICAL
@@ -35,7 +35,7 @@
 	threat = 2
 
 	starting_modifiers = list(/datum/skill_modifier/job/surgery, /datum/skill_modifier/job/affinity/surgery)
-	
+
 	family_heirlooms = list(
 		/obj/item/storage/firstaid/ancient/heirloom,
 		/obj/item/scalpel,

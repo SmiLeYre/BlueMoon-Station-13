@@ -9,8 +9,8 @@
 	shape = DEF_VAGINA_SHAPE
 	genital_flags = CAN_MASTURBATE_WITH|CAN_CLIMAX_WITH|GENITAL_CAN_AROUSE|GENITAL_UNDIES_HIDDEN|CAN_CUM_INTO|HAS_EQUIPMENT
 	masturbation_verb = "finger"
-	arousal_verb = "You feel wetness on your crotch"
-	unarousal_verb = "You no longer feel wet"
+	arousal_verb = "Вы чувствуете сильную влагу в вашей промежности"
+	unarousal_verb = "Возбуждение пропадает, влаги становится меньше"
 	fluid_transfer_factor = 0.1 //Yes, some amount is exposed to you, go get your AIDS
 	layer_index = VAGINA_LAYER_INDEX
 	var/cap_length = 8//D   E   P   T   H (cap = capacity)

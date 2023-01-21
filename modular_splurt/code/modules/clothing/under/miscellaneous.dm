@@ -34,10 +34,11 @@
 	mob_overlay_icon = 'modular_splurt/icons/mobs/suits.dmi'
 	can_adjust = FALSE
 	mutantrace_variation = NONE
+	body_parts_covered = NONE
 
 /obj/item/clothing/under/lumberjack
 	name = "lumberjack outfit"
-	desc = "I am a lumberjack and I am ok, I sleep all night and I work all day."
+	desc = "I am a lumberjack and I am okay, I sleep all night and I work all day."
 	icon = 'modular_splurt/icons/obj/clothing/uniforms.dmi'
 	icon_state = "lumberjack"
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/uniform.dmi'
@@ -46,7 +47,7 @@
 
 /obj/item/clothing/under/bunnysuit
 	name = "bunny outfit"
-	desc = "A simple black bunnt outfit."
+	desc = "A simple black bunny outfit."
 	icon = 'modular_splurt/icons/obj/clothing/uniforms.dmi'
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/uniform.dmi'
 	icon_state = "bunnysuit"
@@ -89,7 +90,7 @@
 
 /obj/item/clothing/under/bunnysuit/white
 	name = "white bunny outfit"
-	desc = "A simple white bunnt outfit."
+	desc = "A simple white bunny outfit."
 	icon = 'modular_splurt/icons/obj/clothing/uniforms.dmi'
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/uniform.dmi'
 	icon_state = "whitebunnysuit"
@@ -194,7 +195,7 @@
 
 /obj/item/clothing/head/helmet/space/plasmaman/security/blueshield
 	name = "head of security's plasma envirosuit helmet"
-	desc = "A plasmaman containment helmet designed for the Bluesheidl, manacing black with blue stripes."
+	desc = "A plasmaman containment helmet designed for the Blueshield, menacing black with blue stripes."
 	icon_state = "bs_envirohelm"
 	item_state = "bs_envirohelm"
 	icon = 'modular_splurt/icons/obj/clothing/head.dmi'
@@ -203,7 +204,7 @@
 
 /obj/item/clothing/under/rank/bridgeofficer
 	name = "bridge officer outfit"
-	desc = "The uniform of a bridge officer. It makes you feel extremly importnant, even if you are not."
+	desc = "The uniform of a bridge officer. It makes you feel extremely important, even if you are not."
 	icon = 'modular_splurt/icons/obj/clothing/uniforms.dmi'
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/uniform.dmi'
 	icon_state = "bridgesec"
@@ -225,7 +226,7 @@
 
 /obj/item/clothing/under/rank/bridgeofficer/formal
 	name = "bridge officer formal outfit"
-	desc = "The uniform of a bridge officer. Its a formal varaint."
+	desc = "The uniform of a bridge officer. Its a formal variant."
 	icon = 'modular_splurt/icons/obj/clothing/uniforms.dmi'
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/uniform.dmi'
 	icon_state = "bridgesecformal"
@@ -281,7 +282,7 @@
 
 /obj/item/clothing/under/goner/fake/poly
 	name = "polychromic trencher uniform"
-	desc = "An utilitarian uniform with polychromatic spots."
+	desc = "An utilitarian uniform with polychromic spots."
 	var/list/poly_colors = list("#E6E6E6")
 
 /obj/item/clothing/under/goner/fake/poly/ComponentInitialize()

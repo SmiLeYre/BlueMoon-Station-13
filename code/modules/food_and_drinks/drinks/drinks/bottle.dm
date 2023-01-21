@@ -16,6 +16,41 @@
 	isGlass = TRUE
 	foodtype = ALCOHOL
 
+/obj/item/reagent_containers/food/drinks/bottle
+	var/hole = CUM_TARGET_VAGINA
+
+/obj/item/reagent_containers/food/drinks/bottle/CtrlShiftClick(mob/living/carbon/human/user as mob)
+	hole = hole == CUM_TARGET_VAGINA ? CUM_TARGET_ANUS : CUM_TARGET_VAGINA
+	to_chat(user, "<span class='notice'>Now targetting \the [hole].</span>")
+
+/obj/item/reagent_containers/food/drinks/bottle/attack(mob/living/target, mob/living/user)
+	if (BODY_ZONE_PRECISE_GROIN && user.a_intent == INTENT_HELP && isliving(target) && target.Adjacent(user))
+		if(do_mob(user, target, rand(10,20)))
+			do_eblya(target, user)
+	else
+		. = ..()
+
+/obj/item/reagent_containers/food/drinks/bottle/proc/do_eblya(mob/living/target, mob/living/user)
+	var/message = ""
+	var/lust_amt = 0
+	if(ishuman(target) && (target?.client?.prefs?.toggles & VERB_CONSENT))
+		if(user.zone_selected == BODY_ZONE_PRECISE_GROIN)
+			switch(hole)
+				if(CUM_TARGET_VAGINA)
+					if(target.has_vagina(REQUIRE_EXPOSED))
+						message = (user == target) ? pick("крепко обхватывает '\the [src]' и начинает пихать это прямо в свою киску.", "запихивает '\the [src]' в свою киску", "постанывает и садится на '\the [src]'.") : pick("трахает <b>[target]</b> прямо в киску с помощью '\the [src]'", "засовывает '\the [src]' прямо в киску <b>[target]</b>.")
+						lust_amt = NORMAL_LUST
+				if(CUM_TARGET_ANUS)
+					if(target.has_anus(REQUIRE_EXPOSED))
+						message = (user == target) ? pick("крепко обхватывает '\the [src]' и начинает пихать это прямо в свою попку.","запихивает '\the [src]' прямо в свою собственную попку.", "постанывает и садится на '\the [src]'.") : pick("трахает <b>[target]</b> прямо в попку '\the [src]'", "активно суёт '\the [src]' прямо в попку <b>[target]</b>.")
+						lust_amt = NORMAL_LUST
+	if(message)
+		user.visible_message("<span class='lewd'><b>[user]</b> [message].</span>")
+		target.handle_post_sex(lust_amt, null, user)
+		playsound(loc, pick('modular_sand/sound/interactions/bang4.ogg',
+							'modular_sand/sound/interactions/bang5.ogg',
+							'modular_sand/sound/interactions/bang6.ogg'), 70, 1, -1)
+
 /obj/item/reagent_containers/food/drinks/bottle/attack(mob/living/target, mob/living/user)
 
 	if(!target)
@@ -74,7 +109,7 @@
 
 //Keeping this here for now, I'll ask if I should keep it here.
 /obj/item/broken_bottle
-	name = "broken bottle"
+	name = "Broken Bottle"
 	desc = "A shattered glass container with sharp edges."
 	icon = 'icons/obj/drinks.dmi'
 	icon_state = "broken_bottle"
@@ -135,7 +170,7 @@
 	list_reagents = null
 
 /obj/item/reagent_containers/food/drinks/bottle/bottleofnothing
-	name = "bottle of nothing"
+	name = "Bottle of Nothing"
 	desc = "A bottle filled with nothing."
 	icon_state = "bottleofnothing"
 	list_reagents = list(/datum/reagent/consumable/nothing = 100)
@@ -163,7 +198,7 @@
 	list_reagents = null
 
 /obj/item/reagent_containers/food/drinks/bottle/holywater
-	name = "flask of holy water"
+	name = "Flask of Holy Water"
 	desc = "A flask of the chaplain's holy water."
 	icon_state = "holyflask"
 	list_reagents = list(/datum/reagent/water/holywater = 100)
@@ -174,7 +209,7 @@
 	list_reagents = list(/datum/reagent/hellwater = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/holyoil
-	name = "flask of zelus oil"
+	name = "Flask of Zelus Oil"
 	desc = "A brass flask of Zelus oil, a viscous fluid scenting of brass. Can be thrown to deal damage from afar."
 	icon_state = "zelusflask"
 	list_reagents = list(/datum/reagent/fuel/holyoil = 30)
@@ -235,7 +270,7 @@
 	list_reagents = null
 
 /obj/item/reagent_containers/food/drinks/bottle/absinthe
-	name = "extra-strong absinthe"
+	name = "Extra-Strong Absinthe"
 	desc = "An strong alcoholic drink brewed and distributed by"
 	icon_state = "absinthebottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/absinthe = 100)
@@ -289,7 +324,7 @@
 	return
 
 /obj/item/reagent_containers/food/drinks/bottle/lizardwine
-	name = "bottle of lizard wine"
+	name = "Bottle of Lizard Wine"
 	desc = "An alcoholic beverage from Space China, made by infusing lizard tails in ethanol. Inexplicably popular among command staff."
 	icon_state = "lizardwine"
 	list_reagents = list(/datum/reagent/consumable/ethanol/lizardwine = 100)
@@ -395,7 +430,7 @@
 //////////////////////////JUICES AND STUFF ///////////////////////
 
 /obj/item/reagent_containers/food/drinks/bottle/orangejuice
-	name = "orange juice"
+	name = "Orange Juice"
 	desc = "Full of vitamins and deliciousness!"
 	custom_price = PRICE_CHEAP
 	icon_state = "orangejuice"
@@ -407,7 +442,7 @@
 	foodtype = FRUIT| BREAKFAST
 
 /obj/item/reagent_containers/food/drinks/bottle/bio_carton
-	name = "small carton box"
+	name = "Small Carton Box"
 	desc = "A small biodegradable carton box made from plant biomatter."
 	icon_state = "eco_box"
 	item_state = "carton"
@@ -417,7 +452,7 @@
 	isGlass = FALSE
 
 /obj/item/reagent_containers/food/drinks/bottle/cream
-	name = "milk cream"
+	name = "Milk Cream"
 	desc = "It's cream. Made from milk. What else did you think you'd find in there?"
 	custom_price = PRICE_CHEAP
 	icon_state = "cream"
@@ -429,7 +464,7 @@
 	foodtype = DAIRY
 
 /obj/item/reagent_containers/food/drinks/bottle/tomatojuice
-	name = "tomato juice"
+	name = "Tomato Juice"
 	desc = "Well, at least it LOOKS like tomato juice. You can't tell with all that redness."
 	custom_price = PRICE_CHEAP
 	icon_state = "tomatojuice"
@@ -441,7 +476,7 @@
 	foodtype = VEGETABLES
 
 /obj/item/reagent_containers/food/drinks/bottle/limejuice
-	name = "lime juice"
+	name = "Lime Juice"
 	desc = "Sweet-sour goodness."
 	custom_price = PRICE_CHEAP
 	icon_state = "limejuice"
@@ -453,7 +488,7 @@
 	foodtype = FRUIT
 
 /obj/item/reagent_containers/food/drinks/bottle/pineapplejuice
-	name = "pineapple juice"
+	name = "Pineapple Juice"
 	desc = "Extremely tart, yellow juice."
 	icon_state = "pineapplejuice"
 	item_state = "carton"
@@ -464,7 +499,7 @@
 	foodtype = FRUIT | PINEAPPLE
 
 /obj/item/reagent_containers/food/drinks/bottle/strawberryjuice
-	name = "strawberry juice"
+	name = "Strawberry Juice"
 	desc = "Slushy, reddish juice."
 	icon_state = "strawberryjuice"
 	item_state = "carton"
@@ -475,7 +510,7 @@
 	foodtype = FRUIT
 
 /obj/item/reagent_containers/food/drinks/bottle/menthol
-	name = "menthol"
+	name = "Menthol"
 	desc = "Tastes naturally minty, and imparts a very mild numbing sensation."
 	custom_price = PRICE_CHEAP
 	icon_state = "mentholbox"
@@ -498,7 +533,7 @@
 	list_reagents = null
 
 /obj/item/reagent_containers/food/drinks/bottle/blank //Don't let players print these from a lathe, bottles should be obtained in mass from the bar only.
-	name = "glass bottle"
+	name = "Glass Bottle"
 	desc = "This blank bottle is unyieldingly anonymous, offering no clues to it's contents."
 	icon_state = "glassbottle"
 	volume = 90
@@ -552,20 +587,20 @@
 		. += filling
 
 /obj/item/reagent_containers/food/drinks/bottle/blank/small
-	name = "small glass bottle"
+	name = "Small Glass Bottle"
 	desc = "This small bottle is unyieldingly anonymous, offering no clues to it's contents."
 	icon_state = "glassbottlesmall"
 	volume = 60
 
 /obj/item/reagent_containers/food/drinks/bottle/blank/pitcher
-	name = "glass pitcher"
+	name = "Glass Pitcher"
 	desc = "This is a pitcher for large amounts of liquid of any kind."
 	icon_state = "unipitcher"
 	volume = 120
 
 ////////////////////////// MOLOTOV ///////////////////////
 /obj/item/reagent_containers/food/drinks/bottle/molotov
-	name = "molotov cocktail"
+	name = "Molotov Cocktail"
 	desc = "A throwing weapon used to ignite things, typically filled with an accelerant. Recommended highly by rioters and revolutionaries. Light and toss."
 	icon_state = "vodkabottle"
 	list_reagents = list()
@@ -758,6 +793,3 @@
 	name = "Green Road"
 	icon_state = "selling_bottle"
 	desc = "Ironic name as the fruit used is from ashy plants."
-
-
-

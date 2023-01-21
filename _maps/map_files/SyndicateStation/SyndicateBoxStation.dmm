@@ -2021,6 +2021,7 @@
 /obj/item/storage/box/trackimp{
 	pixel_x = -3
 	},
+/obj/item/storage/lockbox/loyalty,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ai_monitored/security/armory)
 "aeX" = (
@@ -4100,10 +4101,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/command/blueshieldoffice)
 "aje" = (
-/obj/machinery/door/airlock/security{
-	name = "Armory";
-	req_access_txt = "3"
-	},
 /obj/machinery/door/firedoor,
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4116,6 +4113,10 @@
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/door/airlock/security{
+	name = "Armory";
+	req_access_txt = "3"
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ai_monitored/security/armory)
 "ajf" = (
@@ -14853,7 +14854,7 @@
 /obj/item/reagent_containers/food/snacks/mint{
 	pixel_y = 9
 	},
-/turf/open/floor/plasteel/dark/telecomms,
+/turf/open/floor/plasteel/dark/snowdin,
 /area/maintenance/bar)
 "aLv" = (
 /obj/machinery/firealarm{
@@ -19445,7 +19446,7 @@
 	dir = 1;
 	light_color = "#ffc1c1"
 	},
-/turf/open/floor/plasteel/dark/telecomms,
+/turf/open/floor/plasteel/dark/snowdin,
 /area/maintenance/bar)
 "aXM" = (
 /obj/structure/disposalpipe/segment{
@@ -52071,7 +52072,7 @@
 /area/command/heads_quarters/hos)
 "dKP" = (
 /obj/structure/closet/secure_closet/freezer/kitchen,
-/turf/open/floor/plasteel/dark/telecomms,
+/turf/open/floor/plasteel/dark/snowdin,
 /area/maintenance/bar)
 "dLl" = (
 /obj/item/stack/rods,
@@ -52585,7 +52586,7 @@
 /obj/item/reagent_containers/food/condiment/enzyme,
 /obj/item/kitchen/knife,
 /obj/item/kitchen/rollingpin,
-/turf/open/floor/plasteel/dark/telecomms,
+/turf/open/floor/plasteel/dark/snowdin,
 /area/maintenance/bar)
 "ewG" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -54221,7 +54222,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/open/floor/plasteel/dark/telecomms,
+/turf/open/floor/plasteel/dark/snowdin,
 /area/maintenance/bar)
 "gCC" = (
 /obj/structure/sign/poster/contraband/rebels_unite,
@@ -55358,7 +55359,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark/telecomms,
+/turf/open/floor/plasteel/dark/snowdin,
 /area/maintenance/bar)
 "iBp" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -57233,7 +57234,7 @@
 /area/security/prison)
 "leE" = (
 /obj/structure/table/reinforced,
-/turf/open/floor/plasteel/dark/telecomms,
+/turf/open/floor/plasteel/dark/snowdin,
 /area/maintenance/bar)
 "lfu" = (
 /obj/machinery/light/small,
@@ -58179,7 +58180,7 @@
 	dir = 4
 	},
 /obj/item/toy/syndicateballoon,
-/turf/open/floor/plasteel/dark/telecomms,
+/turf/open/floor/plasteel/dark/snowdin,
 /area/maintenance/bar)
 "mpY" = (
 /obj/structure/chair/sofa/right{
@@ -58216,7 +58217,7 @@
 /turf/open/floor/plating,
 /area/security/prison)
 "mqZ" = (
-/turf/open/floor/plasteel/dark/telecomms,
+/turf/open/floor/plasteel/dark/snowdin,
 /area/maintenance/bar)
 "msc" = (
 /obj/structure/disposalpipe/segment,
@@ -59468,7 +59469,7 @@
 /area/commons/fitness/recreation)
 "odx" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
-/turf/open/floor/plasteel/dark/telecomms,
+/turf/open/floor/plasteel/dark/snowdin,
 /area/maintenance/bar)
 "odV" = (
 /obj/structure/loot_pile/maint,
@@ -59879,7 +59880,7 @@
 /obj/structure/chair/sofa/corp/right{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark/telecomms,
+/turf/open/floor/plasteel/dark/snowdin,
 /area/maintenance/bar)
 "oKB" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
@@ -61656,7 +61657,7 @@
 "rBq" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave,
-/turf/open/floor/plasteel/dark/telecomms,
+/turf/open/floor/plasteel/dark/snowdin,
 /area/maintenance/bar)
 "rBK" = (
 /obj/effect/turf_decal/tile/neutral,
@@ -62228,11 +62229,11 @@
 /obj/structure/chair/sofa/corp/left{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark/telecomms,
+/turf/open/floor/plasteel/dark/snowdin,
 /area/maintenance/bar)
 "sAM" = (
 /obj/machinery/door/airlock/maintenance,
-/turf/open/floor/plasteel/dark/telecomms,
+/turf/open/floor/plasteel/dark/snowdin,
 /area/maintenance/bar)
 "sEM" = (
 /obj/machinery/button/door{
@@ -62749,7 +62750,7 @@
 /area/maintenance/starboard/aft)
 "tur" = (
 /obj/machinery/deepfryer,
-/turf/open/floor/plasteel/dark/telecomms,
+/turf/open/floor/plasteel/dark/snowdin,
 /area/maintenance/bar)
 "tvi" = (
 /obj/structure/cable{
@@ -63310,7 +63311,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/turf/open/floor/plasteel/dark/telecomms,
+/turf/open/floor/plasteel/dark/snowdin,
 /area/maintenance/bar)
 "udF" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -63525,7 +63526,7 @@
 /area/maintenance/fore)
 "usO" = (
 /obj/structure/chair/sofa/corp/left,
-/turf/open/floor/plasteel/dark/telecomms,
+/turf/open/floor/plasteel/dark/snowdin,
 /area/maintenance/bar)
 "uua" = (
 /obj/machinery/atmospherics/components/binary/valve,
@@ -63885,6 +63886,7 @@
 /area/hallway/primary/central)
 "uXj" = (
 /obj/machinery/light,
+/obj/item/multitool,
 /turf/open/floor/mineral/plastitanium,
 /area/commons/dorms)
 "uXt" = (
@@ -64445,6 +64447,11 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/port/fore)
+"vIV" = (
+/obj/machinery/holopad,
+/obj/effect/turf_decal/bot,
+/turf/open/floor/mineral/plastitanium,
+/area/security/prison)
 "vJu" = (
 /obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk{
@@ -64670,7 +64677,7 @@
 /area/maintenance/starboard/aft)
 "wfR" = (
 /obj/machinery/processor,
-/turf/open/floor/plasteel/dark/telecomms,
+/turf/open/floor/plasteel/dark/snowdin,
 /area/maintenance/bar)
 "wgo" = (
 /obj/effect/turf_decal/stripes/line{
@@ -91112,7 +91119,7 @@ oGU
 oGU
 sNj
 jCV
-jRV
+vIV
 gXu
 wAN
 ruu

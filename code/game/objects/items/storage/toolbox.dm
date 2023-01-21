@@ -102,6 +102,7 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 /obj/item/storage/toolbox/mechanical/old/heirloom
 	name = "old, robust toolbox" //this will be named "X family toolbox"
 	desc = "It's seen better days."
+	slot_flags = ITEM_SLOT_BELT
 	//Citadel change buffed to base levels
 	total_mass = 2
 

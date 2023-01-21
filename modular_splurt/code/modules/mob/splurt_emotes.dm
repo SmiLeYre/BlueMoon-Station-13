@@ -212,8 +212,8 @@
 
 /datum/emote/living/bruh
 	key = "bruh"
-	key_third_person = "thinks this is a bruh moment"
-	message = "thinks this is a bruh moment"
+	key_third_person = "bruhs"
+	message = "thinks this is a bruh moment."
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
@@ -378,7 +378,7 @@
 /datum/emote/living/swaos
 	key = "swaos"
 	key_third_person = "swaos"
-	message = "mutters swaos"
+	message = "mutters swaos."
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 
@@ -411,7 +411,7 @@
 /datum/emote/living/eyebrow3
 	key = "eyebrow3"
 	key_third_person = "eyebrows3"
-	message = "raises an eyebrow <i>quizzaciously.</i>"
+	message = "raises an eyebrow <i>quizzaciously</i>."
 
 /datum/emote/living/eyebrow3/run_emote(mob/user, params, type_override, intentional)
 	if(!(. = ..()))
@@ -467,7 +467,7 @@
 /datum/emote/living/laugh4
 	key = "laugh4"
 	key_third_person = "laughs4"
-	message = "burst out a laugh."
+	message = "burst into laughter!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 
@@ -497,7 +497,7 @@
 /datum/emote/living/laugh6
 	key = "laugh6"
 	key_third_person = "laughs6"
-	message = "sounds like a tea kettle."
+	message = "laughs like a kettle!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 
@@ -553,7 +553,7 @@
 /datum/emote/living/spoonful
 	key = "spoonful"
 	key_third_person = "spoonfuls"
-	message = "draws a comically large spoon."
+	message = "asks for a spoonful."
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = TRUE
 
@@ -583,7 +583,7 @@
 /datum/emote/living/whatthehell
 	key = "wth"
 	key_third_person = "wths"
-	message = "condemns the abysses of hell."
+	message = "condemns the abysses of hell!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = TRUE
 
@@ -637,7 +637,7 @@
 /datum/emote/living/illuminati
 	key = "illuminati"
 	key_third_person = "illuminatis"
-	message = "emits some X-files vibe"
+	message = "exudes a mysterious aura!"
 
 /datum/emote/living/illuminati/run_emote(mob/user, params, type_override, intentional)
 	if(!(. = ..()))
@@ -650,7 +650,7 @@
 /datum/emote/living/bonerif
 	key = "bonerif"
 	key_third_person = "bonerifs"
-	message = "riffs"
+	message = "riffs!"
 
 /datum/emote/living/bonerif/run_emote(mob/user, params, type_override, intentional)
 	if(!(. = ..()))
@@ -679,7 +679,7 @@
 /datum/emote/living/choir
 	key = "choir"
 	key_third_person = "choirs"
-	message = "let out a choir."
+	message = "let out a choir!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 
@@ -694,7 +694,7 @@
 /datum/emote/living/sicko
 	key = "sicko"
 	key_third_person = "sickos"
-	message = "briefly goes sicko mode."
+	message = "briefly goes sicko mode!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 
@@ -709,7 +709,7 @@
 /datum/emote/living/chill
 	key = "chill"
 	key_third_person = "chills"
-	message = "felt a chill running down their spine..."
+	message = "feels a chill running down their spine..."
 
 /datum/emote/living/chill/run_emote(mob/user, params, type_override, intentional)
 	if(!(. = ..()))
@@ -766,7 +766,7 @@
 
 /datum/emote/living/snore/snore2
 	key = "snore2"
-	key_third_person = "snores"
+	key_third_person = "snores2"
 	message = "lets out an <b>earthshaking</b> snore"
 
 /datum/emote/living/snore/snore2/run_emote(mob/user, params, type_override, intentional)
@@ -838,7 +838,7 @@
 /datum/emote/living/ara_ara
 	key = "ara"
 	key_third_person = "aras"
-	message = "seems sultrily surprised~"
+	message = "coos with sultry surprise~..."
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	var/voicesound = 'modular_splurt/sound/voice/ara-ara.ogg'
@@ -859,7 +859,7 @@
 /datum/emote/living/missouri
 	key = "missouri"
 	key_third_person = "missouris"
-	message = "appears to believe %THEYRE in Missouri"
+	message = "appears to believe %THEYRE in Missouri."
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 

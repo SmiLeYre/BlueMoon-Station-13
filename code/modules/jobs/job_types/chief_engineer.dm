@@ -11,7 +11,7 @@
 	supervisors = "the captain"
 	selection_color = "#ee7400"
 	req_admin_notify = 1
-	minimal_player_age = 10
+	minimal_player_age = 35
 	exp_requirements = 180
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_ENGINEERING
@@ -35,9 +35,9 @@
 	starting_modifiers = list(/datum/skill_modifier/job/level/wiring/expert, /datum/skill_modifier/job/affinity/wiring)
 
 	display_order = JOB_DISPLAY_ORDER_CHIEF_ENGINEER
-	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/paraplegic, /datum/quirk/insanity)
+	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/insanity)
 	threat = 2
-	
+
 	family_heirlooms = list(
 		/obj/item/clothing/head/hardhat,
 		/obj/item/screwdriver/brass/family,

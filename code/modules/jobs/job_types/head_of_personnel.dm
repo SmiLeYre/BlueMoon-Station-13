@@ -11,14 +11,14 @@
 	supervisors = "the captain"
 	selection_color = "#3a8529"
 	req_admin_notify = 1
-	minimal_player_age = 20
+	minimal_player_age = 35
 	exp_requirements = 180
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_SERVICE
 	considered_combat_role = TRUE
 	outfit = /datum/outfit/job/hop
 	plasma_outfit = /datum/outfit/plasmaman/hop
-	
+
 	access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_COURT, ACCESS_WEAPONS,
 						ACCESS_MEDICAL, ACCESS_ENGINE, ACCESS_CHANGE_IDS, ACCESS_AI_UPLOAD, ACCESS_EVA, ACCESS_HEADS,
 						ACCESS_ALL_PERSONAL_LOCKERS, ACCESS_MAINT_TUNNELS, ACCESS_BAR, ACCESS_JANITOR, ACCESS_CONSTRUCTION, ACCESS_MORGUE,
@@ -39,7 +39,7 @@
 
 	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/prosopagnosia, /datum/quirk/insanity)
 	threat = 2
-	
+
 	family_heirlooms = list(
 		/obj/item/reagent_containers/food/drinks/trophy/silver_cup
 	)

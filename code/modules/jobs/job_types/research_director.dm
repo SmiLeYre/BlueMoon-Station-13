@@ -11,7 +11,7 @@
 	supervisors = "the captain"
 	selection_color = "#7544cc"
 	req_admin_notify = 1
-	minimal_player_age = 10
+	minimal_player_age = 35
 	exp_type_department = EXP_TYPE_SCIENCE
 	exp_requirements = 180
 	exp_type = EXP_TYPE_CREW
@@ -38,7 +38,7 @@
 	starting_modifiers = list(/datum/skill_modifier/job/level/wiring)
 	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/insanity)
 	threat = 5
-	
+
 	family_heirlooms = list(
 		/obj/item/toy/plush/slimeplushie
 	)

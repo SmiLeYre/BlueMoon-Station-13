@@ -19,15 +19,15 @@
 /obj/machinery/mineral/bluespace_miner/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>A small screen on the machine reads, \"Efficiency at [multiplier * 100]%\"</span>"
+		. += span_notice("A small screen on the machine reads, \"Efficiency at [multiplier * 100]%\"")
 		if(multiplier >= 5)
-			. += "<span class='notice'>Bluespace generation is active.</span>"
+			. += span_notice("Bluespace generation is active.")
 	if(!anchored)
-		. += "<span class='warning'>The machine won't work while not firmly secured to the ground.</span>"
+		. += span_warning("The machine won't work while not firmly secured to the ground.")
 	if(!materials?.silo)
-		. += "<span class='notice'>No ore silo connected. Use a multi-tool to link an ore silo to this machine.</span>"
+		. += span_notice("No ore silo connected. Use a multi-tool to link an ore silo to this machine.")
 	else if(materials?.on_hold())
-		. += "<span class='warning'>Ore silo access is on hold, please contact the quartermaster.</span>"
+		. += span_warning("Ore silo access is on hold, please contact the quartermaster.")
 
 /obj/machinery/mineral/bluespace_miner/RefreshParts()
 	multiplier = 0
@@ -50,7 +50,7 @@
 /obj/machinery/mineral/bluespace_miner/multitool_act(mob/living/user, obj/item/M)
 	. = ..()
 	if(!M.buffer || !istype(M.buffer, /obj/machinery/ore_silo))
-		to_chat(user, "<span class='warning'>You need to multitool the ore silo first.</span>")
+		to_chat(user, span_warning("You need to multitool the ore silo first."))
 		balloon_alert(user, "invalid buffer!")
 		return TRUE
 

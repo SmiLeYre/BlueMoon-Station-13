@@ -23,7 +23,7 @@
 
 /obj/item/clothing/head/blueshield/officercap
 	name = "blueshield officer cap"
-	desc = "A officer cap of the Blueshield. It makes you feel more important then you acutally are."
+	desc = "A officer cap of the Blueshield. It makes you feel more important then you actually are."
 	icon_state = "blueshieldcap"
 	item_state = "blueshieldcap"
 
@@ -56,7 +56,7 @@
 
 /obj/item/clothing/head/helmet/sec/blueshield
 	name = "blueshield helmet"
-	desc = "Reenforced Blueshield Security gear. Protects the head from impacts. You where this because you are boring."
+	desc = "Reinforced Blueshield Security gear. Protects the head from impacts. You where this because you are boring."
 	icon_state = "bluehelmet"
 	item_state = "bluehelmet"
 	icon = 'modular_splurt/icons/obj/clothing/head.dmi'

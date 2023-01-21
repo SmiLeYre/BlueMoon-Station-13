@@ -66703,6 +66703,12 @@
 /obj/effect/landmark/start/assistant,
 /turf/open/floor/plasteel/grimy,
 /area/hallway/secondary/entry)
+"xne" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/holopad,
+/obj/effect/turf_decal/bot,
+/turf/open/floor/plasteel,
+/area/security/prison/upper)
 "xnj" = (
 /obj/effect/overlay/palmtree_r,
 /turf/open/floor/grass,
@@ -92321,7 +92327,7 @@ qYA
 rNh
 tAS
 adb
-tAS
+xne
 adb
 hSc
 acG

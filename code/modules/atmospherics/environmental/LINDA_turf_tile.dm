@@ -237,34 +237,45 @@
 		SSair.high_pressure_delta[src] = TRUE
 
 /turf/open/proc/high_pressure_movements()
-	var/diff = pressure_difference
+	var/atom/movable/M
+	var/multiplier = 1
 	if(locate(/obj/structure/rack) in src)
-		diff *= 0.1
+		multiplier *= 0.1
 	else if(locate(/obj/structure/table) in src)
-		diff *= 0.2
-	for(var/obj/M in src)
-		if(!M.anchored && !M.pulledby && M.last_high_pressure_movement_air_cycle < SSair.times_fired)
-			M.experience_pressure_difference(diff, pressure_direction, 0, pressure_specific_target)
-	for(var/mob/M in src)
-		if(!M.anchored && !M.pulledby && M.last_high_pressure_movement_air_cycle < SSair.times_fired)
-			M.experience_pressure_difference(diff, pressure_direction, 0, pressure_specific_target)
-	/*
+		multiplier *= 0.2
+	for(var/thing in src)
+		M = thing
+		if (!M.anchored && !M.pulledby && M.last_high_pressure_movement_air_cycle < SSair.times_fired)
+			M.experience_pressure_difference(pressure_difference * multiplier, pressure_direction, 0, pressure_specific_target)
+
 	if(pressure_difference > 100)
 		new /obj/effect/temp_visual/dir_setting/space_wind(src, pressure_direction, clamp(round(sqrt(pressure_difference) * 2), 10, 255))
-	*/
+
 
 /atom/movable/var/pressure_resistance = 10
 /atom/movable/var/last_high_pressure_movement_air_cycle = 0
 
 /atom/movable/proc/experience_pressure_difference(pressure_difference, direction, pressure_resistance_prob_delta = 0, throw_target)
-	var/const/PROBABILITY_OFFSET = 25
-	var/const/PROBABILITY_BASE_PRECENT = 75
+	set waitfor = FALSE
+	if(SEND_SIGNAL(src, COMSIG_MOVABLE_PRE_PRESSURE_PUSH) & COMSIG_MOVABLE_BLOCKS_PRESSURE)
+		return
+
+	var/const/PROBABILITY_OFFSET = 40
+	var/const/PROBABILITY_BASE_PRECENT = 10
 	var/max_force = sqrt(pressure_difference)*(MOVE_FORCE_DEFAULT / 5)
-	set waitfor = 0
 	var/move_prob = 100
-	if (pressure_resistance > 0)
+	if(pressure_resistance > 0)
 		move_prob = (pressure_difference/pressure_resistance*PROBABILITY_BASE_PRECENT)-PROBABILITY_OFFSET
 	move_prob += pressure_resistance_prob_delta
-	if (move_prob > PROBABILITY_OFFSET && prob(move_prob) && (move_resist != INFINITY) && (!anchored && (max_force >= (move_resist * MOVE_FORCE_PUSH_RATIO))) || (anchored && (max_force >= (move_resist * MOVE_FORCE_FORCEPUSH_RATIO))))
-		step(src, direction)
-
+	if(move_prob > PROBABILITY_OFFSET && prob(move_prob) && (move_resist != INFINITY) && (!anchored && (max_force >= (move_resist * MOVE_FORCE_PUSH_RATIO))) || (anchored && (max_force >= (move_resist * MOVE_FORCE_FORCEPUSH_RATIO))))
+		var/move_force = max_force * clamp(move_prob, 0, 100) / 100
+		if(move_force > 6000)
+			// WALLSLAM HELL TIME OH BOY
+			var/turf/throw_turf = get_ranged_target_turf(get_turf(src), direction, round(move_force / 2000))
+			if(throw_target && (get_dir(src, throw_target) & direction))
+				throw_turf = get_turf(throw_target)
+			var/throw_speed = clamp(round(move_force / 3000), 1, 10)
+			throw_at(throw_turf, move_force / 3000, throw_speed)
+		else
+			step(src, direction)
+		last_high_pressure_movement_air_cycle = SSair.times_fired

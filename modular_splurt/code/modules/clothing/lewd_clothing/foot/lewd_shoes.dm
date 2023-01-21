@@ -19,7 +19,7 @@
 	var/mob/living/carbon/C = user
 	if(iscarbon(user) && (user.get_item_by_slot(ITEM_SLOT_FEET) == src))
 		if(seamless)
-			to_chat(C, span_purple(pick("You slide your heels against eachother in a failed attempt at kicking them off.",
+			to_chat(C, span_purple(pick("You slide your heels against each other in a failed attempt at kicking them off.",
 										"The heels refuse to budge no matter how much you tug.",
 										"The heels are tight around your ankles and the laces refuse to loosen.")))
 			return

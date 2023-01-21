@@ -19,7 +19,7 @@
 /obj/item/mind_controller/Initialize(mapload, collar)
     //Store the collar on creation.
 	src.collar = collar
-	. = ..() //very important to call parent in Intialize
+	. = ..() //very important to call parent in Initialize
 
 /obj/item/mind_controller/attack_self(mob/user)
 	if (collar)

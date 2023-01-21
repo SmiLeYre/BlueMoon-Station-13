@@ -34,7 +34,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 	//Main variables
 	var/owner = null // String name of owner
-	var/default_cartridge = 0 // Access level defined by cartridge
+	var/default_cartridge = /obj/item/cartridge/civil // Access level defined by cartridge
 	var/obj/item/cartridge/cartridge = null //current cartridge
 	var/mode = 0 //Controls what menu the PDA will display. 0 is hub; the rest are either built in or based on cartridge.
 	var/list/overlays_icons = list('icons/obj/pda_alt.dmi' = list("pda-r", "screen_default", "id_overlay", "insert_overlay", "light_overlay", "pai_overlay"))
@@ -782,7 +782,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	if(HAS_TRAIT(user, TRAIT_DUMB4CUM))
 		to_chat(user, "<span class='love'>You can't focus on anything but cum right now!</span>")
 		return
-		
+
 	var/message = msg_input(user)
 	if(!message || !targets.len)
 		return

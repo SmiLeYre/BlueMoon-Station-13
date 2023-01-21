@@ -2,7 +2,7 @@
 
 /obj/item/clothing/glasses/hud/blueshield
 	name = "blueshield HUD glasses"
-	desc = "A hud with multiple functions."
+	desc = "A HUD with multiple functions."
 	actions_types = list(/datum/action/item_action/switch_hud)
 	icon_state = "sunhudmed"
 	icon = 'icons/obj/clothing/glasses.dmi'
@@ -36,7 +36,7 @@
 
 /obj/item/clothing/glasses/hud/blueshield/aviators
 	name = "blueshield HUD Aviators"
-	desc = "A hud with multiple functions. More stylish."
+	desc = "A HUD with multiple functions. More stylish."
 	actions_types = list(/datum/action/item_action/switch_hud)
 	icon = 'modular_splurt/icons/obj/clothing/glasses.dmi'
 	icon_state = "aviator_med"
@@ -72,12 +72,12 @@
 
 /obj/item/clothing/glasses/hud/blueshield/aviators/prescription
 	name = "prescription blueshield HUD Aviators"
-	desc = "A hud with multiple functions. More stylish. Equipped with prescription lenses."
+	desc = "A HUD with multiple functions. More stylish. Equipped with prescription lenses."
 	vision_correction = 1
 
 /obj/item/clothing/glasses/hud/blueshield/prescription
 	name = "prescription blueshield HUD"
-	desc = "A hud with multiple functions. Equipped with prescription lenses."
+	desc = "A HUD with multiple functions. Equipped with prescription lenses."
 	vision_correction = 1
 
 // Med HUDs
@@ -97,14 +97,14 @@
 // Sec HUDs
 
 /obj/item/clothing/glasses/hud/security/sunglasses/aviators
-	name = "secuirity HUD aviators"
+	name = "security HUD aviators"
 	desc = "aviators with a security HUD."
 	icon = 'modular_splurt/icons/obj/clothing/glasses.dmi'
 	icon_state = "aviator_sec"
 	mob_overlay_icon = 'modular_splurt/icons/mobs/eyes.dmi'
 
 /obj/item/clothing/glasses/hud/security/sunglasses/aviators/prescription
-	name = "prescription secuirity HUD aviators"
+	name = "prescription security HUD aviators"
 	desc = "aviators with a security HUD with prescription lenses."
 	vision_correction = 1
 

@@ -30,36 +30,6 @@
 	var/status_duration = 3 SECONDS //how long our status effects last for otherwise
 	COOLDOWN_DECLARE(shove_cooldown)
 
-/obj/item/melee/baton
-	var/hole = CUM_TARGET_VAGINA
-
-/obj/item/melee/baton/AltClick(mob/living/carbon/human/user as mob)
-	hole = hole == CUM_TARGET_VAGINA ? CUM_TARGET_ANUS : CUM_TARGET_VAGINA
-	to_chat(user, span_notice("Now targetting \the [hole]."))
-
-/obj/item/melee/baton/attack(mob/living/target, mob/living/user)
-	if (BODY_ZONE_PRECISE_GROIN && user.a_intent != INTENT_HARM) //ROUGH PRISON HUMILATION YAY
-		//var/possessive_verb = user.p_their()
-		var/message = ""
-		var/lust_amt = 0
-		if(ishuman(target) && (target?.client?.prefs?.toggles & VERB_CONSENT))
-			if(user.zone_selected == BODY_ZONE_PRECISE_GROIN)
-				switch(hole)
-					if(CUM_TARGET_VAGINA)
-						if(target.has_vagina(REQUIRE_EXPOSED))
-							message = (user == target) ? pick("крепко обхватывает '\the [src]' и начинает пихать это прямо в свою киску.", "запихивает '\the [src]' в свою киску", "постанывает и садится на '\the [src]'.") : pick("трахает <b>[target]</b> прямо в киску с помощью '\the [src]'.", "засовывает '\the [src]' прямо в киску <b>[target]</b>.")
-							lust_amt = NORMAL_LUST
-					if(CUM_TARGET_ANUS)
-						if(target.has_anus(REQUIRE_EXPOSED))
-							message = (user == target) ? pick("крепко обхватывает '\the [src]' и начинает пихать это прямо в свою попку.","запихивает '\the [src]' прямо в свою собственную попку.", "постанывает и садится на '\the [src]'.") : pick("трахает <b>[target]</b> прямо в попку '\the [src]'.", "активно суёт '\the [src]' прямо в попку <b>[target]</b>.")
-							lust_amt = NORMAL_LUST
-		if(message)
-			user.visible_message(span_lewd("<b>[user]</b> [message]"))
-			target.handle_post_sex(lust_amt, null, user)
-			playsound(loc, pick('modular_sand/sound/interactions/bang4.ogg',
-								'modular_sand/sound/interactions/bang5.ogg',
-								'modular_sand/sound/interactions/bang6.ogg'), 70, 1, -1)
-
 /obj/item/melee/baton/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>Right click attack while in combat mode to knockdown, but only once per [cooldown_duration / 10] seconds.</span>"

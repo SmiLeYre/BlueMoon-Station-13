@@ -1,6 +1,6 @@
 /obj/item/clothing/gloves/cbrn
 	name = "CBRN gloves"
-	desc = "Chemical, Biological, Radiological and Nuclear. Thick black gloves design for working in hazardus evniroments. Warning not shock proof."
+	desc = "Chemical, Biological, Radiological and Nuclear. Thick black gloves design for working in hazardous environments. Warning not shock proof."
 	icon_state = "black"
 	item_state = "blackgloves"
 	siemens_coefficient = 1
@@ -18,17 +18,17 @@
 /obj/item/clothing/gloves/cbrn/engineer
 	name = "engineer CBRN gloves"
 	siemens_coefficient = 0
-	desc = "Chemical, Biological, Radiological and Nuclear. Thick black gloves design for working in hazardus evniroments. Improved for engineering hazards"
+	desc = "Chemical, Biological, Radiological and Nuclear. Thick black gloves design for working in hazardous environments. Improved for engineering hazards"
 
 /obj/item/clothing/gloves/cbrn/mopp
 	name = "MOPP gloves"
-	desc = "Mission Oriented Protective Posture. Thick black gloves design for working in hazardus combat evniroments. Still not shock proof"
+	desc = "Mission Oriented Protective Posture. Thick black gloves design for working in hazardous combat environments. Still not shock proof"
 	icon_state = "combat"
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 10,"energy" = 10, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 40, "acid" = 100)
 
 /obj/item/clothing/gloves/cbrn/mopp/advance
 	name = "advance MOPP gloves"
-	desc = "Mission Oriented Protective Posture. Thick black gloves design for working in hazardus combat evniroments. Advance varaints for Central Command staff and ERT team. Insulated."
+	desc = "Mission Oriented Protective Posture. Thick black gloves design for working in hazardous combat environments. Advance variants for Central Command staff and ERT team. Insulated."
 	icon_state = "combat"
 	siemens_coefficient = 0
 	armor = list("melee" = 15, "bullet" = 0, "laser" = 15,"energy" = 15, "bomb" = 20, "bio" = 110, "rad" = 110, "fire" = 60, "acid" = 110)

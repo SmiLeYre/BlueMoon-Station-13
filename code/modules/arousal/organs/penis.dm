@@ -6,8 +6,8 @@
 	zone = BODY_ZONE_PRECISE_GROIN
 	slot = ORGAN_SLOT_PENIS
 	masturbation_verb = "stroke"
-	arousal_verb = "You pop a boner"
-	unarousal_verb = "Your boner goes down"
+	arousal_verb = "У тебя сильный стояк"
+	unarousal_verb = "Твой стояк опускается"
 	genital_flags = CAN_MASTURBATE_WITH|CAN_CLIMAX_WITH|GENITAL_CAN_AROUSE|UPDATE_OWNER_APPEARANCE|GENITAL_UNDIES_HIDDEN|GENITAL_CAN_TAUR|CAN_CUM_INTO|HAS_EQUIPMENT
 	linked_organ_slot = ORGAN_SLOT_TESTICLES
 	fluid_transfer_factor = 0.5

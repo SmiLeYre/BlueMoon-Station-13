@@ -15,7 +15,7 @@
 
 /obj/item/clothing/head/blueshield/formal
 	name = "blueshield formal beret"
-	desc = "The robust beret for the Blueshield. A formal varaint of the standard beret."
+	desc = "The robust beret for the Blueshield. A formal variant of the standard beret."
 	icon_state = "blueshield"
 	item_state = "blueshield"
 	icon = 'modular_splurt/icons/obj/clothing/head.dmi'
@@ -31,7 +31,7 @@
 
 /obj/item/clothing/head/beret/sec/peacekeeper
 	name = "peacekeeper beret"
-	desc = "A robust beret with a grey varaint of the security insignia emblazoned on it. This one is modeled is design to make people less scared of an officer."
+	desc = "A robust beret with a grey variant of the security insignia emblazoned on it. This one is modeled is design to make people less scared of an officer."
 	icon_state = "policeberet"
 	item_state = "policeberet"
 	icon = 'modular_splurt/icons/obj/clothing/head.dmi'
@@ -39,7 +39,7 @@
 
 /obj/item/clothing/head/helmet/metrocop
 	name = "civil protection helmet"
-	desc = "Saldy lacks a working voice encoder."
+	desc = "Sadly lacks a working voice encoder."
 	icon_state = "metrocop_helmet"
 	item_state = "metrocop_helmet"
 	icon = 'modular_splurt/icons/obj/clothing/head.dmi'
@@ -49,13 +49,13 @@
 
 /obj/item/clothing/head/beret/sec/peacekeeper/warden
 	name = "warden's peacekeeper beret"
-	desc = "A robust beret with a red varaint of the security insignia emblazoned on it. This one is issiued to wardens."
+	desc = "A robust beret with a red variant of the security insignia emblazoned on it. This one is issued to wardens."
 	icon_state = "policeberetred"
 	item_state = "policeberetred"
 
 /obj/item/clothing/head/beret/sec/peacekeeper/hos
 	name = "head of security's peacekeeper beret"
-	desc = "A robust beret with a gold varaint of the security insignia emblazoned on it. This one is issiued to the Head of Security."
+	desc = "A robust beret with a gold variant of the security insignia emblazoned on it. This one is issued to the Head of Security."
 	icon_state = "policeberetgold"
 	item_state = "policeberetgold"
 

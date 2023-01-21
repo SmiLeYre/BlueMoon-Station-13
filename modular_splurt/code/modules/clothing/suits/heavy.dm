@@ -2,7 +2,7 @@
 
 /obj/item/clothing/suit/cbrn
 	name = "civilian CBRN suit"
-	desc = "Chemical, Biological, Radiological and Nuclear. A suit design for harsh environmental conditions short of no atmosphere. This one has civilian colors"
+	desc = "Chemical, Biological, Radiological and Nuclear. A suit design for harsh environmental conditions short of no atmosphere. This one has civilian colors."
 	icon_state = "cbrnsuitciv"
 	item_state = "cbrnsuitciv"
 	icon = 'modular_splurt/icons/obj/clothing/suits.dmi'
@@ -25,37 +25,37 @@
 
 /obj/item/clothing/suit/cbrn/engineering
 	name = "engineering CBRN suit"
-	desc = "Chemical, Biological, Radiological and Nuclear. A suit design for harsh environmental conditions short of no atmosphere. This one has engineering colors"
+	desc = "Chemical, Biological, Radiological and Nuclear. A suit design for harsh environmental conditions short of no atmosphere. This one has engineering colors."
 	icon_state = "cbrnsuiteng"
 	item_state = "cbrnsuiteng"
 
 /obj/item/clothing/suit/cbrn/security
 	name = "engineering CBRN suit"
-	desc = "Chemical, Biological, Radiological and Nuclear. A suit design for harsh environmental conditions short of no atmosphere. This one has security colors"
+	desc = "Chemical, Biological, Radiological and Nuclear. A suit design for harsh environmental conditions short of no atmosphere. This one has security colors."
 	icon_state = "cbrnsuitsec"
 	item_state = "cbrnsuitsec"
 
 /obj/item/clothing/suit/cbrn/medical
 	name = "medical CBRN suit"
-	desc = "Chemical, Biological, Radiological and Nuclear. A suit design for harsh environmental conditions short of no atmosphere. This one has medical colors"
+	desc = "Chemical, Biological, Radiological and Nuclear. A suit design for harsh environmental conditions short of no atmosphere. This one has medical colors."
 	icon_state = "cbrnsuitmed"
 	item_state = "cbrnsuitmed"
 
 /obj/item/clothing/suit/cbrn/cargo
 	name = "cargo CBRN suit"
-	desc = "Chemical, Biological, Radiological and Nuclear. A suit design for harsh environmental conditions short of no atmosphere. This one has cargo colors"
+	desc = "Chemical, Biological, Radiological and Nuclear. A suit design for harsh environmental conditions short of no atmosphere. This one has cargo colors."
 	icon_state = "cbrnsuitcargo"
 	item_state = "cbrnsuitcargo"
 
 /obj/item/clothing/suit/cbrn/science
 	name = "science CBRN suit"
-	desc = "Chemical, Biological, Radiological and Nuclear. A suit design for harsh environmental conditions short of no atmosphere. This one has science colors"
+	desc = "Chemical, Biological, Radiological and Nuclear. A suit design for harsh environmental conditions short of no atmosphere. This one has science colors."
 	icon_state = "cbrnsuitsci"
 	item_state = "cbrnsuitsci"
 
 /obj/item/clothing/suit/cbrn/service
 	name = "service CBRN suit"
-	desc = "Chemical, Biological, Radiological and Nuclear. A suit design for harsh environmental conditions short of no atmosphere. This one has service colors"
+	desc = "Chemical, Biological, Radiological and Nuclear. A suit design for harsh environmental conditions short of no atmosphere. This one has service colors."
 	icon_state = "cbrnsuitserv"
 	item_state = "cbrnsuitserv"
 
@@ -72,32 +72,32 @@
 
 /obj/item/clothing/suit/cbrn/mopp/advance
 	name = "advance MOPP suit"
-	desc = "Mission Oriented Protective Posture. A suit design for harsh combat conditions short of no atmosphere. This is an advance versoin for Non-ERT Central Command Staff."
-	slowdown = 0 // This is suppose to be advance, hopfully not too OP
+	desc = "Mission Oriented Protective Posture. A suit design for harsh combat conditions short of no atmosphere. This is an advance version for Non-ERT Central Command Staff."
+	slowdown = 0 // This is suppose to be advance, hopefully not too OP
 	armor = list("melee" = 40, "bullet" = 60, "laser" = 40,"energy" = 30, "bomb" = 20, "bio" = 110, "rad" = 110, "fire" = 50, "acid" = 110) //Scale with standard MOPP suits as this effects all ERT suits
 	clothing_flags = NONE
 
 /obj/item/clothing/suit/cbrn/mopp/advance/commander
 	name = "advance MOPP suit 'Commander'"
-	desc = "Mission Oriented Protective Posture. A suit design for harsh combat conditions short of no atmosphere. This is an advance versoin for ERT Commanders."
+	desc = "Mission Oriented Protective Posture. A suit design for harsh combat conditions short of no atmosphere. This is an advance version for ERT Commanders."
 	icon_state = "moppsuitertcom"
 	item_state = "moppsuitertcom"
 
 /obj/item/clothing/suit/cbrn/mopp/advance/security
 	name = "advance MOPP suit 'Security'"
-	desc = "Mission Oriented Protective Posture. A suit design for harsh combat conditions short of no atmosphere. This is an advance versoin for ERT Security members."
+	desc = "Mission Oriented Protective Posture. A suit design for harsh combat conditions short of no atmosphere. This is an advance version for ERT Security members."
 	icon_state = "moppsuitertsec"
 	item_state = "moppsuitertsec"
 
 /obj/item/clothing/suit/cbrn/mopp/advance/medical
 	name = "advance MOPP suit 'Medical'"
-	desc = "Mission Oriented Protective Posture. A suit design for harsh combat conditions short of no atmosphere. This is an advance versoin for ERT Medical members."
+	desc = "Mission Oriented Protective Posture. A suit design for harsh combat conditions short of no atmosphere. This is an advance version for ERT Medical members."
 	icon_state = "moppsuitertmed"
 	item_state = "moppsuitertmed"
 
 /obj/item/clothing/suit/cbrn/mopp/advance/engi
 	name = "advance MOPP suit 'Engineer'"
-	desc = "Mission Oriented Protective Posture. A suit design for harsh combat conditions short of no atmosphere. This is an advance versoin for ERT Engineering members."
+	desc = "Mission Oriented Protective Posture. A suit design for harsh combat conditions short of no atmosphere. This is an advance version for ERT Engineering members."
 	icon_state = "moppsuiterteng"
 	item_state = "moppsuiterteng"
 
@@ -140,8 +140,8 @@
 //research nods
 
 /datum/design/cbrn/cbrncivi
-	name = "Civlian CBRN Suit"
-	desc = "A civlian CBRN suit."
+	name = "Civilian CBRN Suit"
+	desc = "A civilian CBRN suit."
 	id = "cbrn_civi"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/plastic = 600, /datum/material/uranium = 500, /datum/material/iron = 600)

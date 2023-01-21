@@ -1,5 +1,5 @@
 /obj/item/gun/energy/e_gun
-	name = "energy gun"
+	name = "Energy Gun"
 	desc = "A basic hybrid energy gun with two settings: disable and kill."
 	icon_state = "energy"
 	item_state = null	//so the human update icon uses the icon_state instead.
@@ -11,7 +11,7 @@
 	flight_y_offset = 10
 
 /obj/item/gun/energy/e_gun/mini
-	name = "miniature energy gun"
+	name = "Miniature Energy Gun"
 	desc = "A small, pistol-sized energy gun with a built-in flashlight. It has two settings: stun and kill."
 	icon_state = "mini"
 	item_state = "gun"
@@ -27,21 +27,21 @@
 	return ..()
 
 /obj/item/gun/energy/e_gun/stun
-	name = "tactical energy gun"
+	name = "Tactical Energy Gun"
 	desc = "Military issue energy gun, is able to fire stun rounds."
 	icon_state = "energytac"
 	ammo_x_offset = 2
 	ammo_type = list(/obj/item/ammo_casing/energy/electrode/spec, /obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser)
 
 /obj/item/gun/energy/e_gun/old
-	name = "prototype energy gun"
+	name = "Prototype Energy Gun"
 	desc = "NT-P:01 Prototype Energy Gun. Early stage development of a unique laser rifle that has multifaceted energy lens allowing the gun to alter the form of projectile it fires on command."
 	icon_state = "protolaser"
 	ammo_x_offset = 2
 	ammo_type = list(/obj/item/ammo_casing/energy/laser, /obj/item/ammo_casing/energy/electrode/old)
 
 /obj/item/gun/energy/e_gun/mini/practice_phaser
-	name = "practice phaser"
+	name = "Practice Phaser"
 	desc = "A modified version of the basic phaser gun, this one fires less concentrated energy bolts designed for target practice."
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser/practice)
 	icon_state = "decloner"
@@ -50,6 +50,7 @@
 	name = "\improper X-01 MultiPhase Energy Gun"
 	desc = "This is an expensive, modern recreation of an antique laser gun. This gun has several unique firemodes, but lacks the ability to recharge over time in exchange for inbuilt advanced firearm EMP shielding. <span class='boldnotice'>Right click in combat mode to fire a taser shot with a cooldown.</span>"
 	icon_state = "hoslaser"
+	cell_type = /obj/item/stock_parts/cell{charge = 2000; maxcharge = 2000}
 	force = 10
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser/hos, /obj/item/ammo_casing/energy/ion/hos, /obj/item/ammo_casing/energy/electrode/hos)
 	ammo_x_offset = 4
@@ -87,7 +88,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/trap)
 
 /obj/item/gun/energy/e_gun/turret
-	name = "hybrid turret gun"
+	name = "Hybrid Turret Gun"
 	desc = "A heavy hybrid energy cannon with two settings: Stun and kill."
 	icon_state = "turretlaser"
 	item_state = "turretlaser"
@@ -100,7 +101,7 @@
 	ammo_x_offset = 2
 
 /obj/item/gun/energy/e_gun/nuclear
-	name = "advanced energy gun"
+	name = "Advanced Energy Gun"
 	desc = "An energy gun with an experimental miniaturized nuclear reactor that automatically charges the internal power cell."
 	icon_state = "nucgun"
 	item_state = "nucgun"

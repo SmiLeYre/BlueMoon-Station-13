@@ -282,7 +282,7 @@
 	death = FALSE
 	random = TRUE
 	mob_species = /datum/species/human
-	short_desc = "Вы застряли на этой безбожной Аномальной Планете и не можете выбраться который год."
+	short_desc = "Вы застряли в этом Безбожном Месте."
 	flavour_text = "Каждый день вы еле-еле сводите концы с концами, \
 	враждебными существами и Пепельными Дрейками, слетающими с безоблачного неба. Все, что вы можете пожелать, это почувствовать мягкую траву между пальцами ног и \
 	свежий воздух Земли. Эти мысли развеиваются очередным воспоминанием о том, как вы сюда попали..."
@@ -294,30 +294,29 @@
 	var/arrpee = rand(1,4)
 	switch(arrpee)
 		if(1)
-			flavour_text += "you were a [pick("arms dealer", "shipwright", "docking manager")]'s assistant on a small trading station several sectors from here. Raiders attacked, and there was \
-			only one pod left when you got to the escape bay. You took it and launched it alone, and the crowd of terrified faces crowding at the airlock door as your pod's engines burst to \
-			life and sent you to this hell are forever branded into your memory."
+			flavour_text += "вы были помощником [pick("Оружейника", "Корабельщика", "Финансового Менеджера")] на небольшой торговой станции в нескольких секторах отсюда. Рейдеры напали на ваше судно и в спасательном отсеке оставалась \
+			всего только одна капсула. Вы отбросили или отвлекли, или вас пропустили и в итоге благодаря спасательной капсуле вы... спаслись? Так или иначе, вы не забудете ту кучу испуганных лиц в момент вашего отлёта."
 			outfit.uniform = /obj/item/clothing/under/misc/assistantformal
 			outfit.shoes = /obj/item/clothing/shoes/sneakers/black
 			outfit.back = /obj/item/storage/backpack
 		if(2)
-			flavour_text += "you're an exile from the Tiger Cooperative. Their technological fanaticism drove you to question the power and beliefs of the Exolitics, and they saw you as a \
-			heretic and subjected you to hours of horrible torture. You were hours away from execution when a high-ranking friend of yours in the Cooperative managed to secure you a pod, \
-			scrambled its destination's coordinates, and launched it. You awoke from stasis when you landed and have been surviving - barely - ever since."
+			flavour_text += "вы изгнанник из кооператива 'Тигр'. Их технологический фанатизм заставил вас усомниться в силе и убеждениях Экзолитиков и они сочли вас \
+			еретиком, и подвергли вас многочасовым ужасным пыткам. Вы были в нескольких часах от казни, когда ваш высокопоставленный друг в Кооперативе сумел достать для вас капсулу, \
+			зашифровал координаты места назначения и запустил ее. Вы очнулись от стазиса, когда приземлились... и с тех пор выживаете - с трудом, но выживаете."
 			outfit.uniform = /obj/item/clothing/under/rank/prisoner
 			outfit.shoes = /obj/item/clothing/shoes/sneakers/orange
 			outfit.back = /obj/item/storage/backpack
 		if(3)
-			flavour_text += "you were a doctor on one of Nanotrasen's space stations, but you left behind that damn corporation's tyranny and everything it stood for. From a metaphorical hell \
-			to a literal one, you find yourself nonetheless missing the recycled air and warm floors of what you left behind... but you'd still rather be here than there."
+			flavour_text += "Вы были врачом на одной из космических станций Nanotrasen, но вы оставили позади тиранию этой проклятой корпорации и все то, за что она стояла. Из метафорического ада \
+			в буквальный - вы обнаружили, что вам все же не хватает чистого воздуха и теплых полов из сего того, что вы оставили... но вы все равно предпочтете быть здесь, а не там."
 			outfit.uniform = /obj/item/clothing/under/rank/medical/doctor
 			outfit.suit = /obj/item/clothing/suit/toggle/labcoat
 			outfit.back = /obj/item/storage/backpack/medic
 			outfit.shoes = /obj/item/clothing/shoes/sneakers/black
 		if(4)
-			flavour_text += "you were always joked about by your friends for \"not playing with a full deck\", as they so <i>kindly</i> put it. It seems that they were right when you, on a tour \
-			at one of Nanotrasen's state-of-the-art research facilities, were in one of the escape pods alone and saw the red button. It was big and shiny, and it caught your eye. You pressed \
-			it, and after a terrifying and fast ride for days, you landed here. You've had time to wisen up since then, and you think that your old friends wouldn't be laughing now."
+			flavour_text += "Ваши друзья всегда подшучивали над вами за то, что вы 'Не Играете с Полной Колодой', как они так доброжелательно выражались. Похоже, они были правы, когда вы, находясь на экскурсии \
+			по одному из самых современных исследовательских комплексов Nanotrasen, оказались в одной из спасательных капсул в одиночестве и увидели красную кнопку. Она была большой и блестящей, и это привлекло ваше внимание. Вы нажали на неё \
+			и после ужасающего, и быстрого путешествия в течение нескольких дней вы оказались здесь. С тех пор у вас было время поумнеть и вы думаете, что ваши старые друзья сейчас бы не смеялись."
 			outfit.uniform = /obj/item/clothing/under/color/grey/glorf
 			outfit.shoes = /obj/item/clothing/shoes/sneakers/black
 			outfit.back = /obj/item/storage/backpack

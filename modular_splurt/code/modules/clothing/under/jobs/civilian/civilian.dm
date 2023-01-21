@@ -3,22 +3,22 @@
 	desc = "A male head of personnel's luxury-wear, for special occasions."
 	icon = 'modular_splurt/icons/obj/clothing/uniforms.dmi'
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/uniform.dmi'
-	icon_state = "hos_parade_male"
-	item_state = "hos_parade_male"
+	icon_state = "hop_parade_male"
+	item_state = "b_suit"
 	can_adjust = FALSE
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/under/rank/civilian/head_of_personnel/parade/female
 	name = "head of personnel's parade uniform"
 	desc = "A female head of personnel's luxury-wear, for special occasions."
-	icon_state = "hos_parade_female"
-	item_state = "hos_parade_female"
+	icon_state = "hop_parade_male"
+	item_state = "b_suit"
 	fitted = FEMALE_UNIFORM_TOP
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/under/rank/civilian/lawyer/galaxy_blue
 	name = "\improper De Void of Soul"
-	desc = "A suit of stars and high-V gas. One that screams the cosmos and unfathomnable vastness. Earned by only the best of the best."
+	desc = "A suit of stars and high-V gas. One that screams the cosmos and unfathomable vastness. Earned by only the best of the best."
 	icon_state = "galaxy_blue"
 	icon = 'modular_splurt/icons/obj/clothing/uniforms.dmi'
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/uniform.dmi'

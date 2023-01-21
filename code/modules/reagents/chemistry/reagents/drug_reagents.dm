@@ -569,7 +569,7 @@
 		if((prob(min(current_cycle/2,5))))
 			M.emote(pick("moan","blush"))
 		if(prob(min(current_cycle/4,10)))
-			var/aroused_message = pick("You feel frisky.", "You're having trouble suppressing your urges.", "You feel in the mood.")
+			var/aroused_message = pick("Вам немного жарко.", "Вы испытываете сильное сексуальное влечение.", "Вы чувствуете себя в хорошем настроении.", "Вы готовы напрыгнуть на кого-то.")
 			to_chat(M, "<span class='userlove'>[aroused_message]</span>")
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M

@@ -24,6 +24,7 @@
 		/obj/item/clothing/neck/syntech/collar = 4,
 		/obj/item/storage/fancy/jellybean_pack = 5,
 		/obj/item/storage/box/aphrodisiac_pump = 5,
+		/obj/item/storage/box/bulk_condoms = 10,
 		/obj/item/strapon_strap = 5,
 		/obj/item/restraints/bondage_rope = 5,
 		/obj/item/clothing/under/domina = 5,
@@ -34,13 +35,12 @@
 	)
 	var/list/extra_contraband = list(
 		//Lewd-Clothes
-		/obj/item/dildo/flared/huge = 3,
+		/obj/item/dildo/flared/huge = 6,
 		/obj/item/clothing/glasses/hypno = 3,
 		/obj/item/clothing/neck/mind_collar = 3,
 		/obj/item/key/latex = 5,
 		/obj/item/clothing/head/dominatrixcap = 3,
 		/obj/item/mesmetron = 3,
-		/obj/item/dildo/flared/huge = 3,
 		/obj/item/clothing/neck/petcollar/locked/holo = 2,
 		/obj/item/storage/box/aphrodisiac_pump/plus = 3,
 		/obj/item/storage/box/medipens/lewd = 2

@@ -55,22 +55,34 @@
 	name = "Butcher Knife Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/shigu_kit
-	ckeywhitelist = list("Lakomkin0911")
+	ckeywhitelist = list("lakomkin0911")
 
 /datum/gear/donator/bm/Advanced_Tracksuit
 	name = "Advanced Tracksuit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/under/syndicate/rus_army_alt
-	ckeywhitelist = list("No_Terra-Vi-Ja")
+	ckeywhitelist = list("noterravija")
 
 /datum/gear/donator/bm/cerberus_helmet
 	name = "cerberus helmet"
 	slot = ITEM_SLOT_HEAD
 	path = /obj/item/clothing/head/donator/bm/cerberus_helmet
-	ckeywhitelist = list("krashly", "stgs")
+	ckeywhitelist = list("krashly")
 
 /datum/gear/donator/bm/cerberus_suit
 	name = "cerberus suit"
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/donator/bm/cerberus_suit
-	ckeywhitelist = list("krashly", "stgs")
+	ckeywhitelist = list("krashly")
+
+/datum/gear/donator/bm/Kovac_Gun
+	name = "Kovac Gun"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/Kovac_Kit
+	ckeywhitelist = list("stgs")
+
+/datum/gear/donator/bm/Friskis_Mask
+	name = "Magic Kitsune Mask"
+	slot = ITEM_SLOT_MASK
+	path = /obj/item/clothing/mask/magickitsune
+	ckeywhitelist = list("friskis")

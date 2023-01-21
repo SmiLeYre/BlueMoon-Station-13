@@ -2,7 +2,7 @@
 	name = "stripper armor"
 	desc = "Talk about lightweight."
 	icon = 'modular_splurt/icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/suit.dmi' //null I know you're reading this, you couldn't even edit the right file you absolute buffon
+	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/suit.dmi' //null I know you're reading this, you couldn't even edit the right file you absolute buffoon
 	mutantrace_variation = NONE
 	icon_state = "armorstripper"
 	item_state = "armorstripper"

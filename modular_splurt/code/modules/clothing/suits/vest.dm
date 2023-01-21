@@ -11,14 +11,14 @@
 
 /obj/item/clothing/suit/brigdoc/labcoat
 	name = "brig physician lab coat"
-	desc = "A dark red labcoat for brig physicians."
+	desc = "A dark red lab coat for brig physicians."
 	icon_state = "secmed_labcoat"
 	item_state = "secmed_labcoat"
-	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/suit.dmi' //its in a seperate file
+	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/suit.dmi' //its in a separate file
 
 /obj/item/clothing/suit/brigdoc/armor
 	name = "brig physician armored coat"
-	desc = "A dark red labcoat with armored vest for brig physicians. Used for hostile work enviroments."
+	desc = "A dark red lab coat with armored vest for brig physicians. Used for hostile work environments."
 	icon_state = "secmed_armor"
 	item_state = "secmed_armor"
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/suit.dmi'
@@ -36,7 +36,7 @@
 
 /obj/item/clothing/suit/armor/vest/bluesheid/coat
 	name = "blueshield armored coat"
-	desc = "A fastional piece of armored style."
+	desc = "A fashionable piece of armored style."
 	icon_state = "blueshieldcoat"
 	item_state = "blueshieldcoat"
 
@@ -62,7 +62,7 @@
 
 /obj/item/clothing/suit/armor/vest/metrocop
 	name = "civil protection armored vest"
-	desc = "You feel like this may not stop a scienctist armed with nothing but a crowbar."
+	desc = "You feel like this may not stop a scientist armed with nothing but a crowbar."
 	icon_state = "metrocop_armor"
 	item_state = "metrocop_armor"
 	icon = 'modular_splurt/icons/obj/clothing/suits.dmi'
@@ -70,7 +70,7 @@
 	dog_fashion = null
 
 /obj/item/clothing/suit/armor/vest/warden/peacekeeper
-	name = "warden's peacekeeper armored trenchcoat"
+	name = "warden's peacekeeper armored trench coat"
 	desc = "A heavy trench coat with a armored vest sown into it. Used by the peace minded warden"
 	icon_state = "peacekeeper_trench_warden"
 	item_state = "peacekeeper_trench_warden"
@@ -79,8 +79,8 @@
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/suit.dmi'
 
 /obj/item/clothing/suit/armor/hos/peacekeeper
-	name = "head of secuirty's peacekeeper armored trenchcoat"
-	desc = "A heavy trench coat with a armored vest sown into it. Used by the peace minded head of secuirty"
+	name = "head of security's peacekeeper armored trench coat"
+	desc = "A heavy trench coat with a armored vest sown into it. Used by the peace minded head of security"
 	icon_state = "peacekeeper_trench_hos"
 	item_state = "peacekeeper_trench_hos"
 	icon = 'modular_splurt/icons/obj/clothing/suits.dmi'

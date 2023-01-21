@@ -7,8 +7,44 @@
 					"<span class='userdanger'>You block the attack!</span>")
 		return TRUE
 
+/obj/item/melee
+	var/hole = CUM_TARGET_VAGINA
+
+/obj/item/melee/CtrlShiftClick(mob/living/carbon/human/user as mob)
+	hole = hole == CUM_TARGET_VAGINA ? CUM_TARGET_ANUS : CUM_TARGET_VAGINA
+	to_chat(user, span_notice("Now targetting \the [hole]."))
+
+/obj/item/melee/attack(mob/living/target, mob/living/user)
+	if (BODY_ZONE_PRECISE_GROIN && user.a_intent == INTENT_HELP && isliving(target) && target.Adjacent(user))
+		if(do_mob(user, target, rand(10,20)))
+			do_eblya(target, user)
+	else
+		. = ..()
+
+/obj/item/melee/proc/do_eblya(mob/living/target, mob/living/user)
+	if (BODY_ZONE_PRECISE_GROIN && user.a_intent == INTENT_HELP)
+		var/message = ""
+		var/lust_amt = 0
+		if(ishuman(target) && (target?.client?.prefs?.toggles & VERB_CONSENT))
+			if(user.zone_selected == BODY_ZONE_PRECISE_GROIN)
+				switch(hole)
+					if(CUM_TARGET_VAGINA)
+						if(target.has_vagina(REQUIRE_EXPOSED))
+							message = (user == target) ? pick("крепко обхватывает '\the [src]' и начинает пихать это прямо в свою киску.", "запихивает '\the [src]' в свою киску", "постанывает и садится на '\the [src]'.") : pick("трахает <b>[target]</b> прямо в киску с помощью '\the [src]'.", "засовывает '\the [src]' прямо в киску <b>[target]</b>.")
+							lust_amt = NORMAL_LUST
+					if(CUM_TARGET_ANUS)
+						if(target.has_anus(REQUIRE_EXPOSED))
+							message = (user == target) ? pick("крепко обхватывает '\the [src]' и начинает пихать это прямо в свою попку.","запихивает '\the [src]' прямо в свою собственную попку.", "постанывает и садится на '\the [src]'.") : pick("трахает <b>[target]</b> прямо в попку '\the [src]'.", "активно суёт '\the [src]' прямо в попку <b>[target]</b>.")
+							lust_amt = NORMAL_LUST
+		if(message)
+			user.visible_message(span_lewd("<b>[user]</b> [message]"))
+			target.handle_post_sex(lust_amt, null, user)
+			playsound(loc, pick('modular_sand/sound/interactions/bang4.ogg',
+								'modular_sand/sound/interactions/bang5.ogg',
+								'modular_sand/sound/interactions/bang6.ogg'), 70, 1, -1)
+
 /obj/item/melee/chainofcommand
-	name = "chain of command"
+	name = "Chain Of Command"
 	desc = "A tool used by great men to placate the frothing masses."
 	icon_state = "chain"
 	item_state = "chain"
@@ -31,7 +67,7 @@
 	return (OXYLOSS)
 
 /obj/item/melee/synthetic_arm_blade
-	name = "synthetic arm blade"
+	name = "Synthetic Arm Blade"
 	desc = "A grotesque blade that on closer inspection seems made of synthetic flesh, it still feels like it would hurt very badly as a weapon."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "arm_blade"
@@ -51,7 +87,7 @@
 	AddComponent(/datum/component/butchering, 60, 80) //very imprecise
 
 /obj/item/melee/sabre
-	name = "officer's sabre"
+	name = "Officer's Sabre"
 	desc = "An elegant weapon, its monomolecular edge is capable of cutting through flesh and bone with ease."
 	icon_state = "sabre"
 	item_state = "sabre"
@@ -156,7 +192,7 @@
 	REMOVE_TRAIT(src, TRAIT_NODROP, SABRE_SUICIDE_TRAIT)
 
 /obj/item/melee/rapier
-	name = "plastitanium rapier"
+	name = "Plastitanium Rapier"
 	desc = "A thin blade made of plastitanium with a diamond tip. It appears to be coated in a persistent layer of an unknown substance."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "rapier"
@@ -388,7 +424,7 @@
 			return DISCARD_LAST_ACTION
 
 /obj/item/melee/classic_baton/telescopic
-	name = "telescopic baton"
+	name = "Telescopic Baton"
 	desc = "A compact yet robust personal defense weapon. Can be concealed when folded."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "telebaton_0"

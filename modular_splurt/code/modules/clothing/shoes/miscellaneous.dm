@@ -35,7 +35,7 @@
 
 /obj/item/clothing/shoes/workboots/toeless
 	name = "toe-less workboots"
-	desc = "A pair of toeless work boots designed for use in industrial settings. Modified for species whose toes have claws."
+	desc = "A pair of toe-less work boots designed for use in industrial settings. Modified for species whose toes have claws."
 	icon = 'modular_splurt/icons/obj/clothing/shoes.dmi'
 	icon_state = "workboots-toeless"
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/shoes.dmi'
@@ -43,7 +43,7 @@
 
 /obj/item/clothing/shoes/jackboots/cbrn
 	name = "CBRN boots"
-	desc = "Chemical, Biological, Radiological and Nuclear. Thick black boots design for working in hazardus evniroments."
+	desc = "Chemical, Biological, Radiological and Nuclear. Thick black boots design for working in hazardous environments."
 	icon = 'modular_splurt/icons/obj/clothing/shoes.dmi'
 	icon_state = "cbrnboots"
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/shoes.dmi'
@@ -54,12 +54,12 @@
 
 /obj/item/clothing/shoes/jackboots/cbrn/mopp
 	name = "MOPP boots"
-	desc = "Mission Oriented Protective Posture. Thick black boots design for working in hazardus combat evniroments."
+	desc = "Mission Oriented Protective Posture. Thick black boots design for working in hazardous combat environments."
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 10,"energy" = 10, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 40, "acid" = 100)
 
 /obj/item/clothing/shoes/jackboots/cbrn/mopp/advance
 	name = "advance MOPP boots"
-	desc = "Mission Oriented Protective Posture. Thick black boots design for working in hazardus combat evniroments. Used by Centcom Officer and ERT staff."
+	desc = "Mission Oriented Protective Posture. Thick black boots design for working in hazardous combat environments. Used by CentCom Officer and ERT staff."
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 10,"energy" = 10, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 40, "acid" = 100)
 	clothing_flags = NOSLIP
 

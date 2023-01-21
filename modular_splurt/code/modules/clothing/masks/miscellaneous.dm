@@ -20,7 +20,7 @@
 
 /obj/item/clothing/mask/gas/cbrn
 	name = "CBRN gas mask"
-	desc = "Chemical, Biological, Radiological and Nuclear. A heavy duty gas mask design to be worn in hazardus enviorments. Acutally works like a gas mask as well as can be connected to intenral air supply."
+	desc = "Chemical, Biological, Radiological and Nuclear. A heavy duty gas mask design to be worn in hazardous environments. Actually works like a gas mask as well as can be connected to internal air supply."
 	item_state = "gas_cbrn"
 	icon_state = "gas_cbrn"
 	icon = 'modular_splurt/icons/obj/clothing/masks.dmi'
@@ -38,14 +38,14 @@
 
 /obj/item/clothing/mask/gas/cbrn/mopp
 	name = "MOPP gas mask"
-	desc = "Mission Oriented Protective Posture. A heavy duty gas mask design to be worn in hazardus combat enviorments. Acutally works like a gas mask as well as can be connected to intenral air supply."
+	desc = "Mission Oriented Protective Posture. A heavy duty gas mask design to be worn in hazardous combat environments. Actually works like a gas mask as well as can be connected to internal air supply."
 	item_state = "gas_mopp"
 	icon_state = "gas_mopp"
 	armor = list("melee" = 10, "bullet" = 5, "laser" = 10,"energy" = 10, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 40, "acid" = 100)
 
 /obj/item/clothing/mask/gas/cbrn/mopp/advance
 	name = "advance MOPP gas mask"
-	desc = "Mission Oriented Protective Posture. A heavy duty gas mask design to be worn in hazardus combat enviorments. Acutally works like a gas mask as well as can be connected to intenral air supply. Used by Centcom Staff and ERT teams."
+	desc = "Mission Oriented Protective Posture. A heavy duty gas mask design to be worn in hazardous combat environments. Actually works like a gas mask as well as can be connected to internal air supply. Used by CentCom Staff and ERT teams."
 	armor = list("melee" = 20, "bullet" = 10, "laser" = 20,"energy" = 20, "bomb" = 20, "bio" = 110, "rad" = 110, "fire" = 50, "acid" = 110)
 
 //broken huds for loot
@@ -77,7 +77,7 @@
 
 /obj/item/clothing/glasses/brokenhud/health/night
 	name = "broken night vision health scanner HUD"
-	desc = "An advanced medical heads-up display that allows doctors to find patients in complete darkness. However the eletronics seem to no longer work"
+	desc = "An advanced medical heads-up display that allows doctors to find patients in complete darkness. However the electronics seem to no longer work"
 	icon_state = "healthhudnight"
 	item_state = "glasses"
 	glass_colour_type = /datum/client_colour/glass_colour/green

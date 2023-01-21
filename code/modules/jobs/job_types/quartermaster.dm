@@ -11,7 +11,7 @@
 	supervisors = "the captain"
 	selection_color = "#a06121"
 	req_admin_notify = 1
-	minimal_player_age = 10
+	minimal_player_age = 25
 	exp_requirements = 180
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_SUPPLY
@@ -33,7 +33,7 @@
 	display_order = JOB_DISPLAY_ORDER_QUARTERMASTER
 	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/insanity)
 	threat = 0.5
-	
+
 	family_heirlooms = list(
 		/obj/item/stamp,
 		/obj/item/stamp/denied

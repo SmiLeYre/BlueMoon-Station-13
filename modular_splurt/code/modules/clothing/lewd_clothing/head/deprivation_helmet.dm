@@ -6,7 +6,7 @@
 
 /obj/item/clothing/head/helmet/space/deprivation_helmet
 	name = "deprivation helmet"
-	desc = "Сompletely cuts off the wearer from the outside world."
+	desc = "Completely cuts off the wearer from the outside world."
 	icon_state = "dephelmet"
 	item_state = "dephelmet"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 25, "rad" = 0, "fire" = 20, "acid" = 15, "wound" = 0)

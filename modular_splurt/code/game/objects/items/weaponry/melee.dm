@@ -1,12 +1,12 @@
 /obj/item/melee/baseball_bat
-	var/hole = CUM_TARGET_VAGINA
+	hole = CUM_TARGET_VAGINA
 
 /obj/item/melee/baseball_bat/AltClick(mob/living/carbon/human/user as mob)
 	hole = hole == CUM_TARGET_VAGINA ? CUM_TARGET_ANUS : CUM_TARGET_VAGINA
 	to_chat(user, "<span class='notice'>Now targetting \the [hole].</span>")
 
 /obj/item/melee/baseball_bat/attack(mob/living/target, mob/living/user)
-	if (BODY_ZONE_PRECISE_GROIN && user.a_intent != INTENT_HARM) //ROUGH PRISON HUMILATION YAY
+	if (BODY_ZONE_PRECISE_GROIN && user.a_intent == INTENT_HELP) //ROUGH PRISON HUMILATION YAY
 		//var/possessive_verb = user.p_their()
 		var/message = ""
 		var/lust_amt = 0
@@ -48,7 +48,7 @@
 // Prova, cause I can
 
 /obj/item/melee/baton/prova
-	name = "prova"
+	name = "Prova"
 	desc = "An enhanced taser stick, a favorite of the legendary John Prodman."
 	icon = 'modular_splurt/icons/obj/items_and_weapons.dmi'
 	icon_state = "prova"

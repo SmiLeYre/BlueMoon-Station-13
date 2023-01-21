@@ -10,7 +10,7 @@
 	supervisors = "Nanotrasen officials and Space law"
 	selection_color = "#aac1ee"
 	req_admin_notify = 1
-	minimal_player_age = 20
+	minimal_player_age = 36
 	exp_requirements = 180
 	exp_type = EXP_TYPE_COMMAND
 	exp_type_department = EXP_TYPE_COMMAND
@@ -32,7 +32,7 @@
 
 	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/insanity)
 	threat = 5
-	
+
 	family_heirlooms = list(
 		/obj/item/reagent_containers/food/drinks/flask/gold,
 		/obj/item/toy/figure/captain

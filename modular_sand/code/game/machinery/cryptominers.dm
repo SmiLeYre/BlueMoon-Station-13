@@ -5,13 +5,13 @@
 	icon_state = "off"
 	density = TRUE
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 20000
-	active_power_usage = 60000
+	idle_power_usage = 20
+	active_power_usage = 200
 	circuit = /obj/item/circuitboard/machine/cryptominer
 	init_process = FALSE // Don't process upon creation
 	var/mining = FALSE
 	var/miningtime = 3000
-	var/miningpoints = 25
+	var/miningpoints = 50
 	var/mintemp = TCRYO // 225K equals approximately -55F or -48C
 	var/midtemp = T0C // 273K equals 32F or 0C
 	var/maxtemp = 500 // 500K equals approximately 440F or 226C
@@ -52,19 +52,19 @@
 		if(id_card)
 			var/obj/item/card/id/CARD = id_card
 			if(CARD.bank_support != ID_FREE_BANK_ACCOUNT)
-				to_chat(user, "<span class='warning'>This ID has no banking support whatsover, must be an older model...</span>")
+				to_chat(user, span_warning("This ID has no banking support whatsover, must be an older model..."))
 				return
 			if(!CARD.registered_account)
-				to_chat(user, "<span class='warning'>ERROR: No bank account found.</span>")
+				to_chat(user, span_warning("ERROR: No bank account found."))
 				return
-			to_chat(user, "<span class='notice'>You link \the [CARD] to \the [src].</span>")
+			to_chat(user, span_notice("You link \the [CARD] to \the [src]."))
 			pay_me = CARD.registered_account
-			say("Now using [pay_me.account_holder ? "[pay_me.account_holder]'s" : "<span class='boldwarning'>ERROR</span>"] account.")
+			say("Now using [pay_me.account_holder ? "[pay_me.account_holder]'s" : span_boldwarning("ERROR")] account.")
 			return
 
 /obj/machinery/cryptominer/AltClick(mob/user)
-	user.visible_message("<span class='warning'>[user] begins resetting \the [src].</span>",
-					"<span class='warning'>You begin resetting \the [src].</span>")
+	user.visible_message(span_warning("[user] begins resetting \the [src]."),
+					span_warning("You begin resetting \the [src]."))
 	balloon_alert(user, "resetting")
 	if(do_after(user, 5 SECONDS, target = src))
 		pay_me = SSeconomy.get_dep_account(ACCOUNT_CAR)
@@ -73,7 +73,7 @@
 /obj/machinery/cryptominer/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>A little screen on the machine reads: Currently the linked bank account is [pay_me.account_holder ? "[pay_me.account_holder]'s" : "<span class='boldwarning'>ERROR</span>"]."
+		. += span_notice("A little screen on the machine reads: Currently the linked bank account is [pay_me.account_holder ? "[pay_me.account_holder]'s" : span_boldwarning("ERROR")].")
 	. += "Modify the destination of the credits using your id on it while it is inactive and has it's panel open."
 	. += "Alt-Click to reset to the Cargo budget.</span>"
 
@@ -135,13 +135,13 @@
 /obj/machinery/cryptominer/attack_hand(mob/living/user)
 	. = ..()
 	if(!is_operational())
-		to_chat(user, "<span class='warning'>[src] has to be on to do this!</span>")
+		to_chat(user, span_warning("[src] has to be on to do this!"))
 		balloon_alert(user, "no power!")
 		return FALSE
 	if(mining)
 		set_mining(FALSE)
-		visible_message("<span class='warning'>[src] slowly comes to a halt.</span>",
-						"<span class='warning'>You turn off [src].</span>")
+		visible_message(span_warning("[src] slowly comes to a halt."),
+						span_warning("You turn off [src]."))
 		balloon_alert(user, "turned off")
 		return
 	balloon_alert(user, "turned on")
@@ -168,7 +168,7 @@
 	active_power_usage = 100
 	circuit = /obj/item/circuitboard/machine/cryptominer/syndie
 	miningtime = 6000
-	miningpoints = 200
+	miningpoints = 100
 
 /obj/machinery/cryptominer/syndie/update_icon()
 	. = ..()
@@ -188,7 +188,7 @@
 	idle_power_usage = 1
 	active_power_usage = 1
 	miningtime = 600000
-	miningpoints = 2000
+	miningpoints = 1000
 
 /obj/machinery/cryptominer/nanotrasen/update_icon()
 	. = ..()

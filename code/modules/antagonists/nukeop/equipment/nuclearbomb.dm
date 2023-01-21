@@ -73,7 +73,7 @@
 		desc = "For when the whole sector deserves to know a gender. But of whom? Don't ask."
 
 /obj/machinery/nuclearbomb/syndicate
-	//ui_style = "syndicate" // actually the nuke op bomb is a stole nt bomb
+	ui_style = "syndicate" // actually the nuke op bomb is a stole nt bomb
 
 /obj/machinery/nuclearbomb/syndicate/Initialize(mapload)
 	. = ..()
@@ -646,7 +646,7 @@ This is here to make the tiles around the station mininuke change when it's arme
 	. = ..()
 	AddComponent(/datum/component/stationloving, !fake)
 
-// /obj/item/disk/nuclear/process()
+/obj/item/disk/nuclear/process()
 	process_tick++
 	if(fake)
 		STOP_PROCESSING(SSobj, src)
@@ -695,7 +695,7 @@ This is here to make the tiles around the station mininuke change when it's arme
 /*
  * You can't accidentally eat the nuke disk, bro
  */
- /*
+/*
 /obj/item/disk/nuclear/on_accidental_consumption(mob/living/carbon/M, mob/living/carbon/user, obj/item/source_item, discover_after = TRUE)
 	M.visible_message("<span class='warning'>[M] looks like [M.p_theyve()] just bitten into something important.</span>", \
 						"<span class='warning'>Wait, is this the nuke disk?</span>")
