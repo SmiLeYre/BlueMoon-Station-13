@@ -67,13 +67,13 @@
 	name = "cerberus helmet"
 	slot = ITEM_SLOT_HEAD
 	path = /obj/item/clothing/head/donator/bm/cerberus_helmet
-	ckeywhitelist = list("krashly")
+	ckeywhitelist = list("krashly", "stgs")
 
 /datum/gear/donator/bm/cerberus_suit
 	name = "cerberus suit"
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/donator/bm/cerberus_suit
-	ckeywhitelist = list("krashly")
+	ckeywhitelist = list("krashly", "stgs")
 
 /datum/gear/donator/bm/Kovac_Gun
 	name = "Kovac Gun"
