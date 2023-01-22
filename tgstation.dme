@@ -3869,6 +3869,7 @@
 #include "modular_bluemoon\SmiLeY\code\hilbertshotel_ghost.dm"
 #include "modular_bluemoon\SmiLeY\code\lavaland.dm"
 #include "modular_bluemoon\SmiLeY\code\game\objects\structures\signs\signs_flags.dm"
+#include "modular_bluemoon\strategical_upload\strategical_upload.dm"
 #include "modular_bluemoon\vagabond\code\modules\mob\dead\new_player\sprite_accessories\tails.dm"
 #include "modular_citadel\code\datums\components\souldeath.dm"
 #include "modular_citadel\code\datums\status_effects\chems.dm"
