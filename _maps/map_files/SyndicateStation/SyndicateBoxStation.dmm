@@ -10730,7 +10730,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/mineral/plastitanium,
 /area/ai_monitored/command/storage/eva)
 "azT" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
@@ -19865,7 +19865,7 @@
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/mineral/plastitanium,
 /area/service/kitchen)
 "aYL" = (
 /obj/machinery/light,
@@ -23017,7 +23017,7 @@
 	name = "Mech Bay";
 	req_access_txt = "29"
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/mineral/plastitanium,
 /area/science/robotics/mechbay)
 "bhu" = (
 /obj/machinery/door/firedoor,
@@ -23549,10 +23549,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
-	},
-/obj/item/cigbutt{
-	pixel_x = 10;
-	pixel_y = 17
 	},
 /obj/effect/landmark/start/paramedic,
 /turf/open/floor/mineral/plastitanium,
@@ -25128,7 +25124,7 @@
 	name = "Delivery Office";
 	req_access_txt = "50"
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/mineral/plastitanium,
 /area/cargo/sorting)
 "bmm" = (
 /obj/structure/cable{
@@ -25178,7 +25174,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/open/floor/wood,
+/turf/open/floor/mineral/plastitanium,
 /area/command/heads_quarters/hop)
 "bmt" = (
 /obj/structure/cable{
@@ -26318,7 +26314,7 @@
 	id = "hop";
 	name = "Privacy Shutters"
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/mineral/plastitanium,
 /area/command/heads_quarters/hop)
 "bpb" = (
 /obj/structure/disposalpipe/segment{
@@ -31291,16 +31287,22 @@
 /obj/structure/table,
 /obj/item/plant_analyzer,
 /obj/item/stock_parts/cell/high/plus,
-/turf/open/floor/plating,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bAM" = (
 /obj/structure/table,
 /obj/item/analyzer,
 /obj/item/healthanalyzer,
-/obj/machinery/light/small{
+/obj/effect/turf_decal/tile/yellow{
 	dir = 1
 	},
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bAN" = (
 /obj/machinery/door/firedoor,
@@ -32497,7 +32499,16 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bDw" = (
 /obj/structure/table,
@@ -32505,16 +32516,28 @@
 	pixel_y = 16
 	},
 /obj/item/wirecutters,
-/turf/open/floor/plating,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bDx" = (
 /obj/structure/table,
 /obj/item/electronics/apc,
 /obj/item/electronics/airlock,
-/obj/machinery/light/small{
+/obj/effect/turf_decal/tile/yellow{
 	dir = 1
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bDA" = (
 /obj/structure/disposalpipe/segment,
@@ -32759,7 +32782,7 @@
 	name = "Medbay Storage";
 	req_access_txt = "5"
 	},
-/turf/open/floor/plasteel/white,
+/turf/open/floor/mineral/plastitanium,
 /area/medical/medbay/central)
 "bEe" = (
 /obj/structure/disposalpipe/segment{
@@ -33107,7 +33130,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bET" = (
 /obj/structure/cable{
@@ -33116,7 +33139,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bEU" = (
 /obj/structure/cable{
@@ -33158,7 +33181,13 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bEY" = (
 /obj/structure/cable{
@@ -33175,16 +33204,26 @@
 	},
 /obj/item/stack/cable_coil,
 /obj/item/stock_parts/cell/high/plus,
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bFa" = (
-/turf/open/floor/plating,
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bFb" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bFc" = (
 /obj/structure/cable{
@@ -33194,7 +33233,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bFd" = (
 /obj/structure/disposalpipe/segment,
@@ -33215,7 +33254,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bFf" = (
 /obj/structure/chair/stool,
@@ -33784,11 +33823,27 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/red,
 /turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bGt" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/techstorage/AI,
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bGu" = (
@@ -33803,22 +33858,22 @@
 	pixel_y = 5
 	},
 /obj/item/multitool,
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bGw" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/techstorage/rnd,
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bGx" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/techstorage/tcomms,
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bGy" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/techstorage/service,
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bGz" = (
 /obj/structure/table/reinforced,
@@ -34135,13 +34190,17 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bHi" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bHj" = (
 /obj/structure/cable{
@@ -34301,17 +34360,23 @@
 /area/maintenance/port/aft)
 "bHG" = (
 /obj/structure/rack,
-/obj/machinery/light/small{
+/obj/effect/spawner/lootdrop/techstorage/command,
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
-/obj/effect/spawner/lootdrop/techstorage/command,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bHH" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bHI" = (
 /obj/machinery/door/airlock/highsecurity{
@@ -34321,14 +34386,24 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bHJ" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/effect/landmark/xeno_spawn,
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bHK" = (
 /obj/machinery/light{
@@ -34357,7 +34432,12 @@
 	department = "Tech storage";
 	pixel_y = -32
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/obj/machinery/light,
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bHO" = (
 /obj/structure/rack,
@@ -34367,8 +34447,11 @@
 	},
 /obj/item/multitool,
 /obj/item/clothing/glasses/meson,
-/obj/machinery/light/small,
-/turf/open/floor/plating,
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bHP" = (
 /obj/effect/turf_decal/tile/yellow,
@@ -34376,7 +34459,14 @@
 /area/hallway/primary/aft)
 "bHQ" = (
 /obj/machinery/vending/assist,
-/turf/open/floor/plating,
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bHR" = (
 /obj/structure/disposalpipe/segment,
@@ -35008,11 +35098,25 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/red,
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bJh" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/techstorage/RnD_secure,
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/red,
 /turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bJi" = (
@@ -35026,28 +35130,32 @@
 /obj/item/stock_parts/subspace/analyzer,
 /obj/item/stock_parts/subspace/analyzer,
 /obj/item/stock_parts/subspace/analyzer,
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bJk" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/techstorage/medical,
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bJl" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/techstorage/engineering,
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bJm" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/techstorage/security,
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bJn" = (
 /obj/machinery/light_switch{
 	pixel_x = 27
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bJp" = (
 /obj/structure/disposalpipe/segment,
@@ -35103,7 +35211,7 @@
 /turf/open/floor/plating,
 /area/maintenance/aft)
 "bJu" = (
-/obj/structure/light_construct{
+/obj/machinery/light{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -35529,14 +35637,20 @@
 /obj/item/stock_parts/micro_laser/high,
 /obj/item/stock_parts/micro_laser/high,
 /obj/item/stock_parts/micro_laser/high,
-/turf/open/floor/plating,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bKu" = (
 /obj/structure/table,
 /obj/item/stock_parts/subspace/amplifier,
 /obj/item/stock_parts/subspace/amplifier,
 /obj/item/stock_parts/subspace/amplifier,
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bKv" = (
 /obj/effect/spawner/structure/window/plastitanium,
@@ -35767,7 +35881,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/construction)
 "bKV" = (
 /obj/structure/cable{
@@ -35992,7 +36106,14 @@
 	dir = 1;
 	pixel_y = -22
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bLy" = (
 /obj/structure/table,
@@ -36002,7 +36123,11 @@
 /obj/item/stock_parts/subspace/crystal,
 /obj/item/stock_parts/subspace/crystal,
 /obj/item/stock_parts/subspace/crystal,
-/turf/open/floor/plating,
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bLz" = (
 /obj/structure/table,
@@ -36011,8 +36136,12 @@
 /obj/item/stock_parts/subspace/filter,
 /obj/item/stock_parts/subspace/filter,
 /obj/item/stock_parts/subspace/filter,
-/obj/machinery/light/small,
-/turf/open/floor/plating,
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/obj/machinery/light,
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bLA" = (
 /obj/structure/rack,
@@ -36027,7 +36156,11 @@
 	c_tag = "Tech Storage";
 	dir = 1
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "bLB" = (
 /obj/effect/spawner/structure/window/plastitanium,
@@ -39375,9 +39508,6 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/oil{
-	icon_state = "floor5"
-	},
 /turf/open/floor/mineral/plastitanium,
 /area/engineering/atmos)
 "bUJ" = (
@@ -40861,17 +40991,12 @@
 /turf/open/floor/mineral/plastitanium,
 /area/hallway/primary/aft)
 "bYL" = (
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
-	},
 /obj/machinery/door/firedoor/heavy,
 /obj/machinery/door/airlock/atmos{
 	name = "Atmospherics";
 	req_access_txt = "24"
 	},
-/turf/open/floor/plasteel/dark/corner{
-	dir = 1
-	},
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/atmos)
 "bYM" = (
 /obj/machinery/airalarm{
@@ -45182,7 +45307,7 @@
 	name = "Engineering External Access";
 	req_access_txt = "10;13"
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plating,
 /area/engineering/main)
 "cjS" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -50108,6 +50233,10 @@
 	icon_state = "1-4"
 	},
 /obj/effect/landmark/event_spawn,
+/obj/effect/turf_decal/tile/red,
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "cBD" = (
@@ -54002,7 +54131,7 @@
 /obj/machinery/door/airlock/maintenance{
 	name = "Permabrig Maintenance"
 	},
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/plating,
 /area/security/prison)
 "ghP" = (
 /obj/machinery/door/airlock{
@@ -54011,7 +54140,6 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/structure/fans/tiny,
-/obj/structure/alien/weeds,
 /turf/open/floor/mineral/plastitanium,
 /area/commons/dorms)
 "giE" = (
@@ -55245,6 +55373,13 @@
 	smooth = 2
 	},
 /area/service/theater)
+"iol" = (
+/obj/effect/turf_decal/tile/yellow{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow,
+/turf/open/floor/mineral/plastitanium,
+/area/engineering/storage/tech)
 "iou" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/firealarm{
@@ -56517,7 +56652,13 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/engineering/storage/tech)
 "kfS" = (
 /turf/closed/wall/r_wall/syndicate{
@@ -57469,7 +57610,7 @@
 	},
 /obj/machinery/light/small,
 /obj/machinery/button/door{
-	id = "Dorm6";
+	id = "Dorm4";
 	name = "Dormitory Door Lock";
 	normaldoorcontrol = 1;
 	pixel_y = -25;
@@ -57668,7 +57809,7 @@
 	name = "Blueshield's Office Maintenance";
 	req_access_txt = "72"
 	},
-/turf/open/floor/carpet,
+/turf/open/floor/mineral/plastitanium,
 /area/command/blueshieldoffice)
 "lGV" = (
 /obj/machinery/button/door{
@@ -58633,7 +58774,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/door{
-	id = "Dorm1";
+	id = "Dorm3";
 	name = "Door Lock";
 	normaldoorcontrol = 1;
 	pixel_x = -26;
@@ -59351,6 +59492,16 @@
 /obj/item/storage/box/syndie_kit/chameleon,
 /turf/open/floor/mineral/plastitanium/red,
 /area/maintenance/port/fore)
+"nXY" = (
+/obj/effect/turf_decal/tile/yellow{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/engineering/storage/tech)
 "nYe" = (
 /obj/machinery/firealarm{
 	dir = 8;
@@ -60817,6 +60968,9 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/port/fore)
+"qjX" = (
+/turf/open/floor/mineral/plastitanium,
+/area/engineering/storage/tech)
 "qki" = (
 /obj/machinery/door/airlock{
 	name = "Unisex Restrooms"
@@ -60859,6 +61013,32 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/mineral/plastitanium,
 /area/medical/medbay/lobby)
+"qnN" = (
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/light/small{
+	brightness = 3;
+	dir = 8
+	},
+/obj/machinery/button/door{
+	id = "Dorm2";
+	name = "Door Lock";
+	normaldoorcontrol = 1;
+	pixel_x = -26;
+	pixel_y = 7;
+	specialfunctions = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/security/prison)
 "qoT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 9
@@ -61682,7 +61862,7 @@
 	},
 /obj/machinery/light/small,
 /obj/machinery/button/door{
-	id = "Dorm6";
+	id = "Dorm5";
 	name = "Door Lock";
 	normaldoorcontrol = 1;
 	pixel_y = -25;
@@ -64041,6 +64221,15 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/commons/fitness/recreation)
+"vif" = (
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/engineering/storage/tech)
 "viF" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -64140,6 +64329,15 @@
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
 /area/maintenance/fore)
+"vru" = (
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/engineering/storage/tech)
 "vsM" = (
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable,
@@ -65384,7 +65582,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/hallway/secondary/service)
 "xjU" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -89332,7 +89530,7 @@ hWS
 jHJ
 lHK
 nRO
-vYF
+qnN
 txs
 acd
 ksa
@@ -92494,7 +92692,7 @@ bDv
 bEX
 bFb
 kfv
-bFa
+vif
 bKt
 bLx
 bCs
@@ -92748,11 +92946,11 @@ cBw
 bBk
 bCs
 bDx
-bFa
-bFa
+qjX
+qjX
 bHJ
-bFa
-bFa
+qjX
+qjX
 bLz
 bCs
 cCe
@@ -93261,12 +93459,12 @@ byR
 bnM
 bBl
 bCs
-bFa
-bFa
-bFa
+vru
+qjX
+qjX
 bHH
-bFa
-bFa
+qjX
+qjX
 bFa
 bCs
 bNJ
@@ -93518,12 +93716,12 @@ byQ
 jux
 bBi
 bCs
-bFa
-bFa
+vru
+qjX
 bGw
 bER
 bJk
-bFa
+qjX
 bLA
 bCs
 cCd
@@ -93776,11 +93974,11 @@ jux
 bBi
 bCs
 bAM
-bFa
+qjX
 bGy
 bFc
 bJm
-bFa
+qjX
 bHO
 bCs
 cCd
@@ -94033,7 +94231,7 @@ jux
 byU
 bCs
 bAL
-bFa
+qjX
 bGx
 bET
 bJl
@@ -94289,9 +94487,9 @@ aXf
 jux
 bBi
 bCs
-bFa
-bFa
-bFa
+nXY
+iol
+iol
 bET
 bJn
 bHi
