@@ -17,7 +17,7 @@
 
 /datum/supply_pack/costumes_toys/randomised
 	name = "Collectable Hats Crate"
-	desc = "Flaunt your status with three unique, highly-collectable hats!"
+	desc = "Продемонстрируйте свой статус с помощью трех уникальных шляп, которые можно коллекционировать!"
 	cost = 20000
 	var/num_contained = 3 //number of items picked to be contained in a randomised crate
 	contains = list(/obj/item/clothing/head/collectable/chef,
@@ -46,7 +46,7 @@
 
 /datum/supply_pack/costumes_toys/randomised/contraband
 	name = "Contraband Crate"
-	desc = "Psst.. bud... want some contraband? I can get you a poster, some nice cigs, dank, even some sponsored items...you know, the good stuff. Just keep it away from the cops, kay?"
+	desc = "Псс... приятель... хочешь немного контрабанды? Я могу достать тебе плакат, несколько хороших сигарет, данк, даже кое-какие интересные товары...вы знаете, ХОРОШИЕ вещи. Просто держи это подальше от копов, окей?"
 	contraband = TRUE
 	cost = 3000
 	num_contained = 5 //SOME
@@ -77,7 +77,7 @@
 
 /datum/supply_pack/costumes_toys/foamforce
 	name = "Foam Force Crate"
-	desc = "Break out the big guns with eight Foam Force shotguns!"
+	desc = "Похвастайся большой пушкой с помощью восьми дробовиков Foam Force!"
 	cost = 1000
 	contains = list(/obj/item/gun/ballistic/shotgun/toy,
 					/obj/item/gun/ballistic/shotgun/toy,
@@ -91,7 +91,7 @@
 
 /datum/supply_pack/costumes_toys/foamforce/bonus
 	name = "Foam Force Pistols Crate"
-	desc = "Psst.. hey bud... remember those old foam force pistols that got discontinued for being too cool? Well I got two of those right here with your name on em. I'll even throw in a spare mag for each, waddya say?"
+	desc = "Псс.. эй, приятель... помнишь те старые пистолеты Foam force, которые были сняты с производства за то, что были слишком крутыми? Что ж, у меня есть два таких прямо здесь с твоим именем на них. Я даже добавлю запасной магазин для каждого, что скажешь?"
 	contraband = TRUE
 	cost = 4000
 	contains = list(/obj/item/gun/ballistic/automatic/toy/pistol,
@@ -102,7 +102,7 @@
 
 /datum/supply_pack/costumes_toys/clownpin
 	name = "Hilarious Firing Pin Crate"
-	desc = "I uh... I'm not really sure what this does. Wanna buy it?"
+	desc = "Я эм... Я не совсем уверен, что это делает. Хочешь его купить?"
 	cost = 5000
 	contraband = TRUE
 	contains = list(/obj/item/firing_pin/clown)
@@ -111,7 +111,7 @@
 
 /datum/supply_pack/costumes_toys/lasertag
 	name = "Laser Tag Crate"
-	desc = "Foam Force is for boys. Laser Tag is for men. Contains three sets of red suits, blue suits, matching helmets, and matching laser tag guns."
+	desc = "Foam force - это для мальчиков. Лазертаг - это для мужчин. Содержит три комплекта красных костюмов, синих костюмов, подходящих шлемов и подходящих лазертаг-пистолетов."
 	cost = 3500
 	contains = list(/obj/item/gun/energy/laser/redtag,
 					/obj/item/gun/energy/laser/redtag,
@@ -135,7 +135,7 @@
 
 /datum/supply_pack/costumes_toys/lasertag/pins
 	name = "Laser Tag Firing Pins Crate"
-	desc = "Three laser tag firing pins used in laser-tag units to ensure users are wearing their vests."
+	desc = "Три метки лазертага, используемые в установках, чтобы убедиться, что игроки носят свои жилеты."
 	cost = 3000
 	contraband = TRUE
 	contains = list(/obj/item/storage/box/lasertagpins)
@@ -143,7 +143,7 @@
 
 /datum/supply_pack/costumes_toys/randomised/toys
 	name = "Toy Crate"
-	desc = "Who cares about pride and accomplishment? Skip the gaming and get straight to the sweet rewards with this product! Contains five random toys. Warranty void if used to prank research directors."
+	desc = "Кого волнует гордость и достижения? Пропустите игры и получите сразу сладкие награды с этим продуктом! Содержит пять случайных игрушек. Гарантия аннулируется, если используется для розыгрыша Директора по исследованиям."
 	cost = 1500 // or play the arcade machines ya lazy bum
 	num_contained = 5
 	contains = list(/obj/item/storage/box/snappops,
@@ -200,7 +200,7 @@
 
 /datum/supply_pack/costumes_toys/randomised/plush
 	name = "Plush Crate"
-	desc = "Plush tide station wide. Contains 5 random plushies for you to love. Warranty void if your love violates the terms of use."
+	desc = "Содержит 5 случайных плюшевых игрушек, которые вам понравятся. Гарантия аннулируется, если ваша любовь нарушает условия использования." // Привет непереводимым приколам
 	cost = 1500 // or play the arcade machines ya lazy bum
 	num_contained = 5
 	contains = list(/obj/item/toy/plush/random,
@@ -218,7 +218,7 @@
 
 /datum/supply_pack/costumes_toys/formalwear
 	name = "Formalwear Crate"
-	desc = "You're gonna like the way you look, I guaranteed it. Contains an asston of fancy clothing."
+	desc = "Тебе понравится, как ты выглядишь, я это гарантирую. Содержит множество модной одежды."
 	cost = 4750 //Lots of fancy clothing that can be sold back!
 	contains = list(/obj/item/clothing/under/dress/blacktango,
 					/obj/item/clothing/under/misc/assistantformal,
@@ -252,7 +252,7 @@
 
 /datum/supply_pack/costumes_toys/costume_original
 	name = "Original Costume Crate"
-	desc = "Reenact Shakespearean plays with this assortment of outfits. Contains eight different costumes!"
+	desc = "Воспроизведите шекспировские пьесы с помощью этого ассортимента нарядов. Содержит восемь различных костюмов!"
 	cost = 1750
 	contains = list(/obj/item/clothing/head/snowman,
 					/obj/item/clothing/suit/snowman,
@@ -272,7 +272,7 @@
 
 /datum/supply_pack/costumes_toys/costume
 	name = "Standard Costume Crate"
-	desc = "Supply the station's entertainers with the equipment of their trade with these Nanotrasen-approved costumes! Contains a full clown and mime outfit, along with a bike horn and a bottle of nothing."
+	desc = "Снабдите артистов станции необходимым оборудованием с помощью этих костюмов, одобренных Nanotrasen! Содержит полный костюм клоуна и мима, а также велосипедный рожок и бутылку ничего."
 	cost = 1300
 	access = ACCESS_THEATRE
 	contains = list(/obj/item/storage/backpack/clown,
@@ -293,7 +293,7 @@
 
 /datum/supply_pack/costumes_toys/wizard
 	name = "Wizard Costume Crate"
-	desc = "Pretend to join the Wizard Federation with this full wizard outfit! Nanotrasen would like to remind its employees that actually joining the Wizard Federation is subject to termination of job and life."
+	desc = "Притворись, что вступаешь в Федерацию волшебников с этим полным снаряжением волшебника! Nanotrasen хотела бы напомнить своим сотрудникам, что фактическое вступление в Федерацию волшебников влечет за собой прекращение работы и жизни."
 	cost = 2000
 	contains = list(/obj/item/staff,
 					/obj/item/clothing/suit/wizrobe/fake,
@@ -304,7 +304,7 @@
 
 /datum/supply_pack/costumes_toys/wedding
 	name = "Wedding Crate"
-	desc = "Tie the knot IN SPACE! Hold your own extravagant wedding with this crate of suits and bridal gowns. Complete with champagne, cake, and the luxurious cost you would expect for an event to remember."
+	desc = "Свяжи себя узами брака В КОСМОСЕ! Устройте свою собственную экстравагантную свадьбу с помощью этого набора костюмов и свадебных платьев. В комплекте с шампанским, тортом и роскошной стоимостью."
 	cost = 10000 // weddings are absurdly expensive and so is this crate
 	contains = list(/obj/item/clothing/under/suit/black_really, //we don't actually need suits since you can vend them but the crate should feel "complete"
 					/obj/item/clothing/under/suit/black_really,

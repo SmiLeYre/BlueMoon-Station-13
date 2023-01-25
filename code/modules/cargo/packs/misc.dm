@@ -22,7 +22,7 @@
 
 /datum/supply_pack/misc/artsupply
 	name = "Art Supplies"
-	desc = "Make some happy little accidents with six canvasses, two easels, two boxes of crayons, and a rainbow crayon!"
+	desc = "Устройте несколько маленьких счастливых случайностей с шестью холстами, двумя мольбертами, двумя коробками цветных карандашей и радужным мелком!"
 	cost = 800
 	contains = list(/obj/structure/easel,
 					/obj/structure/easel,
@@ -42,7 +42,7 @@
 
 /datum/supply_pack/misc/book_crate
 	name = "Book Crate"
-	desc = "Surplus from the Nanotrasen Archives, these seven books are sure to be good reads."
+	desc = "Извлеченные из архивов Nanotrasen, эти семь книг, несомненно, будут полезны для чтения."
 	// cost = CARGO_CRATE_VALUE * 3
 	cost = 1500
 	contains = list(/obj/item/book/codex_gigas,
@@ -56,7 +56,7 @@
 
 /datum/supply_pack/misc/paper
 	name = "Bureaucracy Crate"
-	desc = "High stacks of papers on your desk Are a big problem - make it Pea-sized with these bureaucratic supplies! Contains six pens, some camera film, hand labeler supplies, a paper bin, a carbon paper bin, three folders, a laser pointer, two clipboards and two stamps."//that was too forced
+	desc = "Высокие стопки бумаг на вашем столе - большая проблема - сделайте их размером с горошину с помощью этих бюрократических принадлежностей! Содержит шесть ручек, немного фотопленки, принадлежности для этикетирования, контейнер для бумаги, копировальную бумагу, три папки, лазерную указку, две картонные коробки и две марки."//that was too forced
 	cost = 1500
 	contains = list(/obj/structure/filingcabinet/chestdrawer/wheeled,
 					/obj/item/camera_film,
@@ -83,7 +83,7 @@
 
 /datum/supply_pack/misc/captain_pen
 	name = "Captain Pen"
-	desc = "A spare Captain fountain pen."
+	desc = "Запасная авторучка капитана."
 	access = ACCESS_CAPTAIN
 	cost = 5000
 	contains = list(/obj/item/pen/fountain/captain)
@@ -92,7 +92,7 @@
 
 /datum/supply_pack/misc/fountainpens
 	name = "Calligraphy Crate"
-	desc = "Sign death warrants in style with these seven executive fountain pens."
+	desc = "Стильно подписывайте смертные приговоры с помощью этих семи перьевых ручек."
 	cost = 730
 	contains = list(/obj/item/storage/box/fountainpens,
 					/obj/item/paper_bin)
@@ -101,8 +101,8 @@
 
 /datum/supply_pack/misc/toner
 	name = "Toner Crate"
-	desc = "Spent too much ink printing butt pictures? Fret not, with these six toner refills, you'll be printing butts 'till the cows come home!'"
-	cost = 200 * 4
+	desc = "Потратил слишком много чернил на печать фотографий задниц? Не волнуйтесь, с этими шестью заправками тонера вы будете печатать окурки "пока коровы не вернутся домой"!"
+	cost = 200 * 4 
 	contains = list(/obj/item/toner,
 					/obj/item/toner,
 					/obj/item/toner,
@@ -113,7 +113,7 @@
 
 /datum/supply_pack/misc/toner_large
 	name = "Toner Crate (Large)"
-	desc = "Tired of changing toner cartridges? These six extra heavy duty refills contain roughly five times as much toner as the base model!"
+	desc = "Устали менять картриджи с тонером? Эти шесть сверхпрочных картриджей содержат примерно в пять раз больше тонера, чем базовая модель!"
 	cost = 200 * 6
 	contains = list(/obj/item/toner/large,
 					/obj/item/toner/large,
@@ -129,7 +129,7 @@
 
 /datum/supply_pack/misc/coloredsheets
 	name = "Bedsheet Crate"
-	desc = "Give your night life a splash of color with this crate filled with bedsheets! Contains a total of nine different-colored sheets."
+	desc = "Придайте вашей ночной жизни всплеск красок с помощью этого ящика, наполненного простынями! Содержит в общей сложности девять разноцветных листов."
 	cost = 1250
 	contains = list(/obj/item/bedsheet/blue,
 					/obj/item/bedsheet/green,
@@ -144,15 +144,15 @@
 
 /datum/supply_pack/misc/bicycle
 	name = "Bicycle"
-	desc = "Nanotrasen reminds all employees to never toy with powers outside their control."
-	cost = 5000000
+	desc = "Nanotrasen напоминает всем сотрудникам, чтобы они никогда не играли с силами, находящимися вне их контроля."
+	cost = 5000000 // Нифига ценник
 	contains = list(/obj/vehicle/ridden/bicycle)
 	crate_name = "Bicycle Crate"
 	crate_type = /obj/structure/closet/crate/large
 
 /datum/supply_pack/misc/bigband
 	name = "Big Band Instrument Collection"
-	desc = "Get your sad station movin' and groovin' with this fine collection! Contains nine different instruments!"
+	desc = "Заставьте свою грустную станцию двигаться с этой прекрасной коллекцией! Содержит девять различных инструментов!"
 	cost = 5000
 	crate_name = "Big band musical instruments collection"
 	contains = list(/obj/item/instrument/violin,
@@ -168,7 +168,7 @@
 
 /datum/supply_pack/misc/casinocrate
 	name = "Casino Crate"
-	desc = "Start up your own grand casino with this crate filled with slot machine and arcade boards!"
+	desc = "Откройте свое собственное грандиозное казино с блэкджеком и шлюхами !"
 	cost = 3000
 	contains = list(/obj/item/circuitboard/computer/arcade/battle,
 					/obj/item/circuitboard/computer/arcade/battle,
@@ -186,7 +186,7 @@
 
 /datum/supply_pack/misc/coincrate
 	name = "Coin Crate"
-	desc = "Psssst, hey, you. Yes, you. I've heard that coins can do some special things on your station, give you access to some pretty cool stuff. Here's the deal, you give me some credits, and I give so some coins. Sound like a deal? I'll give you 10 for 10000 creds."
+	desc = "Псссс, привет, ты. Да, ты. Я слышал, что монеты могут делать какие-то особенные вещи на вашей станции, давать вам доступ к некоторым довольно крутым вещам. Вот в чем дело, вы даете мне несколько кредитов, а я даю вам несколько монет. Звучит как сделка? Я дам тебе 10 за 10000 кредитов."
 	contraband = TRUE
 	cost = 3000
 	contains = list(/obj/item/coin/silver) // 400 x 10 = 2 sheets of silver for 2300cr
@@ -200,7 +200,7 @@
 
 /datum/supply_pack/misc/dueling_stam
 	name = "Dueling Pistols"
-	desc = "Resolve all your quarrels with some nonlethal fun."
+	desc = "Разрешите все свои ссоры каким-нибудь несмертельным развлечением."
 	cost = 2000
 	contains = list(/obj/item/storage/lockbox/dueling/hugbox/stamina)
 	crate_name = "dueling pistols"
@@ -212,7 +212,7 @@
 
 /datum/supply_pack/misc/dueling_lethal
 	name = "Lethal Dueling Pistols"
-	desc = "Settle your differences the true spaceman way."
+	desc = "Уладьте свои разногласия истинным способом космонавта."
 	cost = 3000
 	contraband = TRUE
 	contains = list(/obj/item/storage/lockbox/dueling/hugbox,
@@ -222,7 +222,7 @@
 
 /datum/supply_pack/misc/dueling_death
 	name = "Elimination Dueling Pistols"
-	desc = "It's high noon."
+	desc = "Уже полдень."
 	cost = 5000
 	hidden = TRUE
 	contains = list(/obj/item/storage/lockbox/dueling)
@@ -230,7 +230,7 @@
 
 /datum/supply_pack/misc/dirtymags
 	name = "Dirty Magazines"
-	desc = "Get your mind out of the gutter operative, you have work to do. Three items per order. Possible Results: .357 Speedloaders, Kitchen Gun patented magazines, or Stetchkin magazines."
+	desc = "Выбрось свои мысли из головы, оперативник, тебе нужно поработать. Три товара на заказ. Возможные результаты: Скорозарядные устройства калибра 357, патентованные магазины Kitchen Gun или магазины Stetchkin."
 	hidden = TRUE
 	cost = 4000
 	var/num_contained = 3
@@ -251,7 +251,7 @@
 
 /datum/supply_pack/misc/candles
 	name = "Candle Crate"
-	desc = "Set up a romantic dinner or host a séance with these extra candles and crayons."
+	desc = "Устройте романтический ужин или устройте танцы с помощью этих дополнительных свечей и цветных карандашей."
 	cost = 850
 	contains = list(/obj/item/storage/fancy/candle_box,
 					/obj/item/storage/fancy/candle_box,
@@ -260,14 +260,14 @@
 
 /datum/supply_pack/misc/diamondring
 	name = "Diamond Ring"
-	desc = "Show them your love is like a diamond: unbreakable and forever lasting. Shipped straight from child slave cartels in the space african mines."
+	desc = "Покажи им, что твоя любовь подобна бриллианту: нерушима и вечна. Доставлено прямиком из детских рабовладельческих картелей на шахтах космической Африки."
 	cost = 10000
 	contains = list(/obj/item/storage/fancy/ringbox/diamond)
 	crate_name = "diamond ring crate"
 
 /datum/supply_pack/misc/exoticfootwear
 	name = "Exotic Footwear Crate"
-	desc = "Popularised by lizards and exotic dancers, the footwear included in this shipment is sure to give your feet the breathing room they deserve. Sweet Kicks Inc. is not responsible for any damage, distress, or @r0u$a1 caused by this shipment."
+	desc = "Обувь, популярная среди ящериц и экзотических танцоров, входящая в комплект поставки, несомненно, даст вашим ногам передышку, которой они заслуживают. Sweet Kicks Inc. не несет ответственности за любой ущерб или бедствие"
 	cost = 4337
 	contains = list(/obj/item/clothing/shoes/wraps,
 					/obj/item/clothing/shoes/wraps,
@@ -283,7 +283,7 @@
 
 /datum/supply_pack/misc/funeral
 	name = "Funeral Supplies"
-	desc = "Mourn your dead properly buy sending them off with love filled notes, clean clothes, and a proper ceremony. Contains two candle packs, funeral garb, flowers, a paperbin , and crayons to help aid in religious rituals. Coffin included."
+	desc = "Оплакивайте своих умерших должным образом, отправляя им записки, наполненные любовью, чистую одежду и соответствующую церемонию. Содержит две упаковки свечей, похоронную одежду, цветы, корзину для бумаги и цветные карандаши, которые помогут в религиозных ритуалах. Гроб в комплекте."
 	cost = 1200
 	contains = list(/obj/item/clothing/under/misc/burial,
 					/obj/item/storage/fancy/candle_box,
@@ -302,7 +302,7 @@
 
 /datum/supply_pack/misc/jewelry
 	name = "Jewelry Crate"
-	desc = "Bling out with this crate of jewelry. Includes gold necklace and a set of two rings."
+	desc = "Выделяйся с этим ящиком драгоценностей. В комплект входит золотое ожерелье и набор из двух колец."
 	cost = 5000
 	contains = list(/obj/item/clothing/neck/necklace/dope,
 					/obj/item/storage/fancy/ringbox,
@@ -312,13 +312,14 @@
 
 /datum/supply_pack/misc/jukebox
 	name = "Jukebox"
+	desc = "Это не достойно пояснения"
 	cost = 10000
 	contains = list(/obj/machinery/jukebox)
 	crate_name = "Jukebox"
 
 /datum/supply_pack/misc/abandonedcrate
 	name = "Loot Box"
-	desc = "Try your luck with these highly secure loot boxes! Solve the lock, win great prizes! WARNING: EXPLOSIVE FAILURE."
+	desc = "Испытайте свою удачу с этими высокозащищенными ящиками с добычей! Разгадайте замок, выиграйте отличные призы! ПРЕДУПРЕЖДЕНИЕ: ВЗРЫВООПАСНЫЙ ПРОВАЛ."
 	contraband = TRUE
 	cost = 15000
 	contains = list(/obj/structure/closet/crate/secure/loot)
@@ -328,7 +329,7 @@
 
 /datum/supply_pack/misc/potted_plants
 	name = "Potted Plants Crate"
-	desc = "Spruce up the station with these lovely plants! Contains a random assortment of five potted plants from Nanotrasen's potted plant research division. Warranty void if thrown."
+	desc = "Украсьте станцию этими прекрасными растениями! Содержит случайный ассортимент из пяти горшечных растений из отдела исследований горшечных растений Nanotrasen."
 	cost = 730
 	contains = list(/obj/item/kirbyplants/random,
 					/obj/item/kirbyplants/random,
@@ -340,7 +341,7 @@
 
 /datum/supply_pack/misc/religious_supplies
 	name = "Religious Supplies Crate"
-	desc = "Keep your local chaplain happy and well-supplied, lest they call down judgement upon your cargo bay. Contains two bottles of holywater, bibles, chaplain robes, and burial garmets."
+	desc = "Следите за тем, чтобы ваш местный капеллан был доволен и хорошо снабжался, чтобы они не навлекли осуждение на ваш грузовой отсек. Содержит две бутылки со святой водой, библии, одеяния капеллана и погребальную одежду."
 	cost = 4000	// it costs so much because the Space Church needs funding to build a cathedral
 	contains = list(/obj/item/reagent_containers/food/drinks/bottle/holywater,
 					/obj/item/reagent_containers/food/drinks/bottle/holywater,
@@ -352,7 +353,7 @@
 
 /datum/supply_pack/misc/shower
 	name = "Shower Supplies"
-	desc = "Everyone needs a bit of R&R. Make sure you get can get yours by ordering this crate filled with towels, rubber duckies, and some soap!"
+	desc = "Каждому нужно немного R&R. Убедитесь, что вы можете получить свое, заказав этот ящик, наполненный полотенцами, резиновыми уточками и небольшим количеством мыла!"
 	cost = 1000
 	contains = list(/obj/item/reagent_containers/rag/towel,
 					/obj/item/reagent_containers/rag/towel,
@@ -372,7 +373,7 @@
 /datum/supply_pack/misc/carpet
 	crate_type = /obj/structure/closet/secure_closet/cargo
 	name = "Classic Carpet Single-Pack"
-	desc = "Plasteel floor tiles getting on your nerves? This 50 units stack of extra soft carpet will tie any room together."
+	desc = "Напольная плитка действует вам на нервы? Эта стопка из 50 единиц очень мягкого ковра свяжет воедино любую комнату."
 	cost = 200
 	contains = list(/obj/item/stack/tile/carpet/fifty)
 
@@ -386,7 +387,7 @@
 
 /datum/supply_pack/misc/carpet/premium
 	name = "Monochrome Carpet Single-Pack"
-	desc = "Exotic carpets for all your decorating needs. This 30 units stack of extra soft carpet will tie any room together."
+	desc = "Экзотические ковры для всех ваших потребностей в декорировании. Эта стопка из 30 единиц очень мягкого ковра свяжет воедино любую комнату."
 	cost = 250
 	contains = list(/obj/item/stack/tile/carpet/monochrome/thirty)
 
@@ -428,7 +429,7 @@
 
 /datum/supply_pack/misc/noslipfloor
 	name = "High-traction Floor Tiles"
-	desc = "Make slipping a thing of the past with sixty industrial-grade anti-slip floortiles!"
+	desc = "Сделайте скольжение делом прошлого с помощью шестидесяти промышленных противоскользящих напольных плиток!"
 	cost = 2000
 	contains = list(/obj/item/stack/tile/noslip/thirty,
 					/obj/item/stack/tile/noslip/thirty)
@@ -436,7 +437,7 @@
 
 /datum/supply_pack/misc/blackmarket_telepad
 	name = "Black Market LTSRBT"
-	desc = "Need a faster and better way of transporting your illegal goods from and to the station? Fear not, the Long-To-Short-Range-Bluespace-Transceiver (LTSRBT for short) is here to help. Contains a LTSRBT circuit, two bluespace crystals, and one ansible."
+	desc = "Нужен более быстрый и качественный способ транспортировки ваших нелегальных товаров со станции и обратно? Не бойтесь, приемопередатчик Bluespace с большой и малой дальностью действия здесь, чтобы помочь. Содержит схему LTSRBT, два кристалла bluespace и один ansible."
 	cost = 8000
 	contraband = TRUE
 	contains = list(/obj/item/circuitboard/machine/ltsrbt,
@@ -451,7 +452,7 @@
 
 /datum/supply_pack/misc/lewd
 	name = "Lewd Crate" // OwO
-	desc = "Pssst, want to have a good time with your sluts? Well I got what you want! Maid clothing, dildos, collars and more!"
+	desc = "Пссст, хочешь хорошо провести время со своими шлюхами? Что ж, у меня есть то, что ты хочешь! Одежда для горничной, фаллоимитаторы, ошейники и многое другое!"
 	cost = 5250
 	contraband = TRUE
 	contains = list(/obj/item/dildo/custom,

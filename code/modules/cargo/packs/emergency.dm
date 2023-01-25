@@ -11,7 +11,7 @@
 
 /datum/supply_pack/emergency/vehicle
 	name = "Biker Gang Kit" //TUNNEL SNAKES OWN THIS TOWN
-	desc = "TUNNEL SNAKES OWN THIS TOWN. Contains an unbranded All Terrain Vehicle, two cans of spraypaint, and a complete gang outfit -- consists of black gloves, a menacing skull bandanna, and a SWEET leather overcoat!"
+	desc = "ТУННЕЛЬНЫЕ ЗМЕИ ВЛАДЕЮТ ЭТИМ ГОРОДОМ. Содержит вездеход без марки, две банки с аэрозольной краской и полный бандитский наряд - состоит из черных перчаток, банданы с угрожающим черепом и МИЛОГО кожаного пальто!"
 	cost = 2500
 	contraband = TRUE
 	contains = list(/obj/vehicle/ridden/atv,
@@ -27,7 +27,7 @@
 
 /datum/supply_pack/emergency/bio
 	name = "Biological Emergency Crate"
-	desc = "This crate holds 2 full bio suits which will protect you from viruses, along with a bio bag and two spaceacillin syringes."
+	desc = "В этом ящике находятся 2 полных биокостюма, которые защитят вас от вирусов, а также биопакет и два шприца с космоциллином"
 	cost = 2000
 	contains = list(/obj/item/clothing/head/bio_hood,
 					/obj/item/clothing/head/bio_hood,
@@ -42,7 +42,7 @@
 
 /datum/supply_pack/emergency/equipment
 	name = "Emergency Bot/Internals Crate"
-	desc = "Explosions got you down? These supplies are guaranteed to patch up holes, in stations and people alike! Comes with two floorbots, two medbots, five oxygen masks and five small oxygen tanks."
+	desc = "Взрывы сбили тебя с ног? Эти расходные материалы гарантированно залатают дыры как на станциях, так и на людях! Поставляется с двумя плиточными ботами, двумя медицинскими ботами, пятью кислородными масками и пятью небольшими кислородными баллонами."
 	cost = 2750
 	contains = list(/mob/living/simple_animal/bot/floorbot,
 					/mob/living/simple_animal/bot/floorbot,
@@ -63,7 +63,7 @@
 
 /datum/supply_pack/emergency/medicalemergency
 	name = "Emergency Medical Supplies" //Almost all of this can be ordered seperatly for a much cheaper price, but the HUD increases it.
-	desc = "Emergency supplies for a front-line medic. Contains two boxes of body bags, a medical HUD, a defib unit, medical belt, toxin bottles, epipens, and several types of medical kits."
+	desc = "Предметы первой необходимости для фронтового медика. Содержит две коробки с мешками для тела, медицинский HUD, дефибриллятор, медицинский пояс, флаконы с токсинами, эпинефрином и несколько видов медицинских наборов."
 	cost = 10000
 	contains = list(/obj/item/storage/box/bodybags,
 					/obj/item/storage/box/bodybags,
@@ -82,7 +82,7 @@
 
 /datum/supply_pack/emergency/medemergencylite
 	name = "Emergency Medical Supplies (Lite)"
-	desc = "A less than optimal, but still effective, set of tools for emergency care. Contains a box of bodybags, some normal (and advanced) health analyzers, healing sprays, a single first aid kit, charcoal, some gauze, a bottle of toxins, and some spare medipens."
+	desc = "Менее оптимальный, но все же эффективный набор инструментов для оказания неотложной помощи. Содержит коробку с мешками для тела, несколько обычных (и продвинутых) анализаторов здоровья, целебные спреи, аптечку первой помощи,  уголь, немного марли, флакон с токсинами и несколько запасных медикаментов."
 	cost = 2800
 	contains = list(/obj/item/storage/box/bodybags,
 					/obj/item/stack/medical/gauze,
@@ -106,7 +106,7 @@
 
 /datum/supply_pack/emergency/radiatione_emergency
 	name = "Emergency Radiation Protection Crate"
-	desc = "Survive the Nuclear Apocalypse and Supermatter Engine alike with two sets of Radiation suits. Each set contains a helmet, suit, and Geiger counter. We'll even throw in a few pill bottles that are able to handles radiation and the affects of the poisoning."
+	desc = "Переживите Ядерный апокалипсис и двигатель Суперматерии одинаково с двумя комплектами радиационных костюмов. Каждый комплект содержит шлем, костюм и счетчик Гейгера. Мы даже добавим несколько пузырьков с таблетками, которые способны справиться с радиацией и последствиями отравления."
 	cost = 2500
 	contains = list(/obj/item/clothing/head/radiation,
 					/obj/item/clothing/head/radiation,
@@ -121,7 +121,7 @@
 
 /datum/supply_pack/emergency/rcds
 	name = "Emergency RCDs"
-	desc = "Bombs going off on station? SME blown and now you need to fix the hole it left behind? Well this crate has a pare of RCDs to be able to easily fix up any problem you may have!"
+	desc = "Бомбы взрываются на станции? SME взорвался, и теперь вам нужно заделать дыру, которую он оставил после себя? Что ж, в этом ящике есть пара RCD, чтобы вы могли легко устранить любую проблему, которая у вас может возникнуть! Заряды в комплект не входят !"
 	cost = 1500
 	contains = list(/obj/item/construction/rcd,
 					/obj/item/construction/rcd)
@@ -130,7 +130,7 @@
 
 /datum/supply_pack/emergency/bomb
 	name = "Explosive Emergency Crate"
-	desc = "Science gone bonkers? Beeping behind the airlock? Buy now and become the hero the station des... I mean needs! Time not included, but a full bomb suit and hood, as well as a mask and defusal kit are! Non-Nuclear ordnances only."
+	desc = "Ученный сошла с ума? Пиканье за шлюзом? Купите сейчас и станьте героем, которого требует станция! Время в комплект не входит, но есть полный бомбовый костюм и капюшон, а также маска и набор для обезвреживания! Только неядерные заряды."
 	cost = 1500
 	contains = list(/obj/item/clothing/head/bomb_hood,
 					/obj/item/clothing/suit/bomb_suit,
@@ -142,7 +142,7 @@
 
 /datum/supply_pack/emergency/firefighting
 	name = "Firefighting Crate"
-	desc = "Only you can prevent station fires. Partner up with two firefighter suits, gas masks, flashlights, large oxygen tanks, extinguishers, and hardhats!"
+	desc = "Только вы можете предотвратить пожар на станции. Возьмите с собой два пожарных костюма, противогазы, фонарики, большие кислородные баллоны, огнетушители и каски!"
 	cost = 1200
 	contains = list(/obj/item/clothing/suit/fire/firefighter,
 					/obj/item/clothing/suit/fire/firefighter,
@@ -160,7 +160,7 @@
 
 /datum/supply_pack/emergency/Flexiseal
 	name = "Flexi Seal Crate"
-	desc = "Flexi Seal, the perfect stuff for fixing a nuclear reactor safely!"
+	desc = "FlexiSeal - идеальный материал для обеспечения безопасности ядерного реактора!"
 	cost = 1000
 	contains = list(/obj/item/sealant)
 	crate_name = "Flexi Seal Crate"
@@ -168,7 +168,7 @@
 
 /datum/supply_pack/emergency/atmostank
 	name = "Firefighting Tank Backpack"
-	desc = "Mow down fires with this high-capacity fire fighting tank backpack. Requires Atmospherics access to open."
+	desc = "Тушите пожары с помощью этого вместительного рюкзака для пожаротушения. Для открытия требуется доступ к атмосу"
 	cost = 1000
 	access = ACCESS_ATMOSPHERICS
 	contains = list(/obj/item/watertank/atmos)
@@ -177,7 +177,7 @@
 
 /datum/supply_pack/emergency/internals
 	name = "Internals Crate"
-	desc = "Master your life energy and control your breathing with three breath masks, three emergency oxygen tanks and three large air tanks."//IS THAT A
+	desc = "Управляйте своей жизненной энергией и контролируйте свое дыхание с помощью трех дыхательных масок, трех аварийных кислородных баллонов и трех больших воздушных баллонов."//IS THAT A
 	cost = 1000
 	contains = list(/obj/item/clothing/mask/gas,
 					/obj/item/clothing/mask/gas,
@@ -196,7 +196,7 @@
 
 /datum/supply_pack/emergency/metalfoam
 	name = "Metal Foam Grenade Crate"
-	desc = "Seal up those pesky hull breaches with 14 Metal Foam Grenades."
+	desc = "Заделайте эти досадные пробоины в корпусе 14-тью металлическими пенопластовыми гранатами."
 	cost = 1500
 	contains = list(/obj/item/storage/box/metalfoam,
 					/obj/item/storage/box/metalfoam)
@@ -204,7 +204,7 @@
 
 /datum/supply_pack/emergency/mre
 	name = "MRE Packs (Emergency Rations)"
-	desc = "The lights are out. Oxygen's running low. You've run out of food except space weevils. Don't let this be you! Order our NT branded MRE kits today! This pack contains 5 MRE packs with a randomized menu and an oxygen tank."
+	desc = "Свет выключен. Кислород на исходе. У вас закончилась еда, кроме космических долгоносиков. Не позволяй этому случиться с тобой! Закажите наши комплекты сухпайков под брендом NT уже сегодня! Этот набор содержит 5 упаковок сухпайка с рандомизированным меню и кислородный баллон."
 	cost = 2000
 	contains = list(/obj/item/storage/box/mre/menu1/safe,
 					/obj/item/storage/box/mre/menu1/safe,
@@ -216,7 +216,7 @@
 
 /datum/supply_pack/emergency/plasma_spacesuit
 	name = "Plasmaman Space Envirosuits"
-	desc = "Contains two space-worthy envirosuits for Plasmamen. Order now and we'll throw in two free helmets! Requires EVA access to open."
+	desc = "Содержит два вместительных костюма. Закажите сейчас, и мы разыграем два бесплатных шлема! Для открытия требуется доступ в EVA."
 	cost = 4000
 	access = ACCESS_EVA
 	contains = list(/obj/item/clothing/suit/space/eva/plasmaman,
@@ -228,7 +228,7 @@
 
 /datum/supply_pack/emergency/plasmaman
 	name = "Plasmaman Supply Kit"
-	desc = "Keep those Plasmamen alive with two sets of Plasmaman outfits. Each set contains a plasmaman jumpsuit, internals tank, and helmet."
+	desc = "Поддерживайте жизнь этих плазмаманов с помощью двух комплектов одежды Плазмамана. Каждый комплект содержит комбинезон plasmaman, внутренний резервуар и шлем."
 	cost = 2000
 	contains = list(/obj/item/clothing/under/plasmaman,
 					/obj/item/clothing/under/plasmaman,
@@ -240,7 +240,7 @@
 
 /datum/supply_pack/emergency/radiation
 	name = "Radiation Protection Crate"
-	desc = "Survive the Nuclear Apocalypse and Supermatter Engine alike with two sets of Radiation suits. Each set contains a helmet, suit, and Geiger counter. We'll even throw in a bottle of vodka and some glasses too, considering the life-expectancy of people who order this."
+	desc = "Переживите Ядерный апокалипсис и двигатель Суперматерии одинаково с двумя комплектами радиационных костюмов. Каждый комплект содержит шлем, костюм и счетчик Гейгера. Мы даже добавим бутылку водки и несколько стаканов, учитывая продолжительность жизни людей, которые это заказывают."
 	cost = 1300
 	contains = list(/obj/item/clothing/head/radiation,
 					/obj/item/clothing/head/radiation,
@@ -256,7 +256,7 @@
 
 /datum/supply_pack/emergency/spacesuit
 	name = "Space Suit Crate"
-	desc = "Contains two aging suits from Space-Goodwill. Requires EVA access to open."
+	desc = "Содержит два устаревших костюма от Space-Goodwill. Для открытия требуется доступ EVA."
 	cost = 3000
 	contains = list(/obj/item/clothing/suit/space,
 					/obj/item/clothing/suit/space,
@@ -269,7 +269,7 @@
 
 /datum/supply_pack/emergency/soft_suit
 	name = "Space Suits (Fragile)"
-	desc = "Are there bombs going off left and right? Are there meteors shooting around the station? Well then! Here's two fragile space suits for emergencies. Comes with air and masks."
+	desc = "Бомбы взрываются слева и справа? Метеориты летают вокруг станции ? Ну что ж! Вот два хрупких скафандра на случай чрезвычайных ситуаций. Поставляется с воздухом и масками."
 	cost = 1200
 	contains = list(/obj/item/tank/internals/air,
 					/obj/item/tank/internals/air,
@@ -284,7 +284,7 @@
 
 /datum/supply_pack/emergency/spacejets
 	name = "Spare EVA Jetpacks"
-	desc = "Contains three EVA grade jectpaks. Requires EVA access to open."
+	desc = "Содержит три реактивных ранца для EVA. Для открытия требуется доступ в EVA."
 	cost = 2000
 	access = ACCESS_EVA
 	contains = list(/obj/item/tank/jetpack/carbondioxide/eva,
@@ -295,7 +295,7 @@
 
 /datum/supply_pack/emergency/specialops
 	name = "Special Ops Supplies"
-	desc = "(*!&@#NEED SOMETHING TO DEAL WITH THE GREYTIDE, HUH OPERATIVE? WELL, THIS LITTLE ORDER CAN HELP YOU OUT IN A PINCH. CONTAINS A BOX OF FIVE EMP GRENADES, THREE SMOKEBOMBS, AN INCENDIARY GRENADE, AND A \"SLEEPY PEN\" FULL OF NICE TOXINS!#@*$"
+	desc = "(*!&@#ЭТОТ МАЛЕНЬКИЙ ЗАКАЗ МОЖЕТ ПОМОЧЬ ВАМ В КРАЙНЕМ СЛУЧАЕ. СОДЕРЖИТ КОРОБКУ С ПЯТЬЮ ЭЛЕКТРОМАГНИТНЫМИ ГРАНАТАМИ, ТРЕМЯ ДЫМОВЫМИ ШАШКАМИ, ЗАЖИГАТЕЛЬНОЙ ГРАНАТОЙ И \"СОННОЙ РУЧКОЙ\", ПОЛНОЙ ПРИЯТНЫХ ТОКСИНОВ!#@*$"
 	hidden = TRUE
 	cost = 2200
 	contains = list(/obj/item/storage/box/emps,
@@ -309,7 +309,7 @@
 
 /datum/supply_pack/emergency/weedcontrol
 	name = "Weed Control Crate"
-	desc = "Keep those invasive species OUT. Contains a scythe, gasmask, two sprays of Plant-B-Gone, and two anti-weed chemical grenades. Warranty void if used on ambrosia. Requires Hydroponics access to open."
+	desc = "Держите эти сорняки ПОДАЛЬШЕ. Содержит косу, противогаз, два баллончика с растением-B-Gone и две химические гранаты против сорняков. Гарантия аннулируется, если используется на ambrosia. Для открытия требуется доступ к гидропонике."
 	cost = 1800
 	access = ACCESS_HYDROPONICS
 	contains = list(/obj/item/scythe,

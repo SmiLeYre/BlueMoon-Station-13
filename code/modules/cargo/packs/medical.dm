@@ -188,7 +188,7 @@
 
 /datum/supply_pack/medical/virus
 	name = "Virus Crate"
-	desc = "Contains twelve different bottles, containing several viral samples for virology research. Also includes seven beakers and syringes. Balled-up jeans not included. Requires CMO access to open."
+	desc = "Содержит двенадцать различных флаконов, содержащих несколько образцов вирусов для вирусологических исследований. Также включает в себя семь мензурок и шприцы. Скомканные джинсы в комплект не входят. Для открытия требуется доступ CMO."
 	cost = 2500
 	access = ACCESS_CMO
 	contains = list(/obj/item/reagent_containers/glass/bottle/flu_virion,
@@ -213,7 +213,7 @@
 
 /datum/supply_pack/medical/anitvirus
 	name = "Virus Containment Crate"
-	desc = "Viro let out a death plague Mk II again? Someone didn't wash their hands? Old plagues born anew? Well, this crate is for you! Hope you cure it before it breaks out of the station... This crate needs medical access to open and has two bio suits, a box of needles and beakers, five spaceacillin needles, and a medibot."
+	desc = "Вирусолог снова выпустил смертельную чуму Mk II? Кто-то не помыл руки? Старые язвы, рожденные заново? Что ж, этот ящик для вас! Надеюсь, вы вылечите его до того, как он вырвется за пределы станции... Для открытия этого ящика требуется медицинский доступ, и в нем есть два биокостюма, коробка с шприцами и мензурками, пять шприцов с космоциллином и медибот."
 	cost = 3000
 	access = ACCESS_MEDICAL
 	contains = list(/mob/living/simple_animal/bot/medbot,
@@ -233,7 +233,7 @@
 
 /datum/supply_pack/medical/medipen_variety
 	name = "Medipen Variety-Pak"
-	desc = "Contains eight different medipens in three different varieties, to assist in quickly treating seriously injured patients."
+	desc = "Содержит восемь различных медикаментов в трех различных вариантах, чтобы помочь в быстром лечении пациентов с серьезными травмами."
 	cost = 2000
 	contains = list(/obj/item/reagent_containers/hypospray/medipen/,
 					/obj/item/reagent_containers/hypospray/medipen/,

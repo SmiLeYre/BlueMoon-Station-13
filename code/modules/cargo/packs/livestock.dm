@@ -12,7 +12,7 @@
 
 /datum/supply_pack/critter/animal_feed
 	name = "Animal Feed Crate"
-	desc = "Feed for livestock, like cows and hens. Contains fifty Wheat bundles and fifty Oat bundles."
+	desc = "Корм для домашнего скота, такого как коровы и куры. Содержит пятьдесят пучков пшеницы и пятьдесят пучков овса."
 	cost = 1500
 	contains = list(/obj/item/reagent_containers/food/snacks/grown/wheat,
 					/obj/item/reagent_containers/food/snacks/grown/oat)
@@ -27,7 +27,7 @@
 
 /datum/supply_pack/critter/parrot
 	name = "Bird Crate"
-	desc = "Contains five expert telecommunication birds."
+	desc = "Содержит пять опытных телекоммуникационных птиц."
 	cost = 4000
 	contains = list(/mob/living/simple_animal/parrot)
 	crate_name = "parrot crate"
@@ -88,7 +88,7 @@
 
 /datum/supply_pack/critter/butterfly
 	name = "Butterflies Crate"
-	desc = "Not a very dangerous insect, but they do give off a better image than, say, flies or cockroaches."//is that a motherfucking worm reference
+	desc = "Не очень опасное насекомое, но они создают лучший образ, чем, скажем, мухи или тараканы."//is that a motherfucking worm reference
 	contraband = TRUE
 	cost = 5000
 	contains = list(/mob/living/simple_animal/butterfly)
@@ -101,7 +101,7 @@
 
 /datum/supply_pack/critter/cat
 	name = "Cat Crate"
-	desc = "The cat goes meow! Comes with a collar and a nice cat toy! Cheeseburger not included."//i can't believe im making this reference
+	desc = "Кот делает мяу! Поставляется с ошейником и милой кошачьей игрушкой! Чизбургер в стоимость не входит."//i can't believe im making this reference
 	cost = 5000 //Cats are worth as much as corgis.
 	contains = list(/mob/living/simple_animal/pet/cat,
 					/obj/item/clothing/neck/petcollar,
@@ -117,14 +117,14 @@
 
 /datum/supply_pack/critter/chick
 	name = "Chicken Crate"
-	desc = "The chicken goes bwaak!"
+	desc = "Курица делает Bwaak!"
 	cost = 2000
 	contains = list(/mob/living/simple_animal/chick)
 	crate_name = "chicken crate"
 
 /datum/supply_pack/critter/crab
 	name = "Crab Rocket"
-	desc = "CRAAAAAAB ROCKET. CRAB ROCKET. CRAB ROCKET. CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB ROCKET. CRAFT. ROCKET. BUY. CRAFT ROCKET. CRAB ROOOCKET. CRAB ROOOOCKET. CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB ROOOOOOOOOOOOOOOOOOOOOOCK EEEEEEEEEEEEEEEEEEEEEEEEE EEEETTTTTTTTTTTTAAAAAAAAA AAAHHHHHHHHHHHHH. CRAB ROCKET. CRAAAB ROCKEEEEEEEEEGGGGHHHHTT CRAB CRAB CRAABROCKET CRAB ROCKEEEET."//fun fact: i actually spent like 10 minutes and transcribed the entire video.
+	desc = "РАКЕТА КРААААААП. КРАБОВАЯ РАКЕТА. КРАБОВАЯ РАКЕТА. КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ РАКЕТЫ.КРАБОВАЯ РАКЕТА. КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ КРАБ РOOOOOOOOOOOOOOOOOOOOOOOK EEEEEEEEEEEEEEEEEEEEEEEEE EEEETTTTTTTTTTTTAAAAAAAAA. КРАБОВАЯ РАКЕТА. КРАААБ РООООКЕЕЕЕТААААА КРАБ КРАБ РАКЕТА КРАБ РАКЕЕЕТААА."//fun fact: i actually spent like 10 minutes and transcribed the entire video.
 	cost = 5000
 	contains = list(/mob/living/simple_animal/crab)
 	crate_name = "look sir free crabs"
@@ -137,7 +137,7 @@
 
 /datum/supply_pack/critter/corgi
 	name = "Corgi Crate"
-	desc = "Considered the optimal dog breed by thousands of research scientists, this Corgi is but one dog from the millions of Ian's noble bloodline. Comes with a cute collar!"
+	desc = "Считающийся оптимальной породой собак тысячами ученых-исследователей, этот корги - всего лишь одна собака из миллионов представителей благородной родословной Йена. Поставляется с милым ошейником!"
 	cost = 5000
 	contains = list(/mob/living/simple_animal/pet/dog/corgi,
 					/obj/item/clothing/neck/petcollar)
@@ -153,7 +153,7 @@
 
 /datum/supply_pack/critter/corgis/exotic
 	name = "Exotic Corgi Crate"
-	desc = "Corgis fit for a king, these corgis come in a unique color to signify their superiority. Comes with a cute collar!"
+	desc = "Корги, достойные короля, эти корги имеют уникальный окрас, подчеркивающий их превосходство. Поставляется с милым ошейником!"
 	cost = 5500
 	contains = list(/mob/living/simple_animal/pet/dog/corgi/exoticcorgi,
 					/obj/item/clothing/neck/petcollar)
@@ -161,14 +161,14 @@
 
 /datum/supply_pack/critter/cow
 	name = "Cow Crate"
-	desc = "The cow goes moo!"
+	desc = "Корова делает Мууу!"
 	cost = 3000
 	contains = list(/mob/living/simple_animal/cow)
 	crate_name = "cow crate"
 
 /datum/supply_pack/critter/fox
 	name = "Fox Crate"
-	desc = "The fox goes...? Comes with a collar!"//what does the fox say
+	desc = "Лиса делает...? Поставляется с милым ошейником"//what does the fox say
 	cost = 5000
 	contains = list(/mob/living/simple_animal/pet/fox,
 					/obj/item/clothing/neck/petcollar)
@@ -176,21 +176,21 @@
 
 /datum/supply_pack/critter/goat
 	name = "Goat Crate"
-	desc = "The goat goes baa! Warranty void if used as a replacement for Pete."
+	desc = "Козел делает бээээ!."
 	cost = 2500
 	contains = list(/mob/living/simple_animal/hostile/retaliate/goat)
 	crate_name = "goat crate"
 
 /datum/supply_pack/critter/goose
 	name = "Goose Crate"
-	desc = "Angry and violent birds. Evil, evil creatures."
+	desc = "Злые и жестокие птицы. Злые, порочные существа. Пожалуйста, заберите их!"
 	cost = 2500
 	contains = list(/mob/living/simple_animal/hostile/retaliate/goose)
 	crate_name = "goose crate"
 
 /datum/supply_pack/critter/pug
 	name = "Pug Crate"
-	desc = "Like a normal dog, but... squished. Comes with a nice collar!"
+	desc = "Как обычная собака, но... раздавленная. Поставляется с красивым воротником!"
 	cost = 5000
 	contains = list(/mob/living/simple_animal/pet/dog/pug,
 					/obj/item/clothing/neck/petcollar)
@@ -204,7 +204,7 @@
 
 /datum/supply_pack/critter/snake
 	name = "Snake Crate"
-	desc = "Tired of these MOTHER FUCKING snakes on this MOTHER FUCKING space station? Then this isn't the crate for you. Contains three poisonous snakes."
+	desc = "Устали от этих ГРЕБАНЫХ змей на этой ГРЕБАНОЙ космической станции? Тогда этот ящик не для тебя. Содержит трех ядовитых змей."
 	cost = 3000
 	contains = list(/mob/living/simple_animal/hostile/retaliate/poison/snake,
 					/mob/living/simple_animal/hostile/retaliate/poison/snake,
@@ -213,7 +213,7 @@
 
 /datum/supply_pack/critter/mouse
 	name = "Mouse Crate"
-	desc = "Good for snakes and lizards of all ages. Contains ~12 feeder mice."
+	desc = "Подходит для змей и ящериц всех возрастов. Содержит ~12 мышей."
 	cost = 2000
 	contains = list(/mob/living/simple_animal/mouse,)
 	crate_name = "mouse crate"
@@ -225,7 +225,7 @@
 
 /datum/supply_pack/critter/secbat
 	name = "Security Bat Crate"
-	desc = "Contains five security bats, perfect to Bat-up any security officer."
+	desc = "Содержит пять дубинок, идеально подходящих для избиения любому сотруднику Службы безопасности."
 	cost = 2500
 	contains = list(/mob/living/simple_animal/hostile/retaliate/bat/secbat,
 					/mob/living/simple_animal/hostile/retaliate/bat/secbat,

@@ -12,7 +12,7 @@
 
 /datum/supply_pack/engineering/shieldgen
 	name = "Anti-breach Shield Projector Crate"
-	desc = "Hull breaches again? Say no more with the Nanotrasen Anti-Breach Shield Projector! Uses forcefield technology to keep the air in, and the space out. Contains two shield projectors."
+	desc = "Снова пробоины в корпусе? Ни слова больше с Nanotrasen Anti-Breach Shield Projector! Использует технологию силового поля, чтобы удерживать воздух внутри и космос снаружи. Содержит два проектора ."
 	cost = 2500
 	contains = list(/obj/machinery/shieldgen,
 					/obj/machinery/shieldgen)
@@ -20,7 +20,7 @@
 
 /datum/supply_pack/engineering/conveyor
 	name = "Conveyor Assembly Crate"
-	desc = "Keep production moving along with fifteen conveyor belts. Conveyor switch included. If you have any questions, check out the enclosed instruction book."
+	desc = "Поддерживайте движение производства вместе с пятнадцатью конвейерными лентами. Переключатель конвейера включен. Если у вас есть какие-либо вопросы, ознакомьтесь с прилагаемой инструкцией."
 	cost = 750
 	contains = list(/obj/item/stack/conveyor/fifteen,
 					/obj/item/paper/guides/conveyor)
@@ -28,7 +28,7 @@
 
 /datum/supply_pack/engineering/engiequipment
 	name = "Engineering Gear Crate"
-	desc = "Gear up with three toolbelts, high-visibility vests, welding helmets, hardhats, and two pairs of meson goggles!"
+	desc = "Вооружитесь тремя поясами для инструментов, жилетами повышенной видимости, сварочными шлемами, касками и двумя парами мезонных очков!"
 	cost = 1500
 	contains = list(/obj/item/storage/belt/utility,
 					/obj/item/storage/belt/utility,
@@ -49,7 +49,7 @@
 
 /datum/supply_pack/engineering/engihardsuit
 	name = "Engineering Hardsuit"
-	desc = "Polly 'Who stole all the hardsuits!' Well now you can get more hardsuits if needed! NOTE ONE HARDSUIT IS IN THIS CRATE, as well as one air tank and mask!"
+	desc = "Полли:"Кто украл все cкафандры!?" Что ж, теперь вы можете получить больше скафандров, если понадобится! ОБРАТИТЕ ВНИМАНИЕ, ЧТО В ЭТОМ ЯЩИКЕ НАХОДИТСЯ ОДИН ЗАЩИТНЫЙ КОСТЮМ, а также один баллон с воздухом и маска!"
 	cost = 2250
 	access = ACCESS_ENGINE
 	contains = list(/obj/item/tank/internals/air,
@@ -60,7 +60,7 @@
 
 /datum/supply_pack/engineering/atmoshardsuit
 	name = "Atmospherics Hardsuit"
-	desc = "Too many techs and not enough hardsuits? Time to buy some more! Comes with gas mask and air tank. Ask the CE to open."
+	desc = "Слишком много техников и недостаточно скафандров? Время купить еще немного! Поставляется с противогазом и воздушным баллоном. Попросите СЕ открыть вам это."
 	cost = 5000
 	access = ACCESS_CE //100% Fire and Bio resistance
 	contains = list(/obj/item/tank/internals/air,
@@ -71,7 +71,7 @@
 
 /datum/supply_pack/engineering/radvoidsuit
 	name = "Radiation Voidsuit"
-	desc = "The Singulo is loose? Do you need to do a few changes to its containment and don't want to spent the rest of the shift under the shower? Get this Radiation Hardsuit! It protect from radiations and space only."
+	desc = "Мисс Сингуляро вышла погулять ? Вам нужно внести несколько изменений в его защитную оболочку и вы не хотите провести остаток смены под душем? Надень этот радиационный скафандр! Он защищает только от радиации и космоса."
 	cost = 3500
 	access = ACCESS_ENGINE
 	contains = list(/obj/item/tank/internals/air,
@@ -83,7 +83,7 @@
 
 /datum/supply_pack/engineering/industrialrcd
 	name = "Industrial RCD"
-	desc = "An industrial RCD in case the station has gone through more then one meteor storm and the CE needs to bring out the somthing a bit more reliable. Does not contain spare ammo for the industrial RCD or any other RCD models."
+	desc = "Промышленный RCD на случай, если станция прошла через более чем один метеоритный шторм и CE необходимо установить что-то более надежное. Не содержит запасных зарядников"
 	cost = 4500
 	access = ACCESS_CE
 	contains = list(/obj/item/construction/rcd/industrial)
@@ -92,7 +92,7 @@
 
 /datum/supply_pack/engineering/inducers
 	name = "NT-75 Electromagnetic Power Inducers Crate"
-	desc = "No rechargers? No problem, with the NT-75 EPI, you can recharge any standard cell-based equipment anytime, anywhere. Contains two Inducers."
+	desc = "Нет питания ? Без проблем, с NT-75 EPI вы можете заряжать любое стандартное оборудование в любое время и в любом месте. Содержит два индуктора."
 	cost = 2300
 	contains = list(/obj/item/inducer/sci/supply, /obj/item/inducer/sci/supply)
 	crate_name = "inducer crate"
@@ -100,7 +100,7 @@
 
 /datum/supply_pack/engineering/pacman
 	name = "P.A.C.M.A.N Generator Crate"
-	desc = "Engineers can't set up the engine? Not an issue for you, once you get your hands on this P.A.C.M.A.N. Generator! Takes in plasma and spits out sweet sweet energy."
+	desc = "Инженеры не могут настроить двигатель? Для вас это не проблема, как только вы получите в свои руки этот генератор P.A.C.M.A.N.! Вбирает плазму и выплевывает сладкую-сладкую энергию."
 	cost = 2250
 	contains = list(/obj/machinery/power/port_gen/pacman)
 	crate_name = "PACMAN generator crate"
@@ -108,7 +108,7 @@
 
 /datum/supply_pack/engineering/airpump
 	name = "Portable Air Pump Crate"
-	desc = "We all know you work in a high pressure workplace. Keep it that way with two additional air pumps!"
+	desc = "Мы все знаем, что вы работаете на рабочем месте с высоким давлением. Продолжайте в том же духе с помощью двух дополнительных воздушных насосов!"
 	cost = 3000
 	contains = list(/obj/machinery/portable_atmospherics/pump,
 					/obj/machinery/portable_atmospherics/pump)
@@ -116,7 +116,7 @@
 
 /datum/supply_pack/engineering/airscrubber
 	name = "Portable Scrubber Crate"
-	desc = "Miasma got you down? Plasma in the vents? Freshen up with these two brand-new air scrubbers!"
+	desc = "Миазмы сбивают тебя с ног? Плазма в вентиляции? Освежите воздух с помощью этих двух совершенно новых скрубберов!"
 	cost = 3000
 	contains = list(/obj/machinery/portable_atmospherics/scrubber,
 					/obj/machinery/portable_atmospherics/scrubber)
@@ -124,7 +124,7 @@
 
 /datum/supply_pack/engineering/power
 	name = "Power Cell Crate"
-	desc = "Looking for power overwhelming? Look no further. Contains three high-voltage power cells."
+	desc = "Ищете ошеломляющую силу? Не смотрите дальше. Содержит три высоковольтных батареи."
 	cost = 1000
 	contains = list(/obj/item/stock_parts/cell/high,
 					/obj/item/stock_parts/cell/high,
@@ -134,7 +134,7 @@
 
 /datum/supply_pack/engineering/shuttle_engine
 	name = "Shuttle Engine Crate"
-	desc = "Through advanced bluespace-shenanigans, our engineers have managed to fit an entire shuttle engine into one tiny little crate. Requires CE access to open."
+	desc = "Благодаря передовым блюспейс-разработкам нашим инженерам удалось поместить целый двигатель шаттла в один крошечный ящик. Для открытия требуется доступ CE."
 	cost = 5000
 	access = ACCESS_CE
 	contains = list(/obj/structure/shuttle/engine/propulsion/burst/cargo)
@@ -143,7 +143,7 @@
 
 /datum/supply_pack/engineering/tools
 	name = "Toolbox Crate"
-	desc = "Any robust spaceman is never far from their trusty toolbox. Contains three electrical toolboxes and three mechanical toolboxes."
+	desc = "Любой крепкий космонавт никогда не отходит далеко от своего надежного набора инструментов. Содержит три электрических ящика  инструментов и три механических ящика инструментов."
 	contains = list(/obj/item/storage/toolbox/electrical,
 					/obj/item/storage/toolbox/electrical,
 					/obj/item/storage/toolbox/electrical,
@@ -156,7 +156,7 @@
 
 /datum/supply_pack/engineering/bsa
 	name = "Bluespace Artillery Parts"
-	desc = "The pride of Nanotrasen Naval Command. The legendary Bluespace Artillery Cannon is a devastating feat of human engineering and testament to wartime determination. Highly advanced research is required for proper construction. "
+	desc = "Гордость Центрального коммандования Нанотрасен. Легендарная артиллерийская пушка Bluespace - это разрушительный подвиг человеческой инженерии и свидетельство решимости военного времени. Для правильного строительства требуются высокоразвитые исследования. "
 	cost = 15000
 	special = TRUE
 	contains = list(/obj/item/circuitboard/machine/bsa/front,
@@ -168,7 +168,7 @@
 
 /datum/supply_pack/engineering/dna_vault
 	name = "DNA Vault Parts"
-	desc = "Secure the longevity of the current state of civilization within this massive library of scientific knowledge, capable of granting superhuman powers and abilities. Highly advanced research is required for proper construction. Also contains five DNA probes." //C'mon now, it's nae just humans on the station these days
+	desc = "Обеспечьте долговечность нынешнего состояния цивилизации с помощью этой огромной библиотеки научных знаний, способных наделять сверхчеловеческими силами и способностями. Для правильного строительства требуются высокоразвитые исследования. Также содержит пять ДНК-зондов." //C'mon now, it's nae just humans on the station these days
 	cost = 12000
 	special = TRUE
 	contains = list(
@@ -183,7 +183,7 @@
 
 /datum/supply_pack/engineering/dna_probes
 	name = "DNA Vault Samplers"
-	desc = "Contains five DNA probes for use in the DNA vault."
+	desc = "Содержит пять ДНК-зондов для использования в хранилище ДНК."
 	cost = 3000
 	special = TRUE
 	contains = list(/obj/item/dna_probe,
@@ -196,7 +196,7 @@
 
 /datum/supply_pack/engineering/shield_sat
 	name = "Shield Generator Satellite"
-	desc = "Protect the very existence of this station with these Anti-Meteor defenses. Contains three Shield Generator Satellites."
+	desc = "Защитите само существование этой станции с помощью этих средств противометеоритной защиты. Содержит три генератора щита."
 	cost = 4000
 	contains = list(
 					/obj/machinery/satellite/meteor_shield,
@@ -207,7 +207,7 @@
 
 /datum/supply_pack/engineering/shield_sat_control
 	name = "Shield System Control Board"
-	desc = "A control system for the Shield Generator Satellite system."
+	desc = "Система управления для спутниковой системы генератора щита."
 	cost = 4000
 	contains = list(/obj/item/circuitboard/computer/sat_control)
 	crate_name= "shield control board crate"
