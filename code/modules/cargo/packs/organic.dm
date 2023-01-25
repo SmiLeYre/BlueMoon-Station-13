@@ -202,7 +202,7 @@
 
 /datum/supply_pack/organic/monkeydripmeat
 	name = "Meat Crate (Fresh)"
-	desc = "Нужно немного мяса? С этим набором "сделай сам" ты будешь плавать в нем! Содержит обезьяний кубик, капельницу и немного криоксадона!"
+	desc = "Нужно немного мяса? С этим набором \"сделай сам\" ты будешь плавать в нем! Содержит обезьяний кубик, капельницу и немного криоксадона!"
 	cost = 2150
 	contraband = TRUE
 	contains = list(/obj/item/reagent_containers/food/snacks/cube/monkey,
