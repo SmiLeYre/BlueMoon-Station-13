@@ -3861,6 +3861,7 @@
 #include "modular_bluemoon\fluffs\code\under.dm"
 #include "modular_bluemoon\fluffs\code\wrists.dm"
 #include "modular_bluemoon\jobs_species_blacklist\jobs_species_blacklist.dm"
+#include "modular_bluemoon\phenyamomota\code\modules\cargo\packs\engineering.dm"
 #include "modular_bluemoon\phenyamomota\code\modules\clothing\labcoat.dm"
 #include "modular_bluemoon\phenyamomota\code\modules\clothing\under_med.dm"
 #include "modular_bluemoon\phenyamomota\code\modules\clothing\under_sci.dm"
