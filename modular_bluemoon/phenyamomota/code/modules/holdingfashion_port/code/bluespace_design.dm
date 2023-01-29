@@ -23,7 +23,7 @@
 /datum/design/duffelbag_holding
 	name = "Inert Duffel Bag of Holding"
 	desc = "A block of metal ready to be transformed into a duffel bag of holding with a bluespace anomaly core."
-    id = "duffelbag_holding"
+	id = "duffelbag_holding"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/gold = 3000, /datum/material/diamond = 1500, /datum/material/uranium = 250, /datum/material/bluespace = 2000)
 	build_path = /obj/item/duffel_of_holding_inert
