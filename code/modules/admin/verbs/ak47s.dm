@@ -5,18 +5,22 @@ GLOBAL_VAR_INIT(terrorism, FALSE)
 		return
 	GLOB.terrorism = TRUE
 
+//BLUE MOON CHANGES BEGIN
+	var/choice = alert(src, "Только для арены или для всех?","Подумай дважды","Всех", "Арены")
+	message_admins("[key_name_admin(holder)] активирует AK-47s для [choice]!")
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
 		if(H.stat == DEAD || !(H.client))
 			continue
+		if(choice != "Всех" && !istype(get_area(H), /area/centcom/evac))
+			continue
 		H.make_terrorism()
 
-	send_to_playing_players("<span class='boldannounce'><font size=6>MOTHER RUSSIA ARMS THE MOB!</font></span>")
-
 /mob/living/carbon/human/proc/make_terrorism()
-	for(var/obj/item/I in held_items)
-		qdel(I)
 	var/obj/item/gun/energy/laser/LaserAK/AK = new(src)
 	if(!GLOB.terrorism)
 		AK.flags_1 |= ADMIN_SPAWNED_1 //To prevent announcing
+	SEND_SOUND(src, 'sound/misc/ak47s.ogg')
+	to_chat(src, "<span class='boldannounce'><font size=6>МАТУШКА РОССИЯ ВООРУЖАЕТ ТОЛПУ!</font></span>")
+//BLUE MOON CHANGES END
 	put_in_hands(AK)
 	AK.pickup(src) //For the stun shielding

@@ -499,9 +499,11 @@
 			if(!SSticker.HasRoundStarted())
 				alert("The game hasn't started yet!")
 				return
-			message_admins("[key_name_admin(holder)] activated AK-47s for Everyone!")
+///BLUEMOON CHANGES BEGIN
+			//message_admins("[key_name_admin(holder)] activated AK-47s for Everyone!")
 			holder.ak47s()
-			sound_to_playing_players('sound/misc/ak47s.ogg')
+			//sound_to_playing_players('sound/misc/ak47s.ogg')
+///BLUEMOON CHANGES END
 
 		if("massbraindamage")
 			if(!is_funmin)
