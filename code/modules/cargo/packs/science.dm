@@ -12,7 +12,7 @@
 
 /datum/supply_pack/science/ape  //Ape out!
 	name = "Ape Cube Crate"
-	desc = "Pss what a new test subject with supper strangth, speed, and love for bananas all at the same time? Say no more... Contains a single ape cube. Dont add water!"
+	desc = "Псс...что за новый испытуемый с суперсилой, скоростью и любовью к бананам одновременно? Больше ничего не говори... Содержит один куб обезьяны. Не добавляйте воду!"
 	contraband = TRUE
 	cost = 2500
 	contains = list (/obj/item/reagent_containers/food/snacks/cube/ape)
@@ -21,7 +21,7 @@
 
 /datum/supply_pack/science/beakers
 	name = "Chemistry Beakers Crate"
-	desc = "Glassware for any chemistry lab! Contains four small beakers, three large, two plastic, and one metamaterial. As well as three droppers and two pairs of latex gloves."
+	desc = "Стеклянная посуда для любой химической лаборатории! Содержит четыре маленьких стакана, три больших, два пластиковых и один из метаматериала. А также три капельницы и две пары латексных перчаток."
 	cost = 1500
 	contains = list(/obj/item/reagent_containers/glass/beaker,
 					/obj/item/reagent_containers/glass/beaker,
@@ -43,7 +43,7 @@
 
 /datum/supply_pack/science/robotics/mecha_odysseus
 	name = "Circuit Crate (Odysseus)"
-	desc = "Ever wanted to build your own giant medical robot? Well, now you can! Contains the Odysseus main control board and Odysseus peripherals board. Requires Robotics access to open."
+	desc = "Вы когда-нибудь хотели построить своего собственного гигантского медицинского робота? Что ж, теперь ты можешь! Содержит основную плату управления Odysseus и плату периферийных устройств Odysseus. Для открытия требуется доступ к робототехнике."
 	cost = 1500
 	access = ACCESS_ROBOTICS
 	contains = list(/obj/item/circuitboard/mecha/odysseus/peripherals,
@@ -53,7 +53,7 @@
 
 /datum/supply_pack/science/robotics/mecha_ripley
 	name = "Circuit Crate (Ripley APLU)"
-	desc = "Rip apart rocks and xenomorphs alike with the Ripley APLU. Contains the Main Ripley control board, as well as the Ripley Peripherals board. Requires Robotics access to open."
+	desc = "Разрывайте камни и ксеноморфов одинаково с помощью Ripley APLU. Содержит основную плату управления Ripley, а также плату периферийных устройств Ripley. Для открытия требуется доступ к робототехнике."
 	cost = 1200
 	access = ACCESS_ROBOTICS
 	contains = list(/obj/item/book/manual/ripley_build_and_repair,
@@ -64,7 +64,7 @@
 
 /datum/supply_pack/science/circuitry
 	name = "Circuitry Starter Pack Crate"
-	desc = "Journey into the mysterious world of Circuitry with this starter pack. Contains a circuit printer, analyzer, debugger and wirer. Power cells not included."
+	desc = "Отправьтесь в таинственный мир схемотехники с этим стартовым пакетом. Содержит принтер схем, анализатор, отладчик и провод. Элементы питания в комплект не входят."
 	cost = 1000
 	contains = list(/obj/item/integrated_electronics/analyzer,
 					/obj/item/integrated_circuit_printer,
@@ -74,7 +74,7 @@
 
 /datum/supply_pack/science/glasswork
 	name = "Glass Blower Kit Crate"
-	desc = "Learn and make glassworks of useful things for a profit! Contains glassworking tools and blowing rods. Glass not included."
+	desc = "Учитесь и делайте из стекла полезные вещи с прибылью! Содержит инструменты для обработки стекла и выдувные стержни. Стекло в комплект не входит."
 	cost = 1000
 	contains = list(/obj/item/glasswork/glasskit,
 					/obj/item/glasswork/glasskit,
@@ -84,14 +84,14 @@
 
 /datum/supply_pack/science/monkey
 	name = "Monkey Cube Crate"
-	desc = "Stop monkeying around! Contains seven monkey cubes. Just add water!"
+	desc = "Хватит валять дурака! Содержит семь кубиков обезьяны. Просто добавьте воды!"
 	cost = 1500
 	contains = list (/obj/item/storage/box/monkeycubes)
 	crate_name = "monkey cube crate"
 
 /datum/supply_pack/science/nitrilegloves
 	name = "Nitrile Gloves Crate"
-	desc = "Handling toxic chemicals? Well worry not, keep your flesh intact with some nitrile made gloves! Contains three pairs of nitrile gloves."
+	desc = "Обращение с токсичными химикатами? Ну, не волнуйтесь, сохраняйте свою плоть нетронутой с помощью нитриловых перчаток! Содержит три пары нитриловых перчаток."
 	cost = 1500
 	contains = list(/obj/item/clothing/gloves/color/latex/nitrile,
 					/obj/item/clothing/gloves/color/latex/nitrile,
@@ -100,7 +100,7 @@
 
 /datum/supply_pack/science/plasma
 	name = "Plasma Assembly Crate"
-	desc = "Everything you need to burn something to the ground, this contains three plasma assembly sets. Each set contains a plasma tank, igniter, proximity sensor, and timer! Warranty void if exposed to high temperatures. Requires Toxins access to open."
+	desc = "Все, что вам нужно, чтобы сжечь что-то дотла, содержит три набора для сборки плазмы. Каждый набор содержит плазменный бак, воспламенитель, датчик приближения и таймер! Гарантия аннулируется при воздействии высоких температур. Требуется доступ к токсинам, чтобы открыть."
 	cost = 1800
 	access = ACCESS_TOX_STORAGE
 	contains = list(/obj/item/tank/internals/plasma,
@@ -120,7 +120,7 @@
 
 /datum/supply_pack/science/relic
 	name = "Relic Crate"
-	desc = "Ever wanted to play with old discounted toys? Look no further. Contains two relics."
+	desc = "Вы когда-нибудь хотели поиграть со старыми игрушками со скидкой? Ни слова больше. Содержит две реликвии."
 	cost = 1000
 	contraband = TRUE
 	contains = list(/obj/item/relic,
@@ -129,7 +129,7 @@
 
 /datum/supply_pack/science/robotics
 	name = "Robotics Assembly Crate"
-	desc = "The tools you need to replace those finicky humans with a loyal robot army! Contains three proximity sensors, two high-powered cells, six flashes, and an electrical toolbox. Requires Robotics access to open."
+	desc = "Инструменты, необходимые вам, чтобы заменить этих привередливых людей верной армией роботов! Содержит три датчика приближения, две мощные батареи, шесть вспышек и электрический набор инструментов. Для открытия требуется доступ к робототехнике."
 	cost = 1500
 	access = ACCESS_ROBOTICS
 	contains = list(/obj/item/assembly/prox_sensor,
@@ -144,14 +144,14 @@
 
 /datum/supply_pack/science/rped
 	name = "RPED crate"
-	desc = "Need to rebuild the ORM but science got annihilated after a bomb test? Buy this for the most advanced parts NT can give you."
+	desc = "Нужно восстановить ORM, но наука была уничтожена после испытания бомбы? Купите это для самых продвинутых деталей, которые NT может вам предоставить."
 	cost = 1500
 	contains = list(/obj/item/storage/part_replacer/cargo)
 	crate_name = "\improper RPED crate"
 
 /datum/supply_pack/science/shieldwalls
 	name = "Shield Generator Crate"
-	desc = "These high powered Shield Wall Generators are guaranteed to keep any unwanted lifeforms on the outside, where they belong! Contains four shield wall generators. Requires Teleporter access to open."
+	desc = "Эти мощные генераторы щита гарантированно удержат любые нежелательные формы жизни снаружи, там, где им самое место! Содержит четыре генератора щита. Для открытия требуется доступ к телепорту."
 	cost = 2000
 	access = ACCESS_TELEPORTER
 	contains = list(/obj/machinery/shieldwallgen,
@@ -163,7 +163,7 @@
 
 /datum/supply_pack/science/slime
 	name = "Slime Core Crate"
-	desc = "Ran out of slimes? No problem, contains one gray slime core. Requires Xenobio access to open."
+	desc = "Закончились слаймы? Нет проблем, содержит одно ядро серой слизи. Для открытия требуется доступ к Xenobio."
 	cost = 1000
 	access = ACCESS_XENOBIOLOGY
 	contains = list(/obj/item/slime_extract/grey)
@@ -172,7 +172,7 @@
 
 /datum/supply_pack/science/tablets
 	name = "Tablet Crate"
-	desc = "What's a computer? Contains five cargo tablets."
+	desc = "Что такое компьютер? Содержит пять  планшетов."
 	cost = 1500
 	contains = list(/obj/item/modular_computer/tablet/preset/cargo,
 					/obj/item/modular_computer/tablet/preset/cargo,
@@ -183,7 +183,7 @@
 
 /datum/supply_pack/science/transfer_valves
 	name = "Tank Transfer Valves Crate"
-	desc = "The key ingredient for making a lot of people very angry very fast. Contains two tank transfer valves. Requires RD access to open."
+	desc = "Ключевой ингредиент для того, чтобы очень быстро разозлить многих людей. Содержит два перекачивающих клапана бака. Для открытия требуется РД доступ."
 	cost = 6000
 	access = ACCESS_RD
 	contains = list(/obj/item/transfer_valve,
@@ -196,7 +196,7 @@
 
 /datum/supply_pack/science/raw_flux_anomaly
 	name = "Raw Flux Anomaly"
-	desc = "The raw core of a flux anomaly, ready to be implosion-compressed into a powerful artifact."
+	desc = "Необработанное ядро аномалии потока, готовое к сжатию при взрыве в мощный артефакт."
 	cost = 5000
 	access = ACCESS_TOX
 	contains = list(/obj/item/raw_anomaly_core/flux)
@@ -205,7 +205,7 @@
 
 /datum/supply_pack/science/raw_grav_anomaly
 	name = "Raw Gravitational Anomaly"
-	desc = "The raw core of a gravitational anomaly, ready to be implosion-compressed into a powerful artifact."
+	desc = "Необработанное ядро гравитационной аномалии, готовое к сжатию при взрыве в мощный артефакт."
 	cost = 5000
 	access = ACCESS_TOX
 	contains = list(/obj/item/raw_anomaly_core/grav)
@@ -214,7 +214,7 @@
 
 /datum/supply_pack/science/raw_vortex_anomaly
 	name = "Raw Vortex Anomaly"
-	desc = "The raw core of a vortex anomaly, ready to be implosion-compressed into a powerful artifact."
+	desc = "Необработанное ядро вихревой аномалии, готовое к сжатию при взрыве в мощный артефакт."
 	cost = 5000
 	access = ACCESS_TOX
 	contains = list(/obj/item/raw_anomaly_core/vortex)
@@ -223,7 +223,7 @@
 
 /datum/supply_pack/science/raw_bluespace_anomaly
 	name = "Raw Bluespace Anomaly"
-	desc = "The raw core of a bluespace anomaly, ready to be implosion-compressed into a powerful artifact."
+	desc = "Необработанное ядро блюспейс аномалии, готовое к сжатию при взрыве в мощный артефакт."
 	cost = 5000
 	access = ACCESS_TOX
 	contains = list(/obj/item/raw_anomaly_core/bluespace)
@@ -232,7 +232,7 @@
 
 /datum/supply_pack/science/raw_pyro_anomaly
 	name = "Raw Pyro Anomaly"
-	desc = "The raw core of a pyro anomaly, ready to be implosion-compressed into a powerful artifact."
+	desc = "Необработанное ядро пиро анамалии, готовое к сжатию при взрыве в мощный артефакт."
 	cost = 5000
 	access = ACCESS_TOX
 	contains = list(/obj/item/raw_anomaly_core/pyro)

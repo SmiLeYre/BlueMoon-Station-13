@@ -14,7 +14,7 @@
 
 /datum/supply_pack/security/ammo
 	name = "Ammo Crate - General Purpose"
-	desc = "Contains two 20-round magazines for the WT-550 Auto Rifle, three boxes of buckshot ammo, three boxes of rubber ammo and special .38 speedloarders. Requires Security access to open."
+	desc = "Содержит два магазина на 20 патронов для автоматической винтовки WT550, три коробки картечи, три коробки резиновых патронов и специальные скорострельные патроны 38 калибра. Для открытия требуется доступ безопасности."
 	cost = 2500
 	contains = list(/obj/item/ammo_box/magazine/wt550m9,
 					/obj/item/ammo_box/magazine/wt550m9,
@@ -31,7 +31,7 @@
 
 /datum/supply_pack/security/armor
 	name = "Armor Crate"
-	desc = "Three vests of well-rounded, decently-protective armor. Requires Security access to open."
+	desc = "Три жилета из хорошо скругленной, прилично защищающей брони. Требуется доступ безопасности, чтобы открыть."
 	cost = 1200
 	contains = list(/obj/item/clothing/suit/armor/vest,
 					/obj/item/clothing/suit/armor/vest,
@@ -40,7 +40,7 @@
 
 /datum/supply_pack/security/disabler
 	name = "Disabler Crate"
-	desc = "Three stamina-draining disabler weapons. Requires Security access to open."
+	desc = "Три дизейблера, истощающих выносливость. Требуется доступ безопасности, чтобы открыть."
 	cost = 1300
 	contains = list(/obj/item/gun/energy/disabler,
 					/obj/item/gun/energy/disabler,
@@ -49,7 +49,7 @@
 
 /datum/supply_pack/security/forensics
 	name = "Forensics Crate"
-	desc = "Stay hot on the criminal's heels with Nanotrasen's Detective Essentials(tm). Contains a forensics scanner, six evidence bags, camera, tape recorder, white crayon, and of course, a fedora. Requires Security access to open."
+	desc = "Идите по горячим следам преступника с помощью Nanotrasen's Detective Essentials(tm). Содержит криминалистический сканер, шесть пакетов для улик, фотоаппарат, магнитофон, белый карандаш и, конечно же, федору. Для открытия требуется доступ безопасности."
 	cost = 1800
 	contains = list(/obj/item/detective_scanner,
 					/obj/item/storage/box/evidence,
@@ -62,7 +62,7 @@
 
 /datum/supply_pack/security/helmets
 	name = "Helmets Crate"
-	desc = "Contains three standard-issue brain buckets. Requires Security access to open."
+	desc = "Содержит три стандартных шлема. Требуется доступ безопасности, чтобы открыть."
 	cost = 1200
 	contains = list(/obj/item/clothing/head/helmet/sec,
 					/obj/item/clothing/head/helmet/sec,
@@ -71,7 +71,7 @@
 
 /datum/supply_pack/security/plate_carriers
 	name = "Plate Carrier Crate"
-	desc = "Contains three standard-issue cool Plate Carriers. Requires Security access to open."
+	desc = "Contains three standard-issue cool Plate Carriers. Requires Security access to open." // Я не знаю как это перевести
 	cost = 2000
 	contains = list(/obj/item/clothing/suit/armor/hos/platecarrier,
 					/obj/item/clothing/suit/armor/hos/platecarrier,
@@ -80,7 +80,7 @@
 
 /datum/supply_pack/security/laser
 	name = "Lasers Crate"
-	desc = "Contains three lethal, high-energy laser guns. Requires Security access to open."
+	desc = "Содержит три смертоносных высокоэнергетических лазерных оружия. Требуется доступ безопасности, чтобы открыть."
 	cost = 1750
 	contains = list(/obj/item/gun/energy/laser,
 					/obj/item/gun/energy/laser,
@@ -89,7 +89,7 @@
 
 /datum/supply_pack/security/russianclothing
 	name = "Russian Surplus Clothing"
-	desc = "An old russian crate full of surplus armor that they used to use! Has two sets of bulletproof armor, a few union suits and some warm hats!"
+	desc = "Старый русский ящик, полный излишков брони, которую они использовали раньше! Имеет два комплекта пуленепробиваемой брони, несколько костюмов профсоюза и несколько теплых шапок!"
 	contraband = TRUE
 	cost = 5750 // Its basicly sec suits, good boots/gloves
 	contains = list(/obj/item/clothing/under/syndicate/rus_army,
@@ -111,7 +111,7 @@
 
 /datum/supply_pack/security/russian_partisan
 	name = "Russian Partisan Gear"
-	desc = "An old russian partisan equipment crate, comes with a full russian outfit, a loaded surplus rifle and a second magazine."
+	desc = "Старый ящик с снаряжением русского партизана, поставляется с полным русским снаряжением, заряженной запасной винтовкой и вторым магазином."
 	contraband = TRUE
 	cost = 6500
 	contains = list(/obj/item/clothing/suit/armor/navyblue/russian,
@@ -134,7 +134,7 @@
 
 /datum/supply_pack/security/sechardsuit
 	name = "Sec Hardsuit"
-	desc = "One Sec Hardsuit with a small air tank and mask."
+	desc = "Один защитный костюм с небольшим баллоном воздуха и маской."
 	cost = 3000 // half of SWAT gear for have the armor and half the gear
 	contains = list(/obj/item/clothing/suit/space/hardsuit/security,
 					/obj/item/tank/internals/air,
@@ -143,7 +143,7 @@
 
 /datum/supply_pack/security/securitybarriers
 	name = "Security Barrier Grenades"
-	desc = "Stem the tide with four Security Barrier grenades. Requires Security access to open."
+	desc = "Остановите наплыв с помощью четырех гранат защитного барьера. Для открытия требуется доступ безопасности."
 	contains = list(/obj/item/grenade/barrier,
 					/obj/item/grenade/barrier,
 					/obj/item/grenade/barrier,
@@ -154,7 +154,7 @@
 
 /datum/supply_pack/security/securityclothes
 	name = "Security Clothing Crate"
-	desc = "Contains appropriate outfits for the station's private security force. Contains outfits for the Warden, Head of Security, and two Security Officers. Each outfit comes with a rank-appropriate jumpsuit, suit, and beret. Requires Security access to open."
+	desc = "Содержит соответствующую экипировку для службы безопасности станции. Содержит наряды для вардена, главы службы безопасности и двух офицеров службы безопасности. Каждый наряд поставляется с соответствующим рангу комбинезоном, костюмом и беретом. Для открытия требуется доступ безопасности."
 	cost = 3250
 	contains = list(/obj/item/clothing/under/rank/security/officer/formal,
 					/obj/item/clothing/under/rank/security/officer/formal,
@@ -173,7 +173,7 @@
 
 /datum/supply_pack/security/supplies
 	name = "Security Supplies Crate"
-	desc = "Contains seven flashbangs, seven teargas grenades, six flashes, and seven handcuffs. Requires Security access to open."
+	desc = "Содержит семь светошумовых гранат, семь гранат со слезоточивым газом, шесть вспышек и семь наручников. Для открытия требуется доступ безопасности."
 	cost = 1200
 	contains = list(/obj/item/storage/box/flashbangs,
 					/obj/item/storage/box/teargas,
@@ -183,7 +183,7 @@
 
 /datum/supply_pack/security/firingpins
 	name = "Standard Firing Pins Crate"
-	desc = "Upgrade your arsenal with 10 standard firing pins. Requires Security access to open."
+	desc = "Обновите свой арсенал с помощью 10 стандартных боекомплектов. Для открытия требуется доступ безопасности."
 	cost = 2000
 	contains = list(/obj/item/storage/box/firingpins,
 					/obj/item/storage/box/firingpins)
@@ -191,7 +191,7 @@
 
 /datum/supply_pack/security/justiceinbound
 	name = "Standard Justice Enforcer Crate"
-	desc = "This is it. The Bee's Knees. The Creme of the Crop. The Pick of the Litter. The best of the best of the best. The Crown Jewel of Nanotrasen. The Alpha and the Omega of security headwear. Guaranteed to strike fear into the hearts of each and every criminal aboard the station. Also comes with a security gasmask. Requires Security access to open."
+	desc = "Это оно. Жемчужина в короне Нанотрасена. Альфа и Омега защитных головных уборов. Гарантированно вселит страх в сердца всех без исключения преступников на борту станции. Также поставляется с защитным противогазом. Для открытия требуется доступ безопасности."
 	cost = 6000 //justice comes at a price. An expensive, noisy price.
 	contraband = TRUE
 	contains = list(/obj/item/clothing/head/helmet/justice,
@@ -201,7 +201,7 @@
 
 /datum/supply_pack/security/baton
 	name = "Stun Batons Crate"
-	desc = "Arm the Civil Protection Forces with three stun batons. Batteries included. Requires Security access to open."
+	desc = "Вооружите Силы Гражданской Обороны тремя электрошоковыми дубинками. Батарейки в комплекте. Для открытия требуется доступ безопасности."
 	cost = 1200
 	contains = list(/obj/item/melee/baton/loaded,
 					/obj/item/melee/baton/loaded,
@@ -210,7 +210,7 @@
 
 /datum/supply_pack/security/taser
 	name = "Taser Crate"
-	desc = "From the depths of stunbased combat, this order rises above, supreme. Contains three hybrid tasers, capable of firing both electrodes and disabling shots. Requires Security access to open."
+	desc = "Содержит три гибридных электрошокера, способных стрелять обоими электродами. Для открытия требуется доступ безопасности."
 	cost = 3500
 	contains = list(/obj/item/gun/energy/e_gun/advtaser,
 					/obj/item/gun/energy/e_gun/advtaser,
@@ -219,7 +219,7 @@
 
 /datum/supply_pack/security/wall_flash
 	name = "Wall-Mounted Flash Crate"
-	desc = "Contains four wall-mounted flashes. Requires Security access to open."
+	desc = "Содержит четыре настенные вспышки. Требуется доступ безопасности, чтобы открыть."
 	cost = 1000
 	contains = list(/obj/item/storage/box/wall_flash,
 					/obj/item/storage/box/wall_flash,
@@ -229,7 +229,7 @@
 
 /datum/supply_pack/security/hunting
 	name = "Hunting Gear"
-	desc = "Even in space, we can find prey to hunt, this crate contains everthing a fine hunter needs to have a sporting time. This crate needs armory access to open. A true huntter only needs a fine bottle of cognac, a nice coat, some good o' cigars, and of cource a hunting shotgun. "
+	desc = "Даже в космосе мы можем найти добычу для охоты, в этом ящике есть все, что нужно хорошему охотнику для спортивного времяпрепровождения. Чтобы открыть этот ящик, нужен доступ в оружейную. Настоящему охотнику нужна только бутылка хорошего коньяка, хорошее пальто, несколько хороших сигар и, конечно же, охотничье ружье. "
 	cost = 3500
 	contraband = TRUE
 	contains = list(/obj/item/clothing/head/flatcap,
@@ -245,7 +245,7 @@
 
 /datum/supply_pack/security/dumdum
 	name = ".38 DumDum Speedloader"
-	desc = "Contains one speedloader of .38 DumDum ammunition, good for embedding in soft targets. Requires Security or Forensics access to open."
+	desc = "Содержит один спидлоадер 38-го калибра DumDum. Для открытия требуется доступ службы безопасности."
 	cost = 1200
 	access = FALSE
 	access_any = list(ACCESS_SECURITY, ACCESS_FORENSICS_LOCKERS)
@@ -254,7 +254,7 @@
 
 /datum/supply_pack/security/match
 	name = ".38 Match Grade Speedloader"
-	desc = "Contains one speedloader of match grade .38 ammunition, perfect for showing off trickshots. Requires Security or Forensics access to open."
+	desc = "Содержит один спидлоадер 38 калибра, идеально подходящий для демонстрации трюковых выстрелов. Требуется доступ службы безопасности."
 	cost = 1200
 	access = FALSE
 	access_any = list(ACCESS_SECURITY, ACCESS_FORENSICS_LOCKERS)
@@ -263,14 +263,13 @@
 
 /datum/supply_pack/security/stingpack
 	name = "Stingbang Grenade Pack"
-	desc = "Contains five \"stingbang\" grenades, perfect for stopping riots and playing morally unthinkable pranks. Requires Security access to open."
+	desc = "Содержит пять гранат \"stingbang\", идеально подходящих для прекращения беспорядков и совершения немыслимых с моральной точки зрения розыгрышей. Для открытия требуется доступ безопасности."
 	cost = 2500
 	contains = list(/obj/item/storage/box/stingbangs)
 	crate_name = "stingbang grenade pack crate"
 
 /datum/supply_pack/security/stingpack/single
 	name = "Stingbang Single-Pack"
-	desc = "Contains one \"stingbang\" grenade, perfect for playing meanhearted pranks. Requires Security access to open."
+	desc = "Содержит одну гранату \"stingbang\", идеально подходящую для подлых розыгрышей. Для открытия требуется доступ безопасности."
 	cost = 1400
 	contains = list(/obj/item/grenade/stingbang)
-

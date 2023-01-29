@@ -14,7 +14,7 @@
 
 /datum/supply_pack/security/armory/bulletarmor
 	name = "Bulletproof Armor Crate"
-	desc = "Contains three sets of bulletproof armor. Guaranteed to reduce a bullet's stopping power by over half. Requires Armory access to open."
+	desc = "Содержит три комплекта пуленепробиваемой брони. Гарантированно снижает останавливающую способность пули более чем наполовину. Для открытия требуется доступ к оружейной."
 	cost = 1250
 	contains = list(/obj/item/clothing/suit/armor/bulletproof,
 					/obj/item/clothing/suit/armor/bulletproof,
@@ -23,7 +23,7 @@
 
 /datum/supply_pack/security/armory/bullethelmets
 	name = "Bulletproof Helmet Crate"
-	desc = "Contains three sets of bulletproof helmets. Guaranteed to reduce a bullet's stopping power by over half. Requires Armory access to open."
+	desc = "Содержит три комплекта пуленепробиваемых шлемов. Гарантированно снижает останавливающую способность пули более чем наполовину. Для открытия требуется доступ к оружейной."
 	cost = 1250
 	contains = list(/obj/item/clothing/head/helmet/alt,
 					/obj/item/clothing/head/helmet/alt,
@@ -32,14 +32,14 @@
 
 /datum/supply_pack/security/armory/chemimp
 	name = "Chemical Implants Crate"
-	desc = "Contains five Remote Chemical implants. Requires Armory access to open."
+	desc = "Содержит три Remote Chemical implants. Для открытия требуется доступ к оружейной."
 	cost = 1700
 	contains = list(/obj/item/storage/box/chemimp)
 	crate_name = "chemical implant crate"
 
 /datum/supply_pack/security/armory/ballistic
 	name = "Combat Shotguns Crate"
-	desc = "For when the enemy absolutely needs to be replaced with lead. Contains three Aussec-designed Combat Shotguns, with three Shotgun Bandoliers, as well as seven buchshot and 12g shotgun slugs. Requires Armory access to open."
+	desc = "Для тех случаев, когда врага абсолютно необходимо накормить свинцом. Содержит три боевых дробовика, разработанных Aussec, с тремя патронташами , а также семь патрон с картечью и 12-граммовыми пулями. Для открытия требуется доступ к оружейной."
 	cost = 8000
 	contains = list(/obj/item/gun/ballistic/shotgun/automatic/combat,
 					/obj/item/gun/ballistic/shotgun/automatic/combat,
@@ -53,7 +53,7 @@
 
 /datum/supply_pack/security/armory/dragnetgun
 	name = "DRAGnet gun Crate"
-	desc = "Contains two DRAGnet guns. A Dynamic Rapid-Apprehension of the Guilty net the revolution in law enforcement technology that YOU Want! Requires Armory access to open."
+	desc = "Содержит два пулемета DRAGnet. Динамичное быстрое задержание виновных - это революция в правоохранительных технологиях, которую ВЫ хотите! Для открытия требуется доступ к оружейной."
 	cost = 3250
 	contains = list(/obj/item/gun/energy/e_gun/dragnet,
 					/obj/item/gun/energy/e_gun/dragnet)
@@ -61,7 +61,7 @@
 
 /datum/supply_pack/security/armory/energy
 	name = "Energy Guns Crate"
-	desc = "Contains three Energy Guns, capable of firing both nonlethal and lethal blasts of light. Requires Armory access to open."
+	desc = "Содержит три Energy Guns, способных стрелять как несмертельными, так и смертельными лазерными импульсами. Для открытия требуется доступ к оружейной."
 	cost = 3250
 	contains = list(/obj/item/gun/energy/e_gun,
 					/obj/item/gun/energy/e_gun,
@@ -71,21 +71,21 @@
 
 /datum/supply_pack/security/armory/exileimp // Theres boxes in 2 lockers as well as gateway never realy being used sad
 	name = "Exile Implants Crate"
-	desc = "Contains five Exile implants. Requires Armory access to open."
+	desc = "Содержит пять Exile Implants. Для открытия требуется доступ к оружейной."
 	cost = 1050 //stops endless points
 	contains = list(/obj/item/storage/box/exileimp)
 	crate_name = "exile implant crate"
 
 /datum/supply_pack/security/armory/mindshield
 	name = "Mindshield Implants Crate"
-	desc = "Prevent against radical thoughts with three Mindshield implants. Requires Armory access to open."
+	desc = "Защититесь от радикальных мыслей с помощью трех имплантатов защиты разума. Для открытия требуется доступ к оружейной."
 	cost = 4000
 	contains = list(/obj/item/storage/lockbox/loyalty)
 	crate_name = "mindshield implant crate"
 
 /datum/supply_pack/security/armory/trackingimp
 	name = "Tracking Implants Crate"
-	desc = "Contains four tracking implants and three tracking speedloaders of tracing .38 ammo. Requires Armory access to open."
+	desc = "Содержит четыре отслеживающих имплантата и три зарядника с отслеживающими патронами 38 калибра. Для открытия требуется доступ к оружейной."
 	cost = 1100
 	contains = list(/obj/item/storage/box/trackimp,
 					/obj/item/ammo_box/c38/trac,
@@ -95,7 +95,7 @@
 
 /datum/supply_pack/security/armory/fire
 	name = "Incendiary Weapons Crate"
-	desc = "Burn, baby burn. Contains three incendiary grenades, seven incendiary slugs, three plasma canisters, and a flamethrower. Requires Brige access to open."
+	desc = "Гори, детка, гори. Содержит три зажигательные гранаты, семь зажигательных пуль, три плазменных баллона и огнемет. Для открытия требуется доступ к оружейной"
 	cost = 1750
 	access = ACCESS_HEADS
 	contains = list(/obj/item/flamethrower/full,
@@ -112,7 +112,7 @@
 
 /datum/supply_pack/security/armory/miniguns
 	name = "Personal Miniature Energy Guns"
-	desc = "Contains three miniature energy guns. Each gun has a disabler and a lethal option. Requires Armory access to open."
+	desc = "Содержит три миниатюрных энергетических пистолета. Имеется летальный и нелетальный режим. Для открытия требуется доступ к оружейной."
 	cost = 3000
 	contains = list(/obj/item/gun/energy/e_gun/mini,
 					/obj/item/gun/energy/e_gun/mini,
@@ -122,7 +122,7 @@
 
 /datum/supply_pack/security/armory/laserarmor
 	name = "Reflector Vest Crate"
-	desc = "Contains two vests of highly reflective material. Each armor piece diffuses a laser's energy by over half, as well as offering a good chance to reflect the laser entirely. Requires Armory access to open."
+	desc = "Содержит два жилета из материала с высокой светоотражающей способностью. Каждый элемент брони рассеивает энергию лазера более чем наполовину, а также дает хороший шанс полностью отразить лазер. Для открытия требуется доступ к оружейной."
 	cost = 2000
 	contains = list(/obj/item/clothing/suit/armor/laserproof,
 					/obj/item/clothing/suit/armor/laserproof)
@@ -131,7 +131,7 @@
 
 /datum/supply_pack/security/armory/riotarmor
 	name = "Riot Armor Crate"
-	desc = "Contains three sets of heavy body armor. Advanced padding protects against close-ranged weaponry, making melee attacks feel only half as potent to the user. Requires Armory access to open."
+	desc = "Содержит три комплекта тяжелых бронежилетов. Усовершенствованная подкладка защищает от оружия ближнего боя, благодаря чему атаки кажутся носителю вполовину слабее. Для открытия требуется доступ к оружейной."
 	cost = 1750
 	contains = list(/obj/item/clothing/suit/armor/riot,
 					/obj/item/clothing/suit/armor/riot,
@@ -140,7 +140,7 @@
 
 /datum/supply_pack/security/armory/riothelmets
 	name = "Riot Helmets Crate"
-	desc = "Contains three riot helmets. Requires Armory access to open."
+	desc = "Содержит три комплекта тяжелых шлемов. Для открытия требуется доступ к оружейной."
 	cost = 1750
 	contains = list(/obj/item/clothing/head/helmet/riot,
 					/obj/item/clothing/head/helmet/riot,
@@ -149,7 +149,7 @@
 
 /datum/supply_pack/security/armory/riotshields
 	name = "Riot Shields Crate"
-	desc = "For when the greytide gets really uppity. Contains three riot shields. Requires Armory access to open."
+	desc = "Содержит три тяжелых щита. Для открытия требуется доступ к оружейной."
 	cost = 2200
 	contains = list(/obj/item/shield/riot,
 					/obj/item/shield/riot,
@@ -158,7 +158,7 @@
 
 /datum/supply_pack/security/armory/russian
 	name = "Russian Surplus Crate"
-	desc = "Hello Comrade, we have the most modern Russian military equipment the black market can offer, for the right price of course. Sadly we couldn't remove the lock so it requires Armory access to open."
+	desc = "Здравствуйте, Товарищ , у нас есть самая современная российская военная техника, которую может предложить черный рынок, конечно, по правильной цене. К сожалению, мы не смогли снять замок, поэтому для его открытия требуется доступ в оружейную."
 	cost = 7500
 	contraband = TRUE
 	contains = list(/obj/effect/spawner/lootdrop/mre = 3,
@@ -186,7 +186,7 @@
 
 /datum/supply_pack/security/armory/frontier
 	name = "Old West Surplus Crate"
-	desc = "Do you have a fauna problem? Do you want to live out your frontier-taming fantasies on a state-of-the-art plasma research and mining station? Do you want to pretend you lived in the Old West of Earthen fame? Well, this box - and its many hats - may be for you."
+	desc = "У вас есть проблемы с фауной? Вы хотите воплотить в жизнь свои фантазии о покорении границ на ультрасовременной станции по исследованию и добыче плазмы? Ты хочешь притвориться, что жил на Старом Западе земной славы? Что ж, эта коробка - и множество шляп в ней - возможно, для вас."
 	cost = 7500
 	contraband = TRUE
 	contains = list(/obj/effect/spawner/bundle/crate/cowboyhat,
@@ -209,7 +209,7 @@
 
 /datum/supply_pack/security/armory/swat
 	name = "SWAT Crate"
-	desc = "Contains two fullbody sets of tough, fireproof, pressurized suits designed in a joint effort by IS-ERI and Nanotrasen. Each set contains a suit, helmet, mask, combat belt, and combat gloves. Requires Armory access to open."
+	desc = "Содержит два полных комплекта прочных, огнеупорных герметичных костюмов, разработанных совместными усилиями IS-ERI и Nanotrasen. Каждый комплект содержит костюм, шлем, маску, боевой пояс и боевые перчатки. Для открытия требуется доступ к оружейной."
 	cost = 6000
 	contains = list(/obj/item/clothing/head/helmet/swat/nanotrasen,
 					/obj/item/clothing/head/helmet/swat/nanotrasen,
@@ -225,7 +225,7 @@
 
 /datum/supply_pack/security/armory/wt550
 	name = "WT-550 Semi-Auto Rifle Crate"
-	desc = "Contains two high-powered, semiautomatic rifles chambered in 4.6x30mm. Requires Armory access to open."
+	desc = "Содержит две мощные полуавтоматические винтовки с калибром 4,6x30 мм. Для открытия требуется доступ к оружейной."
 	cost = 2550
 	contains = list(/obj/item/gun/ballistic/automatic/wt550,
 					/obj/item/gun/ballistic/automatic/wt550)
@@ -233,7 +233,7 @@
 
 /datum/supply_pack/security/armory/wt550ammo
 	name = "WT-550 Semi-Auto SMG Ammo Crate"
-	desc = "Contains four 32-round magazines for the WT-550 Semi-Auto SMG. Each magazine is designed to facilitate rapid tactical reloads. Requires Armory access to open."
+	desc = "Содержит четыре магазина на 32 патрона для полуавтоматического пистолета WT-550 SMG. Каждый магазин предназначен для быстрой тактической перезарядки. Для открытия требуется доступ к оружейной."
 	cost = 1750
 	contains = list(/obj/item/ammo_box/magazine/wt550m9,
 					/obj/item/ammo_box/magazine/wt550m9,
@@ -243,7 +243,7 @@
 
 /datum/supply_pack/security/armory/wt550ammo_nonlethal // Takes around 12 shots to stamcrit someone
 	name = "WT-550 Semi-Auto SMG Non-Lethal Ammo Crate"
-	desc = "Contains four 32-round magazines for the WT-550 Semi-Auto SMG. Each magazine is designed to facilitate rapid tactical reloads. Requires Armory access to open."
+	desc = "Содержит четыре магазина на 32 нелеталных патрона для полуавтоматического пистолета WT-550 SMG. Каждый магазин предназначен для быстрой тактической перезарядки. Для открытия требуется доступ к оружейной."
 	cost = 1000
 	contains = list(/obj/item/ammo_box/magazine/wt550m9/wtrubber,
 					/obj/item/ammo_box/magazine/wt550m9/wtrubber,
@@ -254,14 +254,14 @@
 /datum/supply_pack/security/armory/hell_single
 	name = "Hellgun Single-Pack"
 	crate_name = "hellgun crate"
-	desc = "Contains one hellgun, an old pattern of laser gun infamous for its ability to horribly disfigure targets with burns. Technically violates the Space Geneva Convention when used on humanoids."
+	desc = "Содержит один Hellgun, старый образец лазерного ружья, печально известного своей способностью ужасно уродовать цели ожогами. Технически нарушает Космическую Женевскую конвенцию при использовании на гуманоидах."
 	cost = 1500
 	contains = list(/obj/item/gun/energy/laser/hellgun)
 
 /datum/supply_pack/security/armory/derringerclassic
 	name = "Holdout Crate"
 	crate_name = "dented crate"
-	desc = "Hey kid.. c'mere. Boss says we need to offload these, to any buyer, no questions asked. You pay us, we give you three of these guns, no strings attached. Locks are to ensure they get to PAYING customers."
+	desc = "Эй, пацан... иди сюда. Босс говорит, что мы должны выгрузить это любому покупателю, не задавая вопросов. Вы платите нам, мы даем вам три таких пистолета без каких-либо условий. Блокировки предназначены для того, чтобы гарантировать, что они попадут к платежеспособным клиентам."
 	cost = 2000
 	contraband = TRUE
 	contains = list(/obj/item/storage/fancy/cigarettes/derringer/smuggled,
@@ -271,7 +271,7 @@
 
 /datum/supply_pack/security/armory/esoteric_arms
 	name = "Esoteric Armory Shipment"
-	desc = "Well.. you're an agent of taste, I can tell that much. For the right price.. we could see our way clear to send you one of our more... unique weapons."
+	desc = "Чтож.. вы человек со вкусом, это я точно могу сказать. За правильную цену.. мы могли бы ясно видеть наш путь, чтобы отправить вам одно из наших более... уникальных видов оружия."
 	hidden = TRUE
 	cost = 10000
 	can_private_buy = TRUE
