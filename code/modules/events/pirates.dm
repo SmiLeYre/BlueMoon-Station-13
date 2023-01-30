@@ -63,16 +63,16 @@
 
 /proc/pirates_answered(datum/comm_message/threat_msg, payoff, ship_name, initial_send_time, response_max_time, ship_template)
 	if(world.time > initial_send_time + response_max_time)
-		priority_announce("Too late to beg for mercy!", null, 'modular_bluemoon/phenyamomota/sound/announcer/pirate_nopeacedecision.ogg', sender_override = ship_name, has_important_message = TRUE)
+		priority_announce("Too late to beg for mercy!", ship_name, 'modular_bluemoon/phenyamomota/sound/announcer/pirate_nopeacedecision.ogg', has_important_message = TRUE)
 		return
 	if(threat_msg && threat_msg.answered == 1)
 		var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
 		if(D)
 			if(D.adjust_money(-payoff))
-				priority_announce("Thanks for the credits, landlubbers.", null, 'modular_bluemoon/phenyamomota/sound/announcer/pirate_yespeacedecision.ogg', sender_override = ship_name, has_important_message = TRUE)
+				priority_announce("Thanks for the credits, landlubbers.", ship_name, 'modular_bluemoon/phenyamomota/sound/announcer/pirate_yespeacedecision.ogg', has_important_message = TRUE)
 				return
 			else
-				priority_announce("Trying to cheat us? You'll regret this!", null, 'modular_bluemoon/phenyamomota/sound/announcer/pirate_nopeacedecision.ogg', sender_override = ship_name, has_important_message = TRUE)
+				priority_announce("Trying to cheat us? You'll regret this!", ship_name, 'modular_bluemoon/phenyamomota/sound/announcer/pirate_nopeacedecision.ogg', has_important_message = TRUE)
 				spawn_pirates(threat_msg, ship_template, TRUE)
 
 /proc/spawn_pirates(datum/comm_message/threat_msg, ship_template, skip_answer_check)
