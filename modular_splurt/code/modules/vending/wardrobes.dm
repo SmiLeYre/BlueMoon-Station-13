@@ -57,7 +57,12 @@
 					/obj/item/clothing/head/blueshield/officercap = 2,
 					/obj/item/clothing/neck/tie/blue = 2,
 					/obj/item/clothing/under/rank/blueshield/formal/skirt = 2,
-					/obj/item/clothing/shoes/jackboots/tall = 2)
+					/obj/item/clothing/shoes/jackboots/tall = 2,
+					/obj/item/clothing/under/rank/blueshield/formal/pmc_leader_jumpsuit = 2,
+					/obj/item/clothing/mask/balaclava/pmc_leader_balaclava = 2,
+					/obj/item/clothing/head/HoS/pmc_leader_cap = 2,
+					/obj/item/clothing/head/HoS/pmc_leader_beret = 2,
+					/obj/item/clothing/suit/armor/hos/pmc_leader_armor = 2)
 	refill_canister = /obj/item/vending_refill/wardrobe/blueshield_wardrobe
 	payment_department = ACCOUNT_SEC
 	light_color = COLOR_STRONG_BLUE
@@ -123,8 +128,12 @@
 					/obj/item/clothing/under/rank/security/head_of_security/peacekeeper = 1,
 					/obj/item/clothing/head/beret/sec/peacekeeper/hos = 1,
 					/obj/item/clothing/head/HoS/peacekeeper = 1,
-					/obj/item/clothing/suit/armor/hos/peacekeeper = 1
-					)
+					/obj/item/clothing/suit/armor/hos/peacekeeper = 1,
+					/obj/item/clothing/under/rank/blueshield/formal/pmc_leader_jumpsuit = 1,
+					/obj/item/clothing/mask/balaclava/pmc_leader_balaclava = 1,
+					/obj/item/clothing/head/HoS/pmc_leader_cap = 1,
+					/obj/item/clothing/head/HoS/pmc_leader_beret = 1,
+					/obj/item/clothing/suit/armor/hos/pmc_leader_armor = 1)
 	refill_canister = /obj/item/vending_refill/wardrobe/sec_wardrobe
 	payment_department = ACCOUNT_SEC
 	light_color = COLOR_MOSTLY_PURE_RED
