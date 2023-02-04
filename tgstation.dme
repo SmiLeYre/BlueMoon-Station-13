@@ -3880,6 +3880,8 @@
 #include "modular_bluemoon\phenyamomota\code\modules\holdingfashion_port\code\backpack.dm"
 #include "modular_bluemoon\phenyamomota\code\modules\holdingfashion_port\code\bluespace_design.dm"
 #include "modular_bluemoon\phenyamomota\code\modules\holdingfashion_port\code\recipes.dm"
+#include "modular_bluemoon\phenyamomota\code\modules\hsc\equipment.dm"
+#include "modular_bluemoon\phenyamomota\code\modules\hsc\outfits.dm"
 #include "modular_bluemoon\phenyamomota\code\modules\jobs\job_types\expeditor.dm"
 #include "modular_bluemoon\phenyamomota\code\modules\jobs\job_types\research_director.dm"
 #include "modular_bluemoon\phenyamomota\code\modules\tools\tools.dm"
