@@ -3933,6 +3933,7 @@
 #include "modular_bluemoon\SmiLeY\mapping\code\tarkon_atmos_control.dm"
 #include "modular_bluemoon\SmiLeY\mapping\code\items\papers.dm"
 #include "modular_bluemoon\vagabond\code\modules\mob\dead\new_player\sprite_accessories\tails.dm"
+#include "modular_bluemoon\vagabond\code\wheelchair_resprite.dm"
 #include "modular_citadel\code\datums\components\souldeath.dm"
 #include "modular_citadel\code\datums\status_effects\chems.dm"
 #include "modular_citadel\code\game\objects\effects\temporary_visuals\souldeath.dm"
