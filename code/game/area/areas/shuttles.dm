@@ -237,3 +237,6 @@
 
 /area/shuttle/tarkoff_driver
 	name = "Tarkoff Driver"
+
+/area/shuttle/lf_haron
+	name = "Haron"
