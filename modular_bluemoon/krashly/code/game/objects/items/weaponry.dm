@@ -82,3 +82,32 @@
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
 	icon_state = "baron"
 	item_state = "baron"
+
+/obj/item/gun/energy/taser/bolestrel
+	name = "sparq"
+	desc = "A weapon that uses small darts that cause your opponent to wallow in agony."
+	icon = 'modular_bluemoon/krashly/icons/obj/weapons/weapons.dmi'
+	lefthand_file = 'modular_bluemoon/krashly/icons/mob/inhands/weapons/lefthand.dmi'
+	righthand_file = 'modular_bluemoon/krashly/icons/mob/inhands/weapons/righthand.dmi'
+	icon_state = "sparq"
+	item_state = null
+	ammo_type = list(/obj/item/ammo_casing/energy/electrode/bolestrel)
+
+/obj/item/gun/energy/taser/bolestrel/censor
+	name = "modernized sparq"
+	icon_state = "taser_h"
+
+/obj/item/ammo_casing/energy/electrode/bolestrel
+	projectile_type = /obj/item/projectile/energy/electrode/security/hos/bolestrel
+	select_name = "make pain"
+	fire_sound = 'sound/weapons/bowfire.wav'
+	e_cost = 50
+	harmful = FALSE
+
+/obj/item/projectile/energy/electrode/security/hos/bolestrel
+	icon = 'modular_bluemoon/krashly/icons/obj/projectiles.dmi'
+	icon_state = "cbbolt"
+	hitsound = 'sound/weapons/nebhit.ogg'
+	tracer_type = null
+	muzzle_type = null
+	impact_type = null
