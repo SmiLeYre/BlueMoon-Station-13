@@ -68,9 +68,8 @@
 	},
 /area/shuttle/lf_haron)
 "jl" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
+/obj/structure/table/reinforced,
+/obj/item/storage/box/handcuffs,
 /turf/open/floor/lf_haron/f7{
 	dir = 9
 	},
@@ -187,10 +186,6 @@
 /turf/open/floor/lf_haron/shuttle3,
 /area/shuttle/lf_haron)
 "vW" = (
-/obj/structure/cable/yellow,
-/obj/machinery/power/apc/highcap/ten_k{
-	step_x = -25
-	},
 /obj/structure/closet/gimmick{
 	name = "closet"
 	},
@@ -220,15 +215,6 @@
 "xa" = (
 /turf/closed/wall/r_wall/lf_haron{
 	dir = 6
-	},
-/area/shuttle/lf_haron)
-"xK" = (
-/obj/structure/cable/yellow{
-	icon_state = "0-2"
-	},
-/obj/machinery/power/smes/magical,
-/turf/open/floor/lf_haron/f7{
-	dir = 9
 	},
 /area/shuttle/lf_haron)
 "Av" = (
@@ -377,7 +363,6 @@
 "Xe" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/box/handcuffs,
-/obj/machinery/recharger,
 /turf/open/floor/lf_haron/bar2_red,
 /area/shuttle/lf_haron)
 "XE" = (
@@ -460,7 +445,7 @@ NF
 (3,1,1) = {"
 US
 Db
-xK
+dP
 vW
 dC
 Wu
@@ -477,7 +462,7 @@ mD
 (4,1,1) = {"
 ez
 pc
-jl
+AI
 wG
 AI
 ot
@@ -501,7 +486,7 @@ nk
 AI
 kg
 kg
-dP
+jl
 RS
 EL
 Fe
