@@ -106,6 +106,10 @@
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	unique_reskin = list(
+		"Trenchcoat" = list("icon_state" = "detective"),
+		"Distinguish Trenchcoat" = list("icon_state" = "detective_newtg")
+	)	
 
 /obj/item/clothing/suit/det_suit/Initialize(mapload)
 	. = ..()
@@ -116,6 +120,10 @@
 	desc = "A hard-boiled private investigator's grey trenchcoat."
 	icon_state = "greydet"
 	item_state = "greydet"
+	unique_reskin = list(
+		"Trenchcoat" = list("icon_state" = "greydet"),
+		"Distinguish Trenchcoat" = list("icon_state" = "detective_noir_newtg")
+	)		
 
 /obj/item/clothing/suit/det_suit/forensicsred
 	name = "red forensics coat"
