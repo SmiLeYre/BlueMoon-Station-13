@@ -42,4 +42,5 @@
 	new /obj/item/storage/bag/bio( src )
 	new /obj/item/clothing/suit/bio_suit/scientist( src )
 	new /obj/item/clothing/head/bio_hood/scientist( src )
-	new /obj/item/storage/box/tentaclescubes( src ) //Smiley's request
+	if(prob(25))
+		new /obj/item/storage/box/tentaclescubes( src ) //Smiley's request
