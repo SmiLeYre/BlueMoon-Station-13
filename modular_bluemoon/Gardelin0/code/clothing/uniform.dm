@@ -117,6 +117,8 @@
 /obj/item/clothing/under/dress/skirt/long
 	name = "long skirt"
 	desc = "A long skirt, made of some semi-gloss material that reaches the wearer's ankles."
+	icon = 'modular_bluemoon/Gardelin0/icons/clothing/object/uniforms.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Gardelin0/icons/clothing/worn/uniform.dmi'
 	icon_state = "skirt_long"
 	item_state = "skirt_long"
 	body_parts_covered = GROIN|LEGS
