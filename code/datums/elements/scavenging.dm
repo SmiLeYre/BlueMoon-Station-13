@@ -154,6 +154,9 @@
 			else
 				to_chat(user, "<span class='notice'>You found something in [source]... no wait, that's Tom, the mouse! What is he doing here?</span>")
 				new /mob/living/simple_animal/mouse/brown/Tom(source.loc)
+		if(SCAVENGING_SPAWN_TENTACLES)
+			to_chat(user, "<span class='notice'>You found something in [source]... TENTACLES! KYAAA!</span>") //Smiley's request
+			new /mob/living/simple_animal/hostile/tentacles(source.loc)
 		else
 			special = FALSE
 

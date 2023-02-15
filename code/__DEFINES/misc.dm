@@ -569,6 +569,7 @@ GLOBAL_LIST_INIT(pda_reskins, list(
 #define SCAVENGING_SPAWN_MOUSE		"spawn_mouse"
 #define SCAVENGING_SPAWN_MICE		"spawn_mice"
 #define SCAVENGING_SPAWN_TOM		"spawn_tom_the_mouse"
+#define SCAVENGING_SPAWN_TENTACLES	"spawn_tentacles" //Smiley's request
 
 //Scavenging element defines for ckey/mind restrictions.
 #define NO_LOOT_RESTRICTION			0

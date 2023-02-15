@@ -120,7 +120,7 @@ mob/living
 		return // Do nothing
 
 	if(!M.pulledby)
-		if(!M.buckled)
+		if(!M.buckled && !M.density)
 			M.forceMove(src.loc)
 
 		start_pulling(M, supress_message = TRUE)
@@ -128,6 +128,10 @@ mob/living
 		M.visible_message("<span class='warning'>[src] violently grab and entangle [M]!</span>", \
 			"<span class='userdanger'>[src] violently grab and entangle you!</span>")
 		setGrabState(GRAB_NECK) //Instant neck grab
+		if(prob(15))
+			M.Stun(15) //People want them to be dangerous, huh?
+			M.visible_message("<span class='warning'>[src] secure [M]'s limbs, immobilizing them!</span>", \
+				"<span class='userdanger'>[src] secures your limbs, immobilizing you!</span>")
 
 		return
 
@@ -161,6 +165,7 @@ mob/living
 		return
 
 	var/datum/interaction/I
+	M.forceMove(src.loc) //Just to be sure
 	switch(chosen_hole)
 		if(CUM_TARGET_ANUS)
 			if(tearSlot(M, ITEM_SLOT_OCLOTHING))
@@ -256,6 +261,7 @@ mob/living
 	playsound(loc, "modular_sand/sound/interactions/slap.ogg", 30, 1, -1)
 	visible_message("<span class='danger'>\The [src]</b> slaps \the [M] right on the ass!</span>", \
 			"<span class='userdanger'>\The [src]</b> slaps \the [M] right on the ass!</span>", null, COMBAT_MESSAGE_RANGE)
+	sleep(50) //5 seconds. Let the victim rest a little.
 
 /mob/living/simple_animal/hostile/tentacles/proc/tearSlot(mob/living/M, slot)
 	var/obj/item/W = M.get_item_by_slot(slot)

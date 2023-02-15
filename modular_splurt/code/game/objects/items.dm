@@ -76,7 +76,7 @@
 		to_chat(user, span_warning("They don't want you to do that!"))
 		return
 
-	if(style == "long" && !(istype(target_organ, /obj/item/organ/genital/vagina))) //long vibrators dont fit on anything but vaginas, but small ones fit everywhere
+	if(!(istype(target_organ, /obj/item/organ/genital/vagina)) && !(istype(target_organ, /obj/item/organ/genital/anus))) //long vibrators dont fit on anything but vaginas AND ANUS, but small ones fit everywhere
 		to_chat(user, "<span class='warning'>[src] is too big to fit there, use a smaller version.</span>")
 		return
 

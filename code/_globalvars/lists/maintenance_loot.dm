@@ -112,6 +112,7 @@ GLOBAL_LIST_INIT(maintenance_loot, list(
 	/obj/item/storage/box/marshmallow = 2,
 	/obj/item/clothing/gloves/tackler/offbrand = 1,
 	/obj/item/stack/sticky_tape = 1,
+	/obj/item/reagent_containers/food/snacks/cube/tentacles = 1, //Smiley's request
 	"" = 3
 	))
 
