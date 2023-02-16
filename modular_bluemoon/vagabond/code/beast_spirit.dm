@@ -61,7 +61,7 @@
 
 /datum/action/innate/beastchange/Activate()
 	. = ..()
-	var/obj/effect/proc_holder/spell/targeted/shapeshift/beast/B = locate() in owner
+	var/obj/effect/proc_holder/spell/targeted/shapeshift/beast/B = locate() in owner.actions
 	if(!B)
 		return
 	var/appearances = list("Default", "Black", "White", "Skull")
@@ -181,6 +181,7 @@
 	caster.visible_message(span_danger(toggle_message))
 
 	caster.shake_animation(2)
+	caster.Stun(50)
 
 	var/mob/living/carbon/human/human_caster = caster
 	for(var/obj/item/I in caster)
