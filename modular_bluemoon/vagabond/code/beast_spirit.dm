@@ -65,7 +65,7 @@
 	if(!B)
 		return
 	var/appearances = list("Default", "Black", "White", "Skull")
-	var/skin = input(user, "Pick appearance for your beast", "Change Appearance") as null|anything in appearances
+	var/skin = input(owner, "Pick appearance for your beast", "Change Appearance") as null|anything in appearances
 	switch(skin)
 		if("Default")
 			B.beast_type = ""
