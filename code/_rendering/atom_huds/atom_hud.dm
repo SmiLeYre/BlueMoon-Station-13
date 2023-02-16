@@ -96,19 +96,12 @@ GLOBAL_LIST_INIT(huds, list(
 	else
 		hudusers[M]++
 
-/datum/atom_hud/proc/show_hud_images_after_cooldown(mob/queued_hud_user)
-	if(!queued_to_see[queued_hud_user])
-		return
-
-	queued_to_see -= queued_hud_user
-	next_time_allowed[queued_hud_user] = world.time + ADD_HUD_TO_COOLDOWN
-
-	var/turf/user_turf = get_turf(queued_hud_user)
-	if(!user_turf)
-		return
-
-	for(var/atom/hud_atom_to_show as anything in get_hud_atoms_for_z_level(user_turf.z))
-		add_atom_to_single_mob_hud(queued_hud_user, hud_atom_to_show)
+/datum/atom_hud/proc/show_hud_images_after_cooldown(M)
+	if(queued_to_see[M])
+		queued_to_see -= M
+		next_time_allowed[M] = world.time + ADD_HUD_TO_COOLDOWN
+		for(var/atom/A in hudatoms)
+			add_to_single_hud(M, A)
 
 /datum/atom_hud/proc/add_to_hud(atom/A)
 	if(!A)
@@ -128,14 +121,10 @@ GLOBAL_LIST_INIT(huds, list(
 
 //MOB PROCS
 /mob/proc/reload_huds()
-	var/turf/our_turf = get_turf(src)
-	if(!our_turf)
-		return
-
 	for(var/datum/atom_hud/hud in GLOB.all_huds)
-		if(hud?.hud_users_all_z_levels[src])
-			for(var/atom/hud_atom as anything in hud.get_hud_atoms_for_z_level(our_turf.z))
-				hud.add_atom_to_single_mob_hud(src, hud_atom)
+		if(hud && hud.hudusers[src])
+			for(var/atom/A in hud.hudatoms)
+				hud.add_to_single_hud(src, A)
 
 /mob/dead/new_player/reload_huds()
 	return

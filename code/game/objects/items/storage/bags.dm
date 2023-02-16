@@ -226,6 +226,7 @@
 	name = "plant bag"
 	icon = 'icons/obj/hydroponics/equipment.dmi'
 	icon_state = "plantbag"
+	item_state = "plantbag"
 	w_class = WEIGHT_CLASS_TINY
 	resistance_flags = FLAMMABLE
 
@@ -301,6 +302,7 @@
 	desc = "A bag for books."
 	icon = 'icons/obj/library.dmi'
 	icon_state = "bookbag"
+	item_state = "bookbag"
 	w_class = WEIGHT_CLASS_BULKY //Bigger than a book because physics
 	resistance_flags = FLAMMABLE
 
@@ -399,6 +401,7 @@
 	name = "chemistry bag"
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "bag"
+	item_state = "bag"
 	desc = "A bag for storing pills, patches, and bottles."
 	slot_flags = ITEM_SLOT_BELT|ITEM_SLOT_POCKETS
 	resistance_flags = FLAMMABLE
@@ -419,6 +422,7 @@
 	name = "bio bag"
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "biobag"
+	item_state = "biobag"
 	desc = "A bag for the safe transportation and disposal of biowaste and other biological materials."
 	slot_flags = ITEM_SLOT_BELT|ITEM_SLOT_POCKETS
 	resistance_flags = FLAMMABLE
@@ -493,6 +497,7 @@ Bag for holding materials
 	name = "construction bag"
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "construction_bag"
+	item_state = "construction_bag"
 	desc = "A bag for storing small construction components."
 	w_class = WEIGHT_CLASS_TINY
 	resistance_flags = FLAMMABLE

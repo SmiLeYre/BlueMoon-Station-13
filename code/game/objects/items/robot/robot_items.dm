@@ -86,6 +86,7 @@
 					user.visible_message("<span class='notice'>[user] pets [M]!</span>", \
 							"<span class='notice'>You pet [M]!</span>")
 				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+				new /obj/effect/temp_visual/love_heart(loc)
 		if(1)
 			if(M.health >= 0)
 				if(ishuman(M))

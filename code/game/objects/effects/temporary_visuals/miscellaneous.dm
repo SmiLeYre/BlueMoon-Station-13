@@ -400,7 +400,7 @@
 /obj/effect/temp_visual/love_heart
 	name = "love heart"
 	icon = 'icons/effects/effects.dmi'
-	icon_state = "heart"
+	icon_state = "love_hearts"
 	duration = 25
 
 /obj/effect/temp_visual/love_heart/Initialize(mapload)

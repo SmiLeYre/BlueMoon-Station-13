@@ -209,6 +209,9 @@ GLOBAL_LIST_INIT(backbaglist, list(DBACKPACK, DSATCHEL, DDUFFELBAG, //everything
 	"Grey Satchel" = /obj/item/storage/backpack/satchel,
 	"Grey Duffel Bag" = /obj/item/storage/backpack/duffelbag,
 	"Leather Satchel" = /obj/item/storage/backpack/satchel/leather,
+	"Black Pocketbook" = /obj/item/storage/backpack/pocketbook, //A new fancy bag - Gardelin0 adoon
+	"Brown Pocketbook" = /obj/item/storage/backpack/pocketbook/brown,
+	"Auburn Pocketbook" = /obj/item/storage/backpack/pocketbook/reddish,
 	"Snail Shell" = /obj/item/storage/backpack/snail,
 	"Sloog Shell" = /obj/item/storage/backpack/sloogshell))
 

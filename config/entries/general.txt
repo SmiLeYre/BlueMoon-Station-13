@@ -291,6 +291,8 @@ ROUNDSTART_RACES human
 
 ## Races that are strictly worse than humans that could probably be turned on without balance concerns
 ROUNDSTART_RACES lizard
+ROUNDSTART_RACES ashlizard_west
+ROUNDSTART_RACES ashlizard_east
 ROUNDSTART_RACES synthliz
 #ROUNDSTART_RACES fly
 #ROUNDSTART_RACES insect

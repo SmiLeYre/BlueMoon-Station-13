@@ -40,7 +40,7 @@ GLOBAL_LIST_EMPTY(objectives)
 
 //Shared by few objective types
 /datum/objective/proc/admin_simple_target_pick(mob/admin)
-	var/list/possible_targets = list("Free objective")
+	var/list/possible_targets = list("Свободная Задача")
 	var/def_value
 	for(var/datum/mind/possible_target in SSticker.minds)
 		if ((possible_target != src) && ishuman(possible_target.current))
@@ -54,7 +54,7 @@ GLOBAL_LIST_EMPTY(objectives)
 	if (!new_target)
 		return
 
-	if (new_target == "Free objective")
+	if (new_target == "Свободная Задача")
 		target = null
 	else
 		target = new_target.mind
@@ -195,7 +195,7 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 	if(target && target.current)
 		explanation_text = "Наша цель - [target.name], [!target_role_type ? target.assigned_role : target.special_role]. Пусть эта Цель будет наказана! Изнасилуй, сломай колени или вовсе убей один раз. В итоге цель должна остаться живой!"
 	else
-		explanation_text = "Free Objective"
+		explanation_text = "Свободная Задача"
 
 /datum/objective/assassinate/admin_edit(mob/admin)
 	admin_simple_target_pick(admin)
@@ -210,7 +210,7 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 		explanation_text = "Наша цель - [target.name], [!target_role_type ? target.assigned_role : target.special_role]. Пусть эта Цель будет наказана! Изнасилуй, сломай колени или вовсе убей один раз. В итоге цель должна остаться живой!"
 		START_PROCESSING(SSprocessing,src)
 	else
-		explanation_text = "Free Objective"
+		explanation_text = "Свободная Задача"
 
 /datum/objective/assassinate/once/check_completion()
 	return won || ..()
@@ -257,7 +257,7 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 	if(target && target.current)
 		explanation_text = "Наша цель - [target.name], [!target_role_type ? target.assigned_role : target.special_role]. Пусть эта Цель будет наказана! Изнасилуй, сломай колени или вовсе убей один раз. В итоге цель должна остаться живой!"
 	else
-		explanation_text = "Free Objective"
+		explanation_text = "Свободная Задача"
 
 /datum/objective/maroon
 	name = "maroon"
@@ -280,7 +280,7 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 	if(target && target.current)
 		explanation_text = "Наша цель - [target.name], [!target_role_type ? target.assigned_role : target.special_role]. Не дай этой цели покинуть станцию!"
 	else
-		explanation_text = "Free Objective"
+		explanation_text = "Свободная Задача"
 
 /datum/objective/maroon/admin_edit(mob/admin)
 	admin_simple_target_pick(admin)
@@ -296,7 +296,7 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 	return target
 
 /datum/objective/debrain/check_completion()
-	if(!target)//If it's a free objective.
+	if(!target)//If it's a свободная задача.
 		return TRUE
 	if(!target.current || !isbrain(target.current))
 		return FALSE
@@ -315,7 +315,7 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 	if(target && target.current)
 		explanation_text = "Влюби в себя [target.name], [!target_role_type ? target.assigned_role : target.special_role]!"
 	else
-		explanation_text = "Free Objective"
+		explanation_text = "Свободная Задача"
 
 /datum/objective/debrain/admin_edit(mob/admin)
 	admin_simple_target_pick(admin)
@@ -343,7 +343,7 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 	if(target && target.current)
 		explanation_text = "Держись рядом и защищай [target.name], [!target_role_type ? target.assigned_role : target.special_role]."
 	else
-		explanation_text = "Free Objective"
+		explanation_text = "Свободная Задача"
 
 /datum/objective/protect/admin_edit(mob/admin)
 	admin_simple_target_pick(admin)
@@ -469,7 +469,7 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 	if(target && target.current)
 		explanation_text = "Будьте уверены, что [target.name], the [!target_role_type ? target.assigned_role : target.special_role] сбежит на Шаттле или спасательной капсуле живым(-ой) и без каких бы то не было физических ограничений (наручники и так далее)."
 	else
-		explanation_text = "Free Objective"
+		explanation_text = "Свободная Задача"
 
 /datum/objective/escape/escape_with_identity
 	name = "escape with identity"
@@ -494,7 +494,7 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 		explanation_text += "." //Proper punctuation is important!
 
 	else
-		explanation_text = "Free Objective."
+		explanation_text = "Свободная Задача."
 
 /datum/objective/escape/escape_with_identity/check_completion()
 	if(!target || !target_real_name)
@@ -601,7 +601,7 @@ GLOBAL_LIST_EMPTY(possible_items)
 		special_items_given = give_special_equipment(targetinfo.special_equipment)
 		return steal_target
 	else
-		explanation_text = "Free objective"
+		explanation_text = "Свободная Задача"
 		return
 
 /datum/objective/steal/admin_edit(mob/admin)
@@ -620,7 +620,7 @@ GLOBAL_LIST_EMPTY(possible_items)
 		if (!custom_name)
 			return
 		steal_target = custom_target
-		explanation_text = "Steal [custom_name]."
+		explanation_text = "Украсть [custom_name]."
 
 	else
 		set_target(new_target)
@@ -685,7 +685,7 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 	if(target && target.current)
 		explanation_text = "Acquire [targetinfo.name] held by [target.name], the [target.assigned_role] and syndicate agent"
 	else
-		explanation_text = "Free Objective"
+		explanation_text = "Свободная Задача"
 
 
 /datum/objective/steal/exchange/backstab
@@ -792,7 +792,7 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 	if(protect_target)
 		explanation_text = "Держись рядом и защищай \the [protect_target]. Это очень важно, на кон поставлено всё!"
 	else
-		explanation_text = "Free objective."
+		explanation_text = "Свободная Задача."
 
 /datum/objective/protect_object/check_completion()
 	return !QDELETED(protect_target)
@@ -909,7 +909,7 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 	if(target && target.current)
 		explanation_text = "Уничтожь или укради, или взломай [target.name], экспериментальный Искусственный Интеллект."
 	else
-		explanation_text = "Free Objective"
+		explanation_text = "Свободная Задача"
 
 /datum/objective/destroy/admin_edit(mob/admin)
 	var/list/possible_targets = active_ais(1)
@@ -925,7 +925,7 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 
 /datum/objective/steal_five_of_type
 	name = "steal five of"
-	explanation_text = "Steal at least five items!"
+	explanation_text = "Украсть пять предметов!"
 	var/list/wanted_items = list(/obj/item)
 
 /datum/objective/steal_five_of_type/New()
@@ -934,12 +934,12 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 
 /datum/objective/steal_five_of_type/summon_guns
 	name = "steal guns"
-	explanation_text = "Steal at least five guns!"
+	explanation_text = "Украсть пять пушек!"
 	wanted_items = list(/obj/item/gun)
 
 /datum/objective/steal_five_of_type/summon_magic
 	name = "steal magic"
-	explanation_text = "Steal at least five magical artefacts!"
+	explanation_text = "Украсть пять магических штук!"
 	wanted_items = list(/obj/item/spellbook, /obj/item/gun/magic, /obj/item/clothing/suit/space/hardsuit/wizard, /obj/item/scrying, /obj/item/antag_spawner/contract, /obj/item/necromantic_stone)
 
 /datum/objective/steal_five_of_type/check_completion()
@@ -1068,7 +1068,7 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 /datum/objective/changeling_team_objective/impersonate_department/update_explanation_text()
 	..()
 	if(!department_real_names.len || !department_minds.len)
-		explanation_text = "Free Objective"
+		explanation_text = "Свободная Задача"
 		return  //Something fucked up, give them a win
 
 	if(command_staff_only)
@@ -1148,7 +1148,7 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 		explanation_text = "Keep [I] on your person at all times."
 		return hoarded_item
 	else
-		explanation_text = "Free objective"
+		explanation_text = "Свободная Задача"
 		return
 
 /datum/objective/hoard/check_completion()
@@ -1243,7 +1243,7 @@ GLOBAL_LIST_EMPTY(possible_sabotages)
 		special_items_given = give_special_equipment(targetinfo.special_equipment)
 		return sabo
 	else
-		explanation_text = "Free objective"
+		explanation_text = "Свободная Задача"
 		return
 
 /datum/objective/sabotage/check_completion()

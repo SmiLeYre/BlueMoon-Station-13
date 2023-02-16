@@ -37,6 +37,7 @@
 	cut_overlays()
 	attached_overlays = list()
 	if(crit_fail)
+		icon_state = "flashtool_burnt"
 		add_overlay("flashburnt")
 		attached_overlays += "flashburnt"
 	if(flash)

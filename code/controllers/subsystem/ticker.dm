@@ -75,6 +75,9 @@ SUBSYSTEM_DEF(ticker)
 	/// If the gamemode fails to be run too many times, we swap to a preset gamemode, this should give admins time to set their preferred one
 	var/emergency_swap = 0
 
+	/// People who have been commended and will receive a heart
+	var/list/hearts
+
 /datum/controller/subsystem/ticker/Initialize(timeofday)
 	load_mode()
 

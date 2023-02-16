@@ -49,6 +49,7 @@
 #define MIME			(1<<12)
 #define ASSISTANT		(1<<13)
 #define PRISONER		(1<<14)
+#define STOWAWAY		(1<<15)
 
 #define JOB_AVAILABLE 0
 #define JOB_UNAVAILABLE_GENERIC 1
@@ -103,3 +104,4 @@
 #define JOB_DISPLAY_ORDER_BLUESHIELD 38
 #define JOB_DISPLAY_ORDER_BO 39
 #define JOB_DISPLAY_ORDER_PRISONER 40 //BlueMoon edit end
+#define JOB_DISPLAY_ORDER_STOWAWAY 41 // Сплюрт, сука.

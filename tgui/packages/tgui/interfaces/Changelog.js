@@ -88,7 +88,28 @@ export class Changelog extends Component {
             self.getData(date, attemptNumber + 1);
           }, timeout);
         } else {
-          self.setData(yaml.load(result, { schema: yaml.CORE_SCHEMA }));
+          self.setData(yaml.load(fixYAMLDuplicateKeys(result),
+          { schema: yaml.CORE_SCHEMA }))
+          let fixYAMLDuplicateKeys = function(yaml_text) {
+            let yaml_fix = {};
+            let currentKey = '';
+            for (let line of yaml_text.split('\n')) {
+              if (!line.match(/^[^\s]*:$/)) {
+                yaml_fix[currentKey].push(line);
+              } else {
+                currentKey = line;
+                if (!yaml_fix[currentKey]) {
+                  yaml_fix[currentKey] = [];
+                }
+              }
+            }
+            let yaml_fixed_text = '';
+            for (let key of Object.keys(yaml_fix).sort()) {
+              yaml_fixed_text += key + '\n';
+              yaml_fixed_text += yaml_fix[key].join('\n') + '\n';
+            }
+            return yaml_fixed_text;
+          }
         }
       });
   };

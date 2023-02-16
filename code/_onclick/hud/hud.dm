@@ -56,15 +56,7 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	var/list/hand_slots // /atom/movable/screen/inventory/hand objects, assoc list of "[held_index]" = object
 	var/list/atom/movable/screen/plane_master/plane_masters = list() // see "appearance_flags" in the ref, assoc list of "[plane]" = object
 
-	/// Think of multiz as a stack of z levels. Each index in that stack has its own group of plane masters
-	/// This variable is the plane offset our mob/client is currently "on"
-	/// We use it to track what we should show/not show
-	/// Goes from 0 to the max (z level stack size - 1)
-	var/current_plane_offset = 0
 
-	/// Assoc list of key => "plane master groups"
-	/// This is normally just the main window, but it'll occasionally contain things like spyglasses windows
-	var/list/datum/plane_master_group/master_groups = list()
 	///UI for screentips that appear when you mouse over things
 	var/atom/movable/screen/screentip/screentip_text
 
@@ -157,6 +149,7 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	QDEL_NULL(screentip_text)
 
 	return ..()
+
 
 /mob/proc/create_mob_hud()
 	if(!client || hud_used)
@@ -346,9 +339,3 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 
 /datum/hud/proc/update_locked_slots()
 	return
-
-/datum/hud/proc/should_use_scale()
-	return should_sight_scale(mymob.sight)
-
-/datum/hud/proc/should_sight_scale(sight_flags)
-	return (sight_flags & (SEE_TURFS | SEE_OBJS)) != SEE_TURFS

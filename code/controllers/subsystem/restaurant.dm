@@ -15,9 +15,9 @@ SUBSYSTEM_DEF(restaurant)
 	var/list/food_appearance_cache = list()
 
 /datum/controller/subsystem/restaurant/Initialize()
+	. = ..()
 	for(var/key in subtypesof(/datum/venue))
 		all_venues[key] = new key()
 	for(var/key in subtypesof(/datum/customer_data))
 		all_customers[key] = new key()
-	return SS_INIT_SUCCESS
 

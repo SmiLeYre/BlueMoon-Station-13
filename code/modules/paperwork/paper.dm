@@ -42,6 +42,13 @@
 	var/info = ""
 	var/show_written_words = TRUE
 
+	/// Lazylist of raw, unsanitised, unparsed text inputs that have been made to the paper.
+	var/list/datum/paper_input/raw_text_inputs
+	/// Lazylist of all raw stamp data to be sent to tgui.
+	var/list/datum/paper_stamp/raw_stamp_data
+	/// Lazylist of all fields that have had some input added to them.
+	var/list/datum/paper_field/raw_field_input_data
+
 	/// The (text for the) stamps on the paper.
 	var/list/stamps /// Positioning for the stamp in tgui
 	var/list/stamped /// Overlay info

@@ -72,13 +72,14 @@
 	. += "Intent: [a_intent]"
 	. += "Move Mode: [m_intent]"
 	if(internal)
-		if(!internal.air_contents)
-			qdel(internal)
-		else
-			. += ""
-			. += "Internal Atmosphere Info: [internal.name]"
-			. += "Tank Pressure: [internal.air_contents.return_pressure()]"
-			. += "Distribution Pressure: [internal.distribute_pressure]"
+		if(istype(internal, /obj/item/tank))
+			if(!internal.air_contents)
+				qdel(internal)
+			else
+				. += ""
+				. += "Internal Atmosphere Info: [internal.name]"
+				. += "Tank Pressure: [internal.air_contents.return_pressure()]"
+				. += "Distribution Pressure: [internal.distribute_pressure]"
 	if(mind)
 		var/datum/antagonist/changeling/changeling = mind.has_antag_datum(/datum/antagonist/changeling)
 		if(changeling)

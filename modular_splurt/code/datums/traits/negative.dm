@@ -35,10 +35,10 @@
 		var/mob/living/carbon/human/quirker = quirk_holder
 		for(var/word in message_split)
 			if(prob(max(5,(nearby_people*12.5*moodmod))) && word != message_split[1]) //Minimum 1/20 chance of filler
-				new_message += pick("uh,","erm,","um,")
+				new_message += pick("а,","э,","мм,")
 				if(prob(min(5,(0.05*(nearby_people*12.5)*moodmod)))) //Max 1 in 20 chance of cutoff after a succesful filler roll, for 50% odds in a 15 word sentence
 					quirker.silent = max(3, quirker.silent)
-					to_chat(quirker, span_danger("You feel self-conscious and stop talking. You need a moment to recover!"))
+					to_chat(quirker, span_danger("Вы чувствуете себя неловко и перестаёте говорить. Вам необходимо прийти в себя!"))
 					break
 			if(prob(max(5,(nearby_people*12.5*moodmod)))) //Minimum 1/20 chance of stutter
 				// Add a short stutter, THEN treat our word
@@ -52,43 +52,43 @@
 	var/mob/living/carbon/human/quirker = quirk_holder
 	if(prob(min(50,(0.50*(nearby_people*12.5)*moodmod)))) //Max 50% chance of not talking
 		if(dumb_thing)
-			to_chat(quirker, span_userdanger("You think of a dumb thing you said a long time ago and scream internally."))
+			to_chat(quirker, span_userdanger("Вы думаете о глупости, сказанной давно, и сгораете от стыда."))
 			dumb_thing = FALSE //only once per life
 			if(prob(1))
 				new/obj/item/reagent_containers/food/snacks/pastatomato(get_turf(quirker)) //now that's what I call spaghetti code
 		else
-			to_chat(quirk_holder, span_warning("You think that wouldn't add much to the conversation and decide not to say it."))
+			to_chat(quirk_holder, span_warning("Вы считаете, что не способны поддержать разговор, и потому отмалчиваетесь."))
 			if(prob(min(25,(0.25*(nearby_people*12.75)*moodmod)))) //Max 25% chance of silence stacks after succesful not talking roll
-				to_chat(quirker, span_danger("You retreat into yourself. You <i>really</i> don't feel up to talking."))
+				to_chat(quirker, span_danger("Вы замыкаетесь в себе. Вы <i>действительно</i> не в настроении для разговоров."))
 				quirker.silent = max(5, quirker.silent)
-		speech_args[SPEECH_MESSAGE] = pick("Uh.","Erm.","Um.")
+		speech_args[SPEECH_MESSAGE] = pick("А.","Э.","Мм.")
 	else
 		speech_args[SPEECH_MESSAGE] = message
 
 //Own stuff
 /datum/quirk/no_guns
-	name = "Fat-Fingered"
-	desc = "Due to the shape of your hands, width of your fingers or just not having fingers at all, you're unable to fire guns without accommodation."
+	name = "Толстые пальцы"
+	desc = "Из-за формы ваших пальцев, ширины или вообще отсутствия - вы не можете стрелять из оружия без особого улучшения."
 	value = -2
 	mob_trait = TRAIT_CHUNKYFINGERS
-	gain_text = "<span class='notice'>Your fingers feel... thick.</span>"
-	lose_text = "<span class='notice'>Your fingers feel normal again.</span>"
+	gain_text = "<span class='notice'>Ваши пальцы ощущаются... толстыми.</span>"
+	lose_text = "<span class='notice'>Вы чувствуете, что ваши пальцы вернулись к норме.</span>"
 
 /datum/quirk/illiterate
-	name = "Illiterate"
-	desc = "You can't read nor write, plain and simple."
+	name = "Неграмотность"
+	desc = "Всё просто - вы не умеете ни писать, ни читать."
 	value = -1
 	mob_trait = TRAIT_ILLITERATE
-	gain_text = "<span class='notice'>The knowledge of how to read seems to escape from you.</span>"
-	lose_text = "<span class='notice'>Written words suddenly make sense again."
+	gain_text = "<span class='notice'>Знание грамоты... ускользает от вас.</span>"
+	lose_text = "<span class='notice'>Написанные слова снова обретают смысл."
 
 /datum/quirk/flimsy
-	name = "Flimsy"
-	desc = "Your body is a little more fragile then most, decreasing total health by 20%."
+	name = "Хрупкость"
+	desc = "Ваше тело слабее, чем у большинства, здоровье уменьшено на 20%."
 	value = -2
-	medical_record_text = "Patient has abnormally low capacity for injury."
-	gain_text = "<span class='notice'>You feel like you could break with a single hit."
-	lose_text = "<span class='notice'>You feel more durable."
+	medical_record_text = "У пациента чрезвычайно низкая устойчивость к травмам."
+	gain_text = "<span class='notice'>Вы чувствуете, что вас могли бы снести с одного удара."
+	lose_text = "<span class='notice'>Вы чувствуете себя крепче."
 
 /datum/quirk/flimsy/add()
 	quirk_holder.maxHealth *= 0.8
@@ -99,13 +99,13 @@
 	quirk_holder.maxHealth *= 1.25
 
 /datum/quirk/hypersensitive
-	name = "Hypersensitive"
-	desc = "For better or worse, everything seems to affect your mood more than it should."
+	name = "Гиперчувствительность"
+	desc = "Всё вокруг вас влияет на ваше настроение больше, чем должно."
 	value = -1
-	gain_text = "<span class='danger'>You seem to make a big deal out of everything.</span>"
-	lose_text = "<span class='notice'>You don't seem to make a big deal out of everything anymore.</span>"
+	gain_text = "<span class='danger'>Вы делаете из мухи слона.</span>"
+	lose_text = "<span class='notice'>Вы больше не преувеличиваете значимость событий вокруг вас.</span>"
 	mood_quirk = TRUE //yogs
-	medical_record_text = "Patient demonstrates a high level of emotional volatility."
+	medical_record_text = "Пациент демонстрирует высокий уровень эмоциональной неустойчивости."
 
 /datum/quirk/hypersensitive/add()
 	var/datum/component/mood/mood = quirk_holder.GetComponent(/datum/component/mood)
@@ -124,12 +124,12 @@
 //well-trained moved to neutral
 
 /datum/quirk/dumb4cum
-	name = "Dumb For Cum"
-	desc = "For one reason or another, you're totally obsessed with cum. The heat of it, the smell... its taste... It's quite simply euphoric."
+	name = "Жажда Спермы"
+	desc = "По той или иной причине, вы помешаны на сперме. Её тепло, запах... вкус... делают вас счастливее."
 	value = 0
-	gain_text = "<span class='notice'>You suddenly start craving some seed inside of you!<span>"
-	lose_text = "<span class='danger'>Cum didn't even taste that good, anyways.</span>"
-	medical_record_text = "Patient seems to have an unhealthy psychological obsession with seminal fluids."
+	gain_text = "<span class='notice'>Неожиданно вам захотелось ощутить семя внутри себя!<span>"
+	lose_text = "<span class='danger'>Всё равно сперма была не такой уж и вкусной...</span>"
+	medical_record_text = "У пациента навязчивая одержимость семенными жидкостями."
 	var/craving_after = 15 MINUTES
 	var/timer
 
@@ -139,10 +139,10 @@
 
 /datum/quirk/dumb4cum/proc/crave()
 	var/list/hungry_phrases = list(
-									"Your stomach rumbles a bit and cum comes to your mind.",\
-									"Urgh, you should really get some cum...",\
-									"Some jizz wouldn't be so bad right now!",\
-									"You're starting to long for some more cum..."
+									"У тебя урчит в животе, и на ум приходит сперма.",\
+									"Уф-ф, сейчас бы не помешало раздобыть спермы...",\
+									"Было бы неплохо сейчас потребить спермы!",\
+									"Ты начинаешь тосковать по сперме..."
 								  )
 	to_chat(quirk_holder, "<span class='love'>[pick(hungry_phrases)]</span>")
 
@@ -165,12 +165,12 @@
 // Small issue with this. If the quirk holder has NO_HUNGER or NO_THIRST, this trait can still be taken and they will still get the benefits of it.
 // It's unlikely that someone will be both, especially at round start, but vampirism makes me wary of having these separate.
 /datum/quirk/hungry
-	name = "Hungry And Thirsty"
-	desc = "You find yourself unusually hungry and thirsty. Gotta eat and drink twice as much as normal."
+	name = "Бездонный Желудок"
+	desc = "В вас быстрее просыпаются голод и жажда. Необходимо есть и пить в два раза больше."
 	value = -1
-	gain_text = "<span class='danger'>You're starting to feel hungrier and thirstier a lot faster.</span>"
-	lose_text = "<span class='notice'>Your craving for food and water begins dying down.</span>"
-	medical_record_text = "Patient reports eating twice as many meals per day than usual for their species."
+	gain_text = "<span class='danger'>Вы хотите есть и пить чаще.</span>"
+	lose_text = "<span class='notice'>Жор идёт на спад.</span>"
+	medical_record_text = "Пациенту требуется вдвое большее количество еды, по сравнению с типичным представителем их вида."
 
 /datum/quirk/hungry/add()
 	var/mob/living/carbon/human/H = quirk_holder

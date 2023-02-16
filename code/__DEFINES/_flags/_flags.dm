@@ -57,6 +57,16 @@ GLOBAL_LIST_INIT(bitflags, list(
 /// Early returns mob.face_atom()
 #define BLOCK_FACE_ATOM_1			(1<<17)
 
+#define HTML_USE_INITAL_ICON_1 (1<<20)
+/// Can players recolor this in-game via vendors (and maybe more if support is added)?
+#define IS_PLAYER_COLORABLE_1 (1<<21)
+#define KEEP_ON_ARENA_1 (1<<22)
+/// Whether or not this atom has contextual screentips when hovered OVER
+#define HAS_CONTEXTUAL_SCREENTIPS_1 (1<<23)
+/// Whether or not this atom is storing contents for a disassociated storage object
+#define HAS_DISASSOCIATED_STORAGE_1 (1<<24)
+
+
 //turf-only flags
 #define NOJAUNT_1 (1<<0)
 #define UNUSED_RESERVATION_TURF_1 (1<<1)

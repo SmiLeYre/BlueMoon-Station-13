@@ -166,7 +166,8 @@
 	name = "replicant alloy shards"
 	desc = "Broken shards of some oddly malleable metal. They occasionally move and seem to glow."
 	clockwork_desc = "Broken shards of replicant alloy."
-	icon_state = "alloy_shards"
+	icon_state = "alloy_shards2"
+	base_icon_state = "alloy_shards"
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	var/randomsinglesprite = FALSE
 	var/randomspritemax = 2
@@ -176,7 +177,7 @@
 	. = ..()
 	if(randomsinglesprite)
 		replace_name_desc()
-		icon_state = "[icon_state][rand(1, randomspritemax)]"
+		icon_state = "[base_icon_state][rand(1, randomspritemax)]"
 		pixel_x = rand(-sprite_shift, sprite_shift)
 		pixel_y = rand(-sprite_shift, sprite_shift)
 

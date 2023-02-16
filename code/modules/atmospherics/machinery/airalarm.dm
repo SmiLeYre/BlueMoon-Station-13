@@ -682,7 +682,7 @@
 		return
 
 	if(stat & BROKEN)
-		icon_state = "alarmx"
+		icon_state = "alarm_broken"
 		return
 
 	if(!panel_open)

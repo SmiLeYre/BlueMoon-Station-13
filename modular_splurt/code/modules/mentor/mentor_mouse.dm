@@ -13,7 +13,7 @@
 		return
 
 	var/turf/current_turf = get_turf(mob)
-	var/mob/living/simple_animal/mouse/mentor/mentor = new(current_turf)
+	var/mob/living/simple_animal/hostile/syndimouse/mentor = new(current_turf)
 
 	QDEL_IN(mob, 1)
 
@@ -32,8 +32,8 @@
 	set name = "Despawn Mentor Mouse"
 	set category = "Mentor"
 
-	if(!istype(mob, /mob/living/simple_animal/mouse/mentor))
-		to_chat(src, span_warning("You're not a mentor mouse!"))
+	if(!istype(mob, /mob/living/simple_animal/hostile/syndimouse))
+		to_chat(src, span_warning("You're not a Mentor Mouse!"))
 		remove_verb(src, /client/proc/despawn_mentor_mouse)
 		add_verb(src, /client/proc/spawn_mentor_mouse)
 		return

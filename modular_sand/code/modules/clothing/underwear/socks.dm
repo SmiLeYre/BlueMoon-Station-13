@@ -88,7 +88,7 @@
 /obj/item/clothing/underwear/socks/pantyhose_ripped
 	name = "Pantyhose - Ripped"
 	body_parts_covered = FEET
-	icon = 'icons/mob/clothing/underwear.dmi'
+	icon = 'icons/mob/clothing/underwear.dmi' //Fixed icon
 	icon_state = "pantyhose_ripped"
 
 /obj/item/clothing/underwear/socks/short

@@ -124,6 +124,8 @@
 #define COMSIG_ATOM_UPDATE_OVERLAYS "atom_update_overlays"
 ///from base of [/atom/update_icon]: (signalOut, did_anything)
 #define COMSIG_ATOM_UPDATED_ICON "atom_updated_icon"
+///from base of [/atom/proc/smooth_icon]: ()
+#define COMSIG_ATOM_SMOOTHED_ICON "atom_smoothed_icon"
 #define COMSIG_ATOM_ENTERED "atom_entered"                      //from base of atom/Entered(): (atom/movable/entering, /atom)
 #define COMSIG_ATOM_ENTERING "atom_entering"
 #define COMSIG_ATOM_EXIT "atom_exit"							//from base of atom/Exit(): (/atom/movable/exiting, /atom/newloc)
@@ -323,7 +325,8 @@
 #define COMSIG_PROCESS_BORGCHARGER_OCCUPANT "living_charge"
 ///from base of mob/AltClickOn(): (atom/A)
 #define COMSIG_MOB_ALTCLICKON "mob_altclickon"
-
+///When a carbon slips. Called on /turf/open/handle_slip()
+#define COMSIG_ON_CARBON_SLIP "carbon_slip"
 //Gun signals
 ///When a gun is switched to automatic fire mode
 #define COMSIG_GUN_AUTOFIRE_SELECTED "gun_autofire_selected"
@@ -741,6 +744,8 @@
 ///from base of mob/set_sight(): (new_sight, old_sight)
 #define COMSIG_MOB_SIGHT_CHANGE "mob_sight_changed"
 
+///from /obj/machinery/set_occupant(atom/movable/O): (new_occupant)
+#define COMSIG_MACHINERY_SET_OCCUPANT "machinery_set_occupant"
 ///from base of mob/living/death(): (gibbed)
 #define COMSIG_LIVING_DEATH "living_death"
 ///from base of /mob/Login(): ()
@@ -750,3 +755,12 @@
 
 /// a client (re)connected, after all /client/New() checks have passed : (client/connected_client)
 #define COMSIG_GLOB_CLIENT_CONNECT "!client_connect"
+
+/// Return bitflags for the above signal which prevents the atom taking any damage.
+#define COMPONENT_NO_TAKE_DAMAGE (1<<0)
+/* Attack signals. They should share the returned flags, to standardize the attack chain. */
+/// tool_act -> pre_attack -> target.attackby (item.attack) -> afterattack
+///Ends the attack chain. If sent early might cause posterior attacks not to happen.
+#define COMPONENT_CANCEL_ATTACK_CHAIN (1<<0)
+///Skips the specific attack step, continuing for the next one to happen.
+#define COMPONENT_SKIP_ATTACK (1<<1)

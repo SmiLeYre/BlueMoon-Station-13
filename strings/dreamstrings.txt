@@ -12,7 +12,7 @@
 %A% %ADJECTIVE% мартышка
 %A% %ADJECTIVE% любимый человек
 %A% %ADJECTIVE% монстр
-the %ADJECTIVE% капитан
+%ADJECTIVE% капитан
 %A% %ADJECTIVE% шапка
 %A% %ADJECTIVE% ID-карта
 %A% %ADJECTIVE% бутылка

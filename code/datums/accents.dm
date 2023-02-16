@@ -8,8 +8,8 @@
 	var/static/regex/lizard_hiss = new("s+", "g")
 	var/static/regex/lizard_hiSS = new("S+", "g")
 	if(message[1] != "*")
-		message = lizard_hiss.Replace(message, "sss")
-		message = lizard_hiSS.Replace(message, "SSS")
+		message = lizard_hiss.Replace_char(message, "sss")
+		message = lizard_hiSS.Replace_char(message, "SSS")
 	speech_args[SPEECH_MESSAGE] = message
 	return speech_args
 
@@ -18,8 +18,8 @@
 	var/static/regex/fly_buzz = new("z+", "g")
 	var/static/regex/fly_buZZ = new("Z+", "g")
 	if(message[1] != "*")
-		message = fly_buzz.Replace(message, "zzz")
-		message = fly_buZZ.Replace(message, "ZZZ")
+		message = fly_buzz.Replace_char(message, "zzz")
+		message = fly_buZZ.Replace_char(message, "ZZZ")
 	speech_args[SPEECH_MESSAGE] = message
 	return speech_args
 

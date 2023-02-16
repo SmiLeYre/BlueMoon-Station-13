@@ -46,6 +46,13 @@
 /turf/closed/indestructible/singularity_act()
 	return
 
+/turf/closed/indestructible/wall
+	name = "Wall"
+	desc = "A huge chunk of metal used to separate rooms."
+	icon = 'icons/turf/walls/wall.dmi'
+	icon_state = "wall"
+	smooth = SMOOTH_TRUE
+
 /turf/closed/indestructible/oldshuttle
 	name = "strange shuttle wall"
 	icon = 'icons/turf/shuttleold.dmi'

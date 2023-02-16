@@ -10,8 +10,8 @@
 /datum/interaction/lewd/nipsuck/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if((user.a_intent == INTENT_HELP) || (user.a_intent == INTENT_DISARM))
 		user.visible_message(
-				pick("<span class='lewd'>\The <b>[user]</b> аккуратно хватается за груди партнёра и нежно обсасывает [pick("сосок", "соски")] \the <b>[target]</b>.</span>",
-					"<span class='lewd'>\The <b>[user]</b> поглаживает груди партнёра, аккуратно хватаясь своими губами за [pick("сосок", "соски")] \the <b>[target]</b>.</span>",
+				pick("<span class='lewd'>\The <b>[user]</b> аккуратно хватается за грудь партнёра и нежно обсасывает [pick("сосок", "соски")] \the <b>[target]</b>.</span>",
+					"<span class='lewd'>\The <b>[user]</b> поглаживает грудь партнёра, аккуратно хватаясь своими губами за [pick("сосок", "соски")] \the <b>[target]</b>.</span>",
 					"<span class='lewd'>\The <b>[user]</b> в улыбке облизывает [pick("сосок", "соски")] \the <b>[target]</b> и усмехается.</span>"))
 		if(target.has_breasts(REQUIRE_EXPOSED))
 			var/modifier = 1
@@ -31,7 +31,7 @@
 
 	if(user.a_intent == INTENT_HARM)
 		user.visible_message(
-				pick("<span class='lewd'>\The <b>[user]</b> с силой обхватывает груди партнёра и грубо посасывает [pick("сосок", "соски")] \the <b>[target]</b>.</span>",
+				pick("<span class='lewd'>\The <b>[user]</b> с силой обхватывает грудь партнёра и грубо посасывает [pick("сосок", "соски")] \the <b>[target]</b>.</span>",
 					"<span class='lewd'>\The <b>[user]</b> хватается губами за [pick("сосок", "соски")], касается зубками \the <b>[target]</b>'s и начинает грубо посасывать.</span>"))
 		if(target.has_breasts(REQUIRE_EXPOSED))
 			var/modifier = 1
@@ -51,8 +51,8 @@
 
 	if(user.a_intent == INTENT_GRAB)
 		user.visible_message(
-				pick("<span class='lewd'>\The <b>[user]</b> крепко обхватывает груди партнёра и активно обсасывает [pick("сосок", "соски")] \the <b>[target]</b>.</span>",
-					"<span class='lewd'>\The <b>[user]</b> поглаживает груди партнёра и крепко хватается своими губами за [pick("сосок", "соски")] \the <b>[target]</b>.</span>",
+				pick("<span class='lewd'>\The <b>[user]</b> крепко обхватывает грудь партнёра и активно обсасывает [pick("сосок", "соски")] \the <b>[target]</b>.</span>",
+					"<span class='lewd'>\The <b>[user]</b> поглаживает грудь партнёра и крепко хватается своими губами за [pick("сосок", "соски")] \the <b>[target]</b>.</span>",
 					"<span class='lewd'>\The <b>[user]</b> игриво облизывает [pick("сосок", "соски")] \the <b>[target]</b> и ехидно ухмыляется.</span>"))
 		if(target.has_breasts(REQUIRE_EXPOSED))
 			var/modifier = 1

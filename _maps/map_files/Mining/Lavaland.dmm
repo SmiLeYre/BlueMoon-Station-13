@@ -96,7 +96,7 @@
 	req_access_txt = "30"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/open/space/basic,
+/turf/open/floor/plasteel,
 /area/mine/storage)
 "ax" = (
 /obj/machinery/computer/mech_bay_power_console{
@@ -578,6 +578,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/mine/laborcamp)
+"dm" = (
+/turf/open/genturf{
+	baseturfs = /turf/open/lava/smooth/lava_land_surface
+	},
+/area/lavaland/surface/outdoors/unexplored/danger)
 "do" = (
 /obj/structure/bookcase/manuals/research_and_development,
 /turf/open/floor/plasteel,
@@ -42280,14 +42285,14 @@ ai
 ai
 ai
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
 XB
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -54710,7 +54715,7 @@ ab
 fQ
 fQ
 fQ
-fQ
+dm
 fQ
 fQ
 fQ
@@ -57291,7 +57296,7 @@ fQ
 fQ
 fQ
 fQ
-fQ
+dm
 fQ
 fQ
 fQ

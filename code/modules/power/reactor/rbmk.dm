@@ -543,7 +543,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	light_range = 3
 	icon = 'icons/obj/rbmk_computer.dmi'
 	icon_state = "oldcomp"
-	icon_screen = "library"
+	icon_screen = "oldcomp_rbmk_moderator"
 	icon_keyboard = null
 	var/obj/machinery/atmospherics/components/trinary/nuclear_reactor/reactor = null
 	var/id = "default_reactor_for_lazy_mappers"

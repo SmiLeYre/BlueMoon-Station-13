@@ -5,6 +5,8 @@
 	var/id_tag
 	var/frequency
 	var/datum/radio_frequency/radio_connection
+	/// The current state of the airlock, used to construct the airlock overlays
+	var/airlock_state
 
 
 /obj/machinery/door/airlock/receive_signal(datum/signal/signal)

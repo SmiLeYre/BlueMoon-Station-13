@@ -107,3 +107,7 @@
 #define SKILL_UI_CAT_ENG	"Engineering"
 #define SKILL_UI_CAT_MED	"Medical"
 #define SKILL_UI_CAT_MISC	"Misc"
+
+// Reskin Defines.
+#define RESKIN_ICON_STATE "icon_state"
+#define RESKIN_ITEM_STATE "item_state"

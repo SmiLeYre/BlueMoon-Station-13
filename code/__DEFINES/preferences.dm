@@ -45,6 +45,11 @@
 
 #define TOGGLES_DEFAULT_CHAT (CHAT_OOC|CHAT_DEAD|CHAT_GHOSTEARS|CHAT_GHOSTSIGHT|CHAT_PRAYER|CHAT_RADIO|CHAT_PULLR|CHAT_GHOSTWHISPER|CHAT_GHOSTPDA|CHAT_GHOSTRADIO|CHAT_LOOC|CHAT_BANKCARD)
 
+//randomised elements
+#define RANDOM_ANTAG_ONLY 1
+#define RANDOM_DISABLED 2
+#define RANDOM_ENABLED 3
+
 #define PIXEL_SCALING_AUTO 0
 #define PIXEL_SCALING_1X 1
 #define PIXEL_SCALING_1_2X 1.5
@@ -101,3 +106,9 @@
 #define BEVICTIM_NO "No"
 #define BEVICTIM_ASK "Ask"
 #define BEVICTIM_YES "Yes"
+
+// Values for /datum/preference/savefile_identifier
+/// This preference is character specific.
+#define PREFERENCE_CHARACTER "character"
+/// This preference is account specific.
+#define PREFERENCE_PLAYER "player"

@@ -71,6 +71,8 @@
 			M.visible_message("[M] pets [src].", \
 							"<span class='notice'>You pet [src].</span>", target = src,
 							target_message = "[M] pets you.")
+			playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+			new /obj/effect/temp_visual/love_heart(loc)
 		if(INTENT_DISARM)
 			disarm_shove(M)
 		if(INTENT_GRAB)

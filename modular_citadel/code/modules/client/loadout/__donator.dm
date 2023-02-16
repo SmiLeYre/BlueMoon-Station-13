@@ -17,7 +17,14 @@
 /datum/gear/donator/rationpack
 	name = "Ration Pack"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/effect/spawner/lootdrop/mre
+	path = /obj/item/storage/box/mre/menu1/safe
+	ckeywhitelist = list()
+	donator_group_id = DONATOR_GROUP_TIER_1
+
+/datum/gear/donator/syndicase
+	name = "Syndicate Briefcase Full of Cash"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/storage/secure/briefcase/syndie
 	ckeywhitelist = list()
 	donator_group_id = DONATOR_GROUP_TIER_1
 

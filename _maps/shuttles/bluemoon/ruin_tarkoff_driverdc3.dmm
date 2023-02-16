@@ -10,6 +10,10 @@
 	},
 /turf/open/floor/mineral/titanium,
 /area/shuttle/tarkoff_driver)
+"c" = (
+/obj/machinery/door/window/brigdoor/westleft,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
 "d" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
@@ -278,6 +282,10 @@
 /obj/effect/spawner/lootdrop/three_course_meal,
 /turf/open/floor/mineral/titanium,
 /area/shuttle/tarkoff_driver)
+"Z" = (
+/obj/machinery/door/window/brigdoor/eastright,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
 
 (1,1,1) = {"
 b
@@ -346,7 +354,7 @@ G
 G
 D
 H
-G
+Z
 H
 R
 Q
@@ -436,7 +444,7 @@ G
 P
 k
 M
-G
+c
 M
 Q
 Q

@@ -13,8 +13,8 @@ SUBSYSTEM_DEF(ai_controllers)
 	var/list/active_ai_controllers = list()
 
 /datum/controller/subsystem/ai_controllers/Initialize()
+	. = ..()
 	setup_subtrees()
-	return SS_INIT_SUCCESS
 
 /datum/controller/subsystem/ai_controllers/proc/setup_subtrees()
 	ai_subtrees = list()

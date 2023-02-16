@@ -15,6 +15,7 @@
 	var/printing = null
 	//Sorting Variables
 	var/sortBy = "name"
+
 	var/order = 1 // -1 = Descending - 1 = Ascending
 
 	light_color = LIGHT_COLOR_BLUE

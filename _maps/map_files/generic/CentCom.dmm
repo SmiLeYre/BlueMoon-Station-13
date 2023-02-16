@@ -8033,6 +8033,10 @@
 	},
 /turf/open/floor/engine/cult,
 /area/wizard_station)
+"rY" = (
+/obj/structure/sign/flag/nri,
+/turf/closed/indestructible/fakeglass,
+/area/tdome/tdomeobserve)
 "rZ" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -8051,6 +8055,10 @@
 	},
 /turf/open/floor/plating,
 /area/syndicate_mothership)
+"se" = (
+/obj/structure/sign/flag/soviet,
+/turf/closed/indestructible/fakeglass,
+/area/tdome/tdomeobserve)
 "sf" = (
 /obj/effect/landmark/holding_facility,
 /mob/living/simple_animal/bot/medbot{
@@ -8475,11 +8483,10 @@
 /obj/effect/mapping_helpers/airlock/unres{
 	dir = 4
 	},
-/obj/machinery/door/airlock/shuttle/glass{
+/obj/machinery/door/airlock/corporate/glass{
 	name = "Смертельная Арена";
-	safe = 0;
-	req_access_txt = "109";
-	autoclose = 0
+	req_access_txt = "101";
+	safe = 0
 	},
 /turf/open/floor/plasteel,
 /area/centcom/evac)
@@ -11161,6 +11168,10 @@
 /obj/item/paper/pamphlet/centcom/visitor_info,
 /turf/open/floor/plasteel,
 /area/centcom/supplypod)
+"yO" = (
+/obj/structure/sign/flag/tizira,
+/turf/closed/indestructible/fakeglass,
+/area/tdome/tdomeobserve)
 "yP" = (
 /obj/machinery/light{
 	dir = 4
@@ -12257,6 +12268,10 @@
 	},
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding)
+"Bn" = (
+/obj/structure/sign/flag/mars,
+/turf/closed/indestructible/fakeglass,
+/area/tdome/tdomeobserve)
 "Bo" = (
 /obj/item/plant_analyzer{
 	pixel_y = 7
@@ -18335,6 +18350,10 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel,
 /area/centcom/supplypod/loading/two)
+"Os" = (
+/obj/structure/sign/flag/ssc,
+/turf/closed/indestructible/fakeglass,
+/area/tdome/tdomeobserve)
 "Ot" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/turf_decal/stripes/line{
@@ -18566,6 +18585,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/supplypod)
+"Ph" = (
+/obj/structure/sign/flag/usa,
+/turf/closed/indestructible/fakeglass,
+/area/tdome/tdomeobserve)
 "Pj" = (
 /obj/effect/turf_decal/arrows/red{
 	dir = 1
@@ -18920,6 +18943,10 @@
 	},
 /turf/open/floor/wood,
 /area/centcom/holding)
+"Qi" = (
+/obj/structure/sign/flag/terragov,
+/turf/closed/indestructible/fakeglass,
+/area/tdome/tdomeobserve)
 "Qk" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -19479,6 +19506,10 @@
 /obj/structure/closet/crate,
 /turf/open/floor/plasteel/dark,
 /area/slavers)
+"RP" = (
+/obj/structure/sign/flag/nanotrasen,
+/turf/closed/indestructible/fakeglass,
+/area/tdome/tdomeobserve)
 "RQ" = (
 /obj/item/kirbyplants{
 	icon_state = "plant-21";
@@ -21019,6 +21050,10 @@
 /obj/item/pen,
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/evac)
+"WE" = (
+/obj/structure/sign/flag/rus,
+/turf/closed/indestructible/fakeglass,
+/area/tdome/tdomeobserve)
 "WF" = (
 /obj/structure/railing{
 	dir = 8
@@ -21524,6 +21559,10 @@
 	},
 /turf/open/floor/plating,
 /area/syndicate_mothership)
+"Yh" = (
+/obj/structure/sign/flag/syndicate,
+/turf/closed/indestructible/fakeglass,
+/area/tdome/tdomeobserve)
 "Yi" = (
 /obj/structure/dresser,
 /turf/open/floor/plasteel/dark,
@@ -21666,6 +21705,10 @@
 /obj/item/hilbertshotel/ghostdojo,
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding)
+"YI" = (
+/obj/structure/sign/flag/mothic,
+/turf/closed/indestructible/fakeglass,
+/area/tdome/tdomeobserve)
 "YJ" = (
 /obj/item/reagent_containers/food/condiment/enzyme,
 /obj/item/reagent_containers/food/drinks/shaker,
@@ -64192,7 +64235,7 @@ Ep
 HN
 HW
 HN
-Il
+Os
 Iu
 IF
 IF
@@ -64449,7 +64492,7 @@ Ep
 HO
 HW
 Id
-Il
+Ph
 It
 IG
 IG
@@ -64706,7 +64749,7 @@ Ep
 HN
 HW
 HN
-Il
+se
 It
 IH
 IH
@@ -64963,7 +65006,7 @@ Ep
 HN
 HW
 HN
-Il
+WE
 It
 IH
 IH
@@ -65220,7 +65263,7 @@ Gy
 HN
 HW
 HN
-Il
+rY
 It
 IH
 IH
@@ -65477,7 +65520,7 @@ Nk
 GM
 HW
 HN
-Il
+RP
 It
 IH
 IH
@@ -65734,7 +65777,7 @@ Ep
 HN
 HW
 HN
-Il
+Yh
 It
 IH
 IH
@@ -65991,7 +66034,7 @@ Ep
 HN
 HW
 HN
-Il
+Bn
 It
 IH
 IH
@@ -66248,7 +66291,7 @@ Ep
 HN
 HW
 HN
-Il
+YI
 It
 IH
 IH
@@ -66505,7 +66548,7 @@ Ep
 HO
 HW
 Id
-Il
+Qi
 It
 II
 II
@@ -66762,7 +66805,7 @@ Ep
 HM
 HW
 HN
-Il
+yO
 Iu
 IF
 IF

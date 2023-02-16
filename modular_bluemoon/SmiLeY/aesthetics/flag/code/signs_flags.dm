@@ -81,18 +81,54 @@
 	icon_state = "flag_syndi"
 	item_flag = /obj/item/sign/flag/syndicate
 
-/obj/item/sign/flag/syndicate
-	name = "folded flag of the Syndicate"
-	desc = "The folded flag of the Sothran Syndicate."
-	icon_state = "folded_syndi"
-	sign_path = /obj/structure/sign/flag/syndicate
+/obj/structure/sign/flag/rus
+	name = "флаг Старой Российской Федерации"
+	desc = "Флаг некогда великого Государства, обладающего огромными землями, возможностями, а также огромным Советским Наследством, всё из чего по итогу было уничтожено политическими махинациями политиков этого же самого Государства."
+	icon_state = "flag_rus"
+	item_flag = /obj/item/sign/flag/rus
+
+/obj/structure/sign/flag/soviet
+	name = "flag of the Soviet Union"
+	desc = "Флаг некогда великого Государства, которое максимально сильно приблизилось к значению Утопичной Диктатуры. От флага ощущается сильный запах... железа. Или крови? Из чего сделана эта красная краска?"
+	icon_state = "flag_soviet"
+	item_flag = /obj/item/sign/flag/soviet
 
 /obj/item/sign/flag
 	name = "folded blank flag"
-	desc = "The folded flag of nothing. It has nothing on it. Beautiful."
+	desc = "The folded flag of nothing. It has nothing on it. Beautiful. {CTRL+SHIFT+LMB}"
 	icon = 'modular_bluemoon/SmiLeY/aesthetics/flag/icons/flags.dmi'
 	icon_state = "folded_coder"
 	sign_path = /obj/structure/sign/flag
+	unique_reskin = list(
+		"NanoTrasen" = list(
+			RESKIN_ICON_STATE = "flag_nt",
+			RESKIN_ITEM_STATE = "folded_nt"
+		),
+		"Syndicate" = list(
+			RESKIN_ICON_STATE = "flag_syndi",
+			RESKIN_ITEM_STATE = "folded_syndi"
+		),
+		"NRI" = list(
+			RESKIN_ICON_STATE = "flag_nri",
+			RESKIN_ITEM_STATE = "folded_nri"
+		),
+		"Tizira" = list(
+			RESKIN_ICON_STATE = "flag_tizira",
+			RESKIN_ITEM_STATE = "folded_tizira"
+		),
+		"Mars" = list(
+			RESKIN_ICON_STATE = "flag_mars",
+			RESKIN_ITEM_STATE = "folded_mars"
+		),
+		"SOL" = list(
+			RESKIN_ICON_STATE = "flag_solfed",
+			RESKIN_ITEM_STATE = "folded_solfed"
+		),
+		"Mothic" = list(
+			RESKIN_ICON_STATE = "flag_mothic",
+			RESKIN_ITEM_STATE = "folded_mothic"
+		),
+	)
 
 ///Since all of the signs rotate themselves on initialisation, this made folded flags look ugly (and more importantly rotated).
 ///And thus, it gets removed to make them aesthetically pleasing once again.
@@ -110,6 +146,12 @@
 	desc = "The folded flag of the Nanotrasen."
 	icon_state = "folded_nt"
 	sign_path = /obj/structure/sign/flag/nanotrasen
+
+/obj/item/sign/flag/syndicate
+	name = "folded flag of the Syndicate"
+	desc = "The folded flag of the Sothran Syndicate."
+	icon_state = "folded_syndi"
+	sign_path = /obj/structure/sign/flag/syndicate
 
 /obj/item/sign/flag/ssc
 	name = "folded flag of the Kingdom of Agurkrral"
@@ -153,3 +195,15 @@
 	desc = "The folded flag of the United States of America."
 	icon_state = "folded_usa"
 	sign_path = /obj/structure/sign/flag/usa
+
+/obj/item/sign/flag/rus
+	name = "folded flag of the Russian Federation"
+	desc = "The folded flag of the Russian Federation."
+	icon_state = "folded_coder"
+	sign_path = /obj/structure/sign/flag/rus
+
+/obj/item/sign/flag/soviet
+	name = "folded flag of the Soviet Union"
+	desc = "The folded flag of the Soviet Union."
+	icon_state = "folded_coder"
+	sign_path = /obj/structure/sign/flag/soviet

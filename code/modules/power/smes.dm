@@ -2,22 +2,25 @@
 // stores power
 
 #define SMESRATE 0.05			// rate of internal charge to external power
+#define SMESCHARGE 70			// ratio of battery storage to SMES storage		//WS Edit - Removes magic number
+#define SMESEMPTIME 20 SECONDS	// the time it takes for the SMES to go back to normal operation when emped
 
 //Cache defines
-#define SMES_CLEVEL_1		1
-#define SMES_CLEVEL_2		2
-#define SMES_CLEVEL_3		3
-#define SMES_CLEVEL_4		4
-#define SMES_CLEVEL_5		5
-#define SMES_OUTPUTTING		6
+#define SMES_CLEVEL_1 1
+#define SMES_CLEVEL_2 2
+#define SMES_CLEVEL_3 3
+#define SMES_CLEVEL_4 4
+#define SMES_CLEVEL_5 5
+#define SMES_OUTPUTTING 6
 #define SMES_NOT_OUTPUTTING 7
-#define SMES_INPUTTING		8
-#define SMES_INPUT_ATTEMPT	9
+#define SMES_INPUTTING 8
+#define SMES_INPUT_ATTEMPT 9
 
 /obj/machinery/power/smes
 	name = "power storage unit"
 	desc = "A high-capacity superconducting magnetic energy storage (SMES) unit."
 	icon_state = "smes"
+	icon = 'icons/obj/machines/smes.dmi'
 	density = TRUE
 	use_power = NO_POWER_USE
 	circuit = /obj/item/circuitboard/machine/smes
@@ -39,12 +42,15 @@
 
 	var/obj/machinery/power/terminal/terminal = null
 
+	var/emp_timer = TIMER_ID_NULL
+	var/is_emped = FALSE // to prevent output when emped
+
 /obj/machinery/power/smes/examine(user)
 	. = ..()
 	if(!terminal)
 		. += "<span class='warning'>This SMES has no power terminal!</span>"
 
-/obj/machinery/power/smes/Initialize(mapload)
+/obj/machinery/power/smes/Initialize()
 	. = ..()
 	dir_loop:
 		for(var/d in GLOB.cardinals)
@@ -63,7 +69,7 @@
 /obj/machinery/power/smes/RefreshParts()
 	var/IO = 0
 	var/MC = 0
-	var/C
+	var/C = 0
 	for(var/obj/item/stock_parts/capacitor/CP in component_parts)
 		IO += CP.rating
 	input_level_max = initial(input_level_max) * IO
@@ -71,13 +77,18 @@
 	for(var/obj/item/stock_parts/cell/PC in component_parts)
 		MC += PC.maxcharge
 		C += PC.charge
-	capacity = MC / (15000) * 1e6
+	capacity = MC * SMESCHARGE			//WS Edit - Removes magic number
 	if(!initial(charge) && !charge)
-		charge = C / 15000 * 1e6
+		charge = C * SMESCHARGE			//WS Edit - Prevents power duping
+
+/*WS Edit - Smartwire Revert
+/obj/machinery/power/smes/should_have_node()
+	return TRUE
+*/
 
 /obj/machinery/power/smes/attackby(obj/item/I, mob/user, params)
 	//opening using screwdriver
-	if(default_deconstruction_screwdriver(user, "[initial(icon_state)]-o", initial(icon_state), I))
+	if(default_deconstruction_screwdriver(user, icon_state, icon_state, I))
 		update_icon()
 		return
 
@@ -94,7 +105,7 @@
 		if(!terminal)
 			to_chat(user, "<span class='alert'>No power terminal found.</span>")
 			return
-		stat &= ~BROKEN
+		set_machine_stat(stat & ~BROKEN)
 		update_icon()
 		return
 
@@ -126,7 +137,9 @@
 		to_chat(user, "<span class='notice'>You start building the power terminal...</span>")
 		playsound(src.loc, 'sound/items/deconstruct.ogg', 50, TRUE)
 
-		if(C.use_tool(src, user, 20, 10))
+		if(do_after(user, 20, target = src))
+			if(C.get_amount() < 10 || !C)
+				return
 			var/obj/structure/cable/N = T.get_cable_node() //get the connecting node cable, if there's one
 			if (prob(50) && electrocute_mob(usr, N, N, 1, TRUE)) //animate the electrocution if uncautious and unlucky
 				do_sparks(5, TRUE, src)
@@ -162,8 +175,8 @@
 		return TRUE
 
 
-/obj/machinery/power/smes/default_deconstruction_crowbar(obj/item/C)
-	if(C.tool_behaviour == TOOL_CROWBAR && terminal)
+/obj/machinery/power/smes/default_deconstruction_crowbar(obj/item/crowbar/C)
+	if(istype(C) && terminal)
 		to_chat(usr, "<span class='warning'>You must first remove the power terminal!</span>")
 		return FALSE
 
@@ -189,7 +202,7 @@
 	terminal = new/obj/machinery/power/terminal(T)
 	terminal.setDir(get_dir(T,src))
 	terminal.master = src
-	stat &= ~BROKEN
+	set_machine_stat(stat & ~BROKEN)
 
 /obj/machinery/power/smes/disconnect_terminal()
 	if(terminal)
@@ -200,25 +213,56 @@
 
 /obj/machinery/power/smes/update_overlays()
 	. = ..()
+	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
+
+	if(panel_open)
+		. += "panel"
+		return
+
 	if(stat & BROKEN)
 		return
 
-	if(panel_open)
-		return
-
-	if(outputting)
-		. += "smes-op1"
-	else
-		. += "smes-op0"
-
-	if(inputting)
-		. += "smes-oc1"
-	else if(input_attempt)
-		. += "smes-oc0"
-
 	var/clevel = chargedisplay()
 	if(clevel>0)
-		. += "smes-og[clevel]"
+		. += "charge[clevel]"
+		SSvis_overlays.add_vis_overlay(src, icon, "charge[clevel]", layer, plane, dir)
+		SSvis_overlays.add_vis_overlay(src, icon, "charge[clevel]", layer, EMISSIVE_PLANE, dir)
+	if(is_emped)
+		. += "emp"
+		SSvis_overlays.add_vis_overlay(src, icon, "emp", layer, plane, dir)
+		SSvis_overlays.add_vis_overlay(src, icon, "emp", layer, EMISSIVE_PLANE, dir)
+	else
+		if(inputting)
+			if(clevel == SMES_CLEVEL_5)
+				. += "input-2"
+				SSvis_overlays.add_vis_overlay(src, icon, "input-2", layer, plane, dir)
+				SSvis_overlays.add_vis_overlay(src, icon, "input-2", layer, EMISSIVE_PLANE, dir)
+			else
+				. += "input-1"
+				SSvis_overlays.add_vis_overlay(src, icon, "input-1", layer, plane, dir)
+				SSvis_overlays.add_vis_overlay(src, icon, "input-1", layer, EMISSIVE_PLANE, dir)
+		else if(input_attempt)
+			. += "input-0"
+			SSvis_overlays.add_vis_overlay(src, icon, "input-0", layer, plane, dir)
+			SSvis_overlays.add_vis_overlay(src, icon, "input-0", layer, EMISSIVE_PLANE, dir)
+		else
+			. += "input-off"
+			SSvis_overlays.add_vis_overlay(src, icon, "input-off", layer, plane, dir)
+			SSvis_overlays.add_vis_overlay(src, icon, "input-off", layer, EMISSIVE_PLANE, dir)
+
+		if(outputting)
+			if(clevel == SMES_CLEVEL_5)
+				. += "output2"
+				SSvis_overlays.add_vis_overlay(src, icon, "output2", layer, plane, dir)
+				SSvis_overlays.add_vis_overlay(src, icon, "output2", layer, EMISSIVE_PLANE, dir)
+			else
+				. += "output1"
+				SSvis_overlays.add_vis_overlay(src, icon, "output1", layer, plane, dir)
+				SSvis_overlays.add_vis_overlay(src, icon, "output1", layer, EMISSIVE_PLANE, dir)
+		else
+			. += "output0"
+			SSvis_overlays.add_vis_overlay(src, icon, "output0", layer, plane, dir)
+			SSvis_overlays.add_vis_overlay(src, icon, "output0", layer, EMISSIVE_PLANE, dir)
 
 
 /obj/machinery/power/smes/proc/chargedisplay()
@@ -232,11 +276,6 @@
 	var/last_disp = chargedisplay()
 	var/last_chrg = inputting
 	var/last_onln = outputting
-
-	//check for self-recharging cells in stock parts and use them to self-charge
-	for(var/obj/item/stock_parts/cell/C in component_parts)
-		if(C.self_recharge)
-			charge += min(capacity-charge, C.chargerate) // If capacity-charge is smaller than the attempted charge rate, this avoids overcharging
 
 	//inputting
 	if(terminal && input_attempt)
@@ -263,7 +302,7 @@
 	//outputting
 	if(output_attempt)
 		if(outputting)
-			output_used = min( charge/SMESRATE, output_level)		//limit output to that stored
+			output_used = min(charge/SMESRATE, output_level)		//limit output to that stored
 
 			if (add_avail(output_used))				// add output to powernet if it exists (smes side)
 				charge -= output_used*SMESRATE		// reduce the storage (may be recovered in /restore() if excessive)
@@ -311,7 +350,7 @@
 
 	output_used -= excess
 
-	if(clev != chargedisplay() ) //if needed updates the icons overlay
+	if(clev != chargedisplay()) //if needed updates the icons overlay
 		update_icon()
 	return
 
@@ -343,7 +382,8 @@
 	return data
 
 /obj/machinery/power/smes/ui_act(action, params)
-	if(..())
+	. = ..()
+	if(.)
 		return
 	switch(action)
 		if("tryinput")
@@ -352,9 +392,10 @@
 			update_icon()
 			. = TRUE
 		if("tryoutput")
-			output_attempt = !output_attempt
-			log_smes(usr)
-			update_icon()
+			if(!is_emped)
+				output_attempt = !output_attempt
+				log_smes(usr)
+				update_icon()
 			. = TRUE
 		if("input")
 			var/target = params["target"]
@@ -401,15 +442,24 @@
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
 		return
+	emp_timer = addtimer(CALLBACK(src, .proc/emp_end, output_attempt), SMESEMPTIME, TIMER_UNIQUE | TIMER_OVERRIDE)
+	is_emped = TRUE
 	input_attempt = rand(0,1)
 	inputting = input_attempt
-	output_attempt = rand(0,1)
+	output_attempt = FALSE
 	outputting = output_attempt
 	output_level = rand(0, output_level_max)
 	input_level = rand(0, input_level_max)
-	charge -= 10000*severity
+	charge -= 1e6/severity
 	if (charge < 0)
 		charge = 0
+	update_icon()
+	log_smes()
+
+/obj/machinery/power/smes/proc/emp_end(previous_output)
+	is_emped = FALSE
+	output_attempt = previous_output
+	outputting = output_attempt
 	update_icon()
 	log_smes()
 

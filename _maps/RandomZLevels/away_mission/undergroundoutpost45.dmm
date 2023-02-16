@@ -6204,7 +6204,7 @@
 	},
 /area/awaymission/undergroundoutpost45/engineering)
 "lZ" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},

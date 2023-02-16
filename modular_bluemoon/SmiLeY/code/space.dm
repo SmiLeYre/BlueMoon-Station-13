@@ -6,10 +6,12 @@
 	always_place = TRUE
 	id = "tarkoff-base"
 /datum/map_template/ruin/space/tarkoff/New()
-	if(prob(35))
+	if(prob(20))
 		suffix = "defcon5.dmm"
-	else if(prob(35))
+	else if(prob(20))
 		suffix = "defcon4.dmm"
-	else
+	else if(prob(20))
 		suffix = "defcon3.dmm"
+	else
+		suffix = "defcon2.dmm"
 	. = ..()

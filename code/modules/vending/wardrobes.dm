@@ -34,6 +34,12 @@
 					/obj/item/clothing/under/rank/security/officer/blueshirt/seccorp = 5)
 	contraband = list(/obj/item/clothing/under/rank/security/stripper = 5)
 	premium = list(/obj/item/clothing/under/rank/security/officer/formal = 5,
+					/obj/item/clothing/head/helmet/hecu = 3,
+					/obj/item/clothing/suit/armor/hecu = 3,
+					/obj/item/storage/backpack/hecu = 3,
+					/obj/item/storage/backpack/hecu/black = 3,
+					/obj/item/storage/belt/military/assault/hecu = 3,
+					/obj/item/storage/belt/military/assault/hecu/black = 3,
 					/obj/item/clothing/head/beret/sec/navyofficer = 5)
 	refill_canister = /obj/item/vending_refill/wardrobe/sec_wardrobe
 	payment_department = ACCOUNT_SEC

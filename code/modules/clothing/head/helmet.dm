@@ -12,7 +12,7 @@
 	strip_delay = 60
 	resistance_flags = NONE
 	flags_cover = HEADCOVERSEYES
-	flags_inv = HIDEHAIR
+	flags_inv = HIDEHAIR|HIDEEARS
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
 

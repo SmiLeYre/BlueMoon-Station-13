@@ -151,13 +151,6 @@
   - tgs: has something to do with tgs
   Winter Schock:
   - tweak: AK-47s for everyone have choice between arena mobs and really everyone
-2023-01-31:
-  FeenieRU:
-  - bugfix: "\u0430\u043D\u043E\u043D\u0441\u044B \u043F\u0438\u0440\u0430\u0442\u043E\
-      \u0432 \u0442\u0435\u043F\u0435\u0440\u044C \u0441\u043E\u0434\u0435\u0440\u0436\
-      \u0430\u0442 \u043D\u0430\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u043D\u0438\
-      \u0435 \u043A\u043E\u0440\u0430\u0431\u043B\u044F, \u041A\u0410\u041A \u041E\
-      \u041D\u041E \u0418 \u0411\u042B\u041B\u041E"
   AshTheDerg:
   - tweak: Modified Booze Shaker options
   - bugfix: fixed broken Borg Beer Shaker
@@ -186,3 +179,9 @@
   LeDrascol:
   - balance: Reduced the price of individual condoms from 40 to 10 credits
   - balance: Reduced the price of bulk condoms from 200 to 80 credits
+  FeenieRU:
+  - bugfix: "\u0430\u043D\u043E\u043D\u0441\u044B \u043F\u0438\u0440\u0430\u0442\u043E\
+      \u0432 \u0442\u0435\u043F\u0435\u0440\u044C \u0441\u043E\u0434\u0435\u0440\u0436\
+      \u0430\u0442 \u043D\u0430\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u043D\u0438\
+      \u0435 \u043A\u043E\u0440\u0430\u0431\u043B\u044F, \u041A\u0410\u041A \u041E\
+      \u041D\u041E \u0418 \u0411\u042B\u041B\u041E"

@@ -108,16 +108,6 @@
 	can_adjust = FALSE
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
-/obj/item/clothing/under/maidsexy
-	name = "Revealing maid uniform"
-	desc = "A sexy maid uniform, that has a low cropped front to show off some chest, or bra. And a short dress that reveals thighs."
-	icon = 'modular_splurt/icons/obj/clothing/uniforms.dmi'
-	icon_state = "maid_revealing"
-	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/uniform.dmi'
-	item_state = "maid_revealing"
-	can_adjust = FALSE
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-
 /obj/item/clothing/under/vaultsuit
 	name = "vault suit"
 	desc = "A tight form fitting Vault-Tec standard issue Vault Jumpsuit! Snazzy!"

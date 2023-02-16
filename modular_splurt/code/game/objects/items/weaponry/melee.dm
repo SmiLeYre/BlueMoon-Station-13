@@ -3,7 +3,7 @@
 
 /obj/item/melee/baseball_bat/AltClick(mob/living/carbon/human/user as mob)
 	hole = hole == CUM_TARGET_VAGINA ? CUM_TARGET_ANUS : CUM_TARGET_VAGINA
-	to_chat(user, "<span class='notice'>Now targetting \the [hole].</span>")
+	to_chat(user, "<span class='notice'>Я целюсь в...  \the [hole].</span>")
 
 /obj/item/melee/baseball_bat/attack(mob/living/target, mob/living/user)
 	user.DelayNextAction(CLICK_CD_RANGE)

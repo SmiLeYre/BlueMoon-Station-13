@@ -19,7 +19,8 @@
 			"RoboMaid" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "robomaid_sd"),
 			"BootyF" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "bootystandard"),
 			"BootyM" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "bootystandardM"),
-			"BootyS" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "bootystandardS")
+			"BootyS" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "bootystandardS"),
+			"Fembot" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/robots.dmi', icon_state = "fembot-clerc") //Gardelin0 Addon
 		)
 		stand_icons = sortList(stand_icons)
 	var/stand_borg_icon = show_radial_menu(R, R , stand_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
@@ -70,6 +71,9 @@
 			cyborg_base_icon = "bootystandardS"
 			cyborg_icon_override = 'modular_splurt/icons/mob/robots.dmi'
 			hat_offset = 3
+		if("Fembot") // //Gardelin0 Addon
+			cyborg_base_icon = "fembot-clerc"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/robots.dmi'
 	return ..()
 
 /obj/item/robot_module/clown/be_transformed_to(obj/item/robot_module/old_module)
@@ -166,7 +170,8 @@
 		"MissM" = image(icon = 'modular_splurt/icons/mob/robots_cargo.dmi', icon_state = "missm_cargo"),
 		"Zoomba" = image(icon = 'modular_splurt/icons/mob/robots_cargo.dmi', icon_state = "zoomba_cargo"),
 		"Borgi" = image(icon = 'modular_splurt/icons/mob/widerobots_cargo.dmi', icon_state = "borgi-cargo"),
-		"Drake" = image(icon = 'modular_splurt/icons/mob/widerobots_cargo.dmi', icon_state = "drakecargo")
+		"Drake" = image(icon = 'modular_splurt/icons/mob/widerobots_cargo.dmi', icon_state = "drakecargo"),
+		"Meka" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "mekacargo") //Krashly Request
 		)
 		var/list/L = list("Cargohound" = "cargohound", "Cargohound Dark" = "cargohounddark", "Vale" = "valecargo")
 		for(var/a in L)
@@ -209,6 +214,10 @@
 			cyborg_base_icon = "drakecargo"
 			cyborg_icon_override = 'modular_splurt/icons/mob/widerobots_cargo.dmi'
 			dogborg = TRUE
+		if("Meka") //Krashly Request
+			cyborg_base_icon = "mekacargo"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
 		else
 			return FALSE
 	return ..()

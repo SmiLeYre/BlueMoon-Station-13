@@ -1147,6 +1147,61 @@
 		new /obj/item/reagent_containers/food/snacks/carpmeat(src)
 	new /obj/item/reagent_containers/food/snacks/meat/rawcrab(src)
 
+/obj/item/storage/box/gum
+	name = "bubblegum packet"
+	desc = "The packaging is entirely in Japanese, apparently. You can't make out a single word of it."
+	icon = 'icons/obj/storage/gum.dmi'
+	icon_state = "bubblegum_generic"
+	w_class = WEIGHT_CLASS_TINY
+	illustration = null
+	foldable = null
+	custom_price = PAYCHECK_MEDIUM
+
+/obj/item/storage/box/gum/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/food/snacks/bubblegum))
+	STR.max_items = 4
+
+/obj/item/storage/box/gum/PopulateContents()
+	for(var/i in 1 to 4)
+		new/obj/item/reagent_containers/food/snacks/bubblegum/bubblegum(src)
+
+/obj/item/storage/box/gum/nicotine
+	name = "nicotine gum packet"
+	desc = "Designed to help with nicotine addiction and oral fixation all at once without destroying your lungs in the process. Mint flavored!"
+	icon_state = "bubblegum_nicotine"
+	custom_premium_price = PAYCHECK_MEDIUM * 1.5
+
+/obj/item/storage/box/gum/nicotine/PopulateContents()
+	for(var/i in 1 to 4)
+		new/obj/item/reagent_containers/food/snacks/bubblegum/nicotine(src)
+
+/obj/item/storage/box/gum/happiness
+	name = "HP+ gum packet"
+	desc = "A seemingly homemade packaging with an odd smell. It has a weird drawing of a smiling face sticking out its tongue."
+	icon_state = "bubblegum_happiness"
+	custom_price = PAYCHECK_COMMAND * 3
+	custom_premium_price = PAYCHECK_COMMAND * 3
+
+/obj/item/storage/box/gum/happiness/Initialize(mapload)
+	. = ..()
+	if (prob(25))
+		desc += " You can faintly make out the word 'Hemopagopril' was once scribbled on it."
+
+/obj/item/storage/box/gum/happiness/PopulateContents()
+	for(var/i in 1 to 4)
+		new/obj/item/reagent_containers/food/snacks/bubblegum/happiness(src)
+
+/obj/item/storage/box/gum/bubblegum
+	name = "bubblegum gum packet"
+	desc = "The packaging is entirely in Demonic, apparently. You feel like even opening this would be a sin."
+	icon_state = "bubblegum_bubblegum"
+
+/obj/item/storage/box/gum/bubblegum/PopulateContents()
+	for(var/i in 1 to 4)
+		new/obj/item/reagent_containers/food/snacks/bubblegum/bubblegum(src)
+
 /obj/item/storage/box/emptysandbags
 	name = "box of empty sandbags"
 
@@ -1319,7 +1374,7 @@
 	new /obj/item/reagent_containers/food/snacks/breadslice/creamcheese(src)
 	new /obj/item/reagent_containers/food/condiment/pack/ketchup(src)
 	new /obj/item/reagent_containers/food/snacks/chocolatebar(src)
-	new /obj/item/tank/internals/emergency_oxygen(src)
+	new /obj/item/tank/internals/emergency_oxygen/engi(src)
 
 /obj/item/storage/box/mre/menu2
 	name = "\improper Nanotrasen MRE Ration Kit Menu 2"
@@ -1334,7 +1389,7 @@
 	new /obj/item/reagent_containers/food/snacks/meat/cutlet/plain(src)
 	new /obj/item/reagent_containers/food/snacks/fries(src)
 	new /obj/item/reagent_containers/food/snacks/chocolatebar(src)
-	new /obj/item/tank/internals/emergency_oxygen(src)
+	new /obj/item/tank/internals/emergency_oxygen/engi(src)
 
 /obj/item/storage/box/mre/menu3
 	name = "\improper Nanotrasen MRE Ration Kit Menu 3"
@@ -1349,7 +1404,7 @@
 	new /obj/item/reagent_containers/food/snacks/cubannachos(src)
 	new /obj/item/reagent_containers/food/snacks/grown/chili(src)
 	new /obj/item/reagent_containers/food/drinks/coffee/type2(src)
-	new /obj/item/tank/internals/emergency_oxygen(src)
+	new /obj/item/tank/internals/emergency_oxygen/engi(src)
 
 /obj/item/storage/box/mre/menu4
 	name = "\improper Nanotrasen MRE Ration Kit Menu 4"
@@ -1367,7 +1422,7 @@
 	new /obj/item/reagent_containers/food/snacks/burger/tofu(src)
 	new /obj/item/reagent_containers/food/snacks/salad/fruit(src)
 	new /obj/item/reagent_containers/food/snacks/cracker(src)
-	new /obj/item/tank/internals/emergency_oxygen(src)
+	new /obj/item/tank/internals/emergency_oxygen/engi(src)
 
 //Where do I put this?
 /obj/item/secbat

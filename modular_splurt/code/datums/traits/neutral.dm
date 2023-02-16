@@ -1,57 +1,57 @@
 // HYPERSTATION TRAITS
 
 /datum/quirk/choke_slut
-	name = "Choke Slut"
-	desc = "You are aroused by suffocation."
+	name = "Асфиксиофилия"
+	desc = "Вас возбуждает удушье."
 	value = 0
 	mob_trait = TRAIT_CHOKE_SLUT
-	gain_text = span_notice("You feel like you want to feel fingers around your neck, choking you until you pass out or make a mess... Maybe both.")
-	lose_text = span_notice("Seems you don't have a kink for suffocation anymore.")
+	gain_text = span_notice("Вы хотите ощутить пальцы вокруг своей шеи, сжимающие её до тех пор, пока вы не отключитесь или кончите... или всё сразу.")
+	lose_text = span_notice("Похоже, вас больше не возбуждает асфиксия.")
 
 /datum/quirk/pharmacokinesis //Supposed to prevent unwanted organ additions. But i don't think it's really working rn
-	name = "Acute Hepatic Pharmacokinesis" //copypasting dumbo
-	desc = "You have a genetic disorder that causes Incubus Draft and Succubus Milk to be absorbed by your liver instead."
+	name = "Острый Печеночный Фармакокинез" //copypasting dumbo
+	desc = "У вас генетическое заболевание, которое заставляет вашу печень усваивать семя инкуба и молоко суккуба при попадании их в организм."
 	value = 0
 	mob_trait = TRAIT_PHARMA
-	lose_text = span_notice("Your liver feels... different, somehow.")
+	lose_text = span_notice("Ваша печень ощущается... по-иному.")
 	var/active = FALSE
 	var/power = 0
 	var/cachedmoveCalc = 1
 
 /datum/quirk/steel_ass
-	name = "Buns of Steel"
-	desc = "You've never skipped ass day. You are completely immune to all forms of ass slapping and anyone who tries to slap your rock hard ass usually gets a broken hand."
+	name = "Стальные Булки"
+	desc = "Вы ни разу не пропускали день ягодиц. У вас полный иммунитет ко всем формам ударов по заднице, и любой, кто попытается наградить вас шлепком, как правило, получит перелом кисти."
 	value = 0
 	mob_trait = TRAIT_STEEL_ASS
-	gain_text = span_notice("Your ass rivals those of golems.")
-	lose_text = span_notice("Your butt feels more squishy and slappable.")
+	gain_text = span_notice("Ваш зад может составить конкуренцию големскому.")
+	lose_text = span_notice("Ваш зад ощущается более мягким и уязвимым к шлепкам.")
 
 /datum/quirk/cursed_blood
-	name = "Cursed Blood"
-	desc = "Your lineage is cursed with the paleblood curse. Best to stay away from holy water... Hell water, on the other hand..."
+	name = "Проклятая Кровь"
+	desc = "На вашем роду лежит проклятие бледной крови. Лучше держаться подальше от святой воды... а вот адской воды, напротив..."
 	value = 0
 	mob_trait = TRAIT_CURSED_BLOOD
-	gain_text = span_notice("A curse from a land where men return as beasts runs deep in your blood.")
-	lose_text = span_notice("You feel the weight of the curse in your blood finally gone.")
-	medical_record_text = "Patient suffers from an unknown type of aversion to holy reagents. Keep them away from a chaplain."
+	gain_text = span_notice("Проклятие с земель, где люди возвращаются зверьми, течёт в вашей крови.")
+	lose_text = span_notice("Вы чувствуете, что тяжесть проклятия крови наконец пропала.")
+	medical_record_text = "Организм пациента по неизвестной причине отторгает святые реагенты. Рекомендуется держать подальше от капеллана."
 
 /datum/quirk/headpat_hater
-	name = "Distant"
-	desc = "You don't seem to show much care for being touched. Whether it's because you're reserved or due to self control, others touching your head won't make you wag your tail should you possess one, and the action may even attract your ire."
+	name = "Отстраненность"
+	desc = "Вам нет дела до ласки со стороны других. Будь то вследствие сдержанности или самоконтроля, получаемые поглаживания не заставят вилять хвостом, если таковой есть, ласка может даже разгневать вас."
 	mob_trait = TRAIT_DISTANT
 	value = 0
-	gain_text = span_notice("Others' touches begin to make your blood boil...")
-	lose_text = span_notice("Having your head pet doesn't sound so bad right about now...")
-	medical_record_text = "Patient cares little with or dislikes being touched."
+	gain_text = span_notice("Чужие прикосновения раздражают вас...")
+	lose_text = span_notice("Теперь поглаживания не кажутся настолько уж плохими...")
+	medical_record_text = "Пациента мало заботят или раздражают чужие прикосновения."
 
 /datum/quirk/headpat_slut
-	name = "Headpat Slut"
-	desc = "You love the feeling of others touching your head! Maybe a little too much, actually... Others patting your head will provide a bigger mood boost and cause aroused reactions."
+	name = "Тактилофилия"
+	desc = "Вам нравится, когда другие прикасаются к вашей голове! Может, даже слишком... когда другие гладят вас по голове, это повышает ваше настроение и возбуждает вас."
 	mob_trait = TRAIT_HEADPAT_SLUT
 	value = 0
-	gain_text = span_notice("You crave headpats immensely!")
-	lose_text = span_notice("Your headpats addiction wanes.")
-	medical_record_text = "Patient seems overly affectionate."
+	gain_text = span_notice("Вы жаждете ласки!")
+	lose_text = span_notice("Ваша зависимость от ласки исчезает.")
+	medical_record_text = "Пациент очень любвеобильный."
 
 /datum/quirk/headpat_slut/add()
 	. = ..()
@@ -62,13 +62,13 @@
 	quirk_holder.RemoveElement(/datum/element/wuv/headpat)
 
 /datum/quirk/Hypnotic_gaze
-	name = "Hypnotic Gaze"
-	desc = "Be it through mysterious patterns, flickering colors, or some genetic oddity, prolonged eye contact with you will place the viewer into a highly-suggestible hypnotic trance."
+	name = "Гипнотический Взгляд"
+	desc = "Вследствие мистических узоров, мерцающих цветов или какой-нибудь генетической странности, длительный визуальный контакт с вами поместит наблюдателя в легковнушаемый гипнотический транс."
 	value = 0
 	mob_trait = TRAIT_HYPNOTIC_GAZE
-	gain_text = span_notice("Your eyes glimmer hypnotically...")
-	lose_text = span_notice("Your eyes return to normal.")
-	medical_record_text = "Prolonged exposure to Patient's eyes exhibits soporific effects."
+	gain_text = span_notice("Ваши глаза завораживающе мерцают...")
+	lose_text = span_notice("Ваша глаза становятся обычными.")
+	medical_record_text = "Длительное воздействие глаз пациента влечет усыпляющий эффект."
 
 /datum/quirk/Hypnotic_gaze/on_spawn()
 	var/mob/living/carbon/human/Hypno_eyes = quirk_holder
@@ -77,10 +77,10 @@
 	spell.owner = Hypno_eyes
 
 /datum/quirk/overweight
-	name = "Overweight"
-	desc = "You're particularly fond of food, and join the shift being overweight."
+	name = "Лишний Вес"
+	desc = "Вы обожаете еду и появляетесь на смене с лишним весом."
 	value = 0
-	gain_text = span_notice("You feel a bit chubby!")
+	gain_text = span_notice("Вы чувствуете себя толстым!")
 	//no lose_text cause why would there be?
 
 /datum/quirk/overweight/on_spawn()
@@ -90,12 +90,12 @@
 	ADD_TRAIT(M, TRAIT_FAT, OBESITY)
 
 /datum/quirk/vegetarian
-	name = "Vegetarian"
-	desc = "You find the idea of eating meat morally and physically repulsive."
+	name = "Вегетарианец"
+	desc = "Мысли о поедании мяса для вас отвратительны."
 	value = 0
-	gain_text = span_notice("You feel repulsion at the idea of eating meat.")
-	lose_text = span_notice("You feel like eating meat isn't that bad.")
-	medical_record_text = "Patient reports a vegetarian diet."
+	gain_text = span_notice("Вы чувствуете отвращение от мысли о поедании мяса.")
+	lose_text = span_notice("Вы думаете, что поесть мяса не так уж и плохо.")
+	medical_record_text = "Пациент соблюдает вегетарианскую диету."
 
 /datum/quirk/vegetarian/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -113,12 +113,12 @@
 			species.disliked_food &= ~MEAT
 
 /datum/quirk/cum_plus
-	name = "Extra-Productive Genitals"
-	desc = "Your genitals produce and hold more than normal."
+	name = "Сверхпродуктивные Гениталии"
+	desc = "Ваши гениталии производят и вмещают больше, чем обычно."
 	value = 0
-	gain_text = span_notice("You feel pressure in your groin.")
-	lose_text = span_notice("You feel a weight lifted from your groin.")
-	medical_record_text = "Patient exhibits increased production of sexual fluids."
+	gain_text = span_notice("Вы чувствуете давление в паху.")
+	lose_text = span_notice("Вы чувствуете, как ваш пах стал легче.")
+	medical_record_text = "Гениталии пациента демонстрируют высокую продуктивность."
 
 /datum/quirk/cum_plus/add()
 	var/mob/living/carbon/M = quirk_holder
@@ -146,11 +146,11 @@
 
 //well-trained moved to neutral to stop the awkward situation of a dom snapping and the 30 trait powergamers fall to the floor.
 /datum/quirk/well_trained
-	name = "Well-Trained"
-	desc = "You absolutely love being dominated. The thought of someone stronger than you is enough to make you act up."
+	name = "Дрессированный"
+	desc = "Вы обожаете, когда над вами доминируют. Мысли о том, что есть кто-то сильнее, достаточно, чтобы завести вас."
 	value = 0
-	gain_text = span_notice("You feel like being someone's pet...")
-	lose_text = span_notice("You no longer feel like being a pet...")
+	gain_text = span_notice("Вы хотите подчиниться кому-нибудь...")
+	lose_text = span_notice("Вы больше не хотите подчиняться...")
 	processing_quirk = TRUE
 	var/mood_category = "dom_trained"
 	var/notice_delay = 0
@@ -171,19 +171,19 @@
 		return
 	if(!user.has_quirk(/datum/quirk/dominant_aura))
 		return
-	examine_list += span_lewd("You sense a strong aura of submission from [quirk_holder.p_them()].")
+	examine_list += span_lewd("Вы чувствуете сильную ауру подчинения от [quirk_holder.p_them()].")
 
 /datum/quirk/well_trained/on_process()
 	. = ..()
 	if(!quirk_holder)
 		return
 
-	var/good_x = "pet"
+	var/good_x = "хорошим питомцем"
 	switch(quirk_holder.gender)
 		if(MALE)
-			good_x = "boy"
+			good_x = "хорошим мальчиком"
 		if(FEMALE)
-			good_x = "girl"
+			good_x = "хорошей девочкой"
 
 	//Check for possible doms with the dominant_aura quirk, and for the closest one if there is
 	. = FALSE
@@ -219,11 +219,11 @@
 
 	//Let them know they're near
 	var/list/notices = list(
-		"You feel someone's presence making you more submissive...",
-		"Thoughts of being commanded flood you with lust...",
-		"You really want to be called a good [good_x]...",
-		"Someone's presence is making you all flustered...",
-		"You start getting sweaty and excited..."
+		"Вы ощущаете, как чьё-то присутствие делает вас более покорным...",
+		"Мысли о том, чтобы вами командовали, заполняют ваш разум похотью...",
+		"Вы хотите, чтобы вас назвали [good_x]...",
+		"Чьё-то присутствие сильно возбуждает вас...",
+		"Вы начинаете потеть и возбуждаться..."
 	)
 
 	to_chat(quirk_holder, span_lewd(pick(notices)))
@@ -233,13 +233,13 @@
 //hydra code below
 
 /datum/quirk/hydra
-	name = "Hydra Heads"
-	desc = "You are a tri-headed creature. To use, format your name like (Rucks-Sucks-Ducks)."
+	name = "Головы Гидры"
+	desc = "Вы трёхглавое создание. Оформите ваше имя, как (Ваня-Саня-Даня)."
 	value = 0
 	mob_trait = TRAIT_HYDRA_HEADS
-	gain_text = span_notice("You hear two other voices inside of your head(s).")
-	lose_text = span_danger("All of your minds become singular.")
-	medical_record_text = "Patient has multiple heads and personalities affixed to their body."
+	gain_text = span_notice("Вы слышите два других голоса внутри вашей головы(ов).")
+	lose_text = span_danger("Ваш разум становится единым.")
+	medical_record_text = "Пациент имеет несколько голов и личностей, присоединенных к телу."
 
 /datum/quirk/hydra/on_spawn()
 	var/mob/living/carbon/human/hydra = quirk_holder
@@ -253,17 +253,17 @@
 
 //Own traits
 /datum/quirk/cum_sniff
-	name = "Genital Taster"
-	desc = "You've built so much experience savoring other people's genitals through your life that you can easily tell what liquids they're full of, besides reagents in their blood that is."
+	name = "Дегустатор Гениталий"
+	desc = "Вы набрались столько опыта, обсасывая чужие гениталии, что с легкостью можете сказать, какая жидкость находится внутри них, исключая реагенты в крови."
 	value = 0
 	mob_trait = TRAIT_GFLUID_DETECT
-	gain_text = span_notice("You begin sensing peculiar smells from people's bits...")
-	lose_text = span_notice("People's genitals start smelling all the same to you...")
-	medical_record_text = "Patient attempted to get their doctor to drag his balls accross their face."
+	gain_text = span_notice("Вы начинаете ощущать специфические запахи, исходящие от чужих промежностей...")
+	lose_text = span_notice("Чужие гениталии начинают пахнуть для вас одинаково...")
+	medical_record_text = "Пациент добивался того, чтобы доктор провёл яйцами по их лицу."
 
 /datum/quirk/fluid_infuser
-	name = "Fluid Infuser"
-	desc = "You just couldn't wait to get one of NanoTrasen's new fluid inducers when they first came out, so now you can hop in the station with editable titty milk!"
+	name = "Тядзин"
+	desc = "Вы не упустили возможность приобрести новый жидкостный индуктор от NanoTrasen, как только он был выпущен, и теперь вы можете заскочить на станцию с изменяемым грудным молочком!"
 	value = 0
 
 /datum/quirk/fluid_infuser/on_spawn()
@@ -272,8 +272,8 @@
 	put_in.implant(quirk_holder, null, TRUE, TRUE)
 
 /datum/quirk/storage_concealment
-	name = "Dorsualiphobic Augmentation"
-	desc = "You despise the idea of being seen wearing any type of back-mounted storage apparatus! A new technology shields you from the immense shame you may experience, by hiding your equipped backpack."
+	name = "Имплант Для Дорсуалифоба"
+	desc = "У вас вызывает отвращение сама идея быть увиденным с любой ёмкостью для переноски, закрепленной на спине! Новая технология скрывает объект за вашей спиной, таким образом защищая вас от безмерного стыда."
 
 	// UNUSED: Enable by setting these values to TRUE
 	// The shame is unbearable
@@ -302,8 +302,8 @@
 
 //succubus and incubus below
 /datum/quirk/incubus
-	name = "Incubus"
-	desc = "Your seductor-like metabolism can only be sated by milk. (And semen, if you're a Succubus as well.)"
+	name = "Инкуб"
+	desc = "Ваш голод может быть утолен только молоком. (И семенем, если вы также Суккуб.)"
 	value = 0
 	mob_trait = TRAIT_INCUBUS
 	processing_quirk = TRUE
@@ -326,8 +326,8 @@
 	H.adjust_nutrition(-0.09)//increases their nutrition loss rate to encourage them to gain a partner they can essentially leech off of
 
 /datum/quirk/succubus
-	name = "Succubus"
-	desc = "Your seductress-like metabolism can only be sated by semen. (And milk, if you're an Incubus as well.)"
+	name = "Суккуб"
+	desc = "Ваш голод может быть утолен только семенем. (И молоком, если вы также Инкуб.)"
 	value = 0
 	mob_trait = TRAIT_SUCCUBUS
 	processing_quirk = TRUE
@@ -350,13 +350,13 @@
 	H.adjust_nutrition(-0.09)//increases their nutrition loss rate to encourage them to gain a partner they can essentially leech off of
 
 /datum/quirk/bloodfledge
-	name = "Bloodsucker Fledgling"
-	desc = "You are a fledgling belonging to ancient Bloodsucker bloodline. While the blessing has yet to fully convert you, some things have changed. Only blood will sate your hungers, and holy energies will cause your flesh to char. <b>This is NOT an antagonist role!</b>"
+	name = "Отродье Кровопийцы"
+	desc = "Вы новообращенный, принадлежащий к древнему роду Кровопийц. Благословению еще предстоит полностью изменить вас, но некоторые вещи уже поменялись. Только кровь утолит голод, а божественная сила обуглит вашу плоть. <b>Это НЕ роль антагониста!</b>"
 	value = 2
-	medical_record_text = "Patient exhibits onset symptoms of a sanguine curse."
+	medical_record_text = "Пациент демонстрирует начальные симптомы кровяного проклятия."
 	mob_trait = TRAIT_BLOODFLEDGE
-	gain_text = span_notice("You feel a sanguine thirst.")
-	lose_text = span_notice("You feel the sanguine thirst fade away.")
+	gain_text = span_notice("Вы чувствуете жажду крови.")
+	lose_text = span_notice("Вы чувствуете, что жажда крови угасла.")
 	processing_quirk = TRUE
 
 /datum/quirk/bloodfledge/add()
@@ -366,9 +366,8 @@
 	var/mob/living/carbon/human/quirk_mob = quirk_holder
 
 	// Add quirk traits
-	ADD_TRAIT(quirk_mob,TRAIT_NOBREATH, ROUNDSTART_TRAIT)
-	ADD_TRAIT(quirk_mob,TRAIT_NO_PROCESS_FOOD, ROUNDSTART_TRAIT)
-	ADD_TRAIT(quirk_mob,TRAIT_NOTHIRST, ROUNDSTART_TRAIT)
+	ADD_TRAIT(quirk_mob,TRAIT_NO_PROCESS_FOOD,ROUNDSTART_TRAIT)
+	ADD_TRAIT(quirk_mob,TRAIT_NOTHIRST,ROUNDSTART_TRAIT)
 
 	// Set skin tone, if possible
 	if(!quirk_mob.dna.skin_tone_override)
@@ -400,7 +399,7 @@
 		if(quirk_mob.mob_biotypes & MOB_ROBOTIC)
 			// Display a warning chat message (10% chance)
 			if(prob(20))
-				to_chat(quirk_mob, span_warning("Your mechanical body rejects the curse's healing properties!"))
+				to_chat(quirk_mob, span_warning("Ваше механическое тело отвергает лечебные свойства проклятия!"))
 
 			// Return without healing, due robotic nature
 			return
@@ -409,7 +408,7 @@
 		if(quirk_mob.nutrition <= NUTRITION_LEVEL_STARVING)
 			// Display a warning chat message (10% chance)
 			if(prob(20))
-				to_chat(quirk_mob, span_warning("You need more blood before you can regenerate!"))
+				to_chat(quirk_mob, span_warning("Вам необходимо больше крови, перед тем как вы сможете регенерировать!"))
 
 			// Return without healing, due to lack of blood
 			return
@@ -458,7 +457,6 @@
 	var/mob/living/carbon/human/quirk_mob = quirk_holder
 
 	// Remove quirk traits
-	REMOVE_TRAIT(quirk_mob,TRAIT_NOBREATH, ROUNDSTART_TRAIT)
 	REMOVE_TRAIT(quirk_mob, TRAIT_NO_PROCESS_FOOD, ROUNDSTART_TRAIT)
 	REMOVE_TRAIT(quirk_mob, TRAIT_NOTHIRST, ROUNDSTART_TRAIT)
 
@@ -511,13 +509,13 @@
 	to_chat(quirk_holder, span_boldnotice("There is a bloodfledge's ID card [id_location], linked to your station account. It functions as a spare ID, but lacks job access."))
 
 /datum/quirk/werewolf //adds the werewolf quirk
-	name = "Werewolf"
-	desc = "A beastly affliction allows you to shape-shift into a large anthropomorphic canine at will."
+	name = "Оборотень"
+	desc = "Ликантропия позволяет вам перевоплотиться в большого прямоходящего волка."
 	value = 0
 	mob_trait = TRAIT_WEREWOLF
-	gain_text = span_notice("You feel the full moon beckon.")
-	lose_text = span_notice("The moon's call hushes into silence.")
-	medical_record_text = "Patient has been reported howling at the night sky."
+	gain_text = span_notice("Полная луна зовёт.")
+	lose_text = span_notice("Зов луны растворяется в тишине.")
+	medical_record_text = "Сообщалось, что пациент выл на ночное небо."
 	var/list/old_features
 
 /datum/quirk/werewolf/add()
@@ -551,8 +549,8 @@
 	quirk_action.Remove(quirk_holder)
 
 /datum/quirk/gargoyle //Mmmm yes stone time
-	name = "Gargoyle"
-	desc = "You are some form of gargoyle! You can only leave your stone form for so long, and will have to return to it to regain energy. On the bright side, you heal in statue form!"
+	name = "Горгулья"
+	desc = "Вы относитесь к какому-то виду горгульи! Вы можете выходить из каменной формы на определенное время, но вам придётся в неё вернуться, чтобы восстановить энергию. С другой стороны, вы лечитесь, будучи в камне!"
 	value = 0
 	processing_quirk = TRUE
 	var/energy = 0
@@ -629,11 +627,11 @@
 /datum/quirk/nudist
 	// Mostly derived from masked_mook.
 	// Spawning with a gear harness is preferable, but failed during testing.
-	name = "Nudist"
-	desc = "Wearing most types of clothing unnerves you. Bring a gear harness!"
-	gain_text = span_notice("You feel spiritually connected to your natural form.")
-	lose_text = span_notice("It feels like clothing could fit you comfortably.")
-	medical_record_text = "Patient expresses a psychological need to remain unclothed."
+	name = "Нудизм"
+	desc = "Ношение большинства типов одежды нервирует вас. Несите портупею!"
+	gain_text = span_notice("Вы чувствуете духовную связь со своим естеством.")
+	lose_text = span_notice("Вы больше не чувствуете дискомфорта при ношении одежды.")
+	medical_record_text = "Пациент выражает психологическую потребность оставаться без одежды."
 	value = 0
 	mood_quirk = TRUE
 	processing_quirk = TRUE
@@ -656,13 +654,13 @@
 	quirk_implant.implant(quirk_holder, null, TRUE, TRUE)
 
 /datum/quirk/masked_mook
-	name = "Bane Syndrome"
-	desc = "For some reason you don't feel... right without wearing some kind of gas mask."
-	gain_text = span_danger("You start feeling unwell without any gas mask on.")
-	lose_text = span_notice("You no longer have a need to wear some gas mask.")
+	name = "Синдром Бейна"
+	desc = "По какой-то причине вам... не по себе без противогаза на лице."
+	gain_text = span_danger("Вы начинаете чувствовать себя нехорошо без противогаза.")
+	lose_text = span_notice("У вас больше нет нужды в ношении противогаза.")
 	value = 0
 	mood_quirk = TRUE
-	medical_record_text = "Patient feels more secure when wearing a gas mask."
+	medical_record_text = "Пациент чувствует себя более безопасно при ношении противогаза."
 	processing_quirk = TRUE
 	var/mood_category = "masked_mook"
 

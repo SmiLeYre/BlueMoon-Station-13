@@ -29521,10 +29521,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/cargo/qm)
 "bwT" = (
-/obj/machinery/door/airlock/command{
-	name = "Quartermaster";
-	req_access_txt = "41"
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -29534,6 +29530,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/machinery/door/airlock/qm,
 /turf/open/floor/mineral/plastitanium,
 /area/cargo/qm)
 "bwU" = (
@@ -29765,10 +29762,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/security/checkpoint/science)
 "bxw" = (
-/obj/machinery/door/airlock/command{
-	name = "Quartermaster";
-	req_access_txt = "41"
-	},
+/obj/machinery/door/airlock/qm,
 /turf/open/floor/mineral/plastitanium,
 /area/cargo/qm)
 "bxx" = (
@@ -29987,10 +29981,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/medical/medbay/central)
 "bxW" = (
-/obj/machinery/door/airlock/command/glass{
-	name = "Research Director";
-	req_access_txt = "30"
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -30000,6 +29990,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/machinery/door/airlock/rd,
 /turf/open/floor/mineral/plastitanium,
 /area/command/heads_quarters/rd)
 "bxX" = (
@@ -32686,10 +32677,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/medical/medbay/central)
 "bDU" = (
-/obj/machinery/door/airlock/command/glass{
-	name = "Chief Medical Officer";
-	req_access_txt = "40"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
@@ -32699,6 +32686,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
+/obj/machinery/door/airlock/cmo,
 /turf/open/floor/mineral/plastitanium,
 /area/command/heads_quarters/cmo)
 "bDV" = (
@@ -39812,7 +39800,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},
-/obj/machinery/suit_storage_unit/atmos,
+/obj/machinery/suit_storage_unit/industrial/atmos,
 /turf/open/floor/mineral/plastitanium,
 /area/engineering/atmos)
 "bVS" = (
@@ -43548,7 +43536,7 @@
 /turf/open/floor/plating,
 /area/maintenance/port/aft)
 "cfF" = (
-/obj/machinery/suit_storage_unit/ce,
+/obj/machinery/suit_storage_unit/industrial/ce,
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
@@ -43880,6 +43868,13 @@
 /area/engineering/main)
 "cgy" = (
 /obj/machinery/light/floor,
+/obj/structure/table,
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_x = -5;
+	pixel_y = 12
+	},
+/obj/item/clothing/glasses/sunglasses/reagent,
+/obj/item/storage/fancy/cigarettes/cigpack_syndicate,
 /turf/open/floor/mineral/plastitanium/red,
 /area/maintenance/starboard/aft)
 "cgz" = (
@@ -45484,7 +45479,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/engineering/main)
 "ckI" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/effect/turf_decal/bot{
 	dir = 1
 	},
@@ -45532,10 +45527,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/science/misc_lab)
 "ckO" = (
-/obj/machinery/door/airlock/command/glass{
-	name = "Chief Engineer";
-	req_access_txt = "56"
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -45552,6 +45543,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/machinery/door/airlock/ce,
 /turf/open/floor/mineral/plastitanium,
 /area/command/heads_quarters/ce)
 "ckQ" = (
@@ -51756,7 +51748,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
 	dir = 4
 	},
-/obj/machinery/suit_storage_unit/atmos,
+/obj/machinery/suit_storage_unit/industrial/atmos,
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},
@@ -52082,11 +52074,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/machinery/door/airlock/command{
-	name = "Head of Security's Office";
-	req_access_txt = "58"
-	},
 /obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/hos,
 /turf/open/floor/mineral/plastitanium/red,
 /area/command/heads_quarters/hos)
 "dKP" = (
@@ -54435,6 +54424,7 @@
 	pixel_x = -32
 	},
 /obj/structure/table/reinforced,
+/obj/structure/reagent_dispensers/beerkeg,
 /turf/open/floor/mineral/plastitanium/red,
 /area/maintenance/starboard/aft)
 "gOZ" = (
@@ -58692,6 +58682,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/commons/locker)
+"mUW" = (
+/obj/machinery/jukebox/disco,
+/turf/open/floor/circuit/red,
+/area/maintenance/starboard/aft)
 "mXG" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/spawner/structure/window/plastitanium,
@@ -59004,6 +58998,12 @@
 /obj/structure/chair/stool,
 /turf/open/floor/mineral/plastitanium,
 /area/security/prison)
+"nrK" = (
+/mob/living/simple_animal/opossum{
+	name = "trash"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/maintenance/starboard/aft)
 "nss" = (
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
@@ -63470,10 +63470,10 @@
 /turf/open/floor/plating,
 /area/maintenance/fore/secondary)
 "ueN" = (
-/obj/machinery/door/airlock/medical/glass{
-	name = "Prison Forestry"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/door/airlock/public/glass{
+	name = "Prison Botania"
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/security/prison)
 "ueW" = (
@@ -64278,6 +64278,12 @@
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
 /area/maintenance/fore)
+"vrk" = (
+/mob/living/simple_animal/opossum{
+	name = "garbage"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/maintenance/starboard/aft)
 "vsM" = (
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable,
@@ -65342,7 +65348,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/security/prison)
 "wVN" = (
-/obj/structure/falsewall,
+/obj/structure/falsewall/plastitanium,
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
 "wWi" = (
@@ -117609,7 +117615,7 @@ ceT
 kfS
 xgs
 chH
-chH
+mUW
 xgs
 gcx
 kfS
@@ -117864,7 +117870,7 @@ kfS
 kfS
 cPH
 kfS
-xgs
+vrk
 chH
 chH
 xgs
@@ -118122,7 +118128,7 @@ kfS
 ceU
 kfS
 cgy
-xgs
+nrK
 xgs
 xgs
 jdu

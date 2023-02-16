@@ -156,7 +156,7 @@
 							if(partner.has_legs() >= 2)
 								message = "кончает между бёдер <b>[partner]</b>!"
 							else
-								message = "кончает... Как-то..."
+								message = "кончает... как-то..."
 						if(CUM_TARGET_BELLY)
 							cumin = TRUE
 							if(partner.has_belly(REQUIRE_EXPOSED))
@@ -676,7 +676,7 @@
 	else
 		lines = list(
 			"нежно потирает свой кончик о сосок <b>[target]</b>.",
-			"шлепает своей змеей по груди <b>[target]</b>.",
+			"шлепает своей змеей по грудь <b>[target]</b>.",
 			"целует сосок <b>[target]</b> своей уретрой."
 		)
 

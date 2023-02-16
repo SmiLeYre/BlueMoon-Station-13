@@ -172,6 +172,8 @@
 #define TRAIT_EXEMPT_HEALTH_EVENTS	"exempt-health-events"
 #define TRAIT_NO_MIDROUND_ANTAG	"no-midround-antag" //can't be turned into an antag by random events
 #define TRAIT_PUGILIST	"pugilist" //This guy punches people for a living
+/// An item still plays its hitsound even if it has 0 force, instead of the tap
+#define TRAIT_CUSTOM_TAP_SOUND "no_tap_sound"
 /// Climbable trait, given and taken by the climbable element when added or removed. Exists to be easily checked via HAS_TRAIT().
 #define TRAIT_CLIMBABLE "trait_climbable"
 #define TRAIT_NOPUGILIST "nopugilist" // for preventing ((((((((((extreme)))))))))) punch stacking
@@ -314,6 +316,8 @@
 #define CHANGELING_DRAIN "drain"
 #define CHANGELING_HIVEMIND_MUTE "ling_mute"
 #define ABYSSAL_GAZE_BLIND "abyssal_gaze"
+/// Trait given from playing pretend with baguettes
+#define SWORDPLAY_TRAIT "swordplay"
 #define HIGHLANDER "highlander"
 #define TRAIT_HULK "hulk"
 #define STASIS_MUTE "stasis"
@@ -555,6 +559,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 
 /// Trait applied to [/datum/mind] to stop someone from using the cursed hot springs to polymorph more than once.
 #define TRAIT_HOT_SPRING_CURSED "hot_spring_cursed"
+/// Gibs on death and slips like ice.
+#define TRAIT_CURSED "cursed"
 
 /// Whether a spider's consumed this mob
 #define TRAIT_SPIDER_CONSUMED "spider_consumed"

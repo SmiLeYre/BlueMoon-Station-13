@@ -57,14 +57,14 @@
 	if(user.a_intent == INTENT_HELP)
 		user.visible_message(
 				pick("<span class='lewd'>\The <b>[user]</b> нежно ощупывает грудь \the <b>[target]</b>.</span>",
-					"<span class='lewd'>\The <b>[user]</b> мягко хватается за груди \the <b>[target]</b>.</span>",
+					"<span class='lewd'>\The <b>[user]</b> мягко хватается за грудь \the <b>[target]</b>.</span>",
 					"<span class='lewd'>\The <b>[user]</b> сжимает грудь \the <b>[target]</b>.</span>",
 					"<span class='lewd'>\The <b>[user]</b> проводит несколькими пальцами вдоль груди \the <b>[target]</b>.</span>",
 					"<span class='lewd'>\The <b>[user]</b> деликатно сжимает сосок \the <b>[target]</b>.</span>",
 					"<span class='lewd'>\The <b>[user]</b> возбуждённо проводит пальцем вдоль груди \the <b>[target]</b>.</span>"))
 	if(user.a_intent == INTENT_HARM)
 		user.visible_message(
-				pick("<span class='lewd'>\The <b>[user]</b> с силой сжимает груди \the <b>[target]</b>.</span>",
+				pick("<span class='lewd'>\The <b>[user]</b> с силой сжимает грудь \the <b>[target]</b>.</span>",
 					"<span class='lewd'>\The <b>[user]</b> резко хватается за сиськи \the <b>[target]</b>!</span>",
 					"<span class='lewd'>\The <b>[user]</b> крепко сжимает грудь \the <b>[target]</b>.</span>",
 					"<span class='lewd'>\The <b>[user]</b> шлёпает по сиськам \the <b>[target]</b>!</span>",

@@ -84,6 +84,9 @@
 
 	var/vocal_current_bark //When barks are queued, this gets passed to the bark proc. If vocal_current_bark doesn't match the args passed to the bark proc (if passed at all), then the bark simply doesn't play. Basic curtailing of spam~
 
+	///Used for the calculate_adjacencies proc for icon smoothing.
+	var/can_be_unanchored = FALSE
+
 /atom/movable/Initialize(mapload)
 	. = ..()
 	switch(blocks_emissive)

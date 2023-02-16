@@ -309,6 +309,7 @@
 	CHECK_TICK
 
 	// handle_hearts()
+	handle_hearts()
 	if(CONFIG_GET(flag/reveal_everything))
 		set_observer_default_invisibility(0, "<span class='warning'>The round is over! You are now visible to the living.</span>")
 		CHECK_TICK
@@ -351,7 +352,7 @@
 		if(mode.station_was_nuked)
 			Reboot("Станция уничтожена Ядерной бомбой.", "nuke")
 		else
-			Reboot("КОНЕЦ!", "proper completion", 150 SECONDS)
+			Reboot("КОНЕЦ РАУНДА! ЕОРГ ТОЛЬКО НА ЦК-АРЕНЕ!!", "proper completion", 150 SECONDS)
 	else
 		CRASH("Attempted standard reboot without ticker roundend completion")
 

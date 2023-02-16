@@ -10,23 +10,23 @@ GLOBAL_LIST_INIT(lewd_prefs_choices, list(
 	"No"
 	))
 
-#define CUM_TARGET_MOUTH "mouth"
-#define CUM_TARGET_THROAT "throat"
-#define CUM_TARGET_VAGINA "vagina"
-#define CUM_TARGET_ANUS "anus"
-#define CUM_TARGET_HAND "hand"
-#define CUM_TARGET_BREASTS "breasts"
-#define CUM_TARGET_FEET "feet"
-#define CUM_TARGET_PENIS "penis"
+#define CUM_TARGET_MOUTH "рот"
+#define CUM_TARGET_THROAT "глотка"
+#define CUM_TARGET_VAGINA "влагалище"
+#define CUM_TARGET_ANUS "анус"
+#define CUM_TARGET_HAND "рука"
+#define CUM_TARGET_BREASTS "грудь"
+#define CUM_TARGET_FEET "ножки"
+#define CUM_TARGET_PENIS "пенис"
 //Weird defines go here
-#define CUM_TARGET_EARS "ears"
-#define CUM_TARGET_EYES "eyes"
+#define CUM_TARGET_EARS "глаз"
+#define CUM_TARGET_EYES "глаза"
 //
-#define GRINDING_FACE_WITH_ANUS "faceanus"
-#define GRINDING_FACE_WITH_FEET "facefeet"
-#define GRINDING_MOUTH_WITH_FEET "mouthfeet"
-#define THIGH_SMOTHERING "thigh_smother"
-#define NUTS_TO_FACE "nut_face"
+#define GRINDING_FACE_WITH_ANUS "лицо об анус"
+#define GRINDING_FACE_WITH_FEET "лицо об ступню"
+#define GRINDING_MOUTH_WITH_FEET "рот об ступню"
+#define THIGH_SMOTHERING "бёдра"
+#define NUTS_TO_FACE "яйцо к лицу"
 
 #define NORMAL_LUST 12
 #define LOW_LUST 4
