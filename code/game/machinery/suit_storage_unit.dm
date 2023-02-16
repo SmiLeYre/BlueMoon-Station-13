@@ -52,7 +52,7 @@
 	var/charge_rate = 250
 
 /obj/machinery/suit_storage_unit/industrial
-	name = "промышленный блок хранения костюма"
+	name = "Промышленный Блок Хранения Костюма"
 	icon_state = "industrial"
 	base_icon_state = "industrial"
 
