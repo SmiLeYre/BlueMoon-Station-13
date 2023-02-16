@@ -76,7 +76,7 @@
 		if("Skull")
 			B.beast_type = "skull_"
 	if(skin)
-		to_chat(owner, "<span class='notice'>Your inner Beast's skin now will be [skin].</span>"
+		to_chat(owner, "<span class='notice'>Your inner Beast's skin now will be [skin].</span>")
 
 /datum/action/innate/beastsex
 	name = "Toggle Aroused"
