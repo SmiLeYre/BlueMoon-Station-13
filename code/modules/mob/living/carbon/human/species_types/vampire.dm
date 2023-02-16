@@ -24,9 +24,7 @@
 	batform_enabled = FALSE
 
 /datum/species/vampire/roundstart/check_roundstart_eligible()
-	if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
 		return TRUE
-	return FALSE
 
 /datum/species/vampire/on_species_gain(mob/living/carbon/human/C, datum/species/old_species)
 	. = ..()
