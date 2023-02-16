@@ -269,10 +269,6 @@
 /area/ruin/space/has_grav/port_tarkon/power1)
 "bA" = (
 /obj/machinery/door/firedoor/solid,
-/obj/machinery/door/airlock/public/glass{
-	name = "Starboard Primary Hallway";
-	req_access = list("tarkoff")
-	},
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/garden)
 "bD" = (
@@ -739,6 +735,14 @@
 	},
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
+"ei" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
+	level = 1
+	},
+/obj/effect/spawner/lootdrop/maintenance/six,
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/port_tarkon/mining)
 "ek" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -797,7 +801,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/port_tarkon/power1)
 "eE" = (
@@ -1628,10 +1631,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor/solid,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/machinery/door/airlock/public/glass{
-	name = "Medical Block";
-	req_access = list("tarkoff")
-	},
+/obj/machinery/door/airlock/multi_tile/glass,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/trauma)
 "iB" = (
@@ -1761,6 +1761,14 @@
 	},
 /turf/open/floor/engine/n2,
 /area/ruin/space/has_grav/port_tarkon/atmos)
+"jl" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/wood,
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/item/storage/fancy/cigarettes/cigpack_syndicate,
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/port_tarkon/observ)
 "jm" = (
 /obj/effect/decal/cleanable/blood/gibs/old,
 /obj/structure/alien/resin/wall,
@@ -1815,10 +1823,13 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "jB" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 8;
+	name = "Pipe To Left";
+	piping_layer = 3;
+	layer = 3
+	},
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "jE" = (
@@ -2217,7 +2228,7 @@
 "lp" = (
 /obj/item/paper/fluff/ruins/tarkoff/atmosincident,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/suit_storage_unit/engine/ancient,
+/obj/machinery/suit_storage_unit/industrial/ancient,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "lr" = (
@@ -3495,6 +3506,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/lootdrop/maintenance/six,
 /turf/open/floor/iron/airless,
 /area/ruin/space/has_grav/port_tarkon/storage)
 "rL" = (
@@ -4066,6 +4078,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/asteroid,
 /area/ruin/space/has_grav)
+"va" = (
+/obj/machinery/vending/kink,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/port_tarkon/cargo)
 "vc" = (
 /obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
 	level = 1
@@ -4378,6 +4394,14 @@
 /obj/structure/alien/weeds/node,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/developement)
+"wA" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/effect/spawner/lootdrop/maintenance/six,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/port_tarkon/atmos)
 "wC" = (
 /obj/effect/turf_decal/tile/yellow/full,
 /obj/effect/decal/cleanable/dirt,
@@ -4473,6 +4497,13 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/developement)
+"xy" = (
+/obj/machinery/door/firedoor/solid,
+/obj/machinery/door/airlock/multi_tile/glass{
+	dir = 8
+	},
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/port_tarkon/garden)
 "xB" = (
 /obj/machinery/igniter{
 	id = "tarkoff_Incinerator"
@@ -4782,6 +4813,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/secoff)
+"zx" = (
+/obj/machinery/door/firedoor/solid,
+/obj/machinery/door/airlock/multi_tile/glass,
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/port_tarkon/garden)
 "zB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
@@ -5721,6 +5757,11 @@
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/comms)
+"EG" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/lootdrop/maintenance/six,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/port_tarkon/storage)
 "EH" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/dark,
@@ -5976,8 +6017,8 @@
 "Gk" = (
 /obj/effect/turf_decal/tile/blue/half,
 /obj/machinery/door/firedoor/solid,
-/obj/machinery/door/airlock/command/glass{
-	name = "Bridge";
+/obj/machinery/door/airlock/multi_tile/glass{
+	dir = 8;
 	req_access_txt = "66"
 	},
 /turf/open/floor/iron,
@@ -7000,10 +7041,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor/solid,
 /obj/machinery/light_switch/directional/east,
-/obj/machinery/door/airlock/public/glass{
-	name = "Medical Block";
-	req_access = list("tarkoff")
-	},
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/trauma)
 "Ls" = (
@@ -7599,6 +7636,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/afthall)
+"Pn" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/maintenance/six,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/port_tarkon/atmos)
 "Pp" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -7635,10 +7677,6 @@
 	level = 1
 	},
 /obj/machinery/door/firedoor/solid,
-/obj/machinery/door/airlock/public/glass{
-	name = "Starboard Primary Hallway";
-	req_access = list("tarkoff")
-	},
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/garden)
 "Pz" = (
@@ -7821,7 +7859,7 @@
 /obj/effect/turf_decal/tile/brown/half{
 	dir = 8
 	},
-/obj/machinery/suit_storage_unit/engine/ancient/mason,
+/obj/machinery/suit_storage_unit/industrial/ancient/mason,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/cargo)
 "QA" = (
@@ -8189,10 +8227,6 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/solid,
-/obj/machinery/door/airlock/command/glass{
-	name = "Bridge";
-	req_access_txt = "66"
-	},
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/comms)
 "Su" = (
@@ -8337,8 +8371,8 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/crowbar,
 /obj/structure/rack,
+/obj/item/crowbar/red/caravan,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/storage)
 "Tc" = (
@@ -8834,6 +8868,11 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/port_tarkon/forehall)
+"VX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/maintenance/six,
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/port_tarkon/starboardhall)
 "Wa" = (
 /turf/closed/mineral/random,
 /area/ruin/space/has_grav)
@@ -9035,6 +9074,23 @@
 /obj/item/ammo_box/magazine/m357/dumdum,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/storage)
+"Xg" = (
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 4;
+	name = "killroom vent";
+	layer = 3;
+	piping_layer = 3
+	},
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/asteroid/line,
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/sand/plating,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav/port_tarkon/atmos)
 "Xh" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
@@ -10020,7 +10076,7 @@ bT
 zo
 zo
 zo
-iI
+Xg
 Wa
 Wa
 sv
@@ -10650,7 +10706,7 @@ EQ
 Xw
 Tc
 lr
-KS
+jl
 Ez
 Tc
 Tc
@@ -11041,7 +11097,7 @@ tQ
 lE
 BX
 xt
-ST
+wA
 vO
 ST
 lH
@@ -11187,7 +11243,7 @@ tQ
 Mi
 uP
 xt
-vO
+Pn
 vO
 Se
 lH
@@ -12650,7 +12706,7 @@ gJ
 gJ
 gJ
 Px
-bA
+xy
 gJ
 gJ
 hj
@@ -12658,7 +12714,7 @@ po
 Mr
 KZ
 hj
-rZ
+va
 Dk
 OM
 kq
@@ -12865,7 +12921,7 @@ Ki
 Bg
 fU
 SP
-bA
+zx
 yn
 yn
 go
@@ -13235,7 +13291,7 @@ Bg
 Bg
 Cv
 Bg
-Bg
+VX
 Bg
 zp
 AD
@@ -13252,7 +13308,7 @@ ng
 ui
 EO
 EO
-EO
+EG
 ar
 QD
 EO
@@ -13374,7 +13430,7 @@ lW
 DP
 vC
 cn
-Bg
+VX
 MF
 CY
 qS
@@ -13609,7 +13665,7 @@ nt
 nt
 Rq
 nt
-nt
+ei
 Es
 Nl
 sq

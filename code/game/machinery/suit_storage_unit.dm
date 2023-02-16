@@ -52,7 +52,7 @@
 	var/charge_rate = 250
 
 /obj/machinery/suit_storage_unit/industrial
-	name = "промышленный блок хранения костюма"
+	name = "Промышленный Блок Хранения Костюма"
 	icon_state = "industrial"
 	base_icon_state = "industrial"
 
@@ -66,27 +66,27 @@
 	mask_type = /obj/item/clothing/mask/gas/atmos/captain
 	storage_type = /obj/item/tank/jetpack/oxygen/captain
 
-/obj/machinery/suit_storage_unit/engine
+/obj/machinery/suit_storage_unit/industrial
 	suit_type = /obj/item/clothing/suit/space/hardsuit/engine
 	mask_type = /obj/item/clothing/mask/gas/glass/alt
 	shoes_type = /obj/item/clothing/shoes/magboots
 
-/obj/machinery/suit_storage_unit/engine/ancient
+/obj/machinery/suit_storage_unit/industrial/ancient
 	suit_type = /obj/item/clothing/suit/space/hardsuit/ancient
 	mask_type = /obj/item/clothing/mask/gas/glass/alt
 	shoes_type = /obj/item/clothing/shoes/magboots
 
-/obj/machinery/suit_storage_unit/engine/ancient/mason
+/obj/machinery/suit_storage_unit/industrial/ancient/mason
 	suit_type = /obj/item/clothing/suit/space/hardsuit/ancient/mason
 	mask_type = /obj/item/clothing/mask/gas/glass/alt
 	shoes_type = /obj/item/clothing/shoes/magboots
 
-/obj/machinery/suit_storage_unit/atmos
+/obj/machinery/suit_storage_unit/industrial/atmos
 	suit_type = /obj/item/clothing/suit/space/hardsuit/engine/atmos
 	mask_type = /obj/item/clothing/mask/gas/atmos
 	storage_type = /obj/item/watertank/atmos
 
-/obj/machinery/suit_storage_unit/ce
+/obj/machinery/suit_storage_unit/industrial/ce
 	suit_type = /obj/item/clothing/suit/space/hardsuit/engine/elite
 	mask_type = /obj/item/clothing/mask/gas/glass/alt
 	shoes_type = /obj/item/clothing/shoes/magboots/advance

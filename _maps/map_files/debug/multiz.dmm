@@ -226,7 +226,7 @@
 	},
 /area/engineering/gravity_generator)
 "aM" = (
-/obj/machinery/suit_storage_unit/ce,
+/obj/machinery/suit_storage_unit/industrial/ce,
 /turf/open/floor/plating,
 /area/engineering/atmos)
 "aN" = (
@@ -1534,7 +1534,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/obj/machinery/suit_storage_unit/ce,
+/obj/machinery/suit_storage_unit/industrial/ce,
 /turf/open/floor/plasteel,
 /area/construction)
 "ip" = (

@@ -1445,12 +1445,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/cafeteria,
 /area/ruin/space/has_grav/port_tarkon/kitchen)
-"iz" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/turf/open/floor/plating/asteroid/airless,
-/area/ruin/space/has_grav)
 "iA" = (
 /obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
 	level = 1
@@ -1460,10 +1454,7 @@
 	},
 /obj/machinery/door/firedoor/solid,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/machinery/door/airlock/public/glass{
-	name = "Medical Block";
-	req_access = list("tarkoff")
-	},
+/obj/machinery/door/airlock/multi_tile/glass,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/trauma)
 "iC" = (
@@ -1488,8 +1479,18 @@
 "iI" = (
 /obj/machinery/atmospherics/components/unary/passive_vent{
 	dir = 4;
-	name = "killroom vent"
+	name = "killroom vent";
+	layer = 3;
+	piping_layer = 3
 	},
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/asteroid/line,
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/sand/plating,
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "iJ" = (
@@ -1612,11 +1613,14 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "jB" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 8;
+	name = "Pipe To Left";
+	piping_layer = 3;
+	layer = 3
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/iron/airless,
+/turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "jE" = (
 /obj/structure/window/reinforced{
@@ -2006,7 +2010,7 @@
 "lp" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/paper/fluff/ruins/tarkoff/atmosincident,
-/obj/machinery/suit_storage_unit/engine/ancient,
+/obj/machinery/suit_storage_unit/industrial/ancient,
 /turf/open/floor/iron/airless,
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "lr" = (
@@ -2988,6 +2992,10 @@
 /obj/item/stack/rods,
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space/has_grav)
+"rb" = (
+/obj/machinery/door/firedoor/solid,
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/port_tarkon/garden)
 "rc" = (
 /obj/item/scalpel,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4368,6 +4376,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/starboardhall)
+"zR" = (
+/obj/machinery/door/firedoor/solid,
+/obj/machinery/door/airlock/multi_tile/glass,
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/port_tarkon/garden)
 "zV" = (
 /obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
 	level = 1
@@ -5433,8 +5446,8 @@
 "Gk" = (
 /obj/effect/turf_decal/tile/blue/half,
 /obj/machinery/door/firedoor/solid,
-/obj/machinery/door/airlock/command/glass{
-	name = "Bridge";
+/obj/machinery/door/airlock/multi_tile/glass{
+	dir = 8;
 	req_access_txt = "66"
 	},
 /turf/open/floor/iron,
@@ -6380,10 +6393,6 @@
 "Lr" = (
 /obj/machinery/door/firedoor/solid,
 /obj/machinery/light_switch/directional/east,
-/obj/machinery/door/airlock/public/glass{
-	name = "Medical Block";
-	req_access = list("tarkoff")
-	},
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/trauma)
 "Ls" = (
@@ -6964,10 +6973,6 @@
 	level = 1
 	},
 /obj/machinery/door/firedoor/solid,
-/obj/machinery/door/airlock/public/glass{
-	name = "Starboard Primary Hallway";
-	req_access = list("tarkoff")
-	},
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/garden)
 "Pz" = (
@@ -7150,7 +7155,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/suit_storage_unit/engine/ancient/mason,
+/obj/machinery/suit_storage_unit/industrial/ancient/mason,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/cargo)
 "QA" = (
@@ -7471,10 +7476,6 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/solid,
-/obj/machinery/door/airlock/command/glass{
-	name = "Bridge";
-	req_access_txt = "66"
-	},
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/comms)
 "Su" = (
@@ -8247,11 +8248,12 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "WP" = (
+/obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/structure/window/reinforced/no_firelock,
 /obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
 	level = 1
 	},
-/obj/machinery/door/firedoor/solid,
+/obj/machinery/door/firedoor/solid/closed,
 /obj/machinery/door/poddoor/shutters{
 	id = "ptatmos"
 	},
@@ -8314,9 +8316,8 @@
 /area/ruin/space/has_grav/port_tarkon/afthall)
 "Xj" = (
 /obj/machinery/door/firedoor/solid,
-/obj/machinery/door/airlock/public/glass{
-	name = "Starboard Primary Hallway";
-	req_access = list("tarkoff")
+/obj/machinery/door/airlock/multi_tile/glass{
+	dir = 8
 	},
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/garden)
@@ -9209,7 +9210,7 @@ zo
 zo
 zo
 zo
-iz
+zo
 zo
 Wa
 Wa
@@ -12127,7 +12128,7 @@ Ki
 LS
 fU
 Hg
-Xj
+zR
 XG
 XG
 go
@@ -12200,7 +12201,7 @@ AP
 JE
 XD
 Hg
-Xj
+rb
 XG
 XG
 gb

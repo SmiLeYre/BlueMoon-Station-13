@@ -101,32 +101,44 @@
 	sign_path = /obj/structure/sign/flag
 	unique_reskin = list(
 		"NanoTrasen" = list(
-			RESKIN_ICON_STATE = "flag_nt",
-			RESKIN_ITEM_STATE = "folded_nt"
+			RESKIN_ICON_STATE = "folded_nt",
+			RESKIN_ITEM_STATE = "folded_nt",
+			sign_path = /obj/structure/sign/flag/nanotrasen
 		),
 		"Syndicate" = list(
-			RESKIN_ICON_STATE = "flag_syndi",
-			RESKIN_ITEM_STATE = "folded_syndi"
+			RESKIN_ICON_STATE = "folded_syndi",
+			RESKIN_ITEM_STATE = "folded_syndi",
+			sign_path = /obj/structure/sign/flag/syndicate
 		),
 		"NRI" = list(
-			RESKIN_ICON_STATE = "flag_nri",
-			RESKIN_ITEM_STATE = "folded_nri"
+			RESKIN_ICON_STATE = "folded_nri",
+			RESKIN_ITEM_STATE = "folded_nri",
+			sign_path = /obj/structure/sign/flag/nri
 		),
 		"Tizira" = list(
-			RESKIN_ICON_STATE = "flag_tizira",
-			RESKIN_ITEM_STATE = "folded_tizira"
+			RESKIN_ICON_STATE = "folded_tizira",
+			RESKIN_ITEM_STATE = "folded_tizira",
+			sign_path = /obj/structure/sign/flag/tizira
+		),
+		"SSC" = list(
+			RESKIN_ICON_STATE = "folded_agurk",
+			RESKIN_ITEM_STATE = "folded_agurk",
+			sign_path = /obj/structure/sign/flag/ssc
 		),
 		"Mars" = list(
-			RESKIN_ICON_STATE = "flag_mars",
-			RESKIN_ITEM_STATE = "folded_mars"
+			RESKIN_ICON_STATE = "folded_mars",
+			RESKIN_ITEM_STATE = "folded_mars",
+			sign_path = /obj/structure/sign/flag/mars
 		),
 		"SOL" = list(
-			RESKIN_ICON_STATE = "flag_solfed",
-			RESKIN_ITEM_STATE = "folded_solfed"
+			RESKIN_ICON_STATE = "folded_solfed",
+			RESKIN_ITEM_STATE = "folded_solfed",
+			sign_path = /obj/structure/sign/flag/terragov
 		),
 		"Mothic" = list(
-			RESKIN_ICON_STATE = "flag_mothic",
-			RESKIN_ITEM_STATE = "folded_mothic"
+			RESKIN_ICON_STATE = "folded_mothic",
+			RESKIN_ITEM_STATE = "folded_mothic",
+			sign_path = /obj/structure/sign/flag/mothic
 		),
 	)
 

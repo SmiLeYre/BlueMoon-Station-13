@@ -11,6 +11,12 @@
 
 	/// Whatever's causing the omen, if there is one. Destroying the vessel won't stop the omen, but we destroy the vessel (if one exists) upon the omen ending
 	var/obj/vessel
+	/// If the omen is permanent, it will never go away
+	var/permanent = FALSE
+	/// Base probability of negative events. Cursed are half as unlucky.
+	var/luck_mod = 1
+	/// Base damage from negative events. Cursed take 25% less damage.
+	var/damage_mod = 1
 
 /datum/component/omen/Initialize(silent=FALSE, vessel)
 	if(!isliving(parent))
@@ -66,9 +72,57 @@
 	our_guy.adjustOrganLoss(ORGAN_SLOT_BRAIN, 100)
 	qdel(src)
 
+/// Severe deaths. Normally lifts the curse.
+/datum/component/omen/proc/check_death(mob/living/our_guy)
+	SIGNAL_HANDLER
+
+	qdel(src)
+
 /// Hijack the mood system to see if we get the blessing mood event to cancel the omen
 /datum/component/omen/proc/check_bless(mob/living/our_guy, category)
 	if(category != "blessing")
 		return
 	to_chat(our_guy, "<span class='nicegreen'>You feel a horrible omen lifted off your shoulders!</span>")
 	qdel(src)
+
+/// Creates a localized explosion that shakes the camera
+/datum/component/omen/proc/death_explode(mob/living/our_guy)
+	explosion(our_guy)
+
+	for(var/mob/witness in view(2, our_guy))
+		shake_camera(witness, 1 SECONDS, 2)
+
+/**
+ * The quirk omen. Permanent.
+ * Has only a 50% chance of bad things happening, and takes only 25% of normal damage.
+ */
+/datum/component/omen/quirk
+	permanent = TRUE
+	luck_mod = 0.5 // 50% chance of bad things happening
+	damage_mod = 0.25 // 25% of normal damage
+
+/datum/component/omen/quirk/RegisterWithParent()
+	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(check_accident))
+	RegisterSignal(parent, COMSIG_ON_CARBON_SLIP, PROC_REF(check_slip))
+	RegisterSignal(parent, COMSIG_LIVING_DEATH, PROC_REF(check_death))
+
+/datum/component/omen/quirk/UnregisterFromParent()
+	UnregisterSignal(parent, list(COMSIG_ON_CARBON_SLIP, COMSIG_MOVABLE_MOVED, COMSIG_LIVING_DEATH))
+
+/datum/component/omen/quirk/check_death(mob/living/our_guy)
+	if(!iscarbon(our_guy))
+		our_guy.gib()
+		return
+
+	// Don't explode if buckled to a stasis bed
+	if(our_guy.buckled)
+		var/obj/machinery/stasis/stasis_bed = our_guy.buckled
+		if(istype(stasis_bed))
+			return
+
+	death_explode(our_guy)
+	var/mob/living/carbon/player = our_guy
+	player.spread_bodyparts()
+	player.spawn_gibs()
+
+	return

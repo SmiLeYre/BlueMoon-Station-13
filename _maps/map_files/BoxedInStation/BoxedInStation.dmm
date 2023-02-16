@@ -14468,7 +14468,7 @@
 /turf/open/floor/plasteel,
 /area/service/janitor)
 "hAp" = (
-/obj/machinery/suit_storage_unit/atmos,
+/obj/machinery/suit_storage_unit/industrial/atmos,
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
 "hAK" = (
@@ -28426,7 +28426,7 @@
 /obj/machinery/light{
 	light_color = "#cee5d2"
 	},
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
 	},
@@ -29485,7 +29485,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /turf/open/floor/plasteel,
 /area/engineering/main)
 "prh" = (
@@ -38211,7 +38211,7 @@
 /turf/open/floor/plasteel,
 /area/commons/fitness/pool)
 "tMN" = (
-/obj/machinery/suit_storage_unit/ce,
+/obj/machinery/suit_storage_unit/industrial/ce,
 /turf/open/floor/glass/reinforced,
 /area/command/heads_quarters/ce)
 "tMX" = (
@@ -40780,7 +40780,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/machinery/camera{
 	c_tag = "Engineering Power Storage"
 	},

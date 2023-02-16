@@ -1,6 +1,6 @@
 //Main code edits
 /datum/quirk/photographer
-	desc = "You carry your camera and personal photo album everywhere you go, and you're quicker at taking pictures."
+	desc = "Вы берете с собой камеру и фотоальбом, куда бы вы ни пошли. Также, вы быстрее фотографируете."
 
 /datum/quirk/photographer/on_spawn()
 	. = ..()
@@ -10,16 +10,16 @@
 	H.equip_to_slot(photo_album, ITEM_SLOT_BACKPACK)
 	photo_album.persistence_id = "personal_[H.mind.key]" // this is a persistent album, the ID is tied to the account's key to avoid tampering
 	photo_album.persistence_load()
-	photo_album.name = "[H.real_name]'s photo album"
+	photo_album.name = "Фотоальбом [H.real_name]"
 
 //Own stuff
 /datum/quirk/tough
-	name = "Tough"
-	desc = "Your body is abnormally enduring and can take 25% more damage."
+	name = "Стойкость"
+	desc = "Ваше аномально крепкое тело может вынести на 25% больше урона."
 	value = 3
-	medical_record_text = "Patient has an abnormally high capacity for injury."
-	gain_text = "<span class='notice'>You feel very sturdy.</span>"
-	lose_text = "<span class='notice'>You feel less sturdy.</span>"
+	medical_record_text = "Пациент продемонстрировал аномально высокую устойчивость к травмам."
+	gain_text = "<span class='notice'>Вы чувствуете крепость в мышцах.</span>"
+	lose_text = "<span class='notice'>Вы чувствуете себя менее крепким.</span>"
 
 /datum/quirk/tough/add()
 	quirk_holder.maxHealth *= 1.20
@@ -30,13 +30,13 @@
 	quirk_holder.maxHealth *= 0.909 //close enough
 
 /datum/quirk/ashresistance
-	name = "Ashen Resistance"
-	desc = "Your body is adapted to the burning sheets of ash that coat volcanic worlds, though the heavy downpours of silt will still tire you."
+	name = "Пепельная Устойчивость"
+	desc = "Ваше тело адаптировалось к пылающим покровам пепла, которые застилают вулканические миры, но это не значит, что вы не будете уставать."
 	value = 2 //Is not actually THAT good. Does not grant breathing and does stamina damage to the point you are unable to attack. Crippling on lavaland, but you'll survive. Is not a replacement for SEVA suits for this reason. Can be adjusted.
 	mob_trait = TRAIT_ASHRESISTANCE
-	medical_record_text = "Patient has an abnormally thick epidermis."
-	gain_text = "<span class='notice'>You feel resistant to burning brimstone.</span>"
-	lose_text = "<span class='notice'>You feel less as if your flesh is more flamamble.</span>"
+	medical_record_text = "У пациента аномально плотный эпидермис."
+	gain_text = "<span class='notice'>Вы чувствуете себя устойчивее против горящей серы.</span>"
+	lose_text = "<span class='notice'>Ваша плоть становится более легковоспламеняемой.</span>"
 
 /* --FALLBACK SYSTEM INCASE THE TRAIT FAILS TO WORK. Do NOT enable this without editing ash_storm.dm to deal stamina damage with ash immunity.
 /datum/quirk/ashresistance/add()
@@ -49,11 +49,11 @@
 */
 
 /datum/quirk/dominant_aura
-	name = "Dominant Aura"
-	desc = "Your mere presence is assertive enough to appear as powerful to other people, so much in fact that the weaker kind can't help but throw themselves at your feet at the snap of a finger."
+	name = "Аура Доминатора"
+	desc = "Ваша аура силы и превосходства настолько выразительна, что пассивы ничего не могут поделать, кроме как броситься вам в ноги по щелчку пальцев."
 	value = 1
-	gain_text = "<span class='notice'>You feel like making someone your pet.</span>"
-	lose_text = "<span class='notice'>You feel less assertive.</span>"
+	gain_text = "<span class='notice'>Вы хотите сделать кого-нибудь своим питомцем.</span>"
+	lose_text = "<span class='notice'>Вы чувствуете себя менее напористо.</span>"
 
 /datum/quirk/dominant_aura/add()
 	. = ..()
@@ -92,7 +92,7 @@
 	for(var/mob/living/carbon/human/sub in hearers(DOMINANT_DETECT_RANGE, quirk_holder))
 		if(!sub.has_quirk(/datum/quirk/well_trained) || (sub == quirk_holder))
 			continue
-		var/good_x = "pet"
+		var/good_x = "питомец"
 		switch(sub.gender)
 			if(MALE)
 				good_x = "мальчик"
@@ -123,20 +123,20 @@
 		TIMER_COOLDOWN_START(quirk_holder, COOLDOWN_DOMINANT_SNAP, DOMINANT_SNAP_COOLDOWN)
 
 /datum/quirk/arachnid
-	name = "Arachnid"
-	desc = "Your bodily anatomy allows you to spin webs and cocoons, even if you aren't an arachnid! (Note that this quirk does nothing for members of the arachnid species)"
+	name = "Арахнид"
+	desc = "Ваша анатомия позволяет вам плести паутину и коконы, будучи не арахнидом! (Учтите, что этот навык ничего не даёт расе арахнидов)"
 	value = 1
-	medical_record_text = "Patient has attempted to cover the room in webs, claiming to be \"making a nest\"."
+	medical_record_text = "Пациент попытался покрыть комнату паутиной, заявляя, что \"делает гнездо\"."
 	mob_trait = TRAIT_ARACHNID
-	gain_text = "<span class='notice'>You feel a strange sensation near your anus...</span>"
-	lose_text = "<span class='notice'>You feel like you can't spin webs anymore...</span>"
+	gain_text = "<span class='notice'>У вас появляется странное ощущение рядом с анусом...</span>"
+	lose_text = "<span class='notice'>Вы чувствуете, что больше не можете вить паутину...</span>"
 	processing_quirk = TRUE
 
 /datum/quirk/arachnid/add()
 	. = ..()
 	var/mob/living/carbon/human/H = quirk_holder
 	if(is_species(H,/datum/species/arachnid))
-		to_chat(H, "<span class='warning'>As an arachnid, this quirk does nothing for you, as these abilities are innate to your species.</span>")
+		to_chat(H, "<span class='warning'>Этот навык ничего не даёт арахнидам, так как является встроенным для расы.</span>")
 		return
 	var/datum/action/innate/spin_web/SW = new
 	var/datum/action/innate/spin_cocoon/SC = new
@@ -154,14 +154,14 @@
 	SW?.Remove(H)
 
 /datum/quirk/flutter
-	name = "Flutter"
-	desc = "You are able to move about freely in pressurized low-gravity environments be it through the use of wings, magic, or some other physiological nonsense."
+	name = "Парение"
+	desc = "Вы можете свободно двигаться в герметичной среде с низкой гравитацией при помощи крыльев, магии или другой физиологической чуши."
 	value = 1
 	mob_trait = TRAIT_FLUTTER
 
 /datum/quirk/cloth_eater
-	name = "Clothes Eater"
-	desc = "You can eat most apparel to gain a boost in mood, and to gain some nutrients. (Insects already have this.)"
+	name = "Пожиратель Одежды"
+	desc = "Вы можете съесть большинство одежды, чтобы получить прибавку к настроению и питательные вещества. (Насекомые владеют этим навыком.)"
 	value = 1
 	var/mood_category ="cloth_eaten"
 	mob_trait = TRAIT_CLOTH_EATER

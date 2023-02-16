@@ -86065,7 +86065,7 @@
 /turf/open/space,
 /area/engineering/atmospherics_engine)
 "jsx" = (
-/obj/machinery/suit_storage_unit/ce,
+/obj/machinery/suit_storage_unit/industrial/ce,
 /obj/machinery/airalarm{
 	dir = 8;
 	pixel_x = 24
@@ -92245,7 +92245,7 @@
 	},
 /area/service/electronic_marketing_den)
 "lxM" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/machinery/status_display/evac{
 	pixel_y = 32
 	},
@@ -108274,7 +108274,7 @@
 /obj/effect/turf_decal/stripes/end{
 	dir = 1
 	},
-/obj/machinery/suit_storage_unit/atmos,
+/obj/machinery/suit_storage_unit/industrial/atmos,
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
 "qZv" = (
@@ -123533,7 +123533,7 @@
 	name = "Station Intercom";
 	pixel_y = 26
 	},
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel,
 /area/engineering/storage)
@@ -123665,7 +123665,7 @@
 /turf/open/floor/wood,
 /area/command/blueshieldoffice)
 "wog" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/status_display/ai{
@@ -124029,7 +124029,7 @@
 /turf/open/floor/plating,
 /area/service/abandoned_gambling_den)
 "wvI" = (
-/obj/machinery/suit_storage_unit/atmos,
+/obj/machinery/suit_storage_unit/industrial/atmos,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/stripes/line{
 	dir = 8

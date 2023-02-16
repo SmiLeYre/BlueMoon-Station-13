@@ -1091,7 +1091,7 @@
 /turf/open/floor/plasteel,
 /area/maintenance/central)
 "aJy" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
@@ -4096,7 +4096,7 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
 	},
-/obj/machinery/suit_storage_unit/atmos,
+/obj/machinery/suit_storage_unit/industrial/atmos,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -13236,7 +13236,7 @@
 /turf/closed/wall/r_wall,
 /area/security/prison)
 "jBQ" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},
@@ -14972,7 +14972,7 @@
 /turf/open/floor/carpet,
 /area/hallway/primary/port/aft)
 "kOa" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},

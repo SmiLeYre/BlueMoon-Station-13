@@ -27,3 +27,5 @@
 
 ///Venue reagent requirement
 #define VENUE_BAR_MINIMUM_REAGENTS 10
+
+#define IS_EDIBLE(O) (O.GetComponent(/datum/component/edible))

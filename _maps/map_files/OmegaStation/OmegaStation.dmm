@@ -7714,7 +7714,7 @@
 /turf/open/floor/plasteel,
 /area/command/heads_quarters/ce)
 "aoo" = (
-/obj/machinery/suit_storage_unit/ce,
+/obj/machinery/suit_storage_unit/industrial/ce,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
@@ -9562,7 +9562,7 @@
 	pixel_x = 32
 	},
 /obj/effect/turf_decal/bot,
-/obj/machinery/suit_storage_unit/atmos,
+/obj/machinery/suit_storage_unit/industrial/atmos,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/poster/random{
 	pixel_y = 32
@@ -21178,7 +21178,7 @@
 /turf/open/floor/engine,
 /area/engineering/main)
 "aNa" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/item/radio/intercom{
 	name = "Station Intercom";
 	pixel_x = -26
@@ -21207,7 +21207,7 @@
 /turf/open/floor/plasteel,
 /area/engineering/main)
 "aNc" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/machinery/status_display{
 	pixel_y = -32
 	},

@@ -559,6 +559,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 
 /// Trait applied to [/datum/mind] to stop someone from using the cursed hot springs to polymorph more than once.
 #define TRAIT_HOT_SPRING_CURSED "hot_spring_cursed"
+/// Gibs on death and slips like ice.
+#define TRAIT_CURSED "cursed"
 
 /// Whether a spider's consumed this mob
 #define TRAIT_SPIDER_CONSUMED "spider_consumed"

@@ -752,7 +752,7 @@
 	light_color = LIGHT_COLOR_RED
 	circuit = /obj/item/circuitboard/computer/tarkon_driver
 	shuttleId = "tarkoff_driver"
-	possible_destinations = "tarkoff_driver_custom;port_tarkoff;whiteship_home"
+	possible_destinations = "tarkoff_driver_custom;port_tarkoff;whiteship_home;whiteship_lavaland"
 
 /obj/machinery/computer/camera_advanced/shuttle_docker/tarkon_driver
 	name = "Tarkov Driver Navigation Computer"
@@ -762,7 +762,7 @@
 	shuttleId = "tarkoff_driver"
 	lock_override = NONE
 	shuttlePortId = "tarkoff_driver_custom"
-	jumpto_ports = list("port_tarkoff" = 1, "whiteship_away" = 1, "whiteship_home" = 1, "whiteship_lavaland" = 1)
+	jumpto_ports = list("port_tarkoff" = 1, "whiteship_away" = 1, "whiteship_home" = 1)
 	view_range = 5.5
 	x_offset = 7
 	y_offset = 1
