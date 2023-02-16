@@ -32,6 +32,7 @@
 	unsuitable_atmos_damage = 5
 	gold_core_spawnable = NO_SPAWN
 	has_butt = TRUE
+	pixel_w = -8
 	var/based_icon = "male"
 	var/pose = FALSE
 	var/horny = FALSE
