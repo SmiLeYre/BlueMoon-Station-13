@@ -375,3 +375,4 @@
 /obj/item/clothing/suit/toggle/armor/hos/hos_formal/Initialize(mapload)
 	. = ..()
 	allowed = GLOB.security_wintercoat_allowed
+	
