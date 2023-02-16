@@ -47,10 +47,6 @@
 	else
 		icon_state = icon_dead
 
-	var/matrix/M = matrix()
-	M.SwapColor("#ffffff","[eyecolor]")
-	transform = M
-
 /datum/action/innate/beastsex
 	name = "Toggle Aroused"
 	desc = "Switch between horny and not horny."
@@ -74,9 +70,9 @@
 	var/mob/living/simple_animal/hostile/beastspirit/B = owner
 	B.pose = !B.pose
 	if(B.pose)
-		speed = -2
+		B.speed = -2
 	else
-		speed = 0
+		B.speed = 0
 	B.update_icon()
 
 /mob/living/simple_animal/hostile/beastspirit/Initialize()
@@ -148,18 +144,22 @@
 	var/mob/living/carbon/human/human_caster = caster
 	var/mob/living/shape = new shapeshift_type(caster.loc)
 	H = new(shape,src,human_caster)
-	H.name = human_caster.name
-	H.gender = human_caster.gender
-	H.based_icon = beast_gender
-	H.eyecolor = human_caster.left_eye_color
-	H.update_icon()
+	var/mob/living/simple_animal/hostile/beastspirit/BEAST = shape
+	BEAST.name = human_caster.name
+	BEAST.gender = human_caster.gender
+	BEAST.based_icon = beast_gender
+	BEAST.eyecolor = human_caster.left_eye_color
+	BEAST.update_icon()
+	var/icon/M = new(BEAST.icon)
+	M.SwapColor("#ffffff","[BEAST.eyecolor]")
+	BEAST.icon = M
 
 	if(organ_penis)
-		H.has_penis = TRUE
+		BEAST.has_penis = TRUE
 	if(organ_breasts)
-		H.has_breasts = TRUE
+		BEAST.has_breasts = TRUE
 	if(organ_vagina)
-		H.has_vagina = TRUE
+		BEAST.has_vagina = TRUE
 
 	clothes_req = NONE
 	mobs_whitelist = null
@@ -172,8 +172,8 @@
 
 
 /obj/effect/proc_holder/spell/targeted/shapeshift/beast/cast(list/targets, mob/user = usr)
-	if(!CHECK_MOBILITY(action_owner, MOBILITY_USE))
-		action_owner.visible_message(span_warning("You cannot transform while restrained!"))
+	if(!CHECK_MOBILITY(user, MOBILITY_USE))
+		user.visible_message(span_warning("You cannot transform while restrained!"))
 		return
 
 	if(!(locate(/obj/shapeshift_holder) in targets[1]))
