@@ -172,12 +172,12 @@
 
 
 /obj/effect/proc_holder/spell/targeted/shapeshift/beast/cast(list/targets, mob/user = usr)
-	if(!CHECK_MOBILITY(user, MOBILITY_USE))
-		user.visible_message(span_warning("You cannot transform while restrained!"))
-		return
-
 	if(!(locate(/obj/shapeshift_holder) in targets[1]))
 		if(!ishuman(user))
 			to_chat(user, "<span class='warning'>You need to be humanoid to be able to do this!</span>")
 			return
+	var/mob/living/carbon/human/HUMAN = user
+	if(!CHECK_MOBILITY(HUMAN, MOBILITY_USE))
+		HUMAN.visible_message(span_warning("You cannot transform while restrained!"))
+		return
 	return ..()
