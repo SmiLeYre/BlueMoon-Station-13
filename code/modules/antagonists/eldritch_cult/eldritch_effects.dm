@@ -108,6 +108,13 @@
 	pixel_x = -32 //So the big ol' 96x96 sprite shows up right
 	pixel_y = -32
 
+/// A 3x3 heretic rune. The kind heretics actually draw in game.
+/obj/effect/eldritch/huge
+	icon = 'icons/effects/96x96.dmi'
+	icon_state = "transmutation_rune"
+	pixel_x = -33 //So the big ol' 96x96 sprite shows up right
+	pixel_y = -32
+
 /**
  * #Reality smash tracker
  *

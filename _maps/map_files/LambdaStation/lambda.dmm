@@ -44650,7 +44650,7 @@
 /turf/open/floor/circuit/green,
 /area/science/robotics/mechbay)
 "bUF" = (
-/obj/machinery/suit_storage_unit/ce,
+/obj/machinery/suit_storage_unit/industrial/ce,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
@@ -48899,7 +48899,7 @@
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
 "cgF" = (
-/obj/machinery/suit_storage_unit/atmos,
+/obj/machinery/suit_storage_unit/industrial/atmos,
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
@@ -58887,7 +58887,7 @@
 /obj/structure/sign/warning/electricshock{
 	pixel_y = -32
 	},
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /turf/open/floor/plasteel,
 /area/engineering/storage_shared)
 "cKl" = (
@@ -65401,7 +65401,7 @@
 /obj/structure/sign/warning/electricshock{
 	pixel_y = 32
 	},
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -66161,7 +66161,7 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
 "iYm" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 26
 	},
@@ -66709,7 +66709,7 @@
 /turf/open/floor/plasteel,
 /area/engineering/break_room)
 "jZq" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/machinery/status_display/ai{
 	pixel_y = -32
 	},

@@ -325,7 +325,8 @@
 #define COMSIG_PROCESS_BORGCHARGER_OCCUPANT "living_charge"
 ///from base of mob/AltClickOn(): (atom/A)
 #define COMSIG_MOB_ALTCLICKON "mob_altclickon"
-
+///When a carbon slips. Called on /turf/open/handle_slip()
+#define COMSIG_ON_CARBON_SLIP "carbon_slip"
 //Gun signals
 ///When a gun is switched to automatic fire mode
 #define COMSIG_GUN_AUTOFIRE_SELECTED "gun_autofire_selected"

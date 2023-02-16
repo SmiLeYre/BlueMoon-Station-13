@@ -3310,7 +3310,7 @@
 /turf/open/floor/plasteel/freezer,
 /area/service/cafeteria)
 "ZD" = (
-/obj/machinery/suit_storage_unit/ce,
+/obj/machinery/suit_storage_unit/industrial/ce,
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
 "ZO" = (

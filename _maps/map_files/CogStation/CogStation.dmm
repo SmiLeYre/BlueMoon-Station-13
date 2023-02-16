@@ -18711,7 +18711,7 @@
 /turf/open/floor/plasteel,
 /area/security/brig)
 "aQd" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/machinery/light/small{
 	dir = 8
 	},
@@ -18815,7 +18815,7 @@
 /turf/closed/wall/r_wall,
 /area/engineering/main)
 "aQq" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
 	dir = 4
 	},
@@ -28157,7 +28157,7 @@
 /turf/open/floor/plasteel,
 /area/ai_monitored/turret_protected/ai)
 "bmw" = (
-/obj/machinery/suit_storage_unit/ce,
+/obj/machinery/suit_storage_unit/industrial/ce,
 /obj/effect/turf_decal/tile/yellow,
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
@@ -52042,7 +52042,7 @@
 /area/medical/chemistry)
 "cmL" = (
 /obj/machinery/light,
-/obj/machinery/suit_storage_unit/atmos,
+/obj/machinery/suit_storage_unit/industrial/atmos,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
@@ -65674,7 +65674,7 @@
 /turf/open/floor/plasteel,
 /area/hallway/primary/aft)
 "cMH" = (
-/obj/machinery/suit_storage_unit/atmos,
+/obj/machinery/suit_storage_unit/industrial/atmos,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},

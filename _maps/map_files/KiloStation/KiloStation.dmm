@@ -19012,7 +19012,7 @@
 /turf/open/floor/plasteel/dark,
 /area/hallway/primary/aft)
 "aGf" = (
-/obj/machinery/suit_storage_unit/atmos,
+/obj/machinery/suit_storage_unit/industrial/atmos,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
@@ -20102,7 +20102,7 @@
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
 "aHT" = (
-/obj/machinery/suit_storage_unit/atmos,
+/obj/machinery/suit_storage_unit/industrial/atmos,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
@@ -63628,7 +63628,7 @@
 /turf/open/floor/plasteel,
 /area/command/heads_quarters/ce)
 "bZg" = (
-/obj/machinery/suit_storage_unit/ce,
+/obj/machinery/suit_storage_unit/industrial/ce,
 /obj/effect/turf_decal/delivery,
 /obj/machinery/airalarm{
 	dir = 8;
@@ -63784,7 +63784,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/neutral,
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /turf/open/floor/plasteel/dark,
 /area/engineering/main)
 "bZr" = (
@@ -63801,7 +63801,7 @@
 /turf/open/floor/plasteel/dark/corner,
 /area/hallway/primary/starboard)
 "bZt" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/effect/turf_decal/delivery,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
@@ -63816,7 +63816,7 @@
 /turf/open/floor/plasteel/dark,
 /area/engineering/main)
 "bZu" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/effect/turf_decal/delivery,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8

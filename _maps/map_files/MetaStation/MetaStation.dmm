@@ -47183,7 +47183,7 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
 	},
-/obj/machinery/suit_storage_unit/atmos,
+/obj/machinery/suit_storage_unit/industrial/atmos,
 /turf/open/floor/plasteel/dark/corner,
 /area/engineering/atmos)
 "dtl" = (
@@ -54374,7 +54374,7 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
 	},
-/obj/machinery/suit_storage_unit/atmos,
+/obj/machinery/suit_storage_unit/industrial/atmos,
 /turf/open/floor/plasteel/dark/corner,
 /area/engineering/atmos)
 "hdR" = (
@@ -70896,7 +70896,7 @@
 /turf/open/floor/plasteel,
 /area/service/hydroponics/garden)
 "pUr" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/effect/turf_decal/bot{
 	dir = 1
 	},
@@ -84297,7 +84297,7 @@
 /obj/machinery/computer/security/telescreen/entertainment{
 	pixel_y = -29
 	},
-/obj/machinery/suit_storage_unit/ce,
+/obj/machinery/suit_storage_unit/industrial/ce,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -86110,7 +86110,7 @@
 /obj/machinery/camera{
 	c_tag = "Engineering - Storage"
 	},
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/effect/turf_decal/bot{
 	dir = 1
 	},

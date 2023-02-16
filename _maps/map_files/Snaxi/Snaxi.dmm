@@ -16047,7 +16047,7 @@
 /turf/open/floor/plasteel,
 /area/service/kitchen)
 "cYq" = (
-/obj/machinery/suit_storage_unit/atmos,
+/obj/machinery/suit_storage_unit/industrial/atmos,
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
 "cYw" = (
@@ -18270,7 +18270,7 @@
 /area/icemoon/surface/outdoors)
 "eBl" = (
 /obj/structure/cable,
-/obj/machinery/suit_storage_unit/ce,
+/obj/machinery/suit_storage_unit/industrial/ce,
 /obj/machinery/power/apc/highcap/five_k{
 	areastring = "/area/command/heads_quarters/ce";
 	name = "CE Office APC";
@@ -29561,7 +29561,7 @@
 /turf/closed/wall/r_wall,
 /area/ai_monitored/turret_protected/aisat/service)
 "lWi" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /turf/open/floor/plating,
 /area/construction/storage_wing)
 "lWo" = (
@@ -34208,7 +34208,7 @@
 /turf/open/floor/plasteel,
 /area/command/heads_quarters/ce)
 "oUs" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /turf/open/floor/plasteel,
 /area/engineering/main)
 "oUQ" = (

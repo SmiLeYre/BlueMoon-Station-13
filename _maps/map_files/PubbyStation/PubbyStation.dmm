@@ -40522,7 +40522,7 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
 	},
-/obj/machinery/suit_storage_unit/atmos,
+/obj/machinery/suit_storage_unit/industrial/atmos,
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},
@@ -40530,7 +40530,7 @@
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
 "bSe" = (
-/obj/machinery/suit_storage_unit/atmos,
+/obj/machinery/suit_storage_unit/industrial/atmos,
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
 	},
@@ -42155,7 +42155,7 @@
 /turf/open/floor/plasteel/dark,
 /area/engineering/engine_smes)
 "bVN" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/effect/turf_decal/tile/yellow,
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
@@ -42710,7 +42710,7 @@
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
 "bXf" = (
-/obj/machinery/suit_storage_unit/ce,
+/obj/machinery/suit_storage_unit/industrial/ce,
 /obj/effect/turf_decal/tile/yellow{
 	dir = 1
 	},

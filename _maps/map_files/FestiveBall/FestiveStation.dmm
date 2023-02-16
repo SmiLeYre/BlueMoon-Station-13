@@ -8482,14 +8482,14 @@
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
 "avB" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/structure/window/reinforced{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/engineering/main)
 "avC" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/structure/window/reinforced{
 	dir = 1
 	},
@@ -53681,7 +53681,7 @@
 /turf/open/floor/carpet/blue,
 /area/commons/cryopod)
 "fGL" = (
-/obj/machinery/suit_storage_unit/ce,
+/obj/machinery/suit_storage_unit/industrial/ce,
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},

@@ -43,7 +43,10 @@ mob/living
 	stop_automated_movement = 1
 	speed = -5
 	turns_per_move = 3
-	pull_force = MOVE_FORCE_OVERPOWERING
+	move_force = MOVE_FORCE_VERY_STRONG
+	move_resist = MOVE_FORCE_VERY_STRONG
+	pull_force = MOVE_FORCE_VERY_STRONG
+	a_intent = INTENT_HARM // Сука.
 
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat)
 

@@ -58,4 +58,4 @@
 
 /obj/item/paper/crumpled/fluff/tarkoff/prisoner
 	name = "Кровавая Записка"
-	info = "<font colour=red>Я слы      шу, как он  и пол   заю  т в кан      аве.<br>О н по  ет скре          жет ан  ие.<br><br><br>О н  и и   дут.</font>"
+	info = "<span style=color:crimson><b>Я слы шу, как он и пол заю т в  кан аве.<br>О н по ет  скре жет ан ие.<br><br><br>О ни    и дут.</b></span>"

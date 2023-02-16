@@ -9882,7 +9882,7 @@
 /turf/open/floor/plasteel,
 /area/security/checkpoint/science/research)
 "dvU" = (
-/obj/machinery/suit_storage_unit/atmos,
+/obj/machinery/suit_storage_unit/industrial/atmos,
 /obj/machinery/atmospherics/pipe/simple/general/hidden,
 /obj/effect/turf_decal/tile/yellow,
 /turf/open/floor/plasteel,
@@ -34605,7 +34605,7 @@
 /turf/open/floor/plasteel,
 /area/engineering/gravity_generator)
 "lYG" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/effect/turf_decal/tile/yellow{
 	dir = 1
 	},
@@ -43727,7 +43727,7 @@
 /turf/open/floor/plasteel/dark,
 /area/security/brig)
 "pho" = (
-/obj/machinery/suit_storage_unit/ce,
+/obj/machinery/suit_storage_unit/industrial/ce,
 /obj/effect/turf_decal/tile/yellow{
 	dir = 1
 	},
@@ -58767,7 +58767,7 @@
 	},
 /area/command/heads_quarters/cmo)
 "upP" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/effect/turf_decal/tile/yellow{
 	dir = 1
 	},
@@ -64618,7 +64618,7 @@
 /turf/open/floor/plasteel,
 /area/commons/storage/auxiliary)
 "wmG" = (
-/obj/machinery/suit_storage_unit/atmos,
+/obj/machinery/suit_storage_unit/industrial/atmos,
 /obj/machinery/atmospherics/pipe/simple/general/hidden,
 /obj/machinery/light/small{
 	dir = 4
