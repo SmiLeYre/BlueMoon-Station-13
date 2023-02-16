@@ -37,6 +37,7 @@
 	var/pose = FALSE
 	var/horny = FALSE
 	var/eyecolor
+	var/beast_type = ""
 
 /mob/living/simple_animal/hostile/beastspirit/ComponentInitialize()
 	. = ..()
@@ -45,12 +46,37 @@
 
 /mob/living/simple_animal/hostile/beastspirit/update_icon()
 	. = ..()
-	icon_living = "[horny ? "h_" : ""][based_icon][pose ? "-crouch" : ""]"
-	icon_dead = "[based_icon]-dead"
+	icon_living = "[beast_type][horny ? "h_" : ""][based_icon][pose ? "-crouch" : ""]"
+	icon_dead = "[beast_type][based_icon]-dead"
 	if(stat != DEAD)
 		icon_state = icon_living
 	else
 		icon_state = icon_dead
+
+/datum/action/innate/beastchange
+	name = "Change Appearance"
+	desc = "Change your feral appearance."
+	icon_icon = 'modular_bluemoon/vagabond/icons/mob/actions/misc_actions.dmi'
+	button_icon_state = "change"
+
+/datum/action/innate/beastchange/Activate()
+	. = ..()
+	var/obj/effect/proc_holder/spell/targeted/shapeshift/beast/B = locate() in owner
+	if(!B)
+		return
+	var/appearances = list("Default", "Black", "White", "Skull")
+	var/skin = input(user, "Pick appearance for your beast", "Change Appearance") as null|anything in appearances
+	switch(skin)
+		if("Default")
+			B.beast_type = ""
+		if("Black")
+			B.beast_type = "black_"
+		if("White")
+			B.beast_type = "white_"
+		if("Skull")
+			B.beast_type = "skull_"
+	if(skin)
+		to_chat(owner, "<span class='notice'>Your inner Beast's skin now will be [skin].</span>"
 
 /datum/action/innate/beastsex
 	name = "Toggle Aroused"
@@ -64,6 +90,12 @@
 	B.horny = !B.horny
 	B.update_icon()
 
+/datum/movespeed_modifier/beastspirit
+	multiplicative_slowdown = -2.5
+	priority = 500
+	complex_calculation = TRUE
+	absolute_max_tiles_per_second = 7
+
 /datum/action/innate/beastpose
 	name = "Toggle Pose"
 	desc = "Switch between poses."
@@ -75,9 +107,9 @@
 	var/mob/living/simple_animal/hostile/beastspirit/B = owner
 	B.pose = !B.pose
 	if(B.pose)
-		B.speed = -2
+		B.add_movespeed_modifier(/datum/movespeed_modifier/beastspirit)
 	else
-		B.speed = 0
+		B.remove_movespeed_modifier(/datum/movespeed_modifier/beastspirit)
 	B.update_icon()
 
 /mob/living/simple_animal/hostile/beastspirit/Initialize()
@@ -103,6 +135,9 @@
 /datum/quirk/beastspirit/post_add()
 	var/obj/effect/proc_holder/spell/targeted/shapeshift/beast/B = new
 	quirk_holder.AddSpell(B)
+	var/datum/action/innate/beastchange/change = new
+	change.Grant(quirk_holder)
+	change.owner = quirk_holder
 
 /datum/quirk/beastspirit/remove()
 	var/obj/effect/proc_holder/spell/targeted/shapeshift/beast/B = locate() in quirk_holder
@@ -118,6 +153,7 @@
 	action_icon_state = "beast"
 	shapeshift_type = /mob/living/simple_animal/hostile/beastspirit
 	var/beast_gender = "male"
+	var/beast_type = ""
 
 /obj/effect/proc_holder/spell/targeted/shapeshift/beast/Shapeshift(mob/living/caster)
 	var/obj/shapeshift_holder/H = locate() in caster
@@ -154,6 +190,7 @@
 	H = new(shape,src,human_caster)
 	var/mob/living/simple_animal/hostile/beastspirit/BEAST = shape
 	BEAST.name = human_caster.name
+	BEAST.beast_type = beast_type
 	BEAST.gender = human_caster.gender
 	BEAST.based_icon = beast_gender
 	BEAST.eyecolor = "#[human_caster.left_eye_color]"
