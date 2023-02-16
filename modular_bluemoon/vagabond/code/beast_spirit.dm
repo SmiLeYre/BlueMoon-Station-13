@@ -38,6 +38,11 @@
 	var/horny = FALSE
 	var/eyecolor
 
+/mob/living/simple_animal/hostile/beastspirit/ComponentInitialize()
+	. = ..()
+	
+	AddElement(/datum/element/flavor_text, _name = "OOC Notes", _addendum = "Put information on ERP/vore/lewd-related preferences here. THIS SHOULD NOT CONTAIN REGULAR FLAVORTEXT!!", _save_key = "ooc_notes", _examine_no_preview = TRUE)
+
 /mob/living/simple_animal/hostile/beastspirit/update_icon()
 	. = ..()
 	icon_living = "[horny ? "h_" : ""][based_icon][pose ? "-crouch" : ""]"
@@ -142,16 +147,19 @@
 	caster.shake_animation(2)
 
 	var/mob/living/carbon/human/human_caster = caster
+	for(var/obj/item/I in caster)
+		if(!istype(I, /obj/item/storage))
+			caster.dropItemToGround(I, TRUE)
 	var/mob/living/shape = new shapeshift_type(caster.loc)
 	H = new(shape,src,human_caster)
 	var/mob/living/simple_animal/hostile/beastspirit/BEAST = shape
 	BEAST.name = human_caster.name
 	BEAST.gender = human_caster.gender
 	BEAST.based_icon = beast_gender
-	BEAST.eyecolor = human_caster.left_eye_color
+	BEAST.eyecolor = "#[human_caster.left_eye_color]"
 	BEAST.update_icon()
 	var/icon/M = new(BEAST.icon)
-	M.SwapColor("#ffffff","[BEAST.eyecolor]")
+	M.SwapColor("#ffffff",BEAST.eyecolor)
 	BEAST.icon = M
 
 	if(organ_penis)
