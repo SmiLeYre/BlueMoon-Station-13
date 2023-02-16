@@ -36,6 +36,7 @@
 	var/based_icon = "male"
 	var/pose = FALSE
 	var/horny = FALSE
+	var/eyecolor
 
 /mob/living/simple_animal/hostile/beastspirit/update_icon()
 	. = ..()
@@ -45,6 +46,10 @@
 		icon_state = icon_living
 	else
 		icon_state = icon_dead
+
+	var/matrix/M = matrix()
+	M.SwapColor("#ffffff","[eyecolor]")
+	transform = M
 
 /datum/action/innate/beastsex
 	name = "Toggle Aroused"
@@ -146,13 +151,15 @@
 	H.name = human_caster.name
 	H.gender = human_caster.gender
 	H.based_icon = beast_gender
+	H.eyecolor = human_caster.left_eye_color
+	H.update_icon()
 
 	if(organ_penis)
 		H.has_penis = TRUE
 	if(organ_breasts)
-		has_breasts = TRUE
+		H.has_breasts = TRUE
 	if(organ_vagina)
-		has_vagina = TRUE
+		H.has_vagina = TRUE
 
 	clothes_req = NONE
 	mobs_whitelist = null
