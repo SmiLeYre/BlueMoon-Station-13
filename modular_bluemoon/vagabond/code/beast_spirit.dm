@@ -61,7 +61,7 @@
 
 /datum/action/innate/beastchange/Activate()
 	. = ..()
-	var/obj/effect/proc_holder/spell/targeted/shapeshift/beast/B = locate() in owner.actions
+	var/obj/effect/proc_holder/spell/targeted/shapeshift/beast/B = locate() in owner.mob_spell_list
 	if(!B)
 		return
 	var/appearances = list("Default", "Black", "White", "Skull")
@@ -140,7 +140,7 @@
 	change.owner = quirk_holder
 
 /datum/quirk/beastspirit/remove()
-	var/obj/effect/proc_holder/spell/targeted/shapeshift/beast/B = locate() in quirk_holder
+	var/obj/effect/proc_holder/spell/targeted/shapeshift/beast/B = locate() in quirk_holder.mob_spell_list
 	quirk_holder.RemoveSpell(B)
 
 /obj/effect/proc_holder/spell/targeted/shapeshift/beast
