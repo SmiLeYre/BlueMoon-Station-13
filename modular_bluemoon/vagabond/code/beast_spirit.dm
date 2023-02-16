@@ -40,7 +40,7 @@
 
 /mob/living/simple_animal/hostile/beastspirit/ComponentInitialize()
 	. = ..()
-	
+
 	AddElement(/datum/element/flavor_text, _name = "OOC Notes", _addendum = "Put information on ERP/vore/lewd-related preferences here. THIS SHOULD NOT CONTAIN REGULAR FLAVORTEXT!!", _save_key = "ooc_notes", _examine_no_preview = TRUE)
 
 /mob/living/simple_animal/hostile/beastspirit/update_icon()
@@ -162,12 +162,18 @@
 	M.SwapColor("#ffffff",BEAST.eyecolor)
 	BEAST.icon = M
 
-	if(organ_penis)
-		BEAST.has_penis = TRUE
-	if(organ_breasts)
-		BEAST.has_breasts = TRUE
-	if(organ_vagina)
-		BEAST.has_vagina = TRUE
+	switch(beast_gender)
+		if("male")
+			BEAST.has_penis = TRUE
+		if("female")
+			BEAST.has_breasts = TRUE
+			BEAST.has_vagina = TRUE
+		if("futa")
+			if(organ_vagina)
+				BEAST.has_vagina = TRUE
+			BEAST.has_breasts = TRUE
+			BEAST.has_penis = TRUE
+
 
 	clothes_req = NONE
 	mobs_whitelist = null
