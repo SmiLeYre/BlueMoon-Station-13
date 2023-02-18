@@ -58,23 +58,40 @@
 	desc = "Change your feral appearance."
 	icon_icon = 'modular_bluemoon/vagabond/icons/mob/actions/misc_actions.dmi'
 	button_icon_state = "change"
+	var/obj/effect/proc_holder/spell/targeted/shapeshift/beast/B
+
+/datum/action/innate/beastchange/Grant(mob/M)
+	. = ..()
+	B = locate() in owner.mob_spell_list
 
 /datum/action/innate/beastchange/Activate()
 	. = ..()
-	var/obj/effect/proc_holder/spell/targeted/shapeshift/beast/B = locate() in owner.mob_spell_list
 	if(!B)
 		return
-	var/appearances = list("Default", "Black", "White", "Skull")
+	var/appearances = list("Default", "Black", "White", "Skull", "Werecat", "Panther", "Garfield")
 	var/skin = input(owner, "Pick appearance for your beast", "Change Appearance") as null|anything in appearances
 	switch(skin)
 		if("Default")
 			B.beast_type = ""
+			B.beast_sound = 'modular_bluemoon/vagabond/sound/wolf.ogg'
 		if("Black")
 			B.beast_type = "black_"
+			B.beast_sound = 'modular_bluemoon/vagabond/sound/wolf.ogg'
 		if("White")
 			B.beast_type = "white_"
+			B.beast_sound = 'modular_bluemoon/vagabond/sound/wolf.ogg'
 		if("Skull")
 			B.beast_type = "skull_"
+			B.beast_sound = 'modular_bluemoon/vagabond/sound/wolf.ogg'
+		if("Werecat")
+			B.beast_type = "werecat_"
+			B.beast_sound = 'modular_bluemoon/vagabond/sound/cat.ogg'
+		if("Panther")
+			B.beast_type = "panther_"
+			B.beast_sound = 'modular_bluemoon/vagabond/sound/cat.ogg'
+		if("Garfield")
+			B.beast_type = "garfield_"
+			B.beast_sound = 'modular_bluemoon/vagabond/sound/cat.ogg'
 	if(skin)
 		to_chat(owner, "<span class='notice'>Your inner Beast's skin now will be [skin].</span>")
 
@@ -125,7 +142,7 @@
 
 /datum/quirk/beastspirit
 	name = "Beast Spirit"
-	desc = "Your soul is now under control of your beast patron. Do not allow the anger to unleash your inner animal."
+	desc = "Your soul is now under control of your beast patron. Do not allow the anger to unleash your inner animal. <b>NOTE: Can create some issues with Werewolf quirk because of the same functional.</b>"
 	value = 2
 	mob_trait = TRAIT_BEASTSPIRIT
 	gain_text = span_notice("You've gained acceptance of your inner beast.")
@@ -154,6 +171,7 @@
 	shapeshift_type = /mob/living/simple_animal/hostile/beastspirit
 	var/beast_gender = "male"
 	var/beast_type = ""
+	var/beast_sound = 'modular_bluemoon/vagabond/sound/wolf.ogg'
 
 /obj/effect/proc_holder/spell/targeted/shapeshift/beast/Shapeshift(mob/living/caster)
 	var/obj/shapeshift_holder/H = locate() in caster
@@ -181,7 +199,13 @@
 	caster.visible_message(span_danger(toggle_message))
 
 	caster.shake_animation(2)
-	caster.Stun(50)
+	caster.Stun(30)
+
+	playsound(caster, 'modular_bluemoon/vagabond/sound/transform.ogg', 50, 1, -1)
+
+	sleep(30)
+
+	playsound(caster, beast_sound, 50, 1, -1)
 
 	var/mob/living/carbon/human/human_caster = caster
 	for(var/obj/item/I in caster)
