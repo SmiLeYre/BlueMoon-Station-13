@@ -22,7 +22,7 @@
 	attack_verb_continuous = "claws"
 	maxHealth = 300
 	health = 300
-	obj_damage = 20
+	obj_damage = 25
 	armour_penetration = 0
 	melee_damage_lower = 20
 	melee_damage_upper = 25
@@ -113,7 +113,7 @@
 	absolute_max_tiles_per_second = 7
 
 /datum/movespeed_modifier/beastspirit_main
-	multiplicative_slowdown = -1
+	multiplicative_slowdown = -1.5
 	priority = 500
 	complex_calculation = TRUE
 	absolute_max_tiles_per_second = 7
@@ -147,7 +147,7 @@
 
 /datum/quirk/beastspirit
 	name = "Beast Spirit"
-	desc = "Your soul is now under control of your beast patron. Do not allow the anger to unleash your inner animal. <b>NOTE: Can create some issues with Werewolf quirk because of the same functional.</b>"
+	desc = "Your soul is now under control of your beast patron. Do not allow the anger to unleash your inner animal. <b>NOTE: This can create some issues with Werewolf quirk because of the same functional.</b>"
 	value = 2
 	mob_trait = TRAIT_BEASTSPIRIT
 	gain_text = span_notice("You've gained acceptance of your inner beast.")
