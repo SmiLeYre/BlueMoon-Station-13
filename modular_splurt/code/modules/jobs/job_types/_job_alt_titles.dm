@@ -80,7 +80,9 @@
 		"Cybersun Industries Specialist",
 		"CEO of Sex",
 		"Sex Research Director",
-		"Research Manager"
+		"Research Manager",
+		"Magos",
+		"Magos Biologis"
 	)
 	LAZYADD(alt_titles, extra_titles)
 	. = ..()
@@ -118,7 +120,8 @@
 		"Hazardous Material Operator",
 		"Junior Engineer",
 		"Engi-Slut",
-		"Apprentice Engineer"
+		"Apprentice Engineer",
+		"Techpriest Enginseer"
 	)
 	LAZYADD(alt_titles, extra_titles)
 	. = ..()
@@ -179,7 +182,9 @@
 		"Nun",
 		"Tiger Cooperative Disciple",
 		"Keeper of Cum",
-		"Counselor"
+		"Counselor",
+		"Techpriest",
+		"Syndicate Techpriest"
 	)
 	LAZYADD(alt_titles, extra_titles)
 	. = ..()
@@ -265,7 +270,8 @@
 		"Droid Mechanic",
 		"Borgs Slut",
 		"Borgs Raper",
-		"Robo-Slut"
+		"Robo-Slut",
+		"Techpriest Biologis"
 	)
 	LAZYADD(alt_titles, extra_titles)
 	. = ..()

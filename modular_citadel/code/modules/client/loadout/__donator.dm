@@ -47,7 +47,7 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/choice_beacon/box/carpet
 	ckeywhitelist = list()
-	donator_group_id = DONATOR_GROUP_TIER_1
+	donator_group_id = DONATOR_GROUP_TIER_1	
 
 /datum/gear/donator/chameleon_bedsheet
 	name = "Chameleon Bedsheet"
@@ -55,6 +55,13 @@
 	path = /obj/item/bedsheet/chameleon
 	ckeywhitelist = list()
 	donator_group_id = DONATOR_GROUP_TIER_1
+	
+/datum/gear/donator/syndicate
+	name = "Syndicate's Tactical Turtleneck"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/syndicate
+	ckeywhitelist = list()
+	donator_group_id = DONATOR_GROUP_TIER_1	
 
 /datum/gear/donator/donortestingbikehorn
 	name = "Donor item testing bikehorn"
