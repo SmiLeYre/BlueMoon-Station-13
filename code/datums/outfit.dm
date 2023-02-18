@@ -85,6 +85,8 @@
 	/// Internals box. Will be inserted at the start of backpack_contents
 	var/box
 
+	var/id_trim
+
 	/**
 	  * extra types for chameleon outfit changes, mostly guns
 	  *

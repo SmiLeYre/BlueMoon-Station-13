@@ -134,6 +134,14 @@
 	toolspeed = 0.25
 	random_color = FALSE
 
+/obj/item/wirecutters/power/syndicate
+	name = "Syndicate jaws of life"
+	desc = "A pocket sized re-engineered copy of Nanotrasen's standard jaws of life. Can be used to force open airlocks in its crowbar configuration."
+	icon = 'icons/obj/tools.dmi'
+	icon_state = "jaws_syndie_cutter"
+	item_state = "jawsoflife"
+	toolspeed = 0.20
+
 /obj/item/wirecutters/power/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] is wrapping \the [src] around [user.p_their()] neck. It looks like [user.p_theyre()] trying to rip [user.p_their()] head off!</span>")
 	playsound(loc, 'sound/items/jaws_cut.ogg', 50, 1, -1)

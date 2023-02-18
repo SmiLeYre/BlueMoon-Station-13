@@ -49,46 +49,47 @@
 	name = "Elephant Graveyard"
 	icon_state = "green"
 
-/area/ruin/lavaland/unpowered/syndicate_lava_base
-	name = "Secret Base"
+// Deep Space One. Bluemoon.
+/area/ruin/lavaland/unpowered/deepspaceone
+	name = "Secret Syndicate Base"
 	icon_state = "dk_yellow"
 	ambientsounds = HIGHSEC
 
-/area/ruin/lavaland/unpowered/syndicate_lava_base/engineering
-	name = "Syndicate Lavaland Engineering"
+/area/ruin/lavaland/unpowered/deepspaceone/engineering
+	name = "DS-1 'Dune' | Engineering"
 
-/area/ruin/lavaland/unpowered/syndicate_lava_base/medbay
-	name = "Syndicate Lavaland Medbay"
+/area/ruin/lavaland/unpowered/deepspaceone/medbay
+	name = "DS-1 'Dune' | Medbay"
 
-/area/ruin/lavaland/unpowered/syndicate_lava_base/arrivals
-	name = "Syndicate Lavaland Arrivals"
+/area/ruin/lavaland/unpowered/deepspaceone/arrivals
+	name = "DS-1 'Dune' | Arrivals"
 
-/area/ruin/lavaland/unpowered/syndicate_lava_base/bar
-	name = "Syndicate Lavaland Bar"
+/area/ruin/lavaland/unpowered/deepspaceone/bar
+	name = "DS-1 'Dune' | Bar"
 
-/area/ruin/lavaland/unpowered/syndicate_lava_base/main
-	name = "Syndicate Lavaland Primary Hallway"
+/area/ruin/lavaland/unpowered/deepspaceone/main
+	name = "DS-1 'Dune' | Primary Hallway"
 
-/area/ruin/lavaland/unpowered/syndicate_lava_base/cargo
-	name = "Syndicate Lavaland Cargo Bay"
+/area/ruin/lavaland/unpowered/deepspaceone/cargo
+	name = "DS-1 'Dune' | Cargo Bay"
 
-/area/ruin/lavaland/unpowered/syndicate_lava_base/chemistry
-	name = "Syndicate Lavaland Chemistry"
+/area/ruin/lavaland/unpowered/deepspaceone/chemistry
+	name = "DS-1 'Dune' | Chemistry"
 
-/area/ruin/lavaland/unpowered/syndicate_lava_base/virology
-	name = "Syndicate Lavaland Virology"
+/area/ruin/lavaland/unpowered/deepspaceone/virology
+	name = "DS-1 'Dune' | Virology"
 
-/area/ruin/lavaland/unpowered/syndicate_lava_base/testlab
-	name = "Syndicate Lavaland Experimentation Lab"
+/area/ruin/lavaland/unpowered/deepspaceone/testlab
+	name = "DS-1 'Dune' | Experimentation Lab"
 
-/area/ruin/lavaland/unpowered/syndicate_lava_base/dormitories
-	name = "Syndicate Lavaland Dormitories"
+/area/ruin/lavaland/unpowered/deepspaceone/dormitories
+	name = "DS-1 'Dune' | Dormitories"
 
-/area/ruin/lavaland/unpowered/syndicate_lava_base/telecomms
-	name = "Syndicate Lavaland Telecommunications"
+/area/ruin/lavaland/unpowered/deepspaceone/telecomms
+	name = "DS-1 'Dune' | Telecommunications"
 
-/area/ruin/lavaland/unpowered/syndicate_lava_base/circuits
-	name = "Syndicate Lavaland Circuit Lab"
+/area/ruin/lavaland/unpowered/deepspaceone/circuits
+	name = "DS-1 'Dune' | Circuit Lab"
 
 
 //Xeno Nest

@@ -11,6 +11,22 @@
 	var/obj/item/extinguisher/stored_extinguisher
 	var/opened = FALSE
 
+/obj/structure/extinguisher_cabinet/directional/north //Pixel offsets get overwritten on New()
+	dir = SOUTH
+	pixel_y = 29
+
+/obj/structure/extinguisher_cabinet/directional/south
+	dir = NORTH
+	pixel_y = -29
+
+/obj/structure/extinguisher_cabinet/directional/east
+	dir = WEST
+	pixel_x = 29
+
+/obj/structure/extinguisher_cabinet/directional/west
+	dir = EAST
+	pixel_x = -29
+
 /obj/structure/extinguisher_cabinet/Initialize(mapload, ndir, building)
 	. = ..()
 	if(building)
@@ -115,12 +131,18 @@
 		update_icon()
 
 /obj/structure/extinguisher_cabinet/update_icon_state()
-	if(!opened)
-		icon_state = "extinguisher_closed"
+	if(!opened && istype(stored_extinguisher, /obj/item/extinguisher))
+		icon_state = "extinguisher_standard_closed"
+	if(!opened && istype(stored_extinguisher, /obj/item/extinguisher/mini))
+		icon_state = "extinguisher_mini_closed"
+	if(!opened && istype(stored_extinguisher, /obj/item/extinguisher/advanced))
+		icon_state = "extinguisher_advanced_closed"
 		return
 	if(stored_extinguisher)
 		if(istype(stored_extinguisher, /obj/item/extinguisher/mini))
 			icon_state = "extinguisher_mini"
+		else if(istype(stored_extinguisher, /obj/item/extinguisher/advanced))
+			icon_state = "extinguisher_advanced_open"
 		else
 			icon_state = "extinguisher_full"
 	else

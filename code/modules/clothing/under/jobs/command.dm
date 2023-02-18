@@ -7,6 +7,10 @@
 	sensor_mode = SENSOR_COORDS
 	sensor_flags = NONE
 
+/obj/item/clothing/under/rank/captain/utility/syndicate
+	armor = list(MELEE = 10, BULLET = 5, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 50, RAD = 0, FIRE = 50, ACID = 40, WOUND = 10)
+	has_sensor = NO_SENSORS
+
 /obj/item/clothing/under/rank/captain/util
 	name = "command utility uniform"
 	desc = "A utility uniform for command personnel."

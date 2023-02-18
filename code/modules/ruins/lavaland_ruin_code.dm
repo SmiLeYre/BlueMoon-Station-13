@@ -187,3 +187,24 @@
 
 /obj/item/gps/internal/lavaland_syndicate_base
 	gpstag = "Encrypted Signal"
+
+/obj/item/radio/headset/ds1
+	name = "DS1 Headset"
+	freerange = TRUE
+	freqlock = TRUE
+	keyslot = new /obj/item/encryptionkey/headset_syndicate/ds1
+
+/obj/item/radio/headset/ds2
+	name = "DS2 Headset"
+	freerange = TRUE
+	freqlock = TRUE
+	keyslot = new /obj/item/encryptionkey/headset_syndicate/ds2
+
+/obj/item/radio/headset/ds2/command
+	name = "DS2 Command Headset"
+	desc = "A commanding headset to gather your underlings. Protects the ears from flashbangs."
+	command = TRUE
+
+/obj/item/radio/headset/ds2/comms
+	keyslot = new /obj/item/encryptionkey/headset_syndicate/ds2
+	keyslot2 = new /obj/item/encryptionkey/headset_syndicate/ds1

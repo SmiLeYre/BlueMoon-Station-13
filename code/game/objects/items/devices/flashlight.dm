@@ -15,7 +15,7 @@
 	var/on = FALSE
 	var/brightness_on = 4 //range of light when on
 	var/flashlight_power = 0.8 //strength of the light when on
-	light_color = "#FFCC66"
+	light_color = "#ffeecb"
 
 /obj/item/flashlight/Initialize(mapload)
 	. = ..()

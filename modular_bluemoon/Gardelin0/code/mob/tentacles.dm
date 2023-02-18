@@ -46,6 +46,7 @@ mob/living
 	move_force = MOVE_FORCE_VERY_STRONG
 	move_resist = MOVE_FORCE_VERY_STRONG
 	pull_force = MOVE_FORCE_VERY_STRONG
+	a_intent = INTENT_HARM // Сука.
 
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat)
 

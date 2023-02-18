@@ -131,6 +131,11 @@
 	body_parts_covered = CHEST|ARMS
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
+/obj/item/clothing/suit/armor/vest/warden/syndicate
+	name = "Master at Arms' Vest"
+	desc = "Stunning. Menacing. Perfect for the man who gets bullied for leaving the brig."
+	icon_state = "warden_syndie"
+
 /obj/item/clothing/suit/armor/vest/leather
 	name = "security overcoat"
 	desc = "Lightly armored leather overcoat meant as casual wear for high-ranking officers. Bears the crest of Nanotrasen Security."

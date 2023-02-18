@@ -563,6 +563,7 @@
 /obj/item/toy/prize
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "ripleytoy"
+	w_class = WEIGHT_CLASS_SMALL
 	var/timer = 0
 	var/cooldown = 30
 	var/quiet = 0

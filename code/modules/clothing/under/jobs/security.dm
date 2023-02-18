@@ -28,6 +28,10 @@
 	item_state = "utilsec"
 	can_adjust = FALSE
 
+/obj/item/clothing/under/rank/security/officer/util/syndicate
+	armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 0)
+	has_sensor = NO_SENSORS
+
 /obj/item/clothing/under/rank/security/officer/grey
 	name = "grey security jumpsuit"
 	desc = "A tactical relic of years past before Nanotrasen decided it was cheaper to dye the suits red instead of washing out the blood."

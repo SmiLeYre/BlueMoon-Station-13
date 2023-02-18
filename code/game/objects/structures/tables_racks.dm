@@ -582,6 +582,11 @@
 	else
 		. = ..()
 
+/obj/structure/table/reinforced/plastitaniumglass
+	name = "Plastitanium Glass Table"
+	desc = "A table made of titanium reinforced silica-plasma composite. About as durable as it sounds."
+	max_integrity = 300
+
 /obj/structure/table/reinforced/brass
 	name = "brass table"
 	desc = "A solid, slightly beveled brass table."
@@ -688,6 +693,11 @@
 	attack_hand_speed = CLICK_CD_MELEE
 	attack_hand_is_action = TRUE
 
+/obj/structure/rack/shelf
+	name = "shelf"
+	desc = "A shelf, for storing things on. Conveinent!"
+	icon_state = "shelf"
+
 /obj/structure/rack/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>It's held together by a couple of <b>bolts</b>.</span>"
@@ -704,7 +714,7 @@
 	. = !density
 	if(istype(caller))
 		. = . || (caller.pass_flags & PASSTABLE)
-		
+
 /obj/structure/rack/MouseDrop_T(obj/O, mob/user)
 	. = ..()
 	if ((!( istype(O, /obj/item) ) || user.get_active_held_item() != O))

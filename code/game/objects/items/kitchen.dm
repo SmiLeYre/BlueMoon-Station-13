@@ -64,6 +64,22 @@
 	embedding = list("pain_mult" = 2, "embed_chance" = 100, "fall_chance" = 0, "embed_chance_turf_mod" = 15)
 	sharpness = SHARP_EDGED
 
+/obj/item/kitchen/spoon
+	name = "spoon"
+	desc = "Just be careful your food doesn't melt the spoon first."
+	icon_state = "spoon"
+	w_class = WEIGHT_CLASS_TINY
+	flags_1 = CONDUCT_1
+	force = 2
+	throw_speed = 3
+	throw_range = 5
+	attack_verb_simple = list("whack", "spoon", "tap")
+	attack_verb_continuous = list("whacks", "spoons", "taps")
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 0)
+	custom_materials = list(/datum/material/iron=120)
+	tool_behaviour = TOOL_MINING
+	toolspeed = 25 // Literally 25 times worse than the base pickaxe
+
 /obj/item/kitchen/knife
 	name = "kitchen knife"
 	icon_state = "knife"

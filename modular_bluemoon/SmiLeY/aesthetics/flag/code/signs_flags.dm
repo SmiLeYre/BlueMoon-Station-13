@@ -81,6 +81,22 @@
 	icon_state = "flag_syndi"
 	item_flag = /obj/item/sign/flag/syndicate
 
+/obj/structure/sign/flag/syndicate/directional/north //Pixel offsets get overwritten on New()
+	dir = SOUTH
+	pixel_y = 32
+
+/obj/structure/sign/flag/syndicate/directional/south
+	dir = NORTH
+	pixel_y = -32
+
+/obj/structure/sign/flag/syndicate/directional/east
+	dir = WEST
+	pixel_x = 32
+
+/obj/structure/sign/flag/syndicate/directional/west
+	dir = EAST
+	pixel_x = -32
+
 /obj/structure/sign/flag/rus
 	name = "флаг Старой Российской Федерации"
 	desc = "Флаг некогда великого Государства, обладающего огромными землями, возможностями, а также огромным Советским Наследством, всё из чего по итогу было уничтожено политическими махинациями политиков этого же самого Государства."

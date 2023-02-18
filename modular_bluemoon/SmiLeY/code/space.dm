@@ -15,3 +15,12 @@
 	else
 		suffix = "defcon2.dmm"
 	. = ..()
+
+//DS2.
+/datum/map_template/ruin/space/deepspacetwo
+	name = "Deep Space Two"
+	prefix = "_maps/RandomRuins/SpaceRuins/BlueMoon/"
+	suffix = "space_syndicate_base.dmm"
+	allow_duplicates = FALSE
+	always_place = TRUE
+	id = "ds2-base"

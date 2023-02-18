@@ -162,7 +162,7 @@
 	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/HoS/syndicate
-	name = "syndicate cap"
+	name = "Syndicate Cap"
 	desc = "A black cap fit for a high ranking syndicate officer."
 
 /obj/item/clothing/head/HoS/beret
@@ -271,6 +271,14 @@
 	name = "warden's beret"
 	desc = "A special beret with the Warden's insignia emblazoned on it. For wardens with class."
 	icon_state = "wardenberet"
+
+/obj/item/clothing/head/beret/sec/navywarden/syndicate
+	name = "Master at Arms' Beret"
+	desc = "Surprisingly stylish, if you lived in a silent impressionist film."
+	color = "#353535"
+	icon_state = "beret_badge"
+	armor = list(MELEE = 40, BULLET = 30, LASER = 30, ENERGY = 40, BOMB = 25, BIO = 0, RAD = 0, FIRE = 25, ACID = 50, WOUND = 5)
+	strip_delay = 60
 
 /obj/item/clothing/head/beret/sec/corporatewarden
 	name = "warden's corporate beret"

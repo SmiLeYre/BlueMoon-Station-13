@@ -92,6 +92,10 @@
 	floor_tile = /obj/item/stack/tile/wood/wood_diagonal
 	broken_states = list("diagonal_wood-broken", "diagonal_wood-broken2", "diagonal_wood-broken3")
 
+/turf/open/floor/wood/wood_parquet
+	icon_state = "wood_parquet"
+	floor_tile = /obj/item/stack/tile/wood/wood_parquet
+
 /turf/open/floor/grass
 	name = "grass patch"
 	desc = "You can't tell if this is real grass or just cheap plastic imitation."
@@ -283,7 +287,7 @@
 /turf/open/floor/carpet/blackred
 	icon = 'icons/turf/floors/carpet_blackred.dmi'
 	floor_tile = /obj/item/stack/tile/carpet/blackred
-	icon_state = "tile-carpet-blackred"
+	icon_state = "carpetstar"
 	smooth = SMOOTH_MORE
 	canSmoothWith = list(/turf/open/floor/carpet/black, /turf/open/floor/carpet/blackred, /turf/open/floor/carpet/monochrome)
 

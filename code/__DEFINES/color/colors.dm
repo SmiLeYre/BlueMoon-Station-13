@@ -8,10 +8,11 @@
 #define COLOR_DARKMODE_TEXT "#a4bad6"
 
 #define COLOR_WHITE "#FFFFFF"
+#define COLOR_FLOORTILE_GRAY "#8D8B8B"
+#define COLOR_ASSISTANT_GRAY "#6E6E6E"
 #define COLOR_VERY_LIGHT_GRAY "#EEEEEE"
 #define COLOR_SILVER "#C0C0C0"
 #define COLOR_GRAY "#808080"
-#define COLOR_FLOORTILE_GRAY "#8D8B8B"
 #define COLOR_DARK "#454545"
 #define COLOR_ALMOST_BLACK "#333333"
 #define COLOR_BLACK "#000000"
@@ -32,6 +33,7 @@
 #define COLOR_VERY_SOFT_YELLOW "#FAE48E"
 
 #define COLOR_OLIVE "#808000"
+#define COLOR_ASSISTANT_OLIVE "#828163"
 #define COLOR_VIBRANT_LIME "#00FF00"
 #define COLOR_LIME "#32CD32"
 #define COLOR_DARK_LIME "#00aa00"
@@ -172,6 +174,10 @@
 #define LIGHT_COLOR_LAVA       "#C48A18"
 /// Bright, non-saturated red. Leaning slightly towards pink for visibility. rgb(250, 100, 75)
 #define LIGHT_COLOR_FLARE      "#FA644B"
+#define COLOR_SYNDIE_RED "#F10303"
+#define COLOR_FIRE_LIGHT_RED "#B61C1C"
+#define COLOR_SECURITY_RED "#CB0000"
+#define COLOR_CULT_RED "#960000"
 /// Weird color, between yellow and green, very slimy. rgb(175, 200, 75)
 #define LIGHT_COLOR_SLIME_LAMP "#AFC84B"
 /// Extremely diluted yellow, close to skin color (for some reason). rgb(250, 225, 175)

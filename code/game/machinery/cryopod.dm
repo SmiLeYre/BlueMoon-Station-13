@@ -9,6 +9,8 @@
  */
 GLOBAL_LIST_EMPTY(cryopod_computers)
 
+GLOBAL_LIST_EMPTY(ghost_records)
+
 //Main cryopod console.
 /obj/machinery/computer/cryopod
 	name = "general oversight console"
@@ -509,3 +511,40 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	if (pod)
 		pod.open_machine()
 		pod.name = initial_name
+
+// Wake-up notifications
+
+/obj/effect/mob_spawn
+	/// For figuring out where the local cryopod computer is. Must be set for cryo computer announcements.
+	var/area/computer_area
+
+/obj/machinery/computer/cryopod/proc/announce(message_type, user, rank)
+	switch(message_type)
+		if("CRYO_JOIN")
+			radio.talk_into(src, "[user][rank ? ", [rank]" : ""] has woken up from cryo storage.", announcement_channel)
+		if("CRYO_LEAVE")
+			radio.talk_into(src, "[user][rank ? ", [rank]" : ""] has been moved to cryo storage.", announcement_channel)
+
+/obj/effect/mob_spawn/ghost_role/special(mob/living/spawned_mob, mob/mob_possessor)
+	. = ..()
+	var/obj/machinery/computer/cryopod/control_computer = find_control_computer()
+	var/datum/data/record/record = new
+	record.fields["name"] = spawned_mob.real_name
+	record.fields["rank"] = name
+	GLOB.ghost_records.Add(record)
+	if(control_computer)
+		control_computer.announce("CRYO_JOIN", spawned_mob.real_name, name)
+
+/obj/effect/mob_spawn/ghost_role/proc/find_control_computer()
+	if(!computer_area)
+		return
+	for(var/cryo_console as anything in GLOB.cryopod_computers)
+		var/obj/machinery/computer/cryopod/console = cryo_console
+		var/area/area = get_area(cryo_console) // Define moment
+		if(area.type == computer_area)
+			return console
+
+	return
+
+/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate
+	computer_area = /area/ruin/lavaland/unpowered/deepspaceone/dormitories

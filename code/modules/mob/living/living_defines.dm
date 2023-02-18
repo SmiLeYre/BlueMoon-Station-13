@@ -159,6 +159,8 @@
 	var/combat_flags = COMBAT_FLAGS_SPRINT_EXEMPT
 	/// Next world.time when we will show a visible message on entering combat mode voluntarily again.
 	var/combatmessagecooldown = 0
+    ///If combat mode is on or not
+	var/combat_mode = FALSE
 
 	var/incomingstammult = 1
 

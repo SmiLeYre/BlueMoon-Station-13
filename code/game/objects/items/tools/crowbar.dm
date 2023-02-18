@@ -105,6 +105,15 @@
 	toolspeed = 0.25
 	can_force_powered = TRUE
 
+/obj/item/crowbar/power/syndicate
+	name = "Syndicate jaws of life"
+	desc = "A pocket sized re-engineered copy of Nanotrasen's standard jaws of life. Can be used to force open airlocks in its crowbar configuration."
+	icon = 'icons/obj/tools.dmi'
+	icon_state = "jaws_syndie_pry"
+	item_state = "jawsoflife"
+	force = 20
+	toolspeed = 0.20
+
 /obj/item/crowbar/power/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] is putting [user.p_their()] head in [src], it looks like [user.p_theyre()] trying to commit suicide!</span>")
 	playsound(loc, 'sound/items/jaws_pry.ogg', 50, 1, -1)

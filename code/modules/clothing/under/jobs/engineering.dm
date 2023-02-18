@@ -56,6 +56,10 @@
 	item_state = "utileng"
 	can_adjust = FALSE
 
+/obj/item/clothing/under/rank/engineering/engineer/util/syndicate
+	armor = list(MELEE = 10, BULLET = 5, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 50, RAD = 0, FIRE = 50, ACID = 40, WOUND = 10)
+	has_sensor = NO_SENSORS
+
 /obj/item/clothing/under/rank/engineering/engineer/hazard
 	name = "engineer's hazard jumpsuit"
 	desc = "A high visibility jumpsuit made from heat and radiation resistant materials."

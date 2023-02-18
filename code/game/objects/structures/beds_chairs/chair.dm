@@ -284,6 +284,18 @@
 	buildstackamount = 1
 	item_chair = /obj/item/chair/stool
 
+/obj/structure/chair/stool/directional/north //Pixel offsets get overwritten on New()
+	dir = NORTH
+
+/obj/structure/chair/stool/directional/south
+	dir = SOUTH
+
+/obj/structure/chair/stool/directional/east
+	dir = EAST
+
+/obj/structure/chair/stool/directional/west
+	dir = WEST
+
 /obj/structure/chair/stool/narsie_act()
 	return
 
@@ -306,6 +318,18 @@
 	desc = "It has some unsavory stains on it..."
 	icon_state = "bar"
 	item_chair = /obj/item/chair/stool/bar
+
+/obj/structure/chair/stool/bar/directional/north //Pixel offsets get overwritten on New()
+	dir = NORTH
+
+/obj/structure/chair/stool/bar/directional/south
+	dir = SOUTH
+
+/obj/structure/chair/stool/bar/directional/east
+	dir = EAST
+
+/obj/structure/chair/stool/bar/directional/west
+	dir = WEST
 
 /obj/item/chair
 	name = "chair"

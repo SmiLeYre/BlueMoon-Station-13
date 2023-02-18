@@ -109,6 +109,14 @@
 		if(W.active)
 			sawoff(user)
 
+/obj/item/gun/ballistic/shotgun/riot/syndicate
+	name = "\improper Peacebreaker shotgun"
+	desc = "A Scarborough riot control shotgun fitted with a crimson furnishing and a wooden tactical stock. You swear you've seen this model elsewhere before..."
+	icon = 'icons/obj/guns/projectile.dmi'
+	icon_state = "riotshotgun_syndie"
+	item_state = "riot_shotgun_syndie"
+	can_suppress = FALSE
+
 ///////////////////////
 // BOLT ACTION RIFLE //
 ///////////////////////

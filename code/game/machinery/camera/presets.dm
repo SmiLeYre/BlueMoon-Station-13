@@ -18,6 +18,18 @@
 	. = ..()
 	upgradeXRay()
 
+/obj/machinery/camera/xray/directional/north //Pixel offsets get overwritten on New()
+	dir = SOUTH
+
+/obj/machinery/camera/xray/directional/south
+	dir = NORTH
+
+/obj/machinery/camera/xray/directional/east
+	dir = WEST
+
+/obj/machinery/camera/xray/directional/west
+	dir = EAST
+
 // MOTION
 /obj/machinery/camera/motion
 	start_active = TRUE

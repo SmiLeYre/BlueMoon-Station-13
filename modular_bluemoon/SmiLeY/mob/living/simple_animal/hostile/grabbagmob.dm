@@ -306,6 +306,7 @@
 	icon_living = "scavlaser"
 	projectilesound = 'sound/weapons/laser3.ogg'
 	loot = list(/obj/effect/spawner/lootdrop/maintenance/five)
+	casingtype = null
 	projectiletype = /obj/item/projectile/beam/lasertag
 
 // Damaged Borgs
@@ -913,6 +914,7 @@
 	icon_living = "voxlaser"
 	icon_dead = "voxsuitdead"
 	projectiletype = /obj/item/projectile/beam/lasertag
+	casingtype = null
 	projectilesound = 'sound/weapons/laser3.ogg'
 
 /mob/living/simple_animal/hostile/vox/ranged/space
@@ -938,6 +940,7 @@
 	icon_dead = "voxspacedead"
 	loot = list(/obj/effect/spawner/lootdrop/high_loot_toilet = 4)
 	projectiletype = /obj/item/projectile/beam/lasertag
+	casingtype = null
 	projectilesound = 'sound/weapons/laser3.ogg'
 
 /mob/living/simple_animal/hostile/zombie

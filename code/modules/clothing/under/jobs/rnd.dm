@@ -61,6 +61,11 @@
 	permeability_coefficient = 0.5
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 10, BIO = 0, RAD = 0, FIRE = 0, ACID = 0, WOUND = 5)
 
+/obj/item/clothing/under/rank/rnd/scientist/utility/syndicate
+	desc = "A utility uniform worn by Science staff."
+	armor = list(MELEE = 10, BULLET = 5, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 50, RAD = 0, FIRE = 50, ACID = 40, WOUND = 10)
+	has_sensor = NO_SENSORS
+
 /obj/item/clothing/under/rank/rnd/scientist/util
 	name = "science utility uniform"
 	desc = "A utility uniform for science personnel"

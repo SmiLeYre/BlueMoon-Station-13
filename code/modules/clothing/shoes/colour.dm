@@ -1,4 +1,5 @@
 /obj/item/clothing/shoes/sneakers
+	icon_state = "black"
 	dying_key = DYE_REGISTRY_SNEAKERS
 
 /obj/item/clothing/shoes/sneakers/black
@@ -40,6 +41,10 @@
 	name = "red shoes"
 	desc = "Stylish red shoes."
 	icon_state = "red"
+
+/obj/item/clothing/shoes/sneakers/crimson
+	name = "dark red shoes"
+	color = "#992300"
 
 /obj/item/clothing/shoes/sneakers/white
 	name = "white shoes"

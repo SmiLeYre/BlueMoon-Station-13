@@ -134,3 +134,13 @@
 	alt_covers_chest = TRUE
 	mutantrace_variation = USE_TAUR_CLIP_MASK
 
+/obj/item/clothing/under/syndicate/scrubs
+	name = "tactical scrubs"
+	desc = "A deep burgundy set of scrubs, made tactically for tactical reasons."
+	icon = 'icons/obj/clothing/uniforms.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/uniform.dmi'
+	anthro_mob_worn_overlay = 'icons/mob/clothing/uniform_digi.dmi'
+	icon_state = "scrubswine"
+	item_state = "scrubswine"
+	can_adjust = TRUE
+	armor = list(MELEE = 10, BULLET = 5, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 50, RAD = 0, FIRE = 50, ACID = 40, WOUND = 10)

@@ -86,6 +86,17 @@
 	icon_state = "utilitybelt_ce"
 	item_state = "utility_ce"
 
+/obj/item/storage/belt/utility/syndicate
+
+/obj/item/storage/belt/utility/syndicate/PopulateContents()
+	new /obj/item/screwdriver/nuke(src)
+	new /obj/item/wrench/combat(src)
+	new /obj/item/weldingtool/largetank(src)
+	new /obj/item/crowbar(src)
+	new /obj/item/wirecutters(src)
+	new /obj/item/multitool(src)
+	new /obj/item/inducer/syndicate(src)
+
 /obj/item/storage/belt/utility/chief/full/PopulateContents()
 	new /obj/item/screwdriver/power(src)
 	new /obj/item/crowbar/power(src)
@@ -701,6 +712,26 @@
 	icon_state = "holster"
 	item_state = "holster"
 	alternate_worn_layer = UNDER_SUIT_LAYER
+
+/obj/item/storage/belt/holster/nukie
+	name = "operative holster"
+	desc = "A deep shoulder holster capable of holding almost any form of firearm and its ammo."
+	icon_state = "syndicate_holster"
+	item_state = "syndicate_holster"
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/storage/belt/holster/nukie/ComponentInitialize(mapload)
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 5
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.can_hold = typecacheof(list(
+		/obj/item/gun, // ALL guns.
+		/obj/item/ammo_box,
+		/obj/item/ammo_casing, // For shotgun shells, rockets, launcher grenades, and a few other things.
+		/obj/item/grenade, // All regular grenades, the big grenade launcher fires these.
+		))
+
 
 /obj/item/storage/belt/holster/ComponentInitialize()
 	. = ..()

@@ -222,6 +222,22 @@
 	if(prob(1))
 		desc = "IT'S PEPPER TIME, BITCH!"
 
+/obj/structure/reagent_dispensers/peppertank/directional/north //Pixel offsets get overwritten on New()
+	dir = SOUTH
+	pixel_y = 24
+
+/obj/structure/reagent_dispensers/peppertank/directional/south
+	dir = NORTH
+	pixel_y = -24
+
+/obj/structure/reagent_dispensers/peppertank/directional/east
+	dir = WEST
+	pixel_x = 24
+
+/obj/structure/reagent_dispensers/peppertank/directional/west
+	dir = EAST
+	pixel_x = -24
+
 /obj/structure/reagent_dispensers/virusfood
 	name = "virus food dispenser"
 	desc = "A dispenser of low-potency virus mutagenic."

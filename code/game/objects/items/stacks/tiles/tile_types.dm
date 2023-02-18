@@ -231,6 +231,12 @@
 	icon_state = "tile-wood_diagonal"
 	turf_type = /turf/open/floor/wood/wood_diagonal
 
+/obj/item/stack/tile/wood/wood_parquet
+	name = "parquet wooden plank floor tile"
+	singular_name = "parquet wooden plank floor tile"
+	icon_state = "tile-wood_parquet"
+	turf_type = /turf/open/floor/wood/wood_parquet
+
 //Cloth Floors
 
 /obj/item/stack/tile/padded

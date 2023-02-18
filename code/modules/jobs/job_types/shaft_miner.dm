@@ -24,7 +24,7 @@
 	display_order = JOB_DISPLAY_ORDER_SHAFT_MINER
 
 	threat = 1.5
-	
+
 	family_heirlooms = list(
 		/obj/item/pickaxe/mini,
 		/obj/item/shovel
@@ -60,7 +60,7 @@
 	uniform = /obj/item/clothing/under/rank/cargo/miner
 	shoes = /obj/item/clothing/shoes/workboots
 
-/datum/outfit/job/miner/equipped
+/datum/outfit/job/miner/equipped/hardsuit
 	name = "Shaft Miner (Lavaland + Equipment)"
 	suit = /obj/item/clothing/suit/hooded/explorer/standard
 	mask = /obj/item/clothing/mask/gas/explorer

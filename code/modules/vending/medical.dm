@@ -65,7 +65,82 @@
 	name = "\improper SyndiMed Plus"
 	req_access = list(ACCESS_SYNDICATE)
 
+/obj/machinery/vending/medical/syndicate_access/cybersun
+	name = "\improper CyberMed ++"
+	desc = "An advanced vendor that dispenses medical drugs, both recreational and medicinal."
+	products = list(/obj/item/reagent_containers/syringe = 4,
+					/obj/item/healthanalyzer = 4,
+					/obj/item/reagent_containers/pill/patch/silver_sulf = 5,
+					/obj/item/reagent_containers/pill/patch/styptic = 5,
+					/obj/item/reagent_containers/glass/bottle/charcoal = 3,
+					/obj/item/reagent_containers/glass/bottle/dexalin = 2,
+					/obj/item/reagent_containers/glass/bottle/epinephrine = 3,
+					/obj/item/reagent_containers/glass/bottle/morphine = 3,
+					/obj/item/reagent_containers/glass/bottle/potass_iodide = 5,
+					/obj/item/reagent_containers/glass/bottle/salglu_solution = 3,
+					/obj/item/reagent_containers/syringe/antiviral = 5,
+					/obj/item/reagent_containers/medspray/styptic = 2,
+					/obj/item/reagent_containers/medspray/silver_sulf = 2,
+					/obj/item/reagent_containers/medspray/sterilizine = 2)
+	contraband = list(/obj/item/reagent_containers/glass/bottle/cold = 2,
+					/obj/item/restraints/handcuffs = 4,
+					/obj/item/storage/backpack/duffelbag/syndie/surgery = 1,
+					/obj/item/storage/firstaid/tactical = 1)
+	premium = list(/obj/item/storage/pill_bottle/psicodine = 2,
+					/obj/item/reagent_containers/hypospray/medipen = 3,
+					/obj/item/reagent_containers/hypospray/medipen/atropine = 2,
+					/obj/item/storage/firstaid/regular = 3,
+					/obj/item/storage/firstaid/brute = 1,
+					/obj/item/storage/firstaid/fire = 1,
+					/obj/item/storage/firstaid/toxin = 1,
+					/obj/item/storage/firstaid/o2 = 1,
+					/obj/item/defibrillator/loaded = 1,
+					/obj/item/wallframe/defib_mount = 1,
+					/obj/item/sensor_device = 2,
+					/obj/item/pinpointer/crew = 2)
 
 /obj/machinery/vending/medical/syndicate_access/Initialize(mapload)
 	. = ..()
 	cost_multiplier_per_dept = list("[ACCESS_SYNDICATE]" = 0)
+
+//Created out of a necessity to get these dumb chems out of the medical tools vendor.
+/obj/machinery/vending/drugs
+	name = "\improper NanoDrug Plus"
+	desc = "Medical drugs dispenser."
+	icon_state = "drug"
+	icon_deny = "drug-deny"
+	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?;Ping!"
+	req_access = list(ACCESS_MEDICAL)
+	products = list(
+		/obj/item/reagent_containers/pill/patch/silver_sulf = 5,
+		/obj/item/reagent_containers/pill/patch/styptic = 5,
+		/obj/item/reagent_containers/pill/insulin = 5,
+		/obj/item/reagent_containers/glass/bottle/charcoal = 2,
+		/obj/item/reagent_containers/glass/bottle/epinephrine = 3,
+		/obj/item/reagent_containers/glass/bottle/morphine = 4,
+		/obj/item/reagent_containers/glass/bottle/potass_iodide = 5,
+		/obj/item/reagent_containers/glass/bottle/salglu_solution = 3,
+		/obj/item/reagent_containers/glass/bottle/toxin = 3,
+		/obj/item/reagent_containers/syringe/antiviral = 6,
+		/obj/item/reagent_containers/medspray/styptic = 2,
+		/obj/item/reagent_containers/medspray/silver_sulf = 2,
+		/obj/item/reagent_containers/medspray/sterilizine = 2,
+		)
+	contraband = list(
+		/obj/item/reagent_containers/pill/tox = 3,
+		/obj/item/reagent_containers/pill/morphine = 4,
+		/obj/item/reagent_containers/pill/charcoal = 6,
+		)
+	premium = list(
+		/obj/item/reagent_containers/medspray/synthflesh = 2,
+		/obj/item/storage/pill_bottle/psicodine = 2,
+		)
+	default_price = PRICE_ALMOST_CHEAP
+	extra_price = PRICE_ABOVE_NORMAL
+	payment_department = ACCOUNT_MED
+	light_mask = "drug-light-mask"
+	refill_canister = /obj/item/vending_refill/drugs
+
+/obj/item/vending_refill/drugs
+	machine_name = "NanoDrug Plus"
+	icon_state = "refill_medical"
