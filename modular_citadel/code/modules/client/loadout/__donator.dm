@@ -42,6 +42,13 @@
 	ckeywhitelist = list()
 	donator_group_id = DONATOR_GROUP_TIER_1
 
+/datum/gear/donator/syndicate
+	name = "Syndicate's Tactical Turtleneck"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/syndicate
+	ckeywhitelist = list()
+	donator_group_id = DONATOR_GROUP_TIER_1		
+
 /datum/gear/donator/carpet
 	name = "Carpet Beacon"
 	slot = ITEM_SLOT_BACKPACK
