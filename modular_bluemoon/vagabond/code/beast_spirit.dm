@@ -22,7 +22,7 @@
 	attack_verb_continuous = "claws"
 	maxHealth = 300
 	health = 300
-	obj_damage = 25
+	obj_damage = 20
 	armour_penetration = 0
 	melee_damage_lower = 20
 	melee_damage_upper = 25
