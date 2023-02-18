@@ -212,7 +212,7 @@
 	caster.shake_animation(2)
 	caster.Stun(30)
 
-	playsound(caster, beast_sound, 50, 1, -1)
+	playsound(caster, beast_sound, 50, 0, -1)
 
 	sleep(30)
 
