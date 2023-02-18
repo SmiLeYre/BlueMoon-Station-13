@@ -20,8 +20,8 @@
 	speed = 0
 	see_in_dark = 8
 	attack_verb_continuous = "claws"
-	maxHealth = 300
-	health = 300
+	maxHealth = 200
+	health = 200
 	obj_damage = 20
 	armour_penetration = 0
 	melee_damage_lower = 20
