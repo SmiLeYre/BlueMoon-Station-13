@@ -113,7 +113,7 @@
 	absolute_max_tiles_per_second = 7
 
 /datum/movespeed_modifier/beastspirit_main
-	multiplicative_slowdown = -1.5
+	multiplicative_slowdown = -1
 	priority = 500
 	complex_calculation = TRUE
 	absolute_max_tiles_per_second = 7
