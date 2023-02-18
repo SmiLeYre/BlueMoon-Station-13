@@ -44,6 +44,10 @@
 
 	AddElement(/datum/element/flavor_text, _name = "OOC Notes", _addendum = "Put information on ERP/vore/lewd-related preferences here. THIS SHOULD NOT CONTAIN REGULAR FLAVORTEXT!!", _save_key = "ooc_notes", _examine_no_preview = TRUE)
 
+/mob/living/simple_animal/hostile/beastspirit/Initialize()
+	. = ..()
+	add_movespeed_modifier(/datum/movespeed_modifier/beastspirit_main)
+
 /mob/living/simple_animal/hostile/beastspirit/update_icon()
 	. = ..()
 	icon_living = "[beast_type][horny ? "h_" : ""][based_icon][pose ? "-crouch" : ""]"
@@ -58,40 +62,35 @@
 	desc = "Change your feral appearance."
 	icon_icon = 'modular_bluemoon/vagabond/icons/mob/actions/misc_actions.dmi'
 	button_icon_state = "change"
-	var/obj/effect/proc_holder/spell/targeted/shapeshift/beast/B
-
-/datum/action/innate/beastchange/Grant(mob/M)
-	. = ..()
-	B = locate() in owner.mob_spell_list
+	var/beastskin = ""
+	var/beastsound = 'modular_bluemoon/vagabond/sound/wolf.ogg'
 
 /datum/action/innate/beastchange/Activate()
 	. = ..()
-	if(!B)
-		return
 	var/appearances = list("Default", "Black", "White", "Skull", "Werecat", "Panther", "Garfield")
 	var/skin = input(owner, "Pick appearance for your beast", "Change Appearance") as null|anything in appearances
 	switch(skin)
 		if("Default")
-			B.beast_type = ""
-			B.beast_sound = 'modular_bluemoon/vagabond/sound/wolf.ogg'
+			beastskin = ""
+			beastsound = 'modular_bluemoon/vagabond/sound/wolf.ogg'
 		if("Black")
-			B.beast_type = "black_"
-			B.beast_sound = 'modular_bluemoon/vagabond/sound/wolf.ogg'
+			beastskin = "black_"
+			beastsound = 'modular_bluemoon/vagabond/sound/wolf.ogg'
 		if("White")
-			B.beast_type = "white_"
-			B.beast_sound = 'modular_bluemoon/vagabond/sound/wolf.ogg'
+			beastskin = "white_"
+			beastsound = 'modular_bluemoon/vagabond/sound/wolf.ogg'
 		if("Skull")
-			B.beast_type = "skull_"
-			B.beast_sound = 'modular_bluemoon/vagabond/sound/wolf.ogg'
+			beastskin = "skull_"
+			beastsound = 'modular_bluemoon/vagabond/sound/wolf.ogg'
 		if("Werecat")
-			B.beast_type = "werecat_"
-			B.beast_sound = 'modular_bluemoon/vagabond/sound/cat.ogg'
+			beastskin = "werecat_"
+			beastsound = 'modular_bluemoon/vagabond/sound/cat.ogg'
 		if("Panther")
-			B.beast_type = "panther_"
-			B.beast_sound = 'modular_bluemoon/vagabond/sound/cat.ogg'
+			beastskin = "panther_"
+			beastsound = 'modular_bluemoon/vagabond/sound/cat.ogg'
 		if("Garfield")
-			B.beast_type = "garfield_"
-			B.beast_sound = 'modular_bluemoon/vagabond/sound/cat.ogg'
+			beastskin = "garfield_"
+			beastsound = 'modular_bluemoon/vagabond/sound/cat.ogg'
 	if(skin)
 		to_chat(owner, "<span class='notice'>Your inner Beast's skin now will be [skin].</span>")
 
@@ -109,6 +108,12 @@
 
 /datum/movespeed_modifier/beastspirit
 	multiplicative_slowdown = -2.5
+	priority = 500
+	complex_calculation = TRUE
+	absolute_max_tiles_per_second = 7
+
+/datum/movespeed_modifier/beastspirit_main
+	multiplicative_slowdown = -1
 	priority = 500
 	complex_calculation = TRUE
 	absolute_max_tiles_per_second = 7
@@ -184,6 +189,12 @@
 		return
 
 	var/mob/living/carbon/human/action_owner = caster
+
+	var/datum/action/innate/beastchange/B = locate() in caster.actions
+	if(B)
+		beast_type = B.beastskin
+		beast_sound = B.beastsound
+
 	var/obj/item/organ/genital/penis/organ_penis = action_owner.getorganslot(ORGAN_SLOT_PENIS)
 	var/obj/item/organ/genital/breasts/organ_breasts = action_owner.getorganslot(ORGAN_SLOT_BREASTS)
 	var/obj/item/organ/genital/vagina/organ_vagina = action_owner.getorganslot(ORGAN_SLOT_VAGINA)
@@ -201,28 +212,31 @@
 	caster.shake_animation(2)
 	caster.Stun(30)
 
-	playsound(caster, 'modular_bluemoon/vagabond/sound/transform.ogg', 50, 1, -1)
+	playsound(caster, beast_sound, 50, 1, -1)
 
 	sleep(30)
 
-	playsound(caster, beast_sound, 50, 1, -1)
+	var/has_clothes_to_rip = FALSE
 
-	var/mob/living/carbon/human/human_caster = caster
 	for(var/obj/item/I in caster)
 		if(!istype(I, /obj/item/storage))
+			has_clothes_to_rip = TRUE
 			caster.dropItemToGround(I, TRUE)
 	var/mob/living/shape = new shapeshift_type(caster.loc)
-	H = new(shape,src,human_caster)
+	H = new(shape, src, action_owner)
 	var/mob/living/simple_animal/hostile/beastspirit/BEAST = shape
-	BEAST.name = human_caster.name
+	BEAST.name = action_owner.name
 	BEAST.beast_type = beast_type
-	BEAST.gender = human_caster.gender
+	BEAST.gender = action_owner.gender
 	BEAST.based_icon = beast_gender
-	BEAST.eyecolor = "#[human_caster.left_eye_color]"
+	BEAST.eyecolor = "#[action_owner.left_eye_color]"
 	BEAST.update_icon()
 	var/icon/M = new(BEAST.icon)
 	M.SwapColor("#ffffff",BEAST.eyecolor)
 	BEAST.icon = M
+
+	if(has_clothes_to_rip)
+		playsound(caster, 'modular_bluemoon/vagabond/sound/transform.ogg', 50, 1, -1)
 
 	switch(beast_gender)
 		if("male")
