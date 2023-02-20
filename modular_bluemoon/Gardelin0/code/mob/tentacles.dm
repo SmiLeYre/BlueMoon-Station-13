@@ -1,6 +1,7 @@
 #define REGENERATION_DELAY 60  // After taking damage, how long it takes for automatic regeneration to begin for tentacles.
+#define REGEN_AMOUNT 6 //How much is healed pre regen cooldown
 
-mob/living
+/mob/living
 	var/has_tentacles = FALSE
 
 /mob/living/proc/has_tentacles()
@@ -14,7 +15,7 @@ mob/living
 	desc = "Looks like their roots."
 	icon = 'modular_bluemoon/Gardelin0/icons/mob/tentacles.dmi'
 	icon_state = "node"
-	density = 1
+	density = 0
 	opacity = 0
 	anchored = TRUE
 	max_integrity = 200
@@ -28,16 +29,21 @@ mob/living
 	icon_living = "tentacles"
 	icon_dead = "tentacles_dead"
 	icon_gib = "tentacles_dead"
+	faction = "hentai"
 	var/base_icon = "tentacles"
 
 	var/change_target_hole_cooldown = 0
+	var/REGEN_COOLDOWN = 0 //Used for how long it takes before a healing will take place default in 60 seconds
 	var/chosen_hole
 	has_penis = TRUE
 	has_tentacles = TRUE
+	var/tired = 0
 
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 
 	//Tentacles don't speak and not move
+	anchored = TRUE
+	density = 0
 	speak_chance = 0
 	wander = 0
 	stop_automated_movement = 1
@@ -74,28 +80,36 @@ mob/living
 	pressure_resistance = 200
 	gold_core_spawnable = HOSTILE_SPAWN
 
-	//some tentacles heal over time
-	var/regen_cooldown = 0 //Used for how long it takes before a healing will take place default in 60 seconds
-	var/regen_amount = 6 //How much is healed pre regen cooldown
-
 /mob/living/simple_animal/hostile/tentacles/Initialize()
 	. = ..()
 	new/obj/structure/tentacles/node(src.loc)
 	status_flags &= !CANPUSH
+	//SShorny_mobs_pool.horny_mobs += src
+
+/mob/living/simple_animal/hostile/tentacles/death(gibbed)
+	. = ..()
+	anchored = FALSE
+	//SShorny_mobs_pool.horny_mobs -= src
+
+/mob/living/simple_animal/hostile/tentacles/Destroy()
+	. = ..()
+	//SShorny_mobs_pool.horny_mobs -= src
 
 /mob/living/simple_animal/hostile/tentacles/moan() //Tentacles do not moan lmao
 	return
 
 /mob/living/simple_animal/hostile/tentacles/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	. = ..()
-	if(regen_amount)
-		regen_cooldown = world.time + REGENERATION_DELAY
+	if(REGEN_AMOUNT)
+		REGEN_COOLDOWN = world.time + REGENERATION_DELAY
 
 /mob/living/simple_animal/hostile/tentacles/BiologicalLife(delta_time, times_fired)
 	if(!(. = ..()))
 		return
-	if(regen_amount && regen_cooldown < world.time)
-		heal_overall_damage(regen_amount)
+	if(REGEN_AMOUNT && REGEN_COOLDOWN < world.time)
+		heal_overall_damage(REGEN_AMOUNT)
+	if(tired >=1)
+		tired -= 1
 
 /mob/living/simple_animal/hostile/tentacles/MoveToTarget()
 	stop_automated_movement = 1
@@ -124,7 +138,7 @@ mob/living
 		return // Do nothing
 
 	if(!M.pulledby)
-		if(!M.buckled && !M.density)
+		if(!M.buckled)
 			M.forceMove(src.loc)
 
 		start_pulling(M, supress_message = TRUE)
@@ -132,10 +146,11 @@ mob/living
 		M.visible_message("<span class='warning'>[src] violently grab and entangle [M]!</span>", \
 			"<span class='userdanger'>[src] violently grab and entangle you!</span>")
 		setGrabState(GRAB_NECK) //Instant neck grab
-		if(prob(15))
-			M.Stun(15) //People want them to be dangerous, huh?
+		if(prob(25))
+			M.Stun(30) //People want them to be dangerous, huh?
 			M.visible_message("<span class='warning'>[src] secure [M]'s limbs, immobilizing them!</span>", \
 				"<span class='userdanger'>[src] secures your limbs, immobilizing you!</span>")
+
 
 		return
 
@@ -143,33 +158,35 @@ mob/living
 		chosen_hole = null
 		while (chosen_hole == null)
 			pickNewHole(M)
-		change_target_hole_cooldown = world.time + 100
+		change_target_hole_cooldown = world.time + 50
 
 	if(get_refraction_dif() > 0)
 		..()
 		return
 
-	do_lewd_action(M)
-	addtimer(CALLBACK(src, .proc/do_lewd_action, M), rand(8, 12))
+	while(M.pulledby && !tired)
+		if(activate_after(src, 25))
+			do_lewd_action(M)
+			icon_state = "[base_icon]"
+			update_icon()
 
 /mob/living/simple_animal/hostile/tentacles/proc/pickNewHole(mob/living/M)
-	switch(rand(1))
-		if(0)
-			chosen_hole = CUM_TARGET_ANUS
-		if(1)
-			if(M.has_vagina())
-				chosen_hole = CUM_TARGET_VAGINA
-			else if(M.has_penis())
-				chosen_hole = CUM_TARGET_PENIS
-			else
-				chosen_hole = CUM_TARGET_ANUS
+	if(M.has_vagina())
+		chosen_hole = CUM_TARGET_VAGINA
+	else if(M.has_penis())
+		chosen_hole = CUM_TARGET_PENIS
+	else
+		chosen_hole = CUM_TARGET_ANUS
 
 /mob/living/simple_animal/hostile/tentacles/proc/do_lewd_action(mob/living/M)
 	if(get_refraction_dif() > 0)
 		return
 
+	if(!M.pulledby)
+		return
+
+	var/result = pick(1, 2)
 	var/datum/interaction/I
-	M.forceMove(src.loc) //Just to be sure
 	switch(chosen_hole)
 		if(CUM_TARGET_ANUS)
 			if(tearSlot(M, ITEM_SLOT_OCLOTHING))
@@ -194,10 +211,10 @@ mob/living
 			if(tearSlot(M, ITEM_SLOT_UNDERWEAR))
 				return
 
-			switch(rand(1))
-				if(0)
-					I = SSinteractions.interactions["/datum/interaction/lewd/tentacle/female"]
+			switch(result)
 				if(1)
+					I = SSinteractions.interactions["/datum/interaction/lewd/tentacle/female"]
+				if(2)
 					I = SSinteractions.interactions["/datum/interaction/lewd/tentacle/female_double"]
 			I.display_interaction(src, M)
 
@@ -211,10 +228,10 @@ mob/living
 			if(tearSlot(M, ITEM_SLOT_UNDERWEAR))
 				return
 
-			switch(rand(1))
-				if(0)
-					I = SSinteractions.interactions["/datum/interaction/lewd/tentacle/female"]
+			switch(result)
 				if(1)
+					I = SSinteractions.interactions["/datum/interaction/lewd/tentacle/female"]
+				if(2)
 					I = SSinteractions.interactions["/datum/interaction/lewd/tentacle/female_double"]
 			I.display_interaction(src, M)
 
@@ -224,27 +241,16 @@ mob/living
 		return
 
 	var/message
-
-	if(ishuman(target) && CUM_TARGET_VAGINA)
-		if(M.is_bottomless() && M.has_vagina())
+	switch(chosen_hole)
+		if(CUM_TARGET_VAGINA)
 			message = "вгоняют свои тентакли в дырочки \the [M] и заполняют их спермой!"
 			M.impregnate(src, M.getorganslot(ORGAN_SLOT_WOMB), src.type)
-		else
-			message = "кончают на \the [M]."
 
-	if(ishuman(target) && CUM_TARGET_PENIS)
-		if(M.is_bottomless() && M.has_anus())
+		if(CUM_TARGET_PENIS)
 			message = "обхватывают член \the [M] и обливают спермой!"
-		else
-			message = "кончают на \the [M]."
 
-	if(ishuman(target) && CUM_TARGET_ANUS)
-		if(M.is_bottomless() && M.has_anus())
+		if(CUM_TARGET_ANUS)
 			message = "вгоняют свои тентакли в задницу \the [M] и заполняют её спермой!"
-		else if (prob(50))
-			message = "кончают на \the [M]."
-		else
-			message = "кончают на пол!"
 
 	if(istype(M, /mob/living/carbon))
 		M.reagents.add_reagent(/datum/reagent/consumable/semen, 30)
@@ -256,16 +262,10 @@ mob/living
 	shake_camera(M, 6, 1)
 	set_is_fucking(null ,null)
 
-	refractory_period = world.time + rand(100, 150) // Sex cooldown
 	set_lust(0) // Nuts at 400
-
-	addtimer(CALLBACK(src, .proc/slap, M), 15)
-
-/mob/living/simple_animal/hostile/tentacles/proc/slap(mob/living/M)
-	playsound(loc, "modular_sand/sound/interactions/slap.ogg", 30, 1, -1)
-	visible_message("<span class='danger'>\The [src]</b> slaps \the [M] right on the ass!</span>", \
-			"<span class='userdanger'>\The [src]</b> slaps \the [M] right on the ass!</span>", null, COMBAT_MESSAGE_RANGE)
-	sleep(50) //5 seconds. Let the victim rest a little.
+	tired += rand(20, 50)
+	icon_state = "[base_icon]_sleep"
+	update_icon()
 
 /mob/living/simple_animal/hostile/tentacles/proc/tearSlot(mob/living/M, slot)
 	var/obj/item/W = M.get_item_by_slot(slot)
@@ -289,6 +289,7 @@ mob/living
 	icon = 'modular_bluemoon/Gardelin0/icons/mob/tentacles.dmi'
 	icon_state = "tentaclecubebox"
 	illustration = null
+	custom_price = 1500 //So people will stop spamming it
 
 //  ⠄⢰⣧⣼⣯⠄⣸⣠⣶⣶⣦⣾⠄⢸⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠
 //  ⠄⣾⣿⠿⠿⠶⠿⢿⣿⣿⣿⣿⣦⣤⣄⢀⡅⢠⣾⣛⡉⠄⠄⠄⠸⢀⣿⠄
