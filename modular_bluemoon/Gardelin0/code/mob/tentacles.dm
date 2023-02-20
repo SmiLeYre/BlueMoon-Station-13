@@ -17,7 +17,6 @@
 	icon_state = "node"
 	density = 0
 	opacity = 0
-	anchored = TRUE
 	max_integrity = 200
 	CanAtmosPass = ATMOS_PASS_DENSITY
 
@@ -38,11 +37,12 @@
 	has_penis = TRUE
 	has_tentacles = TRUE
 	var/tired = 0
+	var/regen_cooldown = 0 //Used for how long it takes before a healing will take place default in 60 seconds
+	var/regen_amount = 0 //How much is healed pre regen cooldow
 
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 
 	//Tentacles don't speak and not move
-	anchored = TRUE
 	density = 0
 	speak_chance = 0
 	wander = 0
@@ -88,7 +88,6 @@
 
 /mob/living/simple_animal/hostile/tentacles/death(gibbed)
 	. = ..()
-	anchored = FALSE
 	//SShorny_mobs_pool.horny_mobs -= src
 
 /mob/living/simple_animal/hostile/tentacles/Destroy()
@@ -100,8 +99,8 @@
 
 /mob/living/simple_animal/hostile/tentacles/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	. = ..()
-	if(REGEN_AMOUNT)
-		REGEN_COOLDOWN = world.time + REGENERATION_DELAY
+	if(regen_amount)
+		regen_cooldown = world.time + REGENERATION_DELAY
 
 /mob/living/simple_animal/hostile/tentacles/BiologicalLife(delta_time, times_fired)
 	if(!(. = ..()))
