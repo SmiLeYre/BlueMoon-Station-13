@@ -17,6 +17,8 @@
 		/datum/language/common,
 		/datum/language/machine,
 		/datum/language/draconic,
+		/datum/language/vulpkanin,
+		/datum/language/tajaran,
 		/datum/language/codespeak,
 		/datum/language/monkey,
 		/datum/language/narsie,
@@ -88,17 +90,17 @@
 	desc = "A thin and long muscle typically found in reptilian races, apparently moonlights as a nose."
 	icon_state = "tonguelizard"
 	say_mod = "hisses"
-	taste_sensitivity = 10 // combined nose + tongue, extra sensitive
+	taste_sensitivity = 10 // combined nose extra sensitive
 	maxHealth = 40 //extra sensitivity means tongue is more susceptible to damage
 	initial_accents = list(/datum/accent/lizard)
 
 /obj/item/organ/tongue/canine
 	name = "flat tongue"
 	desc = "A flat and broad muscle commonly found in canine and feline races."
-	icon_state = "tonguelizard"
-	say_mod = "hisses"
-	taste_sensitivity = 25 // combined nose + tongue, extra sensitive
-	maxHealth = 60 //extra sensitivity means tongue is more susceptible to damage
+	icon_state = "tonguefluffy"
+	say_mod = "rawrs"
+	taste_sensitivity = 10 // nose extra sensitive
+	maxHealth = 50 //extra sensitivity means tongue is more susceptible to damage
 	initial_accents = list(/datum/accent/canine)
 
 /obj/item/organ/tongue/fly

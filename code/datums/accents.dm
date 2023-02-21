@@ -10,7 +10,9 @@
 	var/static/regex/lizard_hicc = new("с+", "g")
 	var/static/regex/lizard_hiCC = new("С+", "g")
 	var/static/regex/lizard_hich = new("ч+", "g")
-	var/static/regex/lizard_hiCH = new("ч+", "g")
+	var/static/regex/lizard_hiCH = new("Ч+", "g")
+	var/static/regex/lizard_hijj = new("ж+", "g")
+	var/static/regex/lizard_hiJJ = new("Ж+", "g")
 	if(message[1] != "*")
 		message = lizard_hiss.Replace_char(message, "[pick("ss", "sss")]")
 		message = lizard_hiSS.Replace_char(message, "[pick("SS", "SSS")]")
@@ -18,6 +20,8 @@
 		message = lizard_hiCC.Replace_char(message, "[pick("СС", "ССС")]")
 		message = lizard_hich.Replace_char(message, "[pick("щщ", "щщщ")]")
 		message = lizard_hiCH.Replace_char(message, "[pick("ЩЩ", "ЩЩЩ")]")
+		message = lizard_hijj.Replace_char(message, "[pick("шш", "шшш")]")
+		message = lizard_hiJJ.Replace_char(message, "[pick("ШШ", "ШШШ")]")
 	speech_args[SPEECH_MESSAGE] = message
 	return speech_args
 

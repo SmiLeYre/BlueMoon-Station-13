@@ -2560,6 +2560,8 @@
 #include "code\modules\language\codespeak.dm"
 #include "code\modules\language\common.dm"
 #include "code\modules\language\draconic.dm"
+#include "code\modules\language\vulpkanin.dm"
+#include "code\modules\language\tajaran.dm"
 #include "code\modules\language\drone.dm"
 #include "code\modules\language\dwarven.dm"
 #include "code\modules\language\language.dm"
