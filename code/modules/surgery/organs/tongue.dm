@@ -92,6 +92,15 @@
 	maxHealth = 40 //extra sensitivity means tongue is more susceptible to damage
 	initial_accents = list(/datum/accent/lizard)
 
+/obj/item/organ/tongue/canine
+	name = "flat tongue"
+	desc = "A flat and broad muscle commonly found in canine and feline races."
+	icon_state = "tonguelizard"
+	say_mod = "hisses"
+	taste_sensitivity = 25 // combined nose + tongue, extra sensitive
+	maxHealth = 60 //extra sensitivity means tongue is more susceptible to damage
+	initial_accents = list(/datum/accent/canine)
+
 /obj/item/organ/tongue/fly
 	name = "proboscis"
 	desc = "A freakish looking meat tube that apparently can take in liquids."

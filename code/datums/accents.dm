@@ -7,9 +7,31 @@
 	var/message = speech_args[SPEECH_MESSAGE]
 	var/static/regex/lizard_hiss = new("s+", "g")
 	var/static/regex/lizard_hiSS = new("S+", "g")
+	var/static/regex/lizard_hicc = new("с+", "g")
+	var/static/regex/lizard_hiCC = new("С+", "g")
+	var/static/regex/lizard_hich = new("ч+", "g")
+	var/static/regex/lizard_hiCH = new("ч+", "g")
 	if(message[1] != "*")
-		message = lizard_hiss.Replace_char(message, "sss")
-		message = lizard_hiSS.Replace_char(message, "SSS")
+		message = lizard_hiss.Replace_char(message, "[pick("ss", "sss")]")
+		message = lizard_hiSS.Replace_char(message, "[pick("SS", "SSS")]")
+		message = lizard_hicc.Replace_char(message, "[pick("сс", "ссс")]")
+		message = lizard_hiCC.Replace_char(message, "[pick("СС", "ССС")]")
+		message = lizard_hich.Replace_char(message, "[pick("щщ", "щщщ")]")
+		message = lizard_hiCH.Replace_char(message, "[pick("ЩЩ", "ЩЩЩ")]")
+	speech_args[SPEECH_MESSAGE] = message
+	return speech_args
+
+/datum/accent/canine/modify_speech(list/speech_args)
+	var/message = speech_args[SPEECH_MESSAGE]
+	var/static/regex/Dog_rawrs = new("r+", "g")
+	var/static/regex/Dog_RAWRs = new("R+", "g")
+	var/static/regex/Dog_crawrs = new("р+", "g")
+	var/static/regex/Dog_cRAWRs = new("Р+", "g")
+	if(message[1] != "*")
+		message = Dog_rawrs.Replace_char(message, "[pick("rr", "RRR")]")
+		message = Dog_RAWRs.Replace_char(message, "[pick("RR", "RRR")]")
+		message = Dog_crawrs.Replace_char(message, "[pick("рр", "ррр")]")
+		message = Dog_cRAWRs.Replace_char(message, "[pick("РР", "РРР")]")
 	speech_args[SPEECH_MESSAGE] = message
 	return speech_args
 
@@ -17,9 +39,17 @@
 	var/message = speech_args[SPEECH_MESSAGE]
 	var/static/regex/fly_buzz = new("z+", "g")
 	var/static/regex/fly_buZZ = new("Z+", "g")
+	var/static/regex/fly_buzzc = new("з+", "g")
+	var/static/regex/fly_buZZc = new("З+", "g")
+	var/static/regex/fly_bujj = new("ж+", "g")
+	var/static/regex/fly_buJJ = new("Ж+", "g")
 	if(message[1] != "*")
-		message = fly_buzz.Replace_char(message, "zzz")
-		message = fly_buZZ.Replace_char(message, "ZZZ")
+		message = fly_buzz.Replace_char(message, "[pick("zz", "zzz")]")
+		message = fly_buZZ.Replace_char(message, "[pick("ZZ", "ZZZ")]")
+		message = fly_buzzc.Replace_char(message, "[pick("зз", "ззз")]")
+		message = fly_buZZc.Replace_char(message, "[pick("ЗЗ", "ЗЗЗ")]")
+		message = fly_bujj.Replace_char(message, "[pick("жж", "жжж")]")
+		message = fly_buJJ.Replace_char(message, "[pick("ЖЖ", "ЖЖЖ")]")
 	speech_args[SPEECH_MESSAGE] = message
 	return speech_args
 
@@ -53,7 +83,7 @@
 			message_list[insertpos] = inserttext + "..."
 
 		if(prob(20) && message_list.len > 3)
-			message_list.Insert(insertpos, "[pick("BRAINS", "Brains", "Braaaiinnnsss", "BRAAAIIINNSSS")]...")
+			message_list.Insert(insertpos, "[pick("МОЗГИ", "Мозги", "Мооозгиии", "МООЗГИИИ")]...")
 
 	speech_args[SPEECH_MESSAGE] = jointext(message_list, " ")
 	return speech_args
