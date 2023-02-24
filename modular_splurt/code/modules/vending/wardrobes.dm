@@ -129,6 +129,7 @@
 					/obj/item/clothing/head/beret/sec/peacekeeper/hos = 1,
 					/obj/item/clothing/head/HoS/peacekeeper = 1,
 					/obj/item/clothing/suit/armor/hos/peacekeeper = 1,
+					/obj/item/clothing/suit/armor/hos/trenchcoat = 1,
 					/obj/item/clothing/under/rank/blueshield/formal/pmc_leader_jumpsuit = 1,
 					/obj/item/clothing/mask/balaclava/pmc_leader_balaclava = 1,
 					/obj/item/clothing/head/HoS/pmc_leader_cap = 1,
