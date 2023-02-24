@@ -18,7 +18,7 @@
 	beepsky_fashion = /datum/beepsky_fashion/chef
 
 /obj/item/clothing/head/chefhat/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is donning [src]! It looks like [user.p_theyre()] trying to become a chef.</span>")
+	user.visible_message("<span class='suicide'>[user] is donning [src]! It looks like [user.ru_who()] trying to become a chef.</span>")
 	user.say("Bork Bork Bork!", forced = "chef hat suicide")
 	sleep(20)
 	user.visible_message("<span class='suicide'>[user] climbs into an imaginary oven!</span>")

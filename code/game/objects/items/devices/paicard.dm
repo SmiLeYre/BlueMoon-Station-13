@@ -12,7 +12,7 @@
 	max_integrity = 200
 
 /obj/item/paicard/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] is staring sadly at [src]! [user.p_they()] can't keep living without real human intimacy!</span>")
+	user.visible_message("<span class='suicide'>[user] is staring sadly at [src]! [user.ru_who()] can't keep living without real human intimacy!</span>")
 	return OXYLOSS
 
 /obj/item/paicard/Initialize(mapload)

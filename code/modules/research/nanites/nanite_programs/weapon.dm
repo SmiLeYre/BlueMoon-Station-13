@@ -82,7 +82,7 @@
 	rogue_types = list(/datum/nanite_program/toxic)
 
 /datum/nanite_program/explosive/on_trigger(comm_message)
-	host_mob.visible_message("<span class='warning'>[host_mob] starts emitting a high-pitched buzzing, and [host_mob.p_their()] skin begins to glow...</span>",\
+	host_mob.visible_message("<span class='warning'>[host_mob] starts emitting a high-pitched buzzing, and [host_mob.ru_ego()] skin begins to glow...</span>",\
 							"<span class='userdanger'>You start emitting a high-pitched buzzing, and your skin begins to glow...</span>")
 	addtimer(CALLBACK(src, .proc/boom), clamp((nanites.nanite_volume * 0.35), 25, 150))
 

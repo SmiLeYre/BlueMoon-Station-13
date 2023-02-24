@@ -71758,6 +71758,10 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/plasteel,
 /area/hallway/primary/fore)
+"tSf" = (
+/obj/machinery/vending/wardrobe/syndie_wardrobe,
+/turf/open/floor/plating,
+/area/maintenance/department/medical)
 "tTs" = (
 /obj/machinery/firealarm{
 	dir = 8;
@@ -119869,7 +119873,7 @@ bfY
 aQi
 bAC
 apk
-bqa
+tSf
 bpw
 aXX
 cMS

@@ -58,9 +58,9 @@
 			LAZYADD(victim.all_scars, src)
 
 	if(victim && victim.get_biological_state() == BIO_JUST_BONE)
-		description = pick(strings(BONE_SCAR_FILE, W.scar_keyword)) || "general disfigurement"
+		description = pick(strings(BONE_SCAR_FILE, W.scar_keyword)) || "общее обезображивание"
 	else
-		description = pick(strings(FLESH_SCAR_FILE, W.scar_keyword)) || "general disfigurement"
+		description = pick(strings(FLESH_SCAR_FILE, W.scar_keyword)) || "общее обезображивание"
 
 	precise_location = pick(strings(SCAR_LOC_FILE, limb.body_zone))
 	switch(W.severity)
@@ -116,17 +116,17 @@
 	if(!victim || !is_visible(viewer))
 		return
 
-	var/msg = "[victim.p_they(TRUE)] [victim.p_have()] [description] on [victim.p_their()] [precise_location]."
+	var/msg = "[capitalize(description)] на [victim.ru_ego()] [ru_gde_zone(precise_location)]."
 	switch(severity)
 		if(WOUND_SEVERITY_MODERATE)
-			msg = "<span class='tinynotice'>[msg]</span>"
+			msg = span_tinynoticeital("[msg]")
 		if(WOUND_SEVERITY_SEVERE)
-			msg = "<span class='smallnoticeital'>[msg]</span>"
+			msg = span_smallnoticeital("[msg]")
 		if(WOUND_SEVERITY_CRITICAL)
-			msg = "<span class='smallnoticeital'><b>[msg]</b></span>"
+			msg = span_smallnoticeital("<b>[msg]</b>")
 		if(WOUND_SEVERITY_LOSS)
-			msg = "[victim.p_their(TRUE)] [limb.name] [description]." // different format
-			msg = "<span class='notice'><i><b>[msg]</b></i></span>"
+			msg = "[victim.ru_ego(TRUE)] [limb.name] [description]." // different format
+			msg = span_notice("<i><b>[msg]</b></i>")
 	return "[msg]"
 
 /// Whether a scar can currently be seen by the viewer
@@ -157,5 +157,5 @@
 
 /// Used to format a scar to safe in preferences for persistent scars
 /datum/scar/proc/format_amputated(body_zone)
-	description = pick(list("is several skintone shades paler than the rest of the body", "is a gruesome patchwork of artificial flesh", "has a large series of attachment scars at the articulation points"))
-	return "[SCAR_CURRENT_VERSION]|[body_zone]|[description]|amputated|[WOUND_SEVERITY_LOSS]"
+	description = pick(list("на несколько тонов бледнее, чем остальное тело", "представляет собой жуткое лоскутное одеяние из искусственной плоти", "имеет большую серию шрамов в местах сочленений"))
+	return "[SCAR_CURRENT_VERSION]|[body_zone]|[description]|ампутация!|[WOUND_SEVERITY_LOSS]"

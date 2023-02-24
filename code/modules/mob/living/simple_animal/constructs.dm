@@ -81,7 +81,7 @@
 	to_chat(src, playstyle_string)
 
 /mob/living/simple_animal/hostile/construct/examine(mob/user)
-	var/t_He = p_they(TRUE)
+	var/t_He = ru_who(TRUE)
 	var/t_s = p_s()
 	. = list("<span class='cult'>This is [icon2html(src, user)] \a <b>[src]</b>!")
 	if(desc)
@@ -108,11 +108,11 @@
 				M.visible_message("<span class='danger'>[M] repairs some of \the <b>[src]'s</b> dents.</span>", \
 						   "<span class='cult'>You repair some of <b>[src]'s</b> dents, leaving <b>[src]</b> at <b>[health]/[maxHealth]</b> health.</span>")
 			else
-				M.visible_message("<span class='danger'>[M] repairs some of [p_their()] own dents.</span>", \
+				M.visible_message("<span class='danger'>[M] repairs some of [ru_ego()] own dents.</span>", \
 						   "<span class='cult'>You repair some of your own dents, leaving you at <b>[M.health]/[M.maxHealth]</b> health.</span>")
 		else
 			if(src != M)
-				to_chat(M, "<span class='cult'>You cannot repair <b>[src]'s</b> dents, as [p_they()] [p_have()] none!</span>")
+				to_chat(M, "<span class='cult'>You cannot repair <b>[src]'s</b> dents, as [ru_who()] [p_have()] none!</span>")
 			else
 				to_chat(M, "<span class='cult'>You cannot repair your own dents, as you have none!</span>")
 	else if(src != M)
@@ -379,7 +379,7 @@
 				return ..()
 			C.DefaultCombatKnockdown(60)
 			visible_message("<span class='danger'>[src] knocks [C] down!</span>")
-			to_chat(src, "<span class='cultlarge'>\"Bring [C.p_them()] to me.\"</span>")
+			to_chat(src, "<span class='cultlarge'>\"Bring [C.ru_na()] to me.\"</span>")
 			return FALSE
 		do_attack_animation(C)
 		var/obj/item/bodypart/BP = pick(parts)
@@ -462,7 +462,7 @@
 		if(LAZYLEN(GLOB.cult_narsie.souls_needed))
 			the_construct.master = pick(GLOB.cult_narsie.souls_needed)
 			var/mob/living/real_target = the_construct.master //We can typecast this way because Narsie only allows /mob/living into the souls list
-			to_chat(the_construct, "<span class='cult italic'>You are now tracking your prey, [real_target.real_name] - harvest [real_target.p_them()]!</span>")
+			to_chat(the_construct, "<span class='cult italic'>You are now tracking your prey, [real_target.real_name] - harvest [real_target.ru_na()]!</span>")
 		else
 			to_chat(the_construct, "<span class='cult italic'>Nar'Sie has completed her harvest!</span>")
 			return

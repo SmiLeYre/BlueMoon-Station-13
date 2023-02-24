@@ -278,9 +278,9 @@ GLOBAL_LIST_EMPTY(ghost_records)
 
 	if(user != target && target.client)
 		if(iscyborg(target))
-			to_chat(user, span_danger("You can't put [target] into [src]. [target.p_theyre(capitalized = TRUE)] online."))
+			to_chat(user, span_danger("You can't put [target] into [src]. [target.ru_who(capitalized = TRUE)] online."))
 		else
-			to_chat(user, span_danger("You can't put [target] into [src]. [target.p_theyre(capitalized = TRUE)] conscious."))
+			to_chat(user, span_danger("You can't put [target] into [src]. [target.ru_who(capitalized = TRUE)] conscious."))
 		return
 	else if(target.client) // mob has client
 		if(tgalert(target, "Would you like to [tele ? "be teleported out" : "enter cryosleep"]?", "Enter Cryopod?", "Yes", "No") != "Yes")

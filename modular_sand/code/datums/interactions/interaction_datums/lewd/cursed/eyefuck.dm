@@ -1,5 +1,5 @@
 /datum/interaction/lewd/eyefuck
-	description = "Изнасиловать в глаз."
+	description = "Убийственно. Изнасиловать в глаз."
 	interaction_sound = null
 	require_user_penis = REQUIRE_EXPOSED
 	require_target_eyes = REQUIRE_EXPOSED
@@ -9,7 +9,7 @@
 	extreme = TRUE
 
 /datum/interaction/lewd/eyefuck/eyesocketfuck
-	description = "Fuck their eyesocket."
+	description = "Убийственно. Изнасиловать в глазницу."
 	require_target_eyes = null
 	require_target_eyesockets = REQUIRE_EXPOSED
 	write_log_user = "eyesocketfucked"
@@ -17,7 +17,7 @@
 
 /datum/interaction/lewd/eyefuck/display_interaction(mob/living/user, mob/living/partner)
 	var/message
-	//var/u_His = user.p_their()
+	//var/u_His = user.ru_ego()
 	//var/genital_name = user.get_penetrating_genital_name()
 
 	if(user.is_fucking(partner, CUM_TARGET_EYES))
@@ -31,7 +31,7 @@
 		if(cli && istype(C))
 			if(cli.prefs.extremeharm != "No")
 				if(prob(15))
-					C.bleed(50)
+					C.bleed(5)
 					C.add_splatter_floor(get_turf(BLOOD_COLOR_HUMAN), TRUE)
 					new/obj/effect/decal/cleanable/blood
 				if(prob(25))

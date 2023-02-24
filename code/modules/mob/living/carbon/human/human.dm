@@ -382,7 +382,7 @@
 					. = 0
 	if(!. && error_msg && user)
 		// Might need re-wording.
-		to_chat(user, "<span class='alert'>There is no exposed flesh or thin material [above_neck(target_zone) ? "on [p_their()] head" : "on [p_their()] body"].</span>")
+		to_chat(user, "<span class='alert'>There is no exposed flesh or thin material [above_neck(target_zone) ? "on [ru_ego()] head" : "on [ru_ego()] body"].</span>")
 
 /mob/living/carbon/human/check_obscured_slots()
 	. = ..()
@@ -508,7 +508,7 @@
 		to_chat(src, "<span class='warning'>Remove your mask first!</span>")
 		return 0
 	if(C.is_mouth_covered())
-		to_chat(src, "<span class='warning'>Remove [p_their()] mask first!</span>")
+		to_chat(src, "<span class='warning'>Remove [ru_ego()] mask first!</span>")
 		return 0
 
 	if(C.cpr_time < world.time + 30)
@@ -943,7 +943,7 @@
 
 
 /*/mob/living/carbon/human/get_tooltip_data()
-	var/t_He = p_they(TRUE)
+	var/t_He = ru_who(TRUE)
 	var/t_is = p_are()
 	. = list()
 	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))

@@ -139,7 +139,7 @@
 	add_fingerprint(usr)
 
 /obj/item/paper/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] scratches a grid on [user.p_their()] wrist with the paper! It looks like [user.p_theyre()] trying to commit sudoku..."))
+	user.visible_message(span_suicide("[user] scratches a grid on [user.ru_ego()] wrist with the paper! It looks like [user.ru_who()] trying to commit sudoku..."))
 	return (BRUTELOSS)
 
 /obj/item/paper/proc/clearpaper()
@@ -189,7 +189,7 @@
 		return
 	. = TRUE
 	if(!bypass_clumsy && HAS_TRAIT(user, TRAIT_CLUMSY) && prob(10) && Adjacent(user))
-		user.visible_message(span_warning("[user] accidentally ignites [user.p_them()]self!"), \
+		user.visible_message(span_warning("[user] accidentally ignites [user.ru_na()]self!"), \
 							span_userdanger("You miss [src] and accidentally light yourself on fire!"))
 		if(user.is_holding(I)) //checking if they're holding it in case TK is involved
 			user.dropItemToGround(I)

@@ -148,7 +148,7 @@
 	wiz_age = APPRENTICE_AGE_MIN
 
 /datum/antagonist/wizard/apprentice/greet()
-	to_chat(owner, "<B>You are [master.current.real_name]'s apprentice! You are bound by magic contract to follow [master.p_their()] orders and help [master.p_them()] in accomplishing [master.p_their()] goals.")
+	to_chat(owner, "<B>Я ученик [master.current.real_name]! Из-за магического контракта я обязан следовать [master.ru_ego()] приказам и помогать [master.ru_emu()] в достижении целей.")
 	owner.announce_objectives()
 
 /datum/antagonist/wizard/apprentice/register()

@@ -1,5 +1,5 @@
 /datum/interaction/lewd/finger
-	description = "Поиграться с вагиной партнёра своим пальцем."
+	description = "Пальчики. Поиграться с вагиной."
 	require_user_hands = TRUE
 	require_target_vagina = REQUIRE_EXPOSED
 	interaction_sound = null
@@ -13,7 +13,7 @@
 	partner.handle_post_sex(NORMAL_LUST, null, user)
 
 /datum/interaction/lewd/fingerass
-	description = "Поиграться с задницей партнёра своим пальцем."
+	description = "Пальчики. Поиграться с попкой."
 	interaction_sound = null
 	require_user_hands = TRUE
 	require_target_anus = REQUIRE_EXPOSED

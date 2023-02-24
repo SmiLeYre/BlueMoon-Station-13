@@ -89,19 +89,19 @@
 
 /datum/antagonist/vassal/greet()
 	to_chat(owner, "<span class='userdanger'>You are now the mortal servant of [master.owner.current], a bloodsucking vampire!</span>")
-	to_chat(owner, "<span class='boldannounce'>The power of [master.owner.current.p_their()] immortal blood compells you to obey [master.owner.current.p_them()] in all things, even offering your own life to prolong theirs.<br>\
+	to_chat(owner, "<span class='boldannounce'>The power of [master.owner.current.ru_ego()] immortal blood compells you to obey [master.owner.current.ru_na()] in all things, even offering your own life to prolong theirs.<br>\
 			You are not required to obey any other Bloodsucker, for only [master.owner.current] is your master. The laws of Nanotrasen do not apply to you now; only your vampiric master's word must be obeyed.<span>")
 	// Effects...
 	owner.current.playsound_local(null, 'sound/magic/mutate.ogg', 100, FALSE, pressure_affected = FALSE)
 	//owner.store_memory("You became the mortal servant of [master.owner.current], a bloodsucking vampire!")
 	antag_memory += "You became the mortal servant of <b>[master.owner.current]</b>, a bloodsucking vampire!<br>"
 	// And to your new Master...
-	to_chat(master.owner, "<span class='userdanger'>[owner.current] has become addicted to your immortal blood. [owner.current.p_they(TRUE)] [owner.current.p_are()] now your undying servant!</span>")
+	to_chat(master.owner, "<span class='userdanger'>[owner.current] has become addicted to your immortal blood. [owner.current.ru_who(TRUE)] [owner.current.p_are()] now your undying servant!</span>")
 	master.owner.current.playsound_local(null, 'sound/magic/mutate.ogg', 100, FALSE, pressure_affected = FALSE)
 
 /datum/antagonist/vassal/farewell()
-	owner.current.visible_message("[owner.current]'s eyes dart feverishly from side to side, and then stop. [owner.current.p_they(TRUE)] seem[owner.current.p_s()] calm, \
-			like [owner.current.p_they()] [owner.current.p_have()] regained some lost part of [owner.current.p_them()]self.",\
+	owner.current.visible_message("[owner.current]'s eyes dart feverishly from side to side, and then stop. [owner.current.ru_who(TRUE)] seem[owner.current.p_s()] calm, \
+			like [owner.current.ru_who()] [owner.current.p_have()] regained some lost part of [owner.current.ru_na()]self.",\
 			"<span class='userdanger'><FONT size = 3>With a snap, you are no longer enslaved to [master.owner]! You breathe in heavily, having regained your free will.</FONT></span>")
 	owner.current.playsound_local(null, 'sound/magic/mutate.ogg', 100, FALSE, pressure_affected = FALSE)
 	// And to your former Master...

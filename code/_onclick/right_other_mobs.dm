@@ -7,7 +7,7 @@
 
 /mob/living/carbon/human/AltRangedAttack(atom/A, params)
 	if(isturf(A) || incapacitated()) // pretty annoying to wave your fist at floors and walls. And useless.
-		return 
+		return
 	if(!CheckActionCooldown(CLICK_CD_RANGE))
 		return
 	DelayNextAction()
@@ -32,7 +32,7 @@
 			what_action = "beckons something out of your vision to come"
 			self_action = "beckon [A] to come"
 		if(INTENT_HARM)
-			var/pronoun = "[p_their()]"
+			var/pronoun = "[ru_ego()]"
 			the_action = "shakes [pronoun] fist at [A]"
 			what_action = "shakes [pronoun] fist at something out of your vision"
 			self_action = "shake your fist at [A]"

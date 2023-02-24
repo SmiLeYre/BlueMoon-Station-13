@@ -28,7 +28,7 @@
 			if(10 to 35)
 				standupwarning = "[src] tries to stand up."
 			if(35 to 60)
-				standupwarning = "[src] slowly pushes [p_them()]self upright."
+				standupwarning = "[src] slowly pushes [ru_na()]self upright."
 			if(60 to 80)
 				standupwarning = "[src] weakly attempts to stand up."
 			if(80 to INFINITY)

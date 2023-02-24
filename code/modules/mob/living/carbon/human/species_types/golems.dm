@@ -1000,7 +1000,7 @@
 	if(world.time < last_use + cooldown)
 		to_chat("<span class='notice'>You aren't ready yet to rattle your bones again</span>")
 		return
-	owner.visible_message("<span class='warning'>[owner] rattles [owner.p_their()] bones harrowingly.</span>", "<span class='notice'>You rattle your bones</span>")
+	owner.visible_message("<span class='warning'>[owner] rattles [owner.ru_ego()] bones harrowingly.</span>", "<span class='notice'>You rattle your bones</span>")
 	last_use = world.time
 	if(prob(snas_chance))
 		playsound(get_turf(owner),'sound/magic/RATTLEMEBONES2.ogg', 100)

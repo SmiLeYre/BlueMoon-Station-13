@@ -15,7 +15,7 @@
 #define STATION_TARGET_BUFFER 40
 
 //What should vending machines charge when you buy something in-department.
-#define VENDING_DISCOUNT 0.1 // price * discount so 0 = 0
+#define VENDING_DISCOUNT 0.01 // price * discount so 0 = 0
 
 #define ACCOUNT_CIV "CIV"
 #define ACCOUNT_CIV_NAME "Civil Budget"

@@ -35,7 +35,7 @@
 
 /datum/surgery_step/reprogram/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(!target.mind)
-		to_chat(user, "<span class='warning'>[target] doesn't respond to the reprogramming, as if [target.p_they()] lacked a mind...</span>")
+		to_chat(user, "<span class='warning'>[target] doesn't respond to the reprogramming, as if [target.ru_who()] lacked a mind...</span>")
 		return FALSE
 	if(HAS_TRAIT(target, TRAIT_MINDSHIELD))
 		to_chat(user, "<span class='warning'>You hear a faint buzzing from a device inside [target]'s posibrain, and the programming is purged.</span>")
@@ -56,5 +56,5 @@
 			"[user] completes the surgery on [target]'s posibrain.")
 		target.adjustOrganLoss(ORGAN_SLOT_BRAIN, 40)
 	else
-		user.visible_message("<span class='warning'>[user] suddenly notices that the posibrain [user.p_they()] [user.p_were()] working on is not there anymore.", "<span class='warning'>You suddenly notice that the posibrain you were working on is not there anymore.</span>")
+		user.visible_message("<span class='warning'>[user] suddenly notices that the posibrain [user.ru_who()] [user.p_were()] working on is not there anymore.", "<span class='warning'>You suddenly notice that the posibrain you were working on is not there anymore.</span>")
 	return FALSE

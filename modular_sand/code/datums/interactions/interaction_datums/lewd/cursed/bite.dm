@@ -1,5 +1,5 @@
 /datum/interaction/lewd/bite
-	description = "Искусать."
+	description = "Убийственно. Искусать."
 	interaction_sound = null
 	require_user_mouth = TRUE
 	require_target_hands = TRUE
@@ -13,7 +13,7 @@
 
 	if(user.a_intent == INTENT_HARM)
 		user.is_fucking(partner, CUM_TARGET_HAND)
-		partner.adjustBruteLoss(rand(8,16))
+		partner.adjustBruteLoss(rand(4,12))
 		message = "[pick("прижимается к <b>[partner]</b>, раскрывает рот и начинает кусаться.",
 					"резко разрывает контакт своей челюсти с <b>[partner]</b>, тем самым образом отрывая кусок плоти.",
 					"крепко прижимает <b>[partner]</b> к своему телу и одновременно с этим прижимается зубами.",
@@ -31,7 +31,7 @@
 		if(cli && istype(C))
 			if(cli.prefs.extremeharm != "No")
 				if(prob(30))
-					C.bleed(50)
+					C.bleed(5)
 					C.add_splatter_floor(get_turf(BLOOD_COLOR_HUMAN), TRUE)
 					new/obj/effect/decal/cleanable/blood
 

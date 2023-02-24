@@ -1,5 +1,5 @@
 /datum/interaction/lewd/mount
-	description = "Поза наездницы | Женская доминация - Вагинальная."
+	description = "Вагина. Женская доминация."
 	interaction_sound = null
 	require_user_vagina = REQUIRE_EXPOSED
 	require_target_penis = REQUIRE_EXPOSED
@@ -7,7 +7,7 @@
 
 /datum/interaction/lewd/mount/display_interaction(mob/living/user, mob/living/partner)
 	var/message
-	//var/u_His = user.p_their()
+	//var/u_His = user.ru_ego()
 	var/genital_name = partner.get_penetrating_genital_name()
 
 	if(partner.is_fucking(user, CUM_TARGET_VAGINA))
@@ -25,7 +25,7 @@
 	user.handle_post_sex(NORMAL_LUST, CUM_TARGET_PENIS, partner)
 
 /datum/interaction/lewd/mountass
-	description = "Поза Наездинцы | Женская Доминация - Анальная."
+	description = "Попа. Женская Доминация."
 	interaction_sound = null
 	require_user_anus = REQUIRE_EXPOSED
 	require_target_penis = REQUIRE_EXPOSED
@@ -33,7 +33,7 @@
 
 /datum/interaction/lewd/mountass/display_interaction(mob/living/user, mob/living/partner)
 	var/message
-	//.var/u_His = user.p_their()
+	//.var/u_His = user.ru_ego()
 	var/genital_name = partner.get_penetrating_genital_name()
 
 	if(partner.is_fucking(user, CUM_TARGET_ANUS))
@@ -51,7 +51,7 @@
 	user.handle_post_sex(NORMAL_LUST, null, partner)
 
 /datum/interaction/lewd/mountface
-	description = "Потереться своей задницей о лицо партнёра."
+	description = "Попа. Потереться о лицо."
 	interaction_sound = null
 	require_target_mouth = TRUE
 	require_user_anus = REQUIRE_EXPOSED
@@ -60,7 +60,7 @@
 /datum/interaction/lewd/mountface/display_interaction(mob/living/user, mob/living/partner)
 	var/message
 
-	//var/u_His = user.p_their()
+	//var/u_His = user.ru_ego()
 
 	if(user.is_fucking(partner, GRINDING_FACE_WITH_ANUS))
 		message = "[pick("втирает свою задницу в лицо <b>[partner]</b> и ехидно ухмыляется.",
@@ -78,7 +78,7 @@
 	user.handle_post_sex(LOW_LUST, null, partner)
 
 /datum/interaction/lewd/thighs
-	description = "Придушить своего партнёра членом."
+	description = "Член. Придушить."
 	max_distance = 1
 	require_user_penis = REQUIRE_EXPOSED
 	require_target_mouth = TRUE
@@ -88,7 +88,7 @@
 	var/fucktarget = "penis"
 
 /datum/interaction/lewd/thighs/vagina
-	description = "Придушить своего партнёра киской."
+	description = "Вагина. Придушить."
 	require_user_penis = REQUIRE_NONE
 	require_user_vagina = REQUIRE_EXPOSED
 	write_log_user = "thigh-trapped (vagina)"
@@ -100,10 +100,10 @@
 	var/obj/item/organ/genital/genital = null
 	var/lust_increase = 1
 
-	//var/u_His = user.p_their()
-	//var/t_His = partner.p_their()
-	//var/t_Him = partner.p_them()
-	//var/t_Hes = partner.p_theyre()
+	//var/u_His = user.ru_ego()
+	//var/t_His = partner.ru_ego()
+	//var/t_Him = partner.ru_na()
+	//var/t_Hes = partner.ru_who()
 
 	if(user.is_fucking(partner, THIGH_SMOTHERING))
 		var/improv = FALSE

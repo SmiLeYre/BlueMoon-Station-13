@@ -892,7 +892,7 @@
 	var/health_difference = old_health - owner.health - clamp(owner.getOxyLoss() - old_oxyloss,0, owner.getOxyLoss())
 	if(!health_difference)
 		return
-	owner.visible_message("<span class='warning'>The light in [owner]'s eyes dims as [owner.p_theyre()] harmed!</span>", \
+	owner.visible_message("<span class='warning'>The light in [owner]'s eyes dims as [owner.ru_who()] harmed!</span>", \
 	"<span class='boldannounce'>The dazzling lights dim as you're harmed!</span>")
 	health_difference *= 2 //so 10 health difference translates to 20 deciseconds of stun reduction
 	duration -= health_difference
@@ -921,7 +921,7 @@
 
 /datum/status_effect/ichorial_stain/on_apply()
 	. = ..()
-	owner.visible_message("<span class='danger'>[owner] gets back up, [owner.p_their()] body dripping blue ichor!</span>", \
+	owner.visible_message("<span class='danger'>[owner] gets back up, [owner.ru_ego()] body dripping blue ichor!</span>", \
 	"<span class='userdanger'>Thick blue ichor covers your body; you can't be revived like this again until it dries!</span>")
 	return TRUE
 
@@ -1031,7 +1031,7 @@
 	RegisterSignal(owner, COMSIG_MOVABLE_HEAR, .proc/hypnotize)
 	ADD_TRAIT(owner, TRAIT_MUTE, "trance")
 	owner.add_client_colour(/datum/client_colour/monochrome/trance)
-	owner.visible_message("[stun ? "<span class='warning'>[owner] stands still as [owner.p_their()] eyes seem to focus on a distant point.</span>" : ""]", \
+	owner.visible_message("[stun ? "<span class='warning'>[owner] stands still as [owner.ru_ego()] eyes seem to focus on a distant point.</span>" : ""]", \
 	"<span class='warning'>[pick("You feel your thoughts slow down...", "You suddenly feel extremely dizzy...", "You feel like you're in the middle of a dream...","You feel incredibly relaxed...")]</span>")
 	return TRUE
 
@@ -1114,7 +1114,7 @@
 				var/prev_intent = owner.a_intent
 				owner.a_intent = INTENT_HARM
 				to_chat(owner, "<span class='warning'>Your arm spasms!</span>")
-				owner.log_message("attacked [owner.p_them()]self to a Muscle Spasm", LOG_ATTACK)
+				owner.log_message("attacked [owner.ru_na()]self to a Muscle Spasm", LOG_ATTACK)
 				owner.ClickOn(owner)
 				owner.a_intent = prev_intent
 			if(5)

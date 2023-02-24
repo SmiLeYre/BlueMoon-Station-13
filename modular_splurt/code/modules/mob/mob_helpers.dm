@@ -10,13 +10,13 @@
 		return
 
 	// Pronoun stuff
-	var/t_He = p_they(FALSE)
-	//var/t_his = p_their()
+	var/t_He = ru_who(FALSE)
+	//var/t_his = ru_ego()
 	//var/t_is = p_are()
 
 	// Check for Distant (no touch head!)
 	if(HAS_TRAIT(src, TRAIT_DISTANT))
-		. += "<span class='warning'>You sense [t_He] might be disturbed by physical affection.</span>\n"
+		. += "<span class='warning'>Вы понимаете, что [t_He] может беспокоить физическая близость.</span>\n"
 	// Check for Heatpat Slut (pls touch head!)
 	if(HAS_TRAIT(src, TRAIT_HEADPAT_SLUT))
-		. += "<span class='info'>You sense [t_He] appreciates receiving physical affection more than normal.</span>\n"
+		. += "<span class='info'>Вы понимаете, что [t_He] ценит физическую привязанность больше, чем обычно.</span>\n"

@@ -1403,7 +1403,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 				if(!M.undergoing_cardiac_arrest() && M.can_heartattack())
 					M.set_heartattack(TRUE)
 					if(M.stat == CONSCIOUS)
-						M.visible_message("<span class='userdanger'>[M] clutches at [M.p_their()] chest as if [M.p_their()] heart stopped!</span>")
+						M.visible_message("<span class='userdanger'>[M] clutches at [M.ru_ego()] chest as if [M.ru_ego()] heart stopped!</span>")
 	. = TRUE
 	..()
 
@@ -1694,7 +1694,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	L.adjustStaminaLoss(-heal_points)
 	L.visible_message("<span class='warning'>[L] shivers with renewed vigor!</span>", "<span class='notice'>One taste of [lowertext(name)] fills you with energy!</span>")
 	if(!L.stat && L.health > 0) //brought us out of softcrit
-		L.visible_message("<span class='danger'>[L] lurches to [L.p_their()] feet!</span>", "<span class='boldnotice'>Up and at 'em, kid.</span>")
+		L.visible_message("<span class='danger'>[L] lurches to [L.ru_ego()] feet!</span>", "<span class='boldnotice'>Up and at 'em, kid.</span>")
 
 /datum/reagent/consumable/ethanol/bastion_bourbon/on_mob_life(mob/living/L)
 	if(L.health > 0)

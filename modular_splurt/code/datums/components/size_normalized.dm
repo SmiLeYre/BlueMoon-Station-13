@@ -20,7 +20,7 @@
 	if(recorded_size != normal_resize)
 		playsound(wearer, 'sound/effects/magic.ogg', 50, 1)
 		wearer.flash_lighting_fx(3, 3, LIGHT_COLOR_PURPLE)
-		wearer.visible_message("<span class='warning'>A flash of purple light engulfs \the [wearer], before [wearer.p_they()] jump[wearer.p_s()] to a more average size!</span>","<span class='notice'>You feel warm for a moment, before everything scales to your size...</span>")
+		wearer.visible_message("<span class='warning'>A flash of purple light engulfs \the [wearer], before [wearer.ru_who()] jump[wearer.p_s()] to a more average size!</span>","<span class='notice'>You feel warm for a moment, before everything scales to your size...</span>")
 		wearer.update_size(normal_resize)
 	RegisterSignal(wearer, COMSIG_MOB_RESIZED, .proc/normalize_size)
 
@@ -33,7 +33,7 @@
 		return
 	playsound(wearer,'sound/weapons/emitter2.ogg', 50, 1)
 	wearer.flash_lighting_fx(3, 3, LIGHT_COLOR_YELLOW)
-	wearer.visible_message("<span class='warning'>Golden light engulfs \the [wearer], and [wearer.p_they()] shoot[wearer.p_s()] back to [wearer.p_their()] default height!</span>","<span class='notice'>Energy rushes through your body, and you return to normal.</span>")
+	wearer.visible_message("<span class='warning'>Golden light engulfs \the [wearer], and [wearer.ru_who()] shoot[wearer.p_s()] back to [wearer.ru_ego()] default height!</span>","<span class='notice'>Energy rushes through your body, and you return to normal.</span>")
 	wearer.update_size(recorded_size)
 
 //Make sure the size stays normalized while worn and add the change to the recorded size

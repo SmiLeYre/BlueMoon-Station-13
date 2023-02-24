@@ -343,7 +343,7 @@
 /datum/emote/living/clap1
 	key = "clap1"
 	key_third_person = "claps1"
-	message = "claps their hands together."
+	message = "хлопает в свои ладоши."
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = TRUE
 	restraint_check = TRUE

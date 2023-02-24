@@ -751,7 +751,7 @@
 /datum/status_effect/stabilized/cerulean/tick()
 	if(owner.stat == DEAD)
 		if(clone && clone.stat != DEAD)
-			owner.visible_message("<span class='warning'>[owner] blazes with brilliant light, [linked_extract] whisking [owner.p_their()] soul away.</span>",
+			owner.visible_message("<span class='warning'>[owner] blazes with brilliant light, [linked_extract] whisking [owner.ru_ego()] soul away.</span>",
 				"<span class='notice'>You feel a warm glow from [linked_extract], and you open your eyes... elsewhere.</span>")
 			if(owner.mind)
 				owner.mind.transfer_to(clone)
@@ -918,7 +918,7 @@
 		if(M.stat == DEAD)
 			return
 		if(!messagedelivered)
-			to_chat(owner,"<span class='notice'>You feel your hands melt around [M]'s neck and start to drain [M.p_them()] of life.</span>")
+			to_chat(owner,"<span class='notice'>You feel your hands melt around [M]'s neck and start to drain [M.ru_na()] of life.</span>")
 			to_chat(owner.pulling, "<span class='userdanger'>[owner]'s hands melt around your neck, and you can feel your life starting to drain away!</span>")
 			messagedelivered = TRUE
 		examine_text = "<span class='warning'>SUBJECTPRONOUN is draining health from [owner.pulling]!</span>"
@@ -952,7 +952,7 @@
 /datum/status_effect/stabilized/lightpink/tick()
 	for(var/mob/living/carbon/human/H in range(1, get_turf(owner)))
 		if(H != owner && H.stat != DEAD && H.health <= 0 && !H.reagents.has_reagent(/datum/reagent/medicine/epinephrine))
-			to_chat(owner, "[linked_extract] pulses in sync with [H]'s heartbeat, trying to keep [H.p_them()] alive.")
+			to_chat(owner, "[linked_extract] pulses in sync with [H]'s heartbeat, trying to keep [H.ru_na()] alive.")
 			H.reagents.add_reagent(/datum/reagent/medicine/epinephrine,5)
 	return ..()
 
@@ -1015,7 +1015,7 @@
 			if(X.regencore)
 				X.regencore.afterattack(owner,owner,TRUE)
 				X.regencore = null
-				owner.visible_message("<span class='warning'>[owner] flashes a rainbow of colors, and [owner.p_their()] skin is coated in a milky regenerative goo!</span>")
+				owner.visible_message("<span class='warning'>[owner] flashes a rainbow of colors, and [owner.ru_ego()] skin is coated in a milky regenerative goo!</span>")
 				qdel(src)
 				qdel(linked_extract)
 	return ..()

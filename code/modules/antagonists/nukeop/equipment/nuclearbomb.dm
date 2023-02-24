@@ -697,7 +697,7 @@ This is here to make the tiles around the station mininuke change when it's arme
  */
 /*
 /obj/item/disk/nuclear/on_accidental_consumption(mob/living/carbon/M, mob/living/carbon/user, obj/item/source_item, discover_after = TRUE)
-	M.visible_message("<span class='warning'>[M] looks like [M.p_theyve()] just bitten into something important.</span>", \
+	M.visible_message("<span class='warning'>[M] looks like [M.ru_who()] just bitten into something important.</span>", \
 						"<span class='warning'>Wait, is this the nuke disk?</span>")
 
 	return discover_after
@@ -723,7 +723,7 @@ This is here to make the tiles around the station mininuke change when it's arme
 	. = ..()
 
 /obj/item/disk/nuclear/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is going delta! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is going delta! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	playsound(src, 'sound/machines/alarm.ogg', 50, -1, TRUE)
 	for(var/i in 1 to 100)
 		addtimer(CALLBACK(user, /atom/proc/add_atom_colour, (i % 2)? "#00FF00" : "#FF0000", ADMIN_COLOUR_PRIORITY), i)

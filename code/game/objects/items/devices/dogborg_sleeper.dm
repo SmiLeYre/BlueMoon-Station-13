@@ -122,7 +122,7 @@
 		target.reset_perspective(src)
 		target.ExtinguishMob() //The tongue already puts out fire stacks but being put into the sleeper shouldn't allow you to keep burning.
 		update_gut(hound)
-		user.visible_message("<span class='warning'>[voracious ? "[hound]'s [src.name] lights up and expands as [target] slips inside into their [src.name]." : "[hound]'s sleeper indicator lights up as [target] is scooped up into [hound.p_their()] [src.name]."]</span>", \
+		user.visible_message("<span class='warning'>[voracious ? "[hound]'s [src.name] lights up and expands as [target] slips inside into their [src.name]." : "[hound]'s sleeper indicator lights up as [target] is scooped up into [hound.ru_ego()] [src.name]."]</span>", \
 			"<span class='notice'>Your [voracious ? "[src.name] lights up as [target] slips into" : "sleeper indicator light shines brightly as [target] is scooped inside"] your [src.name]. Life support functions engaged.</span>")
 		message_admins("[key_name(hound)] has sleeper'd [key_name(patient)] as a dogborg. [ADMIN_JMP(src)]")
 		playsound(hound, voracious ? 'sound/vore/prey/insertion_01.ogg' : 'sound/effects/bin_close.ogg', 100, 1)
@@ -168,7 +168,7 @@
 					voracious = FALSE
 	if(length(targets))
 		if(hound)
-			hound.visible_message("<span class='warning'>[voracious ? "[hound] empties out [hound.p_their()] contents via [hound.p_their()] release port." : "[hound]'s underside slides open with an audible clunk before [hound.p_their()] [src.name] flips over, carelessly dumping its contents onto the ground below [hound.p_them()] before closing right back up again."]</span>", \
+			hound.visible_message("<span class='warning'>[voracious ? "[hound] empties out [hound.ru_ego()] contents via [hound.ru_ego()] release port." : "[hound]'s underside slides open with an audible clunk before [hound.ru_ego()] [src.name] flips over, carelessly dumping its contents onto the ground below [hound.ru_na()] before closing right back up again."]</span>", \
 				"<span class='notice'>[voracious ? "You empty your contents via your release port." : "You open your sleeper hatch, quickly releasing all of the contents within before closing it again."]</span>")
 		for(var/a in contents)
 			var/atom/movable/AM = a

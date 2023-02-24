@@ -1,8 +1,8 @@
 /mob/living/carbon/examine(mob/user)
-	var/t_He = p_they(TRUE)
-	var/t_His = p_their(TRUE)
-	var/t_his = p_their()
-	var/t_him = p_them()
+	var/t_He = ru_who(TRUE)
+	var/t_His = ru_ego(TRUE)
+	var/t_his = ru_ego()
+	var/t_him = ru_na()
 	var/t_has = p_have()
 	var/t_is = p_are()
 

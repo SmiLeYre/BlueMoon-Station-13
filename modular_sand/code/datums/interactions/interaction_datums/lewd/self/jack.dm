@@ -1,5 +1,5 @@
 /datum/interaction/lewd/jack
-	description = "Подрочить."
+	description = "Член. Подрочить себе."
 	interaction_sound = null
 	require_user_hands = TRUE
 	require_user_penis = REQUIRE_EXPOSED
@@ -10,7 +10,7 @@
 
 /datum/interaction/lewd/jack/display_interaction(mob/living/user)
 	var/message
-	//var/t_His = user.p_their()
+	//var/t_His = user.ru_ego()
 	//var/genital_name = user.get_penetrating_genital_name()
 
 	if(user.is_fucking(user, CUM_TARGET_HAND))

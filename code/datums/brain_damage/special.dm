@@ -107,7 +107,7 @@
 	if(user != seer || !linked_to)
 		return
 	var/slip_in_message = pick("slides sideways in an odd way, and disappears", "jumps into an unseen dimension",\
-		"sticks one leg straight out, wiggles [user.p_their()] foot, and is suddenly gone", "stops, then blinks out of reality", \
+		"sticks one leg straight out, wiggles [user.ru_ego()] foot, and is suddenly gone", "stops, then blinks out of reality", \
 		"is pulled into an invisible vortex, vanishing from sight")
 	var/slip_out_message = pick("silently fades in", "leaps out of thin air","appears", "walks out of an invisible doorway",\
 		"slides out of a fold in spacetime")

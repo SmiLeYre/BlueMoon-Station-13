@@ -33059,11 +33059,11 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard)
 "crC" = (
-/obj/structure/closet/secure_closet/security/sec,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/effect/turf_decal/stripes/end{
 	dir = 1
 	},
+/obj/machinery/vending/wardrobe/syndie_wardrobe,
 /turf/open/floor/plasteel,
 /area/maintenance/starboard)
 "crD" = (

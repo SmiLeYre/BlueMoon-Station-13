@@ -49340,6 +49340,10 @@
 	},
 /turf/open/floor/engine,
 /area/engineering/main)
+"ehV" = (
+/obj/machinery/vending/wardrobe/syndie_wardrobe,
+/turf/open/floor/plating,
+/area/maintenance/port/fore)
 "eil" = (
 /turf/open/floor/carpet,
 /area/command/bridge)
@@ -62207,6 +62211,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel,
 /area/commons/locker)
+"lkd" = (
+/obj/item/cigbutt,
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/maintenance/port/fore)
 "lkU" = (
 /obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk{
@@ -106425,7 +106435,7 @@ alH
 amW
 aRG
 apw
-dod
+ehV
 dne
 atz
 auM
@@ -106681,7 +106691,7 @@ akr
 alI
 amX
 aRG
-dnZ
+lkd
 aqP
 dne
 atA

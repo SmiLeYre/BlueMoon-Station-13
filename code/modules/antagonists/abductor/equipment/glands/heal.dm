@@ -119,7 +119,7 @@
 
 /obj/item/organ/heart/gland/heal/proc/replace_limb(body_zone, obj/item/bodypart/limb)
 	if(limb)
-		owner.visible_message("<span class='warning'>[owner]'s [limb.name] suddenly detaches from [owner.p_their()] body!</span>", "<span class='userdanger'>Your [limb.name] suddenly detaches from your body!</span>")
+		owner.visible_message("<span class='warning'>[owner]'s [limb.name] suddenly detaches from [owner.ru_ego()] body!</span>", "<span class='userdanger'>Your [limb.name] suddenly detaches from your body!</span>")
 		playsound(owner, "desceration", 50, TRUE, -1)
 		limb.drop_limb()
 	else
@@ -128,7 +128,7 @@
 	addtimer(CALLBACK(src, .proc/finish_replace_limb, body_zone), rand(150, 300))
 
 /obj/item/organ/heart/gland/heal/proc/finish_replace_limb(body_zone)
-	owner.visible_message("<span class='warning'>With a loud snap, [owner]'s [parse_zone(body_zone)] rapidly grows back from [owner.p_their()] body!</span>",
+	owner.visible_message("<span class='warning'>With a loud snap, [owner]'s [parse_zone(body_zone)] rapidly grows back from [owner.ru_ego()] body!</span>",
 	"<span class='userdanger'>With a loud snap, your [parse_zone(body_zone)] rapidly grows back from your body!</span>",
 	"<span class='warning'>Your hear a loud snap.</span>")
 	playsound(owner, 'sound/magic/demon_consume.ogg', 50, TRUE)

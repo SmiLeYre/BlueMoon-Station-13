@@ -85,7 +85,7 @@
 		if(iscarbon(hittarget_living))
 			var/mob/living/carbon/carb = hittarget_living
 			carb.DefaultCombatKnockdown(40) //I play to make sprites go horizontal
-		hittarget_living.visible_message(span_warning("[src] rams into [hittarget_living] and sucks [hittarget_living.p_them()] up!")) //fuck off shezza this isn't ERP.
+		hittarget_living.visible_message(span_warning("[src] rams into [hittarget_living] and sucks [hittarget_living.ru_na()] up!")) //fuck off shezza this isn't ERP.
 		mob_forced_enter(hittarget_living)
 		playsound(src, pick('sound/vehicles/clowncar_ram1.ogg', 'sound/vehicles/clowncar_ram2.ogg', 'sound/vehicles/clowncar_ram3.ogg'), 75)
 		log_combat(src, hittarget_living, "sucked up")

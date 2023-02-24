@@ -156,12 +156,12 @@
 /obj/item/gun/ballistic/suicide_act(mob/living/user)
 	var/obj/item/organ/brain/B = user.getorganslot(ORGAN_SLOT_BRAIN)
 	if (B && chambered && chambered.BB && can_trigger_gun(user) && !chambered.BB.nodamage)
-		user.visible_message("<span class='suicide'>[user] is putting the barrel of [src] in [user.p_their()] mouth.  It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		user.visible_message("<span class='suicide'>[user] is putting the barrel of [src] in [user.ru_ego()] mouth.  It looks like [user.ru_who()] trying to commit suicide!</span>")
 		sleep(25)
 		if(user.is_holding(src))
 			var/turf/T = get_turf(user)
 			process_fire(user, user, FALSE, null, BODY_ZONE_HEAD)
-			user.visible_message("<span class='suicide'>[user] blows [user.p_their()] brain[user.p_s()] out with [src]!</span>")
+			user.visible_message("<span class='suicide'>[user] blows [user.ru_ego()] brain[user.p_s()] out with [src]!</span>")
 			playsound(src, 'sound/weapons/dink.ogg', 30, 1)
 			var/turf/target = get_ranged_target_turf(user, turn(user.dir, 180), BRAINS_BLOWN_THROW_RANGE)
 			B.Remove()
@@ -176,7 +176,7 @@
 			user.visible_message("<span class='suicide'>[user] panics and starts choking to death!</span>")
 			return(OXYLOSS)
 	else
-		user.visible_message("<span class='suicide'>[user] is pretending to blow [user.p_their()] brain[user.p_s()] out with [src]! It looks like [user.p_theyre()] trying to commit suicide!</b></span>")
+		user.visible_message("<span class='suicide'>[user] is pretending to blow [user.ru_ego()] brain[user.p_s()] out with [src]! It looks like [user.ru_who()] trying to commit suicide!</b></span>")
 		playsound(src, "gun_dry_fire", 30, 1)
 		return (OXYLOSS)
 #undef BRAINS_BLOWN_THROW_SPEED

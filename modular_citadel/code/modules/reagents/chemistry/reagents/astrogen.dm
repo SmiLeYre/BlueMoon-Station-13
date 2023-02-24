@@ -107,7 +107,7 @@ I'd like to point out from my calculations it'll take about 60-80 minutes to die
 	if(M.mind) //Just in case someone else is inside of you, it makes them a ghost and should hopefully bring them home at the end.
 		var/mob/living/simple_animal/astral/G2 = new(get_turf(M))
 		M.mind.transfer_to(G2)
-		to_chat(G2, "<span class='warning'>[M]'s conciousness snaps back to them as [M.p_their()] astrogen runs out, kicking your projected mind out!'</b></span>")
+		to_chat(G2, "<span class='warning'>[M]'s conciousness snaps back to them as [M.ru_ego()] astrogen runs out, kicking your projected mind out!'</b></span>")
 		log_reagent("FERMICHEM: [G2.mind.name] has been booted out of [M] as their original mind came back as the Astrogen reagent ran out!")
 	G.mind.transfer_to(origin)
 	qdel(G)

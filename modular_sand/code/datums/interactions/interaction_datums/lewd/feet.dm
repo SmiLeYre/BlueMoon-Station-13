@@ -1,5 +1,5 @@
 /datum/interaction/lewd/grindface
-	description = "Потереть лицо партнёра ножками."
+	description = "Ножки. Потереть лицо."
 	interaction_sound = null
 	require_target_mouth = TRUE
 	require_user_num_feet = 1
@@ -51,7 +51,7 @@
 	partner.handle_post_sex(LOW_LUST, null, user)
 
 /datum/interaction/lewd/grindmouth
-	description = "Углубиться своими ножками в рот партнёра."
+	description = "Ножки. Углубиться в ротик."
 	interaction_sound = null
 	require_target_mouth = TRUE
 	require_user_num_feet = 1
@@ -61,10 +61,10 @@
 /datum/interaction/lewd/grindmouth/display_interaction(mob/living/user, mob/living/partner)
 	var/message
 
-	//var/u_His = user.p_their()
-	var/t_His = partner.p_their()
-	var/t_Him = partner.p_them()
-	var/t_He = partner.p_they()
+	//var/u_His = user.ru_ego()
+	var/t_His = partner.ru_ego()
+	var/t_Him = partner.ru_na()
+	var/t_He = partner.ru_who()
 	//var/t_S = partner.p_s()
 
 	var/shoes = user.get_shoes()
@@ -106,7 +106,7 @@
 	partner.handle_post_sex(LOW_LUST, null, user)
 
 /datum/interaction/lewd/footjob
-	description = "Подрочить партнёру своей ногой."
+	description = "Ножки. Подрочить одной ногой."
 	interaction_sound = null
 	require_user_num_feet = 1
 	require_user_feet = REQUIRE_ANY
@@ -115,7 +115,7 @@
 
 /datum/interaction/lewd/footjob/display_interaction(mob/living/user, mob/living/partner)
 	var/message
-	//var/u_His = user.p_their()
+	//var/u_His = user.ru_ego()
 	var/shoes = user.get_shoes(TRUE)
 	var/genital_name = partner.get_penetrating_genital_name()
 
@@ -137,12 +137,12 @@
 		partner.handle_post_sex(NORMAL_LUST, CUM_TARGET_FEET, user)
 
 /datum/interaction/lewd/footjob/double
-	description = "Подрочить партнёру своими ножками."
+	description = "Ножки. Подрочить двумя ногами."
 	require_user_num_feet = 2
 
 /datum/interaction/lewd/footjob/double/display_interaction(mob/living/user, mob/living/partner)
 	var/message
-	//var/u_His = user.p_their()
+	//var/u_His = user.ru_ego()
 	var/shoes = user.get_shoes()
 	var/genital_name = partner.get_penetrating_genital_name()
 
@@ -165,14 +165,14 @@
 		partner.handle_post_sex(NORMAL_LUST, CUM_TARGET_FEET, user)
 
 /datum/interaction/lewd/footjob/vagina
-	description = "Потереть её киску своей ножкой."
+	description = "Ножка. Потереть киску."
 	require_target_vagina = REQUIRE_EXPOSED
 	require_target_penis = null
 
 /datum/interaction/lewd/footjob/vagina/display_interaction(mob/living/user, mob/living/partner)
 	var/message
 
-	//var/u_His = user.p_their()
+	//var/u_His = user.ru_ego()
 
 	var/shoes = partner.get_shoes(TRUE)
 

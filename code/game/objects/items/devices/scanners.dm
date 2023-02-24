@@ -33,7 +33,7 @@ GENETICS SCANNER
 	custom_materials = list(/datum/material/iron=150)
 
 /obj/item/t_scanner/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to emit terahertz-rays into [user.p_their()] brain with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins to emit terahertz-rays into [user.ru_ego()] brain with [src]! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	return TOXLOSS
 
 /obj/item/t_scanner/attack_self(mob/user)
@@ -97,7 +97,7 @@ GENETICS SCANNER
 	register_item_context()
 
 /obj/item/healthanalyzer/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to analyze [user.p_them()]self with [src]! The display shows that [user.p_theyre()] dead!</span>")
+	user.visible_message("<span class='suicide'>[user] begins to analyze [user.ru_na()]self with [src]! The display shows that [user.ru_who()] dead!</span>")
 	return BRUTELOSS
 
 /obj/item/healthanalyzer/attack_self(mob/user)
@@ -646,7 +646,7 @@ GENETICS SCANNER
 	. += "<span class='notice'>Alt-click [src] to activate the barometer function.</span>"
 
 /obj/item/analyzer/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to analyze [user.p_them()]self with [src]! The display shows that [user.p_theyre()] dead!</span>")
+	user.visible_message("<span class='suicide'>[user] begins to analyze [user.ru_na()]self with [src]! The display shows that [user.ru_who()] dead!</span>")
 	return BRUTELOSS
 
 /obj/item/analyzer/attack_self(mob/user)

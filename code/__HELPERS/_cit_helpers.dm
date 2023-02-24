@@ -63,7 +63,7 @@ GLOBAL_LIST_EMPTY(belly_shapes_list)
 GLOBAL_LIST_EMPTY(anus_shapes_list)
 
 //longcat memes.
-GLOBAL_LIST_INIT(dick_nouns, list("phallus", "willy", "dick", "prick", "member", "tool", "gentleman's organ", "cock", "wang", "knob", "dong", "joystick", "pecker", "johnson", "weenie", "tadger", "schlong", "thirsty ferret", "One eyed trouser trout", "Ding dong", "ankle spanker", "Pork sword", "engine cranker", "Harry hot dog", "Davy Crockett", "Kidney cracker", "Heat seeking moisture missile", "Giggle stick", "love whistle", "Tube steak", "Uncle Dick", "Purple helmet warrior"))
+GLOBAL_LIST_INIT(dick_nouns, list("фаллос", "вилли", "член", "хрен", "член", "агрегат", "половой орган", "хер", "детородный орган", "болт", "кила", "джойстик", "пеккер", "Джонсон", "сосисочник", "головастик", "елдык", "конец", "Динь-Дон", "стояк", "хот-дог Гарри", "Дэви Крокетт", "крепкий друг", "палка для хихиканья", "любовный свисток", "стейк из трубки", "дядя Дик", "Воин в Пурпурной Каске"))
 
 GLOBAL_LIST_INIT(genitals_visibility_toggles, list(GEN_VISIBLE_ALWAYS, GEN_VISIBLE_NO_CLOTHES, GEN_VISIBLE_NO_UNDIES, GEN_VISIBLE_NEVER))
 

@@ -98,7 +98,7 @@
 		if(!is_servant_of_ratvar(user))
 			to_chat(user, "<span class='cultlarge'>\"I wouldn't advise that.\"</span>")
 		else
-			to_chat(user, "<span class='cultlarge'>\"One of Ratvar's toys is trying to play with things [user.p_they()] shouldn't. Cute.\"</span>")
+			to_chat(user, "<span class='cultlarge'>\"One of Ratvar's toys is trying to play with things [user.ru_who()] shouldn't. Cute.\"</span>")
 			to_chat(user, "<span class='userdanger'>A horrible force yanks at your arm!</span>")
 			user.emote("scream")
 			user.apply_damage(30, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
@@ -167,7 +167,7 @@
 			force = 5
 			return
 		else
-			to_chat(user, "<span class='cultlarge'>\"One of Ratvar's toys is trying to play with things [user.p_they()] shouldn't. Cute.\"</span>")
+			to_chat(user, "<span class='cultlarge'>\"One of Ratvar's toys is trying to play with things [user.ru_who()] shouldn't. Cute.\"</span>")
 			to_chat(user, "<span class='userdanger'>A horrible force yanks at your arm!</span>")
 			user.emote("scream")
 			user.apply_damage(30, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))

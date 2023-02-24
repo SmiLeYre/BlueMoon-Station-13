@@ -24,9 +24,9 @@ In all, this is a lot like the monkey code. /N
 			AdjustUnconscious(-60, FALSE)
 			AdjustSleeping(-100, FALSE)
 			update_mobility()
-			visible_message("<span class='notice'>[M.name] nuzzles [src] trying to wake [p_them()] up!</span>",
+			visible_message("<span class='notice'>[M.name] nuzzles [src] trying to wake [ru_na()] up!</span>",
 				"<span class='notice'>[M.name] nuzzles you trying to wake you up!</span>", target = M,
-				target_message = "<span class='notice'>You nuzzle [src] trying to wake [p_them()] up!</span>")
+				target_message = "<span class='notice'>You nuzzle [src] trying to wake [ru_na()] up!</span>")
 		if(INTENT_DISARM, INTENT_HARM)
 			if(health > 0)
 				M.do_attack_animation(src, ATTACK_EFFECT_BITE)

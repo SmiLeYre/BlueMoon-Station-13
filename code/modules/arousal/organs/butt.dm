@@ -8,7 +8,7 @@
 	w_class 				= 3
 	size 					= 0
 	var/size_name			= "nonexistent"
-	shape					= "Pair" //turn this into a default constant if for some inexplicable reason we get more than one butt type but I doubt it.
+	shape					= "ягодицы" //turn this into a default constant if for some inexplicable reason we get more than one butt type but I doubt it.
 	genital_flags = UPDATE_OWNER_APPEARANCE|GENITAL_UNDIES_HIDDEN|CAN_CUM_INTO|HAS_EQUIPMENT
 	masturbation_verb 		= "massage"
 	var/size_cached			= 0
@@ -29,7 +29,7 @@
 	var/rounded_size = round(size)
 	if(size < 0)//I don't actually know what round() does to negative numbers, so to be safe!!fixed
 		if(owner)
-			to_chat(owner, "<span class='warning'>You feel your asscheeks shrink down to an ordinary size.</span>")
+			to_chat(owner, "<span class='warning'>Вы чувствуете, как ваши ягодицы уменьшаются до обычного размера.</span>")
 		QDEL_IN(src, 1)
 		return
 
@@ -37,9 +37,9 @@
 		var/mob/living/carbon/human/H = owner
 		var/r_prev_size = round(prev_size)
 		if (rounded_size > r_prev_size)
-			to_chat(H, "<span class='warning'>Your buttcheeks [pick("swell up to", "flourish into", "expand into", "plump up into", "grow eagerly into", "amplify into")] a larger pair.</span>")
+			to_chat(H, "<span class='warning'>Ваши ягодицы начинают [pick("разбухать до", "расцветать до", "расширяться до", "пухнуть до", "расти с нетерпением до", "увеличиваться до")] большего размера.</span>")
 		else if (rounded_size < r_prev_size)
-			to_chat(H, "<span class='warning'>Your buttcheeks [pick("shrink down to", "decrease into", "wobble down into", "diminish into", "deflate into", "contracts into")] a smaller pair.</span>")
+			to_chat(H, "<span class='warning'>Ваши ягодицы начинают [pick("уменьшаться до", "сдуваться до", "колебаться до", "сокращаться до", "сморщиваться с сожалением до", "сдуваться до")] меньшего размера.</span>")
 
 
 /obj/item/organ/genital/butt/update_appearance()
@@ -48,25 +48,25 @@
 	//Reflect the size of dat ass on examine.
 	switch(round(size))
 		if(1)
-			size_name = "average"
+			size_name = "среднего"
 		if(2)
-			size_name = "sizable"
+			size_name = "большого"
 		if(3)
-			size_name = "squeezable"
+			size_name = "сжимательного"
 		if(4)
-			size_name = "hefty"
+			size_name = "крупного"
 		if(5)
-			size_name = pick("massive", "very generous")
+			size_name = pick("массивного", "особо крупного")
 		if(6)
-			size_name = pick("gigantic", "big bubbly", "enormous")
+			size_name = pick("гигантского", "крупнопузырчатого", "огромного")
 		if(7)
-			size_name = pick("unfathomably large", "extreme")
+			size_name = pick("непостижимо большого", "экстремального")
 		if(8)
-			size_name = pick("absolute dumptruck", "humongous", "dummy thicc")
+			size_name = pick("абсолютно огромного", "невероятно гигантского", "THAT'S ULTRA THICC")
 		else
-			size_name = "nonexistent"
+			size_name = "несуществующего"
 
-	desc = "You see a [lowershape] of [size_name] asscheeks."
+	desc = "Вы наблюдаете [lowershape] [size_name] размера."
 
 	var/icon_size = size
 	icon_state = "butt_[lowershape]_[icon_size]"

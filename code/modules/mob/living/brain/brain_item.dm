@@ -204,7 +204,7 @@
 		return ..()
 
 	if((C.head && (C.head.flags_cover & HEADCOVERSEYES)) || (C.wear_mask && (C.wear_mask.flags_cover & MASKCOVERSEYES)) || (C.glasses && (C.glasses.flags_1 & GLASSESCOVERSEYES)))
-		to_chat(user, "<span class='warning'>You're going to need to remove [C.p_their()] head cover first!</span>")
+		to_chat(user, "<span class='warning'>You're going to need to remove [C.ru_ego()] head cover first!</span>")
 		return
 
 //since these people will be dead M != usr
@@ -212,9 +212,9 @@
 	if(!C.getorgan(/obj/item/organ/brain))
 		if(!C.get_bodypart(BODY_ZONE_HEAD) || !user.temporarilyRemoveItemFromInventory(src))
 			return
-		var/msg = "[C] has [src] inserted into [C.p_their()] head by [user]."
+		var/msg = "[C] has [src] inserted into [C.ru_ego()] head by [user]."
 		if(C == user)
-			msg = "[user] inserts [src] into [user.p_their()] head!"
+			msg = "[user] inserts [src] into [user.ru_ego()] head!"
 
 		C.visible_message("<span class='danger'>[msg]</span>",
 						"<span class='userdanger'>[msg]</span>")

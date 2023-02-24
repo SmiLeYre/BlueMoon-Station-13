@@ -1,5 +1,5 @@
 /datum/interaction/lewd/facefuck
-	description = "Вытрахать рот, используя свой член."
+	description = "Член. Вытрахать в рот."
 	interaction_sound = null
 	require_target_mouth = TRUE
 	require_user_penis = REQUIRE_EXPOSED
@@ -7,7 +7,7 @@
 	var/fucktarget = "penis"
 
 /datum/interaction/lewd/facefuck/vag
-	description = "Придушить своей киской."
+	description = "Вагина. Потереться об рот."
 	require_user_penis = null
 	require_user_vagina = REQUIRE_EXPOSED
 	fucktarget = "vagina"
@@ -106,7 +106,7 @@
 		user.handle_post_sex(NORMAL_LUST, CUM_TARGET_MOUTH, partner)
 
 /datum/interaction/lewd/throatfuck
-	description = "Вытрахать партнёра в глотку."
+	description = "Член. Вытрахать в глотку | Убийственно."
 	interaction_sound = null
 	require_user_penis = REQUIRE_EXPOSED
 	require_target_mouth = TRUE

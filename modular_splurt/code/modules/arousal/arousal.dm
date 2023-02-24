@@ -86,7 +86,7 @@
 							"<span class='userlove'>Something vacuums your [G.name] with a quiet but powerfull vrrrr.</span>")
 		if(!do_after(src, mb_time, target = src) || !in_range(src, container) || !G.climaxable(src, TRUE))
 			return
-	visible_message("<span class='love'>[src] twitches as [p_their()] [main_fluid] trickles into [container].</span>", \
+	visible_message("<span class='love'>[src] twitches as [ru_ego()] [main_fluid] trickles into [container].</span>", \
 								"<span class='userlove'>[M] sucks out all the [main_fluid] you had been saving up into [container].</span>", \
 								"<span class='userlove'>You feel a vacuum sucking on your [G.name] as you climax!</span>")
 	do_climax(fluid_source, container, G, FALSE, cover = TRUE)
@@ -102,7 +102,7 @@
 		if(!do_after(src, mb_time, target = src) || !in_range(src, L) || !G.climaxable(src, TRUE))
 			return
 	to_chat(src,"<span class='userlove'>You climax all over [L] using your [G.name]!</span>")
-	to_chat(L, "<span class='userlove'>[src] climaxes all over you using [p_their()] [G.name]!</span>")
+	to_chat(L, "<span class='userlove'>[src] climaxes all over you using [ru_ego()] [G.name]!</span>")
 	do_climax(fluid_source, L, G, spillage, cover = TRUE)
 
 /atom/proc/add_cum_overlay() //This can go in a better spot, for now its here.

@@ -391,8 +391,8 @@
 				M.visible_message("<span class='danger'>[user] has cracked open a [name] on [M]'s head!</span>", \
 						"<span class='userdanger'>[user] has cracked open a [name] on [M]'s head!</span>")
 			else
-				user.visible_message("<span class='danger'>[M] cracks open a [name] on their [M.p_them()] head!</span>", \
-						"<span class='userdanger'>[M] cracks open a [name] on [M.p_their()] head!</span>")
+				user.visible_message("<span class='danger'>[M] cracks open a [name] on their [M.ru_na()] head!</span>", \
+						"<span class='userdanger'>[M] cracks open a [name] on [M.ru_ego()] head!</span>")
 
 			//The coconut breaks open so splash its reagents
 			spillable = TRUE

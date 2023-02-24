@@ -79,7 +79,7 @@
 	if(nuke_team && nuke_team.syndicate_name)
 		var/number = 1
 		number = nuke_team.members.Find(owner)
-		owner.current.real_name = "[nuke_team.syndicate_name] Operative #[number]"
+		owner.current.real_name = "[nuke_team.syndicate_name] Оперативник #[number]"
 
 /datum/antagonist/nukeop/proc/memorize_code()
 	if(nuke_team && nuke_team.tracked_nuke && nuke_team.memorized_code)

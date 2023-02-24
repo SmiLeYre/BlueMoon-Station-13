@@ -1,5 +1,5 @@
 /datum/interaction/lewd/fuck
-	description = "Проникнуть в вагину своего партнёра."
+	description = "Член. Проникнуть в вагину."
 	require_user_penis = REQUIRE_EXPOSED
 	require_target_vagina = REQUIRE_EXPOSED
 	write_log_user = "fucked"
@@ -9,7 +9,7 @@
 
 /datum/interaction/lewd/fuck/display_interaction(mob/living/user, mob/living/partner)
 	var/message
-	//var/u_His = user.p_their()
+	//var/u_His = user.ru_ego()
 	var/genital_name = user.get_penetrating_genital_name()
 
 	if(user.is_fucking(partner, CUM_TARGET_VAGINA))
@@ -30,14 +30,14 @@
 	partner.handle_post_sex(NORMAL_LUST, CUM_TARGET_PENIS, user)
 
 /datum/interaction/lewd/fuck/anal
-	description = "Трахнуть в задницу."
+	description = "Попа. Проникнуть в задницу."
 	require_target_vagina = null
 	require_target_anus = REQUIRE_EXPOSED
 
 /datum/interaction/lewd/fuck/anal/display_interaction(mob/living/user, mob/living/partner)
 	var/message
-	//var/u_His = user.p_their()
-	//var/t_His = partner.p_their()
+	//var/u_His = user.ru_ego()
+	//var/t_His = partner.ru_ego()
 	var/genital_name = user.get_penetrating_genital_name()
 
 	if(user.is_fucking(partner, CUM_TARGET_ANUS))
@@ -62,7 +62,7 @@
 	partner.handle_post_sex(NORMAL_LUST, null, user)
 
 /datum/interaction/lewd/breastfuck
-	description = "Совокупиться с сиськами партнёра."
+	description = "Член. Проникнуть между сисек."
 	interaction_sound = null
 	require_user_penis = REQUIRE_EXPOSED
 	require_target_breasts = REQUIRE_EXPOSED
@@ -70,7 +70,7 @@
 
 /datum/interaction/lewd/breastfuck/display_interaction(mob/living/user, mob/living/partner)
 	var/message
-	//var/u_His = user.p_their()
+	//var/u_His = user.ru_ego()
 	var/genital_name = user.get_penetrating_genital_name()
 
 	if(user.is_fucking(partner, CUM_TARGET_BREASTS))
@@ -92,7 +92,7 @@
 		user.handle_post_sex(NORMAL_LUST, CUM_TARGET_BREASTS, partner)
 
 /datum/interaction/lewd/footfuck
-	description = "Потереться своим членом о ботинок партнёра."
+	description = "Член. Потереться о ботинок."
 	interaction_sound = null
 	require_target_num_feet = 1
 	require_target_feet = REQUIRE_ANY
@@ -101,7 +101,7 @@
 
 /datum/interaction/lewd/footfuck/display_interaction(mob/living/user, mob/living/partner)
 	var/message
-	//var/u_His = user.p_their()
+	//var/u_His = user.ru_ego()
 	var/genital_name = user.get_penetrating_genital_name()
 
 	//var/shoes = partner.get_shoes(TRUE)
@@ -125,12 +125,12 @@
 		user.handle_post_sex(NORMAL_LUST, CUM_TARGET_FEET, partner)
 
 /datum/interaction/lewd/footfuck/double
-	description = "Потереться своим членом о ботинки партнёра."
+	description = "Член. Потереться о ботинки."
 	require_target_num_feet = 2
 
 /datum/interaction/lewd/footfuck/double/display_interaction(mob/living/user, mob/living/partner)
 	var/message
-	//var/u_His = user.p_their()
+	//var/u_His = user.ru_ego()
 	var/genital_name = user.get_penetrating_genital_name()
 
 	var/shoes = partner.get_shoes()
@@ -154,7 +154,7 @@
 		user.handle_post_sex(NORMAL_LUST, CUM_TARGET_FEET, partner)
 
 /datum/interaction/lewd/footfuck/vag
-	description = "Потереться своей вагиной о ботинок партнёра."
+	description = "Вагина. Потереться о ботинок."
 	interaction_sound = null
 	require_target_num_feet = 1
 	require_target_feet = REQUIRE_ANY
@@ -165,7 +165,7 @@
 /datum/interaction/lewd/footfuck/vag/display_interaction(mob/living/user, mob/living/partner)
 	var/message
 
-	//var/u_His = user.p_their()
+	//var/u_His = user.ru_ego()
 
 	//var/shoes = partner.get_shoes(TRUE)
 

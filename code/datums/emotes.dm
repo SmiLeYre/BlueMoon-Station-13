@@ -83,9 +83,9 @@
 
 /datum/emote/proc/replace_pronoun(mob/user, message)
 	if(findtext(message, "their"))
-		message = replacetext(message, "their", user.p_their())
+		message = replacetext(message, "their", user.ru_ego())
 	if(findtext(message, "them"))
-		message = replacetext(message, "them", user.p_them())
+		message = replacetext(message, "them", user.ru_na())
 	if(findtext(message, "%s"))
 		message = replacetext(message, "%s", user.p_s())
 	return message

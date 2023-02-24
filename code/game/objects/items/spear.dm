@@ -60,7 +60,7 @@
 		. += "spearbomb_overlay"
 
 /obj/item/spear/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to sword-swallow \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins to sword-swallow \the [src]! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	if(explosive) //Citadel Edit removes qdel and explosive.forcemove(AM)
 		user.say("[war_cry]", forced="spear warcry")
 		explosive.prime()

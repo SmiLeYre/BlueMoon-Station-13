@@ -37,7 +37,7 @@
 		user.temporarilyRemoveItemFromInventory(hand_item, TRUE) //DROPDEL will delete the item
 		if(!silent)
 			playsound(user, 'sound/effects/blobattack.ogg', 30, 1)
-			user.visible_message("<span class='warning'>With a sickening crunch, [user] reforms [user.p_their()] [weapon_name_simple] into an arm!</span>", "<span class='notice'>We assimilate the [weapon_name_simple] back into our body.</span>", "<span class='italics>You hear organic matter ripping and tearing!</span>")
+			user.visible_message("<span class='warning'>With a sickening crunch, [user] reforms [user.ru_ego()] [weapon_name_simple] into an arm!</span>", "<span class='notice'>We assimilate the [weapon_name_simple] back into our body.</span>", "<span class='italics>You hear organic matter ripping and tearing!</span>")
 		var/datum/antagonist/changeling/changeling = user.mind.has_antag_datum(/datum/antagonist/changeling)
 		changeling.chem_recharge_slowdown -= recharge_slowdown
 		user.update_inv_hands()
@@ -98,7 +98,7 @@
 		return 1
 	var/mob/living/carbon/human/H = user
 	if(istype(H.wear_suit, suit_type) || istype(H.head, helmet_type))
-		H.visible_message("<span class='warning'>[H] casts off [H.p_their()] [suit_name_simple]!</span>", "<span class='warning'>We cast off our [suit_name_simple].</span>", "<span class='italics'>You hear organic matter ripping and tearing!</span>")
+		H.visible_message("<span class='warning'>[H] casts off [H.ru_ego()] [suit_name_simple]!</span>", "<span class='warning'>We cast off our [suit_name_simple].</span>", "<span class='italics'>You hear organic matter ripping and tearing!</span>")
 		H.temporarilyRemoveItemFromInventory(H.head, TRUE) //The qdel on dropped() takes care of it
 		H.temporarilyRemoveItemFromInventory(H.wear_suit, TRUE)
 		H.update_inv_wear_suit()
@@ -218,7 +218,7 @@
 			if(!do_after(user, 100, target = A))
 				return
 		//user.say("Heeeeeeeeeerrre's Johnny!")
-		user.visible_message("<span class='warning'>[user] forces the airlock to open with [user.p_their()] [src]!</span>", "<span class='warning'>We force [src] to open.</span>", \
+		user.visible_message("<span class='warning'>[user] forces the airlock to open with [user.ru_ego()] [src]!</span>", "<span class='warning'>We force [src] to open.</span>", \
 		"<span class='italics'>You hear a metal screeching sound.</span>")
 		A.open(2)
 
@@ -289,7 +289,7 @@
 		qdel(src)
 
 /obj/item/gun/magic/tentacle/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] coils [src] tightly around [user.p_their()] neck! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] coils [src] tightly around [user.ru_ego()] neck! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	return (OXYLOSS)
 
 
@@ -347,7 +347,7 @@
 	if(H.Adjacent(C))
 		for(var/obj/item/I in H.held_items)
 			if(I.get_sharpness())
-				C.visible_message("<span class='danger'>[H] impales [C] with [H.p_their()] [I.name]!</span>", "<span class='userdanger'>[H] impales you with [H.p_their()] [I.name]!</span>")
+				C.visible_message("<span class='danger'>[H] impales [C] with [H.ru_ego()] [I.name]!</span>", "<span class='userdanger'>[H] impales you with [H.ru_ego()] [I.name]!</span>")
 				C.apply_damage(I.force, BRUTE, BODY_ZONE_CHEST)
 				H.do_item_attack_animation(C, used_item = I)
 				H.add_mob_blood(C)
@@ -471,7 +471,7 @@
 	if(--remaining_uses < 1)
 		if(ishuman(loc))
 			var/mob/living/carbon/human/H = loc
-			H.visible_message("<span class='warning'>With a sickening crunch, [H] reforms [H.p_their()] shield into an arm!</span>", "<span class='notice'>We assimilate our shield into our body.</span>", "<span class='italics>You hear organic matter ripping and tearing!</span>")
+			H.visible_message("<span class='warning'>With a sickening crunch, [H] reforms [H.ru_ego()] shield into an arm!</span>", "<span class='notice'>We assimilate our shield into our body.</span>", "<span class='italics>You hear organic matter ripping and tearing!</span>")
 		qdel(src)
 
 /***************************************\
@@ -510,7 +510,7 @@
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, CHANGELING_TRAIT)
 	if(ismob(loc))
-		loc.visible_message("<span class='warning'>[loc.name]\'s flesh rapidly inflates, forming a bloated mass around [loc.p_their()] body!</span>", "<span class='warning'>We inflate our flesh, creating a spaceproof suit!</span>", "<span class='italics'>You hear organic matter ripping and tearing!</span>")
+		loc.visible_message("<span class='warning'>[loc.name]\'s flesh rapidly inflates, forming a bloated mass around [loc.ru_ego()] body!</span>", "<span class='warning'>We inflate our flesh, creating a spaceproof suit!</span>", "<span class='italics'>You hear organic matter ripping and tearing!</span>")
 	START_PROCESSING(SSobj, src)
 
 /obj/item/clothing/suit/space/changeling/process()
@@ -612,7 +612,7 @@
 		return 1
 	var/mob/living/carbon/human/H = user
 	if(istype(H.gloves, glove_type))
-		H.visible_message("<span class='warning'>With a sickening crunch, [H] reforms [H.p_their()] [glove_name_simple] into hands!</span>", "<span class='warning'>We assimilate our [glove_name_simple].</span>", "<span class='italics'>You hear organic matter ripping and tearing!</span>")
+		H.visible_message("<span class='warning'>With a sickening crunch, [H] reforms [H.ru_ego()] [glove_name_simple] into hands!</span>", "<span class='warning'>We assimilate our [glove_name_simple].</span>", "<span class='italics'>You hear organic matter ripping and tearing!</span>")
 		H.temporarilyRemoveItemFromInventory(H.gloves, TRUE) //The qdel on dropped() takes care of it
 		H.update_inv_gloves()
 		playsound(H.loc, 'sound/effects/blobattack.ogg', 30, 1)

@@ -75,7 +75,7 @@
 			return
 		if("Nominate Yourself")
 			eminence_nominee = nominee
-			hierophant_message("<span class='brass'><b>[nominee] nominates [nominee.p_them()]self as the Eminence!</b> You may object by interacting with the eminence spire. The vote will otherwise pass in 30 seconds.</span>")
+			hierophant_message("<span class='brass'><b>[nominee] nominates [nominee.ru_na()]self as the Eminence!</b> You may object by interacting with the eminence spire. The vote will otherwise pass in 30 seconds.</span>")
 		if("Nominate Ghosts")
 			eminence_nominee = "ghosts"
 			hierophant_message("<span class='brass'><b>[nominee] proposes selecting an Eminence from ghosts!</b> You may object by interacting with the eminence spire. The vote will otherwise pass in 30 seconds.</span>")
@@ -112,7 +112,7 @@
 			eminence_nominee = null
 			return
 		playsound(eminence_nominee, 'sound/machines/clockcult/ark_damage.ogg', 50, FALSE)
-		eminence_nominee.visible_message("<span class='warning'>A blast of white-hot light flows into [eminence_nominee], vaporizing [eminence_nominee.p_them()] in an instant!</span>", \
+		eminence_nominee.visible_message("<span class='warning'>A blast of white-hot light flows into [eminence_nominee], vaporizing [eminence_nominee.ru_na()] in an instant!</span>", \
 		"<span class='userdanger'>allthelightintheuniverseflowing.into.YOU</span>")
 		for(var/obj/item/I in eminence_nominee)
 			eminence_nominee.dropItemToGround(I)

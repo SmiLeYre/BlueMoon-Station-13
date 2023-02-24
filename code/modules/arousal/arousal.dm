@@ -21,22 +21,22 @@
 		return
 	if(confirm == "Top")
 		hidden_undershirt = !hidden_undershirt
-		log_message("[hidden_undershirt ? "removed" : "put on" ] [p_their()] undershirt.", LOG_EMOTE)
+		log_message("[hidden_undershirt ? "removed" : "put on" ] [ru_ego()] undershirt.", LOG_EMOTE)
 
 	if(confirm == "Bottom")
 		hidden_underwear = !hidden_underwear
-		log_message("[hidden_underwear ? "removed" : "put on"] [p_their()] underwear.", LOG_EMOTE)
+		log_message("[hidden_underwear ? "removed" : "put on"] [ru_ego()] underwear.", LOG_EMOTE)
 
 	if(confirm == "Socks")
 		hidden_socks = !hidden_socks
-		log_message("[hidden_socks ? "removed" : "put on"] [p_their()] socks.", LOG_EMOTE)
+		log_message("[hidden_socks ? "removed" : "put on"] [ru_ego()] socks.", LOG_EMOTE)
 
 	if(confirm == "All")
 		var/on_off = (hidden_undershirt || hidden_underwear || hidden_socks) ? FALSE : TRUE
 		hidden_undershirt = on_off
 		hidden_underwear = on_off
 		hidden_socks = on_off
-		log_message("[on_off ? "removed" : "put on"] all [p_their()] undergarments.", LOG_EMOTE)
+		log_message("[on_off ? "removed" : "put on"] all [ru_ego()] undergarments.", LOG_EMOTE)
 
 	update_body(TRUE)
 
@@ -115,11 +115,11 @@
 		if(!do_after(src, mb_time, target = src) || !in_range(src, L) || !G.climaxable(src, TRUE))
 			return
 	if(spillage)
-		to_chat(src,"<span class='userlove'>You orgasm with [L], spilling out of [(Lgen) ? "[L.p_their()] [Lgen.name]" : "[L.p_them()]"], using your [G.name].</span>")
-		to_chat(L,"<span class='userlove'>[src] climaxes [(Lgen) ? "in your [Lgen.name]" : "with you"], overflowing and spilling, using [p_their()] [G.name]!</span>")
+		to_chat(src,"<span class='userlove'>You orgasm with [L], spilling out of [(Lgen) ? "[L.ru_ego()] [Lgen.name]" : "[L.ru_na()]"], using your [G.name].</span>")
+		to_chat(L,"<span class='userlove'>[src] climaxes [(Lgen) ? "in your [Lgen.name]" : "with you"], overflowing and spilling, using [ru_ego()] [G.name]!</span>")
 	else //knots and other non-spilling orgasms
 		to_chat(src,"<span class='userlove'>You climax [(Lgen) ? "in [L]'s [Lgen.name]" : "with [L]"], your [G.name] spilling nothing.</span>")
-		to_chat(L,"<span class='userlove'>[src] climaxes [(Lgen) ? "in your [Lgen.name]" : "with you"], [p_their()] [G.name] spilling nothing!</span>")
+		to_chat(L,"<span class='userlove'>[src] climaxes [(Lgen) ? "in your [Lgen.name]" : "with you"], [ru_ego()] [G.name] spilling nothing!</span>")
 	//SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "orgasm", /datum/mood_event/orgasm) //Sandstorm edit
 	do_climax(fluid_source, spillage ? loc : L, G, spillage,, Lgen)
 	//L.receive_climax(src, Lgen, G, spillage)
@@ -133,7 +133,7 @@
 		if(!do_after(src, mb_time, target = src) || !in_range(src, container) || !G.climaxable(src, TRUE))
 			return
 	to_chat(src,"<span class='userlove'>You used your [G.name] to fill [container].</span>")
-	message_admins("[ADMIN_LOOKUPFLW(src)] used [p_their()] [G.name] to fill [container] with [G.get_fluid_name()].")
+	message_admins("[ADMIN_LOOKUPFLW(src)] used [ru_ego()] [G.name] to fill [container] with [G.get_fluid_name()].")
 	log_consent("[key_name(src)] used their [G.name] to fill [container].")
 	do_climax(fluid_source, container, G, FALSE, cover = TRUE)
 

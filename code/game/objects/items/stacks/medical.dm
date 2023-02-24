@@ -35,7 +35,7 @@
 		return
 	if(M == user)
 		if(!silent)
-			user.visible_message("<span class='notice'>[user] starts to apply \the [src] on [user.p_them()]self...</span>", "<span class='notice'>You begin applying \the [src] on yourself...</span>")
+			user.visible_message("<span class='notice'>[user] starts to apply \the [src] on [user.ru_na()]self...</span>", "<span class='notice'>You begin applying \the [src] on yourself...</span>")
 		if(!do_mob(user, M, self_delay, extra_checks=CALLBACK(M, /mob/living/proc/can_inject, user, TRUE)))
 			return
 	else if(other_delay)
@@ -89,7 +89,7 @@
 
 /obj/item/stack/medical/bruise_pack/heal(mob/living/M, mob/user)
 	if(M.stat == DEAD)
-		to_chat(user, "<span class='notice'> [M] is dead. You can not help [M.p_them()]!</span>")
+		to_chat(user, "<span class='notice'> [M] is dead. You can not help [M.ru_na()]!</span>")
 		return
 	if(isanimal(M))
 		var/mob/living/simple_animal/critter = M
@@ -110,7 +110,7 @@
 	to_chat(user, "<span class='notice'>You can't heal [M] with the \the [src]!</span>")
 
 /obj/item/stack/medical/bruise_pack/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is bludgeoning [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is bludgeoning [user.ru_na()]self with [src]! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	return (BRUTELOSS)
 
 /obj/item/stack/medical/gauze
@@ -184,7 +184,7 @@
 		return ..()
 
 /obj/item/stack/medical/gauze/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] begins tightening \the [src] around [user.p_their()] neck! It looks like [user.p_they()] forgot how to use medical supplies!</span>")
+	user.visible_message("<span class='suicide'>[user] begins tightening \the [src] around [user.ru_ego()] neck! It looks like [user.ru_who()] forgot how to use medical supplies!</span>")
 	return OXYLOSS
 
 /obj/item/stack/medical/gauze/one
@@ -260,7 +260,7 @@
 /obj/item/stack/medical/suture/heal(mob/living/M, mob/user)
 	. = ..()
 	if(M.stat == DEAD)
-		to_chat(user, "<span class='warning'>[M] is dead! You can not help [M.p_them()].</span>")
+		to_chat(user, "<span class='warning'>[M] is dead! You can not help [M.ru_na()].</span>")
 		return
 	if(iscarbon(M))
 		return heal_carbon(M, user, heal_brute, 0)
@@ -297,14 +297,14 @@
 
 /obj/item/stack/medical/ointment/heal(mob/living/M, mob/user)
 	if(M.stat == DEAD)
-		to_chat(user, "<span class='warning'>[M] is dead! You can not help [M.p_them()].</span>")
+		to_chat(user, "<span class='warning'>[M] is dead! You can not help [M.ru_na()].</span>")
 		return
 	if(iscarbon(M))
 		return heal_carbon(M, user, heal_brute, heal_burn)
 	to_chat(user, "<span class='warning'>You can't heal [M] with \the [src]!</span>")
 
 /obj/item/stack/medical/ointment/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] is squeezing \the [src] into [user.p_their()] mouth! [user.p_do(TRUE)]n't [user.p_they()] know that stuff is toxic?</span>")
+	user.visible_message("<span class='suicide'>[user] is squeezing \the [src] into [user.ru_ego()] mouth! [user.p_do(TRUE)]n't [user.ru_who()] know that stuff is toxic?</span>")
 	return TOXLOSS
 
 /obj/item/stack/medical/mesh
@@ -363,7 +363,7 @@
 /obj/item/stack/medical/mesh/heal(mob/living/M, mob/user)
 	. = ..()
 	if(M.stat == DEAD)
-		to_chat(user, "<span class='warning'>[M] is dead! You can not help [M.p_them()].</span>")
+		to_chat(user, "<span class='warning'>[M] is dead! You can not help [M.ru_na()].</span>")
 		return
 	if(iscarbon(M))
 		return heal_carbon(M, user, heal_brute, heal_burn)
@@ -419,7 +419,7 @@
 /obj/item/stack/medical/bone_gel/suicide_act(mob/user)
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
-		C.visible_message("<span class='suicide'>[C] is squirting all of \the [src] into [C.p_their()] mouth! That's not proper procedure! It looks like [C.p_theyre()] trying to commit suicide!</span>")
+		C.visible_message("<span class='suicide'>[C] is squirting all of \the [src] into [C.ru_ego()] mouth! That's not proper procedure! It looks like [C.ru_who()] trying to commit suicide!</span>")
 		if(do_after(C, 2 SECONDS))
 			C.emote("scream")
 			for(var/i in C.bodyparts)
@@ -459,7 +459,7 @@
 /obj/item/stack/medical/aloe/heal(mob/living/M, mob/user)
 	. = ..()
 	if(M.stat == DEAD)
-		to_chat(user, "<span class='warning'>[M] is dead! You can not help [M.p_them()].</span>")
+		to_chat(user, "<span class='warning'>[M] is dead! You can not help [M.ru_na()].</span>")
 		return FALSE
 	if(iscarbon(M))
 		return heal_carbon(M, user, heal, heal)

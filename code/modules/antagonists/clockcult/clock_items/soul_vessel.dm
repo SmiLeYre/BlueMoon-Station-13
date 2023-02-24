@@ -68,17 +68,17 @@
 		return
 	var/mob/living/carbon/human/H = target
 	if(H.stat == CONSCIOUS)
-		to_chat(user, "<span class='warning'>[H] must be dead or unconscious for you to claim [H.p_their()] mind!</span>")
+		to_chat(user, "<span class='warning'>[H] must be dead or unconscious for you to claim [H.ru_ego()] mind!</span>")
 		return
 	if(H.head)
 		var/obj/item/I = H.head
 		if(I.flags_inv & HIDEHAIR) //they're wearing a hat that covers their skull
-			to_chat(user, "<span class='warning'>[H]'s head is covered, remove [H.p_their()] [H.head] first!</span>")
+			to_chat(user, "<span class='warning'>[H]'s head is covered, remove [H.ru_ego()] [H.head] first!</span>")
 			return
 	if(H.wear_mask)
 		var/obj/item/I = H.wear_mask
 		if(I.flags_inv & HIDEHAIR) //they're wearing a mask that covers their skull
-			to_chat(user, "<span class='warning'>[H]'s head is covered, remove [H.p_their()] [H.wear_mask] first!</span>")
+			to_chat(user, "<span class='warning'>[H]'s head is covered, remove [H.ru_ego()] [H.wear_mask] first!</span>")
 			return
 	var/obj/item/bodypart/head/HE = H.get_bodypart(BODY_ZONE_HEAD)
 	if(!HE) //literally headless
@@ -101,7 +101,7 @@
 	braintype = picked_name
 	brainmob.timeofhostdeath = H.timeofdeath
 	user.visible_message("<span class='warning'>[user] presses [src] to [H]'s head, ripping through the skull and carefully extracting the brain!</span>", \
-	"<span class='brass'>You extract [H]'s consciousness from [H.p_their()] body, trapping it in the soul vessel.</span>")
+	"<span class='brass'>You extract [H]'s consciousness from [H.ru_ego()] body, trapping it in the soul vessel.</span>")
 	transfer_personality(H)
 	brainmob.fully_replace_character_name(null, "[braintype] [H.real_name]")
 	name = "[initial(name)] ([brainmob.name])"

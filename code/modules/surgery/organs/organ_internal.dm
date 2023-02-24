@@ -172,14 +172,18 @@
 
 /obj/item/organ/examine(mob/user)
 	. = ..()
+
+	. += "<hr><span class='notice'>Можно вставить в [parse_zone(zone)].</span>"
+
 	if(organ_flags & ORGAN_FAILING)
 		if(status == ORGAN_ROBOTIC)
-			. += "<span class='warning'>[src] seems to be broken!</span>"
+			. += span_warning("\n[capitalize(src.name)] повреждён.")
 			return
-		. += "<span class='warning'>[src] has decayed for too long, and has turned a sickly color! It doesn't look like it will work anymore!</span>"
+		. += span_warning("\n[capitalize(src.name)] слишком долго разлагался и приобрел болезненный цвет. Без ремонта наверное не заработает.")
 		return
+
 	if(damage > high_threshold)
-		. += "<span class='warning'>[src] is starting to look discolored.</span>"
+		. += "<hr><span class='warning'>[capitalize(src.name)] начинает обесцвечиваться.</span>"
 
 /obj/item/organ/proc/OnEatFrom(eater, feeder)
 	useable = FALSE //You can't use it anymore after eating it you spaztic

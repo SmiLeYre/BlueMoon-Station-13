@@ -29,29 +29,29 @@
 
 	switch(lowershape)
 		if("tentacle")
-			details = "Its opening is lined with several tentacles and "
+			details = "Отверстие закрыто половыми губами, оно покрыто несколькими щупальцами и они "
 		if("dentata")
-			details = "There's teeth inside it and it "
+			details = "Внутри и снаружи есть зубы, и они "
 		if("hairy")
-			details = "It has quite a bit of hair growing on it and "
+			details = "На ней довольно много волос и они "
 		if("human")
-			details = "It is taut with smooth skin, though without much hair and "
+			details = "Она подтянута, не имеет на своей поверхности сильно много волос, обладает особо гладкой и нежной кожей, и её губы "
 		if("gaping")
-			details = "It is gaping slightly open, though without much hair and "
+			details = "Она слегка приоткрыта, не имеет большой растительности и её половые губы "
 		if("spade")
-			details = "It is a plush canine spade, it "
+			details = "По форме она похожа на собачью лопатку и её половые губы "
 		if("furred")
-			details = "It has neatly groomed fur around the outer folds, it "
+			details = "Она имеет аккуратно ухоженный мех вокруг половых губок, которые "
 		if("cloaca")
-			details = "It it a tight, small horizontal vent and "
+			details = "Это узкое, небольшое горизонтальное отверстие и внешние губы "
 		else
-			details = "It has an exotic shape and "
+			details = "Она имеет экзотическую форму и её губы "
 	if(aroused_state)
-		details += "is slick with female arousal."
+		details += "пропитаны женскими секретами."
 	else
-		details += "seems to be dry."
+		details += "кажутся сухими."
 
-	desc = "You see a vagina. [details]"
+	desc = "Вы наблюдаете вагину. [details]"
 
 	if(owner)
 		if(owner.dna.species.use_skintones && owner.dna.features["genitals_use_skintone"])

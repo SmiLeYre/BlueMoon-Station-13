@@ -551,7 +551,7 @@
 					remove_status_effect(STATUS_EFFECT_CHOKINGSTRAND)
 				return
 			var/to_send = "<div class='info'>"
-			visible_message("[src] examines [p_them()]self.", "")
+			visible_message("[src] осматривает себя.", "")
 			to_send += "<span class='notice'>You check yourself for injuries.</span>\n"
 
 			var/list/missing = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
@@ -750,7 +750,7 @@
 	if(stat == DEAD || stat == UNCONSCIOUS)
 		return
 
-	visible_message("<span class='notice'>[src] examines [p_them()]self.</span>", "")
+	visible_message("<span class='notice'>[src] осматривает себя.</span>", "")
 	var/output = "<span class='notice'>You check yourself for injuries.</span><hr>"
 
 	var/list/missing = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)

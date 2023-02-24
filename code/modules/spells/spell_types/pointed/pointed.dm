@@ -98,7 +98,7 @@
 		return FALSE
 	if(!(target in view_or_range(range, user, selection_type)))
 		if(!silent)
-			to_chat(user, "<span class='warning'>[target.p_theyre(TRUE)] too far away!</span>")
+			to_chat(user, "<span class='warning'>[target.ru_who(TRUE)] too far away!</span>")
 		return FALSE
 	if(!can_target(target, user, silent))
 		return FALSE

@@ -5765,12 +5765,15 @@
 	},
 /area/maintenance/port/fore)
 "asP" = (
-/obj/structure/chair/stool,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/machinery/vending/wardrobe/syndie_wardrobe,
 /turf/open/floor/plating,
 /area/maintenance/fore)
 "asQ" = (
 /obj/structure/closet/emcloset,
+/obj/effect/spawner/lootdrop/maintenance{
+	lootcount = 8;
+	name = "8maintenance loot spawner"
+	},
 /turf/open/floor/plating,
 /area/maintenance/fore)
 "asR" = (

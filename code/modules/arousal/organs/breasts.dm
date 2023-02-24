@@ -34,25 +34,25 @@
 	var/lowershape = lowertext(shape)
 	switch(lowershape)
 		if("pair")
-			desc = "You see a pair of breasts."
+			desc = "Вы видите пару грудей."
 		if("quad")
-			desc = "You see two pairs of breast, one just under the other."
+			desc = "Вы видите две пары грудей, одна прямо под другой.."
 		if("sextuple")
-			desc = "You see three sets of breasts, running from their chest to their belly."
+			desc = "Вы видите три группы грудей, идущих от груди к животу."
 		else
-			desc = "You see some breasts, they seem to be quite exotic."
+			desc = "Перед своими глазами вы наблюдаете довольно экзотичную грудь."
 	if(size == "huge")
-		desc = "You see [pick("some serious honkers", "a real set of badonkers", "some dobonhonkeros", "massive dohoonkabhankoloos", "two big old tonhongerekoogers", "a couple of giant bonkhonagahoogs", "a pair of humongous hungolomghnonoloughongous")]. Their volume is way beyond cupsize now, measuring in about [round(cached_size*(owner ? get_size(owner) : 1))]cm in diameter."
+		desc = "Вы наблюдаете [pick("несколько серьезных сисяндр", "настоящий набор бадончиков", "огромную грудь", "пару гигантских бонхонагахугов", "пару хумонгус хунголомгхнонолоугус")]. Их объем уже намного превышает размер стандартной чашки, составляя примерно [round(cached_size*(owner ? get_size(owner) : 1))]сантиметров в диаметре."
 	else
 		if (size == "flat")
-			desc += " They're very small and flatchested, however."
+			desc += " Они очень маленькие и плоскогрудые, как жаль."
 		else
-			desc += " You estimate that they're [uppertext(size)]-cups."
+			desc += " По вашим оценкам, грудь примерно [uppertext(size)] размера."
 
 	if((genital_flags & GENITAL_FUID_PRODUCTION) && aroused_state)
 		var/datum/reagent/R = GLOB.chemical_reagents_list[fluid_id]
 		if(R)
-			desc += " They're leaking [lowertext(R.name)]."
+			desc += " Соски подтекают '[lowertext(R.name)]'."
 	var/datum/sprite_accessory/S = GLOB.breasts_shapes_list[shape]
 	var/icon_shape = S ? S.icon_state : "pair"
 	var/icon_size = clamp(breast_values[size], BREASTS_ICON_MIN_SIZE, BREASTS_ICON_MAX_SIZE)
@@ -86,12 +86,12 @@
 	var/rounded_cached = round(cached_size)
 	if(cached_size < 0)//I don't actually know what round() does to negative numbers, so to be safe!!fixed
 		if(owner)
-			to_chat(owner, "<span class='warning'>You feel your breasts shrinking away from your body as your chest flattens out.</span>")
+			to_chat(owner, "<span class='warning'>Вы чувствуете, что ваша грудь уменьшается по сравнению с телом, так как грудь становится плоской.</span>")
 		QDEL_IN(src, 1)
 		return
 	switch(rounded_cached)
 		if(0) //flatchested
-			size = "flat"
+			size = "плоского"
 		if(1 to 8) //modest
 			size = breast_values[rounded_cached]
 		if(9 to 15) //massive
@@ -99,20 +99,20 @@
 		if(16 to 17) //ridiculous
 			size = breast_values[rounded_cached]
 		if(18 to 24) //AWOOOOGAAAAAAA
-			size = "massive"
+			size = "массивного"
 		if(25 to 29) //AWOOOOOOGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-			size = "giga"
+			size = "гигантского"
 		if(30 to INFINITY) //AWWWWWWWWWWWWWOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOGGGGGAAAAAAAAAAAAAAAAAAAAAA
-			size = "impossible"
+			size = "неимоверно огромного"
 
 
 	if((rounded_cached < 18 || rounded_cached ==  25 || rounded_cached == 30) && owner )//Because byond doesn't count from 0, I have to do this.
 		var/mob/living/carbon/human/H = owner
 		var/r_prev_size = round(prev_size)
 		if (rounded_cached > r_prev_size)
-			to_chat(H, "<span class='warning'>Your breasts [pick("swell up to", "flourish into", "expand into", "burst forth into", "grow eagerly into", "amplify into")] a [uppertext(size)]-cup.</span>")
+			to_chat(H, "<span class='warning'>Ваша грудь [pick("начинает разбухать", "начинает расцветать", "начинает расширяться", "начинает прорываться", "начинает расти с нетерпением", "начинает увеличиваться в размерах")] вплоть до [uppertext(size)].</span>")
 		else if (rounded_cached < r_prev_size)
-			to_chat(H, "<span class='warning'>Your breasts [pick("shrink down to", "decrease into", "diminish into", "deflate into", "shrivel regretfully into", "contracts into")] a [uppertext(size)]-cup.</span>")
+			to_chat(H, "<span class='warning'>Ваша грудь начинает [pick("уменьшаться до", "уменьшаться до", "сдуваться до", "сморщиваться с сожалением до", "сокращаться до")] [uppertext(size)] размера.</span>")
 
 /obj/item/organ/genital/breasts/get_features(mob/living/carbon/human/H)
 	var/datum/dna/D = H.dna

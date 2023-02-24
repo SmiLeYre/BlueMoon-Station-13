@@ -271,7 +271,7 @@
 	AM.unbuckle_mob(user)
 	user.DefaultCombatKnockdown(60)
 	user.Daze(50)
-	user.visible_message("<span class='warning'>[AM] pushes [user] off of [AM.p_them()]!</span>")
+	user.visible_message("<span class='warning'>[AM] pushes [user] off of [AM.ru_na()]!</span>")
 
 /datum/component/riding/cyborg
 	del_on_unbuckle_all = TRUE

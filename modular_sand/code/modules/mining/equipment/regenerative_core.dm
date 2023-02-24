@@ -18,7 +18,7 @@
 		to_chat(user, "<span class='notice'>[src] are useless on the dead.</span>")
 		return
 	if(H != user)
-		H.visible_message("[user] forces [H] to apply [src]... Black tendrils entangle and reinforce [H.p_them()]!")
+		H.visible_message("[user] forces [H] to apply [src]... Black tendrils entangle and reinforce [H.ru_na()]!")
 		SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "used", "other"))
 	else
 		to_chat(user, "<span class='notice'>You start to smear [src] on yourself. Disgusting tendrils hold you together and allow you to keep moving, but for how long?</span>")
@@ -31,4 +31,4 @@
 	else
 		H.revive(full_heal = 1)
 	qdel(src)
-	user.log_message("[user] used [src] to heal [H == user ? "[H.p_them()]self" : H]! Wake the fuck up, Samurai!", LOG_ATTACK, color="green") //Logging for 'old' style legion core use, when clicking on a sprite of yourself or another.
+	user.log_message("[user] used [src] to heal [H == user ? "[H.ru_na()]self" : H]! Wake the fuck up, Samurai!", LOG_ATTACK, color="green") //Logging for 'old' style legion core use, when clicking on a sprite of yourself or another.

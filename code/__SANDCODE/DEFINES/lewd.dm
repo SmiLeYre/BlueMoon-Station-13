@@ -26,7 +26,7 @@ GLOBAL_LIST_INIT(lewd_prefs_choices, list(
 #define GRINDING_FACE_WITH_FEET "лицо об ступню"
 #define GRINDING_MOUTH_WITH_FEET "рот об ступню"
 #define THIGH_SMOTHERING "бёдра"
-#define NUTS_TO_FACE "яйцо к лицу"
+#define NUTS_TO_FACE "яйца к лицу"
 
 #define NORMAL_LUST 12
 #define LOW_LUST 4

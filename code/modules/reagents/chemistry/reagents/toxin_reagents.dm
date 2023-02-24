@@ -626,7 +626,7 @@
 				if(!C.undergoing_cardiac_arrest() && C.can_heartattack())
 					C.set_heartattack(TRUE)
 					if(C.stat == CONSCIOUS)
-						C.visible_message("<span class='userdanger'>[C] clutches at [C.p_their()] chest as if [C.p_their()] heart stopped!</span>")
+						C.visible_message("<span class='userdanger'>[C] clutches at [C.ru_ego()] chest as if [C.ru_ego()] heart stopped!</span>")
 				else
 					C.losebreath += 10
 					C.adjustOxyLoss(rand(5,25), 0)

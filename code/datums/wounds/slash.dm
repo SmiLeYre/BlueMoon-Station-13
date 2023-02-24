@@ -52,7 +52,7 @@
 	if(!limb.current_gauze)
 		return ..()
 
-	var/list/msg = list("The cuts on [victim.p_their()] [limb.name] are wrapped with")
+	var/list/msg = list("The cuts on [victim.ru_ego()] [limb.name] are wrapped with")
 	// how much life we have left in these bandages
 	switch(limb.current_gauze.absorption_capacity)
 		if(0 to 1.25)

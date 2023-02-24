@@ -1327,7 +1327,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		return
 	var/mob/living/carbon/G = pick(mobsyup)
 	if (prob(50))
-		C.visible_message("<span class='warning'>[C] falls to the ground screaming and clutching [C.p_their()] wrist!</span>", \
+		C.visible_message("<span class='warning'>[C] falls to the ground screaming and clutching [C.ru_ego()] wrist!</span>", \
 						  "<span class='userdanger'>[G] grabs your wrist and violently wrenches it to the side!</span>")
 		C.emote("scream")
 		C.dropItemToGround(C.get_active_held_item())

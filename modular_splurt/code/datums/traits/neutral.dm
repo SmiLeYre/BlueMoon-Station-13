@@ -171,7 +171,7 @@
 		return
 	if(!user.has_quirk(/datum/quirk/dominant_aura))
 		return
-	examine_list += span_lewd("Вы чувствуете сильную ауру подчинения от [quirk_holder.p_them()].")
+	examine_list += span_lewd("Вы чувствуете сильную ауру подчинения от [quirk_holder.ru_na()].")
 
 /datum/quirk/well_trained/on_process()
 	. = ..()

@@ -33,7 +33,7 @@
 	new picked(src)
 
 /obj/item/storage/dice/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is gambling with death! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is gambling with death! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	return (OXYLOSS)
 
 /*****************************Dice********************************/
@@ -56,7 +56,7 @@
 	update_icon()
 
 /obj/item/dice/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is gambling with death! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is gambling with death! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	return (OXYLOSS)
 
 /obj/item/dice/d1

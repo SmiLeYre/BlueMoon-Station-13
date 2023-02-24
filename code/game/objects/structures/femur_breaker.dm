@@ -107,7 +107,7 @@
 		return FALSE
 
 	if (!istype(M, /mob/living/carbon/human))
-		to_chat(usr, "<span class='warning'>It doesn't look like [M.p_they()] can fit into this properly!</span>")
+		to_chat(usr, "<span class='warning'>It doesn't look like [M.ru_who()] can fit into this properly!</span>")
 		return FALSE
 
 	if (slat_status != BREAKER_SLAT_RAISED)

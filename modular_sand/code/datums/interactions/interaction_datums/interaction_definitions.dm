@@ -1,6 +1,7 @@
 /datum/interaction/handshake
 	description = "Пожать руку."
 	simple_message = "USER пожимает руку TARGET."
+	interaction_sound = 'sound/weapons/thudswoosh.ogg'
 	require_user_hands = TRUE
 	needs_physical_contact = TRUE
 
@@ -59,5 +60,6 @@
 	description = "Взяться за руку."
 	require_user_hands = TRUE
 	simple_message = "USER хватается за руку TARGET's."
+	interaction_sound = 'sound/weapons/thudswoosh.ogg'
 	needs_physical_contact = TRUE
 	max_distance = 1

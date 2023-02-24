@@ -31,7 +31,7 @@ obj/item/tumor_shard/afterattack(atom/target, mob/user, proximity_flag)
 		E.revive(full_heal = TRUE, admin_revive = TRUE)
 		user.visible_message("<span class='notice'>[user] stabs [E] with [src], reviving it.</span>")
 		E.playsound_local(get_turf(E), 'sound/effects/magic.ogg', 40, 0)
-		to_chat(E, "<span class='userdanger'>You have been revived by [user].  You owe [user] a great debt.  Assist [user.p_them()] in achieving [user.p_their()] goals, regardless of risk.</span")
+		to_chat(E, "<span class='userdanger'>You have been revived by [user].  You owe [user] a great debt.  Assist [user.ru_na()] in achieving [user.ru_ego()] goals, regardless of risk.</span")
 		to_chat(E, "<span class='big bold'>Note that you now share the loyalties of [user].  You are expected not to intentionally sabotage their faction unless commanded to!</span>")
 		E.maxHealth = E.maxHealth * 0.5
 		E.health = E.maxHealth

@@ -101,7 +101,7 @@
 	if(signed && (user == target.current) && istype(user, /mob/living/carbon/human/))
 		var/mob/living/carbon/human/H = user
 		H.forcesay("OH GREAT INFERNO!  I DEMAND YOU COLLECT YOUR BOUNTY IMMEDIATELY!")
-		H.visible_message("<span class='suicide'>[H] holds up a contract claiming [user.p_their()] soul, then immediately catches fire.  It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		H.visible_message("<span class='suicide'>[H] holds up a contract claiming [user.ru_ego()] soul, then immediately catches fire.  It looks like [user.ru_who()] trying to commit suicide!</span>")
 		H.adjust_fire_stacks(20)
 		H.IgniteMob()
 		return(FIRELOSS)
@@ -181,7 +181,7 @@
 /obj/item/paper/contract/infernal/attack(mob/M, mob/living/user)
 	add_fingerprint(user)
 	if(M == user && target == M.mind && M.mind.soulOwner != owner && attempt_signature(user, 1))
-		user.visible_message("<span class='danger'>[user] slices [user.p_their()] wrist with [src], and scrawls [user.p_their()] name in blood.</span>", "<span class='danger'>You slice your wrist open and scrawl your name in blood.</span>")
+		user.visible_message("<span class='danger'>[user] slices [user.ru_ego()] wrist with [src], and scrawls [user.ru_ego()] name in blood.</span>", "<span class='danger'>You slice your wrist open and scrawl your name in blood.</span>")
 		user.blood_volume = max(user.blood_volume - 100, 0)
 	else
 		return ..()
@@ -197,7 +197,7 @@
 		to_chat(user, "<span class='notice'>Your signature simply slides off the sheet, it seems this contract is not meant for you to sign.</span>")
 		return 0
 	if(user.mind.soulOwner == owner)
-		to_chat(user, "<span class='notice'>This devil already owns your soul, you may not sell it to [owner.p_them()] again.</span>")
+		to_chat(user, "<span class='notice'>This devil already owns your soul, you may not sell it to [owner.ru_na()] again.</span>")
 		return 0
 	if(signed)
 		to_chat(user, "<span class='notice'>This contract has already been signed.  It may not be signed again.</span>")
@@ -223,7 +223,7 @@
 /obj/item/paper/contract/infernal/revive/attack(mob/M, mob/living/user)
 	if (target == M.mind && M.stat == DEAD && M.mind.soulOwner == M.mind)
 		if (cooldown)
-			to_chat(user, "<span class='notice'>Give [M] a chance to think through the contract, don't rush [M.p_them()].</span>")
+			to_chat(user, "<span class='notice'>Give [M] a chance to think through the contract, don't rush [M.ru_na()].</span>")
 			return 0
 		cooldown = TRUE
 		var/mob/living/carbon/human/H = M

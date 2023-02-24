@@ -42,7 +42,7 @@
 		. = R.get_cell()
 
 /obj/item/melee/baton/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is putting the live [name] in [user.p_their()] mouth! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is putting the live [name] in [user.ru_ego()] mouth! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	return (FIRELOSS)
 
 /obj/item/melee/baton/Initialize(mapload)
@@ -267,7 +267,7 @@
 	return TRUE
 
 /obj/item/melee/baton/proc/clowning_around(mob/living/user)
-	user.visible_message("<span class='danger'>[user] accidentally hits [user.p_them()]self with [src]!</span>", \
+	user.visible_message("<span class='danger'>[user] accidentally hits [user.ru_na()]self with [src]!</span>", \
 						"<span class='userdanger'>You accidentally hit yourself with [src]!</span>")
 	SEND_SIGNAL(user, COMSIG_LIVING_MINOR_SHOCK)
 	user.DefaultCombatKnockdown(stamina_loss_amount*6)

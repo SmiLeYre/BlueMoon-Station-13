@@ -83,7 +83,7 @@
 	else if(C.is_mouth_covered(mask_only = 1))
 		covered = "mask"
 	if(covered)
-		var/who = (isnull(user) || eater == user) ? "your" : "[eater.p_their()]"
+		var/who = (isnull(user) || eater == user) ? "your" : "[eater.ru_ego()]"
 		to_chat(user, "<span class='warning'>You have to remove [who] [covered] first!</span>")
 		return 0
 	return 1

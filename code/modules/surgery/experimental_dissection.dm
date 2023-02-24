@@ -85,7 +85,7 @@
 
 /datum/surgery_step/dissection/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(user, target, "<span class='notice'>You dissect [target], but do not find anything particularly interesting.</span>",
-	"[user] dissects [target], however it seems [user.p_they()] didn't find anything useful.",
+	"[user] dissects [target], however it seems [user.ru_who()] didn't find anything useful.",
 	"[user] dissects [target], but looks a little dissapointed.")
 	SSresearch.science_tech.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = (round(check_value(target, surgery) * 0.01))))
 	var/obj/item/bodypart/L = target.get_bodypart(BODY_ZONE_CHEST)

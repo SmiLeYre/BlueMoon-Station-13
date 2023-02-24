@@ -11,11 +11,11 @@
 	// If true; Reject them and abort
 	if (user in used_fingerprints)
 		// Send a message implying someone else should roll
-		visible_message("<span class='notice'>[user] rolls the dice, but it doesn't respond to [user.p_them()] again.</span>")
+		visible_message("<span class='notice'>[user] rolls the dice, but it doesn't respond to [user.ru_na()] again.</span>")
 		return
 	// If false; Add them to the user list and continue
 	else
 		LAZYADD(used_fingerprints, user)
-	
+
 	// Run the function normally
 	..()

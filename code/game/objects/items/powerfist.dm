@@ -88,20 +88,20 @@
 		to_chat(user, "<span class='warning'>\The [src]'s tank is empty!</span>")
 		target.apply_damage((totalitemdamage / 5), BRUTE)
 		playsound(loc, 'sound/weapons/punch1.ogg', 50, 1)
-		target.visible_message("<span class='danger'>[user]'s powerfist lets out a dull thunk as [user.p_they()] punch[user.p_es()] [target.name]!</span>", \
+		target.visible_message("<span class='danger'>[user]'s powerfist lets out a dull thunk as [user.ru_who()] punch[user.p_es()] [target.name]!</span>", \
 		"<span class='userdanger'>[user]'s punches you!</span>")
 		return
 	if(tank.air_contents.total_moles() < moles_used)
 		to_chat(user, "<span class='warning'>\The [src]'s piston-ram lets out a weak hiss, it needs more gas!</span>")
 		playsound(loc, 'sound/weapons/punch4.ogg', 50, 1)
 		target.apply_damage((totalitemdamage / 2), BRUTE)
-		target.visible_message("<span class='danger'>[user]'s powerfist lets out a weak hiss as [user.p_they()] punch[user.p_es()] [target.name]!</span>", \
+		target.visible_message("<span class='danger'>[user]'s powerfist lets out a weak hiss as [user.ru_who()] punch[user.p_es()] [target.name]!</span>", \
 			"<span class='userdanger'>[user]'s punch strikes with force!</span>")
 		return
 	T.assume_air_moles(tank.air_contents, gasperfist * fisto_setting)
 	T.air_update_turf()
 	target.apply_damage(totalitemdamage * fisto_setting, BRUTE, wound_bonus = -25*fisto_setting**2)
-	target.visible_message("<span class='danger'>[user]'s powerfist lets out a loud hiss as [user.p_they()] punch[user.p_es()] [target.name]!</span>", \
+	target.visible_message("<span class='danger'>[user]'s powerfist lets out a loud hiss as [user.ru_who()] punch[user.p_es()] [target.name]!</span>", \
 		"<span class='userdanger'>You cry out in pain as [user]'s punch flings you backwards!</span>")
 	new /obj/effect/temp_visual/kinetic_blast(target.loc)
 	playsound(loc, 'sound/weapons/resonator_blast.ogg', 50, 1)

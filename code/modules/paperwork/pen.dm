@@ -33,7 +33,7 @@
 	sharpness = SHARP_POINTY
 
 /obj/item/pen/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is scribbling numbers all over [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit sudoku...</span>")
+	user.visible_message("<span class='suicide'>[user] is scribbling numbers all over [user.ru_na()]self with [src]! It looks like [user.ru_who()] trying to commit sudoku...</span>")
 	return(BRUTELOSS)
 
 /obj/item/pen/blue
@@ -245,7 +245,7 @@
 	if(on)
 		user.visible_message("<span class='suicide'>[user] forcefully rams the pen into their mouth!</span>")
 	else
-		user.visible_message("<span class='suicide'>[user] is holding a pen up to their mouth! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		user.visible_message("<span class='suicide'>[user] is holding a pen up to their mouth! It looks like [user.ru_who()] trying to commit suicide!</span>")
 		attack_self(user)
 
 /obj/item/pen/edagger/attack_self(mob/living/user)

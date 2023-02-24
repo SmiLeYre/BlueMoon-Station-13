@@ -130,7 +130,7 @@
 	if(.)
 		if(M == user)
 			M.visible_message(\
-				"<span class='notice'>[M] buckles [M.p_them()]self to [src].</span>",\
+				"<span class='notice'>[M] buckles [M.ru_na()]self to [src].</span>",\
 				"<span class='notice'>You buckle yourself to [src].</span>",\
 				"<span class='italics'>You hear metal clanking.</span>")
 		else
@@ -149,7 +149,7 @@
 				"<span class='italics'>You hear metal clanking.</span>")
 		else
 			M.visible_message(\
-				"<span class='notice'>[M] unbuckles [M.p_them()]self from [src].</span>",\
+				"<span class='notice'>[M] unbuckles [M.ru_na()]self from [src].</span>",\
 				"<span class='notice'>You unbuckle yourself from [src].</span>",\
 				"<span class='italics'>You hear metal clanking.</span>")
 		add_fingerprint(user)

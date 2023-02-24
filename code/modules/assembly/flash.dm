@@ -21,12 +21,12 @@
 
 /obj/item/assembly/flash/suicide_act(mob/living/user)
 	if (crit_fail)
-		user.visible_message("<span class='suicide'>[user] raises \the [src] up to [user.p_their()] eyes and activates it ... but its burnt out!</span>")
+		user.visible_message("<span class='suicide'>[user] raises \the [src] up to [user.ru_ego()] eyes and activates it ... but its burnt out!</span>")
 		return SHAME
 	else if (user.eye_blind)
-		user.visible_message("<span class='suicide'>[user] raises \the [src] up to [user.p_their()] eyes and activates it ... but [user.p_theyre()] blind!</span>")
+		user.visible_message("<span class='suicide'>[user] raises \the [src] up to [user.ru_ego()] eyes and activates it ... but [user.ru_who()] blind!</span>")
 		return SHAME
-	user.visible_message("<span class='suicide'>[user] raises \the [src] up to [user.p_their()] eyes and activates it! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] raises \the [src] up to [user.ru_ego()] eyes and activates it! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	attack(user,user)
 	return FIRELOSS
 
@@ -194,7 +194,7 @@
 				to_chat(user, "<span class='warning'>This mind is so vacant that it is not susceptible to influence!</span>")
 				return
 			if(H.stat != CONSCIOUS)
-				to_chat(user, "<span class='warning'>They must be conscious before you can convert [H.p_them()]!</span>")
+				to_chat(user, "<span class='warning'>They must be conscious before you can convert [H.ru_na()]!</span>")
 				return
 			if(converter.add_revolutionary(H.mind))
 				times_used -- //Flashes less likely to burn out for headrevs when used for conversion

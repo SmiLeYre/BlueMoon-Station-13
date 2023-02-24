@@ -180,7 +180,7 @@ Buildable meters
 	T.flipped = flipped
 
 /obj/item/pipe/directional/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] shoves [src] in [user.p_their()] mouth and turns it on! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] shoves [src] in [user.ru_ego()] mouth and turns it on! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		for(var/i=1 to 20)

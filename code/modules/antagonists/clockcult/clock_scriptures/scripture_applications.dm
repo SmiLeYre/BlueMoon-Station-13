@@ -125,7 +125,7 @@
 	return create_guardian()
 
 /datum/clockwork_scripture/memory_allocation/proc/create_guardian()
-	invoker.visible_message("<span class='warning'>A purple tendril appears from [invoker]'s [slab.name] and impales itself in [invoker.p_their()] forehead!</span>", \
+	invoker.visible_message("<span class='warning'>A purple tendril appears from [invoker]'s [slab.name] and impales itself in [invoker.ru_ego()] forehead!</span>", \
 	"<span class='sevtug'>A tendril flies from [slab] into your forehead. You begin waiting while it painfully rearranges your thought pattern...</span>")
 	//invoker.notransform = TRUE //Vulnerable during the process
 	slab.busy = "Thought Modification in progress"

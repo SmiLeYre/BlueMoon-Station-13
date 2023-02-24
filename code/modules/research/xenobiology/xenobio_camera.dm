@@ -260,7 +260,7 @@
 	if(GLOB.cameranet.checkTurfVis(remote_eye.loc))
 		for(var/mob/living/carbon/monkey/M in remote_eye.loc)
 			if(M.stat)
-				M.visible_message("[M] vanishes as [M.p_theyre()] reclaimed for recycling!")
+				M.visible_message("[M] vanishes as [M.ru_who()] reclaimed for recycling!")
 				X.monkeys = round(X.monkeys + 0.2,0.1)
 				qdel(M)
 	else
@@ -496,7 +496,7 @@
 	if(mobarea.name == E.allowed_area || mobarea.xenobiology_compatible)
 		if(!M.stat)
 			return
-		M.visible_message("[M] vanishes as [p_theyre()] reclaimed for recycling!")
+		M.visible_message("[M] vanishes as [ru_who()] reclaimed for recycling!")
 		X.monkeys = round(X.monkeys + 0.2,0.1)
 		qdel(M)
 		if (X.monkeys == (round(X.monkeys,1)))

@@ -22,12 +22,12 @@ Regenerative extracts:
 			return TRUE //returning TRUE preemptively ends the attack chain and thus doesn't call afterattack, this is noteworthy for below as well
 		//inform the target that they're about to have a regenerative extract used on them
 		if(M != user) //targeting someone else
-			M.visible_message("<span class='notice'>[user] readies [src], holding it steady near [M] and guiding it to the center of [M.p_their()] mass...</span>",
+			M.visible_message("<span class='notice'>[user] readies [src], holding it steady near [M] and guiding it to the center of [M.ru_ego()] mass...</span>",
 				"<span class='notice'>[user] readies [src], holding it steady near you and guiding it to the center of your mass...</span>")
 			if(!do_after(user, 50, target = M)) //5 seconds
 				return TRUE
 		else //targeting self
-			M.visible_message("<span class='notice'>[user] readies [src], holding it steady near [user.p_them()]self and guiding it to the center of [user.p_their()] mass...</span>",
+			M.visible_message("<span class='notice'>[user] readies [src], holding it steady near [user.ru_na()]self and guiding it to the center of [user.ru_ego()] mass...</span>",
 				"<span class='notice'>You ready [src], holding it steady near you and guiding it to the center of your mass...</span>")
 			if(!do_after(user, 10, target = M)) //1 second
 				return TRUE
@@ -44,10 +44,10 @@ Regenerative extracts:
 		to_chat(user, "<span class='warning'>[M] died before you could apply [src]!</span>")
 		return
 	if(M != user)
-		user.visible_message("<span class='notice'>[user] crushes the [src] over [M], the milky goo quickly regenerating all of [M.p_their()] injuries!</span>",
-			"<span class='notice'>You squeeze the [src], and it bursts over [M], the milky goo regenerating [M.p_their()] injuries.</span>")
+		user.visible_message("<span class='notice'>[user] crushes the [src] over [M], the milky goo quickly regenerating all of [M.ru_ego()] injuries!</span>",
+			"<span class='notice'>You squeeze the [src], and it bursts over [M], the milky goo regenerating [M.ru_ego()] injuries.</span>")
 	else
-		user.visible_message("<span class='notice'>[user] crushes the [src] over [user.p_them()]self, the milky goo quickly regenerating all of [user.p_their()] injuries!</span>",
+		user.visible_message("<span class='notice'>[user] crushes the [src] over [user.ru_na()]self, the milky goo quickly regenerating all of [user.ru_ego()] injuries!</span>",
 			"<span class='notice'>You squeeze the [src], and it bursts in your hand, splashing you with milky goo which quickly regenerates your injuries!</span>")
 	core_effect_before(M, user)
 	var/new_disgust_level = 0
@@ -205,7 +205,7 @@ Regenerative extracts:
 	colour = "pyrite"
 
 /obj/item/slimecross/regenerative/pyrite/core_effect(mob/living/target, mob/user)
-	target.visible_message("<span class='warning'>The milky goo coating [target] leaves [target.p_them()] a different color!</span>")
+	target.visible_message("<span class='warning'>The milky goo coating [target] leaves [target.ru_na()] a different color!</span>")
 	target.add_atom_colour(rgb(rand(0,255),rand(0,255),rand(0,255)),WASHABLE_COLOUR_PRIORITY)
 
 /obj/item/slimecross/regenerative/red

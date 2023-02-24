@@ -29,7 +29,7 @@
 	timeout = 5 MINUTES
 
 /datum/mood_event/pet_animal/add_effects(mob/animal)
-	description = "<span class='nicegreen'>\The [animal.name] is adorable! I can't stop petting [animal.p_them()]!</span>\n"
+	description = "<span class='nicegreen'>\The [animal.name] is adorable! I can't stop petting [animal.ru_na()]!</span>\n"
 
 /datum/mood_event/honk
 	description = "<span class='nicegreen'>Maybe clowns aren't so bad after all. Honk!</span>\n"
@@ -112,7 +112,7 @@
 	timeout = 3000
 
 /datum/mood_event/besthug/add_effects(mob/friend)
-	description = "<span class='nicegreen'>[friend.name] is great to be around, [friend.p_they()] makes me feel so happy!</span>\n"
+	description = "<span class='nicegreen'>[friend.name] is great to be around, [friend.ru_who()] makes me feel so happy!</span>\n"
 
 /datum/mood_event/happy_empath
 	description = "<span class='warning'>Someone seems happy!</span>\n"

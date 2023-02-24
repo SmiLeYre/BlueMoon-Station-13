@@ -1268,9 +1268,9 @@
 		return
 	if(iscarbon(M) && !M.incapacitated() && !riding_datum.equip_buckle_inhands(M, 1))
 		if(M.get_num_arms() <= 0)
-			M.visible_message("<span class='boldwarning'>[M] can't climb onto [src] because [M.p_they()] don't have any usable arms!</span>")
+			M.visible_message("<span class='boldwarning'>[M] can't climb onto [src] because [M.ru_who()] don't have any usable arms!</span>")
 		else
-			M.visible_message("<span class='boldwarning'>[M] can't climb onto [src] because [M.p_their()] hands are full!</span>")
+			M.visible_message("<span class='boldwarning'>[M] can't climb onto [src] because [M.ru_ego()] hands are full!</span>")
 		return
 	. = ..(M, force, check_loc)
 
@@ -1377,7 +1377,7 @@
 		program.force_full_update()
 
 /mob/living/silicon/robot/get_tooltip_data()
-	var/t_He = p_they(TRUE)
+	var/t_He = ru_who(TRUE)
 	var/t_is = p_are()
 	. = list()
 	var/borg_type = module ? module : "Default"

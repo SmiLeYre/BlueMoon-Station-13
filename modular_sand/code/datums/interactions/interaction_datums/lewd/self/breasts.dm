@@ -1,5 +1,5 @@
 /datum/interaction/lewd/titgrope_self
-	description = "Сжать свою грудь."
+	description = "Грудь. Сжать свои соски."
 	require_user_hands = TRUE
 	require_user_breasts = REQUIRE_ANY
 	user_is_target = TRUE
@@ -37,7 +37,7 @@
 
 
 /datum/interaction/lewd/self_nipsuck
-	description = "Пососать свои собственные соски."
+	description = "Грудь. Пососать свои соски."
 	require_user_breasts = REQUIRE_EXPOSED
 	require_user_mouth = TRUE
 	user_is_target = TRUE
@@ -62,8 +62,8 @@
 
 	lines = list(
 		"подносит соски своих собственных ёмкостей для молока ко рту и глубоко всасывает их",
-		"делает большой глоток свежего '[lowertext(milktext)]' и громко выдыхает после такого",
-		"хватается губами за свой сосок и полностью заполняет свою ротовую полость '[lowertext(milktext)]'"
+		"делает большой глоток свежего <b>'[lowertext(milktext)]'</b> и громко выдыхает после такого",
+		"хватается губами за свой сосок и полностью заполняет свою ротовую полость <b>'[lowertext(milktext)]'</b>"
 	)
 
 	message = "<span class='lewd'>\The <b>[user]</b> [pick(lines)]</span>"

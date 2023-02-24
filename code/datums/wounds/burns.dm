@@ -114,9 +114,9 @@
 
 /datum/wound/burn/get_examine_description(mob/user)
 	if(strikes_to_lose_limb <= 0)
-		return "<span class='deadsay'><B>[victim.p_their(TRUE)] [limb.name] is completely dead and unrecognizable as organic.</B></span>"
+		return "<span class='deadsay'><B>[victim.ru_ego(TRUE)] [limb.name] is completely dead and unrecognizable as organic.</B></span>"
 
-	var/list/condition = list("[victim.p_their(TRUE)] [limb.name] [examine_desc]")
+	var/list/condition = list("[victim.ru_ego(TRUE)] [limb.name] [examine_desc]")
 	if(limb.current_gauze)
 		var/bandage_condition
 		switch(limb.current_gauze.absorption_capacity)
@@ -139,7 +139,7 @@
 			if(WOUND_INFECTION_CRITICAL to WOUND_INFECTION_SEPTIC)
 				condition += ", <span class='deadsay'>with streaks of rotten infection pulsating outward!</span>"
 			if(WOUND_INFECTION_SEPTIC to INFINITY)
-				return "<span class='deadsay'><B>[victim.p_their(TRUE)] [limb.name] is a mess of char and rot, skin literally dripping off the bone with infection!</B></span>"
+				return "<span class='deadsay'><B>[victim.ru_ego(TRUE)] [limb.name] is a mess of char and rot, skin literally dripping off the bone with infection!</B></span>"
 			else
 				condition += "!"
 

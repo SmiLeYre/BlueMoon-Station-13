@@ -1,6 +1,6 @@
 /obj/item/organ/heart
 	name = "heart"
-	desc = "I feel bad for the heartless bastard who lost this."
+	desc = "Мне жаль бессердечного ублюдка, который потерял это."
 	icon_state = "heart-on"
 	zone = BODY_ZONE_CHEST
 	slot = ORGAN_SLOT_HEART
@@ -8,10 +8,10 @@
 	healing_factor = STANDARD_ORGAN_HEALING
 	decay_factor = 2 * STANDARD_ORGAN_DECAY
 
-	low_threshold_passed = "<span class='info'>Prickles of pain appear then die out from within your chest...</span>"
-	high_threshold_passed = "<span class='warning'>Something inside your chest hurts, and the pain isn't subsiding. You notice yourself breathing far faster than before.</span>"
-	now_fixed = "<span class='info'>Your heart begins to beat again.</span>"
-	high_threshold_cleared = "<span class='info'>The pain in your chest has died down, and your breathing becomes more relaxed.</span>"
+	low_threshold_passed = span_info("Колющая боль появляется и исчезает в груди...")
+	high_threshold_passed = span_warning("Что-то в груди болит, и боль не утихает. Ох, я дышу намного быстрее, чем раньше.")
+	now_fixed = span_info("Сердце снова начинает биться.")
+	high_threshold_cleared = span_info("Боль в груди утихла и дыхание стало более расслабленным.")
 
 	// Heart attack code is in code/modules/mob/living/carbon/human/life.dm
 	var/beating = 1
@@ -22,6 +22,7 @@
 
 	var/failed = FALSE		//to prevent constantly running failing code
 	var/operated = FALSE	//whether the heart's been operated on to fix some of its damages
+	var/key_for_dreamer = null
 
 /obj/item/organ/heart/update_icon_state()
 	if(beating)
@@ -93,7 +94,7 @@
 
 	if(organ_flags & ORGAN_FAILING)	//heart broke, stopped beating, death imminent
 		if(owner.stat == CONSCIOUS)
-			owner.visible_message("<span class='userdanger'>[owner] clutches at [owner.p_their()] chest as if [owner.p_their()] heart is stopping!</span>")
+			owner.visible_message("<span class='userdanger'>[owner] clutches at [owner.ru_ego()] chest as if [owner.ru_ego()] heart is stopping!</span>")
 		owner.set_heartattack(TRUE)
 		failed = TRUE
 
@@ -242,7 +243,7 @@
 	if(prob(severity/emp_vulnerability)) //Chance of permanent effects
 		organ_flags |= ORGAN_SYNTHETIC_EMP //Starts organ faliure - gonna need replacing soon.
 		Stop()
-		owner.visible_message("<span class='danger'>[owner] clutches at [owner.p_their()] chest as if [owner.p_their()] heart is stopping!</span>", \
+		owner.visible_message("<span class='danger'>[owner] clutches at [owner.ru_ego()] chest as if [owner.ru_ego()] heart is stopping!</span>", \
 						"<span class='userdanger'>You feel a terrible pain in your chest, as if your heart has stopped!</span>")
 		addtimer(CALLBACK(src, .proc/Restart), 10 SECONDS)
 

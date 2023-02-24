@@ -97,7 +97,7 @@
 		icon_state = "soulstone"
 		name = initial(name)
 		if(iswizard(user) || usability)
-			to_chat(A, "<b>You have been released from your prison, but you are still bound to [user.real_name]'s will. Help [user.p_them()] succeed in [user.p_their()] goals at all costs.</b>")
+			to_chat(A, "<b>You have been released from your prison, but you are still bound to [user.real_name]'s will. Help [user.ru_na()] succeed in [user.ru_ego()] goals at all costs.</b>")
 		else if(iscultist(user))
 			to_chat(A, "<b>You have been released from your prison, but you are still bound to the cult's will. Help them succeed in their goals at all costs.</b>")
 		was_used()
@@ -116,13 +116,13 @@
 		to_chat(user, span_userdanger("Your body is wracked with debilitating pain!"))
 		return
 
-	user.visible_message("<span class='notice'>[user] holds [src] above [user.p_their()] head and forces it into [target_toolbox] with a flash of light!", \
+	user.visible_message("<span class='notice'>[user] holds [src] above [user.ru_ego()] head and forces it into [target_toolbox] with a flash of light!", \
 		span_notice("You hold [src] above your head briefly, then force it into [target_toolbox], transferring the [occupant]'s soul!"), ignored_mobs = occupant)
 	to_chat(occupant, span_userdanger("[user] holds you up briefly, then forces you into [target_toolbox]!"))
 	to_chat(occupant, span_deadsay("<b>Your eternal soul has been sacrificed to restore the soul of a toolbox. Them's the breaks!</b>"))
 
 	occupant.client?.give_award(/datum/award/achievement/misc/toolbox_soul, occupant)
-	occupant.deathmessage = "shrieks out in unholy pain as [occupant.p_their()] soul is absorbed into [target_toolbox]!"
+	occupant.deathmessage = "shrieks out in unholy pain as [occupant.ru_ego()] soul is absorbed into [target_toolbox]!"
 	release_shades(user, TRUE)
 	occupant.death()
 
@@ -265,9 +265,9 @@
 	if(newstruct.mind && ((stoner && iscultist(stoner)) || cultoverride) && SSticker?.mode)
 		SSticker.mode.add_cultist(newstruct.mind, 0)
 	if(iscultist(stoner) || cultoverride)
-		to_chat(newstruct, "<b>You are still bound to serve the cult[stoner ? " and [stoner]":""], follow [stoner ? stoner.p_their() : "their"] orders and help [stoner ? stoner.p_them() : "them"] complete [stoner ? stoner.p_their() : "their"] goals at all costs.</b>")
+		to_chat(newstruct, "<b>You are still bound to serve the cult[stoner ? " and [stoner]":""], follow [stoner ? stoner.ru_ego() : "their"] orders and help [stoner ? stoner.ru_na() : "them"] complete [stoner ? stoner.ru_ego() : "their"] goals at all costs.</b>")
 	else if(stoner)
-		to_chat(newstruct, "<b>You are still bound to serve your creator, [stoner], follow [stoner.p_their()] orders and help [stoner.p_them()] complete [stoner.p_their()] goals at all costs.</b>")
+		to_chat(newstruct, "<b>You are still bound to serve your creator, [stoner], follow [stoner.ru_ego()] orders and help [stoner.ru_na()] complete [stoner.ru_ego()] goals at all costs.</b>")
 	newstruct.clear_alert("bloodsense")
 	BS = newstruct.throw_alert("bloodsense", /atom/movable/screen/alert/bloodsense)
 	if(BS)
@@ -298,11 +298,11 @@
 	name = "soulstone: Shade of [T.real_name]"
 	icon_state = "soulstone2"
 	if(user && (iswizard(user) || usability))
-		to_chat(S, "Your soul has been captured! You are now bound to [user.real_name]'s will. Help [user.p_them()] succeed in [user.p_their()] goals at all costs.")
+		to_chat(S, "Your soul has been captured! You are now bound to [user.real_name]'s will. Help [user.ru_na()] succeed in [user.ru_ego()] goals at all costs.")
 	else if(user && iscultist(user))
 		to_chat(S, "Your soul has been captured! You are now bound to the cult's will. Help them succeed in their goals at all costs.")
 	if(vic && user)
-		to_chat(user, "<span class='info'><b>Capture successful!</b>:</span> [T.real_name]'s soul has been ripped from [T.p_their()] body and stored within the soul stone.")
+		to_chat(user, "<span class='info'><b>Capture successful!</b>:</span> [T.real_name]'s soul has been ripped from [T.ru_ego()] body and stored within the soul stone.")
 
 
 /obj/item/soulstone/proc/getCultGhost(mob/living/carbon/human/T, mob/user)

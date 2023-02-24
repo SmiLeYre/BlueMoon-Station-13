@@ -190,8 +190,8 @@
 		if(user.grab_state) //only the first upgrade is instantaneous
 			var/old_grab_state = user.grab_state
 			var/grab_upgrade_time = instant ? 0 : 30
-			visible_message("<span class='danger'>[user] starts to tighten [user.p_their()] grip on [src]!</span>", \
-				"<span class='userdanger'>[user] starts to tighten [user.p_their()] grip on you!</span>", target = user,
+			visible_message("<span class='danger'>[user] starts to tighten [user.ru_ego()] grip on [src]!</span>", \
+				"<span class='userdanger'>[user] starts to tighten [user.ru_ego()] grip on you!</span>", target = user,
 				target_message = "<span class='danger'>You start to tighten your grip on [src]!</span>")
 			switch(user.grab_state)
 				if(GRAB_AGGRESSIVE)

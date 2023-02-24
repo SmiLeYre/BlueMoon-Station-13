@@ -312,7 +312,7 @@
 		var/datum/effect_system/spark_spread/spark_system = new /datum/effect_system/spark_spread()
 		spark_system.set_up(5, 0, loc)
 		playsound(src, "sparks", 50, 1)
-		visible_message("<span class='danger'>[ninja] electrocutes [src] with [ninja.p_their()] touch!</span>", "<span class='userdanger'>[ninja] electrocutes you with [ninja.p_their()] touch!</span>")
+		visible_message("<span class='danger'>[ninja] electrocutes [src] with [ninja.ru_ego()] touch!</span>", "<span class='userdanger'>[ninja] electrocutes you with [ninja.ru_ego()] touch!</span>")
 		electrocute_act(15, ninja, flags = SHOCK_NOSTUN)
 
 		DefaultCombatKnockdown(ninja_gloves.stunforce, override_hardstun = 0)

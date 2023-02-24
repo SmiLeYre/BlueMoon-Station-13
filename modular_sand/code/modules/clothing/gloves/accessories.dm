@@ -16,7 +16,7 @@
 	var/strip_silence = FALSE
 
 /obj/item/clothing/accessory/ring/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>\[user] is putting the [src] in [user.p_their()] mouth! It looks like [user] is trying to choke on the [src]!</span>")
+	user.visible_message("<span class='suicide'>\[user] is putting the [src] in [user.ru_ego()] mouth! It looks like [user] is trying to choke on the [src]!</span>")
 	return OXYLOSS
 
 /obj/item/clothing/accessory/ring/attack_self(mob/user)

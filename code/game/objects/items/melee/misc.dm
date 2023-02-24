@@ -61,7 +61,7 @@
 	custom_materials = list(/datum/material/iron = 1000)
 
 /obj/item/melee/chainofcommand/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is strangling [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is strangling [user.ru_na()]self with [src]! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	return (OXYLOSS)
 
 /obj/item/melee/synthetic_arm_blade
@@ -147,7 +147,7 @@
 	return mutable_appearance(icon_file, "-sabre")
 
 /obj/item/melee/sabre/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] is trying to cut off all [user.p_their()] limbs with [src]! it looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is trying to cut off all [user.ru_ego()] limbs with [src]! it looks like [user.ru_who()] trying to commit suicide!</span>")
 	var/i = 0
 	ADD_TRAIT(src, TRAIT_NODROP, SABRE_SUICIDE_TRAIT)
 	if(iscarbon(user))
@@ -450,7 +450,7 @@
 	var/mob/living/carbon/human/H = user
 	var/obj/item/organ/brain/B = H.getorgan(/obj/item/organ/brain)
 
-	user.visible_message("<span class='suicide'>[user] stuffs [src] up [user.p_their()] nose and presses the 'extend' button! It looks like [user.p_theyre()] trying to clear [user.p_their()] mind.</span>")
+	user.visible_message("<span class='suicide'>[user] stuffs [src] up [user.ru_ego()] nose and presses the 'extend' button! It looks like [user.ru_who()] trying to clear [user.ru_ego()] mind.</span>")
 	if(!on)
 		src.attack_self(user)
 	else
@@ -609,7 +609,7 @@
 	return BULLET_ACT_HIT
 
 /obj/item/melee/supermatter_sword/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] touches [src]'s blade. It looks like [user.p_theyre()] tired of waiting for the radiation to kill [user.p_them()]!</span>")
+	user.visible_message("<span class='suicide'>[user] touches [src]'s blade. It looks like [user.ru_who()] tired of waiting for the radiation to kill [user.ru_na()]!</span>")
 	user.dropItemToGround(src, TRUE)
 	shard.Bumped(user)
 

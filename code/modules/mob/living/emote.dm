@@ -1,7 +1,7 @@
 /datum/emote/living/blush
 	key = "blush"
 	key_third_person = "blushes"
-	message = "blushes."
+	message = "краснеет."
 
 /datum/emote/living/blush/run_emote(mob/user, params)
 	. = ..()
@@ -11,20 +11,20 @@
 /datum/emote/living/bow
 	key = "bow"
 	key_third_person = "bows"
-	message = "bows."
-	message_param = "bows to %t."
+	message = "поднимает руку."
+	message_param = "поднимает руку при виде %t."
 	restraint_check = TRUE
 
 /datum/emote/living/burp
 	key = "burp"
 	key_third_person = "burps"
-	message = "burps."
+	message = "рыгает."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/choke
 	key = "choke"
 	key_third_person = "chokes"
-	message = "chokes!"
+	message = "задыхается!"
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/choke/run_emote(mob/user, params)
@@ -38,13 +38,13 @@
 /datum/emote/living/cross
 	key = "cross"
 	key_third_person = "crosses"
-	message = "crosses their arms."
+	message = "скрещивает свои руки."
 	restraint_check = TRUE
 
 /datum/emote/living/chuckle
 	key = "chuckle"
 	key_third_person = "chuckles"
-	message = "chuckles."
+	message = "хихикает."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/chuckle/run_emote(mob/user, params)
@@ -58,7 +58,7 @@
 /datum/emote/living/collapse
 	key = "collapse"
 	key_third_person = "collapses"
-	message = "collapses!"
+	message = "падает с ног!"
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/collapse/run_emote(mob/user, params)
@@ -70,7 +70,7 @@
 /datum/emote/living/cough
 	key = "cough"
 	key_third_person = "coughs"
-	message = "coughs!"
+	message = "кашляет!"
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/cough/can_run_emote(mob/user, status_check = TRUE , intentional)
@@ -89,7 +89,7 @@
 /datum/emote/living/dance
 	key = "dance"
 	key_third_person = "dances"
-	message = "dances around happily."
+	message = "радостно танцует."
 	restraint_check = TRUE
 
 /datum/emote/living/dance/run_emote(mob/user, params)
@@ -101,13 +101,13 @@
 /datum/emote/living/deathgasp
 	key = "deathgasp"
 	key_third_person = "deathgasps"
-	message = "seizes up and falls limp, their eyes dead and lifeless..."
-	message_robot = "shudders violently for a moment before falling still, its eyes slowly darkening."
-	message_AI = "lets out a flurry of sparks, its screen flickering as its systems slowly halt."
-	message_alien = "lets out a waning guttural screech, green blood bubbling from its maw..."
-	message_larva = "lets out a sickly hiss of air and falls limply to the floor..."
-	message_monkey = "lets out a faint chimper as it collapses and stops moving..."
-	message_simple =  "stops moving..."
+	message = "застывает и падает без сил, их глаза мертвы и безжизненны..."
+	message_robot = "на мгновение яростно вздрагивает, а затем падает неподвижно. Его механические глаза медленно темнеют."
+	message_AI = "выпускает шквал искр. Его экран мерцает, когда его системы медленно останавливаются..."
+	message_alien = "издает слабеющий гортанный крик, когда зеленая кровь пузырится из его пасти..."
+	message_larva = "выпускает воздух с тошнотворным шипением и падает на пол...."
+	message_monkey = "издает свой последний крик, когда последние частицы души уходят из тела и наконец-то... перестает двигаться..."
+	message_simple =  "прекращает всякое движение..."
 	stat_allowed = UNCONSCIOUS
 
 /datum/emote/living/deathgasp/run_emote(mob/user, params)
@@ -128,12 +128,12 @@
 /datum/emote/living/drool
 	key = "drool"
 	key_third_person = "drools"
-	message = "drools."
+	message = "пускает слюни."
 
 /datum/emote/living/faint
 	key = "faint"
 	key_third_person = "faints"
-	message = "faints."
+	message = "падает без сознания."
 
 /datum/emote/living/faint/run_emote(mob/user, params)
 	. = ..()
@@ -144,7 +144,7 @@
 /datum/emote/living/flap
 	key = "flap"
 	key_third_person = "flaps"
-	message = "flaps their wings."
+	message = "хлопает крыльями."
 	restraint_check = TRUE
 	var/wing_time = 20
 
@@ -164,25 +164,25 @@
 /datum/emote/living/flap/aflap
 	key = "aflap"
 	key_third_person = "aflaps"
-	message = "flaps their wings ANGRILY!"
+	message = "ГНЕВНО хлопает крыльями!"
 	restraint_check = TRUE
 	wing_time = 10
 
 /datum/emote/living/frown
 	key = "frown"
 	key_third_person = "frowns"
-	message = "frowns."
+	message = "хмурится."
 
 /datum/emote/living/gag
 	key = "gag"
 	key_third_person = "gags"
-	message = "gags."
+	message = "издаёт гулкий зук."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/gasp
 	key = "gasp"
 	key_third_person = "gasps"
-	message = "gasps!"
+	message = "задыхается!"
 	emote_type = EMOTE_AUDIBLE
 	stat_allowed = UNCONSCIOUS
 //bluemoon add start
@@ -213,8 +213,8 @@
 /datum/emote/living/giggle
 	key = "giggle"
 	key_third_person = "giggles"
-	message = "giggles."
-	message_mime = "giggles silently!"
+	message = "хихикает."
+	message_mime = "тихо хихикает!"
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/giggle/run_emote(mob/user, params)
@@ -228,39 +228,261 @@
 /datum/emote/living/glare
 	key = "glare"
 	key_third_person = "glares"
-	message = "glares."
-	message_param = "glares at %t."
+	message = "смотрит с ненавистью."
+	message_param = "смотрит с ненавистью на %t."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/grin
 	key = "grin"
 	key_third_person = "grins"
-	message = "grins."
+	message = "ухмыляется."
 
 /datum/emote/living/groan
 	key = "groan"
 	key_third_person = "groans"
-	message = "groans!"
+	message = "рычит!"
 	var/sound = 'sound/voice/roar.ogg'
-	message_mime = "appears to groan!"
+	message_mime = "делает вид, что рычит!"
 
 /datum/emote/living/grimace
 	key = "grimace"
 	key_third_person = "grimaces"
-	message = "grimaces."
+	message = "гримасничает."
 
 /datum/emote/living/jump
 	key = "jump"
 	key_third_person = "jumps"
-	message = "jumps!"
+	message = "прыгает!"
 	restraint_check = TRUE
 
 /datum/emote/living/kiss
 	key = "kiss"
 	key_third_person = "kisses"
-	message = "blows a kiss."
-	message_param = "blows a kiss to %t."
+	message = "отправляет воздушный поцелуй."
+	message_param = "отправляет воздушный поцелуй для %t."
 	emote_type = EMOTE_AUDIBLE
+
+/* Потом как-нибудь.
+/datum/emote/living/kiss/run_emote(mob/living/user, params, type_override, intentional)
+	. = ..()
+	if(!.)
+		return
+	var/kiss_type = /obj/item/hand_item/kisser
+
+	if(HAS_TRAIT(user, TRAIT_KISS_OF_DEATH))
+		kiss_type = /obj/item/hand_item/kisser/death
+
+	var/obj/item/kiss_blower = new kiss_type(user)
+	if(user.put_in_hands(kiss_blower))
+		to_chat(user, span_notice("You ready your kiss-blowing hand."))
+	else
+		qdel(kiss_blower)
+		to_chat(user, span_warning("You're incapable of blowing a kiss in your current state."))
+
+/obj/item/hand_item/kisser
+	name = "kiss"
+	desc = "I want you all to know, everyone and anyone, to seal it with a kiss."
+	icon = 'icons/mob/simple/animal.dmi'
+	icon_state = "heart"
+	inhand_icon_state = "nothing"
+	/// The kind of projectile this version of the kiss blower fires
+	var/kiss_type = /obj/projectile/kiss
+	/// TRUE if the user was aiming anywhere but the mouth when they offer the kiss, if it's offered
+	var/cheek_kiss
+
+/obj/item/hand_item/kisser/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
+	. = ..()
+	. |= AFTERATTACK_PROCESSED_ITEM
+	if(HAS_TRAIT(user, TRAIT_GARLIC_BREATH))
+		kiss_type = /obj/projectile/kiss/french
+
+	if(HAS_TRAIT(user, TRAIT_CHEF_KISS))
+		kiss_type = /obj/projectile/kiss/chef
+
+	var/obj/projectile/blown_kiss = new kiss_type(get_turf(user))
+	user.visible_message("<b>[user]</b> blows \a [blown_kiss] at [target]!", span_notice("You blow \a [blown_kiss] at [target]!"))
+
+	//Shooting Code:
+	blown_kiss.original = target
+	blown_kiss.fired_from = user
+	blown_kiss.firer = user // don't hit ourself that would be really annoying
+	blown_kiss.impacted = list(user = TRUE) // just to make sure we don't hit the wearer
+	blown_kiss.preparePixelProjectile(target, user)
+	blown_kiss.fire()
+	qdel(src)
+
+/obj/item/hand_item/kisser/on_offered(mob/living/carbon/offerer, mob/living/carbon/offered)
+	if(!(locate(/mob/living/carbon) in orange(1, offerer)))
+		return TRUE
+
+	cheek_kiss = (offerer.zone_selected != BODY_ZONE_PRECISE_MOUTH)
+	offerer.visible_message(span_notice("[offerer] leans in slightly, offering a kiss[cheek_kiss ? " on the cheek" : ""]!"),
+		span_notice("You lean in slightly, indicating you'd like to offer a kiss[cheek_kiss ? " on the cheek" : ""]!"), null, 2)
+	offerer.apply_status_effect(/datum/status_effect/offering/no_item_received, src)
+	return TRUE
+
+/obj/item/hand_item/kisser/on_offer_taken(mob/living/carbon/offerer, mob/living/carbon/taker)
+	var/obj/projectile/blown_kiss = new kiss_type(get_turf(offerer))
+	offerer.visible_message("<b>[offerer]</b> gives [taker] \a [blown_kiss][cheek_kiss ? " on the cheek" : ""]!!", span_notice("You give [taker] \a [blown_kiss][cheek_kiss ? " on the cheek" : ""]!"), ignored_mobs = taker)
+	to_chat(taker, span_nicegreen("[offerer] gives you \a [blown_kiss][cheek_kiss ? " on the cheek" : ""]!"))
+	offerer.face_atom(taker)
+	taker.face_atom(offerer)
+	offerer.do_item_attack_animation(taker, used_item=src)
+	//We're still firing a shot here because I don't want to deal with some weird edgecase where direct impacting them with the projectile causes it to freak out because there's no angle or something
+	blown_kiss.original = taker
+	blown_kiss.fired_from = offerer
+	blown_kiss.firer = offerer // don't hit ourself that would be really annoying
+	blown_kiss.impacted = list(offerer = TRUE) // just to make sure we don't hit the wearer
+	blown_kiss.preparePixelProjectile(taker, offerer)
+	blown_kiss.suppressed = SUPPRESSED_VERY // this also means it's a direct offer
+	blown_kiss.fire()
+	qdel(src)
+	return TRUE // so the core offering code knows to halt
+
+/obj/item/hand_item/kisser/death
+	name = "kiss of death"
+	desc = "If looks could kill, they'd be this."
+	color = COLOR_BLACK
+	kiss_type = /obj/projectile/kiss/death
+
+/obj/projectile/kiss
+	name = "kiss"
+	icon = 'icons/mob/simple/animal.dmi'
+	icon_state = "heart"
+	hitsound = 'sound/effects/kiss.ogg'
+	hitsound_wall = 'sound/effects/kiss.ogg'
+	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
+	speed = 1.6
+	damage_type = BRUTE
+	damage = 0
+	nodamage = TRUE // love can't actually hurt you
+	armour_penetration = 100 // but if it could, it would cut through even the thickest plate
+
+/obj/projectile/kiss/fire(angle, atom/direct_target)
+	if(firer)
+		name = "[name] blown by [firer]"
+	return ..()
+
+/obj/projectile/kiss/Impact(atom/A)
+	if(!nodamage || !isliving(A)) // if we do damage or we hit a nonliving thing, we don't have to worry about a harmless hit because we can't wrongly do damage anyway
+		return ..()
+
+	harmless_on_hit(A)
+	qdel(src)
+	return FALSE
+
+/**
+ * To get around shielded modsuits & such being set off by kisses when they shouldn't, we take a page from hallucination projectiles
+ * and simply fake our on hit effects. This lets kisses remain incorporeal without having to make some new trait for this one niche situation.
+ * This fake hit only happens if we can deal damage and if we hit a living thing. Otherwise, we just do normal on hit effects.
+ */
+/obj/projectile/kiss/proc/harmless_on_hit(mob/living/living_target)
+	playsound(get_turf(living_target), hitsound, 100, TRUE)
+	if(!suppressed)  // direct
+		living_target.visible_message(span_danger("[living_target] is hit by \a [src]."), span_userdanger("You're hit by \a [src]!"), vision_distance=COMBAT_MESSAGE_RANGE)
+
+	living_target.add_mob_memory(/datum/memory/kissed, deuteragonist = firer)
+	living_target.add_mood_event("kiss", /datum/mood_event/kiss, firer, suppressed)
+	if(isliving(firer))
+		var/mob/living/kisser = firer
+		kisser.add_mob_memory(/datum/memory/kissed, protagonist = living_target, deuteragonist = firer)
+	try_fluster(living_target)
+
+/obj/projectile/kiss/proc/try_fluster(mob/living/living_target)
+	// people with the social anxiety quirk can get flustered when hit by a kiss
+	if(!HAS_TRAIT(living_target, TRAIT_ANXIOUS) || (living_target.stat > SOFT_CRIT) || living_target.is_blind())
+		return
+	if(HAS_TRAIT(living_target, TRAIT_FEARLESS) || prob(50)) // 50% chance for it to apply, also immune while on meds
+		return
+
+	var/other_msg
+	var/self_msg
+	var/roll = rand(1, 3)
+	switch(roll)
+		if(1)
+			other_msg = "stumbles slightly, turning a bright red!"
+			self_msg = "You lose control of your limbs for a moment as your blood rushes to your face, turning it bright red!"
+			living_target.adjust_confusion(rand(5 SECONDS, 10 SECONDS))
+		if(2)
+			other_msg = "stammers softly for a moment before choking on something!"
+			self_msg = "You feel your tongue disappear down your throat as you fight to remember how to make words!"
+			addtimer(CALLBACK(living_target, TYPE_PROC_REF(/atom/movable, say), pick("Uhhh...", "O-oh, uhm...", "I- uhhhhh??", "You too!!", "What?")), rand(0.5 SECONDS, 1.5 SECONDS))
+			living_target.adjust_stutter(rand(10 SECONDS, 30 SECONDS))
+		if(3)
+			other_msg = "locks up with a stunned look on [living_target.p_their()] face, staring at [firer ? firer : "the ceiling"]!"
+			self_msg = "Your brain completely fails to process what just happened, leaving you rooted in place staring at [firer ? "[firer]" : "the ceiling"] for what feels like an eternity!"
+			living_target.face_atom(firer)
+			living_target.Stun(rand(3 SECONDS, 8 SECONDS))
+
+	living_target.visible_message("<b>[living_target]</b> [other_msg]", span_userdanger("Whoa! [self_msg]"))
+
+/obj/projectile/kiss/on_hit(atom/target, blocked, pierce_hit)
+	def_zone = BODY_ZONE_HEAD // let's keep it PG, people
+	. = ..()
+	if(isliving(target))
+		var/mob/living/living_target = target
+		living_target.add_mood_event("kiss", /datum/mood_event/kiss, firer, suppressed)
+		try_fluster(living_target)
+
+/obj/projectile/kiss/death
+	name = "kiss of death"
+	nodamage = FALSE // okay i kinda lied about love not being able to hurt you
+	damage = 35
+	wound_bonus = 0
+	sharpness = SHARP_POINTY
+	color = COLOR_BLACK
+
+/obj/projectile/kiss/death/on_hit(atom/target, blocked, pierce_hit)
+	. = ..()
+	if(!iscarbon(target))
+		return
+	var/mob/living/carbon/heartbreakee = target
+	var/obj/item/organ/internal/heart/dont_go_breakin_my_heart = heartbreakee.getorganslot(ORGAN_SLOT_HEART)
+	dont_go_breakin_my_heart.applyOrganDamage(999)
+
+
+/obj/projectile/kiss/french
+	name = "french kiss (is that a hint of garlic?)"
+	color = "#f2e9d2" //Scientifically proven to be the colour of garlic
+
+/obj/projectile/kiss/french/harmless_on_hit(mob/living/living_target)
+	. = ..()
+	//Don't stack the garlic
+	if(! living_target.has_reagent(/datum/reagent/consumable/garlic) )
+		//Phwoar
+		living_target.reagents.add_reagent(/datum/reagent/consumable/garlic, 1)
+	living_target.visible_message("[living_target] has a funny look on [living_target.p_their()] face.", "Wow, that is a strong after taste of garlic!", vision_distance=COMBAT_MESSAGE_RANGE)
+
+/obj/projectile/kiss/chef
+	name = "chef's kiss"
+
+// If our chef's kiss hits a food item, we will improve it with love.
+/obj/projectile/kiss/chef/on_hit(atom/target, blocked, pierce_hit)
+	. = ..()
+	if(!IS_EDIBLE(target) || !target.reagents)
+		return
+	if(!firer || !target.Adjacent(firer))
+		return
+
+	// From here on, no message
+	suppressed = SUPPRESSED_VERY
+
+	if(!HAS_TRAIT_FROM(target, TRAIT_FOOD_CHEF_MADE, REF(firer)))
+		to_chat(firer, span_warning("Wait a second, you didn't make this [target.name]. How can you claim it as your own?"))
+		return
+	if(target.reagents.has_reagent(/datum/reagent/love))
+		to_chat(firer, span_warning("You've already blessed [target.name] with your heart and soul."))
+		return
+
+	var/amount_nutriment = target.reagents.get_multiple_reagent_amounts(typesof(/datum/reagent/consumable/nutriment))
+	if(amount_nutriment <= 0)
+		to_chat(firer, span_warning("There's not enough nutrition in [target.name] for it to be a proper meal."))
+		return
+
+	to_chat(firer, span_green("You deliver a chef's kiss over [target], declaring it perfect."))
+	target.visible_message(span_notice("[firer] delivers a chef's kiss over [target]."), ignored_mobs = firer)
+	target.reagents.add_reagent(/datum/reagent/love, clamp(amount_nutriment / 4, 1, 10)) // clamped to about half of the most dense food I think we have (super bite burger)
+*/
 
 /datum/emote/living/audio_emote
 	emote_type = EMOTE_AUDIBLE
@@ -274,8 +496,8 @@
 /datum/emote/living/audio_emote/laugh
 	key = "laugh"
 	key_third_person = "laughs"
-	message = "laughs."
-	message_mime = "laughs silently!"
+	message = "смеётся."
+	message_mime = "тихо смеётся!"
 
 /datum/emote/living/audio_emote/laugh/run_emote(mob/user, params)
 	. = ..()
@@ -314,8 +536,8 @@
 /datum/emote/living/audio_emote/chitter
 	key = "chitter"
 	key_third_person = "chitters"
-	message = "chitters."
-	message_mime = "chitters silently!"
+	message = "читтерит."
+	message_mime = "тихо читтерит!"
 
 /datum/emote/living/audio_emote/chitter/run_emote(mob/user, params)
 	. = ..()
@@ -327,20 +549,20 @@
 /datum/emote/living/look
 	key = "look"
 	key_third_person = "looks"
-	message = "looks."
-	message_param = "looks at %t."
+	message = "смотрит."
+	message_param = "смотрит на %t."
 
 /datum/emote/living/nod
 	key = "nod"
 	key_third_person = "nods"
-	message = "nods."
-	message_param = "nods at %t."
+	message = "кивает своей головой."
+	message_param = "кивает своей головой в согласии с %t."
 
 /datum/emote/living/point
 	key = "point"
 	key_third_person = "points"
-	message = "points."
-	message_param = "points at %t."
+	message = "указывает."
+	message_param = "указывает на %t."
 	restraint_check = TRUE
 
 /datum/emote/living/point/run_emote(mob/user, params)
@@ -352,45 +574,45 @@
 				message_param = "tries to point at %t with a leg, <span class='userdanger'>falling down</span> in the process!"
 				H.DefaultCombatKnockdown(20)
 			else
-				message_param = "<span class='userdanger'>bumps [user.p_their()] head on the ground</span> trying to motion towards %t."
+				message_param = "<span class='userdanger'>bumps [user.ru_ego()] head on the ground</span> trying to motion towards %t."
 				H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 5)
 	..()
 
 /datum/emote/living/pout
 	key = "pout"
 	key_third_person = "pouts"
-	message = "pouts."
+	message = "дуется."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/scream
 	key = "scream"
 	key_third_person = "screams"
-	message = "screams."
-	message_mime = "acts out a scream!"
+	message = "кричит."
+	message_mime = "изображает крик!"
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/scowl
 	key = "scowl"
 	key_third_person = "scowls"
-	message = "scowls."
+	message = "хмурится."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/shake
 	key = "shake"
 	key_third_person = "shakes"
-	message = "shakes their head."
+	message = "качает своей головой в отрицании."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/shiver
 	key = "shiver"
 	key_third_person = "shiver"
-	message = "shivers."
+	message = "вздрагивает."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/sigh
 	key = "sigh"
 	key_third_person = "sighs"
-	message = "sighs."
+	message = "вздыхает."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/sigh/run_emote(mob/user, params)
@@ -404,22 +626,22 @@
 /datum/emote/living/sit
 	key = "sit"
 	key_third_person = "sits"
-	message = "sits down."
+	message = "садится."
 
 /datum/emote/living/smile
 	key = "smile"
 	key_third_person = "smiles"
-	message = "smiles."
+	message = "улыбается."
 
 /datum/emote/living/smirk
 	key = "smirk"
 	key_third_person = "smirks"
-	message = "smirks."
+	message = "ухмыляется."
 
 /datum/emote/living/sneeze
 	key = "sneeze"
 	key_third_person = "sneezes"
-	message = "sneezes."
+	message = "чихает."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/sneeze/run_emote(mob/user, params)
@@ -433,7 +655,7 @@
 /datum/emote/living/smug
 	key = "smug"
 	key_third_person = "smugs"
-	message = "grins smugly."
+	message = "самодовольно ухмыляется."
 
 /datum/emote/living/sniff
 	key = "sniff"
@@ -452,31 +674,31 @@
 /datum/emote/living/snore
 	key = "snore"
 	key_third_person = "snores"
-	message = "snores."
-	message_mime = "sleeps soundly."
+	message = "спит."
+	message_mime = "спит со странным звуком."
 	emote_type = EMOTE_AUDIBLE
 	stat_allowed = UNCONSCIOUS
 
 /datum/emote/living/stare
 	key = "stare"
 	key_third_person = "stares"
-	message = "stares."
-	message_param = "stares at %t."
+	message = "пристально смотрит."
+	message_param = "пристально смотрит на %t."
 
 /datum/emote/living/strech
 	key = "stretch"
 	key_third_person = "stretches"
-	message = "stretches their arms."
+	message = "вытягивает руки."
 
 /datum/emote/living/sulk
 	key = "sulk"
 	key_third_person = "sulks"
-	message = "sulks down sadly."
+	message = "печально опускает руки."
 
 /datum/emote/living/surrender
 	key = "surrender"
 	key_third_person = "surrenders"
-	message = "puts their hands on their head and falls to the ground, they surrender!"
+	message = "складывает руки за голову и падает на землю, <b>ОДНОЗНАЧНО сдается!</b>"
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/surrender/run_emote(mob/user, params)
@@ -487,8 +709,8 @@
 		if(L.client?.prefs?.autostand)
 			if(!(L.combat_flags & COMBAT_FLAG_INTENTIONALLY_RESTING))
 				TOGGLE_BITFIELD(L.combat_flags, COMBAT_FLAG_INTENTIONALLY_RESTING)
-		L.DefaultCombatKnockdown(200)
-		L.Stun(20) //Skyrat Change
+		L.DefaultCombatKnockdown(300)
+		L.Stun(50) //Skyrat Change
 		L.set_resting(TRUE) //Skyrat change
 
 		//L.disable_combat_mode(FALSE) //doesn't work at all
@@ -496,42 +718,42 @@
 /datum/emote/living/sway
 	key = "sway"
 	key_third_person = "sways"
-	message = "sways around dizzily."
+	message = "головокружительно раскачивается."
 
 /datum/emote/living/tremble
 	key = "tremble"
 	key_third_person = "trembles"
-	message = "trembles in fear!"
+	message = "дрожит от страха!"
 
 /datum/emote/living/twitch
 	key = "twitch"
 	key_third_person = "twitches"
-	message = "twitches violently."
+	message = "сильно дёргается."
 
 /datum/emote/living/twitch_s
 	key = "twitch_s"
-	message = "twitches."
+	message = "дёргается."
 
 /datum/emote/living/wave
 	key = "wave"
 	key_third_person = "waves"
-	message = "waves."
+	message = "машет рукой."
 
 /datum/emote/living/whimper
 	key = "whimper"
 	key_third_person = "whimpers"
-	message = "whimpers."
-	message_mime = "appears hurt."
+	message = "хнычет."
+	message_mime = "изображает боль."
 
 /datum/emote/living/wsmile
 	key = "wsmile"
 	key_third_person = "wsmiles"
-	message = "smiles weakly."
+	message = "слабо улыбается."
 
 /datum/emote/living/yawn
 	key = "yawn"
 	key_third_person = "yawns"
-	message = "yawns."
+	message = "зевает."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/yawn/run_emote(mob/user, params)
@@ -610,15 +832,15 @@
 /datum/emote/sound/AISyndiHack
 	key = "hack"
 	key_third_person = "hacks"
-	message = "hacked by Syndicate."
+	message = "в процессе взлома Синдикатом."
 	sound = 'sound/machines/AISyndiHack.ogg'
 	mob_type_allowed_typecache = list(/mob/living/brain, /mob/living/silicon, /mob/living/carbon/human, /mob/camera/aiEye)
 
 /datum/emote/sound/beep
 	key = "beep"
 	key_third_person = "beeps"
-	message = "beeps."
-	message_param = "beeps at %t."
+	message = "издаёт звуковые сигналы."
+	message_param = "издаёт звуковые сигналы на %t."
 	sound = 'sound/machines/twobeep.ogg'
 	mob_type_allowed_typecache = list(/mob/living/brain, /mob/living/silicon, /mob/living/carbon/human, /mob/camera/aiEye)
 
@@ -633,10 +855,10 @@
 		return
 	var/obj/item/circlegame/N = new(user)
 	if(user.put_in_hands(N))
-		to_chat(user, "<span class='notice'>You make a circle with your hand.</span>")
+		to_chat(user, "<span class='notice'>Вы делаете круг пальцами своей руки.</span>")
 	else
 		qdel(N)
-		to_chat(user, "<span class='warning'>You don't have any free hands to make a circle with.</span>")
+		to_chat(user, "<span class='warning'>У вас нет свободных рук, чтобы сделать круг..</span>")
 
 /datum/emote/living/slap
 	key = "slap"
@@ -649,15 +871,15 @@
 		return
 	var/obj/item/slapper/N = new(user)
 	if(user.put_in_hands(N))
-		to_chat(user, "<span class='notice'>You ready your slapping hand.</span>")
+		to_chat(user, "<span class='notice'>Ты готовишь свою руку для пощечины.</span>")
 	else
-		to_chat(user, "<span class='warning'>You're incapable of slapping in your current state.</span>")
+		to_chat(user, "<span class='warning'>Ты не способен на пощечины в своем нынешнем состоянии.</span>")
 
 /datum/emote/living/audio_emote/blorble
 	key = "blorble"
 	key_third_person = "blorbles"
-	message = "blorbles."
-	message_param = "blorbles at %t."
+	message = "блорбл!"
+	message_param = "блорбит на %t!!"
 
 /datum/emote/living/audio_emote/blorble/run_emote(mob/user, params)
 	. = ..()
@@ -669,8 +891,8 @@
 /datum/emote/living/audio_emote/blurp
 	key = "blurp"
 	key_third_person = "blurps"
-	message = "blurps."
-	message_param = "blurps at %t."
+	message = "блурп!"
+	message_param = "блурпит прямо на %t!!"
 
 /datum/emote/living/audio_emote/blurp/run_emote(mob/user, params)
 	. = ..()

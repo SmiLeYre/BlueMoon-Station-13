@@ -152,7 +152,7 @@
 
 /obj/item/dualsaber/suicide_act(mob/living/carbon/user)
 	if(wielded)
-		user.visible_message("<span class='suicide'>[user] begins spinning way too fast! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		user.visible_message("<span class='suicide'>[user] begins spinning way too fast! It looks like [user.ru_who()] trying to commit suicide!</span>")
 		var/obj/item/bodypart/head/myhead = user.get_bodypart(BODY_ZONE_HEAD)//stole from chainsaw code
 		var/obj/item/organ/brain/B = user.getorganslot(ORGAN_SLOT_BRAIN)
 		B.organ_flags &= ~ORGAN_VITAL	//this cant possibly be a good idea
@@ -169,7 +169,7 @@
 				user.visible_message("<span class='suicide'>[user] panics and starts choking to death!</span>")
 				return OXYLOSS
 	else
-		user.visible_message("<span class='suicide'>[user] begins beating [user.p_them()]self to death with \the [src]'s handle! It probably would've been cooler if [user.p_they()] turned it on first!</span>")
+		user.visible_message("<span class='suicide'>[user] begins beating [user.ru_na()]self to death with \the [src]'s handle! It probably would've been cooler if [user.ru_who()] turned it on first!</span>")
 	return BRUTELOSS
 
 /obj/item/dualsaber/attack(mob/target, mob/living/carbon/human/user)
@@ -230,8 +230,8 @@
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(C.wear_mask)
-			in_mouth = ", barely missing [user.p_their()] nose"
-	. = "<span class='warning'>[user] swings [user.p_their()] [name][in_mouth]. [user.p_they(TRUE)] light[user.p_s()] [user.p_their()] [A.name] in the process.</span>"
+			in_mouth = ", barely missing [user.ru_ego()] nose"
+	. = "<span class='warning'>[user] swings [user.ru_ego()] [name][in_mouth]. [user.ru_who(TRUE)] light[user.p_s()] [user.ru_ego()] [A.name] in the process.</span>"
 	playsound(loc, hitsound, get_clamped_volume(), 1, -1)
 	add_fingerprint(user)
 	// Light your candles while spinning around the room

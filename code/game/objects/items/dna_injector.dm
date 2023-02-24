@@ -460,7 +460,7 @@
 
 /obj/item/dnainjector/timed/inject(mob/living/carbon/M, mob/user)
 	if(M.stat == DEAD)	//prevents dead people from having their DNA changed
-		to_chat(user, "<span class='notice'>You can't modify [M]'s DNA while [M.p_theyre()] dead.</span>")
+		to_chat(user, "<span class='notice'>You can't modify [M]'s DNA while [M.ru_who()] dead.</span>")
 		return FALSE
 
 	if(M.has_dna() && !(HAS_TRAIT(M, TRAIT_NOCLONE)))

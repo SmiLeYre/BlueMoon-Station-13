@@ -275,7 +275,7 @@
 	sharpness = SHARP_POINTY
 
 /obj/item/scalpel/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is slitting [user.p_their()] [pick("wrists", "throat", "stomach")] with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is slitting [user.ru_ego()] [pick("wrists", "throat", "stomach")] with [src]! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	return (BRUTELOSS)
 
 /obj/item/scalpel/ashwalker

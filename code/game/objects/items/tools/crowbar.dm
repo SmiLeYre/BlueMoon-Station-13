@@ -25,7 +25,7 @@
 	bare_wound_bonus = 5
 
 /obj/item/crowbar/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is beating [user.p_them()]self to death with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is beating [user.ru_na()]self to death with [src]! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	playsound(loc, 'sound/weapons/genhit.ogg', 50, 1, -1)
 	return (BRUTELOSS)
 
@@ -115,7 +115,7 @@
 	toolspeed = 0.20
 
 /obj/item/crowbar/power/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is putting [user.p_their()] head in [src], it looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is putting [user.ru_ego()] head in [src], it looks like [user.ru_who()] trying to commit suicide!</span>")
 	playsound(loc, 'sound/items/jaws_pry.ogg', 50, 1, -1)
 	return (BRUTELOSS)
 

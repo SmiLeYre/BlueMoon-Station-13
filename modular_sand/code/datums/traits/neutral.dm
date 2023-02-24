@@ -59,4 +59,4 @@
 		return
 
 	// Add quirk message
-	examine_list += span_love("[quirk_holder.p_they(TRUE)] [quirk_holder.p_are()] currently influenced by the estrous cycle, and long for breeding.")
+	examine_list += span_love("[quirk_holder.ru_who(TRUE)] [quirk_holder.p_are()] currently influenced by the estrous cycle, and long for breeding.")

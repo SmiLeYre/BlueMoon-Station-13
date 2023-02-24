@@ -49,11 +49,11 @@
 /obj/item/organ/genital/proc/remove_equipment(mob/living/carbon/remover, selection)
 	var/obj/item/selected = equipment[selection]
 	if(!selected)
-		to_chat(remover, "<span class='warning'>[remover != owner ? owner.p_their() : "Your"] [name] doesn't have that equipped</span>")
+		to_chat(remover, "<span class='warning'>[remover != owner ? owner.ru_ego() : "Your"] [name] doesn't have that equipped</span>")
 		return
 
 	if(remover == owner)
-		owner.visible_message(message = "<span class='lewd'><b>\The [owner]</b> slides the [selected] out of [owner.p_their()] [name]</span>",
+		owner.visible_message(message = "<span class='lewd'><b>\The [owner]</b> slides the [selected] out of [owner.ru_ego()] [name]</span>",
 		self_message = "<span class='lewd'>You feel the [selected] slide out of your [name]</span>",
 		ignored_mobs = owner.get_unconsenting()
 		)

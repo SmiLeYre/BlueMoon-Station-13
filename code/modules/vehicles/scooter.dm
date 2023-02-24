@@ -10,11 +10,11 @@
 
 
 /obj/vehicle/ridden/scooter/wrench_act(mob/living/user, obj/item/I)
-	to_chat(user, "<span class='notice'>You begin to remove the handlebars...</span>")
+	to_chat(user, "<span class='notice'>Вы начинаете снимать руль...</span>")
 	if(I.use_tool(src, user, 40, volume=50))
 		var/obj/vehicle/ridden/scooter/skateboard/S = new(drop_location())
 		new /obj/item/stack/rods(drop_location(), 2)
-		to_chat(user, "<span class='notice'>You remove the handlebars from [src].</span>")
+		to_chat(user, "<span class='notice'>Вы снимаете руль с '[src]'.</span>")
 		if(has_buckled_mobs())
 			var/mob/living/carbon/H = buckled_mobs[1]
 			unbuckle_mob(H)
@@ -35,7 +35,7 @@
 	if(!istype(M))
 		return 0
 	if(M.get_num_legs() < 2 && M.get_num_arms() <= 0)
-		to_chat(M, "<span class='warning'>Your limbless body can't ride \the [src].</span>")
+		to_chat(M, "<span class='warning'>Твое бренное тело не может ездить \the [src].</span>")
 		return 0
 	. = ..()
 
@@ -106,7 +106,7 @@
 			if(!head_slot || !(istype(head_slot,/obj/item/clothing/head/helmet) || istype(head_slot,/obj/item/clothing/head/hardhat)))
 				H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 5)
 				H.updatehealth()
-			visible_message("<span class='danger'>[src] crashes into [A], sending [H] flying!</span>")
+			visible_message("<span class='danger'>'[src]' врезается в [A], посылая [H] в полёт!</span>")
 			H.Knockdown(80)
 		else
 			var/backdir = turn(dir, 180)
@@ -125,7 +125,7 @@
 			unbuckle_mob(L)
 			var/atom/throw_target = get_edge_target_turf(src, pick(GLOB.cardinals))
 			L.throw_at(throw_target, 2, 2)
-			visible_message("<span class='danger'>[L] loses [L.p_their()] footing and slams on the ground!</span>")
+			visible_message("<span class='danger'>[L] теряет [L.ru_ego()] положение на транспорте под собой и падает!</span>")
 			L.Knockdown(40)
 			grinding = FALSE
 			icon_state = board_icon
@@ -146,7 +146,7 @@
 	if(!istype(M) || M.incapacitated() || !Adjacent(M))
 		return
 	if(has_buckled_mobs() && over_object == M)
-		to_chat(M, "<span class='warning'>You can't lift this up when somebody's on it.</span>")
+		to_chat(M, "<span class='warning'>Вы не можете поднять его, когда на нем кто-то сидит.</span>")
 		return
 	if(over_object == M)
 		var/board = new board_item_type(get_turf(M))
@@ -198,16 +198,16 @@
 	if(istype(I, /obj/item/stack/sheet/metal))
 		if(!I.tool_start_check(user, amount=5))
 			return
-		to_chat(user, "<span class='notice'>You begin to add wheels to [src].</span>")
+		to_chat(user, "<span class='notice'>Вы начинаете добавлять колеса к '[src]'.</span>")
 		if(I.use_tool(src, user, 80, volume=50, amount=5))
-			to_chat(user, "<span class='notice'>You finish making wheels for [src].</span>")
+			to_chat(user, "<span class='notice'>Вы заканчиваете работать над колёсами для '[src]'.</span>")
 			new /obj/vehicle/ridden/scooter/skateboard(user.loc)
 			qdel(src)
 	else
 		return ..()
 
 /obj/item/scooter_frame/wrench_act(mob/living/user, obj/item/I)
-	to_chat(user, "<span class='notice'>You deconstruct [src].</span>")
+	to_chat(user, "<span class='notice'>Вы разбираете '[src]'.</span>")
 	new /obj/item/stack/rods(drop_location(), 10)
 	I.play_tool_sound(src)
 	qdel(src)
@@ -217,9 +217,9 @@
 	if(istype(I, /obj/item/stack/rods))
 		if(!I.tool_start_check(user, amount=2))
 			return
-		to_chat(user, "<span class='notice'>You begin making handlebars for [src].</span>")
+		to_chat(user, "<span class='notice'>Вы начинаете делать руль для '[src]'.</span>")
 		if(I.use_tool(src, user, 25, volume=50, amount=2))
-			to_chat(user, "<span class='notice'>You add the rods to [src], creating handlebars.</span>")
+			to_chat(user, "<span class='notice'>Вы добавляете стержни к '[src]', таким образом создавая руль.</span>")
 			var/obj/vehicle/ridden/scooter/S = new(loc)
 			if(has_buckled_mobs())
 				var/mob/living/carbon/H = buckled_mobs[1]
@@ -232,9 +232,9 @@
 /obj/vehicle/ridden/scooter/skateboard/screwdriver_act(mob/living/user, obj/item/I)
 	if(..())
 		return TRUE
-	to_chat(user, "<span class='notice'>You begin to deconstruct and remove the wheels on [src]...</span>")
+	to_chat(user, "<span class='notice'>Используя отвёртку, вы снимаете колёса и разбираете '[src]'...</span>")
 	if(I.use_tool(src, user, 20, volume=50))
-		to_chat(user, "<span class='notice'>You deconstruct the wheels on [src].</span>")
+		to_chat(user, "<span class='notice'>Вы раскладывате колеса с '[src]'.</span>")
 		new /obj/item/stack/sheet/metal(drop_location(), 5)
 		new /obj/item/scooter_frame(drop_location())
 		if(has_buckled_mobs())
@@ -264,12 +264,12 @@
 
 /obj/vehicle/ridden/scooter/wheelys/post_unbuckle_mob(mob/living/M)
 	if(!has_buckled_mobs())
-		to_chat(M, "<span class='notice'>You pop the Wheely-Heel's wheels back into place.</span>")
+		to_chat(M, "<span class='notice'>Вы возвращаете колеса Wheely-Heel на место..</span>")
 		moveToNullspace()
 	return ..()
 
 /obj/vehicle/ridden/scooter/wheelys/post_buckle_mob(mob/living/M)
-	to_chat(M, "<span class='notice'>You pop out the Wheely-Heel's wheels.</span>")
+	to_chat(M, "<span class='notice'>Вы вытаскиваете колеса Wheely-Heel.</span>")
 	return ..()
 
 /obj/vehicle/ridden/scooter/wheelys/Bump(atom/A)
@@ -285,5 +285,5 @@
 		if(!head_slot || !(istype(head_slot,/obj/item/clothing/head/helmet) || istype(head_slot,/obj/item/clothing/head/hardhat)))
 			H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1)
 			H.updatehealth()
-		visible_message("<span class='danger'>[src] crashes into [A], sending [H] flying!</span>")
+		visible_message("<span class='danger'>[src] врезается в [A], посылая [H] в полёт!</span>")
 		playsound(src, 'sound/effects/bang.ogg', 50, 1)

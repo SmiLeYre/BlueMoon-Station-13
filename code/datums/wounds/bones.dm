@@ -94,7 +94,7 @@
 			to_chat(victim, "<span class='userdanger'>The fracture in your [limb.name] shoots with pain as you strike [target]!</span>")
 			limb.receive_damage(brute=rand(1,5))
 		else
-			victim.visible_message("<span class='danger'>[victim] weakly strikes [target] with [victim.p_their()] broken [limb.name], recoiling from pain!</span>", \
+			victim.visible_message("<span class='danger'>[victim] weakly strikes [target] with [victim.ru_ego()] broken [limb.name], recoiling from pain!</span>", \
 			"<span class='userdanger'>You fail to strike [target] as the fracture in your [limb.name] lights up in unbearable pain!</span>", vision_distance=COMBAT_MESSAGE_RANGE)
 			victim.emote("scream")
 			victim.Stun(0.5 SECONDS)
@@ -115,23 +115,23 @@
 			if(1 to 6)
 				victim.bleed(blood_bled, TRUE)
 			if(7 to 13)
-				victim.visible_message("<span class='smalldanger'>[victim] coughs up a bit of blood from the blow to [victim.p_their()] chest.</span>", "<span class='danger'>You cough up a bit of blood from the blow to your chest.</span>", vision_distance=COMBAT_MESSAGE_RANGE)
+				victim.visible_message("<span class='smalldanger'>[victim] coughs up a bit of blood from the blow to [victim.ru_ego()] chest.</span>", "<span class='danger'>You cough up a bit of blood from the blow to your chest.</span>", vision_distance=COMBAT_MESSAGE_RANGE)
 				victim.bleed(blood_bled, TRUE)
 			if(14 to 19)
-				victim.visible_message("<span class='smalldanger'>[victim] spits out a string of blood from the blow to [victim.p_their()] chest!</span>", "<span class='danger'>You spit out a string of blood from the blow to your chest!</span>", vision_distance=COMBAT_MESSAGE_RANGE)
+				victim.visible_message("<span class='smalldanger'>[victim] spits out a string of blood from the blow to [victim.ru_ego()] chest!</span>", "<span class='danger'>You spit out a string of blood from the blow to your chest!</span>", vision_distance=COMBAT_MESSAGE_RANGE)
 				if(ishuman(victim))
 					var/mob/living/carbon/human/H = victim
 					new /obj/effect/temp_visual/dir_setting/bloodsplatter(victim.loc, victim.dir, H.dna.species.exotic_blood_color)
-				else	
+				else
 					new /obj/effect/temp_visual/dir_setting/bloodsplatter(victim.loc, victim.dir)
 				victim.bleed(blood_bled)
 			if(20 to INFINITY)
-				victim.visible_message("<span class='danger'>[victim] chokes up a spray of blood from the blow to [victim.p_their()] chest!</span>", "<span class='danger'><b>You choke up on a spray of blood from the blow to your chest!</b></span>", vision_distance=COMBAT_MESSAGE_RANGE)
+				victim.visible_message("<span class='danger'>[victim] chokes up a spray of blood from the blow to [victim.ru_ego()] chest!</span>", "<span class='danger'><b>You choke up on a spray of blood from the blow to your chest!</b></span>", vision_distance=COMBAT_MESSAGE_RANGE)
 				victim.bleed(blood_bled)
 				if(ishuman(victim))
 					var/mob/living/carbon/human/H = victim
 					new /obj/effect/temp_visual/dir_setting/bloodsplatter(victim.loc, victim.dir, H.dna.species.exotic_blood_color)
-				else	
+				else
 					new /obj/effect/temp_visual/dir_setting/bloodsplatter(victim.loc, victim.dir)
 				victim.add_splatter_floor(get_step(victim.loc, victim.dir))
 
@@ -142,7 +142,7 @@
 
 	var/list/msg = list()
 	if(!limb.current_gauze)
-		msg += "[victim.p_their(TRUE)] [limb.name] [examine_desc]"
+		msg += "[victim.ru_ego(TRUE)] [limb.name] [examine_desc]"
 	else
 		var/sling_condition = ""
 		// how much life we have left in these bandages
@@ -156,7 +156,7 @@
 			if(75 to INFINITY)
 				sling_condition = "tightly "
 
-		msg += "[victim.p_their(TRUE)] [limb.name] is [sling_condition] fastened in a sling of [limb.current_gauze.name]"
+		msg += "[victim.ru_ego(TRUE)] [limb.name] is [sling_condition] fastened in a sling of [limb.current_gauze.name]"
 
 	if(taped)
 		msg += ", <span class='notice'>and appears to be reforming itself under some surgical tape!</span>"
@@ -219,7 +219,7 @@
 		return FALSE
 
 	if(user.grab_state == GRAB_PASSIVE)
-		to_chat(user, "<span class='warning'>You must have [victim] in an aggressive grab to manipulate [victim.p_their()] [lowertext(name)]!</span>")
+		to_chat(user, "<span class='warning'>You must have [victim] in an aggressive grab to manipulate [victim.ru_ego()] [lowertext(name)]!</span>")
 		return TRUE
 
 	if(user.grab_state >= GRAB_AGGRESSIVE)
@@ -271,7 +271,7 @@
 
 /datum/wound/blunt/moderate/treat(obj/item/I, mob/user)
 	if(victim == user)
-		victim.visible_message("<span class='danger'>[user] begins resetting [victim.p_their()] [limb.name] with [I].</span>", "<span class='warning'>You begin resetting your [limb.name] with [I]...</span>")
+		victim.visible_message("<span class='danger'>[user] begins resetting [victim.ru_ego()] [limb.name] with [I].</span>", "<span class='warning'>You begin resetting your [limb.name] with [I]...</span>")
 	else
 		user.visible_message("<span class='danger'>[user] begins resetting [victim]'s [limb.name] with [I].</span>", "<span class='notice'>You begin resetting [victim]'s [limb.name] with [I]...</span>")
 
@@ -280,7 +280,7 @@
 
 	if(victim == user)
 		limb.receive_damage(brute=15, wound_bonus=CANT_WOUND)
-		victim.visible_message("<span class='danger'>[user] finishes resetting [victim.p_their()] [limb.name]!</span>", "<span class='userdanger'>You reset your [limb.name]!</span>")
+		victim.visible_message("<span class='danger'>[user] finishes resetting [victim.ru_ego()] [limb.name]!</span>", "<span class='userdanger'>You reset your [limb.name]!</span>")
 	else
 		limb.receive_damage(brute=10, wound_bonus=CANT_WOUND)
 		user.visible_message("<span class='danger'>[user] finishes resetting [victim]'s [limb.name]!</span>", "<span class='nicegreen'>You finish resetting [victim]'s [limb.name]!</span>", victim)
@@ -368,10 +368,10 @@
 			painkiller_bonus += 5
 
 		if(prob(25 + (20 * severity - 2) - painkiller_bonus)) // 25%/45% chance to fail self-applying with severe and critical wounds, modded by painkillers
-			victim.visible_message("<span class='danger'>[victim] fails to finish applying [I] to [victim.p_their()] [limb.name], passing out from the pain!</span>", "<span class='notice'>You black out from the pain of applying [I] to your [limb.name] before you can finish!</span>")
+			victim.visible_message("<span class='danger'>[victim] fails to finish applying [I] to [victim.ru_ego()] [limb.name], passing out from the pain!</span>", "<span class='notice'>You black out from the pain of applying [I] to your [limb.name] before you can finish!</span>")
 			victim.AdjustUnconscious(5 SECONDS)
 			return
-		victim.visible_message("<span class='notice'>[victim] finishes applying [I] to [victim.p_their()] [limb.name], grimacing from the pain!</span>", "<span class='notice'>You finish applying [I] to your [limb.name], and your bones explode in pain!</span>")
+		victim.visible_message("<span class='notice'>[victim] finishes applying [I] to [victim.ru_ego()] [limb.name], grimacing from the pain!</span>", "<span class='notice'>You finish applying [I] to your [limb.name], and your bones explode in pain!</span>")
 
 	limb.receive_damage(30, stamina=100, wound_bonus=CANT_WOUND)
 	if(!gelled)
@@ -398,7 +398,7 @@
 		user.visible_message("<span class='notice'>[user] finishes applying [I] to [victim]'s [limb.name], emitting a fizzing noise!</span>", "<span class='notice'>You finish applying [I] to [victim]'s [limb.name]!</span>", ignored_mobs=victim)
 		to_chat(victim, "<span class='green'>[user] finishes applying [I] to your [limb.name], you immediately begin to feel your bones start to reform!</span>")
 	else
-		victim.visible_message("<span class='notice'>[victim] finishes applying [I] to [victim.p_their()] [limb.name], !</span>", "<span class='green'>You finish applying [I] to your [limb.name], and you immediately begin to feel your bones start to reform!</span>")
+		victim.visible_message("<span class='notice'>[victim] finishes applying [I] to [victim.ru_ego()] [limb.name], !</span>", "<span class='green'>You finish applying [I] to your [limb.name], and you immediately begin to feel your bones start to reform!</span>")
 
 	taped = TRUE
 	processes = TRUE

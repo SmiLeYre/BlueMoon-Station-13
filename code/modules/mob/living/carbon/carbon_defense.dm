@@ -261,7 +261,7 @@
 
 /mob/living/carbon/proc/help_shake_act(mob/living/carbon/M)
 	if(on_fire)
-		to_chat(M, "<span class='warning'>You can't put [p_them()] out with just your bare hands!</span>")
+		to_chat(M, "<span class='warning'>You can't put [ru_na()] out with just your bare hands!</span>")
 		return
 
 	if(M == src && check_self_for_injuries())
@@ -275,8 +275,8 @@
 			if(buckled)
 				to_chat(M, "<span class='warning'>You need to unbuckle [src] first to do that!")
 				return
-			M.visible_message("<span class='notice'>[M] shakes [src] trying to get [p_them()] up!</span>", \
-							"<span class='notice'>You shake [src] trying to get [p_them()] up!</span>", target = src,
+			M.visible_message("<span class='notice'>[M] shakes [src] trying to get [ru_na()] up!</span>", \
+							"<span class='notice'>You shake [src] trying to get [ru_na()] up!</span>", target = src,
 							target_message = "<span class='notice'>[M] shakes you trying to get you up!</span>")
 
 		else if(M.zone_selected == BODY_ZONE_PRECISE_MOUTH) // I ADDED BOOP-EH-DEH-NOSEH - Jon
@@ -302,7 +302,7 @@
 
 			if(HAS_TRAIT(H, TRAIT_DISTANT)) //No mood buff since you're not really liking it.
 				M.visible_message("<span class='warning'>[H] glares at [M] as they give them a pat on the head! They seem annoyed...</span>", \
-					"<span class='warning'>You give [H] a pat on the head to make [p_them()] feel better! Their eyes shift towards you contemptuously...</span>")
+					"<span class='warning'>You give [H] a pat on the head to make [ru_na()] feel better! Their eyes shift towards you contemptuously...</span>")
 				H.add_lust(-5) //Why are you touching me?
 				if(prob(5))
 					M.visible_message("<span class='warning'>[H] quickly twists [M]\'s arm!</span>", \
@@ -319,14 +319,14 @@
 			else
 				friendly_check = TRUE
 				if(HAS_TRAIT(H, TRAIT_HEADPAT_SLUT))
-					M.visible_message("<span class='notice'>[M] gives [src] a pat on the head to make [p_them()] feel better! They seem incredibly pleased!</span>", \
-								"<span class='notice'>You give [src] a pat on the head to make [p_them()] feel better! They seem to be way too into it...</span>", target = src,
+					M.visible_message("<span class='notice'>[M] gives [src] a pat on the head to make [ru_na()] feel better! They seem incredibly pleased!</span>", \
+								"<span class='notice'>You give [src] a pat on the head to make [ru_na()] feel better! They seem to be way too into it...</span>", target = src,
 								target_message = "<span class='boldnotice'>[M] gives you a pat on the head to make you feel better!</span>")
 					SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "lewd_headpat", /datum/mood_event/lewd_headpat)
 					H.handle_post_sex(5, null, null) //Headpats are hot af
 				else
-					M.visible_message("<span class='notice'>[M] gives [src] a pat on the head to make [p_them()] feel better!</span>", \
-								"<span class='notice'>You give [src] a pat on the head to make [p_them()] feel better!</span>", target = src,
+					M.visible_message("<span class='notice'>[M] gives [src] a pat on the head to make [ru_na()] feel better!</span>", \
+								"<span class='notice'>You give [src] a pat on the head to make [ru_na()] feel better!</span>", target = src,
 								target_message = "<span class='notice'>[M] gives you a pat on the head to make you feel better!</span>")
 					SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "headpat", /datum/mood_event/headpat)
 			//SPLURT EDIT END
@@ -351,8 +351,8 @@
 					target_message = "<span class='notice'>[M] shakes your hand.</span>")
 
 		else
-			M.visible_message("<span class='notice'>[M] hugs [src] to make [p_them()] feel better!</span>", \
-						"<span class='notice'>You hug [src] to make [p_them()] feel better!</span>", target = src,\
+			M.visible_message("<span class='notice'>[M] hugs [src] to make [ru_na()] feel better!</span>", \
+						"<span class='notice'>You hug [src] to make [ru_na()] feel better!</span>", target = src,\
 						target_message = "<span class='notice'>[M] hugs you to make you feel better!</span>")
 			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/hug)
 			friendly_check = TRUE
@@ -389,7 +389,7 @@
 			if(!embeds)
 				embeds = TRUE
 				// this way, we only visibly try to examine ourselves if we have something embedded, otherwise we'll still hug ourselves :)
-				visible_message("<span class='notice'>[src] examines [p_them()]self.</span>", "")
+				visible_message("<span class='notice'>[src] осматривает себя.</span>", "")
 				output = "<span class='notice'>You check yourself for shrapnel.</span><hr>"
 			if(I.isEmbedHarmless())
 				output += "\n\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>There is \a [I] stuck to your [LB.name]!</a>"

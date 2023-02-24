@@ -97,14 +97,14 @@
 			B.current.update_action_buttons_icon()
 			if(!B.current.incapacitated())
 				SEND_SOUND(B.current, 'sound/hallucinations/im_here1.ogg')
-				to_chat(B.current, "<span class='cultlarge'>Acolyte [Nominee] has asserted that [Nominee.p_theyre()] worthy of leading the cult. A vote will be called shortly.</span>")
+				to_chat(B.current, "<span class='cultlarge'>Acolyte [Nominee] has asserted that [Nominee.ru_who()] worthy of leading the cult. A vote will be called shortly.</span>")
 	sleep(100)
 	var/list/asked_cultists = list()
 	for(var/datum/mind/B in team.members)
 		if(B.current && B.current != Nominee && !B.current.incapacitated())
 			SEND_SOUND(B.current, 'sound/magic/exit_blood.ogg')
 			asked_cultists += B.current
-	var/list/yes_voters = pollCandidates("[Nominee] seeks to lead your cult, do you support [Nominee.p_them()]?", poll_time = 300, group = asked_cultists)
+	var/list/yes_voters = pollCandidates("[Nominee] seeks to lead your cult, do you support [Nominee.ru_na()]?", poll_time = 300, group = asked_cultists)
 	if(QDELETED(Nominee) || Nominee.incapacitated())
 		team.cult_vote_called = FALSE
 		for(var/datum/mind/B in team.members)
@@ -137,7 +137,7 @@
 			for(var/datum/action/innate/cult/mastervote/vote in B.current.actions)
 				vote.Remove(B.current)
 			if(!B.current.incapacitated())
-				to_chat(B.current,"<span class='cultlarge'>[Nominee] has won the cult's support and is now their master. Follow [Nominee.p_their()] orders to the best of your ability!</span>")
+				to_chat(B.current,"<span class='cultlarge'>[Nominee] has won the cult's support and is now their master. Follow [Nominee.ru_ego()] orders to the best of your ability!</span>")
 	return TRUE
 
 /datum/action/innate/cult/master/IsAvailable(silent = FALSE)

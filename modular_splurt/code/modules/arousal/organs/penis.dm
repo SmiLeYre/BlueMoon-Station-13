@@ -31,7 +31,7 @@
 		var/previous = size
 		modify_size(target.total_volume / (fluid_max_volume * GENITAL_INFLATION_THRESHOLD))
 		if(size != previous)
-			owner.visible_message("<span class='lewd'>\The <b>[owner]</b>'s [pick(GLOB.dick_nouns)][linked_organ ? " and [pick(list("nuts", "balls", "testicles", "ballsack", "sack"))]" : ""] swell and grow bigger as they get pumped full of \the <b>[partner]</b>'s [lowertext(source_gen.get_fluid_name())]!</span>", ignored_mobs = owner.get_unconsenting())
+			owner.visible_message("<span class='lewd'>\The <b>[owner]</b>'s [pick(GLOB.dick_nouns)][linked_organ ? " и [pick(list("орехи", "яйца", "яички", "семенники", "мешочек"))]" : ""] набухают и увеличиваются в размерах по мере того, как они наполняются \the <b>[partner]</b>'s [lowertext(source_gen.get_fluid_name())]!</span>", ignored_mobs = owner.get_unconsenting())
 			if(linked_organ)
 				linked_organ.fluid_id = source_gen.get_fluid_id()
 		target.clear_reagents()

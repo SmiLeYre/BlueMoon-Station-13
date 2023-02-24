@@ -31,10 +31,10 @@
 
 	// Set list of possible genitals
 	var/list/obj/item/organ/genital/genitals_list
-	
+
 	// Set list of possible fluids
 	var/list/datum/reagent/fluid_list = list()
-	
+
 	// Set owner
 	var/mob/living/carbon/human/genital_owner = imp_in
 
@@ -63,7 +63,7 @@
 	if(!genitals_list)
 		// Play an error sound
 		SEND_SOUND(genital_owner, 'sound/machines/terminal_error.ogg')
-		
+
 		// Alert the user in chat
 		to_chat(genital_owner, span_notice("ERROR: No compatible genitals detected."))
 
@@ -87,15 +87,15 @@
 
 	// Set new fluid
 	genital_input.fluid_id = reagent_selection.type
-	
+
 	// Play the reagent processing sound effect
 	SEND_SOUND(genital_owner, 'sound/effects/bubbles.ogg')
-	
+
 	// Display flavor text
 	to_chat(genital_owner, span_notice("You feel the fluids inside your [genital_input.name] bubble and swirl..."))
 
 	// Send admin notice
-	message_admins("[ADMIN_LOOKUPFLW(genital_owner)] changed the fluid of [genital_owner.p_their()] [genital_input.name] to [reagent_selection].")
+	message_admins("[ADMIN_LOOKUPFLW(genital_owner)] changed the fluid of [genital_owner.ru_ego()] [genital_input.name] to [reagent_selection].")
 
 // Unlock with an emag
 /obj/item/implant/genital_fluid/emag_act()

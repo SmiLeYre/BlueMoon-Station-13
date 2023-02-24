@@ -415,7 +415,7 @@
 	if(iscultist(target))
 		return
 	if(iscultist(user))
-		user.visible_message("<span class='warning'>[user] holds up [user.p_their()] hand, which explodes in a flash of red light!</span>", \
+		user.visible_message("<span class='warning'>[user] holds up [user.ru_ego()] hand, which explodes in a flash of red light!</span>", \
 							"<span class='cultitalic'>You attempt to stun [L] with the spell!</span>")
 
 		user.mob_light(_color = LIGHT_COLOR_BLOOD_MAGIC, _range = 3, _duration = 2)
@@ -514,7 +514,7 @@
 	var/turf/origin = get_turf(user)
 	var/mob/living/L = target
 	if(do_teleport(L, dest, channel = TELEPORT_CHANNEL_CULT))
-		origin.visible_message("<span class='warning'>Dust flows from [user]'s hand, and [user.p_they()] disappear[user.p_s()] with a sharp crack!</span>", \
+		origin.visible_message("<span class='warning'>Dust flows from [user]'s hand, and [user.ru_who()] disappear[user.p_s()] with a sharp crack!</span>", \
 			"<span class='cultitalic'>You speak the words of the talisman and find yourself somewhere else!</span>", "<i>You hear a sharp crack.</i>")
 		dest.visible_message("<span class='warning'>There is a boom of outrushing air as something appears above the rune!</span>", null, "<i>You hear a boom.</i>")
 	post_cast(target, user, proximity)
@@ -724,7 +724,7 @@
 					else
 						H.blood_volume = (BLOOD_VOLUME_SAFE*H.blood_ratio)
 						uses -= round(restore_blood/2)
-						to_chat(user,"<span class='warning'>Your blood rites have restored [H == user ? "your" : "[H.p_their()]"] blood to safe levels!</span>")
+						to_chat(user,"<span class='warning'>Your blood rites have restored [H == user ? "your" : "[H.ru_ego()]"] blood to safe levels!</span>")
 				var/overall_damage = H.getBruteLoss() + H.getFireLoss() + H.getToxLoss() + H.getOxyLoss()
 				if(overall_damage == 0)
 					to_chat(user,"<span class='cult'>That cultist doesn't require healing!</span>")
@@ -737,9 +737,9 @@
 					if(ratio>1)
 						ratio = 1
 						uses -= round(overall_damage)
-						H.visible_message("<span class='warning'>[H] is fully healed by [H==user ? "[H.p_their()]":"[user]'s"] blood magic!</span>")
+						H.visible_message("<span class='warning'>[H] is fully healed by [H==user ? "[H.ru_ego()]":"[user]'s"] blood magic!</span>")
 					else
-						H.visible_message("<span class='warning'>[H] is partially healed by [H==user ? "[H.p_their()]":"[user]'s"] blood magic.</span>")
+						H.visible_message("<span class='warning'>[H] is partially healed by [H==user ? "[H.ru_ego()]":"[user]'s"] blood magic.</span>")
 						uses = 0
 					ratio *= -1
 					H.adjustOxyLoss((overall_damage*ratio) * (H.getOxyLoss() / overall_damage), 0)
@@ -752,10 +752,10 @@
 					user.Beam(H,icon_state="sendbeam",time=15)
 			else
 				if(H.stat == DEAD)
-					to_chat(user,"<span class='warning'>[H.p_their(TRUE)] blood has stopped flowing, you'll have to find another way to extract it.</span>")
+					to_chat(user,"<span class='warning'>[H.ru_ego(TRUE)] blood has stopped flowing, you'll have to find another way to extract it.</span>")
 					return
 				if(H.cultslurring)
-					to_chat(user,"<span class='danger'>[H.p_their(TRUE)] blood has been tainted by an even stronger form of blood magic, it's no use to us like this!</span>")
+					to_chat(user,"<span class='danger'>[H.ru_ego(TRUE)] blood has been tainted by an even stronger form of blood magic, it's no use to us like this!</span>")
 					return
 				if(H.blood_volume > (BLOOD_VOLUME_SAFE*H.blood_ratio))
 					H.blood_volume -= 100
@@ -766,7 +766,7 @@
 					to_chat(user,"<span class='cultitalic'>Your blood rite gains 50 charges from draining [H]'s blood.</span>")
 					new /obj/effect/temp_visual/cult/sparks(get_turf(H))
 				else
-					to_chat(user,"<span class='danger'>[H.p_theyre(TRUE)] missing too much blood - you cannot drain [H.p_them()] further!</span>")
+					to_chat(user,"<span class='danger'>[H.ru_who(TRUE)] missing too much blood - you cannot drain [H.ru_na()] further!</span>")
 					return
 		if(isconstruct(target))
 			var/mob/living/simple_animal/M = target

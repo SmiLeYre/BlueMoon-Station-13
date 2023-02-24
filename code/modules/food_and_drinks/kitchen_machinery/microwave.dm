@@ -20,7 +20,7 @@
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "map_icon"
 	appearance_flags = KEEP_TOGETHER | LONG_GLIDE | PIXEL_SCALE
-	layer = BELOW_OBJ_LAYER
+	layer = HIGH_OBJ_LAYER
 	density = TRUE
 	circuit = /obj/item/circuitboard/machine/microwave
 	pass_flags = PASSTABLE

@@ -38,7 +38,7 @@
 	s.start()
 
 /obj/item/compressionkit/suicide_act(mob/living/carbon/M)
-	M.visible_message("<span class='suicide'>[M] is sticking their head in [src] and turning it on! [M.p_theyre(TRUE)] going to compress their own skull!</span>")
+	M.visible_message("<span class='suicide'>[M] is sticking their head in [src] and turning it on! [M.ru_who(TRUE)] going to compress their own skull!</span>")
 	var/obj/item/bodypart/head = M.get_bodypart("head")
 	if(!head)
 		return

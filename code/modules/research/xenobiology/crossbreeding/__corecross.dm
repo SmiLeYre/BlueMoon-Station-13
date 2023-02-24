@@ -149,7 +149,7 @@ To add a crossbreed:
 		reagents.trans_to(M, reagents.total_volume)
 		if(user != M)
 			to_chat(M, "<span class='warning'>[user] presses [src] against you!</span>")
-			to_chat(user, "<span class='notice'>You press [src] against [M], injecting [M.p_them()].</span>")
+			to_chat(user, "<span class='notice'>You press [src] against [M], injecting [M.ru_na()].</span>")
 		else
 			to_chat(user, "<span class='notice'>You press [src] against yourself, and it flattens against you!</span>")
 	else

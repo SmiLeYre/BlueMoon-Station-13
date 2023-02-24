@@ -20,7 +20,7 @@
 		var/obj/O = user.get_item_by_slot(ITEM_SLOT_HANDCUFFED)
 		if(!istype(O))
 			return FALSE
-		user.visible_message("<span class='warning'>[user] vomits a glob of acid on [user.p_their()] [O]!</span>", \
+		user.visible_message("<span class='warning'>[user] vomits a glob of acid on [user.ru_ego()] [O]!</span>", \
 			"<span class='warning'>We vomit acidic ooze onto our restraints!</span>")
 
 		addtimer(CALLBACK(src, .proc/dissolve_handcuffs, user, O), 30)
@@ -30,7 +30,7 @@
 		var/obj/O = user.get_item_by_slot(ITEM_SLOT_LEGCUFFED)
 		if(!istype(O))
 			return FALSE
-		user.visible_message("<span class='warning'>[user] vomits a glob of acid on [user.p_their()] [O]!</span>", \
+		user.visible_message("<span class='warning'>[user] vomits a glob of acid on [user.ru_ego()] [O]!</span>", \
 			"<span class='warning'>We vomit acidic ooze onto our restraints!</span>")
 
 		addtimer(CALLBACK(src, .proc/dissolve_legcuffs, user, O), 30)
@@ -40,7 +40,7 @@
 		var/obj/item/clothing/suit/S = user.get_item_by_slot(ITEM_SLOT_OCLOTHING)
 		if(!istype(S))
 			return FALSE
-		user.visible_message("<span class='warning'>[user] vomits a glob of acid across the front of [user.p_their()] [S]!</span>", \
+		user.visible_message("<span class='warning'>[user] vomits a glob of acid across the front of [user.ru_ego()] [S]!</span>", \
 			"<span class='warning'>We vomit acidic ooze onto our straight jacket!</span>")
 		addtimer(CALLBACK(src, .proc/dissolve_straightjacket, user, S), 30)
 		used = TRUE

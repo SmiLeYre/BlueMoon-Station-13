@@ -1,5 +1,5 @@
 /datum/interaction/lewd/rimjob
-	description = "Вылизать задницу партнёра."
+	description = "Попа. Вылизать."
 	interaction_sound = null
 	require_user_mouth = TRUE
 	require_target_anus = REQUIRE_EXPOSED
@@ -11,7 +11,7 @@
 	partner.handle_post_sex(NORMAL_LUST, null, user)
 
 /datum/interaction/lewd/lickfeet
-	description = "Вылизать ножку своего партнёра."
+	description = "Нога. Вылизать."
 	interaction_sound = null
 	require_user_mouth = TRUE
 	require_target_feet = REQUIRE_ANY

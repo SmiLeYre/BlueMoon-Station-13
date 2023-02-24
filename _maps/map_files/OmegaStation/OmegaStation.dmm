@@ -35704,6 +35704,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/maintenance/port/aft)
+"gKe" = (
+/obj/machinery/vending/wardrobe/syndie_wardrobe,
+/turf/open/floor/plating,
+/area/maintenance/port/fore)
 "gLD" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
@@ -74995,7 +74999,7 @@ aad
 aro
 aio
 akb
-asu
+gKe
 ayd
 ayy
 arq

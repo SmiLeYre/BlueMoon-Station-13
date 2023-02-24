@@ -54,7 +54,7 @@
 	STR.limited_random_access_stack_position = 3
 
 /obj/item/storage/bag/trash/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] puts [src] over [user.p_their()] head and starts chomping at the insides! Disgusting!</span>")
+	user.visible_message("<span class='suicide'>[user] puts [src] over [user.ru_ego()] head and starts chomping at the insides! Disgusting!</span>")
 	playsound(loc, 'sound/items/eatfood.ogg', 50, 1, -1)
 	return (TOXLOSS)
 
@@ -175,10 +175,10 @@
 	if(show_message)
 		playsound(user, "rustle", 50, TRUE)
 		if (box)
-			user.visible_message("<span class='notice'>[user] offloads the ores beneath [user.p_them()] into [box].</span>", \
+			user.visible_message("<span class='notice'>[user] offloads the ores beneath [user.ru_na()] into [box].</span>", \
 			"<span class='notice'>You offload the ores beneath you into your [box].</span>")
 		else
-			user.visible_message("<span class='notice'>[user] scoops up the ores beneath [user.p_them()].</span>", \
+			user.visible_message("<span class='notice'>[user] scoops up the ores beneath [user.ru_na()].</span>", \
 				"<span class='notice'>You scoop up the ores beneath you with your [name].</span>")
 	spam_protection = FALSE
 

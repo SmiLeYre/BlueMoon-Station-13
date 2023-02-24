@@ -1,5 +1,5 @@
 /datum/interaction/lewd/nuts
-	description = "Потереться своими семенниками о лицо партнёра."
+	description = "Яйца. Потереться о лицо."
 	interaction_sound = null
 	require_user_balls = REQUIRE_EXPOSED
 	require_target_mouth = TRUE
@@ -31,7 +31,7 @@
 	user.handle_post_sex(lust_increase, CUM_TARGET_MOUTH, partner)
 
 /datum/interaction/lewd/nut_smack
-	description = "Smack their nuts."
+	description = "Яйца. Шлёпнуть по яйцам."
 	interaction_sound = 'modular_sand/sound/interactions/slap.ogg'
 	simple_message = "USER с ухмылкой бьёт семенники TARGET!"
 	require_target_balls = REQUIRE_EXPOSED

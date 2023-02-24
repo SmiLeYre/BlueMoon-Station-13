@@ -44,7 +44,7 @@
 
 /datum/element/skirt_peeking/proc/on_examine(mob/living/carbon/human/peeked, mob/peeker, list/examine_list)
 	if(can_skirt_peek(peeked, peeker))
-		examine_list += span_purple("[peeked.p_theyre(TRUE)] wearing a skirt! I can probably give it a little peek <b>looking closer</b>.")
+		examine_list += span_purple("[peeked.ru_who(TRUE)] одет[peeked.ru_a()] в юбку! Возможно, я смогу немного подсмотреть, <b>просто присмотревшись.</b>.")
 
 /datum/element/skirt_peeking/proc/on_closer_look(mob/living/carbon/human/peeked, mob/peeker, list/examine_content)
 	if(can_skirt_peek(peeked, peeker))
@@ -63,12 +63,12 @@
 			var/obj/item/organ/genital/penis/penis = peeked.getorganslot(ORGAN_SLOT_PENIS)
 			var/obj/item/organ/genital/vagina/vagina = peeked.getorganslot(ORGAN_SLOT_VAGINA)
 			if(penis?.aroused_state)
-				string += span_love(" There's a visible bulge on [peeked.p_their()] front.")
+				string += span_love(" There's a visible bulge on [peeked.ru_ego()] front.")
 			else if(vagina?.aroused_state)
-				string += span_love(" [peeked.p_theyre(TRUE)] wet with arousal.")
+				string += span_love(" [peeked.ru_who(TRUE)] wet with arousal.")
 
 		else
-			string += "[peeked.p_theyre()] not wearing anything!\n[peeked.p_their(TRUE)]"
+			string += "[peeked.ru_who()] not wearing anything!\n[peeked.ru_ego(TRUE)]"
 			var/list/genitals = list()
 			for(var/obj/item/organ/genital/genital in peeked.internal_organs)
 				if(CHECK_BITFIELD(genital.genital_flags, (GENITAL_INTERNAL|GENITAL_HIDDEN)))
@@ -122,4 +122,4 @@
 		!(peeker.invisibility > peeked.invisibility) && !(peeker.alpha <= 30)))
 		return
 	to_chat(peeked, span_warning("You notice [peeker] looking under your [worn_uniform.name]!"))
-	to_chat(peeker, span_warning("[peeked] notices you peeking under [peeked.p_their()] [worn_uniform.name]!"))
+	to_chat(peeker, span_warning("[peeked] notices you peeking under [peeked.ru_ego()] [worn_uniform.name]!"))

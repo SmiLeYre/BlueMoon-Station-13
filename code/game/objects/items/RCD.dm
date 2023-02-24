@@ -180,7 +180,7 @@ RLD
 	var/canRturf = FALSE //Variable for R walls to deconstruct them
 
 /obj/item/construction/rcd/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] sets the RCD to 'Wall' and points it down [user.p_their()] throat! It looks like [user.p_theyre()] trying to commit suicide..</span>")
+	user.visible_message("<span class='suicide'>[user] sets the RCD to 'Wall' and points it down [user.ru_ego()] throat! It looks like [user.ru_who()] trying to commit suicide..</span>")
 	return (BRUTELOSS)
 
 /obj/item/construction/rcd/verb/toggle_window_type_verb()

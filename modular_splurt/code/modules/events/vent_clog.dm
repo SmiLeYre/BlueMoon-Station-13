@@ -4,7 +4,7 @@
 	max_occurrences = 0
 
 /datum/round_event/vent_clog/cope_and_seethe/announce()
-	priority_announce("We have detected high levels of seething on station. To combat this, we will be deploying mass amounts of copium. Please stand away from vents until pressure evens out.", "Central Command")
+	priority_announce("Мы обнаружили высокий уровень Агрессии на станции. Для борьбы с этим мы будем использовать массовое количество копиума. Пожалуйста, держитесь подальше от вентиляционных отверстий, пока давление не выровняется.", "Центральное Командование")
 
 /datum/round_event/vent_clog/cope_and_seethe
 	saferChems = list(
@@ -35,7 +35,7 @@
 	reagentsAmount = 100
 
 /datum/round_event/vent_clog/female/announce()
-	priority_announce("The scrubbers network is experiencing a backpressure squirt. Some squirting of contents may occur.", "Atmospherics alert")
+	priority_announce("Сеть скрубберов испытывает противодавление из-за откуда-то взявшегося в них СКВИРТА. Может произойти некоторое разбрызгивание содержимого.", "Атмосферная Тревога")
 
 /datum/round_event/vent_clog/female/start()
 	for(var/obj/machinery/atmospherics/components/unary/vent in vents)
@@ -61,7 +61,7 @@
 	reagentsAmount = 100
 
 /datum/round_event/vent_clog/male/announce()
-	priority_announce("The scrubbers network is experiencing a backpressure surge. Some ejaculation of contents may occur.", "Atmospherics alert")
+	priority_announce("Сеть скрубберов испытывает противодавление из-за откуда-то взявшегося в них СЕМЕНИ. Может произойти некоторое разбрызгивание содержимого.", "Атмосферная Тревога")
 
 /datum/round_event/vent_clog/male/start()
 	for(var/obj/machinery/atmospherics/components/unary/vent in vents)
@@ -78,7 +78,7 @@
 /datum/round_event_control/vent_clog/crocin
 	name = "Aphrodisiac Flood"
 	typepath = /datum/round_event/vent_clog/crocin
-	weight = 0
+	weight = 10
 	max_occurrences = 1
 
 /datum/round_event/vent_clog/crocin
@@ -89,7 +89,7 @@
 	var/reagent = /datum/reagent/drug/aphrodisiac
 
 /datum/round_event/vent_clog/crocin/announce()
-	priority_announce("We have detected a decrease of the lust levels on the station. To fix this, we will be deploying large amounts of a light aphrodisiac. Please stand away from the vents until the pink gas dissipates.", "Central Command")
+	priority_announce("Мы обнаружили снижение уровня похоти на станции. Чтобы исправить это, мы будем использовать большое количество легкого афродизиака. Пожалуйста, держитесь подальше от вентиляционных отверстий, пока розовый газ не рассеется.", "Центральное Командование")
 
 /datum/round_event/vent_clog/crocin/start()
 	for(var/obj/machinery/atmospherics/components/unary/vent in vents)
@@ -115,4 +115,4 @@
 	reagent = /datum/reagent/drug/aphrodisiacplus
 
 /datum/round_event/vent_clog/crocin/hexacrocin/announce()
-	priority_announce("We have detected dangerously low levels of lust on the station. To fix this, we will be deploying voluminous amounts of strong aphrodisiacs. Please stand away from the vents until the pink gas dissipates if you desire to avoid brain damage.", "Central Command")
+	priority_announce("Мы обнаружили опасно низкий уровень похоти на станции. Чтобы исправить это, мы будем использовать большое количество сильных афродизиаков. Пожалуйста, не подходите к вентиляционным отверстиям, пока розовый газ не рассеется, если вы хотите избежать повреждения мозга.", "Центральное Командование")

@@ -61,7 +61,7 @@
 		infection.Insert(target)
 
 /obj/item/zombie_hand/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is ripping [user.p_their()] brains out! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is ripping [user.ru_ego()] brains out! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	if(isliving(user))
 		var/mob/living/L = user
 		var/obj/item/bodypart/O = L.get_bodypart(BODY_ZONE_HEAD)

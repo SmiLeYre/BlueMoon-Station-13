@@ -38,7 +38,7 @@
 	bare_wound_bonus = 5
 
 /obj/item/screwdriver/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is stabbing [src] into [user.p_their()] [pick("temple", "heart")]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is stabbing [src] into [user.ru_ego()] [pick("temple", "heart")]! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	return(BRUTELOSS)
 
 /obj/item/screwdriver/Initialize(mapload)
@@ -143,7 +143,7 @@
 	random_color = FALSE
 
 /obj/item/screwdriver/power/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is putting [src] to [user.p_their()] temple. It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is putting [src] to [user.ru_ego()] temple. It looks like [user.ru_who()] trying to commit suicide!</span>")
 	return(BRUTELOSS)
 
 /obj/item/screwdriver/power/attack_self(mob/user)

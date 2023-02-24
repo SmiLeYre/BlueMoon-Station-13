@@ -502,7 +502,7 @@
 	var/metabolization_amount = REAGENTS_METABOLISM / 2
 
 /obj/item/reagent_containers/food/snacks/bubblegum/suicide_act(mob/living/user)
-	user.visible_message(span_suicide("[user] swallows [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
+	user.visible_message(span_suicide("[user] swallows [src]! It looks like [user.ru_who()] trying to commit suicide!"))
 	qdel(src)
 	return TOXLOSS
 

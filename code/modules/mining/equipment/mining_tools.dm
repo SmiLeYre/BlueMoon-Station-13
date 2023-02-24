@@ -32,7 +32,7 @@
 		to_chat(user, "<span class='notice'>Tool does not have a configureable dig range.</span>")
 
 /obj/item/pickaxe/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] begins digging into [user.p_their()] chest!  It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins digging into [user.ru_ego()] chest!  It looks like [user.ru_who()] trying to commit suicide!</span>")
 	if(use_tool(user, user, 30, volume=50))
 		return BRUTELOSS
 	user.visible_message("<span class='suicide'>[user] couldn't do it!</span>")
@@ -162,7 +162,7 @@
 	AddComponent(/datum/component/butchering, 150, 40) //it's sharp, so it works, but barely.
 
 /obj/item/shovel/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] begins digging their own grave!  It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins digging their own grave!  It looks like [user.ru_who()] trying to commit suicide!</span>")
 	if(use_tool(user, user, 30, volume=50))
 		return BRUTELOSS
 	user.visible_message("<span class='suicide'>[user] couldn't do it!</span>")

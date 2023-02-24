@@ -214,7 +214,7 @@
 	if(has_owner && creator)
 		short_desc = "You are a golem."
 		flavour_text = "You move slowly, but are highly resistant to heat and cold as well as blunt trauma. You are unable to wear clothes, but can still use most tools."
-		important_info = "Serve [creator], and assist [creator.p_them()] in completing [creator.p_their()] goals at any cost."
+		important_info = "Serve [creator], and assist [creator.ru_na()] in completing [creator.ru_ego()] goals at any cost."
 		owner = creator
 
 /obj/effect/mob_spawn/human/golem/special(mob/living/new_spawn, name)
@@ -461,7 +461,7 @@
 /obj/effect/mob_spawn/human/demonic_friend/Initialize(mapload, datum/mind/owner_mind, obj/effect/proc_holder/spell/targeted/summon_friend/summoning_spell)
 	. = ..()
 	owner = owner_mind
-	flavour_text = "You have been given a reprieve from your eternity of torment, to be [owner.name]'s friend for [owner.p_their()] short mortal coil."
+	flavour_text = "You have been given a reprieve from your eternity of torment, to be [owner.name]'s friend for [owner.ru_ego()] short mortal coil."
 	important_info = "Be aware that if you do not live up to [owner.name]'s expectations, they can send you back to hell with a single thought. [owner.name]'s death will also return you to hell."
 	var/area/A = get_area(src)
 	if(!mapload && A)
@@ -1455,6 +1455,7 @@
 
 /obj/item/card/id/syndicate/advanced/prisoner
 	name = "Prisoner"
+	assignment = "DS-2 Hostage"
 	icon_state = "card_ds2prisoner"
 
 /obj/item/card/id/syndicate/advanced/black

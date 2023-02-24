@@ -54,10 +54,10 @@
 
 /mob/living/cum(mob/living/partner, target_orifice)
 	var/message //if this doesn't exist it calls ..()
-	//var/u_His = p_their()
-	//var/u_He = p_they()
+	//var/u_His = ru_ego()
+	//var/u_He = ru_who()
 	//var/u_S = p_s()
-	//var/t_His = partner?.p_their()
+	//var/t_His = partner?.ru_ego()
 	var/cumin = FALSE
 	var/obj/item/organ/genital/target_gen
 	var/mob/living/carbon/c_partner
@@ -256,8 +256,8 @@
 	var/message
 	var/obj/item/organ/genital/peepee = null
 	var/lust_increase = NORMAL_LUST
-	//var/t_His = p_their()
-	var/t_Him = p_them()
+	//var/t_His = ru_ego()
+	var/t_Him = ru_na()
 
 	if(user.is_fucking(src, CUM_TARGET_MOUTH))
 		if(prob(user.get_sexual_potency()))
@@ -367,7 +367,7 @@
 
 /mob/living/proc/do_breastfuck_self(mob/living/user)
 	var/message
-	var/t_His = p_their()
+	var/t_His = ru_ego()
 	//var/genital_name = get_penetrating_genital_name()
 
 	if(is_fucking(user, CUM_TARGET_BREASTS))
@@ -404,7 +404,7 @@
 
 /mob/living/proc/nuzzle_belly(mob/living/target)
 	var/message
-	//var/u_His = p_their()
+	//var/u_His = ru_ego()
 	//var/list/belly_names = list("живот", "животик", "брюхо")
 	var/list/nuzzles = list(
 		"толкается своим лицом в живот [target]!",
@@ -439,7 +439,7 @@
 
 /mob/living/proc/do_breastsmother(mob/living/target)
 	var/message
-	//var/u_His = p_their()
+	//var/u_His = ru_ego()
 	var/list/lines = list(
 		"сдавливает лицо <b>[target]</b> между своих сисек",
 		"прижимает свою грудь к лицу <b>[target]</b>",
@@ -454,7 +454,7 @@
 
 /mob/living/proc/lick_sweat(mob/living/target)
 	var/message
-	//var/t_His = target.p_their()
+	//var/t_His = target.ru_ego()
 	var/list/lines = list("вылизывает тельце \the <b>[target]</b>",
 							"слизывает соленый пот, стекающий по коже <b>[target]</b>",
 							"наслаждается вкусом промокшего тела \the <b>[target]</b>",
@@ -466,7 +466,7 @@
 
 /mob/living/proc/smother_armpit(mob/living/target)
 	var/message
-	//var/u_His = p_their()
+	//var/u_His = ru_ego()
 	//var/list/musk = list("musky", "sweaty", "damp", "smelly")
 	var/list/lines = list(
 		"пихает лицо  \the <b>[target]</b> в потную и соленую подмышку.",
@@ -483,7 +483,7 @@
 
 /mob/living/proc/lick_armpit(mob/living/target)
 	var/message
-	//var/u_His = p_their()
+	//var/u_His = ru_ego()
 	//var/list/musk = list("musky ", "sweaty ", "damp ", "smelly ", "")
 	var/list/lines = list(
 		"засовывает свой нос глубже в подмышку \the <b>[target]</b>, делая небольшой [pick(list("вдох носом", "лизь", "тычок"))].",
@@ -500,9 +500,9 @@
 
 /mob/living/proc/fuck_armpit(mob/living/target)
 	var/message
-	//var/u_His = p_their()
+	//var/u_His = ru_ego()
 	//var/genital_name = get_penetrating_genital_name()
-	//var/t_His = target.p_their()
+	//var/t_His = target.ru_ego()
 	//var/list/musk = list("musky ", "sweaty ", "damp ", "smelly ", "")
 	var/list/lines
 
@@ -534,9 +534,9 @@
 /mob/living/proc/do_pitjob(mob/living/target)
 	var/message
 	//var/list/musk = list("musky ", "sweaty ", "damp ", "smelly ", "")
-	//var/u_His = p_their()
+	//var/u_His = ru_ego()
 	//var/genital_name = target.get_penetrating_genital_name()
-	//var/t_His = target.p_their()
+	//var/t_His = target.ru_ego()
 	var/list/lines
 
 	if(is_fucking(target, CUM_TARGET_ARMPIT))
@@ -566,7 +566,7 @@
 
 /mob/living/proc/do_boobjob(mob/living/target)
 	var/message
-	//var/u_His = p_their()
+	//var/u_His = ru_ego()
 	//var/genital_name = target.get_penetrating_genital_name()
 	var/list/lines
 
@@ -594,8 +594,8 @@
 
 /mob/living/proc/lick_nuts(mob/living/target)
 	var/message
-	//var/u_His = p_their()
-	//var/t_His = target.p_their()
+	//var/u_His = ru_ego()
+	//var/t_His = target.ru_ego()
 	var/lust_increase = 1
 	//var/list/balls = list("balls", "nuts", "[pick(list("cum", "spunk", "nut", "jizz", "seed"))] [pick(list("orbs", "spheres", "tanks", "holders", "churners"))]")
 	var/list/lines
@@ -620,8 +620,8 @@
 
 /mob/living/proc/do_cockfuck(mob/living/target)
 	var/message
-	//var/u_His = p_their()
-	//var/t_His = target.p_their()
+	//var/u_His = ru_ego()
+	//var/t_His = target.ru_ego()
 	//var/u_genital_name = get_penetrating_genital_name()
 	//var/t_genital_name = target.get_penetrating_genital_name()
 	var/list/lines
@@ -659,9 +659,9 @@
 /mob/living/proc/do_nipfuck(mob/living/target)
 	var/message
 	var/list/lines
-	var/u_His = p_their()
+	var/u_His = ru_ego()
 	var/genital_name = get_penetrating_genital_name()
-	//var/t_His = target.p_their()
+	//var/t_His = target.ru_ego()
 	if(is_fucking(target, CUM_TARGET_NIPPLE) && target.has_breasts(REQUIRE_EXPOSED))
 		lines = list(
 			"вводит его член внутрь соска <b>[target]</b> и двигается в обратном направлении.",
@@ -695,9 +695,9 @@
 /mob/living/proc/do_thighfuck(mob/living/target)
 	var/message
 	var/list/lines
-	//var/u_His = p_their()
+	//var/u_His = ru_ego()
 	//var/genital_name = get_penetrating_genital_name()
-	//var/t_His = target.p_their()
+	//var/t_His = target.ru_ego()
 
 	if(is_fucking(target, CUM_TARGET_THIGHS))
 		lines = list(
@@ -725,10 +725,10 @@
 /mob/living/proc/do_thighjob(mob/living/target)
 	var/message
 	var/list/lines
-	//var/u_His = p_their()
+	//var/u_His = ru_ego()
 	//var/genital_name = target.get_penetrating_genital_name()
-	//var/t_He = target.p_they()
-	//var/t_His = target.p_their()
+	//var/t_He = target.ru_who()
+	//var/t_His = target.ru_ego()
 
 	if(target.is_fucking(src, CUM_TARGET_THIGHS))
 		lines = list(
@@ -758,9 +758,9 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /mob/living/proc/do_facefart(mob/living/carbon/target)
 	var/message
-	//var/t_His = target.p_their()
-	//var/u_His = p_their()
-	//var/u_He = p_they()
+	//var/t_His = target.ru_ego()
+	//var/u_His = ru_ego()
+	//var/u_He = ru_who()
 
 	//var/list/asscheeks = list("asscheeks", "buttcheeks", "ass buns", "booty pillows", "dumptruck spheres", "[pick(list("jiggly", "bouncy", "wobbly"))] buttocks")
 	//var/list/ass = list("ass", "butt", "dumptruck", "tush", "badonk", "booty", "rump")
@@ -790,7 +790,7 @@
 /mob/living/proc/do_crotchfart(mob/living/carbon/target)
 	var/message
 	/* Bluemoon edit - DON'T FUCKIN' TOUCH
-	var/u_His = p_their()
+	var/u_His = ru_ego()
 	var/genital_name = "crotch"
 	if(target.has_penis(REQUIRE_EXPOSED) || target.has_strapon(REQUIRE_EXPOSED))
 		genital_name = target.get_penetrating_genital_name()
@@ -829,10 +829,10 @@
 /mob/living/proc/do_fartfuck(mob/living/target)
 	var/message
 	var/list/hell
-	//var/t_He = target.p_they()
-	//var/t_His = target.p_their()
-	//var/u_His = p_their()
-	//var/u_He = p_they()
+	//var/t_He = target.ru_who()
+	//var/t_His = target.ru_ego()
+	//var/u_His = ru_ego()
+	//var/u_He = ru_who()
 	//var/genital_name = get_penetrating_genital_name()
 
 	//var/list/asscheeks = list("asscheeks", "buttcheeks", "ass buns", "booty pillows", "dumptruck spheres", "[pick(list("jiggly", "bouncy", "wobbly"))] buttocks")
@@ -876,8 +876,8 @@
 /mob/living/proc/suck_fart(mob/living/target)
 	var/message
 	var/list/hell
-	//var/t_His = target.p_their()
-	//var/u_His = p_their()
+	//var/t_His = target.ru_ego()
+	//var/u_His = ru_ego()
 
 	//var/list/stank = list("greasy", "rancid", "pungent", "rotten", "boiling hot", "wet", "nose-burning", "heavy", "dense", "thick", "stinky", "stenchy", "warm")
 	//var/list/stankhole = list("greasy", "stinky", "dirty", "gassy", "brapping", "noisy", "quaking", "musky")
@@ -903,8 +903,8 @@
 
 /mob/living/proc/do_faceshit(mob/living/carbon/target)
 	var/message
-	//var/u_His = p_their()
-	//var/t_His = target.p_their()
+	//var/u_His = ru_ego()
+	//var/t_His = target.ru_ego()
 
 	//var/list/asscheeks = list("asscheeks", "buttcheeks", "ass buns", "booty pillows", "dumptruck spheres", "[pick(list("jiggly", "bouncy", "wobbly"))] buttocks")
 	//var/list/ass = list("ass", "butt", "dumptruck", "tush", "badonk", "booty", "rump")
@@ -927,8 +927,8 @@
 
 /mob/living/proc/do_crotchshit(mob/living/carbon/target)
 	var/message
-	//var/t_His = target.p_their()
-	//var/u_His = p_their()
+	//var/t_His = target.ru_ego()
+	//var/u_His = ru_ego()
 
 	/* Bluemoon edit - DON'T FUCKIN' TOUCH
 	var/genital_name = "crotch"
@@ -963,10 +963,10 @@
 
 /mob/living/proc/do_shitfuck(mob/living/carbon/target)
 	var/message
-	//var/t_He = target.p_they()
-	//var/t_His = target.p_their()
-	//var/u_His = p_their()
-	//var/u_He = p_they()
+	//var/t_He = target.ru_who()
+	//var/t_His = target.ru_ego()
+	//var/u_His = ru_ego()
+	//var/u_He = ru_who()
 	//var/genital_name = get_penetrating_genital_name()
 
 	var/list/hell
@@ -1005,8 +1005,8 @@
 /mob/living/proc/suck_shit(mob/living/target)
 	var/message
 	var/list/hell
-	//var/t_His = target.p_their()
-	//var/u_His = p_their()
+	//var/t_His = target.ru_ego()
+	//var/u_His = ru_ego()
 
 	//var/list/stank = list("greasy", "rancid", "pungent", "rotten", "boiling hot", "wet", "nose-burning", "heavy", "dense", "thick", "stinky", "stenchy", "warm")
 	//var/list/stankhole = list("greasy", "stinky", "dirty", "gassy", "brapping", "noisy", "quaking", "musky")
@@ -1031,7 +1031,7 @@
 
 /mob/living/proc/piss_over(mob/living/target)
 	var/message
-	//var/u_His = p_their()
+	//var/u_His = ru_ego()
 	var/list/hell = list(
 		"опустошает свой мочевой пузырь на тело <b>[target]</b> покрывая его тёплой мочёй",
 		"покрывает тело <b>[target]</b> золотым дождём ",
@@ -1046,8 +1046,8 @@
 /mob/living/carbon/proc/piss_mouth(mob/living/target)
 	var/message
 	var/pee_pee = (has_penis(REQUIRE_EXPOSED) ? getorganslot(ORGAN_SLOT_PENIS) : (has_vagina(REQUIRE_EXPOSED) ? getorganslot(ORGAN_SLOT_VAGINA) : null))
-	//var/u_His = p_their()
-	//var/t_Him = target.p_them()
+	//var/u_His = ru_ego()
+	//var/t_Him = target.ru_na()
 	var/list/hell = list(
 		"опустошает свой мочевой пузырь в рот <b>[target]</b> наполняя его тёплой мочёй",
 		"покрывает глотку <b>[target]</b> золотым дождём ",

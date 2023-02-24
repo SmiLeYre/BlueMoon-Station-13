@@ -16,8 +16,8 @@
 	if(istype(holder))
 		var/mob/living/living = get_atom_on_turf(micro.loc, /mob/living)
 		if(living && (abs(get_size(micro)/get_size(living)) > CONFIG_GET(number/max_pick_ratio)))
-			living.visible_message(span_warning("\The [living] drops [micro] as [micro.p_they()] grow\s too big to carry."),
-								span_warning("You drop \The [living] as [living.p_they()] grow\s too big to carry."),
+			living.visible_message(span_warning("\The [living] drops [micro] as [micro.ru_who()] grow\s too big to carry."),
+								span_warning("You drop \The [living] as [living.ru_who()] grow\s too big to carry."),
 								target=micro,
 								target_message=span_notice("\The [living] drops you as you grow too big to carry."))
 			holder.release()
@@ -26,7 +26,7 @@
 
 /datum/element/mob_holder/micro/on_examine(mob/living/source, mob/user, list/examine_list)
 	if(ishuman(user) && !istype(source.loc, /obj/item/clothing/head/mob_holder) && (abs(get_size(source)/get_size(user)) <= CONFIG_GET(number/max_pick_ratio)))
-		examine_list += "<span class='notice'>Looks like [source.p_they(FALSE)] can be picked up using <b>Alt+Click and grab intent</b>!</span>"
+		examine_list += "<span class='notice'>Looks like [source.ru_who(FALSE)] can be picked up using <b>Alt+Click and grab intent</b>!</span>"
 
 /datum/element/mob_holder/micro/proc/mob_pickup_micro(mob/living/source, mob/user)
 	var/obj/item/clothing/head/mob_holder/micro/holder = new(get_turf(source), source, worn_state, alt_worn, right_hand, left_hand, inv_slots)

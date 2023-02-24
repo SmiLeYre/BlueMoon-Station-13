@@ -24,7 +24,7 @@
 /obj/item/melee/transforming/energy/suicide_act(mob/user)
 	if(!active)
 		transform_weapon(user, TRUE)
-	user.visible_message("<span class='suicide'>[user] is [pick("slitting [user.p_their()] stomach open with", "falling on")] [src]! It looks like [user.p_theyre()] trying to commit seppuku!</span>")
+	user.visible_message("<span class='suicide'>[user] is [pick("slitting [user.ru_ego()] stomach open with", "falling on")] [src]! It looks like [user.ru_who()] trying to commit seppuku!</span>")
 	return (BRUTELOSS|FIRELOSS)
 
 /obj/item/melee/transforming/energy/add_blood_DNA(list/blood_dna)
@@ -59,8 +59,8 @@
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(C.wear_mask)
-			in_mouth = ", barely missing [C.p_their()] nose"
-	. = "<span class='warning'>[user] swings [user.p_their()] [name][in_mouth]. [user.p_they(TRUE)] light[user.p_s()] [user.p_their()] [A.name] in the process.</span>"
+			in_mouth = ", barely missing [C.ru_ego()] nose"
+	. = "<span class='warning'>[user] swings [user.ru_ego()] [name][in_mouth]. [user.ru_who(TRUE)] light[user.p_s()] [user.ru_ego()] [A.name] in the process.</span>"
 	playsound(loc, hitsound, get_clamped_volume(), 1, -1)
 	add_fingerprint(user)
 
@@ -87,7 +87,7 @@
 	total_mass = null
 
 /obj/item/melee/transforming/energy/axe/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] swings [src] towards [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] swings [src] towards [user.ru_ego()] head! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	return (BRUTELOSS|FIRELOSS)
 
 /obj/item/melee/transforming/energy/sword

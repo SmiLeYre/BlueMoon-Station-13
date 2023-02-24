@@ -42,7 +42,7 @@
 		if(item_worn.body_parts_covered)
 			// Set the success variable
 			user_disrobed = TRUE
-			
+
 			// Drop the target item
 			target_user.dropItemToGround(item_worn, TRUE)
 
@@ -52,7 +52,7 @@
 	// When successfully disrobing a target
 	if(user_disrobed)
 		// Display a chat message
-		target_user.visible_message("<span class='userlove'>[target_user] suddenly bursts out of [target_user.p_their()] clothes!</span>", "<span class='userlove'>You suddenly burst out of your clothes!</span>")
+		target_user.visible_message("<span class='userlove'>[target_user] suddenly bursts out of [target_user.ru_ego()] clothes!</span>", "<span class='userlove'>You suddenly burst out of your clothes!</span>")
 
 		// Play the ripped poster sound
 		playsound(target_user.loc, 'sound/items/poster_ripped.ogg', 50, 1)

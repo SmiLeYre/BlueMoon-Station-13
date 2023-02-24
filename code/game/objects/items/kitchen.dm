@@ -32,7 +32,7 @@
 	var/datum/reagent/forkload //used to eat omelette
 
 /obj/item/kitchen/fork/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] stabs \the [src] into [user.p_their()] chest! It looks like [user.p_theyre()] trying to take a bite out of [user.p_them()]self!</span>")
+	user.visible_message("<span class='suicide'>[user] stabs \the [src] into [user.ru_ego()] chest! It looks like [user.ru_who()] trying to take a bite out of [user.ru_na()]self!</span>")
 	playsound(src, 'sound/items/eatfood.ogg', 50, 1)
 	return BRUTELOSS
 
@@ -111,9 +111,9 @@
 		return ..()
 
 /obj/item/kitchen/knife/suicide_act(mob/user)
-	user.visible_message(pick("<span class='suicide'>[user] is slitting [user.p_their()] wrists with the [src.name]! It looks like [user.p_theyre()] trying to commit suicide.</span>", \
-						"<span class='suicide'>[user] is slitting [user.p_their()] throat with the [src.name]! It looks like [user.p_theyre()] trying to commit suicide.</span>", \
-						"<span class='suicide'>[user] is slitting [user.p_their()] stomach open with the [src.name]! It looks like [user.p_theyre()] trying to commit seppuku.</span>"))
+	user.visible_message(pick("<span class='suicide'>[user] is slitting [user.ru_ego()] wrists with the [src.name]! It looks like [user.ru_who()] trying to commit suicide.</span>", \
+						"<span class='suicide'>[user] is slitting [user.ru_ego()] throat with the [src.name]! It looks like [user.ru_who()] trying to commit suicide.</span>", \
+						"<span class='suicide'>[user] is slitting [user.ru_ego()] stomach open with the [src.name]! It looks like [user.ru_who()] trying to commit seppuku.</span>"))
 	return (BRUTELOSS)
 
 /obj/item/kitchen/efink
@@ -147,9 +147,9 @@
 		return ..()
 
 /obj/item/kitchen/efink/suicide_act(mob/user)
-	user.visible_message(pick("<span class='suicide'>[user] is slitting [user.p_their()] wrists with the [src.name]! It looks like [user.p_theyre()] trying to commit suicide.</span>", \
-						"<span class='suicide'>[user] is slitting [user.p_their()] throat with the [src.name]! It looks like [user.p_theyre()] trying to commit suicide.</span>", \
-						"<span class='suicide'>[user] is slitting [user.p_their()] stomach open with the [src.name]! It looks like [user.p_theyre()] trying to commit seppuku.</span>"))
+	user.visible_message(pick("<span class='suicide'>[user] is slitting [user.ru_ego()] wrists with the [src.name]! It looks like [user.ru_who()] trying to commit suicide.</span>", \
+						"<span class='suicide'>[user] is slitting [user.ru_ego()] throat with the [src.name]! It looks like [user.ru_who()] trying to commit suicide.</span>", \
+						"<span class='suicide'>[user] is slitting [user.ru_ego()] stomach open with the [src.name]! It looks like [user.ru_who()] trying to commit seppuku.</span>"))
 	return (BRUTELOSS)
 
 /obj/item/kitchen/knife/ritual
@@ -294,7 +294,7 @@
 	custom_materials = null
 
 /obj/item/kitchen/knife/shiv/carrot/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] forcefully drives \the [src] into [user.p_their()] eye! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] forcefully drives \the [src] into [user.ru_ego()] eye! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	return BRUTELOSS
 
 /obj/item/kitchen/rollingpin
@@ -311,7 +311,7 @@
 	custom_price = PRICE_ALMOST_CHEAP
 
 /obj/item/kitchen/rollingpin/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins flattening [user.p_their()] head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins flattening [user.ru_ego()] head with \the [src]! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	return BRUTELOSS
 
 /obj/item/kitchen/unrollingpin
@@ -328,7 +328,7 @@
 	custom_price = PRICE_ALMOST_CHEAP
 
 /obj/item/kitchen/unrollingpin/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins unflattening [user.p_their()] head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins unflattening [user.ru_ego()] head with \the [src]! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	return BRUTELOSS
 
 /* Trays  moved to /obj/item/storage/bag */

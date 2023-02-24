@@ -267,7 +267,7 @@
 			var/obj/item/restraints/O = src.get_item_by_slot(ITEM_SLOT_HANDCUFFED)
 			buckle_cd = O.breakouttime
 		MarkResistTime()
-		visible_message("<span class='warning'>[src] attempts to unbuckle [p_them()]self!</span>", \
+		visible_message("<span class='warning'>[src] attempts to unbuckle [ru_na()]self!</span>", \
 					"<span class='notice'>You attempt to unbuckle yourself... (This will take around [round(buckle_cd/600,1)] minute\s, and you need to stay still.)</span>")
 		if(do_after(src, buckle_cd, 0, target = src, required_mobility_flags = MOBILITY_RESIST))
 			if(!buckled)
@@ -283,12 +283,12 @@
 	fire_stacks -= 5
 	DefaultCombatKnockdown(60, TRUE, TRUE)
 	spin(32,2)
-	visible_message("<span class='danger'>[src] rolls on the floor, trying to put [p_them()]self out!</span>", \
+	visible_message("<span class='danger'>[src] rolls on the floor, trying to put [ru_na()]self out!</span>", \
 		"<span class='notice'>You stop, drop, and roll!</span>")
 	MarkResistTime(30)
 	sleep(30)
 	if(fire_stacks <= 0)
-		visible_message("<span class='danger'>[src] has successfully extinguished [p_them()]self!</span>", \
+		visible_message("<span class='danger'>[src] has successfully extinguished [ru_na()]self!</span>", \
 			"<span class='notice'>You extinguish yourself.</span>")
 		ExtinguishMob()
 
@@ -484,7 +484,7 @@
 
 	if(is_mouth_covered()) //make this add a blood/vomit overlay later it'll be hilarious
 		if(message)
-			visible_message("<span class='danger'>[src] throws up all over [p_them()]self!</span>", \
+			visible_message("<span class='danger'>[src] throws up all over [ru_na()]self!</span>", \
 							"<span class='userdanger'>You throw up all over yourself!</span>")
 			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "vomit", /datum/mood_event/vomitself)
 		distance = 0

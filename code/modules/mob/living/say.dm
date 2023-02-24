@@ -255,7 +255,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	var/deaf_type
 	if(speaker != src)
 		if(!radio_freq) //These checks have to be seperate, else people talking on the radio will make "You can't hear yourself!" appear when hearing people over the radio while deaf.
-			deaf_message = "<span class='name'>[speaker]</span> [speaker.verb_say] something but you cannot hear [speaker.p_them()]."
+			deaf_message = "<span class='name'>[speaker]</span> [speaker.verb_say] something but you cannot hear [speaker.ru_na()]."
 			deaf_type = 1
 	else
 		deaf_message = "<span class='notice'>You can't hear yourself!</span>"
@@ -486,7 +486,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 /mob/living/say_mod(input, message_mode)
 	. = ..()
 	if(message_mode == MODE_WHISPER_CRIT)
-		. = "[verb_whisper] in [p_their()] last breath"
+		. = "[verb_whisper] in [ru_ego()] last breath"
 	else if(message_mode != MODE_CUSTOM_SAY)
 		if(message_mode == MODE_WHISPER)
 			. = verb_whisper

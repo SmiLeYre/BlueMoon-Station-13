@@ -1,5 +1,5 @@
 /datum/interaction/lewd/kiss
-	description = "Поцеловать."
+	description = "Рот. Поцеловать."
 	require_user_mouth = TRUE
 	require_target_mouth = TRUE
 	write_log_user = "kissed"

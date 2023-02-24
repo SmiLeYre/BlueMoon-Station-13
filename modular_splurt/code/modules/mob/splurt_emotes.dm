@@ -33,7 +33,7 @@
 		to_chat(user, "<span class='warning'>You try your hardest, but no shart comes out.</span>")
 		return
 	var/list/fart_emotes = list( //cope goonies
-		"lets out a girly little 'toot' from [user.p_their()] butt.",
+		"lets out a girly little 'toot' from [user.ru_ego()] butt.",
 		"farts loudly!",
 		"lets one rip!",
 		"farts! It sounds wet and smells like rotten eggs.",
@@ -44,7 +44,7 @@
 		"farts for a whole ten seconds.",
 		"groans and moans, farting like the world depended on it.",
 		"breaks wind!",
-		"expels intestinal gas through [user.p_their()] anus.",
+		"expels intestinal gas through [user.ru_ego()] anus.",
 		"releases an audible discharge of intestinal gas.",
 		"is a farting motherfucker!!!",
 		"suffers from flatulence!",
@@ -66,11 +66,11 @@
 		"farts egregiously.",
 		"farts voraciously.",
 		"farts cantankerously.",
-		"farts in [user.p_their()] own mouth. A shameful \the <b>[user]</b>.",
+		"farts in [user.ru_ego()] own mouth. A shameful \the <b>[user]</b>.",
 		"breaks wind noisily!",
 		"releases gas with the power of the gods! The very station trembles!!",
 		"<B><span style='color:red'>f</span><span style='color:blue'>a</span>r<span style='color:red'>t</span><span style='color:blue'>s</span>!</B>",
-		"laughs! [user.p_their(TRUE)] breath smells like a fart.",
+		"laughs! [user.ru_ego(TRUE)] breath smells like a fart.",
 		"farts, and as such, blob cannot evoulate.",
 		"farts. It might have been the Citizen Kane of farts."
 	)
@@ -177,11 +177,11 @@
 		if(isalien(user))
 			sound = 'sound/voice/hiss6.ogg'
 		playsound(user.loc, sound, 50, 1, 4, 1.2)
-		message = "moans!"
+		message = "постанывает!"
 	else if(miming)
-		message = "acts out a moan."
+		message = "делает вид, что издает стон."
 	else
-		message = "makes a very loud noise."
+		message = "издает очень громкий звук!"
 	. = ..()
 
 /datum/emote/living/audio_emote/chitter2
@@ -879,7 +879,7 @@
 	muzzle_ignore = FALSE
 
 /datum/emote/living/missouri/run_emote(mob/user, params, type_override, intentional)
-	message = replacetextEx(message, "%THEYRE", user.p_theyre())
+	message = replacetextEx(message, "%THEYRE", user.ru_who())
 	. = ..()
 	if(!.)
 		return
@@ -903,8 +903,8 @@
 /datum/emote/living/facemetacarpus/run_emote(mob/user, params, type_override, intentional)
 	// Randomly pick a message using metacarpus_type for hand
 	message = pick(list(
-			"places [usr.p_their()] [metacarpus_type] across [usr.p_their()] face.",
-			"lowers [usr.p_their()] face into [usr.p_their()] [metacarpus_type].",
+			"places [usr.ru_ego()] [metacarpus_type] across [usr.ru_ego()] face.",
+			"lowers [usr.ru_ego()] face into [usr.ru_ego()] [metacarpus_type].",
 			"face[metacarpus_type]s",
 		))
 	if(!(. = ..()))

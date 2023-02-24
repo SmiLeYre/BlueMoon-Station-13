@@ -11,7 +11,7 @@
 
 /datum/status_effect/determined/on_apply()
 	. = ..()
-	owner.visible_message("<span class='danger'>[owner] grits [owner.p_their()] teeth in pain!</span>", "<span class='notice'><b>Your senses sharpen as your body tenses up from the wounds you've sustained!</b></span>", vision_distance=COMBAT_MESSAGE_RANGE)
+	owner.visible_message("<span class='danger'>[owner] grits [owner.ru_ego()] teeth in pain!</span>", "<span class='notice'><b>Your senses sharpen as your body tenses up from the wounds you've sustained!</b></span>", vision_distance=COMBAT_MESSAGE_RANGE)
 
 /datum/status_effect/determined/on_remove()
 	owner.visible_message("<span class='danger'>[owner]'s body slackens noticeably!</span>", "<span class='warning'><b>Your adrenaline rush dies off, and the pain from your wounds come aching back in...</b></span>", vision_distance=COMBAT_MESSAGE_RANGE)

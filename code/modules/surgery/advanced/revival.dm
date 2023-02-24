@@ -88,13 +88,13 @@
 		target.log_message("revived using surgical revival, [tplus] deciseconds from time of death, considered [late? "late" : "memory-intact"] revival under configured policy limits.", LOG_GAME)
 		return TRUE
 	else
-		user.visible_message("...[target.p_they()] convulses, then lies still.")
-		target.visible_message("...[target.p_they()] convulses, then lies still.")
+		user.visible_message("...[target.ru_who()] convulses, then lies still.")
+		target.visible_message("...[target.ru_who()] convulses, then lies still.")
 		return FALSE
 
 /datum/surgery_step/revive/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>You shock [target]'s brain with [tool], but [target.p_they()] doesn't react.</span>",
-		"[user] send a powerful shock to [target]'s brain with [tool], but [target.p_they()] doesn't react.",
-		"[user] send a powerful shock to [target]'s brain with [tool], but [target.p_they()] doesn't react.")
+	display_results(user, target, "<span class='notice'>You shock [target]'s brain with [tool], but [target.ru_who()] doesn't react.</span>",
+		"[user] send a powerful shock to [target]'s brain with [tool], but [target.ru_who()] doesn't react.",
+		"[user] send a powerful shock to [target]'s brain with [tool], but [target.ru_who()] doesn't react.")
 	target.adjustOrganLoss(ORGAN_SLOT_BRAIN, 15, 199)
 	return FALSE

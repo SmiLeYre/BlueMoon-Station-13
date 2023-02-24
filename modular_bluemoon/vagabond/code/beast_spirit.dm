@@ -205,7 +205,7 @@
 	else if(organ_vagina)
 		beast_gender = "female"
 
-	var/toggle_message = ("[caster] shivers with flesh bursting a sudden growth of thick mass as features contort to that of a beast, fully transforming [caster.p_them()] into an animal!")
+	var/toggle_message = ("[caster] shivers with flesh bursting a sudden growth of thick mass as features contort to that of a beast, fully transforming [caster.ru_na()] into an animal!")
 
 	caster.visible_message(span_danger(toggle_message))
 

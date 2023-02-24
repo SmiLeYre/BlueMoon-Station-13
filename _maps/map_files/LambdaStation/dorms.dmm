@@ -10704,7 +10704,7 @@
 	light_color = "#e8eaff"
 	},
 /obj/machinery/vending/wardrobe/jani_wardrobe{
-	products = list(/obj/item/clothing/under/rank/civilian/janitor = 2, /obj/item/cartridge/janitor = 2, /obj/item/clothing/gloves/color/black = 2, /obj/item/clothing/head/soft/purple = 2, /obj/item/paint/paint_remover = 2, /obj/item/melee/flyswatter = 2, /obj/item/flashlight = 2, /obj/item/clothing/suit/caution = 10, /obj/item/holosign_creator = 2, /obj/item/lightreplacer = 2, /obj/item/soap/nanotrasen = 2, /obj/item/storage/bag/trash = 2, /obj/item/clothing/shoes/galoshes = 2, /obj/item/watertank/janitor = 2, /obj/item/storage/belt/janitor = 2)
+	products = list(/obj/item/clothing/under/rank/civilian/janitor=2,/obj/item/cartridge/janitor=2,/obj/item/clothing/gloves/color/black=2,/obj/item/clothing/head/soft/purple=2,/obj/item/paint/paint_remover=2,/obj/item/melee/flyswatter=2,/obj/item/flashlight=2,/obj/item/clothing/suit/caution=10,/obj/item/holosign_creator=2,/obj/item/lightreplacer=2,/obj/item/soap/nanotrasen=2,/obj/item/storage/bag/trash=2,/obj/item/clothing/shoes/galoshes=2,/obj/item/watertank/janitor=2,/obj/item/storage/belt/janitor=2)
 	},
 /turf/open/floor/plating,
 /area/service/janitor)
@@ -11105,7 +11105,7 @@
 "CW" = (
 /obj/effect/turf_decal/trimline/blue/filled/line,
 /obj/machinery/vending/medical{
-	products = list(/obj/item/reagent_containers/syringe = 12, /obj/item/reagent_containers/dropper = 3, /obj/item/healthanalyzer = 4, /obj/item/sensor_device = 4, /obj/item/pinpointer/crew = 2, /obj/item/reagent_containers/medspray/sterilizine = 1, /obj/item/stack/medical/gauze = 8, /obj/item/reagent_containers/pill/patch/styptic = 5, /obj/item/reagent_containers/medspray/styptic = 2, /obj/item/reagent_containers/pill/patch/silver_sulf = 5, /obj/item/reagent_containers/medspray/silver_sulf = 2, /obj/item/reagent_containers/pill/insulin = 10, /obj/item/reagent_containers/pill/salbutamol = 2, /obj/item/reagent_containers/glass/bottle/charcoal = 4, /obj/item/reagent_containers/glass/bottle/epinephrine = 4, /obj/item/reagent_containers/glass/bottle/salglu_solution = 3, /obj/item/reagent_containers/glass/bottle/morphine = 4, /obj/item/reagent_containers/glass/bottle/toxin = 3, /obj/item/reagent_containers/syringe/antiviral = 6, /obj/item/storage/hypospraykit/fire = 2, /obj/item/storage/hypospraykit/toxin = 2, /obj/item/storage/hypospraykit/o2 = 2, /obj/item/storage/hypospraykit/brute = 2, /obj/item/storage/hypospraykit/enlarge = 2, /obj/item/reagent_containers/glass/bottle/vial/small = 5, /obj/item/storage/briefcase/medical = 2, /obj/item/stack/sticky_tape/surgical = 3, /obj/item/healthanalyzer/wound = 4, /obj/item/stack/medical/ointment = 2, /obj/item/stack/medical/suture = 2, /obj/item/stack/medical/bone_gel = 4)
+	products = list(/obj/item/reagent_containers/syringe=12,/obj/item/reagent_containers/dropper=3,/obj/item/healthanalyzer=4,/obj/item/sensor_device=4,/obj/item/pinpointer/crew=2,/obj/item/reagent_containers/medspray/sterilizine=1,/obj/item/stack/medical/gauze=8,/obj/item/reagent_containers/pill/patch/styptic=5,/obj/item/reagent_containers/medspray/styptic=2,/obj/item/reagent_containers/pill/patch/silver_sulf=5,/obj/item/reagent_containers/medspray/silver_sulf=2,/obj/item/reagent_containers/pill/insulin=10,/obj/item/reagent_containers/pill/salbutamol=2,/obj/item/reagent_containers/glass/bottle/charcoal=4,/obj/item/reagent_containers/glass/bottle/epinephrine=4,/obj/item/reagent_containers/glass/bottle/salglu_solution=3,/obj/item/reagent_containers/glass/bottle/morphine=4,/obj/item/reagent_containers/glass/bottle/toxin=3,/obj/item/reagent_containers/syringe/antiviral=6,/obj/item/storage/hypospraykit/fire=2,/obj/item/storage/hypospraykit/toxin=2,/obj/item/storage/hypospraykit/o2=2,/obj/item/storage/hypospraykit/brute=2,/obj/item/storage/hypospraykit/enlarge=2,/obj/item/reagent_containers/glass/bottle/vial/small=5,/obj/item/storage/briefcase/medical=2,/obj/item/stack/sticky_tape/surgical=3,/obj/item/healthanalyzer/wound=4,/obj/item/stack/medical/ointment=2,/obj/item/stack/medical/suture=2,/obj/item/stack/medical/bone_gel=4)
 	},
 /obj/machinery/light,
 /turf/open/floor/plasteel/white,
@@ -12436,6 +12436,7 @@
 	name = "Dormitories APC";
 	pixel_y = -28
 	},
+/obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/commons/fitness/recreation)
 "Gf" = (
@@ -17454,6 +17455,9 @@
 /obj/machinery/navbeacon{
 	codes_txt = "patrol;next_patrol=dorms13";
 	location = "dorms12"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel,
 /area/commons/fitness/recreation)

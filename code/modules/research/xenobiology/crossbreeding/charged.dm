@@ -160,7 +160,7 @@ Charged extracts:
 	if(!user.canUseTopic(src, BE_CLOSE))
 		return
 	H.set_species(racechoice, icon_update=1)
-	H.visible_message("<span class='warning'>[H] suddenly shifts form as [src] dissolves into [H.p_their()] skin!</span>")
+	H.visible_message("<span class='warning'>[H] suddenly shifts form as [src] dissolves into [H.ru_ego()] skin!</span>")
 	..()
 
 /obj/item/slimecross/charged/pink
@@ -395,7 +395,7 @@ Charged extracts:
 	if(!do_after(user, 50, target = M))
 		return
 	to_chat(user, "<span class='notice'>You feed [M] the love potion!</span>")
-	to_chat(M, "<span class='notice'>You develop feelings for [user], and anyone [user.p_they()] like.</span>")
+	to_chat(M, "<span class='notice'>You develop feelings for [user], and anyone [user.ru_who()] like.</span>")
 	if(M.mind)
 		M.mind.store_memory("You are in love with [user].")
 	M.faction |= "[REF(user)]"

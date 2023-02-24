@@ -27,7 +27,7 @@
 
 /obj/item/bodybag/suicide_act(mob/user)
 	if(isopenturf(user.loc))
-		user.visible_message("<span class='suicide'>[user] is crawling into [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		user.visible_message("<span class='suicide'>[user] is crawling into [src]! It looks like [user.ru_who()] trying to commit suicide!</span>")
 		var/obj/structure/closet/body_bag/R = new unfoldedbag_path(user.loc)
 		R.add_fingerprint(user)
 		qdel(src)

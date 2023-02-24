@@ -83,7 +83,7 @@
 /datum/emote/living/carbon/human/wag
 	key = "wag"
 	key_third_person = "wags"
-	message = "wags their tail."
+	message = "начинает вилять своим хвостом."
 
 /datum/emote/living/carbon/human/wag/run_emote(mob/user, params)
 	. = ..()
@@ -212,12 +212,6 @@
 	key_third_person = "syndicates"
 	message = "offers warcrimes."
 	sound = 'sound/voice/syndicate.ogg'
-
-/datum/emote/sound/human/emperorprotects
-	key = "emperorprotects"
-	key_third_person = "emperorprotectes"
-	message = "folds his arms across his chest, forming an aquila."
-	sound = 'sound/voice/emperorprotects.ogg'
 
 //rock paper scissors emote handling
 /mob/living/carbon/human/proc/beginRockPaperScissors(var/chosen_move)

@@ -1,5 +1,5 @@
 /obj/structure/extinguisher_cabinet
-	name = "extinguisher cabinet"
+	name = "Extinguisher Cabinet"
 	desc = "A small wall mounted cabinet designed to hold a fire extinguisher."
 	icon = 'icons/obj/wallmounts.dmi'
 	icon_state = "extinguisher_closed"
@@ -131,22 +131,27 @@
 		update_icon()
 
 /obj/structure/extinguisher_cabinet/update_icon_state()
-	if(!opened && istype(stored_extinguisher, /obj/item/extinguisher))
-		icon_state = "extinguisher_standard_closed"
-	if(!opened && istype(stored_extinguisher, /obj/item/extinguisher/mini))
-		icon_state = "extinguisher_mini_closed"
-	if(!opened && istype(stored_extinguisher, /obj/item/extinguisher/advanced))
-		icon_state = "extinguisher_advanced_closed"
-		return
-	if(stored_extinguisher)
+	. = ..()
+	if(!opened)
+		if(stored_extinguisher)
+			if(istype(stored_extinguisher, /obj/item/extinguisher/mini))
+				icon_state = "extinguisher_mini_closed"
+			else if(istype(stored_extinguisher, /obj/item/extinguisher/advanced))
+				icon_state = "extinguisher_advanced_closed"
+			else
+				icon_state = "extinguisher_closed"
+		else
+			icon_state = "extinguisher_empty_closed"
+	else if(stored_extinguisher)
 		if(istype(stored_extinguisher, /obj/item/extinguisher/mini))
-			icon_state = "extinguisher_mini"
+			icon_state = "extinguisher_mini_open"
 		else if(istype(stored_extinguisher, /obj/item/extinguisher/advanced))
 			icon_state = "extinguisher_advanced_open"
 		else
-			icon_state = "extinguisher_full"
+			icon_state = "extinguisher_standard_open"
 	else
-		icon_state = "extinguisher_empty"
+		icon_state = "extinguisher_empty_open"
+
 
 /obj/structure/extinguisher_cabinet/obj_break(damage_flag)
 	if(!broken && !(flags_1 & NODECONSTRUCT_1))

@@ -84,7 +84,7 @@
 	var/mob/living/self = parent
 	//Getting info
 	.["isTargetSelf"] = target == self
-	.["interactingWith"] = target != self ? "Interacting with \the [target]..." : "Interacting with yourself..."
+	.["interactingWith"] = target != self ? "Взаимодействовать с \the [target]..." : "Взаимодействовать с собой..."
 	.["selfAttributes"] = self.list_interaction_attributes(self)
 	if(target != self)
 		.["theirAttributes"] = target.list_interaction_attributes(self)

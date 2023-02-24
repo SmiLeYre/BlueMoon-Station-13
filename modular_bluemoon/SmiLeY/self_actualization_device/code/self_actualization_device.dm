@@ -45,10 +45,8 @@
 	. = ..()
 	if(occupant)
 		icon_state = processing ? "sad_on" : "sad_off"
-	if(state_open)
-		icon_state = "sad_open"
 	else
-		icon_state = "sad_closed"
+		icon_state = state_open ? "sad_open" : "sad_closed"
 
 
 /obj/machinery/self_actualization_device/Initialize(mapload)

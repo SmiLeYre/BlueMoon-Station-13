@@ -74,7 +74,7 @@
 	var/obj/item/organ/lungs/L = user.getorganslot(ORGAN_SLOT_LUNGS)
 
 	if(can_use(user) && L)
-		user.visible_message(span_suicide("[user] is inhaling toner from [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
+		user.visible_message(span_suicide("[user] is inhaling toner from [src]! It looks like [user.ru_who()] trying to commit suicide!"))
 		use(user)
 
 		// Once you've inhaled the toner, you throw up your lungs
@@ -100,14 +100,14 @@
 
 		// TODO maybe add some colorful vomit?
 
-		user.visible_message(span_suicide("[user] vomits out [user.p_their()] [L]!"))
+		user.visible_message(span_suicide("[user] vomits out [user.ru_ego()] [L]!"))
 		playsound(user.loc, 'sound/effects/splat.ogg', 50, TRUE)
 
 		L.forceMove(T)
 
 		return (TOXLOSS|OXYLOSS)
 	else if(can_use(user) && !L)
-		user.visible_message(span_suicide("[user] is spraying toner on [user.p_them()]self from [src]! It looks like [user.p_theyre()] trying to commit suicide."))
+		user.visible_message(span_suicide("[user] is spraying toner on [user.ru_na()]self from [src]! It looks like [user.ru_who()] trying to commit suicide."))
 		user.reagents.add_reagent(/datum/reagent/colorful_reagent, 1)
 		user.reagents.reaction(user, TOUCH, 1)
 		return TOXLOSS

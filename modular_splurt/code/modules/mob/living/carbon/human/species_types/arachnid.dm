@@ -83,7 +83,7 @@
 				to_chat(H, "<span class='warning'>You prepare to wrap [L] in a cocoon...</span>")
 				var/response = alert(L, "Do you wish to be wrapped in a cocoon?", "Cocooning", "No", "Yes")
 				if(response == "No")
-					to_chat(H, "<span class='warning'>[L] resists your attempts to wrap [L.p_them()]!</span>")
+					to_chat(H, "<span class='warning'>[L] resists your attempts to wrap [L.ru_na()]!</span>")
 					return
 		H.visible_message("<span class='danger'>[H] starts to wrap [A] into a cocoon!</span>","<span class='warning'>You start to wrap [A] into a cocoon.</span>")
 		if(!do_after(H, 10 SECONDS, 1, A))

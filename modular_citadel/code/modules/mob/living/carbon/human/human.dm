@@ -21,7 +21,7 @@
 	I.unembedded()
 	user.put_in_hands(I)
 	user.emote("scream")
-	user.visible_message("[user] rips [I] out of [user.p_their()] [L.name]!","<span class='notice'>You remove [I] from your [L.name].</span>")
+	user.visible_message("[user] rips [I] out of [user.ru_ego()] [L.name]!","<span class='notice'>You remove [I] from your [L.name].</span>")
 	if(!has_embedded_objects())
 		clear_alert("embeddedobject")
 		SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "embedded")

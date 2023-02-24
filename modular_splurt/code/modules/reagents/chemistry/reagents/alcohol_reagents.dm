@@ -61,7 +61,7 @@
 			if(!M.undergoing_cardiac_arrest() && M.can_heartattack() && prob(1))
 				M.set_heartattack(TRUE)
 				if(M.stat == CONSCIOUS)
-					M.visible_message("<span class='userdanger'>[M] clutches at [M.p_their()] chest as if [M.p_their()] heart stopped!</span>") // too much lean :(
+					M.visible_message("<span class='userdanger'>[M] clutches at [M.ru_ego()] chest as if [M.ru_ego()] heart stopped!</span>") // too much lean :(
 	..()
 
 /datum/reagent/consumable/ethanol/cum_in_a_hot_tub

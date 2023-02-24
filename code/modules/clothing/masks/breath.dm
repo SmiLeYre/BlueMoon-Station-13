@@ -16,7 +16,7 @@
 	mutantrace_variation = STYLE_MUZZLE
 
 /obj/item/clothing/mask/breath/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] is wrapping \the [src]'s tube around [user.p_their()] neck! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is wrapping \the [src]'s tube around [user.ru_ego()] neck! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	return OXYLOSS
 
 /obj/item/clothing/mask/breath/attack_self(mob/user)

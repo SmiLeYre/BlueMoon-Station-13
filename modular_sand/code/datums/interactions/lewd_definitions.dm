@@ -426,10 +426,10 @@
 
 /mob/living/proc/cum(mob/living/partner, target_orifice)
 	var/message
-	var/u_His = p_their()
-	var/u_He = p_they()
+	var/u_His = ru_ego()
+	var/u_He = ru_who()
 	var/u_S = p_s()
-	var/t_His = partner?.p_their()
+	var/t_His = partner?.ru_ego()
 	var/cumin = FALSE
 	var/partner_carbon_check = FALSE
 	var/obj/item/organ/genital/target_gen = null

@@ -55,7 +55,7 @@
 				H.stop_sound_channel(CHANNEL_HEARTBEAT)
 				H.playsound_local(H, 'sound/effects/singlebeat.ogg', 100, FALSE)
 				if(H.stat == CONSCIOUS)
-					H.visible_message("<span class='userdanger'>[H] clutches at [H.p_their()] chest as if [H.p_their()] heart is stopping!</span>")
+					H.visible_message("<span class='userdanger'>[H] clutches at [H.ru_ego()] chest as if [H.ru_ego()] heart is stopping!</span>")
 				H.adjustStaminaLoss(60)
 				H.set_heartattack(TRUE)
 				H.reagents.add_reagent(/datum/reagent/medicine/corazone, 3) // To give the victim a final chance to shock their heart before losing consciousness

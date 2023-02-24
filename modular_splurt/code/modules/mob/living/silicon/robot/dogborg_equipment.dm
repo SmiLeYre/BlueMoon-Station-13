@@ -438,7 +438,7 @@ SLEEPER CODE IS IN game/objects/items/devices/dogborg_sleeper.dm !
 			to_chat(user, span_info("Pleasure maw tank empty."))
 			return
 		user.visible_message(span_notice("You open your mouth and dispense the contents of your [src.name]'s storage into \the [target]."),
-			span_notice("[user] opens [p_their()] [src.name] and dispenses something sticky into \the [target]!")
+			span_notice("[user] opens [ru_ego()] [src.name] and dispenses something sticky into \the [target]!")
 		)
 		inserted_item.reagents.trans_to(target, inserted_item.reagents.total_volume)
 		return

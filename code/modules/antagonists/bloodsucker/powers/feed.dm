@@ -165,12 +165,12 @@
 	// Broadcast Message
 	if(amSilent)
 		//if (!iscarbon(target))
-		//	user.visible_message("<span class='notice'>[user] shifts [target] closer to [user.p_their()] mouth.</span>",
+		//	user.visible_message("<span class='notice'>[user] shifts [target] closer to [user.ru_ego()] mouth.</span>",
 		//					 	 "<span class='notice'>You secretly slip your fangs into [target]'s flesh.</span>",
 		//					 	 vision_distance = 2, ignored_mobs=target) // Only people who AREN'T the target will notice this action.
 		//else
-		var/deadmessage = target.stat == DEAD ? "" : " <i>[target.p_they(TRUE)] looks dazed, and will not remember this.</i>"
-		user.visible_message("<span class='notice'>[user] puts [target]'s wrist up to [user.p_their()] mouth.</span>", \
+		var/deadmessage = target.stat == DEAD ? "" : " <i>[target.ru_who(TRUE)] looks dazed, and will not remember this.</i>"
+		user.visible_message("<span class='notice'>[user] puts [target]'s wrist up to [user.ru_ego()] mouth.</span>", \
 						 	 "<span class='notice'>You secretly slip your fangs into [target]'s wrist.[deadmessage]</span>", \
 						 	 vision_distance = notice_range, ignored_mobs = target) // Only people who AREN'T the target will notice this action.
 		// Warn Feeder about Witnesses...
@@ -185,7 +185,7 @@
 			to_chat(user, "<span class='warning'>Someone may have noticed...</span>")
 
 	else						 // /atom/proc/visible_message(message, self_message, blind_message, vision_distance, ignored_mobs)
-		user.visible_message("<span class='warning'>[user] closes [user.p_their()] mouth around [target]'s neck!</span>", \
+		user.visible_message("<span class='warning'>[user] closes [user.ru_ego()] mouth around [target]'s neck!</span>", \
 						 "<span class='warning'>You sink your fangs into [target]'s neck.</span>")
 	// My mouth is full!
 	ADD_TRAIT(user, TRAIT_MUTE, "bloodsucker_feed")
@@ -213,11 +213,11 @@
 				break
 
 			if(amSilent)
-				to_chat(user, "<span class='warning'>Your feeding has been interrupted...but [target.p_they()] didn't seem to notice you.<span>")
+				to_chat(user, "<span class='warning'>Your feeding has been interrupted...but [target.ru_who()] didn't seem to notice you.<span>")
 			else
 				to_chat(user, "<span class='warning'>Your feeding has been interrupted!</span>")
-				user.visible_message("<span class='danger'>[user] is ripped from [target]'s throat. [target.p_their(TRUE)] blood sprays everywhere!</span>", \
-						 			 "<span class='userdanger'>Your teeth are ripped from [target]'s throat. [target.p_their(TRUE)] blood sprays everywhere!</span>")
+				user.visible_message("<span class='danger'>[user] is ripped from [target]'s throat. [target.ru_ego(TRUE)] blood sprays everywhere!</span>", \
+						 			 "<span class='userdanger'>Your teeth are ripped from [target]'s throat. [target.ru_ego(TRUE)] blood sprays everywhere!</span>")
 
 				// Deal Damage to Target (should have been more careful!)
 				if(iscarbon(target))
@@ -262,7 +262,7 @@
 			if(ishuman(target))
 				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "drankblood", /datum/mood_event/drankblood_dead) // BAD // in bloodsucker_life.dm
 			if(!warning_target_dead)
-				to_chat(user, "<span class='notice'>Your victim is dead. [target.p_their(TRUE)] blood barely nourishes you.</span>")
+				to_chat(user, "<span class='notice'>Your victim is dead. [target.ru_ego(TRUE)] blood barely nourishes you.</span>")
 				warning_target_dead = TRUE
 		// Full?
 		if(!warning_full && user.blood_volume >= bloodsuckerdatum.max_blood_volume)
@@ -289,7 +289,7 @@
 	// DONE!
 	//DeactivatePower(user,target)
 	if(amSilent)
-		to_chat(user, "<span class='notice'>You slowly release [target]'s wrist." + (target.stat == 0 ? " [target.p_their(TRUE)] face lacks expression, like you've already been forgotten.</span>" : ""))
+		to_chat(user, "<span class='notice'>You slowly release [target]'s wrist." + (target.stat == 0 ? " [target.ru_ego(TRUE)] face lacks expression, like you've already been forgotten.</span>" : ""))
 	else
 		user.visible_message("<span class='warning'>[user] unclenches their teeth from [target]'s neck.</span>", \
 							 "<span class='warning'>You retract your fangs and release [target] from your bite.</span>")

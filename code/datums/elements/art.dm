@@ -27,17 +27,25 @@
 	return ..()
 
 /datum/element/art/proc/apply_moodlet(atom/source, mob/M, impress)
-	M.visible_message("<span class='notice'>[M] stops and looks intently at [source].</span>", \
-						 "<span class='notice'>You stop to take in [source].</span>")
+	SIGNAL_HANDLER
+
+	var/msg
 	switch(impress)
-		if (0 to BAD_ART)
-			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "artbad", /datum/mood_event/artbad)
-		if (BAD_ART to GOOD_ART)
-			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "artok", /datum/mood_event/artok)
-		if (GOOD_ART to GREAT_ART)
-			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "artgood", /datum/mood_event/artgood)
 		if(GREAT_ART to INFINITY)
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "artgreat", /datum/mood_event/artgreat)
+			msg = "Что за [pick("шедевральное", "гениальное")] произведение искусства. Какой [pick("непревзойденный", "внушающий благоговение", "завораживающий", "безупречный")] стиль!"
+		if (GOOD_ART to GREAT_ART)
+			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "artgood", /datum/mood_event/artgood)
+			msg = "Это [pick("уважаемое", "похвальное", "качественное")] произведение искусства, которое можно только увидеть."
+		if (BAD_ART to GOOD_ART)
+			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "artok", /datum/mood_event/artok)
+			msg = "Это выглядит на среднем уровне, достаточно, чтобы называться \"ИСКУССТВОМ\"."
+		if (0 to BAD_ART)
+			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "artbad", /datum/mood_event/artbad)
+			msg = "Вау, [source.ru_who()] выглядит ущербно."
+
+	M.visible_message(span_notice("[M] останавливается и пристально смотрит на [source].") , \
+	span_notice("Оцениваю [source]... [msg]"))
 
 /datum/element/art/proc/on_other_examine(atom/source, mob/M)
 	apply_moodlet(source, M, impressiveness)
@@ -47,7 +55,7 @@
 	apply_moodlet(source, M, impressiveness *(O.obj_integrity/O.max_integrity))
 
 /datum/element/art/proc/on_attack_hand(atom/source, mob/M)
-	to_chat(M, "<span class='notice'>You start examining [source]...</span>")
+	to_chat(M, "<span class='notice'>Любуюсь [source]...</span>")
 	if(!do_after(M, 20, target = source))
 		return
 	on_obj_examine(source, M)
@@ -58,10 +66,10 @@
 	var/msg
 	if(user.mind?.has_antag_datum(/datum/antagonist/rev))
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "artgreat", /datum/mood_event/artgreat)
-		msg = "What \a [pick("masterpiece", "chef-d'oeuvre")] [source.p_theyre()]. So [pick("subversive", "revolutionary", "unitizing", "egalitarian")]!"
+		msg = "Какое [pick("шедевральное", "гениальное")] произведение искусства. Какой [pick("разрушительный", "революционный", "объединяющий", "эгалитарный")] стиль!"
 	else
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "artbad", /datum/mood_event/artbad)
-		msg = "Wow, [source.p_they()] sucks."
+		msg = "Вау, [source.ru_who()] выглядит ущербно."
 
-	user.visible_message(span_notice("[user] stops to inspect [source]."), \
-		span_notice("You appraise [source], inspecting the fine craftsmanship of the proletariat... [msg]"))
+	user.visible_message(span_notice("[user] прекращает изучать [source].") , \
+		span_notice("Оцениваю [source], осмотрев искусное мастерство пролетариата... [msg]"))

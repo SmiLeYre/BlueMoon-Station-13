@@ -28,7 +28,7 @@
 
 
 /datum/antagonist/valentine/greet()
-	to_chat(owner, "<span class='warning'><B>You're on a date with [date.name]! Protect [date.p_them()] at all costs. This takes priority over all other loyalties.</B></span>")
+	to_chat(owner, "<span class='warning'><B>You're on a date with [date.name]! Protect [date.ru_na()] at all costs. This takes priority over all other loyalties.</B></span>")
 
 //Squashed up a bit
 /datum/antagonist/valentine/roundend_report()
@@ -40,13 +40,13 @@
 				break
 
 	if(objectives_complete)
-		return "<span class='greentext big'>[owner.name] protected [owner.p_their()] date</span>"
+		return "<span class='greentext big'>[owner.name] protected [owner.ru_ego()] date</span>"
 	else
 		return "<span class='redtext big'>[owner.name] date failed!</span>"
 
 //Just so it's distinct, basically.
 /datum/antagonist/valentine/chem/greet()
-	to_chat(owner, "<span class='warning'><B>You're in love with [date.name]! Protect [date.p_them()] at all costs. This takes priority over all other loyalties.</B></span>")
+	to_chat(owner, "<span class='warning'><B>You're in love with [date.name]! Protect [date.ru_na()] at all costs. This takes priority over all other loyalties.</B></span>")
 
 /datum/antagonist/valentine/chem/roundend_report()
 	var/objectives_complete = TRUE
@@ -57,6 +57,6 @@
 				break
 
 	if(objectives_complete)
-		return "<span class='greentext big'>[owner.name] protected [owner.p_their()] love: [date.name]! <i>What a cutie!</i></span>"
+		return "<span class='greentext big'>[owner.name] protected [owner.ru_ego()] love: [date.name]! <i>What a cutie!</i></span>"
 	else
 		return "<span class='redtext big'>[owner.name] date failed!</span>"

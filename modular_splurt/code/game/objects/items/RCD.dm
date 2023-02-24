@@ -91,5 +91,5 @@
 		create_table(A, user)
 
 /obj/item/construction/tables/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] sets the RTC to 'Glass Table' and points it down [user.p_their()] throat! It looks like [user.p_theyre()] trying to commit suicide.</span>")
+	user.visible_message("<span class='suicide'>[user] sets the RTC to 'Glass Table' and points it down [user.ru_ego()] throat! It looks like [user.ru_who()] trying to commit suicide.</span>")
 	return (BRUTELOSS)

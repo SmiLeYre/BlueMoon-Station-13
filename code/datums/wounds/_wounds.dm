@@ -16,13 +16,15 @@
 
 /datum/wound
 	/// What it's named
-	var/name = "ouchie"
+	var/name = "Рана"
+	/// Склонение в винительном падеже
+	var/skloname = "Раны"
 	/// The description shown on the scanners
 	var/desc = ""
 	/// The basic treatment suggested by health analyzers
 	var/treat_text = ""
 	/// What the limb looks like on a cursory examine
-	var/examine_desc = "is badly hurt"
+	var/examine_desc = "сильно болит"
 
 	/// needed for "your arm has a compound fracture" vs "your arm has some third degree burns"
 	var/a_or_from = "a"
@@ -79,7 +81,7 @@
 	var/cryo_progress
 
 	/// What kind of scars this wound will create description wise once healed
-	var/scar_keyword = "generic"
+	var/scar_keyword = "уродливые шрамы"
 	/// If we've already tried scarring while removing (since remove_wound calls qdel, and qdel calls remove wound, .....) TODO: make this cleaner
 	var/already_scarred = FALSE
 	/// If we forced this wound through badmin smite, we won't count it towards the round totals
@@ -152,7 +154,7 @@
 			msg = "<b>[msg]</b>"
 			vis_dist = DEFAULT_MESSAGE_RANGE
 
-		victim.visible_message(msg, "<span class='userdanger'>Your [limb.name] [occur_text]!</span>", vision_distance = vis_dist)
+		victim.visible_message(msg, "<span class='userdanger'>Моя [limb.name] [occur_text]!!</span>", vision_distance = vis_dist)
 		if(sound_effect)
 			playsound(L.owner, sound_effect, 70 + 20 * severity, TRUE)
 
@@ -253,7 +255,7 @@
 
 	// now that we've determined we have a valid attempt at treating, we can stomp on their dreams if we're already interacting with the patient
 	if(INTERACTING_WITH(user, victim))
-		to_chat(user, "<span class='warning'>You're already interacting with [victim]!</span>")
+		to_chat(user, span_warning("Уже взаимодействую с [victim]!"))
 		return TRUE
 
 	// lastly, treat them
@@ -315,19 +317,19 @@
   * * mob/user: The user examining the wound's owner, if that matters
   */
 /datum/wound/proc/get_examine_description(mob/user)
-	. = "[victim.p_their(TRUE)] [limb.name] [examine_desc]"
+	. = "[victim.ru_ego(TRUE)] [limb.name] [examine_desc]"
 	. = severity <= WOUND_SEVERITY_MODERATE ? "[.]." : "<B>[.]!</B>"
 
 /datum/wound/proc/get_scanner_description(mob/user)
-	return "Type: [name]\nSeverity: [severity_text()]\nDescription: [desc]\nRecommended Treatment: [treat_text]"
+	return "Тип: [name]\nТяжесть: [severity_text()]\nОписание: [desc]\nВозможное лечение: [treat_text]"
 
 /datum/wound/proc/severity_text()
 	switch(severity)
 		if(WOUND_SEVERITY_TRIVIAL)
-			return "Trivial"
+			return "Тривиальная"
 		if(WOUND_SEVERITY_MODERATE)
-			return "Moderate"
+			return "Умеренная"
 		if(WOUND_SEVERITY_SEVERE)
-			return "Severe"
+			return "Тяжёлая"
 		if(WOUND_SEVERITY_CRITICAL)
-			return "Critical"
+			return "Критическая"

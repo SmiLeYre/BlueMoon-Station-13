@@ -68,11 +68,11 @@
 		returnIcon = "[icon2html('icons/misc/mark_icons.dmi', world, "vassal_grey")]"
 	// Are you serving the same master as I am?
 	else if(viewer.mind.has_antag_datum(ANTAG_DATUM_VASSAL) in vassaldatum.master.vassals)
-		returnString += "[p_they(TRUE)] bears the mark of your Master"
+		returnString += "[ru_who(TRUE)] bears the mark of your Master"
 		returnIcon = "[icon2html('icons/misc/mark_icons.dmi', world, "vassal")]"
 	// You serve a different Master than I do.
 	else
-		returnString += "[p_they(TRUE)] bears the mark of another Bloodsucker"
+		returnString += "[ru_who(TRUE)] bears the mark of another Bloodsucker"
 		returnIcon = "[icon2html('icons/misc/mark_icons.dmi', world, "vassal_grey")]"
 
 	returnString += "</span>\]" // \n"  Don't need spacers. Using . += "" in examine.dm does this on its own.

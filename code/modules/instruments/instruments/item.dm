@@ -41,7 +41,7 @@
 		STOP_PROCESSING(SSprocessing, src)
 
 /obj/item/instrument/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] begins to play 'Gloomy Sunday'! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins to play 'Gloomy Sunday'! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	return (BRUTELOSS)
 
 /obj/item/instrument/attack_self(mob/user)

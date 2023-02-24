@@ -15,7 +15,7 @@
 	resistance_flags = FIRE_PROOF
 
 /obj/item/banhammer/suicide_act(mob/user)
-		user.visible_message("<span class='suicide'>[user] is hitting [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to ban [user.p_them()]self from life.</span>")
+		user.visible_message("<span class='suicide'>[user] is hitting [user.ru_na()]self with [src]! It looks like [user.ru_who()] trying to ban [user.ru_na()]self from life.</span>")
 		return (BRUTELOSS|FIRELOSS|TOXLOSS|OXYLOSS)
 /*
 oranges says: This is a meme relating to the english translation of the ss13 russian wiki page on lurkmore.
@@ -46,7 +46,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 
 /obj/item/sord/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is trying to impale [user.p_them()]self with [src]! It might be a suicide attempt if it weren't so shitty.</span>", \
+	user.visible_message("<span class='suicide'>[user] is trying to impale [user.ru_na()]self with [src]! It might be a suicide attempt if it weren't so shitty.</span>", \
 	"<span class='suicide'>You try to impale yourself with [src], but it's USELESS...</span>")
 	return SHAME
 
@@ -77,7 +77,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	AddElement(/datum/element/sword_point)
 
 /obj/item/claymore/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is falling on [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is falling on [src]! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	return(BRUTELOSS)
 
 /obj/item/claymore/purified
@@ -267,7 +267,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
 
 /obj/item/katana/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is slitting [user.p_their()] stomach open with [src]! It looks like [user.p_theyre()] trying to commit seppuku!</span>")
+	user.visible_message("<span class='suicide'>[user] is slitting [user.ru_ego()] stomach open with [src]! It looks like [user.ru_who()] trying to commit seppuku!</span>")
 	playsound(src, 'sound/weapons/bladeslice.ogg', 50, 1)
 	return(BRUTELOSS)
 
@@ -291,7 +291,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 
 /obj/item/katana/timestop/suicide_act(mob/living/user) // stolen from hierophant staff
 	new /obj/effect/timestop/magic(get_turf(user), 1, 50, list(user)) // free usage for dying
-	user.visible_message("<span class='suicide'>[user] poses menacingly with the [src]! It looks like [user.p_theyre()] trying to teleport behind someone!</span>")
+	user.visible_message("<span class='suicide'>[user] poses menacingly with the [src]! It looks like [user.ru_who()] trying to teleport behind someone!</span>")
 	user.say("Heh.. Nothing personnel, kid..", forced = "temporal katana suicide")
 	sleep(20)
 	if(!user)
@@ -699,7 +699,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 		sharpness = SHARP_NONE
 
 /obj/item/switchblade/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is slitting [user.p_their()] own throat with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is slitting [user.ru_ego()] own throat with [src]! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	return (BRUTELOSS)
 
 /obj/item/phone
@@ -717,9 +717,9 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 
 /obj/item/phone/suicide_act(mob/user)
 	if(locate(/obj/structure/chair/stool) in user.loc)
-		user.visible_message("<span class='suicide'>[user] begins to tie a noose with [src]'s cord! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		user.visible_message("<span class='suicide'>[user] begins to tie a noose with [src]'s cord! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	else
-		user.visible_message("<span class='suicide'>[user] is strangling [user.p_them()]self with [src]'s cord! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		user.visible_message("<span class='suicide'>[user] is strangling [user.ru_na()]self with [src]'s cord! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	return(OXYLOSS)
 
 /obj/item/cane
@@ -781,7 +781,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	icon_state = "ectoplasm"
 
 /obj/item/ectoplasm/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is inhaling [src]! It looks like [user.p_theyre()] trying to visit the astral plane!</span>")
+	user.visible_message("<span class='suicide'>[user] is inhaling [src]! It looks like [user.ru_who()] trying to visit the astral plane!</span>")
 	return (OXYLOSS)
 
 // /obj/item/ectoplasm/angelic
@@ -1170,7 +1170,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 		return
 
 	playsound(get_turf(owner), 'sound/effects/hit_punch.ogg', 50, TRUE, -1)
-	owner.visible_message("<span class='danger'>[owner] shamefully bops [owner.p_them()]self with [owner.p_their()] [src.name].</span>", "<span class='userdanger'>You shamefully bop yourself with your [src.name].</span>", \
+	owner.visible_message("<span class='danger'>[owner] shamefully bops [owner.ru_na()]self with [owner.ru_ego()] [src.name].</span>", "<span class='userdanger'>You shamefully bop yourself with your [src.name].</span>", \
 		"<span class='hear'>You hear a dull thud!</span>")
 	log_combat(owner, owner, "bopped", src.name, "(self)")
 	owner.do_attack_animation(owner)
@@ -1188,11 +1188,11 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 		return
 
 	if(!in_range(owner, sucker) || !(owner.mobility_flags & MOBILITY_USE))
-		to_chat(sucker, "<span class='notice'>Phew... you moved away before [owner] noticed you saw [owner.p_their()] [src.name]...</span>")
+		to_chat(sucker, "<span class='notice'>Phew... you moved away before [owner] noticed you saw [owner.ru_ego()] [src.name]...</span>")
 		return
 
-	to_chat(owner, "<span class='warning'>[sucker] looks down at your [src.name] before trying to avert [sucker.p_their()] eyes, but it's too late!</span>")
-	to_chat(sucker, "<span class='danger'><b>[owner] sees the fear in your eyes as you try to look away from [owner.p_their()] [src.name]!</b></span>")
+	to_chat(owner, "<span class='warning'>[sucker] looks down at your [src.name] before trying to avert [sucker.ru_ego()] eyes, but it's too late!</span>")
+	to_chat(sucker, "<span class='danger'><b>[owner] sees the fear in your eyes as you try to look away from [owner.ru_ego()] [src.name]!</b></span>")
 
 	owner.face_atom(sucker)
 	if(owner.client)
@@ -1202,20 +1202,20 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	owner.do_attack_animation(sucker)
 
 	if(HAS_TRAIT(owner, TRAIT_HULK))
-		owner.visible_message("<span class='danger'>[owner] bops [sucker] with [owner.p_their()] [src.name] much harder than intended, sending [sucker.p_them()] flying!</span>", \
-			"<span class='danger'>You bop [sucker] with your [src.name] much harder than intended, sending [sucker.p_them()] flying!</span>", "<span class='hear'>You hear a sickening sound of flesh hitting flesh!</span>", ignored_mobs=list(sucker))
-		to_chat(sucker, "<span class='userdanger'>[owner] bops you incredibly hard with [owner.p_their()] [src.name], sending you flying!</span>")
+		owner.visible_message("<span class='danger'>[owner] bops [sucker] with [owner.ru_ego()] [src.name] much harder than intended, sending [sucker.ru_na()] flying!</span>", \
+			"<span class='danger'>You bop [sucker] with your [src.name] much harder than intended, sending [sucker.ru_na()] flying!</span>", "<span class='hear'>You hear a sickening sound of flesh hitting flesh!</span>", ignored_mobs=list(sucker))
+		to_chat(sucker, "<span class='userdanger'>[owner] bops you incredibly hard with [owner.ru_ego()] [src.name], sending you flying!</span>")
 		sucker.apply_damage(50, STAMINA)
 		sucker.Knockdown(50)
 		log_combat(owner, sucker, "bopped", src.name, "(setup- Hulk)")
 		var/atom/throw_target = get_edge_target_turf(sucker, owner.dir)
 		sucker.throw_at(throw_target, 6, 3, owner)
 	else
-		owner.visible_message("<span class='danger'>[owner] bops [sucker] with [owner.p_their()] [src.name]!</span>", "<span class='danger'>You bop [sucker] with your [src.name]!</span>", \
+		owner.visible_message("<span class='danger'>[owner] bops [sucker] with [owner.ru_ego()] [src.name]!</span>", "<span class='danger'>You bop [sucker] with your [src.name]!</span>", \
 			"<span class='hear'>You hear a dull thud!</span>", ignored_mobs=list(sucker))
 		sucker.apply_damage(15, STAMINA)
 		log_combat(owner, sucker, "bopped", src.name, "(setup)")
-		to_chat(sucker, "<span class='userdanger'>[owner] bops you with [owner.p_their()] [src.name]!</span>")
+		to_chat(sucker, "<span class='userdanger'>[owner] bops you with [owner.ru_ego()] [src.name]!</span>")
 	qdel(src)
 
 /obj/item/slapper
@@ -1249,11 +1249,11 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	. = TRUE
 
 	if(!(locate(/mob/living/carbon) in orange(1, offerer)))
-		visible_message(span_danger("[offerer] raises [offerer.p_their()] arm, looking around for a high-five, but there's no one around!"), \
+		visible_message(span_danger("[offerer] raises [offerer.ru_ego()] arm, looking around for a high-five, but there's no one around!"), \
 			span_warning("You post up, looking for a high-five, but finding no one within range!"), null, 2)
 		return
 
-	offerer.visible_message(span_notice("[offerer] raises [offerer.p_their()] arm, looking for a high-five!"), \
+	offerer.visible_message(span_notice("[offerer] raises [offerer.ru_ego()] arm, looking for a high-five!"), \
 		span_notice("You post up, looking for a high-five!"), null, 2)
 	offerer.apply_status_effect(STATUS_EFFECT_OFFERING, src, /atom/movable/screen/alert/give/highfive)
 

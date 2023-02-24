@@ -141,7 +141,7 @@
 	description = "Freezing smoke comes out of the scrubbers."
 
 /datum/round_event/vent_clog/beer/announce()
-	priority_announce("The scrubbers network is experiencing an unexpected surge of pressurized beer. Some ejection of contents may occur.", "Atmospherics alert")
+	priority_announce("Сеть скрубберов испытывает неожиданный всплеск <b>пива</b> под давлением. Может произойти выброс содержимого.", "Атмосферная Тревога")
 
 /datum/round_event/vent_clog/beer/start()
 	for(var/obj/machinery/atmospherics/components/unary/vent in vents)

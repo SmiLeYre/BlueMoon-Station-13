@@ -425,9 +425,7 @@
 		/obj/item/kitchen/knife/combat/survival)
 
 /datum/outfit/syndiesquad/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
-	if(visualsOnly)
-		return
-
+	. = ..()
 	var/obj/item/radio/R = H.ears
 	R.set_frequency(FREQ_CENTCOM)
 	R.freqlock = TRUE
@@ -439,7 +437,7 @@
 	W.icon_state = "syndie"
 	W.access = get_all_accesses()//They get full station access.
 	W.access += get_centcom_access("Death Commando")//Let's add their alloted CentCom access.
-	W.assignment = "Syndicate Operative"
+	W.assignment = "Syndicate Special Forces"
 	W.registered_name = H.real_name
 	W.update_label(W.registered_name, W.assignment)
 

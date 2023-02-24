@@ -324,7 +324,7 @@
 	if(!isclownjob(user))
 		return
 
-	//var/u_His = user.p_their()
+	//var/u_His = user.ru_ego()
 	var/list/honks = list(
 		"<span class='lewd'>\ Сиськи <b>[user]</b> громко пищат!</span>",
 		"<span class='lewd'>\ <b>[user]</b> издаёт громкое пищание своими [pick(GLOB.breast_nouns)]!</span>"
@@ -350,7 +350,7 @@
 	if(!isclownjob(user))
 		return
 
-	//var/u_His = user.p_their()
+	//var/u_His = user.ru_ego()
 	var/list/honks = list(
 		"<span class='lewd'>\ Сиськи <b>[target]</b> громко пищат!</span>",
 		"<span class='lewd'>\ <b>[target]</b> издаёт громкое пищание своими [pick(GLOB.breast_nouns)]!</span>"
@@ -396,7 +396,7 @@
 
 //Own stuff
 /datum/interaction/lewd/oral/selfsuck
-	description = "Отсосать самому себе."
+	description = "Член. Отсосать самому себе."
 	interaction_sound = null
 	require_target_vagina = REQUIRE_NONE
 	require_user_penis = REQUIRE_EXPOSED
@@ -417,7 +417,7 @@
 	playlewdinteractionsound(user, 'sound/items/bikehorn.ogg', 40, 1, -1)
 
 /datum/interaction/lewd/oral/suckvagself
-	description = "Отлизать свою киску."
+	description = "Вагина. Отлизать свою киску."
 	interaction_sound = null
 	require_user_penis = REQUIRE_NONE
 	user_is_target = TRUE
@@ -429,7 +429,7 @@
 	user.do_oral_self(user, "vagina")
 
 /datum/interaction/lewd/breastfuckself
-	description = "Трахнуть свои сиськи."
+	description = "Грудь. Трахнуть свои сиськи."
 	interaction_sound = null
 	require_user_penis = REQUIRE_EXPOSED
 	require_user_breasts = REQUIRE_EXPOSED
@@ -449,7 +449,7 @@
 	playlewdinteractionsound(user, 'sound/items/bikehorn.ogg', 40, 1, -1)
 
 /datum/interaction/lewd/fuck/belly
-	description = "Трахнуть в пупок."
+	description = "Живот. Трахнуть в пупок."
 	require_target_vagina = REQUIRE_NONE
 	require_target_belly = REQUIRE_EXPOSED
 	write_log_user = "трахнул(а) в пупок"
@@ -467,7 +467,7 @@
 	playlewdinteractionsound(target, 'sound/items/bikehorn.ogg', 40, 1, -1)
 
 /datum/interaction/lewd/deflate_belly
-	description = "Уменьшить живот."
+	description = "Живот. Уменьшить свой живот."
 	require_user_belly = REQUIRE_EXPOSED
 	interaction_sound = null
 	max_distance = 0
@@ -481,7 +481,7 @@
 		gut.modify_size(-1)
 
 /datum/interaction/lewd/inflate_belly
-	description = "Inflate belly"
+	description = "Живот. Надуть свой живот."
 	require_user_belly = REQUIRE_EXPOSED
 	interaction_sound = null
 	max_distance = 0
@@ -495,7 +495,7 @@
 		gut.modify_size(1)
 
 /datum/interaction/lewd/nuzzle_belly
-	description = "Тыкнуться носом в живот партнёра."
+	description = "Живот. Тыкнуться носом."
 	require_target_belly = REQUIRE_EXPOSED
 	interaction_sound = null
 	max_distance = 1
@@ -506,7 +506,7 @@
 	user.nuzzle_belly(target)
 
 /datum/interaction/lewd/do_breastsmother
-	description = "Придушить лицо партнёра своей грудью."
+	description = "Грудь. Придушить лицо."
 	require_user_breasts = REQUIRE_EXPOSED
 	max_distance = 1
 	interaction_sound = null
@@ -525,7 +525,7 @@
 	playlewdinteractionsound(user, 'sound/items/bikehorn.ogg', 40, 1, -1)
 
 /datum/interaction/lewd/lick_sweat
-	description = "Слизывать пот партнёра."
+	description = "Подмышки. Слизывать пот."
 	require_user_mouth = TRUE
 	max_distance = 1
 	interaction_sound = null
@@ -536,7 +536,7 @@
 	user.lick_sweat(target)
 
 /datum/interaction/lewd/smother_armpit
-	description = "Зажать лицо партнёра в свою подмышку."
+	description = "Подмышки. Зажать лицо партнёра."
 	max_distance = 1
 	interaction_sound = null
 	write_log_target = "Был(а) зажат(а) лицом в подмышку"
@@ -546,7 +546,7 @@
 	user.smother_armpit(target)
 
 /datum/interaction/lewd/lick_armpit
-	description = "Вылизать подмышку партнёра."
+	description = "Подмышки. Вылизать подмышку."
 	require_user_mouth = TRUE
 	max_distance = 1
 	interaction_sound = null
@@ -557,7 +557,7 @@
 	user.lick_armpit(target)
 
 /datum/interaction/lewd/fuck_armpit
-	description = "Трахнуть подмышку партнёра."
+	description = "Подмышки. Трахнуть в подмышку."
 	require_user_penis = REQUIRE_EXPOSED
 	interaction_sound = null
 	write_log_target = "был(-а) трахнут(-а) в подмышку"
@@ -576,7 +576,7 @@
 	playlewdinteractionsound(user, 'sound/items/bikehorn.ogg', 40, 1, -1)
 
 /datum/interaction/lewd/do_pitjob
-	description = "Вздрочнуть пенис партнёра своей подмышкой."
+	description = "Подмышки. Вздрочнуть пенис партнёра."
 	require_target_penis = REQUIRE_EXPOSED
 	interaction_sound = null
 	write_log_target = "получил(-а) мастурбацию подмышкой от"
@@ -595,7 +595,7 @@
 	playlewdinteractionsound(user, 'sound/items/bikehorn.ogg', 40, 1, -1)
 
 /datum/interaction/lewd/do_boobjob
-	description = "Вздрочнуть пенис партнёра своей грудью."
+	description = "Грудь. Вздрочнуть пенис партнёра."
 	require_user_breasts = REQUIRE_EXPOSED
 	require_target_penis = REQUIRE_EXPOSED
 	interaction_sound = null
@@ -615,7 +615,7 @@
 	playlewdinteractionsound(user, 'sound/items/bikehorn.ogg', 40, 1, -1)
 
 /datum/interaction/lewd/lick_nuts
-	description = "Полизать яички партнёра."
+	description = "Яйца. Полизать яички партнёра."
 	require_user_mouth = TRUE
 	require_target_balls = REQUIRE_EXPOSED
 	interaction_sound = null
@@ -627,7 +627,7 @@
 	user.lick_nuts(target)
 
 /datum/interaction/lewd/grope_ass
-	description = "Полапать задницу."
+	description = "Попа. Полапать задницу."
 	simple_message = "USER сжимает задницу TARGET!"
 	require_user_hands = TRUE
 	max_distance = 1
@@ -636,7 +636,7 @@
 	write_log_user = "потискал(а) задницу"
 
 /datum/interaction/lewd/fuck_cock
-	description = "Трахнуть в уретру."
+	description = "Член. Трахнуть в уретру."
 	require_user_penis = REQUIRE_EXPOSED
 	require_target_penis = REQUIRE_EXPOSED
 	interaction_sound = null
@@ -653,7 +653,7 @@
 	playlewdinteractionsound(user, 'sound/items/bikehorn.ogg', 40, 1, -1)
 
 /datum/interaction/lewd/nipple_fuck
-	description = "Трахнуть в соски"
+	description = "Грудь. Трахнуть в сосок."
 	require_target_topless = TRUE
 	require_user_penis = REQUIRE_EXPOSED
 	write_log_user = "трахнул(а) соски"
@@ -673,7 +673,7 @@
 	playlewdinteractionsound(target, 'sound/items/bikehorn.ogg', 40, 1, -1)
 
 /datum/interaction/lewd/fuck_thighs
-	description = "Просунуть между бёдрами партнёра"
+	description = "Бёдра. Трахнуть бёдра."
 	require_user_penis = REQUIRE_EXPOSED
 	require_target_legs = REQUIRE_ANY
 	require_target_num_legs = 2
@@ -695,7 +695,7 @@
 	playlewdinteractionsound(user, 'sound/items/bikehorn.ogg', 40, 1, -1)
 
 /datum/interaction/lewd/do_thighjob
-	description = "Вздрочнуть орган партнёра бёдрами."
+	description = "Бёдра. Подрочить член бёдрами."
 	require_target_penis = REQUIRE_EXPOSED
 	require_user_legs = REQUIRE_ANY
 	require_user_num_legs = 2

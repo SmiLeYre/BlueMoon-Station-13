@@ -108,7 +108,7 @@
 		investigate_log("had its contents examined by [user] as a ghost.", INVESTIGATE_GHOST)
 
 	if(HAS_TRAIT(user, TRAIT_SKITTISH))
-		. += "<span class='notice'>If you bump into [p_them()] while running, you will jump inside.</span>"
+		. += "<span class='notice'>If you bump into [ru_na()] while running, you will jump inside.</span>"
 
 /obj/structure/closet/CanAllowThrough(atom/movable/mover, turf/target)
 	. = ..()

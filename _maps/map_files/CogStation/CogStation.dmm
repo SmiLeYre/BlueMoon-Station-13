@@ -5520,8 +5520,7 @@
 	},
 /area/service/chapel/main)
 "aob" = (
-/obj/structure/closet/emcloset,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/machinery/vending/wardrobe/syndie_wardrobe,
 /turf/open/floor/plating,
 /area/maintenance/solars/port)
 "aoc" = (
@@ -70135,6 +70134,17 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/brig)
+"rij" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/closet/emcloset,
+/obj/effect/spawner/lootdrop/maintenance{
+	lootcount = 8;
+	name = "8maintenance loot spawner"
+	},
+/turf/open/floor/plating,
+/area/maintenance/solars/port)
 "rlq" = (
 /obj/item/melee/baseball_bat,
 /obj/item/pipe{
@@ -91180,7 +91190,7 @@ aaa
 aaa
 aaU
 aiN
-alu
+rij
 aDT
 aGy
 awu

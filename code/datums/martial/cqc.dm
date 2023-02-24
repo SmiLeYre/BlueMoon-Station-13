@@ -60,7 +60,7 @@
 	var/damage = damage_roll(A,D)
 	if(!CHECK_MOBILITY(D, MOBILITY_STAND) && CHECK_MOBILITY(D, MOBILITY_USE))
 		log_combat(A, D, "knocked out (Head kick)(CQC)")
-		D.visible_message("<span class='warning'>[A] kicks [D]'s head, knocking [D.p_them()] out!</span>", \
+		D.visible_message("<span class='warning'>[A] kicks [D]'s head, knocking [D.ru_na()] out!</span>", \
 					  		"<span class='userdanger'>[A] kicks your head, knocking you out!</span>")
 		playsound(get_turf(A), 'sound/weapons/genhit1.ogg', 50, 1, -1)
 		D.SetSleeping(300)

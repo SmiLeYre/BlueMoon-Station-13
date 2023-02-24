@@ -54,7 +54,7 @@
 		if(5,6)
 			A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
 			atk_verb = pick("punches", "kicks", "hits", "slams into")
-			D.visible_message("<span class='danger'>[A] [atk_verb] [D] with inhuman strength, sending [D.p_them()] flying backwards!</span>", \
+			D.visible_message("<span class='danger'>[A] [atk_verb] [D] with inhuman strength, sending [D.ru_na()] flying backwards!</span>", \
 							  "<span class='userdanger'>[A] [atk_verb] you with inhuman strength, sending you flying backwards!</span>")
 			D.apply_damage(damage*2, BRUTE)
 			playsound(get_turf(D), 'sound/effects/meteorimpact.ogg', 25, 1, -1)

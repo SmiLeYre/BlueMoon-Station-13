@@ -8665,7 +8665,7 @@
 /turf/open/floor/plasteel,
 /area/commons/fitness/recreation)
 "awE" = (
-/obj/item/storage/briefcase,
+/obj/machinery/vending/wardrobe/syndie_wardrobe,
 /turf/open/floor/plating,
 /area/maintenance/department/security/brig)
 "awI" = (

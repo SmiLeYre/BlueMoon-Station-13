@@ -33,36 +33,36 @@
 	AddComponent(/datum/component/stationloving)
 
 	// Define pronouns
-	var/p_they = p_they()
+	var/ru_who = ru_who()
 	var/p_s = p_s()
 
 	// Add custom description
-	normal_desc = "[p_they] look[p_s] like [p_they] need[p_s] a friend."
+	normal_desc = "[ru_who] look[p_s] like [ru_who] need[p_s] a friend."
 
 /obj/item/toy/plush/lizardplushie/saliith/examine(mob/user)
 	. = ..()
 
 	// Define pronouns
-	var/p_them = p_them()
-	//var/p_they = p_they()
+	var/ru_na = ru_na()
+	//var/ru_who = ru_who()
 	//var/p_are = p_are()
 
 	// Check for stuffing
 	if(!stuffed)
 		// Update examine text and return
-		. += span_deadsay("[p_they(TRUE)] [p_are()] dead.")
+		. += span_deadsay("[ru_who(TRUE)] [p_are()] dead.")
 		return
 
 	// Check if user is Saliith himself
 	if(user.ckey == "sandpoot")
 		// Update examine text and return
-		. += span_deadsay("You feel a sense of familiarity from [p_them].")
+		. += span_deadsay("You feel a sense of familiarity from [ru_na].")
 		return
 
 	// Check for antag datums
 	if((length(user?.mind?.antag_datums) >= 1))
 		// Update examine text
-		. += span_warning("[src] gives you a menacing glare! Patting [p_them] would be a dangerous mistake.")
+		. += span_warning("[src] gives you a menacing glare! Patting [ru_na] would be a dangerous mistake.")
 
 /obj/item/toy/plush/lizardplushie/saliith/attack_self(mob/living/carbon/human/user)
 	// Check if user exists
@@ -76,14 +76,14 @@
 		return ..()
 
 	// Define pronouns
-	var/p_they = p_they()
-	//var/p_their = p_their()
+	var/ru_who = ru_who()
+	//var/ru_ego = ru_ego()
 	var/p_s = p_s()
 
 	// Check if user is Saliith himself
 	if(user.ckey == "sandpoot")
 		// Alert him and return
-		to_chat(user, span_notice("[p_they] give[p_s] you a hesitant gaze, but accept[p_s] the gesture anyhow."))
+		to_chat(user, span_notice("[ru_who] give[p_s] you a hesitant gaze, but accept[p_s] the gesture anyhow."))
 		return ..()
 
 	// Check if user is an antagonist role
@@ -96,7 +96,7 @@
 		// Check if user is a brainwashed victim
 		else if(user?.mind?.has_antag_datum(/datum/antagonist/brainwashed))
 			// Alert the user
-			to_chat(user, span_notice("[src] senses that you're not in control of your actions, and offers [p_their()] sympathy."))
+			to_chat(user, span_notice("[src] senses that you're not in control of your actions, and offers [ru_ego()] sympathy."))
 
 		// User is not a whitelisted antagonist
 		else
@@ -125,7 +125,7 @@
 	// User has no antagonist status
 
 	// Alert the user
-	to_chat(user, span_notice("[p_they] give[p_s] you a hesitant gaze, but accepts the gesture anyhow."))
+	to_chat(user, span_notice("[ru_who] give[p_s] you a hesitant gaze, but accepts the gesture anyhow."))
 
 	// Return
 	return ..()

@@ -32,7 +32,7 @@
 	if(istype(I, /obj/item/weldingtool))
 		var/obj/item/weldingtool/W = I
 		if(W.welding)
-			user.visible_message("<span class='warning'>[user] burns the boommouse with [user.p_their()] [W.name]!</span>", "<span class='userdanger'>That was stupid of you.</span>")
+			user.visible_message("<span class='warning'>[user] burns the boommouse with [user.ru_ego()] [W.name]!</span>", "<span class='userdanger'>That was stupid of you.</span>")
 			var/message_admins = "[ADMIN_LOOKUPFLW(user)] triggered a boommouse explosion at [ADMIN_VERBOSEJMP(T)]."
 			GLOB.bombers += message_admins
 			message_admins(message_admins)

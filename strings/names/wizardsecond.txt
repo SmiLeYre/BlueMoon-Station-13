@@ -1,40 +1,40 @@
-Dark
-Darkmagic
-Darko
-Gray
-Honko
-Inverse
-le Fay
-of Void
-Shado
-Smith
-the All Knowing
-the Amazing
-the Bandit Killer
-the Benevolent
-the Blue
-the Brown
-the Conquerer
-the Deathless
-the Destroyer
-the Dragon Spooker
-the Emperor
-the Gray
-the Great
-the Magician
-the Powerful
-the Raven
-the Red
-the Remorseful
-the Seething
-the Sorcelator
-the Spiral King
-the Unending
-the Unstoppable
-the Weeping
-the White
-the Wise
-the Wizzard
-Unseen
-Weatherwax
-Yagg
+Темнота
+Даркмаджик
+Дарко
+Серый
+Хонко
+Инверсионный
+Ле Фэй
+Пустоты
+Шадо
+Смит
+Всезнающий
+Удивительный
+Бандит-убийца
+Доброжелательный
+Синий
+Коричневый
+Завоеватель
+Бессмертный
+Разрушитель
+Дракон-призрак
+Император
+Серый
+Великий
+Волшебник
+Могущественный
+Ворон
+Красный
+Раскаяние
+Крохот
+Сорселятор
+Король Спирали
+Бесконечный
+"Неудержимый"
+Плач
+Белый
+Мудрый
+Волшебник
+Невидимый
+Погода Воск
+Ягг

@@ -1,5 +1,5 @@
 /datum/interaction/lewd/earfuck
-	description = "Изнасиловать в ухо."
+	description = "Убийственно. Изнасиловать в ухо."
 	interaction_sound = null
 	require_user_penis = REQUIRE_EXPOSED
 	require_target_ears = REQUIRE_EXPOSED
@@ -9,7 +9,7 @@
 	extreme = TRUE
 
 /datum/interaction/lewd/earfuck/earsocketfuck
-	description = "Fuck their earsocket."
+	description = "Убийственно. Изнасиловать в ушную раковину."
 	require_target_ears = null
 	require_target_earsockets = REQUIRE_EXPOSED
 	write_log_user = "earsocket fucked"
@@ -29,7 +29,7 @@
 		if(cli && istype(C))
 			if(cli.prefs.extremeharm != "No")
 				if(prob(15))
-					C.bleed(50)
+					C.bleed(5)
 					C.add_splatter_floor(get_turf(BLOOD_COLOR_HUMAN), TRUE)
 					new/obj/effect/decal/cleanable/blood
 				if(prob(45))

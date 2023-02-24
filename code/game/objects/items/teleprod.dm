@@ -13,7 +13,7 @@
 	do_teleport(L, get_turf(L), 15, channel = TELEPORT_CHANNEL_BLUESPACE)
 
 /obj/item/melee/baton/cattleprod/teleprod/clowning_around(mob/living/user)
-	user.visible_message("<span class='danger'>[user] accidentally hits [user.p_them()]self with [src]!</span>", \
+	user.visible_message("<span class='danger'>[user] accidentally hits [user.ru_na()]self with [src]!</span>", \
 						"<span class='userdanger'>You accidentally hit yourself with [src]!</span>")
 	SEND_SIGNAL(user, COMSIG_LIVING_MINOR_SHOCK)
 	user.DefaultCombatKnockdown(stamina_loss_amount * 6)

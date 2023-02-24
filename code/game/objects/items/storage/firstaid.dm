@@ -24,7 +24,7 @@
 	desc = "A first aid kit with the ability to heal common types of injuries."
 
 /obj/item/storage/firstaid/regular/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins giving [user.p_them()]self aids with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins giving [user.ru_na()]self aids with \the [src]! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	return BRUTELOSS
 
 /obj/item/storage/firstaid/regular/PopulateContents()
@@ -81,7 +81,7 @@
 	item_state = "firstaid-brute"
 
 /obj/item/storage/firstaid/brute/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins beating [user.p_them()]self over the head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins beating [user.ru_na()]self over the head with \the [src]! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	return BRUTELOSS
 
 /obj/item/storage/firstaid/brute/PopulateContents()
@@ -100,7 +100,7 @@
 	item_state = "firstaid-burn"
 
 /obj/item/storage/firstaid/fire/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins rubbing \the [src] against [user.p_them()]self! It looks like [user.p_theyre()] trying to start a fire!</span>")
+	user.visible_message("<span class='suicide'>[user] begins rubbing \the [src] against [user.ru_na()]self! It looks like [user.ru_who()] trying to start a fire!</span>")
 	return FIRELOSS
 
 /obj/item/storage/firstaid/fire/PopulateContents()
@@ -120,7 +120,7 @@
 	item_state = "firstaid-toxin"
 
 /obj/item/storage/firstaid/toxin/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins licking the lead paint off \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins licking the lead paint off \the [src]! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	return TOXLOSS
 
 /obj/item/storage/firstaid/toxin/PopulateContents()
@@ -139,7 +139,7 @@
 	item_state = "firstaid-o2"
 
 /obj/item/storage/firstaid/o2/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins hitting [user.p_their()] neck with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins hitting [user.ru_ego()] neck with \the [src]! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	return OXYLOSS
 
 /obj/item/storage/firstaid/o2/PopulateContents()
@@ -197,7 +197,7 @@
 	item_state = "firstaid-rad"
 
 /obj/item/storage/firstaid/radbgone/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins licking the lead paint off \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins licking the lead paint off \the [src]! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	return TOXLOSS
 
 /obj/item/storage/firstaid/radbgone/PopulateContents()
@@ -257,7 +257,7 @@
 
 
 /obj/item/storage/pill_bottle/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is trying to get the cap off [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is trying to get the cap off [src]! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	return (TOXLOSS)
 
 /obj/item/storage/pill_bottle/charcoal

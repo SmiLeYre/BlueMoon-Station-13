@@ -652,9 +652,9 @@
 		var/mob/living/carbon/human/H = M
 		if(prob(7))
 			if(H.w_uniform)
-				H.visible_message(pick("<b>[H]</b>'s collar pops up without warning.</span>", "<b>[H]</b> flexes [H.p_their()] arms."))
+				H.visible_message(pick("<b>[H]</b>'s collar pops up without warning.</span>", "<b>[H]</b> flexes [H.ru_ego()] arms."))
 			else
-				H.visible_message("<b>[H]</b> flexes [H.p_their()] arms.")
+				H.visible_message("<b>[H]</b> flexes [H.ru_ego()] arms.")
 	if(prob(10))
 		M.say(pick("Shit was SO cash.", "You are everything bad in the world.", "What sports do you play, other than 'jack off to naked drawn Japanese people?'", "Don’t be a stranger. Just hit me with your best shot.", "My name is John and I hate every single one of you."), forced = "spraytan")
 	return ..()
@@ -675,7 +675,7 @@
 	if(!istype(H))
 		return
 	to_chat(H, "<span class='warning'><b>You crumple in agony as your flesh wildly morphs into new forms!</b></span>")
-	H.visible_message("<b>[H]</b> falls to the ground and screams as [H.p_their()] skin bubbles and froths!") //'froths' sounds painful when used with SKIN.
+	H.visible_message("<b>[H]</b> falls to the ground and screams as [H.ru_ego()] skin bubbles and froths!") //'froths' sounds painful when used with SKIN.
 	H.DefaultCombatKnockdown(60)
 	addtimer(CALLBACK(src, .proc/mutate, H), 30)
 	return

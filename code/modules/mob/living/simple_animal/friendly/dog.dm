@@ -348,10 +348,10 @@ GLOBAL_LIST_INIT(strippable_corgi_items, create_strippable_list(list(
 
 	if(valid)
 		if(health <= 0)
-			to_chat(user, "<span class='notice'>There is merely a dull, lifeless look in [real_name]'s eyes as you put the [item_to_add] on [p_them()].</span>")
+			to_chat(user, "<span class='notice'>There is merely a dull, lifeless look in [real_name]'s eyes as you put the [item_to_add] on [ru_na()].</span>")
 		else if(user)
 			user.visible_message("<span class='notice'>[user] puts [item_to_add] on [real_name]'s head. [src] looks at [user] and barks once.</span>",
-				"<span class='notice'>You put [item_to_add] on [real_name]'s head. [src] gives you a peculiar look, then wags [p_their()] tail once and barks.</span>",
+				"<span class='notice'>You put [item_to_add] on [real_name]'s head. [src] gives you a peculiar look, then wags [ru_ego()] tail once and barks.</span>",
 				"<span class='hear'>You hear a friendly-sounding bark.</span>")
 		item_to_add.forceMove(src)
 		src.inventory_head = item_to_add

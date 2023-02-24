@@ -88,7 +88,7 @@
 			to_chat(user, "<span class='warning'>Remove the old nail polish first!</span>")
 
 		if(H == user)
-			user.visible_message("<span class='notice'>[user] does [user.p_their()] nails with \the [src].</span>", \
+			user.visible_message("<span class='notice'>[user] does [user.ru_ego()] nails with \the [src].</span>", \
 								 "<span class='notice'>You take a moment to apply \the [src]. Perfect!</span>")
 			H.nail_style = "nails"
 			H.nail_color = paint

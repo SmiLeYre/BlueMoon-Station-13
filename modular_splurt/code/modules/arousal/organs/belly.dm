@@ -48,9 +48,9 @@
 		var/mob/living/carbon/human/H = owner
 		var/r_prev_size = round(prev_size)
 		if (rounded_size > r_prev_size)
-			to_chat(H, "<span class='warning'>Your guts [pick("swell up to", "gurgle into", "expand into", "plump up into", "grow eagerly into", "fatten up into", "distend into")] a larger midsection.</span>")
+			to_chat(H, "<span class='warning'>Ваш животик начинает [pick("разбухать до", "расцветать до", "расширяться до", "пухнуть до", "расти с нетерпением до", "увеличиваться до")] большего размера.</span>")
 		else if (rounded_size < r_prev_size)
-			to_chat(H, "<span class='warning'>Your guts [pick("shrink down to", "decrease into", "wobble down into", "diminish into", "deflate into", "contracts into")] a smaller midsection.</span>")
+			to_chat(H, "<span class='warning'>Ваши животик начинает [pick("уменьшаться до", "сдуваться до", "колебаться до", "сокращаться до", "сморщиваться с сожалением до", "сдуваться до")] меньшего размера.</span>")
 
 /obj/item/organ/genital/belly/update_appearance()
 	var/lowershape = lowertext(shape)
@@ -58,23 +58,23 @@
 	//Reflect the size of dat ass on examine.
 	switch(round(size))
 		if(1)
-			size_name = "average"
+			size_name = "среднего"
 		if(2)
-			size_name = "round"
+			size_name = "большого"
 		if(3)
-			size_name = "squishable"
+			size_name = "сжимательного"
 		if(4)
-			size_name = "fat"
+			size_name = "крупного"
 		if(5)
-			size_name = "sagging"
+			size_name = pick("массивного", "особо крупного")
 		if(6)
-			size_name = "gigantic"
+			size_name = pick("гигантского", "крупнопузырчатого", "огромного")
 		if(7 to BELLY_SIZE_MAX)
-			size_name = pick("massive","unfathomably bulging","enormous","very generous","humongous","big bubbly")
+			size_name = pick("абсолютно огромного", "невероятно гигантского", "THAT'S ULTRA THICC")
 		else
-			size_name = "nonexistent"
+			size_name = "несуществующего"
 
-	desc = "You see a [size_name] [round(size) >= 4 ? "belly, it bounces around and gurgles as [owner] walks" : "belly in [owner?.p_their() ? owner?.p_their() : "their"] midsection"]."
+	desc = "Вы наблюдаете животик [size_name]. [round(size) >= 4 ? "Он подпрыгивает и булькает от того, что [owner] идёт." : "Животик плотно 'сидит' на своём месте."]."
 
 	var/icon_size = size
 	icon_state = "belly_[lowershape]_[icon_size]"

@@ -357,8 +357,8 @@
 		if(ishuman(H))
 			S = H.dna.species
 
-			visible_message("<span class='notice'>[src] gives [H] a pat on the head to make [H.p_them()] feel better!</span>", \
-						"<span class='notice'>You give [src] a pat on the head to make [H.p_them()] feel better!</span>", target = H,
+			visible_message("<span class='notice'>[src] gives [H] a pat on the head to make [H.ru_na()] feel better!</span>", \
+						"<span class='notice'>You give [src] a pat on the head to make [H.ru_na()] feel better!</span>", target = H,
 						target_message = "<span class='notice'>[src] gives you a pat on the head to make you feel better!</span>")
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "headpat", /datum/mood_event/headpat)
 			if(S?.can_wag_tail(src) && !H.dna.species.is_wagging_tail())
@@ -368,8 +368,8 @@
 						H.emote("wag")
 						break
 	else
-		visible_message("<span class='notice'>[src] hugs [H] to make [H.p_them()] feel better!</span>", \
-					"<span class='notice'>You hug [H] to make [H.p_them()] feel better!</span>", target = H,\
+		visible_message("<span class='notice'>[src] hugs [H] to make [H.ru_na()] feel better!</span>", \
+					"<span class='notice'>You hug [H] to make [H.ru_na()] feel better!</span>", target = H,\
 					target_message = "<span class='notice'>[src] hugs you to make you feel better!</span>")
 		SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/hug)
 

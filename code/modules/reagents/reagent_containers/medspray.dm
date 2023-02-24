@@ -53,7 +53,7 @@
 			to_chat(user, "<span class='notice'>Medical sprays won't work on a biomechanical limb!</span>")
 
 	if(L == user)
-		L.visible_message("<span class='notice'>[user] attempts to [apply_method] [src] on [user.p_them()]self.</span>")
+		L.visible_message("<span class='notice'>[user] attempts to [apply_method] [src] on [user.ru_na()]self.</span>")
 		if(self_delay)
 			if(!do_mob(user, L, self_delay))
 				return

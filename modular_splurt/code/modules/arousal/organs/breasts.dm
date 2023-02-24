@@ -35,6 +35,6 @@
 		var/previous = size
 		modify_size(climax_fluids.total_volume / (fluid_max_volume * GENITAL_INFLATION_THRESHOLD))
 		if(size != previous)
-			owner.visible_message("<span class='lewd'>\The <b>[owner]</b>'s [pick(GLOB.breast_nouns)] swell up with the surge of [lowertext(source_gen.get_fluid_name())] from \the <b>[partner]</b>'s [source_gen.name]", ignored_mobs = owner.get_unconsenting())
+			owner.visible_message("<span class='lewd'>\The <b>[owner]</b>'s [pick(GLOB.breast_nouns)] разбухают от прилива [lowertext(source_gen.get_fluid_name())] из \the <b>[partner]</b>'s [source_gen.name]", ignored_mobs = owner.get_unconsenting())
 			fluid_id = source_gen.get_fluid_id()
 		climax_fluids.clear_reagents()

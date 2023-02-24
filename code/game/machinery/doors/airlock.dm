@@ -835,7 +835,7 @@
 				H.DefaultCombatKnockdown(100)
 				H.apply_damage(10, BRUTE, BODY_ZONE_HEAD)
 			else
-				visible_message("<span class='danger'>[user] headbutts the airlock. Good thing [user.p_theyre()] wearing a helmet.</span>")
+				visible_message("<span class='danger'>[user] headbutts the airlock. Good thing [user.ru_who()] wearing a helmet.</span>")
 	else
 		return ..()
 

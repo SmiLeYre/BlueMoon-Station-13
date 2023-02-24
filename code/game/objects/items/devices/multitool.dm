@@ -59,7 +59,7 @@
 		. += "<span class='notice'>Its buffer contains [buffer].</span>"
 
 /obj/item/multitool/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] puts the [src] to [user.p_their()] chest. It looks like [user.p_theyre()] trying to pulse [user.p_their()] heart off!</span>")
+	user.visible_message("<span class='suicide'>[user] puts the [src] to [user.ru_ego()] chest. It looks like [user.ru_who()] trying to pulse [user.ru_ego()] heart off!</span>")
 	return OXYLOSS//theres a reason it wasnt recommended by doctors
 
 /obj/item/multitool/attack_self(mob/user)

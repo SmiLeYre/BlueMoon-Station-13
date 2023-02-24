@@ -48,9 +48,9 @@
 
 /obj/item/flashlight/suicide_act(mob/living/carbon/human/user)
 	if (user.eye_blind)
-		user.visible_message("<span class='suicide'>[user]  is putting [src] close to [user.p_their()] eyes and turning it on ... but [user.p_theyre()] blind!</span>")
+		user.visible_message("<span class='suicide'>[user]  is putting [src] close to [user.ru_ego()] eyes and turning it on ... but [user.ru_who()] blind!</span>")
 		return SHAME
-	user.visible_message("<span class='suicide'>[user] is putting [src] close to [user.p_their()] eyes and turning it on! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is putting [src] close to [user.ru_ego()] eyes and turning it on! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	return (FIRELOSS)
 
 /obj/item/flashlight/attack(mob/living/carbon/M, mob/living/carbon/human/user)
@@ -85,9 +85,9 @@
 
 				if(M == user)	//they're using it on themselves
 					if(M.flash_act(visual = 1))
-						M.visible_message("[M] directs [src] to [M.p_their()] eyes.", "<span class='notice'>You wave the light in front of your eyes! Trippy!</span>")
+						M.visible_message("[M] directs [src] to [M.ru_ego()] eyes.", "<span class='notice'>You wave the light in front of your eyes! Trippy!</span>")
 					else
-						M.visible_message("[M] directs [src] to [M.p_their()] eyes.", "<span class='notice'>You wave the light in front of your eyes.</span>")
+						M.visible_message("[M] directs [src] to [M.ru_ego()] eyes.", "<span class='notice'>You wave the light in front of your eyes.</span>")
 				else
 					user.visible_message("<span class='warning'>[user] directs [src] to [M]'s eyes.</span>", \
 										 "<span class='danger'>You direct [src] to [M]'s eyes.</span>")
@@ -104,7 +104,7 @@
 					to_chat(user, "<span class='notice'>You're going to need to remove that [(M.head && M.head.flags_cover & HEADCOVERSMOUTH) ? "helmet" : "mask"] first.</span>")
 					return
 
-				var/their = M.p_their()
+				var/their = M.ru_ego()
 
 				var/list/mouth_organs = new
 				for(var/obj/item/organ/O in M.internal_organs)

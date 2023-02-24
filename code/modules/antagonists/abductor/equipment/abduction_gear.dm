@@ -216,7 +216,7 @@
 /obj/item/abductor/gizmo/proc/scan(atom/target, mob/living/user)
 	if(ishuman(target))
 		console.AddSnapshot(target)
-		to_chat(user, "<span class='notice'>You scan [target] and add [target.p_them()] to the database.</span>")
+		to_chat(user, "<span class='notice'>You scan [target] and add [target.ru_na()] to the database.</span>")
 
 /obj/item/abductor/gizmo/proc/mark(atom/target, mob/living/user)
 	if(marked == target)
@@ -532,7 +532,7 @@
 	if(L.incapacitated(TRUE, TRUE))
 		if(L.anti_magic_check(FALSE, FALSE, TRUE, 0))
 			to_chat(user, "<span class='warning'>The specimen's tinfoil protection is interfering with the sleep inducement!</span>")
-			L.visible_message("<span class='danger'>[user] tried to induced sleep in [L] with [src], but [L.p_their()] tinfoil protected [L.p_them()]!</span>", \
+			L.visible_message("<span class='danger'>[user] tried to induced sleep in [L] with [src], but [L.ru_ego()] tinfoil protected [L.ru_na()]!</span>", \
 								"<span class='userdanger'>You feel a strange wave of heavy drowsiness wash over you, but your tinfoil protection deflects most of it!</span>")
 			L.drowsyness += 2
 			return
@@ -544,7 +544,7 @@
 	else
 		if(L.anti_magic_check(FALSE, FALSE, TRUE, 0))
 			to_chat(user, "<span class='warning'>The specimen's tinfoil protection is completely blocking our sleep inducement methods!</span>")
-			L.visible_message("<span class='danger'>[user] tried to induce sleep in [L] with [src], but [L.p_their()] tinfoil completely protected [L.p_them()]!</span>", \
+			L.visible_message("<span class='danger'>[user] tried to induce sleep in [L] with [src], but [L.ru_ego()] tinfoil completely protected [L.ru_na()]!</span>", \
 								"<span class='userdanger'>Any sense of drowsiness is quickly diminished as your tinfoil protection deflects the effects!</span>")
 			return
 		L.drowsyness += 1

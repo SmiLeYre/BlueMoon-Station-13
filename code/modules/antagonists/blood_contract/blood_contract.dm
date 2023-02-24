@@ -29,5 +29,5 @@
 	for(var/mob/living/carbon/human/P in GLOB.player_list)
 		if(P == H || HAS_TRAIT(P, TRAIT_NO_MIDROUND_ANTAG))
 			continue
-		to_chat(P, "<span class='userdanger'>You have an overwhelming desire to kill [H]. [H.p_theyve(TRUE)] been marked red! Whoever [H.p_they()] [H.p_were()], friend or foe, go kill [H.p_them()]!</span>")
+		to_chat(P, "<span class='userdanger'>You have an overwhelming desire to kill [H]. [H.ru_who(TRUE)] been marked red! Whoever [H.ru_who()] [H.p_were()], friend or foe, go kill [H.ru_na()]!</span>")
 		P.put_in_hands(new /obj/item/kitchen/knife/butcher(P), TRUE)

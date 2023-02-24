@@ -112,7 +112,7 @@
 	if(!silent)
 		var/self_message = forced? "<span class='warning'>Your muscles are forcibly relaxed!</span>" : "<span class='warning'>You relax your stance.</span>"
 		if(visible)
-			source.visible_message("<span class='warning'>[source] relaxes [source.p_their()] stance.</span>", self_message)
+			source.visible_message("<span class='warning'>[source] relaxes [source.ru_ego()] stance.</span>", self_message)
 		else
 			to_chat(source, self_message)
 		if(playsound)

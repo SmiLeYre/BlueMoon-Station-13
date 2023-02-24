@@ -36,7 +36,7 @@
 	var/shrapnel_initialized
 
 /obj/item/grenade/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] primes [src], then eats it! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] primes [src], then eats it! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	if(shrapnel_type && shrapnel_radius)
 		shrapnel_initialized = TRUE
 		AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_radius)

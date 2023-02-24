@@ -35,13 +35,13 @@
 	if(iscarbon(target) && target.Adjacent(ranged_ability_user))
 		var/mob/living/carbon/L = target
 		if(is_servant_of_ratvar(L))
-			to_chat(ranged_ability_user, "<span class='neovgre'>\"[L.p_theyre(TRUE)] a servant.\"</span>")
+			to_chat(ranged_ability_user, "<span class='neovgre'>\"[L.ru_who(TRUE)] a servant.\"</span>")
 			return TRUE
 		else if(L.stat)
 			to_chat(ranged_ability_user, "<span class='neovgre'>\"There is use in shackling the dead, but for examples.\"</span>")
 			return TRUE
 		else if (istype(L.handcuffed,/obj/item/restraints/handcuffs/clockwork))
-			to_chat(ranged_ability_user, "<span class='neovgre'>\"[L.p_theyre(TRUE)] already helpless, no?\"</span>")
+			to_chat(ranged_ability_user, "<span class='neovgre'>\"[L.ru_who(TRUE)] already helpless, no?\"</span>")
 			return TRUE
 
 		playsound(loc, 'sound/weapons/handcuffs.ogg', 30, TRUE)
@@ -93,7 +93,7 @@
 			to_chat(ranged_ability_user, "<span class='inathneq'>\"[L] does not yet serve Ratvar.\"</span>")
 			return TRUE
 		if(L.stat == DEAD)
-			to_chat(ranged_ability_user, "<span class='inathneq'>\"[L.p_theyre(TRUE)] dead. [text2ratvar("Oh, child. To have your life cut short...")]\"</span>")
+			to_chat(ranged_ability_user, "<span class='inathneq'>\"[L.ru_who(TRUE)] dead. [text2ratvar("Oh, child. To have your life cut short...")]\"</span>")
 			return TRUE
 
 		var/brutedamage = L.getBruteLoss()
@@ -118,12 +118,12 @@
 			L.adjustToxLoss(totaldamage * 0.5, TRUE, TRUE, toxins_type = TOX_OMNI)
 			clockwork_say(ranged_ability_user, text2ratvar("[has_holy_water ? "Heal tainted" : "Mend wounded"] flesh!"))
 			log_combat(ranged_ability_user, L, "healed with Sentinel's Compromise")
-			L.visible_message("<span class='warning'>A blue light washes over [L], [has_holy_water ? "causing [L.p_them()] to briefly glow as it mends" : " mending"] [L.p_their()] bruises and burns!</span>", \
+			L.visible_message("<span class='warning'>A blue light washes over [L], [has_holy_water ? "causing [L.ru_na()] to briefly glow as it mends" : " mending"] [L.ru_ego()] bruises and burns!</span>", \
 			"<span class='heavy_brass'>You feel Inath-neq's power healing your wounds[has_holy_water ? " and purging the darkness within you" : ""], but a deep nausea overcomes you!</span>")
 		else
 			clockwork_say(ranged_ability_user, text2ratvar("Purge foul darkness!"))
 			log_combat(ranged_ability_user, L, "purged of holy water with Sentinel's Compromise")
-			L.visible_message("<span class='warning'>A blue light washes over [L], causing [L.p_them()] to briefly glow!</span>", \
+			L.visible_message("<span class='warning'>A blue light washes over [L], causing [L.ru_na()] to briefly glow!</span>", \
 			"<span class='heavy_brass'>You feel Inath-neq's power purging the darkness within you!</span>")
 		playsound(targetturf, 'sound/magic/staff_healing.ogg', 50, 1)
 
@@ -257,10 +257,10 @@
 			to_chat(ranged_ability_user, "<span class='inathneq'>\"[L] does not yet serve Ratvar.\"</span>")
 			return TRUE
 		if(L.stat == DEAD)
-			to_chat(ranged_ability_user, "<span class='inathneq'>\"[L.p_theyre(TRUE)] dead. [text2ratvar("Oh, child. To have your life cut short...")]\"</span>")
+			to_chat(ranged_ability_user, "<span class='inathneq'>\"[L.ru_who(TRUE)] dead. [text2ratvar("Oh, child. To have your life cut short...")]\"</span>")
 			return TRUE
 		if(islist(L.stun_absorption) && L.stun_absorption["vanguard"] && L.stun_absorption["vanguard"]["end_time"] > world.time)
-			to_chat(ranged_ability_user, "<span class='inathneq'>\"[L.p_theyre(TRUE)] already shielded by a Vanguard.\"</span>")
+			to_chat(ranged_ability_user, "<span class='inathneq'>\"[L.ru_who(TRUE)] already shielded by a Vanguard.\"</span>")
 			return TRUE
 
 		successful = TRUE

@@ -120,7 +120,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	heat = 1000
 
 /obj/item/clothing/mask/cigarette/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is huffing [src] as quickly as [user.p_they()] can! It looks like [user.p_theyre()] trying to give [user.p_them()]self cancer.</span>")
+	user.visible_message("<span class='suicide'>[user] is huffing [src] as quickly as [user.ru_who()] can! It looks like [user.ru_who()] trying to give [user.ru_na()]self cancer.</span>")
 	return (TOXLOSS|OXYLOSS)
 
 /obj/item/clothing/mask/cigarette/Initialize(mapload)
@@ -256,7 +256,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		if(M == user)
 			cig.attackby(src, user)
 		else
-			cig.light("<span class='notice'>[user] holds the [name] out for [M], and lights [M.p_their()] [cig.name].</span>")
+			cig.light("<span class='notice'>[user] holds the [name] out for [M], and lights [M.ru_ego()] [cig.name].</span>")
 	else
 		return ..()
 
@@ -544,11 +544,11 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/lighter/suicide_act(mob/living/carbon/user)
 	if (lit)
-		user.visible_message("<span class='suicide'>[user] begins holding \the [src]'s flame up to [user.p_their()] face! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		user.visible_message("<span class='suicide'>[user] begins holding \the [src]'s flame up to [user.ru_ego()] face! It looks like [user.ru_who()] trying to commit suicide!</span>")
 		playsound(src, 'sound/items/welder.ogg', 50, 1)
 		return FIRELOSS
 	else
-		user.visible_message("<span class='suicide'>[user] begins whacking [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		user.visible_message("<span class='suicide'>[user] begins whacking [user.ru_na()]self with \the [src]! It looks like [user.ru_who()] trying to commit suicide!</span>")
 		return BRUTELOSS
 
 /obj/item/lighter/update_icon_state()
@@ -561,7 +561,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/lighter/ignition_effect(atom/A, mob/user)
 	if(get_temperature())
-		. = "<span class='rose'>With a single flick of [user.p_their()] wrist, [user] smoothly lights [A] with [src]. Damn [user.p_theyre()] cool.</span>"
+		. = "<span class='rose'>With a single flick of [user.ru_ego()] wrist, [user] smoothly lights [A] with [src]. Damn [user.ru_who()] cool.</span>"
 
 /obj/item/lighter/proc/set_lit(new_lit)
 	lit = new_lit
@@ -631,9 +631,9 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			cig.attackby(src, user)
 		else
 			if(fancy)
-				cig.light("<span class='rose'>[user] whips the [name] out and holds it for [M]. [user.p_their(TRUE)] arm is as steady as the unflickering flame [user.p_they()] light[user.p_s()] \the [cig] with.</span>")
+				cig.light("<span class='rose'>[user] whips the [name] out and holds it for [M]. [user.ru_ego(TRUE)] arm is as steady as the unflickering flame [user.ru_who()] light[user.p_s()] \the [cig] with.</span>")
 			else
-				cig.light("<span class='notice'>[user] holds the [name] out for [M], and lights [M.p_their()] [cig.name].</span>")
+				cig.light("<span class='notice'>[user] holds the [name] out for [M], and lights [M.ru_ego()] [cig.name].</span>")
 	else
 		..()
 
@@ -750,7 +750,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/super = FALSE //for the fattest vapes dude.
 
 /obj/item/clothing/mask/vape/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is puffin hard on dat vape, [user.p_they()] trying to join the vape life on a whole notha plane!</span>")//it doesn't give you cancer, it is cancer
+	user.visible_message("<span class='suicide'>[user] is puffin hard on dat vape, [user.ru_who()] trying to join the vape life on a whole notha plane!</span>")//it doesn't give you cancer, it is cancer
 	return (TOXLOSS|OXYLOSS)
 
 

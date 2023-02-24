@@ -196,7 +196,7 @@
 	var/mob/living/carbon/victim = parent
 	var/time_taken = rip_time * weapon.w_class
 
-	victim.visible_message("<span class='warning'>[victim] attempts to remove [weapon] from [victim.p_their()] [limb.name].</span>","<span class='notice'>You attempt to remove [weapon] from your [limb.name]... (It will take [DisplayTimeText(time_taken)].)</span>")
+	victim.visible_message("<span class='warning'>[victim] attempts to remove [weapon] from [victim.ru_ego()] [limb.name].</span>","<span class='notice'>You attempt to remove [weapon] from your [limb.name]... (It will take [DisplayTimeText(time_taken)].)</span>")
 	if(do_after(victim, time_taken, target = victim))
 		if(!weapon || !limb || weapon.loc != victim || !(weapon in limb.embedded_objects))
 			qdel(src)
@@ -206,9 +206,9 @@
 			var/damage = weapon.w_class * remove_pain_mult
 			limb.receive_damage(brute=(1-pain_stam_pct) * damage, stamina=pain_stam_pct * damage, wound_bonus = CANT_WOUND) //It hurts to rip it out, get surgery you dingus.
 			victim.emote("scream")
-			victim.visible_message("<span class='notice'>[victim] successfully rips [weapon] out of [victim.p_their()] [limb.name]!</span>", "<span class='notice'>You successfully remove [weapon] from your [limb.name].</span>")
+			victim.visible_message("<span class='notice'>[victim] successfully rips [weapon] out of [victim.ru_ego()] [limb.name]!</span>", "<span class='notice'>You successfully remove [weapon] from your [limb.name].</span>")
 		else
-			victim.visible_message("<span class='notice'>[victim] successfully rips [weapon] off of [victim.p_their()] [limb.name]!</span>", "<span class='notice'>You successfully remove [weapon] from your [limb.name].</span>")
+			victim.visible_message("<span class='notice'>[victim] successfully rips [weapon] off of [victim.ru_ego()] [limb.name]!</span>", "<span class='notice'>You successfully remove [weapon] from your [limb.name].</span>")
 
 		safeRemoveCarbon(TRUE)
 

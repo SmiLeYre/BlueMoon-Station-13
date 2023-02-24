@@ -115,11 +115,11 @@
 		to_chat(action_owner, span_warning("You sense that [action_target] would rather not be hypnotized, and decide to respect their wishes."))
 		to_chat(action_target, span_notice("[action_owner] stares into your eyes with a strange conviction, but turns away after a moment."))
 		return
-	
+
 	// Check for mindshield implant
 	if(HAS_TRAIT(action_target, TRAIT_MINDSHIELD))
 		// Warn the users, then return
-		to_chat(action_owner, span_warning("You stare deeply into [action_target]'s eyes, but hear a faint buzzing from [action_target.p_their()] head. It seems something is interfering."))
+		to_chat(action_owner, span_warning("You stare deeply into [action_target]'s eyes, but hear a faint buzzing from [action_target.ru_ego()] head. It seems something is interfering."))
 		to_chat(action_target, span_notice("[action_owner] stares intensely into your eyes for a moment, before a buzzing sound emits from your head."))
 		return
 
@@ -127,20 +127,20 @@
 	// This is required for SetSleeping to trigger
 	if(HAS_TRAIT(action_target, TRAIT_SLEEPIMMUNE))
 		// Warn the users, then return
-		to_chat(action_owner, span_warning("You stare deeply into [action_target]'s eyes, and see nothing but unrelenting energy. You won't be able to subdue [action_target.p_them()] in this state!"))
+		to_chat(action_owner, span_warning("You stare deeply into [action_target]'s eyes, and see nothing but unrelenting energy. You won't be able to subdue [action_target.ru_na()] in this state!"))
 		to_chat(action_target, span_notice("[action_owner] stares intensely into your eyes, but sees something unusual about you..."))
 		return
 
 	// Check for sleep
 	if(action_target.IsSleeping())
 		// Warn the user, then return
-		to_chat(action_owner, span_warning("You can't hypnotize [action_target] whilst [action_target.p_theyre()] asleep!"))
+		to_chat(action_owner, span_warning("You can't hypnotize [action_target] whilst [action_target.ru_who()] asleep!"))
 		return
 
 	// Check for combat mode
 	if(SEND_SIGNAL(action_target, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_ACTIVE))
 		// Warn the users, then return
-		to_chat(action_owner, span_warning("[action_target] is acting too defensively! You'll need [action_target.p_them()] to lower [action_target.p_their()] guard first!"))
+		to_chat(action_owner, span_warning("[action_target] is acting too defensively! You'll need [action_target.ru_na()] to lower [action_target.ru_ego()] guard first!"))
 		to_chat(action_target, span_notice("[action_owner] tries to stare into your eyes, but can't get a read on you."))
 		return
 
@@ -152,7 +152,7 @@
 	if(!do_mob(action_owner, action_target, 5 SECONDS))
 		// Action timer was interrupted
 		// Warn the user, then return
-		to_chat(action_owner, span_warning("You lose concentration on [action_target], and fail to hypnotize [action_target.p_them()]!"))
+		to_chat(action_owner, span_warning("You lose concentration on [action_target], and fail to hypnotize [action_target.ru_na()]!"))
 		to_chat(action_target, span_notice("[action_owner]'s gaze is broken prematurely, freeing you from any potential effects."))
 		return
 
@@ -168,7 +168,7 @@
 	// When consent is denied
 	if(input_consent == "No")
 		// Warn the users, then return
-		to_chat(action_owner, span_warning("[action_target]'s attention breaks, despite the attempt to hypnotize [action_target.p_them()]! [action_target.p_they()] clearly don't want this!"))
+		to_chat(action_owner, span_warning("[action_target]'s attention breaks, despite the attempt to hypnotize [action_target.ru_na()]! [action_target.ru_who()] clearly don't want this!"))
 		to_chat(action_target, span_notice("Your concentration breaks as you realize you have no interest in following [action_owner]'s words!"))
 		return
 
@@ -182,8 +182,8 @@
 	action_target.drowsyness = max(action_target.drowsyness, 40)
 
 	// Prompt action owner for response
-	var/input_suggestion = input("What would you like to suggest [action_target] do? Leave blank to release [action_target.p_them()] instead.", "Hypnotic suggestion", null, null)
-		
+	var/input_suggestion = input("What would you like to suggest [action_target] do? Leave blank to release [action_target.ru_na()] instead.", "Hypnotic suggestion", null, null)
+
 	// Check if input text exists
 	if(!input_suggestion)
 		// Alert user of no input
@@ -205,7 +205,7 @@
 
 	// Display local message
 	action_target.visible_message(span_warning("[action_target] wakes up from their deep slumber!"), span_danger("Your eyelids gently open as you see [action_owner]'s face staring back at you."))
-	
+
 	// Remove sleep, then return
 	action_target.SetSleeping(0)
 	return
@@ -365,13 +365,13 @@
 		// Check for aggressive grab
 		if(action_owner.grab_state < GRAB_AGGRESSIVE)
 			// Warn the user, then return
-			to_chat(action_owner, span_warning("You sense that [bite_target] is running low on blood. You'll need a tighter grip on [bite_target.p_them()] to continue."))
+			to_chat(action_owner, span_warning("You sense that [bite_target] is running low on blood. You'll need a tighter grip on [bite_target.ru_na()] to continue."))
 			return
 
 		// Check for pacifist
 		if(HAS_TRAIT(action_owner, TRAIT_PACIFISM))
 			// Warn the user, then return
-			to_chat(action_owner, span_warning("You can't drain any more blood from [bite_target] without hurting [bite_target.p_them()]!"))
+			to_chat(action_owner, span_warning("You can't drain any more blood from [bite_target] without hurting [bite_target.ru_na()]!"))
 			return
 
 	// Set cooldown and action times
@@ -400,7 +400,7 @@
 	if(!do_after(action_owner, time_interact, target = bite_target))
 		// When failing
 		// Display a local chat message
-		action_owner.visible_message(span_danger("[action_owner]'s fangs are prematurely torn from [bite_target]'s neck, spilling [bite_target.p_their()] blood!"))
+		action_owner.visible_message(span_danger("[action_owner]'s fangs are prematurely torn from [bite_target]'s neck, spilling [bite_target.ru_ego()] blood!"))
 
 		// Bite target "drops" the blood
 		// This creates large blood splatter
@@ -579,7 +579,7 @@
 	if(action_owner.stat != DEAD)
 		// Warn user in chat
 		to_chat(action_owner, "You can't use this ability while alive!")
-		
+
 		// Return
 		return
 
@@ -602,22 +602,22 @@
 	// Condition: Damage limit, brute
 	if(action_owner.getBruteLoss() >= MAX_REVIVE_BRUTE_DAMAGE)
 		revive_failed += "\n- Your body is too battered!"
-	
+
 	// Condition: Damage limit, burn
 	if(action_owner.getFireLoss() >= MAX_REVIVE_FIRE_DAMAGE)
 		revive_failed += "\n- Your body is too badly burned!"
 
 	// Condition: Suicide
 	if(action_owner.suiciding)
-		revive_failed += "\n- You chose this path."		
+		revive_failed += "\n- You chose this path."
 
 	// Condition: No revivals
 	if(HAS_TRAIT(action_owner, TRAIT_NOCLONE))
-		revive_failed += "\n- You only had one chance."		
+		revive_failed += "\n- You only had one chance."
 
 	// Condition: Demonic contract
 	if(action_owner.hellbound)
-		revive_failed += "\n- The soul pact must be honored."		
+		revive_failed += "\n- The soul pact must be honored."
 
 	// Check for failure
 	if(revive_failed)
@@ -870,8 +870,8 @@
 			organ_vagina.update_size()
 
 	// Set transformation message
-	var/owner_p_their = action_owner.p_their()
-	var/toggle_message = (!transformed ? "[action_owner] shivers, [owner_p_their] flesh bursting with a sudden growth of thick fur as [owner_p_their] features contort to that of a beast, fully transforming [action_owner.p_them()] into a werewolf!" : "[action_owner] shrinks, [owner_p_their] wolfish features quickly receding.")
+	var/owner_ru_ego = action_owner.ru_ego()
+	var/toggle_message = (!transformed ? "[action_owner] shivers, [owner_ru_ego] flesh bursting with a sudden growth of thick fur as [owner_ru_ego] features contort to that of a beast, fully transforming [action_owner.ru_na()] into a werewolf!" : "[action_owner] shrinks, [owner_ru_ego] wolfish features quickly receding.")
 
 	// Alert in local chat
 	action_owner.visible_message(span_danger(toggle_message))
