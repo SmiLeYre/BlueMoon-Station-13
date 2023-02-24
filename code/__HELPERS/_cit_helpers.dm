@@ -68,16 +68,16 @@ GLOBAL_LIST_INIT(dick_nouns, list("фаллос", "вилли", "член", "х�
 GLOBAL_LIST_INIT(genitals_visibility_toggles, list(GEN_VISIBLE_ALWAYS, GEN_VISIBLE_NO_CLOTHES, GEN_VISIBLE_NO_UNDIES, GEN_VISIBLE_NEVER))
 
 GLOBAL_LIST_INIT(dildo_shapes, list(
-		"Human"		= "human",
-		"Knotted"	= "knotted",
-		"Plain"		= "plain",
-		"Flared"	= "flared"
+		"Human"		= "человеческого типа",
+		"Knotted"	= "узловатого типа",
+		"Plain"		= "тентяклевидного типа",
+		"Flared"	= "конского типа"
 		))
 GLOBAL_LIST_INIT(dildo_shape_to_cock_shape, list(
-		"human"		= "Human",
-		"knotted"	= "Knotted",
-		"plain"		= "Tentacled",
-		"flared"	= "Flared"
+		"человеческого типа"		= "Human",
+		"узловатого типа"			= "Knotted",
+		"тентяклевидного типа"		= "Tentacled",
+		"конского тип"				= "Flared"
 		))
 GLOBAL_LIST_INIT(dildo_sizes, list(
 		"Small"		= 1,

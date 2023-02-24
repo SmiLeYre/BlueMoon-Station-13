@@ -434,6 +434,7 @@
 	alternate_screams = RUSSIAN_SCREAMS
 	icon_state = "rus_helmet"
 	item_state = "rus_helmet"
+	flags_inv = HIDEEARS
 	armor = list(MELEE = 30, BULLET = 25, LASER = 20,ENERGY = 10, BOMB = 25, BIO = 0, RAD = 20, FIRE = 30, ACID = 50)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
@@ -446,6 +447,7 @@
 	clothing_flags = THICKMATERIAL
 	body_parts_covered = HEAD
 	cold_protection = HEAD
+	flags_inv = HIDEEARS
 	min_cold_protection_temperature = SPACE_SUIT_MIN_TEMP_PROTECT
 	armor = list(MELEE = 10, BULLET = 5, LASER = 5,ENERGY = 5, BOMB = 5, BIO = 50, RAD = 20, FIRE = -10, ACID = 0)
 
@@ -454,3 +456,4 @@
 	desc = "A police officer's Hat. This hat emphasizes that you are THE LAW."
 	icon_state = "policehelm"
 	dynamic_hair_suffix = ""
+	flags_inv = HIDEEARS

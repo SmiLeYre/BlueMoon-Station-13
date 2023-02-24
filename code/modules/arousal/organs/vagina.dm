@@ -1,5 +1,5 @@
 /obj/item/organ/genital/vagina
-	name = "vagina"
+	name = "вагина"
 	desc = "A female reproductive organ."
 	icon = 'icons/obj/genitals/vagina.dmi'
 	icon_state = ORGAN_SLOT_VAGINA
@@ -19,7 +19,7 @@
 	var/clits = 1
 	var/clit_diam = 0.25
 	var/clit_len = 0.25
-	var/list/vag_types = list("tentacle", "dentata", "hairy", "spade", "furred")
+	var/list/vag_types = list("тентяклевидная", "зубастая", "волосатая", "лопатковидная", "мохнатая")
 
 /obj/item/organ/genital/vagina/update_appearance()
 	. = ..()
@@ -28,21 +28,21 @@
 	var/details
 
 	switch(lowershape)
-		if("tentacle")
+		if("тентяклевидная")
 			details = "Отверстие закрыто половыми губами, оно покрыто несколькими щупальцами и они "
-		if("dentata")
+		if("зубастая")
 			details = "Внутри и снаружи есть зубы, и они "
-		if("hairy")
+		if("волосатая")
 			details = "На ней довольно много волос и они "
-		if("human")
+		if("человеческая")
 			details = "Она подтянута, не имеет на своей поверхности сильно много волос, обладает особо гладкой и нежной кожей, и её губы "
-		if("gaping")
+		if("приоткрытая")
 			details = "Она слегка приоткрыта, не имеет большой растительности и её половые губы "
-		if("spade")
+		if("лопатковидная")
 			details = "По форме она похожа на собачью лопатку и её половые губы "
-		if("furred")
+		if("мохнатая")
 			details = "Она имеет аккуратно ухоженный мех вокруг половых губок, которые "
-		if("cloaca")
+		if("клоаковидная")
 			details = "Это узкое, небольшое горизонтальное отверстие и внешние губы "
 		else
 			details = "Она имеет экзотическую форму и её губы "

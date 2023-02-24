@@ -10,7 +10,7 @@
 	unarousal_verb = "Your pucker stops twitching"
 	linked_organ_slot = ORGAN_SLOT_BUTT
 	genital_flags = UPDATE_OWNER_APPEARANCE|GENITAL_UNDIES_HIDDEN|CAN_CUM_INTO|HAS_EQUIPMENT
-	shape = "donut"
+	shape = "пончиковидный"
 	layer_index = ANUS_LAYER_INDEX
 
 /obj/item/organ/genital/anus/upon_link()

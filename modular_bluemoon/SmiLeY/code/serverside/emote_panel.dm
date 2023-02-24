@@ -1,4 +1,4 @@
-/mob/living/proc/emote_surrender()
+/mob/living/proc/surrender()
 	set name = "> Сдаться"
 	set category = "Эмоции.Специальные Действия"
 	emote("surrender")

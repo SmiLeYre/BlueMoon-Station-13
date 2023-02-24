@@ -6,16 +6,16 @@
 /datum/emote/living/insult
 	key = "insult"
 	key_third_person = "insults"
-	message = "spews insults."
+	message = "изрыгает оскорбления."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/insult/run_emote(mob/living/user, params)
 	if(user.mind?.miming)
-		message = "creatively gesticulates."
+		message = "творчески жестикулирует."
 	else if(!user.is_muzzled())
 		message = pick_list_replacements(INSULTS_FILE, "insult_gen")
 	else
-		message = "muffles something."
+		message = "заглушает свои же слова своей кистью."
 	. = ..()
 
 /datum/emote/living/scream/run_emote(mob/living/user, params) //I can't not port this shit, come on.
@@ -33,7 +33,7 @@
 			if(iscyborg(user))
 				var/mob/living/silicon/robot/S = user
 				if(S.cell?.charge < 20)
-					to_chat(S, "<span class='warning'>Scream module deactivated. Please recharge.</span>")
+					to_chat(S, "<span class='warning'>Модуль крика деактивирован. Пожалуйста, перезарядитесь.</span>")
 					return
 				S.cell.use(200)
 		if(ismonkey(user))
@@ -64,17 +64,17 @@
 		if(LAZYLEN(user.alternate_screams))
 			sound = pick(user.alternate_screams)
 		playsound(user.loc, sound, 75, 1, 4, 1.2)
-		message = "screams!"
+		message = "кричит!"
 	else if(miming)
-		message = "acts out a scream."
+		message = "изображает громкий крик."
 	else
-		message = "makes a very loud noise."
+		message = "издает очень громкий звук."
 	. = ..()
 
 /datum/emote/living/snap
 	key = "snap"
 	key_third_person = "snaps"
-	message = "snaps their fingers."
+	message = "щелкает пальцами."
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = TRUE
 	restraint_check = TRUE
@@ -91,7 +91,7 @@
 /datum/emote/living/snap2
 	key = "snap2"
 	key_third_person = "snaps twice"
-	message = "snaps twice."
+	message = "щёлкает своими пальцами дважды."
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = TRUE
 	restraint_check = TRUE
@@ -108,7 +108,7 @@
 /datum/emote/living/snap3
 	key = "snap3"
 	key_third_person = "snaps thrice"
-	message = "snaps thrice."
+	message = "щёлкает своими пальцами трижды."
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = TRUE
 	restraint_check = TRUE
@@ -125,7 +125,7 @@
 /datum/emote/living/awoo
 	key = "awoo"
 	key_third_person = "lets out an awoo"
-	message = "lets out an awoo!"
+	message = "особо милым образом воет!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
@@ -142,7 +142,7 @@
 /datum/emote/living/hiss
 	key = "hiss"
 	key_third_person = "hisses"
-	message = "hisses!"
+	message = "шипит!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
@@ -159,7 +159,7 @@
 /datum/emote/living/meow
 	key = "meow"
 	key_third_person = "mrowls"
-	message = "mrowls!"
+	message = "мяукает!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
@@ -176,7 +176,7 @@
 /datum/emote/living/purr
 	key = "purr"
 	key_third_person = "purrs softly"
-	message = "purrs softly."
+	message = "мурлычет."
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
@@ -193,7 +193,7 @@
 /datum/emote/living/nya
 	key = "nya"
 	key_third_person = "lets out a nya"
-	message = "lets out a nya!"
+	message = "выпускает из своего рта особо странный звук!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
@@ -210,7 +210,7 @@
 /datum/emote/living/weh
 	key = "weh"
 	key_third_person = "lets out a weh"
-	message = "lets out a weh!"
+	message = "выпускает из своего рта особо странный звук!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
@@ -227,7 +227,7 @@
 /datum/emote/living/peep
 	key = "peep"
 	key_third_person = "peeps like a bird"
-	message = "peeps like a bird!"
+	message = "звучит как птичка!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
@@ -244,14 +244,14 @@
 /datum/emote/living/dab
 	key = "dab"
 	key_third_person = "suddenly hits a dab"
-	message = "suddenly hits a dab!"
+	message = "внезапно бьёт воздух двумя руками!"
 	emote_type = EMOTE_AUDIBLE
 	restraint_check = TRUE
 
 /datum/emote/living/mothsqueak
 	key = "msqueak"
 	key_third_person = "lets out a tiny squeak"
-	message = "lets out a tiny squeak!"
+	message = "издает тоненький писк!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
@@ -268,7 +268,7 @@
 /datum/emote/living/merp
 	key = "merp"
 	key_third_person = "merps"
-	message = "merps!"
+	message = "мёрпает!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
@@ -285,7 +285,7 @@
 /datum/emote/living/bark
 	key = "bark"
 	key_third_person = "barks"
-	message = "barks!"
+	message = "боркает!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
@@ -303,7 +303,7 @@
 /datum/emote/living/squish
 	key = "squish"
 	key_third_person = "squishes"
-	message = "squishes!"
+	message = "сквишается!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
@@ -321,7 +321,7 @@
 /datum/emote/living/pain
 	key = "pain"
 	key_third_person = "pains"
-	message = "cries out in pain!"
+	message = "кричит от боли!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
@@ -343,7 +343,7 @@
 /datum/emote/living/clap1
 	key = "clap1"
 	key_third_person = "claps1"
-	message = "хлопает в свои ладоши."
+	message = "хлопает в свои ладоши один раз."
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = TRUE
 	restraint_check = TRUE

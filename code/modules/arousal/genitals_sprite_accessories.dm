@@ -77,34 +77,34 @@
 
 /datum/sprite_accessory/vagina/human
 	icon_state = "human"
-	name = "Human"
+	name = "человеческая"
 
 /datum/sprite_accessory/vagina/tentacles
 	icon_state = "tentacle"
-	name = "Tentacle"
+	name = "тентяклевидная"
 
 /datum/sprite_accessory/vagina/dentata
 	icon_state = "dentata"
-	name = "Dentata"
+	name = "зубастая"
 
 /datum/sprite_accessory/vagina/hairy
 	icon_state = "hairy"
-	name = "Hairy"
+	name = "волосатая"
 	alt_aroused = FALSE
 
 /datum/sprite_accessory/vagina/spade
 	icon_state = "spade"
-	name = "Spade"
+	name = "лопатковидная"
 	alt_aroused = FALSE
 
 /datum/sprite_accessory/vagina/furred
 	icon_state = "furred"
-	name = "Furred"
+	name = "мохнатая"
 	alt_aroused = FALSE
 
 /datum/sprite_accessory/vagina/gaping
 	icon_state = "gaping"
-	name = "Gaping"
+	name = "приоткрытая"
 
 //BREASTS BE HERE
 /datum/sprite_accessory/breasts

@@ -30,7 +30,7 @@
 	partner.handle_post_sex(NORMAL_LUST, CUM_TARGET_PENIS, user)
 
 /datum/interaction/lewd/fuck/anal
-	description = "Попа. Проникнуть в задницу."
+	description = "Член. Проникнуть в задницу."
 	require_target_vagina = null
 	require_target_anus = REQUIRE_EXPOSED
 

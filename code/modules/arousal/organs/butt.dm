@@ -8,7 +8,7 @@
 	w_class 				= 3
 	size 					= 0
 	var/size_name			= "nonexistent"
-	shape					= "ягодицы" //turn this into a default constant if for some inexplicable reason we get more than one butt type but I doubt it.
+	shape					= "Pair" //turn this into a default constant if for some inexplicable reason we get more than one butt type but I doubt it.
 	genital_flags = UPDATE_OWNER_APPEARANCE|GENITAL_UNDIES_HIDDEN|CAN_CUM_INTO|HAS_EQUIPMENT
 	masturbation_verb 		= "massage"
 	var/size_cached			= 0
