@@ -85,9 +85,6 @@ GLOBAL_LIST_EMPTY(bodycontainers) //Let them act as spawnpoints for revenants an
 		if(!user.is_literate())
 			to_chat(user, "<span class='notice'>You scribble illegibly on the side of [src]!</span>")
 			return
-		if(HAS_TRAIT(user, TRAIT_DUMB4CUM))
-			to_chat(user, "<span class='love'>You can't think of anything but cum right now.</span>")
-			return
 		var/t = stripped_input(user, "What would you like the label to be?", text("[]", name), null)
 		if (user.get_active_held_item() != P)
 			return

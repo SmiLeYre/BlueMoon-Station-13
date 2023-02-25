@@ -46,6 +46,8 @@ Difficulty: Hard
 	ranged_cooldown_time = 10
 	ranged = 1
 	pixel_x = -32
+	maptext_height = 96
+	maptext_width = 96
 	gender = MALE
 	del_on_death = 1
 	crusher_loot = list(/obj/structure/closet/crate/necropolis/bubblegum/crusher)

@@ -108,3 +108,54 @@
       bourbon, resulting in 10 units.
   LeDrascol:
   - rscdel: Removed techweb entry for Infective Exo-Locomotion nanites
+2023-02-19:
+  LeDrascol:
+  - bugfix: Fixed techweb exploit with 357 speed loader
+  - rscadd: Added more feedback messages to Cryptominer account changing
+  - tweak: Standard cryptominers will report account changes on Cargo radio
+  - balance: Setting a cryptominer's account now takes five seconds
+  - admin: Added game logging for Cryptominer account changes
+  - balance: Production machines now check ID cards for access
+  - balance: R&D console starts locked by default
+  - config: Added new configuration options for production machine access
+  - tweak: In Estrous examine text is now based on the holder's reproductive organs
+  - tweak: In Estrous gain text no longer implies the holder intends to be an organ
+      recipient
+  - code_imp: Added signals for organ insertion and removal
+  - tweak: The Gear Harness is now non-covering
+  - rscadd: Added Synthetic species flavor text for In Estrous
+  - tweak: In Estrous no longer requires both female organs
+  - code_imp: In Estrous examine text uses English lists
+  SandPoot:
+  - imageadd: Changed screentips icons to something a lot fancier unified with the
+      LMB / RMB text.
+2023-02-20:
+  LeDrascol:
+  - refactor: Refactored trait defines
+2023-02-21:
+  SandPoot:
+  - tweak: Tweaked pixelshifting. (Default keybinding is B, check your keybinds!)
+  - bugfix: Duct pipes will always have the same cost no matter where you make it.
+  - bugfix: Hand-made duct pipes will properly stack with machine made ones.
+2023-02-22:
+  BongaTheProto:
+  - tweak: The pixelfishing keybind is now B, although you can use use the previous
+      ctrl+shift keybinds. Please make sure you check your keybinds!
+2023-02-23:
+  Comicao1:
+  - tweak: Wendigos may now work in a proper way, and are also able to enslave people
+      through sex while grabbing them.
+  LeDrascol:
+  - rscadd: 'Added positive quirk: Rad Fiend'
+  WoolyAypa:
+  - rscadd: Added a tajaran snout option
+  - rscadd: Added an alt version of the dragon wings
+  - rscadd: Added a stripper version of the explorer jumpsuit
+  - rscadd: Added the security stripper outfit in the loadout
+  - tweak: Now the security stripper outfit can be used with digitigrade
+2023-02-24:
+  LeDrascol:
+  - tweak: Auto-cryo now ignores dead bodies
+  - admin: Auto-cryo now logs all cases of mobs being ignored
+  - bugfix: Dumb For Cum quirk can be added and removed mid-round
+  - balance: Dumb For Cum quirk craving now causes pacifism and dumbness

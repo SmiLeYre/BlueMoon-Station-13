@@ -242,7 +242,7 @@
 	return TRUE
 
 /obj/item/electrostaff/proc/clowning_around(mob/living/user)
-	user.visible_message("<span class='danger'>[user] accidentally hits [user.ru_na()]self with [src]!</span>", \
+	user.visible_message("<span class='danger'>[user] accidentally hits себя with [src]!</span>", \
 						"<span class='userdanger'>You accidentally hit yourself with [src]!</span>")
 	SEND_SIGNAL(user, COMSIG_LIVING_MINOR_SHOCK)
 	harm_act(user, user, TRUE)

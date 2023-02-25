@@ -90,3 +90,11 @@ TETRIS_SCORE_MAX_SCI 10000
 ## This applies to both prizes and research points
 ## Time is measured in ticks
 TETRIS_TIME_COOLDOWN 600
+
+##
+## PROTOLATHE RESTRICTIONS
+###
+
+## Should production machinery be restricted for skeleton crews?
+## Uncomment this to enable
+#PROTOLOCK_DURING_LOWPOP

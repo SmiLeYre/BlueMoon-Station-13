@@ -6,16 +6,16 @@
 /datum/emote/living/carbon/blink
 	key = "blink"
 	key_third_person = "blinks"
-	message = "blinks."
+	message = "моргает."
 
 /datum/emote/living/carbon/blink_r
 	key = "blink3"
-	message = "blinks rapidly."
+	message = "быстро моргает."
 
 /datum/emote/living/carbon/clap
 	key = "clap"
 	key_third_person = "claps"
-	message = "claps."
+	message = "хлопает в ладони."
 	muzzle_ignore = TRUE
 	restraint_check = TRUE
 	emote_type = EMOTE_AUDIBLE
@@ -49,18 +49,18 @@
 /datum/emote/living/carbon/roll
 	key = "roll"
 	key_third_person = "rolls"
-	message = "rolls."
+	message = "перекатывается."
 	restraint_check = TRUE
 
 /datum/emote/living/carbon/screech
 	key = "screech"
 	key_third_person = "screeches"
-	message = "screeches."
+	message = "громко скрипит."
 
 /datum/emote/living/carbon/scratch
 	key = "scratch"
 	key_third_person = "scratches"
-	message = "scratches."
+	message = "царапается."
 	restraint_check = TRUE
 
 /datum/emote/living/carbon/sign
@@ -77,7 +77,7 @@
 /datum/emote/living/carbon/sign/signal
 	key = "signal"
 	key_third_person = "signals"
-	message_param = "raises %t fingers."
+	message_param = "даёт сигнал для %t своими пальцами."
 
 /datum/emote/living/carbon/tail
 	key = "tail"
@@ -86,23 +86,23 @@
 /datum/emote/living/carbon/wink
 	key = "wink"
 	key_third_person = "winks"
-	message = "winks."
+	message = "подмигивает."
 
 /datum/emote/living/carbon/human/dap
 	key = "dap"
 	key_third_person = "daps"
 	message = "делает ДЭП и... к сожалению, не может найти никого, кому можно было бы дать DAP. Стыдно."
-	message_param = "give daps to %t."
+	message_param = "ДЭПает при виде %t."
 	restraint_check = TRUE
 
 /datum/emote/living/carbon/human/eyebrow
 	key = "eyebrow"
-	message = "raises an eyebrow."
+	message = "поднимает бровь."
 
 /datum/emote/living/carbon/human/grumble
 	key = "grumble"
 	key_third_person = "grumbles"
-	message = "grumbles!"
+	message = "ворчит!"
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/carbon/human/handshake
@@ -123,7 +123,7 @@
 /datum/emote/living/carbon/human/mawp
 	key = "mawp"
 	key_third_person = "mawps"
-	message = "mawps annoyingly."
+	message = "раздраженно бормочет что-то на своём."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/carbon/human/mawp/run_emote(mob/living/user, params)
@@ -132,11 +132,15 @@
 		if(ishuman(user))
 			if(prob(10))
 				user.adjustEarDamage(-5, -5)
+	if(user.nextsoundemote >= world.time)
+		return
+	user.nextsoundemote = world.time + 7
+	playsound(user, 'modular_citadel/sound/voice/purr.ogg', 50, 1, -1)
 
 /datum/emote/living/carbon/human/mumble
 	key = "mumble"
 	key_third_person = "mumbles"
-	message = "mumbles!"
+	message = "мамблит!"
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/carbon/lick
@@ -145,12 +149,12 @@
 
 /datum/emote/living/carbon/human/pale
 	key = "pale"
-	message = "goes pale for a second."
+	message = "бледнеет на секунду."
 
 /datum/emote/living/carbon/human/raise
 	key = "raise"
 	key_third_person = "raises"
-	message = "raises a hand."
+	message = "демонстративно поднимает свою руку."
 	restraint_check = TRUE
 
 /datum/emote/living/carbon/lick
@@ -172,7 +176,7 @@
 /datum/emote/living/carbon/human/shrug
 	key = "shrug"
 	key_third_person = "shrugs"
-	message = "shrugs."
+	message = "пожимает плечами."
 
 /datum/emote/sound/human
 	mob_type_allowed_typecache = list(/mob/living/carbon/human)
@@ -181,67 +185,67 @@
 /datum/emote/sound/human/salute
 	key = "salute"
 	key_third_person = "salutes"
-	message = "salutes."
-	message_param = "salutes to %t."
+	message = "исполняет воинское приветствие."
+	message_param = "исполняет воинское приветствие при виде %t."
 	sound = 'sound/voice/salute.ogg'
 	restraint_check = TRUE
 
 /datum/emote/sound/human/buzz
 	key = "buzz"
 	key_third_person = "buzzes"
-	message = "buzzes."
-	message_param = "buzzes at %t."
+	message = "жужжит."
+	message_param = "жужжит при виде %t."
 	sound = 'sound/machines/buzz-sigh.ogg'
 
 /datum/emote/sound/human/buzz2
 	key = "buzz2"
-	message = "buzzes twice."
+	message = "жужжит дважды."
 	sound = 'sound/machines/buzz-two.ogg'
 
 /datum/emote/sound/human/ping
 	key = "ping"
 	key_third_person = "pings"
-	message = "pings."
-	message_param = "pings at %t."
+	message = "пингует."
+	message_param = "пингует при виде %t."
 	sound = 'sound/machines/ping.ogg'
 
 /datum/emote/sound/human/chime
 	key = "chime"
 	key_third_person = "chimes"
-	message = "chimes."
+	message = "издаёт звон."
 	sound = 'sound/machines/chime.ogg'
 
 /datum/emote/sound/human/squeak
 	key = "squeak"
-	message = "squeaks."
+	message = "пищит словно мышка."
 	sound = 'sound/effects/mousesqueek.ogg'
 
 /datum/emote/sound/human/shriek
 	key = "shriek"
 	key_third_person = "shrieks"
-	message = "SHRIEKS!"
+	message = "<b>ШРИКАЕТ!!</b>"
 	sound = 'sound/voice/shriek1.ogg'
 
 /datum/emote/sound/human/syndicate
 	key = "syndicate"
 	key_third_person = "syndicates"
-	message = "offers warcrimes."
+	message = "получает миссию со стороны Синдиката."
 	sound = 'sound/voice/syndicate.ogg'
 
 /datum/emote/sound/human/rawr
 	key = "rawr"
 	key_third_person = "rawrs"
-	message = "rawrs aggressively."
+	message = "агрессивно рычит."
 	sound = 'sound/voice/rawr.ogg'
 
 /datum/emote/sound/human/growl
 	key = "growl2"
 	key_third_person = "growls2"
-	message = "growls aggressively."
+	message = "издаёт особо агрессивное рычание."
 	sound = 'sound/voice/growl2.ogg'
 
 /datum/emote/sound/human/protect
 	key = "protect"
 	key_third_person = "protects"
-	message = "folds his arms across his chest, forming an aquila."
+	message = "складывает руки на груди, образуя аквилу."
 	sound = 'sound/voice/emperorprotects.ogg'

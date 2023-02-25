@@ -2,20 +2,20 @@
 //this file is named weirdly so that positive traits are listed above negative ones
 
 /datum/quirk/alcohol_tolerance
-	name = "Alcohol Tolerance"
-	desc = "You become drunk more slowly and suffer fewer drawbacks from alcohol."
+	name = "Устойчивость к Алкоголю"
+	desc = "Эффект опьянения наступает медленней, побочные эффекты алкоголя облегчены."
 	value = 1
 	mob_trait = TRAIT_ALCOHOL_TOLERANCE
-	gain_text = "<span class='notice'>You feel like you could drink a whole keg!</span>"
-	lose_text = "<span class='danger'>You don't feel as resistant to alcohol anymore. Somehow.</span>"
-	medical_record_text = "Patient demonstrates a high tolerance for alcohol."
+	gain_text = "<span class='notice'>Вы чувствуете, что могли бы осушить целую бочку спиртного!</span>"
+	lose_text = "<span class='danger'>Вы более не ощущаете себя устойчивым к алкоголю. Почему-то.</span>"
+	medical_record_text = "Пациент демонстрирует высокую устойчивость к алкоголю."
 
 /datum/quirk/apathetic
-	name = "Apathetic"
-	desc = "You just don't care as much as other people. That's nice to have in a place like this, I guess."
+	name = "Равнодушный"
+	desc = "Вам на всё наплевать. Круто жить в таком мире, наверное."
 	value = 1
 	mood_quirk = TRUE
-	medical_record_text = "Patient was administered the Apathy Evaluation Scale but did not bother to complete it."
+	medical_record_text = "Пациенту была предложена Шкала Оценки Апатии, но он не удосужился её заполнить."
 
 /datum/quirk/apathetic/add()
 	var/datum/component/mood/mood = quirk_holder.GetComponent(/datum/component/mood)
@@ -29,49 +29,49 @@
 			mood.mood_modifier = 1 //Change this once/if species get their own mood modifiers.
 
 /datum/quirk/drunkhealing
-	name = "Drunken Resilience"
-	desc = "Nothing like a good drink to make you feel on top of the world. Whenever you're drunk, you slowly recover from injuries."
+	name = "Пьяный Угар"
+	desc = "Пьяному море по колено. В состоянии опьянения вы медленно восстанавливаетесь от полученных травм."
 	value = 2
 	mob_trait = TRAIT_DRUNK_HEALING
-	gain_text = "<span class='notice'>You feel like a drink would do you good.</span>"
-	lose_text = "<span class='danger'>You no longer feel like drinking would ease your pain.</span>"
-	medical_record_text = "Patient has unusually efficient liver metabolism and can slowly regenerate wounds by drinking alcoholic beverages."
+	gain_text = "<span class='notice'>Вы чувствуете, что от выпивки одни только плюсы.</span>"
+	lose_text = "<span class='danger'>Вы чувствуете, что выпивка больше не облегчит боль.</span>"
+	medical_record_text = "У пациента чрезвычайно ускоренный печоночный метаболизм, позволяющий исцелять раны путем употребления алкоголя."
 
 /datum/quirk/empath
-	name = "Empath"
-	desc = "Whether it's a sixth sense or careful study of body language, it only takes you a quick glance at someone to understand how they feel."
+	name = "Эмпат"
+	desc = "Будь то шестое чувство или тщательное изучения языка тела, вы можете с определить настроение цели посмотрев на неё."
 	value = 2
 	mob_trait = TRAIT_EMPATH
-	gain_text = "<span class='notice'>You feel in tune with those around you.</span>"
-	lose_text = "<span class='danger'>You feel isolated from others.</span>"
-	medical_record_text = "Patient is highly perceptive of and sensitive to social cues, or may possibly have ESP. Further testing needed."
+	gain_text = "<span class='notice'>Вы чувствуете себя в гармонии с другими.</span>"
+	lose_text = "<span class='danger'>Вы чувствуете себя изолированно.</span>"
+	medical_record_text = "Пациент с легкостью распознает социальные сигналы, возможно обладает ЭСВ. Необходимо последующее тестирование."
 
 /datum/quirk/freerunning
-	name = "Freerunning"
-	desc = "You're great at quick moves! You can climb tables more quickly."
+	name = "Паркурщик"
+	desc = "Вы отлично справляетесь с выполнением быстрых движений! Залезание на столы происходит в два раза быстрее."
 	value = 2
 	mob_trait = TRAIT_FREERUNNING
-	gain_text = "<span class='notice'>You feel lithe on your feet!</span>"
-	lose_text = "<span class='danger'>You feel clumsy again.</span>"
-	medical_record_text = "Patient scored highly on cardio tests."
+	gain_text = "<span class='notice'>Вы чувствуете легкость в ногах!</span>"
+	lose_text = "<span class='danger'>Вы снова чувствуете себя неуклюже.</span>"
+	medical_record_text = "У пациент продемонстрировал высокие показатели во время кардио-теста."
 
 /datum/quirk/friendly
-	name = "Friendly"
-	desc = "You give the best hugs, especially when you're in the right mood."
+	name = "Дружелюбный"
+	desc = "Вы лучше всех обнимаетесь, особенно при правильном настроении."
 	value = 1
 	mob_trait = TRAIT_FRIENDLY
-	gain_text = "<span class='notice'>You want to hug someone.</span>"
-	lose_text = "<span class='danger'>You no longer feel compelled to hug others.</span>"
+	gain_text = "<span class='notice'>Вы хотите кого-нибудь обнять.</span>"
+	lose_text = "<span class='danger'>Вы больше не чувствуете желания обниматься с другими.</span>"
 	mood_quirk = TRUE
-	medical_record_text = "Patient demonstrates low-inhibitions for physical contact and well-developed arms. Requesting another doctor take over this case."
+	medical_record_text = "Пациент более раскрепощен физически и имеет хорошо развитые руки. Просьба другому врачу взять на себя его дело."
 
 /datum/quirk/jolly
-	name = "Jolly"
-	desc = "You sometimes just feel happy, for no reason at all."
+	name = "Жизнерадостный"
+	desc = "Иногда вы просто счастливы."
 	value = 1
 	mob_trait = TRAIT_JOLLY
 	mood_quirk = TRUE
-	medical_record_text = "Patient demonstrates constant euthymia irregular for environment. It's a bit much, to be honest."
+	medical_record_text = "Пациент демонстрирует постоянную жизнерадостность, необычную для окружающей обстановки. Даже слишком, если честно."
 	processing_quirk = TRUE
 
 /datum/quirk/jolly/on_process()
@@ -79,31 +79,31 @@
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "jolly", /datum/mood_event/jolly)
 
 /datum/quirk/light_step
-	name = "Light Step"
-	desc = "You walk with a gentle step; stepping on sharp objects is quieter, less painful and you won't leave footprints behind you."
+	name = "Легкая Походка"
+	desc = "Вы ловки, удачливы и всегда осторожны. Хождение по разбитому стеклу и острым предметам менее болезненно и тише в вашем случае, к тому же вы не оставляете за собой следов."
 	value = 1
 	mob_trait = TRAIT_LIGHT_STEP
-	gain_text = "<span class='notice'>You walk with a little more litheness.</span>"
-	lose_text = "<span class='danger'>You start tromping around like a barbarian.</span>"
-	medical_record_text = "Patient's dexterity belies a strong capacity for stealth."
+	gain_text = "<span class='notice'>Вы ступаете с лёгкостью.</span>"
+	lose_text = "<span class='danger'>Вы топаете также, как и прежде.</span>"
+	medical_record_text = "Ловкость пациента означает способность к скрытности."
 
 /datum/quirk/quick_step
-	name = "Quick Step"
-	desc = "You walk with determined strides, and out-pace most people when walking."
+	name = "Быстрый Шаг"
+	desc = "Во время ходьбы вы двигаетесь решительно, в своем ритме."
 	value = 2
 	mob_trait = TRAIT_SPEEDY_STEP
-	gain_text = "<span class='notice'>You feel determined. No time to lose.</span>"
-	lose_text = "<span class='danger'>You feel less determined. What's the rush, man?</span>"
-	medical_record_text = "Patient scored highly on racewalking tests."
+	gain_text = "<span class='notice'>Вы чувствуете себя решительно. Нельзя терять времени.</span>"
+	lose_text = "<span class='danger'>Вы чувствуете себя менее решительно. К чему такая спешка?</span>"
+	medical_record_text = "Пациент продемонстрировал высокие результаты в спортивной ходьбе."
 
 /datum/quirk/musician
-	name = "Musician"
-	desc = "You can tune handheld musical instruments to play melodies that clear certain negative effects and soothe the soul."
+	name = "Музыкант"
+	desc = "Вы можете настраивать ручные инструменты для игры мелодий, что снимают определенные негативные эффекты и успокаивают душу."
 	value = 1
 	mob_trait = TRAIT_MUSICIAN
-	gain_text = "<span class='notice'>You know everything about musical instruments.</span>"
-	lose_text = "<span class='danger'>You forget how musical instruments work.</span>"
-	medical_record_text = "Patient brain scans show a highly-developed auditory pathway."
+	gain_text = "<span class='notice'>Вы знаете всё о музыкальных инструментах.</span>"
+	lose_text = "<span class='danger'>Вы забываете, как работают музыкальные инструменты.</span>"
+	medical_record_text = "Снимки мозга пациента показывают высокоразвитые слуховые пути."
 
 /datum/quirk/musician/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -116,13 +116,13 @@
 	H.regenerate_icons()
 
 /datum/quirk/photographer
-	name = "Photographer"
-	desc = "You know how to handle a camera, shortening the delay between each shot."
+	name = "Фотограф"
+	desc = "Вы знаете как пользоваться фотоаппаратом, сокращая время между фотографией."
 	value = 1
 	mob_trait = TRAIT_PHOTOGRAPHER
-	gain_text = "<span class='notice'>You know everything about photography.</span>"
-	lose_text = "<span class='danger'>You forget how photo cameras work.</span>"
-	medical_record_text = "Patient mentions photography as a stress-relieving hobby."
+	gain_text = "<span class='notice'>Вы знаете всё о фотографиях.</span>"
+	lose_text = "<span class='danger'>Вы забываете, как работают фотокамеры.</span>"
+	medical_record_text = "Пациент упоминает фотографию, как хобби для снятия стресса."
 
 /datum/quirk/photographer/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -132,36 +132,36 @@
 	H.regenerate_icons()
 
 /datum/quirk/selfaware
-	name = "Self-Aware"
-	desc = "You know your body well, and can accurately assess the extent of your wounds."
+	name = "Сознательный"
+	desc = "Вы хорошо знаете собственное тело и можете точно оценивать серьёзность ваших ран."
 	value = 2
 	mob_trait = TRAIT_SELF_AWARE
-	medical_record_text = "Patient demonstrates an uncanny knack for self-diagnosis."
+	medical_record_text = "У пациента поразительная способность к самодиагностике."
 
 /datum/quirk/skittish
-	name = "Skittish"
-	desc = "You can conceal yourself in danger. Ctrl-shift-click a closed locker to jump into it, as long as you have access."
+	name = "Шустрый"
+	desc = "Вы можете прятаться при опасности. <b>Ctrl-Shift-Click</b> по закрытому шкафчику, чтобы запрыгнуть его, пока имеется доступ."
 	value = 2
 	mob_trait = TRAIT_SKITTISH
-	medical_record_text = "Patient demonstrates a high aversion to danger and has described hiding in containers out of fear."
+	medical_record_text = "Пациент избегает опасностей. Описывал, что прячется в контейнерах от страха."
 
 /datum/quirk/spiritual
-	name = "Spiritual"
-	desc = "You're in tune with the gods, and your prayers may be more likely to be heard. Or not."
+	name = "Духовный"
+	desc = "Вы в гармонии с богами и ваши молитвы с большей вероятностью будут услышаны. Или нет."
 	value = 1
 	mob_trait = TRAIT_SPIRITUAL
-	gain_text = "<span class='notice'>You feel a little more faithful to the gods today.</span>"
-	lose_text = "<span class='danger'>You feel less faithful in the gods.</span>"
-	medical_record_text = "Patient reports a belief in a higher power."
+	gain_text = "<span class='notice'>Ваша вера в богов крепнет.</span>"
+	lose_text = "<span class='danger'>Ваша вера в богов слабнет.</span>"
+	medical_record_text = "Пациент верит в высшие силы."
 
 /datum/quirk/tagger
-	name = "Tagger"
-	desc = "You're an experienced artist. While drawing graffiti, you can get twice as many uses out of drawing supplies."
+	name = "Граффити-Художник"
+	desc = "Вы - художник с опытом. Рисуя граффити, вы тратите в два раза меньше краски."
 	value = 1
 	mob_trait = TRAIT_TAGGER
-	gain_text = "<span class='notice'>You know how to tag walls efficiently.</span>"
-	lose_text = "<span class='danger'>You forget how to tag walls properly.</span>"
-	medical_record_text = "Patient was recently seen for possible paint huffing incident."
+	gain_text = "<span class='notice'>Вы знаете, как правильно разрисовывать стены.</span>"
+	lose_text = "<span class='danger'>Вы забываете, как правильно разрисовывать стены.</span>"
+	medical_record_text = "Пациент был недавно замечен за вдыханием паров краски."
 
 /datum/quirk/tagger/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -171,26 +171,29 @@
 	H.regenerate_icons()
 
 /datum/quirk/voracious
-	name = "Voracious"
-	desc = "Nothing gets between you and your food. You eat twice as fast as everyone else!"
+	name = "Прожорливый"
+	desc = "Ничто не встанет между вами и вашей едой. Вы едите в два раза быстрее!"
 	value = 1
 	mob_trait = TRAIT_VORACIOUS
-	gain_text = "<span class='notice'>You feel HONGRY.</span>"
-	lose_text = "<span class='danger'>You no longer feel HONGRY.</span>"
-	medical_record_text = "Patient demonstrates a disturbing capacity for eating."
+	gain_text = "<span class='notice'>Вы преголодны.</span>"
+	lose_text = "<span class='danger'>Жор отступает.</span>"
+	medical_record_text = "Пациент демонстрирует умопомрачительную способность к приему пищи."
 
 /datum/quirk/trandening
-	name = "High Luminosity Eyes"
-	desc = "When the next big fancy implant came out you had to buy one on impulse! You start the shift with emissive cybernetic eyes that can emit colored beams of light."
+	name = "Глаза с Повышенной Светимостью"
+	desc = "Когда новый классный имплант вышел, вы просто не могли его не купить! Вы начинаете смену с кибернетическими глазами, которые могут сиять разными цветами."
 	value = 1
-	gain_text = "<span class='notice'>You've been keeping up with the latest cybernetic trends!</span>"
-	lose_text = "<span class='danger'>High powered eye lasers? What were you thinking...</span>"
+	gain_text = "<span class='notice'>Вы следите за последними трендами кибернетики!</span>"
+	lose_text = "<span class='danger'>Высокомощные лазеры из глаз? О чем вы только думали...</span>"
 
 /datum/quirk/trandening/on_spawn()
-	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/autosurgeon/gloweyes/gloweyes = new(get_turf(H))
-	H.equip_to_slot(gloweyes, ITEM_SLOT_BACKPACK)
-	H.regenerate_icons()
+	// Get targets
+	var/obj/item/organ/eyes/old_eyes = quirk_holder.getorganslot(ORGAN_SLOT_EYES)
+	var/obj/item/organ/eyes/robotic/glow/new_eyes = new
+
+	// Replace eyes
+	qdel(old_eyes)
+	new_eyes.Insert(quirk_holder)
 
 /datum/quirk/trandening/remove()
 	// Get targets
@@ -221,13 +224,13 @@
 	new_eyes.Insert(quirk_holder)
 
 /datum/quirk/bloodpressure
-	name = "Polycythemia vera"
-	desc = "You've a treated form of Polycythemia vera that increases the total blood volume inside of you as well as the rate of replenishment!"
+	name = "Истинная полицитемия"
+	desc = "У вас Истинная полицитемия в ремиссии, повышающая общее количество крови и скорость её восстановления!"
 	value = 2 //I honeslty dunno if this is a good trait? I just means you use more of medbays blood and make janitors madder, but you also regen blood a lil faster.
 	mob_trait = TRAIT_HIGH_BLOOD
-	gain_text = "<span class='notice'>You feel full of blood!</span>"
-	lose_text = "<span class='notice'>You feel like your blood pressure went down.</span>"
-	medical_record_text = "Patient's blood tests report an abnormal concentration of red blood cells in their bloodstream."
+	gain_text = "<span class='notice'>Вы чувствуете себя полным крови!</span>"
+	lose_text = "<span class='notice'>Кажется, ваше кровяное давление понизилось.</span>"
+	medical_record_text = "Анализы крови пациента показывают превышающее норму количество кровяных клеток."
 
 /datum/quirk/bloodpressure/add()
 	quirk_holder.blood_ratio = 1.2
@@ -238,12 +241,12 @@
 		quirk_holder.blood_ratio = 1
 
 /datum/quirk/night_vision
-	name = "Night Vision"
-	desc = "You can see slightly more clearly in full darkness than most people."
+	name = "Ночное Зрение"
+	desc = "Вы видите лучше большинства в кромешной тьме."
 	value = 1
 	mob_trait = TRAIT_NIGHT_VISION
-	gain_text = "<span class='notice'>The shadows seem a little less dark.</span>"
-	lose_text = "<span class='danger'>Everything seems a little darker.</span>"
+	gain_text = "<span class='notice'>Тени кажутся светлее.</span>"
+	lose_text = "<span class='danger'>Всё кажется чуточку темнее.</span>"
 
 /datum/quirk/night_vision/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder

@@ -383,7 +383,7 @@
 	parry_data = list(PARRY_COUNTERATTACK_MELEE_ATTACK_CHAIN = 2.5)
 
 /obj/item/chair/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins hitting [user.ru_na()]self with \the [src]! It looks like [user.ru_who()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins hitting себя with \the [src]! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	playsound(src,hitsound,50,1)
 	return BRUTELOSS
 

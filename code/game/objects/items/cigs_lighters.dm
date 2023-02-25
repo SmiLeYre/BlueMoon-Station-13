@@ -120,7 +120,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	heat = 1000
 
 /obj/item/clothing/mask/cigarette/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is huffing [src] as quickly as [user.ru_who()] can! It looks like [user.ru_who()] trying to give [user.ru_na()]self cancer.</span>")
+	user.visible_message("<span class='suicide'>[user] is huffing [src] as quickly as [user.ru_who()] can! It looks like [user.ru_who()] trying to give себя cancer.</span>")
 	return (TOXLOSS|OXYLOSS)
 
 /obj/item/clothing/mask/cigarette/Initialize(mapload)
@@ -548,7 +548,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		playsound(src, 'sound/items/welder.ogg', 50, 1)
 		return FIRELOSS
 	else
-		user.visible_message("<span class='suicide'>[user] begins whacking [user.ru_na()]self with \the [src]! It looks like [user.ru_who()] trying to commit suicide!</span>")
+		user.visible_message("<span class='suicide'>[user] begins whacking себя with \the [src]! It looks like [user.ru_who()] trying to commit suicide!</span>")
 		return BRUTELOSS
 
 /obj/item/lighter/update_icon_state()

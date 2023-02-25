@@ -33,3 +33,12 @@
 		*/
 		thirst_rate *= H.physiology.thirst_mod
 		H.adjust_thirst(-thirst_rate)
+
+/datum/species/handle_mutations_and_radiation(mob/living/carbon/human/H)
+	// Check for rad fiend quirk
+	// Check for radiation resist threshold
+	if(HAS_TRAIT(H, TRAIT_RAD_FIEND) && (H.radiation < RAD_BURN_THRESHOLD))
+		// Return without effects
+		return TRUE
+
+	. = ..()

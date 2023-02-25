@@ -89,9 +89,6 @@
 		if(!user.is_literate())
 			to_chat(user, "<span class='notice'>You scribble illegibly on the label of [src]!</span>")
 			return
-		if(HAS_TRAIT(user, TRAIT_DUMB4CUM))
-			to_chat(user, "<span class='love'>You can't think of anything but cum right now.</span>")
-			return
 		var/t = stripped_input(user, "What would you like to label the blood pack?", name, null, 53)
 		if(!user.canUseTopic(src, BE_CLOSE))
 			return

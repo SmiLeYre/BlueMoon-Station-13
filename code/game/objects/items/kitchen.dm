@@ -32,7 +32,7 @@
 	var/datum/reagent/forkload //used to eat omelette
 
 /obj/item/kitchen/fork/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] stabs \the [src] into [user.ru_ego()] chest! It looks like [user.ru_who()] trying to take a bite out of [user.ru_na()]self!</span>")
+	user.visible_message("<span class='suicide'>[user] stabs \the [src] into [user.ru_ego()] chest! It looks like [user.ru_who()] trying to take a bite out of себя!</span>")
 	playsound(src, 'sound/items/eatfood.ogg', 50, 1)
 	return BRUTELOSS
 

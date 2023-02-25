@@ -5,12 +5,12 @@
 	desc = "Вас возбуждает удушье."
 	value = 0
 	mob_trait = TRAIT_CHOKE_SLUT
-	gain_text = span_notice("Вы хотите ощутить пальцы вокруг своей шеи, сжимающие её до тех пор, пока вы не отключитесь или кончите... или всё сразу.")
+	gain_text = span_notice("Вы хотите ощутить пальцы вокруг шеи, сжимающие её до тех пор, пока не отключитесь или кончите... а может, всё сразу?")
 	lose_text = span_notice("Похоже, вас больше не возбуждает асфиксия.")
 
 /datum/quirk/pharmacokinesis //Supposed to prevent unwanted organ additions. But i don't think it's really working rn
 	name = "Острый Печеночный Фармакокинез" //copypasting dumbo
-	desc = "У вас генетическое заболевание, которое заставляет вашу печень усваивать семя инкуба и молоко суккуба при попадании их в организм."
+	desc = "У вас генетическое заболевание, которое заставляет печень усваивать семя инкуба и молоко суккуба при попадании их в организм."
 	value = 0
 	mob_trait = TRAIT_PHARMA
 	lose_text = span_notice("Ваша печень ощущается... по-иному.")
@@ -37,7 +37,7 @@
 
 /datum/quirk/headpat_hater
 	name = "Отстраненность"
-	desc = "Вам нет дела до ласки со стороны других. Будь то вследствие сдержанности или самоконтроля, получаемые поглаживания не заставят вилять хвостом, если таковой есть, ласка может даже разгневать вас."
+	desc = "Вам нет дела до ласки со стороны других. Будь то вследствие сдержанности или самоконтроля, получаемые поглаживания не заставят вилять хвостом, если таковой есть, ласка может даже разгневать."
 	mob_trait = TRAIT_DISTANT
 	value = 0
 	gain_text = span_notice("Чужие прикосновения раздражают вас...")
@@ -152,7 +152,6 @@
 	gain_text = span_notice("Вы хотите подчиниться кому-нибудь...")
 	lose_text = span_notice("Вы больше не хотите подчиняться...")
 	processing_quirk = TRUE
-	var/mood_category = "dom_trained"
 	var/notice_delay = 0
 	var/mob/living/carbon/human/last_dom
 
@@ -202,10 +201,10 @@
 
 	//Handle the mood
 	var/datum/component/mood/mood = quirk_holder.GetComponent(/datum/component/mood)
-	if(istype(mood.mood_events[mood_category], /datum/mood_event/dominant/good_boy))
-		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, mood_category, /datum/mood_event/dominant/good_boy)
+	if(istype(mood.mood_events[QMOOD_WELL_TRAINED], /datum/mood_event/dominant/good_boy))
+		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, QMOOD_WELL_TRAINED, /datum/mood_event/dominant/good_boy)
 	else
-		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, mood_category, /datum/mood_event/dominant/need)
+		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, QMOOD_WELL_TRAINED, /datum/mood_event/dominant/need)
 
 	//Don't do anything if a previous dom was found
 	if(last_dom)
@@ -234,10 +233,10 @@
 
 /datum/quirk/hydra
 	name = "Головы Гидры"
-	desc = "Вы трёхглавое создание. Оформите ваше имя, как (Ваня-Саня-Даня)."
+	desc = "Вы трёхглавое создание. Оформите имя, как (Ваня-Саня-Даня)."
 	value = 0
 	mob_trait = TRAIT_HYDRA_HEADS
-	gain_text = span_notice("Вы слышите два других голоса внутри вашей головы(ов).")
+	gain_text = span_notice("Вы слышите два других голоса внутри головы(ов).")
 	lose_text = span_danger("Ваш разум становится единым.")
 	medical_record_text = "Пациент имеет несколько голов и личностей, присоединенных к телу."
 
@@ -259,11 +258,11 @@
 	mob_trait = TRAIT_GFLUID_DETECT
 	gain_text = span_notice("Вы начинаете ощущать специфические запахи, исходящие от чужих промежностей...")
 	lose_text = span_notice("Чужие гениталии начинают пахнуть для вас одинаково...")
-	medical_record_text = "Пациент добивался того, чтобы доктор провёл яйцами по их лицу."
+	medical_record_text = "Пациент добивался того, чтобы доктор провёл яйцами по его лицу."
 
 /datum/quirk/fluid_infuser
 	name = "Тядзин"
-	desc = "Вы не упустили возможность приобрести новый жидкостный индуктор от NanoTrasen, как только он был выпущен, и теперь вы можете заскочить на станцию с изменяемым грудным молочком!"
+	desc = "Вы не упустили возможность приобрести новый жидкостный индуктор от NanoTrasen, как только он был выпущен, и теперь можете заскочить на станцию с изменяемым грудным молочком!"
 	value = 0
 
 /datum/quirk/fluid_infuser/on_spawn()
@@ -279,7 +278,6 @@
 	// The shame is unbearable
 	mood_quirk = FALSE
 	processing_quirk = FALSE
-	var/mood_category = "backpack_implant_mood"
 
 /datum/quirk/storage_concealment/on_spawn()
 	. = ..()
@@ -295,10 +293,10 @@
 	// Check the quirk holder for the trait
 	if(HAS_TRAIT(quirk_holder, TRAIT_HIDE_BACKPACK))
 		// When found: Mood bonus
-		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, mood_category, /datum/mood_event/dorsualiphobic_mood_positive)
+		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, QMOOD_HIDE_BAG, /datum/mood_event/dorsualiphobic_mood_positive)
 	else
 		// When not found: Mood penalty
-		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, mood_category, /datum/mood_event/dorsualiphobic_mood_negative)
+		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, QMOOD_HIDE_BAG, /datum/mood_event/dorsualiphobic_mood_negative)
 
 //succubus and incubus below
 /datum/quirk/incubus
@@ -350,7 +348,7 @@
 	H.adjust_nutrition(-0.09)//increases their nutrition loss rate to encourage them to gain a partner they can essentially leech off of
 
 /datum/quirk/bloodfledge
-	name = "Отродье Кровопийцы"
+	name = "Отпрыск Кровопийцы"
 	desc = "Вы новообращенный, принадлежащий к древнему роду Кровопийц. Благословению еще предстоит полностью изменить вас, но некоторые вещи уже поменялись. Только кровь утолит голод, а божественная сила обуглит вашу плоть. <b>Это НЕ роль антагониста!</b>"
 	value = 2
 	medical_record_text = "Пациент демонстрирует начальные симптомы кровяного проклятия."
@@ -510,7 +508,7 @@
 
 /datum/quirk/werewolf //adds the werewolf quirk
 	name = "Оборотень"
-	desc = "Ликантропия позволяет вам перевоплотиться в большого прямоходящего волка."
+	desc = "Ликантропия позволяет вам перевоплощаться в большого прямоходящего волка."
 	value = 0
 	mob_trait = TRAIT_WEREWOLF
 	gain_text = span_notice("Полная луна зовёт.")
@@ -635,15 +633,14 @@
 	value = 0
 	mood_quirk = TRUE
 	processing_quirk = TRUE
-	var/mood_category = "nudist_mood"
 
 /datum/quirk/nudist/on_process()
 	var/mob/living/carbon/human/H = quirk_holder
 	// Checking torso exposure appears to be a robust method.
 	if( ( H.is_chest_exposed() && H.is_groin_exposed() ) )
-		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, mood_category, /datum/mood_event/nudist_positive)
+		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, QMOOD_NUDIST, /datum/mood_event/nudist_positive)
 	else
-		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, mood_category, /datum/mood_event/nudist_negative)
+		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, QMOOD_NUDIST, /datum/mood_event/nudist_negative)
 
 /datum/quirk/nudist/on_spawn()
 	. = ..()
@@ -662,15 +659,14 @@
 	mood_quirk = TRUE
 	medical_record_text = "Пациент чувствует себя более безопасно при ношении противогаза."
 	processing_quirk = TRUE
-	var/mood_category = "masked_mook"
 
 /datum/quirk/masked_mook/on_process()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/obj/item/clothing/mask/gas/gasmask = H.get_item_by_slot(ITEM_SLOT_MASK)
 	if(istype(gasmask))
-		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, mood_category, /datum/mood_event/masked_mook)
+		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, QMOOD_MASKED_MOOK, /datum/mood_event/masked_mook)
 	else
-		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, mood_category, /datum/mood_event/masked_mook_incomplete)
+		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, QMOOD_MASKED_MOOK, /datum/mood_event/masked_mook_incomplete)
 
 /datum/quirk/masked_mook/on_spawn()
 	. = ..()

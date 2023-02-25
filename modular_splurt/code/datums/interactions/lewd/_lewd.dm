@@ -127,6 +127,7 @@
 									ass = new
 									ass.Insert(partner)
 								ass.climax_modify_size(src, getorganslot(ORGAN_SLOT_PENIS))
+
 		else
 			switch(last_genital.type)
 				if(/obj/item/organ/genital/penis)
@@ -193,6 +194,10 @@
 										ass = new
 										ass.Insert(partner)
 									ass.climax_modify_size(src, last_genital)
+		if(iswendigo(partner) && partner.pulling == src)
+			var/mob/living/carbon/wendigo/W = partner
+			W.slaves |= src
+			to_chat(src, "<font color='red'> You are now [W]'s slave! Serve your master properly! </font>")
 	if(!message)
 		return ..()
 	if(gender == MALE)

@@ -201,9 +201,6 @@
 			if(!user.is_literate())
 				to_chat(user, "<span class='notice'>You scribble illegibly on [src]!</span>")
 				return
-			if(HAS_TRAIT(user, TRAIT_DUMB4CUM))
-				to_chat(user, "<span class='love'>You can't think of anything but cum right now.</span>")
-				return
 			var/obj/item/pizzabox/box = boxes.len ? boxes[boxes.len] : src
 			box.boxtag += stripped_input(user, "Write on [box]'s tag:", box, "", 30)
 			if(!user.canUseTopic(src, BE_CLOSE))

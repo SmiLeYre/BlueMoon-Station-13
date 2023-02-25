@@ -158,9 +158,6 @@
 		if(!user.is_literate())
 			to_chat(user, "<span class='notice'>You scribble illegibly on [src]!</span>")
 			return
-		if(HAS_TRAIT(user, TRAIT_DUMB4CUM))
-			to_chat(user, "<span class='love'>You can't think of anything but cum right now.</span>")
-			return
 		if(scribble_page == curr_page)
 			to_chat(user, "<span class='notice'>There's already a scribble in this page... You wouldn't want to make things too cluttered, would you?</span>")
 		else

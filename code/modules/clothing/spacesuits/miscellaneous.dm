@@ -396,7 +396,7 @@ Contains:
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	actions_types = list()
 	resistance_flags = FIRE_PROOF
-	mutantrace_variation = NONE
+	mutantrace_variation = STYLE_MUZZLE
 	var/charges = INFINITY
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal/Initialize(mapload)

@@ -64,6 +64,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/outline_color = COLOR_THEME_MIDNIGHT
 	var/screentip_pref = SCREENTIP_PREFERENCE_ENABLED
 	var/screentip_color = "#ffd391"
+	var/screentip_allow_images = FALSE
 	var/buttons_locked = FALSE
 	var/hotkeys = FALSE
 
@@ -1288,6 +1289,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<b>Outline Color:</b> [outline_color ? "<span style='border:1px solid #161616; background-color: [outline_color];'>" : "Theme-based (null)"]<font color='[color_hex2num(outline_color) < 200 ? "FFFFFF" : "000000"]'>[outline_color]</font></span> <a href='?_src_=prefs;preference=outline_color'>Change</a><BR>"
 					dat += "<b>Screentip:</b> <a href='?_src_=prefs;preference=screentip_pref'>[screentip_pref]</a><br>"
 					dat += "<b>Screentip Color:</b> <span style='border:1px solid #161616; background-color: [screentip_color];'><font color='[color_hex2num(screentip_color) < 200 ? "FFFFFF" : "000000"]'>[screentip_color]</font></span> <a href='?_src_=prefs;preference=screentip_color'>Change</a><BR>"
+					dat += "<font style='border-bottom:2px dotted white; cursor:help;'\
+						title=\"This is an accessibility preference, if disabled, fallbacks to only text which colorblind people can understand better\">\
+						<b>Screentip context with images:</b></font> <a href='?_src_=prefs;preference=screentip_allow_images'>[screentip_allow_images ? "Allowed" : "Disallowed"]</a><br>"
 					dat += "<b>tgui Monitors:</b> <a href='?_src_=prefs;preference=tgui_lock'>[(tgui_lock) ? "Primary" : "All"]</a><br>"
 					dat += "<b>tgui Style:</b> <a href='?_src_=prefs;preference=tgui_fancy'>[(tgui_fancy) ? "Fancy" : "No Frills"]</a><br>"
 					dat += "<b>Show Runechat Chat Bubbles:</b> <a href='?_src_=prefs;preference=chat_on_map'>[chat_on_map ? "Enabled" : "Disabled"]</a><br>"
@@ -1426,6 +1430,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<b>Be Antagonist Victim:</b> <a href='?_src_=prefs;preference=be_victim;task=input'>[be_victim ? be_victim : BEVICTIM_ASK]</a><br>"
 					dat += "<b>Disable combat mode cursor:</b> <a href='?_src_=prefs;preference=disable_combat_cursor'>[disable_combat_cursor?"Yes":"No"]</a><br>"
 					dat += "<b>Splashscreen Player Panel Style:</b> <a href='?_src_=prefs;preference=tg_playerpanel'>[(toggles & TG_PLAYER_PANEL)?"TG":"Old"]</a><br>"
+					dat += "<b>Character Creation Menu Style:</b> <a href='?_src_=prefs;preference=charcreation_style'>[new_character_creator ? "New" : "Old"]</a><br>"
 					//SPLURT Edit end
 
 					dat += "<br>"
@@ -3590,18 +3595,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(pickedOutlineColor != pickedOutlineColor)
 						outline_color = pickedOutlineColor // nullable
 				if("screentip_pref")
-					var/choice = tgalert(user, "Choose your screentip preference", "Screentipping?", "Yes", "Context Only", "No")
-					switch(choice)
-						if("Yes")
-							screentip_pref = SCREENTIP_PREFERENCE_ENABLED
-						if("Context Only")
-							screentip_pref = SCREENTIP_PREFERENCE_CONTEXT_ONLY
-						else
-							screentip_pref = SCREENTIP_PREFERENCE_DISABLED
+					var/choice = input(user, "Choose your screentip preference", "Screentipping?", screentip_pref) as null|anything in GLOB.screentip_pref_options
+					if(choice)
+						screentip_pref = choice
 				if("screentip_color")
 					var/pickedScreentipColor = input(user, "Choose your screentip color.", "General Preference", screentip_color) as color|null
 					if(pickedScreentipColor)
 						screentip_color = pickedScreentipColor
+				if("screentip_allow_images")
+					screentip_allow_images = !screentip_allow_images
 				if("tgui_lock")
 					tgui_lock = !tgui_lock
 				if("winflash")

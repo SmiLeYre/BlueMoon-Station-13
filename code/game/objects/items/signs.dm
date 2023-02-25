@@ -21,9 +21,6 @@
 	if(!user.is_literate())
 		to_chat(user, "<span class='notice'>You scribble illegibly on [src]!</span>")
 		return
-	if(HAS_TRAIT(user, TRAIT_DUMB4CUM))
-		to_chat(user, "<span class='love'>You can't think of anything but cum right now.</span>")
-		return
 	var/txt = stripped_input(user, "What would you like to write on the sign?", "Sign Label", null , 30)
 	if(txt && user.canUseTopic(src, BE_CLOSE))
 		label = txt

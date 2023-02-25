@@ -161,8 +161,8 @@
 
 	switch(roll)
 		if(-INFINITY to -5)
-			user.visible_message("<span class='danger'>[user] botches [user.ru_ego()] [tackle_word] and slams [user.ru_ego()] head into [target], knocking [user.ru_na()]self silly!</span>", "<span class='userdanger'>You botch your [tackle_word] and slam your head into [target], knocking yourself silly!</span>", target)
-			to_chat(target, "<span class='userdanger'>[user] botches [user.ru_ego()] [tackle_word] and slams [user.ru_ego()] head into you, knocking [user.ru_na()]self silly!</span>")
+			user.visible_message("<span class='danger'>[user] botches [user.ru_ego()] [tackle_word] and slams [user.ru_ego()] head into [target], knocking себя silly!</span>", "<span class='userdanger'>You botch your [tackle_word] and slam your head into [target], knocking yourself silly!</span>", target)
+			to_chat(target, "<span class='userdanger'>[user] botches [user.ru_ego()] [tackle_word] and slams [user.ru_ego()] head into you, knocking себя silly!</span>")
 
 			user.Paralyze(30)
 			var/obj/item/bodypart/head/hed = user.get_bodypart(BODY_ZONE_HEAD)
@@ -440,7 +440,7 @@
 		user.adjustStaminaLoss(10 * speed)
 		user.DefaultCombatKnockdown(40)
 		user.Paralyze(5)
-		user.visible_message("<span class='danger'>[user] slams into [W] and shatters it, shredding [user.ru_na()]self with glass!</span>", "<span class='userdanger'>You slam into [W] and shatter it, shredding yourself with glass!</span>")
+		user.visible_message("<span class='danger'>[user] slams into [W] and shatters it, shredding себя with glass!</span>", "<span class='userdanger'>You slam into [W] and shatter it, shredding yourself with glass!</span>")
 
 	else
 		user.visible_message("<span class='danger'>[user] slams into [W] like a bug, then slowly slides off it!</span>", "<span class='userdanger'>You slam into [W] like a bug, then slowly slide off it!</span>")

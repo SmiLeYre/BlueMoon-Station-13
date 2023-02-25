@@ -97,7 +97,7 @@ GENETICS SCANNER
 	register_item_context()
 
 /obj/item/healthanalyzer/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to analyze [user.ru_na()]self with [src]! The display shows that [user.ru_who()] dead!</span>")
+	user.visible_message("<span class='suicide'>[user] begins to analyze себя with [src]! The display shows that [user.ru_who()] dead!</span>")
 	return BRUTELOSS
 
 /obj/item/healthanalyzer/attack_self(mob/user)
@@ -646,7 +646,7 @@ GENETICS SCANNER
 	. += "<span class='notice'>Alt-click [src] to activate the barometer function.</span>"
 
 /obj/item/analyzer/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to analyze [user.ru_na()]self with [src]! The display shows that [user.ru_who()] dead!</span>")
+	user.visible_message("<span class='suicide'>[user] begins to analyze себя with [src]! The display shows that [user.ru_who()] dead!</span>")
 	return BRUTELOSS
 
 /obj/item/analyzer/attack_self(mob/user)

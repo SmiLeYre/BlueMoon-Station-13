@@ -92,3 +92,7 @@
 // Minimum time between giving rewards
 /datum/config_entry/number/tetris_time_cooldown
 	config_entry_value = 600
+
+/// R&D Machinery ///
+// Should production machinery be restricted for skeleton crews?
+/datum/config_entry/flag/protolock_during_lowpop

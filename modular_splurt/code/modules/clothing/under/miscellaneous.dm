@@ -128,7 +128,7 @@
 	item_state = "secstripper"
 	can_adjust = FALSE
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/uniform.dmi'
-	mutantrace_variation = NONE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/under/rank/brigdoc
 	name = "brig physician outfit"
@@ -341,3 +341,11 @@
 /obj/item/clothing/under/performer/polychromic/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/polychromic, list("#ffffff"), 1)
+
+/obj/item/clothing/under/rank/cargo/miner/lavaland/stripper
+	name = "explorer stripper outfit"
+	desc = "This can't be dress code compliant, can it?"
+	icon = 'modular_splurt/icons/obj/clothing/uniforms.dmi'
+	icon_state = "explorerstripper"
+	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/uniform.dmi'
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON

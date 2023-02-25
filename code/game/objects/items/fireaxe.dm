@@ -43,7 +43,7 @@
 	icon_state = "fireaxe0"
 
 /obj/item/fireaxe/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] axes [user.ru_na()]self from head to toe! It looks like [user.ru_who()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] axes себя from head to toe! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	return (BRUTELOSS)
 
 /obj/item/fireaxe/afterattack(atom/A, mob/living/user, proximity)

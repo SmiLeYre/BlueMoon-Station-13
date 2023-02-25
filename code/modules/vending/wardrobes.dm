@@ -39,7 +39,8 @@
 						/obj/item/clothing/mask/gas/syndicate/ds = 5,
 						/obj/item/clothing/mask/gas/sechailer/syndicate = 5,
 						/obj/item/clothing/mask/gas/soviet = 3,
-						/obj/item/clothing/mask/gas/german = 3
+						/obj/item/clothing/mask/gas/german = 3,
+						/obj/item/clothing/under/syndicate/combat = 2
 					)
 	premium = list(/obj/item/clothing/under/rank/security/officer/formal = 5,
 					/obj/item/clothing/head/helmet/hecu = 3,
