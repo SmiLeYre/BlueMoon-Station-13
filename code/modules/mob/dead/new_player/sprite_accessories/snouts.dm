@@ -316,6 +316,11 @@
 	icon_state = "wahalt"
 	matrixed_sections = MATRIX_RED_GREEN
 
+/datum/sprite_accessory/snouts/mam_snouts/huskyalt //this for only one pixel!!!
+	name = "Husky ALT"
+	icon_state = "huskyalt"
+	matrixed_sections = MATRIX_RED_GREEN
+
 /******************************************
 **************** Snouts *******************
 *************but higher up*****************/
