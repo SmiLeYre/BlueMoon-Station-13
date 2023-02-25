@@ -3,26 +3,47 @@
 /datum/accent/proc/modify_speech(list/speech_args, datum/source, mob/living/carbon/owner) //transforms the message in some way
 	return speech_args
 
+/datum/accent/proc/add_accent(message, var/map_accent)
+	var/message_length // Длинна текущего сообщения
+	var/current_char // Текущий символ обрабатываемой строки
+	var/accented_message // Сообщение с акцентом
+
+	message_length = length(message)
+
+	for(var/i = 1, i <= message_length, i += length(current_char))
+		current_char = message[i]
+
+		if (current_char in map_accent)
+			accented_message += pick(map_accent[current_char])
+		else
+			accented_message += current_char
+
+	return accented_message
+
+/datum/accent/lizard
+	var/map_accent = list(
+		"s" = list("ss", "sss","ssss"),
+		"S" = list("SS", "SSS","SSSS"),
+		"c" = list("cc", "ccc","cccc"),
+		"C" = list("CC", "CCC","CCCC"),
+		"ч" = list("чч", "ччч", "чччч"),
+		"Ч" = list("ЧЧ", "ЧЧЧ", "ЧЧЧЧ"),
+		"ж" = list("жж", "жжж", "жжжж"),
+		"Ж" = list("ЖЖ", "ЖЖЖ", "ЖЖЖЖ"),
+		"с" = list("сс", "ссс", "сссс"),
+		"С" = list("СС", "ССС", "СССС"),
+		"ш" = list("шш", "шшш", "шшшш"),
+		"Ш" = list("ШШ", "ШШШ", "ШШШШ"),
+		"щ" = list("щщ", "щщщ", "щщщщ"),
+		"Щ" = list("ЩЩ", "ЩЩЩ", "ЩЩЩЩ"),
+		"з" = list("зз", "ззз", "зззз"),
+		"З" = list("ЗЗ", "ЗЗЗ", "ЗЗЗЗ"),
+	)
+
 /datum/accent/lizard/modify_speech(list/speech_args)
 	var/message = speech_args[SPEECH_MESSAGE]
-	var/static/regex/lizard_hiss = new("s+", "g")
-	var/static/regex/lizard_hiSS = new("S+", "g")
-	var/static/regex/lizard_hicc = new("с+", "g")
-	var/static/regex/lizard_hiCC = new("С+", "g")
-	var/static/regex/lizard_hich = new("ч+", "g")
-	var/static/regex/lizard_hiCH = new("Ч+", "g")
-	var/static/regex/lizard_hijj = new("ж+", "g")
-	var/static/regex/lizard_hiJJ = new("Ж+", "g")
 	if(message[1] != "*")
-		message = lizard_hiss.Replace_char(message, "[pick("ss", "sss")]")
-		message = lizard_hiSS.Replace_char(message, "[pick("SS", "SSS")]")
-		message = lizard_hicc.Replace_char(message, "[pick("сс", "ссс")]")
-		message = lizard_hiCC.Replace_char(message, "[pick("СС", "ССС")]")
-		message = lizard_hich.Replace_char(message, "[pick("щщ", "щщщ")]")
-		message = lizard_hiCH.Replace_char(message, "[pick("ЩЩ", "ЩЩЩ")]")
-		message = lizard_hijj.Replace_char(message, "[pick("шш", "шшш")]")
-		message = lizard_hiJJ.Replace_char(message, "[pick("ШШ", "ШШШ")]")
-	speech_args[SPEECH_MESSAGE] = message
+		speech_args[SPEECH_MESSAGE] = add_accent(speech_args[SPEECH_MESSAGE], map_accent)
 	return speech_args
 
 /datum/accent/canine/modify_speech(list/speech_args)
