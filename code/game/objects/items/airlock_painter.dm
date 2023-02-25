@@ -107,7 +107,7 @@
 
 		return (TOXLOSS|OXYLOSS)
 	else if(can_use(user) && !L)
-		user.visible_message(span_suicide("[user] is spraying toner on [user.ru_na()]self from [src]! It looks like [user.ru_who()] trying to commit suicide."))
+		user.visible_message(span_suicide("[user] is spraying toner on себя from [src]! It looks like [user.ru_who()] trying to commit suicide."))
 		user.reagents.add_reagent(/datum/reagent/colorful_reagent, 1)
 		user.reagents.reaction(user, TOUCH, 1)
 		return TOXLOSS

@@ -608,7 +608,7 @@
 				user.DefaultCombatKnockdown(stunforce * 2)
 				user.stuttering = stunforce/20
 				B.deductcharge(B.hitcost)
-				user.visible_message("<span class='warning'>[user] shocks [user.ru_na()]self while attempting to wash the active [B.name]!</span>", \
+				user.visible_message("<span class='warning'>[user] shocks себя while attempting to wash the active [B.name]!</span>", \
 									"<span class='userdanger'>You unwisely attempt to wash [B] while it's still on.</span>")
 				playsound(src, "sparks", 50, 1)
 				return

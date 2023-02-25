@@ -64,7 +64,7 @@
 		if(8)
 			size_name = pick("абсолютно огромного", "невероятно гигантского", "THAT'S ULTRA THICC")
 		else
-			size_name = "несуществующего"
+			size_name = "плоского"
 
 	desc = "Вы наблюдаете [lowershape] [size_name] размера."
 

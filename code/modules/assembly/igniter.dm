@@ -9,7 +9,7 @@
 	pickup_sound = 'sound/items/handling/component_pickup.ogg'
 
 /obj/item/assembly/igniter/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] is trying to ignite [user.ru_na()]self with \the [src]! It looks like [user.ru_who()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is trying to ignite себя with \the [src]! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	user.IgniteMob()
 	return FIRELOSS
 

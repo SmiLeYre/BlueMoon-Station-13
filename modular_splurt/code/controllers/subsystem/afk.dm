@@ -15,7 +15,7 @@ SUBSYSTEM_DEF(auto_cryo)
 
 /datum/controller/subsystem/auto_cryo/fire()
 	// Check for any targets
-	if(!GLOB.ssd_mob_list.len)
+	if(!LAZYLEN(GLOB.ssd_mob_list))
 		// No SSD mobs exist
 		return
 

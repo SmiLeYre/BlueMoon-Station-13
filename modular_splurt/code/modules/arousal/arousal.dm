@@ -1,6 +1,11 @@
 /mob/living/carbon/human/mob_climax_partner(obj/item/organ/genital/G, mob/living/L, spillage, mb_time, obj/item/organ/genital/Lgen, forced = FALSE)
 	. = ..()
 	L.receive_climax(src, Lgen, G, spillage, forced = forced)
+	if(iswendigo(L))
+		var/mob/living/carbon/wendigo/W = L
+		if(W.pulling == src)
+			W.slaves |= src
+			to_chat(src, "<font color='red'> You are now [W]'s slave! Serve your master properly! </font>")
 
 /mob/living/proc/receive_climax(mob/living/partner, obj/item/organ/genital/receiver, obj/item/organ/genital/source, spill, forced)
 	//gregnancy...

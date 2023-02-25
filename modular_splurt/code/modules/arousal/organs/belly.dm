@@ -72,9 +72,9 @@
 		if(7 to BELLY_SIZE_MAX)
 			size_name = pick("абсолютно огромного", "невероятно гигантского", "THAT'S ULTRA THICC")
 		else
-			size_name = "несуществующего"
+			size_name = "плоского"
 
-	desc = "Вы наблюдаете животик [size_name]. [round(size) >= 4 ? "Он подпрыгивает и булькает от того, что [owner] идёт." : "Животик плотно 'сидит' на своём месте."]."
+	desc = "Вы наблюдаете животик [size_name] размера. [round(size) >= 4 ? "Он подпрыгивает и булькает от того, что [owner] идёт." : "Животик плотно 'сидит' на своём месте."]."
 
 	var/icon_size = size
 	icon_state = "belly_[lowershape]_[icon_size]"

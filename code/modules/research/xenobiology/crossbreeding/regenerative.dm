@@ -27,7 +27,7 @@ Regenerative extracts:
 			if(!do_after(user, 50, target = M)) //5 seconds
 				return TRUE
 		else //targeting self
-			M.visible_message("<span class='notice'>[user] readies [src], holding it steady near [user.ru_na()]self and guiding it to the center of [user.ru_ego()] mass...</span>",
+			M.visible_message("<span class='notice'>[user] readies [src], holding it steady near себя and guiding it to the center of [user.ru_ego()] mass...</span>",
 				"<span class='notice'>You ready [src], holding it steady near you and guiding it to the center of your mass...</span>")
 			if(!do_after(user, 10, target = M)) //1 second
 				return TRUE
@@ -47,7 +47,7 @@ Regenerative extracts:
 		user.visible_message("<span class='notice'>[user] crushes the [src] over [M], the milky goo quickly regenerating all of [M.ru_ego()] injuries!</span>",
 			"<span class='notice'>You squeeze the [src], and it bursts over [M], the milky goo regenerating [M.ru_ego()] injuries.</span>")
 	else
-		user.visible_message("<span class='notice'>[user] crushes the [src] over [user.ru_na()]self, the milky goo quickly regenerating all of [user.ru_ego()] injuries!</span>",
+		user.visible_message("<span class='notice'>[user] crushes the [src] over себя, the milky goo quickly regenerating all of [user.ru_ego()] injuries!</span>",
 			"<span class='notice'>You squeeze the [src], and it bursts in your hand, splashing you with milky goo which quickly regenerates your injuries!</span>")
 	core_effect_before(M, user)
 	var/new_disgust_level = 0

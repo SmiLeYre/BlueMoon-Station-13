@@ -20,7 +20,7 @@
 			var/mob/living/carbon/wendigo/A = C
 			A.metabolize_hunger()
 
-/obj/item/organ/eyes/wendigo
+/obj/item/organ/eyes/night_vision/wendigo
 	sight_flags = SEE_MOBS
 
 /obj/item/bodypart/head/wendigo

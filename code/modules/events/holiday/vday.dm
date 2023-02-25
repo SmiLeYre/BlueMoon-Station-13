@@ -57,9 +57,6 @@
 		if(!user.is_literate())
 			to_chat(user, "<span class='notice'>You scribble illegibly on [src]!</span>")
 			return
-		if(HAS_TRAIT(user, TRAIT_DUMB4CUM))
-			to_chat(user, "<span class='love'>You can't think of anything but cum right now.</span>")
-			return
 		var/recipient = stripped_input(user, "Who is receiving this valentine?", "To:", null , 20)
 		var/sender = stripped_input(user, "Who is sending this valentine?", "From:", null , 20)
 		if(!user.canUseTopic(src, BE_CLOSE))

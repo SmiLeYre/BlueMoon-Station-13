@@ -20,7 +20,7 @@
 
 /obj/item/papercutter/suicide_act(mob/user)
 	if(storedcutter)
-		user.visible_message("<span class='suicide'>[user] is beheading [user.ru_na()]self with [src.name]! It looks like [user.ru_who()] trying to commit suicide!</span>")
+		user.visible_message("<span class='suicide'>[user] is beheading себя with [src.name]! It looks like [user.ru_who()] trying to commit suicide!</span>")
 		if(iscarbon(user))
 			var/mob/living/carbon/C = user
 			var/obj/item/bodypart/BP = C.get_bodypart(BODY_ZONE_HEAD)

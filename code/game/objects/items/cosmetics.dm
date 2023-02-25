@@ -114,7 +114,7 @@
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/razor/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins shaving [user.ru_na()]self without the razor guard! It looks like [user.ru_who()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins shaving себя without the razor guard! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	shave(user, BODY_ZONE_PRECISE_MOUTH)
 	shave(user, BODY_ZONE_HEAD)//doesnt need to be BODY_ZONE_HEAD specifically, but whatever
 	return BRUTELOSS

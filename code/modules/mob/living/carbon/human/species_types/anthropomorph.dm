@@ -15,6 +15,7 @@
 
 	tail_type = "mam_tail"
 	wagging_type = "mam_waggingtail"
+	ass_image = 'icons/ass/assfluffy.png'
 	species_category = SPECIES_CATEGORY_FURRY
 
 	allowed_limb_ids = list("mammal","aquatic","avian")

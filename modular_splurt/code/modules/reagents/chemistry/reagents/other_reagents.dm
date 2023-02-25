@@ -1,14 +1,24 @@
 /datum/reagent/consumable/semen/on_mob_add(mob/living/carbon/M)
 	. = ..()
-	var/datum/quirk/dumb4cum/d4c = locate() in M.roundstart_quirks
-	if(d4c)
-		d4c.uncrave()
+
+	// Check for D4C quirk
+	if(HAS_TRAIT(M,TRAIT_DUMB_CUM))
+		// Define quirk entry
+		var/datum/quirk/dumb4cum/quirk_target = locate() in M.roundstart_quirks
+
+		// Remove reset timer
+		quirk_target.uncrave()
 
 /datum/reagent/consumable/ethanol/cum_in_a_hot_tub/semen/on_mob_add(mob/living/carbon/M)
 	. = ..()
-	var/datum/quirk/dumb4cum/d4c = locate() in M.roundstart_quirks
-	if(d4c)
-		d4c.uncrave()
+
+	// Check for D4C quirk
+	if(HAS_TRAIT(M,TRAIT_DUMB_CUM))
+		// Define quirk entry
+		var/datum/quirk/dumb4cum/quirk_target = locate() in M.roundstart_quirks
+
+		// Remove reset timer
+		quirk_target.uncrave()
 
 //incubus and succubus additions below
 /datum/reagent/consumable/semen/on_mob_life(mob/living/carbon/M)

@@ -601,9 +601,6 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 	if(!is_literate())
 		to_chat(src, "<span class='notice'>You try to read [O], but can't comprehend any of it.</span>")
 		return
-	if(HAS_TRAIT(src, TRAIT_DUMB4CUM))
-		to_chat(src, "<span class='love'>You try reading [O] but only warm seed comes to your mind.</span>")
-		return
 	return TRUE
 
 /mob/proc/checkloadappearance()

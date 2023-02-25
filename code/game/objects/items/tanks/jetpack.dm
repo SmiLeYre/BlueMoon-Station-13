@@ -89,7 +89,7 @@
 	if (ishuman(user))
 		var/mob/living/carbon/human/H = user
 		H.forcesay("WHAT THE FUCK IS CARBON DIOXIDE?")
-		H.visible_message("<span class='suicide'>[user] is suffocating [user.ru_na()]self with [src]! It looks like [user.ru_who()] didn't read what that jetpack says!</span>")
+		H.visible_message("<span class='suicide'>[user] is suffocating себя with [src]! It looks like [user.ru_who()] didn't read what that jetpack says!</span>")
 		return (OXYLOSS)
 	else
 		..()

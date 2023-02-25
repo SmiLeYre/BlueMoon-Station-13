@@ -11,6 +11,6 @@
 	mood_change = -20
 
 /datum/mood_event/cum_stuffed
-	description = span_nicegreen("It feels so good inside me!\n")
+	description = span_nicegreen("The cum feels so good inside me!\n")
 	mood_change = 8
 	timeout = 5 MINUTES

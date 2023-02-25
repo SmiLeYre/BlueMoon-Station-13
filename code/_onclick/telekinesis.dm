@@ -191,7 +191,7 @@
 	. += focus_overlay
 
 /obj/item/tk_grab/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is using [user.ru_ego()] telekinesis to choke [user.ru_na()]self! It looks like [user.ru_who()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is using [user.ru_ego()] telekinesis to choke себя! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	return (OXYLOSS)
 
 

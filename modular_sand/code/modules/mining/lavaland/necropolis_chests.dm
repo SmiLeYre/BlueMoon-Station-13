@@ -255,7 +255,7 @@
 
 
 	else
-		user.visible_message("<span class='suicide'>[user] begins beating [user.ru_na()]self to death with \the [src]'s handle! It probably would've been cooler if [user.ru_who()] turned it on first!</span>")
+		user.visible_message("<span class='suicide'>[user] begins beating себя to death with \the [src]'s handle! It probably would've been cooler if [user.ru_who()] turned it on first!</span>")
 	return BRUTELOSS
 
 /obj/item/crucible/update_icon_state()

@@ -166,3 +166,10 @@
 	icon_state = "angelmoth"
 	icon = 'modular_splurt/icons/mob/wings.dmi'
 	upgrade_to = SPECIES_WINGS_MOTH
+
+// Dragon wings but using WINGCOLOR instead
+/datum/sprite_accessory/deco_wings/dragonalt
+	name = "Dragon (Alt)"
+	icon_state = "dragonalt"
+	icon = 'modular_splurt/icons/mob/wings.dmi'
+	upgrade_to = SPECIES_WINGS_DRAGON

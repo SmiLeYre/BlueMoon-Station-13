@@ -40,7 +40,7 @@
 		if(BALLS_SIZE_MAX)
 			size_name = pick(list("гигантского", "экстремального", "невероятного", "абсолютно огромного"))
 		else
-			size_name = "несуществующего"
+			size_name = "плоского"
 
 /obj/item/organ/genital/testicles/update_appearance()
 	. = ..()

@@ -2,30 +2,30 @@
 //MAKE SURE THESE DO NOT MAJORLY IMPACT GAMEPLAY. those should be positive or negative traits.
 
 /datum/quirk/no_taste
-	name = "Ageusia"
-	desc = "You can't taste anything! Toxic food will still poison you."
+	name = "Агевзия"
+	desc = "Вы не чувствуете вкуса! Ядовитая еда всё ещё будет иметь пагубное воздействие."
 	value = 0
 	mob_trait = TRAIT_AGEUSIA
-	gain_text = "<span class='notice'>You can't taste anything!</span>"
-	lose_text = "<span class='notice'>You can taste again!</span>"
-	medical_record_text = "Patient suffers from ageusia and is incapable of tasting food or reagents."
+	gain_text = "<span class='notice'>Вы не чувствуете вкуса!</span>"
+	lose_text = "<span class='notice'>Вы снова чувствуете вкус!</span>"
+	medical_record_text = "Пациент страдает от авгезии и не способен чувствовать вкус."
 
 /datum/quirk/snob
-	name = "Snob"
-	desc = "You care about the finer things, if a room doesn't look nice its just not really worth it, is it?"
+	name = "Сноб"
+	desc = "Вас волнуют вещи утонченные, если комната выглядит некрасиво, она просто не стоит того, верно?"
 	value = 0
-	gain_text = "<span class='notice'>You feel like you understand what things should look like.</span>"
-	lose_text = "<span class='notice'>Well who cares about deco anyways?</span>"
-	medical_record_text = "Patient seems to be rather stuck up."
+	gain_text = "<span class='notice'>Вы считаете, что знаете, как должны выглядеть вещи.</span>"
+	lose_text = "<span class='notice'>Кого вообще волнует декор?</span>"
+	medical_record_text = "Пациент ведёт себя напыщенно."
 	mob_trait = TRAIT_SNOB
 
 /datum/quirk/pineapple_liker
-	name = "Ananas Affinity"
-	desc = "You find yourself greatly enjoying fruits of the ananas genus. You can't seem to ever get enough of their sweet goodness!"
+	name = "Пристрастие к Ананасам"
+	desc = "Вы обожаете плоды ананасового дерева. Вы никак не можете прекратить наслаждаться этим сладким вкусом!"
 	value = 0
-	gain_text = "<span class='notice'>You feel an intense craving for pineapple.</span>"
-	lose_text = "<span class='notice'>Your feelings towards pineapples seem to return to a lukewarm state.</span>"
-	medical_record_text = "Patient demonstrates a pathological love of pineapple."
+	gain_text = "<span class='notice'>У вас появляется сильное желание вкусить мякоти ананаса.</span>"
+	lose_text = "<span class='notice'>По всей видимости, ваше отношение к ананасам возвращается к нейтральному.</span>"
+	medical_record_text = "У пациента проявляется патологическая любовь к ананасам."
 
 /datum/quirk/pineapple_liker/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -39,12 +39,12 @@
 		species.liked_food &= ~PINEAPPLE
 
 /datum/quirk/pineapple_hater
-	name = "Ananas Aversion"
-	desc = "You find yourself greatly detesting fruits of the ananas genus. Serious, how the hell can anyone say these things are good? And what kind of madman would even dare putting it on a pizza!?"
+	name = "Неприязнь к Ананасам"
+	desc = "Вы испытываете сильнейшее отвращение к плодам ананасового дерева. Серьёзно, кому они нравятся? И какой безумец посмел положить их на пиццу!?"
 	value = 0
-	gain_text = "<span class='notice'>You find yourself pondering what kind of idiot actually enjoys pineapples...</span>"
-	lose_text = "<span class='notice'>Your feelings towards pineapples seem to return to a lukewarm state.</span>"
-	medical_record_text = "Patient is correct to think that pineapple is disgusting."
+	gain_text = "<span class='notice'>Вы задумываетесь над тем, какому идиоту вообще могут понравиться ананасы...</span>"
+	lose_text = "<span class='notice'>По всей видимости, ваше отношение к ананасам возвращается к нейтральному.</span>"
+	medical_record_text = "Пациент прав в своей нелюбви к ананасам."
 
 /datum/quirk/pineapple_hater/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -58,12 +58,12 @@
 		species.disliked_food &= ~PINEAPPLE
 
 /datum/quirk/deviant_tastes
-	name = "Deviant Tastes"
-	desc = "You dislike food that most people enjoy, and find delicious what they don't."
+	name = "Извращенные Вкусы"
+	desc = "Вам не нравится то, что нравится большинству и наоборот."
 	value = 0
-	gain_text = "<span class='notice'>You start craving something that tastes strange.</span>"
-	lose_text = "<span class='notice'>You feel like eating normal food again.</span>"
-	medical_record_text = "Patient demonstrates irregular nutrition preferences."
+	gain_text = "<span class='notice'>Появляется желание съесть чего-нибудь странного.</span>"
+	lose_text = "<span class='notice'>Вам снова нравится есть типичную пищу.</span>"
+	medical_record_text = "Пациент демонстрирует атипичные предпочтения в пище."
 
 /datum/quirk/deviant_tastes/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -80,17 +80,17 @@
 		species.disliked_food = initial(species.disliked_food)
 
 /datum/quirk/monochromatic
-	name = "Monochromacy"
-	desc = "You suffer from full colorblindness, and perceive nearly the entire world in blacks and whites."
+	name = "Монохромазия"
+	desc = "Вы страдаете от цветовой слепоты и воспринимаете мир только в чёрных и белых тонах."
 	value = 0
-	medical_record_text = "Patient is afflicted with almost complete color blindness."
+	medical_record_text = "Пациент подвержден практически полной цветовой слепоте."
 
 /datum/quirk/monochromatic/add()
 	quirk_holder.add_client_colour(/datum/client_colour/monochrome)
 
 /datum/quirk/monochromatic/post_add()
 	if(quirk_holder.mind.assigned_role == "Detective")
-		to_chat(quirk_holder, "<span class='boldannounce'>Mmm. Nothing's ever clear on this station. It's all shades of gray...</span>")
+		to_chat(quirk_holder, "<span class='boldannounce'>Хм-м-м. Нет ничего незапятнанного в этих коридорах. Всё лишь оттенки серого...</span>")
 		quirk_holder.playsound_local(quirk_holder, 'sound/ambience/ambidet1.ogg', 50, FALSE)
 
 /datum/quirk/monochromatic/remove()
@@ -98,20 +98,20 @@
 		quirk_holder.remove_client_colour(/datum/client_colour/monochrome)
 
 /datum/quirk/maso
-	name = "Masochism"
-	desc = "You are aroused by pain."
+	name = "Мазохизм"
+	desc = "Вас возбуждает боль."
 	value = 0
 	mob_trait = TRAIT_MASO
-	gain_text = "<span class='notice'>You desire to be hurt.</span>"
-	lose_text = "<span class='notice'>Pain has become less exciting for you.</span>"
+	gain_text = "<span class='notice'>Вы хотите, чтобы вам причинили боль.</span>"
+	lose_text = "<span class='notice'>Боль больше не так заводит.</span>"
 
 /datum/quirk/libido
-	name = "Nymphomaniac"
-	desc = "You are much more sensitive to arousal."
+	name = "Нимфомания"
+	desc = "Вы быстрее возбуждаетесь."
 	value = 0
 	mob_trait = TRAIT_NYMPHO
-	gain_text = "<span class='notice'>You are feeling extra wild.</span>"
-	lose_text = "<span class='notice'>You don't feel that burning sensation anymore.</span>"
+	gain_text = "<span class='notice'>У вас зудит в промежности.</span>"
+	lose_text = "<span class='notice'>Вы более не чувствуете того приятного жжения.</span>"
 
 /datum/quirk/libido/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -124,11 +124,11 @@
 	H.arousal_rate = initial(H.arousal_rate)
 
 /datum/quirk/alcohol_intolerance
-	name = "Alcohol Intolerance"
-	desc = "You take toxin damage from alcohol rather than getting drunk."
+	name = "Непереносимость Алкоголя"
+	desc = "Вы получаете урон токсинами вместо того, чтобы пьянеть при употреблении алкоголя."
 	value = 0
 	mob_trait = TRAIT_TOXIC_ALCOHOL
-	medical_record_text = "Patient's body does not react properly to ethyl alcohol."
+	medical_record_text = "Организм пациента не усваивает этиловый спирт."
 
 /datum/quirk/alcohol_intolerance/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -142,12 +142,12 @@
 		species.disliked_food &= ~ALCOHOL
 
 /datum/quirk/longtimer
-	name = "Longtimer"
-	desc = "You've been around for a long time and seen more than your fair share of action, suffering some pretty nasty scars along the way. For whatever reason, you've declined to get them removed or augmented."
+	name = "Матёрый Волк"
+	desc = "Вы прошли долгий путь и пережили больше, чем остальные. Вы страдаете от жутких шрамов. Какова бы ни была причина, вы отказались от их удаления или аугментации."
 	value = 0
-	gain_text = "<span class='notice'>Your body has seen better days.</span>"
-	lose_text = "<span class='notice'>Your sins may wash away, but those scars are here to stay...</span>"
-	medical_record_text = "Patient has withstood significant physical trauma and declined plastic surgery procedures to heal scarring."
+	gain_text = "<span class='notice'>Ваше тело видало лучшие дни.</span>"
+	lose_text = "<span class='notice'>Грехи можно смыть, но шрамы останутся...</span>"
+	medical_record_text = "Пациент выразил отказ от удаления многочисленных шрамов."
 	/// the minimum amount of scars we can generate
 	var/min_scars = 3
 	/// the maximum amount of scars we can generate
@@ -158,27 +158,27 @@
 	C.generate_fake_scars(rand(min_scars, max_scars))
 
 /datum/quirk/trashcan
-	name = "Trashcan"
-	desc = "You are able to consume and digest trash."
+	name = "Мусорный бак"
+	desc = "Вы можете есть мусор."
 	value = 0
-	gain_text = "<span class='notice'>You feel like munching on a can of soda.</span>"
-	lose_text = "<span class='notice'>You no longer feel like you should be eating trash.</span>"
+	gain_text = "<span class='notice'>В голову приходит мысль пожевать банку из-под содовой.</span>"
+	lose_text = "<span class='notice'>Вы больше не хотите есть мусор.</span>"
 	mob_trait = TRAIT_TRASHCAN
 
 // Moved Colorist quirk to a loadout item
 
 /datum/quirk/salt_sensitive
-	name = "Sodium Sensitivity"
-	desc = "Your body is sensitive to sodium, and is burnt upon contact. Ingestion or contact with it is not advised."
+	name = "Чувствительность к Натрию"
+	desc = "Ваше тело чувствительно к натрию, потому обжигается при контакте с ним. Употребление крайне не рекомендуется."
 	value = 0
-	medical_record_text = "Patient should not come into contact with sodium."
+	medical_record_text = "Пациенту не следует входить в контакт с натрием."
 	mob_trait = TRAIT_SALT_SENSITIVE
 
 /datum/quirk/dullahan
-	name = "Dullahan"
-	desc = "Your head is detached from your body."
+	name = "Дюллахан"
+	desc = "Ваша голова отделена от тела."
 	value = 0
-	medical_record_text = "Patient seems to have some kind of spatial link with their decapitated head."
+	medical_record_text = "Пациент имеет неизвестного рода пространственную связь с собственной отделенной головой."
 
 /datum/quirk/dullahan/post_add()
 	quirk_holder.AddComponent(/datum/component/dullahan)

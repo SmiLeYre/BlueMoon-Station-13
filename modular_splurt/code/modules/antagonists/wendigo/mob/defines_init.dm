@@ -37,6 +37,8 @@
 	var/obj/item/ears_extra = null
 	var/obj/item/wrists = null
 
+	var/list/slaves = list() //people enslaved
+
 /mob/living/carbon/wendigo/Initialize()
 	. = ..()
 	/*		//TODO: Uncomment when objectives + forest get finished
@@ -79,6 +81,7 @@
 
 /mob/living/carbon/wendigo/Destroy()
 	QDEL_NULL(physiology)
+	slaves.Cut()
 	return ..()
 
 /mob/living/carbon/wendigo/update_body_parts()
@@ -107,8 +110,10 @@
 	return TRUE
 /mob/living/carbon/wendigo/IsAdvancedToolUser()
 	return TRUE
+/* So they can be pulled.
 /mob/living/carbon/wendigo/can_be_pulled()
 	return FALSE
+*/
 /mob/living/carbon/wendigo/is_literate()
 	return TRUE
 /mob/living/carbon/wendigo/canBeHandcuffed()
@@ -122,7 +127,7 @@
 //ORGANS
 //
 /mob/living/carbon/wendigo/create_internal_organs()
-	internal_organs += new /obj/item/organ/eyes/wendigo
+	internal_organs += new /obj/item/organ/eyes/night_vision/wendigo
 	internal_organs += new /obj/item/organ/liver/wendigo
 
 	internal_organs += new /obj/item/organ/tongue
@@ -131,3 +136,12 @@
 	internal_organs += new /obj/item/organ/stomach
 	internal_organs += new /obj/item/organ/ears
 	..()
+
+/mob/living/carbon/wendigo/movement_delay()
+	. = ..()
+	var/adding = 0
+	var/turf/T = get_turf(src)
+	if(T.get_lumcount() < 0.2)
+		adding += 1
+	. += adding
+

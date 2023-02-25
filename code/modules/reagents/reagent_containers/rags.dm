@@ -19,7 +19,7 @@
 	var/damp_threshold = 0.5
 
 /obj/item/reagent_containers/rag/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is smothering [user.ru_na()]self with [src]! It looks like [user.ru_who()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is smothering себя with [src]! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	return (OXYLOSS)
 
 /obj/item/reagent_containers/rag/examine(mob/user)
@@ -68,11 +68,11 @@
 			if(reagents.total_volume > (volume * damp_threshold))
 				to_chat(user, "<span class='warning'>\The [src] is too drenched to be used to dry [user == M ? "yourself" : "\the [M]"] off.</span>")
 				return TRUE
-			user.visible_message("<span class='notice'>\The [user] starts drying [M == user ? "[user.ru_na()]self" : "\the [M]"] off with \the [src]...</span>")
+			user.visible_message("<span class='notice'>\The [user] starts drying [M == user ? "себя" : "\the [M]"] off with \the [src]...</span>")
 			if(do_mob(user, M, action_speed))
 				if(reagents.total_volume > (volume * damp_threshold))
 					return
-				user.visible_message("<span class='notice'>\The [user] dries [M == user ? "[user.ru_na()]self" : "\the [M]"] off with \the [src].</span>")
+				user.visible_message("<span class='notice'>\The [user] dries [M == user ? "себя" : "\the [M]"] off with \the [src].</span>")
 				if(wipe_sound)
 					playsound(M, wipe_sound, 25, 1)
 				if(M.fire_stacks)

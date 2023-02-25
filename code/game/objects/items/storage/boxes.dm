@@ -49,7 +49,7 @@
 		myhead.forceMove(src)//force your enemies to kill themselves with your head collection box!
 		playsound(user,pick('sound/misc/desceration-01.ogg','sound/misc/desceration-02.ogg','sound/misc/desceration-01.ogg') ,50, 1, -1)
 		return BRUTELOSS
-	user.visible_message("<span class='suicide'>[user] beating [user.ru_na()]self with \the [src]! It looks like [user.ru_who()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] beating себя with \the [src]! It looks like [user.ru_who()] trying to commit suicide!</span>")
 	return BRUTELOSS
 
 /obj/item/storage/box/update_overlays()

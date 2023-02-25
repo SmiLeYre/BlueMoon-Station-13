@@ -48,9 +48,9 @@
 
 
 /obj/item/gun/magic/wand/proc/zap_self(mob/living/user)
-	user.visible_message("<span class='danger'>[user] zaps [user.ru_na()]self with [src].</span>")
+	user.visible_message("<span class='danger'>[user] zaps себя with [src].</span>")
 	playsound(user, fire_sound, 50, 1)
-	user.log_message("zapped [user.ru_na()]self with a <b>[src]</b>", LOG_ATTACK)
+	user.log_message("zapped себя with a <b>[src]</b>", LOG_ATTACK)
 
 
 /////////////////////////////////////

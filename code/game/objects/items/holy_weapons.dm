@@ -234,7 +234,7 @@
 	AddComponent(/datum/component/anti_magic, TRUE, TRUE, FALSE, null, null, FALSE)
 
 /obj/item/nullrod/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is killing [user.ru_na()]self with [src]! It looks like [user.ru_who()] trying to get closer to god!</span>")
+	user.visible_message("<span class='suicide'>[user] is killing себя with [src]! It looks like [user.ru_who()] trying to get closer to god!</span>")
 	return (BRUTELOSS|FIRELOSS)
 
 /obj/item/nullrod/attack_self(mob/user)
