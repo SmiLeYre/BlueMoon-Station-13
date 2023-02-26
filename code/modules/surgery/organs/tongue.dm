@@ -96,12 +96,30 @@
 
 /obj/item/organ/tongue/canine
 	name = "flat tongue"
-	desc = "A flat and broad muscle commonly found in canine and feline races."
+	desc = "A flat and broad muscle commonly found in canine."
 	icon_state = "tonguefluffy"
 	say_mod = "rawrs"
 	taste_sensitivity = 10 // nose extra sensitive
 	maxHealth = 50 //extra sensitivity means tongue is more susceptible to damage
 	initial_accents = list(/datum/accent/canine)
+
+/obj/item/organ/tongue/feline
+	name = "flat rough tongue"
+	desc = "A flat and broad muscle commonly found in feline races."
+	icon_state = "tonguefluffy"
+	say_mod = "mewels"
+	taste_sensitivity = 10 // nose extra sensitive
+	maxHealth = 50 //extra sensitivity means tongue is more susceptible to damage
+	initial_accents = list(/datum/accent/feline)
+
+/obj/item/organ/tongue/bird
+	name = "flat rough tongue"
+	desc = "A flat and broad muscle commonly found in feline races."
+	icon_state = "tonguenormal"  // Сделайте иконку плиз
+	say_mod = "chirps"
+	taste_sensitivity = 50 // nose extra sensitive
+	maxHealth = 70 //extra sensitivity means tongue is more susceptible to damage
+	initial_accents = list(/datum/accent/bird)
 
 /obj/item/organ/tongue/fly
 	name = "proboscis"

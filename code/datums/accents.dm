@@ -23,21 +23,23 @@
 /datum/accent/lizard
 	var/map_accent = list(
 		"s" = list("ss", "sss","ssss"),
-		"S" = list("SS", "SSS","SSSS"),
+		"S" = list("Ss", "Sss","Ssss"),
 		"c" = list("cc", "ccc","cccc"),
-		"C" = list("CC", "CCC","CCCC"),
-		"ч" = list("чч", "ччч", "чччч"),
-		"Ч" = list("ЧЧ", "ЧЧЧ", "ЧЧЧЧ"),
-		"ж" = list("жж", "жжж", "жжжж"),
-		"Ж" = list("ЖЖ", "ЖЖЖ", "ЖЖЖЖ"),
-		"с" = list("сс", "ссс", "сссс"),
-		"С" = list("СС", "ССС", "СССС"),
-		"ш" = list("шш", "шшш", "шшшш"),
-		"Ш" = list("ШШ", "ШШШ", "ШШШШ"),
-		"щ" = list("щщ", "щщщ", "щщщщ"),
-		"Щ" = list("ЩЩ", "ЩЩЩ", "ЩЩЩЩ"),
-		"з" = list("зз", "ззз", "зззз"),
-		"З" = list("ЗЗ", "ЗЗЗ", "ЗЗЗЗ"),
+		"C" = list("Cc", "Ccc","Cccc"),
+		"ч" = list("щщ", "щщщщ", "щщщщ"),
+		"Ч" = list("Щщ", "Щщщ", "Щщщщ"),
+		"ж" = list("шш", "шшш","шшшш"),
+		"Ж" = list("Шш", "Шшш","Шшшш"),
+		"с" = list("сс", "ссс","сссс"),
+		"С" = list("Сс", "Ссс","Сссс"),
+		"ш" = list("шш", "шшш","шшшш"),
+		"Ш" = list("Шш", "Шшш","Шшшш"),
+		"щ" = list("щщ", "щщщ","щщщщ"),
+		"Щ" = list("Щщ", "Щщщ","Щщщщ"),
+		"з" = list("сс", "ссс","сссс"),
+		"З" = list("Сс", "Ссс","Сссс"),
+		"х" = list("хх", "ххх"),
+		"Х" = list("Хх", "Ххх"),
 	)
 
 /datum/accent/lizard/modify_speech(list/speech_args)
@@ -46,36 +48,67 @@
 		speech_args[SPEECH_MESSAGE] = add_accent(speech_args[SPEECH_MESSAGE], map_accent)
 	return speech_args
 
+/datum/accent/canine
+	var/map_accent = list(
+		"r" = list("r","rr", "rrr","rrrr"),
+		"R" = list("R","Rr", "Rrr","Rrrr"),
+		"р" = list("р","рр", "ррр","рррр"),
+		"Р" = list("Р","Рр", "Ррр","Рррр"),
+	)
+
 /datum/accent/canine/modify_speech(list/speech_args)
 	var/message = speech_args[SPEECH_MESSAGE]
-	var/static/regex/Dog_rawrs = new("r+", "g")
-	var/static/regex/Dog_RAWRs = new("R+", "g")
-	var/static/regex/Dog_crawrs = new("р+", "g")
-	var/static/regex/Dog_cRAWRs = new("Р+", "g")
 	if(message[1] != "*")
-		message = Dog_rawrs.Replace_char(message, "[pick("rr", "RRR")]")
-		message = Dog_RAWRs.Replace_char(message, "[pick("RR", "RRR")]")
-		message = Dog_crawrs.Replace_char(message, "[pick("рр", "ррр")]")
-		message = Dog_cRAWRs.Replace_char(message, "[pick("РР", "РРР")]")
-	speech_args[SPEECH_MESSAGE] = message
+		speech_args[SPEECH_MESSAGE] = add_accent(speech_args[SPEECH_MESSAGE], map_accent)
 	return speech_args
+
+/datum/accent/feline
+	var/map_accent = list(
+		"r" = list("rr", "rrr"),
+		"R" = list("Rr", "Rrr"),
+		"р" = list("рр", "ррр"),
+		"Р" = list("Рр", "Ррр"),
+		"с" = list("с", "сс"),
+		"С" = list("С", "Сс"),
+	)
+
+/datum/accent/feline/modify_speech(list/speech_args)
+	var/message = speech_args[SPEECH_MESSAGE]
+	if(message[1] != "*")
+		speech_args[SPEECH_MESSAGE] = add_accent(speech_args[SPEECH_MESSAGE], map_accent)
+	return speech_args
+
+/datum/accent/bird
+	var/map_accent = list(
+		"ch" = list("ch", "chch", "chich"),
+		"k" = list("k", "kk", "kik"),
+		"K" = list("K", "Kk", "Kik"),
+		"ч" = list("ч", "чч", "чич"),
+		"Ч" = list("Ч", "Чч", "Чич"),
+		"к" = list("к", "кк", "кик"),
+		"К" = list("К", "Кк", "Кик"),
+	)
+
+/datum/accent/bird/modify_speech(list/speech_args)
+	var/message = speech_args[SPEECH_MESSAGE]
+	if(message[1] != "*")
+		speech_args[SPEECH_MESSAGE] = add_accent(speech_args[SPEECH_MESSAGE], map_accent)
+	return speech_args
+
+/datum/accent/fly
+	var/map_accent = list(
+		"z" = list("z","zz", "zzz","zzzz"),
+		"Z" = list("Z","Zz", "Zzz","Zzzz"),
+		"з" = list("з","зз", "ззз","зззз"),
+		"З" = list("З","Зз", "Ззз","Зззз"),
+		"ж" = list("ж","жж", "жжж", "жжжж"),
+		"Ж" = list("Ж","Жж", "Жжж", "Жжжж"),
+	)
 
 /datum/accent/fly/modify_speech(list/speech_args)
 	var/message = speech_args[SPEECH_MESSAGE]
-	var/static/regex/fly_buzz = new("z+", "g")
-	var/static/regex/fly_buZZ = new("Z+", "g")
-	var/static/regex/fly_buzzc = new("з+", "g")
-	var/static/regex/fly_buZZc = new("З+", "g")
-	var/static/regex/fly_bujj = new("ж+", "g")
-	var/static/regex/fly_buJJ = new("Ж+", "g")
 	if(message[1] != "*")
-		message = fly_buzz.Replace_char(message, "[pick("zz", "zzz")]")
-		message = fly_buZZ.Replace_char(message, "[pick("ZZ", "ZZZ")]")
-		message = fly_buzzc.Replace_char(message, "[pick("зз", "ззз")]")
-		message = fly_buZZc.Replace_char(message, "[pick("ЗЗ", "ЗЗЗ")]")
-		message = fly_bujj.Replace_char(message, "[pick("жж", "жжж")]")
-		message = fly_buJJ.Replace_char(message, "[pick("ЖЖ", "ЖЖЖ")]")
-	speech_args[SPEECH_MESSAGE] = message
+		speech_args[SPEECH_MESSAGE] = add_accent(speech_args[SPEECH_MESSAGE], map_accent)
 	return speech_args
 
 /datum/accent/abductor/modify_speech(list/speech_args, datum/source)
@@ -127,6 +160,14 @@
 		message = replacetext(message, "ove", "uv")
 		message = replacetext(message, "l", "w")
 		message = replacetext(message, "r", "w")
+
+		message = replacetext(message, "не", "ня")
+		message = replacetext(message, "ну", "ню")
+		message = replacetext(message, "на", "ня")
+		message = replacetext(message, "но", "ню")
+		message = replacetext(message, "ов", "ув")
+		message = replacetext(message, "р", "ря")
+		message = replacetext(message, "мо", "мя")
 	speech_args[SPEECH_MESSAGE] = lowertext(message)
 	return speech_args
 

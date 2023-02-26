@@ -6,6 +6,7 @@
 
 	mutant_bodyparts = list("mam_tail" = "Cat", "mam_ears" = "Cat", "deco_wings" = "None", "mam_body_markings" = list())
 
+	mutanttongue = /obj/item/organ/tongue/feline
 	mutantears = /obj/item/organ/ears/cat
 	mutanttail = /obj/item/organ/tail/cat
 
