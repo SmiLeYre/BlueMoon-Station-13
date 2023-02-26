@@ -110,7 +110,7 @@
 	say_mod = "mewels"
 	taste_sensitivity = 10 // nose extra sensitive
 	maxHealth = 50 //extra sensitivity means tongue is more susceptible to damage
-	initial_accents = list(/datum/accent/feline)
+	initial_accents = list(/datum/accent/fluffy)
 
 /obj/item/organ/tongue/bird
 	name = "flat rough tongue"
