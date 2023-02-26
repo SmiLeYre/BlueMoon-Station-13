@@ -22,26 +22,29 @@
 
 	return accented_message
 
+//   Converter
+//   https://www.rapidtables.com/convert/number/ascii-hex-bin-dec-converter.html
+
 /datum/accent/lizard
 	var/map_accent = list(
-		"115" = list("ss", "sss","ssss"),
-		"83" = list("Ss", "Sss","Ssss"),
-		"99" = list("cc", "ccc","cccc"),
-		"67" = list("Cc", "Ccc","Cccc"),
-		"1095" = list("щщ", "щщщщ", "щщщщ"),
-		"1063" = list("Щщ", "Щщщ", "Щщщщ"),
-		"1078" = list("шш", "шшш","шшшш"),
-		"1046" = list("Шш", "Шшш","Шшшш"),
-		"1089" = list("сс", "ссс","сссс"),
-		"1057" = list("Сс", "Ссс","Сссс"),
-		"1096" = list("шш", "шшш","шшшш"),
-		"1064" = list("Шш", "Шшш","Шшшш"),
-		"1097" = list("щщ", "щщщ","щщщщ"),
-		"1065" = list("Щщ", "Щщщ","Щщщщ"),
-		"1079" = list("сс", "ссс","сссс"),
-		"1047" = list("Сс", "Ссс","Сссс"),
-		"1093" = list("хх", "ххх"),
-		"1061" = list("Хх", "Ххх"),
+		"115" = list("ss", "sss","ssss"),	// s
+		"83" = list("Ss", "Sss","Ssss"),	// S
+		"99" = list("cc", "ccc","cccc"),	// c
+		"67" = list("Cc", "Ccc","Cccc"),	// C
+		"1095" = list("щщ", "щщщщ", "щщщщ"),// ч
+		"1063" = list("Щщ", "Щщщ", "Щщщщ"),	// Ч
+		"1078" = list("шш", "шшш","шшшш"),	// ж
+		"1046" = list("Шш", "Шшш","Шшшш"),	// Ж
+		"1089" = list("сс", "ссс","сссс"),	// с
+		"1057" = list("Сс", "Ссс","Сссс"),	// С
+		"1096" = list("шш", "шшш","шшшш"),	// ш
+		"1064" = list("Шш", "Шшш","Шшшш"),	// Ш
+		"1097" = list("щщ", "щщщ","щщщщ"),	// щ
+		"1065" = list("Щщ", "Щщщ","Щщщщ"),	// Щ
+		"1079" = list("сс", "ссс","сссс"),	// з
+		"1047" = list("Сс", "Ссс","Сссс"),	// З
+		"1093" = list("хх", "ххх"),			// х
+		"1061" = list("Хх", "Ххх"),			// Х
 	)
 
 /datum/accent/lizard/modify_speech(list/speech_args)
@@ -52,10 +55,10 @@
 
 /datum/accent/canine
 	var/map_accent = list(
-		"114" = list("r","rr", "rrr","rrrr"),
-		"82" = list("R","Rr", "Rrr","Rrrr"),
-		"1088" = list("р","рр", "ррр","рррр"),
-		"1056" = list("Р","Рр", "Ррр","Рррр"),
+		"114" = list("r","rr", "rrr","rrrr"),	// r
+		"82" = list("R","Rr", "Rrr","Rrrr"),	// R
+		"1088" = list("р","рр", "ррр","рррр"),	// р
+		"1056" = list("Р","Рр", "Ррр","Рррр"),	// Р
 	)
 
 /datum/accent/canine/modify_speech(list/speech_args)
@@ -66,12 +69,12 @@
 
 /datum/accent/feline
 	var/map_accent = list(
-		"114" = list("rr", "rrr"),
-		"85" = list("Rr", "Rrr"),
-		"1088" = list("рр", "ррр"),
-		"1056" = list("Рр", "Ррр"),
-		"1089" = list("с", "сс"),
-		"1057" = list("С", "Сс"),
+		"114" = list("rr", "rrr"),	// r
+		"82" = list("Rr", "Rrr"),	// R
+		"1088" = list("рр", "ррр"),	// р
+		"1056" = list("Рр", "Ррр"),	// Р
+		"1089" = list("с", "сс"),	// с
+		"1057" = list("С", "Сс"),	// С
 	)
 
 /datum/accent/feline/modify_speech(list/speech_args)
@@ -82,13 +85,12 @@
 
 /datum/accent/bird
 	var/map_accent = list(
-		"ch" = list("ch", "chch", "chich"),
-		"107" = list("k", "kk", "kik"),
-		"75" = list("K", "Kk", "Kik"),
-		"1095" = list("ч", "чч", "чич"),
-		"1063" = list("Ч", "Чч", "Чич"),
-		"1082" = list("к", "кк", "кик"),
-		"1050" = list("К", "Кк", "Кик"),
+		"107" = list("k", "kk", "kik"),	// k
+		"75" = list("K", "Kk", "Kik"),	// K
+		"1095" = list("ч", "чч", "чич"),// ч
+		"1063" = list("Ч", "Чч", "Чич"),// Ч
+		"1082" = list("к", "кк", "кик"),// к
+		"1050" = list("К", "Кк", "Кик"),// К
 	)
 
 /datum/accent/bird/modify_speech(list/speech_args)
@@ -99,12 +101,12 @@
 
 /datum/accent/fly
 	var/map_accent = list(
-		"122" = list("z","zz", "zzz","zzzz"),
-		"90" = list("Z","Zz", "Zzz","Zzzz"),
-		"1079" = list("з","зз", "ззз","зззз"),
-		"1047" = list("З","Зз", "Ззз","Зззз"),
-		"1078" = list("ж","жж", "жжж", "жжжж"),
-		"1046" = list("Ж","Жж", "Жжж", "Жжжж"),
+		"122" = list("z","zz", "zzz","zzzz"),	// z
+		"90" = list("Z","Zz", "Zzz","Zzzz"),	// Z
+		"1079" = list("з","зз", "ззз","зззз"),	// з
+		"1047" = list("З","Зз", "Ззз","Зззз"),	// З
+		"1078" = list("ж","жж", "жжж", "жжжж"),	// ж
+		"1046" = list("Ж","Жж", "Жжж", "Жжжж"),	// Ж
 	)
 
 /datum/accent/fly/modify_speech(list/speech_args)
