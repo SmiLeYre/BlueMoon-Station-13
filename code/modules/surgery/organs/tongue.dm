@@ -113,8 +113,8 @@
 	initial_accents = list(/datum/accent/feline)
 
 /obj/item/organ/tongue/bird
-	name = "flat rough tongue"
-	desc = "A flat and broad muscle commonly found in feline races."
+	name = "thin tongue"
+	desc = "A thin tongue whith fringed tip and the root of the tongue have backward-facing barbs"
 	icon_state = "tonguenormal"  // Сделайте иконку плиз
 	say_mod = "chirps"
 	taste_sensitivity = 50 // nose extra sensitive
