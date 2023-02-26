@@ -20,9 +20,11 @@
 	if(user?.stat == CONSCIOUS && ishuman(user))
 		user.visible_message(span_small("<b>[user]</b> смотрит на <b>[!obscure_name ? name : "Неизвестного"]</b>.") , span_small("Смотрю на <b>[!obscure_name ? name : "Неизвестного"]</b>.") , null, COMBAT_MESSAGE_RANGE)
 	var/obscured = check_obscured_slots()
+
 	//head
-	if(head && !(obscured & ITEM_SLOT_HEAD) && !(head.item_flags & EXAMINE_SKIP))
+	if(head && !(head.obj_flags & EXAMINE_SKIP))
 		. += "На голове у н[t_ego] [head.get_examine_string(user)]."
+
 	//eyes
 	if(!(ITEM_SLOT_EYES in obscured))
 		if(glasses)
@@ -33,23 +35,27 @@
 			var/obj/item/implant/hijack/H = user.getImplant(/obj/item/implant/hijack)
 			if (H && !H.stealthmode && H.toggled)
 				. += "<b><font color=orange>[ru_ego(TRUE)] глаза ярко-жёлтые и они горят!!</font></b>"
+
 	//ears
 	if(ears && !(ITEM_SLOT_EARS_LEFT in obscured))
 		. += "На ушах у н[t_ego] [ears.get_examine_string(user)]."
 	if(ears_extra && !(ITEM_SLOT_EARS_RIGHT in obscured))
 		. += "На ушах у н[t_ego] [ears_extra.get_examine_string(user)]."
+
 	//mask
 	if(wear_mask && !(obscured & ITEM_SLOT_MASK)  && !(wear_mask.item_flags & EXAMINE_SKIP))
 		. += "На лице у н[t_ego] [wear_mask.get_examine_string(user)]."
 	if(wear_neck && !(obscured & ITEM_SLOT_NECK)  && !(wear_neck.item_flags & EXAMINE_SKIP))
 		. += "На шее у н[t_ego] [wear_neck.get_examine_string(user)]."
+
 	//suit/armor
 	if(wear_suit && !(wear_suit.item_flags & EXAMINE_SKIP))
 		//suit/armor storage
 		var/suit_thing
-		if(s_store && !(obscured & ITEM_SLOT_SUITSTORE) && !(s_store.item_flags & EXAMINE_SKIP))
+		if(s_store && !(ITEM_SLOT_SUITSTORE in obscured))
 			suit_thing += " вместе с [s_store.get_examine_string(user)]"
 		. += "На [t_na] надет [wear_suit.get_examine_string(user)][suit_thing]."
+
 	//uniform
 	if(w_uniform && !(ITEM_SLOT_ICLOTHING in obscured))
 		//accessory
@@ -71,20 +77,24 @@
 					else
 						accessory_msg += weehoo[1]
 			. += "Одет[t_a] он[t_a] в [w_uniform.get_examine_string(user)][accessory_msg]."
+
 	//back
 	if(back && !(back.item_flags & EXAMINE_SKIP))
 		. += "Со спины свисает [back.get_examine_string(user)]."
+
 	//Hands
 	for(var/obj/item/I in held_items)
 		if(!(I.item_flags & ABSTRACT))
 			. += "В [get_held_index_name(get_held_index_of_item(I))] он[t_a] держит [I.get_examine_string(user)]."
+
 	//gloves
-	if(gloves && !(obscured & ITEM_SLOT_GLOVES) && !(gloves.item_flags & EXAMINE_SKIP))
+	if(gloves && !(ITEM_SLOT_GLOVES in obscured))
 		. += "А на руках у н[t_ego] [gloves.get_examine_string(user)]."
 	else if(length(blood_DNA))
 		var/hand_number = get_num_arms(FALSE)
 		if(hand_number)
 			. += "<span class='warning'>[ru_ego(TRUE)] рук[hand_number > 1 ? "и" : "а"] также в крови!</span>"
+
 	//handcuffed?
 	if(handcuffed)
 		if(istype(handcuffed, /obj/item/restraints/handcuffs/cable))
@@ -94,9 +104,11 @@
 	//belt
 	if(belt && !(belt.item_flags & EXAMINE_SKIP))
 		. += "И ещё на поясе у н[t_ego] [belt.get_examine_string(user)]."
+
 	//shoes
-	if(shoes && !(obscured & ITEM_SLOT_FEET)  && !(shoes.item_flags & EXAMINE_SKIP))
+	if(shoes && !(ITEM_SLOT_FEET in obscured))
 		. += "А на [t_ego] ногах [shoes.get_examine_string(user)]."
+
 	//ID
 	if(wear_id && !(wear_id.item_flags & EXAMINE_SKIP))
 		. += "И конечно же у н[t_ego] есть [wear_id.get_examine_string(user)]."
@@ -179,17 +191,13 @@
 			var/datum/wound/iter_wound = i
 			msg += "[iter_wound.get_examine_description(user)]\n"
 
-		for(var/i in BP.wounds)
-			var/datum/wound/iter_wound = i
-			msg += "[iter_wound.get_examine_description(user)]\n"
-
 	for(var/X in disabled)
 		var/obj/item/bodypart/body_part = X
 		var/damage_text
 		if(HAS_TRAIT(body_part, TRAIT_DISABLED_BY_WOUND))
 			continue // skip if it's disabled by a wound (cuz we'll be able to see the bone sticking out!)
 		if(!(body_part.get_damage(include_stamina = FALSE) >= body_part.max_damage)) //we don't care if it's stamcritted
-			damage_text = "выглядит бледновато"
+			damage_text = "выглядит обвисшей и бледноватой"
 		else
 			damage_text = (body_part.brute_dam >= body_part.burn_dam) ? body_part.heavy_brute_msg : body_part.heavy_burn_msg
 		msg += "<B>[ru_ego(TRUE)] [body_part.name] [damage_text]!</B>\n"
@@ -261,13 +269,13 @@
 
 
 	if(pulledby?.grab_state)
-		msg += "[t_on] удерживается захватом [pulledby].\n"
+		msg += "[t_on] удерживается в захвате <b>[pulledby]</b>.\n"
 
 	if(nutrition < NUTRITION_LEVEL_STARVING - 50)
 		msg += "[t_on] выглядит смертельно истощённо.\n"
 	else if(nutrition >= NUTRITION_LEVEL_FAT)
 		if(user.nutrition < NUTRITION_LEVEL_STARVING - 50)
-			msg += "[t_on] выглядит как толстенький, словно поросёнок. Очень вкусный поросёнок.\n"
+			msg += "[t_on] выглядит довольно толстенько, словно какой-то поросёнок. Очень вкусный поросёнок.\n"
 		else
 			msg += "[t_on] выглядит довольно плотно.\n"
 	switch(disgust)
@@ -278,8 +286,17 @@
 		if(DISGUST_LEVEL_DISGUSTED to INFINITY)
 			msg += "[t_on] выглядит отвратительно.\n"
 
-	if(blood_volume < BLOOD_VOLUME_SAFE || skin_tone == "albino")
-		msg += "[ru_ego(TRUE)] кожа бледная.\n"
+	if(!HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
+		var/apparent_blood_volume = blood_volume
+		if(dna.species.use_skintones && skin_tone == "albino")
+			apparent_blood_volume -= 150 // enough to knock you down one tier
+		switch(apparent_blood_volume)
+			if(BLOOD_VOLUME_OKAY to BLOOD_VOLUME_SAFE)
+				msg += "[t_ego] кожа бледная.\n"
+			if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_OKAY)
+				msg += "<b>Выглядит ужасно бледно.</b>\n"
+			if(-INFINITY to BLOOD_VOLUME_BAD)
+				msg += "<span class='deadsay'><b>[t_on] напоминает раздавленный пакет от сока из-за абсолютно бледного цвета кожи.</b></span>\n"
 
 	if(is_bleeding())
 		var/list/obj/item/bodypart/bleeding_limbs = list()
@@ -347,6 +364,12 @@
 					msg += "[t_on] в стельку.\n"
 				if(91.01 to INFINITY)
 					msg += "[t_on] в говно!\n"
+
+		if(reagents.has_reagent(/datum/reagent/fermi/astral))
+			if(mind)
+				msg += "[t_on] имеет дикие, космические глаза, которые в свою очередь имеют странный, исключительно ненормальный вид.\n"
+			else
+				msg += "[t_on] имеет дикие, космические глаза, которые в свою очередь имеют странный, абсолютно ненормальный вид.\n"
 
 		if(!user)
 			return

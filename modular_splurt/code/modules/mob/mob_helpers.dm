@@ -11,12 +11,12 @@
 
 	// Pronoun stuff
 	var/t_He = ru_who(FALSE)
-	//var/t_his = ru_ego()
+	var/t_his = ru_ego()
 	//var/t_is = p_are()
 
 	// Check for Distant (no touch head!)
 	if(HAS_TRAIT(src, TRAIT_DISTANT))
-		. += "<span class='warning'>Вы понимаете, что [t_He] может беспокоить физическая близость.</span>\n"
+		. += "<span class='warning'>Вы понимаете, что [t_his] может беспокоить физическая близость и вам лучше соблюдать дистанцию.</span>\n"
 	// Check for Heatpat Slut (pls touch head!)
 	if(HAS_TRAIT(src, TRAIT_HEADPAT_SLUT))
 		. += span_info("Вы понимаете, что [t_He] ценит физическую привязанность больше, чем обычно.")

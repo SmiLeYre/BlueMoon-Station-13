@@ -90,7 +90,7 @@
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 50, RAD = 0, FIRE = 0, ACID = 45)
 
 /obj/item/clothing/suit/toggle/labcoat/depjacket/sec
-	name = "security jacket"
+	name = "Security Jacket"
 	desc = "A comfortable jacket in security red."
 	icon_state = "sec_dep_jacket"
 	item_state = "sec_dep_jacket"

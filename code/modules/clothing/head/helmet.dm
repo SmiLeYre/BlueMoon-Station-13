@@ -54,6 +54,16 @@
 
 /obj/item/clothing/head/helmet/sec
 	can_flashlight = 1
+	unique_reskin = list(
+		"Basic" = list(
+			RESKIN_ICON_STATE = "helmet",
+			RESKIN_ITEM_STATE = "helmet"
+		),
+		"Old" = list(
+			RESKIN_ICON_STATE = "helmetold",
+			RESKIN_ITEM_STATE = "helmetold"
+		),
+	)
 
 /obj/item/clothing/head/helmet/sec/attackby(obj/item/I, mob/user, params)
 	if(issignaler(I))
@@ -71,6 +81,13 @@
 			return
 	return ..()
 
+/obj/item/clothing/head/helmet/nvg
+	name = "NVG helmet"
+	desc = "Standard Security gear. Protects the head from impacts. Equipped with a night vision apparatus on the front edge."
+	icon_state = "helmetNVG"
+	item_state = "helmetNVG"
+	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
+
 /obj/item/clothing/head/helmet/alt
 	name = "bulletproof helmet"
 	desc = "A bulletproof combat helmet that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent."
@@ -81,6 +98,16 @@
 	dog_fashion = null
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
+	unique_reskin = list(
+		"Basic" = list(
+			RESKIN_ICON_STATE = "helmet",
+			RESKIN_ITEM_STATE = "helmet"
+		),
+		"Old" = list(
+			RESKIN_ICON_STATE = "helmetold",
+			RESKIN_ITEM_STATE = "helmetold"
+		),
+	)
 
 /obj/item/clothing/head/helmet/old
 	name = "degrading helmet"
@@ -88,6 +115,8 @@
 	tint = 2
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
+	icon_state = "helmetold"
+	item_state = "helmetold"
 
 /obj/item/clothing/head/helmet/blueshirt
 	name = "blue helmet"
@@ -429,7 +458,7 @@
 	armor = list(MELEE = 25, BULLET = 10, LASER = 20,ENERGY = 10, BOMB = 30, BIO = 15, RAD = 20, FIRE = 100, ACID = 50)
 
 /obj/item/clothing/head/helmet/rus_helmet
-	name = "russian helmet"
+	name = "Russian Helmet"
 	desc = "It can hold a bottle of vodka."
 	alternate_screams = RUSSIAN_SCREAMS
 	icon_state = "rus_helmet"
@@ -438,8 +467,28 @@
 	armor = list(MELEE = 30, BULLET = 25, LASER = 20,ENERGY = 10, BOMB = 25, BIO = 0, RAD = 20, FIRE = 30, ACID = 50)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
+/obj/item/clothing/head/helmet/rus_cap
+	name = "Russian Officer's Hat"
+	desc = "It can hold a bottle of vodka."
+	alternate_screams = RUSSIAN_SCREAMS
+	icon_state = "ruscap"
+	item_state = "ruscap"
+	flags_inv = HIDEEARS
+	armor = list(MELEE = 30, BULLET = 25, LASER = 20,ENERGY = 10, BOMB = 25, BIO = 0, RAD = 20, FIRE = 30, ACID = 50)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
+	unique_reskin = list(
+		"Basic" = list(
+			RESKIN_ICON_STATE = "ruscap",
+			RESKIN_ITEM_STATE = "ruscap"
+		),
+		"Darker" = list(
+			RESKIN_ICON_STATE = "rusoffcap",
+			RESKIN_ITEM_STATE = "rusoffcap"
+		),
+	)
+
 /obj/item/clothing/head/helmet/rus_ushanka
-	name = "battle ushanka"
+	name = "Battle Ushanka"
 	desc = "100% bear."
 	alternate_screams = RUSSIAN_SCREAMS
 	icon_state = "rus_ushanka"

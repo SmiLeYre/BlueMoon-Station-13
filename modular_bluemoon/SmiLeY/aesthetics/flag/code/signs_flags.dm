@@ -104,10 +104,26 @@
 	item_flag = /obj/item/sign/flag/rus
 
 /obj/structure/sign/flag/soviet
-	name = "flag of the Soviet Union"
+	name = "флаг Союза Советских Социалистических Республик"
 	desc = "Флаг некогда великого Государства, которое максимально сильно приблизилось к значению Утопичной Диктатуры. От флага ощущается сильный запах... железа. Или крови? Из чего сделана эта красная краска?"
 	icon_state = "flag_soviet"
 	item_flag = /obj/item/sign/flag/soviet
+
+/obj/structure/sign/flag/germany
+	name = "flag of the Germany"
+	desc = "Die Flagge eines einst aufstrebenden Staates, der heute irgendwo in der Geschichte verloren ist. Aus irgendeinem Grund riecht sie nach Asche..."
+	icon_state = "flag_ger"
+
+/obj/structure/sign/flag/ukraine
+	name = "flag of the Ukraine"
+	desc = "Прапор колись особливо героїчної держави, яку було загублено в попелищі Земної Історії..."
+	icon_state = "flag_ua"
+
+
+/obj/structure/sign/flag/chechnya
+	name = "flag of the Soviet Union"
+	desc = "Круто!!!"
+	icon_state = "flag_chechen"
 
 /obj/item/sign/flag
 	name = "folded blank flag"

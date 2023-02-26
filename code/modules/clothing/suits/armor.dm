@@ -10,13 +10,23 @@
 	resistance_flags = NONE
 	armor = list(MELEE = 35, BULLET = 30, LASER = 30, ENERGY = 40, BOMB = 25, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 10)
 
-
 /obj/item/clothing/suit/armor/Initialize(mapload)
 	. = ..()
 	if(!allowed)
 		allowed = GLOB.security_vest_allowed
 
-/obj/item/clothing/suit/armor/navyblue
+/obj/item/clothing/suit/armor/secjacket
+	name = "Black Security Jacket"
+	desc = "A sturdy black jacket with reinforced fabric. Bears insignia of NT corporate security."
+	icon_state = "secjacket"
+	item_state = "hos"
+	togglename = "buttons"
+	body_parts_covered = CHEST|GROIN|ARMS
+	cold_protection = CHEST|GROIN|ARMS
+	heat_protection = CHEST|GROIN|ARMS
+	armor = list(MELEE = 20, BULLET = 20, LASER = 25, ENERGY = 20, BOMB = 25, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 10)
+
+/obj/item/clothing/suit/armor/secjacket
 	name = "security officer's jacket"
 	desc = "This jacket is for those special occasions when a security officer isn't required to wear their armor."
 	icon_state = "officerbluejacket"
@@ -37,6 +47,24 @@
 	desc = "A Type I armored vest that provides decent protection against most types of damage."
 	icon_state = "armor"
 	item_state = "armor"
+	unique_reskin = list(
+		"Basic" = list(
+			RESKIN_ICON_STATE = "armor",
+			RESKIN_ITEM_STATE = "armor"
+		),
+		"Old" = list(
+			RESKIN_ICON_STATE = "armorold",
+			RESKIN_ITEM_STATE = "armorold"
+		),
+		"Alternative" = list(
+			RESKIN_ICON_STATE = "armoralt",
+			RESKIN_ITEM_STATE = "armoralt"
+		),
+		"Bloody" = list(
+			RESKIN_ICON_STATE = "bloody_armor",
+			RESKIN_ITEM_STATE = "bloody_armor"
+		),
+	)
 
 /obj/item/clothing/suit/armor/vest/old
 	name = "degrading armor vest"
@@ -343,8 +371,20 @@
 	item_state = "rus_armor"
 	armor = list(MELEE = 25, BULLET = 30, LASER = 0, ENERGY = 15, BOMB = 10, BIO = 0, RAD = 20, FIRE = 20, ACID = 50, WOUND = 10)
 
+/obj/item/clothing/suit/armor/vest/russian_winter_coat
+	name = "Russian Winter Coat"
+	desc = "Used in extremly cold fronts, made out of real bears."
+	alternate_screams = RUSSIAN_SCREAMS
+	icon_state = "rus_winter_vsr93"
+	item_state = "rus_winter_vsr93"
+	clothing_flags = THICKMATERIAL
+	body_parts_covered = CHEST|LEGS|FEET|ARMS|HANDS
+	cold_protection = CHEST|LEGS|FEET|ARMS|HANDS
+	min_cold_protection_temperature = SPACE_SUIT_MIN_TEMP_PROTECT
+	armor = list(MELEE = 25, BULLET = 20, LASER = 20, ENERGY = 10, BOMB = 20, BIO = 50, RAD = 20, FIRE = -10, ACID = 50,  WOUND = 10)
+
 /obj/item/clothing/suit/armor/vest/russian_coat
-	name = "russian battle coat"
+	name = "Russian Battle Coat"
 	desc = "Used in extremly cold fronts, made out of real bears."
 	alternate_screams = RUSSIAN_SCREAMS
 	icon_state = "rus_coat"
@@ -354,6 +394,12 @@
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	min_cold_protection_temperature = SPACE_SUIT_MIN_TEMP_PROTECT
 	armor = list(MELEE = 25, BULLET = 20, LASER = 20, ENERGY = 10, BOMB = 20, BIO = 50, RAD = 20, FIRE = -10, ACID = 50,  WOUND = 10)
+
+/obj/item/clothing/suit/armor/vest/russian_coat/liquidator
+	name = "Костюм Ликвидатора"
+	desc = "Костюм, используемый для борьбы со всяким дерьмом."
+	icon_state = "sov_offcoat"
+	item_state = "sov_offcoat"
 
 /obj/item/clothing/suit/toggle/armor/vest/centcom_formal
 	name = "\improper CentCom formal coat"
@@ -369,7 +415,7 @@
 	allowed = GLOB.security_wintercoat_allowed
 
 /obj/item/clothing/suit/toggle/armor/hos/hos_formal
-	name = "\improper Head of Security's parade jacket"
+	name = "\improper Head of Security's Parade Jacket"
 	desc = "For when an armoured vest isn't fashionable enough."
 	icon_state = "hosformal"
 	item_state = "hostrench"

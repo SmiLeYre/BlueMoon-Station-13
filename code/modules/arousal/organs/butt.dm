@@ -66,7 +66,7 @@
 		else
 			size_name = "плоского"
 
-	desc = "Вы наблюдаете [lowershape] [size_name] размера."
+	desc = "Вы наблюдаете попу [size_name] размера."
 
 	var/icon_size = size
 	icon_state = "butt_[lowershape]_[icon_size]"

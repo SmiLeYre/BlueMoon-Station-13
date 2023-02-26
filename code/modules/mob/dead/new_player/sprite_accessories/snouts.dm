@@ -319,6 +319,8 @@
 /datum/sprite_accessory/snouts/mam_snouts/lcanidalt2
 	name = "Fox ALT2"
 	icon_state = "lcanidalt2"
+	matrixed_sections = MATRIX_RED_GREEN
+
 /datum/sprite_accessory/snouts/mam_snouts/huskyalt //this for only one pixel!!!
 	name = "Husky ALT"
 	icon_state = "huskyalt"

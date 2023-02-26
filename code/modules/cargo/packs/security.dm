@@ -91,13 +91,17 @@
 	name = "Russian Surplus Clothing"
 	desc = "An old russian crate full of surplus armor that they used to use! Has two sets of bulletproof armor, a few union suits and some warm hats!"
 	contraband = TRUE
-	cost = 5750 // Its basicly sec suits, good boots/gloves
+	cost = 7500 // Its basicly sec suits, good boots/gloves
 	contains = list(/obj/item/clothing/under/syndicate/rus_army,
 					/obj/item/clothing/under/syndicate/rus_army,
 					/obj/item/clothing/shoes/combat,
 					/obj/item/clothing/shoes/combat,
 					/obj/item/clothing/head/helmet/rus_helmet,
 					/obj/item/clothing/head/helmet/rus_helmet,
+					/obj/item/clothing/head/helmet/rus_cap,
+					/obj/item/clothing/head/helmet/rus_cap,
+					/obj/item/clothing/head/helmet/rus_ushanka,
+					/obj/item/clothing/head/helmet/rus_ushanka,
 					/obj/item/clothing/suit/armor/bulletproof,
 					/obj/item/clothing/suit/armor/bulletproof,
 					/obj/item/clothing/head/helmet/alt,

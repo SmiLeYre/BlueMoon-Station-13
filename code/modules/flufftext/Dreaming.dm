@@ -1,4 +1,4 @@
-/mob/living/carbon/proc/dream()
+/mob/living/carbon/proc/dream(mob/user)
 	set waitfor = FALSE
 	var/list/dream_fragments = list()
 	var/list/custom_dream_nouns = list()
@@ -26,6 +26,8 @@
 			src.do_jitter_animation() //shake in their sleep.
 			fragment = ""
 			return
+		if(findtext(fragment, "\[DREAMER\]"))
+			fragment = replacetext(fragment, "\[DREAMER\]", "[user]")
 
 	//Subject
 	if(custom_dream_nouns.len && prob(90))
@@ -39,6 +41,8 @@
 		fragment = replacetext(fragment, "%ADJECTIVE% ", "")
 	if(findtext(fragment, "%A% "))
 		fragment = "\a [replacetext(fragment, "%A% ", "")]"
+	if(findtext(fragment, "\[DREAMER\]"))
+		fragment = replacetext(fragment, "\[DREAMER\]", "[user]")
 	dream_fragments += fragment
 
 	//Verb
@@ -65,22 +69,21 @@
 		fragment = replacetext(fragment, "%ADJECTIVE% ", "")
 	if(findtext(fragment, "%A% "))
 		fragment = "\a [replacetext(fragment, "%A% ", "")]"
+	if(findtext(fragment, "\[DREAMER\]"))
+		fragment = replacetext(fragment, "\[DREAMER\]", "[user]")
 	dream_fragments += fragment
 
 	dreaming = TRUE
 	dream_sequence(dream_fragments)
 
-/mob/living/carbon/proc/dream_sequence(list/dream_fragments, mob/user)
-	if(stat != UNCONSCIOUS || InCritical())
+/mob/living/carbon/proc/dream_sequence(list/dream_fragments)
+	if(stat != UNCONSCIOUS || HAS_TRAIT(src, TRAIT_CRITICAL_CONDITION))
 		dreaming = FALSE
 		return
 	var/next_message = dream_fragments[1]
-	var/list/newlist = dream_fragments.Copy()
-	for(var/i in 1 to newlist.len)
-		newlist[i] = replacetext(newlist[i], "\[DREAMER\]", "[user]")
 	dream_fragments.Cut(1,2)
-	to_chat(src, "<span class='notice'><i>... [next_message] ...</i></span>")
+	to_chat(src, span_notice("<i>... [next_message] ...</i>"))
 	if(LAZYLEN(dream_fragments))
-		addtimer(CALLBACK(src, .proc/dream_sequence, dream_fragments), rand(10,30))
+		addtimer(CALLBACK(src, PROC_REF(dream_sequence), dream_fragments), rand(10,30))
 	else
 		dreaming = FALSE

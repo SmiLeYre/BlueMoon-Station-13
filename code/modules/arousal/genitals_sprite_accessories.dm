@@ -17,56 +17,56 @@
 
 /datum/sprite_accessory/penis/human
 	icon_state = "human"
-	name = "Human"
+	name = "человеческий"
 
 /datum/sprite_accessory/penis/knotted
 	icon_state = "knotted"
-	name = "Knotted"
+	name = "узловатый"
 	taur_icon = 'icons/obj/genitals/taur_penis_onmob.dmi'
 	taur_dimension_x = 64
 
 /datum/sprite_accessory/penis/flared
 	icon_state = "flared"
-	name = "Flared"
+	name = "уширенный"
 	taur_icon = 'icons/obj/genitals/taur_penis_onmob.dmi'
 	taur_dimension_x = 64
 
 /datum/sprite_accessory/penis/barbknot
 	icon_state = "barbknot"
-	name = "Barbed, Knotted"
+	name = "колючий узловатый"
 
 /datum/sprite_accessory/penis/tapered
 	icon_state = "tapered"
-	name = "Tapered"
+	name = "конусоподобный"
 	taur_icon = 'icons/obj/genitals/taur_penis_onmob.dmi'
 	taur_dimension_x = 64
 
 /datum/sprite_accessory/penis/tentacle
 	icon_state = "tentacle"
-	name = "Tentacled"
+	name = "тентяклевидный"
 
 /datum/sprite_accessory/penis/hemi
 	icon_state = "hemi"
-	name = "Hemi"
+	name = "двойной"
 
 /datum/sprite_accessory/penis/hemiknot
 	icon_state = "hemiknot"
-	name = "Knotted Hemi"
+	name = "двойной узловатый"
 
 //Testicles
 /datum/sprite_accessory/testicles
 	icon = 'icons/obj/genitals/testicles_onmob.dmi'
 	icon_state = "testicle"
-	name = "testicle"		//the preview name of the accessory
+	name = "яйца"		//the preview name of the accessory
 	color_src = "balls_color"
 
 /datum/sprite_accessory/testicles/single
 	icon_state = "single"
-	name = "Single" //Single as "single pair", for clarity.
+	name = "одинарные" //Single as "single pair", for clarity.
 
 /datum/sprite_accessory/testicles/hidden
 	icon_state = "hidden"
-	name = "Hidden" //not sure why these were missing, but I'm pretty certain people might want these.
+	name = "скрытые" //not sure why these were missing, but I'm pretty certain people might want these.
 
 //Vaginas
 /datum/sprite_accessory/vagina

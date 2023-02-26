@@ -12023,6 +12023,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/syndicate_mothership)
+"AE" = (
+/obj/structure/sign/flag/ukraine,
+/turf/closed/indestructible/fakeglass,
+/area/tdome/tdomeobserve)
 "AF" = (
 /obj/structure/reagent_dispensers/watertank/high,
 /turf/open/floor/plasteel/dark,
@@ -15909,6 +15913,7 @@
 /turf/open/floor/plasteel/dark,
 /area/tdome/tdomeobserve)
 "Il" = (
+/obj/structure/sign/flag/germany,
 /turf/closed/indestructible/fakeglass,
 /area/tdome/tdomeobserve)
 "Im" = (
@@ -18228,6 +18233,10 @@
 	},
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding)
+"NZ" = (
+/obj/structure/sign/flag,
+/turf/closed/indestructible/fakeglass,
+/area/tdome/tdomeobserve)
 "Oa" = (
 /obj/structure/table/wood,
 /turf/open/floor/wood,
@@ -21567,6 +21576,10 @@
 /obj/structure/dresser,
 /turf/open/floor/plasteel/dark,
 /area/syndicate_mothership)
+"Yj" = (
+/obj/structure/sign/flag/chechnya,
+/turf/closed/indestructible/fakeglass,
+/area/tdome/tdomeobserve)
 "Yl" = (
 /obj/machinery/vending/sustenance,
 /turf/open/floor/plasteel,
@@ -63721,7 +63734,7 @@ Gx
 GM
 HW
 HW
-Il
+Ph
 IF
 IE
 IX
@@ -64235,7 +64248,7 @@ Ep
 HN
 HW
 HN
-Os
+Yj
 Iu
 IF
 IF
@@ -64492,7 +64505,7 @@ Ep
 HO
 HW
 Id
-Ph
+AE
 It
 IG
 IG
@@ -65520,7 +65533,7 @@ Nk
 GM
 HW
 HN
-RP
+NZ
 It
 IH
 IH
@@ -65777,7 +65790,7 @@ Ep
 HN
 HW
 HN
-Yh
+RP
 It
 IH
 IH
@@ -66034,7 +66047,7 @@ Ep
 HN
 HW
 HN
-Bn
+Yh
 It
 IH
 IH
@@ -66291,7 +66304,7 @@ Ep
 HN
 HW
 HN
-YI
+Bn
 It
 IH
 IH
@@ -66548,7 +66561,7 @@ Ep
 HO
 HW
 Id
-Qi
+YI
 It
 II
 II
@@ -66805,7 +66818,7 @@ Ep
 HM
 HW
 HN
-yO
+Qi
 Iu
 IF
 IF
@@ -67062,7 +67075,7 @@ Ep
 HN
 HW
 HN
-Il
+yO
 It
 It
 It
@@ -67319,7 +67332,7 @@ Gx
 GM
 HW
 HW
-Il
+Os
 IF
 IJ
 IY

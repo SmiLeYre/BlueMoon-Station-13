@@ -22,7 +22,8 @@
 					/obj/item/storage/backpack/satchel/sec = 3,
 					/obj/item/storage/backpack/duffelbag/sec = 3,
 					/obj/item/clothing/under/rank/security/officer = 5,
-					/obj/item/clothing/shoes/jackboots = 5,
+					/obj/item/clothing/shoes/jackboots = 3,
+					/obj/item/clothing/shoes/jackboots/tall = 3,
 					/obj/item/clothing/head/beret/sec = 5,
 					/obj/item/clothing/head/soft/sec = 5,
 					/obj/item/clothing/mask/bandana/red = 5,
@@ -31,6 +32,7 @@
 					/obj/item/clothing/under/rank/security/officer/grey = 5,
 					/obj/item/clothing/under/pants/khaki = 5,
 					/obj/item/clothing/suit/toggle/labcoat/depjacket/sec = 5,
+					/obj/item/clothing/suit/armor/secjacket = 5,
 					/obj/item/clothing/under/rank/security/officer/util = 5,
 					/obj/item/clothing/under/rank/security/officer/blueshirt/seccorp = 5)
 	contraband = list(/obj/item/clothing/under/rank/security/stripper = 5,
@@ -38,6 +40,10 @@
 						/obj/item/clothing/mask/gas/sechailer/swat = 2,
 						/obj/item/clothing/mask/gas/syndicate/ds = 5,
 						/obj/item/clothing/mask/gas/sechailer/syndicate = 5,
+						/obj/item/clothing/head/helmet/rus_helmet = 3,
+						/obj/item/clothing/head/helmet/rus_cap = 3,
+						/obj/item/clothing/suit/armor/vest/russian_winter_coat = 3,
+						/obj/item/clothing/under/syndicate/rus_army = 3,
 						/obj/item/clothing/mask/gas/soviet = 3,
 						/obj/item/clothing/mask/gas/german = 3,
 						/obj/item/clothing/under/syndicate/combat = 2

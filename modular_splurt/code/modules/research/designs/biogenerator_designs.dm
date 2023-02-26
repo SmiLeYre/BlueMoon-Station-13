@@ -15,14 +15,6 @@
 	make_reagents = list(/datum/reagent/consumable/soysauce = 5)
 	category = list("initial","Food")
 
-/datum/design/flour_sack
-	name = "Flour Sack"
-	id = "flour_sack"
-	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 1000)
-	build_path = /obj/item/reagent_containers/food/condiment/flour
-	category = list("initial","Food")
-
 /datum/design/egg_synth
 	name = "Synthesized Egg"
 	id = "egg_snack"
@@ -54,6 +46,14 @@
 	materials = list(/datum/material/biomass = 1000)
 	build_path = /obj/item/reagent_containers/food/condiment/rice
 	category = list("initial", "Food")
+
+/datum/design/flour_sack
+	name = "Flour Sack"
+	id = "flour_sack"
+	build_type = BIOGENERATOR
+	materials = list(/datum/material/biomass = 1000)
+	build_path = /obj/item/reagent_containers/food/condiment/flour
+	category = list("initial","Food")
 
 /datum/design/sugarbag
 	name = "Biomass Sugar Box"

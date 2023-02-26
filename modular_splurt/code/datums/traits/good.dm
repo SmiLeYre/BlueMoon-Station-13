@@ -49,12 +49,12 @@
 */
 
 /datum/quirk/rad_fiend
-	name = "Rad Fiend"
-	desc = "You've been blessed by Cherenkov's warming light, causing you to emit a subtle glow at all times. Only intense radiation is capable of penetrating your protective barrier."
+	name = "Рад Фьенд"
+	desc = "Вас благословил согревающий свет Атома, заставляющий вас постоянно излучать едва заметное свечение. Только особо интенсивное излучение способно проникнуть через ваш защитный барьер."
 	value = 2
 	mob_trait = TRAIT_RAD_FIEND
-	gain_text = span_notice("You feel empowered by Cherenkov's glow.")
-	lose_text = span_notice("You realize that rads aren't so rad.")
+	gain_text = span_notice("Вы чувствуете в себе силы благодаря свечению Атома.")
+	lose_text = span_notice("Вы понимаете, что радиация не такая уж безопасная.")
 
 	// Variable for the radiation immunity check
 	var/can_gain = TRUE
@@ -81,12 +81,12 @@
 		return
 
 	// Alert quirk holder of gain status
-	to_chat(quirk_holder, span_warning("As you are immune to radiation, you were unable to gain Cherenkov's blessing. Please discuss alternatives with a medical professional."))
+	to_chat(quirk_holder, span_warning("Поскольку у вас иммунитет к радиации, вы не смогли получить благословение Атома. Пожалуйста, обсудите альтернативные варианты с медицинским специалистом."))
 
 /datum/quirk/rad_fiend/remove()
 	// Define quirk holder mob
 	var/mob/living/carbon/human/quirk_mob = quirk_holder
-	
+
 	// Remove glow control action
 	var/datum/action/rad_fiend/update_glow/quirk_action = locate() in quirk_mob.actions
 	quirk_action.Remove(quirk_mob)

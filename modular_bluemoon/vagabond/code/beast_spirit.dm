@@ -146,13 +146,13 @@
 //QUIRK
 
 /datum/quirk/beastspirit
-	name = "Beast Spirit"
-	desc = "Your soul is now under control of your beast patron. Do not allow the anger to unleash your inner animal. <b>NOTE: This can create some issues with Werewolf quirk because of the same functional.</b>"
+	name = "Звериный Дух"
+	desc = "Ваша душа теперь находится под контролем вашего звериного покровителя. Не позволяйте гневу высвободить вашего внутреннего зверя. <b>Предупреждение: Это может создать некоторые проблемы с навыком 'Оборотень' из-за того же функционала.</b>"
 	value = 2
 	mob_trait = TRAIT_BEASTSPIRIT
-	gain_text = span_notice("You've gained acceptance of your inner beast.")
-	lose_text = span_notice("You've lost acceptance of your inner beast.")
-	medical_record_text = "Subject suffered strong psychological activity, including animal behaviour and weight gain."
+	gain_text = span_notice("Вы приняли своего внутреннего зверя..")
+	lose_text = span_notice("Вы больше не чувствуете внутреннего зверя.")
+	medical_record_text = "У субъекта наблюдалась сильная психологическая нестабильность, которая включает в себя животное поведение и резкое увеличение в габаритах от психоактивности."
 
 /datum/quirk/beastspirit/post_add()
 	var/obj/effect/proc_holder/spell/targeted/shapeshift/beast/B = new

@@ -9,6 +9,7 @@
 	fire_delay = 0
 	fire_select_modes = list(SELECT_SEMI_AUTOMATIC)
 	automatic_burst_overlay = FALSE
+	reskin_binding = COMSIG_CLICK_ALT
 	fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
 
 /obj/item/gun/ballistic/automatic/pistol/no_mag

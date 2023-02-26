@@ -43,7 +43,7 @@
 #define COCK_DIAMETER_RATIO_DEF		0.25
 #define COCK_DIAMETER_RATIO_MIN		0.15
 
-#define DEF_COCK_SHAPE		"Human"
+#define DEF_COCK_SHAPE		"человеческий"
 
 #define BALLS_VOLUME_BASE	25
 #define BALLS_VOLUME_MULT	1

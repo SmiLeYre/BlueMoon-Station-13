@@ -68,7 +68,7 @@
 				string += span_love(" [peeked.ru_who(TRUE)] увлажнилась какими-то половыми секретами.")
 
 		else
-			string += "[peeked.ru_who()] ничего не носит!!\nИ вам открылся вид на [peeked.ru_ego(TRUE)]"
+			string += " что [peeked.ru_who()] ничего не носит!!\nИ вам открылся вид на [peeked.ru_ego(TRUE)]"
 			var/list/genitals = list()
 			for(var/obj/item/organ/genital/genital in peeked.internal_organs)
 				if(CHECK_BITFIELD(genital.genital_flags, (GENITAL_INTERNAL|GENITAL_HIDDEN)))

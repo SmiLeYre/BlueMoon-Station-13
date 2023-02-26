@@ -8,7 +8,7 @@
 	minimum_required = 1
 	role_name = "random animal"
 	var/animals = 1
-	var/one = "one"
+	var/one = "один"
 	/// Blacklisted mob_biotypes - Hey can we like, not have player controlled megafauna?
 	var/blacklisted_biotypes = MOB_EPIC
 	fakeable = TRUE
@@ -17,8 +17,8 @@
 	var/sentience_report = ""
 
 	var/data = pick("сканирование с наших сенсоров дальнего действия", "наши сложные вероятностные модели", "наше всемогущество", "коммуникационный трафик на вашей станции", "обнаруженные нами выбросы энергии", "\[REDACTED\]")
-	var/pets = pick("животные/боты", "боты/животные", "домашние животные", "простые животные", "низшие формы жизни", "\[REDACTED\]")
-	var/strength = pick("человек", "умеренный", "ящерица", "охрана", "команда", "клоун", "низкий", "очень низкий", "\[REDACTED\]")
+	var/pets = pick("животных/ботов", "ботов/животных", "домашних животных", "простых животных", "\[REDACTED\]")
+	var/strength = pick("человеческий", "умеренный", "ящеровидный", "охранный", "командный", "клоунский", "низкий", "очень низкий", "\[REDACTED\]")
 
 	sentience_report += "Основываясь на [data], мы считаем, что [one] из [pets] станции развил [strength] уровень интеллекта и способность к общению."
 

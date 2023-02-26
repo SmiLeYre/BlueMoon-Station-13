@@ -17,8 +17,8 @@
 	H.grant_language(/datum/language/common)
 
 /datum/quirk/dnc_order
-	name = "DNC Order"
-	desc = "You have a Do Not Clone order on your record, stating that you may not be cloned. You can still be revived by other means."
+	name = "Приказ Не Клонировать"
+	desc = "На вас записан приказ 'Не клонировать', в котором, как бы это странно не звучало, говорится, что вас нельзя клонировать. Вы все еще можете быть оживлены другими способами."
 	value = -2
 	mob_trait = TRAIT_DNC_ORDER
-	medical_record_text = "Patient has a DNC (Do Not Clone) order and will be rejected by cloning mechanisms as a result."
+	medical_record_text = "Пациент имеет приказ DNC (Не Клонировать), в результате чего попытка воспользоваться клонированием будет отклонена."

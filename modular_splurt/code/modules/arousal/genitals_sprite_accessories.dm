@@ -4,18 +4,18 @@
 
 //Vaginas
 /datum/sprite_accessory/vagina/cloaca
-	name = "Cloaca"
+	name = "клоака"
 	icon_state = "cloaca"
 
 //Testicles
 /datum/sprite_accessory/testicles/sheath
 	icon_state = "sheath"
-	name = "Sheath"
+	name = "оболонковые"
 
 //Penises
 /datum/sprite_accessory/penis/thick
 	icon_state = "thick"
-	name = "Thick"
+	name = "толстый"
 
 //Bellies
 /datum/sprite_accessory/belly
@@ -41,4 +41,4 @@
 
 /datum/sprite_accessory/anus/squished
 	icon_state = "squished"
-	name = "squished"
+	name = "сплющенный"

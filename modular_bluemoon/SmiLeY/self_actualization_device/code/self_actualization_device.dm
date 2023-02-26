@@ -43,11 +43,16 @@
 
 /obj/machinery/self_actualization_device/update_appearance(updates)
 	. = ..()
-	if(occupant)
-		icon_state = processing ? "sad_on" : "sad_off"
+	if(!state_open)
+		icon_state = "sad_open"
 	else
-		icon_state = state_open ? "sad_open" : "sad_closed"
+		icon_state = "sad_closed"
+		return
 
+	if(occupant && !is_operational())
+		icon_state = "sad_on"
+	else
+		icon_state = "sad_off"
 
 /obj/machinery/self_actualization_device/Initialize(mapload)
 	. = ..()
