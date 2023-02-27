@@ -3919,6 +3919,7 @@
 #include "interface\skin.dmf"
 #include "modular_bluemoon\code\modules\jobs\job_types\job.dm"
 #include "modular_bluemoon\code\modules\mob\bluemoon_emotes.dm"
+#include "modular_bluemoon\DarwickTheDork\skyrat_ported\code\modules\mob\dead\new_player\sprite_accessories\body_markings.dm"
 #include "modular_bluemoon\fluffs\code\accessories.dm"
 #include "modular_bluemoon\fluffs\code\donator.dm"
 #include "modular_bluemoon\fluffs\code\guns.dm"
