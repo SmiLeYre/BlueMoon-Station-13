@@ -17,3 +17,4 @@
 /datum/sprite_accessory/insect_fluff/neckfluff/hair
 	name = "Neckfluff (Hair)"
 	color_src = HAIR
+	
