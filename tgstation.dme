@@ -3959,6 +3959,7 @@
 #include "modular_bluemoon\icons\code\under.dm"
 #include "modular_bluemoon\jobs_species_blacklist\jobs_species_blacklist.dm"
 #include "modular_bluemoon\kovac_shitcode\code\clothing\mask.dm"
+#include "modular_bluemoon\krashly\code\game\hair_face.dm"
 #include "modular_bluemoon\krashly\code\game\machinery\doors\airlock_types.dm"
 #include "modular_bluemoon\krashly\code\game\objects\items\item.dm"
 #include "modular_bluemoon\krashly\code\game\objects\items\weaponry.dm"
