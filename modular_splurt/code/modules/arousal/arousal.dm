@@ -85,7 +85,6 @@
 				if(BALLS_SIZE_MAX)
 					size = pick("cum_normal", "cum_large", "cum_large", "cum_large")
 			target.add_cum_overlay(size)
-			usr.add_cum_overlay(size) // Явно указываем на самого себя... можно попробовать с srс в данном контексте это тоже персонаж
 	. = ..()
 
 	if(cached_fluid)
@@ -125,10 +124,9 @@
 	do_climax(fluid_source, L, G, spillage, cover = TRUE)
 
 /atom/proc/add_cum_overlay(size = BALLS_SIZE_MAX) //This can go in a better spot, for now its here.
-	cum_splatter_icon = icon(initial(icon), initial(icon_state), dir = 1)
-	cum_splatter_icon.Blend("#fff", ICON_ADD)
-	cum_splatter_icon.Blend(icon('modular_splurt/icons/effects/cumoverlay.dmi', "cum_large"), ICON_MULTIPLY)
-	add_overlay(mutable_appearance('modular_splurt/icons/effects/cumoverlay.dmi', "cum_large")) // Прямо указываем применить конкретный оферлей
+	src.cum_splatter_icon = icon(initial(src.icon), initial(src.icon_state), dir = 1)
+	src.cum_splatter_icon.Blend("#fff", ICON_ADD)
+	src.cum_splatter_icon.Blend(icon('modular_splurt/icons/effects/cumoverlay.dmi', size), ICON_MULTIPLY)
 	add_overlay(cum_splatter_icon)
 
 /atom/proc/wash_cum()
