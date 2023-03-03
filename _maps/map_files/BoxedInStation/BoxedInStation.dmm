@@ -8088,7 +8088,7 @@
 /turf/open/floor/glass/reinforced,
 /area/engineering/break_room)
 "ekN" = (
-/obj/structure/closet/secure_closet/brig,
+/obj/structure/closet/secure_closet/genpop,
 /obj/machinery/camera/preset{
 	dir = 9
 	},
@@ -16184,7 +16184,7 @@
 /turf/closed/wall/r_wall,
 /area/command/gateway)
 "itg" = (
-/obj/structure/closet/secure_closet/brig,
+/obj/structure/closet/secure_closet/genpop,
 /turf/open/floor/plasteel,
 /area/security/prison)
 "itJ" = (
@@ -23739,7 +23739,7 @@
 /turf/open/floor/plasteel/dark,
 /area/commons/dorms)
 "mCh" = (
-/obj/structure/closet/secure_closet/brig,
+/obj/structure/closet/secure_closet/genpop,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "mCq" = (

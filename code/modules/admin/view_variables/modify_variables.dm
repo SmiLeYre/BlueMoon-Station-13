@@ -9,8 +9,8 @@ GLOBAL_PROTECT(VVpixelmovement)
 
 /client/proc/vv_parse_text(O, new_var)
 	if(O && findtext(new_var,"\["))
-		var/process_vars = alert(usr,"\[] detected in string, process as variables?","Process Variables?","Yes","No")
-		if(process_vars == "Yes")
+		var/process_vars = alert(usr,"\[] detected in string, process as variables?","Process Variables?","Да","Нет")
+		if(process_vars == "Да")
 			. = string2listofvars(new_var, O)
 
 //do they want you to include subtypes?
@@ -97,8 +97,8 @@ GLOBAL_PROTECT(VVpixelmovement)
 
 	L += var_value
 
-	switch(alert("Would you like to associate a value with the list entry?",,"Yes","No"))
-		if("Yes")
+	switch(alert("Would you like to associate a value with the list entry?",,"Да","Нет"))
+		if("Да")
 			L[var_value] = mod_list_add_ass(O) //hehe
 	if (O)
 		if (O.vv_edit_var(objectvar, L) == FALSE)

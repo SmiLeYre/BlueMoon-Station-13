@@ -22,7 +22,7 @@
 	var/choice = input(src, "Which orientation? Maps are normally facing SOUTH.", "Template Orientation", "South") as null|anything in orientations
 	var/orientation = orientations[choice]
 	images += preview
-	if(alert(src,"Confirm location.","Template Confirm","Yes","No") == "Yes")
+	if(alert(src,"Confirm location.","Template Confirm","Да","Нет") == "Да")
 		if(template.load(T, centered = TRUE, orientation = orientation))
 			message_admins("<span class='adminnotice'>[key_name_admin(src)] has placed a map template ([template.name]) at [ADMIN_COORDJMP(T)]</span>")
 		else

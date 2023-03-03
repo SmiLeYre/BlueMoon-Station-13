@@ -1081,7 +1081,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/bot_white,
-/obj/structure/closet/secure_closet/brig,
+/obj/structure/closet/secure_closet/genpop,
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
 "afv" = (
@@ -52279,7 +52279,7 @@
 /turf/open/floor/plasteel,
 /area/service/bar)
 "ksa" = (
-/obj/structure/closet/secure_closet/brig,
+/obj/structure/closet/secure_closet/genpop,
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
 	dir = 4
@@ -55508,7 +55508,7 @@
 /turf/open/floor/plating,
 /area/security/prison/upper)
 "noJ" = (
-/obj/structure/closet/secure_closet/brig,
+/obj/structure/closet/secure_closet/genpop,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},

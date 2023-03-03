@@ -30,7 +30,7 @@
 		else
 			dresscode = outfits[initial_outfits]
 
-		var/grant_spell = tgui_alert(user, "Do you want to give them the power to return? Not recommended for non-admins.","Give power?",list("Yes","No", "Cancel"))
+		var/grant_spell = tgui_alert(user, "Do you want to give them the power to return? Not recommended for non-admins.","Give power?",list("Да","Нет", "Cancel"))
 		if(grant_spell == "Cancel")
 			return
 

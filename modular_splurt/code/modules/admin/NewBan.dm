@@ -43,7 +43,7 @@
 			var/reason = input(usr,"Please State Reason For Banning [M.key].","Reason") as message|null
 			if(!reason)
 				return
-			switch(alert(usr,"IP ban?",,"Yes","No","Cancel"))
+			switch(alert(usr,"IP ban?",,"Да","Нет","Cancel"))
 				if("Cancel")
 					return
 				if("Yes")

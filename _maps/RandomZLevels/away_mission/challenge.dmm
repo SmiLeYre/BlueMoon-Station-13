@@ -127,9 +127,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/emitter/energycannon{
-	active = 0
-	},
+/obj/machinery/power/emitter/energycannon,
 /turf/open/floor/plating/airless,
 /area/awaymission/challenge/main)
 "aJ" = (
@@ -164,9 +162,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/emitter/energycannon{
-	active = 0
-	},
+/obj/machinery/power/emitter/energycannon,
 /turf/open/floor/plating/airless,
 /area/awaymission/challenge/main)
 "aP" = (
@@ -284,7 +280,6 @@
 	dir = 1
 	},
 /obj/machinery/power/emitter/ctf{
-	active = 0;
 	dir = 1
 	},
 /turf/open/floor/plating,
@@ -312,7 +307,6 @@
 	dir = 8
 	},
 /obj/machinery/power/emitter/ctf{
-	active = 0;
 	dir = 1
 	},
 /turf/open/floor/plating,
@@ -324,7 +318,6 @@
 "bk" = (
 /obj/machinery/light,
 /obj/machinery/power/emitter/ctf{
-	active = 0;
 	dir = 1
 	},
 /turf/open/floor/plating,
@@ -337,7 +330,6 @@
 	dir = 4
 	},
 /obj/machinery/power/emitter/ctf{
-	active = 0;
 	dir = 1
 	},
 /turf/open/floor/plating,
@@ -356,9 +348,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
-/obj/machinery/power/emitter/ctf{
-	active = 0
-	},
+/obj/machinery/power/emitter/ctf,
 /turf/open/floor/plating,
 /area/awaymission/challenge/main)
 "bp" = (
@@ -382,9 +372,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/obj/machinery/power/emitter/ctf{
-	active = 0
-	},
+/obj/machinery/power/emitter/ctf,
 /turf/open/floor/plating,
 /area/awaymission/challenge/main)
 "bs" = (
@@ -1117,9 +1105,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
-/obj/machinery/power/emitter/energycannon{
-	active = 0
-	},
+/obj/machinery/power/emitter/energycannon,
 /turf/open/floor/plating/airless,
 /area/awaymission/challenge/main)
 "kb" = (
@@ -1354,9 +1340,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/emitter/energycannon{
-	active = 0
-	},
+/obj/machinery/power/emitter/energycannon,
 /turf/open/floor/plating/airless,
 /area/awaymission/challenge/main)
 "MJ" = (
@@ -29617,7 +29601,7 @@ aH
 aH
 aH
 aH
-be
+bf
 aC
 bn
 bq

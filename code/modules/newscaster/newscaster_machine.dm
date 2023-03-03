@@ -8,8 +8,8 @@ GLOBAL_LIST_EMPTY(allCasters)
 	result_path = /obj/machinery/newscaster
 
 /obj/machinery/newscaster
-	name = "newscaster"
-	desc = "A standard Nanotrasen-licensed newsfeed handler for use in commercial space stations. All the news you absolutely have no use for, in one place!"
+	name = "Новостник"
+	desc = "Стандартный обработчик новостной ленты, лицензированный NanoTrasen для использования на коммерческих космических станциях. Все новости, которые вам совершенно не нужны, в одном месте!"
 	icon = 'icons/obj/terminals.dmi'
 	icon_state = "newscaster_normal"
 	plane = ABOVE_WALL_PLANE

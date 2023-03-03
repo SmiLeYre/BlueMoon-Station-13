@@ -364,8 +364,9 @@
 	var/mob/living/carbon/human/quirk_mob = quirk_holder
 
 	// Add quirk traits
-	ADD_TRAIT(quirk_mob,TRAIT_NO_PROCESS_FOOD,ROUNDSTART_TRAIT)
-	ADD_TRAIT(quirk_mob,TRAIT_NOTHIRST,ROUNDSTART_TRAIT)
+	ADD_TRAIT(quirk_mob,TRAIT_NOBREATH, ROUNDSTART_TRAIT)
+	ADD_TRAIT(quirk_mob,TRAIT_NO_PROCESS_FOOD, ROUNDSTART_TRAIT)
+	ADD_TRAIT(quirk_mob,TRAIT_NOTHIRST, ROUNDSTART_TRAIT)
 
 	// Set skin tone, if possible
 	if(!quirk_mob.dna.skin_tone_override)
@@ -674,3 +675,60 @@
 	var/obj/item/clothing/mask/gas/cosmetic/gasmask = new(get_turf(quirk_holder)) // Uses a custom gas mask
 	H.equip_to_slot(gasmask, ITEM_SLOT_MASK)
 	H.regenerate_icons()
+
+/datum/quirk/kartavii
+	name = "Картавый"
+	desc = "Вы не знаете, как проговаривать букву \"Р\"."
+	value = 0
+	mob_trait = TRAIT_KARTAVII
+	gain_text = span_notice("Забываю как проговаривать букву \"Р\".")
+	lose_text = span_danger("Вспоминаю как проговаривать букву \"Р\".")
+	medical_record_text = "Пациент не может проговаривать букву \"Р\"."
+
+/datum/quirk/kartavii/proc/kartavo(message)
+	var/num = rand(1, 3)
+	switch(num)
+		if(1)
+			message = replacetextEx(message, "р", "г'")
+			message = replacetextEx(message, "Р", "Г'")
+		if(2)
+			message = replacetextEx(message, "р", "гх")
+			message = replacetextEx(message, "Р", "Гх")
+		if(3)
+			message = replacetextEx(message, "р", "гъ")
+			message = replacetextEx(message, "Р", "Гъ")
+
+	return message
+
+/datum/quirk/asiat
+	name = "Азиат"
+	desc = "Долгое время работы в рисовых полях и жара палящего сверху солнца даровала вам этот прекрасный акцент."
+	value = 0
+	mob_trait = TRAIT_ASIAT
+	gain_text = span_notice("Чиньг-чоньг!.")
+	lose_text = span_danger("Аниме говно.")
+	medical_record_text = "Пациент - азиат."
+
+/datum/quirk/asiat/proc/asiatish(message)
+	message = replacetext_char(message, "ра", "ля")
+	message = replacetext_char(message, "ла", "ля")
+	message = replacetext_char(message, "ло", "льо")
+	message = replacetext_char(message, "да", "тя")
+	message = replacetext_char(message, "бо", "по")
+	message = replacetext_char(message, "за", "ся")
+	message = replacetext_char(message, "чу", "сю")
+	message = replacetext_char(message, "та", "тя")
+	message = replacetext_char(message, "же", "се")
+	message = replacetext_char(message, "хо", "ха")
+	message = replacetext_char(message, "гд", "кт")
+	message = replacetextEx(message, "д", "т")
+	message = replacetextEx(message, "ч", "с")
+	message = replacetextEx(message, "з", "с")
+	message = replacetextEx(message, "р", "л")
+	message = replacetextEx(message, "ы", "и")
+	message = replacetextEx(message, "Д", "т")
+	message = replacetextEx(message, "Ч", "с")
+	message = replacetextEx(message, "З", "с")
+	message = replacetextEx(message, "Р", "л")
+	message = replacetextEx(message, "Ы", "и")
+	return message

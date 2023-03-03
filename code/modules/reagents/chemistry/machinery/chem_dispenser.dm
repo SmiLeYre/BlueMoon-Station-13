@@ -333,8 +333,8 @@
 		if("clear_recipes")
 			if(!is_operational())
 				return
-			var/yesno = alert("Clear all recipes?",, "Yes","No")
-			if(yesno == "Yes")
+			var/yesno = alert("Очистить все рецепты?",, "Да","Нет")
+			if(yesno == "Да")
 				saved_recipes = list()
 			. = TRUE
 		if("record_recipe")

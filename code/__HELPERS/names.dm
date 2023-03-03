@@ -63,7 +63,7 @@ GLOBAL_VAR(command_name)
 	var/new_station_name = ""
 
 	//Rare: Pre-Prefix
-	if (prob(10))
+	if (prob(0)) // Я захотел.
 		name = pick(GLOB.station_prefixes)
 		new_station_name = name + " "
 		name = ""

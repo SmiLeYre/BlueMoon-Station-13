@@ -126,8 +126,13 @@
 				stop = 0
 			return TRUE
 		if("add_to_queue")
-			if(QDELETED(src))
+			var/list/available = list()
+			for(var/datum/track/S in SSjukeboxes.songs)
+				available[S.song_name] = S
+			var/selected = params["track"]
+			if(QDELETED(src) || !selected || !istype(available[selected], /datum/track))
 				return
+			selectedtrack = available[selected]
 			if(world.time < queuecooldown)
 				return
 			if(!istype(selectedtrack, /datum/track))

@@ -1188,8 +1188,8 @@ GLOBAL_LIST_EMPTY(PDAs)
 	var/selected = plist[c]
 
 	if(aicamera.stored.len)
-		var/add_photo = input(user,"Do you want to attach a photo?","Photo","No") as null|anything in list("Yes","No")
-		if(add_photo=="Yes")
+		var/add_photo = input(user,"Do you want to attach a photo?","Photo","No") as null|anything in list("Да","Нет")
+		if(add_photo=="Да")
 			var/datum/picture/Pic = aicamera.selectpicture(user)
 			aiPDA.picture = Pic
 
@@ -1276,7 +1276,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	var/selected = plist[c]
 
 	if(aicamera.stored.len)
-		var/add_photo = input(user,"Do you want to attach a photo?","Photo","No") as null|anything in list("Yes","No")
+		var/add_photo = input(user,"Do you want to attach a photo?","Photo","No") as null|anything in list("Да","Нет")
 		if(add_photo=="Yes")
 			var/datum/picture/Pic = aicamera.selectpicture(user)
 			aiPDA.picture = Pic

@@ -193,19 +193,19 @@
 			to_chat(user, "<span class='warning'>You must be on the floor to interact with [src]!</span>")
 			return
 		if(tied == SHOES_KNOTTED)
-			to_chat(user, "<span class='warning'>The laces on [loc]'s [src.name] are already a hopelessly tangled mess!</span>")
+			to_chat(user, "<span class='warning'>The laces on <b>[loc]</b>'s [src.name] are already a hopelessly tangled mess!</span>")
 			return
 		if(INTERACTING_WITH(user, our_guy))
 			to_chat(user, "<span class='warning'>You're already interacting with [src]!</span>")
 			return
 
 		var/mod_time = lace_time
-		to_chat(user, "<span class='notice'>You quietly set to work [tied ? "untying" : "knotting"] [loc]'s [src.name]...</span>")
+		to_chat(user, "<span class='notice'>You quietly set to work [tied ? "untying" : "knotting"] <b>[loc]</b>'s [src.name]...</span>")
 		if(HAS_TRAIT(user, TRAIT_CLUMSY)) // based clowns trained their whole lives for this
 			mod_time *= 0.75
 
 		if(do_after(user, mod_time, needhand=TRUE, target=our_guy, extra_checks=CALLBACK(src, .proc/still_shoed, our_guy)))
-			to_chat(user, "<span class='notice'>You [tied ? "untie" : "knot"] the laces on [loc]'s [src.name].</span>")
+			to_chat(user, "<span class='notice'>You [tied ? "untie" : "knot"] the laces on <b>[loc]</b>'s [src.name].</span>")
 			if(tied == SHOES_UNTIED)
 				adjust_laces(SHOES_KNOTTED, user)
 			else

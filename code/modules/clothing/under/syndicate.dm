@@ -85,6 +85,9 @@
 	can_adjust = FALSE
 	mutantrace_variation = STYLE_DIGITIGRADE|USE_SNEK_CLIP_MASK|USE_QUADRUPED_CLIP_MASK
 
+/obj/item/clothing/under/syndicate/combat/ert
+	has_sensor = 3
+
 /obj/item/clothing/under/syndicate/rus_army
 	name = "Military Tracksuit"
 	desc = "Military grade tracksuits for frontline squatting."

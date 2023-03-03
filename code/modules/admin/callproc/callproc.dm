@@ -12,8 +12,8 @@
 	var/targetselected = FALSE
 	var/returnval
 
-	switch(alert("Proc owned by something?",,"Yes","No"))
-		if("Yes")
+	switch(alert("Proc owned by something?",,"Да","Нет"))
+		if("Да")
 			targetselected = TRUE
 			var/list/value = vv_get_value(default_class = VV_ATOM_REFERENCE, classes = list(VV_ATOM_REFERENCE, VV_DATUM_REFERENCE, VV_MOB_REFERENCE, VV_CLIENT, VV_MARKED_DATUM, VV_TEXT_LOCATE, VV_PROCCALL_RETVAL))
 			if (!value["class"] || !value["value"])
@@ -22,7 +22,7 @@
 			if(!istype(target))
 				to_chat(usr, "<span class='danger'>Invalid target.</span>", confidential = TRUE)
 				return
-		if("No")
+		if("Нет")
 			target = null
 			targetselected = FALSE
 

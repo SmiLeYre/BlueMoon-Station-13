@@ -9409,7 +9409,7 @@
 /turf/open/floor/plasteel,
 /area/hallway/primary/fore)
 "ayM" = (
-/obj/structure/closet/secure_closet/brig,
+/obj/structure/closet/secure_closet/genpop,
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
 "ayN" = (

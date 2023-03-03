@@ -52,8 +52,8 @@
 	if(!SSticker.mode)
 		to_chat(user, "Can't become a tumor bread before the game has started.")
 		return
-	var/be_bread = alert("Become a tumor bread? (Warning, You can no longer be cloned!)",,"Yes","No")
-	if(be_bread == "No" || QDELETED(src) || !isobserver(user))
+	var/be_bread = alert("Become a tumor bread? (Warning, You can no longer be cloned!)",,"Да","Нет")
+	if(be_bread == "Нет" || QDELETED(src) || !isobserver(user))
 		return
 	if(key)
 		to_chat(user, "<span class='notice'>Someone else already took this tumor bread.</span>")

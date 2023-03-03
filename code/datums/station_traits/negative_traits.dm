@@ -29,7 +29,7 @@
 /datum/station_trait/random_spawns
 	name = "Drive-by landing"
 	trait_type = STATION_TRAIT_NEGATIVE
-	weight = 2
+	weight = 25
 	show_in_report = TRUE
 	report_message = "Sorry for that, we missed your station by a few miles, so we just launched you towards your station in pods. Hope you don't mind!"
 	trait_to_give = STATION_TRAIT_RANDOM_ARRIVALS
@@ -40,7 +40,7 @@
 	trait_type = STATION_TRAIT_NEGATIVE
 	weight = 50
 	show_in_report = TRUE
-	report_message = "Ohh....Man....That mandatory office party from last shift...God that was awesome..I woke up in some random toilet 3 sectors away..."
+	report_message = "Ох... чувак... та обязательная офисная вечеринка с прошлой смены... боже, это было круто... я проснулся в каком-то случайном туалете в трёх секторах от моего рабочего места..."
 	trait_to_give = STATION_TRAIT_HANGOVER
 	blacklist = list(/datum/station_trait/late_arrivals, /datum/station_trait/random_spawns)
 
@@ -159,7 +159,7 @@
 /datum/station_trait/revenge_of_pun_pun
 	name = "Revenge of Pun Pun"
 	trait_type = STATION_TRAIT_NEGATIVE
-	weight = 2
+	weight = 10
 
 	// Way too much is done on atoms SS to be reverted, and it'd look
 	// kinda clunky on round start. It's not impossible to make this work,
@@ -177,7 +177,7 @@
 			/obj/item/melee/chainofcommand/tailwhip = 15,
 			/obj/item/melee/chainofcommand/tailwhip/kitty = 15,
 			/obj/item/reagent_containers/food/drinks/bottle = 25,
-			/obj/item/gun/ballistic/automatic/pistol = 1,
+			/obj/item/gun/ballistic/automatic/pistol = 10,
 		)
 
 	RegisterSignal(SSatoms, COMSIG_SUBSYSTEM_POST_INITIALIZE, .proc/arm_monke)

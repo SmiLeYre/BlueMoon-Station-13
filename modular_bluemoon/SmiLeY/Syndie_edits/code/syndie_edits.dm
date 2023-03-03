@@ -131,7 +131,7 @@
 	dying_key = DYE_REGISTRY_JUMPSKIRT
 	can_adjust = FALSE
 
-/obj/item/clothing/under/syndicate/bluemoon/maid/Initialize(mapload)
+/obj/item/clothing/under/syndicate/maid/Initialize(mapload)
 	. = ..()
 	var/obj/item/clothing/accessory/maidcorset/syndicate/A = new (src)
 	attach_accessory(A)

@@ -6,12 +6,12 @@
 
 /obj/item/gun/ballistic/revolver/detective/Initialize()
 	var/list/extra_reskin = list(
-						"Fitz Special" = "detective_fitz",
-						"Police Positive Special" = "detective_police",
-						"Blued Steel" = "detective_blued",
-						"Stainless Steel" = "detective_stainless",
-						"Deckard Revolver" = "detective_bladerunner"
-						)
+						"Fitz Special" = list("icon_state" = "detective_fitz"),
+						"Police Positive Special" = list("icon_state" = "detective_police"),
+						"Blued Steel" = list("icon_state" = "detective_blued"),
+						"Stainless Steel" = list("icon_state" = "detective_stainless"),
+						"Deckard Revolver" = list("icon_state" = "detective_bladerunner")
+	)
 	LAZYADD(unique_reskin, extra_reskin)
 	. = ..()
 
@@ -29,11 +29,11 @@
 	icon_state = "45revolver"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45l
 	obj_flags = UNIQUE_RENAME
-
-	unique_reskin = list("Default" = "45revolver",
-						"Cowboy" = "357colt",
-						"Lucky" = "lucky" //Well do ya?
-						)
+	unique_reskin = list(
+		"Default" = list("icon_state" = "45revolver"),
+		"Cowboy" = list("icon_state" = "357colt"),
+		"Lucky" = list("icon_state" = "lucky") //Well do ya?
+	)
 
 /obj/item/gunpart/revolver22frame
 	name = ".22 revolver frame"

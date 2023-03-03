@@ -785,7 +785,7 @@
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
 "acj" = (
-/obj/structure/closet/secure_closet/brig,
+/obj/structure/closet/secure_closet/genpop,
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
 	dir = 4
@@ -1014,7 +1014,7 @@
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
 "acR" = (
-/obj/structure/closet/secure_closet/brig,
+/obj/structure/closet/secure_closet/genpop,
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
 	dir = 8
@@ -1172,7 +1172,7 @@
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
 "adh" = (
-/obj/structure/closet/secure_closet/brig,
+/obj/structure/closet/secure_closet/genpop,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
@@ -65815,7 +65815,7 @@
 /turf/open/space,
 /area/solars/starboard/aft)
 "nlq" = (
-/obj/structure/closet/secure_closet/brig,
+/obj/structure/closet/secure_closet/genpop,
 /obj/machinery/airalarm/directional/east,
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{

@@ -124,7 +124,7 @@
 	attack_hand_is_action = TRUE
 
 /obj/structure/spider/spiderling/Destroy()
-	new/obj/effect/decal/cleanable/blood/xeno(src)
+	new/obj/effect/decal/cleanable/blood/xeno(get_turf(src))
 	new/obj/item/reagent_containers/food/snacks/spiderling(get_turf(src))
 	. = ..()
 

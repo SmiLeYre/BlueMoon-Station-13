@@ -1,5 +1,5 @@
 /obj/item/organ/genital/belly //I know, I know a belly aint a genital. but it is in the sake of code.
-	name 					= "belly"
+	name 					= "живот"
 	desc 					= "You see a belly on their midsection."
 	icon_state 				= "belly"
 	icon 					= 'icons/obj/genitals/breasts.dmi' // I have no idea why it's set up like this on hyper

@@ -62,7 +62,7 @@
 		if(linked_organ)
 			. = linked_organ.reagents
 	if(!. && !silent)
-		to_chat(H, "<span class='warning'>Your [name] is unable to produce it's own fluids, it's missing the organs for it.</span>")
+		to_chat(H, "<span class='warning'>Твой [name] не в состоянии производить собственную жидкость, ведь у него отсутствуют органы для этого.</span>")
 
 /mob/living/carbon/human/proc/do_climax(datum/reagents/R, atom/target, obj/item/organ/genital/G, spill = TRUE)
 	if(!G)
@@ -77,7 +77,7 @@
 	G.generate_fluid(R)
 	log_message("Climaxed using [G] with [target]", LOG_EMOTE)
 	if(condomning)
-		to_chat(src, "<span class='userlove'>You feel the condom bubble outwards and fill up with your spunk</span>")
+		to_chat(src, "<span class='userlove'>Ты чувствуешь, как презерватив наполняется изнутри и таким-то образом наполняется твоей спермой!</span>")
 		R.trans_to(condomclimax(), R.total_volume)
 	else
 		if(spill && R.total_volume >= 5)
@@ -96,13 +96,13 @@
 /mob/living/carbon/human/proc/mob_climax_outside(obj/item/organ/genital/G, mb_time = 30) //This is used for forced orgasms and other hands-free climaxes
 	var/datum/reagents/fluid_source = G.climaxable(src, TRUE)
 	if(!fluid_source)
-		to_chat(src,"<span class='userdanger'>Your [G.name] cannot cum.</span>")
+		to_chat(src,"<span class='userdanger'>Твой [G.name] предательски сжимается, не имея возможности кончить...</span>")
 		return
 	if(mb_time) //as long as it's not instant, give a warning
-		to_chat(src,"<span class='userlove'>You feel yourself about to orgasm.</span>")
+		to_chat(src,"<span class='userlove'>Вы чувствуете, что вот-вот достигнете оргазма!</span>")
 		if(!do_after(src, mb_time, target = src) || !G.climaxable(src, TRUE))
 			return
-	to_chat(src,"<span class='userlove'>You climax[isturf(loc) ? " onto [loc]" : ""] with your [G.name].</span>")
+	to_chat(src,"<span class='userlove'>Вы оргазмируете [isturf(loc) ? "прямо на <b>'[loc]'</b>" : ""], отлично! Конечно же, [G.name] изливается следом.</span>")
 	do_climax(fluid_source, loc, G)
 
 /mob/living/carbon/human/proc/mob_climax_partner(obj/item/organ/genital/G, mob/living/L, spillage = TRUE, mb_time = 30, obj/item/organ/genital/Lgen = null) //Used for climaxing with any living thing
@@ -110,16 +110,16 @@
 	if(!fluid_source)
 		return
 	if(mb_time) //Skip warning if this is an instant climax.
-		to_chat(src,"<span class='userlove'>You're about to climax [(Lgen) ? "in [L]'s [Lgen.name]" : "with [L]"]!</span>")
-		to_chat(L,"<span class='userlove'>[src] is about to climax [(Lgen) ? "in your [Lgen.name]" : "with you"]!</span>")
+		to_chat(src,"<span class='userlove'>Ты вот-вот достигнешь кульминации [(Lgen) ? "в <b>[L]</b> [Lgen.name]" : "совместно с <b>[L]</b>"]!</span>")
+		to_chat(L,"<span class='userlove'>[src] вот-вот достигнет кульминации [(Lgen) ? "в твой [Lgen.name]" : "совместно с тобой"]!</span>")
 		if(!do_after(src, mb_time, target = src) || !in_range(src, L) || !G.climaxable(src, TRUE))
 			return
 	if(spillage)
-		to_chat(src,"<span class='userlove'>You orgasm with [L], spilling out of [(Lgen) ? "[L.ru_ego()] [Lgen.name]" : "[L.ru_na()]"], using your [G.name].</span>")
-		to_chat(L,"<span class='userlove'>[src] climaxes [(Lgen) ? "in your [Lgen.name]" : "with you"], overflowing and spilling, using [ru_ego()] [G.name]!</span>")
+		to_chat(src,"<span class='userlove'>Вы испытываете оргазм с <b>[L]</b>, изливая [(Lgen) ? "[L.ru_ego()] [Lgen.name]" : "[L.ru_ego()] / [Lgen.name]"]. [G.name] требует отдыха после использования!</span>")
+		to_chat(L,"<span class='userlove'>[src] кульминирует [(Lgen) ? "в твою [Lgen.name]" : "совместно с тобой"], в процессе попросту переполненяя и закономерно проливая всякое. [G.name] требует отдыха после использования!</span>")
 	else //knots and other non-spilling orgasms
-		to_chat(src,"<span class='userlove'>You climax [(Lgen) ? "in [L]'s [Lgen.name]" : "with [L]"], your [G.name] spilling nothing.</span>")
-		to_chat(L,"<span class='userlove'>[src] climaxes [(Lgen) ? "in your [Lgen.name]" : "with you"], [ru_ego()] [G.name] spilling nothing!</span>")
+		to_chat(src,"<span class='userlove'>Вы достигаете кульминации И [(Lgen) ? "в <b>[L]</b> [Lgen.name]" : "совместно с <b>[L]</b>"], в процессе ничего не проливая. [G.name] требует отдыха после использования!</span>")
+		to_chat(L,"<span class='userlove'>[src] кульминирует [(Lgen) ? "в твою [Lgen.name]" : "совместно с тобой"], [ru_ego()] [G.name] ничего не проливает в процессе! [G.name] требует отдыха после использования!</span>")
 	//SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "orgasm", /datum/mood_event/orgasm) //Sandstorm edit
 	do_climax(fluid_source, spillage ? loc : L, G, spillage,, Lgen)
 	//L.receive_climax(src, Lgen, G, spillage)
@@ -129,12 +129,12 @@
 	if(!fluid_source)
 		return
 	if(mb_time)
-		to_chat(src,"<span class='userlove'>You start to [G.masturbation_verb] your [G.name] over [container].</span>")
+		to_chat(src,"<span class='userlove'>Вы начали [G.masturbation_verb] прямо над <b>[container]</b>. [G.name] в готовности к этому...</span>")
 		if(!do_after(src, mb_time, target = src) || !in_range(src, container) || !G.climaxable(src, TRUE))
 			return
-	to_chat(src,"<span class='userlove'>You used your [G.name] to fill [container].</span>")
-	message_admins("[ADMIN_LOOKUPFLW(src)] used [ru_ego()] [G.name] to fill [container] with [G.get_fluid_name()].")
-	log_consent("[key_name(src)] used their [G.name] to fill [container].")
+	to_chat(src,"<span class='userlove'>[G.name] стимулируется вашими же усилиями, вы пытаетесь наполнить <b>[container]</b>.</span>")
+	message_admins("[ADMIN_LOOKUPFLW(src)] использует [ru_ego()] [G.name], чтобы наполнить <b>[container]</b> [G.get_fluid_name()].")
+	log_consent("[key_name(src)] использует [ru_ego()] [G.name], чтобы наполнить <b>[container]</b> [G.get_fluid_name()].")
 	do_climax(fluid_source, container, G, FALSE, cover = TRUE)
 
 /mob/living/carbon/human/proc/pick_climax_genitals(silent = FALSE)
@@ -145,10 +145,10 @@
 		if((G.genital_flags & CAN_CLIMAX_WITH) && G.is_exposed(worn_stuff)) //filter out what you can't masturbate with
 			LAZYADD(genitals_list, G)
 	if(LAZYLEN(genitals_list))
-		var/obj/item/organ/genital/ret_organ = input(src, "with what?", "Climax", null) as null|obj in genitals_list
+		var/obj/item/organ/genital/ret_organ = input(src, "Чем?", "Климаксировать", null) as null|obj in genitals_list
 		return ret_organ
 	else if(!silent)
-		to_chat(src, "<span class='warning'>You cannot climax without available genitals.</span>")
+		to_chat(src, "<span class='warning'>Вы не можете достичь кульминации без наличия гениталий.</span>")
 
 /mob/living/carbon/human/proc/pick_partner(silent = FALSE)
 	var/list/partners = list()
@@ -167,13 +167,13 @@
 	//NOW the list should only contain correct partners
 	if(!partners.len)
 		if(!silent)
-			to_chat(src, "<span class='warning'>You cannot do this alone.</span>")
+			to_chat(src, "<span class='warning'>Вы не можете сделать это в одиночку.</span>")
 		return //No one left.
-	var/mob/living/target = input(src, "With whom?", "Sexual partner", null) as null|anything in partners //pick one, default to null
+	var/mob/living/target = input(src, "С кем?", "Партнёр по Совокуплению", null) as null|anything in partners //pick one, default to null
 	if(target && in_range(src, target))
-		to_chat(src,"<span class='notice'>Waiting for consent...</span>")
-		var/consenting = input(target, "Do you want [src] to climax with you?","Climax mechanics","No") in list("Yes","No")
-		if(consenting == "Yes")
+		to_chat(src,"<span class='notice'>Ожидание согласия...</span>")
+		var/consenting = input(target, "Вы хотите, чтобы [src] кончил совместно с вами?","Механика Кульминации","Нет") in list("Да","Нет")
+		if(consenting == "Да")
 			return target
 		else
 			message_admins("[ADMIN_LOOKUPFLW(src)] tried to climax with [target], but [target] did not consent.")
@@ -190,16 +190,16 @@
 			containers_list += C
 
 	if(containers_list.len)
-		var/obj/item/reagent_containers/SC = input(src, "Into or onto what?(Cancel for nowhere)", null)  as null|obj in containers_list
+		var/obj/item/reagent_containers/SC = input(src, "В или на что? (Отмена, если никуда)", null)  as null|obj in containers_list
 		if(SC && CanReach(SC))
 			return SC
 	else if(!silent)
-		to_chat(src, "<span class='warning'>You cannot do this without an appropriate container.</span>")
+		to_chat(src, "<span class='warning'>Вы не сможете сделать это без соответствующего контейнера.</span>")
 
 /mob/living/carbon/human/proc/available_rosie_palms(silent = FALSE, list/whitelist_typepaths = list(/obj/item/dildo))
 	if(restrained(TRUE)) //TRUE ignores grabs
 		if(!silent)
-			to_chat(src, "<span class='warning'>You can't do that while restrained!</span>")
+			to_chat(src, "<span class='warning'>Вы не можете сделать это, будучи связанным!</span>")
 		return FALSE
 	if(!get_num_arms() || !get_empty_held_indexes())
 		if(whitelist_typepaths)
@@ -209,7 +209,7 @@
 				if(is_holding_item_of_type(path))
 					return TRUE
 		if(!silent)
-			to_chat(src, "<span class='warning'>You need at least one free arm.</span>")
+			to_chat(src, "<span class='warning'>Вам нужна как минимум одна свободная рука.</span>")
 		return FALSE
 	return TRUE
 
@@ -219,14 +219,14 @@
 	set waitfor = FALSE
 	if(mb_cd_timer > world.time)
 		if(!forced_climax) //Don't spam the message to the victim if forced to come too fast
-			to_chat(src, "<span class='warning'>You need to wait [DisplayTimeText((mb_cd_timer - world.time), TRUE)] before you can do that again!</span>")
+			to_chat(src, "<span class='warning'>Вы должны подождать [DisplayTimeText((mb_cd_timer - world.time), TRUE)] до того, как можете сделать это снова!</span>")
 		return
 
 	if(!client?.prefs.arousable || !has_dna())
 		return
 	if(stat == DEAD)
 		if(!forced_climax)
-			to_chat(src, "<span class='warning'>You can't do that while dead!</span>")
+			to_chat(src, "<span class='warning'>Ты не можешь сделать это, будучи мертвым!</span>")
 		return
 	if(forced_climax) //Something forced us to cum, this is not a masturbation thing and does not progress to the other checks
 		log_message("was forced to climax by [cause]",LOG_EMOTE)
@@ -273,22 +273,22 @@
 	//If we get here, then this is not a forced climax and we gotta check a few things.
 
 	if(stat == UNCONSCIOUS) //No sleep-masturbation, you're unconscious.
-		to_chat(src, "<span class='warning'>You must be conscious to do that!</span>")
+		to_chat(src, "<span class='warning'>Вы должны быть в сознании, чтобы сделать это!</span>")
 		return
 
 	//Ok, now we check what they want to do.
-	var/choice = input(src, "Select sexual activity", "Sexual activity:") as null|anything in list("Climax alone","Climax with partner", "Climax over partner", "Fill container")
+	var/choice = input(src, "Выбор Сексуальной Активности", "Сексуальная Активность:") as null|anything in list("Оргазмировать в одиночестве","Оргазмировать совмпестно с кем-то", "Climax over partner", "Наполнить контейнер половыми жидкостями")
 	if(!choice)
 		return
 
 	switch(choice)
-		if("Climax alone")
+		if("Оргазмировать в одиночестве")
 			if(!available_rosie_palms())
 				return
 			var/obj/item/organ/genital/picked_organ = pick_climax_genitals()
 			if(picked_organ && available_rosie_palms(TRUE))
 				mob_climax_outside(picked_organ)
-		if("Climax with partner")
+		if("Оргазмировать совместно с кем-то")
 			//We need no hands, we can be restrained and so on, so let's pick an organ
 			var/obj/item/organ/genital/picked_organ = pick_climax_genitals()
 			var/obj/item/organ/genital/picked_target = null
@@ -299,7 +299,7 @@
 					var/spillage = input(src, "Would your fluids spill outside?", "Choose overflowing option", "Yes") as null|anything in list("Yes", "No")
 					if(spillage && in_range(src, partner))
 						mob_climax_partner(picked_organ, partner, spillage == "Yes" ? TRUE : FALSE, Lgen = picked_target)
-		if("Fill container")
+		if("Наполнить контейнер половыми жидкостями")
 			//We'll need hands and no restraints.
 			if(!available_rosie_palms(FALSE, /obj/item/reagent_containers))
 				return
@@ -311,7 +311,7 @@
 				var/obj/item/reagent_containers/fluid_container = pick_climax_container()
 				if(fluid_container && available_rosie_palms(TRUE, /obj/item/reagent_containers))
 					mob_fill_container(picked_organ, fluid_container)
-		if("Climax over partner")
+		if("Оргазмировать на кого-то (CTRL+ЛКМ)")
 			//We need no hands, we can be restrained and so on, so let's pick an organ
 			var/obj/item/organ/genital/picked_organ = pick_climax_genitals()
 			if(picked_organ)

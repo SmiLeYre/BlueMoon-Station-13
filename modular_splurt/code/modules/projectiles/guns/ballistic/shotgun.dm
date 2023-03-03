@@ -24,13 +24,14 @@
 	slot_flags = ITEM_SLOT_BELT
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
 	obj_flags = UNIQUE_RENAME
-	unique_reskin = list("Default" = "sawnshotgun",
-						"Dark Red Finish" = "sawnshotgun-d",
-						"Ash" = "sawnshotgun-f",
-						"Faded Grey" = "sawnshotgun-g",
-						"Maple" = "sawnshotgun-l",
-						"Rosewood" = "sawnshotgun-p"
-						)
+	unique_reskin = list(
+		"Default" = list("icon_state" = "sawnshotgun"),
+		"Dark Red Finish" = list("icon_state" = "sawnshotgun-d"),
+		"Ash" = list("icon_state" = "sawnshotgun-f"),
+		"Faded Grey" = list("icon_state" = "sawnshotgun-g"),
+		"Maple" = list("icon_state" = "sawnshotgun-l"),
+		"Rosewood" = list("icon_state" = "sawnshotgun-p")
+	)
 
 // Rifles
 

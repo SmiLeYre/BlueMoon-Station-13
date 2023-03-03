@@ -438,10 +438,10 @@
 			return
 
 		var/delmob = 0
-		switch(alert("Delete old mob?","Message","Yes","No","Cancel"))
-			if("Cancel")
+		switch(alert("Delete old mob?","Message","Да","Нет","Отмена"))
+			if("Отмена")
 				return
-			if("Yes")
+			if("Да")
 				delmob = 1
 
 		log_admin("[key_name(usr)] has used rudimentary transformation on [key_name(M)]. Transforming to [href_list["simplemake"]].; deletemob=[delmob]")
@@ -534,8 +534,8 @@
 
 		var/duration
 
-		switch(alert("Temporary Ban for [banned_key]?",,"Yes","No"))
-			if("Yes")
+		switch(alert("Temporary Ban for [banned_key]?",,"Да","Нет"))
+			if("Да")
 				temp = 1
 				var/mins = 0
 				if(minutes > GLOB.CMinutes)
@@ -549,7 +549,7 @@
 				reason = input(usr,"Please State Reason For Banning [banned_key].","Reason",reason2) as message|null
 				if(!reason)
 					return
-			if("No")
+			if("Нет")
 				temp = 0
 				duration = "Perma"
 				reason = input(usr,"Please State Reason For Banning [banned_key].","Reason",reason2) as message|null
@@ -582,8 +582,8 @@
 
 
 		if(jobban_isbanned(M, "appearance"))
-			switch(alert("Remove appearance ban?","Please Confirm","Yes","No"))
-				if("Yes")
+			switch(alert("Remove appearance ban?","Please Confirm","Да","Нет"))
+				if("Да")
 					ban_unban_log_save("[key_name(usr)] removed [key_name(M)]'s appearance ban.")
 					log_admin_private("[key_name(usr)] removed [key_name(M)]'s appearance ban.")
 					DB_ban_unban(M.ckey, BANTYPE_ANY_JOB, "appearance")
@@ -592,8 +592,8 @@
 					message_admins("<span class='adminnotice'>[key_name_admin(usr)] removed [key_name_admin(M)]'s appearance ban.</span>")
 					to_chat(M, "<span class='boldannounce'><BIG>[usr.client.key] has removed your appearance ban.</BIG></span>")
 
-		else switch(alert("Appearance ban [M.key]?",,"Yes","No", "Cancel"))
-			if("Yes")
+		else switch(alert("Appearance ban [M.key]?",,"Да","Нет", "Cancel"))
+			if("Да")
 				var/reason = input(usr,"Please State Reason.","Reason") as message|null
 				if(!reason)
 					return
@@ -617,7 +617,7 @@
 					to_chat(M, "<span class='danger'>To try to resolve this matter head to [bran]</span>")
 				else
 					to_chat(M, "<span class='danger'>No ban appeals URL has been set.</span>")
-			if("No")
+			if("Нет")
 				return
 
 	else if(href_list["jobban2"])
@@ -1022,8 +1022,8 @@
 		//Banning comes first
 		if(notbannedlist.len) //at least 1 unbanned job exists in joblist so we have stuff to ban.
 			var/severity = null
-			switch(alert("Temporary Ban for [M.key]?",,"Yes","No", "Cancel"))
-				if("Yes")
+			switch(alert("Temporary Ban for [M.key]?",,"Да","Нет", "Cancel"))
+				if("Да")
 					var/mins = input(usr,"How long (in minutes)?","Ban time",1440) as num|null
 					if(mins <= 0)
 						to_chat(usr, "<span class='danger'>[mins] is not a valid duration.</span>")
@@ -1054,7 +1054,7 @@
 					to_chat(M, "<span class='danger'>This jobban will be lifted in [mins] minutes.</span>")
 					href_list["jobban2"] = 1 // lets it fall through and refresh
 					return 1
-				if("No")
+				if("Нет")
 					var/reason = input(usr,"Please State Reason For Banning [M.key].","Reason") as message|null
 					severity = input("Set the severity of the note/ban.", "Severity", null, null) as null|anything in list("High", "Medium", "Minor", "None")
 					if(!severity)
@@ -1091,8 +1091,8 @@
 				var/reason = jobban_isbanned(M, job)
 				if(!reason)
 					continue //skip if it isn't jobbanned anyway
-				switch(alert("Job: '[job]' Reason: '[reason]' Un-jobban?","Please Confirm","Yes","No"))
-					if("Yes")
+				switch(alert("Job: '[job]' Reason: '[reason]' Un-jobban?","Please Confirm","Да","Нет"))
+					if("Да")
 						ban_unban_log_save("[key_name(usr)] unjobbanned [key_name(M)] from [job]")
 						log_admin_private("[key_name(usr)] unbanned [key_name(M)] from [job]")
 						DB_ban_unban(M.ckey, BANTYPE_ANY_JOB, job)
@@ -1173,16 +1173,16 @@
 	else if(href_list["deletemessage"])
 		if(!check_rights(R_ADMIN))
 			return
-		var/safety = alert("Delete message/note?",,"Yes","No");
-		if (safety == "Yes")
+		var/safety = alert("Delete message/note?",,"Да","Нет");
+		if (safety == "Да")
 			var/message_id = href_list["deletemessage"]
 			delete_message(message_id)
 
 	else if(href_list["deletemessageempty"])
 		if(!check_rights(R_ADMIN))
 			return
-		var/safety = alert("Delete message/note?",,"Yes","No");
-		if (safety == "Yes")
+		var/safety = alert("Delete message/note?",,"Да","Нет");
+		if (safety == "Да")
 			var/message_id = href_list["deletemessageempty"]
 			delete_message(message_id, browse = TRUE)
 
@@ -1298,8 +1298,8 @@
 		if(M.client && M.client.holder)
 			return	//admins cannot be banned. Even if they could, the ban doesn't affect them anyway
 
-		switch(alert("Temporary Ban for [M.key]?",,"Yes","No", "Cancel"))
-			if("Yes")
+		switch(alert("Temporary Ban for [M.key]?",,"Да","Нет", "Отмена"))
+			if("Да")
 				var/mins = input(usr,"How long (in minutes)?","Ban time",1440) as num|null
 				if(mins <= 0)
 					to_chat(usr, "<span class='danger'>[mins] is not a valid duration.</span>")
@@ -1326,16 +1326,16 @@
 				if(AH)
 					AH.Resolve()
 				qdel(M.client)
-			if("No")
+			if("Нет")
 				var/reason = input(usr,"Please State Reason For Banning [M.key].","Reason") as message|null
 				if(!reason)
 					return
-				switch(alert(usr,"IP ban?",,"Yes","No","Cancel"))
-					if("Cancel")
+				switch(alert(usr,"IP ban?",,"Да","Нет","Отмена"))
+					if("Отмена")
 						return
-					if("Yes")
+					if("Да")
 						AddBan(M.ckey, M.computer_id, reason, usr.ckey, 0, 0, M.lastKnownIP)
-					if("No")
+					if("Нет")
 						AddBan(M.ckey, M.computer_id, reason, usr.ckey, 0, 0)
 				to_chat(M, "<span class='boldannounce'><BIG>You have been banned by [usr.client.key].\nReason: [reason]</BIG></span>")
 				to_chat(M, "<span class='danger'>This is a permanent ban. The round ID is [GLOB.round_id].</span>")
@@ -1355,7 +1355,7 @@
 				if(AH)
 					AH.Resolve()
 				qdel(M.client)
-			if("Cancel")
+			if("Отмена")
 				return
 
 	else if(href_list["mute"])

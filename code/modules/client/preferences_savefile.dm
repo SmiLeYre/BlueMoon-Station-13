@@ -1207,13 +1207,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	custom_speech_verb = sanitize_inlist(custom_speech_verb, GLOB.speech_verbs, "default")
 	custom_tongue = sanitize_inlist(custom_tongue, GLOB.roundstart_tongues, "default")
 
-	security_records = copytext(security_records, 1, MAX_FLAVOR_LEN)
-	medical_records = copytext(medical_records, 1, MAX_FLAVOR_LEN)
+	security_records = copytext_char(security_records, 1, MAX_FLAVOR_LEN)
+	medical_records = copytext_char(medical_records, 1, MAX_FLAVOR_LEN)
 
-	features["flavor_text"]	= copytext(features["flavor_text"], 1, MAX_FLAVOR_LEN)
-	features["naked_flavor_text"] = copytext(features["naked_flavor_text"], 1, MAX_FLAVOR_LEN) //SPLURT edit
-	features["silicon_flavor_text"] = copytext(features["silicon_flavor_text"], 1, MAX_FLAVOR_LEN)
-	features["ooc_notes"] = copytext(features["ooc_notes"], 1, MAX_FLAVOR_LEN)
+	features["flavor_text"]	= copytext_char(features["flavor_text"], 1, MAX_FLAVOR_LEN)
+	features["naked_flavor_text"] = copytext_char(features["naked_flavor_text"], 1, MAX_FLAVOR_LEN) //SPLURT edit
+	features["silicon_flavor_text"] = copytext_char(features["silicon_flavor_text"], 1, MAX_FLAVOR_LEN)
+	features["ooc_notes"] = copytext_char(features["ooc_notes"], 1, MAX_FLAVOR_LEN)
 
 	//load every advanced coloring mode thing in one go
 	//THIS MUST BE DONE AFTER ALL FEATURE SAVES OR IT WILL NOT WORK

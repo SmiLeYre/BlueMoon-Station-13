@@ -119,8 +119,8 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 		if(!O.can_reenter_round())
 			return FALSE
 
-	var/posi_ask = alert("Become a [name]? (Warning, You can no longer be cloned, and all past lives will be forgotten!)","Are you positive?","Yes","No")
-	if(posi_ask == "No" || QDELETED(src))
+	var/posi_ask = alert("Become a [name]? (Warning, You can no longer be cloned, and all past lives will be forgotten!)","Are you positive?","Да","Нет")
+	if(posi_ask == "Нет" || QDELETED(src))
 		return
 	transfer_personality(user)
 	latejoin_remove()

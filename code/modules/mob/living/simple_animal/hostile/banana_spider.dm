@@ -51,8 +51,8 @@
 	if(!SSticker.mode)
 		to_chat(user, "Can't become a banana spider before the game has started.")
 		return
-	var/be_spider = alert("Become a banana spider? (Warning, You can no longer be cloned!)",,"Yes","No")
-	if(be_spider == "No" || QDELETED(src) || !isobserver(user))
+	var/be_spider = alert("Become a banana spider? (Warning, You can no longer be cloned!)",,"Да","Нет")
+	if(be_spider == "Нет" || QDELETED(src) || !isobserver(user))
 		return
 	if(key)
 		to_chat(user, "<span class='notice'>Someone else already took this banana spider.</span>")

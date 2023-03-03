@@ -1870,7 +1870,7 @@
 /turf/open/space/basic,
 /area/solars/starboard/fore)
 "aeQ" = (
-/obj/structure/closet/secure_closet/brig,
+/obj/structure/closet/secure_closet/genpop,
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
@@ -9456,22 +9456,6 @@
 	icon_state = "chapel"
 	},
 /area/service/chapel/main)
-"awQ" = (
-/obj/structure/window/plasma/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced/tinted,
-/obj/structure/table,
-/obj/effect/turf_decal/tile/bar{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/bar,
-/obj/machinery/door/poddoor/preopen{
-	id = "briglockdown";
-	name = "Brig Lockdown"
-	},
-/turf/open/floor/plasteel,
-/area/security/office)
 "awR" = (
 /obj/machinery/light{
 	dir = 4;
@@ -9484,16 +9468,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/brig)
-"awS" = (
-/obj/structure/chair{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/security/office)
 "awT" = (
 /obj/effect/turf_decal/tile/bar,
 /obj/effect/turf_decal/tile/bar{
@@ -10407,24 +10381,12 @@
 /turf/open/floor/plating,
 /area/maintenance/fore)
 "ayO" = (
-/obj/structure/window/plasma/reinforced{
-	dir = 8
-	},
 /obj/structure/window/reinforced/tinted,
-/obj/structure/table,
-/obj/effect/turf_decal/tile/bar{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/bar,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/door/poddoor/preopen{
-	id = "briglockdown";
-	name = "Brig Lockdown"
-	},
-/turf/open/floor/plasteel,
-/area/security/office)
+/turf/closed/wall/r_wall,
+/area/security/prison)
 "ayP" = (
 /obj/effect/landmark/event_spawn,
 /obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
@@ -10786,9 +10748,6 @@
 /turf/open/floor/plasteel/cafeteria,
 /area/service/barbershop)
 "azB" = (
-/obj/structure/chair{
-	dir = 8
-	},
 /obj/effect/turf_decal/tile/bar,
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
@@ -11749,7 +11708,7 @@
 	name = "Brig Lockdown"
 	},
 /turf/open/floor/plasteel,
-/area/security/office)
+/area/security/prison)
 "aBy" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 8
@@ -18689,12 +18648,9 @@
 /turf/open/floor/plasteel,
 /area/security/brig)
 "aPZ" = (
-/obj/structure/window/plasma/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced/tinted,
-/obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/microwave,
+/obj/structure/table,
 /turf/open/floor/plasteel,
 /area/security/prison)
 "aQa" = (
@@ -19059,17 +19015,35 @@
 /turf/open/floor/plating,
 /area/engineering/main)
 "aQY" = (
-/obj/structure/window/plasma/reinforced{
-	dir = 4
-	},
 /obj/structure/window/reinforced/tinted,
-/obj/structure/table,
-/obj/item/toy/beach_ball/holoball/dodgeball,
-/obj/item/toy/beach_ball/holoball/dodgeball,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/table,
+/obj/item/storage/fancy/egg_box,
+/obj/item/storage/fancy/egg_box,
+/obj/item/reagent_containers/food/condiment/rice,
+/obj/item/reagent_containers/food/condiment/rice,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/storage/box/drinkingglasses,
+/obj/item/reagent_containers/food/condiment/enzyme{
+	pixel_x = 9;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/food/condiment/saltshaker{
+	layer = 3.1;
+	pixel_x = -2;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/food/condiment/peppermill{
+	desc = "Often used to flavor food or make people sneeze. Fashionably moved to the left side of the table.";
+	pixel_x = -8;
+	pixel_y = 2
+	},
+/obj/item/storage/bag/tray/cafeteria,
+/obj/item/storage/bag/tray/cafeteria,
 /turf/open/floor/plasteel,
 /area/security/prison)
 "aQZ" = (
@@ -70876,7 +70850,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/structure/closet/secure_closet/brig,
+/obj/structure/closet/secure_closet/genpop,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "vTA" = (
@@ -97360,7 +97334,7 @@ aCK
 aFZ
 aew
 aew
-awQ
+aew
 ayO
 aBx
 aoF
@@ -97617,7 +97591,7 @@ aoF
 asW
 atz
 avJ
-awS
+avL
 azB
 aBC
 atc

@@ -12,7 +12,7 @@
 	var/original_speed
 
 /datum/round_event/atmos_flux/announce(fake)
-	priority_announce("Atmospheric flux in your sector detected. Sensors show that air may move [(SSair.share_max_steps_target > original_speed) ? "faster" : "slower"] than usual for some time.", "Atmos Alert")
+	priority_announce("Обнаружен аномальный атмосферный поток в вашем секторе. Датчики показывают, что воздух может перемещаться [(SSair.share_max_steps_target > original_speed) ? "быстрее" : "медленней"], чем обычно.", "Атмосферная Тревога")
 
 /datum/round_event/atmos_flux/start()
 	original_speed = SSair.share_max_steps_target

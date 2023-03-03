@@ -172,6 +172,16 @@
 			RESKIN_ITEM_STATE = "folded_mothic",
 			sign_path = /obj/structure/sign/flag/mothic
 		),
+		"Shigu" = list(
+			RESKIN_ICON_STATE = "folded_shigu",
+			RESKIN_ITEM_STATE = "folded_shigu",
+			sign_path = /obj/structure/sign/flag/shigu
+		),
+		"Goldring" = list(
+			RESKIN_ICON_STATE = "folded_goldring",
+			RESKIN_ITEM_STATE = "folded_goldring",
+			sign_path = /obj/structure/sign/flag/goldring
+		),
 	)
 
 ///Since all of the signs rotate themselves on initialisation, this made folded flags look ugly (and more importantly rotated).
@@ -251,3 +261,31 @@
 	desc = "The folded flag of the Soviet Union."
 	icon_state = "folded_coder"
 	sign_path = /obj/structure/sign/flag/soviet
+
+/// Flags related to the sergals canon
+/obj/item/sign/flag/shigu
+	name = "folded flag of the Shigu Empire"
+	desc = "The folded flag of the Shigu Empire."
+	icon_state = "folded_shigu"
+	sign_path = /obj/structure/sign/flag/shigu
+
+/// Flags related to the sergals canon
+/obj/structure/sign/flag/shigu
+	name = "flag of the Shigu Empire"
+	desc = "This is the flag of the Shigu Empire. The Shigu Empire was once just an association of northern tribes that feared and revered wildlife. However, with the arrival of General Rain, Shigu became the largest empire, which seized a huge amount of land, but returned some of it when her son ascended to the throne."
+	icon_state = "flag_shigu"
+	item_flag = /obj/item/sign/flag/shigu
+
+/// Flags related to the sergals canon
+/obj/item/sign/flag/goldring
+	name = "folded flag of the Gold Ring"
+	desc = "The folded flag of the Gold Ring."
+	icon_state = "folded_goldring"
+	sign_path = /obj/structure/sign/flag/goldring
+
+/// Flags related to the sergals canon
+/obj/structure/sign/flag/goldring
+	name = "flag of the Gold Ring"
+	desc = "This is the flag of the Gold Ring. The Golden Ring is a megalopolis in the southern part of Tal that has grown to the size of a full-fledged state. Being located around the ColVilous salt Lake, the Golden Ring has become an oasis in the boundless desert where trade and culture flourish"
+	icon_state = "flag_goldring"
+	item_flag = /obj/item/sign/flag/goldring

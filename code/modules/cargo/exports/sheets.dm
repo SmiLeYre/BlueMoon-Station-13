@@ -60,7 +60,7 @@
 	export_types = list(/obj/item/stack/sheet/animalhide/xeno)
 
 /datum/export/stack/licenseplate
-	cost = 25
+	cost = 250
 	unit_name = "license plate"
 	export_types = list(/obj/item/stack/license_plates/filled)
 

@@ -27,7 +27,7 @@
 
 /datum/sprite_accessory/penis/flared
 	icon_state = "flared"
-	name = "уширенный"
+	name = "утолщённый"
 	taur_icon = 'icons/obj/genitals/taur_penis_onmob.dmi'
 	taur_dimension_x = 64
 
@@ -71,7 +71,7 @@
 //Vaginas
 /datum/sprite_accessory/vagina
 	icon = 'icons/obj/genitals/vagina_onmob.dmi'
-	name = "vagina"
+	name = "вагина"
 	color_src = "vag_color"
 	alt_aroused = TRUE
 

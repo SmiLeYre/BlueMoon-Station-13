@@ -93,4 +93,4 @@
 		return
 
 	// Add quirk message
-	examine_list += span_love("<b>[quirk_holder.ru_who()]</b> испытывает [heat_type], однозначно желая [positional_orientation].")
+	examine_list += span_love("<b>[quirk_holder.ru_who(TRUE)]</b> испытывает [heat_type], однозначно желая [positional_orientation].")

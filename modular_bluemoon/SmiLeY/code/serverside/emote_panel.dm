@@ -98,12 +98,6 @@
 	set category = "Эмоции.1: Специальные Действия"
 	emote("snap3")
 
-/mob/living/verb/emote_signal()
-	set name = "~ Показать несколько пальцев "
-	set category = "Эмоции.1: Специальные Действия"
-	var/Cnt = input("Руки должны быть свободны", "Показать несколько пальцев", 1) in list(1,2,3,4,5,6,7,8,9,10)
-	emote("signal-[Cnt]")
-
 /mob/living/verb/emote_slap()
 	set name = "> Шлепнуть "
 	set category = "Эмоции.1: Специальные Действия"
@@ -258,6 +252,11 @@
 	set name = "> Плакать 2 "
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("cry2")
+
+/mob/living/verb/emote_whine()
+	set name = "> Скулить "
+	set category = "Эмоции.2: Звуковые Действия"
+	emote("whine")
 
 /mob/living/verb/emote_clap1()
 	set name = "> Хлопать 1 "

@@ -5,9 +5,9 @@
 /datum/station_trait/lucky_winner
 	name = "Lucky winner"
 	trait_type = STATION_TRAIT_POSITIVE
-	weight = 1
+	weight = 5
 	show_in_report = TRUE
-	report_message = "Your station has won the grand prize of the annual station charity event. Free snacks will be delivered to the bar every now and then."
+	report_message = "Ваша станция выиграла главный приз ежегодного благотворительного мероприятия. Бесплатные закуски будут доставляться в бар время от времени."
 	trait_processes = TRUE
 	COOLDOWN_DECLARE(party_cooldown)
 
@@ -45,13 +45,13 @@
 /datum/station_trait/galactic_grant
 	name = "Galactic grant"
 	trait_type = STATION_TRAIT_POSITIVE
-	weight = 6
+	weight = 10
 	show_in_report = TRUE
 	report_message = "Your station has been selected for a special grant. Some extra funds has been made available to your cargo department."
 
 /datum/station_trait/galactic_grant/on_round_start()
 	var/datum/bank_account/cargo_bank = SSeconomy.get_dep_account(ACCOUNT_CAR)
-	cargo_bank.adjust_money(rand(2000, 5000))
+	cargo_bank.adjust_money(rand(10000, 20000))
 
 /datum/station_trait/premium_internals_box
 	name = "Premium internals boxes"
@@ -86,19 +86,19 @@
 /datum/station_trait/scarves
 	name = "Scarves"
 	trait_type = STATION_TRAIT_POSITIVE
-	weight = 5
+	weight = 25
 	show_in_report = TRUE
 	var/list/scarves
 
 /datum/station_trait/scarves/New()
 	. = ..()
 	report_message = pick(
-		"Nanotrasen is experimenting with seeing if neck warmth improves employee morale.",
-		"After Space Fashion Week, scarves are the hot new accessory.",
-		"Everyone was simultaneously a little bit cold when they packed to go to the station.",
-		"The station is definitely not under attack by neck grappling aliens masquerading as wool. Definitely not.",
-		"You all get free scarves. Don't ask why.",
-		"A shipment of scarves was delivered to the station.",
+		"NanoTrasen проводит эксперимент, чтобы выяснить, улучшает ли тепло на шее моральное состояние сотрудников.",
+		"После Недели космической моды шарфы - новый и особо горячий аксессуар",
+		"Всем было совсем немного холодно, когда они собирались на станцию и это точно не связано с открытым холодильником.",
+		"Станцию точно не атакуют пришельцы, хватающие за шею и маскирующиеся под шерсть. Определенно нет.",
+		"Вы все получаете бесплатные шарфы. Не спрашивайте почему!",
+		"На станцию правда была доставлена партия шарфов...",
 	)
 	scarves = typesof(/obj/item/clothing/neck/scarf) + list(
 		/obj/item/clothing/neck/stripedredscarf,
@@ -175,49 +175,49 @@
 /datum/station_trait/deathrattle_department/service
 	name = "Deathrattled Service"
 	trait_flags = NONE
-	weight = 35
+	weight = 5
 	department_head = "Head of Personnel"
 	department_name = "Service"
 
 /datum/station_trait/deathrattle_department/cargo
 	name = "Deathrattled Cargo"
 	trait_flags = NONE
-	weight = 2
+	weight = 5
 	department_head = "Quartermaster"
 	department_name = "Cargo"
 
 /datum/station_trait/deathrattle_department/engineering
 	name = "Deathrattled Engineering"
 	trait_flags = NONE
-	weight = 2
+	weight = 5
 	department_head = "Chief Engineer"
 	department_name = "Engineering"
 
 /datum/station_trait/deathrattle_department/command
 	name = "Deathrattled Command"
 	trait_flags = NONE
-	weight = 1
+	weight = 5
 	department_head = "Captain"
 	department_name = "Command"
 
 /datum/station_trait/deathrattle_department/science
 	name = "Deathrattled Science"
 	trait_flags = NONE
-	weight = 1
+	weight = 5
 	department_head = "Research Director"
 	department_name = "Science"
 
 /datum/station_trait/deathrattle_department/security
 	name = "Deathrattled Security"
 	trait_flags = NONE
-	weight = 1
+	weight = 5
 	department_head = "Head of Security"
 	department_name = "Security"
 
 /datum/station_trait/deathrattle_department/medical
 	name = "Deathrattled Medical"
 	trait_flags = NONE
-	weight = 1
+	weight = 5
 	department_head = "Chief Medical Officer"
 	department_name = "Medical"
 
@@ -225,7 +225,7 @@
 	name = "Deathrattled Station"
 	trait_type = STATION_TRAIT_POSITIVE
 	show_in_report = TRUE
-	weight = 20
+	weight = 45
 	report_message = "All members of the station have received an implant to notify each other if one of them dies. This should help improve job-safety!"
 	var/datum/deathrattle_group/deathrattle_group
 
@@ -246,11 +246,11 @@
 
 
 /datum/station_trait/wallets
-	name = "Wallets!"
+	name = "Cool Wallets!"
 	trait_type = STATION_TRAIT_POSITIVE
 	show_in_report = TRUE
-	weight = 10
-	report_message = "It has become temporarily fashionable to use a wallet, so everyone on the station has been issued one."
+	weight = 1
+	report_message = "Пользоваться бумажником стало модно, поэтому каждому на станции выдали по особо крутому бумажнику!"
 
 /datum/station_trait/wallets/New()
 	. = ..()
@@ -266,7 +266,7 @@
 	living_mob.temporarilyRemoveItemFromInventory(id_card, force=TRUE)
 
 	// "Doc, what's wrong with me?"
-	var/obj/item/storage/wallet/wallet = new(src)
+	var/obj/item/storage/wallet/bluespace/wallet = new(src)
 	// "You've got a wallet embedded in your chest."
 	wallet.add_fingerprint(living_mob, ignoregloves = TRUE)
 

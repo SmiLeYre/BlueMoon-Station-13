@@ -5309,14 +5309,14 @@
 	id = "PCell 3";
 	pixel_x = -20
 	},
-/obj/structure/closet/secure_closet/brig,
+/obj/structure/closet/secure_closet/genpop,
 /turf/open/floor/wood,
 /area/security/prison)
 "anP" = (
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/structure/closet/secure_closet/brig,
+/obj/structure/closet/secure_closet/genpop,
 /turf/open/floor/wood,
 /area/security/prison)
 "anQ" = (
@@ -6037,7 +6037,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/brig,
+/obj/structure/closet/secure_closet/genpop,
 /turf/open/floor/wood,
 /area/security/prison)
 "apz" = (
@@ -6373,7 +6373,7 @@
 /turf/open/floor/wood,
 /area/security/prison)
 "aqr" = (
-/obj/structure/closet/secure_closet/brig,
+/obj/structure/closet/secure_closet/genpop,
 /turf/open/floor/wood,
 /area/security/prison)
 "aqs" = (

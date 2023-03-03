@@ -497,7 +497,7 @@
 	var/turf/T = get_turf(src)
 	reagents.chem_temp = 1000
 	reagents.handle_reactions()
-	log_game("Coconut bomb detonation at [AREACOORD(T)], location [loc]")
+	log_game("Coconut bomb detonation at [AREACOORD(T)], location <b>[loc]</b>")
 	qdel(src)
 
 /obj/item/reagent_containers/food/snacks/grown/coconut/ex_act(severity, target, origin)

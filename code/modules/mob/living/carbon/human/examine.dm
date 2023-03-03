@@ -8,6 +8,13 @@
 	var/obscure_name
 	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
 
+	var/vampDesc = ReturnVampExamine(user) // Vamps recognize the names of other vamps.
+	var/vassDesc = ReturnVassalExamine(user) // Vassals recognize each other's marks.
+	if (vampDesc != "") // If we don't do it this way, we add a blank space to the string...something to do with this -->  . += ""
+		. += vampDesc
+	if (vassDesc != "")
+		. += vassDesc
+
 	if(isliving(user))
 		var/mob/living/L = user
 		if(HAS_TRAIT(L, TRAIT_PROSOPAGNOSIA) || HAS_TRAIT(L, TRAIT_INVISIBLE_MAN))
@@ -19,42 +26,22 @@
 		. += "Это же <EM>[spec_trait_examine_font()][dna.custom_species ? dna.custom_species : dna.species.name]</EM></font>!"
 	if(user?.stat == CONSCIOUS && ishuman(user))
 		user.visible_message(span_small("<b>[user]</b> смотрит на <b>[!obscure_name ? name : "Неизвестного"]</b>.") , span_small("Смотрю на <b>[!obscure_name ? name : "Неизвестного"]</b>.") , null, COMBAT_MESSAGE_RANGE)
-	var/obscured = check_obscured_slots()
+	var/list/obscured = check_obscured_slots()
 
-	//head
-	if(head && !(head.obj_flags & EXAMINE_SKIP))
-		. += "На голове у н[t_ego] [head.get_examine_string(user)]."
-
-	//eyes
-	if(!(ITEM_SLOT_EYES in obscured))
-		if(glasses)
-			. += "Также на [t_na] [glasses.get_examine_string(user)]."
-		else if((left_eye_color == BLOODCULT_EYE || right_eye_color == BLOODCULT_EYE) && iscultist(src) && HAS_TRAIT(src, TRAIT_CULT_EYES))
-			. += "<span class='warning'><B>[ru_ego(TRUE)] глаза ярко-красные и они горят!</B></span>"
-		else if(HAS_TRAIT(src, TRAIT_HIJACKER))
-			var/obj/item/implant/hijack/H = user.getImplant(/obj/item/implant/hijack)
-			if (H && !H.stealthmode && H.toggled)
-				. += "<b><font color=orange>[ru_ego(TRUE)] глаза ярко-жёлтые и они горят!!</font></b>"
-
-	//ears
-	if(ears && !(ITEM_SLOT_EARS_LEFT in obscured))
-		. += "На ушах у н[t_ego] [ears.get_examine_string(user)]."
-	if(ears_extra && !(ITEM_SLOT_EARS_RIGHT in obscured))
-		. += "На ушах у н[t_ego] [ears_extra.get_examine_string(user)]."
-
-	//mask
-	if(wear_mask && !(obscured & ITEM_SLOT_MASK)  && !(wear_mask.item_flags & EXAMINE_SKIP))
-		. += "На лице у н[t_ego] [wear_mask.get_examine_string(user)]."
-	if(wear_neck && !(obscured & ITEM_SLOT_NECK)  && !(wear_neck.item_flags & EXAMINE_SKIP))
-		. += "На шее у н[t_ego] [wear_neck.get_examine_string(user)]."
-
-	//suit/armor
-	if(wear_suit && !(wear_suit.item_flags & EXAMINE_SKIP))
-		//suit/armor storage
-		var/suit_thing
-		if(s_store && !(ITEM_SLOT_SUITSTORE in obscured))
-			suit_thing += " вместе с [s_store.get_examine_string(user)]"
-		. += "На [t_na] надет [wear_suit.get_examine_string(user)][suit_thing]."
+	//Underwear
+	var/shirt_hidden = undershirt_hidden()
+	var/undies_hidden = underwear_hidden()
+	var/socks_hidden = socks_hidden()
+	if(w_underwear && !undies_hidden)
+		. += "[t_on] одет[t_a] в [w_underwear.get_examine_string(user)]."
+	if(w_socks && !socks_hidden)
+		. += "[t_on] одет[t_a] в [w_socks.get_examine_string(user)]."
+	if(w_shirt && !shirt_hidden)
+		. += "[t_on] одет[t_a] в [w_shirt.get_examine_string(user)]."
+	//Wrist slot because you're epic
+	if(wrists && !(ITEM_SLOT_WRISTS in obscured))
+		. += "[t_on] одет[t_a] в [wrists.get_examine_string(user)]."
+	//End of skyrat changes
 
 	//uniform
 	if(w_uniform && !(ITEM_SLOT_ICLOTHING in obscured))
@@ -77,6 +64,18 @@
 					else
 						accessory_msg += weehoo[1]
 			. += "Одет[t_a] он[t_a] в [w_uniform.get_examine_string(user)][accessory_msg]."
+
+	//head
+	if(head && !(head.obj_flags & EXAMINE_SKIP))
+		. += "На голове у н[t_ego] [head.get_examine_string(user)]."
+
+	//suit/armor
+	if(wear_suit && !(wear_suit.item_flags & EXAMINE_SKIP))
+		//suit/armor storage
+		var/suit_thing
+		if(s_store && !(ITEM_SLOT_SUITSTORE in obscured))
+			suit_thing += " вместе с [s_store.get_examine_string(user)]"
+		. += "На [t_na] надет [wear_suit.get_examine_string(user)][suit_thing]."
 
 	//back
 	if(back && !(back.item_flags & EXAMINE_SKIP))
@@ -101,6 +100,14 @@
 			. += "<span class='warning'>[t_on] [icon2html(handcuffed, user)] связан[t_a]!</span>"
 		else
 			. += "<span class='warning'>[t_on] [icon2html(handcuffed, user)] в наручниках!</span>"
+
+	//mask
+	if(wear_mask && !(ITEM_SLOT_MASK in obscured))
+		. += "На лице у н[t_ego] [wear_mask.get_examine_string(user)]."
+
+	if(wear_neck && !(ITEM_SLOT_NECK in obscured))
+		. += "На шее у н[t_ego] [wear_neck.get_examine_string(user)]."
+
 	//belt
 	if(belt && !(belt.item_flags & EXAMINE_SKIP))
 		. += "И ещё на поясе у н[t_ego] [belt.get_examine_string(user)]."
@@ -108,6 +115,23 @@
 	//shoes
 	if(shoes && !(ITEM_SLOT_FEET in obscured))
 		. += "А на [t_ego] ногах [shoes.get_examine_string(user)]."
+
+	//eyes
+	if(!(ITEM_SLOT_EYES in obscured))
+		if(glasses)
+			. += "Также на [t_na] [glasses.get_examine_string(user)]."
+		else if((left_eye_color == BLOODCULT_EYE || right_eye_color == BLOODCULT_EYE) && iscultist(src) && HAS_TRAIT(src, TRAIT_CULT_EYES))
+			. += "<span class='warning'><B>[ru_ego(TRUE)] глаза ярко-красные и они горят!</B></span>"
+		else if(HAS_TRAIT(src, TRAIT_HIJACKER))
+			var/obj/item/implant/hijack/H = user.getImplant(/obj/item/implant/hijack)
+			if (H && !H.stealthmode && H.toggled)
+				. += "<b><font color=orange>[ru_ego(TRUE)] глаза ярко-жёлтые и они горят!!</font></b>"
+
+	//ears
+	if(ears && !(ITEM_SLOT_EARS_LEFT in obscured))
+		. += "На ушах у н[t_ego] [ears.get_examine_string(user)]."
+	if(ears_extra && !(ITEM_SLOT_EARS_RIGHT in obscured))
+		. += "На ушах у н[t_ego] [ears_extra.get_examine_string(user)]."
 
 	//ID
 	if(wear_id && !(wear_id.item_flags & EXAMINE_SKIP))

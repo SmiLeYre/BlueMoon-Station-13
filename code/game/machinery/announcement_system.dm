@@ -2,27 +2,27 @@ GLOBAL_LIST_EMPTY(announcement_systems)
 
 /obj/machinery/announcement_system
 	density = TRUE
-	name = "\improper Automated Announcement System"
-	desc = "An automated announcement system that handles minor announcements over the radio."
+	name = "Автоматизированная Система Оповещений"
+	desc = "Автоматизированная Система Оповещений делает важные оповещения в радиоканалах, пока ты не трогаешь её своими грязными руками."
 	icon = 'icons/obj/machines/telecomms.dmi'
 	icon_state = "AAS_On"
 
-	verb_say = "coldly states"
-	verb_ask = "queries"
-	verb_exclaim = "alarms"
+	verb_say = "холодно констатирует"
+	verb_ask = "запрашивает"
+	verb_exclaim = "тревожит"
 
-	idle_power_usage = 20
-	active_power_usage = 50
+	idle_power_usage = 50
+	active_power_usage = 100
 
 	circuit = /obj/item/circuitboard/machine/announcement_system
 
 	var/obj/item/radio/headset/radio
-	var/arrival = "%PERSON has signed up as %RANK"
+	var/arrival = "%PERSON прибывает на станцию как %RANK"
 	var/arrivalToggle = TRUE
-	var/newhead = "%PERSON, %RANK, is the department head."
+	var/newhead = "%PERSON, %RANK, глава отдела."
 	var/newheadToggle = TRUE
-	var/cryostorage = "%PERSON, %RANK, has been moved into cryogenic storage." // this shouldnt be changed
-	var/cryostorage_tele = "%PERSON, %RANK, has been teleported to CentCom."   // you saying it hat man.
+	var/cryostorage = "%PERSON, %RANK, уходит в криосон." // this shouldnt be changed
+	var/cryostorage_tele = "%PERSON, %RANK, был(-а) телепортирован(-а) на Аванпост Центрального Командования."   // you saying it hat man.
 
 	var/greenlight = "Light_Green"
 	var/pinklight = "Light_Pink"

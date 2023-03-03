@@ -711,11 +711,11 @@ GLOBAL_DATUM_INIT(sdql2_vv_statobj, /obj/effect/statclick/SDQL2_VV_all, new(null
 					var/atom/A = object
 					var/atom/container = A.loc
 					if(isturf(container))
-						text_list += " <font color='gray'>in</font> [container] [ADMIN_COORDJMP(container)] <font color='gray'>at</font> [container.loc]"
+						text_list += " <font color='gray'>in</font> <b>[container]</b> [ADMIN_COORDJMP(container)] <font color='gray'>at</font> [container.loc]"
 					else if(container)
 						var/turf/T = get_turf(container)
 						var/cref = REF(container)
-						text_list += " <font color='gray'>in</font> <A HREF='?_src_=vars;[HrefToken(TRUE)];Vars=[cref]'>[container]([cref])</A>"
+						text_list += " <font color='gray'>in</font> <A HREF='?_src_=vars;[HrefToken(TRUE)];Vars=[cref]'><b>[container]</b>([cref])</A>"
 						if(T)
 							text_list += " <font color='gray'>on</font> [T] [ADMIN_COORDJMP(T)] <font color='gray'>at</font>[T.loc]"
 					else

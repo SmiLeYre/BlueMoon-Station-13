@@ -10015,7 +10015,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
-/obj/structure/closet/secure_closet/brig,
+/obj/structure/closet/secure_closet/genpop,
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/bot_white,
 /turf/open/floor/plasteel/dark,
@@ -15862,7 +15862,7 @@
 	},
 /obj/effect/turf_decal/tile/red,
 /obj/machinery/airalarm/directional/east,
-/obj/structure/closet/secure_closet/brig,
+/obj/structure/closet/secure_closet/genpop,
 /obj/effect/turf_decal/bot_white,
 /obj/effect/turf_decal/tile/red{
 	dir = 8
@@ -26861,7 +26861,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/red,
-/obj/structure/closet/secure_closet/brig,
+/obj/structure/closet/secure_closet/genpop,
 /obj/effect/turf_decal/bot_white,
 /obj/effect/turf_decal/tile/red{
 	dir = 8
@@ -27378,7 +27378,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
-/obj/structure/closet/secure_closet/brig,
+/obj/structure/closet/secure_closet/genpop,
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
@@ -54285,7 +54285,7 @@
 	c_tag = "Corrections Office";
 	dir = 6
 	},
-/obj/structure/closet/secure_closet/brig,
+/obj/structure/closet/secure_closet/genpop,
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
@@ -56538,7 +56538,7 @@
 /obj/structure/sign/poster/official/obey{
 	pixel_x = 32
 	},
-/obj/structure/closet/secure_closet/brig,
+/obj/structure/closet/secure_closet/genpop,
 /obj/effect/turf_decal/bot_white,
 /obj/effect/turf_decal/tile/red{
 	dir = 8

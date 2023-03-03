@@ -141,7 +141,7 @@
 	description = "Freezing smoke comes out of the scrubbers."
 
 /datum/round_event/vent_clog/beer/announce()
-	priority_announce("Сеть скрубберов испытывает неожиданный всплеск <b>пива</b> под давлением. Может произойти выброс содержимого.", "Атмосферная Тревога")
+	priority_announce("Сеть скрубберов испытывает неожиданный всплеск ПИВА под давлением. Может произойти выброс содержимого.", "Атмосферная Тревога")
 
 /datum/round_event/vent_clog/beer/start()
 	for(var/obj/machinery/atmospherics/components/unary/vent in vents)
@@ -156,7 +156,7 @@
 		CHECK_TICK
 
 /datum/round_event/vent_clog/plasma_decon/announce()
-	priority_announce("We are deploying an experimental plasma decontamination system. Please stand away from the vents and do not breathe the smoke that comes out.", "Central Command Update")
+	priority_announce("Мы развертываем экспериментальную систему Плазменной Дезактивации. Пожалуйста, держитесь подальше от вентиляционных отверстий и не дышите выходящим дымом.", "Центральное Командование Объявляет")
 
 /datum/round_event/vent_clog/plasma_decon/start()
 	for(var/obj/machinery/atmospherics/components/unary/vent in vents)

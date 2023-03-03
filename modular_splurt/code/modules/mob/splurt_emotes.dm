@@ -928,3 +928,21 @@
 	key = "facehoof" // For horse enthusiasts
 	key_third_person = "facehoofs"
 	metacarpus_type = "hoof"
+
+/datum/emote/living/poyo
+	key = "poyo"
+	key_third_person = "poyos"
+	message = "%SAYS, \"Poyo!\""
+	emote_type = EMOTE_AUDIBLE
+
+/datum/emote/living/poyo/run_emote(mob/user, params, type_override, intentional)
+	var/datum/dna/D = user.has_dna()
+	var/say_mod = (D ? D.species.say_mod : "says")
+	message = replacetextEx(message, "%SAYS", say_mod)
+	. = ..()
+	if(!.)
+		return
+	if(user.nextsoundemote >= world.time)
+		return
+	user.nextsoundemote = world.time + 1 SECONDS
+	playsound(user, 'modular_splurt/sound/voice/barks/poyo.ogg', 50, 1, -1)

@@ -23,11 +23,11 @@
 //Simply removes < and > and limits the length of the message
 /proc/strip_html_simple(t,limit=MAX_MESSAGE_LEN)
 	var/list/strip_chars = list("<",">")
-	t = copytext(t,1,limit)
+	t = copytext_char(t,1,limit)
 	for(var/char in strip_chars)
 		var/index = findtext(t, char)
 		while(index)
-			t = copytext(t, 1, index) + copytext(t, index+1)
+			t = copytext_char(t, 1, index) + copytext_char(t, index+1)
 			index = findtext(t, char)
 	return t
 
@@ -82,6 +82,8 @@
 				return
 			if(32)
 				continue		//whitespace
+			if(1040 to 1103)
+				continue
 			if(127 to INFINITY)
 				if(ascii_only)
 					return
@@ -1080,3 +1082,36 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 		else
 			. = ""
 
+/proc/ru_comms(freq)
+	if(freq == "Common")
+		return "Основной"
+	else if (freq == "Security")
+		return "Безопасность"
+	else if (freq == "Engineering")
+		return "Инженерия"
+	else if (freq == "Command")
+		return "Командование"
+	else if (freq == "Science")
+		return "Научный"
+	else if (freq == "Medical")
+		return "Медбей"
+	else if (freq == "Supply")
+		return "Снабжение"
+	else if (freq == "Service")
+		return "Обслуживание"
+	else if (freq == "Exploration")
+		return "Рейнджеры"
+	else if (freq == "AI Private")
+		return "Приватный ИИ"
+	else if (freq == "Syndicate")
+		return "Синдикат"
+	else if (freq == "CentCom")
+		return "ЦентКом"
+	else if (freq == "Red Team")
+		return "Красные"
+	else if (freq == "Blue Team")
+		return "Синие"
+	else if (freq == "Tarkov")
+		return "Тарков"
+	else
+		return freq

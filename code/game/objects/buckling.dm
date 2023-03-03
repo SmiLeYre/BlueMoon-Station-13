@@ -18,7 +18,7 @@
 			if(act_intent == INTENT_HELP || act_intent == INTENT_GRAB)
 				return
 		if(buckled_mobs.len > 1)
-			var/unbuckled = input(user, "Who do you wish to unbuckle?","Unbuckle Who?") as null|mob in buckled_mobs
+			var/unbuckled = input(user, "Кого вы хотите отстегнуть?","Отстегнуть кого?") as null|mob in buckled_mobs
 			if(user_unbuckle_mob(unbuckled,user))
 				return 1
 		else
@@ -39,7 +39,7 @@
 	if(buckled_mobs.len)
 		return TRUE
 
-//procs that handle the actual buckling and unbuckling
+//procs that handle the actual buckling and unbuckling<b>[src]</b>
 /atom/movable/proc/buckle_mob(mob/living/M, force = FALSE, check_loc = TRUE)
 	LAZYINITLIST(buckled_mobs)
 
@@ -54,9 +54,9 @@
 	M.buckling = src
 	if(!M.can_buckle() && !force)
 		if(M == usr)
-			to_chat(M, "<span class='warning'>You are unable to buckle yourself to [src]!</span>")
+			to_chat(M, "<span class='warning'>Вы не можете занять место на <b>[src]</b>!!</span>")
 		else
-			to_chat(usr, "<span class='warning'>You are unable to buckle [M] to [src]!</span>")
+			to_chat(usr, "<span class='warning'>Вы не в состоянии разместить <b>[M]</b> на <b>[src]</b>!</span>")
 		M.buckling = null
 		return FALSE
 
@@ -130,28 +130,28 @@
 	if(.)
 		if(M == user)
 			M.visible_message(\
-				"<span class='notice'>[M] buckles [M.ru_na()]self to [src].</span>",\
-				"<span class='notice'>You buckle yourself to [src].</span>",\
-				"<span class='italics'>You hear metal clanking.</span>")
+				"<span class='notice'>[M] занимает место на <b>[src]</b>.</span>",\
+				"<span class='notice'>Вы занимаете место на <b>[src]</b>.</span>",\
+				"<span class='italics'>Вы слышите металлический лязг.</span>")
 		else
 			M.visible_message(\
-				"<span class='warning'>[user] buckles [M] to [src]!</span>",\
-				"<span class='warning'>[user] buckles you to [src]!</span>",\
-				"<span class='italics'>You hear metal clanking.</span>")
+				"<span class='warning'>[user] размещает <b>[M]</b> на <b>[src]</b>!</span>",\
+				"<span class='warning'>[user] размещает вас на <b>[src]</b>!</span>",\
+				"<span class='italics'>Вы слышите металлический лязг.</span>")
 
 /atom/movable/proc/user_unbuckle_mob(mob/living/buckled_mob, mob/user)
 	var/mob/living/M = unbuckle_mob(buckled_mob)
 	if(M)
 		if(M != user)
 			M.visible_message(\
-				"<span class='notice'>[user] unbuckles [M] from [src].</span>",\
-				"<span class='notice'>[user] unbuckles you from [src].</span>",\
-				"<span class='italics'>You hear metal clanking.</span>")
+				"<span class='notice'>[user] поднимает <b>[M]</b> с <b>[src]</b>.</span>",\
+				"<span class='notice'>[user] поднимает вас с <b>[src]</b>.</span>",\
+				"<span class='italics'>Вы слышите металлический лязг.</span>")
 		else
 			M.visible_message(\
-				"<span class='notice'>[M] unbuckles [M.ru_na()]self from [src].</span>",\
-				"<span class='notice'>You unbuckle yourself from [src].</span>",\
-				"<span class='italics'>You hear metal clanking.</span>")
+				"<span class='notice'>[M] поднимается с <b>[src]</b>.</span>",\
+				"<span class='notice'>Вы поднимаетесь с <b>[src]</b>.</span>",\
+				"<span class='italics'>Вы слышите металлический лязг.</span>")
 		add_fingerprint(user)
 	if(isliving(M.pulledby))
 		var/mob/living/L = M.pulledby
@@ -164,6 +164,6 @@
 	else if(length(buckled_mobs) == 1)
 		return user_unbuckle_mob(buckled_mobs[1], user)
 	else
-		var/unbuckled = input(user, "Who do you wish to unbuckle?","Unbuckle Who?") as null|mob in buckled_mobs
+		var/unbuckled = input(user, "Кого вы хотите отстегнуть?","Отстегнуть кого?") as null|mob in buckled_mobs
 		return user_unbuckle_mob(unbuckled, user)
 

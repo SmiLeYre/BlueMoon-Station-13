@@ -70,8 +70,8 @@
 /datum/bounty/item/security/plates
 	name = "License Plates"
 	description = "As a result of a bad clown car crash, we could use an advance on some of your prisoner's license plates."
-	reward = 1000
-	required_count = 10
+	reward = 100000
+	required_count = 100
 	wanted_types = list(/obj/item/stack/license_plates/filled)
 
 /datum/bounty/item/security/earmuffs

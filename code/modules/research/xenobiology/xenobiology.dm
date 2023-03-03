@@ -741,7 +741,7 @@
 /obj/item/slimepotion/transference/proc/try_transfer_mind(mob/living/simple_animal/SM, mob/user)
 	set waitfor = FALSE
 	prompted = 1
-	if(alert("This will permanently transfer your consciousness to [SM]. Are you sure you want to do this?",,"Yes","No")=="No")
+	if(alert("This will permanently transfer your consciousness to [SM]. Are you sure you want to do this?",,"Да","Нет")=="Нет")
 		prompted = 0
 		return
 

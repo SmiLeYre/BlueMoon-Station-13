@@ -7776,6 +7776,7 @@
 	icon_state = "0-8"
 	},
 /obj/effect/turf_decal/stripes/line,
+/obj/item/crowbar/power/syndicate,
 /turf/open/floor/plasteel,
 /area/centcom/ferry)
 "rC" = (
@@ -7803,7 +7804,6 @@
 /obj/structure/table/reinforced,
 /obj/item/storage/box/handcuffs,
 /obj/item/crowbar/red,
-/obj/item/crowbar/power,
 /obj/item/storage/belt/security/full,
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 26
@@ -9665,6 +9665,10 @@
 	},
 /turf/open/floor/carpet/red,
 /area/centcom/holding)
+"vq" = (
+/obj/structure/sign/flag/goldring,
+/turf/closed/indestructible/riveted,
+/area/tdome/tdomeobserve)
 "vs" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
@@ -19402,6 +19406,10 @@
 /obj/effect/turf_decal/loading_area,
 /turf/open/floor/plating,
 /area/syndicate_mothership)
+"RB" = (
+/obj/structure/sign/flag/shigu,
+/turf/closed/indestructible/riveted,
+/area/tdome/tdomeobserve)
 "RC" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
@@ -63478,7 +63486,7 @@ HK
 HV
 Ic
 Ep
-Ep
+vq
 ID
 ID
 ID
@@ -67590,7 +67598,7 @@ HP
 HP
 Ic
 Ep
-Ep
+RB
 Mh
 Mh
 Mh

@@ -163,7 +163,7 @@
 		if("ctfbutton")
 			toggle_all_ctf(holder)
 		if("tdomereset")
-			var/delete_mobs = alert("Clear all mobs?","Confirm","Yes","No","Cancel")
+			var/delete_mobs = alert("Clear all mobs?","Confirm","Да","Нет","Cancel")
 			if(delete_mobs == "Cancel")
 				return
 
@@ -331,7 +331,7 @@
 			if(!is_funmin)
 				return
 			if(!SSevents.wizardmode)
-				if(alert("Do you want to toggle summon events on?",,"Yes","No") == "Yes")
+				if(alert("Do you want to toggle summon events on?",,"Да","Нет") == "Да")
 					summonevents()
 					SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Summon Events", "Activate"))
 
@@ -518,11 +518,11 @@
 		if("anime")
 			if(!is_funmin)
 				return
-			var/animetype = alert("Would you like to have the clothes be changed?",,"Yes","No","Cancel")
+			var/animetype = alert("Would you like to have the clothes be changed?",,"Да","Нет","Cancel")
 
 			var/droptype
 			if(animetype =="Yes")
-				droptype = alert("Make the uniforms Nodrop?",,"Yes","No","Cancel")
+				droptype = alert("Make the uniforms Nodrop?",,"Да","Нет","Cancel")
 
 			if(animetype == "Cancel" || droptype == "Cancel")
 				return

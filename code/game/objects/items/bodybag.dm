@@ -79,7 +79,7 @@
 	if(!do_after(user, 200, target = src))
 		to_chat(loc, "<span class='warning'>The pressure subsides. It seems that they've stopped resisting...</span>")
 		return
-	loc.visible_message("<span class='warning'>[user] suddenly appears in front of [loc]!</span>", "<span class='userdanger'>[user] breaks free of [src]!</span>")
+	loc.visible_message("<span class='warning'>[user] suddenly appears in front of <b>[loc]</b>!</span>", "<span class='userdanger'>[user] breaks free of [src]!</span>")
 	qdel(src)
 
 // Containment bodybag

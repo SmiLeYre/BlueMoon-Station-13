@@ -806,7 +806,7 @@
 /turf/open/floor/carpet/royalblue,
 /area/mine/storage)
 "eI" = (
-/obj/structure/closet/secure_closet/brig,
+/obj/structure/closet/secure_closet/genpop,
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel,
 /area/mine/laborcamp)
@@ -6314,7 +6314,7 @@
 /turf/open/floor/plasteel/dark,
 /area/mine/laborcamp)
 "Hi" = (
-/obj/structure/closet/secure_closet/brig,
+/obj/structure/closet/secure_closet/genpop,
 /obj/effect/turf_decal/bot,
 /obj/machinery/camera{
 	c_tag = "Labor Camp Storage";

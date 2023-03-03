@@ -18,7 +18,7 @@
 
 /obj/effect/clockwork/city_of_cogs_rift/Initialize(mapload)
 	. = ..()
-	visible_message("<span class='warning'>The air above [loc] shimmers and pops as a [name] forms there!</span>")
+	visible_message("<span class='warning'>The air above <b>[loc]</b> shimmers and pops as a [name] forms there!</span>")
 	for(var/mob/M in GLOB.player_list)
 		if(M.z == z)
 			if(get_dist(src, M) >= 7)

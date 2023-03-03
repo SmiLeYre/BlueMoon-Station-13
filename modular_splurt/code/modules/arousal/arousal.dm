@@ -104,8 +104,8 @@
 							"<span class='userlove'>Something vacuums your [G.name] with a quiet but powerfull vrrrr.</span>")
 		if(!do_after(src, mb_time, target = src) || !in_range(src, container) || !G.climaxable(src, TRUE))
 			return
-	visible_message("<span class='love'>[src] twitches as [ru_ego()] [main_fluid] trickles into [container].</span>", \
-								"<span class='userlove'>[M] sucks out all the [main_fluid] you had been saving up into [container].</span>", \
+	visible_message("<span class='love'>[src] twitches as [ru_ego()] [main_fluid] trickles into <b>[container]</b>.</span>", \
+								"<span class='userlove'>[M] sucks out all the [main_fluid] you had been saving up into <b>[container]</b>.</span>", \
 								"<span class='userlove'>You feel a vacuum sucking on your [G.name] as you climax!</span>")
 	do_climax(fluid_source, container, G, FALSE, cover = TRUE)
 	emote("moan")

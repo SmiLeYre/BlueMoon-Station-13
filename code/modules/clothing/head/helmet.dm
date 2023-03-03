@@ -86,7 +86,56 @@
 	desc = "Standard Security gear. Protects the head from impacts. Equipped with a night vision apparatus on the front edge."
 	icon_state = "helmetNVG"
 	item_state = "helmetNVG"
-	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
+	darkness_view = 8
+
+/obj/item/clothing/head/helmet/nvg/hecu
+	name = "Powered Combat Helmet with NVG"
+	desc = "A deprecated combat helmet developed during the early 21th century in Sol-3, with protections rated level III-A. Protects the head from impacts. Equipped with a night vision apparatus on the front edge."
+	icon = 'modular_bluemoon/SmiLeY/hecu/icons/hecucloth.dmi'
+	mob_overlay_icon = 'modular_bluemoon/SmiLeY/hecu/icons/hecumob.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/SmiLeY/hecu/icons/hecumob_muzzled.dmi'
+	icon_state = "hecu_helm_nvg"
+	item_state = "hecu_helm_nvg"
+	darkness_view = 10
+	mutantrace_variation = STYLE_MUZZLE
+	armor = list(MELEE = 40, BULLET = 40, LASER = 40,ENERGY = 40, BOMB = 50, BIO = 90, RAD = 30, FIRE = 50, ACID = 50)
+	cold_protection = HEAD
+	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
+	heat_protection = HEAD
+	max_heat_protection_temperature = SPACE_HELM_MAX_TEMP_PROTECT
+	clothing_flags = STOPSPRESSUREDAMAGE
+	unique_reskin = list(
+		"Basic" = list(
+			RESKIN_ICON_STATE = "hecu_helm_nvg",
+			RESKIN_ITEM_STATE = "hecu_helm_nvg"
+		),
+		"Basic Black" = list(
+			RESKIN_ICON_STATE = "hecu_helm_black_nvg",
+			RESKIN_ITEM_STATE = "hecu_helm_black_nvg"
+		),
+	)
+
+/obj/item/clothing/head/helmet/nvg/hecu/attack_self(mob/user)
+	if(can_toggle && !user.incapacitated())
+		if(world.time > cooldown + toggle_cooldown)
+			cooldown = world.time
+			up = !up
+			flags_1 ^= visor_flags
+			flags_inv ^= visor_flags_inv
+			flags_cover ^= visor_flags_cover
+			icon_state = "[initial(icon_state)][up ? "_up" : ""]"
+			darkness_view = 0
+			to_chat(user, "[up ? alt_toggle_message : toggle_message] \the [src]")
+
+			user.update_inv_head()
+			if(iscarbon(user))
+				var/mob/living/carbon/C = user
+				C.head_update(src, forced = 1)
+
+			if(active_sound)
+				while(up)
+					playsound(src.loc, "[active_sound]", 100, 0, 4)
+					sleep(15)
 
 /obj/item/clothing/head/helmet/alt
 	name = "bulletproof helmet"

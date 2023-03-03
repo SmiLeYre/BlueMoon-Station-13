@@ -5272,10 +5272,6 @@
 	desc = "A sleek, sturdy box.";
 	name = "Chameleon Kit"
 	},
-/obj/effect/spawner/lootdrop/space_cash,
-/obj/effect/spawner/lootdrop/space_cash,
-/obj/effect/spawner/lootdrop/space_cash,
-/obj/effect/spawner/lootdrop/space_cash,
 /obj/item/gun/ballistic/rocketlauncher,
 /obj/item/ammo_casing/caseless/rocket/hedp,
 /obj/item/ammo_casing/caseless/rocket/hedp,
