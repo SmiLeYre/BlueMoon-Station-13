@@ -19,6 +19,33 @@
 /obj/item/reagent_containers/food/drinks/bottle
 	var/hole = CUM_TARGET_VAGINA
 
+/obj/item/reagent_containers/food/drinks/bottle/verb/verb_spin()
+	set src in view(1)
+	set category = "Object"
+	set name = "Spin"
+
+	if(usr.incapacitated() || !Adjacent(usr) || isobserver(usr) || isdead(usr)) //  || usr.lying
+		return
+
+	var/matrix/M = matrix(transform)
+	var/datum/reagents/r = src.reagents
+	if(r.total_volume < r.maximum_volume && r.total_volume > 0)
+		M.Turn(rand(-170,170))
+		transform = M
+		visible_message("<span class='notice'>[usr] закручивает бутылочку, но жидкость внутри не дает ей вращаться.</span>")
+		return
+
+	var/list/names = list()
+	names += "пустоту"
+	for(var/mob/living/carbon/m in oview(1,src))
+		names += m.name
+	visible_message("<span class='notice'>[usr] тянется к бутылочке и закручивает ее...</span>")
+	src.SpinAnimation(2,9)
+	M.Turn(rand(-170,170))
+	transform = M
+	playsound(src, 'sound/effects/rollingbottle.ogg', 30, TRUE)
+	visible_message("<span class='notice'>Бутылочка указывает на [pick(names)].</span>")
+
 /obj/item/reagent_containers/food/drinks/bottle/CtrlShiftClick(mob/living/carbon/human/user as mob)
 	hole = hole == CUM_TARGET_VAGINA ? CUM_TARGET_ANUS : CUM_TARGET_VAGINA
 	to_chat(user, "<span class='notice'>Я целюсь в...  \the [hole].</span>")
