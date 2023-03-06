@@ -15,3 +15,6 @@
   - rscadd: Added mime messages for all SPLURT audio emotes
   - tweak: All SPLURT audio emotes now use length-based cooldowns
   - refactor: Refactored SPLURT audio emote code
+2023-03-05:
+  thux-tk:
+  - rscadd: new arousal meter to humanoid mob's interface

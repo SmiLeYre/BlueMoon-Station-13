@@ -95,7 +95,7 @@
 /obj/item/dildo/human
 	dildo_shape 		= "human"
 	name 				= "human dildo"
-	attack_verb = list("penetrated", "slapped", "inseminated")
+	attack_verb 		= list("penetrated", "slapped", "inseminated")
 
 /obj/item/dildo/plain
 	dildo_shape 		= "plain"
