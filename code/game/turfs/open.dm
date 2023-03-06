@@ -285,6 +285,7 @@
 		playsound(C.loc, 'sound/misc/slip.ogg', 50, 1, -3)
 
 	SEND_SIGNAL(C, COMSIG_ADD_MOOD_EVENT, "slipped", /datum/mood_event/slipped)
+	SEND_SIGNAL(C, COMSIG_ON_CARBON_SLIP)
 	for(var/obj/item/I in C.held_items)
 		C.accident(I)
 
