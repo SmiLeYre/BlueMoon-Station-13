@@ -5,58 +5,8 @@
 	while (world.time < endtime)
 		stoplag()
 
-//Putting items inside you
-/obj/item
-	var/inside = FALSE
-
-/obj/item/insert_item_organ(mob/living/carbon/user, mob/living/carbon/target, obj/item/organ/genital/target_organ)
-	if(!(target.client?.prefs?.erppref == "Yes"))
-		to_chat(user, span_warning("They don't want you to do that!"))
-		return
-
-	if(src.w_class > 2)
-		to_chat(user, "<span class='warning'> It won't fit!</span>")
-		return
-
-	if(!(istype(target_organ, /obj/item/organ/genital/vagina)) && !(istype(target_organ, /obj/item/organ/genital/anus))) //items dont fit on anything but vaginas and anus
-		to_chat(user, "<span class='warning'> How do you even imagine that?!</span>")
-		return
-
-	if(locate(/obj/item) in target_organ.contents)
-		to_chat(user, span_notice("\The <b>[target]</b>'s [target_organ] already has something inside!"))
-		return
-
-	target.visible_message(span_warning("\The <b>[user]</b> is trying to insert a [src] inside \the <b>[target]</b>!"),\
-					span_warning("\The <b>[user]</b> is trying to insert a [src] inside you!"))
-
-	if(!do_mob(user, target, 5 SECONDS))
-		return
-
-	if(!user.transferItemToLoc(src, target_organ))
-		return
-
-	to_chat(target, span_userlove("Your [target_organ] feels stuffed and stretched!"))
-	target.handle_post_sex(LOW_LUST, null, target)
-	playsound(target, 'modular_sand/sound/lewd/champ_fingering.ogg', 50, 1, -1)
-	inside = TRUE
-	stuffed_movement()
-
-/obj/item/proc/stuffed_movement()
-	var/obj/item/organ/genital/G = loc
-	var/mob/living/carbon/U = G.owner
-
-	spawn()
-		while(inside)
-			if(activate_after(src, rand(5,60)))
-				if(!istype(loc, /obj/item/organ/genital))
-					return
-				if(prob(3))
-					to_chat(U, span_love(pick("Я чувствую что-то внутри!", "Оно заполняет меня изнутри!")))
-					U.handle_post_sex(LOW_LUST, null, U)
-					U.do_jitter_animation()
-
 //Dildo
-/obj/item/dildo/stuffed_movement()
+/obj/item/dildo/proc/stuffed_movement()
 	var/obj/item/organ/genital/G = loc
 	var/mob/living/carbon/U = G.owner
 

@@ -14,6 +14,7 @@
 	var/last = 0
 	var/vibing = 0
 	var/vibrate_constant = 0
+	var/inside = FALSE
 
 /obj/item/electropack/vibrator/Initialize() //give the device its own code
 	. = ..()

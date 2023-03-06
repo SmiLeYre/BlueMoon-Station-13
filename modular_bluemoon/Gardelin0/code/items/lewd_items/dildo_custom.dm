@@ -2,6 +2,7 @@
 	lefthand_file = 'modular_bluemoon/Gardelin0/icons/items/onmob/lefthand.dmi'
 	righthand_file = 'modular_bluemoon/Gardelin0/icons/items/onmob/righthand.dmi'
 	item_state = "dildo"
+	var/inside = FALSE
 
 /obj/item/dildo/insert_item_organ(mob/living/carbon/user, mob/living/carbon/target, obj/item/organ/genital/target_organ)
 	if(!(target.client?.prefs?.erppref == "Yes"))
