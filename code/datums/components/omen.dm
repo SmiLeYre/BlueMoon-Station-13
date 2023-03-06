@@ -165,9 +165,9 @@
 	UnregisterSignal(parent, list(COMSIG_ON_CARBON_SLIP, COMSIG_MOVABLE_MOVED, COMSIG_LIVING_DEATH))
 
 /datum/component/omen/quirk/check_death(mob/living/our_guy)
-	if(!iscarbon(our_guy))
+	/*if(!iscarbon(our_guy))
 		our_guy.gib()
-		return
+		return*/
 
 	// нет, мы не взрываемся
 	/*
