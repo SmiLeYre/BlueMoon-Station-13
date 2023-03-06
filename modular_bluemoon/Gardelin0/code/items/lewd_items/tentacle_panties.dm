@@ -24,15 +24,18 @@
 	chameleon_action.chameleon_name = "Panties"
 	chameleon_action.initialize_disguises()
 
-/obj/item/clothing/underwear/briefs/tentacle/attack_hand(mob/living/carbon/user)
+/obj/item/clothing/underwear/briefs/tentacle/attack_hand(mob/living/carbon/human/user)
 	if(loc == user && ITEM_SLOT_UNDERWEAR)
-		user.visible_message("<span class='warning'>[user] пытается отодрать [src]!.</span>")
-		if(do_after(user, rand(5,35)))
-			if(prob(25))
-				..()
-			else
-				to_chat(user, "<span class='warning'>Не отдирается!</span>")
-				return
+		if(!istype(src, user.w_underwear))
+			..()
+		else
+			user.visible_message("<span class='warning'>[user] пытается отодрать [src]!.</span>")
+			if(do_after(user, rand(5,35)))
+				if(prob(25))
+					..()
+				else
+					to_chat(user, "<span class='warning'>Не отдирается!</span>")
+					return
 	else
 		..()
 
@@ -50,7 +53,7 @@
 	icon_state = "portalpanties"
 
 /obj/item/storage/box/tentacle_panties
-	name =  "Naughty Underwear"
+	name =  "Living panties box"
 	icon = 'modular_sand/icons/obj/fleshlight.dmi'
 	desc = "A small silver box with Silver Love Co embossed."
 	icon_state = "box"

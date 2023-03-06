@@ -84,6 +84,9 @@
 			chosen_hole = CUM_TARGET_THROAT
 
 /mob/living/simple_animal/hostile/deathclaw/funclaw/proc/do_lewd_action(mob/living/M)
+	if(M.client && M.client?.prefs.mobsexpref == "No")
+		return
+
 	if(get_refraction_dif() > 0)
 		return
 

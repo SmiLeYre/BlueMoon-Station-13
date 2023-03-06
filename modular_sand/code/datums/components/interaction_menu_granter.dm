@@ -201,6 +201,7 @@
 		.["erp_pref"] = 			pref_to_num(prefs.erppref)
 		.["noncon_pref"] = 			pref_to_num(prefs.nonconpref)
 		.["vore_pref"] = 			pref_to_num(prefs.vorepref)
+		.["mobsex_pref"] = 			pref_to_num(prefs.mobsexpref)	//Hentai
 		.["extreme_pref"] = 		pref_to_num(prefs.extremepref)
 		.["extreme_harm"] = 		pref_to_num(prefs.extremeharm)
 		.["unholy_pref"] =		pref_to_num(prefs.unholypref)
@@ -330,6 +331,13 @@
 						return FALSE
 					else
 						prefs.vorepref = value
+
+				if("mobsex_pref") //Hentai
+					if(prefs.mobsexpref == value)
+						return FALSE
+					else
+						prefs.mobsexpref = value
+
 				if("unholy_pref")
 					if(prefs.unholypref == value)
 						return FALSE

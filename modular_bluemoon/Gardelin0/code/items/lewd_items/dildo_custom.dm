@@ -2,7 +2,6 @@
 	lefthand_file = 'modular_bluemoon/Gardelin0/icons/items/onmob/lefthand.dmi'
 	righthand_file = 'modular_bluemoon/Gardelin0/icons/items/onmob/righthand.dmi'
 	item_state = "dildo"
-	var/inside = FALSE
 
 /obj/item/dildo/insert_item_organ(mob/living/carbon/user, mob/living/carbon/target, obj/item/organ/genital/target_organ)
 	if(!(target.client?.prefs?.erppref == "Yes"))
@@ -41,11 +40,11 @@ obj/item/dildo/MouseDrop_T(mob/living/M, mob/living/user)
 				switch(hole)
 					if(CUM_TARGET_VAGINA)
 						if(M.has_vagina(REQUIRE_EXPOSED))
-							message = (user == M) ? pick("распологается над '\the [src]' и начинает пихать это прямо в свою киску.", "запихивает '\the [src]' в свою киску", "постанывает и садится на '\the [src]' попой.",  "скачет на '\the [src]' киской!") : pick("насаживает <b>[M]</b> киской на '\the [src]'", "надавливает на плечи <b>[M]</b>, заставляя скакать киской на '\the [src]!'")
+							message = (user == M) ? pick("распологается над '\the [src]' и начинает пихать это прямо в свою киску.", "запихивает '\the [src]' в свою киску", "постанывает и садится на '\the [src]' киской.",  "скачет на '\the [src]' киской!") : pick("насаживает <b>[M]</b> киской на '\the [src]'", "надавливает на плечи <b>[M]</b>, заставляя скакать киской на '\the [src]!'")
 							lust_amt = NORMAL_LUST
 					if(CUM_TARGET_ANUS)
 						if(M.has_anus(REQUIRE_EXPOSED))
-							message = (user == M) ? pick("распологается над '\the [src]' и начинает пихать это прямо в свою попку.","запихивает '\the [src]' прямо в свою собственную попку.", "постанывает и садится на '\the [src]' киской.",  "скачет на '\the [src]' попой!") : pick("насаживает <b>[M]</b> попой на '\the [src]'", "надавливает на плечи <b>[M]</b>, заставляя скакать попой на '\the [src]!'")
+							message = (user == M) ? pick("распологается над '\the [src]' и начинает пихать это прямо в свою попку.","запихивает '\the [src]' прямо в свою собственную попку.", "постанывает и садится на '\the [src]' попой.",  "скачет на '\the [src]' попой!") : pick("насаживает <b>[M]</b> попой на '\the [src]'", "надавливает на плечи <b>[M]</b>, заставляя скакать попой на '\the [src]!'")
 							lust_amt = NORMAL_LUST
 			if(BODY_ZONE_PRECISE_MOUTH)
 				if(M.has_mouth() && !M.is_mouth_covered())

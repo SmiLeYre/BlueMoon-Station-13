@@ -73,10 +73,6 @@
 	name = "half-shoulder white toga"
 	path = /obj/item/clothing/under/dress/skirt/toga
 
-/datum/gear/uniform/skirt/thin
-	name = "Short thin skirt"
-	path = /obj/item/clothing/under/dress/skirt/thin
-
 /datum/gear/uniform/lustymaid
 	name = "Revealing maid uniform"
 	path = /obj/item/clothing/under/dress/skirt/lustymaid

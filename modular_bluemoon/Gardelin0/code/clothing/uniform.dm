@@ -33,6 +33,7 @@
 	fitted = NO_FEMALE_UNIFORM
 	can_adjust = FALSE
 	flags_inv = HIDESHOES
+	alternate_worn_layer = ABOVE_SHOES_LAYER
 
 /obj/item/clothing/under/dress/longdress
 	name = "maxi dress"
@@ -45,6 +46,7 @@
 	fitted = NO_FEMALE_UNIFORM
 	can_adjust = FALSE
 	flags_inv = HIDESHOES
+	alternate_worn_layer = ABOVE_SHOES_LAYER
 
 /obj/item/clothing/under/dress/skirt/nightie
 	name = "transparent nightie"
@@ -126,6 +128,7 @@
 	fitted = NO_FEMALE_UNIFORM
 	can_adjust = FALSE
 	flags_inv = HIDESHOES
+	alternate_worn_layer = ABOVE_SHOES_LAYER
 
 /obj/item/clothing/under/dress/skirt/pleatedmedium
 	name = "pleated skirt"
@@ -209,18 +212,6 @@
 	mob_overlay_icon = 'modular_bluemoon/Gardelin0/icons/clothing/worn/uniform.dmi'
 	icon_state = "toga"
 	item_state = "toga"
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-	fitted = FEMALE_UNIFORM_TOP
-	can_adjust = FALSE
-
-/obj/item/clothing/under/dress/skirt/thin
-	name = "short thin skirt"
-	desc = "A short skirt, made of some thin semi-gloss material. You can almost see through it!"
-	icon = 'modular_bluemoon/Gardelin0/icons/clothing/object/uniforms.dmi'
-	mob_overlay_icon = 'modular_bluemoon/Gardelin0/icons/clothing/worn/uniform.dmi'
-	icon_state = "skirt_thin"
-	item_state = "skirt_thin"
-	body_parts_covered = GROIN
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE

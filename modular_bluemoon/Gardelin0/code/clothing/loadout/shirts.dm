@@ -14,17 +14,9 @@
 	name = "formal shirt"
 	path = /obj/item/clothing/underwear/shirt/formalshirt
 
-/datum/gear/shirt/formalshirt_female
-	name = "feminie formal shirt"
-	path = /obj/item/clothing/underwear/shirt/formalshirt_female
-
 /datum/gear/shirt/poly_sweater
 	name = "polychromic sweater"
 	path = /obj/item/clothing/underwear/shirt/poly_sweater
-
-/datum/gear/shirt/poly_sweater_female
-	name = "feminie polychromic sweater"
-	path = /obj/item/clothing/underwear/shirt/poly_sweater_female
 
 /datum/gear/shirt/poly_sweater_shoulderless
 	name = "shoulderless polychromic sweater"
@@ -34,25 +26,13 @@
 	name = "polychromic shirt"
 	path = /obj/item/clothing/underwear/shirt/poly_shirt
 
-/datum/gear/shirt/poly_shirt_female
-	name = "feminie polychromic shirt"
-	path = /obj/item/clothing/underwear/shirt/poly_shirt_female
-
 /datum/gear/shirt/poly_lightshirt
 	name = "polychromic light shirt"
 	path = /obj/item/clothing/underwear/shirt/poly_lightshirt
 
-/datum/gear/shirt/poly_lightshirt_female
-	name = "feminie polychromic light shirt"
-	path = /obj/item/clothing/underwear/shirt/poly_lightshirt_female
-
 /datum/gear/shirt/formalshirt_light
 	name = "light formal shirt"
 	path = /obj/item/clothing/underwear/shirt/formalshirt_light
-
-/datum/gear/shirt/formalshirt_light_female
-	name = "feminie light formal shirt"
-	path = /obj/item/clothing/underwear/shirt/formalshirt_light_female
 
 /datum/gear/shirt/transparent_top
 	name = "transparent top"
@@ -73,10 +53,6 @@
 /datum/gear/shirt/formalshirt_thin
 	name = "thin formal shirt"
 	path = /obj/item/clothing/underwear/shirt/formalshirt_thin
-
-/datum/gear/shirt/formalshirt_thin_female
-	name = "feminie thin formal shirt"
-	path = /obj/item/clothing/underwear/shirt/formalshirt_thin_female
 
 /datum/gear/shirt/poly_mesh
 	name = "polychromic mesh top"

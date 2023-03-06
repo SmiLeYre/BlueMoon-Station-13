@@ -5,8 +5,58 @@
 	while (world.time < endtime)
 		stoplag()
 
+//Putting items inside you
+/obj/item
+	var/inside = FALSE
+
+/obj/item/insert_item_organ(mob/living/carbon/user, mob/living/carbon/target, obj/item/organ/genital/target_organ)
+	if(!(target.client?.prefs?.erppref == "Yes"))
+		to_chat(user, span_warning("They don't want you to do that!"))
+		return
+
+	if(src.w_class > 2)
+		to_chat(user, "<span class='warning'> It won't fit!</span>")
+		return
+
+	if(!(istype(target_organ, /obj/item/organ/genital/vagina)) && !(istype(target_organ, /obj/item/organ/genital/anus))) //items dont fit on anything but vaginas and anus
+		to_chat(user, "<span class='warning'> How do you even imagine that?!</span>")
+		return
+
+	if(locate(/obj/item) in target_organ.contents)
+		to_chat(user, span_notice("\The <b>[target]</b>'s [target_organ] already has something inside!"))
+		return
+
+	target.visible_message(span_warning("\The <b>[user]</b> is trying to insert a [src] inside \the <b>[target]</b>!"),\
+					span_warning("\The <b>[user]</b> is trying to insert a [src] inside you!"))
+
+	if(!do_mob(user, target, 5 SECONDS))
+		return
+
+	if(!user.transferItemToLoc(src, target_organ))
+		return
+
+	to_chat(target, span_userlove("Your [target_organ] feels stuffed and stretched!"))
+	target.handle_post_sex(LOW_LUST, null, target)
+	playsound(target, 'modular_sand/sound/lewd/champ_fingering.ogg', 50, 1, -1)
+	inside = TRUE
+	stuffed_movement()
+
+/obj/item/proc/stuffed_movement()
+	var/obj/item/organ/genital/G = loc
+	var/mob/living/carbon/U = G.owner
+
+	spawn()
+		while(inside)
+			if(activate_after(src, rand(5,60)))
+				if(!istype(loc, /obj/item/organ/genital))
+					return
+				if(prob(3))
+					to_chat(U, span_love(pick("Я чувствую что-то внутри!", "Оно заполняет меня изнутри!")))
+					U.handle_post_sex(LOW_LUST, null, U)
+					U.do_jitter_animation()
+
 //Dildo
-/obj/item/dildo/proc/stuffed_movement()
+/obj/item/dildo/stuffed_movement()
 	var/obj/item/organ/genital/G = loc
 	var/mob/living/carbon/U = G.owner
 
@@ -59,13 +109,53 @@
 					to_chat(M, span_love(pick("Я чувствую что-то внутри!", "Оно движется внутри меня!", "Я ощущаю фрикции в своих дырочках!")))
 				M.handle_post_sex(NORMAL_LUST, null, M)
 				M.do_jitter_animation()
-			lust += 10
+			lust += rand(1 ,10)
 			playsound(loc, 'modular_sand/sound/lewd/champ_fingering.ogg', 25, 1, -1)
 
-			if(prob(50) && lust >= 200)
+			if(prob(50) && lust >= 300)
 				tired = TRUE
 				to_chat(M, span_love(pick("Оно меня обкончало!")))
 				visible_message("<font color=purple><b>\The [src]</b> Вязкая жидкость стекает по бедрам [M]!</font>")
 				M.reagents.add_reagent(/datum/reagent/consumable/semen, 10)
 				M.reagents.add_reagent(/datum/reagent/drug/aphrodisiacplus, 5) //Cum contains hexocrocin
 				new /obj/effect/decal/cleanable/semen(loc)
+
+/obj/item/magicwand/proc/vibrating(mob/living/carbon/human/M, slot)
+	if(!istype(src, M.w_underwear))
+		return
+	if(!on)
+		return
+
+	while(istype(src, M.w_underwear))
+		if(activate_after(src, 5))
+			switch(mode)
+				if(3)
+					if(M.has_penis())
+						to_chat(M, span_userdanger(pick("Сильная вибрация у члена сводит меня с ума!", "Вы чувствуете мучительное удовольствие от сильной стимуляции своего члена!")))
+					if(M.has_vagina())
+						to_chat(M, span_userdanger(pick("Сильная вибрация у киски сводит меня с ума!", "Вы чувствуете мучительное удовольствие от сильной стимуляции своей киски!")))
+					M.Jitter(3)
+					M.emote("moan")
+					M.handle_post_sex(intencity, null, src)
+					playsound(loc, pick('modular_bluemoon/Gardelin0/sound/effect/lewd/toys/magicwand3.ogg'), 25, 1)
+					if(prob(50))
+						M.Stun(5)
+				if(2)
+					if(M.has_penis())
+						to_chat(M, span_love(pick("Я чувствую вибрацию у своего члена!", "Оно вибрирует мой член!")))
+					if(M.has_vagina())
+						to_chat(M, span_love(pick("Я чувствую вибрацию у своей киски!", "Оно вибрирует мою киску!")))
+						M.handle_post_sex(intencity, null, src)
+						M.do_jitter_animation()
+						playsound(loc, pick('modular_bluemoon/Gardelin0/sound/effect/lewd/toys/magicwand1.ogg',
+										'modular_bluemoon/Gardelin0/sound/effect/lewd/toys/magicwand2.ogg'), 25, 1)
+				if(1)
+					if(M.has_penis())
+						to_chat(M, span_love(pick("Я чувствую слабую вибрацию у своего члена!", "Оно слабо вибрирует мой член!")))
+					if(M.has_vagina())
+						to_chat(M, span_love(pick("Я чувствую слабую вибрацию у своей киски!", "Оно слабо вибрирует мою киску!")))
+						M.handle_post_sex(intencity, null, src)
+						M.do_jitter_animation()
+						playsound(loc, pick('modular_bluemoon/Gardelin0/sound/effect/lewd/toys/devicevibrator1.ogg',
+										'modular_bluemoon/Gardelin0/sound/effect/lewd/toys/devicevibrator2.ogg',
+										'modular_bluemoon/Gardelin0/sound/effect/lewd/toys/devicevibrator3.ogg'), 25, 1)

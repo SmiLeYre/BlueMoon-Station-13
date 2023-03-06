@@ -176,6 +176,10 @@
 			dat += 	"Vore : <a href='?_src_=prefs;preference=vore_pref'>[vorepref]</a><br>"
 			//END OF SKYRAT EDIT
 
+			//Gardelin0 Addoon
+			dat += 	"Mob-Sex : <a href='?_src_=prefs;preference=mobsex_pref'>[mobsexpref]</a><br>"
+			//END OF Gardelin0 Addoon
+
 			dat += "<h2>Records</h2><br>"
 			dat += "<a href='?_src_=prefs;preference=security_records;task=input'><b>Security Records</b></a><br>"
 			if(length_char(security_records) <= 40)
