@@ -156,14 +156,6 @@
 	luck_mod = 0.5 // 50% chance of bad things happening
 	damage_mod = 0.25 // 25% of normal damage
 
-/datum/component/omen/quirk/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(check_accident))
-	RegisterSignal(parent, COMSIG_ON_CARBON_SLIP, PROC_REF(check_slip))
-	RegisterSignal(parent, COMSIG_LIVING_DEATH, PROC_REF(check_death))
-
-/datum/component/omen/quirk/UnregisterFromParent()
-	UnregisterSignal(parent, list(COMSIG_ON_CARBON_SLIP, COMSIG_MOVABLE_MOVED, COMSIG_LIVING_DEATH))
-
 /datum/component/omen/quirk/check_death(mob/living/our_guy)
 	/*if(!iscarbon(our_guy))
 		our_guy.gib()
