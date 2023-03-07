@@ -39,6 +39,7 @@
 		/datum/language/modular_sand/solcommon, //Skyrat change - sol common blah blah
 		/datum/language/modular_sand/technorussian, //Skyrat change - russian stereotype language
 		/datum/language/modular_sand/sergal, //Sandstorm change
+		/datum/language/modular_bluemoon/german, // BM German language
 	))
 	healing_factor = STANDARD_ORGAN_HEALING*5 //Fast!!
 	decay_factor = STANDARD_ORGAN_DECAY/2
