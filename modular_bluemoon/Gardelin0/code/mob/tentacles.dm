@@ -43,7 +43,6 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 
 	//Tentacles don't speak and not move
-	anchored = TRUE
 	density = 0
 	speak_chance = 0
 	wander = 0
@@ -52,6 +51,9 @@
 	turns_per_move = 3
 	cached_multiplicative_actions_slowdown = 10
 	cached_multiplicative_slowdown = 10
+	move_force = MOVE_FORCE_DEFAULT
+	move_resist = MOVE_FORCE_VERY_STRONG
+	pull_force = MOVE_FORCE_VERY_STRONG
 	a_intent = INTENT_HARM // Сука.
 
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat)
