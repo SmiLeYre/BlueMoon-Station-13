@@ -1,5 +1,5 @@
-/datum/language/modular_bluemoon
-	icon = 'modular_bluemoon/kovac_shitcode/icons/misc/language_bm.dmi'
+/datum/language/modular_sand
+	icon = 'modular_sand/icons/misc/language.dmi'
 	icon_state = null
 
 /datum/language/modular_bluemoon/german
