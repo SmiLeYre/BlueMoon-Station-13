@@ -733,3 +733,4 @@ proc/asiatish(message)
 		message = replacetextEx(message, "Р", "л")
 		message = replacetextEx(message, "Ы", "и")
 	return message
+	
