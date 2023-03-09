@@ -1,4 +1,4 @@
-/obj/item/clothing/suit/brigdoc
+/obj/item/clothing/suit/armor/brigdoc
 	name = "brig physician vest"
 	desc = "A dark red vests for brig physicians."
 	icon = 'modular_splurt/icons/obj/clothing/suits.dmi'
@@ -7,16 +7,15 @@
 	item_state = "brigphysicianvest"
 	armor = list("melee" = 20, "bullet" = 0, "laser" = 0, "energy" = 10, "bomb" = 0, "bio" = 50, "rad" = 0, "fire" = 50, "acid" = 50)
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/scalpel, /obj/item/surgical_drapes, /obj/item/cautery, /obj/item/hemostat, /obj/item/retractor, /obj/item/analyzer,/obj/item/stack/medical, /obj/item/dnainjector, /obj/item/reagent_containers/dropper, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/hypospray, /obj/item/hypospray/mkii, /obj/item/healthanalyzer, /obj/item/flashlight/pen, /obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/glass/beaker, /obj/item/reagent_containers/pill, /obj/item/storage/pill_bottle, /obj/item/paper, /obj/item/melee/classic_baton/telescopic, /obj/item/soap, /obj/item/sensor_device)
 
-/obj/item/clothing/suit/brigdoc/labcoat
+/obj/item/clothing/suit/armor/brigdoc/labcoat
 	name = "brig physician lab coat"
 	desc = "A dark red lab coat for brig physicians."
 	icon_state = "secmed_labcoat"
 	item_state = "secmed_labcoat"
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/suit.dmi' //its in a separate file
 
-/obj/item/clothing/suit/brigdoc/armor
+/obj/item/clothing/suit/armor/brigdoc/armor
 	name = "brig physician armored coat"
 	desc = "A dark red lab coat with armored vest for brig physicians. Used for hostile work environments."
 	icon_state = "secmed_armor"

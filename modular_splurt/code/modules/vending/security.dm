@@ -72,8 +72,8 @@
 	new /obj/item/defibrillator(src)
 	new /obj/item/storage/belt/medical(src)
 	new /obj/item/pinpointer/crew(src)
-	new /obj/item/clothing/suit/brigdoc(src)
-	new /obj/item/clothing/suit/brigdoc/labcoat(src)
+	new /obj/item/clothing/suit/armor/brigdoc(src)
+	new /obj/item/clothing/suit/armor/brigdoc/labcoat(src)
 
 /obj/structure/closet/secure_closet/blueshield
 	name = "blueshield's locker"

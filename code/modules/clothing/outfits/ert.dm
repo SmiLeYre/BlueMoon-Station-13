@@ -30,10 +30,11 @@
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/captain
 	belt = /obj/item/storage/belt/security/full
+	r_hand = /obj/item/gun/ballistic/automatic/wt550
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 
 		/obj/item/clothing/mask/gas/sechailer=1,\
-		/obj/item/gun/energy/e_gun=1)
+		/obj/item/ammo_box/magazine/wt550m9=3)
 	l_pocket = /obj/item/switchblade
 
 /datum/outfit/ert/commander/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
@@ -53,8 +54,9 @@
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/melee/baton/loaded=1,\
 		/obj/item/clothing/mask/gas/sechailer/swat=1,\
-		/obj/item/gun/energy/e_gun=1)
+		/obj/item/ammo_box/magazine/m16=3)
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber
+	r_hand = /obj/item/gun/ballistic/automatic/m16a4
 
 /datum/outfit/ert/commander/alert/red
 	name = "ERT Commander - Red Alert"
@@ -71,10 +73,11 @@
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	belt = /obj/item/storage/belt/security/full
 	back = /obj/item/storage/backpack/security
+	r_hand = /obj/item/gun/ballistic/automatic/wt550
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/storage/box/handcuffs=1,\
 		/obj/item/clothing/mask/gas/sechailer=1,\
-		/obj/item/gun/energy/e_gun/stun=1,\
+		/obj/item/ammo_box/magazine/wt550m9=3,\
 		/obj/item/kitchen/knife/combat=1)
 
 /datum/outfit/ert/security/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
@@ -91,11 +94,12 @@
 	name = "ERT Security - Amber Alert"
 
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/sec
+	r_hand = /obj/item/gun/ballistic/automatic/m16a4
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/storage/box/handcuffs=1,\
 		/obj/item/clothing/mask/gas/sechailer/swat=1,\
 		/obj/item/melee/baton/loaded=1,\
-		/obj/item/gun/energy/e_gun/stun=1)
+		/obj/item/ammo_box/magazine/m16=3)
 
 /datum/outfit/ert/security/alert/red
 	name = "ERT Security - Red Alert"
@@ -113,11 +117,12 @@
 	glasses = /obj/item/clothing/glasses/hud/health
 	back = /obj/item/storage/backpack/satchel/med
 	belt = /obj/item/storage/belt/medical/surgery_belt_adv/cmo
-	r_hand = /obj/item/storage/firstaid/regular
+	l_hand = /obj/item/storage/firstaid/regular
+	r_hand = /obj/item/gun/ballistic/automatic/wt550
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/melee/baton/loaded=1,\
 		/obj/item/clothing/mask/gas/sechailer=1,\
-		/obj/item/gun/energy/e_gun=1,\
+		/obj/item/ammo_box/magazine/wt550m9=3,\
 		/obj/item/reagent_containers/hypospray/combat=1,\
 		/obj/item/gun/medbeam=1)
 
@@ -135,10 +140,11 @@
 	name = "ERT Medic - Amber Alert"
 
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/med
+	r_hand = /obj/item/gun/ballistic/automatic/m16a4
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/melee/baton/loaded=1,\
 		/obj/item/clothing/mask/gas/sechailer/swat=1,\
-		/obj/item/gun/energy/e_gun=1,\
+		/obj/item/ammo_box/magazine/m16=3,\
 		/obj/item/reagent_containers/hypospray/combat/nanites=1,\
 		/obj/item/gun/medbeam=1)
 
@@ -160,11 +166,11 @@
 	back = /obj/item/storage/backpack/industrial
 	belt = /obj/item/storage/belt/utility/full
 	l_pocket = /obj/item/rcd_ammo/large
-	r_hand = /obj/item/storage/firstaid/regular
+	r_hand = /obj/item/gun/ballistic/automatic/wt550
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/melee/baton/loaded=1,\
 		/obj/item/clothing/mask/gas/sechailer=1,\
-		/obj/item/gun/energy/e_gun=1,\
+		/obj/item/ammo_box/magazine/wt550m9=3,\
 		/obj/item/construction/rcd/loaded=1)
 
 /datum/outfit/ert/engineer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
@@ -181,10 +187,11 @@
 	name = "ERT Engineer - Amber Alert"
 
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/engi
+	r_hand = /obj/item/gun/ballistic/automatic/m16a4
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/melee/baton/loaded=1,\
 		/obj/item/clothing/mask/gas/sechailer/swat=1,\
-		/obj/item/gun/energy/e_gun=1,\
+		/obj/item/ammo_box/magazine/m16=3,\
 		/obj/item/construction/rcd/combat=1)
 
 /datum/outfit/ert/engineer/alert/red
@@ -258,21 +265,24 @@
 
 /datum/outfit/ert/commander/inquisitor
 	name = "Inquisition Commander"
-	r_hand = /obj/item/nullrod/scythe/talking/chainsword
+	l_hand = /obj/item/nullrod/scythe/talking/chainsword
+	r_hand = /obj/item/gun/ballistic/automatic/m16a4
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,
 		/obj/item/clothing/mask/gas/sechailer=1,
-		/obj/item/gun/energy/e_gun=1)
+		/obj/item/ammo_box/magazine/m16=3)
 
 /datum/outfit/ert/security/inquisitor
 	name = "Inquisition Security"
 
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor
+	
+	r_hand = /obj/item/gun/ballistic/automatic/m16a4
 
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,
 		/obj/item/storage/box/handcuffs=1,
 		/obj/item/clothing/mask/gas/sechailer=1,
-		/obj/item/gun/energy/e_gun/stun=1,
+		/obj/item/ammo_box/magazine/m16=3,\
 		/obj/item/melee/baton/loaded=1,
 		/obj/item/construction/rcd/loaded=1)
 
@@ -280,11 +290,13 @@
 	name = "Inquisition Medic"
 
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor
+	
+	r_hand = /obj/item/gun/ballistic/automatic/m16a4
 
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,
 		/obj/item/melee/baton/loaded=1,
 		/obj/item/clothing/mask/gas/sechailer=1,
-		/obj/item/gun/energy/e_gun=1,
+		/obj/item/ammo_box/magazine/m16=3,\
 		/obj/item/reagent_containers/hypospray/combat=1,
 		/obj/item/reagent_containers/hypospray/combat/heresypurge=1,
 		/obj/item/gun/medbeam=1)
@@ -307,10 +319,11 @@
 	glasses = /obj/item/clothing/glasses/hud/health
 	back = /obj/item/storage/backpack/cultpack
 	belt = /obj/item/storage/belt/soulstone
+	r_hand = /obj/item/gun/ballistic/automatic/m16a4
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,
 		/obj/item/nullrod=1,
 		/obj/item/clothing/mask/gas/sechailer=1,
-		/obj/item/gun/energy/e_gun=1,
+		/obj/item/ammo_box/magazine/m16=3,
 		)
 
 /datum/outfit/ert/chaplain/inquisitor
@@ -323,5 +336,5 @@
 		/obj/item/grenade/chem_grenade/holy=1,
 		/obj/item/nullrod=1,
 		/obj/item/clothing/mask/gas/sechailer=1,
-		/obj/item/gun/energy/e_gun=1,
+		/obj/item/ammo_box/magazine/m16=3,
 		)
