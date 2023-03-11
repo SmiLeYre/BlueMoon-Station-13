@@ -3964,6 +3964,7 @@
 #include "modular_bluemoon\kovac_shitcode\code\clothing\mask.dm"
 #include "modular_bluemoon\kovac_shitcode\code\game\objects\items\firstaid_additional.dm"
 #include "modular_bluemoon\kovac_shitcode\code\modules\language\german.dm"
+#include "modular_bluemoon\kovac_shitcode\code\modules\jobs\job_types\brigdoc.dm"
 #include "modular_bluemoon\kovac_shitcode\code\modules\vending\medical_additional.dm"
 #include "modular_bluemoon\krashly\code\game\hair_face.dm"
 #include "modular_bluemoon\krashly\code\game\machinery\doors\airlock_types.dm"
