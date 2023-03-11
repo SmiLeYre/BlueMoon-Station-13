@@ -630,8 +630,8 @@
 	if(empty)
 		return
 	new /obj/item/stack/medical/gauze(src)
-	new /obj/item/stack/medical/suture(src)
-	new /obj/item/stack/medical/mesh(src)
+	new /obj/item/reagent_containers/pill/patch/silver_sulf(src)
+	new /obj/item/reagent_containers/pill/patch/styptic(src)
 	new /obj/item/reagent_containers/pill/salbutamol(src)	
 	new /obj/item/reagent_containers/pill/charcoal(src)	
 	new /obj/item/reagent_containers/hypospray/medipen/ekit(src)
