@@ -1,10 +1,8 @@
-/datum/language/modular_sand
-	icon = 'modular_sand/icons/misc/language.dmi'
-	icon_state = null
-
 /datum/language/modular_bluemoon/german
 	name = "Katzenjammer"
 	desc = "Modernised version of the German language, combined with Austrian, Swiss, Neo Berlin and many other various dialects. Usually used by the inhabitants of the Earth."
+	icon = 'modular_bluemoon/kovac_shitcode/icons/misc/german.dmi'
+	icon_state = null
 	speech_verb = "says"
 	ask_verb = "queries"
 	exclaim_verb = "declares"
