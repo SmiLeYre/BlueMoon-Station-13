@@ -1,6 +1,6 @@
 //ifak base nahui
 /obj/item/storage/ifak
-	name = "Security First-Aid Kit"
+	name = "\improper Security First-Aid Kit"
 	desc = "Individual first-aid trauma kit, containing essential life-saving remedy. Designated to soldiers and security officers."
 	icon_state = "ifak"
 	item_state = "firstaid"
