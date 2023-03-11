@@ -15464,7 +15464,6 @@
 /area/security/execution/transfer)
 "bnF" = (
 /obj/structure/closet/secure_closet/brigdoc,
-/obj/item/clothing/suit/brigdoc/armor,
 /obj/item/clothing/head/helmet/brigdoc,
 /obj/item/storage/belt/security/full,
 /obj/item/clothing/glasses/hud/security/sunglasses,
@@ -15489,6 +15488,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
+/obj/item/clothing/suit/armor/brigdoc/armor,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "bnG" = (
@@ -16618,7 +16618,6 @@
 /area/security/brig)
 "brp" = (
 /obj/structure/closet/secure_closet/brigdoc,
-/obj/item/clothing/suit/brigdoc/armor,
 /obj/item/clothing/head/helmet/brigdoc,
 /obj/item/storage/belt/security/full,
 /obj/item/clothing/glasses/hud/security/sunglasses,
@@ -16643,6 +16642,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
+/obj/item/clothing/suit/armor/brigdoc/armor,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "brL" = (
@@ -90926,7 +90926,9 @@
 /area/service/kitchen)
 "kSS" = (
 /obj/structure/table/glass,
-/obj/item/storage/backpack/duffelbag/sec/surgery,
+/obj/item/storage/backpack/duffelbag/sec/surgery{
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "kSZ" = (
@@ -116995,7 +116997,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
-/obj/machinery/vending/medical,
+/obj/machinery/vending/brigdoc_vendomat,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "tNv" = (

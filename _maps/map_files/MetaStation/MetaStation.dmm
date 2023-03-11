@@ -3268,12 +3268,12 @@
 	dir = 4
 	},
 /obj/structure/closet/secure_closet/brigdoc,
-/obj/item/clothing/suit/brigdoc/armor,
 /obj/item/clothing/head/helmet/brigdoc,
 /obj/item/storage/belt/security/full,
 /obj/item/clothing/glasses/hud/security/sunglasses,
 /obj/item/clothing/suit/armor/vest/alt,
 /obj/item/clothing/head/helmet/sec,
+/obj/item/clothing/suit/armor/brigdoc/armor,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "akx" = (
@@ -5009,7 +5009,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
-/obj/machinery/vending/medical,
+/obj/machinery/vending/brigdoc_vendomat,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "apE" = (
@@ -65769,12 +65769,12 @@
 	dir = 4
 	},
 /obj/structure/closet/secure_closet/brigdoc,
-/obj/item/clothing/suit/brigdoc/armor,
 /obj/item/clothing/head/helmet/brigdoc,
 /obj/item/storage/belt/security/full,
 /obj/item/clothing/glasses/hud/security/sunglasses,
 /obj/item/clothing/suit/armor/vest/alt,
 /obj/item/clothing/head/helmet/sec,
+/obj/item/clothing/suit/armor/brigdoc/armor,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "njt" = (

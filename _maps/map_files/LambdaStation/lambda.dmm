@@ -10932,7 +10932,6 @@
 	dir = 4
 	},
 /obj/structure/closet/secure_closet/brigdoc,
-/obj/item/clothing/suit/brigdoc/armor,
 /obj/item/clothing/head/helmet/brigdoc,
 /obj/item/storage/belt/security/full,
 /obj/item/clothing/glasses/hud/security/sunglasses,
@@ -10942,10 +10941,10 @@
 	pixel_x = 32
 	},
 /obj/effect/turf_decal/tile/red,
-/obj/machinery/light/dim/directional/east,
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
+/obj/item/clothing/suit/armor/brigdoc/armor,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "auo" = (
@@ -11448,6 +11447,10 @@
 	pixel_x = 3;
 	pixel_y = 2
 	},
+/obj/machinery/light/small{
+	brightness = 3;
+	dir = 8
+	},
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "avi" = (
@@ -11455,7 +11458,6 @@
 	dir = 4
 	},
 /obj/structure/closet/secure_closet/brigdoc,
-/obj/item/clothing/suit/brigdoc/armor,
 /obj/item/clothing/head/helmet/brigdoc,
 /obj/item/storage/belt/security/full,
 /obj/item/clothing/glasses/hud/security/sunglasses,
@@ -11465,6 +11467,10 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/item/clothing/suit/armor/brigdoc/armor,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "avj" = (
@@ -11992,10 +11998,6 @@
 	pixel_x = -3;
 	pixel_y = 2
 	},
-/obj/machinery/light/small{
-	brightness = 3;
-	dir = 8
-	},
 /obj/machinery/camera{
 	c_tag = "Infirmary";
 	dir = 4
@@ -12034,6 +12036,10 @@
 	},
 /obj/effect/turf_decal/tile/red{
 	dir = 1
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -5;
+	pixel_y = 30
 	},
 /turf/open/floor/plasteel/white,
 /area/security/brig)
@@ -12681,6 +12687,10 @@
 /obj/item/reagent_containers/glass/bottle/epinephrine,
 /obj/item/reagent_containers/glass/bottle/charcoal,
 /obj/item/reagent_containers/syringe,
+/obj/machinery/light/small{
+	brightness = 3;
+	dir = 8
+	},
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "awX" = (
@@ -12693,6 +12703,9 @@
 	},
 /obj/effect/turf_decal/tile/red{
 	dir = 1
+	},
+/obj/machinery/light/small{
+	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/security/brig)
@@ -13067,7 +13080,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
-/obj/machinery/vending/medical,
+/obj/machinery/vending/brigdoc_vendomat,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "axA" = (
@@ -24775,6 +24788,10 @@
 	},
 /obj/effect/turf_decal/trimline/neutral/filled/line,
 /obj/machinery/camera/autoname,
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -5;
+	pixel_y = 30
+	},
 /turf/open/floor/plasteel,
 /area/security/brig)
 "aVe" = (
@@ -26953,6 +26970,10 @@
 /obj/effect/turf_decal/trimline/neutral/filled/line,
 /obj/effect/turf_decal/tile/red{
 	dir = 4
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -5;
+	pixel_y = 30
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/prison)

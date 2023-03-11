@@ -1185,7 +1185,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
-/obj/machinery/vending/medical,
+/obj/machinery/vending/brigdoc_vendomat,
 /turf/open/floor/plasteel/dark,
 /area/security/brig)
 "afK" = (
@@ -55122,7 +55122,6 @@
 /area/service/chapel/main)
 "mSd" = (
 /obj/structure/closet/secure_closet/brigdoc,
-/obj/item/clothing/suit/brigdoc/armor,
 /obj/item/clothing/head/helmet/brigdoc,
 /obj/item/storage/belt/security/full,
 /obj/item/clothing/glasses/hud/security/sunglasses,
@@ -55142,6 +55141,7 @@
 	c_tag = "Brig Infirmary";
 	dir = 4
 	},
+/obj/item/clothing/suit/armor/brigdoc/armor,
 /turf/open/floor/plasteel/dark,
 /area/security/brig)
 "mTG" = (
@@ -66361,7 +66361,6 @@
 /area/command/bridge)
 "wSP" = (
 /obj/structure/closet/secure_closet/brigdoc,
-/obj/item/clothing/suit/brigdoc/armor,
 /obj/item/clothing/head/helmet/brigdoc,
 /obj/item/storage/belt/security/full,
 /obj/item/clothing/glasses/hud/security/sunglasses,
@@ -66380,6 +66379,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/item/clothing/suit/armor/brigdoc/armor,
 /turf/open/floor/plasteel/dark,
 /area/security/brig)
 "wST" = (

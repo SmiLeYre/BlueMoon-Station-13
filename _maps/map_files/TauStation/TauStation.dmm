@@ -46653,7 +46653,6 @@
 /area/cargo/storage)
 "qel" = (
 /obj/structure/closet/secure_closet/brigdoc,
-/obj/item/clothing/suit/brigdoc/armor,
 /obj/item/clothing/head/helmet/brigdoc,
 /obj/item/storage/belt/security/full,
 /obj/item/clothing/glasses/hud/security/sunglasses,
@@ -46680,6 +46679,7 @@
 /obj/machinery/newscaster/security_unit{
 	pixel_y = -30
 	},
+/obj/item/clothing/suit/armor/brigdoc/armor,
 /turf/open/floor/plasteel/showroomfloor,
 /area/security/brig)
 "qem" = (
@@ -49666,7 +49666,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/machinery/vending/medical,
+/obj/machinery/vending/brigdoc_vendomat,
 /turf/open/floor/plasteel/dark,
 /area/security/brig)
 "riM" = (
@@ -59627,7 +59627,6 @@
 /area/command/heads_quarters/captain/private)
 "uCP" = (
 /obj/structure/closet/secure_closet/brigdoc,
-/obj/item/clothing/suit/brigdoc/armor,
 /obj/item/clothing/head/helmet/brigdoc,
 /obj/item/storage/belt/security/full,
 /obj/item/clothing/glasses/hud/security/sunglasses,
@@ -59650,6 +59649,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/red,
+/obj/item/clothing/suit/armor/brigdoc/armor,
 /turf/open/floor/plasteel/showroomfloor,
 /area/security/brig)
 "uDe" = (

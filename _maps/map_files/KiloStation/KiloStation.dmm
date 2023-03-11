@@ -8071,7 +8071,6 @@
 /area/security/warden)
 "anM" = (
 /obj/structure/closet/secure_closet/brigdoc,
-/obj/item/clothing/suit/brigdoc/armor,
 /obj/item/clothing/head/helmet/brigdoc,
 /obj/item/storage/belt/security/full,
 /obj/item/clothing/glasses/hud/security/sunglasses,
@@ -8099,6 +8098,7 @@
 	c_tag = "Security Infirmary";
 	dir = 8
 	},
+/obj/item/clothing/suit/armor/brigdoc/armor,
 /turf/open/floor/plasteel/white,
 /area/security/warden)
 "anN" = (
@@ -61600,7 +61600,6 @@
 /area/security/prison)
 "bVU" = (
 /obj/structure/closet/secure_closet/brigdoc,
-/obj/item/clothing/suit/brigdoc/armor,
 /obj/item/clothing/head/helmet/brigdoc,
 /obj/item/storage/belt/security/full,
 /obj/item/clothing/glasses/hud/security/sunglasses,
@@ -61626,6 +61625,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
 	},
+/obj/item/clothing/suit/armor/brigdoc/armor,
 /turf/open/floor/plasteel/white,
 /area/security/warden)
 "bVV" = (
@@ -80008,7 +80008,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
-/obj/machinery/vending/medical,
+/obj/machinery/vending/brigdoc_vendomat,
 /turf/open/floor/plasteel/showroomfloor,
 /area/security/warden)
 "cDT" = (
