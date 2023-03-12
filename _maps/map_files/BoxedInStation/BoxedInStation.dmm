@@ -44188,7 +44188,7 @@
 	pixel_x = 3;
 	pixel_y = -3
 	},
-/obj/item/clothing/suit/brigdoc/armor,
+/obj/item/clothing/suit/armor/brigdoc/armor,
 /obj/item/clothing/head/helmet/brigdoc,
 /obj/machinery/recharger{
 	pixel_x = 6;

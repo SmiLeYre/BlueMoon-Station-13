@@ -531,7 +531,7 @@
 	dir = 8
 	},
 /obj/item/clothing/head/helmet/brigdoc,
-/obj/item/clothing/suit/brigdoc/armor,
+/obj/item/clothing/suit/armor/brigdoc/armor,
 /obj/structure/rack,
 /turf/open/floor/plasteel,
 /area/ai_monitored/security/armory)
