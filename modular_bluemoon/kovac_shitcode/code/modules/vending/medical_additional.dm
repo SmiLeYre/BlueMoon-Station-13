@@ -1,5 +1,5 @@
 /obj/machinery/vending/brigdoc_vendomat
-	name = "\improper SecMedDrobe"
+	name = "\improper MeDSec"
 	desc = "Stay alive until the end. Dispenses stuff for brig physicians."
 	icon = 'modular_bluemoon/kovac_shitcode/icons/misc/vending_additional.dmi'
 	icon_state = "brigdoc"
