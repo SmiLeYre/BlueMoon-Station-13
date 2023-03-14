@@ -37,3 +37,19 @@
 	message_mime = "делает вид, что разминает суставы."
 	emote_sound = 'modular_bluemoon/kovac_shitcode/sound/new_emotes/bonecrack.ogg'
 	emote_cooldown = 1.6 SECONDS
+	
+/datum/emote/living/ohyes
+	key = "ohyes"
+	key_third_person = "ohyes"
+	message = "приятно удивлен."
+	emote_type = EMOTE_AUDIBLE
+
+/datum/emote/living/ohyes/run_emote(mob/user, params, type_override, intentional)
+	if(ishuman(user))
+		if(user.nextsoundemote >= world.time)
+			to_chat(user, span_warning("Рано! Очень рано!!"))
+			SEND_SOUND(user, 'sound/machines/buzz-sigh.ogg')
+			return
+		user.nextsoundemote = world.time + 30 SECONDS
+	playsound(user, 'modular_bluemoon/kovac_shitcode/sound/new_emotes/ohyes.ogg', 25, 1, -1)
+	. = ..()		
