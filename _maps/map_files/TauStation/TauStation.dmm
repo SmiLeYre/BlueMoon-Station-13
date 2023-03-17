@@ -17176,18 +17176,21 @@
 /area/commons/dorms)
 "fRy" = (
 /obj/structure/rack,
+/obj/machinery/camera/motion{
+	c_tag = "Armory Motion Sensor";
+	dir = 4
+	},
 /obj/item/gun/ballistic/shotgun/riot{
 	pixel_x = -3;
 	pixel_y = 3
 	},
-/obj/item/gun/ballistic/shotgun/riot,
 /obj/item/gun/ballistic/shotgun/riot{
+	layer = 3.1
+	},
+/obj/item/gun/ballistic/shotgun/riot{
+	layer = 3.2;
 	pixel_x = 3;
 	pixel_y = -3
-	},
-/obj/machinery/camera/motion{
-	c_tag = "Armory Motion Sensor";
-	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
@@ -18463,11 +18466,13 @@
 	},
 /obj/item/gun/ballistic/automatic/wt550{
 	desc = "An outdated personal defence weapon. Uses 4.6x30mm rounds and is designated the WT-550 PDW.";
+	layer = 3.1;
 	name = "security PDW";
 	spawnwithmagazine = 0
 	},
 /obj/item/gun/ballistic/automatic/wt550{
 	desc = "An outdated personal defence weapon. Uses 4.6x30mm rounds and is designated the WT-550 PDW.";
+	layer = 3.2;
 	name = "security PDW";
 	pixel_x = 3;
 	pixel_y = -3;
@@ -19654,12 +19659,16 @@
 	pixel_x = -3;
 	pixel_y = 3
 	},
-/obj/item/gun/ballistic/automatic/pistol/enforcer,
 /obj/item/gun/ballistic/automatic/pistol/enforcer{
+	layer = 3.1
+	},
+/obj/item/gun/ballistic/automatic/pistol/enforcer{
+	layer = 3.2;
 	pixel_x = 3;
 	pixel_y = -3
 	},
 /obj/item/gun/ballistic/automatic/pistol/enforcer{
+	layer = 3.3;
 	pixel_x = 6;
 	pixel_y = -6
 	},
@@ -19674,12 +19683,16 @@
 	pixel_x = -3;
 	pixel_y = 3
 	},
-/obj/item/gun/energy/e_gun,
 /obj/item/gun/energy/e_gun{
+	layer = 3.1
+	},
+/obj/item/gun/energy/e_gun{
+	layer = 3.2;
 	pixel_x = 3;
 	pixel_y = -3
 	},
 /obj/item/gun/energy/e_gun{
+	layer = 3.3;
 	pixel_x = 6;
 	pixel_y = -6
 	},

@@ -19760,6 +19760,7 @@
 	dir = 8
 	},
 /obj/structure/closet/crate/freezer/blood,
+/obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "bFm" = (
@@ -24588,25 +24589,29 @@
 /area/ai_monitored/security/armory)
 "bVq" = (
 /obj/structure/rack,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/turf_decal/bot,
 /obj/item/gun/ballistic/automatic/pistol/enforcer{
 	pixel_x = -3;
 	pixel_y = 3
 	},
-/obj/item/gun/ballistic/automatic/pistol/enforcer,
 /obj/item/gun/ballistic/automatic/pistol/enforcer{
+	layer = 3.1
+	},
+/obj/item/gun/ballistic/automatic/pistol/enforcer{
+	layer = 3.2;
 	pixel_x = 3;
 	pixel_y = -3
 	},
 /obj/item/gun/ballistic/automatic/pistol/enforcer{
+	layer = 3.3;
 	pixel_x = 6;
 	pixel_y = -6
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/window/reinforced{
 	dir = 4;
 	pixel_x = 4
 	},
+/obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel,
 /area/ai_monitored/security/armory)
 "bVu" = (
@@ -101924,19 +101929,22 @@
 /area/commons/fitness/recreation)
 "oKm" = (
 /obj/structure/rack,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/effect/turf_decal/bot,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
 /obj/item/gun/ballistic/shotgun/riot{
 	pixel_x = -3;
 	pixel_y = 3
 	},
-/obj/item/gun/ballistic/shotgun/riot,
 /obj/item/gun/ballistic/shotgun/riot{
+	layer = 3.1
+	},
+/obj/item/gun/ballistic/shotgun/riot{
+	layer = 3.2;
 	pixel_x = 3;
 	pixel_y = -3
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/structure/window/reinforced{
+	dir = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 4;
@@ -105319,19 +105327,23 @@
 /turf/open/floor/plasteel/dark,
 /area/service/library)
 "pPI" = (
-/obj/effect/turf_decal/bot,
 /obj/structure/rack,
+/obj/effect/turf_decal/bot,
 /obj/item/gun/energy/e_gun{
 	pixel_x = -3;
 	pixel_y = 3
 	},
-/obj/item/gun/energy/e_gun,
 /obj/item/gun/energy/e_gun{
+	layer = 3.1
+	},
+/obj/item/gun/energy/e_gun{
+	layer = 3.2;
 	pixel_x = 3;
 	pixel_y = -3
 	},
 /obj/item/gun/energy/e_gun{
-	pixel_x = 5;
+	layer = 3.3;
+	pixel_x = 6;
 	pixel_y = -6
 	},
 /turf/open/floor/plasteel,
@@ -111404,12 +111416,7 @@
 /area/engineering/main)
 "rWu" = (
 /obj/structure/rack,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/effect/turf_decal/bot,
-/obj/structure/window/reinforced{
-	dir = 4;
-	pixel_x = 4
-	},
 /obj/item/gun/ballistic/automatic/wt550{
 	desc = "An outdated personal defence weapon. Uses 4.6x30mm rounds and is designated the WT-550 PDW.";
 	name = "security PDW";
@@ -111419,15 +111426,22 @@
 	},
 /obj/item/gun/ballistic/automatic/wt550{
 	desc = "An outdated personal defence weapon. Uses 4.6x30mm rounds and is designated the WT-550 PDW.";
+	layer = 3.1;
 	name = "security PDW";
 	spawnwithmagazine = 0
 	},
 /obj/item/gun/ballistic/automatic/wt550{
 	desc = "An outdated personal defence weapon. Uses 4.6x30mm rounds and is designated the WT-550 PDW.";
+	layer = 3.2;
 	name = "security PDW";
 	pixel_x = 3;
 	pixel_y = -3;
 	spawnwithmagazine = 0
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/structure/window/reinforced{
+	dir = 4;
+	pixel_x = 4
 	},
 /turf/open/floor/plasteel,
 /area/ai_monitored/security/armory)
@@ -122469,6 +122483,9 @@
 	},
 /obj/effect/turf_decal/tile/red{
 	dir = 1
+	},
+/obj/machinery/shower/directional/south{
+	pixel_y = 17
 	},
 /obj/structure/sink{
 	pixel_y = 22

@@ -4355,18 +4355,18 @@
 /turf/open/floor/plating,
 /area/maintenance/port/fore)
 "ahu" = (
-/obj/structure/bodycontainer/morgue,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/delivery,
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
+/obj/effect/turf_decal/bot,
+/obj/structure/closet/crate/freezer/blood,
 /turf/open/floor/plasteel/showroomfloor,
 /area/security/warden)
 "ahv" = (
@@ -6729,27 +6729,17 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/item/gun/ballistic/automatic/wt550{
-	desc = "An outdated personal defence weapon. Uses 4.6x30mm rounds and is designated the WT-550 PDW.";
-	name = "security PDW";
+/obj/item/gun/ballistic/shotgun/riot{
 	pixel_x = -3;
-	pixel_y = 3;
-	spawnwithmagazine = 0
+	pixel_y = 3
 	},
-/obj/item/gun/ballistic/automatic/wt550{
-	desc = "An outdated personal defence weapon. Uses 4.6x30mm rounds and is designated the WT-550 PDW.";
-	name = "security PDW";
-	spawnwithmagazine = 0
+/obj/item/gun/ballistic/shotgun/riot{
+	layer = 3.1
 	},
-/obj/item/gun/ballistic/automatic/wt550{
-	desc = "An outdated personal defence weapon. Uses 4.6x30mm rounds and is designated the WT-550 PDW.";
-	name = "security PDW";
+/obj/item/gun/ballistic/shotgun/riot{
+	layer = 3.2;
 	pixel_x = 3;
-	pixel_y = -3;
-	spawnwithmagazine = 0
+	pixel_y = -3
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ai_monitored/security/armory)
@@ -6765,9 +6755,6 @@
 /obj/effect/turf_decal/bot,
 /obj/structure/window/reinforced{
 	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 8
 	},
 /obj/item/gun/energy/laser/carbine,
 /obj/item/gun/energy/laser/carbine,
@@ -18700,7 +18687,6 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/bot,
 /obj/item/radio/intercom{
 	pixel_x = -28
 	},
@@ -84130,15 +84116,6 @@
 /area/maintenance/port/fore)
 "gtB" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/shotgun/riot{
-	pixel_x = -3;
-	pixel_y = 3
-	},
-/obj/item/gun/ballistic/shotgun/riot,
-/obj/item/gun/ballistic/shotgun/riot{
-	pixel_x = 3;
-	pixel_y = -3
-	},
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
@@ -84147,10 +84124,28 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/bot,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/gun/ballistic/automatic/wt550{
+	desc = "An outdated personal defence weapon. Uses 4.6x30mm rounds and is designated the WT-550 PDW.";
+	name = "security PDW";
+	pixel_x = -3;
+	pixel_y = 3;
+	spawnwithmagazine = 0
+	},
+/obj/item/gun/ballistic/automatic/wt550{
+	desc = "An outdated personal defence weapon. Uses 4.6x30mm rounds and is designated the WT-550 PDW.";
+	layer = 3.1;
+	name = "security PDW";
+	spawnwithmagazine = 0
+	},
+/obj/item/gun/ballistic/automatic/wt550{
+	desc = "An outdated personal defence weapon. Uses 4.6x30mm rounds and is designated the WT-550 PDW.";
+	layer = 3.2;
+	name = "security PDW";
+	pixel_x = 3;
+	pixel_y = -3;
+	spawnwithmagazine = 0
+	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ai_monitored/security/armory)
 "gvR" = (
@@ -84573,19 +84568,20 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/bot,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
 /obj/item/gun/energy/e_gun{
 	pixel_x = -3;
 	pixel_y = 3
 	},
-/obj/item/gun/energy/e_gun,
 /obj/item/gun/energy/e_gun{
+	layer = 3.1
+	},
+/obj/item/gun/energy/e_gun{
+	layer = 3.2;
 	pixel_x = 3;
 	pixel_y = -3
 	},
 /obj/item/gun/energy/e_gun{
+	layer = 3.3;
 	pixel_x = 6;
 	pixel_y = -6
 	},
@@ -84787,19 +84783,20 @@
 /obj/structure/window/reinforced,
 /obj/effect/turf_decal/bot,
 /obj/structure/rack,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
 /obj/item/gun/ballistic/automatic/pistol/enforcer{
 	pixel_x = -3;
 	pixel_y = 3
 	},
-/obj/item/gun/ballistic/automatic/pistol/enforcer,
 /obj/item/gun/ballistic/automatic/pistol/enforcer{
+	layer = 3.1
+	},
+/obj/item/gun/ballistic/automatic/pistol/enforcer{
+	layer = 3.2;
 	pixel_x = 3;
 	pixel_y = -3
 	},
 /obj/item/gun/ballistic/automatic/pistol/enforcer{
+	layer = 3.3;
 	pixel_x = 6;
 	pixel_y = -6
 	},
@@ -85893,9 +85890,6 @@
 /obj/structure/window/reinforced,
 /obj/effect/turf_decal/bot,
 /obj/structure/rack,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
 /obj/item/gun/energy/e_gun/dragnet{
 	pixel_x = -4;
 	pixel_y = 4
@@ -86006,6 +86000,9 @@
 /turf/open/floor/plasteel/dark,
 /area/security/checkpoint/supply)
 "vXm" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ai_monitored/security/armory)
 "wcb" = (

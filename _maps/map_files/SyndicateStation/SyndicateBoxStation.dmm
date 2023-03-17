@@ -81,9 +81,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/security/prison)
 "aav" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/security/prison)
 "aax" = (
@@ -1290,6 +1287,9 @@
 /turf/open/floor/carpet/black,
 /area/command/heads_quarters/hos)
 "ado" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
@@ -1800,8 +1800,11 @@
 	pixel_x = -3;
 	pixel_y = 3
 	},
-/obj/item/gun/ballistic/shotgun/riot,
 /obj/item/gun/ballistic/shotgun/riot{
+	layer = 3.1
+	},
+/obj/item/gun/ballistic/shotgun/riot{
+	layer = 3.2;
 	pixel_x = 3;
 	pixel_y = -3
 	},
@@ -1884,9 +1887,6 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /obj/structure/cable{
 	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -2048,12 +2048,16 @@
 	pixel_x = -3;
 	pixel_y = 3
 	},
-/obj/item/gun/energy/e_gun,
 /obj/item/gun/energy/e_gun{
+	layer = 3.1
+	},
+/obj/item/gun/energy/e_gun{
+	layer = 3.2;
 	pixel_x = 3;
 	pixel_y = -3
 	},
 /obj/item/gun/energy/e_gun{
+	layer = 3.3;
 	pixel_x = 6;
 	pixel_y = -6
 	},
@@ -2284,6 +2288,9 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/security/prison)
 "afB" = (
@@ -2363,17 +2370,32 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
-/obj/machinery/vending/brigdoc_vendomat,
+/obj/structure/table/glass,
+/obj/item/reagent_containers/spray/cleaner{
+	pixel_x = 15;
+	pixel_y = 2
+	},
+/obj/item/surgical_processor,
+/obj/item/storage/firstaid/regular{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/storage/firstaid/regular,
+/obj/item/reagent_containers/glass/bottle/charcoal{
+	pixel_x = 2;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/glass/bottle/epinephrine{
+	pixel_x = -2;
+	pixel_y = -2
+	},
+/obj/item/reagent_containers/syringe{
+	name = "steel point"
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/security/brig)
 "afK" = (
 /obj/structure/table/glass,
-/obj/machinery/computer/med_data/laptop{
-	pixel_y = 13
-	},
-/obj/item/storage/box/bodybags,
-/obj/item/reagent_containers/blood,
-/obj/item/reagent_containers/spray/cleaner,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
@@ -2383,6 +2405,16 @@
 	},
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
+	},
+/obj/machinery/computer/med_data/laptop{
+	layer = 4;
+	pixel_y = 12
+	},
+/obj/item/storage/box/bodybags{
+	layer = 4.1
+	},
+/obj/item/reagent_containers/blood{
+	layer = 4.2
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/security/brig)
@@ -2571,7 +2603,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/open/floor/plasteel,
+/turf/open/floor/mineral/plastitanium/red,
 /area/security/range)
 "agf" = (
 /obj/structure/table,
@@ -2735,11 +2767,13 @@
 	},
 /obj/item/gun/ballistic/automatic/wt550{
 	desc = "An outdated personal defence weapon. Uses 4.6x30mm rounds and is designated the WT-550 PDW.";
+	layer = 3.1;
 	name = "security PDW";
 	spawnwithmagazine = 0
 	},
 /obj/item/gun/ballistic/automatic/wt550{
 	desc = "An outdated personal defence weapon. Uses 4.6x30mm rounds and is designated the WT-550 PDW.";
+	layer = 3.2;
 	name = "security PDW";
 	pixel_x = 3;
 	pixel_y = -3;
@@ -2758,6 +2792,9 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/security/brig)
 "agv" = (
@@ -2909,6 +2946,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
+/obj/machinery/vending/wallmed{
+	pixel_y = 32
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/security/brig)
 "agN" = (
@@ -2929,7 +2969,7 @@
 /obj/structure/cable{
 	dir = 1
 	},
-/obj/effect/spawner/structure/window/reinforced,
+/obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plating,
 /area/security/brig)
 "agP" = (
@@ -3197,7 +3237,6 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/security/brig)
 "ahv" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "Prison Gate";
 	name = "Prison Lockdown Shutters"
@@ -3208,6 +3247,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plating,
 /area/security/brig)
 "ahw" = (
@@ -3556,7 +3596,6 @@
 /area/security/brig)
 "aie" = (
 /obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
@@ -3566,7 +3605,6 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
-/obj/structure/closet/crate/freezer/blood,
 /turf/open/floor/mineral/plastitanium/red,
 /area/security/brig)
 "aif" = (
@@ -3654,6 +3692,11 @@
 	pixel_y = 3
 	},
 /obj/item/clothing/suit/armor/bulletproof{
+	pixel_x = -3;
+	pixel_y = 3
+	},
+/obj/item/clothing/head/helmet/alt{
+	layer = 3.00001;
 	pixel_x = -3;
 	pixel_y = 3
 	},
@@ -36523,12 +36566,16 @@
 	pixel_x = -3;
 	pixel_y = 3
 	},
-/obj/item/gun/ballistic/automatic/pistol/enforcer,
 /obj/item/gun/ballistic/automatic/pistol/enforcer{
+	layer = 3.1
+	},
+/obj/item/gun/ballistic/automatic/pistol/enforcer{
+	layer = 3.2;
 	pixel_x = 3;
 	pixel_y = -3
 	},
 /obj/item/gun/ballistic/automatic/pistol/enforcer{
+	layer = 3.3;
 	pixel_x = 6;
 	pixel_y = -6
 	},
@@ -47609,8 +47656,12 @@
 "cte" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/bot,
-/obj/item/clothing/suit/armor/hos/platecarrier,
-/obj/item/clothing/suit/armor/hos/platecarrier,
+/obj/item/clothing/suit/armor/hos/platecarrier{
+	pixel_x = -3
+	},
+/obj/item/clothing/suit/armor/hos/platecarrier{
+	pixel_x = 4
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ai_monitored/security/armory)
 "ctg" = (
@@ -57379,6 +57430,9 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/security/brig)
 "laq" = (
@@ -58060,7 +58114,7 @@
 	id = "Prison Gate";
 	name = "Prison Lockdown Shutters"
 	},
-/obj/effect/spawner/structure/window/reinforced,
+/obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plating,
 /area/security/brig)
 "lSa" = (
@@ -58658,7 +58712,7 @@
 	id = "Prison Gate";
 	name = "Prison Lockdown Shutters"
 	},
-/obj/effect/spawner/structure/window/reinforced,
+/obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plating,
 /area/security/brig)
 "mHA" = (
@@ -58988,7 +59042,6 @@
 /turf/open/floor/plasteel/freezer,
 /area/commons/toilet)
 "ncM" = (
-/obj/structure/bodycontainer/morgue,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -59003,6 +59056,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -26
 	},
+/obj/structure/closet/crate/freezer/blood,
 /turf/open/floor/mineral/plastitanium/red,
 /area/security/brig)
 "ncU" = (
@@ -61924,6 +61978,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/security/prison)
 "rAR" = (
@@ -64748,12 +64805,6 @@
 "vHY" = (
 /turf/open/floor/plating,
 /area/science/mixing)
-"vIi" = (
-/obj/machinery/vending/wallmed,
-/turf/closed/wall/r_wall/syndicate{
-	smooth = 2
-	},
-/area/security/range)
 "vIo" = (
 /obj/machinery/light{
 	dir = 4;
@@ -66354,24 +66405,6 @@
 /turf/open/floor/plating,
 /area/security/prison)
 "xXf" = (
-/obj/structure/table/glass,
-/obj/item/surgical_processor,
-/obj/item/storage/firstaid/regular{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/storage/firstaid/regular,
-/obj/item/reagent_containers/glass/bottle/charcoal{
-	pixel_x = 2;
-	pixel_y = 2
-	},
-/obj/item/reagent_containers/glass/bottle/epinephrine{
-	pixel_x = -2;
-	pixel_y = -2
-	},
-/obj/item/reagent_containers/syringe{
-	name = "steel point"
-	},
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -66386,6 +66419,7 @@
 	dir = 4;
 	pixel_x = -22
 	},
+/obj/machinery/vending/brigdoc_vendomat,
 /turf/open/floor/mineral/plastitanium/red,
 /area/security/brig)
 "xYf" = (
@@ -91274,7 +91308,7 @@ aav
 sXV
 sXV
 sXV
-vIi
+sXV
 sXV
 sXV
 xnm
@@ -91784,7 +91818,7 @@ acY
 acd
 aeh
 lJS
-ado
+afv
 lZn
 afH
 agY
@@ -92041,7 +92075,7 @@ hkA
 acd
 aek
 acp
-aav
+ado
 agO
 afI
 ahb
