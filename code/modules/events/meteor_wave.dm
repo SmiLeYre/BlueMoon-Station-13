@@ -67,13 +67,13 @@
 	var/directionstring
 	switch(direction)
 		if(NORTH)
-			directionstring = " towards the fore"
+			directionstring = " с северной стороны"
 		if(SOUTH)
-			directionstring = " towards the aft"
+			directionstring = " с южной стороны"
 		if(EAST)
-			directionstring = " towards starboard"
+			directionstring = " с восточной стороны"
 		if(WEST)
-			directionstring = " towards port"
+			directionstring = " с западной стороны"
 	return "Метеоры были обнаружены на пути столкновения со станцией - [directionstring]. Время до столкновения: [round((start_when * SSevents.wait) / 10, 0.1)] секунд.[GLOB.singularity_counter && syndiealert ? " Предупреждение: Обнаружен аномальный гравитационный импульс, возможно вмешательство технологии Синдиката." : ""]"
 
 /datum/round_event/meteor_wave/tick()

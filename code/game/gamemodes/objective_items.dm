@@ -90,7 +90,7 @@
 	excludefromjob = list("Research Director","Scientist", "Roboticist")
 
 /datum/objective_item/steal/documents
-	name = "Реактивная Телепортационная Броня."
+	name = "Секретные Документы."
 	targetitem = /obj/item/documents //Any set of secret documents. Doesn't have to be NT's
 	difficulty = 5
 

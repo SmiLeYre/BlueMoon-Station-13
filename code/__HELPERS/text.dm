@@ -82,9 +82,12 @@
 				return
 			if(32)
 				continue		//whitespace
-			if(1040 to 1103)
-				continue
-			if(127 to INFINITY)
+			if(127 to 1024)
+				if(ascii_only)
+					return
+			if(1026 to 1039) // Ђ, Ѓ, Є, Љ ... and more
+				return
+			if(1106 to INFINITY)
 				if(ascii_only)
 					return
 			else
