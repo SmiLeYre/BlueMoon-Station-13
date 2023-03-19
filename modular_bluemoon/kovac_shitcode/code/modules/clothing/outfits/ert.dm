@@ -137,7 +137,7 @@
 	belt = /obj/item/storage/belt/grenade/full
 	/obj/item/gun/ballistic/automatic/vss
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-		/obj/item/clothing/mask/gas/sechailer/swat=1,\
+		/obj/item/clothing/mask/gas/sechailer=1,\
 		/obj/item/gun/ballistic/revolver/mateba=1,
 		/obj/item/ammo_box/magazine/vss_mag=2)
 
