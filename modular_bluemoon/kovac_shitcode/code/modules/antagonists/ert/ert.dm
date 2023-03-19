@@ -32,4 +32,3 @@
 	name = "NRI Spetsnaz Leader"
 	outfit = /datum/outfit/ert/ert_russian_leader
 	role = "Polkonvik"
-
