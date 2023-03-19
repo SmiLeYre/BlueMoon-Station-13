@@ -129,7 +129,7 @@
 
 	id = /obj/item/card/id/ert
 	suit = /obj/item/clothing/suit/armor/vest/russian
-	head = /obj/item/clothing/head/helmet/rus_helmet
+	head = /obj/item/clothing/head/helmet/alt
 	uniform = /obj/item/clothing/under/syndicate/rus_army
 	mask = /obj/item/clothing/mask/gas/syndicate/ds
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
@@ -138,7 +138,6 @@
 	/obj/item/gun/ballistic/automatic/vss
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/clothing/mask/gas/sechailer/swat=1,\
-		/obj/item/choice_beacon/ert_mech=1,\
 		/obj/item/gun/ballistic/revolver/mateba=1,
 		/obj/item/ammo_box/magazine/vss_mag=2)
 
