@@ -10,6 +10,7 @@
 	var/mission = "Защити станцию любой ценой и докажи свою состоятельность!"
 	var/teamsize = 5
 	var/polldesc
+	var/ertphrase = "modular_bluemoon/phenyamomota/sound/announcer/maks/ert_sending.ogg"
 
 /datum/ert/New()
 	if (!polldesc)
@@ -36,6 +37,7 @@
 	code = "Delta"
 	mission = "Разберитесь с проблемами, достойными Дельта-Кода."
 	polldesc = "an elite Nanotrasen Strike Team"
+	ertphrase = "modular_bluemoon/kovac_shitcode/sound/ert/deathsquad_send_in.ogg"
 
 /datum/ert/syndiesquad
 	roles = list(/datum/antagonist/ert/syndiesquad)

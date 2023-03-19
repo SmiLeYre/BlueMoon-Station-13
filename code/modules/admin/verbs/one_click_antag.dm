@@ -291,6 +291,7 @@
 	.["mainsettings"]["teamsize"]["value"] = newtemplate.teamsize
 	.["mainsettings"]["mission"]["value"] = newtemplate.mission
 	.["mainsettings"]["polldesc"]["value"] = newtemplate.polldesc
+	.["mainsettings"]["ertphrase"]["value"] = newtemplate.ertphrase
 	.["mainsettings"]["open_armory"]["value"] = newtemplate.opendoors ? "Yes" : "No"
 
 
@@ -357,6 +358,7 @@
 		"teamsize" = list("desc" = "Team Size", "type" = "number", "value" = ertemplate.teamsize),
 		"mission" = list("desc" = "Mission", "type" = "string", "value" = ertemplate.mission),
 		"polldesc" = list("desc" = "Ghost poll description", "type" = "string", "value" = ertemplate.polldesc),
+		"ertphrase" = list("desc" = "ERT Sending Sound", "type" = "string", "value" = ertemplate.ertphrase),
 		"enforce_human" = list("desc" = "Enforce human authority", "type" = "boolean", "value" = "[(CONFIG_GET(flag/enforce_human_authority) ? "Yes" : "No")]"),
 		"open_armory" = list("desc" = "Open armory doors", "type" = "boolean", "value" = "[(ertemplate.opendoors ? "Yes" : "No")]"),
 		)
@@ -380,6 +382,7 @@
 		ertemplate.teamsize = prefs["teamsize"]["value"]
 		ertemplate.mission = prefs["mission"]["value"]
 		ertemplate.polldesc = prefs["polldesc"]["value"]
+		ertemplate.ertphrase = prefs["ertphrase"]["value"]
 		ertemplate.enforce_human = prefs["enforce_human"]["value"] == "Yes" ? TRUE : FALSE
 		ertemplate.opendoors = prefs["open_armory"]["value"] == "Yes" ? TRUE : FALSE
 		priority_announce("Attention, [station_name()]. We are attempting to assemble an [ertemplate.polldesc]. Standby.", "ERT Protocol Activated", 'modular_bluemoon/phenyamomota/sound/announcer/maks/ert_request.ogg') //BlueMoon sound
@@ -442,7 +445,7 @@
 
 			if (teamSpawned)
 				message_admins("[ertemplate.polldesc] has spawned with the mission: [ertemplate.mission]")
-				priority_announce("Attention, [station_name()]. We are sending a team of highly trained [ertemplate.polldesc]. Standby.", "ERT En-Route", 'modular_bluemoon/phenyamomota/sound/announcer/maks/ert_sending.ogg') //BlueMoon sound
+				priority_announce("Attention, [station_name()]. We are sending a team of highly trained [ertemplate.polldesc]. Standby.", "ERT En-Route", ertemplate.ertphrase) //BlueMoon sound
 
 			//Open the Armory doors
 			if(ertemplate.opendoors)
