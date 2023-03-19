@@ -22,9 +22,9 @@
 	donator_group_id = DONATOR_GROUP_TIER_1
 
 /datum/gear/donator/syndicase
-	name = "Syndicate Briefcase Full of Cash"
+	name = "Money, Motherfucker"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/storage/secure/briefcase/syndie
+	path = /obj/item/stack/spacecash/c10000
 	ckeywhitelist = list()
 	donator_group_id = DONATOR_GROUP_TIER_1
 
