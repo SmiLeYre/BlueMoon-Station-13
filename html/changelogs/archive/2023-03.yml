@@ -78,3 +78,12 @@
   - imageadd: fixed cargo technician rolled up sleeves, duffelbags and yoga pants
   LeDrascol:
   - tweak: Reverted R&D consoles locking by default
+2023-03-19:
+  KathrinBailey:
+  - balance: The supermatter delamination will now respect the bombcap, basically,
+      it'll never go beyond a maxcap explosion.
+  - balance: The supermatter delamination now will be reduced in size if there aren't
+      many engineers.
+  LeDrascol:
+  - rscadd: Added Nudist examine text
+  - rscadd: Added Nudist state change messages
