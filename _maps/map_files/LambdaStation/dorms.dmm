@@ -3211,6 +3211,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 9
 	},
+/obj/machinery/telecomms/relay/preset/auto,
 /turf/open/floor/plating,
 /area/maintenance/department/crew_quarters/dorms)
 "iI" = (
