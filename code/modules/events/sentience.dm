@@ -55,7 +55,7 @@
 		SG.transfer_ckey(SA, FALSE)
 
 		SA.grant_all_languages(TRUE, FALSE, FALSE)
-
+		SA.grant_language(/datum/language/common)
 		SA.sentience_act()
 
 		SA.maxHealth = max(SA.maxHealth, 200)
