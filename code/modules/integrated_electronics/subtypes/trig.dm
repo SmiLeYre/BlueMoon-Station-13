@@ -91,7 +91,7 @@
 	var/result = null
 	var/A = get_pin_data(IC_INPUT, 1)
 	if(!isnull(A))
-		result = ASIN(A)
+		result = arcsin(A)
 
 	set_pin_data(IC_OUTPUT, 1, result)
 	push_data()
@@ -111,7 +111,7 @@
 	var/result = null
 	var/A = get_pin_data(IC_INPUT, 1)
 	if(!isnull(A))
-		result = ACOS(A)
+		result = arccos(A)
 
 	set_pin_data(IC_OUTPUT, 1, result)
 	push_data()
@@ -131,7 +131,7 @@
 	var/result = null
 	var/A = get_pin_data(IC_INPUT, 1)
 	if(!isnull(A))
-		result = ATG(A)
+		result = arctg(A)
 
 	set_pin_data(IC_OUTPUT, 1, result)
 	push_data()
