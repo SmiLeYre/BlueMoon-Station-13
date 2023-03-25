@@ -81,3 +81,9 @@
 			selected.loc = owner.loc
 			equipment.Remove(selection)
 */
+
+/mob/living/carbon/human/update_genitals()
+	. = ..()
+
+	// Send signal
+	SEND_SIGNAL(src, COMSIG_MOB_UPDATE_GENITALS)

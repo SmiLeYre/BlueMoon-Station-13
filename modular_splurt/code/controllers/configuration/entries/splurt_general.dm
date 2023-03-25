@@ -7,3 +7,5 @@
 
 /datum/config_entry/number/base_save_slots
 	config_entry_value = DEFAULT_SAVE_SLOTS
+
+/datum/config_entry/flag/sm_delamination

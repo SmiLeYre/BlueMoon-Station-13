@@ -135,7 +135,7 @@
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/hecu/black
 	belt = /obj/item/storage/belt/grenade/full
-	/obj/item/gun/ballistic/automatic/vss
+	r_hand = /obj/item/gun/ballistic/automatic/vss
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/clothing/mask/gas/sechailer=1,\
 		/obj/item/gun/ballistic/revolver/mateba=1,
