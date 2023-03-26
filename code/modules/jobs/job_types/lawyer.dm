@@ -15,8 +15,8 @@
 	outfit = /datum/outfit/job/lawyer
 	plasma_outfit = /datum/outfit/plasmaman/bar //yes, this is correct, there's no 'lawyer' plasmeme outfit
 
-	access = list(ACCESS_LAWYER, ACCESS_BRIG, ACCESS_COURT, ACCESS_SEC_DOORS)
-	minimal_access = list(ACCESS_LAWYER, ACCESS_BRIG, ACCESS_COURT, ACCESS_SEC_DOORS)
+	access = list(ACCESS_LAWYER, ACCESS_BRIG, ACCESS_COURT, ACCESS_SEC_DOORS, ACCESS_SECURITY)
+	minimal_access = list(ACCESS_LAWYER, ACCESS_BRIG, ACCESS_COURT, ACCESS_SEC_DOORS, ACCESS_SECURITY)
 	paycheck = PAYCHECK_EASY
 	paycheck_department = ACCOUNT_SEC
 

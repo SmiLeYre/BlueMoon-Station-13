@@ -1,7 +1,7 @@
 /datum/job/ntr
 	title = "NanoTrasen Representative"
 	flag = NTR
-	department_head = list("Captain")
+	department_head = list("CentCom")
 	department_flag = ENGSEC
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD|DEADMIN_POSITION_SECURITY
 	head_announce = list(RADIO_CHANNEL_COMMAND)
@@ -9,7 +9,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	minimal_player_age = 35
-	supervisors = "the captain"
+	supervisors = "Nanotrasen officials and Space law"
 	selection_color = "#c02f2f"
 	considered_combat_role = FALSE
 	exp_requirements = 180
