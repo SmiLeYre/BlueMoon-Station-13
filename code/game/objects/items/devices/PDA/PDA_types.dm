@@ -177,7 +177,7 @@
 	name = "lawyer PDA"
 	default_cartridge = /obj/item/cartridge/lawyer
 	inserted_item = /obj/item/pen/fountain
-	icon_state = "pda-lawyer"
+	icon_state = "pda-security"
 	ttone = "objection"
 
 /obj/item/pda/botanist

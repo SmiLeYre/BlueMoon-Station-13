@@ -1,24 +1,28 @@
 /datum/job/lawyer
 	title = "Lawyer"
 	flag = LAWYER
-	department_head = list("Head of Personnel")
-	department_flag = CIVILIAN
+	department_head = list("NanoTrasen Representative")
+	department_flag = ENGSEC
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the head of personnel"
-	selection_color = "#dddddd"
-	var/lawyers = 0 //Counts lawyer amount
+	supervisors = "the NanoTrasen Representative"
+	selection_color = "#c02f2f"
+	considered_combat_role = FALSE
+	exp_requirements = 100
+	exp_type = EXP_TYPE_SECURITY
 
 	outfit = /datum/outfit/job/lawyer
 	plasma_outfit = /datum/outfit/plasmaman/bar //yes, this is correct, there's no 'lawyer' plasmeme outfit
 
-	access = list(ACCESS_LAWYER, ACCESS_COURT, ACCESS_SEC_DOORS)
-	minimal_access = list(ACCESS_LAWYER, ACCESS_COURT, ACCESS_SEC_DOORS)
+	access = list(ACCESS_LAWYER, ACCESS_BRIG, ACCESS_COURT, ACCESS_SEC_DOORS)
+	minimal_access = list(ACCESS_LAWYER, ACCESS_BRIG, ACCESS_COURT, ACCESS_SEC_DOORS)
 	paycheck = PAYCHECK_EASY
-	paycheck_department = ACCOUNT_CIV
+	paycheck_department = ACCOUNT_SEC
 
 	mind_traits = list(TRAIT_LAW_ENFORCEMENT_METABOLISM)
+
+	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/blindness, /datum/quirk/monophobia)
 
 	display_order = JOB_DISPLAY_ORDER_LAWYER
 	threat = 0.3
@@ -35,23 +39,18 @@
 
 	belt = /obj/item/pda/lawyer
 	ears = /obj/item/radio/headset/headset_sec
-	uniform = /obj/item/clothing/under/rank/civilian/lawyer/bluesuit
-	suit = /obj/item/clothing/suit/toggle/lawyer
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
+	uniform = /obj/item/clothing/under/rank/civilian/lawyer/black/alt
+	suit = /obj/item/clothing/suit/toggle/lawyer/black
 	shoes = /obj/item/clothing/shoes/laceup
 	l_hand = /obj/item/storage/briefcase/lawyer
 	l_pocket = /obj/item/laser_pointer
 	r_pocket = /obj/item/clothing/accessory/lawyers_badge
 
+	backpack = /obj/item/storage/backpack/security
+	satchel = /obj/item/storage/backpack/satchel/sec
+	duffelbag = /obj/item/storage/backpack/duffelbag/sec
+
 	chameleon_extras = /obj/item/stamp/law
 
-
-/datum/outfit/job/lawyer/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
-	..()
-	if(visualsOnly)
-		return
-
-	var/datum/job/lawyer/J = SSjob.GetJobType(jobtype)
-	J.lawyers++
-	if(J.lawyers>1)
-		uniform = /obj/item/clothing/under/rank/civilian/lawyer/purpsuit
-		suit = /obj/item/clothing/suit/toggle/lawyer/purple
+	implants = list(/obj/item/implant/mindshield)

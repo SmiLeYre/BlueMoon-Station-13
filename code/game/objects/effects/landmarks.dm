@@ -148,6 +148,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Lawyer"
 	icon_state = "Lawyer"
 
+/obj/effect/landmark/start/ntr
+	name = "NanoTrasen Representative"
+	icon_state = "NanoTrasen Representative"
+
 /obj/effect/landmark/start/station_engineer
 	name = "Station Engineer"
 	icon_state = "Station Engineer"

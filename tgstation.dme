@@ -3973,6 +3973,7 @@
 #include "modular_bluemoon\kovac_shitcode\code\modules\guns\ammo.dm"
 #include "modular_bluemoon\kovac_shitcode\code\modules\guns\weapons.dm"
 #include "modular_bluemoon\kovac_shitcode\code\modules\jobs\job_types\brigdoc.dm"
+#include "modular_bluemoon\kovac_shitcode\code\modules\jobs\job_types\magistrate.dm"
 #include "modular_bluemoon\kovac_shitcode\code\modules\language\german.dm"
 #include "modular_bluemoon\kovac_shitcode\code\modules\mob\living\emotes.dm"
 #include "modular_bluemoon\kovac_shitcode\code\modules\vending\medical_additional.dm"

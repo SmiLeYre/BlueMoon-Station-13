@@ -24,6 +24,7 @@
 		"Captain",
 		"Head of Personnel",
 		"Head of Security",
+		"NanoTrasen Representative",
 		"Chief Engineer",
 		"Research Director",
 		"Chief Medical Officer",

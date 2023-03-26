@@ -98,6 +98,7 @@
 #define SECHUD_HEAD_OF_SECURITY "hudheadofsecurity"
 #define SECHUD_JANITOR "hudjanitor"
 #define SECHUD_LAWYER "hudlawyer"
+#define SECHUD_NTR "hudnanotrasenrepresentative"
 #define SECHUD_MEDICAL_DOCTOR "hudmedicaldoctor"
 #define SECHUD_MIME "hudmime"
 #define SECHUD_PARAMEDIC "hudparamedic"
