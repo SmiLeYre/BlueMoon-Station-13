@@ -75438,6 +75438,13 @@
 	dir = 1
 	},
 /area/service/chapel/main)
+"sjP" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/landmark/start/ntr,
+/turf/open/floor/plasteel/dark,
+/area/command/bridge)
 "sjU" = (
 /turf/open/floor/carpet,
 /area/command/blueshielquarters)
@@ -115045,7 +115052,7 @@ myk
 gRE
 nlr
 sIL
-uZH
+sjP
 ruc
 oiY
 tmg

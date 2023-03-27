@@ -66863,6 +66863,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel/dark,
 /area/service/bar)
+"xkB" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/effect/landmark/start/ntr,
+/turf/open/floor/wood,
+/area/command/bridge)
 "xkK" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -96461,7 +96468,7 @@ aPS
 uWw
 xsc
 wTW
-tIG
+xkB
 kLo
 aYv
 aZR

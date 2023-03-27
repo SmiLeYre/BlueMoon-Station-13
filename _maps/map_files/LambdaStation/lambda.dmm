@@ -27154,6 +27154,7 @@
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 1
 	},
+/obj/effect/landmark/start/ntr,
 /turf/open/floor/plasteel,
 /area/hallway/secondary/command)
 "bai" = (

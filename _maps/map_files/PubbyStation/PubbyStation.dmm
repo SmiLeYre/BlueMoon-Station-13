@@ -65148,6 +65148,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/closed/wall,
 /area/maintenance/department/chapel/monastery)
+"xVw" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/effect/landmark/start/ntr,
+/turf/open/floor/plasteel/dark,
+/area/command/bridge)
 "xWl" = (
 /obj/item/pen,
 /obj/item/paper_bin{
@@ -95136,7 +95143,7 @@ asS
 asS
 asS
 asS
-aya
+xVw
 azg
 aAB
 aBs

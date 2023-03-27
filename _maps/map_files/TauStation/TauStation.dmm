@@ -26634,6 +26634,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/medical/medbay/central)
+"jfE" = (
+/obj/effect/landmark/start/ntr,
+/turf/open/floor/plasteel/dark,
+/area/command/bridge)
 "jfI" = (
 /obj/item/lipstick,
 /turf/open/floor/plating,
@@ -102667,7 +102671,7 @@ dHK
 oyZ
 jMm
 lvb
-yhO
+jfE
 dUG
 fBu
 lPo

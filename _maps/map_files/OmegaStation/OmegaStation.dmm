@@ -1934,6 +1934,7 @@
 	name = "Station Intercom";
 	pixel_x = 28
 	},
+/obj/effect/landmark/start/ntr,
 /turf/open/floor/plasteel/dark/side{
 	dir = 5
 	},

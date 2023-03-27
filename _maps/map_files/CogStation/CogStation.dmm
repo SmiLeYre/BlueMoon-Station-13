@@ -70058,6 +70058,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/engineering/secure_construction)
+"qSk" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 8
+	},
+/obj/effect/landmark/start/ntr,
+/turf/open/floor/plasteel,
+/area/hallway/primary/port/fore)
 "qUp" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 6
@@ -106587,7 +106594,7 @@ bFK
 bFT
 aff
 aAj
-cAW
+qSk
 aJQ
 aHO
 aRB

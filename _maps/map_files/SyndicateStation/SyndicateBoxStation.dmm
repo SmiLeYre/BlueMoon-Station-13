@@ -52608,6 +52608,10 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/security/brig)
+"esY" = (
+/obj/effect/landmark/start/ntr,
+/turf/open/floor/mineral/plastitanium,
+/area/command/bridge)
 "esZ" = (
 /obj/machinery/door/airlock{
 	desc = "Private study room where nerds are probably playing Dungeons and Dragons 13e, or a place for blood cult rituals.";
@@ -94687,7 +94691,7 @@ aOE
 aPU
 aRl
 aSx
-aTX
+esY
 aVi
 aWR
 aYv

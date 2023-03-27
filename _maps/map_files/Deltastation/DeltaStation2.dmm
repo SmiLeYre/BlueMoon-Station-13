@@ -77939,6 +77939,26 @@
 	},
 /turf/open/floor/plasteel,
 /area/engineering/main)
+"gPi" = (
+/obj/structure/cable/white{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/landmark/start/ntr,
+/turf/open/floor/plasteel/dark,
+/area/command/bridge)
 "gPs" = (
 /obj/machinery/door/firedoor,
 /obj/structure/cable/white{
@@ -169477,7 +169497,7 @@ vzr
 hjC
 jcF
 gKi
-xHY
+gPi
 lVH
 uuy
 fZR

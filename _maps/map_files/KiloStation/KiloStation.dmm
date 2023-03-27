@@ -85167,6 +85167,21 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/courtroom)
+"ofD" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/landmark/start/ntr,
+/turf/open/floor/plasteel/dark/corner{
+	dir = 4
+	},
+/area/hallway/primary/fore)
 "oBA" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
 	dir = 8
@@ -112031,7 +112046,7 @@ aBB
 aEA
 aAW
 aIm
-ahF
+ofD
 aPk
 cfa
 btE
