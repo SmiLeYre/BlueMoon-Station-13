@@ -10,7 +10,7 @@
 	spawn_positions = 1
 	minimal_player_age = 35
 	supervisors = "Nanotrasen officials and Space law"
-	selection_color = "#c02f2f"
+	selection_color = "#7e3d48"
 	considered_combat_role = FALSE
 	exp_requirements = 180
 	exp_type = EXP_TYPE_COMMAND

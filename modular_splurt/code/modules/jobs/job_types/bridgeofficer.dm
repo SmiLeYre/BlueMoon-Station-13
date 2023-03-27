@@ -7,7 +7,7 @@
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "The captain and the head of personnel"
-	selection_color = "#aac1ee"
+	selection_color = "#7e3d48"
 	req_admin_notify = 0
 	minimal_player_age = 20
 	exp_requirements = 180

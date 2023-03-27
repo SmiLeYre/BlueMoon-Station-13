@@ -7,7 +7,7 @@
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the NanoTrasen Representative"
-	selection_color = "#c02f2f"
+	selection_color = "#7e3d48"
 	considered_combat_role = FALSE
 	exp_requirements = 100
 	exp_type = EXP_TYPE_SECURITY

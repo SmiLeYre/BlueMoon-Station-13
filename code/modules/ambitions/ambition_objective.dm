@@ -76,6 +76,9 @@
 	if(owner.assigned_role in (GLOB.civilian_positions))
 		return pick_list_weighted("ambitions/support.json", job)
 
+	if(owner.assigned_role in GLOB.law_positions)
+		return pick_list_weighted("ambitions/security.json", job)
+
 	if(owner.assigned_role in GLOB.engineering_positions)
 		return pick_list_weighted("ambitions/engineering.json", job)
 

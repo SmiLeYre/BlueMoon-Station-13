@@ -37,6 +37,11 @@ GLOBAL_LIST_INIT(jobban_panel_data, list(
 		"roles" = GLOB.civilian_positions
 	),
 	list(
+		"name" = "Law",
+		"color" = "purple",
+		"roles" = GLOB.law_positions
+	),
+	list(
 		"name" = "Silicon",
 		"color" = "purple",
 		"roles" = GLOB.nonhuman_positions
