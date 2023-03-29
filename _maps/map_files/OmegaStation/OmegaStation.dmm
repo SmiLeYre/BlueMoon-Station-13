@@ -41471,7 +41471,8 @@
 	},
 /obj/machinery/door/airlock{
 	name = "Law Office";
-	req_access_txt = "38"
+	req_access_txt = "38";
+	icon = 'modular_bluemoon/smiley/aesthetics/airlock/icons/airlocks/station/command.dmi'
 	},
 /turf/open/floor/plasteel,
 /area/service/lawoffice)
@@ -45343,7 +45344,7 @@ jFP
 jFP
 jFP
 jFP
-jFP
+aaa
 jFP
 jFP
 jFP

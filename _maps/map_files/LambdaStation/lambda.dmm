@@ -19272,7 +19272,8 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock{
 	name = "Law Office";
-	req_access_txt = "38"
+	req_access_txt = "38";
+	icon = 'modular_bluemoon/smiley/aesthetics/airlock/icons/airlocks/station/command.dmi'
 	},
 /turf/open/floor/plasteel,
 /area/security/brig)
@@ -22286,7 +22287,8 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock{
 	name = "Law Office";
-	req_access_txt = "38"
+	req_access_txt = "38";
+	icon = 'modular_bluemoon/smiley/aesthetics/airlock/icons/airlocks/station/command.dmi'
 	},
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable{

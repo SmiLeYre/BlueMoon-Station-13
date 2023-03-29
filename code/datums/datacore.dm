@@ -224,7 +224,7 @@
 			even = !even
 	if(law.len > 0)
 		dat += "<tr><th colspan=3>Law</th></tr>"
-		for(var/name in eng)
+		for(var/name in law)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[law[name]]</td></tr>"
 			even = !even
 	if(civ.len > 0)

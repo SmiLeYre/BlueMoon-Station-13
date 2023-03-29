@@ -44284,7 +44284,8 @@
 	},
 /obj/machinery/door/airlock{
 	name = "Law Office";
-	req_access_txt = "38"
+	req_access_txt = "38";
+	icon = 'modular_bluemoon/smiley/aesthetics/airlock/icons/airlocks/station/command.dmi'
 	},
 /obj/effect/turf_decal/delivery,
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden{
@@ -49649,7 +49650,8 @@
 	},
 /obj/machinery/door/airlock{
 	name = "Law Office";
-	req_access_txt = "38"
+	req_access_txt = "38";
+	icon = 'modular_bluemoon/smiley/aesthetics/airlock/icons/airlocks/station/command.dmi'
 	},
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel/dark,
