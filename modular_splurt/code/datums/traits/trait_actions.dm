@@ -1334,12 +1334,12 @@
 			organ_breasts.color = "#[action_owner.dna.features["mcolor"]]"
 			organ_breasts.update()
 		if(organ_penis)
-			organ_penis.shape = "Knotted"
+			organ_penis.shape = "узловатый"
 			organ_penis.color = "#ff7c80"
 			organ_penis.update()
 			organ_penis.modify_size(6)
 		if(organ_vagina)
-			organ_vagina.shape = "Furred"
+			organ_vagina.shape = "мохнатая"
 			organ_vagina.color = "#[action_owner.dna.features["mcolor"]]"
 			organ_vagina.update()
 
