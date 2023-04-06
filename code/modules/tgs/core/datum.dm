@@ -4,8 +4,6 @@ TGS_DEFINE_AND_SET_GLOBAL(tgs, null)
 	var/datum/tgs_version/version
 	var/datum/tgs_event_handler/event_handler
 
-	var/list/warned_deprecated_command_runs
-
 /datum/tgs_api/New(datum/tgs_event_handler/event_handler, datum/tgs_version/version)
 	. = ..()
 	src.event_handler = event_handler

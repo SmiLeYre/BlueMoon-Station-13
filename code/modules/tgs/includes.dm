@@ -14,5 +14,4 @@
 #include "v5\_defines.dm"
 #include "v5\api.dm"
 #include "v5\commands.dm"
-#include "v5\serializers.dm"
 #include "v5\undefs.dm"
