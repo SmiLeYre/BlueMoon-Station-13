@@ -13,9 +13,6 @@
 			TGS_WARNING_LOG("Custom chat commands in [ApiVersion()] lacks the /datum/tgs_chat_user/sender.channel field!")
 			warned_about_the_dangers_of_robutussin = TRUE
 		var/datum/tgs_chat_command/stc = I
-		if(stc.ignore_type == I)
-			continue
-
 		var/command_name = initial(stc.name)
 		if(!command_name || findtext(command_name, " ") || findtext(command_name, "'") || findtext(command_name, "\""))
 			if(warnings_only && !warned_command_names[command_name])
