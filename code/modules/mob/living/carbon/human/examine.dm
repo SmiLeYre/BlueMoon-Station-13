@@ -398,6 +398,14 @@
 			else
 				msg += "[t_on] имеет дикие, космические глаза, которые в свою очередь имеют странный, абсолютно ненормальный вид.\n"
 
+		for(var/X in writing)
+			if(!w_uniform)
+				var/obj/item/bodypart/BP = X
+				msg += "<span class='notice'>[capitalize(t_on)] имеет надписи на своём теле. Кажется, [t_on] [BP.name] имеет следующий текст - \"[html_encode(BP.writtentext)]\".</span>\n"
+		for(var/obj/item/organ/genital/G in internal_organs)
+			if(length(G.writtentext) && istype(G) && G.is_exposed())
+				msg += "<span class='notice'>[capitalize(t_on)] имеет надписи на своём теле. Кажется, [t_on] [G.name] имеет следующий текст - \"[html_encode(G.writtentext)]\".</span>\n"
+
 		if(!user)
 			return
 
