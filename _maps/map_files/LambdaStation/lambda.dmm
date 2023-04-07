@@ -44000,6 +44000,9 @@
 	name = "Chief Engineer's APC";
 	pixel_x = 24
 	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/command/heads_quarters/ce)
 "bSQ" = (
@@ -51446,10 +51449,7 @@
 /turf/open/floor/plasteel,
 /area/commons/storage/primary)
 "cpo" = (
-/obj/machinery/field/generator{
-	anchored = 1;
-	state = 2
-	},
+/obj/machinery/field/generator,
 /turf/open/floor/plating,
 /area/engineering/storage)
 "cpp" = (
@@ -64868,6 +64868,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/plating,
 /area/maintenance/aft)
 "gnx" = (
@@ -117813,7 +117814,7 @@ cCp
 cnt
 cpp
 cpo
-cpo
+cpp
 luQ
 cwQ
 tWJ

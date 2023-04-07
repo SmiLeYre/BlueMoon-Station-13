@@ -80,11 +80,6 @@
 	if(C.gender == MALE)
 		C.dna.features["has_cock"] = TRUE
 		C.dna.features["has_balls"] = TRUE
-		C.dna.features["cock_color"] = "A50021"
-		C.dna.features["cock_girth"] = 0.78 + (0.02 * rand(-4, prob(10) ? 5 : 1)) //chance for a bigger pleasure
-		C.dna.features["cock_shape"] = "Tapered"
-		C.dna.features["cock_length"] = 0.5 + rand(4, prob(10) ? 9 : 6) + rand()
-		C.dna.features["balls_shape"] = "Hidden"
 	else
 		C.dna.features["has_vag"] = TRUE
 		C.dna.features["has_womb"] = TRUE
