@@ -1274,6 +1274,7 @@
 /obj/structure/table,
 /obj/item/stack/sheet/mineral/plastitanium,
 /obj/item/stack/sheet/plastitaniumglass,
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "eO" = (
