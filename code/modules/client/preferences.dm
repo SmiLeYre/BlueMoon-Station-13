@@ -245,8 +245,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 "meat_type" = "Mammalian",
 "body_model" = MALE,
 "body_size" = RESIZE_DEFAULT_SIZE,
+"fuzzy" = "Sharp",
 "color_scheme" = OLD_CHARACTER_COLORING,
-
 "neckfire" = FALSE,
 "neckfire_color" = "ffffff"
 )
@@ -402,7 +402,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/multiz_parallax = FALSE
 	/// Multiz Performance option
 	var/multiz_performance = -1
-
 
 /datum/preferences/New(client/C)
 	parent = C
@@ -686,6 +685,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						mutant_colors = TRUE
 
 						dat += "<b>Sprite Size:</b> <a href='?_src_=prefs;preference=body_size;task=input'>[features["body_size"]*100]%</a><br>"
+						dat += "<b>Scaled Appearance:</b> <a href='?_src_=prefs;preference=fuzzy;task=input>[fuzzy ? "Fuzzy" : "Sharp"]</a><br>"
 
 					if(!(NOEYES in pref_species.species_traits))
 						dat += "<h3>Eye Type</h3>"

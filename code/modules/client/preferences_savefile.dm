@@ -816,6 +816,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 "meat_type" = "Mammalian",
 "body_model" = MALE,
 "body_size" = RESIZE_DEFAULT_SIZE,
+"fuzzy" = "Sharp",
 "color_scheme" = OLD_CHARACTER_COLORING,
 
 "neckfire" = FALSE,
@@ -863,6 +864,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["gender"] >> gender
 	S["body_model"] >> features["body_model"]
 	S["body_size"] >> features["body_size"]
+	S["fuzzy"] >> fuzzy
 	S["age"] >> age
 	S["hair_color"] >> hair_color
 	S["facial_hair_color"] >> facial_hair_color
@@ -1305,6 +1307,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["gender"]					, gender)
 	WRITE_FILE(S["body_model"]				, features["body_model"])
 	WRITE_FILE(S["body_size"]				, features["body_size"])
+	WRITE_FILE(S["fuzzy"]					, fuzzy)
 	WRITE_FILE(S["age"]						, age)
 	WRITE_FILE(S["hair_color"]				, hair_color)
 	WRITE_FILE(S["facial_hair_color"]		, facial_hair_color)
