@@ -37,7 +37,7 @@ They deal 35 brute (armor is considered).
 	health = 1500
 	maxHealth = 1500
 	movement_type = GROUND
-	weather_immunities = list("lava","ash")
+	weather_immunities = list(TRAIT_LAVA_IMMUNE,TRAIT_ASHSTORM_IMMUNE)
 	var/phase = 1
 	var/list/introduced = list() //Basically all the mobs which the gladiator has already introduced himself to.
 	var/speen = FALSE
