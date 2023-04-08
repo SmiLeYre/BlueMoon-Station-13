@@ -8,7 +8,6 @@
 	var/unholypref = "No" //Goin 2 hell fo dis one
 	var/list/gfluid_blacklist = list() //Stuff you don't want people to cum into you
 	var/new_character_creator = TRUE // old/new character creator
-	var/fuzzy = 0
 
 /datum/preferences/New(client/C)
 	// Check if readable fluids list exists
@@ -262,7 +261,7 @@
 				mutant_colors = TRUE
 
 				dat += "<b>Sprite Size:</b> <a href='?_src_=prefs;preference=body_size;task=input'>[features["body_size"]*100]%</a><br>"
-				dat += "<b>Scaled Appearance:</b> <a href='?_src_=prefs;preference=fuzzy;task=input>[fuzzy ? "Fuzzy" : "Sharp"]</a><br>"
+				dat += "<b>Scaled Appearance:</b> <a href='?_src_=prefs;preference=toggle_fuzzy;task=input'>[features["fuzzy"] ? "Fuzzy" : "Sharp"]</a><br>"
 
 			if(!(NOEYES in pref_species.species_traits))
 				dat += "<h3>Eye Type</h3>"

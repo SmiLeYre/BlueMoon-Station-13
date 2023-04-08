@@ -1405,7 +1405,7 @@
 	"}
 
 //BLUEMOON ADD START - FUZZY
-/mob/living/proc/switch_scaling()
+/mob/living/verb/switch_scaling()
 	set name = "Switch scaling mode"
 	set category = "IC"
 	set desc = "Switch sharp/fuzzy scaling for current mob."
