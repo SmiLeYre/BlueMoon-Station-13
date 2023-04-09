@@ -125,12 +125,6 @@
 	icon_state = "pilotjaw"
 	covered_limbs = list("Head" = MATRIX_RED_BLUE)
 
-/datum/sprite_accessory/mam_body_markings/wide_eyes
-	name = "Wide Eyes"
-	icon = 'modular_bluemoon/eyes/eyes.dmi'
-	icon_state = "wideeyes"
-	covered_limbs = list("Head" = MATRIX_RED)
-
 /******************************************
 ************* Insect Markings *************
 *******************************************/
