@@ -236,7 +236,7 @@ Difficulty: Hard
 	color = "#C80000"
 	density = FALSE
 	faction = list("mining", "boss")
-	weather_immunities = list("lava","ash")
+	weather_immunities = list(TRAIT_LAVA_IMMUNE,TRAIT_ASHSTORM_IMMUNE)
 	has_field_of_vision = FALSE
 
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/slaughter/CanPass(atom/movable/mover, turf/target)

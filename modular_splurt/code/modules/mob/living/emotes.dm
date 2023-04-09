@@ -631,6 +631,14 @@
 	emote_sound = 'modular_splurt/sound/voice/choir.ogg'
 	emote_cooldown = 6 SECONDS
 
+/datum/emote/living/audio/agony
+	key = "agony"
+	key_third_person = "agonys"
+	message = "let out a choir of agony!"
+	message_mime = "is visibly in agony."
+	emote_sound = 'modular_splurt/sound/voice/agony.ogg'
+	emote_cooldown = 7 SECONDS
+
 /datum/emote/living/audio/sicko
 	key = "sicko"
 	key_third_person = "sickos"

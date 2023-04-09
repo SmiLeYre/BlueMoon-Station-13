@@ -580,15 +580,16 @@
 /turf/open/floor/wood,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "dJ" = (
-/obj/structure/closet/secure_closet/freezer/kitchen{
-	req_access = list("syndicate")
-	},
 /obj/structure/window/reinforced/survival_pod,
 /obj/effect/turf_decal/tile{
 	dir = 8
 	},
 /obj/effect/turf_decal/tile{
 	dir = 4
+	},
+/obj/structure/closet/secure_closet/freezer/kitchen{
+	req_access = null;
+	req_access_txt = "150"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
@@ -2872,14 +2873,14 @@
 /obj/structure/window/reinforced/survival_pod{
 	dir = 1
 	},
-/obj/structure/closet/secure_closet/freezer/meat{
-	req_access = list("syndicate")
-	},
 /obj/effect/turf_decal/tile{
 	dir = 8
 	},
 /obj/effect/turf_decal/tile{
 	dir = 4
+	},
+/obj/structure/closet/secure_closet/freezer/meat{
+	req_access_txt = "150"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
@@ -4917,7 +4918,7 @@
 	req_access_txt = "150"
 	},
 /obj/machinery/door/window/survival_pod{
-	req_access = list("syndicate")
+	req_access_txt = "150"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
@@ -7170,19 +7171,19 @@
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
-/obj/machinery/door/window/survival_pod{
-	dir = 4;
-	req_access = list("syndicate")
-	},
-/obj/machinery/door/window/survival_pod{
-	dir = 8;
-	req_access = list("syndicate")
-	},
 /obj/effect/turf_decal/tile{
 	dir = 4
 	},
 /obj/effect/turf_decal/tile{
 	dir = 8
+	},
+/obj/machinery/door/window/survival_pod{
+	dir = 8;
+	req_access_txt = "150"
+	},
+/obj/machinery/door/window/survival_pod{
+	dir = 4;
+	req_access_txt = "150"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)

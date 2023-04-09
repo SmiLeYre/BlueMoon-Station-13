@@ -87317,13 +87317,13 @@
 /obj/structure/cable/white{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock{
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/effect/landmark/navigate_destination/lawyer,
+/obj/machinery/door/airlock/security/glass{
 	name = "Law Office";
 	req_access_txt = "38";
 	icon = 'modular_bluemoon/smiley/aesthetics/airlock/icons/airlocks/station/command.dmi'
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/landmark/navigate_destination/lawyer,
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "jJr" = (
@@ -108020,14 +108020,14 @@
 /obj/structure/cable/white{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock{
-	name = "Law Office";
-	req_access_txt = "38"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
 /obj/effect/turf_decal/bot,
+/obj/machinery/door/airlock/security/glass{
+	name = "Law Office";
+	req_access_txt = "38"
+	},
 /turf/open/floor/plasteel,
 /area/service/lawoffice)
 "qPW" = (

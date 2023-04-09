@@ -6,6 +6,8 @@
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 //Own stuff
+
+/* Already exists
 /obj/item/clothing/under/wedding_dress
 	name = "wedding dress"
 	desc = "A luxurious gown for once-in-a-lifetime occasions."
@@ -15,14 +17,7 @@
 	flags_cover = HIDESHOES
 	mutantrace_variation = NONE
 	can_adjust = FALSE
-
-/obj/item/clothing/under/tuxedo
-	name = "tuxedo"
-	desc = "A formal black tuxedo. It exudes classiness."
-	icon = 'modular_splurt/icons/obj/clothing/uniforms.dmi'
-	icon_state = "tuxedo"
-	mutantrace_variation = NONE //temporary
-	can_adjust = FALSE
+*/
 
 /obj/item/clothing/suit/hooded/wintercoat/security/pink
 	name = "pink security winter coat"

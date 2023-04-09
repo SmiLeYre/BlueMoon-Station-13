@@ -6869,7 +6869,7 @@
 	},
 /area/service/lawoffice)
 "api" = (
-/obj/machinery/door/airlock{
+/obj/machinery/door/airlock/security/glass{
 	name = "Law Office";
 	req_access_txt = "38";
 	icon = 'modular_bluemoon/smiley/aesthetics/airlock/icons/airlocks/station/command.dmi'
@@ -63697,10 +63697,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 6
-	},
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/plating,
 /area/maintenance/bar)
 "udF" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -63983,10 +63980,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/commons/dorms)
 "uyG" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/plating,
 /area/maintenance/bar)
 "uzm" = (
 /obj/structure/table/reinforced,

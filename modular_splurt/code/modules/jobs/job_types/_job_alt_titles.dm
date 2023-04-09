@@ -176,7 +176,11 @@
 	. = ..()
 
 /datum/job/chaplain/New() // Yell at upstream maintainer(s) to fix "Bichop" title.
+	var/list/rem_titles = list(
+		"Bichop"
+	)
 	var/list/extra_titles = list(
+		"Bishop",
 		"Priestess",
 		"Prior",
 		"Monk",
@@ -188,6 +192,7 @@
 		"Syndicate Techpriest"
 	)
 	LAZYADD(alt_titles, extra_titles)
+	LAZYREMOVE(alt_titles, rem_titles)
 	. = ..()
 
 /datum/job/clown // Sorry, but no TWO entertainer titles.
@@ -387,9 +392,13 @@
 		"Syndicate Combatant",
 		"Slutcurity Officer"
 	)
+	var/list/rem_titles = list(
+		"Peacekeeper"
+	)
 	if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
 		LAZYADD(extra_titles, "Spookcurity Officer")
 	LAZYADD(alt_titles, extra_titles)
+	LAZYREMOVE(alt_titles, rem_titles)
 	. = ..()
 
 /datum/job/warden/New()

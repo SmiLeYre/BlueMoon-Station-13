@@ -816,8 +816,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 "meat_type" = "Mammalian",
 "body_model" = MALE,
 "body_size" = RESIZE_DEFAULT_SIZE,
+"fuzzy" = FALSE,
 "color_scheme" = OLD_CHARACTER_COLORING,
-
 "neckfire" = FALSE,
 "neckfire_color" = "ffffff"
 )
@@ -863,9 +863,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["gender"] >> gender
 	S["body_model"] >> features["body_model"]
 	S["body_size"] >> features["body_size"]
+	S["feature_fuzzy"] >> features["fuzzy"]
 	S["age"] >> age
 	S["hair_color"] >> hair_color
-	S["facial_hair_color"] >> facial_hair_color
+	S["facial_hairf_color"] >> facial_hair_color
 	S["eye_type"] >> eye_type
 	S["left_eye_color"] >> left_eye_color
 	S["right_eye_color"] >> right_eye_color
@@ -1088,6 +1089,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	nameless = sanitize_integer(nameless, 0, 1, initial(nameless))
 	be_random_name = sanitize_integer(be_random_name, 0, 1, initial(be_random_name))
 	be_random_body = sanitize_integer(be_random_body, 0, 1, initial(be_random_body))
+	features["fuzzy"] = sanitize_integer(features["fuzzy"], 0, 1, initial(features["fuzzy"]))
 
 	hair_style = sanitize_inlist(hair_style, GLOB.hair_styles_list)
 	facial_hair_style = sanitize_inlist(facial_hair_style, GLOB.facial_hair_styles_list)
@@ -1305,6 +1307,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["gender"]					, gender)
 	WRITE_FILE(S["body_model"]				, features["body_model"])
 	WRITE_FILE(S["body_size"]				, features["body_size"])
+	WRITE_FILE(S["feature_fuzzy"]			, features["fuzzy"])
 	WRITE_FILE(S["age"]						, age)
 	WRITE_FILE(S["hair_color"]				, hair_color)
 	WRITE_FILE(S["facial_hair_color"]		, facial_hair_color)

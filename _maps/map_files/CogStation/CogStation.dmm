@@ -44282,14 +44282,13 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock{
-	name = "Law Office";
-	req_access_txt = "38";
-	icon = 'modular_bluemoon/smiley/aesthetics/airlock/icons/airlocks/station/command.dmi'
-	},
 /obj/effect/turf_decal/delivery,
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden{
 	dir = 4
+	},
+/obj/machinery/door/airlock/security/glass{
+	name = "Law Office";
+	req_access_txt = "38"
 	},
 /turf/open/floor/plasteel/dark,
 /area/service/lawoffice)
@@ -49648,12 +49647,11 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/door/airlock{
-	name = "Law Office";
-	req_access_txt = "38";
-	icon = 'modular_bluemoon/smiley/aesthetics/airlock/icons/airlocks/station/command.dmi'
-	},
 /obj/effect/turf_decal/delivery,
+/obj/machinery/door/airlock/security/glass{
+	name = "Law Office";
+	req_access_txt = "38"
+	},
 /turf/open/floor/plasteel/dark,
 /area/service/lawoffice)
 "chQ" = (

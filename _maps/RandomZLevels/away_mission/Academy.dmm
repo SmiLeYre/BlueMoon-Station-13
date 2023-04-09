@@ -201,11 +201,6 @@
 /obj/item/laser_pointer/upgraded,
 /turf/open/floor/carpet,
 /area/awaymission/academy/headmaster)
-"aJ" = (
-/obj/structure/destructible/cult/tome,
-/obj/item/dice/d20/fate/one_use,
-/turf/open/floor/wood,
-/area/awaymission/academy/headmaster)
 "aK" = (
 /mob/living/simple_animal/hostile/morph{
 	faction = list("skeleton")
@@ -1097,9 +1092,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/academy/classrooms)
-"dC" = (
-/turf/open/floor/grass/grass0,
-/area/awaymission/academy/headmaster)
 "dD" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/glass/bucket,
@@ -2853,9 +2845,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/academy/academyaft)
-"ii" = (
-/turf/open/floor/grass/grass0,
-/area/awaymission/academy/academyaft)
 "ij" = (
 /obj/structure/rack,
 /obj/item/circuitboard/machine/telecomms/broadcaster,
@@ -3494,20 +3483,11 @@
 "jS" = (
 /turf/closed/wall/r_wall,
 /area/awaymission/academy/academygate)
-"jT" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/grass/grass0,
-/area/awaymission/academy/academygate)
 "jU" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/floor/carpet,
-/area/awaymission/academy/academygate)
-"jV" = (
-/turf/open/floor/grass/grass0,
 /area/awaymission/academy/academygate)
 "jW" = (
 /turf/open/floor/carpet,
@@ -3515,10 +3495,6 @@
 "jX" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
-/area/awaymission/academy/academygate)
-"jY" = (
-/obj/structure/window/reinforced,
-/turf/open/floor/grass/grass0,
 /area/awaymission/academy/academygate)
 "jZ" = (
 /obj/structure/cable{
@@ -4377,14 +4353,14 @@
 /obj/structure/trap/stun,
 /turf/open/floor/plating/asteroid/snow,
 /area/awaymission/academy/academycellar)
+"nz" = (
+/obj/structure/trap/fire,
+/turf/open/floor/grass/grass0,
+/area/awaymission/academy/academyaft)
 "ox" = (
 /mob/living/simple_animal/hostile/wizard,
 /turf/open/floor/plating,
 /area/awaymission/academy/classrooms)
-"qF" = (
-/obj/structure/trap/fire,
-/turf/open/floor/grass/grass0,
-/area/awaymission/academy/academyaft)
 "qO" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4423,6 +4399,13 @@
 /obj/item/disk/design_disk/adv/knight_gear,
 /turf/open/floor/wood,
 /area/awaymission/academy/classrooms)
+"tX" = (
+/turf/open/floor/grass/grass0,
+/area/awaymission/academy/academygate)
+"yl" = (
+/obj/structure/window/reinforced,
+/turf/open/floor/grass/grass0,
+/area/awaymission/academy/academygate)
 "yV" = (
 /obj/structure/chair/wood/normal{
 	dir = 1
@@ -4434,6 +4417,11 @@
 /obj/effect/landmark/awaystart,
 /turf/open/floor/plating,
 /area/awaymission/academy/academygate)
+"AQ" = (
+/obj/structure/destructible/cult/tome,
+/obj/item/dice/d20,
+/turf/open/floor/wood,
+/area/awaymission/academy/headmaster)
 "Ck" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -4456,6 +4444,9 @@
 /obj/structure/trap/stun,
 /turf/open/floor/plasteel,
 /area/awaymission/academy/academyengine)
+"DS" = (
+/turf/open/floor/grass/grass0,
+/area/awaymission/academy/headmaster)
 "Fh" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4463,6 +4454,9 @@
 /obj/structure/trap/damage,
 /turf/open/floor/plasteel/grimy,
 /area/awaymission/academy/classrooms)
+"HY" = (
+/turf/open/floor/grass/grass0,
+/area/awaymission/academy/academyaft)
 "Im" = (
 /obj/structure/trap/damage,
 /turf/open/floor/plasteel,
@@ -4563,6 +4557,12 @@
 "WZ" = (
 /turf/open/space/basic,
 /area/space)
+"Xu" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/grass/grass0,
+/area/awaymission/academy/academygate)
 "XX" = (
 /obj/structure/trap/fire,
 /turf/open/floor/plasteel/cafeteria,
@@ -12944,9 +12944,9 @@ bx
 bJ
 br
 aF
-dC
-dC
-dC
+DS
+DS
+DS
 as
 ej
 ej
@@ -12969,14 +12969,14 @@ fD
 kC
 gF
 hX
-ii
-ii
-ii
-ii
-qF
-ii
-ii
-ii
+HY
+HY
+HY
+HY
+nz
+HY
+HY
+HY
 hX
 fD
 gF
@@ -12990,10 +12990,10 @@ gF
 fN
 Mx
 hc
-jT
-jV
-jV
-jY
+Xu
+tX
+tX
+yl
 jW
 jW
 ki
@@ -13074,9 +13074,9 @@ by
 bK
 br
 aF
-dC
-dC
-dC
+DS
+DS
+DS
 as
 ej
 ej
@@ -13179,7 +13179,7 @@ ah
 as
 ay
 aE
-aJ
+AQ
 as
 ah
 cI
@@ -13250,10 +13250,10 @@ fF
 fF
 fF
 hc
-jV
-jV
-jV
-jY
+tX
+tX
+tX
+yl
 kc
 jW
 Ao
@@ -13380,10 +13380,10 @@ fF
 fF
 fF
 hc
-jV
-jV
-jV
-jY
+tX
+tX
+tX
+yl
 kc
 jW
 kf
@@ -13619,14 +13619,14 @@ fD
 fF
 gF
 hX
-ii
-ii
-ii
-ii
-ii
-ii
-ii
-ii
+HY
+HY
+HY
+HY
+HY
+HY
+HY
+HY
 hX
 fD
 gF
@@ -13640,10 +13640,10 @@ fF
 fN
 fN
 hc
-jT
-jV
-jV
-jY
+Xu
+tX
+tX
+yl
 kd
 jU
 kk
@@ -13724,9 +13724,9 @@ bx
 bJ
 br
 aF
-dC
-dC
-dC
+DS
+DS
+DS
 as
 ej
 ej
@@ -13854,9 +13854,9 @@ by
 bK
 br
 aF
-dC
-dC
-dC
+DS
+DS
+DS
 as
 ej
 ej

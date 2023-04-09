@@ -186,3 +186,5 @@
 	var/native_fov = FOV_90_DEGREES
 	/// Lazy list of FOV traits that will apply a FOV view when handled.
 	var/list/fov_traits
+	//BLUEMON ADD - FUZZY
+	var/fuzzy = FALSE

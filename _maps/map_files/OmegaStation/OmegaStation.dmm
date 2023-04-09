@@ -41469,7 +41469,7 @@
 /obj/structure/cable/white{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock{
+/obj/machinery/door/airlock/security/glass{
 	name = "Law Office";
 	req_access_txt = "38";
 	icon = 'modular_bluemoon/smiley/aesthetics/airlock/icons/airlocks/station/command.dmi'

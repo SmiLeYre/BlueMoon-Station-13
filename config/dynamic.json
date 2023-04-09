@@ -36,7 +36,7 @@
 		},
 
 		"Blood Brothers": {
-			"weight": 0
+			"weight": 1
 		},
 
 		"Changelings": {
@@ -102,23 +102,23 @@
 		},
 
 		"Nightmare": {
-			"weight": 4
+			"weight": 2
 		},
 
 		"Space Dragon": {
-			"weight": 3
+			"weight": 2
 		},
 
 		"Abductors": {
-			"weight": 3
+			"weight": 2
 		},
 
 		"Swarmers": {
-			"weight": 3
+			"weight": 1
 		},
 
 		"Space Ninja": {
-			"weight": 4
+			"weight": 2
 		},
 
 		"Family Head Aspirants": {
@@ -127,6 +127,18 @@
 
 		"Spiders": {
 			"weight": 0
+		},
+
+		"Revenant": {
+			"weight": 1
+		},
+
+		"sentient_disease": {
+			"weight": 1
+		},
+
+		"Space Pirates": {
+			"weight": 2
 		}
 	},
 

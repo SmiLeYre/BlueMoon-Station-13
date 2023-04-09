@@ -55719,6 +55719,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/commons/fitness/recreation)
+"hLN" = (
+/obj/effect/landmark/start/stowaway,
+/turf/open/floor/plating,
+/area/maintenance/port/aft)
 "hMn" = (
 /obj/structure/table,
 /obj/item/paper_bin{
@@ -63085,15 +63089,14 @@
 /area/engineering/supermatter)
 "lJX" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock{
-	name = "Law Office";
-	req_access_txt = "38";
-	icon = 'modular_bluemoon/smiley/aesthetics/airlock/icons/airlocks/station/command.dmi'
-	},
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/door/airlock/security/glass{
+	name = "Law Office";
+	req_access_txt = "38"
+	},
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "lKa" = (
@@ -105075,7 +105078,7 @@ cug
 dyg
 bXE
 dDw
-bXE
+hLN
 rvd
 dux
 aaa

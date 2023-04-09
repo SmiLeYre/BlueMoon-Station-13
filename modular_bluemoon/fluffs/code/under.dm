@@ -4,8 +4,8 @@
 	anthro_mob_worn_overlay = 'modular_bluemoon/fluffs/icons/mob/clothing/under_digi.dmi'
 
 /obj/item/clothing/under/donator/bm/gorka
-	name = "Gorka"
-	desc = "Someone's combat uniform designed to be used in the mountains. Smells faintly of gunpowder and... blood?"
-	icon_state = "gorka"
-	item_state = "gorka"
+	name = "OMON Turtleneck"
+	desc = "Special Police Detachment uniform. Consists of an UBAC shirt combined with olive camouflage pattern pants. You can see some flags on uniform's shoulders, looks eerily familiar. Probably one of many human states."
+	icon_state = "omon"
+	item_state = "bl_suit"
 	can_adjust = TRUE

@@ -36,3 +36,35 @@
 	desc = "Бронированое пальто болотного цвета с кучей пуговиц. Ходят слухи, что новых уже давно не делают, а те что имеются - снимают с трупов для дальнейшего ношения. От него пованивает тухлым мясом."
 	icon_state = "cerberussuit_mob"
 	item_state = "cerberussuit_mob"
+
+/obj/item/Dina_Kit
+	name = "Kikimora Suit Kit"
+	desc = "A modkit for making a Elite Syndicate Hardsuit into a Kikimora MK1."
+	icon = 'icons/obj/vending_restock.dmi'
+	icon_state = "refill_donksoft"
+	var/product = /obj/item/clothing/suit/space/hardsuit/security/kikimora //what it makes
+	var/list/fromitem = list(/obj/item/clothing/suit/space/hardsuit/security) //what it needs
+
+/obj/item/Dina_Kit/afterattack(obj/O, mob/user as mob)
+	if(istype(O, product))
+		to_chat(user,"<span class='warning'>[O] is already modified!")
+		return
+	if(O.type in fromitem) //makes sure O is the right thing
+		new product(usr.loc) //spawns the product
+		user.visible_message("<span class='warning'>[user] modifies [O]!","<span class='warning'>You modify the [O]!")
+		qdel(O) //Gets rid of the baton
+		qdel(src) //gets rid of the kit
+	else
+		to_chat(user, "<span class='warning'> You can't modify [O] with this kit!</span>")
+/obj/item/clothing/head/helmet/space/hardsuit/security/kikimora
+	name = "ACS.Kikimora-MK2 Helmet"
+	desc = "Модифицированный штатный Бронескафандр Лорданианских пилотов для ВКД даже в боевых условиях. Выполняет все необходимые от него функции."
+	icon_state = "hardsuit0-kikimora"
+	hardsuit_type = "kikimora"
+
+/obj/item/clothing/suit/space/hardsuit/security/kikimora
+	name = "ACS.Kikimora-MK2 Hardsuit"
+	desc = "Модифицированный штатный Бронескафандр Лорданианских пилотов для ВКД даже в боевых условиях. Выполняет все необходимые от него функции."
+	icon_state = "hardsuit-kikimora"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/kikimora
+	mutantrace_variation = STYLE_NO_ANTHRO_ICON

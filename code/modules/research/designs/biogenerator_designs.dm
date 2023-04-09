@@ -13,7 +13,7 @@
 	make_reagents = list(/datum/reagent/consumable/milk = 10)
 	category = list("initial","Food")
 
-/datum/design/flour_sack
+/datum/design/soy_milk
 	name = "10u Soy Milk"
 	id = "soy_milk"
 	build_type = BIOGENERATOR

@@ -64958,13 +64958,13 @@
 /area/hallway/secondary/exit/departure_lounge)
 "xLC" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock{
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/structure/disposalpipe/segment,
+/obj/machinery/door/airlock/security/glass{
 	name = "Law Office";
 	req_access_txt = "38";
 	icon = 'modular_bluemoon/smiley/aesthetics/airlock/icons/airlocks/station/command.dmi'
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/structure/disposalpipe/segment,
 /turf/open/floor/plasteel/dark,
 /area/service/lawoffice)
 "xLL" = (

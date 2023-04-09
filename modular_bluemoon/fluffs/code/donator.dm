@@ -75,6 +75,12 @@
 	path = /obj/item/clothing/suit/donator/bm/cerberus_suit
 	ckeywhitelist = list("krashly", "stgs")
 
+/datum/gear/donator/bm/Dina_Kit
+	name = "Kikimora Suit Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/Dina_Kit
+	ckeywhitelist = list("xdinka")
+
 /datum/gear/donator/bm/Kovac_Gun
 	name = "Kovac Gun"
 	slot = ITEM_SLOT_BACKPACK

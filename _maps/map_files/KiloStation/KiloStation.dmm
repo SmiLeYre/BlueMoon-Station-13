@@ -6170,8 +6170,8 @@
 /area/security/processing)
 "akL" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/security{
-	name = "Courtroom";
+/obj/machinery/door/airlock/security/glass{
+	name = "Law Office";
 	req_access_txt = "38"
 	},
 /turf/open/floor/plasteel/dark,
@@ -49432,15 +49432,15 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/machinery/door/airlock/security{
-	name = "Law Office";
-	req_access_txt = "38"
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
+	},
+/obj/machinery/door/airlock/security/glass{
+	name = "Law Office";
+	req_access_txt = "38"
 	},
 /turf/open/floor/plasteel/dark,
 /area/service/lawoffice)

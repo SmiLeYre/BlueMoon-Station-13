@@ -77,6 +77,66 @@
 	push_data()
 	activate_pin(2)
 
+// Arcsine //
+
+/obj/item/integrated_circuit/trig/arcsine
+	name = "Arcsine (ASIN) circuit"
+	desc = "Takes a degree and outputs the arcsine of said degree."
+	icon_state = "asine"
+	inputs = list("A" = IC_PINTYPE_NUMBER)
+	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
+
+/obj/item/integrated_circuit/trig/arcsine/do_work()
+	pull_data()
+	var/result = null
+	var/A = get_pin_data(IC_INPUT, 1)
+	if(!isnull(A))
+		result = arcsin(A)
+
+	set_pin_data(IC_OUTPUT, 1, result)
+	push_data()
+	activate_pin(2)
+
+// Arccosine //
+
+/obj/item/integrated_circuit/trig/arccosine
+	name = "Arccosine (ACOS) circuit"
+	desc = "Takes a degree and outputs the arccosine of said degree."
+	icon_state = "acosine"
+	inputs = list("A" = IC_PINTYPE_NUMBER)
+	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
+
+/obj/item/integrated_circuit/trig/arccosine/do_work()
+	pull_data()
+	var/result = null
+	var/A = get_pin_data(IC_INPUT, 1)
+	if(!isnull(A))
+		result = arccos(A)
+
+	set_pin_data(IC_OUTPUT, 1, result)
+	push_data()
+	activate_pin(2)
+
+// Arctangent //
+
+/obj/item/integrated_circuit/trig/arctangent
+	name = "Arctangent (ATG) circuit"
+	desc = "Takes a degree and outputs the arctangent of said degree."
+	icon_state = "atangent"
+	inputs = list("A" = IC_PINTYPE_NUMBER)
+	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
+
+/obj/item/integrated_circuit/trig/arctangent/do_work()
+	pull_data()
+	var/result = null
+	var/A = get_pin_data(IC_INPUT, 1)
+	if(!isnull(A))
+		result = arctan(A)
+
+	set_pin_data(IC_OUTPUT, 1, result)
+	push_data()
+	activate_pin(2)
+
 // Cosecant //
 
 /obj/item/integrated_circuit/trig/cosecant
