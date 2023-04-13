@@ -1419,7 +1419,7 @@
 /area/solars/tarkon)
 "hu" = (
 /obj/effect/turf_decal/caution/stand_clear,
-/turf/open/floor/iron/airless,
+/turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/storage)
 "hw" = (
 /obj/machinery/light/dim/directional/west,
@@ -1954,7 +1954,7 @@
 /turf/open/floor/plasteel/cult,
 /area/ruin/space/has_grav/port_tarkon/cargo)
 "jW" = (
-/turf/open/floor/iron/airless,
+/turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/storage)
 "jY" = (
 /turf/closed/wall/mineral/cult/artificer,
@@ -3289,7 +3289,7 @@
 /obj/effect/turf_decal/trimline/yellow/filled/warning{
 	dir = 8
 	},
-/turf/open/floor/iron/airless,
+/turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/storage)
 "qi" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6839,7 +6839,7 @@
 /obj/effect/turf_decal/trimline/yellow/filled/warning{
 	dir = 4
 	},
-/turf/open/floor/iron/airless,
+/turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/storage)
 "ID" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
@@ -7442,7 +7442,7 @@
 /obj/effect/turf_decal/trimline/yellow/filled/warning{
 	dir = 4
 	},
-/turf/open/floor/iron/airless,
+/turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/storage)
 "KO" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
@@ -7571,7 +7571,7 @@
 	name = "External Bay Shutters"
 	},
 /obj/effect/turf_decal/trimline/yellow/filled/warning,
-/turf/open/floor/iron/airless,
+/turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/storage)
 "Lp" = (
 /obj/structure/closet/emcloset,
@@ -8701,7 +8701,7 @@
 /obj/effect/turf_decal/trimline/yellow/filled/warning{
 	dir = 8
 	},
-/turf/open/floor/iron/airless,
+/turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/storage)
 "RH" = (
 /obj/effect/turf_decal/tile/purple/half,
