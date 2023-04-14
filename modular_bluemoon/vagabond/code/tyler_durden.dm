@@ -2,7 +2,6 @@
 
 /datum/quirk/imaginary_person
 	name = "Вторая личность"
-	desc = "
 	desc = "У вас появился дружок в голове. Кто знает, поможет он вам, или нет... Только не соглашайтесь на его предложение сделать клуб!"
 	value = 0
 	mob_trait = TRAIT_IMAGINARYPERSON
