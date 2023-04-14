@@ -34,6 +34,7 @@
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 
 		/obj/item/clothing/mask/gas/sechailer=1,\
+		/obj/item/storage/ifak=1,\
 		/obj/item/ammo_box/magazine/wt550m9=3)
 	l_pocket = /obj/item/switchblade
 
@@ -54,6 +55,7 @@
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/melee/baton/loaded=1,\
 		/obj/item/clothing/mask/gas/sechailer/swat=1,\
+		/obj/item/storage/ifak=1,\
 		/obj/item/ammo_box/magazine/wt550m9=3)
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber
 
@@ -64,6 +66,7 @@
 		/obj/item/melee/baton/loaded=1,\
 		/obj/item/clothing/mask/gas/sechailer/swat=1,\
 		/obj/item/ammo_box/magazine/m556=3,\
+		/obj/item/storage/ifak=1,\
 		/obj/item/gun/energy/pulse/pistol/loyalpin=1)
 
 /datum/outfit/ert/security
@@ -79,6 +82,7 @@
 		/obj/item/storage/box/handcuffs=1,\
 		/obj/item/clothing/mask/gas/sechailer=1,\
 		/obj/item/ammo_box/magazine/wt550m9=3,\
+		/obj/item/storage/ifak=1,\
 		/obj/item/kitchen/knife/combat=1)
 
 /datum/outfit/ert/security/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
@@ -99,6 +103,7 @@
 		/obj/item/storage/box/handcuffs=1,\
 		/obj/item/clothing/mask/gas/sechailer/swat=1,\
 		/obj/item/melee/baton/loaded=1,\
+		/obj/item/storage/ifak=1,\
 		/obj/item/ammo_box/magazine/wt550m9=3)
 
 /datum/outfit/ert/security/alert/red
@@ -109,6 +114,7 @@
 		/obj/item/clothing/mask/gas/sechailer/swat=1,\
 		/obj/item/melee/baton/loaded=1,\
 		/obj/item/ammo_box/magazine/m556=3,\
+		/obj/item/storage/ifak=1,\
 		/obj/item/gun/energy/pulse/carbine/loyalpin=1)
 
 /datum/outfit/ert/medic
@@ -174,6 +180,7 @@
 		/obj/item/melee/baton/loaded=1,\
 		/obj/item/clothing/mask/gas/sechailer=1,\
 		/obj/item/ammo_box/magazine/wt550m9=3,\
+		/obj/item/storage/ifak=1,\
 		/obj/item/construction/rcd/loaded=1)
 
 /datum/outfit/ert/engineer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
@@ -194,6 +201,7 @@
 		/obj/item/melee/baton/loaded=1,\
 		/obj/item/clothing/mask/gas/sechailer/swat=1,\
 		/obj/item/ammo_box/magazine/wt550m9=3,\
+		/obj/item/storage/ifak=1,\
 		/obj/item/construction/rcd/combat=1)
 
 /datum/outfit/ert/engineer/alert/red
@@ -204,6 +212,7 @@
 		/obj/item/clothing/mask/gas/sechailer/swat=1,\
 		/obj/item/gun/energy/pulse/pistol/loyalpin=1,\
 		/obj/item/ammo_box/magazine/m556=3,\
+		/obj/item/storage/ifak=1,\
 		/obj/item/construction/rcd/combat=1)
 
 /datum/outfit/ert/greybois
@@ -274,6 +283,7 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,
 		/obj/item/clothing/mask/gas/sechailer=1,
+		/obj/item/storage/ifak=1,\
 		/obj/item/ammo_box/magazine/smgm45=3)
 
 /datum/outfit/ert/security/inquisitor
@@ -288,6 +298,7 @@
 		/obj/item/clothing/mask/gas/sechailer=1,
 		/obj/item/ammo_box/magazine/smgm45=3,\
 		/obj/item/melee/baton/loaded=1,
+		/obj/item/storage/ifak=1,\
 		/obj/item/construction/rcd/loaded=1)
 
 /datum/outfit/ert/medic/inquisitor
@@ -327,6 +338,7 @@
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,
 		/obj/item/nullrod=1,
 		/obj/item/clothing/mask/gas/sechailer=1,
+		/obj/item/storage/ifak=1,\
 		/obj/item/ammo_box/magazine/smgm45=3,
 		)
 
@@ -340,5 +352,6 @@
 		/obj/item/grenade/chem_grenade/holy=1,
 		/obj/item/nullrod=1,
 		/obj/item/clothing/mask/gas/sechailer=1,
+		/obj/item/storage/ifak=1,\
 		/obj/item/ammo_box/magazine/m556=3,
 		)

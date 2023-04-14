@@ -21,6 +21,9 @@
 	icon_state = "cargo"
 	item_state = "lb_suit"
 	alt_covers_chest = TRUE
+	unique_reskin = list(
+		"Alt" = list("icon_state" = "cargo_alt")
+	)
 
 /obj/item/clothing/under/rank/cargo/util
 	name = "cargo utility uniform"

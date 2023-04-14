@@ -148,7 +148,8 @@
 	icon_state = "warden_jacket"
 	unique_reskin = list(
 		"Jacket" = list("icon_state" = "warden_jacket"),
-		"Distinguish Jacket" = list("icon_state" = "warden_jacket_newtg")
+		"Distinguish Jacket" = list("icon_state" = "warden_jacket_newtg"),
+		"Syndie Warden Jacket" = list("icon_state" = "warden_syndie")
 	)
 
 /obj/item/clothing/suit/armor/vest/warden/navyblue

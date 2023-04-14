@@ -41,6 +41,9 @@
 	item_state = "engi_suit"
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 10, FIRE = 60, ACID = 20, WOUND = 5)
 	resistance_flags = NONE
+	unique_reskin = list(
+		"Alt" = list("icon_state" = "eng_alt")
+	)
 
 /obj/item/clothing/under/rank/engineering/engineer/mechanic
 	name = "mechanic's jumpsuit"

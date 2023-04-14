@@ -20,6 +20,12 @@
 	icon_state = "rsecurity"
 	item_state = "r_suit"
 	armor = list(MELEE = 10, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 30, ACID = 30, WOUND = 10)
+	unique_reskin = list(
+		"Alt" = list("icon_state" = "security_alt"),
+		"Blue" = list("icon_state" = "security_black"),
+		"White" = list("icon_state" = "security_white")
+	)
+
 
 /obj/item/clothing/under/rank/security/officer/util
 	name = "security utility uniform"

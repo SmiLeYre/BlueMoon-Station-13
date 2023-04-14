@@ -31,8 +31,7 @@
 	desc = "To summon your own steel titan."
 
 /obj/item/choice_beacon/ert_mech/generate_display_names()
-	var/static/list/ert_mech_list = list("Savannah-Ivanov" = /obj/vehicle/sealed/mecha/combat/savannah_ivanov,
-		"Marauder" = /obj/vehicle/sealed/mecha/combat/marauder/loaded,
+	var/static/list/ert_mech_list = list("Marauder" = /obj/vehicle/sealed/mecha/combat/marauder/loaded,
 		"Seraph" = /obj/vehicle/sealed/mecha/combat/marauder/seraph)
 	if(!ert_mech_list)
 		ert_mech_list = list()

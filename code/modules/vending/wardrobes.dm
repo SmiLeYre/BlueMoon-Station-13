@@ -422,6 +422,7 @@
 					/obj/item/clothing/suit/chaplain/pharaoh = 2,
 					/obj/item/clothing/head/nemes = 1,
 					/obj/item/clothing/head/pharaoh = 1,
+					/obj/item/clothing/neck/tie/cross = 7,
 					/obj/item/storage/fancy/candle_box = 3)
 	premium = list(/obj/item/toy/plush/plushvar = 1,
 					/obj/item/toy/plush/narplush = 1)

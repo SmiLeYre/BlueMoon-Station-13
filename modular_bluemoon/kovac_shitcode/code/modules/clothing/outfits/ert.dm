@@ -12,6 +12,7 @@
 		/obj/item/clothing/mask/gas/sechailer/swat=1,\
 		/obj/item/flamethrower/full/tank=1,\
 		/obj/machinery/igniter=1,\
+		/obj/item/storage/ifak=1,\
 		/obj/item/tank/internals/plasma=3)
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber
 
@@ -32,10 +33,11 @@
 	glasses = /obj/item/clothing/glasses/thermal/eyepatch
 	back = /obj/item/storage/backpack/security
 	belt = /obj/item/storage/belt/grenade/fire_grenade
-	r_hand = /obj/item/flamethrower/full/tank
+	r_hand = /obj/item/flamethrower/full/tank/m240
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/clothing/mask/gas/sechailer=1,\
 		/obj/machinery/igniter=1,\
+		/obj/item/storage/ifak=1,\
 		/obj/item/tank/internals/plasma=3)
 
 /datum/outfit/ert/firesquad_trooper/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
@@ -64,6 +66,7 @@
 		/obj/item/choice_beacon/ert_mech=1,\
 		/obj/item/storage/box/syndie_kit/revolver=1,\
 		/obj/item/grenade/plastic/x4=1,
+		/obj/item/storage/ifak=1,\
 		/obj/item/ammo_box/magazine/m12g/slug=3)
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber
 
@@ -88,6 +91,7 @@
 	l_hand = /obj/item/melee/powerfist
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/clothing/mask/gas/sechailer=1,\
+		/obj/item/storage/ifak=1,\
 		/obj/item/ammo_box/magazine/m556=3)
 
 /datum/outfit/ert/heavysquad_trooper/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
@@ -111,6 +115,7 @@
 	r_hand = /obj/item/gun/ballistic/automatic/l6_saw/unrestricted
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/clothing/mask/gas/sechailer=1,\
+		/obj/item/storage/ifak=1,\
 		/obj/item/ammo_box/magazine/mm712x82=2)
 
 /datum/outfit/ert/heavysquad_machinegun/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
@@ -139,6 +144,7 @@
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/clothing/mask/gas/sechailer=1,\
 		/obj/item/gun/ballistic/revolver/mateba=1,
+		/obj/item/storage/ifak=1,\
 		/obj/item/ammo_box/magazine/vss_mag=2)
 
 /datum/outfit/ert/ert_russian_soldier/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
@@ -170,6 +176,7 @@
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/clothing/mask/gas/sechailer=1,\
 		/obj/item/storage/box/syndie_kit/revolver=1,\
+		/obj/item/storage/ifak=1,\
 		/obj/item/ammo_box/magazine/mm712x82=1)
 
 /datum/outfit/ert/ert_russian_leader/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
