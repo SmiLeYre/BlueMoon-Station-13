@@ -4036,6 +4036,8 @@
 #include "modular_bluemoon\SmiLeY\self_actualization_device\code\self_actualization_device.dm"
 #include "modular_bluemoon\SmiLeY\Syndie_edits\code\syndie_edits.dm"
 #include "modular_bluemoon\vagabond\code\beast_spirit.dm"
+#include "modular_bluemoon\vagabond\code\trenchcoats_and_shit.dm"
+#include "modular_bluemoon\vagabond\code\tyler_durden.dm"
 #include "modular_bluemoon\vagabond\code\wheelchair_resprite.dm"
 #include "modular_bluemoon\vagabond\code\modules\mob\dead\new_player\sprite_accessories\tails.dm"
 #include "modular_citadel\code\datums\components\souldeath.dm"
