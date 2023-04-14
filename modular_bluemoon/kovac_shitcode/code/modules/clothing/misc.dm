@@ -23,6 +23,13 @@
 		"Chest 2 Bloody" = list("icon_state" = "chestb")
 	)
 
+
+/obj/item/clothing/under/rank/security/officer/urban_camo
+	name = "urban camouflage uniform"
+	desc = "an urban painted military suit, developed the Bibis&Co. Usually associated with CEHU and LonoMith PMC's"
+	icon_state = "urban_camo"
+	item_state = "urban_camo"
+
 /datum/gear/neck/cross
 	name = "Christian Cross Necklace"
 	subcategory = LOADOUT_SUBCATEGORY_NECK_TIE
@@ -32,3 +39,8 @@
 	name = "Bandage wraps"
 	subcategory = LOADOUT_SUBCATEGORY_NECK_TIE
 	path = /obj/item/clothing/neck/tie/bandagewraps
+
+/datum/gear/neck/suspenders
+	name = "Suspenders"
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	path = /obj/item/clothing/suit/suspenders

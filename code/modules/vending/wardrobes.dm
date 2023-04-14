@@ -30,6 +30,7 @@
 					/obj/item/clothing/mask/gas/sechailer = 4,
 					/obj/item/clothing/under/rank/security/officer/skirt = 5,
 					/obj/item/clothing/under/rank/security/officer/grey = 5,
+					/obj/item/clothing/under/rank/security/officer/urban_camo = 3,
 					/obj/item/clothing/under/pants/khaki = 5,
 					/obj/item/clothing/suit/toggle/labcoat/depjacket/sec = 5,
 					/obj/item/clothing/suit/armor/secjacket = 5,

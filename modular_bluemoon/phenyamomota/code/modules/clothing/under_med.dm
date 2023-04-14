@@ -46,6 +46,9 @@
 	icon = 'modular_bluemoon/phenyamomota/icon/obj/clothing/under.dmi'
 	mob_overlay_icon = 'modular_bluemoon/phenyamomota/icon/mob/clothing/under.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/phenyamomota/icon/mob/clothing/under_digi.dmi'
+	unique_reskin = list(
+		"Alt" = list("icon_state" = "paramed_alt")
+	)
 
 /obj/item/clothing/under/rank/medical/paramedic/light
 	icon_state = "paramedic_light"
