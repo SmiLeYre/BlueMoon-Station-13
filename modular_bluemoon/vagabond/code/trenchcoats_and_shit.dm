@@ -24,6 +24,6 @@
 	cost = 2
 
 /datum/gear/glasses/sunglass
-	name = "Blindfold"
+	name = "Sunglasses"
 	path = /obj/item/clothing/glasses/sunglasses
 	cost = 3
