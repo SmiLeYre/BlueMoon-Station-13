@@ -133,22 +133,27 @@
 
 // Helpers
 
+/**
+ * Called in most atmos processes and gas handling situations, update the parents pipelines of the devices connected to the source component
+ * This way gases won't get stuck
+ */
 /obj/machinery/atmospherics/components/proc/update_parents()
+	if(!SSair.initialized)
+		return
 	for(var/i in 1 to device_type)
 		var/datum/pipeline/parent = parents[i]
 		if(!parent)
-			stack_trace("Component is missing a pipenet! Rebuilding...")
+			WARNING("Component is missing a pipenet! Rebuilding...")
 			SSair.add_to_rebuild_queue(src)
-		parent.update = 1
+		else
+			parent.update = TRUE
 
 /obj/machinery/atmospherics/components/returnPipenets()
 	. = list()
 	for(var/i in 1 to device_type)
 		. += returnPipenet(nodes[i])
 
-
 // UI Stuff
-
 
 /obj/machinery/atmospherics/components/ui_status(mob/user)
 	if(allowed(user))
