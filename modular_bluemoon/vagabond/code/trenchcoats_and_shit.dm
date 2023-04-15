@@ -27,3 +27,4 @@
 	name = "Sunglasses"
 	path = /obj/item/clothing/glasses/sunglasses
 	cost = 3
+	
