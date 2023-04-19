@@ -159,4 +159,4 @@
 	light_color = COLOR_MOSTLY_PURE_RED
 
 /obj/item/vending_refill/wardrobe/hos_wardrobe
-	machine_name = "HOSDrobe"	
+	machine_name = "HOSDrobe"
