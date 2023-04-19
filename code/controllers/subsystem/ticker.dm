@@ -528,7 +528,7 @@ SUBSYSTEM_DEF(ticker)
 			SSvote.initiate_vote("dynamic", "server", display = NONE, votesystem = SCORE_VOTING, forced = TRUE,vote_time = 20 MINUTES)
 		else
 			SSvote.initiate_vote("roundtype", "server", display = NONE, votesystem = PLURALITY_VOTING, forced=TRUE, \
-			vote_time = (CONFIG_GET(flag/modetier_voting) ? 1 MINUTES : 20 MINUTES))
+			vote_time = CONFIG_GET(number/lobby_countdown) * 10 - 20 SECONDS) //BLUEMOON CHANGE, WAS vote_time = (CONFIG_GET(flag/modetier_voting) ? 1 MINUTES : 20 MINUTES))
 
 /datum/controller/subsystem/ticker/Recover()
 	current_state = SSticker.current_state
