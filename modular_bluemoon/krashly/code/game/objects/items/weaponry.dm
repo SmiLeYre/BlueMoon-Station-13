@@ -16,6 +16,16 @@
 	item_state = "bastard"
 	lefthand_file = 'modular_bluemoon/krashly/icons/mob/inhands/weapons/lefthand.dmi'
 	righthand_file = 'modular_bluemoon/krashly/icons/mob/inhands/weapons/righthand.dmi'
+	force = 35
+
+/obj/item/claymore/baron
+	name = "silver sabre"
+	desc = "A silver sabre with patterns on its blade and handle. Dried blood on the edge of the blade is frightening."
+	icon = 'modular_bluemoon/krashly/icons/obj/weapons/weapons.dmi'
+	icon_state = "sabre"
+	item_state = "sabre"
+	lefthand_file = 'modular_bluemoon/krashly/icons/mob/inhands/weapons/lefthand.dmi'
+	righthand_file = 'modular_bluemoon/krashly/icons/mob/inhands/weapons/righthand.dmi'
 	force = 40
 
 /obj/item/spear/cerberus
@@ -50,38 +60,14 @@
 	lefthand_file = 'modular_bluemoon/krashly/icons/mob/inhands/weapons/lefthand.dmi'
 	righthand_file = 'modular_bluemoon/krashly/icons/mob/inhands/weapons/righthand.dmi'
 
-/obj/item/clothing/head/donator/bm/cerberus_helmet/armored
-	armor = list(MELEE = 45, BULLET = 30, LASER = 30,ENERGY = 10, BOMB = 25, BIO = 0, RAD = 0, FIRE = 70, ACID = 90, WOUND = 10)
-	cold_protection = HEAD
-	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
-	heat_protection = HEAD
-	max_heat_protection_temperature = SPACE_HELM_MAX_TEMP_PROTECT
-	clothing_flags = STOPSPRESSUREDAMAGE
-	strip_delay = 80
-
-/obj/item/clothing/suit/donator/bm/cerberus_suit/armored
-	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	armor = list(MELEE = 45, BULLET = 30, LASER = 30, ENERGY = 10, BOMB = 25, BIO = 0, RAD = 0, FIRE = 70, ACID = 90, WOUND = 10)
-	cold_protection = CHEST|GROIN|LEGS|ARMS
-	heat_protection = CHEST|GROIN|LEGS|ARMS
-	strip_delay = 80
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-
-/obj/item/clothing/suit/donator/bm/cerberus_suit/armored/censor
-	name = "censor's coat"
-	desc = "A red overcoat with the coat of arms of Ravenheart in the middle. It has steel plates sewn into it."
-	icon = 'modular_bluemoon/krashly/icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
-	icon_state = "censor"
-	item_state = "censor"
-
-/obj/item/clothing/suit/donator/bm/cerberus_suit/armored/baron
-	name = "gorgeous red outfit"
-	desc = "Lush black outfit with red stripes. Looks definitely very rich."
-	icon = 'modular_bluemoon/krashly/icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
-	icon_state = "baron"
-	item_state = "baron"
+/obj/item/shield/riot/roman/paladin
+	name = "paladin shield"
+	desc = "steel shield with a with the cross of the Gray Post Christian Church in the middle."
+	icon = 'modular_bluemoon/krashly/icons/obj/weapons/weapons.dmi'
+	icon_state = "paladin"
+	item_state = "paladin"
+	lefthand_file = 'modular_bluemoon/krashly/icons/mob/inhands/weapons/lefthand.dmi'
+	righthand_file = 'modular_bluemoon/krashly/icons/mob/inhands/weapons/righthand.dmi'
 
 /obj/item/gun/energy/taser/bolestrel
 	name = "sparq"
@@ -111,3 +97,12 @@
 	tracer_type = null
 	muzzle_type = null
 	impact_type = null
+
+/obj/item/candle/infinite/candlestick
+	name = "candlestick"
+	desc = "Candlestick with candles. Smells tasty."
+	icon = 'modular_bluemoon/krashly/icons/obj/weapons/weapons.dmi'
+	icon_state = "candle1_lit"
+	item_state = "candle1_lit"
+	lefthand_file = 'modular_bluemoon/krashly/icons/mob/inhands/weapons/lefthand.dmi'
+	righthand_file = 'modular_bluemoon/krashly/icons/mob/inhands/weapons/righthand.dmi'

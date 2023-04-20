@@ -44,6 +44,7 @@
 	item_state = "metrocop_helmet"
 	icon = 'modular_splurt/icons/obj/clothing/head.dmi'
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/head.dmi'
+	can_flashlight = TRUE
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	flags_inv = HIDEHAIR | HIDEEYES | HIDEFACE | HIDEFACIALHAIR
 

@@ -172,7 +172,7 @@
 		GLOB.bombers += boom_message
 		message_admins(boom_message)
 		P.firer.log_message("triggered a fueltank explosion via projectile.", LOG_ATTACK)
-		boom()
+		explode() //Bluemoon change
 
 /obj/structure/reagent_dispensers/fueltank/attackby(obj/item/I, mob/living/user, params)
 	if(I.tool_behaviour == TOOL_WELDER)
@@ -200,7 +200,7 @@
 			message_admins(message_admins)
 
 			user.log_message("triggered a fueltank explosion via welding tool.", LOG_ATTACK)
-			boom()
+			explode() //Bluemoon change
 		return
 	return ..()
 
