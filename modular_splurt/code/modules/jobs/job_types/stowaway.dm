@@ -29,8 +29,8 @@ GLOBAL_LIST_EMPTY(roundstart_stowaway)
 		"Jigolo"
 		)
 
-/datum/job/stowaway/get_latejoin_spawn_point()
-	return get_roundstart_spawn_point()
+/datum/job/stowaway/get_roundstart_spawn_point()
+	return get_latejoin_spawn_point()
 
 /datum/outfit/job/stowaway/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()
