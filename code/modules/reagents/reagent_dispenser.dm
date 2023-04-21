@@ -28,9 +28,38 @@
 		reagents.add_reagent(reagent_id, tank_volume)
 	. = ..()
 
+//BLUEMOON CHANGE - FUELTANK
 /obj/structure/reagent_dispensers/proc/boom()
-	visible_message("<span class='danger'>\The [src] ruptures!</span>")
-	chem_splash(loc, 5, list(reagents))
+	var/datum/reagent/fuel/volatiles = reagents.has_reagent(/datum/reagent/fuel)
+	var/fuel_amt = 0
+	if(istype(volatiles) && volatiles.volume >= 25)
+		fuel_amt = volatiles.volume
+		reagents.del_reagent(/datum/reagent/fuel) // not actually used for the explosion
+	if(reagents.total_volume)
+		if(!fuel_amt)
+			visible_message(span_danger("\The [src] ruptures!"))
+		// Leave it up to future terrorists to figure out the best way to mix reagents with fuel for a useful boom here
+		chem_splash(loc, null, 2 + (reagents.total_volume + fuel_amt) / 1000, list(reagents), extra_heat=(fuel_amt / 50),adminlog=(fuel_amt<25))
+
+	if(fuel_amt) // with that done, actually explode
+		visible_message(span_danger("\The [src] explodes!"))
+		// old code for reference:
+		// standard fuel tank = 1000 units = heavy_impact_range = 1, light_impact_range = 5, flame_range = 5
+		// big fuel tank = 5000 units = devastation_range = 1, heavy_impact_range = 2, light_impact_range = 7, flame_range = 12
+		// It did not account for how much fuel was actually in the tank at all, just the size of the tank.
+		// I encourage others to better scale these numbers in the future.
+		// As it stands this is a minor nerf in exchange for an easy bombing technique working that has been broken for a while.
+		switch(volatiles.volume)
+			if(25 to 150)
+				explosion(src, light_impact_range = 1, flame_range = 2)
+			if(150 to 300)
+				explosion(src, light_impact_range = 2, flame_range = 3)
+			if(300 to 750)
+				explosion(src, heavy_impact_range = 1, light_impact_range = 3, flame_range = 5)
+			if(750 to 1500)
+				explosion(src, heavy_impact_range = 1, light_impact_range = 4, flame_range = 6)
+			if(1500 to INFINITY)
+				explosion(src, devastation_range = 1, heavy_impact_range = 2, light_impact_range = 6, flame_range = 8)
 	qdel(src)
 
 /obj/structure/reagent_dispensers/deconstruct(disassembled = TRUE)
