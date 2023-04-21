@@ -3,8 +3,8 @@
 /obj/machinery/computer/shuttle/lf_haron{
 	dir = 1
 	},
-/turf/open/floor/lf_haron/bar3{
-	dir = 1
+/turf/open/floor/lf_haron/bar2_red{
+	dir = 4
 	},
 /area/shuttle/lf_haron)
 "bL" = (
@@ -16,10 +16,11 @@
 /turf/closed/wall/r_wall/lf_haron/second,
 /area/shuttle/lf_haron)
 "dC" = (
-/obj/machinery/computer/operating{
-	dir = 8
+/obj/structure/table/reinforced,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/turf/open/floor/lf_haron/polar{
+	dir = 6
 	},
-/turf/open/floor/lf_haron/shuttle6,
 /area/shuttle/lf_haron)
 "dP" = (
 /obj/structure/table/reinforced,
@@ -37,6 +38,13 @@
 	dir = 5
 	},
 /area/shuttle/lf_haron)
+"fF" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
+/turf/open/floor/lf_haron/shuttle6,
+/area/shuttle/lf_haron)
 "fH" = (
 /turf/open/floor/lf_haron/bar3{
 	dir = 8
@@ -45,13 +53,14 @@
 "gD" = (
 /turf/open/floor/lf_haron/shuttle3,
 /area/shuttle/lf_haron)
+"gY" = (
+/turf/closed/wall/r_wall/lf_haron{
+	dir = 1
+	},
+/area/shuttle/lf_haron)
 "he" = (
-/obj/structure/window/reinforced/fulltile/lf_haron{
-	CanAtmosPassVertical = -1
-	},
-/turf/open/floor/lf_haron/bar2_red{
-	dir = 4
-	},
+/obj/structure/reagent_dispensers/watertank,
+/turf/open/floor/lf_haron/bar3,
 /area/shuttle/lf_haron)
 "jl" = (
 /obj/structure/table/reinforced,
@@ -78,12 +87,9 @@
 /area/shuttle/lf_haron)
 "jO" = (
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/food/snacks/meat/steak,
-/obj/item/reagent_containers/food/snacks/meat/steak,
-/obj/item/reagent_containers/food/snacks/meat/steak,
-/obj/item/lighter/gold,
 /obj/item/reagent_containers/food/drinks/drinkingglass,
 /obj/item/reagent_containers/food/drinks/drinkingglass,
+/obj/item/storage/box/matches,
 /turf/open/floor/lf_haron/f7{
 	dir = 9
 	},
@@ -100,6 +106,7 @@
 /obj/structure/closet/crate/wooden,
 /obj/item/mop,
 /obj/item/reagent_containers/glass/bucket/wood,
+/obj/item/storage/fancy/cigarettes/cigars,
 /turf/open/floor/lf_haron/f7{
 	dir = 9
 	},
@@ -108,10 +115,14 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/structure/reagent_dispensers/watertank,
-/turf/open/floor/lf_haron/f7{
-	dir = 9
-	},
+/obj/structure/closet/secure_closet/freezer,
+/obj/item/reagent_containers/food/snacks/meat/steak,
+/obj/item/reagent_containers/food/snacks/meat/steak,
+/obj/item/reagent_containers/food/snacks/meat/steak,
+/obj/item/reagent_containers/glass/beaker/waterbottle/large,
+/obj/item/reagent_containers/glass/beaker/waterbottle/large,
+/obj/item/reagent_containers/glass/beaker/waterbottle/large,
+/turf/open/floor/lf_haron/bar3,
 /area/shuttle/lf_haron)
 "mD" = (
 /turf/closed/wall/r_wall/lf_haron/diagonal{
@@ -196,6 +207,8 @@
 /obj/item/gun/energy/taser/bolestrel,
 /obj/item/gun/energy/taser/bolestrel,
 /obj/item/gun/energy/taser/bolestrel,
+/obj/item/storage/fancy/cigarettes/cigars,
+/obj/item/storage/box/matches,
 /turf/open/floor/lf_haron/bar2{
 	dir = 4
 	},
@@ -214,7 +227,7 @@
 /obj/item/clothing/accessory/ring/diamond,
 /obj/item/clothing/gloves/evening,
 /obj/item/clothing/gloves/color/white,
-/turf/open/floor/lf_haron/bar3{
+/turf/open/floor/lf_haron/bar2_red{
 	dir = 4
 	},
 /area/shuttle/lf_haron)
@@ -227,7 +240,9 @@
 	dir = 4;
 	pixel_x = -7
 	},
-/turf/open/floor/lf_haron/polar,
+/turf/open/floor/lf_haron/polar{
+	dir = 5
+	},
 /area/shuttle/lf_haron)
 "vW" = (
 /obj/machinery/door/airlock/external/lf_haron,
@@ -261,7 +276,7 @@
 /area/shuttle/lf_haron)
 "wl" = (
 /obj/machinery/door/window/northleft,
-/turf/open/floor/lf_haron/bar3{
+/turf/open/floor/lf_haron/bar2_red{
 	dir = 4
 	},
 /area/shuttle/lf_haron)
@@ -280,13 +295,15 @@
 /obj/item/radio/headset/syndicate/alt,
 /obj/item/gun/energy/taser/bolestrel,
 /obj/item/clothing/under/common,
-/obj/item/clothing/under/common,
 /obj/item/storage/backpack/satchel/lfwb,
 /obj/item/clothing/mask/gas/sechailer/syndicate,
+/obj/item/clothing/gloves/combat,
 /turf/open/floor/lf_haron/shuttle6,
 /area/shuttle/lf_haron)
 "wG" = (
-/turf/open/floor/lf_haron/shuttle6,
+/turf/open/floor/lf_haron/polar{
+	dir = 6
+	},
 /area/shuttle/lf_haron)
 "xa" = (
 /turf/closed/wall/r_wall/lf_haron{
@@ -351,9 +368,6 @@
 /obj/structure/closet/gimmick{
 	name = "closet"
 	},
-/obj/item/storage/firstaid/regular,
-/obj/item/storage/firstaid/regular,
-/obj/item/storage/firstaid/regular,
 /obj/item/storage/backpack/satchel/lfwb,
 /obj/item/clothing/shoes/laceup,
 /obj/item/clothing/under/aesculapius,
@@ -379,7 +393,9 @@
 /area/shuttle/lf_haron)
 "Fe" = (
 /obj/structure/chair/comfy/shuttle,
-/turf/open/floor/lf_haron/polar,
+/turf/open/floor/lf_haron/polar{
+	dir = 5
+	},
 /area/shuttle/lf_haron)
 "Hp" = (
 /obj/structure/chair/comfy/shuttle{
@@ -393,8 +409,8 @@
 /obj/machinery/computer/camera_advanced/shuttle_docker/lf_haron{
 	dir = 1
 	},
-/turf/open/floor/lf_haron/bar2{
-	dir = 1
+/turf/open/floor/lf_haron/bar2_red{
+	dir = 4
 	},
 /area/shuttle/lf_haron)
 "HS" = (
@@ -424,21 +440,32 @@
 /obj/item/clothing/under/baron,
 /obj/item/clothing/neck/baron,
 /obj/item/storage/backpack/satchel/lfwb,
-/turf/open/floor/lf_haron/bar3{
+/turf/open/floor/lf_haron/bar2_red{
 	dir = 4
 	},
 /area/shuttle/lf_haron)
 "Ke" = (
-/obj/structure/table/reinforced,
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/machinery/computer/operating{
+	dir = 8
+	},
 /turf/open/floor/lf_haron/shuttle6,
 /area/shuttle/lf_haron)
 "Ko" = (
 /obj/structure/table/optable,
-/turf/open/floor/lf_haron/shuttle6,
+/turf/open/floor/lf_haron/polar{
+	dir = 6
+	},
+/area/shuttle/lf_haron)
+"KL" = (
+/turf/closed/wall/r_wall/lf_haron{
+	dir = 4
+	},
+/area/shuttle/lf_haron)
+"Lm" = (
+/turf/closed/wall/r_wall/lf_haron,
 /area/shuttle/lf_haron)
 "Lp" = (
 /obj/machinery/door/airlock/external/lf_haron,
@@ -451,7 +478,7 @@
 	dir = 4
 	},
 /obj/machinery/door/window/northright,
-/turf/open/floor/lf_haron/bar3{
+/turf/open/floor/lf_haron/bar2_red{
 	dir = 4
 	},
 /area/shuttle/lf_haron)
@@ -476,14 +503,15 @@
 	dir = 9
 	},
 /area/shuttle/lf_haron)
+"MF" = (
+/obj/structure/closet/crate/freezer,
+/turf/open/floor/lf_haron/shuttle3,
+/area/shuttle/lf_haron)
 "NF" = (
 /turf/open/space/basic,
 /area/template_noop)
 "NK" = (
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/glass/beaker/waterbottle/large,
-/obj/item/reagent_containers/glass/beaker/waterbottle/large,
-/obj/item/reagent_containers/glass/beaker/waterbottle/large,
 /obj/item/storage/fancy/candle_box,
 /obj/item/kitchen/knife/butcher,
 /turf/open/floor/lf_haron/f7{
@@ -554,6 +582,11 @@
 	dir = 9
 	},
 /area/shuttle/lf_haron)
+"VH" = (
+/turf/open/floor/lf_haron/polar{
+	dir = 5
+	},
+/area/shuttle/lf_haron)
 "Wk" = (
 /turf/closed/wall/r_wall/lf_haron/diagonal{
 	dir = 8
@@ -582,15 +615,16 @@
 "Ya" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/box/handcuffs,
-/obj/item/lighter/gold,
+/obj/item/storage/box/matches,
+/obj/item/storage/fancy/cigarettes/cigars,
 /turf/open/floor/lf_haron/bar2_red,
 /area/shuttle/lf_haron)
 "YB" = (
 /obj/machinery/computer{
 	dir = 1
 	},
-/turf/open/floor/lf_haron/bar2{
-	dir = 1
+/turf/open/floor/lf_haron/bar2_red{
+	dir = 4
 	},
 /area/shuttle/lf_haron)
 "YI" = (
@@ -619,11 +653,11 @@ xa
 eY
 cA
 xa
-eY
-he
-ez
-he
+cA
 xa
+Av
+eY
+cA
 eY
 mD
 NF
@@ -643,11 +677,11 @@ HS
 Za
 us
 ez
-NF
+mD
 NF
 "}
 (3,1,1) = {"
-XE
+ez
 pc
 dP
 AI
@@ -658,14 +692,14 @@ gD
 gD
 gD
 gD
-sg
-cA
-NF
-NF
+AI
+AI
+ez
+mD
 "}
 (4,1,1) = {"
-NF
 wb
+MF
 gD
 gD
 fH
@@ -675,14 +709,14 @@ jB
 jO
 NK
 lR
-fH
-pc
-NF
-NF
+gD
+gD
+gD
+Lm
 "}
 (5,1,1) = {"
-NF
 ot
+fF
 dC
 Ko
 Ke
@@ -693,12 +727,12 @@ xa
 Av
 eY
 Lp
-ez
-NF
-NF
+Lm
+Lp
+gY
 "}
 (6,1,1) = {"
-Wk
+ez
 cA
 ez
 ez
@@ -709,10 +743,10 @@ Hp
 Hp
 YJ
 ez
-fH
-ez
-mD
-NF
+VH
+KL
+he
+KL
 "}
 (7,1,1) = {"
 US
@@ -726,10 +760,10 @@ gD
 gD
 gD
 qW
-EJ
+VH
 Ya
 ez
-mD
+ez
 "}
 (8,1,1) = {"
 ez
@@ -746,7 +780,7 @@ UL
 sg
 Fe
 YB
-ez
+cA
 "}
 (9,1,1) = {"
 vW
@@ -763,7 +797,7 @@ RS
 EL
 Fe
 ay
-he
+Wu
 "}
 (10,1,1) = {"
 ez
@@ -780,7 +814,7 @@ XI
 sg
 Fe
 HP
-ez
+pc
 "}
 (11,1,1) = {"
 US
@@ -794,7 +828,7 @@ rw
 pc
 Ja
 wl
-EJ
+VH
 YI
 ez
 Ig
@@ -811,7 +845,7 @@ eY
 ez
 sk
 LX
-EJ
+VH
 ez
 Ig
 NF

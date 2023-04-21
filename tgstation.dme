@@ -3979,6 +3979,7 @@
 #include "modular_bluemoon\kovac_shitcode\code\modules\mob\living\emotes.dm"
 #include "modular_bluemoon\kovac_shitcode\code\modules\vending\medical_additional.dm"
 #include "modular_bluemoon\krashly\code\game\machinery\doors\airlock_types.dm"
+#include "modular_bluemoon\krashly\code\game\hair_face.dm"
 #include "modular_bluemoon\krashly\code\game\objects\items\storage\backpack.dm"
 #include "modular_bluemoon\krashly\code\game\shuttles.dm"
 #include "modular_bluemoon\krashly\code\game\objects\items\item.dm"
