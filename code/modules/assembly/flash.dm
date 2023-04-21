@@ -2,7 +2,7 @@
 /obj/item/assembly/flash
 	name = "flash"
 	desc = "A powerful and versatile flashbulb device, with applications ranging from disorienting attackers to acting as visual receptors in robot production."
-	icon_state = "flash"
+	icon_state = "flashtool"
 	item_state = "flashtool"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
@@ -37,9 +37,9 @@
 	cut_overlays()
 	attached_overlays = list()
 	if(crit_fail)
-		icon_state = "flashtool_burnt"
-		add_overlay("flashburnt")
-		attached_overlays += "flashburnt"
+		icon_state = "flashtool"
+		add_overlay("_flashburnt")
+		attached_overlays += "_flashburnt"
 	if(flash)
 		add_overlay(flashing_overlay)
 		attached_overlays += flashing_overlay

@@ -64,5 +64,8 @@ When using time2text(), please use "DDD" to find the weekday. Refrain from using
 #define WORLDTIME2TEXT(format) GAMETIMESTAMP(format, world.time)
 #define WORLDTIMEOFDAY2TEXT(format) GAMETIMESTAMP(format, world.timeofday)
 #define TIME_STAMP(format, showds) showds ? "[WORLDTIMEOFDAY2TEXT(format)]:[world.timeofday % 10]" : WORLDTIMEOFDAY2TEXT(format)
-#define STATION_TIME(display_only, wtime) ((((wtime - SSticker.round_start_time) * SSticker.station_time_rate_multiplier) + SSticker.gametime_offset) % 864000) - (display_only? GLOB.timezoneOffset : 0)
+//BLUEMOON CHANGE START
+#define STATION_TIME(display_only, wtime) (((wtime - SSticker.round_start_time) + SSticker.gametime_offset) % 864000) - (display_only? GLOB.timezoneOffset : 0)
+// WAS - #define STATION_TIME(display_only, wtime) ((((wtime - SSticker.round_start_time) * SSticker.station_time_rate_multiplier) + SSticker.gametime_offset) % 864000) - (display_only? GLOB.timezoneOffset : 0)
+//BLUEMOON CHANGE END
 #define STATION_TIME_TIMESTAMP(format, wtime) time2text(STATION_TIME(TRUE, wtime), format)

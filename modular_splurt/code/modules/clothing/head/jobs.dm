@@ -38,12 +38,13 @@
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/head.dmi'
 
 /obj/item/clothing/head/helmet/metrocop
-	name = "civil protection helmet"
+	name = "Civil Protection Helmet"
 	desc = "Sadly lacks a working voice encoder."
 	icon_state = "metrocop_helmet"
 	item_state = "metrocop_helmet"
 	icon = 'modular_splurt/icons/obj/clothing/head.dmi'
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/head.dmi'
+	can_flashlight = TRUE
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	flags_inv = HIDEHAIR | HIDEEYES | HIDEFACE | HIDEFACIALHAIR
 

@@ -10,7 +10,7 @@
 // END_FILE_DIR
 
 // BEGIN_PREFERENCES
-//#define DEBUG — Надо.
+#define DEBUG
 // END_PREFERENCES
 
 // BEGIN_INCLUDE
@@ -19,6 +19,7 @@
 #include "code\__byond_version_compat.dm"
 #include "code\_compile_options.dm"
 #include "code\world.dm"
+#include "code\__BLUEMOONCODE\_DEFINES\time.dm"
 #include "code\__DEFINES\_auxtools.dm"
 #include "code\__DEFINES\_globals.dm"
 #include "code\__DEFINES\_protect.dm"
@@ -3980,7 +3981,6 @@
 #include "modular_bluemoon\krashly\code\game\machinery\doors\airlock_types.dm"
 #include "modular_bluemoon\krashly\code\game\objects\items\storage\backpack.dm"
 #include "modular_bluemoon\krashly\code\game\shuttles.dm"
-#include "modular_bluemoon\krashly\code\game\hair_face.dm"
 #include "modular_bluemoon\krashly\code\game\objects\items\item.dm"
 #include "modular_bluemoon\krashly\code\modules\clothing\neck.dm"
 #include "modular_bluemoon\krashly\code\game\objects\items\weaponry.dm"

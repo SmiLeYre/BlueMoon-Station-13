@@ -17,35 +17,6 @@
   - rscadd: Improves Moth in Command to be an improved version of Commander and Chief
   SpookyTheFox:
   - tweak: moved blueshift themed sec gear out of premium pricing.
-2023-01-04:
-  FeenieRU:
-  - tgs: has something to do with tgs
-  Kush1Push1:
-  - rscdel: "\u0413\u0430\u0437 copium \u0431\u043E\u043B\u044C\u0448\u0435 \u043D\
-      \u0435 \u043E\u0431\u0440\u0430\u0437\u0443\u0435\u0442\u0441\u044F \u043F\u0440\
-      \u0438 \u0440\u0430\u0441\u043F\u0430\u0434\u0435 \u0430\u0444\u0440\u043E\u0434\
-      \u0438\u0437\u0438\u0430\u043A\u0430 \u0432 \u0430\u0442\u043C\u043E\u0441\u0444\
-      \u0435\u0440\u0435."
-  PhenyaMomota:
-  - server: "\u0412\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0435 \u0441\u0438\u0441\
-      \u0442\u0435\u043C\u044B \u0434\u043E\u043D\u0430\u0442\u0435\u0440\u043E\u0432\
-      ."
-  - server: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u0434\u0438\
-      \u0440\u0435\u043A\u0442\u043E\u0440\u0438\u0438 \u0434\u043B\u044F \u043E\u043D\
-      \u043D\u044B\u0445."
-  SishTis:
-  - balance: "\u0414\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u044C \u0440\u0430\u0441\
-      \u043F\u0440\u043E\u0441\u0442\u0440\u0430\u043D\u0435\u043D\u0438\u044F \u0437\
-      \u0432\u0443\u043A\u0430 \u0443\u0434\u0443\u0448\u044C\u044F \u0443\u043C\u0435\
-      \u043D\u044C\u0448\u0435\u043D\u0430 \u0434\u043E 3 \u0442\u0430\u0439\u043B\
-      \u043E\u0432 \u0432\u043E\u043A\u0440\u0443\u0433 \u043F\u0435\u0440\u0441\u043E\
-      \u043D\u0430\u0436\u0430."
-2023-01-05:
-  FeenieRU:
-  - tgs: has something to do with tgs
-2023-01-07:
-  FeenieRU:
-  - tgs: has something to do with tgs
 2023-01-08:
   LeDrascol:
   - bugfix: Fixed techweb sequence break for Advanced Toolset Implant
@@ -70,8 +41,78 @@
   - code_imp: LPD's clothing burst is now a mob proc
   - bugfix: Fixed the late-join panel showing job slots twice
 2023-01-11:
-  sheetofseaweed:
-  - bugfix: fixed lich phylactery respawn
+  BongaTheProto:
+  - bugfix: Fixes gun reskins broken by the new reskin system
+  Seris02:
+  - bugfix: fixed gargoyles having sprites that are odd, along with sanity checks
+      and making the transition between living and statue seamless
+2023-01-12:
+  LeDrascol:
+  - refactor: Moved quirk action datums to a new file
+  - rscadd: Added a Plushmium Crate to cargo
+2023-01-13:
+  Guatolipo:
+  - rscadd: Added CART_CHEMISTRY access to cart-cmo
+  LeDrascol:
+  - tweak: Replaced three dangerous holodeck modes with harmless alternatives
+2023-01-14:
+  LeDrascol:
+  - bugfix: Fixed spelling mistakes in the interaction system
+  - rscadd: Added the Love to Life spray bottle
+  - tweak: Updated Plushmium Crate contents
+  - rscadd: 'Added implant: Rapid Disrobe'
+  - tweak: Nudists now start with a Rapid Disrobe implant
+  - rscadd: Added the Wallet of Holding
+2023-01-15:
+  BongaTheProto:
+  - rscadd: Adds nobl donator plushie
+  - rscadd: Adds a *poyo emote
+  Casper:
+  - bugfix: fixes telekinetic users from teleporting to stripper poles
+  - bugfix: infinite metal exploit
+  SandPoot:
+  - spellcheck: fixed a few typos.
+  - refactor: refactored skirt peeking.
+  - tweak: examine someone twice to actually peek their panties.
+2023-01-16:
+  SandPoot:
+  - rscadd: You can now allow interacting with your genitals through clothes.
+  - tweak: Modified sandstorm's spans (`<span class='x'>"...`) with the defines (`span_x("...`)
+2023-01-17:
+  BongaTheProto:
+  - code_imp: optimizes some genital related code
+  LeDrascol:
+  - code_imp: Added span defines for 'reallybig hypnophrase', 'big warning', 'header',
+      and 'umbra'
+  - refactor: All HTML spans are now defines-based
+  - tweak: Moved Autodoc techweb entry from Advanced Surgery to Advanced Surgery Tools
+  SishTis:
+  - rscadd: Addead keybinds to put/take items in/from suit storage and pockets slots.
+  zeroisthebiggay:
+  - spellcheck: You
+2023-01-18:
+  LeDrascol:
+  - tweak: Moved Autodoc techweb entry from Advanced Surgery to Advanced Surgery Tools
+  - tweak: Bluespace mining research is now behind Anomaly Research
+  - balance: Bluespace miners now require a bluespace anomaly core
+  SandPoot:
+  - balance: Maybe very small amounts of air aren't as aggressive with pushing stuff
+      around.
+  - balance: Way too much air can send you FLYING, maybe think twice about opening
+      that airlock/firelock now.
+  - imageadd: Added space wind image for air pushing stuff.
+2023-01-19:
+  LeDrascol:
+  - bugfix: Fixed spelling mistakes in server's clothing entries
+  - imageadd: Updated sprite for Chalice of Cum
+  - imagedel: Removed duplicate TG drink icons
+  - tweak: Liquid Panty Dropper now checks client prefs
+2023-01-20:
+  LeDrascol:
+  - rscadd: Added a surplus condom box to Kinkmates
+  Winter Schock:
+  - bugfix: Doll with monophobia dont get stress in someone vore belly
+  - bugfix: Blind doll with monophobia dont get stress while someone in 1 tile range
 2023-01-21:
   LeDrascol:
   - balance: Synthetic Lizardperson, Synthetic Anthropomorph, and IPC no longer experience
@@ -134,23 +175,12 @@
   - code_imp: Removed redundant definition of DNC quirk
   - tweak: Moved Research Rack from Data Theory to Biological Technology
 2023-01-26:
-  FeenieRU:
-  - rscadd: ERT operator sound
   Kush1Push1:
   - rscadd: Ported body markings for head; pilot and pilot jaw.
   ShamanSliph:
   - rscadd: 'Added new Quirk: Clothes Eater'
   - bugfix: Fixed insects getting infinite nutrient from chewing on clothes.
 2023-01-27:
-  FeenieRU:
-  - rscadd: Pirates announcer
-  - tgs: has something to do with tgs
-  - rscadd: Gas miners in cargo requests
-2023-01-29:
-  Dark-Umbrella:
-  - tgs: has something to do with tgs
-  Winter Schock:
-  - tweak: AK-47s for everyone have choice between arena mobs and really everyone
   AshTheDerg:
   - tweak: Modified Booze Shaker options
   - bugfix: fixed broken Borg Beer Shaker
@@ -179,9 +209,3 @@
   LeDrascol:
   - balance: Reduced the price of individual condoms from 40 to 10 credits
   - balance: Reduced the price of bulk condoms from 200 to 80 credits
-  FeenieRU:
-  - bugfix: "\u0430\u043D\u043E\u043D\u0441\u044B \u043F\u0438\u0440\u0430\u0442\u043E\
-      \u0432 \u0442\u0435\u043F\u0435\u0440\u044C \u0441\u043E\u0434\u0435\u0440\u0436\
-      \u0430\u0442 \u043D\u0430\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u043D\u0438\
-      \u0435 \u043A\u043E\u0440\u0430\u0431\u043B\u044F, \u041A\u0410\u041A \u041E\
-      \u041D\u041E \u0418 \u0411\u042B\u041B\u041E"
