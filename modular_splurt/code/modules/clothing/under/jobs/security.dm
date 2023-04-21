@@ -10,7 +10,7 @@
  */
 
 /obj/item/clothing/under/rank/security/officer/metrocop
-	name = "civil protection jumpsuit"
+	name = "Civil Protection Jumpsuit"
 	desc = "Pick up that can."
 	icon = 'modular_splurt/icons/obj/clothing/uniforms.dmi'
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/uniform.dmi'
