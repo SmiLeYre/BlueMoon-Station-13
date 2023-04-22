@@ -188,10 +188,10 @@
 	name = "Syndicate Sleeper Agent"
 	antag_datum = /datum/antagonist/traitor
 	antag_flag = "traitor mid"
-	protected_roles = list("Prisoner", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
+	protected_roles = list("Prisoner", "NanoTrasen Representative", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
 	restricted_roles = list("Cyborg", "AI", "Positronic Brain")
 	required_candidates = 1
-	weight = 7
+	weight = 4
 	cost = 10
 	requirements = list(101,40,30,20,10,10,10,10,10,10)
 	repeatable = TRUE
@@ -254,8 +254,7 @@
 	antag_datum = /datum/antagonist/gang
 	antag_flag = ROLE_FAMILY_HEAD_ASPIRANT
 	antag_flag_override = ROLE_FAMILIES
-	protected_roles = list("Prisoner", "Head of Personnel")
-	restricted_roles = list("AI", "Cyborg", "Prisoner", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Chaplain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
+	restricted_roles = list("AI", "Cyborg", "Prisoner", "NanoTrasen Representative", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
 	required_candidates = 9
 	weight = 3
 	cost = 15
@@ -315,7 +314,7 @@
 	name = "Malfunctioning AI"
 	antag_datum = /datum/antagonist/traitor
 	antag_flag = ROLE_MALF
-	enemy_roles = list("Security Officer", "Warden","Detective","Head of Security", "Captain", "Scientist", "Chemist", "Research Director", "Chief Engineer")
+	enemy_roles = list("Blueshield",  "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Scientist", "Chemist", "Research Director", "Chief Engineer")
 	exclusive_roles = list("AI")
 	required_enemies = list(0,0,0,0,0,0,0,0,0,0)
 	required_candidates = 1
@@ -366,7 +365,7 @@
 	antag_datum = /datum/antagonist/wizard
 	antag_flag = "wizard mid"
 	antag_flag_override = ROLE_WIZARD
-	enemy_roles = list("Security Officer","Detective","Head of Security", "Captain")
+	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain")
 	required_enemies = list(0,0,0,0,0,0,0,0,0,0)
 	required_candidates = 1
 	weight = 2
@@ -413,7 +412,7 @@
 	antag_flag = "nukie mid"
 	antag_datum = /datum/antagonist/nukeop
 	antag_flag_override = ROLE_OPERATIVE
-	enemy_roles = list("AI", "Cyborg", "Security Officer", "Warden","Detective","Head of Security", "Captain")
+	enemy_roles = list("AI", "Cyborg", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain")
 	required_enemies = list(0,0,0,0,0,0,0,0,0,0)
 	required_candidates = 5
 	weight = 3
@@ -458,9 +457,9 @@
 	antag_datum = /datum/antagonist/clockcult
 	antag_flag = "clock mid"
 	antag_flag_override = ROLE_SERVANT_OF_RATVAR
-	protected_roles = list("AI", "Cyborg", "Prisoner", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Chaplain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
-	restricted_roles = list("AI", "Cyborg", "Prisoner", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Chaplain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
-	enemy_roles = list("Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Chaplain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
+	protected_roles = list("NanoTrasen Representative", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Chaplain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
+	restricted_roles = list("AI", "Cyborg", "Prisoner")
+	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Chaplain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
 	required_enemies = list(1,1,1,1,1,1,0,0,0,0)
 	required_candidates = 2
 	weight = 3
@@ -519,7 +518,8 @@
 	name = "Blob"
 	antag_datum = /datum/antagonist/blob
 	antag_flag = ROLE_BLOB
-	enemy_roles = list("Security Officer", "Detective", "Head of Security", "Captain")
+	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain")
+
 	required_enemies = list(0,0,0,0,0,0,0,0,0,0)
 	required_candidates = 1
 	weight = 2
@@ -536,9 +536,9 @@
 	name = "Blob Infection"
 	antag_datum = /datum/antagonist/blob
 	antag_flag = "blob mid"
-	protected_roles = list("Prisoner", "Security Officer", "Warden", "Detective", "Head of Security", "Captain")
+	protected_roles = list("Prisoner", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain")
 	restricted_roles = list("Cyborg", "AI", "Positronic Brain")
-	enemy_roles = list("Security Officer", "Detective", "Head of Security", "Captain")
+	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain")
 	required_enemies = list(0,0,0,0,0,0,0,0,0,0)
 	required_candidates = 1
 	weight = 2
@@ -576,8 +576,8 @@
 	name = "Alien Infestation"
 	antag_datum = /datum/antagonist/xeno
 	antag_flag = ROLE_ALIEN
-	enemy_roles = list("Security Officer", "Detective", "Head of Security", "Captain")
-	required_enemies = list(0,0,0,0,0,0,0,0,0,0)
+	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain")
+	required_enemies = list(0,0,0,0,6,6,5,5,4,0)
 	required_candidates = 1
 	weight = 3
 	cost = 10
@@ -622,12 +622,12 @@
 	antag_datum = /datum/antagonist/nightmare
 	antag_flag = "Nightmare"
 	antag_flag_override = ROLE_ALIEN
-	enemy_roles = list("Security Officer", "Detective", "Head of Security", "Captain")
-	required_enemies = list(0,0,0,0,0,0,0,0,0,0)
+	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain")
+	required_enemies = list(0,0,0,4,4,3,3,2,0,0)
 	required_candidates = 1
-	weight = 4
+	weight = 3
 	cost = 10
-	requirements = list(101,101,50,30,25,20,10,10,10,10)
+	requirements = list(101,101,101,50,30,25,20,10,10,10)
 	repeatable = TRUE
 	var/list/spawn_locs = list()
 
@@ -668,8 +668,8 @@
 	antag_datum = /datum/antagonist/space_dragon
 	antag_flag = ROLE_SPACE_DRAGON
 	antag_flag_override = ROLE_SPACE_DRAGON
-	enemy_roles = list("Security Officer", "Detective", "Head of Security", "Captain")
-	required_enemies = list(0,0,0,0,0,0,0,0,0,0)
+	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGE (should we include miners?)
+	required_enemies = list(0,0,0,0,5,5,4,4,3,0)
 	required_candidates = 1
 	weight = 3
 	cost = 10
@@ -712,8 +712,8 @@
 	name = "Abductors"
 	antag_flag = "Abductor"
 	antag_flag_override = ROLE_ABDUCTOR
-	enemy_roles = list("Security Officer", "Detective", "Head of Security", "Captain")
-	required_enemies = list(0,0,0,0,0,0,0,0,0,0)
+	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain")
+	required_enemies = list(0,0,0,0,0,5,5,4,4,0)
 	required_candidates = 2
 	required_applicants = 2
 	weight = 3
@@ -751,10 +751,10 @@
 	antag_flag = "Swarmer"
 	antag_flag_override = ROLE_ALIEN
 	required_type = /mob/dead/observer
-	enemy_roles = list("Security Officer", "Detective", "Head of Security", "Captain")
-	required_enemies = list(0,0,0,0,0,0,0,0,0,0)
+	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain")
+	required_enemies = list(0,0,0,0,6,6,5,5,4,0)
 	required_candidates = 0
-	weight = 3
+	weight = 2
 	cost = 10
 	requirements = list(101,101,101,101,50,40,30,20,10,10)
 	repeatable = TRUE
@@ -784,12 +784,12 @@
 	antag_datum = /datum/antagonist/ninja
 	antag_flag = "Space Ninja"
 	antag_flag_override = ROLE_NINJA
-	enemy_roles = list("Security Officer", "Detective", "Head of Security", "Captain")
-	required_enemies = list(0,0,0,0,0,0,0,0,0,0)
+	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain")
+	required_enemies = list(0,0,0,0,5,5,4,4,3,0)
 	required_candidates = 1
-	weight = 4
+	weight = 3
 	cost = 10
-	requirements = list(101,101,101,60,50,30,10,10,10,10)
+	requirements = list(101,101,101,101,60,50,30,20,10,10)
 	repeatable = TRUE
 	var/list/spawn_locs = list()
 
@@ -825,12 +825,12 @@
 	antag_datum = /datum/antagonist/revenant
 	antag_flag = "Revenant"
 	antag_flag_override = ROLE_REVENANT
-	enemy_roles = list("Security Officer", "Detective", "Head of Security", "Captain")
-	required_enemies = list(0,0,0,0,0,0,0,0,0,0)
+	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Chaplain")
+	required_enemies = list(0,0,0,5,5,4,4,3,3,0)
 	required_candidates = 1
-	weight = 4
+	weight = 3
 	cost = 10
-	requirements = list(101,101,50,30,25,20,10,10,10,10)
+	requirements = list(101,101,101,50,30,25,20,10,10,10)
 	repeatable = TRUE
 	var/dead_mobs_required = 20
 	var/need_extra_spawns_value = 15
@@ -873,9 +873,9 @@
 	antag_flag = "Sentient Disease"
 	antag_flag_override = ROLE_ALIEN
 	required_candidates = 1
-	weight = 4
+	weight = 3
 	cost = 10
-	requirements = list(101,101,50,30,25,20,10,10,10,10)
+	requirements = list(101,101,101,50,30,25,20,10,10,10)
 	repeatable = TRUE
 
 /datum/dynamic_ruleset/midround/from_ghosts/sentient_disease/generate_ruleset_body(mob/applicant)
@@ -891,12 +891,12 @@
 	name = "Space Pirates"
 	antag_flag = "Space Pirates"
 	required_type = /mob/dead/observer
-	enemy_roles = list("Security Officer", "Detective", "Head of Security", "Captain")
-	required_enemies = list(0,0,0,0,0,0,0,0,0,0)
+	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGE
+	required_enemies = list(0,0,0,0,0,5,4,3,3,3)
 	required_candidates = 0
-	weight = 4
+	weight = 3
 	cost = 10
-	requirements = list(101,101,101,40,30,20,10,10,10,10)
+	requirements = list(101,101,101,101,101,40,30,20,10,10)
 	repeatable = TRUE
 
 /datum/dynamic_ruleset/midround/pirates/acceptable(population=0, threat=0)

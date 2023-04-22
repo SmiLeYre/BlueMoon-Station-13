@@ -11,14 +11,14 @@
 	antag_flag = ROLE_TRAITOR
 	antag_datum = /datum/antagonist/traitor
 	minimum_required_age = 0
-	protected_roles = list("Prisoner","Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
+	protected_roles = list("Prisoner", "NanoTrasen Representative", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain")
 	restricted_roles = list("AI", "Cyborg")
 	required_candidates = 1
-	weight = 5
+	weight = 6
 	cost = 8 // Avoid raising traitor threat above 10, as it is the default low cost ruleset.
 	scaling_cost = 9
 	requirements = list(101,10,10,10,10,10,10,10,10,10)
-	antag_cap = list("denominator" = 24)
+	antag_cap = list("denominator" = 20)
 	var/autotraitor_cooldown = (15 MINUTES)
 	COOLDOWN_DECLARE(autotraitor_cooldown_check)
 
@@ -49,13 +49,13 @@
 	name = "Blood Brothers"
 	antag_flag = ROLE_BROTHER
 	antag_datum = /datum/antagonist/brother/
-	protected_roles = list("Prisoner","Security Officer", "Warden", "Detective", "Head of Security", "Captain")
+	protected_roles = list("Prisoner", "NanoTrasen Representative", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain")
 	restricted_roles = list("Cyborg", "AI")
 	required_candidates = 2
-	weight = 4
+	weight = 3
 	cost = 15
 	scaling_cost = 15
-	requirements = list(101,101,101,101,101,101,101,101,101,101)//disabled for now
+	requirements = list(101,101,101,101,60,50,40,30,20,10)
 	antag_cap = 2 // Can pick 3 per team, but rare enough it doesn't matter.
 	var/list/datum/team/brother_team/pre_brother_teams = list()
 	var/const/min_team_size = 2
@@ -97,13 +97,13 @@
 	name = "Changelings"
 	antag_flag = ROLE_CHANGELING
 	antag_datum = /datum/antagonist/changeling
-	protected_roles = list("Prisoner","Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
+	protected_roles = list("Prisoner", "NanoTrasen Representative", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
 	restricted_roles = list("AI", "Cyborg")
 	required_candidates = 1
 	weight = 3
-	cost = 16
+	cost = 15
 	scaling_cost = 10
-	requirements = list(101,60,50,40,30,20,15,10,10,10)
+	requirements = list(101,101,60,50,40,30,20,15,10,10)
 	antag_cap = list("denominator" = 29)
 
 /datum/dynamic_ruleset/roundstart/changeling/pre_execute(population)
@@ -132,7 +132,7 @@
 	name = "Heretics"
 	antag_flag = ROLE_HERETIC
 	antag_datum = /datum/antagonist/heretic
-	protected_roles = list("Prisoner","Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
+	protected_roles = list("Prisoner", "NanoTrasen Representative", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
 	restricted_roles = list("AI", "Cyborg")
 	required_candidates = 1
 	weight = 3
@@ -140,7 +140,6 @@
 	scaling_cost = 9
 	requirements = list(101,101,101,50,40,20,20,15,10,10)//higher because of 'round end'
 	antag_cap = list("denominator" = 24)
-
 
 /datum/dynamic_ruleset/roundstart/heretics/pre_execute(population)
 	. = ..()
@@ -179,7 +178,7 @@
 	required_candidates = 1
 	weight = 3
 	cost = 20
-	requirements = list(101,101,100,60,40,20,20,20,10,10)//100 because of configt, otherwise equal to nukies
+	requirements = list(101,101,101,60,40,20,20,20,10,10)//100 because of configt, otherwise equal to nukies
 	var/list/roundstart_wizards = list()
 
 /datum/dynamic_ruleset/roundstart/wizard/acceptable(population=0, threat=0)
@@ -218,12 +217,12 @@
 	antag_flag = ROLE_CULTIST
 	antag_datum = /datum/antagonist/cult
 	minimum_required_age = 14
-	restricted_roles = list("AI", "Cyborg", "Prisoner", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Chaplain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
+	restricted_roles = list("AI", "Cyborg", "Prisoner", "NanoTrasen Representative", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Chaplain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
 	required_candidates = 2
-	weight = 2 //lower weight because of easy steamroll potential
+	weight = 3 //lower weight because of easy steamroll potential
 	cost = 20
 	//requirements = list(100,90,80,60,40,30,10,10,10,10)
-	requirements = list(101,101,101,101,50,40,20,10,10,10)
+	requirements = list(101,101,101,101,101,60,40,20,15,10)
 	flags = HIGH_IMPACT_RULESET
 	antag_cap = list("denominator" = 20, "offset" = 1)
 	var/datum/team/cult/main_cult
@@ -279,7 +278,7 @@
 	required_candidates = 5
 	weight = 3
 	cost = 20
-	requirements = list(101,101,101,60,40,30,20,15,10,10)
+	requirements = list(101,101,101,101,101,101,60,40,30,10)
 	flags = HIGH_IMPACT_RULESET
 	antag_cap = list("denominator" = 18, "offset" = 1)
 	var/datum/team/nuclear/nuke_team
@@ -360,12 +359,12 @@
 	antag_flag_override = ROLE_REV
 	antag_datum = /datum/antagonist/rev/head
 	minimum_required_age = 14
-	restricted_roles = list("AI", "Cyborg", "Prisoner", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Chief Engineer", "Chief Medical Officer", "Research Director")
+	restricted_roles = list("AI", "Cyborg", "Prisoner", "NanoTrasen Representative", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Chief Engineer", "Chief Medical Officer", "Research Director")
 	required_candidates = 3
-	weight = 2
+	weight = 3
 	delay = 7 MINUTES
 	cost = 20
-	requirements = list(101,101,101,101,50,40,20,10,10,10)
+	requirements = list(101,101,101,101,101,101,50,40,30,20)
 	antag_cap = 3
 	flags = HIGH_IMPACT_RULESET
 	blocking_rules = list(/datum/dynamic_ruleset/latejoin/provocateur)
@@ -441,11 +440,11 @@
 	antag_flag = ROLE_SERVANT_OF_RATVAR
 	antag_datum = /datum/antagonist/clockcult
 	minimum_required_age = 14
-	restricted_roles = list("AI", "Cyborg", "Prisoner", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Chaplain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
+	restricted_roles = list("AI", "Cyborg", "Prisoner", "NanoTrasen Representative", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Chaplain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
 	required_candidates = 2
 	weight = 3 //higher weight than blood cult and revs because it's more balanced
 	cost = 20
-	requirements = list(101,101,101,101,50,40,20,10,10,10) //slightly higher than nukies
+	requirements = list(101,101,101,101,101,50,40,30,20,15) //slightly higher than nukies
 	flags = HIGH_IMPACT_RULESET
 	antag_cap = list("denominator" = 20, "offset" = 1)
 	var/datum/team/clockcult/main_clockcult
@@ -496,12 +495,11 @@
 	persistent = TRUE
 	antag_datum = /datum/antagonist/gang
 	antag_flag = ROLE_FAMILIES
-	protected_roles = list("Prisoner", "Head of Personnel")
-	restricted_roles = list("AI", "Cyborg", "Prisoner", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Chaplain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
+	restricted_roles = list("AI", "Cyborg", "Prisoner", "NanoTrasen Representative", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Chaplain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
 	required_candidates = 9
 	weight = 3
 	cost = 15
-	requirements = list(101,101,101,50,30,20,10,10,10,10)
+	requirements = list(101,101,101,101,40,20,20,10,10,10)
 	flags = HIGH_IMPACT_RULESET
 	/// A reference to the handler that is used to run pre_execute(), execute(), etc..
 	var/datum/gang_handler/handler
