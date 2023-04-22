@@ -368,9 +368,9 @@
 	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGES
 	required_enemies = list(0,0,0,0,0,0,0,0,0,0)
 	required_candidates = 1
-	weight = 2 //BLUEMOON CHANGES
+	weight = 2
 	cost = 20
-	requirements = list(101,101,100,60,40,20,20,20,10,10) //BLUEMOON CHANGES
+	requirements = list(101,101,100,60,40,20,20,20,10,10)
 	repeatable = TRUE
 	var/datum/mind/wizard
 
@@ -413,9 +413,9 @@
 	antag_datum = /datum/antagonist/nukeop
 	antag_flag_override = ROLE_OPERATIVE
 	enemy_roles = list("AI", "Cyborg", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGES
-	required_enemies = list(0,0,0,0,0,0,5,5,4,0)
+	required_enemies = list(0,0,0,0,0,0,5,5,4,0) //BLUEMOON CHANGES
 	required_candidates = 5
-	weight = 3 //BLUEMOON CHANGES
+	weight = 3
 	cost = 35
 	requirements = list(101,101,101,101,101,101,60,40,30,10) //BLUEMOON CHANGES
 	var/list/operative_cap = list(2,2,3,3,3,4,5,5,5,5)
@@ -464,7 +464,7 @@
 	required_candidates = 2
 	weight = 3
 	cost = 20
-	requirements = list(101,101,101,101,50,40,30,20,10,10) //BLUEMOON CHANGES
+	requirements = list(101,101,101,101,50,40,30,20,10,10)
 	var/list/clock_cap = list(1,1,1,1,2,3,4,5,5,5)
 	flags = HIGH_IMPACT_RULESET
 
@@ -521,9 +521,9 @@
 	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGES
 	required_enemies = list(0,0,0,0,0,0,0,0,0,0)
 	required_candidates = 1
-	weight = 2 //BLUEMOON CHANGES
+	weight = 2
 	cost = 10
-	requirements = list(101,101,101,101,50,40,30,20,10,10) //BLUEMOON CHANGES
+	requirements = list(101,101,101,101,50,40,30,20,10,10)
 	repeatable = TRUE
 
 /datum/dynamic_ruleset/midround/from_ghosts/blob/generate_ruleset_body(mob/applicant)
@@ -578,9 +578,9 @@
 	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGES
 	required_enemies = list(0,0,0,0,6,6,5,5,4,0) //BLUEMOON CHANGES
 	required_candidates = 1
-	weight = 3 //BLUEMOON CHANGES
+	weight = 3
 	cost = 10
-	requirements = list(101,101,101,101,50,40,30,20,10,10) //BLUEMOON CHANGES
+	requirements = list(101,101,101,101,50,40,30,20,10,10)
 	repeatable = TRUE
 	var/list/vents = list()
 
@@ -624,9 +624,9 @@
 	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGES
 	required_enemies = list(0,0,0,4,4,3,3,2,0,0) //BLUEMOON CHANGES
 	required_candidates = 1
-	weight = 3 //BLUEMOON CHANGES
+	weight = 3
 	cost = 10
-	requirements = list(101,101,101,50,30,25,20,10,10,10) //BLUEMOON CHANGES
+	requirements = list(101,101,101,50,30,25,20,10,10,10)
 	repeatable = TRUE
 	var/list/spawn_locs = list()
 
@@ -670,9 +670,9 @@
 	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGE (should we include miners?)
 	required_enemies = list(0,0,0,0,5,5,4,4,3,0) //BLUEMOON CHANGES
 	required_candidates = 1
-	weight = 3 //BLUEMOON CHANGES
+	weight = 3
 	cost = 10
-	requirements = list(101,101,101,101,50,40,30,20,10,10) //BLUEMOON CHANGES
+	requirements = list(101,101,101,101,50,40,30,20,10,10)
 	repeatable = TRUE
 	var/list/spawn_locs = list()
 
@@ -715,9 +715,9 @@
 	required_enemies = list(0,0,0,0,0,5,5,4,4,0) //BLUEMOON CHANGES
 	required_candidates = 2
 	required_applicants = 2
-	weight = 3 //BLUEMOON CHANGES
+	weight = 3
 	cost = 10
-	requirements = list(101,101,101,101,101,30,20,15,10,10) //BLUEMOON CHANGES
+	requirements = list(101,101,101,101,101,30,20,15,10,10)
 	repeatable = TRUE
 	var/datum/team/abductor_team/new_team
 
@@ -755,7 +755,7 @@
 	required_candidates = 0
 	weight = 2 //BLUEMOON CHANGES
 	cost = 10
-	requirements = list(101,101,101,101,50,40,30,20,10,10) //BLUEMOON CHANGES
+	requirements = list(101,101,101,101,50,40,30,20,10,10)
 	repeatable = TRUE
 
 /datum/dynamic_ruleset/midround/swarmers/execute()

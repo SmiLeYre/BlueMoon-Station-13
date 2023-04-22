@@ -18,7 +18,7 @@
 	cost = 8 // Avoid raising traitor threat above 10, as it is the default low cost ruleset.
 	scaling_cost = 9
 	requirements = list(101,10,10,10,10,10,10,10,10,10) //BLUEMOON CHANGES
-	antag_cap = list("denominator" = 20)
+	antag_cap = list("denominator" = 20) //BLUEMOON CHANGES
 	var/autotraitor_cooldown = (15 MINUTES)
 	COOLDOWN_DECLARE(autotraitor_cooldown_check)
 
@@ -100,8 +100,8 @@
 	protected_roles = list("Prisoner", "NanoTrasen Representative", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
 	restricted_roles = list("AI", "Cyborg")
 	required_candidates = 1
-	weight = 3 //BLUEMOON CHANGES
-	cost = 15
+	weight = 3
+	cost = 15 //BLUEMOON CHANGES
 	scaling_cost = 10
 	requirements = list(101,101,60,50,40,30,20,15,10,10) //BLUEMOON CHANGES
 	antag_cap = list("denominator" = 29)
@@ -136,7 +136,7 @@
 	restricted_roles = list("AI", "Cyborg")
 	required_candidates = 1
 	weight = 3
-	cost = 15 //BLUEMOON CHANGES
+	cost = 15
 	scaling_cost = 9
 	requirements = list(101,101,101,50,40,20,20,15,10,10) //higher because of 'round end'
 	antag_cap = list("denominator" = 24)
@@ -176,7 +176,7 @@
 	minimum_required_age = 14
 	restricted_roles = list("Head of Security", "Captain") // Just to be sure that a wizard getting picked won't ever imply a Captain or HoS not getting drafted
 	required_candidates = 1
-	weight = 3 //BLUEMOON CHANGES
+	weight = 3
 	cost = 20
 	requirements = list(101,101,101,60,40,20,20,20,10,10)  //BLUEMOON CHANGES
 	var/list/roundstart_wizards = list()
