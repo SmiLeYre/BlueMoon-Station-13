@@ -547,8 +547,8 @@
 	. = ..()
 	message_admins("Starting a round of extended.")
 	log_game("Starting a round of extended.")
-	mode.spend_roundstart_budget(mode.round_start_budget)
-	mode.spend_midround_budget(mode.mid_round_budget)
+//	mode.spend_roundstart_budget(mode.round_start_budget)
+//	mode.spend_midround_budget(mode.mid_round_budget)
 	mode.threat_log += "[worldtime2text()]: Extended ruleset set threat to 0."
 	return TRUE
 
