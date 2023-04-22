@@ -276,7 +276,7 @@
 	minimum_required_age = 14
 	restricted_roles = list("Head of Security", "Captain") // Just to be sure that a nukie getting picked won't ever imply a Captain or HoS not getting drafted
 	required_candidates = 5
-	weight = 3 //BLUEMOON CHANGES
+	weight = 3
 	cost = 20
 	requirements = list(101,101,101,101,101,101,60,40,30,10) //BLUEMOON CHANGES
 	flags = HIGH_IMPACT_RULESET
@@ -442,7 +442,7 @@
 	minimum_required_age = 14
 	restricted_roles = list("AI", "Cyborg", "Prisoner", "NanoTrasen Representative", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Chaplain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
 	required_candidates = 2
-	weight = 3 //BLUEMOON CHANGES
+	weight = 3
 	cost = 20
 	requirements = list(101,101,101,101,101,50,40,30,20,15) //BLUEMOON CHANGES
 	flags = HIGH_IMPACT_RULESET
@@ -497,7 +497,7 @@
 	antag_flag = ROLE_FAMILIES
 	restricted_roles = list("AI", "Cyborg", "Prisoner", "NanoTrasen Representative", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Chaplain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
 	required_candidates = 9
-	weight = 3 //BLUEMOON CHANGES
+	weight = 3
 	cost = 15
 	requirements = list(101,101,101,101,40,20,20,10,10,10) //BLUEMOON CHANGES
 	flags = HIGH_IMPACT_RULESET

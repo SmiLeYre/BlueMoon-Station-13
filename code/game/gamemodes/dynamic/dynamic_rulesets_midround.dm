@@ -540,9 +540,9 @@
 	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGES
 	required_enemies = list(0,0,0,0,0,0,0,0,0,0)
 	required_candidates = 1
-	weight = 2 //BLUEMOON CHANGES
+	weight = 2
 	cost = 10
-	requirements = list(101,101,101,101,50,40,30,20,10,10) //BLUEMOON CHANGES
+	requirements = list(101,101,101,101,50,40,30,20,10,10)
 	repeatable = TRUE
 
 /datum/dynamic_ruleset/midround/blob_infection/trim_candidates()
@@ -624,9 +624,9 @@
 	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGES
 	required_enemies = list(0,0,0,4,4,3,3,2,0,0) //BLUEMOON CHANGES
 	required_candidates = 1
-	weight = 3
+	weight = 3 //BLUEMOON CHANGES
 	cost = 10
-	requirements = list(101,101,101,50,30,25,20,10,10,10)
+	requirements = list(101,101,101,50,30,25,20,10,10,10) //BLUEMOON CHANGES
 	repeatable = TRUE
 	var/list/spawn_locs = list()
 
