@@ -56,10 +56,10 @@
 	antag_datum = /datum/antagonist/traitor
 	antag_flag = "traitor late"
 	antag_flag_override = ROLE_TRAITOR
-	protected_roles = list("NanoTrasen Representative", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGE
+	protected_roles = list("NanoTrasen Representative", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
 	restricted_roles = list("AI", "Cyborg")
 	required_candidates = 1
-	weight = 3
+	weight = 3  //BLUEMOON CHANGES
 	cost = 5
 	requirements = list(101,40,25,20,15,10,10,10,10,10)
 	repeatable = TRUE
@@ -76,8 +76,8 @@
 	antag_datum = /datum/antagonist/rev/head
 	antag_flag = "rev head late"
 	antag_flag_override = ROLE_REV
-	restricted_roles = list("AI", "Cyborg", "Prisoner", "NanoTrasen Representative", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
-	enemy_roles = list("AI", "Cyborg", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain")
+	restricted_roles = list("AI", "Cyborg", "Prisoner", "NanoTrasen Representative", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")  //BLUEMOON CHANGES
+	enemy_roles = list("AI", "Cyborg", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGES
 	required_enemies = list(2,2,1,1,1,1,1,0,0,0)
 	required_candidates = 1
 	weight = 2
@@ -152,8 +152,8 @@
 	antag_datum = /datum/antagonist/heretic
 	antag_flag = "heretic late"
 	antag_flag_override = ROLE_HERETIC
-	protected_roles = list("NanoTrasen Representative", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Prisoner", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
-	restricted_roles = list("AI", "Cyborg", "Prisoner")
+	protected_roles = list("NanoTrasen Representative", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Prisoner", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")  //BLUEMOON CHANGES
+	restricted_roles = list("AI", "Cyborg", "Prisoner")  //BLUEMOON CHANGES
 	required_candidates = 1
 	weight = 3
 	cost = 10

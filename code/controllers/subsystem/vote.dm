@@ -337,6 +337,7 @@ SUBSYSTEM_DEF(vote)
 				if(SSticker.current_state > GAME_STATE_PREGAME)//Don't change the mode if the round already started.
 					return message_admins("A vote has tried to change the gamemode, but the game has already started. Aborting.")
 				GLOB.master_mode = "dynamic"
+//BLUEMOON CHANGES START
 				switch(.)
 					if("extended")
 						GLOB.dynamic_forced_extended = TRUE
@@ -344,6 +345,7 @@ SUBSYSTEM_DEF(vote)
 					if("light dynamic")
 						GLOB.dynamic_extended = TRUE
 						GLOB.master_mode = "light dynamic"
+//BLUEMOON CHANGES END
 				message_admins("The gamemode has been voted for, and has been changed to: [GLOB.master_mode]")
 				log_admin("Gamemode has been voted for and switched to: [GLOB.master_mode].")
 				to_chat("Gamemode has been voted for and switched to: [GLOB.master_mode].") //BlueMoon edit !!!
@@ -470,7 +472,7 @@ SUBSYSTEM_DEF(vote)
 			if("transfer") // austation begin -- Crew autotranfer vote
 				choices.Add(VOTE_TRANSFER,VOTE_CONTINUE) // austation end
 			if("roundtype") //CIT CHANGE - adds the roundstart secret/extended vote
-				choices.Add("dynamic", "light dynamic", "extended")
+				choices.Add("dynamic", "light dynamic", "extended") //BLUEMOON CHANGES (light dynamic)
 			if("custom")
 				question = stripped_input(usr,"What is the vote for?")
 				if(!question)
