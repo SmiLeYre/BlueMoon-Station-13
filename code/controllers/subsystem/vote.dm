@@ -1,4 +1,9 @@
 #define VOTE_COOLDOWN 10
+//BLUEMOON CHANGES START
+#define ROUNDTYPE_DYNAMIC "Dynamic"
+#define ROUNDTYPE_LIGHT_DYNAMIC "Light dynamic"
+#define ROUNDTYPE_EXTENDED "Extended"
+//BLUEMOON CHANGES END
 
 SUBSYSTEM_DEF(vote)
 	name = "Vote"
@@ -78,6 +83,11 @@ SUBSYSTEM_DEF(vote)
 		var/votes = choices[option]
 		total_votes += votes
 		if(votes > greatest_votes)
+//BLUEMOON CHANGES START - skip extended if it has less votes than all other votes
+			if(option == ROUNDTYPE_EXTENDED)
+				if(choices[ROUNDTYPE_EXTENDED] <= total_votes) //extended always must be the last in vote to ensure it works
+					continue
+//BLUEMOON CHANGES END
 			greatest_votes = votes
 	//default-vote for everyone who didn't vote
 	if(!CONFIG_GET(flag/default_no_vote) && choices.len)
@@ -100,7 +110,14 @@ SUBSYSTEM_DEF(vote)
 	//get all options with that many votes and return them in a list
 	. = list()
 	if(greatest_votes)
+		var/dynamic_votes = 0 //BLUEMOON ADD
 		for(var/option in choices)
+//BLUEMOON CHANGES START - preventing extended from being a winner if the vote in tie state
+			if(option == ROUNDTYPE_EXTENDED)
+				if(choices[ROUNDTYPE_EXTENDED] <= dynamic_votes) //extended always must be the last in vote to ensure it works
+					continue
+			dynamic_votes += choices[option]
+//BLUEMOON CHANGES END
 			if(choices[option] == greatest_votes)
 				. += option
 	return .
@@ -337,14 +354,14 @@ SUBSYSTEM_DEF(vote)
 				if(SSticker.current_state > GAME_STATE_PREGAME)//Don't change the mode if the round already started.
 					return message_admins("A vote has tried to change the gamemode, but the game has already started. Aborting.")
 				GLOB.master_mode = "dynamic"
-//BLUEMOON CHANGES START
+//BLUEMOON CHANGES START - if vote result is ...
 				switch(.)
-					if("extended")
+					if(ROUNDTYPE_EXTENDED)
 						GLOB.dynamic_forced_extended = TRUE
-						GLOB.master_mode = "extended"
-					if("light dynamic")
+						GLOB.master_mode = ROUNDTYPE_EXTENDED
+					if(ROUNDTYPE_LIGHT_DYNAMIC)
 						GLOB.dynamic_extended = TRUE
-						GLOB.master_mode = "light dynamic"
+						GLOB.master_mode = ROUNDTYPE_LIGHT_DYNAMIC
 //BLUEMOON CHANGES END
 				message_admins("The gamemode has been voted for, and has been changed to: [GLOB.master_mode]")
 				log_admin("Gamemode has been voted for and switched to: [GLOB.master_mode].")
@@ -472,7 +489,7 @@ SUBSYSTEM_DEF(vote)
 			if("transfer") // austation begin -- Crew autotranfer vote
 				choices.Add(VOTE_TRANSFER,VOTE_CONTINUE) // austation end
 			if("roundtype") //CIT CHANGE - adds the roundstart secret/extended vote
-				choices.Add("dynamic", "light dynamic", "extended") //BLUEMOON CHANGES (light dynamic)
+				choices.Add(ROUNDTYPE_DYNAMIC, ROUNDTYPE_LIGHT_DYNAMIC, ROUNDTYPE_EXTENDED) //BLUEMOON CHANGES
 			if("custom")
 				question = stripped_input(usr,"What is the vote for?")
 				if(!question)
@@ -562,6 +579,10 @@ SUBSYSTEM_DEF(vote)
 			if(SCORE_VOTING,HIGHEST_MEDIAN_VOTING)
 				. += "<h3>Grade the candidates by how much you like them.</h3>"
 				. += "<h3>No-votes have no power--your opinion is only heard if you vote!</h3>"
+//BLUEMOON CHANGES START
+		if(mode == "roundtype")
+			. += "<h3>Votes around dynamic modes will be merged in results and win in ties!</h3>"
+//BLUEMOON CHANGES END
 		. += "Time Left: [DisplayTimeText(end_time-world.time)]<hr><ul>"
 		switch(vote_system)
 			if(PLURALITY_VOTING, APPROVAL_VOTING)
@@ -759,3 +780,9 @@ SUBSYSTEM_DEF(vote)
 		var/datum/player_details/P = GLOB.player_details[owner.ckey]
 		if(P)
 			P.player_actions -= src
+
+//BLUEMOON CHANGES START
+#undef ROUNDTYPE_DYNAMIC
+#undef ROUNDTYPE_LIGHT_DYNAMIC
+#undef ROUNDTYPE_EXTENDED
+//BLUEMOON CHANGES END
