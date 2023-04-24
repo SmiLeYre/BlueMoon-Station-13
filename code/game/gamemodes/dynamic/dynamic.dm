@@ -18,6 +18,8 @@ GLOBAL_VAR_INIT(dynamic_stacking_limit, 90)
 GLOBAL_LIST_EMPTY(dynamic_forced_roundstart_ruleset)
 // Forced threat level, setting this to zero or higher forces the roundstart threat to the value.
 GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
+// BLUEMOON ADDITION - Team-based dynamic
+GLOBAL_VAR_INIT(teambased_dynamic, FALSE)
 
 /datum/game_mode/dynamic
 	name = "dynamic mode"
@@ -167,6 +169,7 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 	dat += "<i>On average, <b>[peaceful_percentage]</b>% of the rounds are more peaceful.</i><br/>"
 	dat += "Forced extended: <a href='?src=\ref[src];[HrefToken()];forced_extended=1'><b>[GLOB.dynamic_forced_extended ? "On" : "Off"]</b></a><br/>"
 	dat += "Dynamic extended: <a href='?src=\ref[src];[HrefToken()];extended=1'><b>[GLOB.dynamic_extended ? "On" : "Off"]</b></a><br/>"
+	dat += "Team Based Dynamic: <a href='?src=\ref[src];[HrefToken()];teambased=1'><b>[GLOB.teambased_dynamic ? "On" : "Off"]</b></a><br/>"
 	dat += "No stacking (only one round-ender): <a href='?src=\ref[src];[HrefToken()];no_stacking=1'><b>[GLOB.dynamic_no_stacking ? "On" : "Off"]</b></a><br/>"
 	dat += "Stacking limit: [GLOB.dynamic_stacking_limit] <a href='?src=\ref[src];[HrefToken()];stacking_limit=1'>\[Adjust\]</A>"
 	dat += "<br/>"
@@ -198,6 +201,8 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 		GLOB.dynamic_forced_extended = !GLOB.dynamic_forced_extended
 	else if (href_list["extended"])
 		GLOB.dynamic_extended = !GLOB.dynamic_extended
+	else if (href_list["teambased"])
+		GLOB.teambased_dynamic = !GLOB.teambased_dynamic
 	else if (href_list["no_stacking"])
 		GLOB.dynamic_no_stacking = !GLOB.dynamic_no_stacking
 	else if (href_list["adjustthreat"])
@@ -335,7 +340,7 @@ BLUEMOON REMOVAL END*/
 		mid_round_budget = threat_level
 		round_start_budget = 0
 	else
-BLUEMOON REMOVA ENDL*/
+BLUEMOON REMOVAL END*/
 	var/relative_round_start_budget_scale = LORENTZ_DISTRIBUTION(roundstart_split_curve_centre, roundstart_split_curve_width)
 	round_start_budget = round((lorentz_to_amount(relative_round_start_budget_scale) / 100) * threat_level, 0.1)
 	initial_round_start_budget = round_start_budget
@@ -515,11 +520,20 @@ BLUEMOON REMOVA ENDL*/
 			drafted_rules[ruleset] = null
 			continue
 
+//BLUEMOON ADDITION START
+		if(!(ruleset.flags & HIGH_IMPACT_RULESET) && GLOB.teambased_dynamic && !ruleset.team_based_allowed)
+			drafted_rules[ruleset] = null
+			continue
+
+		if(ruleset.flags & HIGH_IMPACT_RULESET && GLOB.dynamic_extended)
+			drafted_rules[ruleset] = null
+			continue
+//BLUEMOON ADDITION END
 		round_start_budget_left -= cost
 
 		rulesets_picked[ruleset] += 1
 
-		if (ruleset.flags & HIGH_IMPACT_RULESET && !(GLOB.dynamic_extended)) //BLUEMOON CHANGES - added check to prevent mass anttags roll
+		if (ruleset.flags & HIGH_IMPACT_RULESET)
 			for (var/_other_ruleset in drafted_rules)
 				var/datum/dynamic_ruleset/other_ruleset = _other_ruleset
 				if (other_ruleset.flags & HIGH_IMPACT_RULESET)
@@ -645,6 +659,10 @@ BLUEMOON REMOVA ENDL*/
 			for (var/datum/dynamic_ruleset/midround/rule in midround_rules)
 				if (!rule.weight)
 					continue
+//BLUEMOON ADDITION START
+				if(!(rule.flags & HIGH_IMPACT_RULESET) && GLOB.teambased_dynamic && !rule.team_based_allowed)
+					continue
+//BLUEMOON ADDITION END
 				if(rule.flags & HIGH_IMPACT_RULESET)
 					if (high_impact_ruleset_executed && threat_level < GLOB.dynamic_stacking_limit && GLOB.dynamic_no_stacking)
 						continue

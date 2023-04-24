@@ -1,5 +1,6 @@
 #define VOTE_COOLDOWN 10
 //BLUEMOON CHANGES START
+#define ROUNDTYPE_TEAMBASED_DYNAMIC "Team-Based dynamic (only mass antags and most of ghost antags)"
 #define ROUNDTYPE_DYNAMIC "Dynamic"
 #define ROUNDTYPE_LIGHT_DYNAMIC "Light dynamic (without mass antags)"
 #define ROUNDTYPE_EXTENDED "Extended"
@@ -356,6 +357,9 @@ SUBSYSTEM_DEF(vote)
 				GLOB.master_mode = "dynamic"
 //BLUEMOON CHANGES START - if vote result is ...
 				switch(.)
+					if(ROUNDTYPE_TEAMBASED_DYNAMIC)
+						GLOB.teambased_dynamic = TRUE
+						GLOB.dynamic_no_stacking = FALSE //Welcome To Space Iraq
 					if(ROUNDTYPE_EXTENDED)
 						GLOB.dynamic_forced_extended = TRUE
 						GLOB.master_mode = ROUNDTYPE_EXTENDED
@@ -489,7 +493,7 @@ SUBSYSTEM_DEF(vote)
 			if("transfer") // austation begin -- Crew autotranfer vote
 				choices.Add(VOTE_TRANSFER,VOTE_CONTINUE) // austation end
 			if("roundtype") //CIT CHANGE - adds the roundstart secret/extended vote
-				choices.Add(ROUNDTYPE_DYNAMIC, ROUNDTYPE_LIGHT_DYNAMIC, ROUNDTYPE_EXTENDED) //BLUEMOON CHANGES
+				choices.Add(ROUNDTYPE_TEAMBASED_DYNAMIC, ROUNDTYPE_DYNAMIC, ROUNDTYPE_LIGHT_DYNAMIC, ROUNDTYPE_EXTENDED) //BLUEMOON CHANGES
 			if("custom")
 				question = stripped_input(usr,"What is the vote for?")
 				if(!question)
