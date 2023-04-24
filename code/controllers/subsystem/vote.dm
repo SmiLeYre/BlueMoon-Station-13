@@ -85,7 +85,7 @@ SUBSYSTEM_DEF(vote)
 		if(votes > greatest_votes)
 //BLUEMOON CHANGES START - skip extended if it has less votes than all other votes
 			if(option == ROUNDTYPE_EXTENDED)
-				if(choices[ROUNDTYPE_EXTENDED] <= total_votes) //extended always must be the last in vote to ensure it works
+				if(choices[ROUNDTYPE_EXTENDED] <= total_votes-votes) //extended always must be the last in vote to ensure it works
 					continue
 //BLUEMOON CHANGES END
 			greatest_votes = votes
