@@ -698,6 +698,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							if(left_eye_color != right_eye_color)
 								split_eye_colors = TRUE
 							dat += "<h3>Heterochromia</h3>"
+							dat += "<i>Eyes with special heterochromia: wide, big, bigcyclops, skrell.</i>"
 							dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=toggle_split_eyes;task=input'>[split_eye_colors ? "Enabled" : "Disabled"]</a>"
 							if(!split_eye_colors)
 								dat += "<h3>Eye Color</h3>"
