@@ -315,8 +315,10 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 
 /// Generates the threat level using lorentz distribution and assigns peaceful_percentage.
 /datum/game_mode/dynamic/proc/generate_threat()
+/*BLUEMOON REMOVAL START
 	if(GLOB.dynamic_extended)
 		threat_curve_centre = EXTENDED_CURVE_CENTER
+BLUEMOON REMOVAL END*/
 	var/relative_threat = LORENTZ_DISTRIBUTION(threat_curve_centre, threat_curve_width)
 	threat_level = round(lorentz_to_amount(relative_threat), 0.1)
 	peaceful_percentage = round(LORENTZ_CUMULATIVE_DISTRIBUTION(relative_threat, threat_curve_centre, threat_curve_width), 0.01)*100
@@ -328,14 +330,16 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 
 /// Generates the midround and roundstart budgets
 /datum/game_mode/dynamic/proc/generate_budgets()
+/*BLUEMOON REMOVAL START
 	if(GLOB.dynamic_extended)
 		mid_round_budget = threat_level
 		round_start_budget = 0
 	else
-		var/relative_round_start_budget_scale = LORENTZ_DISTRIBUTION(roundstart_split_curve_centre, roundstart_split_curve_width)
-		round_start_budget = round((lorentz_to_amount(relative_round_start_budget_scale) / 100) * threat_level, 0.1)
-		initial_round_start_budget = round_start_budget
-		mid_round_budget = threat_level - round_start_budget
+BLUEMOON REMOVA ENDL*/
+	var/relative_round_start_budget_scale = LORENTZ_DISTRIBUTION(roundstart_split_curve_centre, roundstart_split_curve_width)
+	round_start_budget = round((lorentz_to_amount(relative_round_start_budget_scale) / 100) * threat_level, 0.1)
+	initial_round_start_budget = round_start_budget
+	mid_round_budget = threat_level - round_start_budget
 
 /datum/game_mode/dynamic/proc/setup_parameters()
 	log_game("DYNAMIC: Dynamic mode parameters for the round:")
@@ -357,7 +361,7 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 		shown_threat = clamp(threat_level + rand(REPORT_NEG_DIVERGENCE, REPORT_POS_DIVERGENCE), 0, 100)
 
 /datum/game_mode/dynamic/proc/set_cooldowns()
-	var/coeff = GLOB.dynamic_extended ? 2 : 1
+	var/coeff = 1 //BLUEMOON CHANGES - Removed check for dynamic_extended
 	latejoin_delay_min *= coeff
 	latejoin_delay_max *= coeff
 	var/latejoin_injection_cooldown_middle = 0.5*(latejoin_delay_max + latejoin_delay_min)
@@ -515,7 +519,7 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 
 		rulesets_picked[ruleset] += 1
 
-		if (ruleset.flags & HIGH_IMPACT_RULESET)
+		if (ruleset.flags & HIGH_IMPACT_RULESET && !(GLOB.dynamic_extended)) //BLUEMOON CHANGES - added check to prevent mass anttags roll
 			for (var/_other_ruleset in drafted_rules)
 				var/datum/dynamic_ruleset/other_ruleset = _other_ruleset
 				if (other_ruleset.flags & HIGH_IMPACT_RULESET)
@@ -670,14 +674,17 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 		return 100
 	var/chance = 0
 	var/effective_living_players = current_players[CURRENT_LIVING_PLAYERS].len
+/*BLUEMOON REMOVAL START
 	if(GLOB.dynamic_extended)
 		effective_living_players = min(effective_living_players, length(SSjob.get_living_sec())*2 + length(SSjob.get_living_heads()))
+BLUEMOON REMOVAL END*/
 	var/max_pop_per_antag = max(5,15 - round(threat_level/10) - round(effective_living_players/5))
 	if (!current_players[CURRENT_LIVING_ANTAGS].len)
+/*BLUEMOON REMOVAL START
 		if(GLOB.dynamic_extended)
 			chance += min(50,effective_living_players*5)
-		else
-			chance += 50 // No antags at all? let's boost those odds!
+		else BLUEMOON REMOVAL END*/
+		chance += 50 // No antags at all? let's boost those odds!
 	else
 		var/current_pop_per_antag = effective_living_players / current_players[CURRENT_LIVING_ANTAGS].len
 		if (current_pop_per_antag > max_pop_per_antag)

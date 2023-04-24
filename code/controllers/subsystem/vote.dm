@@ -1,7 +1,7 @@
 #define VOTE_COOLDOWN 10
 //BLUEMOON CHANGES START
 #define ROUNDTYPE_DYNAMIC "Dynamic"
-#define ROUNDTYPE_LIGHT_DYNAMIC "Light dynamic"
+#define ROUNDTYPE_LIGHT_DYNAMIC "Light dynamic (without mass antags)"
 #define ROUNDTYPE_EXTENDED "Extended"
 //BLUEMOON CHANGES END
 
