@@ -1,8 +1,8 @@
 #define VOTE_COOLDOWN 10
 //BLUEMOON CHANGES START
-#define ROUNDTYPE_TEAMBASED_DYNAMIC "Team-Based dynamic (only mass antags and most of ghost antags)"
+#define ROUNDTYPE_TEAMBASED_DYNAMIC "Team-Based dynamic (only team antags and most of ghost antags)"
 #define ROUNDTYPE_DYNAMIC "Dynamic"
-#define ROUNDTYPE_LIGHT_DYNAMIC "Light dynamic (without mass antags)"
+#define ROUNDTYPE_LIGHT_DYNAMIC "Light dynamic (without most of team antags)"
 #define ROUNDTYPE_EXTENDED "Extended"
 //BLUEMOON CHANGES END
 
