@@ -191,8 +191,8 @@
 	protected_roles = list("Prisoner", "NanoTrasen Representative", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")  //BLUEMOON CHANGES
 	restricted_roles = list("Cyborg", "AI", "Positronic Brain")
 	required_candidates = 1
-	weight = 4  //BLUEMOON CHANGES
-	cost = 10
+	weight = 0  //BLUEMOON CHANGES
+	cost = 8  //BLUEMOON CHANGES
 	requirements = list(101,40,30,20,10,10,10,10,10,10)
 	repeatable = TRUE
 
@@ -203,7 +203,7 @@
 /datum/dynamic_ruleset/midround/autotraitor/acceptable(population = 0, threat = 0)
 	var/player_count = mode.current_players[CURRENT_LIVING_PLAYERS].len
 	var/antag_count = mode.current_players[CURRENT_LIVING_ANTAGS].len
-	var/max_traitors = round(player_count / 10) + 1
+	var/max_traitors = round(player_count / 16) + 1 //BLUEMOON CNAGES, 1 traitor to each ... living players
 
 	// adding traitors if the antag population is getting low
 	var/too_little_antags = antag_count < max_traitors

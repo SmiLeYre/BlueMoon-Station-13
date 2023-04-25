@@ -360,13 +360,13 @@ SUBSYSTEM_DEF(vote)
 					if(ROUNDTYPE_TEAMBASED_DYNAMIC)
 						GLOB.teambased_dynamic = TRUE
 						GLOB.dynamic_no_stacking = FALSE //Welcome To Space Iraq
-						GLOB.master_mode = ROUNDTYPE_TEAMBASED_DYNAMIC
+						GLOB.master_mode = "Dynamic (team-based)"
 					if(ROUNDTYPE_LIGHT_DYNAMIC)
 						GLOB.dynamic_extended = TRUE
-						GLOB.master_mode = ROUNDTYPE_LIGHT_DYNAMIC
+						GLOB.master_mode = "Dynamic (light)"
 					if(ROUNDTYPE_EXTENDED)
 						GLOB.dynamic_forced_extended = TRUE
-						GLOB.master_mode = ROUNDTYPE_EXTENDED
+						GLOB.master_mode = "Extended"
 //BLUEMOON CHANGES END
 				message_admins("The gamemode has been voted for, and has been changed to: [GLOB.master_mode]")
 				log_admin("Gamemode has been voted for and switched to: [GLOB.master_mode].")

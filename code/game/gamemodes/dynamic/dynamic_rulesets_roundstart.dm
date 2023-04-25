@@ -14,12 +14,12 @@
 	protected_roles = list("Prisoner", "NanoTrasen Representative", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGES
 	restricted_roles = list("AI", "Cyborg") //BLUEMOON CHANGES
 	required_candidates = 1
-	weight = 6 //BLUEMOON CHANGES
+	weight = 3 //BLUEMOON CHANGES
 	cost = 8 // Avoid raising traitor threat above 10, as it is the default low cost ruleset.
 	scaling_cost = 9
 	requirements = list(101,10,10,10,10,10,10,10,10,10) //BLUEMOON CHANGES
-	antag_cap = list("denominator" = 20) //BLUEMOON CHANGES
-	var/autotraitor_cooldown = (15 MINUTES)
+	antag_cap = list("denominator" = 8) //BLUEMOON CHANGES
+	var/autotraitor_cooldown = (30 MINUTES) //BLUEMOON CHANGES
 	COOLDOWN_DECLARE(autotraitor_cooldown_check)
 
 /datum/dynamic_ruleset/roundstart/traitor/pre_execute(population)
@@ -104,7 +104,7 @@
 	cost = 15 //BLUEMOON CHANGES
 	scaling_cost = 10
 	requirements = list(101,101,60,50,40,30,20,15,10,10) //BLUEMOON CHANGES
-	antag_cap = list("denominator" = 29)
+	antag_cap = list("denominator" = 10) //BLUEMOON CHANGES
 
 /datum/dynamic_ruleset/roundstart/changeling/pre_execute(population)
 	. = ..()
