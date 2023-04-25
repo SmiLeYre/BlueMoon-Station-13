@@ -599,7 +599,7 @@ BLUEMOON REMOVAL END*/
 	if(!new_rule)
 		return FALSE
 
-	if(!forced)pickingpicking_specific_rule
+	if(!forced)
 		if(only_ruleset_executed)
 			return FALSE
 		// Check if a blocking ruleset has been executed.
