@@ -320,10 +320,15 @@ GLOBAL_VAR_INIT(teambased_dynamic, FALSE)
 
 /// Generates the threat level using lorentz distribution and assigns peaceful_percentage.
 /datum/game_mode/dynamic/proc/generate_threat()
+//BLUEMOON ADD START
+	if(GLOB.teambased_dynamic)
+		threat_level = round(rand(50,100), 0.1)
+	else if(GLOB.dynamic_extended)
+		threat_level = round(rand(30, 50), 0.1)
+	else //normal dynamic
+		threat_level = round(rand(50,100), 0.1)
+//BLUEMOON ADD END
 /*BLUEMOON REMOVAL START
-	if(GLOB.dynamic_extended)
-		threat_curve_centre = EXTENDED_CURVE_CENTER
-BLUEMOON REMOVAL END*/
 	var/relative_threat = LORENTZ_DISTRIBUTION(threat_curve_centre, threat_curve_width)
 	threat_level = round(lorentz_to_amount(relative_threat), 0.1)
 	peaceful_percentage = round(LORENTZ_CUMULATIVE_DISTRIBUTION(relative_threat, threat_curve_centre, threat_curve_width), 0.01)*100
@@ -332,6 +337,7 @@ BLUEMOON REMOVAL END*/
 	SSblackbox.record_feedback("tally","dynamic_threat",threat_curve_centre,"Curve centre")
 	SSblackbox.record_feedback("tally","dynamic_threat",threat_curve_width,"Curve width")
 	SSblackbox.record_feedback("tally","dynamic_threat",peaceful_percentage,"Percent of same-center rounds that are more peaceful")
+BLUEMOON REMOVAL END*/
 
 /// Generates the midround and roundstart budgets
 /datum/game_mode/dynamic/proc/generate_budgets()

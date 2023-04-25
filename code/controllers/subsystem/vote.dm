@@ -1,9 +1,9 @@
 #define VOTE_COOLDOWN 10
 //BLUEMOON CHANGES START
-#define ROUNDTYPE_TEAMBASED_DYNAMIC "Team-Based dynamic (only team antags and most of ghost antags)"
-#define ROUNDTYPE_DYNAMIC "Dynamic"
-#define ROUNDTYPE_LIGHT_DYNAMIC "Light dynamic (without most of team antags)"
-#define ROUNDTYPE_EXTENDED "Extended"
+#define ROUNDTYPE_TEAMBASED_DYNAMIC "Team-Based dynamic (threat around 50-100, only team antags and most of ghost antags)"
+#define ROUNDTYPE_DYNAMIC "Dynamic (threat around 50-100)"
+#define ROUNDTYPE_LIGHT_DYNAMIC "Light dynamic (threat around 30-50, without most of team antags)"
+#define ROUNDTYPE_EXTENDED "Extended (no threat)"
 //BLUEMOON CHANGES END
 
 SUBSYSTEM_DEF(vote)
@@ -354,18 +354,19 @@ SUBSYSTEM_DEF(vote)
 			if("roundtype") //CIT CHANGE - adds the roundstart extended/dynamic vote
 				if(SSticker.current_state > GAME_STATE_PREGAME)//Don't change the mode if the round already started.
 					return message_admins("A vote has tried to change the gamemode, but the game has already started. Aborting.")
-				GLOB.master_mode = "dynamic"
+				GLOB.master_mode = "Dynamic"
 //BLUEMOON CHANGES START - if vote result is ...
 				switch(.)
 					if(ROUNDTYPE_TEAMBASED_DYNAMIC)
 						GLOB.teambased_dynamic = TRUE
 						GLOB.dynamic_no_stacking = FALSE //Welcome To Space Iraq
-					if(ROUNDTYPE_EXTENDED)
-						GLOB.dynamic_forced_extended = TRUE
-						GLOB.master_mode = ROUNDTYPE_EXTENDED
+						GLOB.master_mode = ROUNDTYPE_TEAMBASED_DYNAMIC
 					if(ROUNDTYPE_LIGHT_DYNAMIC)
 						GLOB.dynamic_extended = TRUE
 						GLOB.master_mode = ROUNDTYPE_LIGHT_DYNAMIC
+					if(ROUNDTYPE_EXTENDED)
+						GLOB.dynamic_forced_extended = TRUE
+						GLOB.master_mode = ROUNDTYPE_EXTENDED
 //BLUEMOON CHANGES END
 				message_admins("The gamemode has been voted for, and has been changed to: [GLOB.master_mode]")
 				log_admin("Gamemode has been voted for and switched to: [GLOB.master_mode].")
