@@ -18,7 +18,7 @@
 	cost = 8 // Avoid raising traitor threat above 10, as it is the default low cost ruleset.
 	scaling_cost = 9
 	requirements = list(101,10,10,10,10,10,10,10,10,10) //BLUEMOON CHANGES
-	antag_cap = list("denominator" = 8) //BLUEMOON CHANGES
+	antag_cap = list("denominator" = 12) //BLUEMOON CHANGES
 	var/autotraitor_cooldown = (30 MINUTES) //BLUEMOON CHANGES
 	COOLDOWN_DECLARE(autotraitor_cooldown_check)
 
@@ -104,7 +104,7 @@
 	cost = 15 //BLUEMOON CHANGES
 	scaling_cost = 10
 	requirements = list(101,101,60,50,40,30,20,15,10,10) //BLUEMOON CHANGES
-	antag_cap = list("denominator" = 10) //BLUEMOON CHANGES
+	antag_cap = list("denominator" = 24) //BLUEMOON CHANGES
 
 /datum/dynamic_ruleset/roundstart/changeling/pre_execute(population)
 	. = ..()
