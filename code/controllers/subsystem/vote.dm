@@ -1,9 +1,9 @@
 #define VOTE_COOLDOWN 10
 //BLUEMOON CHANGES START
-#define ROUNDTYPE_TEAMBASED_DYNAMIC "Team-Based dynamic (threat around 50-100, only team antags and most of ghost antags)"
-#define ROUNDTYPE_DYNAMIC "Dynamic (threat around 50-100)"
-#define ROUNDTYPE_LIGHT_DYNAMIC "Light dynamic (threat around 30-50, without most of team antags)"
-#define ROUNDTYPE_EXTENDED "Extended (no threat)"
+#define ROUNDTYPE_TEAMBASED_DYNAMIC "Team-Based dynamic"
+#define ROUNDTYPE_DYNAMIC "Dynamic"
+#define ROUNDTYPE_LIGHT_DYNAMIC "Light dynamic"
+#define ROUNDTYPE_EXTENDED "Extended"
 //BLUEMOON CHANGES END
 
 SUBSYSTEM_DEF(vote)
@@ -42,7 +42,14 @@ SUBSYSTEM_DEF(vote)
 
 /datum/controller/subsystem/vote/fire()	//called by master_controller
 	if(mode)
-		if(end_time < world.time)
+//BLUEMOON ADD START
+		if(mode == "roundtype" && SSticker.timeLeft - 20 SECONDS <= 0)
+			result()
+			for(var/client/C in voting)
+				C << browse(null, "window=vote;can_close=0")
+			reset()
+//BLUEMOON ADD END
+		else if(end_time < world.time) //BLUEMOON CHANGES
 			result()
 			SSpersistence.SaveSavedVotes()
 			for(var/client/C in voting)
@@ -263,6 +270,10 @@ SUBSYSTEM_DEF(vote)
 	else
 		text += "<b>[capitalize(mode)] Vote</b>"
 		vote_title_text = "[capitalize(mode)] Vote"
+//BLUEMOON ADD START
+	if(mode == "roundtype")
+		text += "\nГолоса за все вариации динамика складываются и побеждают в случае ничьей!"
+//BLUEMOON ADD END
 	if(vote_system == SCHULZE_VOTING)
 		calculate_condorcet_votes(vote_title_text)
 	if(vote_system == SCORE_VOTING)
@@ -370,7 +381,6 @@ SUBSYSTEM_DEF(vote)
 //BLUEMOON CHANGES END
 				message_admins("The gamemode has been voted for, and has been changed to: [GLOB.master_mode]")
 				log_admin("Gamemode has been voted for and switched to: [GLOB.master_mode].")
-				to_chat("Gamemode has been voted for and switched to: [GLOB.master_mode].") //BLUEMOON ADD
 			if("restart")
 				if(. == "Restart Round")
 					restart = 1
@@ -586,9 +596,15 @@ SUBSYSTEM_DEF(vote)
 				. += "<h3>No-votes have no power--your opinion is only heard if you vote!</h3>"
 //BLUEMOON ADD START
 		if(mode == "roundtype")
-			. += "<h3>Голоса за все вариации динамика складываются и побеждают в случае ничьей!</h3>"
+			. += "<br>Голоса за все вариации динамика складываются и побеждают в случае ничьей!"
+			. += "<br><font size=1><small><b>[ROUNDTYPE_TEAMBASED_DYNAMIC]</b> (threat around 50-100, only team antags and most of ghost antags)</font></small>"
+			. += "<br><font size=1><small><b>[ROUNDTYPE_DYNAMIC]</b> (threat around 50-100)</font></small>"
+			. += "<br><font size=1><small><b>[ROUNDTYPE_LIGHT_DYNAMIC]</b> (threat around 30-50, without most of team antags)</font></small>"
+			. += "<br><font size=1><small><b>[ROUNDTYPE_EXTENDED]</b> (no threat)</font></small>"
+			. += "<br>Осталось времени: [DisplayTimeText((SSticker.timeLeft - 20 SECONDS))]<hr><ul>"
+		else
+			. += "Осталось времени: [DisplayTimeText(end_time-world.time)]<hr><ul>"
 //BLUEMOON ADD END
-		. += "Осталось времени: [DisplayTimeText(end_time-world.time)]<hr><ul>"
 		switch(vote_system)
 			if(PLURALITY_VOTING, APPROVAL_VOTING)
 				for(var/i=1,i<=choices.len,i++)
