@@ -84,11 +84,11 @@ SUBSYSTEM_DEF(vote)
 		var/votes = choices[option]
 		total_votes += votes
 		if(votes > greatest_votes)
-//BLUEMOON CHANGES START - skip extended if it has less votes than all other votes
+//BLUEMOON ADD START - пропуск эксты, если у неё голосов меньше, чем у остальных вариантов (чтобы голоса динамиков считались вместе)
 			if(option == ROUNDTYPE_EXTENDED)
 				if(choices[ROUNDTYPE_EXTENDED] <= total_votes-votes) //extended always must be the last in vote to ensure it works
 					continue
-//BLUEMOON CHANGES END
+//BLUEMOON ADD END
 			greatest_votes = votes
 	//default-vote for everyone who didn't vote
 	if(!CONFIG_GET(flag/default_no_vote) && choices.len)
@@ -113,12 +113,12 @@ SUBSYSTEM_DEF(vote)
 	if(greatest_votes)
 		var/dynamic_votes = 0 //BLUEMOON ADD
 		for(var/option in choices)
-//BLUEMOON CHANGES START - preventing extended from being a winner if the vote in tie state
+//BLUEMOON ADD START - костыль, чтобы экста не была победителем, если у неё голосов больше, чем у одного из других вариантов
 			if(option == ROUNDTYPE_EXTENDED)
 				if(choices[ROUNDTYPE_EXTENDED] <= dynamic_votes) //extended always must be the last in vote to ensure it works
 					continue
 			dynamic_votes += choices[option]
-//BLUEMOON CHANGES END
+//BLUEMOON ADD END
 			if(choices[option] == greatest_votes)
 				. += option
 	return .
@@ -355,7 +355,7 @@ SUBSYSTEM_DEF(vote)
 				if(SSticker.current_state > GAME_STATE_PREGAME)//Don't change the mode if the round already started.
 					return message_admins("A vote has tried to change the gamemode, but the game has already started. Aborting.")
 				GLOB.master_mode = "Dynamic"
-//BLUEMOON CHANGES START - if vote result is ...
+//BLUEMOON CHANGES START - если результат ..., то...
 				switch(.)
 					if(ROUNDTYPE_TEAMBASED_DYNAMIC)
 						GLOB.teambased_dynamic = TRUE
@@ -370,7 +370,7 @@ SUBSYSTEM_DEF(vote)
 //BLUEMOON CHANGES END
 				message_admins("The gamemode has been voted for, and has been changed to: [GLOB.master_mode]")
 				log_admin("Gamemode has been voted for and switched to: [GLOB.master_mode].")
-				to_chat("Gamemode has been voted for and switched to: [GLOB.master_mode].") //BlueMoon edit !!!
+				to_chat("Gamemode has been voted for and switched to: [GLOB.master_mode].") //BLUEMOON ADD
 			if("restart")
 				if(. == "Restart Round")
 					restart = 1
@@ -571,12 +571,12 @@ SUBSYSTEM_DEF(vote)
 
 	if(mode)
 		if(question)
-			. += "<h2>Vote: '[question]'</h2>"
+			. += "<h2>Голосование: '[question]'</h2>"
 		else
-			. += "<h2>Vote: [capitalize(mode)]</h2>"
+			. += "<h2>Голосование: [capitalize(mode)]</h2>"
 		switch(vote_system)
 			if(PLURALITY_VOTING)
-				. += "<h3>Vote one.</h3>"
+				. += "<h3>Выберите одно.</h3>"
 			if(APPROVAL_VOTING)
 				. += "<h3>Vote any number of choices.</h3>"
 			if(SCHULZE_VOTING,INSTANT_RUNOFF_VOTING)
@@ -584,11 +584,11 @@ SUBSYSTEM_DEF(vote)
 			if(SCORE_VOTING,HIGHEST_MEDIAN_VOTING)
 				. += "<h3>Grade the candidates by how much you like them.</h3>"
 				. += "<h3>No-votes have no power--your opinion is only heard if you vote!</h3>"
-//BLUEMOON CHANGES START
+//BLUEMOON ADD START
 		if(mode == "roundtype")
-			. += "<h3>Votes around dynamic modes will be merged in results and win in ties!</h3>"
-//BLUEMOON CHANGES END
-		. += "Time Left: [DisplayTimeText(end_time-world.time)]<hr><ul>"
+			. += "<h3>Голоса за все вариации динамика складываются и побеждают в случае ничьей!</h3>"
+//BLUEMOON ADD END
+		. += "Осталось времени: [DisplayTimeText(end_time-world.time)]<hr><ul>"
 		switch(vote_system)
 			if(PLURALITY_VOTING, APPROVAL_VOTING)
 				for(var/i=1,i<=choices.len,i++)
@@ -786,8 +786,9 @@ SUBSYSTEM_DEF(vote)
 		if(P)
 			P.player_actions -= src
 
-//BLUEMOON CHANGES START
+//BLUEMOON ADD START
+#undef ROUNDTYPE_TEAMBASED_DYNAMIC
 #undef ROUNDTYPE_DYNAMIC
 #undef ROUNDTYPE_LIGHT_DYNAMIC
 #undef ROUNDTYPE_EXTENDED
-//BLUEMOON CHANGES END
+//BLUEMOON ADD END

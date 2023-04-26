@@ -18,7 +18,7 @@ GLOBAL_VAR_INIT(dynamic_stacking_limit, 90)
 GLOBAL_LIST_EMPTY(dynamic_forced_roundstart_ruleset)
 // Forced threat level, setting this to zero or higher forces the roundstart threat to the value.
 GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
-// BLUEMOON ADDITION - Team-based dynamic
+// BLUEMOON ADD - командный динамик
 GLOBAL_VAR_INIT(teambased_dynamic, FALSE)
 
 /datum/game_mode/dynamic
@@ -201,8 +201,10 @@ GLOBAL_VAR_INIT(teambased_dynamic, FALSE)
 		GLOB.dynamic_forced_extended = !GLOB.dynamic_forced_extended
 	else if (href_list["extended"])
 		GLOB.dynamic_extended = !GLOB.dynamic_extended
+//BLUEMOON ADD START - необходимо для изменения через game panel
 	else if (href_list["teambased"])
 		GLOB.teambased_dynamic = !GLOB.teambased_dynamic
+//BLUEMOON ADD END
 	else if (href_list["no_stacking"])
 		GLOB.dynamic_no_stacking = !GLOB.dynamic_no_stacking
 	else if (href_list["adjustthreat"])
@@ -320,7 +322,7 @@ GLOBAL_VAR_INIT(teambased_dynamic, FALSE)
 
 /// Generates the threat level using lorentz distribution and assigns peaceful_percentage.
 /datum/game_mode/dynamic/proc/generate_threat()
-//BLUEMOON ADD START
+//BLUEMOON ADD START - проверки для вариаций динамика
 	if(GLOB.teambased_dynamic)
 		threat_level = round(rand(50,100), 0.1)
 	else if(GLOB.dynamic_extended)
@@ -328,7 +330,7 @@ GLOBAL_VAR_INIT(teambased_dynamic, FALSE)
 	else //normal dynamic
 		threat_level = round(rand(50,100), 0.1)
 //BLUEMOON ADD END
-/*BLUEMOON REMOVAL START
+/*BLUEMOON REMOVAL START - мы не центрируем уровень угрозы по Лоуренцу
 	var/relative_threat = LORENTZ_DISTRIBUTION(threat_curve_centre, threat_curve_width)
 	threat_level = round(lorentz_to_amount(relative_threat), 0.1)
 	peaceful_percentage = round(LORENTZ_CUMULATIVE_DISTRIBUTION(relative_threat, threat_curve_centre, threat_curve_width), 0.01)*100
@@ -341,7 +343,7 @@ BLUEMOON REMOVAL END*/
 
 /// Generates the midround and roundstart budgets
 /datum/game_mode/dynamic/proc/generate_budgets()
-/*BLUEMOON REMOVAL START
+/*BLUEMOON REMOVAL START - динамичная экста не должна жрать весь раундстартовый бюджет
 	if(GLOB.dynamic_extended)
 		mid_round_budget = threat_level
 		round_start_budget = 0
@@ -525,8 +527,7 @@ BLUEMOON REMOVAL END*/
 		if (check_blocking(ruleset.blocking_rules, rulesets_picked))
 			drafted_rules[ruleset] = null
 			continue
-
-//BLUEMOON ADDITION START
+//BLUEMOON ADD START - проверки для вариаций динамика
 		if(!(ruleset.flags & HIGH_IMPACT_RULESET) && GLOB.teambased_dynamic && !ruleset.team_based_allowed)
 			drafted_rules[ruleset] = null
 			continue
@@ -534,7 +535,7 @@ BLUEMOON REMOVAL END*/
 		if(ruleset.flags & HIGH_IMPACT_RULESET && GLOB.dynamic_extended)
 			drafted_rules[ruleset] = null
 			continue
-//BLUEMOON ADDITION END
+//BLUEMOON ADD END
 		round_start_budget_left -= cost
 
 		rulesets_picked[ruleset] += 1
@@ -665,10 +666,10 @@ BLUEMOON REMOVAL END*/
 			for (var/datum/dynamic_ruleset/midround/rule in midround_rules)
 				if (!rule.weight)
 					continue
-//BLUEMOON ADDITION START
+//BLUEMOON ADD START - в тимбазу некоторые режимы не должны ролиться
 				if(!(rule.flags & HIGH_IMPACT_RULESET) && GLOB.teambased_dynamic && !rule.team_based_allowed)
 					continue
-//BLUEMOON ADDITION END
+//BLUEMOON ADD END
 				if(rule.flags & HIGH_IMPACT_RULESET)
 					if (high_impact_ruleset_executed && threat_level < GLOB.dynamic_stacking_limit && GLOB.dynamic_no_stacking)
 						continue
@@ -698,13 +699,13 @@ BLUEMOON REMOVAL END*/
 		return 100
 	var/chance = 0
 	var/effective_living_players = current_players[CURRENT_LIVING_PLAYERS].len
-/*BLUEMOON REMOVAL START
+/*BLUEMOON REMOVAL START - динамичная экста (лайт динамик) не должны сокращать количество игроков
 	if(GLOB.dynamic_extended)
 		effective_living_players = min(effective_living_players, length(SSjob.get_living_sec())*2 + length(SSjob.get_living_heads()))
 BLUEMOON REMOVAL END*/
 	var/max_pop_per_antag = max(5,15 - round(threat_level/10) - round(effective_living_players/5))
 	if (!current_players[CURRENT_LIVING_ANTAGS].len)
-/*BLUEMOON REMOVAL START
+/*BLUEMOON REMOVAL START - динамичная экста (лайт динамик) не должны уменьшать шанс появления ролей
 		if(GLOB.dynamic_extended)
 			chance += min(50,effective_living_players*5)
 		else BLUEMOON REMOVAL END*/

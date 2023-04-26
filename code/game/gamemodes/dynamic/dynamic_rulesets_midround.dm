@@ -203,7 +203,7 @@
 /datum/dynamic_ruleset/midround/autotraitor/acceptable(population = 0, threat = 0)
 	var/player_count = mode.current_players[CURRENT_LIVING_PLAYERS].len
 	var/antag_count = mode.current_players[CURRENT_LIVING_ANTAGS].len
-	var/max_traitors = round(player_count / 16) + 1 //BLUEMOON CNAGES, 1 traitor to each ... living players
+	var/max_traitors = round(player_count / 16) + 1 //BLUEMOON CNANGES - 1 предатель на каждые 16 человек
 
 	// adding traitors if the antag population is getting low
 	var/too_little_antags = antag_count < max_traitors
@@ -258,7 +258,7 @@
 	required_candidates = 9
 	weight = 3
 	cost = 15
-	requirements = list(101,101,101,50,30,20,10,10,10,10) //BLUEMOON CHANGES
+	requirements = list(101,101,101,50,30,20,10,10,10,10)
 	flags = HIGH_IMPACT_RULESET
 	blocking_rules = list(/datum/dynamic_ruleset/roundstart/families)
 	/// A reference to the handler that is used to run pre_execute(), execute(), etc..
@@ -416,7 +416,7 @@
 	required_enemies = list(0,0,0,0,0,0,5,5,4,0) //BLUEMOON CHANGES
 	required_candidates = 5
 	weight = 3
-	cost = 35
+	cost = 30 //BLUEMOON CHANGES
 	requirements = list(101,101,101,101,101,101,60,40,30,10) //BLUEMOON CHANGES
 	var/list/operative_cap = list(2,2,3,3,3,4,5,5,5,5)
 	var/datum/team/nuclear/nuke_team
