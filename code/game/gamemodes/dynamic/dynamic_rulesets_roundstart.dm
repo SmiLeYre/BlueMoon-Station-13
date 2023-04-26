@@ -362,14 +362,14 @@
 	restricted_roles = list("AI", "Cyborg", "Prisoner", "NanoTrasen Representative", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
 	required_candidates = 3
 	weight = 3 //BLUEMOON CHANGES
-	delay = 7 MINUTES
+	delay = 5 MINUTES //BLUEMOON CHANGES
 	cost = 20
-	requirements = list(101,101,101,101,101,101,50,40,30,20) //BLUEMOON CHANGES
+	requirements = list(101,101,101,101,101,60,50,40,30,20) //BLUEMOON CHANGES
 	antag_cap = 3
 	flags = HIGH_IMPACT_RULESET
 	blocking_rules = list(/datum/dynamic_ruleset/latejoin/provocateur)
 	// I give up, just there should be enough heads with 35 players...
-	minimum_players = 35
+//	minimum_players = 30 //BLUEMOON REMOVAL
 	/// How much threat should be injected when the revolution wins?
 	var/revs_win_threat_injection = 20
 	var/datum/team/revolution/revolution
@@ -377,6 +377,7 @@
 
 /datum/dynamic_ruleset/roundstart/revs/pre_execute(population)
 	. = ..()
+	message_admins("В связи с особенностями игрового режима и заходом игроков после начала раунда, до выдачи ролей революцинерам осталось <b>[delay/10] минут.</b>")
 	var/max_candidates = get_antag_cap(population)
 	for(var/i = 1 to max_candidates)
 		if(candidates.len <= 0)
