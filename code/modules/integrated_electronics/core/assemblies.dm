@@ -824,6 +824,7 @@
 	name = "type-f electronic assembly"
 	icon_state = "setup_small_pda"
 	desc = "It's a case, for building small electronics with. This one resembles a PDA."
+	slot_flags = ITEM_SLOT_ID | ITEM_SLOT_BELT
 
 /obj/item/electronic_assembly/dildo
 	name = "type-g electronic assembly"
@@ -952,7 +953,7 @@
 	name = "electronic drone"
 	icon_state = "setup_drone"
 	desc = "It's a case, for building mobile electronics with."
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	max_components = IC_MAX_SIZE_BASE * 3
 	max_complexity = IC_COMPLEXITY_BASE * 3
 	allowed_circuit_action_flags = IC_ACTION_MOVEMENT | IC_ACTION_COMBAT | IC_ACTION_LONG_RANGE
