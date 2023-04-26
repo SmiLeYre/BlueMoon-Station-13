@@ -60,7 +60,7 @@
 	restricted_roles = list("AI", "Cyborg")
 	required_candidates = 1
 	weight = 3  //BLUEMOON CHANGES
-	cost = 5
+	cost = 6 //BLUEMOON CHANGES
 	requirements = list(101,40,25,20,15,10,10,10,10,10)
 	repeatable = TRUE
 
@@ -159,3 +159,34 @@
 	cost = 10
 	requirements = list(101,101,101,50,40,20,20,15,10,10)
 	repeatable = TRUE
+
+//BLUEMOON ADD START - я добавляю это сюда вместо модулей, чтобы было удобно изменять параметры (для наглядности)
+//////////////////////////////////////////////
+//                                          //
+//            SILENT CHANGELING             //
+//                                          //
+//////////////////////////////////////////////
+
+/datum/dynamic_ruleset/latejoin/silent_changeling
+	name = "Silent Changeling"
+	antag_datum = /datum/antagonist/changeling
+	antag_flag = "changeling late"
+	antag_flag = ROLE_CHANGELING
+	protected_roles = list("Prisoner", "NanoTrasen Representative", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
+	restricted_roles = list("AI", "Cyborg")
+	required_candidates = 1
+	weight = 3
+	cost = 10
+	requirements = list(101,101,60,50,40,30,20,15,10,10)
+	antag_cap = list("denominator" = 24)
+	repeatable = TRUE
+
+/datum/dynamic_ruleset/latejoin/silent_changeling/execute()
+	var/mob/M = pick(candidates)
+	assigned += M.mind
+	M.mind.special_role = antag_flag
+	var/datum/antagonist/changeling/new_antag = new antag_datum()
+	M.mind.add_antag_datum(new_antag)
+	log_admin("[M.name] was made into a [name] by dynamic.")
+	return TRUE
+//BLUEMOON ADD END
