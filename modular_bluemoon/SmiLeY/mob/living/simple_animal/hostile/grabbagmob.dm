@@ -113,8 +113,8 @@
 	desc = "A follower of the Blood Mother, either experimented on or just devout enough to be turned into a monster."
 	icon_state = "culthorror"
 	icon_living = "culthorror"
-	maxHealth = 110
-	health = 110
+	maxHealth = 240
+	health = 240
 	harm_intent_damage = 8
 	melee_damage_lower = 15
 	melee_damage_upper = 15
@@ -127,8 +127,8 @@
 	desc = "A follower of the Blood Mother, covered in thick armor and armed with a sword and shield."
 	icon_state = "cultwarrior"
 	icon_living = "cultwarrior"
-	maxHealth = 120
-	health = 120
+	maxHealth = 240
+	health = 240
 	harm_intent_damage = 8
 	melee_damage_lower = 15
 	melee_damage_upper = 15
@@ -141,8 +141,8 @@
 	desc = "A follower of the Blood Mother, armed with a blood-spear."
 	icon_state = "cultspear"
 	icon_living = "cultspear"
-	maxHealth = 200
-	health = 200
+	maxHealth = 300
+	health = 300
 	harm_intent_damage = 8
 	melee_damage_lower = 15
 	melee_damage_upper = 15
@@ -208,7 +208,7 @@
 	maxHealth = 300
 	health = 300
 	move_to_delay = 10
-	projectiletype = /obj/item/gun/ballistic/shotgun/boltaction/enchanted/arcane_barrage/blood
+	projectiletype = /obj/item/projectile/magic/arcane_barrage/blood
 	projectilesound = 'sound/weapons/barragespellhit.ogg'
 
 // Looters

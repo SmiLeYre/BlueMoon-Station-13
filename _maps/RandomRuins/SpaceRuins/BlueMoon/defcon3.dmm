@@ -7630,12 +7630,6 @@
 /obj/structure/lattice/catwalk,
 /turf/open/space/basic,
 /area/solars/tarkon)
-"OS" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/item/solar_assembly,
-/obj/structure/cable,
-/turf/open/floor/plasteel/airless/solarpanel,
-/area/solars/tarkon)
 "OT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/yellow,
@@ -11729,7 +11723,7 @@ fw
 fw
 fw
 fw
-OS
+If
 WY
 WY
 WY

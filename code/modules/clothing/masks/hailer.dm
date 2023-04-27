@@ -192,52 +192,52 @@
 					phrase_text = "I am, the LAW!"
 					phrase_sound = "dredd"
 				if(19)				// slut cop - dom
-					phrase_text = "Your ass is mine!"
+					phrase_text = "Твоя задница - моя!"
 					phrase_sound = "ass"
 				if(20) //Thank you Yappy for 19 & 20
-					phrase_text = "Your consent is forfeit."
+					phrase_text = "Ваше согласие недействительно."
 					phrase_sound = "consent"
 				if(21)
-					phrase_text = "Fuck my brains out, I dare you."
+					phrase_text = "Отъеби мои мозги, умоляю."
 					phrase_sound = "brains"
 				if(22)
-					phrase_text = "Hands up, pants down."
+					phrase_text = "Руки вверх, штаны вниз."
 					phrase_sound = "pants"
 				if(23)
-					phrase_text = "On your knees, and say please."
+					phrase_text = "Встань на колени и скажи: 'пожалуйста'."
 					phrase_sound = "knees"
 				if(24)
-					phrase_text = "Empty or not, I'm cumming for you!"
+					phrase_text = "Пустое у меня тельце или нет, я кончу ради тебя!"
 					phrase_sound = "empty"
 				if(25) //Thank you Nata for 22-25
-					phrase_text = "Face down, ass up."
+					phrase_text = "Лицом на землю, задницей вверх!"
 					phrase_sound = "facedown"
 				if(26)
-					phrase_text = "Please assume the position."
+					phrase_text = "Пожалуйста, займи на мне свою любимую позицию."
 					phrase_sound = "fisto"
 				if(27)
-					phrase_text = "You're coming with me, and you're going to love it."
+					phrase_text = "Ты пойдешь со мной, и тебе это понравится!"
 					phrase_sound = "love"
 				if(28)				// slut cop - sub
-					phrase_text = "Please, I need more!"
+					phrase_text = "Пожалуйста, мне нужно больше!!"
 					phrase_sound = "please"
 				if(29)
-					phrase_text = "My body is yours."
+					phrase_text = "Моё тело принадлежит тебе."
 					phrase_sound = "body"
 				if(30)
-					phrase_text = "Am I a good pet?"
+					phrase_text = "Я хороший питомец?"
 					phrase_sound = "goodpet"
 				if(31)
-					phrase_text = "I am yours..."
+					phrase_text = "Я твоя вещь..."
 					phrase_sound = "yours"
 				if(32) //Thank you Kraxie for 31 & 32
-					phrase_text = "Master..."
+					phrase_text = "Мастер..."
 					phrase_sound = "master"
 				if(33)
-					phrase_text = "I'll do anything for you..."
+					phrase_text = "Я сделаю всё ради тебя..."
 					phrase_sound = "anything"
 				if(34)
-					phrase_text = "I live to serve."
+					phrase_text = "Я живу, чтобы служить."
 					phrase_sound = "serve"
 
 		if(aggressiveness <= 0)

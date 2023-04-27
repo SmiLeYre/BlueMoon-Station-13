@@ -15,7 +15,7 @@ cd "$original_dir"
 #find out what we have (+e is important for this)
 set +e
 has_git="$(command -v git)"
-has_cargo="$(command -v ~/.cargo/bin/cargo)"
+has_cargo="$(command -v cargo)"
 has_sudo="$(command -v sudo)"
 has_grep="$(command -v grep)"
 has_youtubedl="$(command -v youtube-dl)"
@@ -27,6 +27,7 @@ if ! [ -x "$has_cargo" ]; then
 	echo "Installing rust..."
 	curl https://sh.rustup.rs -sSf | sh -s -- -y
 	. ~/.profile
+	export PATH="/usr/local/.cargo/bin:$PATH"
 fi
 
 # apt packages, libssl needed by rust-g but not included in TGS barebones install
@@ -52,17 +53,17 @@ if [ ! -d "rust-g" ]; then
 	echo "Cloning rust-g..."
 	git clone https://github.com/tgstation/rust-g
 	cd rust-g
-	~/.cargo/bin/rustup target add i686-unknown-linux-gnu
+	rustup target add i686-unknown-linux-gnu
 else
 	echo "Fetching rust-g..."
 	cd rust-g
 	git fetch
-	~/.cargo/bin/rustup target add i686-unknown-linux-gnu
+	rustup target add i686-unknown-linux-gnu
 fi
 
 echo "Deploying rust-g..."
 git checkout "$RUST_G_VERSION"
-env PKG_CONFIG_ALLOW_CROSS=1 ~/.cargo/bin/cargo build --release --target=i686-unknown-linux-gnu
+env PKG_CONFIG_ALLOW_CROSS=1 cargo build --release --target=i686-unknown-linux-gnu
 mv target/i686-unknown-linux-gnu/release/librust_g.so "$1/librust_g.so"
 cd ..
 
@@ -74,17 +75,17 @@ if [ ! -d "auxmos" ]; then
 	echo "Cloning auxmos..."
 	git clone https://github.com/Putnam3145/auxmos
 	cd auxmos
-	~/.cargo/bin/rustup target add i686-unknown-linux-gnu
+	rustup target add i686-unknown-linux-gnu
 else
 	echo "Fetching auxmos..."
 	cd auxmos
 	git fetch
-	~/.cargo/bin/rustup target add i686-unknown-linux-gnu
+	rustup target add i686-unknown-linux-gnu
 fi
 
 echo "Deploying auxmos..."
 git checkout "$AUXMOS_VERSION"
-env PKG_CONFIG_ALLOW_CROSS=1 ~/.cargo/bin/cargo rustc --release --target=i686-unknown-linux-gnu --features "all_reaction_hooks katmos" -- -C target-cpu=native
+env PKG_CONFIG_ALLOW_CROSS=1 cargo rustc --release --target=i686-unknown-linux-gnu --features "all_reaction_hooks katmos" -- -C target-cpu=native
 mv -f target/i686-unknown-linux-gnu/release/libauxmos.so "$1/libauxmos.so"
 cd ..
 

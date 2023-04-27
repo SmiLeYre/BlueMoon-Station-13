@@ -52013,6 +52013,7 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
 	},
+/obj/effect/landmark/start/stowaway,
 /turf/open/floor/plasteel,
 /area/hallway/secondary/construction)
 "dpX" = (
@@ -68987,6 +68988,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
+/obj/effect/landmark/start/stowaway,
 /turf/open/floor/plasteel,
 /area/maintenance/port/aft)
 "ecF" = (
@@ -96063,6 +96065,12 @@
 	},
 /turf/closed/wall,
 /area/service/chapel/office)
+"mJC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/stowaway,
+/turf/open/floor/plating,
+/area/maintenance/port)
 "mJF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/stripes/line{
@@ -129436,6 +129444,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/effect/landmark/start/stowaway,
 /turf/open/floor/wood{
 	icon_state = "wood-broken5"
 	},
@@ -148980,7 +148989,7 @@ cQd
 caE
 cTk
 cVm
-cfT
+mJC
 caE
 dam
 dbN
@@ -167441,7 +167450,7 @@ vzr
 ivk
 eDw
 gKi
-xHY
+gPi
 oOV
 qhG
 wlj

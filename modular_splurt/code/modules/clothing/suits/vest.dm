@@ -60,7 +60,7 @@
 	dog_fashion = null
 
 /obj/item/clothing/suit/armor/vest/metrocop
-	name = "civil protection armored vest"
+	name = "Civil Protection Armored Vest"
 	desc = "You feel like this may not stop a scientist armed with nothing but a crowbar."
 	icon_state = "metrocop_armor"
 	item_state = "metrocop_armor"

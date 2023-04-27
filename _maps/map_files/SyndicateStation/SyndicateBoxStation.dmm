@@ -53337,7 +53337,7 @@
 /area/commons/fitness/recreation)
 "fkW" = (
 /obj/structure/table/reinforced,
-/obj/item/clothing/head/syndicatefake,
+/obj/item/clothing/head/helmet/space/syndicate/black/red,
 /turf/open/floor/mineral/plastitanium/red,
 /area/maintenance/starboard/aft)
 "flc" = (
@@ -54398,8 +54398,8 @@
 /area/maintenance/port/fore)
 "gGK" = (
 /obj/structure/table/reinforced,
-/obj/item/clothing/suit/syndicatefake,
-/obj/item/clothing/head/syndicatefake,
+/obj/item/clothing/head/helmet/space/syndicate/black/red,
+/obj/item/clothing/suit/space/syndicate/black/red,
 /turf/open/floor/mineral/plastitanium/red,
 /area/maintenance/starboard/aft)
 "gGL" = (
@@ -63553,6 +63553,11 @@
 /obj/machinery/chem_master,
 /turf/open/floor/mineral/plastitanium,
 /area/medical/medbay/central)
+"tRt" = (
+/obj/structure/table/reinforced,
+/obj/item/gun/ballistic/automatic/pistol/suppressed,
+/turf/open/floor/mineral/plastitanium/red,
+/area/maintenance/starboard/aft)
 "tRB" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 5
@@ -63964,6 +63969,12 @@
 	smooth = 2
 	},
 /area/command/gateway)
+"uxE" = (
+/obj/item/gun/ballistic/automatic/pistol/m9mmpistol,
+/turf/closed/wall/r_wall/syndicate{
+	smooth = 2
+	},
+/area/science/circuit)
 "uxY" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/cable{
@@ -63983,7 +63994,7 @@
 /area/maintenance/bar)
 "uzm" = (
 /obj/structure/table/reinforced,
-/obj/item/clothing/suit/syndicatefake,
+/obj/item/clothing/suit/space/syndicate/black/red,
 /turf/open/floor/mineral/plastitanium/red,
 /area/maintenance/starboard/aft)
 "uAU" = (
@@ -116568,7 +116579,7 @@ cNZ
 nyn
 wkN
 wkN
-wkN
+uxE
 wkN
 kPi
 cOe
@@ -119140,7 +119151,7 @@ mDZ
 xgs
 fkW
 xgs
-hTt
+tRt
 xgs
 kfS
 kfS

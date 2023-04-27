@@ -50,7 +50,8 @@
 		/obj/item/storage/box/medipens/lewd = 2
 	)
 	var/list/extra_premium = list(
-		/obj/item/clothing/mask/muzzle/ballgag = 3
+		/obj/item/clothing/mask/muzzle/ballgag = 3,
+		/obj/item/storage/belt/cummerbund = 3
 	)
 	LAZYADD(products, extra_products)
 	LAZYADD(contraband, extra_contraband)

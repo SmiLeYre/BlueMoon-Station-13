@@ -27,6 +27,7 @@ SUBSYSTEM_DEF(statpanels)
 			"Round Time: [GAMETIMESTAMP("hh:mm:ss", round_time)]",
 			"Actual Round Timer: [time2text(real_round_time, "hh:mm:ss", 0)]", //A back up control to check the round time to see if round time has descyed as well as properly track round time
 			"Station Time: [STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)]",
+			"Sol System Time: [SOLAR_TIME_TIMESTAMP("hh:mm:ss", world.time)]", //bluemoon add,
 			"Time Dilation: [round(SStime_track.time_dilation_current,1)]% AVG:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)"
 		)
 

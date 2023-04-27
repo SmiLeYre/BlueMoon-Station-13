@@ -4,6 +4,10 @@
 	icon_state = "officer"
 	item_state = "g_suit"
 	alt_covers_chest = TRUE
+	unique_reskin = list(
+		"Alt" = list("icon_state" = "officer_alt")
+	)
+
 
 /obj/item/clothing/under/rank/centcom/officer/syndicate
 	has_sensor = NO_SENSORS

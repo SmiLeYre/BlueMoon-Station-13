@@ -2094,6 +2094,10 @@
 	},
 /turf/open/floor/plating,
 /area/awaymission/wildwest/refine)
+"ov" = (
+/mob/living/simple_animal/hostile/syndicate/ranged/space/anthro/cat,
+/turf/open/space,
+/area/space)
 "ow" = (
 /obj/structure/closet/crate,
 /obj/item/wrench,
@@ -2190,6 +2194,10 @@
 	},
 /turf/open/floor/plating,
 /area/awaymission/wildwest/refine)
+"Md" = (
+/mob/living/simple_animal/hostile/syndicate/ranged/anthro,
+/turf/open/floor/plasteel,
+/area/awaymission/wildwest/refine)
 "OS" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -2212,6 +2220,12 @@
 	icon_state = "ironsand1"
 	},
 /area/awaymission/wildwest/gov)
+"Vv" = (
+/obj/effect/landmark/awaystart/nodelay,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
 "YE" = (
 /obj/structure/closet/crate,
 /obj/item/stack/sheet/mineral/plasma{
@@ -2219,6 +2233,10 @@
 	},
 /obj/item/wrench,
 /turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"YW" = (
+/obj/structure/closet/crate/large,
+/turf/open/floor/plasteel,
 /area/awaymission/wildwest/refine)
 "Za" = (
 /obj/machinery/wish_granter,
@@ -25014,7 +25032,7 @@ br
 br
 aa
 br
-aa
+ov
 aa
 aa
 aa
@@ -26294,7 +26312,7 @@ bT
 bT
 br
 br
-aa
+ov
 aa
 aa
 aa
@@ -28358,7 +28376,7 @@ eu
 eu
 eu
 eu
-eu
+Md
 eu
 eu
 eu
@@ -28610,7 +28628,7 @@ et
 et
 eu
 eu
-eu
+fO
 eu
 eu
 eu
@@ -28874,12 +28892,12 @@ eu
 eu
 eu
 eu
+YW
+YW
+YW
+YW
 eu
-eu
-eu
-eu
-eu
-eu
+fO
 fj
 fo
 fo
@@ -29122,9 +29140,9 @@ aG
 aG
 et
 eu
-eu
-eu
-eu
+YW
+YW
+YW
 eu
 eu
 eu
@@ -29640,6 +29658,7 @@ eu
 eu
 eu
 eu
+YW
 eu
 eu
 eu
@@ -29648,8 +29667,7 @@ eu
 eu
 eu
 eu
-eu
-eu
+YW
 eu
 gB
 aa
@@ -29897,7 +29915,7 @@ eu
 eu
 eu
 eu
-eu
+YW
 eu
 eu
 fO
@@ -29906,7 +29924,7 @@ ge
 eu
 eu
 eu
-eu
+YW
 eu
 eJ
 aa
@@ -30154,7 +30172,7 @@ eu
 eu
 eu
 eu
-eu
+YW
 eu
 eu
 eu
@@ -30411,7 +30429,7 @@ eu
 eu
 eu
 eu
-eu
+YW
 eu
 eu
 eu
@@ -30668,15 +30686,15 @@ eu
 eu
 eu
 eu
+YW
+Md
 eu
 eu
 eu
 eu
-eu
-eu
-eu
-eu
-eu
+YW
+YW
+YW
 eu
 eu
 gC
@@ -31180,7 +31198,7 @@ aW
 et
 eu
 eu
-eu
+fO
 eu
 eu
 eu
@@ -33516,9 +33534,9 @@ az
 az
 az
 az
-az
-az
-az
+gV
+gV
+gV
 aN
 aN
 aG
@@ -34287,9 +34305,9 @@ aN
 aN
 az
 az
-az
-az
-az
+Vv
+Vv
+Vv
 aN
 aG
 aG
@@ -34544,9 +34562,9 @@ aN
 aN
 az
 az
-az
-az
-az
+Vv
+Vv
+Vv
 aN
 aG
 aG
@@ -34801,9 +34819,9 @@ aN
 aN
 aN
 aN
-az
-az
-az
+Vv
+Vv
+Vv
 aP
 aG
 aG

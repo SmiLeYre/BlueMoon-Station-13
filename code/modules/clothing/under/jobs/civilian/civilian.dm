@@ -123,6 +123,9 @@
 	icon_state = "hop"
 	item_state = "b_suit"
 	can_adjust = FALSE
+	unique_reskin = list(
+		"Alt" = list("icon_state" = "hop_alt")
+	)
 
 /obj/item/clothing/under/rank/civilian/head_of_personnel/whimsy
 	name = "casual head of personnel's jumpsuit"

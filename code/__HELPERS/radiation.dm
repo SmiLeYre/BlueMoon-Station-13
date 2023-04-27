@@ -23,7 +23,7 @@
 		processing_list += thing.contents
 		lim = processing_list.len
 
-/proc/radiation_pulse(atom/source, intensity, range_modifier, log=FALSE, can_contaminate=TRUE)
+/proc/radiation_pulse(mob/source, intensity, range_modifier, log=FALSE, can_contaminate=TRUE)
 	if(!SSradiation.can_fire)
 		return
 	var/turf/open/pool/PL = get_turf(source)

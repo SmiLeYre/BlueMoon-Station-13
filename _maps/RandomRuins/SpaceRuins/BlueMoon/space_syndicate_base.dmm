@@ -648,9 +648,6 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/machinery/power/terminal{
 	dir = 1
 	},
@@ -675,7 +672,6 @@
 	pixel_y = -12;
 	pixel_x = -2
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -4157,13 +4153,10 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "qw" = (
-/obj/machinery/suit_storage_unit/syndicate/chameleon{
-	name = "suit storage unit";
-	req_access_txt = "151"
-	},
 /obj/effect/turf_decal/siding/dark{
 	dir = 8
 	},
+/obj/machinery/suit_storage_unit/syndicate,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/armory)
 "qz" = (
@@ -5495,14 +5488,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/effect/turf_decal/siding/dark{
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/dark,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/iron/dark/diagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "wc" = (
@@ -6576,15 +6565,12 @@
 	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "Bu" = (
-/obj/machinery/suit_storage_unit/syndicate/chameleon{
-	name = "suit storage unit";
-	req_access_txt = "151"
-	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/turf_decal/siding/dark{
 	dir = 8
 	},
 /obj/machinery/power/apc/auto_name/east,
+/obj/machinery/suit_storage_unit/syndicate,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/armory)
 "Bv" = (
@@ -8043,9 +8029,6 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "HF" = (
-/obj/machinery/suit_storage_unit/syndicate/chameleon{
-	name = "suit storage unit"
-	},
 /obj/effect/turf_decal/siding/yellow{
 	dir = 8
 	},
@@ -8058,6 +8041,7 @@
 /obj/effect/turf_decal/trimline/yellow/line{
 	dir = 4
 	},
+/obj/machinery/suit_storage_unit/syndicate/softsuit,
 /turf/open/floor/iron/dark/side{
 	dir = 8
 	},
@@ -8301,11 +8285,7 @@
 /obj/structure/window/reinforced/survival_pod{
 	dir = 10
 	},
-/obj/machinery/suit_storage_unit{
-	mask_type = /obj/item/clothing/mask/gas/syndicate;
-	storage_type = /obj/item/tank/jetpack/oxygen/harness;
-	suit_type = /obj/item/clothing/suit/space/hardsuit/syndi/elite
-	},
+/obj/machinery/suit_storage_unit/syndicate/chameleon,
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
 "Jd" = (

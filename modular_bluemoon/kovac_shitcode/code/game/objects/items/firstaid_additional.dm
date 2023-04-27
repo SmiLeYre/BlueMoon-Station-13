@@ -12,7 +12,7 @@
 	var/empty = FALSE
 	custom_price = PRICE_ABOVE_NORMAL
 	custom_premium_price = PRICE_EXPENSIVE
-	
+
 /obj/item/storage/ifak/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
@@ -21,13 +21,13 @@
 	STR.allow_quick_gather = TRUE
 	STR.click_gather = TRUE
 	STR.can_hold = typecacheof(list(/obj/item/stack/medical/gauze, /obj/item/reagent_containers/pill/patch/silver_sulf, /obj/item/reagent_containers/pill/patch/styptic, /obj/item/reagent_containers/pill/salbutamol, /obj/item/reagent_containers/pill/charcoal))
-	
+
 /obj/item/storage/ifak/PopulateContents()
 	if(empty)
 		return
 	new /obj/item/stack/medical/gauze(src)
 	new /obj/item/reagent_containers/pill/patch/silver_sulf(src)
 	new /obj/item/reagent_containers/pill/patch/styptic(src)
-	new /obj/item/reagent_containers/pill/salbutamol(src)	
-	new /obj/item/reagent_containers/pill/charcoal(src)	
+	new /obj/item/reagent_containers/pill/salbutamol(src)
+	new /obj/item/reagent_containers/pill/charcoal(src)
 	new /obj/item/reagent_containers/hypospray/medipen/ekit(src)
