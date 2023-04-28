@@ -38895,6 +38895,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
+/obj/machinery/computer/bounty{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/cargo/office)
 "nrq" = (

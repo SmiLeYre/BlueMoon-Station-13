@@ -25735,13 +25735,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/medical/medbay/central)
 "bnG" = (
-/obj/item/paper_bin{
-	pixel_x = -3;
-	pixel_y = 7
-	},
-/obj/item/clipboard,
-/obj/item/pen/red,
-/obj/structure/table,
+/obj/machinery/computer/bounty,
 /turf/open/floor/mineral/plastitanium,
 /area/cargo/office)
 "bnH" = (
@@ -62867,12 +62861,18 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/maintenance/port/fore)
 "sWR" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
+/obj/structure/disposalpipe/segment,
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/obj/machinery/piratepad/civilian{
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/table,
+/obj/item/clipboard,
+/obj/item/paper_bin{
+	pixel_x = -3;
+	pixel_y = 7
 	},
+/obj/item/pen/red,
 /turf/open/floor/mineral/plastitanium,
 /area/cargo/office)
 "sXV" = (
@@ -89059,7 +89059,7 @@ bjs
 bkx
 bmQ
 bnA
-bpB
+sWR
 bpB
 brR
 bsV
@@ -89318,7 +89318,7 @@ bnG
 bnz
 bpA
 bbR
-sWR
+bkM
 jlm
 bud
 eyM

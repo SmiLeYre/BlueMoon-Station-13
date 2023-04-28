@@ -68442,6 +68442,9 @@
 /obj/effect/turf_decal/tile/brown{
 	dir = 1
 	},
+/obj/machinery/computer/bounty{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/cargo/sorting)
 "hBR" = (
@@ -119246,7 +119249,7 @@ aaa
 aaa
 aaU
 aaa
-aaU
+qPd
 aaa
 aaU
 bgT

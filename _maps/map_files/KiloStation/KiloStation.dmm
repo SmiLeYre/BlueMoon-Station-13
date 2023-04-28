@@ -84882,6 +84882,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/bot,
+/obj/machinery/computer/bounty{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/cargo/office)
 "rko" = (

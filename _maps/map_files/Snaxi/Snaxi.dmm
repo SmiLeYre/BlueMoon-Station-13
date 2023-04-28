@@ -15412,6 +15412,11 @@
 /obj/machinery/holopad,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/ai_upload_foyer)
+"cHO" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/computer/bounty,
+/turf/open/floor/plasteel,
+/area/hallway/primary/fore)
 "cIg" = (
 /obj/machinery/modular_computer/console/preset/research{
 	dir = 1
@@ -30391,6 +30396,7 @@
 /obj/effect/turf_decal/tile/brown{
 	dir = 4
 	},
+/obj/machinery/computer/bounty,
 /turf/open/floor/plasteel,
 /area/cargo/storage)
 "mBK" = (
@@ -94829,7 +94835,7 @@ rkd
 pSO
 fjw
 fjw
-fjw
+cHO
 mqb
 fjw
 fjw
