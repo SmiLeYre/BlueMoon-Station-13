@@ -27914,6 +27914,10 @@
 	pixel_y = 4
 	},
 /obj/item/storage/box/masks,
+/obj/machinery/light{
+	dir = 8;
+	light_color = "#e8eaff"
+	},
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/central)
 "bbM" = (
@@ -39484,6 +39488,10 @@
 	dir = 9
 	},
 /obj/machinery/airalarm/directional/north,
+/obj/machinery/light{
+	dir = 8;
+	light_color = "#e8eaff"
+	},
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/central)
 "bHc" = (
@@ -47086,10 +47094,6 @@
 	dir = 1
 	},
 /obj/effect/landmark/xeno_spawn,
-/obj/structure/sink{
-	layer = 3.1;
-	pixel_y = 22
-	},
 /turf/open/floor/plasteel/white,
 /area/medical/surgery)
 "cbD" = (
@@ -47202,7 +47206,7 @@
 	dir = 4
 	},
 /obj/structure/cable{
-	icon_state = "0-8"
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
 /area/engineering/transit_tube)
@@ -47214,6 +47218,9 @@
 /obj/effect/turf_decal/bot,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 5
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
 /area/engineering/transit_tube)
@@ -47310,20 +47317,6 @@
 	},
 /turf/closed/wall/r_wall,
 /area/engineering/break_room)
-"cci" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 4
-	},
-/obj/structure/sink{
-	layer = 3.1;
-	pixel_y = 22
-	},
-/obj/effect/turf_decal/trimline/blue/filled/line{
-	dir = 1
-	},
-/obj/effect/landmark/xeno_spawn,
-/turf/open/floor/plasteel/white,
-/area/medical/surgery)
 "ccj" = (
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
@@ -47341,6 +47334,7 @@
 	pixel_x = 27;
 	pixel_y = 25
 	},
+/obj/structure/sink/kitchen/directional/west,
 /turf/open/floor/plasteel/white,
 /area/medical/surgery)
 "ccm" = (
@@ -47351,10 +47345,10 @@
 	dir = 4
 	},
 /obj/structure/cable{
-	icon_state = "0-4"
+	icon_state = "2-4"
 	},
 /obj/structure/cable{
-	icon_state = "2-4"
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
 /area/engineering/transit_tube)
@@ -55585,6 +55579,7 @@
 	pixel_x = -26;
 	pixel_y = 25
 	},
+/obj/structure/sink/kitchen/directional/east,
 /turf/open/floor/plasteel/white,
 /area/medical/surgery)
 "czL" = (
@@ -119028,7 +119023,7 @@ bFQ
 bnB
 cYb
 lEY
-cci
+cbC
 cmD
 ctY
 cxU
