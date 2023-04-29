@@ -20,7 +20,7 @@
 /obj/vehicle/sealed/mecha/combat/marauder/generate_actions()
 	. = ..()
 	initialize_passenger_action_type(/datum/action/vehicle/sealed/mecha/mech_smoke)
-	initialize_passenger_action_type(/datum/action/vehicle/sealed/mecha/mech_zoom)
+	initialize_passenger_action_type(/datum/action/vehicle/sealed/mecha/syndicate/mech_zoom)
 
 /obj/vehicle/sealed/mecha/combat/marauder/loaded/Initialize(mapload)
 	. = ..()

@@ -55,3 +55,25 @@
 			var/atom/A = V
 			nri_mech_list[initial(A.name)] = A
 	return nri_mech_list
+
+/obj/item/card/id/nri
+	name = "\improper NRI ID"
+	desc = "An Novaya Rossiyskya Imperia Spetsnaz ID card."
+	icon_state = "nri"
+	registered_name = "Novaya Rossiyskya Imperia Soldier"
+	assignment = "Novaya Rossiyskya Imperia Soldier"
+
+/obj/item/card/id/nri/Initialize(mapload)
+	access = get_all_accesses()+get_ert_access("commander")-ACCESS_CHANGE_IDS
+	. = ..()
+
+/obj/item/card/id/sol
+	name = "\improper SolFed ID"
+	desc = "An Solar Federation Military ID card."
+	icon_state = "sol"
+	registered_name = "The Solar Federation Soldier"
+	assignment = "The Solar Federation Soldier"
+
+/obj/item/card/id/nri/Initialize(mapload)
+	access = get_all_accesses()+get_ert_access("commander")-ACCESS_CHANGE_IDS
+	. = ..()

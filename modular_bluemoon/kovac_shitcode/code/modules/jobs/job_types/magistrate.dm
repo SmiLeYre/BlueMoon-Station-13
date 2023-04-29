@@ -65,6 +65,10 @@
 	icon = 'modular_bluemoon/kovac_shitcode/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/suit.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/suit.dmi'
+	unique_reskin = list(
+		"Peacekeeper" = list("icon_state" = "peacekeeper_trench_hos_white"),
+		"Spacecoat" = list("icon_state" = "peacekeeper_spacecoat")
+	)
 
 /obj/item/clothing/head/beret/sec/ntr
 	name = "NanoTrasen Officer Cap"

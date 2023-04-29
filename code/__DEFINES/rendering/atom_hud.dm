@@ -118,6 +118,9 @@
 
 #define SECHUD_DEATH_COMMANDO "huddeathcommando"
 
+#define SECHUD_NRI "hudnri"
+#define SECHUD_SOL "hudsol"
+
 #define SECHUD_EMERGENCY_RESPONSE_TEAM_COMMANDER "hudemergencyresponseteamcommander"
 #define SECHUD_SECURITY_RESPONSE_OFFICER "hudsecurityresponseofficer"
 #define SECHUD_ENGINEERING_RESPONSE_OFFICER "hudengineeringresponseofficer"

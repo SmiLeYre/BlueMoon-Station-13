@@ -7,12 +7,11 @@
 	max_temperature = 60000
 	wreckage = /obj/structure/mecha_wreckage/shire
 	nominalphrase = "sound/mecha/nominal_russian.ogg"
-	imagenhphrase = "sound/mecha/imag_enh_russian.ogg"
 
 obj/vehicle/sealed/mecha/combat/durand/tu802/generate_actions()
 	. = ..()
 	initialize_passenger_action_type(/datum/action/vehicle/sealed/mecha/mech_smoke)
-	initialize_passenger_action_type(/datum/action/vehicle/sealed/mecha/mech_zoom)
+	initialize_passenger_action_type(/datum/action/vehicle/sealed/mecha/russian/mech_zoom)
 
 /obj/vehicle/sealed/mecha/combat/durand/tu802/Initialize(mapload)
 	. = ..()

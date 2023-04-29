@@ -32,3 +32,18 @@
 	name = "NRI Spetsnaz Leader"
 	outfit = /datum/outfit/ert/ert_russian_leader
 	role = "Polkovnik"
+
+/datum/antagonist/ert/sol_ert
+	name = "SolFed Marine"
+	outfit = /datum/outfit/ert/sol_soldier
+	role = "Marine"
+
+/datum/antagonist/ert/sol_ert/demo
+	name = "SolFed Marine Demoman"
+	outfit = /datum/outfit/ert/sol_soldier_demo
+	role = "Demoman"
+
+/datum/antagonist/ert/sol_ert/leader
+	name = "SolFed Marine Commander"
+	outfit = /datum/outfit/ert/sol_soldier_leader
+	role = "Commander"
