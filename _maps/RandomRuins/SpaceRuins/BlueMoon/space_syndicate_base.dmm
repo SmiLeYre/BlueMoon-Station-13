@@ -618,6 +618,7 @@
 	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/turf_decal/bluemoon_decals/ds2/middle,
+/obj/machinery/holopad,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "cl" = (
