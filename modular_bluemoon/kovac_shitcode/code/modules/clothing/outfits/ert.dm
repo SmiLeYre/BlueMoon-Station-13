@@ -191,20 +191,18 @@
 /datum/outfit/ert/sol_soldier
 	name = "SolFed Marine"
 
-	id = /obj/item/card/id/ert
+	id = /obj/item/card/id/sol
 	suit = /obj/item/clothing/suit/armor/vest/russian
 	head = /obj/item/clothing/head/helmet/alt
 	uniform = /obj/item/clothing/under/syndicate/rus_army
-	mask = /obj/item/clothing/mask/gas/syndicate/ds
+	mask = /obj/item/clothing/mask/gas/sechailer
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/hecu/black
 	belt = /obj/item/storage/belt/grenade/full
-	r_hand = /obj/item/gun/ballistic/automatic/vss
+	r_hand = /obj/item/gun/ballistic/automatic/m16a4
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-		/obj/item/clothing/mask/gas/sechailer=1,\
-		/obj/item/gun/ballistic/revolver/mateba=1,
 		/obj/item/storage/ifak=1,\
-		/obj/item/ammo_box/magazine/vss_mag=2)
+		/obj/item/ammo_box/magazine/m16=3)
 
 /datum/outfit/ert/sol_soldier/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()
@@ -219,18 +217,16 @@
 /datum/outfit/ert/sol_soldier_demo
 	name = "SolFed Demoman"
 
-	id = /obj/item/card/id/ert
+	id = /obj/item/card/id/sol
 	suit = /obj/item/clothing/suit/armor/vest/russian
 	head = /obj/item/clothing/head/helmet/alt
 	uniform = /obj/item/clothing/under/syndicate/rus_army
-	mask = /obj/item/clothing/mask/gas/syndicate/ds
+	mask = /obj/item/clothing/mask/gas/sechailer
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/hecu/black
 	belt = /obj/item/storage/belt/grenade/full
 	r_hand = /obj/item/gun/ballistic/automatic/vss
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-		/obj/item/clothing/mask/gas/sechailer=1,\
-		/obj/item/gun/ballistic/revolver/mateba=1,
 		/obj/item/storage/ifak=1,\
 		/obj/item/ammo_box/magazine/vss_mag=2)
 
@@ -248,22 +244,19 @@
 /datum/outfit/ert/sol_soldier_leader
 	name = "SolFed Commander"
 
-	id = /obj/item/card/id/ert/Security
+	id = /obj/item/card/id/sol
 	suit = /obj/item/clothing/suit/armor/vest/russian_coat
 	head = /obj/item/clothing/head/beret/sec
 	uniform = /obj/item/clothing/under/syndicate/rus_army
-	mask = /obj/item/clothing/mask/gas/syndicate/ds
+	mask = /obj/item/clothing/mask/gas/sechailer
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/hecu/black
 	belt = /obj/item/storage/belt/grenade/full
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber
-	r_hand = /obj/item/gun/ballistic/automatic/l6_saw/pkmp
+	r_hand = /obj/item/gun/ballistic/automatic/m16a4/tactical
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-	    /obj/item/choice_beacon/nri_mech=1,\
-		/obj/item/clothing/mask/gas/sechailer=1,\
-		/obj/item/storage/box/syndie_kit/revolver=1,\
 		/obj/item/storage/ifak=1,\
-		/obj/item/ammo_box/magazine/mm712x82=1)
+		/obj/item/ammo_box/magazine/m16=3)
 
 /datum/outfit/ert/sol_soldier_leader/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()
