@@ -1,7 +1,7 @@
 /obj/item/mecha_parts/mecha_equipment/weapon
 	name = "mecha weapon"
 	range = MECHA_RANGED
-	destroy_sound = 'sound/mecha/weapdestr.ogg'
+	var destroy_sound = 'sound/voice/borg_deathsound.ogg'
 	var/projectile
 	var/fire_sound
 	var/projectiles_per_shot = 1

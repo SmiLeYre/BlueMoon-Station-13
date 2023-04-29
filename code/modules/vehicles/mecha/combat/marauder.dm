@@ -74,6 +74,8 @@
 	wreckage = /obj/structure/mecha_wreckage/mauler
 	max_equip = 6
 	destruction_sleep_duration = 20
+	nominalphrase = "sound/mecha/nominal_syndicate.ogg"
+	imagenhphrase = "sound/mecha/imag_enh_syndicate.ogg"
 
 /obj/vehicle/sealed/mecha/combat/marauder/mauler/Initialize(mapload)
 	. = ..()

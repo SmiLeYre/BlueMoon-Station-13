@@ -40,3 +40,18 @@
 			var/atom/A = V
 			ert_mech_list[initial(A.name)] = A
 	return ert_mech_list
+
+/obj/item/choice_beacon/nri_mech
+	name = "NRI mech beacon"
+	desc = "To summon your own steel titan. For the Emperor!"
+
+/obj/item/choice_beacon/nri_mech/generate_display_names()
+	var/static/list/nri_mech_list = list("TU-802 Sevastopol" = /obj/vehicle/sealed/mecha/combat/durand/tu802,
+		"Savannah-Ivanov" = /obj/vehicle/sealed/mecha/combat/savannah_ivanov/loaded)
+	if(!nri_mech_list)
+		nri_mech_list = list()
+		var/list/templist = typesof(/obj/item/storage/box/hero) //we have to convert type = name to name = type, how lovely!
+		for(var/V in templist)
+			var/atom/A = V
+			nri_mech_list[initial(A.name)] = A
+	return nri_mech_list

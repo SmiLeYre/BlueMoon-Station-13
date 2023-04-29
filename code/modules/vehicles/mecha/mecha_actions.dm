@@ -205,7 +205,7 @@
 		to_chat(owner, "[icon2html(chassis, owner)]<font color='[chassis.zoom_mode?"blue":"red"]'>Zoom mode [chassis.zoom_mode?"en":"dis"]abled.</font>")
 		if(chassis.zoom_mode)
 			owner.client.view_size.setTo(4.5)
-			SEND_SOUND(owner, sound('sound/mecha/imag_enh.ogg',volume=50))
+			SEND_SOUND(owner, sound('sound/mecha/mechmove03.ogg',volume=50))
 		else
 			owner.client.view_size.resetToDefault() //Let's not let this stack shall we?
 		UpdateButtonIcon()
