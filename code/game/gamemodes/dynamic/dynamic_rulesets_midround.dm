@@ -319,7 +319,7 @@
 	required_enemies = list(0,0,0,0,0,0,0,0,0,0)
 	required_candidates = 1
 	weight = 3
-	cost = 35
+	cost = 15 //BLUEMOON CHANGES - было 35, сейчас это обычный предатель
 	requirements = list(101,101,80,70,60,60,50,50,40,40)
 	required_type = /mob/living/silicon/ai
 
