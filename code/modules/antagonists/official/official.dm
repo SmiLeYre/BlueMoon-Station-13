@@ -5,6 +5,7 @@
 	var/datum/objective/mission
 	var/datum/team/ert/ert_team
 	show_to_ghosts = TRUE
+	soft_antag = TRUE //BLUEMOON ADD - дружелюбные, малозначимые гостроли не должны считаться за антагонистов (ломает динамик)
 
 /datum/antagonist/official/greet()
 	to_chat(owner, "<B><font size=3 color=red>You are a CentCom Official.</font></B>")
