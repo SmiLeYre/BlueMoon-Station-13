@@ -123,6 +123,28 @@
 	heat_protection = CHEST|ARMS
 	strip_delay = 80
 	mutantrace_variation = STYLE_DIGITIGRADE
+	unique_reskin = list(
+		"Basic" = list(
+			RESKIN_ICON_STATE = "platecarrier",
+			RESKIN_ITEM_STATE = "platecarrier"
+		),
+		"Green" = list(
+			RESKIN_ICON_STATE = "platecarrier_green",
+			RESKIN_ITEM_STATE = "platecarrier_green"
+		),
+		"Tan" = list(
+			RESKIN_ICON_STATE = "platecarrier_tan",
+			RESKIN_ITEM_STATE = "platecarrier_tan"
+		),
+		"Navy" = list(
+			RESKIN_ICON_STATE = "platecarrier_navy",
+			RESKIN_ITEM_STATE = "platecarrier_navy"
+		),
+		"Peacekeeper" = list(
+			RESKIN_ICON_STATE = "platecarrier_peace",
+			RESKIN_ITEM_STATE = "platecarrier_peace"
+		),
+	)
 
 /obj/item/clothing/suit/armor/hos/platecarrier/ComponentInitialize()
 	. = ..()
