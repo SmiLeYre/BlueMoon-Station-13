@@ -83,6 +83,10 @@ SUBSYSTEM_DEF(vote)
 	//get the highest number of votes
 	var/greatest_votes = 0
 	var/total_votes = 0
+//BLUEMOON ADD START - голоса за некоторые режимы (динамик и тимбаза, лёгкий динамик и экста) должны считаться вместе.
+	var/dynamic_votes = 0
+	var/extended_votes = 0
+//BLUEMOON ADD END
 	if((mode == "gamemode" || mode == "roundtype") && CONFIG_GET(flag/must_be_readied_to_vote_gamemode))
 		for(var/mob/dead/new_player/P in GLOB.player_list)
 			if(P.ready != PLAYER_READY_TO_PLAY && voted[P.ckey])
@@ -90,13 +94,32 @@ SUBSYSTEM_DEF(vote)
 	for(var/option in choices)
 		var/votes = choices[option]
 		total_votes += votes
-		if(votes > greatest_votes)
-//BLUEMOON ADD START - пропуск эксты, если у неё голосов меньше, чем у остальных вариантов (чтобы голоса динамиков считались вместе)
-			if(option == ROUNDTYPE_EXTENDED)
-				if(choices[ROUNDTYPE_EXTENDED] <= total_votes-votes) //extended always must be the last in vote to ensure it works
-					continue
+//BLUEMOON ADD START - голоса за некоторые режимы (динамик и тимбаза, лёгкий динамик и экста) должны считаться вместе.
+		if(option == (ROUNDTYPE_EXTENDED || ROUNDTYPE_LIGHT_DYNAMIC))
+			extended_votes += votes
+		if(option == (ROUNDTYPE_TEAMBASED_DYNAMIC || ROUNDTYPE_DYNAMIC))
+			dynamic_votes += votes
 //BLUEMOON ADD END
+		if(votes > greatest_votes)
 			greatest_votes = votes
+//BLUEMOON ADD START - пропуск эксты, если у неё голосов меньше, чем у остальных вариантов (чтобы голоса динамиков считались вместе)
+//Повторный ролл вариантов нужен, чтобы голоса за вариации динамика и эксты успели сформироваться
+	var/second_round_votes = 0 //голоса между вариациями
+	for(var/option in choices)
+		var/votes = choices[option]
+		if(extended_votes <= dynamic_votes)
+			if(option == (ROUNDTYPE_EXTENDED || ROUNDTYPE_LIGHT_DYNAMIC)) //экста и лёгкий динамик всегда должны быть в конце списка, чтобы это работало
+				continue
+			if(votes > second_round_votes)
+				greatest_votes = votes
+			second_round_votes += votes
+		else
+			if(option == (ROUNDTYPE_DYNAMIC || ROUNDTYPE_TEAMBASED_DYNAMIC)) //экста и лёгкий динамик всегда должны быть в конце списка, чтобы это работало
+				continue
+			if(votes > second_round_votes)
+				greatest_votes = votes
+			second_round_votes += votes
+//BLUEMOON ADD END
 	//default-vote for everyone who didn't vote
 	if(!CONFIG_GET(flag/default_no_vote) && choices.len)
 		var/list/non_voters = GLOB.directory.Copy()
@@ -118,13 +141,15 @@ SUBSYSTEM_DEF(vote)
 	//get all options with that many votes and return them in a list
 	. = list()
 	if(greatest_votes)
-		var/dynamic_votes = 0 //BLUEMOON ADD
 		for(var/option in choices)
-//BLUEMOON ADD START - костыль, чтобы экста не была победителем, если у неё голосов больше, чем у одного из других вариантов
-			if(option == ROUNDTYPE_EXTENDED)
-				if(choices[ROUNDTYPE_EXTENDED] <= dynamic_votes) //extended always must be the last in vote to ensure it works
+//BLUEMOON ADD START - костыль, чтобы вариации эксты не была победителем, если у неё голосов больше, чем у одного из других вариантов
+//экста и лёгкий динамик всегда должны быть в конце списка, чтобы это работало
+			if(extended_votes <= dynamic_votes)
+				if(option == (ROUNDTYPE_EXTENDED || ROUNDTYPE_LIGHT_DYNAMIC)) //экста и лёгкий динамик всегда должны быть в конце списка, чтобы это работало
 					continue
-			dynamic_votes += choices[option]
+			else
+				if(option == (ROUNDTYPE_DYNAMIC || ROUNDTYPE_TEAMBASED_DYNAMIC)) //экста и лёгкий динамик всегда должны быть в конце списка, чтобы это работало
+					continue
 //BLUEMOON ADD END
 			if(choices[option] == greatest_votes)
 				. += option
@@ -272,7 +297,7 @@ SUBSYSTEM_DEF(vote)
 		vote_title_text = "[capitalize(mode)] Vote"
 //BLUEMOON ADD START
 	if(mode == "roundtype")
-		text += "\nГолоса за все вариации динамика складываются и побеждают в случае ничьей!"
+		text += "\nГолоса за [ROUNDTYPE_DYNAMIC] и [ROUNDTYPE_TEAMBASED_DYNAMIC] складываются (и побеждают в случае ничьей). Против них - [ROUNDTYPE_LIGHT_DYNAMIC] и [ROUNDTYPE_EXTENDED]."
 //BLUEMOON ADD END
 	if(vote_system == SCHULZE_VOTING)
 		calculate_condorcet_votes(vote_title_text)
@@ -596,11 +621,11 @@ SUBSYSTEM_DEF(vote)
 				. += "<h3>No-votes have no power--your opinion is only heard if you vote!</h3>"
 //BLUEMOON ADD START
 		if(mode == "roundtype")
-			. += "<br>Голоса за все вариации динамика складываются и побеждают в случае ничьей!"
-			. += "<br><font size=1><small><b>[ROUNDTYPE_TEAMBASED_DYNAMIC]</b> (threat around 50-100, only team antags and most of ghost antags)</font></small>"
-			. += "<br><font size=1><small><b>[ROUNDTYPE_DYNAMIC]</b> (threat around 50-100)</font></small>"
-			. += "<br><font size=1><small><b>[ROUNDTYPE_LIGHT_DYNAMIC]</b> (threat around 30-50, without most of team antags)</font></small>"
-			. += "<br><font size=1><small><b>[ROUNDTYPE_EXTENDED]</b> (no threat)</font></small>"
+			. += "<br>Голоса за [ROUNDTYPE_DYNAMIC] и [ROUNDTYPE_TEAMBASED_DYNAMIC] складываются (и побеждают в случае ничьей). Против них - [ROUNDTYPE_LIGHT_DYNAMIC] и [ROUNDTYPE_EXTENDED]."
+			. += "<br><font size=1><small><b>[ROUNDTYPE_TEAMBASED_DYNAMIC]</b> (50-100 угрозы, только командные и некоторые одиночные антагонисты)</font></small>"
+			. += "<br><font size=1><small><b>[ROUNDTYPE_DYNAMIC]</b> (50-100 угрозы)</font></small>"
+			. += "<br><font size=1><small><b>[ROUNDTYPE_LIGHT_DYNAMIC]</b> (30-50 угрозы, без командных ролей)</font></small>"
+			. += "<br><font size=1><small><b>[ROUNDTYPE_EXTENDED]</b> (без угроз)</font></small>"
 			. += "<br>Осталось времени: [DisplayTimeText((SSticker.timeLeft - 20 SECONDS))]<hr><ul>"
 		else
 			. += "Осталось времени: [DisplayTimeText(end_time-world.time)]<hr><ul>"
