@@ -60,8 +60,9 @@
 	name = "\improper NRI ID"
 	desc = "An Novaya Rossiyskya Imperia Spetsnaz ID card."
 	icon_state = "nri"
-	registered_name = "Novaya Rossiyskya Imperia Soldier"
-	assignment = "Novaya Rossiyskya Imperia Soldier"
+	registered_name = "NRI Soldier"
+	assignment = "NRI Soldier"
+	uses_overlays = FALSE
 
 /obj/item/card/id/nri/Initialize(mapload)
 	access = get_all_accesses()+get_ert_access("commander")-ACCESS_CHANGE_IDS
@@ -71,9 +72,20 @@
 	name = "\improper SolFed ID"
 	desc = "An Solar Federation Military ID card."
 	icon_state = "sol"
-	registered_name = "The Solar Federation Soldier"
-	assignment = "The Solar Federation Soldier"
+	registered_name = "SolFed Soldier"
+	assignment = "SolFed Soldier"
+	uses_overlays = FALSE
 
-/obj/item/card/id/nri/Initialize(mapload)
+/obj/item/card/id/sol/Initialize(mapload)
 	access = get_all_accesses()+get_ert_access("commander")-ACCESS_CHANGE_IDS
 	. = ..()
+
+/obj/item/clothing/suit/armor/solfed_coat
+	name = "SolFed Officer Coat"
+	desc = "A greatcoat enhanced with a special alloy for some extra protection and style for those with a commanding presence."
+	icon_state = "furcoat"
+	item_state = "furcoat"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/suit.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/suit.dmi'
+	armor = list(MELEE = 55, BULLET = 65, LASER = 65, ENERGY = 65, BOMB = 40, BIO = 50, RAD = 100, FIRE = 40, ACID = 50,  WOUND = 40)

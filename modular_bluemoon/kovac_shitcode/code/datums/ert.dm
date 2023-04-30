@@ -25,3 +25,12 @@
 	mission = "От одной из близлежащих космических станций получен сигнал о помощи. Мы связались с НТ и получили добро на вмешательство. Окажите поддержку."
 	polldesc = "Novaya Rossiyskaya Imperiya Spetsnaz Squad"
 	ertphrase = "modular_bluemoon/kovac_shitcode/sound/ert/nri_send.ogg"
+
+/datum/ert/sol_ert // Солнечная Федерация
+	roles = list(/datum/antagonist/ert/sol_ert, /datum/antagonist/ert/sol_ert/demo)
+	leader_role = /datum/antagonist/ert/sol_ert/leader
+	rename_team = "Solar Federation Marine Squad"
+	code = "Delta"
+	mission = "НТ авторизовало интервенцию сил Солнечной Федерации на космическую станцию. Окажите помощь её экипажу."
+	polldesc = "Solar Federation Marine Squad"
+	ertphrase = "modular_bluemoon/kovac_shitcode/sound/ert/sol_send.ogg"
