@@ -144,7 +144,8 @@
 					/obj/item/clothing/suit/hooded/wintercoat/timidcostume/man = 3,
 					/obj/item/clothing/mask/durak = 2,
 					/obj/item/clothing/shoes/timidcostume/man = 3,
-					/obj/item/clothing/suit/suspenders = 5,
+					/obj/item/clothing/suit/suspenders = 2,
+					/obj/item/clothing/suit/suspenders/suspenders_white = 4,
 					/obj/item/clothing/neck/tie/bandagewraps = 5,
 					)
 	contraband = list(/obj/item/clothing/suit/judgerobe = 1,
