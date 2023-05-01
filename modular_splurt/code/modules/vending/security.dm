@@ -41,7 +41,12 @@
 		/obj/item/clothing/under/rank/security/skirt/slut = 5,
 		/obj/item/clothing/under/rank/security/skirt/slut/pink = 5,
 		/obj/item/clothing/under/rank/security/stripper = 5,
-		/obj/item/clothing/suit/hooded/corpus/s = 5
+		/obj/item/clothing/suit/hooded/corpus/s = 5,
+		/obj/item/clothing/head/utilcover = 6,
+		/obj/item/clothing/head/helmet/hephaestus = 6,
+		/obj/item/clothing/under/utility/green = 6,
+		/obj/item/clothing/under/utility/tan = 6,
+		/obj/item/clothing/under/utility/navy = 6
 	)
 	var/list/extra_premium = list(
 		/obj/item/clothing/gloves/latexsleeves/security = 5,
