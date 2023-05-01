@@ -1,3 +1,5 @@
+//Melee
+
 /obj/item/claymore/cerberus
 	name = "claymore"
 	desc = "What are you standing around staring at this for? Get to killing!"
@@ -106,3 +108,50 @@
 	item_state = "candle1_lit"
 	lefthand_file = 'modular_bluemoon/krashly/icons/mob/inhands/weapons/lefthand.dmi'
 	righthand_file = 'modular_bluemoon/krashly/icons/mob/inhands/weapons/righthand.dmi'
+
+//Ballistic
+
+/obj/item/gun/ballistic/automatic/ak12
+	name = "\improper AK-12 rifle"
+	desc = "A simple-to-use automatic assault rifle that was used hundreds of years ago, but has not become obsolete to this day."
+	icon = 'modular_bluemoon/krashly/icons/obj/weapons/weapons.dmi'
+	icon_state = "ak12"
+	lefthand_file = 'modular_bluemoon/krashly/icons/mob/inhands/weapons/lefthand.dmi'
+	righthand_file = 'modular_bluemoon/krashly/icons/mob/inhands/weapons/righthand.dmi'
+	item_state = "ak12"
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	w_class = WEIGHT_CLASS_BULKY
+	mag_type = /obj/item/ammo_box/magazine/ak12
+	can_suppress = FALSE
+	burst_size = 3
+	fire_delay = 2
+	fire_sound = 'modular_bluemoon/krashly/sound/ak12_fire.ogg'
+
+/obj/item/gun/ballistic/automatic/ak12/update_icon_state()
+	if(magazine)
+		icon_state = "ak12"
+		item_state = "ak12"
+	else
+		icon_state = "ak12_e"
+		item_state = "ak12_e"
+
+/obj/item/ammo_box/magazine/ak12
+	name = "\improper AK-12 magazine"
+	desc = "magazine able to hold 30 rounds of 5.45 ammo."
+	icon = 'modular_bluemoon/krashly/icons/obj/weapons/weapons.dmi'
+	icon_state = "ak12_mag"
+	item_state = "ak12_mag"
+	ammo_type = /obj/item/ammo_casing/a556
+	caliber = "a5x45"
+	max_ammo = 30
+	multiple_sprites = 2
+
+/obj/item/ammo_box/magazine/ak12/ap
+	name = "\improper AK-12 armor-piercing magazine"
+	desc = "magazine able to hold 30 rounds of armor-piercing 5.45 ammo."
+	ammo_type = /obj/item/ammo_casing/a556/ap
+
+/obj/item/ammo_box/magazine/ak12/hp
+	name = "\improper AK-12 hollow-point magazine"
+	desc = "magazine able to hold 30 rounds of hollow-point 5.45 ammo."
+	ammo_type = /obj/item/ammo_casing/a556/hp
