@@ -89,3 +89,8 @@
 	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/suit.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/suit.dmi'
 	armor = list(MELEE = 55, BULLET = 65, LASER = 65, ENERGY = 65, BOMB = 40, BIO = 50, RAD = 100, FIRE = 40, ACID = 50,  WOUND = 40)
+
+/obj/item/clothing/suit/suspenders/suspenders_white
+	name = "white suspenders"
+	desc = "They suspend the illusion of painting."
+	icon_state = "suspenders_white"

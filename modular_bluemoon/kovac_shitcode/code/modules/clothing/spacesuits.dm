@@ -8,6 +8,7 @@
     mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/head.dmi'
     hardsuit_type = "hardsuit-warden"
     actions_types = list()
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 //Хардсьют огненного ертшника
 /obj/item/clothing/suit/space/hardsuit/ert/alert/sec/fire
@@ -17,8 +18,8 @@
 	item_state = "hardsuit-warden"
 	icon = 'modular_bluemoon/kovac_shitcode/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/suit.dmi'
-	anthro_mob_worn_overlay = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/suit.dmi'
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/alert/sec/fire
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 //Хардсьют НРИ
 /obj/item/clothing/head/helmet/space/hardsuit/ert/alert/nri
@@ -31,6 +32,7 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	actions_types = list()
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/suit/space/hardsuit/ert/alert/nri
 	name = "NRI Spetsnaz hardsuit"
@@ -41,7 +43,6 @@
 	armor = list(MELEE = 70, BULLET = 55, LASER = 50, ENERGY = 50, BOMB = 65, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 50)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
-	mutantrace_variation = STYLE_DIGITIGRADE
 
 //Хардсьют Солнечной Федерации
 /obj/item/clothing/head/helmet/space/hardsuit/ert/alert/sol
@@ -54,6 +55,7 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	actions_types = list()
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/suit/space/hardsuit/ert/alert/sol
 	name = "SolFed marine hardsuit"
@@ -64,4 +66,4 @@
 	armor = list(MELEE = 70, BULLET = 55, LASER = 50, ENERGY = 50, BOMB = 65, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 50)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
-	mutantrace_variation = STYLE_DIGITIGRADE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON

@@ -45,6 +45,11 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	path = /obj/item/clothing/suit/suspenders
 
+/datum/gear/suit/suspenders_white
+	name = "White Suspenders"
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	path = /obj/item/clothing/suit/suspenders/suspenders_white
+
 /obj/item/card/id/sol_citizen
 	name = "SolFed Citizen ID"
 	desc = "An ID made to recognize Solar Federation habbitants and tourists."
