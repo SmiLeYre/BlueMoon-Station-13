@@ -8,7 +8,7 @@
     mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/head.dmi'
     hardsuit_type = "hardsuit-warden"
     actions_types = list()
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+    mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 //Хардсьют огненного ертшника
 /obj/item/clothing/suit/space/hardsuit/ert/alert/sec/fire
