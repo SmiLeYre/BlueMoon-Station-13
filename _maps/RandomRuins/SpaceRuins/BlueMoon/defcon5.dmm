@@ -7795,12 +7795,6 @@
 "OM" = (
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/port_tarkon/comms)
-"OS" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/item/solar_assembly,
-/obj/structure/cable,
-/turf/open/floor/plasteel/airless/solarpanel,
-/area/solars/tarkon)
 "OT" = (
 /obj/effect/turf_decal/tile/yellow,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -12128,7 +12122,7 @@ qi
 qi
 qi
 qi
-OS
+If
 WY
 WY
 WY

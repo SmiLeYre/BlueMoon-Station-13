@@ -46,6 +46,7 @@
 	id = "cargounload";
 	name = "Supply Dock Unloading Door"
 	},
+/obj/structure/fans/tiny,
 /turf/open/floor/plating,
 /area/shuttle/supply)
 "j" = (
@@ -68,6 +69,7 @@
 	name = "Supply Shuttle Airlock";
 	req_access_txt = "31"
 	},
+/obj/structure/fans/tiny,
 /turf/open/floor/iron/dark/textured_large,
 /area/shuttle/supply)
 "n" = (
@@ -102,6 +104,7 @@
 	name = "Supply Shuttle Airlock";
 	req_access_txt = "31"
 	},
+/obj/structure/fans/tiny,
 /turf/open/floor/iron/dark/textured_large,
 /area/shuttle/supply)
 "t" = (
@@ -113,6 +116,7 @@
 	dir = 4;
 	id = "cargoload"
 	},
+/obj/structure/fans/tiny,
 /turf/open/floor/plating,
 /area/shuttle/supply)
 "u" = (

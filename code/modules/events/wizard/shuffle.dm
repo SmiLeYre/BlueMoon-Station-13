@@ -75,36 +75,36 @@
 
 //---//
 
-/datum/round_event_control/wizard/shuffleminds //Basically Mass Ranged Mindswap
-	name = "Change Minds!"
-	weight = 1
-	typepath = /datum/round_event/wizard/shuffleminds
-	max_occurrences = 3
-	earliest_start = 0 MINUTES
-	can_be_midround_wizard = FALSE // not removing it completely yet
-	description = "Shuffles the minds of everyone around the station, except for the wizard."
-
-/datum/round_event/wizard/shuffleminds/start()
-	var/list/mobs	 = list()
-
-	for(var/mob/living/carbon/human/H in GLOB.alive_mob_list)
-		if(H.stat || !H.mind || iswizard(H))
-			continue //the wizard(s) are spared on this one
-		mobs += H
-
-	if(!mobs)
-		return
-
-	shuffle_inplace(mobs)
-
-	var/obj/effect/proc_holder/spell/pointed/mind_transfer/swapper = new /obj/effect/proc_holder/spell/pointed/mind_transfer
-	while(mobs.len > 1)
-		var/mob/living/carbon/human/H = pick(mobs)
-		mobs -= H
-		swapper.cast(list(H), mobs[mobs.len], 1)
-		mobs -= mobs[mobs.len]
-
-	for(var/mob/living/carbon/human/H in GLOB.alive_mob_list)
-		var/datum/effect_system/smoke_spread/smoke = new
-		smoke.set_up(0, H.loc)
-		smoke.start()
+///datum/round_event_control/wizard/shuffleminds //Basically Mass Ranged Mindswap
+//	name = "Change Minds!"
+//	weight = 1
+//	typepath = /datum/round_event/wizard/shuffleminds
+//	max_occurrences = 3
+//	earliest_start = 0 MINUTES
+//	can_be_midround_wizard = FALSE // not removing it completely yet
+//	description = "Shuffles the minds of everyone around the station, except for the wizard."
+//
+///datum/round_event/wizard/shuffleminds/start()
+//	var/list/mobs	 = list()
+//
+//	for(var/mob/living/carbon/human/H in GLOB.alive_mob_list)
+//		if(H.stat || !H.mind || iswizard(H))
+//			continue //the wizard(s) are spared on this one
+//		mobs += H
+//
+//	if(!mobs)
+//		return
+//
+//	shuffle_inplace(mobs)
+//
+//	var/obj/effect/proc_holder/spell/pointed/mind_transfer/swapper = new /obj/effect/proc_holder/spell/pointed/mind_transfer
+//	while(mobs.len > 1)
+//		var/mob/living/carbon/human/H = pick(mobs)
+//		mobs -= H
+//		swapper.cast(list(H), mobs[mobs.len], 1)
+//		mobs -= mobs[mobs.len]
+//
+//	for(var/mob/living/carbon/human/H in GLOB.alive_mob_list)
+//		var/datum/effect_system/smoke_spread/smoke = new
+//		smoke.set_up(0, H.loc)
+//		smoke.start()

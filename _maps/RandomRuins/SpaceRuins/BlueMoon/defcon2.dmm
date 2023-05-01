@@ -8209,12 +8209,6 @@
 /obj/structure/destructible/cult/pylon,
 /turf/open/floor/plasteel/cult,
 /area/ruin/space/has_grav/port_tarkon/developement)
-"OS" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/item/solar_assembly,
-/obj/structure/cable,
-/turf/open/floor/plasteel/airless/solarpanel,
-/area/solars/tarkon)
 "OT" = (
 /obj/effect/turf_decal/tile/yellow,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -12330,7 +12324,7 @@ UJ
 UJ
 UJ
 UJ
-OS
+Yc
 WY
 WY
 WY

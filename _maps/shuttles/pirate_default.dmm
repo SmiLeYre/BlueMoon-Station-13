@@ -9,21 +9,15 @@
 /area/shuttle/pirate)
 "ab" = (
 /obj/structure/grille,
+/obj/structure/window/plastitanium/pirate,
+/obj/structure/window/plastitanium/pirate,
 /turf/open/floor/plating/airless,
 /area/shuttle/pirate)
 "ac" = (
-/obj/structure/girder,
-/obj/item/stack/rods{
-	amount = 3
-	},
-/turf/open/floor/plating/airless,
-/area/shuttle/pirate)
-"ad" = (
-/obj/structure/girder,
-/obj/item/stack/rods{
-	amount = 5
-	},
-/turf/open/floor/plating/airless,
+/obj/structure/grille,
+/obj/structure/window/plastitanium/pirate,
+/obj/structure/window/plastitanium/pirate,
+/turf/open/floor/plating,
 /area/shuttle/pirate)
 "ae" = (
 /turf/closed/wall/r_wall/syndicate/pirate,
@@ -608,7 +602,7 @@
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/flask,
 /obj/item/reagent_containers/food/condiment/milk{
-	pixel_x = -12;
+	pixel_x = 9;
 	pixel_y = 4
 	},
 /obj/effect/turf_decal/tile/bar,
@@ -619,6 +613,10 @@
 	pixel_x = 32
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/food/condiment/milk{
+	pixel_x = -12;
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel,
 /area/shuttle/pirate)
 "bc" = (
@@ -1301,14 +1299,6 @@
 /area/shuttle/pirate)
 "cn" = (
 /obj/item/tank/internals/oxygen/yellow,
-/obj/item/clothing/suit/space/syndicate/green/dark{
-	pixel_x = 2;
-	pixel_y = -2
-	},
-/obj/item/clothing/head/helmet/space/syndicate/green/dark{
-	pixel_x = -4;
-	pixel_y = 4
-	},
 /obj/item/tank/jetpack/carbondioxide{
 	pixel_x = -2;
 	pixel_y = -2
@@ -1320,6 +1310,8 @@
 /obj/structure/sign/poster/contraband/random{
 	pixel_x = -32
 	},
+/obj/item/clothing/suit/space/syndicate/black,
+/obj/item/clothing/head/helmet/space/syndicate/black,
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
 "co" = (
@@ -1385,10 +1377,6 @@
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
 /obj/item/gun/energy/laser{
-	pixel_x = -3;
-	pixel_y = 2
-	},
-/obj/item/gun/energy/laser{
 	pixel_y = -1
 	},
 /obj/item/gun/energy/laser{
@@ -1398,6 +1386,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/poster/contraband/random{
 	pixel_x = 32
+	},
+/obj/item/gun/ballistic/automatic/ak47/homemade{
+	pixel_x = -11;
+	pixel_y = 5
 	},
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
@@ -1479,22 +1471,18 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/bot,
 /obj/structure/closet/crate/large,
-/obj/machinery/jukebox{
-	anchored = 0;
-	desc = "Formally known as the SSDD, the Space Shanty Delivery Device is employed by various rings of the piracy scene for its capability of raising crew morale with its inspiring tunes. Unfortunately, this one doesn't seem as if it has many records pertaining to its designated topic on hand.";
-	name = "\improper Space Shanty Delivery Device";
-	req_one_access = null
-	},
 /obj/item/clothing/head/collectable/pirate{
 	pixel_x = 1;
 	pixel_y = 4
 	},
+/obj/machinery/jukebox/disco,
+/obj/item/card/emag,
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
 "cD" = (
-/obj/machinery/suit_storage_unit/pirate,
 /obj/effect/turf_decal/box,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/suit_storage_unit/pirate/captain,
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
 "cE" = (
@@ -1529,6 +1517,13 @@
 /obj/item/stack/cable_coil/yellow{
 	pixel_x = 2;
 	pixel_y = -2
+	},
+/obj/item/ammo_box/magazine/ak47,
+/obj/item/ammo_box/magazine/ak47{
+	pixel_x = -8
+	},
+/obj/item/ammo_box/magazine/ak47{
+	pixel_x = 8
 	},
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
@@ -1595,6 +1590,24 @@
 	pixel_y = 0
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_box/magazine/ak47/ap,
+/obj/item/ammo_box/magazine/ak47/ap{
+	pixel_x = 7
+	},
+/obj/item/ammo_box/magazine/ak47/ap{
+	pixel_y = 1;
+	pixel_x = -8
+	},
+/obj/item/storage/box/lethalshot{
+	pixel_y = 8
+	},
+/obj/item/ammo_box/shotgun,
+/obj/item/ammo_box/shotgun{
+	pixel_y = 2
+	},
+/obj/item/ammo_box/shotgun{
+	pixel_y = 3
+	},
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
 "cL" = (
@@ -1822,7 +1835,7 @@
 	dwidth = 11;
 	height = 16;
 	launch_status = 0;
-	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0);
+	movement_force = list("KNOCKDOWN"=0,"THROW"=0);
 	name = "Pirate Ship";
 	port_direction = 2;
 	width = 23
@@ -2019,11 +2032,12 @@
 /obj/item/stack/sheet/mineral/plastitanium{
 	amount = 20
 	},
-/obj/item/clothing/gloves/color/fyellow/old{
-	pixel_y = 2
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/gloves/combat{
+	pixel_y = 6
 	},
-/obj/item/clothing/gloves/color/fyellow/old{
-	pixel_y = -2
+/obj/item/clothing/gloves/combat{
+	pixel_y = -8
 	},
 /turf/open/floor/pod/light,
 /area/shuttle/pirate)
@@ -2100,6 +2114,15 @@
 	pixel_y = -22
 	},
 /turf/open/floor/plasteel/dark,
+/area/shuttle/pirate)
+"zT" = (
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "cuttershutters";
+	name = "Blast Shutters"
+	},
+/obj/structure/window/plastitanium/pirate,
+/turf/open/floor/plating,
 /area/shuttle/pirate)
 "BD" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2415,8 +2438,8 @@ af
 af
 af
 af
-ak
-ak
+zT
+zT
 be
 aK
 aj
@@ -2438,7 +2461,7 @@ af
 af
 af
 af
-ak
+zT
 aj
 bO
 aj
@@ -2545,7 +2568,7 @@ af
 (20,1,1) = {"
 af
 ab
-ad
+ac
 ah
 ai
 ar
@@ -2568,7 +2591,7 @@ af
 af
 af
 af
-ae
+aj
 aj
 aj
 aj

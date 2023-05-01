@@ -362,10 +362,10 @@
 //BlueMoon Edit. Begin.
 /obj/item/bombcore/large
 	name = "Large Bomb Payload"
-	range_heavy = 15
-	range_medium = 20
-	range_light = 30
-	range_flame = 40
+	range_heavy = 20
+	range_medium = 30
+	range_light = 40
+	range_flame = 50
 //BlueMoon Edit. End.
 
 /obj/item/bombcore/miniature

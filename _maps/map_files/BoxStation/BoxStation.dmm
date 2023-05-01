@@ -64511,11 +64511,6 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/commons/toilet/locker)
-"vyV" = (
-/obj/effect/turf_decal/bot,
-/obj/machinery/rnd/production/techfab/department/security,
-/turf/open/floor/plasteel/dark,
-/area/security/office)
 "vzo" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/turf_decal/tile/red{
@@ -98986,7 +98981,7 @@ aaa
 adR
 fbt
 fbt
-vyV
+fAA
 wsI
 sJH
 fAA

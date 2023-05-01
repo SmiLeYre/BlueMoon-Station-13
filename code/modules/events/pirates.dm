@@ -214,7 +214,16 @@
 	rechargeTime = 3 MINUTES
 
 /obj/machinery/suit_storage_unit/pirate
-	storage_type = /obj/item/tank/jetpack/carbondioxide
+	helmet_type = /obj/item/clothing/head/helmet/space/pirate/bandana
+	suit_type = /obj/item/clothing/suit/space/pirate
+	mask_type = /obj/item/clothing/mask/gas/glass
+	storage_type = /obj/item/tank/jetpack/oxygen/harness
+
+/obj/machinery/suit_storage_unit/pirate/captain
+	helmet_type = /obj/item/clothing/head/helmet/space/pirate
+	suit_type = /obj/item/clothing/suit/space/pirate
+	mask_type = /obj/item/clothing/mask/gas/glass
+	storage_type = /obj/item/tank/jetpack/oxygen/harness
 
 /obj/machinery/loot_locator
 	name = "Booty Locator"
@@ -495,3 +504,27 @@
 /datum/export/pirate/holochip/get_cost(atom/movable/AM)
 	var/obj/item/holochip/H = AM
 	return H.credits
+
+/obj/item/clothing/head/helmet/space/pirate
+	name = "Modified EVA helmet"
+	desc = "A modified helmet to allow space pirates to intimidate their customers whilst staying safe from the void. Comes with some additional protection."
+	icon_state = "spacepirate"
+	item_state = "space_pirate_helmet"
+	armor = list(MELEE = 20, BULLET = 40, LASER = 30, ENERGY = 25, BOMB = 50, BIO = 100, RAD = 50, FIRE = 80, ACID = 80, WOUND = 20)
+	strip_delay = 40
+	equip_delay_other = 20
+
+/obj/item/clothing/head/helmet/space/pirate/bandana
+	icon_state = "spacebandana"
+	item_state = "space_bandana_helmet"
+
+/obj/item/clothing/suit/space/pirate
+	name = "Modified EVA suit"
+	desc = "A modified suit to allow space pirates to board shuttles and stations while avoiding the maw of the void. Comes with additional protection and is lighter to move in."
+	icon_state = "spacepirate"
+	w_class = WEIGHT_CLASS_NORMAL
+	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/melee/transforming/energy/sword/pirate, /obj/item/clothing/glasses/eyepatch, /obj/item/reagent_containers/food/drinks/bottle/rum)
+	slowdown = 0
+	armor = list(MELEE = 20, BULLET = 40, LASER = 30,ENERGY = 25, BOMB = 50, BIO = 100, RAD = 50, FIRE = 80, ACID = 80, WOUND = 20)
+	strip_delay = 40
+	equip_delay_other = 20

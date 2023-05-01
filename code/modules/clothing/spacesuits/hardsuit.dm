@@ -1045,3 +1045,4 @@
 /obj/item/clothing/suit/space/hardsuit/lavaknight/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>Alt-click to recolor it.</span>"
+	

@@ -411,10 +411,6 @@
 			var/datum/component/mood/mood = src.GetComponent(/datum/component/mood)
 			if(mood.sanity <= SANITY_DISTURBED)
 				msg += "[t_on] выглядит расстроено.\n"
-			if (bodytemperature > BODYTEMP_NORMAL)
-				msg += "[t_on] краснеет и хрипит.\n"
-			if (bodytemperature < (BODYTEMP_NORMAL + 1))
-				msg += "[t_on] дрожит.\n"
 			if (HAS_TRAIT(src, TRAIT_BLIND))
 				msg += "[t_on] смотрит в пустоту.\n"
 			if (HAS_TRAIT(src, TRAIT_DEAF))
@@ -424,6 +420,12 @@
 					SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "empath", /datum/mood_event/sad_empath, src)
 				if(mood.sanity >= SANITY_GREAT)
 					SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "empath", /datum/mood_event/happy_empath, src)
+			if(mood.sanity <= SANITY_DISTURBED)
+				msg += "[t_on] выглядит расстроено.\n"
+				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "empath", /datum/mood_event/sad_empath, src)
+			if(mood.shown_mood >= 6) //So roundstart people aren't all "happy" and that antags don't show their true happiness.
+				msg += "[t_on] выглядит счастливо.\n"
+				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "empathH", /datum/mood_event/happy_empath, src)
 
 		switch(stat)
 			if(UNCONSCIOUS)

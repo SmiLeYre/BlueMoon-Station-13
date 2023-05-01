@@ -125,7 +125,7 @@
 /datum/emote/living/awoo
 	key = "awoo"
 	key_third_person = "lets out an awoo"
-	message = "особо милым образом воет!"
+	message = "воет!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
@@ -193,7 +193,7 @@
 /datum/emote/living/nya
 	key = "nya"
 	key_third_person = "lets out a nya"
-	message = "выпускает из своего рта особо странный звук!"
+	message = "выпускает из своего рта странный звук!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
@@ -210,7 +210,7 @@
 /datum/emote/living/weh
 	key = "weh"
 	key_third_person = "lets out a weh"
-	message = "выпускает из своего рта особо странный звук!"
+	message = "выпускает из своего рта довольно странный звук!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE

@@ -119,7 +119,7 @@
 "aq" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating/airless,
-/area/space/nearstation)
+/area/maintenance/solars/starboard)
 "ar" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -1270,6 +1270,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel/dark,
 /area/tcommsat/chamber)
@@ -3816,7 +3819,7 @@
 	},
 /obj/structure/fans/tiny,
 /turf/open/floor/plating/airless,
-/area/space/nearstation)
+/area/maintenance/solars/starboard)
 "jY" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5480,6 +5483,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/commons/fitness/recreation)
+"od" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/airless,
+/area/maintenance/solars/starboard)
 "oe" = (
 /obj/effect/turf_decal/trimline/neutral/filled/line{
 	dir = 8
@@ -17662,9 +17671,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/apc/highcap/ten_k{
-	pixel_y = 23
-	},
+/obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plasteel/dark,
 /area/tcommsat/chamber)
 "Tv" = (
@@ -19218,6 +19225,15 @@
 /obj/effect/landmark/xeno_spawn,
 /turf/open/floor/wood,
 /area/service/bar)
+"Xe" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel/dark,
+/area/tcommsat/chamber)
 "Xf" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
@@ -32087,7 +32103,7 @@ Yv
 Yv
 Yv
 aq
-dh
+od
 aq
 Yv
 Yv
@@ -32344,7 +32360,7 @@ Yv
 Yv
 Yv
 aq
-dh
+od
 aq
 Yv
 Yv
@@ -36721,7 +36737,7 @@ lQ
 lQ
 lz
 BS
-VF
+Xe
 VF
 Ao
 Yv
@@ -36978,7 +36994,7 @@ lz
 lz
 Tu
 dg
-VF
+LC
 VF
 Ao
 sj

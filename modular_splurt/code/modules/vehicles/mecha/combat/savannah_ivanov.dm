@@ -30,6 +30,8 @@
 	max_equip = 3
 	//no tax on flying, since the power cost is in the leap itself.
 	phasing_energy_drain = 0
+	nominalphrase = "sound/mecha/nominal_russian.ogg"
+	imagenhphrase = "sound/mecha/imag_enh_russian.ogg"
 
 /obj/vehicle/sealed/mecha/combat/savannah_ivanov/get_mecha_occupancy_state()
 	var/driver_present = driver_amount() != 0

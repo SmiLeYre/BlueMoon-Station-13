@@ -22,7 +22,7 @@
 
 	var/res = alert(usr, "Show the title of this song to the players?",, "Да","Нет", "Cancel")
 	switch(res)
-		if("Yes")
+		if("Да")
 			to_chat(world, "<span class='boldannounce'>An admin played: [S]</span>", confidential = TRUE)
 		if("Cancel")
 			return

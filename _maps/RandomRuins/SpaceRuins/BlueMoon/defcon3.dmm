@@ -7469,6 +7469,9 @@
 "NK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/structure/window/reinforced/no_firelock,
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "NL" = (
@@ -7629,12 +7632,6 @@
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/structure/lattice/catwalk,
 /turf/open/space/basic,
-/area/solars/tarkon)
-"OS" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/item/solar_assembly,
-/obj/structure/cable,
-/turf/open/floor/plasteel/airless/solarpanel,
 /area/solars/tarkon)
 "OT" = (
 /obj/effect/decal/cleanable/dirt,
@@ -11729,7 +11726,7 @@ fw
 fw
 fw
 fw
-OS
+If
 WY
 WY
 WY

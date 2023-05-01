@@ -132,9 +132,9 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 
 /datum/antagonist/devil/admin_add(datum/mind/new_owner,mob/admin)
 	switch(alert(admin,"Should the devil be able to ascend",,"Да","Нет","Cancel"))
-		if("Yes")
+		if("Да")
 			ascendable = TRUE
-		if("No")
+		if("Нет")
 			ascendable = FALSE
 		else
 			return

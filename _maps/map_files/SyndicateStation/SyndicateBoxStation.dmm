@@ -50449,9 +50449,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/engineering/main)
 "cCW" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	dir = 8
-	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
 /turf/open/floor/mineral/plastitanium/red,
 /area/maintenance/bar)
 "cCY" = (
@@ -53218,7 +53216,9 @@
 /area/commons/fitness/recreation)
 "ffa" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/maintenance/bar)
 "ffl" = (
@@ -53337,7 +53337,7 @@
 /area/commons/fitness/recreation)
 "fkW" = (
 /obj/structure/table/reinforced,
-/obj/item/clothing/head/syndicatefake,
+/obj/item/clothing/head/helmet/space/syndicate/black/red,
 /turf/open/floor/mineral/plastitanium/red,
 /area/maintenance/starboard/aft)
 "flc" = (
@@ -54398,8 +54398,8 @@
 /area/maintenance/port/fore)
 "gGK" = (
 /obj/structure/table/reinforced,
-/obj/item/clothing/suit/syndicatefake,
-/obj/item/clothing/head/syndicatefake,
+/obj/item/clothing/head/helmet/space/syndicate/black/red,
+/obj/item/clothing/suit/space/syndicate/black/red,
 /turf/open/floor/mineral/plastitanium/red,
 /area/maintenance/starboard/aft)
 "gGL" = (
@@ -55906,11 +55906,6 @@
 	},
 /turf/open/floor/carpet/black,
 /area/service/bar)
-"jgM" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden,
-/turf/open/floor/mineral/plastitanium/red,
-/area/maintenance/bar)
 "jiK" = (
 /obj/structure/sign/warning/securearea,
 /turf/closed/wall/r_wall/syndicate{
@@ -57634,12 +57629,6 @@
 /obj/structure/fans/tiny,
 /turf/open/floor/plating,
 /area/cargo/storage)
-"lnY" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	dir = 4
-	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/maintenance/bar)
 "lpx" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/r_wall/syndicate{
@@ -57766,13 +57755,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/commons/dorms)
-"lun" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 6
-	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/maintenance/bar)
 "lux" = (
 /obj/structure/closet/crate/hydroponics,
 /obj/item/paper/guides/jobs/hydroponics,
@@ -57989,11 +57971,6 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/mineral/plastitanium,
 /area/security/prison)
-"lIW" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/open/floor/mineral/plastitanium/red,
-/area/maintenance/bar)
 "lJC" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
@@ -59169,6 +59146,10 @@
 /obj/structure/loot_pile/maint,
 /turf/open/floor/plating,
 /area/maintenance/port/aft)
+"nlA" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/open/floor/mineral/plastitanium/red,
+/area/maintenance/bar)
 "nmF" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /obj/machinery/camera{
@@ -60637,6 +60618,15 @@
 /obj/item/kitchen/knife/butcher,
 /turf/open/floor/plasteel/kitchen_coldroom,
 /area/commons/dorms)
+"puV" = (
+/obj/structure/chair/sofa/corp/left{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/maintenance/bar)
 "pvJ" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/maintenance{
@@ -63553,6 +63543,11 @@
 /obj/machinery/chem_master,
 /turf/open/floor/mineral/plastitanium,
 /area/medical/medbay/central)
+"tRt" = (
+/obj/structure/table/reinforced,
+/obj/item/gun/ballistic/automatic/pistol/suppressed,
+/turf/open/floor/mineral/plastitanium/red,
+/area/maintenance/starboard/aft)
 "tRB" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 5
@@ -63964,6 +63959,12 @@
 	smooth = 2
 	},
 /area/command/gateway)
+"uxE" = (
+/obj/item/gun/ballistic/automatic/pistol/m9mmpistol,
+/turf/closed/wall/r_wall/syndicate{
+	smooth = 2
+	},
+/area/science/circuit)
 "uxY" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/cable{
@@ -63979,11 +63980,14 @@
 /turf/open/floor/mineral/plastitanium,
 /area/commons/dorms)
 "uyG" = (
-/turf/open/floor/plating,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 6
+	},
+/turf/open/floor/mineral/plastitanium/red,
 /area/maintenance/bar)
 "uzm" = (
 /obj/structure/table/reinforced,
-/obj/item/clothing/suit/syndicatefake,
+/obj/item/clothing/suit/space/syndicate/black/red,
 /turf/open/floor/mineral/plastitanium/red,
 /area/maintenance/starboard/aft)
 "uAU" = (
@@ -64456,6 +64460,10 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/mineral/plastitanium/red,
 /area/security/warden)
+"vnx" = (
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden,
+/turf/open/floor/mineral/plastitanium/red,
+/area/maintenance/bar)
 "vnI" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/disposalpipe/segment,
@@ -66105,7 +66113,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/rnd/production/techfab/department/security,
+/obj/structure/closet/secure_closet/security/sec,
 /turf/open/floor/mineral/plastitanium/red,
 /area/security/office)
 "xEB" = (
@@ -89334,10 +89342,10 @@ bCq
 mqZ
 lvb
 bcU
-lnY
 bcU
 bcU
-lnY
+bcU
+bcU
 bcU
 lvb
 mqZ
@@ -89590,10 +89598,10 @@ bUt
 bCq
 uaw
 eND
-lun
-jgM
-lIW
-lIW
+see
+ffa
+see
+see
 ffa
 see
 pAF
@@ -89848,9 +89856,9 @@ jJF
 gBo
 qjM
 uyG
-cCW
-bcU
-bcU
+vnx
+nlA
+nlA
 cCW
 bcU
 qjM
@@ -90105,10 +90113,10 @@ bCq
 mqZ
 rVy
 kPL
-rgW
+puV
 rVy
 fxa
-rgW
+puV
 rVy
 fxa
 sAH
@@ -116568,7 +116576,7 @@ cNZ
 nyn
 wkN
 wkN
-wkN
+uxE
 wkN
 kPi
 cOe
@@ -119140,7 +119148,7 @@ mDZ
 xgs
 fkW
 xgs
-hTt
+tRt
 xgs
 kfS
 kfS

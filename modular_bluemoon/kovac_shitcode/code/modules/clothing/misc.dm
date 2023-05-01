@@ -40,7 +40,31 @@
 	subcategory = LOADOUT_SUBCATEGORY_NECK_TIE
 	path = /obj/item/clothing/neck/tie/bandagewraps
 
-/datum/gear/neck/suspenders
+/datum/gear/suit/suspenders
 	name = "Suspenders"
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	path = /obj/item/clothing/suit/suspenders
+
+/obj/item/card/id/sol_citizen
+	name = "SolFed Citizen ID"
+	desc = "An ID made to recognize Solar Federation habbitants and tourists."
+	icon_state = "sol"
+	assignment = "SolFed Citizen"
+	uses_overlays = FALSE
+
+/obj/item/card/id/nri_citizen
+	name = "NRI Citizen ID"
+	desc = "An ID made to recognize Novaya Rossiyskya Imperia habbitants and tourists."
+	icon_state = "nri"
+	assignment = "NRI Citizen"
+	uses_overlays = FALSE
+
+/datum/gear/hands/sol_citizen
+	name = "Solar Federation Citizen ID"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/card/id/sol_citizen
+
+/datum/gear/hands/nri_citizen
+	name = "New Russian Empire Citizen ID"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/card/id/nri_citizen
