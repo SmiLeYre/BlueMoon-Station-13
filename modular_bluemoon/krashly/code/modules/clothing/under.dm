@@ -3,6 +3,7 @@
 	desc = "A white set of fatigues, designed for private security operators. The symbol of the Nanotrasen corporation is emblazed on the suit. This particular suit looks like it belongs to a high-ranking officer."
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/under.dmi'
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/under.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/under.dmi'
 	icon_state = "officer_jumpsuit"
 	item_state = "officer_jumpsuit"
 
@@ -11,6 +12,7 @@
 	desc = "Shirt with trousers with suspenders."
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/under.dmi'
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/under.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/under.dmi'
 	icon_state = "esculap"
 	item_state = "esculap"
 
@@ -19,6 +21,7 @@
 	desc = "Bright butler formal wear."
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/under.dmi'
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/under.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/under.dmi'
 	icon_state = "butler_s"
 	item_state = "butler_s"
 
@@ -27,6 +30,7 @@
 	desc = "Looks very old."
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/under.dmi'
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/under.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/under.dmi'
 	icon_state = "common"
 	item_state = "common"
 
@@ -35,5 +39,44 @@
 	desc = "Decorated with precious stones and chains."
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/under.dmi'
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/under.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/under.dmi'
 	icon_state = "baron"
 	item_state = "baron"
+
+//InteQ
+
+/obj/item/clothing/under/inteq
+	name = "brown combat turtleneck"
+	desc = "It sits comfortably, does not hinder movement, and most importantly, it is very stylish."
+	icon = 'modular_bluemoon/krashly/icons/obj/clothing/under.dmi'
+	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/under.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/under.dmi'
+	icon_state = "inteq"
+	item_state = "inteq"
+
+/obj/item/clothing/under/inteq_skirt
+	name = "brown combat skirtlneck"
+	desc = "It sits comfortably, does not hinder movement, and most importantly, it is very stylish."
+	icon = 'modular_bluemoon/krashly/icons/obj/clothing/under.dmi'
+	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/under.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/under.dmi'
+	icon_state = "inteq_skirt"
+	item_state = "inteq_skirt"
+
+/obj/item/clothing/under/inteq_eng
+	name = "brown engineering turtleneck"
+	desc = "It sits comfortably, does not hinder movement, and most importantly, it is very stylish."
+	icon = 'modular_bluemoon/krashly/icons/obj/clothing/under.dmi'
+	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/under.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/under.dmi'
+	icon_state = "inteqeng"
+	item_state = "inteqeng"
+
+/obj/item/clothing/under/inteq_eng_skirt
+	name = "brown engineering skirtleneck"
+	desc = "It sits comfortably, does not hinder movement, and most importantly, it is very stylish."
+	icon = 'modular_bluemoon/krashly/icons/obj/clothing/under.dmi'
+	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/under.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/under.dmi'
+	icon_state = "inteqeng_skirt"
+	item_state = "inteqeng_skirt"

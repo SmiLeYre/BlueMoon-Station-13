@@ -46,3 +46,39 @@
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
 	icon_state = "baron"
 	item_state = "baron"
+
+//InteQ//
+
+/obj/item/clothing/suit/armor/inteq
+	name = "InteQ armor vest"
+	desc = "Strict black armor vest. Well, at least you won't die immediately."
+	icon = 'modular_bluemoon/krashly/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
+	icon_state = "armor"
+	item_state = "armor"
+
+//InteQ Hardsuits//
+
+//Helmet
+/obj/item/clothing/head/helmet/space/hardsuit/ert/sec/inteq
+    name = "InteQ hardsuit helmet"
+    desc = "InteQ stormtrooper hardsuit helmet."
+    icon_state = "hardsuit0-inteq"
+    item_state = "hardsuit0-inteq"
+    icon = 'modular_bluemoon/krashly/icons/obj/clothing/head.dmi'
+    mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/head.dmi'
+    hardsuit_type = "inteq"
+
+//Suit
+/obj/item/clothing/suit/space/hardsuit/ert/sec/inteq
+	name = "InteQ hardsuit"
+	desc = "InteQ stormtrooper hardsuit."
+	icon_state = "hardsuit-inteq"
+	item_state = "hardsuit-inteq"
+	hardsuit_type = "inteq"
+	icon = 'modular_bluemoon/krashly/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/sec/inteq
+//////////
