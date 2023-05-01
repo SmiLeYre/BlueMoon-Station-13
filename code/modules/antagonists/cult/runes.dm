@@ -23,7 +23,7 @@ Runes can either be invoked by one's self or with many different cultists. Each 
 	icon_state = "1"
 	resistance_flags = FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	layer = SIGIL_LAYER
-	color = RUNE_COLOR_RED
+	color = RUNE_COLOR_MEDIUMRED
 
 	var/invocation = "Aiy ele-mayo." //This is said by cultists when the rune is invoked.
 	var/req_cultists = 1 //The amount of cultists required around the rune to invoke it. If only 1, any cultist can invoke it.
@@ -182,8 +182,8 @@ structure_check() searches for nearby cultist structures required for the invoca
 	cultist_desc = "offers a noncultist above it to Nar'Sie, either converting them or sacrificing them."
 	req_cultists_text = "2 for conversion, 3 for living sacrifices and sacrifice targets."
 	invocation = "Mah'weyh pleggh at e'ntrath."
-	icon_state = "3"
-	color = RUNE_COLOR_OFFER
+	icon_state = "2"
+	color = RUNE_COLOR_MEDIUMRED
 	req_cultists = 1
 	rune_in_use = FALSE
 	requires_full_power = TRUE
@@ -330,7 +330,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 	cultist_desc = "allows cultists to prepare greater amounts of blood magic at far less of a cost."
 	invocation = "H'drak v'loso, mir'kanas verbot."
 	icon_state = "3"
-	color = RUNE_COLOR_TALISMAN
+	color = RUNE_COLOR_MEDIUMRED
 	construct_invoke = FALSE
 
 /obj/effect/rune/empower/invoke(var/list/invokers)
@@ -343,8 +343,8 @@ structure_check() searches for nearby cultist structures required for the invoca
 	cultist_name = "Teleport"
 	cultist_desc = "warps everything above it to another chosen teleport rune."
 	invocation = "Sas'so c'arta forbici."
-	icon_state = "2"
-	color = RUNE_COLOR_TELEPORT
+	icon_state = "4"
+	color = RUNE_COLOR_MEDIUMRED
 	req_keyword = TRUE
 	light_power = 4
 	var/obj/effect/temp_visual/cult/portal/inner_portal //The portal "hint" for off-station teleportations
@@ -626,7 +626,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 	cultist_name = "Barrier"
 	cultist_desc = "when invoked, makes a temporary invisible wall to block passage. Can be invoked again to reverse this."
 	invocation = "Khari'd. Eske'te tannin."
-	icon_state = "4"
+	icon_state = "5"
 	color = RUNE_COLOR_DARKRED
 	CanAtmosPass = ATMOS_PASS_DENSITY
 	var/datum/timedevent/density_timer
@@ -710,8 +710,8 @@ structure_check() searches for nearby cultist structures required for the invoca
 	invocation = "N'ath reth sh'yro eth d'rekkathnor."
 	req_cultists = 2
 	invoke_damage = 10
-	icon_state = "3"
-	color = RUNE_COLOR_SUMMON
+	icon_state = "5"
+	color = RUNE_COLOR_MEDIUMRED
 
 /obj/effect/rune/summon/invoke(var/list/invokers)
 	var/mob/living/user = invokers[1]
@@ -759,9 +759,9 @@ structure_check() searches for nearby cultist structures required for the invoca
 	cultist_name = "Boil Blood"
 	cultist_desc = "boils the blood of non-believers who can see the rune, rapidly dealing extreme amounts of damage. Requires 3 invokers."
 	invocation = "Dedo ol'btoh."
-	icon_state = "4"
-	color = RUNE_COLOR_BURNTORANGE
-	light_color = LIGHT_COLOR_LAVA
+	icon_state = "6"
+	color = RUNE_COLOR_RED
+	light_color = COLOR_CULT_RED
 	req_cultists = 3
 	invoke_damage = 10
 	construct_invoke = FALSE
