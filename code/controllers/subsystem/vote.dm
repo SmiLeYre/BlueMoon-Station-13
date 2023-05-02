@@ -95,9 +95,9 @@ SUBSYSTEM_DEF(vote)
 		var/votes = choices[option]
 		total_votes += votes
 //BLUEMOON ADD START - голоса за некоторые режимы (динамик и тимбаза, лёгкий динамик и экста) должны считаться вместе.
-		if(option == (ROUNDTYPE_EXTENDED || ROUNDTYPE_LIGHT_DYNAMIC))
+		if(option == ROUNDTYPE_EXTENDED || option == ROUNDTYPE_LIGHT_DYNAMIC)
 			extended_votes += votes
-		if(option == (ROUNDTYPE_TEAMBASED_DYNAMIC || ROUNDTYPE_DYNAMIC))
+		if(option == ROUNDTYPE_TEAMBASED_DYNAMIC || option == ROUNDTYPE_DYNAMIC)
 			dynamic_votes += votes
 //BLUEMOON ADD END
 		if(votes > greatest_votes)
@@ -107,14 +107,14 @@ SUBSYSTEM_DEF(vote)
 	var/second_round_votes = 0 //голоса между вариациями
 	for(var/option in choices)
 		var/votes = choices[option]
-		if(extended_votes <= dynamic_votes)
-			if(option == (ROUNDTYPE_EXTENDED || ROUNDTYPE_LIGHT_DYNAMIC)) //экста и лёгкий динамик всегда должны быть в конце списка, чтобы это работало
+		if(extended_votes < dynamic_votes)
+			if(option == ROUNDTYPE_EXTENDED || option ==  ROUNDTYPE_LIGHT_DYNAMIC) //экста и лёгкий динамик всегда должны быть в конце списка, чтобы это работало
 				continue
 			if(votes > second_round_votes)
 				greatest_votes = votes
 			second_round_votes += votes
 		else
-			if(option == (ROUNDTYPE_DYNAMIC || ROUNDTYPE_TEAMBASED_DYNAMIC)) //экста и лёгкий динамик всегда должны быть в конце списка, чтобы это работало
+			if(option == ROUNDTYPE_DYNAMIC || option == ROUNDTYPE_TEAMBASED_DYNAMIC) //экста и лёгкий динамик всегда должны быть в конце списка, чтобы это работало
 				continue
 			if(votes > second_round_votes)
 				greatest_votes = votes
@@ -144,11 +144,11 @@ SUBSYSTEM_DEF(vote)
 		for(var/option in choices)
 //BLUEMOON ADD START - костыль, чтобы вариации эксты не была победителем, если у неё голосов больше, чем у одного из других вариантов
 //экста и лёгкий динамик всегда должны быть в конце списка, чтобы это работало
-			if(extended_votes <= dynamic_votes)
-				if(option == (ROUNDTYPE_EXTENDED || ROUNDTYPE_LIGHT_DYNAMIC)) //экста и лёгкий динамик всегда должны быть в конце списка, чтобы это работало
+			if(extended_votes < dynamic_votes)
+				if(option == ROUNDTYPE_EXTENDED || option ==  ROUNDTYPE_LIGHT_DYNAMIC) //экста и лёгкий динамик всегда должны быть в конце списка, чтобы это работало
 					continue
 			else
-				if(option == (ROUNDTYPE_DYNAMIC || ROUNDTYPE_TEAMBASED_DYNAMIC)) //экста и лёгкий динамик всегда должны быть в конце списка, чтобы это работало
+				if(option == ROUNDTYPE_DYNAMIC || option ==  ROUNDTYPE_TEAMBASED_DYNAMIC) //экста и лёгкий динамик всегда должны быть в конце списка, чтобы это работало
 					continue
 //BLUEMOON ADD END
 			if(choices[option] == greatest_votes)
