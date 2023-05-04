@@ -1,0 +1,2360 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ao" = (
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 8
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"au" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 6
+	},
+/obj/item/kirbyplants{
+	icon_state = "plant-20"
+	},
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"ax" = (
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/machinery/door/airlock/external{
+	name = "Engineering External Access";
+	req_access_txt = "10;13"
+	},
+/turf/open/floor/plating,
+/area/engineering/main)
+"az" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 5
+	},
+/turf/closed/wall/r_wall,
+/area/engineering/main)
+"aN" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/structure/sign/warning/radiation/rad_area,
+/turf/closed/wall/r_wall,
+/area/engineering/main)
+"bf" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 8
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"bQ" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 8
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"bU" = (
+/turf/open/pool,
+/area/engineering/main)
+"ce" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/carpet/green,
+/area/engineering/main)
+"dj" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 8
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"dk" = (
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"dw" = (
+/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on,
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"dF" = (
+/obj/machinery/atmospherics/pipe/manifold/green/visible{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"dK" = (
+/obj/structure/closet/radiation,
+/obj/effect/turf_decal/stripes/line{
+	dir = 10
+	},
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"dR" = (
+/obj/machinery/door/airlock/engineering/glass{
+	name = "Nuclear Reactor Control Room";
+	req_access_txt = "10"
+	},
+/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"ec" = (
+/obj/effect/spawner/structure/window/plasma/reinforced,
+/obj/machinery/door/poddoor/shutters/radiation/preopen{
+	id = "engrbmk";
+	name = "Radiation Chamber Shutters"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 10
+	},
+/turf/open/floor/plating,
+/area/engineering/main)
+"ee" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/effect/spawner/structure/window/plasma/reinforced,
+/obj/machinery/door/poddoor/shutters/radiation/preopen{
+	id = "engrbmk";
+	name = "Radiation Chamber Shutters"
+	},
+/turf/open/floor/plating,
+/area/engineering/main)
+"eg" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 1
+	},
+/obj/effect/spawner/structure/window/plasma/reinforced,
+/obj/machinery/door/poddoor/shutters/radiation/preopen{
+	id = "engrbmk";
+	name = "Radiation Chamber Shutters"
+	},
+/turf/open/floor/plating,
+/area/engineering/main)
+"eu" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"eM" = (
+/obj/structure/chair/office/light{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/carpet/green,
+/area/engineering/main)
+"fh" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"fF" = (
+/obj/structure/sign/warning/radiation/rad_area,
+/turf/closed/wall/r_wall,
+/area/engineering/main)
+"fU" = (
+/obj/structure/lattice,
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple,
+/turf/open/space,
+/area/space/nearstation)
+"gn" = (
+/obj/structure/table,
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = 5
+	},
+/obj/item/flashlight{
+	pixel_x = 1;
+	pixel_y = 5
+	},
+/obj/item/flashlight{
+	pixel_x = 1;
+	pixel_y = 5
+	},
+/turf/open/floor/plasteel,
+/area/engineering/main)
+"gF" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"ha" = (
+/obj/effect/spawner/structure/window/plasma/reinforced,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/door/poddoor/shutters/radiation/preopen{
+	id = "engrbmk";
+	name = "Radiation Chamber Shutters"
+	},
+/turf/open/floor/plating,
+/area/engineering/main)
+"hd" = (
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 6
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"hi" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/table/reinforced,
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"hj" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/closed/wall/r_wall,
+/area/engineering/main)
+"hn" = (
+/obj/machinery/pool/filter{
+	pixel_y = 24
+	},
+/turf/open/pool,
+/area/engineering/main)
+"hH" = (
+/obj/machinery/atmospherics/components/binary/valve,
+/turf/open/floor/engine,
+/area/engineering/main)
+"hK" = (
+/obj/structure/lattice/catwalk,
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	dir = 6
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"hQ" = (
+/obj/structure/closet/firecloset,
+/obj/effect/turf_decal/stripes/line{
+	dir = 9
+	},
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"hT" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 4
+	},
+/obj/machinery/meter,
+/turf/open/floor/plasteel,
+/area/engineering/main)
+"id" = (
+/obj/effect/spawner/structure/window/plasma/reinforced,
+/obj/machinery/door/poddoor/shutters/radiation/preopen{
+	id = "engrbmk";
+	name = "Radiation Chamber Shutters"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/plating,
+/area/engineering/main)
+"if" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 8
+	},
+/turf/open/floor/carpet/green,
+/area/engineering/main)
+"iA" = (
+/obj/structure/closet/radiation,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 9
+	},
+/turf/open/floor/plasteel,
+/area/engineering/main)
+"iQ" = (
+/obj/machinery/pool/drain,
+/turf/open/pool,
+/area/engineering/main)
+"iY" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"jg" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 6
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"ji" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 10
+	},
+/obj/machinery/airalarm{
+	dir = 4;
+	pixel_x = -22
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 8
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"jk" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 6
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"jo" = (
+/obj/effect/turf_decal/stripes/red/corner{
+	dir = 8
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"jv" = (
+/obj/structure/chair/office/light{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 5
+	},
+/turf/open/floor/carpet/green,
+/area/engineering/main)
+"jw" = (
+/obj/machinery/portable_atmospherics/canister/carbon_dioxide,
+/obj/structure/window/reinforced,
+/obj/effect/turf_decal/box,
+/turf/open/floor/engine,
+/area/engineering/main)
+"jx" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"ke" = (
+/obj/effect/turf_decal/stripes/red/corner,
+/turf/open/floor/engine,
+/area/engineering/main)
+"kx" = (
+/obj/structure/lattice,
+/turf/closed/wall/r_wall,
+/area/engineering/main)
+"kM" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 9
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"kR" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 5
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"kX" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"lc" = (
+/obj/machinery/portable_atmospherics/canister/nitrogen,
+/obj/effect/turf_decal/box,
+/turf/open/floor/engine,
+/area/engineering/main)
+"ld" = (
+/obj/structure/lattice,
+/obj/structure/grille/broken,
+/turf/open/space,
+/area/space/nearstation)
+"lg" = (
+/obj/effect/spawner/structure/window/plasma/reinforced,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 6
+	},
+/obj/machinery/door/poddoor/shutters/radiation/preopen{
+	id = "engrbmk";
+	name = "Radiation Chamber Shutters"
+	},
+/turf/open/floor/plating,
+/area/engineering/main)
+"lA" = (
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"lE" = (
+/obj/effect/spawner/structure/window/plasma/reinforced,
+/obj/machinery/door/poddoor/shutters/radiation/preopen{
+	id = "engrbmk";
+	name = "Radiation Chamber Shutters"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/engineering/main)
+"lW" = (
+/obj/structure/table,
+/obj/effect/turf_decal/stripes/line{
+	dir = 5
+	},
+/obj/item/paper_bin,
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"mb" = (
+/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 9
+	},
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"mi" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"mo" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"mx" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"my" = (
+/obj/machinery/computer/reactor/stats,
+/obj/effect/turf_decal/stripes/line{
+	dir = 9
+	},
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"mE" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/machinery/airalarm{
+	dir = 1;
+	pixel_y = -24
+	},
+/obj/machinery/camera{
+	c_tag = "Reactor control room";
+	dir = 1;
+	network = list("engine");
+	pixel_x = 23
+	},
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"mT" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible,
+/turf/open/floor/engine,
+/area/engineering/main)
+"mY" = (
+/turf/open/floor/engine,
+/area/engineering/main)
+"ng" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible{
+	dir = 8
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"nh" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/effect/spawner/structure/window/plasma/reinforced,
+/obj/machinery/door/poddoor/shutters/radiation/preopen{
+	id = "engrbmk";
+	name = "Radiation Chamber Shutters"
+	},
+/turf/open/floor/plating,
+/area/engineering/main)
+"nx" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 9
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"nT" = (
+/obj/structure/rack,
+/obj/item/clothing/mask/gas{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas{
+	pixel_x = -3;
+	pixel_y = -3
+	},
+/turf/open/floor/plasteel,
+/area/engineering/main)
+"nW" = (
+/obj/machinery/atmospherics/components/binary/pump/on{
+	dir = 8;
+	name = "Gas to Cooling Loop"
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 9
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"oe" = (
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/engine,
+/area/engineering/main)
+"oh" = (
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"op" = (
+/obj/machinery/atmospherics/components/trinary/nuclear_reactor/preset,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"os" = (
+/obj/effect/turf_decal/stripes/corner,
+/turf/open/floor/engine,
+/area/engineering/main)
+"pr" = (
+/obj/structure/lattice,
+/obj/machinery/atmospherics/pipe/simple{
+	dir = 9
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"pF" = (
+/obj/machinery/atmospherics/pipe/manifold/orange/visible,
+/turf/open/floor/engine,
+/area/engineering/main)
+"qy" = (
+/turf/closed/wall,
+/area/engineering/main)
+"rl" = (
+/obj/effect/spawner/structure/window/plasma/reinforced,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/engineering/main)
+"rw" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"rx" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 10
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"rK" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 10
+	},
+/turf/open/floor/plasteel,
+/area/engineering/main)
+"rQ" = (
+/obj/machinery/light{
+	dir = 8;
+	light_color = "#e8eaff"
+	},
+/obj/machinery/portable_atmospherics/canister/nitrogen,
+/obj/effect/turf_decal/box,
+/turf/open/floor/engine,
+/area/engineering/main)
+"rV" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/machinery/atmospherics/components/binary/pump{
+	name = "Gas to Waste"
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"sA" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"sS" = (
+/obj/effect/spawner/structure/window/plasma/reinforced,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 6
+	},
+/obj/machinery/door/poddoor/shutters/radiation/preopen{
+	id = "engrbmk";
+	name = "Radiation Chamber Shutters"
+	},
+/turf/open/floor/plating,
+/area/engineering/main)
+"sV" = (
+/obj/structure/table,
+/obj/item/clothing/gloves/color/yellow,
+/obj/item/storage/toolbox/electrical{
+	pixel_y = 5
+	},
+/turf/open/floor/plasteel,
+/area/engineering/main)
+"tt" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/visible,
+/turf/open/floor/engine,
+/area/engineering/main)
+"tw" = (
+/obj/structure/lattice,
+/turf/open/space/basic,
+/area/space/nearstation)
+"tK" = (
+/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"tR" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 8
+	},
+/turf/closed/wall/r_wall,
+/area/engineering/main)
+"ue" = (
+/obj/structure/lattice,
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	dir = 5
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"ui" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/camera{
+	c_tag = "Reactor cycling room";
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"uj" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible,
+/obj/effect/turf_decal/stripes/red/line,
+/turf/open/floor/engine,
+/area/engineering/main)
+"up" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/portables_connector/visible{
+	name = "output gas connector port"
+	},
+/obj/machinery/portable_atmospherics/canister/toxins,
+/turf/open/floor/engine,
+/area/engineering/main)
+"uA" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/closed/wall/r_wall,
+/area/engineering/main)
+"uI" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 8
+	},
+/turf/closed/wall/r_wall,
+/area/engineering/main)
+"uQ" = (
+/obj/machinery/pool/controller,
+/obj/effect/turf_decal/stripes/line{
+	dir = 6
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"uR" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 9
+	},
+/obj/effect/spawner/structure/window/plasma/reinforced,
+/obj/machinery/door/poddoor/shutters/radiation/preopen{
+	id = "engrbmk";
+	name = "Radiation Chamber Shutters"
+	},
+/turf/open/floor/plating,
+/area/engineering/main)
+"vh" = (
+/obj/structure/table,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/item/book/manual/wiki/rbmk{
+	name = "\improper Nuclear Reactors (for dummies)"
+	},
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"vI" = (
+/obj/machinery/atmospherics/components/binary/pump/on{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"vQ" = (
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 8;
+	name = "Atmos to Loop"
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"vX" = (
+/obj/structure/lattice/catwalk,
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	dir = 5
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"vY" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 1
+	},
+/turf/open/floor/carpet/green,
+/area/engineering/main)
+"wo" = (
+/obj/effect/spawner/structure/window/plasma/reinforced,
+/obj/machinery/door/poddoor/shutters/radiation/preopen{
+	id = "engrbmk";
+	name = "Radiation Chamber Shutters"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/plating,
+/area/engineering/main)
+"wL" = (
+/obj/effect/turf_decal/stripes/red/corner{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"wN" = (
+/obj/effect/spawner/structure/window/plasma/reinforced,
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/door/poddoor/shutters/radiation/preopen{
+	id = "engrbmk";
+	name = "Radiation Chamber Shutters"
+	},
+/turf/open/floor/plating,
+/area/engineering/main)
+"xw" = (
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"xO" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"xQ" = (
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"xZ" = (
+/obj/structure/window/reinforced,
+/obj/machinery/portable_atmospherics/canister/carbon_dioxide,
+/obj/effect/turf_decal/box,
+/turf/open/floor/engine,
+/area/engineering/main)
+"yf" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/on{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/engineering/main)
+"yI" = (
+/turf/open/floor/carpet/green,
+/area/engineering/main)
+"zm" = (
+/obj/structure/table,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/item/folder/yellow,
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"zx" = (
+/obj/item/fuel_rod,
+/turf/open/pool,
+/area/engineering/main)
+"zC" = (
+/obj/effect/spawner/structure/window/plasma/reinforced,
+/obj/machinery/atmospherics/pipe/heat_exchanging/junction{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/door/poddoor/shutters/radiation/preopen{
+	id = "engrbmk";
+	name = "Radiation Chamber Shutters"
+	},
+/turf/open/floor/plating,
+/area/engineering/main)
+"zD" = (
+/obj/effect/turf_decal/stripes/red/corner{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"zS" = (
+/turf/open/space/basic,
+/area/space)
+"Am" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/machinery/atmospherics/components/unary/vent_pump/on,
+/turf/open/floor/engine,
+/area/engineering/main)
+"AA" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"AG" = (
+/obj/machinery/atmospherics/pipe/manifold/cyan/visible{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"AI" = (
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/structure/window/reinforced{
+	dir = 1;
+	layer = 2.9
+	},
+/obj/effect/turf_decal/box,
+/turf/open/floor/engine,
+/area/engineering/main)
+"AN" = (
+/obj/effect/spawner/structure/window/plasma/reinforced,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/door/poddoor/shutters/radiation/preopen{
+	id = "engrbmk";
+	name = "Radiation Chamber Shutters"
+	},
+/turf/open/floor/plating,
+/area/engineering/main)
+"Bl" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/turf/open/floor/carpet/green,
+/area/engineering/main)
+"Bn" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple,
+/turf/closed/wall/r_wall,
+/area/engineering/main)
+"Bx" = (
+/turf/closed/wall/r_wall,
+/area/engineering/main)
+"BM" = (
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"BU" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 10
+	},
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"Ce" = (
+/obj/effect/turf_decal/stripes/red/line,
+/turf/open/floor/engine,
+/area/engineering/main)
+"Cg" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/engineering/main)
+"Ck" = (
+/obj/effect/turf_decal/delivery,
+/turf/open/floor/engine,
+/area/engineering/main)
+"CE" = (
+/obj/machinery/computer/reactor/fuel_rods,
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"CX" = (
+/obj/structure/pool/ladder{
+	dir = 2;
+	pixel_y = 24
+	},
+/turf/open/pool,
+/area/engineering/main)
+"CZ" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 4;
+	light_color = "#c1caff"
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"DF" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+	dir = 9
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"DI" = (
+/obj/structure/sign/warning/vacuum/external{
+	pixel_x = 32
+	},
+/turf/open/floor/plating,
+/area/engineering/main)
+"DP" = (
+/obj/machinery/door/airlock/engineering/glass{
+	name = "Nuclear Reactor Airlock";
+	req_access_txt = "10"
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/open/floor/plating,
+/area/engineering/main)
+"Et" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 6
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"Ex" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/machinery/light,
+/turf/open/floor/engine,
+/area/engineering/main)
+"EG" = (
+/obj/structure/lattice,
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	dir = 10
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"FT" = (
+/obj/machinery/atmospherics/pipe/manifold4w/cyan/visible,
+/turf/open/floor/engine,
+/area/engineering/main)
+"GH" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/portables_connector/visible{
+	name = "output gas connector port"
+	},
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"Hj" = (
+/obj/machinery/atmospherics/pipe/manifold/cyan/visible{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"Hq" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 10
+	},
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"Hv" = (
+/obj/effect/spawner/structure/window/plasma/reinforced,
+/obj/machinery/door/poddoor/shutters/radiation/preopen{
+	id = "engrbmk";
+	name = "Radiation Chamber Shutters"
+	},
+/turf/open/floor/plating,
+/area/engineering/main)
+"Ie" = (
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 8
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"Ir" = (
+/obj/structure/lattice,
+/obj/structure/grille/broken,
+/turf/open/space/basic,
+/area/space/nearstation)
+"Ja" = (
+/obj/structure/lattice/catwalk,
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple,
+/turf/open/space/basic,
+/area/space/nearstation)
+"Jm" = (
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 24
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 5
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"Jw" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/stripes/red/line,
+/turf/open/floor/engine,
+/area/engineering/main)
+"Jy" = (
+/obj/machinery/computer/reactor/control_rods,
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"JG" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"JS" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"Le" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/spawner/structure/window/plasma/reinforced,
+/obj/machinery/door/poddoor/shutters/radiation/preopen{
+	id = "engrbmk";
+	name = "Radiation Chamber Shutters"
+	},
+/turf/open/floor/plating,
+/area/engineering/main)
+"Ll" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/camera{
+	c_tag = "Reactor Chamber";
+	network = list("engine");
+	pixel_x = 23
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"Me" = (
+/obj/machinery/button/door{
+	id = "rbmkshut";
+	name = "Nuclear Blast Door Control";
+	pixel_y = -24;
+	req_access_txt = "10"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/turf/open/floor/carpet/green,
+/area/engineering/main)
+"Mz" = (
+/obj/machinery/button/door{
+	id = "engrbmk";
+	name = "Radiation Shutters Control";
+	pixel_y = -24;
+	req_access_txt = "10"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/turf/open/floor/carpet/green,
+/area/engineering/main)
+"MN" = (
+/obj/machinery/atmospherics/components/trinary/mixer,
+/turf/open/floor/engine,
+/area/engineering/main)
+"NB" = (
+/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"NE" = (
+/obj/structure/lattice,
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	dir = 9
+	},
+/turf/open/space,
+/area/space/nearstation)
+"NG" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/food/snacks/pizza/meat,
+/turf/open/floor/engine,
+/area/engineering/main)
+"NY" = (
+/obj/effect/spawner/structure/window/plasma/reinforced,
+/turf/open/floor/plating,
+/area/engineering/main)
+"Oj" = (
+/turf/closed/wall/r_wall,
+/area/space/nearstation)
+"Om" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"On" = (
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 9
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"OA" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+	dir = 6
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"OT" = (
+/obj/effect/spawner/structure/window/plasma/reinforced,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters/radiation/preopen{
+	id = "engrbmk";
+	name = "Radiation Chamber Shutters"
+	},
+/turf/open/floor/plating,
+/area/engineering/main)
+"Pt" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 5
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"Pv" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"Pz" = (
+/turf/open/floor/plasteel,
+/area/engineering/main)
+"PE" = (
+/obj/structure/lattice,
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple,
+/turf/open/space/basic,
+/area/space/nearstation)
+"Qj" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 4
+	},
+/turf/closed/wall/r_wall,
+/area/engineering/main)
+"Qs" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 8;
+	light_color = "#e8eaff"
+	},
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"QA" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/structure/closet/emcloset/anchored,
+/turf/open/floor/plating,
+/area/engineering/main)
+"QK" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/delivery,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"QP" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/binary/pump/on{
+	dir = 4;
+	name = "Cooling Loop to Gas"
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"QR" = (
+/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"Rb" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+	dir = 5
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"Rh" = (
+/obj/structure/lattice,
+/turf/open/space,
+/area/space/nearstation)
+"Rn" = (
+/turf/open/space,
+/area/space)
+"RJ" = (
+/obj/machinery/door/airlock/engineering/glass{
+	name = "Nuclear Reactor";
+	req_access_txt = "10"
+	},
+/turf/open/floor/plating,
+/area/engineering/main)
+"So" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 5
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"St" = (
+/obj/structure/closet/radiation,
+/obj/effect/turf_decal/stripes/line{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"Su" = (
+/obj/effect/turf_decal/stripes/corner,
+/obj/effect/turf_decal/stripes/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/delivery,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"Sx" = (
+/obj/machinery/door/poddoor{
+	id = "rbmkshut"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/engineering/main)
+"Tg" = (
+/obj/structure/lattice/catwalk,
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	dir = 10
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"Tm" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/machinery/light{
+	light_color = "#c9d3e8"
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"Vc" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/turf/closed/wall/r_wall,
+/area/engineering/main)
+"Ve" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"Vi" = (
+/obj/machinery/atmospherics/pipe/simple/green/visible,
+/turf/open/floor/engine,
+/area/engineering/main)
+"Vt" = (
+/obj/structure/closet/firecloset,
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"Vu" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/machinery/airalarm{
+	dir = 8;
+	pixel_x = 24
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"VH" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 5
+	},
+/turf/open/floor/plasteel,
+/area/engineering/main)
+"VM" = (
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"Wa" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"WB" = (
+/obj/structure/lattice,
+/obj/structure/grille,
+/turf/open/space/basic,
+/area/space/nearstation)
+"WX" = (
+/obj/structure/window/reinforced{
+	dir = 1;
+	layer = 2.9
+	},
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/effect/turf_decal/box,
+/turf/open/floor/engine,
+/area/engineering/main)
+"XA" = (
+/obj/structure/lattice,
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	dir = 6
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"Ym" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/carpet/green,
+/area/engineering/main)
+"YD" = (
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
+/obj/machinery/door/airlock/external{
+	name = "Engineering External Access";
+	req_access_txt = "10;13"
+	},
+/turf/open/floor/plating,
+/area/engineering/main)
+"YJ" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 5
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
+"YM" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/engineering/glass{
+	name = "Nuclear Reactor Airlock";
+	req_access_txt = "10"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"YO" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 10
+	},
+/obj/machinery/microwave,
+/obj/item/storage/box/donkpockets,
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"YU" = (
+/obj/structure/lattice,
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	dir = 9
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"YZ" = (
+/obj/structure/lattice,
+/obj/structure/grille,
+/turf/open/space,
+/area/space/nearstation)
+"Zd" = (
+/obj/machinery/portable_atmospherics/canister/toxins,
+/obj/effect/turf_decal/box,
+/turf/open/floor/engine,
+/area/engineering/main)
+"ZN" = (
+/obj/machinery/shower{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
+"ZT" = (
+/turf/template_noop,
+/area/template_noop)
+
+(1,1,1) = {"
+ZT
+ZT
+ZT
+ZT
+ZT
+ZT
+ZT
+zS
+Rh
+zS
+zS
+Rh
+zS
+zS
+Rh
+zS
+zS
+zS
+YZ
+YZ
+ld
+ZT
+ZT
+ZT
+ZT
+ZT
+"}
+(2,1,1) = {"
+ZT
+ZT
+ZT
+ZT
+ZT
+ZT
+ZT
+hK
+PE
+Ja
+Ja
+PE
+Ja
+Ja
+PE
+Ja
+Ja
+vX
+YZ
+Oj
+YZ
+ZT
+ZT
+ZT
+ZT
+ZT
+"}
+(3,1,1) = {"
+ZT
+ZT
+ZT
+ZT
+ZT
+ZT
+ZT
+EG
+ue
+XA
+PE
+PE
+PE
+PE
+PE
+PE
+fU
+NE
+YZ
+Oj
+ld
+ZT
+ZT
+ZT
+ZT
+ZT
+"}
+(4,1,1) = {"
+ZT
+ZT
+ZT
+ZT
+ZT
+ZT
+ZT
+hK
+YU
+Tg
+Ja
+PE
+Ja
+Ja
+PE
+Ja
+Ja
+vX
+YZ
+Oj
+ld
+ZT
+ZT
+ZT
+ZT
+ZT
+"}
+(5,1,1) = {"
+ZT
+ZT
+ZT
+ZT
+ZT
+ZT
+ZT
+EG
+ue
+XA
+PE
+PE
+PE
+PE
+PE
+PE
+fU
+NE
+YZ
+Oj
+YZ
+ZT
+ZT
+ZT
+ZT
+ZT
+"}
+(6,1,1) = {"
+ZT
+ZT
+ZT
+ZT
+ZT
+ZT
+ZT
+hK
+YU
+Tg
+Ja
+PE
+Ja
+Ja
+PE
+Ja
+Ja
+vX
+YZ
+Oj
+ld
+ZT
+ZT
+ZT
+ZT
+ZT
+"}
+(7,1,1) = {"
+ZT
+ZT
+ZT
+ZT
+qy
+qy
+Bx
+EG
+ue
+XA
+PE
+PE
+PE
+PE
+PE
+PE
+fU
+NE
+YZ
+Oj
+YZ
+ZT
+ZT
+ZT
+ZT
+ZT
+"}
+(8,1,1) = {"
+ZT
+ZT
+sV
+gn
+qy
+QA
+Bx
+hK
+YU
+Tg
+Ja
+PE
+Ja
+Ja
+PE
+Ja
+Ja
+vX
+YZ
+Oj
+YZ
+zS
+zS
+Rh
+zS
+zS
+"}
+(9,1,1) = {"
+ZT
+ZT
+Pz
+Pz
+ax
+DI
+YD
+EG
+ue
+tw
+XA
+PE
+PE
+PE
+PE
+PE
+fU
+NE
+YZ
+YZ
+ld
+tw
+Rh
+Rh
+Rh
+zS
+"}
+(10,1,1) = {"
+ZT
+Le
+lg
+AN
+hj
+hj
+hj
+hj
+zC
+AN
+zC
+AN
+tR
+az
+tw
+tw
+zS
+tw
+Rn
+zS
+zS
+zS
+zS
+Rh
+zS
+zS
+"}
+(11,1,1) = {"
+eg
+nh
+nx
+rx
+AI
+Zd
+rQ
+jw
+nW
+jx
+QP
+jx
+ji
+Vc
+yf
+tw
+zS
+tw
+zS
+zS
+zS
+zS
+WB
+YZ
+Ir
+zS
+"}
+(12,1,1) = {"
+aN
+kM
+Wa
+oe
+WX
+Zd
+lc
+xZ
+dF
+hH
+FT
+tt
+rV
+Bn
+pr
+tw
+tw
+tw
+zS
+zS
+zS
+zS
+YZ
+Oj
+YZ
+zS
+"}
+(13,1,1) = {"
+uR
+fh
+mY
+gF
+jx
+jx
+jx
+jx
+oh
+mY
+iY
+mY
+Ck
+Sx
+zS
+tw
+zS
+tw
+zS
+zS
+zS
+zS
+YZ
+Oj
+ld
+zS
+"}
+(14,1,1) = {"
+ee
+YJ
+mY
+mY
+mY
+mY
+mY
+mY
+dk
+mY
+iY
+mY
+Ck
+Sx
+zS
+tw
+zS
+tw
+tw
+tw
+tw
+Rh
+YZ
+Oj
+YZ
+Rh
+"}
+(15,1,1) = {"
+Bx
+bQ
+mY
+mY
+mY
+mY
+hd
+Vi
+On
+mY
+iY
+mY
+Ck
+Sx
+zS
+tw
+zS
+tw
+zS
+zS
+zS
+zS
+YZ
+Oj
+YZ
+zS
+"}
+(16,1,1) = {"
+fF
+mx
+mY
+mY
+ke
+BM
+VM
+BM
+jo
+mY
+iY
+mY
+Ck
+Sx
+zS
+tw
+zS
+tw
+tw
+tw
+tw
+Rh
+YZ
+Oj
+ld
+zS
+"}
+(17,1,1) = {"
+Hv
+rw
+JS
+JS
+Jw
+JS
+lA
+mY
+xQ
+mY
+iY
+mY
+Ex
+Vc
+zS
+tw
+zS
+tw
+zS
+zS
+zS
+zS
+YZ
+Oj
+YZ
+zS
+"}
+(18,1,1) = {"
+Hv
+Ll
+mY
+jg
+uj
+mT
+op
+mY
+xQ
+mY
+iY
+mY
+NG
+Vc
+NY
+NY
+NY
+Bx
+Bx
+zS
+zS
+zS
+YZ
+Oj
+YZ
+zS
+"}
+(19,1,1) = {"
+Hv
+Ve
+mY
+kX
+Ce
+mY
+iY
+mY
+xQ
+mY
+iY
+mY
+oe
+lE
+my
+Jy
+CE
+YO
+Bx
+zS
+zS
+Rh
+YZ
+Oj
+ld
+zS
+"}
+(20,1,1) = {"
+fF
+GH
+Pt
+kX
+zD
+ao
+bf
+ao
+wL
+mY
+iY
+mY
+Am
+wo
+sA
+jv
+yI
+mE
+Bx
+zS
+zS
+Rh
+YZ
+Oj
+YZ
+zS
+"}
+(21,1,1) = {"
+Bx
+up
+MN
+pF
+mY
+mY
+Hj
+vI
+tt
+tt
+DF
+mY
+oe
+ec
+QR
+Ym
+if
+mo
+Bx
+zS
+zS
+zS
+YZ
+Oj
+YZ
+zS
+"}
+(22,1,1) = {"
+Hv
+Ve
+mY
+vQ
+mY
+OA
+AG
+Rb
+os
+Pv
+Pv
+Pv
+Et
+RJ
+NB
+vY
+Bl
+Tm
+fF
+zS
+zS
+Rh
+YZ
+Oj
+ld
+Rh
+"}
+(23,1,1) = {"
+Hv
+Ve
+mY
+kX
+mY
+Ie
+mY
+xw
+oe
+hn
+bU
+zx
+zx
+Hv
+vh
+ce
+Mz
+hi
+Bx
+zS
+zS
+Rh
+YZ
+Oj
+ld
+zS
+"}
+(24,1,1) = {"
+fF
+kR
+dj
+kX
+mY
+ng
+mY
+ng
+oe
+CX
+iQ
+zx
+zx
+Hv
+zm
+eM
+Me
+eu
+Bx
+zS
+zS
+Rh
+YZ
+Oj
+ld
+zS
+"}
+(25,1,1) = {"
+lg
+OT
+So
+Om
+Pv
+Pv
+CZ
+mi
+uQ
+bU
+bU
+zx
+zx
+Hv
+lW
+Su
+QK
+au
+Bx
+zS
+zS
+zS
+YZ
+YZ
+YZ
+zS
+"}
+(26,1,1) = {"
+iA
+sS
+ha
+wN
+uA
+uA
+uI
+Qj
+uA
+uA
+id
+id
+id
+uA
+uA
+dR
+rl
+Bx
+kx
+zS
+zS
+zS
+zS
+Rh
+zS
+zS
+"}
+(27,1,1) = {"
+ZT
+ZT
+ZT
+Cg
+nT
+NY
+St
+ZN
+dK
+Bx
+hQ
+Vt
+AA
+Qs
+dw
+mb
+tK
+Hq
+kx
+tw
+tw
+tw
+Rh
+Rh
+Rh
+Rh
+"}
+(28,1,1) = {"
+ZT
+ZT
+ZT
+hT
+Pz
+YM
+Jm
+BU
+ui
+DP
+JG
+xO
+xO
+xO
+xO
+xO
+Vu
+jk
+kx
+zS
+tw
+zS
+zS
+Rh
+zS
+zS
+"}
+(29,1,1) = {"
+ZT
+ZT
+ZT
+rK
+VH
+fF
+Bx
+Bx
+Bx
+Bx
+NY
+NY
+NY
+Bx
+kx
+kx
+kx
+kx
+kx
+zS
+tw
+zS
+zS
+Rh
+zS
+zS
+"}

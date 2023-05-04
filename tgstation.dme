@@ -4010,6 +4010,7 @@
 #include "modular_bluemoon\phenyamomota\code\modules\jobs\job_types\expeditor.dm"
 #include "modular_bluemoon\phenyamomota\code\modules\jobs\job_types\research_director.dm"
 #include "modular_bluemoon\phenyamomota\code\modules\tools\tools.dm"
+#include "modular_bluemoon\rbmk_modification\rbmk_modification.dm"
 #include "modular_bluemoon\SmiLeY\aesthetics\airlock\code\airlock.dm"
 #include "modular_bluemoon\SmiLeY\aesthetics\flag\code\signs_flags.dm"
 #include "modular_bluemoon\SmiLeY\aesthetics\large_doors\code\large_doors.dm"
