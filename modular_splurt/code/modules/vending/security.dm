@@ -7,6 +7,7 @@
 		/obj/item/clothing/head/helmet/metrocop = 2,
 		/obj/item/storage/bag/security = 5,
 		/obj/item/clothing/head/helmet/blueshirt = 5,
+		/obj/item/clothing/head/helmet/hephaestus = 5,
 		/obj/item/clothing/under/rank/security/officer/blueshirt = 5,
 		/obj/item/clothing/suit/armor/vest/blueshirt = 5
 	)
@@ -41,7 +42,11 @@
 		/obj/item/clothing/under/rank/security/skirt/slut = 5,
 		/obj/item/clothing/under/rank/security/skirt/slut/pink = 5,
 		/obj/item/clothing/under/rank/security/stripper = 5,
-		/obj/item/clothing/suit/hooded/corpus/s = 5
+		/obj/item/clothing/suit/hooded/corpus/s = 5,
+		/obj/item/clothing/head/utilcover = 5,
+		/obj/item/clothing/under/utility/green = 5,
+		/obj/item/clothing/under/utility/navy = 5,
+		/obj/item/clothing/under/utility/tan = 5
 	)
 	var/list/extra_premium = list(
 		/obj/item/clothing/gloves/latexsleeves/security = 5,
