@@ -107,7 +107,7 @@ SUBSYSTEM_DEF(vote)
 	var/second_round_votes = 0 //голоса между вариациями
 	for(var/option in choices)
 		var/votes = choices[option]
-		if(extended_votes < dynamic_votes)
+		if(extended_votes <= dynamic_votes)
 			if(option == ROUNDTYPE_EXTENDED || option ==  ROUNDTYPE_LIGHT_DYNAMIC) //экста и лёгкий динамик всегда должны быть в конце списка, чтобы это работало
 				continue
 			if(votes > second_round_votes)
@@ -144,7 +144,7 @@ SUBSYSTEM_DEF(vote)
 		for(var/option in choices)
 //BLUEMOON ADD START - костыль, чтобы вариации эксты не была победителем, если у неё голосов больше, чем у одного из других вариантов
 //экста и лёгкий динамик всегда должны быть в конце списка, чтобы это работало
-			if(extended_votes < dynamic_votes)
+			if(extended_votes <= dynamic_votes)
 				if(option == ROUNDTYPE_EXTENDED || option ==  ROUNDTYPE_LIGHT_DYNAMIC) //экста и лёгкий динамик всегда должны быть в конце списка, чтобы это работало
 					continue
 			else
