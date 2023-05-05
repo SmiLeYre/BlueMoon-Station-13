@@ -334,7 +334,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	//Then, hit as much of that goal with our cooling per tick as we possibly can.
 	difference = clamp(difference, 0, control_rod_effectiveness) //And we can't instantly zap the K to what we want, so let's zap as much of it as we can manage....
 	if(difference > fuel_power && desired_k > K)
-		message_admins("Not enough fuel to get [difference]. We have fuel [fuel_power]")
+//BLUEMOON REMOVAL		message_admins("Not enough fuel to get [difference]. We have fuel [fuel_power]")
 		investigate_log("Reactor has not enough fuel to get [difference]. We have fuel [fuel_power]", INVESTIGATE_SINGULO)
 		difference = fuel_power //Again, to stop you being able to run off of 1 fuel rod.
 	if(K != desired_k)
@@ -344,7 +344,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 			K -= difference
 	if(K == desired_k && last_user && current_desired_k != desired_k)
 		current_desired_k = desired_k
-		message_admins("Reactor desired criticality set to [desired_k] by [ADMIN_LOOKUPFLW(last_user)] in [ADMIN_VERBOSEJMP(src)]")
+//BLUEMOON REMOVAL		message_admins("Reactor desired criticality set to [desired_k] by [ADMIN_LOOKUPFLW(last_user)] in [ADMIN_VERBOSEJMP(src)]")
 		investigate_log("reactor desired criticality set to [desired_k] by [key_name(last_user)] at [AREACOORD(src)]", INVESTIGATE_SINGULO)
 
 	K = clamp(K, 0, RBMK_MAX_CRITICALITY)
@@ -423,16 +423,16 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	var/alert = FALSE //If we have an alert condition, we'd best let people know.
 	if(K <= 0 && temperature <= 0)
 		shut_down()
-//First alert condition: Overheat
+	//First alert condition: Overheat
 	if(temperature >= RBMK_TEMPERATURE_CRITICAL)
 		alert = TRUE
 		//BLUEMOON ADDITION START
 		if((REALTIMEOFDAY - lastwarning) / 10 >= 60)
-			radio.talk_into(src, "DANGER! Critical temperature in coolant input. Integrity: [get_integrity()]%", engineering_channel)
+			radio.talk_into(src, "Warning! High temperature in the reactor's output. It will falter after reaching [RBMK_TEMPERATURE_MELTDOWN] celsius degrees. Integrity: [get_integrity()]%", engineering_channel)
 			lastwarning = REALTIMEOFDAY
 		//BLUEMOON ADDITION END
 		investigate_log("Reactor reaching critical temperature at [temperature] C with desired criticality at [desired_k]", INVESTIGATE_SINGULO)
-		message_admins("Reactor reaching critical temperature at [ADMIN_VERBOSEJMP(src)]")
+//BLUEMOON REMOVAL		message_admins("Reactor reaching critical temperature at [ADMIN_VERBOSEJMP(src)]")
 		if(temperature >= RBMK_TEMPERATURE_MELTDOWN)
 //BLUEMOON REMOVAL			var/temp_damage = min(temperature/100, initial(vessel_integrity)/40)	//40 seconds to meltdown from full integrity, worst-case. Bit less than blowout since it's harder to spike heat that much.
 			vessel_integrity -= 1 //BLUEMOON CHANGES
@@ -456,7 +456,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 			lastwarning = REALTIMEOFDAY
 		//BLUEMOON ADDITION END
 		investigate_log("Reactor reaching critical pressure at [pressure] PSI with desired criticality at [desired_k]", INVESTIGATE_SINGULO)
-		message_admins("Reactor reaching critical pressure at [ADMIN_VERBOSEJMP(src)]")
+//BLUEMOON REMOVAL		message_admins("Reactor reaching critical pressure at [ADMIN_VERBOSEJMP(src)]")
 		shake_animation(0.5)
 		playsound(loc, 'sound/machines/clockcult/steam_whoosh.ogg', 100, TRUE)
 		var/turf/T = get_turf(src)
