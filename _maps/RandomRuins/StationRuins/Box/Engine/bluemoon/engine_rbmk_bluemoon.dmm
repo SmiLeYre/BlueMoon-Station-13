@@ -233,13 +233,8 @@
 /turf/open/pool,
 /area/engineering/main)
 "hH" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/orange/visible{
-	dir = 4
-	},
-/turf/open/floor/engine,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/closed/wall,
 /area/engineering/main)
 "hK" = (
 /obj/structure/lattice/catwalk,
@@ -586,10 +581,10 @@
 /turf/closed/wall,
 /area/engineering/main)
 "rl" = (
-/obj/effect/spawner/structure/window/plasma/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
+/obj/effect/spawner/structure/window/hollow/reinforced,
 /turf/open/floor/plating,
 /area/engineering/main)
 "rw" = (
@@ -760,8 +755,11 @@
 /turf/open/floor/engine,
 /area/engineering/main)
 "vQ" = (
-/obj/machinery/atmospherics/components/binary/pump{
-	name = "Moderator To Cooling"
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 4
 	},
 /turf/open/floor/engine,
 /area/engineering/main)
@@ -1011,7 +1009,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/dark,
 /area/engineering/main)
 "Et" = (
 /obj/effect/turf_decal/stripes/line{
@@ -1130,6 +1128,12 @@
 	},
 /turf/open/floor/engine,
 /area/engineering/main)
+"Kv" = (
+/obj/machinery/atmospherics/components/binary/pump{
+	name = "Moderator To Cooling"
+	},
+/turf/open/floor/engine,
+/area/engineering/main)
 "Le" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -1201,7 +1205,7 @@
 /turf/open/floor/engine,
 /area/engineering/main)
 "NY" = (
-/obj/effect/spawner/structure/window/plasma/reinforced,
+/obj/effect/spawner/structure/window/hollow/reinforced,
 /turf/open/floor/plating,
 /area/engineering/main)
 "Oj" = (
@@ -1328,7 +1332,7 @@
 	req_access_txt = "10"
 	},
 /obj/structure/fans/tiny,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/dark,
 /area/engineering/main)
 "So" = (
 /obj/effect/turf_decal/stripes/line{
@@ -1939,7 +1943,7 @@ bQ
 mY
 jg
 mT
-vQ
+Kv
 hd
 Vi
 On
@@ -1993,7 +1997,7 @@ zS
 Hv
 rw
 JS
-hH
+vQ
 Jw
 JS
 lA
@@ -2256,10 +2260,10 @@ id
 id
 id
 uA
-uA
+hH
 dR
 rl
-Bx
+qy
 kx
 zS
 zS
@@ -2279,7 +2283,7 @@ NY
 St
 ZN
 dK
-Bx
+qy
 hQ
 Vt
 AA
