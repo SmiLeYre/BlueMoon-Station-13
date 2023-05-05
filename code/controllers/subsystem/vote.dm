@@ -529,7 +529,7 @@ SUBSYSTEM_DEF(vote)
 			if("transfer") // austation begin -- Crew autotranfer vote
 				choices.Add(VOTE_TRANSFER,VOTE_CONTINUE) // austation end
 			if("roundtype") //CIT CHANGE - adds the roundstart secret/extended vote
-				choices.Add(ROUNDTYPE_TEAMBASED_DYNAMIC, ROUNDTYPE_DYNAMIC, ROUNDTYPE_LIGHT_DYNAMIC, ROUNDTYPE_EXTENDED) //BLUEMOON CHANGES
+				choices.Add(ROUNDTYPE_TEAMBASED_DYNAMIC, ROUNDTYPE_DYNAMIC, ROUNDTYPE_EXTENDED) //BLUEMOON CHANGES, remove ROUNDTYPE_LIGHT_DYNAMIC (was before extended)
 			if("custom")
 				question = stripped_input(usr,"What is the vote for?")
 				if(!question)
