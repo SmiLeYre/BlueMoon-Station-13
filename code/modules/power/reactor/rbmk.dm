@@ -208,7 +208,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	for(var/obj/item/fuel_rod/FR in fuel_rods)
 		FR.depletion = 100
 
-/obj/machinery/atmospherics/components/trinary/nuclear_reactor/Initialize()
+/obj/machinery/atmospherics/components/trinary/nuclear_reactor/Initialize(mapload)
 	. = ..()
 	connect_to_network()
 	icon_state = "reactor_off"
@@ -222,8 +222,14 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	radio.recalculateChannels()
 	//BLUEMOON ADDITION END
 
-/obj/machinery/atmospherics/components/trinary/nuclear_reactor/Crossed(atom/movable/AM, oldloc)
-	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+/obj/machinery/atmospherics/components/trinary/nuclear_reactor/proc/on_entered(datum/source, atom/movable/AM, oldloc)
+	SIGNAL_HANDLER
+
 	if(isliving(AM) && temperature > 0)
 		var/mob/living/L = AM
 		L.adjust_bodytemperature(clamp(temperature, BODYTEMP_COOLING_MAX, BODYTEMP_HEATING_MAX)) //If you're on fire, you heat up!
@@ -284,7 +290,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 		if(total_fuel_moles >= minimum_coolant_level) //You at least need SOME fuel.
 			var/power_produced = max((total_fuel_moles / moderator_input.total_moles() * 10), 1)
 			last_power_produced = max(0,((power_produced*power_modifier)*moderator_input.total_moles()))
-			last_power_produced *= (power/100) //Aaaand here comes the cap. Hotter reactor => more power.
+			last_power_produced *= (max(0,power)/100) //Aaaand here comes the cap. Hotter reactor => more power.
 			last_power_produced *= base_power_modifier //Finally, we turn it into actual usable numbers.
 			radioactivity_spice_multiplier += moderator_input.get_moles(GAS_TRITIUM) / 5 //Chernobyl 2.
 			var/turf/T = get_turf(src)
@@ -417,14 +423,6 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	var/alert = FALSE //If we have an alert condition, we'd best let people know.
 	if(K <= 0 && temperature <= 0)
 		shut_down()
-
-		//BLUEMOON ADDITION START - код суперматерии для оповещений об уроне
-		if((REALTIMEOFDAY - lastwarning) / 10 >= 60)
-			if(no_coolant_ticks > RBMK_NO_COOLANT_TOLERANCE) //нет охлаждения
-				radio.talk_into(src, "DANGER! Lack of gas in coolant input. Integrity: [get_integrity()]%", engineering_channel)
-				lastwarning = REALTIMEOFDAY
-		//BLUEMOON ADDITION END
-
 //First alert condition: Overheat
 	if(temperature >= RBMK_TEMPERATURE_CRITICAL)
 		alert = TRUE
