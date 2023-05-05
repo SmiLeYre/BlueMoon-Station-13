@@ -477,10 +477,10 @@
 	if(!healthy_green_glow || QDELETED(healthy_green_glow))
 		return
 	var/strength = healthy_green_glow.strength
-	if(strength <= RAD_BACKGROUND_RADIATION)
+	if(strength <= RAD_BACKGROUND_RADIATION + 20) //BLUEMOON CHANGES
 		qdel(healthy_green_glow)
 		return
-	healthy_green_glow.strength = max(strength-1, 0)
+	healthy_green_glow.strength = max(strength-9, 0) //BLUEMOON CHANGES
 
 /obj/machinery/shower/process()
 	if(on)
