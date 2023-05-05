@@ -104,7 +104,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	var/datum/looping_sound/rbmk_reactor/soundloop
 	var/datum/powernet/powernet = null
 
-//BLUEMOON ADITION START - рация для сообщений от реактора
+	//BLUEMOON ADITION START - рация для сообщений от реактора
 	///Our internal radio
 	var/obj/item/radio/radio
 	///The key our internal radio uses
@@ -113,8 +113,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	var/engineering_channel = "Engineering"
 	///The common channel
 	var/lastwarning = 0
-	var/warning_point = 301
-//BLUEMOON ADITION END
+	//BLUEMOON ADITION END
 
 //Use this in your maps if you want everything to be preset.
 /obj/machinery/atmospherics/components/trinary/nuclear_reactor/preset
@@ -216,12 +215,12 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	gas_absorption_effectiveness = rand(5, 6)/10 //All reactors are slightly different. This will result in you having to figure out what the balance is for K.
 	gas_absorption_constant = gas_absorption_effectiveness //And set this up for the rest of the round.
 	STOP_PROCESSING(SSmachines, src) //We'll handle this one ourselves.
-//BLUEMOON ADDITION START - рация для оповещений
+	//BLUEMOON ADDITION START - рация для оповещений
 	radio = new(src)
 	radio.keyslot = new radio_key
 	radio.listening = 0
 	radio.recalculateChannels()
-//BLUEMOON ADDITION END
+	//BLUEMOON ADDITION END
 
 /obj/machinery/atmospherics/components/trinary/nuclear_reactor/Crossed(atom/movable/AM, oldloc)
 	. = ..()
@@ -261,10 +260,14 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 			no_coolant_ticks++
 			if(no_coolant_ticks > RBMK_NO_COOLANT_TOLERANCE)
 				temperature += temperature / 500 //This isn't really harmful early game, but when your reactor is up to full power, this can get out of hand quite quickly.
-				vessel_integrity -= temperature / 200 //Think fast chucklenuts!
-				take_damage(10) //Just for the sound effect, to let you know you've fucked up.
+				vessel_integrity -= 1
+//BLUEMOON REMOVAL				take_damage(10) //Just for the sound effect, to let you know you've fucked up.
 				color = "[COLOR_RED]"
-
+				//BLUEMOON ADDITION START
+				if((REALTIMEOFDAY - lastwarning) / 10 >= 60)
+					radio.talk_into(src, "DANGER! Lack of gas in coolant input. Integrity: [get_integrity()]%", engineering_channel)
+					lastwarning = REALTIMEOFDAY
+				//BLUEMOON ADDITION END
 				investigate_log("Reactor taking damage from the lack of coolant", INVESTIGATE_SINGULO)
 	//Now, heat up the output and set our pressure.
 	coolant_output.set_temperature(CELSIUS_TO_KELVIN(temperature)) //Heat the coolant output gas that we just had pass through us.
@@ -404,7 +407,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 //BLUEMOON ADD START
 /obj/machinery/atmospherics/components/trinary/nuclear_reactor/proc/get_integrity()
 	var/integrity = vessel_integrity / initial(vessel_integrity)
-	integrity = round(100 - integrity * 100, 0.01)
+	integrity = round(integrity * 100, 0.01)
 	integrity = integrity < 0 ? 0 : integrity
 	return integrity
 //BLUEMOOB ADD END
@@ -415,20 +418,21 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	if(K <= 0 && temperature <= 0)
 		shut_down()
 
-//BLUEMOON ADDITION START - код суперматерии для оповещений об уроне
-	if(vessel_integrity < warning_point) // while the core is still damaged and it's still worth noting its status
+		//BLUEMOON ADDITION START - код суперматерии для оповещений об уроне
 		if((REALTIMEOFDAY - lastwarning) / 10 >= 60)
-			if(pressure >= RBMK_PRESSURE_CRITICAL)
-				radio.talk_into(src, "DANGER! Critical pressure in coolant loop. Integrity: [get_integrity()]%", engineering_channel, list(SPAN_YELL))
+			if(no_coolant_ticks > RBMK_NO_COOLANT_TOLERANCE) //нет охлаждения
+				radio.talk_into(src, "DANGER! Lack of gas in coolant input. Integrity: [get_integrity()]%", engineering_channel)
 				lastwarning = REALTIMEOFDAY
-			if(temperature >= RBMK_TEMPERATURE_CRITICAL)
-				radio.talk_into(src, "DANGER! Critical temperature in coolant loop. Integrity: [get_integrity()]%", engineering_channel, list(SPAN_YELL))
-				lastwarning = REALTIMEOFDAY
-//BLUEMOON ADDITION END
+		//BLUEMOON ADDITION END
 
 //First alert condition: Overheat
 	if(temperature >= RBMK_TEMPERATURE_CRITICAL)
 		alert = TRUE
+		//BLUEMOON ADDITION START
+		if((REALTIMEOFDAY - lastwarning) / 10 >= 60)
+			radio.talk_into(src, "DANGER! Critical temperature in coolant input. Integrity: [get_integrity()]%", engineering_channel)
+			lastwarning = REALTIMEOFDAY
+		//BLUEMOON ADDITION END
 		investigate_log("Reactor reaching critical temperature at [temperature] C with desired criticality at [desired_k]", INVESTIGATE_SINGULO)
 		message_admins("Reactor reaching critical temperature at [ADMIN_VERBOSEJMP(src)]")
 		if(temperature >= RBMK_TEMPERATURE_MELTDOWN)
@@ -448,6 +452,11 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	//Second alert condition: Overpressurized (the more lethal one)
 	if(pressure >= RBMK_PRESSURE_CRITICAL)
 		alert = TRUE
+		//BLUEMOON ADDITION START
+		if((REALTIMEOFDAY - lastwarning) / 10 >= 60)
+			radio.talk_into(src, "Warning! Critical pressure in coolant input. Integrity: [get_integrity()]%", engineering_channel)
+			lastwarning = REALTIMEOFDAY
+		//BLUEMOON ADDITION END
 		investigate_log("Reactor reaching critical pressure at [pressure] PSI with desired criticality at [desired_k]", INVESTIGATE_SINGULO)
 		message_admins("Reactor reaching critical pressure at [ADMIN_VERBOSEJMP(src)]")
 		shake_animation(0.5)
