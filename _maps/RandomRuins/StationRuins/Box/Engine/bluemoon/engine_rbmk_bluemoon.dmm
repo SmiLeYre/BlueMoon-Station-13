@@ -68,7 +68,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/open/floor/carpet/green,
+/turf/open/floor/plasteel/dark,
 /area/engineering/main/reactor_control)
 "dj" = (
 /obj/effect/turf_decal/stripes/corner{
@@ -120,6 +120,7 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /obj/effect/turf_decal/delivery,
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/dark,
 /area/engineering/main/reactor_control)
 "ec" = (
@@ -169,7 +170,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/open/floor/carpet/green,
+/turf/open/floor/plasteel/dark,
 /area/engineering/main/reactor_control)
 "fh" = (
 /obj/effect/turf_decal/stripes/line{
@@ -267,9 +268,6 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},
-/obj/machinery/firealarm{
-	pixel_y = 24
-	},
 /turf/open/floor/plasteel/dark,
 /area/engineering/main/reactor_control)
 "hT" = (
@@ -342,15 +340,6 @@
 	},
 /turf/open/floor/engine,
 /area/engineering/main/reactor_core)
-"jk" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 6
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/engineering/main/reactor_control)
 "jo" = (
 /obj/effect/turf_decal/stripes/red/corner{
 	dir = 8
@@ -389,8 +378,14 @@
 /turf/open/floor/engine,
 /area/engineering/main/reactor_core)
 "kx" = (
-/obj/structure/lattice,
-/turf/closed/wall/r_wall,
+/obj/structure/closet/emcloset/anchored,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 9
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 6
+	},
+/turf/open/floor/plasteel/dark,
 /area/engineering/main/reactor_control)
 "kM" = (
 /obj/effect/turf_decal/stripes/line{
@@ -516,10 +511,8 @@
 /area/engineering/main/reactor_control)
 "mE" = (
 /obj/effect/turf_decal/stripes/line,
-/obj/structure/cable{
-	dir = 1
-	},
 /obj/machinery/power/apc/auto_name/south,
+/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/engineering/main/reactor_control)
 "mT" = (
@@ -586,12 +579,12 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},
-/obj/machinery/atmospherics/pipe/simple{
-	dir = 4
-	},
 /obj/machinery/meter,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/general/visible{
+	dir = 4
 	},
 /turf/open/floor/engine,
 /area/engineering/main/reactor_core)
@@ -646,7 +639,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/spawner/structure/window/hollow/reinforced,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/engineering/main/reactor_control)
 "rw" = (
@@ -687,11 +680,11 @@
 /area/engineering/main/reactor_core)
 "rV" = (
 /obj/effect/turf_decal/stripes/line,
-/obj/machinery/atmospherics/pipe/simple,
 /obj/machinery/meter,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/general/visible,
 /turf/open/floor/engine,
 /area/engineering/main/reactor_core)
 "sA" = (
@@ -734,11 +727,11 @@
 /turf/closed/wall/r_wall,
 /area/engineering/main/reactor_control)
 "tK" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 10
 	},
 /turf/open/floor/plasteel/dark,
 /area/engineering/main/reactor_control)
@@ -762,11 +755,11 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/camera{
 	c_tag = "Reactor cycling room";
 	dir = 8
 	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on,
 /turf/open/floor/plasteel/dark,
 /area/engineering/main/reactor_control)
 "uj" = (
@@ -862,7 +855,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/carpet/green,
+/turf/open/floor/plasteel/dark,
 /area/engineering/main/reactor_control)
 "wo" = (
 /obj/effect/spawner/structure/window/plasma/reinforced,
@@ -1017,13 +1010,13 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/open/floor/carpet/green,
+/turf/open/floor/plasteel/dark,
 /area/engineering/main/reactor_control)
 "Bn" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple,
+/obj/machinery/atmospherics/pipe/simple/general/visible,
 /turf/closed/wall/r_wall,
 /area/engineering/main/reactor_core)
 "Bx" = (
@@ -1042,11 +1035,8 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/obj/machinery/light{
+/obj/machinery/light/small{
 	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 10
 	},
 /turf/open/floor/plasteel/dark,
 /area/engineering/main/reactor_control)
@@ -1112,15 +1102,13 @@
 /turf/open/floor/plating,
 /area/engineering/main)
 "DP" = (
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/effect/turf_decal/delivery,
-/obj/machinery/door/airlock/engineering/glass{
-	name = "Nuclear Reactor Control Room";
-	req_access_txt = "10"
+/obj/machinery/door/airlock/engineering{
+	name = "RBMK Control Room";
+	req_access_txt = "11"
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/dark,
 /area/engineering/main/reactor_control)
 "Et" = (
@@ -1194,13 +1182,6 @@
 /obj/machinery/meter,
 /turf/open/floor/engine,
 /area/engineering/main/reactor_core)
-"Hq" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 10
-	},
-/obj/structure/closet/emcloset/anchored,
-/turf/open/floor/plasteel/dark,
-/area/engineering/main/reactor_control)
 "Hv" = (
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /obj/machinery/door/poddoor/shutters/radiation/preopen{
@@ -1262,6 +1243,7 @@
 	dir = 8
 	},
 /obj/structure/table/reinforced,
+/obj/item/storage/book/bible,
 /turf/open/floor/plasteel/dark,
 /area/engineering/main/reactor_control)
 "JG" = (
@@ -1272,6 +1254,10 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 24
+	},
 /turf/open/floor/plasteel/dark,
 /area/engineering/main/reactor_control)
 "JS" = (
@@ -1322,7 +1308,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/turf/open/floor/carpet/green,
+/turf/open/floor/plasteel/dark,
 /area/engineering/main/reactor_control)
 "Mz" = (
 /obj/machinery/button/door{
@@ -1334,7 +1320,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/turf/open/floor/carpet/green,
+/obj/effect/turf_decal/bot,
+/obj/machinery/holopad,
+/turf/open/floor/plasteel/dark,
 /area/engineering/main/reactor_control)
 "MN" = (
 /obj/machinery/atmospherics/components/trinary/mixer,
@@ -1370,7 +1358,7 @@
 /turf/open/floor/engine,
 /area/engineering/main/reactor_core)
 "NY" = (
-/obj/effect/spawner/structure/window/hollow/reinforced,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/engineering/main/reactor_control)
 "Og" = (
@@ -1453,6 +1441,9 @@
 	dir = 8;
 	light_color = "#e8eaff"
 	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/engineering/main/reactor_control)
 "QA" = (
@@ -1507,15 +1498,16 @@
 /turf/open/space,
 /area/space)
 "RJ" = (
-/obj/machinery/door/airlock/engineering/glass{
-	name = "Nuclear Reactor";
-	req_access_txt = "10"
-	},
 /obj/structure/fans/tiny,
 /obj/effect/turf_decal/delivery,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/engineering{
+	name = "Nuclear Reactor";
+	req_access_txt = "11"
+	},
+/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/dark,
 /area/engineering/main/reactor_core)
 "So" = (
@@ -1568,6 +1560,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
 	},
+/obj/structure/tank_holder/extinguisher/advanced,
 /turf/open/floor/plasteel/dark,
 /area/engineering/main/reactor_control)
 "Tu" = (
@@ -1682,11 +1675,10 @@
 /area/engineering/main/reactor_core)
 "YM" = (
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/effect/turf_decal/delivery,
-/obj/machinery/door/airlock/engineering/glass{
-	name = "Nuclear Reactor Control Room";
-	req_access_txt = "10"
+/obj/machinery/door/airlock/engineering{
+	name = "RBMK Control Room";
+	req_access_txt = "11"
 	},
 /turf/open/floor/plasteel/dark,
 /area/engineering/main/reactor_control)
@@ -1742,9 +1734,6 @@
 	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/engineering/main/reactor_control)
@@ -2470,8 +2459,8 @@ uA
 hH
 dR
 rl
-CG
-kx
+tC
+tC
 zS
 zS
 zS
@@ -2498,8 +2487,8 @@ Qs
 dw
 mb
 tK
-Hq
-kx
+tC
+tw
 tw
 tw
 tw
@@ -2522,12 +2511,12 @@ DP
 JG
 Ge
 Ge
-Ge
+Vu
 Ge
 xO
-Vu
-jk
 kx
+tC
+zS
 zS
 tw
 zS
@@ -2547,15 +2536,15 @@ tC
 tC
 tC
 tC
+tC
 NY
 NY
 NY
 tC
-kx
-kx
-kx
-kx
-kx
+tC
+tC
+tC
+zS
 zS
 tw
 zS
