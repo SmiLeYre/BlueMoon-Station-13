@@ -25,7 +25,7 @@
 
 /obj/item/clothing/mask/gas/syndicate/ds/wide
 	name = "wide shape balaclava"
-	desc = "For organising your tricky covert operations."
+	desc = "For organising your tricky covert operations. Provided with additional fibers, allowing user to breath normally"
 	icon = 'modular_bluemoon/kovac_shitcode/icons/obj/clothing/misc.dmi'
 	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/misc.dmi'
 	icon_state = "balaclava_wide"
