@@ -351,6 +351,7 @@ BLUEMOON REMOVAL END*/
 BLUEMOON REMOVAL END*/
 	var/relative_round_start_budget_scale = LORENTZ_DISTRIBUTION(roundstart_split_curve_centre, roundstart_split_curve_width)
 	round_start_budget = round((lorentz_to_amount(relative_round_start_budget_scale) / 100) * threat_level, 0.1)
+	round_start_budget = min(round_start_budget, 50) //BLUEMOON ADDITION - чтобы динамик не расходился на все деньги с начала раунда и не пугал людей
 	initial_round_start_budget = round_start_budget
 	mid_round_budget = threat_level - round_start_budget
 
