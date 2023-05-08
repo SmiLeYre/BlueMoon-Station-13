@@ -110,7 +110,7 @@
 
 /obj/item/choice_beacon/hosgun
 	name = "personal weapon beacon"
-	desc = "Use this to summon your personal Head of Security issued firearm!"
+	desc = "Use this to summon your personal Blueshield issued firearm!"
 
 /obj/item/choice_beacon/hosgun/generate_display_names()
 	var/static/list/hos_gun_list

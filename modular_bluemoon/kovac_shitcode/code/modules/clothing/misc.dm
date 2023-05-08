@@ -23,6 +23,32 @@
 		"Chest 2 Bloody" = list("icon_state" = "chestb")
 	)
 
+/obj/item/clothing/mask/gas/syndicate/ds/wide
+	name = "wide shape balaclava"
+	desc = "For organising your tricky covert operations."
+	icon = 'modular_bluemoon/kovac_shitcode/icons/obj/clothing/misc.dmi'
+	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/misc.dmi'
+	icon_state = "balaclava_wide"
+	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS|HIDEFACIALHAIR
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/mask/gas/syndicate/ds/mouth
+	name = "mouth balaclava"
+	desc = "Get down on the floor, cyka."
+	icon = 'modular_bluemoon/kovac_shitcode/icons/obj/clothing/misc.dmi'
+	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/misc.dmi'
+	icon_state = "balaclava_mouth"
+	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS|HIDEFACIALHAIR
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/mask/gas/syndicate/ds/coif
+	name = "terra gov balaclava"
+	desc = "Solar Federation tactical coif"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/obj/clothing/misc.dmi'
+	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/misc.dmi'
+	icon_state = "coif"
+	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS|HIDEFACIALHAIR
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/under/rank/security/officer/urban_camo
 	name = "urban camouflage uniform"

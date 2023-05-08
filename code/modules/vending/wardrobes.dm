@@ -412,6 +412,7 @@
 	product_ads = "Are you being bothered by cultists or pesky revenants? Then come and dress like the holy man!;Clothes for men of the cloth!"
 	vend_reply = "Thank you for using the DeusVend!"
 	products = list(/obj/item/choice_beacon/holy = 1,
+					/obj/item/staff/bostaff/chaplain = 1,
 					/obj/item/storage/backpack/cultpack = 2,
 					/obj/item/clothing/accessory/pocketprotector/cosmetology = 2,
 					/obj/item/clothing/under/rank/civilian/chaplain = 2,

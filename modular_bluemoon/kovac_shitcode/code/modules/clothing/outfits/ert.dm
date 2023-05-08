@@ -136,7 +136,7 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/nri
 	//head = /obj/item/clothing/head/helmet/alt
 	uniform = /obj/item/clothing/under/syndicate/rus_army
-	mask = /obj/item/clothing/mask/gas/syndicate/ds
+	mask = /obj/item/clothing/mask/gas/syndicate/ds/mouth
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/hecu/black
 	belt = /obj/item/storage/belt/grenade/full
@@ -164,7 +164,7 @@
 	suit = /obj/item/clothing/suit/armor/vest/russian_coat
 	head = /obj/item/clothing/head/beret/sec
 	uniform = /obj/item/clothing/under/syndicate/rus_army
-	mask = /obj/item/clothing/mask/gas/syndicate/ds
+	mask = /obj/item/clothing/mask/gas/syndicate/ds/mouth
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/hecu
 	belt = /obj/item/storage/belt/grenade/full
@@ -195,7 +195,7 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/sol
 //	head = /obj/item/clothing/head/helmet/alt
 	uniform = /obj/item/clothing/under/rank/security/officer/urban_camo
-	mask = /obj/item/clothing/mask/gas/sechailer
+	mask = /obj/item/clothing/mask/gas/syndicate/ds/coif
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/hecu/black
 	belt = /obj/item/storage/belt/grenade/full
@@ -221,7 +221,7 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/sol
 //	head = /obj/item/clothing/head/helmet/alt
 	uniform = /obj/item/clothing/under/rank/security/officer/urban_camo
-	mask = /obj/item/clothing/mask/gas/sechailer
+	mask = /obj/item/clothing/mask/gas/syndicate/ds/coif
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/hecu/black
 	belt = /obj/item/storage/belt/grenade/full
@@ -249,7 +249,7 @@
 	suit = /obj/item/clothing/suit/armor/solfed_coat
 	head = /obj/item/clothing/head/beret/sec/peacekeeper/hos
 	uniform = /obj/item/clothing/under/rank/security/officer/urban_camo
-	mask = /obj/item/clothing/mask/gas/sechailer
+	mask = /obj/item/clothing/mask/gas/syndicate/ds/coif
 	glasses = /obj/item/clothing/glasses/hud/health/sunglasses
 	back = /obj/item/storage/backpack/hecu/black
 	belt = /obj/item/storage/belt/grenade/full

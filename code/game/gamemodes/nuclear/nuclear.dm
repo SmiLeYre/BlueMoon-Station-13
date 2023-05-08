@@ -10,7 +10,7 @@
 	enemy_minimum_age = 7
 
 	announce_span = "danger"
-	announce_text = "Syndicate forces are approaching the station in an attempt to destroy it!\n\
+	announce_text = "InteQ forces are approaching the station in an attempt to destroy it!\n\
 	<span class='danger'>Operatives</span>: Secure the nuclear authentication disk and use your nuke to destroy the station.\n\
 	<span class='notice'>Crew</span>: Defend the nuclear authentication disk and ensure that it leaves with you on the emergency shuttle."
 
@@ -78,13 +78,13 @@
 	var result = nuke_team.get_result()
 	switch(result)
 		if(NUKE_RESULT_FLUKE)
-			SSticker.mode_result = "loss - syndicate nuked - disk secured"
+			SSticker.mode_result = "loss - InteQ nuked - disk secured"
 			SSticker.news_report = NUKE_SYNDICATE_BASE
 		if(NUKE_RESULT_NUKE_WIN)
-			SSticker.mode_result = "win - syndicate nuke"
+			SSticker.mode_result = "win - InteQ nuke"
 			SSticker.news_report = STATION_NUKED
 		if(NUKE_RESULT_NOSURVIVORS)
-			SSticker.mode_result = "halfwin - syndicate nuke - did not evacuate in time"
+			SSticker.mode_result = "halfwin - InteQ nuke - did not evacuate in time"
 			SSticker.news_report = STATION_NUKED
 		if(NUKE_RESULT_WRONG_STATION)
 			SSticker.mode_result = "halfwin - blew wrong station"
