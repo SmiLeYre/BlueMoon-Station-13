@@ -318,6 +318,12 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 		if(total_degradation_moles >= minimum_coolant_level*0.5) //I'll be nice.
 			depletion_modifier += total_degradation_moles / 15 //Oops! All depletion. This causes your fuel rods to get SPICY.
 			playsound(src, pick('sound/machines/sm/accent/normal/1.ogg','sound/machines/sm/accent/normal/2.ogg','sound/machines/sm/accent/normal/3.ogg','sound/machines/sm/accent/normal/4.ogg','sound/machines/sm/accent/normal/5.ogg'), 100, TRUE)
+		//BLUEMOON ADDITION START
+		var/total_extinguisher_moles = moderator_input.get_moles(GAS_NITROUS) //Веселящий газ делает реактор не таким смешным, позволяя ему остывать быстрее
+		if(total_extinguisher_moles >= minimum_coolant_level)
+			var/extinguisher_bonus = total_extinguisher_moles / 200 //При вакуумной помпе, скорость падает примерно на 4 градуса, если в модераторе газ закачан под завязку
+			temperature = max(0, temperature-extinguisher_bonus)
+		//BLUEMOON ADDITION END
 		//From this point onwards, we clear out the remaining gasses.
 		moderator_input.clear() //Woosh. And the soul is gone.
 		K += total_fuel_moles / 1000
