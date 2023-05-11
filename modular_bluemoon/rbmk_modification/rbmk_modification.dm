@@ -2,4 +2,3 @@
 	id = "engine_rbmk_bluemoon"
 	suffix = "Box/Engine/bluemoon/engine_rbmk_bluemoon.dmm"
 	name = "Box RBMK_(bluemoon)"
-//

@@ -5,7 +5,7 @@
 #define COOLANT_OUTPUT_GATE airs[3]
 
 #define RBMK_TEMPERATURE_OPERATING 640 //Celsius
-#define RBMK_TEMPERATURE_CRITICAL 800 //At this point the entire station is alerted to a meltdown. This may need altering
+#define RBMK_TEMPERATURE_CRITICAL 800 //At this point the entire station is alerted to a meltdown. This may need altering //BLUEMOON CHANGES
 #define RBMK_TEMPERATURE_MELTDOWN 900
 
 #define RBMK_NO_COOLANT_TOLERANCE 5 //How many process()ing ticks the reactor can sustain without coolant before slowly taking damage
@@ -15,7 +15,7 @@
 
 #define RBMK_MAX_CRITICALITY 3 //No more criticality than N for now.
 
-#define RBMK_POWER_FLAVOURISER 200 //To turn those KWs into something usable
+#define RBMK_POWER_FLAVOURISER 200 //To turn those KWs into something usable This may need altering //BLUEMOON CHANGES
 
 //Math. Lame.
 #define KPA_TO_PSI(A) (A/6.895)
@@ -79,7 +79,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	var/pressure = 0 //Lose control of this -> Blowout
 	var/K = 0 //Rate of reaction.
 	var/desired_k = 0
-	var/control_rod_effectiveness = 0.3 //Starts off with a lot of control over K. If you flood this thing with plasma, you lose your ability to control K as easily.
+	var/control_rod_effectiveness = 0.3 //Starts off with a lot of control over K. If you flood this thing with plasma, you lose your ability to control K as easily. This may need altering //BLUEMOON CHANGES
 	var/power = 0 //0-100%. A function of the maximum heat you can achieve within operating temperature
 	var/power_modifier = 1 //Upgrade me with parts, science! Flat out increase to physical power output when loaded with plasma.
 	var/list/fuel_rods = list()
@@ -104,16 +104,12 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	var/datum/looping_sound/rbmk_reactor/soundloop
 	var/datum/powernet/powernet = null
 
-	//BLUEMOON ADITION START - рация для сообщений от реактора
-	///Our internal radio
+	//BLUEMOON ADDITION START - рация для сообщений от реактора
 	var/obj/item/radio/radio
-	///The key our internal radio uses
 	var/radio_key = /obj/item/encryptionkey/headset_eng
-	///The engineering channel
 	var/engineering_channel = "Engineering"
-	///The common channel
 	var/lastwarning = 0
-	//BLUEMOON ADITION END
+	//BLUEMOON ADDITION END
 
 //Use this in your maps if you want everything to be preset.
 /obj/machinery/atmospherics/components/trinary/nuclear_reactor/preset
@@ -208,7 +204,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	for(var/obj/item/fuel_rod/FR in fuel_rods)
 		FR.depletion = 100
 
-/obj/machinery/atmospherics/components/trinary/nuclear_reactor/Initialize(mapload)
+/obj/machinery/atmospherics/components/trinary/nuclear_reactor/Initialize()
 	. = ..()
 	connect_to_network()
 	icon_state = "reactor_off"
@@ -220,7 +216,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	radio.keyslot = new radio_key
 	radio.listening = 0
 	radio.recalculateChannels()
-	//BLUEMOON ADDITION END
+
 
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
@@ -229,7 +225,11 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 
 /obj/machinery/atmospherics/components/trinary/nuclear_reactor/proc/on_entered(datum/source, atom/movable/AM, oldloc)
 	SIGNAL_HANDLER
-
+	//BLUEMOON ADDITION END
+/*BLUEMOON REMOVAL START
+/obj/machinery/atmospherics/components/trinary/nuclear_reactor/Crossed(atom/movable/AM, oldloc)
+	. = ..()
+BLUEMOON REMOVAL END */
 	if(isliving(AM) && temperature > 0)
 		var/mob/living/L = AM
 		L.adjust_bodytemperature(clamp(temperature, BODYTEMP_COOLING_MAX, BODYTEMP_HEATING_MAX)) //If you're on fire, you heat up!
@@ -266,7 +266,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 			no_coolant_ticks++
 			if(no_coolant_ticks > RBMK_NO_COOLANT_TOLERANCE)
 				temperature += temperature / 500 //This isn't really harmful early game, but when your reactor is up to full power, this can get out of hand quite quickly.
-				vessel_integrity -= 1
+				vessel_integrity -= 1 //Think fast chucklenuts! //BLUEMOON CHANGES
 //BLUEMOON REMOVAL				take_damage(10) //Just for the sound effect, to let you know you've fucked up.
 				color = "[COLOR_RED]"
 				//BLUEMOON ADDITION START
@@ -290,7 +290,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 		if(total_fuel_moles >= minimum_coolant_level) //You at least need SOME fuel.
 			var/power_produced = max((total_fuel_moles / moderator_input.total_moles() * 10), 1)
 			last_power_produced = max(0,((power_produced*power_modifier)*moderator_input.total_moles()))
-			last_power_produced *= (max(0,power)/100) //Aaaand here comes the cap. Hotter reactor => more power.
+			last_power_produced *= (max(0,power)/100) //Aaaand here comes the cap. Hotter reactor => more power. //BLUEMOON CHANGES
 			last_power_produced *= base_power_modifier //Finally, we turn it into actual usable numbers.
 			radioactivity_spice_multiplier += moderator_input.get_moles(GAS_TRITIUM) / 5 //Chernobyl 2.
 			var/turf/T = get_turf(src)
