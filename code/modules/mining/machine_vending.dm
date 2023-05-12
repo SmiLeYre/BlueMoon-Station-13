@@ -76,6 +76,7 @@
 		new /datum/data/mining_equipment("Survival Dagger",				/obj/item/kitchen/knife/combat/survival/knuckledagger,				550),
 		new /datum/data/mining_equipment("Premium KA borg Upgrade",		/obj/item/borg/upgrade/premiumka,									8000),
 		new /datum/data/mining_equipment("Kinetic Destroyer",			/obj/item/kinetic_crusher/premiumcrusher,							12000), //boop
+		new /datum/data/mining_equipment("KinkMate Refill Stock",		/obj/item/vending_refill/kink,										12000), //BLUEMOON CHANGE: Kinkmate restock for ghostroles/lone miners. Circuit can be found in circuit printer.
 		)
 
 /datum/data/mining_equipment
