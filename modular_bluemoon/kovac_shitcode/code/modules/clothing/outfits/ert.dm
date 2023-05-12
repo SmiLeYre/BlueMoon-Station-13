@@ -259,6 +259,7 @@
 		/obj/item/storage/ifak=1,\
 		/obj/item/gun/ballistic/automatic/pistol/deagle=1,\
         /obj/item/ammo_box/magazine/m50=2,\
+		/obj/item/choice_beacon/sol_mech=1,\
 		/obj/item/ammo_box/magazine/m16=3)
 
 /datum/outfit/ert/sol_soldier_leader/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)

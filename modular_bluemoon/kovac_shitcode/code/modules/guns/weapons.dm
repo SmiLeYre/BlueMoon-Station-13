@@ -118,6 +118,8 @@
 	new /obj/item/gun/ballistic/automatic/pistol/g22(src)
 	new /obj/item/ammo_box/magazine/m10mm(src)
 	new /obj/item/ammo_box/magazine/m10mm(src)
+	new /obj/item/ammo_box/magazine/m10mm(src)
+	new /obj/item/ammo_box/magazine/m10mm/soporific(src)
 	new /obj/item/ammo_box/magazine/m10mm/soporific(src)
 	new /obj/item/ammo_box/magazine/m10mm/soporific(src)
 
