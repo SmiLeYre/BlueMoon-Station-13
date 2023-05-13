@@ -360,7 +360,7 @@ BLUEMOON REMOVAL END */
 		temperature -= 10 //Nothing to heat us up, so.
 	handle_alerts() //Let's check if they're about to die, and let them know.
 	update_icon()
-	radiation_pulse(src, temperature*radioactivity_spice_multiplier)
+	radiation_pulse(src, (temperature*radioactivity_spice_multiplier)/10)
 	if(power >= 93 && world.time >= next_flicker) //You're overloading the reactor. Give a more subtle warning that power is getting out of control.
 		next_flicker = world.time + 2 MINUTES
 		for(var/obj/machinery/light/L in GLOB.machines)
