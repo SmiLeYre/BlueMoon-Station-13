@@ -120,7 +120,11 @@
 		return
 	if(!installed_gun.cell.charge)
 		return
-	var/obj/item/ammo_casing/energy/shot = installed_gun.ammo_type[mode?2:1]
+	var/obj/item/ammo_casing/energy/shot
+	if(length(installed_gun.ammo_type) > 1)
+		shot = installed_gun.ammo_type[mode?2:1]
+	else
+		shot = installed_gun.ammo_type[1]
 	if(installed_gun.cell.charge < shot.e_cost)
 		return
 	if(!shot)
@@ -198,9 +202,9 @@
 		var/datum/integrated_io/detonation_time = inputs[1]
 		var/dt
 		if(isnum(detonation_time.data) && detonation_time.data > 0)
-			dt = clamp(detonation_time.data, 1, 12)*10
+			dt = clamp(detonation_time.data, 1, 12)*20
 		else
-			dt = 15
+			dt = 20
 		addtimer(CALLBACK(attached_grenade, /obj/item/grenade.proc/prime), dt)
 		var/atom/holder = loc
 		message_admins("activated a grenade assembly. Last touches: Assembly: [holder.fingerprintslast] Circuit: [fingerprintslast] Grenade: [attached_grenade.fingerprintslast]")
@@ -318,19 +322,21 @@
 	desc = "Used to stun a target holding the device via electricity."
 	icon_state = "power_relay"
 	extended_desc = "Attempts to stun the holder of this device, with the strength input being the strength of the stun, from 1 to 70."
-	complexity = 30
+	complexity = 20
 	size = 4
-	inputs = list("strength" = IC_PINTYPE_NUMBER)
+	inputs = list(
+		"strength" = IC_PINTYPE_NUMBER,
+		"target" = IC_PINTYPE_REF)
 	activators = list("stun" = IC_PINTYPE_PULSE_IN, "on success" = IC_PINTYPE_PULSE_OUT, "on fail" = IC_PINTYPE_PULSE_OUT)
 	spawn_flags = IC_SPAWN_RESEARCH
 	power_draw_per_use = 2000
-	cooldown_per_use = 50
+	cooldown_per_use = 25
 	ext_cooldown = 25
 
 
 /obj/item/integrated_circuit/weaponized/stun/do_work()
 	var/stunforce = clamp(get_pin_data(IC_INPUT, 1),1,70)
-	var/mob/living/L = assembly.loc
+	var/mob/living/L = get_pin_data_as_type(IC_INPUT, 2, /mob/living)
 	if(attempt_stun(L,stunforce))
 		activate_pin(2)
 	else
@@ -347,7 +353,8 @@
 	message_admins("stunned someone with an assembly. Last touches: Assembly: [assembly.fingerprintslast] Circuit: [fingerprintslast]")
 
 	L.visible_message("<span class='danger'>\The [assembly] has stunned \the [L] with \the [src]!</span>", "<span class='userdanger'>\The [assembly] has stunned you with \the [src]!</span>")
-	playsound(loc, 'sound/weapons/egloves.ogg', 50, 1, -1)
+	playsound(loc, 'sound/weapons/Taser.ogg', 50, 1, -1)
+	playsound(L.loc, 'sound/weapons/taserhit.ogg', 50, 1, -1)
 	if(ishuman(L))
 		var/mob/living/carbon/human/H = L
 		H.forcesay(GLOB.hit_appends)
