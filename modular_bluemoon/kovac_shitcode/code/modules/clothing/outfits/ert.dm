@@ -139,13 +139,13 @@
 	mask = /obj/item/clothing/mask/gas/syndicate/ds/mouth
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/hecu/black
-	belt = /obj/item/storage/belt/grenade/full
-	r_hand = /obj/item/gun/ballistic/automatic/vss
+	belt = /obj/item/storage/belt/military
+	r_hand = /obj/item/gun/ballistic/automatic/ak12
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/clothing/mask/gas/sechailer=1,\
 		/obj/item/gun/ballistic/revolver/mateba=1,
 		/obj/item/storage/ifak=1,\
-		/obj/item/ammo_box/magazine/vss_mag=2)
+		/obj/item/ammo_box/magazine/ak12=4)
 
 /datum/outfit/ert/ert_russian_soldier/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()
@@ -198,7 +198,7 @@
 	mask = /obj/item/clothing/mask/gas/syndicate/ds/coif
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/hecu/black
-	belt = /obj/item/storage/belt/grenade/full
+	belt = /obj/item/storage/belt/military/inteq
 	r_hand = /obj/item/gun/ballistic/automatic/m16a4
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/storage/ifak=1,\
@@ -252,7 +252,7 @@
 	mask = /obj/item/clothing/mask/gas/syndicate/ds/coif
 	glasses = /obj/item/clothing/glasses/hud/health/sunglasses
 	back = /obj/item/storage/backpack/hecu/black
-	belt = /obj/item/storage/belt/grenade/full
+	belt = /obj/item/storage/belt/military/inteq
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber
 	r_hand = /obj/item/gun/ballistic/automatic/m16a4/tactical
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
