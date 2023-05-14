@@ -287,19 +287,24 @@
 	key = "burp"
 	key_third_person = "burps"
 	message = "рыгает."
-	emote_type = EMOTE_AUDIBLE
 	emote_cooldown = 10 SECONDS
+	emote_sound = 'modular_splurt/sound/voice/burps/belch1.ogg'
 
 /datum/emote/living/audio/burp/run_emote(mob/user, params, type_override, intentional)
-	. = ..()
-	var/list/burp_noises = list(
-		'modular_splurt/sound/voice/burps/belch1.ogg','modular_splurt/sound/voice/burps/belch2.ogg','modular_splurt/sound/voice/burps/belch3.ogg','modular_splurt/sound/voice/burps/belch4.ogg',
+	// Check if user is muzzled
+	if(user.is_muzzled())
+		// Set muzzled sound
+		emote_sound = 'modular_splurt/sound/voice/bababooey/ffff.ogg'
+
+	// User is not muzzled
+	else
+		emote_sound = pick('modular_splurt/sound/voice/burps/belch1.ogg','modular_splurt/sound/voice/burps/belch2.ogg','modular_splurt/sound/voice/burps/belch3.ogg','modular_splurt/sound/voice/burps/belch4.ogg',
 		'modular_splurt/sound/voice/burps/belch5.ogg','modular_splurt/sound/voice/burps/belch6.ogg','modular_splurt/sound/voice/burps/belch7.ogg','modular_splurt/sound/voice/burps/belch8.ogg',
 		'modular_splurt/sound/voice/burps/belch9.ogg','modular_splurt/sound/voice/burps/belch10.ogg','modular_splurt/sound/voice/burps/belch11.ogg','modular_splurt/sound/voice/burps/belch12.ogg',
-		'modular_splurt/sound/voice/burps/belch13.ogg','modular_splurt/sound/voice/burps/belch14.ogg','modular_splurt/sound/voice/burps/belch15.ogg'
-	)
-	if(.)
-		playsound(user, pick(burp_noises), 50, 1)
+		'modular_splurt/sound/voice/burps/belch13.ogg','modular_splurt/sound/voice/burps/belch14.ogg','modular_splurt/sound/voice/burps/belch15.ogg')
+
+	// Return normally
+	. = ..()
 
 /datum/emote/living/audio/bleat
 	key = "bleat"

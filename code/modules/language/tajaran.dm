@@ -1,10 +1,10 @@
 /datum/language/tajaran
-	name = "Siik'tajr"
+	name = "Siiktajr"
 	desc = "The traditionally employed tongue of Ahdomai, composed of expressive yowls and chirps. Native to the Tajaran."
 	speech_verb = "mrowls"
 	ask_verb = "mrowls"
 	exclaim_verb = "yowls"
-	key = "3"
+	key = "7"
 	flags = TONGUELESS_SPEECH
 	space_chance = 45
 	syllables = list("rr","rr","tajr","kir","raj","kii","mir","kra","ahk","nal","vah","khaz","jri","ran","darr", \
