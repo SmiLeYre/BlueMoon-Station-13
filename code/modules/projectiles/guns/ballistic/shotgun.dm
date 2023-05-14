@@ -239,11 +239,11 @@
 
 /obj/item/gun/ballistic/shotgun/automatic/combat
 	name = "Combat Shotgun"
-	desc = "A semi automatic shotgun with tactical furniture and a six-shell capacity underneath."
+	desc = "A semi automatic shotgun with tactical furniture and a four-shell capacity underneath." //BLUEMOON CHANGE
 	icon_state = "cshotgun"
-	fire_delay = 5
+//BLUEMOON REMOVAL	fire_delay = 5
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com
-	w_class = WEIGHT_CLASS_HUGE
+//BLUEMOON REMOVAL	w_class = WEIGHT_CLASS_HUGE
 	unique_reskin = list(
 		"Tactical" = list("icon_state" = "cshotgun"),
 		"Slick" = list("icon_state" = "cshotgun_slick")
