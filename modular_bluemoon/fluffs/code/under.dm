@@ -17,3 +17,11 @@
 	item_state = "bl_suit"
 	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
 	can_adjust = TRUE
+
+/obj/item/clothing/under/donator/bm/utilgen
+	name = "GG-66"
+	desc = "Aramid made uniform of a rising private defense company, with a purple planet(?) on the back and 6's on the shoulders"
+	icon_state = "utilgen"
+	item_state = "utilgen"
+	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
+	can_adjust = FALSE
