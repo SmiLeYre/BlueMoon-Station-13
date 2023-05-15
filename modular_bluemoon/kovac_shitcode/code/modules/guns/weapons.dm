@@ -70,7 +70,7 @@
 	fire_sound = 'modular_bluemoon/kovac_shitcode/sound/weapons/rsh12.ogg'
 	pumpsound = 'modular_bluemoon/kovac_shitcode/sound/weapons/rsh12_drum.ogg'
 	fire_delay = 3
-	recoil = 5
+	recoil = 4
 	spread = 3
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/rsh12
 	w_class = WEIGHT_CLASS_NORMAL
