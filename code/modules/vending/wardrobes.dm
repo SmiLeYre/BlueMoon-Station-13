@@ -27,6 +27,7 @@
 					/obj/item/clothing/head/beret/sec = 5,
 					/obj/item/clothing/head/soft/sec = 5,
 					/obj/item/clothing/mask/bandana/red = 5,
+					/obj/item/clothing/mask/balaclava/breath/redscarf = 4,
 					/obj/item/clothing/mask/gas/sechailer = 4,
 					/obj/item/clothing/under/rank/security/officer/skirt = 5,
 					/obj/item/clothing/under/rank/security/officer/grey = 5,
@@ -98,6 +99,7 @@
 					/obj/item/clothing/head/soft/emt = 5,
 					/obj/item/clothing/suit/apron/surgical = 5,
 					/obj/item/clothing/mask/surgical = 5,
+					/obj/item/clothing/mask/balaclava/breath/redscarf/bluescarf = 4,
 					/obj/item/clothing/gloves/color/latex/nitrile = 2,
 					/obj/item/clothing/under/rank/medical/doctor/util = 5,
 					/obj/item/clothing/under/rank/medical/paramedic/red = 5,
@@ -132,6 +134,7 @@
 					/obj/item/clothing/suit/hazardvest = 5,
 					/obj/item/clothing/shoes/workboots = 5,
 					/obj/item/clothing/head/hardhat = 5,
+					/obj/item/clothing/mask/balaclava/breath/redscarf/yellowscarf = 4,
 					/obj/item/clothing/head/hardhat/weldhat = 3)
 	refill_canister = /obj/item/vending_refill/wardrobe/engi_wardrobe
 	payment_department = ACCOUNT_ENG
@@ -178,6 +181,7 @@
 					/obj/item/clothing/shoes/sneakers/black = 5,
 					/obj/item/clothing/gloves/fingerless = 5,
 					/obj/item/clothing/head/soft = 5,
+					/obj/item/clothing/mask/balaclava/breath/redscarf/yellowscarf = 4,
 					/obj/item/radio/headset/headset_cargo = 3)
 	refill_canister = /obj/item/vending_refill/wardrobe/cargo_wardrobe
 	payment_department = ACCOUNT_CAR
@@ -203,6 +207,7 @@
 					/obj/item/clothing/gloves/fingerless = 3,
 					/obj/item/clothing/head/soft/black = 3,
 					/obj/item/clothing/mask/bandana/skull = 2,
+					/obj/item/clothing/mask/balaclava/breath/redscarf/purplescarf = 3,
 					/obj/item/clothing/under/misc/mechsuitred = 1,
 					/obj/item/clothing/under/misc/mechsuitwhite = 1,
 					/obj/item/clothing/under/misc/mechsuitblue = 1)
@@ -232,6 +237,7 @@
 					/obj/item/clothing/suit/toggle/labcoat/depjacket/sci = 4,
 					/obj/item/clothing/shoes/sneakers/white = 4,
 					/obj/item/radio/headset/headset_sci = 4,
+					/obj/item/clothing/mask/balaclava/breath/redscarf/purplescarf = 4,
 					/obj/item/clothing/mask/gas = 5)
 	refill_canister = /obj/item/vending_refill/wardrobe/science_wardrobe
 	payment_department = ACCOUNT_SCI
@@ -364,6 +370,7 @@
 					/obj/item/watertank/janitor = 2,
 					/obj/item/storage/belt/janitor = 2,
 					/obj/item/screwdriver = 2,
+					/obj/item/clothing/mask/balaclava/breath/redscarf/purplescarf = 2,
 					/obj/item/stack/cable_coil/random = 4)
 	refill_canister = /obj/item/vending_refill/wardrobe/jani_wardrobe
 	default_price = PRICE_CHEAP

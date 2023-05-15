@@ -150,6 +150,7 @@
 					/obj/item/clothing/suit/suspenders = 2,
 					/obj/item/clothing/suit/suspenders/suspenders_white = 4,
 					/obj/item/clothing/neck/tie/bandagewraps = 5,
+					/obj/item/clothing/mask/balaclava/breath/redscarf/greenscarf = 5,
 					)
 	contraband = list(/obj/item/clothing/suit/judgerobe = 1,
 					/obj/item/clothing/head/powdered_wig = 1,
