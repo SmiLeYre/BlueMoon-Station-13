@@ -45,6 +45,9 @@
 		if((H.movement_type & FLYING) || H.buckled)
 			return
 
+		if(HAS_TRAIT(H, TRAIT_HARD_SOLES))
+			return
+
 		var/damage = rand(min_damage, max_damage)
 		if(HAS_TRAIT(H, TRAIT_LIGHT_STEP))
 			damage *= 0.75
