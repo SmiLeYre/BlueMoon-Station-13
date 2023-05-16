@@ -43,6 +43,15 @@
 	icon_state = "baron"
 	item_state = "baron"
 
+//Plasmaman outfit
+	//centcom//
+/obj/item/clothing/under/plasmaman/captain/centcom
+	name = "central command envirosuit"
+	icon = 'modular_bluemoon/krashly/icons/obj/clothing/under.dmi'
+	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/under.dmi'
+	icon_state = "centcom_envirosuit"
+	item_state = "centcom_envirosuit"
+
 //InteQ
 
 /obj/item/clothing/under/inteq

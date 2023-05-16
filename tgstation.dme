@@ -4014,6 +4014,7 @@
 #include "modular_bluemoon\kovac_shitcode\code\modules\vending\medical_additional.dm"
 #include "modular_bluemoon\krashly\code\datums\components\uplink.dm"
 #include "modular_bluemoon\krashly\code\game\hair_face.dm"
+#include "modular_bluemoon\krashly\code\game\outfits.dm"
 #include "modular_bluemoon\krashly\code\game\shuttles.dm"
 #include "modular_bluemoon\krashly\code\game\gamemodes\traitor\inteq_agents.dm"
 #include "modular_bluemoon\krashly\code\game\machinery\doors\airlock_types.dm"
