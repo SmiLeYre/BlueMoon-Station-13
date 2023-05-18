@@ -121,4 +121,4 @@
 	name = "G-66 Uniform"
 	slot = ITEM_SLOT_ICLOTHING
 	path = /obj/item/clothing/under/donator/bm/utilgen
-	ckeywhitelist = list("reaper_db")
+	ckeywhitelist = list("reaperdb")
