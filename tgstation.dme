@@ -3950,6 +3950,7 @@
 #include "interface\skin.dmf"
 #include "modular_bluemoon\code\modules\jobs\job_types\job.dm"
 #include "modular_bluemoon\code\modules\mob\bluemoon_emotes.dm"
+#include "modular_bluemoon\0451\code\modules\mining\shelters.dm"
 #include "modular_bluemoon\DarwickTheDork\skyrat_ported\code\modules\mob\dead\new_player\sprite_accessories\body_markings.dm"
 #include "modular_bluemoon\dementia\code\modules\clothing\hats.dm"
 #include "modular_bluemoon\dementia\code\modules\clothing\helmets.dm"
