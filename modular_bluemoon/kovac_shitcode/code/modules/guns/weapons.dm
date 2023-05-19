@@ -82,20 +82,70 @@
 //HoS G22 pistol
 /obj/item/gun/ballistic/automatic/pistol/g22
 	name = "\improper G22 Mark. 1"
-	desc = "Solar Federation Marine Corps pistol, downgraded in order to be used by the NT Security. Can be loaded with 10mm."
+	desc = "Solar Federation Marine Corps pistol, downgraded in order to be used by the NT Security. Can be loaded with enlarged 10mm magazines."
 	icon_state = "g22"
 	item_state = "g22"
 	icon = 'modular_bluemoon/kovac_shitcode/icons/obj/weapons/weapons.dmi'
 	lefthand_file = 'modular_bluemoon/kovac_shitcode/icons/mob/weapons/weapons_l.dmi'
 	righthand_file = 'modular_bluemoon/kovac_shitcode/icons/mob/weapons/weapons_r.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m10mm_large
 	can_suppress = FALSE
-	burst_size = 3
+	burst_size = 4
+	fire_delay = 1
+	fire_select_modes = list(SELECT_SEMI_AUTOMATIC, SELECT_BURST_SHOT, SELECT_FULLY_AUTOMATIC)
 	automatic_burst_overlay = TRUE
 	spawnwithmagazine = FALSE
 	fire_sound = 'modular_bluemoon/kovac_shitcode/sound/weapons/g22.ogg'
 
 /obj/item/gun/ballistic/automatic/pistol/g22/update_icon_state()
 	icon_state = "[initial(icon_state)][chambered ? "" : "-e"]"
+
+
+///
+/obj/item/ammo_box/magazine/m10mm_large
+	name = "enlarged pistol magazine (10mm)"
+	desc = "An extra ammo gun magazine."
+	icon_state = "c20r45-24"
+	ammo_type = /obj/item/ammo_casing/c10mm
+	caliber = "10mm"
+	max_ammo = 24
+
+/obj/item/ammo_box/magazine/m10mm_large/soporific
+	name = "enlarged pistol magazine (10mm soporific)"
+	desc = "An extra ammo gun magazine. Loaded with rounds which inject the target with a variety of substances to induce sleep in the target."
+	icon_state = "c20r46-24"
+	ammo_type = /obj/item/ammo_casing/c10mm/soporific
+
+/obj/item/ammo_box/magazine/m10mm_large/update_icon()
+	..()
+	icon_state = "c20r45-[round(ammo_count(),2)]"
+
+/obj/item/ammo_box/magazine/m10mm_large/soporific/update_icon()
+	..()
+	icon_state = "c20r46-[round(ammo_count(),2)]"
+///
+
+/datum/design/m10mm_large
+	name = "enlarged pistol magazine (10mm)"
+	desc = "An extra ammo gun magazine."
+	id = "10mm_large"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 10000)
+	build_path = /obj/item/ammo_box/magazine/m10mm_large
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/datum/design/m10mm_large_soporific
+	name = "enlarged pistol magazine (10mm soporific)"
+	desc = "An extra ammo gun magazine. Loaded with rounds which inject the target with a variety of substances to induce sleep."
+	id = "10mm_large_soporific"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 10000, /datum/material/glass=3000)
+	build_path = /obj/item/ammo_box/magazine/m10mm_large/soporific
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+///
 
 
 //Head of Security's new weapons beacon and stuff
@@ -116,12 +166,12 @@
 
 /obj/item/storage/secure/briefcase/g22_box/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/g22(src)
-	new /obj/item/ammo_box/magazine/m10mm(src)
-	new /obj/item/ammo_box/magazine/m10mm(src)
-	new /obj/item/ammo_box/magazine/m10mm(src)
-	new /obj/item/ammo_box/magazine/m10mm/soporific(src)
-	new /obj/item/ammo_box/magazine/m10mm/soporific(src)
-	new /obj/item/ammo_box/magazine/m10mm/soporific(src)
+	new /obj/item/ammo_box/magazine/m10mm_large(src)
+	new /obj/item/ammo_box/magazine/m10mm_large(src)
+	new /obj/item/ammo_box/magazine/m10mm_large(src)
+	new /obj/item/ammo_box/magazine/m10mm_large/soporific(src)
+	new /obj/item/ammo_box/magazine/m10mm_large/soporific(src)
+	new /obj/item/ammo_box/magazine/m10mm_large/soporific(src)
 
 /obj/item/choice_beacon/hos_new_weapon
 	name = "personal weapon beacon"
