@@ -147,7 +147,6 @@
 
 ///
 
-
 //Head of Security's new weapons beacon and stuff
 
 /obj/item/storage/secure/briefcase/rsh12_box
@@ -189,3 +188,137 @@
 			hos_new_weapon[initial(A.name)] = A
 	return hos_new_weapon
 
+
+/// Sledgehammer
+/obj/item/inteq_sledgehammer
+	name = "sledgehammer"
+	desc = "Just a normal engineering tool, ain't it?"
+	icon_state = "sledgehammer"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/obj/weapons/weapons.dmi'
+	lefthand_file = 'modular_bluemoon/kovac_shitcode/icons/mob/weapons/weapons_l.dmi'
+	righthand_file = 'modular_bluemoon/kovac_shitcode/icons/mob/weapons/weapons_r.dmi'
+	force = 10
+	throwforce = 5
+	throw_speed = 2
+	throw_range = 3
+	wound_bonus = 30
+	bare_wound_bonus = 50
+	armour_penetration = 70
+	attack_speed = CLICK_CD_MELEE * 1.2
+	w_class = WEIGHT_CLASS_BULKY
+	item_flags = ITEM_CAN_PARRY | ITEM_CAN_BLOCK
+	block_parry_data = /datum/block_parry_data/inteq_sledgehammer
+	slot_flags = ITEM_SLOT_BACK
+	attack_verb = list("smashed", "rammed", "slammed")
+	hitsound = 'modular_bluemoon/kovac_shitcode/sound/weapons/sledge.ogg'
+	var/swiping = FALSE
+	var/wielded = FALSE // track wielded status on item
+
+/obj/item/inteq_sledgehammer/Initialize(mapload)
+	. = ..()
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+
+/obj/item/inteq_sledgehammer/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed, force_unwielded=10, force_wielded=25, icon_wielded="sledgehammer1")
+
+/// triggered on wield of two handed item
+/obj/item/inteq_sledgehammer/proc/on_wield(obj/item/source, mob/user)
+	wielded = TRUE
+
+/// triggered on unwield of two handed item
+/obj/item/inteq_sledgehammer/proc/on_unwield(obj/item/source, mob/user)
+	wielded = FALSE
+
+/obj/item/inteq_sledgehammer/update_icon_state()
+	icon_state = "sledgehammer"
+
+/obj/item/inteq_sledgehammer/suicide_act(mob/user)
+	user.visible_message("<span class='suicide'>[user] is trying to literally smash himself with [src]! It looks like [user.ru_who()] trying to commit suicide!</span>")
+	if(iscarbon(user))
+		var/mob/living/carbon/C = user
+		var/obj/item/bodypart/BP = C.get_bodypart(BODY_ZONE_HEAD)
+		if(BP)
+			BP.drop_limb()
+			playsound(src,pick('modular_bluemoon/kovac_shitcode/sound/weapons/sledge.ogg') ,50, 1, -1)
+	return (BRUTELOSS)
+
+/obj/item/inteq_sledgehammer/pre_attack(atom/A, mob/living/user, params, attackchain_flags, damage_multiplier)
+	. = ..()
+	if(. & STOP_ATTACK_PROC_CHAIN)
+		return
+	if(swiping || !istype(A, /obj/structure/spacevine) || get_turf(A) == get_turf(user))
+		return
+	else
+		var/turf/user_turf = get_turf(user)
+		var/dir_to_target = get_dir(user_turf, get_turf(A))
+		var/stam_gain = 0
+		swiping = TRUE
+		var/static/list/sledge_slash_angles = list(0, 45, 90, -45, -90)
+		for(var/i in sledge_slash_angles)
+			var/turf/T = get_step(user_turf, turn(dir_to_target, i))
+			for(var/obj/structure/spacevine/V in T)
+				if(user.Adjacent(V))
+					melee_attack_chain(user, V, attackchain_flags = ATTACK_IGNORE_CLICKDELAY)
+					stam_gain += 20					//should be hitcost
+		swiping = FALSE
+		stam_gain += 15								//Initial hitcost
+		user.adjustStaminaLoss(-stam_gain)
+		user.DelayNextAction()
+
+/obj/item/inteq_sledgehammer/attack(mob/target, mob/living/carbon/human/user)
+	if(user.has_dna() && user.dna.check_mutation(HULK))
+		to_chat(user, "<span class='warning'>You grip the sledgehammer too hard and accidentally drop it!</span>")
+		user.dropItemToGround(src)
+		return
+	..()
+	if((wielded) && prob(50))
+		INVOKE_ASYNC(src, .proc/slash, user)
+
+/obj/item/inteq_sledgehammer/proc/slash(mob/living/user, mob/living/target)
+		user.do_attack_animation(target, ATTACK_EFFECT_KICK)
+		sleep(1)
+
+/obj/item/inteq_sledgehammer/afterattack(atom/A, mob/user, proximity)
+	. = ..()
+	if(proximity && isobj(A) && !isitem(A))
+		var/obj/O = A
+		O.take_damage(18)
+		O.take_damage(8)
+
+/datum/block_parry_data/inteq_sledgehammer
+	can_block_directions = BLOCK_DIR_NORTH | BLOCK_DIR_NORTHEAST | BLOCK_DIR_NORTHWEST
+	block_damage_absorption = 4
+	block_damage_multiplier = 0.15
+	block_damage_multiplier_override = list(
+		ATTACK_TYPE_MELEE = 0.2
+	)
+	block_start_delay = 0.5
+	block_stamina_cost_per_second = 4.5
+	block_stamina_efficiency = 2
+	block_lock_sprinting = TRUE
+	// no attacking while blocking
+	block_lock_attacking = TRUE
+
+	parry_time_windup = 0
+	parry_time_active = 6
+	parry_time_spindown = 0
+
+	parry_time_windup_visual_override = 1
+	parry_time_active_visual_override = 3
+	parry_time_spindown_visual_override = 4
+	parry_flags = PARRY_DEFAULT_HANDLE_FEEDBACK
+	parry_time_perfect = 2
+	parry_time_perfect_leeway = 1
+	parry_imperfect_falloff_percent = 10
+	parry_efficiency_considered_successful = 15
+	parry_failed_stagger_duration = 4 SECONDS
+
+///InteQ Uplink and Pods additions
+
+/datum/uplink_item/inteq/inteq_sledgehammer
+	name = "Sledgehammer"
+	desc = "A murderous weapon, perfect for dealing fracture wounds and breaching structures. Bought massively from NRI mercenaries, it has become one of the most beloved InteQ weapons."
+	item = /obj/item/inteq_sledgehammer
+	cost = 10
