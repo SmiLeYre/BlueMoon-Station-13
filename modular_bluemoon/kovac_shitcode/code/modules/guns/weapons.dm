@@ -91,7 +91,7 @@
 	mag_type = /obj/item/ammo_box/magazine/m10mm_large
 	can_suppress = FALSE
 	burst_size = 4
-	fire_delay = 1
+	fire_delay = 2
 	fire_select_modes = list(SELECT_SEMI_AUTOMATIC, SELECT_BURST_SHOT, SELECT_FULLY_AUTOMATIC)
 	automatic_burst_overlay = TRUE
 	spawnwithmagazine = FALSE
@@ -105,15 +105,15 @@
 /obj/item/ammo_box/magazine/m10mm_large
 	name = "enlarged pistol magazine (10mm)"
 	desc = "An extra ammo gun magazine."
-	icon_state = "c20r45-24"
+	icon_state = "c20r45-16"
 	ammo_type = /obj/item/ammo_casing/c10mm
 	caliber = "10mm"
-	max_ammo = 24
+	max_ammo = 16
 
 /obj/item/ammo_box/magazine/m10mm_large/soporific
 	name = "enlarged pistol magazine (10mm soporific)"
 	desc = "An extra ammo gun magazine. Loaded with rounds which inject the target with a variety of substances to induce sleep in the target."
-	icon_state = "c20r46-24"
+	icon_state = "c20r46-16"
 	ammo_type = /obj/item/ammo_casing/c10mm/soporific
 
 /obj/item/ammo_box/magazine/m10mm_large/update_icon()

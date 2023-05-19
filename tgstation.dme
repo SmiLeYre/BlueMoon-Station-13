@@ -3983,6 +3983,7 @@
 #include "modular_bluemoon\kovac_shitcode\code\modules\language\german.dm"
 #include "modular_bluemoon\kovac_shitcode\code\modules\mecha\mecha.dm"
 #include "modular_bluemoon\kovac_shitcode\code\modules\mob\living\emotes.dm"
+#include "modular_bluemoon\kovac_shitcode\code\modules\vehicles\mecha.dm"
 #include "modular_bluemoon\kovac_shitcode\code\modules\vending\medical_additional.dm"
 #include "modular_bluemoon\krashly\code\datums\components\uplink.dm"
 #include "modular_bluemoon\krashly\code\game\hair_face.dm"
