@@ -504,5 +504,5 @@ GLOBAL_LIST_INIT(pp_limbs, list(
 		roles += list(category_roles)
 
 	roleStatus = roles
-	antagBanReason = jobban_isbanned(targetMob, ROLE_INTEQ)
+	antagBanReason = jobban_isbanned(targetMob, ROLE_SYNDICATE)
 	activeRoleBans = active_role_bans

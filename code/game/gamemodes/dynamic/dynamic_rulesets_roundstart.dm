@@ -1,12 +1,12 @@
 
 //////////////////////////////////////////////
 //                                          //
-//           INTEQ TRAITORS             //
+//           SYNDICATE TRAITORS             //
 //                                          //
 //////////////////////////////////////////////
 
 /datum/dynamic_ruleset/roundstart/traitor
-	name = "InteQ Traitors"
+	name = "Traitors"
 	persistent = TRUE
 	antag_flag = ROLE_TRAITOR
 	antag_datum = /datum/antagonist/traitor

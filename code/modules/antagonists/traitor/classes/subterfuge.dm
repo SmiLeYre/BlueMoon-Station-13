@@ -1,6 +1,6 @@
 /datum/traitor_class/human/subterfuge
-	name = "InteQ Overative"
-	employer = "InteQ"
+	name = "MI13 Operative"
+	employer = "MI13"
 	weight = 25
 	chaos = -5
 	var/assassin_prob = 25

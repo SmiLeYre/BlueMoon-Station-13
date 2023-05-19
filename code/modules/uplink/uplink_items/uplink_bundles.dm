@@ -11,7 +11,7 @@
 	name = "Bioterror bundle"
 	desc = "For the madman: Contains a handheld Bioterror chem sprayer, a Bioterror foam grenade, a box of lethal chemicals, a dart pistol, \
 			box of syringes, Donksoft assault rifle, and some riot darts. Remember: Seal suit and equip internals before use."
-	item = /obj/item/storage/backpack/duffelbag/syndie/inteq/med/bioterrorbundle
+	item = /obj/item/storage/backpack/duffelbag/syndie/med/bioterrorbundle
 	cost = 30 // normally 42
 	purchasable_from = UPLINK_NUKE_OPS
 
@@ -19,14 +19,14 @@
 	name = "Bulldog bundle"
 	desc = "Lean and mean: Optimized for people that want to get up close and personal. Contains the popular \
 			Bulldog shotgun, a 12g buckshot drum, a 12g taser slug drum and a pair of Thermal imaging goggles."
-	item = /obj/item/storage/backpack/duffelbag/syndie/inteq/bulldogbundle
+	item = /obj/item/storage/backpack/duffelbag/syndie/bulldogbundle
 	cost = 13 // normally 16
 	purchasable_from = UPLINK_NUKE_OPS
 
 /datum/uplink_item/bundles_tc/c20r
 	name = "C-20r bundle"
 	desc = "Old Faithful: The classic C-20r, bundled with two magazines, and a (surplus) suppressor at discount price."
-	item = /obj/item/storage/backpack/duffelbag/syndie/inteq/c20rbundle
+	item = /obj/item/storage/backpack/duffelbag/syndie/c20rbundle
 	cost = 14 // normally 16
 	purchasable_from = UPLINK_NUKE_OPS
 
@@ -82,7 +82,7 @@
 	name = "Medical bundle"
 	desc = "The support specialist: Aid your fellow operatives with this medical bundle. Contains a tactical medkit, \
 			a Donksoft LMG, a box of riot darts and a pair of magboots to rescue your friends in no-gravity environments."
-	item = /obj/item/storage/backpack/duffelbag/syndie/inteq/med/medicalbundle
+	item = /obj/item/storage/backpack/duffelbag/syndie/med/medicalbundle
 	cost = 15 // normally 20
 	purchasable_from = UPLINK_NUKE_OPS
 
@@ -97,7 +97,7 @@
 	name = "Shredder bundle"
 	desc = "A truly horrific weapon designed simply to maim its victim, the CX Shredder is banned by several intergalactic treaties. \
 			You'll get two of them with this. And spare ammo to boot. And we'll throw in an extra elite hardsuit and chest rig to hold them all!"
-	item = /obj/item/storage/backpack/duffelbag/syndie/inteq/shredderbundle
+	item = /obj/item/storage/backpack/duffelbag/syndie/shredderbundle
 	cost = 30 // normally 41
 	purchasable_from = UPLINK_NUKE_OPS
 
@@ -115,14 +115,14 @@
 	desc = "For systematic suppression of carbon lifeforms in close quarters: Contains a lethal New Russian backpack spray, Elite hardsuit, \
 			Stechkin APS pistol, two magazines, a minibomb and a stimulant syringe. \
 			Order NOW and comrade Boris will throw in an extra tracksuit."
-	item = /obj/item/storage/backpack/duffelbag/syndie/inteq/firestarter
+	item = /obj/item/storage/backpack/duffelbag/syndie/firestarter
 	cost = 30
 	purchasable_from = UPLINK_NUKE_OPS
 
 /datum/uplink_item/bundles_tc/bundle
-	name = "InteQ Operative Bundle"
-	desc = "InteQ Bundles are specialized groups of items that arrive in a plain box. \
-			These items are collectively worth more than 20 credits, but you do not know which specialization \
+	name = "Syndicate Bundle"
+	desc = "Syndicate Bundles are specialized groups of items that arrive in a plain box. \
+			These items are collectively worth more than 20 telecrystals, but you do not know which specialization \
 			you will receive. May contain discontinued and/or exotic items."
 	item = /obj/item/storage/box/syndicate
 	cost = 15
@@ -130,9 +130,9 @@
 	cant_discount = TRUE
 
 /datum/uplink_item/bundles_tc/surplus
-	name = "InteQ Surplus Crate"
-	desc = "A dusty crate from the back of the InteQ warehouse. Rumored to contain a valuable assortment of items, \
-			but you never know. Contents are sorted to always be worth 50 CR."
+	name = "Syndicate Surplus Crate"
+	desc = "A dusty crate from the back of the Syndicate warehouse. Rumored to contain a valuable assortment of items, \
+			but you never know. Contents are sorted to always be worth 50 TC."
 	item = /obj/structure/closet/crate
 	cost = 20
 	player_minimum = 25
@@ -142,8 +142,8 @@
 
 /datum/uplink_item/bundles_tc/surplus/super
 	name = "Super Surplus Crate"
-	desc = "A dusty SUPER-SIZED from the back of the InteQ warehouse. Rumored to contain a valuable assortment of items, \
-			but you never know. Contents are sorted to always be worth 125 CR."
+	desc = "A dusty SUPER-SIZED from the back of the Syndicate warehouse. Rumored to contain a valuable assortment of items, \
+			but you never know. Contents are sorted to always be worth 125 TC."
 	cost = 40
 	player_minimum = 40
 	starting_crate_value = 125
@@ -215,8 +215,8 @@
 		U.MakePurchase(user, I)
 
 /datum/uplink_item/bundles_tc/telecrystal
-	name = "1 InteQ Credit"
-	desc = "Golden credit. Can be inserted into Uplink."
+	name = "1 Raw Telecrystal"
+	desc = "A telecrystal in its rawest and purest form; can be utilized on active uplinks to increase their telecrystal count."
 	item = /obj/item/stack/telecrystal
 	cost = 1
 	surplus = 0
@@ -226,13 +226,13 @@
 	purchase_log_vis = FALSE
 
 /datum/uplink_item/bundles_tc/telecrystal/five
-	name = "5 InteQ Credits"
-	desc = "Five golden credits. Can be inserted into Uplink."
+	name = "5 Raw Telecrystals"
+	desc = "Five telecrystals in their rawest and purest form; can be utilized on active uplinks to increase their telecrystal count."
 	item = /obj/item/stack/telecrystal/five
 	cost = 5
 
 /datum/uplink_item/bundles_tc/telecrystal/twenty
-	name = "20 InteQ Credits"
-	desc = "Twenty golden credits. Can be inserted into Uplink."
+	name = "20 Raw Telecrystals"
+	desc = "Twenty telecrystals in their rawest and purest form; can be utilized on active uplinks to increase their telecrystal count."
 	item = /obj/item/stack/telecrystal/twenty
 	cost = 20

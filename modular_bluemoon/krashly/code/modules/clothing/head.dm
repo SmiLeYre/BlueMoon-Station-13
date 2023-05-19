@@ -57,17 +57,3 @@
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/head.dmi'
 	icon_state = "inteq_swat"
 	item_state = "inteq_swat"
-
-/obj/item/clothing/head/maidheadband/syndicate/inteq
-	name = "InteQ maid headband"
-	desc = "Battle maids, Holy Fuck."
-	icon = 'modular_bluemoon/krashly/icons/obj/clothing/head.dmi'
-	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/head.dmi'
-	icon_state = "inteqheadband"
-	item_state = "inteqheadband"
-
-/obj/item/clothing/head/maidheadband/syndicate/inteq/white
-	name = "white maid headband"
-	desc = "Battle maids, Holy Fuck."
-	icon_state = "maid_headband"
-	item_state = "maid_headband"

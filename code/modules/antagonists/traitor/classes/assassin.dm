@@ -1,6 +1,6 @@
 /datum/traitor_class/human/subterfuge/assassin
-	name = "InteQ Agent"
-	employer = "Sol Government"
+	name = "Donk Co Operative"
+	employer = "Donk Corporation"
 	weight = 6
 	chaos = 1
 	threat  = 2

@@ -34,13 +34,13 @@
 /datum/outfit/vr/syndicate/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	. = ..()
 	var/key = H.key ? H.key : preference_source ? preference_source.key : null
-	var/obj/item/inteq/uplink/syndicate/nuclear/U = new /obj/item/uplink/nuclear_restricted(H, key, 80)
+	var/obj/item/uplink/U = new /obj/item/uplink/nuclear_restricted(H, key, 80)
 	H.equip_to_slot_or_del(U, ITEM_SLOT_BACKPACK)
 	var/obj/item/implant/weapons_auth/W = new
 	W.implant(H)
 	var/obj/item/implant/explosive/E = new
 	E.implant(H)
-	H.faction |= ROLE_INTEQ
+	H.faction |= ROLE_SYNDICATE
 	H.update_icons()
 
 /obj/item/paper/fluff/vr/fluke_ops

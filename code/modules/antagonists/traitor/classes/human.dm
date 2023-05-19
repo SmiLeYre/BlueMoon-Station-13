@@ -1,5 +1,5 @@
 /datum/traitor_class/human
-	name = "InteQ Agent"
+	name = "Syndicate Agent"
 	chaos = 0
 
 /datum/traitor_class/human/forge_objectives(datum/antagonist/traitor/T)

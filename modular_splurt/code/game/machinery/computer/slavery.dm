@@ -195,7 +195,7 @@
 		if("recruit")
 			var/mob/living/M = collar.loc
 
-			if(QDELETED(M) || jobban_isbanned(M, ROLE_SLAVER) || jobban_isbanned(M, ROLE_INTEQ))
+			if(QDELETED(M) || jobban_isbanned(M, ROLE_SLAVER) || jobban_isbanned(M, ROLE_SYNDICATE))
 				radioAnnounce("[M.real_name] has failed the background check and cannot join our cause.")
 				collar.nextRecruitChance = INFINITY
 				return

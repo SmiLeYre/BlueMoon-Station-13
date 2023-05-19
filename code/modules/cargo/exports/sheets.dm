@@ -164,6 +164,6 @@
 /datum/export/stack/telecrystal
 	unit_name = "raw"
 	cost = 1000
-	message = "InteQ credits"
+	message = "telecrystals"
 	export_types = list(/obj/item/stack/telecrystal)
 

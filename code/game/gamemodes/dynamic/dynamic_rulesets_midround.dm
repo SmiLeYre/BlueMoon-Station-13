@@ -180,12 +180,12 @@
 
 //////////////////////////////////////////////
 //                                          //
-//           INTEQ TRAITORS             //
+//           SYNDICATE TRAITORS             //
 //                                          //
 //////////////////////////////////////////////
 
 /datum/dynamic_ruleset/midround/autotraitor
-	name = "InteQ Sleeper Agent"
+	name = "Syndicate Sleeper Agent"
 	antag_datum = /datum/antagonist/traitor
 	antag_flag = "traitor mid"
 	protected_roles = list("Prisoner", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
