@@ -315,10 +315,24 @@
 	parry_efficiency_considered_successful = 15
 	parry_failed_stagger_duration = 4 SECONDS
 
-///InteQ Uplink and Pods additions
+// Traitor Chainsaw
+/obj/item/chainsaw/inteq_chainsaw
+	name = "Chainsaw"
+	desc = "<span class='warning'>VRRRRRRR!!!</span>"
+	armour_penetration = 40
+	force_on = 30
+
+///InteQ Uplink additions
 
 /datum/uplink_item/inteq/inteq_sledgehammer
 	name = "Sledgehammer"
-	desc = "A murderous weapon, perfect for dealing fracture wounds and breaching structures. Bought massively from NRI mercenaries, it has become one of the most beloved InteQ weapons."
+	desc = "A murderous weapon, perfect for dealing fracture wounds and breaching structures. Posses some blocking and armor piecing capabilities.\
+	Bought massively from NRI mercenaries, it has become one of the most beloved InteQ weapons."
 	item = /obj/item/inteq_sledgehammer
 	cost = 10
+
+/datum/uplink_item/dangerous/inteq_chainsaw
+	name = "Chainsaw"
+	desc = "A high powered chainsaw for cutting up ...you know...."
+	item = /obj/item/chainsaw/inteq_chainsaw
+	cost = 12
