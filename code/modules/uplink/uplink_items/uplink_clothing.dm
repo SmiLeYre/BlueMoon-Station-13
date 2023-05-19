@@ -8,16 +8,16 @@
 //Space Suits and Hardsuits
 
 /datum/uplink_item/suits/turtlenck
-	name = "Tactical Turtleneck"
+	name = "Brown Tactical Turtleneck"
 	desc = "A slightly armored conspicious jumpsuit that has no suit sensors attached to them, if someone sees you in this hope they think its a fake."
-	item = /obj/item/clothing/under/syndicate
+	item = /obj/item/clothing/under/inteq
 	cost = 1
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
 
 /datum/uplink_item/suits/turtlenck_skirt
-	name = "Tactical Skirtleneck"
+	name = "Brown Tactical Skirtleneck"
 	desc = "A slightly armored conspicious jumpsuit that has no suit sensors attached to them, if someone sees you in this hope they think its a fake."
-	item = /obj/item/clothing/under/syndicate/skirt
+	item = /obj/item/clothing/under/inteq_skirt
 	cost = 1
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
 
@@ -43,37 +43,37 @@
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
 
 /datum/uplink_item/suits/space_suit
-	name = "Syndicate Space Suit"
-	desc = "This red and black Syndicate space suit is less encumbering than Nanotrasen variants, \
-			fits inside bags, and has a weapon slot. Nanotrasen crew members are trained to report red space suit \
+	name = "InteQ Space Suit"
+	desc = "This Yellow and Black Inteq space suit is less encumbering than Nanotrasen variants, \
+			fits inside bags, and has a weapon slot. Nanotrasen crew members are trained to report InteQ space suit \
 			sightings, however."
 	item = /obj/item/storage/box/syndie_kit/space
 	cost = 4
 
 /datum/uplink_item/suits/hardsuit
-	name = "Syndicate Hardsuit"
-	desc = "The feared suit of a Syndicate nuclear agent. Features slightly better armoring and a built in jetpack \
+	name = "InteQ Hardsuit"
+	desc = "The feared suit of a Admiral Brown's Chancellery. Features slightly better armoring and a built in jetpack \
 			that runs off standard atmospheric tanks. Toggling the suit in and out of \
 			combat mode will allow you all the mobility of a loose fitting uniform without sacrificing armoring. \
 			Additionally the suit is collapsible, making it small enough to fit within a backpack. \
 			Nanotrasen crew who spot these suits are known to panic."
-	item = /obj/item/clothing/suit/space/hardsuit/syndi
+	item = /obj/item/clothing/suit/space/hardsuit/syndi/inteq
 	cost = 8
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS) //you can't buy it in nuke, because the elite hardsuit costs the same while being better
 
 /datum/uplink_item/suits/hardsuit/elite
-	name = "Elite Syndicate Hardsuit"
-	desc = "An upgraded, elite version of the Syndicate hardsuit. It features fireproofing, and also \
-			provides the user with superior armor and mobility compared to the standard Syndicate hardsuit."
-	item = /obj/item/clothing/suit/space/hardsuit/syndi/elite
+	name = "Elite InteQ Hardsuit"
+	desc = "An upgraded, elite version of the Admiral Brown's Chancellery hardsuit. It features fireproofing, and also \
+			provides the user with superior armor and mobility compared to the standard InteQ hardsuit."
+	item = /obj/item/clothing/suit/space/hardsuit/syndi/elite/inteq
 	cost = 8
 	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS
 
 /datum/uplink_item/suits/hardsuit/shielded
-	name = "Shielded Syndicate Hardsuit"
-	desc = "An upgraded version of the standard Syndicate hardsuit. It features a built-in energy shielding system. \
+	name = "Shielded InteQ Hardsuit"
+	desc = "An upgraded version of the standard Admiral Brown's Chancellery hardsuit. It features a built-in energy shielding system. \
 			The shields can handle up to three impacts within a short duration and will rapidly recharge while not under fire."
-	item = /obj/item/clothing/suit/space/hardsuit/shielded/syndi
+	item = /obj/item/clothing/suit/space/hardsuit/shielded/syndi/inteq
 	cost = 30
 	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS
 

@@ -339,7 +339,7 @@
 	name = "black gloves"
 	desc = "Gloves made with completely frictionless, insulated cloth, easier to steal from people with."
 	icon_state = "thief"
-	item_state = "blackgloves"
+	item_state = "sprayon"
 	siemens_coefficient = 0
 	permeability_coefficient = 0.05
 	strip_delay = 80

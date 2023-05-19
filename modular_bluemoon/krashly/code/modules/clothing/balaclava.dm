@@ -5,6 +5,7 @@
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/mask.dmi'
 	icon_state = "officer_mask"
 	item_state = "officer_mask"
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 //InteQ
 
@@ -15,3 +16,4 @@
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/mask.dmi'
 	icon_state = "inteq_balaclava"
 	item_state = "inteq_balaclava"
+	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/mask_muzzled.dmi'

@@ -10,7 +10,7 @@ GLOBAL_LIST_EMPTY(uplinks)
 **/
 /datum/component/uplink
 	dupe_mode = COMPONENT_DUPE_UNIQUE
-	var/name = "syndicate uplink"
+	var/name = "InteQ uplink"
 	var/active = FALSE
 	var/lockable = TRUE
 	var/locked = TRUE
@@ -159,7 +159,7 @@ GLOBAL_LIST_EMPTY(uplinks)
 	active = TRUE
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "Uplink", name)
+		ui = new(user, src, "UplinkInteQ", name)
 		// This UI is only ever opened by one person,
 		// and never is updated outside of user input.
 		ui.set_autoupdate(FALSE)

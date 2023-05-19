@@ -10,7 +10,7 @@
 	enemy_minimum_age = 7
 
 	announce_span = "danger"
-	announce_text = "Syndicate forces are approaching the station in an attempt to destroy it!\n\
+	announce_text = "InteQ forces are approaching the station in an attempt to destroy it!\n\
 	<span class='danger'>Operatives</span>: Secure the nuclear authentication disk and use your nuke to destroy the station.\n\
 	<span class='notice'>Crew</span>: Defend the nuclear authentication disk and ensure that it leaves with you on the emergency shuttle."
 
@@ -109,7 +109,7 @@
 			SSticker.news_report = OPERATIVE_SKIRMISH
 
 /datum/game_mode/nuclear/generate_report()
-	return "One of Central Command's trading routes was recently disrupted by a raid carried out by the Gorlex Marauders. They seemed to only be after one ship - a highly-sensitive \
+	return "One of Central Command's trading routes was recently disrupted by a raid carried out by the Admiral Brown's Chancellery. They seemed to only be after one ship - a highly-sensitive \
 			transport containing a nuclear fission explosive, although it is useless without the proper code and authorization disk. While the code was likely found in minutes, the only disk that \
 			can activate this explosive is on your station. Ensure that it is protected at all times, and remain alert for possible intruders."
 
@@ -117,9 +117,9 @@
 	return M && istype(M) && M.mind && M.mind.has_antag_datum(/datum/antagonist/nukeop)
 
 /datum/outfit/syndicate
-	name = "Syndicate Operative - Basic"
+	name = "InteQ Operative - Basic"
 
-	uniform = /obj/item/clothing/under/syndicate
+	uniform = /obj/item/clothing/under/inteq
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/combat
 	back = /obj/item/storage/backpack
@@ -130,13 +130,13 @@
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1,\
 		/obj/item/kitchen/knife/combat/survival)
 
-	var/tc = 25
+	var/tc = 30
 	var/command_radio = FALSE
-	var/uplink_type = /obj/item/uplink/nuclear
+	var/uplink_type = /obj/item/inteq/uplink/syndicate/nuclear
 
 
 /datum/outfit/syndicate/leader
-	name = "Syndicate Leader - Basic"
+	name = "InteQ Leader - Basic"
 	id = /obj/item/card/id/syndicate/nuke_leader
 	gloves = /obj/item/clothing/gloves/krav_maga/combatglovesplus
 	r_hand = /obj/item/nuclear_challenge
@@ -160,26 +160,26 @@
 	W.implant(H)
 	var/obj/item/implant/explosive/E = new
 	E.implant(H)
-	H.faction |= ROLE_SYNDICATE
+	H.faction |= ROLE_INTEQ
 	H.update_icons()
 
 /datum/outfit/syndicate/full
-	name = "Syndicate Operative - Full Kit"
+	name = "InteQ Operative - Full Kit"
 
 	glasses = /obj/item/clothing/glasses/night/syndicate
-	mask = /obj/item/clothing/mask/gas/syndicate
-	suit = /obj/item/clothing/suit/space/hardsuit/syndi
+	mask = /obj/item/clothing/mask/gas/sechailer
+	suit = /obj/item/clothing/suit/space/hardsuit/syndi/elite/inteq
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 	internals_slot = ITEM_SLOT_RPOCKET
-	belt = /obj/item/storage/belt/military
-	r_hand = /obj/item/gun/ballistic/automatic/shotgun/bulldog
+	belt = /obj/item/storage/belt/military/inteq
+	r_hand = /obj/item/gun/ballistic/automatic/ak12
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1,\
 		/obj/item/tank/jetpack/oxygen/harness=1,\
 		/obj/item/gun/ballistic/automatic/pistol=1,\
 		/obj/item/kitchen/knife/combat/survival)
 
 /datum/outfit/syndicate/lone
-	name = "Syndicate Operative - Lone"
+	name = "Lone Operative"
 
 	glasses = /obj/item/clothing/glasses/night/syndicate
 	mask = /obj/item/clothing/mask/gas/syndicate
@@ -194,6 +194,7 @@
 	/obj/item/gun/ballistic/automatic/pistol=1,\
 	/obj/item/kitchen/knife/combat/survival)
 
+	uplink_type = /obj/item/inteq/uplink/syndicate/nuclear
 	tc = 60
 
 /datum/outfit/syndicate/syndiesquad
@@ -216,7 +217,7 @@
 	R.freqlock = TRUE
 
 	var/key = H.key ? H.key : preference_source ? preference_source.key : null
-	var/obj/item/uplink/U = new /obj/item/uplink/nuclear_restricted(H, key, 80)
+	var/obj/item/inteq/uplink/syndicate/U = new /obj/item/uplink/nuclear_restricted(H, key, 80)
 	H.equip_to_slot_or_del(U, ITEM_SLOT_BACKPACK)
 
 	var/obj/item/implant/mindshield/L = new //Here you go Deuryn

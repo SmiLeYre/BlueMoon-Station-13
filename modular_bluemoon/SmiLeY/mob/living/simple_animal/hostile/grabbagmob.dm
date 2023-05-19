@@ -733,7 +733,7 @@
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_plas" = 0, "max_plas" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
 	maxbodytemp = 1500
-	faction = list(ROLE_SYNDICATE)
+	faction = list(ROLE_INTEQ)
 	pressure_resistance = 200
 	gold_core_spawnable = HOSTILE_SPAWN
 

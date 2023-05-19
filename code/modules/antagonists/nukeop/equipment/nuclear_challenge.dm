@@ -19,7 +19,7 @@ GLOBAL_VAR_INIT(war_declared, FALSE)
 			Such a brazen move will attract the attention of powerful benefactors within the Syndicate, who will supply your team with a massive amount of bonus telecrystals.  \
 			Must be used within five minutes, or your benefactors will lose interest."
 	var/declaring_war = FALSE
-	var/uplink_type = /obj/item/uplink/nuclear
+	var/uplink_type = /obj/item/inteq/uplink/radio/nuclear
 
 /obj/item/nuclear_challenge/attack_self(mob/living/user)
 	if(!check_allowed(user))
@@ -55,7 +55,7 @@ GLOBAL_VAR_INIT(war_declared, FALSE)
 
 	priority_announce(war_declaration, title = "Declaration of War", sound = 'sound/machines/alarm.ogg', has_important_message = TRUE)
 
-	to_chat(user, "You've attracted the attention of powerful forces within the syndicate. A bonus bundle of telecrystals has been granted to your team. Great things await you if you complete the mission.")
+	to_chat(user, "You've attracted the attention of powerful forces within the InteQ. A bonus bundle of Credits has been granted to your team. Great things await you if you complete the mission.")
 
 	for(var/V in GLOB.syndicate_shuttle_boards)
 		var/obj/item/circuitboard/computer/syndicate_shuttle/board = V

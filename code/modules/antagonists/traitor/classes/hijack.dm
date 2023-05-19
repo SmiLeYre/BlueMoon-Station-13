@@ -1,6 +1,6 @@
 /datum/traitor_class/human/hijack
-	name = "Gorlex Marauder"
-	employer = "The Gorlex Marauders"
+	name = "InteQ Agent"
+	employer = "Admiral Brown's Chancellery"
 	weight = 3
 	chaos = 5
 	threat = 3
@@ -9,7 +9,7 @@
 
 /datum/traitor_class/human/hijack/forge_objectives(datum/antagonist/traitor/T)
 	var/datum/objective/hijack/O = new
-	O.explanation_text = "The Gorlex Marauders are letting you do what you want, with one condition: the shuttle must be hijacked by hacking its navigational protocols through the control console (alt click emergency shuttle console)."
+	O.explanation_text = "InteQ are letting you do what you want, with one condition: the shuttle must be hijacked by hacking its navigational protocols through the control console (alt click emergency shuttle console)."
 	O.owner = T.owner
 	T.add_objective(O)
 	return

@@ -54,7 +54,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/tip_delay = 500 //tip delay in milliseconds
 
 	//Antag preferences
-	var/list/be_special = list()		//Special role selection. ROLE_SYNDICATE being missing means they will never be antag!
+	var/list/be_special = list()		//Special role selection. ROLE_INTEQ being missing means they will never be antag!
 	var/tmp/old_be_special = 0			//Bitflag version of be_special, used to update old savefiles and nothing more
 										//If it's 0, that's good, if it's anything but 0, the owner of this prefs file's antag choices were,
 										//autocorrected this round, not that you'd need to check that.
@@ -1336,7 +1336,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 					dat += "<h2>Special Role Settings</h2>"
 
-					if(jobban_isbanned(user, ROLE_SYNDICATE))
+					if(jobban_isbanned(user, ROLE_INTEQ))
 						dat += "<font color=red><b>You are banned from antagonist roles.</b></font>"
 						src.be_special = list()
 

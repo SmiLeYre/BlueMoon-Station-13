@@ -229,13 +229,13 @@
 	name = "Syndicate Surgery Duffel Bag"
 	desc = "The Syndicate surgery duffel bag is a toolkit containing all surgery tools, surgical drapes, \
 			a Syndicate brand MMI, a straitjacket, and a muzzle."
-	item = /obj/item/storage/backpack/duffelbag/syndie/surgery
+	item = /obj/item/storage/backpack/duffelbag/syndie/inteq/surgery
 	cost = 3
 
 /datum/uplink_item/device_tools/surgerybag_adv
 	name = "Advanced Syndicate Surgery Duffel Bag"
 	desc = "A Syndicate surgery duffel bag, with a set of upgraded surgery tools to boot."
-	item = /obj/item/storage/backpack/duffelbag/syndie/surgery_adv
+	item = /obj/item/storage/backpack/duffelbag/syndie/inteq/surgery_adv
 	cost = 6
 
 /datum/uplink_item/device_tools/encryptionkey

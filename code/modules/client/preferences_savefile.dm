@@ -309,7 +309,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		var/list/L
 		S["be_special"] >> L
 		if(islist(L))
-			L -= ROLE_SYNDICATE
+			L -= ROLE_INTEQ
 		S["be_special"] << L
 
 	if(current_version < 51) //humans can have digi legs now, make sure they dont default to them or human players will murder me in my sleep

@@ -517,7 +517,7 @@
 	id = /obj/item/card/id/syndicate
 
 /datum/outfit/syndicate_empty/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
-	H.faction |= ROLE_SYNDICATE
+	H.faction |= ROLE_INTEQ
 
 /obj/effect/mob_spawn/human/syndicate/battlecruiser
 	name = "Syndicate Battlecruiser Ship Operative"
@@ -1310,7 +1310,7 @@
 	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE, ACCESS_SYNDICATE_LEADER)
 
 /datum/outfit/ds2/syndicate/post_equip(mob/living/carbon/human/syndicate)
-	syndicate.faction |= ROLE_SYNDICATE
+	syndicate.faction |= ROLE_INTEQ
 	return ..()
 
 //DS-2 Command
@@ -1383,7 +1383,7 @@
 	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE, ACCESS_SYNDICATE_LEADER)
 
 /datum/outfit/ds2/syndicate_command/post_equip(mob/living/carbon/human/syndicate)
-	syndicate.faction |= ROLE_SYNDICATE
+	syndicate.faction |= ROLE_INTEQ
 	return ..()
 
 /// DS-2

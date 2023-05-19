@@ -6,9 +6,9 @@
 	antag_moodlet = /datum/mood_event/focused
 	skill_modifiers = list(/datum/skill_modifier/job/level/wiring/basic)
 	hijack_speed = 0.5				//10 seconds per hijack stage by default
-	ui_name = "AntagInfoTraitor"
-	suicide_cry = "FOR THE SYNDICATE!!"
-	var/employer = "The Syndicate"
+	ui_name = "AntagInfoInteQ"
+	suicide_cry = "FOR THE ADMIRAL BROWN!!"
+	var/employer = "InteQ"
 	var/give_objectives = TRUE
 	var/should_give_codewords = TRUE
 	var/should_equip = TRUE
@@ -107,7 +107,7 @@
 	traitor_kind.forge_objectives(src)
 
 /datum/antagonist/traitor/greet()
-	to_chat(owner.current, "<B><font size=3 color=red>You are the [owner.special_role].</font></B>")
+	to_chat(owner.current, "<B><font size=3 color=yellow>You are the [owner.special_role].</font></B>")
 	traitor_kind.greet(src)
 	owner.announce_objectives()
 	if(should_give_codewords)
@@ -127,7 +127,7 @@
 	if(traitor_kind.finalize_traitor(src))
 		if(should_equip)
 			equip(silent)
-		owner.current.playsound_local(get_turf(owner.current), 'sound/ambience/antag/tatoralert.ogg', 100, FALSE, pressure_affected = FALSE)
+		owner.current.playsound_local(get_turf(owner.current), 'sound/ambience/antag/inteq.ogg', 100, FALSE, pressure_affected = FALSE)
 
 /datum/antagonist/traitor/antag_panel_objectives()
 	. += "<i><b>Traitor class:</b></i> <a href='?src=[REF(owner)];traitor_class=1;target_antag=[REF(src)]'>[traitor_kind.employer]</a><br>"
@@ -169,7 +169,7 @@
 	data["theme"] = traitor_kind.tgui_theme //traitor_flavor["ui_theme"]
 	data["code"] = uplink.unlock_code
 	data["intro"] = "You are from [traitor_kind.employer]." //traitor_flavor["introduction"]
-	data["allies"] = "Most other syndicate operatives are not to be trusted (but try not to rat them out), as they might have been assigned opposing objectives." //traitor_flavor["allies"]
+	data["allies"] = "Most other InteQ operatives are not to be trusted (but try not to rat them out), as they might have been assigned opposing objectives." //traitor_flavor["allies"]
 	data["goal"] = "We do not approve of mindless killing of innocent workers; \"get in, get done, get out\" is our motto." //traitor_flavor["goal"]
 	data["has_uplink"] = uplink ? TRUE : FALSE
 	if(uplink)
@@ -188,7 +188,7 @@
 	var/phrases = jointext(GLOB.syndicate_code_phrase, ", ")
 	var/responses = jointext(GLOB.syndicate_code_response, ", ")
 
-	to_chat(traitor_mob, "<U><B>The Syndicate have provided you with the following codewords to identify fellow agents:</B></U>")
+	to_chat(traitor_mob, "<U><B>InteQ have provided you with the following codewords to identify fellow agents:</B></U>")
 	to_chat(traitor_mob, "<B>Code Phrase</B>: [span_blue("[phrases]")]")
 	to_chat(traitor_mob, "<B>Code Response</B>: [span_red("[responses]")]")
 
@@ -206,7 +206,7 @@
 	var/law_borg = "Accomplish your AI's objectives at all costs."
 	killer.set_zeroth_law(law, law_borg)
 	killer.set_syndie_radio()
-	to_chat(killer, "Your radio has been upgraded! Use :t to speak on an encrypted channel with Syndicate Agents!")
+	to_chat(killer, "Your radio has been upgraded! Use :t to speak on an encrypted channel with InteQ Agents!")
 	killer.add_malf_picker()
 
 /datum/antagonist/traitor/proc/equip(var/silent = FALSE)
@@ -249,7 +249,7 @@
 	var/equipped_slot = mob.equip_in_one_of_slots(folder, slots, critical = TRUE)
 	if (equipped_slot)
 		where = "In your [equipped_slot]"
-	to_chat(mob, "<BR><BR><span class='info'>[where] is a folder containing <b>secret documents</b> that another Syndicate group wants. We have set up a meeting with one of their agents on station to make an exchange. Exercise extreme caution as they cannot be trusted and may be hostile.</span><BR>")
+	to_chat(mob, "<BR><BR><span class='info'>[where] is a folder containing <b>secret documents</b> that another InteQ group wants. We have set up a meeting with one of their agents on station to make an exchange. Exercise extreme caution as they cannot be trusted and may be hostile.</span><BR>")
 
 /datum/antagonist/traitor/roundend_report()
 	var/list/result = list()
@@ -286,7 +286,7 @@
 			count++
 
 	if(uplink_owned)
-		var/uplink_text = "(used [used_telecrystals] TC) [purchases]"
+		var/uplink_text = "(used [used_telecrystals] CR) [purchases]"
 		if((used_telecrystals == 0) && traitor_won)
 			var/static/icon/badass = icon('icons/badass.dmi', "badass")
 			uplink_text += "<BIG>[icon2html(badass, world)]</BIG>"

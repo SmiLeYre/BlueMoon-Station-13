@@ -111,7 +111,7 @@
 
 /datum/uplink_item/implants/uplink
 	name = "Uplink Implant"
-	desc = "An implant injected into the body, and later activated at the user's will. Has no telecrystals and must be charged by the use of physical telecrystals. \
+	desc = "An implant injected into the body, and later activated at the user's will. Has no credits and must be charged by the use of physical credits. \
 			Undetectable (except via surgery), and excellent for escaping confinement."
 	item = /obj/item/storage/box/syndie_kit/imp_uplink
 	cost = 4

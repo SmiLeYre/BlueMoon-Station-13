@@ -1,19 +1,19 @@
 #define SYNDICATE_CHALLENGE_TIMER 17500	// ¯\_(ツ)_/¯ minutes
 
 /obj/machinery/computer/shuttle/syndicate
-	name = "syndicate shuttle terminal"
-	desc = "The terminal used to control the syndicate transport shuttle."
+	name = "InteQ shuttle terminal"
+	desc = "The terminal used to control the InteQ transport shuttle."
 	circuit = /obj/item/circuitboard/computer/syndicate_shuttle
 	icon_screen = "syndishuttle"
 	icon_keyboard = "syndie_key"
-	light_color = LIGHT_COLOR_RED
+	light_color = LIGHT_COLOR_ORANGE
 	req_access = list(ACCESS_SYNDICATE)
 	shuttleId = "syndicate"
 	possible_destinations = "syndicate_away;syndicate_z5;syndicate_ne;syndicate_nw;syndicate_n;syndicate_se;syndicate_sw;syndicate_s;syndicate_custom"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
 /obj/machinery/computer/shuttle/syndicate/allowed(mob/M)
-	if(issilicon(M) && !(ROLE_SYNDICATE in M.faction))
+	if(issilicon(M) && !(ROLE_INTEQ in M.faction))
 		return FALSE
 	return ..()
 
@@ -36,12 +36,12 @@
 	return ..()
 
 /obj/machinery/computer/shuttle/syndicate/recall
-	name = "syndicate shuttle recall terminal"
+	name = "InteQ shuttle recall terminal"
 	desc = "Use this if your friends left you behind."
 	possible_destinations = "syndicate_away"
 
 /obj/machinery/computer/shuttle/syndicate/drop_pod
-	name = "syndicate assault pod control"
+	name = "InteQ assault pod control"
 	desc = "Controls the drop pod's launch system."
 	icon = 'icons/obj/terminals.dmi'
 	icon_state = "dorm_available"
@@ -52,7 +52,7 @@
 	clockwork = TRUE //it'd look weird
 
 /obj/machinery/computer/camera_advanced/shuttle_docker/syndicate
-	name = "syndicate shuttle navigation computer"
+	name = "InteQ shuttle navigation computer"
 	desc = "Used to designate a precise transit location for the syndicate shuttle."
 	icon_screen = "syndishuttle"
 	icon_keyboard = "syndie_key"

@@ -5,9 +5,7 @@
 	icon_state = "mirror"
 	w_class = WEIGHT_CLASS_SMALL
 
-// Функция зеркала
-
-/obj/item/hand_mirror/attack_self(mob/user)
+/obj/item/hand_mirror/attack_self(mob/user) // Функция зеркала
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 
@@ -32,7 +30,7 @@
 //InteQ
 
 /obj/item/poster/random_inteq
-	name = "random inteq poster"
+	name = "random InteQ poster"
 	poster_type = /obj/structure/sign/poster/contraband/inteq/random
 	icon_state = "rolled_contraband"
 
@@ -48,16 +46,22 @@
 	icon = 'modular_bluemoon/krashly/icons/obj/poster.dmi'
 	icon_state = "poster_inteq"
 
-/obj/item/storage/inteq_box
+/obj/structure/sign/poster/contraband/inteq/inteq_sign
+	name = "InteQ poster"
+	desc = "A shrouded organization that fights the pact between the NT and the Syndicate."
+	icon = 'modular_bluemoon/krashly/icons/obj/poster.dmi'
+	icon_state = "poster_inteq_baza"
+
+/obj/item/storage/box/inteq_box
 	name = "brown box"
 	desc = "There are definitely no dangerous items inside."
 	icon = 'modular_bluemoon/krashly/icons/obj/box.dmi'
 	icon_state = "inteqbox"
 
-/obj/item/storage/inteq_box/inteq_clothes
+/obj/item/storage/box/inteq_box/inteq_clothes
 	name = "clothes kit"
 
-/obj/item/storage/inteq_box/inteq_clothes/PopulateContents()
+/obj/item/storage/box/inteq_box/inteq_clothes/PopulateContents()
 	new /obj/item/clothing/under/inteq(src)
 	new /obj/item/clothing/suit/armor/inteq(src)
 	new /obj/item/clothing/gloves/combat(src)
@@ -68,11 +72,9 @@
 	new /obj/item/clothing/mask/balaclava/inteq(src)
 	new /obj/item/storage/backpack/security/inteq(src)
 
-/////////
 // Лодаут
 
 /datum/gear/accessory/hand_mirror
 	name = "A hand mirror"
 	path = /obj/item/hand_mirror
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
-

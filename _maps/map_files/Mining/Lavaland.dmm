@@ -4593,7 +4593,9 @@
 /turf/open/floor/plasteel,
 /area/mine/production)
 "wB" = (
-/obj/machinery/vending/wardrobe/syndie_wardrobe,
+/obj/machinery/vending/wardrobe/syndie_wardrobe{
+	onstation_override = 1
+	},
 /turf/open/floor/carpet/royalblue,
 /area/mine/storage)
 "wC" = (

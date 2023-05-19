@@ -1,7 +1,7 @@
 /obj/item/stack/telecrystal
-	name = "telecrystal"
-	desc = "It seems to be pulsing with suspiciously enticing energies."
-	singular_name = "telecrystal"
+	name = "credit"
+	desc = "This is money. Dirty money.."
+	singular_name = "credit"
 	icon = 'icons/obj/telescience.dmi'
 	icon_state = "telecrystal"
 	grind_results = list(/datum/reagent/telecrystal = 20)
@@ -31,7 +31,7 @@
 			return
 		cart.telecrystals += amount
 		use(amount)
-		to_chat(user, "<span class='notice'>You slot [src] into [cart].  The next time it's used, it will also give telecrystals.</span>")
+		to_chat(user, "<span class='notice'>You slot [src] into [cart].  The next time it's used, it will also give credits.</span>")
 
 /obj/item/stack/telecrystal/five
 	amount = 5

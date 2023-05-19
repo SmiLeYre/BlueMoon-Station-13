@@ -581,33 +581,31 @@
 		/obj/item/clothing/under/syndicate/sniper = 3,
 		/obj/item/clothing/under/syndicate/camo = 3,
 		/obj/item/clothing/under/syndicate/combat = 3,
-		/obj/item/clothing/suit/armor/vest/infiltrator/gorlex_harness = 3,
-		/obj/item/clothing/shoes/combat = 3,
 		/obj/item/clothing/mask/gas/syndicate = 3,
 		/obj/item/clothing/mask/gas/sechailer/syndicate = 3,
-		/obj/item/clothing/suit/hooded/wintercoat/syndicate = 5,
 		/obj/item/clothing/head/soft/sec/syndicate = 3,
 		/obj/item/clothing/head/beret/sec/syndicate = 3,
 	)
 	contraband = list(
-		/obj/item/kitchen/knife/combat = 4,
 		/obj/item/clothing/under/syndicate/coldres = 2,
 		/obj/item/clothing/shoes/combat/coldres = 2,
+		/obj/item/kitchen/knife/combat = 3,
 	)
 	premium = list(
-		/obj/item/kitchen/knife/combat/survival/knuckledagger = 2,
+		/obj/item/kitchen/knife/combat/survival/knuckledagger = 3,
 		/obj/item/storage/fancy/cigarettes/cigpack_syndicate = 5,
-		/obj/item/lighter = 5,
-		/obj/item/clothing/gloves/combat = 3,
-		/obj/item/clothing/under/syndicate/maid = 5,
-		/obj/item/clothing/gloves/combat/maid = 5,
-		/obj/item/clothing/head/maidheadband/syndicate = 5,
-		/obj/item/clothing/suit/armor/vest/capcarapace/syndicate/winter = 2,
-		/obj/item/clothing/suit/armor/vest/capcarapace/syndicate = 2,
-		/obj/item/clothing/head/hats/warden/syndicate = 1
+		/obj/item/lighter/slime = 5,
+		/obj/item/clothing/suit/armor/vest/infiltrator/gorlex_harness = 1,
+		/obj/item/clothing/gloves/combat = 1,
+		/obj/item/clothing/under/syndicate/maid = 2,
+		/obj/item/clothing/gloves/combat/maid = 2,
+		/obj/item/clothing/head/maidheadband/syndicate = 2,
+		/obj/item/clothing/shoes/combat = 3,
+		/obj/item/card/id/syndicate = 3
 	)
 	refill_canister = /obj/item/vending_refill/wardrobe/syndie_wardrobe
 	light_color = COLOR_MOSTLY_PURE_RED
-
+	default_price = PRICE_ABOVE_EXPENSIVE
+	extra_price = PRICE_REALLY_EXPENSIVE
 /obj/item/vending_refill/wardrobe/syndie_wardrobe
-	machine_name = "SynDrobe"
+	machine_name = "\improper SynDrobe"

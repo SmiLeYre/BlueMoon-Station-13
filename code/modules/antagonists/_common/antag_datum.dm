@@ -214,7 +214,7 @@ GLOBAL_LIST_EMPTY(antagonists)
 /datum/antagonist/proc/is_banned(mob/M)
 	if(!M)
 		return FALSE
-	. = (jobban_isbanned(M, ROLE_SYNDICATE) || QDELETED(M) || (job_rank && (jobban_isbanned(M,job_rank) || QDELETED(M))))
+	. = (jobban_isbanned(M, ROLE_INTEQ) || QDELETED(M) || (job_rank && (jobban_isbanned(M,job_rank) || QDELETED(M))))
 
 /**
  * Proc that replaces a player who cannot play a specific antagonist due to being banned via a poll, and alerts the player of their being on the banlist.

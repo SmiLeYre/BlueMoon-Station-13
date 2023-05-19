@@ -123,7 +123,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/ak12
 	can_suppress = FALSE
-	burst_size = 3
+	burst_size = 2
 	fire_delay = 2
 	fire_sound = 'modular_bluemoon/krashly/sound/ak12_fire.ogg'
 
@@ -142,7 +142,7 @@
 	icon_state = "ak12_mag"
 	item_state = "ak12_mag"
 	ammo_type = /obj/item/ammo_casing/a556
-	caliber = "a5x45"
+	caliber = "a556"
 	max_ammo = 30
 	multiple_sprites = 2
 

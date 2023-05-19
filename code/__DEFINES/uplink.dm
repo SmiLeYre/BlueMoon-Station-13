@@ -6,8 +6,5 @@
 /// This item is purchasable to nuke ops
 #define UPLINK_NUKE_OPS (1 << 1)
 
-/// This item is purchasable to InteQ agents
-#define UPLINK_INTEQ (1 << 0)
-
 /// This item is purchasable to clown ops
 #define UPLINK_CLOWN_OPS (1 << 2)

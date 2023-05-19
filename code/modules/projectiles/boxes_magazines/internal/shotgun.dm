@@ -26,7 +26,7 @@
 /obj/item/ammo_box/magazine/internal/shot/com
 	name = "combat shotgun internal magazine"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
-	max_ammo = 6
+	max_ammo = 3 //BLUEMOON CHANGES - уменьшен размер для дробовика, чтобы вешался на броню. Но теперь он на 4 сумарных заряда.
 
 /obj/item/ammo_box/magazine/internal/shot/com/compact
 	name = "compact combat shotgun internal magazine"

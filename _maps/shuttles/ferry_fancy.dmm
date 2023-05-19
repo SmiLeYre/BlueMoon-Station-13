@@ -63,7 +63,12 @@
 /area/shuttle/transport)
 "m" = (
 /obj/machinery/computer/shuttle/ferry/request{
-	dir = 8
+	dir = 8;
+	pixel_x = -9
+	},
+/obj/machinery/computer/camera_advanced{
+	dir = 4;
+	pixel_x = 8
 	},
 /turf/open/floor/pod/dark,
 /area/shuttle/transport)
@@ -150,6 +155,14 @@
 	},
 /obj/item/clothing/mask/gas,
 /obj/item/clothing/mask/gas,
+/obj/item/gps,
+/obj/item/gps,
+/obj/item/gps,
+/obj/item/gps,
+/obj/item/tank/jetpack/oxygen/harness,
+/obj/item/tank/jetpack/oxygen/harness,
+/obj/item/tank/jetpack/oxygen/harness,
+/obj/item/tank/jetpack/oxygen/harness,
 /turf/open/floor/pod/light,
 /area/shuttle/transport)
 "O" = (
