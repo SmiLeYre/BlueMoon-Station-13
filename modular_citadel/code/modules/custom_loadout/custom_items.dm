@@ -414,7 +414,6 @@
 	item_state = "zuliecap"
 	icon = 'icons/obj/custom.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/custom_w.dmi'
-	flags_inv = HIDEEARS|HIDEHAIR
 	mutantrace_variation = STYLE_DIGITIGRADE|USE_TAUR_CLIP_MASK|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/suit/blackredgold

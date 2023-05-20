@@ -475,19 +475,19 @@
 
 /datum/supply_pack/misc/syndicate
 
-	name = "Assorted Syndicate Gear"
+	name = "Assorted Contraband Gear"
 
-	desc = "Contains a random assortment of syndicate gear."
+	desc = "Contains a random assortment of contraband gear."
 
 	special = TRUE ///Cannot be ordered via cargo
 
 	contains = list()
 
-	crate_name = "syndicate gear crate"
+	crate_name = "contraband gear crate"
 
 	crate_type = /obj/structure/closet/crate
 
-	var/crate_value = 30 ///Total TC worth of contained uplink items
+	var/crate_value = 20 ///Total TC worth of contained uplink items
 
 	uplink_flags = UPLINK_TRAITORS
 

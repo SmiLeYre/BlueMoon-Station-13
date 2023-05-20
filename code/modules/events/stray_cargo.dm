@@ -86,7 +86,7 @@
 
 ///A rare variant that drops a crate containing syndicate uplink items
 /datum/round_event_control/stray_cargo/syndicate
-	name = "Stray Syndicate Cargo Pod"
+	name = "Stray Contraband Cargo Pod"
 	typepath = /datum/round_event/stray_cargo/syndicate
 	weight = 75
 	max_occurrences = 10
