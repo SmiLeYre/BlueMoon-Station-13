@@ -288,28 +288,28 @@
 		O.take_damage(8)
 
 /datum/block_parry_data/inteq_sledgehammer
-	can_block_directions = BLOCK_DIR_NORTH | BLOCK_DIR_NORTHEAST | BLOCK_DIR_NORTHWEST
-	block_damage_absorption = 4
-	block_damage_multiplier = 0.15
+	can_block_directions = BLOCK_DIR_NORTH
+	block_damage_absorption = 3
+	block_damage_multiplier = 0.1
 	block_damage_multiplier_override = list(
-		ATTACK_TYPE_MELEE = 0.2
+		ATTACK_TYPE_MELEE = 0.1
 	)
 	block_start_delay = 0.5
-	block_stamina_cost_per_second = 4.5
+	block_stamina_cost_per_second = 6.5
 	block_stamina_efficiency = 2
 	block_lock_sprinting = TRUE
 	// no attacking while blocking
 	block_lock_attacking = TRUE
 
 	parry_time_windup = 0
-	parry_time_active = 6
+	parry_time_active = 3
 	parry_time_spindown = 0
 
 	parry_time_windup_visual_override = 1
 	parry_time_active_visual_override = 3
-	parry_time_spindown_visual_override = 4
+	parry_time_spindown_visual_override = 3
 	parry_flags = PARRY_DEFAULT_HANDLE_FEEDBACK
-	parry_time_perfect = 2
+	parry_time_perfect = 1
 	parry_time_perfect_leeway = 1
 	parry_imperfect_falloff_percent = 10
 	parry_efficiency_considered_successful = 15
