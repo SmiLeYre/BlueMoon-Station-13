@@ -151,7 +151,7 @@
 
 /obj/item/storage/secure/briefcase/rsh12_box
 	name = "\improper RSH-12 revolver box"
-	desc = "A storage case for a heavy HoS revolver."
+	desc = "A storage case for a heavy revolver."
 
 /obj/item/storage/secure/briefcase/rsh12_box/PopulateContents()
 	new /obj/item/gun/ballistic/shotgun/automatic/combat/rsh12(src)
@@ -320,7 +320,7 @@
 	name = "Chainsaw"
 	desc = "<span class='warning'>VRRRRRRR!!!</span>"
 	armour_penetration = 40
-	force_on = 30
+	force_on = 35
 
 ///InteQ Uplink additions
 
@@ -336,3 +336,10 @@
 	desc = "A high powered chainsaw for cutting up ...you know...."
 	item = /obj/item/chainsaw/inteq_chainsaw
 	cost = 12
+
+/datum/uplink_item/dangerous/rsh12
+	name = "RSH-12"
+	desc = "A russian-made semi-automatic gun, intended to use with 12 gauge. Goes with two rubber and one lethal slug speedloaders.\
+	Extremely powerful on a short range."
+	item = /obj/item/storage/secure/briefcase/rsh12_box
+	cost = 15
