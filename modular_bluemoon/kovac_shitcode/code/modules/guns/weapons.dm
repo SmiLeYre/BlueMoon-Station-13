@@ -322,18 +322,6 @@
 	armour_penetration = 40
 	force_on = 35
 
-
-// RSH-12 traitor's box
-/obj/item/storage/box/syndie_kit/rsh12_box
-	name = "\improper RSH-12 revolver box"
-	desc = "A storage case for a heavy revolver."
-
-/obj/item/storage/box/syndie_kit/rsh12_box/PopulateContents()
-	new /obj/item/gun/ballistic/shotgun/automatic/combat/rsh12(src)
-	new /obj/item/ammo_box/shotgun/loaded/rubbershot(src)
-	new /obj/item/ammo_box/shotgun/loaded/rubbershot(src)
-	new /obj/item/ammo_box/shotgun/loaded/buckshot(src)
-
 ///InteQ Uplink additions
 
 /datum/uplink_item/inteq/inteq_sledgehammer
@@ -348,10 +336,3 @@
 	desc = "A high powered chainsaw for cutting up ...you know...."
 	item = /obj/item/chainsaw/inteq_chainsaw
 	cost = 12
-
-/datum/uplink_item/dangerous/rsh12
-	name = "RSH-12"
-	desc = "A russian-made semi-automatic gun, intended to use with 12 gauge. Goes with two rubber and one lethal slug speedloaders.\
-	Extremely powerful on a short range."
-	item = /obj/item/storage/box/syndie_kit/rsh12_box
-	cost = 15
