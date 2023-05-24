@@ -56,6 +56,20 @@
 			nri_mech_list[initial(A.name)] = A
 	return nri_mech_list
 
+/obj/item/choice_beacon/sol_mech
+	name = "SolFed mech beacon"
+	desc = "Feel the power of the tesla. Glory to the Humanity!"
+
+/obj/item/choice_beacon/sol_mech/generate_display_names()
+	var/static/list/sol_mech_list = list("Zeus" = /obj/vehicle/sealed/mecha/combat/durand/zeus)
+	if(!sol_mech_list)
+		sol_mech_list = list()
+		var/list/templist = typesof(/obj/item/storage/box/hero) //we have to convert type = name to name = type, how lovely!
+		for(var/V in templist)
+			var/atom/A = V
+			sol_mech_list[initial(A.name)] = A
+	return sol_mech_list
+
 /obj/item/card/id/nri
 	name = "\improper NRI ID"
 	desc = "An Novaya Rossiyskya Imperia Spetsnaz ID card."

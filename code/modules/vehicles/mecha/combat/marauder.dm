@@ -20,7 +20,7 @@
 /obj/vehicle/sealed/mecha/combat/marauder/generate_actions()
 	. = ..()
 	initialize_passenger_action_type(/datum/action/vehicle/sealed/mecha/mech_smoke)
-	initialize_passenger_action_type(/datum/action/vehicle/sealed/mecha/syndicate/mech_zoom)
+	initialize_passenger_action_type(/datum/action/vehicle/sealed/mecha/mech_zoom)
 
 /obj/vehicle/sealed/mecha/combat/marauder/loaded/Initialize(mapload)
 	. = ..()
@@ -81,6 +81,11 @@
 	. = ..()
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/thrusters/ion(src)
 	ME.attach(src)
+
+/obj/vehicle/sealed/mecha/combat/marauder/mauler/generate_actions()
+	. = ..()
+	initialize_passenger_action_type(/datum/action/vehicle/sealed/mecha/mech_smoke)
+	initialize_passenger_action_type(/datum/action/vehicle/sealed/mecha/syndicate/mech_zoom)
 
 /obj/vehicle/sealed/mecha/combat/marauder/mauler/loaded/Initialize(mapload)
 	. = ..()

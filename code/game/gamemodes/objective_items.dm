@@ -28,15 +28,15 @@
 /datum/objective_item/steal/caplaser
 	name = "исключительно Старинный Лазерный Пистолет Капитана."
 	targetitem = /obj/item/gun/energy/laser/captain
-	difficulty = 5
+	difficulty = 10
 	excludefromjob = list("Captain")
 
 /datum/objective_item/steal/hoslaser
-	name = "личный лазерный Пистолет Главы Службы Безопасности."
+	name = "личное вооружение Синего Щита или Главы Службы Безопасности."
 	targetitem = /obj/item/gun/energy/e_gun/hos
-	difficulty = 10
+	difficulty = 8
 	excludefromjob = list("Head Of Security")
-	altitems = list(/obj/item/gun/ballistic/revolver/mws, /obj/item/choice_beacon/hosgun) //We now look for either the alt verson of the hos gun or the beacon picker.
+	altitems = list(/obj/item/gun/ballistic/revolver/mws, /obj/item/choice_beacon/hosgun, /obj/item/gun/ballistic/automatic/pistol/g22, /obj/item/gun/ballistic/shotgun/automatic/combat/rsh12) //We now look for either the alt verson of the hos gun or the beacon picker.
 
 /datum/objective_item/steal/handtele
 	name = "компактное телепортирующее устройство."

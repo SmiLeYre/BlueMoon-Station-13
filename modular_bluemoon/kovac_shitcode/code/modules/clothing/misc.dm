@@ -23,6 +23,71 @@
 		"Chest 2 Bloody" = list("icon_state" = "chestb")
 	)
 
+///
+
+
+/obj/item/clothing/mask/balaclava/breath/redscarf
+	name = "Security facescarf"
+	desc = "tacticool"
+	icon_state = "red"
+	item_state = "red"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/obj/clothing/misc.dmi'
+	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/misc.dmi'
+	flags_inv = HIDEFACE|HIDEFACIALHAIR
+	visor_flags_inv = HIDEFACE|HIDEFACIALHAIR
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	clothing_flags = ALLOWINTERNALS
+
+/obj/item/clothing/mask/balaclava/breath/redscarf/bluescarf
+	name = "Medical facescarf"
+	icon_state = "blue"
+	item_state = "blue"
+
+/obj/item/clothing/mask/balaclava/breath/redscarf/purplescarf
+	name = "Research facescarf"
+	icon_state = "purple"
+	item_state = "purple"
+
+/obj/item/clothing/mask/balaclava/breath/redscarf/yellowscarf
+	name = "Cargo facescarf"
+	icon_state = "yellow"
+	item_state = "yellow"
+
+
+/obj/item/clothing/mask/balaclava/breath/redscarf/greenscarf
+	name = "Facescarf"
+	icon_state = "green"
+	item_state = "green"
+
+/obj/item/clothing/mask/gas/syndicate/ds/wide
+	name = "wide shape balaclava"
+	desc = "For organising your tricky covert operations. Provided with additional fibers, allowing user to breath normally"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/obj/clothing/misc.dmi'
+	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/misc.dmi'
+	icon_state = "balaclava_wide"
+	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS|HIDEFACIALHAIR
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/mask/gas/syndicate/ds/mouth
+	name = "mouth balaclava"
+	desc = "Get down on the floor, cyka."
+	icon = 'modular_bluemoon/kovac_shitcode/icons/obj/clothing/misc.dmi'
+	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/misc.dmi'
+	icon_state = "balaclava_mouth"
+	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS|HIDEFACIALHAIR
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/mask/gas/syndicate/ds/coif
+	name = "terra gov balaclava"
+	desc = "Solar Federation tactical coif"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/obj/clothing/misc.dmi'
+	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/misc.dmi'
+	icon_state = "coif"
+	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS|HIDEFACIALHAIR
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+
+///
 
 /obj/item/clothing/under/rank/security/officer/urban_camo
 	name = "urban camouflage uniform"
@@ -30,6 +95,8 @@
 	icon_state = "urban_camo"
 	item_state = "urban_camo"
 
+
+///
 /datum/gear/neck/cross
 	name = "Christian Cross Necklace"
 	subcategory = LOADOUT_SUBCATEGORY_NECK_TIE

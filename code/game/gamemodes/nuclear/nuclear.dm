@@ -78,13 +78,13 @@
 	var result = nuke_team.get_result()
 	switch(result)
 		if(NUKE_RESULT_FLUKE)
-			SSticker.mode_result = "loss - syndicate nuked - disk secured"
+			SSticker.mode_result = "loss - InteQ nuked - disk secured"
 			SSticker.news_report = NUKE_SYNDICATE_BASE
 		if(NUKE_RESULT_NUKE_WIN)
-			SSticker.mode_result = "win - syndicate nuke"
+			SSticker.mode_result = "win - InteQ nuke"
 			SSticker.news_report = STATION_NUKED
 		if(NUKE_RESULT_NOSURVIVORS)
-			SSticker.mode_result = "halfwin - syndicate nuke - did not evacuate in time"
+			SSticker.mode_result = "halfwin - InteQ nuke - did not evacuate in time"
 			SSticker.news_report = STATION_NUKED
 		if(NUKE_RESULT_WRONG_STATION)
 			SSticker.mode_result = "halfwin - blew wrong station"

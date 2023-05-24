@@ -11,8 +11,8 @@ GLOBAL_VAR(changeling_team_objective_type) //If this is not null, we hand our th
 	antag_flag = ROLE_CHANGELING
 	false_report_weight = 10
 	chaos = 5
-	restricted_jobs = list("Prisoner", "AI", "Cyborg")
-	protected_jobs = list("Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Chief Engineer", "Chief Medical Officer", "Research Director", "Quartermaster")	//citadel change - adds HoP, CE, CMO, and RD to ling role blacklist
+	restricted_jobs = list("Prisoner", "AI", "Cyborg", "Shaft Miner")
+	protected_jobs = list("Security Officer", "Warden", "Detective", "Lawyer", "Blueshield", "Peacekeeper", "Brig Physician", "NanoTrasen Representative", "Head of Security", "Captain", "Head of Personnel", "Chief Engineer", "Chief Medical Officer", "Research Director", "Quartermaster")	//citadel change - adds HoP, CE, CMO, and RD to ling role blacklist
 	required_players = 15
 	required_enemies = 1
 	recommended_enemies = 4

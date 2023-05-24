@@ -153,6 +153,7 @@
 	if(picked_hit_type == "kicks" || picked_hit_type == "stomps on")
 		A.do_attack_animation(D, ATTACK_EFFECT_KICK)
 		playsound(get_turf(D), 'sound/effects/hit_kick.ogg', 50, 1, -1)
+		D.DefaultCombatKnockdown(80, override_hardstun = 1, override_stamdmg = 0)
 	else
 		A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
 		playsound(get_turf(D), 'sound/effects/hit_punch.ogg', 50, 1, -1)

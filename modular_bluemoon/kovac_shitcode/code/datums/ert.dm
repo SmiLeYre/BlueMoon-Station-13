@@ -27,7 +27,7 @@
 	ertphrase = "modular_bluemoon/kovac_shitcode/sound/ert/nri_send.ogg"
 
 /datum/ert/sol_ert // Солнечная Федерация
-	roles = list(/datum/antagonist/ert/sol_ert, /datum/antagonist/ert/sol_ert/demo)
+	roles = list(/datum/antagonist/ert/sol_ert)
 	leader_role = /datum/antagonist/ert/sol_ert/leader
 	rename_team = "Solar Federation Marine Squad"
 	code = "Delta"

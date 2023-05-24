@@ -12,6 +12,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot
 	casing_ejector = FALSE
 	var/recentpump = 0 // to prevent spammage
+	var/pumpsound = "sound/weapons/shotgunpump.ogg"
 	weapon_weight = WEAPON_HEAVY
 	sawn_item_state = "sawnshotgun"
 
@@ -60,7 +61,7 @@
 /obj/item/gun/ballistic/shotgun/proc/pump(mob/M, visible = TRUE)
 	if(visible)
 		M.visible_message("<span class='warning'>[M] racks [src].</span>", "<span class='warning'>You rack [src].</span>")
-	playsound(M, 'sound/weapons/shotgunpump.ogg', 60, 1)
+	playsound(M, pumpsound, 60, 1)
 	pump_unload(M)
 	pump_reload(M)
 	update_icon()	//I.E. fix the desc
