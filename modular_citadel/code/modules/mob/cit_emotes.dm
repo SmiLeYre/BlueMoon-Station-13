@@ -227,7 +227,7 @@
 /datum/emote/living/peep
 	key = "peep"
 	key_third_person = "peeps like a bird"
-	message = "звучит как птичка!"
+	message = "чирикает словно птичка!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
@@ -285,7 +285,7 @@
 /datum/emote/living/bark
 	key = "bark"
 	key_third_person = "barks"
-	message = "боркает!"
+	message = "лает!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
@@ -303,7 +303,7 @@
 /datum/emote/living/squish
 	key = "squish"
 	key_third_person = "squishes"
-	message = "сквишается!"
+	message = "хлюпает!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE

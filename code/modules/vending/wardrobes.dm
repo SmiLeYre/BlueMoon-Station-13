@@ -27,6 +27,7 @@
 					/obj/item/clothing/head/beret/sec = 5,
 					/obj/item/clothing/head/soft/sec = 5,
 					/obj/item/clothing/mask/bandana/red = 5,
+					/obj/item/clothing/mask/balaclava/breath/redscarf = 4,
 					/obj/item/clothing/mask/gas/sechailer = 4,
 					/obj/item/clothing/under/rank/security/officer/skirt = 5,
 					/obj/item/clothing/under/rank/security/officer/grey = 5,
@@ -98,6 +99,7 @@
 					/obj/item/clothing/head/soft/emt = 5,
 					/obj/item/clothing/suit/apron/surgical = 5,
 					/obj/item/clothing/mask/surgical = 5,
+					/obj/item/clothing/mask/balaclava/breath/redscarf/bluescarf = 4,
 					/obj/item/clothing/gloves/color/latex/nitrile = 2,
 					/obj/item/clothing/under/rank/medical/doctor/util = 5,
 					/obj/item/clothing/under/rank/medical/paramedic/red = 5,
@@ -132,6 +134,7 @@
 					/obj/item/clothing/suit/hazardvest = 5,
 					/obj/item/clothing/shoes/workboots = 5,
 					/obj/item/clothing/head/hardhat = 5,
+					/obj/item/clothing/mask/balaclava/breath/redscarf/yellowscarf = 4,
 					/obj/item/clothing/head/hardhat/weldhat = 3)
 	refill_canister = /obj/item/vending_refill/wardrobe/engi_wardrobe
 	payment_department = ACCOUNT_ENG
@@ -178,6 +181,7 @@
 					/obj/item/clothing/shoes/sneakers/black = 5,
 					/obj/item/clothing/gloves/fingerless = 5,
 					/obj/item/clothing/head/soft = 5,
+					/obj/item/clothing/mask/balaclava/breath/redscarf/yellowscarf = 4,
 					/obj/item/radio/headset/headset_cargo = 3)
 	refill_canister = /obj/item/vending_refill/wardrobe/cargo_wardrobe
 	payment_department = ACCOUNT_CAR
@@ -203,6 +207,7 @@
 					/obj/item/clothing/gloves/fingerless = 3,
 					/obj/item/clothing/head/soft/black = 3,
 					/obj/item/clothing/mask/bandana/skull = 2,
+					/obj/item/clothing/mask/balaclava/breath/redscarf/purplescarf = 3,
 					/obj/item/clothing/under/misc/mechsuitred = 1,
 					/obj/item/clothing/under/misc/mechsuitwhite = 1,
 					/obj/item/clothing/under/misc/mechsuitblue = 1)
@@ -232,6 +237,7 @@
 					/obj/item/clothing/suit/toggle/labcoat/depjacket/sci = 4,
 					/obj/item/clothing/shoes/sneakers/white = 4,
 					/obj/item/radio/headset/headset_sci = 4,
+					/obj/item/clothing/mask/balaclava/breath/redscarf/purplescarf = 4,
 					/obj/item/clothing/mask/gas = 5)
 	refill_canister = /obj/item/vending_refill/wardrobe/science_wardrobe
 	payment_department = ACCOUNT_SCI
@@ -364,6 +370,7 @@
 					/obj/item/watertank/janitor = 2,
 					/obj/item/storage/belt/janitor = 2,
 					/obj/item/screwdriver = 2,
+					/obj/item/clothing/mask/balaclava/breath/redscarf/purplescarf = 2,
 					/obj/item/stack/cable_coil/random = 4)
 	refill_canister = /obj/item/vending_refill/wardrobe/jani_wardrobe
 	default_price = PRICE_CHEAP
@@ -412,6 +419,7 @@
 	product_ads = "Are you being bothered by cultists or pesky revenants? Then come and dress like the holy man!;Clothes for men of the cloth!"
 	vend_reply = "Thank you for using the DeusVend!"
 	products = list(/obj/item/choice_beacon/holy = 1,
+					/obj/item/staff/bostaff/chaplain = 1,
 					/obj/item/storage/backpack/cultpack = 2,
 					/obj/item/clothing/accessory/pocketprotector/cosmetology = 2,
 					/obj/item/clothing/under/rank/civilian/chaplain = 2,
@@ -581,31 +589,33 @@
 		/obj/item/clothing/under/syndicate/sniper = 3,
 		/obj/item/clothing/under/syndicate/camo = 3,
 		/obj/item/clothing/under/syndicate/combat = 3,
+		/obj/item/clothing/suit/armor/vest/infiltrator/gorlex_harness = 3,
+		/obj/item/clothing/shoes/combat = 3,
 		/obj/item/clothing/mask/gas/syndicate = 3,
 		/obj/item/clothing/mask/gas/sechailer/syndicate = 3,
+		/obj/item/clothing/suit/hooded/wintercoat/syndicate = 5,
 		/obj/item/clothing/head/soft/sec/syndicate = 3,
 		/obj/item/clothing/head/beret/sec/syndicate = 3,
 	)
 	contraband = list(
+		/obj/item/kitchen/knife/combat = 4,
 		/obj/item/clothing/under/syndicate/coldres = 2,
 		/obj/item/clothing/shoes/combat/coldres = 2,
-		/obj/item/kitchen/knife/combat = 3,
 	)
 	premium = list(
-		/obj/item/kitchen/knife/combat/survival/knuckledagger = 3,
+		/obj/item/kitchen/knife/combat/survival/knuckledagger = 2,
 		/obj/item/storage/fancy/cigarettes/cigpack_syndicate = 5,
-		/obj/item/lighter/slime = 5,
-		/obj/item/clothing/suit/armor/vest/infiltrator/gorlex_harness = 1,
-		/obj/item/clothing/gloves/combat = 1,
-		/obj/item/clothing/under/syndicate/maid = 2,
-		/obj/item/clothing/gloves/combat/maid = 2,
-		/obj/item/clothing/head/maidheadband/syndicate = 2,
-		/obj/item/clothing/shoes/combat = 3,
-		/obj/item/card/id/syndicate = 3
+		/obj/item/lighter = 5,
+		/obj/item/clothing/gloves/combat = 3,
+		/obj/item/clothing/under/syndicate/maid = 5,
+		/obj/item/clothing/gloves/combat/maid = 5,
+		/obj/item/clothing/head/maidheadband/syndicate = 5,
+		/obj/item/clothing/suit/armor/vest/capcarapace/syndicate/winter = 2,
+		/obj/item/clothing/suit/armor/vest/capcarapace/syndicate = 2,
+		/obj/item/clothing/head/hats/warden/syndicate = 1
 	)
 	refill_canister = /obj/item/vending_refill/wardrobe/syndie_wardrobe
 	light_color = COLOR_MOSTLY_PURE_RED
-	default_price = PRICE_ABOVE_EXPENSIVE
-	extra_price = PRICE_REALLY_EXPENSIVE
+
 /obj/item/vending_refill/wardrobe/syndie_wardrobe
-	machine_name = "\improper SynDrobe"
+	machine_name = "SynDrobe"

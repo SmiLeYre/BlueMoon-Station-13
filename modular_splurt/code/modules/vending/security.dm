@@ -37,6 +37,9 @@
 		/obj/item/clothing/head/beret/sec/peacekeeper/cap = 5,
 		/obj/item/clothing/head/beret/sec/peacekeeper = 5,
 		/obj/item/clothing/mask/balaclava/breath = 5,
+		/obj/item/clothing/mask/gas/syndicate/ds/wide = 3,
+		/obj/item/clothing/mask/gas/syndicate/ds/mouth = 3,
+		/obj/item/clothing/mask/gas/syndicate/ds/coif = 2,
 		/obj/item/clothing/under/rank/security/officer/peacekeeper =5,
 		/obj/item/clothing/under/rank/security/officer/metrocop = 2,
 		/obj/item/clothing/under/rank/security/skirt/slut = 5,
@@ -212,12 +215,12 @@
 	new /obj/item/storage/box/flashbangs(src)
 	new /obj/item/shield/riot/tele(src)
 	new /obj/item/storage/belt/security/full(src)
-	new /obj/item/choice_beacon/hosgun(src)
 	new /obj/item/flashlight/seclite(src)
 	new /obj/item/pinpointer/nuke(src)
+	new /obj/item/choice_beacon/hos_new_weapon(src)
 	new /obj/item/circuitboard/machine/techfab/department/security(src)
 	new /obj/item/storage/photo_album/HoS(src)
+	new /obj/item/card/id/departmental_budget/sec(src)
 	new /obj/item/mod/construction/armor/safeguard(src)
 	new /obj/item/mod/module/jetpack(src)
 	new /obj/item/mod/module/holster(src)
-	new /obj/item/card/id/departmental_budget/sec(src)

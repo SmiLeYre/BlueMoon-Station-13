@@ -323,3 +323,30 @@
         else
             owner.client.view_size.resetToDefault()
         UpdateButtonIcon()
+
+//
+
+/datum/action/vehicle/sealed/mecha/sol
+
+/obj/vehicle/sealed/mecha/sol/generate_action_type()
+	. = ..()
+	if(istype(., /datum/action/vehicle/sealed/mecha))
+		var/datum/action/vehicle/sealed/mecha/mecha = .
+		mecha.chassis = src
+
+/datum/action/vehicle/sealed/mecha/sol/mech_zoom
+
+/datum/action/vehicle/sealed/mecha/sol/mech_zoom/Trigger()
+    if(owner.client)
+        chassis.zoom_mode = !chassis.zoom_mode
+        button_icon_state = "mech_zoom_[chassis.zoom_mode ? "on" : "off"]"
+        chassis.log_message("Toggled zoom mode.", LOG_MECHA)
+        to_chat(owner, "[icon2html(chassis, owner)]<font color='[chassis.zoom_mode?"blue":"red"]'>Zoom mode [chassis.zoom_mode?"en":"dis"]abled.</font>")
+        if(chassis.zoom_mode)
+            owner.client.view_size.setTo(4.5)
+            SEND_SOUND(owner, sound('modular_bluemoon/kovac_shitcode/sound/mecha/imag_enh_sol.ogg',volume=50))
+        else
+            owner.client.view_size.resetToDefault()
+        UpdateButtonIcon()
+
+///
