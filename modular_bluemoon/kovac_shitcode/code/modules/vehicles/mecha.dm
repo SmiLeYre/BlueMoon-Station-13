@@ -80,6 +80,8 @@ obj/vehicle/sealed/mecha/combat/durand/tu802/generate_actions()
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/tesla
 	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg
+	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/anticcw_armor_booster
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/antiproj_armor_booster

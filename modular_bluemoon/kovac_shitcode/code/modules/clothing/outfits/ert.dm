@@ -175,7 +175,7 @@
 		/obj/item/clothing/mask/gas/sechailer=1,\
 		/obj/item/storage/box/syndie_kit/revolver=1,\
 		/obj/item/storage/ifak=1,\
-		/obj/item/ammo_box/magazine/mm712x82=1)
+		/obj/item/ammo_box/magazine/mm712x82=2)
 
 /datum/outfit/ert/ert_russian_leader/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()
@@ -202,7 +202,7 @@
 	r_hand = /obj/item/gun/ballistic/automatic/m16a4
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/storage/ifak=1,\
-		/obj/item/ammo_box/magazine/m16=3)
+		/obj/item/ammo_box/magazine/m16=4)
 
 /datum/outfit/ert/sol_soldier/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()
@@ -254,13 +254,13 @@
 	back = /obj/item/storage/backpack/hecu/black
 	belt = /obj/item/storage/belt/military/inteq
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber
-	r_hand = /obj/item/gun/ballistic/automatic/m16a4/tactical
+	r_hand = /obj/item/gun/ballistic/automatic/shotgun/bulldog/unrestricted
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/storage/ifak=1,\
 		/obj/item/gun/ballistic/automatic/pistol/deagle=1,\
         /obj/item/ammo_box/magazine/m50=2,\
 		/obj/item/choice_beacon/sol_mech=1,\
-		/obj/item/ammo_box/magazine/m16=3)
+		/obj/item/ammo_box/magazine/m12g/slug=4)
 
 /datum/outfit/ert/sol_soldier_leader/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()

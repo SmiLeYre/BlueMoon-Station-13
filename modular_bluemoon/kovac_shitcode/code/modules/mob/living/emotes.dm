@@ -53,3 +53,19 @@
 		user.nextsoundemote = world.time + 30 SECONDS
 	playsound(user, 'modular_bluemoon/kovac_shitcode/sound/new_emotes/ohyes.ogg', 25, 1, -1)
 	. = ..()
+
+/datum/emote/living/mudak
+	key = "mudak"
+	key_third_person = "mudaks"
+	message = "испытывает крайнюю степень недовольства."
+	emote_type = EMOTE_AUDIBLE
+
+/datum/emote/living/mudak/run_emote(mob/user, params, type_override, intentional)
+	if(ishuman(user))
+		if(user.nextsoundemote >= world.time)
+			to_chat(user, span_warning("Рано! Очень рано!!"))
+			SEND_SOUND(user, 'sound/machines/buzz-sigh.ogg')
+			return
+		user.nextsoundemote = world.time + 30 SECONDS
+	playsound(user, 'modular_bluemoon/kovac_shitcode/sound/new_emotes/mudak.ogg', 25, 1, -1)
+	. = ..()
