@@ -7,6 +7,7 @@
 	var/list/saved_dynamic_rules = list(list(),list(),list())
 	var/average_threat = 50
 	var/list/saved_maps
+	var/last_dynamic_gamemode = "" //BLUEMOON ADDITION
 
 /datum/controller/subsystem/persistence/SaveServerPersistence()
 	. = ..()
@@ -19,6 +20,7 @@
 	LoadRecentChaos()
 	LoadRecentRulesets()
 	LoadRecentMaps()
+	LoadRecentDynamicType() //BLUEMOON ADDITION
 
 /datum/controller/subsystem/persistence/proc/CollectRoundtype()
 	saved_modes[3] = saved_modes[2]
@@ -46,7 +48,24 @@
 	file_data["maps"] = saved_maps
 	fdel(json_file)
 	WRITE_FILE(json_file, json_encode(file_data))
+//BLUEMOON ADDITION START
+/datum/controller/subsystem/persistence/proc/RecordDynamicType(var/type)
+	last_dynamic_gamemode = type
+	var/json_file = file("data/RecentDynamicType.json")
+	var/list/file_data = list()
+	file_data["data"] = last_dynamic_gamemode
+	fdel(json_file)
+	WRITE_FILE(json_file, json_encode(file_data))
 
+/datum/controller/subsystem/persistence/proc/LoadRecentDynamicType()
+	var/json_file = file("data/RecentDynamicType.json")
+	if(!fexists(json_file))
+		return
+	var/list/json = json_decode(file2text(json_file))
+	if(!json)
+		return
+	last_dynamic_gamemode = json["data"]
+//BLUEMOON ADDITION END
 /datum/controller/subsystem/persistence/proc/LoadRecentModes()
 	var/json_file = file("data/RecentModes.json")
 	if(!fexists(json_file))
