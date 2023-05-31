@@ -46,7 +46,7 @@ SUBSYSTEM_DEF(vote)
 /datum/controller/subsystem/vote/fire()	//called by master_controller
 	if(mode)
 //BLUEMOON ADD START
-		if(mode == "roundtype" && SSticker.timeLeft - 20 SECONDS <= 0)
+		if(mode == "roundtype" && SSticker.timeLeft - ROUNDTYPE_VOTE_END_PENALTY <= 0)
 			result()
 			for(var/client/C in voting)
 				C << browse(null, "window=vote;can_close=0")
@@ -639,7 +639,9 @@ SUBSYSTEM_DEF(vote)
 			. += "<br><font size=1><small><b>[ROUNDTYPE_DYNAMIC_LIGHT]</b> (30-50 угрозы, без командных ролей)</font></small>"
 			. += "<br><font size=1><small><b>[ROUNDTYPE_EXTENDED]</b> (угрозы не спавнятся сами, только администрация может создавать их)</font></small>"
 			. += "<br>Вариация динамика из прошлого раунда в новом выпасть не может."
-			. += "<br>Осталось времени: [DisplayTimeText((SSticker.timeLeft - 20 SECONDS))]<hr><ul>"
+			if(SSpersistence.last_dynamic_gamemode)
+				. += "<br>Последняя вариация динамика: [SSpersistence.last_dynamic_gamemode]."
+			. += "<br>Осталось времени: [DisplayTimeText((SSticker.timeLeft - ROUNDTYPE_VOTE_END_PENALTY))]<hr><ul>"
 		else
 			. += "Осталось времени: [DisplayTimeText(end_time-world.time)]<hr><ul>"
 //BLUEMOON ADD END
