@@ -396,16 +396,29 @@ SUBSYSTEM_DEF(vote)
 					GLOB.dynamic_forced_extended = TRUE
 					GLOB.master_mode = "Extended"
 				else //впереди только динамики
-					var/dynamic_pick = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_LIGHT, ROUNDTYPE_DYNAMIC) - SSpersistence.last_dynamic_gamemode
+					var/dynamic_pick = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) - SSpersistence.last_dynamic_gamemode
 					. = pick(dynamic_pick)
 					switch(.)
 						if(ROUNDTYPE_DYNAMIC_TEAMBASED)
+							GLOB.master_mode = "Dynamic (Team Based)"
+							GLOB.dynamic_type_threat_min = 55 //от 1 до 2 командных антагов
+							GLOB.dynamic_type_threat_max = 100
 							GLOB.teambased_dynamic = TRUE
 							GLOB.dynamic_no_stacking = FALSE //Welcome To Space Iraq
-							GLOB.master_mode = "Dynamic (Team Based)"
+						if(ROUNDTYPE_DYNAMIC_HARD)
+							GLOB.master_mode = "Dynamic (Hard)"
+							GLOB.dynamic_type_threat_min = 75
+							GLOB.dynamic_type_threat_max = 100
+						if(ROUNDTYPE_DYNAMIC_MEDIUM)
+							GLOB.master_mode = "Dynamic (Medium)"
+							GLOB.dynamic_type_threat_min = 40
+							GLOB.dynamic_type_threat_max = 60
 						if(ROUNDTYPE_DYNAMIC_LIGHT)
-							GLOB.dynamic_extended = TRUE
 							GLOB.master_mode = "Dynamic (Light)"
+							GLOB.dynamic_type_threat_min = 25
+							GLOB.dynamic_type_threat_max = 40
+							GLOB.dynamic_extended = TRUE
+
 				SSpersistence.RecordDynamicType(.)
 //BLUEMOON CHANGES END
 				message_admins("The gamemode has been voted for, and has been changed to: [GLOB.master_mode]")
@@ -633,14 +646,15 @@ SUBSYSTEM_DEF(vote)
 			. += "<br><font size=1><small><b>[ROUNDTYPE_EXTENDED]</b> (без угроз)</font></small>"
 */
 			. += "<br>ГОЛОСОВАНИЕ ЗА РЕЖИМЫ ДИНАМИКА В РАЗРАБОТКЕ!"
-			. += "<br>Если выбирается [ROUNDTYPE_DYNAMIC], то выбирается одна из вариаций динамика, которые описаны ниже."
-			. += "<br><font size=1><small><b>[ROUNDTYPE_DYNAMIC_TEAMBASED]</b> (50-100 угрозы, только командные и некоторые одиночные антагонисты)</font></small>"
-			. += "<br><font size=1><small><b>Dynamic (Hard)</b> (50-100 угрозы)</font></small>"
-			. += "<br><font size=1><small><b>[ROUNDTYPE_DYNAMIC_LIGHT]</b> (30-50 угрозы, без командных ролей)</font></small>"
-			. += "<br><font size=1><small><b>[ROUNDTYPE_EXTENDED]</b> (угрозы не спавнятся сами, только администрация может создавать их)</font></small>"
-			. += "<br>Вариация динамика из прошлого раунда в новом выпасть не может."
+			. += "<br>Если выбирается [ROUNDTYPE_DYNAMIC], то выбирается одна из вариаций динамика, которые описаны ниже:"
+			. += "<br><font size=1><small><b>[ROUNDTYPE_DYNAMIC_TEAMBASED]</b> (55-100 угрозы, только командные и особые одиночные антагонисты);</font></small>"
+			. += "<br><font size=1><small><b>[ROUNDTYPE_DYNAMIC_HARD]</b> (75-100 угрозы);</font></small>"
+			. += "<br><font size=1><small><b>[ROUNDTYPE_DYNAMIC_MEDIUM]</b> (40-60 угрозы);</font></small>"
+			. += "<br><font size=1><small><b>[ROUNDTYPE_DYNAMIC_LIGHT]</b> (25-40 угрозы, без командных антагонистов);</font></small>"
+			. += "<br><font size=1><small><b>[ROUNDTYPE_EXTENDED]</b> (угрозы не спавнятся сами, только администрация может создавать их).</font></small>"
+			. += "<br>Вариация режима из прошлого раунда в новом выпасть не может (кроме эксты)."
 			if(SSpersistence.last_dynamic_gamemode)
-				. += "<br>Последняя вариация динамика: [SSpersistence.last_dynamic_gamemode]."
+				. += "<br>Последняя вариация режима: <b>[SSpersistence.last_dynamic_gamemode]</b>."
 			. += "<br>Осталось времени: [DisplayTimeText((SSticker.timeLeft - ROUNDTYPE_VOTE_END_PENALTY))]<hr><ul>"
 		else
 			. += "Осталось времени: [DisplayTimeText(end_time-world.time)]<hr><ul>"

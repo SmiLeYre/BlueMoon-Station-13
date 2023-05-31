@@ -20,6 +20,11 @@ GLOBAL_LIST_EMPTY(dynamic_forced_roundstart_ruleset)
 GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 // BLUEMOON ADD - командный динамик
 GLOBAL_VAR_INIT(teambased_dynamic, FALSE)
+// Очки для уровней угрозы от различных вариаций динамика
+// Значения изменяются при выборе вариаций динамика
+GLOBAL_VAR_INIT(dynamic_type_threat_min, 0)
+GLOBAL_VAR_INIT(dynamic_type_threat_max, 0)
+// BLUEMOON ADD END
 
 /datum/game_mode/dynamic
 	name = "dynamic mode"
@@ -322,14 +327,7 @@ GLOBAL_VAR_INIT(teambased_dynamic, FALSE)
 
 /// Generates the threat level using lorentz distribution and assigns peaceful_percentage.
 /datum/game_mode/dynamic/proc/generate_threat()
-//BLUEMOON ADD START - проверки для вариаций динамика
-	if(GLOB.teambased_dynamic)
-		threat_level = round(rand(50,100), 0.1)
-	else if(GLOB.dynamic_extended)
-		threat_level = round(rand(30, 50), 0.1)
-	else //normal dynamic
-		threat_level = round(rand(50,100), 0.1)
-//BLUEMOON ADD END
+	threat_level = round(rand(GLOB.dynamic_type_threat_min, GLOB.dynamic_type_threat_max), 0.1) //BLUEMOON ADDITION
 /*BLUEMOON REMOVAL START - мы не центрируем уровень угрозы по Лоуренцу
 	var/relative_threat = LORENTZ_DISTRIBUTION(threat_curve_centre, threat_curve_width)
 	threat_level = round(lorentz_to_amount(relative_threat), 0.1)
