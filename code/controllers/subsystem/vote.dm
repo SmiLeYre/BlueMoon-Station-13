@@ -637,8 +637,8 @@ SUBSYSTEM_DEF(vote)
 			. += "<br><font size=1><small><b>[ROUNDTYPE_DYNAMIC_TEAMBASED]</b> (50-100 угрозы, только командные и некоторые одиночные антагонисты)</font></small>"
 			. += "<br><font size=1><small><b>Dynamic (Hard)</b> (50-100 угрозы)</font></small>"
 			. += "<br><font size=1><small><b>[ROUNDTYPE_DYNAMIC_LIGHT]</b> (30-50 угрозы, без командных ролей)</font></small>"
-			. += "<br><font size=1><small><b>[ROUNDTYPE_EXTENDED]</b> (без угроз)</font></small>"
-			. += "<br>Вариация динамика из прошлого раунда в новом выпасть не может (кроме эксты)."
+			. += "<br><font size=1><small><b>[ROUNDTYPE_EXTENDED]</b> (угрозы не спавнятся сами, только администрация может создавать их)</font></small>"
+			. += "<br>Вариация динамика из прошлого раунда в новом выпасть не может."
 			. += "<br>Осталось времени: [DisplayTimeText((SSticker.timeLeft - 20 SECONDS))]<hr><ul>"
 		else
 			. += "Осталось времени: [DisplayTimeText(end_time-world.time)]<hr><ul>"
