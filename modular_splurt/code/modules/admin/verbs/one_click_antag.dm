@@ -11,7 +11,7 @@
 		for(var/i = 0, i<numslavers,i++)
 			shuffle_inplace(candidates) //More shuffles means more randoms
 			for(var/mob/j  in candidates)
-				if(!j || !j.client || QDELETED(j) || jobban_isbanned(j, ROLE_SLAVER) || jobban_isbanned(j, ROLE_SYNDICATE))
+				if(!j || !j.client || QDELETED(j) || jobban_isbanned(j, ROLE_SLAVER) || jobban_isbanned(j, ROLE_INTEQ))
 					candidates.Remove(j)
 					continue
 

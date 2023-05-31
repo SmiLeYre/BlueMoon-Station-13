@@ -67,7 +67,7 @@
 	response_disarm_simple = "gently push aside"
 	response_harm_continuous = "kicks"
 	response_harm_simple = "kick"
-	faction = list(ROLE_SYNDICATE)
+	faction = list(ROLE_INTEQ)
 	gold_core_spawnable = FRIENDLY_SPAWN
 
 /mob/living/simple_animal/hostile/retaliate/tegu

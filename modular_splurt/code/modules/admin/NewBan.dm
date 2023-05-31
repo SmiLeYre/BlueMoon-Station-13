@@ -46,9 +46,9 @@
 			switch(alert(usr,"IP ban?",,"Да","Нет","Cancel"))
 				if("Cancel")
 					return
-				if("Yes")
+				if("Да")
 					AddBan(M.ckey, M.computer_id, reason, usr.ckey, 0, 0, M.lastKnownIP)
-				if("No")
+				if("Нет")
 					AddBan(M.ckey, M.computer_id, reason, usr.ckey, 0, 0)
 			to_chat(M, "<span class='boldannounce'><BIG>You have been banned by [usr.client.key].\nReason: [reason]</BIG></span>")
 			to_chat(M, "<span class='danger'>This is a permanent ban. The round ID is [GLOB.round_id].</span>")

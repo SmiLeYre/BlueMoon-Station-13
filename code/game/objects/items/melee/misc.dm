@@ -516,7 +516,7 @@
 	item_flags = NONE
 	force = 5
 	cooldown = 20
-	stam_dmg = 80
+	stam_dmg = 45
 	affect_silicon = TRUE
 	on_sound = 'sound/weapons/contractorbatonextend.ogg'
 	on_stun_sound = 'sound/effects/contractorbatonhit.ogg'

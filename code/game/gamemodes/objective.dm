@@ -193,7 +193,7 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 /datum/objective/assassinate/update_explanation_text()
 	..()
 	if(target && target.current)
-		explanation_text = "Наша цель - [target.name], [!target_role_type ? target.assigned_role : target.special_role]. Пусть эта Цель будет наказана! Изнасилуй, сломай колени или вовсе убей один раз. В итоге цель должна остаться живой!"
+		explanation_text = "Наша цель - [target.name], [!target_role_type ? target.assigned_role : target.special_role]. Уничтожь эту цель! Кто бы это не был, эта станция будет ему могилой."
 	else
 		explanation_text = "Свободная Задача"
 
@@ -232,7 +232,7 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 /datum/objective/assassinate/internal/update_explanation_text()
 	..()
 	if(target && !target.current)
-		explanation_text = "Наша цель - [target.name], [!target_role_type ? target.assigned_role : target.special_role]. Пусть эта Цель будет наказана! Изнасилуй, сломай колени или вовсе убей один раз. В итоге цель должна остаться живой!"
+		explanation_text = "Наша цель - [target.name], [!target_role_type ? target.assigned_role : target.special_role]. Уничтожь эту цель! Кто бы это не был, эта станция будет ему могилой."
 
 /datum/objective/mutiny
 	name = "mutiny"
@@ -255,7 +255,7 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 /datum/objective/mutiny/update_explanation_text()
 	..()
 	if(target && target.current)
-		explanation_text = "Наша цель - [target.name], [!target_role_type ? target.assigned_role : target.special_role]. Пусть эта Цель будет наказана! Изнасилуй, сломай колени или вовсе убей один раз. В итоге цель должна остаться живой!"
+		explanation_text = "Наша цель - [target.name], [!target_role_type ? target.assigned_role : target.special_role]. Уничтожь эту цель! Кто бы это не был, эта станция будет ему могилой."
 	else
 		explanation_text = "Свободная Задача"
 

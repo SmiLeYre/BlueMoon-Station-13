@@ -38,7 +38,7 @@
 	spawnwithmagazine = FALSE
 
 /obj/item/gun/ballistic/automatic/pistol/enforcerred
-	name = "\improper HOS Mk. 58 Enforcer (.45)"
+	name = "\improper Blueshield Mk. 58 Enforcer (.45)"
 	desc = "A polymer frame pistol made by Nanotreason. Won't show up on Space port X-rays and cost more then you make in a month. Respect mah Authorita!"
 	icon = 'modular_splurt/icons/obj/guns/projectile.dmi'
 	icon_state = "enforcer_red"
@@ -116,6 +116,7 @@
 	mag_type = /obj/item/ammo_box/magazine/m357
 	can_suppress = FALSE
 	automatic_burst_overlay = FALSE
+	fire_sound = 'modular_bluemoon/kovac_shitcode/sound/weapons/deagle.ogg'
 	obj_flags = UNIQUE_RENAME
 	unique_reskin = list(
 		"Default" = list("icon_state" = "deagle"),

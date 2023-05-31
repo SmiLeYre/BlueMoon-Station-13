@@ -54,7 +54,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/tip_delay = 500 //tip delay in milliseconds
 
 	//Antag preferences
-	var/list/be_special = list()		//Special role selection. ROLE_SYNDICATE being missing means they will never be antag!
+	var/list/be_special = list()		//Special role selection. ROLE_INTEQ being missing means they will never be antag!
 	var/tmp/old_be_special = 0			//Bitflag version of be_special, used to update old savefiles and nothing more
 										//If it's 0, that's good, if it's anything but 0, the owner of this prefs file's antag choices were,
 										//autocorrected this round, not that you'd need to check that.
@@ -128,6 +128,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/extremepref = "No" //This is for extreme shit, maybe even literal shit, better to keep it on no by default
 	var/extremeharm = "No" //If "extreme content" is enabled, this option serves as a toggle for the related interactions to cause damage or not
 	var/see_chat_emotes = TRUE
+	var/view_pixelshift = FALSE
 	var/enable_personal_chat_color = FALSE
 	var/personal_chat_color = "#ffffff"
 	var/list/alt_titles_preferences = list()
@@ -698,6 +699,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							if(left_eye_color != right_eye_color)
 								split_eye_colors = TRUE
 							dat += "<h3>Heterochromia</h3>"
+							dat += "<i>Eyes with special heterochromia: wide, big, bigcyclops, skrell.</i>"
 							dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=toggle_split_eyes;task=input'>[split_eye_colors ? "Enabled" : "Disabled"]</a>"
 							if(!split_eye_colors)
 								dat += "<h3>Eye Color</h3>"
@@ -722,13 +724,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 						dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=facial_hair_style;task=input'>[facial_hair_style]</a>"
 						dat += "<a href='?_src_=prefs;preference=previous_facehair_style;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_facehair_style;task=input'>&gt;</a><BR>"
-						dat += "<span style='border: 1px solid #161616; background-color: #[facial_hair_color];'><font color='[color_hex2num(facial_hair_color) < 200 ? "FFFFFF" : "000000"]'>#[facial_hair_color]</font></span> <a href='?_src_=prefs;preference=facial;task=input'>Change</a><BR>"
+						dat += "<span style='border:1px solid #161616; background-color: #[facial_hair_color];'><font color='[color_hex2num(facial_hair_color) < 200 ? "FFFFFF" : "000000"]'>#[facial_hair_color]</font></span> <a href='?_src_=prefs;preference=facial;task=input'>Change</a><BR>"
 
 						dat += "<h3>Hair Gradient</h3>"
 
 						dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=grad_style;task=input'>[grad_style]</a>"
 						dat += "<a href='?_src_=prefs;preference=previous_grad_style;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_grad_style;task=input'>&gt;</a><BR>"
-						dat += "<span style='border: 1px solid #161616; background-color: #[grad_color];'><font color='[color_hex2num(grad_color) < 200 ? "FFFFFF" : "000000"]'>#[grad_color]</font></span> <a href='?_src_=prefs;preference=grad_color;task=input'>Change</a><BR>"
+						dat += "<span style='border:1px solid #161616; background-color: #[grad_color];'><font color='[color_hex2num(grad_color) < 200 ? "FFFFFF" : "000000"]'>#[grad_color]</font></span> <a href='?_src_=prefs;preference=grad_color;task=input'>Change</a><BR>"
 
 						dat += "</td>"
 
@@ -874,6 +876,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 										tauric_shape = TRUE
 							dat += "<b>Penis Shape:</b> <a style='display:block;width:120px' href='?_src_=prefs;preference=cock_shape;task=input'>[features["cock_shape"]][tauric_shape ? " (Taur)" : ""]</a>"
 							dat += "<b>Penis Length:</b> <a style='display:block;width:120px' href='?_src_=prefs;preference=cock_length;task=input'>[features["cock_length"]] centimeter(-s)</a>"
+							dat += "<b>Max Length:</b><a style='display:block;width:120px' href='?_src_=prefs;preference=cock_max_length;task=input'>[features["cock_max_length"] ? features["cock_max_length"] : "Disabled"]</a>"
+							dat += "<b>Min Length:</b><a style='display:block;width:120px' href='?_src_=prefs;preference=cock_min_length;task=input'>[features["cock_min_length"] ? features["cock_min_length"] : "Disabled"]</a>"
 							dat += "<b>Diameter Ratio:</b> <a style='display:block;width:120px' href='?_src_=prefs;preference=cock_diameter_ratio;task=input'>[features["cock_diameter_ratio"]]</a>" //SPLURT Edit
 							dat += "<b>Penis Visibility:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=cock_visibility;task=input'>[features["cock_visibility"]]</a>"
 							dat += "<b>Egg Stuffing:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=cock_stuffing'>[features["cock_stuffing"] == TRUE ? "Yes" : "No"]</a>" //SPLURT Edit
@@ -889,6 +893,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								dat += "<b>Testicles Visibility:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=balls_visibility;task=input'>[features["balls_visibility"]]</a>"
 								//SPLURT Edit
 								dat += "<b>Egg Stuffing:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=balls_stuffing'>[features["balls_stuffing"] == TRUE ? "Yes" : "No"]</a>"
+								dat += "<b>Max Size:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=balls_max_size;task=input'>[features["balls_max_size"] ? features["balls_max_size"] : "Disabled"]</a>"
+								dat += "<b>Min Size:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=balls_min_size;task=input'>[features["balls_min_size"] ? features["balls_min_size"] : "Disabled"]</a>"
 								dat += "<b>Produces:</b>"
 								var/datum/reagent/balls_fluid = find_reagent_object_from_type(features["balls_fluid"])
 								if(balls_fluid && (balls_fluid in GLOB.genital_fluids_list))
@@ -937,6 +943,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							dat += "<b>Lactates:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=breasts_producing'>[features["breasts_producing"] == TRUE ? "Yes" : "No"]</a>"
 							//SPLURT Edit
 							dat += "<b>Egg Stuffing:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=breasts_stuffing'>[features["breasts_stuffing"] == TRUE ? "Yes" : "No"]</a>"
+							dat += "<b>Max Size:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=breasts_max_size;task=input'>[features["breasts_max_size"] ? features["breasts_max_size"] : "Disabled"]</a>"
+							dat += "<b>Min Size:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=breasts_min_size;task=input'>[features["breasts_min_size"] ? features["breasts_min_size"] : "Disabled"]</a>"
 							if(features["breasts_producing"] == TRUE)
 								dat += "<b>Produces:</b>"
 								var/datum/reagent/breasts_fluid = find_reagent_object_from_type(features["breasts_fluid"])
@@ -960,6 +968,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							dat += "<b>Butt Visibility:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=butt_visibility;task=input'>[features["butt_visibility"]]</a>"
 						//SPLURT Edit
 							dat += "<b>Egg Stuffing:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=butt_stuffing'>[features["butt_stuffing"] == TRUE ? "Yes" : "No"]</a>"
+							dat += "<b>Max Size:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=butt_max_size;task=input'>[features["butt_max_size"] ? features["butt_max_size"] : "Disabled"]</a>"
+							dat += "<b>Min Size:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=butt_min_size;task=input'>[features["butt_min_size"] ? features["butt_min_size"] : "Disabled"]</a>"
 							dat += "<b>Butthole Sprite:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=has_anus'>[features["has_anus"] == TRUE ? "Yes" : "No"]</a>"
 							if(features["has_anus"])
 								dat += "<b>Butthole Color:</b></a><BR>"
@@ -983,6 +993,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								dat += "<b>Color:</b></a><BR>"
 								dat += "<span style='border: 1px solid #161616; background-color: #[features["belly_color"]];'><font color='[color_hex2num(features["belly_color"]) < 200 ? "FFFFFF" : "000000"]'>#[features["belly_color"]]</font></span> <a href='?_src_=prefs;preference=belly_color;task=input'>Change</a><br>"
 							dat += "<b>Belly Size:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=belly_size;task=input'>[features["belly_size"]]</a>"
+							dat += "<b>Max Size:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=belly_max_size;task=input'>[features["belly_max_size"] ? features["belly_max_size"] : "Disabled" ]</a>"
+							dat += "<b>Min Size:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=belly_min_size;task=input'>[features["belly_min_size"] ? features["belly_min_size"] : "Disabled" ]</a>"
 							dat += "<b>Belly Visibility:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=belly_visibility;task=input'>[features["belly_visibility"]]</a>"
 							dat += "<b>Egg Stuffing:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=belly_stuffing'>[features["belly_stuffing"] == TRUE ? "Yes" : "No"]</a>"
 						dat += "</td>"
@@ -1306,6 +1318,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					//SKYRAT CHANGES BEGIN
 					dat += "<b>See Runechat for emotes:</b> <a href='?_src_=prefs;preference=see_chat_emotes'>[see_chat_emotes ? "Enabled" : "Disabled"]</a><br>"
 					//SKYRAT CHANGES END
+					dat += "<b>Shift view when pixelshifting:</b> <a href='?_src_=prefs;preference=view_pixelshift'>[view_pixelshift ? "Enabled" : "Disabled"]</a><br>" //SPLURT Edit
 					dat += "<br>"
 					dat += "<b>Action Buttons:</b> <a href='?_src_=prefs;preference=action_buttons'>[(buttons_locked) ? "Locked In Place" : "Unlocked"]</a><br>"
 					dat += "<br>"
@@ -1325,7 +1338,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 					dat += "<h2>Special Role Settings</h2>"
 
-					if(jobban_isbanned(user, ROLE_SYNDICATE))
+					if(jobban_isbanned(user, ROLE_INTEQ))
 						dat += "<font color=red><b>You are banned from antagonist roles.</b></font>"
 						src.be_special = list()
 
@@ -1536,6 +1549,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<b>Aphrodisiacs:</b> <a href='?_src_=prefs;preference=aphro'>[(cit_toggles & NO_APHRO) ? "Disallowed" : "Allowed"]</a><br>"
 					dat += "<b>Ass Slapping:</b> <a href='?_src_=prefs;preference=ass_slap'>[(cit_toggles & NO_ASS_SLAP) ? "Disallowed" : "Allowed"]</a><br>"
 					//SPLURT EDIT
+					dat += "<b>Chastity Interactions :</b> <a href='?_src_=prefs;preference=chastitypref'>[(cit_toggles & CHASTITY) ? "Allowed" : "Disallowed"]</a><br>"
+					dat += "<b>Genital Stimulation Modifiers :</b> <a href='?_src_=prefs;preference=stimulationpref'>[(cit_toggles & STIMULATION) ? "Allowed" : "Disallowed"]</a><br>"
+					dat += "<b>Edging :</b> <a href='?_src_=prefs;preference=edgingpref'>[(cit_toggles & EDGING) ? "Allowed" : "Disallowed"]</a><br>"
 					dat += "<span style='border-radius: 2px;border:1px dotted white;cursor:help;' title='Enables verbs involving farts, shit and piss.'>?</span> "
 					dat += "<b>Unholy ERP verbs :</b> <a href='?_src_=prefs;preference=unholypref'>[unholypref]</a><br>" //https://www.youtube.com/watch?v=OHKARc-GObU
 					//END OF SPLURT EDIT
@@ -2427,9 +2443,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/new_mutantcolor = input(user, "Choose your character's alien/mutant color:", "Character Preference","#"+features["mcolor"]) as color|null
 					if(new_mutantcolor)
 						var/temp_hsv = RGBtoHSV(new_mutantcolor)
-						if(new_mutantcolor == "#000000")
+						if(new_mutantcolor == "#000000" && features["mcolor"] != pref_species.default_color) //SPLURT EDIT
 							features["mcolor"] = pref_species.default_color
-						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3]) // mutantcolors must be bright, but only if they affect the skin
+						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3] || !CONFIG_GET(flag/character_color_limits)) // mutantcolors must be bright, but only if they affect the skin //SPLURT EDIT
 							features["mcolor"] = sanitize_hexcolor(new_mutantcolor, 6)
 						else
 							to_chat(user, "<span class='danger'>Invalid color. Your color is not bright enough.</span>")
@@ -2438,9 +2454,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/new_mutantcolor = input(user, "Choose your character's secondary alien/mutant color:", "Character Preference","#"+features["mcolor2"]) as color|null
 					if(new_mutantcolor)
 						var/temp_hsv = RGBtoHSV(new_mutantcolor)
-						if(new_mutantcolor == "#000000")
+						if(new_mutantcolor == "#000000" && features["mcolor2"] != pref_species.default_color) //SPLURT EDIT
 							features["mcolor2"] = pref_species.default_color
-						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3]) // mutantcolors must be bright, but only if they affect the skin
+						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3] || !CONFIG_GET(flag/character_color_limits)) // mutantcolors must be bright, but only if they affect the skin //SPLURT EDIT
 							features["mcolor2"] = sanitize_hexcolor(new_mutantcolor, 6)
 						else
 							to_chat(user, "<span class='danger'>Invalid color. Your color is not bright enough.</span>")
@@ -2449,9 +2465,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/new_mutantcolor = input(user, "Choose your character's tertiary alien/mutant color:", "Character Preference","#"+features["mcolor3"]) as color|null
 					if(new_mutantcolor)
 						var/temp_hsv = RGBtoHSV(new_mutantcolor)
-						if(new_mutantcolor == "#000000")
+						if(new_mutantcolor == "#000000" && features["mcolor3"] != pref_species.default_color) //SPLURT EDIT
 							features["mcolor3"] = pref_species.default_color
-						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3]) // mutantcolors must be bright, but only if they affect the skin
+						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3] || !CONFIG_GET(flag/character_color_limits)) // mutantcolors must be bright, but only if they affect the skin //SPLURT EDIT
 							features["mcolor3"] = sanitize_hexcolor(new_mutantcolor, 6)
 						else
 							to_chat(user, "<span class='danger'>Invalid color. Your color is not bright enough.</span>")
@@ -2465,9 +2481,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/new_neckfire_color = input(user, "Choose your fire's color:", "Character Preference", "#"+features["neckfire_color"]) as color|null
 					if(new_neckfire_color)
 						var/temp_hsv = RGBtoHSV(new_neckfire_color)
-						if(new_neckfire_color == "#000000")
+						if(new_neckfire_color == "#000000" && features["neckfire_color"] != pref_species.default_color) //SPLURT EDIT
 							features["neckfire_color"] = pref_species.default_color
-						else if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3])
+						else if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3] || !CONFIG_GET(flag/character_color_limits)) //SPLURT EDIT
 							features["neckfire_color"] = sanitize_hexcolor(new_neckfire_color, 6)
 						else
 							to_chat(user,"<span class='danger'>Invalid color. Your color is not bright enough.</span>")
@@ -2608,7 +2624,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("horns_color")
 					var/new_horn_color = input(user, "Choose your character's horn colour:", "Character Preference","#"+features["horns_color"]) as color|null
 					if(new_horn_color)
-						if (new_horn_color == "#000000")
+						if (new_horn_color == "#000000" && features["horns_color"] != "85615A") //SPLURT EDIT
 							features["horns_color"] = "85615A"
 						else
 							features["horns_color"] = sanitize_hexcolor(new_horn_color, 6)
@@ -2622,7 +2638,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("wings_color")
 					var/new_wing_color = input(user, "Choose your character's wing colour:", "Character Preference","#"+features["wings_color"]) as color|null
 					if(new_wing_color)
-						if (new_wing_color == "#000000")
+						if (new_wing_color == "#000000" && features["wings_color"] != "#FFFFFF") //SPLURT EDIT
 							features["wings_color"] = "#FFFFFF"
 						else
 							features["wings_color"] = sanitize_hexcolor(new_wing_color, 6)
@@ -2698,7 +2714,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							var/custom_tone = input(user, "Choose your custom skin tone:", "Character Preference", default) as color|null
 							if(custom_tone)
 								var/temp_hsv = RGBtoHSV(custom_tone)
-								if(ReadHSV(temp_hsv)[3] < ReadHSV("#333333")[3]) // rgb(50,50,50)
+								if(ReadHSV(temp_hsv)[3] < ReadHSV("#333333")[3] && CONFIG_GET(flag/character_color_limits)) // rgb(50,50,50) //SPLURT EDIT
 									to_chat(user,"<span class='danger'>Invalid color. Your color is not bright enough.</span>")
 								else
 									use_custom_skin_tone = TRUE
@@ -2793,9 +2809,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/new_feature_color = input(user, "Choose your character's mutant part colour:", "Character Preference","#"+features[href_list["preference"]]) as color|null
 					if(new_feature_color)
 						var/temp_hsv = RGBtoHSV(new_feature_color)
-						if(new_feature_color == "#000000")
+						if(new_feature_color == "#000000" && features[href_list["preference"]] != pref_species.default_color) //SPLURT EDIT
 							features[href_list["preference"]] = pref_species.default_color
-						else if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3])
+						else if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3] || !CONFIG_GET(flag/character_color_limits)) //SPLURT EDIT
 							features[href_list["preference"]] = sanitize_hexcolor(new_feature_color, 6)
 						else
 							to_chat(user,"<span class='danger'>Invalid color. Your color is not bright enough.</span>")
@@ -2822,9 +2838,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/new_cockcolor = input(user, "Penis color:", "Character Preference","#"+features["cock_color"]) as color|null
 					if(new_cockcolor)
 						var/temp_hsv = RGBtoHSV(new_cockcolor)
-						if(new_cockcolor == "#000000")
+						if(new_cockcolor == "#000000" && features["cock_color"] != pref_species.default_color) //SPLURT EDIT
 							features["cock_color"] = pref_species.default_color
-						else if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3])
+						else if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3] || !CONFIG_GET(flag/character_color_limits)) //SPLURT EDIT
 							features["cock_color"] = sanitize_hexcolor(new_cockcolor, 6)
 						else
 							to_chat(user,"<span class='danger'>Invalid color. Your color is not bright enough.</span>")
@@ -2869,9 +2885,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/new_ballscolor = input(user, "Testicles Color:", "Character Preference","#"+features["balls_color"]) as color|null
 					if(new_ballscolor)
 						var/temp_hsv = RGBtoHSV(new_ballscolor)
-						if(new_ballscolor == "#000000")
+						if(new_ballscolor == "#000000" && features["balls_color"] != pref_species.default_color) //SPLURT EDIT
 							features["balls_color"] = pref_species.default_color
-						else if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3])
+						else if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3] || !CONFIG_GET(flag/character_color_limits)) //SPLURT EDIT
 							features["balls_color"] = sanitize_hexcolor(new_ballscolor, 6)
 						else
 							to_chat(user,"<span class='danger'>Invalid color. Your color is not bright enough.</span>")
@@ -2912,9 +2928,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/new_breasts_color = input(user, "Breast Color:", "Character Preference","#"+features["breasts_color"]) as color|null
 					if(new_breasts_color)
 						var/temp_hsv = RGBtoHSV(new_breasts_color)
-						if(new_breasts_color == "#000000")
+						if(new_breasts_color == "#000000" && features["breasts_color"] != pref_species.default_color) //SPLURT EDIT
 							features["breasts_color"] = pref_species.default_color
-						else if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3])
+						else if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3] || !CONFIG_GET(flag/character_color_limits)) //SPLURT EDIT
 							features["breasts_color"] = sanitize_hexcolor(new_breasts_color, 6)
 						else
 							to_chat(user,"<span class='danger'>Invalid color. Your color is not bright enough.</span>")
@@ -2944,9 +2960,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/new_vagcolor = input(user, "Vagina color:", "Character Preference","#"+features["vag_color"]) as color|null
 					if(new_vagcolor)
 						var/temp_hsv = RGBtoHSV(new_vagcolor)
-						if(new_vagcolor == "#000000")
+						if(new_vagcolor == "#000000" && features["vag_color"] != pref_species.default_color) //SPLURT EDIT
 							features["vag_color"] = pref_species.default_color
-						else if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3])
+						else if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3] || !CONFIG_GET(flag/character_color_limits)) //SPLURT EDIT
 							features["vag_color"] = sanitize_hexcolor(new_vagcolor, 6)
 						else
 							to_chat(user,"<span class='danger'>Invalid color. Your color is not bright enough.</span>")
@@ -2970,9 +2986,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/new_bellycolor = input(user, "Belly Color:", "Character Preference", "#"+features["belly_color"]) as color|null
 					if(new_bellycolor)
 						var/temp_hsv = RGBtoHSV(new_bellycolor)
-						if(new_bellycolor == "#000000")
+						if(new_bellycolor == "#000000" && features["belly_color"] != pref_species.default_color) //SPLURT EDIT
 							features["belly_color"] = pref_species.default_color
-						else if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3])
+						else if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3] || !CONFIG_GET(flag/character_color_limits)) //SPLURT EDIT
 							features["belly_color"] = sanitize_hexcolor(new_bellycolor, 6)
 						else
 							to_chat(user,"<span class='danger'>Invalid color. Your color is not bright enough.</span>")
@@ -2981,9 +2997,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/new_buttcolor = input(user, "Butt color:", "Character Preference","#"+features["butt_color"]) as color|null
 					if(new_buttcolor)
 						var/temp_hsv = RGBtoHSV(new_buttcolor)
-						if(new_buttcolor == "#000000")
+						if(new_buttcolor == "#000000" && features["butt_color"] != pref_species.default_color) //SPLURT EDIT
 							features["butt_color"] = pref_species.default_color
-						else if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3])
+						else if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3] || !CONFIG_GET(flag/character_color_limits)) //SPLURT EDIT
 							features["butt_color"] = sanitize_hexcolor(new_buttcolor, 6)
 						else
 							to_chat(user,"<span class='danger'>Invalid color. Your color is not bright enough.</span>")
@@ -2992,9 +3008,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/new_anuscolor = input(user, "Butthole color:", "Character Preference", "#"+features["anus_color"]) as color|null
 					if(new_anuscolor)
 						var/temp_hsv = RGBtoHSV(new_anuscolor)
-						if(new_anuscolor == "#000000")
+						if(new_anuscolor == "#000000" && features["anus_color"] != pref_species.default_color) //SPLURT EDIT
 							features["anus_color"] = pref_species.default_color
-						else if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3])
+						else if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3] || !CONFIG_GET(flag/character_color_limits)) //SPLURT EDIT
 							features["anus_color"] = sanitize_hexcolor(new_anuscolor, 6)
 						else
 							to_chat(user, "<span class='danger'>Invalid color. Your color is not bright enough.</span>")
@@ -3033,6 +3049,82 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/n_vis = input(user, "Belly Visibility", "Character Preference") as null|anything in CONFIG_GET(keyed_list/safe_visibility_toggles)
 					if(n_vis)
 						features["belly_visibility"] = n_vis
+
+				if("cock_max_length")
+					var/max_B = CONFIG_GET(number/penis_max_inches_prefs)
+					var/new_size = input(user, "Max size:\n([features["cock_length"]]-[max_B])(0 = disabled)", "Character Preference") as num|null
+					if(new_size)
+						features["cock_max_length"] = clamp(round(new_size), features["cock_length"], max_B)
+					else
+						features -= "cock_max_length"
+
+				if("balls_max_size")
+					var/new_size = input(user, "Max size:\n([BALLS_SIZE_MIN]-[BALLS_SIZE_MAX])(0 = disabled)", "Character Preference") as num|null
+					if(new_size)
+						features["balls_max_size"] = clamp(round(new_size), BALLS_SIZE_MIN, BALLS_SIZE_MAX)
+					else
+						features -= "balls_max_size"
+
+				if("breasts_max_size")
+					var/new_size = input(user, "Breast Max Size (cancel to disable)", "Character Preference") as null|anything in GLOB.breast_values
+					if(new_size)
+						features["breasts_max_size"] = new_size
+					else
+						features -= "breasts_max_size"
+
+				if("belly_max_size")
+					var/max_B = CONFIG_GET(number/belly_max_size_prefs)
+					var/new_size = input(user, "Max size:\n([features["belly_size"]]-[max_B])(0 = disabled)", "Character Preference") as num|null
+					if(new_size)
+						features["belly_max_size"] = clamp(round(new_size), features["belly_size"], max_B)
+					else
+						features -= "belly_max_size"
+
+				if("butt_max_size")
+					var/max_B = CONFIG_GET(number/butt_max_size_prefs)
+					var/new_size = input(user, "Max size:\n([features["butt_size"]]-[max_B])(0 = disabled)", "Character Preference") as num|null
+					if(new_size)
+						features["butt_max_size"] = clamp(round(new_size), features["butt_size"], max_B)
+					else
+						features -= "butt_max_size"
+
+				if("cock_min_length")
+					var/min_B = CONFIG_GET(number/penis_min_inches_prefs)
+					var/new_size = input(user, "Min size:\n([min_B]-[features["cock_length"]])(0 = disabled)", "Character Preference") as num|null
+					if(new_size)
+						features["cock_min_length"] = clamp(round(new_size), min_B, features["cock_length"])
+					else
+						features -= "cock_min_length"
+
+				if("balls_min_size")
+					var/new_size = input(user, "Min size:\n([BALLS_SIZE_MIN]-[BALLS_SIZE_MAX])(0 = disabled)", "Character Preference") as num|null
+					if(new_size)
+						features["balls_min_size"] = clamp(round(new_size), BALLS_SIZE_MIN, BALLS_SIZE_MAX)
+					else
+						features -= "balls_min_size"
+
+				if("breasts_min_size")
+					var/new_size = input(user, "Breast Min Size (cancel to disable)", "Character Preference") as null|anything in GLOB.breast_values
+					if(new_size)
+						features["breasts_min_size"] = new_size
+					else
+						features -= "breasts_min_size"
+
+				if("belly_min_size")
+					var/min_B = CONFIG_GET(number/belly_min_size_prefs)
+					var/new_size = input(user, "Min size:\n([min_B]-[features["belly_size"]])(0 = disabled)", "Character Preference") as num|null
+					if(new_size)
+						features["belly_min_size"] = clamp(round(new_size), min_B, features["belly_size"])
+					else
+						features -= "belly_min_size"
+
+				if("butt_min_size")
+					var/min_B = CONFIG_GET(number/butt_min_size_prefs)
+					var/new_size = input(user, "Min size:\n([min_B]-[features["butt_size"]])(0 = disabled)", "Character Preference") as num|null
+					if(new_size)
+						features["butt_min_size"] = clamp(round(new_size), min_B, features["butt_size"])
+					else
+						features -= "butt_min_size"
 
 				if("ooccolor")
 					var/new_ooccolor = input(user, "Choose your OOC colour:", "Game Preference",ooccolor) as color|null
@@ -3300,7 +3392,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						var/new_marking_color = input(user, "Choose your character's marking color:", "Character Preference","#"+color_list[color_number]) as color|null
 						if(new_marking_color)
 							var/temp_hsv = RGBtoHSV(new_marking_color)
-							if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3]) // mutantcolors must be bright, but only if they affect the skin
+							if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3] || !CONFIG_GET(flag/character_color_limits)) // mutantcolors must be bright, but only if they affect the skin //SPLURT EDIT
 								color_list[color_number] = "#[sanitize_hexcolor(new_marking_color, 6)]"
 							else
 								to_chat(user, "<span class='danger'>Invalid color. Your color is not bright enough.</span>")
@@ -3595,6 +3687,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("enable_personal_chat_color")
 					enable_personal_chat_color = !enable_personal_chat_color
 				//End of skyrat changes
+				if("view_pixelshift") //SPLURT Edit
+					view_pixelshift = !view_pixelshift
 				if("action_buttons")
 					buttons_locked = !buttons_locked
 				if("tgui_fancy")
@@ -3874,6 +3968,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("preferences_tab")
 					if(href_list["tab"])
 						preferences_tab = text2num(href_list["tab"])
+
+				if("chastitypref")
+					cit_toggles ^= CHASTITY
+				if("stimulationpref")
+					cit_toggles ^= STIMULATION
+				if("edgingpref")
+					cit_toggles ^= EDGING
+				//
 
 	if(href_list["preference"] == "gear")
 		if(href_list["clear_loadout"])
@@ -4226,3 +4328,4 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 #undef DEFAULT_SLOT_AMT
 #undef HANDS_SLOT_AMT
 #undef BACKPACK_SLOT_AMT
+

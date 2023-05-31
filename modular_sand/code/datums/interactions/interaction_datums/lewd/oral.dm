@@ -121,4 +121,4 @@
 									'modular_sand/sound/interactions/bj11.ogg'), 50, 1, -1)
 	user.visible_message("<span class='lewd'><b>\The [user]</b> [message]</span>", ignored_mobs = user.get_unconsenting())
 	if(fucktarget != "penis" || partner.can_penetrating_genital_cum())
-		partner.handle_post_sex(lust_increase, CUM_TARGET_MOUTH, user)
+		partner.handle_post_sex(lust_increase, CUM_TARGET_MOUTH, user, ORGAN_SLOT_PENIS) //SPLURT edit

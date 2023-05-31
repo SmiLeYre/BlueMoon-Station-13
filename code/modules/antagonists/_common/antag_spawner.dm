@@ -171,21 +171,21 @@
 
 //////SYNDICATE BORG
 /obj/item/antag_spawner/nuke_ops/borg_tele
-	name = "syndicate cyborg teleporter"
+	name = "InteQ cyborg teleporter"
 	desc = "A single-use teleporter designed to quickly reinforce operatives in the field."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "locator"
 
 /obj/item/antag_spawner/nuke_ops/borg_tele/assault
-	name = "syndicate assault cyborg teleporter"
+	name = "InteQ assault cyborg teleporter"
 	borg_to_spawn = "Assault"
 
 /obj/item/antag_spawner/nuke_ops/borg_tele/medical
-	name = "syndicate medical teleporter"
+	name = "InteQ medical cyborg teleporter"
 	borg_to_spawn = "Medical"
 
 /obj/item/antag_spawner/nuke_ops/borg_tele/saboteur
-	name = "syndicate saboteur teleporter"
+	name = "InteQ saboteur cyborg teleporter"
 	borg_to_spawn = "Saboteur"
 
 /obj/item/antag_spawner/nuke_ops/borg_tele/spawn_antag(client/C, turf/T, kind, datum/mind/user)
@@ -221,7 +221,7 @@
 	var/datum/antagonist/nukeop/new_borg = new()
 	new_borg.send_to_spawnpoint = FALSE
 	R.mind.add_antag_datum(new_borg,creator_op.nuke_team)
-	R.mind.special_role = "Syndicate Cyborg"
+	R.mind.special_role = "InteQ Cyborg"
 
 ///////////SLAUGHTER DEMON
 

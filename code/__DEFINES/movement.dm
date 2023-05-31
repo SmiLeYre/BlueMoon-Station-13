@@ -16,7 +16,7 @@ GLOBAL_VAR_INIT(glide_size_multiplier, 1.0)
 #define DELAY_TO_GLIDE_SIZE(delay) (clamp(((world.icon_size / max((delay) / world.tick_lag, 1)) * GLOB.glide_size_multiplier), MIN_GLIDE_SIZE, MAX_GLIDE_SIZE))
 
 /// Enables smooth movement
-// #define SMOOTH_MOVEMENT
+#define SMOOTH_MOVEMENT
 
 /// Set appearance flags in vars
 #ifdef SMOOTH_MOVEMENT

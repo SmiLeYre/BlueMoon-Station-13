@@ -5,7 +5,7 @@
 #define COOLANT_OUTPUT_GATE airs[3]
 
 #define RBMK_TEMPERATURE_OPERATING 640 //Celsius
-#define RBMK_TEMPERATURE_CRITICAL 810 //At this point the entire ship/station is alerted to a meltdown. This may need altering
+#define RBMK_TEMPERATURE_CRITICAL 800 //At this point the entire station is alerted to a meltdown. This may need altering //BLUEMOON CHANGES
 #define RBMK_TEMPERATURE_MELTDOWN 900
 
 #define RBMK_NO_COOLANT_TOLERANCE 5 //How many process()ing ticks the reactor can sustain without coolant before slowly taking damage
@@ -15,7 +15,7 @@
 
 #define RBMK_MAX_CRITICALITY 3 //No more criticality than N for now.
 
-#define RBMK_POWER_FLAVOURISER 1000 //To turn those KWs into something usable
+#define RBMK_POWER_FLAVOURISER 200 //To turn those KWs into something usable This may need altering //BLUEMOON CHANGES
 
 //Math. Lame.
 #define KPA_TO_PSI(A) (A/6.895)
@@ -79,7 +79,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	var/pressure = 0 //Lose control of this -> Blowout
 	var/K = 0 //Rate of reaction.
 	var/desired_k = 0
-	var/control_rod_effectiveness = 0.65 //Starts off with a lot of control over K. If you flood this thing with plasma, you lose your ability to control K as easily.
+	var/control_rod_effectiveness = 0.3 //Starts off with a lot of control over K. If you flood this thing with plasma, you lose your ability to control K as easily. This may need altering //BLUEMOON CHANGES
 	var/power = 0 //0-100%. A function of the maximum heat you can achieve within operating temperature
 	var/power_modifier = 1 //Upgrade me with parts, science! Flat out increase to physical power output when loaded with plasma.
 	var/list/fuel_rods = list()
@@ -103,6 +103,13 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	var/current_desired_k = null
 	var/datum/looping_sound/rbmk_reactor/soundloop
 	var/datum/powernet/powernet = null
+
+	//BLUEMOON ADDITION START - рация для сообщений от реактора
+	var/obj/item/radio/radio
+	var/radio_key = /obj/item/encryptionkey/headset_eng
+	var/engineering_channel = "Engineering"
+	var/lastwarning = 0
+	//BLUEMOON ADDITION END
 
 //Use this in your maps if you want everything to be preset.
 /obj/machinery/atmospherics/components/trinary/nuclear_reactor/preset
@@ -204,9 +211,25 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	gas_absorption_effectiveness = rand(5, 6)/10 //All reactors are slightly different. This will result in you having to figure out what the balance is for K.
 	gas_absorption_constant = gas_absorption_effectiveness //And set this up for the rest of the round.
 	STOP_PROCESSING(SSmachines, src) //We'll handle this one ourselves.
+	//BLUEMOON ADDITION START - рация для оповещений
+	radio = new(src)
+	radio.keyslot = new radio_key
+	radio.listening = 0
+	radio.recalculateChannels()
 
+
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+/obj/machinery/atmospherics/components/trinary/nuclear_reactor/proc/on_entered(datum/source, atom/movable/AM, oldloc)
+	SIGNAL_HANDLER
+	//BLUEMOON ADDITION END
+/*BLUEMOON REMOVAL START
 /obj/machinery/atmospherics/components/trinary/nuclear_reactor/Crossed(atom/movable/AM, oldloc)
 	. = ..()
+BLUEMOON REMOVAL END */
 	if(isliving(AM) && temperature > 0)
 		var/mob/living/L = AM
 		L.adjust_bodytemperature(clamp(temperature, BODYTEMP_COOLING_MAX, BODYTEMP_HEATING_MAX)) //If you're on fire, you heat up!
@@ -243,9 +266,14 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 			no_coolant_ticks++
 			if(no_coolant_ticks > RBMK_NO_COOLANT_TOLERANCE)
 				temperature += temperature / 500 //This isn't really harmful early game, but when your reactor is up to full power, this can get out of hand quite quickly.
-				vessel_integrity -= temperature / 200 //Think fast chucklenuts!
-				take_damage(10) //Just for the sound effect, to let you know you've fucked up.
+				vessel_integrity -= 1 //Think fast chucklenuts! //BLUEMOON CHANGES
+//BLUEMOON REMOVAL				take_damage(10) //Just for the sound effect, to let you know you've fucked up.
 				color = "[COLOR_RED]"
+				//BLUEMOON ADDITION START
+				if((REALTIMEOFDAY - lastwarning) / 10 >= 60)
+					radio.talk_into(src, "DANGER! Lack of gas in coolant input. Integrity: [get_integrity()]%", engineering_channel)
+					lastwarning = REALTIMEOFDAY
+				//BLUEMOON ADDITION END
 				investigate_log("Reactor taking damage from the lack of coolant", INVESTIGATE_SINGULO)
 	//Now, heat up the output and set our pressure.
 	coolant_output.set_temperature(CELSIUS_TO_KELVIN(temperature)) //Heat the coolant output gas that we just had pass through us.
@@ -262,7 +290,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 		if(total_fuel_moles >= minimum_coolant_level) //You at least need SOME fuel.
 			var/power_produced = max((total_fuel_moles / moderator_input.total_moles() * 10), 1)
 			last_power_produced = max(0,((power_produced*power_modifier)*moderator_input.total_moles()))
-			last_power_produced *= (power/100) //Aaaand here comes the cap. Hotter reactor => more power.
+			last_power_produced *= (max(0,power)/100) //Aaaand here comes the cap. Hotter reactor => more power. //BLUEMOON CHANGES
 			last_power_produced *= base_power_modifier //Finally, we turn it into actual usable numbers.
 			radioactivity_spice_multiplier += moderator_input.get_moles(GAS_TRITIUM) / 5 //Chernobyl 2.
 			var/turf/T = get_turf(src)
@@ -290,6 +318,12 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 		if(total_degradation_moles >= minimum_coolant_level*0.5) //I'll be nice.
 			depletion_modifier += total_degradation_moles / 15 //Oops! All depletion. This causes your fuel rods to get SPICY.
 			playsound(src, pick('sound/machines/sm/accent/normal/1.ogg','sound/machines/sm/accent/normal/2.ogg','sound/machines/sm/accent/normal/3.ogg','sound/machines/sm/accent/normal/4.ogg','sound/machines/sm/accent/normal/5.ogg'), 100, TRUE)
+		//BLUEMOON ADDITION START
+		var/total_extinguisher_moles = moderator_input.get_moles(GAS_NITROUS) //Веселящий газ делает реактор не таким смешным, позволяя ему остывать быстрее
+		if(total_extinguisher_moles >= minimum_coolant_level)
+			var/extinguisher_bonus = total_extinguisher_moles / 200 //При вакуумной помпе, скорость падает примерно на 4 градуса, если в модераторе газ закачан под завязку
+			temperature = max(0, temperature-extinguisher_bonus)
+		//BLUEMOON ADDITION END
 		//From this point onwards, we clear out the remaining gasses.
 		moderator_input.clear() //Woosh. And the soul is gone.
 		K += total_fuel_moles / 1000
@@ -306,7 +340,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	//Then, hit as much of that goal with our cooling per tick as we possibly can.
 	difference = clamp(difference, 0, control_rod_effectiveness) //And we can't instantly zap the K to what we want, so let's zap as much of it as we can manage....
 	if(difference > fuel_power && desired_k > K)
-		message_admins("Not enough fuel to get [difference]. We have fuel [fuel_power]")
+//BLUEMOON REMOVAL		message_admins("Not enough fuel to get [difference]. We have fuel [fuel_power]")
 		investigate_log("Reactor has not enough fuel to get [difference]. We have fuel [fuel_power]", INVESTIGATE_SINGULO)
 		difference = fuel_power //Again, to stop you being able to run off of 1 fuel rod.
 	if(K != desired_k)
@@ -316,7 +350,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 			K -= difference
 	if(K == desired_k && last_user && current_desired_k != desired_k)
 		current_desired_k = desired_k
-		message_admins("Reactor desired criticality set to [desired_k] by [ADMIN_LOOKUPFLW(last_user)] in [ADMIN_VERBOSEJMP(src)]")
+//BLUEMOON REMOVAL		message_admins("Reactor desired criticality set to [desired_k] by [ADMIN_LOOKUPFLW(last_user)] in [ADMIN_VERBOSEJMP(src)]")
 		investigate_log("reactor desired criticality set to [desired_k] by [key_name(last_user)] at [AREACOORD(src)]", INVESTIGATE_SINGULO)
 
 	K = clamp(K, 0, RBMK_MAX_CRITICALITY)
@@ -382,6 +416,14 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 		if(M.z == z)
 			M.stop_sound_channel(channel)
 
+//BLUEMOON ADD START
+/obj/machinery/atmospherics/components/trinary/nuclear_reactor/proc/get_integrity()
+	var/integrity = vessel_integrity / initial(vessel_integrity)
+	integrity = round(integrity * 100, 0.01)
+	integrity = integrity < 0 ? 0 : integrity
+	return integrity
+//BLUEMOOB ADD END
+
 //Method to handle sound effects, reactor warnings, all that jazz.
 /obj/machinery/atmospherics/components/trinary/nuclear_reactor/proc/handle_alerts()
 	var/alert = FALSE //If we have an alert condition, we'd best let people know.
@@ -390,12 +432,17 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	//First alert condition: Overheat
 	if(temperature >= RBMK_TEMPERATURE_CRITICAL)
 		alert = TRUE
+		//BLUEMOON ADDITION START
+		if((REALTIMEOFDAY - lastwarning) / 10 >= 60)
+			radio.talk_into(src, "Warning! High temperature in the reactor's output. It will falter after reaching [RBMK_TEMPERATURE_MELTDOWN] celsius degrees. Integrity: [get_integrity()]%", engineering_channel)
+			lastwarning = REALTIMEOFDAY
+		//BLUEMOON ADDITION END
 		investigate_log("Reactor reaching critical temperature at [temperature] C with desired criticality at [desired_k]", INVESTIGATE_SINGULO)
-		message_admins("Reactor reaching critical temperature at [ADMIN_VERBOSEJMP(src)]")
+//BLUEMOON REMOVAL		message_admins("Reactor reaching critical temperature at [ADMIN_VERBOSEJMP(src)]")
 		if(temperature >= RBMK_TEMPERATURE_MELTDOWN)
-			var/temp_damage = min(temperature/100, initial(vessel_integrity)/40)	//40 seconds to meltdown from full integrity, worst-case. Bit less than blowout since it's harder to spike heat that much.
-			vessel_integrity -= temp_damage
-			if(vessel_integrity <= temp_damage)
+//BLUEMOON REMOVAL			var/temp_damage = min(temperature/100, initial(vessel_integrity)/40)	//40 seconds to meltdown from full integrity, worst-case. Bit less than blowout since it's harder to spike heat that much.
+			vessel_integrity -= 1 //BLUEMOON CHANGES
+			if(vessel_integrity <= 1) //BLUEMOON CHANGES
 				investigate_log("Reactor melted down at [temperature] C with desired criticality at [desired_k]", INVESTIGATE_SINGULO)
 				meltdown() //Oops! All meltdown
 				return
@@ -409,15 +456,20 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	//Second alert condition: Overpressurized (the more lethal one)
 	if(pressure >= RBMK_PRESSURE_CRITICAL)
 		alert = TRUE
+		//BLUEMOON ADDITION START
+		if((REALTIMEOFDAY - lastwarning) / 10 >= 60)
+			radio.talk_into(src, "Warning! Critical pressure in coolant input. Integrity: [get_integrity()]%", engineering_channel)
+			lastwarning = REALTIMEOFDAY
+		//BLUEMOON ADDITION END
 		investigate_log("Reactor reaching critical pressure at [pressure] PSI with desired criticality at [desired_k]", INVESTIGATE_SINGULO)
-		message_admins("Reactor reaching critical pressure at [ADMIN_VERBOSEJMP(src)]")
+//BLUEMOON REMOVAL		message_admins("Reactor reaching critical pressure at [ADMIN_VERBOSEJMP(src)]")
 		shake_animation(0.5)
 		playsound(loc, 'sound/machines/clockcult/steam_whoosh.ogg', 100, TRUE)
 		var/turf/T = get_turf(src)
 		T.atmos_spawn_air("water_vapor=[pressure/100];TEMP=[CELSIUS_TO_KELVIN(temperature)]")
-		var/pressure_damage = min(pressure/100, initial(vessel_integrity)/45)	//You get 45 seconds (if you had full integrity), worst-case. But hey, at least it can't be instantly nuked with a pipe-fire.. though it's still very difficult to save.
-		vessel_integrity -= pressure_damage
-		if(vessel_integrity <= pressure_damage) //It wouldn't
+//BLUEMOON REMOVAL		var/pressure_damage = min(pressure/100, initial(vessel_integrity)/45)	//You get 45 seconds (if you had full integrity), worst-case. But hey, at least it can't be instantly nuked with a pipe-fire.. though it's still very difficult to save.
+		vessel_integrity -= 1 //BLUEMOON CHANGES
+		if(vessel_integrity <= 1) //BLUEMOON CHANGES
 			investigate_log("Reactor blowout at [pressure] PSI with desired criticality at [desired_k]", INVESTIGATE_SINGULO)
 			blowout()
 			return

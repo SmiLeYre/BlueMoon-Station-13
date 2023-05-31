@@ -21,7 +21,7 @@ again.
 /obj/effect/spawner/structure/window
 	icon = 'icons/obj/structures_spawners.dmi'
 	icon_state = "window_spawner"
-	name = "window spawner"
+	name = "Window Spawner"
 	spawn_list = list(/obj/structure/grille, /obj/structure/window/fulltile)
 	dir = SOUTH
 	var/electrochromatic
@@ -32,7 +32,7 @@ again.
 	if(!electrochromatic)
 		return
 	if(!electrochromatic_id)
-		stack_trace("Electrochromatic window spawner set without electromatic id.")
+		stack_trace("Electrochromatic Window Spawner set without electromatic id.")
 		return
 	if(electrochromatic_id[1] == "!")
 		electrochromatic_id = SSmapping.get_obfuscated_id(electrochromatic_id)
@@ -43,7 +43,7 @@ again.
 			W.electrochromatic_dim()
 
 /obj/effect/spawner/structure/window/hollow
-	name = "hollow window spawner"
+	name = "hollow Window Spawner"
 	icon_state = "hwindow_spawner_full"
 	spawn_list = list(/obj/structure/grille, /obj/structure/window, /obj/structure/window/spawner/north, /obj/structure/window/spawner/east, /obj/structure/window/spawner/west)
 
@@ -99,7 +99,7 @@ again.
 //reinforced
 
 /obj/effect/spawner/structure/window/reinforced
-	name = "reinforced window spawner"
+	name = "reinforced Window Spawner"
 	icon_state = "rwindow_spawner"
 	spawn_list = list(/obj/machinery/door/firedoor/heavy, /obj/structure/grille, /obj/structure/window/reinforced/fulltile)
 
@@ -107,7 +107,7 @@ again.
 	spawn_list = list(/obj/structure/grille, /obj/structure/window/reinforced/fulltile)
 
 /obj/effect/spawner/structure/window/hollow/reinforced
-	name = "hollow reinforced window spawner"
+	name = "hollow reinforced Window Spawner"
 	icon_state = "hrwindow_spawner_full"
 	spawn_list = list(/obj/structure/grille, /obj/structure/window/reinforced, /obj/structure/window/reinforced/spawner/north, /obj/structure/window/reinforced/spawner/east, /obj/structure/window/reinforced/spawner/west)
 
@@ -163,18 +163,18 @@ again.
 //tinted and electrochromatic
 
 /obj/effect/spawner/structure/window/reinforced/tinted
-	name = "tinted reinforced window spawner"
+	name = "tinted reinforced Window Spawner"
 	icon_state = "twindow_spawner"
 	spawn_list = list(/obj/structure/grille, /obj/structure/window/reinforced/tinted/fulltile)
 
 /obj/effect/spawner/structure/window/reinforced/tinted/electrochromatic
-	name = "electrochromatic reinforced window spawner"
+	name = "electrochromatic reinforced Window Spawner"
 	electrochromatic = ELECTROCHROMATIC_DIMMED
 
 //shuttle window
 
 /obj/effect/spawner/structure/window/shuttle
-	name = "shuttle window spawner"
+	name = "shuttle Window Spawner"
 	icon_state = "swindow_spawner"
 	spawn_list = list(/obj/machinery/door/firedoor/heavy, /obj/structure/grille, /obj/structure/window/shuttle)
 
@@ -182,7 +182,7 @@ again.
 //plastitanium window
 
 /obj/effect/spawner/structure/window/plastitanium
-	name = "plastitanium window spawner"
+	name = "plastitanium Window Spawner"
 	icon_state = "plastitaniumwindow_spawner"
 	spawn_list = list(/obj/machinery/door/firedoor/heavy, /obj/structure/grille, /obj/structure/window/plastitanium)
 
@@ -194,7 +194,7 @@ again.
 //ice window
 
 /obj/effect/spawner/structure/window/ice
-	name = "ice window spawner"
+	name = "ice Window Spawner"
 	icon_state = "icewindow_spawner"
 	spawn_list = list(/obj/structure/grille, /obj/structure/window/reinforced/fulltile/ice)
 
@@ -202,12 +202,12 @@ again.
 //survival pod window
 
 /obj/effect/spawner/structure/window/survival_pod
-	name = "pod window spawner"
+	name = "pod Window Spawner"
 	icon_state = "podwindow_spawner"
 	spawn_list = list(/obj/machinery/door/firedoor/heavy, /obj/structure/grille, /obj/structure/window/reinforced/survival_pod)
 
 /obj/effect/spawner/structure/window/hollow/survival_pod
-	name = "hollow pod window spawner"
+	name = "hollow pod Window Spawner"
 	icon_state = "podwindow_spawner_full"
 	spawn_list = list(/obj/structure/grille, /obj/structure/window/shuttle/survival_pod, /obj/structure/window/shuttle/survival_pod/spawner/north, /obj/structure/window/shuttle/survival_pod/spawner/east, /obj/structure/window/shuttle/survival_pod/spawner/west)
 
@@ -264,12 +264,12 @@ again.
 //plasma windows
 
 /obj/effect/spawner/structure/window/plasma
-	name = "plasma window spawner"
+	name = "plasma Window Spawner"
 	icon_state = "pwindow_spawner"
 	spawn_list = list(/obj/machinery/door/firedoor/heavy, /obj/structure/grille, /obj/structure/window/plasma/fulltile)
 
 /obj/effect/spawner/structure/window/hollow/plasma
-	name = "hollow plasma window spawner"
+	name = "hollow plasma Window Spawner"
 	icon_state = "phwindow_spawner_full"
 	spawn_list = list(/obj/structure/grille, /obj/structure/window/plasma, /obj/structure/window/plasma/spawner/north, /obj/structure/window/plasma/spawner/east, /obj/structure/window/plasma/spawner/west)
 
@@ -325,12 +325,12 @@ again.
 //plasma reinforced
 
 /obj/effect/spawner/structure/window/plasma/reinforced
-	name = "reinforced plasma window spawner"
+	name = "reinforced plasma Window Spawner"
 	icon_state = "prwindow_spawner"
 	spawn_list = list(/obj/structure/grille, /obj/structure/window/plasma/reinforced/fulltile)
 
 /obj/effect/spawner/structure/window/hollow/plasma/reinforced
-	name = "hollow reinforced plasma window spawner"
+	name = "hollow reinforced plasma Window Spawner"
 	icon_state = "phrwindow_spawner_full"
 	spawn_list = list(/obj/structure/grille, /obj/structure/window/plasma/reinforced, /obj/structure/window/plasma/reinforced/spawner/north, /obj/structure/window/plasma/reinforced/spawner/east, /obj/structure/window/plasma/reinforced/spawner/west)
 
@@ -382,3 +382,10 @@ again.
 		if(NORTHWEST)
 			spawn_list = list(/obj/structure/grille, /obj/structure/window/plasma/reinforced/spawner/north, /obj/structure/window/plasma/reinforced/spawner/west)
 	. = ..()
+
+//Ratvar
+
+/obj/effect/spawner/structure/window/clockwork
+	name = "Ratvar Window Spawner"
+	icon_state = "clockwork_window"
+	spawn_list = list(/obj/structure/grille, /obj/structure/window/bronze/fulltile)

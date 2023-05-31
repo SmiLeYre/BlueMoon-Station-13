@@ -862,7 +862,7 @@
 		dat += "</tr></table>"
 
 	//Antagonist (Orange)
-		var/isbanned_dept = jobban_isbanned(M, ROLE_SYNDICATE)
+		var/isbanned_dept = jobban_isbanned(M, ROLE_INTEQ)
 		dat += "<table cellpadding='1' cellspacing='0' width='100%'>"
 		dat += "<tr bgcolor='ffeeaa'><th colspan='10'><a href='?src=[REF(src)];[HrefToken()];jobban3=Syndicate;jobban4=[REF(M)]'>Antagonist Positions</a> | "
 		dat += "<a href='?src=[REF(src)];[HrefToken()];jobban3=teamantags;jobban4=[REF(M)]'>Team Antagonists</a> | "

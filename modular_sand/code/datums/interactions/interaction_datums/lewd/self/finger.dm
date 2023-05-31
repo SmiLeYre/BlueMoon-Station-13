@@ -14,7 +14,7 @@
 		"суёт палец в своё анальное колечко.",
 		"разрабатывает своё анальное кольцо при помощи собственного пальца.")]</span>", ignored_mobs = user.get_unconsenting())
 	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1)
-	user.handle_post_sex(NORMAL_LUST, CUM_TARGET_HAND, user)
+	user.handle_post_sex(NORMAL_LUST, CUM_TARGET_HAND, user, "anus") //SPLURT edit
 
 /datum/interaction/lewd/finger_self
 	description = "Пальчики. Поиграться со своей вагиной."
@@ -33,4 +33,4 @@
 		"играется со своей киской.",
 		"разрабатывает своё влагалище при помощи своего собственного пальчика.")]</span>", ignored_mobs = user.get_unconsenting())
 	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1)
-	user.handle_post_sex(NORMAL_LUST, CUM_TARGET_HAND, user)
+	user.handle_post_sex(NORMAL_LUST, CUM_TARGET_HAND, user, ORGAN_SLOT_VAGINA) //SPLURT edit

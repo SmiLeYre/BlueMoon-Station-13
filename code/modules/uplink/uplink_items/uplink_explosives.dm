@@ -46,7 +46,7 @@
 /datum/uplink_item/explosives/c4bag
 	name = "Bag of C-4 explosives"
 	desc = "Because sometimes quantity is quality. Contains 10 C-4 plastic explosives."
-	item = /obj/item/storage/backpack/duffelbag/syndie/c4
+	item = /obj/item/storage/backpack/duffelbag/syndie/inteq/c4
 	cost = 9 //10% discount!
 	cant_discount = TRUE
 
@@ -55,7 +55,7 @@
 	desc = "Contains 3 X-4 shaped plastic explosives. Similar to C4, but with a stronger blast that is directional instead of circular. \
 			X-4 can be placed on a solid surface, such as a wall or window, and it will blast through the wall, injuring anything on the opposite side, while being safer to the user. \
 			For when you want a controlled explosion that leaves a wider, deeper, hole."
-	item = /obj/item/storage/backpack/duffelbag/syndie/x4
+	item = /obj/item/storage/backpack/duffelbag/syndie/inteq/x4
 	cost = 4 //
 	cant_discount = TRUE
 

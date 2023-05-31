@@ -74,7 +74,7 @@
 	implants = list(/obj/item/implant/weapons_auth)
 
 /datum/outfit/syndicate_empty/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
-	H.faction |= ROLE_SYNDICATE
+	H.faction |= ROLE_INTEQ
 
 /area/ruin/space/ruinsolars
 	name = "Solar Array"

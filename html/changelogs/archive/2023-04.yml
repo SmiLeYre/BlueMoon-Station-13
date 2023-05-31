@@ -23,3 +23,20 @@
 2023-04-18:
   KeplerWasTaken:
   - rscdel: Removes fascist symbols
+2023-04-23:
+  Azarak:
+  - rscadd: Added new body morpher quirk, which allows people to morph like slimepeople
+  BongaTheProto:
+  - config: Makes character color limits a config (so you can make darker characters
+      now)
+  - tweak: select full black for default species color, select it again for full black
+  Pin-alternative:
+  - tweak: The genital manager is now its own menu you can enter through the right
+      click options
+  - bugfix: genitals now properly show how full of fluids they are
+  - code_imp: Made breasts a not so snowflake to handle
+2023-04-30:
+  BongaTheProto:
+  - rscadd: adds runner jackets
+  - rscadd: adds a bunch of new horns for character customization
+  - rscadd: adds a few more variants of sushi

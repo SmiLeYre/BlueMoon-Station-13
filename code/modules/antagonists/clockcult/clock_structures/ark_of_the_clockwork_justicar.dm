@@ -80,14 +80,8 @@
 	visible_message("<span class='boldwarning'>[src] shudders and roars to life, its parts beginning to whirr and screech!</span>")
 	priority_announce("Massive [Gibberish("bluespace", 100)] anomaly detected on all frequencies. All crew are directed to \
 	@!$, [text2ratvar("PURGE ALL UNTRUTHS")] <&. the anomalies and destroy their source to prevent further damage to corporate property. This is \
-	not a drill.", "Central Command Higher Dimensional Affairs", 'sound/magic/clockwork/ark_activation_sequence.ogg')
+	not a drill.", "Центральное Командование, Отдел Работы с Реальностью", 'sound/magic/clockwork/ark_activation_sequence.ogg')
 	set_security_level("Delta")
-	for(var/V in SSticker.mode.servants_of_ratvar)
-		var/datum/mind/M = V
-		if(!M || !M.current)
-			continue
-		if(ishuman(M.current))
-			M.current.add_overlay(mutable_appearance('icons/effects/genetics.dmi', "servitude", -ANTAG_LAYER))
 	var/turf/T = get_turf(src)
 	var/list/open_turfs = list()
 	for(var/turf/open/OT in orange(1, T))
@@ -158,7 +152,7 @@
 	var/was_stranded = SSshuttle.emergency.mode == SHUTTLE_STRANDED
 	SSshuttle.clearHostileEnvironment(src)
 	if(!was_stranded && !purpose_fulfilled)
-		priority_announce("Massive energy anomaly no longer on short-range scanners, bluespace distortions still detected.","Central Command Higher Dimensional Affairs")
+		priority_announce("Massive energy anomaly no longer on short-range scanners, bluespace distortions still detected.","Центральное Командование, Отдел Работы с Реальностью")
 	if(glow)
 		qdel(glow)
 		glow = null
@@ -277,6 +271,12 @@
 		CHECK_TICK
 
 /obj/structure/destructible/clockwork/massive/celestial_gateway/process()
+	for(var/V in SSticker.mode.servants_of_ratvar)
+		var/datum/mind/M = V
+		if(!M || !M.current)
+			continue
+		if(ishuman(M.current))
+			M.current.add_overlay(mutable_appearance('icons/effects/genetics.dmi', "servitude", -ANTAG_LAYER))
 	adjust_clockwork_power(2.5) //Provides weak power generation on its own
 	if(seconds_until_activation)
 		if(!countdown)

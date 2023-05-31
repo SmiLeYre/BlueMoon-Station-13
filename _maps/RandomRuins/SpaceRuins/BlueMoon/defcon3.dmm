@@ -3196,18 +3196,6 @@
 	},
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
-"qd" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	level = 1
-	},
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/ruin/space/has_grav/port_tarkon/atmos)
 "qe" = (
 /obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
 	level = 1
@@ -7469,6 +7457,9 @@
 "NK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/structure/window/reinforced/no_firelock,
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "NL" = (
@@ -7629,12 +7620,6 @@
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/structure/lattice/catwalk,
 /turf/open/space/basic,
-/area/solars/tarkon)
-"OS" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/item/solar_assembly,
-/obj/structure/cable,
-/turf/open/floor/plasteel/airless/solarpanel,
 /area/solars/tarkon)
 "OT" = (
 /obj/effect/decal/cleanable/dirt,
@@ -10389,7 +10374,7 @@ RF
 RF
 PK
 dC
-qd
+dC
 lp
 lH
 te
@@ -11729,7 +11714,7 @@ fw
 fw
 fw
 fw
-OS
+If
 WY
 WY
 WY

@@ -160,6 +160,18 @@
 #define TRAIT_CALCIUM_HEALER	"calcium_healer"
 #define TRAIT_MAGIC_CHOKE		"magic_choke"
 #define TRAIT_CAPTAIN_METABOLISM "captain-metabolism"
+/// Like antimagic, but doesn't block the user from casting
+#define TRAIT_ANTIMAGIC_NO_SELFBLOCK "anti_magic_no_selfblock"
+/// Gives us turf, mob and object vision through walls
+#define TRAIT_XRAY_VISION "xray_vision"
+/// Gives us mob vision through walls and slight night vision
+#define TRAIT_THERMAL_VISION "thermal_vision"
+/// Gives us turf vision through walls and slight night vision
+#define TRAIT_MESON_VISION "meson_vision"
+/// Gives us Night vision
+#define TRAIT_TRUE_NIGHT_VISION "true_night_vision"
+/// Lets us scan reagents
+#define TRAIT_REAGENT_SCANNER "reagent_scanner"
 #define TRAIT_ABDUCTOR_TRAINING "abductor-training"
 #define TRAIT_ABDUCTOR_SCIENTIST_TRAINING "abductor-scientist-training"
 #define TRAIT_SURGEON           "surgeon"
@@ -221,8 +233,6 @@
 #define TRAIT_AUTO_CATCH_ITEM	"auto_catch_item"
 #define TRAIT_CLOWN_MENTALITY	"clown_mentality" // The future is now, clownman.
 #define TRAIT_FREESPRINT		"free_sprinting"
-#define TRAIT_XRAY_VISION       "xray_vision"
-#define TRAIT_THERMAL_VISION    "thermal_vision"
 #define TRAIT_NO_TELEPORT		"no-teleport" //you just can't
 #define TRAIT_NO_INTERNALS		"no-internals"
 #define TRAIT_TOXIC_ALCOHOL		"alcohol_intolerance"
@@ -444,8 +454,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_NEVER_WOUNDED "never_wounded"
 /// reduces the use time of syringes, pills, patches and medigels but only when using on someone
 #define TRAIT_FASTMED "fast_med_use"
-/// This allows a person who has antimagic to cast spells without getting blocked
-#define TRAIT_ANTIMAGIC_NO_SELFBLOCK "anti_magic_no_selfblock"
 #define TRAIT_PAINKILLER "painkiller"	// Обезболивающее - для операций
 #define TRAIT_PARASITE_IMMUNE "parasite_immune"	// Иммунитет к паразитам
 /// These are used for brain-based paralysis, where replacing the limb won't fix it
@@ -453,14 +461,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_PRESENT_VISION "present-vision"
 /// Can weave webs into cloth
 #define TRAIT_WEB_WEAVER "web_weaver"
-/// Gives us turf vision through walls and slight night vision
-#define TRAIT_MESON_VISION "meson_vision"
-/// Gives us Night vision
-#define TRAIT_TRUE_NIGHT_VISION "true_night_vision"
 /// Negates our gravity, letting us move normally on floors in 0-g
 #define TRAIT_NEGATES_GRAVITY "negates_gravity"
-/// Lets us scan reagents
-#define TRAIT_REAGENT_SCANNER "reagent_scanner"
 /// Lets us scan machine parts and tech unlocks
 #define TRAIT_RESEARCH_SCANNER "research_scanner"
 #define TRAIT_BOOZE_SLIDER "booze-slider"
@@ -820,8 +822,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define PAI_FOLDED "pai-folded"
 /// Trait applied to brain mobs when they lack external aid for locomotion, such as being inside a mech.
 #define BRAIN_UNAIDED "brain-unaided"
-/// Trait applied by MODsuits.
-#define MOD_TRAIT "mod"
 /// Trait applied by element
 #define ELEMENT_TRAIT(source) "element_trait_[source]"
 /// Trait granted by [/obj/item/clothing/head/helmet/space/hardsuit/berserker]
@@ -884,3 +884,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 //Traits applied to the mind
 /// This mob is considered dead for the sake of objectives
 #define MIND_TRAIT_OBJECTIVE_DEAD "mind_trait_objective_dead"
+
+/// Trait applied by MODsuits.
+#define MOD_TRAIT "mod"

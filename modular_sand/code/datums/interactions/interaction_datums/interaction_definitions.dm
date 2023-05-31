@@ -51,9 +51,9 @@
 	needs_physical_contact = TRUE
 
 /datum/interaction/bird
-	description = "Подбросить птичку"
+	description = "Показать Средний Палец"
 	require_user_hands = TRUE
-	simple_message = "USER перекидывает в TARGET воображаемую птичку!"
+	simple_message = "USER демонстрирует TARGET средний палец! Туда его!!"
 	max_distance = 25
 
 /datum/interaction/holdhand

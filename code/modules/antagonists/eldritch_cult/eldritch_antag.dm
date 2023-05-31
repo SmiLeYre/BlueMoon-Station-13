@@ -13,6 +13,7 @@
 	var/list/sac_targetted = list()		//Which targets did living hearts give them, but they did not sac?
 	var/list/actually_sacced = list()	//Which targets did they actually sac?
 	var/ascended = FALSE
+	var/datum/mind/yandere
 
 /datum/antagonist/heretic/admin_add(datum/mind/new_owner,mob/admin)
 	give_equipment = TRUE
@@ -106,18 +107,10 @@
 		EK.on_death(owner.current)
 
 /datum/antagonist/heretic/proc/forge_primary_objectives()
-	var/list/assasination = list()
-	var/list/protection = list()
-	for(var/i in 1 to 2)
-		var/pck = pick("assasinate")
-		switch(pck)
-			if("assasinate")
-				var/datum/objective/assassinate/once/A = new
-				A.owner = owner
-				var/list/owners = A.get_owners()
-				A.find_target(owners,protection)
-				assasination += A.target
-				objectives += A
+	var/datum/objective/protect/protection_objective = new
+	protection_objective.owner = owner
+	protection_objective.update_explanation_text()
+	objectives += protection_objective
 
 	var/datum/objective/sacrifice_ecult/SE = new
 	SE.owner = owner
@@ -256,7 +249,7 @@
 
 /datum/objective/sacrifice_ecult/update_explanation_text()
 	. = ..()
-	target_amount = rand(2,4)
+	target_amount = rand(2,6)
 	explanation_text = "Sacrifice at least [target_amount] people."
 
 /datum/objective/sacrifice_ecult/check_completion()

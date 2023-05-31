@@ -9,3 +9,19 @@
 	icon_state = "omon"
 	item_state = "bl_suit"
 	can_adjust = TRUE
+
+/obj/item/clothing/under/donator/bm/modern_suit
+	name = "Modern Suit"
+	desc = "A costume in red and black colors. It includes shorts, suspenders, and a tie. On the chest, you can see the inscription 'Epoque limited collection 2563, made specially for Tex'."
+	icon_state = "modern_suit"
+	item_state = "bl_suit"
+	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
+	can_adjust = TRUE
+
+/obj/item/clothing/under/donator/bm/utilgen
+	name = "GG-66"
+	desc = "Aramid made uniform of a rising private defense company, with a purple planet(?) on the back and 6's on the shoulders"
+	icon_state = "utilgen"
+	item_state = "utilgen"
+	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
+	can_adjust = FALSE

@@ -16,7 +16,7 @@
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 50, BIO = 0, RAD = 0, FIRE = 80, ACID = 80)
 	attack_speed = CLICK_CD_MELEE
 
-	var/stamina_loss_amount = 45
+	var/stamina_loss_amount = 35
 	var/turned_on = FALSE
 	var/armor_pen = 100
 	var/knockdown = TRUE
@@ -24,7 +24,7 @@
 	var/block_percent_to_counter = 50
 	var/obj/item/stock_parts/cell/cell
 	var/hitcost = 750
-	var/throw_hit_chance = 35
+	var/throw_hit_chance = 50
 	var/preload_cell_type //if not empty the baton starts with this type of cell
 	var/cooldown_duration = 2.5 SECONDS //How long our baton rightclick goes on cooldown for after applying a knockdown
 	var/status_duration = 3 SECONDS //how long our status effects last for otherwise

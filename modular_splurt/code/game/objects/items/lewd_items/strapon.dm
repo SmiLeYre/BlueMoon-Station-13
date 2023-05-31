@@ -4,10 +4,10 @@
 	icon = 'modular_splurt/icons/obj/strapon.dmi'
 	icon_state = "strapon_strap"
 	item_state = "strapon_strap"
-	
+
 /obj/item/strapon_strap/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/dildo))
-		to_chat(user, "<span class='userlove'>You attach the dildo to the strap.</span>")
+		to_chat(user, span_userlove("You attach the dildo to the strap."))
 		var/obj/item/dildo/dildo = I
 		var/obj/item/clothing/underwear/briefs/strapon/new_strapon = new /obj/item/clothing/underwear/briefs/strapon(user.loc)
 		new_strapon.dildo_color = dildo.color
@@ -26,13 +26,15 @@
 			qdel(dildo)
 	else
 		return ..()
-	
+
 /obj/item/clothing/underwear/briefs/strapon
 	name = "strapon"
 	desc = "A dildo on a strap, to be attached around one's waist."
 	icon = 'modular_splurt/icons/obj/strapon.dmi'
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/strapon.dmi'
 	icon_state = "strapon_base"
+	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
+	flags_inv = NONE
 	var/dildo_color = "#ff54dd"
 	var/dildo_shape = "human"
 	var/dildo_size = 3
@@ -48,10 +50,10 @@
 /obj/item/clothing/underwear/briefs/strapon/examine(mob/user)
 	. = ..()
 	. += "There is a <span class='notice'>[GLOB.dildo_size_names[dildo_size]] [dildo_shape][dildo_can_customize ? " custom" : ""] dildo</span> attached to it."
-	. += "<span class='notice'>Alt-Click \the [src.name] to separate the strap and dildo.</span>"
+	. += span_notice("Alt-Click \the [src.name] to separate the strap and dildo.")
 
 /obj/item/clothing/underwear/briefs/strapon/AltClick(mob/living/user, obj/item/I)
-	to_chat(user, "<span class='userlove'>You separate the dildo from the strap.</span>")
+	to_chat(user, span_userlove("You separate the dildo from the strap."))
 	var/obj/item/strapon_strap/new_strapon_strap = new /obj/item/strapon_strap(user.loc)
 	var/obj/item/dildo/new_dildo
 	if(dildo_can_customize)
@@ -73,7 +75,7 @@
 					new_dildo = new /obj/item/dildo/flared(user.loc)
 			else
 				return
-	
+
 	new_dildo.random_color = FALSE
 	new_dildo.color = dildo_color
 	new_dildo.random_shape = FALSE
@@ -88,11 +90,11 @@
 		user.put_in_hands(new_dildo)
 	else
 		qdel(src)
-	
+
 /obj/item/clothing/underwear/briefs/strapon/proc/is_exposed()
 	if(!istype(loc, /mob/living/carbon))
 		return FALSE
-	
+
 	var/mob/living/carbon/owner = loc
 	var/L = owner.get_equipped_items()
 	L -= src
@@ -105,16 +107,16 @@
 
 	if(istype(user, /mob/living/carbon))
 		var/mob/living/carbon/C = user
-		to_chat(C, "<span class='userlove'>You're now ready to bone someone!</span>")
+		to_chat(C, span_userlove("You're now ready to bone someone!"))
 
 /obj/item/clothing/underwear/briefs/strapon/mob_can_equip(M, equipper, slot, disable_warning, bypass_equip_delay_self)
 	if(!..())
 		return FALSE
-		
+
 	if(istype(M, /mob/living))
 		var/mob/living/living = M
 		if(living.has_penis(REQUIRE_ANY))
-			to_chat(living, "<span class='notice'>\The [living] doesn't seem to need a strapon!</span>")
+			to_chat(living, span_notice("\The [living] doesn't seem to need a strapon!"))
 			return FALSE
 
 	return TRUE

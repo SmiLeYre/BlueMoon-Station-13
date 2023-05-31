@@ -26,12 +26,12 @@
 		max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 		min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
 	else if(GLOB.ratvar_approaches)
-		armor = getArmor(melee = 70, bullet = 80, laser = 65, energy = 65, bomb = 70, bio = 0, rad = 0, fire = 100, acid = 100,, magic = 70, wound = 75)
+		armor = getArmor(melee = 70, bullet = 50, laser = 65, energy = 65, bomb = 75, bio = 0, rad = 0, fire = 100, acid = 100,, magic = 70, wound = 75)
 		clothing_flags |= STOPSPRESSUREDAMAGE
 		max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 		min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
 	else
-		armor = getArmor(melee = 60, bullet = 70, laser = 50, energy = 50, bomb = 60, bio = 0, rad = 0, fire = 100, acid = 100, magic = 60, wound = 65)
+		armor = getArmor(melee = 50, bullet = 25, laser = 50, energy = 50, bomb = 50, bio = 0, rad = 0, fire = 50, acid = 100, magic = 60, wound = 50)
 		clothing_flags &= ~STOPSPRESSUREDAMAGE
 		max_heat_protection_temperature = initial(max_heat_protection_temperature)
 		min_cold_protection_temperature = initial(min_cold_protection_temperature)
@@ -88,12 +88,12 @@
 		max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 		min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
 	else if(GLOB.ratvar_approaches)
-		armor = getArmor(melee = 70, bullet = 80, laser = 65, energy = 65, bomb = 70, bio = 0, rad = 0, fire = 100, acid = 100, magic = 70, wound = 75)
+		armor = getArmor(melee = 70, bullet = 50, laser = 65, energy = 65, bomb = 75, bio = 0, rad = 0, fire = 100, acid = 100,, magic = 70, wound = 75)
 		clothing_flags |= STOPSPRESSUREDAMAGE
 		max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 		min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
 	else
-		armor = getArmor(melee = 60, bullet = 70, laser = 50, energy = 50, bomb = 60, bio = 0, rad = 0, fire = 100, acid = 100, magic = 60, wound = 65)
+		armor = getArmor(melee = 50, bullet = 25, laser = 50, energy = 50, bomb = 50, bio = 0, rad = 0, fire = 50, acid = 100, magic = 60, wound = 50)
 		clothing_flags &= ~STOPSPRESSUREDAMAGE
 		max_heat_protection_temperature = initial(max_heat_protection_temperature)
 		min_cold_protection_temperature = initial(min_cold_protection_temperature)
@@ -153,7 +153,7 @@
 		max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 		min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
 	else
-		armor = getArmor(melee = 80, bullet = 70, laser = 50, energy = 50, bomb = 60, bio = 0, rad = 0, fire = 100, acid = 100, magic = 70, wound = 85)
+		armor = getArmor(melee = 50, bullet = 50, laser = 50, energy = 50, bomb = 50, bio = 0, rad = 0, fire = 50, acid = 100, magic = 50, wound = 50)
 		clothing_flags &= ~STOPSPRESSUREDAMAGE
 		max_heat_protection_temperature = initial(max_heat_protection_temperature)
 		min_cold_protection_temperature = initial(min_cold_protection_temperature)

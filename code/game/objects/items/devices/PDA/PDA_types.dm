@@ -171,6 +171,7 @@
 /obj/item/pda/chaplain
 	name = "chaplain PDA"
 	icon_state = "pda-chaplain"
+	default_cartridge = /obj/item/cartridge/chaplain
 	ttone = "holy"
 
 /obj/item/pda/lawyer

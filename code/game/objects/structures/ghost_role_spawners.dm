@@ -517,7 +517,7 @@
 	id = /obj/item/card/id/syndicate
 
 /datum/outfit/syndicate_empty/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
-	H.faction |= ROLE_SYNDICATE
+	H.faction |= ROLE_INTEQ
 
 /obj/effect/mob_spawn/human/syndicate/battlecruiser
 	name = "Syndicate Battlecruiser Ship Operative"
@@ -673,7 +673,6 @@
 	flavour_text = "The station refused to pay for your protection, protect the ship, siphon the credits from the station and raid it for even more loot."
 	assignedrole = "Space Pirate"
 	var/rank = "Mate"
-	canloadappearance = TRUE
 
 /obj/effect/mob_spawn/human/pirate/on_attack_hand(mob/living/user, act_intent = user.a_intent, unarmed_attack_flags)
 	. = ..()
@@ -730,7 +729,7 @@
 /obj/effect/mob_spawn/human/pirate/proc/generate_pirate_name()
 	var/beggings = strings(PIRATE_NAMES_FILE, "beginnings")
 	var/endings = strings(PIRATE_NAMES_FILE, "endings")
-	return "[rank] [pick(beggings)][pick(endings)]"
+	return "[rank] [pick(beggings)] [pick(endings)]"
 
 /obj/effect/mob_spawn/human/pirate/Destroy()
 	new/obj/structure/showcase/machinery/oldpod/used(drop_location())
@@ -1311,7 +1310,7 @@
 	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE, ACCESS_SYNDICATE_LEADER)
 
 /datum/outfit/ds2/syndicate/post_equip(mob/living/carbon/human/syndicate)
-	syndicate.faction |= ROLE_SYNDICATE
+	syndicate.faction |= ROLE_INTEQ
 	return ..()
 
 //DS-2 Command
@@ -1384,7 +1383,7 @@
 	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE, ACCESS_SYNDICATE_LEADER)
 
 /datum/outfit/ds2/syndicate_command/post_equip(mob/living/carbon/human/syndicate)
-	syndicate.faction |= ROLE_SYNDICATE
+	syndicate.faction |= ROLE_INTEQ
 	return ..()
 
 /// DS-2

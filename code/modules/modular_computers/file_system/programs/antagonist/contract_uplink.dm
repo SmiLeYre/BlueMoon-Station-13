@@ -1,15 +1,15 @@
 /datum/computer_file/program/contract_uplink
 	filename = "contractor uplink"
-	filedesc = "Syndicate Contractor Uplink"
+	filedesc = "InteQ Contractor Uplink"
 	category = PROGRAM_CATEGORY_MISC
 	program_icon_state = "assign"
-	extended_desc = "A standard, Syndicate issued system for handling important contracts while on the field."
+	extended_desc = "A standard, InteQ issued system for handling important contracts while on the field."
 	size = 10
 	requires_ntnet = 0
 	available_on_ntnet = 0
 	unsendable = 1
 	undeletable = 1
-	tgui_id = "SyndContractor"
+	tgui_id = "InteQContractor"
 	program_icon = "tasks"
 	var/error = ""
 	var/info_screen = TRUE
@@ -166,7 +166,7 @@
 
 		for (var/datum/syndicate_contract/contract in traitor_data.contractor_hub.assigned_contracts)
 			if(!contract.contract)
-				stack_trace("Syndiate contract with null contract objective found in [traitor_data.owner]'s contractor hub!")
+				stack_trace("InteQ contract with null contract objective found in [traitor_data.owner]'s contractor hub!")
 				contract.status = CONTRACT_STATUS_ABORTED
 				continue
 

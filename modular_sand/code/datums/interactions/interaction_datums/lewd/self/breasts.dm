@@ -33,7 +33,7 @@
 				"вздрагивает, хватаясь за причинное место.")]</span>")
 	user.visible_message(message = "<span class='lewd'><b>\The [user]</b> [message]</span>", ignored_mobs = user.get_unconsenting())
 	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/squelch1.ogg', 50, 1, -1)
-	user.handle_post_sex(NORMAL_LUST, CUM_TARGET_HAND, user)
+	user.handle_post_sex(NORMAL_LUST, CUM_TARGET_HAND, user, ORGAN_SLOT_BREASTS) //SPLURT edit
 
 
 /datum/interaction/lewd/self_nipsuck
@@ -77,8 +77,8 @@
 		if("f", "g", "h")
 			modifier = 3
 		else
-			if(milkers.size in milkers.breast_values)
-				modifier = clamp(milkers.breast_values[milkers.size] - 5, 0, INFINITY)
+			if(milkers.size in GLOB.breast_values)
+				modifier = clamp(GLOB.breast_values[milkers.size] - 5, 0, INFINITY)
 			else
 				modifier = 1
-	user.reagents.add_reagent(milktype, rand(1,3 * modifier))
+	user.reagents.add_reagent(milktype, rand(1,3 * modifier) * user.get_fluid_mod(milkers)) //SPLURT edit

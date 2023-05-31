@@ -5,7 +5,7 @@
 	item_state = "labcoat"
 	blood_overlay_type = "coat"
 	body_parts_covered = CHEST|ARMS
-	mutantrace_variation = STYLE_DIGITIGRADE
+	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
 	allowed = list(
 		/obj/item/analyzer,
 		/obj/item/stack/medical,

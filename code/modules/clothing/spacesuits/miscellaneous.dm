@@ -530,4 +530,4 @@ Contains:
 	armor = list(MELEE = 60, BULLET = 40, LASER = 40, ENERGY = 50, BOMB = 100, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 25)
 	strip_delay = 130
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON

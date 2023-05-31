@@ -32,6 +32,18 @@
 	item_state = "blueshield"
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90, "wound" = 10)
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	unique_reskin = list(
+		"Jacket" = list("icon_state" = "blueshield_alt")
+	)
+
+/obj/item/clothing/suit/armor/vest/bluesheid/spacecoat
+	name = "Blueshield Peacekeeper Spacecoat"
+	desc = "A greatcoat enhanced with a special alloy for some extra protection."
+	icon_state = "peacekeeper_spacecoat"
+	item_state = "peacekeeper_spacecoat"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/suit.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/suit.dmi'
 
 /obj/item/clothing/suit/armor/vest/bluesheid/coat
 	name = "blueshield armored coat"

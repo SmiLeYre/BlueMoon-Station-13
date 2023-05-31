@@ -8,16 +8,16 @@
 //Space Suits and Hardsuits
 
 /datum/uplink_item/suits/turtlenck
-	name = "Tactical Turtleneck"
+	name = "Brown Tactical Turtleneck"
 	desc = "A slightly armored conspicious jumpsuit that has no suit sensors attached to them, if someone sees you in this hope they think its a fake."
-	item = /obj/item/clothing/under/syndicate
+	item = /obj/item/clothing/under/inteq
 	cost = 1
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
 
 /datum/uplink_item/suits/turtlenck_skirt
-	name = "Tactical Skirtleneck"
+	name = "Brown Tactical Skirtleneck"
 	desc = "A slightly armored conspicious jumpsuit that has no suit sensors attached to them, if someone sees you in this hope they think its a fake."
-	item = /obj/item/clothing/under/syndicate/skirt
+	item = /obj/item/clothing/under/inteq_skirt
 	cost = 1
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
 

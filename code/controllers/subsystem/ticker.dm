@@ -166,7 +166,7 @@ SUBSYSTEM_DEF(ticker)
 			for(var/client/C in GLOB.clients)
 				window_flash(C, ignorepref = TRUE) //let them know lobby has opened up.
 			to_chat(world, "<span class='boldnotice'>Welcome to [station_name()]!</span>")
-			send2chat("New round starting on [SSmapping.config.map_name]!", CONFIG_GET(string/chat_announce_new_game))
+			send2chat("Новый раунд начинается на [SSmapping.config.map_name], голосование за режим полным ходом!", CONFIG_GET(string/chat_announce_new_game))
 			current_state = GAME_STATE_PREGAME
 			//SPLURT EDIT - Bring back old panel
 			//Everyone who wants to be an observer is now spawned
@@ -351,9 +351,10 @@ SUBSYSTEM_DEF(ticker)
 
 	var/list/adm = get_admin_counts()
 	var/list/allmins = adm["present"]
-	send2adminchat("Server", "Round [GLOB.round_id ? "#[GLOB.round_id]:" : "of"] [hide_mode ? "secret":"[mode.name]"] has started[allmins.len ? ".":" with no active admins online!"]")
+	send2adminchat("Server", "Round [GLOB.round_id ? "#[GLOB.round_id]:" : "of"] [hide_mode ? "secret":"[GLOB.master_mode]"] has started[allmins.len ? ".":" with no active admins online!"]")
 	if(CONFIG_GET(string/new_round_ping))
-		send2chat("<@&[CONFIG_GET(string/new_round_ping)]> | A new round has started on [SSmapping.config.map_name]!", CONFIG_GET(string/chat_announce_new_game))
+		send2chat("<@&[CONFIG_GET(string/new_round_ping)]> | Новый раунд стартует на [SSmapping.config.map_name]!", CONFIG_GET(string/chat_announce_new_game))
+		send2chat("Раунд [GLOB.round_id ? "#[GLOB.round_id]:" : "в режиме"] [hide_mode ? "секретном":"[GLOB.master_mode]"] стартует[allmins.len ? "!":" без администрации!!"]", CONFIG_GET(string/chat_announce_new_game))
 	setup_done = TRUE
 
 	for(var/i in GLOB.start_landmarks_list)

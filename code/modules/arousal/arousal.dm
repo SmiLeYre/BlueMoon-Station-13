@@ -47,6 +47,15 @@
 		return // no adjusting made here
 	var/enabling = strength > 0
 	for(var/obj/item/organ/genital/G in internal_organs)
+		//SPLURT edit
+		if(CHECK_BITFIELD(G.genital_flags, GENITAL_CHASTENED) && enabling)
+			to_chat(src, "<span class='userlove'>Your [pick(GLOB.dick_nouns)] twitches against its cage!</span>")
+			continue
+		if(CHECK_BITFIELD(G.genital_flags, GENITAL_IMPOTENT) && enabling)
+			if(istype(G, /obj/item/organ/genital/penis))
+				to_chat(src, "<span class='userlove'>Your [pick(GLOB.dick_nouns)] simply won't go up!</span>")
+			continue
+		//
 		if(G.genital_flags & GENITAL_CAN_AROUSE && !G.aroused_state && prob(abs(strength)*G.sensitivity * arousal_rate))
 			G.set_aroused_state(enabling,cause)
 			G.update_appearance()
@@ -83,7 +92,7 @@
 		if(spill && R.total_volume >= 5)
 			R.reaction(turfing ? target : target.loc, TOUCH, 1, 0)
 		if(!turfing)
-			R.trans_to(target, R.total_volume * (spill ? G.fluid_transfer_factor : 1), log = TRUE)
+			R.trans_to(target, R.total_volume * (spill ? G.fluid_transfer_factor : 1) * get_fluid_mod(G), log = TRUE) //SPLURT edit
 	G.last_orgasmed = world.time
 	R.clear_reagents()
 	//skyrat edit - chock i am going to beat you to death
@@ -146,6 +155,13 @@
 			LAZYADD(genitals_list, G)
 	if(LAZYLEN(genitals_list))
 		var/obj/item/organ/genital/ret_organ = input(src, "Чем?", "Климаксировать", null) as null|obj in genitals_list
+		//SPLURT edit
+		if(CHECK_BITFIELD(ret_organ.genital_flags, GENITAL_CHASTENED))
+			visible_message("<span class='userlove'><b>\The [src]</b> fumbles with their cage with a whine!</span>",
+							"<span class='userlove'>You can't climax with a cage on it!</span>",
+							ignored_mobs = get_unconsenting())
+			return
+		//
 		return ret_organ
 	else if(!silent)
 		to_chat(src, "<span class='warning'>Вы не можете достичь кульминации без наличия гениталий.</span>")
@@ -277,7 +293,7 @@
 		return
 
 	//Ok, now we check what they want to do.
-	var/choice = input(src, "Выбор Сексуальной Активности", "Сексуальная Активность:") as null|anything in list("Оргазмировать в одиночестве","Оргазмировать совмпестно с кем-то", "Climax over partner", "Наполнить контейнер половыми жидкостями")
+	var/choice = input(src, "Выбор Сексуальной Активности", "Сексуальная Активность:") as null|anything in list("Оргазмировать в одиночестве","Оргазмировать совместно с кем-то", "Оргазмировать на кого-то (CTRL+ЛКМ)", "Наполнить контейнер половыми жидкостями")
 	if(!choice)
 		return
 

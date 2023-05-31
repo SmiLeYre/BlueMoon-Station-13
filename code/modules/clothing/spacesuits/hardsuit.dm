@@ -352,7 +352,7 @@
 		if(on)
 			linkedsuit.name = initial(linkedsuit.name)
 			linkedsuit.desc = initial(linkedsuit.desc)
-			linkedsuit.slowdown = 1
+			linkedsuit.slowdown = 0.5
 			linkedsuit.clothing_flags |= STOPSPRESSUREDAMAGE
 			linkedsuit.cold_protection |= CHEST | GROIN | LEGS | FEET | ARMS | HANDS
 		else
@@ -479,7 +479,7 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF //No longer shall our kind be foiled by lone chemists with spray bottles!
 	armor = list(MELEE = 40, BULLET = 40, LASER = 40, ENERGY = 40, BOMB = 35, BIO = 100, RAD = 50, FIRE = 100, ACID = 100, WOUND = 30)
 	heat_protection = HEAD												//Uncomment to enable firesuit protection
-	slowdown = -2
+	slowdown = -0.25
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	var/magic_flags = SPELL_WIZARD_HAT|SPELL_CULT_HELMET
 
@@ -537,7 +537,7 @@
 	name = "medical hardsuit"
 	desc = "A special suit that protects against hazardous, low pressure environments. Built with lightweight materials for easier movement."
 	item_state = "medical_hardsuit"
-	slowdown = 0.8
+	slowdown = 0.5
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/storage/firstaid, /obj/item/healthanalyzer, /obj/item/stack/medical)
 	armor = list(MELEE = 30, BULLET = 5, LASER = 10, ENERGY = 5, BOMB = 10, BIO = 100, RAD = 60, FIRE = 60, ACID = 75, WOUND = 10)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/medical
@@ -696,7 +696,7 @@
 	icon_state = "hardsuit-ancient"
 	item_state = "anc_hardsuit"
 	armor = list(MELEE = 30, BULLET = 5, LASER = 5, ENERGY = 0, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 75, WOUND = 10)
-	slowdown = 3
+	slowdown = 2
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ancient
 	resistance_flags = FIRE_PROOF
 	mutantrace_variation = STYLE_DIGITIGRADE
@@ -709,7 +709,7 @@
 	icon_state = "hardsuit-ancient"
 	item_state = "anc_hardsuit"
 	armor = list(MELEE = 20, BULLET = 15, LASER = 15, ENERGY = 45, BOMB = 100, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 10)
-	slowdown = 6 //Slow
+	slowdown = 4 //Slow
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/storage, /obj/item/construction/rcd, /obj/item/pipe_dispenser)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ancient/mason
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
@@ -795,7 +795,7 @@
 	desc = "Crafted with the pride of the proletariat. The last thing the enemy sees is the bottom of this armor's boot."
 	item_state = "rig-soviet"
 	icon_state = "rig-soviet"
-	slowdown = 0.8
+	slowdown = 0.5
 	armor = list(MELEE = 40, BULLET = 30, LASER = 30, ENERGY = 15, BOMB = 35, BIO = 100, RAD = 20, FIRE = 50, ACID = 75, WOUND = 15)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/soviet
 	mutantrace_variation = NONE

@@ -275,9 +275,9 @@
 			if(buckled)
 				to_chat(M, "<span class='warning'>Для этого вам для начала нужно отстегнуть <b>[src]</b>!")
 				return
-			M.visible_message("<span class='notice'><b>[M]</b> трясет <b>[src]</b> в попытке [ru_ego()] на ноги!</span>", \
-							"<span class='notice'>Вы трясете <b>[src]</b> в попытке поднять [ru_ego()] на ноги!</span>", target = src,
-							target_message = "<span class='notice'><b>[M]</b> трясет тебя в однозначной попытке поднять!</span>")
+			M.visible_message("<span class='notice'><b>[M]</b> трясёт <b>[src]</b> в попытке поднять [ru_ego()] на ноги!</span>", \
+							"<span class='notice'>Вы трясёте <b>[src]</b> в попытке поднять [ru_ego()] на ноги!</span>", target = src,
+							target_message = "<span class='notice'><b>[M]</b> трясёт тебя в однозначной попытке поднять!</span>")
 
 		else if(M.zone_selected == BODY_ZONE_PRECISE_MOUTH) // I ADDED BOOP-EH-DEH-NOSEH - Jon
 			M.visible_message( \

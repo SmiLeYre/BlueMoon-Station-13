@@ -69,13 +69,6 @@ GLOBAL_LIST_INIT(slaver_gear, subtypesof(/datum/slaver_gear))
 	category = "Slaving"
 	cost = 1000
 
-/datum/slaver_gear/x4
-	name = "X4 charges"
-	description = "X4 plastic explosive charge x 3."
-	build_path = /obj/item/storage/box/syndie_kit/x4
-	category = "Advanced"
-	cost = 2500
-
 /datum/slaver_gear/emag
 	name = "Cryptographic Sequencer"
 	description = "A card capable of instantly hacking open most doors."

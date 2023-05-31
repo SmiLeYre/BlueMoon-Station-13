@@ -291,7 +291,7 @@
 	icon_state = "secbox"
 	illustration = "flashbang"
 
-/obj/item/storage/box/flashbangs/PopulateContents()
+/obj/item/storage/box/flashbangs/super/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/grenade/clusterbuster/soap(src)
 

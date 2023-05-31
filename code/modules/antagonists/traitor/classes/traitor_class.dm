@@ -2,7 +2,7 @@ GLOBAL_LIST_EMPTY(traitor_classes)
 
 /datum/traitor_class
 	var/name = "Bad Coders Ltd."
-	var/employer = "The Syndicate"
+	var/employer = "InteQ"
 	var/weight = 0
 	var/chaos = 0
 	var/threat = 0
@@ -12,7 +12,7 @@ GLOBAL_LIST_EMPTY(traitor_classes)
 	var/min_players = 0
 	var/list/uplink_filters
 	/// Specific tgui theme for the player's antag info panel.
-	var/tgui_theme = "syndicate"
+	var/tgui_theme = "inteq"
 
 /datum/traitor_class/New()
 	..()

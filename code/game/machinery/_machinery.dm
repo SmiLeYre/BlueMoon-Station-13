@@ -142,6 +142,9 @@ Class Procs:
 	var/clickvol = 40	// sound volume played on succesful click
 	var/next_clicksound = 0	// value to compare with world.time for whether to play clicksound according to CLICKSOUND_INTERVAL
 	var/clicksound	// sound played on succesful interface use by a carbon lifeform
+	/// What was our power state the last time we updated its appearance?
+	/// TRUE for on, FALSE for off, -1 for never checked
+	var/appearance_power_state = -1
 
 /obj/machinery/Initialize(mapload)
 	if(!armor)

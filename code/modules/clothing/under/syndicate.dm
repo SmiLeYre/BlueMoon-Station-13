@@ -96,19 +96,39 @@
 	can_adjust = FALSE
 	armor = list(MELEE = 5, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0, WOUND = 5)
 	resistance_flags = NONE
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/under/syndicate/rus_army_alt
 	name = "Advanced Military Tracksuit"
 	desc = "Advanced Military grade tracksuits for frontline squatting."
 	alternate_screams = RUSSIAN_SCREAMS
 	icon_state = "rus_under_alt"
-	item_state = "rus_under_alt"
 	can_adjust = FALSE
 	armor = list(MELEE = 5, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0, WOUND = 5)
 	resistance_flags = NONE
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	mutantrace_variation = STYLE_DIGITIGRADE
 
+/obj/item/clothing/under/syndicate/green_camo
+	name = "green camouflage uniform"
+	desc = "an green painted military suit, developed the Bibis&Co. Usually associated with CEHU and LonoMith PMC's"
+	icon_state = "russian_green_uniform"
+	alternate_screams = RUSSIAN_SCREAMS
+
+/obj/item/clothing/under/syndicate/enclave
+	name = "neo american sergeant uniform"
+	desc = "Throughout the stars, rumors of mad scientists and angry drill sergeant run rampent, of creatures in armor black as night being led by men or women wearing this uniform, they share one thing, a deep, natonalistic zeal of the dream of America."
+	icon_state = "enclave"
+	armor = list(MELEE = 5, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0, WOUND = 5)
+	resistance_flags = NONE
+	mutantrace_variation = STYLE_DIGITIGRADE
+
+/obj/item/clothing/under/syndicate/enclave_alt
+	name = "neo american officer uniform"
+	desc = "Throughout the stars, rumors of mad scientists and angry drill sergeant run rampent, of creatures in armor black as night being led by men or women wearing this uniform, they share one thing, a deep, natonalistic zeal of the dream of America."
+	icon_state = "enclaveo"
+	armor = list(MELEE = 5, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0, WOUND = 5)
+	resistance_flags = NONE
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/under/syndicate/baseball
 	name = "major league, number unknown"

@@ -20,7 +20,7 @@
 	chaos = 2
 
 	announce_span = "danger"
-	announce_text = "There are Syndicate agents on the station!\n\
+	announce_text = "There are InteQ agents on the station!\n\
 	<span class='danger'>Traitors</span>: Accomplish your objectives.\n\
 	<span class='notice'>Crew</span>: Do not let the traitors succeed!"
 
@@ -86,7 +86,7 @@
 		return
 	if((SSticker.mode.traitors.len + pre_traitors.len) <= (traitorcap - 2) || prob(100 / (tsc * 2)))
 		if(antag_flag in character.client.prefs.be_special)
-			if(!jobban_isbanned(character, ROLE_TRAITOR) && !QDELETED(character) && !jobban_isbanned(character, ROLE_SYNDICATE) && !QDELETED(character))
+			if(!jobban_isbanned(character, ROLE_TRAITOR) && !QDELETED(character) && !jobban_isbanned(character, ROLE_INTEQ) && !QDELETED(character))
 				if(age_check(character.client))
 					if(!(character.job in restricted_jobs))
 						add_latejoin_traitor(character.mind)
@@ -96,5 +96,5 @@
 	character.add_antag_datum(new_antag)
 
 /datum/game_mode/traitor/generate_report()
-	return "Although more specific threats are commonplace, you should always remain vigilant for Syndicate agents aboard your station. Syndicate communications have implied that many \
-		Nanotrasen employees are Syndicate agents with hidden memories that may be activated at a moment's notice, so it's possible that these agents might not even know their positions."
+	return "Although more specific threats are commonplace, you should always remain vigilant for InteQ agents aboard your station. InteQ communications have implied that many \
+		Nanotrasen employees are InteQ agents with hidden memories that may be activated at a moment's notice, so it's possible that these agents might not even know their positions."

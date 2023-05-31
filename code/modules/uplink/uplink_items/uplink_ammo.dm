@@ -90,7 +90,7 @@
 /datum/uplink_item/ammo/shotgun/bag
 	name = "12g Ammo Duffel Bag"
 	desc = "A duffel bag filled with enough 12g ammo to supply an entire team, at a discounted price."
-	item = /obj/item/storage/backpack/duffelbag/syndie/ammo/shotgun
+	item = /obj/item/storage/backpack/duffelbag/syndie/inteq/ammo/shotgun
 	cost = 12
 
 /datum/uplink_item/ammo/shotgun/bioterror
@@ -155,7 +155,7 @@
 /datum/uplink_item/ammo/smg/bag
 	name = ".45 Ammo Duffel Bag"
 	desc = "A duffel bag filled with enough .45 ammo to supply an entire team, at a discounted price."
-	item = /obj/item/storage/backpack/duffelbag/syndie/ammo/smg
+	item = /obj/item/storage/backpack/duffelbag/syndie/inteq/ammo/smg
 	cost = 20 //instead of 27 TC
 	purchasable_from = UPLINK_NUKE_OPS
 
@@ -309,16 +309,16 @@
 	cost = 4
 	purchasable_from = UPLINK_NUKE_OPS
 
-/datum/uplink_item/ammo/dark_gygax/bag
+/datum/uplink_item/ammo/hermes/bag
 	name = "Dark Gygax Ammo Bag"
 	desc = "A duffel bag containing ammo for three full reloads of the incendiary carbine and flash bang launcher that are equipped on a standard Dark Gygax exosuit."
-	item = /obj/item/storage/backpack/duffelbag/syndie/ammo/dark_gygax
+	item = /obj/item/storage/backpack/duffelbag/syndie/inteq/ammo/hermes
 	cost = 4
 	purchasable_from = UPLINK_NUKE_OPS
 
-/datum/uplink_item/ammo/mauler/bag
+/datum/uplink_item/ammo/ares/bag
 	name = "Mauler Ammo Bag"
 	desc = "A duffel bag containing ammo for three full reloads of the LMG, scattershot carbine, and SRM-8 missile laucher that are equipped on a standard Mauler exosuit."
-	item = /obj/item/storage/backpack/duffelbag/syndie/ammo/mauler
+	item = /obj/item/storage/backpack/duffelbag/syndie/inteq/ammo/ares
 	cost = 6
 	purchasable_from = UPLINK_NUKE_OPS

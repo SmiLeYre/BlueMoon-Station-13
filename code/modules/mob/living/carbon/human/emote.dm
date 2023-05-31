@@ -66,7 +66,7 @@
 /datum/emote/living/carbon/human/mumble
 	key = "mumble"
 	key_third_person = "mumbles"
-	message = "мамблит!"
+	message = "бормочет!"
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/carbon/human/pale

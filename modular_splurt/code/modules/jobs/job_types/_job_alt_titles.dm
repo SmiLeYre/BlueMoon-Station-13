@@ -136,6 +136,8 @@
 		"Stripper",
 		"Escort",
 		"Tourist",
+		"SolFed Tourist",
+		"NRI Tourist",
 		"Clerk",
 		"Blacksmith",
 		"Waiter",

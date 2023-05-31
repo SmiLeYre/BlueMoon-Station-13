@@ -71,9 +71,9 @@
 
 /obj/singularity/narsie/large/cult/proc/begin_the_end()
 	sleep(50)
-	priority_announce("An acausal dimensional event has been detected in your sector. Event has been flagged EXTINCTION-CLASS. Directing all available assets toward simulating solutions. SOLUTION ETA: 60 SECONDS.","Central Command Higher Dimensional Affairs", 'sound/misc/airraid.ogg')
+	priority_announce("An acausal dimensional event has been detected in your sector. Event has been flagged EXTINCTION-CLASS. Directing all available assets toward simulating solutions. SOLUTION ETA: 60 SECONDS.","Центральное Командование, Отдел Работы с Реальностью", 'sound/misc/airraid.ogg')
 	sleep(500)
-	priority_announce("Simulations on acausal dimensional event complete. Deploying solution package now. Deployment ETA: ONE MINUTE. ","Central Command Higher Dimensional Affairs")
+	priority_announce("Simulations on acausal dimensional event complete. Deploying solution package now. Deployment ETA: ONE MINUTE. ","Центральное Командование, Отдел Работы с Реальностью")
 	sleep(50)
 	set_security_level("delta")
 	SSshuttle.registerHostileEnvironment(src)
@@ -81,7 +81,7 @@
 	SSpersistence.station_was_destroyed = TRUE
 	sleep(600)
 	if(QDELETED(src))
-		priority_announce("Accausal event alert rescinded. Eldritch presence no longer reading on sensors. Solution package disarmed. Reccomend immediate evacuation","Central Command Higher Dimensional Affairs")
+		priority_announce("Accausal event alert rescinded. Eldritch presence no longer reading on sensors. Solution package disarmed. Reccomend immediate evacuation","Центральное Командование, Отдел Работы с Реальностью")
 		return
 	if(resolved == FALSE)
 		resolved = TRUE

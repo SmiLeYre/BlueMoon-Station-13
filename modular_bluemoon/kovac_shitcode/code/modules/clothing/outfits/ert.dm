@@ -132,29 +132,26 @@
 /datum/outfit/ert/ert_russian_soldier
 	name = "NRI Spetsnaz Soldier"
 
-	id = /obj/item/card/id/ert
-	suit = /obj/item/clothing/suit/armor/vest/russian
-	head = /obj/item/clothing/head/helmet/alt
+	id = /obj/item/card/id/nri
+	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/nri
+	//head = /obj/item/clothing/head/helmet/alt
 	uniform = /obj/item/clothing/under/syndicate/rus_army
-	mask = /obj/item/clothing/mask/gas/syndicate/ds
+	mask = /obj/item/clothing/mask/gas/syndicate/ds/mouth
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/hecu/black
-	belt = /obj/item/storage/belt/grenade/full
-	r_hand = /obj/item/gun/ballistic/automatic/vss
+	belt = /obj/item/storage/belt/military
+	r_hand = /obj/item/gun/ballistic/automatic/ak12
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/clothing/mask/gas/sechailer=1,\
 		/obj/item/gun/ballistic/revolver/mateba=1,
 		/obj/item/storage/ifak=1,\
-		/obj/item/ammo_box/magazine/vss_mag=2)
+		/obj/item/ammo_box/magazine/ak12=4)
 
 /datum/outfit/ert/ert_russian_soldier/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()
 
 	if(visualsOnly)
 		return
-
-	var/obj/item/implant/mindshield/L = new
-	L.implant(H, null, 0)
 
 	var/obj/item/radio/R = H.ears
 	R.keyslot = new /obj/item/encryptionkey/heads/hos
@@ -163,21 +160,22 @@
 /datum/outfit/ert/ert_russian_leader
 	name = "NRI Spetsnaz Leader"
 
-	id = /obj/item/card/id/ert/Security
+	id = /obj/item/card/id/nri
 	suit = /obj/item/clothing/suit/armor/vest/russian_coat
 	head = /obj/item/clothing/head/beret/sec
 	uniform = /obj/item/clothing/under/syndicate/rus_army
-	mask = /obj/item/clothing/mask/gas/syndicate/ds
+	mask = /obj/item/clothing/mask/gas/syndicate/ds/mouth
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
-	back = /obj/item/storage/backpack/hecu/black
+	back = /obj/item/storage/backpack/hecu
 	belt = /obj/item/storage/belt/grenade/full
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber
 	r_hand = /obj/item/gun/ballistic/automatic/l6_saw/pkmp
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
+	    /obj/item/choice_beacon/nri_mech=1,\
 		/obj/item/clothing/mask/gas/sechailer=1,\
 		/obj/item/storage/box/syndie_kit/revolver=1,\
 		/obj/item/storage/ifak=1,\
-		/obj/item/ammo_box/magazine/mm712x82=1)
+		/obj/item/ammo_box/magazine/mm712x82=2)
 
 /datum/outfit/ert/ert_russian_leader/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()
@@ -185,8 +183,90 @@
 	if(visualsOnly)
 		return
 
-	var/obj/item/implant/mindshield/L = new
-	L.implant(H, null, 0)
+	var/obj/item/radio/R = H.ears
+	R.keyslot = new /obj/item/encryptionkey/heads/hos
+	R.recalculateChannels()
+
+//Солдаты армии Солнечной Системы
+/datum/outfit/ert/sol_soldier
+	name = "SolFed Marine"
+
+	id = /obj/item/card/id/sol
+	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/sol
+//	head = /obj/item/clothing/head/helmet/alt
+	uniform = /obj/item/clothing/under/rank/security/officer/urban_camo
+	mask = /obj/item/clothing/mask/gas/syndicate/ds/coif
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
+	back = /obj/item/storage/backpack/hecu/black
+	belt = /obj/item/storage/belt/military/inteq
+	r_hand = /obj/item/gun/ballistic/automatic/m16a4
+	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
+		/obj/item/storage/ifak=1,\
+		/obj/item/ammo_box/magazine/m16=4)
+
+/datum/outfit/ert/sol_soldier/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+	..()
+
+	if(visualsOnly)
+		return
+
+	var/obj/item/radio/R = H.ears
+	R.keyslot = new /obj/item/encryptionkey/heads/hos
+	R.recalculateChannels()
+
+/datum/outfit/ert/sol_soldier_demo
+	name = "SolFed Demoman"
+
+	id = /obj/item/card/id/sol
+	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/sol
+//	head = /obj/item/clothing/head/helmet/alt
+	uniform = /obj/item/clothing/under/rank/security/officer/urban_camo
+	mask = /obj/item/clothing/mask/gas/syndicate/ds/coif
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
+	back = /obj/item/storage/backpack/hecu/black
+	belt = /obj/item/storage/belt/grenade/full
+	r_hand = /obj/item/gun/ballistic/rocketlauncher/unrestricted
+	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
+		/obj/item/storage/ifak=1,\
+		/obj/item/grenade/plastic/c4=3,\
+		/obj/item/ammo_casing/caseless/rocket=3)
+
+/datum/outfit/ert/sol_soldier_demo/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+	..()
+
+	if(visualsOnly)
+		return
+
+	var/obj/item/radio/R = H.ears
+	R.keyslot = new /obj/item/encryptionkey/heads/hos
+	R.recalculateChannels()
+
+
+/datum/outfit/ert/sol_soldier_leader
+	name = "SolFed Commander"
+
+	id = /obj/item/card/id/sol
+	suit = /obj/item/clothing/suit/armor/solfed_coat
+	head = /obj/item/clothing/head/beret/sec/peacekeeper/hos
+	uniform = /obj/item/clothing/under/rank/security/officer/urban_camo
+	mask = /obj/item/clothing/mask/gas/syndicate/ds/coif
+	glasses = /obj/item/clothing/glasses/hud/health/sunglasses
+	back = /obj/item/storage/backpack/hecu/black
+	belt = /obj/item/storage/belt/military/inteq
+	l_pocket = /obj/item/melee/transforming/energy/sword/saber
+	r_hand = /obj/item/gun/ballistic/automatic/shotgun/bulldog/unrestricted
+	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
+		/obj/item/storage/ifak=1,\
+		/obj/item/gun/ballistic/automatic/pistol/deagle=1,\
+        /obj/item/ammo_box/magazine/m50=2,\
+		/obj/item/choice_beacon/sol_mech=1,\
+		/obj/item/ammo_box/magazine/m12g/slug=4)
+
+/datum/outfit/ert/sol_soldier_leader/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+	..()
+
+	if(visualsOnly)
+		return
 
 	var/obj/item/radio/R = H.ears
 	R.keyslot = new /obj/item/encryptionkey/heads/hos

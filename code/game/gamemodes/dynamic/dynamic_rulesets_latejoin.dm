@@ -47,12 +47,12 @@
 
 //////////////////////////////////////////////
 //                                          //
-//           SYNDICATE TRAITORS             //
+//           INTEQ TRAITORS             //
 //                                          //
 //////////////////////////////////////////////
 
 /datum/dynamic_ruleset/latejoin/infiltrator
-	name = "Syndicate Infiltrator"
+	name = "InteQ Infiltrator"
 	antag_datum = /datum/antagonist/traitor
 	antag_flag = "traitor late"
 	antag_flag_override = ROLE_TRAITOR

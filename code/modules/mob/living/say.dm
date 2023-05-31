@@ -352,7 +352,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		for(var/mob/M as anything in overhearing)
 			overhearing_text += key_name(M)
 		overhearing_text = english_list(overhearing_text)
-	log_say("YELL: [ismob(src)? key_name(src) : src] yelled [message] with overhearing mobs [overhearing_text]")
+	//log_say("YELL: [ismob(src)? key_name(src) : src] yelled [message] with overhearing mobs [overhearing_text]")
 	// overhearing = get_hearers_in_view(35, src) | get_hearers_in_range(5, src)
 	overhearing -= already_heard
 	if(!overhearing.len)

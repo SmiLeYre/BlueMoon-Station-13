@@ -560,7 +560,7 @@
 /obj/effect/mob_spawn/human/skeleton
 	name = "skeletal remains"
 	mob_name = "skeleton"
-	mob_species = /datum/species/skeleton
+	mob_species = /datum/species/skeleton/space
 	mob_gender = NEUTER
 
 /obj/effect/mob_spawn/human/skeleton/alive

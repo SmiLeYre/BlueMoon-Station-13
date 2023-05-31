@@ -180,6 +180,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Research Director"
 	icon_state = "Research Director"
 
+/obj/effect/landmark/start/expeditor
+	name = "Expeditor"
+	icon_state = "Research Director"
+
 /obj/effect/landmark/start/geneticist
 	name = "Geneticist"
 	icon_state = "Geneticist"

@@ -173,6 +173,7 @@
 		var/mob/living/carbon/C = L
 		C.silent += 5
 	var/message = "[sigil_name] in [get_area(src)] <span class='sevtug'>[is_servant_of_ratvar(L) ? "successfully converted" : "failed to convert"]</span>"
+	new /obj/item/clockwork/slab (get_turf(src))
 	for(var/M in GLOB.mob_list)
 		if(isobserver(M))
 			var/link = FOLLOW_LINK(M, L)

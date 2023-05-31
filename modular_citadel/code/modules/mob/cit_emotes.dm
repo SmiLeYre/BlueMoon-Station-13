@@ -125,7 +125,7 @@
 /datum/emote/living/awoo
 	key = "awoo"
 	key_third_person = "lets out an awoo"
-	message = "особо милым образом воет!"
+	message = "воет!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
@@ -193,7 +193,7 @@
 /datum/emote/living/nya
 	key = "nya"
 	key_third_person = "lets out a nya"
-	message = "выпускает из своего рта особо странный звук!"
+	message = "выпускает из своего рта странный звук!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
@@ -210,7 +210,7 @@
 /datum/emote/living/weh
 	key = "weh"
 	key_third_person = "lets out a weh"
-	message = "выпускает из своего рта особо странный звук!"
+	message = "выпускает из своего рта довольно странный звук!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
@@ -227,7 +227,7 @@
 /datum/emote/living/peep
 	key = "peep"
 	key_third_person = "peeps like a bird"
-	message = "звучит как птичка!"
+	message = "чирикает словно птичка!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
@@ -285,7 +285,7 @@
 /datum/emote/living/bark
 	key = "bark"
 	key_third_person = "barks"
-	message = "боркает!"
+	message = "лает!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
@@ -303,7 +303,7 @@
 /datum/emote/living/squish
 	key = "squish"
 	key_third_person = "squishes"
-	message = "сквишается!"
+	message = "хлюпает!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE

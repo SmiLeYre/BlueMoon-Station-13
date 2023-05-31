@@ -163,6 +163,9 @@
 	///Bool for whether this mech can only be used on lavaland
 	var/lavaland_only = FALSE
 
+	var/nominalphrase = "sound/mecha/nominal.ogg"
+	var/imagenhphrase = "sound/mecha/imag_enh.ogg"
+
 
 	hud_possible = list (DIAG_STAT_HUD, DIAG_BATT_HUD, DIAG_MECH_HUD, DIAG_TRACK_HUD)
 
@@ -817,7 +820,7 @@
 			mecha_flags  &= ~SILICON_PILOT
 			AI.forceMove(card)
 			card.AI = AI
-			AI.controlled_mech = null
+			AI.controlled_equipment = null
 			AI.remote_control = null
 			to_chat(AI, "<span class='notice'>You have been downloaded to a mobile storage device. Wireless connection offline.</span>")
 			to_chat(user, "<span class='boldnotice'>Transfer successful</span>: [AI.name] ([rand(1000,9999)].exe) removed from [name] and stored within local memory.")
@@ -856,7 +859,7 @@
 	mecha_flags |= SILICON_PILOT
 	moved_inside(AI)
 	AI.cancel_camera()
-	AI.controlled_mech = src
+	AI.controlled_equipment = src
 	AI.remote_control = src
 	AI.mobility_flags = ALL //Much easier than adding AI checks! Be sure to set this back to 0 if you decide to allow an AI to leave a mech somehow.
 	if(interaction == AI_MECH_HACK)
@@ -982,7 +985,7 @@
 	setDir(dir_in)
 	playsound(src, 'sound/machines/windowdoor.ogg', 50, TRUE)
 	if(!internal_damage)
-		SEND_SOUND(H, sound('sound/mecha/nominal.ogg',volume=50))
+		SEND_SOUND(H, sound(nominalphrase,volume=50))
 	return TRUE
 
 /obj/vehicle/sealed/mecha/proc/mmi_move_inside(obj/item/mmi/M, mob/user)
@@ -1034,7 +1037,7 @@
 	setDir(dir_in)
 	log_message("[M] moved in as pilot.", LOG_MECHA)
 	if(!internal_damage)
-		SEND_SOUND(M, sound('sound/mecha/nominal.ogg',volume=50))
+		SEND_SOUND(M, sound(nominalphrase,volume=50))
 	log_game("[key_name(user)] has put the MMI/posibrain of [key_name(B)] into [src] at [AREACOORD(src)]")
 	return TRUE
 
@@ -1083,7 +1086,7 @@
 				AI.linked_core = null
 				return
 			to_chat(AI, "<span class='notice'>Returning to core...</span>")
-			AI.controlled_mech = null
+			AI.controlled_equipment = null
 			AI.remote_control = null
 			mob_container = AI
 			newloc = get_turf(AI.linked_core)

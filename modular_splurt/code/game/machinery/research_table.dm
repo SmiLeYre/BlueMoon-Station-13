@@ -14,12 +14,12 @@
 	obj_flags = CAN_BE_HIT|SHOVABLE_ONTO
 	pass_flags = LETPASSTHROW //You can throw objects over this, despite it's density.")
 	circuit = /obj/item/circuitboard/machine/research_table
-	var/self_unbuckle_time = 3 MINUTES
+	var/self_unbuckle_time = 2 MINUTES
 	var/static/list/users = list()
 	var/tier = 1
 	var/configured = FALSE
 	var/point_type = POINT_TYPE_SCIENCE
-	var/max_repeat_usage = 3
+	var/max_repeat_usage = 6
 	var/slaver_mode = FALSE
 
 /obj/machinery/research_table/examine(mob/user)
@@ -139,7 +139,7 @@
 	for(var/obj/item/organ/genital/genital in buckled_mob.internal_organs)
 		if(istype(genital, /obj/item/organ/genital/breasts))
 			var/obj/item/organ/genital/breasts/breasts = genital
-			points_awarded += breasts.fluid_rate + breasts.breast_values[breasts.size] // Breasts use letters instead of numbers!
+			points_awarded += breasts.fluid_rate + GLOB.breast_values[breasts.size]
 			continue
 		points_awarded += genital.fluid_rate + genital.size
 	points_awarded *= tier

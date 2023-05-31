@@ -7,6 +7,7 @@
 // Themes
 import './styles/main.scss';
 import './styles/themes/abductor.scss';
+import './styles/themes/hotpink.scss';
 import './styles/themes/cardtable.scss';
 import './styles/themes/hackerman.scss';
 import './styles/themes/malfunction.scss';
@@ -17,6 +18,7 @@ import './styles/themes/retro.scss';
 import './styles/themes/syndicate.scss';
 import './styles/themes/wizard.scss';
 import './styles/themes/clockcult.scss';
+import './styles/themes/inteq.scss';
 
 import { perf } from 'common/perf';
 import { setupHotReloading } from 'tgui-dev-server/link/client.cjs';

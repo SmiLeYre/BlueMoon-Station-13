@@ -1,0 +1,619 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/turf/closed/wall/mineral/titanium/survival/pod,
+/area/survivalpod/nonpowered)
+"ab" = (
+/obj/machinery/poweredfans,
+/obj/machinery/door/airlock/survival_pod/glass,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"ac" = (
+/obj/machinery/shower{
+	pixel_y = 18
+	},
+/obj/structure/window/reinforced/tinted{
+	dir = 4
+	},
+/turf/open/floor/noslip,
+/area/survivalpod/nonpowered)
+"ad" = (
+/obj/structure/toilet{
+	dir = 4
+	},
+/turf/open/floor/mineral/silver,
+/area/survivalpod/nonpowered)
+"ae" = (
+/obj/structure/sink{
+	pixel_y = 24
+	},
+/obj/structure/mirror{
+	pixel_y = 34
+	},
+/turf/open/floor/mineral/silver,
+/area/survivalpod/nonpowered)
+"af" = (
+/obj/machinery/washing_machine,
+/turf/open/floor/mineral/silver,
+/area/survivalpod/nonpowered)
+"ag" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/festive/wooden/wooden1,
+/area/survivalpod/nonpowered)
+"ah" = (
+/turf/open/pool,
+/area/survivalpod/nonpowered)
+"ai" = (
+/obj/structure/window/shuttle/survival_pod,
+/obj/machinery/poweredfans,
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"aj" = (
+/obj/machinery/light,
+/turf/open/floor/noslip,
+/area/survivalpod/nonpowered)
+"ak" = (
+/obj/structure/curtain,
+/obj/machinery/door/window/survival_pod{
+	dir = 4
+	},
+/obj/structure/window/reinforced/tinted{
+	dir = 1
+	},
+/turf/open/floor/noslip,
+/area/survivalpod/nonpowered)
+"al" = (
+/turf/open/floor/mineral/silver,
+/area/survivalpod/nonpowered)
+"am" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/table/plasmaglass,
+/obj/structure/bedsheetbin/towel,
+/obj/item/reagent_containers/food/snacks/burger/cumburger,
+/obj/item/reagent_containers/food/snacks/burger/cumburger,
+/turf/open/floor/mineral/silver,
+/area/survivalpod/nonpowered)
+"an" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/pool,
+/area/survivalpod/nonpowered)
+"ao" = (
+/obj/structure/window/reinforced/tinted{
+	dir = 1
+	},
+/turf/open/floor/festive/wooden/wooden1,
+/area/survivalpod/nonpowered)
+"ap" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/pool/ladder{
+	dir = 1;
+	pixel_y = -24
+	},
+/turf/open/pool,
+/area/survivalpod/nonpowered)
+"aq" = (
+/obj/structure/sign/painting/library,
+/turf/closed/wall/mineral/titanium/survival/pod,
+/area/survivalpod/nonpowered)
+"ar" = (
+/obj/machinery/door/airlock/survival_pod/glass,
+/turf/open/floor/noslip,
+/area/survivalpod/nonpowered)
+"as" = (
+/turf/open/floor/festive/wooden/wooden1,
+/area/survivalpod/nonpowered)
+"at" = (
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/festive/wooden/wooden1,
+/area/survivalpod/nonpowered)
+"au" = (
+/turf/open/floor/carpet/royalblack,
+/area/survivalpod/nonpowered)
+"av" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/carpet/royalblack,
+/area/survivalpod/nonpowered)
+"aw" = (
+/obj/machinery/airalarm/directional/north,
+/obj/structure/dresser,
+/turf/open/floor/carpet/royalblack,
+/area/survivalpod/nonpowered)
+"ax" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/festive/wooden/wooden1,
+/area/survivalpod/nonpowered)
+"ay" = (
+/obj/structure/window/shuttle/survival_pod,
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"az" = (
+/obj/structure/window/reinforced/tinted{
+	dir = 1
+	},
+/obj/machinery/pool/controller,
+/turf/open/floor/festive/wooden/wooden1,
+/area/survivalpod/nonpowered)
+"aA" = (
+/obj/structure/bed/double/pod{
+	dir = 4
+	},
+/obj/item/bedsheet/rd/double{
+	dir = 1
+	},
+/turf/open/floor/carpet/royalblack,
+/area/survivalpod/nonpowered)
+"aC" = (
+/obj/machinery/smartfridge/survival_pod{
+	pixel_y = 0
+	},
+/turf/closed/wall/mineral/titanium/survival/pod,
+/area/survivalpod/nonpowered)
+"aD" = (
+/obj/machinery/door/airlock/survival_pod/glass,
+/turf/open/floor/carpet/royalblack,
+/area/survivalpod/nonpowered)
+"aE" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/festive/wooden/wooden1,
+/area/survivalpod/nonpowered)
+"aF" = (
+/obj/structure/closet/cabinet,
+/obj/item/clothing/under/misc/bathrobe,
+/obj/item/clothing/shoes/sandal,
+/obj/item/clothing/shoes/sandal,
+/obj/item/clothing/under/misc/bathrobe,
+/turf/open/floor/festive/wooden/wooden1,
+/area/survivalpod/nonpowered)
+"aG" = (
+/obj/machinery/light,
+/turf/open/floor/carpet/royalblack,
+/area/survivalpod/nonpowered)
+"aH" = (
+/obj/structure/closet/secure_closet/personal/cabinet,
+/turf/open/floor/carpet/royalblack,
+/area/survivalpod/nonpowered)
+"aI" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/festive/wooden/wooden1,
+/area/survivalpod/nonpowered)
+"aJ" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/festive/wooden/wooden1,
+/area/survivalpod/nonpowered)
+"aL" = (
+/obj/machinery/door/airlock/survival_pod/glass,
+/obj/machinery/poweredfans,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"aM" = (
+/obj/structure/chair/comfy/black{
+	dir = 4
+	},
+/turf/open/floor/festive/wooden/wooden1,
+/area/survivalpod/nonpowered)
+"aN" = (
+/obj/structure/table/plasmaglass,
+/obj/item/paper/pamphlet/violent_video_games,
+/turf/open/floor/festive/wooden/wooden1,
+/area/survivalpod/nonpowered)
+"aO" = (
+/obj/structure/chair/comfy/black{
+	dir = 8
+	},
+/turf/open/floor/festive/wooden/wooden1,
+/area/survivalpod/nonpowered)
+"aP" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/easel,
+/obj/item/canvas/twentythreeXtwentythree,
+/obj/item/storage/crayons,
+/turf/open/floor/festive/wooden/wooden1,
+/area/survivalpod/nonpowered)
+"aQ" = (
+/obj/machinery/chem_dispenser/drinks{
+	pixel_y = 30
+	},
+/obj/structure/table/wood/fancy/royalblack,
+/turf/open/floor/festive/wooden/wooden1,
+/area/survivalpod/nonpowered)
+"aR" = (
+/obj/machinery/chem_dispenser/drinks/beer{
+	pixel_y = 30;
+	density = 0
+	},
+/obj/structure/table/wood/fancy/royalblack,
+/turf/open/floor/festive/wooden/wooden1,
+/area/survivalpod/nonpowered)
+"aS" = (
+/obj/structure/fireplace,
+/obj/item/stack/sheet/mineral/wood/fifty,
+/turf/open/floor/festive/wooden/wooden1,
+/area/survivalpod/nonpowered)
+"aT" = (
+/obj/machinery/vending/boozeomat{
+	density = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/festive/wooden/wooden1,
+/area/survivalpod/nonpowered)
+"aU" = (
+/obj/machinery/vending/games{
+	pixel_y = 29;
+	density = 0
+	},
+/turf/open/floor/festive/wooden/wooden1,
+/area/survivalpod/nonpowered)
+"aV" = (
+/obj/structure/chair/comfy/black,
+/turf/open/floor/carpet/royalblue,
+/area/survivalpod/nonpowered)
+"aW" = (
+/obj/machinery/airalarm/directional/east,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/festive/wooden/wooden1,
+/area/survivalpod/nonpowered)
+"aX" = (
+/obj/structure/fans,
+/turf/open/floor/carpet/royalblack,
+/area/survivalpod/nonpowered)
+"aY" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/telecomms/relay/preset/station,
+/turf/open/floor/carpet/royalblack,
+/area/survivalpod/nonpowered)
+"aZ" = (
+/obj/structure/reagent_dispensers/keg/semen,
+/turf/open/floor/carpet/royalblack,
+/area/survivalpod/nonpowered)
+"ba" = (
+/obj/structure/reagent_dispensers/keg/aphro/strong,
+/turf/open/floor/carpet/royalblack,
+/area/survivalpod/nonpowered)
+"bb" = (
+/obj/structure/chair/sofa/corp/left{
+	dir = 4
+	},
+/turf/open/floor/festive/wooden/wooden1,
+/area/survivalpod/nonpowered)
+"bc" = (
+/obj/structure/sign/poster/contraband/yes_erp,
+/turf/closed/wall/mineral/titanium/survival/pod,
+/area/survivalpod/nonpowered)
+"bd" = (
+/obj/structure/table/wood/fancy/royalblack,
+/obj/effect/spawner/lootdrop/three_course_meal,
+/turf/open/floor/carpet/royalblue,
+/area/survivalpod/nonpowered)
+"be" = (
+/obj/structure/chair/sofa/corp/right{
+	dir = 8
+	},
+/turf/open/floor/festive/wooden/wooden1,
+/area/survivalpod/nonpowered)
+"bf" = (
+/obj/machinery/vending/wallmed{
+	pixel_x = -26
+	},
+/turf/open/floor/carpet/royalblack,
+/area/survivalpod/nonpowered)
+"bg" = (
+/obj/machinery/pool/drain,
+/turf/open/pool,
+/area/survivalpod/nonpowered)
+"bh" = (
+/obj/structure/reagent_dispensers/keg/femcum,
+/turf/open/floor/carpet/royalblack,
+/area/survivalpod/nonpowered)
+"bi" = (
+/obj/structure/chair/sofa/corp/corner{
+	dir = 1
+	},
+/turf/open/floor/festive/wooden/wooden1,
+/area/survivalpod/nonpowered)
+"bj" = (
+/obj/structure/chair/sofa/corp{
+	dir = 1
+	},
+/turf/open/floor/festive/wooden/wooden1,
+/area/survivalpod/nonpowered)
+"bk" = (
+/obj/structure/chair/sofa/corp/corner{
+	dir = 8
+	},
+/turf/open/floor/festive/wooden/wooden1,
+/area/survivalpod/nonpowered)
+"bl" = (
+/obj/machinery/mineral/equipment_vendor/golem{
+	pixel_y = -30
+	},
+/turf/open/floor/festive/wooden/wooden1,
+/area/survivalpod/nonpowered)
+"bm" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/festive/wooden/wooden1,
+/area/survivalpod/nonpowered)
+"bn" = (
+/obj/machinery/door/airlock/survival_pod,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/royalblack,
+/area/survivalpod/nonpowered)
+"bo" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/royalblack,
+/area/survivalpod/nonpowered)
+"bp" = (
+/obj/machinery/light,
+/obj/machinery/power/apc/auto_name/south,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/royalblack,
+/area/survivalpod/nonpowered)
+"bq" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/autolathe/hacked,
+/turf/open/floor/carpet/royalblack,
+/area/survivalpod/nonpowered)
+"br" = (
+/obj/machinery/power/rtg/advanced/fullupgrade,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/carpet/royalblack,
+/area/survivalpod/nonpowered)
+"bs" = (
+/obj/machinery/poweredfans,
+/obj/structure/window/shuttle/survival_pod,
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"Sp" = (
+/obj/machinery/vending/kink{
+	dir = 4
+	},
+/turf/closed/wall/mineral/titanium/survival/pod,
+/area/survivalpod/nonpowered)
+
+(1,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ai
+ai
+ai
+ai
+ai
+"}
+(2,1,1) = {"
+aa
+ac
+aj
+bc
+au
+aA
+au
+aa
+aQ
+as
+bb
+bi
+bs
+"}
+(3,1,1) = {"
+aa
+ad
+ak
+aq
+av
+au
+aG
+aa
+aR
+aV
+bd
+bj
+ai
+"}
+(4,1,1) = {"
+aa
+ae
+al
+ar
+au
+au
+aH
+aa
+aS
+aV
+bd
+bj
+ai
+"}
+(5,1,1) = {"
+aa
+af
+am
+aa
+aw
+au
+aH
+aa
+aT
+as
+be
+bk
+ai
+"}
+(6,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aD
+aa
+aa
+aU
+as
+as
+bl
+aa
+"}
+(7,1,1) = {"
+ab
+ag
+ag
+ag
+ax
+ag
+aI
+ag
+ag
+aW
+ag
+bm
+ab
+"}
+(8,1,1) = {"
+aa
+aa
+aa
+aa
+aC
+aE
+aJ
+as
+Sp
+aa
+aa
+bn
+aa
+"}
+(9,1,1) = {"
+aa
+ah
+an
+az
+ay
+as
+aJ
+aM
+aa
+aX
+bf
+bo
+aa
+"}
+(10,1,1) = {"
+aa
+ah
+ah
+ao
+ay
+as
+aJ
+aN
+aa
+aY
+au
+bp
+aa
+"}
+(11,1,1) = {"
+aa
+bg
+ah
+ao
+ab
+as
+aJ
+aO
+aa
+aZ
+au
+bq
+aa
+"}
+(12,1,1) = {"
+aa
+ah
+ap
+at
+ay
+aF
+aJ
+aP
+aa
+ba
+bh
+br
+aa
+"}
+(13,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aL
+aa
+aa
+aa
+aa
+aa
+aa
+"}

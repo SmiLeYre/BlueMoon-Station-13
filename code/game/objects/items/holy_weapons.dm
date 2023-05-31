@@ -161,6 +161,7 @@
 	icon_state = "witchhunter"
 	item_state = "witchhunter"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/head/helmet/chaplain/witchunter_hat
 	name = "witchunter hat"
@@ -692,60 +693,6 @@
 		user.faction |= "carp"
 		used_blessing = TRUE
 
-/obj/item/nullrod/claymore/bostaff //May as well make it a "claymore" and inherit the blocking
-	name = "monk's staff"
-	desc = "A long, tall staff made of polished wood. Traditionally used in ancient old-Earth martial arts, it is now used to harass the clown."
-	w_class = WEIGHT_CLASS_BULKY
-	force = 15
-	block_chance = 40
-	slot_flags = ITEM_SLOT_BACK
-	sharpness = SHARP_NONE
-	hitsound = "swing_hit"
-	attack_verb = list("smashed", "slammed", "whacked", "thwacked")
-	icon = 'icons/obj/items_and_weapons.dmi'
-	icon_state = "bostaff0"
-	item_state = "bostaff0"
-	lefthand_file = 'icons/mob/inhands/weapons/staves_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/staves_righthand.dmi'
-
-/obj/item/nullrod/claymore/bostaff/attack(mob/target, mob/living/user)
-	add_fingerprint(user)
-	if((HAS_TRAIT(user, TRAIT_CLUMSY)) && prob(50))
-		to_chat(user, "<span class ='warning'>You club yourself over the head with [src].</span>")
-		user.DefaultCombatKnockdown(60)
-		if(ishuman(user))
-			var/mob/living/carbon/human/H = user
-			H.apply_damage(2*force, BRUTE, BODY_ZONE_HEAD)
-		else
-			user.take_bodypart_damage(2*force)
-		return
-	if(iscyborg(target))
-		return ..()
-	if(!isliving(target))
-		return ..()
-	var/mob/living/carbon/C = target
-	if(C.stat || C.health < 0 || C.staminaloss > 130 )
-		to_chat(user, "<span class='warning'>It would be dishonorable to attack a foe while they cannot retaliate.</span>")
-		return
-	if(user.a_intent == INTENT_DISARM)
-		if(!ishuman(target))
-			return ..()
-		var/mob/living/carbon/human/H = target
-		var/list/fluffmessages = list("[user] clubs [H] with [src]!", \
-									  "[user] smacks [H] with the butt of [src]!", \
-									  "[user] broadsides [H] with [src]!", \
-									  "[user] smashes [H]'s head with [src]!", \
-									  "[user] beats [H] with front of [src]!", \
-									  "[user] twirls and slams [H] with [src]!")
-		H.visible_message("<span class='warning'>[pick(fluffmessages)]</span>", \
-							   "<span class='userdanger'>[pick(fluffmessages)]</span>")
-		playsound(get_turf(user), 'sound/effects/woodhit.ogg', 75, 1, -1)
-		H.adjustStaminaLoss(rand(12,18))
-		if(prob(25))
-			(INVOKE_ASYNC(src, .proc/jedi_spin, user))
-	else
-		return ..()
-
 /obj/item/nullrod/tribal_knife
 	icon_state = "crysknife"
 	item_state = "crysknife"
@@ -865,3 +812,54 @@
 	else
 		to_chat(user, "<span class='notice'>Your prayer to [deity_name] was interrupted.</span>")
 		praying = FALSE
+
+//monk's staf | BM added
+/obj/item/staff/bostaff/chaplain
+	name = "monk's staff"
+	desc = "A long, tall staff made of polished wood. Traditionally used in ancient old-Earth martial arts, it is now used to harass the clown."
+	block_chance = 40
+
+/obj/item/staff/bostaff/chaplain/proc/jedi_spin(mob/living/user)
+	for(var/i in list(NORTH,SOUTH,EAST,WEST,EAST,SOUTH,NORTH,SOUTH,EAST,WEST,EAST,SOUTH))
+		user.setDir(i)
+		if(i == WEST)
+			user.emote("flip")
+		sleep(1)
+
+/obj/item/staff/bostaff/chaplain/attack(mob/target, mob/living/user)
+	add_fingerprint(user)
+	if((HAS_TRAIT(user, TRAIT_CLUMSY)) && prob(50))
+		to_chat(user, "<span class ='warning'>You club yourself over the head with [src].</span>")
+		user.DefaultCombatKnockdown(60)
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			H.apply_damage(2*force, BRUTE, BODY_ZONE_HEAD)
+		else
+			user.take_bodypart_damage(2*force)
+		return
+	if(iscyborg(target))
+		return ..()
+	if(!isliving(target))
+		return ..()
+	var/mob/living/carbon/C = target
+	if(C.stat || C.health < 0 || C.staminaloss > 130 )
+		to_chat(user, "<span class='warning'>It would be dishonorable to attack a foe while they cannot retaliate.</span>")
+		return
+	if(user.a_intent == INTENT_DISARM)
+		if(!ishuman(target))
+			return ..()
+		var/mob/living/carbon/human/H = target
+		var/list/fluffmessages = list("[user] clubs [H] with [src]!", \
+									  "[user] smacks [H] with the butt of [src]!", \
+									  "[user] broadsides [H] with [src]!", \
+									  "[user] smashes [H]'s head with [src]!", \
+									  "[user] beats [H] with front of [src]!", \
+									  "[user] twirls and slams [H] with [src]!")
+		H.visible_message("<span class='warning'>[pick(fluffmessages)]</span>", \
+							   "<span class='userdanger'>[pick(fluffmessages)]</span>")
+		playsound(get_turf(user), 'sound/effects/woodhit.ogg', 75, 1, -1)
+		H.adjustStaminaLoss(rand(12,18))
+		if(prob(25))
+			(INVOKE_ASYNC(src, .proc/jedi_spin, user))
+	else
+		return ..()

@@ -8,6 +8,7 @@
 	var/datum/team/pirate/crew
 
 /datum/antagonist/pirate/greet()
+	SEND_SOUND(owner.current, sound('sound/ambience/antag/pirate.ogg'))
 	to_chat(owner, "<span class='boldannounce'>You are a Space Pirate!</span>")
 	to_chat(owner, "<B>The station refused to pay for your protection, protect the ship, siphon the credits from the station and raid it for even more loot.</B>")
 	owner.announce_objectives()
@@ -58,7 +59,7 @@
 /datum/objective/loot
 	var/obj/machinery/computer/piratepad_control/cargo_hold
 	explanation_text = "Acquire valuable loot and store it in designated area."
-	var/target_value = 50000
+	var/target_value = 100000
 
 
 /datum/objective/loot/update_explanation_text()

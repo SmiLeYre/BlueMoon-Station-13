@@ -61,8 +61,8 @@
 					message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению и трахает, натягивая [possessive_verb] прямо на свой [genital_name]" : "использует <b>'[src]'</b> по прямому назначению и трахает, натягивая прямо на свой <b>[M]</b> [genital_name]"
 					lust_amt = NORMAL_LUST
 	if(message)
-		user.visible_message("<span class='lewd'>[user] [message].</span>")
-		M.handle_post_sex(lust_amt, null, user)
+		user.visible_message(span_lewd("<b>[user]</b> [message]."))
+		M.handle_post_sex(lust_amt, null, user, ORGAN_SLOT_PENIS) //SPLURT edit
 		playlewdinteractionsound(loc, pick('modular_sand/sound/interactions/bang4.ogg',
 							'modular_sand/sound/interactions/bang5.ogg',
 							'modular_sand/sound/interactions/bang6.ogg'), 70, 1, -1)
@@ -420,7 +420,7 @@
 	if(user_message)
 		if(portal_target && (portal_target?.client?.prefs.toggles & VERB_CONSENT || !portal_target.ckey))
 			user.visible_message("<span class='lewd'>[user] [user_message].</span>")
-			if(M.can_penetrating_genital_cum() && M.handle_post_sex(user_lust_amt, target, portal_target))
+			if(M.can_penetrating_genital_cum() && M.handle_post_sex(user_lust_amt, target, portal_target, target)) //SPLURT edit
 				switch(target)
 					if(CUM_TARGET_PENIS)
 						switch(portalunderwear.targetting)
@@ -463,8 +463,9 @@
 				if(BODY_ZONE_PRECISE_MOUTH, BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG)
 					playlewdinteractionsound(loc, 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1)
 
-			to_chat(portal_target, "<span class='lewd'>Кто-то использует сопряжённый '[name]', этот кто-то [target_message].</span>")
-			if(portal_target.handle_post_sex(target_lust_amt, portalunderwear.targetting, M))
+			to_chat(portal_target, "<span class='lewd'>Кто-то использует сопряжённый <b>'[name]'</b>, этот кто-то [target_message].</span>")
+			if(portal_target.handle_post_sex(target_lust_amt, portalunderwear.targetting, M, portalunderwear.targetting)) //SPLURT edit
+
 				switch(portalunderwear.targetting)
 					if(CUM_TARGET_VAGINA)
 						switch(target)
@@ -575,19 +576,19 @@
 			if(CUM_TARGET_PENIS)
 				organ = mutable_appearance('modular_sand/icons/obj/dildo.dmi', "penis") // Credit goes to @Moltov#6925 (296074425562955777) from the Hyperstation 13 discord for the sprite work
 				switch(H.dna.features["cock_shape"])
-					if("человеческий")
+					if("human")
 						organ = mutable_appearance('modular_sand/icons/obj/dildo.dmi', "penis")
-					if("толстый")
+					if("thick")
 						organ = mutable_appearance('modular_sand/icons/obj/dildo.dmi', "humanthick")
-					if("узловатый", "колючий узловатый")
+					if("knotted", "barbknot")
 						organ = mutable_appearance('modular_sand/icons/obj/dildo.dmi', "knotted")
-					if("утолщённый")
+					if("flared")
 						organ = mutable_appearance('modular_sand/icons/obj/dildo.dmi', "flared")
-					if("конусоподобный")
+					if("tapered")
 						organ = mutable_appearance('modular_sand/icons/obj/dildo.dmi', "tapered")
-					if("тентяклевидный")
+					if("tentacle")
 						organ = mutable_appearance('modular_sand/icons/obj/dildo.dmi', "tentacle")
-					if("двойной", "двойной узловатый")
+					if("hemi", "hemiknot")
 						organ = mutable_appearance('modular_sand/icons/obj/dildo.dmi', "hemi")
 				organ.color = G.color
 				organ.color = G.color

@@ -141,9 +141,9 @@
 
 /datum/uplink_item/role_restricted/oldtoolboxclean // this is the fourth item relating to toolboxes to be placed into this godforsaken bloated uplink
 	name = "Ancient Toolbox"
-	desc = "An iconic toolbox design notorious with Assistants everywhere, this design was especially made to become more robust the more telecrystals it has inside it! Tools and insulated gloves included."
+	desc = "An iconic toolbox design notorious with Assistants everywhere, this design was especially made to become more robust the more credits it has inside it! Tools and insulated gloves included."
 	item = /obj/item/storage/toolbox/mechanical/old/clean
-	cost = 2 // with eighteen telecrystals you are still weaker than a desword and without any of its defenses -- the scary part comes from collaborating with allies for a fifty eight force toolbox oh fuck
+	cost = 2 // with eighteen credits you are still weaker than a desword and without any of its defenses -- the scary part comes from collaborating with allies for a fifty eight force toolbox oh fuck
 	restricted_roles = list("Assistant")
 	surplus = 0
 

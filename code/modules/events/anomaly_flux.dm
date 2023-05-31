@@ -4,7 +4,7 @@
 
 	min_players = 20
 	max_occurrences = 2
-	weight = 10
+	weight = 20
 
 /datum/round_event/anomaly/anomaly_flux
 	start_when = 10

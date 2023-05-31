@@ -17,94 +17,94 @@
 
 /datum/sprite_accessory/penis/human
 	icon_state = "human"
-	name = "человеческий"
+	name = "Human"
 
 /datum/sprite_accessory/penis/knotted
 	icon_state = "knotted"
-	name = "узловатый"
+	name = "Knotted"
 	taur_icon = 'icons/obj/genitals/taur_penis_onmob.dmi'
 	taur_dimension_x = 64
 
 /datum/sprite_accessory/penis/flared
 	icon_state = "flared"
-	name = "утолщённый"
+	name = "Flared"
 	taur_icon = 'icons/obj/genitals/taur_penis_onmob.dmi'
 	taur_dimension_x = 64
 
 /datum/sprite_accessory/penis/barbknot
 	icon_state = "barbknot"
-	name = "колючий узловатый"
+	name = "Barbed, Knotted"
 
 /datum/sprite_accessory/penis/tapered
 	icon_state = "tapered"
-	name = "конусоподобный"
+	name = "Tapered"
 	taur_icon = 'icons/obj/genitals/taur_penis_onmob.dmi'
 	taur_dimension_x = 64
 
 /datum/sprite_accessory/penis/tentacle
 	icon_state = "tentacle"
-	name = "тентяклевидный"
+	name = "Tentacled"
 
 /datum/sprite_accessory/penis/hemi
 	icon_state = "hemi"
-	name = "двойной"
+	name = "Hemi"
 
 /datum/sprite_accessory/penis/hemiknot
 	icon_state = "hemiknot"
-	name = "двойной узловатый"
+	name = "Knotted Hemi"
 
 //Testicles
 /datum/sprite_accessory/testicles
 	icon = 'icons/obj/genitals/testicles_onmob.dmi'
 	icon_state = "testicle"
-	name = "яйца"		//the preview name of the accessory
+	name = "testicle"		//the preview name of the accessory
 	color_src = "balls_color"
 
 /datum/sprite_accessory/testicles/single
 	icon_state = "single"
-	name = "одинарные" //Single as "single pair", for clarity.
+	name = "Single" //Single as "single pair", for clarity.
 
 /datum/sprite_accessory/testicles/hidden
 	icon_state = "hidden"
-	name = "скрытые" //not sure why these were missing, but I'm pretty certain people might want these.
+	name = "Hidden" //not sure why these were missing, but I'm pretty certain people might want these.
 
 //Vaginas
 /datum/sprite_accessory/vagina
 	icon = 'icons/obj/genitals/vagina_onmob.dmi'
-	name = "вагина"
+	name = "vagina"
 	color_src = "vag_color"
 	alt_aroused = TRUE
 
 /datum/sprite_accessory/vagina/human
 	icon_state = "human"
-	name = "человеческая"
+	name = "Human"
 
 /datum/sprite_accessory/vagina/tentacles
 	icon_state = "tentacle"
-	name = "тентяклевидная"
+	name = "Tentacle"
 
 /datum/sprite_accessory/vagina/dentata
 	icon_state = "dentata"
-	name = "зубастая"
+	name = "Dentata"
 
 /datum/sprite_accessory/vagina/hairy
 	icon_state = "hairy"
-	name = "волосатая"
+	name = "Hairy"
 	alt_aroused = FALSE
 
 /datum/sprite_accessory/vagina/spade
 	icon_state = "spade"
-	name = "лопатковидная"
+	name = "Spade"
 	alt_aroused = FALSE
 
 /datum/sprite_accessory/vagina/furred
 	icon_state = "furred"
-	name = "мохнатая"
+	name = "Furred"
 	alt_aroused = FALSE
 
 /datum/sprite_accessory/vagina/gaping
 	icon_state = "gaping"
-	name = "приоткрытая"
+	name = "Gaping"
 
 //BREASTS BE HERE
 /datum/sprite_accessory/breasts

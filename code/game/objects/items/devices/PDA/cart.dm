@@ -203,6 +203,12 @@
 	icon_state = "cart-bar"
 	access = CART_BARTENDER | CART_MANIFEST
 
+/obj/item/cartridge/chaplain
+	name = "holy cartridge"
+	desc = "Amen!"
+	icon_state = "cart-q"
+	access = CART_MANIFEST
+
 /obj/item/cartridge/captain/New()
 	..()
 	radio = new(src)

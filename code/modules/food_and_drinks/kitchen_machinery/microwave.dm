@@ -12,7 +12,7 @@
 #define REALLY_BROKEN 2
 
 /// The max amount of dirtiness a microwave can be
-#define MAX_MICROWAVE_DIRTINESS 100
+#define MAX_MICROWAVE_DIRTINESS 1000
 
 /obj/machinery/microwave//SKYRAT EDIT - ICON OVERRIDEN BY AESTHETICS - SEE MODULE
 	name = "microwave oven"
@@ -293,6 +293,7 @@
 		if(do_after(user, cleanspeed, target = src))
 			user.visible_message(span_notice("[user] cleans \the [src]."), span_notice("You clean \the [src]."))
 			dirty = 0
+			ingredients.Cut()
 			update_appearance()
 		return TRUE
 

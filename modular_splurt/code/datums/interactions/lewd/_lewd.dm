@@ -373,7 +373,7 @@
 									'modular_sand/sound/interactions/bj11.ogg'), 50, 1, -1)
 	visible_message(message = "<span class='lewd'><b>\The [src]</b> [message]</span>", ignored_mobs = get_unconsenting())
 	if(fucktarget != "penis" || user.can_penetrating_genital_cum())
-		user.handle_post_sex(lust_increase, CUM_TARGET_MOUTH, src)
+		user.handle_post_sex(lust_increase, CUM_TARGET_MOUTH, src, fucktarget)
 	lust_increase = NORMAL_LUST //RESET IT REE
 
 /mob/living/proc/do_breastfuck_self(mob/living/user)
@@ -393,8 +393,8 @@
 	playlewdinteractionsound(loc, pick('modular_sand/sound/interactions/bang1.ogg',
 						'modular_sand/sound/interactions/bang2.ogg',
 						'modular_sand/sound/interactions/bang3.ogg'), 70, 1, -1)
-	visible_message(message = "<span class='lewd'><b>\The [src]</b> [message]</span>", ignored_mobs = get_unconsenting())
-	handle_post_sex(NORMAL_LUST, CUM_TARGET_BREASTS, user)
+	visible_message(message = span_lewd("<b>\The [src]</b> [message]"), ignored_mobs = get_unconsenting())
+	handle_post_sex(NORMAL_LUST, CUM_TARGET_BREASTS, user, ORGAN_SLOT_PENIS)
 
 /*
 
@@ -445,8 +445,8 @@
 						'modular_sand/sound/interactions/champ2.ogg'), 50, 1, -1)
 	visible_message(message = "<span class='lewd'><b>\The [src]</b> [message]</span>", ignored_mobs = get_unconsenting())
 	if(can_penetrating_genital_cum())
-		handle_post_sex(NORMAL_LUST, CUM_TARGET_BELLY, partner)
-	//partner.handle_post_sex(NORMAL_LUST, null, src) //don't think we need it fo dis one
+		handle_post_sex(NORMAL_LUST, CUM_TARGET_BELLY, partner, ORGAN_SLOT_PENIS)
+	//partner.handle_post_sex(NORMAL_LUST, null, src) //don't think we need it for this one
 
 /mob/living/proc/do_breastsmother(mob/living/target)
 	var/message
@@ -540,7 +540,7 @@
 						'modular_sand/sound/interactions/bang2.ogg',
 						'modular_sand/sound/interactions/bang3.ogg'), 70, 1, -1)
 	if(can_penetrating_genital_cum())
-		handle_post_sex(NORMAL_LUST, CUM_TARGET_ARMPIT, target)
+		handle_post_sex(NORMAL_LUST, CUM_TARGET_ARMPIT, target, ORGAN_SLOT_PENIS)
 
 /mob/living/proc/do_pitjob(mob/living/target)
 	var/message
@@ -573,7 +573,7 @@
 						'modular_sand/sound/interactions/bang2.ogg',
 						'modular_sand/sound/interactions/bang3.ogg'), 70, 1, -1)
 	if(target.can_penetrating_genital_cum())
-		target.handle_post_sex(NORMAL_LUST, CUM_TARGET_ARMPIT, src)
+		target.handle_post_sex(NORMAL_LUST, CUM_TARGET_ARMPIT, src, ORGAN_SLOT_PENIS)
 
 /mob/living/proc/do_boobjob(mob/living/target)
 	var/message
@@ -601,7 +601,7 @@
 						'modular_sand/sound/interactions/bang2.ogg',
 						'modular_sand/sound/interactions/bang3.ogg'), 70, 1, -1)
 	if(target.can_penetrating_genital_cum())
-		target.handle_post_sex(NORMAL_LUST, CUM_TARGET_BREASTS, src)
+		target.handle_post_sex(NORMAL_LUST, CUM_TARGET_BREASTS, src, ORGAN_SLOT_PENIS)
 
 /mob/living/proc/lick_nuts(mob/living/target)
 	var/message
@@ -627,7 +627,7 @@
 
 	message = "<span class='lewd'>\The <b>[src]</b> [pick(lines)]</span>"
 	visible_message(message, ignored_mobs = get_unconsenting())
-	target.handle_post_sex(lust_increase, CUM_TARGET_MOUTH, src)
+	target.handle_post_sex(lust_increase, CUM_TARGET_MOUTH, src, ORGAN_SLOT_TESTICLES)
 
 /mob/living/proc/do_cockfuck(mob/living/target)
 	var/message
@@ -663,9 +663,9 @@
 	visible_message(message, ignored_mobs = get_unconsenting())
 	playlewdinteractionsound(src, pick(noises), 70, 1, -1)
 	if(can_penetrating_genital_cum())
-		handle_post_sex(NORMAL_LUST, CUM_TARGET_URETHRA, target)
+		handle_post_sex(NORMAL_LUST, CUM_TARGET_URETHRA, target, ORGAN_SLOT_PENIS)
 	if(target.can_penetrating_genital_cum())
-		target.handle_post_sex(NORMAL_LUST, CUM_TARGET_URETHRA, src)
+		target.handle_post_sex(NORMAL_LUST, CUM_TARGET_URETHRA, ORGAN_SLOT_PENIS)
 
 /mob/living/proc/do_nipfuck(mob/living/target)
 	var/message
@@ -700,8 +700,8 @@
 						'modular_sand/sound/interactions/bang2.ogg',
 						'modular_sand/sound/interactions/bang3.ogg'), 70, 1, -1)
 	if(can_penetrating_genital_cum())
-		handle_post_sex(NORMAL_LUST, CUM_TARGET_NIPPLE, target)
-	target.handle_post_sex(NORMAL_LUST, null, src)
+		handle_post_sex(NORMAL_LUST, CUM_TARGET_NIPPLE, target, ORGAN_SLOT_PENIS)
+	target.handle_post_sex(NORMAL_LUST, null, src, ORGAN_SLOT_BREASTS)
 
 /mob/living/proc/do_thighfuck(mob/living/target)
 	var/message
@@ -730,7 +730,7 @@
 						'modular_sand/sound/interactions/bang2.ogg',
 						'modular_sand/sound/interactions/bang3.ogg'), 70, 1, -1)
 	if(can_penetrating_genital_cum())
-		handle_post_sex(NORMAL_LUST, CUM_TARGET_THIGHS, target)
+		handle_post_sex(NORMAL_LUST, CUM_TARGET_THIGHS, target, ORGAN_SLOT_PENIS)
 	target.handle_post_sex(LOW_LUST, CUM_TARGET_PENIS, src)
 
 /mob/living/proc/do_thighjob(mob/living/target)
@@ -762,7 +762,7 @@
 						'modular_sand/sound/interactions/bang3.ogg'), 70, 1, -1)
 	handle_post_sex(LOW_LUST, CUM_TARGET_PENIS, target)
 	if(target.can_penetrating_genital_cum())
-		target.handle_post_sex(NORMAL_LUST, CUM_TARGET_THIGHS, src)
+		target.handle_post_sex(NORMAL_LUST, CUM_TARGET_THIGHS, src, ORGAN_SLOT_PENIS)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////// 									U N H O L Y										   /////////
@@ -881,7 +881,7 @@
 						'modular_sand/sound/interactions/bang5.ogg',
 						'modular_sand/sound/interactions/bang6.ogg'), 70, 1, -1)
 	if(can_penetrating_genital_cum())
-		handle_post_sex(NORMAL_LUST, CUM_TARGET_ANUS, target)
+		handle_post_sex(NORMAL_LUST, CUM_TARGET_ANUS, target, ORGAN_SLOT_PENIS)
 	target.handle_post_sex(NORMAL_LUST, null, src)
 
 /mob/living/proc/suck_fart(mob/living/target)
@@ -965,11 +965,12 @@
 	message = "<span class='lewd'>\The <b>[src]</b> [pick(hell)]</span>"
 	visible_message(message, ignored_mobs = get_unconsenting(unholy = TRUE))
 	playlewdinteractionsound(loc, pick(GLOB.brap_noises), 50, 1, -1, ignored_mobs = get_unconsenting(unholy = TRUE))
+
+	var/obj/item/organ/genital/G = target.has_penis(REQUIRE_EXPOSED) ? target.getorganslot(ORGAN_SLOT_PENIS) : (target.has_vagina(REQUIRE_EXPOSED) ? target.getorganslot(ORGAN_SLOT_VAGINA) : null)
 	if(!target.is_fucking(src, CUM_TARGET_ANUS))
-		var/obj/item/organ/genital/genital = target.has_penis(REQUIRE_EXPOSED) ? target.getorganslot(ORGAN_SLOT_PENIS) : (target.has_vagina(REQUIRE_EXPOSED) ? target.getorganslot(ORGAN_SLOT_VAGINA) : null)
-		target.set_is_fucking(src, CUM_TARGET_ANUS, genital)
+		target.set_is_fucking(src, CUM_TARGET_ANUS, G)
 	if(!target.has_strapon(REQUIRE_EXPOSED))
-		target.handle_post_sex(NORMAL_LUST, CUM_TARGET_ANUS, src)
+		target.handle_post_sex(NORMAL_LUST, CUM_TARGET_ANUS, src, G)
 	handle_post_sex(NORMAL_LUST, null, target)
 
 /mob/living/proc/do_shitfuck(mob/living/carbon/target)
@@ -1010,7 +1011,7 @@
 						'modular_sand/sound/interactions/bang5.ogg',
 						'modular_sand/sound/interactions/bang6.ogg'), 70, 1, -1)
 	if(can_penetrating_genital_cum())
-		handle_post_sex(NORMAL_LUST, CUM_TARGET_ANUS, target)
+		handle_post_sex(NORMAL_LUST, CUM_TARGET_ANUS, target, ORGAN_SLOT_PENIS)
 	target.handle_post_sex(NORMAL_LUST, null, src)
 
 /mob/living/proc/suck_shit(mob/living/target)
@@ -1038,7 +1039,7 @@
 	visible_message(message, ignored_mobs = get_unconsenting(unholy = TRUE))
 	playlewdinteractionsound(target.loc, pick(GLOB.brap_noises), 50, 1, -1, ignored_mobs = get_unconsenting(unholy = TRUE))
 	playlewdinteractionsound(target.loc, 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1, ignored_mobs = get_unconsenting(unholy = TRUE))
-	target.handle_post_sex(NORMAL_LUST, null, src)
+	target.handle_post_sex(NORMAL_LUST, null, src, ORGAN_SLOT_ANUS)
 
 /mob/living/proc/piss_over(mob/living/target)
 	var/message
@@ -1069,4 +1070,4 @@
 	visible_message(message, ignored_mobs = get_unconsenting(unholy = TRUE))
 	if(!is_fucking(target, CUM_TARGET_MOUTH))
 		set_is_fucking(target, CUM_TARGET_MOUTH, pee_pee)
-	handle_post_sex(NORMAL_LUST, CUM_TARGET_MOUTH, target)
+	handle_post_sex(NORMAL_LUST, CUM_TARGET_MOUTH, target, pee_pee)

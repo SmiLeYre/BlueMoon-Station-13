@@ -45,6 +45,12 @@
 	path = /obj/item/clothing/suit/donator/bm/lightning_holocloak
 	ckeywhitelist = list("weirdbutton")
 
+/datum/gear/donator/bm/modern_suit
+	name = "Modern Suit"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/donator/bm/modern_suit
+	ckeywhitelist = list("rainbowkurwa")
+
 /datum/gear/donator/bm/case_ds
 	name = "military case"
 	slot = ITEM_SLOT_BACKPACK
@@ -110,3 +116,9 @@
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/space/hardsuit/rd/hev/cosmetic
 	ckeywhitelist = list("rarslt")
+
+/datum/gear/donator/bm/utilgen
+	name = "G-66 Uniform"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/donator/bm/utilgen
+	ckeywhitelist = list("reaperdb")

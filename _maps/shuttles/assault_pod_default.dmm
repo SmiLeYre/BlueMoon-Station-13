@@ -7,7 +7,7 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium,
 /area/shuttle/assault_pod)
 "d" = (
 /turf/closed/wall/mineral/plastitanium,
@@ -32,7 +32,8 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/shuttle/assault_pod)
 "p" = (
-/turf/open/floor/mineral/plastitanium/red,
+/obj/effect/turf_decal/tile/brown/fourcorners,
+/turf/open/floor/mineral/plastitanium,
 /area/shuttle/assault_pod)
 "t" = (
 /obj/machinery/door/airlock/centcom{
@@ -43,25 +44,38 @@
 	},
 /turf/open/floor/plating,
 /area/shuttle/assault_pod)
+"y" = (
+/obj/effect/turf_decal/tile/brown/opposingcorners,
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/assault_pod)
 "D" = (
 /obj/structure/chair/comfy/shuttle,
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/obj/effect/turf_decal/tile/brown/opposingcorners,
+/turf/open/floor/mineral/plastitanium,
 /area/shuttle/assault_pod)
 "H" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium,
 /area/shuttle/assault_pod)
 "L" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
 /obj/machinery/light,
-/turf/open/floor/mineral/plastitanium/red,
+/obj/effect/turf_decal/tile/brown/opposingcorners,
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/assault_pod)
+"Q" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/brown/opposingcorners,
+/turf/open/floor/mineral/plastitanium,
 /area/shuttle/assault_pod)
 "R" = (
 /obj/machinery/door/airlock/centcom{
@@ -70,6 +84,13 @@
 	req_access_txt = "150"
 	},
 /turf/open/floor/plating,
+/area/shuttle/assault_pod)
+"T" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/brown/opposingcorners,
+/turf/open/floor/mineral/plastitanium,
 /area/shuttle/assault_pod)
 "V" = (
 /turf/template_noop,
@@ -96,9 +117,9 @@ b
 (3,1,1) = {"
 d
 c
-p
-H
-p
+y
+Q
+y
 c
 d
 "}
@@ -114,9 +135,9 @@ e
 (5,1,1) = {"
 d
 H
-p
-c
-p
+y
+T
+y
 H
 d
 "}

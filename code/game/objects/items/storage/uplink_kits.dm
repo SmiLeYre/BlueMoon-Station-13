@@ -173,8 +173,8 @@
 /obj/item/storage/box/syndie_kit
 	name = "box"
 	desc = "A sleek, sturdy box."
-	icon_state = "syndiebox"
-	illustration = "writing_syndie"
+	icon = 'modular_bluemoon/krashly/icons/obj/box.dmi'
+	icon_state = "inteqbox"
 
 /obj/item/storage/box/syndie_kit/imp_freedom
 	name = "boxed freedom implant (with injector)"
@@ -248,8 +248,8 @@
 	STR.can_hold = typecacheof(list(/obj/item/clothing/suit/space/syndicate, /obj/item/clothing/head/helmet/space/syndicate))
 
 /obj/item/storage/box/syndie_kit/space/PopulateContents()
-	new /obj/item/clothing/suit/space/syndicate/black/red(src) // Black and red is so in right now
-	new /obj/item/clothing/head/helmet/space/syndicate/black/red(src)
+	new /obj/item/clothing/suit/space/syndicate/contract(src) // Black and red is so in right now
+	new /obj/item/clothing/head/helmet/space/syndicate/contract(src)
 
 /obj/item/storage/box/syndie_kit/emp
 	name = "boxed EMP kit"
@@ -436,13 +436,13 @@
 
 /obj/item/storage/box/syndie_kit/contract_kit
 	name = "contractor kit"
-	desc = "Supplied to Syndicate contractors in active mission areas."
+	desc = "Supplied to InteQ contractors in active mission areas."
 
 /obj/item/storage/box/syndicate/contractor_loadout
 	name = "standard loadout"
-	desc = "Supplied to Syndicate contractors, providing their specialised space suit and chameleon uniform."
-	icon_state = "syndiebox"
-	illustration = "writing_syndie"
+	desc = "Supplied to InteQ contractors, providing their specialised space suit and chameleon uniform."
+	icon = 'modular_bluemoon/krashly/icons/obj/box.dmi'
+	icon_state = "inteqbox"
 
 /obj/item/paper/contractor_guide
 	name = "Contractor Guide"
@@ -451,7 +451,7 @@
 	info = {"<p>Welcome agent, congratulations on your new position as contractor. On top of your already assigned objectives,
 			this kit will provide you contracts to take on for TC payments.</p>
 			<p>Provided within, we give your specialist contractor space suit. It's even more compact, being able to fit into a pocket, and faster than the
-			Syndicate space suit available to you on the uplink. We also provide your chameleon jumpsuit and mask, both of which can be changed
+			InteQ space suit available to you on the uplink. We also provide your chameleon jumpsuit and mask, both of which can be changed
 			to any form you need for the moment. The cigarettes are a special blend - it'll heal your injuries slowly overtime.</p>
 			<p>The three additional items, apart from the tablet and loadout box, have been randomly selected from what we had available. We hope
 			they're useful to you for you mission.</p>
@@ -459,7 +459,7 @@
 			with two Rep being provided each time you complete a contract.</p>
 			<h3>Using the tablet</h3>
 			<ol>
-				<li>Open the Syndicate Contract Uplink program.</li>
+				<li>Open the InteQ Contract Uplink program.</li>
 				<li>Assign yourself.</li>
 				<li>Here, you can accept a contract, and redeem your TC payments from completed contracts.</li>
 				<li>The payment number shown in brackets is the bonus you'll recieve when bringing your target <b>alive</b>. You recieve the
@@ -499,7 +499,7 @@
 	new /obj/item/storage/box/syndicate/contractor_loadout(src)
 	new /obj/item/melee/classic_baton/telescopic/contractor_baton(src)
 	var/list/item_list = list(	// All 4 TC or less - some nukeops only items, but fit nicely to the theme.
-		/obj/item/storage/backpack/duffelbag/syndie/x4,
+		/obj/item/storage/backpack/duffelbag/syndie/inteq/x4,
 		/obj/item/storage/box/syndie_kit/throwing_weapons,
 		/obj/item/gun/syringe/syndicate,
 		/obj/item/pen/edagger,
@@ -508,7 +508,7 @@
 		/obj/item/reagent_containers/syringe/mulligan,
 		/obj/item/clothing/shoes/chameleon/noslip,
 		/obj/item/storage/firstaid/tactical,
-		/obj/item/storage/backpack/duffelbag/syndie/surgery,
+		/obj/item/storage/backpack/duffelbag/syndie/inteq/surgery,
 		/obj/item/encryptionkey/syndicate,
 		/obj/item/clothing/glasses/thermal/syndi,
 		/obj/item/storage/box/syndie_kit/imp_uplink,

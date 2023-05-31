@@ -101,7 +101,7 @@
 	speak_emote = list("squeaks")
 	AIStatus = AI_OFF
 	gold_core_spawnable = NO_SPAWN
-	faction = list(ROLE_SYNDICATE)
+	faction = list(ROLE_INTEQ)
 	/// Keeping track of the nuke disk for the functionality of storing it.
 	var/obj/item/disk/nuclear/disky
 	/// Location of the file storing disk overlays

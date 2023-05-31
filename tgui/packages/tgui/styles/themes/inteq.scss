@@ -1,0 +1,60 @@
+/**
+ * Copyright (c) 2020 Aleksej Komarov
+ * SPDX-License-Identifier: MIT
+ *
+ * 2023 InteQ reskin by Ouch lolololo
+ */
+
+@use 'sass:color';
+@use 'sass:meta';
+
+@use '../colors.scss' with (
+  $primary: #397439,
+  $fg-map-keys: (),
+  $bg-map-keys: (),
+);
+@use '../base.scss' with (
+  $color-bg: #553402,
+  $color-bg-grad-spread: 6%,
+);
+
+.theme-inteq {
+  // Atomic classes
+  @include meta.load-css('../atomic/color.scss');
+
+  // Components
+  @include meta.load-css('../components/Button.scss', $with: (
+    'color-default': colors.$primary,
+    'color-disabled': #363636,
+    'color-selected': #a35700,
+    'color-caution': #a35700,
+    'color-danger': #9a9d00,
+  ));
+  @include meta.load-css('../components/Input.scss', $with: (
+    'border-color': #87ce87,
+  ));
+  @include meta.load-css('../components/NoticeBox.scss', $with: (
+    'background-color': #a35700,
+  ));
+  @include meta.load-css('../components/NumberInput.scss', $with: (
+    'border-color': #87ce87,
+  ));
+  @include meta.load-css('../components/ProgressBar.scss', $with: (
+    'background-color': rgba(0, 0, 0, 0.5),
+  ));
+  @include meta.load-css('../components/Section.scss');
+  @include meta.load-css('../components/Tooltip.scss', $with: (
+    'background-color': #553402,
+  ));
+
+  // Layouts
+  @include meta.load-css('../layouts/Layout.scss');
+  @include meta.load-css('../layouts/Window.scss');
+  @include meta.load-css('../layouts/TitleBar.scss', $with: (
+    'background-color': #a35700,
+  ));
+
+  .Layout__content {
+    background-image: url('../../assets/bg-inteq.svg');
+  }
+}

@@ -75,6 +75,7 @@
 			built.setDir(missing)
 		if(4)		//4 way manifold
 			built = new /obj/machinery/atmospherics/pipe/manifold4w(loc)
+	built.addMember()
 	built.SetInitDirections()
 	built.on_construction(pipe_color, pipe_layer, level)
 	built.hide(!visible_pipes)

@@ -7,8 +7,11 @@
 		/obj/item/clothing/head/helmet/metrocop = 2,
 		/obj/item/storage/bag/security = 5,
 		/obj/item/clothing/head/helmet/blueshirt = 5,
+		/obj/item/clothing/head/helmet/hephaestus = 5,
 		/obj/item/clothing/under/rank/security/officer/blueshirt = 5,
-		/obj/item/clothing/suit/armor/vest/blueshirt = 5
+		/obj/item/clothing/suit/armor/vest/blueshirt = 5,
+		/obj/item/armorkit/security = 5,
+		/obj/item/armorkit/security/helmet = 5
 	)
 	var/list/extra_contraband = list(
 		/obj/item/storage/belt/slut = 5,
@@ -36,12 +39,19 @@
 		/obj/item/clothing/head/beret/sec/peacekeeper/cap = 5,
 		/obj/item/clothing/head/beret/sec/peacekeeper = 5,
 		/obj/item/clothing/mask/balaclava/breath = 5,
+		/obj/item/clothing/mask/gas/syndicate/ds/wide = 3,
+		/obj/item/clothing/mask/gas/syndicate/ds/mouth = 3,
+		/obj/item/clothing/mask/gas/syndicate/ds/coif = 2,
 		/obj/item/clothing/under/rank/security/officer/peacekeeper =5,
 		/obj/item/clothing/under/rank/security/officer/metrocop = 2,
 		/obj/item/clothing/under/rank/security/skirt/slut = 5,
 		/obj/item/clothing/under/rank/security/skirt/slut/pink = 5,
 		/obj/item/clothing/under/rank/security/stripper = 5,
-		/obj/item/clothing/suit/hooded/corpus/s = 5
+		/obj/item/clothing/suit/hooded/corpus/s = 5,
+		/obj/item/clothing/head/utilcover = 5,
+		/obj/item/clothing/under/utility/green = 5,
+		/obj/item/clothing/under/utility/navy = 5,
+		/obj/item/clothing/under/utility/tan = 5
 	)
 	var/list/extra_premium = list(
 		/obj/item/clothing/gloves/latexsleeves/security = 5,
@@ -83,11 +93,22 @@
 
 /obj/structure/closet/secure_closet/blueshield/PopulateContents()
 	..()
-	new /obj/item/clothing/head/helmet/sec/blueshield(src)
+	new /obj/item/clothing/head/helmet/sec(src)
 	new /obj/item/radio/headset/headset_blueshield(src)
 	new /obj/item/flashlight/seclite(src)
 	new /obj/item/clothing/mask/gas/sechailer/swat(src)
 	new /obj/item/grenade/flashbang(src)
+	new /obj/item/choice_beacon/bsbaton(src)
+	new /obj/item/armorkit/blueshield(src)
+	new /obj/item/armorkit/blueshield/helmet(src)
+	new /obj/item/clothing/head/helmet/sec(src)
+	new /obj/item/radio/headset/headset_blueshield(src)
+	new /obj/item/flashlight/seclite(src)
+	new /obj/item/clothing/mask/gas/sechailer/swat(src)
+	new /obj/item/grenade/flashbang(src)
+	new /obj/item/choice_beacon/bsbaton(src)
+	new /obj/item/armorkit/blueshield(src)
+	new /obj/item/armorkit/blueshield/helmet(src)
 
 /obj/structure/closet/secure_closet/bridgesec
 	name = "bridge officer's locker"
@@ -207,9 +228,12 @@
 	new /obj/item/storage/box/flashbangs(src)
 	new /obj/item/shield/riot/tele(src)
 	new /obj/item/storage/belt/security/full(src)
-	new /obj/item/choice_beacon/hosgun(src)
 	new /obj/item/flashlight/seclite(src)
 	new /obj/item/pinpointer/nuke(src)
+	new /obj/item/choice_beacon/hos_new_weapon(src)
 	new /obj/item/circuitboard/machine/techfab/department/security(src)
 	new /obj/item/storage/photo_album/HoS(src)
 	new /obj/item/card/id/departmental_budget/sec(src)
+	new /obj/item/mod/construction/armor/safeguard(src)
+	new /obj/item/mod/module/jetpack(src)
+	new /obj/item/mod/module/holster(src)

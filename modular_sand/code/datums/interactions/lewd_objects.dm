@@ -7,6 +7,8 @@
 	user.DelayNextAction(CLICK_CD_RANGE)
 	var/message = ""
 	var/lust_amt = 0
+	var/organ //SPLURT edit
+
 	if(ishuman(M) && (M?.client?.prefs?.toggles & VERB_CONSENT))
 		switch(user.zone_selected)
 			if(BODY_ZONE_PRECISE_GROIN)
@@ -15,16 +17,18 @@
 						if(M.has_vagina(REQUIRE_EXPOSED))
 							message = (user == M) ? pick("крепко обхватывает '\the [src]' и начинает пихать это прямо в свою киску.", "запихивает '\the [src]' в свою киску", "постанывает и садится на '\the [src]'.") : pick("трахает <b>[M]</b> прямо в киску с помощью '\the [src]'", "засовывает '\the [src]' прямо в киску <b>[M]</b>.")
 							lust_amt = NORMAL_LUST
+							organ = CUM_TARGET_VAGINA //SPLURT edit
 					if(CUM_TARGET_ANUS)
 						if(M.has_anus(REQUIRE_EXPOSED))
 							message = (user == M) ? pick("крепко обхватывает '\the [src]' и начинает пихать это прямо в свою попку.","запихивает '\the [src]' прямо в свою собственную попку.", "постанывает и садится на '\the [src]'.") : pick("трахает <b>[M]</b> прямо в попку '\the [src]'", "активно суёт '\the [src]' прямо в попку <b>[M]</b>.")
 							lust_amt = NORMAL_LUST
+							organ = CUM_TARGET_ANUS //SPLURT edit
 			if(BODY_ZONE_PRECISE_MOUTH)
 				if(M.has_mouth() && !M.is_mouth_covered())
 					message = (user == M) ? pick("крепко обхватывает '\the [src]' и начинает пихать это прямо в свой ротик.", "запихивает '\the [src]' прямо в свой собственный ротик.", "втыкает '\the [src]' прямо в свой ротик.") : pick("трахает <b>[M]</b> прямо в ротик при помощи '\the [src]'", "активно суёт '\the [src]' прямо в ротик <b>[M]</b>.")
 	if(message)
-		user.visible_message("<span class='lewd'><b>[user]</b> [message].</span>")
-		M.handle_post_sex(lust_amt, null, user)
+		user.visible_message(span_lewd("<b>[user]</b> [message]."))
+		M.handle_post_sex(lust_amt, null, user, organ) //SPLURT edit
 		playsound(loc, pick('modular_sand/sound/interactions/bang4.ogg',
 							'modular_sand/sound/interactions/bang5.ogg',
 							'modular_sand/sound/interactions/bang6.ogg'), 70, 1, -1)

@@ -4,7 +4,7 @@
 
 	min_players = 20
 	max_occurrences = 2
-	weight = 15
+	weight = 25
 
 /datum/round_event/anomaly/anomaly_pyro
 	start_when = 3
