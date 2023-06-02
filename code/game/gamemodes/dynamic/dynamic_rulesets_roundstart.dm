@@ -712,9 +712,9 @@
 	return TRUE
 
 /datum/dynamic_ruleset/roundstart/space_ninja/execute()
-	var/mob/M = pick_n_take(candidates)
-	if(M)
-		assigned += M.mind
+	var/mob/candidate = pick_n_take(candidates)
+	if(candidate)
+		assigned += candidate.mind
 
 	for(var/datum/mind/M in assigned)
 
@@ -766,9 +766,9 @@
 		return FALSE
 
 /datum/dynamic_ruleset/roundstart/xenomorph/execute()
-	var/mob/M = pick_n_take(candidates)
-	if(M)
-		assigned += M.mind
+	var/mob/candidate = pick_n_take(candidates)
+	if(candidate)
+		assigned += candidate.mind
 
 	var/obj/vent = pick_n_take(vents)
 	for(var/datum/mind/M in assigned)
