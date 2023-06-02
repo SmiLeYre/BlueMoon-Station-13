@@ -677,3 +677,137 @@
 	var/ramp_up_final = clamp(round(meteorminutes/rampupdelta), 1, 10)
 
 	spawn_meteors(ramp_up_final, wavetype)
+//BLUEMOON ADDITION AHEAD - новые раундстартовые роли из мидраунда
+//////////////////////////////////////////////
+//                                          //
+//            SPACE NINJA                   //
+//                                          //
+//////////////////////////////////////////////
+
+/datum/dynamic_ruleset/roundstart/space_ninja
+	name = "Space Ninja"
+	antag_datum = /datum/antagonist/ninja
+	antag_flag = "Space Ninja"
+	antag_flag_override = ROLE_NINJA
+	flags = LONE_RULESET
+	required_candidates = 1
+	weight = 3
+	cost = 20
+	requirements = list(101,101,101,60,40,20,20,20,10,10)
+	var/list/spawn_locs = list()
+
+/datum/dynamic_ruleset/roundstart/space_ninja/pre_execute()
+	. = ..()
+
+	for(var/obj/effect/landmark/carpspawn/carp_spawn in GLOB.landmarks_list)
+		if(!isturf(carp_spawn.loc))
+			stack_trace("Carp spawn found not on a turf: [carp_spawn.type] on [isnull(carp_spawn.loc) ? "null" : carp_spawn.loc.type]")
+			continue
+		spawn_locs += carp_spawn.loc
+	if(!spawn_locs.len)
+		log_game("No valid spawn locations for [name], found, aborting...")
+		message_admins("No valid spawn locations for [name] found, aborting...")
+		return MAP_ERROR
+
+	return TRUE
+
+/datum/dynamic_ruleset/roundstart/space_ninja/execute()
+	var/mob/M = pick_n_take(candidates)
+	if(M)
+		assigned += M.mind
+
+	for(var/datum/mind/M in assigned)
+
+		var/mob/living/carbon/human/ninja = create_space_ninja(pick(spawn_locs))
+		var/current_key = M.current.key
+		qdel(M.current)
+		ninja.key = current_key
+
+		ninja.mind.add_antag_datum(/datum/antagonist/ninja)
+		return ninja
+
+//////////////////////////////////////////////
+//                                          //
+//           XENOMORPH                      //
+//                                          //
+//////////////////////////////////////////////
+
+/datum/dynamic_ruleset/roundstart/xenomorph
+	name = "Alien Infestation"
+	antag_datum = /datum/antagonist/xeno
+	antag_flag = ROLE_ALIEN
+	required_candidates = 2
+	weight = 3
+	cost = 20
+	flags = HIGH_IMPACT_RULESET
+	requirements = list(101,101,101,60,40,20,20,20,10,10)
+	var/list/vents = list()
+	team_based_allowed = TRUE
+	antag_cap = list("denominator" = 20, "offset" = 1)
+
+/datum/dynamic_ruleset/roundstart/xenomorph/pre_execute()
+	. = ..()
+	// 50% chance of being incremented by one
+	required_candidates += prob(50)
+	for(var/obj/machinery/atmospherics/components/unary/vent_pump/temp_vent in GLOB.machines)
+		if(QDELETED(temp_vent))
+			continue
+		if(is_station_level(temp_vent.loc.z) && !temp_vent.welded)
+			var/datum/pipeline/temp_vent_parent = temp_vent.parents[1]
+			if(!temp_vent_parent)
+				continue // No parent vent
+			// Stops Aliens getting stuck in small networks.
+			// See: Security, Virology
+			if(temp_vent_parent.other_atmosmch.len > 20)
+				vents += temp_vent
+	if(!vents.len)
+		log_game("No valid spawn locations for [name], found, aborting...")
+		message_admins("No valid spawn locations for [name], found, aborting...")
+		return FALSE
+
+/datum/dynamic_ruleset/roundstart/xenomorph/execute()
+	var/mob/M = pick_n_take(candidates)
+	if(M)
+		assigned += M.mind
+
+	var/obj/vent = pick_n_take(vents)
+	for(var/datum/mind/M in assigned)
+
+		var/mob/living/carbon/alien/larva/new_xeno = new(vent.loc)
+		var/current_key = M.current.key
+		qdel(M.current)
+		new_xeno.key = current_key
+
+		return new_xeno
+/* - TODO (for someone)
+//////////////////////////////////////////////
+//                                          //
+//           ABDUCTORS                      //
+//                                          //
+//////////////////////////////////////////////
+#define ABDUCTOR_MAX_TEAMS 4
+
+/datum/dynamic_ruleset/roundstart/abductors
+	name = "Abductors"
+	antag_flag = "Abductor"
+	antag_flag_override = ROLE_ABDUCTOR
+	required_candidates = 2
+	weight = 3
+	cost = 2
+	requirements = list(0,101,101,60,40,20,20,20,10,10)
+	var/datum/team/abductor_team/new_team
+
+/datum/dynamic_ruleset/roundstart/abductors/execute(mob/new_character, index)
+	if (index == 1) // Our first guy is the scientist.  We also initialize the team here as well since this should only happen once per pair of abductors.
+		new_team = new
+		if(new_team.team_number > ABDUCTOR_MAX_TEAMS)
+			return MAP_ERROR
+		var/datum/antagonist/abductor/scientist/new_role = new
+		new_character.mind.add_antag_datum(new_role, new_team)
+	else // Our second guy is the agent, team is already created, don't need to make another one.
+		var/datum/antagonist/abductor/agent/new_role = new
+		new_character.mind.add_antag_datum(new_role, new_team)
+
+#undef ABDUCTOR_MAX_TEAMS
+*/
+//BLUEMOON ADDITION END
