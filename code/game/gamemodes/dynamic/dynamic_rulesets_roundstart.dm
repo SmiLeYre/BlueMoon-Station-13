@@ -497,19 +497,22 @@
 	antag_datum = /datum/antagonist/gang
 	antag_flag = ROLE_FAMILIES
 	restricted_roles = list("AI", "Cyborg", "Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Chaplain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
-	required_candidates = 9
+	required_candidates = 3 //BLUEMOON CHANGES
 	weight = 3
 	cost = 15
-	requirements = list(101,101,101,101,40,20,20,10,10,10) //BLUEMOON CHANGES
+	requirements = list(0,101,101,101,40,20,20,10,10,10) //BLUEMOON CHANGES
 	flags = HIGH_IMPACT_RULESET
+	antag_cap = list("denominator" = 5, "offset" = 1) //BLUEMOON ADDITION
 	/// A reference to the handler that is used to run pre_execute(), execute(), etc..
 	var/datum/gang_handler/handler
 
 /datum/dynamic_ruleset/roundstart/families/pre_execute()
 	..()
 	handler = new /datum/gang_handler(candidates,restricted_roles)
+/*BLUEMOON REMOVAL START
 	handler.gangs_to_generate = (antag_cap[indice_pop] / 2)
 	handler.gang_balance_cap = clamp((indice_pop - 3), 2, 5) // gang_balance_cap by indice_pop: (2,2,2,2,2,3,4,5,5,5)
+BLUEMOON REMOVAL END*/
 	return handler.pre_setup_analogue()
 
 /datum/dynamic_ruleset/roundstart/families/execute()
@@ -687,7 +690,7 @@
 /datum/dynamic_ruleset/roundstart/space_ninja
 	name = "Space Ninja"
 	antag_datum = /datum/antagonist/ninja
-	antag_flag = "Space Ninja"
+	antag_flag = "shiftstart space ninja"
 	antag_flag_override = ROLE_NINJA
 	flags = LONE_RULESET
 	required_candidates = 1
@@ -735,7 +738,8 @@
 /datum/dynamic_ruleset/roundstart/xenomorph
 	name = "Alien Infestation"
 	antag_datum = /datum/antagonist/xeno
-	antag_flag = ROLE_ALIEN
+	antag_flag = "shiftstart xenomorph"
+	antag_flag_override = ROLE_ALIEN
 	required_candidates = 2
 	weight = 3
 	cost = 20
