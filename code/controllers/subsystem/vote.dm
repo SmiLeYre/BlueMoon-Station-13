@@ -419,7 +419,7 @@ SUBSYSTEM_DEF(vote)
 							GLOB.dynamic_type_threat_max = 40
 							GLOB.dynamic_extended = TRUE
 
-				SSpersistence.RecordDynamicType(.)
+					SSpersistence.RecordDynamicType(.)
 //BLUEMOON CHANGES END
 				message_admins("The gamemode has been voted for, and has been changed to: [GLOB.master_mode]")
 				log_admin("Gamemode has been voted for and switched to: [GLOB.master_mode].")
