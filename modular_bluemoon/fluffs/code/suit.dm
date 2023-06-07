@@ -6,7 +6,7 @@
 	name = "lightning holo-cloak"
 	desc = "When equipped, a strange hologram is activated, and the fabric of the cloak itself disappears, and lightning starts projecting all over the body."
 	icon_state = "lightning_holo"
-	item_state = "lightning_holo_blue"
+	item_state = "welding-g"
 	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
 	unique_reskin = list(
 		"Blue" = list(
@@ -32,10 +32,18 @@
 	)
 
 /obj/item/clothing/suit/donator/bm/cerberus_suit
-	name = "cerberus coat"
+	name = "Cerberus Coat"
 	desc = "Бронированое пальто болотного цвета с кучей пуговиц. Ходят слухи, что новых уже давно не делают, а те что имеются - снимают с трупов для дальнейшего ношения. От него пованивает тухлым мясом."
+	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
 	icon_state = "cerberussuit_mob"
-	item_state = "cerberussuit_mob"
+	item_state = "greatcoat"
+
+/obj/item/clothing/suit/donator/bm/bishop_mantle
+	name = "Bishop Mantle"
+	desc = "Несмотря на бирку с ценником в девяноста девять, выглядит достаточно убедительно, чтобы считать носителя проповедником."
+	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
+	icon_state = "bishop_mantle"
+	item_state = "greatcoat"
 
 /obj/item/Dina_Kit
 	name = "Kikimora Suit Kit"

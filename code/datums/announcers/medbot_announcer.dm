@@ -20,3 +20,4 @@
 		ANNOUNCER_SHUTTLEDOCK = 'sound/announcer/medibot/shuttledocked.ogg',
 		ANNOUNCER_SHUTTLERECALLED = 'sound/announcer/medibot/shuttlerecalled.ogg',
 		ANNOUNCER_SPANOMALIES = 'sound/announcer/medibot/spanomalies.ogg')
+

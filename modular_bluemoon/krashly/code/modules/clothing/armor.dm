@@ -14,7 +14,7 @@
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
 	icon_state = "butler"
-	item_state = "butler"
+	item_state = "greatcoat"
 
 /obj/item/clothing/head/donator/bm/cerberus_helmet/armored
 	armor = list(MELEE = 45, BULLET = 30, LASER = 30,ENERGY = 10, BOMB = 25, BIO = 0, RAD = 0, FIRE = 70, ACID = 90, WOUND = 10)
@@ -40,7 +40,7 @@
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
 	icon_state = "censor"
-	item_state = "censor"
+	item_state = "greatcoat"
 
 /obj/item/clothing/suit/donator/bm/cerberus_suit/armored/baron
 	name = "gorgeous red outfit"
@@ -49,7 +49,7 @@
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
 	icon_state = "baron"
-	item_state = "baron"
+	item_state = "greatcoat"
 
 //InteQ//
 
