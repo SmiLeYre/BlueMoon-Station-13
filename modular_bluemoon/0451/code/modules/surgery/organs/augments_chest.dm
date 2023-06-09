@@ -76,7 +76,7 @@
 	owner.adjustToxLoss(-0.4, FALSE) //Provides slow heal for toxin and oxy damage
 	owner.adjustOxyLoss(-0.4, FALSE)
 
-/obj/item/organ/cyberimp/chest/healer/emp_act(severity)
+/obj/item/organ/cyberimp/chest/healertoxoxy/emp_act(severity)
 	. = ..()
 	if(!owner || . & EMP_PROTECT_SELF)
 		return
@@ -98,7 +98,7 @@
 	owner.adjustBruteLoss(-0.2, FALSE)
 	owner.adjustFireLoss(-0.2, FALSE)
 
-/obj/item/organ/cyberimp/chest/healer/emp_act(severity)
+/obj/item/organ/cyberimp/chest/revitilzer/emp_act(severity)
 	. = ..()
 	if(!owner || . & EMP_PROTECT_SELF)
 		return
