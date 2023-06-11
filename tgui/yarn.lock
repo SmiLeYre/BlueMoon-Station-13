@@ -2150,6 +2150,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/marked@npm:^4.0.8":
+  version: 4.3.1
+  resolution: "@types/marked@npm:4.3.1"
+  checksum: eb6891b925d53ea53057f088b28f9232016499e62639cbb4a67f7d34f288ec6a8e40aae4836dbd06bd0fc3c541fca1175cd50d9e8d405547b6be7b7781e6a2a5
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:*":
   version: 14.17.9
   resolution: "@types/node@npm:14.17.9"
@@ -4958,6 +4965,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"highlight.js@npm:^11.5.1":
+  version: 11.8.0
+  resolution: "highlight.js@npm:11.8.0"
+  checksum: d2578a57aee7315946ff19379053fd0a28b127baabf7617ab1d28d62cdc4eaf3d75053569cb8479a5afdc7a68f1ba9a6c1d612d8ae399b4b9aa43093b4fb6831
+  languageName: node
+  linkType: hard
+
 "html-encoding-sniffer@npm:^3.0.0":
   version: 3.0.0
   resolution: "html-encoding-sniffer@npm:3.0.0"
@@ -6430,12 +6444,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"marked@npm:^4.0.10":
-  version: 4.0.12
-  resolution: "marked@npm:4.0.12"
+"marked@npm:^4.2.12":
+  version: 4.3.0
+  resolution: "marked@npm:4.3.0"
   bin:
     marked: bin/marked.js
-  checksum: 7575117f85a8986652f3ac8b8a7b95056c4c5fce01a1fc76dc4c7960412cb4c9bd9da8133487159b6b3ff84f52b543dfe9a36f826a5f358892b5ec4b6824f192
+  checksum: 0db6817893952c3ec710eb9ceafb8468bf5ae38cb0f92b7b083baa13d70b19774674be04db5b817681fa7c5c6a088f61300815e4dd75a59696f4716ad69f6260
   languageName: node
   linkType: hard
 
@@ -8618,14 +8632,15 @@ resolve@^2.0.0-next.3:
   resolution: "tgui@workspace:packages/tgui"
   dependencies:
     "@popperjs/core": ^2.9.3
+    "@types/marked": ^4.0.8
     common: "workspace:*"
     dateformat: ^4.5.1
     dompurify: ^2.3.1
+    highlight.js: ^11.5.1
     inferno: ^7.4.8
     inferno-vnode-flags: ^7.4.8
     js-yaml: ^4.1.0
-    katex: ^0.15.1
-    marked: ^4.0.10
+    marked: ^4.2.12
     tgui-dev-server: "workspace:*"
     tgui-polyfill: "workspace:*"
   languageName: unknown

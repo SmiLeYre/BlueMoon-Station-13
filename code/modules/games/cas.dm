@@ -144,7 +144,7 @@
 
 /obj/item/toy/cards/singlecard/cas/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/pen))
-		if(!user.is_literate())
+		if(!user.can_write(I))
 			to_chat(user, "<span class='notice'>You scribble illegibly on [src]!</span>")
 			return
 		if(!blank)

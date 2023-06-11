@@ -307,7 +307,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 			var/obj/item/paper/paper = new /obj/item/paper(src)
 			if(note_name)
 				paper.name = note_name
-			paper.info = "[note_info]"
+			paper.default_raw_text = "[note_info]"
 			found_airlock.note = paper
 			paper.forceMove(found_airlock)
 			found_airlock.update_appearance()

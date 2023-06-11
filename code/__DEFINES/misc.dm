@@ -131,6 +131,7 @@ Will print: "/mob/living/carbon/human/death" (you can optionally embed it in a s
 #define PRINTER_FONT "Times New Roman"
 #define SIGNFONT "Times New Roman"
 #define CHARCOAL_FONT "Candara"
+#define SIGNATURE_FONT "Segoe Script"
 
 #define RESIZE_DEFAULT_SIZE 1
 

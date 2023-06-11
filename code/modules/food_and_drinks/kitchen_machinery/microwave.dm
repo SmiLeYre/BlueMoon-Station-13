@@ -12,7 +12,7 @@
 #define REALLY_BROKEN 2
 
 /// The max amount of dirtiness a microwave can be
-#define MAX_MICROWAVE_DIRTINESS 500
+#define MAX_MICROWAVE_DIRTINESS 1500
 
 /obj/machinery/microwave//SKYRAT EDIT - ICON OVERRIDEN BY AESTHETICS - SEE MODULE
 	name = "microwave oven"

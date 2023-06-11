@@ -686,7 +686,7 @@
 	icon_state = "deck_low"
 	w_class = WEIGHT_CLASS_TINY
 
-	info = "<span class='notice'>*---------* \n\
+	default_raw_text = "<span class='notice'>*---------* \n\
 	      <span class='boldnotice'>Welcome to the Exciting world of Tactical Card Game!</span> <span clas='smallnotice'>Sponsored by Nanotrasen Edu-tainment Devision.</span> \n \
 		  <span class='boldnotice'>Core Rules:</span> \n \
 		  <br> \n \

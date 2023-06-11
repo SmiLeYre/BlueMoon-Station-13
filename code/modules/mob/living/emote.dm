@@ -11,8 +11,8 @@
 /datum/emote/living/bow
 	key = "bow"
 	key_third_person = "bows"
-	message = "поднимает руку."
-	message_param = "поднимает руку при виде %t."
+	message = "кланяется."
+	message_param = "кланяется при виде %t."
 	restraint_check = TRUE
 
 /datum/emote/living/choke

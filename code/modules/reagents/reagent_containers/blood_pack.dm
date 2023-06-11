@@ -86,7 +86,7 @@
 
 /obj/item/reagent_containers/blood/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/pen) || istype(I, /obj/item/toy/crayon))
-		if(!user.is_literate())
+		if(!user.can_write(I))
 			to_chat(user, "<span class='notice'>You scribble illegibly on the label of [src]!</span>")
 			return
 		var/t = stripped_input(user, "What would you like to label the blood pack?", name, null, 53)

@@ -179,9 +179,9 @@
 			else if(new_volume == "min")
 				volume = 0
 			else if(new_volume == "max")
-				volume = ((obj_flags & EMAGGED) ? 500 : 100)
+				volume = ((obj_flags & EMAGGED) ? 1000 : 100)
 			else if(text2num(new_volume) != null)
-				volume = clamp(0, text2num(new_volume), ((obj_flags & EMAGGED) ? 500 : 100))
+				volume = clamp(0, text2num(new_volume), ((obj_flags & EMAGGED) ? 1000 : 100))
 			var/wherejuke = SSjukeboxes.findjukeboxindex(src)
 			if(wherejuke)
 				SSjukeboxes.updatejukebox(wherejuke, jukefalloff = volume/35)
@@ -508,11 +508,10 @@
 				update_icon()
 				playing = null
 				stop = 0
-		else if(volume > 250) // BOOM BOOM BOOM BOOM
+		else if(volume > 750) // BOOM BOOM BOOM BOOM
 			for(var/mob/living/carbon/C in hearers(round(volume/35), src)) // I WANT YOU IN MY ROOM
 				if(istype(C)) // LETS SPEND THE NIGHT TOGETHER
-					C.adjustEarDamage(max((((volume/35) - sqrt(get_dist(C, src) * 4)) - C.get_ear_protection())*0.1, 0)) // FROM NOW UNTIL FOREVER
-
+					C.adjustEarDamage(max((((volume/100) - sqrt(get_dist(C, src) * 2)) - C.get_ear_protection())*0.1, 0)) // FROM NOW UNTIL FOREVER
 
 /obj/machinery/jukebox/disco/process()
 	. = ..()

@@ -198,7 +198,7 @@
 			to_chat(user, "<span class='notice'>[src] already has a bomb in it!</span>")
 	else if(istype(I, /obj/item/pen))
 		if(!open)
-			if(!user.is_literate())
+			if(!user.can_write(I))
 				to_chat(user, "<span class='notice'>You scribble illegibly on [src]!</span>")
 				return
 			var/obj/item/pizzabox/box = boxes.len ? boxes[boxes.len] : src

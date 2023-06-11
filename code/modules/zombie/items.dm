@@ -83,7 +83,7 @@
 		user.adjust_nutrition(hp_gained, NUTRITION_LEVEL_FULL)
 
 /obj/item/paper/guides/antag/romerol_instructions
-	info = "How to do necromancy with chemicals:<br>\
+	default_raw_text = "How to do necromancy with chemicals:<br>\
 	<ul>\
 	<li>Use a dropper or syringe (provided) to inject the Romerol (provided) into a target (not provided)</li>\
 	<li>Wait for said target to die, or speed the process up by doing it yourself</li>\

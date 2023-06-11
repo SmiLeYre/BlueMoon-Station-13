@@ -2501,7 +2501,7 @@
 	desc = "A console meant to allow modifications to IDs. There's a chameleon ID stuck inside and no one has been able to pull it out..."
 	},
 /obj/item/paper{
-	info = "<h1>Корпоративный отчет DS2</h1><p>Передовая оперативная база 'Благословлённый' под кодовым названием Deep Space 2 успешно разместилась вблизи активных объектов NanoTrasen. Идет перезагрузка двигателей шаттла...</p><p>Синдикат приветствует вас на борту, Корпоративный Связной. Вам предлагается помочь нашему экипажу, информируя их о цели их корпоративных инвесторов и помогая поддерживать сплоченность. Не болейте и оставайтесь в выигрыше.</p>";
+	default_raw_text = "<h1>Корпоративный отчет DS2</h1><p>Передовая оперативная база 'Благословлённый' под кодовым названием Deep Space 2 успешно разместилась вблизи активных объектов NanoTrasen. Идет перезагрузка двигателей шаттла...</p><p>Синдикат приветствует вас на борту, Корпоративный Связной. Вам предлагается помочь нашему экипажу, информируя их о цели их корпоративных инвесторов и помогая поддерживать сплоченность. Не болейте и оставайтесь в выигрыше.</p>";
 	name = "paper- 'Корпоративный отчет DS2'"
 	},
 /turf/open/floor/wood/wood_large,
@@ -3690,7 +3690,7 @@
 	dir = 8
 	},
 /obj/item/paper{
-	info = "<h1>Отчёт о Пополнении Состава DS2</h1><p>Передовая оперативная база 'Благословлённый' под кодовым названием Deep Space 2 успешно переместилась вблизи активных объектов NanoTrasen. Идет перезагрузка двигателей шаттла...</p><p>Активные оперативники Синдиката были переведены на DS2 для слежки за Кордоном и не должны взаимодействовать с Космической Станцией Тринадцатого Сектора, если только командование Синдиката это не разрешит или не появится особо серьёзная для этого причина. Разрешение на наблюдение за их деятельностью получено и настоятельно рекомендуется.</p><p>Не болейте и оставайтесь в выигрыше.</p>";
+	default_raw_text = "<h1>Отчёт о Пополнении Состава DS2</h1><p>Передовая оперативная база 'Благословлённый' под кодовым названием Deep Space 2 успешно переместилась вблизи активных объектов NanoTrasen. Идет перезагрузка двигателей шаттла...</p><p>Активные оперативники Синдиката были переведены на DS2 для слежки за Кордоном и не должны взаимодействовать с Космической Станцией Тринадцатого Сектора, если только командование Синдиката это не разрешит или не появится особо серьёзная для этого причина. Разрешение на наблюдение за их деятельностью получено и настоятельно рекомендуется.</p><p>Не болейте и оставайтесь в выигрыше.</p>";
 	name = "paper- 'Отчёт о Пополнении Состава DS2'"
 	},
 /obj/machinery/computer/communications/syndicate,
@@ -4921,7 +4921,7 @@
 	dir = 1
 	},
 /obj/item/paper{
-	info = "<h1>Gorlex Engineering</h1><p>New to setting up a turbine, operative? This neat little guide and set-up should teach you how, step by step.</p><p>The first step is setting up the burn chamber. The Air alarm is unlocked for syndicate access, and a single scrubber in the area is inactive. That is our burn chamber's scrubber. Set it to scoop up any gas you don't want in it - anything but plasma and oxygen - and set it on expanded reach.</p><p>Next is setting up the Plasma Mixer. A good ratio is somewhere between 30-70 and 40-60 Plasma and Oxygen, respectively. Don't forget to max out the mixer's pressure, else it'll only dribble in the gas!</p><p>Once that is done, make sure to activate the two digital valves on the floor. One will allow O2 to be brought to the mixer, and the other one will lead the gas mix directly into the chamber.</p><p>With the burn being ready, two last things are needed. First, you'll need to set up the ship's scrubbers system to actively pump into space the excess gasses (Water vapour, Co2) the burn will produce. If you want, you can select a gas to filter out, but that isn't necessary. Once everything is set up, flick the igniter switch on, turn on the turbine at the terminal, and watch that fire shine bright!</p>";
+	default_raw_text = "<h1>Gorlex Engineering</h1><p>New to setting up a turbine, operative? This neat little guide and set-up should teach you how, step by step.</p><p>The first step is setting up the burn chamber. The Air alarm is unlocked for syndicate access, and a single scrubber in the area is inactive. That is our burn chamber's scrubber. Set it to scoop up any gas you don't want in it - anything but plasma and oxygen - and set it on expanded reach.</p><p>Next is setting up the Plasma Mixer. A good ratio is somewhere between 30-70 and 40-60 Plasma and Oxygen, respectively. Don't forget to max out the mixer's pressure, else it'll only dribble in the gas!</p><p>Once that is done, make sure to activate the two digital valves on the floor. One will allow O2 to be brought to the mixer, and the other one will lead the gas mix directly into the chamber.</p><p>With the burn being ready, two last things are needed. First, you'll need to set up the ship's scrubbers system to actively pump into space the excess gasses (Water vapour, Co2) the burn will produce. If you want, you can select a gas to filter out, but that isn't necessary. Once everything is set up, flick the igniter switch on, turn on the turbine at the terminal, and watch that fire shine bright!</p>";
 	name = "paper- 'Gorlex Engineering Division - Turbine Easy-Set Guide'"
 	},
 /turf/open/floor/plating,
@@ -5463,7 +5463,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
 /obj/item/paper{
-	info = "<h1>Отчет для Тюремного Отдела DS2</h1><p>Передовая оперативная база 'Благословлённый' под кодовым названием Deep Space 2 успешно разместилась вблизи активных объектов NanoTrasen. Идет перезагрузка двигателей шаттла...</p><p>Синдикат смог похитить несколько ключевых работников NanoTrasen различных уровней иерархии из иных Пластов Вселенной. Ваша задача - допросить, расспросить и сломить их волю, чтобы получить больше информации о нашем враге.</p><p>Оставайтесь победителями.";
+	default_raw_text = "<h1>Отчет для Тюремного Отдела DS2</h1><p>Передовая оперативная база 'Благословлённый' под кодовым названием Deep Space 2 успешно разместилась вблизи активных объектов NanoTrasen. Идет перезагрузка двигателей шаттла...</p><p>Синдикат смог похитить несколько ключевых работников NanoTrasen различных уровней иерархии из иных Пластов Вселенной. Ваша задача - допросить, расспросить и сломить их волю, чтобы получить больше информации о нашем враге.</p><p>Оставайтесь победителями.";
 	name = "paper- 'Отчет для Тюремного Отдела DS2'"
 	},
 /obj/machinery/airalarm/syndicate{
@@ -7911,7 +7911,7 @@
 	pixel_y = 6
 	},
 /obj/item/paper{
-	info = "<h1>Командный Отчёт DS2</h1><p>Передовая оперативная база 'Благословлённый' под кодовым названием Deep Space 2 успешно разместилась вблизи активных объектов NanoTrasen. Идет перезагрузка двигателей шаттла...</p><p>Синдикат рад видеть вас на поле боя, адмирал. Nanotrasen находится в опасном секторе и, как таковой, является прямой целью оперативников из других Пластов Вселенной. Управляйте своим экипажем хорошо и с уважением, а весь свой гнев оставьте для достойной битвы с Аномалиями. Помните о том, что DS1 находятся под вашей ответственностью и их проблемы - ваши проблемы. Не советуем вашему экипажу выставлять напоказ свою групповую принадлежность, если только вы не являетесь представителем Кайберсанов или Горлексов.</p><p>Не болейте и оставайтесь в выигрыше.</p>";
+	default_raw_text = "<h1>Командный Отчёт DS2</h1><p>Передовая оперативная база 'Благословлённый' под кодовым названием Deep Space 2 успешно разместилась вблизи активных объектов NanoTrasen. Идет перезагрузка двигателей шаттла...</p><p>Синдикат рад видеть вас на поле боя, адмирал. Nanotrasen находится в опасном секторе и, как таковой, является прямой целью оперативников из других Пластов Вселенной. Управляйте своим экипажем хорошо и с уважением, а весь свой гнев оставьте для достойной битвы с Аномалиями. Помните о том, что DS1 находятся под вашей ответственностью и их проблемы - ваши проблемы. Не советуем вашему экипажу выставлять напоказ свою групповую принадлежность, если только вы не являетесь представителем Кайберсанов или Горлексов.</p><p>Не болейте и оставайтесь в выигрыше.</p>";
 	name = "paper- 'Командный Отчёт DS2'"
 	},
 /turf/open/floor/wood/wood_large,
