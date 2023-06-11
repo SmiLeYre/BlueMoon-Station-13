@@ -4775,7 +4775,6 @@
 #include "modular_splurt\code\modules\antagonists\wendigo\mob\wendigo_defense.dm"
 #include "modular_splurt\code\modules\arousal\arousal.dm"
 #include "modular_splurt\code\modules\arousal\genitals.dm"
-#include "modular_splurt\code\modules\arousal\genitals_sprite_accessories.dm"
 #include "modular_splurt\code\modules\arousal\organs\anus.dm"
 #include "modular_splurt\code\modules\arousal\organs\belly.dm"
 #include "modular_splurt\code\modules\arousal\organs\breasts.dm"

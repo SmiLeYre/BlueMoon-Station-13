@@ -32,6 +32,14 @@
 	embedding = list()
 	sharpness = SHARP_POINTY
 
+/obj/item/pen/get_writing_implement_details()
+	return list(
+		interaction_mode = MODE_WRITING,
+		font = font,
+		color = colour,
+		use_bold = FALSE,
+	)
+
 /obj/item/pen/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] is scribbling numbers all over себя with [src]! It looks like [user.ru_who()] trying to commit sudoku...</span>")
 	return(BRUTELOSS)
@@ -130,14 +138,6 @@
 		degrees = deg
 		to_chat(user, "<span class='notice'>You rotate the top of the pen to [degrees] degrees.</span>")
 		SEND_SIGNAL(src, COMSIG_PEN_ROTATED, deg, user)
-
-/obj/item/pen/get_writing_implement_details()
-	return list(
-		interaction_mode = MODE_WRITING,
-		font = font,
-		color = colour,
-		use_bold = FALSE,
-	)
 
 /obj/item/pen/attack(mob/living/M, mob/user,stealth)
 	if(!istype(M))

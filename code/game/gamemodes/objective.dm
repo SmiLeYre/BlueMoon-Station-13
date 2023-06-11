@@ -563,7 +563,7 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 	explanation_text = "Защити Космическую Станцию и Ядерный Диск любой ценой!!"
 	martyr_compatible = 1
 
-/datum/objective/nuclear/check_completion()
+/datum/objective/nuclear/revert/check_completion()
 	if(SSticker && SSticker.mode && SSticker.mode.station_was_nuked)
 		return FALSE
 	return TRUE

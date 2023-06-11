@@ -8572,7 +8572,7 @@
 /obj/machinery/shower{
 	dir = 4
 	},
-/obj/item/soap,
+/obj/item/soap/syndie,
 /turf/open/floor/iron/showroomfloor,
 /area/syndicate_mothership)
 "ti" = (
@@ -10404,8 +10404,6 @@
 /area/syndicate_mothership)
 "wX" = (
 /obj/structure/table/wood,
-/obj/item/ammo_box/magazine/ak12,
-/obj/item/ammo_box/magazine/ak12,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
@@ -10689,7 +10687,6 @@
 	pixel_y = 33;
 	pixel_x = -33
 	},
-/obj/item/storage/box/inteq_box/inteq_clothes,
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /obj/structure/closet/syndicate/inteq/personal,
 /turf/open/floor/iron/dark,
@@ -11526,7 +11523,6 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
 	},
-/obj/item/storage/box/inteq_box/inteq_clothes,
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /obj/structure/closet/syndicate/inteq/personal,
 /turf/open/floor/iron/dark,
@@ -12673,10 +12669,6 @@
 /obj/machinery/vending/cigarette/syndicate,
 /turf/open/floor/plasteel/dark,
 /area/slavers)
-"BY" = (
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/turf/open/floor/plating/asteroid/snow/airless,
-/area/syndicate_mothership)
 "BZ" = (
 /obj/structure/table/wood,
 /obj/item/clipboard,
@@ -13416,7 +13408,6 @@
 /area/ai_multicam_room)
 "Dk" = (
 /obj/structure/table,
-/obj/item/ammo_box/magazine/ak12,
 /turf/open/floor/iron/kitchen{
 	dir = 4
 	},
@@ -17320,7 +17311,7 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/centcom/evac)
 "Lu" = (
-/obj/item/inteq/uplink/radio,
+/obj/item/poster/random_inteq,
 /turf/open/floor/plating/asteroid/snow/airless,
 /area/syndicate_mothership)
 "Lv" = (
@@ -19380,7 +19371,6 @@
 	},
 /obj/structure/table,
 /obj/item/reagent_containers/rag/towel/syndicate,
-/obj/item/ammo_box/magazine/ak12,
 /turf/open/floor/iron/showroomfloor,
 /area/syndicate_mothership)
 "Rm" = (
@@ -21295,7 +21285,6 @@
 /obj/item/clothing/head/HoS/inteq_vanguard,
 /obj/item/clothing/under/inteq_maid,
 /obj/item/clothing/under/inteq_skirt,
-/obj/item/ammo_box/magazine/ak12,
 /obj/structure/closet/syndicate/inteq/personal,
 /turf/open/floor/wood/wood_parquet,
 /area/syndicate_mothership)
@@ -21418,7 +21407,6 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/obj/item/storage/box/inteq_box/inteq_clothes,
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /obj/structure/closet/syndicate/inteq/personal,
 /turf/open/floor/iron/dark,
@@ -41244,9 +41232,9 @@ wp
 wp
 QV
 Uy
-hl
+Lu
 Cp
-hl
+Lu
 hl
 Uy
 QV
@@ -41502,7 +41490,7 @@ wp
 QV
 Tz
 mz
-BY
+Lu
 nx
 mA
 Tz

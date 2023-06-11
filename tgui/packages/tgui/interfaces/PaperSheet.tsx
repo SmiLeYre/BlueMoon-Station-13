@@ -1025,8 +1025,8 @@ export const PaperSheet = (props, context) => {
     <Window
       title={paper_name}
       theme="paper"
-      width={420}
-      height={500 + (writeMode ? TEXTAREA_INPUT_HEIGHT : 0)}>
+      width={500}
+      height={600 + (writeMode ? TEXTAREA_INPUT_HEIGHT : 0)}>
       <Window.Content backgroundColor={paper_color}>
         <PrimaryView />
       </Window.Content>

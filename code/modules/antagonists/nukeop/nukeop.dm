@@ -230,7 +230,7 @@
 	var/mob/living/carbon/human/H = owner.current
 	if(!istype(H))
 		return
-	if(nuke_team && SSticker.mode.name == "Extended")
+	if(SSticker.mode.name == "Extended")
 		H.equipOutfit(/datum/outfit/syndicate/lone)
 		create_objectives()
 	else
