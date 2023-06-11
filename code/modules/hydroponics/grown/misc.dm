@@ -536,6 +536,7 @@
 	juice_results = list(/datum/reagent/consumable/aloejuice = 0)
 	distill_reagent = /datum/reagent/consumable/ethanol/tequila
 
-/obj/item/reagent_containers/food/snacks/grown/aloe/microwave_act(obj/machinery/microwave/M)
+/obj/item/reagent_containers/food/snacks/grown/aloe/microwave_act(obj/machinery/microwave/microwave_source, mob/microwaver, randomize_pixel_offset)
 	new /obj/item/stack/medical/aloe(drop_location(), 2)
 	qdel(src)
+	return ..() | COMPONENT_MICROWAVE_SUCCESS

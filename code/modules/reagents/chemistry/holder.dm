@@ -175,6 +175,21 @@
 		handle_reactions()
 		return amount
 
+///Multiplies the reagents inside this holder by a specific amount
+/datum/reagents/proc/multiply_reagents(multiplier=1)
+	var/list/cached_reagents = reagent_list
+	if(!total_volume)
+		return
+	var/change = (multiplier - 1) //Get the % change
+	for(var/datum/reagent/reagent as anything in cached_reagents)
+		if(change > 0)
+			add_reagent(reagent.type, reagent.volume * change, other_purity = reagent.purity)
+		else
+			remove_reagent(reagent.type, abs(reagent.volume * change)) //absolute value to prevent a double negative situation (removing -50% would be adding 50%)
+
+	update_total()
+	handle_reactions()
+
 /datum/reagents/proc/get_master_reagent_name()
 	var/list/cached_reagents = reagent_list
 	var/name

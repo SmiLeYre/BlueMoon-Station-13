@@ -418,7 +418,7 @@
 	weight = 3
 	cost = 30 //BLUEMOON CHANGES
 	requirements = list(101,101,101,101,101,101,60,40,30,10) //BLUEMOON CHANGES
-	var/list/operative_cap = list(2,2,3,3,3,4,5,5,5,5)
+	var/list/operative_cap = list(2,2,3,3,4,5,5,5,5,5)
 	var/datum/team/nuclear/nuke_team
 	flags = HIGH_IMPACT_RULESET
 

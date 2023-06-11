@@ -23,3 +23,4 @@
 	suffix = "spacehotelsplurt.dmm"
 	name = "Twin Spires Hotel and Club"
 	description = "A Nanotrasen-partnered interstellar hotel and stripclub"
+	always_place = TRUE

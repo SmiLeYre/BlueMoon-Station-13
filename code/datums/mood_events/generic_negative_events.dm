@@ -185,12 +185,12 @@
 //End unused
 
 /datum/mood_event/sad_empath
-	description = "<span class='warning'>Someone seems upset...</span>\n"
+	description = "<span class='warning'>Кто-то кажется расстроенным... это удручает...</span>\n"
 	mood_change = -2
 	timeout = 600
 
 /datum/mood_event/sad_empath/add_effects(mob/sadtarget)
-	description = "<span class='warning'>[sadtarget.name] seems upset...</span>\n"
+	description = "<span class='warning'>[sadtarget.name] кажется расстроенным... это удручает...</span>\n"
 
 /datum/mood_event/revenant_blight
 	description = "<span class='umbra'>Just give up, honk...</span>\n"

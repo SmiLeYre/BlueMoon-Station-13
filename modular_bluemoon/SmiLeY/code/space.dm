@@ -3,7 +3,6 @@
 	name = "Port Tarkov"
 	prefix = "_maps/RandomRuins/SpaceRuins/BlueMoon/"
 	allow_duplicates = FALSE
-	always_place = TRUE
 	id = "tarkoff-base"
 /datum/map_template/ruin/space/tarkoff/New()
 	if(prob(20))

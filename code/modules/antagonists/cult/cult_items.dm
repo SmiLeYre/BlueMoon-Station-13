@@ -370,7 +370,7 @@
 	desc = "A heavily-armored helmet worn by warriors of the Nar'Sien cult. It can withstand hard vacuum."
 	icon_state = "cult_helmet"
 	item_state = "cult_helmet"
-	armor = list(MELEE = 60, BULLET = 50, LASER = 30,ENERGY = 15, BOMB = 30, BIO = 30, RAD = 30, FIRE = 40, ACID = 75)
+	armor = list(MELEE = 60, BULLET = 50, LASER = 30,ENERGY = 15, BOMB = 30, BIO = 30, RAD = 30, FIRE = 100, ACID = 75)
 	brightness_on = 0
 	actions_types = list()
 
@@ -380,13 +380,13 @@
 	AddElement(/datum/element/spellcasting, SPELL_CULT_HELMET, ITEM_SLOT_HEAD)
 
 /obj/item/clothing/suit/space/hardsuit/cult
-	name = "\improper Nar'Sien hardened armor"
+	name = "\improper Nar'Sien Hardened Armor"
 	icon_state = "cult_armor"
 	item_state = "cult_armor"
 	desc = "A heavily-armored exosuit worn by warriors of the Nar'Sien cult. It can withstand hard vacuum."
 	w_class = WEIGHT_CLASS_BULKY
 	allowed = list(/obj/item/tome, /obj/item/melee/cultblade, /obj/item/tank/internals/)
-	armor = list(MELEE = 70, BULLET = 50, LASER = 30,ENERGY = 15, BOMB = 30, BIO = 30, RAD = 30, FIRE = 40, ACID = 75)
+	armor = list(MELEE = 70, BULLET = 50, LASER = 30,ENERGY = 15, BOMB = 30, BIO = 30, RAD = 30, FIRE = 100, ACID = 75)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/cult
 
 /obj/item/clothing/suit/space/hardsuit/cult/ComponentInitialize()
@@ -409,24 +409,27 @@
 		playsound(get_turf(src), 'sound/items/unsheath.ogg', 25, 1)
 
 /obj/item/clothing/suit/hooded/cultrobes/cult_shield
-	name = "empowered cultist armor"
-	desc = "Empowered garb which creates a powerful shield around the user."
+	name = "\improper Nar'Sien Empowered Armor"
+	desc = "A heavily-armored Empowered Exosuit worn by warriors of the Nar'Sien cult. It can withstand hard vacuum and creates a powerful shield around the user."
 	icon_state = "cult_armor"
 	item_state = "cult_armor"
 	w_class = WEIGHT_CLASS_BULKY
-	armor = list(MELEE = 50, BULLET = 40, LASER = 50,ENERGY = 30, BOMB = 50, BIO = 30, RAD = 30, FIRE = 50, ACID = 60)
+	armor = list(MELEE = 50, BULLET = 40, LASER = 50, ENERGY = 60, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, MAGIC = 75)
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	allowed = list(/obj/item/tome, /obj/item/melee/cultblade)
 	var/current_charges = 3
 	hoodtype = /obj/item/clothing/head/hooded/cult_hoodie
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | ALLOWINTERNALS
 
 /obj/item/clothing/head/hooded/cult_hoodie
-	name = "empowered cultist armor"
-	desc = "Empowered garb which creates a powerful shield around the user."
+	name = "\improper Nar'Sien Empowered Helmet"
+	desc = "A heavily-armored Empowered Helmet worn by warriors of the Nar'Sien cult. It can withstand hard vacuum."
 	icon_state = "cult_hoodalt"
-	armor = list(MELEE = 50, BULLET = 40, LASER = 50,ENERGY = 30, BOMB = 50, BIO = 30, RAD = 30, FIRE = 50, ACID = 50)
+	armor = list(MELEE = 50, BULLET = 40, LASER = 50, ENERGY = 60, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, MAGIC = 75)
 	body_parts_covered = HEAD
+	flash_protect = 1
 	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | ALLOWINTERNALS
 
 /obj/item/clothing/suit/hooded/cultrobes/cult_shield/equipped(mob/living/user, slot)
 	..()
@@ -467,7 +470,7 @@
 		. += mutable_appearance('icons/effects/cult_effects.dmi', "shield-cult", MOB_LAYER + 0.01)
 
 /obj/item/clothing/suit/hooded/cultrobes/berserker
-	name = "flagellant's robes"
+	name = "Flagellant's Robes"
 	desc = "Blood-soaked robes infused with dark magic; allows the user to move at inhuman speeds, but at the cost of increased damage."
 	icon_state = "cultrobes"
 	item_state = "cultrobes"
@@ -479,7 +482,7 @@
 	hoodtype = /obj/item/clothing/head/hooded/berserkerhood
 
 /obj/item/clothing/head/hooded/berserkerhood
-	name = "flagellant's robes"
+	name = "Flagellant's Robes"
 	desc = "Blood-soaked garb infused with dark magic; allows the user to move at inhuman speeds, but at the cost of increased damage."
 	icon_state = "culthood"
 	body_parts_covered = HEAD
@@ -570,21 +573,21 @@
 		sleep(20)
 		var/static/list/curses
 		if(!curses)
-			curses = list("A fuel technician just slit his own throat and begged for death.",
-			"The shuttle's navigation programming was replaced by a file containing just two words: IT COMES.",
-			"The shuttle's custodian was found washing the windows with their own blood.",
-			"A shuttle engineer began screaming 'DEATH IS NOT THE END' and ripped out wires until an arc flash seared off her flesh.",
-			"A shuttle inspector started laughing madly over the radio and then threw herself into an engine turbine.",
-			"An assistant was found on the shuttle.",
-			"A medical officer was found pouring out several blood bags onto the shuttle's instrument panels, before slitting both wrists open and screaming 'DEATH IS NOT THE END'.",
-			"A fuel technician was found replacing the fuel with his blood.",
-			"All the lights aboard the shuttle turned a crimson red before blowing out..",
-			"The shuttle dispatcher was found dead with bloody symbols carved into their flesh.",
-			"An engine turbine began leaking blood when it was powered on.",
-			"The shuttle's transponder is emitting the encoded message 'FEAR THE OLD BLOOD' in lieu of its assigned identification signal.")
+			curses = list("Специалист по Заправке Шаттлов только что перерезал себе горло и умолял о смерти",
+			"Навигационная программа шаттла была заменена файлом, содержащим всего два слова: ОНА ИДЁТ.",
+			"Смотритель Шаттла Эвакуации был найден в Диспетчерской, моющий окна собственной кровью.",
+			"Инженер шаттла начала кричать 'СМЕРТЬ - НЕ КОНЕЦ' и вырвала провода, пока вспышка дуги не сожгла ее плоть.",
+			"Безумная Инспектор начала смеяться по радио, а затем бросилась в турбину двигателя...",
+			"На шаттле был найден... АССИСТЕНТ!",
+			"Сотрудник Медицинского Блока был найден на мостике щаттла с множеством пустых пакетов крови. Он замкнул проводку Консолей этой субстанцией и зачем добавил своей крови, вскрикнув 'СМЕРТЬ - НЕ КОНЕЦ'",
+			"Специалист по Заправке Шаттлов был найден заменяющим топливо своей кровью...",
+			"Все лампы на борту шаттла стали багрово-красными, а затем погасли... нам нужно время разобраться с этим...",
+			"Диспетчер был найден мертвым... прямо на его плоти были вырезаны кровавые символы.",
+			"Из турбины Двигателя хлынул огромный поток крови и нам нужно... время...",
+			"Транспондер шаттла излучает закодированное сообщение 'ОНО ИДЁТ' вместо положенного идентификационного сигнала.")
 		var/message = pick_n_take(curses)
-		message += " The shuttle will be delayed by three minutes."
-		priority_announce("[message]", "System Failure", 'sound/misc/notice1.ogg')
+		message += " Шаттл будет задержан на три минуты."
+		priority_announce("[message]", "Центральное Командование, Отдел Работы с Реальностью", 'sound/misc/notice1.ogg')
 		curselimit++
 
 /obj/item/cult_shift

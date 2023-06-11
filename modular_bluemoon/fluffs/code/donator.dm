@@ -15,6 +15,18 @@
 	path = /obj/item/clothing/head/donator/bm/pt_crown
 	ckeywhitelist = list("snacksman")
 
+/datum/gear/donator/bm/bishop_mitre
+	name = "GPC Mitre"
+	slot = ITEM_SLOT_HEAD
+	path = /obj/item/clothing/head/donator/bm/bishop_mitre
+	ckeywhitelist = list("snacksman")
+
+/datum/gear/donator/bm/bishop_mantle
+	name = "Bishop Mantle"
+	slot = ITEM_SLOT_OCLOTHING
+	path = /obj/item/clothing/suit/donator/bm/bishop_mantle
+	ckeywhitelist = list("snacksman")
+
 /datum/gear/donator/bm/modern_watch
 	name = "modern watch"
 	slot = ITEM_SLOT_GLOVES
@@ -73,13 +85,13 @@
 	name = "cerberus helmet"
 	slot = ITEM_SLOT_HEAD
 	path = /obj/item/clothing/head/donator/bm/cerberus_helmet
-	ckeywhitelist = list("krashly", "stgs")
+	ckeywhitelist = list("krashly", "stgs", "dedmodo")
 
 /datum/gear/donator/bm/cerberus_suit
 	name = "cerberus suit"
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/donator/bm/cerberus_suit
-	ckeywhitelist = list("krashly", "stgs")
+	ckeywhitelist = list("krashly", "stgs", "dedmodo")
 
 /datum/gear/donator/bm/Dina_Kit
 	name = "Kikimora Suit Kit"

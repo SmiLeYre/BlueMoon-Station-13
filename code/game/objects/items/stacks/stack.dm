@@ -511,6 +511,7 @@
 	fingerprintslast = from.fingerprintslast
 	//TODO bloody overlay
 
-/obj/item/stack/microwave_act(obj/machinery/microwave/M)
-	if(istype(M) && M.dirty < 100)
-		M.dirty += amount
+/obj/item/stack/microwave_act(obj/machinery/microwave/microwave_source, mob/microwaver, randomize_pixel_offset)
+	. = ..()
+	if(istype(microwave_source) && microwave_source.dirty < 100)
+		microwave_source.dirty += amount

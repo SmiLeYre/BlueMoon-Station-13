@@ -25,10 +25,11 @@
 	icon_dead = "legionnaire_dead"
 	icon_gib = "syndicate_gib"
 	health_doll_icon = "legionnaire"
-	maxHealth = 800
-	health = 800
-	melee_damage_lower = 30
-	melee_damage_upper = 30
+	maxHealth = 1600
+	health = 1600
+	melee_damage_lower = 35
+	melee_damage_upper = 35
+	armour_penetration = 40
 	attack_verb_continuous = "slashes its arms at"
 	attack_verb_simple = "slash your arms at"
 	attack_sound = 'sound/weapons/bladeslice.ogg'

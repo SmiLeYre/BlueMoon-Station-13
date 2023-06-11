@@ -259,7 +259,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},
-/turf/open/floor/iron/dark/small,
+/turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/syndicate/airlock)
 "aR" = (
 /obj/effect/turf_decal/stripes/line{
@@ -278,7 +278,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
-/turf/open/floor/iron/dark/small,
+/turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/syndicate/airlock)
 "aU" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
@@ -382,7 +382,7 @@
 	},
 /obj/item/clothing/suit/space/syndicate/contract,
 /obj/item/clothing/head/helmet/space/syndicate/contract,
-/turf/open/floor/iron/dark/small,
+/turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/syndicate/airlock)
 "bj" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
@@ -405,7 +405,7 @@
 /obj/machinery/door/window{
 	dir = 1
 	},
-/turf/open/floor/iron/dark/small,
+/turf/open/floor/circuit/red,
 /area/shuttle/syndicate/hallway)
 "bq" = (
 /obj/machinery/sleeper/syndie{
@@ -558,13 +558,13 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},
-/turf/open/floor/iron/dark/smooth_large,
+/turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/syndicate/medical)
 "bJ" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/turf/open/floor/iron/dark/smooth_large,
+/turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/syndicate/medical)
 "bK" = (
 /obj/machinery/door/airlock/hatch{
@@ -573,13 +573,13 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/turf/open/floor/iron/dark/smooth_large,
+/turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/syndicate/medical)
 "bL" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/turf/open/floor/iron/dark/smooth_large,
+/turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/syndicate/hallway)
 "bM" = (
 /obj/machinery/door/airlock/hatch{
@@ -588,19 +588,19 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/turf/open/floor/iron/dark/smooth_large,
+/turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/syndicate/armory)
 "bN" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/turf/open/floor/iron/dark/smooth_large,
+/turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/syndicate/armory)
 "bO" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},
-/turf/open/floor/iron/dark/smooth_large,
+/turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/syndicate/armory)
 "bQ" = (
 /obj/effect/turf_decal/bot_white,
@@ -609,6 +609,7 @@
 /obj/item/pickaxe/drill/diamonddrill,
 /obj/item/gun/energy/plasmacutter,
 /obj/structure/closet/syndicate/inteq/personal,
+/obj/item/pda/syndicate,
 /turf/open/floor/iron/dark,
 /area/shuttle/syndicate/armory)
 "bR" = (
@@ -622,25 +623,25 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
 	},
-/turf/open/floor/iron/dark/smooth_large,
+/turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/syndicate/medical)
 "bT" = (
 /obj/effect/turf_decal/stripes/line,
-/turf/open/floor/iron/dark/smooth_large,
+/turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/syndicate/medical)
 "bU" = (
 /obj/effect/turf_decal/stripes/line,
-/turf/open/floor/iron/dark/smooth_large,
+/turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/syndicate/hallway)
 "bV" = (
 /obj/effect/turf_decal/stripes/line,
-/turf/open/floor/iron/dark/smooth_large,
+/turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/syndicate/armory)
 "bW" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
 	},
-/turf/open/floor/iron/dark/smooth_large,
+/turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/syndicate/armory)
 "bY" = (
 /obj/structure/window/reinforced{
@@ -649,6 +650,7 @@
 /obj/item/bodypart/r_arm/robot,
 /obj/item/bodypart/l_arm/robot,
 /obj/structure/table/reinforced,
+/obj/item/toy/plush/nukeplushie,
 /turf/open/floor/iron/dark,
 /area/shuttle/syndicate/medical)
 "bZ" = (
@@ -897,6 +899,16 @@
 /obj/item/key,
 /turf/open/floor/iron/dark/small,
 /area/shuttle/syndicate/airlock)
+"tb" = (
+/obj/structure/grille,
+/obj/structure/window/plastitanium,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/armory)
+"us" = (
+/obj/structure/grille,
+/obj/structure/window/plastitanium,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/medical)
 "vv" = (
 /obj/effect/turf_decal/bot_white,
 /obj/structure/tank_dispenser/oxygen,
@@ -1087,7 +1099,7 @@ aK
 bv
 bv
 bK
-bv
+us
 aJ
 aJ
 af
@@ -1187,7 +1199,7 @@ bj
 bw
 bw
 bM
-bw
+tb
 bm
 bm
 af

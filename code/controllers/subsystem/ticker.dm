@@ -245,7 +245,7 @@ SUBSYSTEM_DEF(ticker)
 	to_chat(world, "<span class='boldannounce'>Starting game...</span>")
 	var/init_start = world.timeofday
 	if(emergency_swap >= 10)
-		force_gamemode("extended")	// If everything fails extended does not have hard requirements for starting, could be changed if needed.
+		force_gamemode("Extended")	// If everything fails extended does not have hard requirements for starting, could be changed if needed.
 	mode = config.pick_mode(GLOB.master_mode)
 	if(!mode.can_start())
 		to_chat(world, "<B>Unable to start [mode.name].</B> Not enough players, [mode.required_players] players and [mode.required_enemies] eligible antagonists needed. Reverting to pre-game lobby.")
@@ -338,8 +338,8 @@ SUBSYSTEM_DEF(ticker)
 			message_admins("The gamemode has been set to [gamemode].")
 			to_chat("The gamemode has been set to [gamemode].") //BlueMoon edit !!!
 		else
-			GLOB.master_mode = "extended"
-			SSticker.save_mode("extended")
+			GLOB.master_mode = "Extended"
+			SSticker.save_mode("Extended")
 			message_admins("force_gamemode proc received an invalid gamemode, defaulting to extended.")
 			to_chat("The gamemode has been set to extended.") //BlueMoon edit !!!
 

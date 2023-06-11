@@ -1141,7 +1141,7 @@
 	name = "Stimulants"
 	description = "Increases stun resistance and movement speed in addition to restoring minor damage and weakness. Overdose causes weakness and toxin damage."
 	color = "#78008C"
-	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	overdose_threshold = 60
 	pH = 8.7
 	chemical_flags = REAGENT_ALL_PROCESS
@@ -1151,21 +1151,26 @@
 	..()
 	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/stimulants)
 	ADD_TRAIT(L, TRAIT_TASED_RESISTANCE, type)
+	ADD_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
 
 /datum/reagent/medicine/stimulants/on_mob_end_metabolize(mob/living/L)
 	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/stimulants)
 	REMOVE_TRAIT(L, TRAIT_TASED_RESISTANCE, type)
+	REMOVE_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
 	..()
 
 /datum/reagent/medicine/stimulants/on_mob_life(mob/living/carbon/M)
-	if(M.health < 50 && M.health > 0)
+	if(M.health < 0 && M.health > 0)
 		M.adjustOxyLoss(-1*REAGENTS_EFFECT_MULTIPLIER, FALSE)
 		M.adjustToxLoss(-1*REAGENTS_EFFECT_MULTIPLIER, FALSE)
 		M.adjustBruteLoss(-1*REAGENTS_EFFECT_MULTIPLIER, FALSE)
 		M.adjustFireLoss(-1*REAGENTS_EFFECT_MULTIPLIER, FALSE)
+	if(M.blood_volume < (BLOOD_VOLUME_NORMAL*M.blood_ratio))
+		M.adjust_integration_blood(40) // blood fall out man bad
 	M.AdjustAllImmobility(-60, FALSE)
 	M.AdjustUnconscious(-60, FALSE)
-	M.adjustStaminaLoss(-20*REAGENTS_EFFECT_MULTIPLIER, FALSE)
+	M.AdjustKnockdown(-40, FALSE)
+	M.adjustStaminaLoss(-40*REAGENTS_EFFECT_MULTIPLIER, FALSE)
 	..()
 	. = 1
 

@@ -48,7 +48,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/CtrlShiftClick(mob/living/carbon/human/user as mob)
 	hole = hole == CUM_TARGET_VAGINA ? CUM_TARGET_ANUS : CUM_TARGET_VAGINA
-	to_chat(user, "<span class='notice'>Я целюсь в...  \the [hole].</span>")
+	to_chat(user, "<span class='notice'>Я целюсь в... [hole].</span>")
 
 /obj/item/reagent_containers/food/drinks/bottle/attack(mob/living/target, mob/living/user)
 	user.DelayNextAction(CLICK_CD_RANGE)

@@ -34,7 +34,7 @@
 	var/title = "CentCom Free Real Estate"
 	switch(dispatch_type)
 		if(HIJACK_SYNDIE)
-			message = "Снабжение: Синдикат пытается проникнуть на вашу станцию. Если вы позволите им угнать ваш грузовой шаттл, вы избавите нас от головной боли."
+			message = "Снабжение: Террористы Группировки ИнтеКью пытается проникнуть на вашу станцию. Если вы позволите им угнать ваш грузовой шаттл, вы избавите нас от головной боли."
 			title = "Контрразведка Центрального Командования"
 		if(RUSKY_PARTY)
 			message = "Снабжение: Группа злых русских хочет устроить вечеринку. Можете отправить им ваш грузовой шаттл, чтобы заставить их исчезнуть?"
@@ -56,7 +56,7 @@
 			title = "Подразделение Уборщиков Центрального Командования"
 			bonus_points = 20000 //Toxin bees can be unbeelievably lethal
 		if(MY_GOD_JC)
-			message = "Снабжение: Мы обнаружили действующую синди-бомбу рядом с топливными линиями нашего VIP шаттла. Если вы чувствуете, что справитесь с этой задачей, мы заплатим вам за ее разрядку."
+			message = "Снабжение: Мы обнаружили действующую Бомбу Синдиката рядом с топливными линиями нашего VIP шаттла и по нашим данным её установили Террористы Группировки ИнтеКью. Если вы чувствуете, что справитесь с этой задачей, мы заплатим вам за ее разрядку."
 			title = "КСБ Центрального Командования"
 			bonus_points = 45000 //If you mess up, people die and the shuttle gets turned into swiss cheese
 		if(DELTA_CRATES)
@@ -83,7 +83,7 @@
 
 	switch(dispatch_type)
 		if(HIJACK_SYNDIE)
-			SSshuttle.centcom_message += "Прибытие группы захвата синдиката."
+			SSshuttle.centcom_message += "Прибытие группы захвата ИнтеКью."
 		if(RUSKY_PARTY)
 			SSshuttle.centcom_message += "Прибывающие русские веселятся."
 		if(SPIDER_GIFT)
@@ -272,7 +272,7 @@
 
 /obj/item/paper/fluff/bee_objectives
 	name = "Objectives of a Bee Liberation Front Operative"
-	info = "<b>Objective #1</b>. Liberate all bees on the NT transport vessel 2416/B. <b>Success!</b>  <br><b>Objective #2</b>. Escape alive. <b>Failed.</b>"
+	default_raw_text = "<b>Objective #1</b>. Liberate all bees on the NT transport vessel 2416/B. <b>Success!</b>  <br><b>Objective #2</b>. Escape alive. <b>Failed.</b>"
 
 /obj/machinery/syndicatebomb/shuttle_loan/Initialize(mapload)
 	. = ..()
@@ -283,10 +283,10 @@
 
 /obj/item/paper/fluff/cargo/bomb
 	name = "hastly scribbled note"
-	info = "GOOD LUCK!"
+	default_raw_text = "GOOD LUCK!"
 
 /obj/item/paper/fluff/cargo/bomb/allyourbase
-	info = "Somebody set us up the bomb!"
+	default_raw_text = "Somebody set us up the bomb!"
 
 #undef HIJACK_SYNDIE
 #undef RUSKY_PARTY

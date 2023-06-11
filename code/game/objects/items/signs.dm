@@ -17,10 +17,11 @@
 	resistance_flags = NONE
 	actions_types = list(/datum/action/item_action/nano_picket_sign)
 
-/obj/item/picket_sign/proc/retext(mob/user)
-	if(!user.is_literate())
-		to_chat(user, "<span class='notice'>You scribble illegibly on [src]!</span>")
-		return
+/obj/item/picket_sign/proc/retext(obj/item/W, mob/user)
+	if(istype(W, /obj/item/pen))
+		if(!user.can_write(W))
+			to_chat(user, "<span class='notice'>You scribble illegibly on [src]!</span>")
+			return
 	var/txt = stripped_input(user, "What would you like to write on the sign?", "Sign Label", null , 30)
 	if(txt && user.canUseTopic(src, BE_CLOSE))
 		label = txt

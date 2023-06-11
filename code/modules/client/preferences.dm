@@ -348,7 +348,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/no_tetris_storage = FALSE
 
 	///loadout stuff
-	var/gear_points = 10
+	var/gear_points = 20 // Больше очков - сочнее персонажи.
 	var/list/gear_categories
 	var/list/loadout_data = list()
 	var/list/unlockable_loadout_data = list()

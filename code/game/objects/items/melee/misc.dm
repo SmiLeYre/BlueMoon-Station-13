@@ -12,9 +12,15 @@
 
 /obj/item/melee/CtrlShiftClick(mob/living/carbon/human/user as mob)
 	hole = hole == CUM_TARGET_VAGINA ? CUM_TARGET_ANUS : CUM_TARGET_VAGINA
-	to_chat(user, span_notice("Я целюсь в...  \the [hole]."))
+	to_chat(user, span_notice("Я целюсь в... [hole]."))
 
 /obj/item/melee/attack(mob/living/target, mob/living/user)
+	user.DelayNextAction()
+	if (user.zone_selected == BODY_ZONE_PRECISE_GROIN && user.a_intent == INTENT_HELP)
+		do_eblya(target, user)
+	return ..()
+
+/obj/item/melee/baton/attack(mob/living/target, mob/living/user)
 	user.DelayNextAction()
 	if (user.zone_selected == BODY_ZONE_PRECISE_GROIN && user.a_intent == INTENT_HELP)
 		do_eblya(target, user)

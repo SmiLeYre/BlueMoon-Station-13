@@ -177,6 +177,14 @@
 #define ANNOUNCER_SHUTTLEDOCK "shuttledock"
 #define ANNOUNCER_SHUTTLERECALLED "shuttlerecalled"
 #define ANNOUNCER_SPANOMALIES "spanomalies"
+#define ANNOUNCER_ADMIN_1 "_admin_cap_gone"
+#define ANNOUNCER_ADMIN_2 "_admin_capitain"
+#define ANNOUNCER_ADMIN_3 "_admin_horror_music"
+#define ANNOUNCER_ADMIN_4 "_admin_hos_gone"
+#define ANNOUNCER_ADMIN_5 "_admin_war_pipisky"
+#define ANNOUNCER_ADMIN_6 "_admin_war_pizdec"
+#define ANNOUNCER_ADMIN_7 "_admin_war_tishina"
+
 
 /// Global list of all of our announcer keys.
 GLOBAL_LIST_INIT(announcer_keys, list(
@@ -197,4 +205,11 @@ GLOBAL_LIST_INIT(announcer_keys, list(
 	ANNOUNCER_SHUTTLEDOCK,
 	ANNOUNCER_SHUTTLERECALLED,
 	ANNOUNCER_SPANOMALIES,
+	ANNOUNCER_ADMIN_1,
+	ANNOUNCER_ADMIN_2,
+	ANNOUNCER_ADMIN_3,
+	ANNOUNCER_ADMIN_4,
+	ANNOUNCER_ADMIN_5,
+	ANNOUNCER_ADMIN_6,
+	ANNOUNCER_ADMIN_7,
 ))

@@ -84,8 +84,8 @@ DEFINE_BITFIELD(turret_flags, list(
 	var/obj/machinery/porta_turret_cover/cover = null
 	/// World.time the turret last fired
 	var/last_fired = 0
-	/// Ticks until next shot (1.5 ?)
-	var/shot_delay = 15
+	/// Ticks until next shot (2 ?)
+	var/shot_delay = 25
 	/// Turret flags about who is turret allowed to shoot
 	var/turret_flags = TURRET_FLAG_SHOOT_CRIMINALS | TURRET_FLAG_SHOOT_ANOMALOUS
 	/// Determines if the turret is on
@@ -802,7 +802,7 @@ DEFINE_BITFIELD(turret_flags, list(
 
 /obj/machinery/porta_turret/syndicate/shuttle
 	scan_range = 9
-	shot_delay = 3
+	shot_delay = 20
 	stun_projectile = /obj/item/projectile/bullet/p50/penetrator/shuttle
 	lethal_projectile = /obj/item/projectile/bullet/p50/penetrator/shuttle
 	lethal_projectile_sound = 'sound/weapons/gunshot_smg.ogg'

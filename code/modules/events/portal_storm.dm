@@ -1,28 +1,39 @@
 /datum/round_event_control/portal_storm_syndicate
 	name = "Portal Storm: Syndicate Shocktroops"
 	typepath = /datum/round_event/portal_storm/syndicate_shocktroop
-	weight = 10
+	weight = 30
 	min_players = 40
-	earliest_start = 120 MINUTES
+	earliest_start = 60 MINUTES
 	max_occurrences = 1
 
 /datum/round_event/portal_storm/syndicate_shocktroop
-	boss_types = list(/mob/living/simple_animal/hostile/syndicate/melee/space/stormtrooper = 2)
-	hostile_types = list(/mob/living/simple_animal/hostile/syndicate/melee/space = 8,\
-						/mob/living/simple_animal/hostile/syndicate/ranged/space = 2)
+	boss_types = list(/mob/living/simple_animal/hostile/syndicate/ranged/space/anthro/cat = 3,\
+					/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/stormtrooper/anthro/fox = 3,\
+					/mob/living/simple_animal/hostile/syndicate/melee/space/anthro/lizard = 3)
+	hostile_types = list(/mob/living/simple_animal/hostile/syndicate/melee/anthro = 8,\
+						/mob/living/simple_animal/hostile/syndicate/melee/sword/anthro = 6,\
+						/mob/living/simple_animal/hostile/syndicate/ranged/smg/anthro = 4,\
+						/mob/living/simple_animal/hostile/syndicate/ranged/anthro = 4)
 
 /datum/round_event_control/portal_storm_narsie
 	name = "Portal Storm: Constructs"
 	typepath = /datum/round_event/portal_storm/portal_storm_narsie
-	weight = 20
+	weight = 30
 	min_players = 40
-	earliest_start = 120 MINUTES
+	earliest_start = 60 MINUTES
 	max_occurrences = 1
 
 /datum/round_event/portal_storm/portal_storm_narsie
-	boss_types = list(/mob/living/simple_animal/hostile/construct/builder = 6)
-	hostile_types = list(/mob/living/simple_animal/hostile/construct/armored/hostile = 8,\
-						/mob/living/simple_animal/hostile/construct/wraith/hostile = 6)
+	boss_types = list(/mob/living/simple_animal/hostile/cult/magic/elite = 2)
+	hostile_types = list(/mob/living/simple_animal/hostile/construct/armored/hostile = 6,\
+						/mob/living/simple_animal/hostile/construct/wraith = 6,\
+						/mob/living/simple_animal/hostile/cult/ghost = 4,\
+						/mob/living/simple_animal/hostile/cult/mannequin = 4,\
+						/mob/living/simple_animal/hostile/cult/horror = 4,\
+						/mob/living/simple_animal/hostile/cult/warrior = 4,\
+						/mob/living/simple_animal/hostile/cult/spear = 2,\
+						/mob/living/simple_animal/hostile/cult/assassin = 2,\
+						/mob/living/simple_animal/hostile/cult/magic = 2)
 
 /datum/round_event/portal_storm
 	start_when = 7
@@ -65,7 +76,7 @@
 	set waitfor = FALSE
 	sound_to_playing_players('sound/magic/lightning_chargeup.ogg')
 	sleep(80)
-	priority_announce("Массивная Блюспейс-Аномалия приближается к [station_name()]. Готовьтесь к столкновению с Угрозами Прошлого!")
+	priority_announce("Массивная Блюспейс-Аномалия приближается к [station_name()]. Готовьтесь к столкновению с Угрозами Прошлого!", "Центральное Командование, Отдел Работы с Реальностью", 'sound/announcer/classic/_admin_horror_music.ogg')
 	sleep(20)
 	sound_to_playing_players('sound/magic/lightningbolt.ogg')
 

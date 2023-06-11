@@ -189,8 +189,8 @@
 		result = special_faces[result]
 	if(user != null) //Dice was rolled in someone's hand
 		user.visible_message("[user] has thrown [src]. It lands on [result]. [comment]", \
-							 "<span class='notice'>You throw [src]. It lands on [result]. [comment]</span>", \
-							 "<span class='italics'>You hear [src] rolling, it sounds like a [fake_result].</span>")
+							"<span class='notice'>You throw [src]. It lands on [result]. [comment]</span>", \
+							"<span class='italics'>You hear [src] rolling, it sounds like a [fake_result].</span>")
 	else if(!src.throwing) //Dice was thrown and is coming to rest
 		visible_message("<span class='notice'>[src] rolls to a stop, landing on [result]. [comment]</span>")
 
@@ -198,7 +198,8 @@
 	. = ..()
 	. += "[icon_state]-[result]"
 
-/obj/item/dice/microwave_act(obj/machinery/microwave/M)
+/obj/item/dice/microwave_act(obj/machinery/microwave/microwave_source, mob/microwaver, randomize_pixel_offset)
+	. = ..()
 	if(can_be_rigged)
 		rigged = result
-	..(M)
+	..(microwave_source)

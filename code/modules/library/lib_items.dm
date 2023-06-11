@@ -110,7 +110,7 @@
 				to_chat(user, "<span class='notice'>You empty \the [I] into \the [src].</span>")
 				update_icon()
 			else if(istype(I, /obj/item/pen))
-				if(!user.is_literate())
+				if(!user.can_write(I))
 					to_chat(user, "<span class='notice'>You scribble illegibly on the side of [src]!</span>")
 					return
 				var/newname = stripped_input(user, "What would you like to title this bookshelf?")

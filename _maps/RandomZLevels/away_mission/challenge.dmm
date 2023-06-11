@@ -7,11 +7,6 @@
 	icon_state = "iron0"
 	},
 /area/awaymission/challenge/start)
-"ag" = (
-/obj/item/clothing/suit/space/syndicate/blue,
-/obj/item/clothing/head/helmet/space/syndicate/blue,
-/turf/open/floor/carpet,
-/area/awaymission/challenge/start)
 "ai" = (
 /obj/item/flashlight{
 	icon_state = "flashlight-on";
@@ -28,8 +23,8 @@
 /turf/open/floor/carpet,
 /area/awaymission/challenge/start)
 "am" = (
-/obj/item/clothing/suit/space/syndicate/green,
-/obj/item/clothing/head/helmet/space/syndicate/green,
+/obj/item/clothing/head/helmet/space/syndicate,
+/obj/item/clothing/suit/space/syndicate,
 /turf/open/floor/carpet,
 /area/awaymission/challenge/start)
 "ao" = (
@@ -70,8 +65,7 @@
 /turf/open/floor/carpet,
 /area/awaymission/challenge/start)
 "ax" = (
-/obj/effect/decal/cleanable/oil,
-/mob/living/simple_animal/hostile/syndicate,
+/obj/item/stack/sheet/metal/fifty,
 /turf/open/floor/carpet,
 /area/awaymission/challenge/start)
 "ay" = (
@@ -79,8 +73,8 @@
 /turf/open/floor/carpet,
 /area/awaymission/challenge/start)
 "az" = (
-/obj/item/clothing/suit/space/syndicate/black,
-/obj/item/clothing/head/helmet/space/syndicate/black,
+/obj/item/clothing/suit/space/syndicate/contract,
+/obj/item/clothing/head/helmet/space/syndicate/contract,
 /turf/open/floor/carpet,
 /area/awaymission/challenge/start)
 "aA" = (
@@ -88,13 +82,6 @@
 	icon_state = "iron0"
 	},
 /area/awaymission/challenge/main)
-"aB" = (
-/obj/machinery/power/smes/magical,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/plasteel/airless,
-/area/awaymission/challenge/start)
 "aC" = (
 /turf/open/floor/plating,
 /area/awaymission/challenge/main)
@@ -109,16 +96,8 @@
 /turf/open/floor/plating/airless,
 /area/awaymission/challenge/main)
 "aG" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/open/floor/plasteel/airless,
+/mob/living/simple_animal/hostile/syndicate/melee/anthro,
+/turf/open/floor/carpet,
 /area/awaymission/challenge/start)
 "aH" = (
 /turf/open/floor/plasteel/airless,
@@ -652,7 +631,7 @@
 /turf/open/floor/plasteel/dark,
 /area/awaymission/challenge/end)
 "ce" = (
-/mob/living/simple_animal/hostile/syndicate/ranged/smg/space,
+/mob/living/simple_animal/hostile/syndicate/ranged/space/anthro/cat,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/challenge/end)
 "cf" = (
@@ -698,7 +677,7 @@
 /turf/open/floor/wood,
 /area/awaymission/challenge/end)
 "cl" = (
-/mob/living/simple_animal/hostile/syndicate/melee/sword,
+/mob/living/simple_animal/hostile/syndicate/melee/sword/anthro,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/challenge/end)
 "cm" = (
@@ -770,7 +749,7 @@
 /turf/open/floor/wood,
 /area/awaymission/challenge/end)
 "cu" = (
-/mob/living/simple_animal/hostile/syndicate/melee/sword,
+/mob/living/simple_animal/hostile/syndicate/melee/sword/anthro,
 /turf/open/floor/circuit,
 /area/awaymission/challenge/end)
 "cv" = (
@@ -839,7 +818,7 @@
 /turf/open/floor/circuit,
 /area/awaymission/challenge/end)
 "cF" = (
-/mob/living/simple_animal/hostile/syndicate/ranged/smg,
+/mob/living/simple_animal/hostile/syndicate/ranged/smg/anthro,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/challenge/end)
 "cG" = (
@@ -912,55 +891,22 @@
 	},
 /turf/open/floor/plating,
 /area/awaymission/challenge/end)
-"cR" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/closed/indestructible{
-	icon_state = "iron0"
-	},
-/area/awaymission/challenge/start)
 "cS" = (
-/obj/machinery/gateway/away,
-/turf/open/floor/bluespace,
-/area/awaymission/challenge/start)
-"cV" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/bluespace,
+/obj/item/clothing/suit/space/syndicate/black/med,
+/obj/item/clothing/head/helmet/space/syndicate/black/med,
+/turf/open/floor/carpet,
 /area/awaymission/challenge/start)
 "cW" = (
-/obj/item/clothing/suit/space/hardsuit/shielded/syndi,
-/obj/item/clothing/mask/gas/syndicate,
-/obj/item/documents/syndicate,
-/obj/structure/safe,
+/obj/machinery/gateway/away,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/challenge/end)
-"cX" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/bluespace,
-/area/awaymission/challenge/start)
-"cZ" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/bluespace,
-/area/awaymission/challenge/start)
 "db" = (
 /obj/structure/window/reinforced,
 /turf/open/floor/circuit,
 /area/awaymission/challenge/end)
 "dc" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/bluespace,
+/obj/item/stack/sheet/glass/fifty,
+/turf/open/floor/carpet,
 /area/awaymission/challenge/start)
 "dd" = (
 /obj/structure/window/reinforced{
@@ -1015,15 +961,12 @@
 /turf/open/floor/plating,
 /area/awaymission/challenge/end)
 "dm" = (
-/mob/living/simple_animal/hostile/syndicate/ranged/smg/space,
+/mob/living/simple_animal/hostile/syndicate/ranged/space/anthro/cat,
 /turf/open/floor/circuit,
 /area/awaymission/challenge/end)
 "dn" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/turf/open/floor/bluespace,
-/area/awaymission/challenge/start)
+/turf/open/space/basic,
+/area/space)
 "do" = (
 /obj/machinery/light,
 /turf/open/floor/circuit,
@@ -1032,9 +975,6 @@
 /obj/structure/closet/emcloset,
 /turf/open/floor/circuit,
 /area/awaymission/challenge/end)
-"dq" = (
-/turf/open/floor/bluespace,
-/area/awaymission/challenge/start)
 "ds" = (
 /obj/structure/closet/l3closet,
 /turf/open/floor/circuit,
@@ -1208,7 +1148,7 @@
 /turf/open/floor/plating/airless,
 /area/awaymission/challenge/main)
 "zn" = (
-/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/stormtrooper,
+/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/stormtrooper/anthro/fox,
 /turf/open/floor/circuit,
 /area/awaymission/challenge/end)
 "zF" = (
@@ -1221,7 +1161,7 @@
 /turf/open/floor/plating/airless,
 /area/awaymission/challenge/main)
 "Db" = (
-/mob/living/simple_animal/hostile/syndicate/ranged/smg/space/stormtrooper,
+/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/stormtrooper/anthro/fox,
 /turf/open/floor/wood,
 /area/awaymission/challenge/end)
 "Dn" = (
@@ -1267,7 +1207,7 @@
 /turf/open/floor/plating/airless,
 /area/awaymission/challenge/main)
 "Hr" = (
-/mob/living/simple_animal/hostile/syndicate/ranged/smg,
+/mob/living/simple_animal/hostile/syndicate/ranged/smg/anthro,
 /turf/open/floor/circuit,
 /area/awaymission/challenge/end)
 "IP" = (
@@ -1309,12 +1249,6 @@
 	},
 /turf/open/floor/plating/airless,
 /area/awaymission/challenge/main)
-"KS" = (
-/obj/machinery/power/emitter/energycannon{
-	active = 0
-	},
-/turf/open/space,
-/area/space)
 "Lm" = (
 /obj/effect/spawner/structure/window/hollow/reinforced/end{
 	dir = 4
@@ -1362,7 +1296,7 @@
 	},
 /area/awaymission/challenge/main)
 "OT" = (
-/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/stormtrooper,
+/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/stormtrooper/anthro/fox,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/challenge/end)
 "Pv" = (
@@ -1386,7 +1320,7 @@
 /turf/open/floor/plasteel/dark,
 /area/awaymission/challenge/end)
 "QE" = (
-/mob/living/simple_animal/hostile/syndicate,
+/mob/living/simple_animal/hostile/syndicate/ranged/anthro,
 /turf/open/floor/carpet,
 /area/awaymission/challenge/start)
 "Tx" = (
@@ -1456,7 +1390,7 @@
 /turf/open/floor/plating/airless,
 /area/awaymission/challenge/main)
 "Zw" = (
-/mob/living/simple_animal/hostile/syndicate/melee/sword/space,
+/mob/living/simple_animal/hostile/syndicate/melee/space/anthro/lizard,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/challenge/end)
 
@@ -26734,7 +26668,7 @@ aa
 aa
 aa
 aa
-KS
+aa
 aa
 aa
 aa
@@ -28032,13 +27966,13 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+dn
+dn
+dn
+dn
+dn
+dn
+dn
 aa
 aa
 aa
@@ -28289,13 +28223,13 @@ aa
 aa
 aa
 aa
-aa
-aa
-ab
-ab
-ab
-ab
-ab
+dn
+dn
+dn
+dn
+dn
+dn
+dn
 ab
 ab
 ab
@@ -28546,13 +28480,13 @@ aa
 aa
 aa
 aa
-ab
-ab
-ab
-dq
-cX
-dq
-ab
+dn
+dn
+dn
+dn
+dn
+dn
+dn
 ab
 at
 au
@@ -28560,7 +28494,7 @@ au
 au
 au
 au
-ax
+ar
 aA
 aF
 aF
@@ -28803,20 +28737,20 @@ aa
 aa
 aa
 aa
+dn
+dn
+dn
+dn
+dn
+dn
+dn
 ab
-aB
-ab
-dq
-cS
-dc
-dq
-dq
 au
 al
 au
 ao
 au
-au
+aG
 au
 aA
 aA
@@ -29060,13 +28994,13 @@ aa
 aa
 aa
 aa
-ab
-aG
-cR
-cV
-cZ
 dn
-ab
+dn
+dn
+dn
+dn
+dn
+dn
 ab
 au
 ak
@@ -29317,18 +29251,18 @@ aa
 aa
 aa
 aa
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+dn
+dn
+dn
+dn
+dn
+dn
+dn
 ab
 au
 al
 au
-QE
+au
 at
 au
 au
@@ -29582,7 +29516,7 @@ aa
 aa
 aa
 ab
-ag
+au
 au
 al
 ap
@@ -29839,7 +29773,7 @@ aa
 aa
 aa
 ab
-au
+cS
 al
 au
 aq
@@ -30102,7 +30036,7 @@ al
 ar
 au
 QE
-au
+ax
 aA
 aA
 aA
@@ -30353,13 +30287,13 @@ aa
 aa
 aa
 ab
-QE
+au
 am
 au
 as
 av
 au
-au
+dc
 aA
 aF
 aN

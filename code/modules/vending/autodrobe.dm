@@ -29,6 +29,7 @@
 					/obj/item/clothing/under/bm/whiterevdress = 3,
 					/obj/item/clothing/under/bm/angelrevskirt = 3,
 					/obj/item/clothing/under/bm/gothrevskirt = 3,
+					/obj/item/clothing/under/bm/ryodan = 6,
 					/obj/item/clothing/under/costume/schoolgirl = 1,
 					/obj/item/clothing/under/costume/schoolgirl/red = 1,
 					/obj/item/clothing/under/costume/schoolgirl/green = 1,

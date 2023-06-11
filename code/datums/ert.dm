@@ -10,7 +10,7 @@
 	var/mission = "Защити станцию любой ценой и докажи свою состоятельность!"
 	var/teamsize = 5
 	var/polldesc
-	var/ertphrase = "modular_bluemoon/phenyamomota/sound/announcer/maks/ert_sending.ogg"
+	var/ertphrase = 'modular_bluemoon/phenyamomota/sound/announcer/maks/ert_sending.ogg'
 
 /datum/ert/New()
 	if (!polldesc)

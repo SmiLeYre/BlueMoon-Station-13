@@ -8,7 +8,7 @@
 	var/iscopy = FALSE
 
 /obj/item/paper/carbon/update_icon_state()
-	if(info)
+	if(default_raw_text)
 		icon_state = "[icon_state]_words"
 		return ..()
 	if(iscopy)
@@ -24,14 +24,14 @@
 /obj/item/paper/carbon/proc/removecopy(mob/living/user)
 	if(!copied)
 		var/obj/item/paper/carbon/C = src
-		var/copycontents = C.info
+		var/copycontents = C.default_raw_text
 		var/obj/item/paper/carbon/Copy = new /obj/item/paper/carbon(user.loc)
 
-		if(info)
+		if(default_raw_text)
 			copycontents = replacetext(copycontents, "<font face=\"[PEN_FONT]\" color=", "<font face=\"[PEN_FONT]\" nocolor=")
 			copycontents = replacetext(copycontents, "<font face=\"[CRAYON_FONT]\" color=", "<font face=\"[CRAYON_FONT]\" nocolor=")
-			Copy.info += copycontents
-			Copy.info += "</font>"
+			Copy.default_raw_text += copycontents
+			Copy.default_raw_text += "</font>"
 			Copy.name = "Copy - [C.name]"
 		to_chat(user, "<span class='notice'>You tear off the carbon-copy!</span>")
 		C.copied = TRUE

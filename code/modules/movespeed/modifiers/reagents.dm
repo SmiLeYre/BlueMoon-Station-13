@@ -2,7 +2,7 @@
 	blacklisted_movetypes = (FLYING|FLOATING)
 
 /datum/movespeed_modifier/reagent/stimulants
-	multiplicative_slowdown = -0.55
+	multiplicative_slowdown = -0.75
 
 /datum/movespeed_modifier/reagent/ephedrine
 	// strong painkiller effect that caps out at slightly above runspeed

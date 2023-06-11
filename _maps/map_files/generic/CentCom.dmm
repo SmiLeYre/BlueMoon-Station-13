@@ -8572,7 +8572,7 @@
 /obj/machinery/shower{
 	dir = 4
 	},
-/obj/item/soap,
+/obj/item/soap/syndie,
 /turf/open/floor/iron/showroomfloor,
 /area/syndicate_mothership)
 "ti" = (
@@ -10404,8 +10404,6 @@
 /area/syndicate_mothership)
 "wX" = (
 /obj/structure/table/wood,
-/obj/item/ammo_box/magazine/ak12,
-/obj/item/ammo_box/magazine/ak12,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
@@ -10689,7 +10687,6 @@
 	pixel_y = 33;
 	pixel_x = -33
 	},
-/obj/item/storage/box/inteq_box/inteq_clothes,
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /obj/structure/closet/syndicate/inteq/personal,
 /turf/open/floor/iron/dark,
@@ -11526,7 +11523,6 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
 	},
-/obj/item/storage/box/inteq_box/inteq_clothes,
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /obj/structure/closet/syndicate/inteq/personal,
 /turf/open/floor/iron/dark,
@@ -12673,10 +12669,6 @@
 /obj/machinery/vending/cigarette/syndicate,
 /turf/open/floor/plasteel/dark,
 /area/slavers)
-"BY" = (
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/turf/open/floor/plating/asteroid/snow/airless,
-/area/syndicate_mothership)
 "BZ" = (
 /obj/structure/table/wood,
 /obj/item/clipboard,
@@ -13416,7 +13408,6 @@
 /area/ai_multicam_room)
 "Dk" = (
 /obj/structure/table,
-/obj/item/ammo_box/magazine/ak12,
 /turf/open/floor/iron/kitchen{
 	dir = 4
 	},
@@ -17267,7 +17258,7 @@
 	},
 /obj/structure/table,
 /obj/item/paper{
-	info = "Hey, you, new to kidnapping crew? The name’s Zydras, professional Slaver and here to help you. So! First step is to actually kidnap crewmembers. Take your things from the lockers - especially the **collection tool** - and hop onto the shuttle. I personally recommend docking somewhere close to arrivals that’s still outside of view from an engineer space-walking. It’s a good spot to enter the station as it typically has multiple airlocks. Don’t forget: **Never try to harm people.** You can use your telebaton, flash, the likes, but harming our kidnappees is not going to please the boss. As for intimidation, giving your kidnappees the easy way in can often save a lot of trouble. Don’t bother going against a target that fights back too well - there’s always easier fish. If you really want to slow someone down, you can craft Bolas out of metal and cable cuffs. Helps catch the quick ones! Once they’re stunned down, grab them and put cuffs onto their asses and use your capture tool to send them right back to the shuttle’s holding cell. It’s recommended you kidnap one crew at a time, else they could attempt to break out together. Once we've got a cutie back at our den, all we do is wait for the station to pay the ransom. In the meantime, you can raise our profits by pinning said slave against the Sex research racks at the end of the holding brig. Nets us money, eases their needs, and we’re busting. When you're done taking advantage of your slavetoy, drag them to the export pad and use the computer to return them home. Don't forget to give back their things, as much as it'd be nice to keep those sunglasses, it gets us in more trouble than we want. Good luck, Slaver!";
+	default_raw_text = "Hey, you, new to kidnapping crew? The name’s Zydras, professional Slaver and here to help you. So! First step is to actually kidnap crewmembers. Take your things from the lockers - especially the **collection tool** - and hop onto the shuttle. I personally recommend docking somewhere close to arrivals that’s still outside of view from an engineer space-walking. It’s a good spot to enter the station as it typically has multiple airlocks. Don’t forget: **Never try to harm people.** You can use your telebaton, flash, the likes, but harming our kidnappees is not going to please the boss. As for intimidation, giving your kidnappees the easy way in can often save a lot of trouble. Don’t bother going against a target that fights back too well - there’s always easier fish. If you really want to slow someone down, you can craft Bolas out of metal and cable cuffs. Helps catch the quick ones! Once they’re stunned down, grab them and put cuffs onto their asses and use your capture tool to send them right back to the shuttle’s holding cell. It’s recommended you kidnap one crew at a time, else they could attempt to break out together. Once we've got a cutie back at our den, all we do is wait for the station to pay the ransom. In the meantime, you can raise our profits by pinning said slave against the Sex research racks at the end of the holding brig. Nets us money, eases their needs, and we’re busting. When you're done taking advantage of your slavetoy, drag them to the export pad and use the computer to return them home. Don't forget to give back their things, as much as it'd be nice to keep those sunglasses, it gets us in more trouble than we want. Good luck, Slaver!";
 	name = "Zydras' Guide to the slave trade"
 	},
 /turf/open/floor/plasteel/dark,
@@ -17320,7 +17311,7 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/centcom/evac)
 "Lu" = (
-/obj/item/inteq/uplink/radio,
+/obj/item/poster/random_inteq,
 /turf/open/floor/plating/asteroid/snow/airless,
 /area/syndicate_mothership)
 "Lv" = (
@@ -19380,7 +19371,6 @@
 	},
 /obj/structure/table,
 /obj/item/reagent_containers/rag/towel/syndicate,
-/obj/item/ammo_box/magazine/ak12,
 /turf/open/floor/iron/showroomfloor,
 /area/syndicate_mothership)
 "Rm" = (
@@ -21295,7 +21285,6 @@
 /obj/item/clothing/head/HoS/inteq_vanguard,
 /obj/item/clothing/under/inteq_maid,
 /obj/item/clothing/under/inteq_skirt,
-/obj/item/ammo_box/magazine/ak12,
 /obj/structure/closet/syndicate/inteq/personal,
 /turf/open/floor/wood/wood_parquet,
 /area/syndicate_mothership)
@@ -21418,7 +21407,6 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/obj/item/storage/box/inteq_box/inteq_clothes,
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /obj/structure/closet/syndicate/inteq/personal,
 /turf/open/floor/iron/dark,
@@ -41244,9 +41232,9 @@ wp
 wp
 QV
 Uy
-hl
+Lu
 Cp
-hl
+Lu
 hl
 Uy
 QV
@@ -41502,7 +41490,7 @@ wp
 QV
 Tz
 mz
-BY
+Lu
 nx
 mA
 Tz

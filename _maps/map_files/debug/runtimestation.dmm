@@ -2868,6 +2868,10 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/service/bar)
+"yD" = (
+/obj/machinery/photocopier,
+/turf/open/floor/plasteel,
+/area/hallway/secondary/exit/departure_lounge)
 "yM" = (
 /obj/machinery/vending/wallmed,
 /turf/closed/wall/r_wall,
@@ -3250,6 +3254,11 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/engineering/atmos)
+"WK" = (
+/obj/structure/table,
+/obj/item/paper_bin/carbon,
+/turf/open/floor/plasteel,
+/area/hallway/secondary/exit/departure_lounge)
 "WT" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3309,6 +3318,10 @@
 "YB" = (
 /turf/open/floor/plasteel/freezer,
 /area/service/cafeteria)
+"YL" = (
+/obj/effect/landmark/blobstart,
+/turf/open/floor/plasteel,
+/area/commons/storage/primary)
 "ZD" = (
 /obj/machinery/suit_storage_unit/industrial/ce,
 /turf/open/floor/plasteel,
@@ -7878,8 +7891,8 @@ dp
 dE
 cS
 fO
-fO
-fO
+yD
+WK
 gf
 aa
 aa
@@ -8157,7 +8170,7 @@ fP
 fO
 fO
 fb
-aa
+ff
 aa
 aa
 aa
@@ -8423,7 +8436,7 @@ dD
 dJ
 dI
 dJ
-dJ
+YL
 dJ
 dJ
 dJ

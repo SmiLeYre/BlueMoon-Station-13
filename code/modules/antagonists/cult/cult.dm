@@ -316,7 +316,7 @@
 			if(B.current)
 				SEND_SOUND(B.current, 'sound/hallucinations/im_here1.ogg')
 				to_chat(B.current, "<span class='cultlarge'>Your cult is ascendent and the red harvest approaches - you cannot hide your true nature for much longer!!")
-				priority_announce("Внимание. Обнаружен серьёзный всплеск Аномального Воздействия на [station_name()]. Присутствие Кровавого Культа подтверждено. Уничтожить угрозу любой ценой.","Центральное Командование, Отдел Работы с Реальностью")
+				priority_announce("Внимание. Обнаружен серьёзный всплеск Аномального Воздействия на [station_name()]. Присутствие Кровавого Культа подтверждено. Уничтожить угрозу любой ценой!", "Центральное Командование, Отдел Работы с Реальностью", 'sound/announcer/classic/_admin_horror_music.ogg')
 				addtimer(CALLBACK(src, .proc/ascend, B.current), 200)
 		cult_ascendent = TRUE
 

@@ -2220,12 +2220,6 @@
 	icon_state = "ironsand1"
 	},
 /area/awaymission/wildwest/gov)
-"Vv" = (
-/obj/effect/landmark/awaystart/nodelay,
-/turf/open/floor/plating/ironsand{
-	icon_state = "ironsand1"
-	},
-/area/awaymission/wildwest/mines)
 "YE" = (
 /obj/structure/closet/crate,
 /obj/item/stack/sheet/mineral/plasma{
@@ -34305,9 +34299,9 @@ aN
 aN
 az
 az
-Vv
-Vv
-Vv
+az
+az
+az
 aN
 aG
 aG
@@ -34562,9 +34556,9 @@ aN
 aN
 az
 az
-Vv
-Vv
-Vv
+az
+az
+az
 aN
 aG
 aG
@@ -34819,9 +34813,9 @@ aN
 aN
 aN
 aN
-Vv
-Vv
-Vv
+az
+az
+az
 aP
 aG
 aG

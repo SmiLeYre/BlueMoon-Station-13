@@ -190,6 +190,7 @@
 	var/facial_hair_style
 	var/skin_tone
 	var/canloadappearance = FALSE
+	var/loadout_enabled = FALSE
 
 /obj/effect/mob_spawn/human/Initialize(mapload)
 	if(ispath(outfit))
@@ -262,6 +263,15 @@
 		H.canloadappearance = TRUE
 	else
 		H.canloadappearance = FALSE
+
+/obj/effect/mob_spawn/human/special(mob/living/carbon/human/new_spawn)
+	if (loadout_enabled)
+		if(new_spawn.client)
+			new_spawn.client.prefs.copy_to(new_spawn)
+			SSjob.equip_loadout(null, new_spawn)
+			SSjob.post_equip_loadout(null, new_spawn)
+			SSquirks.AssignQuirks(new_spawn, new_spawn.client, TRUE, TRUE, null, FALSE, new_spawn)
+			to_chat(new_spawn,"<span class='boldwarning'>В Эксту посещать станцию допустимо, в Динамику запрещено!</span>")
 
 //Instant version - use when spawning corpses during runtime
 /obj/effect/mob_spawn/human/corpse

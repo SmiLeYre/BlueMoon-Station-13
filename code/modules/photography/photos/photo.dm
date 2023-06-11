@@ -54,7 +54,7 @@
 	if(burn_paper_product_attackby_check(P, user))
 		return
 	if(istype(P, /obj/item/pen) || istype(P, /obj/item/toy/crayon))
-		if(!user.is_literate())
+		if(!user.can_write(P))
 			to_chat(user, "<span class='notice'>You scribble illegibly on [src]!</span>")
 			return
 		var/txt = stripped_input(user, "What would you like to write on the back?", "Photo Writing", "", 128)
