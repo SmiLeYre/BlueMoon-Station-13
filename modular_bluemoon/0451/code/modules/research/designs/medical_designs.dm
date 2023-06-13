@@ -63,3 +63,14 @@
 	build_path = /obj/item/organ/cyberimp/chest/nutrimentextreme
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/binolenses
+	name = "Binocular Lenses"
+	desc = "A pair of binocular lenses, that can be attached to the eyes!"
+	id = "ci-binolenses"
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 40
+	materials = list(/datum/material/iron = 5000, /datum/material/glass = 6000, /datum/material/silver = 2000, /datum/material/diamond = 2000)
+	build_path = /obj/item/organ/cyberimp/arm/lenses
+	category = list("Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SECURITY //Mmm, i don't see the reason not to give it to basically everyone.
