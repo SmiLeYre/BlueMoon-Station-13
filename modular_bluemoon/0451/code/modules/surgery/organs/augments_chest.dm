@@ -76,7 +76,7 @@
 	owner.adjustToxLoss(-0.4, FALSE) //Provides slow heal for toxin and oxy damage
 	owner.adjustOxyLoss(-0.4, FALSE)
 
-/obj/item/organ/cyberimp/chest/healer/emp_act(severity)
+/obj/item/organ/cyberimp/chest/healertoxoxy/emp_act(severity)
 	. = ..()
 	if(!owner || . & EMP_PROTECT_SELF)
 		return
@@ -93,12 +93,12 @@
 	slot = ORGAN_SLOT_HEART_AID
 
 /obj/item/organ/cyberimp/chest/revitilzer/on_life()
-	owner.adjustToxLoss(-0.2, FALSE) //Provides *very* slow heal to all basic damage.
-	owner.adjustOxyLoss(-0.2, FALSE)
-	owner.adjustBruteLoss(-0.2, FALSE)
-	owner.adjustFireLoss(-0.2, FALSE)
+	owner.adjustToxLoss(-0.4, FALSE) //Provides *very* slow heal to all basic damage. Buffed due to being basically useless against other versions
+	owner.adjustOxyLoss(-0.4, FALSE)
+	owner.adjustBruteLoss(-0.4, FALSE)
+	owner.adjustFireLoss(-0.4, FALSE)
 
-/obj/item/organ/cyberimp/chest/healer/emp_act(severity)
+/obj/item/organ/cyberimp/chest/revitilzer/emp_act(severity)
 	. = ..()
 	if(!owner || . & EMP_PROTECT_SELF)
 		return
