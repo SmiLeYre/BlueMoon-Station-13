@@ -176,7 +176,9 @@
 		"Zoomba" = image(icon = 'modular_splurt/icons/mob/robots_cargo.dmi', icon_state = "zoomba_cargo"),
 		"Borgi" = image(icon = 'modular_splurt/icons/mob/widerobots_cargo.dmi', icon_state = "borgi-cargo"),
 		"Drake" = image(icon = 'modular_splurt/icons/mob/widerobots_cargo.dmi', icon_state = "drakecargo"),
-		"Meka" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "mekacargo") //Krashly Request
+		"Meka" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "mekacargo"), //Krashly Request
+		"Assaultron" = image(icon = 'modular_splurt/icons/mob/robots_cargo.dmi', icon_state = "assaultron_cargo")
+
 		)
 		var/list/L = list("Cargohound" = "cargohound", "Cargohound Dark" = "cargohounddark", "Vale" = "valecargo")
 		for(var/a in L)
@@ -223,6 +225,10 @@
 			cyborg_base_icon = "mekacargo"
 			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
 			canrest = TRUE
+		if("Assaultron")
+			cyborg_base_icon = "assaultron_cargo"
+			cyborg_icon_override = 'modular_splurt/icons/mob/robots_cargo.dmi'
+			hat_offset = 3
 		else
 			return FALSE
 	return ..()

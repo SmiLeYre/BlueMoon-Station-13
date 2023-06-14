@@ -44,3 +44,4 @@
 #define TRAIT_RAD_FIEND     	"RadFiend"
 #define TRAIT_BODY_MORPHER		"body_morpher"
 #define TRAIT_HARD_SOLES		"hard_soles"
+#define TRAIT_HALLOWED			"hallowed"

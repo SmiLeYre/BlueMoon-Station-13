@@ -168,12 +168,17 @@
 	LAZYADD(alt_titles, extra_titles)
 	. = ..()
 
-/datum/job/janitor/New()
+/datum/job/janitor/New() // "Custodian" is formally an ERT Janitor's job title. It causes conflict with ID and manifest. Yell at upstream maintainer(s).
+	var/list/rem_titles = list(
+		"Custodian"
+	)
 	var/list/extra_titles = list(
 		"Slutty Maid",
 		"Cum Cleaner",
-		"Liquidator"
+		"Liquidator",
+		"Custodial Technician"
 	)
+	LAZYREMOVE(alt_titles, rem_titles)
 	LAZYADD(alt_titles, extra_titles)
 	. = ..()
 

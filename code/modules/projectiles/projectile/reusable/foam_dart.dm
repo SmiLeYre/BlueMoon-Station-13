@@ -39,7 +39,7 @@
 	name = "riot foam dart"
 	icon_state = "foamdart_riot_proj"
 	ammo_type = /obj/item/ammo_casing/caseless/foam_dart/riot
-	stamina = 15
+	stamina = 25
 
 /obj/item/projectile/bullet/reusable/foam_dart/mag
 	name = "magfoam dart"
