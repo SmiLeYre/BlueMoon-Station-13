@@ -106,12 +106,17 @@
 		var/datum/eldritch_knowledge/EK = researched_knowledge[X]
 		EK.on_death(owner.current)
 
-/datum/antagonist/heretic/proc/forge_primary_objectives()
-	var/datum/objective/protect/protection_objective = new
-	protection_objective.owner = owner
-	protection_objective.update_explanation_text()
-	objectives += protection_objective
+// needs to be refactored to base /datum/antagonist sometime..
+/datum/antagonist/heretic/proc/add_objective(datum/objective/O)
+	objectives += O
 
+/datum/antagonist/heretic/proc/forge_single_objective(datum/antagonist/heretic/heretic)
+	var/datum/objective/protect/protection_objective = new
+	protection_objective.owner = heretic.owner
+	heretic.add_objective(protection_objective)
+	protection_objective.find_target()
+
+/datum/antagonist/heretic/proc/forge_primary_objectives()
 	var/datum/objective/sacrifice_ecult/SE = new
 	SE.owner = owner
 	SE.update_explanation_text()

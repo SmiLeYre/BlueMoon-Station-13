@@ -62,6 +62,11 @@
 	icon_state = "gangtool-yellow"
 	region_access = 0
 
+/obj/item/door_remote/away
+	name = "Away Door Remote"
+	icon_state = "gangtool-yellow"
+	region_access = 7
+
 /obj/item/door_remote/captain
 	name = "command door remote"
 	icon_state = "gangtool-yellow"

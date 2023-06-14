@@ -43,7 +43,7 @@
 		to_chat(user, "<span class='notice'>You put [W] into [src].</span>")
 		update_icon()
 	else if(istype(W, /obj/item/pen))
-		if(!user.is_literate())
+		if(!user.can_write(W))
 			to_chat(user, "<span class='notice'>You scribble illegibly on the cover of [src]!</span>")
 			return
 

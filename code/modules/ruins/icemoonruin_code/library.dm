@@ -13,15 +13,15 @@
 
 /obj/item/paper/crumpled/bloody/fluff/stations/lavaland/library/warning
 	name = "ancient note"
-	info = "<b>Here lies the vast collection of He Who Knows Ten Thousand Things. May all who pursue this knowledge for power be cursed a thousand times.</b>"
+	default_raw_text = "<b>Here lies the vast collection of He Who Knows Ten Thousand Things. May all who pursue this knowledge for power be cursed a thousand times.</b>"
 
 /obj/item/paper/crumpled/fluff/stations/lavaland/library/diary
 	name = "diary entry 13"
-	info = "It has been a week since the library was buried. I am so hungry that I can barely muster the energy to think, let alone write. The owl is gone."
+	default_raw_text = "It has been a week since the library was buried. I am so hungry that I can barely muster the energy to think, let alone write. The owl is gone."
 
 /obj/item/paper/crumpled/fluff/stations/lavaland/library/diary2
 	name = "diary entry 18"
-	info = "I've lost track of time. I lack the strength to even pick up books off the shelves. To think, after all this time spent searching for the library, I will die before I can so much as graze the depth of its knowledge."
+	default_raw_text = "I've lost track of time. I lack the strength to even pick up books off the shelves. To think, after all this time spent searching for the library, I will die before I can so much as graze the depth of its knowledge."
 
 /obj/item/feather
 	name = "feather"

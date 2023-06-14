@@ -37,7 +37,7 @@
 
 /obj/item/dildo/attack_self(mob/living/carbon/human/user as mob)
 	hole = hole == CUM_TARGET_VAGINA ? CUM_TARGET_ANUS : CUM_TARGET_VAGINA
-	to_chat(user, "<span class='notice'>Я целюсь в...  \the [hole].</span>")
+	to_chat(user, "<span class='notice'>Я целюсь в... [hole].</span>")
 
 //begin redds code
 /obj/item/dildo/cyborg

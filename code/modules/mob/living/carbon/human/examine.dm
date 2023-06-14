@@ -421,18 +421,11 @@
 				msg += "[t_on] жадно глотает воздух.\n"
 			if (getToxLoss() >= 10)
 				msg += "[t_on] выглядит болезненно.\n"
-			var/datum/component/mood/mood = src.GetComponent(/datum/component/mood)
-			if(mood.sanity <= SANITY_DISTURBED)
-				msg += "[t_on] выглядит расстроено.\n"
 			if (HAS_TRAIT(src, TRAIT_BLIND))
 				msg += "[t_on] смотрит в пустоту.\n"
 			if (HAS_TRAIT(src, TRAIT_DEAF))
 				msg += "[t_on] не реагирует на шум.\n"
-			if(HAS_TRAIT(user, TRAIT_EMPATH))
-				if(mood.sanity <= SANITY_DISTURBED)
-					SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "empath", /datum/mood_event/sad_empath, src)
-				if(mood.sanity >= SANITY_GREAT)
-					SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "empath", /datum/mood_event/happy_empath, src)
+			var/datum/component/mood/mood = src.GetComponent(/datum/component/mood)
 			if(mood.sanity <= SANITY_DISTURBED)
 				msg += "[t_on] выглядит расстроено.\n"
 				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "empath", /datum/mood_event/sad_empath, src)

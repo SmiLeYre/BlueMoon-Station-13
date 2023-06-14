@@ -131,6 +131,7 @@ Will print: "/mob/living/carbon/human/death" (you can optionally embed it in a s
 #define PRINTER_FONT "Times New Roman"
 #define SIGNFONT "Times New Roman"
 #define CHARCOAL_FONT "Candara"
+#define SIGNATURE_FONT "Segoe Script"
 
 #define RESIZE_DEFAULT_SIZE 1
 
@@ -503,7 +504,7 @@ GLOBAL_LIST_INIT(pda_reskins, list(
 #define EGG_LAYING_MESSAGES list("lays an egg.","squats down and croons.","begins making a huge racket.","begins clucking raucously.")
 
 // list of all null rod weapons
-#define HOLY_WEAPONS /obj/item/nullrod, /obj/item/dualsaber/hypereutactic/chaplain, /obj/item/gun/energy/laser/redtag/hitscan/chaplain, /obj/item/multitool/chaplain, /obj/item/clothing/gloves/fingerless/pugilist/chaplain, /obj/item/melee/baseball_bat/chaplain
+#define HOLY_WEAPONS /obj/item/nullrod, /obj/item/dualsaber/hypereutactic/chaplain, /obj/item/gun/energy/laser/redtag/hitscan/chaplain, /obj/item/multitool/chaplain, /obj/item/clothing/gloves/fingerless/pugilist/chaplain, /obj/item/melee/baseball_bat/chaplain, /obj/item/staff/bostaff/chaplain
 
 // Used by PDA and cartridge code to reduce repetitiveness of spritesheets
 #define PDAIMG(what) {"<span class="pda16x16 [#what]"></span>"}

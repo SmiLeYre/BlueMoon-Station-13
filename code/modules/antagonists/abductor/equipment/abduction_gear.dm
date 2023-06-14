@@ -400,7 +400,7 @@
 /obj/item/paper/guides/antag/abductor
 	name = "Dissection Guide"
 	icon_state = "alienpaper_words"
-	info = {"<b>Dissection for Dummies</b><br>
+	default_raw_text = {"<b>Dissection for Dummies</b><br>
 		<br>
 		1.Acquire fresh specimen.<br>
 		2.Put the specimen on operating table.<br>

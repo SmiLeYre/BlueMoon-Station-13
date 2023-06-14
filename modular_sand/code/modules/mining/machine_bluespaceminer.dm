@@ -13,14 +13,15 @@
 	layer = BELOW_OBJ_LAYER
 	init_process = TRUE
 	var/list/ore_rates = list(
-		/datum/material/iron = 0.5,
-		/datum/material/glass = 0.5,
-		/datum/material/plasma = 0.25,
-		/datum/material/silver = 0.25,
-		/datum/material/gold = 0.01,
+		/datum/material/iron = 0.2,
+		/datum/material/glass = 0.2,
+		/datum/material/silver = 0.1,
+		/datum/material/gold = 0.1,
 		/datum/material/titanium = 0.1,
 		/datum/material/uranium = 0.1,
-		/datum/material/diamond = 0.05
+		/datum/material/plastic = 0.1,
+		/datum/material/diamond = 0.05,
+		/datum/material/plasma = 0.05
 		)
 	var/datum/component/remote_materials/materials
 	var/multiplier = 0 //Multiplier by tier, has been made fair and everything
@@ -56,6 +57,7 @@
 	multiplier /= stock_amt
 	if(multiplier >= BLUESPACE_MINER_CRYSTAL_TIER)
 		ore_rates[/datum/material/bluespace] = 0.05
+		ore_rates[/datum/material/bananium] = 0.05
 	else
 		ore_rates -= /datum/material/bluespace
 

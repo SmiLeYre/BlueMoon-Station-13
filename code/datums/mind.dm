@@ -612,6 +612,7 @@ GLOBAL_LIST(objective_choices)
 		/datum/objective/steal,
 		/datum/objective/download,
 		/datum/objective/nuclear,
+		/datum/objective/nuclear/revert,
 		/datum/objective/absorb,
 		/datum/objective/rescue_prisoner,
 		/datum/objective/custom,

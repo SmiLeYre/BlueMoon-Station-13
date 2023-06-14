@@ -541,7 +541,7 @@
 /obj/machinery/computer/shuttle/pod/Initialize(mapload)
 	. = ..()
 	RegisterSignal(SSsecurity_level, COMSIG_SECURITY_LEVEL_CHANGED, .proc/check_lock)
-	
+
 /obj/machinery/computer/shuttle/pod/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/update_icon_blocker)
@@ -571,9 +571,9 @@
 
 	if(obj_flags & EMAGGED)
 		return
-		
+
 	admin_controlled = !(new_level < SEC_LEVEL_RED)
-	
+
 /obj/docking_port/stationary/random
 	name = "escape pod"
 	id = "pod"
@@ -601,8 +601,6 @@
 			break
 
 //Pod suits/pickaxes
-
-
 /obj/item/clothing/head/helmet/space/orange
 	name = "emergency space helmet"
 	icon_state = "syndicate-helm-orange"

@@ -472,6 +472,11 @@
 /obj/item/card/id/syndicate/afterattack(obj/item/O, mob/user, proximity)
 	if(!proximity)
 		return
+//BLUEMOON ADDITION START
+	if(stationed)
+		to_chat(usr, "<span class='warning'>The card seems to have its microscanners removed, as nothing happens. You can't copy access with it.</span>")
+		return
+//BLUEMOON ADDITION END
 	if(istype(O, /obj/item/card/id))
 		var/obj/item/card/id/I = O
 		src.access |= I.access

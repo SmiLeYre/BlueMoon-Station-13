@@ -7508,7 +7508,7 @@
 /obj/structure/table,
 /obj/item/lazarus_injector,
 /obj/item/paper{
-	info = "For my lasting legacy, I leave you this Lazarus Injector. The Museum boy! The Museum! It must be filled! Carry on my legacy and restore the glory of Nanotrasen's Museum Curators!";
+	default_raw_text = "For my lasting legacy, I leave you this Lazarus Injector. The Museum boy! The Museum! It must be filled! Carry on my legacy and restore the glory of Nanotrasen's Museum Curators!";
 	name = "Last Wishes"
 	},
 /obj/machinery/light{
@@ -35444,7 +35444,7 @@
 /area/engineering/atmos)
 "mkM" = (
 /obj/item/paper/natural{
-	info = "KIRYU CHAN! KIRYU CHAN! KIRYU CHAN! KIRYU CHAN! KIRYU CHAN! KIRYU CHAN! KIRYU CHAN! KIRYU CHAN! KIRYU CHAN!";
+	default_raw_text = "KIRYU CHAN! KIRYU CHAN! KIRYU CHAN! KIRYU CHAN! KIRYU CHAN! KIRYU CHAN! KIRYU CHAN! KIRYU CHAN! KIRYU CHAN!";
 	name = "KIRYU CHAN!!!"
 	},
 /turf/open/floor/plating,
@@ -39069,7 +39069,7 @@
 /obj/item/reagent_containers/food/snacks/carpmeat,
 /obj/item/reagent_containers/food/snacks/carpmeat,
 /obj/item/paper/fluff/jobs{
-	info = "Hello, and thank you for signing up for the NanoTrasen Wildlife Relocation and Zoology Project.<BR>\n Please ensure your current wildlife subjects are being kept at their optimal cold temperatures, so that they feel as at-home as possible.<BR>\n To ensure proper feeding practices, please insert the food contained within this locker in the wildlife feeder bin, and allow suitable time for its consumption before further feedings.<BR>\n Do not place yourself inside of the enclosure, as it will disturb the wildlife within. <BR>/n";
+	default_raw_text = "Hello, and thank you for signing up for the NanoTrasen Wildlife Relocation and Zoology Project.<BR>\n Please ensure your current wildlife subjects are being kept at their optimal cold temperatures, so that they feel as at-home as possible.<BR>\n To ensure proper feeding practices, please insert the food contained within this locker in the wildlife feeder bin, and allow suitable time for its consumption before further feedings.<BR>\n Do not place yourself inside of the enclosure, as it will disturb the wildlife within. <BR>/n";
 	name = "Wildlife Relocation Project Guidelines"
 	},
 /obj/structure/cable{
@@ -44749,7 +44749,7 @@
 "pxv" = (
 /obj/structure/table/wood,
 /obj/item/paper/fluff{
-	info = "<b>Renovation Notice</b><br><br>The bar layout for the station is very old. We've decided to give it a facelift after our partnership with IKEA Intergalactic?.</li><li>We added some sweet retro arcade machines and much more seating area. We removed the stage since it hasn't ever been used.</li><li>You can run this place like a restaurant now that you have tables. Go whip up a menu with the Chef. You have a condiments table and your Requests Console has been moved so a noticeboard can be placed there. Take tickets from customers and pin them on the noticeboard for the Chef.</li><li><b>We hope you like the new bar!</ b>";
+	default_raw_text = "<b>Renovation Notice</b><br><br>The bar layout for the station is very old. We've decided to give it a facelift after our partnership with IKEA Intergalactic?.</li><li>We added some sweet retro arcade machines and much more seating area. We removed the stage since it hasn't ever been used.</li><li>You can run this place like a restaurant now that you have tables. Go whip up a menu with the Chef. You have a condiments table and your Requests Console has been moved so a noticeboard can be placed there. Take tickets from customers and pin them on the noticeboard for the Chef.</li><li><b>We hope you like the new bar!</ b>";
 	name = "Renovation Notice - Bar";
 	pixel_x = -5;
 	pixel_y = 3
@@ -48285,7 +48285,7 @@
 	pixel_y = 5
 	},
 /obj/item/paper/natural{
-	info = "As her shirt was lifted, and those two, twin melons were relased...";
+	default_raw_text = "As her shirt was lifted, and those two, twin melons were relased...";
 	name = "Suspicious Paper"
 	},
 /turf/open/floor/carpet/black,

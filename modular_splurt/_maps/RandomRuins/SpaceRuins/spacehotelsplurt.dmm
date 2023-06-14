@@ -4519,6 +4519,7 @@
 	dir = 8;
 	network = list("hotel")
 	},
+/obj/machinery/vending/autodrobe/all_access,
 /turf/open/floor/carpet/black,
 /area/ruin/space/has_grav/hotel/dock)
 "wp" = (
@@ -5169,6 +5170,12 @@
 	},
 /turf/open/floor/carpet/black,
 /area/ruin/space/has_grav/hotel/dock)
+"zu" = (
+/obj/machinery/vending/cigarette{
+	onstation = 0
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/hotel)
 "zv" = (
 /obj/machinery/camera{
 	c_tag = "Club East";
@@ -5439,11 +5446,11 @@
 /turf/open/floor/carpet/black,
 /area/ruin/space/has_grav/hotel/bar)
 "AT" = (
-/obj/machinery/vending/snack{
+/obj/machinery/vending/clothing{
 	onstation = 0
 	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/hotel)
+/turf/open/floor/carpet/black,
+/area/ruin/space/has_grav/hotel/dock)
 "AW" = (
 /obj/machinery/airalarm/directional/west{
 	req_access = null;
@@ -5626,7 +5633,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/hotel/bar)
 "BQ" = (
-/obj/machinery/vending/cigarette{
+/obj/machinery/vending/snack{
 	onstation = 0
 	},
 /turf/open/floor/wood,
@@ -7289,6 +7296,11 @@
 /obj/machinery/chem_master/condimaster,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/hotel/bar)
+"IP" = (
+/obj/machinery/light,
+/obj/effect/mob_spawn/human/hotel_staff/splurt/guest,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/hotel/dock)
 "IR" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
@@ -9009,6 +9021,13 @@
 	},
 /turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/hotel/workroom)
+"Rm" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/mob_spawn/human/hotel_staff/splurt/guest,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/hotel/dock)
 "Rn" = (
 /obj/structure/table/glass,
 /obj/item/paper/pamphlet/ruin/spacehotel,
@@ -14551,12 +14570,12 @@ oB
 gW
 Fw
 qo
-Pv
+Rm
 gW
 gW
 gW
 gW
-di
+IP
 qo
 CV
 gW
@@ -14904,7 +14923,7 @@ nj
 nj
 Rw
 wn
-nj
+AT
 Rw
 nj
 nj
@@ -15033,8 +15052,8 @@ af
 XR
 BQ
 af
-oz
-AT
+zu
+Ql
 af
 Ek
 Ek

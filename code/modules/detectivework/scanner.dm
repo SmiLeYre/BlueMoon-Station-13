@@ -48,9 +48,9 @@
 	var frNum = ++forensicPrintCount
 
 	P.name = text("FR-[] 'Forensic Record'", frNum)
-	P.info = text("<center><B>Forensic Record - (FR-[])</B></center><HR><BR>", frNum)
-	P.info += jointext(log, "<BR>")
-	P.info += "<HR><B>Notes:</B><BR>"
+	P.default_raw_text = text("<center><B>Forensic Record - (FR-[])</B></center><HR><BR>", frNum)
+	P.default_raw_text += jointext(log, "<BR>")
+	P.default_raw_text += "<HR><B>Notes:</B><BR>"
 	P.update_icon()
 
 	if(ismob(loc))

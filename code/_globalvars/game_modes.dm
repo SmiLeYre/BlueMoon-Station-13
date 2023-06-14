@@ -1,4 +1,4 @@
-GLOBAL_VAR_INIT(master_mode, "dynamic") //"extended"
+GLOBAL_VAR_INIT(master_mode, "dynamic") //"Extended"
 GLOBAL_VAR_INIT(secret_force_mode, "dynamic") // if this is anything but "secret", the secret rotation will forceably choose this mode
 GLOBAL_VAR(common_report) //Contains common part of roundend report
 GLOBAL_VAR(survivor_report) //Contains shared survivor report for roundend report (part of personal report)
@@ -13,4 +13,4 @@ GLOBAL_DATUM(cult_narsie, /obj/singularity/narsie/large/cult)
 
 
 ///We want reality_smash_tracker to exist only once and be accesable from anywhere.
-GLOBAL_DATUM_INIT(reality_smash_track, /datum/reality_smash_tracker, new) 
+GLOBAL_DATUM_INIT(reality_smash_track, /datum/reality_smash_tracker, new)

@@ -2,7 +2,7 @@
 
 /obj/item/paper/fluff/ruins/djstation
 	name = "paper - 'DJ Listening Outpost'"
-	info = {"
+	default_raw_text = {"
 **Welcome new owner!**
 You have purchased the latest in listening equipment. The telecommunication setup we created is the best in listening to common and private radio frequencies. Here is a step by step guide to start listening in on those saucy radio channels:
 1. Equip yourself with a multitool

@@ -277,7 +277,7 @@
 	return 0
 
 /datum/game_mode/proc/send_intercept()
-	if(flipseclevel && !(config_tag == "extended"))//CIT CHANGE - lets the security level be flipped roundstart
+	if(flipseclevel && !(config_tag == "Extended"))//CIT CHANGE - lets the security level be flipped roundstart
 		priority_announce("Благодаря неустанным усилиям наших специальных оперативных подразделений в настоящее время нет никаких действительных угроз для [station_name()]. Все проекты строительства станции утверждены. Безопасной смены!", "Отчёт о безопасности", SSstation.announcer.get_rand_report_sound())
 		return
 	var/intercepttext = "<b><i>Отчёт от Центрального Командования</i></b><hr>"
@@ -558,7 +558,7 @@
 		rev.remove_revolutionary(TRUE)
 
 /datum/game_mode/proc/generate_station_goals()
-	if(flipseclevel && !(config_tag == "extended")) //CIT CHANGE - allows the sec level to be flipped roundstart
+	if(flipseclevel && !(config_tag == "Extended")) //CIT CHANGE - allows the sec level to be flipped roundstart
 		for(var/T in subtypesof(/datum/station_goal))
 			var/datum/station_goal/G = new T
 			station_goals += G

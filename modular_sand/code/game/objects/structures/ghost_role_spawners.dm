@@ -19,7 +19,7 @@
 	density = FALSE
 	death = FALSE
 	assignedrole = "Cafe Robot"
-	short_desc = "You are a Cafe Robot!"
+	short_desc = "Вы Киборг из Призрачного Кафе!"
 	flavour_text = "Who could have thought? This awesome local cafe accepts cyborgs too!"
 	skip_reentry_check = TRUE
 	banType = ROLE_GHOSTCAFE

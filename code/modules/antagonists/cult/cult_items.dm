@@ -370,7 +370,7 @@
 	desc = "A heavily-armored helmet worn by warriors of the Nar'Sien cult. It can withstand hard vacuum."
 	icon_state = "cult_helmet"
 	item_state = "cult_helmet"
-	armor = list(MELEE = 60, BULLET = 50, LASER = 30,ENERGY = 15, BOMB = 30, BIO = 30, RAD = 30, FIRE = 40, ACID = 75)
+	armor = list(MELEE = 60, BULLET = 50, LASER = 30,ENERGY = 15, BOMB = 30, BIO = 30, RAD = 30, FIRE = 100, ACID = 75)
 	brightness_on = 0
 	actions_types = list()
 
@@ -380,13 +380,13 @@
 	AddElement(/datum/element/spellcasting, SPELL_CULT_HELMET, ITEM_SLOT_HEAD)
 
 /obj/item/clothing/suit/space/hardsuit/cult
-	name = "\improper Nar'Sien hardened armor"
+	name = "\improper Nar'Sien Hardened Armor"
 	icon_state = "cult_armor"
 	item_state = "cult_armor"
 	desc = "A heavily-armored exosuit worn by warriors of the Nar'Sien cult. It can withstand hard vacuum."
 	w_class = WEIGHT_CLASS_BULKY
 	allowed = list(/obj/item/tome, /obj/item/melee/cultblade, /obj/item/tank/internals/)
-	armor = list(MELEE = 70, BULLET = 50, LASER = 30,ENERGY = 15, BOMB = 30, BIO = 30, RAD = 30, FIRE = 40, ACID = 75)
+	armor = list(MELEE = 70, BULLET = 50, LASER = 30,ENERGY = 15, BOMB = 30, BIO = 30, RAD = 30, FIRE = 100, ACID = 75)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/cult
 
 /obj/item/clothing/suit/space/hardsuit/cult/ComponentInitialize()
@@ -409,24 +409,27 @@
 		playsound(get_turf(src), 'sound/items/unsheath.ogg', 25, 1)
 
 /obj/item/clothing/suit/hooded/cultrobes/cult_shield
-	name = "empowered cultist armor"
-	desc = "Empowered garb which creates a powerful shield around the user."
+	name = "\improper Nar'Sien Empowered Armor"
+	desc = "A heavily-armored Empowered Exosuit worn by warriors of the Nar'Sien cult. It can withstand hard vacuum and creates a powerful shield around the user."
 	icon_state = "cult_armor"
 	item_state = "cult_armor"
 	w_class = WEIGHT_CLASS_BULKY
-	armor = list(MELEE = 50, BULLET = 40, LASER = 50,ENERGY = 30, BOMB = 50, BIO = 30, RAD = 30, FIRE = 50, ACID = 60)
+	armor = list(MELEE = 50, BULLET = 40, LASER = 50, ENERGY = 60, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, MAGIC = 75)
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	allowed = list(/obj/item/tome, /obj/item/melee/cultblade)
 	var/current_charges = 3
 	hoodtype = /obj/item/clothing/head/hooded/cult_hoodie
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | ALLOWINTERNALS
 
 /obj/item/clothing/head/hooded/cult_hoodie
-	name = "empowered cultist armor"
-	desc = "Empowered garb which creates a powerful shield around the user."
+	name = "\improper Nar'Sien Empowered Helmet"
+	desc = "A heavily-armored Empowered Helmet worn by warriors of the Nar'Sien cult. It can withstand hard vacuum."
 	icon_state = "cult_hoodalt"
-	armor = list(MELEE = 50, BULLET = 40, LASER = 50,ENERGY = 30, BOMB = 50, BIO = 30, RAD = 30, FIRE = 50, ACID = 50)
+	armor = list(MELEE = 50, BULLET = 40, LASER = 50, ENERGY = 60, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, MAGIC = 75)
 	body_parts_covered = HEAD
+	flash_protect = 1
 	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | ALLOWINTERNALS
 
 /obj/item/clothing/suit/hooded/cultrobes/cult_shield/equipped(mob/living/user, slot)
 	..()
@@ -467,7 +470,7 @@
 		. += mutable_appearance('icons/effects/cult_effects.dmi', "shield-cult", MOB_LAYER + 0.01)
 
 /obj/item/clothing/suit/hooded/cultrobes/berserker
-	name = "flagellant's robes"
+	name = "Flagellant's Robes"
 	desc = "Blood-soaked robes infused with dark magic; allows the user to move at inhuman speeds, but at the cost of increased damage."
 	icon_state = "cultrobes"
 	item_state = "cultrobes"
@@ -479,7 +482,7 @@
 	hoodtype = /obj/item/clothing/head/hooded/berserkerhood
 
 /obj/item/clothing/head/hooded/berserkerhood
-	name = "flagellant's robes"
+	name = "Flagellant's Robes"
 	desc = "Blood-soaked garb infused with dark magic; allows the user to move at inhuman speeds, but at the cost of increased damage."
 	icon_state = "culthood"
 	body_parts_covered = HEAD
@@ -527,7 +530,7 @@
 	list_reagents = list(/datum/reagent/fuel/unholywater = 50)
 
 /obj/item/shuttle_curse
-	name = "cursed orb"
+	name = "Проклятая Сфера"
 	desc = "You peer within this smokey orb and glimpse terrible fates befalling the escape shuttle."
 	icon = 'icons/obj/cult.dmi'
 	icon_state ="shuttlecurse"
@@ -537,10 +540,10 @@
 	if(!iscultist(user, TRUE))
 		user.dropItemToGround(src, TRUE)
 		user.DefaultCombatKnockdown(100)
-		to_chat(user, "<span class='warning'>A powerful force shoves you away from [src]!</span>")
+		to_chat(user, "<span class='warning'>Мощная сила отталкивает вас от [src]!</span>")
 		return
 	if(curselimit > 1)
-		to_chat(user, "<span class='notice'>We have exhausted our ability to curse the shuttle.</span>")
+		to_chat(user, "<span class='notice'>Мы исчерпали свою способность проклинать Космическую Станцию.</span>")
 		return
 	if(locate(/obj/singularity/narsie) in GLOB.poi_list)
 		to_chat(user, "<span class='warning'>Nar'Sie is already on this plane, there is no delaying the end of all things.</span>")
@@ -564,7 +567,7 @@
 		SSshuttle.emergency.setTimer(timer)
 		if(surplus > 0)
 			SSshuttle.block_recall(surplus)
-		to_chat(user, "<span class='danger'>You shatter the orb! A dark essence spirals into the air, then disappears.</span>")
+		to_chat(user, "<span class='danger'>Вы разбиваете сферу! Темная сущность поднимается в воздух, затем исчезает.</span>")
 		playsound(user.loc, 'sound/effects/glassbr1.ogg', 50, 1)
 		qdel(src)
 		sleep(20)
@@ -586,6 +589,35 @@
 		message += " Шаттл будет задержан на три минуты."
 		priority_announce("[message]", "Центральное Командование, Отдел Работы с Реальностью", 'sound/misc/notice1.ogg')
 		curselimit++
+
+/obj/item/station_curse
+	name = "Проклятая Сфера"
+	desc = "Эта сфера хранит в себе первородное зло и, наверное, это недопустимо ронять или даже ломать..."
+	icon = 'icons/obj/cult.dmi'
+	icon_state ="shuttlecurse"
+	var/static/curselimit = 0
+
+/obj/item/station_curse/attack_self(mob/living/user)
+	if(!iscultist(user, TRUE))
+		user.dropItemToGround(src, TRUE)
+		user.DefaultCombatKnockdown(100)
+		to_chat(user, "<span class='warning'>Мощная сила отталкивает вас от [src]!</span>")
+		return
+	if(curselimit > 1)
+		to_chat(user, "<span class='notice'>Мы исчерпали свою способность проклинать Космическую Станцию.</span>")
+		return
+	if(locate(/obj/singularity/narsie) in GLOB.poi_list)
+		to_chat(user, "<span class='warning'>Nar'Sie is already on this plane, there is no delaying the end of all things.</span>")
+		return
+
+	to_chat(user, "<span class='danger'>Вы разбиваете сферу! Темная сущность поднимается в воздух, затем исчезает.</span>")
+	playsound(user.loc, 'sound/effects/glassbr1.ogg', 50, 1)
+	qdel(src)
+	sleep(pick(50, 100, 150, 200, 250))
+	priority_announce("Что-то очень массивное и пугающее приближается к [station_name()]! Пусть Господь хранит Ваши души!!", "Центральное Командование, Отдел Работы с Реальностью", 'sound/announcer/classic/_admin_horror_music.ogg')
+	var/datum/round_event_control/portal_storm_narsie/portal_storm_narsie = new/datum/round_event_control/portal_storm_narsie
+	portal_storm_narsie.runEvent()
+	curselimit++
 
 /obj/item/cult_shift
 	name = "veil shifter"
@@ -850,11 +882,11 @@
 		if(ishuman(target))
 			var/mob/living/carbon/human/H = target
 			if(H.stat != DEAD)
-				H.reagents.add_reagent(/datum/reagent/fuel/unholywater, 4)
+				H.reagents.add_reagent(/datum/reagent/fuel/unholywater, 10)
 		if(isshade(target) || isconstruct(target))
 			var/mob/living/simple_animal/M = target
 			if(M.health+5 < M.maxHealth)
-				M.adjustHealth(-5)
+				M.adjustHealth(-25)
 		new /obj/effect/temp_visual/cult/sparks(T)
 		qdel(src)
 	else

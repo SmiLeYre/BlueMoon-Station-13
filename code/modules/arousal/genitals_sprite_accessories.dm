@@ -14,44 +14,58 @@
 	color_src = "cock_color"
 	alt_aroused = TRUE
 	feat_taur = "cock_taur"
+	var/ru_name = "человеческий"
 
 /datum/sprite_accessory/penis/human
 	icon_state = "human"
 	name = "Human"
+	ru_name = "человеческий"
 
 /datum/sprite_accessory/penis/knotted
 	icon_state = "knotted"
 	name = "Knotted"
 	taur_icon = 'icons/obj/genitals/taur_penis_onmob.dmi'
 	taur_dimension_x = 64
+	ru_name = "узловатый"
 
 /datum/sprite_accessory/penis/flared
 	icon_state = "flared"
 	name = "Flared"
 	taur_icon = 'icons/obj/genitals/taur_penis_onmob.dmi'
 	taur_dimension_x = 64
+	ru_name = "конический"
 
 /datum/sprite_accessory/penis/barbknot
 	icon_state = "barbknot"
 	name = "Barbed, Knotted"
+	ru_name = "узловатый и немного колючий"
 
 /datum/sprite_accessory/penis/tapered
 	icon_state = "tapered"
 	name = "Tapered"
 	taur_icon = 'icons/obj/genitals/taur_penis_onmob.dmi'
 	taur_dimension_x = 64
+	ru_name = "утолщённый"
 
 /datum/sprite_accessory/penis/tentacle
 	icon_state = "tentacle"
 	name = "Tentacled"
+	ru_name = "тентяклевидный"
 
 /datum/sprite_accessory/penis/hemi
 	icon_state = "hemi"
 	name = "Hemi"
+	ru_name = "двойной"
 
 /datum/sprite_accessory/penis/hemiknot
 	icon_state = "hemiknot"
 	name = "Knotted Hemi"
+	ru_name = "двойной узловатый"
+
+/datum/sprite_accessory/penis/thick
+	icon_state = "thick"
+	name = "Thick"
+	ru_name = "обрезанный"
 
 //Testicles
 /datum/sprite_accessory/testicles
@@ -67,6 +81,10 @@
 /datum/sprite_accessory/testicles/hidden
 	icon_state = "hidden"
 	name = "Hidden" //not sure why these were missing, but I'm pretty certain people might want these.
+
+/datum/sprite_accessory/testicles/sheath
+	icon_state = "sheath"
+	name = "оболонковые"
 
 //Vaginas
 /datum/sprite_accessory/vagina
@@ -106,6 +124,10 @@
 	icon_state = "gaping"
 	name = "Gaping"
 
+/datum/sprite_accessory/vagina/cloaca
+	name = "cloaca"
+	icon_state = "cloaca"
+
 //BREASTS BE HERE
 /datum/sprite_accessory/breasts
 	icon = 'icons/obj/genitals/breasts_onmob.dmi'
@@ -124,14 +146,42 @@
 	icon_state = "sextuple"
 	name = "Sextuple"
 
-//BUTT BE HERE
+//BUTT
 /datum/sprite_accessory/butt
 	icon = 'icons/obj/genitals/butt_onmob.dmi'
 	icon_state = "butt"
 	name = "butt"
 	color_src = "butt_color"
 
-//there literally shouldn't be any other ass types besides one because that'd be weird, this is just here to keep things consistent for the genital system.
+/datum/sprite_accessory/butt
+	icon = 'modular_splurt/icons/obj/genitals/butt_onmob.dmi'
+
 /datum/sprite_accessory/butt/pair
 	icon_state = "pair"
 	name = "Pair"
+
+//Bellies
+/datum/sprite_accessory/belly
+	icon = 'modular_splurt/icons/obj/genitals/belly_onmob.dmi'
+	icon_state = "belly"
+	name = "belly"
+	color_src = "belly_color"
+
+//there literally shouldn't be any other ass types besides one because that'd be weird, this is just here to keep things consistent for the genital system.
+/datum/sprite_accessory/belly/pair
+	icon_state = "pair"
+	name = "Pair"
+
+/datum/sprite_accessory/anus
+	icon = 'modular_splurt/icons/obj/genitals/anus_onmob.dmi'
+	icon_state = "anus"
+	name = "anus"
+	color_src = "anus_color"
+
+/datum/sprite_accessory/anus/donut
+	icon_state = DEF_ANUS_SHAPE
+	name = DEF_ANUS_SHAPE
+
+/datum/sprite_accessory/anus/squished
+	icon_state = "squished"
+	name = "squished"

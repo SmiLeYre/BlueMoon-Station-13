@@ -207,7 +207,7 @@
 								/* // i don't know how this would work
 								if(CUM_TARGET_URETHRA)
 									user_message = (user == M) ? "fucking urethra" : "force someone to fuck urethra"
-									target_message = "urethra fucked by киску"
+									target_message = "urethra fucked by pussy"
 									target = CUM_TARGET_VAGINA
 									user_lust_amt = NORMAL_LUST
 									target_lust_amt = LOW_LUST
@@ -241,14 +241,6 @@
 									target = CUM_TARGET_ANUS
 									user_lust_amt = NORMAL_LUST
 									target_lust_amt = LOW_LUST
-								/* // i don't know how this would work
-								if(CUM_TARGET_URETHRA)
-									user_message = (user == M) ? "fucking urethra" : "force someone to fuck urethra"
-									target_message = "urethra fucked by ass"
-									target = CUM_TARGET_ANUS
-									user_lust_amt = NORMAL_LUST
-									target_lust_amt = LOW_LUST
-								*/
 						else
 							to_chat(user, "<span class='warning'>Анус закрыт или отсутствует!</span>")
 					if(CUM_TARGET_URETHRA)
@@ -260,32 +252,6 @@
 									target = CUM_TARGET_URETHRA
 									user_lust_amt = NORMAL_LUST
 									target_lust_amt = NORMAL_LUST
-								/* // I don't know how these would work
-								if(CUM_TARGET_VAGINA)
-									user_message = (user == M) ? "трахает твою urethra with киску" : "fuck someone elses urethra with киску"
-									target_message = "киску is fucked by urethra"
-									target = CUM_TARGET_URETHRA
-									user_lust_amt = LOW_LUST
-									target_lust_amt = LOW_LUST
-								if(CUM_TARGET_ANUS)
-									user_message = (user == M) ? "трахает твою urethra with ass" : "fuck someone elses urethra with ass"
-									target_message = "ass is fucked by urethra"
-									target = CUM_TARGET_URETHRA
-									user_lust_amt = LOW_LUST
-									target_lust_amt = LOW_LUST
-								if(CUM_TARGET_MOUTH)
-									user_message = (user == M) ? "трахает твою urethra with твой ротик" : "fuck someone elses urethra with твой ротик"
-									target_message = "mouth is fucked by urethra"
-									target = CUM_TARGET_URETHRA
-									user_lust_amt = NORMAL_LUST
-									target_lust_amt = LOW_LUST
-								if(CUM_TARGET_URETHRA)
-									user_message = (user == M) ? "трахает твою urethra with partner urethra" : "fuck someone elses urethra with partner urethra"
-									target_message = "partner urethra is fucked by urethra"
-									target = CUM_TARGET_URETHRA
-									user_lust_amt = NORMAL_LUST
-									target_lust_amt = LOW_LUST
-								*/
 						else
 							to_chat(user, "<span class='warning'>Уретра закрыта или отсутствует!</span>")
 			if(BODY_ZONE_PRECISE_MOUTH)
@@ -768,7 +734,7 @@
 
 /obj/item/paper/fluff/portallight
 	name = "Инструкция по Использованию Портального Фонарика"
-	info = "Благодарим вас за покупку Портального Фонарика Silver Love Portal!<BR>\
+	default_raw_text = "Благодарим вас за покупку Портального Фонарика Silver Love Portal!<BR>\
 	Для использования просто зарегистрируйте ваш новый Портальный Фонарик при помощи предоставленного нижнего белья, чтобы соединить их вместе, после чего попросите своего любовника надеть белье.<BR>\
 	Повеселитесь, любовники,<BR>\
 	<BR>\

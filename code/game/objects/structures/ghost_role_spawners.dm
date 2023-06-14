@@ -87,9 +87,10 @@
 	anchored = FALSE
 	move_resist = MOVE_FORCE_NORMAL
 	density = FALSE
+	loadout_enabled = TRUE
 	short_desc = "Вы Пеплоход."
 	flavour_text = "Ваше племя поклоняется матери Некрополю, как вашей Спасительнице и Наставнице. Священные стены дворца Некрополя \
-	дали вашему Дендрилу и вашему Роду защиту. Испокон веков, ваша священная обитель дарует вам Дар Перерождения, из цикла в цикл за \
+	дали вашему Тендрилу и вашему Роду защиту. Испокон веков, ваша священная обитель дарует вам Дар Перерождения, из цикла в цикл за \
 	жертвоприношения матери Некрополю, ради продолжения Великой Охоты. Однако не так давно на ваши земли вторглось Чужеродное Племя. \
 	Несмотря на ваше кровное родство в поклонении Великой Матери, не дайте иноземцам осквернить ваше святилище их изуверскими традициями. \
 	Сверх этого, с небесных крепостей из Холодного Камня, на ваши земли спустились скитальцы с далёких Звёзд. Их рудокопы накладывают \
@@ -253,7 +254,7 @@
 		log_game("[key_name(user)] golem-swapped into [src]")
 		user.visible_message("<span class='notice'>A faint light leaves [user], moving to [src] and animating it!</span>","<span class='notice'>You leave your old body behind, and transfer into [src]!</span>")
 		show_flavour = FALSE
-		create(ckey = user.ckey,name = user.real_name)
+		create(ckey = user.ckey, name = user.real_name)
 		user.death()
 		return
 
@@ -288,6 +289,7 @@
 	свежий воздух Земли. Эти мысли развеиваются очередным воспоминанием о том, как вы сюда попали..."
 	assignedrole = "Hermit"
 	canloadappearance = TRUE
+	loadout_enabled = TRUE
 
 /obj/effect/mob_spawn/human/hermit/Initialize(mapload)
 	. = ..()
@@ -404,6 +406,7 @@
 	important_info = "DON'T leave the hotel"
 	assignedrole = "Hotel Staff"
 	canloadappearance = TRUE
+	loadout_enabled = TRUE
 
 /datum/outfit/hotelstaff
 	name = "Hotel Staff"
@@ -752,8 +755,9 @@
 	anchored = TRUE
 	density = FALSE
 	death = FALSE
+	loadout_enabled = TRUE
 	assignedrole = "Ghost Cafe Visitor"
-	short_desc = "You are a Ghost Cafe Visitor!"
+	short_desc = "Вы посетитель Призрачного Кафе!"
 	flavour_text = "You know one thing for sure. You arent actually alive. Are you in a simulation?"
 	skip_reentry_check = TRUE
 	banType = ROLE_GHOSTCAFE
@@ -926,6 +930,7 @@
 	assignedrole = "Ancient Crew"
 	job_description = "Oldstation Crew"
 	canloadappearance = TRUE
+	loadout_enabled = TRUE
 	computer_area = /area/ruin/space/has_grav/port_tarkon/centerhall
 
 /datum/outfit/tarkoff
@@ -1103,6 +1108,7 @@
 	death = FALSE
 	random = TRUE
 	canloadappearance = TRUE
+	loadout_enabled = TRUE
 	computer_area = /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms
 
 /obj/effect/mob_spawn/human/ds2/prisoner

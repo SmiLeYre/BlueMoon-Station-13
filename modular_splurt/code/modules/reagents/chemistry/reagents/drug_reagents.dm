@@ -88,7 +88,7 @@
 	color = "#0f0"
 	overdose_threshold = 30
 	gas = GAS_COPIUM
-	value = REAGENT_VALUE_GLORIOUS
+	value = REAGENT_VALUE_AMAZING
 
 // Variant of Copium created by genital fluids
 /datum/reagent/drug/copium/gfluid

@@ -57,7 +57,7 @@
 	outfit = /datum/outfit/ert/security/alert/red
 
 /datum/antagonist/ert/engineer
-	role = "Engineer"
+	role = "Инженер"
 	outfit = /datum/outfit/ert/engineer
 	skill_modifiers = list(/datum/skill_modifier/job/level/wiring)
 
@@ -68,7 +68,7 @@
 	outfit = /datum/outfit/ert/engineer/alert/red
 
 /datum/antagonist/ert/medic
-	role = "Medical Officer"
+	role = "Полевой Медик"
 	outfit = /datum/outfit/ert/medic
 	skill_modifiers = list(/datum/skill_modifier/job/affinity/surgery)
 
@@ -79,7 +79,7 @@
 	outfit = /datum/outfit/ert/medic/alert/red
 
 /datum/antagonist/ert/commander
-	role = "Commander"
+	role = "Командир"
 	outfit = /datum/outfit/ert/commander
 
 /datum/antagonist/ert/commander/amber
@@ -91,12 +91,12 @@
 /datum/antagonist/ert/deathsquad
 	name = "Deathsquad Trooper"
 	outfit = /datum/outfit/death_commando
-	role = "Trooper"
+	role = "Солдат"
 
 /datum/antagonist/ert/syndiesquad
 	name = "Syndiesquad Specialist"
 	outfit = /datum/outfit/syndicate/syndiesquad
-	role = "Specialist"
+	role = "Специалист"
 
 /datum/antagonist/ert/medic/inquisitor
 	outfit = /datum/outfit/ert/medic/inquisitor
@@ -105,7 +105,7 @@
 	outfit = /datum/outfit/ert/security/inquisitor
 
 /datum/antagonist/ert/chaplain
-	role = "Chaplain"
+	role = "Священник"
 	outfit = /datum/outfit/ert/chaplain
 
 /datum/antagonist/ert/chaplain/inquisitor
@@ -125,12 +125,12 @@
 /datum/antagonist/ert/deathsquad/leader
 	name = "Deathsquad Officer"
 	outfit = /datum/outfit/death_commando
-	role = "Officer"
+	role = "Офицер"
 
 /datum/antagonist/ert/syndiesquad/leader
 	name = "Syndiesquad Specialist"
 	outfit = /datum/outfit/syndicate/syndiesquad
-	role = "Master-Specialist"
+	role = "Мастер-Специалист"
 
 /datum/antagonist/ert/create_team(datum/team/ert/new_team)
 	if(istype(new_team))

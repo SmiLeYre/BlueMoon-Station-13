@@ -137,59 +137,59 @@
 		else
 
 			switch(phrase)	//sets the properties of the chosen phrase
-				if(1)				// good cop
-					phrase_text = "HALT! HALT! HALT!"
+				if(1)
+					phrase_text = "Не двигаться! Не двигаться!"
 					phrase_sound = "halt"
 				if(2)
-					phrase_text = "Stop in the name of the Law."
+					phrase_text = "Ни с места!"
 					phrase_sound = "bobby"
 				if(3)
-					phrase_text = "Compliance is in your best interest."
+					phrase_text = "Стоять! Стоять!"
 					phrase_sound = "compliance"
 				if(4)
-					phrase_text = "Prepare for justice!"
+					phrase_text = "Стоять на месте!"
 					phrase_sound = "justice"
 				if(5)
-					phrase_text = "Running will only increase your sentence."
+					phrase_text = "Давай, попробуй побежать. Безмозглый идиот."
 					phrase_sound = "running"
-				if(6)				// bad cop
-					phrase_text = "Don't move, Creep!"
+				if(6)
+					phrase_text = "Неудачник выбрал не тот день для нарушения закона."
 					phrase_sound = "dontmove"
 				if(7)
-					phrase_text = "Down on the floor, Creep!"
+					phrase_text = "Сейчас узнаешь что такое настоящее правосудие, мудак."
 					phrase_sound = "floor"
 				if(8)
-					phrase_text = "Dead or alive you're coming with me."
+					phrase_text = "Стой! Преступное отродье."
 					phrase_sound = "robocop"
 				if(9)
-					phrase_text = "God made today for the crooks we could not catch yesterday."
+					phrase_text = "Только двинешься и я оторву тебе бошку."
 					phrase_sound = "god"
 				if(10)
-					phrase_text = "Freeze, Scum Bag!"
+					phrase_text = "Укрыться от правосудия у тебя удастся только крышкой гроба."
 					phrase_sound = "freeze"
 				if(11)
-					phrase_text = "Stop right there, criminal scum!"
+					phrase_text = "Упал мордой в пол, тварь."
 					phrase_sound = "imperial"
-				if(12)				// LA-PD
-					phrase_text = "Stop or I'll bash you."
+				if(12)
+					phrase_text = "У вас есть только право закрыть свой пиздак нахуй."
 					phrase_sound = "bash"
 				if(13)
-					phrase_text = "Go ahead, make my day."
+					phrase_text = "Виновен или невиновен - это лишь вопрос времени."
 					phrase_sound = "harry"
 				if(14)
-					phrase_text = "Stop breaking the law, ass hole."
+					phrase_text = "Я - закон. Ты - убогое ничтожество."
 					phrase_sound = "asshole"
 				if(15)
-					phrase_text = "You have the right to shut the fuck up."
+					phrase_text = "Живым или мертвым - ты пиздуешь со мной."
 					phrase_sound = "stfu"
 				if(16)
-					phrase_text = "Shut up crime!"
+					phrase_text = "Shut Up Crime!"
 					phrase_sound = "shutup"
 				if(17)
 					phrase_text = "Face the wrath of the golden bolt."
 					phrase_sound = "super"
 				if(18)
-					phrase_text = "I am, the LAW!"
+					phrase_text = "Я. ЕСТЬ. ЗАКОН!"
 					phrase_sound = "dredd"
 				if(19)				// slut cop - dom
 					phrase_text = "Твоя задница - моя!"

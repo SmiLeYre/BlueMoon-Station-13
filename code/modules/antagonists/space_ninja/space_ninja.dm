@@ -113,6 +113,9 @@
 	owner.announce_objectives()
 
 /datum/antagonist/ninja/on_gain()
+	var/mob/living/carbon/human/H = owner.current
+	H.canloadappearance = TRUE
+	H.checkloadappearance()
 	if(give_objectives)
 		addObjectives()
 	addMemories()

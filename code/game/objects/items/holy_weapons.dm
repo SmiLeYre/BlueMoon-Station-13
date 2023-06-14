@@ -239,7 +239,7 @@
 	return (BRUTELOSS|FIRELOSS)
 
 /obj/item/nullrod/attack_self(mob/user)
-	if(user.mind && (user.mind.isholy) && !reskinned)
+	if(user.mind && (user.mind.isholy))
 		reskin_holy_weapon(user)
 
 /**

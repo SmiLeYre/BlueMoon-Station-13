@@ -32,6 +32,14 @@
 	embedding = list()
 	sharpness = SHARP_POINTY
 
+/obj/item/pen/get_writing_implement_details()
+	return list(
+		interaction_mode = MODE_WRITING,
+		font = font,
+		color = colour,
+		use_bold = FALSE,
+	)
+
 /obj/item/pen/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] is scribbling numbers all over себя with [src]! It looks like [user.ru_who()] trying to commit sudoku...</span>")
 	return(BRUTELOSS)

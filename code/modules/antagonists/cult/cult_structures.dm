@@ -157,12 +157,12 @@
 	to_chat(user, "<span class='cultitalic'>You study the schematics etched into the forge...</span>")
 
 
-	var/list/options = list("Shielded Robe" = radial_shielded, "Flagellant's Robe" = radial_flagellant, "Mirror Shield" = radial_mirror)
+	var/list/options = list("\improper Nar'Sien Empowered Armor" = radial_shielded, "Flagellant's Robe" = radial_flagellant, "Mirror Shield" = radial_mirror)
 	var/choice = show_radial_menu(user, src, options, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE, tooltips = TRUE)
 
 	var/reward
 	switch(choice)
-		if("Shielded Robe")
+		if("\improper Nar'Sien Empowered Armor")
 			reward = /obj/item/clothing/suit/hooded/cultrobes/cult_shield
 		if("Flagellant's Robe")
 			reward = /obj/item/clothing/suit/hooded/cultrobes/berserker

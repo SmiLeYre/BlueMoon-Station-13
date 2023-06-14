@@ -154,7 +154,7 @@
 	..()
 	if(nuke_team && nuke_team.memorized_code)
 		var/obj/item/paper/P = new
-		P.info = "The nuclear authorization code is: <b>[nuke_team.memorized_code]</b>"
+		P.default_raw_text = "The nuclear authorization code is: <b>[nuke_team.memorized_code]</b>"
 		P.name = "nuclear bomb code"
 		var/mob/living/carbon/human/H = owner.current
 		if(!istype(H))
@@ -197,7 +197,7 @@
 
 /datum/antagonist/nukeop/leader/proc/ask_name()
 	var/randomname = pick(GLOB.last_names)
-	var/newname = stripped_input(owner.current,"You are the nuke operative [title]. Please choose a last name for your family.", "Name change",randomname)
+	var/newname = stripped_input(owner.current,"Вы Ядерный Оперативник [title]. Пожалуйста, сделайте выбор, как будет называться ваша команда. Не называйте свою команду дебильно или будете взорваны.", "Name change",randomname)
 	if (!newname)
 		newname = randomname
 	else
@@ -214,14 +214,25 @@
 
 /datum/antagonist/nukeop/lone/on_gain()
 	ExtaOrNeExta()
+
+	var/mob/living/carbon/human/H = owner.current
+	H.canloadappearance = TRUE
+	H.checkloadappearance()
+
 	. = ..()
+
+/datum/antagonist/nukeop/lone/proc/create_objectives()
+	var/datum/objective/nuclear/revert/exta = new
+	exta.owner = owner
+	objectives = exta
 
 /datum/antagonist/nukeop/lone/proc/ExtaOrNeExta()
 	var/mob/living/carbon/human/H = owner.current
 	if(!istype(H))
 		return
-	if(nuke_team && istype(SSticker.mode, /datum/game_mode/extended))
+	if(SSticker.mode.name == "Extended")
 		H.equipOutfit(/datum/outfit/syndicate/lone)
+		create_objectives()
 	else
 		H.equipOutfit(/datum/outfit/syndicate/lone/inteq)
 

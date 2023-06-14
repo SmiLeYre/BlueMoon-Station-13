@@ -39,7 +39,7 @@
 "fv" = (
 /obj/structure/table/reinforced,
 /obj/item/paper{
-	info = "<h1>Hilbert's Hotel Notice</h1><p>There have been reports of air simply running out, and while we will accept no responsibility for such, we have generously supplied two air canisters and a portable scrubber for our client's needs. Hilbert's Hotel is now proud to announce that every room now comes with a Kinkmate, but they are not free of charge to use.</p><p>Please enjoy and have a happy hollidays!</p>";
+	default_raw_text = "<h1>Hilbert's Hotel Notice</h1><p>There have been reports of air simply running out, and while we will accept no responsibility for such, we have generously supplied two air canisters and a portable scrubber for our client's needs. Hilbert's Hotel is now proud to announce that every room now comes with a Kinkmate, but they are not free of charge to use.</p><p>Please enjoy and have a happy hollidays!</p>";
 	name = "Hilbert's Hotel Notice"
 	},
 /turf/open/floor/plasteel/cafeteria,

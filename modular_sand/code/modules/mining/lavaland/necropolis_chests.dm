@@ -344,7 +344,7 @@
 /obj/item/clothing/suit/space/hardsuit/deathsquad/praetor
 	name = "Praetor Suit"
 	desc = "And those that tasted the bite of his sword named him... The Doom Slayer."
-	armor = list("melee" = 75, "bullet" = 55, "laser" = 55, "energy" = 45, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
+	armor = list(MELEE = 70, BULLET = 40, LASER = 10, ENERGY = 10, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, MAGIC = 50)
 	strip_delay = 130
 	icon = 'modular_sand/icons/obj/clothing/suits.dmi'
 	icon_state = "praetor"
@@ -352,21 +352,22 @@
 	anthro_mob_worn_overlay = 'modular_sand/icons/mob/clothing/suit_digi.dmi'
 	item_state = "praetor"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/deathsquad/praetor
-	slowdown = 0
 	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
-	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	resistance_flags = FIRE_PROOF | LAVA_PROOF | ACID_PROOF | GOLIATH_RESISTANCE
+	clothing_flags = THICKMATERIAL // no space protection
 
 /obj/item/clothing/head/helmet/space/hardsuit/deathsquad/praetor
 	name = "Praetor Suit helmet"
 	desc = "That's one doomed space marine."
-	armor = list("melee" = 75, "bullet" = 55, "laser" = 55, "energy" = 45, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
+	armor = list(MELEE = 70, BULLET = 40, LASER = 10, ENERGY = 10, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, MAGIC = 50)
 	strip_delay = 130
 	icon = 'modular_sand/icons/obj/clothing/hats.dmi'
 	icon_state = "praetor"
 	mob_overlay_icon = 'modular_sand/icons/mob/clothing/head.dmi'
 	anthro_mob_worn_overlay  = 'modular_sand/icons/mob/clothing/head_muzzled.dmi'
 	mutantrace_variation = STYLE_MUZZLE | STYLE_NO_ANTHRO_ICON
-	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	resistance_flags = FIRE_PROOF | LAVA_PROOF | ACID_PROOF | GOLIATH_RESISTANCE
+	clothing_flags = THICKMATERIAL // no space protection
 
 //drake
 /obj/structure/closet/crate/necropolis/dragon/PopulateContents()

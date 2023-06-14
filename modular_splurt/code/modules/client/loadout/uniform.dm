@@ -238,3 +238,7 @@
 /datum/gear/uniform/suit/helltaker/skirt
 	name = "Red Shirt with White Skirt"
 	path = /obj/item/clothing/under/suit/helltaker/skirt
+
+/datum/gear/uniform/suit/bm/skirt
+	name = "Black Skirt with Ryodan Spider"
+	path = /obj/item/clothing/under/bm/ryodan

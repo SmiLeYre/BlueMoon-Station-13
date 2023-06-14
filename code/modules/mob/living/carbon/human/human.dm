@@ -689,6 +689,27 @@
 		return FALSE
 	return TRUE
 
+/**
+ * Proc that returns TRUE if the mob can write using the writing_instrument, FALSE otherwise.
+ *
+ * This proc a side effect, outputting a message to the mob's chat with a reason if it returns FALSE.
+ */
+/mob/proc/can_write(obj/item/writing_instrument)
+	if(!istype(writing_instrument))
+		to_chat(src, span_warning("You can't write with the [writing_instrument]!"))
+		return FALSE
+
+	if(!is_literate())
+		to_chat(src, span_warning("You try to write, but don't know how to spell anything!"))
+		return FALSE
+
+	var/pen_info = writing_instrument.get_writing_implement_details()
+	if(!pen_info || (pen_info["interaction_mode"] != MODE_WRITING))
+		to_chat(src, span_warning("You can't write with the [writing_instrument]!"))
+		return FALSE
+
+	return TRUE
+
 /mob/living/carbon/human/update_gravity(has_gravity,override = 0)
 	if(dna && dna.species) //prevents a runtime while a human is being monkeyfied
 		override = dna.species.override_float

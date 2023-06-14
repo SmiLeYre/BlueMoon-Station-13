@@ -52349,15 +52349,6 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel,
 /area/service/hydroponics/garden)
-"ggh" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ai_monitored/security/armory)
 "ggj" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/light/small{
@@ -114496,7 +114487,7 @@ aaa
 adD
 aeq
 xZA
-ggh
+afg
 aga
 iJl
 ahH

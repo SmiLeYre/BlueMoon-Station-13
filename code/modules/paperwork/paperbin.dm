@@ -88,7 +88,7 @@
 			P = new papertype(src)
 			if(SSevents.holidays && SSevents.holidays[APRIL_FOOLS])
 				if(prob(30))
-					P.info = "<font face=\"[CRAYON_FONT]\" color=\"red\"><b>HONK HONK HONK HONK HONK HONK HONK<br>HOOOOOOOOOOOOOOOOOOOOOONK<br>APRIL FOOLS</b></font>"
+					P.default_raw_text = "<font face=\"[CRAYON_FONT]\" color=\"red\"><b>HONK HONK HONK HONK HONK HONK HONK<br>HOOOOOOOOOOOOOOOOOOOOOONK<br>APRIL FOOLS</b></font>"
 					P.AddComponent(/datum/component/honkspam)
 
 		P.add_fingerprint(user)

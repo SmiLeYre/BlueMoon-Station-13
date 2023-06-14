@@ -57,13 +57,8 @@
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "ak" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/door/firedoor/solid,
 /obj/machinery/door/airlock/engineering/glass{
 	name = "P-T Tool Storage";
@@ -89,13 +84,8 @@
 /turf/open/floor/iron/white,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "as" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/light/dim/directional/south,
 /obj/machinery/light_switch/directional/south,
@@ -141,10 +131,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/trauma)
 "aT" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/mining)
@@ -161,13 +148,8 @@
 "aX" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/airalarm/directional/north,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/turf_decal/tile/yellow/half{
 	dir = 1
 	},
@@ -206,13 +188,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/starboardhall)
 "bg" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/door/firedoor/solid,
 /obj/machinery/door/airlock/security{
@@ -299,13 +276,8 @@
 /turf/closed/wall/r_wall/rust,
 /area/ruin/space/has_grav/port_tarkon/mining)
 "bK" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -316,9 +288,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/observ)
 "bV" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/neutral/half{
 	dir = 1
 	},
@@ -327,9 +297,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "bX" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/observ)
@@ -354,13 +322,8 @@
 /area/ruin/space/has_grav/port_tarkon/forehall)
 "ck" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/cafeteria,
 /area/ruin/space/has_grav/port_tarkon/kitchen)
@@ -438,13 +401,8 @@
 /area/ruin/space/has_grav/port_tarkon/storage)
 "cI" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/firealarm/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -532,13 +490,8 @@
 	name = "Fore Primary Hallway";
 	req_access = list("tarkoff")
 	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/door/firedoor/solid,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/iron,
@@ -577,13 +530,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "dq" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -603,10 +551,7 @@
 /turf/open/space/basic,
 /area/solars/tarkon)
 "dt" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/structure/chair/sofa/corp{
 	dir = 8
 	},
@@ -614,8 +559,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/observ)
 "dv" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/airalarm/all_access{
 	dir = 8;
 	pixel_x = 24
@@ -640,27 +585,17 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/secoff)
 "dB" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/forehall)
 "dC" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/atmos)
@@ -686,21 +621,14 @@
 	dir = 1;
 	piping_layer = 1
 	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/mining)
 "dT" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/neutral/half{
 	dir = 8
 	},
@@ -712,9 +640,7 @@
 /turf/open/floor/iron/cafeteria,
 /area/ruin/space/has_grav/port_tarkon/kitchen)
 "dX" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -726,26 +652,16 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/toolstorage)
 "eb" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "ed" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/item/broken_bottle,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -763,13 +679,8 @@
 /area/ruin/space/has_grav/port_tarkon/developement)
 "eg" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
@@ -779,13 +690,8 @@
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "ek" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/decal/cleanable/confetti,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/forehall)
@@ -799,13 +705,8 @@
 /area/ruin/space/has_grav/port_tarkon/developement)
 "ep" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/neutral/half{
 	dir = 8
 	},
@@ -826,13 +727,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/observ)
 "eB" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/turf_decal/tile/red/half{
 	dir = 8
@@ -866,13 +762,8 @@
 /area/ruin/space/has_grav/port_tarkon/starboardhall)
 "eK" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/airalarm/directional/east,
 /obj/effect/decal/cleanable/confetti,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -923,9 +814,7 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/developement)
 "ff" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/neutral/half{
 	dir = 8
 	},
@@ -1025,9 +914,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/trauma)
 "fJ" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/loading_area,
 /obj/item/broken_bottle,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1039,25 +926,15 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/forehall)
 "fL" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/comms)
 "fP" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -1070,13 +947,8 @@
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "fT" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/light/dim/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -1104,9 +976,7 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/developement)
 "ga" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/trauma)
@@ -1121,13 +991,8 @@
 /area/ruin/space/has_grav/port_tarkon/trauma)
 "ge" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/turf_decal/tile/yellow/half{
 	dir = 1
 	},
@@ -1149,13 +1014,8 @@
 /area/ruin/space/has_grav/port_tarkon/comms)
 "gl" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/neutral/half,
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1228,13 +1088,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/toolstorage)
 "gy" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/confetti,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -1312,13 +1167,8 @@
 /turf/open/space/basic,
 /area/solars/tarkon)
 "ha" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/decal/cleanable/confetti,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1333,9 +1183,7 @@
 "hi" = (
 /obj/machinery/door/firedoor/solid/closed,
 /obj/structure/fans/tiny,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/port_tarkon/forehall)
 "hj" = (
@@ -1366,13 +1214,8 @@
 	name = "Crew Storage";
 	state_open = 1
 	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/door/firedoor/solid,
 /turf/open/floor/iron,
@@ -1396,28 +1239,18 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/toolstorage)
 "hy" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/item/broken_bottle,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/porthall)
 "hz" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/confetti,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -1427,13 +1260,8 @@
 	name = "Port Primary Hallway";
 	req_access = list("tarkoff")
 	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/door/firedoor/solid,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/iron,
@@ -1463,13 +1291,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "hH" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/button/door{
@@ -1483,13 +1306,8 @@
 /obj/item/broken_bottle,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon)
 "hL" = (
@@ -1535,13 +1353,8 @@
 	},
 /obj/machinery/door/firedoor/solid,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/structure/closet/crate/secure/weapon{
 	req_access_txt = "203"
 	},
@@ -1562,13 +1375,8 @@
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon)
 "hV" = (
@@ -1576,13 +1384,8 @@
 /turf/open/floor/iron/freezer,
 /area/ruin/space/has_grav/port_tarkon/kitchen)
 "hY" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/door/window/brigdoor/security/cell{
 	req_access = list("66")
@@ -1615,10 +1418,7 @@
 /area/ruin/space/has_grav/port_tarkon/storage)
 "ik" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/turf_decal/tile/neutral/anticorner{
 	dir = 4
 	},
@@ -1651,13 +1451,8 @@
 /turf/open/floor/iron/white,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "iu" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/brown/half,
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1678,20 +1473,13 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "iy" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/cafeteria,
 /area/ruin/space/has_grav/port_tarkon/kitchen)
 "iA" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/door/firedoor/solid,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/door/airlock/public/glass{
@@ -1733,13 +1521,8 @@
 /area/ruin/space/has_grav/port_tarkon/garden)
 "iM" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/light/directional/north,
 /obj/machinery/power/apc/auto_name/north{
 	locked = 0;
@@ -1753,13 +1536,8 @@
 /area/ruin/space/has_grav/port_tarkon/power1)
 "iO" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
@@ -1795,27 +1573,17 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon)
 "jc" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/item/broken_bottle,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/porthall)
 "jg" = (
 /obj/machinery/door/airlock/public,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/door/firedoor/solid,
 /turf/open/floor/iron,
@@ -1831,13 +1599,8 @@
 /area/awaymission)
 "jo" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/brown,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -1849,14 +1612,9 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/afthall)
 "jv" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/button/door{
 	id = "ptporthall";
@@ -1866,9 +1624,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/porthall)
 "jz" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -1894,13 +1650,8 @@
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "jC" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/brown/half{
 	dir = 4
 	},
@@ -1934,10 +1685,7 @@
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "jJ" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/port_tarkon/atmos)
@@ -1946,10 +1694,7 @@
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/east,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/developement)
@@ -1971,13 +1716,8 @@
 	req_access = list("tarkoff")
 	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "jU" = (
@@ -2012,13 +1752,8 @@
 /area/ruin/space/has_grav/port_tarkon/forehall)
 "ka" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/item/broken_bottle,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/firealarm/directional/east,
@@ -2033,13 +1768,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "kc" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
@@ -2082,13 +1812,8 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/port_tarkon/afthall)
 "ko" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/purple/half{
 	dir = 1
 	},
@@ -2143,13 +1868,8 @@
 /area/ruin/space/has_grav)
 "kD" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/brown/half{
 	dir = 4
 	},
@@ -2161,13 +1881,8 @@
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space/has_grav)
 "kG" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/forehall)
@@ -2185,9 +1900,7 @@
 /turf/open/floor/iron/cafeteria,
 /area/ruin/space/has_grav/port_tarkon/kitchen)
 "kJ" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/yellow,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -2199,13 +1912,8 @@
 /area/ruin/space/has_grav/port_tarkon/kitchen)
 "kO" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/neutral/anticorner{
 	dir = 1
 	},
@@ -2237,13 +1945,8 @@
 /area/ruin/space/has_grav/port_tarkon/forehall)
 "kW" = (
 /obj/structure/table,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/item/megaphone,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
@@ -2303,13 +2006,8 @@
 /obj/machinery/door/window/brigdoor/security/cell{
 	req_access = list("66")
 	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/secoff)
@@ -2372,8 +2070,8 @@
 	id_tag = "ptdorm4";
 	name = "Couples Suite"
 	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/door/firedoor/solid,
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/port_tarkon/dorms)
@@ -2446,13 +2144,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/toolstorage)
 "lW" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/secoff)
@@ -2552,13 +2245,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/storage)
 "mH" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/turf_decal/tile/neutral/half{
 	dir = 1
@@ -2585,13 +2273,8 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/developement)
 "mO" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/cafeteria,
 /area/ruin/space/has_grav/port_tarkon/kitchen)
@@ -2601,13 +2284,8 @@
 	name = "Starboard Primary Hallway";
 	req_access = list("tarkoff")
 	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/door/firedoor/solid,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/starboardhall)
@@ -2633,13 +2311,8 @@
 	req_access = list("tarkoff")
 	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/door/firedoor/solid,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/starboardhall)
@@ -2657,13 +2330,8 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/developement)
 "nk" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/red/half,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -2691,10 +2359,7 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/developement)
 "nt" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/item/broken_bottle,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -2713,9 +2378,7 @@
 /turf/open/floor/iron/freezer,
 /area/ruin/space/has_grav/port_tarkon/kitchen)
 "nz" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/confetti,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -2783,13 +2446,8 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/developement)
 "oe" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/light/dim/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2818,13 +2476,8 @@
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "on" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
@@ -2849,13 +2502,8 @@
 /area/ruin/space/has_grav/port_tarkon/kitchen)
 "os" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/mining)
@@ -2865,8 +2513,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/mining)
 "ov" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /turf/open/floor/carpet/black,
 /area/ruin/space/has_grav/port_tarkon/dorms)
 "ow" = (
@@ -2913,13 +2561,8 @@
 /turf/closed/wall,
 /area/ruin/space/has_grav/port_tarkon/storage)
 "oG" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/decal/cleanable/confetti,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2941,9 +2584,7 @@
 /turf/open/floor/engine/o2,
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "oK" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/confetti,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -2987,13 +2628,8 @@
 /obj/machinery/door/airlock/research/glass{
 	req_access = list("tarkoff")
 	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/developement)
 "pc" = (
@@ -3009,13 +2645,8 @@
 /area/ruin/space/has_grav/port_tarkon/kitchen)
 "pf" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/light_switch/directional/east,
 /obj/effect/turf_decal/tile/yellow/anticorner{
 	dir = 4
@@ -3108,10 +2739,7 @@
 /turf/open/floor/engine/vacuum,
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "pD" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3147,13 +2775,8 @@
 /area/ruin/space/has_grav/port_tarkon/toolstorage)
 "pM" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/afthall)
@@ -3201,13 +2824,8 @@
 /turf/open/floor/engine/vacuum,
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "qb" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/neutral/half{
 	dir = 1
 	},
@@ -3216,13 +2834,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "qe" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -3260,21 +2873,14 @@
 	dir = 1;
 	piping_layer = 1
 	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/mining)
 "qv" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
@@ -3289,25 +2895,15 @@
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "qF" = (
 /obj/effect/turf_decal/sand,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/mining)
 "qH" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/brown/half{
 	dir = 1
 	},
@@ -3316,13 +2912,8 @@
 /area/ruin/space/has_grav/port_tarkon/storage)
 "qL" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/neutral/half,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -3341,13 +2932,8 @@
 /area/ruin/space/has_grav/port_tarkon/secoff)
 "qS" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/power/apc/auto_name/east{
 	locked = 0;
 	start_charge = 0
@@ -3444,13 +3030,8 @@
 /area/ruin/space/has_grav/port_tarkon/toolstorage)
 "rA" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/neutral/anticorner{
 	dir = 8
 	},
@@ -3610,13 +3191,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/mining)
 "sr" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/turf_decal/tile/purple/half,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
@@ -3625,8 +3201,8 @@
 /turf/closed/mineral/random/high_chance,
 /area/ruin/space/has_grav)
 "sw" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/port_tarkon/dorms)
 "sA" = (
@@ -3663,10 +3239,7 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/developement)
 "sX" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -3678,8 +3251,8 @@
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "tc" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/light_switch/directional/north,
 /obj/machinery/firealarm/directional/south{
 	pixel_y = -31
@@ -3713,9 +3286,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "tn" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/comms)
@@ -3728,13 +3299,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "tp" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/light_switch/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3771,13 +3337,8 @@
 /area/ruin/space/has_grav/port_tarkon/cargo)
 "tE" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/airalarm/directional/north,
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3801,20 +3362,15 @@
 	id_tag = "ptdorm2";
 	name = "Private Dorm 2"
 	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/door/firedoor/solid,
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/port_tarkon/dorms)
 "tQ" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/porthall)
@@ -3873,13 +3429,8 @@
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "ui" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/power/apc/auto_name/north{
 	locked = 0;
 	start_charge = 0
@@ -3895,13 +3446,8 @@
 /area/ruin/space/has_grav/port_tarkon/storage)
 "ul" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -3910,13 +3456,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "un" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
@@ -3955,13 +3496,8 @@
 /turf/open/floor/iron/white,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "uD" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/item/broken_bottle,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -4013,14 +3549,9 @@
 /area/ruin/space/has_grav/port_tarkon/secoff)
 "uV" = (
 /obj/effect/decal/cleanable/confetti,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/porthall)
@@ -4042,8 +3573,8 @@
 	id_tag = "ptdorm3";
 	name = "Private Dorm 3"
 	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/door/firedoor/solid,
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/port_tarkon/dorms)
@@ -4078,13 +3609,8 @@
 /area/ruin/space/has_grav/port_tarkon/cargo)
 "vn" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/confetti,
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4126,13 +3652,8 @@
 /area/ruin/space/has_grav/port_tarkon/porthall)
 "vA" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/brown/half{
 	dir = 8
 	},
@@ -4150,13 +3671,8 @@
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/port_tarkon/secoff)
 "vE" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/turf_decal/tile/brown/half{
 	dir = 1
 	},
@@ -4215,13 +3731,8 @@
 /turf/open/floor/iron/white,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "vZ" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/turf_decal/tile/brown/half{
 	dir = 1
 	},
@@ -4320,13 +3831,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/toolstorage)
 "wG" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/decal/cleanable/confetti,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
@@ -4369,13 +3875,8 @@
 /area/ruin/space/has_grav/port_tarkon/comms)
 "wZ" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/brown/half{
 	dir = 8
 	},
@@ -4384,13 +3885,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/mining)
 "xi" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -4403,13 +3899,8 @@
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "xo" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/decal/cleanable/confetti,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -4467,13 +3958,8 @@
 /area/ruin/space/has_grav/port_tarkon/observ)
 "xO" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/brown/half,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -4493,13 +3979,8 @@
 /area/ruin/space/has_grav/port_tarkon/developement)
 "xU" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/neutral/half{
 	dir = 4
 	},
@@ -4595,15 +4076,12 @@
 /area/ruin/space/has_grav/port_tarkon/comms)
 "yz" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "yA" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /turf/open/floor/carpet/red,
 /area/ruin/space/has_grav/port_tarkon/dorms)
 "yB" = (
@@ -4651,13 +4129,8 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/developement)
 "yS" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/structure/curtain,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -4684,10 +4157,7 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav)
 "zc" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
@@ -4704,13 +4174,8 @@
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/port_tarkon/mining)
 "zl" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4745,13 +4210,8 @@
 /area/ruin/space/has_grav)
 "zs" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/item/broken_bottle,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/cafeteria,
@@ -4816,13 +4276,8 @@
 /area/ruin/space/has_grav/port_tarkon/comms)
 "zM" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/brown/half{
 	dir = 4
 	},
@@ -4857,13 +4312,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/trauma)
 "Ae" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/trauma)
@@ -4902,25 +4352,15 @@
 /obj/machinery/door/airlock/engineering{
 	name = "Engineering"
 	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/door/firedoor/solid,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/power1)
 "Az" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/confetti,
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4938,13 +4378,8 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "AC" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/cafeteria,
@@ -4964,26 +4399,16 @@
 /turf/open/floor/engine/o2,
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "AG" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/starboardhall)
 "AM" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/turf_decal/delivery/white,
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
@@ -5001,13 +4426,8 @@
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "AT" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
@@ -5104,13 +4524,8 @@
 /turf/open/floor/grass/grass0,
 /area/ruin/space/has_grav/port_tarkon/garden)
 "BF" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/turf_decal/tile/brown/half{
 	dir = 1
 	},
@@ -5125,13 +4540,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/storage)
 "BH" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/iron,
@@ -5169,13 +4579,8 @@
 /area/ruin/space/has_grav/port_tarkon/power1)
 "BX" = (
 /obj/machinery/light/dim/directional/south,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5196,13 +4601,8 @@
 /area/ruin/space/has_grav/port_tarkon)
 "Ce" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/brown{
 	dir = 4
 	},
@@ -5215,24 +4615,14 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/developement)
 "Ch" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/comms)
 "Ci" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
@@ -5267,13 +4657,8 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/port_tarkon/forehall)
 "Cp" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/door/firedoor/solid,
 /obj/effect/spawner/lootdrop/grille_or_trash,
@@ -5290,13 +4675,8 @@
 	req_access = list("tarkoff")
 	},
 /obj/effect/turf_decal/sand,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/door/firedoor/solid,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/iron,
@@ -5334,8 +4714,8 @@
 	id_tag = "ptdorm1";
 	name = "Private Dorm 1"
 	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/door/firedoor/solid,
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/port_tarkon/dorms)
@@ -5358,13 +4738,8 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/developement)
 "CE" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/light/dim/directional/east,
 /obj/effect/turf_decal/tile/red/anticorner,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5392,20 +4767,13 @@
 /obj/machinery/door/airlock/mining/glass{
 	req_access = list("tarkoff")
 	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/door/firedoor/solid,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/mining)
 "CM" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/brown{
 	dir = 8
 	},
@@ -5414,10 +4782,7 @@
 /area/ruin/space/has_grav/port_tarkon/storage)
 "CP" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/atmos)
@@ -5461,13 +4826,8 @@
 /area/ruin/space/has_grav/port_tarkon/toolstorage)
 "CY" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/light/dim/directional/east,
 /obj/effect/decal/cleanable/confetti,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5554,33 +4914,21 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/port_tarkon/starboardhall)
 "Dv" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/storage)
 "Dx" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/delivery/blue,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "DA" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/turf_decal/tile/neutral/anticorner,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5588,13 +4936,8 @@
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "DK" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/developement)
@@ -5627,13 +4970,8 @@
 /area/ruin/space/has_grav/port_tarkon/secoff)
 "DQ" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/confetti,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
@@ -5643,9 +4981,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/forehall)
 "DS" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/neutral/half{
 	dir = 1
 	},
@@ -5678,34 +5014,24 @@
 /area/ruin/space/has_grav/port_tarkon/porthall)
 "Eg" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/item/broken_bottle,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "Ek" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/cafeteria,
 /area/ruin/space/has_grav/port_tarkon/kitchen)
 "El" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/port_tarkon/dorms)
 "En" = (
@@ -5723,24 +5049,14 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/afthall)
 "Er" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/developement)
 "Et" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/door/firedoor/solid,
 /obj/machinery/door/airlock/public/glass{
 	name = "Port Primary Hallway";
@@ -5758,13 +5074,8 @@
 "Ev" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon)
 "Ex" = (
@@ -5783,9 +5094,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/observ)
 "EA" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
@@ -5846,13 +5155,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/trauma)
 "EY" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
@@ -6003,13 +5307,8 @@
 /area/solars/tarkon)
 "FN" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/light_switch/directional/south,
 /obj/effect/turf_decal/tile/yellow/anticorner,
 /obj/effect/decal/cleanable/confetti,
@@ -6028,9 +5327,7 @@
 /turf/open/space/basic,
 /area/ruin/space/has_grav)
 "FU" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	piping_layer = 1
 	},
@@ -6063,9 +5360,7 @@
 /turf/open/floor/iron/cafeteria,
 /area/ruin/space/has_grav/port_tarkon/kitchen)
 "Gb" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/brown/half{
 	dir = 1
 	},
@@ -6126,13 +5421,8 @@
 /area/ruin/space/has_grav/port_tarkon/garden)
 "Gu" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/brown/half{
 	dir = 1
 	},
@@ -6203,13 +5493,8 @@
 /turf/open/floor/grass/grass0,
 /area/ruin/space/has_grav/port_tarkon/garden)
 "GT" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/item/broken_bottle,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6230,13 +5515,8 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/developement)
 "GW" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/turf_decal/tile/neutral/anticorner{
 	dir = 4
@@ -6273,26 +5553,16 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "Hf" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/secoff)
 "Hg" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/starboardhall)
@@ -6327,13 +5597,8 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav)
 "Hr" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/decal/cleanable/confetti,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6359,9 +5624,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/secoff)
 "HF" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/toolstorage)
@@ -6397,13 +5660,8 @@
 /obj/machinery/door/airlock/research,
 /obj/machinery/door/firedoor/solid,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/developement)
 "HS" = (
@@ -6420,13 +5678,8 @@
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "HW" = (
 /obj/machinery/door/airlock/public,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/door/firedoor/solid,
 /turf/open/floor/iron,
@@ -6458,9 +5711,7 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/developement)
 "Id" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/developement)
@@ -6483,13 +5734,8 @@
 "Ih" = (
 /obj/machinery/door/firedoor/solid,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/door/airlock/mining{
 	req_access = list("tarkoff")
 	},
@@ -6511,13 +5757,8 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/developement)
 "Il" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/decal/cleanable/confetti,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6564,26 +5805,16 @@
 /area/ruin/space/has_grav/port_tarkon/storage)
 "ID" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "IE" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/neutral/anticorner{
 	dir = 8
 	},
@@ -6591,13 +5822,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "IF" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/secoff)
@@ -6612,10 +5838,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "IH" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/structure/curtain,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -6679,13 +5902,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/trauma)
 "IY" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/power/apc/auto_name/west{
 	locked = 0;
@@ -6700,9 +5918,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/storage)
 "Jc" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/item/broken_bottle,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/cafeteria,
@@ -6720,8 +5936,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/forehall)
 "Ji" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/airalarm/all_access{
 	dir = 8;
 	pixel_x = 24
@@ -6816,13 +6032,8 @@
 "JE" = (
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/light/directional/north,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -6895,13 +6106,8 @@
 	name = "Aft Primary Hallway";
 	req_access = list("tarkoff")
 	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/door/firedoor/solid,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6925,14 +6131,9 @@
 /area/ruin/space/has_grav/port_tarkon/trauma)
 "Kf" = (
 /obj/machinery/light/dim/directional/west,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/porthall)
@@ -6956,13 +6157,8 @@
 "Kk" = (
 /obj/machinery/door/airlock/wood/glass,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/door/firedoor/solid,
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/port_tarkon/starboardhall)
@@ -6997,13 +6193,8 @@
 /turf/open/space/basic,
 /area/solars/tarkon)
 "Kr" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/brown{
 	dir = 8
 	},
@@ -7012,13 +6203,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/mining)
 "Ks" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/door/firedoor/solid/closed,
 /obj/structure/fans/tiny,
 /turf/open/floor/plating,
@@ -7071,13 +6257,8 @@
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "KO" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/garden)
@@ -7172,13 +6353,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon)
 "Lm" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /turf/open/floor/iron,
@@ -7220,10 +6396,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/trauma)
 "Ly" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/decal/cleanable/confetti,
 /obj/effect/spawner/lootdrop/grille_or_trash,
@@ -7249,13 +6422,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/cargo)
 "LG" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
@@ -7272,9 +6440,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/afthall)
 "LQ" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/mining)
@@ -7283,10 +6449,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/starboardhall)
 "LW" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/observ)
@@ -7326,13 +6489,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/porthall)
 "Mn" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/confetti,
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -7359,13 +6517,8 @@
 /area/ruin/space/has_grav/port_tarkon/trauma)
 "Mu" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/brown/half{
 	dir = 4
 	},
@@ -7399,13 +6552,8 @@
 /area/ruin/space/has_grav/port_tarkon/developement)
 "MF" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/starboardhall)
@@ -7453,9 +6601,7 @@
 /turf/open/floor/engine/vacuum,
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "MV" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/brown/half{
 	dir = 1
 	},
@@ -7493,13 +6639,8 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/developement)
 "Nj" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/door/firedoor/solid,
 /obj/machinery/door/airlock/public/glass{
@@ -7530,13 +6671,8 @@
 /area/ruin/space/has_grav/port_tarkon/trauma)
 "Nr" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/forehall)
 "Nt" = (
@@ -7545,13 +6681,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/garden)
 "Nw" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/light_switch/directional/west,
 /obj/effect/turf_decal/tile/red/anticorner{
@@ -7603,22 +6734,15 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/observ)
 "NL" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/door/firedoor/solid,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/forehall)
 "NM" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/neutral/anticorner{
 	dir = 1
 	},
@@ -7640,13 +6764,8 @@
 /area/ruin/space/has_grav/port_tarkon/storage)
 "NU" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -7675,13 +6794,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/secoff)
 "Oi" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/observ)
@@ -7704,24 +6818,14 @@
 /area/ruin/space/has_grav/port_tarkon/developement)
 "Oo" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "Oq" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/decal/cleanable/confetti,
 /turf/open/floor/iron,
@@ -7772,13 +6876,8 @@
 /area/ruin/space/has_grav/port_tarkon/afthall)
 "OI" = (
 /obj/machinery/light/dim/directional/south,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -7801,13 +6900,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/toolstorage)
 "OZ" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/developement)
@@ -7826,13 +6920,8 @@
 /turf/open/floor/carpet/red,
 /area/ruin/space/has_grav/port_tarkon/dorms)
 "Pc" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/power/apc/auto_name/south{
 	locked = 0;
@@ -7843,13 +6932,8 @@
 /area/ruin/space/has_grav/port_tarkon/forehall)
 "Pf" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/purple/half,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
@@ -7875,13 +6959,8 @@
 /area/ruin/space/has_grav/port_tarkon/starboardhall)
 "Px" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/door/firedoor/solid,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/garden)
@@ -7906,13 +6985,8 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/port_tarkon/forehall)
 "PK" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/door/firedoor/solid,
 /obj/machinery/door/airlock/atmos/glass,
@@ -7926,13 +7000,8 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/developement)
 "PO" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/turf_decal/tile/neutral/half{
 	dir = 1
@@ -7947,13 +7016,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "PQ" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -8010,22 +7074,14 @@
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "Qd" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/item/broken_bottle,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "Qf" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/decal/cleanable/confetti,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -8224,13 +7280,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/garden)
 "Rk" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -8245,13 +7296,8 @@
 /area/ruin/space/has_grav/port_tarkon/cargo)
 "Rq" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/mining)
@@ -8284,14 +7330,9 @@
 /turf/open/space/basic,
 /area/template_noop)
 "RB" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/porthall)
@@ -8405,38 +7446,23 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/port_tarkon/forehall)
 "Sf" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/decal/cleanable/confetti,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/porthall)
 "Sg" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/purple/half,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/developement)
 "Sj" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/light_switch/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -8474,13 +7500,8 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/developement)
 "Sq" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/turf_decal/tile/blue/half{
 	dir = 1
@@ -8527,13 +7548,8 @@
 /area/ruin/space/has_grav/port_tarkon/secoff)
 "SI" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/turf_decal/tile/neutral/anticorner,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -8543,13 +7559,8 @@
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon)
 "SL" = (
@@ -8569,25 +7580,15 @@
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "SP" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/item/broken_bottle,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/starboardhall)
 "SQ" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/light/directional/north,
 /obj/effect/turf_decal/tile/brown/half{
 	dir = 1
@@ -8722,13 +7723,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/storage)
 "Tx" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/decal/cleanable/confetti,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -8758,13 +7754,8 @@
 /area/ruin/space/has_grav/port_tarkon/cargo)
 "TH" = (
 /obj/machinery/airalarm/directional/north,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/turf_decal/tile/neutral/anticorner{
 	dir = 4
@@ -8803,10 +7794,7 @@
 "TQ" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/airalarm/directional/east,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/turf_decal/tile/brown/half{
 	dir = 4
 	},
@@ -8911,9 +7899,7 @@
 /turf/open/floor/iron/white,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "Ur" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/brown,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -8990,10 +7976,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/port_tarkon/starboardhall)
 "UV" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/developement)
@@ -9131,13 +8114,8 @@
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "VE" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/turf_decal/tile/yellow/half{
 	dir = 4
 	},
@@ -9156,13 +8134,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "VJ" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/forehall)
@@ -9177,14 +8150,9 @@
 /area/ruin/space/has_grav/port_tarkon/comms)
 "VN" = (
 /obj/effect/decal/cleanable/confetti,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -9195,13 +8163,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/forehall)
 "VP" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/turf_decal/tile/neutral/half{
 	dir = 1
@@ -9228,13 +8191,8 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/developement)
 "VV" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/forehall)
@@ -9269,13 +8227,8 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/comms)
 "Wh" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/airalarm/directional/east,
 /obj/effect/turf_decal/tile/red/half{
 	dir = 4
@@ -9284,13 +8237,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/secoff)
 "Wn" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
@@ -9305,13 +8253,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/cargo)
 "Ws" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/vomit/old,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -9367,22 +8310,15 @@
 "WO" = (
 /obj/structure/table/reinforced,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/spawner/lootdrop/three_course_meal,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "WP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/structure/window/reinforced/no_firelock,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/door/firedoor/solid/closed,
 /obj/machinery/door/poddoor/shutters{
 	id = "ptatmos"
@@ -9415,10 +8351,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon)
 "Xh" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
@@ -9464,24 +8397,14 @@
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/port_tarkon/toolstorage)
 "Xz" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/mining)
 "XD" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -9543,13 +8466,8 @@
 /area/ruin/space/has_grav/port_tarkon)
 "XS" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/neutral/half{
 	dir = 4
 	},
@@ -9601,13 +8519,8 @@
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "Yl" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/neutral/half{
 	dir = 4
 	},
@@ -9655,13 +8568,8 @@
 /area/ruin/space/has_grav/port_tarkon/garden)
 "Yy" = (
 /obj/structure/table,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/item/folder/blue,
 /obj/item/pen,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -9683,8 +8591,8 @@
 	start_charge = 0
 	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/port_tarkon/dorms)
@@ -9812,9 +8720,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "Zn" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/neutral/anticorner{
 	dir = 1
 	},
@@ -9875,21 +8781,14 @@
 /area/ruin/space/has_grav/port_tarkon/storage)
 "ZC" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/neutral/anticorner,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "ZE" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/decal/cleanable/confetti,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/cafeteria,
@@ -9935,13 +8834,8 @@
 /obj/machinery/light/dim/directional/south,
 /obj/item/paper/fluff/ruins/tarkoff/defcon5,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon)
 "ZR" = (
@@ -9963,24 +8857,14 @@
 	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/door/firedoor/solid,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/mining)
 "ZV" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/airalarm/directional/north,
 /obj/effect/turf_decal/tile/brown/half{
 	dir = 1
@@ -9993,13 +8877,8 @@
 	name = "Cryogenics Room";
 	req_access = list("tarkoff")
 	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	visible_pipes = 1;
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/door/firedoor/solid,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/iron,

@@ -19,7 +19,7 @@
 
 	display_order = JOB_DISPLAY_ORDER_CHAPLAIN
 	threat = 0.5
-	
+
 	family_heirlooms = list(
 		/obj/item/toy/windupToolbox,
 		/obj/item/reagent_containers/food/drinks/bottle/holywater
@@ -125,6 +125,7 @@
 	belt = /obj/item/pda/chaplain
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/chaplain
-	backpack_contents = list(/obj/item/camera/spooky = 1)
+	backpack_contents = list(/obj/item/camera/spooky = 1,
+							/obj/item/stamp/chap = 1)
 	backpack = /obj/item/storage/backpack/cultpack
 	satchel = /obj/item/storage/backpack/cultpack

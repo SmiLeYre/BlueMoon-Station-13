@@ -42,7 +42,7 @@
 
 /obj/item/implanter/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/pen))
-		if(!user.is_literate())
+		if(!user.can_write(W))
 			to_chat(user, "<span class='notice'>You prod at [src] with [W]!</span>")
 			return
 		var/t = stripped_input(user, "What would you like the label to be?", name, null)

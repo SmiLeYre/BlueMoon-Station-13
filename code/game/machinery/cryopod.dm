@@ -531,7 +531,7 @@ GLOBAL_LIST_EMPTY(ghost_records)
 		if("CRYO_LEAVE")
 			radio.talk_into(src, "[user][rank ? ", [rank]" : ""] has been moved to cryo storage.", announcement_channel)
 
-/obj/effect/mob_spawn/ghost_role/special(mob/living/spawned_mob, mob/mob_possessor)
+/obj/effect/mob_spawn/human/special(mob/living/spawned_mob, mob/mob_possessor)
 	. = ..()
 	var/obj/machinery/computer/cryopod/control_computer = find_control_computer()
 	var/datum/data/record/record = new
@@ -541,7 +541,7 @@ GLOBAL_LIST_EMPTY(ghost_records)
 	if(control_computer)
 		control_computer.announce("CRYO_JOIN", spawned_mob.real_name, name)
 
-/obj/effect/mob_spawn/ghost_role/proc/find_control_computer()
+/obj/effect/mob_spawn/human/proc/find_control_computer()
 	if(!computer_area)
 		return
 	for(var/cryo_console as anything in GLOB.cryopod_computers)
@@ -552,5 +552,5 @@ GLOBAL_LIST_EMPTY(ghost_records)
 
 	return
 
-/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate
+/obj/effect/mob_spawn/human/lavaland_syndicate
 	computer_area = /area/ruin/lavaland/unpowered/deepspaceone/dormitories

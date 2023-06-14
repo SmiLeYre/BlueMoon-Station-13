@@ -75,7 +75,7 @@
 /area/ruin/powered)
 "q" = (
 /obj/item/paper/crumpled{
-	info = "Lest ye be prepared, abandon all hope ye who enter here.";
+	default_raw_text = "Lest ye be prepared, abandon all hope ye who enter here.";
 	name = "Wise Man's Warning."
 	},
 /obj/effect/decal/remains/human,

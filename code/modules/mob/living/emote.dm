@@ -11,8 +11,8 @@
 /datum/emote/living/bow
 	key = "bow"
 	key_third_person = "bows"
-	message = "поднимает руку."
-	message_param = "поднимает руку при виде %t."
+	message = "кланяется."
+	message_param = "кланяется при виде %t."
 	restraint_check = TRUE
 
 /datum/emote/living/choke
@@ -86,9 +86,14 @@
 	message = "радостно танцует."
 	restraint_check = TRUE
 
-/datum/emote/living/dance/run_emote(mob/user, params)
+/datum/emote/living/dance/run_emote(mob/user, params, type_override, intentional)
 	. = ..()
-	if(.)
+	if(ishuman(user))
+		if(user.nextsoundemote >= world.time)
+			to_chat(user, span_warning("Рано! Очень рано!!"))
+			SEND_SOUND(user, 'sound/machines/buzz-sigh.ogg')
+			return
+		user.nextsoundemote = world.time + 5 SECONDS
 		user.SpinAnimation(8,4)
 		user.spin(30, 1)
 
