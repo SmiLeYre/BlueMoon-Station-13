@@ -134,7 +134,6 @@
 	var/command_radio = FALSE
 	var/uplink_type = /obj/item/inteq/uplink/radio/nuclear
 
-
 /datum/outfit/syndicate/leader
 	name = "InteQ Leader - Basic"
 	id = /obj/item/card/id/syndicate/nuke_leader
@@ -189,7 +188,8 @@
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 	internals_slot = ITEM_SLOT_RPOCKET
 	belt = /obj/item/storage/belt/military
-	backpack_contents = list(/obj/item/clothing/accessory/permit=1,\
+	backpack_contents = list(/obj/item/storage/box/survival/syndie=1,\
+	/obj/item/clothing/accessory/permit=1,\
 	/obj/item/tank/jetpack/oxygen/harness=1,\
 	/obj/item/gun/ballistic/automatic/pistol=1,\
 	/obj/item/kitchen/knife/combat/survival)

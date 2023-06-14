@@ -3,6 +3,7 @@
 	typepath = /datum/round_event/brain_trauma
 	weight = 60
 	min_players = 10
+	category = EVENT_CATEGORY_HEALTH
 
 /datum/round_event_control/brain_trauma/canSpawnEvent(var/players_amt, var/gamemode)
 	if(!..()) return FALSE

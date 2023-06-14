@@ -37,9 +37,16 @@
 		return
 	var/mob/living/carbon/human/H = owner.current
 
-	//H.set_species(/datum/species/human) //Plasamen burn up otherwise, and lizards are vulnerable to asimov AIs//Фурри, ебать.
+	if(!istype(H))
+		return
+	if(SSticker.mode.name == "Extended")
+		H.equipOutfit(/datum/outfit/syndicate/lone)
+	else
+		H.equipOutfit(/datum/outfit/syndicate/lone/inteq)
 
-	H.equipOutfit(nukeop_outfit)
+	H.canloadappearance = TRUE
+	H.checkloadappearance()
+
 	return TRUE
 
 /datum/antagonist/nukeop/greet()
@@ -55,6 +62,7 @@
 	memorize_code()
 	if(send_to_spawnpoint)
 		move_to_spawnpoint()
+
 
 /datum/antagonist/nukeop/get_team()
 	return nuke_team
@@ -212,30 +220,6 @@
 	always_new_team = TRUE
 	send_to_spawnpoint = FALSE //Handled by event
 
-/datum/antagonist/nukeop/lone/on_gain()
-	ExtaOrNeExta()
-
-	var/mob/living/carbon/human/H = owner.current
-	H.canloadappearance = TRUE
-	H.checkloadappearance()
-
-	. = ..()
-
-/datum/antagonist/nukeop/lone/proc/create_objectives()
-	var/datum/objective/nuclear/revert/exta = new
-	exta.owner = owner
-	objectives = exta
-
-/datum/antagonist/nukeop/lone/proc/ExtaOrNeExta()
-	var/mob/living/carbon/human/H = owner.current
-	if(!istype(H))
-		return
-	if(SSticker.mode.name == "Extended")
-		H.equipOutfit(/datum/outfit/syndicate/lone)
-		create_objectives()
-	else
-		H.equipOutfit(/datum/outfit/syndicate/lone/inteq)
-
 /datum/antagonist/nukeop/lone/assign_nuke()
 	if(nuke_team && !nuke_team.tracked_nuke)
 		nuke_team.memorized_code = random_nukecode()
@@ -258,6 +242,7 @@
 	var/syndicate_name
 	var/obj/machinery/nuclearbomb/tracked_nuke
 	var/core_objective = /datum/objective/nuclear
+	var/revert_objective = /datum/objective/nuclear/revert
 	var/memorized_code
 	var/list/team_discounts
 	var/datum/weakref/war_button_ref
@@ -267,10 +252,15 @@
 	syndicate_name = syndicate_name()
 
 /datum/team/nuclear/proc/update_objectives()
-	if(core_objective)
-		var/datum/objective/O = new core_objective
+	if(SSticker.mode.name == "Extended")
+		var/datum/objective/O = new revert_objective
 		O.team = src
 		objectives += O
+	else
+		if(core_objective)
+			var/datum/objective/O = new core_objective
+			O.team = src
+			objectives += O
 
 /datum/team/nuclear/proc/disk_rescued()
 	for(var/obj/item/disk/nuclear/D in GLOB.poi_list)

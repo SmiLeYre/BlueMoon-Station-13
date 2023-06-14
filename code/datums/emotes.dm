@@ -120,11 +120,6 @@
 
 /datum/emote/proc/can_run_emote(mob/user, status_check = TRUE, intentional = FALSE)
 	. = TRUE
-	if(mob_type_allowed_typecache) //empty list = anyone can use it unless specifically blacklisted
-		if(!is_type_in_typecache(user, mob_type_allowed_typecache))
-			return FALSE
-	if(is_type_in_typecache(user, mob_type_blacklist_typecache))
-		return FALSE
 	if(status_check && !is_type_in_typecache(user, mob_type_ignore_stat_typecache))
 		if(user.stat > stat_allowed)
 			if(!intentional)
@@ -132,11 +127,13 @@
 			switch(user.stat)
 				if(SOFT_CRIT)
 					to_chat(user, "<span class='notice'>Вы не можете использовать [key], когда находитесь в критическом состоянии.</span>")
+					return FALSE
 				if(UNCONSCIOUS)
 					to_chat(user, "<span class='notice'>Вы не можете использовать [key], когда находитесь в бессознательном состоянии.</span>")
+					return FALSE
 				if(DEAD)
 					to_chat(user, "<span class='notice'>Вы не можете использовать [key], будучи мёртвым.</span>")
-			return FALSE
+					return FALSE
 		var/mob/living/L = user
 		if(restraint_check && (istype(L) && !CHECK_MOBILITY(L, MOBILITY_USE)))
 			if(!intentional)
@@ -148,6 +145,12 @@
 				return FALSE
 			to_chat(user, "<span class='notice'>Вы не можете использовать [key] в связанном состоянии.</span>")
 			return FALSE
+
+	if(mob_type_allowed_typecache) //empty list = anyone can use it unless specifically blacklisted
+		if(!is_type_in_typecache(user, mob_type_allowed_typecache))
+			return FALSE
+	if(is_type_in_typecache(user, mob_type_blacklist_typecache))
+		return FALSE
 
 	if(isliving(user))
 		var/mob/living/L = user

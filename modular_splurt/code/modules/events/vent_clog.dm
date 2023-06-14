@@ -27,6 +27,7 @@
 	name = "Clogged Vents: Girlcum"
 	typepath = /datum/round_event/vent_clog/female
 	max_occurrences = 1
+	category = EVENT_CATEGORY_JANITORIAL
 
 /datum/round_event/vent_clog/female
 	saferChems = list(
@@ -53,6 +54,7 @@
 	name = "Clogged Vents: Semen"
 	typepath = /datum/round_event/vent_clog/male
 	max_occurrences = 1
+	category = EVENT_CATEGORY_JANITORIAL
 
 /datum/round_event/vent_clog/male
 	saferChems = list(

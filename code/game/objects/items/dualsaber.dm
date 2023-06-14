@@ -285,7 +285,6 @@
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "destroyed", "ripped", "devastated", "shredded")
 	spinnable = FALSE
 	total_mass_on = 4
-	slowdown_wielded = 1
 
 /obj/item/dualsaber/hypereutactic/ComponentInitialize()
 	. = ..()

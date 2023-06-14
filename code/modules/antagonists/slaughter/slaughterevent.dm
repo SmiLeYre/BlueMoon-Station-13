@@ -5,6 +5,7 @@
 	max_occurrences = 1
 	earliest_start = 2 HOURS
 	min_players = 30
+	category = EVENT_CATEGORY_ENTITIES
 
 /datum/round_event_control/slaughter/canSpawnEvent()
 	weight = initial(src.weight)

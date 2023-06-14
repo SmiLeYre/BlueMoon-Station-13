@@ -5,6 +5,7 @@
 	min_players = 20
 	max_occurrences = 2
 	weight = 15
+	category = EVENT_CATEGORY_ANOMALIES
 
 /datum/round_event/anomaly/anomaly_vortex
 	start_when = 10

@@ -4,6 +4,7 @@
 
 	max_occurrences = 5
 	weight = 25
+	category = EVENT_CATEGORY_ANOMALIES
 
 /datum/round_event/anomaly/anomaly_grav
 	start_when = 3

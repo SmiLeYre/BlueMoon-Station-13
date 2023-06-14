@@ -346,6 +346,7 @@
 	desc = "And those that tasted the bite of his sword named him... The Doom Slayer."
 	armor = list(MELEE = 70, BULLET = 40, LASER = 10, ENERGY = 10, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, MAGIC = 50)
 	strip_delay = 130
+	slowdown = 0
 	icon = 'modular_sand/icons/obj/clothing/suits.dmi'
 	icon_state = "praetor"
 	mob_overlay_icon = 'modular_sand/icons/mob/clothing/suit.dmi'

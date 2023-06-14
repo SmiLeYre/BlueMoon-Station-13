@@ -114,7 +114,11 @@ const fieldRegex: RegExp = /\[((?:_+))\]/gi;
 // Handles the ghost stamp when attempting to stamp paper sheets.
 class PaperSheetStamper extends Component<PaperSheetStamperProps> {
   style: null;
-  state: PaperSheetStamperState = { x: 0, y: 0, rotation: 0, yOffset: 0 };
+  state: PaperSheetStamperState = { x: 0,
+    y: 0,
+    rotation: 0,
+    yOffset: 0
+  };
   scrollableRef: RefObject<HTMLDivElement>;
 
   constructor(props, context) {
@@ -776,7 +780,8 @@ export class PreviewView extends Component<PreviewViewProps> {
     return 'paperfield_' + index;
   };
 
-  // Returns the width the text with the provided attributes would take up in px.
+  // Returns the width the text with
+  // the provided attributes would take up in px.
   textWidth = (text: string, font: string, fontsize: number): number => {
     const c = document.createElement('canvas');
     const ctx = c.getContext('2d');

@@ -559,7 +559,7 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 	return FALSE
 
 /datum/objective/nuclear/revert
-	name = "nuclear"
+	name = "revert_nuclear"
 	explanation_text = "Защити Космическую Станцию и Ядерный Диск любой ценой!!"
 	martyr_compatible = 1
 

@@ -1,342 +1,167 @@
-/datum/emote/living/growl
+/datum/emote/living/audio/growl
 	key = "growl"
-	key_third_person = "growls"
-	message = "lets out a growl."
-	emote_type = EMOTE_AUDIBLE
-	muzzle_ignore = TRUE
-	restraint_check = FALSE
+	key_third_person = "growl"
+	message = "growl!"
+	message_mime = "growl."
+	emote_sound = 'sound/voice/growl.ogg'
+	emote_cooldown = 10 SECONDS
 
-/datum/emote/living/growl/run_emote(mob/user, params, type_override, intentional)
-	if(ishuman(user))
-		if(user.nextsoundemote >= world.time)
-			to_chat(user, span_warning("Рано! Очень рано!!"))
-			SEND_SOUND(user, 'sound/machines/buzz-sigh.ogg')
-			return
-		user.nextsoundemote = world.time + 3 SECONDS
-		playsound(user, 'sound/voice/growl.ogg', 50, 1, -1)
-	. = ..()
-
-/datum/emote/living/wurble
+/datum/emote/living/audio/wurble
 	key = "wurble"
-	key_third_person = "wurbles"
-	message = "lets out a wurble."
-	muzzle_ignore = TRUE
-	emote_type = EMOTE_AUDIBLE
+	key_third_person = "wurble"
+	message = "wurble!"
+	message_mime = "wurble."
+	emote_sound = 'sound/voice/wurble.ogg'
+	emote_cooldown = 10 SECONDS
 
-/datum/emote/living/wurble/run_emote(mob/user, params, type_override, intentional)
-	if(ishuman(user))
-		if(user.nextsoundemote >= world.time)
-			to_chat(user, span_warning("Рано! Очень рано!!"))
-			SEND_SOUND(user, 'sound/machines/buzz-sigh.ogg')
-			return
-		user.nextsoundemote = world.time + 3 SECONDS
-		playsound(user, 'sound/voice/wurble.ogg', 50, 1, -1)
-	. = ..()
-
-/datum/emote/living/warble
+/datum/emote/living/audio/warble
 	key = "warble"
 	key_third_person = "warbles"
-	message = "warbles!"
-	muzzle_ignore = TRUE
-	emote_type = EMOTE_AUDIBLE
+	message = "warble!"
+	message_mime = "warble."
+	emote_sound = 'sound/voice/warbles.ogg'
+	emote_cooldown = 10 SECONDS
 
-/datum/emote/living/warble/run_emote(mob/user, params, type_override, intentional)
-	if(ishuman(user))
-		if(user.nextsoundemote >= world.time)
-			to_chat(user, span_warning("Рано! Очень рано!!"))
-			SEND_SOUND(user, 'sound/machines/buzz-sigh.ogg')
-			return
-		user.nextsoundemote = world.time + 3 SECONDS
-		playsound(user, 'sound/voice/warbles.ogg', 50, 1, -1)
-	. = ..()
-
-/datum/emote/living/trills
+/datum/emote/living/audio/trills
 	key = "trills"
-	key_third_person = "trills!"
+	key_third_person = "trills"
 	message = "trills!"
-	muzzle_ignore = TRUE
-	emote_type = EMOTE_AUDIBLE
+	message_mime = "trills."
+	emote_sound = 'sound/voice/trills.ogg'
+	emote_cooldown = 10 SECONDS
 
-/datum/emote/living/trills/run_emote(mob/user, params, type_override, intentional)
-	if(ishuman(user))
-		if(user.nextsoundemote >= world.time)
-			to_chat(user, span_warning("Рано! Очень рано!!"))
-			SEND_SOUND(user, 'sound/machines/buzz-sigh.ogg')
-			return
-		user.nextsoundemote = world.time + 5 SECONDS
-	playsound(user, 'sound/voice/trills.ogg', 50, 1, -1)
-	. = ..()
-
-/datum/emote/living/woof
+/datum/emote/living/audio/woof
 	key = "woof"
 	key_third_person = "woofs"
 	message = "lets out a woof."
-	emote_type = EMOTE_AUDIBLE
+	message_mime = "lets out a woof."
+	emote_sound = 'sound/voice/woof.ogg'
+	emote_cooldown = 10 SECONDS
 
-/datum/emote/living/woof/run_emote(mob/user, params, type_override, intentional)
-	if(ishuman(user))
-		if(user.nextsoundemote >= world.time)
-			to_chat(user, span_warning("Рано! Очень рано!!"))
-			SEND_SOUND(user, 'sound/machines/buzz-sigh.ogg')
-			return
-		user.nextsoundemote = world.time + 5 SECONDS
-	playsound(user, 'sound/voice/woof.ogg', 50, 1, -1)
-	. = ..()
-
-/datum/emote/living/cloaker1
+/datum/emote/living/audio/cloaker1
 	key = "cloaker"
-	key_third_person = "cloakers"
+	key_third_person = "cloaker"
 	message = "aggressively approaching."
-	emote_type = EMOTE_AUDIBLE
+	message_mime = null
+	emote_sound = 'sound/voice/cloaker1.ogg'
+	emote_cooldown = 10 SECONDS
 
-/datum/emote/living/cloaker1/run_emote(mob/user, params, type_override, intentional)
-	if(ishuman(user))
-		if(user.nextsoundemote >= world.time)
-			to_chat(user, span_warning("Рано! Очень рано!!"))
-			SEND_SOUND(user, 'sound/machines/buzz-sigh.ogg')
-			return
-		user.nextsoundemote = world.time + 30 SECONDS
-	playsound(user, 'sound/voice/cloaker1.ogg', 25, 1, -1)
-	. = ..()
-
-/datum/emote/living/cloaker2
+/datum/emote/living/audio/cloaker2
 	key = "cloaker2"
-	key_third_person = "cloakers2"
+	key_third_person = "cloaker2"
 	message = "clearly demands to stop beating yourself."
-	emote_type = EMOTE_AUDIBLE
+	message_mime = null
+	emote_sound = 'sound/voice/cloaker2.ogg'
+	emote_cooldown = 10 SECONDS
 
-/datum/emote/living/cloaker2/run_emote(mob/user, params, type_override, intentional)
-	if(ishuman(user))
-		if(user.nextsoundemote >= world.time)
-			to_chat(user, span_warning("Рано! Очень рано!!"))
-			SEND_SOUND(user, 'sound/machines/buzz-sigh.ogg')
-			return
-		user.nextsoundemote = world.time + 10 SECONDS
-	playsound(user, 'sound/voice/cloaker2.ogg', 50, 1, -1)
-	. = ..()
-
-/datum/emote/living/cloaker3
+/datum/emote/living/audio/cloaker3
 	key = "cloaker3"
-	key_third_person = "cloakers3"
+	key_third_person = "cloaker3"
 	message = "explains the reason for the detention."
-	emote_type = EMOTE_AUDIBLE
+	message_mime = null
+	emote_sound = 'sound/voice/cloaker3.ogg'
+	emote_cooldown = 10 SECONDS
 
-/datum/emote/living/cloaker3/run_emote(mob/user, params, type_override, intentional)
-	if(ishuman(user))
-		if(user.nextsoundemote >= world.time)
-			to_chat(user, span_warning("Рано! Очень рано!!"))
-			SEND_SOUND(user, 'sound/machines/buzz-sigh.ogg')
-			return
-		user.nextsoundemote = world.time + 10 SECONDS
-	playsound(user, 'sound/voice/cloaker3.ogg', 50, 1, -1)
-	. = ..()
-
-/datum/emote/living/cloaker4
+/datum/emote/living/audio/cloaker4
 	key = "cloaker4"
-	key_third_person = "cloakers4"
+	key_third_person = "cloaker4"
 	message = "approves the Safe Word."
-	emote_type = EMOTE_AUDIBLE
+	message_mime = null
+	emote_sound = 'sound/voice/cloaker4.ogg'
+	emote_cooldown = 10 SECONDS
 
-/datum/emote/living/cloaker4/run_emote(mob/user, params, type_override, intentional)
-	if(ishuman(user))
-		if(user.nextsoundemote >= world.time)
-			to_chat(user, span_warning("Рано! Очень рано!!"))
-			SEND_SOUND(user, 'sound/machines/buzz-sigh.ogg')
-			return
-		user.nextsoundemote = world.time + 10 SECONDS
-	playsound(user, 'sound/voice/cloaker4.ogg', 50, 1, -1)
-	. = ..()
-
-/datum/emote/living/cluwne
+/datum/emote/living/audio/cluwne
 	key = "cluwne"
 	key_third_person = "cluwnes"
-	message = "clown around; laughs terribly..."
-	emote_type = EMOTE_AUDIBLE
+	message = "clowning around; laughs terribly..."
+	message_mime = null
+	emote_sound = list('sound/voice/cluwnelaugh1.ogg', 'sound/voice/cluwnelaugh2.ogg', 'sound/voice/cluwnelaugh3.ogg')
+	emote_cooldown = 10 SECONDS
 
-/datum/emote/living/cluwne/run_emote(mob/user, params, type_override, intentional)
-	if(ishuman(user))
-		if(user.nextsoundemote >= world.time)
-			to_chat(user, span_warning("Рано! Очень рано!!"))
-			SEND_SOUND(user, 'sound/machines/buzz-sigh.ogg')
-			return
-		user.nextsoundemote = world.time + 10 SECONDS
-	playsound(user, pick('sound/voice/cluwnelaugh1.ogg', 'sound/voice/cluwnelaugh2.ogg', 'sound/voice/cluwnelaugh3.ogg'), 50, 1, -1)
-	. = ..()
-
-/datum/emote/living/suka1
+/datum/emote/living/audio/suka1
 	key = "suka"
-	key_third_person = "sukas"
+	key_third_person = "suka"
 	message = "seems to be very angry."
-	emote_type = EMOTE_AUDIBLE
+	message_mime = null
+	emote_sound = 'sound/voice/human/bear_fight.ogg'
+	emote_cooldown = 10 SECONDS
 
-/datum/emote/living/suka1/run_emote(mob/user, params, type_override, intentional)
-	if(ishuman(user))
-		if(user.nextsoundemote >= world.time)
-			to_chat(user, span_warning("Рано! Очень рано!!"))
-			SEND_SOUND(user, 'sound/machines/buzz-sigh.ogg')
-			return
-		user.nextsoundemote = world.time + 10 SECONDS
-	playsound(user, 'sound/voice/human/bear_fight.ogg', 50, 1, -1)
-	. = ..()
-
-
-/datum/emote/living/suka2
+/datum/emote/living/audio/suka2
 	key = "suka2"
-	key_third_person = "sukas2"
+	key_third_person = "suka2"
 	message = "seems to be very angry."
-	emote_type = EMOTE_AUDIBLE
+	message_mime = null
+	emote_sound = 'sound/voice/bear_fight2.ogg'
+	emote_cooldown = 10 SECONDS
 
-/datum/emote/living/suka2/run_emote(mob/user, params, type_override, intentional)
-	if(ishuman(user))
-		if(user.nextsoundemote >= world.time)
-			to_chat(user, span_warning("Рано! Очень рано!!"))
-			SEND_SOUND(user, 'sound/machines/buzz-sigh.ogg')
-			return
-		user.nextsoundemote = world.time + 10 SECONDS
-	playsound(user, 'sound/voice/bear_fight2.ogg', 50, 1, -1)
-	. = ..()
-
-
-/datum/emote/living/jacket1
+/datum/emote/living/audio/jacket1
 	key = "jacket"
-	key_third_person = "jackets"
-	message = "asks: <b>'Do You Know What Time It Is?'</b>"
-	emote_type = EMOTE_AUDIBLE
+	key_third_person = "jacket"
+	message = "speaking: <b>'Help Is On The Way!'</b>"
+	message_mime = null
+	emote_sound = 'sound/voice/jacket1.ogg'
+	emote_cooldown = 10 SECONDS
 
-/datum/emote/living/jacket1/run_emote(mob/user, params, type_override, intentional)
-	if(ishuman(user))
-		if(user.nextsoundemote >= world.time)
-			to_chat(user, span_warning("Рано! Очень рано!!"))
-			SEND_SOUND(user, 'sound/machines/buzz-sigh.ogg')
-			return
-		user.nextsoundemote = world.time + 10 SECONDS
-	playsound(user, 'sound/voice/jacket1.ogg', 75, 1, -1)
-	. = ..()
-
-/datum/emote/living/jacket2
+/datum/emote/living/audio/jacket2
 	key = "jacket2"
 	key_third_person = "jacket2"
 	message = "speaking: <b>'Help Is On The Way!'</b>"
-	emote_type = EMOTE_AUDIBLE
+	message_mime = null
+	emote_sound = 'sound/voice/jacket2.ogg'
+	emote_cooldown = 10 SECONDS
 
-/datum/emote/living/jacket2/run_emote(mob/user, params, type_override, intentional)
-	if(ishuman(user))
-		if(user.nextsoundemote >= world.time)
-			to_chat(user, span_warning("Рано! Очень рано!!"))
-			SEND_SOUND(user, 'sound/machines/buzz-sigh.ogg')
-			return
-		user.nextsoundemote = world.time + 10 SECONDS
-	playsound(user, 'sound/voice/jacket2.ogg', 75, 1, -1)
-	. = ..()
-
-/datum/emote/living/bulldozer1
+/datum/emote/living/audio/bulldozer1
 	key = "bulldozer"
-	key_third_person = "bulldozers"
+	key_third_person = "bulldozer"
 	message = "yelling: <b>'You're up against the wall and I am the fucking wall!'</b>"
-	emote_type = EMOTE_AUDIBLE
+	message_mime = null
+	emote_sound = 'sound/voice/bulldozer1.ogg'
+	emote_cooldown = 10 SECONDS
 
-/datum/emote/living/bulldozer1/run_emote(mob/user, params, type_override, intentional)
-	if(ishuman(user))
-		if(user.nextsoundemote >= world.time)
-			to_chat(user, span_warning("Рано! Очень рано!!"))
-			SEND_SOUND(user, 'sound/machines/buzz-sigh.ogg')
-			return
-		user.nextsoundemote = world.time + 10 SECONDS
-	playsound(user, 'sound/voice/bulldozer1.ogg', 75, 1, -1)
-	. = ..()
-
-/datum/emote/living/bulldozer2
+/datum/emote/living/audio/bulldozer2
 	key = "bulldozer2"
-	key_third_person = "bulldozers2"
+	key_third_person = "bulldozer2"
 	message = "yelling: <b>'Please, stay alive a little bit longer, so I can kill you myself!!'</b>"
-	emote_type = EMOTE_AUDIBLE
+	message_mime = null
+	emote_sound = 'sound/voice/bulldozer2.ogg'
+	emote_cooldown = 10 SECONDS
 
-/datum/emote/living/bulldozer2/run_emote(mob/user, params, type_override, intentional)
-	if(ishuman(user))
-		if(user.nextsoundemote >= world.time)
-			to_chat(user, span_warning("Рано! Очень рано!!"))
-			SEND_SOUND(user, 'sound/machines/buzz-sigh.ogg')
-			return
-		user.nextsoundemote = world.time + 10 SECONDS
-	playsound(user, 'sound/voice/bulldozer2.ogg', 75, 1, -1)
-	. = ..()
-
-/datum/emote/living/cheekybreeky
+/datum/emote/living/audio/cheekybreeky
 	key = "cheekybreeky"
-	key_third_person = "cheekybreekys"
+	key_third_person = "cheekybreeky"
 	message = "yells: <b>'Cheeky Breeky and v Damke!'</b>"
-	emote_type = EMOTE_AUDIBLE
+	message_mime = null
+	emote_sound = 'sound/voice/human/cheekibreeki.ogg'
+	emote_cooldown = 5 SECONDS
 
-/datum/emote/living/cheekybreeky/run_emote(mob/user, params, type_override, intentional)
-	if(ishuman(user))
-		if(user.nextsoundemote >= world.time)
-			to_chat(user, span_warning("Рано! Очень рано!!"))
-			SEND_SOUND(user, 'sound/machines/buzz-sigh.ogg')
-			return
-		user.nextsoundemote = world.time + 10 SECONDS
-	playsound(user, 'sound/voice/human/cheekibreeki.ogg', 75, 1, -1)
-	. = ..()
-
-/datum/emote/living/anyo
+/datum/emote/living/audio/anyo
 	key = "anyo"
-	key_third_person = "anyos"
+	key_third_person = "anyo"
 	message = "lets out a <b>anyo!</b>"
-	emote_type = EMOTE_AUDIBLE
+	message_mime = null
+	emote_sound = 'sound/voice/anyo.ogg'
+	emote_cooldown = 5 SECONDS
 
-/datum/emote/living/anyo/run_emote(mob/user, params, type_override, intentional)
-	if(ishuman(user))
-		if(user.nextsoundemote >= world.time)
-			to_chat(user, span_warning("Рано! Очень рано!!"))
-			SEND_SOUND(user, 'sound/machines/buzz-sigh.ogg')
-			return
-		user.nextsoundemote = world.time + 10 SECONDS
-	playsound(user, 'sound/voice/anyo.ogg', 75, 1, -1)
-	. = ..()
-
-/datum/emote/living/ura1
+/datum/emote/living/audio/ura1
 	key = "ura"
 	key_third_person = "ura"
 	message = "lets out a <b>ura!</b>"
-	emote_type = EMOTE_AUDIBLE
+	message_mime = null
+	emote_sound = 'sound/voice/ura1.ogg'
+	emote_cooldown = 5 SECONDS
 
-/datum/emote/living/ura1/run_emote(mob/user, params, type_override, intentional)
-	if(ishuman(user))
-		if(user.nextsoundemote >= world.time)
-			to_chat(user, span_warning("Рано! Очень рано!!"))
-			SEND_SOUND(user, 'sound/machines/buzz-sigh.ogg')
-			return
-		user.nextsoundemote = world.time + 10 SECONDS
-	playsound(user, 'sound/voice/ura1.ogg', 75, 1, -1)
-	. = ..()
-
-/datum/emote/living/ura2
+/datum/emote/living/audio/ura2
 	key = "ura2"
 	key_third_person = "ura2"
 	message = "lets out a <b>mega-ura!</b>"
-	emote_type = EMOTE_AUDIBLE
+	message_mime = null
+	emote_sound = 'sound/voice/ura2.ogg'
+	emote_cooldown = 10 SECONDS
 
-/datum/emote/living/ura2/run_emote(mob/user, params, type_override, intentional)
-	if(ishuman(user))
-		if(user.nextsoundemote >= world.time)
-			to_chat(user, span_warning("Рано! Очень рано!!"))
-			SEND_SOUND(user, 'sound/machines/buzz-sigh.ogg')
-			return
-		user.nextsoundemote = world.time + 30 SECONDS
-	playsound(user, 'sound/voice/ura2.ogg', 75, 1, -1)
-	. = ..()
-
-/datum/emote/living/ura3
+/datum/emote/living/audio/ura3
 	key = "ura3"
 	key_third_person = "ura3"
 	message = "lets out a <b>mega-ultra-URAAAAAAAAAA!</b>"
-	emote_type = EMOTE_AUDIBLE
-
-/datum/emote/living/ura3/run_emote(mob/user, params, type_override, intentional)
-	if(ishuman(user))
-		if(user.nextsoundemote >= world.time)
-			to_chat(user, span_warning("Рано! Очень рано!!"))
-			SEND_SOUND(user, 'sound/machines/buzz-sigh.ogg')
-			return
-		user.nextsoundemote = world.time + 60 SECONDS
-	playsound(user, 'sound/voice/ura3.ogg', 75, 1, -1)
-	. = ..()
+	message_mime = null
+	emote_sound = 'sound/voice/ura3.ogg'
+	emote_cooldown = 15 SECONDS

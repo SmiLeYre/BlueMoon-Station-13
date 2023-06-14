@@ -113,6 +113,8 @@
 
 	// Check cooldown
 	if(user?.nextsoundemote >= world.time)
+		to_chat(user, span_warning("Рано! Очень рано!!"))
+		SEND_SOUND(user, 'sound/machines/buzz-sigh.ogg')
 		return FALSE
 
 	// Allow use
@@ -223,7 +225,7 @@
 	message = "cackles hysterically!"
 	message_mime = "cackles silently!"
 	emote_sound = 'modular_splurt/sound/voice/cackle_yeen.ogg'
-	emote_cooldown = 1.6 SECONDS
+	emote_cooldown = 11.6 SECONDS
 
 /datum/emote/living/audio/speen
 	key = "speen"
@@ -273,7 +275,7 @@
 	message = "chirps!"
 	message_mime = "chirps silently!"
 	emote_sound = 'modular_splurt/sound/voice/chirp.ogg'
-	emote_cooldown = 0.2 SECONDS
+	emote_cooldown = 10.2 SECONDS
 
 /datum/emote/living/audio/caw
 	key = "caw"
@@ -281,13 +283,13 @@
 	message = "caws!"
 	message_mime = "caws silently!"
 	emote_sound = 'modular_splurt/sound/voice/caw.ogg'
-	emote_cooldown = 0.35 SECONDS
+	emote_cooldown = 10.35 SECONDS
 
 /datum/emote/living/audio/burp
 	key = "burp"
 	key_third_person = "burps"
 	message = "рыгает."
-	emote_cooldown = 10 SECONDS
+	emote_cooldown = 110 SECONDS
 	emote_sound = 'modular_splurt/sound/voice/burps/belch1.ogg'
 
 /datum/emote/living/audio/burp/run_emote(mob/user, params, type_override, intentional)
@@ -312,7 +314,7 @@
 	message = "bleats loudly!"
 	message_mime = "bleats silently!"
 	emote_sound = 'modular_splurt/sound/voice/bleat.ogg'
-	emote_cooldown = 3 SECONDS
+	emote_cooldown = 13 SECONDS
 
 /datum/emote/living/carbon/moan/run_emote(mob/user, params, type_override, intentional) //I can't not port this shit, come on.
 	if(user.nextsoundemote >= world.time || user.stat != CONSCIOUS)
@@ -340,14 +342,14 @@
 	message = "chitters."
 	message_mime = "chitters silently!"
 	emote_sound = 'modular_splurt/sound/voice/moth/mothchitter2.ogg'
-	emote_cooldown = 0.3 SECONDS
+	emote_cooldown = 10.3 SECONDS
 
 /datum/emote/living/audio/monkeytwerk
 	key = "twerk"
 	key_third_person = "twerks"
 	message = "shakes it harder than James Russle himself!"
 	emote_sound = 'modular_splurt/sound/misc/monkey_twerk.ogg'
-	emote_cooldown = 3.2 SECONDS
+	emote_cooldown = 13.2 SECONDS
 
 /datum/emote/living/audio/bruh
 	key = "bruh"
@@ -355,7 +357,7 @@
 	message = "thinks this is a bruh moment."
 	message_mime = "silently acknowledges the bruh moment."
 	emote_sound = 'modular_splurt/sound/voice/bruh.ogg'
-	emote_cooldown = 0.6 SECONDS
+	emote_cooldown = 10.6 SECONDS
 
 /datum/emote/living/audio/bababooey
 	key = "bababooey"
@@ -363,7 +365,7 @@
 	message = "spews bababooey."
 	message_mime = "spews something silently."
 	emote_sound = 'modular_splurt/sound/voice/bababooey/bababooey.ogg'
-	emote_cooldown = 0.9 SECONDS
+	emote_cooldown = 10.9 SECONDS
 
 /datum/emote/living/audio/bababooey/run_emote(mob/user, params)
 	// Check if user is muzzled
@@ -385,7 +387,7 @@
 	message = "spews babafooey."
 	message_mime = "spews something silently."
 	emote_sound = 'modular_splurt/sound/voice/bababooey/babafooey.ogg'
-	emote_cooldown = 0.85 SECONDS
+	emote_cooldown = 10.85 SECONDS
 
 /datum/emote/living/audio/fafafooey
 	key = "fafafooey"
@@ -393,7 +395,7 @@
 	message = "spews fafafooey."
 	message_mime = "spews something silently."
 	emote_sound = 'modular_splurt/sound/voice/bababooey/fafafooey.ogg'
-	emote_cooldown = 0.7 SECONDS
+	emote_cooldown = 10.7 SECONDS
 
 /datum/emote/living/audio/fafafooey/run_emote(mob/user, params)
 	// Check if user is muzzled
@@ -415,7 +417,7 @@
 	message = "spews fafafoggy."
 	message_mime = "spews something silently."
 	emote_sound = 'modular_splurt/sound/voice/bababooey/fafafoggy.ogg'
-	emote_cooldown = 0.9 SECONDS
+	emote_cooldown = 10.9 SECONDS
 
 /datum/emote/living/audio/fafafoggy/run_emote(mob/user, params)
 	// Check if user is muzzled
@@ -437,7 +439,7 @@
 	message = "spews hohohoy."
 	message_mime = "spews something silently."
 	emote_sound = 'modular_splurt/sound/voice/bababooey/hohohoy.ogg'
-	emote_cooldown = 0.7 SECONDS
+	emote_cooldown = 10.7 SECONDS
 
 /datum/emote/living/audio/ffff
 	key = "ffff"
@@ -446,7 +448,7 @@
 	message_mime = "spews something silently."
 	muzzle_ignore = TRUE
 	emote_sound = 'modular_splurt/sound/voice/bababooey/ffff.ogg'
-	emote_cooldown = 0.85 SECONDS
+	emote_cooldown = 10.85 SECONDS
 
 /datum/emote/living/audio/fafafail
 	key = "fafafail"
@@ -454,7 +456,7 @@
 	message = "spews something unintelligible."
 	message_mime = "spews something silent."
 	emote_sound = 'modular_splurt/sound/voice/bababooey/ffffhvh.ogg'
-	emote_cooldown = 1.15 SECONDS
+	emote_cooldown = 11.15 SECONDS
 
 /datum/emote/living/audio/boowomp
 	key = "boowomp"
@@ -462,7 +464,7 @@
 	message = "produces a sad boowomp."
 	message_mime = "produces a silent boowomp."
 	emote_sound = 'modular_splurt/sound/voice/boowomp.ogg'
-	emote_cooldown = 0.4 SECONDS
+	emote_cooldown = 10.4 SECONDS
 
 /datum/emote/living/audio/swaos
 	key = "swaos"
@@ -470,7 +472,7 @@
 	message = "mutters swaos."
 	message_mime = "imitates swaos."
 	emote_sound = 'modular_splurt/sound/voice/swaos.ogg'
-	emote_cooldown = 0.7 SECONDS
+	emote_cooldown = 10.7 SECONDS
 
 /datum/emote/living/audio/eyebrow2
 	key = "eyebrow2"
@@ -478,14 +480,14 @@
 	message = "<b>raises an eyebrow.</b>"
 	message_mime = "<b>raises an eyebrow with quaking force!</b>"
 	emote_sound = 'modular_splurt/sound/voice/vineboom.ogg'
-	emote_cooldown = 2.9 SECONDS
+	emote_cooldown = 12.9 SECONDS
 
 /datum/emote/living/audio/eyebrow3
 	key = "eyebrow3"
 	key_third_person = "eyebrows3"
 	message = "raises an eyebrow <i>quizzaciously</i>."
 	emote_sound = 'modular_splurt/sound/voice/moonmen.ogg'
-	emote_cooldown = 7 SECONDS
+	emote_cooldown = 17 SECONDS
 
 /datum/emote/living/audio/blink2
 	key = "blink2"
@@ -493,7 +495,7 @@
 	message = "blinks."
 	message_mime = "blinks expressively."
 	emote_sound = 'modular_splurt/sound/voice/blink.ogg'
-	emote_cooldown = 0.25 SECONDS
+	emote_cooldown = 10.25 SECONDS
 
 /datum/emote/living/audio/laugh2
 	key = "laugh2"
@@ -509,7 +511,7 @@
 	message = "laughs silly."
 	message_mime = "acts out laughing silly."
 	emote_sound = 'modular_splurt/sound/voice/lol.ogg'
-	emote_cooldown = 6.1 SECONDS
+	emote_cooldown = 16.1 SECONDS
 
 /datum/emote/living/audio/laugh4
 	key = "laugh4"
@@ -517,7 +519,7 @@
 	message = "burst into laughter!"
 	message_mime = "acts out bursting into laughter."
 	emote_sound = 'modular_splurt/sound/voice/laugh_muta.ogg'
-	emote_cooldown = 3 SECONDS
+	emote_cooldown = 13 SECONDS
 
 /datum/emote/living/audio/laugh5
 	key = "laugh5"
@@ -525,7 +527,7 @@
 	message = "laughs in Scottish."
 	message_mime = "acts out laughing in Scottish."
 	emote_sound = 'modular_splurt/sound/voice/laugh_deman.ogg'
-	emote_cooldown = 2.75 SECONDS
+	emote_cooldown = 12.75 SECONDS
 
 /datum/emote/living/audio/laugh6
 	key = "laugh6"
@@ -533,21 +535,21 @@
 	message = "laughs like a kettle!"
 	message_mime = "acts out laughing like a kettle."
 	emote_sound = 'modular_splurt/sound/voice/laugh6.ogg'
-	emote_cooldown = 4.45 SECONDS
+	emote_cooldown = 14.45 SECONDS
 
 /datum/emote/living/audio/breakbad
 	key = "breakbad"
 	key_third_person = "breakbads"
 	message = "stares intensively with determination."
 	emote_sound = 'modular_splurt/sound/voice/breakbad.ogg'
-	emote_cooldown = 6.4 SECONDS
+	emote_cooldown = 16.4 SECONDS
 
 /datum/emote/living/audio/lawyerup
 	key = "lawyerup"
 	key_third_person = "lawyerups"
 	message = "emits an aura of expertise."
 	emote_sound = 'modular_splurt/sound/voice/lawyerup.ogg'
-	emote_cooldown = 7.5 SECONDS
+	emote_cooldown = 17.5 SECONDS
 
 /datum/emote/living/audio/goddamn
 	key = "damn"
@@ -555,7 +557,7 @@
 	message = "is in utter stupor."
 	message_mime = "appears to be in utter stupor."
 	emote_sound = 'modular_splurt/sound/voice/god_damn.ogg'
-	emote_cooldown = 1.25 SECONDS
+	emote_cooldown = 11.25 SECONDS
 
 /datum/emote/living/audio/spoonful
 	key = "spoonful"
@@ -571,7 +573,7 @@
 	message = "invokes the presence of Jesus Christ."
 	message_mime = "invokes the presence of Jesus Christ through silent prayer."
 	emote_sound = 'modular_splurt/sound/voice/OMG.ogg'
-	emote_cooldown = 1.6 SECONDS
+	emote_cooldown = 11.6 SECONDS
 
 /datum/emote/living/audio/whatthehell
 	key = "wth"
@@ -579,7 +581,7 @@
 	message = "condemns the abysses of hell!"
 	message_mime = "silently condemns the abysses of hell!"
 	emote_sound = 'modular_splurt/sound/voice/WTH.ogg'
-	emote_cooldown = 4.4 SECONDS
+	emote_cooldown = 14.4 SECONDS
 
 /datum/emote/living/audio/fusrodah
 	key = "fusrodah"
@@ -587,7 +589,7 @@
 	message = "yells, \"<b>FUS RO DAH!!!</b>\""
 	message_mime = "acts out a dragon shout."
 	emote_sound = 'modular_splurt/sound/voice/fusrodah.ogg'
-	emote_cooldown = 7 SECONDS
+	emote_cooldown = 17 SECONDS
 
 /datum/emote/living/audio/skibidi
 	key = "skibidi"
@@ -595,7 +597,7 @@
 	message = "yells, \"<b>Skibidi bop mm dada!</b>\""
 	message_mime = "makes incoherent mouth motions."
 	emote_sound = 'modular_splurt/sound/voice/skibidi.ogg'
-	emote_cooldown = 1.1 SECONDS
+	emote_cooldown = 11.1 SECONDS
 
 /datum/emote/living/audio/fbi
 	key = "fbi"
@@ -603,14 +605,14 @@
 	message = "yells, \"<b>FBI OPEN UP!</b>\""
 	message_mime = "acts out being the FBI."
 	emote_sound = 'modular_splurt/sound/voice/fbi.ogg'
-	emote_cooldown = 2 SECONDS
+	emote_cooldown = 12 SECONDS
 
 /datum/emote/living/audio/illuminati
 	key = "illuminati"
 	key_third_person = "illuminatis"
 	message = "exudes a mysterious aura!"
 	emote_sound = 'modular_splurt/sound/voice/illuminati.ogg'
-	emote_cooldown = 7.8 SECONDS
+	emote_cooldown = 17.8 SECONDS
 
 /datum/emote/living/audio/bonerif
 	key = "bonerif"
@@ -618,7 +620,7 @@
 	message = "riffs!"
 	message_mime = "riffs silently!"
 	emote_sound = 'modular_splurt/sound/voice/bonerif.ogg'
-	emote_cooldown = 2 SECONDS
+	emote_cooldown = 12 SECONDS
 
 /datum/emote/living/audio/cry2
 	key = "cry2"
@@ -626,7 +628,7 @@
 	message = "cries like a king."
 	message_mime = "acts out crying like a king."
 	emote_sound = 'modular_splurt/sound/voice/cry_king.ogg'
-	emote_cooldown = 1.6 SECONDS // Uses longest sound's time
+	emote_cooldown = 11.6 SECONDS // Uses longest sound's time
 
 /datum/emote/living/audio/cry2/run_emote(mob/user, params)
 	// Set random emote sound
@@ -641,7 +643,7 @@
 	message = "let out a choir!"
 	message_mime = "acts out a choir."
 	emote_sound = 'modular_splurt/sound/voice/choir.ogg'
-	emote_cooldown = 6 SECONDS
+	emote_cooldown = 16 SECONDS
 
 /datum/emote/living/audio/agony
 	key = "agony"
@@ -649,7 +651,7 @@
 	message = "let out a choir of agony!"
 	message_mime = "is visibly in agony."
 	emote_sound = 'modular_splurt/sound/voice/agony.ogg'
-	emote_cooldown = 7 SECONDS
+	emote_cooldown = 17 SECONDS
 
 /datum/emote/living/audio/wtune
 	key = "whistle_tune"
@@ -657,7 +659,7 @@
 	message = "whistles a tune."
 	message_mime = "makes an expression as if whistling."
 	emote_sound = 'modular_splurt/sound/voice/wtune1.ogg'
-	emote_cooldown = 4.55 SECONDS // Uses longest sound's time.
+	emote_cooldown = 14.55 SECONDS // Uses longest sound's time.
 
 /datum/emote/living/audio/wtune/run_emote(mob/user, params)
 	// Set random emote sound
@@ -687,7 +689,7 @@
 	message = "briefly goes sicko mode!"
 	message_mime = "briefly imitates sicko mode!"
 	emote_sound = 'modular_splurt/sound/voice/sicko.ogg'
-	emote_cooldown = 0.8 SECONDS
+	emote_cooldown = 10.8 SECONDS
 
 /datum/emote/living/audio/chill
 	key = "chill"
@@ -695,7 +697,7 @@
 	message = "feels a chill running down their spine..."
 	message_mime = "acts out a chill running down their spine..."
 	emote_sound = 'modular_splurt/sound/voice/waterphone.ogg'
-	emote_cooldown = 3.4 SECONDS
+	emote_cooldown = 13.4 SECONDS
 
 /datum/emote/living/audio/taunt
 	key = "tt"
@@ -715,7 +717,7 @@
 	message = "let out a weh!"
 	message_mime = "acts out a weh!"
 	emote_sound = 'modular_splurt/sound/voice/weh2.ogg'
-	emote_cooldown = 0.25 SECONDS
+	emote_cooldown = 10.25 SECONDS
 
 /datum/emote/living/audio/weh3
 	key = "weh3"
@@ -723,7 +725,7 @@
 	message = "let out a weh!"
 	message_mime = "acts out a weh!"
 	emote_sound = 'modular_splurt/sound/voice/weh3.ogg'
-	emote_cooldown = 0.25 SECONDS
+	emote_cooldown = 10.25 SECONDS
 
 /datum/emote/living/audio/weh4
 	key = "weh-s"
@@ -731,7 +733,7 @@
 	message = "let out a surprised weh!"
 	message_mime = "acts out a surprised weh!"
 	emote_sound = 'modular_splurt/sound/voice/weh_s.ogg'
-	emote_cooldown = 0.35 SECONDS
+	emote_cooldown = 10.35 SECONDS
 
 /datum/emote/living/audio/waa
 	key = "waa"
@@ -739,7 +741,7 @@
 	message = "let out a waa!"
 	message_mime = "acts out a waa!"
 	emote_sound = 'modular_splurt/sound/voice/waa.ogg'
-	emote_cooldown = 3.5 SECONDS
+	emote_cooldown = 13.5 SECONDS
 
 /datum/emote/living/audio/bark2
 	key = "bark2"
@@ -747,7 +749,7 @@
 	message = "barks!"
 	message_mime = "acts out a bark!"
 	emote_sound = 'modular_splurt/sound/voice/bark_alt.ogg'
-	emote_cooldown = 0.35 SECONDS
+	emote_cooldown = 10.35 SECONDS
 
 /datum/emote/living/audio/yap
 	key = "yap"
@@ -755,7 +757,7 @@
 	message = "yaps!"
 	message_mime = "acts out a yap!"
 	emote_sound = 'modular_splurt/sound/voice/yap.ogg'
-	emote_cooldown = 0.28 SECONDS
+	emote_cooldown = 10.28 SECONDS
 
 /datum/emote/living/audio/woof
 	key = "woof"
@@ -763,7 +765,7 @@
 	message = "woofs!"
 	message_mime = "acts out a woof!"
 	emote_sound = 'modular_splurt/sound/voice/woof.ogg'
-	emote_cooldown = 0.71 SECONDS
+	emote_cooldown = 10.71 SECONDS
 
 /datum/emote/living/audio/howl
 	key = "howl"
@@ -771,7 +773,7 @@
 	message = "howls!"
 	message_mime = "acts out a howl!"
 	emote_sound = 'modular_splurt/sound/voice/wolfhowl.ogg'
-	emote_cooldown = 2.04 SECONDS
+	emote_cooldown = 12.04 SECONDS
 
 /datum/emote/living/audio/coyhowl
 	key = "coyhowl"
@@ -779,7 +781,7 @@
 	message = "howls like coyote!"
 	message_mime = "acts out a coyote's howl!"
 	emote_sound = 'modular_splurt/sound/voice/coyotehowl.ogg'
-	emote_cooldown = 2.94 SECONDS // Uses longest sound's time
+	emote_cooldown = 12.94 SECONDS // Uses longest sound's time
 
 /datum/emote/living/audio/coyhowl/run_emote(mob/user, params)
 	emote_sound = pick('modular_splurt/sound/voice/coyotehowl.ogg', 'modular_splurt/sound/voice/coyotehowl2.ogg', 'modular_splurt/sound/voice/coyotehowl3.ogg', 'modular_splurt/sound/voice/coyotehowl4.ogg', 'modular_splurt/sound/voice/coyotehowl5.ogg')
@@ -797,7 +799,7 @@
 	message = "lets out an <b>earthshaking</b> snore"
 	message_mime = "lets out an <b>inaudible</b> snore!"
 	emote_sound = 'modular_splurt/sound/voice/aauugghh1.ogg'
-	emote_cooldown = 2.1 SECONDS
+	emote_cooldown = 12.1 SECONDS
 
 /datum/emote/living/audio/snore/snore2/run_emote(mob/user, params)
 	var/datum/dna/D = user.has_dna()
@@ -836,7 +838,7 @@
 	message = "lets out a yippee!"
 	message_mime = "acts out a yippee!"
 	emote_sound = 'modular_splurt/sound/voice/yippee.ogg'
-	emote_cooldown = 1.2 SECONDS
+	emote_cooldown = 11.2 SECONDS
 
 /datum/emote/living/audio/mewo
 	key = "mewo"
@@ -844,7 +846,7 @@
 	message = "mewos!"
 	message_mime = "mewos silently!"
 	emote_sound = 'modular_splurt/sound/voice/mewo.ogg'
-	emote_cooldown = 0.7 SECONDS
+	emote_cooldown = 10.7 SECONDS
 
 /datum/emote/living/audio/ara_ara
 	key = "ara"
@@ -852,12 +854,12 @@
 	message = "coos with sultry surprise~..."
 	message_mime = "exudes a sultry aura~"
 	emote_sound = 'modular_splurt/sound/voice/ara-ara.ogg'
-	emote_cooldown = 1.25 SECONDS
+	emote_cooldown = 11.25 SECONDS
 
 /datum/emote/living/audio/ara_ara/alt
 	key = "ara2"
 	emote_sound = 'modular_splurt/sound/voice/ara-ara2.ogg'
-	emote_cooldown = 1.3 SECONDS
+	emote_cooldown = 11.3 SECONDS
 
 /datum/emote/living/audio/missouri
 	key = "missouri"
@@ -865,7 +867,7 @@
 	message = "has relocated to Missouri."
 	message_mime = "starts thinking about Missouri."
 	emote_sound = 'modular_splurt/sound/voice/missouri.ogg'
-	emote_cooldown = 3.4 SECONDS
+	emote_cooldown = 13.4 SECONDS
 
 /datum/emote/living/audio/missouri/run_emote(mob/user, params)
 	// Set message pronouns
@@ -884,7 +886,7 @@
 	emote_sound = 'modular_splurt/sound/effects/slap.ogg'
 	// Defines appendage type for generated message
 	var/metacarpus_type = "palm" // Default to hands
-	emote_cooldown = 0.25 SECONDS
+	emote_cooldown = 10.25 SECONDS
 
 /datum/emote/living/audio/facemetacarpus/run_emote(mob/user, params)
 	// Randomly pick a message using metacarpus_type for hand

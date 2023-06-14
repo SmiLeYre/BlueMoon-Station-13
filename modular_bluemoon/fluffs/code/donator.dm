@@ -93,6 +93,12 @@
 	path = /obj/item/clothing/suit/donator/bm/cerberus_suit
 	ckeywhitelist = list("krashly", "stgs", "dedmodo")
 
+/datum/gear/donator/bm/censor_fem_suit
+	name = "censor suit"
+	slot = ITEM_SLOT_OCLOTHING
+	path = /obj/item/clothing/suit/donator/bm/censor_fem_suit
+	ckeywhitelist = list("krashly", "stgs", "dedmodo")
+
 /datum/gear/donator/bm/Dina_Kit
 	name = "Kikimora Suit Kit"
 	slot = ITEM_SLOT_BACKPACK

@@ -5,6 +5,7 @@
 	min_players = 20
 	max_occurrences = 1 //This one probably shouldn't occur! It'd work, but it wouldn't be very fun.
 	weight = 20
+	category = EVENT_CATEGORY_ANOMALIES
 
 /datum/round_event/anomaly
 	var/area/impact_area

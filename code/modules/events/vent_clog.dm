@@ -1,8 +1,9 @@
 /datum/round_event_control/vent_clog
 	name = "Clogged Vents: Normal"
 	typepath = /datum/round_event/vent_clog
-	weight = 10
+	weight = 5
 	max_occurrences = 1
+	category = EVENT_CATEGORY_JANITORIAL
 
 /datum/round_event/vent_clog
 	announce_when	= 1
@@ -104,10 +105,11 @@
 /datum/round_event_control/vent_clog/threatening
 	name = "Clogged Vents: Threatening"
 	typepath = /datum/round_event/vent_clog/threatening
-	weight = 10
+	weight = 5
 	min_players = 15
 	max_occurrences = 1
 	earliest_start = 30 MINUTES
+	category = EVENT_CATEGORY_JANITORIAL
 
 /datum/round_event/vent_clog/threatening
 	randomProbability = 10
@@ -120,6 +122,7 @@
 	min_players = 25
 	max_occurrences = 1
 	earliest_start = 30 MINUTES
+	category = EVENT_CATEGORY_JANITORIAL
 
 /datum/round_event/vent_clog/catastrophic
 	randomProbability = 30
@@ -128,8 +131,9 @@
 /datum/round_event_control/vent_clog/beer
 	name = "Clogged Vents: Beer"
 	typepath = /datum/round_event/vent_clog/beer
-	weight = 25
+	weight = 10
 	max_occurrences = 1
+	category = EVENT_CATEGORY_JANITORIAL
 
 /datum/round_event/vent_clog/beer
 	reagentsAmount = 100

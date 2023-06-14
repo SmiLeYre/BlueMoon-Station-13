@@ -24,10 +24,11 @@
 /datum/emote/living/choke/run_emote(mob/user, params)
 	. = ..()
 	var/mob/living/carbon/C = user
-	if(user.gender == FEMALE)
-		playsound(C, pick('sound/voice/gasp_female1.ogg', 'sound/voice/gasp_female2.ogg', 'sound/voice/gasp_female3.ogg', 'sound/voice/gasp_female4.ogg', 'sound/voice/gasp_female5.ogg', 'sound/voice/gasp_female6.ogg', 'sound/voice/gasp_female7.ogg'), 50, 1)
-	else
-		playsound(C, pick('sound/voice/gasp_male1.ogg', 'sound/voice/gasp_male2.ogg', 'sound/voice/gasp_male3.ogg', 'sound/voice/gasp_male4.ogg', 'sound/voice/gasp_male5.ogg', 'sound/voice/gasp_male6.ogg', 'sound/voice/gasp_male7.ogg',), 50, 1)
+	if(. && iscarbon(user))
+		if(user.gender == FEMALE)
+			playsound(C, pick('sound/voice/gasp_female1.ogg', 'sound/voice/gasp_female2.ogg', 'sound/voice/gasp_female3.ogg', 'sound/voice/gasp_female4.ogg', 'sound/voice/gasp_female5.ogg', 'sound/voice/gasp_female6.ogg', 'sound/voice/gasp_female7.ogg'), 50, 1)
+		else
+			playsound(C, pick('sound/voice/gasp_male1.ogg', 'sound/voice/gasp_male2.ogg', 'sound/voice/gasp_male3.ogg', 'sound/voice/gasp_male4.ogg', 'sound/voice/gasp_male5.ogg', 'sound/voice/gasp_male6.ogg', 'sound/voice/gasp_male7.ogg',), 50, 1)
 
 /datum/emote/living/cross
 	key = "cross"
@@ -44,10 +45,11 @@
 /datum/emote/living/chuckle/run_emote(mob/user, params)
 	. = ..()
 	var/mob/living/carbon/C = user
-	if(user.gender == FEMALE)
-		playsound(C, pick('sound/voice/chuckle_f.ogg'), 50, 1)
-	else
-		playsound(C, pick('sound/voice/chuckle_m.ogg'), 50, 1)
+	if(. && iscarbon(user))
+		if(user.gender == FEMALE)
+			playsound(C, pick('sound/voice/chuckle_f.ogg'), 50, 1)
+		else
+			playsound(C, pick('sound/voice/chuckle_m.ogg'), 50, 1)
 
 /datum/emote/living/collapse
 	key = "collapse"
@@ -75,10 +77,11 @@
 /datum/emote/living/cough/run_emote(mob/user, params)
 	. = ..()
 	var/mob/living/carbon/C = user
-	if(user.gender == FEMALE)
-		playsound(C, pick('sound/voice/female_cough1.ogg', 'sound/voice/female_cough2.ogg', 'sound/voice/female_cough3.ogg', 'sound/voice/female_cough4.ogg', 'sound/voice/female_cough5.ogg', 'sound/voice/female_cough6.ogg'), 50, 1)
-	else
-		playsound(C, pick('sound/voice/male_cough1.ogg', 'sound/voice/male_cough2.ogg', 'sound/voice/male_cough3.ogg', 'sound/voice/male_cough4.ogg'), 50, 1)
+	if(. && iscarbon(user))
+		if(user.gender == FEMALE)
+			playsound(C, pick('sound/voice/female_cough1.ogg', 'sound/voice/female_cough2.ogg', 'sound/voice/female_cough3.ogg', 'sound/voice/female_cough4.ogg', 'sound/voice/female_cough5.ogg', 'sound/voice/female_cough6.ogg'), 50, 1)
+		else
+			playsound(C, pick('sound/voice/male_cough1.ogg', 'sound/voice/male_cough2.ogg', 'sound/voice/male_cough3.ogg', 'sound/voice/male_cough4.ogg'), 50, 1)
 
 /datum/emote/living/dance
 	key = "dance"
@@ -188,26 +191,27 @@
 /datum/emote/living/gasp/run_emote(mob/user, params)
 	. = ..()
 	var/mob/living/carbon/C = user
-	if(user.gender == FEMALE)
-		playsound(C, pick(
-			'sound/voice/gasp_female1.ogg',
-			'sound/voice/gasp_female2.ogg',
-			'sound/voice/gasp_female3.ogg',
-			'sound/voice/gasp_female4.ogg',
-			'sound/voice/gasp_female5.ogg',
-			'sound/voice/gasp_female6.ogg',
-			'sound/voice/gasp_female7.ogg'),
-		10, TRUE, extrarange = -13) //2 tiles around
-	else
-		playsound(C, pick(
-			'sound/voice/gasp_male1.ogg',
-			'sound/voice/gasp_male2.ogg',
-			'sound/voice/gasp_male3.ogg',
-			'sound/voice/gasp_male4.ogg',
-			'sound/voice/gasp_male5.ogg',
-			'sound/voice/gasp_male6.ogg',
-			'sound/voice/gasp_male7.ogg'),
-		10, TRUE, extrarange = -13) //2 tiles around
+	if(. && iscarbon(user))
+		if(user.gender == FEMALE)
+			playsound(C, pick(
+				'sound/voice/gasp_female1.ogg',
+				'sound/voice/gasp_female2.ogg',
+				'sound/voice/gasp_female3.ogg',
+				'sound/voice/gasp_female4.ogg',
+				'sound/voice/gasp_female5.ogg',
+				'sound/voice/gasp_female6.ogg',
+				'sound/voice/gasp_female7.ogg'),
+			10, TRUE, extrarange = -13) //2 tiles around
+		else
+			playsound(C, pick(
+				'sound/voice/gasp_male1.ogg',
+				'sound/voice/gasp_male2.ogg',
+				'sound/voice/gasp_male3.ogg',
+				'sound/voice/gasp_male4.ogg',
+				'sound/voice/gasp_male5.ogg',
+				'sound/voice/gasp_male6.ogg',
+				'sound/voice/gasp_male7.ogg'),
+			10, TRUE, extrarange = -13) //2 tiles around
 //bluemoon add end
 /datum/emote/living/giggle
 	key = "giggle"
@@ -219,10 +223,11 @@
 /datum/emote/living/giggle/run_emote(mob/user, params)
 	. = ..()
 	var/mob/living/carbon/C = user
-	if(user.gender == FEMALE)
-		playsound(C, pick('sound/voice/female_giggle1.ogg', 'sound/voice/female_giggle2.ogg'), 50, 1)
-	else
-		playsound(C, pick('sound/voice/male_giggle1.ogg', 'sound/voice/male_giggle2.ogg'), 50, 1)
+	if(. && iscarbon(user))
+		if(user.gender == FEMALE)
+			playsound(C, pick('sound/voice/female_giggle1.ogg', 'sound/voice/female_giggle2.ogg'), 50, 1)
+		else
+			playsound(C, pick('sound/voice/male_giggle1.ogg', 'sound/voice/male_giggle2.ogg'), 50, 1)
 
 /datum/emote/living/glare
 	key = "glare"
@@ -490,8 +495,6 @@
 		L.Stun(50) //Skyrat Change
 		L.set_resting(TRUE) //Skyrat change
 
-		//L.disable_combat_mode(FALSE) //doesn't work at all
-		//Skyrat change stop
 /datum/emote/living/sway
 	key = "sway"
 	key_third_person = "sways"

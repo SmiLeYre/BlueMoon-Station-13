@@ -508,10 +508,10 @@
 				update_icon()
 				playing = null
 				stop = 0
-		else if(volume > 750) // BOOM BOOM BOOM BOOM
-			for(var/mob/living/carbon/C in hearers(round(volume/35), src)) // I WANT YOU IN MY ROOM
-				if(istype(C)) // LETS SPEND THE NIGHT TOGETHER
-					C.adjustEarDamage(max((((volume/100) - sqrt(get_dist(C, src) * 2)) - C.get_ear_protection())*0.1, 0)) // FROM NOW UNTIL FOREVER
+//		else if(volume > 750) // BOOM BOOM BOOM BOOM
+//			for(var/mob/living/carbon/C in hearers(round(volume/35), src)) // I WANT YOU IN MY ROOM
+//				if(istype(C)) // LETS SPEND THE NIGHT TOGETHER
+//					C.adjustEarDamage(max((((volume/100) - sqrt(get_dist(C, src) * 2)) - C.get_ear_protection())*0.1, 0)) // FROM NOW UNTIL FOREVER
 
 /obj/machinery/jukebox/disco/process()
 	. = ..()
