@@ -35,8 +35,16 @@
 	icon_state = "nun"
 	item_state = "nun"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
-	flags_inv = HIDESHOES|HIDEJUMPSUIT
+	flags_inv = HIDEJUMPSUIT
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	unique_reskin = list(
+		"Nun 2" = list("icon_state" = "nun2"),
+		"Nun 3" = list("icon_state" = "nun3"),
+		"Nun 4" = list("icon_state" = "nun4"),
+		"Nun 5" = list("icon_state" = "nun5"),
+		"Nun 6" = list("icon_state" = "nun6"),
+		"Nun 7" = list("icon_state" = "nun7")
+	)
 
 /obj/item/clothing/suit/chaplain/studentuni
 	name = "student robe"
@@ -109,7 +117,7 @@
 	unique_reskin = list(
 		"Trenchcoat" = list("icon_state" = "detective"),
 		"Distinguish Trenchcoat" = list("icon_state" = "detective_newtg")
-	)	
+	)
 
 /obj/item/clothing/suit/det_suit/Initialize(mapload)
 	. = ..()
@@ -123,7 +131,7 @@
 	unique_reskin = list(
 		"Trenchcoat" = list("icon_state" = "greydet"),
 		"Distinguish Trenchcoat" = list("icon_state" = "detective_noir_newtg")
-	)		
+	)
 
 /obj/item/clothing/suit/det_suit/forensicsred
 	name = "red forensics coat"
