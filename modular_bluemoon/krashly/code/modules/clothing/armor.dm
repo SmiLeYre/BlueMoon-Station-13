@@ -184,6 +184,7 @@
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
+
 /////////////////
 
 ////InteQ spacesuit box
