@@ -337,3 +337,21 @@
 	desc = "A high powered chainsaw for cutting up ...you know...."
 	item = /obj/item/chainsaw/inteq_chainsaw
 	cost = 12
+
+
+/// Clown Ops Uplink additions
+/datum/uplink_item/suits/hardsuit/elite_clown
+	name = "Elite HONK Hardsuit"
+	desc = "Getting  bored? Are you still being abused by the security officers? STOP! \
+			take this shit and show them who is the boss here. HONK"
+	item = /obj/item/clothing/suit/space/hardsuit/syndi/elite/clown
+	cost = 8
+	purchasable_from = UPLINK_CLOWN_OPS
+
+/datum/uplink_item/suits/hardsuit/shielded_clown
+	name = "Shielded HONK Hardsuit"
+	desc = "Seems like you a big fan of hit-and-run tactics. Or trying to look awesome. \
+			No matter what. You should try the newest HONK-MOTHER invention. DOUBLE PROTECTION. DOUBLE HONK."
+	item = /obj/item/clothing/suit/space/hardsuit/shielded/syndi/clown
+	cost = 30
+	purchasable_from = UPLINK_CLOWN_OPS

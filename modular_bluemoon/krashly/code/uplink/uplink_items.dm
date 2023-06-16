@@ -85,7 +85,7 @@
 			provides the user with superior armor and mobility compared to the standard InteQ hardsuit."
 	item = /obj/item/clothing/suit/space/hardsuit/syndi/elite/inteq
 	cost = 8
-	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS
+	purchasable_from = UPLINK_NUKE_OPS
 
 /datum/uplink_item/suits/hardsuit/shielded
 	name = "Shielded InteQ Hardsuit"
@@ -93,4 +93,4 @@
 			The shields can handle up to three impacts within a short duration and will rapidly recharge while not under fire."
 	item = /obj/item/clothing/suit/space/hardsuit/shielded/syndi/inteq
 	cost = 30
-	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS
+	purchasable_from = UPLINK_NUKE_OPS

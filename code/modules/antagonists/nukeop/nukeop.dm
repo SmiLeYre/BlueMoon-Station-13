@@ -42,7 +42,7 @@
 	if(SSticker.mode.name == "Extended")
 		H.equipOutfit(/datum/outfit/syndicate/lone)
 	else
-		H.equipOutfit(/datum/outfit/syndicate/lone/inteq)
+		H.equipOutfit(nukeop_outfit)
 
 	H.canloadappearance = TRUE
 	H.checkloadappearance()
@@ -219,6 +219,7 @@
 	name = "Lone Operative"
 	always_new_team = TRUE
 	send_to_spawnpoint = FALSE //Handled by event
+	nukeop_outfit = /datum/outfit/syndicate/lone/inteq
 
 /datum/antagonist/nukeop/lone/assign_nuke()
 	if(nuke_team && !nuke_team.tracked_nuke)

@@ -3,7 +3,7 @@
 	config_tag = "clownops"
 	chaos = 8
 	announce_span = "danger"
-	announce_text = "Clown empire forces are approaching the station in an attempt to HONK it!\n\
+	announce_text = "Войско Хонкоматери затеяло набег на станцию с целью ХОНКНУТЬ её!\n\
 	<span class='danger'>Operatives</span>: Secure the nuclear authentication disk and use your bananium fission explosive to HONK the station.\n\
 	<span class='notice'>Crew</span>: Defend the nuclear authentication disk and ensure that it leaves with you on the emergency shuttle."
 
