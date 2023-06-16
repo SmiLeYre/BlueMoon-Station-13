@@ -65,6 +65,7 @@
 	rename_team = "Inquisition"
 	mission = "Уничтожьте любые следы паранормальной активности на борту Космической Станции Тринадцатого Сектора."
 	polldesc = "a Nanotrasen paranormal response team"
+	ertphrase = 'modular_bluemoon/kovac_shitcode/sound/ert/ert_inq_send.ogg'
 
 /datum/ert/greybois
 	code = "Green"
