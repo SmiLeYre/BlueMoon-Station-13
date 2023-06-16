@@ -29,7 +29,7 @@
 	del_on_death = 1
 	loot = list(/obj/effect/mob_spawn/human/clown/corpse)
 
-	faction = list("hostile")
+	faction = list("clown")
 	AIStatus = AI_ON
 	status_flags = CANPUSH
 
@@ -44,7 +44,7 @@
 
 /mob/living/simple_animal/hostile/clown/Initialize(mapload)
 	. = ..()
-	faction |= "hostile"
+	faction |= "clown"
 
 /mob/living/simple_animal/hostile/clown/handle_temperature_damage()
 	if(bodytemperature < minbodytemp)
