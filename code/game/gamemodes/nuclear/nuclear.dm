@@ -125,7 +125,7 @@
 	back = /obj/item/storage/backpack
 	ears = /obj/item/radio/headset/syndicate/alt
 	l_pocket = /obj/item/pinpointer/nuke/syndicate
-	id = /obj/item/card/id/syndicate
+	id = /obj/item/card/id/syndicate/inteq
 	belt = /obj/item/gun/ballistic/automatic/pistol
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1,\
 		/obj/item/kitchen/knife/combat/survival)
@@ -136,7 +136,7 @@
 
 /datum/outfit/syndicate/leader
 	name = "InteQ Leader - Basic"
-	id = /obj/item/card/id/syndicate/nuke_leader
+	id = /obj/item/card/id/syndicate/nuke_leader/inteq
 	gloves = /obj/item/clothing/gloves/krav_maga/combatglovesplus
 	r_hand = /obj/item/nuclear_challenge
 	command_radio = TRUE
@@ -185,6 +185,7 @@
 	mask = /obj/item/clothing/mask/gas/syndicate
 	suit = /obj/item/clothing/suit/space/syndicate/black/red
 	head = /obj/item/clothing/head/helmet/space/syndicate/black/red
+	id = /obj/item/card/id/syndicate
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 	internals_slot = ITEM_SLOT_RPOCKET
 	belt = /obj/item/storage/belt/military
@@ -205,6 +206,7 @@
 	mask = /obj/item/clothing/mask/gas/sechailer
 	suit = /obj/item/clothing/suit/space/syndicate/inteq
 	head = /obj/item/clothing/head/helmet/space/syndicate/inteq
+	id = /obj/item/card/id/syndicate/inteq
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 	internals_slot = ITEM_SLOT_RPOCKET
 	belt = /obj/item/storage/belt/military/inteq
@@ -238,7 +240,7 @@
 	R.freqlock = TRUE
 
 	var/key = H.key ? H.key : preference_source ? preference_source.key : null
-	var/obj/item/syndicate_uplink/U = new /obj/item/uplink/nuclear_restricted(H, key, 80)
+	var/obj/item/syndicate_uplink/nuclear/U = new /obj/item/syndicate_uplink/nuclear(H, key, 80)
 	H.equip_to_slot_or_del(U, ITEM_SLOT_BACKPACK)
 
 	var/obj/item/implant/mindshield/L = new //Here you go Deuryn

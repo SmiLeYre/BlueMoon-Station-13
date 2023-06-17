@@ -355,3 +355,31 @@
 	item = /obj/item/clothing/suit/space/hardsuit/shielded/syndi/clown
 	cost = 30
 	purchasable_from = UPLINK_CLOWN_OPS
+
+
+/// Syndicate Hardsuits (previously removed by Krashly)
+/datum/uplink_item/suits/hardsuit/syndi
+	name = "Syndicate Blood-Red Hardsuit"
+	desc = "The feared suit of a Syndicate agent. Features slightly better armoring and a built in jetpack \
+			that runs off standard atmospheric tanks. Toggling the suit in and out of \
+			combat mode will allow you all the mobility of a loose fitting uniform without sacrificing armoring. \
+			Additionally the suit is collapsible, making it small enough to fit within a backpack."
+	item = /obj/item/clothing/suit/space/hardsuit/syndi
+	cost = 8
+	purchasable_from = UPLINK_SYNDICATE
+
+/datum/uplink_item/suits/hardsuit/syndi_elite
+	name = "Syndicate Elite Hardsuit"
+	desc = "An upgraded, elite version of the Syndicate hardsuit. It features fireproofing, and also \
+			provides the user with superior armor and mobility compared to the standard Syndicate hardsuit."
+	item = /obj/item/clothing/suit/space/hardsuit/syndi/elite
+	cost = 12
+	purchasable_from = UPLINK_SYNDICATE
+
+/datum/uplink_item/suits/hardsuit/syndi_shield
+	name = "Syndicate Shielded Hardsuit"
+	desc = "An upgraded version of the standard Syndicate hardsuit. It features a built-in energy shielding system. \
+			The shields can handle up to three impacts within a short duration and will rapidly recharge while not under fire."
+	item = /obj/item/clothing/suit/space/hardsuit/shielded/syndi
+	cost = 30
+	purchasable_from = UPLINK_SYNDICATE

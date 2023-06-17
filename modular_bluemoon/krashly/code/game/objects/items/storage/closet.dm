@@ -19,7 +19,24 @@
 	new /obj/item/clothing/glasses/hud/security/sunglasses/inteq(src)
 	new /obj/item/clothing/under/inteq_maid
 
+/obj/structure/closet/syndicate/inteq/personal_raider
+	desc = "It's a personal storage unit for operative gear."
+
+/obj/structure/closet/syndicate/inteq/personal_radider/PopulateContents()
+	..()
+	new /obj/item/clothing/under/inteq(src)
+	new /obj/item/clothing/under/inteq_skirt(src)
+	new /obj/item/clothing/shoes/sneakers/black(src)
+	new /obj/item/radio/headset/syndicate(src)
+	new /obj/item/clothing/glasses/hud/security/sunglasses/inteq(src)
+
 /obj/machinery/suit_storage_unit/syndicate/inteq
 	suit_type = /obj/item/clothing/suit/space/hardsuit/syndi/inteq
 	mask_type = /obj/item/clothing/mask/gas/sechailer
+	storage_type = /obj/item/tank/jetpack/oxygen/harness
+
+
+/obj/machinery/suit_storage_unit/inteq_spacesuit
+	suit_type = /obj/item/clothing/suit/space/syndicate/inteq
+	mask_type = /obj/item/clothing/head/helmet/space/syndicate/inteq
 	storage_type = /obj/item/tank/jetpack/oxygen/harness

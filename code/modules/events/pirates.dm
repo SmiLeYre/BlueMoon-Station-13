@@ -30,7 +30,7 @@
 	var/ship_template
 	var/ship_name = "Space Privateers Association"
 	var/initial_send_time = world.time
-	var/response_max_time = 5 MINUTES
+	var/response_max_time = 2 MINUTES
 	switch(pirate_type)
 		if(PIRATES_ROGUES)
 			ship_name = pick(strings(PIRATE_NAMES_FILE, "rogue_names"))
@@ -105,7 +105,7 @@
 			else
 				notify_ghosts("The pirate ship has an object of interest: [spawner]!", source=spawner, action=NOTIFY_ORBIT, header="Something's Interesting!")
 
-	priority_announce("Unidentified armed ship detected near the station.", "Central Command", 'modular_bluemoon/phenyamomota/sound/announcer/pirate_incoming.ogg')
+	priority_announce("В секторе обнаружен вооруженный корабль.", "Central Command", 'modular_bluemoon/phenyamomota/sound/announcer/pirate_incoming.ogg')
 
 //Shuttle equipment
 

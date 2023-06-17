@@ -608,9 +608,9 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 	//This will be where the person gets to select their appearance instead of the random character
 	if (H.canloadappearance == TRUE)
 		SEND_SOUND(H, 'sound/misc/server-ready.ogg')
-		to_chat(H, "<span class='boldannounce'>This ghost role allows you to select your loaded character's appearance.</span>")
-		if(alert(H, "Would you like to load your currently loaded character's appearance?", "Warning", "Yes", "No") == "Yes")
-			if(alert(H, "You should only load a character that has not currently died in the round. Do you accept this?", "Warning", "Yes", "No") == "Yes")
+		to_chat(H, "<span class='boldannounce'>Вам разрешено использовать своего персонажа.</span>")
+		if(alert(H, "Желаете текущего своего выбранного персонажа?", "Warning", "Yes", "No") == "Yes")
+			if(alert(H, "Вам разрешено использовать персонажей, которые ещё не были в раунде. Вы понимаете это?", "Warning", "Yes", "No") == "Yes")
 				H.client.prefs.copy_to(H)
 				H.real_name = H.client.prefs.real_name
 				H.mind.name = H.real_name //Makes sure to change their mind name to their real name.
@@ -623,7 +623,7 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 					idCard.registered_name = H.real_name
 				ADD_TRAIT(H,TRAIT_EXEMPT_HEALTH_EVENTS,GHOSTROLE_TRAIT) //Makes sure they are exempt from health events.
 				SEND_SOUND(H, 'sound/magic/charge.ogg') //Fluff
-				to_chat(H, "<span class='boldannounce'>Your head aches for a second. You feel like this is how things should have been.</span>")
+				to_chat(H, "<span class='boldannounce'>Ваша голова немного побаливает.</span>")
 				log_game("[key_name(H)] has loaded their default appearance for a ghost role.")
 				message_admins("[ADMIN_LOOKUPFLW(H)] has loaded their default appearance for a ghost role.")
 				return

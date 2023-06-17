@@ -673,9 +673,9 @@
 	density = FALSE
 	show_flavour = FALSE //Flavour only exists for spawners menu
 	short_desc = "You are a space pirate."
-	flavour_text = "The station refused to pay for your protection, protect the ship, siphon the credits from the station and raid it for even more loot."
+	flavour_text = "Станция отказалась платить вам за крышу. Похитьте её ресурсы, обнесите хранилище на кредиты. Избегайте ненужных жертв. Не забывайте следить за своим кораблем."
 	assignedrole = "Space Pirate"
-	var/rank = "Mate"
+	var/rank = "Матрос"
 
 /obj/effect/mob_spawn/human/pirate/on_attack_hand(mob/living/user, act_intent = user.a_intent, unarmed_attack_flags)
 	. = ..()
@@ -721,7 +721,7 @@
 	return ..()
 
 /obj/effect/mob_spawn/human/pirate/corpse/captain
-	rank = "Captain"
+	rank = "Капитан"
 	mob_name = "Dead Space Pirate Captain"
 	outfit = /datum/outfit/pirate/space/captain
 
@@ -739,11 +739,11 @@
 	return ..()
 
 /obj/effect/mob_spawn/human/pirate/captain
-	rank = "Captain"
+	rank = "Капитан"
 	outfit = /datum/outfit/pirate/space/captain
 
 /obj/effect/mob_spawn/human/pirate/gunner
-	rank = "Gunner"
+	rank = "Канонир"
 
 /obj/effect/mob_spawn/human/ghostcafe
 	name = "Ghost Cafe Sleeper"

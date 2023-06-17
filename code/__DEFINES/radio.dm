@@ -38,7 +38,7 @@
 #define RADIO_TOKEN_AI_PRIVATE ":o"
 
 
-#define RADIO_CHANNEL_SYNDICATE "Syndicate"
+#define RADIO_CHANNEL_SYNDICATE "Illegal"
 #define RADIO_KEY_SYNDICATE "t"
 #define RADIO_TOKEN_SYNDICATE ":t"
 

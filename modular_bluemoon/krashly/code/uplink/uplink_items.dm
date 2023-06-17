@@ -25,7 +25,7 @@
 	cost = 4
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 
-/datum/uplink_item/suits/hardsuit/elite // Traitor hardsuit, not for the nuke ops
+/datum/uplink_item/suits/hardsuit/elite // Traitor ELITE EXPENSIVE hardsuit, not for the nuke ops
 	name = "Elite InteQ Hardsuit"
 	desc = "The latest InteQ developments in the field of Hardsuits. MORE ARMOOOOOR!!!"
 	item = /obj/item/clothing/suit/space/hardsuit/syndi/elite/inteq
@@ -77,7 +77,7 @@
 			Nanotrasen crew who spot these suits are known to panic."
 	item = /obj/item/clothing/suit/space/hardsuit/syndi/inteq
 	cost = 8
-	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS) //you can't buy it in nuke, because the elite hardsuit costs the same while being better
+	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE) //you can't buy it in nuke, because the elite hardsuit costs the same while being better
 
 /datum/uplink_item/suits/hardsuit/elite
 	name = "Elite InteQ Hardsuit"

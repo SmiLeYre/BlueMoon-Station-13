@@ -426,7 +426,7 @@
 					/obj/item/clothing/under/rank/civilian/chaplain = 2,
 					/obj/item/clothing/under/rank/civilian/chaplain/skirt = 2,
 					/obj/item/clothing/shoes/sneakers/black = 2,
-					/obj/item/clothing/suit/chaplain/nun = 10,
+					/obj/item/clothing/under/rank/civilian/chaplain/nun = 10,
 					/obj/item/clothing/head/nun_hood = 10,
 					/obj/item/clothing/suit/chaplain/holidaypriest = 2,
 					/obj/item/clothing/suit/chaplain/pharaoh = 2,

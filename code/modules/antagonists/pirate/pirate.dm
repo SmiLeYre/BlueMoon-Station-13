@@ -9,8 +9,8 @@
 
 /datum/antagonist/pirate/greet()
 	SEND_SOUND(owner.current, sound('sound/ambience/antag/pirate.ogg'))
-	to_chat(owner, "<span class='boldannounce'>You are a Space Pirate!</span>")
-	to_chat(owner, "<B>The station refused to pay for your protection, protect the ship, siphon the credits from the station and raid it for even more loot.</B>")
+	to_chat(owner, "<span class='boldannounce'>Вы - Космический пират!</span>")
+	to_chat(owner, "<B>Станция отказалась платить вам за крышу. Атакуйте станцию, украдите её ресурсы и средства из хранилища. Избегайте ненужных жертв. Держите свой корабль в сохранности.</B>")
 	owner.announce_objectives()
 
 /datum/antagonist/pirate/get_team()

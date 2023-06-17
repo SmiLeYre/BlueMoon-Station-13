@@ -140,3 +140,25 @@
 	name = "New Russian Empire Citizen ID"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/card/id/nri_citizen
+
+//// The default nun robe change to uniform slot
+
+
+/obj/item/clothing/under/rank/civilian/chaplain/nun
+	name = "nun robe"
+	desc = "Maximum piety in this star system."
+	icon = 'icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
+	icon_state = "nun"
+	item_state = "nun"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
+	//flags_inv = HIDEJUMPSUIT
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	unique_reskin = list(
+		"Nun 2" = list("icon_state" = "nun2"),
+		"Nun 3" = list("icon_state" = "nun3"),
+		"Nun 4" = list("icon_state" = "nun4"),
+		"Nun 5" = list("icon_state" = "nun5"),
+		"Nun 6" = list("icon_state" = "nun6"),
+		"Nun 7" = list("icon_state" = "nun7")
+	)

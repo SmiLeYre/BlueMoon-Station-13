@@ -31,7 +31,7 @@
 		/obj/item/clothing/under/performer = 3,
 		/obj/item/bdsm_whip = 3,
 		/obj/item/bdsm_whip/ridingcrop = 3,
-		/obj/item/clothing/suit/chaplain/nun = 5,
+		/obj/item/clothing/under/rank/civilian/chaplain/nun = 5,
 		/obj/item/clothing/head/nun_hood = 5,
 		/obj/item/storage/box/chastity_cage = 6,
 		/obj/item/storage/box/chastity_cage/metal = 3,

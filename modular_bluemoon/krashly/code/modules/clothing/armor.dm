@@ -176,6 +176,7 @@
 	item_state = "space-inteq"
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/head.dmi'
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/head.dmi'
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/suit/space/syndicate/inteq
 	name = "brown space suit"
