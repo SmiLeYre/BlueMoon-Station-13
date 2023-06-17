@@ -60,15 +60,6 @@
 	cost = 6
 	purchasable_from = (UPLINK_NUKE_OPS)
 
-/datum/uplink_item/suits/space_suit
-	name = "InteQ Space Suit"
-	desc = "This Yellow and Black InteQ space suit is less encumbering than Nanotrasen variants, \
-			fits inside bags, and has a weapon slot. Nanotrasen crew members are trained to report InteQ space suit \
-			sightings, however."
-	item = /obj/item/storage/box/syndie_kit/space
-	cost = 4
-	purchasable_from = ~(UPLINK_CLOWN_OPS | UPLINK_SYNDICATE)
-
 /datum/uplink_item/suits/hardsuit
 	name = "InteQ Hardsuit"
 	desc = "The feared suit of a Admiral Brown's Chancellery. Features slightly better armoring and a built in jetpack \
