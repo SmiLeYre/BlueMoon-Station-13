@@ -358,6 +358,15 @@
 
 
 /// Syndicate Hardsuits (previously removed by Krashly)
+
+/datum/uplink_item/suits/space_suit_red
+	name = "Syndicate Space Suit"
+	desc = "This red and black Syndicate space suit is less encumbering than Nanotrasen variants, \
+			fits inside bags, and has a weapon slot."
+	item = /obj/item/storage/box/syndie_kit/space
+	cost = 4
+	purchasable_from = ~(UPLINK_CLOWN_OPS | UPLINK_SYNDICATE)
+
 /datum/uplink_item/suits/hardsuit/syndi
 	name = "Syndicate Blood-Red Hardsuit"
 	desc = "The feared suit of a Syndicate agent. Features slightly better armoring and a built in jetpack \
@@ -383,3 +392,4 @@
 	item = /obj/item/clothing/suit/space/hardsuit/shielded/syndi
 	cost = 30
 	purchasable_from = UPLINK_SYNDICATE
+
