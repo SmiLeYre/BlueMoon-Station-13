@@ -56353,7 +56353,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/security/execution/transfer)
 "jKI" = (
-/obj/item/dildo/flared/gigantic,
+/obj/item/genital_equipment/dildo/flared/gigantic,
 /obj/machinery/light,
 /turf/open/floor/mineral/plastitanium,
 /area/commons/dorms)
@@ -56925,7 +56925,7 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
 "kpv" = (
-/obj/item/dildo/flared/huge,
+/obj/item/genital_equipment/dildo/flared/huge,
 /turf/open/floor/mineral/plastitanium,
 /area/maintenance/port/fore)
 "kqo" = (

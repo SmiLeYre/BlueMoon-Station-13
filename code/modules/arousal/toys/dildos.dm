@@ -1,7 +1,7 @@
 //////////
 //DILDOS//
 //////////
-/obj/item/dildo
+/obj/item/genital_equipment/dildo
 	name 				= "dildo"
 	desc 				= "Floppy!"
 	icon 				= 'icons/obj/genitals/dildo.dmi'
@@ -20,18 +20,18 @@
 	var/is_knotted		= FALSE
 	//Lists moved to _cit_helpers.dm as globals so they're not instanced individually
 
-/obj/item/dildo/update_appearance()
+/obj/item/genital_equipment/dildo/update_appearance()
 	icon_state = "[dildo_type]_[dildo_shape]_[dildo_size]"
 	name = "[GLOB.dildo_size_names[dildo_size]] [dildo_shape][can_customize ? " custom" : ""] [dildo_type]"
 
-/obj/item/dildo/AltClick(mob/living/user)
+/obj/item/genital_equipment/dildo/AltClick(mob/living/user)
 	. = ..()
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return
 	customize(user)
 	return TRUE
 
-/obj/item/dildo/proc/customize(mob/living/user)
+/obj/item/genital_equipment/dildo/proc/customize(mob/living/user)
 	if(!can_customize)
 		return FALSE
 	if(src && !user.incapacitated() && in_range(user,src))
@@ -60,7 +60,7 @@
 	update_appearance()
 	return TRUE
 
-/obj/item/dildo/Initialize(mapload)
+/obj/item/genital_equipment/dildo/Initialize(mapload)
 	. = ..()
 	if(random_color == TRUE)
 		var/randcolor = pick(GLOB.dildo_colors)
@@ -76,45 +76,45 @@
 	pixel_y 	= rand(-7,7)
 	pixel_x 	= rand(-7,7)
 
-/obj/item/dildo/examine(mob/user)
+/obj/item/genital_equipment/dildo/examine(mob/user)
 	. = ..()
 	if(can_customize)
 		. += "<span class='notice'>Alt-Click \the [src.name] to customize it.</span>"
 
-/obj/item/dildo/random//totally random
+/obj/item/genital_equipment/dildo/random//totally random
 	name 				= "random dildo"//this name will show up in vendors and shit so you know what you're vending(or don't, i guess :^))
 	random_color 		= TRUE
 	random_shape 		= TRUE
 	random_size 		= TRUE
 
-/obj/item/dildo/knotted
+/obj/item/genital_equipment/dildo/knotted
 	dildo_shape 		= "knotted"
 	name 				= "knotted dildo"
 	attack_verb 		= list("penetrated", "knotted", "slapped", "inseminated")
 
-/obj/item/dildo/human
+/obj/item/genital_equipment/dildo/human
 	dildo_shape 		= "human"
 	name 				= "human dildo"
 	attack_verb 		= list("penetrated", "slapped", "inseminated")
 
-/obj/item/dildo/plain
+/obj/item/genital_equipment/dildo/plain
 	dildo_shape 		= "plain"
 	name 				= "plain dildo"
 	attack_verb 		= list("penetrated", "slapped", "inseminated")
 
-/obj/item/dildo/flared
+/obj/item/genital_equipment/dildo/flared
 	dildo_shape 		= "flared"
 	name 				= "flared dildo"
 	attack_verb 		= list("penetrated", "slapped", "neighed", "gaped", "prolapsed", "inseminated")
 
-/obj/item/dildo/flared/huge
+/obj/item/genital_equipment/dildo/flared/huge
 	name 				= "The Penetrator"
 	desc 				= "The absurdity of a sex toy with the lethality of a baseball bat."
 	dildo_size 			= 4
 	force				= 10
 	hitsound = 'sound/weapons/klonk.ogg'
 
-/obj/item/dildo/custom
+/obj/item/genital_equipment/dildo/custom
 	name 				= "customizable dildo"
 	desc 				= "Thanks to significant advances in synthetic nanomaterials, this dildo is capable of taking on many different forms to fit the user's preferences! Pricy!"
 	can_customize		= TRUE
@@ -124,12 +124,12 @@
 
 // Suicide acts, by request
 
-/obj/item/dildo/proc/manual_suicide(mob/living/user)
+/obj/item/genital_equipment/dildo/proc/manual_suicide(mob/living/user)
 	user.visible_message("<span class='suicide'>[user] finally finishes deepthroating the '[src]', and their life.</span>")
 	user.adjustOxyLoss(300)
 	user.death(0)
 
-/obj/item/dildo/suicide_act(mob/living/user)
+/obj/item/genital_equipment/dildo/suicide_act(mob/living/user)
 //	is_knotted = ((src.dildo_shape == "knotted")?"They swallowed the knot":"Their face is turning blue")
 	if(do_after(user,17,target=src))
 		user.visible_message("<span class='suicide'>[user] tears-up and gags as they shove '[src]' down their throat! It looks like [user.ru_who()] trying to commit suicide!</span>")
@@ -141,7 +141,7 @@
 		eyes?.applyOrganDamage(10)
 	return MANUAL_SUICIDE
 
-/obj/item/dildo/flared/huge/suicide_act(mob/living/user)
+/obj/item/genital_equipment/dildo/flared/huge/suicide_act(mob/living/user)
 	if(do_after(user,35,target=src))
 		user.visible_message("<span class='suicide'>[user] tears-up and gags as they try to deepthroat the [src]! WHY WOULD THEY DO THAT? It looks like [user.ru_who()] trying to commit suicide!!</span>")
 		playsound(loc, 'sound/weapons/gagging.ogg', 50, 2, -1)

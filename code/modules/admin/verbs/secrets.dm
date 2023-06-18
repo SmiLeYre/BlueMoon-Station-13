@@ -499,11 +499,9 @@
 			if(!SSticker.HasRoundStarted())
 				alert("The game hasn't started yet!")
 				return
-///BLUEMOON CHANGES BEGIN
-			//message_admins("[key_name_admin(holder)] activated AK-47s for Everyone!")
+			message_admins("[key_name_admin(holder)] activated AK-47s for Everyone!")
 			holder.ak47s()
-			//sound_to_playing_players('sound/misc/ak47s.ogg')
-///BLUEMOON CHANGES END
+			sound_to_playing_players('sound/misc/ak47s.ogg')
 
 		if("massbraindamage")
 			if(!is_funmin)
@@ -512,7 +510,8 @@
 			for(var/mob/living/carbon/human/H in GLOB.player_list)
 				to_chat(H, "<span class='boldannounce'>You suddenly feel stupid.</span>", confidential = TRUE)
 				H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 60, 80)
-			message_admins("[key_name_admin(holder)] made everybody brain damaged")
+			message_admins("[key_name_admin(holder)] made everybody brain damaged!")
+			log_admin("[key_name(holder)] made everybody brain damage!")
 		if("floorlava")
 			SSweather.run_weather(/datum/weather/floor_is_lava)
 		if("anime")

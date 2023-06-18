@@ -214,24 +214,24 @@
 
 	// Check for temperature effects
 	// Minimum (most likely)
+	if((env_temp <= temp_mid) && (env_temp >= temp_min))
+		produce_points(CRYPTO_MULT_MAX) // Чем холоднее, тем больше.
+	// Mid
+	if((env_temp <= temp_mid) && (env_temp >= temp_min))
+		produce_points(CRYPTO_MULT_MID)
+	// Maximum
+	if((env_temp <= temp_max) && (env_temp >= temp_mid))
+		produce_points(CRYPTO_MULT_MIN) // Чем горячее, тем меньше.
+	// Overheat
+	if(env_temp >= temp_max)
+		say("Критически высокая температура! Экстренное отключение!!")
+		playsound(loc, 'sound/machines/beep.ogg', 100, TRUE, -1)
+		set_mining(FALSE)
+	// Overcold
 	if(env_temp <= temp_min)
 		say("Критически низкая температура! Экстренное отключение!!") // Ваще холодно, пиздец.
 		playsound(loc, 'sound/machines/beep.ogg', 100, TRUE, -1)
 		set_mining(FALSE)
-	else if((env_temp <= temp_mid) && (env_temp >= temp_min))
-		produce_points(CRYPTO_MULT_MAX) // Чем холоднее, тем больше.
-	// Mid
-	else if((env_temp <= temp_mid) && (env_temp >= temp_min))
-		produce_points(CRYPTO_MULT_MID)
-	// Maximum
-	else if((env_temp <= temp_max) && (env_temp >= temp_mid))
-		produce_points(CRYPTO_MULT_MIN) // Чем горячее, тем меньше.
-	// Overheat
-	else if(env_temp >= temp_max)
-		say("Критически высокая температура! Экстренное отключение!!")
-		playsound(loc, 'sound/machines/beep.ogg', 100, TRUE, -1)
-		set_mining(FALSE)
-
 	// Increase heat by heating_power
 	env.set_temperature(env_temp + CRYPTO_HEATING_POWER)
 

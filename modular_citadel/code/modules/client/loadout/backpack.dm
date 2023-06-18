@@ -113,7 +113,7 @@
 
 /datum/gear/backpack/dildo
 	name = "Customizable dildo"
-	path = /obj/item/dildo/custom
+	path = /obj/item/genital_equipment/dildo/custom
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_TOYS
 
 /datum/gear/backpack/toykatana

@@ -153,7 +153,7 @@ SUBSYSTEM_DEF(economy)
 	cash_to_grant = (crew_safety_bounty * living_ratio) + (monster_bounty * dead_monsters)
 	var/datum/bank_account/D = get_dep_account(ACCOUNT_SEC)
 	if(D)
-		D.adjust_money(min(cash_to_grant, MAX_GRANT_SECMEDSRV))
+		D.adjust_money(min(cash_to_grant*3, MAX_GRANT_SECMEDSRV))
 
 /datum/controller/subsystem/economy/proc/sci_payout()
 	var/science_bounty = 0

@@ -212,6 +212,25 @@
 	var/mood_category ="cloth_eaten"
 	mob_trait = TRAIT_CLOTH_EATER
 
+/datum/quirk/ropebunny
+	name = "Rope Bunny"
+	desc = "You have mastered all forms of bondage! You can create bondage rope out of cloth, and bondage bolas out of bondage rope!"
+	value = 2
+
+/datum/quirk/ropebunny/add()
+	.=..()
+	var/mob/living/carbon/human/H = quirk_holder
+	if (!H)
+		return
+	var/datum/action/ropebunny/conversion/C = new
+	C.Grant(H)
+
+/datum/quirk/ropebunny/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/action/ropebunny/conversion/C = locate() in H.actions
+	C.Remove(H)
+	. = ..()
+
 /datum/quirk/hallowed
 	name = "Hallowed"
 	desc = "You have been blessed by a higher power or are otherwise imbued with holy energy in some way. Your divine presence drives away magic and the unholy! Holy water will restore your health."

@@ -13,6 +13,8 @@
 	var/datum/bounty/civilian_bounty
 	var/list/datum/bounty/bounties
 	COOLDOWN_DECLARE(bounty_timer)
+	///List with a transaction history for NT pay app
+	var/list/transaction_history = list()
 
 /datum/bank_account/New(newname, job)
 	if(add_to_accounts)
@@ -28,23 +30,66 @@
 		SSeconomy.bank_accounts -= src
 	return ..()
 
+/**
+ * Proc guarantees the account_id possesses a unique number.
+ * If it doesn't, it tries to find a unique alternative.
+ * It then adds it to the `SSeconomy.bank_accounts_by_id` global list.
+ */
+/datum/bank_account/proc/setup_unique_account_id()
+	if (!add_to_accounts)
+		return
+	if(account_id && !SSeconomy.bank_accounts_by_id["[account_id]"])
+		SSeconomy.bank_accounts_by_id["[account_id]"] = src
+		return //Already unique
+	for(var/i in 1 to 1000)
+		account_id = rand(111111, 999999)
+		if(!SSeconomy.bank_accounts_by_id["[account_id]"])
+			break
+	if(SSeconomy.bank_accounts_by_id["[account_id]"])
+		stack_trace("Unable to find a unique account ID, substituting currently existing account of id [account_id].")
+	SSeconomy.bank_accounts_by_id["[account_id]"] = src
+
+/datum/bank_account/vv_edit_var(var_name, var_value) // just so you don't have to do it manually
+	var/old_id = account_id
+	var/old_balance = account_balance
+	. = ..()
+	switch(var_name)
+		if(NAMEOF(src, account_id))
+			if(add_to_accounts)
+				SSeconomy.bank_accounts_by_id -= "[old_id]"
+				setup_unique_account_id()
+		if(NAMEOF(src, add_to_accounts))
+			if(add_to_accounts)
+				setup_unique_account_id()
+			else
+				SSeconomy.bank_accounts_by_id -= "[account_id]"
+		if(NAMEOF(src, account_balance))
+			add_log_to_history(var_value - old_balance, "Nanotrasen: Moderator Action")
+
 /datum/bank_account/proc/dumpeet()
 	being_dumped = TRUE
 	withdrawDelay = world.time + DUMPTIME
 
-/datum/bank_account/proc/_adjust_money(amt)
-	account_balance += amt
+/**
+ * Performs the math component of adjusting a bank account balance.
+ * Arguments:
+ * * amount - the quantity of credits that will be written off if the value is negative, or added if it is positive.
+ */
+/datum/bank_account/proc/_adjust_money(amount)
+	account_balance += amount
 	if(account_balance < 0)
 		account_balance = 0
 
-/datum/bank_account/proc/has_money(amt)
-	return account_balance >= amt
-
-/datum/bank_account/proc/adjust_money(amt)
-	if((amt < 0 && has_money(-amt)) || amt > 0)
-		_adjust_money(amt)
+/datum/bank_account/proc/adjust_money(amount, reason)
+	if((amount < 0 && has_money(-amount)) || amount > 0)
+		_adjust_money(amount)
+		if(reason)
+			add_log_to_history(amount, reason)
 		return TRUE
 	return FALSE
+
+/datum/bank_account/proc/has_money(amt)
+	return account_balance >= amt
 
 /datum/bank_account/proc/transfer_money(datum/bank_account/from, amount)
 	if(!from.transferable || !from.has_money(amount))
@@ -53,20 +98,28 @@
 	from.adjust_money(-amount)
 	return TRUE
 
-/datum/bank_account/proc/payday(amt_of_paychecks, free = FALSE)
-	var/money_to_transfer = account_job.paycheck * amt_of_paychecks
+/datum/bank_account/proc/payday(amount_of_paychecks, free = FALSE)
+	if(!account_job)
+		return
+	var/money_to_transfer = round(account_job.paycheck * amount_of_paychecks)
+	if(amount_of_paychecks == 1)
+		money_to_transfer = clamp(money_to_transfer, 0, PAYCHECK_EASY) //We want to limit single, passive paychecks to regular crew income.
 	if(free)
-		adjust_money(money_to_transfer)
+		adjust_money(money_to_transfer, "Nanotrasen: Shift Payment")
+		SSblackbox.record_feedback("amount", "free_income", money_to_transfer)
+		SSeconomy.station_target += money_to_transfer
+		log_econ("[money_to_transfer] кредит[get_num_string(money_to_transfer)] выдано на аккаунт [src.account_holder] из дохода.")
+		return TRUE
 	else
-		var/datum/bank_account/D = SSeconomy.get_dep_account(account_job.paycheck_department)
-		if(D)
-			if(!transfer_money(D, money_to_transfer))
-				bank_card_talk("ERROR: Payday aborted, departmental funds insufficient.")
+		var/datum/bank_account/department_account = SSeconomy.get_dep_account(account_job.paycheck_department)
+		if(department_account)
+			if(!transfer_money(department_account, money_to_transfer))
+				bank_card_talk("ERROR: Зарплата отменена. Недостаточно средстве на счету отдела.")
 				return FALSE
 			else
-				bank_card_talk("Payday processed, account now holds [account_balance] cr.")
+				bank_card_talk("Зарплата выдана, текущий баланс: [account_balance] кр.")
 				return TRUE
-	bank_card_talk("ERROR: Payday aborted, unable to contact departmental account.")
+	bank_card_talk("ERROR: Зарплата не выдана. Невозможно связаться с аккаунтом отдела.")
 	return FALSE
 
 /datum/bank_account/proc/bank_card_talk(message, force)
@@ -160,5 +213,21 @@
 
 /datum/bank_account/remote/non_transferable
 	transferable = FALSE
+
+/**
+ * Add log to transactions history. Deletes the oldest log when the history has more than 20 entries.
+ * Main format: Category: Reason in Reason. Example: Vending: Machinery Using
+ * Arguments:
+ * * adjusted_money - How much was added, negative values removing cash.
+ * * reason - The reason of interact with balance, for example, "Bought chips" or "Payday".
+ */
+/datum/bank_account/proc/add_log_to_history(adjusted_money, reason)
+	if(transaction_history.len >= 20)
+		transaction_history.Cut(1,2)
+
+	transaction_history += list(list(
+		"adjusted_money" = adjusted_money,
+		"reason" = reason,
+	))
 
 #undef DUMPTIME

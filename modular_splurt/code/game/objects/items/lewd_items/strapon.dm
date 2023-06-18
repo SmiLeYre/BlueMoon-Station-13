@@ -6,9 +6,9 @@
 	item_state = "strapon_strap"
 
 /obj/item/strapon_strap/attackby(obj/item/I, mob/living/user, params)
-	if(istype(I, /obj/item/dildo))
+	if(istype(I, /obj/item/genital_equipment/dildo))
 		to_chat(user, span_userlove("You attach the dildo to the strap."))
-		var/obj/item/dildo/dildo = I
+		var/obj/item/genital_equipment/dildo/dildo = I
 		var/obj/item/clothing/underwear/briefs/strapon/new_strapon = new /obj/item/clothing/underwear/briefs/strapon(user.loc)
 		new_strapon.dildo_color = dildo.color
 		new_strapon.dildo_shape = dildo.dildo_shape
@@ -55,24 +55,24 @@
 /obj/item/clothing/underwear/briefs/strapon/AltClick(mob/living/user, obj/item/I)
 	to_chat(user, span_userlove("You separate the dildo from the strap."))
 	var/obj/item/strapon_strap/new_strapon_strap = new /obj/item/strapon_strap(user.loc)
-	var/obj/item/dildo/new_dildo
+	var/obj/item/genital_equipment/dildo/new_dildo
 	if(dildo_can_customize)
-		new_dildo = new /obj/item/dildo/custom(user.loc)
+		new_dildo = new /obj/item/genital_equipment/dildo/custom(user.loc)
 	else
 		switch(dildo_shape)
 			if("human")
-				new_dildo = new /obj/item/dildo/human(user.loc)
+				new_dildo = new /obj/item/genital_equipment/dildo/human(user.loc)
 			if("knotted")
-				new_dildo = new /obj/item/dildo/knotted(user.loc)
+				new_dildo = new /obj/item/genital_equipment/dildo/knotted(user.loc)
 			if("plain")
-				new_dildo = new /obj/item/dildo/plain(user.loc)
+				new_dildo = new /obj/item/genital_equipment/dildo/plain(user.loc)
 			if("flared")
 				if(dildo_size > 4)
-					new_dildo = new /obj/item/dildo/flared/gigantic(user.loc)
+					new_dildo = new /obj/item/genital_equipment/dildo/flared/gigantic(user.loc)
 				else if(dildo_size > 3)
-					new_dildo = new /obj/item/dildo/flared/huge(user.loc)
+					new_dildo = new /obj/item/genital_equipment/dildo/flared/huge(user.loc)
 				else
-					new_dildo = new /obj/item/dildo/flared(user.loc)
+					new_dildo = new /obj/item/genital_equipment/dildo/flared(user.loc)
 			else
 				return
 

@@ -20,7 +20,7 @@
 				/obj/item/clothing/neck/petcollar/locked/ribbon = 2,
 				/obj/item/clothing/neck/petcollar/locked/leather = 2,
 				/obj/item/key/collar = 2,
-				/obj/item/dildo/knotted = 3
+				/obj/item/genital_equipment/dildo/knotted = 3
 				)
 	premium = list(
 				/obj/item/toy/fluff/tennis_poly/tri/squeak = 1,

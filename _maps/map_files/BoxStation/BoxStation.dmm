@@ -53717,8 +53717,8 @@
 /area/hallway/primary/port)
 "lPu" = (
 /obj/structure/rack,
-/obj/item/dildo/flared/gigantic,
-/obj/item/dildo/flared,
+/obj/item/genital_equipment/dildo/flared/gigantic,
+/obj/item/genital_equipment/dildo/flared,
 /turf/open/floor/plating,
 /area/maintenance/prison/aft)
 "lPA" = (
