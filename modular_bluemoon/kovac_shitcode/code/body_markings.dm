@@ -1,3 +1,4 @@
+/// Skyrat Tattoos //////////////
 /datum/sprite_accessory/mam_body_markings/tattoo
 	icon = 'modular_bluemoon/kovac_shitcode/icons/tattoo_markings.dmi'
 	recommended_species = list("human")

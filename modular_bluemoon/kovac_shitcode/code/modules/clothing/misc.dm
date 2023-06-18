@@ -94,6 +94,9 @@
 	desc = "an urban painted military suit, developed the Bibis&Co. Usually associated with CEHU and LonoMith PMC's"
 	icon_state = "urban_camo"
 	item_state = "urban_camo"
+	unique_reskin = list(
+		"Urban" = list("icon_state" = "urban_camo")
+	)
 
 
 ///
@@ -162,3 +165,10 @@
 		"Nun 6" = list("icon_state" = "nun6"),
 		"Nun 7" = list("icon_state" = "nun7")
 	)
+
+////////////////
+
+/obj/item/clothing/suit/suspenders/suspenders_white
+	name = "white suspenders"
+	desc = "They suspend the illusion of painting."
+	icon_state = "suspenders_white"

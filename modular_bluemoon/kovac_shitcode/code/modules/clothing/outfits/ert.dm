@@ -199,11 +199,12 @@
 	id = /obj/item/card/id/sol
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/sol
 //	head = /obj/item/clothing/head/helmet/alt
-	uniform = /obj/item/clothing/under/rank/security/officer/urban_camo
+	uniform = /obj/item/clothing/under/rank/security/officer/solfed_military
 	mask = /obj/item/clothing/mask/gas/syndicate/ds/coif
-	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	back = /obj/item/storage/backpack/hecu/black
 	belt = /obj/item/storage/belt/military/inteq
+	ears = /obj/item/radio/headset/sol/bowman
 	r_hand = /obj/item/gun/ballistic/automatic/m16a4
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/storage/ifak=1,\
@@ -215,9 +216,11 @@
 	if(visualsOnly)
 		return
 
+
 	var/obj/item/radio/R = H.ears
-	R.keyslot = new /obj/item/encryptionkey/heads/hos
-	R.recalculateChannels()
+	R.set_frequency(FREQ_SOL)
+	R.freqlock = TRUE
+
 	H.grant_language(/datum/language/modular_sand/solcommon, TRUE, TRUE)
 
 /datum/outfit/ert/sol_soldier_demo
@@ -226,12 +229,13 @@
 	id = /obj/item/card/id/sol
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/sol
 //	head = /obj/item/clothing/head/helmet/alt
-	uniform = /obj/item/clothing/under/rank/security/officer/urban_camo
+	uniform = /obj/item/clothing/under/rank/security/officer/solfed_military
 	mask = /obj/item/clothing/mask/gas/syndicate/ds/coif
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/hecu/black
 	belt = /obj/item/storage/belt/grenade/full
 	r_hand = /obj/item/gun/ballistic/rocketlauncher/unrestricted
+	ears = /obj/item/radio/headset/sol/bowman
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/storage/ifak=1,\
 		/obj/item/grenade/plastic/c4=3,\
@@ -244,8 +248,8 @@
 		return
 
 	var/obj/item/radio/R = H.ears
-	R.keyslot = new /obj/item/encryptionkey/heads/hos
-	R.recalculateChannels()
+	R.set_frequency(FREQ_SOL)
+	R.freqlock = TRUE
 
 	H.grant_language(/datum/language/modular_sand/solcommon, TRUE, TRUE)
 
@@ -254,12 +258,13 @@
 
 	id = /obj/item/card/id/sol
 	suit = /obj/item/clothing/suit/armor/solfed_coat
-	head = /obj/item/clothing/head/beret/sec/peacekeeper/hos
-	uniform = /obj/item/clothing/under/rank/security/officer/urban_camo
+	head = /obj/item/clothing/head/HoS/beret/sol
+	uniform = /obj/item/clothing/under/rank/captain/sol
 	mask = /obj/item/clothing/mask/gas/syndicate/ds/coif
-	glasses = /obj/item/clothing/glasses/hud/health/sunglasses
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	back = /obj/item/storage/backpack/hecu/black
 	belt = /obj/item/storage/belt/military/inteq
+	ears = /obj/item/radio/headset/sol/bowman/command
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber
 	r_hand = /obj/item/gun/ballistic/automatic/shotgun/bulldog/unrestricted
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
@@ -275,8 +280,9 @@
 	if(visualsOnly)
 		return
 
+
 	var/obj/item/radio/R = H.ears
-	R.keyslot = new /obj/item/encryptionkey/heads/hos
-	R.recalculateChannels()
+	R.set_frequency(FREQ_SOL)
+	R.freqlock = TRUE
 
 	H.grant_language(/datum/language/modular_sand/solcommon, TRUE, TRUE)

@@ -138,6 +138,13 @@
 	channels = list(RADIO_CHANNEL_DS2 = 1)
 	independent = TRUE
 
+/obj/item/encryptionkey/headset_syndicate/sol
+	name = "SolFed Encryption Key"
+	channels = list(RADIO_CHANNEL_SOL = 1)
+	icon_state = "solgov_cypherkey"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/sol_misc.dmi'
+	independent = TRUE
+
 /obj/item/encryptionkey/ai //ported from NT, this goes 'inside' the AI.
 	channels = list(RADIO_CHANNEL_COMMAND = 1, RADIO_CHANNEL_SECURITY = 1, RADIO_CHANNEL_ENGINEERING = 1, RADIO_CHANNEL_SCIENCE = 1, RADIO_CHANNEL_MEDICAL = 1, RADIO_CHANNEL_SUPPLY = 1, RADIO_CHANNEL_SERVICE = 1, RADIO_CHANNEL_AI_PRIVATE = 1)
 

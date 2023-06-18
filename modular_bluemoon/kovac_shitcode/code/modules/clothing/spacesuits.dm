@@ -44,30 +44,6 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 
-//Хардсьют Солнечной Федерации
-/obj/item/clothing/head/helmet/space/hardsuit/ert/alert/sol
-	name = "SolFed marine hardsuit helmet"
-	desc = "Just like old times."
-	icon_state = "hardsuit0-marine"
-	item_state = "hardsuit0-marine"
-	hardsuit_type = "marinesuit"
-	armor = list(MELEE = 70, BULLET = 55, LASER = 50, ENERGY = 50, BOMB = 65, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 50)
-	resistance_flags = FIRE_PROOF | ACID_PROOF
-	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
-	actions_types = list()
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-
-/obj/item/clothing/suit/space/hardsuit/ert/alert/sol
-	name = "SolFed marine hardsuit"
-	desc = "Standart issue marine hardsuit. Nothing special."
-	icon_state = "marinesuit"
-	item_state = "marinesuit"
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/alert/sol
-	armor = list(MELEE = 70, BULLET = 55, LASER = 50, ENERGY = 50, BOMB = 65, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 50)
-	resistance_flags = FIRE_PROOF | ACID_PROOF
-	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-
 	//Хардсьюты клоун опсов
 //Helmet_ELITE
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/clown

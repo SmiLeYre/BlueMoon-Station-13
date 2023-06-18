@@ -4005,6 +4005,7 @@
 #include "modular_bluemoon\jobs_species_blacklist\jobs_species_blacklist.dm"
 #include "modular_bluemoon\kovac_shitcode\code\body_markings.dm"
 #include "modular_bluemoon\kovac_shitcode\code\necros.dm"
+#include "modular_bluemoon\kovac_shitcode\code\solfed.dm"
 #include "modular_bluemoon\kovac_shitcode\code\clothing\mask.dm"
 #include "modular_bluemoon\kovac_shitcode\code\datums\bark.dm"
 #include "modular_bluemoon\kovac_shitcode\code\datums\ert.dm"
