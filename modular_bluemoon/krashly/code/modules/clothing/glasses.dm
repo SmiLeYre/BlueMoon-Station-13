@@ -7,3 +7,4 @@
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/glasses.dmi'
 	icon_state = "inteq_goggles"
 	item_state = "inteq_goggles"
+	alternate_worn_layer = ABOVE_HEAD_LAYER

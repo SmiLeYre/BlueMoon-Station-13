@@ -357,7 +357,7 @@
 	purchasable_from = UPLINK_CLOWN_OPS
 
 
-/// Syndicate Hardsuits (previously removed by Krashly)
+/// Syndicate Hardsuits and Mechas (previously removed by Krashly)
 
 /datum/uplink_item/suits/space_suit_red
 	name = "Syndicate Space Suit"
@@ -365,7 +365,7 @@
 			fits inside bags, and has a weapon slot."
 	item = /obj/item/storage/box/syndie_kit/space
 	cost = 4
-	purchasable_from = ~(UPLINK_CLOWN_OPS | UPLINK_SYNDICATE)
+	purchasable_from = UPLINK_SYNDICATE
 
 /datum/uplink_item/suits/hardsuit/syndi
 	name = "Syndicate Blood-Red Hardsuit"
@@ -393,3 +393,19 @@
 	cost = 30
 	purchasable_from = UPLINK_SYNDICATE
 
+
+/datum/uplink_item/support/dark_gygax
+	name = "Dark Gygax Exosuit"
+	desc = "A Syndicate lightweight exosuit, painted in a dark scheme. Its speed and equipment selection make it excellent \
+			for hit-and-run style attacks. Features an incendiary carbine, flash bang launcher, teleporter, ion thrusters and a Tesla energy array."
+	item = /obj/vehicle/sealed/mecha/combat/gygax/dark/loaded
+	cost = 40
+	purchasable_from = UPLINK_SYNDICATE
+
+/datum/uplink_item/support/mauler
+	name = "Mauler Exosuit"
+	desc = "A massive and incredibly deadly military-grade exosuit. Features long-range targeting, thrust vectoring \
+			and deployable smoke. Comes equipped with an LMG, Scattershot rifle, missile rack, an antiprojectile armor booster and a Tesla energy array."
+	item = /obj/vehicle/sealed/mecha/combat/marauder/mauler/loaded
+	cost = 100
+	purchasable_from = UPLINK_SYNDICATE

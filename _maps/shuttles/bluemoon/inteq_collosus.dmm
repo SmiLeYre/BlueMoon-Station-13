@@ -147,7 +147,9 @@
 /obj/structure/window/reinforced/tinted/frosted{
 	dir = 4
 	},
-/obj/item/bedsheet/syndie,
+/obj/item/bedsheet/syndie{
+	icon_state = "sheetinteq"
+	},
 /turf/open/floor/wood/wood_parquet,
 /area/shuttle/inteq)
 "ev" = (
@@ -434,7 +436,9 @@
 /obj/machinery/airalarm/all_access{
 	pixel_y = 25
 	},
-/obj/item/bedsheet/syndie,
+/obj/item/bedsheet/syndie{
+	icon_state = "sheetinteq"
+	},
 /turf/open/floor/wood/wood_parquet,
 /area/shuttle/inteq)
 "nb" = (
@@ -1016,7 +1020,9 @@
 /area/shuttle/inteq)
 "AL" = (
 /obj/structure/bed,
-/obj/item/bedsheet/syndie,
+/obj/item/bedsheet/syndie{
+	icon_state = "sheetinteq"
+	},
 /turf/open/floor/wood/wood_parquet,
 /area/shuttle/inteq)
 "AM" = (
@@ -1588,7 +1594,9 @@
 /obj/structure/sign/poster/contraband/borg_fancy_2{
 	pixel_x = -32
 	},
-/obj/item/bedsheet/syndie,
+/obj/item/bedsheet/syndie{
+	icon_state = "sheetinteq"
+	},
 /turf/open/floor/wood/wood_parquet,
 /area/shuttle/inteq)
 "Sp" = (

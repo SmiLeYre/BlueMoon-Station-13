@@ -210,6 +210,7 @@
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 	internals_slot = ITEM_SLOT_RPOCKET
 	belt = /obj/item/storage/belt/military/inteq
+	back = /obj/item/storage/backpack/security/inteq
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1,\
 	/obj/item/tank/jetpack/oxygen/harness=1,\
 	/obj/item/gun/ballistic/automatic/pistol=1,\

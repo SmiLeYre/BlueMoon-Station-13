@@ -26,8 +26,8 @@
 	restricted = TRUE
 
 /datum/uplink_item/support/reinforcement/assault_borg
-	name = "Syndicate Assault Cyborg"
-	desc = "A cyborg designed and programmed for systematic extermination of non-Syndicate personnel. \
+	name = "Illegal Assault Cyborg"
+	desc = "A cyborg designed and programmed for systematic extermination of innocent personnel. \
 			Comes equipped with a self-resupplying LMG, a grenade launcher, energy sword, emag, pinpointer, flash and crowbar."
 	item = /obj/item/antag_spawner/nuke_ops/borg_tele/assault
 	refundable = TRUE
@@ -35,7 +35,7 @@
 	restricted = TRUE
 
 /datum/uplink_item/support/reinforcement/medical_borg
-	name = "Syndicate Medical Cyborg"
+	name = "Illegal Medical Cyborg"
 	desc = "A combat medical cyborg. Has limited offensive potential, but makes more than up for it with its support capabilities. \
 			It comes equipped with a nanite hypospray, a medical beamgun, combat defibrillator, full surgical kit including an energy saw, an emag, pinpointer and flash. \
 			Thanks to its organ storage bag, it can perform surgery as well as any humanoid."
@@ -45,7 +45,7 @@
 	restricted = TRUE
 
 /datum/uplink_item/support/reinforcement/saboteur_borg
-	name = "Syndicate Saboteur Cyborg"
+	name = "Illegal Saboteur Cyborg"
 	desc = "A streamlined engineering cyborg, equipped with covert modules. Also incapable of leaving the welder in the shuttle. \
 			Aside from regular Engineering equipment, it comes with a special destination tagger that lets it traverse disposals networks. \
 			Its chameleon projector lets it disguise itself as a Nanotrasen cyborg, on top it has thermal vision and a pinpointer."
@@ -58,7 +58,7 @@
 	name = "MIB-01 Hermes Exosuit"
 	desc = "A lightweight exosuit, painted in a dark scheme. Its speed and equipment selection make it excellent \
 			for hit-and-run style attacks. Features an incendiary carbine, flash bang launcher, teleporter, ion thrusters and a Tesla energy array. \
-			Repainted in brown SolFed Mecha. They supply them to us clandestinely and almost for next to nothing."
+			Looks like a SolFed Mecha, repainted in brown. Sol supply InteQ clandestinely and almost for next to nothing."
 	item = /obj/vehicle/sealed/mecha/combat/gygax/dark/loaded/hermes
 	cost = 80
 
@@ -73,6 +73,6 @@
 	name = "MIB-02 Ares Exosuit"
 	desc = "A massive and incredibly deadly military-grade exosuit. Features long-range targeting, thrust vectoring \
 			and deployable smoke. Comes equipped with an LMG, Scattershot rifle, missile rack, an antiprojectile armor booster and a Tesla energy array. \
-			Repainted in brown SolFed Mecha. They supply them to us clandestinely and almost for next to nothing."
+			Looks like a SolFed Mecha, repainted in brown. Sol supply InteQ clandestinely and almost for next to nothing."
 	item = /obj/vehicle/sealed/mecha/combat/marauder/mauler/loaded/ares
 	cost = 140

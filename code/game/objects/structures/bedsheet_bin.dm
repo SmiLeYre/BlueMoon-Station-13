@@ -216,8 +216,14 @@ GLOBAL_LIST_INIT(double_bedsheets, list(/obj/item/bedsheet/double,
 
 /obj/item/bedsheet/syndie
 	name = "syndicate bedsheet"
-	desc = "It has a syndicate emblem and it has an aura of evil."
+	desc = "It has a syndicate emblem."
 	icon_state = "sheetsyndie"
+	dream_messages = list("a green disc", "a red crystal", "a glowing blade", "a wire-covered ID")
+
+/obj/item/bedsheet/inteq
+	name = "inteq bedsheet"
+	desc = "It has a inteq emblem and it has an aura of evil."
+	icon_state = "sheetinteq"
 	dream_messages = list("a green disc", "a red crystal", "a glowing blade", "a wire-covered ID")
 
 /obj/item/bedsheet/cult
