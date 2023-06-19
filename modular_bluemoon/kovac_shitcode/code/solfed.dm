@@ -11,6 +11,9 @@
 	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/mob_sol.dmi'
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
+/obj/item/clothing/under/rank/security/officer/formal/sol/armorless
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0,  WOUND = 0)
+
 /obj/item/clothing/under/rank/security/officer/solfed_military
 	name = "solfed military uniform"
 	desc = "Less tactical, but still cozy."
@@ -98,17 +101,28 @@
 	icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/obj_sol_head.dmi'
 	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/mob_sol_head.dmi'
 
+/obj/item/clothing/head/HoS/beret/sol/security
+	armor = list(MELEE = 40, BULLET = 30, LASER = 30,ENERGY = 10, BOMB = 25, BIO = 0, RAD = 0, FIRE = 50, ACID = 50)
+
 /obj/item/clothing/head/HoS/beret/sol/plain
 	name = "solfed beret"
 	desc = "A blue beret for SolFed diplomacy personnel."
 	icon_state = "beret_solgovplain"
 	item_state = "beret_solgovplain"
 
+/obj/item/clothing/head/HoS/beret/sol/plain/armorless
+	desc = "A blue beret made in SolFed style."
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0,  WOUND = 0)
+
 /obj/item/clothing/head/HoS/beret/sol/cap
 	name = "solfed cap"
 	desc = "A blue SolFed Cap with armored fibers."
 	icon_state = "cap_solgov"
 	item_state = "cap_solgov"
+
+/obj/item/clothing/head/HoS/beret/sol/cap/armorless
+	desc = "A blue SolFed Cap without any protection."
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0,  WOUND = 0)
 
 /obj/item/radio/headset/sol
 	name = "SolFed Headset"

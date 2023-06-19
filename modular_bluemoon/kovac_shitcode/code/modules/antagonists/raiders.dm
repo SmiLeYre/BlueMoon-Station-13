@@ -56,7 +56,7 @@
 	parts += "Total loot value : [L.get_loot_value()]/[L.target_value] credits"
 
 	if(L.check_completion() && !all_dead)
-		parts += "<span class='greentext big'>InteQ Raiders was successful!</span>"
+		parts += "<span class='greentext big'>InteQ Raiders were successful!</span>"
 	else
 		parts += "<span class='redtext big'>InteQ Raiders have failed.</span>"
 

@@ -152,6 +152,10 @@
 					/obj/item/clothing/suit/suspenders/suspenders_white = 4,
 					/obj/item/clothing/neck/tie/bandagewraps = 5,
 					/obj/item/clothing/mask/balaclava/breath/redscarf/greenscarf = 5,
+					/obj/item/clothing/suit/sol_dress = 4,
+					/obj/item/clothing/under/rank/security/officer/formal/sol/armorless = 4,
+					/obj/item/clothing/head/HoS/beret/sol/plain/armorless = 2,
+					/obj/item/clothing/head/HoS/beret/sol/cap/armorless = 2,
 					)
 	contraband = list(/obj/item/clothing/suit/judgerobe = 1,
 					/obj/item/clothing/head/powdered_wig = 1,
