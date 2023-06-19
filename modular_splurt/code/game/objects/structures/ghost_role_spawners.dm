@@ -69,10 +69,10 @@
 	job_description = "Hotel Staff"
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_s"
-	objectives = "Cater to visiting guests with your fellow staff. Don't abandon the hotel - you can advertise and link up with potential guests, but always remember who signs your cheques! The customer is always right!"
+	objectives = "Обслуживайте приезжающих гостей вместе со своими сотрудниками. Не бросайте отель - вы можете рекламировать его и налаживать связи с потенциальными гостями, но всегда помните, кто подписывает ваши чеки! Клиент всегда прав!!"
 	short_desc = "Вы сотрудник Космического Отеля!"
 	flavour_text = "Вы - сотрудник первоклассного космического отеля! Ухаживайте за гостями и следите за тем, чтобы менеджер не уволил вас."
-	important_info = "DON'T abandon the hotel"
+	important_info = "Не покидайте Космический Отель ни в коем случае! Не конфликтуйте с кем бы то не было, вы в первую очередь мирняк!"
 	assignedrole = "Hotel Staff"
 	death = FALSE
 	roundstart = FALSE
@@ -85,7 +85,7 @@
 	head = /obj/item/clothing/head/hotel
 	r_pocket = /obj/item/pda
 	back = /obj/item/storage/backpack/satchel
-	ears = /obj/item/radio/headset
+	ears = /obj/item/radio/headset/headset_srv/hotel
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 						/obj/item/storage/ifak=1)
 
@@ -95,8 +95,8 @@
 	job_description = "Hotel Security"
 	short_desc = "Вы Миротворец."
 	flavour_text = "Вы были назначены в этот отель, чтобы защищать интересы компании, сохраняя мир между гостями и персоналом."
-	important_info = "Do NOT abandon the hotel, as that is grounds for contract termination."
-	objectives = "Do not abandon your assigned hotel. Try and keep the peace between staff and guests, non-lethal force heavily advised if possible."
+	important_info = "Не покидайте Космический Отель ни в коем случае! Не конфликтуйте с кем бы то не было, вы в первую очередь мирняк!"
+	objectives = "Не покидайте Ваше Рабочее Место в виде Космического Отеля. Постарайтесь сохранить мир между персоналом и гостями, по возможности используйте язык и/или нелетальную силу."
 	id_job = "Hotel Security"
 	uniform = /obj/item/clothing/under/rank/security/officer/blueshirt
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -118,7 +118,8 @@
 	uniform = /obj/item/clothing/under/suit/black
 	suit = /obj/item/clothing/suit/toggle/lawyer/black
 	head = /obj/item/clothing/head/beret/black
-	id = /obj/item/card/id/away/hotel/manager
+	ears = /obj/item/radio/headset/headset_srv/hotel/manager
+	id = /obj/item/card/id/away/hotel/splurt/manager
 	l_pocket = /obj/item/door_remote/away
 
 /obj/effect/mob_spawn/human/hotel_staff/splurt/guest
@@ -140,3 +141,4 @@
 	head = /obj/item/clothing/head/beret/black
 	r_pocket = /obj/item/pda
 	back = /obj/item/storage/backpack
+	r_hand = /obj/item/storage/secure/briefcase/syndie

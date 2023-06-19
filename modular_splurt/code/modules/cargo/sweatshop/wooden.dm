@@ -7,7 +7,7 @@
 	sharpness = FALSE
 	attack_verb = list("slapped", "thunked")
 	var/sawobj = /obj/item/genital_equipment/condom
-	var/glueobj = /obj/item/dildo
+	var/glueobj = /obj/item/genital_equipment/dildo
 	var/sandobj = /obj/item/carpentry/sandpaper
 	var/boreobj = /obj/item/carpentry/borer
 

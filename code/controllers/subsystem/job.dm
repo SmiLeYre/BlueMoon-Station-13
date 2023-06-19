@@ -454,6 +454,10 @@ SUBSYSTEM_DEF(job)
 			log_world("Couldn't find a round start spawn point for [rank]")
 			SendToLateJoin(H)
 
+	var/ambition_text
+	if(H.mind)
+		H.mind.assigned_role = rank
+		ambition_text = H.mind.assign_random_ambition()
 
 	if(H.mind)
 		H.mind.assigned_role = rank
@@ -527,6 +531,9 @@ SUBSYSTEM_DEF(job)
 		binder.check_for_exodia()
 		if(length(N.client.prefs.tcg_decks))
 			binder.decks = N.client.prefs.tcg_decks
+
+	if(ambition_text)
+		to_chat(M, span_info(ambition_text))
 
 	return H
 

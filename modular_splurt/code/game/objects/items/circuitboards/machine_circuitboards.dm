@@ -2,7 +2,7 @@
 	name = "Sex Research Rack (Machine Board)"
 	build_path = /obj/machinery/research_table
 	req_components = list(
-		/obj/item/dildo = 1,
+		/obj/item/genital_equipment/dildo = 1,
 		/obj/item/stack/cable_coil = 15,
 		/obj/item/stack/sheet/mineral/silver = 15,
 		/obj/item/restraints/handcuffs = 1,

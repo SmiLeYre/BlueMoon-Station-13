@@ -621,7 +621,7 @@
 	var/total_players = GLOB.joined_player_list.len
 	var/list/typecache_bank = typecacheof(list(/datum/bank_account/department, /datum/bank_account/remote))
 	for(var/i in SSeconomy.bank_accounts_by_id)
-		var/datum/bank_account/current_acc = SSeconomy.bank_accounts_by_id[i]
+		var/datum/bank_account/current_acc = SSeconomy.bank_accounts.Copy()
 		if(typecache_bank[current_acc.type])
 			continue
 		station_vault += current_acc.account_balance

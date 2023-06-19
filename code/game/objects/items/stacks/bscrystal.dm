@@ -13,6 +13,7 @@
 	refined_type = /obj/item/stack/sheet/bluespace_crystal
 	grind_results = list(/datum/reagent/bluespace = 20)
 	scan_state = "rock_BScrystal" //Splurt Change
+	max_amount = 10
 
 /obj/item/stack/ore/bluespace_crystal/refined
 	name = "refined bluespace crystal"
@@ -52,10 +53,11 @@
 	name = "artificial bluespace crystal"
 	desc = "An artificially made bluespace crystal, it looks delicate."
 	custom_materials = list(/datum/material/bluespace=MINERAL_MATERIAL_AMOUNT*0.5)
-	blink_range = 4 // Not as good as the organic stuff!
+	blink_range = 2 // Not as good as the organic stuff!
 	points = 0 //nice try
 	refined_type = null
 	grind_results = list(/datum/reagent/bluespace = 10, /datum/reagent/silicon = 20)
+	max_amount = 10
 
 //Polycrystals, aka stacks
 /obj/item/stack/sheet/bluespace_crystal

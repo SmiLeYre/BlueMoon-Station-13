@@ -86,8 +86,8 @@
 	G.generate_fluid(R)
 	log_message("Climaxed using [G] with [target]", LOG_EMOTE)
 	if(condomning)
-		to_chat(src, "<span class='userlove'>Ты чувствуешь, как презерватив наполняется изнутри и таким-то образом наполняется твоей спермой!</span>")
-		R.trans_to(condomclimax(), R.total_volume)
+		to_chat(src, "<span class='userlove'>Ты чувствуешь, как презерватив наполняется изнутри твоей спермой!</span>")
+		R.trans_to(condomning, R.total_volume)
 	else
 		if(spill && R.total_volume >= 5)
 			R.reaction(turfing ? target : target.loc, TOUCH, 1, 0)
@@ -212,7 +212,7 @@
 	else if(!silent)
 		to_chat(src, "<span class='warning'>Вы не сможете сделать это без соответствующего контейнера.</span>")
 
-/mob/living/carbon/human/proc/available_rosie_palms(silent = FALSE, list/whitelist_typepaths = list(/obj/item/dildo))
+/mob/living/carbon/human/proc/available_rosie_palms(silent = FALSE, list/whitelist_typepaths = list(/obj/item/genital_equipment/dildo))
 	if(restrained(TRUE)) //TRUE ignores grabs
 		if(!silent)
 			to_chat(src, "<span class='warning'>Вы не можете сделать это, будучи связанным!</span>")

@@ -26,7 +26,7 @@
 				/obj/item/clothing/under/latex/half = 3,
 				//redundent /obj/item/clothing/under/latex = 3,
 				/obj/item/clothing/under/misc/gear_harness = 10,
-				/obj/item/dildo/custom = 5,
+				/obj/item/genital_equipment/dildo/custom = 5,
 				/obj/item/electropack/shockcollar = 3,
 				/obj/item/assembly/signaler = 3,
 				/obj/item/assembly/timer = 3,

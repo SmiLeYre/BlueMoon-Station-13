@@ -1318,14 +1318,14 @@
 
 	var/sobject = ""
 	if(object)
-		sobject = " with [key_name(object)]"
+		sobject = " при помощи [key_name(object)]"
 	var/saddition = ""
 	if(addition)
 		saddition = " [addition]"
 
 	var/postfix = "[sobject][saddition][hp]"
 
-	var/message = "has [what_done] [starget][postfix]"
+	var/message = "[what_done] [starget][postfix]"
 	user.log_message(message, LOG_ATTACK, color="red")
 
 	if(user != target)

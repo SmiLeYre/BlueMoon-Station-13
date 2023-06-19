@@ -115,8 +115,8 @@
 			Undetectable (except via surgery), and excellent for escaping confinement."
 	item = /obj/item/storage/box/syndie_kit/imp_uplink
 	cost = 4
-	// An empty uplink is kinda useless.
 	surplus = 0
+	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
 	restricted = TRUE
 
 /datum/uplink_item/implants/xray
