@@ -163,6 +163,7 @@
 
 	H.update_icons()
 
+	H.grant_language(/datum/language/codespeak, TRUE, TRUE)
 
 ////// Shuttle (Krashly) ///////////
 

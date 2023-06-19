@@ -48,6 +48,7 @@
 #define ROLE_GHOSTCAFE				"ghostcafe"
 #define ROLE_MINOR_ANTAG			"minorantag"
 #define ROLE_RESPAWN				"respawnsystem"
+#define ROLE_SYNDICATE				"Syndicate"
 //Define for disabling individual antagonists for dynamic
 #define HAS_ANTAG_PREF(C,ROLE) (!(NO_ANTAG & C.prefs.toggles) && (ROLE in C.prefs.be_special))
 //Missing assignment means it's not a gamemode specific role, IT'S NOT A BUG OR ERROR.
@@ -79,7 +80,8 @@ GLOBAL_LIST_INIT(special_roles, list(
 	ROLE_HERETIC = /datum/game_mode/heretics,
 	ROLE_BLOODSUCKER = /datum/game_mode/bloodsucker,
 	ROLE_FAMILIES = /datum/game_mode/gang,
-	ROLE_SPACE_DRAGON
+	ROLE_SPACE_DRAGON,
+	ROLE_SYNDICATE
 	//ROLE_MONSTERHUNTER Disabled for now
 ))
 
