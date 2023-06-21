@@ -7,6 +7,16 @@
 	item_state = "officer_mask"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
+/obj/item/clothing/mask/surgical/plaguedoc_new
+	name = "plague doctor mask"
+	desc = "A raven's beak and two dirty glasses."
+	icon = 'modular_bluemoon/krashly/icons/obj/clothing/mask.dmi'
+	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/mask.dmi'
+	icon_state = "plaguedoc_mask"
+	item_state = "plaguedoc_mask"
+	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/mask_muzzled.dmi'
+	actions_types = list()
+
 //InteQ
 
 /obj/item/clothing/mask/balaclava/inteq
