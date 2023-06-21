@@ -437,7 +437,9 @@
 					/obj/item/clothing/head/pharaoh = 1,
 					/obj/item/clothing/neck/tie/cross = 7,
 					/obj/item/storage/fancy/candle_box = 3,
-					/obj/item/clothing/suit/hooded/chaplain_hoodie/monk_robe = 2) //BlueMoon changes
+					/obj/item/clothing/suit/hooded/chaplain_hoodie/monk_robe = 2,  //BlueMoon changes
+					/obj/item/clothing/neck/oldcross = 6,  //BlueMoon changes
+					/obj/item/clothing/neck/epitrachelion = 1) //BlueMoon changes
 	premium = list(/obj/item/toy/plush/plushvar = 1,
 					/obj/item/toy/plush/narplush = 1)
 	refill_canister = /obj/item/vending_refill/wardrobe/chap_wardrobe
