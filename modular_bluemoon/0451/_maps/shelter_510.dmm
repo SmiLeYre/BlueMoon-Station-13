@@ -367,11 +367,8 @@
 /area/survivalpod/nonpowered)
 "bp" = (
 /obj/machinery/light,
-/obj/machinery/power/apc/auto_name/south{
-	cell_type = /obj/item/stock_parts/bluespacereactor
-	},
 /obj/structure/cable{
-	icon_state = "0-8"
+	icon_state = "4-8"
 	},
 /turf/open/floor/carpet/royalblack,
 /area/survivalpod/nonpowered)
@@ -379,6 +376,23 @@
 /obj/machinery/poweredfans,
 /obj/structure/window/shuttle/survival_pod,
 /turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"tt" = (
+/obj/machinery/power/apc/auto_name/south,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/carpet/royalblack,
+/area/survivalpod/nonpowered)
+"Mk" = (
+/obj/machinery/power/rtg/advanced/fullupgrade,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/carpet/royalblack,
 /area/survivalpod/nonpowered)
 "Sp" = (
 /obj/machinery/vending/kink{
@@ -549,7 +563,7 @@ aO
 aa
 au
 au
-au
+tt
 aa
 "}
 (12,1,1) = {"
@@ -564,7 +578,7 @@ aP
 aa
 au
 au
-au
+Mk
 aa
 "}
 (13,1,1) = {"
