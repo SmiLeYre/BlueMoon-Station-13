@@ -24,3 +24,12 @@
 	icon_state = "epitrachelion"
 	item_state = ""	//no inhands
 	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/clothing/neck/windy_scarf
+	name = "windy scarf"
+	desc = "It doesn't seem to be windy here, but the scarf continues to squirm like a snake."
+	icon = 'modular_bluemoon/krashly/icons/obj/clothing/neck.dmi'
+	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/neck.dmi'
+	icon_state = "windyscarf"
+	item_state = ""	//no inhands
+	w_class = WEIGHT_CLASS_SMALL
