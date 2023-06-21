@@ -1,6 +1,6 @@
-#define LOG_BURN_TIMER 400
-#define PAPER_BURN_TIMER 5
-#define MAXIMUM_BURN_TIMER 3000
+#define LOG_BURN_TIMER 10000
+#define PAPER_BURN_TIMER 500
+#define MAXIMUM_BURN_TIMER 50000//BLUEMOON EDIT: Now you don't have to refill it for every 10 seconds. God bless this shit.
 
 /obj/structure/fireplace
 	name = "fireplace"
