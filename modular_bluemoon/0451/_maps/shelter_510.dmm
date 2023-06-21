@@ -75,8 +75,6 @@
 	},
 /obj/structure/table/plasmaglass,
 /obj/structure/bedsheetbin/towel,
-/obj/item/reagent_containers/food/snacks/burger/cumburger,
-/obj/item/reagent_containers/food/snacks/burger/cumburger,
 /turf/open/floor/mineral/silver,
 /area/survivalpod/nonpowered)
 "an" = (
@@ -296,14 +294,6 @@
 /obj/machinery/telecomms/relay/preset/station,
 /turf/open/floor/carpet/royalblack,
 /area/survivalpod/nonpowered)
-"aZ" = (
-/obj/structure/reagent_dispensers/keg/semen,
-/turf/open/floor/carpet/royalblack,
-/area/survivalpod/nonpowered)
-"ba" = (
-/obj/structure/reagent_dispensers/keg/aphro/strong,
-/turf/open/floor/carpet/royalblack,
-/area/survivalpod/nonpowered)
 "bb" = (
 /obj/structure/chair/sofa/corp/left{
 	dir = 4
@@ -335,10 +325,6 @@
 /obj/machinery/pool/drain,
 /turf/open/pool,
 /area/survivalpod/nonpowered)
-"bh" = (
-/obj/structure/reagent_dispensers/keg/femcum,
-/turf/open/floor/carpet/royalblack,
-/area/survivalpod/nonpowered)
 "bi" = (
 /obj/structure/chair/sofa/corp/corner{
 	dir = 1
@@ -354,12 +340,6 @@
 "bk" = (
 /obj/structure/chair/sofa/corp/corner{
 	dir = 8
-	},
-/turf/open/floor/festive/wooden/wooden1,
-/area/survivalpod/nonpowered)
-"bl" = (
-/obj/machinery/mineral/equipment_vendor/golem{
-	pixel_y = -30
 	},
 /turf/open/floor/festive/wooden/wooden1,
 /area/survivalpod/nonpowered)
@@ -387,24 +367,9 @@
 /area/survivalpod/nonpowered)
 "bp" = (
 /obj/machinery/light,
-/obj/machinery/power/apc/auto_name/south,
-/obj/structure/cable{
-	icon_state = "0-4"
+/obj/machinery/power/apc/auto_name/south{
+	cell_type = /obj/item/stock_parts/bluespacereactor
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/carpet/royalblack,
-/area/survivalpod/nonpowered)
-"bq" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/autolathe/hacked,
-/turf/open/floor/carpet/royalblack,
-/area/survivalpod/nonpowered)
-"br" = (
-/obj/machinery/power/rtg/advanced/fullupgrade,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -509,7 +474,7 @@ aa
 aU
 as
 as
-bl
+as
 aa
 "}
 (7,1,1) = {"
@@ -582,9 +547,9 @@ as
 aJ
 aO
 aa
-aZ
 au
-bq
+au
+au
 aa
 "}
 (12,1,1) = {"
@@ -597,9 +562,9 @@ aF
 aJ
 aP
 aa
-ba
-bh
-br
+au
+au
+au
 aa
 "}
 (13,1,1) = {"
