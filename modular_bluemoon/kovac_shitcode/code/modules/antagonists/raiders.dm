@@ -142,8 +142,8 @@
 	var/command_radio = FALSE
 
 /datum/outfit/inteq_raider/vanguard
-	name = "InteQ Commading Mercenary"
-	id = /obj/item/card/id/syndicate/nuke_leader/inteq
+	name = "InteQ Vanguard Raider"
+	id = /obj/item/card/id/syndicate/anyone/inteq
 	suit = /obj/item/clothing/suit/armor/inteq/vanguard
 	head = /obj/item/clothing/head/HoS/inteq_vanguard
 	l_pocket = /obj/item/clothing/gloves/krav_maga/combatglovesplus

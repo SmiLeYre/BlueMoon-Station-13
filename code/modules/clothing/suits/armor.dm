@@ -122,7 +122,16 @@
 	cold_protection = CHEST|ARMS
 	heat_protection = CHEST|ARMS
 	strip_delay = 80
-	mutantrace_variation = STYLE_DIGITIGRADE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	unique_reskin = list(
+		"Black" = list("icon_state" = "platecarrier"),
+		"Blue" = list("icon_state" = "pcarrier_blue"),
+		"Navy" = list("icon_state" = "pcarrier_navy"),
+		"Green" = list("icon_state" = "pcarrier_green"),
+		"Tan" = list("icon_state" = "pcarrier_tan"),
+		"Harness" = list("icon_state" = "pcarrier_harness"),
+		"Harness White" = list("icon_state" = "pcarrier_harness_w")
+	)
 
 /obj/item/clothing/suit/armor/hos/platecarrier/ComponentInitialize()
 	. = ..()

@@ -149,9 +149,7 @@
 /obj/structure/window/reinforced/tinted/frosted{
 	dir = 4
 	},
-/obj/item/bedsheet/syndie{
-	icon_state = "sheetinteq"
-	},
+/obj/item/bedsheet/inteq,
 /turf/open/floor/wood/wood_parquet,
 /area/shuttle/inteq)
 "ev" = (
@@ -256,6 +254,10 @@
 "hr" = (
 /obj/structure/closet/cardboard,
 /obj/effect/spawner/lootdrop/maintenance/seven,
+/obj/item/mining_scanner,
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "hO" = (
@@ -438,9 +440,7 @@
 /obj/machinery/airalarm/all_access{
 	pixel_y = 25
 	},
-/obj/item/bedsheet/syndie{
-	icon_state = "sheetinteq"
-	},
+/obj/item/bedsheet/inteq,
 /turf/open/floor/wood/wood_parquet,
 /area/shuttle/inteq)
 "nb" = (
@@ -991,7 +991,7 @@
 /obj/item/storage/firstaid/regular{
 	pixel_x = 5
 	},
-/obj/item/storage/backpack/duffelbag/syndie/inteq/surgery_adv,
+/obj/item/storage/backpack/duffelbag/syndie/inteq/surgery,
 /obj/effect/turf_decal/box/white/corners,
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/hypospray/medipen,
@@ -1024,9 +1024,7 @@
 /area/shuttle/inteq)
 "AL" = (
 /obj/structure/bed,
-/obj/item/bedsheet/syndie{
-	icon_state = "sheetinteq"
-	},
+/obj/item/bedsheet/inteq,
 /turf/open/floor/wood/wood_parquet,
 /area/shuttle/inteq)
 "AM" = (
@@ -1598,9 +1596,7 @@
 /obj/structure/sign/poster/contraband/borg_fancy_2{
 	pixel_x = -32
 	},
-/obj/item/bedsheet/syndie{
-	icon_state = "sheetinteq"
-	},
+/obj/item/bedsheet/inteq,
 /turf/open/floor/wood/wood_parquet,
 /area/shuttle/inteq)
 "Sp" = (
@@ -1703,7 +1699,9 @@
 	pixel_y = -25
 	},
 /obj/structure/closet/crate/large,
-/obj/machinery/jukebox/disco,
+/obj/item/pickaxe,
+/obj/item/pickaxe,
+/obj/item/pickaxe,
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "VU" = (
