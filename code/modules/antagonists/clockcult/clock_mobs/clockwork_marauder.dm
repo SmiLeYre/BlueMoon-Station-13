@@ -34,6 +34,13 @@
 	var/max_shield_health = 3
 	var/shield_health = 3 //Amount of projectiles that can be deflected within
 	var/shield_health_regen = 0 //When world.time equals this, shield health will regenerate
+	var/true_name = "Meme Master 69" //Required to call forth the guardian
+	var/global/list/possible_true_names = list("Servant", "Warden", "Serf", "Page", "Usher", "Knave", "Vassal", "Escort")
+	var/mob/living/host //The mob that the guardian is living inside of
+	var/recovering = FALSE //If the guardian is recovering from recalling
+	var/blockchance = 17 //chance to block attacks entirely
+	var/counterchance = 30 //chance to counterattack after blocking
+	var/static/list/damage_heal_order = list(OXY, BURN, BRUTE, TOX) //we heal our host's damage in this order
 
 /mob/living/simple_animal/hostile/clockwork/marauder/examine_info()
 	if(!shield_health)

@@ -130,6 +130,18 @@
 	icon_type = "jelly bean"
 	spawn_type = /obj/item/reagent_containers/food/snacks/jellybean
 
+/obj/item/storage/fancy/jellybean_bowl/attack_self(mob/user)
+	if(contents.len > 0)
+		return
+	fancy_open = !fancy_open
+	if(!fancy_open)
+		var/obj/item/stack/sheet/cardboard/cardboard = new /obj/item/stack/sheet/cardboard(user.drop_location())
+		to_chat(user, span_notice("Складываю коробку из-под желейных бобов в картон."))
+		user.put_in_active_hand(cardboard)
+		qdel(src)
+		return
+	update_icon()
+
 /obj/item/storage/fancy/jellybean_bowl/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)

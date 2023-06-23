@@ -76,8 +76,8 @@
 	maxbodytemp = 500
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 0
-	melee_damage_lower = 15
-	melee_damage_upper = 15
+	melee_damage_lower = 60
+	melee_damage_upper = 60
 	melee_damage_type = STAMINA
 	damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
 	hud_possible = list(ANTAG_HUD, DIAG_STAT_HUD, DIAG_HUD)
@@ -95,11 +95,11 @@
 	mob_size = MOB_SIZE_TINY
 	ranged = 1
 	projectiletype = /obj/item/projectile/beam/disabler
-	ranged_cooldown_time = 20
+	ranged_cooldown_time = 15
 	projectilesound = 'sound/weapons/taser2.ogg'
 	loot = list(/obj/effect/decal/cleanable/robot_debris, /obj/item/stack/ore/bluespace_crystal)
 	del_on_death = 1
-	deathmessage = "explodes with a sharp pop!"
+	deathmessage = "взрывается со звонким хлопком!"
 	light_color = LIGHT_COLOR_CYAN
 	hud_type = /datum/hud/swarmer
 	speech_span = SPAN_ROBOT
@@ -125,17 +125,17 @@
 	holder.pixel_y = I.Height() - world.icon_size
 	holder.icon_state = "hudstat"
 
-/mob/living/simple_animal/hostile/swarmer/Stat()
+/mob/living/simple_animal/hostile/swarmer/get_status_tab_items()
 	..()
 	if(statpanel("Status"))
-		stat("Resources:",resources)
+		stat(null, "Resources: [resources]")
 
 /mob/living/simple_animal/hostile/swarmer/emp_act()
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
 		return
 	if(health > 1)
-		adjustHealth(health-1)
+		adjustHealth(health-20)
 	else
 		death()
 
@@ -661,9 +661,10 @@
 		var/mob/living/L = AM
 		if(!istype(L, /mob/living/simple_animal/hostile/swarmer))
 			playsound(loc,'sound/effects/snap.ogg',50, 1, -1)
-			L.electrocute_act(0, src, 1, flags = SHOCK_NOGLOVES|SHOCK_ILLUSION)
+			L.electrocute_act(30, src, 1, flags = SHOCK_NOGLOVES|SHOCK_ILLUSION)
+			L.Paralyze(100)
 			if(iscyborg(L))
-				L.DefaultCombatKnockdown(100)
+				L.DefaultCombatKnockdown(150)
 			qdel(src)
 	..()
 

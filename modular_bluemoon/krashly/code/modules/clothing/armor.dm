@@ -50,6 +50,53 @@
 	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
 	icon_state = "baron"
 	item_state = "greatcoat"
+//////////////////////////////////////////////
+/obj/item/clothing/suit/hooded/chaplain_hoodie/monk_robe
+	name = "monk robe"
+	desc = "Now with a hood."
+	icon = 'modular_bluemoon/krashly/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
+	icon_state = "monk"
+	item_state = "monk"
+	hoodtype = /obj/item/clothing/head/hooded/chaplain_hood/monk_robe_hood
+//
+/obj/item/clothing/head/hooded/chaplain_hood/monk_robe_hood
+	name = "monk robe hood"
+	desc = "A torn hoodie that fits over your head."
+	icon = 'modular_bluemoon/krashly/icons/obj/clothing/head.dmi'
+	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/head.dmi'
+	icon_state = "monk_robe_hood"
+	item_state = "monk_robe_hood"
+	flags_inv = HIDEHAIR|HIDEEARS
+////////////////////////////////////////////////
+/obj/item/clothing/suit/hooded/plaguedoc_new
+	name = "plague doctor robe"
+	desc = "Everything will be fine..."
+	icon = 'modular_bluemoon/krashly/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
+	icon_state = "plaguedoc"
+	item_state = "plaguedoc"
+	hoodtype = /obj/item/clothing/head/hooded/plaguedoc_new
+//
+/obj/item/clothing/head/hooded/plaguedoc_new
+	name = "plague doctor hood"
+	desc = "A torn hoodie that fits over your head."
+	icon = 'modular_bluemoon/krashly/icons/obj/clothing/head.dmi'
+	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/head.dmi'
+	icon_state = "plaguedoc_hood"
+	item_state = "plaguedoc_hood"
+	flags_inv = HIDEHAIR|HIDEEARS
+///////////////////////////////////////////////
+obj/item/clothing/suit/donator/bm/cerberus_suit/armored/inkvd
+	name = "inquisitor's overcoat"
+	desc = "Large overcoat with red embroidery on the sleeves. It also has a cross stitch on it."
+	icon = 'modular_bluemoon/krashly/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
+	icon_state = "inkvd"
+	item_state = "inkvd"
 
 //InteQ//
 

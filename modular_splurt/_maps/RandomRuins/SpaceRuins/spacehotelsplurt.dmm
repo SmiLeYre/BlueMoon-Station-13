@@ -4064,7 +4064,7 @@
 /obj/structure/table,
 /obj/item/milking_machine,
 /obj/item/milking_machine/penis,
-/obj/item/genital_equipment/dildo/custom,
+/obj/item/dildo/custom,
 /obj/item/genital_equipment/condom,
 /obj/item/genital_equipment/condom,
 /obj/item/genital_equipment/condom,
@@ -8452,7 +8452,7 @@
 /obj/structure/closet,
 /obj/item/restraints/handcuffs/cable,
 /obj/item/restraints/handcuffs/cable,
-/obj/item/genital_equipment/dildo/knotted,
+/obj/item/dildo/knotted,
 /obj/item/clothing/mask/muzzle/ballgag,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/hotel)

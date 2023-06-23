@@ -24,7 +24,7 @@ obj/item/storage/belt/slut/ComponentInitialize()
 		/obj/item/radio,
 		/obj/item/clothing/gloves,
 		/obj/item/restraints/legcuffs/bola,
-		/obj/item/genital_equipment/dildo,
+		/obj/item/dildo,
 		/obj/item/leash,
 		/obj/item/genital_equipment/condom,
 		/obj/item/bdsm_whip,

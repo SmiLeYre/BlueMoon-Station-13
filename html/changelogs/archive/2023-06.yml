@@ -47,6 +47,13 @@
   - rscadd: 5.43 ammo box
   - rscadd: Kaiju ammo box
 2023-06-17:
+  ActuallyALovelyGrave:
+  - rscadd: Added new 4 implants in RnD.
+  - bugfix: fixed a few things from Cybernetic Division - 01 update.
+2023-06-22:
+  ActuallyALovelyGrave:
+  - tweak: fireplace has much *better* capacity.
+  - tweak: 15k capsule is revamped a bit.
   BongaTheProto:
   - code_imp: makes genital equipment into a component
   - admin: "the genital equipment component can be applied to any item, don't have\

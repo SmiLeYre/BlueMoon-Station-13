@@ -233,8 +233,7 @@
 	message = "speeeeens!"
 	message_mime = "speeeeens silently!"
 	restraint_check = TRUE
-	mob_type_allowed_typecache = list(/mob/living, /mob/dead/observer)
-	mob_type_ignore_stat_typecache = list(/mob/dead/observer)
+	mob_type_allowed_typecache = list(/mob/living)
 	emote_sound = 'modular_splurt/sound/voice/speen.ogg'
 	// No cooldown var required
 

@@ -14,6 +14,14 @@
 	icon_state = "officercap"
 	item_state = "officercap"
 
+/obj/item/clothing/head/HoS/inkvd
+	name = "inquisitor hat"
+	desc = "Black cap with a cross. It seems inexplicably familiar to you."
+	icon = 'modular_bluemoon/krashly/icons/obj/clothing/head.dmi'
+	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/head.dmi'
+	icon_state = "inqhat"
+	item_state = "inqhat"
+
 //Plasmaman outfit
 	//centcom//
 /obj/item/clothing/head/helmet/space/plasmaman/captain/centcom
@@ -41,6 +49,7 @@
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/head.dmi'
 	icon_state = "inteqsoft"
 	item_state = "inteqsoft"
+	soft_type = "inteq"
 
 /obj/item/clothing/head/soft/inteq_med
 	name = "InteQ medic cap"
@@ -49,6 +58,7 @@
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/head.dmi'
 	icon_state = "inteqmedsoft"
 	item_state = "inteqmedsoft"
+	soft_type = "inteqmed"
 
 /obj/item/clothing/head/helmet/swat/inteq
 	name = "InteQ SWAT helmet"

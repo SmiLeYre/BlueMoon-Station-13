@@ -43,6 +43,16 @@
 	icon_state = "baron"
 	item_state = "baron"
 
+/obj/item/clothing/under/chaplain/krashly_ver
+	name = "chaplain clothes"
+	desc = "Black uniform with an embroidered cross on it."
+	icon = 'modular_bluemoon/krashly/icons/obj/clothing/under.dmi'
+	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/under.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/under.dmi'
+	icon_state = "chaplain"
+	item_state = "chaplain"
+
+
 //Plasmaman outfit
 	//centcom//
 /obj/item/clothing/under/plasmaman/captain/centcom

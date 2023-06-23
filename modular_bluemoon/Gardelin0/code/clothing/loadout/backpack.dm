@@ -8,7 +8,7 @@
 //Toys
 /datum/gear/backpack/dildo_huge
 	name = "Huge dildo"
-	path = /obj/item/genital_equipment/dildo/flared/huge
+	path = /obj/item/dildo/flared/huge
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_TOYS
 
 /datum/gear/backpack/fleshlight

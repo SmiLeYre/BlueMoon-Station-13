@@ -245,5 +245,5 @@
 	hat_offset = -3
 
 /obj/item/robot_module/Initialize(mapload)
-	basic_modules += /obj/item/genital_equipment/dildo/custom
+	basic_modules += /obj/item/dildo/custom
 	. = ..()
