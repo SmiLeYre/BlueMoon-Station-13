@@ -59,3 +59,10 @@
   ActuallyALovelyGrave:
   - rscadd: Added new 4 implants in RnD.
   - bugfix: fixed a few things from Cybernetic Division - 01 update.
+2023-06-21:
+  Anonymous:
+  - rscadd: 'Mememote: *glare2 (death glare/stare, prowler noise).'
+  - tweak: 'Some emotes are simplified: *weh-s -> *weh4, *whistle_tune -> *whistletune,
+      *wolf-whistle -> *wolfwhistle.'
+  Zattarra:
+  - bugfix: Fixes the heart tattoo sprite.
