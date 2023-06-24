@@ -1,8 +1,8 @@
 //Dildo changes.
-/obj/item/genital_equipment/dildo
+/obj/item/dildo
 	var/hole = CUM_TARGET_VAGINA
 
-/obj/item/genital_equipment/dildo/attack(mob/living/carbon/human/M, mob/living/carbon/human/user)
+/obj/item/dildo/attack(mob/living/carbon/human/M, mob/living/carbon/human/user)
 	//var/possessive_verb = user.ru_ego()
 	user.DelayNextAction(CLICK_CD_RANGE)
 	var/message = ""
@@ -35,12 +35,12 @@
 	else if(user.a_intent == INTENT_HARM)
 		return ..()
 
-/obj/item/genital_equipment/dildo/attack_self(mob/living/carbon/human/user as mob)
+/obj/item/dildo/attack_self(mob/living/carbon/human/user as mob)
 	hole = hole == CUM_TARGET_VAGINA ? CUM_TARGET_ANUS : CUM_TARGET_VAGINA
 	to_chat(user, "<span class='notice'>Я целюсь в... [hole].</span>")
 
 //begin redds code
-/obj/item/genital_equipment/dildo/cyborg
+/obj/item/dildo/cyborg
 	name = "F.I.S.T.R. Machine"
 	desc = "Fully Integrated Sexual Tension Relief Machine"
 //end redds code
@@ -56,8 +56,8 @@
 	fire_mode = PCANNON_FIFO
 	throw_amount = 1
 	maxWeightClass = 60
-	var/static/list/dildo_typecache = typecacheof(/obj/item/genital_equipment/dildo)
-	charge_type = /obj/item/genital_equipment/dildo
+	var/static/list/dildo_typecache = typecacheof(/obj/item/dildo)
+	charge_type = /obj/item/dildo
 
 /obj/item/pneumatic_cannon/dildo/Initialize(mapload)
 	. = ..()

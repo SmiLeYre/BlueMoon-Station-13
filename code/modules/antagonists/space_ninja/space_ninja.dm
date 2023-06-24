@@ -113,9 +113,6 @@
 	owner.announce_objectives()
 
 /datum/antagonist/ninja/on_gain()
-	var/mob/living/carbon/human/H = owner.current
-	H.canloadappearance = TRUE
-	H.checkloadappearance()
 	if(give_objectives)
 		addObjectives()
 	addMemories()
@@ -124,6 +121,8 @@
 
 	owner.current.mind.assigned_role = ROLE_NINJA
 	owner.current.mind.special_role = ROLE_NINJA
+	owner.current.canloadappearance = TRUE
+	owner.current.checkloadappearance()
 	return ..()
 
 /datum/antagonist/ninja/admin_add(datum/mind/new_owner,mob/admin)

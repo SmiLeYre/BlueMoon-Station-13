@@ -6,7 +6,7 @@
 		stoplag()
 
 //Dildo
-/obj/item/genital_equipment/dildo/proc/stuffed_movement()
+/obj/item/dildo/proc/stuffed_movement()
 	var/obj/item/organ/genital/G = loc
 	var/mob/living/carbon/U = G.owner
 

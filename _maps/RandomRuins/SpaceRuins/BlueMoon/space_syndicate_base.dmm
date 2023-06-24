@@ -89,7 +89,9 @@
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/mapping_helpers/airlock/unres,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/cl)
 "ao" = (
@@ -731,7 +733,9 @@
 	},
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
 /obj/effect/mapping_helpers/airlock/cutaiwire,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
 "cy" = (
@@ -774,7 +778,9 @@
 /obj/effect/turf_decal/siding/dark/corner,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/iron/white/diagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/hydroponics)
 "cE" = (
@@ -875,7 +881,9 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
 "cY" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/iron/showroomfloor,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
 "da" = (
@@ -905,7 +913,9 @@
 "dh" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "dn" = (
@@ -1061,7 +1071,9 @@
 	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/iron/dark/textured_half,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "dQ" = (
@@ -1080,7 +1092,9 @@
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/mapping_helpers/airlock/unres,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
 "dR" = (
@@ -1841,7 +1855,9 @@
 	pixel_x = 24;
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/cl)
 "hn" = (
@@ -2204,7 +2220,9 @@
 	},
 /obj/effect/mapping_helpers/airlock/cutaiwire,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/wood/wood_tiled,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "iM" = (
@@ -2487,7 +2505,9 @@
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "jP" = (
@@ -2733,7 +2753,9 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/cl)
 "kQ" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "kT" = (
@@ -2976,7 +2998,9 @@
 	},
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
 /obj/effect/mapping_helpers/airlock/cutaiwire,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
 "me" = (
@@ -3061,7 +3085,9 @@
 	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "my" = (
@@ -3234,7 +3260,9 @@
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/structure/extinguisher_cabinet/directional/west,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "nm" = (
@@ -3378,7 +3406,9 @@
 	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "nV" = (
@@ -4279,13 +4309,17 @@
 /obj/machinery/door/airlock/silver/glass{
 	name = "Kitchen"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "rr" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "rs" = (
@@ -4309,7 +4343,9 @@
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/turf_decal/stripes/red/line,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "rB" = (
@@ -4515,7 +4551,9 @@
 /obj/machinery/power/apc/auto_name/east,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/wood/wood_parquet,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/lounge)
 "sD" = (
@@ -4743,7 +4781,9 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
 "tJ" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/armory)
 "tL" = (
@@ -4787,7 +4827,9 @@
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/mapping_helpers/airlock/unres,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/armory)
 "tQ" = (
@@ -4835,7 +4877,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 10
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/iron/kitchen{
 	dir = 4
 	},
@@ -4931,7 +4975,9 @@
 	},
 /obj/effect/mapping_helpers/airlock/cutaiwire,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/wood/wood_tiled,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "um" = (
@@ -4941,7 +4987,10 @@
 /turf/open/floor/iron/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
 "uo" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/armory)
 "uq" = (
@@ -4996,7 +5045,9 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "uN" = (
@@ -5221,12 +5272,6 @@
 /turf/open/floor/plasteel/showroomfloor/shower,
 /turf/open/floor/iron/white/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
-"vG" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
-/turf/open/floor/iron/dark,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "vK" = (
 /obj/structure/table/reinforced,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
@@ -5243,7 +5288,9 @@
 /obj/effect/turf_decal/trimline/yellow/corner,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "vN" = (
@@ -5406,7 +5453,9 @@
 /obj/machinery/firealarm/directional/east,
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/delivery,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "wt" = (
@@ -5448,7 +5497,9 @@
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/turf_decal/delivery,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "wJ" = (
@@ -6258,7 +6309,9 @@
 /obj/effect/turf_decal/trimline/dark_blue/warning{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "AK" = (
@@ -6613,7 +6666,9 @@
 /obj/machinery/light/dim/directional/west,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "CE" = (
@@ -7594,7 +7649,9 @@
 	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/wood/wood_parquet,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/lounge)
 "GU" = (
@@ -7757,7 +7814,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/wood/wood_tiled,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "Hz" = (
@@ -7878,7 +7937,9 @@
 	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "Ii" = (
@@ -8229,7 +8290,9 @@
 "JL" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/cl)
 "JN" = (
@@ -8451,7 +8514,9 @@
 	cycle_id = "DS2brig"
 	},
 /obj/effect/mapping_helpers/airlock/unres,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "KQ" = (
@@ -8551,7 +8616,9 @@
 	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "Lq" = (
@@ -8564,7 +8631,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "Ls" = (
@@ -8684,7 +8753,9 @@
 /obj/effect/mapping_helpers/airlock/unres{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "Lz" = (
@@ -8718,7 +8789,9 @@
 	dir = 4;
 	pixel_x = -24
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
 "LK" = (
@@ -9216,7 +9289,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 2
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "NR" = (
@@ -10021,7 +10096,9 @@
 	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/iron/white/diagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/hydroponics)
 "Rc" = (
@@ -10188,7 +10265,9 @@
 "RP" = (
 /obj/effect/turf_decal/siding/dark,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "RQ" = (
@@ -10327,7 +10406,9 @@
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/light/dim/directional/east,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "So" = (
@@ -10477,7 +10558,9 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "SO" = (
@@ -10914,7 +10997,9 @@
 "Us" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
 "Uv" = (
@@ -10929,7 +11014,9 @@
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/light/dim/directional/east,
 /obj/effect/turf_decal/trimline/dark_blue/corner,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "UB" = (
@@ -11837,7 +11924,9 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/iron/white/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "XI" = (
@@ -12043,7 +12132,9 @@
 "YQ" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "YR" = (
@@ -12146,7 +12237,9 @@
 	},
 /obj/effect/mapping_helpers/airlock/cutaiwire,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/wood/wood_tiled,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "ZA" = (
@@ -12188,7 +12281,9 @@
 /obj/structure/disposalpipe/junction{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "ZE" = (
@@ -13170,10 +13265,10 @@ qh
 NB
 jf
 sE
-vG
+RL
 yU
-vG
-vG
+RL
+RL
 zb
 yU
 Lr
@@ -14053,12 +14148,12 @@ TW
 eL
 YQ
 yU
-vG
+RL
 gY
 gY
 Lr
 wH
-vG
+RL
 yU
 RL
 Rm

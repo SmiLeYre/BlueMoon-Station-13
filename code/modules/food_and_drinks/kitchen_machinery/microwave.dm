@@ -12,7 +12,7 @@
 #define REALLY_BROKEN 2
 
 /// The max amount of dirtiness a microwave can be
-#define MAX_MICROWAVE_DIRTINESS 1500
+#define MAX_MICROWAVE_DIRTINESS 5000
 
 /obj/machinery/microwave//SKYRAT EDIT - ICON OVERRIDEN BY AESTHETICS - SEE MODULE
 	name = "microwave oven"
@@ -386,7 +386,7 @@
 	if(HAS_TRAIT(cooker, TRAIT_CURSED) && prob(10))
 		muck()
 		return
-	if(prob(max((5 / efficiency) - 5, dirty * 5))) //a clean unupgraded microwave has no risk of failure
+	if(prob(max((5 / efficiency) - 5, dirty * 2))) //a clean unupgraded microwave has no risk of failure
 		muck()
 		return
 
@@ -397,7 +397,7 @@
 			non_food_ingedients--
 
 	// If we're cooking non-food items we can fail randomly
-	if(length(non_food_ingedients) && prob(min(dirty * 5, 100)))
+	if(length(non_food_ingedients) && prob(min(dirty * 2, 100)))
 		start_can_fail(cooker)
 		return
 

@@ -106,7 +106,10 @@
 					/obj/item/clothing/under/rank/medical/doctor/util = 5,
 					/obj/item/clothing/under/rank/medical/paramedic/red = 5,
 					/obj/item/clothing/suit/toggle/labcoat/emt/red = 5,
-					/obj/item/clothing/suit/toggle/labcoat/emt/highvis = 5)
+					/obj/item/clothing/suit/toggle/labcoat/emt/highvis = 5,
+					/obj/item/clothing/suit/hooded/plaguedoc_new = 2, // BlueMoon changes
+					/obj/item/clothing/mask/surgical/plaguedoc_new = 2, // BlueMoon changes
+					/obj/item/clothing/gloves/color/latex/nitrile/plaguedoc_new = 2) // BlueMoon changes
 	refill_canister = /obj/item/vending_refill/wardrobe/medi_wardrobe
 	payment_department = ACCOUNT_MED
 
@@ -435,7 +438,10 @@
 					/obj/item/clothing/head/nemes = 2,
 					/obj/item/clothing/head/pharaoh = 2,
 					/obj/item/clothing/neck/tie/cross = 7,
-					/obj/item/storage/fancy/candle_box = 3)
+					/obj/item/storage/fancy/candle_box = 3,
+					/obj/item/clothing/suit/hooded/chaplain_hoodie/monk_robe = 2,  //BlueMoon changes
+					/obj/item/clothing/neck/oldcross = 6,  //BlueMoon changes
+					/obj/item/clothing/neck/epitrachelion = 1) //BlueMoon changes
 	premium = list(/obj/item/toy/plush/plushvar = 1,
 					/obj/item/toy/plush/narplush = 1)
 	refill_canister = /obj/item/vending_refill/wardrobe/chap_wardrobe

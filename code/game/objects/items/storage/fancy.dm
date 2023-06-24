@@ -73,6 +73,18 @@
 	custom_price = PRICE_NORMAL
 	appearance_flags = KEEP_TOGETHER
 
+/obj/item/storage/fancy/donut_box/attack_self(mob/user)
+	if(contents.len > 0)
+		return
+	fancy_open = !fancy_open
+	if(!fancy_open)
+		var/obj/item/stack/sheet/cardboard/cardboard = new /obj/item/stack/sheet/cardboard(user.drop_location())
+		to_chat(user, span_notice("Складываю коробку из-под пончиков в картон."))
+		user.put_in_active_hand(cardboard)
+		qdel(src)
+		return
+	update_icon()
+
 /obj/item/storage/fancy/donut_box/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
@@ -129,6 +141,18 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 12
 	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/food/snacks/egg))
+
+/obj/item/storage/fancy/egg_box/attack_self(mob/user)
+	if(contents.len > 0)
+		return
+	fancy_open = !fancy_open
+	if(!fancy_open)
+		var/obj/item/stack/sheet/cardboard/cardboard = new /obj/item/stack/sheet/cardboard(user.drop_location())
+		to_chat(user, span_notice("Складываю коробку из-под куринных яиц в картон."))
+		user.put_in_active_hand(cardboard)
+		qdel(src)
+		return
+	update_icon()
 
 /*
  * Candle Box

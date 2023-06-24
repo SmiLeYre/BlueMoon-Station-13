@@ -68430,8 +68430,8 @@
 	light_color = "#cee5d2"
 	},
 /obj/structure/table,
-/obj/item/genital_equipment/dildo/random,
-/obj/item/genital_equipment/dildo/random,
+/obj/item/dildo/random,
+/obj/item/dildo/random,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "hBu" = (

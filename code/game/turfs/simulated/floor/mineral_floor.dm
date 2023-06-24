@@ -133,7 +133,13 @@
 	initial_gas_mix = AIRLESS_ATMOS
 
 /turf/open/floor/mineral/plastitanium/red/brig
-	name = "brig floor"
+	name = "Brig Floor"
+
+/turf/open/floor/mineral/plastitanium/yellow
+	icon_state = "plastitanium_yellow"
+
+/turf/open/floor/mineral/plastitanium/yellow/airless
+	initial_gas_mix = AIRLESS_ATMOS
 
 //BANANIUM
 

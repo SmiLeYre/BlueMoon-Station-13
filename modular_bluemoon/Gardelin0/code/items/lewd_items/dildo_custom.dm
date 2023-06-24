@@ -1,10 +1,12 @@
-/obj/item/genital_equipment/dildo
+/obj/item/dildo
 	lefthand_file = 'modular_bluemoon/Gardelin0/icons/items/onmob/lefthand.dmi'
 	righthand_file = 'modular_bluemoon/Gardelin0/icons/items/onmob/righthand.dmi'
 	item_state = "dildo"
 	var/inside = FALSE
 
-/obj/item/genital_equipment/dildo/item_inserting(mob/living/carbon/user, mob/living/carbon/target, obj/item/organ/genital/target_organ)
+/obj/item/dildo/proc/item_inserting(mob/living/carbon/user, mob/living/carbon/target, obj/item/organ/genital/target_organ)
+	. = TRUE
+
 	if(!(target.client?.prefs?.erppref == "Yes"))
 		to_chat(user, span_warning("They don't want you to do that!"))
 		return
@@ -32,7 +34,7 @@
 	inside = TRUE
 	stuffed_movement()
 
-obj/item/genital_equipment/dildo/MouseDrop_T(mob/living/M, mob/living/user)
+obj/item/dildo/MouseDrop_T(mob/living/M, mob/living/user)
 	var/message = ""
 	var/lust_amt = 0
 	if(ishuman(M) && (M?.client?.prefs?.toggles & VERB_CONSENT))

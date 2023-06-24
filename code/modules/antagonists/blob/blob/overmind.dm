@@ -244,7 +244,7 @@ GLOBAL_LIST_EMPTY(blob_nodes)
 /mob/camera/blob/blob_act(obj/structure/blob/B)
 	return
 
-/mob/camera/blob/Stat()
+/mob/camera/blob/get_status_tab_items()
 	..()
 	if(statpanel("Status"))
 		if(blob_core)
