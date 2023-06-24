@@ -261,7 +261,9 @@
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "hO" = (
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external{
+	req_access_txt = "150"
+	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/structure/fans/tiny,
 /obj/docking_port/mobile{
@@ -882,7 +884,7 @@
 "wr" = (
 /obj/machinery/porta_turret/syndicate/energy/pirate/inteq{
 	dir = 4;
-	faction = list("inteq");
+	faction = list("InteQ");
 	icon_state = "standard_lethal"
 	},
 /turf/closed/wall/mineral/plastitanium,
@@ -979,7 +981,7 @@
 "Ao" = (
 /obj/machinery/porta_turret/syndicate/energy/pirate/inteq{
 	dir = 4;
-	faction = list("inteq");
+	faction = list("InteQ");
 	icon_state = "standard_lethal"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -1510,7 +1512,9 @@
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "QI" = (
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external{
+	req_access_txt = "150"
+	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
