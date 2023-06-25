@@ -135,7 +135,7 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	path = /obj/item/clothing/suit/suspenders/suspenders_white
 
-/datum/gear/suit/syndicate_cap
+/datum/gear/head/syndicate_cap
 	name = "Syndicate Cap"
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_JOBS
 	path = /obj/item/clothing/head/HoS/syndicate
