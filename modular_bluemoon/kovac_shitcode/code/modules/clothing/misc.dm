@@ -146,6 +146,11 @@
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
 	path = /obj/item/clothing/under/rank/security/officer/formal/sol/armorless
 
+/datum/gear/suit/solfed_dress
+	name = "SolFed Dress"
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	path = /obj/item/clothing/suit/sol_dress
+
 /datum/gear/suit/nri_coat
 	name = "Russian Empire Coat"
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
