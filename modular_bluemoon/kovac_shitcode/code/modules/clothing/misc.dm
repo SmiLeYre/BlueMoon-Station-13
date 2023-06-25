@@ -98,8 +98,23 @@
 		"Urban" = list("icon_state" = "urban_camo")
 	)
 
+/obj/item/clothing/neck/cloak/cape_blue
+	name = "blue cape"
+	desc = "Stylish."
+	icon_state = "cape_blue"
+	item_state = "cape_blue"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/obj/clothing/misc.dmi'
+	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/misc.dmi'
 
-///
+/obj/item/clothing/neck/cloak/armplate_blue
+	name = "blue armplate"
+	desc = "Stylish."
+	icon_state = "armplate_blue"
+	item_state = "armplate_blue"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/obj/clothing/misc.dmi'
+	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/misc.dmi'
+
+/// loadout additions
 /datum/gear/neck/cross
 	name = "Christian Cross Necklace"
 	subcategory = LOADOUT_SUBCATEGORY_NECK_TIE
@@ -119,6 +134,72 @@
 	name = "White Suspenders"
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	path = /obj/item/clothing/suit/suspenders/suspenders_white
+
+/datum/gear/suit/syndicate_cap
+	name = "Syndicate Cap"
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_JOBS
+	path = /obj/item/clothing/head/HoS/syndicate
+	restricted_roles = list("Captain","Head of Security")
+
+/datum/gear/uniform/solfed_formal
+	name = "SolFed Formal Uniform"
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
+	path = /obj/item/clothing/under/rank/security/officer/formal/sol/armorless
+
+/datum/gear/suit/nri_coat
+	name = "Russian Empire Coat"
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	path = /obj/item/clothing/suit/armor/nri_coat/armorless
+
+/datum/gear/head/sol_beret
+	name = "SolFed Beret"
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	path = /obj/item/clothing/head/HoS/beret/sol/plain/armorless
+
+/datum/gear/head/sol_cap
+	name = "SolFed Cap"
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	path = /obj/item/clothing/head/HoS/beret/sol/cap/armorless
+
+/datum/gear/head/nri_cap
+	name = "Russian Empire Cap"
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	path = /obj/item/clothing/head/HoS/beret/nri/cap/armorless
+
+/datum/gear/neck/cape_blue
+	name = "Blue Cape"
+	subcategory = LOADOUT_SUBCATEGORY_NECK_GENERAL
+	path = /obj/item/clothing/neck/cloak/cape_blue
+
+/datum/gear/neck/armplate_blue
+	name = "Blue Armplate"
+	subcategory = LOADOUT_SUBCATEGORY_NECK_GENERAL
+	path =/obj/item/clothing/neck/cloak/armplate_blue
+
+/datum/gear/neck/sol_cape
+	name = "SolFed Cape"
+	subcategory = LOADOUT_SUBCATEGORY_NECK_GENERAL
+	path = /obj/item/clothing/neck/cloak/cape
+
+/datum/gear/neck/nri_cape
+	name = "Russian Empire Cape"
+	subcategory = LOADOUT_SUBCATEGORY_NECK_GENERAL
+	path = /obj/item/clothing/neck/cloak/nri_cape
+
+/datum/gear/backpack/flag
+	name = "Flag"
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_GENERAL
+	path = /obj/item/sign/flag
+
+/datum/gear/backpack/sol_poster
+	name = "SolFed poster"
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_GENERAL
+	path = /obj/item/poster/sol
+
+/datum/gear/backpack/nri_poster
+	name = "NRI poster"
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_GENERAL
+	path = /obj/item/poster/nri
 
 /obj/item/card/id/sol_citizen
 	name = "SolFed Citizen ID"

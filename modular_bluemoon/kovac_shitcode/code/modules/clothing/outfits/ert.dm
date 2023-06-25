@@ -137,10 +137,11 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/nri
 	//head = /obj/item/clothing/head/helmet/alt
 	uniform = /obj/item/clothing/under/syndicate/rus_army
-	mask = /obj/item/clothing/mask/gas/syndicate/ds/mouth
+	mask = /obj/item/clothing/mask/balaclava/breath/inteq
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/hecu/black
 	belt = /obj/item/storage/belt/military
+	ears = /obj/item/radio/headset/nri/bowman
 	r_hand = /obj/item/gun/ballistic/automatic/ak12
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/clothing/mask/gas/sechailer=1,\
@@ -155,8 +156,9 @@
 		return
 
 	var/obj/item/radio/R = H.ears
-	R.keyslot = new /obj/item/encryptionkey/heads/hos
 	R.recalculateChannels()
+
+	R.set_frequency(FREQ_NRI)
 
 	H.grant_language(/datum/language/modular_sand/technorussian, TRUE, TRUE)
 
@@ -164,14 +166,16 @@
 	name = "NRI Spetsnaz Leader"
 
 	id = /obj/item/card/id/nri
-	suit = /obj/item/clothing/suit/armor/vest/russian_coat
-	head = /obj/item/clothing/head/beret/sec
-	uniform = /obj/item/clothing/under/syndicate/rus_army
-	mask = /obj/item/clothing/mask/gas/syndicate/ds/mouth
+	neck = /obj/item/clothing/neck/cloak/nri_cloak
+	suit = /obj/item/clothing/suit/armor/nri_vest
+	head = /obj/item/clothing/head/HoS/beret/nri
+	uniform = /obj/item/clothing/under/rank/security/officer/nri_military
+	mask = /obj/item/clothing/mask/balaclava/breath/inteq
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/hecu
 	belt = /obj/item/storage/belt/grenade/full
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber
+	ears = /obj/item/radio/headset/nri/bowman/command
 	r_hand = /obj/item/gun/ballistic/automatic/l6_saw/pkmp
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 	    /obj/item/choice_beacon/nri_mech=1,\
@@ -187,8 +191,9 @@
 		return
 
 	var/obj/item/radio/R = H.ears
-	R.keyslot = new /obj/item/encryptionkey/heads/hos
 	R.recalculateChannels()
+
+	R.set_frequency(FREQ_NRI)
 
 	H.grant_language(/datum/language/modular_sand/technorussian, TRUE, TRUE)
 

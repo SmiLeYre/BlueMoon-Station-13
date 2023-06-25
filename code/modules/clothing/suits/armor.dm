@@ -155,9 +155,10 @@
 	name = "warden's armored jacket"
 	desc = "A red jacket with silver rank pips and body armor strapped on top."
 	icon_state = "warden_jacket"
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	unique_reskin = list(
 		"Jacket" = list("icon_state" = "warden_jacket"),
-		"Distinguish Jacket" = list("icon_state" = "warden_jacket_newtg"),
+		"Vest" = list("icon_state" = "warden_jacket_newtg"),
 		"Syndie Warden Jacket" = list("icon_state" = "warden_syndie")
 	)
 

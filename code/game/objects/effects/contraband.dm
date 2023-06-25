@@ -550,7 +550,7 @@
 
 /obj/structure/sign/poster/contraband/nri_voskhod
 	name = "VOSKHOD combat armor advertisement"
-	desc = "A poster showcasing recently developed VOSKHOD combat armor currently in use by NRI's troops and infantry across the border. The word 'DRIP' is written top to bottom on the left side, presumably boasting about the suit's superior design."
+	desc = "A poster showcasing recently developed VOSKHOD combat armor dedicated for future use by NRI's troops and infantry across the border. The word 'DRIP' is written top to bottom on the left side, presumably boasting about the suit's superior design."
 	icon_state = "nri_voskhod"
 
 /obj/structure/sign/poster/contraband/nri_pistol

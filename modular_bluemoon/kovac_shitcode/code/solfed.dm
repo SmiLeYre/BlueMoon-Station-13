@@ -9,7 +9,8 @@
 	can_adjust = TRUE
 	icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/obj_sol.dmi'
 	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/mob_sol.dmi'
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	anthro_mob_worn_overlay = 'modular_bluemoon/kovac_shitcode/icons/solfed/mob_sol_digi.dmi'
+	//mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/under/rank/security/officer/formal/sol/armorless
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0,  WOUND = 0)
@@ -145,7 +146,7 @@
 
 /obj/item/radio/headset/sol/bowman
 	name = "SolFed Bowman Headset"
-	desc = "A bluish advanced headset, used by SolFed militar. Protects your ears from flashbangs."
+	desc = "A bluish advanced headset, used by SolFed military. Protects your ears from flashbangs."
 	icon_state = "solgov_headset_alt"
 	item_state = "solgov_headset_alt"
 	bowman = TRUE
@@ -190,6 +191,7 @@
 
 /obj/item/poster/sol
 	name = "random SolFed poster"
+	desc = "A solarian based poster, made with natural paper! It comes with adhesive backing, for easy pinning to any vertical surface."
 	poster_type = /obj/structure/sign/poster/solgov/random
 	icon_state = "rolled_legit"
 
