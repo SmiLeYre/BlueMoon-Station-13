@@ -150,7 +150,7 @@ GLOBAL_VAR_INIT(war_declared, FALSE)
 			if (C.stat != DEAD)
 				var/obj/item/stack/telecrystal/TC = new(C.drop_location(), tc_to_distribute)
 				TC.throw_at(get_step(C, C.dir), 3, 3)
-				C.visible_message(span_notice("[C] coughs up a half-digested telecrystal"),span_notice("You cough up a half-digested telecrystal!"))
+				C.visible_message(span_notice("[C] coughs up a half-digested credit"),span_notice("You cough up a half-digested credit!"))
 				break
 
 /obj/item/nuclear_challenge/proc/check_allowed(mob/living/user)

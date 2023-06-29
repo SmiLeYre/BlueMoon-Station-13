@@ -449,7 +449,7 @@
 
 /obj/item/paper/contractor_guide/Initialize(mapload)
 	default_raw_text = {"<p>Welcome agent, congratulations on your new position as contractor. On top of your already assigned objectives,
-			this kit will provide you contracts to take on for TC payments.</p>
+			this kit will provide you contracts to take on for CR payments.</p>
 			<p>Provided within, we give your specialist contractor space suit. It's even more compact, being able to fit into a pocket, and faster than the
 			InteQ space suit available to you on the uplink. We also provide your chameleon jumpsuit and mask, both of which can be changed
 			to any form you need for the moment. The cigarettes are a special blend - it'll heal your injuries slowly overtime.</p>
@@ -461,7 +461,7 @@
 			<ol>
 				<li>Open the InteQ Contract Uplink program.</li>
 				<li>Assign yourself.</li>
-				<li>Here, you can accept a contract, and redeem your TC payments from completed contracts.</li>
+				<li>Here, you can accept a contract, and redeem your CR payments from completed contracts.</li>
 				<li>The payment number shown in brackets is the bonus you'll recieve when bringing your target <b>alive</b>. You recieve the
 				other number regardless of if they were alive or dead.</li>
 				<li>Contracts are completed by bringing the target to designated dropoff, calling for extraction, and putting them
@@ -479,19 +479,19 @@
 			</ol>
 			<h3>Ransoms</h3>
 			<p>We need your target for our own reasons, but we ransom them back to your mission area once their use is served. They will return back
-			from where you sent them off from in several minutes time. You will be paid in TC for your services.</p>
+			from where you sent them off from in several minutes time. You will be paid in CR for your services.</p>
 
 			<p>Good luck agent. You can burn this document with the supplied lighter.</p>"}
 
 	return ..()
 
 /obj/item/storage/box/syndicate/contractor_loadout/PopulateContents()
-	new /obj/item/clothing/head/helmet/space/syndicate/contract(src)
-	new /obj/item/clothing/suit/space/syndicate/contract(src)
+	new /obj/item/clothing/head/helmet/space/syndicate/inteq(src)
+	new /obj/item/clothing/suit/space/syndicate/inteq(src)
 	new /obj/item/clothing/under/chameleon(src)
 	new /obj/item/clothing/mask/chameleon(src)
 	new /obj/item/card/id/syndicate(src)
-	new /obj/item/storage/fancy/cigarettes/cigpack_syndicate(src)
+	new /obj/item/storage/fancy/cigarettes/cigpack_inteq(src)
 	new /obj/item/lighter(src)
 
 /obj/item/storage/box/syndie_kit/contract_kit/PopulateContents()

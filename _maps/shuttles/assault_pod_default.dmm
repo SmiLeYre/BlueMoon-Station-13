@@ -1,6 +1,8 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "b" = (
-/obj/machinery/porta_turret/syndicate/pod,
+/obj/machinery/porta_turret/syndicate/pod{
+	faction = list("InteQ")
+	},
 /turf/closed/wall/mineral/plastitanium,
 /area/shuttle/assault_pod)
 "c" = (
@@ -32,7 +34,6 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/shuttle/assault_pod)
 "p" = (
-/obj/effect/turf_decal/tile/brown/fourcorners,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/assault_pod)
 "t" = (
@@ -44,16 +45,11 @@
 	},
 /turf/open/floor/plating,
 /area/shuttle/assault_pod)
-"y" = (
-/obj/effect/turf_decal/tile/brown/opposingcorners,
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/assault_pod)
 "D" = (
 /obj/structure/chair/comfy/shuttle,
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/brown/opposingcorners,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/assault_pod)
 "H" = (
@@ -67,14 +63,6 @@
 	dir = 1
 	},
 /obj/machinery/light,
-/obj/effect/turf_decal/tile/brown/opposingcorners,
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/assault_pod)
-"Q" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/brown/opposingcorners,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/assault_pod)
 "R" = (
@@ -84,13 +72,6 @@
 	req_access_txt = "150"
 	},
 /turf/open/floor/plating,
-/area/shuttle/assault_pod)
-"T" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/brown/opposingcorners,
-/turf/open/floor/mineral/plastitanium,
 /area/shuttle/assault_pod)
 "V" = (
 /turf/template_noop,
@@ -117,9 +98,9 @@ b
 (3,1,1) = {"
 d
 c
-y
-Q
-y
+p
+H
+p
 c
 d
 "}
@@ -135,9 +116,9 @@ e
 (5,1,1) = {"
 d
 H
-y
-T
-y
+p
+c
+p
 H
 d
 "}

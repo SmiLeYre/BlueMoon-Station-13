@@ -1,10 +1,18 @@
 /datum/antagonist/pirate/raiders
 	name = "InteQ Raider"
-	job_rank = ROLE_TRAITOR
+	job_rank = ROLE_RAIDER
 	roundend_category = "inteq raiders"
 	antagpanel_category = "InteQ"
 	threat = 15
 	show_to_ghosts = TRUE
+	var/static/datum/team/pirate/raiders/raiders_team = new /datum/team/pirate/raiders
+	var/raider_outfit = /datum/outfit/inteq_raider
+	var/send_to_spawnpoint = TRUE //Should the user be moved to default spawnpoint.
+	var/equip_outfit = TRUE
+
+/datum/antagonist/pirate/raiders/leader
+	name = "InteQ Raider Vanguard"
+	raider_outfit = /datum/outfit/inteq_raider/vanguard
 
 /datum/antagonist/pirate/raiders/greet()
 	SEND_SOUND(owner.current, sound('modular_bluemoon/kovac_shitcode/sound/inteq_raiders_spawn.ogg'))
@@ -134,7 +142,7 @@
 	//gloves = /obj/item/clothing/gloves/combat
 	//back = /obj/item/storage/backpack
 	ears = /obj/item/radio/headset/syndicate/alt
-	id = /obj/item/card/id/syndicate/inteq
+	id = /obj/item/card/id/syndicate/inteq/raider
 	//belt = /obj/item/gun/ballistic/automatic/pistol
 	//backpack_contents = list(/obj/item/storage/box/survival/syndie=1,
 	//obj/item/kitchen/knife/combat/survival)
@@ -143,7 +151,7 @@
 
 /datum/outfit/inteq_raider/vanguard
 	name = "InteQ Vanguard Raider"
-	id = /obj/item/card/id/syndicate/anyone/inteq
+	id = /obj/item/card/id/syndicate/inteq/raider/leader
 	suit = /obj/item/clothing/suit/armor/inteq/vanguard
 	head = /obj/item/clothing/head/HoS/inteq_vanguard
 	l_pocket = /obj/item/clothing/gloves/krav_maga/combatglovesplus
@@ -184,7 +192,7 @@
 	light_color = LIGHT_COLOR_ORANGE
 	circuit = /obj/item/circuitboard/computer/inteq_collosus
 	shuttleId = "inteq_collosus"
-	possible_destinations = "inteq_collosus_custom"
+	possible_destinations = "raiders_away;inteq_collosus_custom;collosus_home" //Я твою мать ебал. (C) Krashly
 
 /obj/item/circuitboard/computer/inteq_collosus
 	name = "Collosus Control Console (Computer Board)"
@@ -208,3 +216,85 @@
 	integrity_failure = 0.08
 	armor = list(MELEE = 50, BULLET = 30, LASER = 30, ENERGY = 30, BOMB = 50, BIO = 0, RAD = 0, FIRE = 90, ACID = 90)
 	faction = list("InteQ")
+
+///Krashly Changes
+/obj/effect/landmark/start/inteq_raider
+	name = "inteq raider"
+	icon = 'icons/effects/landmarks_static.dmi'
+	icon_state = "snukeop_spawn"
+
+/obj/effect/landmark/start/inteq_raider/Initialize(mapload)
+	..()
+	GLOB.raider_start += get_turf(src)
+	return INITIALIZE_HINT_QDEL
+
+/obj/effect/landmark/start/inteq_raider_leader
+	name = "inteq raider vanguard"
+	icon = 'icons/effects/landmarks_static.dmi'
+	icon_state = "snukeop_leader_spawn"
+
+/obj/effect/landmark/start/inteq_raider_leader/Initialize(mapload)
+	..()
+	GLOB.raider_leader_start += get_turf(src)
+	return INITIALIZE_HINT_QDEL
+
+/datum/antagonist/pirate/raiders/proc/equip_raider()
+	if(!ishuman(owner.current))
+		return
+	var/mob/living/carbon/human/H = owner.current
+	H.equipOutfit(raider_outfit)
+
+/datum/admins/proc/makeRaiderTeam()
+	var/list/mob/candidates = pollGhostCandidates("Do you wish to be considered for the InteQ Raiders team?", ROLE_RAIDER)
+	var/list/mob/chosen = list()
+	var/mob/theghost = null
+
+	if(candidates.len)
+		var/numslavers = 4
+		var/slavercount = 0
+
+		for(var/i = 0, i<numslavers,i++)
+			shuffle_inplace(candidates) //More shuffles means more randoms
+			for(var/mob/j  in candidates)
+				if(!j || !j.client || QDELETED(j) || jobban_isbanned(j, ROLE_RAIDER) || jobban_isbanned(j, ROLE_INTEQ))
+					candidates.Remove(j)
+					continue
+
+				theghost = j
+				candidates.Remove(theghost)
+				chosen += theghost
+				slavercount++
+				break
+		//Making sure we have atleast 1 slaver
+		if(slavercount < 1)
+			return 0
+
+		//Let's find the spawn locations
+		var/leader_chosen = FALSE
+		var/datum/team/raiders/raiders_team
+		for(var/mob/c in chosen)
+			var/mob/living/carbon/human/new_character=makeBody(c)
+			if(!leader_chosen && !GLOB.slavers_spawned) // If we have no leader, pick one. Second check means only pick a leader if no previous slaver team has spawned, avoiding multiple leaders.
+				leader_chosen = TRUE
+				new_character.mind.add_antag_datum(/datum/antagonist/pirate/raiders/leader)
+			else
+				new_character.mind.add_antag_datum(/datum/antagonist/pirate/raiders)
+		return 1
+	else
+		return 0
+
+/datum/antagonist/pirate/raiders/proc/move_to_spawnpoint()
+	owner.current.forceMove(pick(GLOB.raider_start))
+
+/datum/antagonist/pirate/raiders/leader/move_to_spawnpoint()
+	owner.current.forceMove(pick(GLOB.raider_leader_start))
+
+/datum/antagonist/pirate/raiders/proc/admin_send_to_base(mob/admin)
+	owner.current.forceMove(pick(GLOB.raider_start))
+
+/datum/antagonist/pirate/raiders/on_gain()
+	. = ..()
+	if(equip_outfit)
+		equip_raider()
+	if(send_to_spawnpoint)
+		move_to_spawnpoint()

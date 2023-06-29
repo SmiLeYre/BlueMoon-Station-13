@@ -69,6 +69,14 @@
 	item = /obj/item/storage/fancy/cigarettes/cigpack_syndicate
 	cost = 2
 	illegal_tech = FALSE
+	purchasable_from = UPLINK_SYNDICATE // Bluemoon Changes
+
+/datum/uplink_item/badass/inteqcigs // Bluemoon Changes
+	name = "InteQ Smokes"
+	desc = "Strong flavor, dense smoke, infused with omnizine."
+	item = /obj/item/storage/fancy/cigarettes/cigpack_inteq
+	cost = 2
+	illegal_tech = FALSE
 
 /datum/uplink_item/badass/tactical_naptime
 	name = "Sleepy Time Pajama Bundle"

@@ -240,15 +240,15 @@
 /datum/uplink_item/dangerous/powerfist
 	name = "Power Fist"
 	desc = "The power-fist is a metal gauntlet with a built-in piston-ram powered by an external gas supply.\
-		 Upon hitting a target, the piston-ram will extend forward to make contact for some serious damage. \
-		 Using a wrench on the piston valve will allow you to tweak the amount of gas used per punch to \
-		 deal extra damage and hit targets further. Use a screwdriver to take out any attached tanks."
+	Upon hitting a target, the piston-ram will extend forward to make contact for some serious damage. \
+	Using a wrench on the piston valve will allow you to tweak the amount of gas used per punch to \
+	deal extra damage and hit targets further. Use a screwdriver to take out any attached tanks."
 	item = /obj/item/melee/powerfist
 	cost = 8
 
 /datum/uplink_item/dangerous/sniper
 	name = "Sniper Rifle"
-	desc = "Ranged fury, Syndicate style. Guaranteed to cause shock and awe or your TC back!"
+	desc = "Ranged fury, stolen rifle from the Syndicate. Guaranteed to cause shock and awe or your CR back!"
 	item = /obj/item/gun/ballistic/automatic/sniper_rifle/syndicate
 	cost = 16
 	surplus = 25

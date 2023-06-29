@@ -66,7 +66,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 		A.category = category_name
 		A.cost = max(round(A.cost * discount),1)
 		A.name += " ([round(((initial(A.cost)-A.cost)/initial(A.cost))*100)]% off!)"
-		A.desc += " Normally costs [initial(A.cost)] TC. All sales final. [pick(disclaimer)]"
+		A.desc += " Normally costs [initial(A.cost)] CR. All sales final. [pick(disclaimer)]"
 		A.item = I.item
 
 		uplink_items[category_name][A.name] = A

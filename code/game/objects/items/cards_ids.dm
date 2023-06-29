@@ -585,17 +585,29 @@
 	assignment = "Mercenary"
 	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE)
 
-/obj/item/card/id/syndicate/anyone/inteq
+/obj/item/card/id/syndicate/inteq/raider
+	name = "Mercenary Card"
+	icon_state = "inteq"
+	assignment = "Mercenary"
+	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE, ACCESS_INTEQ_RAIDERS)
+
+/obj/item/card/id/syndicate/inteq/raider/leader
 	name = "Vanguard Mercenary Card"
 	icon_state = "inteq"
 	assignment = "Vanguard Mercenary"
-	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE, ACCESS_SYNDICATE_LEADER)
+	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE, ACCESS_INTEQ_RAIDERS)
+
+/obj/item/card/id/syndicate/inteq/nuke
+	name = "Nuclear Mercenary Card"
+	icon_state = "inteq"
+	assignment = "Mercenary"
+	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE, ACCESS_INTEQ_NUKE)
 
 /obj/item/card/id/syndicate/nuke_leader/inteq
 	name = "Nuclear Vanguard Mercenary Card"
 	icon_state = "inteq"
 	assignment = "Vanguard Mercenary"
-	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE, ACCESS_SYNDICATE_LEADER)
+	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE, ACCESS_INTEQ_NUKE, ACCESS_SYNDICATE_LEADER)
 
 /obj/item/card/id/captains_spare
 	name = "captain's spare ID"

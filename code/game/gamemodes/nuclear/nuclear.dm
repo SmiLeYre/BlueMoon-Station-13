@@ -125,7 +125,7 @@
 	back = /obj/item/storage/backpack
 	ears = /obj/item/radio/headset/syndicate/alt
 	l_pocket = /obj/item/pinpointer/nuke/syndicate
-	id = /obj/item/card/id/syndicate/inteq
+	id = /obj/item/card/id/syndicate/inteq/nuke
 	belt = /obj/item/gun/ballistic/automatic/pistol
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1,\
 		/obj/item/kitchen/knife/combat/survival)
@@ -206,7 +206,7 @@
 	mask = /obj/item/clothing/mask/gas/sechailer
 	suit = /obj/item/clothing/suit/space/syndicate/inteq
 	head = /obj/item/clothing/head/helmet/space/syndicate/inteq
-	id = /obj/item/card/id/syndicate/inteq
+	id = /obj/item/card/id/syndicate/inteq/nuke
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 	internals_slot = ITEM_SLOT_RPOCKET
 	belt = /obj/item/storage/belt/military/inteq

@@ -497,7 +497,8 @@
 				/obj/item/storage/fancy/cigarettes/cigpack_xeno = 3,
 				/obj/item/storage/fancy/cigarettes/cigpack_cannabis = 10,
 				/obj/item/storage/fancy/cigarettes/cigpack_mindbreaker = 10,
-				/obj/item/storage/fancy/rollingpapers = 10
+				/obj/item/storage/fancy/rollingpapers = 10,
+				/obj/item/storage/fancy/cigarettes/cigpack_inteq = 2 // Bluemoon Changes
 				)
 
 /obj/effect/spawner/lootdrop/cigars_cases

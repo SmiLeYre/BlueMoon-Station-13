@@ -14,7 +14,7 @@
 	icon_keyboard = "syndie_key"
 	light_color = LIGHT_COLOR_ORANGE
 	req_access = list(ACCESS_SYNDICATE)
-	possible_destinations = "pirateship_away;pirateship_home;inteqship_custom"
+	possible_destinations = "pirateship_away;pirateship_home;inteqship_custom;raiders_away"
 
 /obj/machinery/computer/camera_advanced/shuttle_docker/syndicate/pirate/inteq
 	name = "InteQ shuttle navigation computer"

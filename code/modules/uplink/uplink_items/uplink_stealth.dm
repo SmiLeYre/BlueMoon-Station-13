@@ -162,6 +162,15 @@
 	item = /obj/item/soap/syndie
 	cost = 1
 	surplus = 50
+	purchasable_from = UPLINK_SYNDICATE // Bluemoon Changes
+
+/datum/uplink_item/stealthy_weapons/soap_inteq // Bluemoon Changes
+	name = "InteQ Soap"
+	desc = "A sinister-looking surfactant used to clean blood stains to hide murders and prevent DNA analysis. \
+			You can also drop it underfoot to slip people."
+	item = /obj/item/soap/inteq
+	cost = 1
+	surplus = 50
 
 /datum/uplink_item/stealthy_weapons/soap_clusterbang
 	name = "Slipocalypse Clusterbang"

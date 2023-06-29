@@ -429,7 +429,8 @@
 		/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game,
 		/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime,
 		/obj/item/reagent_containers/food/drinks/drinkingglass/filled/nuka_cola,
-		/obj/item/reagent_containers/food/drinks/drinkingglass/filled/syndicatebomb
+		/obj/item/reagent_containers/food/drinks/drinkingglass/filled/syndicatebomb,
+		/obj/item/reagent_containers/food/snacks/intecookies // Bluemoon Changes
 		))
 		new rig_snacks(src)
 

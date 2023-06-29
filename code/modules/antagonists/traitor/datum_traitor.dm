@@ -339,7 +339,7 @@
 			pluralCheck = "contracts"
 
 		result += "Completed [span_greentext("[completed_contracts]")] [pluralCheck] for a total of \
-					[span_greentext("[tc_total] TC")]![contractor_support_unit]<br>"
+					[span_greentext("[tc_total] CR")]![contractor_support_unit]<br>"
 
 	return result
 

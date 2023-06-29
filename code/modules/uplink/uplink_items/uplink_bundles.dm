@@ -32,7 +32,7 @@
 
 /datum/uplink_item/bundles_tc/contract_kit
 	name = "Contract Kit"
-	desc = "The Nanotrasen enemies have offered you the chance to become a contractor, take on kidnapping contracts for TC and cash payouts. Upon purchase,  \
+	desc = "Complete other contracts on the territory of the station, in addition to your main one - Destruction of the pact. Take on kidnapping contracts for CR and cash payouts. Upon purchase,  \
 			you'll be granted your own contract uplink embedded within the supplied tablet computer. Additionally, you'll be granted \
 			standard contractor gear to help with your mission - comes supplied with the tablet, specialised space suit, chameleon jumpsuit and mask, \
 			specialised contractor baton, and three randomly selected low cost items. Can include otherwise unobtainable items."

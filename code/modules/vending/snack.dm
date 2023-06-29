@@ -19,6 +19,7 @@
 					/obj/item/reagent_containers/food/snacks/cracker = 10,
 					/obj/item/reagent_containers/food/snacks/honeybar = 5,
 					/obj/item/reagent_containers/food/snacks/syndicake = 5,
+					/obj/item/reagent_containers/food/snacks/intecookies = 5, // Bluemoon Changes
 					/obj/item/reagent_containers/food/snacks/beans = 2)
 	premium = list(
 					/obj/item/reagent_containers/food/snacks/lollipop = 2,

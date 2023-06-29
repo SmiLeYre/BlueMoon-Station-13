@@ -86,7 +86,7 @@
 /obj/machinery/door/airlock/hatch{
 	aiControlDisabled = 1;
 	name = "Crew's Quarters";
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
@@ -261,9 +261,6 @@
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "hO" = (
-/obj/machinery/door/airlock/external{
-	req_access_txt = "150"
-	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/structure/fans/tiny,
 /obj/docking_port/mobile{
@@ -271,9 +268,14 @@
 	preferred_direction = 4;
 	id = "inteq_collosus";
 	height = 15;
-	width = 13;
+	width = 35;
 	dir = 2;
-	port_direction = 8
+	port_direction = 8;
+	dwidth = 7;
+	dheight = 1
+	},
+/obj/machinery/door/airlock/external{
+	req_access_txt = "152"
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
@@ -497,9 +499,6 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/effect/mob_spawn/human/raider{
-	dir = 8
-	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "oe" = (
@@ -562,7 +561,7 @@
 /obj/machinery/door/airlock/hatch{
 	aiControlDisabled = 1;
 	name = "Hangar";
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
@@ -629,9 +628,6 @@
 /obj/machinery/airalarm/all_access{
 	pixel_y = 25
 	},
-/obj/effect/mob_spawn/human/raider/vanguard{
-	dir = 4
-	},
 /turf/open/floor/wood/wood_parquet,
 /area/shuttle/inteq)
 "qW" = (
@@ -644,7 +640,7 @@
 /obj/machinery/door/airlock/hatch{
 	aiControlDisabled = 1;
 	name = "Crew's Quarters";
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
@@ -794,7 +790,8 @@
 /area/shuttle/inteq)
 "uy" = (
 /obj/machinery/computer/shuttle/inteq_collosus{
-	dir = 8
+	dir = 8;
+	possible_destinations = "inteq_collosus_custom;raiders_away"
 	},
 /turf/open/floor/wood/wood_parquet,
 /area/shuttle/inteq)
@@ -824,7 +821,7 @@
 /obj/machinery/door/airlock/hatch{
 	aiControlDisabled = 1;
 	name = "Toilet";
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
@@ -898,21 +895,6 @@
 "wE" = (
 /obj/machinery/light{
 	dir = 8
-	},
-/turf/open/floor/iron/dark,
-/area/shuttle/inteq)
-"wS" = (
-/obj/effect/mob_spawn/human/raider{
-	dir = 8
-	},
-/turf/open/floor/iron/dark,
-/area/shuttle/inteq)
-"xu" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj/effect/mob_spawn/human/raider{
-	dir = 4
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
@@ -1052,7 +1034,7 @@
 /obj/machinery/door/airlock/hatch{
 	aiControlDisabled = 1;
 	name = "Engineering";
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /turf/open/floor/plating,
 /area/shuttle/inteq)
@@ -1500,7 +1482,7 @@
 /obj/machinery/door/airlock/hatch{
 	aiControlDisabled = 1;
 	name = "Engineering";
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
@@ -1513,9 +1495,6 @@
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "QI" = (
-/obj/machinery/door/airlock/external{
-	req_access_txt = "150"
-	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
@@ -1523,6 +1502,9 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/airlock/external{
+	req_access_txt = "152"
+	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "QL" = (
@@ -1533,7 +1515,7 @@
 /obj/machinery/door/airlock/hatch{
 	aiControlDisabled = 1;
 	name = "Armory";
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
@@ -1619,7 +1601,7 @@
 	aiControlDisabled = 1;
 	id_tag = "piratebridgebolt";
 	name = "Bridge";
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
@@ -1662,7 +1644,7 @@
 /obj/machinery/door/airlock/hatch{
 	aiControlDisabled = 1;
 	name = "Spirits Lounge";
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
@@ -1854,7 +1836,7 @@
 /obj/machinery/door/airlock/hatch{
 	aiControlDisabled = 1;
 	name = "Engineering";
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
@@ -2407,7 +2389,7 @@ uq
 VY
 Rm
 aD
-xu
+yn
 eH
 Rm
 "}
@@ -2471,7 +2453,7 @@ qw
 Rm
 EZ
 oa
-wS
+Tk
 Rm
 "}
 (27,1,1) = {"
