@@ -18,10 +18,10 @@
 /datum/round_event/raiders/start()
 	send_raider_threat()
 
-/proc/send_raider_threat()
+proc/send_raider_threat()
 	var/datum/comm_message/threat_msg = new
 	var/payoff = 0
-	var/payoff_min = 10000 //documented this time
+	var/payoff_min = 50000 //documented this time
 	var/ship_template
 	var/ship_name = "Admiral Brown's fleet battlecruiser"
 	var/initial_send_time = world.time
@@ -41,12 +41,13 @@
 		threat_msg.possible_answers = list("Мы заплатим.","Пошел ты на хуй.")
 
 	threat_msg.answer_callback = CALLBACK(GLOBAL_PROC, .proc/raiders_answered, threat_msg, payoff, ship_name, initial_send_time, response_max_time, /datum/map_template/shuttle/inteq_collosus)
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/spawn_raiders, threat_msg, ship_template, FALSE), response_max_time)
+	addtimer(CALLBACK(GLOBAL_PROC, threat_msg, ship_template, FALSE), response_max_time)
 	SScommunications.send_message(threat_msg,unique = TRUE)
 
-/proc/raiders_answered(datum/comm_message/threat_msg, payoff, ship_name, initial_send_time, response_max_time, ship_template)
+proc/raiders_answered(datum/comm_message/threat_msg, payoff, ship_name, initial_send_time, response_max_time, ship_template)
 	if(world.time > initial_send_time + response_max_time)
 		priority_announce("Поговорим на языке силы.", ship_name, 'modular_bluemoon/phenyamomota/sound/announcer/pirate_nopeacedecision.ogg', has_important_message = TRUE)
+		makeRaiderTeam()
 		return
 	if(threat_msg && threat_msg.answered == 1)
 		var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
@@ -56,37 +57,37 @@
 				return
 			else
 				priority_announce("Здесь не хватает кредитов, козлы. Молитесь.", ship_name, 'modular_bluemoon/phenyamomota/sound/announcer/pirate_nopeacedecision.ogg', has_important_message = TRUE)
-				spawn_raiders(threat_msg, ship_template, TRUE)
+				makeRaiderTeam()
 
-/proc/spawn_raiders(datum/comm_message/threat_msg, ship_template, skip_answer_check)
-	if(!skip_answer_check && threat_msg?.answered == 1)
-		return
+///proc/spawn_raiders(datum/comm_message/threat_msg, ship_template, skip_answer_check)
+//	if(!skip_answer_check && threat_msg?.answered == 1)
+//		return
 
-	var/list/candidates = pollGhostCandidates("Do you wish to be considered for InteQ Raiders?", ROLE_TRAITOR)
-	shuffle_inplace(candidates)
+//	var/list/candidates = pollGhostCandidates("Do you wish to be considered for InteQ Raiders?", ROLE_TRAITOR)
+//	shuffle_inplace(candidates)
 
-	var/datum/map_template/shuttle/ship = new ship_template
-	var/x = rand(TRANSITIONEDGE,world.maxx - TRANSITIONEDGE - ship.width)
-	var/y = rand(TRANSITIONEDGE,world.maxy - TRANSITIONEDGE - ship.height)
-	var/z = SSmapping.empty_space.z_value
-	var/turf/T = locate(x,y,z)
-	if(!T)
-		CRASH("Raiders event found no turf to load in")
+//	var/datum/map_template/shuttle/ship = new ship_template
+//	var/x = rand(TRANSITIONEDGE,world.maxx - TRANSITIONEDGE - ship.width)
+//	var/y = rand(TRANSITIONEDGE,world.maxy - TRANSITIONEDGE - ship.height)
+//	var/z = SSmapping.empty_space.z_value
+//	var/turf/T = locate(x,y,z)
+//	if(!T)
+//		CRASH("Raiders event found no turf to load in")
 
-	if(!ship.load(T))
-		CRASH("Loading InteQ Raiders ship failed!")
+//	if(!ship.load(T))
+//		CRASH("Loading InteQ Raiders ship failed!")
 
-	for(var/turf/A in ship.get_affected_turfs(T))
-		for(var/obj/effect/mob_spawn/human/raider/spawner in A)
-			if(candidates.len > 0)
-				var/mob/our_candidate = candidates[1]
-				spawner.create(our_candidate.ckey)
-				candidates -= our_candidate
-				notify_ghosts("The InteQ ship has an object of interest: [our_candidate]!", source=our_candidate, action=NOTIFY_ORBIT, header="Something's Interesting!")
-			else
-				notify_ghosts("The InteQ ship has an object of interest: [spawner]!", source=spawner, action=NOTIFY_ORBIT, header="Something's Interesting!")
+//	for(var/turf/A in ship.get_affected_turfs(T))
+//		for(var/obj/effect/mob_spawn/human/raider/spawner in A)
+//			if(candidates.len > 0)
+//				var/mob/our_candidate = candidates[1]
+//				spawner.create(our_candidate.ckey)
+//				candidates -= our_candidate
+//				notify_ghosts("The InteQ ship has an object of interest: [our_candidate]!", source=our_candidate, action=NOTIFY_ORBIT, header="Something's Interesting!")
+//			else
+//				notify_ghosts("The InteQ ship has an object of interest: [spawner]!", source=spawner, action=NOTIFY_ORBIT, header="Something's Interesting!")
 
-	priority_announce("В секторе обнаружен вооруженнный корабль.", "Central Command", 'modular_bluemoon/kovac_shitcode/sound/inteq_raiders.ogg')
+//	priority_announce("В секторе обнаружен вооруженнный корабль.", "Central Command", 'modular_bluemoon/kovac_shitcode/sound/inteq_raiders.ogg')
 
 /// Dynamic ruleset additions
 /datum/dynamic_ruleset/midround/raiders
@@ -102,8 +103,6 @@
 	repeatable = TRUE
 
 /datum/dynamic_ruleset/midround/raiders/acceptable(population=0, threat=0)
-	if (!SSmapping.empty_space)
-		return FALSE
 	return ..()
 
 /datum/dynamic_ruleset/midround/raiders/execute()

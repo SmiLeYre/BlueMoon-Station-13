@@ -244,7 +244,7 @@
 	var/mob/living/carbon/human/H = owner.current
 	H.equipOutfit(raider_outfit)
 
-/datum/admins/proc/makeRaiderTeam()
+proc/makeRaiderTeam()
 	var/list/mob/candidates = pollGhostCandidates("Do you wish to be considered for the InteQ Raiders team?", ROLE_RAIDER)
 	var/list/mob/chosen = list()
 	var/mob/theghost = null
@@ -282,6 +282,7 @@
 		return 1
 	else
 		return 0
+	priority_announce("В секторе обнаружен вооруженнный корабль.", "Central Command", 'modular_bluemoon/kovac_shitcode/sound/inteq_raiders.ogg')
 
 /datum/antagonist/pirate/raiders/proc/move_to_spawnpoint()
 	owner.current.forceMove(pick(GLOB.raider_start))
