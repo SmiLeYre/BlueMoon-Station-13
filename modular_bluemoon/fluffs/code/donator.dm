@@ -140,3 +140,9 @@
 	slot = ITEM_SLOT_ICLOTHING
 	path = /obj/item/clothing/under/donator/bm/utilgen
 	ckeywhitelist = list("reaperdb")
+
+/datum/gear/donator/bm/multicam
+	name = "Multicam"
+	slot = ITEM_SLOT_ICLOTHING
+	/obj/item/clothing/under/donator/bm/multicam
+	ckeywhitelist = list("leony24")

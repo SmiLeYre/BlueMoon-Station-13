@@ -25,3 +25,10 @@
 	item_state = "utilgen"
 	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
 	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/multicam
+	name = "Multicam"
+	desc = "A camouflage pattern designed for use in a wide range of environments and conditions which was specifically developed and is produced by SolFed company Crye Precision"
+	icon_state = "multicam"
+	item_state = "multicam"
+	can_adjust = TRUE
