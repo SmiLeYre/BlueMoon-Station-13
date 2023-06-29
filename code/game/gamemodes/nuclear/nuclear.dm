@@ -227,10 +227,10 @@
 	back = /obj/item/storage/backpack
 	id = /obj/item/card/id/syndicate/locked_banking
 	belt = /obj/item/gun/ballistic/automatic/pistol/APS
-	backpack_contents = list(/obj/item/storage/box/survival/syndie=1,\
-		/obj/item/kitchen/knife/combat/survival)
+	backpack_contents = list(/obj/item/storage/box/survival/syndie=1,
+	/obj/item/kitchen/knife/combat/survival)
 
-	uplink_type = /obj/item/syndicate_uplink
+	uplink_type = /obj/item/syndicate_uplink/nuclear
 
 /datum/outfit/syndicate/syndiesquad/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	if(visualsOnly)

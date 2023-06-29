@@ -36,6 +36,7 @@
 	air_contents.set_moles(GAS_N2, AIR_CONTENTS * 0.79)
 
 /obj/machinery/atmospherics/components/unary/tank/carbon_dioxide
+	icon_state = "co2"
 	gas_type = GAS_CO2
 
 /obj/machinery/atmospherics/components/unary/tank/toxins
@@ -96,6 +97,7 @@
 	gas_type = GAS_STIMULUM
 
 /obj/machinery/atmospherics/components/unary/tank/tritium
+	icon_state = "agent_b"
 	gas_type = GAS_TRITIUM
 
 /obj/machinery/atmospherics/components/unary/tank/water_vapor

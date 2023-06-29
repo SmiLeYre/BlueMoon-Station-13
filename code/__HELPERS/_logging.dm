@@ -54,11 +54,17 @@
 	GLOB.admin_log.Add(text)
 	if (CONFIG_GET(flag/log_admin))
 		WRITE_LOG(GLOB.world_game_log, "ADMIN: [text]")
+		WRITE_LOG(GLOB.admin_log, "ADMIN: [text]")
+		fcopy(GLOB.admin_log, "[GLOB.log_directory]/admin_log.log")
+		fdel(GLOB.admin_log)
 
 /proc/log_admin_private(text)
 	GLOB.admin_log.Add(text)
 	if (CONFIG_GET(flag/log_admin))
 		WRITE_LOG(GLOB.world_game_log, "ADMINPRIVATE: [text]")
+		WRITE_LOG(GLOB.admin_log, "ADMIN: [text]")
+		fcopy(GLOB.admin_log, "[GLOB.log_directory]/admin_log.log")
+		fdel(GLOB.admin_log)
 
 /proc/log_adminsay(text)
 	GLOB.admin_log.Add(text)

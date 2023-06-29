@@ -93,7 +93,7 @@
 /obj/item/clothing/suit/armor/bulletproof/old
 	icon = 'icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
-	icon_state = "bulletproof"
+	icon_state = "bulletproof-wm"
 
 /obj/item/clothing/under/syndicate/overalls
 	name = "utility overalls turtleneck"

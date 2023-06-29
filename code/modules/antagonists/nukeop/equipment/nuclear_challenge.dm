@@ -1,5 +1,5 @@
 #define CHALLENGE_TELECRYSTALS 280
-#define PLAYER_SCALING 1.5
+#define PLAYER_SCALING 1.25
 #define CHALLENGE_TIME_LIMIT 25000
 #define CHALLENGE_PLAYERS_TARGET 25 //target players population. anything below is a malus to the challenge tc bonus.
 #define TELECRYSTALS_MALUS_SCALING 1.25 //the higher the value, the bigger the malus.

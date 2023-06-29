@@ -134,6 +134,7 @@ GLOBAL_LIST(topic_status_cache)
 	GLOB.world_crafting_log = "[GLOB.log_directory]/crafting.log"
 	GLOB.click_log = "[GLOB.log_directory]/click.log"
 	GLOB.world_asset_log = "[GLOB.log_directory]/asset.log"
+	GLOB.admin_log = "[GLOB.log_directory]/admin_log.log"
 
 
 #ifdef UNIT_TESTS

@@ -225,6 +225,16 @@
 	blocks_shove_knockdown = TRUE
 	strip_delay = 80
 	equip_delay_other = 60
+	unique_reskin = list(
+		"Basic" = list(
+			RESKIN_ICON_STATE = "riot",
+			RESKIN_ITEM_STATE = "riot"
+		),
+		"Without Any Mark" = list(
+			RESKIN_ICON_STATE = "riot-wm",
+			RESKIN_ITEM_STATE = "riot-wm"
+		),
+	)
 
 /obj/item/clothing/suit/armor/bone
 	name = "bone armor"
@@ -245,6 +255,16 @@
 	strip_delay = 70
 	equip_delay_other = 50
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	unique_reskin = list(
+		"Basic" = list(
+			RESKIN_ICON_STATE = "bulletproof",
+			RESKIN_ITEM_STATE = "bulletproof"
+		),
+		"Without Any Mark" = list(
+			RESKIN_ICON_STATE = "bulletproof-wm",
+			RESKIN_ITEM_STATE = "bulletproof-wm"
+		),
+	)
 
 /obj/item/clothing/suit/armor/laserproof
 	name = "reflector vest"
