@@ -15504,10 +15504,10 @@
 	},
 /turf/open/floor/engine/cult,
 /area/wizard_station)
-"Cl" = (
+"Clj" = (
 /turf/closed/wall,
 /area/start)
-"Cn" = (
+"Cng" = (
 /obj/structure/bed/pod{
 	dir = 1
 	},
