@@ -15500,7 +15500,15 @@
 	icon_state = "rock1"
 	},
 /turf/open/floor/plating/asteroid/layenia/garden{
-	icon_state = "layenia2"/turf/open/floor/engine/cult,/area/wizard_station)"Cl"=(/turf/closed/wall,/area/start)"Cn"=(/obj/structure/bed/pod{dir=1
+	icon_state = "layenia2"
+/turf/open/floor/engine/cult,
+/area/wizard_station)
+"Cl" = (
+/turf/closed/wall,
+/area/start)
+"Cn" = (
+/obj/structure/bed/pod{
+	dir = 1
 	},
 /area/slavers)
 "pkf" = (
