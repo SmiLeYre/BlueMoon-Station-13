@@ -1,7 +1,7 @@
 /// Skyrat Tattoos //////////////
 /datum/sprite_accessory/mam_body_markings/tattoo
 	icon = 'modular_bluemoon/kovac_shitcode/icons/tattoo_markings.dmi'
-	recommended_species = list("human")
+	recommended_species = list("Human")
 
 /datum/sprite_accessory/mam_body_markings/tattoo/heart
 	name = "Tattoo - Heart"
@@ -55,7 +55,37 @@
 	icon_state = "tat_infinity"
 	covered_limbs = list("Left Arm" =  MATRIX_ALL, "Right Arm" =  MATRIX_ALL, "Left Leg" =  MATRIX_ALL, "Right Leg" =  MATRIX_ALL)
 
-datum/sprite_accessory/mam_body_markings/tattoo/butterfly
+/datum/sprite_accessory/mam_body_markings/tattoo/butterfly
 	name = "Tattoo - Butterfly"
 	icon_state = "tat_butterfly"
 	covered_limbs = list("Chest" =  MATRIX_ALL)
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/datum/sprite_accessory/tails/mam_tails/teshari
+	name = "Teshari"
+	icon_state = "teshari"
+	color_src = MATRIXED
+	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails/mam_tails/teshari/teshari_thin
+	name = "Teshari thin"
+	icon_state = "teshari2"
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/datum/sprite_accessory/hair/zoey
+	name = "Zoey"
+	icon_state = "hair_zoey"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/hair.dmi'
+	recommended_species = list("Human")
+
+/datum/sprite_accessory/hair/zoey/tri_bun_long
+	name = "Tri Bun Long"
+	icon_state = "hair_tri_bun_long"
+
+/datum/sprite_accessory/hair/zoey/sabitsuki
+	name = "Sabitsuki"
+	icon_state = "hair_sabitsuki"
