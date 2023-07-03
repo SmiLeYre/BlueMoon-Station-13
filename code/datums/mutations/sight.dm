@@ -59,14 +59,14 @@
 	REMOVE_TRAIT(owner, visionflag, GENETIC_MUTATION)
 	owner.update_sight()
 
-///X-ray Vision lets you see through walls.
+///X-ray Vision lets you see through walls. BlueMoon 03.07-23 - removed prior the rework
 /datum/mutation/human/thermal/x_ray
-	name = "X Ray Vision"
-	desc = "A strange genome that allows the user to see between the spaces of walls." //actual x-ray would mean you'd constantly be blasting rads, wich might be fun for later //hmb
+	name = "Degraded X Ray Vision"
+	desc = "An unstable former X Ray genome, now simply applying the thermal vision for user." //actual x-ray would mean you'd constantly be blasting rads, wich might be fun for later //hmb
 	text_gain_indication = "<span class='notice'>The walls suddenly disappear!</span>"
 	instability = 50
 	locked = TRUE
-	visionflag = TRAIT_XRAY_VISION
+	visionflag = TRAIT_THERMAL_VISION
 
 
 //Laser Eyes lets you shoot lasers from your eyes!
