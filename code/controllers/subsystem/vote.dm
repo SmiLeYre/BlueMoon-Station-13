@@ -395,6 +395,8 @@ SUBSYSTEM_DEF(vote)
 				if(. == ROUNDTYPE_EXTENDED)
 					GLOB.dynamic_forced_extended = TRUE
 					GLOB.master_mode = "Extended"
+					GLOB.dynamic_type_threat_min = 0
+					GLOB.dynamic_type_threat_max = 0
 				else //впереди только динамики
 					var/dynamic_pick = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) - SSpersistence.last_dynamic_gamemode
 					. = pick(dynamic_pick)

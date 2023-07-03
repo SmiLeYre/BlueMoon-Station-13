@@ -22,8 +22,8 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 GLOBAL_VAR_INIT(teambased_dynamic, FALSE)
 // Очки для уровней угрозы от различных вариаций динамика
 // Значения изменяются при выборе вариаций динамика
-GLOBAL_VAR_INIT(dynamic_type_threat_min, 0)
-GLOBAL_VAR_INIT(dynamic_type_threat_max, 0)
+GLOBAL_VAR_INIT(dynamic_type_threat_min, 40)
+GLOBAL_VAR_INIT(dynamic_type_threat_max, 60)
 // BLUEMOON ADD END
 
 /datum/game_mode/dynamic
@@ -346,10 +346,11 @@ BLUEMOON REMOVAL END*/
 		mid_round_budget = threat_level
 		round_start_budget = 0
 	else
-BLUEMOON REMOVAL END*/
 	var/relative_round_start_budget_scale = LORENTZ_DISTRIBUTION(roundstart_split_curve_centre, roundstart_split_curve_width)
 	round_start_budget = round((lorentz_to_amount(relative_round_start_budget_scale) / 100) * threat_level, 0.1)
-	round_start_budget = min(round_start_budget, 50) //BLUEMOON ADDITION - чтобы динамик не расходился на все деньги с начала раунда и не пугал людей
+BLUEMOON REMOVAL END*/
+	round_start_budget = round(threat_level / 2, 0.1)
+	round_start_budget = min(round_start_budget, 30) //BLUEMOON ADDITION - чтобы динамик не расходился на все деньги с начала раунда и не пугал людей
 	initial_round_start_budget = round_start_budget
 	mid_round_budget = threat_level - round_start_budget
 
