@@ -89,3 +89,35 @@
 /datum/sprite_accessory/hair/zoey/sabitsuki
 	name = "Sabitsuki"
 	icon_state = "hair_sabitsuki"
+
+////
+
+/datum/sprite_accessory/hair/zoey/jagged
+	name = "Vulp Jagged"
+	icon_state = "jagged_s"
+	recommended_species = list("mammal", "undead_mammal")
+
+/datum/sprite_accessory/hair/zoey/jagged_s/keid
+	name = "Vulp Keid"
+	icon_state = "keid_s"
+
+/datum/sprite_accessory/hair/zoey/jagged_s/mizar
+	name = "Vulp Mizar"
+	icon_state = "mizar_s"
+
+/datum/sprite_accessory/hair/zoey/jagged_s/kajam
+	name = "Vulp Kajam"
+	icon_state = "kajam_s"
+
+/datum/sprite_accessory/hair/zoey/jagged_s/raine
+	name = "Vulp Raine"
+	icon_state = "raine_s"
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+/datum/sprite_accessory/ears/mam_ears/vulp
+	name = "Vulp"
+	icon_state = "vulp"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_BLUE
+	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
