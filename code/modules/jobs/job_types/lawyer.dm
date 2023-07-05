@@ -54,3 +54,8 @@
 	chameleon_extras = /obj/item/stamp/law
 
 	implants = list(/obj/item/implant/mindshield)
+
+/datum/outfit/job/lawyer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+	..()
+
+	H.typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/law

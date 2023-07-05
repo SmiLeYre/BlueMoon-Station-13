@@ -33,6 +33,7 @@
 	\n\n\
 	Stay near your host to protect and heal them; being too far from your host will rapidly cause you massive damage. Recall to your host if you are too weak and believe you cannot continue \
 	fighting safely. As a final note, you should probably avoid harming any fellow servants of Ratvar.</span>"
+	typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/clock
 
 /mob/living/simple_animal/hostile/clockwork/guardian/Initialize(mapload)
 	. = ..()

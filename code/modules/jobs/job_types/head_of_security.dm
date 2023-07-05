@@ -78,3 +78,7 @@
 	suit_store = /obj/item/tank/internals/oxygen
 	backpack_contents = list(/obj/item/melee/baton/loaded=1)
 
+/datum/outfit/job/hos/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+	..()
+
+	H.typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/law

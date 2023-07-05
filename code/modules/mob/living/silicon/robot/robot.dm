@@ -795,6 +795,7 @@
 	set_module = /obj/item/robot_module/syndicate
 	cell = /obj/item/stock_parts/cell/hyper
 	// radio = /obj/item/radio/borg/syndicate
+	typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/syndbot
 
 /mob/living/silicon/robot/modules/syndicate/Initialize(mapload)
 	. = ..()
@@ -841,6 +842,7 @@
 							<b>You are armed with powerful offensive tools to aid you in your mission: obey your ninja masters by any means necessary. \
 							Your cyborg LMG will slowly produce ammunition from your power supply, and your pinpointer will find and locate fellow members of the Spider Clan.</b>"
 	set_module = /obj/item/robot_module/syndicate/spider
+	typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/spider
 
 /mob/living/silicon/robot/modules/syndicate_medical/spider// ditto
 	bubble_icon = "spider"
@@ -850,6 +852,7 @@
 						Your defibrillator paddles can revive allies through their hardsuits, or can be used on harm intent to shock enemies! \
 						Your energy saw functions as a circular saw, but can be activated to deal more damage, and your pinpointer will find and locate fellow members of the Spider Clan.</b>"
 	set_module = /obj/item/robot_module/syndicate_medical/spider
+	typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/spider
 
 /mob/living/silicon/robot/modules/saboteur/spider// ditto
 	bubble_icon = "spider"
@@ -860,6 +863,7 @@
 						Your cyborg chameleon projector allows you to assume the appearance and registered name of a Nanotrasen engineering borg, and undertake covert actions on the station, \
 						be aware that almost any physical contact or incidental damage will break your camouflage.</b>"
 	set_module = /obj/item/robot_module/saboteur/spider
+	typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/spider
 
 /mob/living/silicon/robot/proc/notify_ai(notifytype, oldname, newname)
 	if(!connected_ai)

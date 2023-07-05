@@ -11,6 +11,8 @@
 	bubble_icon = "alien"
 	type_of_meat = /obj/item/reagent_containers/food/snacks/meat/slab/xeno
 
+	typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/alien
+
 	/// Whether they can ventcrawl; this is set individually for 'humanoid' and 'royal' types
 	/// 'royal' types (Praetorian, Queen) cannot ventcrawl
 	var/can_ventcrawl

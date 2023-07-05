@@ -92,6 +92,7 @@
 	head = /obj/item/clothing/head/beret/sec/ntr
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/melee/classic_baton/telescopic
+	r_pocket = /obj/item/clothing/accessory/lawyers_badge
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
@@ -102,3 +103,8 @@
 	backpack_contents = list(/obj/item/gun/energy/e_gun=1, /obj/item/stamp/law=1)
 
 	implants = list(/obj/item/implant/mindshield)
+
+/datum/outfit/job/ntr/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+	..()
+
+	H.typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/law

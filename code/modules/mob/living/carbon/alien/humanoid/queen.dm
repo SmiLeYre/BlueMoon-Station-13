@@ -19,6 +19,8 @@
 
 	var/alt_inhands_file = 'icons/mob/alienqueen.dmi'
 
+	typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/alien_royal
+
 /mob/living/carbon/alien/humanoid/royal/can_inject(mob/user, error_msg, target_zone, penetrate_thick = FALSE, bypass_immunity = FALSE)
 	return 0
 
