@@ -259,7 +259,7 @@
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "aW" = (
-/obj/machinery/porta_turret/syndicate/energy{
+/obj/machinery/porta_turret/syndicate{
 	dir = 6
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
@@ -1025,7 +1025,9 @@
 	},
 /obj/structure/bed/dogbed,
 /obj/effect/decal/cleanable/oil,
-/mob/living/simple_animal/pet/syndifox,
+/mob/living/simple_animal/pet/syndifox{
+	faction = list(ROLE_SYNDICATE)
+	},
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
 "dI" = (
@@ -1617,8 +1619,9 @@
 /turf/open/floor/iron/white/diagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/hydroponics)
 "gv" = (
-/obj/machinery/porta_turret/syndicate/energy{
-	dir = 5
+/obj/machinery/porta_turret/syndicate{
+	dir = 5;
+	faction = list("150","neutral")
 	},
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/vault)
@@ -3385,7 +3388,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "nO" = (
-/obj/machinery/porta_turret/syndicate/energy{
+/obj/machinery/porta_turret/syndicate{
 	dir = 9
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
@@ -5345,7 +5348,7 @@
 /turf/open/floor/iron/white/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "vS" = (
-/obj/machinery/porta_turret/syndicate/energy,
+/obj/machinery/porta_turret/syndicate,
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/vault)
 "vT" = (
@@ -8081,14 +8084,10 @@
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness)
 "IU" = (
-/obj/structure/frame/machine{
-	anchored = 1;
-	state = 2;
-	icon_state = "box_1"
-	},
 /obj/effect/turf_decal/siding/dark{
 	dir = 8
 	},
+/obj/machinery/autolathe/hacked,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/armory)
 "IV" = (
@@ -8901,7 +8900,7 @@
 /turf/open/floor/iron/white/diagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
 "Mt" = (
-/obj/machinery/porta_turret/syndicate/energy{
+/obj/machinery/porta_turret/syndicate{
 	dir = 5
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
@@ -13319,7 +13318,7 @@ wg
 "}
 (18,1,1) = {"
 wg
-Mt
+oG
 NB
 NB
 NB
@@ -14861,7 +14860,7 @@ wg
 wg
 EJ
 kx
-Mt
+oG
 bw
 zV
 Un
