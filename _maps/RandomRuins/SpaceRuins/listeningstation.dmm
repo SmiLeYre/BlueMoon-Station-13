@@ -779,6 +779,11 @@
 	},
 /area/ruin/space/has_grav/listeningstation)
 "bu" = (
+/mob/living/simple_animal/pet/penguin/baby{
+	faction = list(ROLE_SYNDICATE);
+	name = "Private";
+	desc = "Can I kiss the bride, Skipper?"
+	},
 /turf/open/floor/plasteel/white/side{
 	dir = 4
 	},
@@ -920,6 +925,15 @@
 	dir = 8
 	},
 /turf/open/floor/carpet/red,
+/area/ruin/space/has_grav/listeningstation)
+"dg" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	dir = 4
+	},
+/obj/machinery/porta_turret/syndicate{
+	dir = 5
+	},
+/turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/listeningstation)
 "di" = (
 /obj/structure/sink{
@@ -1104,6 +1118,12 @@
 /obj/machinery/microwave,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/listeningstation)
+"iU" = (
+/obj/machinery/porta_turret/syndicate{
+	dir = 10
+	},
+/turf/closed/wall/r_wall,
+/area/ruin/space/has_grav/listeningstation)
 "jj" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4
@@ -1208,6 +1228,14 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/listeningstation)
+"nO" = (
+/mob/living/simple_animal/pet/penguin/emperor/shamebrero{
+	faction = list(ROLE_SYNDICATE);
+	name = "Skipper";
+	desc = "Just smile and wave, boys. Smile and wave..."
+	},
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/listeningstation)
 "or" = (
 /obj/machinery/atmospherics/pipe/manifold/orange/visible{
 	dir = 8
@@ -1222,6 +1250,12 @@
 "oL" = (
 /obj/structure/table/optable,
 /turf/open/floor/plasteel/white/side,
+/area/ruin/space/has_grav/listeningstation)
+"oW" = (
+/obj/machinery/porta_turret/syndicate{
+	dir = 9
+	},
+/turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/listeningstation)
 "po" = (
 /obj/structure/toilet{
@@ -1617,7 +1651,8 @@
 "DF" = (
 /mob/living/simple_animal/pet/penguin/emperor{
 	name = "Kowalski";
-	desc = "Analysis"
+	desc = "Analysis.";
+	faction = list(ROLE_SYNDICATE)
 	},
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
@@ -1846,6 +1881,12 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/listeningstation)
+"Kk" = (
+/obj/machinery/porta_turret/syndicate{
+	dir = 6
+	},
+/turf/closed/wall/r_wall,
+/area/ruin/space/has_grav/listeningstation)
 "Kq" = (
 /obj/structure/bookcase/random/adult,
 /turf/open/floor/carpet/black,
@@ -1893,12 +1934,36 @@
 /obj/effect/turf_decal/tile/neutral,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/listeningstation)
+"KL" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/mob/living/simple_animal/pet/penguin/emperor{
+	faction = list(ROLE_SYNDICATE);
+	desc = "FISH!!!!!";
+	name = "Rico"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/listeningstation)
 "KX" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/o2{
 	dir = 1;
 	piping_layer = 3
 	},
 /turf/open/floor/plating,
+/area/ruin/space/has_grav/listeningstation)
+"Lb" = (
+/obj/machinery/porta_turret/syndicate{
+	dir = 5
+	},
+/turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/listeningstation)
 "Lu" = (
 /obj/effect/turf_decal/tile/neutral{
@@ -2024,6 +2089,25 @@
 	},
 /turf/open/floor/carpet/black,
 /area/ruin/space/has_grav/listeningstation)
+"Pd" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 4
+	},
+/obj/machinery/turretid{
+	ailock = 1;
+	dir = 1;
+	icon_state = "control_kill";
+	lethal = 1;
+	name = "Base turret controls";
+	pixel_y = 30;
+	req_access = null;
+	req_access_txt = "150"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/listeningstation)
 "Pg" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -2050,6 +2134,12 @@
 /obj/structure/table/wood,
 /obj/item/clothing/accessory/ring/syntech,
 /turf/open/floor/carpet/black,
+/area/ruin/space/has_grav/listeningstation)
+"Qh" = (
+/obj/machinery/porta_turret/syndicate{
+	dir = 1
+	},
+/turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/listeningstation)
 "Qm" = (
 /obj/machinery/light/small,
@@ -2638,6 +2728,7 @@ JY
 hy
 ab
 ab
+oW
 ag
 ag
 ag
@@ -2645,8 +2736,7 @@ ag
 ag
 ag
 ag
-ag
-ag
+iU
 ab
 ab
 ab
@@ -2718,7 +2808,7 @@ ag
 az
 az
 az
-az
+nO
 az
 az
 az
@@ -2882,7 +2972,7 @@ ag
 ag
 ag
 ag
-ag
+iU
 ab
 ab
 ab
@@ -2902,7 +2992,7 @@ ab
 ab
 ab
 ab
-ag
+oW
 ag
 ag
 rw
@@ -2975,7 +3065,7 @@ aa
 aa
 aa
 aa
-ag
+Qh
 ag
 ag
 ag
@@ -2999,7 +3089,7 @@ ag
 ag
 ag
 ag
-ag
+iU
 ab
 ab
 ab
@@ -3020,7 +3110,7 @@ PW
 aq
 aZ
 ag
-bb
+Pd
 Vr
 aD
 ag
@@ -3192,7 +3282,7 @@ fK
 VE
 ag
 ag
-ag
+iU
 ab
 ab
 ab
@@ -3279,7 +3369,7 @@ aa
 aa
 aa
 aa
-ag
+Qh
 ag
 ag
 ag
@@ -3344,7 +3434,7 @@ eW
 QQ
 ag
 fL
-ag
+Kk
 ab
 ab
 ab
@@ -3396,7 +3486,7 @@ ab
 ab
 ag
 sb
-aF
+KL
 aF
 aE
 ag
@@ -3478,7 +3568,7 @@ aG
 ag
 ab
 ab
-ag
+Kk
 ag
 ag
 ag
@@ -3530,7 +3620,7 @@ ab
 ab
 ab
 ab
-aH
+dg
 ab
 ab
 TM
@@ -3547,9 +3637,9 @@ aa
 aa
 aa
 ab
-ag
+Lb
 ap
-ag
+Kk
 ab
 ab
 ab
