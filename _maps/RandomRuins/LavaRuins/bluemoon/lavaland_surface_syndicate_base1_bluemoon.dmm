@@ -198,6 +198,7 @@
 /obj/item/gun/ballistic/revolver/syndicate,
 /obj/item/ammo_box/a357,
 /obj/item/ammo_box/a357,
+/obj/item/radio/headset/syndicate/alt,
 /turf/open/floor/wood,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "br" = (
@@ -863,7 +864,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
-/obj/machinery/mineral/equipment_vendor,
+/obj/machinery/mineral/equipment_vendor/golem,
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "fN" = (
@@ -2386,6 +2387,7 @@
 /obj/structure/sign/flag/syndicate{
 	pixel_y = 33
 	},
+/obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "rl" = (
@@ -3158,11 +3160,6 @@
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/engineering)
 "yf" = (
-/obj/structure/frame/machine{
-	anchored = 1;
-	state = 2;
-	icon_state = "box_1"
-	},
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
@@ -4104,30 +4101,12 @@
 /obj/structure/window/reinforced/survival_pod{
 	dir = 8
 	},
-/obj/item/ammo_box/magazine/m10mm{
-	pixel_x = 4;
-	pixel_y = -4
-	},
-/obj/item/ammo_box/magazine/m10mm{
-	pixel_x = 4;
-	pixel_y = -4
-	},
-/obj/item/ammo_box/magazine/m10mm{
-	pixel_x = 4;
-	pixel_y = -4
-	},
-/obj/item/ammo_box/magazine/m10mm{
-	pixel_x = 4;
-	pixel_y = -4
-	},
-/obj/item/ammo_box/magazine/sniper_rounds,
-/obj/item/ammo_box/magazine/sniper_rounds,
-/obj/item/ammo_box/magazine/sniper_rounds,
-/obj/item/ammo_box/magazine/sniper_rounds,
 /obj/machinery/light,
 /obj/structure/closet/crate/secure/gear{
 	req_access_txt = "150"
 	},
+/obj/item/storage/box/PDAs,
+/obj/item/storage/box/syndie_kit/chameleon,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "Fe" = (
@@ -4214,10 +4193,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
-"FC" = (
-/obj/machinery/portable_atmospherics/canister/oxygen,
-/turf/open/floor/plasteel/dark,
-/area/ruin/lavaland/unpowered/deepspaceone/main)
 "FE" = (
 /obj/structure/bed,
 /obj/item/bedsheet/brown,
@@ -4351,6 +4326,7 @@
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "Gu" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
+/obj/structure/frame/computer,
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
 "GA" = (
@@ -4387,6 +4363,11 @@
 	},
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
+	},
+/obj/structure/frame/machine{
+	anchored = 1;
+	state = 2;
+	icon_state = "box_1"
 	},
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
@@ -4448,6 +4429,11 @@
 "Ht" = (
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 8
+	},
+/obj/structure/frame/machine{
+	anchored = 1;
+	state = 2;
+	icon_state = "box_1"
 	},
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
@@ -4672,13 +4658,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
-"IZ" = (
-/obj/structure/frame/computer{
-	dir = 4;
-	anchored = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/lavaland/unpowered/deepspaceone/testlab)
 "Jb" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
 	dir = 6;
@@ -5554,12 +5533,13 @@
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
 "OX" = (
+/obj/effect/turf_decal/siding/thinplating/dark,
 /obj/structure/frame/machine{
 	anchored = 1;
 	state = 2;
 	icon_state = "box_1"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel,
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
 "Pd" = (
 /obj/structure/table,
@@ -5646,10 +5626,6 @@
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "PS" = (
 /obj/structure/safe,
-/obj/item/storage/box/syndie_kit/chameleon/ghostcafe{
-	desc = "It's a box, for storing things.";
-	name = "chameleon kit"
-	},
 /obj/item/clothing/suit/space/hardsuit/syndi/elite,
 /obj/item/dualsaber,
 /turf/open/floor/plasteel/dark,
@@ -5903,11 +5879,6 @@
 	},
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "Ru" = (
-/obj/structure/frame/machine{
-	anchored = 1;
-	state = 2;
-	icon_state = "box_1"
-	},
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
@@ -7182,6 +7153,11 @@
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "ZM" = (
 /obj/effect/turf_decal/siding/thinplating/dark/corner,
+/obj/structure/frame/machine{
+	anchored = 1;
+	state = 2;
+	icon_state = "box_1"
+	},
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
 "ZO" = (
@@ -7724,9 +7700,9 @@ ab
 ab
 HA
 Gu
-IZ
-OX
-OX
+EN
+EN
+EN
 Cl
 OW
 dO
@@ -7841,7 +7817,7 @@ ab
 ab
 ab
 HA
-Gu
+OX
 Ru
 yf
 ME
@@ -8611,7 +8587,7 @@ An
 Tx
 HL
 An
-FC
+An
 Wl
 qj
 WN
