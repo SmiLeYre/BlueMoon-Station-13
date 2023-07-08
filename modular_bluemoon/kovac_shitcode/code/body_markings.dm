@@ -109,9 +109,14 @@
 	name = "Vulp Kajam"
 	icon_state = "kajam_s"
 
+/datum/sprite_accessory/hair/zoey/jagged_s/kajam2
+	name = "Vulp Kajam 2"
+	icon_state = "kajam2_s"
+
 /datum/sprite_accessory/hair/zoey/jagged_s/raine
 	name = "Vulp Raine"
 	icon_state = "raine_s"
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 

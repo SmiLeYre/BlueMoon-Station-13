@@ -17,6 +17,7 @@
 	a_intent = INTENT_HARM
 	var/mob/camera/blob/overmind = null
 	var/obj/structure/blob/factory/factory = null
+	typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/blob
 
 /mob/living/simple_animal/hostile/blob/update_icons()
 	if(overmind)

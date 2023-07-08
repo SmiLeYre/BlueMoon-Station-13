@@ -29,6 +29,7 @@
 	blood_volume = 0
 	has_field_of_vision = FALSE //we are a spoopy ghost
 	rad_flags = RAD_NO_CONTAMINATE | RAD_PROTECT_CONTENTS
+	typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/phoron
 
 	see_in_dark = 8
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
@@ -57,7 +58,6 @@
 	unique_name = TRUE
 	hud_possible = list(ANTAG_HUD)
 	hud_type = /datum/hud/revenant
-	typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/phoron
 
 	var/essence = 75 //The resource, and health, of revenants.
 	var/essence_regen_cap = 75 //The regeneration cap of essence (go figure); regenerates every Life() tick up to this amount.

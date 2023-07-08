@@ -27,3 +27,6 @@
 
 /obj/effect/overlay/typing_indicator/additional/spider
 	icon_state = "spider_typing"
+
+/obj/effect/overlay/typing_indicator/additional/blob
+	icon_state = "blob_typing"
