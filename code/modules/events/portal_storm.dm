@@ -54,7 +54,7 @@
 						/mob/living/simple_animal/hostile/clown/lube = 5,\
 						/mob/living/simple_animal/hostile/clown/banana = 5,\
 						/mob/living/simple_animal/hostile/clown/fleshclown = 4)
-	triggersound = 'sound/announcer/classic/_admin_horror_music.ogg'
+	triggersound = 'modular_bluemoon/kovac_shitcode/sound/clown_storm.ogg'
 
 /datum/round_event_control/portal_storm_necros
 	name = "Portal Storm: Necromorphs"
