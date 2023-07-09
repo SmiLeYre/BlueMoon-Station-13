@@ -41,7 +41,7 @@
 	chaos = 8
 	restricted_jobs = list("Prisoner", "AI", "Cyborg")
 	protected_jobs = list("Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Chief Engineer", "Chief Medical Officer", "Research Director", "Quartermaster")
-	required_players = 30
+	required_players = 0
 	required_enemies = 3
 	recommended_enemies = 5
 	enemy_minimum_age = 7
