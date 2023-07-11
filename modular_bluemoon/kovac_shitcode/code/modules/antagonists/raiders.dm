@@ -208,3 +208,7 @@
 	integrity_failure = 0.08
 	armor = list(MELEE = 50, BULLET = 30, LASER = 30, ENERGY = 30, BOMB = 50, BIO = 0, RAD = 0, FIRE = 90, ACID = 90)
 	faction = list("InteQ")
+
+
+/obj/machinery/mineral/ore_redemption_inteq
+	req_access = list(ACCESS_SYNDICATE)

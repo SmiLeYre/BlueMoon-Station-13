@@ -14,7 +14,7 @@
 						/mob/living/simple_animal/hostile/syndicate/melee/sword/anthro = 6,\
 						/mob/living/simple_animal/hostile/syndicate/ranged/smg/anthro = 4,\
 						/mob/living/simple_animal/hostile/syndicate/ranged/anthro = 4)
-	triggersound = 'sound/announcer/classic/_admin_horror_music.ogg'
+	triggersound = 'modular_bluemoon/kovac_shitcode/sound/syndie_storm.ogg'
 
 /datum/round_event_control/portal_storm_narsie
 	name = "Portal Storm: Constructs"
