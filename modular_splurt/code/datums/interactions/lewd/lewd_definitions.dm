@@ -72,7 +72,7 @@ GLOBAL_LIST_INIT(anus_traits, list("[TRAIT_HYPERSENS_ANUS]" = 3, "[TRAIT_OVERSTI
 */
 /mob/living/proc/check_orgasm(datum/source, R, target, obj/item/organ/genital/sender, receiver, spill)
 	SIGNAL_HANDLER
-	
+
 	if(CHECK_BITFIELD(sender.genital_flags, GENITAL_IMPOTENT) || CHECK_BITFIELD(sender.genital_flags, GENITAL_DISAPPOINTING))
 		emote("sigh")
 		to_chat(src, "<span class='hypnophrase'>[pick("Ugh, that was embarassing...", "I could've done it better...")]</span>")

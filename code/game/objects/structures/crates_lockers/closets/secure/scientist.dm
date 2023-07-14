@@ -6,6 +6,8 @@
 /obj/structure/closet/secure_closet/RD/PopulateContents()
 	..()
 	new /obj/item/clothing/neck/cloak/rd(src)
+	new /obj/item/clothing/neck/mantle/research_director(src)
+	new /obj/item/clothing/neck/cloak/regal_rd(src)
 	new /obj/item/clothing/head/beret/rd(src)
 	new /obj/item/clothing/suit/bio_suit/scientist(src)
 	new /obj/item/clothing/head/bio_hood/scientist(src)

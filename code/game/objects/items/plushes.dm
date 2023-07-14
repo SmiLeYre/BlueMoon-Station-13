@@ -627,6 +627,35 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	attack_verb = list("shot", "nuked", "detonated")
 	squeak_override = list('sound/effects/hit_punch.ogg' = 1)
 
+// Little cute Ninja plushie
+/obj/item/toy/plush/ninja
+	name = "space ninja plushie"
+	desc = "A protagonist of one of the most popular cartoon series on this side of galaxy. \"運命の忍者矢\""
+	icon_state = "ninja_plushie_green"
+	item_state = "ninja_plushie_green"
+	attack_verb = list("shot", "nuked", "detonated")
+	var/cooldown = 0
+
+/obj/item/toy/plush/ninja/attack_self(mob/user as mob)
+	. = ..()
+	if(cooldown < world.time)
+		cooldown = (world.time + 30) //3 second cooldown
+		var/plushie_color = pick("green","blue","red")
+		switch (plushie_color)
+			if("green")
+				icon_state = "ninja_plushie_green"
+				item_state = "ninja_plushie_green"
+				user.visible_message(span_notice("The [name] says \"I am not afraid of the darkness! I am the darkness!\""))
+			if("blue")
+				icon_state = "ninja_plushie_blue"
+				item_state = "ninja_plushie_blue"
+				user.visible_message(span_notice("The [name] says \"Your simple light won't stop me!\""))
+			if("red")
+				icon_state = "ninja_plushie_red"
+				item_state = "ninja_plushie_red"
+				user.visible_message(span_notice("The [name] says \"You can run, but you can't hide!\""))
+	squeak_override = list('sound/effects/hit_punch.ogg' = 1)
+
 /obj/item/toy/plush/slimeplushie
 	name = "slime plushie"
 	desc = "An adorable stuffed toy that resembles a slime. It is practically just a hacky sack."

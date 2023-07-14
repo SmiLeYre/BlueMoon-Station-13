@@ -253,9 +253,9 @@
 	H.update_sight()
 
 /datum/quirk/hard_soles
- 	name = "Твердые ступни"
- 	desc = "Вы привыкли ходить босиком, а потому осколки стекла и мусор никак не вредят вашим ногам."
- 	value = 2
- 	mob_trait = TRAIT_HARD_SOLES
- 	gain_text = "<span class='notice'>Мусор под ногами теперь вам не помеха.</span>"
- 	lose_text = "<span class='danger'>Вы чувствуете, как пол под вашими ногами становится грубее.</span>"
+	name = "Твердые ступни"
+	desc = "Вы привыкли ходить босиком, а потому осколки стекла и мусор никак не вредят вашим ногам."
+	value = 2
+	mob_trait = TRAIT_HARD_SOLES
+	gain_text = "<span class='notice'>Мусор под ногами теперь вам не помеха.</span>"
+	lose_text = "<span class='danger'>Вы чувствуете, как пол под вашими ногами становится грубее.</span>"

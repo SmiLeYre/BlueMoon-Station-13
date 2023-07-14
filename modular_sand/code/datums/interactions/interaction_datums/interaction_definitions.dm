@@ -7,7 +7,7 @@
 
 /datum/interaction/pat
 	description = "Похлопать по плечу."
-	simple_message = "USER похлопал по плечу TARGET's."
+	simple_message = "USER похлопал по плечу TARGET."
 	interaction_sound = 'sound/weapons/thudswoosh.ogg'
 	require_user_hands = TRUE
 	needs_physical_contact = TRUE
@@ -31,6 +31,11 @@
 	needs_physical_contact = TRUE
 	interaction_sound = 'sound/weapons/thudswoosh.ogg'
 
+/datum/interaction/headpat/display_interaction(mob/living/carbon/human/owner)
+	if(owner.CheckActionCooldown(CLICK_CD_MELEE) && owner.a_intent == INTENT_HELP)
+		owner.help_shake_act(owner)
+		owner.DelayNextAction()
+
 /datum/interaction/salute
 	description = "Исполнить Воинское Приветствие!"
 	require_user_hands = TRUE
@@ -47,7 +52,7 @@
 /datum/interaction/pinkypromise
 	description = "Пообещать что-то на мизинчиках."
 	require_user_hands = TRUE
-	simple_message = "USER хватается своим мизинчиком за мизинчик TARGET's! Клятва Мизинчиками! Давно пора!"
+	simple_message = "USER хватается своим мизинчиком за мизинчик TARGET! Клятва Мизинчиками! Давно пора!"
 	needs_physical_contact = TRUE
 
 /datum/interaction/bird
@@ -59,7 +64,7 @@
 /datum/interaction/holdhand
 	description = "Взяться за руку."
 	require_user_hands = TRUE
-	simple_message = "USER хватается за руку TARGET's."
+	simple_message = "USER хватается за руку TARGET."
 	interaction_sound = 'sound/weapons/thudswoosh.ogg'
 	needs_physical_contact = TRUE
 	max_distance = 1

@@ -55,7 +55,7 @@
 	l_pocket = /obj/item/restraints/handcuffs
 	r_pocket = /obj/item/assembly/flash/handheld
 	suit_store = /obj/item/gun/energy/e_gun/advtaser
-	backpack_contents = list(/obj/item/reagent_containers/spray/pepper, /obj/item/clothing/accessory/badge/deputy, /obj/item/holosign_creator/security, /obj/item/storage/ifak)
+	backpack_contents = list(/obj/item/reagent_containers/spray/pepper, /obj/item/clothing/accessory/badge/deputy, /obj/item/holosign_creator/security, /obj/item/storage/ifak, /obj/item/reagent_containers/peacehypo)
 
 	backpack = /obj/item/storage/backpack/security/pk
 	satchel = /obj/item/storage/backpack/satchel/sec/pk
@@ -73,7 +73,7 @@
 	r_hand = /obj/item/melee/classic_baton/telescopic
 	r_pocket = /obj/item/storage/bag/security
 	l_pocket = /obj/item/assembly/flash/handheld
-	backpack_contents = list(/obj/item/reagent_containers/spray/pepper, /obj/item/clothing/accessory/badge/deputy)
+	backpack_contents = list(/obj/item/reagent_containers/spray/pepper, /obj/item/clothing/accessory/badge/deputy, /obj/item/reagent_containers/peacehypo)
 
 	box = /obj/item/storage/box/survival/security
 

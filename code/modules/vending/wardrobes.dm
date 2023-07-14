@@ -40,7 +40,8 @@
 					/obj/item/clothing/suit/toggle/labcoat/depjacket/sec = 5,
 					/obj/item/clothing/suit/armor/secjacket = 5,
 					/obj/item/clothing/under/rank/security/officer/util = 5,
-					/obj/item/clothing/under/rank/security/officer/blueshirt/seccorp = 5)
+					/obj/item/clothing/under/rank/security/officer/blueshirt/seccorp = 5,
+					/obj/item/clothing/neck/cloak/security = 6) //BlueMoon Add)
 	contraband = list(/obj/item/clothing/under/rank/security/stripper = 5,
 						/obj/item/clothing/mask/gas/sechailer/slut = 4,
 						/obj/item/clothing/mask/gas/sechailer/swat = 2,
@@ -55,13 +56,13 @@
 						/obj/item/clothing/under/syndicate/combat = 2
 					)
 	premium = list(/obj/item/clothing/under/rank/security/officer/formal = 5,
-					/obj/item/clothing/head/helmet/hecu = 3,
-					/obj/item/clothing/mask/gas/hecu = 3,
-					/obj/item/clothing/suit/armor/hecu = 3,
-					/obj/item/storage/backpack/hecu = 3,
-					/obj/item/storage/backpack/hecu/black = 3,
-					/obj/item/storage/belt/military/assault/hecu = 3,
-					/obj/item/storage/belt/military/assault/hecu/black = 3,
+					/obj/item/clothing/head/helmet/hecu = 2,
+					/obj/item/clothing/mask/gas/hecu = 2,
+					/obj/item/clothing/suit/armor/hecu = 2,
+					/obj/item/storage/backpack/hecu = 2,
+					/obj/item/storage/backpack/hecu/black = 2,
+					/obj/item/storage/belt/military/assault/hecu = 2,
+					/obj/item/storage/belt/military/assault/hecu/black = 2,
 					/obj/item/clothing/head/beret/sec/navyofficer = 5)
 	refill_canister = /obj/item/vending_refill/wardrobe/sec_wardrobe
 	payment_department = ACCOUNT_SEC
@@ -111,7 +112,8 @@
 					/obj/item/clothing/suit/toggle/labcoat/emt/highvis = 5,
 					/obj/item/clothing/suit/hooded/plaguedoc_new = 2, // BlueMoon changes
 					/obj/item/clothing/mask/surgical/plaguedoc_new = 2, // BlueMoon changes
-					/obj/item/clothing/gloves/color/latex/nitrile/plaguedoc_new = 2) // BlueMoon changes
+					/obj/item/clothing/gloves/color/latex/nitrile/plaguedoc_new = 2, // BlueMoon changes
+					/obj/item/clothing/neck/cloak/healer = 6) // BlueMoon changes
 	refill_canister = /obj/item/vending_refill/wardrobe/medi_wardrobe
 	payment_department = ACCOUNT_MED
 
@@ -441,9 +443,11 @@
 					/obj/item/clothing/head/pharaoh = 2,
 					/obj/item/clothing/neck/tie/cross = 7,
 					/obj/item/storage/fancy/candle_box = 3,
-					/obj/item/clothing/suit/hooded/chaplain_hoodie/monk_robe = 2,  //BlueMoon changes
+					/obj/item/clothing/suit/hooded/chaplain_hoodie/monk_robe = 2, //BlueMoon changes
 					/obj/item/clothing/neck/oldcross = 6,  //BlueMoon changes
-					/obj/item/clothing/neck/epitrachelion = 1) //BlueMoon changes
+					/obj/item/clothing/neck/epitrachelion = 1, //BlueMoon changes
+					/obj/item/clothing/neck/cloak/bishop = 1, //BlueMoon changes
+					/obj/item/clothing/neck/cloak/bishopblack= 1) //BlueMoon changes
 	premium = list(/obj/item/toy/plush/plushvar = 1,
 					/obj/item/toy/plush/narplush = 1)
 	refill_canister = /obj/item/vending_refill/wardrobe/chap_wardrobe
@@ -559,6 +563,8 @@
 					/obj/item/storage/backpack/satchel/cap = 1,
 					/obj/item/storage/backpack/duffelbag/captain = 1,
 					/obj/item/clothing/neck/cloak/cap = 1,
+					/obj/item/clothing/neck/mantle/captain = 1, // BlueMoon Add
+					/obj/item/clothing/neck/cloak/regal_cap = 1, // BlueMoon Add
 					/obj/item/clothing/shoes/sneakers/brown = 2,
 					/obj/item/clothing/under/rank/captain = 1,
 					/obj/item/clothing/under/rank/captain/util = 1,
@@ -568,12 +574,14 @@
 					/obj/item/clothing/head/caphat/beret = 1,
 					/obj/item/clothing/head/caphat/beret/white = 1,
 					/obj/item/clothing/under/rank/captain/parade = 1,
-					/obj/item/clothing/under/bm/caprevskirt = 2,
-					/obj/item/clothing/under/bm/regaloutfit = 2,
+					/obj/item/clothing/under/bm/caprevskirt = 2, // BlueMoon Add
+					/obj/item/clothing/under/bm/regaloutfit = 2, // BlueMoon Add
 					/obj/item/clothing/suit/captunic = 1,
 					/obj/item/clothing/under/rank/captain/femformal = 1,
 					/obj/item/clothing/glasses/sunglasses/gar/supergar = 1,
-					/obj/item/clothing/gloves/color/captain = 1)
+					/obj/item/clothing/gloves/color/captain = 1,
+					/obj/item/clothing/neck/cloak/syndiecap = 2, // BlueMoon Add
+					/obj/item/clothing/neck/cloak/syndieadm = 1) // BlueMoon Add
 	refill_canister = /obj/item/vending_refill/wardrobe/cap_wardrobe
 	payment_department = ACCOUNT_SEC
 	default_price = PRICE_ALMOST_EXPENSIVE
@@ -607,6 +615,7 @@
 		/obj/item/clothing/suit/hooded/wintercoat/syndicate = 5,
 		/obj/item/clothing/head/soft/sec/syndicate = 3,
 		/obj/item/clothing/head/beret/sec/syndicate = 3,
+		/obj/item/clothing/neck/cloak/syndiecap = 1,
 	)
 	contraband = list(
 		/obj/item/kitchen/knife/combat = 4,

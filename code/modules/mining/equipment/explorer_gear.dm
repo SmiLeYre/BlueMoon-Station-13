@@ -178,7 +178,7 @@
 	icon_state = "heva"
 	item_state = "heva"
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
-	armor = list(MELEE = 20, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 20, BIO = 100, RAD = 20, FIRE = 60, ACID = 20)
+	armor = list(MELEE = 20, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 20, BIO = 100, RAD = 20, FIRE = 100, ACID = 20)
 	resistance_flags = FIRE_PROOF | GOLIATH_WEAKNESS
 
 /obj/item/clothing/head/hooded/explorer/heva/equipped(mob/living/carbon/human/user, slot)

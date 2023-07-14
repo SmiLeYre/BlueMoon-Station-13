@@ -60,9 +60,20 @@
 	suffix = "Box/Engine/engine_rbmk.dmm"
 	name = "Box RBMK"
 
+/datum/map_template/ruin/station/box/engine/diy
+	id = "engine_diy"
+	suffix = "Box/Engine/engine_diy.dmm"
+	name = "Box DIY"
+
+/datum/map_template/ruin/station/box/engine/diy_sm
+	id = "engine_diy_sm"
+	suffix = "Box/Engine/engine_diy_sm.dmm"
+	name = "Box DIY_SM"
+
 // Lavaland
 	// Mining Base
 /datum/map_template/ruin/station/lavaland/mining_base
 	id = "mining_public_01"
 	suffix = "Lavaland/Mining_Station/Mining_Station_Public_01.dmm"
 	name = "Public Mining Base"
+

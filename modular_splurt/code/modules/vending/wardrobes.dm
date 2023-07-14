@@ -125,8 +125,10 @@
 	desc = "A vending machine for the head of security and security-related clothing!"
 	icon_state = "secdrobe"
 	product_ads = "Beat perps in style!;It's red so you can't see the blood!;You have the right to be fashionable!;Now you can be the fashion police you always wanted to be!"
-	vend_reply = "Thank you for using the SecDrobe!"
+	vend_reply = "Thank you for using the HosDrobe!"
 	products = list(/obj/item/clothing/neck/cloak/hos = 1,
+					/obj/item/clothing/neck/mantle/head_of_security = 1,
+					/obj/item/clothing/neck/cloak/regal_hos = 1,
 					/obj/item/storage/backpack/security = 1,
 					/obj/item/storage/backpack/satchel/sec = 1,
 					/obj/item/storage/backpack/duffelbag/sec = 1,
@@ -148,13 +150,13 @@
 					/obj/item/clothing/under/rank/security/head_of_security/peacekeeper = 1,
 					/obj/item/clothing/head/beret/sec/peacekeeper/hos = 1,
 					/obj/item/clothing/head/HoS/peacekeeper = 1,
-					/obj/item/clothing/suit/armor/hos/peacekeeper = 1,
-					/obj/item/clothing/suit/armor/hos/trenchcoat = 1,
-					/obj/item/clothing/under/rank/blueshield/formal/pmc_leader_jumpsuit = 1,
-					/obj/item/clothing/mask/balaclava/pmc_leader_balaclava = 1,
-					/obj/item/clothing/head/HoS/pmc_leader_cap = 1,
-					/obj/item/clothing/head/HoS/pmc_leader_beret = 1,
-					/obj/item/clothing/suit/armor/hos/pmc_leader_armor = 1)
+					/obj/item/clothing/suit/armor/hos/peacekeeper = 1, //BlueMoon Add
+					/obj/item/clothing/suit/armor/hos/trenchcoat = 1, //BlueMoon Add
+					/obj/item/clothing/under/rank/blueshield/formal/pmc_leader_jumpsuit = 1, //BlueMoon Add
+					/obj/item/clothing/mask/balaclava/pmc_leader_balaclava = 1, //BlueMoon Add
+					/obj/item/clothing/head/HoS/pmc_leader_cap = 1, //BlueMoon Add
+					/obj/item/clothing/head/HoS/pmc_leader_beret = 1, //BlueMoon Add
+					/obj/item/clothing/suit/armor/hos/pmc_leader_armor = 1) //BlueMoon Add
 	refill_canister = /obj/item/vending_refill/wardrobe/sec_wardrobe
 	payment_department = ACCOUNT_SEC
 	light_color = COLOR_MOSTLY_PURE_RED

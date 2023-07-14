@@ -944,7 +944,7 @@
 /datum/species/golem/durathread
 	name = "Durathread Golem"
 	id = "durathread golem"
-	prefix = "Durathread"
+	prefix = "Cloth"
 	limbs_id = "d_golem"
 	special_names = list("Boll","Weave")
 	species_traits = list(NOBLOOD,NO_UNDERWEAR,NOEYES)

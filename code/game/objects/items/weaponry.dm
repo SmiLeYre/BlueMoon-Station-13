@@ -1080,7 +1080,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 /obj/item/melee/baseball_bat/ablative/syndi
 	name = "syndicate major league bat"
 	desc = "A metal bat made by the syndicate for the major league team."
-	force = 18 //Spear damage...
+	force = 26 //Spear damage...
 	throwforce = 30
 
 /obj/item/melee/baseball_bat/proc/get_on_description()

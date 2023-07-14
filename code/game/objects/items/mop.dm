@@ -102,6 +102,12 @@
 	var/refill_rate = 1 //Rate per process() tick mop refills itself
 	var/refill_reagent = /datum/reagent/water //Determins what reagent to use for refilling, just in case someone wanted to make a HOLY MOP OF PURGING
 
+/obj/item/mop/advanced/supermatter
+	name = "Supermatter Mop"
+	icon_state = "adv_smmop"
+	item_state = "smmop"
+	force = 128
+
 /obj/item/mop/advanced/New()
 	..()
 	START_PROCESSING(SSobj, src)

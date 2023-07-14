@@ -703,12 +703,14 @@
 		handle_post_sex(NORMAL_LUST, CUM_TARGET_NIPPLE, target, ORGAN_SLOT_PENIS)
 	target.handle_post_sex(NORMAL_LUST, null, src, ORGAN_SLOT_BREASTS)
 
-/mob/living/proc/do_thighfuck(mob/living/target)
+/mob/living/proc/do_thighfuck(obj/item/organ/genital/G, mob/living/target, spillage = TRUE,)
 	var/message
 	var/list/lines
-	//var/u_His = ru_ego()
-	//var/genital_name = get_penetrating_genital_name()
-	//var/t_His = target.ru_ego()
+	var/datum/reagents/fluid_source = G.climaxable(src)
+	var/mob/living/carbon/human/sex
+
+	if(!fluid_source)
+		return
 
 	if(is_fucking(target, CUM_TARGET_THIGHS))
 		lines = list(
@@ -729,6 +731,7 @@
 	playlewdinteractionsound(loc, pick('modular_sand/sound/interactions/bang1.ogg',
 						'modular_sand/sound/interactions/bang2.ogg',
 						'modular_sand/sound/interactions/bang3.ogg'), 70, 1, -1)
+	sex.do_climax(fluid_source, target, G, spillage, cover = TRUE)
 	if(can_penetrating_genital_cum())
 		handle_post_sex(NORMAL_LUST, CUM_TARGET_THIGHS, target, ORGAN_SLOT_PENIS)
 	target.handle_post_sex(LOW_LUST, CUM_TARGET_PENIS, src)

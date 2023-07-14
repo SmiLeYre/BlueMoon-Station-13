@@ -68,10 +68,15 @@
 	require_target_breasts = REQUIRE_EXPOSED
 	max_distance = 1
 
-/datum/interaction/lewd/breastfuck/display_interaction(mob/living/user, mob/living/partner)
+/datum/interaction/lewd/breastfuck/display_interaction(obj/item/organ/genital/G, mob/living/user, spillage = TRUE, mob/living/partner)
 	var/message
 	//var/u_His = user.ru_ego()
 	var/genital_name = user.get_penetrating_genital_name()
+	var/datum/reagents/fluid_source = G.climaxable(src)
+	var/mob/living/carbon/human/sex
+
+	if(!fluid_source)
+		return
 
 	if(user.is_fucking(partner, CUM_TARGET_BREASTS))
 		message = "[pick(
@@ -88,6 +93,9 @@
 						'modular_sand/sound/interactions/bang2.ogg',
 						'modular_sand/sound/interactions/bang3.ogg'), 70, 1, -1)
 	user.visible_message("<span class='lewd'><b>\The [user]</b> [message]</span>", ignored_mobs = user.get_unconsenting())
+
+	sex.do_climax(fluid_source, user, G, spillage, cover = TRUE)
+
 	if(user.can_penetrating_genital_cum())
 		user.handle_post_sex(NORMAL_LUST, CUM_TARGET_BREASTS, partner, ORGAN_SLOT_PENIS) //SPLURT edit
 

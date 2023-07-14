@@ -18,7 +18,7 @@
 	desc = "A pair of gloves that are fireproof and shock resistant, however unlike the regular Combat Gloves this one uses nanotechnology \
 			to learn the abilities of krav maga to the wearer."
 	item = /obj/item/clothing/gloves/krav_maga/combatglovesplus
-	cost = 6
+	cost = 4
 	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE
 	surplus = 0
 
@@ -96,7 +96,7 @@
 	desc = "This scroll contains the secrets of an ancient martial arts technique. You will gain special unarmed attacks for \
 			stealthy takedowns."
 	item = /obj/item/book/granter/martial/krav_maga
-	cost = 4
+	cost = 6
 	surplus = 0
 
 /datum/uplink_item/stealthy_weapons/crossbow

@@ -109,6 +109,8 @@
 	new /obj/item/choice_beacon/bsbaton(src)
 	new /obj/item/armorkit/blueshield(src)
 	new /obj/item/armorkit/blueshield/helmet(src)
+	new /obj/item/clothing/neck/cloak/blueshield(src)
+	new /obj/item/clothing/neck/cloak/blueshield(src)
 
 /obj/structure/closet/secure_closet/bridgesec
 	name = "bridge officer's locker"
@@ -126,6 +128,9 @@
 	new /obj/item/clipboard(src)
 	new /obj/item/clothing/neck/petcollar(src)
 	new /obj/item/clothing/neck/petcollar(src)
+	new /obj/item/clothing/neck/cloak/nanotrasen_representative(src)
+	new /obj/item/clothing/neck/cloak/nanotrasen_representative(src)
+	new /obj/item/clothing/neck/cloak/nanotrasen_representative(src)
 
 //do not map these in anywhere but if you do, Central command only!!! These are for Admin spawn only!!!!
 

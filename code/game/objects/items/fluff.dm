@@ -17,7 +17,7 @@
 	lefthand_file = 'icons/mob/inhands/fluff_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/fluff_righthand.dmi'
 	mob_overlay_icon = 'icons/mob/mouthfluff.dmi'
-	slot_flags = ITEM_SLOT_HEAD | ITEM_SLOT_NECK | ITEM_SLOT_EARS
+	slot_flags = ITEM_SLOT_HEAD | ITEM_SLOT_MASK | ITEM_SLOT_NECK | ITEM_SLOT_EARS | ITEM_SLOT_WRISTS
 	var/poly_states = 0
 	var/poly_colors = list()
 

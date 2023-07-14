@@ -1,5 +1,5 @@
 /obj/item/organ/genital/butt
-	name 					= "попа"
+	name 					= "butt"
 	desc 					= "You see a pair of asscheeks."
 	icon_state 				= "butt"
 	icon 					= 'icons/obj/genitals/butt.dmi'
@@ -10,7 +10,7 @@
 	max_size				= BUTT_SIZE_MAX
 	var/size_name			= "nonexistent"
 	shape					= "Pair" //turn this into a default constant if for some inexplicable reason we get more than one butt type but I doubt it.
-	genital_flags = UPDATE_OWNER_APPEARANCE|GENITAL_UNDIES_HIDDEN|CAN_CUM_INTO|HAS_EQUIPMENT
+	genital_flags 			= UPDATE_OWNER_APPEARANCE|GENITAL_UNDIES_HIDDEN|CAN_CUM_INTO|HAS_EQUIPMENT
 	masturbation_verb 		= "massage"
 	var/size_cached			= 0
 	var/prev_size //former size value, to allow update_size() to early return should be there no significant changes.

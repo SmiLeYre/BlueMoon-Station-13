@@ -84,7 +84,7 @@
 
 /datum/sprite_accessory/testicles/sheath
 	icon_state = "sheath"
-	name = "оболонковые"
+	name = "Sheath"
 
 //Vaginas
 /datum/sprite_accessory/vagina

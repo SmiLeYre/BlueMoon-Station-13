@@ -673,7 +673,7 @@
 	playlewdinteractionsound(target, 'sound/items/bikehorn.ogg', 40, 1, -1)
 
 /datum/interaction/lewd/fuck_thighs
-	description = "Бёдра. Трахнуть бёдра."
+	description = "Член. Проникнуть между бёдрами."
 	require_user_penis = REQUIRE_EXPOSED
 	require_target_legs = REQUIRE_ANY
 	require_target_num_legs = 2

@@ -28,7 +28,7 @@
 	icon_living = "tentacles"
 	icon_dead = "tentacles_dead"
 	icon_gib = "tentacles_dead"
-	faction = "hentai"
+	faction = list("hentai")
 	var/base_icon = "tentacles"
 
 	var/change_target_hole_cooldown = 0

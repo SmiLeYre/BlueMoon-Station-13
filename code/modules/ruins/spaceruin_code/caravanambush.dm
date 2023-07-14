@@ -156,7 +156,7 @@
 	light_color = LIGHT_COLOR_RED
 	circuit = /obj/item/circuitboard/computer/caravan/syndicate3
 	shuttleId = "caravansyndicate3"
-	possible_destinations = "caravansyndicate3_custom;caravansyndicate3_ambush;caravansyndicate3_listeningpost"
+	possible_destinations = "caravansyndicate3_custom;caravansyndicate3_ambush;caravansyndicate1_listeningpost"
 
 /obj/machinery/computer/camera_advanced/shuttle_docker/caravan/syndicate3
 	name = "Syndicate Drop Ship Navigation Computer"
@@ -166,7 +166,7 @@
 	shuttleId = "caravansyndicate3"
 	lock_override = NONE
 	shuttlePortId = "caravansyndicate3_custom"
-	jumpto_ports = list("caravansyndicate3_ambush" = 1, "caravansyndicate3_listeningpost" = 1)
+	jumpto_ports = list("caravansyndicate3_ambush" = 1, "caravansyndicate1_listeningpost" = 1)
 	view_range = 2.5
 	x_offset = -1
 	y_offset = -3
@@ -180,7 +180,7 @@
 	light_color = LIGHT_COLOR_RED
 	circuit = /obj/item/circuitboard/computer/caravan/syndicate4
 	shuttleId = "sbc_corvette"
-	possible_destinations = "sbc_corvette_custom;ds1_syndicate;ds2_syndicate;caravansyndicate3_listeningpost;whiteship_z4"
+	possible_destinations = "sbc_corvette_custom;ds1_syndicate;ds2_syndicate;caravansyndicate1_listeningpost;whiteship_z4"
 
 /obj/machinery/computer/camera_advanced/shuttle_docker/caravan/syndicate4
 	name = "Starfury Navigation Computer"
@@ -190,7 +190,7 @@
 	shuttleId = "sbc_corvette"
 	lock_override = NONE
 	shuttlePortId = "sbc_corvette_custom"
-	jumpto_ports = list("ds2_syndicate" = 1, "caravansyndicate3_listeningpost" = 1, "whiteship_home" = 1, "whiteship_z4" = 1)
+	jumpto_ports = list("ds2_syndicate" = 1, "caravansyndicate1_listeningpost" = 1, "whiteship_home" = 1, "whiteship_z4" = 1)
 	view_range = 2.5
 	x_offset = 7
 	y_offset = 1
@@ -203,7 +203,7 @@
 	icon_keyboard = "syndie_key"
 	circuit = /obj/item/circuitboard/computer/ds_syndicate
 	shuttleId = "sbc_corvette"
-	possible_destinations = "ds1_syndicate;ds2_syndicate"
+	possible_destinations = "ds1_syndicate;ds2_syndicate;caravansyndicate1_listeningpost"
 	req_access = list(ACCESS_SYNDICATE)
 	var/allow_silicons = FALSE
 	var/allow_emag = FALSE

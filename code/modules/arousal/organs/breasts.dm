@@ -2,7 +2,7 @@
 #define BREASTS_ICON_MAX_SIZE 6
 
 /obj/item/organ/genital/breasts
-	name = "грудь"
+	name = "breasts"
 	desc = "Female milk producing organs."
 	icon_state = "breasts"
 	icon = 'icons/obj/genitals/breasts.dmi'

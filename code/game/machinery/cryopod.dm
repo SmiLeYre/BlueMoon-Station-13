@@ -533,6 +533,7 @@ GLOBAL_LIST_EMPTY(ghost_records)
 
 /obj/effect/mob_spawn/human/special(mob/living/spawned_mob, mob/mob_possessor)
 	. = ..()
+	spawned_mob.mind.add_antag_datum(/datum/antagonist/ghost_role)
 	var/obj/machinery/computer/cryopod/control_computer = find_control_computer()
 	var/datum/data/record/record = new
 	record.fields["name"] = spawned_mob.real_name

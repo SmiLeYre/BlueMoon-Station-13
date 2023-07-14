@@ -68,9 +68,6 @@ endmap
 map smolstation
 endmap
 
-map snaxiteststation
-endmap
-
 map taustation
 endmap
 

@@ -355,6 +355,7 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/deathsquad/praetor
 	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
 	resistance_flags = FIRE_PROOF | LAVA_PROOF | ACID_PROOF | GOLIATH_RESISTANCE
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	clothing_flags = THICKMATERIAL // no space protection
 
 /obj/item/clothing/head/helmet/space/hardsuit/deathsquad/praetor
@@ -368,7 +369,18 @@
 	anthro_mob_worn_overlay  = 'modular_sand/icons/mob/clothing/head_muzzled.dmi'
 	mutantrace_variation = STYLE_MUZZLE | STYLE_NO_ANTHRO_ICON
 	resistance_flags = FIRE_PROOF | LAVA_PROOF | ACID_PROOF | GOLIATH_RESISTANCE
-	clothing_flags = THICKMATERIAL // no space protection
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	clothing_flags = THICKMATERIAL | ALLOWINTERNALS // no space protection
+
+/obj/item/clothing/head/helmet/space/hardsuit/deathsquad/praetor/equipped(mob/living/carbon/human/user, slot)
+	..()
+	if (slot == ITEM_SLOT_HEAD)
+		ADD_TRAIT(user, TRAIT_ASHSTORM_IMMUNE, "praetor")
+
+/obj/item/clothing/head/helmet/space/hardsuit/deathsquad/praetor/dropped(mob/living/carbon/human/user)
+	..()
+	if (HAS_TRAIT_FROM(user, TRAIT_ASHSTORM_IMMUNE, "praetor"))
+		REMOVE_TRAIT(user, TRAIT_ASHSTORM_IMMUNE, "praetor")
 
 //drake
 /obj/structure/closet/crate/necropolis/dragon/PopulateContents()

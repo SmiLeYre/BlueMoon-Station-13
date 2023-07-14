@@ -8,33 +8,71 @@
 	write_log_user = "groped own breasts"
 	write_log_target = null
 
+	additional_details = list(
+		list(
+			"info" = "You can fill a container if you hold it in your hand or pull it",
+			"icon" = "flask",
+			"color" = "transparent"
+			)
+	)
+
 /datum/interaction/lewd/titgrope_self/display_interaction(mob/living/user)
 	var/message
 
-	if(user.a_intent == INTENT_HARM)
-		message = "[pick("с силой сжимает свои собственные сиськи.",
-					"резко хватается за свои сиськи.",
-					"крепко сжимает свою грудь.",
-					"шлёпает по своим сиськам.",
-					"максимально грубо сжимает свои титьки.")]"
+	var/obj/item/reagent_containers/liquid_container
+
+	var/obj/item/cached_item = user.get_active_held_item()
+	if(istype(cached_item, /obj/item/reagent_containers))
+		liquid_container = cached_item
 	else
-		message = "[pick("нежно ощупывает свою грудь.",
-					"мягко хватается за свою грудь.",
-					"сжимает собственную грудь.",
-					"проводит несколькими пальцами вдоль своей груди.",
-					"деликатно сжимает свой сосок.",
-					"возбуждённо проводит пальцем вдоль своей груди.")]"
+		cached_item = user.pulling
+		if(istype(cached_item, /obj/item/reagent_containers))
+			liquid_container = cached_item
+
+	if(user.a_intent == INTENT_HARM)
+		message = pick("с силой сжимает свои собственные сиськи",
+					"резко хватается за свои сиськи",
+					"крепко сжимает свою грудь",
+					"шлёпает по своим сиськам",
+					"максимально грубо сжимает свои титьки")
+	else
+		message = pick("нежно ощупывает свою грудь",
+					"мягко хватается за свою грудь",
+					"сжимает собственную грудь",
+					"проводит несколькими пальцами вдоль своей груди",
+					"деликатно сжимает свой сосок",
+					"возбуждённо проводит пальцем вдоль своей груди")
 	if(prob(5 + user.get_lust()))
-		user.visible_message("<span class='lewd'><b>\The [user]</b> [pick("дрожит от возбуждения.",
-				"тихо стонет.",
-				"выдыхает тихий довольный стон.",
-				"мурлыкает и звучно вздыхает.",
-				"тихонько вздрагивает.",
-				"вздрагивает, хватаясь за причинное место.")]</span>")
-	user.visible_message(message = "<span class='lewd'><b>\The [user]</b> [message]</span>", ignored_mobs = user.get_unconsenting())
+		user.visible_message("<span class='lewd'><b>\The [user]</b> [pick("дрожит от возбуждения",
+				"тихо стонет",
+				"выдыхает тихий довольный стон",
+				"мурлыкает и звучно вздыхает",
+				"тихонько вздрагивает",
+				"вздрагивает, хватаясь за причинное место")]</span>")
+
+	if(liquid_container)
+		message += " прямо в [liquid_container]"
+
+		var/obj/item/organ/genital/breasts/milkers = user.getorganslot(ORGAN_SLOT_BREASTS)
+		var/milktype = milkers?.fluid_id
+
+		if(milkers && milktype)
+			var/modifier
+			switch(milkers.size)
+				if(3 to 5)
+					modifier = 2
+				if(6 to 8)
+					modifier = 3
+				else
+					if(milkers.size_to_state() in GLOB.breast_values)
+						modifier = clamp(GLOB.breast_values[milkers.size_to_state()] - 5, 0, INFINITY)
+					else
+						modifier = 1
+			liquid_container.reagents.add_reagent(milktype, rand(1,3 * modifier))
+
+	user.visible_message(message = span_lewd("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
 	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/squelch1.ogg', 50, 1, -1)
 	user.handle_post_sex(NORMAL_LUST, CUM_TARGET_HAND, user, ORGAN_SLOT_BREASTS) //SPLURT edit
-
 
 /datum/interaction/lewd/self_nipsuck
 	description = "Грудь. Пососать свои соски."

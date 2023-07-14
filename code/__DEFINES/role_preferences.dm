@@ -46,6 +46,7 @@
 #define ROLE_SLAVER_LEADER			"slave master"
 //#define ROLE_MONSTERHUNTER			"monster hunter" Disabled for now
 #define ROLE_GHOSTCAFE				"ghostcafe"
+#define ROLE_GHOSTROLE				"ghostrole"
 #define ROLE_MINOR_ANTAG			"minorantag"
 #define ROLE_RESPAWN				"respawnsystem"
 #define ROLE_SYNDICATE				"Syndicate"

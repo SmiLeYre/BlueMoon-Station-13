@@ -1,3 +1,26 @@
+/datum/team/ghost_role
+	name = "Ghost Role"
+	show_roundend_report = FALSE
+	var/list/players_spawned = new
+
+/datum/antagonist/ghost_role
+	name = "\improper Ghost Role"
+	job_rank = ROLE_GHOSTROLE
+	show_in_antagpanel = FALSE
+	show_to_ghosts = TRUE
+	antagpanel_category = "Ghost Role"
+	var/datum/team/ghost_role/ghost_team
+
+/datum/antagonist/ghost_role/create_team(datum/team/team)
+	if(team)
+		ghost_team = team
+		objectives |= ghost_team.objectives
+	else
+		ghost_team = new
+
+/datum/antagonist/ghost_role/get_team()
+	return ghost_team
+
 //Objects that spawn ghosts in as a certain role when they click on it, i.e. away mission bartenders.
 #define spawnOverride TRUE
 //Preserved terrarium/seed vault: Spawns in seed vault structures in lavaland. Ghosts become plantpeople and are advised to begin growing plants in the room near them.
@@ -24,6 +47,7 @@
 	return ..()
 
 /obj/effect/mob_spawn/human/seed_vault/special(mob/living/carbon/human/new_spawn)
+	. = ..()
 	ADD_TRAIT(new_spawn,TRAIT_EXEMPT_HEALTH_EVENTS,GHOSTROLE_TRAIT)
 	var/plant_name = pick("Tomato", "Potato", "Broccoli", "Carrot", "Ambrosia", "Pumpkin", "Ivy", "Kudzu", "Banana", "Moss", "Flower", "Bloom", "Root", "Bark", "Glowshroom", "Petal", "Leaf", \
 	"Venus", "Sprout","Cocoa", "Strawberry", "Citrus", "Oak", "Cactus", "Pepper", "Juniper")
@@ -33,6 +57,7 @@
 	new_spawn.socks = "Nude"
 	new_spawn.update_body(TRUE)
 	new_spawn.language_holder.selected_language = /datum/language/sylvan
+	new_spawn.mind.add_antag_datum(/datum/antagonist/ghost_role)
 
 //Ash walker eggs: Spawns in ash walker dens in lavaland. Ghosts become unbreathing lizards that worship the Necropolis and are advised to retrieve corpses to create more ash walkers.
 
@@ -219,6 +244,7 @@
 		owner = creator
 
 /obj/effect/mob_spawn/human/golem/special(mob/living/new_spawn, name)
+	. = ..()
 	var/datum/species/golem/X = mob_species
 	to_chat(new_spawn, "[initial(X.info_text)]")
 	if(!owner)
@@ -328,6 +354,7 @@
 	return ..()
 
 /obj/effect/mob_spawn/human/hermit/special(mob/living/carbon/human/new_spawn)
+	. = ..()
 	ADD_TRAIT(new_spawn,TRAIT_EXEMPT_HEALTH_EVENTS,GHOSTROLE_TRAIT)
 
 //Broken rejuvenation pod: Spawns in animal hospitals in lavaland. Ghosts become disoriented interns and are advised to search for help.
@@ -366,6 +393,7 @@
 	canloadappearance = TRUE
 
 /obj/effect/mob_spawn/human/prisoner_transport/special(mob/living/L)
+	. = ..()
 	L.real_name = "NTP #LL-0[rand(111,999)]" //Nanotrasen Prisoner #Lavaland-(numbers)
 	L.name = L.real_name
 
@@ -442,7 +470,9 @@
 	..()
 
 /obj/effect/mob_spawn/human/hotel_staff/special(mob/living/carbon/human/new_spawn)
+	. = ..()
 	ADD_TRAIT(new_spawn,TRAIT_EXEMPT_HEALTH_EVENTS,GHOSTROLE_TRAIT)
+	new_spawn.mind.add_antag_datum(/datum/antagonist/ghost_role)
 
 /obj/effect/mob_spawn/human/demonic_friend
 	name = "Essence of friendship"
@@ -474,6 +504,7 @@
 
 
 /obj/effect/mob_spawn/human/demonic_friend/special(mob/living/L)
+	. = ..()
 	if(!QDELETED(owner.current) && owner.current.stat != DEAD)
 		L.real_name = "[owner.name]'s best friend"
 		L.name = L.real_name
@@ -487,7 +518,7 @@
 		id.registered_name = L.real_name
 		id.update_label()
 	else
-		to_chat(L, "<span class='userdanger'>Your owner is already dead!  You will soon perish.</span>")
+		to_chat(L, "<span class='userdanger'>Your owner is already dead! You will soon perish.</span>")
 		addtimer(CALLBACK(L, /mob.proc/dust, 150)) //Give em a few seconds as a mercy.
 
 /datum/outfit/demonic_friend
@@ -755,7 +786,7 @@
 	anchored = TRUE
 	density = FALSE
 	death = FALSE
-	loadout_enabled = TRUE
+	loadout_enabled = FALSE
 	assignedrole = "Ghost Cafe Visitor"
 	short_desc = "Вы посетитель Призрачного Кафе!"
 	flavour_text = "You know one thing for sure. You arent actually alive. Are you in a simulation?"
@@ -847,6 +878,7 @@
 		currently_disguised = FALSE
 
 /obj/effect/mob_spawn/human/ghostcafe/special(mob/living/carbon/human/new_spawn)
+	. = ..()
 	if(new_spawn.client)
 		new_spawn.client.prefs.copy_to(new_spawn)
 		var/area/A = get_area(src)
@@ -1144,6 +1176,7 @@
 /obj/effect/mob_spawn/human/ds2/syndicate/special(mob/living/new_spawn)
 	. = ..()
 	new_spawn.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
+	new_spawn.mind.add_antag_datum(/datum/antagonist/ghost_role)
 
 /obj/effect/mob_spawn/human/ds2/syndicate_command/special(mob/living/new_spawn)
 	. = ..()

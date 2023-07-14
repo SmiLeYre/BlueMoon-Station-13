@@ -3704,7 +3704,7 @@
 /turf/open/floor/engine,
 /area/awaymission/academy/academyaft)
 "kO" = (
-/mob/living/simple_animal/hostile/retaliate/clown,
+/mob/living/simple_animal/hostile/clown,
 /turf/open/floor/engine/cult,
 /area/awaymission/academy/academycellar)
 "kP" = (

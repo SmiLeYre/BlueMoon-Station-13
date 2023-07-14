@@ -12894,7 +12894,7 @@
 /turf/open/floor/engine/cult,
 /area/wizard_station)
 "Cl" = (
-/turf/closed/indestructible/start_area,
+/turf/closed/wall,
 /area/start)
 "Cn" = (
 /obj/structure/bed/pod{

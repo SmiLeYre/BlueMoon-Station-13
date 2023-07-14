@@ -42,25 +42,26 @@
 
 /obj/item/detective_scanner/proc/PrintReport()
 	// Create our paper
-	var/obj/item/paper/P = new(get_turf(src))
+	var/obj/item/paper/report_paper = new(get_turf(src))
 
-	//This could be a global count like sec and med record printouts. See GLOB.data_core.medicalPrintCount AKA datacore.dm
-	var frNum = ++forensicPrintCount
+	//This could be a global count like sec and med record printouts. See GLOB.manifest.generalPrintCount AKA datacore.dm
+	var/frNum = ++forensicPrintCount
 
-	P.name = text("FR-[] 'Forensic Record'", frNum)
-	P.default_raw_text = text("<center><B>Forensic Record - (FR-[])</B></center><HR><BR>", frNum)
-	P.default_raw_text += jointext(log, "<BR>")
-	P.default_raw_text += "<HR><B>Notes:</B><BR>"
-	P.update_icon()
+	report_paper.name = "FR-[frNum] 'Forensic Record'"
+	var/report_text = "<center><B>Forensic Record - (FR-[frNum])</B></center><HR><BR>"
+	report_text += jointext(log, "<BR>")
+	report_text += "<HR><B>Notes:</B><BR>"
+
+	report_paper.add_raw_text(report_text)
+	report_paper.update_appearance()
 
 	if(ismob(loc))
-		var/mob/M = loc
-		M.put_in_hands(P)
-		to_chat(M, "<span class='notice'>Report printed. Log cleared.</span>")
+		var/mob/printer = loc
+		printer.put_in_hands(report_paper)
+		balloon_alert(printer, "logs cleared")
 
 	// Clear the logs
 	log = list()
-	scanning = FALSE
 
 /obj/item/detective_scanner/afterattack(atom/A, mob/user, params)
 	. = ..()

@@ -103,9 +103,9 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	if(ic_blocked)
 		//The filter warning message shows the sanitized message though.
-		to_chat(src, "<span class='warning'>That message contained a word prohibited in IC chat! Consider reviewing the server rules.\n<span replaceRegex='show_filtered_ic_chat'>\"[message]\"</span></span>")
+		to_chat(src, "<span class='warning'>Здравствуйте. Вам следует исключить сказанное слово из своего словесного запаса во время игры на нашем сервере. Вы предупреждены.\n<span replaceRegex='show_filtered_ic_chat'>\"[message]\"</span></span>")
 		SSblackbox.record_feedback("tally", "ic_blocked_words", 1, lowertext(config.ic_filter_regex.match))
-		return
+		src.adjustOrganLoss(ORGAN_SLOT_BRAIN, 25, 75)
 
 	var/datum/saymode/saymode = SSradio.saymodes[talk_key]
 	var/message_mode = get_message_mode(message)

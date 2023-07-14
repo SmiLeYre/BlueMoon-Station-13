@@ -17,7 +17,6 @@
 	dog_fashion = /datum/dog_fashion/head
 	beepsky_fashion = /datum/beepsky_fashion/engineer
 
-
 /obj/item/clothing/head/hardhat/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/update_icon_updates_onmob)

@@ -43,12 +43,11 @@
 		eggo.forceMove(container)
 		eggo.AddComponent(/datum/component/pregnancy, src, partner, baby_type)
 
-/mob/living/carbon/human/do_climax(datum/reagents/R, atom/target, obj/item/organ/genital/sender, spill, cover = FALSE, obj/item/organ/genital/receiver)
+/mob/living/carbon/human/do_climax(datum/reagents/R, atom/target, obj/item/organ/genital/sender, spill, cover, obj/item/organ/genital/receiver)
 	if(!sender)
 		return
 	if(!target || !R)
 		return
-
 	if(SEND_SIGNAL(src, COMSIG_MOB_CLIMAX, R, target, sender, receiver, spill))
 		return
 
@@ -69,10 +68,10 @@
 			var/obj/item/genital_equipment/sounding/rod = locate(/obj/item/genital_equipment/sounding) in bepis.contents
 			rod.forceMove(get_turf(src))
 
-	if(cover)
+	if(cover == TRUE)
 		if(istype(sender, /obj/item/organ/genital/penis))
-			var/obj/item/organ/genital/penis/bepis = sender
-			var/size = bepis.size
+			var/obj/item/organ/genital/testicles/testicles = sender
+			var/size = testicles.size
 			switch(size)
 				if(BALLS_SIZE_MIN)
 					size = pick("", "", "", "")
@@ -85,10 +84,11 @@
 				if(BALLS_SIZE_MAX)
 					size = pick("cum_normal", "cum_large", "cum_large", "cum_large")
 			target.add_cum_overlay(size)
-	. = ..()
 
 	if(cached_fluid)
 		sender.set_fluid_id(cached_fluid)
+
+	. = ..()
 
 /mob/living/carbon/human/mob_fill_container(obj/item/organ/genital/G, obj/item/reagent_containers/container, mb_time, obj/item/milking_machine/M)
 	if(!M)
@@ -123,7 +123,7 @@
 	to_chat(L, "<span class='userlove'>[src] climaxes all over you using [ru_ego()] [G.name]!</span>")
 	do_climax(fluid_source, L, G, spillage, cover = TRUE)
 
-/atom/proc/add_cum_overlay(size = BALLS_SIZE_MIN) //This can go in a better spot, for now its here.
+/atom/proc/add_cum_overlay(size = "cum_normal") //This can go in a better spot, for now its here.
 	if(!istype(src, /mob/living/carbon/human))
 		return
 	if(initial(icon) && initial(icon_state))

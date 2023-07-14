@@ -305,16 +305,8 @@
 	},
 /obj/item/tank/internals/doubleoxygen,
 /obj/item/tank/internals/doubleoxygen{
-	pixel_x = -7;
-	pixel_y = 7
-	},
-/obj/item/tank/internals/doubleoxygen{
 	pixel_x = 9;
 	pixel_y = -6
-	},
-/obj/item/tank/internals/doubleoxygen{
-	pixel_x = 9;
-	pixel_y = 2
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/listeningstation)
@@ -322,20 +314,6 @@
 /obj/structure/table/wood/poker,
 /obj/item/toy/cards/deck/syndicate,
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
-"aE" = (
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/structure/closet/emcloset/anchored,
-/turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/listeningstation)
 "aF" = (
 /obj/effect/turf_decal/tile/neutral{
@@ -354,8 +332,8 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
-/obj/structure/tank_dispenser/oxygen{
-	oxygentanks = 4
+/obj/machinery/computer/shuttle/ds_syndicate{
+	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/listeningstation)
@@ -631,9 +609,8 @@
 /obj/item/bedsheet/syndie{
 	dir = 8
 	},
-/obj/effect/mob_spawn/human/lavaland_syndicate/comms{
-	dir = 4;
-	faction = list("Syndicate")
+/obj/effect/mob_spawn/human/lavaland_syndicate/comms/space{
+	dir = 4
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/space/has_grav/listeningstation)
@@ -885,14 +862,6 @@
 "bJ" = (
 /obj/docking_port/stationary{
 	dir = 4;
-	dwidth = 6;
-	height = 7;
-	id = "caravansyndicate3_listeningpost";
-	name = "Syndicate Listening Post";
-	width = 15
-	},
-/obj/docking_port/stationary{
-	dir = 4;
 	dwidth = 4;
 	height = 5;
 	id = "caravansyndicate1_listeningpost";
@@ -963,18 +932,6 @@
 	},
 /obj/item/paper/monitorkey,
 /turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
-"ek" = (
-/obj/structure/bed/pod{
-	dir = 1
-	},
-/obj/item/bedsheet/syndie{
-	dir = 8
-	},
-/obj/effect/mob_spawn/human/syndicate{
-	dir = 4
-	},
-/turf/open/floor/carpet/red,
 /area/ruin/space/has_grav/listeningstation)
 "es" = (
 /obj/machinery/atmospherics/miner/toxins,
@@ -1309,7 +1266,7 @@
 /area/ruin/space/has_grav/listeningstation)
 "sb" = (
 /obj/effect/turf_decal/stripes/line,
-/obj/machinery/suit_storage_unit/syndicate,
+/obj/structure/closet/firecloset/full,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/listeningstation)
 "sg" = (
@@ -2926,7 +2883,7 @@ Vr
 qc
 Lu
 ag
-ek
+bd
 xf
 cA
 Qu
@@ -3411,7 +3368,7 @@ ag
 sb
 aF
 aF
-aE
+aF
 ag
 aY
 bh

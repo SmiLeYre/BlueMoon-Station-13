@@ -129,11 +129,11 @@
 		if(person.has_penis())
 			var/obj/item/organ/genital/penis/person_penis = person.getorganslot(ORGAN_SLOT_PENIS)
 			LAZYADD(penis_names, "[person_penis.length]-см [lowertext(person_penis.shape)]")
-			LAZYADD(penis_names, "пенис")
+			LAZYADD(penis_names, "penis")
 		else if(person.has_strapon())
 			var/obj/item/clothing/underwear/briefs/strapon/person_strapon = person.get_strapon()
 			LAZYADD(penis_names, "[GLOB.dildo_size_names[person_strapon.dildo_size]] [person_strapon.dildo_shape]")
-			LAZYADD(penis_names, "страпон")
+			LAZYADD(penis_names, "strapon")
 		else
 			LAZYADD(penis_names, "none")
 			LAZYADD(penis_names, "none")

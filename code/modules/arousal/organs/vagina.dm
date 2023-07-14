@@ -1,5 +1,5 @@
 /obj/item/organ/genital/vagina
-	name = "вагина"
+	name = "vagina"
 	desc = "A female reproductive organ."
 	icon = 'icons/obj/genitals/vagina.dmi'
 	icon_state = ORGAN_SLOT_VAGINA

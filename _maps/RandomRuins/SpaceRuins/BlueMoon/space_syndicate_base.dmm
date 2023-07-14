@@ -394,6 +394,7 @@
 /obj/item/gun/energy/disabler,
 /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch,
 /obj/item/clothing/glasses/hud/security/sunglasses/aviators,
+/obj/item/clothing/neck/cloak/syndiecap,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "bs" = (
@@ -2824,6 +2825,7 @@
 /obj/item/ammo_box/a357,
 /obj/item/ammo_box/a357,
 /obj/item/ammo_box/a357,
+/obj/item/clothing/neck/cloak/syndiecap,
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/cl)
 "li" = (
@@ -5226,6 +5228,7 @@
 /obj/item/ammo_box/a357,
 /obj/item/ammo_box/a357,
 /obj/item/card/emag,
+/obj/item/clothing/neck/cloak/syndieadm,
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
 "vB" = (
@@ -9278,6 +9281,7 @@
 /obj/item/gun/energy/disabler,
 /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch,
 /obj/item/clothing/glasses/hud/security/sunglasses/aviators,
+/obj/item/clothing/neck/cloak/syndiecap,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "NQ" = (
@@ -9493,6 +9497,7 @@
 /obj/item/gun/energy/disabler,
 /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch,
 /obj/item/clothing/glasses/hud/security/sunglasses/aviators,
+/obj/item/clothing/neck/cloak/syndiecap,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "OD" = (

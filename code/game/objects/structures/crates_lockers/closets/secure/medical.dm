@@ -74,6 +74,7 @@
 /obj/structure/closet/secure_closet/CMO/PopulateContents()
 	..()
 	new /obj/item/clothing/neck/cloak/cmo(src)
+	new /obj/item/clothing/neck/mantle/chief_medical_officer(src)
 	new /obj/item/clothing/head/beret/cmo(src)
 	new /obj/item/storage/backpack/duffelbag/med(src)
 	new /obj/item/clothing/suit/bio_suit/cmo(src)

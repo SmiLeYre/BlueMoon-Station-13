@@ -35,6 +35,13 @@
 	ckeywhitelist = list()
 	donator_group_id = DONATOR_GROUP_TIER_1
 
+/datum/gear/donator/pseudo_euclidean_tennis_sphere
+	name = "Pseudo-Euclidean Interdimensional Tennis Sphere"
+	slot = ITEM_SLOT_MASK
+	path = /obj/item/toy/fluff/tennis_poly/tri/squeak/rainbow
+	ckeywhitelist = list()
+	donator_group_id = DONATOR_GROUP_TIER_1
+
 /datum/gear/donator/agent_card
 	name = "Agent Card (without microscanners)" //BLUEMOON CHANGES
 	slot = ITEM_SLOT_BACKPACK

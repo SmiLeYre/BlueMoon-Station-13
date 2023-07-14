@@ -68,20 +68,11 @@
 	port_direction = 8;
 	preferred_direction = 4;
 	width = 12;
-	callTime = 2500
+	callTime = 500
 	},
 /turf/open/floor/plating,
 /area/shuttle/sbc_corvette)
 "g" = (
-/obj/machinery/turretid{
-	ailock = 1;
-	desc = "A specially designed set of turret controls. Looks to be covered in protective casing to prevent AI interfacing.";
-	icon_state = "control_kill";
-	lethal = 1;
-	name = "Ship Turret Control";
-	pixel_x = 35;
-	pixel_y = -3
-	},
 /obj/machinery/button/door{
 	id = "SBC_corvette_blast";
 	name = "Corvette Blast Doors";
@@ -92,8 +83,9 @@
 	id = "SBC_corvette_bolt";
 	name = "Bolt Control";
 	normaldoorcontrol = 1;
-	pixel_y = 25;
-	specialfunctions = 4
+	pixel_y = -5;
+	specialfunctions = 4;
+	pixel_x = 26
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/sbc_corvette)
@@ -157,6 +149,15 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 1;
 	name = "tactical chair"
+	},
+/obj/machinery/turretid{
+	ailock = 1;
+	desc = "A specially designed set of turret controls. Looks to be covered in protective casing to prevent AI interfacing.";
+	icon_state = "control_kill";
+	lethal = 1;
+	name = "Ship Turret Control";
+	pixel_x = -29;
+	pixel_y = -3
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/sbc_corvette)
@@ -230,13 +231,6 @@
 	dir = 4
 	},
 /obj/structure/table/reinforced/plastitaniumglass,
-/obj/machinery/button/door{
-	id = "SBC_corvette_bolt";
-	name = "Bolt Control";
-	normaldoorcontrol = 1;
-	pixel_y = 25;
-	specialfunctions = 4
-	},
 /obj/machinery/button/door{
 	id = "SBC_corvette_leader_bolt";
 	name = "Bolt Control";

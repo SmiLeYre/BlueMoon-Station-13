@@ -16,6 +16,7 @@
 	desc = "A utility uniform for command personnel."
 	icon_state = "utilcom"
 	item_state = "utilcom"
+	armor = list(MELEE = 10, BULLET = 5, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 50, RAD = 0, FIRE = 50, ACID = 40, WOUND = 10)
 	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/captain/skirt
