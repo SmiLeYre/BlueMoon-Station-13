@@ -1,13 +1,27 @@
 {
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "type": "byond",
-      "request": "launch",
-      "name": "Launch DreamSeeker",
-      "preLaunchTask": "Build All",
-      "dmb": "${workspaceFolder}/${command:CurrentDMB}",
-	  "dreamDaemon": true
-    }
-  ]
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "byond",
+			"request": "launch",
+			"name": "Launch DreamSeeker",
+			"preLaunchTask": "Build All",
+			"dmb": "${workspaceFolder}/${command:CurrentDMB}",
+			"dreamDaemon": true
+		},
+		{
+			"type": "node-terminal",
+			"name": "Run Script: tgui:lint",
+			"request": "launch",
+			"command": "yarn run tgui:lint",
+			"cwd": "${workspaceFolder}\\tgui"
+		},
+		{
+			"type": "node-terminal",
+			"name": "Run Script: tgui:lint --fix",
+			"request": "launch",
+			"command": "yarn run tgui:lint --fix",
+			"cwd": "${workspaceFolder}\\tgui"
+		}
+	]
 }
