@@ -344,8 +344,8 @@ export class PrimaryView extends Component {
         <Flex direction="column" fillPositionedParent>
           <Flex.Item grow={3} basis={1}>
             <PreviewView
-              key={`${raw_field_input?.length || 0}_${raw_text_input?.length || 0
-                }`}
+              key={`${raw_field_input?.length || 0}_
+              ${raw_text_input?.length || 0}`}
               scrollableRef={this.scrollableRef}
               handleOnScroll={this.onScrollHandler}
               textArea={textAreaText}
@@ -674,8 +674,8 @@ export class PreviewView extends Component<PreviewViewProps> {
     color: string,
     bold: boolean = false
   ): string => {
-    return `<span style="color:${color};font-family:${font};${bold ? 'font-weight: bold;' : ''
-      }">${text}</span>`;
+    return `<span style="color:${color};font-family:${font};${bold ?
+      'font-weight: bold;' : '' }">${text}</span>`;
   };
 
   // Parses the given raw text through marked for applying markdown.
