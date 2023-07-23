@@ -84,8 +84,7 @@ export const Jukebox = (props, context) => {
                       onDrag={(e, value) =>
                         act('set_volume', {
                           volume: value,
-                        })
-                      }
+                        })}
                     />
                     <Button
                       fluid
@@ -98,8 +97,7 @@ export const Jukebox = (props, context) => {
                       onClick={() =>
                         act('set_volume', {
                           volume: 'min',
-                        })
-                      }
+                        })}
                     />
                     <Button
                       fluid
@@ -112,8 +110,7 @@ export const Jukebox = (props, context) => {
                       onClick={() =>
                         act('set_volume', {
                           volume: 'max',
-                        })
-                      }
+                        })}
                     />
                     <Button
                       fluid
@@ -126,8 +123,7 @@ export const Jukebox = (props, context) => {
                       onClick={() =>
                         act('set_volume', {
                           volume: 'reset',
-                        })
-                      }
+                        })}
                     />
                   </Box>
                 </LabeledControls.Item>

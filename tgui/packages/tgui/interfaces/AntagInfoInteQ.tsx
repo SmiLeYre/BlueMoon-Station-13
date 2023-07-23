@@ -178,10 +178,10 @@ const CodewordsSection = (props, context) => {
       <Stack fill>
         <Stack.Item grow basis={0}>
           <BlockQuote>
-          Due to the current circumstances in the Blue Moon Sector,
-          only we are capable of destroying the alliance
-          between the NT and the Syndicate.
-          Good luck, Agent, and remember: Kudos to Admiral Brown!.
+            Due to the current circumstances in the Blue Moon Sector,
+            only we are capable of destroying the alliance
+            between the NT and the Syndicate.
+            Good luck, Agent, and remember: Kudos to Admiral Brown!.
             <span style={badstyle}>
               &ensp;You have memorized the codewords, allowing you
               to recognise them when heard.

@@ -94,8 +94,7 @@ const Options = (props, context) => {
             onDrag={(e, value) =>
               act('set_copies', {
                 num_copies: value,
-              })
-            }
+              })}
           />
         </Flex.Item>
         <Flex.Item>
@@ -119,8 +118,7 @@ const Options = (props, context) => {
               onClick={() =>
                 act('color_mode', {
                   mode: 'Greyscale',
-                })
-              }>
+                })}>
               Greyscale
             </Button>
           </Flex.Item>
@@ -132,8 +130,7 @@ const Options = (props, context) => {
               onClick={() =>
                 act('color_mode', {
                   mode: 'Color',
-                })
-              }>
+                })}>
               Color
             </Button>
           </Flex.Item>
@@ -178,8 +175,7 @@ const Blanks = (props, context) => {
         onSelected={(value) =>
           act('choose_category', {
             category: value,
-          })
-        }
+          })}
       />
       <Box mt={0.4}>
         {visibleBlanks.map((blank) => (
@@ -191,8 +187,7 @@ const Blanks = (props, context) => {
               act('print_blank', {
                 name: blank.name,
                 info: blank.info,
-              })
-            }>
+              })}>
             {blank.code}
           </Button>
         ))}

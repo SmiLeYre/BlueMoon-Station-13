@@ -50,8 +50,7 @@ const CentComName = (props, context) => {
         onSelected={(value) =>
           act('update_command_name', {
             updated_name: value,
-          })
-        }
+          })}
       />
       {!!custom_name && (
         <Input
@@ -62,8 +61,7 @@ const CentComName = (props, context) => {
           onChange={(_, value) =>
             act('update_command_name', {
               updated_name: value,
-            })
-          }
+            })}
         />
       )}
     </Section>
@@ -84,8 +82,7 @@ const AnnouncementSound = (props, context) => {
         onSelected={(value) =>
           act('set_report_sound', {
             picked_sound: value,
-          })
-        }
+          })}
       />
     </Section>
   );
