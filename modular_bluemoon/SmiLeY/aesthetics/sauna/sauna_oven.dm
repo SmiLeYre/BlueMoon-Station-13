@@ -119,7 +119,7 @@
 
 	if(lit && water_amount)
 		particles = new /obj/effect/particle_effect/smoke/transparent/dancefloor_devil
-		particles.position = list(0, 6, 0)
+		//particles.position = list(0, 6, 0)
 
 #undef SAUNA_H2O_TEMP
 #undef SAUNA_LOG_FUEL
