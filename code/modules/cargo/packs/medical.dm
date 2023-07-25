@@ -16,7 +16,7 @@
 
 /datum/supply_pack/medical/bodybags
 	name = "Bodybags"
-	desc = "For when the bodies hit the floor. Contains 4 boxes of bodybags."
+	desc = "Когда тела устелают на пол. Содержит 4 коробки с мешками для тел."
 	cost = 1200
 	contains = list(/obj/item/storage/box/bodybags,
 					/obj/item/storage/box/bodybags,
@@ -26,7 +26,7 @@
 
 /datum/supply_pack/medical/bloodpacks
 	name = "Blood Pack Variety Crate"
-	desc = "Contains nine different blood packs for reintroducing blood to patients, plus two universal synthetic blood packs."
+	desc = "Содержит девять различных наборов крови для  введения пациентам, а также два универсальных набора синтетической крови."
 	cost = 3000
 	contains = list(/obj/item/reagent_containers/blood/synthetics,
 					/obj/item/reagent_containers/blood/synthetics,
@@ -45,7 +45,7 @@
 
 /datum/supply_pack/medical/chemical
 	name = "Chemical Starter Kit Crate"
-	desc = "Contains twelve different chemicals, for all the fun experiments you can make."
+	desc = "Содержит двенадцать различных химических веществ для всех забавных экспериментов, которые вы можете провести."
 	cost = 1700
 	contains = list(/obj/item/reagent_containers/glass/bottle/hydrogen,
 					/obj/item/reagent_containers/glass/bottle/carbon,
@@ -66,7 +66,7 @@
 
 /datum/supply_pack/medical/defibs
 	name = "Defibrillator Crate"
-	desc = "Contains two defibrillators for bringing the recently deceased back to life."
+	desc = "Содержит два дефибриллятора для возвращения к жизни."
 	cost = 2500
 	contains = list(/obj/item/defibrillator/loaded,
 					/obj/item/defibrillator/loaded)
@@ -74,14 +74,14 @@
 
 /datum/supply_pack/medical/iv_drip
 	name = "IV Drip Crate"
-	desc = "Contains a single IV drip stand for intravenous delivery."
+	desc = "Содержит одну подставку для капельницы."
 	cost = 800
 	contains = list(/obj/machinery/iv_drip)
 	crate_name = "iv drip crate"
 
 /datum/supply_pack/medical/medicalhardsuit
 	name = "Medical Hardsuit"
-	desc = "Got people being spaced left and right? Hole in the same room as the dead body of Hos or cap? Fear not, now you can buy one medical hardsuit with a mask and air tank to save your fellow crewmembers. Requires medical access to open."
+	desc = "Есть люди, которых вынесло в космос? Пробоина в той комнате, где труп вашего товарища? Не бойтесь, теперь вы можете купить один медицинский скафандр с маской и баллоном для воздуха, чтобы спасти своих товарищей по экипажу. Требуется медицинский доступ для открытия."
 	cost = 2750
 	access = ACCESS_MEDICAL
 	contains = list(/obj/item/tank/internals/air,
@@ -92,7 +92,7 @@
 
 /datum/supply_pack/medical/paramedicevasuit
 	name = "Paramedic EVA Suit"
-	desc = "Greytide pushing up daisies with the carp outside the station? Chemistry vented in a meth experiment gone wrong? Be the blue saviour this station desperately needs and get your Paramedical EVA suit today! Requires medical access to open."
+	desc = "Станьте спасителем, в котором отчаянно нуждается эта станция, и получите свой EVA костюм парамедика уже сегодня! Требуется медицинский доступ для открытия."
 	cost = 1975
 	access = ACCESS_MEDICAL
 	contains = list(/obj/item/tank/internals/emergency_oxygen,
@@ -104,7 +104,7 @@
 
 /datum/supply_pack/medical/supplies
 	name = "Medical Supplies Crate"
-	desc = "Contains seven beakers, syringes, and bodybags. Three morphine bottles, four insulin pills. Two charcoal bottles, epinephrine bottles, antitoxin bottles, and large beakers. Finally, a single roll of medical gauze, as well as a bottle of stimulant pills for long, hard work days. German doctor not included."
+	desc = "Содержит семь мензурок, шприцы и мешки для трупов. Три пузырька с морфием, четыре таблетки инсулина. Две бутылки с  углем, бутылки с адреналином, бутылки с антитоксином и большие мензурки, а также флакон стимулирующих таблеток на долгие, тяжелые рабочие дни. Немецкий врач в комплект не входит."
 	cost = 2500
 	contains = list(/obj/item/reagent_containers/glass/bottle/charcoal,
 					/obj/item/reagent_containers/glass/bottle/charcoal,
@@ -133,7 +133,7 @@
 
 /datum/supply_pack/medical/adv_surgery_tools
 	name = "Med-Co Advanced Surgery Tools"
-	desc = "A full set of Med-Co advanced surgery tools, this crate also comes with a spay of synth flesh as well as a can of . Requires Surgery access to open."
+	desc = "В этот ящик входит полный набор хирургических инструментов MedCo advanced, а также банка синтетической плоти. Требуется Хирургический доступ для открытия"
 	cost = 5500
 	access = ACCESS_SURGERY
 	contains = list(/obj/item/storage/belt/medical/surgery_belt_adv,
@@ -144,7 +144,7 @@
 
 /datum/supply_pack/medical/surgery
 	name = "Surgical Supplies Crate"
-	desc = "Do you want to perform surgery, but don't have one of those fancy shmancy degrees? Just get started with this crate containing a medical duffelbag, Sterilizine spray and collapsible roller bed."
+	desc = "Вы хотите сделать операцию, но у вас нет ни одной из этих модных докторских степеней? Просто начните с этого ящика, содержащего медицинскую сумку, стерилизующий спрей и складную кровать на роликах."
 	cost = 1300
 	contains = list(/obj/item/storage/backpack/duffelbag/med/surgery,
 					/obj/item/reagent_containers/medspray/sterilizine,
@@ -157,7 +157,7 @@
 
 /datum/supply_pack/medical/sprays
 	name = "Medical Sprays"
-	desc = "Contains two cans of Styptic Spray, Silver Sulfadiazine Spray, Synthflesh Spray and Sterilizer Compound Spray."
+	desc = "Содержит две банки of Styptic Spray, Silver Sulfadiazine Spray, Synthflesh Spray и Sterilizer Compound Spray."
 	cost = 2250
 	contains = list(/obj/item/reagent_containers/medspray/styptic,
 					/obj/item/reagent_containers/medspray/styptic,
@@ -171,7 +171,7 @@
 
 /datum/supply_pack/medical/advrad
 	name = "Radiation Treatment Crate Deluxe"
-	desc = "A crate for when radiation is out of hand... Contains two rad-b-gone kits, one bottle of anti radiation deluxe pills, as well as a radiation treatment deluxe pill bottle!"
+	desc = "Ящик на случай, если радиация выйдет из-под контроля... Содержит два набора rad-b-gone kits, one bottle of anti radiation deluxe pills, as well as a radiation treatment deluxe pill bottle!"
 	cost = 3500
 	contains = list(/obj/item/storage/pill_bottle/antirad_plus,
 					/obj/item/storage/pill_bottle/mutarad,
@@ -188,7 +188,7 @@
 
 /datum/supply_pack/medical/virus
 	name = "Virus Crate"
-	desc = "Contains twelve different bottles, containing several viral samples for virology research. Also includes seven beakers and syringes. Balled-up jeans not included. Requires CMO access to open."
+	desc = "Содержит двенадцать различных флаконов, содержащих несколько образцов вирусов для вирусологических исследований. Также включает в себя семь мензурок и шприцы. Скомканные джинсы в комплект не входят. Для открытия требуется доступ CMO."
 	cost = 2500
 	access = ACCESS_CMO
 	contains = list(/obj/item/reagent_containers/glass/bottle/flu_virion,
@@ -213,7 +213,7 @@
 
 /datum/supply_pack/medical/anitvirus
 	name = "Virus Containment Crate"
-	desc = "Viro let out a death plague Mk II again? Someone didn't wash their hands? Old plagues born anew? Well, this crate is for you! Hope you cure it before it breaks out of the station... This crate needs medical access to open and has two bio suits, a box of needles and beakers, five spaceacillin needles, and a medibot."
+	desc = "Вирусолог снова выпустил смертельную чуму Mk II? Кто-то не помыл руки? Старые язвы, рожденные заново? Что ж, этот ящик для вас! Надеюсь, вы вылечите его до того, как он вырвется за пределы станции... Для открытия этого ящика требуется медицинский доступ, и в нем есть два биокостюма, коробка с шприцами и мензурками, пять шприцов с космоциллином и медибот."
 	cost = 3000
 	access = ACCESS_MEDICAL
 	contains = list(/mob/living/simple_animal/bot/medbot,
@@ -233,7 +233,7 @@
 
 /datum/supply_pack/medical/medipen_variety
 	name = "Medipen Variety-Pak"
-	desc = "Contains eight different medipens in three different varieties, to assist in quickly treating seriously injured patients."
+	desc = "Содержит восемь различных медикаментов в трех различных вариантах, чтобы помочь в быстром лечении пациентов с серьезными травмами."
 	cost = 2000
 	contains = list(/obj/item/reagent_containers/hypospray/medipen/,
 					/obj/item/reagent_containers/hypospray/medipen/,
@@ -243,5 +243,4 @@
 					/obj/item/reagent_containers/hypospray/medipen/blood_loss,
 					/obj/item/reagent_containers/hypospray/medipen/blood_loss,
 					/obj/item/reagent_containers/hypospray/medipen/blood_loss)
-
 	crate_name = "medipen crate"
