@@ -54,6 +54,8 @@
 	desc = "An experiment had gone out of control.."
 	icon_state = "gigachad_inteq"
 	icon_living = "gigachad_inteq"
+	icon_dead = "syndicate_dead"
+	icon_gib = "syndicate_gib"
 	maxHealth = 1200
 	health = 1200
 	response_harm_continuous = "harmlessly punches"
@@ -69,6 +71,8 @@
 	attack_sound = 'modular_bluemoon/kovac_shitcode/sound/weapons/sledge.ogg'
 	status_flags = 0
 	mob_size = MOB_SIZE_LARGE
+	del_on_death = TRUE
 	force_threshold = 10
 	AIStatus = AI_ON
+	speak = list("БЕГАЮЩИЕ ГВОЗДИ!!!", "БЕГИ, СУКА, БЕГИ!!!", "КАК ОРЕХ ЩА РАСКОЛЮ!!!")
 	loot = list(/obj/item/storage/belt/military/inteq, /obj/item/clothing/head/helmet/swat/inteq, /obj/item/clothing/shoes/combat/coldres, /obj/effect/gibspawner/generic, /obj/effect/gibspawner/generic/animal, /obj/effect/gibspawner/human/bodypartless, /obj/effect/gibspawner/human)

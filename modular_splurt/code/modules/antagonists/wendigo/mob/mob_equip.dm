@@ -98,6 +98,13 @@
 			update_sight()
 		if(!QDELETED(src))
 			update_inv_glasses()
+	else if(I == head)
+		head = null
+		var/obj/item/clothing/head/helmet/H = I
+		if(H.vision_flags || H.darkness_view || H.invis_override || H.invis_view || !isnull(H.lighting_alpha))
+			update_sight()
+		if(!QDELETED(src))
+			update_inv_head()
 	else if(I == ears)
 		ears = null
 		if(!QDELETED(src))

@@ -147,6 +147,14 @@
 			if(G.vision_flags || G.darkness_view || G.invis_override || G.invis_view || !isnull(G.lighting_alpha))
 				update_sight()
 			update_inv_glasses()
+		///
+		if(ITEM_SLOT_HEAD)
+			head = I
+			var/obj/item/clothing/head/helmet/H = I
+			if(H.vision_flags || H.darkness_view || H.invis_override || H.invis_view || !isnull(H.lighting_alpha))
+				update_sight()
+			update_inv_head()
+		///
 		if(ITEM_SLOT_GLOVES)
 			gloves = I
 			update_inv_gloves()
@@ -278,6 +286,13 @@
 			update_sight()
 		if(!QDELETED(src))
 			update_inv_glasses()
+	else if(I == head)
+		head = null
+		var/obj/item/clothing/head/helmet/H = I
+		if(H.vision_flags || H.darkness_view || H.invis_override || H.invis_view || !isnull(H.lighting_alpha))
+			update_sight()
+		if(!QDELETED(src))
+			update_inv_head()
 	else if(I == ears)
 		ears = null
 		if(!QDELETED(src))

@@ -385,7 +385,7 @@
 		ertemplate.ertphrase = prefs["ertphrase"]["value"]
 		ertemplate.enforce_human = prefs["enforce_human"]["value"] == "Да" ? TRUE : FALSE
 		ertemplate.opendoors = prefs["open_armory"]["value"] == "Да" ? TRUE : FALSE
-		priority_announce("Attention, [station_name()]. We are attempting to assemble an [ertemplate.polldesc]. Standby.", "ERT Protocol Activated", 'modular_bluemoon/kovac_shitcode/sound/ert/ert_send.ogg') //BlueMoon sound
+		priority_announce("Attention, [station_name()]. Мы формируем [ertemplate.polldesc] для отправки на станцию. Ожидайте.", "ERT Protocol Activated", 'modular_bluemoon/kovac_shitcode/sound/ert/ert_send.ogg') //BlueMoon sound
 
 		var/list/mob/candidates = pollGhostCandidates("Do you wish to be considered for [ertemplate.polldesc]?", "Deathsquad", null)
 		var/teamSpawned = FALSE
@@ -445,7 +445,7 @@
 
 			if (teamSpawned)
 				message_admins("[ertemplate.polldesc] были отправлены на станцию со следующей миссией: [ertemplate.mission]")
-				priority_announce("Внимание, [station_name()]. Мы высылаем команду высококвалифицированного отряда - [ertemplate.polldesc]. Вам следует приготовиться.", "Подготовка Отряда Быстрого Реагирования", ertemplate.ertphrase) //BlueMoon sound
+				priority_announce("Внимание, [station_name()]. Мы отправляем поздразделение - [ertemplate.polldesc]. Вам следует приготовиться.", "Подготовка Отряда Быстрого Реагирования", ertemplate.ertphrase) //BlueMoon sound
 
 			//Open the Armory doors
 			if(ertemplate.opendoors)
@@ -454,7 +454,7 @@
 					CHECK_TICK
 			return TRUE
 		else
-			priority_announce("[station_name()], мы не можем выслать [ertemplate.polldesc] ввиду занятости всех активных ячеек.", "Отряд Быстрого Реагирования недоступен", 'modular_bluemoon/kovac_shitcode/sound/ert/ert_no.ogg') //BlueMoon sound
+			priority_announce("[station_name()], мы не можем выслать [ertemplate.polldesc] ввиду занятости всех действующих оперативников.", "Отряд Быстрого Реагирования недоступен", 'modular_bluemoon/kovac_shitcode/sound/ert/ert_no.ogg') //BlueMoon sound
 			return FALSE
 
 	return

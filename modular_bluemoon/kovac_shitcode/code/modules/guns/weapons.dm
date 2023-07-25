@@ -319,8 +319,8 @@
 /obj/item/chainsaw/inteq_chainsaw
 	name = "Chainsaw"
 	desc = "<span class='warning'>VRRRRRRR!!!</span>"
-	armour_penetration = 40
-	force_on = 35
+	armour_penetration = 60
+	force_on = 40
 
 ///InteQ Uplink additions
 

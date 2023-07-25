@@ -254,6 +254,7 @@
 	item_state = "armor"
 	blood_overlay_type = "armor"
 	armor = list(MELEE = 15, BULLET = 60, LASER = 10, ENERGY = 10, BOMB = 40, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 20)
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	strip_delay = 70
 	equip_delay_other = 50
 	mutantrace_variation = STYLE_DIGITIGRADE

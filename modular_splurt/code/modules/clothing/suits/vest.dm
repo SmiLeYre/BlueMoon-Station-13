@@ -53,7 +53,7 @@
 	item_state = "blueshieldcoat"
 
 /obj/item/clothing/suit/fakearmor/press
-	name = "press 'armored' vest"
+	name = "press armored vest"
 	desc = "A lightweight vest for reporting on breaking news. It makes you feel protected."
 	icon_state = "press_armor"
 	item_state = "press_armor"

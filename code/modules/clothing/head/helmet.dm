@@ -87,6 +87,8 @@
 	icon_state = "helmetNVG"
 	item_state = "helmetNVG"
 	darkness_view = 8
+	flash_protect = -1
+	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 
 /obj/item/clothing/head/helmet/nvg/hecu
 	name = "Powered Combat Helmet with NVG"
@@ -97,6 +99,8 @@
 	icon_state = "hecu_helm_nvg"
 	item_state = "hecu_helm_nvg"
 	darkness_view = 10
+	flash_protect = -1
+	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 	mutantrace_variation = STYLE_MUZZLE
 	armor = list(MELEE = 40, BULLET = 40, LASER = 40,ENERGY = 40, BOMB = 50, BIO = 90, RAD = 30, FIRE = 50, ACID = 50)
 	cold_protection = HEAD

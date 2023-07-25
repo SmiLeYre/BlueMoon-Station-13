@@ -26,7 +26,7 @@
 	return ..()
 
 /datum/objective_item/steal/caplaser
-	name = "исключительно Старинный Лазерный Пистолет Капитана."
+	name = "Антикварный Лазерный Пистолет Капитана."
 	targetitem = /obj/item/gun/energy/laser/captain
 	difficulty = 10
 	excludefromjob = list("Captain")
@@ -93,6 +93,13 @@
 	name = "Секретные Документы."
 	targetitem = /obj/item/documents //Any set of secret documents. Doesn't have to be NT's
 	difficulty = 5
+
+/datum/objective_item/steal/stamp
+	name = "печать представителя Корпорации."
+	targetitem = /obj/item/stamp/ntr
+	difficulty = 2
+	excludefromjob = list("NanoTrasen Representative")
+	altitems = /obj/item/stamp/syndicate
 
 /datum/objective_item/steal/blackbox
 	name = "черный ящик из бортового устройства записи. Позаботьтесь о том, чтобы при извлечении черного ящика вы использовали соответствующее оборудование безопасности, так как телекоммуникационный массив, скорее всего, будет находиться в негостеприимных, особо холодных условиях."

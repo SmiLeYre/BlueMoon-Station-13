@@ -44,6 +44,7 @@
 	icon = 'modular_splurt/icons/obj/clothing/head.dmi'
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/head.dmi'
 	flags_inv = HIDEHAIR
+	armor = list(MELEE = 40, BULLET = 30, LASER = 30,ENERGY = 10, BOMB = 25, BIO = 0, RAD = 0, FIRE = 50, ACID = 50)
 
 //CBRN/MOPP helmets
 

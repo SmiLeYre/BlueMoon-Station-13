@@ -102,6 +102,8 @@
 					/obj/item/clothing/suit/toggle/labcoat/depjacket/med = 5,
 					/obj/item/clothing/shoes/sneakers/white = 5,
 					/obj/item/clothing/head/soft/emt = 5,
+					/obj/item/clothing/head/helmet/flakhelm = 3,
+					/obj/item/clothing/head/helmet/russian_green_helmet = 3,
 					/obj/item/clothing/suit/apron/surgical = 5,
 					/obj/item/clothing/mask/surgical = 5,
 					/obj/item/clothing/mask/balaclava/breath/redscarf/bluescarf = 4,

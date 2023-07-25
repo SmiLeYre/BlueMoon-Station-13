@@ -267,3 +267,14 @@
 	icon_state = "spacepolice_families"
 	item_state = "spacepolice_families"
 	can_adjust = FALSE
+
+
+//navyblue jacket
+
+/obj/item/clothing/suit/armor/navyblue
+	name = "security officer's jacket"
+	desc = "This jacket is for those special occasions when a security officer isn't required to wear their armor."
+	icon_state = "officerbluejacket"
+	item_state = "officerbluejacket"
+	body_parts_covered = CHEST|ARMS
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON

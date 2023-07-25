@@ -56791,6 +56791,12 @@
 	c_tag = "Sauna Room";
 	dir = 8
 	},
+/obj/machinery/button/door{
+	id = "ntr";
+	name = "Privacy Shutters";
+	pixel_x = 25;
+	pixel_y = 8
+	},
 /turf/open/floor/carpet,
 /area/service/lawoffice)
 "oxL" = (
@@ -60359,18 +60365,6 @@
 	},
 /turf/open/floor/wood/wood_large,
 /area/service/chapel/office)
-"rIV" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/door/poddoor/preopen{
-	id = "ntr"
-	},
-/obj/machinery/button/door{
-	id = "ntr";
-	name = "Representative Office Shutters";
-	pixel_y = -25
-	},
-/turf/open/floor/plating,
-/area/service/lawoffice)
 "rJw" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/maintenance,
@@ -96662,7 +96656,7 @@ uSp
 aph
 aph
 kUS
-rIV
+kUS
 aph
 aph
 aph
