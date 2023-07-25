@@ -36,6 +36,8 @@
 					/obj/item/clothing/under/rank/security/officer/nri_military = 4,
 					/obj/item/clothing/head/HoS/beret/sol/security = 2,
 					/obj/item/clothing/head/HoS/beret/nri/security = 2,
+					/obj/item/clothing/head/helmet/flakhelm = 3,
+					/obj/item/clothing/head/helmet/russian_green_helmet = 3,
 					/obj/item/clothing/under/pants/khaki = 5,
 					/obj/item/clothing/suit/toggle/labcoat/depjacket/sec = 5,
 					/obj/item/clothing/suit/armor/secjacket = 5,
@@ -102,8 +104,6 @@
 					/obj/item/clothing/suit/toggle/labcoat/depjacket/med = 5,
 					/obj/item/clothing/shoes/sneakers/white = 5,
 					/obj/item/clothing/head/soft/emt = 5,
-					/obj/item/clothing/head/helmet/flakhelm = 3,
-					/obj/item/clothing/head/helmet/russian_green_helmet = 3,
 					/obj/item/clothing/suit/apron/surgical = 5,
 					/obj/item/clothing/mask/surgical = 5,
 					/obj/item/clothing/mask/balaclava/breath/redscarf/bluescarf = 4,
@@ -445,6 +445,9 @@
 					/obj/item/clothing/head/pharaoh = 2,
 					/obj/item/clothing/neck/tie/cross = 7,
 					/obj/item/storage/fancy/candle_box = 3,
+					/obj/item/clothing/head/clownmitre = 3, //BlueMoon changes
+					/obj/item/clothing/suit/chaplain/clownpriest = 3, //BlueMoon changes
+					/obj/item/clothing/suit/chaplain/shrinehand = 3, //BlueMoon changes
 					/obj/item/clothing/suit/hooded/chaplain_hoodie/monk_robe = 2, //BlueMoon changes
 					/obj/item/clothing/neck/oldcross = 6,  //BlueMoon changes
 					/obj/item/clothing/neck/epitrachelion = 1, //BlueMoon changes

@@ -385,7 +385,7 @@
 	name = "Tactical Maid"
 
 	id = /obj/item/card/id/ert
-	uniform = /obj/item/clothing/under/syndicate/maid_revealing
+	uniform = /obj/item/clothing/under/syndicate/maid
 	//suit = /obj/item/clothing/suit/armor/vest/agent
 	gloves = /obj/item/clothing/gloves/combat/maid
 	shoes = /obj/item/clothing/shoes/sneakers/noslip

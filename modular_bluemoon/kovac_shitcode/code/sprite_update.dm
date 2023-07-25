@@ -38,3 +38,26 @@
 	icon_state = "russian_green_helmet"
 	item_state = "russian_green_helmet"
 	desc = "One of the newest NRI helmets, also widely spread asross space corporations security forces."
+
+/obj/item/clothing/suit/chaplain/clownpriest
+	name = "honkmother garb"
+	desc = "This outfit makes you proud of being clown mate."
+	icon_state = "clownpriest"
+	item_state = "clownpriest"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/suit/chaplain/shrinehand
+	name = "shrinehand garb"
+	desc = "Siddhartha Gautama - Superstar."
+	icon_state = "shrinehand"
+	item_state = "shrinehand"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/head/clownmitre
+	name = "clown mitre"
+	desc = "A mitre, worn by Honkmother faith servants."
+	icon_state = "clownmitre"
+	item_state = "clownmitre"
+	flags_inv = HIDEHAIR
