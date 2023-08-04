@@ -37,3 +37,11 @@
 	message_mime = "испытывает крайнюю степень недовольства."
 	emote_sound = 'modular_bluemoon/kovac_shitcode/sound/new_emotes/mudak.ogg'
 	emote_cooldown = 11.6 SECONDS
+
+/datum/emote/living/audio/worm
+	key = "worm"
+	key_third_person = "worm"
+	message = "высказывает неприятное удивление."
+	message_mime = "испытывает неприятное удивление."
+	emote_sound = 'modular_bluemoon/kovac_shitcode/sound/new_emotes/worm.ogg'
+	emote_cooldown = 11.6 SECONDS

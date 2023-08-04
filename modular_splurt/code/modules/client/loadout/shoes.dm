@@ -35,8 +35,8 @@
 	name = "Dominant Heels"
 	path = /obj/item/clothing/shoes/dominaheels
 
-/datum/gear/shoes/puttee
-	restricted_roles = list("Security Officer", "Warden", "Head of Security", "Brig Physician", "Blueshield")
+///datum/gear/shoes/puttee
+	//restricted_roles = list("Security Officer", "Warden", "Head of Security", "Brig Physician", "Blueshield")
 
 /datum/gear/shoes/highheel_sandals
 	name = "High-heel Sandals"

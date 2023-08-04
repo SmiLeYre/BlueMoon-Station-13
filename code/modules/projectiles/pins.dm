@@ -116,7 +116,7 @@
 	req_implant = /obj/item/implant/mindshield
 
 /obj/item/firing_pin/implant/pindicate
-	name = "Syndicate Firing Pin"
+	name = "Illegal Firing Pin"
 	icon_state = "firing_pin_pindi"
 	req_implant = /obj/item/implant/weapons_auth
 

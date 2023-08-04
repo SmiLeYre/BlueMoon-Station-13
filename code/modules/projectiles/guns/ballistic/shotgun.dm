@@ -250,6 +250,9 @@
 		"Slick" = list("icon_state" = "cshotgun_slick")
 	)
 
+/obj/item/gun/ballistic/shotgun/automatic/combat/pindicate
+	pin = /obj/item/firing_pin/implant/pindicate
+
 /obj/item/gun/ballistic/shotgun/automatic/combat/compact
 	name = "Warden's Combat Shotgun"
 	desc = "A modified version of the semi-automatic combat shotgun with a collapsible stock and a safety that prevents firing while folded. For close encounters."

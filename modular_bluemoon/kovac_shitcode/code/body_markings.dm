@@ -73,6 +73,12 @@
 	name = "Teshari thin"
 	icon_state = "teshari2"
 
+/datum/sprite_accessory/tails/mam_tails/murid_two
+	name = "Murid II"
+	icon_state = "murid_two"
+	color_src = MATRIXED
+	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
+	matrixed_sections = MATRIX_ALL
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -123,6 +129,23 @@
 /datum/sprite_accessory/ears/mam_ears/vulp
 	name = "Vulp"
 	icon_state = "vulp"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_BLUE
+	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
+
+/datum/sprite_accessory/ears/mam_ears/mouse_two
+	name = "Mouse II"
+	icon_state = "mouse_two"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_ALL
+	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+/datum/sprite_accessory/snouts/mam_snouts/leporid
+	name = "Leporid"
+	icon_state = "leporid"
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_BLUE
 	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'

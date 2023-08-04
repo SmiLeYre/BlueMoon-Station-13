@@ -115,13 +115,13 @@
 	name = "Auto 9 Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/auto9_kit
-	ckeywhitelist = list("stgs", "krashly", "sodastrike")
+	ckeywhitelist = list("stgs", "sodastrike", "dolbajob")
 
 /datum/gear/donator/bm/m240_gun
 	name = "M240 Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/m240_kit
-	ckeywhitelist = list("stgs", "krashly", "sodastrike")
+	ckeywhitelist = list("stgs", "sodastrike", "dolbajob")
 
 /datum/gear/donator/bm/Friskis_Mask
 	name = "Magic Kitsune Mask"
@@ -146,3 +146,9 @@
 	slot = ITEM_SLOT_ICLOTHING
 	path = /obj/item/clothing/under/donator/bm/multicam
 	ckeywhitelist = list("leony24")
+
+/datum/gear/donator/bm/baron
+	name = "Terrifying Cloak"
+	slot = ITEM_SLOT_NECK
+	path = /obj/item/clothing/neck/baron
+	ckeywhitelist = list("snacksman", "krashly")

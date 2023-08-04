@@ -34,7 +34,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
-/obj/item/gun/ballistic/automatic/ak12,
+/obj/item/gun/ballistic/automatic/ak12/pindicate,
 /obj/item/ammo_box/magazine/ak12,
 /obj/item/ammo_box/magazine/ak12,
 /obj/item/ammo_box/magazine/ak12,
@@ -42,6 +42,11 @@
 /obj/structure/window/reinforced/survival_pod{
 	dir = 1
 	},
+/obj/item/gun/ballistic/automatic/ak12/pindicate,
+/obj/item/ammo_box/magazine/ak12,
+/obj/item/ammo_box/magazine/ak12,
+/obj/item/ammo_box/magazine/ak12,
+/obj/item/ammo_box/magazine/ak12,
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "aD" = (
@@ -57,14 +62,6 @@
 	piping_layer = 1
 	},
 /turf/open/floor/iron/dark,
-/area/shuttle/inteq)
-"bd" = (
-/obj/machinery/porta_turret/syndicate/energy/pirate/inteq{
-	dir = 8;
-	faction = list("inteq");
-	icon_state = "standard_lethal"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/shuttle/inteq)
 "bl" = (
 /obj/machinery/light{
@@ -710,7 +707,7 @@
 	dir = 4;
 	pixel_x = -25
 	},
-/obj/machinery/mineral/ore_redemption_inteq{
+/obj/machinery/mineral/ore_redemption/inteq{
 	dir = 1;
 	output_dir = 1
 	},
@@ -1176,11 +1173,6 @@
 "Es" = (
 /obj/machinery/computer/piratepad_control{
 	dir = 1
-	},
-/obj/machinery/porta_turret/syndicate/energy/pirate/inteq{
-	dir = 4;
-	faction = list("InteQ");
-	icon_state = "standard_lethal"
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
@@ -1746,8 +1738,8 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
-/obj/item/gun/energy/laser,
-/obj/item/gun/energy/laser,
+/obj/item/gun/energy/laser/pindicate,
+/obj/item/gun/energy/laser/pindicate,
 /obj/structure/window/reinforced/survival_pod{
 	dir = 1
 	},
@@ -1784,7 +1776,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
-/obj/item/gun/ballistic/shotgun/automatic/combat,
+/obj/item/gun/ballistic/shotgun/automatic/combat/pindicate,
 /obj/item/ammo_box/shotgun,
 /obj/item/ammo_box/shotgun,
 /obj/item/ammo_box/shotgun,
@@ -1946,7 +1938,7 @@ Rm
 hQ
 hQ
 hQ
-bd
+Hy
 XJ
 XJ
 XJ
@@ -1954,7 +1946,7 @@ XJ
 XJ
 XJ
 XJ
-bd
+Hy
 hQ
 hQ
 hQ

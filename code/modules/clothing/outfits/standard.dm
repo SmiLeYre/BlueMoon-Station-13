@@ -108,6 +108,9 @@
 		W.registered_name = H.real_name
 		W.update_label(H.real_name)
 
+	var/obj/item/implant/weapons_auth/B = new
+	B.implant(H)
+
 /datum/outfit/tunnel_clown
 	name = "Tunnel Clown"
 

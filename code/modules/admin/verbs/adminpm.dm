@@ -249,7 +249,7 @@
 /proc/IrcPm(target,msg,sender)
 	return TgsPm(target,msg,sender) //compatability moment.
 
-#define TGS_AHELP_USAGE "Usage: ticket <close|resolve|icissue|reject|reopen \[ticket #\]|list>"
+#define TGS_AHELP_USAGE "Usage: ticket <close|resolve|icissue|skillissue|reject|reopen \[ticket #\]|list>"
 /proc/TgsPm(target,msg,sender)
 	target = ckey(target)
 	var/client/C = GLOB.directory[target]
@@ -274,6 +274,10 @@
 				if(ticket)
 					ticket.ICIssue(tgs_tagged)
 					return "Ticket #[ticket.id] successfully marked as IC issue"
+			if("skillissue")
+				if(ticket)
+					ticket.SkillIssue(tgs_tagged)
+					return "Ticket #[ticket.id] successfully marked as Skill issue"
 			if("reject")
 				if(ticket)
 					ticket.Reject(tgs_tagged)

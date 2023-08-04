@@ -255,6 +255,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 		ref_src = "[REF(src)]"
 	. = " (<A HREF='?_src_=holder;[HrefToken(TRUE)];ahelp=[ref_src];ahelp_action=reject'>REJT</A>)"
 	. += " (<A HREF='?_src_=holder;[HrefToken(TRUE)];ahelp=[ref_src];ahelp_action=icissue'>IC</A>)"
+	. += " (<A HREF='?_src_=holder;[HrefToken(TRUE)];ahelp=[ref_src];ahelp_action=skillissue'>SI</A>)"
 	. += " (<A HREF='?_src_=holder;[HrefToken(TRUE)];ahelp=[ref_src];ahelp_action=close'>CLOSE</A>)"
 	. += " (<A HREF='?_src_=holder;[HrefToken(TRUE)];ahelp=[ref_src];ahelp_action=resolve'>RSLVE</A>)"
 	. += " (<A HREF='?_src_=holder;[HrefToken(TRUE)];ahelp=[ref_src];ahelp_action=handleissue'>HANDLE</A>)"
@@ -396,11 +397,32 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	if(initiator)
 		to_chat(initiator, msg)
 
+	SEND_SOUND(initiator, sound('modular_bluemoon/kovac_shitcode/sound/misc/ic_issue.ogg'))
+
 	SSblackbox.record_feedback("tally", "ahelp_stats", 1, "IC")
 	msg = "Ticket [TicketHref("#[id]")] marked as IC by [key_name]"
 	message_admins(msg)
 	log_admin_private(msg)
 	AddInteraction("Marked as IC issue by [key_name]")
+	Resolve(silent = TRUE)
+
+//Resolve ticket with Skill Issue message
+/datum/admin_help/proc/SkillIssue(key_name = key_name_admin(usr))
+	if(state != AHELP_ACTIVE)
+		return
+
+	var/msg = "<font color='red' size='4'><b>- AdminHelp marked as Skill Issue by [usr?.client?.holder?.fakekey? usr.client.holder.fakekey : "an administrator"]! -</b></font><br>"
+	msg += "<font color='red'>Your ahelp is unable to be answered properly due to lack of your own robust skill. You should train youself a bit more!</font>"
+	if(initiator)
+		to_chat(initiator, msg)
+
+	SEND_SOUND(initiator, sound('modular_bluemoon/kovac_shitcode/sound/misc/skill_issue.ogg'))
+
+	SSblackbox.record_feedback("tally", "ahelp_stats", 1, "SI")
+	msg = "Ticket [TicketHref("#[id]")] marked as Skill Issue by [key_name]"
+	message_admins(msg)
+	log_admin_private(msg)
+	AddInteraction("Marked as Skill issue by [key_name]")
 	Resolve(silent = TRUE)
 
 //Let the initiator know their ahelp is being handled
@@ -475,6 +497,8 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 			usr.client.cmd_ahelp_reply(initiator)
 		if("icissue")
 			ICIssue()
+		if("skillissue")
+			SkillIssue()
 		if("close")
 			Close()
 		if("resolve")

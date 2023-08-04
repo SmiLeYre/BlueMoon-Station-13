@@ -1,8 +1,8 @@
 //every quirk in this folder should be coded around being applied on spawn
 //these are NOT "mob quirks" like GOTTAGOFAST, but exist as a medium to apply them and other different effects
 /datum/quirk
-	var/name = "Test Quirk"
-	var/desc = "This is a test quirk."
+	var/name = "Незнайка"
+	var/desc = "Буквально особенность, которая ничего не делает!"
 	var/value = 0
 	var/human_only = TRUE
 	var/gain_text

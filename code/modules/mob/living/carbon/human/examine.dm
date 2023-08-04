@@ -447,7 +447,7 @@
 			if(!key)
 				msg += "<span class='warning'>[t_on] кататоник. Стресс от жизни в глубоком космосе сильно повлиял на н[t_ego]. Восстановление маловероятно.</span>\n"
 			else if(!client)
-				msg += "<span class='warning'>[t_on] имеет пустой, рассеянный взгляд и кажется совершенно не реагирующим ни на что. В этом состоянии [t_on] находится [round(((world.time - lastclienttime) / (1 MINUTES)), 1)] минут. [t_on] может выйти из этого состояни в ближайшее время.\n" //SKYRAT CHANGE - ssd indicator
+				msg += "<span class='warning'><B>Не стоит [ru_ego(TRUE)] трогать.</B> [t_on] имеет пустой, рассеянный взгляд и кажется совершенно не реагирующим ни на что. В этом состоянии [t_on] находится [round(((world.time - lastclienttime) / (1 MINUTES)), 1)] минут. [t_on] может выйти из этого состояни в ближайшее время.\n" //SKYRAT CHANGE - ssd indicator
 
 	var/trait_exam = common_trait_examine()
 	if (!isnull(trait_exam))

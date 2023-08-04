@@ -106431,6 +106431,11 @@
 /obj/structure/dresser,
 /turf/open/floor/plasteel/grimy,
 /area/command/heads_quarters/hop)
+"qpY" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/mob/living/simple_animal/pet/cat/floppa,
+/turf/open/floor/wood,
+/area/command/blueshieldoffice)
 "qqa" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -163510,7 +163515,7 @@ itE
 iCh
 ryI
 qWK
-qWK
+qpY
 gEl
 xXv
 geU

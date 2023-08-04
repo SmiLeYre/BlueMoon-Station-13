@@ -55584,6 +55584,10 @@
 	},
 /turf/open/floor/carpet/black,
 /area/service/bar)
+"iTX" = (
+/mob/living/simple_animal/pet/cat/floppa,
+/turf/open/floor/mineral/plastitanium,
+/area/command/blueshieldoffice)
 "iUp" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /turf/open/floor/plating,
@@ -92157,7 +92161,7 @@ nEZ
 aov
 mJE
 air
-aqY
+iTX
 ueW
 dbg
 obZ

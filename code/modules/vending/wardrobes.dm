@@ -29,6 +29,7 @@
 					/obj/item/clothing/mask/bandana/red = 5,
 					/obj/item/clothing/mask/balaclava/breath/redscarf = 4,
 					/obj/item/clothing/mask/gas/sechailer = 4,
+					/obj/item/clothing/mask/gas/nri = 2,
 					/obj/item/clothing/under/rank/security/officer/skirt = 5,
 					/obj/item/clothing/under/rank/security/officer/grey = 5,
 					/obj/item/clothing/under/rank/security/officer/urban_camo = 3,
@@ -37,6 +38,8 @@
 					/obj/item/clothing/head/HoS/beret/sol/security = 2,
 					/obj/item/clothing/head/HoS/beret/nri/security = 2,
 					/obj/item/clothing/head/helmet/flakhelm = 3,
+					/obj/item/clothing/head/helmet/aviator_helmet = 2,
+					/obj/item/clothing/head/helmet/blast_helmet = 2,
 					/obj/item/clothing/head/helmet/russian_green_helmet = 3,
 					/obj/item/clothing/under/pants/khaki = 5,
 					/obj/item/clothing/suit/toggle/labcoat/depjacket/sec = 5,
@@ -66,6 +69,11 @@
 					/obj/item/storage/backpack/hecu/black = 2,
 					/obj/item/storage/belt/military/assault/hecu = 2,
 					/obj/item/storage/belt/military/assault/hecu/black = 2,
+					/obj/item/storage/backpack/rucksack = 1,
+					/obj/item/storage/backpack/rucksack/blue = 1,
+					/obj/item/storage/backpack/rucksack/navy = 1,
+					/obj/item/storage/backpack/rucksack/green = 1,
+					/obj/item/storage/backpack/rucksack/tan = 1,
 					/obj/item/clothing/head/beret/sec/navyofficer = 5)
 	refill_canister = /obj/item/vending_refill/wardrobe/sec_wardrobe
 	payment_department = ACCOUNT_SEC

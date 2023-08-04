@@ -4,8 +4,8 @@
 	name = "Predatory Lunge"
 	desc = "Prepare the strenght to grapple your prey."
 	button_icon_state = "power_lunge"
-	bloodcost = 10
-	cooldown = 30
+	bloodcost = 20
+	cooldown = 70
 	bloodsucker_can_buy = TRUE
 	warn_constant_cost = TRUE
 	amToggle = TRUE
@@ -13,7 +13,7 @@
 
 /datum/action/bloodsucker/lunge/New()
 	. = ..()
-	
+
 
 /datum/action/bloodsucker/lunge/Destroy()
 	. = ..()
@@ -37,7 +37,7 @@
 		sleep(5)
 
 //Without this, the leap component would get removed too early, causing the normal crash into effects.
-/datum/action/bloodsucker/lunge/proc/DelayedDeactivatePower() 
+/datum/action/bloodsucker/lunge/proc/DelayedDeactivatePower()
 	addtimer(CALLBACK(src, .proc/DeactivatePower), 1 SECONDS, TIMER_UNIQUE)
 
 /datum/action/bloodsucker/lunge/DeactivatePower(mob/living/user = owner)

@@ -186,6 +186,7 @@
 	l_pocket = /obj/item/kitchen/knife/combat
 
 /datum/outfit/ert/medic/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+	ADD_TRAIT(H, TRAIT_SURGEON, TRAIT_GENERIC)
 	..()
 
 	if(visualsOnly)

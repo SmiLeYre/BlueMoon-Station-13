@@ -66,6 +66,7 @@
 
 	chameleon_extras = list(/obj/item/gun/syringe, /obj/item/stamp/cmo)
 
+
 /datum/outfit/job/cmo/syndicate
 	name = "Syndicate Chief Medical Officer"
 	jobtype = /datum/job/cmo
@@ -100,3 +101,6 @@
 	suit_store = /obj/item/tank/internals/oxygen
 	r_pocket = /obj/item/flashlight/pen
 
+/datum/outfit/job/cmo/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+
+	ADD_TRAIT(H, TRAIT_SURGEON, TRAIT_GENERIC)

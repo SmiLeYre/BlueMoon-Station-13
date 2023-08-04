@@ -161,6 +161,11 @@
 	var/obj/item/implant/weapons_auth/W = new
 	W.implant(H)
 
+	var/obj/item/card/id/B = H.wear_id
+	if(B)
+		B.registered_name = H.real_name
+		B.update_label(H.real_name)
+
 	H.update_icons()
 
 	H.grant_language(/datum/language/codespeak, TRUE, TRUE)
@@ -210,5 +215,5 @@
 	faction = list("InteQ")
 
 
-/obj/machinery/mineral/ore_redemption_inteq
+/obj/machinery/mineral/ore_redemption/inteq
 	req_access = list(ACCESS_SYNDICATE)

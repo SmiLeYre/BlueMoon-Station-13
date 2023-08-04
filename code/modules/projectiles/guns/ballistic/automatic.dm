@@ -213,11 +213,12 @@
 	name = "\improper NT-ARG 'Boarder'"
 	desc = "A robust assault rifle used by Nanotrasen fighting forces."
 	icon_state = "arg"
-	item_state = "arg"
+	item_state = "arifle-wielded"
 	slot_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/m556
 	fire_sound = 'sound/weapons/rifleshot.ogg'
 	can_suppress = FALSE
+	weapon_weight = WEAPON_HEAVY
 	burst_size = 3
 	burst_shot_delay = 1
 

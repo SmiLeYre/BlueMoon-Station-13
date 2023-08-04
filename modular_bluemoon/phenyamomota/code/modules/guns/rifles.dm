@@ -13,6 +13,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/m16
 	can_suppress = FALSE
+	weapon_weight = WEAPON_HEAVY
 	burst_size = 3
 	fire_delay = 2
 	fire_sound = 'modular_bluemoon/phenyamomota/sound/guns/m16_fire.ogg'
@@ -89,6 +90,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/ak47
 	can_suppress = FALSE
+	weapon_weight = WEAPON_HEAVY
 	burst_size = 3
 	fire_delay = 2
 	fire_sound = 'modular_bluemoon/phenyamomota/sound/guns/ak47_fire.ogg'
@@ -147,3 +149,9 @@
 		icon_state = "ak47_hm"
 	else
 		icon_state = "ak47_hm-e"
+
+/obj/item/gun/ballistic/automatic/ak47/pindicate
+	pin = /obj/item/firing_pin/implant/pindicate
+
+/obj/item/gun/ballistic/automatic/ak47/homemade/pindicate
+	pin = /obj/item/firing_pin/implant/pindicate

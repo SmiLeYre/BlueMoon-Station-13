@@ -254,7 +254,7 @@
 
 /datum/objective/sacrifice_ecult/update_explanation_text()
 	. = ..()
-	target_amount = rand(2,6)
+	target_amount = rand(2,3)
 	explanation_text = "Sacrifice at least [target_amount] people."
 
 /datum/objective/sacrifice_ecult/check_completion()

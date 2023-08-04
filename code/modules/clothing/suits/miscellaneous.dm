@@ -948,7 +948,7 @@
 
 /obj/item/clothing/head/hooded/winterhood/cosmic
 	desc = "A starry winter hood."
-	icon_state = "hood_cosmic"
+	icon_state = "winterhood_cosmic"
 
 /obj/item/clothing/suit/hooded/wintercoat/janitor
 	name = "janitors winter coat"

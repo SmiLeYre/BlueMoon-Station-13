@@ -57,8 +57,8 @@
 	flags_1 = CONDUCT_1
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
-	force = 17
-	throwforce = 10
+	force = 28
+	throwforce = 15
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "tore", "lacerated", "ripped", "diced", "rended")
 
@@ -117,22 +117,22 @@
 	desc = "Molten and unwrought, a hunk of metal warped to cinders and slag. Unmade, it aspires to be more than it is, and shears soot-filled wounds with a blunt edge."
 	icon_state = "ash_blade"
 	item_state = "ash_blade"
-	force = 20
+	force = 35
 
 /obj/item/melee/sickly_blade/flesh
 	name = "flesh blade"
 	desc = "A crescent blade born from a fleshwarped creature. Keenly aware, it seeks to spread to others the suffering it has endured from its dreadful origins."
 	icon_state = "flesh_blade"
 	item_state = "flesh_blade"
-	wound_bonus = 10
-	bare_wound_bonus = 20
+	wound_bonus = 30
+	bare_wound_bonus = 35
 
 /obj/item/melee/sickly_blade/void
 	name = "void blade"
 	desc = "Devoid of any substance, this blade reflects nothingness. It is a real depiction of purity, and chaos that ensues after its implementation."
 	icon_state = "void_blade"
 	item_state = "void_blade"
-	throwforce = 25
+	throwforce = 35
 
 /obj/item/clothing/neck/eldritch_amulet
 	name = "warm eldritch medallion"
@@ -287,9 +287,9 @@
 	flags_1 = CONDUCT_1
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_SMALL
-	wound_bonus = 20
-	force = 10
-	throwforce = 20
+	wound_bonus = 30
+	force = 35
+	throwforce = 30
 	embedding = list(embed_chance=75, jostle_chance=2, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.4, pain_mult=3, jostle_pain_mult=5, rip_time=15)
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "tore", "lacerated", "ripped", "diced", "rended")

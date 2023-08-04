@@ -232,9 +232,9 @@
 	. = ..()
 
 /datum/quirk/hallowed
-	name = "Святой"
-	desc = "Вы были благословлены высшими силами или каким-то иным образом наделены святой энергией. Ваше божественное присутствие отгоняет магию и нечисть! Святая вода восстановит ваше здоровье."
-	value = 1 // Maybe up the cost if more is added later.
+	name = "Святой дух"
+	desc = "Вы были благословлены высшими силами или каким-то иным образом наделены святой энергией. Святая вода восстановит ваше здоровье!"
+	value = 3 // Maybe up the cost if more is added later.
 	mob_trait = TRAIT_HALLOWED
 	gain_text = span_notice("Вы чувствуете, как святая энергия начинает течь по вашему телу.")
 	lose_text = span_notice("Вы чувствуете, как угасает ваша святая энергия...")
@@ -242,7 +242,7 @@
 
 /datum/quirk/hallowed/add()
 	// Define quirk mob.
-	var/mob/living/carbon/human/quirk_mob = quirk_holder
+	//var/mob/living/carbon/human/quirk_mob = quirk_holder
 
 	//// Give the holy trait.
 	//ADD_TRAIT(quirk_mob, TRAIT_HOLY, "quirk_hallowed")
@@ -251,14 +251,14 @@
 	//ADD_TRAIT(quirk_mob, TRAIT_ANTIMAGIC, "quirk_hallowed")
 
 	// Makes the user holy.
-	quirk_mob.mind.isholy = TRUE
+	//quirk_mob.mind.isholy = TRUE // Нуллрод за 1 очко. Какой наркоман на сплюрте это кодил???
 
 	// Add examine text.
 	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/quirk_examine_Hallowed)
 
 /datum/quirk/hallowed/remove()
 	// Define quirk mob.
-	var/mob/living/carbon/human/quirk_mob = quirk_holder
+	//var/mob/living/carbon/human/quirk_mob = quirk_holder
 
 	// Remove the holy trait.
 	//REMOVE_TRAIT(quirk_mob, TRAIT_HOLY, "quirk_hallowed")
@@ -267,7 +267,7 @@
 	//REMOVE_TRAIT(quirk_mob, TRAIT_ANTIMAGIC, "quirk_hallowed")
 
 	// Makes the user not holy.
-	quirk_mob.mind.isholy = FALSE
+	//quirk_mob.mind.isholy = FALSE
 
 	// Remove examine text
 	UnregisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE)

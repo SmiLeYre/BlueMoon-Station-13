@@ -63696,6 +63696,7 @@
 /area/hallway/primary/fore)
 "eGA" = (
 /obj/machinery/light,
+/mob/living/simple_animal/pet/cat/floppa,
 /turf/open/floor/carpet,
 /area/command/blueshieldoffice)
 "eHx" = (

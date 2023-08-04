@@ -3672,6 +3672,9 @@
 	dir = 5
 	},
 /obj/machinery/holopad,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "amO" = (
@@ -9695,9 +9698,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
-	},
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
 	},
 /obj/machinery/light{
 	dir = 4
@@ -45172,7 +45172,7 @@
 	dir = 6
 	},
 /obj/structure/cable/yellow{
-	icon_state = "2-4"
+	icon_state = "1-2"
 	},
 /turf/open/floor/wood,
 /area/service/lawoffice)
@@ -51399,6 +51399,10 @@
 /obj/structure/lattice/catwalk,
 /turf/open/space,
 /area/solars/port/aft)
+"fFZ" = (
+/mob/living/simple_animal/pet/cat/floppa,
+/turf/open/floor/wood,
+/area/command/blueshieldoffice)
 "fGc" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
@@ -57151,12 +57155,6 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /turf/open/floor/plasteel,
 /area/engineering/main)
-"iJW" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/turf/closed/wall,
-/area/service/lawoffice)
 "iKH" = (
 /obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk,
@@ -57679,9 +57677,6 @@
 "jcc" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 9
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
 	},
 /turf/open/floor/wood,
 /area/service/lawoffice)
@@ -58590,6 +58585,9 @@
 "jzU" = (
 /obj/structure/chair{
 	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
 	},
 /turf/open/floor/wood,
 /area/service/lawoffice)
@@ -81511,7 +81509,7 @@
 "vGM" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /obj/structure/cable/yellow{
-	icon_state = "1-2"
+	icon_state = "1-8"
 	},
 /turf/open/floor/wood,
 /area/service/lawoffice)
@@ -82852,9 +82850,6 @@
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
 "wrQ" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
 /obj/machinery/firealarm{
 	dir = 8;
 	pixel_x = 24
@@ -85452,9 +85447,6 @@
 "xEu" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
 	},
 /turf/open/floor/wood,
 /area/service/lawoffice)
@@ -102113,7 +102105,7 @@ syk
 ies
 guo
 pyU
-pyU
+fFZ
 oAe
 nAT
 rVf
@@ -118273,7 +118265,7 @@ hqQ
 kpk
 xzh
 amK
-soy
+xEu
 kzf
 xEu
 vGM
@@ -118531,7 +118523,7 @@ lNc
 bCV
 aNq
 fmK
-iJW
+lNc
 wrQ
 dKg
 bWV

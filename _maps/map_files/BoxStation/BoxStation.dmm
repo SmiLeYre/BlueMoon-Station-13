@@ -59968,6 +59968,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/commons/dorms)
+"rkj" = (
+/mob/living/simple_animal/pet/cat/floppa,
+/turf/open/floor/carpet,
+/area/command/blueshieldoffice)
 "rkS" = (
 /obj/machinery/food_cart,
 /turf/open/floor/plasteel/showroomfloor,
@@ -93590,7 +93594,7 @@ anz
 aov
 tAB
 lLZ
-oxU
+rkj
 fRD
 nHk
 hyQ

@@ -123,6 +123,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/ak12
 	can_suppress = FALSE
+	weapon_weight = WEAPON_HEAVY
 	burst_size = 2
 	fire_delay = 2
 	fire_sound = 'modular_bluemoon/krashly/sound/ak12_fire.ogg'
@@ -155,3 +156,6 @@
 	name = "\improper AK-12 hollow-point magazine"
 	desc = "magazine able to hold 30 rounds of hollow-point 5.45 ammo."
 	ammo_type = /obj/item/ammo_casing/a556/hp
+
+/obj/item/gun/ballistic/automatic/ak12/pindicate
+	pin = /obj/item/firing_pin/implant/pindicate

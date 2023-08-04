@@ -9,6 +9,9 @@
 	ammo_x_offset = 1
 	shaded_charge = 1
 
+/obj/item/gun/energy/laser/pindicate
+	pin = /obj/item/firing_pin/implant/pindicate
+
 /obj/item/gun/energy/laser/practice
 	name = "practice laser gun"
 	icon_state = "laser-p"
@@ -64,10 +67,10 @@
 	name = "laser carbine"
 	desc = "A ruggedized laser carbine featuring much higher capacity and improved handling when compared to a normal laser gun."
 	icon_state = "lasernew"
-	item_state = "lasernew"
+	item_state = "laser-wielded"
 	slot_flags = ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = WEAPON_HEAVY
 	inaccuracy_modifier = 0.7
 	force = 10
 	throwforce = 10

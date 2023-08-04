@@ -760,7 +760,8 @@
 		/obj/item/gun/energy/e_gun/mini,
 		/obj/item/gun/ballistic/automatic/magrifle/pistol,
 		/obj/item/gun/energy/disabler,
-		/obj/item/gun/energy/taser
+		/obj/item/gun/energy/taser,
+		/obj/item/gun/ballistic/revolver/doublebarrel/sawn
 		))
 
 /obj/item/storage/belt/holster/full/PopulateContents()

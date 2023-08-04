@@ -153,7 +153,7 @@
 		"Surgeon",
 		"Medical Secretary",
 		"Emergency Physician",
-		"Field Surgeon" 
+		"Field Surgeon"
 		)
 
 /datum/job/geneticist
@@ -182,9 +182,7 @@
 
 /datum/job/officer
 	alt_titles = list(
-		"Security Cadet",
 		"Security Guard",
-		"Peacekeeper",
 		"Enforcer"
 		)
 

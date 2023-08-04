@@ -163,6 +163,7 @@
 					/obj/item/clothing/head/HoS/beret/sol/plain/armorless = 2,
 					/obj/item/clothing/head/HoS/beret/sol/cap/armorless = 2,
 					/obj/item/clothing/head/HoS/beret/nri/cap/armorless = 2,
+					/obj/item/clothing/head/helmet/aviator_helmet/no_armor = 3,
 					)
 	contraband = list(/obj/item/clothing/suit/judgerobe = 1,
 					/obj/item/clothing/head/powdered_wig = 1,

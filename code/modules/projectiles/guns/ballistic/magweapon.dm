@@ -2,7 +2,7 @@
 	name = "magnetic rifle"
 	desc = "A simple upscalling of the technologies used in the magpistol, the magrifle is capable of firing slightly larger slugs in bursts. Compatible with the magpistol's slugs."
 	icon_state = "magrifle"
-	item_state = "arg"
+	item_state = "arifle-wielded"
 	force = 10
 	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/mmag
@@ -16,7 +16,7 @@
 	casing_ejector = FALSE
 	inaccuracy_modifier = 0.15
 	dualwield_spread_mult = 1.4
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = WEAPON_HEAVY
 	w_class = WEIGHT_CLASS_BULKY
 	var/obj/item/stock_parts/cell/cell
 	var/cell_type = /obj/item/stock_parts/cell/magnetic

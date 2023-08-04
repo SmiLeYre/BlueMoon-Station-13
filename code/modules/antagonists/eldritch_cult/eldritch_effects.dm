@@ -101,19 +101,20 @@
 	is_in_use = FALSE
 	to_chat(user,"<span class='warning'>Your ritual failed! You either used the wrong components or are missing something important!</span>")
 
+// BlueMoon edit. Transforming 3x3 runes into the regular dull variants
 /obj/effect/eldritch/big
 	name = "transmutation rune"
-	icon = 'icons/effects/96x96.dmi'
-	icon_state = "eldritch_rune1"
-	pixel_x = -32 //So the big ol' 96x96 sprite shows up right
-	pixel_y = -32
+	icon = 'icons/obj/rune.dmi'
+	icon_state = "eld"
+	//pixel_x = -32 // BlueMoon edit
+	//pixel_y = -32
 
 /// A 3x3 heretic rune. The kind heretics actually draw in game.
 /obj/effect/eldritch/huge
-	icon = 'icons/effects/96x96.dmi'
-	icon_state = "transmutation_rune"
-	pixel_x = -33 //So the big ol' 96x96 sprite shows up right
-	pixel_y = -32
+	icon = 'icons/obj/rune.dmi'
+	icon_state = "eld"
+	//pixel_x = -33 // BlueMoon edit
+	//pixel_y = -32
 
 /**
  * #Reality smash tracker
