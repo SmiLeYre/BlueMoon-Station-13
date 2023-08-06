@@ -176,7 +176,7 @@
 	desc = "Bring three corpses onto a transmutation rune. After you finish the ritual, rust will now automatically spread from the rune. Your healing on rust is also tripled, while you become more resilient overall."
 	gain_text = "Champion of rust. Corruptor of steel. Fear the dark for the Rustbringer has come! Rusted Hills, CALL MY NAME!"
 	cost = 5
-	sacs_needed = 8
+	sacs_needed = 5
 	required_atoms = list(/mob/living/carbon/human)
 	route = PATH_RUST
 

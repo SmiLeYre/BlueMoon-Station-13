@@ -174,7 +174,7 @@
 	desc = "Bring 3 corpses onto the transmutation rune. After you finish the ritual you will automatically silence people around you and will summon a snow storm around you."
 	gain_text = "The world falls into darkness. I stand in an empty plane, small flakes of ice fall from the sky. The Aristocrat stands before me, he motions to me. We will play a waltz to the whispers of dying reality, as the world is destroyed before our eyes."
 	cost = 5
-	sacs_needed = 8
+	sacs_needed = 5
 	required_atoms = list(/mob/living/carbon/human)
 	route = PATH_VOID
 	///soundloop for the void theme

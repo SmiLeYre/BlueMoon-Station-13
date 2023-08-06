@@ -181,6 +181,12 @@
 	..()
 	. = 1
 
+//BlueMoon. Сахар токсичен для воксов
+/datum/reagent/consumable/sugar/on_mob_life(mob/living/carbon/M)
+	if(isvox(M))
+		M.adjustToxLoss(3)
+	return ..()
+
 /datum/reagent/consumable/virus_food
 	name = "Virus Food"
 	description = "A mixture of water and milk. Virus cells can use this mixture to reproduce."

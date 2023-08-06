@@ -344,6 +344,8 @@ ROUNDSTART_RACES undead_insect
 ROUNDSTART_RACES ghoul_lizard
 ROUNDSTART_RACES podweak
 
+ROUNDSTART_RACES vox
+
 ##-------------------------------------------------------------------------------------------
 
 ## Uncomment to give players the choice of joining as a human with mutant bodyparts before they join the game

@@ -228,7 +228,7 @@
 
 /datum/supply_pack/emergency/plasmaman
 	name = "Plasmaman Supply Kit"
-	desc = "Поддерживайте жизнь этих плазмаменов с помощью двух комплектов одежды."
+	desc = "Два комплекта поддержания жизни плазмаменов."
 	cost = 2000
 	contains = list(/obj/item/clothing/under/plasmaman,
 					/obj/item/clothing/under/plasmaman,

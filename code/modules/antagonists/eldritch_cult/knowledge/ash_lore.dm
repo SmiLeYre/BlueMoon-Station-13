@@ -186,7 +186,7 @@
 	desc = "Bring 3 corpses onto a transmutation rune, you will become immune to fire, the vacuum of space, cold and other enviromental hazards and become overall sturdier to all other damages. You will gain a spell that passively creates ring of fire around you as well ,as you will gain a powerful ability that lets you create a wave of flames all around you."
 	required_atoms = list(/mob/living/carbon/human)
 	cost = 5
-	sacs_needed = 8
+	sacs_needed = 5
 	route = PATH_ASH
 	var/list/trait_list = list(TRAIT_NOBREATH,TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE)
 

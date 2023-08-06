@@ -588,13 +588,23 @@ There are several things that need to be remembered:
 			var/alt_icon = H.mob_overlay_icon || 'icons/mob/clothing/head.dmi'
 			var/muzzled = FALSE
 			var/variation_flag = NONE
-			if(dna.species.mutant_bodyparts["mam_snouts"] && dna.features["mam_snouts"] != "None")
+			var/vox = FALSE
+			if (dna.species.mutant_bodyparts["mam_snouts"] && dna.features["mam_snouts"] == "Vox")
+				muzzled = FALSE
+				vox = TRUE
+			else if(dna.species.mutant_bodyparts["mam_snouts"] && dna.features["mam_snouts"] != "None" && dna.features["mam_snouts"] != "Vox")
 				muzzled = TRUE
-			else if(dna.species.mutant_bodyparts["snout"] && dna.features["snout"] != "None")
+				vox = FALSE
+			else if(dna.species.mutant_bodyparts["snout"] && dna.features["snout"] != "None" && dna.features["snout"] != "Vox")
 				muzzled = TRUE
+				vox = FALSE
 			if(muzzled && H.mutantrace_variation & STYLE_MUZZLE && !(H.mutantrace_variation & STYLE_NO_ANTHRO_ICON))
 				alt_icon = H.anthro_mob_worn_overlay || 'icons/mob/clothing/head_muzzled.dmi'
 				variation_flag |= STYLE_MUZZLE
+			else if(!muzzled && vox)
+				alt_icon = H.anthro_mob_worn_overlay || 'icons/mob/clothing/head_vox.dmi'
+				variation_flag |= STYLE_MUZZLE
+
 
 			overlays_standing[HEAD_LAYER] = H.build_worn_icon(HEAD_LAYER, alt_icon, FALSE, NO_FEMALE_UNIFORM, H.icon_state, variation_flag, FALSE)
 			var/mutable_appearance/head_overlay = overlays_standing[HEAD_LAYER]
@@ -737,14 +747,21 @@ There are several things that need to be remembered:
 			var/alt_icon = M.mob_overlay_icon || 'icons/mob/clothing/mask.dmi'
 			var/muzzled = FALSE
 			var/variation_flag = NONE
+			var/vox = FALSE
 			if(head && (head.flags_inv & HIDEMASK))
 				return
-			if(dna.species.mutant_bodyparts["mam_snouts"] && dna.features["mam_snouts"] != "None")
+			if (dna.species.mutant_bodyparts["mam_snouts"] && dna.features["mam_snouts"] == "Vox")
+				muzzled = FALSE
+				vox = TRUE
+			else if(dna.species.mutant_bodyparts["mam_snouts"] && dna.features["mam_snouts"] != "None" && dna.features["mam_snouts"] != "Vox")
 				muzzled = TRUE
-			else if(dna.species.mutant_bodyparts["snout"] && dna.features["snout"] != "None")
+			else if(dna.species.mutant_bodyparts["snout"] && dna.features["snout"] != "None" && dna.features["snout"] != "Vox")
 				muzzled = TRUE
 			if(muzzled && M.mutantrace_variation & STYLE_MUZZLE && !(M.mutantrace_variation & STYLE_NO_ANTHRO_ICON))
 				alt_icon = M.anthro_mob_worn_overlay || 'icons/mob/clothing/mask_muzzled.dmi'
+				variation_flag |= STYLE_MUZZLE
+			else if(!muzzled && vox)
+				alt_icon = M.anthro_mob_worn_overlay || 'icons/mob/clothing/mask_vox.dmi'
 				variation_flag |= STYLE_MUZZLE
 
 			var/mutable_appearance/mask_overlay = M.build_worn_icon(FACEMASK_LAYER, alt_icon, FALSE, NO_FEMALE_UNIFORM, wear_mask.icon_state, variation_flag, FALSE)

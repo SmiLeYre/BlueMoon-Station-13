@@ -4027,6 +4027,7 @@
 #include "modular_bluemoon\kovac_shitcode\code\solfed.dm"
 #include "modular_bluemoon\kovac_shitcode\code\speech_bubbles.dm"
 #include "modular_bluemoon\kovac_shitcode\code\sprite_update.dm"
+#include "modular_bluemoon\kovac_shitcode\code\vox.dm"
 #include "modular_bluemoon\kovac_shitcode\code\clothing\mask.dm"
 #include "modular_bluemoon\kovac_shitcode\code\datums\bark.dm"
 #include "modular_bluemoon\kovac_shitcode\code\datums\ert.dm"

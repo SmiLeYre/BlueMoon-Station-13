@@ -378,6 +378,7 @@
 #define BREATH_OXY		/datum/breathing_class/oxygen
 #define BREATH_PLASMA	/datum/breathing_class/plasma
 #define BREATH_METHANE	/datum/breathing_class/methane
+#define BREATH_NITROGEN	/datum/breathing_class/nitrogen
 
 //Gremlins
 #define NPC_TAMPER_ACT_FORGET 1 //Don't try to tamper with this again

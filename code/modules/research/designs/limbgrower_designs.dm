@@ -222,3 +222,39 @@
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
 	build_path = /obj/item/organ/genital/butt
 	category = list("initial","human","lizard","fly","insect","plasmaman","mammal","xeno")
+
+
+
+///BlueMoon
+///Выносим лёгкие и язык вокса в категорию Other. Добавляем отсутствовашие раннее органы - там же
+/datum/design/lungs_vox
+	name = "Vox Lungs"
+	id = "lungs_vox"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
+	build_path = /obj/item/organ/lungs/vox
+	category = list("other")
+
+/datum/design/tongue_vox
+	name = "Vox Tongue"
+	id = "tongue_vox"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
+	build_path = /obj/item/organ/tongue/vox
+	category = list("other")
+
+/datum/design/tongue_canine
+	name = "Canine Tongue"
+	id = "tongue_canine"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
+	build_path = /obj/item/organ/tongue/canine
+	category = list("other")
+
+/datum/design/tongue_feline
+	name = "Feline Tongue"
+	id = "tongue_feline"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
+	build_path = /obj/item/organ/tongue/feline
+	category = list("other")
