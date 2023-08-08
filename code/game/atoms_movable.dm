@@ -874,3 +874,11 @@
 
 	for (var/atom/movable/content as anything in src) // Notify contents of Z-transition.
 		content.on_changed_z_level(old_turf, new_turf, same_z_layer)
+
+/**
+* A wrapper for setDir that should only be able to fail by living mobs.
+*
+* Called from [/atom/movable/proc/keyLoop], this exists to be overwritten by living mobs with a check to see if we're actually alive enough to change directions
+*/
+/atom/movable/proc/keybind_face_direction(direction)
+	setDir(direction)

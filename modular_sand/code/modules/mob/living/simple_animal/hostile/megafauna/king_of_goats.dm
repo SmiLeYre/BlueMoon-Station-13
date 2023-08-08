@@ -58,13 +58,17 @@ Difficulty: Insanely Hard
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
 	var/stun_chance = 5 //chance per attack to Weaken target
-	glorymessageshand = list("grabs the goat by it's horns, then repeatedly knees it in the face until it's skull cracks open and it fucking dies!", "rips off one of the goat's horns bare-handed, then stabs through their skull with it, killing it!")
-	glorymessagescrusher = list("slashes both of the goat's horns with their crusher, then chops it's face in half with it!")
-	glorymessagespka = list("shoots at goat's maw, the goat seemingly gulping down the blast and exploding!", "kicks the goat into the air, then shoots it in the gut with their PKA's blast, showering everything in... goat guts!")
-	glorymessagespkabayonet = list("repeatedly stabs through the goat's eye and skull with their PKAA's bayonet, until it finally gives up and lets go of their life!")
-	gloryhealth = 50
-	glorythreshold = 50
 	crusher_loot = list(/obj/item/crusher_trophy/king_goat)
+
+/mob/living/simple_animal/hostile/megafauna/king/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/glory_kill, \
+		messages_unarmed = list("grabs the goat by it's horns, then repeatedly knees it in the face until it's skull cracks open and it fucking dies!", "rips off one of the goat's horns bare-handed, then stabs through their skull with it, killing it!"), \
+		messages_crusher = list("slashes both of the goat's horns with their crusher, then chops it's face in half with it!"), \
+		messages_pka = list("shoots at goat's maw, the goat seemingly gulping down the blast and exploding!", "kicks the goat into the air, then shoots it in the gut with their PKA's blast, showering everything in... goat guts!"), \
+		messages_pka_bayonet = list("repeatedly stabs through the goat's eye and skull with their PKAA's bayonet, until it finally gives up and lets go of their life!"), \
+		health_given = 50, \
+		threshold = 50)
 
 /mob/living/simple_animal/hostile/megafauna/king/ex_act(severity, target, origin)
 	switch (severity)
@@ -107,12 +111,12 @@ Difficulty: Insanely Hard
 		return A
 	return ..()
 
-/mob/living/simple_animal/hostile/retaliate/goat/guard/Found(atom/A)
+/mob/living/simple_animal/hostile/goat/guard/Found(atom/A)
 	if(isliving(A))
 		return A
 	return ..()
 
-/mob/living/simple_animal/hostile/retaliate/goat/guard
+/mob/living/simple_animal/hostile/goat/guard
 	name = "honour guard"
 	desc = "A very handsome and noble beast."
 	icon = 'modular_sand/icons/mob/king_of_goats.dmi'
@@ -134,7 +138,7 @@ Difficulty: Insanely Hard
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 
-/mob/living/simple_animal/hostile/retaliate/goat/guard/master
+/mob/living/simple_animal/hostile/goat/guard/master
 	name = "master of the guard"
 	desc = "A very handsome and noble beast - the most trusted of all the king's men."
 	icon_state = "goat_guard_m"
@@ -147,7 +151,7 @@ Difficulty: Insanely Hard
 	melee_damage_upper = 20
 	move_to_delay = 3
 
-/mob/living/simple_animal/hostile/retaliate/goat/guard/pope
+/mob/living/simple_animal/hostile/goat/guard/pope
 	name = "Goat Pope"
 	desc = "For what is a God without a pope to spread their holy words"
 	icon_state = "goat_pope"
@@ -182,9 +186,9 @@ Difficulty: Insanely Hard
 		else if(prob(5)) //spawn adds
 			spellscast++
 			visible_message("<span class='cult'>\The [src] summons the imperial guard to his aid, and they appear in a flash!</span>")
-			var/mob/living/simple_animal/hostile/retaliate/goat/guard/master/M = new(get_step(src,pick(GLOB.cardinals)))
+			var/mob/living/simple_animal/hostile/goat/guard/master/M = new(get_step(src,pick(GLOB.cardinals)))
 			M.enemies |= enemies
-			var/mob/living/simple_animal/hostile/retaliate/goat/guard/G = new(get_step(src,pick(GLOB.cardinals)))
+			var/mob/living/simple_animal/hostile/goat/guard/G = new(get_step(src,pick(GLOB.cardinals)))
 			G.enemies |= enemies
 			G = new(get_step(src,pick(GLOB.cardinals)))
 			G.enemies |= enemies

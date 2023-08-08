@@ -4,10 +4,6 @@
 #define MOVING_TO_TARGET 3
 #define SPINNING_COCOON 4
 
-/mob/living/simple_animal/hostile/poison
-	var/poison_per_bite = 5
-	var/poison_type = /datum/reagent/toxin
-
 /mob/living/simple_animal/hostile/poison/AttackingTarget()
 	. = ..()
 	if(. && isliving(target))

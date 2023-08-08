@@ -818,9 +818,9 @@
 	var/currently_disguised = FALSE
 	var/static/list/mob_blacklist = typecacheof(list(
 		/mob/living/simple_animal/pet,
-		/mob/living/simple_animal/hostile/retaliate/goose,
+		/mob/living/simple_animal/hostile/goose,
 		/mob/living/simple_animal/hostile/poison,
-		/mob/living/simple_animal/hostile/retaliate/goat,
+		/mob/living/simple_animal/hostile/goat,
 		/mob/living/simple_animal/cow,
 		/mob/living/simple_animal/chick,
 		/mob/living/simple_animal/chicken,
@@ -841,7 +841,7 @@
 		/mob/living/carbon/monkey,
 		/mob/living/simple_animal/hostile/gorilla,
 		/mob/living/carbon/alien/larva,
-		/mob/living/simple_animal/hostile/retaliate/frog
+		/mob/living/simple_animal/hostile/frog
 	))
 
 

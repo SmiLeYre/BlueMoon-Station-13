@@ -1,6 +1,6 @@
 #define GOOSE_SATIATED 50
 
-/mob/living/simple_animal/hostile/retaliate/goose
+/mob/living/simple_animal/hostile/goose
 	name = "goose"
 	desc = "It's loose"
 	icon_state = "goose" // sprites by cogwerks from goonstation, used with permission
@@ -33,7 +33,7 @@
 	gold_core_spawnable = HOSTILE_SPAWN
 	var/random_retaliate = TRUE
 
-/mob/living/simple_animal/hostile/retaliate/goose/handle_automated_movement()
+/mob/living/simple_animal/hostile/goose/handle_automated_movement()
 	. = ..()
 	if(prob(5) && random_retaliate == TRUE)
 		Retaliate()

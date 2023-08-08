@@ -59,7 +59,7 @@
 	allowed_mob = allowedmob
 	. = ..()
 
-/obj/structure/spider/stickyweb/genetic/CanPass(atom/movable/mover, turf/target)
+/obj/structure/spider/stickyweb/genetic/CanPass(atom/movable/mover, turf/target, mob/living/carbon/human/H)
 	. = ..() //this is the normal spider web return aka a spider would make this TRUE
 	if(mover == allowed_mob)
 		return TRUE
@@ -68,6 +68,7 @@
 			return TRUE
 		if(prob(50))
 			to_chat(mover, "<span class='danger'>You get stuck in \the [src] for a moment.</span>")
+			H.Confused(10 SECONDS)
 			return FALSE
 		return TRUE
 	else if(istype(mover, /obj/item/projectile))
@@ -164,6 +165,18 @@
 		playsound(loc, 'sound/effects/snap.ogg', 25)
 		qdel(src)
 		return TRUE
+
+/obj/structure/spider/spiderling/proc/random_skitter()
+	var/list/available_turfs = list()
+	for(var/turf/open/floor/holofloor/S in oview(10, src))
+		// no !isspaceturf check needed since /turf/simulated is not a subtype of /turf/space
+		if(S.density)
+			continue
+		available_turfs += S
+	if(!length(available_turfs))
+		return FALSE
+	walk_to(src, pick(available_turfs))
+	return TRUE
 
 /obj/structure/spider/spiderling/process()
 	if(travelling_in_vent)

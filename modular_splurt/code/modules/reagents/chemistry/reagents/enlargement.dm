@@ -29,6 +29,7 @@
 	taste_description = "blueberry gum"
 	overdose_threshold = 17
 	can_synth = FALSE
+	value = REAGENT_VALUE_COMMON
 
 /datum/reagent/fermi/belly_inflator/on_mob_metabolize(mob/living/carbon/M)
 	. = ..()
@@ -82,6 +83,7 @@
 	description = "A medicine used to treat a patient's heavily bloated stomach"
 	metabolization_rate = 0.5
 	can_synth = TRUE
+	value = REAGENT_VALUE_COMMON
 
 /datum/reagent/fermi/GEsmaller_hypo/on_mob_metabolize(mob/living/M)
 	. = ..()

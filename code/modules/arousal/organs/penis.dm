@@ -74,6 +74,32 @@
 	icon_state = "penis_[icon_shape]_[size]"
 	var/lowershape = lowertext(shape)
 
+	switch(lowershape)
+		if("penis")
+			lowershape = "человеческий"
+		if("Human")
+			lowershape = "человеческий"
+		if("Knotted")
+			lowershape = "узловатый"
+		if("Flared")
+			lowershape = "конический"
+		if("Barbed, Knotted")
+			lowershape = "узловатый и немного колючий"
+		if("Tapered")
+			lowershape = "утончённый"
+		if("Tentacled")
+			lowershape = "тентяклевидный"
+		if("Hemi")
+			lowershape = "двойной"
+		if("Knotted Hemi")
+			lowershape = "двойной узловатый"
+		if("Barbed, Knotted Hemi")
+			lowershape = "двойной, узловатый и немного колючий"
+		if("Thick")
+			lowershape = "обрезанный"
+		else
+			lowershape = "членовидный"
+
 	if(owner)
 		if(owner.dna.species.use_skintones && owner.dna.features["genitals_use_skintone"])
 			if(ishuman(owner)) // Check before recasting type, although someone fucked up if you're not human AND have use_skintones somehow...
@@ -88,7 +114,7 @@
 			if(T.taur_mode & S.accepted_taurs) //looks out of place on those.
 				lowershape = "крупный таурский, [lowershape]"
 
-	desc = "Вы наблюдаете [lowershape] [aroused_state ? "эрегированный" : "висящий"] [pick(GLOB.dick_nouns)]. По вашим оценкам, он примерно [round(length*get_size(owner), 0.25)] [round(length*get_size(owner), 0.25) != 1 ? "" : ""] сантиметров в длину и [round(diameter*get_size(owner), 0.25)] [round(diameter*get_size(owner), 0.25) != 1 ? "" : ""] сантиметров в ширину."
+	desc = "Вы наблюдаете [aroused_state ? "эрегированный" : "висящий"] [lowershape] [pick(GLOB.dick_nouns)]. По вашим оценкам, он примерно [round(length*get_size(owner), 0.25)] [round(length*get_size(owner), 0.25) != 1 ? "" : ""] сантиметров в длину и [round(diameter*get_size(owner), 0.25)] [round(diameter*get_size(owner), 0.25) != 1 ? "" : ""] сантиметров в ширину."
 
 /obj/item/organ/genital/penis/get_features(mob/living/carbon/human/H)
 	var/datum/dna/D = H.dna

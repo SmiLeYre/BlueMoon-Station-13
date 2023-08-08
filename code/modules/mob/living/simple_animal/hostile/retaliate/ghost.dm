@@ -1,4 +1,4 @@
-/mob/living/simple_animal/hostile/retaliate/ghost
+/mob/living/simple_animal/hostile/ghost
 	name = "ghost"
 	desc = "A soul of the dead, spooky."
 	icon = 'icons/mob/mob.dmi'
@@ -45,7 +45,7 @@
 	var/mutable_appearance/ghost_facial_hair
 	var/random = TRUE //if you want random names for ghosts or not
 
-/mob/living/simple_animal/hostile/retaliate/ghost/Initialize(mapload)
+/mob/living/simple_animal/hostile/ghost/Initialize(mapload)
 	. = ..()
 	give_hair()
 	set_light(1, 2) // same glowing as visible player ghosts
@@ -57,7 +57,7 @@
 				name = "ghost of [pick(GLOB.first_names_female)] [pick(GLOB.last_names)]"
 
 
-/mob/living/simple_animal/hostile/retaliate/ghost/proc/give_hair()
+/mob/living/simple_animal/hostile/ghost/proc/give_hair()
 	if(ghost_hair_style != null)
 		ghost_hair = mutable_appearance('icons/mob/hair.dmi', "hair_[ghost_hair_style]", -HAIR_LAYER)
 		ghost_hair.alpha = 200

@@ -191,3 +191,6 @@
 
 	/// AFK tracking
 	var/last_activity = 0
+
+	///Are we locking our movement input?
+	var/movement_locked = FALSE

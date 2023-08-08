@@ -232,6 +232,11 @@ Key procs
 	spoken_languages = list(/datum/language/xenocommon = list(LANGUAGE_ATOM))
 	blocked_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
 
+/datum/language_holder/terror_spiders
+	understood_languages = list(/datum/language/terrorspiders = list(LANGUAGE_ATOM))
+	spoken_languages = list(/datum/language/terrorspiders = list(LANGUAGE_ATOM))
+	blocked_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
+
 /datum/language_holder/clockmob
 	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
 								/datum/language/ratvar = list(LANGUAGE_ATOM))
@@ -321,7 +326,12 @@ Key procs
 								/datum/language/modular_sand/solcommon = list(LANGUAGE_ATOM),
 								/datum/language/modular_sand/technorussian = list(LANGUAGE_ATOM),
 								/datum/language/modular_sand/dunmeri = list(LANGUAGE_ATOM),
-								/datum/language/modular_sand/sergal = list(LANGUAGE_ATOM))
+								/datum/language/modular_sand/sergal = list(LANGUAGE_ATOM),
+								/datum/language/modular_bluemoon/german = list(LANGUAGE_ATOM),
+								/datum/language/vulpkanin = list(LANGUAGE_ATOM),
+								/datum/language/tajaran = list(LANGUAGE_ATOM),
+								/datum/language/drone = list(LANGUAGE_ATOM),
+								/datum/language/signlanguage = list(LANGUAGE_ATOM))
 	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
 							/datum/language/machine = list(LANGUAGE_ATOM),
 							/datum/language/draconic = list(LANGUAGE_ATOM),
@@ -332,7 +342,12 @@ Key procs
 							/datum/language/modular_sand/solcommon = list(LANGUAGE_ATOM),
 							/datum/language/modular_sand/technorussian = list(LANGUAGE_ATOM),
 							/datum/language/modular_sand/dunmeri = list(LANGUAGE_ATOM),
-							/datum/language/modular_sand/sergal = list(LANGUAGE_ATOM))
+							/datum/language/modular_sand/sergal = list(LANGUAGE_ATOM),
+							/datum/language/modular_bluemoon/german = list(LANGUAGE_ATOM),
+							/datum/language/vulpkanin = list(LANGUAGE_ATOM),
+							/datum/language/tajaran = list(LANGUAGE_ATOM),
+							/datum/language/drone = list(LANGUAGE_ATOM),
+							/datum/language/signlanguage = list(LANGUAGE_ATOM))
 
 /datum/language_holder/venus
 	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
@@ -350,6 +365,12 @@ Key procs
 								/datum/language/arachnid = list(LANGUAGE_ATOM))
 	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
 							/datum/language/arachnid = list(LANGUAGE_ATOM))
+
+/datum/language_holder/vox
+	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
+								/datum/language/modular_bluemoon/vox = list(LANGUAGE_ATOM))
+	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
+							/datum/language/modular_bluemoon/vox = list(LANGUAGE_ATOM))
 
 /datum/language_holder/empty
 	understood_languages = list()

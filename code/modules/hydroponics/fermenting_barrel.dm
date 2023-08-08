@@ -82,7 +82,7 @@
 	density = TRUE
 	anchored = FALSE
 	pressure_resistance = 2 * ONE_ATMOSPHERE
-	max_integrity = 300
+	max_integrity = 1500
 	var/open = FALSE
 
 /obj/structure/custom_keg/Initialize(mapload)

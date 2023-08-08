@@ -169,6 +169,16 @@
 	icon_state = "fuel_high"
 	tank_volume = 5000
 
+/obj/structure/reagent_dispensers/fueltank/limitka
+	name = "Топливный Держатель MK. Лимитка"
+	desc = "<font size=+2><b>Пиздец, блядь, нахуй!</b></font>"
+	icon_state = "fuel_pizdec"
+	tank_volume = 100000
+
+/obj/structure/reagent_dispensers/fueltank/limitka/explode()
+	explosion(src, heavy_impact_range = 7, light_impact_range = 14, flame_range = 21, flash_range = 34)
+	qdel(src)
+
 /obj/structure/reagent_dispensers/fueltank/proc/explode()
 	explosion(get_turf(src), 0, 1, 5, flame_range = 5)
 	qdel(src)
@@ -301,8 +311,26 @@
 	icon_state = "beer"
 	reagent_id = /datum/reagent/consumable/ethanol/beer
 
+/obj/structure/reagent_dispensers/beerkeg/attack_animal(mob/living/simple_animal/M)
+	if(isdog(M))
+		explosion(src, light_impact_range = 3, flame_range = 5, flash_range = 10)
+		playsound(src, 'sound/effects/kega.ogg', 100, 1)
+		if(!QDELETED(src))
+			qdel(src)
+		return TRUE
+	. = ..()
+
+/obj/structure/reagent_dispensers/beerkeg/attacked_by(mob/living/carbon/human/M)
+	if(ismammal(M))
+		explosion(src, light_impact_range = 3, flame_range = 5, flash_range = 10)
+		playsound(src, 'sound/effects/kega.ogg', 100, 1)
+		if(!QDELETED(src))
+			qdel(src)
+		return TRUE
+	. = ..()
+
 /obj/structure/reagent_dispensers/beerkeg/blob_act(obj/structure/blob/B)
-	explosion(src.loc,0,3,5,7,10)
+	explosion(src, light_impact_range = 3, flame_range = 5, flash_range = 10)
 	if(!QDELETED(src))
 		qdel(src)
 

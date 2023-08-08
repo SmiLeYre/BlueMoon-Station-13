@@ -11,7 +11,7 @@
 /turf/open/indestructible/diamond,
 /area/ruin/lavaland/powered/kinggoat_arena)
 "d" = (
-/mob/living/simple_animal/hostile/retaliate/goat/guard/pope,
+/mob/living/simple_animal/hostile/goat/guard/pope,
 /turf/open/indestructible/diamond,
 /area/ruin/lavaland/powered/kinggoat_arena)
 "e" = (

@@ -11456,7 +11456,7 @@
 "atW" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/mob/living/simple_animal/hostile/retaliate/ghost,
+/mob/living/simple_animal/hostile/ghost,
 /turf/open/floor/wood{
 	icon_state = "wood-broken"
 	},
@@ -30497,7 +30497,7 @@
 	},
 /area/maintenance/port/fore)
 "aZB" = (
-/mob/living/simple_animal/hostile/retaliate/goat{
+/mob/living/simple_animal/hostile/goat{
 	name = "Pete"
 	},
 /turf/open/floor/plasteel,
@@ -35499,6 +35499,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/mob/living/simple_animal/pet/dog/corgi/pig,
 /turf/open/floor/plasteel/showroomfloor,
 /area/service/kitchen)
 "bhk" = (
@@ -68952,7 +68953,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
 	},
-/mob/living/simple_animal/hostile/retaliate/bat{
+/mob/living/simple_animal/hostile/bat{
 	desc = "A failed experiment of Nanotrasen to create weaponised carp technology. This less than intimidating carp now serves as an authority figure's pet.";
 	emote_taunt = list("gnashes");
 	faction = list("carp");
@@ -82952,21 +82953,6 @@
 	},
 /turf/open/floor/grass/grass0,
 /area/medical/genetics)
-"hfH" = (
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/landmark/start/ntr,
-/turf/open/floor/plasteel/dark/corner{
-	dir = 4
-	},
-/area/hallway/primary/fore)
 "hgW" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/structure/chair/stool,
@@ -83233,7 +83219,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/retaliate/ghost,
+/mob/living/simple_animal/hostile/ghost,
 /turf/open/floor/plasteel/dark,
 /area/maintenance/starboard/fore)
 "iXU" = (
@@ -85511,6 +85497,13 @@
 	},
 /turf/open/space/basic,
 /area/space/nearstation)
+"uQO" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	dir = 8
+	},
+/obj/effect/landmark/start/ntr,
+/turf/open/floor/plasteel,
+/area/command/bridge)
 "uRM" = (
 /turf/open/floor/wood,
 /area/commons/vacant_room/office)
@@ -112041,7 +112034,7 @@ dah
 aEA
 aAW
 aIm
-hfH
+ahF
 aPk
 cfa
 btE
@@ -116176,7 +116169,7 @@ aqc
 biv
 aqM
 bsE
-buo
+uQO
 aGG
 byr
 bzL

@@ -1,3 +1,20 @@
 2023-08-02:
   Yawet330:
   - bugfix: sydnicate -> Syndicate
+2023-08-04:
+  SandPoot:
+  - rscdel: There is no longer a minimum vote amount for extending rounds.
+2023-08-05:
+  miguelop1:
+  - bugfix: Ghost can't Speen anymore, fixed a small part of code that wasn't finished
+      (return FALSE). If it breaks blame Kepler xD
+  SandPoot:
+  - refactor: Glory killing has been componentized with (hopefully) better code.
+  - bugfix: Some megafauna will no longer die to lava/storms.
+  - tweak: Redundant code has been removed.
+  - code_imp: Turns out we had some extra tumor bosses that weren't on the pool, they
+      now have been added.
+  - bugfix: Watchers were meant to be glory killable, they are now.
+2023-08-07:
+  BongaTheProto:
+  - bugfix: Bellies and butts won't suddenly disappear when expanding

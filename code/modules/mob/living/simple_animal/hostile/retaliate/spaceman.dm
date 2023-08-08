@@ -1,4 +1,4 @@
-/mob/living/simple_animal/hostile/retaliate/spaceman
+/mob/living/simple_animal/hostile/spaceman
 	name = "Spaceman"
 	desc = "What in the actual hell..?"
 	icon_state = "old"
@@ -30,7 +30,7 @@
 	footstep_type = FOOTSTEP_MOB_SHOE
 	has_field_of_vision = FALSE //Legacy gameplay experience. Also they only have one dir visually.
 
-/mob/living/simple_animal/hostile/retaliate/nanotrasenpeace //this should be in a different file
+/mob/living/simple_animal/hostile/nanotrasenpeace //this should be in a different file
 	name = "Nanotrasen Private Security Officer"
 	desc = "An officer part of Nanotrasen's private security force."
 	icon = 'icons/mob/simple_human.dmi'
@@ -65,12 +65,12 @@
 	status_flags = CANPUSH
 	search_objects = 1
 
-/mob/living/simple_animal/hostile/retaliate/nanotrasenpeace/Aggro()
+/mob/living/simple_animal/hostile/nanotrasenpeace/Aggro()
 	..()
 	summon_backup(15)
 	say("411 in progress, requesting backup!")
 
-/mob/living/simple_animal/hostile/retaliate/nanotrasenpeace/ranged
+/mob/living/simple_animal/hostile/nanotrasenpeace/ranged
 	icon_state = "nanotrasenrangedsmg"
 	icon_living = "nanotrasenrangedsmg"
 	vision_range = 9

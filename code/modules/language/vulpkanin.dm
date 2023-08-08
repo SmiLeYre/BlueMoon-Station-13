@@ -13,6 +13,4 @@
 	"bin","ket","jarl","vulf","einech","cresthz","azunein","ghzth")
 	icon_state = "animal"   // Нарисуйте иконку плиз
 	default_priority = 90
-	//SKYRAT CHANGE - language restriction
 	restricted = FALSE
-	//

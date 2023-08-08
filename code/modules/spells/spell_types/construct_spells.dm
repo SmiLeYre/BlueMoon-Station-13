@@ -1,17 +1,17 @@
 //////////////////////////////Construct Spells/////////////////////////
 
-/obj/effect/proc_holder/spell/aoe_turf/conjure/construct/lesser
+/obj/effect/proc_holder/spell/aoe/conjure/construct/lesser
 	charge_max = 1800
 	action_icon = 'icons/mob/actions/actions_cult.dmi'
 	action_icon_state = "artificer"
 	action_background_icon_state = "bg_demon"
 
-/obj/effect/proc_holder/spell/aoe_turf/conjure/construct/lesser/cult
+/obj/effect/proc_holder/spell/aoe/conjure/construct/lesser/cult
 	clothes_req = SPELL_CULT_GARB
 	charge_max = 2500
 
 
-/obj/effect/proc_holder/spell/aoe_turf/area_conversion
+/obj/effect/proc_holder/spell/aoe/area_conversion
 	name = "Area Conversion"
 	desc = "This spell instantly converts a small area around you."
 
@@ -25,13 +25,13 @@
 	action_icon_state = "areaconvert"
 	action_background_icon_state = "bg_cult"
 
-/obj/effect/proc_holder/spell/aoe_turf/area_conversion/cast(list/targets, mob/user = usr)
+/obj/effect/proc_holder/spell/aoe/area_conversion/cast(list/targets, mob/user = usr)
 	playsound(get_turf(user), 'sound/items/welder.ogg', 75, 1)
 	for(var/turf/T in targets)
 		T.narsie_act(FALSE, TRUE, 100 - (get_dist(user, T) * 25))
 
 
-/obj/effect/proc_holder/spell/aoe_turf/conjure/floor
+/obj/effect/proc_holder/spell/aoe/conjure/floor
 	name = "Summon Cult Floor"
 	desc = "This spell constructs a cult floor."
 
@@ -47,7 +47,7 @@
 	action_background_icon_state = "bg_cult"
 
 
-/obj/effect/proc_holder/spell/aoe_turf/conjure/wall
+/obj/effect/proc_holder/spell/aoe/conjure/wall
 	name = "Summon Cult Wall"
 	desc = "This spell constructs a cult wall."
 
@@ -64,7 +64,7 @@
 	summon_type = list(/turf/closed/wall/mineral/cult/artificer) //we don't want artificer-based runed metal farms
 
 
-/obj/effect/proc_holder/spell/aoe_turf/conjure/wall/reinforced
+/obj/effect/proc_holder/spell/aoe/conjure/wall/reinforced
 	name = "Greater Construction"
 	desc = "This spell constructs a reinforced metal wall."
 
@@ -77,7 +77,7 @@
 
 	summon_type = list(/turf/closed/wall/r_wall)
 
-/obj/effect/proc_holder/spell/aoe_turf/conjure/soulstone
+/obj/effect/proc_holder/spell/aoe/conjure/soulstone
 	name = "Summon Soulstone"
 	desc = "This spell reaches into Nar'Sie's realm, summoning one of the legendary fragments across time and space."
 
@@ -93,11 +93,11 @@
 
 	summon_type = list(/obj/item/soulstone)
 
-/obj/effect/proc_holder/spell/aoe_turf/conjure/soulstone/cult
+/obj/effect/proc_holder/spell/aoe/conjure/soulstone/cult
 	clothes_req = SPELL_CULT_GARB
 	charge_max = 3600
 
-/obj/effect/proc_holder/spell/aoe_turf/conjure/soulstone/noncult
+/obj/effect/proc_holder/spell/aoe/conjure/soulstone/noncult
 	summon_type = list(/obj/item/soulstone/anybody)
 
 /obj/effect/proc_holder/spell/targeted/forcewall/cult

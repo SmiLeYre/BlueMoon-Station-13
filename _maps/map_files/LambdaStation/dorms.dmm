@@ -2551,6 +2551,16 @@
 	},
 /turf/open/floor/wood,
 /area/maintenance/bar)
+"gO" = (
+/obj/effect/turf_decal/tile/bar{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/bar{
+	dir = 4
+	},
+/mob/living/simple_animal/pet/dog/corgi/pig,
+/turf/open/floor/plasteel/cafeteria,
+/area/service/kitchen)
 "gP" = (
 /obj/machinery/light/small{
 	dir = 8;
@@ -5085,7 +5095,7 @@
 /turf/open/floor/plating,
 /area/maintenance/central)
 "ni" = (
-/mob/living/simple_animal/hostile/retaliate/goose,
+/mob/living/simple_animal/hostile/goose,
 /turf/open/floor/wood{
 	icon_state = "wood-broken6"
 	},
@@ -18405,7 +18415,7 @@
 /turf/open/floor/plating,
 /area/maintenance/central)
 "Vg" = (
-/mob/living/simple_animal/hostile/retaliate/goat{
+/mob/living/simple_animal/hostile/goat{
 	name = "Pete"
 	},
 /turf/open/floor/plasteel/freezer,
@@ -65767,7 +65777,7 @@ YL
 fU
 Tg
 UM
-UM
+gO
 RS
 UB
 Hw

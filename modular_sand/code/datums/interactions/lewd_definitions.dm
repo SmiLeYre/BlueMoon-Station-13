@@ -438,13 +438,13 @@
 					switch(target_orifice)
 						if(CUM_TARGET_MOUTH)
 							if(partner.has_mouth() && partner.mouth_is_free())
-								message = "cums right in \the <b>[partner]</b>'s mouth."
+								message = "кончает прямо в ротик <b>[partner]</b>."
 								cumin = TRUE
 							else
 								message = "кончает на лицо <b>[partner]</b> семенем."
 						if(CUM_TARGET_THROAT)
 							if(partner.has_mouth() && partner.mouth_is_free())
-								message = "shoves deep into \the <b>[partner]</b>'s throat and cums."
+								message = "входит глубоко в глотку <b>[partner]</b> и кончает."
 								cumin = TRUE
 							else
 								message = "кончает на лицо <b>[partner]</b> семенем."
@@ -866,11 +866,13 @@
 
 	if(amount)
 		add_lust(amount)
-	if(get_lust() >= get_lust_tolerance())
+	var/lust = get_lust()
+	var/lust_tolerance = get_lust_tolerance()
+	if(lust >= lust_tolerance)
 		if(prob(10))
 			to_chat(src, "<b>Вам трудно удержаться от оргазма!!</b>")
 			return FALSE
-		if(lust >= get_lust_tolerance()*3)
+		if(lust >= (lust_tolerance * 3))
 			cum(partner, orifice)
 			return TRUE
 	else

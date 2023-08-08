@@ -77,7 +77,7 @@
 /datum/supply_pack/vending/kinkmate
 	name = "Kinkmate Supply and Construction Kit"
 	desc = "Веселый способ провести смену. Содержит 2 упаковки невыразимых желаний."
-	cost = 1200
+	cost = 5000
 	contains = list(/obj/item/vending_refill/kink,
 					/obj/item/vending_refill/kink)
 	crate_name = "Kinkmate construction kit"

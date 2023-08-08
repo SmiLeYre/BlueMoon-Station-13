@@ -70,7 +70,7 @@
 	faction = list(ROLE_INTEQ)
 	gold_core_spawnable = FRIENDLY_SPAWN
 
-/mob/living/simple_animal/hostile/retaliate/tegu
+/mob/living/simple_animal/hostile/tegu
 	name = "tegu"
 	desc = "That's a tegu."
 	icon = 'modular_bluemoon/SmiLeY/icons/mob/pets.dmi'

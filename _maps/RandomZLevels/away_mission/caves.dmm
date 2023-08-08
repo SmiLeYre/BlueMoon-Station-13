@@ -620,7 +620,7 @@
 	},
 /area/awaymission/caves/BMP_asteroid/level_two)
 "bZ" = (
-/mob/living/simple_animal/hostile/retaliate/bat{
+/mob/living/simple_animal/hostile/bat{
 	desc = "A rare breed of bat which roosts deep in caves.";
 	name = "Cave Bat"
 	},
@@ -938,7 +938,7 @@
 	},
 /area/awaymission/caves/research)
 "cU" = (
-/mob/living/simple_animal/hostile/retaliate/bat{
+/mob/living/simple_animal/hostile/bat{
 	desc = "A rare breed of bat which roosts deep in caves.";
 	name = "Cave Bat"
 	},
@@ -1210,7 +1210,7 @@
 /turf/open/floor/plasteel,
 /area/awaymission/caves/northblock)
 "dO" = (
-/mob/living/simple_animal/hostile/retaliate/bat{
+/mob/living/simple_animal/hostile/bat{
 	desc = "A rare breed of bat which roosts deep in caves.";
 	name = "Cave Bat"
 	},

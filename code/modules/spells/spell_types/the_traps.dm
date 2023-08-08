@@ -1,4 +1,4 @@
-/obj/effect/proc_holder/spell/aoe_turf/conjure/the_traps
+/obj/effect/proc_holder/spell/aoe/conjure/the_traps
 	name = "The Traps!"
 	desc = "Summon a number of traps to confuse and knockdown your enemies, and possibly you."
 
@@ -20,6 +20,6 @@
 
 	action_icon_state = "the_traps"
 
-/obj/effect/proc_holder/spell/aoe_turf/conjure/the_traps/post_summon(obj/structure/trap/T, mob/user)
+/obj/effect/proc_holder/spell/aoe/conjure/the_traps/post_summon(obj/structure/trap/T, mob/user)
 	T.immune_minds += user.mind
 	T.charges = 1

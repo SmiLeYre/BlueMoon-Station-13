@@ -5251,6 +5251,7 @@
 /obj/item/ammo_box/a357,
 /obj/item/card/emag,
 /obj/item/clothing/neck/cloak/syndieadm,
+/obj/item/syndicate_uplink_high,
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
 "vB" = (
@@ -5324,7 +5325,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/stripes/red/corner,
-/mob/living/simple_animal/hostile/retaliate/tegu{
+/mob/living/simple_animal/hostile/tegu{
 	name = "Entertains-The-Hostages"
 	},
 /obj/structure/bed/dogbed,

@@ -11916,7 +11916,7 @@
 	},
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/loading_area/red,
-/mob/living/simple_animal/hostile/retaliate/bat/secbat,
+/mob/living/simple_animal/hostile/bat/secbat,
 /turf/open/floor/plasteel/dark,
 /area/security/brig)
 "avX" = (
@@ -34117,7 +34117,7 @@
 /area/hallway/primary/aft)
 "boY" = (
 /obj/structure/closet/cardboard,
-/mob/living/simple_animal/hostile/retaliate/poison/snake{
+/mob/living/simple_animal/hostile/poison/snake{
 	desc = "Otocan, I'm trying to break into the AI upload, but the defenses are dumby thicc and I'm stuck.";
 	name = "Solid"
 	},

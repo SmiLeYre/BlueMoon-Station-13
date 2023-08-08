@@ -165,6 +165,7 @@
 	slaver_mode = TRUE
 	point_type = POINT_TYPE_CARGO
 	configured = TRUE
+	max_repeat_usage = 20
 
 #undef POINT_TYPE_CARGO
 #undef POINT_TYPE_SCIENCE

@@ -893,7 +893,7 @@
 /area/shuttle/escape)
 "Iw" = (
 /obj/item/reagent_containers/glass/bucket,
-/mob/living/simple_animal/hostile/retaliate/frog,
+/mob/living/simple_animal/hostile/frog,
 /turf/open/floor/grass/grass0,
 /area/shuttle/escape)
 "Iz" = (

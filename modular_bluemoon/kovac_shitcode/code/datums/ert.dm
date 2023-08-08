@@ -51,6 +51,7 @@
 	code = "Red"
 	mission = "Слушайтесь Представителя Корпорации. Окажите поддержку Представителю Корпорации в установлении порядка и верховенства права на станции."
 	polldesc = "Internal Affairs Squad"
+	teamsize = 4
 	//ertphrase = "modular_bluemoon/kovac_shitcode/sound/ert/sol_send.ogg"
 
 /datum/ert/maid_ert // рофлоЕРТ горничных
@@ -60,4 +61,5 @@
 	code = "Delta"
 	mission = "Наведите порядок на станции, если вы понимаете, что офицер ССО имел ввиду."
 	polldesc = "Elite maid Squad"
+	teamsize = 5
 	//ertphrase = "modular_bluemoon/kovac_shitcode/sound/ert/sol_send.ogg"

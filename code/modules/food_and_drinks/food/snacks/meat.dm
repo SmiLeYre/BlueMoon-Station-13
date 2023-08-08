@@ -378,6 +378,10 @@
 	tastes = list("tender meat" = 1)
 	foodtype = MEAT | GROSS
 
+/obj/item/reagent_containers/food/snacks/meat/steak/plain/pig
+	tastes = list("pig meat" = 1)
+	foodtype = GROSS
+
 /obj/item/reagent_containers/food/snacks/meat/steak/penguin
 	name = "penguin steak"
 	tastes = list("beef" = 1, "cod fish" = 1)

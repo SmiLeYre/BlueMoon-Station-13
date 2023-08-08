@@ -44,7 +44,7 @@
 /turf/template_noop,
 /area/ruin/powered)
 "k" = (
-/mob/living/simple_animal/hostile/retaliate/spaceman,
+/mob/living/simple_animal/hostile/spaceman,
 /turf/open/floor/oldshuttle,
 /area/ruin/powered)
 "l" = (
@@ -72,7 +72,7 @@
 	dir = 1;
 	icon_state = "chairold"
 	},
-/mob/living/simple_animal/hostile/retaliate/spaceman,
+/mob/living/simple_animal/hostile/spaceman,
 /turf/open/floor/oldshuttle,
 /area/ruin/powered)
 "t" = (

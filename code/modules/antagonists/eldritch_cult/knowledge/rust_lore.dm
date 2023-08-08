@@ -49,7 +49,7 @@
 	desc = "Spreads rust to nearby surfaces. Already rusted surfaces are destroyed."
 	gain_text = "All wise men know well not to touch the Bound King."
 	cost = 1
-	spell_to_add = /obj/effect/proc_holder/spell/aoe_turf/rust_conversion
+	spell_to_add = /obj/effect/proc_holder/spell/aoe/rust_conversion
 	next_knowledge = list(/datum/eldritch_knowledge/rust_blade_upgrade,/datum/eldritch_knowledge/curse/corrosion,/datum/eldritch_knowledge/crucible,/datum/eldritch_knowledge/spell/rust_wave)
 	route = PATH_RUST
 
@@ -176,7 +176,7 @@
 	desc = "Bring three corpses onto a transmutation rune. After you finish the ritual, rust will now automatically spread from the rune. Your healing on rust is also tripled, while you become more resilient overall."
 	gain_text = "Champion of rust. Corruptor of steel. Fear the dark for the Rustbringer has come! Rusted Hills, CALL MY NAME!"
 	cost = 5
-	sacs_needed = 8
+	sacs_needed = 5
 	required_atoms = list(/mob/living/carbon/human)
 	route = PATH_RUST
 

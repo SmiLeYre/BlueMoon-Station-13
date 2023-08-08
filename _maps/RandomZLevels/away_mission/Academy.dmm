@@ -3765,7 +3765,7 @@
 /turf/open/floor/engine/cult,
 /area/awaymission/academy/academycellar)
 "lb" = (
-/mob/living/simple_animal/hostile/retaliate/bat,
+/mob/living/simple_animal/hostile/bat,
 /turf/open/floor/engine/cult,
 /area/awaymission/academy/academycellar)
 "lc" = (
@@ -3793,7 +3793,7 @@
 /turf/open/floor/engine/cult,
 /area/awaymission/academy/academycellar)
 "li" = (
-/mob/living/simple_animal/hostile/retaliate/bat,
+/mob/living/simple_animal/hostile/bat,
 /turf/open/floor/mineral/uranium,
 /area/awaymission/academy/academycellar)
 "lj" = (

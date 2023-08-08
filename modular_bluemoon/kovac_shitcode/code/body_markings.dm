@@ -137,7 +137,7 @@
 	name = "Mouse II"
 	icon_state = "mouse_two"
 	color_src = MATRIXED
-	matrixed_sections = MATRIX_ALL
+	matrixed_sections = MATRIX_RED_BLUE
 	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
 
 
@@ -149,3 +149,13 @@
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_BLUE
 	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
+
+/////////////////////////////////////////////////////////////////////////////////////////
+//Хвост ксеноморфа для хуманов
+/datum/sprite_accessory/tails/human/xeno
+	name = "Xenomorph Tail"
+	icon_state = "xeno"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_ALL
+	icon = 'modular_citadel/icons/mob/xeno_parts_greyscale.dmi'
+	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)

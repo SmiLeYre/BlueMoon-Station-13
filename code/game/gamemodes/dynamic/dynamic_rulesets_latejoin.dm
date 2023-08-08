@@ -56,11 +56,11 @@
 	antag_datum = /datum/antagonist/traitor
 	antag_flag = "traitor late"
 	antag_flag_override = ROLE_TRAITOR
-	protected_roles = list("Security Officer", "Warden", "Head of Personnel", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
-	restricted_roles = list("AI","Cyborg")
+	protected_roles = list("Shaft Miner", "NanoTrasen Representative", "Lawyer", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
+	restricted_roles = list("AI", "Cyborg")
 	required_candidates = 1
-	weight = 7
-	cost = 5
+	weight = 3  //BLUEMOON CHANGES
+	cost = 6 //BLUEMOON CHANGES
 	requirements = list(101,40,25,20,15,10,10,10,10,10)
 	repeatable = TRUE
 
@@ -76,8 +76,8 @@
 	antag_datum = /datum/antagonist/rev/head
 	antag_flag = "rev head late"
 	antag_flag_override = ROLE_REV
-	restricted_roles = list("AI", "Cyborg", "Prisoner", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Chief Engineer", "Chief Medical Officer", "Research Director")
-	enemy_roles = list("AI", "Cyborg", "Security Officer","Detective","Head of Security", "Captain", "Warden")
+	restricted_roles = list("AI", "Cyborg", "Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")  //BLUEMOON CHANGES
+	enemy_roles = list("AI", "Cyborg", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGES
 	required_enemies = list(2,2,1,1,1,1,1,0,0,0)
 	required_candidates = 1
 	weight = 2
@@ -152,10 +152,41 @@
 	antag_datum = /datum/antagonist/heretic
 	antag_flag = "heretic late"
 	antag_flag_override = ROLE_HERETIC
-	protected_roles = list("Security Officer", "Warden", "Detective", "Head of Security", "Captain","Prisoner", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
-	restricted_roles = list("AI","Cyborg")
+	protected_roles = list("Shaft Miner", "NanoTrasen Representative", "Lawyer", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Prisoner", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")  //BLUEMOON CHANGES
+	restricted_roles = list("AI", "Cyborg", "Prisoner")  //BLUEMOON CHANGES
 	required_candidates = 1
-	weight = 4
+	weight = 3 //BLUEMOON CHANGES
 	cost = 10
 	requirements = list(101,101,101,50,40,20,20,15,10,10)
 	repeatable = TRUE
+
+//BLUEMOON ADD START - я добавляю это сюда вместо модулей, чтобы было удобно изменять параметры (для наглядности)
+//////////////////////////////////////////////
+//                                          //
+//            SILENT CHANGELING             //
+//                                          //
+//////////////////////////////////////////////
+
+/datum/dynamic_ruleset/latejoin/silent_changeling
+	name = "Silent Changeling"
+	antag_datum = /datum/antagonist/changeling
+	antag_flag = "changeling late"
+	antag_flag_override = ROLE_CHANGELING
+	protected_roles = list("Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
+	restricted_roles = list("AI", "Cyborg")
+	required_candidates = 1
+	weight = 3
+	cost = 10
+	requirements = list(101,101,60,50,40,30,20,15,10,10)
+	antag_cap = list("denominator" = 24)
+	repeatable = TRUE
+
+/datum/dynamic_ruleset/latejoin/silent_changeling/execute()
+	var/mob/M = pick(candidates)
+	assigned += M.mind
+	M.mind.special_role = antag_flag
+	var/datum/antagonist/changeling/new_antag = new antag_datum()
+	M.mind.add_antag_datum(new_antag)
+	log_admin("[M.name] was made into a [name] by dynamic.")
+	return TRUE
+//BLUEMOON ADD END

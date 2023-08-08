@@ -40,7 +40,7 @@
 	H.facial_hair_color = H.hair_color
 	H.update_body()
 	if(H.mind)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/knock(null))
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe/knock(null))
 	var/list/no_drops = list()
 	no_drops += H.get_item_by_slot(ITEM_SLOT_FEET)
 	no_drops += H.get_item_by_slot(ITEM_SLOT_ICLOTHING)

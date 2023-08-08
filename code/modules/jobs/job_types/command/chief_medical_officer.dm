@@ -102,5 +102,5 @@
 	r_pocket = /obj/item/flashlight/pen
 
 /datum/outfit/job/cmo/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
-
+	. = ..()
 	ADD_TRAIT(H, TRAIT_SURGEON, TRAIT_GENERIC)

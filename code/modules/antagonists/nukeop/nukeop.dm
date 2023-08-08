@@ -44,14 +44,15 @@
 	else
 		H.equipOutfit(nukeop_outfit)
 
-	H.canloadappearance = TRUE
-	H.checkloadappearance()
+	if(name == "Lone Operative")
+		H.canloadappearance = TRUE
+		H.checkloadappearance()
 
 	return TRUE
 
 /datum/antagonist/nukeop/greet()
 	owner.current.playsound_local(get_turf(owner.current), 'sound/ambience/antag/ops.ogg',100,0)
-	to_chat(owner, "<span class='notice'>You are a [nuke_team ? nuke_team.syndicate_name : "syndicate"] agent!</span>")
+	to_chat(owner, "<span class='notice'>Вы [nuke_team ? nuke_team.syndicate_name : "Интековский"] Оперативник!</span>")
 	owner.announce_objectives()
 
 /datum/antagonist/nukeop/on_gain()

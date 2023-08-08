@@ -502,7 +502,7 @@
 			deathTick += 1
 		else
 			owner.visible_message("[owner]'s soul is absorbed into the rod, relieving the previous snake of its duty.")
-			var/mob/living/simple_animal/hostile/retaliate/poison/snake/healSnake = new(owner.loc)
+			var/mob/living/simple_animal/hostile/poison/snake/healSnake = new(owner.loc)
 			var/list/chems = list("bicaridine", "salbutamol", "kelotane", "antitoxin")
 			healSnake.poison_type = pick(chems)
 			healSnake.name = "Asclepius's Snake"
@@ -867,3 +867,20 @@
 	name = "Blessing of Wounded Soldier"
 	desc = "Some people seek power through redemption, one thing many people don't know is that battle is the ultimate redemption and wounds let you bask in eternal glory."
 	icon_state = "wounded_soldier"
+
+/datum/status_effect/terror/regeneration
+	id = "terror_regen"
+	duration = 250
+	alert_type = null
+
+/datum/status_effect/terror/regeneration/tick()
+	owner.adjustBruteLoss(-6)
+
+/datum/status_effect/terror/food_regen
+	id = "terror_food_regen"
+	duration = 250
+	alert_type = null
+
+
+/datum/status_effect/terror/food_regen/tick()
+	owner.adjustBruteLoss(-(owner.maxHealth/20))

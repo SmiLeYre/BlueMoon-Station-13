@@ -129,6 +129,7 @@
 	new /obj/item/radio/headset/headset_sec(src)
 	new /obj/item/radio/headset/headset_sec/alt(src)
 	new /obj/item/clothing/glasses/hud/security/sunglasses(src)
+	new /obj/item/holosign_creator/security(src)
 	new /obj/item/flashlight/seclite(src)
 /obj/structure/closet/secure_closet/security/sec
 /obj/structure/closet/secure_closet/security/sec/PopulateContents()

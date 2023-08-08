@@ -178,14 +178,14 @@
 	name = "Goat Crate"
 	desc = "Козел делает бээээ!."
 	cost = 2500
-	contains = list(/mob/living/simple_animal/hostile/retaliate/goat)
+	contains = list(/mob/living/simple_animal/hostile/goat)
 	crate_name = "goat crate"
 
 /datum/supply_pack/critter/goose
 	name = "Goose Crate"
 	desc = "Злые и жестокие птицы. Злые, порочные существа. Пожалуйста, заберите их!"
 	cost = 2500
-	contains = list(/mob/living/simple_animal/hostile/retaliate/goose)
+	contains = list(/mob/living/simple_animal/hostile/goose)
 	crate_name = "goose crate"
 
 /datum/supply_pack/critter/pug
@@ -206,9 +206,9 @@
 	name = "Snake Crate"
 	desc = "Устали от этих ГРЕБАНЫХ змей на этой ГРЕБАНОЙ космической станции? Тогда этот ящик не для тебя. Содержит трех ядовитых змей."
 	cost = 3000
-	contains = list(/mob/living/simple_animal/hostile/retaliate/poison/snake,
-					/mob/living/simple_animal/hostile/retaliate/poison/snake,
-					/mob/living/simple_animal/hostile/retaliate/poison/snake)
+	contains = list(/mob/living/simple_animal/hostile/poison/snake,
+					/mob/living/simple_animal/hostile/poison/snake,
+					/mob/living/simple_animal/hostile/poison/snake)
 	crate_name = "snake crate"
 
 /datum/supply_pack/critter/mouse
@@ -227,9 +227,9 @@
 	name = "Security Bat Crate"
 	desc = "Содержит пять дубинок, идеально подходящих для избиения любому сотруднику Службы безопасности."
 	cost = 2500
-	contains = list(/mob/living/simple_animal/hostile/retaliate/bat/secbat,
-					/mob/living/simple_animal/hostile/retaliate/bat/secbat,
-					/mob/living/simple_animal/hostile/retaliate/bat/secbat,
-					/mob/living/simple_animal/hostile/retaliate/bat/secbat,
-					/mob/living/simple_animal/hostile/retaliate/bat/secbat)
+	contains = list(/mob/living/simple_animal/hostile/bat/secbat,
+					/mob/living/simple_animal/hostile/bat/secbat,
+					/mob/living/simple_animal/hostile/bat/secbat,
+					/mob/living/simple_animal/hostile/bat/secbat,
+					/mob/living/simple_animal/hostile/bat/secbat)
 	crate_name = "security bat crate"

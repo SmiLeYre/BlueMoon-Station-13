@@ -143,7 +143,7 @@
 	holy_check = TRUE
 	tinfoil_check = FALSE
 
-/obj/effect/proc_holder/spell/aoe_turf/qareen
+/obj/effect/proc_holder/spell/aoe/qareen
 	clothes_req = NONE
 	action_icon = 'icons/mob/actions/actions_revenant.dmi'
 	action_background_icon_state = "bg_qareen"
@@ -155,14 +155,14 @@
 	var/unlock_amount = 100 //How much essence it costs to unlock
 	var/cast_amount = 50 //How much essence it costs to use
 
-/obj/effect/proc_holder/spell/aoe_turf/qareen/New()
+/obj/effect/proc_holder/spell/aoe/qareen/New()
 	..()
 	if(locked)
 		name = "[initial(name)] ([unlock_amount]E)"
 	else
 		name = "[initial(name)] ([cast_amount]E)"
 
-/obj/effect/proc_holder/spell/aoe_turf/qareen/can_cast(mob/living/simple_animal/qareen/user = usr, skipcharge = FALSE, silent = FALSE)
+/obj/effect/proc_holder/spell/aoe/qareen/can_cast(mob/living/simple_animal/qareen/user = usr, skipcharge = FALSE, silent = FALSE)
 	if(charge_counter < charge_max)
 		return FALSE
 	if(!istype(user)) //Badmins, no. Badmins, don't do it.
@@ -176,7 +176,7 @@
 		return FALSE
 	return TRUE
 
-/obj/effect/proc_holder/spell/aoe_turf/qareen/proc/attempt_cast(mob/living/simple_animal/qareen/user = usr)
+/obj/effect/proc_holder/spell/aoe/qareen/proc/attempt_cast(mob/living/simple_animal/qareen/user = usr)
 	if(!istype(user)) //If you're not a qareen, it works. Please, please, please don't give this to a non-qareen.
 		name = "[initial(name)]"
 		if(locked)
@@ -204,7 +204,7 @@
 	return TRUE
 
 //Overload Light: Breaks a light that's online and sends out lightning bolts to all nearby people.
-/obj/effect/proc_holder/spell/aoe_turf/qareen/overload
+/obj/effect/proc_holder/spell/aoe/qareen/overload
 	name = "Overload Lights"
 	desc = "Directs a large amount of essence into nearby electrical lights, causing lights to shock those nearby."
 	charge_max = 200
@@ -216,12 +216,12 @@
 	var/shock_damage = 0
 	action_icon_state = "overload_lights"
 
-/obj/effect/proc_holder/spell/aoe_turf/qareen/overload/cast(list/targets, mob/living/simple_animal/qareen/user = usr)
+/obj/effect/proc_holder/spell/aoe/qareen/overload/cast(list/targets, mob/living/simple_animal/qareen/user = usr)
 	if(attempt_cast(user))
 		for(var/turf/T in targets)
 			INVOKE_ASYNC(src, .proc/overload, T, user)
 
-/obj/effect/proc_holder/spell/aoe_turf/qareen/overload/proc/overload(turf/T, mob/user)
+/obj/effect/proc_holder/spell/aoe/qareen/overload/proc/overload(turf/T, mob/user)
 	for(var/obj/machinery/light/L in T)
 		if(!L.on)
 			L.flicker(20) //spooky
@@ -234,7 +234,7 @@
 		new /obj/effect/temp_visual/revenant(get_turf(L))
 		addtimer(CALLBACK(src, .proc/overload_shock, L, user), 20)
 
-/obj/effect/proc_holder/spell/aoe_turf/qareen/overload/proc/overload_shock(obj/machinery/light/L, mob/user)
+/obj/effect/proc_holder/spell/aoe/qareen/overload/proc/overload_shock(obj/machinery/light/L, mob/user)
 	if(!L.on) //wait, wait, don't shock me
 		return
 	flick("[L.base_state]2", L)
@@ -250,7 +250,7 @@
 
 
 //Defile: Corrupts nearby stuff, unblesses floor tiles.
-/obj/effect/proc_holder/spell/aoe_turf/qareen/defile
+/obj/effect/proc_holder/spell/aoe/qareen/defile
 	name = "Defile"
 	desc = "Twists and corrupts the nearby area as well as dispelling holy auras on floors."
 	charge_max = 150
@@ -261,12 +261,12 @@
 	cast_amount = 30
 	action_icon_state = "defile"
 
-/obj/effect/proc_holder/spell/aoe_turf/qareen/defile/cast(list/targets, mob/living/simple_animal/qareen/user = usr)
+/obj/effect/proc_holder/spell/aoe/qareen/defile/cast(list/targets, mob/living/simple_animal/qareen/user = usr)
 	if(attempt_cast(user))
 		for(var/turf/T in targets)
 			INVOKE_ASYNC(src, .proc/defile, T)
 
-/obj/effect/proc_holder/spell/aoe_turf/qareen/defile/proc/defile(turf/T)
+/obj/effect/proc_holder/spell/aoe/qareen/defile/proc/defile(turf/T)
 	for(var/obj/effect/blessing/B in T)
 		qdel(B)
 		new /obj/effect/temp_visual/revenant(T)
@@ -306,7 +306,7 @@
 			new /obj/effect/temp_visual/revenant/cracks(window.loc)
 
 //Malfunction: Makes bad stuff happen to robots and machines.
-/obj/effect/proc_holder/spell/aoe_turf/qareen/malfunction
+/obj/effect/proc_holder/spell/aoe/qareen/malfunction
 	name = "Malfunction"
 	desc = "Corrupts nearby machines and mechanical objects."
 	charge_max = 200
@@ -316,12 +316,12 @@
 	action_icon_state = "malfunction"
 
 //A note to future coders: do not replace this with an EMP because it will wreck malf AIs and everyone will hate you.
-/obj/effect/proc_holder/spell/aoe_turf/qareen/malfunction/cast(list/targets, mob/living/simple_animal/qareen/user = usr)
+/obj/effect/proc_holder/spell/aoe/qareen/malfunction/cast(list/targets, mob/living/simple_animal/qareen/user = usr)
 	if(attempt_cast(user))
 		for(var/turf/T in targets)
 			INVOKE_ASYNC(src, .proc/malfunction, T, user)
 
-/obj/effect/proc_holder/spell/aoe_turf/qareen/malfunction/proc/malfunction(turf/T, mob/user)
+/obj/effect/proc_holder/spell/aoe/qareen/malfunction/proc/malfunction(turf/T, mob/user)
 	for(var/mob/living/simple_animal/bot/bot in T)
 		if(!bot.emagged)
 			new /obj/effect/temp_visual/revenant(bot.loc)
@@ -360,7 +360,7 @@
 		// ??? prob. nah
 
 //Bliss: Infects nearby humans and in general messes living stuff up.
-/obj/effect/proc_holder/spell/aoe_turf/qareen/bliss
+/obj/effect/proc_holder/spell/aoe/qareen/bliss
 	name = "Bliss"
 	desc = "Causes nearby living things to loose themselves in lustful throes."
 	charge_max = 200
@@ -369,12 +369,12 @@
 	unlock_amount = 75
 	action_icon_state = "blight"
 
-/obj/effect/proc_holder/spell/aoe_turf/qareen/bliss/cast(list/targets, mob/living/simple_animal/qareen/user = usr)
+/obj/effect/proc_holder/spell/aoe/qareen/bliss/cast(list/targets, mob/living/simple_animal/qareen/user = usr)
 	if(attempt_cast(user))
 		for(var/turf/T in targets)
 			INVOKE_ASYNC(src, .proc/bliss, T, user)
 
-/obj/effect/proc_holder/spell/aoe_turf/qareen/bliss/proc/bliss(turf/T, mob/user)
+/obj/effect/proc_holder/spell/aoe/qareen/bliss/proc/bliss(turf/T, mob/user)
 	for(var/mob/living/mob in T)
 		if(mob == user)
 			continue

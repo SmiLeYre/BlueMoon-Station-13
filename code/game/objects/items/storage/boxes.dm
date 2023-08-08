@@ -118,10 +118,12 @@
 	if(!isnull(medipen_type))
 		new medipen_type(src)
 
-	if(!isplasmaman(loc))
-		new internal_type(src)
-	else
+	if(isplasmaman(loc))
 		new /obj/item/tank/internals/plasmaman/belt(src)
+	else if (isvox(loc))
+		new /obj/item/tank/internals/emergency_nitrogen(src)
+	else
+		new internal_type(src)
 
 	if(HAS_TRAIT(SSstation, STATION_TRAIT_PREMIUM_INTERNALS))
 		new /obj/item/flashlight/flare(src)
@@ -139,10 +141,12 @@
 	..()
 	new /obj/item/crowbar/red(src)
 
-	if(!isplasmaman(loc))
-		new /obj/item/tank/internals/emergency_oxygen(src)
-	else
+	if(isplasmaman(loc))
 		new /obj/item/tank/internals/plasmaman/belt(src)
+	else if (isvox(loc))
+		new /obj/item/tank/internals/emergency_nitrogen(src)
+	else
+		new /obj/item/tank/internals/emergency_oxygen(src)
 
 // Engineer survival box
 /obj/item/storage/box/survival/engineer
@@ -161,8 +165,8 @@
 	desc = "A box with the bare essentials of ensuring the survival of you and others. This one is labelled to contain an extended-capacity tank."
 	illustration = "extendedtank"
 	mask_type = /obj/item/clothing/mask/gas/syndicate
-	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
-	medipen_type = null
+	internal_type = /obj/item/tank/internals/emergency_oxygen/engi/syndi
+	medipen_type = /obj/item/reagent_containers/hypospray/medipen/atropine
 
 // Security survival box
 /obj/item/storage/box/survival/security
@@ -792,10 +796,12 @@
 	new /obj/item/clothing/mask/breath(src)
 	new /obj/item/reagent_containers/hypospray/medipen(src)
 
-	if(!isplasmaman(loc))
-		new /obj/item/tank/internals/emergency_oxygen(src)
-	else
+	if(isplasmaman(loc))
 		new /obj/item/tank/internals/plasmaman/belt(src)
+	else if (isvox(loc))
+		new /obj/item/tank/internals/emergency_nitrogen(src)
+	else
+		new /obj/item/tank/internals/emergency_oxygen(src)
 
 	if(HAS_TRAIT(SSstation, STATION_TRAIT_PREMIUM_INTERNALS))
 		new /obj/item/flashlight/flare(src)
@@ -1451,7 +1457,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 
 /obj/item/secbat/attack_self(mob/user)
-	new /mob/living/simple_animal/hostile/retaliate/bat/secbat(user.loc)
+	new /mob/living/simple_animal/hostile/bat/secbat(user.loc)
 	to_chat(user, "<span class='notice'>You open the box, releasing the secbat!</span>")
 	var/obj/item/stack/sheet/cardboard/I = new(user.drop_location())
 	qdel(src)

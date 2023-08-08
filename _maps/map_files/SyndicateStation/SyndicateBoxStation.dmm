@@ -903,7 +903,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/mob/living/simple_animal/hostile/retaliate/bat/secbat{
+/mob/living/simple_animal/hostile/bat/secbat{
 	desc = "An adorable fruit bat with a cute little hat, may or may not have a reputation for biting out eyeballs, or at least that's what the HoS'd tell you.";
 	name = "Colonel Chomps"
 	},
@@ -15245,7 +15245,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/retaliate/goat{
+/mob/living/simple_animal/hostile/goat{
 	name = "Pete"
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -52725,6 +52725,10 @@
 /obj/structure/grille,
 /turf/open/space/basic,
 /area/space/nearstation)
+"eRD" = (
+/mob/living/simple_animal/pet/dog/corgi/pig,
+/turf/open/floor/mineral/plastitanium,
+/area/service/kitchen)
 "eRS" = (
 /obj/structure/table,
 /obj/item/folder/red{
@@ -55267,7 +55271,7 @@
 /turf/open/floor/plating,
 /area/maintenance/fore)
 "inw" = (
-/mob/living/simple_animal/hostile/retaliate/goose{
+/mob/living/simple_animal/hostile/goose{
 	desc = "Some evil loose goose.";
 	name = "Cere"
 	},
@@ -104779,7 +104783,7 @@ aRC
 aSK
 aVz
 ijO
-aVz
+eRD
 aYL
 aJI
 bbz

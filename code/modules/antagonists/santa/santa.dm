@@ -3,6 +3,7 @@
 	show_in_antagpanel = FALSE
 	show_name_in_check_antagonists = TRUE
 	show_to_ghosts = TRUE
+	soft_antag = TRUE //BLUEMOON ADD - дружелюбные, малозначимые гостроли не должны считаться за антагонистов (ломает динамик)
 
 /datum/antagonist/santa/on_gain()
 	. = ..()
@@ -18,7 +19,7 @@
 	if(istype(H))
 		H.equipOutfit(/datum/outfit/santa)
 
-	owner.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/conjure/presents)
+	owner.AddSpell(new /obj/effect/proc_holder/spell/aoe/conjure/presents)
 	var/obj/effect/proc_holder/spell/targeted/area_teleport/teleport/telespell = new
 	telespell.clothes_req = NONE //santa robes aren't actually magical.
 	owner.AddSpell(telespell) //does the station have chimneys? WHO KNOWS!

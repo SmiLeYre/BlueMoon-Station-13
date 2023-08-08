@@ -112,8 +112,8 @@
 	desc = "Abomination made from severed limbs."
 	icon_state = "armsy_start"
 	icon_living = "armsy_start"
-	maxHealth = 200
-	health = 200
+	maxHealth = 400
+	health = 400
 	obj_damage = 80
 	melee_damage_lower = 10
 	melee_damage_upper = 15
@@ -291,8 +291,8 @@
 /mob/living/simple_animal/hostile/eldritch/armsy/prime
 	name = "Lord of the Night"
 	real_name = "Master of Decay"
-	maxHealth = 400
-	health = 400
+	maxHealth = 800
+	health = 800
 	melee_damage_lower = 20
 	melee_damage_upper = 25
 
@@ -334,12 +334,12 @@
 	icon_state = "rust_walker_s"
 	status_flags = CANPUSH
 	icon_living = "rust_walker_s"
-	maxHealth = 75
-	health = 75
-	melee_damage_lower = 15
-	melee_damage_upper = 20
+	maxHealth = 200
+	health = 200
+	melee_damage_lower = 25
+	melee_damage_upper = 35
 	sight = SEE_TURFS
-	spells_to_add = list(/obj/effect/proc_holder/spell/aoe_turf/rust_conversion/small,/obj/effect/proc_holder/spell/aimed/rust_wave/short)
+	spells_to_add = list(/obj/effect/proc_holder/spell/aoe/rust_conversion/small,/obj/effect/proc_holder/spell/aimed/rust_wave/short)
 
 /mob/living/simple_animal/hostile/eldritch/rust_spirit/setDir(newdir, ismousemovement)
     . = ..()
@@ -374,7 +374,7 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 20
 	sight = SEE_TURFS
-	spells_to_add = list(/obj/effect/proc_holder/spell/targeted/ethereal_jaunt/shift/ash,/obj/effect/proc_holder/spell/pointed/cleave/long,/obj/effect/proc_holder/spell/aoe_turf/fire_cascade)
+	spells_to_add = list(/obj/effect/proc_holder/spell/targeted/ethereal_jaunt/shift/ash,/obj/effect/proc_holder/spell/pointed/cleave/long,/obj/effect/proc_holder/spell/aoe/fire_cascade)
 
 /mob/living/simple_animal/hostile/eldritch/stalker
 	name = "Flesh Stalker"
@@ -383,8 +383,8 @@
 	icon_state = "stalker"
 	status_flags = CANPUSH
 	icon_living = "stalker"
-	maxHealth = 150
-	health = 150
+	maxHealth = 300
+	health = 300
 	melee_damage_lower = 15
 	melee_damage_upper = 20
 	sight = SEE_MOBS

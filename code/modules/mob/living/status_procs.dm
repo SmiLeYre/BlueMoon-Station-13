@@ -671,3 +671,107 @@
 		LAZYREMOVEASSOC(movespeed_mod_immunities, slowdown_type, source)
 	if(update)
 		update_movespeed()
+
+#define RETURN_STATUS_EFFECT_STRENGTH(T) \
+	var/datum/status_effect/transient/S = has_status_effect(T);\
+	return S ? S.strength : 0
+
+#define SET_STATUS_EFFECT_STRENGTH(T, A) \
+	A = max(A, 0);\
+	if(A) {;\
+		var/datum/status_effect/transient/S = has_status_effect(T);\
+		if(!S) {;\
+			apply_status_effect(T, A);\
+		} else {;\
+			S.strength = A;\
+		};\
+	} else {;\
+		remove_status_effect(T);\
+	}
+
+// SILENT
+/mob/living/proc/AmountSilenced()
+	RETURN_STATUS_EFFECT_STRENGTH(STATUS_EFFECT_SILENCED)
+
+/mob/living/proc/Silence(amount)
+	SetSilence(max(amount, AmountSilenced()))
+
+/mob/living/proc/SetSilence(amount)
+	if(status_flags & GODMODE)
+		return
+	SET_STATUS_EFFECT_STRENGTH(STATUS_EFFECT_SILENCED, amount)
+
+/mob/living/proc/AdjustSilence(amount, bound_lower = 0, bound_upper = INFINITY)
+	SetSilence(directional_bounded_sum(AmountSilenced(), amount, bound_lower, bound_upper))
+
+// SLOWED
+/mob/living/proc/IsSlowed()
+	return has_status_effect(STATUS_EFFECT_SLOWED)
+
+/mob/living/proc/Slowed(amount, _slowdown_value)
+	var/datum/status_effect/incapacitating/slowed/S = IsSlowed()
+	if(S)
+		S.duration = max(world.time + amount, S.duration)
+		S.slowdown_value = _slowdown_value
+	else if(amount > 0)
+		S = apply_status_effect(STATUS_EFFECT_SLOWED, amount, _slowdown_value)
+	return S
+
+/mob/living/proc/SetSlowed(amount, _slowdown_value)
+	if(status_flags & GODMODE)
+		return
+	var/datum/status_effect/incapacitating/slowed/S = IsSlowed()
+	if(amount <= 0 || _slowdown_value <= 0)
+		if(S)
+			qdel(S)
+	else
+		if(S)
+			S.duration = amount
+			S.slowdown_value = _slowdown_value
+		else
+			S = apply_status_effect(STATUS_EFFECT_SLOWED, amount, _slowdown_value)
+	return S
+
+
+/mob/living/proc/AdjustSlowedDuration(amount)
+	var/datum/status_effect/incapacitating/slowed/S = IsSlowed()
+	if(S)
+		S.duration += amount
+
+/mob/living/proc/AdjustSlowedIntensity(intensity)
+	var/datum/status_effect/incapacitating/slowed/S = IsSlowed()
+	if(S)
+		S.slowdown_value += intensity
+
+// SCALAR STATUS EFFECTS
+
+/**
+ * Returns current amount of [confusion][/datum/status_effect/decaying/confusion], 0 if none.
+ */
+/mob/living/proc/get_confusion()
+	RETURN_STATUS_EFFECT_STRENGTH(STATUS_EFFECT_CONFUSION)
+
+/**
+ * Sets [confusion][/datum/status_effect/decaying/confusion] if it's higher than zero.
+ */
+/mob/living/proc/SetConfused(amount)
+	SET_STATUS_EFFECT_STRENGTH(STATUS_EFFECT_CONFUSION, amount)
+
+/**
+ * Sets [confusion][/datum/status_effect/decaying/confusion] if it's higher than current.
+ */
+/mob/living/proc/Confused(amount)
+	if(status_flags & GODMODE)
+		return
+	SetConfused(max(get_confusion(), amount))
+
+/**
+ * Sets [confusion][/datum/status_effect/decaying/confusion] to current amount + given, clamped between lower and higher bounds.
+ *
+ * Arguments:
+ * * amount - Amount to add. Can be negative to reduce duration.
+ * * bound_lower - Minimum bound to set at least to. Defaults to 0.
+ * * bound_upper - Maximum bound to set up to. Defaults to infinity.
+ */
+/mob/living/proc/AdjustConfused(amount, bound_lower = 0, bound_upper = INFINITY)
+	SetConfused(directional_bounded_sum(get_confusion(), amount, bound_lower, bound_upper))

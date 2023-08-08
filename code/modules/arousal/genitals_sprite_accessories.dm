@@ -45,7 +45,7 @@
 	name = "Tapered"
 	taur_icon = 'icons/obj/genitals/taur_penis_onmob.dmi'
 	taur_dimension_x = 64
-	ru_name = "утолщённый"
+	ru_name = "утончённый к концу"
 
 /datum/sprite_accessory/penis/tentacle
 	icon_state = "tentacle"
@@ -61,6 +61,11 @@
 	icon_state = "hemiknot"
 	name = "Knotted Hemi"
 	ru_name = "двойной узловатый"
+
+/datum/sprite_accessory/penis/barbedhemiknot
+	icon_state = "hemiknot"
+	name = "Barbed, Knotted Hemi"
+	ru_name = "двойной, узловатый и немного колючий"
 
 /datum/sprite_accessory/penis/thick
 	icon_state = "thick"
@@ -127,6 +132,12 @@
 /datum/sprite_accessory/vagina/cloaca
 	name = "cloaca"
 	icon_state = "cloaca"
+
+/datum/sprite_accessory/vagina/cloaca
+	name = "Cloaca"
+	icon = 'modular_sand/icons/obj/genitals/vagina_onmob.dmi'
+	icon_state = "cloaca"
+
 
 //BREASTS BE HERE
 /datum/sprite_accessory/breasts

@@ -18940,7 +18940,7 @@
 /obj/structure/cable/white{
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/hostile/retaliate/goat{
+/mob/living/simple_animal/hostile/goat{
 	name = "Pete"
 	},
 /turf/open/floor/plasteel/freezer,
@@ -36604,6 +36604,20 @@
 "lcW" = (
 /turf/open/floor/wood,
 /area/maintenance/starboard/aft)
+"lix" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red,
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/mob/living/simple_animal/pet/dog/corgi/pig,
+/turf/open/floor/plasteel,
+/area/service/kitchen)
 "lmq" = (
 /obj/machinery/portable_atmospherics/canister/nitrous_oxide,
 /turf/open/floor/plating,
@@ -86422,7 +86436,7 @@ aCe
 aCY
 aFU
 aFc
-aFU
+lix
 aGU
 aCe
 aIU

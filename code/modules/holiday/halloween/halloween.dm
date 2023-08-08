@@ -94,7 +94,7 @@
 		playsound(loc, 'sound/spookoween/bats.ogg', 500, 1)
 		var/number = rand(1,3)
 		for(var/i=0,i < number,i++)
-			new /mob/living/simple_animal/hostile/retaliate/bat(loc)
+			new /mob/living/simple_animal/hostile/bat(loc)
 		trapped = 0
 
 	else if(trapped == ANGRY_FAITHLESS)

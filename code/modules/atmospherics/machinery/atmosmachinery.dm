@@ -311,6 +311,7 @@
 #define VENT_SOUND_DELAY 30
 
 /obj/machinery/atmospherics/relaymove(mob/living/user, direction)
+	var/obj/machinery/atmospherics/components/unary/vent_found
 	direction &= initialize_directions
 	if(!direction || !(direction in GLOB.cardinals)) //cant go this way.
 		return
@@ -322,6 +323,10 @@
 	if(target_move)
 		if(target_move.can_crawl_through())
 			if(is_type_in_typecache(target_move, GLOB.ventcrawl_machinery))
+
+				if(!do_after(src, 25, target = vent_found, required_mobility_flags = MOBILITY_MOVE))
+					return
+
 				user.forceMove(target_move.loc) //handle entering and so on.
 				user.visible_message("<span class='notice'>Что-то вылезает из вентиляции...</span>", "<span class='notice'>Ты вылезаешь из вентиляции.")
 			else
@@ -334,8 +339,13 @@
 					user.last_played_vent = world.time
 					playsound(src, 'sound/machines/ventcrawl.ogg', 50, 1, -3)
 	else if(is_type_in_typecache(src, GLOB.ventcrawl_machinery) && can_crawl_through()) //if we move in a way the pipe can connect, but doesn't - or we're in a vent
+
+		if(!do_after(src, 25, target = vent_found, required_mobility_flags = MOBILITY_MOVE))
+			return
+
 		user.forceMove(loc)
 		user.visible_message("<span class='notice'>Что-то вылезает из вентиляции...</span>", "<span class='notice'>Ты вылезаешь из вентиляции.")
+
 
 /obj/machinery/atmospherics/AltClick(mob/living/L)
 	if(is_type_in_typecache(src, GLOB.ventcrawl_machinery))

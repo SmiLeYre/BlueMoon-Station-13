@@ -1459,6 +1459,25 @@
 		log_admin("[key_name(usr)] set 'no_stacking' to [GLOB.dynamic_no_stacking].")
 		message_admins("[key_name(usr)] set 'no_stacking' to [GLOB.dynamic_no_stacking].")
 		dynamic_mode_options(usr)
+//BLUEMOON ADDITION START
+	else if(href_list["f_teambased_dynamic"])
+		if(!check_rights(R_ADMIN))
+			return
+
+		GLOB.teambased_dynamic = !GLOB.teambased_dynamic
+		log_admin("[key_name(usr)] set 'team based dynamic' to [GLOB.teambased_dynamic].")
+		message_admins("[key_name(usr)] set 'team based dynamic' to [GLOB.teambased_dynamic].")
+		dynamic_mode_options(usr)
+
+	else if(href_list["f_extended_dynamic"])
+		if(!check_rights(R_ADMIN))
+			return
+
+		GLOB.dynamic_extended = !GLOB.dynamic_extended
+		log_admin("[key_name(usr)] set 'extended dynamic' to [GLOB.dynamic_extended].")
+		message_admins("[key_name(usr)] set 'extended dynamic' to [GLOB.dynamic_extended].")
+		dynamic_mode_options(usr)
+//BLUEMOON ADDITION END
 	else if(href_list["f_dynamic_stacking_limit"])
 		if(!check_rights(R_ADMIN))
 			return

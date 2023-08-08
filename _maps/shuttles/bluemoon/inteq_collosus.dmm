@@ -470,6 +470,7 @@
 	},
 /obj/item/storage/backpack/duffelbag/syndie/inteq/c4,
 /obj/item/inteq_sledgehammer,
+/obj/item/inteq/uplink/radio/nuclear,
 /turf/open/floor/wood/wood_parquet,
 /area/shuttle/inteq)
 "oa" = (

@@ -324,7 +324,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/mob/living/simple_animal/hostile/retaliate/bat/secbat{
+/mob/living/simple_animal/hostile/bat/secbat{
 	desc = "An adorable fruit bat with a cute little hat, may or may not have a reputation for biting out eyeballs, or at least that's what the HoS'd tell you.";
 	name = "Colonel Chomps"
 	},
@@ -19860,7 +19860,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/retaliate/ghost,
+/mob/living/simple_animal/hostile/ghost,
 /turf/open/floor/wood,
 /area/maintenance/port/fore)
 "bsV" = (
@@ -43786,6 +43786,15 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/structure/table/reinforced,
+/obj/item/reagent_containers/food/snacks/burger/cumburger{
+	pixel_x = -6
+	},
+/obj/item/reagent_containers/food/snacks/burger/cumburger{
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/food/snacks/burger/cumburger{
+	pixel_x = 7
+	},
 /turf/open/floor/plasteel/cafeteria,
 /area/service/kitchen)
 "dCo" = (
@@ -45791,7 +45800,7 @@
 	name = "Kitchen Delivery";
 	req_access_txt = "28"
 	},
-/mob/living/simple_animal/hostile/retaliate/goat{
+/mob/living/simple_animal/hostile/goat{
 	name = "Pete"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -46789,13 +46798,6 @@
 	},
 /turf/open/floor/wood,
 /area/command/heads_quarters/captain)
-"gbY" = (
-/obj/effect/turf_decal/trimline/neutral/filled/line{
-	dir = 8
-	},
-/obj/structure/chair/sofa/left/brown,
-/turf/open/floor/plasteel/dark,
-/area/service/bar)
 "gcm" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
@@ -48299,7 +48301,7 @@
 /turf/open/floor/wood/wood_diagonal,
 /area/maintenance/port/fore)
 "hnG" = (
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/right/brown,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -49387,7 +49389,7 @@
 /turf/open/floor/wood,
 /area/service/library)
 "inw" = (
-/mob/living/simple_animal/hostile/retaliate/goose{
+/mob/living/simple_animal/hostile/goose{
 	desc = "Some evil loose goose.";
 	name = "Cere"
 	},
@@ -52609,7 +52611,7 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/service/kitchen)
 "kXi" = (
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/right/brown,
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
@@ -56539,7 +56541,7 @@
 /obj/machinery/airalarm{
 	pixel_y = 24
 	},
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/left/brown,
 /obj/effect/landmark/start/assistant,
 /turf/open/floor/plasteel,
 /area/commons/fitness)
@@ -57566,7 +57568,7 @@
 /turf/open/floor/plasteel,
 /area/commons/dorms)
 "piG" = (
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/left/brown,
 /obj/effect/turf_decal/trimline/neutral/filled/line{
 	dir = 4
 	},
@@ -59248,7 +59250,7 @@
 /turf/open/floor/plasteel/dark,
 /area/service/hydroponics)
 "qGT" = (
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/left/brown,
 /obj/effect/landmark/event_spawn,
 /turf/open/floor/plasteel,
 /area/security/prison/upper)
@@ -59941,6 +59943,25 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
+"rhS" = (
+/obj/structure/table/reinforced,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "kitchen";
+	name = "kitchen shutters"
+	},
+/obj/machinery/door/firedoor,
+/obj/item/reagent_containers/food/snacks/donut/semen{
+	pixel_x = -5
+	},
+/obj/item/reagent_containers/food/snacks/donut/semen{
+	pixel_x = 1;
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/food/snacks/donut/semen{
+	pixel_x = 7
+	},
+/turf/open/floor/plasteel/cafeteria,
+/area/service/kitchen)
 "rhX" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel,
@@ -66248,6 +66269,7 @@
 	dir = 8;
 	pixel_x = 12
 	},
+/mob/living/simple_animal/pet/dog/corgi/pig,
 /turf/open/floor/plasteel/cafeteria,
 /area/service/kitchen)
 "wpQ" = (
@@ -67114,7 +67136,7 @@
 	},
 /area/hallway/secondary/exit)
 "xli" = (
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/right/brown,
 /turf/open/floor/plasteel/dark,
 /area/service/bar)
 "xlX" = (
@@ -105184,7 +105206,7 @@ aJI
 bge
 wfi
 stq
-gbY
+wfi
 xwE
 pWy
 aJC
@@ -105951,7 +105973,7 @@ xGg
 wgU
 gdJ
 aVz
-faV
+rhS
 wEk
 jVS
 tjV

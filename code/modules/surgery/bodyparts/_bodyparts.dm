@@ -998,13 +998,13 @@
 	listclearnulls(embedded_objects)
 	for(var/obj/item/embeddies in embedded_objects)
 		if(!embeddies.isEmbedHarmless())
-			bleed_rate += 0.5
+			bleed_rate += 0.8
 
 	for(var/thing in wounds)
 		var/datum/wound/W = thing
 		bleed_rate += W.blood_flow
 	if(owner.mobility_flags & ~MOBILITY_STAND)
-		bleed_rate *= 0.75
+		bleed_rate *= 1.2
 	return bleed_rate
 
 /**

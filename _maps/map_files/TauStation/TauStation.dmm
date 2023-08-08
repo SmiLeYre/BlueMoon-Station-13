@@ -20428,7 +20428,7 @@
 /turf/open/floor/plating,
 /area/security/prison)
 "hcC" = (
-/mob/living/simple_animal/hostile/retaliate/goose,
+/mob/living/simple_animal/hostile/goose,
 /turf/open/floor/plating,
 /area/maintenance/fore)
 "hdv" = (
@@ -30568,7 +30568,7 @@
 /turf/open/floor/plasteel,
 /area/service/hydroponics/garden)
 "kGz" = (
-/mob/living/simple_animal/hostile/retaliate/bat{
+/mob/living/simple_animal/hostile/bat{
 	desc = "A fierce companion for any person of power, this spider has been carefully trained by Nanotrasen specialists. Its beady, staring eyes send shivers down your spine.";
 	emote_hear = list("chitters");
 	faction = list("spiders");
@@ -30983,7 +30983,7 @@
 /turf/open/floor/plasteel,
 /area/hallway/primary/starboard)
 "kNh" = (
-/mob/living/simple_animal/hostile/retaliate/goat{
+/mob/living/simple_animal/hostile/goat{
 	health = 69;
 	maxHealth = 69;
 	melee_damage_lower = 8;
@@ -35647,7 +35647,7 @@
 	icon_state = "cobweb2"
 	},
 /obj/structure/closet,
-/mob/living/simple_animal/hostile/retaliate/ghost,
+/mob/living/simple_animal/hostile/ghost,
 /obj/effect/spawner/lootdrop/maintenance{
 	lootcount = 3;
 	name = "3maintenance loot spawner"
@@ -40071,7 +40071,7 @@
 /turf/open/floor/plating,
 /area/maintenance/fore)
 "nNV" = (
-/mob/living/simple_animal/hostile/retaliate/goose,
+/mob/living/simple_animal/hostile/goose,
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
@@ -42392,7 +42392,7 @@
 /turf/open/floor/plasteel/dark,
 /area/service/bar)
 "oIe" = (
-/mob/living/simple_animal/hostile/retaliate/goose{
+/mob/living/simple_animal/hostile/goose{
 	attack_sound = 'sound/weapons/punch1.ogg';
 	attack_verb_continuous = "pummels";
 	attack_verb_simple = "pummel";
@@ -49722,6 +49722,11 @@
 	},
 /turf/open/floor/carpet/black,
 /area/service/library)
+"rmf" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/mob/living/simple_animal/pet/dog/corgi/pig,
+/turf/open/floor/plasteel/cafeteria,
+/area/service/kitchen)
 "rmh" = (
 /obj/structure/chair/sofa/corp/left,
 /obj/machinery/light/small{
@@ -61904,7 +61909,7 @@
 	},
 /area/service/library/artgallery/museum)
 "vqx" = (
-/mob/living/simple_animal/hostile/retaliate/goat{
+/mob/living/simple_animal/hostile/goat{
 	name = "Pete"
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
@@ -117225,7 +117230,7 @@ lia
 lia
 fkL
 gkc
-lia
+rmf
 lia
 vlj
 xJe

@@ -307,6 +307,7 @@
 	taste_description = "butter with a sweet aftertaste" //pass me the butter, OM NOM
 	overdose_threshold = 17
 	can_synth = FALSE
+	value = REAGENT_VALUE_COMMON
 
 /datum/reagent/fermi/butt_enlarger/on_mob_metabolize(mob/living/carbon/M)
 	. = ..()

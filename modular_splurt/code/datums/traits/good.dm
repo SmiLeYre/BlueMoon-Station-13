@@ -234,7 +234,7 @@
 /datum/quirk/hallowed
 	name = "Святой дух"
 	desc = "Вы были благословлены высшими силами или каким-то иным образом наделены святой энергией. Святая вода восстановит ваше здоровье!"
-	value = 3 // Maybe up the cost if more is added later.
+	value = 4 // Maybe up the cost if more is added later.
 	mob_trait = TRAIT_HALLOWED
 	gain_text = span_notice("Вы чувствуете, как святая энергия начинает течь по вашему телу.")
 	lose_text = span_notice("Вы чувствуете, как угасает ваша святая энергия...")

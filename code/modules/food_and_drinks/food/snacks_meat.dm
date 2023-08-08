@@ -449,7 +449,7 @@
 /obj/item/reagent_containers/food/snacks/cube/goat
 	name = "goat cube"
 	tastes = list("grass" = 1)
-	dried_being = /mob/living/simple_animal/hostile/retaliate/goat
+	dried_being = /mob/living/simple_animal/hostile/goat
 
 /obj/item/reagent_containers/food/snacks/cube/cow
 	name = "cow cube"

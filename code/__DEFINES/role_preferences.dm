@@ -44,6 +44,7 @@
 #define ROLE_SPACE_DRAGON			"Space Dragon"
 #define ROLE_SLAVER					"slaver"
 #define ROLE_SLAVER_LEADER			"slave master"
+#define ROLE_TERROR_SPIDER		"Terror Spider"
 //#define ROLE_MONSTERHUNTER			"monster hunter" Disabled for now
 #define ROLE_GHOSTCAFE				"ghostcafe"
 #define ROLE_GHOSTROLE				"ghostrole"
@@ -82,6 +83,7 @@ GLOBAL_LIST_INIT(special_roles, list(
 	ROLE_BLOODSUCKER = /datum/game_mode/bloodsucker,
 	ROLE_FAMILIES = /datum/game_mode/gang,
 	ROLE_SPACE_DRAGON,
+	ROLE_TERROR_SPIDER,
 	ROLE_SYNDICATE
 	//ROLE_MONSTERHUNTER Disabled for now
 ))

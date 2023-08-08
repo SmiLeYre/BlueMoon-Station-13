@@ -62,6 +62,12 @@
 
 #define STATUS_EFFECT_SLEEPING /datum/status_effect/incapacitating/sleeping //the affected is asleep
 
+#define STATUS_EFFECT_SLOWED /datum/status_effect/incapacitating/slowed // Замедляет.
+
+#define STATUS_EFFECT_CONFUSION /datum/status_effect/transient/confusion // Мультик-Штука над персонажем.
+
+#define STATUS_EFFECT_SILENCED /datum/status_effect/transient/silence // Заглушает.
+
 /// Blocks sprint
 #define STATUS_EFFECT_STAGGERED /datum/status_effect/staggered
 
@@ -158,3 +164,7 @@
 
 /// If the incapacitated status effect will ignore a mob in stasis (stasis beds)
 #define IGNORE_STASIS (1<<1)
+
+#define STATUS_EFFECT_TERROR_REGEN /datum/status_effect/terror/regeneration   //over time healing, 125 HP within 25~ seconds
+
+#define STATUS_EFFECT_TERROR_FOOD_REGEN /datum/status_effect/terror/food_regen   //over time healing for mobs to gain full HP within 25~ seconds

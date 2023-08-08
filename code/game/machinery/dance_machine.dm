@@ -518,5 +518,5 @@
 	if(active)
 		//for(var/mob/living/M in rangers)
 		for(var/mob/living/M in hearers(2, src))
-			if(prob(5+(allowed(M)*4)) && CHECK_MOBILITY(M, MOBILITY_MOVE))
+			if(prob(5+(allowed(M)*4)) && CHECK_MOBILITY(M, MOBILITY_MOVE) && (!M.client || M.client?.prefs.disco_dance))
 				dance(M)

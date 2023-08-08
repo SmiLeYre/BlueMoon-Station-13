@@ -1,5 +1,5 @@
 //goat
-/mob/living/simple_animal/hostile/retaliate/goat
+/mob/living/simple_animal/hostile/goat
 	name = "goat"
 	desc = "Not known for their pleasant disposition."
 	icon_state = "goat"
@@ -38,16 +38,16 @@
 	footstep_type = FOOTSTEP_MOB_SHOE
 	vocal_bark_id = "banjoc3"
 
-/mob/living/simple_animal/hostile/retaliate/goat/Initialize(mapload, /datum/reagent/milk_reagent)
+/mob/living/simple_animal/hostile/goat/Initialize(mapload, /datum/reagent/milk_reagent)
 	udder = new (null, milk_reagent)
 	. = ..()
 
-/mob/living/simple_animal/hostile/retaliate/goat/Destroy()
+/mob/living/simple_animal/hostile/goat/Destroy()
 	qdel(udder)
 	udder = null
 	return ..()
 
-/mob/living/simple_animal/hostile/retaliate/goat/BiologicalLife(delta_time, times_fired)
+/mob/living/simple_animal/hostile/goat/BiologicalLife(delta_time, times_fired)
 	if(!(. = ..()))
 		return
 	if(stat == CONSCIOUS)
@@ -68,16 +68,16 @@
 					if(locate(/obj/structure/spacevine) in step || locate(/obj/structure/glowshroom) in step)
 						Move(step, get_dir(src, step))
 
-/mob/living/simple_animal/hostile/retaliate/goat/Retaliate()
+/mob/living/simple_animal/hostile/goat/Retaliate()
 	..()
 	src.visible_message("<span class='danger'>[src] gets an evil-looking gleam in [ru_ego()] eye.</span>")
 
-/mob/living/simple_animal/hostile/retaliate/goat/Move()
+/mob/living/simple_animal/hostile/goat/Move()
 	. = ..()
 	if(!stat)
 		eat_plants()
 
-/mob/living/simple_animal/hostile/retaliate/goat/proc/eat_plants()
+/mob/living/simple_animal/hostile/goat/proc/eat_plants()
 	var/eaten = FALSE
 	var/obj/structure/spacevine/SV = locate(/obj/structure/spacevine) in loc
 	if(SV)
@@ -92,7 +92,7 @@
 	if(eaten && prob(10))
 		say("Nom")
 
-/mob/living/simple_animal/hostile/retaliate/goat/attackby(obj/item/O, mob/user, params)
+/mob/living/simple_animal/hostile/goat/attackby(obj/item/O, mob/user, params)
 	if(stat == CONSCIOUS && istype(O, /obj/item/reagent_containers/glass))
 		udder.milkAnimal(O, user)
 		return 1
@@ -100,7 +100,7 @@
 		return ..()
 
 
-/mob/living/simple_animal/hostile/retaliate/goat/AttackingTarget()
+/mob/living/simple_animal/hostile/goat/AttackingTarget()
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target

@@ -42,7 +42,7 @@
 	vore_flags = DEVOURABLE | DIGESTABLE
 
 //HOSTILE MOBS
-/mob/living/simple_animal/hostile/retaliate/goat
+/mob/living/simple_animal/hostile/goat
 	vore_flags = DEVOURABLE | DIGESTABLE | FEEDING
 	vore_default_mode = DM_HOLD
 
@@ -63,7 +63,7 @@
 	vore_flags = FEEDING
 	vore_default_mode = DM_DIGEST
 
-/mob/living/simple_animal/hostile/retaliate/poison/snake
+/mob/living/simple_animal/hostile/poison/snake
 	vore_flags = FEEDING
 	vore_default_mode = DM_DIGEST
 

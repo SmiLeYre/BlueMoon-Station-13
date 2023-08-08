@@ -1,9 +1,9 @@
 SUBSYSTEM_DEF(economy)
 	name = "Economy"
-	wait = 5 MINUTES
+	wait = 10 MINUTES
 	init_order = INIT_ORDER_ECONOMY
 	runlevels = RUNLEVEL_GAME
-	var/roundstart_paychecks = 5
+	var/roundstart_paychecks = 10
 	var/budget_pool = 35000
 	var/list/department_accounts = list(ACCOUNT_CIV = ACCOUNT_CIV_NAME,
 										ACCOUNT_ENG = ACCOUNT_ENG_NAME,
@@ -31,31 +31,31 @@ SUBSYSTEM_DEF(economy)
 	var/mood_bounty = 100
 	var/techweb_bounty = 250
 	var/list/bank_accounts_by_id = list()
-	var/slime_bounty = list("grey" = 10,
+	var/slime_bounty = list("grey" = 5,
 							// tier 1
-							"orange" = 100,
-							"metal" = 100,
-							"blue" = 100,
-							"purple" = 100,
+							"orange" = 10,
+							"metal" = 10,
+							"blue" = 10,
+							"purple" = 10,
 							// tier 2
-							"dark purple" = 500,
-							"dark blue" = 500,
-							"green" = 500,
-							"silver" = 500,
-							"gold" = 500,
-							"yellow" = 500,
-							"red" = 500,
-							"pink" = 500,
+							"dark purple" = 50,
+							"dark blue" = 50,
+							"green" = 50,
+							"silver" = 50,
+							"gold" = 50,
+							"yellow" = 50,
+							"red" = 50,
+							"pink" = 50,
 							// tier 3
-							"cerulean" = 750,
-							"sepia" = 750,
-							"bluespace" = 750,
-							"pyrite" = 750,
-							"light pink" = 750,
-							"oil" = 750,
-							"adamantine" = 750,
+							"cerulean" = 75,
+							"sepia" = 75,
+							"bluespace" = 75,
+							"pyrite" = 75,
+							"light pink" = 75,
+							"oil" = 75,
+							"adamantine" = 75,
 							// tier 4
-							"rainbow" = 1000)
+							"rainbow" = 100)
 	var/list/bank_accounts = list() //List of normal accounts (not department accounts)
 	var/list/dep_cards = list()
 	///The modifier multiplied to the value of bounties paid out.

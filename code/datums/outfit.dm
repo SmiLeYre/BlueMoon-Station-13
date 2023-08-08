@@ -203,6 +203,12 @@
 		H.equip_to_slot_or_del(new wrists(H), ITEM_SLOT_WRISTS, TRUE)
 	//
 
+	//BlueMoon. Надеваем маску и даем баллону в руку, если иных опций изначально не предусмотрено
+	if(!mask && isvox(H))
+		H.equip_to_slot_or_del(new /obj/item/clothing/mask/breath, ITEM_SLOT_MASK, TRUE)
+	if(!l_hand && isvox(H))
+		H.put_in_l_hand(new /obj/item/tank/internals/emergency_nitrogen)
+
 	if(accessory)
 		var/obj/item/clothing/under/U = H.w_uniform
 		if(U)

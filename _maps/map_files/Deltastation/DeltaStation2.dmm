@@ -65334,6 +65334,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/medical/virology)
+"dUV" = (
+/mob/living/simple_animal/pet/dog/corgi/pig,
+/turf/open/floor/plasteel/white,
+/area/service/kitchen)
 "dUX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate{
@@ -86493,6 +86497,20 @@
 	},
 /turf/open/floor/plasteel,
 /area/cargo/storage)
+"jFs" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/mob/living/carbon/monkey/punpun,
+/turf/open/floor/plasteel/dark,
+/area/service/bar)
 "jFM" = (
 /obj/structure/cable/white,
 /obj/effect/turf_decal/tile/blue,
@@ -96074,21 +96092,6 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
-"mQy" = (
-/obj/machinery/deepfryer,
-/obj/effect/turf_decal/tile/red{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/red{
-	dir = 8
-	},
-/mob/living/carbon/monkey/punpun,
-/turf/open/floor/plasteel,
-/area/service/kitchen)
 "mQE" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -96871,7 +96874,7 @@
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
 "ncW" = (
-/mob/living/simple_animal/hostile/retaliate/goat{
+/mob/living/simple_animal/hostile/goat{
 	name = "Pete"
 	},
 /turf/open/floor/plasteel/freezer,
@@ -166377,7 +166380,7 @@ pRl
 nlh
 oDp
 nlh
-oDp
+dUV
 hRG
 hiP
 pkO
@@ -166632,7 +166635,7 @@ pYO
 ykf
 wyW
 oDp
-mQy
+rUx
 jlv
 nma
 sBS
@@ -166874,7 +166877,7 @@ asM
 lcr
 vvQ
 hSe
-xcy
+jFs
 nSR
 ykf
 pYO

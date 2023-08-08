@@ -84,10 +84,11 @@
 
 /datum/ert/greybois
 	code = "Green"
-	teamsize = 1
+	teamsize = 5
 	opendoors = FALSE
 	enforce_human = FALSE
 	roles = list(/datum/antagonist/greybois)
 	leader_role = /datum/antagonist/greybois/greygod
 	rename_team = "Emergency Assistants"
 	polldesc = "an Emergency Assistant"
+	ertphrase = 'modular_bluemoon/kovac_shitcode/sound/ert/ert_rofl.ogg'

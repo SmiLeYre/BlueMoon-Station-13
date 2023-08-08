@@ -118,6 +118,8 @@
 	var/deathmessage = ""
 	///The sound played on death.
 	var/death_sound = null
+	var/list/damaged_sound = null
+	var/list/talk_sound = null //The sound played when talk
 
 	var/allow_movement_on_non_turfs = FALSE
 
@@ -153,6 +155,8 @@
 	var/sharpness = SHARP_NONE
 	//Generic flags
 	var/simple_mob_flags = NONE
+
+	var/mob/living/carbon/human/master_commander = null //holding var for determining who own/controls a sentient simple animal (for sentience potions).
 
 /mob/living/simple_animal/Initialize(mapload)
 	. = ..()
@@ -641,3 +645,43 @@
 	if (AIStatus == AI_Z_OFF)
 		SSidlenpcpool.idle_mobs_by_zlevel[old_z] -= src
 		toggle_ai(initial(AIStatus))
+
+/mob/living/simple_animal/say(message, verb, sanitize, ignore_speech_problems, ignore_atmospherics, datum/language/language = null, ignore_spam = FALSE, forced = null, var/list/spans = list())
+	. = ..()
+	if(. && length(src.talk_sound))
+		playsound(src, pick(src.talk_sound), 75, TRUE)
+
+/mob/living/simple_animal/attacked_by(obj/item/I, mob/living/user)
+	. = ..()
+	if(. && length(src.damaged_sound))
+		playsound(src, pick(src.damaged_sound), 40, 1)
+
+/mob/living/simple_animal/attack_hand(mob/living/carbon/human/M)
+	. = ..()
+	if(. && length(src.damaged_sound))
+		playsound(src, pick(src.damaged_sound), 40, 1)
+
+/mob/living/simple_animal/attack_animal(mob/living/simple_animal/M)
+	. = ..()
+	if(. && length(src.damaged_sound))
+		playsound(src, pick(src.damaged_sound), 40, 1)
+
+/mob/living/simple_animal/attack_alien(mob/living/carbon/alien/humanoid/M)
+	. = ..()
+	if(. && length(src.damaged_sound))
+		playsound(src, pick(src.damaged_sound), 40, 1)
+
+/mob/living/simple_animal/attack_larva(mob/living/carbon/alien/larva/L)
+	. = ..()
+	if(. && length(src.damaged_sound))
+		playsound(src, pick(src.damaged_sound), 40, 1)
+
+/mob/living/simple_animal/attack_slime(mob/living/simple_animal/slime/M)
+	. = ..()
+	if(. && length(src.damaged_sound))
+		playsound(src, pick(src.damaged_sound), 40, 1)
+
+/mob/living/simple_animal/attack_robot(mob/living/user)
+	. = ..()
+	if(. && length(src.damaged_sound))
+		playsound(src, pick(src.damaged_sound), 40, 1)

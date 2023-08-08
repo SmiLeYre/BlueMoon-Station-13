@@ -1,4 +1,4 @@
-#define STARTING_PAYCHECKS 5
+#define STARTING_PAYCHECKS 10
 
 #define PAYCHECK_ASSISTANT 25
 #define PAYCHECK_MINIMAL 75
@@ -7,15 +7,15 @@
 #define PAYCHECK_HARD 200
 #define PAYCHECK_COMMAND 250
 
-#define MAX_GRANT_CIV 100
-#define MAX_GRANT_ENG 250
-#define MAX_GRANT_SCI 500
+#define MAX_GRANT_CIV 1000
+#define MAX_GRANT_ENG 1000
+#define MAX_GRANT_SCI 250
 #define MAX_GRANT_SECMEDSRV 1000
 
 #define STATION_TARGET_BUFFER 100
 
 //What should vending machines charge when you buy something in-department.
-#define VENDING_DISCOUNT 0.01 // price * discount so 0 = 0
+#define VENDING_DISCOUNT 0 // price * discount so 0 = 0
 
 #define ACCOUNT_CIV "CIV"
 #define ACCOUNT_CIV_NAME "Civil Budget"

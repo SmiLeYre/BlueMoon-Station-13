@@ -302,7 +302,7 @@
 
 			if(HAS_TRAIT(H, TRAIT_DISTANT)) //No mood buff since you're not really liking it.
 				M.visible_message("<span class='warning'><b>[H]</b> резко осматривается на <b>[M]</b>, когда [ru_ego()] гладят по голове! Кажется, [ru_who()] раздражен[ru_a()]...</span>", \
-					"<span class='warning'>Вы гладите <b>[H]</b> по голове, чтобы [ru_who()] почувствовал[ru_a()] себя лучше! Кажется, [ru_who()] глаза презрительно смещаются в вашу сторону...</span>")
+					"<span class='warning'>Вы гладите <b>[H]</b> по голове! Кажется, [ru_who()] глаза презрительно смещаются в вашу сторону...</span>")
 				H.add_lust(-5) //Why are you touching me?
 				if(prob(5))
 					M.visible_message("<span class='warning'><b>[H]</b> быстро выкручивает руку <b>[M]</b>!</span>", \
@@ -319,13 +319,13 @@
 			else
 				friendly_check = TRUE
 				if(HAS_TRAIT(H, TRAIT_HEADPAT_SLUT))
-					M.visible_message("<span class='notice'><b>[M]</b> похлопывает <b>[src]</b> по голове, чтобы [ru_who()] почувствовал[ru_a()] себя лучше! Он[ru_a()] выглядит невероятно довольно!</span>", \
+					M.visible_message("<span class='notice'><b>[M]</b> похлопывает <b>[src]</b> по голове! Он[ru_a()] выглядит невероятно довольно!</span>", \
 								"<span class='notice'>Ты гладишь <b>[src]</b> по голове, чтобы [ru_who()] почувствовал себя лучше! Кажется, он[ru_a()] принимает эту ласку слишком близко к сердцу...</span>", target = src,
 								target_message = "<span class='boldnotice'><b>[M]</b> гладит вас по голове, чтобы вы почувствовали себя лучше!</span>")
 					SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "lewd_headpat", /datum/mood_event/lewd_headpat)
 					H.handle_post_sex(5, null, null) //Headpats are hot af
 				else
-					M.visible_message("<span class='notice'><b>[M]</b> похлопывает <b>[src]</b> по голове, чтобы [ru_who()] почувствовал[ru_a()] себя лучше!</span>", \
+					M.visible_message("<span class='notice'><b>[M]</b> похлопывает <b>[src]</b> по голове!</span>", \
 								"<span class='notice'>Ты гладишь <b>[src]</b> по голове, чтобы [ru_who()] почувствовал себя лучше!</span>", target = src,
 								target_message = "<span class='boldnotice'><b>[M]</b> гладит вас по голове, чтобы вы почувствовали себя лучше!</span>")
 					SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "headpat", /datum/mood_event/headpat)

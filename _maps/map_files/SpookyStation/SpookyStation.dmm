@@ -2186,7 +2186,7 @@
 /turf/open/floor/carpet/orange,
 /area/eventmap/inside)
 "agI" = (
-/mob/living/simple_animal/hostile/retaliate/nanotrasenpeace{
+/mob/living/simple_animal/hostile/nanotrasenpeace{
 	a_intent = "friendly";
 	alpha = 150;
 	attack_sound = 'sound/items/towelwipe.ogg';
@@ -3419,7 +3419,7 @@
 	desc = "A thin layer of dust coating the floor.";
 	name = "dust"
 	},
-/mob/living/simple_animal/hostile/retaliate/bat,
+/mob/living/simple_animal/hostile/bat,
 /turf/open/floor/wood,
 /area/eventmap/inside)
 "akj" = (
@@ -3569,7 +3569,7 @@
 /turf/open/floor/wood,
 /area/eventmap/inside)
 "akK" = (
-/mob/living/simple_animal/hostile/retaliate/bat{
+/mob/living/simple_animal/hostile/bat{
 	attack_sound = 'sound/spookoween/ahaha.ogg';
 	desc = "A spooky, floating washing machine possesed by some specture! Responsibilities, clearly the scariest thing imaginable.";
 	icon = 'icons/obj/machines/washing_machine.dmi';
@@ -3811,7 +3811,7 @@
 /turf/open/floor/wood,
 /area/eventmap/inside)
 "alt" = (
-/mob/living/simple_animal/hostile/retaliate/bat{
+/mob/living/simple_animal/hostile/bat{
 	attack_sound = 'sound/spookoween/ahaha.ogg';
 	desc = "A spooky, floating instrument possesed by some specture! Wooo~!";
 	icon = 'icons/obj/musician.dmi';
@@ -3826,7 +3826,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/eventmap/inside)
 "alu" = (
-/mob/living/simple_animal/hostile/retaliate/bat{
+/mob/living/simple_animal/hostile/bat{
 	attack_sound = 'sound/spookoween/ahaha.ogg';
 	desc = "A spooky, floating instrument possesed by some specture! Wooo~!";
 	icon = 'icons/obj/musician.dmi';
@@ -3873,7 +3873,7 @@
 /turf/open/floor/wood,
 /area/eventmap/inside)
 "alC" = (
-/mob/living/simple_animal/hostile/retaliate/bat/secbat,
+/mob/living/simple_animal/hostile/bat/secbat,
 /turf/open/floor/carpet/royalblue,
 /area/eventmap/inside)
 "alD" = (
@@ -3883,7 +3883,7 @@
 /turf/open/floor/carpet/royalblue,
 /area/eventmap/inside)
 "alE" = (
-/mob/living/simple_animal/hostile/retaliate/bat,
+/mob/living/simple_animal/hostile/bat,
 /turf/open/floor/carpet/royalblue,
 /area/eventmap/inside)
 "alF" = (
@@ -3905,7 +3905,7 @@
 /turf/open/floor/wood,
 /area/eventmap/inside)
 "alJ" = (
-/mob/living/simple_animal/hostile/retaliate/bat{
+/mob/living/simple_animal/hostile/bat{
 	attack_sound = 'sound/spookoween/ahaha.ogg';
 	desc = "A floating shopping list. It has the words Milk, eggs and cheese on it.";
 	icon = 'icons/obj/bureaucracy.dmi';
@@ -4115,7 +4115,7 @@
 /turf/open/floor/wood,
 /area/eventmap/inside)
 "ams" = (
-/mob/living/simple_animal/hostile/retaliate/bat{
+/mob/living/simple_animal/hostile/bat{
 	attack_sound = 'sound/spookoween/ahaha.ogg';
 	desc = "A spooky, floating instrument possesed by some specture! Wooo~!";
 	icon = 'icons/obj/musician.dmi';
@@ -4130,7 +4130,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/eventmap/inside)
 "amt" = (
-/mob/living/simple_animal/hostile/retaliate/bat{
+/mob/living/simple_animal/hostile/bat{
 	attack_sound = 'sound/spookoween/ahaha.ogg';
 	desc = "A spooky, floating instrument possesed by some specture! Wooo~!";
 	icon = 'icons/obj/musician.dmi';
@@ -4145,7 +4145,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/eventmap/inside)
 "amu" = (
-/mob/living/simple_animal/hostile/retaliate/bat{
+/mob/living/simple_animal/hostile/bat{
 	attack_sound = 'sound/spookoween/ahaha.ogg';
 	desc = "A spooky, floating instrument possesed by some specture! Wooo~!";
 	icon = 'icons/obj/musician.dmi';
@@ -4160,7 +4160,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/eventmap/inside)
 "amv" = (
-/mob/living/simple_animal/hostile/retaliate/bat{
+/mob/living/simple_animal/hostile/bat{
 	attack_sound = 'sound/spookoween/ahaha.ogg';
 	desc = "A spooky, floating instrument possesed by some specture! Wooo~!";
 	icon = 'icons/obj/musician.dmi';
@@ -4630,7 +4630,7 @@
 	},
 /area/eventmap/inside)
 "anM" = (
-/mob/living/simple_animal/hostile/retaliate/bat{
+/mob/living/simple_animal/hostile/bat{
 	attack_sound = 'sound/spookoween/ahaha.ogg';
 	desc = "A spooky, floating instrument possesed by some specture! Wooo~!";
 	icon = 'icons/obj/musician.dmi';
@@ -4651,7 +4651,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/eventmap/inside)
 "anO" = (
-/mob/living/simple_animal/hostile/retaliate/bat{
+/mob/living/simple_animal/hostile/bat{
 	attack_sound = 'sound/spookoween/ahaha.ogg';
 	desc = "A spooky, floating instrument possesed by some specture! Wooo~!";
 	icon = 'icons/obj/musician.dmi';
@@ -4987,7 +4987,7 @@
 /turf/open/floor/wood,
 /area/eventmap/inside)
 "aoL" = (
-/mob/living/simple_animal/hostile/retaliate/bat{
+/mob/living/simple_animal/hostile/bat{
 	attack_sound = 'sound/spookoween/ahaha.ogg';
 	desc = "A spooky, floating instrument possesed by some specture! Wooo~!";
 	icon = 'icons/obj/musician.dmi';
@@ -5001,7 +5001,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/eventmap/inside)
 "aoM" = (
-/mob/living/simple_animal/hostile/retaliate/bat{
+/mob/living/simple_animal/hostile/bat{
 	attack_sound = 'sound/spookoween/ahaha.ogg';
 	desc = "A spooky, floating instrument possesed by some specture! Wooo~!";
 	icon = 'icons/obj/musician.dmi';
@@ -5016,7 +5016,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/eventmap/inside)
 "aoN" = (
-/mob/living/simple_animal/hostile/retaliate/bat{
+/mob/living/simple_animal/hostile/bat{
 	attack_sound = 'sound/spookoween/ahaha.ogg';
 	desc = "A spooky, floating instrument possesed by some specture! Wooo~!";
 	icon = 'icons/obj/musician.dmi';
@@ -5218,7 +5218,7 @@
 	},
 /area/eventmap/inside)
 "apo" = (
-/mob/living/simple_animal/hostile/retaliate/bat{
+/mob/living/simple_animal/hostile/bat{
 	attack_sound = 'sound/spookoween/ahaha.ogg';
 	desc = "A spooky, floating instrument possesed by some specture! Wooo~!";
 	icon = 'icons/obj/musician.dmi';
@@ -5328,7 +5328,7 @@
 	},
 /area/eventmap/inside)
 "apC" = (
-/mob/living/simple_animal/hostile/retaliate/bat{
+/mob/living/simple_animal/hostile/bat{
 	attack_sound = 'sound/spookoween/ahaha.ogg';
 	desc = "A spooky, floating instrument possesed by some specture! Wooo~!";
 	icon = 'icons/obj/musician.dmi';
@@ -5347,7 +5347,7 @@
 	desc = "A thin layer of dust coating the floor.";
 	name = "dust"
 	},
-/mob/living/simple_animal/hostile/retaliate/bat{
+/mob/living/simple_animal/hostile/bat{
 	attack_sound = 'sound/spookoween/ahaha.ogg';
 	desc = "A spooky, floating instrument possesed by some specture! Wooo~!";
 	icon = 'icons/obj/musician.dmi';
@@ -5442,7 +5442,7 @@
 /turf/open/floor/carpet/green,
 /area/eventmap/inside)
 "apQ" = (
-/mob/living/simple_animal/hostile/retaliate/bat,
+/mob/living/simple_animal/hostile/bat,
 /turf/open/floor/carpet/green,
 /area/eventmap/inside)
 "apR" = (
@@ -5460,7 +5460,7 @@
 	desc = "A thin layer of dust coating the floor.";
 	name = "dust"
 	},
-/mob/living/simple_animal/hostile/retaliate/bat{
+/mob/living/simple_animal/hostile/bat{
 	attack_sound = 'sound/spookoween/ahaha.ogg';
 	desc = "A spooky, floating instrument possesed by some specture! Wooo~!";
 	icon = 'icons/obj/musician.dmi';
@@ -5475,7 +5475,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/eventmap/inside)
 "apU" = (
-/mob/living/simple_animal/hostile/retaliate/bat{
+/mob/living/simple_animal/hostile/bat{
 	attack_sound = 'sound/spookoween/ahaha.ogg';
 	desc = "A spooky, floating instrument possesed by some specture! Wooo~!";
 	icon = 'icons/obj/musician.dmi';
@@ -5549,7 +5549,7 @@
 /turf/open/floor/wood,
 /area/eventmap/inside)
 "aqc" = (
-/mob/living/simple_animal/hostile/retaliate/bat{
+/mob/living/simple_animal/hostile/bat{
 	desc = "A spookster!";
 	icon_state = "flan0";
 	name = "Name"
@@ -5681,7 +5681,7 @@
 /turf/open/floor/carpet/monochrome,
 /area/eventmap/inside)
 "aqx" = (
-/mob/living/simple_animal/hostile/retaliate/bat,
+/mob/living/simple_animal/hostile/bat,
 /turf/open/floor/carpet/monochrome,
 /area/eventmap/inside)
 "aqy" = (
@@ -5959,7 +5959,7 @@
 /area/eventmap/inside)
 "ars" = (
 /obj/structure/chair/wood/wings,
-/mob/living/simple_animal/hostile/retaliate/bat,
+/mob/living/simple_animal/hostile/bat,
 /turf/open/floor/carpet/red,
 /area/eventmap/inside)
 "art" = (
@@ -6256,7 +6256,7 @@
 	dir = 4;
 	icon_state = "brass_chair"
 	},
-/mob/living/simple_animal/hostile/retaliate/bat,
+/mob/living/simple_animal/hostile/bat,
 /turf/open/floor/carpet/red,
 /area/eventmap/inside)
 "aso" = (
@@ -6679,14 +6679,14 @@
 	desc = "A thin layer of dust coating the floor.";
 	name = "dust"
 	},
-/mob/living/simple_animal/hostile/retaliate/bat,
+/mob/living/simple_animal/hostile/bat,
 /turf/open/floor/carpet/red,
 /area/eventmap/inside)
 "atB" = (
 /obj/structure/chair/wood/wings{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/retaliate/bat,
+/mob/living/simple_animal/hostile/bat,
 /turf/open/floor/carpet/red,
 /area/eventmap/inside)
 "atC" = (

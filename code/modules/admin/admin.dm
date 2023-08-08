@@ -944,6 +944,12 @@
 		<b>No stacking:</b> - Option is <a href='?src=[REF(src)];[HrefToken()];f_dynamic_no_stacking=1'> <b>[GLOB.dynamic_no_stacking ? "ON" : "OFF"]</b></a>.
 		<br/>Unless the threat goes above [GLOB.dynamic_stacking_limit], only one "round-ender" ruleset will be drafted. <br/>
 		<br/>
+		<b>Extended dynamic:</b> - Option is <a href='?src=[REF(src)];[HrefToken()];f_extended_dynamic=1'> <b>[GLOB.dynamic_extended ? "ON" : "OFF"]</b></a>.
+		<br/>BLUEMOON ADDITION - Light dynamic, which forbids spawn of team antags. <br/>
+		<br/>
+		<b>Team based:</b> - Option is <a href='?src=[REF(src)];[HrefToken()];f_teambased_dynamic=1'> <b>[GLOB.teambased_dynamic ? "ON" : "OFF"]</b></a>.
+		<br/>BLUEMOON ADDITION - Dynamic will only roll team antags (as well as most of ghost antags). <br/>
+		<br/>
 		<b>Forced threat level:</b> Current value : <a href='?src=[REF(src)];[HrefToken()];f_dynamic_forced_threat=1'><b>[GLOB.dynamic_forced_threat_level]</b></a>.
 		<br/>The value threat is set to if it is higher than -1.<br/>
 		<br/>

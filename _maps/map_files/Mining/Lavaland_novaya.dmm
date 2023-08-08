@@ -13875,6 +13875,10 @@
 /obj/structure/stone_tile/block/cracked,
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"Oi" = (
+/mob/living/simple_animal/pet/dog/corgi/pig,
+/turf/open/floor/plasteel/checker,
+/area/mine/living_quarters)
 "Oj" = (
 /obj/machinery/door/airlock/security/glass{
 	name = "Labor Camp Monitoring";
@@ -51801,7 +51805,7 @@ AV
 Va
 DC
 Nf
-Pv
+Oi
 JC
 qO
 Hn

@@ -25,7 +25,7 @@
 /obj/item/projectile/goat/on_hit(atom/target)
 	knockdown = 20
 	var/turf/location = get_turf(target)
-	new/mob/living/simple_animal/hostile/retaliate/goat(location)
+	new/mob/living/simple_animal/hostile/goat(location)
 	playsound(location, 'modular_sand/sound/items/goatsound.ogg', 40, TRUE)
 	qdel(src)
 

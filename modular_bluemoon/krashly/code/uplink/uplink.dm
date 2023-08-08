@@ -76,7 +76,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	var/uplink_flag = UPLINK_SYNDICATE
 
-/obj/item/syndicate_uplink_high/Initialize(mapload, owner, tc_amount = 60)
+/obj/item/syndicate_uplink_high/Initialize(mapload, owner, tc_amount = 30)
 	. = ..()
 	AddComponent(/datum/component/uplink/syndicate, owner, FALSE, TRUE, uplink_flag, tc_amount)
 

@@ -57,7 +57,12 @@ SUBSYSTEM_DEF(statpanels)
 					vote_arry[++vote_arry.len] += list("STATPANEL VOTING DISABLED!", "The current vote system is not supported by statpanel rendering. Please vote manually by opening the vote popup using the action button or chat link.", "disabled")
 					//does not return.
 				else
-					vote_arry[++vote_arry.len] += list("Time Left:", " [DisplayTimeText(SSvote.end_time - world.time)] seconds")
+ //BLUEMOON ADDITION START
+					if(SSvote.mode == "roundtype")
+						vote_arry[++vote_arry.len] += list("Time Left:", " [DisplayTimeText(SSticker.timeLeft - ROUNDTYPE_VOTE_END_PENALTY)] seconds")
+					else
+ //BLUEMOON ADDITION END
+						vote_arry[++vote_arry.len] += list("Time Left:", " [DisplayTimeText(SSticker.timeLeft)] seconds")
 					vote_arry[++vote_arry.len] += list("Choices:", "")
 					for(var/choice in SSvote.choice_statclicks)
 						var/choice_id = SSvote.choice_statclicks[choice]

@@ -1,4 +1,4 @@
-/mob/living/simple_animal/hostile/retaliate/frog
+/mob/living/simple_animal/hostile/frog
 	name = "frog"
 	desc = "It seems a little sad."
 	icon_state = "frog"
@@ -30,7 +30,7 @@
 	gold_core_spawnable = HOSTILE_SPAWN
 	var/stepped_sound = 'sound/effects/huuu.ogg'
 
-/mob/living/simple_animal/hostile/retaliate/frog/Initialize(mapload)
+/mob/living/simple_animal/hostile/frog/Initialize(mapload)
 	. = ..()
 	if(prob(1))
 		name = "rare frog"
@@ -41,7 +41,7 @@
 		butcher_results = list(/obj/item/reagent_containers/food/snacks/nugget = 5)
 	AddElement(/datum/element/ventcrawling, given_tier = VENTCRAWLER_ALWAYS)
 
-/mob/living/simple_animal/hostile/retaliate/frog/Crossed(AM as mob|obj)
+/mob/living/simple_animal/hostile/frog/Crossed(AM as mob|obj)
 	. = ..()
 	if(!stat && isliving(AM))
 		var/mob/living/L = AM

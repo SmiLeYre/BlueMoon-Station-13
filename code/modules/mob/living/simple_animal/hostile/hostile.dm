@@ -65,6 +65,8 @@
 	///Declares a cooldown for potential charges right off the bat.
 	COOLDOWN_DECLARE(charge_cooldown)
 
+	var/list/enemies = list()
+
 /mob/living/simple_animal/hostile/Initialize(mapload)
 	. = ..()
 
@@ -157,6 +159,11 @@
 			. += A
 		for (var/mob/A in oview(vision_range, targets_from))
 			. += A
+	if(!enemies.len)
+		return list()
+	var/list/see = .
+	see &= enemies // Remove all entries that aren't in enemies
+	return see
 
 /mob/living/simple_animal/hostile/proc/FindTarget(var/list/possible_targets, var/HasTargetsList = 0)//Step 2, filter down possible targets to things we actually care about
 	. = list()
@@ -174,8 +181,6 @@
 	GiveTarget(Target)
 	return Target //We now have a target
 
-
-
 /mob/living/simple_animal/hostile/proc/PossibleThreats()
 	. = list()
 	for(var/pos_targ in ListTargets())
@@ -187,9 +192,21 @@
 			. += A
 			continue
 
-
-
 /mob/living/simple_animal/hostile/proc/Found(atom/A)//This is here as a potential override to pick a specific target if available
+	if(isliving(A))
+		var/mob/living/L = A
+		if(!L.stat)
+			return L
+		else
+			enemies -= L
+	else if(ismecha(A))
+		var/obj/vehicle/sealed/mecha/M = A
+		if(M.occupants)
+			return A
+//	else if(isspacepod(A))
+//		var/obj/spacepod/S = A
+//		if(S.pilot)
+//			return A
 	return
 
 /mob/living/simple_animal/hostile/proc/PickTarget(list/Targets)//Step 3, pick amongst the possible, attackable targets

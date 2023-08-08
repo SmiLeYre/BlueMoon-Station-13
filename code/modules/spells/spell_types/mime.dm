@@ -1,4 +1,4 @@
-/obj/effect/proc_holder/spell/aoe_turf/conjure/mime_wall
+/obj/effect/proc_holder/spell/aoe/conjure/mime_wall
 	name = "Invisible Wall"
 	desc = "The mime's performance transmutates into physical reality."
 	school = "mime"
@@ -17,7 +17,7 @@
 	action_icon_state = "mime"
 	action_background_icon_state = "bg_mime"
 
-/obj/effect/proc_holder/spell/aoe_turf/conjure/mime_wall/Trigger(mob/user, skip_can_cast = TRUE)
+/obj/effect/proc_holder/spell/aoe/conjure/mime_wall/Trigger(mob/user, skip_can_cast = TRUE)
 	if(user.mind)
 		if(!user.mind.miming)
 			to_chat(usr, "<span class='notice'>You must dedicate yourself to silence first.</span>")

@@ -28906,7 +28906,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/retaliate/goat{
+/mob/living/simple_animal/hostile/goat{
 	name = "Pete"
 	},
 /turf/open/floor/plasteel/freezer,
@@ -29376,7 +29376,7 @@
 	pixel_y = -22
 	},
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden,
-/mob/living/simple_animal/hostile/retaliate/bat,
+/mob/living/simple_animal/hostile/bat,
 /turf/open/floor/plating,
 /area/maintenance/starboard/central)
 "bwN" = (
@@ -52508,7 +52508,7 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden{
 	dir = 10
 	},
-/mob/living/simple_animal/hostile/retaliate/bat,
+/mob/living/simple_animal/hostile/bat,
 /turf/open/floor/plasteel/white,
 /area/command/heads_quarters/cmo)
 "czh" = (
@@ -62856,6 +62856,10 @@
 	},
 /turf/open/floor/plating,
 /area/engineering/main)
+"gmv" = (
+/mob/living/simple_animal/pet/dog/corgi/pig,
+/turf/open/floor/plasteel/cafeteria,
+/area/service/kitchen)
 "gna" = (
 /obj/effect/turf_decal/stripes/white/line,
 /obj/structure/cable{
@@ -110769,7 +110773,7 @@ ahx
 aia
 atm
 alX
-ahx
+gmv
 arx
 amF
 afK

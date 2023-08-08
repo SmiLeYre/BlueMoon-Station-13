@@ -119,7 +119,7 @@
 	holy_check = TRUE
 	tinfoil_check = FALSE
 
-/obj/effect/proc_holder/spell/aoe_turf/revenant
+/obj/effect/proc_holder/spell/aoe/revenant
 	clothes_req = NONE
 	action_icon = 'icons/mob/actions/actions_revenant.dmi'
 	action_background_icon_state = "bg_revenant"
@@ -131,14 +131,14 @@
 	var/unlock_amount = 100 //How much essence it costs to unlock
 	var/cast_amount = 50 //How much essence it costs to use
 
-/obj/effect/proc_holder/spell/aoe_turf/revenant/New()
+/obj/effect/proc_holder/spell/aoe/revenant/New()
 	..()
 	if(locked)
 		name = "[initial(name)] ([unlock_amount]E)"
 	else
 		name = "[initial(name)] ([cast_amount]E)"
 
-/obj/effect/proc_holder/spell/aoe_turf/revenant/can_cast(mob/living/simple_animal/revenant/user = usr, skipcharge = FALSE, silent = FALSE)
+/obj/effect/proc_holder/spell/aoe/revenant/can_cast(mob/living/simple_animal/revenant/user = usr, skipcharge = FALSE, silent = FALSE)
 	if(charge_counter < charge_max)
 		return FALSE
 	if(!istype(user)) //Badmins, no. Badmins, don't do it.
@@ -152,7 +152,7 @@
 		return FALSE
 	return TRUE
 
-/obj/effect/proc_holder/spell/aoe_turf/revenant/proc/attempt_cast(mob/living/simple_animal/revenant/user = usr)
+/obj/effect/proc_holder/spell/aoe/revenant/proc/attempt_cast(mob/living/simple_animal/revenant/user = usr)
 	if(!istype(user)) //If you're not a revenant, it works. Please, please, please don't give this to a non-revenant.
 		name = "[initial(name)]"
 		if(locked)
@@ -180,7 +180,7 @@
 	return TRUE
 
 //Overload Light: Breaks a light that's online and sends out lightning bolts to all nearby people.
-/obj/effect/proc_holder/spell/aoe_turf/revenant/overload
+/obj/effect/proc_holder/spell/aoe/revenant/overload
 	name = "Overload Lights"
 	desc = "Directs a large amount of essence into nearby electrical lights, causing lights to shock those nearby."
 	charge_max = 200
@@ -192,12 +192,12 @@
 	var/shock_damage = 15
 	action_icon_state = "overload_lights"
 
-/obj/effect/proc_holder/spell/aoe_turf/revenant/overload/cast(list/targets, mob/living/simple_animal/revenant/user = usr)
+/obj/effect/proc_holder/spell/aoe/revenant/overload/cast(list/targets, mob/living/simple_animal/revenant/user = usr)
 	if(attempt_cast(user))
 		for(var/turf/T in targets)
 			INVOKE_ASYNC(src, .proc/overload, T, user)
 
-/obj/effect/proc_holder/spell/aoe_turf/revenant/overload/proc/overload(turf/T, mob/user)
+/obj/effect/proc_holder/spell/aoe/revenant/overload/proc/overload(turf/T, mob/user)
 	for(var/obj/machinery/light/L in T)
 		if(!L.on)
 			continue
@@ -208,7 +208,7 @@
 		new /obj/effect/temp_visual/revenant(get_turf(L))
 		addtimer(CALLBACK(src, .proc/overload_shock, L, user), 20)
 
-/obj/effect/proc_holder/spell/aoe_turf/revenant/overload/proc/overload_shock(obj/machinery/light/L, mob/user)
+/obj/effect/proc_holder/spell/aoe/revenant/overload/proc/overload_shock(obj/machinery/light/L, mob/user)
 	if(!L.on) //wait, wait, don't shock me
 		return
 	flick("[L.base_state]2", L)
@@ -222,7 +222,7 @@
 		playsound(M, 'sound/machines/defib_zap.ogg', 50, 1, -1)
 
 //Defile: Corrupts nearby stuff, unblesses floor tiles.
-/obj/effect/proc_holder/spell/aoe_turf/revenant/defile
+/obj/effect/proc_holder/spell/aoe/revenant/defile
 	name = "Defile"
 	desc = "Twists and corrupts the nearby area as well as dispelling holy auras on floors."
 	charge_max = 150
@@ -233,12 +233,12 @@
 	cast_amount = 30
 	action_icon_state = "defile"
 
-/obj/effect/proc_holder/spell/aoe_turf/revenant/defile/cast(list/targets, mob/living/simple_animal/revenant/user = usr)
+/obj/effect/proc_holder/spell/aoe/revenant/defile/cast(list/targets, mob/living/simple_animal/revenant/user = usr)
 	if(attempt_cast(user))
 		for(var/turf/T in targets)
 			INVOKE_ASYNC(src, .proc/defile, T)
 
-/obj/effect/proc_holder/spell/aoe_turf/revenant/defile/proc/defile(turf/T)
+/obj/effect/proc_holder/spell/aoe/revenant/defile/proc/defile(turf/T)
 	for(var/obj/effect/blessing/B in T)
 		qdel(B)
 		new /obj/effect/temp_visual/revenant(T)
@@ -274,7 +274,7 @@
 		light.flicker(20) //spooky
 
 //Malfunction: Makes bad stuff happen to robots and machines.
-/obj/effect/proc_holder/spell/aoe_turf/revenant/malfunction
+/obj/effect/proc_holder/spell/aoe/revenant/malfunction
 	name = "Malfunction"
 	desc = "Corrupts and damages nearby machines and mechanical objects."
 	charge_max = 200
@@ -284,12 +284,12 @@
 	action_icon_state = "malfunction"
 
 //A note to future coders: do not replace this with an EMP because it will wreck malf AIs and everyone will hate you.
-/obj/effect/proc_holder/spell/aoe_turf/revenant/malfunction/cast(list/targets, mob/living/simple_animal/revenant/user = usr)
+/obj/effect/proc_holder/spell/aoe/revenant/malfunction/cast(list/targets, mob/living/simple_animal/revenant/user = usr)
 	if(attempt_cast(user))
 		for(var/turf/T in targets)
 			INVOKE_ASYNC(src, .proc/malfunction, T, user)
 
-/obj/effect/proc_holder/spell/aoe_turf/revenant/malfunction/proc/malfunction(turf/T, mob/user)
+/obj/effect/proc_holder/spell/aoe/revenant/malfunction/proc/malfunction(turf/T, mob/user)
 	for(var/mob/living/simple_animal/bot/bot in T)
 		if(!bot.emagged)
 			new /obj/effect/temp_visual/revenant(bot.loc)
@@ -321,7 +321,7 @@
 		S.emp_act(80)
 
 //Blight: Infects nearby humans and in general messes living stuff up.
-/obj/effect/proc_holder/spell/aoe_turf/revenant/blight
+/obj/effect/proc_holder/spell/aoe/revenant/blight
 	name = "Blight"
 	desc = "Causes nearby living things to waste away."
 	charge_max = 200
@@ -330,12 +330,12 @@
 	unlock_amount = 75
 	action_icon_state = "blight"
 
-/obj/effect/proc_holder/spell/aoe_turf/revenant/blight/cast(list/targets, mob/living/simple_animal/revenant/user = usr)
+/obj/effect/proc_holder/spell/aoe/revenant/blight/cast(list/targets, mob/living/simple_animal/revenant/user = usr)
 	if(attempt_cast(user))
 		for(var/turf/T in targets)
 			INVOKE_ASYNC(src, .proc/blight, T, user)
 
-/obj/effect/proc_holder/spell/aoe_turf/revenant/blight/proc/blight(turf/T, mob/user)
+/obj/effect/proc_holder/spell/aoe/revenant/blight/proc/blight(turf/T, mob/user)
 	for(var/mob/living/mob in T)
 		if(mob == user)
 			continue

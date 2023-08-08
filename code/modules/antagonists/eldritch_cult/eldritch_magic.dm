@@ -77,7 +77,7 @@
 	if(use_charge)
 		return ..()
 
-/obj/effect/proc_holder/spell/aoe_turf/rust_conversion
+/obj/effect/proc_holder/spell/aoe/rust_conversion
 	name = "Aggressive Spread"
 	desc = "Spreads rust onto nearby surfaces."
 	school = "transmutation"
@@ -90,7 +90,7 @@
 	action_icon_state = "corrode"
 	action_background_icon_state = "bg_ecult"
 
-/obj/effect/proc_holder/spell/aoe_turf/rust_conversion/cast(list/targets, mob/user = usr)
+/obj/effect/proc_holder/spell/aoe/rust_conversion/cast(list/targets, mob/user = usr)
 	playsound(user, 'sound/items/welder.ogg', 75, TRUE)
 	for(var/turf/T in targets)
 		///What we want is the 3 tiles around the user and the tile under him to be rusted, so min(dist,1)-1 causes us to get 0 for these tiles, rest of the tiles are based on chance
@@ -99,7 +99,7 @@
 			continue
 		T.rust_heretic_act()
 
-/obj/effect/proc_holder/spell/aoe_turf/rust_conversion/small
+/obj/effect/proc_holder/spell/aoe/rust_conversion/small
 	name = "Rust Conversion"
 	desc = "Spreads rust onto nearby surfaces."
 	range = 4
@@ -432,7 +432,7 @@
 	range = 14
 	sound = 'sound/effects/lingscreech.ogg'
 
-/obj/effect/proc_holder/spell/aoe_turf/fire_cascade
+/obj/effect/proc_holder/spell/aoe/fire_cascade
 	name = "Fire Cascade"
 	desc = "Heats the air around you."
 	school = "transmutation"
@@ -445,10 +445,10 @@
 	action_icon_state = "fire_ring"
 	action_background_icon_state = "bg_ecult"
 
-/obj/effect/proc_holder/spell/aoe_turf/fire_cascade/cast(list/targets, mob/user = usr)
+/obj/effect/proc_holder/spell/aoe/fire_cascade/cast(list/targets, mob/user = usr)
 	INVOKE_ASYNC(src, .proc/fire_cascade, user,range)
 
-/obj/effect/proc_holder/spell/aoe_turf/fire_cascade/proc/fire_cascade(atom/centre,max_range)
+/obj/effect/proc_holder/spell/aoe/fire_cascade/proc/fire_cascade(atom/centre,max_range)
 	playsound(get_turf(centre), 'sound/items/welder.ogg', 75, TRUE)
 	var/_range = 1
 	for(var/i = 0, i <= max_range,i++)
@@ -460,7 +460,7 @@
 		_range++
 		sleep(3)
 
-/obj/effect/proc_holder/spell/aoe_turf/fire_cascade/big
+/obj/effect/proc_holder/spell/aoe/fire_cascade/big
 	range = 6
 
 /obj/effect/proc_holder/spell/targeted/telepathy/eldritch
@@ -921,7 +921,7 @@
 		return FALSE
 	return TRUE
 
-/obj/effect/proc_holder/spell/aoe_turf/repulse/eldritch //placeholder spell
+/obj/effect/proc_holder/spell/aoe/repulse/eldritch //placeholder spell
 	name = "Void's Push"
 	desc = "With the snap of your fingers, send your enemies away."
 	charge_max = 400
@@ -934,11 +934,11 @@
 	action_background_icon_state = "bg_ecult"
 	sparkle_path = /obj/effect/temp_visual/voidpush
 
-/obj/effect/proc_holder/spell/aoe_turf/repulse/eldritch/cast(list/targets,mob/user = usr)
+/obj/effect/proc_holder/spell/aoe/repulse/eldritch/cast(list/targets,mob/user = usr)
 	user.emote("snap")
 	..(targets, user, 60)
 
-/obj/effect/proc_holder/spell/aoe_turf/domain_expansion
+/obj/effect/proc_holder/spell/aoe/domain_expansion
 	name = "Infinite Void"
 	desc = "Create a domain that will slow down and mark all opponents with a void mark."
 	charge_max = 1200
@@ -953,7 +953,7 @@
 	var/static/mutable_appearance/halo
 	var/sound/Snd // shamelessly ripped from lightning.
 
-/obj/effect/proc_holder/spell/aoe_turf/domain_expansion/cast(list/targets, mob/user = usr)
+/obj/effect/proc_holder/spell/aoe/domain_expansion/cast(list/targets, mob/user = usr)
 	Snd = new/sound('sound/magic/clockwork/ratvar_attack.ogg',channel = 7)
 	halo = halo || mutable_appearance('icons/effects/effects.dmi', "at_shield2", EFFECTS_LAYER)
 	user.add_overlay(halo)

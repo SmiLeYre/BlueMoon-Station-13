@@ -145,7 +145,7 @@
 	sound1 = 'sound/magic/teleport_diss.ogg'
 	sound2 = 'sound/magic/teleport_app.ogg'
 
-/obj/effect/proc_holder/spell/aoe_turf/timestop
+/obj/effect/proc_holder/spell/aoe/timestop
 	name = "Stop Time"
 	desc = "This spell stops time for everyone except for you, allowing you to move freely while your enemies and even projectiles are frozen."
 	charge_max = 500
@@ -157,10 +157,10 @@
 	var/timestop_range = 2
 	var/timestop_duration = 100
 
-/obj/effect/proc_holder/spell/aoe_turf/timestop/cast(list/targets, mob/user = usr)
+/obj/effect/proc_holder/spell/aoe/timestop/cast(list/targets, mob/user = usr)
 	new /obj/effect/timestop/magic(get_turf(user), timestop_range, timestop_duration, list(user))
 
-/obj/effect/proc_holder/spell/aoe_turf/conjure/carp
+/obj/effect/proc_holder/spell/aoe/conjure/carp
 	name = "Summon Carp"
 	desc = "This spell conjures a simple carp."
 
@@ -174,7 +174,7 @@
 	cast_sound = 'sound/magic/summon_karp.ogg'
 
 
-/obj/effect/proc_holder/spell/aoe_turf/conjure/construct
+/obj/effect/proc_holder/spell/aoe/conjure/construct
 	name = "Artificer"
 	desc = "This spell conjures a construct which may be controlled by Shades."
 
@@ -191,7 +191,7 @@
 	cast_sound = 'sound/magic/summonitems_generic.ogg'
 
 
-/obj/effect/proc_holder/spell/aoe_turf/conjure/creature
+/obj/effect/proc_holder/spell/aoe/conjure/creature
 	name = "Summon Creature Swarm"
 	desc = "This spell tears the fabric of reality, allowing horrific daemons to spill forth."
 
@@ -206,13 +206,13 @@
 	summon_type = list(/mob/living/simple_animal/hostile/netherworld)
 	cast_sound = 'sound/magic/summonitems_generic.ogg'
 
-/obj/effect/proc_holder/spell/aoe_turf/conjure/creature/cult
+/obj/effect/proc_holder/spell/aoe/conjure/creature/cult
 	name = "Summon Creatures (DANGEROUS)"
 	clothes_req = SPELL_CULT_GARB
 	charge_max = 5000
 	summon_amt = 2
 
-/obj/effect/proc_holder/spell/aoe_turf/repulse
+/obj/effect/proc_holder/spell/aoe/repulse
 	name = "Repulse"
 	desc = "This spell throws everything around the user away."
 	charge_max = 400
@@ -228,7 +228,7 @@
 
 	action_icon_state = "repulse"
 
-/obj/effect/proc_holder/spell/aoe_turf/repulse/cast(list/targets,mob/user = usr, stun_amt = 50)
+/obj/effect/proc_holder/spell/aoe/repulse/cast(list/targets,mob/user = usr, stun_amt = 50)
 	var/list/mobs = list()
 	var/list/objs = list()
 	var/list/thrownatoms = list()
@@ -271,7 +271,7 @@
 			AM.throw_at(throwtarget, ((clamp((maxthrow - (clamp(distfromcaster - 2, 0, distfromcaster))), 3, maxthrow))), 1,user)//So stuff gets tossed around at the same time.
 			safety--
 
-/obj/effect/proc_holder/spell/aoe_turf/repulse/xeno //i fixed conflicts only to find out that this is in the WIZARD file instead of the xeno file?!
+/obj/effect/proc_holder/spell/aoe/repulse/xeno //i fixed conflicts only to find out that this is in the WIZARD file instead of the xeno file?!
 	name = "Tail Sweep"
 	desc = "Throw back attackers with a sweep of your tail."
 	sound = 'sound/magic/tail_swing.ogg'
@@ -287,7 +287,7 @@
 	action_background_icon_state = "bg_alien"
 	anti_magic_check = FALSE
 
-/obj/effect/proc_holder/spell/aoe_turf/repulse/xeno/cast(list/targets,mob/user = usr)
+/obj/effect/proc_holder/spell/aoe/repulse/xeno/cast(list/targets,mob/user = usr)
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		playsound(C.loc, 'sound/voice/hiss5.ogg', 80, 1, 1)

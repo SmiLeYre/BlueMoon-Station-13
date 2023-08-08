@@ -354,8 +354,8 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 
 /datum/objective/hijack
 	name = "hijack"
-	explanation_text = "Захватите Аварийный Шаттл, взломав его навигационные протоколы через консоль управления (щелкните ALT-ЛКМ по консоли аварийного шаттла)! Мы отправляемся на Станцию Синдиката!"
-	team_explanation_text = "Захватите Аварийный Шаттл, взломав его навигационные протоколы через консоль управления (щелкните ALT-ЛКМ по консоли аварийного шаттла)! Мы отправляемся на Станцию Синдиката! Не забудьте про своих коллег."
+	explanation_text = "Захватите Аварийный Шаттл, взломав его навигационные протоколы через консоль управления (щелкните ALT-ЛКМ по консоли аварийного шаттла)! Мы отправляемся на Станцию ИнтеКью!"
+	team_explanation_text = "Захватите Аварийный Шаттл, взломав его навигационные протоколы через консоль управления (щелкните ALT-ЛКМ по консоли аварийного шаттла)! Мы отправляемся на Станцию ИнтеКью! Не забудьте про своих коллег."
 	martyr_compatible = 0 //Technically you won't get both anyway.
 	/// Overrides the hijack speed of any antagonist datum it is on ONLY, no other datums are impacted.
 	var/hijack_speed_override = 1

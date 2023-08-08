@@ -475,6 +475,7 @@ GLOBAL_LIST_EMPTY(antagonists)
 	antagpanel_category = "Custom"
 	show_name_in_check_antagonists = TRUE //They're all different
 	var/datum/team/custom_team
+	soft_antag = TRUE //BLUEMOON ADD - дружелюбные, малозначимые гостроли не должны считаться за антагонистов (ломает динамик)
 
 /datum/antagonist/custom/create_team(datum/team/team)
 	custom_team = team

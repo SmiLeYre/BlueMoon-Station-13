@@ -231,3 +231,16 @@
 /// Gives the number of pixels in an orthogonal line of tiles.
 #define TILES_TO_PIXELS(tiles)			(tiles * PIXELS)
 // )
+
+// oof, what a mouthful
+// Used in status_procs' "adjust" to let them modify a status effect by a given
+// amount, without inadverdently increasing it in the wrong direction
+/proc/directional_bounded_sum(orig_val, modifier, bound_lower, bound_upper)
+	var/new_val = orig_val + modifier
+	if(modifier > 0)
+		if(new_val > bound_upper)
+			new_val = max(orig_val, bound_upper)
+	else if(modifier < 0)
+		if(new_val < bound_lower)
+			new_val = min(orig_val, bound_lower)
+	return new_val

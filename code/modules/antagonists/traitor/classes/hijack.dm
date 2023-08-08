@@ -9,7 +9,7 @@
 
 /datum/traitor_class/human/hijack/forge_objectives(datum/antagonist/traitor/T)
 	var/datum/objective/hijack/O = new
-	O.explanation_text = "InteQ are letting you do what you want, with one condition: the shuttle must be hijacked by hacking its navigational protocols through the control console (alt click emergency shuttle console)."
+	O.explanation_text = "InteQ даёт вам чрезмерно важную миссию и разрешает делать вам делать все, что вы хотите, при одном условии: Шаттл Эвакуации должен быть захвачен путем взлома его навигационных протоколов через консоль управления (АЛЬТ-ЛКМ на Консоль Управления Шаттлом)."
 	O.owner = T.owner
 	T.add_objective(O)
 	return

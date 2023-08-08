@@ -217,7 +217,7 @@
 	desc = "Bring 3 bodies onto a transmutation rune to shed your human form and ascend to untold power."
 	required_atoms = list(/mob/living/carbon/human)
 	cost = 5
-	sacs_needed = 8
+	sacs_needed = 5
 	route = PATH_FLESH
 
 /datum/eldritch_knowledge/final/flesh_final/on_finished_recipe(mob/living/user, list/atoms, loc)

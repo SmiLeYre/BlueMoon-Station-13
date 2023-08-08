@@ -140,7 +140,7 @@
 
 /datum/spellbook_entry/repulse
 	name = "Repulse"
-	spell_type = /obj/effect/proc_holder/spell/aoe_turf/repulse
+	spell_type = /obj/effect/proc_holder/spell/aoe/repulse
 	category = "Defensive"
 
 /datum/spellbook_entry/lightningPacket
@@ -150,7 +150,7 @@
 
 /datum/spellbook_entry/timestop
 	name = "Time Stop"
-	spell_type = /obj/effect/proc_holder/spell/aoe_turf/timestop
+	spell_type = /obj/effect/proc_holder/spell/aoe/timestop
 	category = "Defensive"
 
 /datum/spellbook_entry/smoke
@@ -200,7 +200,7 @@
 
 /datum/spellbook_entry/knock
 	name = "Knock"
-	spell_type = /obj/effect/proc_holder/spell/aoe_turf/knock
+	spell_type = /obj/effect/proc_holder/spell/aoe/knock
 	category = "Mobility"
 	cost = 1
 
@@ -276,7 +276,7 @@
 
 /datum/spellbook_entry/the_traps
 	name = "The Traps!"
-	spell_type = /obj/effect/proc_holder/spell/aoe_turf/conjure/the_traps
+	spell_type = /obj/effect/proc_holder/spell/aoe/conjure/the_traps
 	category = "Defensive"
 	cost = 1
 
@@ -364,7 +364,7 @@
 /datum/spellbook_entry/item/soulstones/Buy(mob/living/carbon/human/user,obj/item/spellbook/book)
 	. =..()
 	if(.)
-		user.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/conjure/construct(null))
+		user.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe/conjure/construct(null))
 	return .
 
 /datum/spellbook_entry/item/necrostone

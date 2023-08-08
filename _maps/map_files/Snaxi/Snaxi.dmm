@@ -1,7 +1,7 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aaa" = (
 /obj/effect/landmark/event_spawn,
-/mob/living/simple_animal/hostile/retaliate/goat{
+/mob/living/simple_animal/hostile/goat{
 	name = "Pete"
 	},
 /turf/open/floor/plasteel/freezer,
@@ -187,7 +187,7 @@
 /obj/item/storage/secure/safe/HoS{
 	pixel_x = 35
 	},
-/mob/living/simple_animal/hostile/retaliate/bat/secbat{
+/mob/living/simple_animal/hostile/bat/secbat{
 	desc = "An adorable fruit bat with a cute little hat, may or may not have a reputation for biting out eyeballs, or at least that's what the HoS'd tell you.";
 	name = "Colonel Chomps"
 	},

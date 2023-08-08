@@ -378,6 +378,7 @@
 #define BREATH_OXY		/datum/breathing_class/oxygen
 #define BREATH_PLASMA	/datum/breathing_class/plasma
 #define BREATH_METHANE	/datum/breathing_class/methane
+#define BREATH_NITROGEN	/datum/breathing_class/nitrogen
 
 //Gremlins
 #define NPC_TAMPER_ACT_FORGET 1 //Don't try to tamper with this again
@@ -388,3 +389,11 @@
 #define CURRENT_LIVING_ANTAGS	"living_antags_list"
 #define CURRENT_DEAD_PLAYERS	"dead_players_list"
 #define CURRENT_OBSERVERS		"current_observers_list"
+
+#define STATUS_UPDATE_HEALTH 1
+#define STATUS_UPDATE_STAT 2
+#define STATUS_UPDATE_STAMINA 8
+#define STATUS_UPDATE_BLIND 16
+#define STATUS_UPDATE_NEARSIGHTED 64
+#define STATUS_UPDATE_NONE 0
+#define STATUS_UPDATE_ALL (~0)

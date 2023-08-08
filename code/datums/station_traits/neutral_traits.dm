@@ -123,7 +123,7 @@ GLOBAL_LIST_INIT(randomizing_station_name_messages, world.file2list("strings/ran
 	report_message = "Due to legal reasons or other, we might not be able to settle on a station name."
 	trait_processes = TRUE
 	COOLDOWN_DECLARE(randomizing_cooldown)
-	var/trigger_every = 30 MINUTES
+	var/trigger_every = 60 MINUTES
 	blacklist = list(/datum/station_trait/randomizing_station_name/fast, /datum/station_trait/randomizing_station_name/slow)
 
 /datum/station_trait/randomizing_station_name/on_round_start()
@@ -164,10 +164,10 @@ GLOBAL_LIST_INIT(randomizing_station_name_messages, world.file2list("strings/ran
 
 /datum/station_trait/randomizing_station_name/fast
 	name = "Randomizing station name - Fast"
-	trigger_every = 15 MINUTES
+	trigger_every = 30 MINUTES
 	blacklist = list(/datum/station_trait/randomizing_station_name, /datum/station_trait/randomizing_station_name/slow)
 
 /datum/station_trait/randomizing_station_name/slow
 	name = "Randomizing station name - Slow"
-	trigger_every = 60 MINUTES
+	trigger_every = 120 MINUTES
 	blacklist = list(/datum/station_trait/randomizing_station_name/fast, /datum/station_trait/randomizing_station_name)

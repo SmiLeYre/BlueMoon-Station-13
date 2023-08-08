@@ -188,7 +188,7 @@
 		/mob/living/simple_animal/hostile/mimic = 1,
 		/mob/living/simple_animal/hostile/shark = 1,
 		/mob/living/simple_animal/hostile/netherworld/blankbody = 1,
-		/mob/living/simple_animal/hostile/retaliate/goose = 1)
+		/mob/living/simple_animal/hostile/goose = 1)
 
 /mob/living/carbon/human/dummy/travelling_trader/animal_hunter/Initialize(mapload)
 	. = ..()

@@ -374,3 +374,12 @@
 		return "([AREACOORD(T)])"
 	else if(A.loc)
 		return "(UNKNOWN (?, ?, ?))"
+
+/proc/atom_loc_line(var/atom/a)
+	if(!istype(a))
+		return
+	var/turf/t = get_turf(a)
+	if(istype(t))
+		return "[a.loc] ([t.x],[t.y],[t.z]) ([a.loc.type])"
+	else if(a.loc)
+		return "[a.loc] (0,0,0) ([a.loc.type])"
