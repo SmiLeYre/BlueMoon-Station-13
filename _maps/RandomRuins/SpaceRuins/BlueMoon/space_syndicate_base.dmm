@@ -7535,6 +7535,7 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "Gk" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/knot,
 /obj/item/circuitboard/machine/power_turbine,
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
