@@ -438,13 +438,13 @@
 					switch(target_orifice)
 						if(CUM_TARGET_MOUTH)
 							if(partner.has_mouth() && partner.mouth_is_free())
-								message = "cums right in \the <b>[partner]</b>'s mouth."
+								message = "кончает прямо в ротик <b>[partner]</b>."
 								cumin = TRUE
 							else
 								message = "кончает на лицо <b>[partner]</b> семенем."
 						if(CUM_TARGET_THROAT)
 							if(partner.has_mouth() && partner.mouth_is_free())
-								message = "shoves deep into \the <b>[partner]</b>'s throat and cums."
+								message = "входит глубоко в глотку <b>[partner]</b> и кончает."
 								cumin = TRUE
 							else
 								message = "кончает на лицо <b>[partner]</b> семенем."
