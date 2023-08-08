@@ -174,7 +174,6 @@ obj/item/clothing/suit/donator/bm/cerberus_suit/armored/inkvd
 	item_state = "hardsuit0-inteq"
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/head.dmi'
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/head.dmi'
-	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/head_muzzled.dmi'
 	hardsuit_type = "inteq"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 //Suit_STANDART
@@ -198,7 +197,6 @@ obj/item/clothing/suit/donator/bm/cerberus_suit/armored/inkvd
 	item_state = "hardsuit0-inteq"
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/head.dmi'
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/head.dmi'
-	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/head_muzzled.dmi'
 	hardsuit_type = "inteq"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 //Suit_SHIELDED

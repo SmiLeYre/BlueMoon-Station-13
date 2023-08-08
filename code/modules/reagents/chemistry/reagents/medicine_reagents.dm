@@ -691,7 +691,7 @@
 
 /datum/reagent/medicine/salbutamol
 	name = "Salbutamol"
-	description = "Rapidly restores oxygen deprivation as well as preventing more of it to an extent. Causes jittering."
+	description = "Rapidly restores breathing deprivation as well as preventing more of it to an extent. Causes jittering."
 	reagent_state = LIQUID
 	color = "#00FFFF"
 	boiling_point = 300
@@ -708,7 +708,7 @@
 
 /datum/reagent/medicine/perfluorodecalin
 	name = "Perfluorodecalin"
-	description = "Extremely rapidly restores oxygen deprivation, but inhibits speech. May also heal small amounts of bruising and burns."
+	description = "Extremely rapidly restores breathing deprivation, but inhibits speech. May also heal small amounts of bruising and burns."
 	reagent_state = LIQUID
 	color = "#FF6464"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM

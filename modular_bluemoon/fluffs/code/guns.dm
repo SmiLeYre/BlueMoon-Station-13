@@ -96,3 +96,54 @@
 
 /obj/item/flamethrower/update_icon_state()
 	item_state = "m240_[lit]"
+
+/obj/item/old_kit
+	name = "H&K Luftkuss Kit"
+	desc = "A modkit for making a hybrid taser into a H&K Luftkuss."
+	icon = 'icons/obj/vending_restock.dmi'
+	icon_state = "refill_donksoft"
+	var/product = /obj/item/gun/energy/e_gun/advtaser_old //what it makes
+	var/list/fromitem = list(/obj/item/gun/energy/e_gun/advtaser) //what it needs
+
+/obj/item/old_kit/afterattack(obj/O, mob/user as mob)
+	if(istype(O, product))
+		to_chat(user,"<span class='warning'>[O] is already modified!")
+		return
+	if(O.type in fromitem) //makes sure O is the right thing
+		new product(usr.loc) //spawns the product
+		user.visible_message("<span class='warning'>[user] modifies [O]!","<span class='warning'>You modify the [O]!")
+		qdel(O) //Gets rid of the baton
+		qdel(src) //gets rid of the kit
+	else
+		to_chat(user, "<span class='warning'> You can't modify [O] with this kit!</span>")
+
+/obj/item/gun/energy/e_gun/advtaser_old
+	name = "H&K Luftkuss"
+	desc = "An upgraded hybrid taser gun with several stripes, manufactured by the SolFed H&K arms company."
+	icon_state = "old"
+	item_state = "auto9"
+	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler/old, /obj/item/ammo_casing/energy/electrode/old = FALSE)
+	ammo_x_offset = 0
+	var/last_altfire = 0
+	var/altfire_delay = CLICK_CD_RANGE
+
+/obj/item/gun/energy/e_gun/advtaser_old/altafterattack(atom/target, mob/user, proximity_flag, params)
+	. = TRUE
+	if(last_altfire + altfire_delay > world.time)
+		return
+	var/current_index = current_firemode_index
+	set_firemode_to_type(/obj/item/ammo_casing/energy/electrode/old)
+	process_afterattack(target, user, proximity_flag, params)
+	set_firemode_index(current_index)
+	last_altfire = world.time
+
+/obj/item/ammo_casing/energy/disabler/old
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/disabler.ogg'
+
+/obj/item/ammo_casing/energy/electrode/old
+	projectile_type = /obj/item/projectile/energy/electrode
+	select_name = "stun"
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/taser.ogg'
+	e_cost = 200
+	harmful = FALSE

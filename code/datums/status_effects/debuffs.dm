@@ -282,9 +282,9 @@
 	for(var/obj/item/his_grace/HG in owner.held_items)
 		qdel(src)
 		return
-	owner.adjustBruteLoss(0.1)
-	owner.adjustFireLoss(0.1)
-	owner.adjustToxLoss(0.2, TRUE, TRUE)
+	owner.adjustBruteLoss(0.5)
+	owner.adjustFireLoss(0.5)
+	owner.adjustToxLoss(0.3, TRUE, TRUE)
 
 /datum/status_effect/belligerent
 	id = "belligerent"
@@ -643,7 +643,7 @@
 	var/chance = rand(0,100)
 	switch(chance)
 		if(0 to 19)
-			H.adjustBruteLoss(6)
+			H.adjustBruteLoss(10)
 		if(20 to 29)
 			H.Dizzy(10)
 		if(30 to 39)
@@ -734,7 +734,7 @@
 	underlay_file = 'icons/effects/bleed.dmi'
 	overlay_state = "bleed"
 	underlay_state = "bleed"
-	var/bleed_damage = 200
+	var/bleed_damage = 350
 
 /datum/status_effect/stacking/saw_bleed/fadeout_effect()
 	new /obj/effect/temp_visual/bleed(get_turf(owner))
@@ -751,7 +751,7 @@
 	id = "bloodletting"
 	stack_threshold = 7
 	max_stacks = 7
-	bleed_damage = 20
+	bleed_damage = 40
 
 /datum/status_effect/neck_slice
 	id = "neck_slice"
@@ -766,6 +766,7 @@
 		H.remove_status_effect(/datum/status_effect/neck_slice)
 	if(prob(10))
 		H.emote(pick("gasp", "gag", "choke"))
+		H.adjustBruteLoss(50)
 	var/still_bleeding = FALSE
 	for(var/thing in throat.wounds)
 		var/datum/wound/W = thing

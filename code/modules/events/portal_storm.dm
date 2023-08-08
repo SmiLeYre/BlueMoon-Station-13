@@ -77,6 +77,23 @@
 						/mob/living/simple_animal/hostile/brute/uber = 5)
 	triggersound = 'modular_bluemoon/kovac_shitcode/sound/necros_storm.ogg'
 
+/datum/round_event_control/portal_storm_funclaws
+	name = "Portal Storm: Funclaws"
+	typepath = /datum/round_event/portal_storm/portal_storm_funclaws
+	weight = 40
+	min_players = 50
+	earliest_start = 60 MINUTES
+	max_occurrences = 1
+	category = EVENT_CATEGORY_INVASION
+
+/datum/round_event/portal_storm/portal_storm_funclaws
+	boss_types = list(/mob/living/simple_animal/hostile/deathclaw/funclaw/femclaw/mommyclaw = 1,\
+					/mob/living/simple_animal/hostile/deathclaw/funclaw/gentle/newclaw/alphaclaw = 1)
+	hostile_types = list(/mob/living/simple_animal/hostile/deathclaw/funclaw/femclaw =4,\
+						/mob/living/simple_animal/hostile/deathclaw/funclaw = 4)
+
+	triggersound = 'sound/announcer/classic/_admin_horror_music.ogg'
+
 /datum/round_event_control/portal_storm_clock
 	name = "Portal Storm: Clock Cult"
 	typepath = /datum/round_event/portal_storm/portal_storm_clock

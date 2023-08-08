@@ -220,6 +220,13 @@
 	assignment = "NRI Citizen"
 	uses_overlays = FALSE
 
+/obj/item/card/id/blumland_citizen
+	name = "Blumland Citizen ID"
+	desc = "An ID made to recognize Blumland Confederation habbitants and tourists."
+	icon_state = "blumland"
+	assignment = "Blumland Citizen"
+	uses_overlays = FALSE
+
 /datum/gear/hands/sol_citizen
 	name = "Solar Federation Citizen ID"
 	slot = ITEM_SLOT_BACKPACK
@@ -229,6 +236,11 @@
 	name = "New Russian Empire Citizen ID"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/card/id/nri_citizen
+
+/datum/gear/hands/blumland_citizen
+	name = "Blumland Citizen ID"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/card/id/blumland_citizen
 
 //// The default nun robe change to uniform slot
 

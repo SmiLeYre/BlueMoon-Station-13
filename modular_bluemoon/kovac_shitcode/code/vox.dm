@@ -67,6 +67,7 @@
 
 	limbs_id = SPECIES_VOX
 	icon_limbs = 'modular_splurt/icons/mob/human_parts_greyscale.dmi'
+	damage_overlay_type = "xeno"
 
 	attack_verb = "claw"
 	attack_sound = 'sound/weapons/slash.ogg'
@@ -78,6 +79,9 @@
 	breathid = "n2"
 	mutantlungs = /obj/item/organ/lungs/vox
 	mutanttongue = /obj/item/organ/tongue/vox
+
+	disliked_food = null
+	liked_food = GROSS | MEAT
 
 //Вокс получает пиздюлей в 2 раза больше
 	burnmod = 2
@@ -93,7 +97,7 @@
 	species_language_holder = /datum/language_holder/vox // Воксы изначально знают свой язык
 
 	species_traits = list(NOGENITALS,HAS_BONE,HAS_FLESH,EYECOLOR,LIPS,HAIR) // Фактически воксы бесполые
-	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_STABLEHEART,TRAIT_STABLELIVER,TRAIT_EASYDISMEMBER,TRAIT_SILENT_STEP,TRAIT_RESISTLOWPRESSURE,,TRAIT_RESISTHIGHPRESSURE) //Сердце и печень не гниют, устойчивость к холоду и космосу, тихий шаг. Вдобавок к минусам выше - конечности проще отрываются
+	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_STABLEHEART,TRAIT_STABLELIVER,TRAIT_EASYDISMEMBER,TRAIT_SILENT_STEP,TRAIT_RESISTLOWPRESSURE,TRAIT_RESISTHIGHPRESSURE,TRAIT_DNC_ORDER) //Сердце и печень не гниют, устойчивость к холоду и космосу, тихий шаг. Вдобавок к минусам выше - конечности проще отрываются
 
 	ass_image = 'icons/ass/asslizard.png'
 
@@ -115,10 +119,10 @@
 	C.update_body()
 
 	var/datum/component/tackler/T = C.LoadComponent(/datum/component/tackler)
-	T.stamina_cost = 45
-	T.base_knockdown = 2 SECONDS
-	T.range = 4
-	T.speed = 0.8
+	T.stamina_cost = 25
+	T.base_knockdown = 2.5 SECONDS
+	T.range = 5
+	T.speed = 0.9
 	T.skill_mod = 4
 	T.min_distance = 2
 	return ..()

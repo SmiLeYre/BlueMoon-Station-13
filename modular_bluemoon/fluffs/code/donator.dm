@@ -49,7 +49,7 @@
 	name = "Gorka"
 	slot = ITEM_SLOT_ICLOTHING
 	path = /obj/item/clothing/under/donator/bm/gorka
-	ckeywhitelist = list("leony24", "stgs")
+	ckeywhitelist = list("leony24", "vulp_shiro", "dolbajob", "trustmeimengineer", "stgs")
 
 /datum/gear/donator/bm/lightning_holocloak
 	name = "lightning holo-cloak"
@@ -123,6 +123,12 @@
 	path = /obj/item/m240_kit
 	ckeywhitelist = list("stgs", "sodastrike", "dolbajob")
 
+/datum/gear/donator/bm/old_gun
+	name = "H&K Luftkuss Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/old_kit
+	ckeywhitelist = list("stgs", "dolbajob")
+
 /datum/gear/donator/bm/Friskis_Mask
 	name = "Magic Kitsune Mask"
 	slot = ITEM_SLOT_MASK
@@ -145,7 +151,7 @@
 	name = "Multicam"
 	slot = ITEM_SLOT_ICLOTHING
 	path = /obj/item/clothing/under/donator/bm/multicam
-	ckeywhitelist = list("leony24")
+	ckeywhitelist = list("leony24", "vulp_shiro", "dolbajob", "trustmeimengineer")
 
 /datum/gear/donator/bm/baron
 	name = "Terrifying Cloak"
