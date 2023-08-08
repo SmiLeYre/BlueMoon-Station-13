@@ -129,6 +129,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/extremeharm = "No" //If "extreme content" is enabled, this option serves as a toggle for the related interactions to cause damage or not
 	var/see_chat_emotes = TRUE
 	var/view_pixelshift = FALSE
+	var/disco_dance = TRUE
 	var/enable_personal_chat_color = FALSE
 	var/personal_chat_color = "#ffffff"
 	var/list/alt_titles_preferences = list()
@@ -1319,6 +1320,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<b>See Runechat for emotes:</b> <a href='?_src_=prefs;preference=see_chat_emotes'>[see_chat_emotes ? "Enabled" : "Disabled"]</a><br>"
 					//SKYRAT CHANGES END
 					dat += "<b>Shift view when pixelshifting:</b> <a href='?_src_=prefs;preference=view_pixelshift'>[view_pixelshift ? "Enabled" : "Disabled"]</a><br>" //SPLURT Edit
+					dat += "<b>Dance near disco ball:</b> <a href='?_src_=prefs;preference=disco_dance'>[disco_dance ? "Enabled" : "Disabled"]</a><br>"
 					dat += "<br>"
 					dat += "<b>Action Buttons:</b> <a href='?_src_=prefs;preference=action_buttons'>[(buttons_locked) ? "Locked In Place" : "Unlocked"]</a><br>"
 					dat += "<br>"
@@ -3689,6 +3691,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				//End of skyrat changes
 				if("view_pixelshift") //SPLURT Edit
 					view_pixelshift = !view_pixelshift
+				if ("disco_dance")
+					disco_dance = !disco_dance
 				if("action_buttons")
 					buttons_locked = !buttons_locked
 				if("tgui_fancy")

@@ -498,6 +498,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["gfluid_blacklist"]		>> gfluid_blacklist
 	S["new_character_creator"]	>> new_character_creator
 	S["view_pixelshift"]		>> view_pixelshift
+	S["disco_dance"]			>> disco_dance
 
 	//favorite outfits
 	S["favorite_outfits"] >> favorite_outfits
@@ -706,6 +707,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["gfluid_blacklist"], gfluid_blacklist)
 	WRITE_FILE(S["new_character_creator"], new_character_creator)
 	WRITE_FILE(S["view_pixelshift"], view_pixelshift)
+	WRITE_FILE(S["disco_dance"], disco_dance)
 
 	var/mob/living/carbon/human/H = parent.mob
 	if(istype(H))
