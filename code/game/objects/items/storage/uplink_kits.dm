@@ -174,7 +174,7 @@
 	name = "box"
 	desc = "A sleek, sturdy box."
 	icon = 'modular_bluemoon/krashly/icons/obj/box.dmi'
-	icon_state = "inteqbox"
+	icon_state = "syndiebox"
 
 /obj/item/storage/box/syndie_kit/imp_freedom
 	name = "boxed freedom implant (with injector)"
@@ -202,6 +202,7 @@
 
 /obj/item/storage/box/syndie_kit/imp_macrobomb
 	name = "Macrobomb Implant (with injector)"
+	icon_state = "inteqbox"
 
 /obj/item/storage/box/syndie_kit/imp_macrobomb/PopulateContents()
 	var/obj/item/implanter/O = new(src)
@@ -219,6 +220,7 @@
 
 /obj/item/storage/box/syndie_kit/bioterror
 	name = "bioterror syringe box"
+	icon_state = "inteqbox"
 
 /obj/item/storage/box/syndie_kit/bioterror/PopulateContents()
 	for(var/i in 1 to 7)
@@ -239,7 +241,7 @@
 	new /obj/item/implanter/storage(src)
 
 /obj/item/storage/box/syndie_kit/space
-	name = "boxed space suit and helmet"
+	name = "Boxed Syndicate Space Suit and Helmet"
 
 /obj/item/storage/box/syndie_kit/space/ComponentInitialize()
 	. = ..()
@@ -250,6 +252,21 @@
 /obj/item/storage/box/syndie_kit/space/PopulateContents()
 	new /obj/item/clothing/suit/space/syndicate(src) // Black and red is so in right now
 	new /obj/item/clothing/head/helmet/space/syndicate(src)
+	new /obj/item/tank/internals/emergency_oxygen/engi/syndi(src)
+
+/obj/item/storage/box/syndie_kit/space/inteq
+	name = "Boxed InteQ Space Suit and Helmet"
+	icon_state = "inteqbox"
+
+/obj/item/storage/box/syndie_kit/space/inteq/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.can_hold = typecacheof(list(/obj/item/clothing/suit/space/syndicate/inteq, /obj/item/clothing/head/helmet/space/syndicate/inteq))
+
+/obj/item/storage/box/syndie_kit/space/inteq/PopulateContents()
+	new /obj/item/clothing/suit/space/syndicate/inteq(src) // Black and red is so in right now
+	new /obj/item/clothing/head/helmet/space/syndicate/inteq(src)
 	new /obj/item/tank/internals/emergency_oxygen/engi/syndi(src)
 
 /obj/item/storage/box/syndie_kit/emp
@@ -265,6 +282,7 @@
 
 /obj/item/storage/box/syndie_kit/chemical
 	name = "boxed chemical kit"
+	icon_state = "inteqbox"
 
 /obj/item/storage/box/syndie_kit/chemical/ComponentInitialize()
 	. = ..()
@@ -289,6 +307,7 @@
 
 /obj/item/storage/box/syndie_kit/nuke
 	name = "box"
+	icon_state = "inteqbox"
 
 /obj/item/storage/box/syndie_kit/nuke/PopulateContents()
 	new /obj/item/screwdriver/nuke(src)
@@ -297,6 +316,7 @@
 
 /obj/item/storage/box/syndie_kit/supermatter
 	name = "box"
+	icon_state = "inteqbox"
 
 /obj/item/storage/box/syndie_kit/supermatter/PopulateContents()
 	new /obj/item/scalpel/supermatter(src)
@@ -306,6 +326,7 @@
 
 /obj/item/storage/box/syndie_kit/tuberculosisgrenade
 	name = "boxed virus grenade kit"
+	icon_state = "inteqbox"
 
 /obj/item/storage/box/syndie_kit/tuberculosisgrenade/PopulateContents()
 	new /obj/item/grenade/chem_grenade/tuberculosis(src)
@@ -438,6 +459,7 @@
 /obj/item/storage/box/syndie_kit/contract_kit
 	name = "contractor kit"
 	desc = "Supplied to InteQ contractors in active mission areas."
+	icon_state = "inteqbox"
 
 /obj/item/storage/box/syndicate/contractor_loadout
 	name = "standard loadout"
