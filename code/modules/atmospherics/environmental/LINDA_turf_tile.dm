@@ -38,6 +38,7 @@
 			mix.mark_immutable()
 			SSair.planetary[initial_gas_mix] = mix
 		update_air_ref(planetary_atmos ? 1 : 2)
+		air_update_turf(TRUE) // Почему.
 	. = ..()
 
 /turf/open/Destroy()

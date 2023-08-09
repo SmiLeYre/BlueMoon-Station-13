@@ -235,6 +235,14 @@
 	build_path = /obj/item/organ/lungs/vox
 	category = list("other")
 
+/datum/design/heart_vox
+	name = "Vox Heart"
+	id = "heart_vox"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
+	build_path = /obj/item/organ/heart/vox
+	category = list("other")
+
 /datum/design/tongue_vox
 	name = "Vox Tongue"
 	id = "tongue_vox"

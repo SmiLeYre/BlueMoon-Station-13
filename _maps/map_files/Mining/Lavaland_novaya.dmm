@@ -15711,9 +15711,7 @@
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
 "UI" = (
-/turf/open/genturf{
-	baseturfs = /turf/open/lava/smooth/lava_land_surface
-	},
+/turf/open/genturf,
 /area/lavaland/surface/outdoors/unexplored/danger)
 "UK" = (
 /obj/structure/stone_tile/block/cracked{

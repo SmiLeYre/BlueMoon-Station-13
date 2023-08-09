@@ -90,7 +90,7 @@
 	density = FALSE
 	layer = OPEN_DOOR_LAYER
 	state = 1
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	update_icon()
 	isSwitchingStates = 0
 
@@ -111,7 +111,7 @@
 	set_opacity(TRUE)
 	state = 0
 	layer = initial(layer)
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	update_icon()
 	isSwitchingStates = 0
 

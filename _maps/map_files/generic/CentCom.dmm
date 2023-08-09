@@ -19165,7 +19165,10 @@
 /turf/open/floor/plasteel/white,
 /area/slavers)
 "PS" = (
-/obj/machinery/computer/shuttle/syndicate/recall,
+/obj/machinery/computer/shuttle/syndicate/recall{
+	icon_keyboard = "inteq_key";
+	icon_screen = "inteqshuttle"
+	},
 /obj/effect/turf_decal/tile/brown,
 /obj/effect/turf_decal/tile/brown{
 	dir = 1
@@ -22511,7 +22514,7 @@
 /area/slavers)
 "Zq" = (
 /obj/effect/turf_decal/tile/brown/fourcorners,
-/obj/item/storage/backpack/duffelbag/syndie/inteq/surgery,
+/obj/item/storage/backpack/duffelbag/syndie/surgery,
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /obj/effect/turf_decal/stripes/line{

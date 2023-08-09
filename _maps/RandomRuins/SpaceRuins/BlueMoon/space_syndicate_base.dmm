@@ -633,7 +633,6 @@
 /obj/machinery/power/terminal{
 	dir = 1
 	},
-/obj/structure/table,
 /obj/structure/window/reinforced/survival_pod{
 	dir = 4;
 	pixel_x = 4
@@ -3357,7 +3356,6 @@
 /obj/machinery/computer/monitor{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "nL" = (
@@ -7536,6 +7534,7 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "Gk" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/knot,
 /obj/item/circuitboard/machine/power_turbine,
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
@@ -7938,13 +7937,18 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
 "HZ" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/turf_decal/siding/dark,
 /obj/structure/disposalpipe/segment{
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/iron/dark/diagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "Ia" = (
@@ -8635,7 +8639,6 @@
 "Ll" = (
 /obj/effect/turf_decal/siding/dark,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
 	dir = 4;
 	level = 1
@@ -11341,6 +11344,7 @@
 	dir = 10;
 	level = 1
 	},
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/iron/dark/diagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "VB" = (

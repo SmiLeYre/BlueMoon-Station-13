@@ -30,7 +30,7 @@
 	init_process = FALSE // Don't process upon creation
 	var/mining = FALSE
 	var/miningtime = 10000
-	var/miningpoints = 25
+	var/miningpoints = 5
 	var/datum/bank_account/pay_me = null
 	var/obj/item/radio/cargo_radio
 	// Should this machine send messages on cargo radio?
@@ -289,7 +289,7 @@
 	active_power_usage = 100
 	circuit = /obj/item/circuitboard/machine/cryptominer/syndie
 	miningtime = 10000
-	miningpoints = 50
+	miningpoints = 10
 	radio_snitch = FALSE // Illegal tech!
 
 /obj/machinery/cryptominer/syndie/update_icon()
@@ -310,7 +310,7 @@
 	idle_power_usage = 100
 	active_power_usage = 1000
 	miningtime = 100000
-	miningpoints = 1000
+	miningpoints = 400
 	radio_snitch = FALSE // None of cargo's business!
 
 /obj/machinery/cryptominer/nanotrasen/update_icon()

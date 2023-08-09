@@ -164,7 +164,7 @@
 	density = FALSE
 	if(visible)
 		set_opacity(FALSE)
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	update_freelook_sight()
 	if(operating == 1) //emag again
 		operating = FALSE
@@ -184,7 +184,7 @@
 	src.icon_state = src.base_state
 
 	density = TRUE
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	update_freelook_sight()
 	addtimer(CALLBACK(src, .proc/finish_closing), 10)
 	return TRUE

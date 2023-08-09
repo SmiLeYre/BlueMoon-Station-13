@@ -4,25 +4,25 @@ GLOBAL_VAR_INIT(slavers_credits_balance, 5000)
 GLOBAL_VAR_INIT(slavers_credits_total, 0)
 GLOBAL_VAR_INIT(slavers_slaves_sold, 0)
 
-#define SLAVER_STANDARD_RANSOM 7500
+#define SLAVER_STANDARD_RANSOM 20000
 
 /// Price table for when trying to set slave prices automatically
 GLOBAL_LIST_INIT(slavers_ransom_values, list(
-	"Captain" 					= 175000,
-	"Head of Personnel" 		= 125000,
-	"Head of Security" 			= 100000,
-	"Chief Engineer" 			= 80000,
-	"Research Director" 		= 80000,
-	"Chief Medical Officer" 	= 80000,
-	"Blueshield" 				= 30000,
+	"Captain" 					= 500000,
+	"Head of Personnel" 		= 200000,
+	"Head of Security" 			= 150000,
+	"Chief Engineer" 			= 120000,
+	"Research Director" 		= 120000,
+	"Chief Medical Officer" 	= 120000,
+	"Blueshield" 				= 100000,
 
-	"Warden" 					= 30000,
-	"Brig Physician" 			= 20000,
-	"Security Officer" 			= 20000,
-	"Detective" 				= 20000,
-	"NanoTrasen Representative" = 30000,
+	"Warden" 					= 80000,
+	"Brig Physician" 			= 40000,
+	"Security Officer" 			= 40000,
+	"Detective" 				= 40000,
+	"NanoTrasen Representative" = 80000,
 
-	"Quartermaster" 			= 10000,
+	"Quartermaster" 			= 40000,
 	"Cargo Technician" 			= SLAVER_STANDARD_RANSOM,
 	"Shaft Miner"				= SLAVER_STANDARD_RANSOM,
 	"Assistant" 				= SLAVER_STANDARD_RANSOM,

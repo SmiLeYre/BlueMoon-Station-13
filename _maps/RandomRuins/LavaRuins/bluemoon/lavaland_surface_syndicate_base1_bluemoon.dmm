@@ -1925,12 +1925,6 @@
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
-"nE" = (
-/obj/machinery/atmospherics/components/unary/thermomachine/freezer{
-	dir = 1
-	},
-/turf/open/lava/smooth/lava_land_surface,
-/area/lavaland/surface/outdoors)
 "nH" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -9548,7 +9542,7 @@ ab
 ab
 ab
 ab
-nE
+ab
 ab
 ab
 zt

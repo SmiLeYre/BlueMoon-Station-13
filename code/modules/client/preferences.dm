@@ -129,7 +129,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/extremeharm = "No" //If "extreme content" is enabled, this option serves as a toggle for the related interactions to cause damage or not
 	var/see_chat_emotes = TRUE
 	var/view_pixelshift = FALSE
-	var/disco_dance = TRUE
+	var/disco_dance = FALSE
 	var/enable_personal_chat_color = FALSE
 	var/personal_chat_color = "#ffffff"
 	var/list/alt_titles_preferences = list()

@@ -40,17 +40,17 @@
 	else
 		assembly = new(src)
 		assembly.stat = 3
-	air_update_turf(1)
+	air_update_turf(TRUE)
 
 /obj/machinery/poweredfans/power_change()
 	..()
 	if(powered())
 		icon_state = "mfan_powered"
 		CanAtmosPass = ATMOS_PASS_NO
-		air_update_turf(1)
+		air_update_turf(TRUE)
 	else
 		icon_state = "mfan_unpowered"
 		CanAtmosPass = ATMOS_PASS_YES
-		air_update_turf(1)
+		air_update_turf(TRUE)
 	update_icon_state()
-	
+

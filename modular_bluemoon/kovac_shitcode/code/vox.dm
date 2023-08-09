@@ -51,6 +51,18 @@
 	maxHealth = 75
 	initial_accents = list(/datum/accent/bird)
 
+/obj/item/organ/heart/vox
+	name = "vox heart"
+	desc = "Vox hearts are placed in groin."
+	//icon_state = "heart-on"
+	zone = BODY_ZONE_PRECISE_GROIN
+
+/obj/item/organ/brain/vox
+	name = "cortical stack"
+	desc = "What is this?"
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "stack"
+
 //Собственно раса
 /////////////////////////////////////////////////////////////////////////////////
 /datum/species/mammal/vox
@@ -77,8 +89,11 @@
 	species_category = SPECIES_CATEGORY_FURRY
 	//sexes = 0
 	breathid = "n2"
+
+	mutant_heart = /obj/item/organ/heart/vox
 	mutantlungs = /obj/item/organ/lungs/vox
 	mutanttongue = /obj/item/organ/tongue/vox
+	mutant_brain = /obj/item/organ/brain/vox
 
 	disliked_food = null
 	liked_food = GROSS | MEAT

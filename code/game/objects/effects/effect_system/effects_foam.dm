@@ -280,7 +280,7 @@
 
 /obj/structure/foamedmetal/Initialize(mapload)
 	. = ..()
-	air_update_turf(1)
+	air_update_turf(TRUE)
 
 /obj/structure/foamedmetal/Move()
 	var/turf/T = loc

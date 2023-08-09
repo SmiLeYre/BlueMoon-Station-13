@@ -43,7 +43,7 @@
 //Duffels
 
 /obj/item/storage/backpack/duffelbag/syndie/inteq
-	name = "suspicious looking duffel bag"
+	name = "Suspicious Looking Duffel Bag"
 	desc = "A large duffel bag for holding extra tactical supplies."
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/backpack.dmi'
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/backpack.dmi'

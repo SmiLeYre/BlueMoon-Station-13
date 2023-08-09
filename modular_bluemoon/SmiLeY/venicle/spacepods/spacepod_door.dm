@@ -10,10 +10,10 @@
 
 /obj/structure/spacepoddoor/Initialize(mapload)
 	..()
-	air_update_turf(1)
+	air_update_turf(TRUE)
 
 /obj/structure/spacepoddoor/Destroy()
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	return ..()
 
 /obj/structure/spacepoddoor/CanPass(atom/movable/A, turf/T)

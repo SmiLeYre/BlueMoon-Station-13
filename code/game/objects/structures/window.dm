@@ -103,7 +103,7 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 		electrochromatic_id = SSmapping.get_obfuscated_id(electrochromatic_id)
 
 	ini_dir = dir
-	air_update_turf(1)
+	air_update_turf(TRUE)
 
 	if(fulltile)
 		setDir()
@@ -518,13 +518,13 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 	return TRUE
 
 /obj/structure/window/proc/after_rotation(mob/user,rotation_type)
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	ini_dir = dir
 	add_fingerprint(user)
 
 /obj/structure/window/Destroy()
 	density = FALSE
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	update_nearby_icons()
 	remove_electrochromatic()
 	return ..()

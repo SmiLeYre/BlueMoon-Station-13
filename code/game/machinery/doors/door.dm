@@ -79,7 +79,7 @@
 	. = ..()
 	set_init_door_layer()
 	update_freelook_sight()
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	register_context()
 	GLOB.airlocks += src
 	spark_system = new /datum/effect_system/spark_spread
@@ -297,7 +297,7 @@
 	update_icon()
 	set_opacity(0)
 	operating = FALSE
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	update_freelook_sight()
 	if(autoclose)
 		spawn(autoclose)
@@ -329,7 +329,7 @@
 	if(visible && !glass)
 		set_opacity(1)
 	operating = FALSE
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	update_freelook_sight()
 	if(safe)
 		CheckForMobs()

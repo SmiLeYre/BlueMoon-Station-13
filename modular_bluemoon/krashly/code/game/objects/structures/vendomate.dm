@@ -38,6 +38,7 @@
 		/obj/item/clothing/gloves/combat = 2,
 		/obj/item/clothing/head/HoS/inteq_vanguard = 1,
 		/obj/item/clothing/suit/armor/inteq/vanguard = 1,
+		/obj/item/storage/backpack/duffelbag/syndie/inteq = 4,
 	)
 	refill_canister = /obj/item/vending_refill/inteq_vendomat
 	light_color = COLOR_DARK_ORANGE

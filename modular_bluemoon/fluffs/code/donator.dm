@@ -123,7 +123,7 @@
 	path = /obj/item/m240_kit
 	ckeywhitelist = list("stgs", "sodastrike", "dolbajob")
 
-/datum/gear/donator/bm/old_gun
+/datum/gear/donator/bm/old_kit
 	name = "H&K Luftkuss Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/old_kit

@@ -38,7 +38,7 @@
 		if(weakened)
 			armor = armor.setRating(MELEE = 25, BULLET = 25, LASER = 15, ENERGY = 10, BOMB = 20, BIO = 0, RAD = 0, FIRE = 90, ACID = 90)
 			weakened = FALSE
-	air_update_turf(1)
+	air_update_turf(TRUE)
 
 /obj/structure/blob/shield/reflective
 	name = "reflective blob"

@@ -75,6 +75,7 @@ type ContentPrefsInfo = {
   no_auto_wag: boolean,
   chastity_pref: boolean,
   stimulation_pref: boolean,
+  disco_dance: boolean,
   edging_pref: boolean,
 }
 
@@ -509,6 +510,7 @@ const ContentPreferencesTab = (props, context) => {
     no_auto_wag,
     chastity_pref,
     stimulation_pref,
+    disco_dance,
     edging_pref,
   } = data;
   return (
@@ -786,6 +788,18 @@ const ContentPreferencesTab = (props, context) => {
           selected={stimulation_pref}
           onClick={() => act('pref', {
             pref: 'stimulation_pref',
+          })}
+        />
+      </Table.Row>
+      <Table.Row>
+        <Button
+          fluid
+          mb={0.3}
+          content="Dance Near Disco Ball"
+          icon={disco_dance ? "toggle-on" : "toggle-off"}
+          selected={disco_dance}
+          onClick={() => act('pref', {
+            pref: 'disco_dance',
           })}
         />
       </Table.Row>

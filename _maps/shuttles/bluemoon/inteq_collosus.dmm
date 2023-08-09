@@ -468,7 +468,7 @@
 /obj/item/lighter{
 	pixel_y = 5
 	},
-/obj/item/storage/backpack/duffelbag/syndie/inteq/c4,
+/obj/item/storage/backpack/duffelbag/syndie/c4,
 /obj/item/inteq_sledgehammer,
 /obj/item/inteq/uplink/radio/nuclear,
 /turf/open/floor/wood/wood_parquet,
@@ -992,7 +992,7 @@
 /obj/item/storage/firstaid/regular{
 	pixel_x = 5
 	},
-/obj/item/storage/backpack/duffelbag/syndie/inteq/surgery,
+/obj/item/storage/backpack/duffelbag/syndie/surgery,
 /obj/effect/turf_decal/box/white/corners,
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/hypospray/medipen,

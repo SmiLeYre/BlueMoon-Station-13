@@ -118,8 +118,8 @@
 
 /atom/movable/proc/move_update_air(turf/T)
     if(isturf(T))
-        T.air_update_turf(1)
-    air_update_turf(1)
+        T.air_update_turf(TRUE)
+    air_update_turf(TRUE)
 
 /atom/proc/atmos_spawn_air(text) //because a lot of people loves to copy paste awful code lets just make an easy proc to spawn your plasma fires
 	var/turf/open/T = get_turf(src)
