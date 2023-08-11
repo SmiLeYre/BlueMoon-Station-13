@@ -22,7 +22,7 @@
 /obj/item/organ/lungs/vox
 	name = "vox lungs"
 	desc = "A regular Vox usually needs nitrogen instead of oxygen."
-	icon_state = "lungs"
+	icon_state = "vox_lungs"
 	breathing_class = BREATH_NITROGEN
 	maxHealth = INFINITY
 
@@ -45,7 +45,7 @@
 /obj/item/organ/tongue/vox
 	name = "vox tongue"
 	desc = "Generic Vox tongue."
-	icon_state = "tonguelizard"
+	icon_state = "vox_tongue"
 	say_mod = "rustles"
 	taste_sensitivity = 101
 	maxHealth = 75
@@ -54,8 +54,16 @@
 /obj/item/organ/heart/vox
 	name = "vox heart"
 	desc = "Vox hearts are placed in groin."
-	//icon_state = "heart-on"
+	icon_state = "vox_heart"
 	zone = BODY_ZONE_PRECISE_GROIN
+
+/obj/item/organ/liver/vox
+	name = "vox liver"
+	icon_state = "vox_liver"
+
+/obj/item/organ/stomach/vox
+	name = "vox stomach"
+	icon_state = "vox_stomach"
 
 /obj/item/organ/brain/vox
 	name = "cortical stack"
@@ -94,6 +102,8 @@
 	mutantlungs = /obj/item/organ/lungs/vox
 	mutanttongue = /obj/item/organ/tongue/vox
 	mutant_brain = /obj/item/organ/brain/vox
+	mutantliver = /obj/item/organ/liver/vox
+	mutantstomach = /obj/item/organ/stomach/vox
 
 	disliked_food = null
 	liked_food = GROSS | MEAT
@@ -207,10 +217,10 @@
 	icon_state = "nitrogen_ext"
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
-	w_class = WEIGHT_CLASS_SMALL
 	force = 4
 	distribute_pressure = TANK_DEFAULT_RELEASE_PRESSURE
 	volume = 12
+	w_class = WEIGHT_CLASS_NORMAL
 
 
 /obj/item/tank/internals/emergency_nitrogen_ext/populate_gas()

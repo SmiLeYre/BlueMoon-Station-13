@@ -123,11 +123,11 @@
 	path = /obj/item/m240_kit
 	ckeywhitelist = list("stgs", "sodastrike", "dolbajob")
 
-/datum/gear/donator/bm/old_kit
-	name = "H&K Luftkuss Kit"
+/datum/gear/donator/bm/luftkuss_gun
+	name = "Luftkuss Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/old_kit
-	ckeywhitelist = list("stgs", "dolbajob")
+	ckeywhitelist = list("stgs", "sodastrike", "dolbajob")
 
 /datum/gear/donator/bm/Friskis_Mask
 	name = "Magic Kitsune Mask"
@@ -145,7 +145,7 @@
 	name = "G-66 Uniform"
 	slot = ITEM_SLOT_ICLOTHING
 	path = /obj/item/clothing/under/donator/bm/utilgen
-	ckeywhitelist = list("reaperdb")
+	ckeywhitelist = list("reaperdb", "rainbowkurwa")
 
 /datum/gear/donator/bm/multicam
 	name = "Multicam"
