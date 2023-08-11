@@ -129,7 +129,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/extremeharm = "No" //If "extreme content" is enabled, this option serves as a toggle for the related interactions to cause damage or not
 	var/see_chat_emotes = TRUE
 	var/view_pixelshift = FALSE
-	var/disco_dance = TRUE
 	var/enable_personal_chat_color = FALSE
 	var/personal_chat_color = "#ffffff"
 	var/list/alt_titles_preferences = list()
@@ -3691,8 +3690,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				//End of skyrat changes
 				if("view_pixelshift") //SPLURT Edit
 					view_pixelshift = !view_pixelshift
-				if ("disco_dance")
-					disco_dance = !disco_dance
 				if("action_buttons")
 					buttons_locked = !buttons_locked
 				if("tgui_fancy")
