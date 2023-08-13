@@ -139,10 +139,10 @@
 		number_of_hostiles += hostile_types[hostile]
 
 	while(number_of_bosses > boss_spawn.len)
-		boss_spawn += get_random_station_turf()
+		boss_spawn += get_safe_random_station_turf() //BLUEMOON CHANGES (WAS - get_random_station_turf)
 
 	while(number_of_hostiles > hostiles_spawn.len)
-		hostiles_spawn += get_random_station_turf()
+		hostiles_spawn += get_safe_random_station_turf() //BLUEMOON CHANGES (WAS - get_random_station_turf)
 
 	next_boss_spawn = start_when + CEILING(2 * number_of_hostiles / number_of_bosses, 1)
 
@@ -158,7 +158,7 @@
 	sound_to_playing_players('sound/magic/lightningbolt.ogg')
 
 /datum/round_event/portal_storm/tick()
-	spawn_effects(get_random_station_turf())
+	spawn_effects(get_safe_random_station_turf()) //BLUEMOON CHANGES (WAS - get_random_station_turf)
 
 	if(spawn_hostile())
 		var/type = safepick(hostile_types)
