@@ -154,6 +154,7 @@
 	has_gravity = STANDARD_GRAVITY
 	area_flags = VALID_TERRITORY | UNIQUE_AREA | NOTELEPORT
 	flags_1 = NONE
+	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	// ambience_index = AMBIENCE_DANGER
 	ambientsounds = HIGHSEC
 	// network_root_id = SYNDICATE_NETWORK_ROOT
