@@ -18,7 +18,7 @@
 		spawn_location = pick(GLOB.generic_event_spawns)
 	else
 		message_admins("No event spawn landmarks exist on the map while placing a travelling trader, resorting to random station turf. (go yell at a mapper)")
-		spawn_location = get_random_station_turf()
+		spawn_location = get_safe_random_station_turf() //BLUEMOON CHANGES (WAS - get_random_station_turf)
 
 /datum/round_event/travelling_trader/start()
 	//spawn a type of trader
