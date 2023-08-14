@@ -892,17 +892,10 @@
 /turf/closed/mineral/ash_rock,
 /area/awaymission/errorroom)
 "aZm" = (
-/obj/machinery/door/airlock/external{
-	name = "Supply Shuttle";
-	req_access_txt = "106"
-	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
-/obj/machinery/door/poddoor{
-	id = "XCCQMLoaddoor2";
-	name = "Supply Dock Loading Door"
-	},
+/obj/machinery/door/poddoor,
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership)
 "aZT" = (
@@ -4329,6 +4322,15 @@
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /obj/machinery/light{
 	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/syndicate_mothership)
+"dSp" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor/shuttledock{
+	checkdir = 1;
+	name = "syndicate blast door";
+	turftype = /turf/open/floor/plating/asteroid/snow
 	},
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership)
@@ -11218,10 +11220,6 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/slavers)
 "klJ" = (
-/obj/machinery/door/poddoor{
-	id = "XCCQMLoaddoor";
-	name = "Supply Dock Loading Door"
-	},
 /obj/machinery/conveyor{
 	dir = 8;
 	id = "XCCQMLoad"
@@ -11229,6 +11227,7 @@
 /obj/effect/turf_decal/stripes/end{
 	dir = 8
 	},
+/obj/machinery/door/poddoor,
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership)
 "klV" = (
@@ -11710,15 +11709,12 @@
 /turf/open/floor/plasteel,
 /area/centcom/control)
 "kKV" = (
-/obj/machinery/door/poddoor{
-	id = "XCCQMLoaddoor2";
-	name = "Supply Dock Loading Door"
-	},
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/conveyor{
 	dir = 4;
 	id = "XCCQMLoad2"
 	},
+/obj/machinery/door/poddoor,
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership)
 "kLw" = (
@@ -14758,10 +14754,6 @@
 /turf/open/floor/plasteel,
 /area/tdome/arena)
 "nvv" = (
-/obj/machinery/door/poddoor{
-	id = "XCCQMLoaddoor2";
-	name = "Supply Dock Loading Door"
-	},
 /obj/effect/turf_decal/stripes/end{
 	dir = 8
 	},
@@ -14769,6 +14761,7 @@
 	dir = 4;
 	id = "XCCQMLoad2"
 	},
+/obj/machinery/door/poddoor,
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership)
 "nvH" = (
@@ -20733,6 +20726,14 @@
 /obj/effect/turf_decal/caution/red,
 /turf/open/floor/plasteel/dark,
 /area/slavers)
+"sZK" = (
+/obj/machinery/door/poddoor/shuttledock{
+	checkdir = 1;
+	name = "syndicate blast door";
+	turftype = /turf/open/floor/plating/asteroid/snow
+	},
+/turf/open/floor/iron/dark,
+/area/syndicate_mothership)
 "tay" = (
 /obj/item/storage/briefcase{
 	pixel_x = -3;
@@ -24199,15 +24200,12 @@
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding)
 "wAf" = (
-/obj/machinery/door/poddoor{
-	id = "XCCQMLoaddoor";
-	name = "Supply Dock Loading Door"
-	},
 /obj/machinery/conveyor{
 	dir = 8;
 	id = "XCCQMLoad"
 	},
 /obj/effect/turf_decal/stripes/line,
+/obj/machinery/door/poddoor,
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership)
 "wAZ" = (
@@ -37993,7 +37991,7 @@ sdM
 sdM
 sdM
 sdM
-kbq
+dSp
 gxI
 rBY
 oan
@@ -38250,7 +38248,7 @@ sdM
 sdM
 sdM
 sdM
-kbq
+dSp
 gxI
 xfY
 xfY
@@ -38258,7 +38256,7 @@ xfY
 xfY
 xfY
 xfY
-xfY
+sZK
 xKw
 xfY
 xfY
@@ -38507,7 +38505,7 @@ sdM
 sdM
 sdM
 sdM
-kbq
+dSp
 gxI
 xfY
 xfY
@@ -38515,7 +38513,7 @@ xfY
 xfY
 xfY
 xfY
-xfY
+sZK
 xKw
 xfY
 xfY
@@ -38764,7 +38762,7 @@ sdM
 sdM
 sdM
 eis
-kbq
+dSp
 gxI
 kus
 kus
@@ -38772,7 +38770,7 @@ kus
 kus
 kus
 uxT
-xfY
+sZK
 pPe
 xKw
 xKw
@@ -39021,7 +39019,7 @@ sdM
 sdM
 sdM
 sdM
-kbq
+dSp
 gxI
 xfY
 xfY
@@ -39029,7 +39027,7 @@ xfY
 xfY
 xfY
 xfY
-xfY
+sZK
 xfY
 xfY
 xfY
@@ -39278,7 +39276,7 @@ sdM
 sdM
 sdM
 sdM
-kbq
+dSp
 gxI
 xfY
 aqd
@@ -39286,7 +39284,7 @@ iqw
 eLR
 xfY
 xfY
-xfY
+sZK
 xfY
 xfY
 xfY
@@ -39535,7 +39533,7 @@ sdM
 sdM
 sdM
 sdM
-kbq
+dSp
 gxI
 xfY
 eAC
@@ -39543,7 +39541,7 @@ xfY
 gLH
 xfY
 xfY
-xfY
+sZK
 xfY
 xfY
 xfY
@@ -39792,7 +39790,7 @@ sdM
 sdM
 sdM
 sdM
-kbq
+dSp
 gxI
 xfY
 rBv
@@ -39800,7 +39798,7 @@ doC
 aOD
 xfY
 xfY
-xfY
+sZK
 xfY
 xfY
 xfY
@@ -40049,7 +40047,7 @@ sdM
 sdM
 sdM
 sdM
-kbq
+dSp
 gxI
 xfY
 xfY
@@ -40057,7 +40055,7 @@ xfY
 xfY
 xfY
 xfY
-xfY
+sZK
 xfY
 xfY
 xfY
@@ -40306,7 +40304,7 @@ sdM
 sdM
 sdM
 sdM
-kbq
+dSp
 gxI
 kus
 kus
@@ -40314,7 +40312,7 @@ kus
 kus
 kus
 dRh
-xfY
+sZK
 pPe
 xKw
 xKw
@@ -40563,7 +40561,7 @@ sdM
 sdM
 sdM
 sdM
-kbq
+dSp
 gxI
 xfY
 xfY
@@ -40571,7 +40569,7 @@ xfY
 xfY
 xfY
 xfY
-xfY
+sZK
 xKw
 xfY
 xfY
@@ -40820,7 +40818,7 @@ sdM
 sdM
 sdM
 sdM
-kbq
+dSp
 gxI
 xfY
 xfY
@@ -40828,7 +40826,7 @@ xfY
 xfY
 xfY
 xfY
-xfY
+sZK
 xKw
 xfY
 xfY
@@ -41077,7 +41075,7 @@ sdM
 sdM
 sdM
 sdM
-kbq
+dSp
 gxI
 bOz
 oan
