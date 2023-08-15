@@ -69,12 +69,28 @@
 		remove_movespeed_modifier(/datum/movespeed_modifier/turf_slowdown)
 
 /mob/living/proc/update_pull_movespeed()
-	if(pulling && isliving(pulling))
-		var/mob/living/L = pulling
-		if(drag_slowdown && L.lying && !L.buckled && grab_state < GRAB_AGGRESSIVE)
-			add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/bulky_drag, multiplicative_slowdown = PULL_PRONE_SLOWDOWN)
-			return
+	var/modified = FALSE
+	if(pulling)
+
+		if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY_SUPER)) //only silicon can pull
+			add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/heavy_mob_drag, multiplicative_slowdown = PULL_HEAVY_SUPER_SLOWDOWN)
+			modified = TRUE
+
+		if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY))
+			add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/heavy_mob_drag, multiplicative_slowdown = PULL_HEAVY_SLOWDOWN)
+			modified = TRUE
+
+		if(isliving(pulling))
+			var/mob/living/L = pulling
+			if(drag_slowdown && L.lying && !L.buckled && grab_state < GRAB_AGGRESSIVE)
+				add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/bulky_drag, multiplicative_slowdown = PULL_PRONE_SLOWDOWN)
+				modified = TRUE
+
+	if(modified)
+		return
+
 	remove_movespeed_modifier(/datum/movespeed_modifier/bulky_drag)
+	remove_movespeed_modifier(/datum/movespeed_modifier/heavy_mob_drag)
 
 /mob/living/canZMove(dir, turf/target)
 	return can_zTravel(target, dir) && (movement_type & FLYING)

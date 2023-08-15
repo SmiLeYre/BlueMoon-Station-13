@@ -151,6 +151,9 @@
 		if(handle_micro_bump_helping(M))
 			return TRUE
 
+	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER)) //you cannot move around it. Ask to move
+		return TRUE
+
 	if(!M.buckled && !M.has_buckled_mobs())
 		var/mob_swap = FALSE
 		var/too_strong = (M.move_resist > move_force) //can't swap with immovable objects unless they help us
@@ -275,6 +278,9 @@
 	if((AM.anchored && !push_anchored) || (force < (AM.move_resist * MOVE_FORCE_PUSH_RATIO)))
 		now_pushing = FALSE
 		return
+	if(HAS_TRAIT(AM, TRAIT_BLUEMOON_HEAVY_SUPER))
+		now_pushing = FALSE
+		return
 	if(istype(AM, /obj/structure/window))
 		var/obj/structure/window/W = AM
 		if(W.fulltile)
@@ -346,8 +352,8 @@
 				M.show_message("<span class='warning'>[src] has entwined [ru_ego()] tail with yours, pulling you along!</span>", MSG_VISUAL, "<span class='warning'>You feel <b>something</b> coiling around your tail, pulling you along!</span>")
 
 			else
-				visible_message("<span class='warning'>[src] has grabbed [M][(zone_selected == "l_arm" || zone_selected == "r_arm")? " by [M.ru_ego()] hands":" passively"]!</span>",
-					"<span class='warning'>You have grabbed [M][(zone_selected == "l_arm" || zone_selected == "r_arm")? " by [M.ru_ego()] hands":" passively"]!</span>", target = M,
+				visible_message("<span class='warning'>[src] has grabbed [M][(zone_selected == "l_arm" || zone_selected == "r_arm")? " by [M.ru_ego()] hands":" passively"]! [HAS_TRAIT(AM, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(AM, TRAIT_BLUEMOON_HEAVY_SUPER) ? "Looks heavy." : ""]</span>",
+					"<span class='warning'>You have grabbed [M][(zone_selected == "l_arm" || zone_selected == "r_arm")? " by [M.ru_ego()] hands":" passively"]! [HAS_TRAIT(AM, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(AM, TRAIT_BLUEMOON_HEAVY_SUPER) ? "It is hard to pull heavy weight!" : ""]</span>", target = M,
 					target_message = "<span class='warning'>[src] has grabbed you[(zone_selected == "l_arm" || zone_selected == "r_arm")? " by your hands":" passively"]!</span>")
 		if(!iscarbon(src))
 			M.LAssailant = null

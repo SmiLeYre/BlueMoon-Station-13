@@ -41,4 +41,4 @@ THRESHOLD_BODY_SIZE_PENALTY 1
 
 ## Multiplier used in the smaller strides slowdown calculation.
 ## Doesn't apply to floating or crawling mobs.
-BODY_SIZE_SLOWDOWN_MULTIPLIER 0
+BODY_SIZE_SLOWDOWN_MULTIPLIER 0.5

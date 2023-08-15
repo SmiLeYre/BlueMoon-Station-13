@@ -140,6 +140,12 @@
 /obj/structure/chair/post_buckle_mob(mob/living/M)
 	. = ..()
 	handle_layer()
+	//SKYRAT EDIT ADDITION
+	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER))
+		visible_message(span_warning("[src] buckles under the weight of [M] causing it to break!"))
+//		playsound(src, 'modular_skyrat/modules/oversized/sound/chair_break.ogg', 70, TRUE) //TODO
+		deconstruct()
+	//SKYRAT EDIT END
 
 /obj/structure/chair/post_unbuckle_mob()
 	. = ..()

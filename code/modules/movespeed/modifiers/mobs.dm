@@ -80,6 +80,12 @@
 /datum/movespeed_modifier/bulky_drag
 	variable = TRUE
 
+/datum/movespeed_modifier/heavy_mob_drag
+	variable = TRUE
+
+/datum/movespeed_modifier/heavy_quirk_slowdown
+	variable = TRUE
+
 /datum/movespeed_modifier/cold
 	blacklisted_movetypes = FLOATING
 	variable = TRUE

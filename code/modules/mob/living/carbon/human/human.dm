@@ -828,6 +828,11 @@
 	else if(HAS_TRAIT(src, TRAIT_QUICK_CARRY))
 		carrydelay = 40
 		skills_space = "quickly "
+	//SKYRAT EDIT ADDITION
+	if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
+		to_chat(src, span_warning("You try to carry [target], but they are too heavy!"))
+		return
+	//SKYRAT EDIT END
 	if(can_be_firemanned(target) && !incapacitated(FALSE, TRUE))
 		visible_message("<span class='notice'>[src] starts [skills_space]lifting [target] onto their back..</span>",
 		//Joe Medic starts quickly/expertly lifting Grey Tider onto their back..
@@ -853,6 +858,29 @@
 				if(target.incapacitated(FALSE, TRUE) || incapacitated(FALSE, TRUE))
 					target.visible_message("<span class='warning'>[target] can't hang onto [src]!</span>")
 					return
+				//SKYRAT EDIT START
+				if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))
+					target.visible_message(span_warning("[target] is too heavy for [src] to carry!"))
+					var/dam_zone = pick(BODY_ZONE_CHEST, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+					var/obj/item/bodypart/affecting = get_bodypart(ran_zone(dam_zone))
+					var/wound_bon = 0
+					if(!affecting) //If one leg is missing, then it might break. Snap their spine instead
+						affecting = get_bodypart(BODY_ZONE_CHEST)
+					if(prob(50))
+						wound_bon = 100
+						to_chat(src, span_danger("You are crushed under the weight of [target]!"))
+						to_chat(target, span_danger("You accidentally crush [src]!"))
+					else
+						to_chat(src, span_danger("You hurt your [affecting.name] while trying to endure the weight of [target]!"))
+					apply_damage(25, BRUTE, affecting, wound_bonus=wound_bon)
+					playsound(src, 'sound/effects/splat.ogg', 50, TRUE)
+					AddElement(/datum/element/squish, 20 SECONDS) // Totally not stolen from a vending machine code
+					Knockdown(3 SECONDS) // Knocking down the unlucky guy
+					target.Knockdown(1) // simply make the oversized one fall
+					if(get_turf(target) != get_turf(src))
+						target.throw_at(get_turf(src), 1, 1, FALSE, FALSE)
+					//SKYRAT EDIT END
+
 				buckle_mob(target, TRUE, TRUE, 0, 1, 2, FALSE)
 		else
 			visible_message("<span class='warning'>[target] fails to climb onto [src]!</span>")
