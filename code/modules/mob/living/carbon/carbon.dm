@@ -107,10 +107,10 @@
 	var/extra_speed = 0
 	var/damage = 10
 	var/combat_knockdown = 20
-	if(HAS_TRAIT(hit_atom, TRAIT_BLUEMOON_HEAVY)) //жирный мужчина под 150 килограмм летит в вашу сторону
+	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY)) //жирный мужчина под 150 килограмм летит в вашу сторону
 		damage += 25
 		combat_knockdown += 20
-	if(HAS_TRAIT(hit_atom, TRAIT_BLUEMOON_HEAVY_SUPER)) //в лицо успешно влетела акула 12 футов в росте
+	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER)) //в лицо успешно влетела акула 12 футов в росте
 		damage += 50
 		combat_knockdown += 40
 	if(throwingdatum.thrower != src)

@@ -2223,9 +2223,10 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		return TRUE
 	// BLUEMOON ADDITION AHEAD
 	if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER)) // Большие персонажей могут сбивать с ног только другие большие персонажи (и халк)
-		if((!HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY_SUPER)) || !user.dna.check_mutation(HULK))
-			to_chat(user, span_warning("Слишком много весит!"))
-			return
+		if(!HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY_SUPER))
+			if(!user.dna.check_mutation(HULK))
+				to_chat(user, span_warning("Слишком много весит!"))
+				return
 	// BLUEMOON ADDITION END
 	if(!CHECK_MOBILITY(user, MOBILITY_STAND))
 		return FALSE

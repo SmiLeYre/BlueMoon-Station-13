@@ -15,7 +15,7 @@
 		return
 	var/mob/living/H = quirk_holder
 
-	var/searched_slowdown = (abs(get_size(1.5) - 1) * CONFIG_GET(number/body_size_slowdown_multiplier))
+	var/searched_slowdown = 0.5 * CONFIG_GET(number/body_size_slowdown_multiplier)
 	var/user_slowdown = (abs(get_size(H) - 1) * CONFIG_GET(number/body_size_slowdown_multiplier))
 
 	if(searched_slowdown - user_slowdown > 0)
@@ -48,7 +48,7 @@
 		return
 	var/mob/living/H = quirk_holder
 
-	var/searched_slowdown = (abs(get_size(2) - 1) * CONFIG_GET(number/body_size_slowdown_multiplier))
+	var/searched_slowdown = 1 * CONFIG_GET(number/body_size_slowdown_multiplier)
 	var/user_slowdown = (abs(get_size(H) - 1) * CONFIG_GET(number/body_size_slowdown_multiplier))
 
 	if(searched_slowdown - user_slowdown > 0)

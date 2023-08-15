@@ -82,9 +82,9 @@
 			// BLUEMOON ADDITION AHEAD - сверх-тяжёлых персонажей нельзя положить на стол, только если ты сам не сверх-тяжёлый, киборг или халк
 			if(HAS_TRAIT(pushed_mob, TRAIT_BLUEMOON_HEAVY_SUPER))
 				if(!issilicon(user))
-					if(iscarbon(src))
-						var/mob/living/carbon/C = src //для халка
-						if(!(HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY_SUPER)) || !C.dna.check_mutation(HULK))
+					if(iscarbon(user) && !HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY_SUPER))
+						var/mob/living/carbon/C = user
+						if(!C.dna.check_mutation(HULK))
 							to_chat(user, span_warning("Слишком много весит!"))
 							return
 			// BLUEMOON ADDITION END

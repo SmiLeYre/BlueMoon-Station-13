@@ -318,11 +318,15 @@
 	if(pulling.anchored || pulling.move_resist > move_force || !pulling.Adjacent(src))
 		stop_pulling()
 		return FALSE
-	// BLUEMOON ADDITION AHEAD - Проверка на возможность перемещать кликами сверх-тяжёлого персонажа. Чтобы не было абузов, их можно только тянуть (тут полный запрет)
+	// BLUEMOON ADDITION AHEAD
 	if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY_SUPER))
-		to_chat(src, span_warning("[pulling] is too heavy, you cannot move them around!"))
-		stop_pulling()
-		return FALSE
+		if(!issilicon(src))
+			if(iscarbon(src) && !HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
+				var/mob/living/carbon/C = src
+				if(!C.dna.check_mutation(HULK))
+					to_chat(src, span_warning("[pulling] is too heavy, you cannot move them around!"))
+					stop_pulling()
+					return FALSE
 	// BLUEMOON ADDITION END
 	if(isliving(pulling))
 		var/mob/living/L = pulling
@@ -369,12 +373,12 @@
 		// BLUEMOON ADDITION AHEAD - Проверка на возможность ТЯНУТЬ сверх-тяжёлого персонажа
 		if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY_SUPER))
 			if(!issilicon(src))
-				if(iscarbon(src))
-					var/mob/living/carbon/C = src //для халка
-					if(!(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER)) || !C.dna.check_mutation(HULK))
+				if(iscarbon(src) && !HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
+					var/mob/living/carbon/C = src
+					if(!C.dna.check_mutation(HULK))
 						to_chat(src, span_warning("[pulling] is too heavy, you cannot move them around!"))
 						stop_pulling()
-						return FALSE
+						return
 		// BLUEMOON ADDITION END
 	if(pulledby && moving_diagonally != FIRST_DIAG_STEP && get_dist(src, pulledby) > 1)		//separated from our puller and not in the middle of a diagonal move.
 		pulledby.stop_pulling()
