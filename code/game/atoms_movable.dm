@@ -368,12 +368,13 @@
 			return
 		// BLUEMOON ADDITION AHEAD - Проверка на возможность ТЯНУТЬ сверх-тяжёлого персонажа
 		if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY_SUPER))
-			if(isliving(src))
-				var/mob/living/L = src //для халка
-				if(!issilicon(src) || !(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER)) || !L.dna.check_mutation(HULK))
-					to_chat(src, span_warning("[pulling] is too heavy, you cannot move them around!"))
-					stop_pulling()
-					return FALSE
+			if(!issilicon(src))
+				if(iscarbon(src))
+					var/mob/living/carbon/C = src //для халка
+					if(!(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER)) || !C.dna.check_mutation(HULK))
+						to_chat(src, span_warning("[pulling] is too heavy, you cannot move them around!"))
+						stop_pulling()
+						return FALSE
 		// BLUEMOON ADDITION END
 	if(pulledby && moving_diagonally != FIRST_DIAG_STEP && get_dist(src, pulledby) > 1)		//separated from our puller and not in the middle of a diagonal move.
 		pulledby.stop_pulling()
