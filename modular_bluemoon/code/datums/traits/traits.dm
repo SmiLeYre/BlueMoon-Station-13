@@ -1,6 +1,8 @@
 /datum/quirk/bluemoon_heavy
 	name = "Тяжёлый"
-	desc = "Вы весите заметно больше среднего - будь то от жира или телосложения. Вас сложнее куда-то тащить, хотя сами вы и не испытываете с этим проблем больше, чем нужно. Вас сложнее отправить в полёт, но и последствия будут серьезнее. (Не берите вместе со сверх-тяжёлым, может привести к настакиванию замедления)."
+	desc = "Вы весите заметно больше среднего - будь то от жира или телосложения. \
+	Вас сложнее куда-то тащить, хотя сами вы и не испытываете с этим проблем больше, чем нужно. \
+	Вас сложнее отправить в полёт, но и последствия будут серьезнее. (Не берите вместе со сверх-тяжёлым, может привести к настакиванию замедления)."
 	value = 0
 	mob_trait = TRAIT_BLUEMOON_HEAVY
 	gain_text = span_notice("Вы явно набрали в весе... Не то, чтобы это сильно мешало.")
@@ -16,7 +18,6 @@
 	var/searched_slowdown = (abs(get_size(1.5) - 1) * CONFIG_GET(number/body_size_slowdown_multiplier))
 	var/user_slowdown = (abs(get_size(H) - 1) * CONFIG_GET(number/body_size_slowdown_multiplier))
 
-	to_chat(quirk_holder, "se: [searched_slowdown], us: [user_slowdown]")
 	if(searched_slowdown - user_slowdown > 0)
 		H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/heavy_quirk_slowdown, TRUE, searched_slowdown - user_slowdown)
 	else
@@ -30,7 +31,11 @@
 
 /datum/quirk/bluemoon_heavy_super
 	name = "Сверх-тяжёлый"
-	desc = "Ваш вес можно сравнивать с крупным животным, автомобилем или лёгким промышленным шагоходом. Вы перемещаетесь так, как будто максимального допустимого роста для работы на космической станции. Тянуть вас могут только киборги - ремонтировать/лечиться нужно либо прямо на месте, либо ожидать эвакуатор. Если что-то отправит вас в полёт, то вес даст о себе знать во всех отношениях."
+	desc = "Ваш вес можно сравнивать с крупным животным, автомобилем или малым промышленным шагоходом. \
+	Вы перемещаетесь так, как будто максимального допустимого роста для работы на космической станции. \
+	Вас могут тянуть только киборги, мехи с клешнями и такие же сверх-тяжёлые члены экипажа. \
+	Если что-то и сможет отправить вас в полёт, то вес даст о себе знать во всех отношениях. \
+	Вас также нельзя сбить с ног толканием, если это не такой же тяжёлый космонавт."
 	value = -2
 	mob_trait = TRAIT_BLUEMOON_HEAVY_SUPER
 	gain_text = span_warning("Плитка под вашими ногами может треснуть от неосторожного шага.")
@@ -46,7 +51,6 @@
 	var/searched_slowdown = (abs(get_size(2) - 1) * CONFIG_GET(number/body_size_slowdown_multiplier))
 	var/user_slowdown = (abs(get_size(H) - 1) * CONFIG_GET(number/body_size_slowdown_multiplier))
 
-	to_chat(quirk_holder, "se: [searched_slowdown], us: [user_slowdown]")
 	if(searched_slowdown - user_slowdown > 0)
 		H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/heavy_quirk_slowdown, TRUE, searched_slowdown - user_slowdown)
 	else

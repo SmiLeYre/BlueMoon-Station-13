@@ -79,6 +79,12 @@
 			if(pushed_mob.buckled)
 				to_chat(user, "<span class='warning'>[pushed_mob] is buckled to [pushed_mob.buckled]!</span>")
 				return
+			// BLUEMOON ADDITION AHEAD - сверх-тяжёлых персонажей нельзя положить на стол, только если ты сам не сверх-тяжёлый, киборг или халк
+			if(HAS_TRAIT(pushed_mob, TRAIT_BLUEMOON_HEAVY_SUPER))
+				if(!issilicon(user) || !(HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY_SUPER)) !user.dna.check_mutation(HULK))
+					to_chat(user, span_warning("Слишком много весит!"))
+					return
+			// BLUEMOON ADDITION END
 			if(user.a_intent == INTENT_GRAB)
 				if(user.grab_state < GRAB_AGGRESSIVE)
 					to_chat(user, "<span class='warning'>You need a better grip to do that!</span>")

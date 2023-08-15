@@ -204,6 +204,10 @@
 		var/mob/living/L = AM
 		if(L.anchored || L.move_resist >= MOVE_FORCE_VERY_STRONG || L.buckled || L.incorporeal_move || L.has_buckled_mobs())
 			return FALSE
+		// BLUEMOOB ADDITION AHEAD - убираем много головной боли с абузами ящиков на больших персонажей
+		if(HAS_TRAIT(L, TRAIT_BLUEMOON_HEAVY_SUPER))
+			return FALSE
+		// BLUEMOOB ADDITION END
 		if(L.mob_size > MOB_SIZE_TINY) // Tiny mobs are treated as items.
 			if(horizontal && L.density)
 				return FALSE

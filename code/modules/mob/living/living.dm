@@ -278,9 +278,6 @@
 	if((AM.anchored && !push_anchored) || (force < (AM.move_resist * MOVE_FORCE_PUSH_RATIO)))
 		now_pushing = FALSE
 		return
-	if(HAS_TRAIT(AM, TRAIT_BLUEMOON_HEAVY_SUPER))
-		now_pushing = FALSE
-		return
 	if(istype(AM, /obj/structure/window))
 		var/obj/structure/window/W = AM
 		if(W.fulltile)

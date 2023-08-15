@@ -17,10 +17,14 @@
 	// Check for Distant (no touch head!)
 	if(HAS_TRAIT(src, TRAIT_DISTANT))
 		. += "<span class='warning'>Вы понимаете, что [t_his] может беспокоить физическая близость и вам лучше соблюдать дистанцию.</span>\n"
+	// BLUEMOON ADDITION AHEAD
+	// Проверка на трейт сверх-тяжа
 	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
-		. += "<span class='warning'>[t_He] ощущается так, будто вести как машина.</span>\n"
+		. += "<span class='warning'>Выглядит так, будто весит как машина.</span>\n"
+	// Проверка на трейт тяжёлого персонажа
 	else if (HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY))
-		. += "<span class='warning'>[t_He] ощущается грузно. Вести будет сложно.</span>\n"
+		. += "<span class='warning'>Выглядит грузно. Вести будет сложно.</span>\n"
+	// BLUEMOON ADDITION END
 	// Check for Heatpat Slut (pls touch head!)
 	if(HAS_TRAIT(src, TRAIT_HEADPAT_SLUT))
 		. += span_info("Вы понимаете, что [t_He] ценит физическую привязанность больше, чем обычно.")
