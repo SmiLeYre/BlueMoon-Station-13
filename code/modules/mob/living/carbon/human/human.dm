@@ -828,11 +828,11 @@
 	else if(HAS_TRAIT(src, TRAIT_QUICK_CARRY))
 		carrydelay = 40
 		skills_space = "quickly "
-	//SKYRAT EDIT ADDITION
+	// BLUEMOON ADDITION AHEAD - тяжёлых и сверх-тяжёлых персонажей нельзя нести на плече
 	if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
-		to_chat(src, span_warning("You try to carry [target], but they are too heavy!"))
+		to_chat(src, span_warning("Вы пытаетесь поднять [target], но вам слишком тяжело!"))
 		return
-	//SKYRAT EDIT END
+	// BLUEMOON ADDITION END
 	if(can_be_firemanned(target) && !incapacitated(FALSE, TRUE))
 		visible_message("<span class='notice'>[src] starts [skills_space]lifting [target] onto their back..</span>",
 		//Joe Medic starts quickly/expertly lifting Grey Tider onto their back..
