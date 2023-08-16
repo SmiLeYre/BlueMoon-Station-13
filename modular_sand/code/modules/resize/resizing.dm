@@ -82,7 +82,7 @@
 				playsound(loc, 'sound/misc/splort.ogg', 50, 1)
 				user.add_movespeed_modifier(/datum/movespeed_modifier/stomp, TRUE)
 				addtimer(CALLBACK(user, /mob/.proc/remove_movespeed_modifier, MOVESPEED_ID_STOMP, TRUE), 10) //1 second
-				//user.Stun(20)
+				user.Stun(1.5 SECONDS) //BLUEMOON CHANGES - иначе можно очень за секунду убить кого-то, имея тяжёлый вес
 				if(iscarbon(user))
 					if(istype(user) && (user.dna.features["taur"] == "Naga" || user.dna.features["taur"] == "Tentacle"))
 						target.visible_message("<span class='danger'>[src] mows down [target] under their tail!</span>", "<span class='userdanger'>[src] plows their tail over you mercilessly!</span>")
@@ -142,16 +142,36 @@
 //Proc for scaling stamina damage on size difference
 /mob/living/carbon/proc/sizediffStamLoss(mob/living/carbon/target)
 	var/S = COMPARE_SIZES(src, target) * 25 //macro divided by micro, times 25
+	// BLUEMOON ADDITION AHEAD - усиление конечно результата за наличие квирка на тяжесть или сверх-тяжесть
+	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY))
+		S *= 2
+	else if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
+		S *= 3
+	// BLUEMOON ADDITION END
 	target.Knockdown(S) //final result in stamina knockdown
 
 //Proc for scaling stuns on size difference (for grab intent)
 /mob/living/carbon/proc/sizediffStun(mob/living/carbon/target)
 	var/T = COMPARE_SIZES(src, target) * 2 //Macro divided by micro, times 2
+	// BLUEMOON ADDITION AHEAD - усиление конечно результата за наличие квирка на тяжесть или сверх-тяжесть
+	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY))
+		T *= 2
+	else if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
+		T *= 3
+	// BLUEMOON ADDITION END
 	target.Stun(T)
 
 //Proc for scaling brute damage on size difference
 /mob/living/carbon/proc/sizediffBruteloss(mob/living/carbon/target)
 	var/B = COMPARE_SIZES(src, target) * 3 //macro divided by micro, times 3
+	to_chat(src, "[B]")
+	// BLUEMOON ADDITION AHEAD - усиление конечно результата за наличие квирка на тяжесть или сверх-тяжесть
+	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY))
+		B *= 2
+	else if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
+		B *= 3
+	to_chat(src, "Конечная [B]")
+	// BLUEMOON ADDITION END
 	target.adjustBruteLoss(B) //final result in brute loss
 
 //Proc for instantly grabbing valid size difference. Code optimizations soon(TM)

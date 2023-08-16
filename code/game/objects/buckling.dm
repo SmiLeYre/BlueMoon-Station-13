@@ -77,7 +77,6 @@
 	buckled_mobs |= M
 	M.update_mobility()
 	M.throw_alert("buckled", /atom/movable/screen/alert/restrained/buckled)
-
 	post_buckle_mob(M)
 
 	SEND_SIGNAL(src, COMSIG_MOVABLE_BUCKLE, M, force)
@@ -126,14 +125,17 @@
 	if(!in_range(user, src) || !isturf(user.loc) || user.incapacitated() || M.anchored || !user.can_buckle_others(M, src))
 		return FALSE
 
+	// BLUEMOON ADDITION AHEAD - запрет на усаживание сверх-тяжёлого персонажа посторонними
 	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER) && M != user)
 		to_chat(user, span_warning("Слишком много весит!"))
 		return
+	// BLUEMOON ADDITION END
 
 	add_fingerprint(user)
 	. = buckle_mob(M, check_loc = check_loc)
 	if(.)
 		if(M == user)
+			// BLUEMOON CHANGES AHEAD - нарративный комментарий, что садится/ложится сверх-тяжёлый персонаж
 			M.visible_message(\
 				"<span class='notice'>[M] занимает место на <b>[src]</b>. \
 				[HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER) ? "Слышится скрип при попытки удержать вес." : ""]</span>",\
@@ -147,6 +149,7 @@
 				"<span class='warning'>[user] размещает вас на <b>[src]</b>! \
 				[HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER) ? "Слышится скрип при попытки удержать вес." : ""]</span>",\
 				"<span class='italics'>Вы слышите металлический лязг.</span>")
+			// BLUEMOON CHANGES END
 
 /atom/movable/proc/user_unbuckle_mob(mob/living/buckled_mob, mob/user)
 	var/mob/living/M = unbuckle_mob(buckled_mob)

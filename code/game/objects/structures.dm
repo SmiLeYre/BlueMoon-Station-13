@@ -92,8 +92,8 @@
 				// BLUEMOON ADDITION AHEAD - сверх-тяжёлые персонажи пересекают преграды быстро, но в процессе ломают их
 				if(HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY_SUPER))
 					visible_message(span_warning("[src] breaks in half under the weight of [user]!"))
-				//	playsound(src, 'modular_skyrat/modules/oversized/sound/chair_break.ogg', 70, TRUE) //TODO
-					deconstruct()
+					playsound(src, 'modular_bluemoon/heavy_and_superheavy_quirks/chair_break.ogg', 70, TRUE)
+					deconstruct(FALSE)
 					return
 				// BLUEMOON ADDITION END
 				user.visible_message("<span class='warning'>[user] climbs onto [src].</span>", \
