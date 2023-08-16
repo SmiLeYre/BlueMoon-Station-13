@@ -229,9 +229,9 @@
 		if(pulling && grab_state >= GRAB_NECK)
 			power_throw++
 		//BLUEMOON ADDITION AHEAD
-		if(HAS_TRAIT(thrown_thing, TRAIT_BLUEMOON_HEAVY)) //тяжёлый персонаж метается хуже обычного
+		if(HAS_TRAIT(thrown_thing, TRAIT_BLUEMOON_HEAVY)) // тяжёлый персонаж метается хуже обычного
 			power_throw -= 2
-		if(HAS_TRAIT(thrown_thing, TRAIT_BLUEMOON_HEAVY_SUPER)) //сверх-тяжёлого персонажа нельзя кинуть с рук
+		if(HAS_TRAIT(thrown_thing, TRAIT_BLUEMOON_HEAVY_SUPER)) // сверхтяжёлого персонажа нельзя кинуть с рук
 			power_throw = -10
 		//BLUEMOON ADDITION END
 		visible_message("<span class='danger'>[src] throws [thrown_thing][power_throw ? " really hard!" : "."]</span>", \

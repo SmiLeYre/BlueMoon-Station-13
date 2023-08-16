@@ -828,7 +828,7 @@
 	else if(HAS_TRAIT(src, TRAIT_QUICK_CARRY))
 		carrydelay = 40
 		skills_space = "quickly "
-	// BLUEMOON ADDITION AHEAD - тяжёлых и сверх-тяжёлых персонажей нельзя нести на плече
+	// BLUEMOON ADDITION AHEAD - тяжёлых и сверхтяжёлых персонажей нельзя нести на плече
 	if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
 		to_chat(src, span_warning("Вы пытаетесь поднять [target], но вам слишком тяжело!"))
 		return

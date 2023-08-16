@@ -18,7 +18,7 @@
 	if(HAS_TRAIT(src, TRAIT_DISTANT))
 		. += "<span class='warning'>Вы понимаете, что [t_his] может беспокоить физическая близость и вам лучше соблюдать дистанцию.</span>\n"
 	// BLUEMOON ADDITION AHEAD
-	// Проверка на трейт сверх-тяжа
+	// Проверка на трейт сверхтяжёлого
 	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
 		. += "<span class='warning'>Выглядит так, будто весит как машина.</span>\n"
 	// Проверка на трейт тяжёлого персонажа

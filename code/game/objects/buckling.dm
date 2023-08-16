@@ -125,7 +125,7 @@
 	if(!in_range(user, src) || !isturf(user.loc) || user.incapacitated() || M.anchored || !user.can_buckle_others(M, src))
 		return FALSE
 
-	// BLUEMOON ADDITION AHEAD - запрет на усаживание сверх-тяжёлого персонажа посторонними
+	// BLUEMOON ADDITION AHEAD - запрет на усаживание сверхтяжёлого персонажа посторонними
 	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER) && M != user)
 		to_chat(user, span_warning("Слишком много весит!"))
 		return
@@ -135,7 +135,7 @@
 	. = buckle_mob(M, check_loc = check_loc)
 	if(.)
 		if(M == user)
-			// BLUEMOON CHANGES AHEAD - нарративный комментарий, что садится/ложится сверх-тяжёлый персонаж
+			// BLUEMOON CHANGES AHEAD - нарративный комментарий, что садится/ложится сверхтяжёлый персонаж
 			M.visible_message(\
 				"<span class='notice'>[M] занимает место на <b>[src]</b>. \
 				[HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER) ? "Слышится скрип при попытки удержать вес." : ""]</span>",\

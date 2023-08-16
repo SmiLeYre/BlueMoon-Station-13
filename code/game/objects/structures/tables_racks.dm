@@ -79,7 +79,7 @@
 			if(pushed_mob.buckled)
 				to_chat(user, "<span class='warning'>[pushed_mob] is buckled to [pushed_mob.buckled]!</span>")
 				return
-			// BLUEMOON ADDITION AHEAD - сверх-тяжёлых персонажей нельзя положить на стол, только если ты сам не сверх-тяжёлый, киборг или халк
+			// BLUEMOON ADDITION AHEAD - сверхтяжёлых персонажей нельзя положить на стол, только если ты сам не сверхтяжёлый, киборг или халк
 			if(HAS_TRAIT(pushed_mob, TRAIT_BLUEMOON_HEAVY_SUPER))
 				if(!issilicon(user))
 					if(iscarbon(user) && !HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY_SUPER))
@@ -138,7 +138,7 @@
 	pushed_mob.visible_message("<span class='notice'>[user] places [pushed_mob] onto [src].</span>", \
 								"<span class='notice'>[user] places [pushed_mob] onto [src].</span>")
 	log_combat(user, pushed_mob, "placed")
-	// BLUEMOON ADDITION AHEAD - тяжёлые и сверх-тяжёлые персонажи при толчке на стол ломают его
+	// BLUEMOON ADDITION AHEAD - тяжёлые и сверхтяжёлые персонажи при толчке на стол ломают его
 	if(HAS_TRAIT(pushed_mob, TRAIT_BLUEMOON_HEAVY_SUPER) || HAS_TRAIT(pushed_mob, TRAIT_BLUEMOON_HEAVY))
 		pushed_mob.visible_message("<span class='danger'>[user] breaks [src] with [pushed_mob]'s weight!</span>", \
 								"<span class='userdanger'>You break [src] with your weight!</span>")
@@ -168,7 +168,7 @@
 	if(iscatperson(H))
 		H.emote("nya")
 	SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "table", /datum/mood_event/table)
-	// BLUEMOON ADDITION AHEAD - тяжёлые и сверх-тяжёлые персонажи при толчке на стол ломают его
+	// BLUEMOON ADDITION AHEAD - тяжёлые и сверхтяжёлые персонажи при толчке на стол ломают его
 	if(HAS_TRAIT(pushed_mob, TRAIT_BLUEMOON_HEAVY_SUPER) || HAS_TRAIT(pushed_mob, TRAIT_BLUEMOON_HEAVY))
 		pushed_mob.visible_message("<span class='danger'>[user] breaks [src] with [pushed_mob]'s weight!</span>", \
 								"<span class='userdanger'>You break [src] with your weight!</span>")
@@ -190,7 +190,7 @@
 								"<span class='userdanger'>[user] smashes your [banged_limb.name] against \the [src]</span>")
 	log_combat(user, pushed_mob, "head slammed", null, "against [src]")
 	SEND_SIGNAL(pushed_mob, COMSIG_ADD_MOOD_EVENT, "table", /datum/mood_event/table_limbsmash, banged_limb)
-	// BLUEMOON ADDITION AHEAD - тяжёлые и сверх-тяжёлые персонажи при толчке на стол ломают его
+	// BLUEMOON ADDITION AHEAD - тяжёлые и сверхтяжёлые персонажи при толчке на стол ломают его
 	if(HAS_TRAIT(pushed_mob, TRAIT_BLUEMOON_HEAVY_SUPER) || HAS_TRAIT(pushed_mob, TRAIT_BLUEMOON_HEAVY))
 		pushed_mob.visible_message("<span class='danger'>[user] breaks [src] with [pushed_mob]'s weight!</span>", \
 								"<span class='userdanger'>You break [src] with your weight!</span>")

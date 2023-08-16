@@ -318,7 +318,7 @@
 	if(pulling.anchored || pulling.move_resist > move_force || !pulling.Adjacent(src))
 		stop_pulling()
 		return FALSE
-	// BLUEMOON ADDITION AHEAD - Проверка на возможность таскать мышкой сверх-тяжёлого персонажа
+	// BLUEMOON ADDITION AHEAD - Проверка на возможность таскать мышкой сверхтяжёлого персонажа
 	if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY_SUPER))
 		if(!issilicon(src))
 			if(iscarbon(src) && !HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
@@ -370,7 +370,7 @@
 		if(pulling.anchored || pulling.move_resist > move_force)
 			stop_pulling()
 			return
-		// BLUEMOON ADDITION AHEAD - Проверка на возможность ТЯНУТЬ сверх-тяжёлого персонажа
+		// BLUEMOON ADDITION AHEAD - Проверка на возможность ТЯНУТЬ сверхтяжёлого персонажа
 		if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY_SUPER))
 			if(!issilicon(src))
 				if(iscarbon(src) && !HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))

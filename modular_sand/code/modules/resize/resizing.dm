@@ -142,7 +142,7 @@
 //Proc for scaling stamina damage on size difference
 /mob/living/carbon/proc/sizediffStamLoss(mob/living/carbon/target)
 	var/S = COMPARE_SIZES(src, target) * 25 //macro divided by micro, times 25
-	// BLUEMOON ADDITION AHEAD - усиление конечно результата за наличие квирка на тяжесть или сверх-тяжесть
+	// BLUEMOON ADDITION AHEAD - усиление конечно результата за наличие квирка на тяжесть или сверхтяжесть
 	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY))
 		S *= 2
 	else if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
@@ -153,7 +153,7 @@
 //Proc for scaling stuns on size difference (for grab intent)
 /mob/living/carbon/proc/sizediffStun(mob/living/carbon/target)
 	var/T = COMPARE_SIZES(src, target) * 2 //Macro divided by micro, times 2
-	// BLUEMOON ADDITION AHEAD - усиление конечно результата за наличие квирка на тяжесть или сверх-тяжесть
+	// BLUEMOON ADDITION AHEAD - усиление конечно результата за наличие квирка на тяжесть или сверхтяжесть
 	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY))
 		T *= 2
 	else if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
@@ -165,7 +165,7 @@
 /mob/living/carbon/proc/sizediffBruteloss(mob/living/carbon/target)
 	var/B = COMPARE_SIZES(src, target) * 3 //macro divided by micro, times 3
 	to_chat(src, "[B]")
-	// BLUEMOON ADDITION AHEAD - усиление конечно результата за наличие квирка на тяжесть или сверх-тяжесть
+	// BLUEMOON ADDITION AHEAD - усиление конечно результата за наличие квирка на тяжесть или сверхтяжесть
 	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY))
 		B *= 2
 	else if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))

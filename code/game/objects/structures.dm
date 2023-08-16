@@ -89,7 +89,7 @@
 	if(do_mob(user, user, adjusted_climb_time))
 		if(src.loc) //Checking if structure has been destroyed
 			if(do_climb(user))
-				// BLUEMOON ADDITION AHEAD - сверх-тяжёлые персонажи пересекают преграды быстро, но в процессе ломают их
+				// BLUEMOON ADDITION AHEAD - сверхтяжёлые персонажи пересекают преграды быстро, но в процессе ломают их
 				if(HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY_SUPER))
 					visible_message(span_warning("[src] breaks in half under the weight of [user]!"))
 					playsound(src, 'modular_bluemoon/heavy_and_superheavy_quirks/chair_break.ogg', 70, TRUE)

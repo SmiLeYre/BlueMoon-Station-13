@@ -73,7 +73,7 @@
 	var/modified = FALSE
 	if(pulling)
 
-		if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY_SUPER)) // Сверх-тяжёлых персонажей очень сложно тянуть (даже тем, кто на это способен)
+		if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY_SUPER)) // Сверхтяжёлых персонажей очень сложно тянуть (даже тем, кто на это способен)
 			if(!HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
 				add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/heavy_mob_drag, multiplicative_slowdown = PULL_HEAVY_SUPER_SLOWDOWN)
 			else
