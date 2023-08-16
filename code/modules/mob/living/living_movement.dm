@@ -69,6 +69,7 @@
 		remove_movespeed_modifier(/datum/movespeed_modifier/turf_slowdown)
 
 /mob/living/proc/update_pull_movespeed()
+	// BLUEMOON ADDITION AHEAD
 	var/modified = FALSE
 	if(pulling)
 
@@ -83,7 +84,7 @@
 			add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/heavy_mob_drag, multiplicative_slowdown = PULL_HEAVY_SLOWDOWN)
 			modified = TRUE
 
-		if(isliving(pulling))
+		if(isliving(pulling)) // оригинальный код сплюрта
 			var/mob/living/L = pulling
 			if(drag_slowdown && L.lying && !L.buckled && grab_state < GRAB_AGGRESSIVE)
 				add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/bulky_drag, multiplicative_slowdown = PULL_PRONE_SLOWDOWN)
@@ -94,6 +95,7 @@
 
 	remove_movespeed_modifier(/datum/movespeed_modifier/bulky_drag)
 	remove_movespeed_modifier(/datum/movespeed_modifier/heavy_mob_drag)
+	// BLUEMOON ADDITION END
 
 /mob/living/canZMove(dir, turf/target)
 	return can_zTravel(target, dir) && (movement_type & FLYING)
