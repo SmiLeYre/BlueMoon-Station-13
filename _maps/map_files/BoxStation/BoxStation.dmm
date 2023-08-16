@@ -53570,6 +53570,8 @@
 	pixel_x = 6;
 	pixel_y = 4
 	},
+/obj/item/reagent_containers/food/drinks/bottle/whiskey,
+/obj/item/reagent_containers/food/drinks/flask,
 /turf/open/floor/carpet,
 /area/command/blueshieldoffice)
 "lMg" = (
@@ -55779,9 +55781,10 @@
 /turf/open/floor/plasteel,
 /area/hallway/primary/port)
 "nDf" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/food/drinks/flask,
-/obj/item/reagent_containers/food/drinks/bottle/whiskey,
+/obj/structure/bed/dogbed{
+	desc = "A comfy-looking pet bed. You can even strap your pet in, in case the gravity turns off.";
+	name = "pet bed"
+	},
 /turf/open/floor/carpet,
 /area/command/blueshieldoffice)
 "nEj" = (
@@ -66825,6 +66828,14 @@
 /obj/item/clothing/shoes/sandal,
 /turf/open/floor/festive/wooden/wooden2,
 /area/commons/fitness/recreation)
+"wWs" = (
+/obj/structure/bed/dogbed{
+	desc = "A comfy-looking pet bed. You can even strap your pet in, in case the gravity turns off.";
+	name = "pet bed"
+	},
+/mob/living/simple_animal/pet/fox/fennec,
+/turf/open/floor/wood,
+/area/service/lawoffice)
 "wWP" = (
 /obj/structure/rack,
 /obj/item/reagent_containers/food/snacks/meat/slab/monkey,
@@ -95683,7 +95694,7 @@ qhR
 uSp
 qpY
 fwR
-ata
+wWs
 oEf
 hmB
 ayW

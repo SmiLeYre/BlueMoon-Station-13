@@ -93256,6 +93256,8 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 4
 	},
+/obj/structure/bed/dogbed,
+/mob/living/simple_animal/pet/fox/fennec,
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "lRy" = (
@@ -100321,10 +100323,10 @@
 /turf/open/floor/plasteel,
 /area/cargo/storage)
 "oce" = (
-/obj/item/kirbyplants/random,
 /obj/structure/sign/poster/official/work_for_a_future{
 	pixel_y = -32
 	},
+/obj/structure/bed/dogbed,
 /turf/open/floor/wood,
 /area/command/blueshieldoffice)
 "ocg" = (
@@ -120326,6 +120328,16 @@
 	},
 /turf/closed/wall,
 /area/security/detectives_office)
+"usG" = (
+/obj/structure/cable/white{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/mob/living/simple_animal/pet/cat/floppa,
+/turf/open/floor/wood,
+/area/command/blueshieldoffice)
 "usN" = (
 /obj/structure/chair/office/dark{
 	dir = 4
@@ -165524,7 +165536,7 @@ jDE
 xeo
 gkg
 qSs
-vlL
+usG
 uXE
 oce
 khz

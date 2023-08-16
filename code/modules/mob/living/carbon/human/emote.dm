@@ -190,8 +190,8 @@
 /datum/emote/sound/human/ping
 	key = "ping"
 	key_third_person = "pings"
-	message = "пингует."
-	message_param = "пингует при виде %t."
+	message = "звенит."
+	message_param = "звенит при виде %t."
 	sound = 'sound/machines/ping.ogg'
 
 /datum/emote/sound/human/chime
@@ -208,7 +208,7 @@
 /datum/emote/sound/human/shriek
 	key = "shriek"
 	key_third_person = "shrieks"
-	message = "ШРИКАЕТ!"
+	message = "вскрикивает!"
 	sound = 'sound/voice/shriek1.ogg'
 
 /datum/emote/sound/human/syndicate

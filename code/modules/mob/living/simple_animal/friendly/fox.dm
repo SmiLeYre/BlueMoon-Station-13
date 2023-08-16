@@ -67,7 +67,7 @@
 	response_disarm_simple = "gently push aside"
 	response_harm_continuous = "kicks"
 	response_harm_simple = "kick"
-	faction = list(ROLE_INTEQ)
+	faction = list(ROLE_SYNDICATE)
 	gold_core_spawnable = FRIENDLY_SPAWN
 
 /mob/living/simple_animal/hostile/tegu
@@ -100,3 +100,16 @@
 	turns_per_move = 10
 	stop_automated_movement = TRUE
 
+/mob/living/simple_animal/pet/fox/fennec
+	name = "Red"
+	desc = "It's a fennec!"
+	icon_state = "fennec"
+	icon_living = "fennec"
+	icon_dead = "fennec_dead"
+	//held_icon = "fennec"
+	see_in_dark = 10
+	vocal_bark_id = "weh"
+	vocal_speed = 1.5
+	speak_chance = 15
+	maxHealth = 50
+	health = 50

@@ -1095,7 +1095,7 @@
 	allowed = GLOB.security_wintercoat_allowed
 
 /obj/item/clothing/head/hooded/winterhood/durathread
-	icon_state = "hood_durathread"
+	icon_state = "winterhood_durathread"
 	armor = list(MELEE = 20, BULLET = 8, LASER = 15, ENERGY = 8, BOMB = 25, BIO = 10, RAD = 15, FIRE = 75, ACID = 37)
 
 /obj/item/clothing/suit/spookyghost
@@ -1207,8 +1207,8 @@
 	AddElement(/datum/element/polychromic, list("#6A6964", "#C4B8A6", "#0000FF"), 3)
 
 /obj/item/clothing/head/hooded/winterhood/polychromic
-	icon_state = "hood_poly"
-	item_state = "hood_poly"
+	icon_state = "winterhood_poly"
+	item_state = "winterhood_poly"
 
 /obj/item/clothing/suit/hooded/wintercoat/timidcostume
 	name = "timid woman hoodie"

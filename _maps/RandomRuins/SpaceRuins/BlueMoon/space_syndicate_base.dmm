@@ -105,6 +105,21 @@
 	},
 /turf/open/floor/iron/white/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
+"aq" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "at" = (
 /obj/effect/turf_decal/siding/dark{
 	dir = 6
@@ -1244,9 +1259,7 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo/hangar)
 "eJ" = (
 /obj/machinery/light/dim/directional/south,
-/obj/effect/mob_spawn/human/ds2/syndicate/miner{
-	dir = 1
-	},
+/obj/machinery/portable_atmospherics/canister/nitrogen,
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
 "eL" = (
@@ -3943,9 +3956,6 @@
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
 "pW" = (
-/obj/effect/mob_spawn/human/ds2/syndicate/brigoff{
-	dir = 8
-	},
 /obj/structure/window/reinforced/survival_pod,
 /obj/effect/turf_decal/siding/dark,
 /turf/open/floor/mineral/plastitanium/red,
@@ -6057,6 +6067,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
 	level = 1
 	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "zA" = (
@@ -7066,6 +7077,14 @@
 	pixel_y = -3;
 	pixel_x = 6
 	},
+/obj/item/tank/internals/emergency_nitrogen/double,
+/obj/item/tank/internals/emergency_nitrogen/double,
+/obj/item/tank/internals/emergency_nitrogen/double,
+/obj/item/tank/internals/emergency_nitrogen_ext,
+/obj/item/tank/internals/emergency_nitrogen_ext,
+/obj/item/tank/internals/emergency_nitrogen_ext,
+/obj/item/tank/internals/emergency_nitrogen_ext,
+/obj/item/tank/internals/emergency_nitrogen_ext,
 /turf/open/floor/iron/dark/textured_half,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
 "En" = (
@@ -7331,6 +7350,9 @@
 	},
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
+"Fr" = (
+/turf/open/floor/iron/dark/small,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
 "Fw" = (
 /obj/machinery/shower/directional/south,
 /obj/effect/turf_decal/siding/dark{
@@ -8184,6 +8206,7 @@
 /obj/item/trash/can{
 	pixel_x = -9
 	},
+/obj/item/tank/internals/emergency_nitrogen,
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "Jv" = (
@@ -10474,9 +10497,6 @@
 /obj/item/gun/ballistic/automatic/m16a4/tactical{
 	pixel_y = 4
 	},
-/obj/item/gun/ballistic/automatic/m16a4/tactical{
-	pixel_x = -8
-	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/armory)
 "Sq" = (
@@ -12093,6 +12113,9 @@
 "Yd" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/turf_decal/siding/dark,
+/obj/structure/fans/tiny{
+	dir = 4
+	},
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "Ye" = (
@@ -13576,7 +13599,7 @@ Tt
 WM
 ka
 zy
-hG
+aq
 hG
 zx
 Sq
@@ -14126,7 +14149,7 @@ jm
 BG
 FG
 mJ
-cW
+Fr
 my
 MH
 oE

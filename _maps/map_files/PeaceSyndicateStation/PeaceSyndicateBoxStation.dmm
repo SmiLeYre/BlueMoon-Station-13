@@ -3705,6 +3705,8 @@
 	pixel_x = 6;
 	pixel_y = 4
 	},
+/obj/item/reagent_containers/food/drinks/bottle/whiskey,
+/obj/item/reagent_containers/food/drinks/flask,
 /turf/open/floor/mineral/plastitanium,
 /area/command/blueshieldoffice)
 "ais" = (
@@ -59340,6 +59342,11 @@
 /obj/structure/table,
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
+"nwp" = (
+/obj/structure/bed/dogbed,
+/mob/living/simple_animal/pet/fox/fennec,
+/turf/open/floor/wood,
+/area/service/lawoffice)
 "nwJ" = (
 /obj/machinery/shower{
 	pixel_y = 20
@@ -60348,9 +60355,8 @@
 /turf/open/floor/mineral/plastitanium,
 /area/hallway/primary/central)
 "oNI" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/food/drinks/flask,
-/obj/item/reagent_containers/food/drinks/bottle/whiskey,
+/obj/structure/bed/dogbed,
+/mob/living/simple_animal/pet/cat/floppa,
 /turf/open/floor/mineral/plastitanium,
 /area/command/blueshieldoffice)
 "oNN" = (
@@ -94226,7 +94232,7 @@ gkH
 gLj
 kaM
 cGM
-ata
+nwp
 vrj
 rxP
 ayW

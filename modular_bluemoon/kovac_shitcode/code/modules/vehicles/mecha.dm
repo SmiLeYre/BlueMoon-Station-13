@@ -1,7 +1,7 @@
 ///NRI Combat Mech
 /obj/vehicle/sealed/mecha/combat/durand/tu802
 	desc = "Deep Durand modification, licensed and utilized by the manufacturers of the New Russian Empire."
-	name = "\improper TU-802 Sevastopol"
+	name = "\improper TU-802 Solntsepyok"
 	icon_state = "shire"
 	armor = list(MELEE = 60, BULLET = 65, LASER = 50, ENERGY = 40, BOMB = 50, BIO = 0, RAD = 100, FIRE = 100, ACID = 100)
 	max_temperature = 60000

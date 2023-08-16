@@ -87,6 +87,7 @@
 	inaccuracy_modifier = 0.25
 	cell_type = /obj/item/stock_parts/cell/magnetic/pistol
 	automatic_burst_overlay = FALSE
+	weapon_weight = WEAPON_LIGHT
 
 /obj/item/gun/ballistic/automatic/magrifle/pistol/update_overlays()
 	. = ..()

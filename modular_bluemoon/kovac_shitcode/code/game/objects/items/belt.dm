@@ -46,7 +46,7 @@
 	desc = "To summon your own steel titan. For the Emperor!"
 
 /obj/item/choice_beacon/nri_mech/generate_display_names()
-	var/static/list/nri_mech_list = list("TU-802 Sevastopol" = /obj/vehicle/sealed/mecha/combat/durand/tu802,
+	var/static/list/nri_mech_list = list("TU-802 Solntsepyok" = /obj/vehicle/sealed/mecha/combat/durand/tu802,
 		"Savannah-Ivanov" = /obj/vehicle/sealed/mecha/combat/savannah_ivanov/loaded)
 	if(!nri_mech_list)
 		nri_mech_list = list()

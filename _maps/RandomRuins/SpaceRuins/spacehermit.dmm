@@ -352,6 +352,10 @@
 /obj/item/circuitboard/machine/protolathe/department,
 /turf/template_noop,
 /area/template_noop)
+"cw" = (
+/obj/machinery/portable_atmospherics/canister/nitrogen,
+/turf/open/floor/plating/asteroid,
+/area/ruin/powered)
 "fc" = (
 /obj/item/stack/ore/iron,
 /obj/item/stack/sheet/mineral/plasma,
@@ -383,6 +387,8 @@
 "nl" = (
 /obj/structure/closet/emcloset,
 /obj/effect/turf_decal/bot,
+/obj/item/tank/internals/emergency_nitrogen,
+/obj/item/tank/internals/emergency_nitrogen/double,
 /turf/open/floor/mineral/titanium,
 /area/ruin/powered)
 "oR" = (
@@ -1488,7 +1494,7 @@ ad
 am
 am
 am
-am
+cw
 aZ
 aH
 aJ

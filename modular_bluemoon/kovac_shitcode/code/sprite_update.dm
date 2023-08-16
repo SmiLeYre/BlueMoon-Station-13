@@ -9,9 +9,10 @@
 	item_state = "centcom_t_skirt"
 
 /obj/item/clothing/under/syndicate/brigdoc
-	name = "red turtleneck"
+	name = "brig physician turtleneck"
 	icon_state = "security_medic_turtleneck"
 	item_state = "security_medic_turtleneck"
+	has_sensor = 3
 
 /obj/item/clothing/under/syndicate/skirt/brigdoc
 	name = "red skirtleneck"

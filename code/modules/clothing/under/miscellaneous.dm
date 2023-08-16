@@ -197,7 +197,7 @@
 	desc = "A jumpsuit made from durathread, its resilient fibres provide some protection to the wearer."
 	icon_state = "durathread"
 	item_state = "durathread"
-	can_adjust = TRUE
+	can_adjust = FALSE
 	armor = list(MELEE = 10, LASER = 10, FIRE = 40, ACID = 10, BOMB = 5)
 
 /obj/item/clothing/under/misc/durathread/skirt

@@ -9702,6 +9702,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/structure/bed/dogbed,
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "aNw" = (
@@ -45874,6 +45875,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 10
 	},
+/mob/living/simple_animal/pet/fox/fennec,
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "djs" = (
@@ -50292,12 +50294,7 @@
 /turf/open/floor/plasteel,
 /area/service/hydroponics/garden)
 "eVS" = (
-/obj/structure/table/wood,
-/obj/machinery/recharger,
-/obj/item/radio/off{
-	pixel_x = 6;
-	pixel_y = 4
-	},
+/obj/structure/bed/dogbed,
 /turf/open/floor/wood,
 /area/command/blueshieldoffice)
 "eWf" = (
@@ -71253,6 +71250,11 @@
 	c_tag = "Blueshield";
 	dir = 4
 	},
+/obj/item/radio/off{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/machinery/recharger,
 /turf/open/floor/carpet,
 /area/command/blueshieldoffice)
 "qiT" = (

@@ -32,7 +32,7 @@
 	access = list(ACCESS_SECURITY, ACCESS_BRIG, ACCESS_SEC_DOORS, ACCESS_COURT, ACCESS_MAINT_TUNNELS, ACCESS_ENTER_GENPOP, ACCESS_LEAVE_GENPOP, ACCESS_WEAPONS, ACCESS_PEACEKEEPER)
 	minimal_access = list(ACCESS_SECURITY, ACCESS_BRIG, ACCESS_SEC_DOORS, ACCESS_COURT, ACCESS_ENTER_GENPOP, ACCESS_LEAVE_GENPOP, ACCESS_WEAPONS, ACCESS_PEACEKEEPER) // See /datum/job/officer/get_access()
 	paycheck = PAYCHECK_MEDIUM
-	paycheck_department = ACCOUNT_CIV
+	paycheck_department = ACCOUNT_SEC
 
 	mind_traits = list(TRAIT_LAW_ENFORCEMENT_METABOLISM)
 
@@ -55,7 +55,7 @@
 	l_pocket = /obj/item/storage/bag/security
 	r_pocket = /obj/item/assembly/flash/handheld
 	suit_store = /obj/item/gun/energy/e_gun/advtaser
-	backpack_contents = list(/obj/item/reagent_containers/spray/pepper, /obj/item/clothing/accessory/badge/deputy, /obj/item/holosign_creator/security, /obj/item/storage/ifak, /obj/item/reagent_containers/peacehypo, /obj/item/choice_beacon/pkbaton)
+	backpack_contents = list(/obj/item/reagent_containers/spray/pepper, /obj/item/clothing/accessory/badge/deputy, /obj/item/holosign_creator/security, /obj/item/storage/ifak, /obj/item/choice_beacon/pkbaton)
 
 	backpack = /obj/item/storage/backpack/security/pk
 	satchel = /obj/item/storage/backpack/satchel/sec/pk
@@ -80,7 +80,7 @@
 	l_pocket = /obj/item/storage/bag/security
 	r_pocket = /obj/item/assembly/flash/handheld
 	suit_store = /obj/item/gun/energy/e_gun/advtaser
-	backpack_contents = list(/obj/item/reagent_containers/spray/pepper, /obj/item/clothing/accessory/badge/deputy, /obj/item/holosign_creator/security, /obj/item/storage/ifak, /obj/item/reagent_containers/peacehypo, /obj/item/choice_beacon/pkbaton, /obj/item/syndicate_uplink_high)
+	backpack_contents = list(/obj/item/reagent_containers/spray/pepper, /obj/item/clothing/accessory/badge/deputy, /obj/item/holosign_creator/security, /obj/item/storage/ifak, /obj/item/choice_beacon/pkbaton, /obj/item/syndicate_uplink_high)
 
 	backpack = /obj/item/storage/backpack/duffelbag/syndie/ammo
 	satchel = /obj/item/storage/backpack/duffelbag/syndie/ammo
@@ -98,7 +98,7 @@
 	uniform = /obj/item/clothing/under/plasmaman/security
 	r_pocket = /obj/item/storage/bag/security
 	l_pocket = /obj/item/assembly/flash/handheld
-	backpack_contents = list(/obj/item/reagent_containers/spray/pepper, /obj/item/clothing/accessory/badge/deputy, /obj/item/reagent_containers/peacehypo, /obj/item/holosign_creator/security, /obj/item/choice_beacon/pkbaton)
+	backpack_contents = list(/obj/item/reagent_containers/spray/pepper, /obj/item/clothing/accessory/badge/deputy, /obj/item/holosign_creator/security, /obj/item/choice_beacon/pkbaton)
 
 	box = /obj/item/storage/box/survival/security
 
@@ -109,10 +109,10 @@
 	icon_state = "Security Officer"
 
 /*
-Peacekeeper Hypospray
+Peacekeeper Hypospray // BlueMoon 16.08 2023 - передано Вардену. Миротворцу не выдается.
 */
 /obj/item/reagent_containers/peacehypo
-	name = "Peacekeeper hypospray"
+	name = "Security hypospray"
 	desc = "An advanced chemical synthesizer and injection system, designed for heavy-duty medical equipment."
 	icon = 'icons/obj/syringe.dmi'
 	item_state = "hypo"

@@ -27,8 +27,8 @@
 /mob/living/carbon/alien/humanoid/royal/queen
 	name = "alien queen"
 	caste = "q"
-	maxHealth = 800
-	health = 800
+	maxHealth = 550
+	health = 550
 	icon_state = "alienq"
 	var/datum/action/small_sprite/smallsprite = new/datum/action/small_sprite/queen()
 	var/obj/effect/proc_holder/alien/royal/queen/promote/promote

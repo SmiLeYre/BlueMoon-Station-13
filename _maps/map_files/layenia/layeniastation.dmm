@@ -32159,6 +32159,8 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/item/cartridge/lawyer,
+/obj/item/taperecorder,
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "eJb" = (
@@ -49615,6 +49617,7 @@
 /obj/machinery/newscaster{
 	pixel_x = -32
 	},
+/obj/effect/landmark/start/lawyer,
 /turf/open/floor/carpet,
 /area/service/lawoffice)
 "hob" = (
@@ -125625,6 +125628,7 @@
 /obj/machinery/light_switch{
 	pixel_y = 28
 	},
+/mob/living/simple_animal/pet/fox/fennec,
 /turf/open/floor/carpet,
 /area/service/lawoffice)
 "stm" = (
@@ -135158,9 +135162,7 @@
 /turf/open/floor/plasteel,
 /area/science)
 "tKx" = (
-/obj/structure/table/wood,
-/obj/item/taperecorder,
-/obj/item/cartridge/lawyer,
+/obj/structure/closet/secure_closet/ntr,
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "tKB" = (

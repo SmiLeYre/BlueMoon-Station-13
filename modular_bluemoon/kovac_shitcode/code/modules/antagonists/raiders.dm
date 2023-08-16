@@ -15,7 +15,7 @@
 /datum/antagonist/pirate/raiders/get_team()
 	return crew
 
-/datum/antagonist/pirate/raiders/create_team(datum/team/pirate/raiders/new_team)
+/datum/antagonist/pirate/raiders/create_team(datum/team/raiders/new_team)
 	if(!new_team)
 		for(var/datum/antagonist/pirate/raiders/P in GLOB.antagonists)
 			if(!P.owner)
@@ -24,43 +24,36 @@
 				crew = P.crew
 				return
 		if(!new_team)
-			crew = new /datum/team/pirate/raiders
+			crew = new /datum/team/raiders
 			crew.forge_objectives()
 			return
 	if(!istype(new_team))
 		stack_trace("Wrong team type passed to [type] initialization.")
 	crew = new_team
 
+/datum/team/raiders/proc/forge_objectives()
+	var/datum/objective/loot/getbooty = new()
+	getbooty.team = src
+	for(var/obj/machinery/computer/piratepad_control/P in GLOB.machines)
+		var/area/A = get_area(P)
+		if(istype(A,/area/shuttle/inteq))
+			getbooty.cargo_hold = P
+			break
+	getbooty.update_explanation_text()
+	objectives += getbooty
+	for(var/datum/mind/M in members)
+		var/datum/antagonist/pirate/raiders/P = M.has_antag_datum(/datum/antagonist/pirate/raiders)
+		if(P)
+			P.objectives |= objectives
+	return
+
 /datum/antagonist/pirate/raiders/on_gain()
 	if(crew)
 		objectives |= crew.objectives
 	. = ..()
 
-/datum/team/pirate/raiders
+/datum/team/raiders
 	name = "InteQ"
-
-/datum/team/pirate/raiders/roundend_report()
-	var/list/parts = list()
-
-	parts += "<span class='header'InteQ Raiders were:</span>"
-
-	var/all_dead = TRUE
-	for(var/datum/mind/M in members)
-		if(considered_alive(M))
-			all_dead = FALSE
-	parts += printplayerlist(members)
-
-	parts += "Loot stolen: "
-	var/datum/objective/loot/L = locate() in objectives
-	parts += L.loot_listing()
-	parts += "Total loot value : [L.get_loot_value()]/[L.target_value] credits"
-
-	if(L.check_completion() && !all_dead)
-		parts += "<span class='greentext big'>InteQ Raiders were successful!</span>"
-	else
-		parts += "<span class='redtext big'>InteQ Raiders have failed.</span>"
-
-	return "<div class='panel redborder'>[parts.Join("<br>")]</div>"
 
 ///////////////  Sleeper //////
 
@@ -217,3 +210,27 @@
 
 /obj/machinery/mineral/ore_redemption/inteq
 	req_access = list(ACCESS_SYNDICATE)
+
+
+/datum/team/raiders/roundend_report()
+	var/list/parts = list()
+
+	parts += "<span class='header'>InteQ Raiders were:</span>"
+
+	var/all_dead = TRUE
+	for(var/datum/mind/M in members)
+		if(considered_alive(M))
+			all_dead = FALSE
+	parts += printplayerlist(members)
+
+	parts += "Loot stolen: "
+	var/datum/objective/loot/L = locate() in objectives
+	parts += L.loot_listing()
+	parts += "Total loot value : [L.get_loot_value()]/[L.target_value] credits"
+
+	if(L.check_completion() && !all_dead)
+		parts += "<span class='greentext big'>InteQ Raiders were successful!</span>"
+	else
+		parts += "<span class='redtext big'>InteQ Raiders have failed.</span>"
+
+	return "<div class='panel redborder'>[parts.Join("<br>")]</div>"

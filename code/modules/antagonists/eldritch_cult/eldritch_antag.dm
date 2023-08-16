@@ -233,12 +233,12 @@
 	parts += ..()
 	parts += "<b>Targets currently assigned by living hearts (Can give a false negative if they stole someone elses living heart):</b>"
 	if(!sac_targetted.len)
-		parts += "None."
+		parts += "Отсутствует."
 	else
 		parts += sac_targetted.Join(",")
-	parts += "<b>Targets actually sacrificed:</b>"
+	parts += "<b>Принесенные в жертву цели:</b>"
 	if(!actually_sacced.len)
-		parts += "None."
+		parts += "Отсутствует."
 	else
 		parts += actually_sacced.Join(",")
 
@@ -255,7 +255,7 @@
 /datum/objective/sacrifice_ecult/update_explanation_text()
 	. = ..()
 	target_amount = rand(2,3)
-	explanation_text = "Sacrifice at least [target_amount] people."
+	explanation_text = "Принеси в жертву как минимум [target_amount] живых существ."
 
 /datum/objective/sacrifice_ecult/check_completion()
 	if(!owner)

@@ -136,7 +136,7 @@
 	id = /obj/item/card/id/nri
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/nri
 	//head = /obj/item/clothing/head/helmet/alt
-	uniform = /obj/item/clothing/under/syndicate/rus_army
+	uniform = /obj/item/clothing/under/rank/security/officer/nri_military
 	mask = /obj/item/clothing/mask/balaclava/breath/inteq
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/hecu/black

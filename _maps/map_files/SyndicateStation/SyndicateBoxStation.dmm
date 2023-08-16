@@ -3705,6 +3705,8 @@
 	pixel_x = 6;
 	pixel_y = 4
 	},
+/obj/item/reagent_containers/food/drinks/bottle/whiskey,
+/obj/item/reagent_containers/food/drinks/flask,
 /turf/open/floor/mineral/plastitanium,
 /area/command/blueshieldoffice)
 "ais" = (
@@ -55590,9 +55592,13 @@
 /turf/open/floor/carpet/black,
 /area/service/bar)
 "iTX" = (
-/mob/living/simple_animal/pet/cat/floppa,
-/turf/open/floor/mineral/plastitanium,
-/area/command/blueshieldoffice)
+/obj/structure/bed/dogbed{
+	desc = "A comfy-looking pet bed. You can even strap your pet in, in case the gravity turns off.";
+	name = "pet bed"
+	},
+/mob/living/simple_animal/pet/fox/fennec,
+/turf/open/floor/wood,
+/area/service/lawoffice)
 "iUp" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /turf/open/floor/plating,
@@ -60358,9 +60364,11 @@
 /turf/open/floor/mineral/plastitanium,
 /area/hallway/primary/central)
 "oNI" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/food/drinks/flask,
-/obj/item/reagent_containers/food/drinks/bottle/whiskey,
+/obj/structure/bed/dogbed{
+	desc = "A comfy-looking pet bed. You can even strap your pet in, in case the gravity turns off.";
+	name = "pet bed"
+	},
+/mob/living/simple_animal/pet/cat/floppa,
 /turf/open/floor/mineral/plastitanium,
 /area/command/blueshieldoffice)
 "oNN" = (
@@ -92166,7 +92174,7 @@ nEZ
 aov
 mJE
 air
-iTX
+aqY
 ueW
 dbg
 obZ
@@ -94232,7 +94240,7 @@ gkH
 gLj
 kaM
 cGM
-ata
+iTX
 vrj
 rxP
 ayW

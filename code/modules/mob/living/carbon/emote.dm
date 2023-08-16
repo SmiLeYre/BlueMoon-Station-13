@@ -223,7 +223,7 @@
 /datum/emote/sound/human/shriek
 	key = "shriek"
 	key_third_person = "shrieks"
-	message = "<b>ШРИКАЕТ!!</b>"
+	message = "вскрикивает!"
 	sound = 'sound/voice/shriek1.ogg'
 
 /datum/emote/sound/human/syndicate

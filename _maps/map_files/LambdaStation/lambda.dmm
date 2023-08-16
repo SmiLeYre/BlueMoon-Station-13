@@ -19292,6 +19292,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/mob/living/simple_animal/pet/fox/fennec,
 /turf/open/floor/plasteel/grimy,
 /area/service/lawoffice)
 "aIz" = (
@@ -19299,13 +19300,13 @@
 /turf/open/floor/plasteel/grimy,
 /area/service/lawoffice)
 "aIA" = (
-/obj/structure/table/wood,
 /obj/machinery/computer/security/telescreen{
 	desc = "Used for watching Prison Wing holding areas.";
 	name = "Prison Monitor";
 	network = list("prison");
 	pixel_y = 30
 	},
+/obj/structure/closet/secure_closet/ntr,
 /turf/open/floor/plasteel/grimy,
 /area/service/lawoffice)
 "aIB" = (
@@ -68110,6 +68111,11 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 4
 	},
+/obj/item/radio/off{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/machinery/recharger,
 /turf/open/floor/carpet,
 /area/command/blueshieldoffice)
 "mfy" = (
@@ -73274,12 +73280,7 @@
 /turf/closed/wall,
 /area/commons/toilet/auxiliary)
 "woy" = (
-/obj/structure/table/wood,
-/obj/machinery/recharger,
-/obj/item/radio/off{
-	pixel_x = 6;
-	pixel_y = 4
-	},
+/obj/structure/bed/dogbed,
 /turf/open/floor/wood,
 /area/command/blueshieldoffice)
 "woU" = (

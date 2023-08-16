@@ -1,6 +1,6 @@
 /mob/living/simple_animal/pet/dog/corgi/pig
-	name = "Свинья"
-	real_name = "Свинья"
+	name = "Pig"
+	real_name = "Pig"
 	desc = "Хрюкает."
 	icon = 'icons/mob/animal.dmi'
 	icon_state = "pig"
@@ -22,7 +22,7 @@
 	mob_size = MOB_SIZE_LARGE
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	gold_core_spawnable = FRIENDLY_SPAWN
-	held_icon = "pug"
+	held_icon = "pig"
 	faction = list("neutral")
 	talk_sound = list('modular_bluemoon/SmiLeY/code/mob/pig/hru.ogg', 'modular_bluemoon/SmiLeY/code/mob/pig/oink.ogg', 'modular_bluemoon/SmiLeY/code/mob/pig/squeak.ogg')
 	damaged_sound = list('modular_bluemoon/SmiLeY/code/mob/pig/hru.ogg', 'modular_bluemoon/SmiLeY/code/mob/pig/oink.ogg', 'modular_bluemoon/SmiLeY/code/mob/pig/squeak.ogg')
@@ -69,5 +69,5 @@
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/meat/rawcutlet/plain/salo
-	name = "Кусочек Салалы"
+	name = "Кусочек Сала"
 	icon_state = "salo_slice"

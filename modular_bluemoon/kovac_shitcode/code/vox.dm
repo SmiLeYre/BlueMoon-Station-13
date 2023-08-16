@@ -209,6 +209,25 @@
 /obj/item/tank/internals/emergency_nitrogen/empty/populate_gas()
 	return
 
+
+///////////////////////////////////////////////////////////////////
+
+/obj/item/tank/internals/emergency_nitrogen/double
+	name = "double nitrogen tank"
+	desc = "Two combined red tanks for nitrogen breathing species"
+	icon_state = "nitrogen_double"
+	force = 6
+	volume = 7
+
+
+/obj/item/tank/internals/emergency_nitrogen/populate_gas()
+	air_contents.set_moles(GAS_N2, (6*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
+	return
+
+/obj/item/tank/internals/emergency_nitrogen/empty/populate_gas()
+	return
+
+
 /////////////
 
 /obj/item/tank/internals/emergency_nitrogen_ext
@@ -232,14 +251,23 @@
 
 ///
 /datum/supply_pack/emergency/vox
-	name = "Vox Supply Kit"
-	desc = "Комплект баллонов с азотом для поддержания жизни воксов."
+	name = "Nitrogen Supply Kit"
+	desc = "Комплект баллонов с азотом для поддержания жизни существ, дыщащих азотом."
 	cost = 1500
 	contains = list(/obj/item/tank/internals/emergency_nitrogen_ext,
 					/obj/item/tank/internals/emergency_nitrogen_ext,
 					/obj/item/tank/internals/emergency_nitrogen,
 					/obj/item/tank/internals/emergency_nitrogen)
 	crate_name = "vox supply kit"
+
+/datum/supply_pack/emergency/vox_double
+	name = "Double Nitogen Supply Kit"
+	desc = "Комплект спаренных баллонов для поддержания жизни существ, дыщащих азотом."
+	cost = 3000
+	contains = list(/obj/item/tank/internals/emergency_nitrogen/double,
+					/obj/item/tank/internals/emergency_nitrogen/double,
+					/obj/item/tank/internals/emergency_nitrogen/double)
+	crate_name = "double vox supply kit"
 
 ///////////////////////
 

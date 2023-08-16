@@ -496,7 +496,7 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 			blood_target = antag.cult_team.blood_target
 	if(Cviewer && Cviewer.seeking && Cviewer.master)
 		blood_target = Cviewer.master
-		desc = "Your blood sense is leading you to [Cviewer.master]"
+		desc = "Кровавое чутье ведёт вас к [Cviewer.master]"
 	if(!blood_target)
 		if(sac_objective && !sac_objective.check_completion())
 			if(icon_state == "runed_sense0")
@@ -505,13 +505,13 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 			angle = 0
 			cut_overlays()
 			icon_state = "runed_sense0"
-			desc = "Nar'Sie demands that [sac_objective.target] be sacrificed before the summoning ritual can begin."
+			desc = "Нар'Си требует жертвоприношения [sac_objective.target] перед началом ритуала призыва."
 			add_overlay(sac_objective.sac_image)
 		else
 			var/datum/objective/eldergod/summon_objective = locate() in antag.cult_team.objectives
 			if(!summon_objective)
 				return
-			desc = "The sacrifice is complete, summon Nar'Sie! The summoning can only take place in [english_list(summon_objective.summon_spots)]!"
+			desc = "Жертвоприношение было завершено, самое время призвать Нар'Си! Призыв может быть произведен только в [english_list(summon_objective.summon_spots)]!"
 			if(icon_state == "runed_sense1")
 				return
 			animate(src, transform = null, time = 1, loop = 0)
@@ -524,13 +524,13 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 	var/turf/Q = get_turf(owner)
 	if(!P || !Q || (P.z != Q.z)) //The target is on a different Z level, we cannot sense that far.
 		icon_state = "runed_sense2"
-		desc = "You can no longer sense your target's presence."
+		desc = "Вы больше не ощущаете присутствие вашей цели."
 		return
 	if(isliving(blood_target))
 		var/mob/living/real_target = blood_target
-		desc = "You are currently tracking [real_target.real_name] in [get_area_name(blood_target)]."
+		desc = "Сейчас вы отслеживаете [real_target.real_name] в [get_area_name(blood_target)]."
 	else
-		desc = "You are currently tracking [blood_target] in [get_area_name(blood_target)]."
+		desc = "Сейчас вы отслеживаете [blood_target] в [get_area_name(blood_target)]."
 	var/target_angle = Get_Angle(Q, P)
 	var/target_dist = get_dist(P, Q)
 	cut_overlays()

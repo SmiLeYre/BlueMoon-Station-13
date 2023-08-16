@@ -1124,6 +1124,12 @@
 /obj/item/clothing/mask/gas/syndicate,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/item/clothing/mask/gas/syndicate,
+/obj/item/tank/internals/emergency_nitrogen_ext,
+/obj/item/tank/internals/emergency_nitrogen_ext,
+/obj/item/tank/internals/emergency_nitrogen_ext,
+/obj/item/tank/internals/emergency_nitrogen_ext,
+/obj/item/tank/internals/emergency_nitrogen/double,
+/obj/item/tank/internals/emergency_nitrogen/double,
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "hb" = (
@@ -2605,6 +2611,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
+"tE" = (
+/obj/machinery/portable_atmospherics/canister/nitrogen,
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/unpowered/deepspaceone/main)
 "tH" = (
 /turf/open/floor/plasteel/white/side{
 	dir = 6
@@ -8669,7 +8679,7 @@ Pf
 An
 Tx
 HL
-An
+tE
 FC
 Wl
 qj

@@ -1306,9 +1306,9 @@
 	..()
 
 /datum/reagent/fuel/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(1, 0)
-	..()
-	return TRUE
+	if(!isvox(M))
+		M.adjustToxLoss(3) // Воксы не получают токсины от распития бензина. Заодно немного приподнято количество.
+	return ..()
 
 /datum/reagent/space_cleaner
 	name = "Space cleaner"

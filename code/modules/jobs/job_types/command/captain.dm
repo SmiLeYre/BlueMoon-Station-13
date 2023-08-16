@@ -43,7 +43,7 @@
 
 /datum/job/captain/announce(mob/living/carbon/human/H)
 	..()
-	SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/minor_announce, "Капитан [H.nameless ? "" : "[H.real_name] "]летит на [station_name()]!"))
+	SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/minor_announce, "Капитан [H.nameless ? "" : "[H.real_name] "] прибывает на станцию [station_name()]!"))
 
 /datum/outfit/job/captain
 	name = "Captain"
