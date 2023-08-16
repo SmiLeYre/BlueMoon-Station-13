@@ -3,7 +3,7 @@
 /datum/quirk/bluemoon_heavy
 	name = "Тяжёлый"
 	desc = "Вы весите заметно больше в сравнении со среднестатистическим космонавтов. \
-	Вас сложнее куда-то тащить, хотя сами вы и не испытываете с этим проблем больше, чем нужно (ослабление скорости прекращается с повышением размера до 150%). \
+	Вас сложнее куда-то тащить, хотя сами вы и не испытываете с этим проблем больше, чем нужно (ослабление скорости прекращается с повышением размера до 120%). \
 	Вас сложнее отправить в полёт, но и последствия будут серьезнее. Если вы наступите на кого-то меньше вас ростом, то это будет ещё болезненнее. \
 	(Не берите вместе со сверхтяжёлым, может привести к настакиванию замедления)."
 	value = 0
@@ -18,7 +18,7 @@
 		return
 	var/mob/living/H = quirk_holder
 
-	var/searched_slowdown = 0.5 * CONFIG_GET(number/body_size_slowdown_multiplier) // проверка как для размера в 150%
+	var/searched_slowdown = 0.2 * CONFIG_GET(number/body_size_slowdown_multiplier) // проверка как для размера в 120%
 	var/user_slowdown = (abs(get_size(H) - 1) * CONFIG_GET(number/body_size_slowdown_multiplier))
 
 	if(searched_slowdown - user_slowdown > 0) //подсчёт наличия разницы в росте с искомой и её начисление для замедления персонажа
@@ -52,7 +52,7 @@
 		return
 	var/mob/living/H = quirk_holder
 
-	var/searched_slowdown = 1 * CONFIG_GET(number/body_size_slowdown_multiplier) // проверка как для размера в 200%
+	var/searched_slowdown = 0.7 * CONFIG_GET(number/body_size_slowdown_multiplier) // проверка как для размера в 200%
 	var/user_slowdown = (abs(get_size(H) - 1) * CONFIG_GET(number/body_size_slowdown_multiplier))
 
 	if(searched_slowdown - user_slowdown > 0) //подсчёт наличия разницы в росте с искомой и её начисление для замедления персонажа
