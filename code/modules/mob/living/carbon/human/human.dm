@@ -853,7 +853,14 @@
 /mob/living/carbon/human/proc/piggyback(mob/living/carbon/target)
 	if(can_piggyback(target))
 		visible_message("<span class='notice'>[target] starts to climb onto [src]...</span>")
-		if(do_after(target, 15, target = src, required_mobility_flags = MOBILITY_STAND))
+		// BLUEMOON ADDITION START - тяжёлые персонажи дольше забираются на спину
+		var/climb_on_time = 1.5 SECONDS
+		if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))
+			climb_on_time = 4 SECONDS // Время, чтобы задуматься над смыслом жизни
+		else if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY))
+			climb_on_time = 2.5 SECONDS
+		// BLUEMOON ADDITION END
+		if(do_after(target, climb_on_time, target = src, required_mobility_flags = MOBILITY_STAND)) // BLUEMOON CHANGES
 			if(can_piggyback(target))
 				if(target.incapacitated(FALSE, TRUE) || incapacitated(FALSE, TRUE))
 					target.visible_message("<span class='warning'>[target] can't hang onto [src]!</span>")
@@ -861,23 +868,22 @@
 				// BLUEMOON ADDITION START
 				if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))
 					target.visible_message(span_warning("[target] слишком много весит для [src]!"))
-					var/dam_zone = pick(BODY_ZONE_CHEST, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
-					var/obj/item/bodypart/affecting = get_bodypart(ran_zone(dam_zone))
+					var/obj/item/bodypart/affecting = get_bodypart(BODY_ZONE_CHEST)
 					var/wound_bon = 0
-
-					if(!affecting) //If one leg is missing, then it might break. Snap their spine instead
-						affecting = get_bodypart(BODY_ZONE_CHEST)
+					var/damage = 25
 
 					if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))
-						wound_bon = 300
-						to_chat(src, span_danger("И кто думал, что поднять вес автомобиля будет хорошеей идеей!"))
+						wound_bon += 300
+						damage += 120
+						to_chat(src, span_danger("Умные мысли преследуют вас, но вы всегда быстрее!"))
 						to_chat(target, span_danger("Вы случайно упали на [src], скорее всего сломав ему что-то!"))
 					else
-						wound_bon = 100
+						wound_bon += 100
+						damage += 40
 						to_chat(src, span_danger("Вы сминаетесь под весом [target]!"))
 						to_chat(target, span_danger("Вы случайно упали на [src]!"))
 
-					apply_damage(25, BRUTE, affecting, wound_bonus=wound_bon)
+					apply_damage(damage, BRUTE, affecting, wound_bonus=wound_bon)
 					playsound(src, 'sound/effects/splat.ogg', 50, TRUE)
 					AddElement(/datum/element/squish, 20 SECONDS) // Totally not stolen from a vending machine code
 					Knockdown(3 SECONDS) // Knocking down the unlucky guy
