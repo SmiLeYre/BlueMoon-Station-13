@@ -49,7 +49,7 @@
 	name = "Gorka"
 	slot = ITEM_SLOT_ICLOTHING
 	path = /obj/item/clothing/under/donator/bm/gorka
-	ckeywhitelist = list("leony24", "vulp_shiro", "dolbajob", "trustmeimengineer", "stgs")
+	ckeywhitelist = list("leony24", "vulp_shiro", "dolbajob", "trustmeimengineer", "stgs", "Krashly", "hazzi")
 
 /datum/gear/donator/bm/lightning_holocloak
 	name = "lightning holo-cloak"
@@ -85,19 +85,19 @@
 	name = "cerberus helmet"
 	slot = ITEM_SLOT_HEAD
 	path = /obj/item/clothing/head/donator/bm/cerberus_helmet
-	ckeywhitelist = list("krashly", "stgs", "dedmodo")
+	ckeywhitelist = list("krashly", "stgs", "dedmodo", "hazzi", "dolbajob")
 
 /datum/gear/donator/bm/cerberus_suit
 	name = "cerberus suit"
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/donator/bm/cerberus_suit
-	ckeywhitelist = list("krashly", "stgs", "dedmodo")
+	ckeywhitelist = list("krashly", "stgs", "dedmodo", "hazzi", "dolbajob")
 
 /datum/gear/donator/bm/censor_fem_suit
 	name = "censor suit"
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/donator/bm/censor_fem_suit
-	ckeywhitelist = list("krashly", "stgs", "dedmodo")
+	ckeywhitelist = list("krashly", "stgs", "dedmodo", "hazzi", "dolbajob")
 
 /datum/gear/donator/bm/Dina_Kit
 	name = "Kikimora Suit Kit"
@@ -109,25 +109,25 @@
 	name = "Kovac Gun"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/Kovac_Kit
-	ckeywhitelist = list("stgs", "krashly")
+	ckeywhitelist = list("stgs", "krashly", "dolbajob", "hazzi")
 
 /datum/gear/donator/bm/auto9_gun
 	name = "Auto 9 Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/auto9_kit
-	ckeywhitelist = list("stgs", "sodastrike", "dolbajob")
+	ckeywhitelist = list("stgs", "sodastrike", "dolbajob", "hazzi", "krashly")
 
 /datum/gear/donator/bm/m240_gun
 	name = "M240 Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/m240_kit
-	ckeywhitelist = list("stgs", "sodastrike", "dolbajob")
+	ckeywhitelist = list("stgs", "sodastrike", "dolbajob", "hazzi", "krashly")
 
 /datum/gear/donator/bm/luftkuss_gun
 	name = "Luftkuss Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/old_kit
-	ckeywhitelist = list("stgs", "sodastrike", "dolbajob")
+	ckeywhitelist = list("stgs", "sodastrike", "dolbajob", "hazzi", "krashly")
 
 /datum/gear/donator/bm/Friskis_Mask
 	name = "Magic Kitsune Mask"
