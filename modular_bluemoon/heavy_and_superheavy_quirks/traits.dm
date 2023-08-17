@@ -13,7 +13,7 @@
 	medical_record_text = "Вес пациента выше среднего для космонавтов."
 	processing_quirk = TRUE
 
-/datum/quirk/bluemoon_heavy/on_process()
+/datum/quirk/bluemoon_heavy/proc/update_size_movespeed()
 	if(!isliving(quirk_holder))
 		return
 	var/mob/living/H = quirk_holder
@@ -47,7 +47,7 @@
 	medical_record_text = "Вес пациента намного выше среднестастистической для космонавтов. Перемещение привычными средствами посторонними лицами невозможно."
 	processing_quirk = TRUE
 
-/datum/quirk/bluemoon_heavy_super/on_process()
+/datum/quirk/bluemoon_heavy_super/proc/update_size_movespeed()
 	if(!isliving(quirk_holder))
 		return
 	var/mob/living/H = quirk_holder
