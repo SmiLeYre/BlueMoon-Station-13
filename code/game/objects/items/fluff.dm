@@ -114,7 +114,7 @@
 
 /obj/item/toy/fluff/tennis_poly/tri/squeak/equipped(mob/user, slot, initial)
 	. = ..()
-	if (slot != ITEM_SLOT_MASK)
+	if (!(slot & (ITEM_SLOT_MASK | ITEM_SLOT_WRISTS | ITEM_SLOT_EARS | ITEM_SLOT_HEAD)))
 		return
 
 	do_squeak(user)
@@ -130,7 +130,7 @@
 
 	var/mob/living/carbon/human/owner = src.loc
 
-	if (!istype(owner) || owner.wear_mask != src)
+	if (!istype(owner) || (owner.wear_mask != src && owner.wrists != src && owner.ears != src && owner.head != src))
 		return FALSE
 
 	var/datum/bark/B = GLOB.bark_list[owner.vocal_bark_id]
