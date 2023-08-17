@@ -31,6 +31,7 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	H.throw_range = 4
 	H.throw_speed = 1
+	update_size_movespeed()
 
 /datum/quirk/bluemoon_heavy_super
 	name = "Сверхтяжёлый"
@@ -65,6 +66,7 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	H.throw_range = 1
 	H.throw_speed = 0.5
+	update_size_movespeed()
 
 // ПЕРЕМЕННЫЕ ДЛЯ МОДИФИКАТОРОВ СКОРОСТИ
 
