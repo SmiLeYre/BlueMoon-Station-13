@@ -146,15 +146,15 @@
 	if(moving_diagonally)//no mob swap during diagonal moves.
 		return TRUE
 
-	//handle micro bumping on help intent
-	if(a_intent == INTENT_HELP)
-		if(handle_micro_bump_helping(M))
-			return TRUE
-
 	// BLUEMOON ADDITION AHEAD - нельзя поменяться местами со сверхтяжёлым персонажем
 	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER))
 		return TRUE
 	// BLUEMOON ADDITION END
+
+	//handle micro bumping on help intent
+	if(a_intent == INTENT_HELP)
+		if(handle_micro_bump_helping(M))
+			return TRUE
 
 	if(!M.buckled && !M.has_buckled_mobs())
 		var/mob_swap = FALSE
