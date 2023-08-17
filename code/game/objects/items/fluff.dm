@@ -59,7 +59,7 @@
 
 	var/mob/living/carbon/human/owner = src.loc
 
-	if (!istype(owner) || (owner.wear_mask != src && owner.wrists != src && owner.ears != src && owner.head != src && owner.neck != src))
+	if (!istype(owner) || (owner.wear_mask != src && owner.wrists != src && owner.ears != src && owner.head != src && owner.wear_neck != src))
 		return FALSE
 
 	REMOVE_TRAIT(owner, TRAIT_TONGUELESS_SPEECH, CLOTHING_TRAIT)
@@ -130,7 +130,7 @@
 
 	var/mob/living/carbon/human/owner = src.loc
 
-	if (!istype(owner) || (owner.wear_mask != src && owner.wrists != src && owner.ears != src && owner.head != src && owner.neck != src))
+	if (!istype(owner) || (owner.wear_mask != src && owner.wrists != src && owner.ears != src && owner.head != src && owner.wear_neck != src))
 		return FALSE
 
 	var/datum/bark/B = GLOB.bark_list[owner.vocal_bark_id]
