@@ -278,7 +278,7 @@ SUBSYSTEM_DEF(job)
 	//Jobs will have fewer access permissions if the number of players exceeds the threshold defined in game_options.txt
 	var/mat = CONFIG_GET(number/minimal_access_threshold)
 	if(mat)
-		if(mat > unassigned.len)
+		if(mat > GLOB.player_list.len)  // BLUEMOON CHANGES (изменяем, чтобы подсчитывало не количество рэди, а всех игроков в онлайне для skeleton crew) - WAS unassigned.len
 			CONFIG_SET(flag/jobs_have_minimal_access, FALSE)
 		else
 			CONFIG_SET(flag/jobs_have_minimal_access, TRUE)
