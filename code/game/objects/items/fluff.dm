@@ -46,7 +46,7 @@
 
 /obj/item/toy/fluff/tennis_poly/equipped(mob/user, slot, initial)
 	. = ..()
-	if (slot != ITEM_SLOT_MASK)
+	if (!(slot & (ITEM_SLOT_MASK | ITEM_SLOT_WRISTS | ITEM_SLOT_EARS | ITEM_SLOT_HEAD)))
 		return
 
 	ADD_TRAIT(user, TRAIT_TONGUELESS_SPEECH, CLOTHING_TRAIT)
@@ -59,7 +59,7 @@
 
 	var/mob/living/carbon/human/owner = src.loc
 
-	if (!istype(owner) || owner.wear_mask != src)
+	if (!istype(owner) || (owner.wear_mask != src && owner.wrists != src && owner.ears != src && owner.head != src))
 		return FALSE
 
 	REMOVE_TRAIT(owner, TRAIT_TONGUELESS_SPEECH, CLOTHING_TRAIT)
