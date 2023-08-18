@@ -830,7 +830,7 @@
 		skills_space = "quickly "
 	// BLUEMOON ADDITION AHEAD - тяжёлых и сверхтяжёлых персонажей нельзя нести на плече
 	if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))
-		to_chat(src, span_warning("Вы пытаетесь поднять [target], но вам слишком тяжело!"))
+		to_chat(src, span_warning("You tried to lift [target], but they are too heavy!"))
 		return
 	// BLUEMOON ADDITION END
 	if(can_be_firemanned(target) && !incapacitated(FALSE, TRUE))
