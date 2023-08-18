@@ -141,7 +141,7 @@
 
 	// BLUEMOON ADDITION AHEAD - сверх-большие персонажи ломают собой столы. Поблажка, дабы с ними всё ещё можно было проводить нормально операции
 	if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))
-		propability = 0.7
+		propability = 0.8
 	// BLUEMOON ADDITION END
 
 	return propability + success_multiplier
