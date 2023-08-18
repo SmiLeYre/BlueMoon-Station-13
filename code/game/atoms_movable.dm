@@ -320,13 +320,20 @@
 		return FALSE
 	// BLUEMOON ADDITION AHEAD - Проверка на возможность таскать мышкой сверхтяжёлого персонажа
 	if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY_SUPER))
-		if(!issilicon(src))
-			if(iscarbon(src) && !HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
-				var/mob/living/carbon/C = src
-				if(!C.dna.check_mutation(HULK))
-					to_chat(src, span_warning("[pulling] is too heavy, you cannot move them around!"))
-					stop_pulling()
-					return FALSE
+		if(!issilicon(src)) // синтетики могут тащить
+			if(iscarbon(src) && !HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER)) // сверхтяжёлые могут тащить
+				var/mob/living/carbon/human/H = src
+				if(!H.dna.check_mutation(HULK)) // халки могут тащить
+					if(istype(H.back, /obj/item/mod/control))
+						var/obj/item/mod/control/MOD = H.back
+						if(!MOD.active || !istype(MOD.selected_module, /obj/item/mod/module/clamp)) // обычные члены экипажа с МОДом, где активирована гидравлическая клешня, тоже могут тащить
+							to_chat(src, span_warning("[pulling] is too heavy, you cannot move them around!"))
+							stop_pulling()
+							return
+					else
+						to_chat(src, span_warning("[pulling] is too heavy, you cannot move them around!"))
+						stop_pulling()
+						return
 	// BLUEMOON ADDITION END
 	if(isliving(pulling))
 		var/mob/living/L = pulling
@@ -372,13 +379,20 @@
 			return
 		// BLUEMOON ADDITION AHEAD - Проверка на возможность ТЯНУТЬ сверхтяжёлого персонажа
 		if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY_SUPER))
-			if(!issilicon(src))
-				if(iscarbon(src) && !HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
-					var/mob/living/carbon/C = src
-					if(!C.dna.check_mutation(HULK))
-						to_chat(src, span_warning("[pulling] is too heavy, you cannot move them around!"))
-						stop_pulling()
-						return
+			if(!issilicon(src)) // синтетики могут тащить
+				if(iscarbon(src) && !HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER)) // сверхтяжёлые могут тащить
+					var/mob/living/carbon/human/H = src
+					if(!H.dna.check_mutation(HULK)) // халки могут тащить
+						if(istype(H.back, /obj/item/mod/control))
+							var/obj/item/mod/control/MOD = H.back
+							if(!MOD.active || !istype(MOD.selected_module, /obj/item/mod/module/clamp)) // обычные члены экипажа с МОДом, где активирована гидравлическая клешня, тоже могут тащить
+								to_chat(src, span_warning("[pulling] is too heavy, you cannot move them around!"))
+								stop_pulling()
+								return
+						else
+							to_chat(src, span_warning("[pulling] is too heavy, you cannot move them around!"))
+							stop_pulling()
+							return
 		// BLUEMOON ADDITION END
 	if(pulledby && moving_diagonally != FIRST_DIAG_STEP && get_dist(src, pulledby) > 1)		//separated from our puller and not in the middle of a diagonal move.
 		pulledby.stop_pulling()
