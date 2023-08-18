@@ -284,11 +284,7 @@
 		to_chat(C, "<span class='notice'>You slipped[ O ? " on the [O.name]" : ""]!</span>")
 		playsound(C.loc, 'sound/misc/slip.ogg', 50, 1, -3)
 
-	// BLUEMOON ADDITION AHEAD - персонаж сверхтяжёлый, но не крепкий
-	if(HAS_TRAIT(C, TRAIT_BLUEMOON_HEAVY_SUPER))
-		var/limb_to_slip = C.get_bodypart(pick(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG))
-		C.apply_damage(rand(5, 10), BRUTE, limb_to_slip, wound_bonus = 0)
-	// BLUEMOON ADDITION END
+
 
 	SEND_SIGNAL(C, COMSIG_ADD_MOOD_EVENT, "slipped", /datum/mood_event/slipped)
 	SEND_SIGNAL(C, COMSIG_ON_CARBON_SLIP)
@@ -297,9 +293,17 @@
 
 	var/olddir = C.dir
 	if(!(lube & SLIDE_ICE))
+		// BLUEMOON ADDITION AHEAD - персонаж сверхтяжёлый, потому падать в два раза неприятнее
+		if(HAS_TRAIT(C, TRAIT_BLUEMOON_HEAVY_SUPER))
+			knockdown_amount *= 2
+		// BLUEMOON ADDITION END
 		C.DefaultCombatKnockdown(knockdown_amount)
 		C.stop_pulling()
 	else
+		// BLUEMOON ADDITION AHEAD - для сверхтяжёлых персонажей, стан в два раза больше
+		if(HAS_TRAIT(C, TRAIT_BLUEMOON_HEAVY_SUPER))
+			C.Stun(20)
+		// BLUEMOON ADDITION END
 		C.Stun(20)
 
 	if(buckled_obj)
