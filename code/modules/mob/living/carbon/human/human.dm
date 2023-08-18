@@ -869,8 +869,8 @@
 				if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))
 					target.visible_message(span_warning("[target] слишком много весит для [src]!"))
 					var/obj/item/bodypart/affecting = get_bodypart(BODY_ZONE_CHEST)
-					var/wound_bon = 0
-					var/damage = 25
+					var/wound_bon = 100
+					var/damage = 40
 
 					if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))
 						wound_bon += 300
@@ -878,8 +878,6 @@
 						to_chat(src, span_danger("Умные мысли преследуют вас, но вы всегда быстрее!"))
 						to_chat(target, span_danger("Вы случайно упали на [src], скорее всего сломав ему что-то!"))
 					else
-						wound_bon += 100
-						damage += 40
 						to_chat(src, span_danger("Вы сминаетесь под весом [target]!"))
 						to_chat(target, span_danger("Вы случайно упали на [src]!"))
 
