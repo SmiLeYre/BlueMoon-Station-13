@@ -79,6 +79,15 @@
 	M.throw_alert("buckled", /atom/movable/screen/alert/restrained/buckled)
 	post_buckle_mob(M)
 
+	// BLUEMOON ADDITION AHEAD - запрет на усаживание сверхтяжёлого персонажа посторонними
+	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER)) // проверка не раньше, т.к. в post_buckle_mob обратаюыватся объекты-исключения, на которые другие могут, но сверхтяжёлые персонажи не могут сесть
+		if(!M.buckled) // чтобы лишний раз не появлялось сообщение о попытке сесть
+			return FALSE
+		if(M != usr)
+			to_chat(usr, span_warning("Слишком много весит!"))
+			return FALSE
+	// BLUEMOON ADDITION END
+
 	SEND_SIGNAL(src, COMSIG_MOVABLE_BUCKLE, M, force)
 	return TRUE
 
@@ -124,12 +133,6 @@
 /atom/movable/proc/user_buckle_mob(mob/living/M, mob/user, check_loc = TRUE)
 	if(!in_range(user, src) || !isturf(user.loc) || user.incapacitated() || M.anchored || !user.can_buckle_others(M, src))
 		return FALSE
-
-	// BLUEMOON ADDITION AHEAD - запрет на усаживание сверхтяжёлого персонажа посторонними
-	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER) && M != user)
-		to_chat(user, span_warning("Слишком много весит!"))
-		return
-	// BLUEMOON ADDITION END
 
 	add_fingerprint(user)
 	. = buckle_mob(M, check_loc = check_loc)
