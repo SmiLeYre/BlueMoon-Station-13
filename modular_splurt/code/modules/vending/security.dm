@@ -84,6 +84,7 @@
 	new /obj/item/pinpointer/crew(src)
 	new /obj/item/clothing/suit/armor/brigdoc(src)
 	new /obj/item/clothing/suit/armor/brigdoc/labcoat(src)
+	new /obj/item/mod/module/clamp(src) //BLUEMOOB ADDITION - для перемещения сверхтяжёлых персонажей
 
 /obj/structure/closet/secure_closet/blueshield
 	name = "blueshield's locker"
