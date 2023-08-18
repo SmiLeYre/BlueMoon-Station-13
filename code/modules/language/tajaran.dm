@@ -11,7 +11,7 @@
 	"mi","jri","dynh","manq","rhe","zar","rrhaz","kal","chur","eech","thaa","dra","jurl","mah","sanu","dra","ii'r", \
 	"ka","aasi","far","wa","baq","ara","qara","zir","sam","mak","hrar","nja","rir","khan","jun","dar","rik","kah", \
 	"hal","ket","jurl","mah","tul","cresh","azu","ragh")
-	icon_state = "animal"   // Нарисуйте иконку плиз
+	icon_state = "siiktajr"
 	default_priority = 90
 	//SKYRAT CHANGE - language restriction
 	restricted = FALSE
