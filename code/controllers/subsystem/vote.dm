@@ -541,7 +541,7 @@ SUBSYSTEM_DEF(vote)
 				switch (combo)
 					if ("dynamic")
 						choices.Add(ROUNDTYPE_EXTENDED)
-					if ("Extended")
+					if (ROUNDTYPE_EXTENDED)
 						choices.Add(ROUNDTYPE_DYNAMIC)
 					if (FALSE)
 						choices.Add(ROUNDTYPE_DYNAMIC, ROUNDTYPE_EXTENDED)
@@ -615,7 +615,7 @@ SUBSYSTEM_DEF(vote)
             roundtypes[mode] = 0
         roundtypes[mode]++
 
-        if (roundtypes[mode] >= 3)
+        if (roundtypes[mode] >= 1)
             return mode
     return FALSE
 
