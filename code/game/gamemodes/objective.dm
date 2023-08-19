@@ -550,7 +550,7 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 
 /datum/objective/nuclear
 	name = "nuclear"
-	explanation_text = "Уничтожь Космическую Станцию любой ценой!!"
+	explanation_text = "Уничтожь Космическую Станцию любой ценой."
 	martyr_compatible = 1
 
 /datum/objective/nuclear/check_completion()
@@ -560,7 +560,7 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 
 /datum/objective/nuclear/revert
 	name = "revert_nuclear"
-	explanation_text = "Защити Космическую Станцию и Ядерный Диск любой ценой!!"
+	explanation_text = "Защити Космическую Станцию и Ядерный Диск любой ценой."
 	martyr_compatible = 1
 
 /datum/objective/nuclear/revert/check_completion()
@@ -1318,3 +1318,135 @@ GLOBAL_LIST_EMPTY(possible_sabotages)
 	var/area/user_area = get_area(user)
 	var/area/target_area = get_area(target)
 	return (istype(user_area, dropoff) && istype(target_area, dropoff))
+
+
+////// BlueMoon. 17.0.2023. Новые цели
+
+// Похищение члена экипажа живьем.
+/datum/objective/kidnap
+	name = "kidnap"
+
+/datum/objective/kidnap/find_target(blacklist)
+	var/list/roles = list("Chief Engineer","Research Director","Chief Medical Officer","Geneticist","Roboticist","Chemist","Station Engineer","Atmospherics Technician","Scientist","Medical Doctor","Paramedic") // Приоритетные цели воксов - дельцы машинерии и медицины
+	var/list/possible_targets = list()
+	var/list/priority_targets = list()
+	var/list/datum/mind/owners = get_owners()
+
+	for(var/datum/mind/M in owners)
+		if(M.has_antag_datum(/datum/antagonist/raiders))
+			roles = list("Captain","NanoTrasen Representative","Head Of Personnel","Research Director","Chief Medical Officer","Chief Engineer","Quartermaster","Bridge Officer","Head Of Security","Warden","Security Officer","Brig Physisician","Detective") // Рейдеры охотятся на глав и силовиков
+			continue
+
+	for(var/datum/mind/possible_target in SSticker.minds)
+		if(possible_target != owners && ishuman(possible_target.current) && (possible_target.current.stat != DEAD) && (possible_target.assigned_role != possible_target.special_role))
+			possible_targets += possible_target
+			for(var/role in roles)
+				if(possible_target.assigned_role == role)
+					priority_targets += possible_target
+					continue
+
+	if(priority_targets.len > 0)
+		target = pick(priority_targets)
+	else if(possible_targets.len > 0)
+		target = pick(possible_targets)
+
+	update_explanation_text()
+	return target
+
+/datum/objective/kidnap/update_explanation_text()
+	..()
+	if(target && target.current)
+		explanation_text = "Необходимо похитить [target.current.real_name], [target.assigned_role]. Цель должна удерживаться на корабле и оставаться живой."
+	else
+		explanation_text = "Свободная задача"
+
+/datum/objective/kidnap/check_completion()
+	if(target && target.current)
+		if(target.current.stat == DEAD)
+			return FALSE
+
+		var/area/shuttle/vox_raiders/A = locate()
+		var/area/shuttle/inteq/B = locate()
+
+		for(var/mob/living/carbon/human/M in A)
+			if(target.current == M)
+				return TRUE
+		for(var/mob/living/carbon/human/M in B)
+			if(target.current == M)
+				return TRUE
+	else
+		return FALSE
+
+
+////////// Ограбление
+
+/datum/objective/heist
+	name = "heist"
+
+/datum/objective/heist/find_target(blacklist)
+	var/loot = "что-то"
+	switch(rand(1,8))
+		if(1)
+			target = /obj/item/crowbar/power
+			target_amount = 10
+			loot = "десять инженерных гидравлических челюстей"
+		if(2)
+			target = /obj/vehicle/sealed/mecha/combat
+			target_amount = 1
+			loot = "любого боевого меха"
+		if(3)
+			target = /obj/machinery/vending/kink
+			target_amount = 2
+			loot = "два KinkMate"
+		if(4)
+			target = /obj/item/nuke_core
+			target_amount = 1
+			loot = "радиоактивное плутониевое ядро из Бортовой Системы Самоуничтожения"
+		if(5)
+			target = /obj/item/gun
+			target_amount = 5
+			loot = "пять пушек, в том числе нелетальных"
+		if(6)
+			target = /obj/item/gun/ballistic/automatic/wt550
+			target_amount = 2
+			loot = "два пистолета-пулемета WT-550"
+		if(7)
+			target = /obj/item/gun/energy/laser
+			target_amount = 3
+			loot = "три лазерные винтовки"
+		if(8)
+			target = /obj/item/gun/energy/ionrifle
+			target_amount = 1
+			loot = "ионную винтовку"
+
+	explanation_text = "Украдите или выторгуйте [loot]."
+
+	return target
+
+///////////////////////////////////////////// Отметка для Смайли. Не проходит проверка, total_amount всегда остается в значении 0 и не поднимается.
+
+/datum/objective/heist/check_completion()
+	var/total_amount = 0
+	var/area/shuttle/vox_raiders/V = locate()
+
+	if(target)
+		for(var/obj/O in V) // Проверяем наличие украденных предметов в зоне шаттла
+			if(target == O)
+				total_amount++
+			for(var/obj/I in O.contents) // И внутри другого предмета на шаттле (рюкзаки, сумки)
+				if(target == I)
+					total_amount++
+				if(total_amount >= target_amount)
+					return TRUE
+
+
+		for(var/datum/antagonist/vox_scavengers/M in team.members) // Альтернатива - проверяем предметы в инвентаре у самих антагонистов
+			if(M.owner.current)
+				for(var/obj/O in M.owner.current.GetAllContents())
+					if(target == O)
+						total_amount++
+					if(total_amount >= target_amount)
+						return TRUE
+
+	return FALSE
+////////////////////////////////////////

@@ -50,3 +50,10 @@
 /obj/item/clothing/head/donator/bm/cerberus_helmet/ui_action_click(mob/user, action)
 	if(istype(action, /datum/action/item_action/cerberbark))
 		cerberbark()
+
+/obj/item/clothing/head/helmet/space/plasmaman/security/reaper
+	name = "Security Plasma Envirosuit Helmet"
+	desc = "Plasmaman Envirohelmet. Has red markings and reinforced with some composite materials."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/hats.dmi'
+	icon_state = "pluto_enviro"

@@ -116,4 +116,4 @@
 /datum/gear/neck/shockcollar
 	name = "Shock Collar"
 	path = /datum/design/electropack/shockcollar
-	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION | LOADOUT_CAN_FREQCODE
+	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION// | LOADOUT_CAN_FREQCODE Пока не знаю, как это починить.

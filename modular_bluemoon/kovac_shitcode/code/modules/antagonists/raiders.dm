@@ -1,23 +1,24 @@
-/datum/antagonist/pirate/raiders
+/datum/antagonist/raiders
 	name = "InteQ Raider"
 	job_rank = ROLE_TRAITOR
 	roundend_category = "inteq raiders"
 	antagpanel_category = "InteQ"
 	threat = 15
 	show_to_ghosts = TRUE
+	var/datum/team/raiders/crew
 
-/datum/antagonist/pirate/raiders/greet()
+/datum/antagonist/raiders/greet()
 	SEND_SOUND(owner.current, sound('modular_bluemoon/kovac_shitcode/sound/inteq_raiders_spawn.ogg'))
 	to_chat(owner, "<span class='boldannounce'>Вы - наёмник InteQ!</span>")
 	to_chat(owner, "<B>Капитан станции отказался заплатить. Атакуйте её: похищайте ресурсы, берите заложников. Избегайте ненужных жертв. Не забывайте следить за своим кораблём.</B>")
 	owner.announce_objectives()
 
-/datum/antagonist/pirate/raiders/get_team()
+/datum/antagonist/raiders/get_team()
 	return crew
 
-/datum/antagonist/pirate/raiders/create_team(datum/team/raiders/new_team)
+/datum/antagonist/raiders/create_team(datum/team/raiders/new_team)
 	if(!new_team)
-		for(var/datum/antagonist/pirate/raiders/P in GLOB.antagonists)
+		for(var/datum/antagonist/raiders/P in GLOB.antagonists)
 			if(!P.owner)
 				continue
 			if(P.crew)
@@ -33,6 +34,9 @@
 
 /datum/team/raiders/proc/forge_objectives()
 	var/datum/objective/loot/getbooty = new()
+	var/datum/objective/kidnap/kidnap_objective = new
+	var/datum/objective/kidnap/kidnap_objective_additional = new
+
 	getbooty.team = src
 	for(var/obj/machinery/computer/piratepad_control/P in GLOB.machines)
 		var/area/A = get_area(P)
@@ -42,12 +46,23 @@
 	getbooty.update_explanation_text()
 	objectives += getbooty
 	for(var/datum/mind/M in members)
-		var/datum/antagonist/pirate/raiders/P = M.has_antag_datum(/datum/antagonist/pirate/raiders)
+		var/datum/antagonist/raiders/P = M.has_antag_datum(/datum/antagonist/raiders)
 		if(P)
 			P.objectives |= objectives
+
+	//if(prob(45)) // BlueMoon. Тестируем цель на похищение. Первое время она будет гарантированно выдаваться рейдерам.
+	kidnap_objective.team = src
+	kidnap_objective.find_target()
+	objectives += kidnap_objective
+
+	if(prob(25)) // Дополнительная цель
+		kidnap_objective_additional.team = src
+		kidnap_objective_additional.find_target()
+		objectives += kidnap_objective_additional
+
 	return
 
-/datum/antagonist/pirate/raiders/on_gain()
+/datum/antagonist/raiders/on_gain()
 	if(crew)
 		objectives |= crew.objectives
 	. = ..()
@@ -83,7 +98,7 @@
 	. = ..()
 	if(.)
 		return
-	if(user.mind.has_antag_datum(/datum/antagonist/pirate/raiders))
+	if(user.mind.has_antag_datum(/datum/antagonist/raiders))
 		to_chat(user, "<span class='notice'>Your shipmate sails within their dreams for now. Perhaps they may wake up eventually.</span>")
 	else
 		to_chat(user, "<span class='notice'>If you want to destroy the sleeper, something to pry open it might be the best way.</span>")
@@ -91,7 +106,7 @@
 
 /obj/effect/mob_spawn/human/raider/attackby(obj/item/W, mob/user, params)
 	if(W.tool_behaviour == TOOL_CROWBAR && user.a_intent != INTENT_HARM)
-		if(user.mind.has_antag_datum(/datum/antagonist/pirate/raiders))
+		if(user.mind.has_antag_datum(/datum/antagonist/raiders))
 			to_chat(user,"<span class='warning'>Why would you want to the PMC propercy? That'd be stupid.</span>")
 			return
 		user.visible_message("<span class='warning'>[user] start to pry open [src]...</span>",
@@ -110,7 +125,7 @@
 		..()
 
 /obj/effect/mob_spawn/human/raider/special(mob/living/new_spawn)
-	new_spawn.mind.add_antag_datum(/datum/antagonist/pirate/raiders)
+	new_spawn.mind.add_antag_datum(/datum/antagonist/raiders)
 
 /obj/effect/mob_spawn/human/raider/Destroy()
 	new/obj/structure/showcase/machinery/oldpod/used(drop_location())
@@ -214,6 +229,7 @@
 
 /datum/team/raiders/roundend_report()
 	var/list/parts = list()
+	var/traitor_won = TRUE
 
 	parts += "<span class='header'>InteQ Raiders were:</span>"
 
@@ -228,7 +244,24 @@
 	parts += L.loot_listing()
 	parts += "Total loot value : [L.get_loot_value()]/[L.target_value] credits"
 
-	if(L.check_completion() && !all_dead)
+	var/objectives_text = ""
+	if(objectives.len)
+		var/count = 1
+		for(var/datum/objective/objective in objectives)
+			var/completion = objective.check_completion()
+			if(completion >= 1)
+				objectives_text += "<br><B>Objective #[count]</B>: [objective.explanation_text] [span_greentext("Success!")]"
+			else if(completion <= 0)
+				objectives_text += "<br><B>Objective #[count]</B>: [objective.explanation_text] [span_redtext("Fail.")]"
+				traitor_won = FALSE
+			else
+				objectives_text += "<br><B>Objective #[count]</B>: [objective.explanation_text] <span class='yellowtext'>[completion*100]%</span>"
+
+			count++
+
+	parts += objectives_text
+
+	if(L.check_completion() && traitor_won && !all_dead)
 		parts += "<span class='greentext big'>InteQ Raiders were successful!</span>"
 	else
 		parts += "<span class='redtext big'>InteQ Raiders have failed.</span>"

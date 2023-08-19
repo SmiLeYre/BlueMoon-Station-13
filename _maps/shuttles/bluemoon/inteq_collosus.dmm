@@ -50,10 +50,15 @@
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "aD" = (
-/obj/structure/railing,
 /obj/machinery/airalarm/all_access{
 	pixel_y = 25
 	},
+/obj/structure/closet/secure_closet/brig{
+	name = "Prisoner Locker";
+	req_access = "150"
+	},
+/obj/item/clothing/head/helmet/space/eva,
+/obj/item/clothing/suit/space/eva,
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "aG" = (
@@ -110,12 +115,17 @@
 /area/shuttle/inteq)
 "di" = (
 /obj/structure/table/reinforced,
-/obj/machinery/recharger,
 /obj/machinery/light{
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
+	},
+/obj/machinery/recharger{
+	pixel_x = -7
+	},
+/obj/machinery/recharger{
+	pixel_x = 7
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
@@ -142,19 +152,28 @@
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "er" = (
-/obj/structure/bed,
 /obj/structure/window/reinforced/tinted/frosted{
 	dir = 4
 	},
-/obj/item/bedsheet/inteq,
+/obj/effect/mob_spawn/human/raider{
+	dir = 8
+	},
 /turf/open/floor/wood/wood_parquet,
 /area/shuttle/inteq)
 "ev" = (
 /obj/machinery/autolathe,
+/obj/structure/window/reinforced/survival_pod{
+	dir = 1
+	},
+/obj/structure/window/reinforced/survival_pod{
+	dir = 4
+	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "eH" = (
 /obj/structure/table,
+/obj/item/toy/plush/beeplushie,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "eI" = (
@@ -220,9 +239,7 @@
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "gm" = (
-/obj/structure/window/reinforced/survival_pod{
-	dir = 4
-	},
+/obj/structure/window/reinforced/survival_pod,
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "gy" = (
@@ -363,10 +380,11 @@
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "kV" = (
-/obj/structure/railing{
+/obj/structure/window/reinforced/survival_pod{
 	dir = 1
 	},
-/obj/structure/window/reinforced/survival_pod,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/vomit/old,
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "lr" = (
@@ -426,14 +444,15 @@
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "mT" = (
-/obj/structure/bed,
 /obj/structure/window/reinforced/tinted/frosted{
 	dir = 4
 	},
 /obj/machinery/airalarm/all_access{
 	pixel_y = 25
 	},
-/obj/item/bedsheet/inteq,
+/obj/effect/mob_spawn/human/raider{
+	dir = 8
+	},
 /turf/open/floor/wood/wood_parquet,
 /area/shuttle/inteq)
 "nb" = (
@@ -477,9 +496,11 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/effect/mob_spawn/human/raider{
-	dir = 8
+/obj/structure/window/reinforced/survival_pod{
+	dir = 1
 	},
+/obj/structure/bed/matress,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "oe" = (
@@ -623,13 +644,16 @@
 	},
 /obj/machinery/door/airlock/hatch{
 	aiControlDisabled = 1;
-	name = "Crew's Quarters";
+	name = "Prison Cell";
 	req_access_txt = "150"
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "qY" = (
 /obj/machinery/computer/operating,
+/obj/structure/window/reinforced/survival_pod{
+	dir = 1
+	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "rb" = (
@@ -641,6 +665,7 @@
 /area/shuttle/inteq)
 "rd" = (
 /obj/machinery/piratepad,
+/obj/structure/window/reinforced/survival_pod,
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "rf" = (
@@ -654,12 +679,8 @@
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "rJ" = (
-/obj/structure/railing/corner{
-	dir = 4
-	},
-/obj/structure/window/reinforced/survival_pod{
-	dir = 6
-	},
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "rM" = (
@@ -712,6 +733,7 @@
 	dir = 1;
 	output_dir = 1
 	},
+/obj/structure/window/reinforced/survival_pod,
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "sI" = (
@@ -803,6 +825,9 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/reagent_dispensers/fueltank,
+/obj/structure/window/reinforced/survival_pod{
+	dir = 1
+	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "uF" = (
@@ -875,9 +900,7 @@
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "wo" = (
-/obj/structure/railing{
-	dir = 4
-	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "wr" = (
@@ -891,6 +914,9 @@
 "wA" = (
 /obj/structure/curtain,
 /obj/structure/table/optable,
+/obj/structure/window/reinforced/survival_pod{
+	dir = 1
+	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "wE" = (
@@ -900,18 +926,23 @@
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "wS" = (
-/obj/effect/mob_spawn/human/raider{
+/obj/structure/toilet{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "xu" = (
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/effect/mob_spawn/human/raider{
-	dir = 4
+/obj/structure/window/reinforced/survival_pod{
+	dir = 1
 	},
+/obj/structure/table,
+/obj/item/reagent_containers/food/drinks/drinkingglass/filled/cola,
+/obj/item/storage/box/donkpockets,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "xx" = (
@@ -942,8 +973,10 @@
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "yf" = (
-/obj/structure/railing{
-	dir = 8
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/window/survival_pod{
+	dir = 1;
+	req_access = "150"
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
@@ -997,6 +1030,10 @@
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/hypospray/medipen,
 /obj/item/reagent_containers/hypospray/medipen,
+/obj/item/reagent_containers/spray/cleaner{
+	pixel_x = 8;
+	pixel_y = 4
+	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "AB" = (
@@ -1024,8 +1061,9 @@
 /turf/open/floor/wood/wood_parquet,
 /area/shuttle/inteq)
 "AL" = (
-/obj/structure/bed,
-/obj/item/bedsheet/inteq,
+/obj/effect/mob_spawn/human/raider{
+	dir = 4
+	},
 /turf/open/floor/wood/wood_parquet,
 /area/shuttle/inteq)
 "AM" = (
@@ -1033,7 +1071,8 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 8
+	dir = 8;
+	req_access_txt = "150"
 	},
 /obj/machinery/door/window/survival_pod{
 	dir = 1
@@ -1075,7 +1114,12 @@
 	pixel_y = 25
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/recharger,
+/obj/machinery/recharger{
+	pixel_x = 7
+	},
+/obj/machinery/recharger{
+	pixel_x = -7
+	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "Ce" = (
@@ -1175,6 +1219,10 @@
 /obj/machinery/computer/piratepad_control{
 	dir = 1
 	},
+/obj/structure/window/reinforced/survival_pod,
+/obj/structure/window/reinforced/survival_pod{
+	dir = 4
+	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "EC" = (
@@ -1201,7 +1249,6 @@
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "EZ" = (
-/obj/structure/railing,
 /obj/machinery/firealarm{
 	pixel_y = 28
 	},
@@ -1240,6 +1287,12 @@
 /area/shuttle/inteq)
 "FX" = (
 /obj/machinery/sleeper/syndie{
+	dir = 8
+	},
+/obj/structure/window/reinforced/survival_pod{
+	dir = 1
+	},
+/obj/structure/window/reinforced/survival_pod{
 	dir = 8
 	},
 /turf/open/floor/iron/dark,
@@ -1293,11 +1346,7 @@
 /area/shuttle/inteq)
 "HB" = (
 /obj/machinery/light,
-/obj/structure/closet/syndicate/inteq,
-/obj/item/radio,
-/obj/item/radio,
-/obj/item/radio,
-/obj/item/radio,
+/obj/machinery/suit_storage_unit/inteq_spacesuit,
 /turf/open/floor/wood/wood_parquet,
 /area/shuttle/inteq)
 "HD" = (
@@ -1310,7 +1359,8 @@
 /turf/open/floor/plating,
 /area/shuttle/inteq)
 "HM" = (
-/obj/machinery/suit_storage_unit/inteq_spacesuit,
+/obj/structure/table/reinforced,
+/obj/item/storage/box/zipties,
 /turf/open/floor/wood/wood_parquet,
 /area/shuttle/inteq)
 "IZ" = (
@@ -1323,6 +1373,7 @@
 	pixel_y = -8
 	},
 /obj/item/card/emag,
+/obj/structure/window/reinforced/survival_pod,
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "Je" = (
@@ -1373,21 +1424,15 @@
 /area/shuttle/inteq)
 "Lx" = (
 /obj/structure/reagent_dispensers/watertank,
+/obj/structure/window/reinforced/survival_pod{
+	dir = 1
+	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "LE" = (
 /obj/machinery/airalarm/all_access{
 	dir = 1;
 	pixel_y = -25
-	},
-/turf/open/floor/iron/dark,
-/area/shuttle/inteq)
-"LK" = (
-/obj/structure/railing/corner{
-	dir = 1
-	},
-/obj/structure/railing/corner{
-	dir = 8
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
@@ -1403,13 +1448,6 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/open/floor/iron/dark,
-/area/shuttle/inteq)
-"Nb" = (
-/obj/structure/railing{
-	dir = 1
-	},
-/obj/structure/railing,
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "NP" = (
@@ -1436,10 +1474,12 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 4
+	dir = 4;
+	req_access_txt = "150"
 	},
 /obj/machinery/door/window/survival_pod{
-	dir = 1
+	dir = 1;
+	req_access = 150
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
@@ -1608,11 +1648,13 @@
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "Sf" = (
-/obj/structure/bed,
 /obj/structure/sign/poster/contraband/borg_fancy_2{
 	pixel_x = -32
 	},
-/obj/item/bedsheet/inteq,
+/obj/structure/closet/syndicate/inteq,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
 /turf/open/floor/wood/wood_parquet,
 /area/shuttle/inteq)
 "Sp" = (
@@ -1919,6 +1961,10 @@
 	pixel_x = 5;
 	pixel_y = -5
 	},
+/obj/structure/window/reinforced/survival_pod,
+/obj/structure/window/reinforced/survival_pod{
+	dir = 8
+	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq)
 "ZT" = (
@@ -2111,7 +2157,7 @@ Ba
 Tk
 CO
 sF
-Nb
+Tk
 uB
 ah
 Ve
@@ -2132,7 +2178,7 @@ BD
 Tk
 Tk
 rd
-Nb
+Tk
 Lx
 Tk
 uH
@@ -2153,7 +2199,7 @@ kK
 Tk
 eI
 Es
-Nb
+Tk
 ev
 kK
 Tk
@@ -2173,9 +2219,9 @@ rb
 Tk
 Tk
 Tk
-yf
-LK
-yf
+Tk
+Tk
+Tk
 Tk
 Tk
 Tk
@@ -2194,9 +2240,9 @@ rb
 Tk
 Tk
 Tk
-wo
-rJ
-gm
+Tk
+Tk
+Tk
 Tk
 Tk
 Tk
@@ -2216,7 +2262,7 @@ ah
 Tk
 Tr
 ZQ
-kV
+Tk
 FX
 ps
 Tk
@@ -2236,8 +2282,8 @@ Rm
 CJ
 Tk
 Tk
+gm
 Tk
-kV
 qY
 ry
 Tk
@@ -2258,7 +2304,7 @@ CU
 VD
 eI
 IZ
-kV
+Tk
 wA
 lX
 lr
@@ -2433,8 +2479,8 @@ ML
 LE
 Rm
 Tk
-Tk
-Tk
+yf
+rJ
 HD
 "}
 (25,1,1) = {"
@@ -2454,8 +2500,8 @@ Tk
 iH
 Rm
 Tk
-Tk
-Tk
+kV
+wo
 HD
 "}
 (26,1,1) = {"

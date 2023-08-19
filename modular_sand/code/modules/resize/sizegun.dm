@@ -6,6 +6,7 @@
 	damage_type = STAMINA
 	flag = "laser"
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
+	custom_price = 4500
 
 /obj/item/projectile/sizelaser/shrinkray
 	icon_state = "bluelaser"

@@ -92,6 +92,10 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	var/chosen_room = "Nothing"
 	if(istype(src, /obj/item/hilbertshotel/ghostdojo)) //to don't add another one var
 		chosen_room = tgui_input_list(user, "Choose desired room:", "Time to choose", hotel_maps)
+
+	if(!chosen_room)
+		return FALSE
+
 	//BlueMoon Edit
 	if(!storageTurf) //Blame subsystems for not allowing this to be in Initialize
 		if(!GLOB.hhStorageTurf)

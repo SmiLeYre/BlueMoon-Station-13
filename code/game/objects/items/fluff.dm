@@ -44,6 +44,26 @@
 	poly_states = 2
 	poly_colors = list("#CCFF00", "#FFFFFF")
 
+/obj/item/toy/fluff/tennis_poly/equipped(mob/user, slot, initial)
+	. = ..()
+	if (!(slot & (ITEM_SLOT_MASK | ITEM_SLOT_WRISTS | ITEM_SLOT_EARS | ITEM_SLOT_HEAD | ITEM_SLOT_NECK)))
+		return
+
+	ADD_TRAIT(user, TRAIT_TONGUELESS_SPEECH, CLOTHING_TRAIT)
+	RegisterSignal(src, COMSIG_MOB_ITEM_DROPPING, .proc/unequipping)
+
+/obj/item/toy/fluff/tennis_poly/proc/unequipping()
+	SIGNAL_HANDLER
+
+	UnregisterSignal(src, COMSIG_MOB_ITEM_DROPPING)
+
+	var/mob/living/carbon/human/owner = src.loc
+
+	if (!istype(owner) || (owner.wear_mask != src && owner.wrists != src && owner.ears != src && owner.head != src && owner.wear_neck != src))
+		return FALSE
+
+	REMOVE_TRAIT(owner, TRAIT_TONGUELESS_SPEECH, CLOTHING_TRAIT)
+
 /obj/item/toy/fluff/tennis_poly/red
 	poly_colors = list("#FF4C00", "#FFFFFF")
 
@@ -91,6 +111,32 @@
 /obj/item/toy/fluff/tennis_poly/tri/squeak/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/squeak)
+
+/obj/item/toy/fluff/tennis_poly/tri/squeak/equipped(mob/user, slot, initial)
+	. = ..()
+	if (!(slot & (ITEM_SLOT_MASK | ITEM_SLOT_WRISTS | ITEM_SLOT_EARS | ITEM_SLOT_HEAD | ITEM_SLOT_NECK)))
+		return
+
+	do_squeak(user)
+	RegisterSignal(user, COMSIG_MOB_SAY, .proc/do_squeak)
+
+/obj/item/toy/fluff/tennis_poly/tri/squeak/proc/do_squeak(mob/user)
+	var/datum/component/squeak/squeaker = GetComponent(/datum/component/squeak)
+	user.vocal_bark = sound(pickweight(squeaker.default_squeak_sounds))
+	user.vocal_volume = squeaker.volume
+
+/obj/item/toy/fluff/tennis_poly/tri/squeak/unequipping()
+	. = ..()
+
+	var/mob/living/carbon/human/owner = src.loc
+
+	if (!istype(owner) || (owner.wear_mask != src && owner.wrists != src && owner.ears != src && owner.head != src && owner.wear_neck != src))
+		return FALSE
+
+	var/datum/bark/B = GLOB.bark_list[owner.vocal_bark_id]
+	owner.vocal_bark = sound(initial(B.soundpath))
+	owner.vocal_volume = initial(owner.vocal_volume)
+	UnregisterSignal(owner, COMSIG_MOB_SAY)
 
 /obj/item/toy/fluff/bone_poly
 	name = "polychromic bone"

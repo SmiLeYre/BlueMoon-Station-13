@@ -58,19 +58,18 @@
 
 /datum/objective/loot
 	var/obj/machinery/computer/piratepad_control/cargo_hold
-	explanation_text = "Acquire valuable loot and store it in designated area."
-	var/target_value = 100000
-
+	explanation_text = "Добудьте ценные ресурсы и сложите их в обозначенной области."
+	var/target_value = 75000
 
 /datum/objective/loot/update_explanation_text()
 	if(cargo_hold)
 		var/area/storage_area = get_area(cargo_hold)
-		explanation_text = "Acquire loot and store [target_value] of credits worth in [storage_area.name] cargo hold."
+		explanation_text = "Добудьте ценных ресурсов на сумму [target_value] кредитов и сложите их в области [storage_area.name]."
 
 /datum/objective/loot/proc/loot_listing()
 	//Lists notable loot.
 	if(!cargo_hold || !cargo_hold.total_report)
-		return "Nothing"
+		return "Свободная задача"
 	cargo_hold.total_report.total_value = sortTim(cargo_hold.total_report.total_value, cmp = /proc/cmp_numeric_dsc, associative = TRUE)
 	var/count = 0
 	var/list/loot_texts = list()

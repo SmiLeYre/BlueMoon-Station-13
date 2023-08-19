@@ -1,3 +1,5 @@
+#define INVISIBILITY_REVENANT 50
+
 // Makes our item SUPER spooky!
 // Adds the haunted element and some other bonuses
 /datum/component/haunted_item

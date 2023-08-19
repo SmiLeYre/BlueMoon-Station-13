@@ -348,10 +348,11 @@
 	ready_for_reboot = TRUE
 	standard_reboot()
 
+	sleep(5 SECONDS)
+
 	var/eorg = alert("Хотите принять участие на ЕОРГ-арене?", "End of Round Deathmatch Arena", "Да", "Нет")
-	if(eorg == "Нет")
-		return
-	teleport_players_to_eorg_area()
+	if(eorg == "Да")
+		teleport_players_to_eorg_area()
 
 /datum/controller/subsystem/ticker/proc/teleport_players_to_eorg_area()
 	if(!config.deathmatch_arena)

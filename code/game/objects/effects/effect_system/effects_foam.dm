@@ -212,7 +212,7 @@
 ///////////////////////////////////////////////
 //FOAM EFFECT DATUM
 /datum/effect_system/foam_spread
-	var/amount = 10		// the size of the foam spread.
+	var/amount = 25		// the size of the foam spread.
 	var/obj/chemholder
 	effect_type = /obj/effect/particle_effect/foam
 	var/metal = 0

@@ -14,7 +14,7 @@
 	/// The probability that the ejected reagents will be dangerous
 	var/danger_chance = 1
 	/// Amount of reagents ejected from each scrubber
-	var/reagents_amount = 50
+	var/reagents_amount = 100
 	/// Probability of an individual scrubber overflowing
 	var/overflow_probability = 50
 	/// Specific reagent to force all scrubbers to use, null for random reagent choice
@@ -189,7 +189,7 @@
 
 /datum/round_event/scrubber_overflow/every_vent
 	overflow_probability = 100
-	reagents_amount = 100
+	reagents_amount = 200
 
 /datum/event_admin_setup/listed_options/scrubber_overflow
 	normal_run_option = "Random Reagents"

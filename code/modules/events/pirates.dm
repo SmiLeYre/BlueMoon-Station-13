@@ -105,7 +105,7 @@
 			else
 				notify_ghosts("The pirate ship has an object of interest: [spawner]!", source=spawner, action=NOTIFY_ORBIT, header="Something's Interesting!")
 
-	priority_announce("В секторе обнаружен вооруженный корабль.", "Central Command", 'modular_bluemoon/phenyamomota/sound/announcer/pirate_incoming.ogg')
+	priority_announce("В секторе обнаружен вооруженный корабль.", "Отдел ССО Пакта Синих Лун", 'modular_bluemoon/phenyamomota/sound/announcer/pirate_incoming.ogg')
 
 //Shuttle equipment
 

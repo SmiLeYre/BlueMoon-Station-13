@@ -31,3 +31,6 @@
 	view_range = 7
 	x_offset = 0
 	y_offset = 0
+
+/area/shuttle/lf_haron
+	name = "Haron"

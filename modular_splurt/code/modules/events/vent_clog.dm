@@ -1,120 +1,144 @@
-/datum/round_event_control/vent_clog/cope_and_seethe
+/datum/round_event_control/scrubber_overflow/cope_and_seethe
 	name = "Copium Flood"
-	typepath = /datum/round_event/vent_clog/cope_and_seethe
+	typepath = /datum/round_event/scrubber_overflow/cope_and_seethe
 	max_occurrences = 0
 
-/datum/round_event/vent_clog/cope_and_seethe/announce()
+/datum/round_event/scrubber_overflow/cope_and_seethe/announce()
 	priority_announce("Мы обнаружили высокий уровень Агрессии на станции. Для борьбы с этим мы будем использовать массовое количество копиума. Пожалуйста, держитесь подальше от вентиляционных отверстий, пока давление не выровняется.", "Центральное Командование")
 
-/datum/round_event/vent_clog/cope_and_seethe
-	saferChems = list(
+/datum/round_event/scrubber_overflow/cope_and_seethe
+	safer_chems = list(
 		/datum/reagent/drug/copium
 	)
 
-/datum/round_event/vent_clog/cope_and_seethe/start()
-	for (var/obj/machinery/atmospherics/components/unary/vent in vents)
+/datum/round_event/scrubber_overflow/cope_and_seethe/start()
+	for (var/obj/machinery/atmospherics/components/unary/vent in GLOB.machines)
 		if (vent && vent.loc && !vent.welded)
 			var/datum/reagents/R = new/datum/reagents(1000)
 			R.my_atom = vent
 			R.add_reagent(/datum/reagent/drug/copium, 5)
 
 			var/datum/effect_system/smoke_spread/chem/smoke = new
-			smoke.set_up(R, 7, get_turf(vent), TRUE) // Intentionally silent. There's a fuck ton of vents.
+			smoke.set_up(R, 7, get_turf(vent), TRUE)
 			smoke.start()
 		CHECK_TICK
 
-/datum/round_event_control/vent_clog/female
+/datum/round_event_control/scrubber_overflow/female
 	name = "Clogged Vents: Girlcum"
-	typepath = /datum/round_event/vent_clog/female
+	typepath = /datum/round_event/scrubber_overflow/female
 	max_occurrences = 1
 	category = EVENT_CATEGORY_JANITORIAL
 
-/datum/round_event/vent_clog/female
-	saferChems = list(
+/datum/round_event/scrubber_overflow/female
+	safer_chems = list(
 		/datum/reagent/consumable/semen/femcum
 	)
-	reagentsAmount = 100
+	reagents_amount = 100
 
-/datum/round_event/vent_clog/female/announce()
+/datum/round_event/scrubber_overflow/female/announce()
 	priority_announce("Сеть скрубберов испытывает противодавление из-за откуда-то взявшегося в них СКВИРТА. Может произойти некоторое разбрызгивание содержимого.", "Атмосферная Тревога")
 
-/datum/round_event/vent_clog/female/start()
-	for(var/obj/machinery/atmospherics/components/unary/vent in vents)
+/datum/round_event/scrubber_overflow/female/start()
+	for(var/obj/machinery/atmospherics/components/unary/vent in GLOB.machines)
 		if(vent && vent.loc && !vent.welded)
 			var/datum/reagents/R = new/datum/reagents(1000)
 			R.my_atom = vent
-			R.add_reagent(/datum/reagent/consumable/semen/femcum, reagentsAmount)
+			R.add_reagent(/datum/reagent/consumable/semen/femcum, reagents_amount)
 
 			var/datum/effect_system/foam_spread/foam = new
 			foam.set_up(200, get_turf(vent), R)
 			foam.start()
 		CHECK_TICK
 
-/datum/round_event_control/vent_clog/male
+/datum/round_event_control/scrubber_overflow/male
 	name = "Clogged Vents: Semen"
-	typepath = /datum/round_event/vent_clog/male
+	typepath = /datum/round_event/scrubber_overflow/male
 	max_occurrences = 1
 	category = EVENT_CATEGORY_JANITORIAL
 
-/datum/round_event/vent_clog/male
-	saferChems = list(
+/datum/round_event/scrubber_overflow/male
+	safer_chems = list(
 		/datum/reagent/consumable/semen
 	)
-	reagentsAmount = 100
+	reagents_amount = 100
 
-/datum/round_event/vent_clog/male/announce()
+/datum/round_event/scrubber_overflow/male/announce()
 	priority_announce("Сеть скрубберов испытывает противодавление из-за откуда-то взявшегося в них СЕМЕНИ. Может произойти некоторое разбрызгивание содержимого.", "Атмосферная Тревога")
 
-/datum/round_event/vent_clog/male/start()
-	for(var/obj/machinery/atmospherics/components/unary/vent in vents)
+/datum/round_event/scrubber_overflow/male/start()
+	for(var/obj/machinery/atmospherics/components/unary/vent in GLOB.machines)
 		if(vent && vent.loc && !vent.welded)
 			var/datum/reagents/R = new/datum/reagents(1000)
 			R.my_atom = vent
-			R.add_reagent(/datum/reagent/consumable/semen, reagentsAmount)
+			R.add_reagent(/datum/reagent/consumable/semen, reagents_amount)
 
 			var/datum/effect_system/foam_spread/foam = new
 			foam.set_up(200, get_turf(vent), R)
 			foam.start()
 		CHECK_TICK
 
-/datum/round_event_control/vent_clog/crocin
+/datum/round_event_control/scrubber_overflow/crocin
 	name = "Aphrodisiac Flood"
-	typepath = /datum/round_event/vent_clog/crocin
+	typepath = /datum/round_event/scrubber_overflow/crocin
 	weight = 10
 	max_occurrences = 1
 
-/datum/round_event/vent_clog/crocin
-	saferChems = list(
+/datum/round_event/scrubber_overflow/crocin
+	safer_chems = list(
 		/datum/reagent/drug/aphrodisiac
 	)
-	reagentsAmount = 100
+	reagents_amount = 100
 	var/reagent = /datum/reagent/drug/aphrodisiac
 
-/datum/round_event/vent_clog/crocin/announce()
+/datum/round_event/scrubber_overflow/crocin/announce()
 	priority_announce("Мы обнаружили снижение уровня похоти на станции. Чтобы исправить это, мы будем использовать большое количество легкого афродизиака. Пожалуйста, держитесь подальше от вентиляционных отверстий, пока розовый газ не рассеется.", "Центральное Командование")
 
-/datum/round_event/vent_clog/crocin/start()
-	for(var/obj/machinery/atmospherics/components/unary/vent in vents)
+/datum/round_event/scrubber_overflow/crocin/start()
+	for(var/obj/machinery/atmospherics/components/unary/vent in GLOB.machines)
 		if(vent && vent.loc && !vent.welded)
 			var/datum/reagents/R = new(1000)
 			R.my_atom = vent
-			R.add_reagent(reagent, reagentsAmount)
+			R.add_reagent(reagent, reagents_amount)
 
 			var/datum/effect_system/smoke_spread/chem/smoke = new
 			smoke.set_up(R, 10, get_turf(vent), FALSE)
 			smoke.start()
 		CHECK_TICK
 
-/datum/round_event_control/vent_clog/crocin/hexacrocin
+/datum/round_event_control/scrubber_overflow/crocin/hexacrocin
 	name = "Strong Aphrodisiac Flood"
-	typepath = /datum/round_event/vent_clog/crocin/hexacrocin
+	typepath = /datum/round_event/scrubber_overflow/crocin/hexacrocin
 	max_occurrences = 0 //Only adminspawn because this one causes brain damage
 
-/datum/round_event/vent_clog/crocin/hexacrocin
-	saferChems = list(
+/datum/round_event/scrubber_overflow/crocin/hexacrocin
+	safer_chems = list(
 		/datum/reagent/drug/aphrodisiacplus
 	)
 	reagent = /datum/reagent/drug/aphrodisiacplus
 
-/datum/round_event/vent_clog/crocin/hexacrocin/announce()
+/datum/round_event/scrubber_overflow/crocin/hexacrocin/announce()
 	priority_announce("Мы обнаружили опасно низкий уровень похоти на станции. Чтобы исправить это, мы будем использовать большое количество сильных афродизиаков. Пожалуйста, не подходите к вентиляционным отверстиям, пока розовый газ не рассеется, если вы хотите избежать повреждения мозга.", "Центральное Командование")
+
+/datum/round_event_control/scrubber_overflow/beer
+	name = "Clogged Vents: Beer"
+	typepath = /datum/round_event/scrubber_overflow/beer
+	max_occurrences = 0
+	description = "Spits out beer through the scrubber system."
+
+/datum/round_event/scrubber_overflow/beer
+	reagents_amount = 100
+
+/datum/round_event/scrubber_overflow/beer/announce()
+	priority_announce("The scrubbers network is experiencing an unexpected surge of pressurized beer. Some ejection of contents may occur.", "Atmospherics alert")
+
+/datum/round_event/scrubber_overflow/beer/start()
+	for(var/obj/machinery/atmospherics/components/unary/vent in GLOB.machines)
+		if(vent && vent.loc && !vent.welded)
+			var/datum/reagents/R = new/datum/reagents(1000)
+			R.my_atom = vent
+			R.add_reagent(/datum/reagent/consumable/ethanol/beer, reagents_amount)
+
+			var/datum/effect_system/foam_spread/foam = new
+			foam.set_up(200, get_turf(vent), R)
+			foam.start()
+		CHECK_TICK

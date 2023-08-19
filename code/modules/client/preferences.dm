@@ -277,8 +277,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/prefered_security_department = SEC_DEPT_RANDOM
 	var/custom_species = null
 	var/custom_species_lore = null
-	/// A brief lore summary for use in the chargen screen.
-	var/blurb = "Не имеющий описания своей расы космонавтик. Просто космонавтик!"
 
 	//Quirk list
 	var/list/all_quirks = list()

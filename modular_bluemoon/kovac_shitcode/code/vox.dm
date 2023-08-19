@@ -46,7 +46,7 @@
 	name = "vox tongue"
 	desc = "Generic Vox tongue."
 	icon_state = "vox_tongue"
-	say_mod = "rustles"
+	say_mod = "shrieks"
 	taste_sensitivity = 101
 	maxHealth = 75
 	initial_accents = list(/datum/accent/bird)
@@ -83,7 +83,6 @@
 						"horns" = "None", "legs" = "Digitigrade", "meat_type" = "Mammalian")
 	allowed_limb_ids = null
 	override_bp_icon = 'modular_bluemoon/kovac_shitcode/icons/species/vox_body.dmi' // Берём части тела из иного файла. Цвет тела всегда один
-	eye_type = "vox"
 
 	limbs_id = SPECIES_VOX
 	icon_limbs = 'modular_splurt/icons/mob/human_parts_greyscale.dmi'
@@ -176,7 +175,7 @@
 			break
 
 /proc/vox_name()
-	return "[pick(GLOB.vox_names)] \Roman[rand(1,99)]"
+	return "[pick(GLOB.vox_names)]"
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -275,7 +274,7 @@
 	name = "Vox-Pidgin"
 	desc = "A language comprised largely of screeching and squawking sounds. The language is largely shared only between Vox."
 	icon = 'modular_bluemoon/kovac_shitcode/icons/misc/vox.dmi'
-	speech_verb = "rustles"
+	speech_verb = "shrieks"
 	ask_verb = "queries"
 	exclaim_verb = "declares"
 	whisper_verb = "hushes"

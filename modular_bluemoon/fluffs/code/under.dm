@@ -32,3 +32,10 @@
 	icon_state = "multicam"
 	item_state = "multicam"
 	can_adjust = TRUE
+
+/obj/item/clothing/under/plasmaman/security/reaper
+	name = "Security Plasma Envirosuit"
+	desc = "Plasmaman Envirosuit, retrofitted for combat exposure. There a purple planet on the back, with energy flowing in it."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/under.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/under.dmi'
+	icon_state = "gg_envirosuit"

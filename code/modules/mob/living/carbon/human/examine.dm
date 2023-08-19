@@ -200,9 +200,10 @@
 			. += "<b>Игрок НЕ разрешил всяческие непристойности в случае с его персонажем.</b>"
 
 	//SPLURT edit
-	for(var/obj/item/organ/genital/G in internal_organs)
-		if(CHECK_BITFIELD(G.genital_flags, GENITAL_CHASTENED))
-			. += "[t_on] носит БДСМ-клетку. БДСМ-клетка покрывает [G.name]."
+	if((user.client?.prefs.cit_toggles & GENITAL_EXAMINE))
+		for(var/obj/item/organ/genital/G in internal_organs)
+			if(CHECK_BITFIELD(G.genital_flags, GENITAL_CHASTENED))
+				. += "[t_on] носит БДСМ-клетку. БДСМ-клетка покрывает [G.name]."
 	//
 	var/list/missing = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 	var/list/disabled = list()
@@ -522,7 +523,9 @@
 		.[2] += "<hr>"
 
 	// send signal last so everything else prioritizes above
-	. += span_boldnotice("Профиль Персонажа: <a href='?src=\ref[src];character_profile=1'>\[Осмотреть\]</a>")
+	if(!(ITEM_SLOT_MASK in obscured))
+		. += span_boldnotice("Профиль Персонажа: <a href='?src=\ref[src];character_profile=1'>\[Осмотреть\]</a>")
+
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .) //This also handles flavor texts now
 
 /mob/living/proc/status_effect_examines(pronoun_replacement) //You can include this in any mob's examine() to show the examine texts of status effects!

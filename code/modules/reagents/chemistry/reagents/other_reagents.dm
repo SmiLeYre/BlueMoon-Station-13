@@ -2556,7 +2556,7 @@
 	name = "Female Ejaculate"
 	description = "Vaginal lubricant found in most mammals and other animals of similar nature. Where you found this is your own business."
 	taste_description = "something with a tang" // wew coders who haven't eaten out a girl.
-	color = "#AAAAAA77"
+	color = "#FFFFFF"
 	decal_path = /obj/effect/decal/cleanable/semen/femcum
 
 /obj/effect/decal/cleanable/semen/femcum

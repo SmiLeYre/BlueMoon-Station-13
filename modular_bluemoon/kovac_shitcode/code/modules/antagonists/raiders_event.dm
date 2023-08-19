@@ -86,7 +86,7 @@
 			else
 				notify_ghosts("The InteQ ship has an object of interest: [spawner]!", source=spawner, action=NOTIFY_ORBIT, header="Something's Interesting!")
 
-	priority_announce("В секторе обнаружен вооруженнный корабль.", "Central Command", 'modular_bluemoon/kovac_shitcode/sound/inteq_raiders.ogg')
+	priority_announce("В секторе обнаружен вооружённный корабль.", "Отдел ССО Пакта Синих Лун", 'modular_bluemoon/kovac_shitcode/sound/inteq_raiders.ogg')
 
 /// Dynamic ruleset additions
 /datum/dynamic_ruleset/midround/raiders

@@ -51,6 +51,7 @@
 	if(last_capped_size)
 		old_size = last_capped_size
 		last_capped_size = null
+
 	var/healthmod_old = ((old_size * 120) - 120) //Get the old value to see what we must change. // BLUEMOON CHANGES
 	var/healthmod_new = ((get_size(holder) * 120) - 120) //A size of one would be zero. Big boys get health, small ones lose health. // BLUEMOON CHANGES
 
