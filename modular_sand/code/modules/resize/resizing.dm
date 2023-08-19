@@ -82,7 +82,15 @@
 				playsound(loc, 'sound/misc/splort.ogg', 50, 1)
 				user.add_movespeed_modifier(/datum/movespeed_modifier/stomp, TRUE)
 				addtimer(CALLBACK(user, /mob/.proc/remove_movespeed_modifier, MOVESPEED_ID_STOMP, TRUE), 10) //1 second
-				user.Stun(1.5 SECONDS) //BLUEMOON CHANGES - иначе можно очень за секунду убить кого-то, имея тяжёлый вес
+				// BLUEMOON ADDITION START - персонажи с тяжёлыми квирками наносят больше урона и на дольше станят, но сами получают стан
+				var/stun_time = 0
+				if(HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY))
+					stun_time = 0.5 SECONDS
+				else if(HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY_SUPER))
+					stun_time = 1 SECONDS
+				if(stun_time)
+				// BLUEMOON ADDITION END
+					user.Stun(stun_time) //BLUEMOON CHANGES - стан, иначе можно очень за секунды убить кого-то, имея тяжёлый вес
 				if(iscarbon(user))
 					if(istype(user) && (user.dna.features["taur"] == "Naga" || user.dna.features["taur"] == "Tentacle"))
 						target.visible_message("<span class='danger'>[src] mows down [target] under their tail!</span>", "<span class='userdanger'>[src] plows their tail over you mercilessly!</span>")
