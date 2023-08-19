@@ -439,7 +439,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		message = asiatish(message)
 
 	if(HAS_TRAIT(src, TRAIT_UKRAINE))
-		message = asiatish(message)
+		message = ukraine(message)
 
 	if(HAS_TRAIT(src, TRAIT_KARTAVII))
 		message = kartavo(message)
