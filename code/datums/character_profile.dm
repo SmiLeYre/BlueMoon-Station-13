@@ -48,16 +48,6 @@ GLOBAL_LIST_EMPTY(cached_previews)
 	if (istype(M, /mob/living/silicon))
 		data["flavortext"] = M?.client?.prefs.features["silicon_flavor_text"] || ""
 
-	if (istype(M, /mob/living/carbon))
-		var/mob/living/carbon/C = M
-		var/unknown = (C.wear_mask && (C.wear_mask.flags_inv & HIDEFACE) && !isobserver(user)) || (C.head && (C.head.flags_inv & HIDEFACE) && !isobserver(user))
-		if (!unknown)
-			data["flavortext"] = (!unknown) ? (M?.client?.prefs?.features["flavor_text"] || "") : "Скрыто"
-			if (istype(M, /mob/living/carbon/human))
-				var/mob/living/carbon/human/H = C
-				unknown = (unknown || (H.w_uniform || H.wear_suit))
-				data["flavortext_naked"] = (!unknown) ? (M?.client?.prefs?.features["naked_flavor_text"] || "") : ""
-
 	data["oocnotes"] = M?.client?.prefs?.features["ooc_notes"] || ""
 	data["species_name"] = M?.client?.prefs?.custom_species || "Космонавтик"
 	data["custom_species_lore"] = M?.client?.prefs.features["custom_species_lore"] || "Не имеющий описания своей расы космонавтик. Просто космонавтик!"
@@ -69,6 +59,20 @@ GLOBAL_LIST_EMPTY(cached_previews)
 	data["extreme_tag"] = M?.client?.prefs?.extremepref || "No"
 	data["very_extreme_tag"] = M?.client?.prefs?.extremeharm || "No"
 
+	return data
+
+/datum/description_profile/ui_data(mob/user)
+	. = ..()
+	var/data[0]
+	var/mob/living/M = host.resolve()
+	if (iscarbon(M))
+		var/mob/living/carbon/C = M
+		var/unknown = (C.wear_mask && (C.wear_mask.flags_inv & HIDEFACE) && !isobserver(user)) || (C.head && (C.head.flags_inv & HIDEFACE) && !isobserver(user))
+		data["flavortext"] = (!unknown) ? (M?.client?.prefs?.features["flavor_text"] || "") : "Скрыто"
+		if (istype(M, /mob/living/carbon/human))
+			var/mob/living/carbon/human/H = C
+			unknown = (unknown || (H.w_uniform || H.wear_suit))
+			data["flavortext_naked"] = (!unknown) ? (M?.client?.prefs?.features["naked_flavor_text"] || "") : ""
 	return data
 
 /datum/description_profile/proc/update_preview()
