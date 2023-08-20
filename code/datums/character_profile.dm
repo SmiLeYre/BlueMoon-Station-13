@@ -18,6 +18,7 @@ GLOBAL_LIST_EMPTY(cached_previews)
 	var/datum/weakref/host
 	var/atom/movable/screen/map_view/examine_panel_screen/examine_panel_screen
 	var/mutable_appearance/current_mob_appearance
+	var/mutable_appearance/current_background
 
 /datum/description_profile/New(var/host_mob)
 	. = ..()
