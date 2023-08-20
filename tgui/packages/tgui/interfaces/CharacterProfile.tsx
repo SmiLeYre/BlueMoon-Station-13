@@ -41,13 +41,13 @@ export const CharacterProfile = (props, context) => {
   const { act, data } = useBackend<CharacterProfileContext>(context);
 
   const tags = [
-    { name: "ERP",          title: "Эротический отыгрыш",    value: data.erp_tag          },
-    { name: "Non-Con",      title: "Изнасилование",          value: data.nc_tag           },
-    { name: "Vore",         title: "Поедание/Проглатывание", value: data.vore_tag         },
-    { name: "Mob-Sex",      title: "Совокупление с Мобами",  value: data.mob_tag          },
-    { name: "Unholy",       title: "Грязный секс",           value: data.unholy_tag       },
-    { name: "Extreme",      title: "Жестокий секс",          value: data.extreme_tag      },
-    { name: "Extreme Harm", title: "Очень жестокий секс",    value: data.very_extreme_tag },
+    { name: "ERP", title: "Эротический отыгрыш", value: data.erp_tag },
+    { name: "Non-Con", title: "Изнасилование", value: data.nc_tag },
+    { name: "Vore", title: "Поедание/Проглатывание", value: data.vore_tag },
+    { name: "Mob-Sex", title: "Совокупление с Мобами", value: data.mob_tag },
+    { name: "Unholy", title: "Грязный секс", value: data.unholy_tag },
+    { name: "Extreme", title: "Жестокий секс", value: data.extreme_tag },
+    { name: "Extreme Harm", title: "Очень жестокий секс", value: data.very_extreme_tag },
   ];
 
   return (
@@ -72,9 +72,15 @@ export const CharacterProfile = (props, context) => {
             <Collapsible title="Описание персонажа" open>
               <Section>
                 <Flex direction="column">
-                  {data.flavortext ? (<Flex.Item style={{ "white-space": "pre-line" }}>{data.flavortext}</Flex.Item>) : (<Box />)}
-                  {data.flavortext && data.flavortext_naked ? (<Divider />) : (<Box />)}
-                  {data.flavortext_naked ? (<Flex.Item style={{ "white-space": "pre-line" }}>{data.flavortext_naked}</Flex.Item>) : (<Box />)}
+                  {data.flavortext
+                    ? (<Flex.Item style={{ "white-space": "pre-line" }}>{data.flavortext}</Flex.Item>)
+                    : (<Box />)}
+                  {data.flavortext && data.flavortext_naked
+                    ? (<Divider />)
+                    : (<Box />)}
+                  {data.flavortext_naked
+                    ? (<Flex.Item style={{ "white-space": "pre-line" }}>{data.flavortext_naked}</Flex.Item>)
+                    : (<Box />)}
                   {!data.flavortext && !data.flavortext_naked ? ("Отсутствует") : (<Box />)}
                 </Flex>
               </Section>
@@ -88,7 +94,10 @@ export const CharacterProfile = (props, context) => {
               <Section title="Преференсы персонажа" width="100%">
                 <LabeledList>
                   {tags.map(tag => (
-                    <LabeledList.Item color={getTagColor(tag.value)} label={tag.title}>
+                    <LabeledList.Item
+                      key={tag.name}
+                      color={getTagColor(tag.value)}
+                      label={tag.title}>
                       <Tooltip content={tag.name}>{tag.value}</Tooltip>
                     </LabeledList.Item>
                   ))}
@@ -117,8 +126,8 @@ const CharacterModelImageElement = (props, context) => {
     <Section title="Модель персонажа" pb="12" textAlign="center">
       <ByondUi
         height="256px" width="256px"
-        params={{ id: data.character_ref, type: 'map', }}
+        params={{ id: data.character_ref, type: 'map' }}
       />
     </Section>
   );
-}
+};
