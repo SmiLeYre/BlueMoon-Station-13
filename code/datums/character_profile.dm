@@ -72,7 +72,7 @@ GLOBAL_LIST_EMPTY(cached_previews)
 		if (istype(M, /mob/living/carbon/human))
 			var/mob/living/carbon/human/H = C
 			unknown = (unknown || (H.w_uniform || H.wear_suit))
-			data["flavortext_naked"] = (!unknown) ? (M?.client?.prefs?.features["naked_flavor_text"] || "") : ""
+			data["flavortext_naked"] = (!unknown && M?.client?.prefs?.features["naked_flavor_text"]) || ""
 	return data
 
 /datum/description_profile/proc/update_preview()
