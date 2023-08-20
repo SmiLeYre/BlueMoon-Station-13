@@ -19,6 +19,7 @@ GLOBAL_LIST_EMPTY(cached_previews)
 	var/atom/movable/screen/map_view/examine_panel_screen/examine_panel_screen
 	var/mutable_appearance/current_mob_appearance
 	var/mutable_appearance/current_background
+	var/static/list/preview_backgrounds = list("000", "midgrey", "FFF", "white", "steel", "techmaint", "dark", "plating", "reinforced")
 
 /datum/description_profile/New(var/host_mob)
 	. = ..()
@@ -75,8 +76,6 @@ GLOBAL_LIST_EMPTY(cached_previews)
 	if(!examine_panel_screen || !current_background)
 		return
 
-	current_background.icon_state = background_state
-
 	var/mob/living/M = host.resolve()
 	current_mob_appearance = new(M)
 	current_mob_appearance.transform = matrix() // We reset their rotation, in case they're lying down.
@@ -102,7 +101,7 @@ GLOBAL_LIST_EMPTY(cached_previews)
 		examine_panel_screen.screen_loc = "[examine_panel_screen.assigned_map]:1,1"
 
 	if (!current_background)
-		current_background = mutable_appearance('modular_citadel/icons/ui/backgrounds.dmi', "steel", layer = SPACE_LAYER)
+		current_background = mutable_appearance('modular_citadel/icons/ui/backgrounds.dmi', "reinforced", layer = SPACE_LAYER)
 
 	update_preview()
 
@@ -121,3 +120,7 @@ GLOBAL_LIST_EMPTY(cached_previews)
 		if("character_directory")
 			var/static/datum/character_directory/character_directory = new
 			character_directory.ui_interact(usr)
+		if("change_background")
+			current_background.icon_state = next_list_item(current_background.icon_state, preview_backgrounds)
+			return TRUE
+

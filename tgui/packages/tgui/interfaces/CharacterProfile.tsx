@@ -128,6 +128,9 @@ const CharacterModelImageElement = (props, context) => {
         height="256px" width="256px"
         params={{ id: data.character_ref, type: 'map' }}
       />
+      <Box>
+        <Button onClick={()=>act("change_background")}>Сменить фон</Button>
+      </Box>
     </Section>
   );
 };
