@@ -2,7 +2,10 @@
 	name = "plush"
 	desc = "This is the special coder plush, do not steal."
 	icon = 'icons/obj/plushes.dmi'
+	lefthand_file = 'modular_splurt/icons/mob/inhands/misc/plushes-lefthand.dmi'
+	righthand_file = 'modular_splurt/icons/mob/inhands/misc/plushes-right.dmi'
 	icon_state = "debug"
+	item_state = "plushie_sus"
 	attack_verb = list("thumped", "whomped", "bumped")
 	w_class = WEIGHT_CLASS_SMALL
 	resistance_flags = FLAMMABLE
@@ -492,6 +495,7 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	name = "bubblegum plushie"
 	desc = "The friendly red demon that gives good miners gifts."
 	icon_state = "bubbleplush"
+	item_state = "bubbleplush"
 	attack_verb = list("rends")
 	squeak_override = list('sound/magic/demon_attack1.ogg'=1)
 
@@ -499,6 +503,7 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	name = "ratvar plushie"
 	desc = "An adorable plushie of the clockwork justiciar himself with new and improved spring arm action."
 	icon_state = "plushvar"
+	item_state = "plushvar"
 	var/obj/item/toy/plush/narplush/clash_target
 	gender = MALE	//he's a boy, right?
 
@@ -620,12 +625,26 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	item_state = "plushie_spacelizard"
 
 /obj/item/toy/plush/nukeplushie
-	name = "operative plushie"
+	name = "Operative Plushie"
 	desc = "A stuffed toy that resembles a syndicate nuclear operative. The tag claims operatives to be purely fictitious."
 	icon_state = "plushie_nuke"
 	item_state = "plushie_nuke"
 	attack_verb = list("shot", "nuked", "detonated")
 	squeak_override = list('sound/effects/hit_punch.ogg' = 1)
+
+/obj/item/toy/plush/nukeplushie/susplushie
+	name = "Suspect Plushie"
+	desc = "A stuffed toy that resembles a red space station employee. The tag claims red employee to be purely fictitious."
+	icon_state = "plushie_sus"
+	item_state = "plushie_sus"
+	attack_verb = list("shot", "eat", "killed")
+
+/obj/item/toy/plush/nukeplushie/minisusplushie
+	name = "Mini Suspect Plushie"
+	desc = "A stuffed toy that resembles a red space station mini employee. The tag claims red employee to be purely fictitious."
+	icon_state = "plushie_minisus"
+	item_state = "plushie_minisus"
+	attack_verb = list("mini-shot", "mini-eat", "mini-killed")
 
 // Little cute Ninja plushie
 /obj/item/toy/plush/ninja
@@ -885,6 +904,7 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	name = "Hairball"
 	desc = "A bundle of undigested fibers and scales. Yuck."
 	icon_state = "Hairball"
+	item_state = "Hairball"
 	unstuffable = TRUE
 	young = TRUE // Your own mouth-baby.
 	squeak_override = list('sound/misc/splort.ogg'=1)

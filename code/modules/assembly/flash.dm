@@ -116,7 +116,7 @@
 	else //caused by emp/remote signal
 		M.log_message("was [targeted? "flashed(targeted)" : "flashed(AOE)"]",LOG_ATTACK)
 	if(generic_message && M != user)
-		to_chat(M, "<span class='disarm'>[src] emits a blinding light!</span>")
+		to_chat(M, "<span class='disarm'>[src] производит резкую вспышку неприятного свечения!</span>")
 	if(targeted)
 		if(M.flash_act(1, 1))
 			if(M.confused < power)
@@ -124,20 +124,20 @@
 				M.confused += min(power, diff)
 			if(user)
 				terrible_conversion_proc(M, user)
-				visible_message("<span class='disarm'>[user] blinds [M] with the flash!</span>")
-				to_chat(user, "<span class='danger'>You blind [M] with the flash!</span>")
-				to_chat(M, "<span class='userdanger'>[user] blinds you with the flash!</span>")
+				visible_message("<span class='disarm'>[user] ошеломляет [M] флешером!</span>")
+				to_chat(user, "<span class='danger'>Ты ошеломил [M] флешером!</span>")
+				to_chat(M, "<span class='userdanger'>[user] ошеломляет тебя флешером!</span>")
 			else
-				to_chat(M, "<span class='userdanger'>You are blinded by [src]!</span>")
+				to_chat(M, "<span class='userdanger'>Bы были ошеломлены [src]!</span>")
 			var/toblur = 20 - M.eye_blurry
 			if(toblur > 0)
 				M.blur_eyes(toblur)
 		else if(user)
-			visible_message("<span class='disarm'>[user] fails to blind [M] with the flash!</span>")
-			to_chat(user, "<span class='warning'>You fail to blind [M] with the flash!</span>")
-			to_chat(M, "<span class='danger'>[user] fails to blind you with the flash!</span>")
+			visible_message("<span class='disarm'>[user] не удалось ошеломить [M] флешером!</span>")
+			to_chat(user, "<span class='warning'>Тебе не удалось ошеломить [M] флешером!</span>")
+			to_chat(M, "<span class='danger'>[user] не удалось ошеломить тебя!</span>")
 		else
-			to_chat(M, "<span class='danger'>[src] fails to blind you!</span>")
+			to_chat(M, "<span class='danger'>[src] не удалось ошеломить тебя!</span>")
 	else
 		if(M.flash_act())
 			var/diff = power * CONFUSION_STACK_MAX_MULTIPLIER - M.confused
@@ -151,23 +151,24 @@
 		return TRUE
 	else if(issilicon(M))
 		var/mob/living/silicon/robot/R = M
-		log_combat(user, R, "flashed", src)
-		update_icon(1)
-		R.DefaultCombatKnockdown(rand(80,120))
-		var/diff = 5 * CONFUSION_STACK_MAX_MULTIPLIER - M.confused
-		R.confused += min(5, diff)
-		R.flash_act(affect_silicon = 1)
-		user.visible_message("<span class='disarm'>[user] overloads [R]'s sensors with the flash!</span>", "<span class='danger'>You overload [R]'s sensors with the flash!</span>")
-		return TRUE
+		if(!R.flash_protect)
+			log_combat(user, R, "flashed", src)
+			update_icon(1)
+			R.DefaultCombatKnockdown(rand(80,120))
+			var/diff = 5 * CONFUSION_STACK_MAX_MULTIPLIER - M.confused
+			R.confused += min(5, diff)
+			R.flash_act(affect_silicon = 1)
+			user.visible_message("<span class='disarm'>[user] перегружает сенсоры [R] флешером!</span>", "<span class='danger'>Ты перегружаешь сенсоры [R] флешером!</span>")
+			return TRUE
 
-	user.visible_message("<span class='disarm'>[user] fails to blind [M] with the flash!</span>", "<span class='warning'>You fail to blind [M] with the flash!</span>")
+	user.visible_message("<span class='disarm'>[user] неудачно ошеломляет [M] флешером!</span>", "<span class='warning'>Тебе не удалось ошеломить [M] флешером!</span>")
 
 /obj/item/assembly/flash/attack_self(mob/living/carbon/user, flag = 0, emp = 0)
 	if(holder)
 		return FALSE
 	if(!AOE_flash(FALSE, 3, 5, FALSE, user))
 		return FALSE
-	to_chat(user, "<span class='danger'>[src] emits a blinding light!</span>")
+	to_chat(user, "<span class='danger'>[src] производит резкую вспышку неприятного свечения!</span>")
 
 /obj/item/assembly/flash/emp_act(severity)
 	. = ..()
@@ -291,7 +292,7 @@
 			if(M.hypnosis_vulnerable())
 				hypnosis = TRUE
 			if(user)
-				user.visible_message("<span class='disarm'>[user] blinds [M] with the flash!</span>", "<span class='danger'>You hypno-flash [M]!</span>")
+				user.visible_message("<span class='disarm'>[user] blinds [M] флешером!</span>", "<span class='danger'>You hypno-flash [M]!</span>")
 
 			if(!hypnosis)
 				to_chat(M, "<span class='notice'>The light makes you feel oddly relaxed...</span>")
@@ -303,7 +304,7 @@
 				M.apply_status_effect(/datum/status_effect/trance, 200, TRUE)
 
 		else if(user)
-			user.visible_message("<span class='disarm'>[user] fails to blind [M] with the flash!</span>", "<span class='warning'>You fail to hypno-flash [M]!</span>")
+			user.visible_message("<span class='disarm'>[user] fails to blind [M] флешером!</span>", "<span class='warning'>You fail to hypno-flash [M]!</span>")
 		else
 			to_chat(M, "<span class='danger'>[src] fails to blind you!</span>")
 

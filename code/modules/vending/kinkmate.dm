@@ -62,7 +62,7 @@
 				/obj/item/clothing/accessory/skullcodpiece/fake = 3,
 				/obj/item/reagent_containers/glass/bottle/hexacrocin = 10,
 				/obj/item/clothing/under/pants/chaps = 5,
-				/obj/item/projectile/sizelaser = 2
+				/obj/item/gun/energy/laser/sizeray = 2
 				)
 	refill_canister = /obj/item/vending_refill/kink
 	default_price = PRICE_CHEAP

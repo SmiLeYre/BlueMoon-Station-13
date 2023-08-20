@@ -41,13 +41,13 @@ GLOBAL_LIST_EMPTY(cached_previews)
 	data["silicon_flavor_text"] = H?.client?.prefs.features["silicon_flavor_text"] || ""
 	data["oocnotes"] = H?.client?.prefs?.features["ooc_notes"] || ""
 	data["species_name"] = H?.client?.prefs?.custom_species || "Космонавтик"
-	data["species_text"] = H?.client?.prefs?.custom_species_lore || "Не имеющий описания своей расы космонавтик. Просто космонавтик!"
+	data["custom_species_lore"] = H?.client?.prefs.features["custom_species_lore"] || "Не имеющий описания своей расы космонавтик. Просто космонавтик!"
 	data["vore_tag"] = H?.client?.prefs?.vorepref || "No"
 	data["erp_tag"] = H?.client?.prefs?.erppref || "No"
 	data["mob_tag"] = H?.client?.prefs?.mobsexpref || "No"
 	data["nc_tag"] = H?.client?.prefs?.nonconpref || "No"
-	data["unholy_tag"] = H?.client?.prefs?.extremepref || "No"
-	data["very_unholy_tag"] = H?.client?.prefs?.extremeharm || "No"
+	data["unholy"] = H?.client?.prefs?.extremepref || "No"
+	data["very_unholy"] = H?.client?.prefs?.extremeharm || "No"
 
 	return data
 

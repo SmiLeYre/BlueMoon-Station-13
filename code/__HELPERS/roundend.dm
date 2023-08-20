@@ -351,7 +351,7 @@
 	sleep(5 SECONDS)
 
 	var/eorg = alert("Хотите принять участие на ЕОРГ-арене?", "End of Round Deathmatch Arena", "Да", "Нет")
-	if(eorg == "Да")
+	if(eorg == "Да" || !eorg)
 		teleport_players_to_eorg_area()
 
 /datum/controller/subsystem/ticker/proc/teleport_players_to_eorg_area()

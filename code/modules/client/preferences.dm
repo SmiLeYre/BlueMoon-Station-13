@@ -243,6 +243,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 "flavor_text" = "",
 "naked_flavor_text" = "", //SPLURT edit
 "silicon_flavor_text" = "",
+"custom_species_lore" = "",
 "ooc_notes" = "",
 "meat_type" = "Mammalian",
 "body_model" = MALE,
@@ -276,7 +277,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/preferred_ai_core_display = "Blue"
 	var/prefered_security_department = SEC_DEPT_RANDOM
 	var/custom_species = null
-	var/custom_species_lore = null
 
 	//Quirk list
 	var/list/all_quirks = list()
@@ -615,6 +615,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							dat += "[features["silicon_flavor_text"]]<BR>"
 					else
 						dat += "[TextPreview(features["silicon_flavor_text"])]...<BR>"
+					dat += "<h2>Custom Species Lore</h2>"
+					dat += "<a href='?_src_=prefs;preference=custom_species_lore;task=input'><b>Set Custom Species Lore Text</b></a><br>"
+					if(length(features["custom_species_lore"]) <= MAX_FLAVOR_PREVIEW_LEN)
+						if(!length(features["custom_species_lore"]))
+							dat += "\[...\]<BR>"
+						else
+							dat += "[features["custom_species_lore"]]<BR>"
+					else
+						dat += "[TextPreview(features["custom_species_lore"])]...<BR>"
 					dat += "<h2>OOC notes</h2>"
 					dat += "<a href='?_src_=prefs;preference=ooc_notes;task=input'><b>Set OOC notes</b></a><br>"
 					var/ooc_notes_len = length(features["ooc_notes"])
@@ -658,7 +667,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<BR>"
 					dat += "<b>Species:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a><BR>"
 					dat += "<b>Custom Species Name:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=custom_species;task=input'>[custom_species ? custom_species : "None"]</a><BR>"
-					dat += "<b>Custom Species Lore:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=custom_species_lore;task=input'>[custom_species_lore ? custom_species_lore : "None"]</a><BR>"
 					dat += "<b>Random Body:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=all;task=random'>Randomize!</A><BR>"
 					dat += "<b>Always Random Body:</b><a href='?_src_=prefs;preference=all'>[be_random_body ? "Yes" : "No"]</A><BR>"
 					dat += "<br><b>Cycle background:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=cycle_bg;task=input'>[bgstate]</a><BR>"
@@ -2227,23 +2235,28 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						medical_records = rec
 
 				if("flavor_text")
-					var/msg = input(usr, "Set the flavor text in your 'examine' verb. This can also be used for OOC notes and preferences!", "Flavor Text", features["flavor_text"]) as message|null //Skyrat edit, removed stripped_multiline_input()
+					var/msg = input(usr, "Задайте описание вашего персонажа. Это также может быть использовано для OOC-заметок и предпочтений!", "Описание Bнешности Персонажа", features["flavor_text"]) as message|null //Skyrat edit, removed stripped_multiline_input()
 					if(!isnull(msg))
 						features["flavor_text"] = strip_html_simple(msg, MAX_FLAVOR_LEN, TRUE) //Skyrat edit, removed strip_html_simple()
 
 				//SPLURT edit
 				if("naked_flavor_text")
-					var/msg = input(usr, "Set the naked flavor text in your 'examine' verb. This should be IC, describing how your character would look like if naked.", "Naked Flavor Text", features["naked_flavor_text"]) as message|null
+					var/msg = input(usr, "Задайте описание вашего персонажа с упором на наготу. Описание предполагает под собой IC-подтекст с последующим описанием, как бы выглядел ваш персонаж, если бы он был голым.", "Описание Bнешности Голого Персонажа", features["naked_flavor_text"]) as message|null
 					if(!isnull(msg))
 						features["naked_flavor_text"] = strip_html_simple(msg, MAX_FLAVOR_LEN, TRUE)
 				//SPLURT edit end
 				if("silicon_flavor_text")
-					var/msg = input(usr, "Set the silicon flavor text in your 'examine' verb. This can also be used for OOC notes and preferences!", "Silicon Flavor Text", features["silicon_flavor_text"]) as message|null //Skyrat edit, removed stripped_multiline_input()
+					var/msg = input(usr, "Set the silicon flavor text in your 'examine' verb. This can also be used for OOC notes and preferences!", "Описание Борга", features["silicon_flavor_text"]) as message|null //Skyrat edit, removed stripped_multiline_input()
 					if(!isnull(msg))
 						features["silicon_flavor_text"] = strip_html_simple(msg, MAX_FLAVOR_LEN, TRUE) //Skyrat edit, uses strip_html_simple()
 
+				if("custom_species_lore")
+					var/msg = input(usr, "Set the silicon flavor text in your 'examine' verb. This can also be used for OOC notes and preferences!", "Предыстория Расы Bашего Персонажа", features["silicon_flavor_text"]) as message|null //Skyrat edit, removed stripped_multiline_input()
+					if(!isnull(msg))
+						features["custom_species_lore"] = strip_html_simple(msg, MAX_FLAVOR_LEN, TRUE)
+
 				if("ooc_notes")
-					var/msg = stripped_multiline_input(usr, "Set always-visible OOC notes related to content preferences. THIS IS NOT FOR CHARACTER DESCRIPTIONS!", "OOC notes", html_decode(features["ooc_notes"]), MAX_FLAVOR_LEN, TRUE)
+					var/msg = stripped_multiline_input(usr, "Установите всегда видимые OOC-заметки, связанные с вашими предпочтениями.", "ООС-Заметки", html_decode(features["ooc_notes"]), MAX_FLAVOR_LEN, TRUE)
 					if(!isnull(msg))
 						features["ooc_notes"] = msg
 
@@ -2444,13 +2457,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						custom_species = new_species
 					else
 						custom_species = null
-
-				if("custom_species_lore")
-					var/new_species_lore = reject_bad_name(input(user, "Выберите предысторию расы своего персонажа, если она уникальна. Это будет отображаться при осмотре Флавор-Меню. Не злоупотребляйте этим:", "Character Preference", custom_species_lore) as null|text, TRUE)
-					if(new_species_lore)
-						custom_species_lore = new_species_lore
-					else
-						custom_species_lore = null
 
 				if("mutant_color")
 					var/new_mutantcolor = input(user, "Choose your character's alien/mutant color:", "Character Preference","#"+features["mcolor"]) as color|null
@@ -4130,7 +4136,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.name = character.real_name
 	character.nameless = nameless
 	character.custom_species = custom_species
-	character.custom_species_lore = custom_species_lore
 
 	character.gender = gender
 	character.age = age
@@ -4184,7 +4189,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.dna.real_name = character.real_name
 	character.dna.nameless = character.nameless
 	character.dna.custom_species = character.custom_species
-	character.dna.custom_species_lore = character.custom_species_lore
 
 	var/old_size = RESIZE_DEFAULT_SIZE
 	if(isdwarf(character))

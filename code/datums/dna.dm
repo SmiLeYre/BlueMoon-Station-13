@@ -9,7 +9,6 @@
 	var/real_name //Stores the real name of the person who originally got this dna datum. Used primarely for changelings,
 	var/nameless = FALSE
 	var/custom_species	//siiiiigh I guess this is important
-	var/custom_species_lore	//siiiiigh I guess this is important
 	var/list/mutations = list()   //All mutations are from now on here
 	var/list/temporary_mutations = list() //Temporary changes to the UE
 	var/list/previous = list() //For temporary name/ui/ue/blood_type modifications
@@ -55,7 +54,6 @@
 	destination.dna.real_name = real_name
 	destination.dna.nameless = nameless
 	destination.dna.custom_species = custom_species
-	destination.dna.custom_species_lore = custom_species_lore
 	destination.dna.temporary_mutations = temporary_mutations.Copy()
 	if(ishuman(destination))
 		var/mob/living/carbon/human/H = destination
@@ -85,7 +83,6 @@
 	new_dna.real_name = real_name
 	new_dna.nameless = nameless
 	new_dna.custom_species = custom_species
-	new_dna.custom_species_lore = custom_species_lore
 	new_dna.mutations = mutations.Copy()
 
 //See mutation.dm for what 'class' does. 'time' is time till it removes itself in decimals. 0 for no timer
@@ -307,7 +304,7 @@
 		return
 
 /datum/dna/proc/is_same_as(datum/dna/D)
-	if(uni_identity != D.uni_identity || mutation_index != D.mutation_index || real_name != D.real_name || nameless != D.nameless || custom_species != D.custom_species || custom_species_lore != D.custom_species_lore)
+	if(uni_identity != D.uni_identity || mutation_index != D.mutation_index || real_name != D.real_name || nameless != D.nameless || custom_species != D.custom_species)
 		return FALSE
 	if(species.type != D.species.type || features != D.features || blood_type != D.blood_type || skin_tone_override != D.skin_tone_override)
 		return FALSE

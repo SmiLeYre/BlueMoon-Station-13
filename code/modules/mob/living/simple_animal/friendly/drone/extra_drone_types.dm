@@ -42,7 +42,7 @@
 
 /mob/living/simple_animal/drone/syndrone/badass
 	name = "Badass Syndrone"
-	default_hatmask = /obj/item/clothing/head/helmet/space/syndicate
+	default_hatmask = /obj/item/clothing/head/helmet/infiltrator
 	default_storage = /obj/item/syndicate_uplink_high/nuclear
 
 /mob/living/simple_animal/drone/syndrone/badass/Initialize(mapload)

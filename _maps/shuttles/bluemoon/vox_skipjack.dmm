@@ -3,7 +3,9 @@
 /obj/effect/spawner/lootdrop/gloves,
 /obj/structure/glowshroom/single,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "ar" = (
 /obj/structure/sign/departments/cargo,
@@ -12,18 +14,24 @@
 "aH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood,
-/turf/open/floor/catwalk_floor,
+/turf/open/floor/catwalk_floor{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "bY" = (
 /obj/item/trash/intecookies,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "cr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/mob_spawn/human/vox_scavenger,
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/on/layer3,
-/turf/open/floor/iron/shuttle/arrivals/sign_1,
+/turf/open/floor/iron/shuttle/arrivals/sign_1{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "cz" = (
 /obj/structure/chair/comfy/shuttle{
@@ -31,7 +39,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/dim/directional/east,
-/turf/open/floor/iron/shuttle/arrivals/sign_1,
+/turf/open/floor/iron/shuttle/arrivals/sign_1{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "cL" = (
 /obj/machinery/door/airlock/maintenance_hatch{
@@ -41,13 +51,17 @@
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer3{
 	dir = 8
 	},
-/turf/open/floor/catwalk_floor,
+/turf/open/floor/catwalk_floor{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "dp" = (
 /obj/structure/glowshroom/single,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/dim/directional/west,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "dz" = (
 /obj/structure/rack,
@@ -66,7 +80,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/arrivals/sign_1,
+/turf/open/floor/iron/shuttle/arrivals/sign_1{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "ee" = (
 /obj/structure/table,
@@ -74,23 +90,31 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/on/layer3{
 	dir = 8
 	},
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "ek" = (
 /obj/machinery/portable_atmospherics/canister/nitrogen,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/arrivals/sign_1,
+/turf/open/floor/iron/shuttle/arrivals/sign_1{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "en" = (
 /obj/item/storage/toolbox/electrical,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/dim/directional/east,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "fd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/manifold/general/visible/layer3,
-/turf/open/floor/catwalk_floor,
+/turf/open/floor/catwalk_floor{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "fV" = (
 /obj/item/reagent_containers/syringe/contraband/space_drugs,
@@ -102,11 +126,15 @@
 	pixel_y = 2
 	},
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer3,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "gG" = (
 /obj/effect/spawner/structure/window/plastitanium,
-/turf/open/floor/catwalk_floor,
+/turf/open/floor/catwalk_floor{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "hm" = (
 /turf/open/space/basic,
@@ -116,7 +144,9 @@
 /obj/item/trash/intecookies,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/greenglow,
-/turf/open/floor/catwalk_floor,
+/turf/open/floor/catwalk_floor{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "iM" = (
 /obj/structure/rack,
@@ -133,7 +163,9 @@
 /obj/item/restraints/handcuffs/cable/zipties,
 /obj/item/restraints/handcuffs/cable/zipties,
 /obj/item/restraints/handcuffs/cable/zipties,
-/turf/open/floor/iron/shuttle/arrivals/sign_1,
+/turf/open/floor/iron/shuttle/arrivals/sign_1{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "iO" = (
 /obj/structure/rack,
@@ -150,7 +182,9 @@
 /obj/item/tank/jetpack/improvised,
 /obj/item/tank/jetpack/improvised,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "kc" = (
 /obj/structure/table/optable,
@@ -162,13 +196,17 @@
 	},
 /obj/item/surgical_drapes,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "kr" = (
 /obj/structure/glowshroom/single,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer3,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "kx" = (
 /turf/closed/wall/mineral/plastitanium,
@@ -176,7 +214,9 @@
 "kT" = (
 /obj/structure/rack/shelf,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/arrivals/sign_1,
+/turf/open/floor/iron/shuttle/arrivals/sign_1{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "lm" = (
 /obj/structure/table/glass,
@@ -186,7 +226,9 @@
 	},
 /obj/item/storage/firstaid/fire,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "lA" = (
 /obj/machinery/door/airlock/hatch,
@@ -194,7 +236,9 @@
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer3{
 	dir = 8
 	},
-/turf/open/floor/catwalk_floor,
+/turf/open/floor/catwalk_floor{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "lC" = (
 /obj/machinery/mineral/ore_redemption/inteq{
@@ -204,20 +248,26 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/catwalk_floor,
+/turf/open/floor/catwalk_floor{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "mE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/manifold/general/visible/layer3{
 	dir = 1
 	},
-/turf/open/floor/catwalk_floor,
+/turf/open/floor/catwalk_floor{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "ni" = (
 /obj/machinery/vending/tool{
 	req_access_txt = "150"
 	},
-/turf/open/floor/iron/shuttle/arrivals/sign_1,
+/turf/open/floor/iron/shuttle/arrivals/sign_1{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "nF" = (
 /obj/structure/sign/warning/docking,
@@ -226,21 +276,27 @@
 "nI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "oI" = (
 /obj/machinery/atmospherics/components/unary/tank/nitrogen{
 	piping_layer = 3
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/arrivals/sign_1,
+/turf/open/floor/iron/shuttle/arrivals/sign_1{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "pa" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/dim/directional/north,
 /obj/effect/mob_spawn/human/vox_scavenger,
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/on/layer3,
-/turf/open/floor/iron/shuttle/arrivals/sign_1,
+/turf/open/floor/iron/shuttle/arrivals/sign_1{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "pk" = (
 /obj/structure/sign/departments/engineering,
@@ -253,7 +309,9 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer3,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "qR" = (
 /obj/item/clothing/head/bearpelt,
@@ -262,14 +320,18 @@
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer3{
 	dir = 9
 	},
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "rg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/on/layer3{
 	dir = 4
 	},
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "ru" = (
 /obj/structure/chair/comfy/shuttle{
@@ -279,7 +341,9 @@
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer3{
 	dir = 6
 	},
-/turf/open/floor/iron/shuttle/arrivals/sign_1,
+/turf/open/floor/iron/shuttle/arrivals/sign_1{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "rK" = (
 /obj/machinery/door/airlock/hatch{
@@ -287,7 +351,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer3,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "rT" = (
 /obj/effect/decal/cleanable/dirt,
@@ -295,14 +361,18 @@
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer3{
 	dir = 8
 	},
-/turf/open/floor/catwalk_floor,
+/turf/open/floor/catwalk_floor{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "sw" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer3{
 	dir = 8
 	},
-/turf/open/floor/catwalk_floor,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/catwalk_floor{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "sD" = (
 /obj/machinery/computer/operating,
@@ -313,7 +383,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "sY" = (
 /obj/effect/decal/cleanable/dirt,
@@ -321,45 +393,61 @@
 /obj/machinery/computer/piratepad_control{
 	dir = 0
 	},
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "uw" = (
 /obj/machinery/computer/shuttle/vox_raiders,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "uF" = (
 /obj/machinery/atmospherics/components/unary/tank/nitrogen,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/arrivals/sign_1,
+/turf/open/floor/iron/shuttle/arrivals/sign_1{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "uI" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/catwalk_floor,
+/turf/open/floor/catwalk_floor{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "uL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer3{
 	dir = 9
 	},
-/turf/open/floor/catwalk_floor,
+/turf/open/floor/catwalk_floor{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "uT" = (
 /obj/machinery/chem_master,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/arrivals/sign_1,
+/turf/open/floor/iron/shuttle/arrivals/sign_1{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "vS" = (
 /obj/machinery/door/window/brigdoor/eastleft,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/catwalk_floor,
+/turf/open/floor/catwalk_floor{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "vW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer3{
 	dir = 5
 	},
-/turf/open/floor/catwalk_floor,
+/turf/open/floor/catwalk_floor{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "wQ" = (
 /obj/machinery/door/window/brigdoor/northleft{
@@ -368,23 +456,31 @@
 /obj/effect/decal/cleanable/dirt{
 	req_access_txt = "150"
 	},
-/turf/open/floor/catwalk_floor,
+/turf/open/floor/catwalk_floor{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "yb" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "yz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/popcorn,
 /obj/machinery/atmospherics/pipe/manifold4w/general/hidden/layer3,
-/turf/open/floor/catwalk_floor,
+/turf/open/floor/catwalk_floor{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "yK" = (
 /obj/machinery/door/window/brigdoor/eastright,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/catwalk_floor,
+/turf/open/floor/catwalk_floor{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "yM" = (
 /obj/structure/sign/departments/security,
@@ -393,7 +489,9 @@
 "yR" = (
 /obj/structure/glowshroom/single,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "yU" = (
 /obj/structure/bed/matress,
@@ -402,7 +500,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "zR" = (
 /obj/machinery/door/airlock/maintenance_hatch{
@@ -411,7 +511,9 @@
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer3{
 	dir = 8
 	},
-/turf/open/floor/catwalk_floor,
+/turf/open/floor/catwalk_floor{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "Ag" = (
 /obj/structure/sign/warning/vacuum/external,
@@ -421,29 +523,39 @@
 /obj/item/trash/can,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/flour,
-/turf/open/floor/catwalk_floor,
+/turf/open/floor/catwalk_floor{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "Am" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/syndi_cakes,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "An" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/mob_spawn/human/vox_scavenger,
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/on/layer3,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "AG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/cheesie,
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer3,
-/turf/open/floor/catwalk_floor,
+/turf/open/floor/catwalk_floor{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "AQ" = (
 /obj/structure/closet/crate/engineering,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/arrivals/sign_1,
+/turf/open/floor/iron/shuttle/arrivals/sign_1{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "AR" = (
 /obj/structure/glowshroom/single,
@@ -451,12 +563,16 @@
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer3{
 	dir = 8
 	},
-/turf/open/floor/catwalk_floor,
+/turf/open/floor/catwalk_floor{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "Ca" = (
 /obj/structure/tank_holder/oxygen,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "CA" = (
 /obj/structure/sign/departments/medbay/alt,
@@ -465,7 +581,9 @@
 "CI" = (
 /obj/machinery/computer/camera_advanced/shuttle_docker/vox_raiders,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "FI" = (
 /obj/item/tank/internals/emergency_nitrogen_ext,
@@ -487,7 +605,9 @@
 /obj/item/tank/internals/emergency_nitrogen/double,
 /obj/item/tank/internals/emergency_nitrogen/double,
 /obj/item/tank/internals/emergency_nitrogen/double,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "Gr" = (
 /obj/machinery/door/airlock/hatch{
@@ -495,12 +615,16 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "GP" = (
 /obj/machinery/chem_dispenser,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/arrivals/sign_1,
+/turf/open/floor/iron/shuttle/arrivals/sign_1{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "HI" = (
 /obj/structure/rack,
@@ -517,19 +641,25 @@
 /obj/item/tank/jetpack/improvised,
 /obj/item/tank/jetpack/improvised,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "Ig" = (
 /obj/structure/ore_box,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "It" = (
 /obj/structure/rack/shelf,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/dim/directional/west,
 /obj/item/storage/box/syndie_kit/nuke,
-/turf/open/floor/iron/shuttle/arrivals/sign_1,
+/turf/open/floor/iron/shuttle/arrivals/sign_1{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "Jf" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -539,12 +669,16 @@
 	req_access_txt = "150"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "JC" = (
 /obj/item/trash/pistachios,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "JY" = (
 /obj/effect/decal/cleanable/dirt,
@@ -552,7 +686,9 @@
 	pixel_y = 6
 	},
 /obj/effect/turf_decal/box,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "Kk" = (
 /obj/item/scalpel{
@@ -577,7 +713,9 @@
 /obj/item/cautery,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/on/layer3,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "KF" = (
 /obj/item/storage/toolbox/mechanical,
@@ -585,13 +723,17 @@
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer3{
 	dir = 8
 	},
-/turf/open/floor/catwalk_floor,
+/turf/open/floor/catwalk_floor{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "KN" = (
 /obj/item/trash/raisins,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer3,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "KT" = (
 /obj/effect/decal/cleanable/dirt,
@@ -599,18 +741,24 @@
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer3{
 	dir = 8
 	},
-/turf/open/floor/catwalk_floor,
+/turf/open/floor/catwalk_floor{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "Lg" = (
 /obj/structure/bed/matress,
 /obj/effect/spawner/lootdrop/bedsheet,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "Ml" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/dim/directional/north,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "Ms" = (
 /obj/structure/rack,
@@ -621,7 +769,9 @@
 /obj/item/reagent_containers/food/drinks/soda_cans/grey_bull,
 /obj/item/reagent_containers/food/drinks/soda_cans/grey_bull,
 /obj/item/reagent_containers/food/drinks/soda_cans/grey_bull,
-/turf/open/floor/iron/shuttle/arrivals/sign_1,
+/turf/open/floor/iron/shuttle/arrivals/sign_1{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "Mu" = (
 /obj/structure/table/glass,
@@ -630,19 +780,25 @@
 /obj/item/storage/box/syringes,
 /obj/item/stack/cable_coil/random,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "Ns" = (
 /obj/item/trash/plate,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "Oy" = (
 /obj/machinery/vending/engivend{
 	req_access_txt = "150"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/arrivals/sign_1,
+/turf/open/floor/iron/shuttle/arrivals/sign_1{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "Pb" = (
 /obj/machinery/door/airlock/hatch{
@@ -653,7 +809,9 @@
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "PO" = (
 /obj/structure/rack,
@@ -662,14 +820,18 @@
 /obj/item/chameleon,
 /obj/item/chameleon,
 /obj/item/chameleon,
-/turf/open/floor/iron/shuttle/arrivals/sign_1,
+/turf/open/floor/iron/shuttle/arrivals/sign_1{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "Qk" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/arrivals/sign_1,
+/turf/open/floor/iron/shuttle/arrivals/sign_1{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "QZ" = (
 /obj/machinery/sleeper{
@@ -680,12 +842,16 @@
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer3{
 	dir = 5
 	},
-/turf/open/floor/iron/shuttle/arrivals/sign_1,
+/turf/open/floor/iron/shuttle/arrivals/sign_1{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "Ra" = (
 /obj/item/trash/tray,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "Rr" = (
 /obj/machinery/door/airlock/hatch{
@@ -696,11 +862,15 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/fans/tiny,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "RD" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "RK" = (
 /obj/item/storage/bag/ore,
@@ -719,27 +889,46 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/arrivals/sign_1,
+/turf/open/floor/iron/shuttle/arrivals/sign_1{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
+/area/shuttle/vox_raiders)
+"RU" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/general/hidden/layer3{
+	dir = 8
+	},
+/turf/open/floor/catwalk_floor{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "SF" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/arrivals/sign_1,
+/turf/open/floor/iron/shuttle/arrivals/sign_1{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "Tl" = (
 /obj/structure/table/glass,
 /obj/item/reagent_containers/syringe/charcoal,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "TO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/boritos,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "Ui" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer3,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "Uk" = (
 /obj/structure/window/reinforced{
@@ -751,7 +940,9 @@
 /obj/item/pen,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "Uz" = (
 /obj/item/reagent_containers/syringe/antiviral,
@@ -759,14 +950,18 @@
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer3{
 	dir = 8
 	},
-/turf/open/floor/catwalk_floor,
+/turf/open/floor/catwalk_floor{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "WR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/on/layer3{
 	dir = 8
 	},
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "Yi" = (
 /obj/structure/rack,
@@ -782,14 +977,18 @@
 	},
 /obj/effect/spawner/lootdrop/glowstick,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "YU" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/arrivals/sign_1,
+/turf/open/floor/iron/shuttle/arrivals/sign_1{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "YV" = (
 /obj/structure/rack,
@@ -805,7 +1004,9 @@
 	},
 /obj/effect/spawner/lootdrop/maintenance/five,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 "Zb" = (
 /obj/machinery/door/airlock/hatch{
@@ -833,7 +1034,9 @@
 	width = 17
 	},
 /obj/structure/fans/tiny,
-/turf/open/floor/iron/shuttle/cargo,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
 /area/shuttle/vox_raiders)
 
 (1,1,1) = {"
@@ -898,7 +1101,7 @@ kx
 kx
 kx
 AQ
-sw
+RU
 ah
 Yi
 kx
@@ -921,7 +1124,7 @@ GP
 uT
 kx
 AQ
-sw
+RU
 RD
 FI
 kx
@@ -939,7 +1142,7 @@ kx
 kx
 kc
 Al
-sw
+RU
 iC
 Tl
 kx
@@ -1008,7 +1211,7 @@ TO
 Jt
 Am
 RD
-sw
+RU
 RD
 JC
 Gr

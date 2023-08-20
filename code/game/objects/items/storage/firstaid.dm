@@ -185,11 +185,11 @@
 		return
 	new /obj/item/stack/medical/gauze(src)
 	new /obj/item/defibrillator/compact/combat(src)
-	new /obj/item/reagent_containers/hypospray/combat(src)
+	new /obj/item/reagent_containers/hypospray/combat/omnizine(src)
+	new /obj/item/reagent_containers/medspray/synthflesh(src)
 	new /obj/item/reagent_containers/medspray/synthflesh(src)
 	new /obj/item/reagent_containers/medspray/synthflesh(src)
 	new /obj/item/healthanalyzer/advanced(src)
-	new /obj/item/reagent_containers/syringe/lethal/choral(src)
 	new /obj/item/clothing/glasses/hud/health/night/syndicate(src)
 
 /obj/item/storage/firstaid/radbgone

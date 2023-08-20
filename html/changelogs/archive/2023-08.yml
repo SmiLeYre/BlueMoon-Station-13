@@ -52,3 +52,6 @@
   BongaTheProto:
   - imageadd: New haydee sprites for other borg jobs and updates to the medical one
   - imageadd: New Meka sprites for certain borg types
+2023-08-18:
+  Vhariik:
+  - bugfix: missing textures

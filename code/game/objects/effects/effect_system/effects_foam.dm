@@ -13,7 +13,7 @@
 	density = FALSE
 	layer = EDGED_TURF_LAYER
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-	var/amount = 3
+	var/amount = 10
 	animate_movement = 0
 	var/metal = 0
 	var/lifetime = 40

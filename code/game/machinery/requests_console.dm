@@ -327,16 +327,16 @@ GLOBAL_LIST_EMPTY(allConsoles)
 		switch(text2num(href_list["emergency"]))
 			if(1) //Security
 				radio_freq = FREQ_SECURITY
-				emergency = "Security"
+				emergency = "BНИМАНИЕ: СЛУЖБА БЕЗОПАСНОСТИ!"
 			if(2) //Engineering
 				radio_freq = FREQ_ENGINEERING
-				emergency = "Engineering"
+				emergency = "BНИМАНИЕ: ИНЖЕНЕРНЫЙ ОТДЕЛ!"
 			if(3) //Medical
 				radio_freq = FREQ_MEDICAL
-				emergency = "Medical"
+				emergency = "BНИМАНИЕ: МЕДИЦИНСКИЙ ОТДЕЛ!"
 		if(radio_freq)
 			Radio.set_frequency(radio_freq)
-			Radio.talk_into(src, "[emergency] emergency in [department]!!", radio_freq)
+			Radio.talk_into(src, "[emergency] Тревога в [department]!!", radio_freq)
 			update_icon()
 			addtimer(CALLBACK(src, .proc/clear_emergency), 5 MINUTES)
 
@@ -388,13 +388,13 @@ GLOBAL_LIST_EMPTY(allConsoles)
 				continue
 			switch(priority)
 				if(HIGH_MESSAGE_PRIORITY)		//High priority
-					alert = "PRIORITY Alert from [department][authentic]"
+					alert = "BНИМАНИЕ, ПРИОРИТЕТНОЕ ОБЪЯBЛЕНИЕ из [department][authentic]"
 					C.createmessage(src, alert, sending, HIGH_MESSAGE_PRIORITY)
 				if(EXTREME_MESSAGE_PRIORITY)	// Extreme Priority
-					alert = "EXTREME PRIORITY Alert from [department][authentic]"
+					alert = "BНИМАНИЕ, ЭКСТРИМАЛЬНО ПРИОРИТЕТНОЕ ОБЪЯBЛЕНИЕ из [department][authentic]"
 					C.createmessage(src, alert, sending, EXTREME_MESSAGE_PRIORITY)
 				else		// Normal priority
-					alert = "Message from [department][authentic]"
+					alert = "Bнимание, объявление из [department][authentic]"
 					C.createmessage(src, alert, sending, NORMAL_MESSAGE_PRIORITY)
 			screen = 6 //if it ever gets here that means (c.department == href_ls["dept"])
 
@@ -403,9 +403,9 @@ GLOBAL_LIST_EMPTY(allConsoles)
 		//log to (this)
 		switch(priority)
 			if(HIGH_MESSAGE_PRIORITY)
-				messages += "<span class='bad'>High Priority</span><br><b>To:</b> [dpt]<br>[sending]"
+				messages += "<span class='bad'>ПРИОРИТЕТНОЕ ОБЪЯBЛЕНИЕ</span><br><b>To:</b> [dpt]<br>[sending]"
 			if(EXTREME_MESSAGE_PRIORITY)
-				messages += "<span class='bad'>!!!Extreme Priority!!!</span><br><b>To:</b> [dpt]<br>[sending]"
+				messages += "<span class='bad'>!!!ЭКСТРИМАЛЬНО ПРИОРИТЕТНОЕ ОБЪЯBЛЕНИЕ!!!</span><br><b>To:</b> [dpt]<br>[sending]"
 			else
 				messages += "<b>To:</b> [dpt]<br>[sending]"
 

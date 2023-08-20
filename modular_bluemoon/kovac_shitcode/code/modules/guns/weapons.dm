@@ -316,11 +316,11 @@
 	parry_failed_stagger_duration = 4 SECONDS
 
 // Traitor Chainsaw
-/obj/item/chainsaw/inteq_chainsaw
+/obj/item/chainsaw/doomslayer/inteq_chainsaw
 	name = "Chainsaw"
 	desc = "<span class='warning'>VRRRRRRR!!!</span>"
-	armour_penetration = 60
-	force_on = 40
+	armour_penetration = 100
+	force_on = 55
 
 ///InteQ Uplink additions
 
@@ -333,10 +333,10 @@
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 
 /datum/uplink_item/dangerous/inteq_chainsaw
-	name = "Chainsaw"
+	name = "High Powered Chainsaw"
 	desc = "A high powered chainsaw for cutting up ...you know...."
-	item = /obj/item/chainsaw/inteq_chainsaw
-	cost = 12
+	item = /obj/item/chainsaw/doomslayer/inteq_chainsaw
+	cost = 22
 
 
 /// Clown Ops Uplink additions

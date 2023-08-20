@@ -6,3 +6,8 @@
 /datum/sprite_accessory/facial_hair/cool_nikolay/ver2
 	name = "Based Nikolay (Second)"
 	icon_state = "facial_handlebar2"
+
+/datum/sprite_accessory/hair/chub
+	name = "Forelock (Chub)"
+	icon = 'modular_bluemoon/krashly/icons/mob/hair.dmi'
+	icon_state = "forelock"

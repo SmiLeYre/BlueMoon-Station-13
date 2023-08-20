@@ -5,6 +5,7 @@
 	icon_state = "robot"
 	bubble_icon = "robot"
 	var/obj/item/pda/ai/aiPDA
+	var/flash_protect = FALSE
 
 /mob/living/silicon/robot/get_cell()
 	return cell
@@ -794,10 +795,11 @@
 	lawupdate = FALSE
 	scrambledcodes = TRUE // These are rogue borgs.
 	ionpulse = TRUE
-	var/playstyle_string = "<span class='big bold'>You are a Syndicate assault cyborg!</span><br>\
-							<b>You are armed with powerful offensive tools to aid you in your mission: help the operatives secure the nuclear authentication disk. \
-							Your cyborg LMG will slowly produce ammunition from your power supply, and your operative pinpointer will find and locate fellow nuclear operatives. \
-							<i>Help the operatives secure the disk at all costs!</i></b>"
+	flash_protect = TRUE
+	var/playstyle_string = "<span class='big bold'>Вы - Штурмовой Киборг Синдиката!</span><br>\
+							<b>Вы вооружены мощными наступательными средствами, которые помогут вам выполнить задание: помочь Союзным Оперативникам. \
+							Ваш LMG будет медленно производить боеприпасы из вашего источника питания, а ваш оперативный пинпоинтер будет находить и определять местоположение товарищей по Операции. \
+							<i>Помогите оперативникам любой ценой!!!</i></b>"
 	set_module = /obj/item/robot_module/syndicate
 	cell = /obj/item/stock_parts/cell/hyper
 	// radio = /obj/item/radio/borg/syndicate
@@ -823,24 +825,50 @@
 
 /mob/living/silicon/robot/modules/syndicate/medical
 	icon_state = "synd_medical"
-	playstyle_string = "<span class='big bold'>You are a Syndicate medical cyborg!</span><br>\
-						<b>You are armed with powerful medical tools to aid you in your mission: help the operatives secure the nuclear authentication disk. \
-						Your hypospray will produce Restorative Nanites, a wonder-drug that will heal most types of bodily damages, including clone and brain damage. It also produces morphine for offense. \
-						Your defibrillator paddles can revive operatives through their hardsuits, or can be used on harm intent to shock enemies! \
-						Your energy saw functions as a circular saw, but can be activated to deal more damage, and your operative pinpointer will find and locate fellow nuclear operatives. \
-						<i>Help the operatives secure the disk at all costs!</i></b>"
+	playstyle_string = "<span class='big bold'>Вы - Медицинский Киборг Синдиката!</span><br>\
+						<b>Вы вооружены мощными медицинскими инструментами, которые помогут вам выполнить задание: помочь союзным оперативникам. \
+						Ваш гипоспрей производит восстанавливающие наниты - чудо-лекарство, исцеляющее большинство видов телесных повреждений, включая повреждения мозга. Он также производит сильнодействующий морфий для нападения. \
+						Ваши дефибрилляторы могут оживлять оперативников через их бронескафандры, или могут быть использованы для нападения на врагов! \
+						Ваша энергетическая пила работает как циркулярная, но может быть активирована для нанесения больших повреждений, а ваш оперативный пинпоинтер найдет и определит местонахождение товарищей по Операции. \
+						<i>Помогите оперативникам любой ценой!!!</i></b>"
 	set_module = /obj/item/robot_module/syndicate_medical
 
 /mob/living/silicon/robot/modules/syndicate/saboteur
 	icon_state = "synd_engi"
-	playstyle_string = "<span class='big bold'>You are a Syndicate saboteur cyborg!</span><br>\
-						<b>You are armed with robust engineering tools to aid you in your mission: help the operatives secure the nuclear authentication disk. \
-						Your destination tagger will allow you to stealthily traverse the disposal network across the station \
-						Your welder will allow you to repair the operatives' exosuits, but also yourself and your fellow cyborgs \
-						Your cyborg chameleon projector allows you to assume the appearance and registered name of a Nanotrasen engineering borg, and undertake covert actions on the station \
-						Be aware that almost any physical contact or incidental damage will break your camouflage \
-						<i>Help the operatives secure the disk at all costs!</i></b>"
+	playstyle_string = "<span class='big bold'>Вы - Саботажный Киборг Синдиката!</span><br>\
+						<b>Вы вооружены надежными инженерными средствами, которые помогут вам выполнить задание: помочь союзным оперативникам. \
+						Ваш Маркер Назначения позволит Вам скрытно перемещаться по сети утилизации по всей станции. \
+						Ваш сварочный аппарат позволит Вам ремонтировать экзокостюмы оперативников, а также себя и своих товарищей-киборгов. \
+						Ваш Киборг-Проектор Хамелеон позволит вам принять облик и зарегистрированное имя инженерного борга Nanotrasen и проводить тайные операции на Космических Станциях. \
+						Имейте в виду, что почти любой физический контакт или случайное повреждение нарушит ваш камуфляж! \
+						<i>Помогите оперативникам любой ценой!!!</i></b>"
 	set_module = /obj/item/robot_module/saboteur
+
+/mob/living/silicon/robot/modules/syndicate/inteq
+	icon_state = "inteq_sec"
+	playstyle_string = "<span class='big bold'>Вы - Штурмовой Киборг ИнтеКью!</span><br>\
+							<b>Вы вооружены мощными наступательными средствами, которые помогут вам выполнить задание: помочь Союзным Оперативникам. \
+							Ваш LMG будет медленно производить боеприпасы из вашего источника питания, а ваш оперативный пинпоинтер будет находить и определять местоположение товарищей по Операции. \
+							<i>Помогите оперативникам любой ценой!!!</i></b>"
+
+/mob/living/silicon/robot/modules/syndicate/medical/inteq
+	icon_state = "inteq_medical"
+	playstyle_string = "<span class='big bold'>Вы - Медицинский Киборг ИнтеКью!</span><br>\
+						<b>Вы вооружены мощными медицинскими инструментами, которые помогут вам выполнить задание: помочь союзным оперативникам. \
+						Ваш гипоспрей производит восстанавливающие наниты - чудо-лекарство, исцеляющее большинство видов телесных повреждений, включая повреждения мозга. Он также производит сильнодействующий морфий для нападения. \
+						Ваши дефибрилляторы могут оживлять оперативников через их бронескафандры, или могут быть использованы для нападения на врагов! \
+						Ваша энергетическая пила работает как циркулярная, но может быть активирована для нанесения больших повреждений, а ваш оперативный пинпоинтер найдет и определит местонахождение товарищей по Операции. \
+						<i>Помогите оперативникам любой ценой!!!</i></b>"
+
+/mob/living/silicon/robot/modules/syndicate/saboteur/inteq
+	icon_state = "inteq_engi"
+	playstyle_string = "<span class='big bold'>Вы - Саботажный Киборг ИнтеКью!</span><br>\
+						<b>Вы вооружены надежными инженерными средствами, которые помогут вам выполнить задание: помочь союзным оперативникам. \
+						Ваш Маркер Назначения позволит Вам скрытно перемещаться по сети утилизации по всей станции. \
+						Ваш сварочный аппарат позволит Вам ремонтировать экзокостюмы оперативников, а также себя и своих товарищей-киборгов. \
+						Ваш Киборг-Проектор Хамелеон позволит вам принять облик и зарегистрированное имя инженерного борга Nanotrasen и проводить тайные операции на Космических Станциях. \
+						Имейте в виду, что почти любой физический контакт или случайное повреждение нарушит ваш камуфляж! \
+						<i>Помогите оперативникам любой ценой!!!</i></b>"
 
 /mob/living/silicon/robot/modules/syndicate/spider// used for space ninja and their cyborg hacking special objective
 	bubble_icon = "spider"

@@ -1320,7 +1320,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(ITEM_SLOT_HANDS)
 			if(H.get_empty_held_indexes())
 				return TRUE
-			return FALSE
+			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_MASK)
 			if(H.wear_mask)
 				return FALSE
@@ -1334,7 +1334,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				return FALSE
 			if( !(I.slot_flags & ITEM_SLOT_NECK) )
 				return FALSE
-			return TRUE
+			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_BACK)
 			if(H.back)
 				return FALSE
@@ -1568,7 +1568,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 /datum/species/proc/equip_delay_self_check(obj/item/I, mob/living/carbon/human/H, bypass_equip_delay_self)
 	if(!I.equip_delay_self || bypass_equip_delay_self)
 		return TRUE
-	H.visible_message("<span class='notice'>[H] start putting on [I]...</span>", "<span class='notice'>You start putting on [I]...</span>")
+	H.visible_message("<span class='notice'>[H] одевается в [I]...</span>", "<span class='notice'>Ты натягиваешь [I]...</span>")
 	return do_after(H, I.equip_delay_self, target = H)
 
 /datum/species/proc/before_equip_job(datum/job/J, mob/living/carbon/human/H)

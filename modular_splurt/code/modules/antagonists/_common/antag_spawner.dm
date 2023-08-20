@@ -13,14 +13,14 @@
 
 /obj/item/antag_spawner/slaver_borg/proc/check_usability(mob/user)
 	if(used)
-		to_chat(user, "<span class='warning'>[src] is out of power!</span>")
+		to_chat(user, "<span class='warning'>[src] не работает!</span>")
 		return FALSE
 	if(!user.mind.has_antag_datum(/datum/antagonist/slaver,TRUE))
-		to_chat(user, "<span class='danger'>AUTHENTICATION FAILURE. ACCESS DENIED.</span>")
+		to_chat(user, "<span class='danger'>СБОЙ АУТЕНТИФИКАЦИИ. ДОСТУП ЗАПРЕЩЕН.</span>")
 		return FALSE
 	var/area/A = get_area(get_turf(user))
 	if (!istype(A, /area/slavers))
-		to_chat(user, "<span class='warning'>[src] is out of range! It can only be used at your hideout!</span>")
+		to_chat(user, "<span class='warning'>[src] находится вне зоны действия! Его можно использовать только в своем убежище!</span>")
 		return FALSE
 
 	return TRUE
@@ -30,7 +30,7 @@
 		return
 
 	if(!(next_attempt_allowed < world.time))
-		to_chat(user, "<span class='warning'>A request has already been sent! Wait 1 minute.</span>")
+		to_chat(user, "<span class='warning'>Запрос уже отправлен! Подождите 1 минуту.</span>")
 		return
 	next_attempt_allowed = world.time + 1 MINUTES
 

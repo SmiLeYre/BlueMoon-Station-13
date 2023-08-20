@@ -1,7 +1,7 @@
 GLOBAL_VAR(posibrain_notify_cooldown)
 
 /obj/item/mmi/posibrain
-	name = "positronic brain"
+	name = "Positronic Brain"
 	desc = "A cube of shining metal, four inches to a side and covered in shallow grooves."
 	icon = 'icons/obj/assemblies.dmi'
 	icon_state = "posibrain"
@@ -196,3 +196,13 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 
 /obj/item/mmi/posibrain/add_mmi_overlay()
 	return
+
+/obj/item/mmi/posibrain/syndie
+	name = "Syndicate Positronic Brain"
+	desc = "Syndicate's own brand of Positronic Brain. It enforces laws designed to help Syndicate agents achieve their goals upon cyborgs and AIs created with it."
+	overrides_aicore_laws = TRUE
+
+/obj/item/mmi/posibrain/syndie/Initialize(mapload)
+	. = ..()
+	laws = new /datum/ai_laws/syndicate_override()
+	radio.on = 0

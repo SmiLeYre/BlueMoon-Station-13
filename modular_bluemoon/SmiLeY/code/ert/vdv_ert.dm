@@ -56,7 +56,7 @@
 	glasses = /obj/item/clothing/glasses/sunglasses
 	belt = /obj/item/storage/belt/security/vdv
 	id = /obj/item/card/id/ert
-	l_pocket = /obj/item/gun/ballistic/automatic/pistol
+	l_pocket = /obj/item/ammo_box/magazine/m10mm
 	r_pocket = /obj/item/ammo_box/magazine/m10mm
 	back = /obj/item/storage/backpack/rucksack
 
@@ -143,5 +143,7 @@
 /obj/item/storage/belt/security/vdv/PopulateContents()
 	new /obj/item/grenade/flashbang(src)
 	new	/obj/item/grenade/stingbang(src)
+	new /obj/item/grenade/chem_grenade/teargas(src)
 	new /obj/item/restraints/handcuffs/cable/zipties(src)
-	new /obj/item/restraints/handcuffs(src)
+	new /obj/item/reagent_containers/hypospray/medipen/salacid(src)
+

@@ -20,6 +20,12 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	RADIO_KEY_SYNDICATE = RADIO_CHANNEL_SYNDICATE,
 	RADIO_KEY_CENTCOM = RADIO_CHANNEL_CENTCOM,
 	RADIO_KEY_HOTEL = RADIO_CHANNEL_HOTEL, //SPLURT EDIT ADDITION
+	RADIO_KEY_PIRATE = RADIO_CHANNEL_PIRATE,
+
+	// Ghost-Roles
+	RADIO_KEY_DS1 = RADIO_CHANNEL_DS1,
+	RADIO_KEY_DS2 = RADIO_CHANNEL_DS2,
+	RADIO_KEY_TARKOFF = RADIO_CHANNEL_TARKOFF,
 
 	// Admin
 	MODE_KEY_ADMIN = MODE_ADMIN,
@@ -439,7 +445,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		message = asiatish(message)
 
 	if(HAS_TRAIT(src, TRAIT_UKRAINE))
-		message = asiatish(message)
+		message = ukraine(message)
 
 	if(HAS_TRAIT(src, TRAIT_KARTAVII))
 		message = kartavo(message)
