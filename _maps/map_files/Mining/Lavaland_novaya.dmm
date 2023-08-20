@@ -33,9 +33,17 @@
 /area/mine/xenoarch_area_c)
 "aq" = (
 /obj/structure/stone_tile/slab,
-/obj/item/storage/toolbox/syndicate,
-/obj/structure/table/wood/shadow,
+/obj/item/crowbar/ashwalker,
+/obj/item/crowbar/ashwalker,
+/obj/item/screwdriver/ashwalker,
+/obj/item/screwdriver/ashwalker,
 /obj/item/weldingtool/experimental/ashwalker,
+/obj/item/weldingtool/experimental/ashwalker,
+/obj/item/wirecutters/ashwalker,
+/obj/item/wirecutters/ashwalker,
+/obj/item/wrench/ashwalker,
+/obj/item/wrench/ashwalker,
+/obj/structure/table/wood/shadow,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/lavaland/unpowered/ash_walkers)
 "as" = (
@@ -118,13 +126,13 @@
 	},
 /obj/item/poster/random_contraband,
 /turf/open/floor/plating,
-/area/mine/xenoarch)
+/area/mine/maintenance)
 "aH" = (
 /obj/machinery/light/small{
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/mine/xenoarch)
+/area/mine/maintenance)
 "aQ" = (
 /obj/structure/reagent_dispensers/foamtank,
 /turf/open/floor/plating,
@@ -168,7 +176,7 @@
 "bc" = (
 /obj/structure/frame,
 /turf/open/floor/plating,
-/area/mine/xenoarch)
+/area/mine/maintenance)
 "bf" = (
 /obj/machinery/space_heater,
 /turf/open/floor/plating,
@@ -186,7 +194,7 @@
 "bj" = (
 /obj/machinery/door/airlock/maintenance,
 /turf/open/floor/plating,
-/area/mine/xenoarch)
+/area/mine/maintenance)
 "bk" = (
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -240,7 +248,7 @@
 "ci" = (
 /obj/structure/grille,
 /turf/open/floor/plating,
-/area/mine/xenoarch)
+/area/mine/maintenance)
 "cj" = (
 /obj/structure/closet/cardboard,
 /turf/open/floor/plating,
@@ -272,7 +280,7 @@
 "cn" = (
 /obj/machinery/light/small,
 /turf/open/floor/plating,
-/area/mine/xenoarch)
+/area/mine/maintenance)
 "co" = (
 /obj/machinery/door/airlock/research/glass,
 /turf/open/floor/plating,
@@ -311,7 +319,7 @@
 /area/mine/xenoarch_area_c)
 "cv" = (
 /turf/open/floor/plating,
-/area/mine/xenoarch)
+/area/mine/maintenance)
 "cw" = (
 /obj/structure/rack,
 /obj/item/pickaxe,
@@ -346,18 +354,18 @@
 "cA" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/open/floor/plating,
-/area/mine/xenoarch)
+/area/mine/maintenance)
 "cB" = (
 /obj/structure/rack,
 /obj/item/storage/toolbox/mechanical,
 /obj/item/storage/toolbox/mechanical,
 /turf/open/floor/plating,
-/area/mine/xenoarch)
+/area/mine/maintenance)
 "cC" = (
 /obj/machinery/light/small,
 /obj/machinery/space_heater,
 /turf/open/floor/plating,
-/area/mine/xenoarch)
+/area/mine/maintenance)
 "cD" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -605,7 +613,7 @@
 	req_access_txt = "47"
 	},
 /turf/open/floor/plating,
-/area/mine/xenoarch)
+/area/mine/mechbay)
 "cX" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -744,7 +752,7 @@
 	pixel_y = 28
 	},
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/mechbay)
 "dp" = (
 /obj/machinery/airalarm{
 	pixel_y = 23
@@ -760,7 +768,7 @@
 	c_tag = "Xenoarchaeology Sixteen"
 	},
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/mechbay)
 "dq" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
@@ -772,7 +780,7 @@
 	pixel_y = 24
 	},
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/mechbay)
 "dr" = (
 /obj/structure/closet/wardrobe/xenoarch,
 /obj/effect/turf_decal/tile/purple{
@@ -788,7 +796,7 @@
 	pixel_y = 32
 	},
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/mechbay)
 "ds" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
@@ -1049,7 +1057,7 @@
 	},
 /obj/machinery/suit_storage_unit/mining,
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/mechbay)
 "dM" = (
 /obj/structure/closet/wardrobe/xenoarch,
 /obj/effect/turf_decal/tile/purple{
@@ -1058,7 +1066,7 @@
 /obj/effect/turf_decal/tile/purple,
 /obj/item/clothing/glasses/meson,
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/mechbay)
 "dN" = (
 /obj/structure/sign/poster/official/random{
 	pixel_x = -32
@@ -1246,13 +1254,13 @@
 	pixel_x = -32
 	},
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/mechbay)
 "eh" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/mechbay)
 "ei" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 6
@@ -1265,7 +1273,7 @@
 	dir = 10
 	},
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/mechbay)
 "ej" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 8
@@ -1274,7 +1282,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/mechbay)
 "ek" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 4
@@ -1295,7 +1303,7 @@
 	pixel_x = 24
 	},
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/mechbay)
 "el" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 4
@@ -1429,7 +1437,7 @@
 	pixel_x = 28
 	},
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/mechbay)
 "ey" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
@@ -1685,7 +1693,7 @@
 /obj/effect/turf_decal/tile/purple,
 /obj/machinery/suit_storage_unit/mining,
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/mechbay)
 "fe" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 8
@@ -1704,7 +1712,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/mechbay)
 "fg" = (
 /obj/structure/closet/wardrobe/xenoarch,
 /obj/effect/turf_decal/tile/purple{
@@ -1717,7 +1725,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/item/clothing/glasses/meson,
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/mechbay)
 "fh" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -1813,7 +1821,7 @@
 	icon_state = "0-4"
 	},
 /turf/open/floor/plating,
-/area/mine/xenoarch)
+/area/mine/mechbay)
 "fv" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable/yellow{
@@ -1823,7 +1831,7 @@
 	icon_state = "0-8"
 	},
 /turf/open/floor/plating,
-/area/mine/xenoarch)
+/area/mine/mechbay)
 "fw" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/cable/yellow{
@@ -1842,7 +1850,7 @@
 	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel,
-/area/mine/xenoarch)
+/area/mine/mechbay)
 "fx" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable/yellow{
@@ -1852,7 +1860,7 @@
 	icon_state = "0-4"
 	},
 /turf/open/floor/plating,
-/area/mine/xenoarch)
+/area/mine/mechbay)
 "fy" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable/yellow{
@@ -1860,7 +1868,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plating,
-/area/mine/xenoarch)
+/area/mine/mechbay)
 "fz" = (
 /turf/open/floor/plasteel/stairs,
 /area/mine/xenoarch)
@@ -3443,6 +3451,9 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/mine/xenoarch_area_c)
+"iO" = (
+/turf/closed/wall,
+/area/mine/mechbay)
 "iP" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable/yellow,
@@ -4218,6 +4229,9 @@
 	dir = 4;
 	name = "Xenoarch";
 	pixel_x = 24
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
@@ -6421,7 +6435,7 @@
 	pixel_y = 24
 	},
 /turf/open/floor/circuit,
-/area/mine/xenoarch)
+/area/mine/maintenance)
 "qw" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
@@ -6834,7 +6848,7 @@
 	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/dark,
-/area/mine/xenoarch)
+/area/mine/maintenance)
 "rx" = (
 /turf/open/floor/plasteel/freezer,
 /area/space)
@@ -7016,7 +7030,7 @@
 /area/ruin/lavaland/unpowered/ash_walkers)
 "rV" = (
 /turf/open/floor/circuit,
-/area/mine/xenoarch)
+/area/mine/maintenance)
 "rW" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
@@ -9792,7 +9806,7 @@
 	icon_state = "2-4"
 	},
 /turf/open/floor/plating,
-/area/mine/xenoarch)
+/area/mine/maintenance)
 "zO" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -10283,6 +10297,13 @@
 	},
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"Bs" = (
+/obj/effect/turf_decal/tile/purple{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/purple,
+/turf/open/floor/plasteel,
+/area/mine/mechbay)
 "Bt" = (
 /obj/machinery/atmospherics/pipe/manifold/general/hidden{
 	dir = 8
@@ -10858,7 +10879,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/mine/xenoarch)
+/area/mine/maintenance)
 "De" = (
 /obj/structure/stone_tile/cracked{
 	dir = 1
@@ -11446,7 +11467,7 @@
 	network = list("mine")
 	},
 /turf/open/floor/circuit,
-/area/mine/xenoarch)
+/area/mine/maintenance)
 "Fb" = (
 /obj/item/storage/toolbox/syndicate,
 /obj/structure/table/wood,
@@ -11462,12 +11483,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/mine/laborcamp)
-"Fd" = (
-/obj/structure/stone_tile/slab,
-/obj/item/weldingtool/experimental,
-/obj/structure/table/wood/mushroom,
-/turf/open/indestructible/boss,
-/area/ruin/lavaland/unpowered/ash_walkers)
 "Ff" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 4
@@ -11864,7 +11879,7 @@
 	icon_state = "1-8"
 	},
 /turf/open/floor/plating,
-/area/mine/xenoarch)
+/area/mine/maintenance)
 "Gv" = (
 /obj/item/kirbyplants/random,
 /turf/open/floor/plasteel,
@@ -12693,7 +12708,7 @@
 	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/dark,
-/area/mine/xenoarch)
+/area/mine/maintenance)
 "Jl" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/condiment/saltshaker{
@@ -13168,7 +13183,7 @@
 	dir = 9
 	},
 /turf/open/floor/circuit,
-/area/mine/xenoarch)
+/area/mine/maintenance)
 "KI" = (
 /obj/structure/stone_tile/block{
 	dir = 4
@@ -13939,7 +13954,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
-/area/mine/xenoarch)
+/area/mine/maintenance)
 "MY" = (
 /obj/machinery/vending/cigarette,
 /obj/machinery/light,
@@ -15004,7 +15019,7 @@
 	icon_state = "1-4"
 	},
 /turf/open/floor/circuit,
-/area/mine/xenoarch)
+/area/mine/maintenance)
 "Qo" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -15967,7 +15982,7 @@
 "Tv" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /turf/open/floor/plasteel/dark,
-/area/mine/xenoarch)
+/area/mine/maintenance)
 "Ty" = (
 /obj/structure/stone_tile{
 	dir = 1
@@ -16315,6 +16330,14 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/mine/laborcamp/security)
+"Uw" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/turf/open/floor/plasteel,
+/area/mine/mechbay)
 "Ux" = (
 /obj/structure/stone_tile/block{
 	dir = 8
@@ -16387,8 +16410,17 @@
 /area/lavaland/surface/outdoors)
 "UL" = (
 /obj/structure/stone_tile/slab,
-/obj/item/storage/toolbox/syndicate,
 /obj/structure/table/wood/mushroom,
+/obj/item/crowbar/ashwalker,
+/obj/item/crowbar/ashwalker,
+/obj/item/screwdriver/ashwalker,
+/obj/item/screwdriver/ashwalker,
+/obj/item/weldingtool/experimental/ashwalker,
+/obj/item/weldingtool/experimental/ashwalker,
+/obj/item/wirecutters/ashwalker,
+/obj/item/wirecutters/ashwalker,
+/obj/item/wrench/ashwalker,
+/obj/item/wrench/ashwalker,
 /turf/open/indestructible/boss,
 /area/ruin/lavaland/unpowered/ash_walkers)
 "UO" = (
@@ -16424,6 +16456,9 @@
 /obj/structure/stone_tile/center/cracked,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/lavaland/unpowered/ash_walkers)
+"UU" = (
+/turf/open/floor/plasteel,
+/area/mine/mechbay)
 "UV" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 8
@@ -17171,6 +17206,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/laborcamp/security)
+"Xp" = (
+/obj/effect/turf_decal/tile/purple{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/purple{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/mine/mechbay)
 "Xq" = (
 /obj/effect/turf_decal/bot_white,
 /obj/machinery/light/small{
@@ -17594,6 +17638,9 @@
 /obj/item/storage/firstaid/brute,
 /turf/open/floor/mineral/titanium/purple,
 /area/space)
+"YE" = (
+/turf/closed/wall,
+/area/mine/maintenance)
 "YF" = (
 /obj/machinery/vending/coffee,
 /obj/machinery/light,
@@ -17719,6 +17766,7 @@
 "YV" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/table/wood/mushroom,
+/obj/item/clothing/head/helmet/skull,
 /turf/open/indestructible/boss,
 /area/ruin/lavaland/unpowered/ash_walkers)
 "YW" = (
@@ -75836,7 +75884,7 @@ qH
 qH
 qH
 Sp
-Fd
+YV
 xk
 NU
 ZM
@@ -119719,13 +119767,13 @@ ab
 ab
 ab
 ab
-Bi
+YE
 aE
 aE
 bc
 aE
 aE
-Bi
+YE
 cv
 Bi
 cO
@@ -119976,13 +120024,13 @@ ab
 ab
 ab
 ab
-Bi
-Bi
-Bi
-Bi
-Bi
-Bi
-Bi
+YE
+YE
+YE
+YE
+YE
+YE
+YE
 cv
 Bi
 cP
@@ -120233,13 +120281,13 @@ ab
 ab
 ab
 ab
-Bi
+YE
 cv
 cv
-Bi
+YE
 rV
 rV
-Bi
+YE
 cv
 Bi
 cQ
@@ -120490,13 +120538,13 @@ ab
 ab
 ab
 ab
-Bi
+YE
 cv
 cv
-Bi
+YE
 Jk
 Qn
-Bi
+YE
 zN
 VF
 Mt
@@ -120747,10 +120795,10 @@ ab
 ab
 ab
 ab
-Bi
+YE
 aH
 cv
-Bi
+YE
 Dd
 rw
 MX
@@ -121004,13 +121052,13 @@ ab
 ab
 ab
 ab
-Bi
+YE
 cv
 cv
-Bi
+YE
 Tv
 KH
-Bi
+YE
 cv
 Bi
 cT
@@ -121261,13 +121309,13 @@ ab
 ab
 ab
 ab
-Bi
+YE
 cv
 cv
-Bi
+YE
 qv
 Fa
-Bi
+YE
 cn
 Bi
 cU
@@ -121518,13 +121566,13 @@ ab
 ab
 ab
 ab
-Bi
+YE
 cv
 cv
-Bi
-Bi
-Bi
-Bi
+YE
+YE
+YE
+YE
 cv
 Bi
 cV
@@ -121775,22 +121823,22 @@ ab
 ab
 ab
 ab
-Bi
+YE
 cv
 cv
 cv
 cv
 cn
-Bi
+YE
 ci
 Bi
-Bi
-Bi
-Bi
-Bi
-Bi
-Bi
-Bi
+iO
+iO
+iO
+iO
+iO
+iO
+iO
 cX
 gg
 cX
@@ -122032,16 +122080,16 @@ ab
 ab
 ab
 ab
-Bi
+YE
 cv
 cv
 cv
 cv
 cv
-Bi
+YE
 cv
 cA
-Bi
+iO
 do
 dL
 eg
@@ -122289,21 +122337,21 @@ ab
 ab
 ab
 ab
-Bi
+YE
 cv
 cv
 cv
 cv
 cv
-Bi
+YE
 cv
 cv
 cW
-cR
-cq
+Xp
+UU
 eh
-cq
-fe
+UU
+Bs
 fv
 fI
 gi
@@ -122546,20 +122594,20 @@ ab
 ab
 ab
 ab
-Bi
-Bi
-Bi
-Bi
+YE
+YE
+YE
+YE
 bj
-Bi
-Bi
+YE
+YE
 cv
 cB
-Bi
+iO
 dp
-cq
+UU
 ei
-ew
+Uw
 ff
 fw
 fR
@@ -122806,18 +122854,18 @@ ab
 ab
 ab
 ab
-Bi
+YE
 cv
 cv
 cv
 cv
 cC
-Bi
+iO
 dq
-cq
+UU
 ej
-cq
-fe
+UU
+Bs
 fx
 fI
 gk
@@ -123063,13 +123111,13 @@ ab
 ab
 ab
 ab
-Bi
+YE
 ci
 Bi
 Bi
 Bi
 Bi
-Bi
+iO
 dr
 dM
 ek
@@ -123320,19 +123368,19 @@ ab
 ab
 ab
 ab
-Bi
+YE
 cv
 Bi
 cp
 cw
 cp
-Bi
-Bi
-Bi
-Bi
-Bi
-Bi
-Bi
+iO
+iO
+iO
+iO
+iO
+iO
+iO
 fL
 gm
 gQ
@@ -123577,7 +123625,7 @@ ab
 ab
 ab
 ab
-Bi
+YE
 cv
 co
 cq
@@ -123834,8 +123882,8 @@ ab
 ab
 ab
 ab
-Bi
-Bi
+YE
+YE
 Bi
 cr
 cx

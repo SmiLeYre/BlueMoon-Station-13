@@ -654,16 +654,17 @@ SUBSYSTEM_DEF(vote)
 			. += "<br><font size=1><small><b>[ROUNDTYPE_DYNAMIC_LIGHT]</b> (30-50 угрозы, без командных ролей)</font></small>"
 			. += "<br><font size=1><small><b>[ROUNDTYPE_EXTENDED]</b> (без угроз)</font></small>"
 */
-			. += "<br>ГОЛОСОВАНИЕ ЗА РЕЖИМЫ ДИНАМИКА В РАЗРАБОТКЕ!"
+			. += "<br>ПОДХОД К ГОЛОСОВАНИЮ В РАЗРАБОТКЕ!"
 			. += "<br>Если выбирается [ROUNDTYPE_DYNAMIC], то выбирается одна из вариаций динамика, которые описаны ниже:"
 			. += "<br><font size=1><small><b>[ROUNDTYPE_DYNAMIC_TEAMBASED]</b> (55-100 угрозы, только командные и особые одиночные антагонисты);</font></small>"
 			. += "<br><font size=1><small><b>[ROUNDTYPE_DYNAMIC_HARD]</b> (75-100 угрозы);</font></small>"
 			. += "<br><font size=1><small><b>[ROUNDTYPE_DYNAMIC_MEDIUM]</b> (40-60 угрозы);</font></small>"
 			. += "<br><font size=1><small><b>[ROUNDTYPE_DYNAMIC_LIGHT]</b> (25-40 угрозы, без командных антагонистов);</font></small>"
 			. += "<br><font size=1><small><b>[ROUNDTYPE_EXTENDED]</b> (угрозы не спавнятся сами, только администрация может создавать их).</font></small>"
-			. += "<br>Вариация режима из прошлого раунда в новом выпасть не может (кроме эксты)."
+			. += "<br>Вариация [ROUNDTYPE_DYNAMIC] из прошлого раунда в новом выпасть не может (кроме эксты)."
 			if(SSpersistence.last_dynamic_gamemode)
-				. += "<br>Последняя вариация режима: <b>[SSpersistence.last_dynamic_gamemode]</b>."
+				. += "<br>Последняя вариация: <b>[SSpersistence.last_dynamic_gamemode]</b>."
+			. += "<h4>Проходит Эксперимент - чередование режимов. Если Режим выпадает три раза подряд - форсится обратный."
 			. += "<br>Осталось времени: [DisplayTimeText((SSticker.timeLeft - ROUNDTYPE_VOTE_END_PENALTY))]<hr><ul>"
 		else
 			. += "Осталось времени: [DisplayTimeText(end_time-world.time)]<hr><ul>"

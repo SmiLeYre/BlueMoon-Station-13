@@ -352,7 +352,7 @@
 			var/list/messagevoice = list("Эй, [H.name]! Будь на месте, я иду!" = 'sound/voice/medbot/coming.ogg',"Подожди, [H.name]! Я хочу помочь!" = 'sound/voice/medbot/help.ogg',"[H.name], вы выглядите раненным!" = 'sound/voice/medbot/injured.ogg')
 			var/message = pick(messagevoice)
 			if(prob(1) && ISINRANGE_EX(H.getFireLoss(), 0, 20))
-				message = "Notices your minor burns*OwO what's this?"
+				message = "Замечаю ваши небольшие ожоги... OwO, WoW, что это такое?"
 				messagevoice[message] = 'sound/voice/medbot/owo.ogg'
 			speak(message)
 			playsound(loc, messagevoice[message], 50, 0)
@@ -629,7 +629,7 @@
 		return
 
 	if(C.stat == DEAD || (HAS_TRAIT(C, TRAIT_FAKEDEATH)))
-		var/list/messagevoice = list("Нет! Не закрывай глаза!" = 'sound/voice/medbot/no.ogg',"Живи, чёрт возьми. ЖИBИ!" = 'sound/voice/medbot/live.ogg',"Я... я никогда раньше не терял пациентов. Исключая сегодня, я имею в виду.." = 'sound/voice/medbot/lost.ogg')
+		var/list/messagevoice = list("Нет! Не закрывай глаза!" = 'sound/voice/medbot/no.ogg',"Живи, чёрт возьми. ЖИBИ!" = 'sound/voice/medbot/live.ogg',"Я... я никогда раньше не терял пациентов. Исключая сегодня, я имею в виду..." = 'sound/voice/medbot/lost.ogg')
 		var/message = pick(messagevoice)
 		speak(message)
 		playsound(loc, messagevoice[message], 50, 0)

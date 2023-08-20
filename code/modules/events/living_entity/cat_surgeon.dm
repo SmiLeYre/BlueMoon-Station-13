@@ -40,7 +40,7 @@
 
 	var/turf/T = get_turf(pick(spawn_locs))
 	var/mob/living/simple_animal/hostile/cat_butcherer/S = new(T)
-	playsound(S, 'sound/misc/catscream.ogg', 75, 1, 100)
+	playsound(S, 'sound/misc/catscream.ogg', 75, 1, 1000)
 	message_admins("A cat surgeon has been spawned at [COORD(T)][ADMIN_JMP(T)]")
 	log_game("A cat surgeon has been spawned at [COORD(T)]")
 	return SUCCESSFUL_SPAWN

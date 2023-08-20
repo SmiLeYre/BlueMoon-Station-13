@@ -43,6 +43,12 @@
 	clothing_flags = NOSLIP | NOSLIP_ICE
 	armor = list(MELEE = 40, BULLET = 30, LASER = 25, ENERGY = 25, BOMB = 50, BIO = 30, RAD = 30, FIRE = 90, ACID = 50)
 
+/obj/item/clothing/shoes/combat/swat/knife
+
+/obj/item/clothing/shoes/combat/swat/knife/Initialize()
+	. = ..()
+	new /obj/item/kitchen/knife/combat(src)
+
 /obj/item/clothing/shoes/sandal
 	desc = "A pair of rather plain wooden sandals."
 	name = "sandals"

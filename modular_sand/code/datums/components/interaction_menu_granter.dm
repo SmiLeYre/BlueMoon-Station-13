@@ -197,9 +197,9 @@
 		.["no_aphro"] = 			!CHECK_BITFIELD(prefs.cit_toggles, NO_APHRO)
 		.["no_ass_slap"] = 			!CHECK_BITFIELD(prefs.cit_toggles, NO_ASS_SLAP)
 		.["no_auto_wag"] = 			!CHECK_BITFIELD(prefs.cit_toggles, NO_AUTO_WAG)
+		.["no_disco_dance"] = 		!CHECK_BITFIELD(prefs.cit_toggles, NO_DISCO_DANCE)
 		.["chastity_pref"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, CHASTITY)
 		.["stimulation_pref"] = 	!!CHECK_BITFIELD(prefs.cit_toggles, STIMULATION)
-		.["disco_dance"] = 			!!CHECK_BITFIELD(prefs.cit_toggles, NO_DISCO_DANCE)
 		.["edging_pref"] =			!!CHECK_BITFIELD(prefs.cit_toggles, EDGING)
 
 /proc/num_to_pref(num)
@@ -355,13 +355,13 @@
 					TOGGLE_BITFIELD(prefs.cit_toggles, NO_ASS_SLAP)
 				if("no_auto_wag")
 					TOGGLE_BITFIELD(prefs.cit_toggles, NO_AUTO_WAG)
+				if("no_disco_dance")
+					TOGGLE_BITFIELD(prefs.cit_toggles, NO_DISCO_DANCE)
 				// SPLURT edit
 				if("chastity_pref")
 					TOGGLE_BITFIELD(prefs.cit_toggles, CHASTITY)
 				if("stimulation_pref")
 					TOGGLE_BITFIELD(prefs.cit_toggles, STIMULATION)
-				if("disco_dance")
-					TOGGLE_BITFIELD(prefs.cit_toggles, NO_DISCO_DANCE)
 				if("edging_pref")
 					TOGGLE_BITFIELD(prefs.cit_toggles, EDGING)
 				//

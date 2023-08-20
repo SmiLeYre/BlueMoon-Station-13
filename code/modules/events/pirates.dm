@@ -214,13 +214,13 @@
 	rechargeTime = 3 MINUTES
 
 /obj/machinery/suit_storage_unit/pirate
-	helmet_type = /obj/item/clothing/head/helmet/space/pirate/bandana
+	helmet_type = /obj/item/clothing/head/helmet/space/pirate/bandana/eva
 	suit_type = /obj/item/clothing/suit/space/pirate
 	mask_type = /obj/item/clothing/mask/gas/glass
 	storage_type = /obj/item/tank/jetpack/oxygen/harness
 
 /obj/machinery/suit_storage_unit/pirate/captain
-	helmet_type = /obj/item/clothing/head/helmet/space/pirate
+	helmet_type = /obj/item/clothing/head/helmet/space/pirate/eva
 	suit_type = /obj/item/clothing/suit/space/pirate
 	mask_type = /obj/item/clothing/mask/gas/glass
 	storage_type = /obj/item/tank/jetpack/oxygen/harness
@@ -505,7 +505,7 @@
 	var/obj/item/holochip/H = AM
 	return H.credits
 
-/obj/item/clothing/head/helmet/space/pirate
+/obj/item/clothing/head/helmet/space/pirate/eva
 	name = "Modified EVA helmet"
 	desc = "A modified helmet to allow space pirates to intimidate their customers whilst staying safe from the void. Comes with some additional protection."
 	icon_state = "spacepirate"
@@ -513,12 +513,13 @@
 	armor = list(MELEE = 20, BULLET = 40, LASER = 30, ENERGY = 25, BOMB = 50, BIO = 100, RAD = 50, FIRE = 80, ACID = 80, WOUND = 20)
 	strip_delay = 40
 	equip_delay_other = 20
+	//species_restricted = list("Vox")
 
-/obj/item/clothing/head/helmet/space/pirate/bandana
+/obj/item/clothing/head/helmet/space/pirate/bandana/eva
 	icon_state = "spacebandana"
 	item_state = "space_bandana_helmet"
 
-/obj/item/clothing/suit/space/pirate
+/obj/item/clothing/suit/space/pirate/eva
 	name = "Modified EVA suit"
 	desc = "A modified suit to allow space pirates to board shuttles and stations while avoiding the maw of the void. Comes with additional protection and is lighter to move in."
 	icon_state = "spacepirate"
@@ -528,3 +529,4 @@
 	armor = list(MELEE = 20, BULLET = 40, LASER = 30,ENERGY = 25, BOMB = 50, BIO = 100, RAD = 50, FIRE = 80, ACID = 80, WOUND = 20)
 	strip_delay = 40
 	equip_delay_other = 20
+	//species_restricted = list("Vox")

@@ -598,6 +598,9 @@
 "qr" = (
 /obj/item/storage/backpack/satchel/inteq,
 /obj/structure/table,
+/obj/item/restraints/handcuffs,
+/obj/item/restraints/handcuffs/cable/zipties,
+/obj/item/restraints/handcuffs/cable/zipties,
 /turf/open/floor/wood/wood_parquet,
 /area/shuttle/inteq)
 "qw" = (

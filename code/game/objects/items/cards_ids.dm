@@ -578,6 +578,11 @@
 /obj/item/card/id/pirate
 	access = list(ACCESS_SYNDICATE)
 
+/obj/item/card/id/syndicate/vox_scavenger
+	icon_state = "retro"
+	assignment = "Trader"
+	access = list(ACCESS_SYNDICATE)
+
 /obj/item/card/id/syndicate/inteq
 	name = "Mercenary Card"
 	icon_state = "inteq"
@@ -631,6 +636,7 @@
 
 /obj/item/card/id/ert/Initialize(mapload)
 	access = get_all_accesses()+get_ert_access("commander")-ACCESS_CHANGE_IDS
+	registered_account = SSeconomy.get_dep_account(ACCOUNT_CAR)
 	. = ..()
 
 /obj/item/card/id/ert/Security
