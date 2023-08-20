@@ -143,32 +143,326 @@
 	cost = 2
 
 
-////////////////////////////////////////////////////////////////////////////////////////
+//// Vox suits and weapons (tau ceti). Sprites by deadmodo and coiscin /////////////////////
 
-///datum/gear/accessory/storage
-	//slot = ITEM_SLOT_BACKPACK
+// Base
+/obj/item/clothing/suit/space/vox
+	w_class = WEIGHT_CLASS_TINY
+	allowed = list(/obj/item/gun, /obj/item/melee, /obj/item/restraints, /obj/item/tank)
+	slowdown = 0.7
+	armor = list(MELEE = 60, BULLET = 50, LASER = 40, ENERGY = 15, BOMB = 30, BIO = 30, RAD = 30)
+	heat_protection = CHEST|GROIN|LEGS|ARMS
+	max_heat_protection_temperature = SPACE_SUIT_MAX_TEMP_PROTECT
+	species_restricted = list("Vox")
 
-///datum/gear/accessory/storage/rucksack
-	//name = "Rucksack"
-	//path = /obj/item/storage/backpack/rucksack
-	//cost = 5
+/obj/item/clothing/head/helmet/space/vox
+	armor = list(MELEE = 60, BULLET = 50, LASER = 40, ENERGY = 15, BOMB = 30, BIO = 30, RAD = 30)
+	flags_cover = NONE
+	species_restricted = list("Vox")
 
-///datum/gear/accessory/storage/rucksack_blue
-	//name = "Blue Rucksack"
-	//path = /obj/item/storage/backpack/rucksack/blue
-	//cost = 5
+/////////////////////////////////////////////////////////////////////////////////////////////// Stealth suit
+#define MAX_STEALTH_SPACESUIT_CHARGE 300
+#define IS_VOX_SUIT_STEALTH(action) (istype(action, /datum/action/item_action/vox_stealth))
 
-///datum/gear/accessory/storage/rucksack_green
-	//name = "Green Rucksack"
-	//path = /obj/item/storage/backpack/rucksack/green
-	//cost = 5
+/obj/item/clothing/head/helmet/space/vox/stealth
+	name = "alien stealth helmet"
+	icon_state = "vox-stealth"
+	item_state = "vox-stealth"
+	desc = "A smoothly contoured, matte-black alien helmet."
 
-///datum/gear/accessory/storage/rucksack_navy
-	//name = "Navy Rucksack"
-	//path = /obj/item/storage/backpack/rucksack/navy
-	//cost = 5
+	armor = list(MELEE = 25, BULLET = 25, LASER = 20, ENERGY = 5, BOMB = 15, BIO = 30, RAD = 30)
 
-///datum/gear/accessory/storage/rucksack_tan
-	//name = "Tan Rucksack"
-	//path = /obj/item/storage/backpack/rucksack/tan
-	//cost = 5
+/obj/item/clothing/suit/space/vox/stealth
+	name = "alien stealth suit"
+	icon_state = "vox-stealth"
+	item_state = "vox-stealth"
+	desc = "A sleek black suit. it seems to be rather heavy."
+
+	armor = list(MELEE = 25, BULLET = 25, LASER = 20, ENERGY = 5, BOMB = 15, BIO = 30, RAD = 30)
+
+	slowdown = 1.4
+	actions_types = list(/datum/action/item_action/vox_stealth)
+	var/on = FALSE
+	var/mob/living/carbon/human/wearer
+	var/current_charge = MAX_STEALTH_SPACESUIT_CHARGE
+	var/last_try = 0
+
+////
+/datum/action/item_action/vox_stealth
+	name = "Toggle Stealth"
+	desc = "Toggles stealth mode on and off."
+	button_icon_state = "ninja_cloak"
+	icon_icon = 'icons/mob/actions/actions_minor_antag.dmi'
+///
+
+/obj/item/clothing/suit/space/vox/stealth/ui_action_click(mob/user, action)
+	if(IS_VOX_SUIT_STEALTH(action))
+		toggle_stealth()
+		return TRUE
+	return FALSE
+
+/obj/item/clothing/suit/space/vox/stealth/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	wearer = null
+	return ..()
+
+/obj/item/clothing/suit/space/vox/stealth/process(damage)
+	if(on)
+		var/power_decrease = 2 // 5 minutes to full discharge
+		if(damage > 0)
+			power_decrease = 5 // 2 minutes to full discharge
+		if(damage > 3)
+			power_decrease = 10 // 1 minute to full discharge
+		if(damage > 6)
+			power_decrease = 0
+			current_charge = 0
+			STOP_PROCESSING(SSobj, src)
+		current_charge -= power_decrease
+		if(is_damaged())
+			toggle_stealth(TRUE)
+			return
+		if(current_charge <= 0)
+			current_charge = 0
+			toggle_stealth(TRUE)
+			return
+		if(wearer)
+			wearer.alpha = 4
+			wearer.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+			if(current_charge <= (power_decrease * 15)) // there are 30 seconds to full discharge
+				playsound(get_turf(src), 'sound/rig/loudbeep.ogg', 100, 1, 1)
+				to_chat(wearer, "<span class='danger'>Малый запас энергии:</span> <span class='electronicblue'>\[ [current_charge] \]</span>")
+	else
+		var/power_increase = 20 // 30 seconds to full charge
+		if(damage > 0)
+			power_increase = 10 // 1 minutes to full charge
+		if(damage > 3)
+			power_increase = 5 // 2 minutes to full charge
+		if(damage > 6)
+			power_increase = 0
+			current_charge = 0
+			STOP_PROCESSING(SSobj, src)
+		current_charge += power_increase
+		if(current_charge > MAX_STEALTH_SPACESUIT_CHARGE)
+			current_charge = 300
+			STOP_PROCESSING(SSobj, src)
+
+/obj/item/clothing/suit/space/vox/stealth/equipped(mob/user, slot)
+	..()
+	if(slot == ITEM_SLOT_OCLOTHING)
+		wearer = user
+
+/obj/item/clothing/suit/space/vox/stealth/dropped(mob/user)
+	toggle_stealth(TRUE)
+	wearer = null
+	..()
+
+/obj/item/clothing/suit/space/vox/stealth/proc/toggle_stealth(deactive = FALSE, damage)
+	if(on)
+		playsound(get_turf(src), 'sound/rig/stealthrig_turn_off.ogg', 100, 1, 1)
+		on = FALSE
+		slowdown = 0.2
+		wearer.alpha = 255
+		wearer.mouse_opacity = MOUSE_OPACITY_ICON
+		new /obj/effect/particle_effect/sparks(get_turf(src))
+		playsound(get_turf(src), "sparks", 100, 1, 1)
+		new /obj/effect/temp_visual/emp/pulse(get_turf(src))
+		playsound(get_turf(src), 'sound/effects/pop.ogg', 100, 1, -6)
+	else if(!deactive)
+		if(!istype(wearer.head, /obj/item/clothing/head/helmet/space/vox/stealth))
+			to_chat(wearer, "<span class='warning'>Стелс-режим не функционален без шлема.</span>")
+			return
+		if(last_try > world.time)
+			return
+		last_try = world.time + 4 SECONDS
+		to_chat(wearer, "<span class='notice'>Активация стелс-режима...</span>")
+		playsound(get_turf(src), 'sound/rig/stealthrig_starting_up.ogg', 100, 1, 1)
+		if(do_after(wearer, 20, target = wearer))
+			if(!istype(wearer) || wearer.wear_suit != src)
+				return
+			if(is_damaged(TRUE))
+				return
+			playsound(get_turf(src), 'sound/rig/stealthrig_turn_on.ogg', 100, 1, 1)
+			on = TRUE
+			to_chat(wearer, "<span class='notice'>Стелс-режим активирован!</span>")
+			slowdown = 1.4
+			new /obj/effect/temp_visual/emp/pulse(get_turf(src))
+			playsound(get_turf(src), 'sound/effects/pop.ogg', 100, 1, -6)
+			wearer.alpha = 4
+			wearer.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+			START_PROCESSING(SSobj, src)
+
+/obj/item/clothing/suit/space/vox/stealth/proc/is_damaged(low_damage_check = FALSE, damage)
+	if(damage > 6)
+		to_chat(wearer, "<span class='warning'>[src] слишком повреждён!</span>")
+		new /obj/effect/particle_effect/sparks(get_turf(src))
+		playsound(get_turf(src), "sparks", 100, 1, 1)
+		return TRUE
+	else if(low_damage_check)
+		if(prob(33) && (damage > 3))
+			to_chat(wearer, "<span class='warning'>[src] повреждён и не может войти в стелс-режим!</span>")
+			return TRUE
+	return FALSE
+
+/obj/item/clothing/suit/space/vox/stealth/proc/overload()
+	wearer.visible_message(
+	"<span class='warning'>[wearer] появляется из ниоткуда!</span>"
+	)
+	to_chat(wearer, "<span class='warning'>Стелс-костюм был вынужденно отключён в результате перегрузки.</span>")
+	new /obj/effect/particle_effect/sparks(get_turf(src))
+	playsound(get_turf(src), "sparks", 100, 1, 1)
+	toggle_stealth()
+
+/obj/item/clothing/suit/space/vox/stealth/attack_reaction(mob/living/L, reaction_type, mob/living/carbon/human/T = null, damage)
+	if(on)
+		if(reaction_type == REACTION_ITEM_TAKE || reaction_type == REACTION_ITEM_TAKEOFF)
+			var/charge_decrease = max(rand(20, 30), round((damage * 25) + rand(1, 5)))
+			current_charge -= charge_decrease
+			if(wearer)
+				to_chat(wearer, "<span class='warning'>Перераспраделение [charge_decrease] единиц энергии</span>. Текущий заряд: <span class='electronicblue'>\[ [current_charge] \]</span>.")
+				SEND_SOUND(wearer, sound('sound/machines/defib_SaftyOn.ogg'))
+
+			return
+		overload()
+
+#undef MAX_STEALTH_SPACESUIT_CHARGE
+
+///////////////////////////////////////////////////////////////////////////////////////////// Medical suit
+
+/obj/item/clothing/head/helmet/space/vox/medic
+	name = "alien medical helmet"
+	icon_state = "vox-medic"
+	item_state = "vox-medic"
+	desc = "An alien helmet with enormous lenseю"
+	armor = list(MELEE = 45, BULLET = 40, LASER = 45, ENERGY = 20, BOMB = 25, BIO = 30, RAD = 30)
+
+/obj/item/clothing/suit/space/vox/medic
+	name = "alien medical armor"
+	icon_state = "vox-medic"
+	item_state = "vox-medic"
+	desc = "A nonhuman pressure suit."
+	slowdown = 0.5
+	var/mob/living/carbon/human/wearer
+	armor = list(MELEE = 45, BULLET = 40, LASER = 45, ENERGY = 20, BOMB = 25, BIO = 30, RAD = 30)
+
+/obj/item/clothing/suit/space/vox/medic/equipped(mob/user, slot)
+	..()
+	if(slot == ITEM_SLOT_OCLOTHING)
+		wearer = user
+		START_PROCESSING(SSobj, src)
+		playsound(get_turf(src), 'sound/rig/shortbeep.ogg', 100, 1, 1)
+		to_chat(wearer, "<span class='warning'>Медицинский интерфейс загружен. Убедитесь, что на вас надет соответствующий шлем.</span>")
+
+/obj/item/clothing/suit/space/vox/medic/dropped(mob/user)
+	wearer = null
+	STOP_PROCESSING(SSobj, src)
+	..()
+
+/obj/item/clothing/suit/space/vox/medic/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	wearer = null
+	return ..()
+
+/obj/item/clothing/suit/space/vox/medic/process(damage)
+	if(!wearer)
+		STOP_PROCESSING(SSobj, src)
+		return
+	if(wearer.stat == DEAD)
+		STOP_PROCESSING(SSobj, src)
+		return
+	if(!istype(wearer.head, /obj/item/clothing/head/helmet/space/vox/medic))
+		return
+	if(damage > 9)
+		wearer.adjustToxLoss(0.7) // this will kill the wearer after a while if the suit is not repaired or removed
+	else if(wearer.reagents.get_reagent_amount(/datum/reagent/medicine/tricordrazine) > 5)
+		return // safe tricordrazine injection
+	if(damage > 19)
+		wearer.adjustToxLoss(1) // this will kill the wearer much faster
+	wearer.reagents.add_reagent(/datum/reagent/medicine/tricordrazine, REAGENTS_METABOLISM)
+
+////////////////////////////////////////////////////////////////////// Reinforced Vox combat carapace
+
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/vox
+	name = "alien carapace helmet"
+	desc = "A dark heavy helmet, made with unknown materials."
+	icon_state = "hardsuit0-voxcarapace"
+	item_state = "hardsuit0-voxcarapace"
+	hardsuit_type = "voxcarapace"
+	armor = list(MELEE = 65, BULLET = 50, LASER = 70, ENERGY = 20, BOMB = 30, BIO = 30, RAD = 30)
+
+/obj/item/clothing/suit/space/hardsuit/syndi/vox
+	name = "alien carapace hardsuit"
+	desc = "An armoured, segmented carapace. It looks pretty run-down."
+	icon_state = "hardsuit0-voxcarapace"
+	item_state = "hardsuit0-voxcarapace"
+	hardsuit_type = "voxcarapace"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/vox
+	armor = list(MELEE = 65, BULLET = 50, LASER = 70, ENERGY = 20, BOMB = 30, BIO = 30, RAD = 30)
+	species_restricted = list("Vox")
+
+
+////////////////////////////////////////////////////////////////////////////// Vox pinning weapons
+
+/obj/item/gun/energy/kinetic_accelerator/crossbow/large/pin
+	pin = /obj/item/firing_pin
+
+/obj/item/gun/energy/kinetic_accelerator/crossbow/large/pindicate
+	pin = /obj/item/firing_pin/implant/pindicate
+
+/obj/item/gun/energy/kinetic_accelerator/crossbow/pindicate
+	pin = /obj/item/firing_pin/implant/pindicate
+
+/////
+/obj/item/projectile/spike
+	name = "spike"
+	icon_state = "throwingstar"
+	icon = 'icons/obj/items_and_weapons.dmi'
+	damage = 30
+	damage_type = BRUTE
+	nodamage = 0
+	eyeblur = 0
+	slur = 0
+	knockdown = 0
+	stamina = 10
+	knockdown_stamoverride = 0
+	armour_penetration = 25
+	embedding = list("pain_mult" = 4, "embed_chance" = 100, "fall_chance" = 0, "embed_chance_turf_mod" = 15)
+
+
+/obj/item/ammo_casing/energy/bolt/spike
+	projectile_type = /obj/item/projectile/spike
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/taser.ogg'
+
+/obj/item/gun/energy/kinetic_accelerator/spikethrower
+	name = "spike thrower"
+	desc = "A vicious alien projectile weapon. Parts of it quiver gelatinously, as though the thing is insectile and alive."
+	w_class = WEIGHT_CLASS_NORMAL
+	suppressed = FALSE
+	ammo_type = list(/obj/item/ammo_casing/energy/bolt/spike)
+	weapon_weight = WEAPON_LIGHT
+	inaccuracy_modifier = 0.25
+	obj_flags = 0
+	overheat_time = 20
+	holds_charge = FALSE
+	unique_frequency = TRUE
+	can_flashlight = 0
+	max_mod_capacity = 0
+	icon = 'icons/obj/guns/projectile.dmi'
+	icon_state = "spikethrower"
+	item_state = "spikethrower"
+	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+	pin = /obj/item/firing_pin/implant/pindicate
+
+/obj/item/gun/energy/kinetic_accelerator/spikethrower/attack(mob/living/user)
+	if(ishuman(user))
+		if(!isvox(user))
+			to_chat(user, "<span class='warning'>The weapon does not respond to you!</span>")
+			return
+	else
+		to_chat(user, "<span class='warning'>The weapon does not respond to you!</span>")
+		return
+
+//// Misc
+
+/obj/item/card/emag/vox
+	uses = 30

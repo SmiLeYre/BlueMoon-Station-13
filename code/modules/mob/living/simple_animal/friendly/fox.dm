@@ -22,6 +22,7 @@
 	response_harm_simple = "kick"
 	gold_core_spawnable = FRIENDLY_SPAWN
 	footstep_type = FOOTSTEP_MOB_CLAW
+	var/held_icon = "fox"
 
 	vocal_bark_id = "bullet"
 	vocal_speed = 2
@@ -30,7 +31,7 @@
 
 /mob/living/simple_animal/pet/fox/ComponentInitialize()
 	. = ..()
-	AddElement(/datum/element/mob_holder, "fox")
+	AddElement(/datum/element/mob_holder, held_icon)
 
 //Captain fox
 /mob/living/simple_animal/pet/fox/Renault
@@ -106,7 +107,7 @@
 	icon_state = "fennec"
 	icon_living = "fennec"
 	icon_dead = "fennec_dead"
-	//held_icon = "fennec"
+	held_icon = "fennec"
 	see_in_dark = 10
 	vocal_bark_id = "weh"
 	vocal_speed = 1.5

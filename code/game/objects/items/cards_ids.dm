@@ -578,6 +578,11 @@
 /obj/item/card/id/pirate
 	access = list(ACCESS_SYNDICATE)
 
+/obj/item/card/id/syndicate/vox_scavenger
+	icon_state = "retro"
+	assignment = "Trader"
+	access = list(ACCESS_SYNDICATE)
+
 /obj/item/card/id/syndicate/inteq
 	name = "Mercenary Card"
 	icon_state = "inteq"

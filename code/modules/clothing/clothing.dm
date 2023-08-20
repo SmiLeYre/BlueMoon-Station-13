@@ -489,3 +489,7 @@ BLIND     // can't see anything
 		return
 	if(prob(0.2))
 		to_chat(L, "<span class='warning'>The damaged threads on your [src.name] chafe!</span>")
+
+// BlueMoon 19.08.2023 added
+/obj/item/clothing/proc/attack_reaction(mob/living/L, reaction_type, mob/living/carbon/human/T = null)
+	return

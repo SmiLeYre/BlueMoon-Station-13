@@ -249,3 +249,6 @@
 		chambered.BB.damage *= 5
 
 	process_fire(target, user, TRUE, params)
+
+/obj/item/gun/laser/shoot_with_empty_chamber(mob/living/user as mob|obj)
+	playsound(src, 'sound/weapons/laser_no_power.ogg', 30, 1)

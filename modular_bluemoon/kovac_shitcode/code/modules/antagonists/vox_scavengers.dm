@@ -10,7 +10,7 @@
 /datum/antagonist/vox_scavengers/greet()
 	SEND_SOUND(owner.current, sound('modular_bluemoon/kovac_shitcode/sound/vox_spawn.ogg'))
 	to_chat(owner, "<span class='boldannounce'>Вы - вокс-налётчик!</span>")
-	to_chat(owner, "<B>Вам необходимо обокрасть станцию и выполнить свои цели. Вы можете как представиться торговцами, так и действовать скрытно и нелегально. Ваша философия не допускает напрасной потери жизней с обеих сторон. Кроме того, никто из воксов не должен оказаться за бортом.</B>")
+	to_chat(owner, "<B>Вам необходимо обокрасть станцию и выполнить свои цели. Вы можете как представиться торговцами, так и действовать скрытно и нелегально. Не начинайте конфликтов первыми и избегайте их: ваша философия не допускает напрасной потери жизней с обеих сторон. Кроме того, никто из воксов не должен оказаться за бортом.</B>")
 	owner.announce_objectives()
 
 /datum/antagonist/vox_scavengers/get_team()
@@ -84,20 +84,55 @@
 	icon_state = "oldpod"
 	mob_name = "a vox scavenger"
 	mob_species = /datum/species/mammal/vox
-	outfit = /datum/outfit/pirate/space
+	outfit = /datum/outfit/vox_scavenger
 	roundstart = FALSE
 	death = FALSE
 	anchored = TRUE
 	density = FALSE
 	show_flavour = FALSE //Flavour only exists for spawners menu
 	short_desc = "You are a Vox Scavenger."
-	flavour_text = "Самое время поживиться чем-то полезным на просторах космической станции. Ваша философия не допускает напрасной потери жизней с обеих сторон. Кроме того, никто из воксов не должен оказаться за бортом."
+	flavour_text = "Самое время поживиться чем-то полезным на просторах космической станции. Не начинайте конфликтов первыми и избегайте их: ваша философия не допускает напрасной потери жизней с обеих сторон. Кроме того, никто из воксов не должен оказаться за бортом."
 	assignedrole = "Vox Scavenger"
 
 /obj/effect/mob_spawn/human/vox_scavenger/special(mob/living/new_spawn)
 	new_spawn.fully_replace_character_name(new_spawn.real_name,generate_scavenger_name())
 	new_spawn.mind.add_antag_datum(/datum/antagonist/vox_scavengers)
 	new_spawn.set_bark("lizard")
+
+/datum/outfit/vox_scavenger
+	name = "Vox Scavenger"
+
+	uniform = /obj/item/clothing/under/syndicate
+	shoes = /obj/item/clothing/shoes/jackboots/toeless
+	//r_pocket = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
+	//gloves = /obj/item/clothing/gloves/combat
+	//back = /obj/item/storage/backpack
+	ears = /obj/item/radio/headset/syndicate
+	id = /obj/item/card/id/syndicate/vox_scavenger
+	//belt = /obj/item/gun/ballistic/automatic/pistol
+	//backpack_contents = list(/obj/item/storage/box/survival/syndie=1,
+	//obj/item/kitchen/knife/combat/survival)
+
+
+/datum/outfit/vox_scavenger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+	H.faction |= "Vox"
+
+	var/obj/item/radio/R = H.ears
+	R.set_frequency(FREQ_SYNDICATE)
+	R.freqlock = TRUE
+
+	var/obj/item/implant/weapons_auth/W = new
+	W.implant(H)
+
+	var/obj/item/card/id/B = H.wear_id
+	if(B)
+		B.registered_name = H.real_name
+		B.update_label(H.real_name)
+
+	H.update_icons()
+
+	H.left_eye_color = "00ffff"
+	H.right_eye_color = "00ffff"
 
 /obj/effect/mob_spawn/human/vox_scavenger/proc/generate_scavenger_name()
 	return "[pick(GLOB.vox_names)]"

@@ -90,6 +90,12 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/on/layer3{
 	dir = 8
 	},
+<<<<<<< Updated upstream
+=======
+/obj/item/clothing/head/helmet/space/vox/medic,
+/obj/item/clothing/suit/space/vox/medic,
+/obj/item/clothing/suit/space/hardsuit/syndi/vox,
+>>>>>>> Stashed changes
 /turf/open/floor/iron/shuttle/cargo{
 	initial_gas_mix = "n2=100;TEMP=293.15"
 	},
@@ -159,10 +165,13 @@
 /obj/item/restraints/handcuffs/cable/zipties,
 /obj/item/restraints/handcuffs/cable/zipties,
 /obj/item/restraints/handcuffs/cable/zipties,
+<<<<<<< Updated upstream
 /obj/item/restraints/handcuffs/cable/zipties,
 /obj/item/restraints/handcuffs/cable/zipties,
 /obj/item/restraints/handcuffs/cable/zipties,
 /obj/item/restraints/handcuffs/cable/zipties,
+=======
+>>>>>>> Stashed changes
 /turf/open/floor/iron/shuttle/arrivals/sign_1{
 	initial_gas_mix = "n2=100;TEMP=293.15"
 	},
@@ -179,6 +188,7 @@
 /obj/machinery/door/window/brigdoor/eastleft{
 	dir = 1
 	},
+/obj/item/tank/jetpack/improvised,
 /obj/item/tank/jetpack/improvised,
 /obj/item/tank/jetpack/improvised,
 /obj/effect/decal/cleanable/dirt,
@@ -214,6 +224,14 @@
 "kT" = (
 /obj/structure/rack/shelf,
 /obj/effect/decal/cleanable/dirt,
+<<<<<<< Updated upstream
+=======
+/obj/item/gun/energy/kinetic_accelerator/crossbow/pindicate,
+/obj/item/gun/energy/kinetic_accelerator/crossbow/large/pindicate,
+/obj/item/gun/energy/kinetic_accelerator/crossbow/large/pindicate,
+/obj/item/gun/energy/kinetic_accelerator/spikethrower,
+/obj/item/gun/energy/kinetic_accelerator/spikethrower,
+>>>>>>> Stashed changes
 /turf/open/floor/iron/shuttle/arrivals/sign_1{
 	initial_gas_mix = "n2=100;TEMP=293.15"
 	},
@@ -243,9 +261,6 @@
 "lC" = (
 /obj/machinery/mineral/ore_redemption/inteq{
 	req_access_txt = "150"
-	},
-/obj/structure/window/reinforced{
-	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/catwalk_floor{
@@ -312,6 +327,21 @@
 /turf/open/floor/iron/shuttle/cargo{
 	initial_gas_mix = "n2=100;TEMP=293.15"
 	},
+<<<<<<< Updated upstream
+=======
+/area/shuttle/vox_raiders)
+"qJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/general/hidden/layer3{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/general/visible/layer3{
+	dir = 1
+	},
+/turf/open/floor/catwalk_floor{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
+>>>>>>> Stashed changes
 /area/shuttle/vox_raiders)
 "qR" = (
 /obj/item/clothing/head/bearpelt,
@@ -434,8 +464,15 @@
 	},
 /area/shuttle/vox_raiders)
 "vS" = (
-/obj/machinery/door/window/brigdoor/eastleft,
 /obj/effect/decal/cleanable/dirt,
+<<<<<<< Updated upstream
+=======
+/obj/structure/rack,
+/obj/item/storage/backpack,
+/obj/item/storage/backpack,
+/obj/item/clothing/glasses/night/syndicate,
+/obj/item/clothing/glasses/thermal/syndi,
+>>>>>>> Stashed changes
 /turf/open/floor/catwalk_floor{
 	initial_gas_mix = "n2=100;TEMP=293.15"
 	},
@@ -463,6 +500,18 @@
 "yb" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
+<<<<<<< Updated upstream
+=======
+/obj/item/storage/backpack/duffelbag/syndie,
+/turf/open/floor/iron/shuttle/cargo{
+	initial_gas_mix = "n2=100;TEMP=293.15"
+	},
+/area/shuttle/vox_raiders)
+"yp" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/on/layer3,
+/obj/effect/mob_spawn/human/vox_scavenger,
+>>>>>>> Stashed changes
 /turf/open/floor/iron/shuttle/cargo{
 	initial_gas_mix = "n2=100;TEMP=293.15"
 	},
@@ -476,8 +525,13 @@
 	},
 /area/shuttle/vox_raiders)
 "yK" = (
-/obj/machinery/door/window/brigdoor/eastright,
 /obj/effect/decal/cleanable/dirt,
+<<<<<<< Updated upstream
+=======
+/obj/structure/rack,
+/obj/item/storage/backpack/duffelbag/syndie,
+/obj/item/storage/backpack,
+>>>>>>> Stashed changes
 /turf/open/floor/catwalk_floor{
 	initial_gas_mix = "n2=100;TEMP=293.15"
 	},
@@ -657,6 +711,12 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/dim/directional/west,
 /obj/item/storage/box/syndie_kit/nuke,
+<<<<<<< Updated upstream
+=======
+/obj/item/clothing/glasses/night,
+/obj/item/clothing/glasses/night,
+/obj/item/clothing/glasses/thermal/syndi,
+>>>>>>> Stashed changes
 /turf/open/floor/iron/shuttle/arrivals/sign_1{
 	initial_gas_mix = "n2=100;TEMP=293.15"
 	},
@@ -765,10 +825,14 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/tank/internals/emergency_nitrogen/double,
 /obj/item/tank/internals/emergency_nitrogen/double,
-/obj/item/card/emag,
+/obj/item/card/emag/vox,
 /obj/item/reagent_containers/food/drinks/soda_cans/grey_bull,
 /obj/item/reagent_containers/food/drinks/soda_cans/grey_bull,
 /obj/item/reagent_containers/food/drinks/soda_cans/grey_bull,
+<<<<<<< Updated upstream
+=======
+/obj/item/clothing/suit/space/hardsuit/syndi,
+>>>>>>> Stashed changes
 /turf/open/floor/iron/shuttle/arrivals/sign_1{
 	initial_gas_mix = "n2=100;TEMP=293.15"
 	},
@@ -780,6 +844,12 @@
 /obj/item/storage/box/syringes,
 /obj/item/stack/cable_coil/random,
 /obj/effect/decal/cleanable/dirt,
+<<<<<<< Updated upstream
+=======
+/obj/item/restraints/handcuffs/cable/zipties,
+/obj/item/restraints/handcuffs/cable/zipties,
+/obj/item/restraints/handcuffs/cable/zipties,
+>>>>>>> Stashed changes
 /turf/open/floor/iron/shuttle/cargo{
 	initial_gas_mix = "n2=100;TEMP=293.15"
 	},
@@ -819,7 +889,17 @@
 /obj/item/chameleon,
 /obj/item/chameleon,
 /obj/item/chameleon,
+<<<<<<< Updated upstream
 /obj/item/chameleon,
+=======
+/obj/item/melee/classic_baton/telescopic,
+/obj/item/melee/classic_baton/telescopic,
+/obj/item/melee/classic_baton/telescopic,
+/obj/item/clothing/suit/space/vox/stealth,
+/obj/item/clothing/suit/space/vox/stealth,
+/obj/item/clothing/head/helmet/space/vox/stealth,
+/obj/item/clothing/head/helmet/space/vox/stealth,
+>>>>>>> Stashed changes
 /turf/open/floor/iron/shuttle/arrivals/sign_1{
 	initial_gas_mix = "n2=100;TEMP=293.15"
 	},
@@ -940,6 +1020,11 @@
 /obj/item/pen,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood,
+<<<<<<< Updated upstream
+=======
+/obj/item/reagent_containers/food/snacks/carpmeat,
+/obj/item/reagent_containers/food/snacks/carpmeat,
+>>>>>>> Stashed changes
 /turf/open/floor/iron/shuttle/cargo{
 	initial_gas_mix = "n2=100;TEMP=293.15"
 	},
@@ -1124,8 +1209,13 @@ GP
 uT
 kx
 AQ
+<<<<<<< Updated upstream
 RU
 RD
+=======
+qJ
+yp
+>>>>>>> Stashed changes
 FI
 kx
 hm
