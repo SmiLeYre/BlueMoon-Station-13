@@ -129,7 +129,9 @@ const CharacterModelImageElement = (props, context) => {
         params={{ id: data.character_ref, type: 'map' }}
       />
       <Box>
+        <Button onClick={()=>act("char_left")} icon="undo" />
         <Button onClick={()=>act("change_background")}>Сменить фон</Button>
+        <Button onClick={()=>act("char_right")} icon="redo" />
       </Box>
     </Section>
   );

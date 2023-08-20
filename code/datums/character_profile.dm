@@ -71,20 +71,20 @@ GLOBAL_LIST_EMPTY(cached_previews)
 
 	return data
 
-/datum/description_profile/proc/update_preview(mob_dir = SOUTH, background_state = "steel")
+/datum/description_profile/proc/update_preview()
 
 	if(!examine_panel_screen || !current_background)
 		return
 
 	var/mob/living/M = host.resolve()
 	current_mob_appearance = new(M)
+	current_mob_appearance.setDir(SOUTH)
 	current_mob_appearance.transform = matrix() // We reset their rotation, in case they're lying down.
 
 	// In case they're pixel-shifted, we bring 'em back!
 	current_mob_appearance.pixel_x = 0
 	current_mob_appearance.pixel_y = 0
 
-	current_mob_appearance.setDir(mob_dir)
 	current_mob_appearance.add_overlay(current_background)
 
 	examine_panel_screen.cut_overlays()
@@ -108,6 +108,7 @@ GLOBAL_LIST_EMPTY(cached_previews)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if (!ui)
 		user.client.register_map_obj(examine_panel_screen)
+		examine_panel_screen.setDir(SOUTH)
 		ui = new(user, src, "CharacterProfile", "Профиль персонажа [M]")
 		ui.open()
 
@@ -120,6 +121,10 @@ GLOBAL_LIST_EMPTY(cached_previews)
 		if("character_directory")
 			var/static/datum/character_directory/character_directory = new
 			character_directory.ui_interact(usr)
+		if("char_right")
+			examine_panel_screen.setDir(turn(examine_panel_screen.dir, -90))
+		if("char_left")
+			examine_panel_screen.setDir(turn(examine_panel_screen.dir, 90))
 		if("change_background")
 			current_background.icon_state = next_list_item(current_background.icon_state, preview_backgrounds)
 			return TRUE
