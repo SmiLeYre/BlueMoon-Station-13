@@ -3,7 +3,7 @@
 	var/size_multiplier = RESIZE_NORMAL
 
 /// Returns false on failure
-/mob/living/proc/update_size(new_size, cur_size)
+/mob/living/proc/update_size(new_size, cur_size, var/sizegunned = FALSE)
 	if(!new_size)
 		return FALSE
 	if(!cur_size)
@@ -13,7 +13,7 @@
 		if(new_size == cur_size)
 			return FALSE
 		H.dna.features["body_size"] = new_size
-		H.dna.update_body_size(cur_size)
+		H.dna.update_body_size(cur_size, sizegunned) // BLUEMOON CHANGES - добавлена проверка на попадание размерного луча
 	else
 		if(new_size == cur_size)
 			return FALSE
