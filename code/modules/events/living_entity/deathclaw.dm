@@ -1,15 +1,20 @@
-/datum/round_event_control/deathclaw_basic_fem
-	name = "Sexy Deathclaws in Techmain: Alpha Girl"
-	typepath = /datum/round_event/deathclaw_basic_fem
+/datum/round_event_control/deathclaw_in_maints
+	name = "Spawn Funclaw in Maints"
+	typepath = /datum/round_event/deathclaw_in_maints
 	max_occurrences = 5
 	weight = 60
 	category = EVENT_CATEGORY_ENTITIES
 
-/datum/round_event/deathclaw_basic_fem/announce(fake)
+/datum/round_event/deathclaw_in_maints/announce(fake)
 	priority_announce("Один из наших... кхм... особых заключённых сбежал. Так получилось, что его последнее известное местонахождение до того, как их маячок заглох, - это ваша станция, так что будьте осторожней и остерегайтесь Технических Тоннелей. И еще... вы не видели ящерку уборщика?",
 	sender_override = "Психиатрический Отдел Nanotrasen", has_important_message = TRUE)
 
-/datum/round_event/deathclaw_basic_fem/start()
+/datum/round_event/deathclaw_in_maints/start()
+	var/list/deathclaws_types = list( \
+		/mob/living/simple_animal/hostile/deathclaw/funclaw/femclaw, \
+		/mob/living/simple_animal/hostile/deathclaw/funclaw/femclaw/mommyclaw, \
+		/mob/living/simple_animal/hostile/deathclaw/funclaw/gentle/newclaw/alphaclaw, \
+		/mob/living/simple_animal/hostile/deathclaw/funclaw)
 	var/list/spawn_locs = list()
 	var/list/unsafe_spawn_locs = list()
 	for(var/X in GLOB.xeno_spawn)
@@ -39,8 +44,9 @@
 		return MAP_ERROR
 
 	var/turf/T = get_turf(pick(spawn_locs))
-	var/mob/living/simple_animal/hostile/deathclaw/funclaw/femclaw/mommyclaw/S = new(T)
-	playsound(S, 'sound/alien/Voice/roarFar1.ogg', 75, 1, 100)
+	var/deathclaw_type = pick(deathclaws_types)
+	new deathclaw_type(T)
+	playsound(T, 'sound/alien/Voice/roarFar1.ogg', 75, 1, 100)
 	message_admins("An InteQ mutant has been spawned at [COORD(T)][ADMIN_JMP(T)]")
 	log_game("An InteQ mutant has been spawned at [COORD(T)]")
 	return SUCCESSFUL_SPAWN
