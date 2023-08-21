@@ -615,7 +615,7 @@ SUBSYSTEM_DEF(vote)
             roundtypes[mode] = 0
         roundtypes[mode]++
 
-        if (roundtypes[mode] >= 3)
+        if (roundtypes[mode] >= 2)
             return mode
     return FALSE
 
