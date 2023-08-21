@@ -11,7 +11,6 @@
 	gain_text = span_notice("Вы явно набрали в весе... Не то, чтобы это сильно мешало.")
 	lose_text = span_danger("Сбросить 3-4 десятка киллограмм за одну смену - это достижение. И вы его открыли.")
 	medical_record_text = "Вес пациента выше среднего для космонавтов."
-	processing_quirk = TRUE
 
 /datum/quirk/bluemoon_heavy/proc/update_size_movespeed()
 	if(!isliving(quirk_holder))
@@ -46,7 +45,6 @@
 	gain_text = span_warning("Плитка под вашими ногами может треснуть от неосторожного шага.")
 	lose_text = span_notice("Вы явно стали весить намного меньше. Сверхтяжёлый танк больше не кузен.")
 	medical_record_text = "Вес пациента намного выше среднестастистической для космонавтов. Перемещение привычными средствами посторонними лицами невозможно."
-	processing_quirk = TRUE
 
 /datum/quirk/bluemoon_heavy_super/proc/update_size_movespeed()
 	if(!isliving(quirk_holder))
@@ -61,12 +59,21 @@
 	else
 		H.remove_movespeed_modifier(/datum/movespeed_modifier/heavy_quirk_slowdown)
 
+/datum/quirk/bluemoon_heavy_super/proc/check_mob_size()
+	if(!isliving(quirk_holder))
+		return
+	var/mob/living/owner = quirk_holder
+	if(get_size(owner) < 0.8) // Самый маленький размер для сверхтяжёлых квирков - это 80%
+		to_chat(world, "Вы поняли, что ваш необъятный вес делает невозможным становление слишком маленьким.")
+		owner.update_size(0.8)
+
 /datum/quirk/bluemoon_heavy_super/on_spawn()
 	. = ..()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.throw_range = 1
 	H.throw_speed = 0.5
 	update_size_movespeed()
+	check_mob_size()
 
 // ПЕРЕМЕННЫЕ ДЛЯ МОДИФИКАТОРОВ СКОРОСТИ
 
