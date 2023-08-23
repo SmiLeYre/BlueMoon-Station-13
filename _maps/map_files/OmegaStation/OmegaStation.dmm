@@ -6198,12 +6198,10 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -26
 	},
-/obj/item/kirbyplants{
-	icon_state = "plant-22"
-	},
 /obj/machinery/newscaster{
 	pixel_y = 32
 	},
+/obj/structure/closet/secure_closet/ntr,
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "alU" = (

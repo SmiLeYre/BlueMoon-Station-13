@@ -8,4 +8,4 @@
 	syllables = list("sss","sSs","SSS")
 	default_priority = 50
 	icon_state = "spider"
-	restricted = FALSE //I think humanoid xenos should have a separate language...
+	restricted = TRUE // BlueMoon 23.08.2023. Убираем язык терроров из общего пула.

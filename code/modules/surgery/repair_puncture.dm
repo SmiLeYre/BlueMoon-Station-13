@@ -29,7 +29,7 @@
 
 ///// realign the blood vessels so we can reweld them
 /datum/surgery_step/repair_innards
-	name = "Выравнивять Кровеносные Сосуды"
+	name = "Выровнять Кровеносные Сосуды"
 	implements = list(TOOL_HEMOSTAT = 100, TOOL_SCALPEL = 85, TOOL_WIRECUTTER = 40)
 	time = 3 SECONDS
 

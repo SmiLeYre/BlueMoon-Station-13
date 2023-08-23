@@ -32437,7 +32437,6 @@
 /turf/open/space,
 /area/solars/port/fore)
 "loq" = (
-/obj/structure/closet,
 /obj/item/cartridge/lawyer,
 /obj/item/encryptionkey/headset_sec,
 /obj/item/clothing/accessory/armband/deputy,
@@ -32451,6 +32450,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/structure/closet/secure_closet/ntr,
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "lou" = (
