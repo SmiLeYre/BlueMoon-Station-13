@@ -11,6 +11,7 @@
 	var/give_objectives = TRUE
 	///Whether or not this ninja receives the standard equipment
 	var/give_equipment = TRUE
+	soft_antag = FALSE // BLUEMOON ADDITION
 
 /proc/is_ninja(mob/living/M)
 	return M && M.mind && M.mind.has_antag_datum(/datum/antagonist/ninja)

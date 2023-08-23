@@ -29,6 +29,7 @@
 
 	/// A reference to the handler datum that manages the families gamemode. In case of no handler (admin-spawned during round), this will be null; this is fine.
 	var/datum/gang_handler/handler
+	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/outfit/gangster
 	name = "Gangster (Preview only)"

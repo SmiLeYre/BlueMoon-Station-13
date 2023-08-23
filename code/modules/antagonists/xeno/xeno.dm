@@ -15,6 +15,7 @@
 	show_to_ghosts = TRUE
 	var/datum/team/xeno/xeno_team
 	threat = 3
+	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/xeno/threat()
 	. = 3
