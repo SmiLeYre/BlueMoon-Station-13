@@ -39816,6 +39816,10 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 8
 	},
+/obj/item/taperecorder{
+	pixel_x = -4
+	},
+/obj/item/tape,
 /turf/open/floor/carpet{
 	icon_state = "carpetsymbol"
 	},
@@ -43079,18 +43083,14 @@
 /turf/open/floor/plasteel,
 /area/science/xenobiology)
 "cdE" = (
-/obj/structure/table/wood,
 /obj/machinery/light{
 	dir = 4;
 	light_color = "#e8eaff"
 	},
-/obj/item/tape,
-/obj/item/taperecorder{
-	pixel_x = -4
-	},
 /obj/machinery/newscaster{
 	pixel_x = 30
 	},
+/obj/structure/closet/secure_closet/ntr,
 /turf/open/floor/carpet{
 	icon_state = "carpetsymbol"
 	},

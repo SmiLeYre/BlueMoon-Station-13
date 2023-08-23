@@ -161,7 +161,7 @@
 
 //weld plating
 /datum/surgery_step/weld_plating
-	name = "Нанести Сварные Швы"
+	name = "Нанести сварочные швы"
 	implements = list(
 		TOOL_WELDER = 100)
 	time = 24
@@ -178,7 +178,7 @@
 
 //replace wires
 /datum/surgery_step/replace_wires
-	name = "Заменить Проводку"
+	name = "Заменить проводку"
 	implements = list(/obj/item/stack/cable_coil = 100)
 	time = 24
 	var/cableamount = 5
@@ -203,7 +203,7 @@
 
 //add plating
 /datum/surgery_step/add_plating
-	name = "Требуются Дополнительные Панели"
+	name = "Добавить дополнительные панели"
 	implements = list(/obj/item/stack/sheet/metal = 100)
 	time = 24
 	var/metalamount = 5

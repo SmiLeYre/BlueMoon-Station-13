@@ -157,13 +157,15 @@
 /obj/item/reagent_containers/food/snacks/carpmeat,
 /obj/item/crowbar/red,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/clothing/suit/space/eva,
 /obj/item/clothing/head/helmet/space/eva,
 /obj/item/restraints/handcuffs/cable/zipties,
 /obj/item/restraints/handcuffs/cable/zipties,
 /obj/item/restraints/handcuffs/cable/zipties,
 /obj/item/restraints/handcuffs/cable/zipties,
 /obj/item/restraints/handcuffs/cable/zipties,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/clothing/suit/space/eva/light,
 /turf/open/floor/iron/shuttle/arrivals/sign_1{
 	initial_gas_mix = "n2=100;TEMP=293.15"
 	},
@@ -267,7 +269,8 @@
 /area/shuttle/vox_raiders)
 "ni" = (
 /obj/machinery/vending/tool{
-	req_access_txt = "150"
+	req_access_txt = "150";
+	req_access = list(150)
 	},
 /turf/open/floor/iron/shuttle/arrivals/sign_1{
 	initial_gas_mix = "n2=100;TEMP=293.15"
@@ -469,6 +472,9 @@
 	initial_gas_mix = "n2=100;TEMP=293.15"
 	},
 /area/shuttle/vox_raiders)
+"wO" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/template_noop)
 "wQ" = (
 /obj/machinery/door/window/brigdoor/northleft{
 	req_access_txt = "150"
@@ -820,6 +826,7 @@
 /obj/item/restraints/handcuffs/cable/zipties,
 /obj/item/restraints/handcuffs/cable/zipties,
 /obj/item/restraints/handcuffs/cable/zipties,
+/obj/item/defibrillator/loaded,
 /turf/open/floor/iron/shuttle/cargo{
 	initial_gas_mix = "n2=100;TEMP=293.15"
 	},
@@ -833,7 +840,8 @@
 /area/shuttle/vox_raiders)
 "Oy" = (
 /obj/machinery/vending/engivend{
-	req_access_txt = "150"
+	req_access_txt = "150";
+	req_access = list(150)
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/shuttle/arrivals/sign_1{
@@ -1159,8 +1167,8 @@ RU
 ah
 Yi
 kx
-hm
-hm
+wO
+wO
 ye
 ye
 "}
@@ -1409,8 +1417,8 @@ KF
 RD
 iO
 kx
-hm
-hm
+wO
+wO
 ye
 ye
 "}
@@ -1434,8 +1442,8 @@ rT
 nI
 HI
 kx
-hm
-hm
+wO
+wO
 ye
 ye
 "}

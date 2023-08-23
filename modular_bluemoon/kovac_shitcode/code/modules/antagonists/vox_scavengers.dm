@@ -137,9 +137,9 @@
 /obj/effect/mob_spawn/human/vox_scavenger/proc/generate_scavenger_name()
 	return "[pick(GLOB.vox_names)]"
 
-/obj/effect/mob_spawn/human/vox_scavenger/Destroy()
-	new/obj/structure/showcase/machinery/oldpod/used/oldpod(drop_location())
-	return ..()
+///obj/effect/mob_spawn/human/vox_scavenger/Destroy()
+	//new/obj/structure/showcase/machinery/oldpod/used/oldpod(drop_location())
+	//return ..()
 
 ////// Shuttle (Krashly again) ///////////
 

@@ -8286,9 +8286,6 @@
 /turf/open/floor/plating,
 /area/medical/virology)
 "aoR" = (
-/obj/item/kirbyplants{
-	icon_state = "plant-10"
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1{
 	dir = 1
 	},
@@ -8296,6 +8293,7 @@
 	dir = 4;
 	pixel_x = -26
 	},
+/obj/structure/closet/secure_closet/ntr,
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "aoS" = (

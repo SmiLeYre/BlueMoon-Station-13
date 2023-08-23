@@ -88,6 +88,7 @@ Contains:
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
+	tail_state = ""
 
 	//NASA Voidsuit
 /obj/item/clothing/head/helmet/space/nasavoid
@@ -173,6 +174,7 @@ Contains:
 	strip_delay = 40
 	equip_delay_other = 20
 	mutantrace_variation = STYLE_DIGITIGRADE
+	tail_state = ""
 
 	//Emergency Response Team suits
 /obj/item/clothing/head/helmet/space/hardsuit/ert

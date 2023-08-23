@@ -85,3 +85,9 @@
 	icon_state = "hardsuit0-kikimora"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/kikimora
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/suit/donator/bm/angelo
+	name = "angelo's trenchcoat"
+	desc = "Thick leather trench coat with stitched red edges on the collar. The right shoulder is decorated with an aiguillette. On the sleeves, patterns in the form of a three-headed hydra can be distinguished. Without a doubt, this cloak went to the owner as a reward from the higher command, as confirmation of his status. Interesting."
+	icon_state = "angelo"
+	item_state = "angelo"
