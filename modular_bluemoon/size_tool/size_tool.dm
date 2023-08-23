@@ -51,12 +51,17 @@
 
 /obj/item/melee/sizetool/examine(mob/user)
 	. = ..()
-	if(cell) // заряд батарейки
-		. += span_notice("[src] is [round(cell.percent())]% charged.")
-		. += span_notice("Its cell can be removed with a screwdriver.")
+	if(cell)
+		. += span_info("[src] is [round(cell.percent())]% charged.")
+		. += span_info("Its cell can be removed with a screwdriver.")
 	else
 		. += span_warning("[src] does not have a power source installed.")
+	. += span_info("You can use it in ghostcafe to make your size bigger than 200%")
 
+/obj/item/melee/sizetool/proc/check_for_ghostcafe() // Вы можете использовать весь функционал (в виде повышения размера до 800%) в госткафе
+	if(istype(get_area(src), /area/centcom/holding))
+		return TRUE
+	return FALSE
 
 /obj/item/melee/sizetool/attack(mob/living/target, mob/living/carbon/human/user)
 	if(!isliving(target) || issilicon(target)) // только для существ, не киборгов
@@ -71,7 +76,11 @@
 
 		if(SHRINK_MODE)
 			switch(get_size(target))
-				if(RESIZE_BIG to INFINITY)
+				if(RESIZE_MACRO to INFINITY)
+					new_size = RESIZE_HUGE
+				if(RESIZE_HUGE to RESIZE_MACRO)
+					new_size = RESIZE_BIG
+				if(RESIZE_BIG to RESIZE_HUGE)
 					new_size = RESIZE_NORMAL
 				if(RESIZE_NORMAL to RESIZE_BIG)
 					new_size = RESIZE_SMALL
@@ -85,9 +94,19 @@
 
 		if(GROWTH_MODE)
 			switch(get_size(target))
-				if(RESIZE_BIG to RESIZE_HUGE)
+				if(RESIZE_MACRO to INFINITY)
 					to_chat(user, span_warning("[src] buzzes as it cannot make [target] bigger."))
 					return
+				if(RESIZE_HUGE to RESIZE_MACRO)
+					if(!check_for_ghostcafe())
+						to_chat(user, span_warning("[src] buzzes as it cannot make [target] bigger."))
+						return
+					new_size = RESIZE_MACRO
+				if(RESIZE_BIG to RESIZE_HUGE)
+					if(!check_for_ghostcafe())
+						to_chat(user, span_warning("[src] buzzes as it cannot make [target] bigger."))
+						return
+					new_size = RESIZE_HUGE
 				if(RESIZE_NORMAL to RESIZE_BIG)
 					new_size = RESIZE_BIG
 				if(RESIZE_SMALL to RESIZE_NORMAL)
@@ -104,7 +123,8 @@
 	user.visible_message(span_warning("[user] comes closer to [target] and points [src] at them!"), span_notice("You point your [src] at [target] and hold the trigger. It begins to vibrate and is getting hotter, as the charge is being gained."))
 
 	if(do_after(user, 5 SECONDS, target = target)) // КД перед применением на цель
-		cell.use(charge_per_use)
+		if(!check_for_ghostcafe()) // в госткафе заряд не тратится
+			cell.use(charge_per_use)
 		in_use = FALSE
 
 		//TODO - ДОБАВИТЬ СЮДА ТРЕЙТ, ЗАПРЕЩАЮЩИЙ ИЗМЕНЯТЬ РАЗМЕР, ЕСЛИ ЦЕЛЬ НЕВОСПРИИМЧИВА К НОРМАЛАЙЗЕРУ!
