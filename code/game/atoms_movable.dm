@@ -318,22 +318,27 @@
 	if(pulling.anchored || pulling.move_resist > move_force || !pulling.Adjacent(src))
 		stop_pulling()
 		return FALSE
-	// BLUEMOON ADDITION AHEAD - Проверка на возможность таскать мышкой сверхтяжёлого персонажа
+	// BLUEMOON ADDITION AHEAD - проверка на возможность тащить мышкой сверхтяжёлого персонажа
 	if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY_SUPER))
-		if(!issilicon(src)) // синтетики могут тащить
-			if(iscarbon(src) && !HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER)) // сверхтяжёлые могут тащить
-				var/mob/living/carbon/human/H = src
-				if(!H.dna.check_mutation(HULK)) // халки могут тащить
-					if(istype(H.back, /obj/item/mod/control))
-						var/obj/item/mod/control/MOD = H.back
-						if(!MOD.active || !istype(MOD.selected_module, /obj/item/mod/module/clamp)) // обычные члены экипажа с МОДом, где активирована гидравлическая клешня, тоже могут тащить
-							to_chat(src, span_warning("[pulling] is too heavy, you cannot move them around!"))
-							stop_pulling()
-							return
-					else
-						to_chat(src, span_warning("[pulling] is too heavy, you cannot move them around!"))
-						stop_pulling()
-						return
+		var/can_pull = FALSE
+		if(isalien(src)) // чужие (с абилками) могут тащить
+			can_pull = TRUE
+		if(issilicon(src)) // киборги могут тащить
+			can_pull = TRUE
+		if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER)) // другие сверхтяжёлые персонажи могут тащить
+			can_pull = TRUE
+		if(ishuman(src))
+			var/mob/living/carbon/human/user = src
+			if(user.dna.check_mutation(HULK)) // халки могут тащить
+				can_pull = TRUE
+			if(istype(user.back, /obj/item/mod/control)) // обычные персонажи с активированными клешнями из МОДа на спине могут тащить
+				var/obj/item/mod/control/MOD = user.back
+				if(MOD.active || istype(MOD.selected_module, /obj/item/mod/module/clamp))
+					can_pull = TRUE
+		if(!can_pull)
+			to_chat(src, span_warning("[pulling] is too heavy, you cannot move them around!"))
+			stop_pulling()
+			return
 	// BLUEMOON ADDITION END
 	if(isliving(pulling))
 		var/mob/living/L = pulling
@@ -379,20 +384,25 @@
 			return
 		// BLUEMOON ADDITION AHEAD - Проверка на возможность ТЯНУТЬ сверхтяжёлого персонажа
 		if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY_SUPER))
-			if(!issilicon(src)) // синтетики могут тащить
-				if(iscarbon(src) && !HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER)) // сверхтяжёлые могут тащить
-					var/mob/living/carbon/human/H = src
-					if(!H.dna.check_mutation(HULK)) // халки могут тащить
-						if(istype(H.back, /obj/item/mod/control))
-							var/obj/item/mod/control/MOD = H.back
-							if(!MOD.active || !istype(MOD.selected_module, /obj/item/mod/module/clamp)) // обычные члены экипажа с МОДом, где активирована гидравлическая клешня, тоже могут тащить
-								to_chat(src, span_warning("[pulling] is too heavy, you cannot move them around!"))
-								stop_pulling()
-								return
-						else
-							to_chat(src, span_warning("[pulling] is too heavy, you cannot move them around!"))
-							stop_pulling()
-							return
+			var/can_pull = FALSE
+			if(isalien(src)) // чужие (с абилками) могут тащить
+				can_pull = TRUE
+			if(issilicon(src)) // киборги могут тащить
+				can_pull = TRUE
+			if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER)) // другие сверхтяжёлые персонажи могут тащить
+				can_pull = TRUE
+			if(ishuman(src))
+				var/mob/living/carbon/human/user = src
+				if(user.dna.check_mutation(HULK)) // халки могут тащить
+					can_pull = TRUE
+				if(istype(user.back, /obj/item/mod/control)) // обычные персонажи с активированными клешнями из МОДа на спине могут тащить
+					var/obj/item/mod/control/MOD = user.back
+					if(MOD.active || istype(MOD.selected_module, /obj/item/mod/module/clamp))
+						can_pull = TRUE
+			if(!can_pull)
+				to_chat(src, span_warning("[pulling] is too heavy, you cannot move them around!"))
+				stop_pulling()
+				return
 		// BLUEMOON ADDITION END
 	if(pulledby && moving_diagonally != FIRST_DIAG_STEP && get_dist(src, pulledby) > 1)		//separated from our puller and not in the middle of a diagonal move.
 		pulledby.stop_pulling()
