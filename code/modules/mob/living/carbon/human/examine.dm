@@ -184,7 +184,7 @@
 			if(suiciding)
 				. += "<span class='warning'>[t_on] выглядит как суицидник... [t_ego] уже невозможно спасти.</span>\n"
 			if(hellbound)
-				. += span_warning("[t_ego] душа выглядит вырванной из [t_ego] тела. Воскрешение невозможно.")
+				. += span_warning("[ru_ego(TRUE)] душа выглядит вырванной из [t_ego] тела. Воскрешение невозможно.")
 			else
 				. += "<span class='deadsay'>[t_on] ни на что не реагирует; нет никаких признаков жизни...</span>"
 
@@ -325,7 +325,7 @@
 			apparent_blood_volume -= 150 // enough to knock you down one tier
 		switch(apparent_blood_volume)
 			if(BLOOD_VOLUME_OKAY to BLOOD_VOLUME_SAFE)
-				msg += "[t_ego] кожа бледная.\n"
+				msg += "[ru_ego(TRUE)] кожа бледная.\n"
 			if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_OKAY)
 				msg += "<b>Выглядит ужасно бледно.</b>\n"
 			if(-INFINITY to BLOOD_VOLUME_BAD)
