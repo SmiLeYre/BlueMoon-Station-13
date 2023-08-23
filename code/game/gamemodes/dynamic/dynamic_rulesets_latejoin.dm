@@ -59,7 +59,7 @@
 	protected_roles = list("Shaft Miner", "NanoTrasen Representative", "Lawyer", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
 	restricted_roles = list("AI", "Cyborg")
 	required_candidates = 1
-	weight = 3  //BLUEMOON CHANGES
+	weight = 6  //BLUEMOON CHANGES
 	cost = 6 //BLUEMOON CHANGES
 	requirements = list(101,40,25,20,15,10,10,10,10,10)
 	repeatable = TRUE
@@ -82,7 +82,7 @@
 	required_candidates = 1
 	weight = 2
 	delay = 1 MINUTES // Prevents rule start while head is offstation.
-	cost = 20
+	cost = 7 //BLUEMOON CHANGES - маленький шанс и низкая стоимость из-за сложности
 	requirements = list(101,101,101,101,50,20,20,20,20,20)
 	flags = HIGH_IMPACT_RULESET
 	blocking_rules = list(/datum/dynamic_ruleset/roundstart/revs)
@@ -155,7 +155,7 @@
 	protected_roles = list("Shaft Miner", "NanoTrasen Representative", "Lawyer", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Prisoner", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")  //BLUEMOON CHANGES
 	restricted_roles = list("AI", "Cyborg", "Prisoner")  //BLUEMOON CHANGES
 	required_candidates = 1
-	weight = 3 //BLUEMOON CHANGES
+	weight = 4 //BLUEMOON CHANGES
 	cost = 10
 	requirements = list(101,101,101,50,40,20,20,15,10,10)
 	repeatable = TRUE
@@ -175,7 +175,7 @@
 	protected_roles = list("Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
 	restricted_roles = list("AI", "Cyborg")
 	required_candidates = 1
-	weight = 3
+	weight = 4
 	cost = 10
 	requirements = list(101,101,60,50,40,30,20,15,10,10)
 	antag_cap = list("denominator" = 24)

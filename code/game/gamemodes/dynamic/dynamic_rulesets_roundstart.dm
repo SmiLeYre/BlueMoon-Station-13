@@ -14,7 +14,7 @@
 	protected_roles = list("Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGES
 	restricted_roles = list("AI", "Cyborg") //BLUEMOON CHANGES
 	required_candidates = 1
-	weight = 3 //BLUEMOON CHANGES
+	weight = 13 //BLUEMOON CHANGES
 	cost = 8 // Avoid raising traitor threat above 10, as it is the default low cost ruleset.
 	scaling_cost = 9
 	requirements = list(101,10,10,10,10,10,10,10,10,10) //BLUEMOON CHANGES
@@ -56,7 +56,7 @@
 	protected_roles = list("Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGES
 	restricted_roles = list("Cyborg", "AI")
 	required_candidates = 2
-	weight = 3 //BLUEMOON CHANGES
+	weight = 6 //BLUEMOON CHANGES
 	cost = 15
 	scaling_cost = 15
 	requirements = list(101,101,101,101,60,50,40,30,20,10) //BLUEMOON CHANGES
@@ -104,7 +104,7 @@
 	protected_roles = list("Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
 	restricted_roles = list("AI", "Cyborg")
 	required_candidates = 1
-	weight = 3
+	weight = 8 //BLUEMOON CHANGES
 	cost = 15 //BLUEMOON CHANGES
 	scaling_cost = 10
 	requirements = list(101,101,60,50,40,30,20,15,10,10) //BLUEMOON CHANGES
@@ -139,7 +139,7 @@
 	protected_roles = list("Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
 	restricted_roles = list("AI", "Cyborg")
 	required_candidates = 1
-	weight = 3
+	weight = 8 //BLUEMOON CHANGES
 	cost = 15
 	scaling_cost = 9
 	requirements = list(101,101,101,50,40,20,20,15,10,10) //higher because of 'round end'
@@ -180,7 +180,7 @@
 	minimum_required_age = 14
 	restricted_roles = list("Head of Security", "Captain") // Just to be sure that a wizard getting picked won't ever imply a Captain or HoS not getting drafted
 	required_candidates = 1
-	weight = 3
+	weight = 6 //BLUEMOON CHANGES
 	cost = 20
 	requirements = list(101,101,101,60,40,20,20,20,10,10)  //BLUEMOON CHANGES
 	var/list/roundstart_wizards = list()
@@ -280,7 +280,7 @@
 	minimum_required_age = 14
 	restricted_roles = list("Head of Security", "Captain") // Just to be sure that a nukie getting picked won't ever imply a Captain or HoS not getting drafted
 	required_candidates = 5
-	weight = 3
+	weight = 3 //BLUEMOON CHANGES
 	cost = 20
 	requirements = list(101,101,101,101,101,101,60,40,30,10) //BLUEMOON CHANGES
 	flags = HIGH_IMPACT_RULESET
@@ -699,7 +699,7 @@ BLUEMOON REMOVAL END*/
 	antag_flag_override = ROLE_NINJA
 	flags = LONE_RULESET
 	required_candidates = 1
-	weight = 3
+	weight = 6 //BLUEMOON CHANGES
 	cost = 20
 	requirements = list(101,101,101,60,40,20,20,20,10,10)
 	var/list/spawn_locs = list()
