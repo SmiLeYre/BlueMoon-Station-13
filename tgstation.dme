@@ -4138,6 +4138,7 @@
 #include "modular_bluemoon\phenyamomota\code\modules\tools\tools.dm"
 #include "modular_bluemoon\rakeideas\hca_forms.dm"
 #include "modular_bluemoon\rbmk_modification\rbmk_modification.dm"
+#include "modular_bluemoon\size_tool\size_tool.dm"
 #include "modular_bluemoon\SmiLeY\aesthetics\airlock\code\airlock.dm"
 #include "modular_bluemoon\SmiLeY\aesthetics\barsign\barsigns.dm"
 #include "modular_bluemoon\SmiLeY\aesthetics\connecting_computer\code\_computer.dm"
