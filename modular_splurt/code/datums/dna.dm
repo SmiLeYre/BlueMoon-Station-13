@@ -1,7 +1,7 @@
 /datum/dna
 	var/last_capped_size //For some reason this feels dirty... I suppose it should go somewhere else
 
-/datum/dna/update_body_size(old_size, var/sizegunned = FALSE) // BLUEMOON CHANGES
+/datum/dna/update_body_size(old_size)
 	if(!holder || features["body_size"] == old_size)
 		return ..()
 
@@ -68,7 +68,7 @@
 		holder.health = (holder.health / holder.maxHealth) * MINIMAL_SIZE_HEALTH
 		holder.maxHealth = MINIMAL_SIZE_HEALTH
 		return
-	if(healthmod_new > healthmod_old && !sizegunned) // Больше ли новое максимальное ХП, чем старое. // Относительно небольшой урон можно очень легко заабузить с помощью размерной пушки. Уменьшаем степень абуза
+	if(healthmod_new > healthmod_old) // Больше ли новое максимальное ХП, чем старое
 		if(holder.health < holder.maxHealth * 0.9) // Больше ли урона чем 10%
 			var/damage_formula = abs(holder.health / holder.maxHealth * healthchange - (holder.maxHealth + healthchange)) - holder.health
 			holder.apply_damage(damage_formula, BRUTE, BODY_ZONE_CHEST) // Наносится пропорциональное разнице остатка ХП количество урона

@@ -32,7 +32,7 @@
 				new_size = RESIZE_MICRO
 			if((0 - INFINITY) to RESIZE_NORMAL)
 				new_size = RESIZE_MICRO
-		living.update_size(new_size, sizegunned = TRUE) // BLUEMOON CHANGES - добавлена проверка на попадание размерного луча
+		living.update_size(new_size)
 	return 1
 
 /obj/item/projectile/sizelaser/growthray/on_hit(atom/target, blocked = 0 )
@@ -54,7 +54,7 @@
 				new_size = RESIZE_TINY
 			if((0 - INFINITY) to RESIZE_MICRO)
 				new_size = RESIZE_MICRO
-		living.update_size(new_size, sizegunned = TRUE) // BLUEMOON CHANGES - добавлена проверка на попадание размерного луча
+		living.update_size(new_size)
 	return 1
 
 /obj/item/ammo_casing/energy/laser/growthray
