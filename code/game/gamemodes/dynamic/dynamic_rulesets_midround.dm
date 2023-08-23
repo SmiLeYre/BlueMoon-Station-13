@@ -215,10 +215,10 @@
 		log_game("DYNAMIC: Random chance to roll autotraitor failed, it was a [mode.threat_level]% chance.")
 		return FALSE
 
-	return ..()
+	..()
 
 /datum/dynamic_ruleset/midround/autotraitor/trim_candidates()
-	..()
+	. = ..()
 	for(var/mob/living/player in living_players)
 		if(issilicon(player)) // Your assigned role doesn't change when you are turned into a silicon.
 			living_players -= player
@@ -265,7 +265,7 @@
 	var/datum/gang_handler/handler
 
 /datum/dynamic_ruleset/midround/families/trim_candidates()
-	..()
+	. = ..()
 	candidates = living_players
 	for(var/mob/living/player in candidates)
 		if(issilicon(player))
@@ -324,7 +324,7 @@
 	required_type = /mob/living/silicon/ai
 
 /datum/dynamic_ruleset/midround/malf/trim_candidates()
-	..()
+	. = ..()
 	candidates = living_players
 	for(var/mob/living/player in candidates)
 		if(!isAI(player))
@@ -476,7 +476,7 @@
 	return ..()
 
 /datum/dynamic_ruleset/midround/ratvar_awakening/trim_candidates()
-	..()
+	. = ..()
 	candidates = living_players
 	for(var/mob/living/player as anything in candidates)
 		var/turf/player_turf = get_turf(player)
@@ -541,7 +541,7 @@
 	return ..()
 
 /datum/dynamic_ruleset/midround/narsie_awakening/trim_candidates()
-	..()
+	. = ..()
 	candidates = living_players
 	for(var/mob/living/player as anything in candidates)
 		var/turf/player_turf = get_turf(player)
@@ -615,7 +615,7 @@
 	repeatable = TRUE
 
 /datum/dynamic_ruleset/midround/blob_infection/trim_candidates()
-	..()
+	. = ..()
 	candidates = living_players
 	for(var/mob/living/player as anything in candidates)
 		var/turf/player_turf = get_turf(player)
