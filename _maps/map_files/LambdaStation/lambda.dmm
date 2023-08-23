@@ -33331,6 +33331,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/effect/landmark/start/bouncer,
 /turf/open/floor/plasteel,
 /area/hallway/primary/fore)
 "bnb" = (

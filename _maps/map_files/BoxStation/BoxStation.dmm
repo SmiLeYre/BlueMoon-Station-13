@@ -51535,6 +51535,10 @@
 	},
 /turf/open/floor/festive/wooden/wooden2,
 /area/commons/fitness/recreation)
+"kbm" = (
+/obj/effect/landmark/start/bouncer,
+/turf/open/floor/wood,
+/area/service/bar)
 "kck" = (
 /obj/effect/turf_decal/tile/green{
 	dir = 4
@@ -102956,7 +102960,7 @@ mlg
 gwG
 sUa
 acN
-aKR
+kbm
 aKR
 aKR
 aKR

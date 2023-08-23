@@ -61735,6 +61735,11 @@
 	},
 /turf/open/floor/wood/wood_diagonal,
 /area/security/prison)
+"qZV" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/effect/landmark/start/bouncer,
+/turf/open/floor/mineral/plastitanium,
+/area/service/bar)
 "raH" = (
 /obj/machinery/atmospherics/pipe/manifold/orange/hidden{
 	dir = 8
@@ -102727,7 +102732,7 @@ aQe
 aOL
 aMx
 aMx
-aMx
+qZV
 aMx
 rqE
 fWi

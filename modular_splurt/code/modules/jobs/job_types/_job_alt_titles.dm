@@ -140,7 +140,6 @@
 		"NRI Tourist",
 		"Clerk",
 		"Blacksmith",
-		"Waiter",
 		"All-purpose Fleshlight",
 		"All-purpose Dildo",
 		"Cumdump",

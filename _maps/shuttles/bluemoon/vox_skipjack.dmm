@@ -33,6 +33,11 @@
 	initial_gas_mix = "n2=100;TEMP=293.15"
 	},
 /area/shuttle/vox_raiders)
+"cu" = (
+/obj/structure/shuttle/engine/propulsion/burst,
+/obj/structure/shuttle/engine/propulsion/burst,
+/turf/open/space/basic,
+/area/shuttle/vox_raiders)
 "cz" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
@@ -328,6 +333,25 @@
 /obj/machinery/atmospherics/pipe/manifold/general/visible/layer3{
 	dir = 1
 	},
+/obj/machinery/door/window/brigdoor/eastleft{
+	dir = 1
+	},
+/obj/structure/rack,
+/obj/item/tank/internals/emergency_nitrogen/double,
+/obj/item/tank/internals/emergency_nitrogen/double,
+/obj/item/tank/internals/emergency_nitrogen/double,
+/obj/item/tank/internals/emergency_nitrogen/empty,
+/obj/item/tank/internals/emergency_nitrogen/empty,
+/obj/item/tank/internals/emergency_nitrogen_ext,
+/obj/item/tank/internals/emergency_nitrogen_ext,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced,
+/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/on/layer3,
 /turf/open/floor/catwalk_floor{
 	initial_gas_mix = "n2=100;TEMP=293.15"
 	},
@@ -468,13 +492,11 @@
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer3{
 	dir = 5
 	},
+/obj/effect/mob_spawn/human/vox_scavenger,
 /turf/open/floor/catwalk_floor{
 	initial_gas_mix = "n2=100;TEMP=293.15"
 	},
 /area/shuttle/vox_raiders)
-"wO" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/template_noop)
 "wQ" = (
 /obj/machinery/door/window/brigdoor/northleft{
 	req_access_txt = "150"
@@ -496,14 +518,6 @@
 /area/shuttle/vox_raiders)
 "ye" = (
 )
-"yp" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/on/layer3,
-/obj/effect/mob_spawn/human/vox_scavenger,
-/turf/open/floor/iron/shuttle/cargo{
-	initial_gas_mix = "n2=100;TEMP=293.15"
-	},
-/area/shuttle/vox_raiders)
 "yz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/popcorn,
@@ -625,28 +639,8 @@
 	},
 /area/shuttle/vox_raiders)
 "FI" = (
-/obj/item/tank/internals/emergency_nitrogen_ext,
-/obj/item/tank/internals/emergency_nitrogen_ext,
-/obj/structure/rack,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced,
-/obj/machinery/door/window/brigdoor/eastleft{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/tank/internals/emergency_nitrogen/empty,
-/obj/item/tank/internals/emergency_nitrogen/empty,
-/obj/item/tank/internals/emergency_nitrogen/double,
-/obj/item/tank/internals/emergency_nitrogen/double,
-/obj/item/tank/internals/emergency_nitrogen/double,
-/turf/open/floor/iron/shuttle/cargo{
-	initial_gas_mix = "n2=100;TEMP=293.15"
-	},
+/turf/closed/wall/mineral/plastitanium,
 /area/shuttle/vox_raiders)
 "Gr" = (
 /obj/machinery/door/airlock/hatch{
@@ -721,6 +715,10 @@
 /turf/open/floor/iron/shuttle/cargo{
 	initial_gas_mix = "n2=100;TEMP=293.15"
 	},
+/area/shuttle/vox_raiders)
+"JT" = (
+/obj/structure/shuttle/engine/propulsion/burst,
+/turf/open/space/basic,
 /area/shuttle/vox_raiders)
 "JY" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1117,7 +1115,7 @@ kx
 kx
 kx
 kx
-hm
+JT
 hm
 ye
 ye
@@ -1142,7 +1140,7 @@ vW
 dp
 YV
 kx
-hm
+cu
 hm
 ye
 ye
@@ -1167,8 +1165,8 @@ RU
 ah
 Yi
 kx
-wO
-wO
+JT
+hm
 ye
 ye
 "}
@@ -1191,9 +1189,9 @@ AQ
 RU
 RD
 qJ
-yp
 FI
-kx
+JT
+hm
 hm
 hm
 "}
@@ -1417,8 +1415,8 @@ KF
 RD
 iO
 kx
-wO
-wO
+JT
+hm
 ye
 ye
 "}
@@ -1442,8 +1440,8 @@ rT
 nI
 HI
 kx
-wO
-wO
+JT
+hm
 ye
 ye
 "}
@@ -1467,7 +1465,7 @@ uL
 en
 ek
 kx
-hm
+JT
 hm
 ye
 ye
@@ -1492,7 +1490,7 @@ kx
 kx
 kx
 kx
-hm
+JT
 hm
 ye
 ye

@@ -141572,6 +141572,10 @@
 	icon_state = "floor_plate"
 	},
 /area/maintenance/fore)
+"uKA" = (
+/obj/effect/landmark/start/bouncer,
+/turf/open/floor/plasteel/dark,
+/area/service/bar)
 "uKC" = (
 /obj/machinery/door/airlock/maintenance{
 	dir = 8;
@@ -194767,7 +194771,7 @@ iiM
 bJe
 lPk
 wqQ
-iiM
+uKA
 sJF
 coe
 iGo

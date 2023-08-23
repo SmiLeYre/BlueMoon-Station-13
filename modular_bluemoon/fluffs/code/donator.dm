@@ -200,7 +200,7 @@
 
 /datum/gear/donator/bm/angelo
 	name = "Angelo's Coat"
-	slot = ITEM_SLOT_NECK
+	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/donator/bm/angelo
 	ckeywhitelist = list("axidant")
 	subcategory = LOADOUT_SUBCATEGORIES_DON12

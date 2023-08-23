@@ -66656,6 +66656,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/service/hydroponics/garden)
+"nRb" = (
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/effect/landmark/start/bouncer,
+/turf/open/floor/plasteel,
+/area/service/bar)
 "nRF" = (
 /obj/machinery/firealarm{
 	dir = 8;
@@ -120520,7 +120528,7 @@ uMQ
 kPZ
 nFG
 mPv
-kPZ
+nRb
 emB
 hAL
 mPv

@@ -66312,6 +66312,11 @@
 "xxp" = (
 /turf/open/floor/plating,
 /area/security/range)
+"xxU" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/effect/landmark/start/bouncer,
+/turf/open/floor/mineral/plastitanium,
+/area/service/bar)
 "xzd" = (
 /obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/syndicate_present,
@@ -102724,7 +102729,7 @@ aQe
 aOL
 aMx
 aMx
-aMx
+xxU
 aMx
 rqE
 fWi

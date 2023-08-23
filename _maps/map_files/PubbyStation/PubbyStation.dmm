@@ -54443,6 +54443,10 @@
 	dir = 1
 	},
 /area/hallway/secondary/exit/departure_lounge)
+"jfD" = (
+/obj/effect/landmark/start/bouncer,
+/turf/open/floor/plasteel/dark,
+/area/service/bar)
 "jfY" = (
 /obj/structure/chair{
 	dir = 1;
@@ -60875,7 +60879,7 @@
 /turf/open/floor/plating,
 /area/cargo/storage)
 "sbY" = (
-/obj/machinery/vending/coffee,
+/obj/structure/closet/secure_closet/ntr,
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "sci" = (
@@ -96293,7 +96297,7 @@ aPE
 cpg
 bah
 bag
-bah
+jfD
 bag
 bex
 bfr

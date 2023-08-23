@@ -9,3 +9,4 @@
 #define MARTIALART_CQC "CQC"
 #define MARTIALART_PLASMAFIST "plasma fist"
 #define MARTIALART_RISINGBASS "rising bass"
+#define MARTIALART_BOUNCER "bouncer martial art"

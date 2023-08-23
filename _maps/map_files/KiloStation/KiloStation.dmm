@@ -82635,6 +82635,14 @@
 /obj/structure/dresser,
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
+"fOE" = (
+/obj/effect/turf_decal/tile/red,
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/landmark/start/bouncer,
+/turf/open/floor/plasteel/showroomfloor,
+/area/service/bar/atrium)
 "fSi" = (
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
@@ -121039,7 +121047,7 @@ brR
 brP
 brA
 brH
-brr
+fOE
 bow
 bqk
 bmT

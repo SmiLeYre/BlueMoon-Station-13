@@ -62202,6 +62202,10 @@
 /mob/living/simple_animal/hostile/poison/giant_spider,
 /turf/open/floor/plating,
 /area/maintenance/department/cargo)
+"vxg" = (
+/obj/effect/landmark/start/bouncer,
+/turf/open/floor/plasteel/chapel_floor,
+/area/service/bar)
 "vxm" = (
 /obj/machinery/computer/secure_data,
 /obj/effect/turf_decal/tile/red{
@@ -118436,7 +118440,7 @@ yjz
 fiQ
 yjz
 yjz
-yjz
+vxg
 xCu
 yjz
 mws

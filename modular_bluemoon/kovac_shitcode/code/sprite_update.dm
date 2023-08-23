@@ -399,6 +399,7 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/vox
 	armor = list(MELEE = 65, BULLET = 50, LASER = 70, ENERGY = 20, BOMB = 30, BIO = 30, RAD = 30)
 	species_restricted = list("Vox")
+	tail_state = ""
 
 
 ////////////////////////////////////////////////////////////////////////////// Арбалеты с иными пинами и ЕВА, помещающаяся в рюкзак. Не стал изменять прямо на картах, а сделал отдельные предметы. Пригодятся.

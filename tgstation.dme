@@ -2597,6 +2597,7 @@
 #include "code\modules\jobs\job_types\service\assistant.dm"
 #include "code\modules\jobs\job_types\service\bartender.dm"
 #include "code\modules\jobs\job_types\service\botanist.dm"
+#include "code\modules\jobs\job_types\service\bouncer.dm"
 #include "code\modules\jobs\job_types\service\chaplain.dm"
 #include "code\modules\jobs\job_types\service\clown.dm"
 #include "code\modules\jobs\job_types\service\cook.dm"

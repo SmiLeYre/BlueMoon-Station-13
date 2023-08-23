@@ -34219,6 +34219,10 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/grass/grass0,
 /area/hallway/secondary/entry)
+"dAv" = (
+/obj/effect/landmark/start/bouncer,
+/turf/open/floor/plasteel,
+/area/service/bar/atrium)
 "dFV" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 4
@@ -84882,7 +84886,7 @@ apV
 hRi
 aoP
 vPL
-hRi
+dAv
 huj
 bxL
 qKS

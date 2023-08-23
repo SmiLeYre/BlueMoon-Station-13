@@ -18,11 +18,9 @@
 		"Security Assistant",
 		"Security Cadet",
 		"Rookie",
-		"Hired Muscle",
 		"Low-Quality Product",
 		"Freak",
-		"Russian Officer",
-		"Bodyguard"
+		"Russian Officer"
 		)
 	custom_spawn_text = "<font color='black' size='2'><b> Your job is to keep the peace. Conflict de-escalation through diplomacy is your top priority. Only use your baton as a last resort.</b></font><font color='red' size='4'><b>You are NOT a Security Officer.</b></font>"
 
