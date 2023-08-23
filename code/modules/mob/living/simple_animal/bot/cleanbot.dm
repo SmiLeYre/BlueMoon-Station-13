@@ -108,7 +108,10 @@
 
 	chosen_name = name
 	get_targets()
-	icon_state = "cleanbot[on]"
+	if(base_icon == "servoskull")
+		icon_state = "servoskull[on]"
+	else
+		icon_state = "cleanbot[on]"
 
 	var/datum/job/janitor/J = new/datum/job/janitor
 	access_card.access += J.get_access()
@@ -328,6 +331,7 @@
 /mob/living/simple_animal/bot/cleanbot/proc/get_targets()
 	target_types = list(
 		/obj/effect/decal/cleanable/vomit,
+		/obj/effect/decal/cleanable/crayon,
 		/obj/effect/decal/cleanable/molten_object,
 		/obj/effect/decal/cleanable/tomato_smudge,
 		/obj/effect/decal/cleanable/egg_smudge,
@@ -341,7 +345,7 @@
 		/obj/effect/decal/cleanable/semendrip,
 		/obj/effect/decal/cleanable/semen/femcum,
 		/obj/effect/decal/cleanable/generic,
-		/obj/effect/decal/cleanable/glass,
+		/obj/effect/decal/cleanable/glass,,
 		/obj/effect/decal/cleanable/cobweb,
 		/obj/effect/decal/cleanable/plant_smudge,
 		/obj/effect/decal/cleanable/chem_pile,
@@ -375,7 +379,10 @@
 	// 	return
 	if(istype(A, /obj/effect/decal/cleanable))
 		anchored = TRUE
-		icon_state = "cleanbot-c"
+		if(base_icon == "servoskull")
+			icon_state = "servoskull-c"
+		else
+			icon_state = "cleanbot-c"
 		visible_message("<span class='notice'>[src] begins to clean up [A].</span>")
 		mode = BOT_CLEANING
 		spawn(clean_time)
@@ -389,7 +396,10 @@
 				anchored = FALSE
 				target = null
 			mode = BOT_IDLE
-			icon_state = "cleanbot[on]"
+			if(base_icon == "servoskull")
+				icon_state = "servoskull[on]"
+			else
+				icon_state = "cleanbot[on]"
 	else if(istype(A, /turf)) //for player-controlled cleanbots so they can clean unclickable messes like dirt
 		var/turf/T = A
 		for(var/atom/S in T.contents)
@@ -488,3 +498,8 @@
 
 /obj/machinery/bot_core/cleanbot/medbay
 	req_one_access = list(ACCESS_JANITOR, ACCESS_ROBOTICS, ACCESS_MEDICAL)
+/mob/living/simple_animal/bot/cleanbot/servoskull
+	name = "\improper Servoskull"
+	desc = "Самый настоящий летающий череп! Он держит в своих робо-лапках чистящие средства и выглядит... податливым."
+	icon_state = "servoskull1"
+	base_icon = "servoskull"

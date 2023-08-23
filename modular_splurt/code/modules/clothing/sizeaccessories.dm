@@ -10,6 +10,8 @@
 	body_parts_covered = 0
 	transfer_prints = TRUE
 	strip_delay = 40
+	equip_delay_self = 175
+	unequip_delay_self = 175
 	//These are already defined under the parent ring, but I wanna leave em here for reference purposes
 
 //For glove slots
@@ -38,6 +40,8 @@
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/hands.dmi'
 	icon_state = "wristband"
 	item_state = "syntechband"
+	equip_delay_self = 175
+	unequip_delay_self = 175
 
 /obj/item/clothing/wrists/syntech/equipped(mob/user, slot)
 	if(slot != ITEM_SLOT_WRISTS)
@@ -65,6 +69,8 @@
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/neck.dmi'
 	icon_state = "pendant"
 	item_state = "pendant"
+	equip_delay_self = 175
+	unequip_delay_self = 175
 
 //For neck items
 /obj/item/clothing/neck/syntech/equipped(mob/living/user, slot)

@@ -23,6 +23,7 @@
 				/obj/item/dildo/knotted = 3
 				)
 	premium = list(
+				/obj/item/bikehorn/rubberducky = 6,
 				/obj/item/toy/fluff/tennis_poly/tri/squeak/rainbow = 1,
 				/obj/item/toy/fluff/tennis_poly/tri/squeak = 1,
 				/obj/item/toy/fluff/bone_poly/squeak = 1

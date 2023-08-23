@@ -43,6 +43,12 @@
 	clothing_flags = NOSLIP | NOSLIP_ICE
 	armor = list(MELEE = 40, BULLET = 30, LASER = 25, ENERGY = 25, BOMB = 50, BIO = 30, RAD = 30, FIRE = 90, ACID = 50)
 
+/obj/item/clothing/shoes/combat/swat/knife
+
+/obj/item/clothing/shoes/combat/swat/knife/Initialize()
+	. = ..()
+	new /obj/item/kitchen/knife/combat(src)
+
 /obj/item/clothing/shoes/sandal
 	desc = "A pair of rather plain wooden sandals."
 	name = "sandals"
@@ -158,7 +164,7 @@
 
 /obj/item/clothing/shoes/jackboots/Initialize()
 	. = ..()
-	AddComponent(/datum/component/squeak, list('sound/effects/footstep/sec_boots-1.ogg' = 1,'sound/effects/footstep/sec_boots-2.ogg' = 1), 30)
+	AddComponent(/datum/component/squeak, list('sound/effects/footstep/sec_boots-1.ogg' = 1,'sound/effects/footstep/sec_boots-2.ogg' = 1), 75)
 
 /obj/item/clothing/shoes/jackboots/sec
 	name = "security jackboots"
@@ -621,3 +627,13 @@
 	icon_state = "JackFrostShoes"
 	item_state = "JackFrostShoes_worn"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/shoes/ducky
+	name = "Rubber Ducky Shoes"
+	desc = "These shoes are made for quacking, and thats just what they'll do."
+	icon_state = "ducky"
+	item_state = "ducky"
+
+/obj/item/clothing/shoes/ducky/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/squeak, list('sound/items/squeaktoy.ogg' = 1), 50, falloff_exponent = 20)

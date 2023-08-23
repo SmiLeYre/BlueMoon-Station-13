@@ -723,3 +723,24 @@
 	desc = "Granted to the henchmen who deserve it. This probably doesn't include you."
 	icon_state = "henchmen"
 	item_state = "henchmen"
+
+/obj/item/storage/backpack/duffelbag/cursed
+	name = "Cursed Dufflebag"
+	icon_state = "duffel-curse"
+	item_state = "duffel"
+	desc = "A toolbox painted black with a red stripe. It looks more heavier than normal toolboxes."
+	force = 24
+	throwforce = 38
+
+/obj/item/storage/backpack/duffelbag/cursed/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.silent = TRUE
+
+/obj/item/storage/backpack/duffelbag/cursed/PopulateContents()
+	new /obj/item/screwdriver/ashwalker(src)
+	new /obj/item/wrench/ashwalker(src)
+	new /obj/item/weldingtool/experimental/ashwalker(src)
+	new /obj/item/crowbar/ashwalker(src)
+	new /obj/item/wirecutters/ashwalker(src, "red")
+	new /obj/item/clothing/gloves/tackler/combat/insulated/infiltrator(src)

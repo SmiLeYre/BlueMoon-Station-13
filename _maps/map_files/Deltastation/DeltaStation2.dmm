@@ -58036,6 +58036,7 @@
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
+/mob/living/simple_animal/bot/cleanbot/servoskull,
 /turf/open/floor/plasteel/white,
 /area/science/robotics/lab)
 "dHA" = (
@@ -83471,6 +83472,11 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/machinery/button/door{
+	id = "ntr";
+	name = "Representative Office Shutters";
+	pixel_x = 25
+	},
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "iMm" = (
@@ -99525,10 +99531,6 @@
 /area/maintenance/port/aft)
 "nON" = (
 /obj/structure/cable/white,
-/obj/machinery/door/poddoor/preopen{
-	id = "detectivewindows";
-	name = "Detective Privacy Blast door"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable/white{
 	icon_state = "1-4"
@@ -107245,11 +107247,6 @@
 "qlM" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/button/door{
-	id = "ntr";
-	name = "Representative Office Shutters";
-	pixel_y = -25
-	},
 /obj/machinery/door/poddoor/preopen{
 	id = "ntr"
 	},

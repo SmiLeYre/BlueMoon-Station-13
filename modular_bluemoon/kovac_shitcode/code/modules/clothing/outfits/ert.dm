@@ -364,6 +364,7 @@
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/hecu/black
 	belt = /obj/item/storage/belt/janitor/ert_maid
+	mask = /obj/item/clothing/mask/gas/sechailer/syndicate
 	r_hand = /obj/item/mop/advanced
 	//l_pocket = /obj/item/clothing/accessory/lawyers_badge
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
@@ -394,6 +395,7 @@
 	back = /obj/item/storage/backpack/hecu/black
 	belt = /obj/item/storage/belt/janitor/ert_maid
 	r_hand = /obj/item/mop/advanced
+	mask = /obj/item/clothing/mask/gas/sechailer/syndicate
 	//l_pocket = /obj/item/clothing/accessory/lawyers_badge
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/storage/ifak=1)

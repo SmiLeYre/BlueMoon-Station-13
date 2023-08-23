@@ -330,10 +330,10 @@
 	dir = 2
 	},
 /obj/structure/lattice/catwalk,
-/obj/machinery/atmospherics/components/unary/outlet_injector/layer3{
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer3{
 	dir = 1
 	},
-/turf/template_noop,
+/turf/open/space/basic,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "bj" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
@@ -548,6 +548,10 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	dir = 6;
+	level = 1
 	},
 /turf/open/floor/iron/dark/diagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
@@ -909,9 +913,6 @@
 	anchored = 1
 	},
 /obj/machinery/light/dim/directional/north,
-/obj/structure/sign/painting/library{
-	pixel_y = 30
-	},
 /turf/open/floor/wood/wood_parquet,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/lounge)
 "dg" = (
@@ -1157,9 +1158,6 @@
 	},
 /obj/item/kirbyplants/hedge{
 	anchored = 1
-	},
-/obj/structure/sign/painting/library{
-	pixel_y = 30
 	},
 /turf/open/floor/wood/wood_parquet,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/lounge)
@@ -1582,6 +1580,7 @@
 /obj/machinery/door/airlock/external/glass{
 	name = "External Access"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "gi" = (
@@ -2940,12 +2939,14 @@
 "lF" = (
 /obj/effect/turf_decal/tile/dark_red/fourcorners,
 /obj/structure/table,
-/obj/item/mmi/posibrain{
-	pixel_y = 6;
-	pixel_x = 2
+/obj/item/mmi/posibrain/syndie,
+/obj/item/mmi/posibrain/syndie{
+	pixel_x = 6;
+	pixel_y = 11
 	},
-/obj/item/mmi/posibrain{
-	pixel_x = -4
+/obj/item/mmi/posibrain/syndie{
+	pixel_x = -8;
+	pixel_y = 11
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
@@ -4175,6 +4176,10 @@
 	},
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
+"qL" = (
+/obj/structure/sign/poster/contraband/random,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo)
 "qN" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /turf/open/floor/carpet/royalblack,
@@ -4658,13 +4663,6 @@
 /obj/effect/spawner/lootdrop/maintenance/eight,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
-"sT" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
-	dir = 9;
-	level = 1
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "sV" = (
 /obj/item/storage/box/beakers/bluespace{
 	pixel_y = 8;
@@ -5376,7 +5374,10 @@
 /obj/machinery/conveyor{
 	id = "ds2disposals"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	dir = 9;
+	level = 1
+	},
 /turf/open/floor/iron/white/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "vS" = (
@@ -8015,10 +8016,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
 /turf/open/floor/iron/dark/diagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
-"In" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "Io" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
@@ -8390,10 +8387,7 @@
 	c_tag = "DS-2 Engineering Airlock";
 	network = list("ds2")
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
-	dir = 6;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
 /turf/open/floor/catwalk_floor,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "Kb" = (
@@ -10965,13 +10959,12 @@
 /obj/structure/window/reinforced/survival_pod{
 	dir = 6
 	},
-/obj/item/wallframe/painting,
-/obj/item/wallframe/painting{
-	pixel_x = 4;
-	pixel_y = 4
-	},
 /obj/item/flashlight/lamp/green{
 	pixel_x = -10
+	},
+/obj/item/toy/cards/deck/syndicate,
+/obj/item/toy/cards/deck/unum{
+	pixel_x = 5
 	},
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/lounge)
@@ -13916,8 +13909,8 @@ Bm
 RE
 tl
 vR
-In
-sT
+Tt
+Tt
 Tt
 Tt
 vS
@@ -14316,7 +14309,7 @@ wg
 Nc
 Oi
 qh
-NB
+qL
 ek
 Wn
 Sc
@@ -14371,7 +14364,7 @@ wg
 Mt
 NB
 NB
-NB
+qL
 da
 Hb
 mK
@@ -14426,7 +14419,7 @@ wg
 Nc
 zI
 qh
-NB
+qL
 ek
 GY
 Uh

@@ -12,4 +12,6 @@
 	desc = "Keeps the lil buzzing buggers away from your squishy bits."
 	icon_state = "beekeeper"
 	item_state = "beekeeper"
+	tail_state = "beekeeper"
+	flags_inv = HIDETAUR
 	clothing_flags = THICKMATERIAL

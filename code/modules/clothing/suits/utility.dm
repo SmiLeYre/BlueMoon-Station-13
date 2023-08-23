@@ -10,10 +10,11 @@
  */
 
 /obj/item/clothing/suit/fire
-	name = "emergency firesuit"
+	name = "Emergency Firesuit"
 	desc = "A suit that helps protect against fire and heat."
 	icon_state = "fire"
 	item_state = "ro_suit"
+	tail_state = "firesuit"
 	w_class = WEIGHT_CLASS_BULKY
 	gas_transfer_coefficient = 0.9
 	permeability_coefficient = 0.5
@@ -21,7 +22,7 @@
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/extinguisher, /obj/item/crowbar)
 	slowdown = 1
 	armor = list(MELEE = 15, BULLET = 5, LASER = 20, ENERGY = 10, BOMB = 20, BIO = 10, RAD = 20, FIRE = 100, ACID = 50)
-	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
+	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAUR
 	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
@@ -34,6 +35,7 @@
 /obj/item/clothing/suit/fire/firefighter
 	icon_state = "firesuit"
 	item_state = "firefighter"
+	tail_state = "firesuit"
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC|STYLE_PAW_TAURIC
 
@@ -43,6 +45,7 @@
 	desc = "An old, bulky thermal protection suit."
 	icon_state = "thermal"
 	item_state = "ro_suit"
+	tail_state = "firesuit"
 	slowdown = 1.5
 
 /obj/item/clothing/suit/fire/atmos
@@ -50,6 +53,7 @@
 	desc = "An expensive firesuit that protects against even the most deadly of station fires. Designed to protect even if the wearer is set aflame."
 	icon_state = "atmos_firesuit"
 	item_state = "firesuit_atmos"
+	tail_state = "firesuit_atmos"
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC|STYLE_PAW_TAURIC
@@ -76,12 +80,12 @@
 	resistance_flags = NONE
 	mutantrace_variation = STYLE_MUZZLE
 
-
 /obj/item/clothing/suit/bomb_suit
 	name = "bomb suit"
 	desc = "A suit designed for safety when handling explosives."
 	icon_state = "bombsuit"
 	item_state = "bombsuit"
+	tail_state = "bombsuit"
 	w_class = WEIGHT_CLASS_BULKY
 	gas_transfer_coefficient = 0.01
 	permeability_coefficient = 0.01
@@ -103,12 +107,11 @@
 /obj/item/clothing/head/bomb_hood/security
 	icon_state = "bombsuit_sec"
 	item_state = "bombsuit_sec"
-
 /obj/item/clothing/suit/bomb_suit/security
 	icon_state = "bombsuit_sec"
 	item_state = "bombsuit_sec"
+	tail_state = "bombsuitsec"
 	allowed = list(/obj/item/gun/energy, /obj/item/melee/baton, /obj/item/restraints/handcuffs)
-
 
 /obj/item/clothing/head/bomb_hood/white
 	icon_state = "bombsuit_white"
@@ -117,6 +120,7 @@
 /obj/item/clothing/suit/bomb_suit/white
 	icon_state = "bombsuit_white"
 	item_state = "bombsuit_white"
+	tail_state = "bombsuitsec"
 
 /*
 * Radiation protection
@@ -142,6 +146,7 @@
 	desc = "A suit that protects against radiation. The label reads, 'Made with lead. Please do not consume insulation.'"
 	icon_state = "rad"
 	item_state = "rad_suit"
+	tail_state = "rad"
 	w_class = WEIGHT_CLASS_BULKY
 	gas_transfer_coefficient = 0.9
 	permeability_coefficient = 0.5

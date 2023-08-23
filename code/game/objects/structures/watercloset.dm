@@ -508,11 +508,18 @@
 		to_chat(C, "<span class='danger'>The water is searing!</span>")
 
 /obj/item/bikehorn/rubberducky
-	name = "rubber ducky"
+	name = "Rubber Ducky"
 	desc = "Rubber ducky you're so fine, you make bathtime lots of fuuun. Rubber ducky I'm awfully fooooond of yooooouuuu~"	//thanks doohl
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "rubberducky"
 	item_state = "rubberducky"
+
+/obj/item/bikehorn/rubberducky/captain
+	name = "Rubber Captain Ducky"
+	desc = "Капитан всех уточек на этой станции. Крайне важная и престижная уточка. Выпущены в ограниченных экземплярах и только для капитанов. Ценная находка для коллекционеров."
+	icon = 'icons/obj/watercloset.dmi'
+	icon_state = "captain_rubberducky"
+	item_state = "captain_rubberducky"
 
 /obj/structure/sink
 	name = "sink"

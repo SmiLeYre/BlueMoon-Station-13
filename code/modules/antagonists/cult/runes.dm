@@ -534,7 +534,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 	cultist_name = "Revive"
 	cultist_desc = "requires a dead, mindless, or inactive cultist placed upon the rune. Provided there have been sufficient sacrifices, they will be given a new life."
 	invocation = "Pasnar val'keriam usinar. Savrae ines amutan. Yam'toth remium il'tarat." //Depends on the name of the user - see below
-	icon_state = "1"
+	icon_state = "golem"
 	color = RUNE_COLOR_MEDIUMRED
 	var/static/revives_used = -SOULS_TO_REVIVE // Cultists get one "free" revive
 
@@ -542,7 +542,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 	. = ..()
 	if(iscultist(user) || user.stat == DEAD)
 		var/revive_number = LAZYLEN(GLOB.sacrificed) - revives_used
-		. += "<b>Revives Remaining:</b> [revive_number]"
+		. += "<b>Возрождений Осталось:</b> [revive_number]"
 
 /obj/effect/rune/raise_dead/invoke(var/list/invokers)
 	var/turf/T = get_turf(src)
@@ -822,7 +822,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 	cultist_name = "Spirit Realm"
 	cultist_desc = "manifests a spirit servant of the Geometer and allows you to ascend as a spirit yourself. The invoker must not move from atop the rune, and will take damage for each summoned spirit."
 	invocation = "Gal'h'rfikk harfrandid mud'gib." //how the fuck do you pronounce this
-	icon_state = "7"
+	icon_state = "golem2"
 	invoke_damage = 10
 	construct_invoke = FALSE
 	color = RUNE_COLOR_DARKRED

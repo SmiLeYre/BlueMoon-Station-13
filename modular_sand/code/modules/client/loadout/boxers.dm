@@ -6,6 +6,10 @@
 	path = /obj/item/clothing/underwear/briefs
 	cost = 0
 
+/datum/gear/underwear/harley_shorts
+	name = "Harley Shorts"
+	path = 	/obj/item/clothing/underwear/briefs/harley
+
 /datum/gear/underwear/jockstrap
 	name = "Jockstrap"
 	path = 	/obj/item/clothing/underwear/briefs/jockstrap

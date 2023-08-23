@@ -19,6 +19,11 @@
 	name = "Red cloak"
 	path = /obj/item/clothing/suit/hooded/cloak/david
 
+/datum/gear/suit/harley_jacket
+	name = "Harley Jacket"
+	path = /obj/item/clothing/suit/jacket/harley
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
 /datum/gear/suit/jacketbomber
 	name = "Bomber jacket"
 	path = /obj/item/clothing/suit/jacket

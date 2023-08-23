@@ -49,7 +49,7 @@
 	)
 	belt = /obj/item/storage/belt/janitor/ert_maid
 	glasses = /obj/item/clothing/glasses/meson
-	mask = /obj/item/clothing/mask/bandana/blue
+	mask = /obj/item/clothing/mask/gas/sechailer/syndicate
 	l_pocket = /obj/item/grenade/chem_grenade/cleaner
 	r_pocket = /obj/item/grenade/chem_grenade/cleaner
 	l_hand = /obj/item/storage/bag/trash

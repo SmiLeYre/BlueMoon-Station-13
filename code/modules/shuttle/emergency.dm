@@ -591,6 +591,10 @@
 		return
 
 	var/list/turfs = get_area_turfs(target_area)
+
+	if(turfs.len == 0)
+		return
+
 	var/turf/T = pick(turfs)
 
 	while(turfs.len)
@@ -611,6 +615,7 @@
 	name = "emergency space suit"
 	icon_state = "syndicate-orange"
 	item_state = "syndicate-orange"
+	tail_state = "syndicate-orange"
 	slowdown = 3
 
 /obj/item/pickaxe/emergency

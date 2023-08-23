@@ -11411,6 +11411,7 @@
 /obj/machinery/vending/wardrobe/engi_wardrobe,
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding)
+
 "kBX" = (
 /obj/machinery/light{
 	dir = 4
@@ -18991,12 +18992,10 @@
 /area/centcom/ferry)
 "rsr" = (
 /obj/structure/table/wood,
-/obj/item/toy/plush/beeplushie{
-	name = "Ashley Bee"
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
+/obj/item/toy/plush/nukeplushie,
 /turf/open/floor/wood/wood_parquet,
 /area/syndicate_mothership)
 "rsB" = (

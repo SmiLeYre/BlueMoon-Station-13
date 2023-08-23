@@ -349,7 +349,7 @@
 /mob/proc/equip_to_slot_if_possible(obj/item/W, slot, qdel_on_fail = FALSE, disable_warning = FALSE, redraw_mob = TRUE, bypass_equip_delay_self = FALSE, clothing_check = FALSE)
 	if(!istype(W))
 		return FALSE
-	var/list/warning = list("<span class='warning'>You are unable to equip that!</span>")
+	var/list/warning = list("<span class='warning'>Вы не можете это экипировать!</span>")
 	if(!W.mob_can_equip(src, null, slot, disable_warning, bypass_equip_delay_self, clothing_check, warning))
 		if(qdel_on_fail)
 			qdel(W)

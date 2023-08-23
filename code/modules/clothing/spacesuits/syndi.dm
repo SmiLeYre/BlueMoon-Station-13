@@ -10,6 +10,7 @@
 	name = "red space suit"
 	icon_state = "syndicate"
 	item_state = "space_suit_syndicate"
+	tail_state = "syndicate"
 	desc = "Has a tag on it: Totally not property of an enemy corporation, honest!"
 	w_class = WEIGHT_CLASS_NORMAL
 	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/transforming/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
@@ -26,7 +27,7 @@
 	name = "green space suit"
 	icon_state = "syndicate-green"
 	item_state = "syndicate-green"
-
+	tail_state = "syndicate-green"
 
 //Dark green syndicate space suit
 /obj/item/clothing/head/helmet/space/syndicate/green/dark
@@ -38,7 +39,7 @@
 	name = "dark green space suit"
 	icon_state = "syndicate-green-dark"
 	item_state = "syndicate-green-dark"
-
+	tail_state = "syndicate-green-dark"
 
 //Orange syndicate space suit
 /obj/item/clothing/head/helmet/space/syndicate/orange
@@ -50,6 +51,7 @@
 	name = "orange space suit"
 	icon_state = "syndicate-orange"
 	item_state = "syndicate-orange"
+	tail_state = "syndicate-orange"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC|STYLE_PAW_TAURIC
 
 //Blue syndicate space suit
@@ -62,7 +64,7 @@
 	name = "blue space suit"
 	icon_state = "syndicate-blue"
 	item_state = "syndicate-blue"
-
+	tail_state = "syndicate-blue"
 
 //Black syndicate space suit
 /obj/item/clothing/head/helmet/space/syndicate/black
@@ -74,6 +76,7 @@
 	name = "black space suit"
 	icon_state = "syndicate-black"
 	item_state = "syndicate-black"
+	tail_state = "syndicate-black"
 
 //Black-red syndicate contract varient
 /obj/item/clothing/head/helmet/space/syndicate/contract
@@ -90,6 +93,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	icon_state = "syndicate-contract"
 	item_state = "syndicate-contract"
+	tail_state = "syndicate-contractor"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC|STYLE_PAW_TAURIC
 
 //Black-green syndicate space suit
@@ -102,7 +106,7 @@
 	name = "black and green space suit"
 	icon_state = "syndicate-black-green"
 	item_state = "syndicate-black-green"
-
+	tail_state = "syndicate-black-green"
 
 //Black-blue syndicate space suit
 /obj/item/clothing/head/helmet/space/syndicate/black/blue
@@ -114,7 +118,7 @@
 	name = "black and blue space suit"
 	icon_state = "syndicate-black-blue"
 	item_state = "syndicate-black-blue"
-
+	tail_state = "syndicate-black-blue"
 
 //Black medical syndicate space suit
 /obj/item/clothing/head/helmet/space/syndicate/black/med
@@ -126,7 +130,7 @@
 	name = "green space suit"
 	icon_state = "syndicate-black-med"
 	item_state = "syndicate-black"
-
+	tail_state = "syndicate-black-med"
 
 //Black-orange syndicate space suit
 /obj/item/clothing/head/helmet/space/syndicate/black/orange
@@ -138,7 +142,7 @@
 	name = "black and orange space suit"
 	icon_state = "syndicate-black-orange"
 	item_state = "syndicate-black"
-
+	tail_state = "syndicate-black-orange"
 
 //Black-red syndicate space suit
 /obj/item/clothing/head/helmet/space/syndicate/black/red
@@ -150,6 +154,7 @@
 	name = "black and red space suit"
 	icon_state = "syndicate-black-red"
 	item_state = "syndicate-black-red"
+	tail_state = "syndicate-black-red"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC|STYLE_PAW_TAURIC
 
 
@@ -163,3 +168,4 @@
 	name = "black engineering space suit"
 	icon_state = "syndicate-black-engie"
 	item_state = "syndicate-black"
+	tail_state = "syndicate-black-engie"

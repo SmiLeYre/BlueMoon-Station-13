@@ -585,69 +585,69 @@ SUBSYSTEM_DEF(ticker)
 
 /datum/controller/subsystem/ticker/proc/send_news_report()
 	var/news_message
-	var/news_source = "Nanotrasen News Network"
+	var/news_source = "Новости Пакта Синие Луны"
 	switch(news_report)
 		if(NUKE_SYNDICATE_BASE)
-			news_message = "In a daring raid, the heroic crew of [station_name()] detonated a nuclear device in the heart of a terrorist base."
+			news_message = "Во время недавней попытки Рейдерского Захвата [station_name()] со стороны ИнтеКью, станции удалось уничтожить отряд тяжело вооружённых Террористов."
 		if(STATION_DESTROYED_NUKE)
-			news_message = "We would like to reassure all employees that the reports of a Syndicate backed nuclear attack on [station_name()] are, in fact, a hoax. Have a secure day!"
+			news_message = "Мы хотели бы заверить всех сотрудников, что сообщения о ядерной атаке на [station_name()], поддерживаемой Оперативниками ИнтеКью, на самом деле являются мистификацией. Желаем безопасного дня!"
 		if(STATION_EVACUATED)
 			if(emergency_reason)
-				news_message = "[station_name()] has been evacuated after transmitting the following distress beacon:\n\n[emergency_reason]"
+				news_message = "[station_name()] была эвакуирован после передачи следующего сигнала бедствия:\n\n[emergency_reason]"
 			else
-				news_message = "The crew of [station_name()] has been evacuated amid unconfirmed reports of enemy activity."
+				news_message = "Экипаж [station_name()] эвакуирован в связи с неподтвержденными сообщениями об активности противника и ввиду достижения всех поставленных задач."
 		if(BLOB_WIN)
-			news_message = "[station_name()] was overcome by an unknown biological outbreak, killing all crew on board. Don't let it happen to you! Remember, a clean work station is a safe work station."
+			news_message = "[station_name()] была поражена неизвестной Биологической Вспышкой Пятого Уровня, в результате чего погиб весь экипаж. Не допустите, чтобы это случилось с вами! Помните, что чистое рабочее место - это безопасное рабочее место."
 		if(BLOB_NUKE)
-			news_message = "[station_name()] is currently undergoing decontanimation after a controlled burst of radiation was used to remove a biological ooze. All employees were safely evacuated prior, and are enjoying a relaxing vacation."
+			news_message = "[station_name()] в настоящее время проходит дезактивацию после контролируемого всплеска радиации, использованного для удаления Биологической Слизи. Все сотрудники были благополучно эвакуированы до этого и сейчас наслаждаются отдыхом."
 		if(BLOB_DESTROYED)
-			news_message = "[station_name()] is currently undergoing decontamination procedures after the destruction of a biological hazard. As a reminder, any crew members experiencing cramps or bloating should report immediately to security for incineration."
+			news_message = "[station_name()] в настоящее время проходит процедуру дезактивации после уничтожения Биологической Опасности Пятого Уровня. Напоминаем, что все члены экипажа, испытывающие спазмы или вздутие живота, должны немедленно явиться в Отдел Службы Безопасности для последующего решения проблемы."
 		if(CULT_ESCAPE)
-			news_message = "Security Alert: A group of religious fanatics have escaped from [station_name()]."
+			news_message = "ВНИМАНИЕ: Тревога. Группа религиозных фанатиков сбежала с [station_name()]."
 		if(CULT_FAILURE)
-			news_message = "Following the dismantling of a restricted cult aboard [station_name()], we would like to remind all employees that worship outside of the Chapel is strictly prohibited, and cause for termination."
+			news_message = "В связи с ликвидацией запрещенного культа на борту [station_name()], мы хотели бы напомнить всем сотрудникам, что вероисповедание вне часовни строго запрещено и является основанием для увольнения."
 		if(CULT_SUMMON)
-			news_message = "Company officials would like to clarify that [station_name()] was scheduled to be decommissioned following meteor damage earlier this year. Earlier reports of an unknowable eldritch horror were made in error."
+			news_message = "Представители компании хотели бы уточнить, что [station_name()] было запланировано вывести из эксплуатации после разрушения метеоритом в начале этого года. Более ранние сообщения о неизвестном эльдрическом ужасе были сделаны по ошибке."
 		if(NUKE_MISS)
-			news_message = "The Syndicate have bungled a terrorist attack [station_name()], detonating a nuclear weapon in empty space nearby."
+			news_message = "ИнтеКью совершили террористическую атаку на [station_name()], взорвав Ядерную Боеголовку в пустом пространстве поблизости."
 		if(OPERATIVES_KILLED)
-			news_message = "Repairs to [station_name()] are underway after an elite Syndicate death squad was wiped out by the crew."
+			news_message = "На станции [station_name()] ведутся ремонтные работы после уничтожения экипажем Оперативников Террористической Группировки ИнтеКью."
 		if(OPERATIVE_SKIRMISH)
-			news_message = "A skirmish between security forces and Syndicate agents aboard [station_name()] ended with both sides bloodied but intact."
+			news_message = "Перестрелка между силами Отдела СБ и агентами ИнтеКью на борту [station_name()] закончилась тем, что обе стороны понесли потери, но в целом остались невредимы."
 		if(REVS_WIN)
-			news_message = "Company officials have reassured investors that despite a union led revolt aboard [station_name()] there will be no wage increases for workers."
+			news_message = "Представители Корпорации заверили инвесторов, что, несмотря на восстание профсоюза на борту [station_name()], повышения зарплаты рабочим не будет."
 		if(REVS_LOSE)
-			news_message = "[station_name()] quickly put down a misguided attempt at mutiny. Remember, unionizing is illegal!"
+			news_message = "[station_name()] быстро подавили ошибочную попытку Мятежа. Помните, что объединение в профсоюзы незаконно!"
 		if(WIZARD_KILLED)
-			news_message = "Tensions have flared with the Space Wizard Federation following the death of one of their members aboard [station_name()]."
+			news_message = "После гибели одного из космических магов на борту [station_name()] возникла совсем небольшая напряженность в отношениях с Федерацией."
 		if(STATION_NUKED)
-			news_message = "[station_name()] activated its self-destruct device for unknown reasons. Attempts to clone the Captain so he can be arrested and executed are underway."
+			news_message = "[station_name()] по неизвестным причинам активировали устройство самоуничтожения. В настоящее время предпринимаются попытки клонировать капитана, чтобы арестовать и казнить его."
 		if(CLOCK_SUMMON)
-			news_message = "The garbled messages about hailing a mouse and strange energy readings from [station_name()] have been discovered to be an ill-advised, if thorough, prank by a clown."
+			news_message = "Беспорядочные сообщения о вызове Бог-Машины и странные показания энергии с [station_name()] оказались непродуманным, хотя и тщательным розыгрышем клоуна."
 		if(CLOCK_SILICONS)
-			news_message = "The project started by [station_name()] to upgrade their silicon units with advanced equipment have been largely successful, though they have thus far refused to release schematics in a violation of company policy."
+			news_message = "Проект, начатый [station_name()] по модернизации своих кремниевых блоков с помощью современного оборудования, в целом оказался успешным, хотя в нарушение политики компании они до сих пор отказываются публиковать схемы."
 		if(CLOCK_PROSELYTIZATION)
-			news_message = "The burst of energy released near [station_name()] has been confirmed as merely a test of a new weapon. However, due to an unexpected mechanical error, their communications system has been knocked offline."
+			news_message = "Было подтверждено, что вспышка энергии, произошедшая в районе станции [station_name()], была всего лишь испытанием нового оружия. Однако из-за неожиданной механической ошибки система связи была выведена из строя."
 		if(SHUTTLE_HIJACK)
-			news_message = "During routine evacuation procedures, the emergency shuttle of [station_name()] had its navigation protocols corrupted and went off course, but was recovered shortly after."
+			news_message = "Во время плановой эвакуации на аварийном шаттле [station_name()] были повреждены навигационные протоколы и он сбился с курса, но вскоре был восстановлен, а все сотрудники были благополучно эвакуированы и сейчас наслаждаются отдыхом."
 		if(GANG_OPERATING)
-			news_message = "The company would like to state that any rumors of criminal organizing on board stations such as [station_name()] are falsehoods, and not to be emulated."
+			news_message = "Пакт хотел бы заявить, что любые слухи об организации преступного сообщества на станциях типа [station_name()] являются ложью и не подлежат подражанию."
 		if(GANG_DESTROYED)
-			news_message = "The crew of [station_name()] would like to thank the Spinward Stellar Coalition Police Department for quickly resolving a minor terror threat to the station."
+			news_message = "Экипаж [station_name()] благодарит полицейский департамент Звездной Коалиции за оперативное устранение незначительной террористической угрозы для станции."
 
 	if(SSblackbox.first_death)
 		var/list/ded = SSblackbox.first_death
 		if(ded.len)
-			var/last_words = ded["last_words"] ? " Their last words were: \"[ded["last_words"]]\"" : ""
-			news_message += "\nNT Sanctioned Psykers picked up faint traces of someone near the station, allegedly having had died.\nTheir name was: [ded["name"]], [ded["role"]], at [ded["area"]].[last_words]"
+			var/last_words = ded["last_words"] ? " Его последние слова: \"[ded["last_words"]]\"" : ""
+			news_message += "\nNT Sanctioned Psykers засекли слабые следы человека, якобы умершего неподалеку от станции.\nЕго имя было: [ded["name"]], [ded["role"]], и умер он в [ded["area"]].[last_words]"
 		else
-			news_message += "\nNT Sanctioned Psykers proudly confirm reports that nobody died this shift!"
+			news_message += "\nNT Sanctioned Psykers с гордостью подтверждают сообщения о том, что в эту смену никто не умер!"
 
 	if(news_message)
 		send2otherserver(news_source, news_message,"News_Report")
 		return news_message
 	else
-		return "We regret to inform you that shit be whack, yo. None of our reporters have any idea of what may or may not have gone on."
+		return "С прискорбием сообщаем вам, что дело нечисто, йоу. Никто из наших репортеров не имеет ни малейшего представления о том, что могло или не могло произойти."
 
 /datum/controller/subsystem/ticker/proc/GetTimeLeft()
 	if(isnull(SSticker.timeLeft))

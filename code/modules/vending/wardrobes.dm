@@ -657,7 +657,8 @@
 		/obj/item/card/id/syndicate = 5,
 		/obj/item/clothing/suit/armor/vest/capcarapace/syndicate/winter = 1,
 		/obj/item/clothing/suit/armor/vest/capcarapace/syndicate = 1,
-		/obj/item/clothing/head/hats/warden/syndicate = 1
+		/obj/item/clothing/head/hats/warden/syndicate = 1,
+		/obj/item/storage/backpack/duffelbag/syndie = 2
 	)
 	refill_canister = /obj/item/vending_refill/wardrobe/syndie_wardrobe
 	light_color = COLOR_MOSTLY_PURE_RED

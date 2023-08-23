@@ -46,6 +46,7 @@
 /area/hilbertshotel)
 "ch" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/hilbertshotel/layer3,
+/obj/structure/sink/kitchen/directional/west,
 /turf/open/indestructible/hoteltile,
 /area/hilbertshotel)
 "cm" = (

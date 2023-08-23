@@ -4,7 +4,6 @@
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "stamp-ok"
 	item_state = "stamp"
-	// item_state = "stamp"
 	throwforce = 0
 	w_class = WEIGHT_CLASS_TINY
 	throw_speed = 3
@@ -12,8 +11,6 @@
 	custom_materials = list(/datum/material/iron=60)
 	pressure_resistance = 2
 	attack_verb = list("stamped")
-	// attack_verb_continuous = list("stamps")
-	// attack_verb_simple = list("stamp")
 
 /obj/item/stamp/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] stamps 'VOID' on [user.ru_ego()] forehead, then promptly falls over, dead.</span>")

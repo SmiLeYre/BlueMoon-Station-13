@@ -34,6 +34,11 @@
 	cost = 65
 	restricted = TRUE
 
+/datum/uplink_item/support/reinforcement/assault_borg/syndicate
+	name = "Syndicate Assault Cyborg"
+	item = /obj/item/antag_spawner/synd_borg/assault
+	purchasable_from = UPLINK_SYNDICATE
+
 /datum/uplink_item/support/reinforcement/medical_borg
 	name = "Illegal Medical Cyborg"
 	desc = "A combat medical cyborg. Has limited offensive potential, but makes more than up for it with its support capabilities. \
@@ -44,6 +49,11 @@
 	cost = 35
 	restricted = TRUE
 
+/datum/uplink_item/support/reinforcement/medical_borg/syndicate
+	name = "Syndicate Medical Cyborg"
+	item = /obj/item/antag_spawner/synd_borg/medical
+	purchasable_from = UPLINK_SYNDICATE
+
 /datum/uplink_item/support/reinforcement/saboteur_borg
 	name = "Illegal Saboteur Cyborg"
 	desc = "A streamlined engineering cyborg, equipped with covert modules. Also incapable of leaving the welder in the shuttle. \
@@ -53,6 +63,11 @@
 	refundable = TRUE
 	cost = 35
 	restricted = TRUE
+
+/datum/uplink_item/support/reinforcement/saboteur_borg/syndicate
+	name = "Syndicate Saboteur Cyborg"
+	item = /obj/item/antag_spawner/synd_borg/saboteur
+	purchasable_from = UPLINK_SYNDICATE
 
 /datum/uplink_item/support/hermes
 	name = "MIB-01 Hermes Exosuit"

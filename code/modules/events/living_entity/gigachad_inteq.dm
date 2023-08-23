@@ -40,13 +40,10 @@
 
 	var/turf/T = get_turf(pick(spawn_locs))
 	var/mob/living/simple_animal/hostile/gigachad_inteq/S = new(T)
-	playsound(S, 'modular_bluemoon/kovac_shitcode/sound/weapons/sledge.ogg', 75, 1, -1)
+	playsound(S, 'modular_bluemoon/kovac_shitcode/sound/weapons/sledge.ogg', 75, 1, 1000)
 	message_admins("An InteQ mutant has been spawned at [COORD(T)][ADMIN_JMP(T)]")
 	log_game("An InteQ mutant has been spawned at [COORD(T)]")
 	return SUCCESSFUL_SPAWN
-
-
-
 /////////////////Simple mob himself///////////////
 /mob/living/simple_animal/hostile/gigachad_inteq
 	name = "InteQ Agent"

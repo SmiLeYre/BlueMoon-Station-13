@@ -107,9 +107,6 @@
 	can_adjust = FALSE
 	mutantrace_variation = STYLE_DIGITIGRADE|USE_TAUR_CLIP_MASK
 
-/obj/item/clothing/under/rank/civilian/clown/jester/alt
-	icon_state = "jester2"
-
 /obj/item/clothing/under/rank/civilian/clown/sexy
 	name = "sexy-clown suit"
 	desc = "It makes you look HONKable!"
@@ -121,3 +118,34 @@
 /obj/item/clothing/under/rank/civilian/clown/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/squeak, list('sound/items/bikehorn.ogg'=1), 50)
+
+/obj/item/clothing/under/rank/civilian/clown/jester/harley
+	name = "Harley Jester Suit"
+	desc = "A jolly dress, well suited to entertain your master, nuncle."
+	icon_state = "harley_jester"
+	can_adjust = FALSE
+	mutantrace_variation = STYLE_DIGITIGRADE|USE_TAUR_CLIP_MASK
+	unique_reskin = list(
+		"Basic" = list(
+			RESKIN_ICON_STATE = "harley_jester"
+		),
+		"Alternative" = list(
+			RESKIN_ICON_STATE = "alt_harley_jester"
+		),
+	)
+
+/obj/item/clothing/suit/jacket/harley
+	name = "Harley Jacket"
+	desc = "Нет, клоунесса не включена в этот набор."
+	icon_state = "harley_jacket"
+
+/obj/item/clothing/underwear/briefs/harley
+	name = "Harley Shorts"
+	desc = "На самом деле это трусы."
+	body_parts_covered = GROIN
+	icon_state = "harley_shorts"
+
+/obj/item/clothing/underwear/shirt/harley
+	name = "Harley Bra"
+	desc = "Я ничего не боюсь."
+	icon_state = "harley_bra"

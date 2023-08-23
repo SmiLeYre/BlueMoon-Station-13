@@ -1,6 +1,6 @@
-import { Section, Flex, Divider, Table, Collapsible, Box } from "../components";
+import { Section, Flex, Divider, Collapsible, Box, Tooltip, LabeledList, ByondUi, Button } from "../components";
 import { Window } from "../layouts";
-import { useBackend, useLocalState } from "../backend";
+import { useBackend } from "../backend";
 import { Tabs } from "../components";
 
 const getTagColor = (erptag) => {
@@ -21,117 +21,118 @@ const getTagColor = (erptag) => {
 interface CharacterProfileContext {
   directory_visible: boolean;
   headshot_link: string;
-  //fullref_url: string;
-  //fullref_toggle: boolean;
-  flavortext_general: string;
+  character_ref: any,
+  flavortext: string;
   flavortext_naked: string;
   silicon_flavor_text: string;
   oocnotes: string;
   species_name: string;
-  species_text: string;
+  custom_species_lore: string;
   vore_tag: string;
   erp_tag: string;
   mob_tag: string;
   nc_tag: string;
   unholy_tag: string;
-  very_unholy_tag: string;
+  extreme_tag: string;
+  very_extreme_tag: string;
 }
 
 export const CharacterProfile = (props, context) => {
   const { act, data } = useBackend<CharacterProfileContext>(context);
-  const [selectedTab, setSelectedTab] = useLocalState<number>(
-    context,
-    "selectedTab",
-    1
-  );
-  let combinedspeciesname : string = "";
-  combinedspeciesname = combinedspeciesname.concat("Раса - ", data.species_name);
+
+  const tags = [
+    { name: "ERP", title: "Эротический отыгрыш", value: data.erp_tag },
+    { name: "Non-Con", title: "Изнасилование", value: data.nc_tag },
+    { name: "Vore", title: "Поедание/Проглатывание", value: data.vore_tag },
+    { name: "Mob-Sex", title: "Совокупление с Мобами", value: data.mob_tag },
+    { name: "Unholy", title: "Грязный секс", value: data.unholy_tag },
+    { name: "Extreme", title: "Жестокий секс", value: data.extreme_tag },
+    { name: "Extreme Harm", title: "Очень жестокий секс", value: data.very_extreme_tag },
+  ];
 
   return (
-    <Window resizable width={950} height={800}>
+    <Window resizable width={950} height={730}>
       <Window.Content scrollable>
         <Tabs>
-          <Tabs.Tab onClick={() => setSelectedTab(1)}>
-            Визуальный Осмотр / Описание
-          </Tabs.Tab>
           <Tabs.Tab onClick={() => act("character_directory")}>
             Библиотека Персонажей
           </Tabs.Tab>
         </Tabs>
-        {selectedTab === 1 && (
-          <Flex>
-            <Flex.Item pl="10px">
-              <CharacterProfileImageElement />
-            </Flex.Item>
-            <Flex.Item Flex-direction="column" pl="10px" width="100%">
-              <Collapsible title={combinedspeciesname} open>
-                <Section style={{ "white-space": "pre-line" }}>
-                  {data.species_text}
-                </Section>
-              </Collapsible>
-              <Collapsible title="Описание Персонажа" open>
-                <Section>
-                  <CharacterProfileDescElement />
-                </Section>
-              </Collapsible>
-              <Collapsible title="Внеигровые Заметки" open>
-                <Section style={{ "white-space": "pre-line" }}>
-                  {data.oocnotes}
-                </Section>
-              </Collapsible>
-              {data.directory_visible ? (
-                <Section title="Преференсы Персонажа" width="100%">
-                  <Table>
-                    <Table.Row backgroundColor={getTagColor(data.erp_tag)}>
-                      <Table.Cell>Эротическое Раскрытие Персонажа</Table.Cell>
-                      <Table.Cell>{data.erp_tag}</Table.Cell>
-                    </Table.Row>
-                    <Table.Row backgroundColor={getTagColor(data.nc_tag)}>
-                      <Table.Cell>Изнасилование</Table.Cell>
-                      <Table.Cell>{data.nc_tag}</Table.Cell>
-                    </Table.Row>
-                    <Table.Row backgroundColor={getTagColor(data.unholy_tag)}>
-                      <Table.Cell>Жестокий Секс</Table.Cell>
-                      <Table.Cell>{data.unholy_tag}</Table.Cell>
-                    </Table.Row>
-                    <Table.Row backgroundColor={getTagColor(data.very_unholy_tag)}>
-                      <Table.Cell>Грязный Секс</Table.Cell>
-                      <Table.Cell>{data.very_unholy_tag}</Table.Cell>
-                    </Table.Row>
-                    <Table.Row backgroundColor={getTagColor(data.vore_tag)}>
-                      <Table.Cell>Поедание/Проглатывание</Table.Cell>
-                      <Table.Cell>{data.vore_tag}</Table.Cell>
-                    </Table.Row>
-                    <Table.Row backgroundColor={getTagColor(data.mob_tag)}>
-                      <Table.Cell>Совокупление с Мобами</Table.Cell>
-                      <Table.Cell>{data.mob_tag}</Table.Cell>
-                    </Table.Row>
-                  </Table>
-                </Section>
-              ) : (
-                <Divider vertical />
-              )}
-            </Flex.Item>
-          </Flex>
-        )}
+        <Flex>
+          <Flex.Item pl="10px">
+            <CharacterProfileImageElement />
+            <CharacterModelImageElement />
+          </Flex.Item>
+          <Flex.Item Flex-direction="column" pl="10px" width="100%">
+            <Collapsible title={`Раса - ${data.species_name}`} open>
+              <Section style={{ "white-space": "pre-line" }}>
+                {data.custom_species_lore}
+              </Section>
+            </Collapsible>
+            <Collapsible title="Описание персонажа" open>
+              <Section>
+                <Flex direction="column">
+                  {data.flavortext
+                    ? (<Flex.Item style={{ "white-space": "pre-line" }}>{data.flavortext}</Flex.Item>)
+                    : (<Box />)}
+                  {data.flavortext && data.flavortext_naked
+                    ? (<Divider />)
+                    : (<Box />)}
+                  {data.flavortext_naked
+                    ? (<Flex.Item style={{ "white-space": "pre-line" }}>{data.flavortext_naked}</Flex.Item>)
+                    : (<Box />)}
+                  {!data.flavortext && !data.flavortext_naked ? ("Отсутствует") : (<Box />)}
+                </Flex>
+              </Section>
+            </Collapsible>
+            <Collapsible title="Внеигровые заметки" open>
+              <Section style={{ "white-space": "pre-line" }}>
+                {data.oocnotes || "Отсутствуют"}
+              </Section>
+            </Collapsible>
+            {data.directory_visible ? (
+              <Section title="Преференсы персонажа" width="100%">
+                <LabeledList>
+                  {tags.map(tag => (
+                    <LabeledList.Item
+                      key={tag.name}
+                      color={getTagColor(tag.value)}
+                      label={tag.title}>
+                      <Tooltip content={tag.name}>{tag.value}</Tooltip>
+                    </LabeledList.Item>
+                  ))}
+                </LabeledList>
+              </Section>
+            ) : (
+              <Divider vertical />
+            )}
+          </Flex.Item>
+        </Flex>
       </Window.Content>
     </Window>
   );
 };
 
 const CharacterProfileImageElement = (props, context) => {
-  const { act, data } = useBackend<CharacterProfileContext>(context);
-  if (data.headshot_link) return (<Section title="Арт Персонажа" pb="12" textAlign="center"><img src={data.headshot_link} height="256px" width="256px" /></Section>);
+  const { data } = useBackend<CharacterProfileContext>(context);
+  if (data.headshot_link) return (<Section title="Арт персонажа" pb="12" textAlign="center"><img src={data.headshot_link} height="256px" width="256px" /></Section>);
   return (<Box />);
 };
 
-
-const CharacterProfileDescElement = (props, context) => {
+const CharacterModelImageElement = (props, context) => {
   const { act, data } = useBackend<CharacterProfileContext>(context);
 
   return (
-    <Flex direction="column">
-      {data.flavortext_general !== "" ? (<Flex.Item style={{ "white-space": "pre-line" }}><Divider /><b>Основное Описание</b><br />{data.flavortext_general}</Flex.Item>): (<Box />) }
-      {data.silicon_flavor_text !== "" ? (<Flex.Item style={{ "white-space": "pre-line" }}><Divider /><b>Описание Силикона</b><br />{data.silicon_flavor_text}</Flex.Item>): (<Box />) }
-    </Flex>
-  ); };
+    <Section title="Модель персонажа" pb="12" textAlign="center">
+      <ByondUi
+        height="256px" width="256px"
+        params={{ id: data.character_ref, type: 'map' }}
+      />
+      <Box>
+        <Button onClick={()=>act("char_left")} icon="undo" />
+        <Button onClick={()=>act("change_background")}>Сменить фон</Button>
+        <Button onClick={()=>act("char_right")} icon="redo" />
+      </Box>
+    </Section>
+  );
+};

@@ -175,7 +175,7 @@
 	icon = 'icons/obj/device.dmi'
 
 /obj/item/clothing/under/misc/gear_harness
-	name = "gear harness"
+	name = "Gear Harness"
 	desc = "A simple, inconspicuous harness replacement for a jumpsuit."
 	limb_integrity = 180
 	icon_state = "gear_harness"

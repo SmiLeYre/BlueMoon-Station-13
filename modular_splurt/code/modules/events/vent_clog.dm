@@ -12,7 +12,7 @@
 	)
 
 /datum/round_event/scrubber_overflow/cope_and_seethe/start()
-	for (var/obj/machinery/atmospherics/components/unary/vent in GLOB.machines)
+	for (var/obj/machinery/atmospherics/components/unary/vent in scrubbers)
 		if (vent && vent.loc && !vent.welded)
 			var/datum/reagents/R = new/datum/reagents(1000)
 			R.my_atom = vent
@@ -39,7 +39,7 @@
 	priority_announce("Сеть скрубберов испытывает противодавление из-за откуда-то взявшегося в них СКВИРТА. Может произойти некоторое разбрызгивание содержимого.", "Атмосферная Тревога")
 
 /datum/round_event/scrubber_overflow/female/start()
-	for(var/obj/machinery/atmospherics/components/unary/vent in GLOB.machines)
+	for(var/obj/machinery/atmospherics/components/unary/vent in scrubbers)
 		if(vent && vent.loc && !vent.welded)
 			var/datum/reagents/R = new/datum/reagents(1000)
 			R.my_atom = vent
@@ -66,7 +66,7 @@
 	priority_announce("Сеть скрубберов испытывает противодавление из-за откуда-то взявшегося в них СЕМЕНИ. Может произойти некоторое разбрызгивание содержимого.", "Атмосферная Тревога")
 
 /datum/round_event/scrubber_overflow/male/start()
-	for(var/obj/machinery/atmospherics/components/unary/vent in GLOB.machines)
+	for(var/obj/machinery/atmospherics/components/unary/vent in scrubbers)
 		if(vent && vent.loc && !vent.welded)
 			var/datum/reagents/R = new/datum/reagents(1000)
 			R.my_atom = vent
@@ -94,7 +94,7 @@
 	priority_announce("Мы обнаружили снижение уровня похоти на станции. Чтобы исправить это, мы будем использовать большое количество легкого афродизиака. Пожалуйста, держитесь подальше от вентиляционных отверстий, пока розовый газ не рассеется.", "Центральное Командование")
 
 /datum/round_event/scrubber_overflow/crocin/start()
-	for(var/obj/machinery/atmospherics/components/unary/vent in GLOB.machines)
+	for(var/obj/machinery/atmospherics/components/unary/vent in scrubbers)
 		if(vent && vent.loc && !vent.welded)
 			var/datum/reagents/R = new(1000)
 			R.my_atom = vent
@@ -132,7 +132,7 @@
 	priority_announce("The scrubbers network is experiencing an unexpected surge of pressurized beer. Some ejection of contents may occur.", "Atmospherics alert")
 
 /datum/round_event/scrubber_overflow/beer/start()
-	for(var/obj/machinery/atmospherics/components/unary/vent in GLOB.machines)
+	for(var/obj/machinery/atmospherics/components/unary/vent in scrubbers)
 		if(vent && vent.loc && !vent.welded)
 			var/datum/reagents/R = new/datum/reagents(1000)
 			R.my_atom = vent

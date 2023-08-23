@@ -14,14 +14,11 @@
 	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/taur/shadekin
-	name = "Shadekin Long Tail"
-	icon_state = "shadekinlong"
-	icon = 'modular_splurt/icons/mob/mam_taur.dmi'
 	taur_mode = STYLE_PAW_TAURIC
 	color_src = MUTCOLORS
 	extra = FALSE
 
-/datum/sprite_accessory/taur/shadekin/long
+/datum/sprite_accessory/taur//long
 	name = "Shadekin Big Tail"
 	icon_state = "shadekinbig"
 

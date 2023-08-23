@@ -36,7 +36,7 @@
 	anthro_mob_worn_overlay = 'modular_splurt/icons/mob/clothing/shoes_digi.dmi'
 
 /obj/item/clothing/shoes/jackboots/tall
-	name = "tall jackboots"
+	name = "Tall Jackboots"
 	desc = "A pair of knee-high jackboots, complete with heels. All style, all the time."
 	icon = 'modular_splurt/icons/obj/clothing/shoes.dmi'
 	icon_state = "jackboots-tall"
@@ -45,7 +45,7 @@
 
 /obj/item/clothing/shoes/jackboots/tall/Initialize()
 	. = ..()
-	AddComponent(/datum/component/squeak, list('modular_splurt/sound/effects/footstep/highheel1.ogg' = 1,'modular_splurt/sound/effects/footstep/highheel2.ogg' = 1), 20)
+	AddComponent(/datum/component/squeak, list('modular_splurt/sound/effects/footstep/highheel1.ogg' = 1,'modular_splurt/sound/effects/footstep/highheel2.ogg' = 1), 75)
 
 /obj/item/clothing/shoes/workboots/toeless
 	name = "toe-less workboots"

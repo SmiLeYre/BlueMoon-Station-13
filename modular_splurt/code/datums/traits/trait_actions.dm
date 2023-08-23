@@ -1360,7 +1360,6 @@
 		// Revert species trait
 		action_owner.set_bark(old_features["bark"])
 		action_owner.dna.custom_species = old_features["custom_species"]
-		action_owner.dna.custom_species_lore = old_features["custom_species_lore"]
 		action_owner.dna.features["mam_ears"] = old_features["mam_ears"]
 		action_owner.dna.features["mam_snouts"] = old_features["mam_snouts"]
 		action_owner.dna.features["mam_tail"] = old_features["mam_tail"]

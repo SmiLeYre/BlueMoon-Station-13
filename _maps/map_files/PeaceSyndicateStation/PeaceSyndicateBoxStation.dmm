@@ -50495,6 +50495,7 @@
 /area/science/robotics/lab)
 "cHT" = (
 /obj/machinery/holopad,
+/mob/living/simple_animal/bot/cleanbot/servoskull,
 /turf/open/floor/mineral/plastitanium,
 /area/science/robotics/lab)
 "cHU" = (

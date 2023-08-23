@@ -78,6 +78,16 @@
 	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
 	icon_state = "plaguedoc"
 	item_state = "plaguedoc"
+	tail_state = "plaguedoctor"
+	gas_transfer_coefficient = 0.01
+	permeability_coefficient = 0.01
+	clothing_flags = THICKMATERIAL
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 100, RAD = 75, FIRE = 50, ACID = 100)
+	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAUR
+	strip_delay = 70
+	equip_delay_other = 70
+	resistance_flags = ACID_PROOF
 	hoodtype = /obj/item/clothing/head/hooded/plaguedoc_new
 //
 /obj/item/clothing/head/hooded/plaguedoc_new
@@ -159,6 +169,7 @@ obj/item/clothing/suit/donator/bm/cerberus_suit/armored/inkvd
 	desc = "InteQ elite stormtrooper hardsuit."
 	icon_state = "hardsuit0-inteqe"
 	item_state = "hardsuit0-inteqe"
+	tail_state = "hardsuit1-commsoff"
 	hardsuit_type = "inteqe"
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
@@ -182,6 +193,7 @@ obj/item/clothing/suit/donator/bm/cerberus_suit/armored/inkvd
 	desc = "InteQ stormtrooper hardsuit."
 	icon_state = "hardsuit0-inteq"
 	item_state = "hardsuit0-inteq"
+	tail_state = "hardsuit1-commsoff"
 	hardsuit_type = "inteq"
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
@@ -205,6 +217,7 @@ obj/item/clothing/suit/donator/bm/cerberus_suit/armored/inkvd
 	desc = "InteQ shielded stormtrooper hardsuit."
 	icon_state = "hardsuit0-inteq"
 	item_state = "hardsuit0-inteq"
+	tail_state = "hardsuit1-commsoff"
 	hardsuit_type = "inteq"
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'

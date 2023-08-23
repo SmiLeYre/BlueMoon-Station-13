@@ -8,6 +8,10 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 GLOBAL_VAR_INIT(stickpocalypse, FALSE) // if true, all non-embeddable items will be able to harmlessly stick to people when thrown
 GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to embed in people, takes precedence over stickpocalypse
 
+#define REACTION_ITEM_TAKE 1
+#define REACTION_ITEM_TAKEOFF 2
+#define REACTION_GUN_FIRE 3
+
 /obj/item
 	name = "item"
 	icon = 'icons/obj/items_and_weapons.dmi'
@@ -24,6 +28,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/stuttering = 0
 	///icon state name for inhand overlays
 	var/item_state = null
+	//Название хвоста-картинки из tail_digi.dmi
+	var/tail_state = ""
 	///Icon file for left hand inhand overlays
 	var/lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
 	///Icon file for right inhand overlays
@@ -36,6 +42,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/alternate_worn_layer
 
 	var/icon/anthro_mob_worn_overlay //Version of the above dedicated to muzzles/digitigrade
+	var/icon/tail_suit_worn_overlay //Version of the above dedicated to muzzles/digitigrade
 	var/icon/taur_mob_worn_overlay // Idem but for taurs. Currently only used by suits.
 
 	var/list/alternate_screams = list() //REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
@@ -109,6 +116,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/armour_penetration = 0 //percentage of armour effectiveness to remove
 	var/list/allowed = null //suit storage stuff.
 	var/equip_delay_self = 0 //In deciseconds, how long an item takes to equip; counts only for normal clothing slots, not pockets etc.
+	var/unequip_delay_self = 0 //In deciseconds, how long an item takes to equip; counts only for normal clothing slots, not pockets etc.
 	var/equip_delay_other = 20 //In deciseconds, how long an item takes to put on another person
 	var/strip_delay = 40 //In deciseconds, how long an item takes to remove from another person
 	var/breakouttime = 0
@@ -488,6 +496,12 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		playsound(src, drop_sound, DROP_SOUND_VOLUME, ignore_walls = FALSE)
 	user?.update_equipment_speed_mods()
 
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(istype(H.wear_suit, /obj/item/clothing/suit))
+			var/obj/item/clothing/suit/V = H.wear_suit
+			V.attack_reaction(H, REACTION_ITEM_TAKEOFF)
+
 // called just as an item is picked up (loc is not yet changed)
 /obj/item/proc/pickup(mob/user)
 	SHOULD_CALL_PARENT(TRUE)
@@ -508,6 +522,12 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		dat += "Examine [src] to get a full readout of its block/parry stats."
 		to_chat(user, dat.Join("<br>"))
 		user.client.block_parry_hinted |= type
+
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(istype(H.wear_suit, /obj/item/clothing/suit))
+			var/obj/item/clothing/suit/V = H.wear_suit
+			V.attack_reaction(H, REACTION_ITEM_TAKE)
 
 // called when "found" in pockets and storage items. Returns 1 if the search should end.
 /obj/item/proc/on_found(mob/finder)

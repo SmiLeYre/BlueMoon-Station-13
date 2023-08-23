@@ -140,7 +140,7 @@
 					/obj/item/clothing/shoes/wraps/silver = 3,
 					/obj/item/clothing/shoes/wraps/red = 3,
 					/obj/item/clothing/shoes/wraps/blue = 3,
-					/obj/item/clothing/shoes/sandal = 3,
+					/obj/item/clothing/shoes/sandal = 6,
 					/obj/item/clothing/gloves/fingerless = 3,
 					/obj/item/clothing/glasses/orange = 5,
 					/obj/item/clothing/glasses/red = 5,

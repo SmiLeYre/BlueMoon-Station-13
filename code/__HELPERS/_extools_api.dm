@@ -7,6 +7,9 @@
 /proc/auxtools_stack_trace(msg)
 	CRASH(msg)
 
+/proc/auxtools_expr_stub()
+	CRASH("auxtools not loaded")
+
 GLOBAL_LIST_EMPTY(auxtools_initialized)
 
 #define AUXTOOLS_CHECK(LIB)\

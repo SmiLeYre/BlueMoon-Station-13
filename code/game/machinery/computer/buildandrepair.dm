@@ -2,7 +2,7 @@
 	name = "computer frame"
 	icon_state = "console_frame"
 	state = 0
-	base_icon_state = "console"
+	base_icon_state = "console_frame"
 	var/obj/item/stack/sheet/decon_material = /obj/item/stack/sheet/metal
 	var/built_icon = 'icons/obj/computer.dmi'
 	var/built_icon_state = "computer"
@@ -18,6 +18,7 @@
 					to_chat(user, "<span class='notice'>You wrench the frame into place.</span>")
 					set_anchored(TRUE)
 					state = 1
+					icon_state = "0"
 				return
 			if(P.tool_behaviour == TOOL_WELDER)
 				if(!P.tool_start_check(user, amount=0))
@@ -38,6 +39,7 @@
 					to_chat(user, "<span class='notice'>You unfasten the frame.</span>")
 					set_anchored(FALSE)
 					state = 0
+					icon_state = "0"
 				return
 			if(istype(P, /obj/item/circuitboard/computer) && !circuit)
 				if(!user.transferItemToLoc(P, src))
@@ -46,6 +48,7 @@
 				to_chat(user, "<span class='notice'>You place [P] inside the frame.</span>")
 				circuit = P
 				circuit.add_fingerprint(user)
+				icon_state = "1"
 				update_icon()
 				return
 
@@ -56,12 +59,14 @@
 				P.play_tool_sound(src)
 				to_chat(user, "<span class='notice'>You screw [circuit] into place.</span>")
 				state = 2
+				icon_state = "2"
 				update_icon()
 				return
 			if(P.tool_behaviour == TOOL_CROWBAR && circuit)
 				P.play_tool_sound(src)
 				to_chat(user, "<span class='notice'>You remove [circuit].</span>")
 				state = 1
+				icon_state = "0"
 				circuit.forceMove(drop_location())
 				circuit.add_fingerprint(user)
 				circuit = null
@@ -72,6 +77,7 @@
 				P.play_tool_sound(src)
 				to_chat(user, "<span class='notice'>You unfasten the circuit board.</span>")
 				state = 1
+				icon_state = "1"
 				update_icon()
 				return
 			if(istype(P, /obj/item/stack/cable_coil))
@@ -83,6 +89,7 @@
 						return
 					to_chat(user, "<span class='notice'>You add cables to the frame.</span>")
 					state = 3
+					icon_state = "3"
 					update_icon()
 				return
 		if(3)
@@ -90,6 +97,7 @@
 				P.play_tool_sound(src)
 				to_chat(user, "<span class='notice'>You remove the cables.</span>")
 				state = 2
+				icon_state = "2"
 				update_icon()
 				var/obj/item/stack/cable_coil/A = new (drop_location(), 5)
 				A.add_fingerprint(user)
@@ -105,6 +113,7 @@
 						return
 					to_chat(user, "<span class='notice'>You put in the glass panel.</span>")
 					state = 4
+					icon_state = "4"
 					update_icon()
 				return
 		if(4)
@@ -112,6 +121,7 @@
 				P.play_tool_sound(src)
 				to_chat(user, "<span class='notice'>You remove the glass panel.</span>")
 				state = 3
+				icon_state = "3"
 				update_icon()
 				var/obj/item/stack/sheet/glass/G = new(drop_location(), 2)
 				G.add_fingerprint(user)
@@ -119,27 +129,55 @@
 			if(P.tool_behaviour == TOOL_SCREWDRIVER)
 				P.play_tool_sound(src)
 				to_chat(user, "<span class='notice'>You connect the monitor.</span>")
-				var/obj/machinery/computer/built_comp = new circuit.build_path (loc, circuit)
-				built_comp.setDir(dir)
-				transfer_fingerprints_to(built_comp)
-				if(!built_comp.unique_icon)
-					built_comp.icon = built_icon
-					built_comp.icon_state = built_icon_state
-				built_comp.deconpath = deconpath
-				built_comp.update_icon()
-				qdel(src)
-				return
+
+				var/obj/machinery/new_machine = new circuit.build_path(loc)
+				new_machine.setDir(dir)
+				transfer_fingerprints_to(new_machine)
+
+				if(istype(new_machine, /obj/machinery/computer))
+					var/obj/machinery/computer/new_computer = new_machine
+
+					// Machines will init with a set of default components.
+					// Triggering handle_atom_del will make the machine realise it has lost a component_parts and then deconstruct.
+					// Move to nullspace so we don't trigger handle_atom_del, then qdel.
+					// Finally, replace new machine's parts with this frame's parts.
+					if(new_computer.circuit)
+						// Move to nullspace and delete.
+						new_computer.circuit.moveToNullspace()
+						QDEL_NULL(new_computer.circuit)
+					for(var/old_part in new_computer.component_parts)
+						var/atom/movable/movable_part = old_part
+						// Move to nullspace and delete.
+						movable_part.moveToNullspace()
+						qdel(movable_part)
+
+					// Set anchor state and move the frame's parts over to the new machine.
+					// Then refresh parts and call on_construction().
+					new_computer.set_anchored(anchored)
+					new_computer.component_parts = list()
+
+					circuit.forceMove(new_computer)
+					new_computer.component_parts += circuit
+					new_computer.circuit = circuit
+
+					for(var/new_part in src)
+						var/atom/movable/movable_part = new_part
+						movable_part.forceMove(new_computer)
+						new_computer.component_parts += movable_part
+
+					new_computer.RefreshParts()
+					new_computer.on_construction()
+					new_computer.circuit.moveToNullspace()
+
+					if(!new_computer.unique_icon)
+						new_computer.icon = built_icon
+						new_computer.icon_state = built_icon_state
+					new_computer.deconpath = deconpath
+					new_computer.update_icon()
+					qdel(src)
+					return
 	if(user.a_intent == INTENT_HARM)
 		return ..()
-
-/obj/structure/frame/computer/update_overlays()
-	. = ..()
-	var/mutable_appearance/step
-	if(circuit)
-		step = mutable_appearance(icon, "[base_icon_state]-[state]")
-	else
-		step = mutable_appearance(icon, null)
-	. += step
 
 /obj/structure/frame/computer/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
@@ -160,21 +198,3 @@
 		return
 
 	setDir(turn(dir, -90))
-
-/obj/structure/frame/computer/retro
-	name = "retro computer frame"
-	icon_state = "console_frame-retro"
-	base_icon_state = "retro"
-	decon_material = /obj/item/stack/sheet/plastic
-	built_icon = 'icons/obj/retro_computer.dmi'
-	built_icon_state = "computer-retro"
-	deconpath = /obj/structure/frame/computer/retro
-
-/obj/structure/frame/computer/solgov
-	name = "wooden computer frame"
-	icon_state = "console_frame-solgov"
-	base_icon_state = "solgov"
-	decon_material = /obj/item/stack/sheet/mineral/wood
-	built_icon = 'icons/obj/retro_computer.dmi'
-	built_icon_state = "computer-solgov"
-	deconpath = /obj/structure/frame/computer/retro

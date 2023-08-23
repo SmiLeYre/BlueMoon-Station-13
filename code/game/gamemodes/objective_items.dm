@@ -28,6 +28,12 @@
 /datum/objective_item/steal/caplaser
 	name = "Антикварный Лазерный Пистолет Капитана."
 	targetitem = /obj/item/gun/energy/laser/captain
+	difficulty = 8
+	excludefromjob = list("Captain")
+
+/datum/objective_item/steal/rubberducky
+	name = "Уточку-Капитана Капитана."
+	targetitem = /obj/item/bikehorn/rubberducky/captain
 	difficulty = 10
 	excludefromjob = list("Captain")
 
@@ -39,7 +45,7 @@
 	altitems = list(/obj/item/gun/ballistic/revolver/mws, /obj/item/choice_beacon/hosgun, /obj/item/gun/ballistic/automatic/pistol/g22, /obj/item/gun/ballistic/shotgun/rsh12) //We now look for either the alt verson of the hos gun or the beacon picker.
 
 /datum/objective_item/steal/handtele
-	name = "компактное телепортирующее устройство."
+	name = "Компактное Телепортирующее Устройство."
 	targetitem = /obj/item/hand_tele
 	difficulty = 5
 	excludefromjob = list("Captain", "Research Director")
@@ -59,7 +65,7 @@
 /datum/objective_item/steal/capmedal
 	name = "медаль Капитана."
 	targetitem = /obj/item/clothing/accessory/medal/gold/captain
-	difficulty = 5
+	difficulty = 10
 	excludefromjob = list("Captain")
 
 /datum/objective_item/steal/hypo
@@ -78,7 +84,7 @@
 	return !N.fake
 
 /datum/objective_item/steal/reflector
-	name = "Жилет со Светоотражателем из Арсенала."
+	name = "Жилет со Светоотражателями из Арсенала."
 	targetitem = /obj/item/clothing/suit/armor/laserproof
 	difficulty = 3
 	excludefromjob = list("Head of Security", "Warden")

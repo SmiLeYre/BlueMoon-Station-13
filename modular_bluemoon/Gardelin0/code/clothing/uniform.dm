@@ -217,7 +217,7 @@
 	can_adjust = FALSE
 
 /obj/item/clothing/under/dress/skirt/lustymaid
-	name = "Revealing maid uniform"
+	name = "Revealing Maid Uniform"
 	desc = "A sexy maid uniform, that has a low cropped front to show off some chest, or bra. And a short dress that reveals thighs."
 	icon = 'modular_bluemoon/Gardelin0/icons/clothing/object/uniforms.dmi'
 	mob_overlay_icon = 'modular_bluemoon/Gardelin0/icons/clothing/worn/uniform.dmi'
@@ -228,12 +228,13 @@
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/under/dress/skirt/maidsexy
-	name = "Sexy maid uniform"
+	name = "Sexy Maid Uniform"
 	desc = "A sexy maid uniform that reveals everything."
 	icon = 'modular_bluemoon/Gardelin0/icons/clothing/object/uniforms.dmi'
 	mob_overlay_icon = 'modular_bluemoon/Gardelin0/icons/clothing/worn/uniform.dmi'
 	icon_state = "sexymaid"
 	item_state = "sexymaid"
+	body_parts_covered = NONE
 	fitted = NO_FEMALE_UNIFORM
 	can_adjust = FALSE
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON

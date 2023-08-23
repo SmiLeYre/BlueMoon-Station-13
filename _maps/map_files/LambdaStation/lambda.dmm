@@ -5716,6 +5716,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/bot,
+/mob/living/simple_animal/bot/cleanbot/servoskull,
 /turf/open/floor/plasteel,
 /area/science/robotics/lab)
 "alT" = (

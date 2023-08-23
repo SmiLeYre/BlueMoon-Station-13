@@ -399,7 +399,7 @@
 
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/on/layer3
 	piping_layer = 3
-	icon_state = "map_vent_on-3"
+	icon_state = "vent_map_on-3"
 
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon
 	pump_direction = SIPHONING

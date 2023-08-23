@@ -42,8 +42,15 @@
 
 /mob/living/simple_animal/drone/syndrone/badass
 	name = "Badass Syndrone"
-	default_hatmask = /obj/item/clothing/head/helmet/space/syndicate
+	default_hatmask = /obj/item/clothing/head/helmet/infiltrator
 	default_storage = /obj/item/syndicate_uplink_high/nuclear
+
+/mob/living/simple_animal/drone/syndrone/badass/inteq
+	name = "Inteq Combat Drone"
+	icon_state = "drone_inteq"
+	icon_living = "drone_inteq"
+	default_hatmask = /obj/item/clothing/head/helmet/space/syndicate/contract
+	default_storage = /obj/item/inteq/uplink/radio/nuclear
 
 /mob/living/simple_animal/drone/syndrone/badass/Initialize(mapload)
 	. = ..()
@@ -60,14 +67,20 @@
 	desc += " This drone appears to have a complex holoprojector built on its 'head'."
 
 /obj/item/drone_shell/syndrone
-	name = "syndrone shell"
+	name = "Syndicate Drone Shell"
 	desc = "A shell of a syndrone, a modified maintenance drone designed to infiltrate and annihilate."
 	icon_state = "syndrone_item"
 	drone_type = /mob/living/simple_animal/drone/syndrone
 
 /obj/item/drone_shell/syndrone/badass
-	name = "badass syndrone shell"
+	name = "Badass Syndicate Drone Shell"
 	drone_type = /mob/living/simple_animal/drone/syndrone/badass
+
+/obj/item/drone_shell/syndrone/badass/inteqdrone
+	name = "InteQ Drone Shell"
+	desc = "A shell of a InteQ Drone, a modified maintenance drone designed to infiltrate and annihilate."
+	icon_state = "inteqdrone_item"
+	drone_type = /mob/living/simple_animal/drone/syndrone/badass/inteq
 
 /obj/item/drone_shell/snowflake
 	name = "snowflake drone shell"

@@ -51,13 +51,13 @@
 /obj/machinery/self_actualization_device/close_machine(mob/user)
 	..()
 	playsound(src, 'sound/machines/click.ogg', 50)
+	icon_state = "sad_closed"
 	if(!occupant)
 		return FALSE
 	if(!ishuman(occupant))
 		occupant.forceMove(drop_location())
 		set_occupant(null)
 		return FALSE
-	icon_state = "sad_closed"
 	to_chat(occupant, span_notice("You enter [src]."))
 	update_appearance()
 

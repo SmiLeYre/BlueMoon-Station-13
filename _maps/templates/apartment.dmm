@@ -669,6 +669,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/hilbertshotel{
 	dir = 8
 	},
+/obj/structure/sink/kitchen/directional/east,
 /turf/open/indestructible/hoteltile,
 /area/hilbertshotel)
 "Nt" = (

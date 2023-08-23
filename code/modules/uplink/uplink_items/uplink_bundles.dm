@@ -130,8 +130,8 @@
 	cant_discount = TRUE
 
 /datum/uplink_item/bundles_tc/surplus
-	name = "InteQ Surplus Crate"
-	desc = "A dusty crate from the back of the InteQ warehouse. Rumored to contain a valuable assortment of items, \
+	name = "Surplus Crate"
+	desc = "A dusty crate from the back of the illegal warehouse. Rumored to contain a valuable assortment of items, \
 			but you never know. Contents are sorted to always be worth 50 CR."
 	item = /obj/structure/closet/crate
 	cost = 20
@@ -142,7 +142,7 @@
 
 /datum/uplink_item/bundles_tc/surplus/super
 	name = "Super Surplus Crate"
-	desc = "A dusty SUPER-SIZED from the back of the InteQ warehouse. Rumored to contain a valuable assortment of items, \
+	desc = "A dusty SUPER-SIZED from the back of the illegal warehouse. Rumored to contain a valuable assortment of items, \
 			but you never know. Contents are sorted to always be worth 125 CR."
 	cost = 40
 	player_minimum = 40

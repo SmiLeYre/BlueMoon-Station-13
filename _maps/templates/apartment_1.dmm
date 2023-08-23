@@ -606,9 +606,7 @@
 /area/hilbertshotel)
 "cw" = (
 /obj/structure/table/reinforced,
-/obj/structure/sink/kitchen{
-	dir = 4
-	},
+/obj/structure/sink/kitchen/directional/east,
 /turf/open/floor/plasteel/cafeteria,
 /area/hilbertshotel)
 "cy" = (

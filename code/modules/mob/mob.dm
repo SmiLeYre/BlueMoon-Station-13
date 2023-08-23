@@ -274,6 +274,15 @@
 			if(slot in check_obscured_slots())
 				to_chat(src, "<span class='warning'>You are unable to unequip that while wearing other garments over it!</span>")
 				return FALSE
+
+			var/mob/living/carbon/human/H = usr
+			if(!I.unequip_delay_self)
+				return TRUE
+			H.visible_message("<span class='notice'>[H] стягивает с себя [I]...</span>", "<span class='notice'>Ты стягиваешь с себя [I]...</span>")
+
+			if(!do_after(H, I.unequip_delay_self, target = H))
+				return
+
 			I.attack_hand(src)
 
 	return FALSE

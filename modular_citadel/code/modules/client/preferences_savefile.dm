@@ -63,6 +63,7 @@
 	//flavor text
 	WRITE_FILE(S["feature_flavor_text"], features["flavor_text"])
 	WRITE_FILE(S["feature_naked_flavor_text"], features["naked_flavor_text"]) //SPLURT edit
+	WRITE_FILE(S["feature_custom_species_lore"], features["custom_species_lore"])
 	WRITE_FILE(S["feature_silicon_flavor_text"], features["silicon_flavor_text"])
 
 	//sandstorm stuff

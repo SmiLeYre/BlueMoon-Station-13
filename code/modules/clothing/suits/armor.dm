@@ -277,6 +277,7 @@
 	desc = "A tribal armor plate, crafted from animal bone."
 	icon_state = "bonearmor"
 	item_state = "bonearmor"
+	tail_state = "bonearmor"
 	blood_overlay_type = "armor"
 	armor = list(MELEE = 35, BULLET = 25, LASER = 25, ENERGY = 35, BOMB = 25, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 10)
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
@@ -377,7 +378,7 @@
 
 /obj/item/clothing/suit/armor/tdome
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
+	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAUR
 	clothing_flags = THICKMATERIAL
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
@@ -388,13 +389,14 @@
 	desc = "Reddish armor."
 	icon_state = "tdred"
 	item_state = "tdred"
+	tail_state = "tdred"
 
 /obj/item/clothing/suit/armor/tdome/green
 	name = "thunderdome suit"
 	desc = "Pukish armor."	//classy.
 	icon_state = "tdgreen"
 	item_state = "tdgreen"
-
+	tail_state = "tdgreen"
 
 /obj/item/clothing/suit/armor/riot/knight
 	name = "plate armour"

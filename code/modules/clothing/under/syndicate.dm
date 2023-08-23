@@ -23,7 +23,6 @@
 	desc = "An insidious armored jumpsuit lined with Syndicate nanofibers and prototype platings, slightly resistant to most forms of damage, but is far too bulky to have anything attached to it. It still counts as stealth if there are no witnesses."
 	icon_state = "bloodred_pajamas"
 	item_state = "bl_suit"
-	dummy_thick = TRUE
 	armor = list(MELEE = 10, BULLET = 10, LASER = 10,ENERGY = 10, BOMB = 0, BIO = 0, RAD = 10, FIRE = 100, ACID = 100, WOUND = 10)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	can_adjust = FALSE

@@ -37,3 +37,11 @@
 	materials = list(/datum/material/biomass = 250)
 	build_path = /obj/item/rollingpaper
 	category = list("initial","Organic Materials")
+
+/datum/design/rubber_ducky
+	name = "Rubber Ducky"
+	id = "rubber_ducky"
+	build_type = BIOGENERATOR
+	materials = list(/datum/material/biomass = 750)
+	build_path = /obj/item/bikehorn/rubberducky
+	category = list("initial","Organic Materials")

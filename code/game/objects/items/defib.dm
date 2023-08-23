@@ -255,6 +255,15 @@
 	disarm_shock_time = 0
 	cell = /obj/item/stock_parts/cell/infinite
 
+/obj/item/shockpaddles/syndicate
+	name = "syndicate defibrillator paddles"
+	desc = "A pair of paddles used to revive deceased operatives. It possesses both the ability to penetrate armor and to deliver powerful shocks offensively."
+	combat = TRUE
+	icon = 'icons/obj/defibrillators.dmi'
+	icon_state = "syndiepaddles0"
+	item_state = "syndiepaddles0"
+	base_icon_state = "syndiepaddles"
+
 //paddles
 
 /obj/item/shockpaddles
@@ -705,16 +714,6 @@
 		combat = FALSE
 
 	. = ..()
-
-/obj/item/shockpaddles/syndicate
-	name = "syndicate defibrillator paddles"
-	desc = "A pair of paddles used to revive deceased operatives. It possesses both the ability to penetrate armor and to deliver powerful shocks offensively."
-	combat = TRUE
-	icon = 'icons/obj/defibrillators.dmi'
-	icon_state = "syndiepaddles0"
-	item_state = "syndiepaddles0"
-	base_icon_state = "syndiepaddles"
-	req_defib = FALSE
 
 ///////////////////////////////////////////
 /////////Defibrillator Disks//////////////

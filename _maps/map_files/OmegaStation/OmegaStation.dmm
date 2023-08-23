@@ -6198,12 +6198,10 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -26
 	},
-/obj/item/kirbyplants{
-	icon_state = "plant-22"
-	},
 /obj/machinery/newscaster{
 	pixel_y = 32
 	},
+/obj/structure/closet/secure_closet/ntr,
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "alU" = (
@@ -28784,6 +28782,7 @@
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
+/mob/living/simple_animal/bot/cleanbot/servoskull,
 /turf/open/floor/plasteel/white,
 /area/science/robotics/lab)
 "bdx" = (
@@ -35861,17 +35860,11 @@
 	pixel_x = 32
 	},
 /obj/effect/turf_decal/bot,
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/machinery/shower{
 	dir = 1
 	},
 /obj/structure/curtain,
 /obj/structure/window/spawner/north,
-/obj/structure/sign/poster/contraband/yes_erp{
-	pixel_x = 32
-	},
 /turf/open/floor/plasteel/freezer,
 /area/commons/toilet/restrooms)
 "iSq" = (

@@ -168,6 +168,15 @@
 					dat += "[features["silicon_flavor_text"]]<BR>"
 			else
 				dat += "[TextPreview(features["silicon_flavor_text"])]...<BR>"
+			dat += "<h2>Custom Species Lore</h2>"
+			dat += "<a href='?_src_=prefs;preference=custom_species_lore;task=input'><b>Set Custom Species Lore Text</b></a><br>"
+			if(length(features["custom_species_lore"]) <= MAX_FLAVOR_PREVIEW_LEN)
+				if(!length(features["custom_species_lore"]))
+					dat += "\[...\]<BR>"
+				else
+					dat += "[features["custom_species_lore"]]<BR>"
+			else
+				dat += "[TextPreview(features["custom_species_lore"])]...<BR>"
 			dat += "<h2>OOC notes</h2>"
 			dat += "<a href='?_src_=prefs;preference=ooc_notes;task=input'><b>Set OOC notes</b></a><br>"
 			var/ooc_notes_len = length(features["ooc_notes"])
@@ -230,7 +239,6 @@
 			dat += "<BR>"
 			dat += "<b>Species:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a><BR>"
 			dat += "<b>Custom Species Name:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=custom_species;task=input'>[custom_species ? custom_species : "None"]</a><BR>"
-			dat += "<b>Custom Species Lore:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=custom_species_lore;task=input'>[custom_species_lore ? custom_species_lore : "None"]</a><BR>"
 			dat += "<b>Random Body:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=all;task=random'>Randomize!</A><BR>"
 			dat += "<b>Always Random Body:</b><a href='?_src_=prefs;preference=all'>[be_random_body ? "Yes" : "No"]</A><BR>"
 			dat += "<br><b>Cycle background:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=cycle_bg;task=input'>[bgstate]</a><BR>"
@@ -1073,6 +1081,7 @@
 				dat += "<b><span style='color: #e60000;'>Harmful ERP verbs :</b> <a href='?_src_=prefs;preference=extremeharm'>[extremeharm]</a><br>"
 			//END OF SKYRAT EDIT
 			dat += "<b>Automatic Wagging:</b> <a href='?_src_=prefs;preference=auto_wag'>[(cit_toggles & NO_AUTO_WAG) ? "Disabled" : "Enabled"]</a><br>"
+			dat += "<b>Dance Near Disco Ball:</b> <a href='?_src_=prefs;preference=disco_dance'>[(cit_toggles & NO_DISCO_DANCE) ? "Disabled" : "Enabled"]</a><br>"
 			dat += "<span style='border-radius: 2px;border:1px dotted white;cursor:help;' title='If anyone cums a blacklisted fluid into you, it uses the default fluid for that genital.'>?</span> "
 			dat += "<b><a href='?_src_=prefs;preference=gfluid_black;task=input'>Genital Fluid Blacklist</a></b><br>"
 			if(gfluid_blacklist?.len)

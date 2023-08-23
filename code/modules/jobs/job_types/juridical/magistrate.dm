@@ -67,8 +67,8 @@
 	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/suit.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/suit.dmi'
 	unique_reskin = list(
+		"Syndicate Officer Coat" = list("icon_state" = "str"),
 		"Trenchcoat" = list("icon_state" = "detective"),
-		"Spacecoat" = list("icon_state" = "peacekeeper_spacecoat"),
 		"Red Coat" = list("icon_state" = "armadyne_trench")
 	)
 

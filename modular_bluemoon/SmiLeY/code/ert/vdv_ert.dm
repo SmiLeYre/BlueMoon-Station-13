@@ -45,20 +45,20 @@
 /datum/outfit/ert/vdv
 	name = "VDV Soldier"
 
-	shirt = /obj/item/clothing/underwear/shirt/tanktop/striped
+	shirt = /obj/item/clothing/underwear/shirt/striped
 	uniform = /obj/item/clothing/under/pants/camo
-	suit = /obj/item/clothing/suit/armor/bulletproof/wm
+	suit = /obj/item/clothing/suit/armor/nri_vest
 	suit_store = /obj/item/melee/classic_baton
 	shoes = /obj/item/clothing/shoes/jackboots/tall
-	gloves = /obj/item/clothing/gloves/color/black
+	gloves = /obj/item/clothing/gloves/fingerless
 	ears = /obj/item/radio/headset/headset_cent/alt
 	head = /obj/item/clothing/head/HoS/beret/nri
-	glasses = /obj/item/clothing/glasses/sunglasses
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	belt = /obj/item/storage/belt/security/vdv
 	id = /obj/item/card/id/ert
-	l_pocket = /obj/item/gun/ballistic/automatic/pistol
-	r_pocket = /obj/item/ammo_box/magazine/m10mm
 	back = /obj/item/storage/backpack/rucksack
+	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
+							/obj/item/ammo_box/magazine/m10mm=3)
 
 	l_hand = /obj/item/gun/ballistic/automatic/pistol
 
@@ -97,23 +97,16 @@
 	name = "VDV Leader"
 
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/aps
-	gloves = /obj/item/clothing/gloves/fingerless
-	ears = /obj/item/radio/headset/headset_cent/alt
-	head = /obj/item/clothing/head/HoS/beret/nri
-	glasses = /obj/item/clothing/glasses/sunglasses
+	gloves = /obj/item/clothing/gloves/color/black
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	belt = /obj/item/storage/belt/military/army/vdv
-	id = /obj/item/card/id/ert
 	back = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(
-		/obj/item/storage/pill_bottle/zvezdochka =1,
-		/obj/item/ammo_box/magazine/ak12 =1,
-		/obj/item/ammo_box/magazine/ak12,
+		/obj/item/storage/pill_bottle/zvezdochka = 1,
+		/obj/item/ammo_box/magazine/ak12 = 4,
 		)
 
 	r_hand = /obj/item/gun/ballistic/automatic/ak12
-	l_pocket = /obj/item/ammo_box/magazine/ak12
-	r_pocket = /obj/item/ammo_box/magazine/ak12
-	implants = list(/obj/item/implant/mindshield)
 
 /datum/outfit/ert/vdv/leader/pre_equip(mob/living/carbon/human/H)
 
@@ -143,5 +136,7 @@
 /obj/item/storage/belt/security/vdv/PopulateContents()
 	new /obj/item/grenade/flashbang(src)
 	new	/obj/item/grenade/stingbang(src)
+	new /obj/item/grenade/chem_grenade/teargas(src)
 	new /obj/item/restraints/handcuffs/cable/zipties(src)
-	new /obj/item/restraints/handcuffs(src)
+	new /obj/item/reagent_containers/hypospray/medipen/salacid(src)
+

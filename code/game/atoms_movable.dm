@@ -157,12 +157,6 @@
 			em_block = new(src, render_target)
 		return em_block
 
-/atom/movable/update_overlays()
-	. = ..()
-	var/emissive_block = update_emissive_block()
-	if(emissive_block)
-		. += emissive_block
-
 /atom/movable/proc/can_zFall(turf/source, levels = 1, turf/target, direction)
 	if(!direction)
 		direction = DOWN
@@ -175,6 +169,14 @@
 		if(!target)
 			return FALSE
 	return !(movement_type & FLYING) && has_gravity(source) && !throwing
+
+/atom/movable/update_overlays()
+	var/list/overlays = ..()
+	var/emissive_block = update_emissive_block()
+	if(emissive_block)
+		// Emissive block should always go at the beginning of the list
+		overlays.Insert(1, emissive_block)
+	return overlays
 
 /atom/movable/proc/onZImpact(turf/T, levels)
 	var/atom/highest = T

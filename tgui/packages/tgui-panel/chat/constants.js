@@ -37,7 +37,8 @@ export const MESSAGE_TYPE_EVENTCHAT = 'eventchat';
 export const MESSAGE_TYPE_ADMINLOG = 'adminlog';
 export const MESSAGE_TYPE_ATTACKLOG = 'attacklog';
 export const MESSAGE_TYPE_DEBUG = 'debug';
-
+export const MESSAGE_TYPE_MENTORHELP = 'mentorhelp';
+export const MESSAGE_TYPE_MENTORCHAT = 'mentorchat';
 // Metadata for each message type
 export const MESSAGE_TYPES = [
   // Always-on types
@@ -153,5 +154,20 @@ export const MESSAGE_TYPES = [
     name: 'Debug Log',
     description: 'DEBUG: SSPlanets subsystem Recover().',
     admin: true,
+  },
+  // Mentor stuff
+  {
+    type: MESSAGE_TYPE_MENTORHELP,
+    name: 'Mentor Help',
+    description: 'Mentor PMs',
+    selector: '.mentorhelp',
+    mentor: true,
+  },
+  {
+    type: MESSAGE_TYPE_MENTORCHAT,
+    name: 'Mentor Chat',
+    description: 'Mentor chat',
+    selector: '.mentorchat',
+    mentor: true,
   },
 ];

@@ -388,6 +388,7 @@
 	name = "\improper Nar'Sien Hardened Armor"
 	icon_state = "cult_armor"
 	item_state = "cult_armor"
+	tail_state = "cult_armour"
 	desc = "A heavily-armored exosuit worn by warriors of the Nar'Sien cult. It can withstand hard vacuum."
 	w_class = WEIGHT_CLASS_BULKY
 	allowed = list(/obj/item/tome, /obj/item/melee/cultblade, /obj/item/tank/internals/)

@@ -360,11 +360,19 @@
 	name = "Improvised Gripper Gloves"
 	reqs = list(
             /obj/item/clothing/gloves/fingerless = 1,
-         //   /obj/item/stack/sticky_tape = 1
-		 	/obj/item/stack/cable_coil = 5,
+			/obj/item/stack/cable_coil = 5,
 			/obj/item/stack/sheet/cloth = 2,
 	)
 	result = /obj/item/clothing/gloves/tackler/offbrand
 	category = CAT_CLOTHING
 	tools = list(TOOL_WIRECUTTER)
 	time = 20
+
+/datum/crafting_recipe/rubberduckyshoes
+	name = "Rubber Ducky Shoes"
+	result = /obj/item/clothing/shoes/ducky
+	time = 45
+	reqs = list(/obj/item/bikehorn/rubberducky = 2,
+				/obj/item/clothing/shoes/sandal = 1)
+	tools = list(TOOL_WIRECUTTER)
+	category = CAT_CLOTHING

@@ -27893,6 +27893,10 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
+/mob/living/simple_animal/bot/cleanbot/servoskull,
+/mob/living/simple_animal/bot/cleanbot/servoskull,
+/mob/living/simple_animal/bot/cleanbot/servoskull,
+/mob/living/simple_animal/bot/cleanbot/servoskull,
 /turf/open/floor/plasteel/white,
 /area/science/robotics/lab)
 "brC" = (

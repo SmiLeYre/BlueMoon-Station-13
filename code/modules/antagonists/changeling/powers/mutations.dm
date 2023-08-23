@@ -544,6 +544,7 @@
 	name = "chitinous mass"
 	desc = "A tough, hard covering of black chitin."
 	icon_state = "lingarmor"
+	tail_state = "lingarmor"
 	item_flags = DROPDEL
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	armor = list(MELEE = 70, BULLET = 60, LASER = 30, ENERGY = 40, BOMB = 10, BIO = 4, RAD = 0, FIRE = 50, ACID = 90)

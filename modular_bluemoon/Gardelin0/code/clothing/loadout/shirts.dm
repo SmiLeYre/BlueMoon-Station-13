@@ -1,3 +1,7 @@
+/datum/gear/shirt/harley_bra
+	name = "Harley Bra"
+	path = /obj/item/clothing/underwear/shirt/harley
+
 /datum/gear/shirt/blouse_female
 	name = "feminie blouse"
 	path = /obj/item/clothing/underwear/shirt/blouse_female

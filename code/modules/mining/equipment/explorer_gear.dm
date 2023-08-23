@@ -4,6 +4,7 @@
 	desc = "An armoured suit for exploring harsh environments."
 	icon_state = "explorer-normal"
 	item_state = "explorer-normal"
+	tail_state = "explorer"
 	var/suit_type = "normal"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	cold_protection = CHEST|GROIN|LEGS|ARMS

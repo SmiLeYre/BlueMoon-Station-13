@@ -303,8 +303,8 @@
 	icon_state = "battlemage"
 	item_state = "battlemage"
 	recharge_rate = 0.1
-	max_charges = 20
-	current_charges = 20
+	max_charges = 15
+	current_charges = 15
 	shield_state = "shield-red"
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT

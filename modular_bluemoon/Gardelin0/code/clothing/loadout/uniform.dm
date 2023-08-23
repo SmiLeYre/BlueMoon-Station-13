@@ -1,3 +1,7 @@
+/datum/gear/uniform/harley_suit
+	name = "Harley Jester Suit"
+	path = /obj/item/clothing/under/rank/civilian/clown/jester/harley
+
 /datum/gear/uniform/dress/white
 	name = "White Dress"
 	path = /obj/item/clothing/under/dress/white
