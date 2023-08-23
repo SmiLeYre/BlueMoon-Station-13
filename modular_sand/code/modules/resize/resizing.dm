@@ -82,6 +82,7 @@
 				playsound(loc, 'sound/misc/splort.ogg', 50, 1)
 				user.add_movespeed_modifier(/datum/movespeed_modifier/stomp, TRUE)
 				addtimer(CALLBACK(user, /mob/.proc/remove_movespeed_modifier, MOVESPEED_ID_STOMP, TRUE), 10) //1 second
+				//user.Stun(20)
 				// BLUEMOON ADDITION START - персонажи с тяжёлыми квирками наносят больше урона и на дольше станят, но сами получают стан
 				if(HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY))
 					user.Stun(0.5 SECONDS)
