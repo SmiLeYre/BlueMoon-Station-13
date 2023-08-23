@@ -5,7 +5,9 @@
 	name = "size tool"
 	desc = "A small tool with ability to change size of living creatures. While manufactured by Syntech, it was banned in most of the civilized countries, \
 	as it is a popular tool for slave traders and perverts alike. There are rumors they have used some unknown alien technologies for it. \
-	Seems like NT doesn't give much of attention to its status since the station is out of borders."
+	Seems like NT doesn't give much of attention to its status since the station is out of borders.<br><br> \
+	It has an information patch at a side: <i>\"Do not remain under the effect of the device for more than 24 hours to reduce sensory deprivation, \
+	as well as the risk of cancer development\"</i>."
 	icon_state = "silencer"
 	icon_state = "silencer"
 	icon = 'icons/obj/abductor.dmi'
