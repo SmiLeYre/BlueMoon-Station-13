@@ -956,11 +956,11 @@ blockquote.brass {
 }
 
 .small {
-  font-size: 60%;
+  font-size: 110%;
 }
 
 .big {
-  font-size: 185%;
+  font-size: 115%;
 }
 
 .reallybig {
@@ -1202,4 +1202,11 @@ blockquote.brass {
   background: #333;
   height: 1px;
   margin: 8px 16px 8px 16px;
+}
+
+/* блюмун */
+
+// для больших персонажей
+.bigtalk {
+  font-size: 110%;
 }
