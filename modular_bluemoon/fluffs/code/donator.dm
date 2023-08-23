@@ -197,3 +197,10 @@
 	path = /obj/item/clothing/neck/baron
 	ckeywhitelist = list("snacksman", "krashly")
 	subcategory = LOADOUT_SUBCATEGORIES_DON10
+
+/datum/gear/donator/bm/angelo
+	name = "Angelo's Coat"
+	slot = ITEM_SLOT_NECK
+	path = /obj/item/clothing/suit/donator/bm/angelo
+	ckeywhitelist = list("axidant")
+	subcategory = LOADOUT_SUBCATEGORIES_DON12
