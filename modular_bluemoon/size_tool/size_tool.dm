@@ -3,9 +3,9 @@
 
 /obj/item/melee/sizetool
 	name = "size tool"
-	desc = "A small tool with ability to chance size of living creatures. While manufactured by Syntech, it was banned in most of the civilized countries, \
+	desc = "A small tool with ability to change size of living creatures. While manufactured by Syntech, it was banned in most of the civilized countries, \
 	as it is a popular tool for slave traders and perverts alike. There are rumors they have used some unknown alien technologies for it. \
-	Seems like NT doesn't give much of attention to it since the station is out of borders."
+	Seems like NT doesn't give much of attention to its status since the station is out of borders."
 	icon_state = "silencer"
 	icon_state = "silencer"
 	icon = 'icons/obj/abductor.dmi'
