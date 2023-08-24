@@ -139,9 +139,15 @@
 								"<span class='notice'>[user] places [pushed_mob] onto [src].</span>")
 	log_combat(user, pushed_mob, "placed")
 	// BLUEMOON ADDITION AHEAD - тяжёлые и сверхтяжёлые персонажи при толчке на стол ломают его
-	if(HAS_TRAIT(pushed_mob, TRAIT_BLUEMOON_HEAVY_SUPER) || HAS_TRAIT(pushed_mob, TRAIT_BLUEMOON_HEAVY))
+	var/break_table = FALSE
+	if(HAS_TRAIT(pushed_mob, TRAIT_BLUEMOON_HEAVY_SUPER)) // сверхтяжёлые персонажи всегда ломают стол (им не важно, есть он под ними или нет
+		break_table = TRUE
+	else if(HAS_TRAIT(pushed_mob, TRAIT_BLUEMOON_HEAVY))
+		if(!istype(src, /obj/structure/table/optable)) // тяжёлых персонажей всё ещё можно класть на хирургический стол, не ломая его в процессе
+			break_table = TRUE
+	if(break_table)
 		pushed_mob.visible_message("<span class='danger'>[user] breaks [src] with [pushed_mob]'s weight!</span>", \
-								"<span class='userdanger'>You break [src] with your weight!</span>")
+									"<span class='userdanger'>You break [src] with your weight!</span>")
 		deconstruct(TRUE)
 	// BLUEMOON ADDITION END
 
