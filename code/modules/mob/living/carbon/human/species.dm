@@ -2204,7 +2204,14 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(CHECK_MOBILITY(user, MOBILITY_STAND))
 			to_chat(user, "<span class='notice'>You can only force yourself up if you're on the ground.</span>")
 			return
-		if(!user.UseStaminaBuffer(STAMINA_COST_SHOVE_UP, TRUE))
+		// BLUEMOON ADD START
+		var/shove_up_stamina_cost = STAMINA_COST_SHOVE_UP
+		if(HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY_SUPER)) // сверхтяжёлые персонажи поднимаются в два раза тяжелее
+			shove_up_stamina_cost *= 2
+		else if(HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY)) // тяжёлые персонажи поднимаются в 1.5 раза тяжелее
+			shove_up_stamina_cost *= 1.5
+		// BLUEMOON ADD END
+		if(!user.UseStaminaBuffer(shove_up_stamina_cost, TRUE)) // BLUEMOON CHANGES
 			return
 		user.visible_message("<span class='notice'>[user] forces [ru_na()]self up to [ru_ego()] feet!</span>", "<span class='notice'>You force yourself up to your feet!</span>")
 		user.set_resting(FALSE, TRUE)
