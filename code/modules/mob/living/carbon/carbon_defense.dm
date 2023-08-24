@@ -275,6 +275,29 @@
 			if(buckled)
 				to_chat(M, "<span class='warning'>Для этого вам для начала нужно отстегнуть <b>[src]</b>!")
 				return
+			// BLUEMON ADD START - проверка для сверхтяжёлых персонажей
+			if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
+				var/can_shake = FALSE
+				if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER)) // другие сверхтяжёлые персонажи могут поднимать
+					can_shake = TRUE
+				if(ishuman(M))
+					var/mob/living/carbon/human/user = M
+					if(user.dna.check_mutation(HULK)) // халки могут поднимать
+						can_shake = TRUE
+					if(istype(user.back, /obj/item/mod/control)) // обычные персонажи с активированными клешнями из МОДа на спине могут поднимать
+						var/obj/item/mod/control/MOD = user.back
+						if(MOD.active || istype(MOD.selected_module, /obj/item/mod/module/clamp))
+							can_shake = TRUE
+
+				if(!can_shake)
+					M.visible_message(span_warning("<b>[M]</b> пытается поднять <b>[src]</b> на ноги, но [ru_who()] слишком тяжёл[ru_aya()]!"), \
+									span_warning("Вы пытаетесь поднять <b>[src]</b> на ноги, но [ru_who()] слишком тяжёл[ru_aya()]!"), target = src,
+									target_message = span_notice("<b>[M]</b> трясёт тебя в однозначной попытке поднять, но не может!"))
+
+					playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+					return
+			// BLUEMOON ADD END
+
 			M.visible_message("<span class='notice'><b>[M]</b> трясёт <b>[src]</b> в попытке поднять [ru_ego()] на ноги!</span>", \
 							"<span class='notice'>Вы трясёте <b>[src]</b> в попытке поднять [ru_ego()] на ноги!</span>", target = src,
 							target_message = "<span class='notice'><b>[M]</b> трясёт тебя в однозначной попытке поднять!</span>")
