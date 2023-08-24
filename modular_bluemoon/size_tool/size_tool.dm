@@ -7,7 +7,7 @@
 	as it is a popular tool for slave traders and perverts alike. There are rumors they have used some unknown alien technologies for it. \
 	Seems like NT doesn't give much of attention to its status since the station is out of borders.<br><br> \
 	It has an information patch at a side: <i>\"Do not remain under the effect of the device for more than 24 hours to reduce sensory deprivation, \
-	as well as the risk of cancer development\"</i>."
+	as well as the risk of cancer development!\"</i>"
 	icon_state = "silencer"
 	icon_state = "silencer"
 	icon = 'icons/obj/abductor.dmi'
@@ -66,6 +66,8 @@
 	return
 
 /obj/item/melee/sizetool/attack(mob/living/target, mob/living/carbon/human/user)
+	if(user.a_intent != INTENT_HELP) // если режим взаимодействия не "help", то устройством можно бить
+		return . = ..()
 	if(!isliving(target) || issilicon(target)) // только для существ, не киборгов
 		return
 	if(cell?.charge < charge_per_use) // есть ли батарейка и хватает ли в ней энергии
@@ -123,14 +125,14 @@
 
 	in_use = TRUE // использование началось
 
-	user.visible_message(span_warning("[user] comes closer to [target] and points [src] at them!"), span_notice("You point your [src] at [target] and hold the trigger. It begins to vibrate and is getting hotter, as the charge is being gained."))
+	user.visible_message(span_warning("[user] points [src] at [target] and hold its trigger!"), span_notice("You point your [src] at [target] and hold the trigger. It begins to vibrate and is getting hotter, as the charge is being gained."))
 
 	if(do_after(user, 5 SECONDS, target = target)) // КД перед применением на цель
 		in_use = FALSE
 
 		if(!check_for_ghostcafe()) // в госткафе заряд не тратится
 			if(!cell || !cell.use(charge_per_use))
-				to_chat(user, span_warning("[src] buzzes in your hand while goes cold after usage. Looks like its power cell has gone out of charge."))
+				to_chat(user, span_warning("[src] goes cold after failed usage. Looks like its power cell has gone out of charge."))
 				return
 
 		/* - ДОБАВИТЬ СЮДА ТРЕЙТ, ЗАПРЕЩАЮЩИЙ ИЗМЕНЯТЬ РАЗМЕР, ЕСЛИ ЦЕЛЬ НЕВОСПРИИМЧИВА К НОРМАЛАЙЗЕРУ!
@@ -149,10 +151,8 @@
 		return
 	else
 		in_use = FALSE // использование прервано
-		to_chat(user, span_warning("You must stand still to use [src]]!"))
+		to_chat(user, span_warning("You must stand still to use [src]!"))
 		return
-
-	. = ..()
 
 #undef GROWTH_MODE
 #undef SHRINK_MODE
