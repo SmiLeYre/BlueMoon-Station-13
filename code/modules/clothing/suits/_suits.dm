@@ -26,7 +26,7 @@
 		var/mob/living/carbon/human/M = loc
 		if(ishuman(M) && M.w_uniform)
 			var/obj/item/clothing/under/U = M.w_uniform
-			if(!M.dna.features["mam_tail"] == "None" || M.dna.features["mam_tail_animated"] == "None")
+			if(!M.dna.features["mam_tail"] == "None" || !M.dna.features["mam_tail_animated"] == "None" || !M.dna.features["mam_tail"] == "Vox")
 				var/tail_under_suit = tail_suit_worn_overlay || 'modular_bluemoon/SmiLeY/icons/mob/clothing/tails_digi.dmi'
 				. += mutable_appearance(tail_under_suit, tail_state)
 			if(!M.dna.features["xenotail"] == "None")
