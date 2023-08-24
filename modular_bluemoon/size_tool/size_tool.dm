@@ -62,16 +62,17 @@
 
 /obj/item/melee/sizetool/proc/check_for_ghostcafe() // Вы можете использовать весь функционал (в виде повышения размера до 800%) в госткафе
 	if(istype(get_area(src), /area/centcom/holding))
-		return TRUE
-	return FALSE
+		return
+	return
 
 /obj/item/melee/sizetool/attack(mob/living/target, mob/living/carbon/human/user)
 	if(!isliving(target) || issilicon(target)) // только для существ, не киборгов
-		return FALSE
+		return
 	if(cell?.charge < charge_per_use) // есть ли батарейка и хватает ли в ней энергии
 		to_chat(user, span_warning("[src] has not enough power to be used."))
+		return
 	if(in_use) // нельзя спамить
-		return FALSE
+		return
 
 	var/new_size = RESIZE_NORMAL
 	switch(mode) // проверка режима
@@ -125,11 +126,19 @@
 	user.visible_message(span_warning("[user] comes closer to [target] and points [src] at them!"), span_notice("You point your [src] at [target] and hold the trigger. It begins to vibrate and is getting hotter, as the charge is being gained."))
 
 	if(do_after(user, 5 SECONDS, target = target)) // КД перед применением на цель
-		if(!check_for_ghostcafe()) // в госткафе заряд не тратится
-			cell.use(charge_per_use)
 		in_use = FALSE
 
-		//TODO - ДОБАВИТЬ СЮДА ТРЕЙТ, ЗАПРЕЩАЮЩИЙ ИЗМЕНЯТЬ РАЗМЕР, ЕСЛИ ЦЕЛЬ НЕВОСПРИИМЧИВА К НОРМАЛАЙЗЕРУ!
+		if(!check_for_ghostcafe()) // в госткафе заряд не тратится
+			if(!cell || !cell.use(charge_per_use))
+				to_chat(user, span_warning("[src] buzzes in your hand while goes cold after usage. Looks like its power cell has gone out of charge."))
+				return
+
+		/* - ДОБАВИТЬ СЮДА ТРЕЙТ, ЗАПРЕЩАЮЩИЙ ИЗМЕНЯТЬ РАЗМЕР, ЕСЛИ ЦЕЛЬ НЕВОСПРИИМЧИВА К НОРМАЛАЙЗЕРУ!
+		if(HAS_TRAIT(target, TRAIT_BLUEMOON_ANTI_NORMALIZER))
+			to_chat(user, span_notice("[src] buzzes in your hand while goes cold after usage. Looks like nothing changed?"))
+			playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 1)
+			return
+		*/
 
 		target.update_size(new_size)
 
@@ -140,6 +149,8 @@
 		return
 	else
 		in_use = FALSE // использование прервано
+		to_chat(user, span_warning("You must stand still to use [src]]!"))
+		return
 
 	. = ..()
 
