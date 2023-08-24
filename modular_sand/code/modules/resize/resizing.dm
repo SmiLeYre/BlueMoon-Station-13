@@ -59,7 +59,7 @@
 			user.forceMove(target.loc)
 			return TRUE
 
-		if(COMPARE_SIZES(user, target) >= 1,6) // BLUEMOON CHANGES
+		if(COMPARE_SIZES(user, target) >= 1.6) // BLUEMOON CHANGES
 			log_combat(user, target, "stepped on", addition="[user.a_intent] trample")
 			if(user.a_intent == "disarm" && CHECK_MOBILITY(user, MOBILITY_MOVE) && !user.buckled)
 				now_pushing = 0
