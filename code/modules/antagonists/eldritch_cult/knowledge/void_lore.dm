@@ -167,7 +167,7 @@
 
 /datum/eldritch_knowledge/spell/domain_expansion/on_gain(mob/user)
 	. = ..()
-	priority_announce("Echos of the lost in space are heard... An ominous presence is being detected! ", sound = 'sound/misc/notice1.ogg')
+	priority_announce("Эхо утерянных в космосе душ разносится по округе... Вы можете ощутить зловещее присутствие! ", sound = 'sound/misc/notice1.ogg')
 
 /datum/eldritch_knowledge/final/void_final
 	name = "Waltz at the End of Time"
@@ -189,7 +189,7 @@
 	waltzing.physiology.burn_mod *= 0.5
 	ADD_TRAIT(waltzing, TRAIT_RESISTLOWPRESSURE, MAGIC_TRAIT)
 	waltzing.client?.give_award(/datum/award/achievement/misc/void_ascension, waltzing)
-	priority_announce("$^@&#*$^@(#&$(@&#^$&#^@# The nobleman of void [waltzing.real_name] has arrived, step along the Waltz that ends worlds! $^@&#*$^@(#&$(@&#^$&#^@#","#$^@&#*$^@(#&$(@&#^$&#^@#", 'sound/announcer/classic/_admin_horror_music.ogg')
+	priority_announce("$^@&#*$^@(#&$(@&#^$&#^@# Дворянин пустоты, [waltzing.real_name], прибыл к вам, шагая вальсом кончины миров! $^@&#*$^@(#&$(@&#^$&#^@#","#$^@&#*$^@(#&$(@&#^$&#^@#", 'sound/announcer/classic/_admin_horror_music.ogg')
 	sound_loop = new(user, TRUE, TRUE)
 	return ..()
 

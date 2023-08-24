@@ -169,7 +169,7 @@
 
 /datum/eldritch_knowledge/spell/grasp_of_decay/on_gain(mob/user)
 	. = ..()
-	priority_announce("A foul wind is blowing... The floor creaks with rust as something sinister approaches!", sound = 'sound/misc/notice1.ogg')
+	priority_announce("Дует ржавый ветер... Пол скрипит, давляя под приближающейся угрозой!", sound = 'sound/misc/notice1.ogg')
 
 /datum/eldritch_knowledge/final/rust_final
 	name = "Rustbringer's Oath"
@@ -185,7 +185,7 @@
 	H.physiology.brute_mod *= 0.5
 	H.physiology.burn_mod *= 0.5
 	H.client?.give_award(/datum/award/achievement/misc/rust_ascension, H)
-	priority_announce("$^@&#*$^@(#&$(@&#^$&#^@# Fear the decay, for the Rustbringer, [user.real_name] has ascended! None shall escape the corrosion! $^@&#*$^@(#&$(@&#^$&#^@#","#$^@&#*$^@(#&$(@&#^$&#^@#", 'sound/announcer/classic/_admin_horror_music.ogg')
+	priority_announce("$^@&#*$^@(#&$(@&#^$&#^@# Бойтесь разложения, что несёт Ржавый Всадник, [user.real_name], возносясь над вами! Никто не избежит от коррозии! $^@&#*$^@(#&$(@&#^$&#^@#","#$^@&#*$^@(#&$(@&#^$&#^@#", 'sound/announcer/classic/_admin_horror_music.ogg')
 	new /datum/rust_spread(loc)
 	var/datum/antagonist/heretic/ascension = H.mind.has_antag_datum(/datum/antagonist/heretic)
 	ascension.ascended = TRUE

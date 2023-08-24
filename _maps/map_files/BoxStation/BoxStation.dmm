@@ -311,10 +311,6 @@
 	pixel_x = -25
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/structure/bed/dogbed{
-	desc = "A comfy-looking pet bed. You can even strap your pet in, in case the gravity turns off.";
-	name = "pet bed"
-	},
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
@@ -324,10 +320,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/mob/living/simple_animal/hostile/retaliate/bat/secbat{
-	desc = "An adorable fruit bat with a cute little hat, may or may not have a reputation for biting out eyeballs, or at least that's what the HoS'd tell you.";
-	name = "Colonel Chomps"
-	},
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel/dark,
 /area/command/heads_quarters/hos)
 "act" = (
@@ -12859,7 +12852,7 @@
 /turf/open/floor/plasteel,
 /area/hallway/primary/starboard)
 "bas" = (
-/obj/machinery/vending/coffee,
+/obj/machinery/photocopier,
 /turf/open/floor/wood,
 /area/service/library)
 "bat" = (
@@ -13329,7 +13322,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/ai_upload)
 "bch" = (
-/obj/machinery/vending/cigarette,
+/obj/machinery/vending/wardrobe/cap_wardrobe,
 /turf/open/floor/wood,
 /area/command/heads_quarters/captain)
 "bci" = (
@@ -13647,7 +13640,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/machinery/vending/wardrobe/cap_wardrobe,
+/obj/machinery/photocopier,
 /turf/open/floor/wood,
 /area/command/heads_quarters/captain)
 "bdj" = (
@@ -21705,10 +21698,10 @@
 /turf/open/floor/plasteel/white,
 /area/command/heads_quarters/rd)
 "bxm" = (
-/obj/effect/landmark/xmastree/rdrod,
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel/white,
 /area/command/heads_quarters/rd)
 "bxn" = (
@@ -22052,6 +22045,12 @@
 	pixel_y = 7
 	},
 /obj/item/pen/fountain,
+/obj/item/pen/red,
+/obj/item/pen{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/folder/yellow,
 /turf/open/floor/plasteel,
 /area/cargo/qm)
 "byh" = (
@@ -22084,13 +22083,6 @@
 /turf/open/floor/plating,
 /area/security/checkpoint/science)
 "byl" = (
-/obj/structure/table,
-/obj/item/folder/yellow,
-/obj/item/pen{
-	pixel_x = 4;
-	pixel_y = 4
-	},
-/obj/item/pen/red,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
@@ -22098,6 +22090,7 @@
 /obj/effect/turf_decal/tile/brown{
 	dir = 8
 	},
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel,
 /area/cargo/qm)
 "bym" = (
@@ -22790,6 +22783,7 @@
 /area/medical/surgery)
 "bzL" = (
 /obj/effect/turf_decal/stripes/line,
+/obj/effect/landmark/xmastree/rdrod,
 /turf/open/floor/plasteel/white,
 /area/command/heads_quarters/rd)
 "bzM" = (
@@ -25888,6 +25882,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel/cafeteria,
 /area/command/heads_quarters/cmo)
 "bHc" = (

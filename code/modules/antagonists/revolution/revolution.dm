@@ -400,8 +400,8 @@
 			if(istype(rev_head_body) && rev_head_body.stat == DEAD)
 				rev_head_body.makeUncloneable()
 
-		priority_announce("It appears the mutiny has been quelled. Please return yourself and your incapacitated colleagues to work. \
-		We have remotely blacklisted the head revolutionaries in your medical records to prevent accidental revival.", null, 'sound/announcer/classic/attention.ogg', null, "Central Command Loyalty Monitoring Division")
+		priority_announce("Похоже, что мятеж на станции был подавлен. Пожалуйста, возвращайтесь к своим предыдущим обязанностям. \
+		Мы дистанционно внесли медицинские записи разжигателей беспорядков в чёрный список, чтобы предотвратить их случайную реанимацию.", null, 'sound/announcer/classic/attention.ogg', null, "Central Command Loyalty Monitoring Division")
 	else
 		for (var/_player in GLOB.player_list)
 			var/mob/player = _player
@@ -435,8 +435,8 @@
 			dynamic.create_threat(revs_win_injection_amount)
 			dynamic.threat_log += "[worldtime2text()]: Revolution victory. Added [revs_win_injection_amount] threat."
 
-		priority_announce("A recent assessment of your station has marked your station as a severe risk area for high ranking Nanotrasen officials. \
-		For the safety of our staff, we have blacklisted your station for new employment of security and command. \
+		priority_announce("В результате недавней оценки состояния вашей станции она была отмечена как зона повышенного риска для высокопоставленных представителей NanoTrasen  \
+		В целях безопасности мы заблокировали прибытие на станцию новых сотрудников службы безопасности и командования. \
 		[pick(world.file2list("strings/anti_union_propaganda.txt"))]", null, 'sound/announcer/classic/attention.ogg', null, "Central Command Loyalty Monitoring Division")
 
 /// Mutates the ticker to report that the revs have won

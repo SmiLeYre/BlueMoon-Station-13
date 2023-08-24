@@ -116,7 +116,7 @@
 
 /datum/eldritch_knowledge/spell/nightwatchers_rite/on_gain(mob/user)
 	. = ..()
-	priority_announce("Large heat signatures discovered! A swelling fiery horror is coming..", sound = 'sound/misc/notice1.ogg')
+	priority_announce("Обнаружены крупные тепловые сигнатуры! Надвигается разрастающийся пламенный ужас..", sound = 'sound/misc/notice1.ogg')
 
 /datum/eldritch_knowledge/ash_blade_upgrade
 	name = "Fiery Blade"
@@ -191,7 +191,7 @@
 	var/list/trait_list = list(TRAIT_NOBREATH,TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE)
 
 /datum/eldritch_knowledge/final/ash_final/on_finished_recipe(mob/living/user, list/atoms, loc)
-	priority_announce("$^@&#*$^@(#&$(@&#^$&#^@# Fear the blaze, for the Ashlord, [user.real_name] has ascended! The flames shall consume all! $^@&#*$^@(#&$(@&#^$&#^@#","#$^@&#*$^@(#&$(@&#^$&#^@#", 'sound/announcer/classic/_admin_horror_music.ogg')
+	priority_announce("$^@&#*$^@(#&$(@&#^$&#^@# Бойтесь огня! Князь Праха, [user.real_name] вознесся! Языки пламени поглотят всё! $^@&#*$^@(#&$(@&#^$&#^@#","#$^@&#*$^@(#&$(@&#^$&#^@#", 'sound/announcer/classic/_admin_horror_music.ogg')
 	user.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/fire_cascade/big)
 	user.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/fire_sworn)
 	var/mob/living/carbon/human/H = user
