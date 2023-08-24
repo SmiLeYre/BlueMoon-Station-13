@@ -23,8 +23,8 @@
 	icon_living = "drone_maint_grey"
 	icon_dead = "drone_maint_dead"
 	possible_a_intents = list(INTENT_HELP, INTENT_HARM)
-	health = 30
-	maxHealth = 30
+	health = 50
+	maxHealth = 50
 	unsuitable_atmos_damage = 0
 	wander = 0
 	speed = 0
