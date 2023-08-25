@@ -918,39 +918,50 @@ proc/asiatish(message)
 	lose_text = span_danger("А что такое?")
 	medical_record_text = "Пациент испытывает любовь к синим и жёлтым цветам."
 
-proc/ukraine(message)
-	if(prob(75))
-		message = replacetext_char(message, "зажигалка", "спалахуйка")
-		message = replacetext_char(message, "зеркало", "пикогляд")
-		message = replacetext_char(message, "презерватив", "нацюцюрник")
-		message = replacetext_char(message, "пизда", "піхва")
-		message = replacetext_char(message, "хуй", "прутень")
-		message = replacetext_char(message, "врач", "ліпило")
-		message = replacetext_char(message, "бармен", "наливайко")
-		message = replacetext_char(message, "повар", "кухар")
-		message = replacetext_char(message, "капитан", "гетьман")
-		message = replacetext_char(message, "предатель", "зрадник")
-		message = replacetext_char(message, "генокрад", "москаль")
-		message = replacetext_char(message, "мостик", "майдан")
-		message = replacetext_char(message, "ученый", "вчений")
-		message = replacetext_char(message, "инженер", "слюсар")
-		message = replacetext_char(message, "маг", "чаклун")
-		message = replacetext_char(message, "лоза", "бур'ян")
-		message = replacetext_char(message, "культ", "нехристь")
-		message = replacetext_char(message, "КМ", "комірник")
-		message = replacetext_char(message, "СМО", "головний ліпило")
-		message = replacetext_char(message, "ГСБ", "дільничий")
-		message = replacetext_char(message, "ХОС", "дільничий")
-		message = replacetext_char(message, "водка", "горілка")
-		message = replacetext_char(message, "что", "шо")
-		message = replacetext_char(message, "добрый день", "доброго дня")
-		message = replacetext_char(message, "привет", "здоровенькі були")
-		message = replacetext_char(message, "блять", "дідько")
-		message = replacetextEx(message, "ы", "и")
-		message = replacetextEx(message, "и", "і")
-		message = replacetextEx(message, "ъ", "ї")
+var/static/list/ukraine_replacements = list(
+	"зажигалка" = "спалахуйка",
+	"зеркало" = "пикогляд",
+	"презерватив" = "нацюцюрник",
+	"пизда" = "піхва",
+	"хуй" = "прутень",
+	"врач" = "ліпило",
+	"бармен" = "наливайко",
+	"повар" = "кухар",
+	"капитан" = "гетьман",
+	"предатель" = "зрадник",
+	"генокрад" = "москаль",
+	"мостик" = "майдан",
+	"ученый" = "вчений",
+	"инженер" = "слюсар",
+	"маг" = "чаклун",
+	"лоза" = "бур'ян",
+	"культ" = "нехристь",
+	"КМ" = "комірник",
+	"СМО" = "головний ліпило",
+	"ГСБ" = "дільничий",
+	"ХОС" = "дільничий",
+	"водка" = "горілка",
+	"что" = "шо",
+	"добрый день" = "доброго дня",
+	"привет" = "здоровенькі були",
+	"блять" = "дідько"
+)
+
+/proc/ukraine(message)
+
+	if (prob(75))
+		for (var/key in ukraine_replacements)
+			var/regex/rg = regex("(\\A|\[\\s|.,\\-!/?~\])([key])(\\Z|\[\\s|.,\\-!/?~\])")
+			message = rg.Replace_char(message, /proc/ukraine_replace)
+
+		message = replacetextEx_char(message, "ы", "и")
+		message = replacetextEx_char(message, "и", "і")
+		message = replacetextEx_char(message, "ъ", "ї")
 
 	return message
+
+/proc/ukraine_replace(match, group1, key, group2)
+		return "[group1][ukraine_replacements[key]][group2]"
 
 /datum/quirk/body_morpher
 	name = "Изменятель Тела"
