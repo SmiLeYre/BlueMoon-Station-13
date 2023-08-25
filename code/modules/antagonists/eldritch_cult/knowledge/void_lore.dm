@@ -189,7 +189,7 @@
 	waltzing.physiology.burn_mod *= 0.5
 	ADD_TRAIT(waltzing, TRAIT_RESISTLOWPRESSURE, MAGIC_TRAIT)
 	waltzing.client?.give_award(/datum/award/achievement/misc/void_ascension, waltzing)
-	priority_announce("$^@&#*$^@(#&$(@&#^$&#^@# Дворянин пустоты, [waltzing.real_name], прибыл к вам, шагая вальсом кончины миров! $^@&#*$^@(#&$(@&#^$&#^@#","#$^@&#*$^@(#&$(@&#^$&#^@#", 'sound/announcer/classic/_admin_horror_music.ogg')
+	priority_announce("$^@&#*$^@(#&$(@&#^$&#^@# Дворянин пустоты, [waltzing.real_name], прибыл к вам, кружась в вальсе кончины миров! $^@&#*$^@(#&$(@&#^$&#^@#","#$^@&#*$^@(#&$(@&#^$&#^@#", 'modular_bluemoon/kovac_shitcode/sound/eldritch/void_lore.ogg')
 	sound_loop = new(user, TRUE, TRUE)
 	return ..()
 
