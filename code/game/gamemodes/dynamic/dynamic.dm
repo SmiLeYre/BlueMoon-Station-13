@@ -787,10 +787,11 @@ BLUEMOON REMOVAL END*/
 					if(rule.flags & HIGH_IMPACT_RULESET)
 						if(GLOB.dynamic_extended)
 							continue
-						if(GLOB.teambased_dynamic && !rule.team_based_allowed)
-							continue
 						else if(high_impact_ruleset_executed)
 							continue
+				if(GLOB.teambased_dynamic)// && !rule.team_based_allowed) - временно убранно в комментарий, т.к. среди лэйтжоина нет крутых командных антагов
+					continue
+
 //BLUEMOON ADDITION END
 				rule.candidates = list(newPlayer)
 				rule.trim_candidates()
