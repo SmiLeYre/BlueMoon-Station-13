@@ -61558,6 +61558,17 @@
 	},
 /turf/open/floor/plasteel,
 /area/engineering/main)
+"dwp" = (
+/obj/docking_port/stationary{
+	id = "lambda_station";
+	name = "Lambda Shuttle Dock";
+	dwidth = 5;
+	width = 10;
+	dheight = 5;
+	height = 10
+	},
+/turf/open/space/basic,
+/area/space)
 "dxT" = (
 /obj/structure/beebox,
 /obj/item/queen_bee/bought,
@@ -89707,7 +89718,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+dwp
 aaa
 aaa
 aaa

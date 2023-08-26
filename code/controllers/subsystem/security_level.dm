@@ -81,6 +81,22 @@ SUBSYSTEM_DEF(security_level)
 				GLOB.security_level = SEC_LEVEL_RED
 				sound_to_playing_players('sound/misc/voyalert.ogg', volume = 50) // Citadel change - Makes alerts play a sound
 
+
+			if(SEC_LEVEL_LAMBDA)
+				minor_announce(CONFIG_GET(string/alert_lambda), "Внимание! КОД - ЛЯМБДА!",1)
+				if(SSshuttle.emergency.mode == SHUTTLE_CALL || SSshuttle.emergency.mode == SHUTTLE_RECALL)
+					if(GLOB.security_level < SEC_LEVEL_BLUE)
+						SSshuttle.emergency.modTimer(0.25)
+					else if(GLOB.security_level == SEC_LEVEL_BLUE)
+						SSshuttle.emergency.modTimer(0.416)
+					else
+						SSshuttle.emergency.modTimer(0.625)
+				GLOB.security_level = SEC_LEVEL_LAMBDA
+				sound_to_playing_players('modular_bluemoon/kovac_shitcode/sound/lambda_code.ogg') // Citadel change - Makes alerts play a sound
+				if(!SSshuttle.toggleShuttle("lambda","lambda_away","lambda_station"))
+					message_admins("Lambda Armory shuttle was sent to the station")
+					log_admin("Lambda Armory shuttle was sent to the station")
+
 				for(var/obj/machinery/firealarm/FA in GLOB.machines)
 					if(is_station_level(FA.z))
 						FA.update_icon()

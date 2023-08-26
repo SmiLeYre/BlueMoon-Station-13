@@ -51531,6 +51531,16 @@
 	},
 /turf/open/floor/wood,
 /area/service/lawoffice)
+"dhO" = (
+/obj/structure/lattice/catwalk,
+/obj/machinery/door/airlock/external{
+	name = "Security External Airlock";
+	req_access_txt = "63"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/structure/fans/tiny,
+/turf/open/space/basic,
+/area/security/office)
 "diq" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/door/airlock/maintenance{
@@ -58733,13 +58743,8 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
 "mBQ" = (
-/obj/machinery/door/airlock/external{
-	name = "Security External Airlock";
-	req_access_txt = "63"
-	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/obj/structure/fans/tiny,
-/turf/open/floor/plating,
+/obj/structure/lattice/catwalk,
+/turf/open/space,
 /area/security/office)
 "mCm" = (
 /obj/effect/turf_decal/stripes/line,
@@ -64987,6 +64992,17 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
+"vCF" = (
+/obj/docking_port/stationary{
+	id = "lambda_station";
+	name = "Lambda Shuttle Dock";
+	dwidth = 5;
+	width = 10;
+	dheight = 5;
+	height = 10
+	},
+/turf/open/space/basic,
+/area/space)
 "vCS" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -99610,9 +99626,9 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
+piS
+piS
+piS
 aaf
 aaM
 abr
@@ -99868,8 +99884,8 @@ aoV
 aaa
 aoV
 aaa
-aaa
-aaa
+piS
+piS
 aaf
 aaO
 adQ
@@ -100124,9 +100140,9 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
+piS
+piS
+piS
 aaf
 abq
 aes
@@ -101150,12 +101166,12 @@ fIs
 fIs
 fIs
 fIs
-fIs
-fIs
-fIs
-fIs
-fIs
-fIs
+gXs
+aaa
+aaa
+aaa
+aaa
+aaa
 abp
 wnY
 uDv
@@ -101668,11 +101684,11 @@ aaa
 aaa
 aaa
 aaa
-gDl
 aaa
-aaa
-aag
+vCF
+dhO
 mBQ
+rxQ
 sip
 rxQ
 rxQ
@@ -101922,13 +101938,13 @@ aaa
 aaa
 aaa
 aaa
-aaf
-aaf
-aag
-aag
-aag
-aag
-aag
+aaa
+aoV
+aoV
+aoV
+aoV
+abp
+abp
 abp
 abp
 mxn
@@ -102951,7 +102967,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+gDl
 aaa
 aaa
 aaa

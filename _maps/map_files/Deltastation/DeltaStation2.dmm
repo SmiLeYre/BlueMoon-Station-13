@@ -86609,6 +86609,19 @@
 	},
 /turf/open/floor/plating,
 /area/command/heads_quarters/ce)
+"jKj" = (
+/obj/structure/lattice/catwalk,
+/obj/docking_port/stationary{
+	id = "lambda_station";
+	name = "Lambda Shuttle Dock";
+	dwidth = 5;
+	width = 10;
+	dheight = 5;
+	height = 10;
+	dir = 4
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
 "jKl" = (
 /obj/machinery/door/firedoor,
 /obj/structure/cable/white{
@@ -189193,7 +189206,7 @@ qgU
 qgU
 qgU
 aZK
-aZK
+jKj
 aZK
 qgU
 qgU

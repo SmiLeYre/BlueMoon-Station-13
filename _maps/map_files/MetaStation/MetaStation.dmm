@@ -61125,6 +61125,19 @@
 	},
 /turf/open/floor/glass/reinforced,
 /area/commons/dorms)
+"kMS" = (
+/obj/structure/lattice/catwalk,
+/obj/docking_port/stationary{
+	id = "lambda_station";
+	name = "Lambda Shuttle Dock";
+	dwidth = 5;
+	width = 10;
+	dheight = 5;
+	height = 10;
+	dir = 4
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
 "kMT" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
@@ -113769,7 +113782,7 @@ vLD
 vLD
 vLD
 ngt
-ngt
+kMS
 ngt
 aaf
 aaf

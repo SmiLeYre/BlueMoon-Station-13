@@ -72298,6 +72298,19 @@
 	},
 /turf/open/floor/plasteel,
 /area/engineering/gravity_generator)
+"uDy" = (
+/obj/structure/lattice/catwalk,
+/obj/docking_port/stationary{
+	id = "lambda_station";
+	name = "Lambda Shuttle Dock";
+	dwidth = 5;
+	width = 10;
+	dheight = 5;
+	height = 10;
+	dir = 4
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
 "uFe" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -120310,7 +120323,7 @@ aab
 aab
 aab
 aav
-acv
+uDy
 aav
 aav
 adK

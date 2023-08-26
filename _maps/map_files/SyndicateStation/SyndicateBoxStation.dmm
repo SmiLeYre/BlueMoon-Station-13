@@ -58735,9 +58735,10 @@
 	name = "Security External Airlock";
 	req_access_txt = "63"
 	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/structure/fans/tiny,
-/turf/open/floor/plating,
+/obj/structure/lattice/catwalk,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/turf/open/space/basic,
 /area/security/office)
 "mCm" = (
 /obj/effect/turf_decal/stripes/line,
@@ -61479,9 +61480,9 @@
 /turf/open/floor/mineral/plastitanium,
 /area/service/chapel/main)
 "qCS" = (
-/obj/structure/lattice,
+/obj/structure/lattice/catwalk,
 /turf/open/space,
-/area/space)
+/area/security/office)
 "qEB" = (
 /obj/machinery/hydroponics/soil{
 	pixel_y = 8
@@ -65018,6 +65019,17 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
+"vEH" = (
+/obj/docking_port/stationary{
+	id = "lambda_station";
+	name = "Lambda Shuttle Dock";
+	dwidth = 5;
+	width = 10;
+	dheight = 5;
+	height = 10
+	},
+/turf/open/space/basic,
+/area/space)
 "vFr" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/power/terminal{
@@ -99864,8 +99876,8 @@ aoV
 aaa
 aoV
 aaa
-aaa
-aaa
+piS
+piS
 aaf
 aaO
 adQ
@@ -100120,9 +100132,9 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
+piS
+piS
+piS
 aaf
 abq
 aes
@@ -101148,10 +101160,10 @@ fIs
 fIs
 fIs
 fIs
-fIs
-fIs
-fIs
-fIs
+piS
+aaa
+aaa
+aaa
 abp
 wnY
 uDv
@@ -101664,11 +101676,11 @@ aaa
 aaa
 aaa
 aaa
-gDl
 aaa
-aaa
-aag
+vEH
 mBQ
+qCS
+rxQ
 sip
 rxQ
 rxQ
@@ -101918,13 +101930,13 @@ aaa
 aaa
 aaa
 aaa
-aaf
-aaf
-aag
-aag
-aag
-aag
-aag
+aaa
+aaa
+aaa
+aoV
+aoV
+abp
+abp
 abp
 abp
 mxn
@@ -102180,8 +102192,8 @@ aaa
 aaa
 aaa
 aaa
-aaa
-qCS
+uCA
+mIX
 abp
 wdv
 afp
@@ -102430,7 +102442,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+gDl
 aaa
 aaa
 aaa

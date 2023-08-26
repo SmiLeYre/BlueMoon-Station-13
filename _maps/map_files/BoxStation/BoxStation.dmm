@@ -51669,14 +51669,16 @@
 /turf/closed/wall,
 /area/service/bar)
 "khD" = (
-/obj/machinery/door/airlock/external{
-	name = "Security External Airlock";
-	req_access_txt = "63"
+/obj/docking_port/stationary{
+	id = "lambda_station";
+	name = "Lambda Shuttle Dock";
+	dwidth = 5;
+	width = 10;
+	dheight = 5;
+	height = 10
 	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/obj/structure/fans/tiny,
-/turf/open/floor/plating,
-/area/security/office)
+/turf/open/space/basic,
+/area/space)
 "khO" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/security{
@@ -53761,6 +53763,16 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/prison)
+"lQh" = (
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/structure/fans/tiny,
+/obj/structure/lattice/catwalk,
+/obj/machinery/door/airlock/external{
+	name = "Space";
+	req_access_txt = "1"
+	},
+/turf/open/space/basic,
+/area/security/office)
 "lQG" = (
 /obj/effect/spawner/structure/window,
 /turf/open/floor/plating,
@@ -64537,6 +64549,10 @@
 	},
 /turf/closed/wall,
 /area/ai_monitored/command/storage/eva)
+"vdJ" = (
+/obj/structure/lattice/catwalk,
+/turf/open/space,
+/area/security/office)
 "veF" = (
 /obj/effect/turf_decal/trimline/neutral/filled/line{
 	dir = 4
@@ -67036,7 +67052,7 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
 "xcL" = (
-/obj/structure/lattice,
+/obj/structure/lattice/catwalk,
 /turf/open/space,
 /area/space)
 "xdq" = (
@@ -101901,11 +101917,11 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+gXs
+gXs
+gJi
+gJi
+gJi
 abq
 abq
 abq
@@ -102415,11 +102431,11 @@ aaa
 aaa
 aaa
 aaa
-aaf
-aaf
-aag
-aag
-aag
+aaa
+aoV
+aoV
+aoV
+aoV
 adR
 oTI
 afU
@@ -103190,10 +103206,10 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aag
 khD
+lQh
+vdJ
+vCV
 dRp
 vCV
 vCV
@@ -103443,13 +103459,13 @@ aaa
 aaa
 aaa
 aaa
-aaf
-aaf
-aag
-aag
-aag
-aag
-aag
+aaa
+aaa
+aoV
+aoV
+aoV
+adR
+adR
 adR
 adR
 jFG
@@ -103705,7 +103721,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+mWm
 xcL
 adR
 wdv

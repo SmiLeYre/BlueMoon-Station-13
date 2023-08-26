@@ -1,0 +1,204 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/lambda)
+"g" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/pod/light,
+/area/shuttle/lambda)
+"k" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/airlock/external{
+	name = "Space";
+	req_access_txt = "1"
+	},
+/turf/open/floor/pod/light,
+/area/shuttle/lambda)
+"p" = (
+/turf/open/floor/pod/light,
+/area/shuttle/lambda)
+"q" = (
+/obj/machinery/light/small,
+/turf/open/floor/pod/light,
+/area/shuttle/lambda)
+"r" = (
+/obj/vehicle/sealed/mecha/combat/marauder/loaded,
+/turf/open/floor/pod/dark,
+/area/shuttle/lambda)
+"u" = (
+/turf/open/floor/pod/dark,
+/area/shuttle/lambda)
+"v" = (
+/obj/structure/closet/crate,
+/obj/item/storage/box/mre/menu2/safe,
+/obj/item/storage/box/mre/menu4/safe,
+/obj/item/storage/box/mre/menu4/safe,
+/obj/item/storage/box/mre/menu2/safe,
+/obj/item/storage/box/mre/menu1/safe,
+/obj/item/storage/box/mre/menu1/safe,
+/turf/open/floor/pod/light,
+/area/shuttle/lambda)
+"w" = (
+/obj/structure/shuttle/engine/propulsion/burst{
+	dir = 8
+	},
+/turf/open/floor/pod/light,
+/area/shuttle/lambda)
+"x" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/lambda)
+"C" = (
+/obj/machinery/status_display/ai,
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/lambda)
+"D" = (
+/obj/structure/shuttle/engine/heater{
+	dir = 8
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/turf/open/floor/pod/light,
+/area/shuttle/lambda)
+"F" = (
+/obj/structure/closet,
+/obj/item/clothing/suit/space/hardsuit/ert/alert/sec{
+	name = "reinforced security suit"
+	},
+/obj/item/clothing/suit/space/hardsuit/ert/alert/sec{
+	name = "reinforced security suit"
+	},
+/obj/item/clothing/head/helmet/space/syndicate/black/red,
+/obj/item/clothing/head/helmet/space/syndicate/black/red,
+/obj/item/clothing/suit/space/syndicate/black/red,
+/obj/item/clothing/suit/space/syndicate/black/red,
+/turf/open/floor/pod/light,
+/area/shuttle/lambda)
+"K" = (
+/obj/structure/closet,
+/obj/item/storage/firstaid/tactical,
+/obj/item/gun/medbeam,
+/obj/item/ammo_box/magazine/m16,
+/obj/item/ammo_box/magazine/m16,
+/obj/item/ammo_box/magazine/m16,
+/obj/item/ammo_box/magazine/m16/ap,
+/obj/item/ammo_box/magazine/m16/ap,
+/obj/item/ammo_box/magazine/m16/ap,
+/obj/item/ammo_box/magazine/m16,
+/obj/item/ammo_box/magazine/m16,
+/obj/item/ammo_box/magazine/m16,
+/obj/item/ammo_box/magazine/m16,
+/obj/item/ammo_box/magazine/m556,
+/obj/item/ammo_box/magazine/m556,
+/obj/item/ammo_box/magazine/m556,
+/obj/item/ammo_box/magazine/m556,
+/obj/item/ammo_box/magazine/m556,
+/obj/item/ammo_box/magazine/m556,
+/turf/open/floor/pod/light,
+/area/shuttle/lambda)
+"O" = (
+/obj/structure/closet,
+/obj/item/gun/energy/laser/hellgun,
+/obj/item/gun/energy/laser/hellgun,
+/obj/item/gun/energy/laser/hellgun,
+/obj/item/gun/ballistic/automatic/m16a4/stock,
+/obj/item/gun/ballistic/automatic/m16a4/stock,
+/obj/item/gun/ballistic/automatic/m16a4,
+/obj/item/gun/ballistic/automatic/ar,
+/obj/item/gun/ballistic/automatic/ar,
+/turf/open/floor/pod/light,
+/area/shuttle/lambda)
+"Q" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/structure/closet/crate,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/head/helmet/aviator_helmet,
+/obj/item/weldingtool/largetank,
+/obj/item/card/id/centcom,
+/turf/open/floor/pod/light,
+/area/shuttle/lambda)
+"Y" = (
+/obj/docking_port/mobile{
+	id = "lambda";
+	name = "Lambda Shuttle";
+	port_direction = 4;
+	dwidth = 3;
+	width = 8;
+	dheight = 3;
+	height = 8
+	},
+/obj/structure/fans/tiny,
+/obj/machinery/door/airlock/centcom{
+	name = "CentCom Security";
+	req_access_txt = "1"
+	},
+/turf/open/floor/pod/light,
+/area/shuttle/lambda)
+
+(1,1,1) = {"
+a
+a
+w
+a
+a
+"}
+(2,1,1) = {"
+a
+F
+D
+K
+a
+"}
+(3,1,1) = {"
+C
+g
+O
+q
+a
+"}
+(4,1,1) = {"
+k
+p
+p
+p
+a
+"}
+(5,1,1) = {"
+a
+Q
+v
+p
+a
+"}
+(6,1,1) = {"
+a
+r
+u
+p
+Y
+"}
+(7,1,1) = {"
+a
+x
+p
+q
+a
+"}
+(8,1,1) = {"
+a
+a
+a
+a
+a
+"}
