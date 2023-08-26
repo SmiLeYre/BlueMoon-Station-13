@@ -18,7 +18,7 @@
 	health = 120
 	maxHealth = 120 //If you murder other drones and cannibalize them you can get much stronger
 	initial_language_holder = /datum/language_holder/synthetic
-	faction = list(ROLE_TRAITOR)
+	faction = list(ROLE_TRAITOR, ROLE_SYNDICATE)
 	speak_emote = list("hisses")
 	bubble_icon = "syndibot"
 	heavy_emp_damage = 10

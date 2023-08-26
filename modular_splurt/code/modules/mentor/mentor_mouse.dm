@@ -26,7 +26,7 @@
 	remove_verb(src, /client/proc/spawn_mentor_mouse)
 	message_admins("[ADMIN_LOOKUPFLW(src)] Spawned as a mentor drone.")
 	log_mentor("[key_name(src)] Spawned as a mentor drone.")
-	COOLDOWN_START(src, mentor_mouse_spawn, 30 SECONDS)
+	COOLDOWN_START(src, mentor_mouse_spawn, 10 SECONDS)
 
 /client/proc/despawn_mentor_mouse()
 	set name = "Despawn Mentor Drone"
@@ -47,4 +47,4 @@
 	remove_verb(src, /client/proc/despawn_mentor_mouse)
 	message_admins("[ADMIN_LOOKUPFLW(src)] Despawned their mentor drone.")
 	log_mentor("[key_name(src)] Despawned their mentor drone.")
-	COOLDOWN_START(src, mentor_mouse_spawn, 30 SECONDS)
+	COOLDOWN_START(src, mentor_mouse_spawn, 20 SECONDS)

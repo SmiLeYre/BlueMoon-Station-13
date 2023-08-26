@@ -160,7 +160,7 @@ export const MESSAGE_TYPES = [
     type: MESSAGE_TYPE_MENTORPM,
     name: 'Mentor PM',
     description: 'Mentor PMs',
-    selector: '.pm',
+    selector: '.pm, .ghostalert',
     mentor: true,
   },
   {
