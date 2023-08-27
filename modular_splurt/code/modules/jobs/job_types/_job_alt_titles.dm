@@ -80,7 +80,7 @@
 /datum/job/rd/New()
 	var/list/extra_titles = list(
 		"Science Administrator",
-		"Cybersun Research Specialist",
+		"Cybersun Lead Specialist",
 		"CEO of Sex",
 		"Sex Research Director",
 		"Research Manager"
@@ -206,6 +206,8 @@
 
 /datum/job/cook/New()
 	var/list/extra_titles = list(
+		"Waffle Co. Specialist",
+		"Donk Co. Specialist",
 		"Chef De Partie",
 		"Chef De Sexe",
 		"Boss Of This Gym",
@@ -282,13 +284,13 @@
 
 /datum/job/roboticist/New()
 	var/list/extra_titles = list(
+		"Cybersun Specialist",
 		"Ripperdoc",
 		"Droid Mechanic",
 		"Borgs Slut",
 		"Borgs Raper",
 		"Robo-Slut",
-		"Techpriest Biologis",
-		"MOD Mechanic"
+		"Techpriest Biologis"
 	)
 	LAZYADD(alt_titles, extra_titles)
 	. = ..()
@@ -398,6 +400,7 @@
 		"SAARE Operative",
 		"PCRC Operative",
 		"Syndicate Combatant",
+		"Gorlex Marauders Trainee",
 		"Slutcurity Officer"
 	)
 	var/list/rem_titles = list(

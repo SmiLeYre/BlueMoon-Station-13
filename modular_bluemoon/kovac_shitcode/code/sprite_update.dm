@@ -471,3 +471,18 @@
 
 /obj/item/card/emag/vox
 	uses = 30
+
+
+/////////////////////////////////////////////////////////
+
+/mob/living/simple_animal/pet/dog/corgi/pig/assistant
+	name = "Danya"
+	real_name = "Danya"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
+	maxHealth = 250
+	health = 250
+
+/mob/living/simple_animal/pet/fox/fennec/eldritch
+	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
+	maxHealth = 100
+	health = 100

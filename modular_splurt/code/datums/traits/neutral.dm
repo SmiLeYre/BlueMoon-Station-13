@@ -414,8 +414,8 @@
 	ADD_TRAIT(quirk_mob,TRAIT_NOTHIRST, ROUNDSTART_TRAIT)
 
 	// Set skin tone, if possible
-	if(!quirk_mob.dna.skin_tone_override)
-		quirk_mob.skin_tone = "albino"
+	//if(!quirk_mob.dna.skin_tone_override)
+		//quirk_mob.skin_tone = "albino" // BlueMoon 27.08.2023 - убрано в угоду разнообразия отыгрыша
 
 	// Add quirk language
 	quirk_mob.grant_language(/datum/language/vampiric, TRUE, TRUE, LANGUAGE_BLOODSUCKER)

@@ -151,7 +151,7 @@
 	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
 
 /////////////////////////////////////////////////////////////////////////////////////////
-//Хвост ксеноморфа для хуманов
+
 /datum/sprite_accessory/tails/human/xeno
 	name = "Xenomorph Tail"
 	icon_state = "xeno"
@@ -159,3 +159,36 @@
 	matrixed_sections = MATRIX_ALL
 	icon = 'modular_citadel/icons/mob/xeno_parts_greyscale.dmi'
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
+
+/datum/sprite_accessory/tails/human/scolo
+	name = "Centipede Tail"
+	icon_state = "scolo"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_ALL
+	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
+	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
+
+
+/////////////////////////////
+
+/datum/sprite_accessory/deco_wings/mantis
+	name = "Mantis"
+	icon_state = "mantis"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/deco_wings/mantis/mono
+	name = "Mantis Mono"
+	icon_state = "mantis2"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
+	color_src = SKINTONE
+
+/////////////////////////////
+
+/datum/sprite_accessory/ears/human/scolo_antennae
+	name = "Centipede Antennae"
+	icon_state = "scolo_antennae"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED

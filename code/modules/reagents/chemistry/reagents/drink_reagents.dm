@@ -295,9 +295,9 @@
 	glass_name = "glass of coffee"
 	glass_desc = "Don't drop it, or you'll send scalding liquid and glass shards everywhere."
 
-/datum/reagent/consumable/coffee/overdose_process(mob/living/M)
-	M.Jitter(5)
-	..()
+///datum/reagent/consumable/coffee/overdose_process(mob/living/M)
+	//M.Jitter(5) // Убираем тряску от кофе
+	////..()
 
 /datum/reagent/consumable/coffee/on_mob_life(mob/living/carbon/M)
 	M.dizziness = max(0,M.dizziness-5)
@@ -767,7 +767,7 @@
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.SetSleeping(0, FALSE)
 	M.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, BODYTEMP_NORMAL)
-	M.Jitter(5)
+	//M.Jitter(5) // Убираем тряску от латте
 	if(M.getBruteLoss() && prob(20))
 		M.heal_bodypart_damage(1,0, 0)
 	..()
@@ -789,7 +789,7 @@
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.SetSleeping(0, FALSE)
 	M.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, BODYTEMP_NORMAL)
-	M.Jitter(5)
+	//M.Jitter(5) // Убираем тряску от латте
 	if(M.getBruteLoss() && prob(20))
 		M.heal_bodypart_damage(1,0, 0)
 	..()
