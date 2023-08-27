@@ -65,14 +65,18 @@ GLOBAL_LIST_EMPTY(cached_previews)
 	. = ..()
 	var/data[0]
 	var/mob/living/M = host.resolve()
+	var/unknown = FALSE
 	if (iscarbon(M))
 		var/mob/living/carbon/C = M
-		var/unknown = (C.wear_mask && (C.wear_mask.flags_inv & HIDEFACE) && !isobserver(user)) || (C.head && (C.head.flags_inv & HIDEFACE) && !isobserver(user))
+		unknown = (C.wear_mask && (C.wear_mask.flags_inv & HIDEFACE) && !isobserver(user)) || (C.head && (C.head.flags_inv & HIDEFACE) && !isobserver(user))
 		data["flavortext"] = (!unknown) ? (M?.client?.prefs?.features["flavor_text"] || "") : "Скрыто"
 		if (istype(M, /mob/living/carbon/human))
 			var/mob/living/carbon/human/H = C
 			unknown = (unknown || (H.w_uniform || H.wear_suit))
 			data["flavortext_naked"] = (!unknown && M?.client?.prefs?.features["naked_flavor_text"]) || ""
+
+	data["is_unknown"] = unknown
+
 	return data
 
 /datum/description_profile/proc/update_preview()
