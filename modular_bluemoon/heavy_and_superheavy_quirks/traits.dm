@@ -1,4 +1,6 @@
-// КВИРКИ
+/*
+КВИРКИ
+*/
 
 /datum/quirk/bluemoon_heavy
 	name = "Тяжёлый"
@@ -102,7 +104,9 @@
 	update_size_movespeed()
 	check_mob_size()
 
-// ПЕРЕМЕННЫЕ ДЛЯ МОДИФИКАТОРОВ СКОРОСТИ
+/*
+ПЕРЕМЕННЫЕ ДЛЯ МОДИФИКАТОРОВ СКОРОСТИ
+*/
 
 /datum/movespeed_modifier/heavy_mob_drag
 	variable = TRUE
