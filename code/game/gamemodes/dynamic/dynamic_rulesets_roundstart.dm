@@ -788,6 +788,43 @@ BLUEMOON REMOVAL END*/
 		new_xeno.key = current_key
 
 		return new_xeno
+
+//////////////////////////////////////////////
+//                                          //
+//               BLOODSUCKERS               //
+//                                          //
+//////////////////////////////////////////////
+
+/datum/dynamic_ruleset/roundstart/bloodsuckers
+	name = "Bloodsuckers"
+	antag_flag = ROLE_BLOODSUCKER
+	antag_datum = /datum/antagonist/bloodsucker
+	protected_roles = list("Prisoner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain")
+	restricted_roles = list("AI", "Cyborg")
+	required_candidates = 1
+	weight = 6
+	cost = 15
+	scaling_cost = 10
+	requirements = list(101,101,60,50,40,30,20,15,10,10)
+	antag_cap = 2
+
+/datum/dynamic_ruleset/roundstart/bloodsuckers/pre_execute(population)
+	. = ..()
+	var/num_bloodsuckers = get_antag_cap(population) * (scaled_times + 1)
+	for (var/i = 1 to num_bloodsuckers)
+		var/mob/M = pick_n_take(candidates)
+		assigned += M.mind
+		M.mind.restricted_roles = restricted_roles
+		M.mind.special_role = antag_flag
+	return TRUE
+
+//////////////////////////////////////////////
+//                                          //
+//               OVERTHROWN                 //
+//                                          //
+//////////////////////////////////////////////
+
+
 /* TODO
 /datum/dynamic_ruleset/roundstart/overthrown
 	name = "Overthrown"

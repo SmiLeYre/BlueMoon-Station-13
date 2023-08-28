@@ -47,7 +47,7 @@
 
 //////////////////////////////////////////////
 //                                          //
-//           INTEQ TRAITORS             //
+//           INTEQ TRAITORS                 //
 //                                          //
 //////////////////////////////////////////////
 
@@ -169,9 +169,9 @@
 
 /datum/dynamic_ruleset/latejoin/silent_changeling
 	name = "Silent Changeling"
-	antag_datum = /datum/antagonist/changeling
 	antag_flag = "changeling late"
 	antag_flag_override = ROLE_CHANGELING
+	antag_datum = /datum/antagonist/changeling
 	protected_roles = list("Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
 	restricted_roles = list("AI", "Cyborg")
 	required_candidates = 1
@@ -181,12 +181,27 @@
 	antag_cap = list("denominator" = 24)
 	repeatable = TRUE
 
-/datum/dynamic_ruleset/latejoin/silent_changeling/execute()
-	var/mob/M = pick(candidates)
-	assigned += M.mind
-	M.mind.special_role = antag_flag
-	var/datum/antagonist/changeling/new_antag = new antag_datum()
-	M.mind.add_antag_datum(new_antag)
-	log_admin("[M.name] was made into a [name] by dynamic.")
-	return TRUE
+//////////////////////////////////////////////
+//                                          //
+//            LATE BLOODSUCKERS             //
+//                                          //
+//////////////////////////////////////////////
+
+/datum/dynamic_ruleset/latejoin/bloodsuckers
+	name = "Bloodsucker Guest"
+	antag_flag = "bloodsucker late"
+	antag_flag_override = ROLE_BLOODSUCKER
+	antag_datum = /datum/antagonist/bloodsucker
+	protected_roles = list("Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain")
+	restricted_roles = list("AI", "Cyborg")
+	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGES
+	required_enemies = 3
+	required_candidates = 1
+	weight = 4
+	cost = 10
+	scaling_cost = 10
+	requirements = list(101,101,60,50,40,30,20,15,10,10)
+	antag_cap = list("denominator" = 24, "offset" = 1)
+	repeatable = TRUE
+
 //BLUEMOON ADD END

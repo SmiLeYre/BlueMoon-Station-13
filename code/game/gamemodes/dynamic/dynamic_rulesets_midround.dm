@@ -180,7 +180,7 @@
 
 //////////////////////////////////////////////
 //                                          //
-//           INTEQ TRAITORS             //
+//           INTEQ TRAITORS                 //
 //                                          //
 //////////////////////////////////////////////
 
@@ -988,3 +988,49 @@
 #undef MALF_ION_PROB
 /// The probability to replace an existing law with an ion law instead of adding a new ion law.
 #undef REPLACE_LAW_WITH_ION_PROB
+
+// BLUEMOON ADD START
+
+//////////////////////////////////////////////
+//                                          //
+//            BLOODSUCKERS                  //
+//                                          //
+//////////////////////////////////////////////
+
+/datum/dynamic_ruleset/midround/bloodsuckers
+	name = "Bloodsuckers"
+	antag_flag = ROLE_BLOODSUCKER
+	antag_datum = /datum/antagonist/bloodsucker
+	protected_roles = list("Prisoner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain")
+	restricted_roles = list("AI", "Cyborg")
+	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGES
+	required_enemies = 3
+	required_candidates = 1
+	weight = 6
+	cost = 15
+	scaling_cost = 10
+	requirements = list(101,101,60,50,40,30,20,15,10,10)
+	antag_cap = list("denominator" = 24, "offset" = 1)
+
+/datum/dynamic_ruleset/midround/bloodsuckers/trim_candidates()
+	. = ..()
+	candidates = living_players
+	for(var/mob/living/player in candidates)
+		if(issilicon(player)) // никаких боргов
+			candidates -= player
+		else if(is_centcom_level(player.z))  // никаких ЦКшников
+			candidates -= player
+		else if(player.mind && (player.mind.special_role || player.mind.antag_datums?.len > 0)) // никаких мульти-антагонистов
+			candidates -= player
+		else if(HAS_TRAIT(player, TRAIT_MINDSHIELD)) // никаких кровососов с защитой разума
+			candidates -= player
+
+/datum/dynamic_ruleset/midround/bloodsuckers/pre_execute(population)
+	. = ..()
+	var/num_bloodsuckers = get_antag_cap(population) * (scaled_times + 1)
+	for (var/i = 1 to num_bloodsuckers)
+		var/mob/M = pick_n_take(candidates)
+		assigned += M.mind
+		M.mind.restricted_roles = restricted_roles
+		M.mind.special_role = antag_flag
+	return TRUE
