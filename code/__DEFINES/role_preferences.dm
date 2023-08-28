@@ -10,7 +10,7 @@
 #define ROLE_TRAITOR				"traitor"
 #define ROLE_OPERATIVE				"operative"
 #define ROLE_CHANGELING				"changeling"
-#define ROLE_CHANGELING_MIDROUND	"Changeling (Midround)"
+#define ROLE_CHANGELING_MIDROUND	"Changeling (Meteor)"
 #define ROLE_WIZARD					"wizard"
 #define ROLE_MALF					"malf AI"
 #define ROLE_REV					"revolutionary"
