@@ -789,7 +789,7 @@
 
 /mob/living/silicon/robot/modules/syndicate
 	icon_state = "synd_sec"
-	faction = list(ROLE_INTEQ)
+	faction = list(ROLE_SYNDICATE)
 	bubble_icon = "syndibot"
 	req_access = list(ACCESS_SYNDICATE)
 	lawupdate = FALSE
@@ -802,7 +802,6 @@
 							<i>Помогите оперативникам любой ценой!!!</i></b>"
 	set_module = /obj/item/robot_module/syndicate
 	cell = /obj/item/stock_parts/cell/hyper
-	// radio = /obj/item/radio/borg/syndicate
 	typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/syndbot
 
 /mob/living/silicon/robot/modules/syndicate/Initialize(mapload)
@@ -844,14 +843,42 @@
 						<i>Помогите оперативникам любой ценой!!!</i></b>"
 	set_module = /obj/item/robot_module/saboteur
 
-/mob/living/silicon/robot/modules/syndicate/inteq
+/mob/living/silicon/robot/modules/inteq
 	icon_state = "inteq_sec"
-	playstyle_string = "<span class='big bold'>Вы - Штурмовой Киборг ИнтеКью!</span><br>\
+	var/playstyle_string = "<span class='big bold'>Вы - Штурмовой Киборг ИнтеКью!</span><br>\
 							<b>Вы вооружены мощными наступательными средствами, которые помогут вам выполнить задание: помочь Союзным Оперативникам. \
 							Ваш LMG будет медленно производить боеприпасы из вашего источника питания, а ваш оперативный пинпоинтер будет находить и определять местоположение товарищей по Операции. \
 							<i>Помогите оперативникам любой ценой!!!</i></b>"
+	faction = list(ROLE_INTEQ)
+	bubble_icon = "syndibot"
+	req_access = list(ACCESS_SYNDICATE)
+	lawupdate = FALSE
+	scrambledcodes = TRUE // These are rogue borgs.
+	ionpulse = TRUE
+	flash_protect = TRUE
+	set_module = /obj/item/robot_module/syndicate
+	cell = /obj/item/stock_parts/cell/hyper
+	typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/syndbot
 
-/mob/living/silicon/robot/modules/syndicate/medical/inteq
+/mob/living/silicon/robot/modules/inteq/Initialize(mapload)
+	. = ..()
+	radio = new /obj/item/radio/borg/inteq(src)
+	laws = new /datum/ai_laws/syndicate_override()
+	addtimer(CALLBACK(src, .proc/show_playstyle), 5)
+
+/mob/living/silicon/robot/modules/inteq/create_modularInterface()
+	if(!modularInterface)
+		modularInterface = new /obj/item/modular_computer/tablet/integrated/syndicate(src)
+	return ..()
+
+/mob/living/silicon/robot/modules/inteq/proc/show_playstyle()
+	if(playstyle_string)
+		to_chat(src, playstyle_string)
+
+/mob/living/silicon/robot/modules/inteq/ResetModule()
+	return
+
+/mob/living/silicon/robot/modules/inteq/medical
 	icon_state = "inteq_medical"
 	playstyle_string = "<span class='big bold'>Вы - Медицинский Киборг ИнтеКью!</span><br>\
 						<b>Вы вооружены мощными медицинскими инструментами, которые помогут вам выполнить задание: помочь союзным оперативникам. \
@@ -859,8 +886,9 @@
 						Ваши дефибрилляторы могут оживлять оперативников через их бронескафандры, или могут быть использованы для нападения на врагов! \
 						Ваша энергетическая пила работает как циркулярная, но может быть активирована для нанесения больших повреждений, а ваш оперативный пинпоинтер найдет и определит местонахождение товарищей по Операции. \
 						<i>Помогите оперативникам любой ценой!!!</i></b>"
+	set_module = /obj/item/robot_module/syndicate_medical
 
-/mob/living/silicon/robot/modules/syndicate/saboteur/inteq
+/mob/living/silicon/robot/modules/inteq/saboteur
 	icon_state = "inteq_engi"
 	playstyle_string = "<span class='big bold'>Вы - Саботажный Киборг ИнтеКью!</span><br>\
 						<b>Вы вооружены надежными инженерными средствами, которые помогут вам выполнить задание: помочь союзным оперативникам. \
@@ -869,6 +897,7 @@
 						Ваш Киборг-Проектор Хамелеон позволит вам принять облик и зарегистрированное имя инженерного борга Nanotrasen и проводить тайные операции на Космических Станциях. \
 						Имейте в виду, что почти любой физический контакт или случайное повреждение нарушит ваш камуфляж! \
 						<i>Помогите оперативникам любой ценой!!!</i></b>"
+	set_module = /obj/item/robot_module/saboteur
 
 /mob/living/silicon/robot/modules/syndicate/spider// used for space ninja and their cyborg hacking special objective
 	bubble_icon = "spider"

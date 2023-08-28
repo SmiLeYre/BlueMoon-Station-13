@@ -638,7 +638,7 @@ SUBSYSTEM_DEF(ticker)
 	if(SSblackbox.first_death)
 		var/list/ded = SSblackbox.first_death
 		if(ded.len)
-			var/last_words = ded["last_words"] ? " Their last words were: \"[ded["last_words"]]\"" : ""
+			var/last_words = ded["last_words"] ? " Его последние слова: \"[ded["last_words"]]\"" : ""
 			news_message += "\nNT Sanctioned Psykers засекли слабые следы человека, якобы умершего неподалеку от станции.\nЕго имя было: [ded["name"]], [ded["role"]], и умер он в [ded["area"]].[last_words]"
 		else
 			news_message += "\nNT Sanctioned Psykers с гордостью подтверждают сообщения о том, что в эту смену никто не умер!"

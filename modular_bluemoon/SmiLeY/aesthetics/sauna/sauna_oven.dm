@@ -5,7 +5,7 @@
 #define SAUNA_WATER_PER_WATER_UNIT 5
 
 /obj/structure/sauna_oven
-	name = "Гипер-Микро-Сауна"
+	name = "Sauna Oven"
 	desc = "Скромная банная печь с камнями, созданная благодаря удивительным нано-обитателям окружающего пространства. Добавьте немного топлива, налейте воды и наслаждайтесь моментом."
 	icon = 'modular_bluemoon/SmiLeY/aesthetics/sauna/sauna_oven.dmi'
 	icon_state = "sauna_oven"

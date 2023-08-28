@@ -874,7 +874,7 @@
 /obj/item/cult_halberd/Destroy()
 	if(halberd_act)
 		qdel(halberd_act)
-	..()
+	return ..()
 
 /obj/item/cult_halberd/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	var/turf/T = get_turf(hit_atom)

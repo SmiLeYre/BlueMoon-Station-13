@@ -572,6 +572,8 @@
 			level = "amber"
 		if(SEC_LEVEL_RED)
 			level = "red"
+		if(SEC_LEVEL_LAMBDA)
+			level = "lambda"
 		if(SEC_LEVEL_DELTA)
 			level = "delta"
 

@@ -154,6 +154,7 @@
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 	max_heat_protection_temperature = SPACE_SUIT_MAX_TEMP_PROTECT
 	species_restricted = list("Vox")
+	tail_state = ""
 
 /obj/item/clothing/head/helmet/space/vox
 	armor = list(MELEE = 60, BULLET = 50, LASER = 40, ENERGY = 15, BOMB = 30, BIO = 30, RAD = 30)
@@ -398,9 +399,10 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/vox
 	armor = list(MELEE = 65, BULLET = 50, LASER = 70, ENERGY = 20, BOMB = 30, BIO = 30, RAD = 30)
 	species_restricted = list("Vox")
+	tail_state = ""
 
 
-////////////////////////////////////////////////////////////////////////////// Vox pinning weapons
+////////////////////////////////////////////////////////////////////////////// Арбалеты с иными пинами и ЕВА, помещающаяся в рюкзак. Не стал изменять прямо на картах, а сделал отдельные предметы. Пригодятся.
 
 /obj/item/gun/energy/kinetic_accelerator/crossbow/large/pin
 	pin = /obj/item/firing_pin
@@ -411,12 +413,15 @@
 /obj/item/gun/energy/kinetic_accelerator/crossbow/pindicate
 	pin = /obj/item/firing_pin/implant/pindicate
 
-/////
+/obj/item/clothing/suit/space/eva/light
+	w_class = WEIGHT_CLASS_SMALL
+
+////////////////////////////////////////////////////////////////////////////// Vox pinning weapons
 /obj/item/projectile/spike
 	name = "spike"
 	icon_state = "throwingstar"
 	icon = 'icons/obj/items_and_weapons.dmi'
-	damage = 30
+	damage = 35
 	damage_type = BRUTE
 	nodamage = 0
 	eyeblur = 0
@@ -424,7 +429,7 @@
 	knockdown = 0
 	stamina = 10
 	knockdown_stamoverride = 0
-	armour_penetration = 25
+	armour_penetration = 30
 	embedding = list("pain_mult" = 4, "embed_chance" = 100, "fall_chance" = 0, "embed_chance_turf_mod" = 15)
 
 
@@ -466,3 +471,18 @@
 
 /obj/item/card/emag/vox
 	uses = 30
+
+
+/////////////////////////////////////////////////////////
+
+/mob/living/simple_animal/pet/dog/corgi/pig/assistant
+	name = "Danya"
+	real_name = "Danya"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
+	maxHealth = 250
+	health = 250
+
+/mob/living/simple_animal/pet/fox/fennec/eldritch
+	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
+	maxHealth = 100
+	health = 100

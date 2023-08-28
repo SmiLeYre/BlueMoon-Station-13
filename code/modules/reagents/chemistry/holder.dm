@@ -14,7 +14,6 @@
 		GLOB.chemical_reagents_list[path] = D
 
 /proc/build_chemical_reactions_list()
-	message_admins("STARTY START START!")
 	//Chemical Reactions - Initialises all /datum/chemical_reaction into a list
 	// It is filtered into multiple lists within a list.
 	// For example:

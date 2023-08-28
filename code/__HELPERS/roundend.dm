@@ -639,8 +639,6 @@
 /datum/controller/subsystem/ticker/proc/market_report()
 	var/list/parts = list()
 
-	///total service income
-	var/tourist_income = 0
 	///This is the richest account on station at roundend.
 	var/datum/bank_account/mr_moneybags
 	///This is the station's total wealth at the end of the round.
@@ -656,27 +654,6 @@
 		if(!mr_moneybags || mr_moneybags.account_balance < current_acc.account_balance)
 			mr_moneybags = current_acc
 	parts += "<div class='panel stationborder'><span class='header'>Экономический отчёт</span><br>"
-	parts += "<span class='service'>Обслуга:</span><br>"
-	for(var/venue_path in SSrestaurant.all_venues)
-		var/datum/venue/venue = SSrestaurant.all_venues[venue_path]
-		tourist_income += venue.total_income
-		parts += "[capitalize(venue.name)] обслужил [venue.customers_served] посетителей и получил [venue.total_income] кредитов в виде выручки.<br>"
-	parts += "В сумме они заработали [tourist_income] кредитов[tourist_income ? "!" : "..."]<br>"
-	log_econ("Roundend service income: [tourist_income] credits.")
-	switch(tourist_income)
-		if(0)
-			parts += "<span class='redtext'>Обслуга была абсолютно бесполезна для экономики...</span><br>"
-		if(1 to 2000)
-			parts += "<span class='redtext'>Центральное командование не радо. Можно и лучше!</span><br>"
-			award_service(/datum/award/achievement/jobs/service_bad)
-		if(2001 to 4999)
-			parts += "<span class='greentext'>Центральное командование удовлетворено.</span><br>"
-			award_service(/datum/award/achievement/jobs/service_okay)
-		else
-			parts += "<span class='reallybig greentext'>Центральное командование готовит медали для вручения героям обслуживания! Вот это команда!</span><br>"
-			award_service(/datum/award/achievement/jobs/service_good)
-
-	parts += "<b>Общая статистика:</b><br>"
 	parts += "Всего было заработано [station_vault] кредитов экипажем.<br>"
 	if(total_players > 0)
 		parts += "В среднем каждый заработал [station_vault/total_players] кредитов.<br>"
@@ -740,20 +717,6 @@
 				continue
 			//general awards
 			service_member.client?.give_award(award, service_member)
-			if(service_mind.assigned_role == COOK)
-				var/datum/venue/restaurant = SSrestaurant.all_venues[/datum/venue/restaurant]
-				var/award_score = restaurant.total_income
-				var/award_status = service_member.client.get_award_status(/datum/award/score/chef_tourist_score)
-				if(award_score > award_status)
-					award_score -= award_status
-				service_member.client?.give_award(/datum/award/score/chef_tourist_score, service_member, award_score)
-			if(service_mind.assigned_role == BARTENDER)
-				var/datum/venue/bar = SSrestaurant.all_venues[/datum/venue/bar]
-				var/award_score = bar.total_income
-				var/award_status = service_member.client.get_award_status(/datum/award/score/bartender_tourist_score)
-				if(award_score - award_status > 0)
-					award_score -= award_status
-				service_member.client?.give_award(/datum/award/score/bartender_tourist_score, service_member, award_score)
 
 /datum/controller/subsystem/ticker/proc/medal_report()
 	if(GLOB.commendations.len)

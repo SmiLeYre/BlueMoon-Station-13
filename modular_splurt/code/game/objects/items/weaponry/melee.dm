@@ -49,7 +49,7 @@
 // Prova, cause I can
 
 /obj/item/melee/baton/prova
-	name = "Prova"
+	name = "prova"
 	desc = "An enhanced taser stick, a favorite of the legendary John Prodman."
 	icon = 'modular_splurt/icons/obj/items_and_weapons.dmi'
 	icon_state = "prova"

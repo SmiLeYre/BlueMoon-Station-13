@@ -18,6 +18,7 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	"[FREQ_DS1]" = "syndradio", //BLUEMOON EDIT ADDITION - MAPPING
 	"[FREQ_DS2]" = "syndradio", //BLUEMOON EDIT ADDITION - MAPPING
 	"[FREQ_PIRATE]" = "syndradio", //BLUEMOON EDIT ADDITION - MAPPING
+	"[FREQ_INTEQ]" = "redteamradio", //BLUEMOON EDIT ADDITION - MAPPING
 	"[FREQ_TARKOFF]" = "engradio", //BLUEMOON EDIT ADDITION - MAPPING
 	"[FREQ_SOL]" = "blueteamradio", //BlueMoon Kovac Added
 	"[FREQ_NRI]" = "redteamradio",

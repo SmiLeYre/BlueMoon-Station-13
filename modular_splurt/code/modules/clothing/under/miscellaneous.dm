@@ -67,11 +67,11 @@
 	desc = "This dress makes you feel like you wanna get on all fours and beg for more!"
 	icon = 'modular_splurt/icons/obj/clothing/uniforms.dmi'
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/uniform.dmi'
-	icon_state = "domina"
-	item_state = "domina"
+	icon_state = "bluedress"
+	item_state = "bluedress"
 	can_adjust = FALSE
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-	body_parts_covered = CHEST|GROIN|LEGS
+	body_parts_covered = CHEST|GROIN|LEGS // Это буквально платье для тонкоспрайтов с Бея. Оно не работает. Очередной наркоманский элемент папки modular_splurt. Заменил на спрайт синего платья как заглушку до того, как перерисуем.
 
 /obj/item/clothing/under/bluedress
 	name = "Blue Royal Dress"

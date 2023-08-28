@@ -298,6 +298,7 @@
 	icon_state = "1-2"
 	},
 /obj/structure/table/reinforced,
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
 "aaH" = (
@@ -3719,6 +3720,7 @@
 	pixel_y = -24
 	},
 /obj/effect/turf_decal/bot,
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel,
 /area/cargo/storage)
 "ahl" = (
@@ -4093,9 +4095,6 @@
 /turf/open/floor/plasteel,
 /area/hallway/primary/starboard/fore)
 "aic" = (
-/obj/structure/table,
-/obj/item/paper_bin,
-/obj/item/pen,
 /obj/machinery/newscaster{
 	pixel_x = 32
 	},
@@ -4109,6 +4108,8 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/machinery/photocopier,
+/obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/dark,
 /area/hallway/primary/starboard/fore)
 "aid" = (
@@ -6198,12 +6199,10 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -26
 	},
-/obj/item/kirbyplants{
-	icon_state = "plant-22"
-	},
 /obj/machinery/newscaster{
 	pixel_y = 32
 	},
+/obj/structure/closet/secure_closet/ntr,
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "alU" = (
@@ -26044,6 +26043,7 @@
 /obj/effect/turf_decal/tile/purple{
 	dir = 8
 	},
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel/white,
 /area/science/research)
 "aYn" = (
@@ -27683,10 +27683,8 @@
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/zone3)
 "bbr" = (
-/obj/item/kirbyplants{
-	icon_state = "plant-22"
-	},
 /obj/effect/turf_decal/tile/blue,
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/zone3)
 "bbs" = (
@@ -34111,16 +34109,6 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/table/wood,
-/obj/item/book/manual/wiki/security_space_law,
-/obj/item/camera/detective,
-/obj/item/radio/intercom{
-	name = "Station Intercom";
-	pixel_x = -26
-	},
 /turf/open/floor/plasteel/dark/side{
 	dir = 8
 	},
@@ -34221,6 +34209,10 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/grass/grass0,
 /area/hallway/secondary/entry)
+"dAv" = (
+/obj/effect/landmark/start/bouncer,
+/turf/open/floor/plasteel,
+/area/service/bar/atrium)
 "dFV" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 4
@@ -35048,19 +35040,9 @@
 	pixel_x = -12;
 	pixel_y = 2
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/status_display{
-	pixel_x = -32
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 1
-	},
-/obj/machinery/vending/security,
 /turf/open/floor/plasteel/showroomfloor,
 /area/security/brig)
 "gre" = (
@@ -84884,7 +84866,7 @@ apV
 hRi
 aoP
 vPL
-hRi
+dAv
 huj
 bxL
 qKS

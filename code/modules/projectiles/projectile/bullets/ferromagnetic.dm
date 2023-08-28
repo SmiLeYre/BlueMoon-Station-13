@@ -1,6 +1,6 @@
 /obj/item/projectile/bullet/magnetic
 	icon_state = "magjectile"
-	damage = 20
+	damage = 25 // BlueMoon 27.08.2023 - Как у WT-550 до снижения у неё урона.
 	armour_penetration = 20
 	fired_light_range = 3
 	pixels_per_second = TILES_TO_PIXELS(16.667)
@@ -15,14 +15,14 @@
 	fired_light_color = LIGHT_COLOR_BLUE
 
 /obj/item/projectile/bullet/magnetic/weak
-	damage = 15
+	damage = 18 // На самом деле смысла использовать магнитый пистолет все ещё мало.
 	armour_penetration = 10
 	fired_light_range = 2
 	range = 25
 
 /obj/item/projectile/bullet/magnetic/weak/disabler
 	damage = 2
-	stamina = 20
+	stamina = 25
 
 /obj/item/projectile/bullet/magnetic/hyper
 	damage = 10

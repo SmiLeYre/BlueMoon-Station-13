@@ -205,20 +205,18 @@
 	INVOKE_ASYNC(src, .proc/talk_into_impl, talking_movable, message, channel, spans.Copy(), language)
 	return ITALICS | REDUCE_RANGE
 
-/obj/item/radio/proc/talk_into_impl(atom/movable/M, message, channel, list/spans, datum/language/language)
+/obj/item/radio/proc/talk_into_impl(atom/movable/talking_movable, message, channel, list/spans, datum/language/language)
 	if(!on)
 		return // the device has to be on
-	if(!M || !message)
+	if(!talking_movable || !message)
 		return
 	if(wires.is_cut(WIRE_TX))  // Permacell and otherwise tampered-with radios
 		return
-	if(!M.IsVocal())
-		return
-	if(language == /datum/language/signlanguage)
+	if(!talking_movable.IsVocal())
 		return
 
 	if(use_command)
-		spans |= commandspan
+		spans |= SPAN_COMMAND
 
 	/*
 	Roughly speaking, radios attempt to make a subspace transmission (which
@@ -251,22 +249,25 @@
 			break
 
 	// Determine the identity information which will be attached to the signal.
-	var/atom/movable/virtualspeaker/speaker = new(null, M, src)
+	var/atom/movable/virtualspeaker/speaker = new(null, talking_movable, src)
 
 	// Construct the signal
 	var/datum/signal/subspace/vocal/signal = new(src, freq, speaker, language, message, spans)
 
 	// Independent radios, on the CentCom frequency, reach all independent radios
-	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_CTF_RED || freq == FREQ_CTF_BLUE || freq == FREQ_DS1 || freq == FREQ_DS2 || freq == FREQ_PIRATE || freq == FREQ_TARKOFF || freq == FREQ_SOL || freq == FREQ_NRI || freq == FREQ_HOTEL))
-
+	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_CTF_RED || freq == FREQ_CTF_BLUE || freq == FREQ_DS1 || freq == FREQ_DS2 || freq == FREQ_PIRATE || freq == FREQ_INTEQ || freq == FREQ_TARKOFF || freq == FREQ_SOL || freq == FREQ_NRI || freq == FREQ_HOTEL))
 		signal.data["compression"] = 0
 		signal.transmission_method = TRANSMISSION_SUPERSPACE
 		signal.levels = list(0)  // reaches all Z-levels
 		signal.broadcast()
+		//playsound(src, "sound/effects/walkietalkie.ogg", 20, FALSE)
 		return
 
 	// All radios make an attempt to use the subspace system first
 	signal.send_to_receivers()
+
+	//At this point the signal was transmitted so play a sound			//WS Edit - Radio chatter
+	//playsound(src, "sound/effects/walkietalkie.ogg", 20, FALSE)			//WS Edit - Radio chatter
 
 	// If the radio is subspace-only, that's all it can do
 	if (subspace_transmission)
@@ -388,6 +389,14 @@
 /obj/item/radio/borg/syndicate/Initialize(mapload)
 	. = ..()
 	set_frequency(FREQ_SYNDICATE)
+
+/obj/item/radio/borg/inteq
+	syndie = 1
+	keyslot = new /obj/item/encryptionkey/inteq
+
+/obj/item/radio/borg/inteq/Initialize(mapload)
+	. = ..()
+	set_frequency(FREQ_INTEQ)
 
 /obj/item/radio/borg/attackby(obj/item/W, mob/user, params)
 

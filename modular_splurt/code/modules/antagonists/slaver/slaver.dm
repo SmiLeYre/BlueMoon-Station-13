@@ -49,6 +49,7 @@ GLOBAL_LIST_INIT(slavers_ransom_values, list(
 	"Curator"					= SLAVER_STANDARD_RANSOM,
 	"Lawyer"					= SLAVER_STANDARD_RANSOM,
 	"Chaplain"					= SLAVER_STANDARD_RANSOM,
+	"Bouncer"					= SLAVER_STANDARD_RANSOM,
 ))
 
 #undef SLAVER_STANDARD_RANSOM

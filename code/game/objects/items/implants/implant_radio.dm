@@ -46,6 +46,11 @@
 	radio_key = /obj/item/encryptionkey/syndicate
 	subspace_transmission = TRUE
 
+/obj/item/implant/radio/inteq_subspace
+	desc = "Are you there God? It's me, Admiral Brown"
+	radio_key = /obj/item/encryptionkey/inteq
+	subspace_transmission = TRUE
+
 /obj/item/implant/radio/slime
 	name = "slime radio"
 	icon = 'icons/obj/surgery.dmi'
@@ -65,5 +70,5 @@
 	imp_type = /obj/item/implant/radio
 
 /obj/item/implanter/radio/syndicate
-	name = "implanter (internal illegal radio)"
+	name = "implanter (internal syndicate radio)"
 	imp_type = /obj/item/implant/radio/syndicate

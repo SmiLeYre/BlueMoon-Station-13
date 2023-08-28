@@ -38,9 +38,9 @@
 
 		threat_msg.title = "Сомнительное заявление"
 		threat_msg.content = "Джамбо, уроды. Мы тут пролетали неподалеку, и заметили красно-синих голубков. Расклад прост. Гоните [payoff] кредитов, в противном случае мы не поленимся проложить курс нашего крейсера напрямую через вашу станцию."
-		threat_msg.possible_answers = list("Мы заплатим.","Пошел ты на хуй.")
+		threat_msg.possible_answers = list("Мы заплатим.","Мы заплатим, но на самом деле нет.")
 
-	threat_msg.answer_callback = CALLBACK(GLOBAL_PROC, .proc/raiders_answered, threat_msg, payoff, ship_name, initial_send_time, response_max_time, /datum/map_template/shuttle/inteq_collosus)
+	threat_msg.answer_callback = CALLBACK(GLOBAL_PROC, .proc/raiders_answered, threat_msg, payoff, ship_name, initial_send_time, response_max_time, ship_template)
 	addtimer(CALLBACK(GLOBAL_PROC, .proc/spawn_raiders, threat_msg, ship_template, FALSE), response_max_time)
 	SScommunications.send_message(threat_msg,unique = TRUE)
 
@@ -54,9 +54,9 @@
 			if(D.adjust_money(-payoff))
 				priority_announce("Удачного дня, рабы пакта.", ship_name, 'modular_bluemoon/phenyamomota/sound/announcer/pirate_yespeacedecision.ogg', has_important_message = TRUE)
 				return
-			else
-				priority_announce("Здесь не хватает кредитов, козлы. Молитесь.", ship_name, 'modular_bluemoon/phenyamomota/sound/announcer/pirate_nopeacedecision.ogg', has_important_message = TRUE)
-				spawn_raiders(threat_msg, ship_template, TRUE)
+	else
+		priority_announce("Здесь не хватает кредитов, козлы. Молитесь.", ship_name, 'modular_bluemoon/phenyamomota/sound/announcer/pirate_nopeacedecision.ogg', has_important_message = TRUE)
+		spawn_raiders(threat_msg, ship_template, TRUE)
 
 /proc/spawn_raiders(datum/comm_message/threat_msg, ship_template, skip_answer_check)
 	if(!skip_answer_check && threat_msg?.answered == 1)

@@ -913,9 +913,6 @@
 	anchored = 1
 	},
 /obj/machinery/light/dim/directional/north,
-/obj/structure/sign/painting/library{
-	pixel_y = 30
-	},
 /turf/open/floor/wood/wood_parquet,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/lounge)
 "dg" = (
@@ -1161,9 +1158,6 @@
 	},
 /obj/item/kirbyplants/hedge{
 	anchored = 1
-	},
-/obj/structure/sign/painting/library{
-	pixel_y = 30
 	},
 /turf/open/floor/wood/wood_parquet,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/lounge)
@@ -4182,6 +4176,10 @@
 	},
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
+"qL" = (
+/obj/structure/sign/poster/contraband/random,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo)
 "qN" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /turf/open/floor/carpet/royalblack,
@@ -10961,13 +10959,12 @@
 /obj/structure/window/reinforced/survival_pod{
 	dir = 6
 	},
-/obj/item/wallframe/painting,
-/obj/item/wallframe/painting{
-	pixel_x = 4;
-	pixel_y = 4
-	},
 /obj/item/flashlight/lamp/green{
 	pixel_x = -10
+	},
+/obj/item/toy/cards/deck/syndicate,
+/obj/item/toy/cards/deck/unum{
+	pixel_x = 5
 	},
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/lounge)
@@ -14312,7 +14309,7 @@ wg
 Nc
 Oi
 qh
-NB
+qL
 ek
 Wn
 Sc
@@ -14367,7 +14364,7 @@ wg
 Mt
 NB
 NB
-NB
+qL
 da
 Hb
 mK
@@ -14422,7 +14419,7 @@ wg
 Nc
 zI
 qh
-NB
+qL
 ek
 GY
 Uh

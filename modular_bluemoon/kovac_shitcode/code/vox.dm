@@ -107,21 +107,27 @@
 	disliked_food = null
 	liked_food = GROSS | MEAT
 
-//Вокс получает пиздюлей в 2 раза больше
-	burnmod = 2
-	heatmod = 2
+//Вокс получает пиздюлей сильнее
+	burnmod = 1.3
+	heatmod = 1.3
+	brutemod = 1.3
 //Но и лапками дерёт морды в кровь
 	punchdamagelow = 15
 	punchdamagehigh = 25
 	punchstunthreshold = 15
 	punchwoundbonus = 10
 
+	attack_verb = "claw"
+	attack_sound = 'sound/weapons/slash.ogg'
+	miss_sound = 'sound/weapons/slashmiss.ogg'
+
 	//languagewhitelist = list("Vox-Pidgin")
 	no_equip = list(ITEM_SLOT_GLOVES) // Запрещаем носить перчатки - ручища не позволяют
 	species_language_holder = /datum/language_holder/vox // Воксы изначально знают свой язык
 
 	species_traits = list(NOGENITALS,HAS_BONE,HAS_FLESH,EYECOLOR,LIPS,HAIR) // Фактически воксы бесполые
-	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_STABLEHEART,TRAIT_STABLELIVER,TRAIT_EASYDISMEMBER,TRAIT_SILENT_STEP,TRAIT_RESISTLOWPRESSURE,TRAIT_RESISTHIGHPRESSURE,TRAIT_DNC_ORDER) //Сердце и печень не гниют, устойчивость к холоду и космосу, тихий шаг. Вдобавок к минусам выше - конечности проще отрываются
+	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_STABLEHEART,TRAIT_STABLELIVER,TRAIT_EASYDISMEMBER,TRAIT_SILENT_STEP,TRAIT_DNC_ORDER) //Сердце и печень не гниют, устойчивость к холоду, тихий шаг. Вдобавок к минусам выше - конечности проще отрываются
+///25.08.2023 - убрана защита от космоса, но не баланса ради - воксов тупо невозможно содержать в местах навроде пермабрига. В компенсанцию снижены множителя урона по воксам.
 
 	ass_image = 'icons/ass/asslizard.png'
 

@@ -38,7 +38,7 @@
 		pump(amount - imp_in.reagents.get_reagent_amount(reagent))
 
 /obj/item/implanter/aphrodisiac_pump
-	name = "implanter (crocin pump)"
+	name = "Implanter (crocin pump)"
 	imp_type = /obj/item/implant/aphrodisiac_pump
 
 /obj/item/implantcase/aphrodisiac_pump
@@ -49,7 +49,7 @@
 /obj/item/implantcase/aphrodisiac_pump/attack_self(mob/user)
 	if(!imp || !istype(imp, /obj/item/implant/aphrodisiac_pump))
 		return
-	
+
 	var/obj/item/implant/aphrodisiac_pump/pump = imp
 	if(pump.amount >= pump.max_amount)
 		pump.amount = pump.base_amount
@@ -76,7 +76,7 @@
 	return data
 
 /obj/item/implanter/aphrodisiac_pump/plus
-	name = "implanter (hexacrocin pump)"
+	name = "Implanter (hexacrocin pump)"
 	imp_type = /obj/item/implant/aphrodisiac_pump/plus
 
 /obj/item/implantcase/aphrodisiac_pump/plus

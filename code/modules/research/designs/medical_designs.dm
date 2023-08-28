@@ -623,7 +623,7 @@
 /datum/design/implanter
 	name = "Implanter"
 	desc = "A sterile automatic implant injector."
-	id = "implanter"
+	id = "Implanter"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 600, /datum/material/glass = 200)
 	build_path = /obj/item/implanter

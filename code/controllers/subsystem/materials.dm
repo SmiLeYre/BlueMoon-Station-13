@@ -25,7 +25,7 @@ SUBSYSTEM_DEF(materials)
 		new /datum/stack_recipe("Chair", /obj/structure/chair/greyscale, one_per_turf = TRUE, on_floor = TRUE, applies_mats = TRUE),
 		new /datum/stack_recipe("Toilet", /obj/structure/toilet/greyscale, one_per_turf = TRUE, on_floor = TRUE, applies_mats = TRUE),
 		new /datum/stack_recipe("Sink Frame", /obj/structure/sink/greyscale, one_per_turf = TRUE, on_floor = TRUE, applies_mats = TRUE),
-		new /datum/stack_recipe("Material airlock assembly", /obj/structure/door_assembly/door_assembly_material, one_per_turf = TRUE, on_floor = TRUE, applies_mats = TRUE),
+		new /datum/stack_recipe("Material Airlock Assembly", /obj/structure/door_assembly/door_assembly_material, one_per_turf = TRUE, on_floor = TRUE, applies_mats = TRUE),
 		new /datum/stack_recipe("Floor tile", /obj/item/stack/tile/material, 1, 4, 20, applies_mats = TRUE),
 	)
 	///List of stackcrafting recipes for materials using rigid recipes
@@ -41,9 +41,6 @@ SUBSYSTEM_DEF(materials)
 	material_combos = list()
 	for(var/type in subtypesof(/datum/material))
 		var/datum/material/ref = type
-		// if(!(initial(ref.init_flags) & MATERIAL_INIT_MAPLOAD))
-		// 	continue // Do not initialize
-
 		ref = new ref
 		materials[type] = ref
 		for(var/c in ref.categories)
@@ -131,7 +128,7 @@ SUBSYSTEM_DEF(materials)
 
 	var/datum/material/key = arguments[1]
 	if(istype(key))
-		return key // We are assuming here that the only thing allowed to create material datums is [/datum/controller/subsystem/materials/proc/_InitializeMaterial]
+		return key // We are assuming here that the only thing allowed to create material datums is [/datum/controller/subsystem/materials/proc/InitializeMaterial]
 
 	if(istext(key)) // Handle text id
 		. = materials[key]
@@ -179,28 +176,6 @@ SUBSYSTEM_DEF(materials)
 			fullid += "[key]"
 
 	if(length(named_arguments))
-		named_arguments = sort_list(named_arguments)
+		named_arguments = sortList(named_arguments)
 		fullid += named_arguments
 	return list2params(fullid)
-
-
-/// Returns a list to be used as an object's custom_materials. Lists will be cached and re-used based on the parameters.
-/datum/controller/subsystem/materials/proc/_FindOrCreateMaterialCombo(list/materials_declaration, multiplier)
-	if(!LAZYLEN(materials_declaration))
-		return null // If we get a null we pass it right back, we don't want to generate stack traces just because something is clearing out its materials list.
-
-	if(!material_combos)
-		_InitializeMaterials()
-	var/list/combo_params = list()
-	for(var/x in materials_declaration)
-		var/datum/material/mat = x
-		combo_params += "[istype(mat) ? mat.id : mat]=[materials_declaration[mat] * multiplier]"
-	sortTim(combo_params, GLOBAL_PROC_REF(cmp_text_asc)) // We have to sort now in case the declaration was not in order
-	var/combo_index = combo_params.Join("-")
-	var/list/combo = material_combos[combo_index]
-	if(!combo)
-		combo = list()
-		for(var/mat in materials_declaration)
-			combo[GET_MATERIAL_REF(mat)] = materials_declaration[mat] * multiplier
-		material_combos[combo_index] = combo
-	return combo

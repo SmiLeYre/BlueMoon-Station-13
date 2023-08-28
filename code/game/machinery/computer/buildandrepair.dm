@@ -130,16 +130,12 @@
 				P.play_tool_sound(src)
 				to_chat(user, "<span class='notice'>You connect the monitor.</span>")
 
-				var/obj/machinery/computer/built_comp = new circuit.build_path (loc, circuit)
-				built_comp.setDir(dir)
-				transfer_fingerprints_to(built_comp)
-
 				var/obj/machinery/new_machine = new circuit.build_path(loc)
 				new_machine.setDir(dir)
 				transfer_fingerprints_to(new_machine)
 
-				if(istype(built_comp, /obj/machinery/computer))
-					var/obj/machinery/computer/new_computer = built_comp
+				if(istype(new_machine, /obj/machinery/computer))
+					var/obj/machinery/computer/new_computer = new_machine
 
 					// Machines will init with a set of default components.
 					// Triggering handle_atom_del will make the machine realise it has lost a component_parts and then deconstruct.
@@ -173,13 +169,13 @@
 					new_computer.on_construction()
 					new_computer.circuit.moveToNullspace()
 
-				if(!built_comp.unique_icon)
-					built_comp.icon = built_icon
-					built_comp.icon_state = built_icon_state
-				built_comp.deconpath = deconpath
-				built_comp.update_icon()
-				qdel(src)
-				return
+					if(!new_computer.unique_icon)
+						new_computer.icon = built_icon
+						new_computer.icon_state = built_icon_state
+					new_computer.deconpath = deconpath
+					new_computer.update_icon()
+					qdel(src)
+					return
 	if(user.a_intent == INTENT_HARM)
 		return ..()
 

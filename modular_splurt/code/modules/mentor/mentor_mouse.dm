@@ -2,7 +2,7 @@
 	COOLDOWN_DECLARE(mentor_mouse_spawn)
 
 /client/proc/spawn_mentor_mouse()
-	set name = "Spawn Mentor Mouse"
+	set name = "Spawn Mentor Drone"
 	set category = "Mentor"
 
 	if(!isobserver(mob))
@@ -13,7 +13,7 @@
 		return
 
 	var/turf/current_turf = get_turf(mob)
-	var/mob/living/simple_animal/hostile/syndimouse/mentor = new(current_turf)
+	var/mob/living/simple_animal/drone/mentordrone/mentor = new(current_turf)
 
 	QDEL_IN(mob, 1)
 
@@ -24,16 +24,16 @@
 
 	add_verb(src, /client/proc/despawn_mentor_mouse)
 	remove_verb(src, /client/proc/spawn_mentor_mouse)
-	message_admins("[ADMIN_LOOKUPFLW(src)] Spawned as a mentor mouse.")
-	log_mentor("[key_name(src)] Spawned as a mentor mouse.")
-	COOLDOWN_START(src, mentor_mouse_spawn, 30 SECONDS)
+	message_admins("[ADMIN_LOOKUPFLW(src)] Spawned as a mentor drone.")
+	log_mentor("[key_name(src)] Spawned as a mentor drone.")
+	COOLDOWN_START(src, mentor_mouse_spawn, 10 SECONDS)
 
 /client/proc/despawn_mentor_mouse()
-	set name = "Despawn Mentor Mouse"
+	set name = "Despawn Mentor Drone"
 	set category = "Mentor"
 
-	if(!istype(mob, /mob/living/simple_animal/hostile/syndimouse))
-		to_chat(src, span_warning("You're not a Mentor Mouse!"))
+	if(!istype(mob, /mob/living/simple_animal/drone/mentordrone))
+		to_chat(src, span_warning("You're not a Mentor Drone!"))
 		remove_verb(src, /client/proc/despawn_mentor_mouse)
 		add_verb(src, /client/proc/spawn_mentor_mouse)
 		return
@@ -45,6 +45,6 @@
 
 	add_verb(src, /client/proc/spawn_mentor_mouse)
 	remove_verb(src, /client/proc/despawn_mentor_mouse)
-	message_admins("[ADMIN_LOOKUPFLW(src)] Despawned their mentor mouse.")
-	log_mentor("[key_name(src)] Despawned their mentor mouse.")
-	COOLDOWN_START(src, mentor_mouse_spawn, 30 SECONDS)
+	message_admins("[ADMIN_LOOKUPFLW(src)] Despawned their mentor drone.")
+	log_mentor("[key_name(src)] Despawned their mentor drone.")
+	COOLDOWN_START(src, mentor_mouse_spawn, 20 SECONDS)

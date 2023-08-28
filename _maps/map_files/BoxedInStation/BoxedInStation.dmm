@@ -21294,7 +21294,7 @@
 /obj/structure/closet/crate/secure/weapon{
 	desc = "A secure clothing crate.";
 	name = "formal uniform crate";
-	req_access = "3"
+	req_access_txt = "3"
 	},
 /obj/item/clothing/under/rank/security/officer/formal,
 /obj/item/clothing/under/rank/security/officer/formal,
@@ -26313,6 +26313,7 @@
 /area/hallway/primary/port)
 "nSV" = (
 /obj/structure/reagent_dispensers/keg/mead,
+/obj/structure/reagent_dispensers/beerkeg,
 /obj/machinery/camera/preset{
 	dir = 10
 	},

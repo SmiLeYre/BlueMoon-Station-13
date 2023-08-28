@@ -6790,6 +6790,7 @@
 "GD" = (
 /obj/structure/table,
 /obj/structure/reagent_dispensers/keg/mead,
+/obj/structure/reagent_dispensers/beerkeg,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/hotel/bar)
 "GG" = (

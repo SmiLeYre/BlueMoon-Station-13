@@ -4,8 +4,8 @@
 	department_head = list("Head of Personnel")
 	department_flag = CIVILIAN
 	faction = "Station"
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "the head of personnel"
 	selection_color = "#bbe291"
 	exp_type_department = EXP_TYPE_SERVICE // This is so the jobs menu can work properly
@@ -58,7 +58,7 @@
 	pda_slot = ITEM_SLOT_BELT
 	backpack_contents = list(/obj/item/storage/box/beanbag=1,/obj/item/book/granter/action/drink_fling=1, /obj/item/syndicate_uplink=1)
 
-/datum/job/bartender/after_spawn(mob/living/H, client/C, latejoin = FALSE)
+/datum/job/bartender/after_spawn(mob/living/H, client/C, latejoin = TRUE)
 	. = ..()
 	var/datum/action/innate/drink_fling/D = new
 	D.Grant(H)

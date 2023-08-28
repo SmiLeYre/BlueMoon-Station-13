@@ -250,7 +250,7 @@
 	lethal = 1;
 	locked = 0;
 	pixel_y = -24;
-	req_access = "150"
+	req_access_txt = "150"
 	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
@@ -1005,7 +1005,7 @@
 "bN" = (
 /obj/machinery/computer/camera_advanced/shuttle_docker/syndicate/pirate{
 	dir = 4;
-	req_access = "150";
+	req_access_txt = "150";
 	x_offset = -3;
 	y_offset = 7
 	},

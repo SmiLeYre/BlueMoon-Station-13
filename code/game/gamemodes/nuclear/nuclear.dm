@@ -146,7 +146,7 @@
 
 /datum/outfit/syndicate/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	var/obj/item/radio/R = H.ears
-	R.set_frequency(FREQ_SYNDICATE)
+	R.set_frequency(FREQ_INTEQ)
 	R.freqlock = TRUE
 	if(command_radio)
 		R.command = TRUE
@@ -197,6 +197,24 @@
 
 	uplink_type = /obj/item/syndicate_uplink
 	tc = 120
+
+/datum/outfit/syndicate/lone/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+	var/obj/item/radio/R = H.ears
+	R.set_frequency(FREQ_SYNDICATE)
+	R.freqlock = TRUE
+	if(command_radio)
+		R.command = TRUE
+
+	if(tc)
+		var/obj/item/U = new uplink_type(H, H.key, tc)
+		H.equip_to_slot_or_del(U, ITEM_SLOT_BACKPACK)
+
+	var/obj/item/implant/weapons_auth/W = new
+	W.implant(H)
+	var/obj/item/implant/explosive/E = new
+	E.implant(H)
+	H.faction |= ROLE_SYNDICATE
+	H.update_icons()
 
 /datum/outfit/syndicate/lone/inteq
 	name = "InteQ Lone Operative"

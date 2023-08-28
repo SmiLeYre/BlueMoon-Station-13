@@ -6,7 +6,7 @@
  * It also creates a number of themed barriers in that area.
  */
 /datum/armour_dimensional_theme
-	var/datum/material/material
+	var/datum/material/materials
 	var/turf/replace_floor = /turf/open/floor/material
 	var/turf/replace_wall = /turf/closed/wall/material
 	var/obj/barricade = /obj/structure/table/greyscale
@@ -82,8 +82,8 @@
 	else if (iswallturf(to_convert))
 		to_convert.ChangeTurf(replace_wall)
 
-	if (material)
-		var/list/custom_materials = list(GET_MATERIAL_REF(material) = SHEET_MATERIAL_AMOUNT)
+	if (materials)
+		var/list/custom_materials = list(GET_MATERIAL_REF(materials) = SHEET_MATERIAL_AMOUNT)
 		to_convert.set_custom_materials(custom_materials)
 
 /**
@@ -102,8 +102,8 @@
 
 	var/to_place = rand(MIN_BARRIERS, MAX_BARRIERS)
 	var/list/custom_materials = list()
-	if (material)
-		custom_materials = list(GET_MATERIAL_REF(material) = SHEET_MATERIAL_AMOUNT)
+	if (materials)
+		custom_materials = list(GET_MATERIAL_REF(materials) = SHEET_MATERIAL_AMOUNT)
 
 	while (target_area.len > 0 && to_place > 0)
 		var/turf/place_turf = pick(target_area)
@@ -134,19 +134,19 @@
 	barricade = /obj/structure/barricade/wooden
 
 /datum/armour_dimensional_theme/safe/snow
-	material = /datum/material/snow
+	materials = /datum/material/snow
 	replace_wall = /turf/closed/wall/mineral/snow
 	replace_floor = /turf/open/floor/grass/snow
 	barricade = /obj/structure/statue/snow/snowman
 
 /datum/armour_dimensional_theme/safe/space
-	material = /datum/material/glass
+	materials = /datum/material/glass
 	replace_wall = /turf/closed/wall/rock/porous
 	replace_floor = /turf/open/floor/fakespace
 	barricade = /obj/machinery/door/airlock/external/glass/ruin
 
 /datum/armour_dimensional_theme/safe/glass
-	material = /datum/material/glass
+	materials = /datum/material/glass
 	replace_floor = /turf/open/floor/glass
 
 /datum/armour_dimensional_theme/safe/secure
@@ -155,26 +155,26 @@
 	barricade = /obj/structure/holosign/barrier
 
 /datum/armour_dimensional_theme/safe/meat
-	material = /datum/material/meat
+	materials = /datum/material/meat
 
 /// Dangerous themes can potentially impede the user as much as people pursuing them
 /datum/armour_dimensional_theme/dangerous
 
 /datum/armour_dimensional_theme/dangerous/clown
-	material = /datum/material/bananium
+	materials = /datum/material/bananium
 	barricade = /obj/item/restraints/legcuffs/beartrap/prearmed
 	barricade_anchored = FALSE
 
 /datum/armour_dimensional_theme/dangerous/radioactive
-	material = /datum/material/uranium
+	materials = /datum/material/uranium
 	barricade = /obj/structure/statue/uranium/nuke
 
 /datum/armour_dimensional_theme/dangerous/plasma
-	material = /datum/material/plasma
+	materials = /datum/material/plasma
 	barricade = /obj/structure/statue/plasma/xeno
 
 /datum/armour_dimensional_theme/dangerous/ice
-	material = /datum/material/snow
+	materials = /datum/material/snow
 	replace_wall = /turf/closed/wall/mineral/snow
 	replace_floor = /turf/open/floor/fakeice/slippery
 	barricade = /obj/structure/statue/snow/snowlegion

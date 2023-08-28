@@ -12,11 +12,11 @@
 	AddComponent(/datum/component/uplink, _owner, TRUE, FALSE, null, starting_tc)
 
 /obj/item/implanter/uplink
-	name = "implanter (uplink)"
+	name = "Implanter (uplink)"
 	imp_type = /obj/item/implant/uplink
 
 /obj/item/implanter/uplink/precharged
-	name = "implanter (precharged uplink)"
+	name = "Implanter (precharged uplink)"
 	imp_type = /obj/item/implant/uplink/precharged
 
 /obj/item/implant/uplink/precharged

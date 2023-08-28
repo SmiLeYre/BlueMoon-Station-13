@@ -306,8 +306,8 @@
 ////////
 
 /obj/structure/reagent_dispensers/beerkeg
-	name = "beer keg"
-	desc = "Beer is liquid bread, it's good for you..."
+	name = "Beer Keg"
+	desc = "Кега с пивом. Кега выглядит совсем немного вздутой."
 	icon_state = "beer"
 	reagent_id = /datum/reagent/consumable/ethanol/beer
 
@@ -320,7 +320,7 @@
 		return TRUE
 	. = ..()
 
-/obj/structure/reagent_dispensers/beerkeg/attack_generic(mob/living/carbon/human/M)
+/obj/structure/reagent_dispensers/beerkeg/take_damage(mob/living/carbon/human/M)
 	. = ..()
 	if(ismammal(M))
 		explosion(src, light_impact_range = 3, flame_range = 5, flash_range = 10)

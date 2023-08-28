@@ -107,7 +107,7 @@
 
 // Implanter item
 /obj/item/implanter/hide_backpack
-	name = "implanter (storage concealment)"
+	name = "Implanter (storage concealment)"
 	imp_type = /obj/item/implant/hide_backpack
 
 // Implant case item

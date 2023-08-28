@@ -170,6 +170,8 @@
 /obj/item/storage/box/firingpins,
 /obj/item/storage/box/firingpins,
 /obj/effect/spawner/lootdrop/armory_contraband/metastation,
+/obj/effect/spawner/lootdrop/armory_contraband,
+/obj/effect/spawner/lootdrop/armory_contraband,
 /turf/open/floor/plasteel,
 /area/ai_monitored/security/armory)
 "aaE" = (
@@ -473,20 +475,30 @@
 /turf/closed/wall/r_wall,
 /area/space/nearstation)
 "abq" = (
-/obj/structure/table,
+/obj/item/storage/box/teargas{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/storage/box/handcuffs,
+/obj/item/storage/box/flashbangs{
+	pixel_x = -3;
+	pixel_y = -3
+	},
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/obj/item/storage/box/rubbershot{
-	pixel_x = -3;
-	pixel_y = 3
-	},
-/obj/item/storage/box/rubbershot,
-/obj/item/storage/box/rubbershot{
-	pixel_x = 3;
-	pixel_y = -3
-	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "abs" = (
 /obj/effect/turf_decal/stripes/line{
@@ -573,7 +585,6 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/obj/structure/table,
 /obj/item/storage/box/trackimp{
 	pixel_x = 4
 	},
@@ -581,6 +592,7 @@
 	pixel_x = -4
 	},
 /obj/item/storage/lockbox/loyalty,
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel,
 /area/ai_monitored/security/armory)
 "abI" = (
@@ -29987,16 +29999,15 @@
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/tcommsat/server)
 "byr" = (
-/obj/structure/table/wood,
 /obj/effect/turf_decal/tile/yellow,
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
 	},
-/obj/item/flashlight/lamp/green,
 /obj/item/radio/intercom{
 	name = "Station Intercom (Common)";
 	pixel_y = -29
 	},
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel,
 /area/command/heads_quarters/ce)
 "byt" = (
@@ -39816,6 +39827,10 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 8
 	},
+/obj/item/taperecorder{
+	pixel_x = -4
+	},
+/obj/item/tape,
 /turf/open/floor/carpet{
 	icon_state = "carpetsymbol"
 	},
@@ -41895,13 +41910,11 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
-/obj/item/kirbyplants{
-	icon_state = "plant-06"
-	},
 /obj/machinery/airalarm{
 	dir = 8;
 	pixel_x = 23
 	},
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel/white,
 /area/command/heads_quarters/cmo)
 "caS" = (
@@ -43079,18 +43092,14 @@
 /turf/open/floor/plasteel,
 /area/science/xenobiology)
 "cdE" = (
-/obj/structure/table/wood,
 /obj/machinery/light{
 	dir = 4;
 	light_color = "#e8eaff"
 	},
-/obj/item/tape,
-/obj/item/taperecorder{
-	pixel_x = -4
-	},
 /obj/machinery/newscaster{
 	pixel_x = 30
 	},
+/obj/structure/closet/secure_closet/ntr,
 /turf/open/floor/carpet{
 	icon_state = "carpetsymbol"
 	},
@@ -49102,6 +49111,7 @@
 	pixel_y = -32
 	},
 /mob/living/simple_animal/parrot/Polly,
+/obj/item/flashlight/lamp/green,
 /turf/open/floor/plasteel,
 /area/command/heads_quarters/ce)
 "csf" = (
@@ -61485,18 +61495,40 @@
 /turf/open/floor/plating/airless,
 /area/engineering/secure_construction)
 "drr" = (
-/obj/structure/closet/secure_closet/lethalshots,
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
+/obj/item/storage/box/rubbershot{
+	pixel_x = -3;
+	pixel_y = 3
 	},
-/obj/item/storage/box/firingpins,
-/obj/item/storage/box/firingpins,
-/obj/effect/spawner/lootdrop/armory_contraband/metastation,
-/obj/effect/spawner/lootdrop/armory_contraband,
-/obj/effect/spawner/lootdrop/armory_contraband,
-/obj{
-	name = "---Merge conflict marker---"
+/obj/item/storage/box/rubbershot{
+	pixel_x = -3;
+	pixel_y = 3
 	},
+/obj/item/storage/box/rubbershot,
+/obj/item/storage/box/rubbershot{
+	pixel_x = 3;
+	pixel_y = -3
+	},
+/obj/item/storage/box/rubbershot{
+	pixel_x = 3;
+	pixel_y = -3
+	},
+/obj/structure/closet/secure_closet{
+	name = "nonlethal ammunition";
+	req_access = "list(3)"
+	},
+/obj/item/storage/box/rubbershot{
+	pixel_x = 3;
+	pixel_y = -3
+	},
+/obj/item/ammo_box/magazine/wt550m9/wtrubber,
+/obj/item/ammo_box/magazine/wt550m9/wtrubber,
+/obj/item/ammo_box/magazine/wt550m9/wtrubber,
+/obj/item/ammo_box/magazine/wt550m9/wtrubber,
+/obj/item/ammo_box/magazine/wt550m9/wtrubber,
+/obj/item/ammo_box/magazine/wt550m9/wtrubber,
+/obj/item/ammo_box/magazine/wt550m9/wtrubber,
+/obj/item/ammo_box/magazine/wt550m9/wtrubber,
+/obj/item/ammo_box/magazine/wt550m9/wtrubber,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "dsA" = (
@@ -61521,18 +61553,22 @@
 	dir = 4;
 	pixel_x = -23
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/machinery/airalarm{
-	dir = 4;
-	pixel_x = -23
-	},
 /obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
 	dir = 6
 	},
 /turf/open/floor/plasteel,
 /area/engineering/main)
+"dwp" = (
+/obj/docking_port/stationary{
+	id = "lambda_station";
+	name = "Lambda Shuttle Dock";
+	dwidth = 5;
+	width = 10;
+	dheight = 5;
+	height = 10
+	},
+/turf/open/space/basic,
+/area/space)
 "dxT" = (
 /obj/structure/beebox,
 /obj/item/queen_bee/bought,
@@ -66489,6 +66525,7 @@
 /obj/effect/turf_decal/tile/brown{
 	dir = 1
 	},
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel,
 /area/cargo/qm)
 "olu" = (
@@ -68495,6 +68532,10 @@
 	icon_state = "wood-broken"
 	},
 /area/maintenance/bar)
+"sJm" = (
+/obj/machinery/photocopier,
+/turf/open/floor/plasteel,
+/area/hallway/primary/central)
 "sJy" = (
 /obj/machinery/light{
 	dir = 8
@@ -70424,6 +70465,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/brig)
+"wRV" = (
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/effect/landmark/start/bouncer,
+/turf/open/floor/plasteel,
+/area/service/bar)
 "wSy" = (
 /obj/effect/turf_decal/tile/green,
 /obj/effect/turf_decal/tile/green{
@@ -70734,22 +70783,6 @@
 /obj/effect/landmark/navigate_destination/bar,
 /turf/open/floor/plasteel,
 /area/service/bar)
-"xzY" = (
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 8
-	},
-/obj/effect/landmark/start/ntr,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel,
-/area/hallway/primary/port/fore)
 "xBV" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
 /turf/open/floor/plasteel,
@@ -89685,7 +89718,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+dwp
 aaa
 aaa
 aaa
@@ -92050,7 +92083,7 @@ gst
 aaa
 bdg
 beN
-bgx
+sJm
 bdg
 aaU
 aaa
@@ -106414,7 +106447,7 @@ bFK
 bFT
 aff
 aAj
-xzY
+nVT
 aJQ
 aHO
 xQe
@@ -108722,7 +108755,7 @@ alS
 aMC
 apR
 atP
-aji
+wRV
 azm
 azm
 aCB

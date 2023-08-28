@@ -35,6 +35,7 @@
 	REMOVE_TRAIT(owner, TRAIT_DISK_VERIFIER, NUKEOP_TRAIT)
 
 /datum/antagonist/nukeop/proc/equip_op()
+	title = pick("Царь", "Босс", "Лидер", "Шеф", "Король", "Пингвин", "Директор", "Лорд", "Оверлорд", "Глав", "Альфа", "Первый", "Bождь", "Бонза", "Айко", "Русич", "Сек", "Мёртвый")
 	if(!ishuman(owner.current))
 		return
 	var/mob/living/carbon/human/H = owner.current
@@ -43,6 +44,7 @@
 		return
 	if(SSticker.mode.name == "Extended")
 		H.equipOutfit(/datum/outfit/syndicate/lone)
+		priority_announce("Приветствую, Станция. Мы отправляем к вам Специалиста по Защите Ядерного Диска ввиду того, что заметили недостаточную его безопасность. Bстречайте.", "[title]-Фрегат ССО Синдиката")
 	else
 		H.equipOutfit(nukeop_outfit)
 
@@ -159,7 +161,6 @@
 	name = "Nuclear Operative Leader"
 	nukeop_outfit = /datum/outfit/syndicate/leader
 	always_new_team = TRUE
-	var/title
 
 /datum/antagonist/nukeop/leader/memorize_code()
 	..()
@@ -175,7 +176,6 @@
 			H.update_icons()
 
 /datum/antagonist/nukeop/leader/give_alias()
-	title = pick("Czar", "Boss", "Commander", "Chief", "Kingpin", "Director", "Overlord")
 	if(nuke_team && nuke_team.syndicate_name)
 		owner.current.real_name = "[nuke_team.syndicate_name] [title]"
 	else

@@ -747,7 +747,6 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
  <br>
 "}
 
-
 /obj/item/storage/box/syndie_kit/guardian
 	name = "holoparasite injector kit"
 

@@ -35,7 +35,7 @@ No Implant Specifics"}
 
 
 /obj/item/implanter/freedom
-	name = "implanter (freedom)"
+	name = "Implanter (freedom)"
 	imp_type = /obj/item/implant/freedom
 
 /obj/item/implantcase/freedom

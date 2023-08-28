@@ -34,10 +34,6 @@
 	switch(pirate_type)
 		if(PIRATES_ROGUES)
 			ship_name = pick(strings(PIRATE_NAMES_FILE, "rogue_names"))
-		// if(PIRATES_SILVERSCALES)
-		// 	ship_name = pick(strings(PIRATE_NAMES_FILE, "silverscale_names"))
-		// if(PIRATES_DUTCHMAN)
-		// 	ship_name = "Flying Dutchman"
 
 	priority_announce("Входящая подпространственная передача данных. Открыт защищенный канал связи на всех коммуникационных консолях.", "Предложение о Защите Сектора", SSstation.announcer.get_rand_report_sound(), has_important_message = TRUE)
 	var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
@@ -48,17 +44,8 @@
 			ship_template = /datum/map_template/shuttle/pirate/default
 			threat_msg.title = "Предложение о Защите Сектора"
 			threat_msg.content = "Приветствуем вас с корабля [ship_name]. Ваш сектор нуждается в защите, заплатите нам [payoff] кредитов или на вас наверняка кто-то нападёт."
-			threat_msg.possible_answers = list("Мы заплатим.","Пахнет наёбом...")
-		/*if(PIRATES_SILVERSCALES)
-			ship_template = /datum/map_template/shuttle/pirate/silverscale
-			threat_msg.title = "Пожертвование Высшему Обществу"
-			threat_msg.content = "Это [ship_name]. Серебрянные чешуйки хотят собрать с вас дань. [payoff] кредитов решат проблему."
-			threat_msg.possible_answers = list("Мы заплатим.","Че, серьёзно? Пошли на хуй!")
-		if(PIRATES_DUTCHMAN)
-			ship_template = /datum/map_template/shuttle/pirate/dutchman
-			threat_msg.title = "Бизнес-Предложение"
-			threat_msg.content = "Это [ship_name]. Выплатите [payoff] кредит[get_num_string(payoff)] или вы пройдётесь по доске."
-			threat_msg.possible_answers = list("Мы заплатим.","Нет.")*/
+			threat_msg.possible_answers = list("Мы заплатим.","Мы заплатим, но на самом деле нет.")
+
 	threat_msg.answer_callback = CALLBACK(GLOBAL_PROC, .proc/pirates_answered, threat_msg, payoff, ship_name, initial_send_time, response_max_time, ship_template)
 	addtimer(CALLBACK(GLOBAL_PROC, .proc/spawn_pirates, threat_msg, ship_template, FALSE), response_max_time)
 	SScommunications.send_message(threat_msg,unique = TRUE)
@@ -73,9 +60,9 @@
 			if(D.adjust_money(-payoff))
 				priority_announce("Спасибо за кредиты, сухопутные крысы!", ship_name, 'modular_bluemoon/phenyamomota/sound/announcer/pirate_yespeacedecision.ogg', has_important_message = TRUE)
 				return
-			else
-				priority_announce("Пытаешься нас обмануть? Ты пожалеешь об этом!", ship_name, 'modular_bluemoon/phenyamomota/sound/announcer/pirate_nopeacedecision.ogg', has_important_message = TRUE)
-				spawn_pirates(threat_msg, ship_template, TRUE)
+	else
+		priority_announce("Пытаешься нас обмануть? Ты пожалеешь об этом!", ship_name, 'modular_bluemoon/phenyamomota/sound/announcer/pirate_nopeacedecision.ogg', has_important_message = TRUE)
+		spawn_pirates(threat_msg, ship_template, TRUE)
 
 /proc/spawn_pirates(datum/comm_message/threat_msg, ship_template, skip_answer_check)
 	if(!skip_answer_check && threat_msg?.answered == 1)

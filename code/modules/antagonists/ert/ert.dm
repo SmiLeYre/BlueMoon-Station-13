@@ -45,6 +45,15 @@
 /datum/antagonist/ert/deathsquad/apply_innate_effects(mob/living/mob_override)
 	ADD_TRAIT(owner, TRAIT_DISK_VERIFIER, DEATHSQUAD_TRAIT)
 
+	var/code
+	for (var/obj/machinery/nuclearbomb/selfdestruct/bombue in GLOB.machines)
+		if (length(bombue.r_code) <= 5 && bombue.r_code != initial(bombue.r_code))
+			code = bombue.r_code
+			break
+	if (code)
+		antag_memory += "<B>Коды от Ядерной Боеголовки</B>: [code]<br>"
+		to_chat(owner.current, "Коды от Ядерной Боеголовки: <B>[code]</B>")
+
 /datum/antagonist/ert/deathsquad/remove_innate_effects(mob/living/mob_override)
 	REMOVE_TRAIT(owner, TRAIT_DISK_VERIFIER, DEATHSQUAD_TRAIT)
 
@@ -160,7 +169,6 @@
 	if(!istype(H))
 		return
 	H.equipOutfit(outfit)
-
 
 /datum/antagonist/ert/greet()
 	if(!ert_team)

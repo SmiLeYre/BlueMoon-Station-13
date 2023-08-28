@@ -43,5 +43,5 @@
 	resistance_flags = INDESTRUCTIBLE //A bomb!
 
 /obj/item/implanter/storage
-	name = "implanter (storage)"
+	name = "Implanter (storage)"
 	imp_type = /obj/item/implant/storage

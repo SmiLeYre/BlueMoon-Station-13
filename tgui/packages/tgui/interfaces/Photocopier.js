@@ -15,25 +15,25 @@ export const Photocopier = (props, context) => {
   } = data;
 
   return (
-    <Window title="Photocopier" width={320} height={512}>
+    <Window title="Универсальный Сканнер/Принтер" width={320} height={512}>
       <Window.Content>
         {has_toner ? (
           <Toner />
         ) : (
-          <Section title="Toner">
-            <Box color="average">No inserted toner cartridge.</Box>
+          <Section title="Картридж">
+            <Box color="average">Внутри нет Струйного Картриджа.</Box>
           </Section>
         )}
-        <Section title="Paper">
-          <Box color="label">Paper stored: {paper_count}</Box>
+        <Section title="Бумага">
+          <Box color="label">Количество Бумаги Внутри: {paper_count}</Box>
           {!!copies_left && (
-            <Box color="label">Copies in queue: {copies_left}</Box>
+            <Box color="label">Копий в Процессе: {copies_left}</Box>
           )}
         </Section>
         {categories.length !== 0 ? (
           <Blanks />
         ) : (
-          <Section title="Blanks">
+          <Section title="Готовые Формы">
             <Box color="average">
               No forms found. Please contact your system administrator.
             </Box>
@@ -42,8 +42,8 @@ export const Photocopier = (props, context) => {
         {has_item ? (
           <Options />
         ) : (
-          <Section title="Options">
-            <Box color="average">No inserted item.</Box>
+          <Section title="Дополнительные Опции">
+            <Box color="average">Сканнер свободен.</Box>
           </Section>
         )}
         {!!isAI && <AIOptions />}
@@ -61,7 +61,7 @@ const Toner = (props, context) => {
 
   return (
     <Section
-      title="Toner"
+      title="Картридж"
       buttons={
         <Button onClick={() => act('remove_toner')} icon="eject">
           Eject
@@ -86,7 +86,7 @@ const Options = (props, context) => {
   const { color_mode, is_photo, num_copies } = data;
 
   return (
-    <Section title="Options">
+    <Section title="Дополнительные Опции">
       <Flex>
         <Flex.Item mt={0.4} width={11} color="label">
           Make copies:
@@ -172,7 +172,7 @@ const Blanks = (props, context) => {
   );
 
   return (
-    <Section title="Blanks">
+    <Section title="Готовые Формы">
       <Dropdown
         width="100%"
         options={categories}
@@ -206,7 +206,7 @@ const AIOptions = (props, context) => {
   const { can_AI_print } = data;
 
   return (
-    <Section title="AI Options">
+    <Section title="Возможности для ИИ">
       <Box>
         <Button
           fluid
