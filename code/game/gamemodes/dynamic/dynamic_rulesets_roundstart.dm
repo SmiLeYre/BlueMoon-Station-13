@@ -788,6 +788,52 @@ BLUEMOON REMOVAL END*/
 		new_xeno.key = current_key
 
 		return new_xeno
+/* TODO
+/datum/dynamic_ruleset/roundstart/overthrown
+	name = "Overthrown"
+	antag_flag = ROLE_OVERTHROW
+	antag_datum = /datum/antagonist/overthrow
+	minimum_required_age = 0
+	restricted_roles = list("AI", "Cyborg", "Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
+	required_candidates = 1
+	weight = 38888
+	delay = 5 SECONDS //BLUEMOON CHANGES
+	cost = 0
+	requirements = list(1,101,101,101,101,60,50,40,30,20) //BLUEMOON CHANGES
+	antag_cap = 3
+	flags = HIGH_IMPACT_RULESET
+
+/datum/dynamic_ruleset/roundstart/overthrown/pre_execute(population)
+	. = ..()
+	message_admins("В связи с особенностями игрового режима и заходом игроков после начала раунда, до выдачи ролей путчистов осталось <b>[delay/10] минут.</b>")
+
+
+	var/active_players = 0
+	for(var/mob/dead/new_player/player in GLOB.player_list)
+		if(player.client)
+			active_players++
+
+//	var/max_candidates = required_enemies + round(active_players*0.05) // At 100 players, it'd be 2 + 5 = 7 teams existing.
+	var/max_candidates = 1
+
+	for (var/i in 1 to max_candidates)
+		if(candidates.len <= 0)
+			break
+		var/mob/M = pick_n_take(candidates)
+		assigned += M.mind
+		M.mind.restricted_roles = restricted_roles
+		M.mind.special_role = antag_flag
+	return TRUE
+
+/// Give your candidates or assignees equipment and antag datum here.
+/datum/dynamic_ruleset/oundstart/overthrown/execute()
+	for(var/datum/mind/M in assigned)
+		var/datum/antagonist/overthrow/O = M.add_antag_datum(/datum/antagonist/overthrow) // create_team called on_gain will create the team
+		O.equip_initial_overthrow_agent()
+	return TRUE
+
+*/
+
 /* - TODO (for someone)
 //////////////////////////////////////////////
 //                                          //
