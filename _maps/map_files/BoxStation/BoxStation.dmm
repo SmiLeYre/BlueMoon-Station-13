@@ -561,7 +561,12 @@
 	name = "Station Intercom (General)";
 	pixel_x = -31
 	},
-/obj/machinery/photocopier,
+/obj/structure/table/wood,
+/obj/item/storage/box/seccarts{
+	pixel_x = 3;
+	pixel_y = 2
+	},
+/obj/item/storage/box/deputy,
 /turf/open/floor/plasteel/dark,
 /area/command/heads_quarters/hos)
 "adO" = (
@@ -794,11 +799,6 @@
 	pixel_y = 4
 	},
 /obj/structure/table/wood,
-/obj/item/storage/box/deputy,
-/obj/item/storage/box/seccarts{
-	pixel_x = 3;
-	pixel_y = 2
-	},
 /turf/open/floor/plasteel/dark,
 /area/command/heads_quarters/hos)
 "aey" = (
@@ -14506,7 +14506,7 @@
 	name = "Captain RC";
 	pixel_x = -30
 	},
-/obj/machinery/photocopier,
+/obj/structure/table/wood,
 /turf/open/floor/wood,
 /area/command/heads_quarters/captain)
 "bfA" = (
@@ -22041,10 +22041,6 @@
 	dir = 8
 	},
 /obj/item/stamp/qm,
-/obj/item/paper_bin{
-	pixel_x = -3;
-	pixel_y = 7
-	},
 /obj/item/pen/fountain,
 /obj/item/pen/red,
 /obj/item/pen{
@@ -22091,7 +22087,11 @@
 /obj/effect/turf_decal/tile/brown{
 	dir = 8
 	},
-/obj/machinery/photocopier,
+/obj/structure/table,
+/obj/item/paper_bin{
+	pixel_x = -3;
+	pixel_y = 7
+	},
 /turf/open/floor/plasteel,
 /area/cargo/qm)
 "bym" = (
@@ -23890,7 +23890,7 @@
 /turf/open/floor/plasteel/cafeteria,
 /area/command/heads_quarters/rd)
 "bCk" = (
-/obj/machinery/photocopier,
+/obj/structure/table,
 /turf/open/floor/plasteel/cafeteria,
 /area/command/heads_quarters/rd)
 "bCl" = (
@@ -24642,7 +24642,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
-/obj/machinery/photocopier,
+/obj/structure/table/glass,
 /turf/open/floor/plasteel/cafeteria,
 /area/command/heads_quarters/cmo)
 "bEi" = (
@@ -24659,7 +24659,6 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
-/mob/living/simple_animal/pet/cat/Runtime,
 /turf/open/floor/plasteel/cafeteria,
 /area/command/heads_quarters/cmo)
 "bEk" = (
@@ -53766,12 +53765,11 @@
 "lQh" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/structure/fans/tiny,
-/obj/structure/lattice/catwalk,
 /obj/machinery/door/airlock/external{
 	name = "Space";
 	req_access_txt = "1"
 	},
-/turf/open/space/basic,
+/turf/open/floor/plating,
 /area/security/office)
 "lQG" = (
 /obj/effect/spawner/structure/window,
@@ -64550,9 +64548,15 @@
 /turf/closed/wall,
 /area/ai_monitored/command/storage/eva)
 "vdJ" = (
-/obj/structure/lattice/catwalk,
-/turf/open/space,
-/area/security/office)
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/mob/living/simple_animal/pet/cat/Runtime,
+/turf/open/floor/plasteel/cafeteria,
+/area/command/heads_quarters/cmo)
 "veF" = (
 /obj/effect/turf_decal/trimline/neutral/filled/line{
 	dir = 4
@@ -103208,7 +103212,7 @@ aaa
 aaa
 khD
 lQh
-vdJ
+vCV
 vCV
 dRp
 vCV
@@ -109196,7 +109200,7 @@ bon
 bBO
 bCY
 bEj
-bCY
+vdJ
 bGZ
 bFE
 bBN

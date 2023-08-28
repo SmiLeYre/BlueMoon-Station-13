@@ -51533,14 +51533,13 @@
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "dhO" = (
-/obj/structure/lattice/catwalk,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/structure/fans/tiny,
 /obj/machinery/door/airlock/external{
 	name = "Security External Airlock";
 	req_access_txt = "63"
 	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/obj/structure/fans/tiny,
-/turf/open/space/basic,
+/turf/open/floor/plating,
 /area/security/office)
 "diq" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -58743,10 +58742,6 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
-"mBQ" = (
-/obj/structure/lattice/catwalk,
-/turf/open/space,
-/area/security/office)
 "mCm" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide,
@@ -101688,7 +101683,7 @@ aaa
 aaa
 vCF
 dhO
-mBQ
+rxQ
 rxQ
 sip
 rxQ

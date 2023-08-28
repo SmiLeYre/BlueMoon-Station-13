@@ -58732,14 +58732,13 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
 "mBQ" = (
+/obj/structure/fans/tiny,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/machinery/door/airlock/external{
 	name = "Security External Airlock";
 	req_access_txt = "63"
 	},
-/obj/structure/fans/tiny,
-/obj/structure/lattice/catwalk,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/turf/open/space/basic,
+/turf/open/floor/plating,
 /area/security/office)
 "mCm" = (
 /obj/effect/turf_decal/stripes/line,
@@ -61480,10 +61479,6 @@
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/mineral/plastitanium,
 /area/service/chapel/main)
-"qCS" = (
-/obj/structure/lattice/catwalk,
-/turf/open/space,
-/area/security/office)
 "qEB" = (
 /obj/machinery/hydroponics/soil{
 	pixel_y = 8
@@ -101680,7 +101675,7 @@ aaa
 aaa
 vEH
 mBQ
-qCS
+rxQ
 rxQ
 sip
 rxQ

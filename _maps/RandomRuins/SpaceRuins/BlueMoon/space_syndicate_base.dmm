@@ -12355,7 +12355,7 @@
 	icon_state = "control_kill";
 	lethal = 1;
 	name = "DS2 turret controls";
-	req_access_txt = "150";
+	req_access_txt = 0;
 	pixel_x = -30
 	},
 /turf/open/floor/iron/dark,
