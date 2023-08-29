@@ -476,7 +476,7 @@
 	return ..()
 
 /datum/dynamic_ruleset/midround/ratvar_awakening/trim_candidates()
-	. = ..()
+	..()
 	candidates = living_players
 	for(var/mob/living/player as anything in candidates)
 		var/turf/player_turf = get_turf(player)
@@ -541,7 +541,7 @@
 	return ..()
 
 /datum/dynamic_ruleset/midround/narsie_awakening/trim_candidates()
-	. = ..()
+	..()
 	candidates = living_players
 	for(var/mob/living/player as anything in candidates)
 		var/turf/player_turf = get_turf(player)
@@ -615,7 +615,7 @@
 	repeatable = TRUE
 
 /datum/dynamic_ruleset/midround/blob_infection/trim_candidates()
-	. = ..()
+	..()
 	candidates = living_players
 	for(var/mob/living/player as anything in candidates)
 		var/turf/player_turf = get_turf(player)
