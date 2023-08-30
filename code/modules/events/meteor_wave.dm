@@ -81,6 +81,16 @@
 	if(ISMULTIPLE(activeFor, 3))
 		spawn_meteors(5, wave_type, direction) //meteor list types defined in gamemode/meteor/meteors.dm
 
+/datum/round_event/meteor_wave/end()
+	. = ..()
+	var/kill_count = 0
+	for(var/obj/machinery/satellite/meteor_shield/meteor_satellite in GLOB.meteor_satellites)
+		kill_count += meteor_satellite.kill_counter
+	for(var/obj/machinery/satellite/meteor_shield/meteor_satellite in GLOB.meteor_satellites)
+		if(meteor_satellite.active)
+			meteor_satellite.radio.talk_into(meteor_satellite, "Оповещение системы противометеоритной защиты. Всего за последние 24 часа уничтожено целей: [kill_count]", RADIO_CHANNEL_COMMON) // В общий канал сообщает
+			break
+
 /datum/round_event_control/meteor_wave/threatening
 	name = "Meteor Wave: Threatening"
 	typepath = /datum/round_event/meteor_wave/threatening

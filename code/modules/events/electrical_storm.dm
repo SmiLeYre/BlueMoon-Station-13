@@ -35,3 +35,13 @@
 			var/obj/machinery/power/apc/A = a
 			if(get_dist(centre, A) <= lightsoutRange)
 				A.overload_lighting()
+
+	//BLUEMOON ADD START - уничтожение противометеоритных спутников
+	var/satellties_count = 0
+	for(var/obj/machinery/satellite/satellite in GLOB.meteor_satellites)
+		if(satellties_count >= 2)
+			break
+		if(satellite.active)
+			satellties_count++
+			satellite.malfunction()
+	//BLUEMOON ADD START
