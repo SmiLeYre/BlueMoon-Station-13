@@ -153,23 +153,6 @@ GLOBAL_LIST_EMPTY(meteor_satellites) // BLUEMOON ADD - список всех п�
 		if("electrical storm")
 			qdel(src)
 
-/obj/machinery/satellite/MouseDrop(atom/over_atom) // Перемещение спутника в ящик
-	. = ..()
-	if(!isliving(usr))
-		return
-	if(!(Adjacent(over_atom) || Adjacent(usr)))
-		return
-	if(active)
-		return
-	if(loc == over_atom.loc)
-		return
-	if(istype(over_atom, /obj/structure/closet/crate))
-		if(do_after(usr, 3 SECONDS, target = over_atom))
-			loc = over_atom.loc
-			usr.visible_message(span_notice("[usr] pulls up [src] and places it in [over_atom]"), \
-			span_notice("You pull up and place [src] into [over_atom]"))
-			playsound(src, 'sound/effects/clang1.ogg', 60, TRUE)
-
 /obj/machinery/satellite/examine(mob/user)
 	. = ..()
 	. += span_warning("It contains enough elements to keep its automatious work for ten years, but also has enough explosive power to act as a small grenade in case of destruction.")
