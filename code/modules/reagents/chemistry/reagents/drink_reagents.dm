@@ -454,7 +454,7 @@
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
-	M.Jitter(5)
+	//M.Jitter(5) // Убираем тряску
 	..()
 	. = 1
 
