@@ -254,6 +254,7 @@
 					/obj/item/clothing/under/costume/cheongsam/red = 3,
 					/obj/item/storage/backpack/snail = 3,
 					/obj/item/clothing/under/misc/squatter = 5,
+					/obj/item/clothing/under/misc/squatter/pants = 5,
 					/obj/item/umbrella = 5)
 	contraband = list(/obj/item/clothing/accessory/turtleneck/tactifool/syndicate = 3,
 					/obj/item/clothing/under/syndicate/tacticool = 3,

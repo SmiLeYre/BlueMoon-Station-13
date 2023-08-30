@@ -218,6 +218,11 @@
 	can_adjust = FALSE
 	mutantrace_variation = USE_TAUR_CLIP_MASK|STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
+/obj/item/clothing/under/misc/squatter/pants
+	name = "Slav Squatter Pants"
+	icon_state = "squattepants"
+	item_state = "squatterpants"
+
 /obj/item/clothing/under/misc/blue_camo
 	name = "Russian Blue Camo"
 	desc = "Drop and give me dvadtsat!"

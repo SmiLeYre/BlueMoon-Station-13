@@ -86,10 +86,8 @@
 /obj/item/clothing/suit/space/hardsuit/ert/alert/sec{
 	name = "reinforced security suit"
 	},
-/obj/item/clothing/head/helmet/space/syndicate/black/red,
-/obj/item/clothing/head/helmet/space/syndicate/black/red,
-/obj/item/clothing/suit/space/syndicate/black/red,
-/obj/item/clothing/suit/space/syndicate/black/red,
+/obj/item/clothing/suit/space/hardsuit/syndi,
+/obj/item/clothing/suit/space/hardsuit/syndi,
 /turf/open/floor/pod/light,
 /area/shuttle/lambda)
 "K" = (
