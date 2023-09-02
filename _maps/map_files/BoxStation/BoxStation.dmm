@@ -57371,8 +57371,9 @@
 /turf/open/floor/plasteel,
 /area/security/office)
 "oTI" = (
-/turf/closed/wall/r_wall,
-/area/space)
+/mob/living/simple_animal/pet/dog/corgi/pig/assistant,
+/turf/open/floor/light/colour_cycle/dancefloor_a,
+/area/maintenance/starboard/aft)
 "oTW" = (
 /obj/machinery/light{
 	dir = 1
@@ -103492,7 +103493,7 @@ jFG
 adR
 adR
 adR
-oTI
+ifB
 aaa
 chO
 gHR
@@ -120037,7 +120038,7 @@ cPH
 cNW
 xgs
 qlV
-srk
+oTI
 fkh
 gcx
 cNW
