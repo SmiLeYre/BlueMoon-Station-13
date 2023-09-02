@@ -111,21 +111,21 @@
 	name = "cerberus helmet"
 	slot = ITEM_SLOT_HEAD
 	path = /obj/item/clothing/head/donator/bm/cerberus_helmet
-	ckeywhitelist = list("krashly", "stgs", "dedmodo", "hazzi", "dolbajob")
+	ckeywhitelist = list("krashly", "stgs", "dedmodo", "hazzi", "dolbajob", "snacksman")
 	subcategory = LOADOUT_SUBCATEGORIES_DON10
 
 /datum/gear/donator/bm/cerberus_suit
 	name = "cerberus suit"
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/donator/bm/cerberus_suit
-	ckeywhitelist = list("krashly", "stgs", "dedmodo", "hazzi", "dolbajob")
+	ckeywhitelist = list("krashly", "stgs", "dedmodo", "hazzi", "dolbajob", "snacksman")
 	subcategory = LOADOUT_SUBCATEGORIES_DON10
 
 /datum/gear/donator/bm/censor_fem_suit
 	name = "censor suit"
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/donator/bm/censor_fem_suit
-	ckeywhitelist = list("krashly", "stgs", "dedmodo", "hazzi", "dolbajob")
+	ckeywhitelist = list("krashly", "stgs", "dedmodo", "hazzi", "dolbajob", "snacksman")
 	subcategory = LOADOUT_SUBCATEGORIES_DON10
 
 /datum/gear/donator/bm/Dina_Kit
@@ -204,3 +204,10 @@
 	path = /obj/item/clothing/suit/donator/bm/angelo
 	ckeywhitelist = list("axidant")
 	subcategory = LOADOUT_SUBCATEGORIES_DON12
+
+/datum/gear/donator/bm/wagner_patch
+	name = "PMC Wagner Patch"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/accessory/wagner_patch
+	ckeywhitelist = list("krashly", "stgs", "hazzi", "dolbajob", "leony24", "snacksman")
+	subcategory = LOADOUT_SUBCATEGORIES_DON10
