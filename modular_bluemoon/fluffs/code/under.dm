@@ -39,3 +39,10 @@
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/under.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/under.dmi'
 	icon_state = "gg_envirosuit"
+
+/obj/item/clothing/under/donator/bm/flektarn
+	name = "flektarn combat uniform"
+	desc = "Black turtleneck with -explosive- camouflaged combat pants."
+	icon_state = "flektarn"
+	item_state = "flektarn"
+	can_adjust = TRUE
