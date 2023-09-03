@@ -206,7 +206,7 @@
 	subcategory = LOADOUT_SUBCATEGORIES_DON12
 
 /datum/gear/donator/bm/wagner_patch
-	name = "PMC Wagner Patch"
+	name = "PMC Skull Patch"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/accessory/wagner_patch
 	ckeywhitelist = list("krashly", "stgs", "hazzi", "dolbajob", "leony24", "snacksman")
