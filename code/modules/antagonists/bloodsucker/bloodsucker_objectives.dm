@@ -43,7 +43,7 @@
 
 //						EXPLANATION
 /datum/objective/bloodsucker/lair/update_explanation_text()
-	explanation_text = "Create a lair by claiming a coffin, and protect it until the end of the shift."//  Make sure to keep it safe!"
+	explanation_text = "Создайте убежища с помощью гроба и защищайте его до конца смены."//  Make sure to keep it safe!"
 
 //						WIN CONDITIONS?
 /datum/objective/bloodsucker/lair/check_completion()
@@ -92,13 +92,13 @@
 	else
 		switch(target_role)
 			if("Research Director")
-				department_string = "Science"
+				department_string = "научном"
 			if("Chief Engineer")
-				department_string = "Engineering"
+				department_string = "инженерном"
 			if("Chief Medical Officer")
-				department_string = "Medical"
+				department_string = "медицинском"
 			if("Quartermaster")
-				department_string = "Cargo"
+				department_string = "грузовом"
 		target_amount = rand(round(SSticker.mode.num_players() / 20), round(SSticker.mode.num_players() / 10))
 		target_amount = clamp(target_amount, 2, 4)
 	..()
@@ -107,11 +107,11 @@
 /datum/objective/bloodsucker/protege/update_explanation_text()
 	if (target_role == "HEAD")
 		if (target_amount == 1)
-			explanation_text = "Guarantee a Vassal ends up as a Department Head or in a Leadership role."
+			explanation_text = "Заведите Слугу в виде главы отдела и продержите его таковым до конца смены."
 		else
-			explanation_text = "Guarantee [target_amount] Vassals end up as different Leadership or Department Heads."
+			explanation_text = "Заведите [target_amount] Слуг в виде глав отделов и продержите их таковыми до конца смены."
 	else
-		explanation_text = "Have [target_amount] Vassal[target_amount==1?"":"s"] in the [department_string] department."
+		explanation_text = "Заведите [target_amount] Слу[target_amount==1?"гу":"г"] в [department_string] отделе."
 
 //						WIN CONDITIONS?
 /datum/objective/bloodsucker/protege/check_completion()
@@ -246,7 +246,7 @@
 
 //						EXPLANATION
 /datum/objective/bloodsucker/heartthief/update_explanation_text()
-	explanation_text = "Steal and keep [target_amount] heart[target_amount == 1 ? "" : "s"]."			// TO DO:     Limit them to Human Only!
+	explanation_text = "Украсть и держать при себе [target_amount] серд[target_amount == 1 ? "це" : "ца"]."			// TO DO:     Limit them to Human Only!
 
 //						WIN CONDITIONS?
 /datum/objective/bloodsucker/heartthief/check_completion()
@@ -273,7 +273,7 @@
 
 //						EXPLANATION
 /datum/objective/bloodsucker/survive/update_explanation_text()
-	explanation_text = "Survive the entire shift without succumbing to Final Death."
+	explanation_text = "Дожить до конца смены и не быть окончательно убитым."
 
 //						WIN CONDITIONS?
 /datum/objective/bloodsucker/survive/check_completion()
@@ -294,7 +294,7 @@
 
 //						EXPLANATION
 /datum/objective/bloodsucker/vamphunter/update_explanation_text()
-	explanation_text = "Destroy all Bloodsuckers on [station_name()]."
+	explanation_text = "Уничтожить всех кровососов на [station_name()]."
 
 //						WIN CONDITIONS?
 /datum/objective/bloodsucker/vamphunter/check_completion()
@@ -314,7 +314,7 @@
 
 //						EXPLANATION
 /datum/objective/bloodsucker/monsterhunter/update_explanation_text()
-	explanation_text = "Destroy all monsters on [station_name()]."
+	explanation_text = "Уничтожить всю нечисть на [station_name()]."
 
 //						WIN CONDITIONS?
 /datum/objective/bloodsucker/monsterhunter/check_completion()
@@ -344,7 +344,7 @@
 
 //						EXPLANATION
 /datum/objective/bloodsucker/vassal/update_explanation_text()
-	explanation_text = "Guarantee the success of your Master's mission!"
+	explanation_text = "Сделать всё возможное, чтобы ваш Хозяин одержал победу!"
 
 //						WIN CONDITIONS?
 /datum/objective/bloodsucker/vassal/check_completion()

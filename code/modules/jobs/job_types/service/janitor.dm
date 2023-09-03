@@ -40,7 +40,7 @@
 	name = "Syndicate Janitor"
 	jobtype = /datum/job/janitor
 
-	belt = /obj/item/pda/syndicate/no_deto
+	//belt = /obj/item/pda/syndicate/no_deto
 
 	shoes = /obj/item/clothing/shoes/jackboots/tall
 	ears = /obj/item/radio/headset/headset_srv

@@ -39,7 +39,7 @@
 	name = "Syndicate Cargo Technician"
 	jobtype = /datum/job/cargo_tech
 
-	belt = /obj/item/pda/syndicate/no_deto
+	//belt = /obj/item/pda/syndicate/no_deto
 
 	ears = /obj/item/radio/headset/headset_cargo
 	uniform = /obj/item/clothing/under/rank/cargo/util

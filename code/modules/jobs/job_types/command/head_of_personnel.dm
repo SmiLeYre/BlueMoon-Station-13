@@ -64,7 +64,7 @@
 	name = "Syndicate Head of Personnel"
 	jobtype = /datum/job/hop
 
-	belt = /obj/item/pda/syndicate/no_deto
+	//belt = /obj/item/pda/syndicate/no_deto
 
 	neck = /obj/item/clothing/neck/cloak/syndiecap
 	ears = /obj/item/radio/headset/heads/hop

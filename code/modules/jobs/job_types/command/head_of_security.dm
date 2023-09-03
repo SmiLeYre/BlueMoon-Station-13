@@ -74,7 +74,7 @@
 	name = "Syndicate Head of Security"
 	jobtype = /datum/job/hos
 
-	belt = /obj/item/pda/syndicate/no_deto
+	//belt = /obj/item/pda/syndicate/no_deto
 
 	ears = /obj/item/radio/headset/heads/hos/alt
 	uniform = /obj/item/clothing/under/rank/captain/util
