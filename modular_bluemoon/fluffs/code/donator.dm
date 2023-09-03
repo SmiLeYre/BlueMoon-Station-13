@@ -205,9 +205,9 @@
 	ckeywhitelist = list("axidant")
 	subcategory = LOADOUT_SUBCATEGORIES_DON12
 
-/datum/gear/donator/bm/wagner_patch
+/datum/gear/donator/bm/skull_patch
 	name = "PMC Skull Patch"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/clothing/accessory/wagner_patch
+	path = /obj/item/clothing/accessory/skull_patch
 	ckeywhitelist = list("krashly", "stgs", "hazzi", "dolbajob", "leony24", "snacksman")
 	subcategory = LOADOUT_SUBCATEGORIES_DON10
