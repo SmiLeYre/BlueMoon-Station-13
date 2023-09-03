@@ -26,7 +26,7 @@
 	false_report_weight = 1
 	chaos = 4
 	restricted_jobs = list("Prisoner", "AI","Cyborg")
-	protected_jobs = list("Chaplain", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Chief Engineer", "Chief Medical Officer", "Research Director", "Quartermaster")
+	protected_jobs = list("Chaplain", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Chief Engineer", "Chief Medical Officer", "Research Director", "Quartermaster", "Blueshield", "Brig Physician", "Peacekeeper", "NanoTrasen Representative", "Lawyer")
 	required_players = 2
 	required_enemies = 2
 	recommended_enemies = 4
