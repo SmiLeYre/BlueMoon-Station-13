@@ -27,30 +27,30 @@
 		H.update_mutant_bodyparts()
 		H.update_hair()
 
-/obj/structure/sign/flag/wagner
-	name = "flag of PMC Wagner"
+/obj/structure/sign/flag/skull
+	name = "flag of PMC Skull"
 	desc = "Black flag with a skull in the center. Has a red lining. The flag smells of blood."
-	icon = 'modular_bluemoon/krashly/icons/obj/wagner_flag.dmi'
+	icon = 'modular_bluemoon/krashly/icons/obj/skull_flag.dmi'
 	icon_state = "full"
-	item_flag = /obj/item/sign/flag/wagner
+	item_flag = /obj/item/sign/flag/skull
 
-/obj/item/sign/flag/wagner
-	name = "folded flag of the PMC Wagner"
-	desc = "The folded flag of the PMC Wagner."
-	icon = 'modular_bluemoon/krashly/icons/obj/wagner_flag.dmi'
+/obj/item/sign/flag/skull
+	name = "folded flag of the PMC Skull"
+	desc = "The folded flag of the PMC Skull."
+	icon = 'modular_bluemoon/krashly/icons/obj/skull_flag.dmi'
 	icon_state = "mini"
-	sign_path = /obj/structure/sign/flag/wagner
+	sign_path = /obj/structure/sign/flag/skull
 
-/obj/structure/closet/crate/coffin/attacked_by(var/obj/item/sign/flag/wagner/flag, mob/living/user)
-	icon = 'modular_bluemoon/krashly/icons/obj/wagner_flag.dmi'
+/obj/structure/closet/crate/coffin/attacked_by(var/obj/item/sign/flag/skull/flag, mob/living/user)
+	icon = 'modular_bluemoon/krashly/icons/obj/skull_flag.dmi'
 	icon_state = "grob_full"
 	locked = TRUE
 	qdel(flag)
 
-/datum/gear/donator/bm/wagner_flag
-	name = "PMC Wagner flag"
+/datum/gear/donator/bm/skull_flag
+	name = "PMC Skull flag"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/sign/flag/wagner
+	path = /obj/item/sign/flag/skull
 	ckeywhitelist = list("krashly", "stgs", "hazzi", "dolbajob")
 	subcategory = LOADOUT_SUBCATEGORIES_DON10
 
