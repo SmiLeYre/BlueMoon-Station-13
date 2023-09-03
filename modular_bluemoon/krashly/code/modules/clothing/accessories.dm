@@ -56,8 +56,8 @@
 /obj/item/toy/fluff/bant/purple
 	poly_colors = list("#CC00FF")
 
-/obj/item/clothing/accessory/wagner_patch
-	name = "PMC Wagner Patch"
+/obj/item/clothing/accessory/skull_patch
+	name = "PMC Skull Patch"
 	desc = "Patch of a long-gone PMC. It is embroidered with a Skull in red outline. The inscription reads: 'For Blood and Honor!'"
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/patch.dmi'
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/patch.dmi'
