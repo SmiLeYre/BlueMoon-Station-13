@@ -5,7 +5,7 @@
 	false_report_weight = 5
 	chaos = 5
 	restricted_jobs = list("Prisoner", "AI", "Cyborg")
-	protected_jobs = list("Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Chief Engineer", "Chief Medical Officer", "Research Director", "Quartermaster")	//citadel change - adds HoP, CE, CMO, and RD to heretic role blacklist
+	protected_jobs = list("Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Chief Engineer", "Chief Medical Officer", "Research Director", "Quartermaster", "Blueshield", "Brig Physician", "Peacekeeper", "NanoTrasen Representative", "Lawyer", "Chaplain")	//citadel change - adds HoP, CE, CMO, and RD to heretic role blacklist
 	required_players = 15
 	required_enemies = 1
 	recommended_enemies = 4

@@ -57,3 +57,9 @@
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/hats.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/hats.dmi'
 	icon_state = "pluto_enviro"
+
+/obj/item/clothing/head/donator/bm/flektarn_beret
+	name = "flektarn beret"
+	desc = "Five-color, -explosive- beret in camouflage colors with a golden badge."
+	icon_state = "flektarn_beret"
+	item_state = "flektarn_beret"

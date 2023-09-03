@@ -277,7 +277,7 @@
 	desc = "A tribal armor plate, crafted from animal bone."
 	icon_state = "bonearmor"
 	item_state = "bonearmor"
-	tail_state = "bonearmor"
+	tail_state = ""
 	blood_overlay_type = "armor"
 	armor = list(MELEE = 35, BULLET = 25, LASER = 25, ENERGY = 35, BOMB = 25, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 10)
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS

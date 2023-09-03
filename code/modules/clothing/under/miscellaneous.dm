@@ -215,13 +215,14 @@
 	icon_state = "squatteroutfit"
 	item_state = "squatteroutfit"
 	alternate_screams = RUSSIAN_SCREAMS
-	can_adjust = FALSE
+	can_adjust = TRUE
 	//mutantrace_variation = USE_TAUR_CLIP_MASK|STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/under/misc/squatter/pants
 	name = "Slav Squatter Pants"
 	icon_state = "squatterpants"
 	item_state = "squatterpants"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/misc/blue_camo
 	name = "Russian Blue Camo"
