@@ -43,7 +43,7 @@
 
 //						EXPLANATION
 /datum/objective/bloodsucker/lair/update_explanation_text()
-	explanation_text = "Создайте убежища с помощью гроба и защищайте его до конца смены."//  Make sure to keep it safe!"
+	explanation_text = "Создайте убежище с помощью гроба и защищайте его до конца смены."//  Make sure to keep it safe!"
 
 //						WIN CONDITIONS?
 /datum/objective/bloodsucker/lair/check_completion()
