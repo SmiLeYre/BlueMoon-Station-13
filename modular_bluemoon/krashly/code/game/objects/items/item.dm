@@ -41,11 +41,11 @@
 	icon_state = "mini"
 	sign_path = /obj/structure/sign/flag/skull
 
-/obj/structure/closet/crate/coffin/attacked_by(var/obj/item/sign/flag/skull/flag, mob/living/user)
+/obj/structure/closet/crate/coffin/attacked_by(obj/item/sign/flag/skull/I, mob/living/user)
 	icon = 'modular_bluemoon/krashly/icons/obj/skull_flag.dmi'
 	icon_state = "grob_full"
 	locked = TRUE
-	qdel(flag)
+	qdel(I)
 
 /datum/gear/donator/bm/skull_flag
 	name = "PMC Skull flag"
