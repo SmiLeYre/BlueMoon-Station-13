@@ -13,6 +13,7 @@
 
 /obj/structure/mecha_wreckage/ares
 	name = "\improper MIB-02 Ares wreckage"
+	icon = 'modular_bluemoon/krashly/icons/obj/mecha/ares.dmi'
 	icon_state = "ares-broken"
 	parts = list(
 			/obj/item/mecha_parts/part/durand_torso,
@@ -39,6 +40,7 @@
 
 /obj/structure/mecha_wreckage/hermes
 	name = "\improper MIB-01 Hermes wreckage"
+	icon = 'modular_bluemoon/krashly/icons/obj/mecha/hermes.dmi'
 	icon_state = "hermes-broken"
 	parts = list(
 			/obj/item/mecha_parts/part/durand_torso,
