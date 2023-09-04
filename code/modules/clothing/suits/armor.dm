@@ -129,6 +129,7 @@
 		"Navy" = list("icon_state" = "pcarrier_navy"),
 		"Green" = list("icon_state" = "pcarrier_green"),
 		"Tan" = list("icon_state" = "pcarrier_tan"),
+		"Flektarn" = list("icon_state" = "pcarrier_flektarn"),
 		"Harness" = list("icon_state" = "pcarrier_harness"),
 		"Harness White" = list("icon_state" = "pcarrier_harness_w")
 	)

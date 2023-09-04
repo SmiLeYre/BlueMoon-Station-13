@@ -44,7 +44,7 @@
 	name = "Syndicate Cook"
 	jobtype = /datum/job/cook
 
-	belt = /obj/item/pda/syndicate/no_deto
+	//belt = /obj/item/pda/syndicate/no_deto
 
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/util

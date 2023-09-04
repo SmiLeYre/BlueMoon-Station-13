@@ -44,7 +44,7 @@
 	name = "Syndicate Botanist"
 	jobtype = /datum/job/hydro
 
-	belt = /obj/item/pda/syndicate/no_deto
+	//belt = /obj/item/pda/syndicate/no_deto
 
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/util
