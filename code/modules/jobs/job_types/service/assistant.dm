@@ -43,7 +43,7 @@ Assistant
 	name = "Assistant"
 	jobtype = /datum/job/assistant
 
-	belt = /obj/item/pda/syndicate/no_deto
+	//belt = /obj/item/pda/syndicate/no_deto
 
 	uniform = /obj/item/clothing/under/rank/civilian/util
 

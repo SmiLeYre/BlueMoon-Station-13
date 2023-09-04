@@ -43,7 +43,7 @@
 	name = "Syndicate Bartender"
 	jobtype = /datum/job/bartender
 
-	belt = /obj/item/pda/syndicate/no_deto
+	//belt = /obj/item/pda/syndicate/no_deto
 
 	glasses = /obj/item/clothing/glasses/sunglasses/reagent
 	ears = /obj/item/radio/headset/headset_srv

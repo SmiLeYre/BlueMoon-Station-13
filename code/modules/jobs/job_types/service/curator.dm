@@ -47,7 +47,7 @@
 	name = "Syndicate Curator"
 	jobtype = /datum/job/curator
 
-	belt = /obj/item/pda/syndicate/no_deto
+	//belt = /obj/item/pda/syndicate/no_deto
 
 	shoes = /obj/item/clothing/shoes/jackboots/tall
 	ears = /obj/item/radio/headset/headset_srv

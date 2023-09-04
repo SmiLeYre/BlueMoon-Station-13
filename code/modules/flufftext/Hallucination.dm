@@ -20,6 +20,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	/datum/hallucination/self_delusion = 2,
 	/datum/hallucination/naked = 2,
 	/datum/hallucination/delusion = 2,
+	/datum/hallucination/delusion/custom = 0,
 	/datum/hallucination/shock = 1,
 	/datum/hallucination/death = 1,
 	/datum/hallucination/oh_yeah = 1,
@@ -49,6 +50,8 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	var/natural = TRUE
 	var/mob/living/carbon/target
 	var/feedback_details //extra info for investigate
+	/// Who's our next highest abstract parent type?
+	var/abstract_hallucination_parent = /datum/hallucination
 
 /datum/hallucination/New(mob/living/carbon/C, forced = TRUE)
 	set waitfor = FALSE
@@ -511,6 +514,9 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 /datum/hallucination/delusion
 	var/list/image/delusions = list()
 
+/// Used for making custom delusions.
+/datum/hallucination/delusion/custom
+
 /datum/hallucination/delusion/New(mob/living/carbon/C, forced, force_kind = null , duration = 300,skip_nearby = TRUE, custom_icon = null, custom_icon_file = null, custom_name = null)
 	set waitfor = FALSE
 	. = ..()
@@ -906,7 +912,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 			SEND_SOUND(target, SSstation.announcer.event_sounds[ANNOUNCER_SHUTTLEDOCK])
 		if("malf ai") //AI is doomsdaying!
 			to_chat(target, "<h1 class='alert'>ВНИМАНИЕ: АНОМАЛИЯ</h1>")
-			to_chat(target, "<br><br><span class='alert'>Hostile runtimes detected in all station systems, please deactivate your AI to prevent possible damage to its morality core.</span><br><br>")
+			to_chat(target, "<br><br><span class='alert'>Все станционные системы подверглись воздействию вредоносного ПО. Немедленно отключите искусственный интеллект станции, во избежание её уничтожения.</span><br><br>")
 			SEND_SOUND(target, SSstation.announcer.event_sounds[ANNOUNCER_AIMALF])
 		if("meteors") //Meteors inbound!
 			to_chat(target, "<h1 class='alert'>BНИМАНИЕ: МЕТЕОРЫ</h1>")
@@ -1361,3 +1367,69 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	if(target.client)
 		target.client.images.Remove(image)
 	return ..()
+
+/// Helper to give the passed mob the ability to select a hallucination from the list of all hallucination subtypes.
+/proc/select_hallucination_type(mob/user, message = "Select a hallucination subtype", title = "Choose Hallucination")
+	var/static/list/hallucinations
+	if(!hallucinations)
+		hallucinations = typesof(/datum/hallucination)
+		for(var/datum/hallucination/hallucination_type as anything in hallucinations)
+			if(initial(hallucination_type.abstract_hallucination_parent) == hallucination_type)
+				hallucinations -= hallucination_type
+
+	var/chosen = tgui_input_list(user, message, title, hallucinations)
+	if(!chosen || !ispath(chosen, /datum/hallucination))
+		return null
+
+	return chosen
+
+/// Helper to give the passed mob the ability to create a delusion hallucination (even a custom one).
+/// Returns a list of arguments - pass these to _cause_hallucination to cause the desired hallucination
+/proc/create_delusion(mob/user)
+	var/static/list/delusions
+	if(!delusions)
+		delusions = typesof(/datum/hallucination/delusion)
+		for(var/datum/hallucination/delusion_type as anything in delusions)
+			if(initial(delusion_type.abstract_hallucination_parent) == delusion_type)
+				delusions -= delusion_type
+
+	var/chosen = tgui_input_list(user, "Select a delusion type. Custom will allow for custom icon entry.", "Select Delusion", delusions)
+	if(!chosen || !ispath(chosen, /datum/hallucination/delusion))
+		return
+
+	var/list/delusion_args = list()
+	var/static/list/options = list("Yes", "No")
+	var/duration = tgui_input_number(user, "How long should it last in seconds?", "Delusion: Duration", max_value = INFINITY, min_value = 1, default = 30)
+	var/affects_us = (tgui_alert(user, "Should they see themselves as the delusion?", "Delusion: Affects us", options) == "Yes")
+	var/affects_others = (tgui_alert(user, "Should they see everyone else delusion?", "Delusion: Affects others", options) == "Yes")
+	var/skip_nearby = (tgui_alert(user, "Should the delusion only affect people outside of their view?", "Delusion: Skip in view", options) == "Yes")
+	var/play_wabbajack = (tgui_alert(user, "Play the wabbajack sound when it happens?", "Delusion: Wabbajack sound", options) == "Yes")
+
+	delusion_args = list(
+		chosen,
+		"forced delusion",
+		duration = duration * 1 SECONDS,
+		affects_us = affects_us,
+		affects_others = affects_others,
+		skip_nearby = skip_nearby,
+		play_wabbajack = play_wabbajack,
+	)
+
+	if(ispath(chosen, /datum/hallucination/delusion/custom))
+		var/custom_icon_file = input(user, "Pick file for custom delusion:", "Custom Delusion: File") as null|file
+		if(!custom_icon_file)
+			return
+
+		var/custom_icon_state = tgui_input_text(user, "What icon state do you wanna use from the file?", "Custom Delusion: Icon State")
+		if(!custom_icon_state)
+			return
+
+		var/custom_name = tgui_input_text(user, "What name should it show up as? (Can be empty)", "Custom Delusion: Name")
+
+		delusion_args += list(
+			custom_icon_file = custom_icon_file,
+			custom_icon_state = custom_icon_state,
+			custom_name = custom_name,
+		)
+
+	return delusion_args

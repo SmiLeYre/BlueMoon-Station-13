@@ -25,4 +25,8 @@
 		ANNOUNCER_ADMIN_4 = 'sound/announcer/classic/_admin_hos_gone.ogg',
 		ANNOUNCER_ADMIN_5 = 'sound/announcer/classic/_admin_war_pipisky.ogg',
 		ANNOUNCER_ADMIN_6 = 'sound/announcer/classic/_admin_war_pizdec.ogg',
-		ANNOUNCER_ADMIN_7 = 'sound/announcer/classic/_admin_war_tishina.ogg')
+		ANNOUNCER_ADMIN_7 = 'sound/announcer/classic/_admin_war_tishina.ogg',
+		ANNOUNCER_BSA = 'sound/announcer/classic/artillery.ogg',
+		ANNOUNCER_XENO = 'sound/announcer/classic/xeno.ogg',
+		ANNOUNCER_IROD = 'sound/announcer/classic/irod.ogg',
+		ANNOUNCER_LAMBDA = 'sound/announcer/classic/lambda.ogg')

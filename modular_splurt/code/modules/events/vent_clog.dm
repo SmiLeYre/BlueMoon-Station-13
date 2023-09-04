@@ -36,7 +36,7 @@
 	reagents_amount = 100
 
 /datum/round_event/scrubber_overflow/female/announce()
-	priority_announce("Сеть скрубберов испытывает противодавление из-за откуда-то взявшегося в них СКВИРТА. Может произойти некоторое разбрызгивание содержимого.", "Атмосферная Тревога")
+	priority_announce("Сеть скрубберов испытывает противодавление из-за откуда-то взявшегося в них СКВИРТА. Может произойти некоторое разбрызгивание содержимого.", "Атмосферная Тревога", 'sound/announcer/classic/ventclog.ogg')
 
 /datum/round_event/scrubber_overflow/female/start()
 	for(var/obj/machinery/atmospherics/components/unary/vent in scrubbers)
@@ -63,7 +63,7 @@
 	reagents_amount = 100
 
 /datum/round_event/scrubber_overflow/male/announce()
-	priority_announce("Сеть скрубберов испытывает противодавление из-за откуда-то взявшегося в них СЕМЕНИ. Может произойти некоторое разбрызгивание содержимого.", "Атмосферная Тревога")
+	priority_announce("Сеть скрубберов испытывает противодавление из-за откуда-то взявшегося в них СЕМЕНИ. Может произойти некоторое разбрызгивание содержимого.", "Атмосферная Тревога", 'sound/announcer/classic/ventclog.ogg')
 
 /datum/round_event/scrubber_overflow/male/start()
 	for(var/obj/machinery/atmospherics/components/unary/vent in scrubbers)
@@ -131,7 +131,7 @@
 	reagents_amount = 100
 
 /datum/round_event/scrubber_overflow/beer/announce()
-	priority_announce("Сеть скрубберов испытывает противодавление из-за пива. Возможен некоторый выброс содержимого.", "Центральное Командование")
+	priority_announce("Сеть скрубберов испытывает противодавление из-за пива. Возможен некоторый выброс содержимого.", "Центральное Командование", 'sound/announcer/classic/ventclog.ogg')
 
 /datum/round_event/scrubber_overflow/beer/start()
 	for(var/obj/machinery/atmospherics/components/unary/vent in scrubbers)
