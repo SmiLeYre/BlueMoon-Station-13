@@ -297,9 +297,9 @@ GLOBAL_LIST_EMPTY(meteor_satellites) // BLUEMOON ADD - список всех п�
 					last_major_firing_contact = world.time
 				else if(kill_counter % 6 == 0) // Каждые 6 уничтоженных метеорита - оповещение
 					radio.talk_into(src, "[pick(kill_quotes)].", engineering_channel)
-			break // по 1 метеориту за тик
 			// BLUEMOON ADD END
 			qdel(M)
+			break // по 1 метеориту за тик
 
 /obj/machinery/satellite/meteor_shield/toggle(user)
 	if(!..(user))
