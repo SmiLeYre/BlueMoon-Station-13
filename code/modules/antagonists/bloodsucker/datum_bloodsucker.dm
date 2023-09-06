@@ -7,6 +7,7 @@
 	antagpanel_category = "Bloodsucker"
 	job_rank = ROLE_BLOODSUCKER
 	threat = 5
+	soft_antag = FALSE // BLUEMOON ADDITION
 	// NAME
 	var/bloodsucker_name						// My Dracula style name
 	var/bloodsucker_title						// My Dracula style title

@@ -85,6 +85,10 @@
 	name = "Slav Squatter Tracksuit"
 	path = /obj/item/clothing/under/misc/squatter
 
+/datum/gear/uniform/squatter_pants
+	name = "Slav Squatter Pants"
+	path = /obj/item/clothing/under/misc/squatter/pants
+
 /datum/gear/uniform/blue_camo
 	name = "Russian Blue Camo"
 	path = /obj/item/clothing/under/misc/blue_camo

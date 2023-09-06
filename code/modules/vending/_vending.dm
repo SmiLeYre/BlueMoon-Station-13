@@ -922,7 +922,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 		SSblackbox.record_feedback("amount", "vending_spent", price_to_use)
 		log_econ("[price_to_use] credits were inserted into [src] by [key_name(usr)] (account: [account.account_holder]) to buy [R].")
 	if(last_shopper != REF(usr) || purchase_message_cooldown < world.time)
-		say("Thank you for shopping with [src]!")
+		say("Спасибо за покупку в [src]!")
 		purchase_message_cooldown = world.time + 5 SECONDS
 		//This is not the best practice, but it's safe enough here since the chances of two people using a machine with the same ref in 5 seconds is fuck low
 		last_shopper = REF(usr)

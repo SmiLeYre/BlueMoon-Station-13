@@ -299,7 +299,7 @@ GLOBAL_LIST_EMPTY(meteor_satellites) // BLUEMOON ADD - список всех п�
 					radio.talk_into(src, "[pick(kill_quotes)].", engineering_channel)
 			// BLUEMOON ADD END
 			qdel(M)
-			break // по 1 метеориту за тик
+			break // BLUEMOON ADD - по 1 метеориту за тик
 
 /obj/machinery/satellite/meteor_shield/toggle(user)
 	if(!..(user))

@@ -176,3 +176,12 @@
 		occupants[1].bullet_act(Proj) // driver dinkage
 		return BULLET_ACT_HIT
 	. = ..()
+
+// BLUEMOON ADDITION AHEAD - предотвращаем множество абузов скорости, не давая сверхтяжёлым персонажам залезать на транспорт
+/obj/vehicle/post_buckle_mob(mob/living/M)
+	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER))
+		usr.visible_message(span_warning("[usr] tried to get [M] on [src], but it doesn't move. Too much weight!."), span_warning("You tried to get [M] on [src], but it doesn't move. Too much weight!"))
+		unbuckle_all_mobs()
+		return
+	. = ..()
+// BLUEMOON ADDITION END

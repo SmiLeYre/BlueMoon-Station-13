@@ -104,6 +104,12 @@
 		qdel(src)
 
 /obj/structure/bed/roller/post_buckle_mob(mob/living/M)
+	// BLUEMOON ADDITION AHEAD - сверхтяжёлых персонажей нельзя помещать на носилки (предотвращает абуз через толкание + повышает значимость боргов, халков и других сверхтяжёлых персонажей)
+	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER))
+		usr.visible_message(span_warning("[usr] tried to put [M] on [src], but it doesn't lift. Too much weight!."), span_warning("You try to put [M] on [src], but it doesn't lift. Too much weight!"))
+		unbuckle_all_mobs()
+		return
+	// BLUEMOON ADDITION END
 	density = TRUE
 	icon_state = "up"
 	M.pixel_y = initial(M.pixel_y)

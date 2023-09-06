@@ -562,7 +562,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/lighter/ignition_effect(atom/A, mob/user)
 	if(get_temperature())
-		. = "<span class='rose'>With a single flick of [user.ru_ego()] wrist, [user] smoothly lights [A] with [src]. Damn [user.ru_who()] cool.</span>"
+		. = "<span class='rose'>Одним плавным движением [user] поджигает [A]. Блин, [user.ru_who()], а ты крутой!</span>"
 
 /obj/item/lighter/proc/set_lit(new_lit)
 	lit = new_lit
@@ -587,7 +587,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		if(!lit)
 			set_lit(TRUE)
 			if(fancy)
-				user.visible_message("Одним плавным движением <b>[user]</b> открывает и тем самым образом зажигает '[src]'!", "<span class='notice'><b>Вы одним плавным движением открываете и таким-то образом зажигаете '[src]'!</b>.</span>")
+				user.visible_message("Одним плавным движением <b>[user]</b> открывает и зажигает '[src]'!", "<span class='notice'><b>Вы одним плавным движением открываете и зажигаете '[src]'!</b>.</span>")
 				playsound(src, 'sound/weapons/zippolight.ogg', 40, TRUE)
 			else
 				var/prot = FALSE
@@ -613,10 +613,10 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		else
 			set_lit(FALSE)
 			if(fancy)
-				user.visible_message("Вы слышите тихий щелчок, когда <b>[user]</b> отключает '[src]', даже не глядя на то, что делает. Вау!", "<span class='notice'><b>Вы практически бесшумно отключили '[src]', даже не глядя на то, что вы делаете. Вау!</b></span>")
+				user.visible_message("Вы слышите тихий щелчок со стороны <b>[user]</b>.", "<span class='notice'><b>Вы практически бесшумно закрыли '[src]'.</b></span>")
 				playsound(src, 'sound/weapons/zippoclose.ogg', 40, TRUE)
 			else
-				user.visible_message("<b>[user]</b> тихо отключает '[src]' одним плавным движением.", "<span class='notice'><b>Вы тихо отключили '[src]' одним плавным движением.</b></span>")
+				user.visible_message("<b>[user]</b> закрыли '[src]' одним плавным движением.", "<span class='notice'><b>Вы закрыли '[src]' одним плавным движением.</b></span>")
 	else
 		. = ..()
 

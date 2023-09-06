@@ -93,6 +93,7 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 	delete_on_mind_deletion = FALSE
 	threat = 5
 	show_to_ghosts = TRUE
+	soft_antag = FALSE // BLUEMOON ADDITION
 	var/obligation
 	var/ban
 	var/bane

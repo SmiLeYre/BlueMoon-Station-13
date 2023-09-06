@@ -830,6 +830,11 @@
 	else if(HAS_TRAIT(src, TRAIT_QUICK_CARRY))
 		carrydelay = 40
 		skills_space = "quickly "
+	// BLUEMOON ADDITION AHEAD - тяжёлых и сверхтяжёлых персонажей нельзя нести на плече
+	if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))
+		to_chat(src, span_warning("You tried to lift [target], but they are too heavy!"))
+		return
+	// BLUEMOON ADDITION END
 	if(can_be_firemanned(target) && !incapacitated(FALSE, TRUE))
 		visible_message("<span class='notice'>[src] starts [skills_space]lifting [target] onto their back..</span>",
 		//Joe Medic starts quickly/expertly lifting Grey Tider onto their back..
@@ -850,11 +855,42 @@
 /mob/living/carbon/human/proc/piggyback(mob/living/carbon/target)
 	if(can_piggyback(target))
 		visible_message("<span class='notice'>[target] starts to climb onto [src]...</span>")
-		if(do_after(target, 15, target = src, required_mobility_flags = MOBILITY_STAND))
+		// BLUEMOON ADDITION START - тяжёлые персонажи дольше забираются на спину
+		var/climb_on_time = 1.5 SECONDS
+		if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))
+			climb_on_time = 4 SECONDS // Время, чтобы задуматься над смыслом жизни
+		else if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY))
+			climb_on_time = 2.5 SECONDS
+		// BLUEMOON ADDITION END
+		if(do_after(target, climb_on_time, target = src, required_mobility_flags = MOBILITY_STAND)) // BLUEMOON CHANGES
 			if(can_piggyback(target))
 				if(target.incapacitated(FALSE, TRUE) || incapacitated(FALSE, TRUE))
 					target.visible_message("<span class='warning'>[target] can't hang onto [src]!</span>")
 					return
+				// BLUEMOON ADDITION START
+				if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))
+					target.visible_message(span_warning("[target] слишком много весит для [src]!"))
+					var/obj/item/bodypart/affecting = get_bodypart(BODY_ZONE_CHEST)
+					var/wound_bon = 100
+					var/damage = 40
+
+					if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))
+						wound_bon += 300
+						damage += 120
+						to_chat(src, span_danger("Умные мысли преследуют вас, но вы всегда быстрее!"))
+						to_chat(target, span_danger("Вы случайно упали на [src], скорее всего сломав ему что-то!"))
+					else
+						to_chat(src, span_danger("Вы сминаетесь под весом [target]!"))
+						to_chat(target, span_danger("Вы случайно упали на [src]!"))
+
+					apply_damage(damage, BRUTE, affecting, wound_bonus=wound_bon)
+					playsound(src, 'sound/effects/splat.ogg', 50, TRUE)
+					AddElement(/datum/element/squish, 20 SECONDS) // Totally not stolen from a vending machine code
+					Knockdown(3 SECONDS) // Knocking down the unlucky guy
+					target.Knockdown(1) // simply make the oversized one fall
+					if(get_turf(target) != get_turf(src))
+						target.throw_at(get_turf(src), 1, 1, FALSE, FALSE)
+					// BLUEMOON ADDITION END
 				buckle_mob(target, TRUE, TRUE, 0, 1, 2, FALSE)
 		else
 			visible_message("<span class='warning'>[target] fails to climb onto [src]!</span>")

@@ -14,7 +14,7 @@
 	protected_roles = list("Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGES
 	restricted_roles = list("AI", "Cyborg") //BLUEMOON CHANGES
 	required_candidates = 1
-	weight = 3 //BLUEMOON CHANGES
+	weight = 13 //BLUEMOON CHANGES
 	cost = 8 // Avoid raising traitor threat above 10, as it is the default low cost ruleset.
 	scaling_cost = 9
 	requirements = list(101,10,10,10,10,10,10,10,10,10) //BLUEMOON CHANGES
@@ -56,7 +56,7 @@
 	protected_roles = list("Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGES
 	restricted_roles = list("Cyborg", "AI")
 	required_candidates = 2
-	weight = 3 //BLUEMOON CHANGES
+	weight = 6 //BLUEMOON CHANGES
 	cost = 15
 	scaling_cost = 15
 	requirements = list(101,101,101,101,60,50,40,30,20,10) //BLUEMOON CHANGES
@@ -104,7 +104,7 @@
 	protected_roles = list("Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
 	restricted_roles = list("AI", "Cyborg")
 	required_candidates = 1
-	weight = 3
+	weight = 8 //BLUEMOON CHANGES
 	cost = 15 //BLUEMOON CHANGES
 	scaling_cost = 10
 	requirements = list(101,101,60,50,40,30,20,15,10,10) //BLUEMOON CHANGES
@@ -139,7 +139,7 @@
 	protected_roles = list("Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
 	restricted_roles = list("AI", "Cyborg")
 	required_candidates = 1
-	weight = 3
+	weight = 8 //BLUEMOON CHANGES
 	cost = 15
 	scaling_cost = 9
 	requirements = list(101,101,101,50,40,20,20,15,10,10) //higher because of 'round end'
@@ -180,7 +180,7 @@
 	minimum_required_age = 14
 	restricted_roles = list("Head of Security", "Captain") // Just to be sure that a wizard getting picked won't ever imply a Captain or HoS not getting drafted
 	required_candidates = 1
-	weight = 3
+	weight = 6 //BLUEMOON CHANGES
 	cost = 20
 	requirements = list(101,101,101,60,40,20,20,20,10,10)  //BLUEMOON CHANGES
 	var/list/roundstart_wizards = list()
@@ -280,7 +280,7 @@
 	minimum_required_age = 14
 	restricted_roles = list("Head of Security", "Captain") // Just to be sure that a nukie getting picked won't ever imply a Captain or HoS not getting drafted
 	required_candidates = 5
-	weight = 3
+	weight = 3 //BLUEMOON CHANGES
 	cost = 20
 	requirements = list(101,101,101,101,101,101,60,40,30,10) //BLUEMOON CHANGES
 	flags = HIGH_IMPACT_RULESET
@@ -699,7 +699,7 @@ BLUEMOON REMOVAL END*/
 	antag_flag_override = ROLE_NINJA
 	flags = LONE_RULESET
 	required_candidates = 1
-	weight = 3
+	weight = 6 //BLUEMOON CHANGES
 	cost = 20
 	requirements = list(101,101,101,60,40,20,20,20,10,10)
 	var/list/spawn_locs = list()
@@ -788,6 +788,89 @@ BLUEMOON REMOVAL END*/
 		new_xeno.key = current_key
 
 		return new_xeno
+
+//////////////////////////////////////////////
+//                                          //
+//               BLOODSUCKERS               //
+//                                          //
+//////////////////////////////////////////////
+
+/datum/dynamic_ruleset/roundstart/bloodsuckers
+	name = "Bloodsuckers"
+	antag_flag = ROLE_BLOODSUCKER
+	antag_datum = /datum/antagonist/bloodsucker
+	protected_roles = list("Prisoner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain")
+	restricted_roles = list("AI", "Cyborg")
+	required_candidates = 1
+	weight = 6
+	cost = 15
+	scaling_cost = 10
+	requirements = list(101,101,60,50,40,30,20,15,10,10)
+	antag_cap = 2
+
+/datum/dynamic_ruleset/roundstart/bloodsuckers/pre_execute(population)
+	. = ..()
+	var/num_bloodsuckers = get_antag_cap(population) * (scaled_times + 1)
+	for (var/i = 1 to num_bloodsuckers)
+		var/mob/M = pick_n_take(candidates)
+		assigned += M.mind
+		M.mind.restricted_roles = restricted_roles
+		M.mind.special_role = antag_flag
+	return TRUE
+
+//////////////////////////////////////////////
+//                                          //
+//               OVERTHROWN                 //
+//                                          //
+//////////////////////////////////////////////
+
+
+/* TODO
+/datum/dynamic_ruleset/roundstart/overthrown
+	name = "Overthrown"
+	antag_flag = ROLE_OVERTHROW
+	antag_datum = /datum/antagonist/overthrow
+	minimum_required_age = 0
+	restricted_roles = list("AI", "Cyborg", "Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
+	required_candidates = 1
+	weight = 38888
+	delay = 5 SECONDS //BLUEMOON CHANGES
+	cost = 0
+	requirements = list(1,101,101,101,101,60,50,40,30,20) //BLUEMOON CHANGES
+	antag_cap = 3
+	flags = HIGH_IMPACT_RULESET
+
+/datum/dynamic_ruleset/roundstart/overthrown/pre_execute(population)
+	. = ..()
+	message_admins("В связи с особенностями игрового режима и заходом игроков после начала раунда, до выдачи ролей путчистов осталось <b>[delay/10] минут.</b>")
+
+
+	var/active_players = 0
+	for(var/mob/dead/new_player/player in GLOB.player_list)
+		if(player.client)
+			active_players++
+
+//	var/max_candidates = required_enemies + round(active_players*0.05) // At 100 players, it'd be 2 + 5 = 7 teams existing.
+	var/max_candidates = 1
+
+	for (var/i in 1 to max_candidates)
+		if(candidates.len <= 0)
+			break
+		var/mob/M = pick_n_take(candidates)
+		assigned += M.mind
+		M.mind.restricted_roles = restricted_roles
+		M.mind.special_role = antag_flag
+	return TRUE
+
+/// Give your candidates or assignees equipment and antag datum here.
+/datum/dynamic_ruleset/oundstart/overthrown/execute()
+	for(var/datum/mind/M in assigned)
+		var/datum/antagonist/overthrow/O = M.add_antag_datum(/datum/antagonist/overthrow) // create_team called on_gain will create the team
+		O.equip_initial_overthrow_agent()
+	return TRUE
+
+*/
+
 /* - TODO (for someone)
 //////////////////////////////////////////////
 //                                          //

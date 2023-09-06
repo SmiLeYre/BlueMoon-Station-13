@@ -27,6 +27,33 @@
 		H.update_mutant_bodyparts()
 		H.update_hair()
 
+/obj/structure/sign/flag/skull
+	name = "flag of PMC Skull"
+	desc = "Black flag with a skull in the center. Has a red lining. The flag smells of blood."
+	icon = 'modular_bluemoon/krashly/icons/obj/skull_flag.dmi'
+	icon_state = "full"
+	item_flag = /obj/item/sign/flag/skull
+
+/obj/item/sign/flag/skull
+	name = "folded flag of the PMC Skull"
+	desc = "The folded flag of the PMC Skull."
+	icon = 'modular_bluemoon/krashly/icons/obj/skull_flag.dmi'
+	icon_state = "mini"
+	sign_path = /obj/structure/sign/flag/skull
+
+/obj/structure/closet/crate/coffin/attacked_by(obj/item/sign/flag/skull/I, mob/living/user)
+	icon = 'modular_bluemoon/krashly/icons/obj/skull_flag.dmi'
+	icon_state = "grob_full"
+	locked = TRUE
+	qdel(I)
+
+/datum/gear/donator/bm/skull_flag
+	name = "PMC Skull flag"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/sign/flag/skull
+	ckeywhitelist = list("krashly", "stgs", "hazzi", "dolbajob")
+	subcategory = LOADOUT_SUBCATEGORIES_DON10
+
 //InteQ
 
 /obj/item/poster/random_inteq

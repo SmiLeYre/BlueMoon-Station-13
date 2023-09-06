@@ -79,6 +79,15 @@
 			if(pushed_mob.buckled)
 				to_chat(user, "<span class='warning'>[pushed_mob] is buckled to [pushed_mob.buckled]!</span>")
 				return
+			// BLUEMOON ADDITION AHEAD - сверхтяжёлых персонажей нельзя положить на стол, только если ты сам не сверхтяжёлый, киборг или халк
+			if(HAS_TRAIT(pushed_mob, TRAIT_BLUEMOON_HEAVY_SUPER))
+				if(!issilicon(user))
+					if(iscarbon(user) && !HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY_SUPER))
+						var/mob/living/carbon/C = user
+						if(!C.dna.check_mutation(HULK))
+							to_chat(user, span_warning("Слишком много весит!"))
+							return
+			// BLUEMOON ADDITION END
 			if(user.a_intent == INTENT_GRAB)
 				if(user.grab_state < GRAB_AGGRESSIVE)
 					to_chat(user, "<span class='warning'>You need a better grip to do that!</span>")
@@ -129,6 +138,18 @@
 	pushed_mob.visible_message("<span class='notice'>[user] places [pushed_mob] onto [src].</span>", \
 								"<span class='notice'>[user] places [pushed_mob] onto [src].</span>")
 	log_combat(user, pushed_mob, "placed")
+	// BLUEMOON ADDITION AHEAD - тяжёлые и сверхтяжёлые персонажи при толчке на стол ломают его
+	var/break_table = FALSE
+	if(HAS_TRAIT(pushed_mob, TRAIT_BLUEMOON_HEAVY_SUPER)) // сверхтяжёлые персонажи всегда ломают стол (им не важно, есть он под ними или нет
+		break_table = TRUE
+	else if(HAS_TRAIT(pushed_mob, TRAIT_BLUEMOON_HEAVY))
+		if(!istype(src, /obj/structure/table/optable)) // тяжёлых персонажей всё ещё можно класть на хирургический стол, не ломая его в процессе
+			break_table = TRUE
+	if(break_table)
+		pushed_mob.visible_message("<span class='danger'>[user] breaks [src] with [pushed_mob]'s weight!</span>", \
+									"<span class='userdanger'>You break [src] with your weight!</span>")
+		deconstruct(TRUE)
+	// BLUEMOON ADDITION END
 
 /obj/structure/table/proc/tablepush(mob/living/user, mob/living/pushed_mob)
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))
@@ -153,6 +174,12 @@
 	if(iscatperson(H))
 		H.emote("nya")
 	SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "table", /datum/mood_event/table)
+	// BLUEMOON ADDITION AHEAD - тяжёлые и сверхтяжёлые персонажи при толчке на стол ломают его
+	if(HAS_TRAIT(pushed_mob, TRAIT_BLUEMOON_HEAVY_SUPER) || HAS_TRAIT(pushed_mob, TRAIT_BLUEMOON_HEAVY))
+		pushed_mob.visible_message("<span class='danger'>[user] breaks [src] with [pushed_mob]'s weight!</span>", \
+								"<span class='userdanger'>You break [src] with your weight!</span>")
+		deconstruct(TRUE)
+	// BLUEMOON ADDITION END
 
 /obj/structure/table/proc/tablelimbsmash(mob/living/user, mob/living/pushed_mob)
 	pushed_mob.Knockdown(30)
@@ -169,6 +196,12 @@
 								"<span class='userdanger'>[user] smashes your [banged_limb.name] against \the [src]</span>")
 	log_combat(user, pushed_mob, "head slammed", null, "against [src]")
 	SEND_SIGNAL(pushed_mob, COMSIG_ADD_MOOD_EVENT, "table", /datum/mood_event/table_limbsmash, banged_limb)
+	// BLUEMOON ADDITION AHEAD - тяжёлые и сверхтяжёлые персонажи при толчке на стол ломают его
+	if(HAS_TRAIT(pushed_mob, TRAIT_BLUEMOON_HEAVY_SUPER) || HAS_TRAIT(pushed_mob, TRAIT_BLUEMOON_HEAVY))
+		pushed_mob.visible_message("<span class='danger'>[user] breaks [src] with [pushed_mob]'s weight!</span>", \
+								"<span class='userdanger'>You break [src] with your weight!</span>")
+		deconstruct(TRUE)
+	// BLUEMOON ADDITION END
 
 /obj/structure/table/shove_act(mob/living/target, mob/living/user)
 	if(CHECK_MOBILITY(target, MOBILITY_STAND))

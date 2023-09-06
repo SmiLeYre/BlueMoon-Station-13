@@ -149,7 +149,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	name = "Syndicate Security Officer"
 	jobtype = /datum/job/officer
 
-	belt = /obj/item/pda/syndicate/no_deto
+	//belt = /obj/item/pda/syndicate/no_deto
 
 	ears = /obj/item/radio/headset/headset_sec/alt
 	uniform = /obj/item/clothing/under/rank/security/officer/util

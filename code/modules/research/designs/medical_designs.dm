@@ -183,6 +183,16 @@
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
+/datum/design/sensor_device
+	name = "Handheld Crew Monitor"
+	desc = "A miniature machine that tracks suit sensors across the station."
+	id = "sensor_device"
+	build_path = /obj/item/sensor_device
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 10000, /datum/material/glass = 5000, /datum/material/silver = 5000, /datum/material/gold = 3000)
+	category = list("Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+
 /datum/design/medspray
 	name = "Medical Spray"
 	desc = "A medical spray bottle, designed for precision application, with an unscrewable cap."

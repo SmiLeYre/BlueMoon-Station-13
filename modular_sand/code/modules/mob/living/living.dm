@@ -21,6 +21,18 @@
 		resize = new_size / cur_size
 		update_transform()
 	adjust_mobsize(new_size)
+
+	// BLUEMOON ADDITION AHEAD - вызов проверки на размер у персонажа
+	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
+		for(var/datum/quirk/bluemoon_heavy_super/quirk in roundstart_quirks)
+			quirk.update_size_movespeed()
+			quirk.check_mob_size()
+
+	else if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY))
+		for(var/datum/quirk/bluemoon_heavy/quirk in roundstart_quirks)
+			quirk.update_size_movespeed()
+	// BLUEMOON ADDITION END
+
 	SEND_SIGNAL(src, COMSIG_MOB_RESIZED, new_size, cur_size)
 	return TRUE
 

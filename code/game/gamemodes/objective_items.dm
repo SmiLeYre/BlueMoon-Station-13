@@ -107,6 +107,11 @@
 	excludefromjob = list("NanoTrasen Representative")
 	altitems = /obj/item/stamp/syndicate
 
+/datum/objective_item/steal/krav_maga
+	name = "особые перчатки Смотрителя службы безопасности."
+	targetitem = /obj/item/clothing/gloves/krav_maga/sec
+	difficulty = 10
+
 /datum/objective_item/steal/blackbox
 	name = "черный ящик из бортового устройства записи. Позаботьтесь о том, чтобы при извлечении черного ящика вы использовали соответствующее оборудование безопасности, так как телекоммуникационный массив, скорее всего, будет находиться в негостеприимных, особо холодных условиях."
 	targetitem = /obj/item/blackbox //steal the forbidden ssblackbox

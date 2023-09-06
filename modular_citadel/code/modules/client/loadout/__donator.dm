@@ -35,6 +35,13 @@
 	ckeywhitelist = list()
 	donator_group_id = DONATOR_GROUP_TIER_1
 
+/datum/gear/donator/neck_gaiter
+	name = "The Neck Gaiter"
+	slot = ITEM_SLOT_MASK
+	path = /obj/item/clothing/mask/gas/sechailer/syndicate
+	ckeywhitelist = list()
+	donator_group_id = DONATOR_GROUP_TIER_1
+
 /datum/gear/donator/pseudo_euclidean_tennis_sphere
 	name = "Pseudo-Euclidean Interdimensional Tennis Sphere"
 	slot = ITEM_SLOT_MASK
@@ -737,3 +744,19 @@
 	slot = ITEM_SLOT_ICLOTHING
 	path = /obj/item/clothing/under/misc/psyche
 	ckeywhitelist = list()
+	donator_group_id = DONATOR_GROUP_TIER_1
+
+/datum/gear/donator/switchblade
+	name = "Cool Switchblade"
+	slot = ITEM_SLOT_LPOCKET
+	path = /obj/item/switchblade
+	ckeywhitelist = list()
+	cost = 6
+	donator_group_id = DONATOR_GROUP_TIER_1
+
+/datum/gear/donator/noir_trenchcoat
+	name = "Noir Trenchcoat"
+	slot = ITEM_SLOT_OCLOTHING
+	path = /obj/item/clothing/suit/det_suit/grey
+	ckeywhitelist = list()
+	donator_group_id = DONATOR_GROUP_TIER_1

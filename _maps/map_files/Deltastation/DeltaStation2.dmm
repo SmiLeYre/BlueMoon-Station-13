@@ -90826,9 +90826,6 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
-/obj/structure/chair/comfy/black{
-	dir = 8
-	},
 /turf/open/floor/plasteel,
 /area/security/office)
 "laA" = (
@@ -125843,6 +125840,7 @@
 /turf/open/floor/plasteel,
 /area/cargo/sorting)
 "wnD" = (
+/mob/living/simple_animal/pet/dog/corgi/pig/assistant,
 /turf/open/floor/wood,
 /area/service/abandoned_gambling_den/secondary)
 "wnH" = (

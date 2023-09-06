@@ -113,7 +113,8 @@
 		head_attack_message = " on the head"
 		//Knockdown the target for the duration that we calculated and divide it by 5.
 		if(armor_duration)
-			target.DefaultCombatKnockdown(min(armor_duration, 200)) // Never knockdown more than a flash!
+			if(!HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER)) // BLUEMOON ADDITION - вы не можете опрокинуть сверхтяжёлого персонажа ударом бутылки о голову
+				target.DefaultCombatKnockdown(min(armor_duration, 200)) // Never knockdown more than a flash!
 
 	//Display an attack message.
 	if(target != user)

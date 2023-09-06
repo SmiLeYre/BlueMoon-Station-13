@@ -26313,7 +26313,6 @@
 /area/hallway/primary/port)
 "nSV" = (
 /obj/structure/reagent_dispensers/keg/mead,
-/obj/structure/reagent_dispensers/beerkeg,
 /obj/machinery/camera/preset{
 	dir = 10
 	},

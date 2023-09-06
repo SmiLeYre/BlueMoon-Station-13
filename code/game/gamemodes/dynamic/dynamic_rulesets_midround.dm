@@ -180,7 +180,7 @@
 
 //////////////////////////////////////////////
 //                                          //
-//           INTEQ TRAITORS             //
+//           INTEQ TRAITORS                 //
 //                                          //
 //////////////////////////////////////////////
 
@@ -215,10 +215,10 @@
 		log_game("DYNAMIC: Random chance to roll autotraitor failed, it was a [mode.threat_level]% chance.")
 		return FALSE
 
-	return ..()
+	..()
 
 /datum/dynamic_ruleset/midround/autotraitor/trim_candidates()
-	..()
+	. = ..()
 	for(var/mob/living/player in living_players)
 		if(issilicon(player)) // Your assigned role doesn't change when you are turned into a silicon.
 			living_players -= player
@@ -256,8 +256,8 @@
 	antag_flag_override = ROLE_FAMILIES
 	restricted_roles = list("AI", "Cyborg", "Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")  //BLUEMOON CHANGES
 	required_candidates = 9
-	weight = 3
-	cost = 15
+	weight = 4 //BLUEMOON CHANGES
+	cost = 10 //BLUEMOON CHANGES - низкая цена, т.к. надо в соло поднять семью
 	requirements = list(101,101,101,50,30,20,10,10,10,10)
 	flags = HIGH_IMPACT_RULESET
 	blocking_rules = list(/datum/dynamic_ruleset/roundstart/families)
@@ -265,7 +265,7 @@
 	var/datum/gang_handler/handler
 
 /datum/dynamic_ruleset/midround/families/trim_candidates()
-	..()
+	. = ..()
 	candidates = living_players
 	for(var/mob/living/player in candidates)
 		if(issilicon(player))
@@ -318,13 +318,13 @@
 	exclusive_roles = list("AI")
 	required_enemies = list(0,0,0,0,0,0,0,0,0,0)
 	required_candidates = 1
-	weight = 3
+	weight = 6 //BLUEMOON CHANGES
 	cost = 15 //BLUEMOON CHANGES - было 35, сейчас это обычный предатель
 	requirements = list(101,101,80,70,60,60,50,50,40,40)
 	required_type = /mob/living/silicon/ai
 
 /datum/dynamic_ruleset/midround/malf/trim_candidates()
-	..()
+	. = ..()
 	candidates = living_players
 	for(var/mob/living/player in candidates)
 		if(!isAI(player))
@@ -368,8 +368,8 @@
 	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGES
 	required_enemies = list(0,0,0,0,0,0,0,0,0,0)
 	required_candidates = 1
-	weight = 2
-	cost = 20
+	weight = 5 //BLUEMOON CHANGES
+	cost = 15 //BLUEMOON CHANGES
 	requirements = list(101,101,100,60,40,20,20,20,10,10)
 	repeatable = TRUE
 	var/datum/mind/wizard
@@ -589,7 +589,7 @@
 	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGES
 	required_enemies = list(0,0,0,0,0,0,0,0,0,0)
 	required_candidates = 1
-	weight = 2
+	weight = 3 //BLUEMOON CHANGES
 	cost = 10
 	requirements = list(101,101,101,101,50,40,30,20,10,10)
 	repeatable = TRUE
@@ -609,7 +609,7 @@
 	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGES
 	required_enemies = list(0,0,0,0,0,0,0,0,0,0)
 	required_candidates = 1
-	weight = 2
+	weight = 3 //BLUEMOON CHANGES
 	cost = 10
 	requirements = list(101,101,101,101,50,40,30,20,10,10)
 	repeatable = TRUE
@@ -694,7 +694,7 @@
 	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGES
 	required_enemies = list(0,0,0,4,4,3,3,2,0,0) //BLUEMOON CHANGES
 	required_candidates = 1
-	weight = 3 //BLUEMOON CHANGES
+	weight = 6 //BLUEMOON CHANGES
 	cost = 10
 	requirements = list(101,101,101,50,30,25,20,10,10,10) //BLUEMOON CHANGES
 	repeatable = TRUE
@@ -741,7 +741,7 @@
 	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGE (should we include miners?)
 	required_enemies = list(0,0,0,0,5,5,4,4,3,0) //BLUEMOON CHANGES
 	required_candidates = 1
-	weight = 3
+	weight = 6 //BLUEMOON CHANGES
 	cost = 10
 	requirements = list(101,101,101,101,50,40,30,20,10,10)
 	repeatable = TRUE
@@ -860,7 +860,7 @@
 	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGES
 	required_enemies = list(0,0,0,0,5,5,4,4,3,0) //BLUEMOON CHANGES
 	required_candidates = 1
-	weight = 3 //BLUEMOON CHANGES
+	weight = 6 //BLUEMOON CHANGES
 	cost = 10
 	requirements = list(101,101,101,101,60,50,30,20,10,10) //BLUEMOON CHANGES
 	repeatable = TRUE
@@ -947,7 +947,7 @@
 	antag_flag = "Sentient Disease"
 	antag_flag_override = ROLE_ALIEN
 	required_candidates = 1
-	weight = 3 //BLUEMOON CHANGES
+	weight = 6 //BLUEMOON CHANGES
 	cost = 10
 	requirements = list(101,101,101,50,30,25,20,10,10,10) //BLUEMOON CHANGES
 	repeatable = TRUE
@@ -969,7 +969,7 @@
 	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGE
 	required_enemies = list(0,0,0,0,0,5,4,3,3,3) //BLUEMOON CHANGES
 	required_candidates = 0
-	weight = 3 //BLUEMOON CHANGES
+	weight = 6 //BLUEMOON CHANGES
 	cost = 10
 	requirements = list(101,101,101,101,101,40,30,20,10,10) //BLUEMOON CHANGES
 	repeatable = TRUE
@@ -988,3 +988,49 @@
 #undef MALF_ION_PROB
 /// The probability to replace an existing law with an ion law instead of adding a new ion law.
 #undef REPLACE_LAW_WITH_ION_PROB
+
+// BLUEMOON ADD START
+
+//////////////////////////////////////////////
+//                                          //
+//            BLOODSUCKERS                  //
+//                                          //
+//////////////////////////////////////////////
+
+/datum/dynamic_ruleset/midround/bloodsuckers
+	name = "Bloodsuckers"
+	antag_flag = ROLE_BLOODSUCKER
+	antag_datum = /datum/antagonist/bloodsucker
+	protected_roles = list("Prisoner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain")
+	restricted_roles = list("AI", "Cyborg")
+	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGES
+	required_enemies = 3
+	required_candidates = 1
+	weight = 6
+	cost = 15
+	scaling_cost = 10
+	requirements = list(101,101,60,50,40,30,20,15,10,10)
+	antag_cap = list("denominator" = 24, "offset" = 1)
+
+/datum/dynamic_ruleset/midround/bloodsuckers/trim_candidates()
+	. = ..()
+	candidates = living_players
+	for(var/mob/living/player in candidates)
+		if(issilicon(player)) // никаких боргов
+			candidates -= player
+		else if(is_centcom_level(player.z))  // никаких ЦКшников
+			candidates -= player
+		else if(player.mind && (player.mind.special_role || player.mind.antag_datums?.len > 0)) // никаких мульти-антагонистов
+			candidates -= player
+		else if(HAS_TRAIT(player, TRAIT_MINDSHIELD)) // никаких кровососов с защитой разума
+			candidates -= player
+
+/datum/dynamic_ruleset/midround/bloodsuckers/pre_execute(population)
+	. = ..()
+	var/num_bloodsuckers = get_antag_cap(population) * (scaled_times + 1)
+	for (var/i = 1 to num_bloodsuckers)
+		var/mob/M = pick_n_take(candidates)
+		assigned += M.mind
+		M.mind.restricted_roles = restricted_roles
+		M.mind.special_role = antag_flag
+	return TRUE

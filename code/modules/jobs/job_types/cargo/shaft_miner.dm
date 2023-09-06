@@ -59,7 +59,7 @@
 	name = "Syndicate Shaft Miner"
 	jobtype = /datum/job/mining
 
-	belt = /obj/item/pda/syndicate/no_deto
+	//belt = /obj/item/pda/syndicate/no_deto
 
 	ears = /obj/item/radio/headset/headset_cargo/mining
 	shoes = /obj/item/clothing/shoes/jackboots/tall

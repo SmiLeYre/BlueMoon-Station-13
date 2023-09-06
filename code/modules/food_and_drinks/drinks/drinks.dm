@@ -502,7 +502,7 @@
 
 /obj/item/reagent_containers/food/drinks/soda_cans/attack(mob/M, mob/user)
 	if(M == user && !src.reagents.total_volume && user.a_intent == INTENT_HARM && user.zone_selected == BODY_ZONE_HEAD)
-		user.visible_message("<span class='warning'><b>[user]</b> раздавливает банку '<b>[src]</b>' об свою собственную голову. Круто!</span>", "<span class='notice'>Вы раздавливаете банку с '<b>[src]</b>' об свою собственную голову. Круто!</span>")
+		user.visible_message("<span class='warning'><b>[user]</b> давит банку '<b>[src]</b>' об свою голову. Круто!</span>", "<span class='notice'>Вы раздавили банку с '<b>[src]</b>' об свою голову. Круто!</span>")
 		playsound(user.loc,'sound/weapons/pierce.ogg', rand(10,50), 1)
 		var/obj/item/trash/can/crushed_can = new /obj/item/trash/can(user.loc)
 		crushed_can.icon_state = icon_state
@@ -513,7 +513,7 @@
 
 /obj/item/reagent_containers/food/drinks/soda_cans/attack_self(mob/user)
 	if(!is_drainable())
-		to_chat(user, "You pull back the tab of \the <b>[src]</b> with a satisfying pop.") //Ahhhhhhhh
+		to_chat(user, "Вы открываете \the <b>[src]</b>, дёргая за ключ-кольцо.") //Ahhhhhhhh
 		reagents.reagents_holder_flags |= OPENCONTAINER
 		playsound(src, "can_open", 50, 1)
 		spillable = TRUE

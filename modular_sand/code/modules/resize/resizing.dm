@@ -59,7 +59,7 @@
 			user.forceMove(target.loc)
 			return TRUE
 
-		if(COMPARE_SIZES(user, target) >= 2)
+		if(COMPARE_SIZES(user, target) >= 1.6) // BLUEMOON CHANGES
 			log_combat(user, target, "stepped on", addition="[user.a_intent] trample")
 			if(user.a_intent == "disarm" && CHECK_MOBILITY(user, MOBILITY_MOVE) && !user.buckled)
 				now_pushing = 0
@@ -83,6 +83,12 @@
 				user.add_movespeed_modifier(/datum/movespeed_modifier/stomp, TRUE)
 				addtimer(CALLBACK(user, /mob/.proc/remove_movespeed_modifier, MOVESPEED_ID_STOMP, TRUE), 10) //1 second
 				//user.Stun(20)
+				// BLUEMOON ADDITION START - персонажи с тяжёлыми квирками наносят больше урона и на дольше станят, но сами получают стан
+				if(HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY))
+					user.Stun(0.5 SECONDS)
+				else if(HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY_SUPER))
+					user.Stun(1 SECONDS)
+				// BLUEMOON ADDITION END
 				if(iscarbon(user))
 					if(istype(user) && (user.dna.features["taur"] == "Naga" || user.dna.features["taur"] == "Tentacle"))
 						target.visible_message("<span class='danger'>[src] mows down [target] under their tail!</span>", "<span class='userdanger'>[src] plows their tail over you mercilessly!</span>")
@@ -141,17 +147,40 @@
 
 //Proc for scaling stamina damage on size difference
 /mob/living/carbon/proc/sizediffStamLoss(mob/living/carbon/target)
-	var/S = COMPARE_SIZES(src, target) * 25 //macro divided by micro, times 25
-	target.Knockdown(S) //final result in stamina knockdown
+	var/S = COMPARE_SIZES(src, target) * 5 //macro divided by micro, times 25 // BLUEMOON CHANGES - было 25, стало 5
+	// BLUEMOON ADDITION AHEAD - усиление конечно результата за наличие квирка на тяжесть или сверхтяжесть
+	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY))
+		S *= 1.5 // Если 100% наступает на 50% или 200% наступает на 100%, то наносится 15
+	else if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
+		S *= 2 // Если 100% наступает на 50% или 200% наступает на 100%, то наносится 20 (у станбатона 35)
+	target.apply_damage(S, STAMINA, BODY_ZONE_CHEST) // дополнительный урон по стамине за нерф опрокидывания на пол, т.к. чрезвычайно сильное в оригинале
+	target.Dizzy(5)
+	// BLUEMOON ADDITION END
+	target.Knockdown(S/2) //final result in stamina knockdown // BLUEMOON CHANGES
+
 
 //Proc for scaling stuns on size difference (for grab intent)
 /mob/living/carbon/proc/sizediffStun(mob/living/carbon/target)
 	var/T = COMPARE_SIZES(src, target) * 2 //Macro divided by micro, times 2
+	// BLUEMOON ADDITION AHEAD - усиление конечно результата за наличие квирка на тяжесть или сверхтяжесть
+	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY))
+		T *= 1.5
+	else if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
+		T *= 2
+	// BLUEMOON ADDITION END
 	target.Stun(T)
 
 //Proc for scaling brute damage on size difference
 /mob/living/carbon/proc/sizediffBruteloss(mob/living/carbon/target)
 	var/B = COMPARE_SIZES(src, target) * 3 //macro divided by micro, times 3
+	to_chat(src, "[B]")
+	// BLUEMOON ADDITION AHEAD - усиление конечно результата за наличие квирка на тяжесть или сверхтяжесть
+	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY))
+		B *= 2
+	else if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
+		B *= 3
+	to_chat(src, "Конечная [B]")
+	// BLUEMOON ADDITION END
 	target.adjustBruteLoss(B) //final result in brute loss
 
 //Proc for instantly grabbing valid size difference. Code optimizations soon(TM)

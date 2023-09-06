@@ -47,7 +47,7 @@
 
 //////////////////////////////////////////////
 //                                          //
-//           INTEQ TRAITORS             //
+//           INTEQ TRAITORS                 //
 //                                          //
 //////////////////////////////////////////////
 
@@ -59,7 +59,7 @@
 	protected_roles = list("Shaft Miner", "NanoTrasen Representative", "Lawyer", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
 	restricted_roles = list("AI", "Cyborg")
 	required_candidates = 1
-	weight = 3  //BLUEMOON CHANGES
+	weight = 6  //BLUEMOON CHANGES
 	cost = 6 //BLUEMOON CHANGES
 	requirements = list(101,40,25,20,15,10,10,10,10,10)
 	repeatable = TRUE
@@ -82,7 +82,7 @@
 	required_candidates = 1
 	weight = 2
 	delay = 1 MINUTES // Prevents rule start while head is offstation.
-	cost = 20
+	cost = 7 //BLUEMOON CHANGES - маленький шанс и низкая стоимость из-за сложности
 	requirements = list(101,101,101,101,50,20,20,20,20,20)
 	flags = HIGH_IMPACT_RULESET
 	blocking_rules = list(/datum/dynamic_ruleset/roundstart/revs)
@@ -155,7 +155,7 @@
 	protected_roles = list("Shaft Miner", "NanoTrasen Representative", "Lawyer", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Prisoner", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")  //BLUEMOON CHANGES
 	restricted_roles = list("AI", "Cyborg", "Prisoner")  //BLUEMOON CHANGES
 	required_candidates = 1
-	weight = 3 //BLUEMOON CHANGES
+	weight = 4 //BLUEMOON CHANGES
 	cost = 10
 	requirements = list(101,101,101,50,40,20,20,15,10,10)
 	repeatable = TRUE
@@ -169,24 +169,39 @@
 
 /datum/dynamic_ruleset/latejoin/silent_changeling
 	name = "Silent Changeling"
-	antag_datum = /datum/antagonist/changeling
 	antag_flag = "changeling late"
 	antag_flag_override = ROLE_CHANGELING
+	antag_datum = /datum/antagonist/changeling
 	protected_roles = list("Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
 	restricted_roles = list("AI", "Cyborg")
 	required_candidates = 1
-	weight = 3
+	weight = 4
 	cost = 10
 	requirements = list(101,101,60,50,40,30,20,15,10,10)
 	antag_cap = list("denominator" = 24)
 	repeatable = TRUE
 
-/datum/dynamic_ruleset/latejoin/silent_changeling/execute()
-	var/mob/M = pick(candidates)
-	assigned += M.mind
-	M.mind.special_role = antag_flag
-	var/datum/antagonist/changeling/new_antag = new antag_datum()
-	M.mind.add_antag_datum(new_antag)
-	log_admin("[M.name] was made into a [name] by dynamic.")
-	return TRUE
+//////////////////////////////////////////////
+//                                          //
+//            LATE BLOODSUCKERS             //
+//                                          //
+//////////////////////////////////////////////
+
+/datum/dynamic_ruleset/latejoin/bloodsuckers
+	name = "Bloodsucker Guest"
+	antag_flag = "bloodsucker late"
+	antag_flag_override = ROLE_BLOODSUCKER
+	antag_datum = /datum/antagonist/bloodsucker
+	protected_roles = list("Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain")
+	restricted_roles = list("AI", "Cyborg")
+	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGES
+	required_enemies = list(2,2,1,1,1,1,1,0,0,0)
+	required_candidates = 1
+	weight = 4
+	cost = 10
+	scaling_cost = 10
+	requirements = list(101,101,60,50,40,30,20,15,10,10)
+	antag_cap = list("denominator" = 24, "offset" = 1)
+	repeatable = TRUE
+
 //BLUEMOON ADD END

@@ -10,6 +10,7 @@
 		/obj/item/clothing/shoes/jackboots = 20,
 		/obj/item/clothing/head/squatter_hat = 20,
 		/obj/item/clothing/under/misc/squatter = 20,
+		/obj/item/clothing/under/misc/squatter/pants = 20,
 		/obj/item/clothing/under/misc/blue_camo = 20,
 		/obj/item/clothing/head/russobluecamohat = 20
 		)

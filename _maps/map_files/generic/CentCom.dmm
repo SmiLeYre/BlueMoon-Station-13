@@ -14646,7 +14646,7 @@
 /area/tdome/tdomeobserve)
 "mBb" = (
 /mob/living/simple_animal/bot/medbot{
-	name = "InteQ Hospitality Drone"
+	name = "Syndicate Hospitality Drone"
 	},
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red,
@@ -23126,7 +23126,7 @@
 /turf/open/floor/grass,
 /area/centcom/evac)
 "tVr" = (
-/obj/structure/sign/flag/mars,
+/obj/structure/sign/flag/belarus,
 /turf/closed/indestructible/fakeglass,
 /area/tdome/tdomeobserve)
 "tWx" = (
@@ -70249,7 +70249,7 @@ uUJ
 qzY
 scI
 jbu
-dcx
+oTc
 tTH
 dTV
 dTV
@@ -70506,7 +70506,7 @@ uUJ
 gyQ
 scI
 gyQ
-oTc
+dcx
 tTH
 sWt
 sWt
@@ -71020,7 +71020,7 @@ rCv
 gyQ
 scI
 gyQ
-nia
+tVr
 tTH
 sWt
 sWt
@@ -72048,7 +72048,7 @@ uUJ
 gyQ
 scI
 gyQ
-tVr
+xYp
 tTH
 sWt
 sWt
@@ -72305,7 +72305,7 @@ uUJ
 qzY
 scI
 jbu
-xYp
+nia
 tTH
 qUB
 qUB

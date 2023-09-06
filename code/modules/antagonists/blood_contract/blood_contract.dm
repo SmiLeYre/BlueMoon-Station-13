@@ -3,6 +3,7 @@
 	name = "Blood Contract Target"
 	show_in_roundend = FALSE
 	show_in_antagpanel = FALSE
+	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/blood_contract/on_gain()
 	. = ..()

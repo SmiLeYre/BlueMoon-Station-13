@@ -151,6 +151,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF | GOLIATH_RESISTANCE
+	flags_inv = HIDETAUR
 
 /obj/item/clothing/head/hooded/cloakhood/drake
 	name = "drake helm"

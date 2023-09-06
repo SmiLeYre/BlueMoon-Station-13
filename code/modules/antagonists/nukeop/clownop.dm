@@ -5,6 +5,7 @@
 	antagpanel_category = "ClownOp"
 	threat = 7
 	nukeop_outfit = /datum/outfit/syndicate/clownop
+	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/nukeop/clownop/on_gain()
 	. = ..()
@@ -19,6 +20,7 @@
 	roundend_category = "clown operatives"
 	antagpanel_category = "ClownOp"
 	nukeop_outfit = /datum/outfit/syndicate/clownop/leader
+	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/nukeop/leader/clownop/give_alias()
 	title = pick("Head Honker", "Slipmaster", "Clown King", "Honkbearer")

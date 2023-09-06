@@ -36,7 +36,7 @@
 	reagents_amount = 100
 
 /datum/round_event/scrubber_overflow/female/announce()
-	priority_announce("Сеть скрубберов испытывает противодавление из-за откуда-то взявшегося в них СКВИРТА. Может произойти некоторое разбрызгивание содержимого.", "Атмосферная Тревога")
+	priority_announce("Сеть скрубберов испытывает противодавление из-за откуда-то взявшегося в них СКВИРТА. Может произойти некоторое разбрызгивание содержимого.", "Атмосферная Тревога", 'sound/announcer/classic/ventclog.ogg')
 
 /datum/round_event/scrubber_overflow/female/start()
 	for(var/obj/machinery/atmospherics/components/unary/vent in scrubbers)
@@ -63,7 +63,7 @@
 	reagents_amount = 100
 
 /datum/round_event/scrubber_overflow/male/announce()
-	priority_announce("Сеть скрубберов испытывает противодавление из-за откуда-то взявшегося в них СЕМЕНИ. Может произойти некоторое разбрызгивание содержимого.", "Атмосферная Тревога")
+	priority_announce("Сеть скрубберов испытывает противодавление из-за откуда-то взявшегося в них СЕМЕНИ. Может произойти некоторое разбрызгивание содержимого.", "Атмосферная Тревога", 'sound/announcer/classic/ventclog.ogg')
 
 /datum/round_event/scrubber_overflow/male/start()
 	for(var/obj/machinery/atmospherics/components/unary/vent in scrubbers)
@@ -80,6 +80,7 @@
 /datum/round_event_control/scrubber_overflow/crocin
 	name = "Aphrodisiac Flood"
 	typepath = /datum/round_event/scrubber_overflow/crocin
+	admin_setup = list()
 	weight = 10
 	max_occurrences = 1
 
@@ -108,6 +109,7 @@
 /datum/round_event_control/scrubber_overflow/crocin/hexacrocin
 	name = "Strong Aphrodisiac Flood"
 	typepath = /datum/round_event/scrubber_overflow/crocin/hexacrocin
+	admin_setup = list()
 	max_occurrences = 0 //Only adminspawn because this one causes brain damage
 
 /datum/round_event/scrubber_overflow/crocin/hexacrocin
@@ -129,7 +131,7 @@
 	reagents_amount = 100
 
 /datum/round_event/scrubber_overflow/beer/announce()
-	priority_announce("The scrubbers network is experiencing an unexpected surge of pressurized beer. Some ejection of contents may occur.", "Atmospherics alert")
+	priority_announce("Сеть скрубберов испытывает противодавление из-за пива. Возможен некоторый выброс содержимого.", "Центральное Командование", 'sound/announcer/classic/ventclog.ogg')
 
 /datum/round_event/scrubber_overflow/beer/start()
 	for(var/obj/machinery/atmospherics/components/unary/vent in scrubbers)

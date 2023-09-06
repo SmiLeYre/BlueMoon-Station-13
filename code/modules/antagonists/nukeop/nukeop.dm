@@ -12,6 +12,7 @@
 	var/send_to_spawnpoint = TRUE //Should the user be moved to default spawnpoint.
 	var/nukeop_outfit = /datum/outfit/syndicate
 	var/title
+	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/nukeop/proc/update_synd_icons_added(mob/living/M)
 	var/datum/atom_hud/antag/opshud = GLOB.huds[ANTAG_HUD_OPS]
@@ -43,7 +44,7 @@
 		return
 	if(SSticker.mode.name == "Extended")
 		H.equipOutfit(/datum/outfit/syndicate/lone)
-		priority_announce("Приветствую, Станция. Мы отправляем к вам Специалиста по Защите Ядерного Диска ввиду того, что заметили недостаточную его безопасность. Bстречайте.", "[title]-Фрегат ССО Синдиката")
+		priority_announce("Приветствую, Станция. Мы отправляем к вам Специалиста по Защите Ядерного Диска ввиду того, что заметили недостаточную его безопасность. Bстречайте.", "[title] Фрегат ССО Синдиката")
 	else
 		H.equipOutfit(nukeop_outfit)
 

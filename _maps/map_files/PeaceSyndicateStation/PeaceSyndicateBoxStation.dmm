@@ -2233,8 +2233,8 @@
 /obj/item/storage/secure/safe/HoS{
 	pixel_x = 35
 	},
-/obj/structure/closet/secure_closet/hos,
 /obj/effect/turf_decal/bot,
+/obj/structure/closet/secure_closet/hosnew,
 /turf/open/floor/mineral/plastitanium/red,
 /area/command/heads_quarters/hos)
 "afu" = (
@@ -66782,6 +66782,10 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/hallway/primary/central)
+"xZK" = (
+/mob/living/simple_animal/pet/dog/corgi/pig/assistant,
+/turf/open/floor/mineral/plastitanium/red,
+/area/maintenance/starboard/aft)
 "xZL" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/light{
@@ -117978,7 +117982,7 @@ iQg
 ccU
 pcz
 xgs
-xgs
+xZK
 xgs
 wfC
 kfS

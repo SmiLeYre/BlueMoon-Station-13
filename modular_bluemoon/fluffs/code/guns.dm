@@ -1,8 +1,9 @@
 /obj/item/Kovac_Kit
 	name = "Kovac Gun Kit"
 	desc = "A modkit for making a Enforcer Gun into a Kovac Gun."
-	icon = 'icons/obj/vending_restock.dmi'
-	icon_state = "refill_donksoft"
+	icon = 'modular_splurt/icons/obj/clothing/reinforcekits.dmi'
+	w_class = WEIGHT_CLASS_SMALL
+	icon_state = "sec_armor_kit"
 	var/product = /obj/item/gun/ballistic/automatic/pistol/enforcer/steyr //what it makes
 	var/list/fromitem = list(/obj/item/gun/ballistic/automatic/pistol/enforcer/nomag, /obj/item/gun/ballistic/automatic/pistol/enforcer, /obj/item/gun/ballistic/automatic/pistol/enforcerred, /obj/item/gun/ballistic/automatic/pistol/enforcergold) //what it needs
 
@@ -29,8 +30,9 @@
 /obj/item/auto9_kit
 	name = "Auto 9 Kit"
 	desc = "A modkit for making a WT-550 Gun into a Auto 9 Gun."
-	icon = 'icons/obj/vending_restock.dmi'
-	icon_state = "refill_donksoft"
+	icon = 'modular_splurt/icons/obj/clothing/reinforcekits.dmi'
+	w_class = WEIGHT_CLASS_SMALL
+	icon_state = "sec_armor_kit"
 	var/product = /obj/item/gun/ballistic/automatic/wt550/auto9 //what it makes
 	var/list/fromitem = list(/obj/item/gun/ballistic/automatic/wt550) //what it needs
 
@@ -67,8 +69,9 @@
 /obj/item/m240_kit
 	name = "M240 Kit"
 	desc = "A modkit for making a Flamethrower into a M240."
-	icon = 'icons/obj/vending_restock.dmi'
-	icon_state = "refill_donksoft"
+	icon = 'modular_splurt/icons/obj/clothing/reinforcekits.dmi'
+	w_class = WEIGHT_CLASS_SMALL
+	icon_state = "sec_armor_kit"
 	var/product = /obj/item/flamethrower/full/tank/m240 //what it makes
 	var/list/fromitem = list(/obj/item/flamethrower, /obj/item/flamethrower/full, /obj/item/flamethrower/full/tank) //what it needs
 
@@ -100,8 +103,9 @@
 /obj/item/old_kit
 	name = "H&K Luftkuss Kit"
 	desc = "A modkit for making a hybrid taser into a H&K Luftkuss."
-	icon = 'icons/obj/vending_restock.dmi'
-	icon_state = "refill_donksoft"
+	icon = 'modular_splurt/icons/obj/clothing/reinforcekits.dmi'
+	w_class = WEIGHT_CLASS_SMALL
+	icon_state = "sec_armor_kit"
 	var/product = /obj/item/gun/energy/e_gun/advtaser_old //what it makes
 	var/list/fromitem = list(/obj/item/gun/energy/e_gun/advtaser) //what it needs
 
@@ -121,7 +125,7 @@
 	name = "H&K Luftkuss"
 	desc = "An upgraded hybrid taser gun with several stripes, manufactured by the SolFed H&K arms company."
 	icon_state = "old"
-	item_state = "auto9"
+	item_state = "taser"
 	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
 	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
 	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
@@ -149,3 +153,65 @@
 	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/taser.ogg'
 	e_cost = 200
 	harmful = FALSE
+
+
+////////////
+
+/obj/item/dominator_kit
+	name = "Dominator Kit"
+	desc = "A modkit for making a hybrid taser into a Dominator."
+	icon = 'modular_splurt/icons/obj/clothing/reinforcekits.dmi'
+	w_class = WEIGHT_CLASS_SMALL
+	icon_state = "sec_armor_kit"
+	var/product = /obj/item/gun/energy/e_gun/advtaser/dominator //what it makes
+	var/list/fromitem = list(/obj/item/gun/energy/e_gun/advtaser) //what it needs
+
+/obj/item/dominator_kit/afterattack(obj/O, mob/user as mob)
+	if(istype(O, product))
+		to_chat(user,"<span class='warning'>[O] is already modified!")
+		return
+	if(O.type in fromitem) //makes sure O is the right thing
+		new product(usr.loc) //spawns the product
+		user.visible_message("<span class='warning'>[user] modifies [O]!","<span class='warning'>You modify the [O]!")
+		qdel(O) //Gets rid of the baton
+		qdel(src) //gets rid of the kit
+	else
+		to_chat(user, "<span class='warning'> You can't modify [O] with this kit!</span>")
+
+/obj/item/gun/energy/e_gun/advtaser/dominator
+	name = "\improper Dominator"
+	icon_state = "dominator"
+	item_state = "taser"
+	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+	ammo_x_offset = 0
+
+/////////////////
+
+/obj/item/nue_kit
+	name = "Araki Nue Kit"
+	desc = "A modkit for making an Enforcer into a Araki Nue."
+	icon = 'modular_splurt/icons/obj/clothing/reinforcekits.dmi'
+	w_class = WEIGHT_CLASS_SMALL
+	icon_state = "sec_armor_kit"
+	var/product = /obj/item/gun/ballistic/automatic/pistol/enforcer/nue //what it makes
+	var/list/fromitem = list(/obj/item/gun/ballistic/automatic/pistol/enforcer/nomag, /obj/item/gun/ballistic/automatic/pistol/enforcer, /obj/item/gun/ballistic/automatic/pistol/enforcerred, /obj/item/gun/ballistic/automatic/pistol/enforcergold) //what it needs
+
+/obj/item/nue_kit/afterattack(obj/O, mob/user as mob)
+	if(istype(O, product))
+		to_chat(user,"<span class='warning'>[O] is already modified!")
+		return
+	if(O.type in fromitem) //makes sure O is the right thing
+		new product(usr.loc) //spawns the product
+		user.visible_message("<span class='warning'>[user] modifies [O]!","<span class='warning'>You modify the [O]!")
+		qdel(O) //Gets rid of the baton
+		qdel(src) //gets rid of the kit
+
+/obj/item/gun/ballistic/automatic/pistol/enforcer/nue
+	name = "\improper Araki Nue"
+	desc = "Semi-automatic, double-action pistol that was engineered to fit any hand. The handle is decorated with orange-colored ergonomic rubber with a Vulpkanin muzzle on it. It's looks familiar."
+	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
+	icon_state = "nue"
+	can_suppress = FALSE
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/nue_shoot.ogg'
