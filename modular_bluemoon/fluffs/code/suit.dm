@@ -99,3 +99,10 @@
 	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
 	icon_state = "flektarn_montur"
 	item_state = "flektarn_montur"
+
+/obj/item/clothing/suit/donator/bm/SH_jacket
+	name = "Shiro Silverhand Jacket"
+	desc = "Iconic jacket of the Shiro Silverhand he wore in his Samurai days."
+	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
+	icon_state = "SH_jacket"
+	item_state = "SH_jacket"

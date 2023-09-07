@@ -259,3 +259,13 @@
 	path = /obj/item/clothing/accessory/skull_patch
 	ckeywhitelist = list("krashly", "stgs", "hazzi", "dolbajob", "leony24", "snacksman")
 	subcategory = LOADOUT_SUBCATEGORIES_DON10
+
+/datum/gear/donator/bm/SH_jacket
+	name = "Shiro Silverhand Jacket"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/suit/donator/bm/SH_jacket
+	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife")
+	subcategory = LOADOUT_SUBCATEGORIES_DON17
+
+
+
