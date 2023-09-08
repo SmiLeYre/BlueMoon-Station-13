@@ -171,24 +171,18 @@
 
 /////////////////////////////
 
-/datum/sprite_accessory/deco_wings/mantis
+/datum/sprite_accessory/insect_fluff/mantis
 	name = "Mantis"
 	icon_state = "mantis"
 	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
-	color_src = MATRIXED
-	matrixed_sections = MATRIX_RED_GREEN
 
-/datum/sprite_accessory/deco_wings/mantis/mono
+/datum/sprite_accessory/insect_fluff/mantis/mono
 	name = "Mantis Mono"
 	icon_state = "mantis2"
-	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
-	color_src = SKINTONE
 
 /////////////////////////////
 
-/datum/sprite_accessory/ears/human/scolo_antennae
+/datum/sprite_accessory/horns/scolo_antennae
 	name = "Centipede Antennae"
 	icon_state = "scolo_antennae"
 	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
-	color_src = MATRIXED
-	matrixed_sections = MATRIX_RED
