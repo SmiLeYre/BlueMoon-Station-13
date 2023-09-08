@@ -214,6 +214,9 @@
 	var/new_message = pick(fart_emotes)
 	//new_message = replacetext(new_message, "%OWNER", "\the [user]")
 	message = new_message
+	var/farted_on_something = FALSE
+	for(var/atom/A in get_turf(user))
+		farted_on_something = A.fart_act(user) || farted_on_something
 	. = ..()
 	if(.)
 		playsound(user, pick(GLOB.brap_noises), 50, 1, -1)
