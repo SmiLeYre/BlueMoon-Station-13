@@ -70,14 +70,14 @@
 
 /obj/item/projectile/bullet/c46x30mm
 	name = "4.6x30mm bullet"
-	damage = 19
+	damage = 17
 	wound_bonus = -3
 	bare_wound_bonus = 7
 	embed_falloff_tile = -4
 
 /obj/item/projectile/bullet/c46x30mm_ap
 	name = "4.6x30mm armor-piercing bullet"
-	damage = 17.5
+	damage = 15.5
 	armour_penetration = 40
 	embedding = null
 

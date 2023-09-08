@@ -31,11 +31,11 @@ GLOBAL_LIST_EMPTY(sechailers)
 			new_message = "996 (Взрывчатка)"
 		if("211")
 			new_message = "211 (Проникновение/Ограбление)"
-	radio.talk_into(src, "Центр, Код [new_message], 10-20: [A], [A.x], [A.y], [A.z]. 10-99, Офицеру [user] требуется поддержка.", radio_channel)
+	radio.talk_into(src, "Центр, Код [new_message], 10-20: [A], [A.x], [A.y], [A.z]. Офицеру [user] требуется поддержка.", radio_channel)
 	last_dispatch = world.time
 	for(var/atom/movable/hailer in GLOB.sechailers)
 		if(hailer.loc &&ismob(hailer.loc))
-			playsound(hailer.loc, "sound/voice/dispatch_please_respond.ogg", 100, FALSE)
+			playsound(hailer.loc, "sound/voice/dispatch_hailer.ogg", 100, FALSE)
 
 
 // **** Security gas mask ****

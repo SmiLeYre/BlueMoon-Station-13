@@ -44125,10 +44125,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 1
 	},
-/obj/machinery/airalarm{
-	dir = 8;
-	pixel_x = 24
-	},
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
 "dRh" = (

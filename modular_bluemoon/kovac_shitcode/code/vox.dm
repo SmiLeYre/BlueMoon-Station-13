@@ -112,10 +112,10 @@
 	heatmod = 1.3
 	brutemod = 1.3
 //Но и лапками дерёт морды в кровь
-	punchdamagelow = 15
-	punchdamagehigh = 25
-	punchstunthreshold = 15
-	punchwoundbonus = 10
+	punchdamagelow = 5
+	punchdamagehigh = 15
+	punchstunthreshold = 5
+	punchwoundbonus = 5
 
 	attack_verb = "claw"
 	attack_sound = 'sound/weapons/slash.ogg'
