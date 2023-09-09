@@ -45,7 +45,7 @@
 	icon_state = "mini"
 	sign_path = /obj/structure/sign/flag/skull
 
-/obj/structure/closet/crate/coffin/attacked_by(obj/item/I, mob/living/user)
+/obj/structure/closet/crate/coffin/attacked_by(obj/item/sign/flag/I, mob/living/user)
 	if(I.flag_type == "skull")
 		icon = 'modular_bluemoon/krashly/icons/obj/skull_flag.dmi'
 		icon_state = "grob_full"
