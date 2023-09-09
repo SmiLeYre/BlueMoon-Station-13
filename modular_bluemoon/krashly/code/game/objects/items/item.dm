@@ -41,7 +41,7 @@
 	icon_state = "mini"
 	sign_path = /obj/structure/sign/flag/skull
 
-/obj/structure/closet/crate/coffin/attacked_by(obj/item/sign/flag/skull/I, mob/living/user)
+/obj/structure/closet/crate/coffin/attackby(obj/item/sign/flag/skull/I)
 	icon = 'modular_bluemoon/krashly/icons/obj/skull_flag.dmi'
 	icon_state = "grob_full"
 	locked = TRUE
@@ -55,6 +55,26 @@
 	subcategory = LOADOUT_SUBCATEGORIES_DON10
 
 //InteQ
+
+/obj/structure/sign/flag/inteq
+	name = "flag of PMC InteQ"
+	desc = "Orange-Brown flag with a shield in the center. Has a Yellow lining. The flag smells of blood."
+	icon = 'modular_bluemoon/krashly/icons/obj/inteq_flag.dmi'
+	icon_state = "full"
+	item_flag = /obj/item/sign/flag/inteq
+
+/obj/item/sign/flag/inteq
+	name = "folded flag of the PMC InteQ"
+	desc = "The folded flag of the PMC InteQ."
+	icon = 'modular_bluemoon/krashly/icons/obj/inteq_flag.dmi'
+	icon_state = "mini"
+	sign_path = /obj/structure/sign/flag/inteq
+
+/obj/structure/closet/crate/coffin/attackby(obj/item/sign/flag/inteq)
+	icon = 'modular_bluemoon/krashly/icons/obj/inteq_flag.dmi'
+	icon_state = "grob_full"
+	locked = TRUE
+	qdel(I)
 
 /obj/item/poster/random_inteq
 	name = "random InteQ poster"
