@@ -230,7 +230,7 @@
 	icon_state = "russobluecamo"
 	item_state = "russobluecamo"
 	alternate_screams = RUSSIAN_SCREAMS
-	can_adjust = FALSE
+	can_adjust = TRUE
 	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/under/misc/keyholesweater
