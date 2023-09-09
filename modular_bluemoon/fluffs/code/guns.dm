@@ -215,3 +215,21 @@
 	icon_state = "nue"
 	can_suppress = FALSE
 	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/nue_shoot.ogg'
+
+
+//////////////////// AM4 уже есть в лодауте донатеров. Это лишь его рескин.
+
+/obj/item/gun/ballistic/automatic/AM4B_pchelik
+	name = "GFYS"
+	desc = "На донк-софт оружии видна гравировка: 'Coopie'. Предназначено для нетравмирующего выкидывания существ из бара и самозащиты от приставал."
+	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
+	icon_state = "coopie"
+	item_state = "arifle-wielded"
+	mag_type = /obj/item/ammo_box/magazine/toy/AM4B
+	can_suppress = 0
+	casing_ejector = 0
+	spread = 30		//Assault Rifleeeeeee
+	w_class = WEIGHT_CLASS_NORMAL
+	burst_size = 4	//Shh.
+	fire_delay = 1
+	automatic_burst_overlay = FALSE

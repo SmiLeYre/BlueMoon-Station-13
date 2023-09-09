@@ -307,6 +307,7 @@
 	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
 	heat_protection = HEAD
 	max_heat_protection_temperature = HELMET_MAX_TEMP_PROTECT
+	alternate_screams = BLOOD_SCREAMS
 
 /obj/item/clothing/suit/cultrobes
 	name = "ancient cultist robes"
@@ -321,6 +322,7 @@
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
+	alternate_screams = BLOOD_SCREAMS
 
 /obj/item/clothing/head/culthood/alt
 	name = "cultist hood"
@@ -359,6 +361,7 @@
 	armor = list(MELEE = 30, BULLET = 30, LASER = 30,ENERGY = 20, BOMB = 0, BIO = 0, RAD = 0, FIRE = 10, ACID = 10)
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	mutantrace_variation = STYLE_MUZZLE
+	alternate_screams = BLOOD_SCREAMS
 
 /obj/item/clothing/suit/magusred
 	name = "magus robes"
@@ -369,6 +372,7 @@
 	allowed = list(/obj/item/tome, /obj/item/melee/cultblade)
 	armor = list(MELEE = 50, BULLET = 30, LASER = 50,ENERGY = 20, BOMB = 25, BIO = 10, RAD = 0, FIRE = 10, ACID = 10)
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
+	alternate_screams = BLOOD_SCREAMS
 
 /obj/item/clothing/head/helmet/space/hardsuit/cult
 	name = "\improper Nar'Sien hardened helmet"
@@ -378,6 +382,7 @@
 	armor = list(MELEE = 60, BULLET = 50, LASER = 30,ENERGY = 15, BOMB = 30, BIO = 30, RAD = 30, FIRE = 100, ACID = 75)
 	brightness_on = 0
 	actions_types = list()
+	alternate_screams = BLOOD_SCREAMS
 
 
 /obj/item/clothing/head/helmet/space/hardsuit/cult/ComponentInitialize()
@@ -394,6 +399,7 @@
 	allowed = list(/obj/item/tome, /obj/item/melee/cultblade, /obj/item/tank/internals/)
 	armor = list(MELEE = 70, BULLET = 50, LASER = 30,ENERGY = 15, BOMB = 30, BIO = 30, RAD = 30, FIRE = 100, ACID = 75)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/cult
+	alternate_screams = BLOOD_SCREAMS
 
 /obj/item/clothing/suit/space/hardsuit/cult/ComponentInitialize()
 	. = ..()
@@ -426,6 +432,7 @@
 	var/current_charges = 3
 	hoodtype = /obj/item/clothing/head/hooded/cult_hoodie
 	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | ALLOWINTERNALS
+	alternate_screams = BLOOD_SCREAMS
 
 /obj/item/clothing/head/hooded/cult_hoodie
 	name = "\improper Nar'Sien Empowered Helmet"
@@ -436,6 +443,7 @@
 	flash_protect = 1
 	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS
 	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | ALLOWINTERNALS
+	alternate_screams = BLOOD_SCREAMS
 
 /obj/item/clothing/suit/hooded/cultrobes/cult_shield/equipped(mob/living/user, slot)
 	..()
@@ -494,6 +502,7 @@
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS
 	armor = list(MELEE = -50, BULLET = -50, LASER = -50, ENERGY = -50, BOMB = -50, BIO = -50, RAD = -50, FIRE = 0, ACID = 0)
+	alternate_screams = BLOOD_SCREAMS
 
 /obj/item/clothing/suit/hooded/cultrobes/berserker/equipped(mob/living/user, slot)
 	..()

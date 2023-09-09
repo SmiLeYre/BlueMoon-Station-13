@@ -253,6 +253,7 @@
 	path = /obj/item/clothing/head/donator/bm/flektarn_beret
 	ckeywhitelist = list("vulpshiro", "dolbajob", "stgs", "leony24")
 	subcategory = LOADOUT_SUBCATEGORIES_DON16
+
 /datum/gear/donator/bm/skull_patch
 	name = "PMC Skull Patch"
 	slot = ITEM_SLOT_BACKPACK
@@ -262,10 +263,21 @@
 
 /datum/gear/donator/bm/SH_jacket
 	name = "Shiro Silverhand Jacket"
-	slot = ITEM_SLOT_BACKPACK
+	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/donator/bm/SH_jacket
 	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife")
 	subcategory = LOADOUT_SUBCATEGORIES_DON17
 
+/datum/gear/donator/bm/noonar
+	name = "Syndicate jacket"
+	slot = ITEM_SLOT_OCLOTHING
+	path = /obj/item/clothing/suit/toggle/noonar
+	ckeywhitelist = list("noonar")
+	subcategory = LOADOUT_SUBCATEGORIES_DON20
 
-
+/datum/gear/donator/bm/pchelik
+	name = "GFYS"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/gun/ballistic/automatic/AM4B_pchelik
+	ckeywhitelist = list("pchelik")
+	subcategory = LOADOUT_SUBCATEGORIES_DON12

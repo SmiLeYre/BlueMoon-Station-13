@@ -11346,6 +11346,18 @@
 "jKv" = (
 /turf/open/floor/holofloor/beach/water,
 /area/holodeck/rec_center/beach)
+"jKB" = (
+/obj/structure/flora/grass/brown,
+/obj/docking_port/stationary{
+	area_type = /area/syndicate_mothership;
+	dwidth = 25;
+	height = 50;
+	id = "emergency_real_syndicate";
+	name = "Syndicate Auxillary Shuttle Dock";
+	width = 50
+	},
+/turf/open/floor/plating/asteroid/snow/airless,
+/area/syndicate_mothership)
 "jKW" = (
 /obj/item/reagent_containers/glass/bucket,
 /turf/open/floor/holofloor/grass,
@@ -23269,10 +23281,10 @@
 	height = 17;
 	id = "syndicate_away";
 	name = "syndicate recon outpost";
-	roundstart_template = /datum/map_template/shuttle/infiltrator/basic;
+	roundstart_template = /datum/map_template/shuttle/infiltrator/syndicate_basic;
 	width = 23
 	},
-/turf/open/floor/plating/snowed,
+/turf/open/floor/plating/snowed/smoothed,
 /area/syndicate_mothership)
 "udv" = (
 /obj/structure/chair,
@@ -23302,7 +23314,9 @@
 	pixel_x = 32
 	},
 /obj/machinery/computer/shuttle/syndicate/recall{
-	name = "Molot Shuttle recall terminal"
+	name = "Molot Shuttle recall terminal";
+	icon_keyboard = "inteq_key";
+	icon_screen = "inteqshuttle"
 	},
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership)
@@ -27319,7 +27333,7 @@
 	height = 17;
 	id = "inteq_away";
 	name = "inteq recon outpost";
-	roundstart_template = /datum/map_template/shuttle/infiltrator/syndicate_basic;
+	roundstart_template = /datum/map_template/shuttle/infiltrator/basic;
 	width = 23
 	},
 /turf/open/floor/plating,
@@ -43271,7 +43285,7 @@ akz
 aqC
 mcy
 mcy
-ucP
+mcy
 mcy
 mcy
 mcy
@@ -43528,7 +43542,7 @@ akz
 aqC
 aqC
 aqC
-aqC
+ucP
 aqC
 aqC
 aqC
@@ -44275,7 +44289,7 @@ dyF
 bqE
 bqE
 bqE
-gHV
+bqE
 bqE
 kbq
 xCJ
@@ -44529,7 +44543,7 @@ wXl
 bqE
 bqE
 bqE
-gHV
+bqE
 dyF
 bqE
 bqE
@@ -45041,13 +45055,13 @@ bQH
 bQz
 bqE
 bqE
-gHV
 bqE
 bqE
 bqE
 bqE
 bqE
-bQz
+bqE
+jKB
 kbq
 xCJ
 mlY
@@ -45553,14 +45567,14 @@ wXl
 wXl
 bqE
 bQz
-bQH
-wXl
+bqE
+bqE
 bqE
 bQz
 bqE
 bQz
 bqE
-gHV
+bqE
 bqE
 kbq
 xCJ
@@ -45809,10 +45823,10 @@ bQH
 wXl
 bqE
 bqE
-bQH
-bQH
-bQH
-wXl
+bqE
+bqE
+bqE
+bqE
 bqE
 bqE
 bqE
@@ -46066,11 +46080,11 @@ bQH
 wXl
 bqE
 bQz
-bQH
-bQH
-bQH
-wXl
-wXl
+bqE
+bqE
+bqE
+bqE
+bqE
 bqE
 bqE
 bqE
@@ -46323,11 +46337,11 @@ wXl
 bqE
 bqE
 gHV
-bQH
-bQH
-bQH
-bQH
-wXl
+bqE
+bqE
+bqE
+bqE
+bqE
 bQz
 bqE
 bqE
@@ -46580,12 +46594,12 @@ wXl
 bqE
 bqE
 bqE
-wXl
-bQH
-bQH
-bQH
-bQH
-wXl
+bqE
+bqE
+bqE
+bqE
+bqE
+bqE
 bqE
 bqE
 bQz
@@ -46837,12 +46851,12 @@ wXl
 bQz
 bqE
 dyF
-wXl
-bQH
-bQH
-bQH
-bQH
-wXl
+bqE
+bqE
+bqE
+bqE
+bqE
+bqE
 bqE
 bqE
 bqE
@@ -47095,14 +47109,14 @@ wXl
 bqE
 bqE
 bqE
-wXl
-bQH
-bQH
-bQH
-wXl
-wXl
 bqE
-gHV
+bqE
+bqE
+bqE
+bqE
+bqE
+bqE
+bqE
 bqE
 kbq
 xCJ
@@ -47352,12 +47366,12 @@ bQH
 bQH
 bQz
 bqE
-wXl
-bQH
-bQH
-bQH
-wXl
-wXl
+bqE
+bqE
+bqE
+bqE
+bqE
+bqE
 bqE
 bqE
 bqE
@@ -47610,11 +47624,11 @@ bQH
 bQH
 bqE
 bqE
-wXl
-bQH
-bQH
-wXl
-wXl
+bqE
+bqE
+bqE
+bqE
+bqE
 bqE
 bQz
 bqE
@@ -47867,11 +47881,11 @@ bQH
 bQH
 bQH
 bqE
-wXl
-bQH
-bQH
-wXl
-wXl
+bqE
+bqE
+bqE
+bqE
+bqE
 bqE
 bqE
 bqE
@@ -48125,10 +48139,10 @@ bQH
 bQH
 bqE
 gHV
-wXl
-bQH
-wXl
-wXl
+bqE
+bqE
+bqE
+bqE
 bqE
 bqE
 bqE
@@ -48383,8 +48397,8 @@ bQH
 bqE
 bqE
 bqE
-wXl
-wXl
+bqE
+bqE
 bqE
 bqE
 bqE

@@ -45,7 +45,7 @@
 	antag_memory += "Сюрприз - моё оружие. Тени - мой доспех. Без них я ничто. (//чтобы использовать свой костюм, подключите его с помощью кнопки на вашем UI)!<br>"
 
 /datum/objective/cyborg_hijack
-	explanation_text = "Rонвертируйте одного станционного робота в киборга-саботёра с помощью ваших перчаток."
+	explanation_text = "Конвертируйте одного станционного робота в киборга-саботёра с помощью ваших перчаток."
 
 /datum/objective/door_jack
 	///How many doors that need to be opened using the gloves to pass the objective
@@ -110,7 +110,7 @@
 /datum/antagonist/ninja/greet()
 	SEND_SOUND(owner.current, sound('sound/ambience/antag/ninja_greeting.ogg'))
 	to_chat(owner.current, "Я - элитный наёмник могучего Клана Паука. <font color='red'><B>КОСМИЧЕСКИЙ НИНДЗЯ</B></font>!")
-	to_chat(owner.current, "Сюрприз - моё оружие. Тени - мой доспех. Без них, я ничто. (//чтобы использовать свой костюм, подключите его с помощью кнопки на вашем UI)!")
+	to_chat(owner.current, "Сюрприз - моё оружие. Тени - мой доспех. Без них я ничто. (//чтобы использовать свой костюм, подключите его с помощью кнопки на вашем UI)!")
 	owner.announce_objectives()
 
 /datum/antagonist/ninja/on_gain()

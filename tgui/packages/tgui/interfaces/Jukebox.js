@@ -39,7 +39,7 @@ export const Jukebox = (props, context) => {
   ])(songs);
 
   return (
-    <Window width={420} height={480}>
+    <Window width={520} height={480}>
       <Window.Content overflowY="scroll">
         <Section
           fluid

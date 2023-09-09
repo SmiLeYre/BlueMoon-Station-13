@@ -953,6 +953,6 @@
 	assignment = "Jannie"
 
 /obj/item/card/id/debug/Initialize(mapload)
-	access = get_all_accesses()+get_all_centcom_access()+get_all_syndicate_access()
+	access = get_all_accesses()+get_all_centcom_access()+get_all_syndicate_access()+get_all_ghost_access()
 	registered_account = SSeconomy.get_dep_account(ACCOUNT_CAR)
 	. = ..()

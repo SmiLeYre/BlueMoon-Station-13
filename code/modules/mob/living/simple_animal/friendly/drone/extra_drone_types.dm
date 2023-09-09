@@ -230,6 +230,7 @@
 	desc = "Боевой дрон ИнтеКью за четыре Кредита. Шестнадцать кредитов будут скрываться в его личном Аплинке. В комплекте идёт Дрон, Инструкция и Ключ для связи с Дроном."
 	item = /obj/item/storage/box/inteq_kit/inteq_drone
 	cost = 20
+	purchasable_from = UPLINK_TRAITORS
 
 /obj/item/storage/box/inteq_kit/inteq_drone
 	name = "InteQ Drone Kit"

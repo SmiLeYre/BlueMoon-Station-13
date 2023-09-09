@@ -324,6 +324,20 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/syndicate/eva)
+"aN" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/structure/sign/flag/syndicate/directional/west,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/hallway)
 "aO" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4;
@@ -528,12 +542,10 @@
 /turf/closed/wall/r_wall/syndicate,
 /area/shuttle/syndicate/armory)
 "bo" = (
-/obj/machinery/nuclearbomb/syndicate{
-	anchored = 1
-	},
 /obj/machinery/door/window{
 	dir = 1
 	},
+/obj/machinery/nuclearbomb/beer,
 /turf/open/floor/circuit/red,
 /area/shuttle/syndicate/hallway)
 "bq" = (
@@ -1158,6 +1170,10 @@
 /obj/vehicle/ridden/atv,
 /turf/open/floor/plasteel/dark,
 /area/shuttle/syndicate/airlock)
+"kx" = (
+/obj/structure/sign/flag/syndicate,
+/turf/closed/wall/r_wall/syndicate,
+/area/shuttle/syndicate/medical)
 "qk" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -1179,10 +1195,32 @@
 /obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/plasteel/dark,
 /area/shuttle/syndicate/eva)
+"xt" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/structure/sign/flag/syndicate/directional/east,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/hallway)
 "In" = (
 /obj/machinery/porta_turret/syndicate/shuttle{
 	dir = 6
 	},
+/turf/closed/wall/r_wall/syndicate,
+/area/shuttle/syndicate/armory)
+"KY" = (
+/obj/structure/sign/flag/syndicate,
+/turf/closed/wall/r_wall/syndicate,
+/area/shuttle/syndicate/bridge)
+"Qy" = (
+/obj/structure/sign/flag/syndicate,
 /turf/closed/wall/r_wall/syndicate,
 /area/shuttle/syndicate/armory)
 "Sz" = (
@@ -1214,7 +1252,7 @@ aJ
 aJ
 aJ
 aJ
-aJ
+kx
 aJ
 aJ
 In
@@ -1298,7 +1336,7 @@ cB
 ab
 ac
 ac
-ac
+KY
 ac
 aa
 aa
@@ -1383,7 +1421,7 @@ aC
 aV
 az
 az
-az
+aN
 az
 bE
 bL
@@ -1433,7 +1471,7 @@ aE
 aV
 az
 az
-az
+xt
 az
 bF
 bL
@@ -1498,7 +1536,7 @@ aa
 aF
 ac
 ac
-ac
+KY
 ac
 aa
 aa
@@ -1614,7 +1652,7 @@ bm
 bm
 bm
 bm
-bm
+Qy
 bm
 bm
 In

@@ -4567,17 +4567,10 @@
 	icon_state = "damaged2"
 	},
 /area/ruin/space/derelict/singularity_engine)
-<<<<<<< HEAD
-"YU" = (
-/obj/item/drone_shell/dusty,
-/turf/open/floor/plasteel,
-/area/ruin/space/derelict/bridge/access)
-=======
 "Yy" = (
 /obj/machinery/spaceship_navigation_beacon/invion,
 /turf/closed/wall,
 /area/ruin/space/derelict/hallway/primary)
->>>>>>> 223e670e3e0132019b733eb55c6a2d491381046b
 "ZB" = (
 /obj/structure/lattice,
 /turf/template_noop,

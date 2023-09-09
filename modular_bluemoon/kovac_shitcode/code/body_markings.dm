@@ -175,10 +175,13 @@
 	name = "Mantis"
 	icon_state = "mantis"
 	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
 
-/datum/sprite_accessory/insect_fluff/mantis/mono
+/datum/sprite_accessory/insect_fluff/mantis_mono
 	name = "Mantis Mono"
 	icon_state = "mantis2"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
 
 /////////////////////////////
 

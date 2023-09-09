@@ -442,7 +442,7 @@
 	alternate_screams = RUSSIAN_SCREAMS
 	icon_state = "rus_armor"
 	item_state = "rus_armor"
-	armor = list(MELEE = 25, BULLET = 30, LASER = 0, ENERGY = 15, BOMB = 10, BIO = 0, RAD = 20, FIRE = 20, ACID = 50, WOUND = 10)
+	//armor = list(MELEE = 25, BULLET = 30, LASER = 0, ENERGY = 15, BOMB = 10, BIO = 0, RAD = 20, FIRE = 20, ACID = 50, WOUND = 10)
 
 /obj/item/clothing/suit/armor/vest/russian_winter_coat
 	name = "Russian Winter Coat"
@@ -454,7 +454,11 @@
 	body_parts_covered = CHEST|LEGS|FEET|ARMS|HANDS
 	cold_protection = CHEST|LEGS|FEET|ARMS|HANDS
 	min_cold_protection_temperature = SPACE_SUIT_MIN_TEMP_PROTECT
-	armor = list(MELEE = 25, BULLET = 20, LASER = 20, ENERGY = 10, BOMB = 20, BIO = 50, RAD = 20, FIRE = -10, ACID = 50,  WOUND = 10)
+	//armor = list(MELEE = 25, BULLET = 20, LASER = 20, ENERGY = 10, BOMB = 20, BIO = 50, RAD = 20, FIRE = -10, ACID = 50,  WOUND = 10)
+	unique_reskin = list(
+		"Default" = list("icon_state" = "rus_winter_vsr93"),
+		"Unbuttoned" = list("icon_state" = "rus_winter_vsr93_t")
+	)
 
 /obj/item/clothing/suit/armor/vest/russian_coat
 	name = "Russian Battle Coat"
