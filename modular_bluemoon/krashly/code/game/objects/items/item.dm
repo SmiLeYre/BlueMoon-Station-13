@@ -35,7 +35,7 @@
 	item_flag = /obj/item/sign/flag/skull
 
 /obj/item/sign/flag
-	var/flag_type = NULL
+	var/flag_type = ""
 
 /obj/item/sign/flag/skull
 	name = "folded flag of the PMC Skull"
