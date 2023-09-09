@@ -492,8 +492,8 @@
 /obj/item/toy/plush/mammal/fox/emma
 	name = "emma plushie"
 	desc = "An adorable stuffed toy resembling a vulp."
-	icon_state = "raita"
-	item_state = "raita"
+	icon_state = "emma"
+	item_state = "emma"
 	icon = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps.dmi'
 	lefthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_l.dmi'
 	righthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_r.dmi'

@@ -75,25 +75,15 @@
 	lootdoubles = FALSE
 	loot = list(
 				/obj/item/poster/random_contraband = 120,
-				/obj/item/reagent_containers/syringe/mulligan = 4,
 				/obj/item/reagent_containers/hypospray/medipen/magillitis = 2,
-				/obj/item/gun/ballistic/automatic/pistol = 4,
-				/obj/item/ammo_box/magazine/m10mm = 4,
-				/obj/item/ammo_box/magazine/m10mm/soporific = 8,
-				/obj/item/storage/box/syndie_kit/space = 12,
-				/obj/item/storage/box/syndie_kit/space/inteq = 6,
+				/obj/item/storage/box/syndie_kit/space = 4,
 				/obj/item/storage/toolbox/syndicate = 6,
 				/obj/item/clothing/shoes/chameleon/noslip = 6,
 				/obj/item/grenade/clusterbuster/soap = 6,
 				/obj/item/soap/syndie = 12,
-				/obj/item/pen/sleepy = 2,
-				/obj/item/pen/edagger = 4,
-				/obj/item/storage/backpack/duffelbag/syndie/surgery = 4,
-				/obj/item/storage/box/syndie_kit/chameleon = 4,
-				/obj/item/storage/firstaid/tactical/slaver = 2,
-				/obj/item/storage/box/syndie_kit/northstar = 1,
-				/obj/item/storage/backpack/duffelbag/syndie/policing_shipment = 1,
-				/obj/item/syndicate_uplink = 1
+				/obj/item/pen/sleepy = 12,
+				/obj/item/storage/backpack/duffelbag/syndie = 4,
+				/obj/item/storage/box/syndie_kit/chameleon = 4
 				)
 
 /obj/effect/spawner/lootdrop/prison_contraband
