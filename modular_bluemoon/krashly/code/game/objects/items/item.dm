@@ -70,7 +70,7 @@
 	icon_state = "mini"
 	sign_path = /obj/structure/sign/flag/inteq
 
-/obj/structure/closet/crate/coffin/attackby(obj/item/sign/flag/inteq)
+/obj/structure/closet/crate/coffin/attackby(obj/item/sign/flag/inteq/I)
 	icon = 'modular_bluemoon/krashly/icons/obj/inteq_flag.dmi'
 	icon_state = "grob_full"
 	locked = TRUE
