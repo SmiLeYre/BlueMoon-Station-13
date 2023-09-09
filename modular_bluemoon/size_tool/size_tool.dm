@@ -62,8 +62,8 @@
 
 /obj/item/melee/sizetool/proc/check_for_ghostcafe() // Вы можете использовать весь функционал (в виде повышения размера до 800%) в госткафе
 	if(istype(get_area(src), /area/centcom/holding))
-		return
-	return
+		return TRUE
+	return FALSE
 
 /obj/item/melee/sizetool/attack(mob/living/target, mob/living/carbon/human/user)
 	if(user.a_intent != INTENT_HELP) // если режим взаимодействия не "help", то устройством можно бить
