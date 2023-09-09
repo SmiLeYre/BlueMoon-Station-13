@@ -42279,6 +42279,7 @@
 /area/edina/street/intersection/princessservitor)
 "bZu" = (
 /obj/structure/reagent_dispensers/keg/mead,
+/obj/structure/reagent_dispensers/beerkeg,
 /obj/machinery/airalarm{
 	dir = 4;
 	pixel_x = -22
@@ -54523,6 +54524,7 @@
 /area/maintenance/bar)
 "kTw" = (
 /obj/structure/reagent_dispensers/keg/mead,
+/obj/structure/reagent_dispensers/beerkeg,
 /turf/open/floor/wood,
 /area/maintenance/bar)
 "kUD" = (

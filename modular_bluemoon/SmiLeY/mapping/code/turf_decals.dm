@@ -251,17 +251,15 @@
 	merge_type = /obj/item/stack/sheet/spaceshipglass
 
 GLOBAL_LIST_INIT(spaceshipglass_recipes, list(
-	new/datum/stack_recipe("spaceship window", /obj/structure/window/reinforced/shuttle/spaceship/unanchored, 2, time = 4 SECONDS, window_checks = TRUE), \
+	new/datum/stack_recipe("spaceship window", /obj/structure/window/shuttle/spaceship/unanchored, 2, time = 4 SECONDS, window_checks = TRUE), \
 	))
 
 /obj/item/stack/sheet/spaceshipglass/get_main_recipes()
 	. = ..()
 	. += GLOB.spaceshipglass_recipes
 
-
 /turf/closed/wall/mineral/titanium/spaceship/nodiagonal
 	icon_state = "map-shuttle_nd"
-	smoothing_flags = SMOOTH_BITMASK
 
 /turf/closed/wall/mineral/titanium/spaceship/nosmooth
 	icon_state = "ship_walls-0"
@@ -269,7 +267,6 @@ GLOBAL_LIST_INIT(spaceshipglass_recipes, list(
 
 /turf/closed/wall/mineral/titanium/spaceship/overspace
 	icon_state = "map-overspace"
-	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 	fixed_underlay = list("space" = TRUE)
 
 /turf/closed/wall/mineral/titanium/spaceship/interior/copyTurf(turf/T)
@@ -293,18 +290,16 @@ GLOBAL_LIST_INIT(spaceshipglass_recipes, list(
 	. = ..()
 	T.transform = transform
 
-/obj/structure/window/reinforced/shuttle/spaceship
+/obj/structure/window/shuttle/spaceship
 	name = "spaceship window"
 	desc = "A pressure-resistant spaceship window."
 	icon = 'modular_bluemoon/SmiLeY/mapping/icons/shipwindows.dmi'
 	icon_state = "pod_window-0"
 	base_icon_state = "pod_window"
 	glass_type = /obj/item/stack/sheet/spaceshipglass
-	smoothing_flags = SMOOTH_BITMASK
-	canSmoothWith = SMOOTH_GROUP_WINDOW_FULLTILE_SHUTTLE
 
-/obj/structure/window/reinforced/shuttle/spaceship/tinted
+/obj/structure/window/shuttle/spaceship/tinted
 	opacity = TRUE
 
-/obj/structure/window/reinforced/shuttle/spaceship/unanchored
+/obj/structure/window/shuttle/spaceship/unanchored
 	anchored = FALSE

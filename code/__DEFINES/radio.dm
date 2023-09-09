@@ -125,6 +125,11 @@
 #define RADIO_TOKEN_PIRATE ":p"
 #define FREQ_PIRATE 1208
 
+#define RADIO_CHANNEL_INTEQ "InteQ"
+#define RADIO_KEY_INTEQ "i"
+#define RADIO_TOKEN_INTEQ ":i"
+#define FREQ_INTEQ 1207
+
 // BlueMoon Kovac added
 #define RADIO_CHANNEL_SOL "Sol"
 #define RADIO_KEY_SOL "x"

@@ -72,7 +72,7 @@
 	name = "Syndicate Chief Engineer"
 	jobtype = /datum/job/chief_engineer
 
-	l_pocket = /obj/item/pda/syndicate/no_deto
+	//l_pocket = /obj/item/pda/syndicate/no_deto
 
 	belt = /obj/item/storage/belt/utility/chief/full
 	ears = /obj/item/radio/headset/heads/ce

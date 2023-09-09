@@ -45,7 +45,7 @@
 	name = "Syndicate Bridge Officer"
 	jobtype = /datum/job/bridgeofficer
 
-	belt = /obj/item/pda/syndicate/no_deto
+	//belt = /obj/item/pda/syndicate/no_deto
 
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/radio/headset/headset_bo

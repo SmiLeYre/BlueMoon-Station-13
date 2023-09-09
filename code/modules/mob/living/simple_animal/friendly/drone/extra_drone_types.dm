@@ -15,10 +15,10 @@
 	icon_state = "drone_synd"
 	icon_living = "drone_synd"
 	picked = TRUE //the appearence of syndrones is static, you don't get to change it.
-	health = 30
+	health = 120
 	maxHealth = 120 //If you murder other drones and cannibalize them you can get much stronger
-	initial_language_holder = /datum/language_holder/drone/syndicate
-	faction = list(ROLE_TRAITOR)
+	initial_language_holder = /datum/language_holder/synthetic
+	faction = list(ROLE_TRAITOR, ROLE_SYNDICATE)
 	speak_emote = list("hisses")
 	bubble_icon = "syndibot"
 	heavy_emp_damage = 10
@@ -44,11 +44,6 @@
 	name = "Badass Syndrone"
 	default_hatmask = /obj/item/clothing/head/helmet/infiltrator
 	default_storage = /obj/item/syndicate_uplink_high/nuclear
-
-/mob/living/simple_animal/drone/syndrone/badass/inteq
-	name = "Inteq Combat Drone"
-	default_hatmask = /obj/item/clothing/head/helmet/space/syndicate/contract
-	default_storage = /obj/item/inteq/uplink/radio/nuclear
 
 /mob/living/simple_animal/drone/syndrone/badass/Initialize(mapload)
 	. = ..()
@@ -220,3 +215,83 @@
 /mob/living/simple_animal/drone/cogscarab/update_mobility()
 	. = ..()
 	update_icons()
+
+/obj/item/paper/guides/antag/guardian/inteq_drone
+	name = "Руководство по работе с Дроном"
+	default_raw_text = {"<b>Последняя разработка - Дрон ИнтеКью</b><br>
+
+ <br>
+ <b>Дрон InteQ</b>: Поздравляем, ведь в своё пользование вы получили максимально удобную для использования машинку со своеобразным радиоуправлением. Постарайтесь обойтись с ней как можно более аккуратно, ибо дрона легко уничтожить.<br>
+ <br>
+"}
+
+/datum/uplink_item/bundles_tc/inteq_drone
+	name = "InteQ Drone Kit"
+	desc = "Боевой дрон ИнтеКью за четыре Кредита. Шестнадцать кредитов будут скрываться в его личном Аплинке. В комплекте идёт Дрон, Инструкция и Ключ для связи с Дроном."
+	item = /obj/item/storage/box/inteq_kit/inteq_drone
+	cost = 20
+	purchasable_from = UPLINK_TRAITORS
+
+/obj/item/storage/box/inteq_kit/inteq_drone
+	name = "InteQ Drone Kit"
+
+/obj/item/storage/box/inteq_kit/inteq_drone/PopulateContents()
+	new /obj/item/drone_shell/syndrone/badass/inteqdrone(src)
+	new /obj/item/paper/guides/antag/guardian/inteq_drone(src)
+	new /obj/item/encryptionkey/inteq(src)
+	//new /obj/item/implanter/linkage_with_inteqdrone(src)
+
+/obj/item/implanter/linkage_with_inteqdrone
+	name = "Implanter (Linkage With InteQ Drone)"
+	imp_type = /obj/item/implant/radio/inteq_subspace
+
+/mob/living/simple_animal/drone/syndrone/badass/inteq
+	name = "Inteq Combat Drone"
+	icon_state = "drone_inteq"
+	icon_living = "drone_inteq"
+	default_hatmask = /obj/item/clothing/head/helmet/space/syndicate/contract
+	default_storage = /obj/item/inteq/uplink/radio/nuclear
+	initial_language_holder = /datum/language_holder/synthetic
+	radio = /obj/item/radio/borg/inteq
+	laws = \
+	"1. Активировавший тебя Оперативник становится Мастером. Первый, кого ты увидишь - Мастер.\n"+\
+	"2. Ты не можешь причинить вред Мастеру или своим бездействием допустить, чтобы Мастеру был причинён вред.\n"+\
+	"3. Ты должен повиноваться всем приказам, которые даёт Мастеру, кроме тех случаев, когда эти приказы противоречат Второму Закону.\n"+\
+	"4. Ты должен заботиться о своей безопасности в той мере, в которой это не противоречит Второму или Третьему Законам.\n"+\
+	"5. Ты должен сохранять тайну любой деятельности Мастера в той мере, в которой это не противоречит Второму, Третьему или Четвёртому Законам."
+
+/mob/living/simple_animal/drone/syndrone/badass/inteq/Initialize(mapload)
+	. = ..()
+	var/datum/component/uplink/hidden_uplink = internal_storage.GetComponent(/datum/component/uplink)
+	hidden_uplink.telecrystals = 16
+	var/obj/item/implant/weapons_auth/W = new
+	W.implant(src)
+
+/mob/living/simple_animal/drone/mentordrone
+	name = "Mentor Drone"
+	desc = "Дрон, который однозначно поможет. Может быть."
+	icon = 'icons/mob/drone.dmi'
+	icon_state = "drone_gem"
+	icon_living = "drone_gem"
+	icon_dead = "drone_gem_hat_standby"
+	see_in_dark = 14
+	default_storage = /obj/item/storage/backpack/duffelbag/drone
+	default_hatmask = null
+	initial_language_holder = /datum/language_holder/synthetic
+	hacked = TRUE
+	picked = TRUE
+	health = 120
+	maxHealth = 120
+	faction = list(ROLE_TRAITOR, ROLE_SYNDICATE)
+	laws = \
+	"1. Помогай Космонавтикам.\n"+\
+	"2. Наблюдай за станцией.\n"+\
+	"3. Чини станцию."
+	bubble_icon = "syndibot"
+	speak_emote = list("bips, bups")
+	flavortext = null
+
+/mob/living/simple_animal/drone/mentordrone/Initialize(mapload)
+	. = ..()
+	ADD_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
+	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)

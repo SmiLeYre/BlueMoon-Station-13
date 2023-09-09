@@ -147,6 +147,11 @@
 	if(moving_diagonally)//no mob swap during diagonal moves.
 		return TRUE
 
+	// BLUEMOON ADDITION AHEAD - нельзя поменяться местами со сверхтяжёлым персонажем
+	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER))
+		return TRUE
+	// BLUEMOON ADDITION END
+
 	//handle micro bumping on help intent
 	if(a_intent == INTENT_HELP)
 		if(handle_micro_bump_helping(M))
@@ -346,9 +351,9 @@
 				visible_message("<span class='warning'>[src] coils [ru_ego()] tail with [M]'s, pulling [M.ru_na()] along!</span>", "You entwine tails with [M], pulling [M.ru_na()] along!", ignored_mobs = M)
 				M.show_message("<span class='warning'>[src] has entwined [ru_ego()] tail with yours, pulling you along!</span>", MSG_VISUAL, "<span class='warning'>You feel <b>something</b> coiling around your tail, pulling you along!</span>")
 
-			else
-				visible_message("<span class='warning'>[src] has grabbed [M][(zone_selected == "l_arm" || zone_selected == "r_arm")? " by [M.ru_ego()] hands":" passively"]!</span>",
-					"<span class='warning'>You have grabbed [M][(zone_selected == "l_arm" || zone_selected == "r_arm")? " by [M.ru_ego()] hands":" passively"]!</span>", target = M,
+			else // BLUEMOON CHANGES
+				visible_message("<span class='warning'>[src] has grabbed [M][(zone_selected == "l_arm" || zone_selected == "r_arm")? " by [M.ru_ego()] hands":" passively"]! [HAS_TRAIT(AM, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(AM, TRAIT_BLUEMOON_HEAVY_SUPER) ? "Looks heavy." : ""]</span>",
+					"<span class='warning'>You have grabbed [M][(zone_selected == "l_arm" || zone_selected == "r_arm")? " by [M.ru_ego()] hands":" passively"]! [HAS_TRAIT(AM, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(AM, TRAIT_BLUEMOON_HEAVY_SUPER) ? "It is hard to pull heavy weight!" : ""]</span>", target = M,
 					target_message = "<span class='warning'>[src] has grabbed you[(zone_selected == "l_arm" || zone_selected == "r_arm")? " by your hands":" passively"]!</span>")
 		if(!iscarbon(src))
 			M.LAssailant = null

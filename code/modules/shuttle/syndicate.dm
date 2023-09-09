@@ -9,7 +9,7 @@
 	light_color = LIGHT_COLOR_ORANGE
 	req_access = list(ACCESS_SYNDICATE)
 	shuttleId = "syndicate"
-	possible_destinations = "syndicate_away;syndicate_z5;syndicate_ne;syndicate_nw;syndicate_n;syndicate_se;syndicate_sw;syndicate_s;syndicate_custom"
+	possible_destinations = "inteq_away;syndicate_z5;syndicate_ne;syndicate_nw;syndicate_n;syndicate_se;syndicate_sw;syndicate_s;syndicate_custom"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
 /obj/machinery/computer/shuttle/syndicate/allowed(mob/M)
@@ -37,6 +37,23 @@
 
 /obj/machinery/computer/shuttle/syndicate/recall
 	name = "InteQ shuttle recall terminal"
+	desc = "Use this if your friends left you behind."
+	possible_destinations = "inteq_away"
+
+/obj/machinery/computer/shuttle/real_syndicate
+	name = "Syndicate Shuttle Terminal"
+	desc = "The terminal used to control the InteQ transport shuttle."
+	circuit = /obj/item/circuitboard/computer/syndicate_shuttle
+	icon_screen = "syndishuttle"
+	icon_keyboard = "syndie_key"
+	light_color = COLOR_RED
+	req_access = list(ACCESS_SYNDICATE)
+	shuttleId = "syndicate"
+	possible_destinations = "syndicate_away;syndicate_z5;syndicate_ne;syndicate_nw;syndicate_n;syndicate_se;syndicate_sw;syndicate_s;syndicate_custom"
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+
+/obj/machinery/computer/shuttle/real_syndicate/recall
+	name = "Syndicate shuttle recall terminal"
 	desc = "Use this if your friends left you behind."
 	possible_destinations = "syndicate_away"
 

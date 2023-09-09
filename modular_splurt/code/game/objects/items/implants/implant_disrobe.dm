@@ -57,7 +57,7 @@
 
 // Implanter item
 /obj/item/implanter/disrobe
-	name = "implanter (rapid disrobe)"
+	name = "Implanter (rapid disrobe)"
 	imp_type = /obj/item/implant/disrobe
 
 // Implant case item

@@ -59,7 +59,7 @@
 	name = "Syndicate Brig Physician"
 	jobtype = /datum/job/brigdoc
 
-	belt = /obj/item/pda/syndicate/no_deto
+	//belt = /obj/item/pda/syndicate/no_deto
 
 	uniform = /obj/item/clothing/under/rank/security/officer/util
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/hsc

@@ -172,11 +172,11 @@
 		var/announcement_pick = rand(0, 1)
 		switch(announcement_pick)
 			if(0)
-				priority_announce("Attention crew, it appears that something on your station has caused an unexpected disruption with the station's airlock network.", "[command_name()] High-Priority Update")
+				priority_announce("Внимание! Зарегистрирован неожиданный сбой в работе сети шлюзов станции!", "[command_name()] High-Priority Update")
 				var/datum/round_event_control/grey_tide/greytide_event = new/datum/round_event_control/grey_tide
 				greytide_event.runEvent()
 			if(1)
-				priority_announce("Attention crew, it appears that something on your station has made unexpected communication with a syndicate ship in nearby space.", "[command_name()] High-Priority Update")
+				priority_announce("Внимание! Зарегистрирован сигнал коммуникаций, отправленный вооруженному кораблю!", "[command_name()] High-Priority Update")
 				var/datum/round_event_control/pirates/pirate_event = new/datum/round_event_control/pirates
 				pirate_event.runEvent()
 		ninja_gloves.communication_console_hack_success = TRUE

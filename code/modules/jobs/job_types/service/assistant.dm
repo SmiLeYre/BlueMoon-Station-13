@@ -40,10 +40,8 @@ Assistant
 	jobtype = /datum/job/assistant
 
 /datum/outfit/job/assistant/syndicate
-	name = "Assistant"
+	name = "Syndicate Assistant"
 	jobtype = /datum/job/assistant
-
-	belt = /obj/item/pda/syndicate/no_deto
 
 	uniform = /obj/item/clothing/under/rank/civilian/util
 

@@ -6464,6 +6464,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/mine/eva)
+"qz" = (
+/obj/machinery/photocopier,
+/turf/open/floor/plasteel,
+/area/mine/laborcamp/security)
 "qA" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 4
@@ -16427,6 +16431,7 @@
 "UP" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light,
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel,
 /area/mine/storage)
 "UQ" = (
@@ -46808,7 +46813,7 @@ yq
 wt
 uV
 zT
-xn
+qz
 Ij
 Uv
 kF

@@ -81,10 +81,21 @@
 		adjusted_climb_time *= 0.25 //aliens are terrifyingly fast
 	if(HAS_TRAIT(user, TRAIT_FREERUNNING)) //do you have any idea how fast I am???
 		adjusted_climb_time *= 0.8
+	// BLUEMOON ADDITION AHEAD - тяжёлые персонажи медленее забираются на преграды
+	if(HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY))
+		adjusted_climb_time *= 2
+	// BLUEMOON ADDITION END
 	structureclimber = user
 	if(do_mob(user, user, adjusted_climb_time))
 		if(src.loc) //Checking if structure has been destroyed
 			if(do_climb(user))
+				// BLUEMOON ADDITION AHEAD - сверхтяжёлые персонажи пересекают преграды быстро, но в процессе ломают их
+				if(HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY_SUPER))
+					visible_message(span_warning("[src] breaks in half under the weight of [user]!"))
+					playsound(src, 'modular_bluemoon/heavy_and_superheavy_quirks/chair_break.ogg', 70, TRUE)
+					deconstruct(FALSE)
+					return
+				// BLUEMOON ADDITION END
 				user.visible_message("<span class='warning'>[user] climbs onto [src].</span>", \
 									"<span class='notice'>You climb onto [src].</span>")
 				log_combat(user, src, "climbed onto")

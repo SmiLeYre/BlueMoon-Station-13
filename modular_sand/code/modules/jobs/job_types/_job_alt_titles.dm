@@ -71,8 +71,10 @@
 /datum/job/chaplain
 	alt_titles = list(
 		"Priest",
-		"Cult Leader",
+		"Shaman",
 		"Pope",
+		"Voodo Sorcerer",
+		"Ritualist",
 		"Bishop", // How about you actually say something about it instead of crying on a downstream's comments i won't read.
 		"Pontiff"
 		)
@@ -93,7 +95,12 @@
 /datum/job/curator
 	alt_titles = list(
 		"Journalist",
-		"Librarian"
+		"Librarian",
+		"Reporter",
+		"Correspondent",
+		"Newsman",
+		"Questioner",
+		"Occultism Fan"
 		)
 
 /datum/job/hydro

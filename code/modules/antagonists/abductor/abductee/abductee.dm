@@ -3,7 +3,6 @@
 	roundend_category = "abductees"
 	antagpanel_category = "Abductee"
 	var/datum/brain_trauma/abductee/brain_trauma
-	soft_antag = TRUE //BLUEMOON ADD - дружелюбные, малозначимые гостроли не должны считаться за антагонистов (ломает динамик)
 
 /datum/antagonist/abductee/on_gain()
 	give_objective()

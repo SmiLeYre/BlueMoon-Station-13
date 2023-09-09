@@ -9913,6 +9913,7 @@
 /area/eventmap/mountaininside)
 "aCz" = (
 /obj/structure/reagent_dispensers/keg/mead,
+/obj/structure/reagent_dispensers/beerkeg,
 /turf/open/floor/wood,
 /area/eventmap/inside)
 "aCA" = (

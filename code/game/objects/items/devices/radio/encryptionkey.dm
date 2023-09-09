@@ -12,7 +12,7 @@
 /obj/item/encryptionkey/Initialize(mapload)
 	. = ..()
 	if(!length(channels) && !translate_binary)
-		desc = "An encryption key for a radio headset.  Has no special codes in it. You should probably tell a coder!"
+		desc = "An encryption key for a radio headset. Has no special codes in it. You should probably tell a coder!"
 
 /obj/item/encryptionkey/examine(mob/user)
 	. = ..()
@@ -29,6 +29,12 @@
 	name = "syndicate encryption key"
 	icon_state = "syn_cypherkey"
 	channels = list(RADIO_CHANNEL_SYNDICATE = 1)
+	syndie = TRUE //Signifies that it de-crypts Syndicate transmissions
+
+/obj/item/encryptionkey/inteq
+	name = "InteQ Encryption Key"
+	icon_state = "syn_cypherkey"
+	channels = list(RADIO_CHANNEL_INTEQ = 1)
 	syndie = TRUE //Signifies that it de-crypts Syndicate transmissions
 
 /obj/item/encryptionkey/binary

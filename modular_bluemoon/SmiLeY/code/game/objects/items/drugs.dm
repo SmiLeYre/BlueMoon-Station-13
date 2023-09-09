@@ -16,8 +16,8 @@
 
 	M.add_client_colour(/datum/client_colour/zvezdochka)
 	var/sound/sound = sound(pick('modular_bluemoon/SmiLeY/sounds/LYENEN.ogg', 'modular_bluemoon/SmiLeY/sounds/LYENEN2.ogg'), TRUE)
-	sound.environment = 23
-	sound.volume = 20
+	sound.environment = 35
+	sound.volume = 30
 	SEND_SOUND(M.client, sound)
 
 	return
@@ -118,8 +118,8 @@
 
 	M.add_client_colour(/datum/client_colour/pendosovka)
 	var/sound/sound = sound(pick('modular_bluemoon/SmiLeY/sounds/CAPITAL1.ogg', 'modular_bluemoon/SmiLeY/sounds/CAPITAL2.ogg'), TRUE)
-	sound.environment = 23
-	sound.volume = 20
+	sound.environment = 45
+	sound.volume = 40
 	SEND_SOUND(M.client, sound)
 
 	return
@@ -138,10 +138,10 @@
 		M.Jitter(rand(0,2))
 		M.Dizzy(rand(0,2))
 
-	new /datum/hallucination/delusion(M, TRUE, "custom", rand(10, 50), custom_icon_file = 'modular_bluemoon/SmiLeY/icons/stars.dmi', custom_icon = pick("star1"), custom_name = "ПЕНДОСОВКА")
+	new /datum/hallucination/delusion(M, TRUE, "custom", rand(10, 50), custom_icon_file = 'modular_bluemoon/SmiLeY/icons/stars.dmi', custom_icon = pick("star1", "star3"), custom_name = "ПЕНДОСОВКА")
 
 	if(prob(65))
-		var/image/trip_img = image('modular_bluemoon/SmiLeY/icons/stars.dmi', get_turf(pick(view(7, M))), pick("star1"), CURSE_LAYER)
+		var/image/trip_img = image('modular_bluemoon/SmiLeY/icons/stars.dmi', get_turf(pick(view(7, M))), pick("star1", "star3"), CURSE_LAYER)
 		if(M.client)
 			M.client.images += trip_img
 		spawn(rand(30,50))

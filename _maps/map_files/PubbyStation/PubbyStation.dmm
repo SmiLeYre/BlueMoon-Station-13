@@ -3868,6 +3868,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel/dark,
 /area/command/heads_quarters/hos)
 "akT" = (
@@ -4631,7 +4632,6 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/security/warden)
 "amM" = (
-/obj/machinery/computer/security,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -4643,9 +4643,6 @@
 	name = "Station Intercom (General)";
 	pixel_y = 24
 	},
-/turf/open/floor/plasteel/showroomfloor,
-/area/security/warden)
-"amN" = (
 /obj/machinery/computer/secure_data,
 /turf/open/floor/plasteel/showroomfloor,
 /area/security/warden)
@@ -4935,6 +4932,7 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden{
 	dir = 9
 	},
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel,
 /area/security/office)
 "anE" = (
@@ -9453,6 +9451,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
 "azl" = (
@@ -12596,12 +12595,8 @@
 /turf/open/floor/plasteel,
 /area/hallway/primary/central)
 "aGy" = (
-/obj/structure/table,
-/obj/item/pen,
-/obj/item/paper_bin{
-	layer = 2.9
-	},
-/obj/effect/turf_decal/delivery,
+/obj/machinery/photocopier,
+/obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel,
 /area/hallway/primary/central)
 "aGz" = (
@@ -21990,6 +21985,7 @@
 /obj/effect/turf_decal/tile/brown{
 	dir = 8
 	},
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel,
 /area/cargo/qm)
 "bdG" = (
@@ -32272,7 +32268,6 @@
 /turf/open/floor/plasteel/dark,
 /area/command/heads_quarters/rd)
 "bBu" = (
-/obj/item/kirbyplants/dead,
 /obj/structure/disposalpipe/segment{
 	dir = 10
 	},
@@ -32309,6 +32304,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 9
 	},
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel/dark,
 /area/command/heads_quarters/rd)
 "bBw" = (
@@ -32827,14 +32823,6 @@
 /turf/open/floor/plasteel/white,
 /area/command/heads_quarters/cmo)
 "bCs" = (
-/obj/structure/table/glass,
-/obj/item/paper_bin{
-	pixel_x = -2;
-	pixel_y = 5
-	},
-/obj/item/pen{
-	layer = 3.1
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -32844,6 +32832,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel/white,
 /area/command/heads_quarters/cmo)
 "bCt" = (
@@ -32858,6 +32847,13 @@
 	},
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
+	},
+/obj/item/paper_bin{
+	pixel_x = -2;
+	pixel_y = 5
+	},
+/obj/item/pen{
+	layer = 3.1
 	},
 /turf/open/floor/plasteel/white,
 /area/command/heads_quarters/cmo)
@@ -41118,7 +41114,6 @@
 /turf/open/floor/plasteel,
 /area/command/heads_quarters/ce)
 "bUJ" = (
-/obj/structure/filingcabinet/chestdrawer,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -41134,6 +41129,7 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
 	},
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel,
 /area/command/heads_quarters/ce)
 "bUK" = (
@@ -54443,6 +54439,10 @@
 	dir = 1
 	},
 /area/hallway/secondary/exit/departure_lounge)
+"jfD" = (
+/obj/effect/landmark/start/bouncer,
+/turf/open/floor/plasteel/dark,
+/area/service/bar)
 "jfY" = (
 /obj/structure/chair{
 	dir = 1;
@@ -56675,6 +56675,10 @@
 /obj/effect/landmark/navigate_destination/chemfactory,
 /turf/open/floor/plasteel/white,
 /area/medical/chemistry)
+"mvf" = (
+/obj/machinery/photocopier,
+/turf/open/floor/plasteel/showroomfloor,
+/area/security/warden)
 "mvm" = (
 /obj/structure/cable,
 /obj/machinery/power/apc{
@@ -60875,7 +60879,7 @@
 /turf/open/floor/plating,
 /area/cargo/storage)
 "sbY" = (
-/obj/machinery/vending/coffee,
+/obj/structure/closet/secure_closet/ntr,
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "sci" = (
@@ -61341,6 +61345,13 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/dark,
 /area/service/library)
+"sLA" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/computer/security{
+	dir = 8
+	},
+/turf/open/floor/plasteel/showroomfloor,
+/area/security/warden)
 "sMe" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/cable{
@@ -65180,22 +65191,6 @@
 /turf/open/floor/plating,
 /area/security/brig)
 "xSa" = (
-/obj/effect/turf_decal/tile/blue{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/blue,
-/obj/effect/turf_decal/tile/blue{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/blue{
-	dir = 8
-	},
-/obj/machinery/sleeper{
-	dir = 4
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
@@ -84946,7 +84941,7 @@ alq
 amg
 amL
 anx
-aoo
+mvf
 vdd
 apG
 wDm
@@ -85458,9 +85453,9 @@ okS
 oPT
 fav
 amb
-amN
+aoo
 egK
-aok
+sLA
 aoO
 apF
 wRI
@@ -96293,7 +96288,7 @@ aPE
 cpg
 bah
 bag
-bah
+jfD
 bag
 bex
 bfr

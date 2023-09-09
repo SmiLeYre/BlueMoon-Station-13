@@ -26,15 +26,10 @@
 		var/mob/living/carbon/human/M = loc
 		if(ishuman(M) && M.w_uniform)
 			var/obj/item/clothing/under/U = M.w_uniform
-			if(M.dna.features["mam_tail"] || M.dna.features["mam_tail_animated"])
-				var/tail_under_suit = tail_suit_worn_overlay || 'modular_bluemoon/SmiLeY/icons/mob/clothing/tails_digi.dmi'
-				. += mutable_appearance(tail_under_suit, tail_state)
-			if(M.dna.features["xenotail"])
-				var/tail_under_suit = tail_suit_worn_overlay || 'modular_bluemoon/SmiLeY/icons/mob/clothing/tails_digi.dmi'
-				. += mutable_appearance(tail_under_suit, tail_state)
-			if(M.dna.features["tail_lizard"])
-				var/tail_under_suit = tail_suit_worn_overlay || 'modular_bluemoon/SmiLeY/icons/mob/clothing/tails_digi.dmi'
-				. += mutable_appearance(tail_under_suit, tail_state)
+			if(!isvox(M) || !isplasmaman(M))
+				if(M.dna.features["tail_primary"])
+					var/tail_under_suit = tail_suit_worn_overlay || 'modular_bluemoon/SmiLeY/icons/mob/clothing/tails_digi.dmi'
+					. += mutable_appearance(tail_under_suit, tail_state)
 			//SANDSTORM EDIT
 			if(istype(U) && length(U.attached_accessories))
 				for(var/obj/item/clothing/accessory/attached in U.attached_accessories)

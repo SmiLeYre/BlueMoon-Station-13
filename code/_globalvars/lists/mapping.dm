@@ -21,6 +21,8 @@ GLOBAL_LIST_EMPTY(jobspawn_overrides)					//These will take precedence over norm
 GLOBAL_LIST_EMPTY(wizardstart)
 GLOBAL_LIST_EMPTY(nukeop_start)
 GLOBAL_LIST_EMPTY(nukeop_leader_start)
+GLOBAL_LIST_EMPTY(syndiop_start)
+GLOBAL_LIST_EMPTY(syndiop_leader_start)
 GLOBAL_LIST_EMPTY(newplayer_start)
 GLOBAL_LIST_EMPTY(prisonwarp)	//prisoners go to these
 GLOBAL_LIST_EMPTY(holdingfacility)	//captured people go here

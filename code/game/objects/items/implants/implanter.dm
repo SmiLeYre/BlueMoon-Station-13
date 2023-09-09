@@ -1,5 +1,5 @@
 /obj/item/implanter
-	name = "implanter"
+	name = "Implanter"
 	desc = "A sterile automatic implant injector."
 	icon = 'icons/obj/syringe.dmi'
 	icon_state = "implanter0"
@@ -12,7 +12,6 @@
 	custom_materials = list(/datum/material/iron=600, /datum/material/glass=200)
 	var/obj/item/implant/imp = null
 	var/imp_type = null
-
 
 /obj/item/implanter/update_icon_state()
 	if(imp)
@@ -51,9 +50,9 @@
 		if(!user.canUseTopic(src, BE_CLOSE))
 			return
 		if(t)
-			name = "implanter ([t])"
+			name = "Implanter ([t])"
 		else
-			name = "implanter"
+			name = "Implanter"
 	else
 		return ..()
 
@@ -64,17 +63,17 @@
 	update_icon()
 
 /obj/item/implanter/adrenalin
-	name = "implanter (adrenalin)"
+	name = "Implanter (adrenalin)"
 	imp_type = /obj/item/implant/adrenalin
 
 /obj/item/implanter/emp
-	name = "implanter (EMP)"
+	name = "Implanter (EMP)"
 	imp_type = /obj/item/implant/emp
 
 /obj/item/implanter/stealth
-	name = "implanter (stealth)"
+	name = "Implanter (stealth)"
 	imp_type = /obj/item/implant/stealth
 
 /obj/item/implanter/hijack
-	name = "implanter (hijack)"
+	name = "Implanter (hijack)"
 	imp_type = /obj/item/implant/hijack

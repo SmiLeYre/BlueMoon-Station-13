@@ -10488,6 +10488,10 @@
 	},
 /turf/open/floor/circuit/off,
 /area/ai_monitored/turret_protected/ai)
+"aJW" = (
+/obj/effect/landmark/start/bouncer,
+/turf/open/floor/wood,
+/area/service/bar)
 "aJZ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -95335,7 +95339,7 @@ wgH
 iKV
 iKV
 fPD
-fPD
+aJW
 fPD
 fPD
 jHT

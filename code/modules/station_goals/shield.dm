@@ -1,3 +1,5 @@
+GLOBAL_LIST_EMPTY(meteor_satellites) // BLUEMOON ADD - список всех противометеоритных спутников
+
 //Station Shield
 // A chain of satellites encircles the station
 // Satellites be actived to generate a shield that will block unorganic matter from passing it.
@@ -92,12 +94,95 @@
 	use_power = FALSE
 	var/mode = "NTPROBEV0.8"
 	var/active = FALSE
-	var/static/gid = 0
+	var/static/gid = 1
 	var/id = 0
+	// BLUEMOON ADD START
+	var/obj/machinery/camera/emp_proof/satellite/camera = null // камера для просмотра спутника
+	var/updating = FALSE
+	var/camera_c_tag_prefix = "Orbital Satellite"
+	var/oldLoc
+
+	var/obj/item/radio/radio // рация и всё с ней связанное
+	var/radio_key = /obj/item/encryptionkey/headset_eng
+	var/engineering_channel = "Engineering"
+
+	var/roundstart = FALSE // если спутник с начала раунда, то он сразу же активируется и его камера включается. Важно разместить спутник в космосе при этом
+
+	var/list/destruction_quotes = list(\
+	"Шанс уничтожения спутника - 100 процентов. Аварийное отключение.", "Повреждение критических систем, последняя передача.", \
+	"Спутник уничтожен, рапорт отправлен.", "SOS! SYSTEM MALFUNCTION!", "Критическая потеря целостности, невозможно поддерживать работу.", \
+	"Потеря спутника неминуема, требуется помощь.", "Юнит потерян.")
+	// BLUEMOON ADD END
+
+// BLUEMOON ADD START
+/obj/machinery/camera/emp_proof/satellite // специальный тип камеры с увеличенным радиусом для спутников и ЭМИ защитой
+	view_range = 14
+	start_active = TRUE
+	use_power = NO_POWER_USE // Камера в космосе не обновляется, если потребляет энергию
+// BLUEMOON ADD END
 
 /obj/machinery/satellite/Initialize(mapload)
 	. = ..()
 	id = gid++
+	// BLUEMOON ADD START
+	name = "[name] #[id]"
+	radio = new (src) // спавн рации
+	radio.keyslot = new radio_key
+	radio.listening = 0
+	radio.recalculateChannels()
+
+	camera = new (src) // спавн камеры
+	camera.c_tag = "[camera_c_tag_prefix] #[id]"
+	camera.toggle_cam(null, FALSE)
+	if(roundstart)
+		toggle()
+	oldLoc = get_turf(src)
+	// BLUEMOON ADD END
+
+// BLUEMOON ADD START
+/obj/machinery/satellite/Destroy() // сообщение в рацию о нарушении целостности, а также удаление камеры
+	if(active)
+		radio.talk_into(src, scramble_message_replace_chars("[pick(destruction_quotes)] Координаты: [x], [y]", 5), engineering_channel)
+	QDEL_NULL(camera)
+	QDEL_NULL(radio)
+	explosion(loc, 1, 2, 3, 3, TRUE, TRUE)
+	. = ..()
+
+/obj/machinery/satellite/proc/malfunction(var/malfunction_type = "electrical storm")
+	switch(malfunction_type)
+		if("electrical storm")
+			qdel(src)
+
+/obj/machinery/satellite/examine(mob/user)
+	. = ..()
+	. += span_warning("It contains enough elements to keep its automatious work for ten years, but also has enough explosive power to act as a small grenade in case of destruction.")
+	. += span_info("It is in [active ? "<b>active state</b>. Its space laser pokes at a side." : "<b>unactive and movable state</b>"]")
+	if(active && camera)
+		. += span_info("It has a small camera's bulp at its upper part. Maybe someone watch you right now.")
+
+// Обновление камеры
+/obj/machinery/satellite/Moved(oldLoc, dir)
+	. = ..()
+	update_camera_location(oldLoc)
+
+/obj/machinery/satellite/forceMove(atom/destination)
+	. = ..()
+	//Only bother updating the camera if we actually managed to move
+	if(.)
+		update_camera_location(destination)
+
+/obj/machinery/satellite/proc/update_camera_location(oldLoc)
+	oldLoc = get_turf(oldLoc)
+	if(!QDELETED(camera) && !updating && oldLoc != get_turf(src))
+		updating = TRUE
+		addtimer(CALLBACK(src, .proc/update_camera, oldLoc), 10)
+
+/obj/machinery/satellite/proc/update_camera(oldloc)
+	if(!QDELETED(camera) && oldLoc != get_turf(src))
+		GLOB.cameranet.updatePortableCamera(camera)
+	updating = FALSE
+
+// BLUEMOON ADD END
 
 /obj/machinery/satellite/interact(mob/user)
 	toggle(user)
@@ -110,6 +195,7 @@
 	if(user)
 		to_chat(user, "<span class='notice'>You [active ? "deactivate": "activate"] [src].</span>")
 	active = !active
+	camera.toggle_cam(null, FALSE) // BLUEMOON ADD - включение или выключение камеры
 	if(active)
 		animate(src, pixel_y = 2, time = 10, loop = -1)
 		anchored = TRUE
@@ -128,12 +214,38 @@
 		return ..()
 
 /obj/machinery/satellite/meteor_shield
-	name = "\improper Meteor Shield Satellite"
+	name = "\improper Point-Defence Satellite"
 	desc = "A meteor point-defense satellite."
 	mode = "M-SHIELD"
 	speed_process = TRUE
-	var/kill_range = 14
+	var/kill_range = 20 // BLUEMOON CHANGES (было 14)
 	density = 0
+
+	// BLUEMOON ADD START
+	camera_c_tag_prefix = "Anti-Meteor Satellite"
+	var/kill_counter = 0 // сколько было уничтоженных метеоритов
+	var/last_major_firing_contact = 0 // Время в формате WORLD с последнего крупного метеоритного дождя
+	var/list/new_contacts_quotes = list(\
+	"Бомбардировка активна, открываем огонь", "Системы в норме. Ведётся обстрел", "Космические объекты в зоне видимости, открываем огонь", \
+	"Орбитальная защита активирована, обнаружены цели", "Активация лазера, обнаружены цели", "Калибровка прицела, метеориты в зоне досягаемости", \
+	"Защита сектора в процессе, метеоритный дождь подтверждён", "Защитные системы активированы", "Метеоритный дождь обнаружен, активация лазера", \
+	"Отключение предохранителя, обнаружены метеориты", "Прекратить ВКД - активация противометеоритной защиты")
+	var/list/kill_quotes = list(\
+	"Ведём бой", "Метеорит уничтожен", "Цель ликвидирована", "Охлаждение лазера", "Ведётся противометеоритная борьба", "Охлаждение батареи", \
+	"Метеорит расколот", "Открываю огонь", "Открытие радиаторов", "Бомбадировка продолжается", "Сканирование сектора", "Цель уничтожена")
+	// BLUEMOON ADD END
+
+// BLUEMOON ADD START - добавление спутника в глобальный список спутников
+/obj/machinery/satellite/meteor_shield/Initialize(mapload)
+	. = ..()
+	GLOB.meteor_satellites += src
+	camera.view_range = kill_range
+
+/obj/machinery/satellite/meteor_shield/examine(mob/user)
+	. = ..()
+	if(active)
+		. += span_info("You see a minimalistic kill-counter on its side. It says <b>\"[kill_counter]\"</b>.")
+// BLUEMOON ADD END
 
 /obj/machinery/satellite/meteor_shield/sci
 	name = "\improper Meteor Shield Satellite"
@@ -147,7 +259,8 @@
 /obj/machinery/satellite/meteor_shield/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/disk/meteor))
 		to_chat(user, "<span class='notice'>The disk uploads better tracking and rang modification software.</span>")
-		kill_range = 17
+		kill_range += 10 // BLUEMOON CHANGES (было = 17)
+		camera.view_range = kill_range // BLUEMOON ADD - увеличение радиуса обзора камеры
 	else
 		return ..()
 
@@ -176,7 +289,17 @@
 			continue
 		if(!(obj_flags & EMAGGED) && space_los(M))
 			Beam(get_turf(M),icon_state="sat_beam",time=5,maxdistance=kill_range)
+			// BLUEMOON ADD START - добавление сообщения в рацию после каждых 3 уничтоженных метеоритов
+			kill_counter++
+			if(kill_counter % 3 == 0) // За каждые 3 уничтоженных метеорита - оповещение о начале шторма
+				if(world.time >= last_major_firing_contact + 20 MINUTES)
+					radio.talk_into(src, "[pick(new_contacts_quotes)].", engineering_channel)
+					last_major_firing_contact = world.time
+				else if(kill_counter % 6 == 0) // Каждые 6 уничтоженных метеорита - оповещение
+					radio.talk_into(src, "[pick(kill_quotes)].", engineering_channel)
+			// BLUEMOON ADD END
 			qdel(M)
+			break // BLUEMOON ADD - по 1 метеориту за тик
 
 /obj/machinery/satellite/meteor_shield/toggle(user)
 	if(!..(user))

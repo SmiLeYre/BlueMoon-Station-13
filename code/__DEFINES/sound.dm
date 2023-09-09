@@ -108,6 +108,9 @@
 #define RUSSIAN_SCREAMS list('sound/voice/human/cyka1.ogg', 'sound/voice/human/rus1.ogg', 'sound/voice/human/rus2.ogg', 'sound/voice/human/rus3.ogg',\
 	'sound/voice/human/rus4.ogg', 'sound/voice/human/rus5.ogg', 'sound/voice/human/rus6.ogg')
 
+#define BLOOD_SCREAMS list('modular_bluemoon/kovac_shitcode/sound/blood/cult_1.ogg', 'modular_bluemoon/kovac_shitcode/sound/blood/cult_2.ogg', 'modular_bluemoon/kovac_shitcode/sound/blood/cult_3.ogg',\
+	'modular_bluemoon/kovac_shitcode/sound/blood/cult_4.ogg', 'modular_bluemoon/kovac_shitcode/sound/blood/cult_5.ogg')
+
 #define ARENA_MUSIC list('sound/music/arena/hotline1.ogg', 'sound/music/arena/hotline2.ogg', 'sound/music/arena/hotline3.ogg', 'sound/music/arena/hotline4.ogg',\
 	'sound/music/arena/hotline5.ogg', 'sound/music/arena/hotline6.ogg', 'sound/music/arena/hotline7.ogg', 'sound/music/arena/hotline8.ogg', 'sound/music/arena/hotline9.ogg',\
 	'sound/music/arena/hotline10.ogg', 'sound/music/arena/kat1.ogg', 'sound/music/arena/kat2.ogg', 'sound/music/arena/kat3.ogg', 'sound/music/arena/kat4.ogg',\
@@ -190,6 +193,10 @@
 #define ANNOUNCER_ADMIN_5 "_admin_war_pipisky"
 #define ANNOUNCER_ADMIN_6 "_admin_war_pizdec"
 #define ANNOUNCER_ADMIN_7 "_admin_war_tishina"
+#define ANNOUNCER_BSA "artillery"
+#define ANNOUNCER_XENO "xeno"
+#define ANNOUNCER_IROD "irod"
+#define ANNOUNCER_LAMBDA "lambda"
 
 
 /// Global list of all of our announcer keys.
@@ -218,4 +225,8 @@ GLOBAL_LIST_INIT(announcer_keys, list(
 	ANNOUNCER_ADMIN_5,
 	ANNOUNCER_ADMIN_6,
 	ANNOUNCER_ADMIN_7,
+	ANNOUNCER_BSA,
+	ANNOUNCER_XENO,
+	ANNOUNCER_IROD,
+	ANNOUNCER_LAMBDA
 ))

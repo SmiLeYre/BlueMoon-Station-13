@@ -262,7 +262,7 @@
 	var/selection = alert(user, "Which setting would you want to modify?", "Firing Pin Settings", "Minimum Level Setting", "Maximum Level Setting", "Lethals Only Toggle")
 	if(QDELETED(src) || QDELETED(user) || !user.canUseTopic(src, BE_CLOSE))
 		return
-	var/static/list/till_designs_pr_isnt_merged = list("green", "blue", "amber", "red", "delta")
+	var/static/list/till_designs_pr_isnt_merged = list("green", "blue", "amber", "red", "lambda", "delta")
 	switch(selection)
 		if("Minimum Level Setting")
 			var/input = input(user, "Input the new minimum level setting.", "Firing Pin Settings", NUM2SECLEVEL(min_sec_level)) as null|anything in till_designs_pr_isnt_merged

@@ -1,7 +1,7 @@
 /datum/round_event_control/scrubber_overflow
 	name = "Scrubber Overflow: Normal"
 	typepath = /datum/round_event/scrubber_overflow
-	weight = 10
+	weight = 75
 	max_occurrences = 3
 	min_players = 10
 	category = EVENT_CATEGORY_JANITORIAL
@@ -24,18 +24,16 @@
 	/// The list of chems that scrubbers can produce
 	var/list/safer_chems = list(/datum/reagent/water,
 		/datum/reagent/carbon,
-		/datum/reagent/consumable/flour,
 		/datum/reagent/space_cleaner,
+		/datum/reagent/carpet,
 		/datum/reagent/carpet/black,
 		/datum/reagent/carpet/orange,
 		/datum/reagent/carpet/blackred,
 		/datum/reagent/carpet/royalblack,
-		/datum/reagent/consumable/nutriment,
-		/datum/reagent/consumable/condensedcapsaicin,
-		/datum/reagent/drug/mushroomhallucinogen,
 		/datum/reagent/lube,
 		/datum/reagent/glitter/blue,
 		/datum/reagent/glitter/pink,
+		/datum/reagent/glitter/white,
 		/datum/reagent/cryptobiolin,
 		/datum/reagent/blood,
 		/datum/reagent/medicine/charcoal,
@@ -50,46 +48,24 @@
 		/datum/reagent/concentrated_barbers_aid,
 		/datum/reagent/baldium,
 		/datum/reagent/colorful_reagent,
-		/datum/reagent/consumable/nutriment,
 		/datum/reagent/consumable/ethanol/beer,
 		/datum/reagent/hair_dye,
-		/datum/reagent/consumable/sugar,
-		/datum/reagent/glitter/white,
 		/datum/reagent/gravitum,
 		/datum/reagent/growthserum,
-		/datum/reagent/water,
-		/datum/reagent/carbon,
+		/datum/reagent/consumable/sugar,
 		/datum/reagent/consumable/flour,
-		/datum/reagent/space_cleaner,
+		/datum/reagent/consumable/sodiumchloride,
+		/datum/reagent/consumable/cornoil,
 		/datum/reagent/consumable/nutriment,
 		/datum/reagent/consumable/condensedcapsaicin,
 		/datum/reagent/drug/mushroomhallucinogen,
-		/datum/reagent/lube,
-		/datum/reagent/glitter/pink,
-		/datum/reagent/cryptobiolin,
 		/datum/reagent/toxin/plantbgone,
-		/datum/reagent/blood,
-		/datum/reagent/medicine/charcoal,
 		/datum/reagent/drug/space_drugs,
 		/datum/reagent/medicine/morphine,
-		/datum/reagent/water/holywater,
-		/datum/reagent/consumable/ethanol,
-		/datum/reagent/consumable/hot_coco,
 		/datum/reagent/toxin/mindbreaker,
 		/datum/reagent/toxin/rotatium,
-		/datum/reagent/pax,
-		/datum/reagent/consumable/laughter,
-		/datum/reagent/concentrated_barbers_aid,
-		/datum/reagent/baldium,
 		/datum/reagent/peaceborg_confuse,
 		/datum/reagent/peaceborg_tire,
-		/datum/reagent/consumable/sodiumchloride,
-		/datum/reagent/consumable/ethanol/beer,
-		/datum/reagent/consumable/sugar,
-		/datum/reagent/glitter/white,
-		/datum/reagent/growthserum,
-		/datum/reagent/consumable/cornoil,
-		/datum/reagent/carpet,
 		/datum/reagent/firefighting_foam,
 		/datum/reagent/consumable/tearjuice,
 		/datum/reagent/medicine/strange_reagent
@@ -97,7 +73,7 @@
 	//needs to be chemid unit checked at some point
 
 /datum/round_event/scrubber_overflow/announce(fake)
-	priority_announce("Сеть вентиляции испытывает скачок противодавления. Может произойти некоторый выброс содержимого.", "ВНИМАНИЕ: АТМОСФЕРА")
+	priority_announce("Сеть вентиляции испытывает скачок противодавления. Может произойти некоторый выброс содержимого.", "ВНИМАНИЕ: АТМОСФЕРА", 'sound/announcer/classic/ventclog.ogg')
 
 /datum/round_event/scrubber_overflow/setup()
 	for(var/obj/machinery/atmospherics/components/unary/vent_scrubber/temp_vent in GLOB.machines)
@@ -196,7 +172,7 @@
 	special_run_option = "Random Single Reagent"
 
 /datum/event_admin_setup/listed_options/scrubber_overflow/get_list()
-	return sort_list(subtypesof(/datum/reagent), /proc/cmp_typepaths_asc)
+	return sortList(subtypesof(/datum/reagent), /proc/cmp_typepaths_asc)
 
 /datum/event_admin_setup/listed_options/scrubber_overflow/apply_to_event(datum/round_event/scrubber_overflow/event)
 	if(chosen == special_run_option)

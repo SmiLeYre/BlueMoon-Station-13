@@ -8,7 +8,7 @@
 	/// Icon state to use to represent the theme
 	var/icon_state
 	/// Typepath of custom material to use for objects.
-	var/datum/material/material
+	var/datum/material/materials
 	/// Sound to play when transforming a tile
 	var/sound = 'sound/magic/blind.ogg'
 	/// Weighted list of turfs to replace the floor with.
@@ -28,8 +28,8 @@
 	var/window_colour = "#ffffff"
 
 /datum/dimension_theme/New()
-	if (material)
-		var/datum/material/using_mat = GET_MATERIAL_REF(material)
+	if (materials)
+		var/datum/material/using_mat = GET_MATERIAL_REF(materials)
 		window_colour = using_mat.color
 
 /**
@@ -44,7 +44,7 @@
 	playsound(affected_turf, sound, 100, TRUE)
 	for (var/obj/object in affected_turf)
 		replace_object(object)
-	if (material)
+	if (materials)
 		apply_materials(affected_turf)
 
 /**
@@ -176,7 +176,7 @@
  * * affected_turf - Turf to transform.
  */
 /datum/dimension_theme/proc/apply_materials(turf/affected_turf)
-	var/list/custom_materials = list(GET_MATERIAL_REF(material) = SHEET_MATERIAL_AMOUNT)
+	var/list/custom_materials = list(GET_MATERIAL_REF(materials) = SHEET_MATERIAL_AMOUNT)
 
 	if (istype(affected_turf, /turf/open/floor/material) || istype(affected_turf, /turf/closed/wall/material))
 		affected_turf.set_custom_materials(custom_materials)
@@ -193,35 +193,35 @@
 /datum/dimension_theme/gold
 	icon = 'icons/obj/stack_objects.dmi'
 	icon_state = "sheet-gold_2"
-	material = /datum/material/gold
+	materials = /datum/material/gold
 
 /datum/dimension_theme/plasma
 	icon = 'icons/obj/clothing/masks.dmi'
 	icon_state = "gas_alt"
-	material = /datum/material/plasma
+	materials = /datum/material/plasma
 
 /datum/dimension_theme/clown
 	icon = 'icons/obj/clothing/masks.dmi'
 	icon_state = "clown"
-	material = /datum/material/bananium
+	materials = /datum/material/bananium
 	sound = 'sound/items/bikehorn.ogg'
 
 /datum/dimension_theme/radioactive
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "Uranium ore"
-	material = /datum/material/uranium
+	materials = /datum/material/uranium
 	sound = 'sound/items/welder.ogg'
 
 /datum/dimension_theme/meat
 	icon = 'icons/obj/food/food.dmi'
 	icon_state = "meat"
-	material = /datum/material/meat
+	materials = /datum/material/meat
 	sound = 'sound/items/eatfood.ogg'
 
 /datum/dimension_theme/pizza
 	icon = 'icons/obj/food/pizzaspaghetti.dmi'
 	icon_state = "pizzamargherita"
-	material = /datum/material/pizza
+	materials = /datum/material/pizza
 	sound = 'sound/items/eatfood.ogg'
 
 /datum/dimension_theme/natural
@@ -239,7 +239,7 @@
 	icon = 'icons/obj/clothing/shoes.dmi'
 	icon_state = "iceboots"
 	window_colour = "#00f7ff"
-	material = /datum/material/snow
+	materials = /datum/material/snow
 	replace_floors = list(/turf/open/floor/grass/snow/fake = 10, /turf/open/floor/fakeice/slippery = 1)
 	replace_walls = /turf/closed/wall/mineral/snow
 
@@ -256,7 +256,7 @@
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "blessed"
 	window_colour = "#000000"
-	material = /datum/material/glass
+	materials = /datum/material/glass
 	replace_floors = list(/turf/open/floor/fakespace = 1)
 	replace_walls = /turf/closed/wall/rock/porous
 	replace_objs = list(/obj/machinery/door/airlock = list(/obj/machinery/door/airlock/external/glass/ruin = 1))
@@ -264,7 +264,7 @@
 /datum/dimension_theme/glass
 	icon = 'icons/obj/shards.dmi'
 	icon_state = "small"
-	material = /datum/material/glass
+	materials = /datum/material/glass
 	replace_floors = list(/turf/open/floor/glass = 1)
 	sound = "shatter"
 
@@ -299,5 +299,5 @@
 /datum/dimension_theme/disco
 	icon = 'icons/obj/lighting.dmi'
 	icon_state = "lbulb"
-	material = /datum/material/glass
+	materials = /datum/material/glass
 	replace_floors = list(/turf/open/floor/light/colour_cycle = 1)

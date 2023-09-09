@@ -238,7 +238,7 @@ GLOBAL_LIST_INIT(plasteel_recipes, list ( \
  */
 GLOBAL_LIST_INIT(wood_recipes, list ( \
 	new/datum/stack_recipe("wooden sandals", /obj/item/clothing/shoes/sandal, 1), \
-	new/datum/stack_recipe("Гипер-Микро-Сауна", /obj/structure/sauna_oven, 50, time = 15 SECONDS, one_per_turf = TRUE, on_floor = TRUE),
+	new/datum/stack_recipe("Sauna Oven", /obj/structure/sauna_oven, 50, time = 15 SECONDS, one_per_turf = TRUE, on_floor = TRUE),
 	new/datum/stack_recipe("tiki mask", /obj/item/clothing/mask/gas/tiki_mask, 2), \
 	new/datum/stack_recipe("wood table frame", /obj/structure/table_frame/wood, 2, time = 10), \
 	null, \

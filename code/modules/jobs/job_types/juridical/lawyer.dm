@@ -61,7 +61,7 @@
 	name = "Syndicate Lawyer"
 	jobtype = /datum/job/lawyer
 
-	belt = /obj/item/pda/syndicate/no_deto
+	//belt = /obj/item/pda/syndicate/no_deto
 
 	belt = /obj/item/pda/lawyer
 	ears = /obj/item/radio/headset/headset_sec

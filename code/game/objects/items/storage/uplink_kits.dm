@@ -176,6 +176,12 @@
 	icon = 'modular_bluemoon/krashly/icons/obj/box.dmi'
 	icon_state = "syndiebox"
 
+/obj/item/storage/box/inteq_kit
+	name = "InteQ Box"
+	desc = "A sleek, sturdy box."
+	icon = 'modular_bluemoon/krashly/icons/obj/box.dmi'
+	icon_state = "inteqbox"
+
 /obj/item/storage/box/syndie_kit/imp_freedom
 	name = "boxed freedom implant (with injector)"
 

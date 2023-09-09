@@ -28,7 +28,7 @@ In my current plan for it, 'solid' will be defined as anything with density == 1
 	announce_when = 5
 
 /datum/round_event/immovable_rod/announce(fake)
-	priority_announce("Что это за хуета?!", "Приоритетная Тревога!", has_important_message = TRUE)
+	priority_announce("Что это за хуета?!", "Приоритетная Тревога!", 'sound/announcer/classic/irod.ogg')
 
 /datum/round_event/immovable_rod/start()
 	var/datum/round_event_control/immovable_rod/C = control

@@ -1692,14 +1692,12 @@
 		/obj/item/shockpaddles/syndicate,
 		/obj/item/healthanalyzer/advanced,
 		/obj/item/surgical_drapes/advanced,
-		/obj/item/retractor,
-		/obj/item/hemostat,
-		/obj/item/cautery,
-		/obj/item/surgicaldrill,
-		/obj/item/scalpel,
+		/obj/item/retractor/advanced,
+		/obj/item/surgicaldrill/advanced,
+		/obj/item/scalpel/advanced,
+		/obj/item/melee/transforming/energy/sword/cyborg/saw,
 		/obj/item/bonesetter,
 		/obj/item/stack/medical/bone_gel,
-		/obj/item/melee/transforming/energy/sword/cyborg/saw,
 		/obj/item/roller/robo,
 		/obj/item/card/emag,
 		/obj/item/pinpointer/syndicate_cyborg,
@@ -1752,6 +1750,18 @@
 	magpulsing = TRUE
 	hat_offset = -4
 	canDispose = TRUE
+
+/obj/item/robot_module/syndicate/inteq
+	name = "InteQ Assault"
+	cyborg_base_icon = "inteq_sec"
+
+/obj/item/robot_module/syndicate_medical/inteq
+	name = "InteQ Medical"
+	cyborg_base_icon = "inteq_med"
+
+/obj/item/robot_module/saboteur/inteq
+	name = "InteQ Saboteur"
+	cyborg_base_icon = "inteq_engi"
 
 /datum/robot_energy_storage
 	var/name = "Generic energy storage"

@@ -6,6 +6,7 @@
 	threat = 12
 	show_to_ghosts = TRUE
 	var/datum/team/vox_scavengers/crew
+	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/vox_scavengers/greet()
 	SEND_SOUND(owner.current, sound('modular_bluemoon/kovac_shitcode/sound/vox_spawn.ogg'))
@@ -118,7 +119,7 @@
 	H.faction |= "Vox"
 
 	var/obj/item/radio/R = H.ears
-	R.set_frequency(FREQ_SYNDICATE)
+	R.set_frequency(FREQ_PIRATE)
 	R.freqlock = TRUE
 
 	var/obj/item/implant/weapons_auth/W = new

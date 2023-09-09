@@ -450,7 +450,9 @@ GLOBAL_LIST_EMPTY(ghost_records)
 		if(ishuman(mob_occupant))
 			var/mob/living/carbon/human/H = mob_occupant
 			if(H.mind && H.client && H.client.prefs)
-				H.SaveTCGCards()
+				var/mob/living/carbon/human/H_original_character = H.mind.original_character?.resolve()
+				if(H_original_character && H == H_original_character)
+					H.SaveTCGCards()
 
 		var/list/gear = list()
 		if(iscarbon(mob_occupant))		// sorry simp-le-mobs deserve no mercy

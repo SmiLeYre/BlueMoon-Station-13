@@ -34,7 +34,7 @@
 /datum/outfit/vr/syndicate/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	. = ..()
 	var/key = H.key ? H.key : preference_source ? preference_source.key : null
-	var/obj/item/syndicate_uplink_high/nuclear/U = new /obj/item/uplink/nuclear_restricted(H, key, 80)
+	var/obj/item/syndicate_uplink_high/nuclear/U = new /obj/item/syndicate_uplink_high/nuclear(H, key, 80)
 	H.equip_to_slot_or_del(U, ITEM_SLOT_BACKPACK)
 	var/obj/item/implant/weapons_auth/W = new
 	W.implant(H)

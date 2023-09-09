@@ -104,10 +104,3 @@
 	build_path = /obj/item/circuitboard/machine/processor
 	category = list ("Misc. Machinery")
 	departmental_flags =  DEPARTMENTAL_FLAG_SERVICE | DEPARTMENTAL_FLAG_SCIENCE
-
-/datum/design/board/restaurant_portal
-	name = "Портал Ресторана"
-	desc = "Портал от Всемирной Организации Роботов-Гурманов!"
-	id = "restaurant_portal"
-	build_path = /obj/item/circuitboard/machine/restaurant_portal
-	category = list ("Misc. Machinery")

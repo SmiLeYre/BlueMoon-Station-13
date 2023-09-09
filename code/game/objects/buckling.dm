@@ -79,6 +79,15 @@
 	M.throw_alert("buckled", /atom/movable/screen/alert/restrained/buckled)
 	post_buckle_mob(M)
 
+	// BLUEMOON ADDITION AHEAD - запрет на усаживание сверхтяжёлого персонажа посторонними
+	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER)) // проверка не раньше, т.к. в post_buckle_mob обратаюыватся объекты-исключения, на которые другие могут, но сверхтяжёлые персонажи не могут сесть
+		if(!M.buckled) // чтобы лишний раз не появлялось сообщение о попытке сесть
+			return FALSE
+		if(M != usr)
+			to_chat(usr, span_warning("Слишком много весит!"))
+			return FALSE
+	// BLUEMOON ADDITION END
+
 	SEND_SIGNAL(src, COMSIG_MOVABLE_BUCKLE, M, force)
 	return TRUE
 
@@ -129,15 +138,21 @@
 	. = buckle_mob(M, check_loc = check_loc)
 	if(.)
 		if(M == user)
+			// BLUEMOON CHANGES AHEAD - нарративный комментарий, что садится/ложится сверхтяжёлый персонаж
 			M.visible_message(\
-				"<span class='notice'>[M] занимает место на <b>[src]</b>.</span>",\
-				"<span class='notice'>Вы занимаете место на <b>[src]</b>.</span>",\
+				"<span class='notice'>[M] занимает место на <b>[src]</b>. \
+				[HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER) ? "Слышится скрип при попытки удержать вес." : ""]</span>",\
+				"<span class='notice'>Вы занимаете место на <b>[src]</b>. \
+				[HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER) ? "Слышится скрип при попытки удержать вес." : ""]</span>",\
 				"<span class='italics'>Вы слышите металлический лязг.</span>")
 		else
 			M.visible_message(\
-				"<span class='warning'>[user] размещает <b>[M]</b> на <b>[src]</b>!</span>",\
-				"<span class='warning'>[user] размещает вас на <b>[src]</b>!</span>",\
+				"<span class='warning'>[user] размещает <b>[M]</b> на <b>[src]</b>! \
+				[HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER) ? "Слышится скрип при попытки удержать вес." : ""]</span>",\
+				"<span class='warning'>[user] размещает вас на <b>[src]</b>! \
+				[HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER) ? "Слышится скрип при попытки удержать вес." : ""]</span>",\
 				"<span class='italics'>Вы слышите металлический лязг.</span>")
+			// BLUEMOON CHANGES END
 
 /atom/movable/proc/user_unbuckle_mob(mob/living/buckled_mob, mob/user)
 	var/mob/living/M = unbuckle_mob(buckled_mob)

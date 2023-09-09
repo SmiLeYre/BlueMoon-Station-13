@@ -68,7 +68,7 @@
 	return 0
 
 /obj/item/implanter/mindshield
-	name = "implanter (mindshield)"
+	name = "Implanter (mindshield)"
 	imp_type = /obj/item/implant/mindshield
 
 /obj/item/implantcase/mindshield

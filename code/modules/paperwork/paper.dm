@@ -781,6 +781,7 @@
 
 /obj/item/paper/crumpled/bloody
 	icon_state = "scrap_bloodied"
+	default_raw_text = "Помогите..."
 
 /obj/item/paper/crumpled/muddy
 	icon_state = "scrap_mud"

@@ -582,6 +582,8 @@
 	// humans usually breathe 21 but require 16/17, so 80% - 1, which is more lenient but it's fine
 	#define SAFE_THRESHOLD_RATIO 0.8
 	var/datum/gas_mixture/breath = SSair.planetary[LAVALAND_DEFAULT_ATMOS] // y'all know
+	if(breath == null)
+		return
 	if(breath.get_moles(GAS_METHANE) > 0.1)
 		breathing_class = BREATH_METHANE
 	var/pressure = breath.return_pressure()

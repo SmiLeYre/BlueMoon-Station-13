@@ -6,6 +6,7 @@
 	threat = 15
 	show_to_ghosts = TRUE
 	var/datum/team/raiders/crew
+	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/raiders/greet()
 	SEND_SOUND(owner.current, sound('modular_bluemoon/kovac_shitcode/sound/inteq_raiders_spawn.ogg'))
@@ -161,7 +162,7 @@
 	H.faction |= "InteQ"
 
 	var/obj/item/radio/R = H.ears
-	R.set_frequency(FREQ_SYNDICATE)
+	R.set_frequency(FREQ_PIRATE)
 	R.freqlock = TRUE
 	if(command_radio)
 		R.command = TRUE
@@ -197,7 +198,7 @@
 	light_color = LIGHT_COLOR_ORANGE
 	circuit = /obj/item/circuitboard/computer/inteq_collosus
 	shuttleId = "inteq_collosus"
-	possible_destinations = "inteq_collosus_custom"
+	possible_destinations = "inteq_collosus_custom, raiders_away"
 
 /obj/item/circuitboard/computer/inteq_collosus
 	name = "Collosus Control Console (Computer Board)"

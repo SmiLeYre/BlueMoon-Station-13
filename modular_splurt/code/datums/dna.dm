@@ -68,6 +68,11 @@
 		holder.health = (holder.health / holder.maxHealth) * MINIMAL_SIZE_HEALTH
 		holder.maxHealth = MINIMAL_SIZE_HEALTH
 		return
+	if(healthmod_new > healthmod_old) // Больше ли новое максимальное ХП, чем старое
+		if(holder.health < holder.maxHealth * 0.9) // Больше ли урона чем 10%
+			var/damage_formula = abs(holder.health / holder.maxHealth * healthchange - (holder.maxHealth + healthchange)) - holder.health
+			holder.apply_damage(damage_formula, BRUTE, BODY_ZONE_CHEST) // Наносится пропорциональное разнице остатка ХП количество урона
+			holder.visible_message(span_danger("[holder] body damage is getting worse from sudden expansion!"), span_danger("Your body damage is getting worse from sudden expansion!"))
 	#undef MINIMAL_SIZE_HEALTH
 	// BLUEMOON ADDITION END
 

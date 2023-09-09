@@ -24,7 +24,7 @@
 	. = ""
 
 /datum/proc/ru_aya(temp_gender)
-	. = "ой"
+	. = "ый"
 
 /datum/proc/ru_sya(temp_gender = null, include_l = FALSE)
 	. = "ся"
@@ -98,12 +98,12 @@
 /atom/ru_aya(capitalized, temp_gender)
 	if(!temp_gender)
 		temp_gender = gender
-	. = "ой"
+	. = "ый"
 	switch(temp_gender)
 		if(FEMALE)
 			. = "ая"
 		if(MALE)
-			. = "ой"
+			. = "ый"
 	if(capitalized)
 		. = capitalize(.)
 

@@ -399,6 +399,7 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/vox
 	armor = list(MELEE = 65, BULLET = 50, LASER = 70, ENERGY = 20, BOMB = 30, BIO = 30, RAD = 30)
 	species_restricted = list("Vox")
+	tail_state = ""
 
 
 ////////////////////////////////////////////////////////////////////////////// Арбалеты с иными пинами и ЕВА, помещающаяся в рюкзак. Не стал изменять прямо на картах, а сделал отдельные предметы. Пригодятся.
@@ -470,3 +471,39 @@
 
 /obj/item/card/emag/vox
 	uses = 30
+
+
+/////////////////////////////////////////////////////////
+
+/mob/living/simple_animal/pet/dog/corgi/pig/assistant
+	name = "Danya"
+	real_name = "Danya"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
+	maxHealth = 250
+	health = 250
+
+/mob/living/simple_animal/pet/fox/fennec/eldritch
+	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
+	maxHealth = 100
+	health = 100
+
+///////////////
+
+/obj/item/toy/plush/mammal/fox/emma
+	name = "emma plushie"
+	desc = "An adorable stuffed toy resembling a vulp."
+	icon_state = "emma"
+	item_state = "emma"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps.dmi'
+	lefthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_l.dmi'
+	righthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_r.dmi'
+
+/obj/item/toy/plush/mammal/fox/emma/shiro
+	name = "shiro plushie"
+	icon_state = "shiro"
+	item_state = "shiro"
+
+/obj/item/toy/plush/mammal/fox/emma/raita
+	name = "raita plushie"
+	icon_state = "raita"
+	item_state = "raita"

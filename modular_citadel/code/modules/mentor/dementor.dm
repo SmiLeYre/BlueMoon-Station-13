@@ -1,6 +1,6 @@
 /client/proc/cmd_mentor_dementor()
 	set category = "Mentor"
-	set name = "dementor"
+	set name = "Dementor"
 	if(!is_mentor())
 		return
 	remove_mentor_verbs()
@@ -8,10 +8,10 @@
 		mentor_unfollow()
 	GLOB.mentors -= src
 	add_verb(src, /client/proc/cmd_mentor_rementor)
-	
+
 /client/proc/cmd_mentor_rementor()
 	set category = "Mentor"
-	set name = "rementor"
+	set name = "Rementor"
 	if(!is_mentor())
 		return
 	add_mentor_verbs()

@@ -99,8 +99,8 @@
 		//parts = list(/obj/item/storage/belt = 1
 		//			 )
 	time = 150
-	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISCELLANEOUS
+	subcategory = CAT_OTHER // BLUEMOON CHANGES
+	category = CAT_OTHER // BLUEMOON CHANGES
 	always_availible = FALSE	// Disabled until learned
 
 
@@ -116,8 +116,8 @@
 				/obj/item/candle = 1
 				)
 	time = 100
-	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISCELLANEOUS
+	subcategory = CAT_OTHER // BLUEMOON CHANGES
+	category = CAT_OTHER // BLUEMOON CHANGES
 	always_availible = FALSE	// Disabled til learned
 
 /datum/crafting_recipe/furnace

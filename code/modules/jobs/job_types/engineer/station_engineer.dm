@@ -61,7 +61,7 @@
 	jobtype = /datum/job/engineer
 
 	belt = /obj/item/storage/belt/utility/full/engi
-	l_pocket = /obj/item/pda/syndicate/no_deto
+	//l_pocket = /obj/item/pda/syndicate/no_deto
 	ears = /obj/item/radio/headset/headset_eng
 	uniform = /obj/item/clothing/under/rank/engineering/engineer/util
 	shoes = /obj/item/clothing/shoes/jackboots/tall

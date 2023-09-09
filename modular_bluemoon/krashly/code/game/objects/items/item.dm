@@ -27,7 +27,54 @@
 		H.update_mutant_bodyparts()
 		H.update_hair()
 
+/obj/structure/sign/flag/skull
+	name = "flag of PMC Skull"
+	desc = "Black flag with a skull in the center. Has a red lining. The flag smells of blood."
+	icon = 'modular_bluemoon/krashly/icons/obj/skull_flag.dmi'
+	icon_state = "full"
+	item_flag = /obj/item/sign/flag/skull
+
+/obj/item/sign/flag/skull
+	name = "folded flag of the PMC Skull"
+	desc = "The folded flag of the PMC Skull."
+	icon = 'modular_bluemoon/krashly/icons/obj/skull_flag.dmi'
+	icon_state = "mini"
+	sign_path = /obj/structure/sign/flag/skull
+
+/obj/structure/closet/crate/coffin/attackby(obj/item/sign/flag/skull/I)
+	icon = 'modular_bluemoon/krashly/icons/obj/skull_flag.dmi'
+	icon_state = "grob_full"
+	locked = TRUE
+	qdel(I)
+
+/datum/gear/donator/bm/skull_flag
+	name = "PMC Skull flag"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/sign/flag/skull
+	ckeywhitelist = list("krashly", "stgs", "hazzi", "dolbajob")
+	subcategory = LOADOUT_SUBCATEGORIES_DON10
+
 //InteQ
+
+/obj/structure/sign/flag/inteq
+	name = "flag of PMC InteQ"
+	desc = "Orange-Brown flag with a shield in the center. Has a Yellow lining. The flag smells of blood."
+	icon = 'modular_bluemoon/krashly/icons/obj/inteq_flag.dmi'
+	icon_state = "full"
+	item_flag = /obj/item/sign/flag/inteq
+
+/obj/item/sign/flag/inteq
+	name = "folded flag of the PMC InteQ"
+	desc = "The folded flag of the PMC InteQ."
+	icon = 'modular_bluemoon/krashly/icons/obj/inteq_flag.dmi'
+	icon_state = "mini"
+	sign_path = /obj/structure/sign/flag/inteq
+
+/obj/structure/closet/crate/coffin/attackby(obj/item/sign/flag/inteq/I)
+	icon = 'modular_bluemoon/krashly/icons/obj/inteq_flag.dmi'
+	icon_state = "grob_full"
+	locked = TRUE
+	qdel(I)
 
 /obj/item/poster/random_inteq
 	name = "random InteQ poster"
@@ -151,4 +198,9 @@
 /datum/gear/neck/windy_scarf
 	name = "A windy scarf"
 	path = /obj/item/clothing/neck/windy_scarf
+	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
+
+/datum/gear/head/bow
+	name = "A polychromic bow"
+	path = /obj/item/toy/fluff/bant
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION

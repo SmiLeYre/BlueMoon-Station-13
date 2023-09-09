@@ -265,3 +265,14 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "bible",  
 
 /obj/item/storage/book/bible/syndicate/empty
 	uses = 0
+
+
+/obj/item/storage/book/bible/fart_act(mob/living/M)
+	if(QDELETED(M) || M.stat == DEAD)
+		return
+	M.visible_message("<span class='danger'>[M] пёрнул на \the [name]!</span>")
+	M.visible_message("<span class='userdanger'>Высшие силы наказали [M]!</span>")
+	do_sparks(3, 1, M)
+	explosion(M.loc,0,1,1,1)
+	M.log_message("triggered a bible explosion")
+	return TRUE

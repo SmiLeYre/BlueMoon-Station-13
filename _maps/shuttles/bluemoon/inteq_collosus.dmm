@@ -55,7 +55,7 @@
 	},
 /obj/structure/closet/secure_closet/brig{
 	name = "Prisoner Locker";
-	req_access = "150"
+	req_access_txt = "150"
 	},
 /obj/item/clothing/head/helmet/space/eva,
 /obj/item/clothing/suit/space/eva,
@@ -979,7 +979,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/window/survival_pod{
 	dir = 1;
-	req_access = "150";
+	req_access_txt = "150";
 	req_access_txt = "150"
 	},
 /turf/open/floor/iron/dark,
@@ -1046,7 +1046,7 @@
 	lethal = 1;
 	locked = 0;
 	pixel_y = null;
-	req_access = "150";
+	req_access_txt = "150";
 	pixel_x = -26
 	},
 /turf/open/floor/wood/wood_parquet,

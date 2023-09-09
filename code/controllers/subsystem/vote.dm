@@ -536,14 +536,13 @@ SUBSYSTEM_DEF(vote)
 			if("transfer") // austation begin -- Crew autotranfer vote
 				choices.Add(VOTE_TRANSFER,VOTE_CONTINUE) // austation end
 			if("roundtype")
-				check_combo()
 				var/combo = check_combo()
 				switch (combo)
 					if ("dynamic")
 						choices.Add(ROUNDTYPE_EXTENDED)
 					if ("Extended")
 						choices.Add(ROUNDTYPE_DYNAMIC)
-					if (FALSE)
+					else
 						choices.Add(ROUNDTYPE_DYNAMIC, ROUNDTYPE_EXTENDED)
 			if("custom")
 				question = stripped_input(usr,"What is the vote for?")
@@ -609,15 +608,20 @@ SUBSYSTEM_DEF(vote)
 	return 0
 
 /datum/controller/subsystem/vote/proc/check_combo()
-    var/list/roundtypes = list()
-    for (var/mode in SSpersistence.saved_modes)
-        if(!roundtypes[mode])
-            roundtypes[mode] = 0
-        roundtypes[mode]++
+	var/list/roundtypes = list()
+	log_world("SSpersistence.saved_modes contents:")
+	for (var/mode in SSpersistence.saved_modes)
+		log_world("- [mode]: [SSpersistence.saved_modes[mode]]")
 
-        if (roundtypes[mode] >= 3)
-            return mode
-    return FALSE
+	for (var/mode in SSpersistence.saved_modes)
+		if(!istext(mode))
+			continue
+		if(!(mode in roundtypes))
+			roundtypes[mode] = 0
+		roundtypes[mode]++
+		if (roundtypes[mode] >= 3)
+			return mode
+	return FALSE
 
 /datum/controller/subsystem/vote/proc/interface(client/C)
 	if(!C)
@@ -645,15 +649,8 @@ SUBSYSTEM_DEF(vote)
 			if(SCORE_VOTING,HIGHEST_MEDIAN_VOTING)
 				. += "<h3>Grade the candidates by how much you like them.</h3>"
 				. += "<h3>No-votes have no power--your opinion is only heard if you vote!</h3>"
-//BLUEMOON ADD START
+
 		if(mode == "roundtype")
-/*
-			. += "<br>Голоса за [ROUNDTYPE_DYNAMIC] и [ROUNDTYPE_DYNAMIC_TEAMBASED] складываются (и побеждают в случае ничьей). Против них - [ROUNDTYPE_DYNAMIC_LIGHT] и [ROUNDTYPE_EXTENDED]."
-			. += "<br><font size=1><small><b>[ROUNDTYPE_DYNAMIC_TEAMBASED]</b> (50-100 угрозы, только командные и некоторые одиночные антагонисты)</font></small>"
-			. += "<br><font size=1><small><b>[ROUNDTYPE_DYNAMIC]</b> (50-100 угрозы)</font></small>"
-			. += "<br><font size=1><small><b>[ROUNDTYPE_DYNAMIC_LIGHT]</b> (30-50 угрозы, без командных ролей)</font></small>"
-			. += "<br><font size=1><small><b>[ROUNDTYPE_EXTENDED]</b> (без угроз)</font></small>"
-*/
 			. += "<br>ПОДХОД К ГОЛОСОВАНИЮ В РАЗРАБОТКЕ!"
 			. += "<br>Если выбирается [ROUNDTYPE_DYNAMIC], то выбирается одна из вариаций динамика, которые описаны ниже:"
 			. += "<br><font size=1><small><b>[ROUNDTYPE_DYNAMIC_TEAMBASED]</b> (55-100 угрозы, только командные и особые одиночные антагонисты);</font></small>"
@@ -665,6 +662,8 @@ SUBSYSTEM_DEF(vote)
 			if(SSpersistence.last_dynamic_gamemode)
 				. += "<br>Последняя вариация: <b>[SSpersistence.last_dynamic_gamemode]</b>."
 			. += "<h4>Проходит Эксперимент - чередование режимов. Если Режим выпадает три раза подряд - форсится обратный.</h4>"
+			if (length(SSpersistence.saved_modes))
+				. += "<br>Последние режимы: <b>[jointext(SSpersistence.saved_modes, ", ")]</b>."
 			. += "<br>Осталось времени: [DisplayTimeText((SSticker.timeLeft - ROUNDTYPE_VOTE_END_PENALTY))]<hr><ul>"
 		else
 			. += "Осталось времени: [DisplayTimeText(end_time-world.time)]<hr><ul>"

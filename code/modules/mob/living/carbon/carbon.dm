@@ -105,6 +105,16 @@
 	. = ..()
 	var/hurt = TRUE
 	var/extra_speed = 0
+	// BLUEMOON ADDITION AHEAD - для изменения урона в зависимости от наличия квирка тяжести персонажа
+	var/damage = 10
+	var/combat_knockdown = 20
+	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY)) //жирный мужчина под 150 килограмм летит в вашу сторону
+		damage += 25
+		combat_knockdown += 20
+	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER)) //в лицо успешно влетела акула 12 футов в росте
+		damage += 50
+		combat_knockdown += 40
+	// BLUEMOON ADDITION END
 	if(throwingdatum.thrower != src)
 		extra_speed = min(max(0, throwingdatum.speed - initial(throw_speed)), 3)
 	if(GetComponent(/datum/component/tackler))
@@ -115,17 +125,17 @@
 			hurt = FALSE
 	if(hit_atom.density && isturf(hit_atom))
 		if(hurt)
-			DefaultCombatKnockdown(20)
-			take_bodypart_damage(10 + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5)
+			DefaultCombatKnockdown(combat_knockdown) // BLUEMOON CHANGES
+			take_bodypart_damage(damage + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5) // BLUEMOON CHANGES
 	if(iscarbon(hit_atom) && hit_atom != src)
 		var/mob/living/carbon/victim = hit_atom
 		if(victim.movement_type & FLYING)
 			return
 		if(hurt)
-			victim.take_bodypart_damage(10 + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5)
-			take_bodypart_damage(10 + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5)
-			victim.DefaultCombatKnockdown(20)
-			DefaultCombatKnockdown(20)
+			victim.take_bodypart_damage(damage + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5) // BLUEMOON CHANGES
+			take_bodypart_damage(damage + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5) // BLUEMOON CHANGES
+			victim.DefaultCombatKnockdown(combat_knockdown) // BLUEMOON CHANGES
+			DefaultCombatKnockdown(combat_knockdown) // BLUEMOON CHANGES
 			visible_message("<span class='danger'>[src] crashes into [victim] [extra_speed ? "really hard" : ""], knocking them both over!</span>",\
 				"<span class='userdanger'>You violently crash into [victim] [extra_speed ? "extra hard" : ""]!</span>")
 		playsound(src,'sound/weapons/punch1.ogg',50,1)
@@ -218,6 +228,12 @@
 			power_throw++
 		if(pulling && grab_state >= GRAB_NECK)
 			power_throw++
+		//BLUEMOON ADDITION AHEAD
+		if(HAS_TRAIT(thrown_thing, TRAIT_BLUEMOON_HEAVY)) // тяжёлый персонаж метается хуже обычного
+			power_throw -= 2
+		if(HAS_TRAIT(thrown_thing, TRAIT_BLUEMOON_HEAVY_SUPER)) // сверхтяжёлого персонажа нельзя кинуть с рук
+			power_throw = -10
+		//BLUEMOON ADDITION END
 		visible_message("<span class='danger'>[src] throws [thrown_thing][power_throw ? " really hard!" : "."]</span>", \
 						"<span class='danger'>You throw [thrown_thing][power_throw ? " really hard!" : "."]</span>")
 		log_message("has thrown [thrown_thing] [power_throw ? "really hard" : ""]", LOG_ATTACK)

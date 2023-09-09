@@ -37,6 +37,8 @@
 	icon_state = "voice0"
 	item_state = "flashbang"	//looks exactly like a flash (and nothing like a flashbang)
 	w_class = WEIGHT_CLASS_TINY
+	slot_flags = ITEM_SLOT_EARS
+	actions_types = list(/datum/action/item_action/halt, /datum/action/item_action/dispatch)
 	var/use_message = "Halt! Security!"
 	var/spamcheck = 0
 	var/insults

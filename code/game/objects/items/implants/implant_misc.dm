@@ -116,7 +116,7 @@
 		positions.Cut(1, remove + 1)
 
 /obj/item/implanter/warp
-	name = "implanter (warp)"
+	name = "Implanter (warp)"
 	imp_type = /obj/item/implant/warp
 
 /obj/item/implant/emp

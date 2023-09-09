@@ -307,6 +307,7 @@
 	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
 	heat_protection = HEAD
 	max_heat_protection_temperature = HELMET_MAX_TEMP_PROTECT
+	alternate_screams = BLOOD_SCREAMS
 
 /obj/item/clothing/suit/cultrobes
 	name = "ancient cultist robes"
@@ -321,6 +322,7 @@
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
+	alternate_screams = BLOOD_SCREAMS
 
 /obj/item/clothing/head/culthood/alt
 	name = "cultist hood"
@@ -359,6 +361,7 @@
 	armor = list(MELEE = 30, BULLET = 30, LASER = 30,ENERGY = 20, BOMB = 0, BIO = 0, RAD = 0, FIRE = 10, ACID = 10)
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	mutantrace_variation = STYLE_MUZZLE
+	alternate_screams = BLOOD_SCREAMS
 
 /obj/item/clothing/suit/magusred
 	name = "magus robes"
@@ -369,6 +372,7 @@
 	allowed = list(/obj/item/tome, /obj/item/melee/cultblade)
 	armor = list(MELEE = 50, BULLET = 30, LASER = 50,ENERGY = 20, BOMB = 25, BIO = 10, RAD = 0, FIRE = 10, ACID = 10)
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
+	alternate_screams = BLOOD_SCREAMS
 
 /obj/item/clothing/head/helmet/space/hardsuit/cult
 	name = "\improper Nar'Sien hardened helmet"
@@ -378,6 +382,7 @@
 	armor = list(MELEE = 60, BULLET = 50, LASER = 30,ENERGY = 15, BOMB = 30, BIO = 30, RAD = 30, FIRE = 100, ACID = 75)
 	brightness_on = 0
 	actions_types = list()
+	alternate_screams = BLOOD_SCREAMS
 
 
 /obj/item/clothing/head/helmet/space/hardsuit/cult/ComponentInitialize()
@@ -394,6 +399,7 @@
 	allowed = list(/obj/item/tome, /obj/item/melee/cultblade, /obj/item/tank/internals/)
 	armor = list(MELEE = 70, BULLET = 50, LASER = 30,ENERGY = 15, BOMB = 30, BIO = 30, RAD = 30, FIRE = 100, ACID = 75)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/cult
+	alternate_screams = BLOOD_SCREAMS
 
 /obj/item/clothing/suit/space/hardsuit/cult/ComponentInitialize()
 	. = ..()
@@ -426,6 +432,7 @@
 	var/current_charges = 3
 	hoodtype = /obj/item/clothing/head/hooded/cult_hoodie
 	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | ALLOWINTERNALS
+	alternate_screams = BLOOD_SCREAMS
 
 /obj/item/clothing/head/hooded/cult_hoodie
 	name = "\improper Nar'Sien Empowered Helmet"
@@ -436,6 +443,7 @@
 	flash_protect = 1
 	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS
 	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | ALLOWINTERNALS
+	alternate_screams = BLOOD_SCREAMS
 
 /obj/item/clothing/suit/hooded/cultrobes/cult_shield/equipped(mob/living/user, slot)
 	..()
@@ -494,6 +502,7 @@
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS
 	armor = list(MELEE = -50, BULLET = -50, LASER = -50, ENERGY = -50, BOMB = -50, BIO = -50, RAD = -50, FIRE = 0, ACID = 0)
+	alternate_screams = BLOOD_SCREAMS
 
 /obj/item/clothing/suit/hooded/cultrobes/berserker/equipped(mob/living/user, slot)
 	..()
@@ -580,13 +589,13 @@
 		sleep(20)
 		var/static/list/curses
 		if(!curses)
-			curses = list("Специалист по Заправке Шаттлов только что перерезал себе горло и умолял о смерти",
+			curses = list("Специалист по Заправке Шаттлов только что перерезал себе горло, умоляя о смерти",
 			"Навигационная программа шаттла была заменена файлом, содержащим всего два слова: ОНА ИДЁТ.",
 			"Смотритель Шаттла Эвакуации был найден в Диспетчерской, моющий окна собственной кровью.",
 			"Инженер шаттла начала кричать 'СМЕРТЬ - НЕ КОНЕЦ' и вырвала провода, пока вспышка дуги не сожгла ее плоть.",
 			"Безумная Инспектор начала смеяться по радио, а затем бросилась в турбину двигателя...",
 			"На шаттле был найден... АССИСТЕНТ!",
-			"Сотрудник Медицинского Блока был найден на мостике щаттла с множеством пустых пакетов крови. Он замкнул проводку Консолей этой субстанцией и зачем добавил своей крови, вскрикнув 'СМЕРТЬ - НЕ КОНЕЦ'",
+			"Сотрудник Медицинского Блока был найден на мостике шаттла с множеством пустых пакетов крови. Он замкнул проводку Консолей этой субстанцией и зачем добавил своей крови, вскрикнув 'СМЕРТЬ - НЕ КОНЕЦ'",
 			"Специалист по Заправке Шаттлов был найден заменяющим топливо своей кровью...",
 			"Все лампы на борту шаттла стали багрово-красными, а затем погасли... нам нужно время разобраться с этим...",
 			"Диспетчер был найден мертвым... прямо на его плоти были вырезаны кровавые символы.",
@@ -594,7 +603,7 @@
 			"Транспондер шаттла излучает закодированное сообщение 'ОНО ИДЁТ' вместо положенного идентификационного сигнала.")
 		var/message = pick_n_take(curses)
 		message += " Шаттл будет задержан на три минуты."
-		priority_announce("[message]", "Центральное Командование, Отдел Работы с Реальностью", 'sound/misc/notice1.ogg')
+		priority_announce("[message]", "Центральное Командование, Отдел Работы с Реальностью", 'sound/announcer/classic/delay.ogg')
 		curselimit++
 
 /obj/item/station_curse
@@ -621,7 +630,6 @@
 	playsound(user.loc, 'sound/effects/glassbr1.ogg', 50, 1)
 	qdel(src)
 	sleep(pick(50, 100, 150, 200, 250))
-	priority_announce("Что-то очень массивное и пугающее приближается к [station_name()]! Пусть Господь хранит Ваши души!!", "Центральное Командование, Отдел Работы с Реальностью", 'sound/announcer/classic/_admin_horror_music.ogg')
 	var/datum/round_event_control/portal_storm_narsie/portal_storm_narsie = new/datum/round_event_control/portal_storm_narsie
 	portal_storm_narsie.runEvent()
 	curselimit++
@@ -874,7 +882,7 @@
 /obj/item/cult_halberd/Destroy()
 	if(halberd_act)
 		qdel(halberd_act)
-	..()
+	return ..()
 
 /obj/item/cult_halberd/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	var/turf/T = get_turf(hit_atom)

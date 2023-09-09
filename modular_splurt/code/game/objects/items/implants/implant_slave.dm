@@ -68,7 +68,7 @@
 	return 0
 
 /obj/item/implanter/slave
-	name = "implanter (slave)"
+	name = "Implanter (slave)"
 	imp_type = /obj/item/implant/slave
 
 /obj/item/implantcase/slave

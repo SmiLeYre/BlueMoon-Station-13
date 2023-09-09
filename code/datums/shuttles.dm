@@ -32,11 +32,17 @@
 	if(!cached_map)
 		return
 
-	discover_port_offset()
+	//SPLURT EDIT
+	var/offset = discover_offset(/obj/docking_port/mobile)
+
+	port_x_offset = offset[1]
+	port_y_offset = offset[2]
+	//SPLURT EDIT END
 
 	if(!cached_map)
 		cached_map = null
 
+/* SPLURT EDIT - Refractored in modular
 /datum/map_template/shuttle/proc/discover_port_offset()
 	var/key
 	var/list/models = cached_map.grid_models
@@ -56,6 +62,7 @@
 					return
 				++xcrd
 			--ycrd
+*/
 
 /datum/map_template/shuttle/load(turf/T, centered = FALSE, orientation = SOUTH, annihilate = default_annihilate, force_cache = FALSE, rotate_placement_to_orientation = FALSE, register = TRUE)
 	. = ..()
@@ -262,28 +269,28 @@
 	credit_cost = 10000
 	// can_be_bought = FALSE
 
-/datum/map_template/shuttle/emergency/arena
-	suffix = "arena"
-	name = "The Arena"
-	description = "The crew must pass through an otherworldy arena to board this shuttle. Expect massive casualties. The source of the Bloody Signal must be tracked down and eliminated to unlock this shuttle."
-	admin_notes = "RIP AND TEAR."
-	credit_cost = 10000
+///datum/map_template/shuttle/emergency/arena
+//	suffix = "arena"
+//	name = "The Arena"
+//	description = "The crew must pass through an otherworldy arena to board this shuttle. Expect massive casualties. The source of the Bloody Signal must be tracked down and eliminated to unlock this shuttle."
+//	admin_notes = "RIP AND TEAR."
+//	credit_cost = 10000
 /// Whether the arena z-level has been created
-	var/arena_loaded = FALSE
+//	var/arena_loaded = FALSE
 
-/datum/map_template/shuttle/emergency/arena/prerequisites_met()
-	return SSshuttle.shuttle_purchase_requirements_met["bubblegum"]
-
-/datum/map_template/shuttle/emergency/arena/post_load(obj/docking_port/mobile/M)
-	. = ..()
-	if(!arena_loaded)
-		arena_loaded = TRUE
-		var/datum/map_template/arena/arena_template = new()
-		arena_template.load_new_z()
-
-/datum/map_template/arena
-	name = "The Arena"
-	mappath = "_maps/templates/the_arena.dmm"
+///datum/map_template/shuttle/emergency/arena/prerequisites_met()
+//	return SSshuttle.shuttle_purchase_requirements_met["bubblegum"]
+//
+///datum/map_template/shuttle/emergency/arena/post_load(obj/docking_port/mobile/M)
+//	. = ..()
+//	if(!arena_loaded)
+//		arena_loaded = TRUE
+//		var/datum/map_template/arena/arena_template = new()
+//		arena_template.load_new_z()
+//
+///datum/map_template/arena
+//	name = "The Arena"
+//	mappath = "_maps/templates/the_arena.dmm"
 
 /datum/map_template/shuttle/emergency/birdboat
 	suffix = "birdboat"
@@ -609,11 +616,11 @@
 
 /datum/map_template/shuttle/infiltrator/basic
 	suffix = "basic"
-	name = "basic syndicate infiltrator"
+	name = "Basic InteQ Infiltrator"
 
-// /datum/map_template/shuttle/infiltrator/advanced
-// 	suffix = "advanced"
-// 	name = "advanced syndicate infiltrator"
+/datum/map_template/shuttle/infiltrator/syndicate_basic
+	suffix = "syndicate_basic"
+	name = "Basic Syndicate Infiltrator"
 
 /datum/map_template/shuttle/cargo/delta
 	suffix = "delta"

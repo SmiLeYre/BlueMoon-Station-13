@@ -38,7 +38,6 @@
 	playsound(user.loc, 'sound/effects/glassbr1.ogg', 50, 1)
 	qdel(src)
 	sleep(pick(100, 200, 400, 800, 1200))
-	priority_announce("Что-то очень массивное и пугающее приближается к [station_name()]! Пусть Господь хранит Ваши души!!", "Центральное Командование, Отдел Работы с Реальностью", 'modular_bluemoon/kovac_shitcode/sound/clock_storm.ogg')
 	var/datum/round_event_control/portal_storm_clock/portal_storm_clock = new/datum/round_event_control/portal_storm_clock
 	portal_storm_clock.runEvent()
 	curselimit++

@@ -43,3 +43,6 @@ sound/music/Two_Of_Us.ogg
 sound/music/WELCOME_TO_RUSSIA.ogg
 sound/music/Your_House.ogg
 sound/music/Be_Here.ogg
+sound/music/Heres_To_You.ogg
+sound/music/Piano_Man.ogg
+sound/music/LOVE_IS_DEAD.ogg

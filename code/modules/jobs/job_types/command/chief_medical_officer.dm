@@ -71,7 +71,7 @@
 	name = "Syndicate Chief Medical Officer"
 	jobtype = /datum/job/cmo
 
-	belt = /obj/item/pda/syndicate/no_deto
+	//belt = /obj/item/pda/syndicate/no_deto
 
 	l_pocket = /obj/item/pinpointer/crew
 	ears = /obj/item/radio/headset/heads/cmo

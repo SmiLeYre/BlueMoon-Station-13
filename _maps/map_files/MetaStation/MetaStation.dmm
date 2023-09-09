@@ -3688,13 +3688,13 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
 "amK" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 5
 	},
 /obj/machinery/holopad,
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
@@ -9761,9 +9761,6 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
 "aNq" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
@@ -18477,13 +18474,8 @@
 /turf/open/floor/plasteel,
 /area/hallway/secondary/command)
 "bzQ" = (
-/obj/structure/table,
-/obj/item/paper_bin{
-	pixel_x = -2;
-	pixel_y = 4
-	},
-/obj/item/pen,
-/obj/effect/turf_decal/delivery,
+/obj/machinery/photocopier,
+/obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel,
 /area/hallway/secondary/command)
 "bzR" = (
@@ -45192,6 +45184,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4
 	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
 /turf/open/floor/carpet,
 /area/service/lawoffice)
 "dgm" = (
@@ -45945,6 +45940,9 @@
 	dir = 10
 	},
 /mob/living/simple_animal/pet/fox/fennec,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "djs" = (
@@ -56675,11 +56673,11 @@
 /turf/open/floor/wood,
 /area/command/bridge)
 "iwD" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 5
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
 	},
 /turf/closed/wall,
 /area/service/lawoffice)
@@ -59221,9 +59219,6 @@
 /turf/open/floor/plating,
 /area/engineering/main)
 "jPf" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
@@ -60115,9 +60110,6 @@
 /turf/open/floor/carpet,
 /area/command/bridge)
 "kpk" = (
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 10
 	},
@@ -61130,6 +61122,19 @@
 	},
 /turf/open/floor/glass/reinforced,
 /area/commons/dorms)
+"kMS" = (
+/obj/structure/lattice/catwalk,
+/obj/docking_port/stationary{
+	id = "lambda_station";
+	name = "Lambda Shuttle Dock";
+	dwidth = 5;
+	width = 10;
+	dheight = 5;
+	height = 10;
+	dir = 4
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
 "kMT" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
@@ -66656,6 +66661,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/service/hydroponics/garden)
+"nRb" = (
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/effect/landmark/start/bouncer,
+/turf/open/floor/plasteel,
+/area/service/bar)
 "nRF" = (
 /obj/machinery/firealarm{
 	dir = 8;
@@ -75462,13 +75475,10 @@
 /area/command/bridge)
 "skx" = (
 /obj/structure/cable/yellow{
-	icon_state = "4-8"
+	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/turf/closed/wall,
-/area/maintenance/fore)
+/turf/open/floor/carpet,
+/area/service/lawoffice)
 "skz" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/yellow{
@@ -77518,15 +77528,6 @@
 	pixel_x = -3;
 	pixel_y = 5
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/machinery/newscaster/security_unit{
-	pixel_y = -30
-	},
-/obj/item/folder/red,
-/obj/item/folder/red,
-/obj/structure/table,
 /obj/item/book/manual/wiki/security_space_law{
 	pixel_x = -3;
 	pixel_y = 5
@@ -81909,9 +81910,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 4
@@ -85326,15 +85324,15 @@
 /turf/closed/wall,
 /area/service/theater)
 "xzh" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/power/apc{
 	areastring = "/area/service/lawoffice";
 	dir = 1;
 	name = "Law Office APC";
 	pixel_y = 23
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
 	},
 /turf/open/floor/wood,
 /area/service/lawoffice)
@@ -113273,7 +113271,7 @@ aaa
 aaa
 aaa
 aaf
-ltY
+adY
 aiz
 ajt
 akB
@@ -113775,7 +113773,7 @@ vLD
 vLD
 vLD
 ngt
-ngt
+kMS
 ngt
 aaf
 aaf
@@ -117918,7 +117916,7 @@ lsr
 aBm
 aCu
 iwD
-iRj
+skx
 dgl
 iRj
 sAM
@@ -118947,7 +118945,7 @@ ayJ
 ayJ
 lNc
 lNc
-skx
+lNc
 lNc
 lNc
 lNc
@@ -120520,7 +120518,7 @@ uMQ
 kPZ
 nFG
 mPv
-kPZ
+nRb
 emB
 hAL
 mPv

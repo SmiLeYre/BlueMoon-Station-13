@@ -515,8 +515,8 @@
 	desc = "A black and white armband depicting two swords crossed around the fascia within wreaths representing prosperity. This flag refers to the political party of the Human Commonwealth."
 	icon_state = "hcaarmbanditem"
 	item_state = "hcaarmbanditem"
-	icon = 'modular_bluemoon/rakeideas/hcaarmbanditem.dmi'
-	mob_overlay_icon = 'modular_bluemoon/rakeideas/hcaarmbandchar.dmi'
+	icon = 'modular_bluemoon/rakeideas/hca/icons/hcaarmbanditem.dmi'
+	mob_overlay_icon = 'modular_bluemoon/rakeideas/hca/icons/hcaarmbandchar.dmi'
 	strip_delay = 60
 	dog_fashion = null
 

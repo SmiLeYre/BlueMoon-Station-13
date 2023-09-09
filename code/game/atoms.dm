@@ -1667,3 +1667,6 @@
 		var/atom/atom_orbiter = o
 		output += atom_orbiter.get_all_orbiters(processed, source = FALSE)
 	return output
+
+/atom/proc/fart_act(mob/living/M)
+	return FALSE

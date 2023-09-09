@@ -10,7 +10,7 @@
 #define ROLE_TRAITOR				"traitor"
 #define ROLE_OPERATIVE				"operative"
 #define ROLE_CHANGELING				"changeling"
-#define ROLE_CHANGELING_MIDROUND	"Changeling (Midround)"
+#define ROLE_CHANGELING_MIDROUND	"Changeling (Meteor)"
 #define ROLE_WIZARD					"wizard"
 #define ROLE_MALF					"malf AI"
 #define ROLE_REV					"revolutionary"
@@ -46,7 +46,7 @@
 #define ROLE_SPACE_DRAGON			"Space Dragon"
 #define ROLE_SLAVER					"slaver"
 #define ROLE_SLAVER_LEADER			"slave master"
-#define ROLE_TERROR_SPIDER		"Terror Spider"
+#define ROLE_TERROR_SPIDER			"Terror Spider"
 //#define ROLE_MONSTERHUNTER			"monster hunter" Disabled for now
 #define ROLE_GHOSTCAFE				"ghostcafe"
 #define ROLE_GHOSTROLE				"ghostrole"

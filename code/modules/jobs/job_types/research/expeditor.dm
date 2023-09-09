@@ -46,7 +46,7 @@
 	name = "Syndicate Expeditor"
 	jobtype = /datum/job/expeditor
 
-	l_pocket = /obj/item/pda/syndicate/no_deto
+	//l_pocket = /obj/item/pda/syndicate/no_deto
 
 	ears = /obj/item/radio/headset/headset_sci
 	uniform = /obj/item/clothing/under/syndicate/combat/exp

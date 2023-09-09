@@ -119,9 +119,14 @@
 	desc = "Прапор колись особливо героїчної держави, яку було загублено в попелищі Земної Історії..."
 	icon_state = "flag_ua"
 
+/obj/structure/sign/flag/belarus
+	name = "сцяг Беларусі"
+	desc = "Сцяг некалі самай лепшай дзяржавы на планеце з наймацнейшым лідэрам, вядомым як Дужы Арэшак"
+	icon_state = "flag_bel"
+
 
 /obj/structure/sign/flag/chechnya
-	name = "flag of the Soviet Union"
+	name = "flag of the Chechnya"
 	desc = "Круто!!!"
 	icon_state = "flag_chechen"
 
@@ -136,6 +141,11 @@
 			RESKIN_ICON_STATE = "folded_nt",
 			RESKIN_ITEM_STATE = "folded_nt",
 			sign_path = /obj/structure/sign/flag/nanotrasen
+		),
+		"Human Commonwealth Association" = list(
+			RESKIN_ICON_STATE = "folded_flag_hca",
+			RESKIN_ITEM_STATE = "folded_flag_hca",
+			sign_path = /obj/item/sign/flag/humancommonwealth
 		),
 		"Syndicate" = list(
 			RESKIN_ICON_STATE = "folded_syndi",

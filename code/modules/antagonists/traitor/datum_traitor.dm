@@ -22,6 +22,7 @@
 	var/datum/contractor_hub/contractor_hub
 
 	threat = 5
+	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/traitor/New()
 	if(!GLOB.traitor_classes.len)//Only need to fill the list when it's needed.

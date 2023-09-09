@@ -129,6 +129,7 @@
 		"Navy" = list("icon_state" = "pcarrier_navy"),
 		"Green" = list("icon_state" = "pcarrier_green"),
 		"Tan" = list("icon_state" = "pcarrier_tan"),
+		"Flektarn" = list("icon_state" = "pcarrier_flektarn"),
 		"Harness" = list("icon_state" = "pcarrier_harness"),
 		"Harness White" = list("icon_state" = "pcarrier_harness_w")
 	)
@@ -277,7 +278,7 @@
 	desc = "A tribal armor plate, crafted from animal bone."
 	icon_state = "bonearmor"
 	item_state = "bonearmor"
-	tail_state = "bonearmor"
+	tail_state = ""
 	blood_overlay_type = "armor"
 	armor = list(MELEE = 35, BULLET = 25, LASER = 25, ENERGY = 35, BOMB = 25, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 10)
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
@@ -441,7 +442,7 @@
 	alternate_screams = RUSSIAN_SCREAMS
 	icon_state = "rus_armor"
 	item_state = "rus_armor"
-	armor = list(MELEE = 25, BULLET = 30, LASER = 0, ENERGY = 15, BOMB = 10, BIO = 0, RAD = 20, FIRE = 20, ACID = 50, WOUND = 10)
+	//armor = list(MELEE = 25, BULLET = 30, LASER = 0, ENERGY = 15, BOMB = 10, BIO = 0, RAD = 20, FIRE = 20, ACID = 50, WOUND = 10)
 
 /obj/item/clothing/suit/armor/vest/russian_winter_coat
 	name = "Russian Winter Coat"
@@ -453,7 +454,11 @@
 	body_parts_covered = CHEST|LEGS|FEET|ARMS|HANDS
 	cold_protection = CHEST|LEGS|FEET|ARMS|HANDS
 	min_cold_protection_temperature = SPACE_SUIT_MIN_TEMP_PROTECT
-	armor = list(MELEE = 25, BULLET = 20, LASER = 20, ENERGY = 10, BOMB = 20, BIO = 50, RAD = 20, FIRE = -10, ACID = 50,  WOUND = 10)
+	//armor = list(MELEE = 25, BULLET = 20, LASER = 20, ENERGY = 10, BOMB = 20, BIO = 50, RAD = 20, FIRE = -10, ACID = 50,  WOUND = 10)
+	unique_reskin = list(
+		"Default" = list("icon_state" = "rus_winter_vsr93"),
+		"Unbuttoned" = list("icon_state" = "rus_winter_vsr93_t")
+	)
 
 /obj/item/clothing/suit/armor/vest/russian_coat
 	name = "Russian Battle Coat"

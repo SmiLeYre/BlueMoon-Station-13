@@ -7,6 +7,7 @@
 	antag_hud_type = ANTAG_HUD_HERETIC
 	antag_hud_name = "heretic"
 	threat = 10
+	soft_antag = FALSE // BLUEMOON ADDITION
 	var/give_equipment = TRUE
 	var/list/researched_knowledge = list()
 	var/total_sacrifices = 0

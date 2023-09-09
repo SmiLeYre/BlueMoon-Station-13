@@ -25,6 +25,8 @@ GLOBAL_LIST_EMPTY(roundstart_stowaway)
 		"Migrant",
 		"Tunnel Warrior",
 		"Escapist",
+		"Savage",
+		"Outcast",
 		"Proshmandovka",
 		"Jigolo"
 		)

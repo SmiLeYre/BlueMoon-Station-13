@@ -20,6 +20,7 @@
 		<a href='?src=[REF(src)];[HrefToken()];makeAntag=blob'>Make Blob</a><br>
 		<a href='?src=[REF(src)];[HrefToken()];makeAntag=wizard'>Make Wizard (Requires Ghosts)</a><br>
 		<a href='?src=[REF(src)];[HrefToken()];makeAntag=nukeops'>Make Nuke Team (Requires Ghosts)</a><br>
+		<a href='?src=[REF(src)];[HrefToken()];makeAntag=syndicate_ops'>Make Syndicate Team (Requires Ghosts)</a><br>
 		<a href='?src=[REF(src)];[HrefToken()];makeAntag=slaver'>Make Slave Trader Crew (Requires Ghosts)</a><br>
 		<a href='?src=[REF(src)];[HrefToken()];makeAntag=centcom'>Make CentCom Response Team (Requires Ghosts)</a><br>
 		<a href='?src=[REF(src)];[HrefToken()];makeAntag=abductors'>Make Abductor Team (Requires Ghosts)</a><br>
@@ -242,8 +243,6 @@
 
 	return 0
 
-
-
 /datum/admins/proc/makeNukeTeam()
 	var/datum/game_mode/nuclear/temp = new
 	var/list/mob/candidates = pollGhostCandidates("Do you wish to be considered for a nuke team being sent in?", ROLE_OPERATIVE, temp)
@@ -281,6 +280,47 @@
 				nuke_team = N.nuke_team
 			else
 				new_character.mind.add_antag_datum(/datum/antagonist/nukeop,nuke_team)
+		return 1
+	else
+		return 0
+
+/datum/admins/proc/makeSyndicateTeam()
+	var/datum/game_mode/nuclear/temp = new
+	var/list/mob/candidates = pollGhostCandidates("Do you wish to be considered for a nuke team being sent in?", ROLE_OPERATIVE, temp)
+	var/list/mob/chosen = list()
+	var/mob/theghost = null
+
+	if(candidates.len)
+		var/numagents = 5
+		var/agentcount = 0
+
+		for(var/i = 0, i<numagents,i++)
+			shuffle_inplace(candidates) //More shuffles means more randoms
+			for(var/mob/j in candidates)
+				if(!j || !j.client)
+					candidates.Remove(j)
+					continue
+
+				theghost = j
+				candidates.Remove(theghost)
+				chosen += theghost
+				agentcount++
+				break
+		//Making sure we have atleast 3 Nuke agents, because less than that is kinda bad
+		if(agentcount < 3)
+			return 0
+
+		//Let's find the spawn locations
+		var/leader_chosen = FALSE
+		var/datum/team/nuclear/nuke_team
+		for(var/mob/c in chosen)
+			var/mob/living/carbon/human/new_character=makeBody(c)
+			if(!leader_chosen)
+				leader_chosen = TRUE
+				var/datum/antagonist/syndicate_op/N = new_character.mind.add_antag_datum(/datum/antagonist/syndicate_op/leader)
+				nuke_team = N.nuke_team
+			else
+				new_character.mind.add_antag_datum(/datum/antagonist/syndicate_op,nuke_team)
 		return 1
 	else
 		return 0

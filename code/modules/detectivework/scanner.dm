@@ -3,110 +3,131 @@
 // TODO: Split everything into easy to manage procs.
 
 /obj/item/detective_scanner
-	name = "forensic scanner"
-	desc = "Used to remotely scan objects and biomass for DNA and fingerprints. Can print a report of the findings."
+	name = "Forensic Scanner"
+	desc = "Анализатор, способный выдать отчет по человеку, исходя из имени, ДНК или отпечатков пальцев."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "forensicnew"
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_NORMAL
 	item_state = "electronic"
-	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	flags_1 = CONDUCT_1
-	item_flags = NOBLUDGEON
 	slot_flags = ITEM_SLOT_BELT
-	/// if the scanner is currently busy processing
-	var/scanner_busy = FALSE
+	var/scanning = FALSE
 	var/list/log = list()
-	var/range = 8
-	var/view_check = TRUE
-	var/forensicPrintCount = 0
-	actions_types = list(/datum/action/item_action/display_detective_scan_results)
+	actions_types = list(/datum/action/item_action/print_forensic_report, /datum/action/item_action/clear_records)
 
-/datum/action/item_action/display_detective_scan_results
-	name = "Display Forensic Scanner Results"
+/datum/action/item_action/print_forensic_report
+	name = "Print Report"
+	button_icon_state = "scanner_print"
+	use_target_appearance = FALSE
 
-/datum/action/item_action/display_detective_scan_results/Trigger(trigger_flags)
-	var/obj/item/detective_scanner/scanner = target
-	if(istype(scanner))
-		scanner.display_detective_scan_results(usr)
+/datum/action/item_action/clear_records
+	name = "Clear Scanner Records"
 
 /obj/item/detective_scanner/attack_self(mob/user)
-	if(!LAZYLEN(log))
-		balloon_alert(user, "no logs!")
+	var/search = input(user, "Введите имя, отпечатки пальцев или код ДНК.", "Найти запись", "")
+
+	if(!search || user.stat || user.incapacitated())
 		return
-	if(scanner_busy)
-		balloon_alert(user, "scanner busy!")
-		return
-	scanner_busy = TRUE
-	balloon_alert(user, "printing report...")
-	addtimer(CALLBACK(src, PROC_REF(safe_print_report)), 10 SECONDS)
 
-/**
- * safe_print_report - a wrapper proc for print_report
- *
- * Calls print_report(), and should a runtime occur within we can still reset the 'busy' state
- */
-/obj/item/detective_scanner/proc/safe_print_report()
-	print_report()
-	scanner_busy = FALSE
+	search = lowertext(search) //This is here so that it doesn't run 'lowertext()' until the checks have passed.
 
-/obj/item/detective_scanner/proc/print_report()
-	// Create our paper
-	var/obj/item/paper/report_paper = new(get_turf(src))
+	var/name
+	var/fingerprint = "ОТПЕЧАТКИ НЕ НАЙДЕНЫ"
+	var/dna = "ДНК НЕ НАЙДЕНО"
 
-	//This could be a global count like sec and med record printouts. See GLOB.manifest.generalPrintCount AKA datacore.dm
-	var/frNum = ++forensicPrintCount
+	// I really, really wish I didn't have to split this into two seperate loops. But the datacore is awful.
 
-	report_paper.name = "FR-[frNum] 'Forensic Record'"
-	var/report_text = "<center><B>Forensic Record - (FR-[frNum])</B></center><HR><BR>"
+	for(var/record in GLOB.data_core.general) // Search in the 'general' datacore
+		var/datum/data/record/S = record
+		if(S && (search == lowertext(S.fields["fingerprint"]) || search == lowertext(S.fields["name"]))) // Get Fingerprint and Name
+			name = S.fields["name"]
+			fingerprint = S.fields["fingerprint"]
+			break
+
+	for(var/record in GLOB.data_core.medical) // Then search in the 'medical' datacore
+		var/datum/data/record/M = record
+		if(M && (search == lowertext(M.fields["b_dna"]) || name == M.fields["name"])) // Get Blood DNA
+			dna = M.fields["b_dna"]
+
+			if(fingerprint == "ОТПЕЧАТКИ НЕ НАЙДЕНЫ") // We have searched for DNA, and so do not have the relevant information from the fingerprint records.
+				name = M.fields["name"]
+				for(var/gen_record in GLOB.data_core.general)
+					var/datum/data/record/S = gen_record
+					if(S && (name == S.fields["name"]))
+						fingerprint = S.fields["fingerprint"]
+						break
+			else //Eveything's been set, break the loop
+				break
+
+	if(name)
+		to_chat(user, "<span class='notice'>Совпадение найдено в записях станции: <b>[name]</b></span><br>\
+		<i>Отпечатки пальцев:</i><span class='notice'> [fingerprint]</span><br>\
+		<i>ДНК:</i><span class='notice'> [dna]</span>")
+	else
+		to_chat(user, "<span class='warning'>В записях станции не найдено совпадений.</span>")
+
+/obj/item/detective_scanner/ui_action_click(mob/user, actiontype)
+	if(actiontype == /datum/action/item_action/print_forensic_report)
+		print_scanner_report()
+	else
+		clear_scanner()
+
+/obj/item/detective_scanner/proc/print_scanner_report()
+	if(length(log) && !scanning)
+		scanning = TRUE
+		to_chat(usr, "<span class='notice'>Printing report, please wait...</span>")
+		playsound(loc, 'sound/effects/printer.ogg', 50, 1)
+		flick("Detective_anim", src)
+		sleep(3 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(make_paper), log), 10 SECONDS) // Create our paper
+		log = list() // Clear the logs
+		scanning = FALSE
+	else
+		to_chat(usr, "<span class='warning'>The scanner has no logs or is in use.</span>")
+
+/obj/item/detective_scanner/proc/make_paper(log) // Moved to a proc because 'spawn()' is evil
+	var/obj/item/paper/P = new(drop_location())
+	P.name = "paper- 'Scanner Report'"
+	var/report_text = "<center><font size='6'><B>Scanner Report</B></font></center><HR><BR>"
 	report_text += jointext(log, "<BR>")
 	report_text += "<HR><B>Notes:</B><BR>"
 
-	report_paper.add_raw_text(report_text)
-	report_paper.update_appearance()
+	P.add_raw_text(report_text)
+	P.update_appearance()
 
 	if(ismob(loc))
-		var/mob/printer = loc
-		printer.put_in_hands(report_paper)
-		balloon_alert(printer, "logs cleared")
+		var/mob/M = loc
+		M.put_in_hands(P)
+		to_chat(M, "<span class='notice'>Отчёт распечатан. Логи очищены.</span>")
 
-	// Clear the logs
-	log = list()
+/obj/item/detective_scanner/proc/clear_scanner()
+	if(length(log) && !scanning)
+		log = list()
+		playsound(loc, 'sound/machines/ding.ogg', 40)
+		addtimer(CALLBACK(GLOBAL_PROC, /proc/to_chat, usr, "<span class='notice'>Scanner logs cleared.</span>"), 1.5 SECONDS) //Timer so that it clears on the 'ding'
+	else
+		to_chat(usr, "<span class='warning'>The scanner has no logs or is in use.</span>")
 
-/obj/item/detective_scanner/afterattack(atom/A, mob/user, params)
-	. = ..()
-	safe_scan(user, atom_to_scan = A)
-	return . | FALSE
 
-/**
- * safe_scan - a wrapper proc for scan()
- *
- * calls scan(), and should a runtime occur within we can still reset the 'busy' state
- */
-/obj/item/detective_scanner/proc/safe_scan(mob/user, atom/atom_to_scan)
-	set waitfor = FALSE
-	if(scanner_busy)
-		return
-	if(!scan(user, atom_to_scan)) // this should only return FALSE if a runtime occurs during the scan proc, so ideally never
-		balloon_alert(user, "scanner error!") // but in case it does, we 'error' instead of just bricking the scanner
-	scanner_busy = FALSE
+/obj/item/detective_scanner/attack()
+	return
 
-/**
- * scan - scans an atom for forensic data and outputs it to the mob holding the scanner
- *
- * This should always return TRUE barring a runtime
- */
-/obj/item/detective_scanner/proc/scan(atom/A, mob/user)
-	set waitfor = 0
-	if(!scanner_busy)
+/obj/item/detective_scanner/afterattack(atom/A, mob/user)
+	scan(A, user)
+
+/obj/item/detective_scanner/proc/scan(atom/scan_atom, mob/user)
+
+	if(!scanning)
 		// Can remotely scan objects and mobs.
-		if((get_dist(A, user) > range) || (!(A in view(range, user)) && view_check) || (loc != user))
+		if(!(scan_atom in view(world.view, user)))
+			return
+		if(loc != user)
 			return
 
-		scanner_busy = TRUE
+		scanning = TRUE
 
-		user.visible_message("\The [user] points the [src.name] at \the [A] and performs a forensic scan.")
-		to_chat(user, "<span class='notice'>You scan \the [A]. The scanner is now analysing the results...</span>")
+		user.visible_message("[user] points [src] at [scan_atom] and performs a forensic scan.",
+		"<span class='notice'>You scan [scan_atom]. The scanner is now analysing the results...</span>")
 
 
 		// GATHER INFORMATION
@@ -117,31 +138,31 @@
 		var/list/fibers = list()
 		var/list/reagents = list()
 
-		var/target_name = A.name
+		var/target_name = scan_atom.name
 
 		// Start gathering
 
-		if(A.blood_DNA && A.blood_DNA.len)
-			blood = A.blood_DNA.Copy()
+		if(length(scan_atom.blood_DNA))
+			blood = scan_atom.blood_DNA.Copy()
 
-		if(A.suit_fibers && A.suit_fibers.len)
-			fibers = A.suit_fibers.Copy()
+		if(length(scan_atom.suit_fibers))
+			fibers = scan_atom.suit_fibers.Copy()
 
-		if(ishuman(A))
+		if(ishuman(scan_atom))
 
-			var/mob/living/carbon/human/H = A
-			if(!H.gloves)
+			var/mob/living/carbon/human/H = scan_atom
+			if(istype(H.dna, /datum/dna) && !H.gloves)
 				fingerprints += md5(H.dna.uni_identity)
 
-		else if(!ismob(A))
+		else if(!ismob(scan_atom))
 
-			if(A.fingerprints && A.fingerprints.len)
-				fingerprints = A.fingerprints.Copy()
+			if(length(scan_atom.fingerprints))
+				fingerprints = scan_atom.fingerprints.Copy()
 
 			// Only get reagents from non-mobs.
-			if(A.reagents && A.reagents.reagent_list.len)
+			if(scan_atom.reagents && length(scan_atom.reagents.reagent_list))
 
-				for(var/datum/reagent/R in A.reagents.reagent_list)
+				for(var/datum/reagent/R in scan_atom.reagents.reagent_list)
 					reagents[R.name] = R.volume
 
 					// Get blood data from the blood reagent.
@@ -150,35 +171,31 @@
 						if(R.data["blood_DNA"] && R.data["blood_type"])
 							var/blood_DNA = R.data["blood_DNA"]
 							var/blood_type = R.data["blood_type"]
-							LAZYINITLIST(blood)
 							blood[blood_DNA] = blood_type
 
-		// We gathered everything. Create a fork and slowly display the results to the holder of the scanner.
-
+		// We gathered everything. Slowly display the results to the holder of the scanner.
 		var/found_something = FALSE
-		add_log("<B>[STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)][get_timestamp()] - [target_name]</B>", 0)
+		add_log("<B>[STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)][get_timestamp()] - [target_name]</B>", FALSE)
 
 		// Fingerprints
 		if(length(fingerprints))
-			sleep(3 SECONDS)
+			sleep(30)
 			add_log("<span class='info'><B>Prints:</B></span>")
 			for(var/finger in fingerprints)
 				add_log("[finger]")
 			found_something = TRUE
 
 		// Blood
-		if (length(blood))
-			sleep(3 SECONDS)
+		if(length(blood))
+			sleep(30)
 			add_log("<span class='info'><B>Blood:</B></span>")
 			found_something = TRUE
 			for(var/B in blood)
-				if(B == "color")
-					continue
 				add_log("Type: <font color='red'>[blood[B]]</font> DNA: <font color='red'>[B]</font>")
 
 		//Fibers
 		if(length(fibers))
-			sleep(3 SECONDS)
+			sleep(30)
 			add_log("<span class='info'><B>Fibers:</B></span>")
 			for(var/fiber in fibers)
 				add_log("[fiber]")
@@ -186,7 +203,7 @@
 
 		//Reagents
 		if(length(reagents))
-			sleep(3 SECONDS)
+			sleep(30)
 			add_log("<span class='info'><B>Reagents:</B></span>")
 			for(var/R in reagents)
 				add_log("Reagent: <font color='red'>[R]</font> Volume: <font color='red'>[reagents[R]]</font>")
@@ -194,61 +211,28 @@
 
 		// Get a new user
 		var/mob/holder = null
-		if(ismob(src.loc))
-			holder = src.loc
+		if(ismob(loc))
+			holder = loc
 
 		if(!found_something)
-			add_log("<I># No forensic traces found #</I>", 0) // Don't display this to the holder user
+			add_log("<I># No forensic traces found #</I>", FALSE) // Don't display this to the holder user
 			if(holder)
-				to_chat(holder, "<span class='warning'>Unable to locate any fingerprints, materials, fibers, or blood on \the [target_name]!</span>")
+				to_chat(holder, "<span class='notice'>Unable to locate any fingerprints, materials, fibers, or blood on [scan_atom]!</span>")
 		else
 			if(holder)
-				to_chat(holder, "<span class='notice'>You finish scanner_busy \the [target_name].</span>")
+				to_chat(holder, "<span class='notice'>You finish scanning [scan_atom].</span>")
 
-		add_log("---------------------------------------------------------", 0)
-		scanner_busy = FALSE
-		return
+		add_log("---------------------------------------------------------", FALSE)
+		scanning = FALSE
 
-/obj/item/detective_scanner/proc/add_log(msg, broadcast = 1)
-	if(scanner_busy)
+/obj/item/detective_scanner/proc/add_log(msg, broadcast = TRUE)
+	if(scanning)
 		if(broadcast && ismob(loc))
-			var/mob/logger = loc
-			to_chat(logger, msg)
+			var/mob/M = loc
+			to_chat(M, msg)
 		log += "&nbsp;&nbsp;[msg]"
 	else
-		CRASH("[src] [REF(src)] is adding a log when it was never put in scanner_busy mode!")
+		CRASH("[src] \ref[src] is adding a log when it was never put in scanning mode!")
 
 /proc/get_timestamp()
 	return time2text(world.time + 432000, ":ss")
-
-/obj/item/detective_scanner/AltClick(mob/living/user)
-	// Best way for checking if a player can use while not incapacitated, etc
-	if(!user.canUseTopic(src, be_close=TRUE))
-		return
-	if(!LAZYLEN(log))
-		balloon_alert(user, "no logs!")
-		return
-	if(scanner_busy)
-		balloon_alert(user, "scanner busy!")
-		return
-	balloon_alert(user, "deleting logs...")
-	if(do_after(user, 3 SECONDS, target = src))
-		balloon_alert(user, "logs cleared")
-		log = list()
-
-/obj/item/detective_scanner/examine(mob/user)
-	. = ..()
-	if(LAZYLEN(log) && !scanner_busy)
-		. += span_notice("Alt-click to clear scanner logs.")
-
-/obj/item/detective_scanner/proc/display_detective_scan_results(mob/living/user)
-	// No need for can-use checks since the action button should do proper checks
-	if(!LAZYLEN(log))
-		balloon_alert(user, "no logs!")
-		return
-	if(scanner_busy)
-		balloon_alert(user, "scanner busy!")
-		return
-	to_chat(user, span_notice("<B>Scanner Report</B>"))
-	for(var/iterLog in log)
-		to_chat(user, iterLog)

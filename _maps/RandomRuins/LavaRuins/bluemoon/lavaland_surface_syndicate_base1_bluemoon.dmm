@@ -1939,6 +1939,9 @@
 /area/lavaland/surface/outdoors)
 "nK" = (
 /obj/machinery/atmospherics/pipe/manifold/general/visible,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 6
+	},
 /turf/open/floor/plasteel/shuttle,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "nT" = (
@@ -2192,6 +2195,10 @@
 /obj/item/healthanalyzer/advanced,
 /obj/structure/window/reinforced/survival_pod{
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4;
+	piping_layer = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
@@ -2535,12 +2542,12 @@
 /turf/open/floor/engine/n2,
 /area/ruin/lavaland/unpowered/deepspaceone/engineering)
 "so" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 10
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
 	dir = 4;
 	level = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
@@ -2787,9 +2794,6 @@
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
@@ -3134,6 +3138,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
+"xS" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "xT" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -3276,6 +3286,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
+"yM" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "yU" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -3296,6 +3316,9 @@
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "zl" = (
 /obj/structure/chair/stool/bar{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -3322,6 +3345,10 @@
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	dir = 4;
+	level = 1
 	},
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
@@ -3570,6 +3597,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
+"AM" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "AS" = (
 /obj/structure/table/reinforced,
 /obj/item/multitool,
@@ -4318,6 +4351,7 @@
 /turf/open/floor/wood,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "FO" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/shuttle,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "FT" = (
@@ -4418,6 +4452,9 @@
 /obj/item/reagent_containers/food/snacks/chocolatebar{
 	pixel_x = 5;
 	pixel_y = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
@@ -4573,6 +4610,10 @@
 "HW" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4;
+	piping_layer = 1
 	},
 /turf/open/floor/plasteel/shuttle,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
@@ -4754,6 +4795,10 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	dir = 4;
+	level = 1
+	},
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "Jm" = (
@@ -4913,6 +4958,9 @@
 "Ko" = (
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
@@ -5388,6 +5436,10 @@
 	dir = 4
 	},
 /obj/item/reagent_containers/food/drinks/beer,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	dir = 4;
+	level = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "Nj" = (
@@ -5980,10 +6032,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 9
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
-	dir = 9;
-	level = 1
-	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3,
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "RJ" = (
@@ -8470,7 +8519,7 @@ pD
 UI
 Ub
 LN
-LN
+yM
 Rx
 Sf
 SE
@@ -8706,7 +8755,7 @@ fO
 rQ
 Dk
 DJ
-WW
+AM
 RK
 zG
 Vb
@@ -9919,7 +9968,7 @@ ab
 Sy
 xL
 RP
-Yp
+xS
 Yp
 Xf
 kX

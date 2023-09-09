@@ -49,7 +49,7 @@
 	name = "Syndicate Geneticist"
 	jobtype = /datum/job/geneticist
 
-	belt = /obj/item/pda/syndicate/no_deto
+	//belt = /obj/item/pda/syndicate/no_deto
 
 	ears = /obj/item/radio/headset/headset_medsci
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/hsc

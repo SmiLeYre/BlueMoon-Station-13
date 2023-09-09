@@ -8604,6 +8604,7 @@
 	dir = 1
 	},
 /obj/structure/disposalpipe/segment,
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
 "cXc" = (
@@ -17440,6 +17441,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/structure/table/glass,
+/obj/item/storage/firstaid/regular{
+	pixel_x = 3;
+	pixel_y = 3
+	},
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
 "fYY" = (
@@ -20086,22 +20092,10 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
-/obj/structure/table/glass,
-/obj/item/flashlight/lamp{
-	pixel_x = -2;
-	pixel_y = 11
-	},
-/obj/item/paper_bin{
-	pixel_x = 6;
-	pixel_y = 4
-	},
-/obj/item/pen/blue{
-	pixel_x = 5;
-	pixel_y = 5
-	},
 /obj/machinery/keycard_auth{
 	pixel_y = 28
 	},
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel/cafeteria{
 	dir = 1
 	},
@@ -26480,14 +26474,13 @@
 /turf/open/floor/engine,
 /area/science/xenobiology)
 "jgd" = (
-/obj/structure/table,
-/obj/item/paper/pamphlet/gateway,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel/dark/side{
 	dir = 8
 	},
@@ -27518,7 +27511,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
-/obj/structure/filingcabinet/chestdrawer,
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel/dark,
 /area/command/heads_quarters/rd)
 "jzD" = (
@@ -33242,6 +33235,7 @@
 	dir = 8;
 	pixel_x = 23
 	},
+/obj/machinery/photocopier,
 /turf/open/floor/wood,
 /area/command/heads_quarters/hop)
 "lAX" = (
@@ -33383,6 +33377,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/engineering/workshop)
+"lDt" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/photocopier,
+/turf/open/floor/engine,
+/area/security/brig)
 "lDL" = (
 /obj/structure/closet/crate/engineering,
 /obj/item/circuitboard/computer/shuttle/docker,
@@ -38265,10 +38266,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 9
 	},
-/obj/structure/table/reinforced,
-/obj/item/clipboard,
-/obj/item/paper/monitorkey,
-/obj/item/stamp/ce,
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel,
 /area/command/heads_quarters/ce)
 "nhq" = (
@@ -46805,6 +46803,9 @@
 /obj/item/folder/yellow,
 /obj/item/pen/fountain,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/item/clipboard,
+/obj/item/paper/monitorkey,
+/obj/item/stamp/ce,
 /turf/open/floor/plasteel,
 /area/command/heads_quarters/ce)
 "qkP" = (
@@ -46823,13 +46824,13 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/structure/filingcabinet,
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel/dark,
 /area/command/heads_quarters/hos)
 "qlD" = (
@@ -56999,6 +57000,18 @@
 /obj/structure/table/glass,
 /obj/item/folder/white,
 /obj/item/stamp/cmo,
+/obj/item/flashlight/lamp{
+	pixel_x = -2;
+	pixel_y = 11
+	},
+/obj/item/paper_bin{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/item/pen/blue{
+	pixel_x = 5;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/cafeteria{
 	dir = 1
 	},
@@ -60012,6 +60025,11 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
 	},
+/obj/item/paper_bin{
+	pixel_x = -3;
+	pixel_y = 7
+	},
+/obj/item/stamp/qm,
 /turf/open/floor/plasteel,
 /area/cargo/qm)
 "uKI" = (
@@ -61086,6 +61104,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "vfU" = (
@@ -62202,6 +62221,10 @@
 /mob/living/simple_animal/hostile/poison/giant_spider,
 /turf/open/floor/plating,
 /area/maintenance/department/cargo)
+"vxg" = (
+/obj/effect/landmark/start/bouncer,
+/turf/open/floor/plasteel/chapel_floor,
+/area/service/bar)
 "vxm" = (
 /obj/machinery/computer/secure_data,
 /obj/effect/turf_decal/tile/red{
@@ -65102,12 +65125,6 @@
 /turf/closed/wall/r_wall,
 /area/engineering/atmos)
 "wsA" = (
-/obj/structure/table/reinforced,
-/obj/item/paper_bin{
-	pixel_x = -3;
-	pixel_y = 7
-	},
-/obj/item/stamp/qm,
 /obj/effect/turf_decal/tile/brown{
 	dir = 1
 	},
@@ -65118,6 +65135,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel,
 /area/cargo/qm)
 "wsG" = (
@@ -100716,7 +100734,7 @@ sGc
 snU
 tKx
 ufG
-tKx
+lDt
 rJh
 vnt
 xWd
@@ -118436,7 +118454,7 @@ yjz
 fiQ
 yjz
 yjz
-yjz
+vxg
 xCu
 yjz
 mws

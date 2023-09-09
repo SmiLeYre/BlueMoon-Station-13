@@ -66,7 +66,7 @@
 	name = "Syndicate Research Director"
 	jobtype = /datum/job/rd
 
-	belt = /obj/item/pda/syndicate/no_deto
+	//belt = /obj/item/pda/syndicate/no_deto
 
 	ears = /obj/item/radio/headset/heads/rd
 	uniform = /obj/item/clothing/under/rank/captain/util

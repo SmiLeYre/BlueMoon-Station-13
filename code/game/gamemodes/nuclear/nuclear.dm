@@ -116,7 +116,7 @@
 /proc/is_nuclear_operative(mob/M)
 	return M && istype(M) && M.mind && M.mind.has_antag_datum(/datum/antagonist/nukeop)
 
-/datum/outfit/syndicate
+/datum/outfit/inteq
 	name = "InteQ Operative - Basic"
 
 	uniform = /obj/item/clothing/under/inteq
@@ -134,19 +134,19 @@
 	var/command_radio = FALSE
 	var/uplink_type = /obj/item/inteq/uplink/radio/nuclear
 
-/datum/outfit/syndicate/leader
+/datum/outfit/inteq/leader
 	name = "InteQ Leader - Basic"
 	id = /obj/item/card/id/syndicate/nuke_leader/inteq
 	gloves = /obj/item/clothing/gloves/krav_maga/combatglovesplus
 	r_hand = /obj/item/nuclear_challenge
 	command_radio = TRUE
 
-/datum/outfit/syndicate/no_crystals
+/datum/outfit/inteq/no_crystals
 	tc = 0
 
-/datum/outfit/syndicate/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+/datum/outfit/inteq/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	var/obj/item/radio/R = H.ears
-	R.set_frequency(FREQ_SYNDICATE)
+	R.set_frequency(FREQ_INTEQ)
 	R.freqlock = TRUE
 	if(command_radio)
 		R.command = TRUE
@@ -162,7 +162,7 @@
 	H.faction |= ROLE_INTEQ
 	H.update_icons()
 
-/datum/outfit/syndicate/full
+/datum/outfit/inteq/full
 	name = "InteQ Operative - Full Kit"
 
 	glasses = /obj/item/clothing/glasses/night/syndicate
@@ -177,28 +177,7 @@
 		/obj/item/gun/ballistic/automatic/pistol=1,\
 		/obj/item/kitchen/knife/combat/survival)
 
-/datum/outfit/syndicate/lone
-	name = "Lone Operative"
-
-	glasses = /obj/item/clothing/glasses/night/syndicate
-	uniform = /obj/item/clothing/under/syndicate
-	mask = /obj/item/clothing/mask/gas/syndicate
-	suit = /obj/item/clothing/suit/space/syndicate/black/red
-	head = /obj/item/clothing/head/helmet/space/syndicate/black/red
-	id = /obj/item/card/id/syndicate
-	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi/syndi
-	internals_slot = ITEM_SLOT_RPOCKET
-	belt = /obj/item/storage/belt/military
-	backpack_contents = list(/obj/item/storage/box/survival/syndie=1,\
-	/obj/item/clothing/accessory/permit=1,\
-	/obj/item/tank/jetpack/oxygen/harness=1,\
-	/obj/item/gun/ballistic/automatic/pistol=1,\
-	/obj/item/kitchen/knife/combat/survival)
-
-	uplink_type = /obj/item/syndicate_uplink
-	tc = 120
-
-/datum/outfit/syndicate/lone/inteq
+/datum/outfit/inteq/lone/inteq
 	name = "InteQ Lone Operative"
 
 	glasses = /obj/item/clothing/glasses/night/syndicate
@@ -218,47 +197,3 @@
 
 	uplink_type = /obj/item/inteq/uplink/radio/nuclear
 	tc = 60
-
-/datum/outfit/syndicate/syndiesquad
-	name = "Syndicate Special Forces"
-	uniform = /obj/item/clothing/under/syndicate
-	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
-	back = /obj/item/storage/backpack
-	id = /obj/item/card/id/syndicate/locked_banking
-	belt = /obj/item/gun/ballistic/automatic/pistol/aps
-	backpack_contents = list(/obj/item/storage/box/survival/syndie=1,
-	/obj/item/kitchen/knife/combat/survival)
-
-	uplink_type = /obj/item/syndicate_uplink_high/nuclear
-
-/datum/outfit/syndicate/syndiesquad/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
-	if(visualsOnly)
-		return
-
-	var/obj/item/radio/R = H.ears
-	R.set_frequency(FREQ_CENTCOM)
-	R.freqlock = TRUE
-
-	var/key = H.key ? H.key : preference_source ? preference_source.key : null
-	var/obj/item/syndicate_uplink_high/nuclear/U = new /obj/item/syndicate_uplink_high/nuclear(H, key, 80)
-	H.equip_to_slot_or_del(U, ITEM_SLOT_BACKPACK)
-
-	var/obj/item/implant/mindshield/L = new //Here you go Deuryn
-	L.implant(H, null, 1)
-
-	var/obj/item/card/id/syndicate/W = H.wear_id
-	W.icon_state = "syndie"
-	W.access = get_all_accesses()//They get full station access.
-	W.access += get_centcom_access("Death Commando")//Let's add their alloted CentCom access.
-	W.assignment = "Syndicate Special Forces"
-	W.registered_name = H.real_name
-	W.update_label(W.registered_name, W.assignment)
-
-	var/obj/item/implant/weapons_auth/Q = new
-	Q.implant(H)
-	var/obj/item/implant/explosive/E = new
-	E.implant(H)
-	H.update_icons()
-
-	H.grant_language(/datum/language/codespeak, TRUE, TRUE)

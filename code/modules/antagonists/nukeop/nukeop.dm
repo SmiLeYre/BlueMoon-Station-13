@@ -11,6 +11,8 @@
 	var/always_new_team = FALSE //If not assigned a team by default ops will try to join existing ones, set this to TRUE to always create new team.
 	var/send_to_spawnpoint = TRUE //Should the user be moved to default spawnpoint.
 	var/nukeop_outfit = /datum/outfit/syndicate
+	var/title
+	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/nukeop/proc/update_synd_icons_added(mob/living/M)
 	var/datum/atom_hud/antag/opshud = GLOB.huds[ANTAG_HUD_OPS]
@@ -33,6 +35,7 @@
 	REMOVE_TRAIT(owner, TRAIT_DISK_VERIFIER, NUKEOP_TRAIT)
 
 /datum/antagonist/nukeop/proc/equip_op()
+	title = pick("Царь", "Босс", "Лидер", "Шеф", "Король", "Пингвин", "Директор", "Лорд", "Оверлорд", "Глав", "Альфа", "Первый", "Bождь", "Бонза", "Айко", "Русич", "Сек", "Мёртвый")
 	if(!ishuman(owner.current))
 		return
 	var/mob/living/carbon/human/H = owner.current
@@ -41,6 +44,7 @@
 		return
 	if(SSticker.mode.name == "Extended")
 		H.equipOutfit(/datum/outfit/syndicate/lone)
+		priority_announce("Приветствую, Станция. Мы отправляем к вам Специалиста по Защите Ядерного Диска ввиду того, что заметили недостаточную его безопасность. Bстречайте.", "[title] Фрегат ССО Синдиката")
 	else
 		H.equipOutfit(nukeop_outfit)
 
@@ -155,9 +159,8 @@
 
 /datum/antagonist/nukeop/leader
 	name = "Nuclear Operative Leader"
-	nukeop_outfit = /datum/outfit/syndicate/leader
+	nukeop_outfit = /datum/outfit/inteq/leader
 	always_new_team = TRUE
-	var/title
 
 /datum/antagonist/nukeop/leader/memorize_code()
 	..()
@@ -173,7 +176,6 @@
 			H.update_icons()
 
 /datum/antagonist/nukeop/leader/give_alias()
-	title = pick("Czar", "Boss", "Commander", "Chief", "Kingpin", "Director", "Overlord")
 	if(nuke_team && nuke_team.syndicate_name)
 		owner.current.real_name = "[nuke_team.syndicate_name] [title]"
 	else
@@ -220,7 +222,7 @@
 	name = "Lone Operative"
 	always_new_team = TRUE
 	send_to_spawnpoint = FALSE //Handled by event
-	nukeop_outfit = /datum/outfit/syndicate/lone/inteq
+	nukeop_outfit = /datum/outfit/inteq/lone/inteq
 
 /datum/antagonist/nukeop/lone/assign_nuke()
 	if(nuke_team && !nuke_team.tracked_nuke)
@@ -238,7 +240,7 @@
 
 /datum/antagonist/nukeop/reinforcement
 	send_to_spawnpoint = FALSE
-	nukeop_outfit = /datum/outfit/syndicate/no_crystals
+	nukeop_outfit = /datum/outfit/inteq/no_crystals
 
 /datum/team/nuclear
 	var/syndicate_name

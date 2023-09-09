@@ -6,6 +6,7 @@
 	antagpanel_category = "Cult"
 	antag_moodlet = /datum/mood_event/cult
 	threat = 3
+	soft_antag = FALSE // BLUEMOON ADDITION
 	var/datum/action/innate/cult/comm/communion = new
 	var/datum/action/innate/cult/mastervote/vote = new
 	var/datum/action/innate/cult/blood_magic/magic = new

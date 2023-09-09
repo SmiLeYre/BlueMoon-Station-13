@@ -91,3 +91,28 @@
 	desc = "Thick leather trench coat with stitched red edges on the collar. The right shoulder is decorated with an aiguillette. On the sleeves, patterns in the form of a three-headed hydra can be distinguished. Without a doubt, this cloak went to the owner as a reward from the higher command, as confirmation of his status. Interesting."
 	icon_state = "angelo"
 	item_state = "angelo"
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/suit/donator/bm/flektarn_montur
+	name = "flektarn montur"
+	desc = "A five-color, -explosive- uniform in camouflage colors, decorated with gold shoulder straps and various combat awards. Initials tell you that it belongs to Koruhaundo Adoriana O."
+	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
+	icon_state = "flektarn_montur"
+	item_state = "flektarn_montur"
+
+/obj/item/clothing/suit/donator/bm/SH_jacket
+	name = "Shiro Silverhand Jacket"
+	desc = "Iconic jacket of the Shiro Silverhand he wore in his Samurai days."
+	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
+	icon_state = "SH_jacket"
+	item_state = "SH_jacket"
+
+/obj/item/clothing/suit/toggle/noonar // Наследуем от suit/toggle, чтобы можно было переключать состояние
+	name = "syndicate jacket"
+	desc = "A syndicate jacket."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
+	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
+	icon_state = "noonar"
+	item_state = "noonar"
+	togglename = "buttons"

@@ -20,7 +20,7 @@
 	disliked_food = NONE
 	blacklisted = 1
 	say_mod = "moans"
-	speedmod = 1.5
+	speedmod = 1.3
 	armor = -0.3
 	coldmod = 0.67
 	cold_offset = SYNTH_COLD_OFFSET
@@ -121,7 +121,7 @@
 	liked_food = GROSS | MEAT | RAW
 	blacklisted = 1
 	say_mod = "moans"
-	speedmod = 1.8
+	speedmod = 1.3
 	brutemod = 0.8
 	burnmod = 0.67 //They are fire retardant... because they can't have fire breath
 	species_traits = list(DRINKSBLOOD,NOZOMBIE,NOTRANSSTING,MUTCOLORS,EYECOLOR,LIPS,HAIR,HORNCOLOR,WINGCOLOR,CAN_SCAR,HAS_FLESH,HAS_BONE)

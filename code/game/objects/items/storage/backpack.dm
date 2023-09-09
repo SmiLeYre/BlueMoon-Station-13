@@ -728,7 +728,7 @@
 	name = "Cursed Dufflebag"
 	icon_state = "duffel-curse"
 	item_state = "duffel"
-	desc = "A toolbox painted black with a red stripe. It looks more heavier than normal toolboxes."
+	desc = "A duffelbag painted black with a red stripe. It looks more heavier than normal bags."
 	force = 24
 	throwforce = 38
 

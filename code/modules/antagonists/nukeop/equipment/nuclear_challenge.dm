@@ -37,7 +37,7 @@ GLOBAL_VAR_INIT(war_declared, FALSE)
 		to_chat(user, "On second thought, the element of surprise isn't so bad after all.")
 		return
 
-	var/war_declaration = "A syndicate fringe group has declared their intent to utterly destroy [station_name()] with a nuclear device, and dares the crew to try and stop them."
+	var/war_declaration = "A InteQ fringe group has declared their intent to utterly destroy [station_name()] with a nuclear device, and dares the crew to try and stop them."
 
 	declaring_war = TRUE
 	var/custom_threat = alert(user, "Do you want to customize your declaration?", "Customize?", "Yes", "No")
@@ -89,7 +89,7 @@ GLOBAL_VAR_INIT(war_declared, FALSE)
 	if(are_you_sure != "Yes")
 		return
 
-	var/war_declaration = "A syndicate fringe group has declared their intent to utterly destroy [station_name()] with a nuclear device, and dares the crew to try and stop them."
+	var/war_declaration = "A InteQ fringe group has declared their intent to utterly destroy [station_name()] with a nuclear device, and dares the crew to try and stop them."
 
 	var/custom_threat = tgui_alert(usr, "Do you want to customize the declaration?", "Customize?", list("Yes", "No"))
 
@@ -109,28 +109,6 @@ GLOBAL_VAR_INIT(war_declared, FALSE)
 	for(var/obj/machinery/computer/camera_advanced/shuttle_docker/D in GLOB.jam_on_wardec)
 		D.jammed = TRUE
 
-	distribute_tc()
-
-	CONFIG_SET(number/shuttle_refuel_delay, max(CONFIG_GET(number/shuttle_refuel_delay), CHALLENGE_SHUTTLE_DELAY))
-
-	qdel(src)
-
-/obj/item/nuclear_challenge/proc/distribute_tc(mob/living/user)
-	var/list/orphans = list()
-	var/list/uplinks = list()
-
-	for (var/datum/mind/M in get_antag_minds(/datum/antagonist/nukeop))
-		if (iscyborg(M.current))
-			continue
-		var/datum/component/uplink/uplink = M.find_syndicate_uplink()
-		if (!uplink)
-			orphans += M.current
-			continue
-		uplinks += uplink
-
-	var/tc_to_distribute = CHALLENGE_TELECRYSTALS
-	var/tc_per_nukie = round(tc_to_distribute / (length(orphans)+length(uplinks)))
-
 	GLOB.war_declared = TRUE
 	var/list/nukeops = get_antag_minds(/datum/antagonist/nukeop)
 	var/actual_players = GLOB.joined_player_list.len - nukeops.len
@@ -138,20 +116,12 @@ GLOBAL_VAR_INIT(war_declared, FALSE)
 	if(actual_players < CHALLENGE_PLAYERS_TARGET)
 		tc_malus = FLOOR(((CHALLENGE_TELECRYSTALS / CHALLENGE_PLAYERS_TARGET) * (CHALLENGE_PLAYERS_TARGET - actual_players)) * TELECRYSTALS_MALUS_SCALING, 1)
 
-	new uplink_type(get_turf(user), user.key, CHALLENGE_TELECRYSTALS - tc_malus + CEILING(PLAYER_SCALING * actual_players, 1))
+	new uplink_type(get_turf(usr), usr.key, CHALLENGE_TELECRYSTALS - tc_malus + CEILING(PLAYER_SCALING * actual_players, 1))
 
-	for (var/mob/living/L in orphans)
-		var/TC = new /obj/item/stack/telecrystal(L.drop_location(), tc_per_nukie)
-		to_chat(L, span_warning("Your uplink could not be found so your share of the team's bonus credits has been bluespaced to your [L.put_in_hands(TC) ? "hands" : "feet"]."))
-		tc_to_distribute -= tc_per_nukie
+	CONFIG_SET(number/shuttle_refuel_delay, max(CONFIG_GET(number/shuttle_refuel_delay), CHALLENGE_SHUTTLE_DELAY))
+	SSblackbox.record_feedback("amount", "nuclear_challenge_mode", 1)
 
-	if (tc_to_distribute > 0) // What shall we do with the remainder...
-		for (var/mob/living/simple_animal/hostile/carp/cayenne/C in GLOB.mob_living_list)
-			if (C.stat != DEAD)
-				var/obj/item/stack/telecrystal/TC = new(C.drop_location(), tc_to_distribute)
-				TC.throw_at(get_step(C, C.dir), 3, 3)
-				C.visible_message(span_notice("[C] coughs up a half-digested credits"),span_notice("You cough up a half-digested credits!"))
-				break
+	qdel(src)
 
 /obj/item/nuclear_challenge/proc/check_allowed(mob/living/user)
 	if(declaring_war)

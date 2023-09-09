@@ -41,4 +41,8 @@
 			RESKIN_ICON_STATE = "helmet_peace",
 			RESKIN_ITEM_STATE = "helmet_peace"
 		),
+		"Flektarn" = list(
+			RESKIN_ICON_STATE = "helmet_flektarn",
+			RESKIN_ITEM_STATE = "helmet_flektarn"
+		),
 	)

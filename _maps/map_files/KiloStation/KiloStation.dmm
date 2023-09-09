@@ -3417,6 +3417,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel/showroomfloor,
 /area/command/heads_quarters/cmo)
 "afY" = (
@@ -10322,6 +10323,12 @@
 /obj/item/storage/secure/safe{
 	pixel_x = 34
 	},
+/obj/item/pinpointer/nuke,
+/obj/item/disk/nuclear,
+/obj/item/flashlight/lamp/green{
+	pixel_x = -10;
+	pixel_y = 7
+	},
 /turf/open/floor/plasteel/dark,
 /area/command/heads_quarters/captain)
 "arW" = (
@@ -10894,9 +10901,6 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
-/obj/structure/table,
-/obj/item/paper_bin,
-/obj/item/pen,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
@@ -10908,6 +10912,7 @@
 	name = "Crowd Pacifier";
 	pixel_x = 24
 	},
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel/dark,
 /area/command/heads_quarters/hop)
 "atb" = (
@@ -12771,7 +12776,6 @@
 	},
 /area/tcommsat/server)
 "awp" = (
-/obj/structure/filingcabinet/chestdrawer,
 /obj/machinery/keycard_auth{
 	pixel_x = -6;
 	pixel_y = 24
@@ -12784,6 +12788,7 @@
 	pixel_x = 28
 	},
 /mob/living/simple_animal/parrot/Polly,
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel/dark,
 /area/command/heads_quarters/ce)
 "awq" = (
@@ -33039,7 +33044,6 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/engineering/atmos)
 "bdv" = (
-/obj/structure/table,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
@@ -33047,18 +33051,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/neutral,
-/obj/item/paper_bin{
-	pixel_x = -4;
-	pixel_y = 4
-	},
-/obj/item/toy/figure/rd{
-	pixel_x = 8;
-	pixel_y = 8
-	},
-/obj/item/stamp/rd{
-	pixel_x = 8
-	},
-/obj/item/pen,
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel/dark,
 /area/command/heads_quarters/rd)
 "bdw" = (
@@ -34339,6 +34332,18 @@
 	dir = 1;
 	name = "RD Office APC";
 	pixel_y = 23
+	},
+/obj/item/paper_bin{
+	pixel_x = -4;
+	pixel_y = 4
+	},
+/obj/item/pen,
+/obj/item/toy/figure/rd{
+	pixel_x = 8;
+	pixel_y = 8
+	},
+/obj/item/stamp/rd{
+	pixel_x = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/command/heads_quarters/rd)
@@ -40835,7 +40840,6 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/item/kirbyplants,
 /obj/machinery/power/apc/highcap/ten_k{
 	areastring = "/area/command/bridge";
 	dir = 8;
@@ -40845,6 +40849,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel,
 /area/command/bridge)
 "bqb" = (
@@ -42039,13 +42044,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
-/obj/structure/table/wood,
-/obj/item/flashlight/lamp/green{
-	pixel_x = -5;
-	pixel_y = 7
-	},
-/obj/item/pinpointer/nuke,
-/obj/item/disk/nuclear,
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel/dark,
 /area/command/heads_quarters/captain)
 "brV" = (
@@ -82635,6 +82634,14 @@
 /obj/structure/dresser,
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
+"fOE" = (
+/obj/effect/turf_decal/tile/red,
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/landmark/start/bouncer,
+/turf/open/floor/plasteel/showroomfloor,
+/area/service/bar/atrium)
 "fSi" = (
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
@@ -85587,6 +85594,17 @@
 	},
 /turf/open/floor/grass/grass0,
 /area/security/prison)
+"vGL" = (
+/obj/docking_port/stationary{
+	id = "lambda_station";
+	name = "Lambda Shuttle Dock";
+	dwidth = 5;
+	width = 10;
+	dheight = 5;
+	height = 10
+	},
+/turf/open/space/basic,
+/area/space)
 "vHi" = (
 /obj/structure/chair/office,
 /obj/effect/landmark/start/bridgeofficer,
@@ -102337,7 +102355,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+vGL
 aaa
 aaa
 aaa
@@ -121039,7 +121057,7 @@ brR
 brP
 brA
 brH
-brr
+fOE
 bow
 bqk
 bmT

@@ -19,6 +19,13 @@
 	if(slot != ITEM_SLOT_GLOVES)
 		return ..()
 
+	// BLUEMOON ADDITION AHEAD - запрет на нормализацию размера существ, у которых есть трейт на невозможность нормализации размера
+	if(HAS_TRAIT(user, TRAIT_BLUEMOON_ANTI_NORMALIZER))
+		to_chat(user, "<span class='warning'>\The [src] buzzes, as nothing changes.</span>")
+		playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 1)
+		return . = ..()
+	// BLUEMOON ADDITION END
+
 	if(user.GetComponent(/datum/component/size_normalized))
 		to_chat(user, "<span class='warning'>\The [src] buzzes, being overwritten by another accessory.</span>")
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 1)
@@ -46,6 +53,13 @@
 /obj/item/clothing/wrists/syntech/equipped(mob/user, slot)
 	if(slot != ITEM_SLOT_WRISTS)
 		return ..()
+
+	// BLUEMOON ADDITION AHEAD - запрет на нормализацию размера существ, у которых есть трейт на невозможность нормализации размера
+	if(HAS_TRAIT(user, TRAIT_BLUEMOON_ANTI_NORMALIZER))
+		to_chat(user, "<span class='warning'>\The [src] buzzes, as nothing changes.</span>")
+		playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 1)
+		return . = ..()
+	// BLUEMOON ADDITION END
 
 	if(user.GetComponent(/datum/component/size_normalized))
 		to_chat(user, "<span class='warning'>\The [src] buzzes, being overwritten by another accessory.</span>")
@@ -76,6 +90,13 @@
 /obj/item/clothing/neck/syntech/equipped(mob/living/user, slot)
 	if(slot != ITEM_SLOT_NECK)
 		return ..()
+
+	// BLUEMOON ADDITION AHEAD - запрет на нормализацию размера существ, у которых есть трейт на невозможность нормализации размера
+	if(HAS_TRAIT(user, TRAIT_BLUEMOON_ANTI_NORMALIZER))
+		to_chat(user, "<span class='warning'>\The [src] buzzes, as nothing changes.</span>")
+		playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 1)
+		return . = ..()
+	// BLUEMOON ADDITION END
 
 	if(user.GetComponent(/datum/component/size_normalized))
 		to_chat(user, "<span class='warning'>\The [src] buzzes, being overwritten by another accessory.</span>")

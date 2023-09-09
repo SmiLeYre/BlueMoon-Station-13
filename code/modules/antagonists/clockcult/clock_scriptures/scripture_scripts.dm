@@ -144,7 +144,7 @@
 	desc = "Создаёт предмет, который необходимо разбить для призыва Портального Шторма."
 	invocations = list("Я прошу, пришли подкрепление...", "...мы в тебе нуждаемся.")
 	channel_time = 20
-	power_cost = 600 //Shouldn't be too spammable but not too hard to get either
+	power_cost = 55000 //Shouldn't be too spammable but not too hard to get either
 	whispered = TRUE
 	creator_message = "Вы сформировали Сферу с Проклятием для Станции."
 	object_path = /obj/item/station_clock_curse

@@ -252,7 +252,6 @@
 		holder.remove_reagent(type, cached_volume)
 		holder.add_reagent(/datum/reagent/fermi/PEsmaller, cached_volume)
 
-/*
 /datum/chemical_reaction/fermi/astral
 	name = "Astrogen"
 	id = /datum/reagent/fermi/astral
@@ -274,7 +273,6 @@
 	FermiChem				= TRUE
 	FermiExplode 			= TRUE
 	PurityMin 				= 0.25
-*/
 
 /datum/chemical_reaction/fermi/enthrall //check this
 	name = "MKUltra"

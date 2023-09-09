@@ -74,7 +74,7 @@
 			var/size = testicles.size
 			switch(size)
 				if(BALLS_SIZE_MIN)
-					size = pick("", "", "", "")
+					size = pick("", "", "", "cum_normal")
 				if(BALLS_SIZE_DEF)
 					size = pick("", "", "cum_normal", "cum_normal")
 				if(BALLS_SIZE_2)

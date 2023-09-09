@@ -141,7 +141,7 @@
 
 	var/datum/antagonist/nukeop/new_op = new()
 	new_op.send_to_spawnpoint = FALSE
-	new_op.nukeop_outfit = /datum/outfit/syndicate/no_crystals
+	new_op.nukeop_outfit = /datum/outfit/inteq/no_crystals
 
 	var/datum/antagonist/nukeop/creator_op = user.has_antag_datum(/datum/antagonist/nukeop,TRUE)
 	if(creator_op)
@@ -166,7 +166,6 @@
 	if(creator_op)
 		M.mind.add_antag_datum(new_op, creator_op.nuke_team)
 		M.mind.special_role = "Clown Operative"
-
 
 //////SYNDICATE BORG
 /obj/item/antag_spawner/nuke_ops/borg_tele
@@ -195,11 +194,11 @@
 
 	switch(borg_to_spawn)
 		if("InteQ-Medical")
-			R = new /mob/living/silicon/robot/modules/syndicate/medical/inteq(T)
+			R = new /mob/living/silicon/robot/modules/inteq/medical(T)
 		if("InteQ-Saboteur")
-			R = new /mob/living/silicon/robot/modules/syndicate/saboteur/inteq(T)
+			R = new /mob/living/silicon/robot/modules/inteq/saboteur(T)
 		else
-			R = new /mob/living/silicon/robot/modules/syndicate/inteq(T)
+			R = new /mob/living/silicon/robot/modules/inteq(T)
 
 	var/brainfirstname = pick(GLOB.first_names_male)
 	if(prob(50))
@@ -317,7 +316,7 @@
 	next_attempt_allowed = world.time + 1 MINUTES
 
 	to_chat(user, "<span class='notice'>Вы активизируете [src] и ожидаете подтверждения.</span>")
-	var/list/borg_candidates = pollGhostCandidates("Хотите ли вы играть за Киборга [uppertext(borg_to_spawn)]?", ROLE_POSIBRAIN, null, ROLE_POSIBRAIN, 150, POLL_IGNORE_POSIBRAIN)
+	var/list/borg_candidates = pollGhostCandidates("Хотите ли вы играть за Киборга [uppertext(borg_to_spawn)]?", ROLE_OPERATIVE, null, ROLE_OPERATIVE, 150, POLL_IGNORE_SYNDICATE)
 	if(LAZYLEN(borg_candidates))
 		if(QDELETED(src) || !check_usability(user))
 			return

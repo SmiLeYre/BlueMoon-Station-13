@@ -209,6 +209,10 @@
 				return FALSE
 			if(L.mob_size > max_mob_size)
 				return FALSE
+			// BLUEMOOB ADDITION AHEAD - убираем много головной боли с абузами ящиков на больших персонажей, запретив помещать их внутрь
+			if(HAS_TRAIT(AM, TRAIT_BLUEMOON_HEAVY_SUPER) || HAS_TRAIT(AM, TRAIT_BLUEMOON_HEAVY))
+				return FALSE
+			// BLUEMOOB ADDITION END
 			var/mobs_stored = 0
 			for(var/mob/living/M in contents)
 				if(++mobs_stored >= mob_storage_capacity)

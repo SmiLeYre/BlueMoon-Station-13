@@ -43,7 +43,7 @@
 	var/mob/trapped_mob
 
 /obj/structure/closet/Initialize(mapload)
-	..()
+	. = ..()
 	if(prob(1))
 		set_spooky_trap()
 

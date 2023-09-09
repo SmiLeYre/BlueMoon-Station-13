@@ -194,6 +194,7 @@
 /area/shuttle/escape)
 "aM" = (
 /obj/structure/reagent_dispensers/keg/mead,
+/obj/structure/reagent_dispensers/beerkeg,
 /turf/open/floor/plating,
 /area/shuttle/escape)
 "aN" = (
