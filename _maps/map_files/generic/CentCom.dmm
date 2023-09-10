@@ -16956,16 +16956,6 @@
 /turf/open/floor/plasteel/grimy,
 /area/centcom/ferry)
 "oyk" = (
-/obj/item/scalpel{
-	pixel_y = 12
-	},
-/obj/item/circular_saw,
-/obj/item/retractor{
-	pixel_x = 4
-	},
-/obj/item/hemostat{
-	pixel_x = -4
-	},
 /obj/item/clothing/gloves/color/latex,
 /obj/item/clothing/mask/surgical,
 /obj/structure/table/reinforced,
@@ -16975,6 +16965,8 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
+/obj/item/storage/backpack/duffelbag/syndie/surgery_adv,
+/obj/item/storage/backpack/duffelbag/syndie/surgery_adv,
 /turf/open/floor/plasteel/white,
 /area/centcom/control)
 "ozv" = (
@@ -22366,7 +22358,7 @@
 /turf/open/floor/plating/asteroid/snow/airless,
 /area/syndicate_mothership)
 "tlX" = (
-/obj/structure/sign/flag,
+/obj/structure/sign/flag/inteq,
 /turf/closed/indestructible/fakeglass,
 /area/tdome/tdomeobserve)
 "tmu" = (
@@ -70811,7 +70803,7 @@ uUJ
 gyQ
 scI
 gyQ
-caa
+tVr
 tTH
 sWt
 sWt
@@ -71068,7 +71060,7 @@ rCv
 gyQ
 scI
 gyQ
-tVr
+caa
 tTH
 sWt
 sWt
@@ -71325,7 +71317,7 @@ ewW
 oqL
 scI
 gyQ
-tlX
+dxS
 tTH
 sWt
 sWt
@@ -71582,7 +71574,7 @@ uUJ
 gyQ
 scI
 gyQ
-dxS
+xVd
 tTH
 sWt
 sWt
@@ -71839,7 +71831,7 @@ uUJ
 gyQ
 scI
 gyQ
-xVd
+tlX
 tTH
 sWt
 sWt
@@ -72096,7 +72088,7 @@ uUJ
 gyQ
 scI
 gyQ
-xYp
+iOE
 tTH
 sWt
 sWt
@@ -72610,7 +72602,7 @@ uUJ
 lAJ
 scI
 gyQ
-iOE
+xYp
 fVs
 nUm
 nUm
