@@ -39,7 +39,7 @@
 /datum/emote/living/chuckle
 	key = "chuckle"
 	key_third_person = "chuckles"
-	message = "хихикает."
+	message = "усмехается."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/chuckle/run_emote(mob/user, params)

@@ -268,6 +268,27 @@
 	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife")
 	subcategory = LOADOUT_SUBCATEGORIES_DON17
 
+/datum/gear/donator/bm/emma_plush
+	name = "Emma Plush"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/toy/plush/mammal/fox/emma
+	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife")
+	subcategory = LOADOUT_SUBCATEGORIES_DON17
+
+/datum/gear/donator/bm/shiro_plush
+	name = "Shiro Plush"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/toy/plush/mammal/fox/emma/shiro
+	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife")
+	subcategory = LOADOUT_SUBCATEGORIES_DON17
+
+/datum/gear/donator/bm/raita_plush
+	name = "Raita Plush"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/toy/plush/mammal/fox/emma/raita
+	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife")
+	subcategory = LOADOUT_SUBCATEGORIES_DON17
+
 /datum/gear/donator/bm/noonar
 	name = "Syndicate jacket"
 	slot = ITEM_SLOT_OCLOTHING

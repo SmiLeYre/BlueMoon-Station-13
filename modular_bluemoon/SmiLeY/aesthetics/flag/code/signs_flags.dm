@@ -142,17 +142,17 @@
 			RESKIN_ITEM_STATE = "folded_nt",
 			sign_path = /obj/structure/sign/flag/nanotrasen
 		),
-		"Human Commonwealth Association" = list(
-			RESKIN_ICON_STATE = "folded_flag_hca",
-			RESKIN_ITEM_STATE = "folded_flag_hca",
-			sign_path = /obj/item/sign/flag/humancommonwealth
-		),
 		"Syndicate" = list(
 			RESKIN_ICON_STATE = "folded_syndi",
 			RESKIN_ITEM_STATE = "folded_syndi",
 			sign_path = /obj/structure/sign/flag/syndicate
 		),
-		"NRI" = list(
+		"Solar Federation" = list(
+			RESKIN_ICON_STATE = "folded_solfed",
+			RESKIN_ITEM_STATE = "folded_solfed",
+			sign_path = /obj/structure/sign/flag/terragov
+		),
+		"New Russian Empire" = list(
 			RESKIN_ICON_STATE = "folded_nri",
 			RESKIN_ITEM_STATE = "folded_nri",
 			sign_path = /obj/structure/sign/flag/nri
@@ -172,11 +172,6 @@
 			RESKIN_ITEM_STATE = "folded_mars",
 			sign_path = /obj/structure/sign/flag/mars
 		),
-		"SOL" = list(
-			RESKIN_ICON_STATE = "folded_solfed",
-			RESKIN_ITEM_STATE = "folded_solfed",
-			sign_path = /obj/structure/sign/flag/terragov
-		),
 		"Mothic" = list(
 			RESKIN_ICON_STATE = "folded_mothic",
 			RESKIN_ITEM_STATE = "folded_mothic",
@@ -191,6 +186,11 @@
 			RESKIN_ICON_STATE = "folded_goldring",
 			RESKIN_ITEM_STATE = "folded_goldring",
 			sign_path = /obj/structure/sign/flag/goldring
+		),
+		"Human Commonwealth Association" = list(
+			RESKIN_ICON_STATE = "folded_flag_hca",
+			RESKIN_ITEM_STATE = "folded_flag_hca",
+			sign_path = /obj/item/sign/flag/humancommonwealth
 		),
 	)
 
