@@ -57,7 +57,7 @@ GLOBAL_VAR_INIT(war_declared, FALSE)
 	if(SSticker.mode.name == "clown ops")
 		war_sound = 'sound/announcer/classic/_admin_war_pipisky.ogg'
 
-	priority_announce(war_declaration, title = "Объявление о Войне", sound = war_sound, has_important_message = TRUE)
+	priority_announce(war_declaration, title = "Объявление Войны", sound = war_sound, has_important_message = TRUE)
 
 	to_chat(user, "You've attracted the attention of powerful forces within the InteQ. A bonus bundle of Credits has been granted to your team. Great things await you if you complete the mission.")
 

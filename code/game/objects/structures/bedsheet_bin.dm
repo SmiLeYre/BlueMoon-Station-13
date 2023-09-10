@@ -36,7 +36,8 @@ GLOBAL_LIST_INIT(double_bedsheets, list(/obj/item/bedsheet/double,
 										/obj/item/bedsheet/wiz/double,
 										/obj/item/bedsheet/nanotrasen/double,
 										/obj/item/bedsheet/ian/double,
-										/obj/item/bedsheet/cosmos/double
+										/obj/item/bedsheet/cosmos/double,
+										/obj/item/bedsheet/vulps/double
 										))
 
 /obj/item/bedsheet
@@ -452,6 +453,11 @@ GLOBAL_LIST_INIT(double_bedsheets, list(/obj/item/bedsheet/double,
 
 /obj/item/bedsheet/cosmos/double
 	icon_state = "double_sheetcosmos"
+	dying_key = DYE_REGISTRY_DOUBLE_BEDSHEET
+	bedsheet_type = BEDSHEET_DOUBLE
+
+/obj/item/bedsheet/vulps/double
+	icon_state = "double_sheetvulps"
 	dying_key = DYE_REGISTRY_DOUBLE_BEDSHEET
 	bedsheet_type = BEDSHEET_DOUBLE
 
