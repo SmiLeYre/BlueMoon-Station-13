@@ -302,3 +302,10 @@
 	path = /obj/item/gun/ballistic/automatic/AM4B_pchelik
 	ckeywhitelist = list("pchelik")
 	subcategory = LOADOUT_SUBCATEGORIES_DON12
+
+/datum/gear/donator/bm/pchelik_cloak
+	name = "Coopie's Cloak"
+	slot = ITEM_SLOT_NECK
+	path = /obj/item/clothing/neck/cloak/coopie_cloak
+	ckeywhitelist = list("pchelik")
+	subcategory = LOADOUT_SUBCATEGORIES_DON12
