@@ -953,14 +953,14 @@
 	id = "surgery_toxinhealing"
 	surgery = /datum/surgery/advanced/toxichealing
 	research_icon_state = "surgery_chest"
-
+/* BLUEMOON REMOVAL - убираем казуальную операцию ревайва тела
 /datum/design/surgery/revival
 	name = "Revival"
 	desc = "An experimental surgical procedure which involves reconstruction and reactivation of the patient's brain even long after death. The body must still be able to sustain life."
 	id = "surgery_revival"
 	surgery = /datum/surgery/advanced/revival
 	research_icon_state = "surgery_head"
-
+*/
 /datum/design/surgery/brainwashing
 	name = "Brainwashing"
 	desc = "A surgical procedure which directly implants a directive into the patient's brain, making it their absolute priority. It can be cleared using a mindshield implant."
