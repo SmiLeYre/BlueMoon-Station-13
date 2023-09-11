@@ -99,7 +99,7 @@
 	weight = 4
 	cost = 15
 	requirements = list(101,101,101,40,30,20,10,10,10,10)
-	repeatable = TRUE
+	repeatable = FALSE
 
 /datum/dynamic_ruleset/midround/raiders/acceptable(population=0, threat=0)
 	if (!SSmapping.empty_space)
