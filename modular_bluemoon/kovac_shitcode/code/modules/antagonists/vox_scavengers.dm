@@ -108,7 +108,7 @@
 	//r_pocket = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	//gloves = /obj/item/clothing/gloves/combat
 	//back = /obj/item/storage/backpack
-	ears = /obj/item/radio/headset/syndicate
+	ears = /obj/item/radio/headset/pirate
 	id = /obj/item/card/id/syndicate/vox_scavenger
 	//belt = /obj/item/gun/ballistic/automatic/pistol
 	//backpack_contents = list(/obj/item/storage/box/survival/syndie=1,

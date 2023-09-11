@@ -185,7 +185,7 @@
 					newfreq *= 10 // shift the decimal one place
 
 				newfreq = sanitize_frequency(newfreq, TRUE) //sanitize
-				if(newfreq == FREQ_SYNDICATE)
+				if(newfreq == FREQ_SYNDICATE || newfreq == FREQ_INTEQ || newfreq == FREQ_PIRATE)
 					temp = "-% Error: Interference preventing filtering frequency: \"[newfreq] GHz\" %-"
 					return
 				if(newfreq in freq_listening)
@@ -236,7 +236,7 @@
 					newfreq *= 10 // shift the decimal one place
 
 				newfreq = sanitize_frequency(newfreq, TRUE)
-				if(newfreq == FREQ_SYNDICATE)
+				if(newfreq == FREQ_SYNDICATE || newfreq == FREQ_INTEQ || newfreq == FREQ_PIRATE)
 					temp = "-% Error: Interference preventing filtering frequency: \"[newfreq] GHz\" %-"
 					return
 

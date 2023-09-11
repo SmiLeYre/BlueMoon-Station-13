@@ -108,14 +108,24 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	. = ..()
 	make_syndie()
 
+/obj/item/radio/headset/pirate
+
+/obj/item/radio/headset/pirate/Initialize(mapload)
+	. = ..()
+	make_pirate()
+
 /obj/item/radio/headset/inteq //disguised to look like a normal headset for stealth ops
 
 /obj/item/radio/headset/inteq/alt //undisguised bowman with flash protection
 	name = "InteQ Headset"
 	desc = "An illegal hacked headset that can be used to hear all radio frequencies. Protects ears from flashbangs."
-	icon_state = "syndie_headset"
-	item_state = "syndie_headset"
+	icon_state = "inteq_headset_alt"
+	item_state = "inteq_headset_alt"
+	//freqlock = TRUE
 	bowman = TRUE
+	icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/obj_sol_head.dmi'
+	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/mob_sol_head.dmi'
+	radiosound = 'modular_bluemoon/kovac_shitcode/sound/radio.ogg'
 
 /obj/item/radio/headset/inteq/alt/leader
 	name = "Team Leader InteQ Headset"
@@ -126,6 +136,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	make_inteq()
 
 /obj/item/radio/headset/binary
+
 /obj/item/radio/headset/binary/Initialize(mapload)
 	. = ..()
 	qdel(keyslot)

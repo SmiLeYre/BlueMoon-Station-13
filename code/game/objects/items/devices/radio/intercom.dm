@@ -104,7 +104,7 @@
 			return FALSE
 	if(!src.listening)
 		return FALSE
-	if(freq == FREQ_SYNDICATE)
+	if(freq == FREQ_SYNDICATE || freq == FREQ_INTEQ || freq == FREQ_PIRATE)
 		if(!(src.syndie))
 			return FALSE//Prevents broadcast of messages over devices lacking the encryption
 

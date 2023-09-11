@@ -106,6 +106,8 @@
 #define span_suppradio(str) ("<span class='suppradio'>" + str + "</span>")
 #define span_swarmer(str) ("<span class='swarmer'>" + str + "</span>")
 #define span_syndradio(str) ("<span class='syndradio'>" + str + "</span>")
+#define span_inteqradio(str) ("<span class='inteqradio'>" + str + "</span>")
+#define span_pirateradio(str) ("<span class='pirateradio'>" + str + "</span>")
 #define span_tape_recorder(str) ("<span class='tape_recorder'>" + str + "</span>")
 #define span_tinynotice(str) ("<span class='tinynotice'>" + str + "</span>")
 #define span_tinynoticeital(str) ("<span class='tinynoticeital'>" + str + "</span>")

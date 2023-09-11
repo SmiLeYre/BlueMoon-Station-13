@@ -54,6 +54,8 @@ em						{font-style: normal;	font-weight: bold;}
 .suppradio				{color: #a8732b;}
 .servradio				{color: #6eaa2c;}
 .syndradio				{color: #6d3f40;}
+.inteqradio				{color: #e58200;}
+.pirateradio			{color: #0b0808;}
 .centcomradio			{color: #686868;}
 .aiprivradio			{color: #ff00ff;}
 .redteamradio			{color: #ff0000;}

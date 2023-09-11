@@ -89,7 +89,7 @@
 /datum/outfit/pirate/space
 	suit = /obj/item/clothing/suit/space/pirate
 	head = /obj/item/clothing/head/helmet/space/pirate/bandana
-	ears = /obj/item/radio/headset/syndicate
+	ears = /obj/item/radio/headset/pirate
 	id = /obj/item/card/id/pirate
 
 /datum/outfit/pirate/space/captain

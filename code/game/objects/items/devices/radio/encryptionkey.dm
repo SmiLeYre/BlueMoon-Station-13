@@ -26,19 +26,20 @@
 		. += "<span class='notice'>It also allows access to the special binary channel used by silicons."
 
 /obj/item/encryptionkey/syndicate
-	name = "syndicate encryption key"
+	name = "illegal encryption key"
 	icon_state = "syn_cypherkey"
 	channels = list(RADIO_CHANNEL_SYNDICATE = 1)
 	syndie = TRUE //Signifies that it de-crypts Syndicate transmissions
 
 /obj/item/encryptionkey/inteq
-	name = "InteQ Encryption Key"
-	icon_state = "syn_cypherkey"
+	name = "inteQ Encryption Key"
+	icon_state = "inteq_cypherkey"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/sol_misc.dmi'
 	channels = list(RADIO_CHANNEL_INTEQ = 1)
 	syndie = TRUE //Signifies that it de-crypts Syndicate transmissions
 
 /obj/item/encryptionkey/pirate
-	name = "Pirate Encryption Key"
+	name = "pirate Encryption Key"
 	icon_state = "syn_cypherkey"
 	channels = list(RADIO_CHANNEL_PIRATE = 1)
 	syndie = TRUE //Signifies that it de-crypts Syndicate transmissions
@@ -169,3 +170,4 @@
 
 /obj/item/encryptionkey/secbot
 	channels = list(RADIO_CHANNEL_AI_PRIVATE = 1, RADIO_CHANNEL_SECURITY = 1)
+
