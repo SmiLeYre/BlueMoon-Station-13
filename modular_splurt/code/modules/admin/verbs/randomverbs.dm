@@ -38,7 +38,7 @@
 			to_chat(usr, "The person you are trying to contact is not wearing a headset. Unsent message: [msg]")
 			return
 
-		to_chat(H, "Вы слышите щелчок в ухе прежде, чем голос в вашей голове начинает говорить.  \"Прослушайте сообщение от [sender == RADIO_CHANNEL_SYNDICATE ? "ваших наниматель" : "ЦК"].  Содержание сообщения[sender == RADIO_CHANNEL_SYNDICATE ? ", агент." : ":"] <span class='bold'>[msg].</span> Конец сообщения.\"")
+		to_chat(H, "Вы слышите щелчок в ухе прежде, чем голос в вашей голове начинает говорить.  \"Прослушайте сообщение от [sender == RADIO_CHANNEL_SYNDICATE ? "ваших нанимателей" : "ЦК"].  Содержание сообщения[sender == RADIO_CHANNEL_SYNDICATE ? ", агент." : ":"] <span class='bold'>[msg].</span> Конец сообщения.\"")
 
 
 	log_admin("SubtlePM ([sender]): [key_name(usr)] -> [key_name(M)] : [msg]")
