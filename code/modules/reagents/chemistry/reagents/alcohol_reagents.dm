@@ -750,7 +750,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		if(HAS_TRAIT(H, TRAIT_DWARF) || HAS_TRAIT(H, TRAIT_ALCOHOL_TOLERANCE || real_dorf))
-			to_chat(H, "<span class='notice'>Вот уже по МУЖИЦКИ!</span>")
+			to_chat(H, "<span class='notice'>Вот это уже по МУЖИЦКИ!</span>")
 			if(real_dorf)
 				boozepwr = 100 // Don't want dwarves to die because of a low booze power
 			else

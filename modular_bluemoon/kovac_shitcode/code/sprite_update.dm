@@ -498,6 +498,7 @@
 	mob_size = MOB_SIZE_LARGE
 	maxHealth = 250
 	health = 250
+	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
 
 ///////////////
 
