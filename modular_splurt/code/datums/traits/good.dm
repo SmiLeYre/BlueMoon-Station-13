@@ -134,15 +134,15 @@
 				sub.dir = get_dir(sub, quirk_holder)
 				sub.KnockToFloor()
 				sub.emote(pick("blush", "pant"))
-				sub.visible_message(span_lewd("\The <b>[sub]</b> бросается на колени и преклоняет свою голову в однозначном желании выполнить поручение <b>[quirk_holder]</b>."),
+				sub.visible_message(span_lewd("\The <b>[sub]</b> бросается на колени и преклоняет свою голову<b>[quirk_holder]</b>."),
 									span_lewd("Ты бросаешься на свои колени и преклоняешь голову перед <b>[quirk_holder]</b>, будто бы какое-то животное!"))
 			if("snap3")
 				sub.KnockToFloor()
 				step(sub, get_dir(sub, quirk_holder))
 				sub.emote(pick("blush", "pant"))
 				sub.do_jitter_animation(30) //You're being moved anyways
-				sub.visible_message(span_lewd("\The <b>[sub]</b> бросается на четвереньки к \the <b>[quirk_holder]</b> и приближается на своих коленях в готовности выполнять любые команды."),
-									span_lewd("Ты бросаешься на четвереньки и приближаешься на своих коленях к \the <b>[quirk_holder]</b> в готовности выполнять любые приказы! [good_x] в своём репертуаре."))
+				sub.visible_message(span_lewd("\The <b>[sub]</b> бросается на четвереньки и приближается на своих коленях к \the <b>[quirk_holder]</b>"),
+									span_lewd("Ты бросаешься на четвереньки и приближаешься на своих коленях к \the <b>[quirk_holder]</b>! [good_x] в своём репертуаре."))
 		. = TRUE
 
 	if(.)

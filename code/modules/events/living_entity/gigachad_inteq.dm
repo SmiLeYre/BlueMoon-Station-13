@@ -122,7 +122,7 @@
 
 	var/turf/T = get_turf(pick(spawn_locs))
 	var/mob/living/simple_animal/hostile/space_mosquito/S = new(T)
-	playsound(S, 'sound/voice/human/bear_fight.ogg', 75, 1, 1000)
+	playsound(S, 'modular_bluemoon/kovac_shitcode/sound/komar_spawn.ogg', 75, 1, 1000)
 	message_admins("A Space Mosquito has been spawned at [COORD(T)][ADMIN_JMP(T)]")
 	log_game("A Space Mosquito has been spawned at [COORD(T)]")
 	return SUCCESSFUL_SPAWN

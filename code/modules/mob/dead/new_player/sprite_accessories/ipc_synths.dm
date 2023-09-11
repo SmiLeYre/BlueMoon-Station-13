@@ -128,6 +128,10 @@
 	name = "Yellow"
 	icon_state = "yellow"
 
+/datum/sprite_accessory/screen/crt
+	name = "Critical"
+	icon_state = "crt"
+
 /******************************************
 ************** IPC Antennas ***************
 *******************************************/

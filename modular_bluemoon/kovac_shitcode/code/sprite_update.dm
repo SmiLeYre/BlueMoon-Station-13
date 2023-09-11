@@ -487,6 +487,18 @@
 	maxHealth = 100
 	health = 100
 
+/mob/living/simple_animal/pet/cat/moro
+	name = "Moro"
+	desc = "He likes grechkya."
+	icon_state = "moro"
+	icon_living = "moro"
+	icon_dead = "moro_dead"
+	held_icon = "moro"
+	unique_pet = TRUE
+	mob_size = MOB_SIZE_LARGE
+	maxHealth = 250
+	health = 250
+
 ///////////////
 
 /obj/item/toy/plush/mammal/fox/emma

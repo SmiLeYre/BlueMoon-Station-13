@@ -123,22 +123,22 @@ GLOBAL_LIST_INIT(dwarf_last, world.file2list("strings/names/dwarf_last.txt")) //
 	switch(stored_alcohol)
 		if(0 to 24)
 			if(last_alcohol_spam + 8 SECONDS < world.time)
-				to_chat(owner, "<span class='userdanger'>DAMNATION INCARNATE, WHY AM I CURSED WITH THIS DRY-SPELL? I MUST DRINK.</span>")
+				to_chat(owner, "<span class='userdanger'>ПРОКЛЯТЬЕ, ЭТА СУХОСТЬ В ГОРЛЕ МЕНЯ УБЬЕТ! МНЕ НУЖНО ВЫПИТЬ.</span>")
 				last_alcohol_spam = world.time
 			owner.adjustToxLoss(10)
 		if(25 to 50)
 			if(last_alcohol_spam + 20 SECONDS < world.time)
-				to_chat(owner, "<span class='danger'>Oh DAMN, I need some brew!</span>")
+				to_chat(owner, "<span class='danger'>Ох, ЧЁРТ, мне нужна выпивка!</span>")
 				last_alcohol_spam = world.time
 		if(51 to 75)
 			if(last_alcohol_spam + 35 SECONDS < world.time)
-				to_chat(owner, "<span class='warning'>Your body aches, you need to get ahold of some booze...</span>")
+				to_chat(owner, "<span class='warning'>Ваше тело побаливает, вам бы пропустить пару кружек бухла...</span>")
 				last_alcohol_spam = world.time
 		if(76 to 100)
 			if(last_alcohol_spam + 40 SECONDS < world.time)
-				to_chat(owner, "<span class='notice'>A pint of anything would really hit the spot right now.</span>")
+				to_chat(owner, "<span class='notice'>Пинта с алкогольным напитком сейчас была бы как никогда кстати.</span>")
 				last_alcohol_spam = world.time
 		if(101 to 150)
 			if(last_alcohol_spam + 50 SECONDS < world.time)
-				to_chat(owner, "<span class='notice'>You feel like you could use a good brew.</span>")
+				to_chat(owner, "<span class='notice'>Вы ощущаете желание отведать хорошей выпивки.</span>")
 				last_alcohol_spam = world.time
