@@ -38,7 +38,7 @@
 #define RADIO_TOKEN_AI_PRIVATE ":o"
 
 
-#define RADIO_CHANNEL_SYNDICATE "Illegal"
+#define RADIO_CHANNEL_SYNDICATE "Syndicate"
 #define RADIO_KEY_SYNDICATE "t"
 #define RADIO_TOKEN_SYNDICATE ":t"
 
@@ -120,7 +120,7 @@
 #define RADIO_TOKEN_DS2 ":w"
 #define FREQ_DS2 1209
 
-#define RADIO_CHANNEL_PIRATE "Pirate"
+#define RADIO_CHANNEL_PIRATE "Illegal"
 #define RADIO_KEY_PIRATE "p"
 #define RADIO_TOKEN_PIRATE ":p"
 #define FREQ_PIRATE 1208

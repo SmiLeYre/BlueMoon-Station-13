@@ -115,7 +115,7 @@
 
 // NRI Hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/ert/alert/nri
-	name = "NRI Spetsnaz hardsuit helmet"
+	name = "Ratnik-4 hardsuit helmet"
 	desc = "Stay with me, cyka!"
 	icon_state = "hardsuit0-russian"
 	item_state = "hardsuit0-russian"
@@ -127,7 +127,7 @@
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/suit/space/hardsuit/ert/alert/nri
-	name = "NRI Spetsnaz hardsuit"
+	name = "Ratnik-4 hardsuit"
 	desc = "Reinforced greenish hardsuit, designated for NRI special forces."
 	icon_state = "russiansuit"
 	item_state = "russiansuit"

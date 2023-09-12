@@ -124,7 +124,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	//freqlock = TRUE
 	bowman = TRUE
 	icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/obj_sol_head.dmi'
-	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/mob_sol_head.dmi'
+	//mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/mob_sol_head.dmi'
 	radiosound = 'modular_bluemoon/kovac_shitcode/sound/radio.ogg'
 
 /obj/item/radio/headset/inteq/alt/leader

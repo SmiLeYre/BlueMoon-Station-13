@@ -69,7 +69,7 @@
 	name = "expeditor's headset"
 	desc = "This is used by expeditors."
 	icon = 'modular_bluemoon/phenyamomota/icon/obj/radio.dmi'
-	mob_overlay_icon = 'modular_bluemoon/phenyamomota/icon/mob/ears.dmi'
+	//mob_overlay_icon = 'modular_bluemoon/phenyamomota/icon/mob/ears.dmi'
 	icon_state = "exp_headset"
 	item_state = "exp_headset"
 	keyslot = new /obj/item/encryptionkey/headset_sci

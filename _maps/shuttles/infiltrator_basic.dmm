@@ -399,8 +399,8 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
 	},
-/obj/item/clothing/suit/space/syndicate/contract,
-/obj/item/clothing/head/helmet/space/syndicate/contract,
+/obj/item/clothing/suit/space/syndicate/inteq,
+/obj/item/clothing/head/helmet/space/syndicate/inteq,
 /turf/open/floor/iron/dark/small,
 /area/shuttle/syndicate/airlock)
 "bj" = (

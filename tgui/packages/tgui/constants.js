@@ -62,7 +62,7 @@ export const CSS_COLORS = [
 /* IF YOU CHANGE THIS KEEP IT IN SYNC WITH CHAT CSS */
 export const RADIO_CHANNELS = [
   {
-    name: 'Illegal',
+    name: 'Syndicate',
     freq: 1213,
     color: '#8f4a4b',
   },
@@ -72,7 +72,7 @@ export const RADIO_CHANNELS = [
     color: '#e58200',
   },
   {
-    name: 'Pirate',
+    name: 'Illegal',
     freq: 1208,
     color: '#30300',
   },

@@ -131,7 +131,7 @@
 	icon_state = "solgov_headset"
 	item_state = "solgov_headset"
 	icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/obj_sol_head.dmi'
-	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/mob_sol_head.dmi'
+	//mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/mob_sol_head.dmi'
 	radiosound = 'modular_bluemoon/kovac_shitcode/sound/radio.ogg'
 	freerange = FALSE
 	freqlock = TRUE
@@ -158,7 +158,7 @@
 
 // SolFed Hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/ert/alert/sol
-	name = "SolFed marine hardsuit helmet"
+	name = "FCS SolFed hardsuit helmet"
 	desc = "Just like the old times."
 	icon_state = "hardsuit0-solfed"
 	item_state = "hardsuit0-solfed"
@@ -172,8 +172,8 @@
 	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/mob_sol_head.dmi'
 
 /obj/item/clothing/suit/space/hardsuit/ert/alert/sol
-	name = "SolFed marine hardsuit"
-	desc = "Standart issue Solar marine hardsuit. Provided with special fibers and armor plates."
+	name = "FCS SolFed hardsuit"
+	desc = "The default Future Combat Systems Solar marine hardsuit. Provided with special fibers and armor plates."
 	icon_state = "hardsuit0-solfed"
 	item_state = "hardsuit0-solfed"
 	hardsuit_type = "solfed"

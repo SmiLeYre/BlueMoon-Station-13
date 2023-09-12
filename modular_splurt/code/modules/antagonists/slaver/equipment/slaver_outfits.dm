@@ -5,7 +5,7 @@
 	shoes = /obj/item/clothing/shoes/workboots
 	gloves = /obj/item/clothing/gloves/color/black
 	back = /obj/item/storage/backpack
-	ears = /obj/item/radio/headset/syndicate/slaver
+	ears = /obj/item/radio/headset/pirate/slaver
 	id = /obj/item/card/id/syndicate/slaver
 	backpack_contents = list(/obj/item/storage/box/survival,\
 		/obj/item/kitchen/knife/combat/survival)

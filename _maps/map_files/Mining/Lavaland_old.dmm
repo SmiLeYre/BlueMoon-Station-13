@@ -1077,7 +1077,6 @@
 /obj/structure/chair/office/dark{
 	dir = 1
 	},
-/obj/effect/landmark/start/depsec/science,
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
 "dj" = (
@@ -1803,7 +1802,6 @@
 /area/mine/xenoarch)
 "ev" = (
 /obj/structure/chair/office/dark,
-/obj/effect/landmark/start/scientist,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "ew" = (
@@ -3136,7 +3134,6 @@
 /turf/open/floor/plasteel/white,
 /area/mine/xenoarch_area_c)
 "gZ" = (
-/obj/effect/landmark/start/medical_doctor,
 /obj/structure/chair/office/dark{
 	dir = 1
 	},
@@ -3628,13 +3625,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
-"ih" = (
-/obj/structure/chair/office/dark{
-	dir = 1
-	},
-/obj/effect/landmark/start/scientist,
-/turf/open/floor/plasteel,
-/area/mine/xenoarch)
 "ii" = (
 /obj/effect/turf_decal/tile/green,
 /obj/effect/turf_decal/tile/purple{
@@ -3849,17 +3839,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/mine/xenoarch_area_c)
-"iI" = (
-/obj/structure/chair/office/light{
-	dir = 8
-	},
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 24
-	},
-/obj/effect/landmark/start/medical_doctor,
-/turf/open/floor/plasteel/white,
-/area/mine/xenoarch_area_c)
 "iJ" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -3880,7 +3859,6 @@
 	dir = 8;
 	pixel_x = 24
 	},
-/obj/effect/landmark/start/paramedic,
 /turf/open/floor/plasteel/white,
 /area/mine/xenoarch_area_c)
 "iL" = (
@@ -3978,7 +3956,6 @@
 /obj/structure/chair/office/dark,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/landmark/start/paramedic,
 /turf/open/floor/plasteel/white,
 /area/mine/xenoarch_area_c)
 "iZ" = (
@@ -4871,16 +4848,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
-"le" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/visible{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/effect/landmark/start/atmospheric_technician,
-/turf/open/floor/plasteel,
-/area/mine/xenoarch_area_a)
 "lf" = (
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer{
 	dir = 8
@@ -4897,7 +4864,6 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 5
 	},
-/obj/effect/landmark/start/atmospheric_technician,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
 "li" = (
@@ -5248,7 +5214,6 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/obj/effect/landmark/start/station_engineer,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_a)
 "lZ" = (
@@ -5264,11 +5229,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/living_quarters)
-"mb" = (
-/obj/machinery/atmospherics/pipe/simple/green/visible,
-/obj/effect/landmark/start/station_engineer,
-/turf/open/floor/plasteel,
-/area/mine/xenoarch_area_a)
 "mc" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible,
 /turf/open/floor/plasteel,
@@ -6223,7 +6183,6 @@
 /obj/structure/chair/sofa/corp/right{
 	dir = 4
 	},
-/obj/effect/landmark/start/assistant,
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_b)
 "oq" = (
@@ -6246,7 +6205,6 @@
 /obj/structure/sign/poster/official/random{
 	pixel_x = 32
 	},
-/obj/effect/landmark/start/assistant,
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_b)
 "ot" = (
@@ -49070,7 +49028,7 @@ gW
 hm
 WV
 ik
-iI
+iK
 iW
 WV
 jF
@@ -57814,7 +57772,7 @@ jD
 jP
 kk
 kI
-le
+lz
 lz
 lY
 MW
@@ -58587,7 +58545,7 @@ kl
 kK
 lh
 lC
-mb
+mc
 mc
 mS
 nk
@@ -58834,7 +58792,7 @@ gq
 gT
 Bi
 hP
-ih
+dl
 cq
 ev
 js

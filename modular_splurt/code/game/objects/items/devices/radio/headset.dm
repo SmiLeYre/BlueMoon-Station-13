@@ -1,5 +1,5 @@
-/obj/item/radio/headset/syndicate/slaver/Initialize()
+/obj/item/radio/headset/pirate/slaver/Initialize()
 	. = ..()
 
-	set_frequency(FREQ_SYNDICATE)
+	set_frequency(FREQ_PIRATE)
 	freqlock = TRUE
