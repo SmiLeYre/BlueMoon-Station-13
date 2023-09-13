@@ -50,10 +50,10 @@
 
 	limbs_id = SPECIES_NUCLEATION
 	icon_limbs = 'modular_splurt/icons/mob/human_parts_greyscale.dmi'
-	damage_overlay_type = "human"
-	hair_color = "FFFF00"
+	damage_overlay_type = "human" // В ДУШЕ МЫ ХУМАН.
+	hair_color = "FFFF00" // ВОЛОСЫ ВСЕГДА САЛЬНО-МОЧЕВОГО ЦВЕТА. ДАДИМ ОТПОР НЕФАРАМ С СИНИМИ ВОЛОСАМИ.
 
-	mutanteyes = /obj/item/organ/eyes/luminescent_crystal
+	mutanteyes = /obj/item/organ/eyes/luminescent_crystal // А ЗАЧЕМ ТЕБЕ ТАКИЕ БОЛЬШИЕ ГЛАЗА??? ЧТОБЫ ЛУЧШЕ ТЕБЯ ВИДЕТЬ, ВНУЧЕНЬКА.
 	mutant_organs = list(/obj/item/organ/heart/strange_crystal)
 	mutant_brain = /obj/item/organ/brain/crystal
 
@@ -72,13 +72,17 @@
 /mob/living/carbon/human/species/nucleation
 	race = /datum/species/nucleation
 
-/mob/living/carbon/human/species/nucleation/proc/crystall_off(mob/living/carbon/human/H)
-	for(!H.getorganslot(ORGAN_SLOT_HEART))
-		H.adjustBruteLoss(6*REM, 0)
-		H.adjustFireLoss(6*REM, 0)
-	return ..()
+//
+// НЕ РАБОТАЕТ, ПОТОМ ПОЧИНЮ.
+//
+// /mob/living/carbon/human/species/nucleation/proc/crystall_off(mob/living/carbon/human/H)
+// 	for(!H.getorganslot(ORGAN_SLOT_HEART))
+// 		H.adjustBruteLoss(6*REM, 0)
+// 		H.adjustFireLoss(6*REM, 0)
+// 	return ..()
 //
 
+// СТАРАЯ ВЕРСИЯ ОТХИЛА ОТ РАДИЯ. Я ТАМ ПО ДРУГОМУ ПЕРЕПИСАЛ НИЖЕ. //
 // ОТХИЛ НУКЛЕАЦИЙ ОТ РАДИЯ.
 // /datum/species/nucleation/proc/handle_reagents(mob/living/carbon/human/H, datum/reagent/R)
 //	if(R.name == "Radium") // ПЬЁМ РАДИЙ.
@@ -91,13 +95,13 @@
 //			return FALSE
 //	return ..()
 
-/datum/reagent/radium/on_mob_life(mob/living/carbon/human/species/nucleation/M)
+/datum/reagent/radium/on_mob_life(mob/living/carbon/human/species/nucleation/M) // ПЬЁМ РАДИУМ БАЙКАЛЬСКИЙ
 	if(isnucleation(M))
-		M.adjustBruteLoss(-3*REM, 0)
+		M.adjustBruteLoss(-3*REM, 0) // ДА ЗАЖИВЛЯЕМСЯ.
 		M.adjustFireLoss(-3*REM, 0)
 	return ..()
 
-/datum/action/innate/ability/shahid
+/datum/action/innate/ability/shahid // НУ ТИПА ТАКОЙ ЖЕ ВЗРЫВ КАК И ПРИ СМЕРТИ - ТОЛЬКО НАМЕРЕННЫЙ И В ДВА РАЗА СИЛЬНЕЕ.
 	name = "Blow yourself up"
 	check_flags = AB_CHECK_CONSCIOUS
 	button_icon_state = "explosion"
@@ -105,7 +109,7 @@
 	background_icon_state = "bg_alien"
 	required_mobility_flags = NONE
 
-/datum/action/innate/ability/shahid/Activate()
+/datum/action/innate/ability/shahid/Activate() // АКТИВАЦИЯ ВЗРЫВА НАМЕРЕННОГО.
 	var/turf/T = get_turf(usr)
 	explosion(T, 0, 1, 6, 9, flame_range = 6) // ЕСЛИ ТЫ БЫЛ РЯДОМ - Я ТЕБЕ СОЖАЛЕЮ.
 	qdel(usr)
@@ -113,9 +117,9 @@
 // НУ ПУСТЬ СВЕТИТСЯ КАК СОЛНЫШКО, А ЕМУ ТИПА ПОКЛОНЯТЬСЯ БУДУТ, КАК ПИДОРЫ ЕГИПЕТСКИЕ.
 /datum/species/nucleation/on_species_gain(mob/living/carbon/human/H)
 	..()
-	H.light_color = "#1C1C00"
+	H.light_color = "#1C1C00" // ДАЁМ СВЕТ ЧЕЛИКАМ.
 	H.set_light(3)
-	H.grant_ability_from_source(list(INNATE_ABILITY_NUCLEATID_SHAHID), ABILITY_SOURCE_SPECIES)
+	H.grant_ability_from_source(list(INNATE_ABILITY_NUCLEATID_SHAHID), ABILITY_SOURCE_SPECIES) // ДАЁМ АБИЛКУ ШАХИДА.
 
 /datum/species/nucleation/on_species_loss(mob/living/carbon/human/H)
 	..()
@@ -124,7 +128,7 @@
 
 // СГОРЕЛ = ПРОИГРАЛ. БУКВАЛЬНО. ЛУЧШЕ ЕГО НЕ ТРОГАТЬ, ОТВЕЧАЮ.
 
-/datum/species/nucleation/spec_death(gibbed, mob/living/carbon/human/H)
+/datum/species/nucleation/spec_death(gibbed, mob/living/carbon/human/H) // ВЗРЫВ ПРИ СМЕРТИ. ДОВОЛЬНО МАЛЕНЬКИЙ.
 	var/turf/T = get_turf(H)
 	H.visible_message("<span class='warning'>Тело [H] взрывается, оставляя после себя множество микроскопических кристаллов!</span>")
 	explosion(T, 0, 0, 3, 6, flame_range = 3) // ЕСЛИ ТЫ БЫЛ РЯДОМ - Я ТЕБЕ СОЖАЛЕЮ.
