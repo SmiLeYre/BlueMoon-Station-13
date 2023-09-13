@@ -4124,6 +4124,7 @@
 #include "modular_bluemoon\krashly\code\modules\clothing\neck.dm"
 #include "modular_bluemoon\krashly\code\modules\clothing\under.dm"
 #include "modular_bluemoon\krashly\code\modules\mecha\mecha.dm"
+#include "modular_bluemoon\krashly\code\modules\mobs\carbon\nucleation\code\nucleation.dm"
 #include "modular_bluemoon\krashly\code\uplink\uplink.dm"
 #include "modular_bluemoon\krashly\code\uplink\uplink_items.dm"
 #include "modular_bluemoon\loadout_rings\rings.dm"

@@ -65,6 +65,7 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define islizard(A) (is_species(A, /datum/species/lizard))
 #define isplasmaman(A) (is_species(A, /datum/species/plasmaman))
 #define isvox(A) (is_species(A, /datum/species/mammal/vox))
+#define isnucleation(A) (is_species(A, /datum/species/nucleation))
 #define ispodperson(A) (is_species(A, /datum/species/pod))
 #define isflyperson(A) (is_species(A, /datum/species/fly))
 #define isjellyperson(A) (is_species(A, /datum/species/jelly))

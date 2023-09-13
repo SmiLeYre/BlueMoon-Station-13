@@ -27,3 +27,5 @@
 	/// blood
 	#define REGROWTH_USES_BLOOD "blood"
 
+// Нуклеатид самоподрыв
+#define INNATE_ABILITY_NUCLEATID_SHAHID "shahid"
