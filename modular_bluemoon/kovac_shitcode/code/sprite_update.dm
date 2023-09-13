@@ -500,6 +500,19 @@
 	health = 250
 	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
 
+/mob/living/simple_animal/pet/dog/corgi/Lisa/ada
+	name = "Ada"
+	real_name = "Ada"
+	gender = FEMALE
+	desc = "She will bite your through till you die."
+	gold_core_spawnable = NO_SPAWN
+	unique_pet = TRUE
+	icon_state = "ada"
+	icon_living = "ada"
+	icon_dead = "ada_dead"
+	held_icon = "ada"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
+
 ///////////////
 
 /obj/item/toy/plush/mammal/fox/emma
@@ -520,3 +533,18 @@
 	name = "raita plushie"
 	icon_state = "raita"
 	item_state = "raita"
+
+/obj/item/toy/plush/mammal/fox/emma/aiko
+	name = "aiko plushie"
+	icon_state = "aiko"
+	item_state = "raita"
+
+/obj/item/toy/plush/nukeplushie/who
+	name = "security officer plushie"
+	desc = "A stuffed toy that resembles a Nanotrasen operative. He smells like burnt cotton."
+	icon_state = "who"
+	item_state = "who"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps.dmi'
+	lefthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_l.dmi'
+	righthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_r.dmi'
+	squeak_override = list('modular_bluemoon/kovac_shitcode/sound/vulps/plush_1.ogg' = 9, 'modular_bluemoon/kovac_shitcode/sound/vulps/plush_2.ogg' = 1)

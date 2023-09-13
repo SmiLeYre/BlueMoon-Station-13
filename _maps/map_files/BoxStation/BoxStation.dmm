@@ -8888,6 +8888,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
+/mob/living/simple_animal/pet/dog/corgi/Lisa/ada,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "aHe" = (

@@ -142,6 +142,20 @@ GLOBAL_LIST_INIT(double_bedsheets, list(/obj/item/bedsheet/double,
 	icon_state = "sheetyellow"
 	dream_messages = list("yellow")
 
+/obj/item/bedsheet/vulp
+	name = "vulp bedsheet"
+	icon_state = "sheetvulp1"
+	dream_messages = list("furries", "vulpcanine", "what the heck")
+
+/obj/item/bedsheet/vulp/vulp2
+	icon_state = "sheetvulp2"
+
+/obj/item/bedsheet/vulp/vulp3
+	icon_state = "sheetvulp3"
+
+/obj/item/bedsheet/vulp/vulp4
+	icon_state = "sheetvulp4"
+
 /obj/item/bedsheet/mime
 	name = "mime's blanket"
 	desc = "A very soothing striped blanket.  All the noise just seems to fade out when you're under the covers in this."
@@ -165,6 +179,7 @@ GLOBAL_LIST_INIT(double_bedsheets, list(/obj/item/bedsheet/double,
 	desc = "It appears to have a beaker emblem, and is made out of fire-resistant material, although it probably won't protect you in the event of fires you're familiar with every day."
 	icon_state = "sheetrd"
 	dream_messages = list("authority", "a silvery ID", "a bomb", "a mech", "a facehugger", "maniacal laughter", "the research director")
+
 
 // for Free Golems.
 /obj/item/bedsheet/rd/royal_cape

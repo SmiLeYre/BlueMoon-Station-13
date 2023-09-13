@@ -289,6 +289,20 @@
 	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife")
 	subcategory = LOADOUT_SUBCATEGORIES_DON17
 
+/datum/gear/donator/bm/aiko_plush
+	name = "Aiko Plush"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/toy/plush/mammal/fox/emma/aiko
+	ckeywhitelist = list("smileycom")
+	subcategory = LOADOUT_SUBCATEGORIES_DON12
+
+/datum/gear/donator/bm/who_plush
+	name = "Security Officer Plush"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/toy/plush/nukeplushie/who
+	ckeywhitelist = list("stgs")
+	subcategory = LOADOUT_SUBCATEGORIES_DON12
+
 /datum/gear/donator/bm/noonar
 	name = "Syndicate jacket"
 	slot = ITEM_SLOT_OCLOTHING

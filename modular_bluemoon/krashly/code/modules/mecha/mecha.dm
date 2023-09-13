@@ -50,7 +50,7 @@
 			/obj/item/mecha_parts/part/durand_left_leg,
 			/obj/item/mecha_parts/part/durand_right_leg)
 
-/obj/vehicle/sealed/mecha/combat/gygax/dark/hermes/loaded/Initialize(mapload)
+/obj/vehicle/sealed/mecha/combat/gygax/dark/loaded/hermes/Initialize(mapload)
 	. = ..()
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/thrusters/ion(src)
 	ME.attach(src)

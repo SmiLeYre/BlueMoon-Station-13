@@ -19,7 +19,7 @@
 	fakeable = FALSE
 
 /datum/round_event/crystalline_reentry/announce(fake)
-	priority_announce("A crystalline asteroid has suffered a violent atmospheric entry. Brace for possible impact.", "General Alert")
+	priority_announce("В станционном секторе зафиксирован кристаллический астероид. Приготовьтесь к возможному столкновению.", "Приоритетное оповещение")
 
 /datum/round_event/crystalline_reentry/start()
 	var/datum/round_event_control/crystalline_reentry/C = control
@@ -50,7 +50,7 @@
 	fakeable = FALSE
 
 /datum/round_event/crystalline_wave/announce(fake)
-	priority_announce("Several crystalline asteroids have been detected en route with the station. All hands, brace for impact. Organic signals have been detected contained within some of the asteroids.", title = "Priority Alert", sound = 'modular_bluemoon/kovac_shitcode/sound/lambda_code.ogg')
+	priority_announce("На пути станции обнаружено несколько кристаллических астероидов. Экипажу приготовиться к столкновению. В нескольких из астероидов зафиксированы органические сигналы.", title = "Priority Alert", sound = 'modular_bluemoon/kovac_shitcode/sound/lambda_code.ogg')
 
 /datum/round_event/crystalline_wave/tick()
 	if(ISMULTIPLE(activeFor, 3))
@@ -208,7 +208,7 @@
 			var/obj/structure/spawner/crystalline/M = new(src.loc)
 			visible_message("<span class='danger'>A [M] emerges from the asteroid's rubble!</span>")
 			if(prob(50) && tendrilnotify)
-				priority_announce("Unknown organic entities have been detected in the vincinity of [station_name()]. General caution is advised.", "General Alert")
+				priority_announce("В окрестностях [station_name()] обнаружены неопознанные органические образования. Соблюдайте осторожность.", "Приоритетное оповещение")
 		if(31 to 99)
 			visible_message("The asteroid collapses into nothing...")
 		if(100)

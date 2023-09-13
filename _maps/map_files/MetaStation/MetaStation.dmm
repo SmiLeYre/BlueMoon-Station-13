@@ -79488,6 +79488,7 @@
 /turf/open/floor/wood,
 /area/service/theater)
 "urp" = (
+/mob/living/simple_animal/pet/dog/corgi/Lisa/ada,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "urs" = (
