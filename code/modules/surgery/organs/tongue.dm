@@ -41,6 +41,7 @@
 		/datum/language/modular_sand/sergal, //Sandstorm change
 		/datum/language/modular_bluemoon/german, // BM German language
 		/datum/language/modular_bluemoon/vox, // BM Vox language
+		/datum/language/modular_bluemoon/felinid, // BM Felinid language
 	))
 	healing_factor = STANDARD_ORGAN_HEALING*5 //Fast!!
 	decay_factor = STANDARD_ORGAN_DECAY/2

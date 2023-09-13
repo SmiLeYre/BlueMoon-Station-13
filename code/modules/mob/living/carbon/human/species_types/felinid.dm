@@ -15,6 +15,7 @@
 	species_category = SPECIES_CATEGORY_FURRY
 	ass_image = 'icons/ass/asscat.png'
 	family_heirlooms = list(/obj/item/toy/cattoy)
+	species_language_holder = /datum/language_holder/felinid
 
 /datum/species/human/felinid/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 	if(ishuman(C))
