@@ -2,7 +2,6 @@
 	name = "Felinid"
 	desc = "The natural language of felinids. Full of soft meows, purrs and hisses. Structured and informative for felinids, but for others it's just a meaningless chaotic set of cat sounds. Nya~"
 	icon = 'modular_bluemoon/icons/misc/language.dmi'
-	icon_state = null
 	speech_verb = "meows"
 	ask_verb = "mrowls"
 	exclaim_verb = "yowls"
