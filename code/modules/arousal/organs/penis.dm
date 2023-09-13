@@ -91,6 +91,8 @@
 			lowershape = "тентяклевидный"
 		if("hemi")
 			lowershape = "двойной"
+		if("teshari")
+			lowershape = "тешарьский"
 		if("knotted hemi")
 			lowershape = "двойной узловатый"
 		if("barbed, knotted hemi")

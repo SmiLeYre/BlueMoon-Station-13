@@ -17,6 +17,10 @@
 /mob/living/carbon/human/species/mammal/shadekin
 	race = /datum/species/mammal/shadekin
 
+/mob/living/carbon/human/species/mammal/teshari
+	race = /datum/species/mammal/teshari
+
+
 /mob/living/carbon/human/is_literate()
 	// Check for D4C craving
 	if(HAS_TRAIT(src, TRAIT_DUMB_CUM_CRAVE))

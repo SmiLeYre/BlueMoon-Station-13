@@ -45,3 +45,21 @@
 2023-09-08:
   Vhariik:
   - rscadd: Navbeacons to all maps
+2023-09-11:
+  Comicao1:
+  - rscadd: Adds new code for species. (So they have unique clothing types.)
+  - bugfix: Fixed errors related to damage bodysprites
+  - rscadd: Added teshari species.
+  - rscadd: Teshari hair.
+  - rscadd: Teshari penises.
+  - rscadd: Teshari eye types.
+  - rscadd: Teshari clothing (uniform, suits, cloaks, shoes, hats...)
+  - rscadd: Teshari language.
+  - rscadd: Xenochimera species.
+  - rscadd: Xenochimera abilities.
+  - rscadd: Vox species
+  - rscadd: Vox emotes
+  - rscadd: Vox clothing (uniform, suits, shoes, hats...)
+  - rscadd: Vox eye types.
+  - rscadd: Vox lungs.
+  - rscadd: Vox language.

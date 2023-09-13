@@ -86,7 +86,7 @@
 
 	limbs_id = SPECIES_VOX
 	icon_limbs = 'modular_splurt/icons/mob/human_parts_greyscale.dmi'
-	damage_overlay_type = "xeno"
+	damage_overlay_type = "vox"
 
 	attack_verb = "claw"
 	attack_sound = 'sound/weapons/slash.ogg'
@@ -107,15 +107,19 @@
 	disliked_food = null
 	liked_food = GROSS | MEAT
 
+	icon_eyes = 'modular_splurt/icons/mob/clothing/species/vox/eyes.dmi'
+	icon_head = 'icons/mob/clothing/head_vox.dmi'
+	icon_mask = 'icons/mob/clothing/mask_vox.dmi'
+
 //Вокс получает пиздюлей сильнее
 	burnmod = 1.3
 	heatmod = 1.3
 	brutemod = 1.3
 //Но и лапками дерёт морды в кровь
 	punchdamagelow = 5
-	punchdamagehigh = 15
-	punchstunthreshold = 5
-	punchwoundbonus = 5
+	punchdamagehigh = 10
+	punchstunthreshold = 4
+	punchwoundbonus = 3
 
 	attack_verb = "claw"
 	attack_sound = 'sound/weapons/slash.ogg'
