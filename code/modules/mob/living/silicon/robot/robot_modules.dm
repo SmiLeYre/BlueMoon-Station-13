@@ -1759,7 +1759,7 @@
 /obj/item/robot_module/syndicate_medical/inteq
 	name = "InteQ Medical"
 	added_channels = list(RADIO_CHANNEL_INTEQ = 1)
-	cyborg_base_icon = "inteq_med"
+	cyborg_base_icon = "inteq_medical"
 
 /obj/item/robot_module/saboteur/inteq
 	name = "InteQ Saboteur"
