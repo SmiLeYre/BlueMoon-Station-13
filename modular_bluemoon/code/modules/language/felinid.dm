@@ -9,7 +9,7 @@
 	flags = TONGUELESS_SPEECH
 	space_chance = 100
 	syllables = list("meow","mewoo","mewl","prrt","mew","mrow","meewr","hsss","meowr","growl","mrowl","rawr", \
-					 "mrawr~","nya~","nyaw~","nyawr~","yaaaw~","mrrr~","rrr~","awwr~","purr~","mrrya~","rawr~")
+					 "mrawr~","nya~","nya~","nya~","nyaw~","nyawr~","yaaaw~","mrrr~","rrr~","awwr~","purr~","mrrya~","rawr~")
 	icon_state = "felinid"
 	default_priority = 90
 	restricted = FALSE
