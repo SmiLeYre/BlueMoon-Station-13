@@ -289,13 +289,6 @@
 	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife")
 	subcategory = LOADOUT_SUBCATEGORIES_DON17
 
-/datum/gear/donator/bm/aiko_plush
-	name = "Aiko Plush"
-	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/toy/plush/mammal/fox/emma/aiko
-	ckeywhitelist = list("smileycom")
-	subcategory = LOADOUT_SUBCATEGORIES_DON12
-
 /datum/gear/donator/bm/who_plush
 	name = "Security Officer Plush"
 	slot = ITEM_SLOT_BACKPACK
@@ -329,4 +322,25 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/pomogator_kit
 	ckeywhitelist = list("danik10p")
+	subcategory = LOADOUT_SUBCATEGORIES_DON12
+
+/datum/gear/donator/bm/battle_coat
+	name = "Battle Coat"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/donator/bm/battle_coat
+	ckeywhitelist = list("ghoststalin", "g3234")
+	subcategory = LOADOUT_SUBCATEGORIES_DON12
+
+/datum/gear/donator/bm/sports_jacket
+	name = "Sports Jacket"
+	slot = ITEM_SLOT_OCLOTHING
+	path = /obj/item/clothing/suit/donator/bm/sports_jacket
+	ckeywhitelist = list("ghoststalin", "g3234")
+	subcategory = LOADOUT_SUBCATEGORIES_DON12
+
+/datum/gear/donator/bm/harness
+	name = "Harness Armor Modification Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/harness_kit
+	ckeywhitelist = list("ghoststalin", "g3234")
 	subcategory = LOADOUT_SUBCATEGORIES_DON12

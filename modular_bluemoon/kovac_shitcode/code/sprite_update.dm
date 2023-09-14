@@ -39,6 +39,8 @@
 	icon_state = "russian_green_helmet"
 	item_state = "russian_green_helmet"
 	desc = "One of the newest NRI helmets, also widely spread asross space corporations security forces."
+	icon = 'modular_bluemoon/kovac_shitcode/icons/rus/obj_rus.dmi'
+	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/rus/mob_rus.dmi'
 
 /obj/item/clothing/head/helmet/aviator_helmet
 	name = "aviator helmet"
@@ -504,7 +506,7 @@
 	name = "Ada"
 	real_name = "Ada"
 	gender = FEMALE
-	desc = "She will bite your through till you die."
+	desc = "She will bite your throat till you die."
 	gold_core_spawnable = NO_SPAWN
 	unique_pet = TRUE
 	icon_state = "ada"
@@ -537,7 +539,7 @@
 /obj/item/toy/plush/mammal/fox/emma/aiko
 	name = "aiko plushie"
 	icon_state = "aiko"
-	item_state = "raita"
+	item_state = "aiko"
 
 /obj/item/toy/plush/nukeplushie/who
 	name = "security officer plushie"
@@ -548,3 +550,21 @@
 	lefthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_l.dmi'
 	righthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_r.dmi'
 	squeak_override = list('modular_bluemoon/kovac_shitcode/sound/vulps/plush_1.ogg' = 9, 'modular_bluemoon/kovac_shitcode/sound/vulps/plush_2.ogg' = 1)
+
+/obj/item/toy/plush/deer/qm
+	name = "supply chief plushie"
+	desc = "A stuffed toy that resembles a Cargonia Chief. Looks like a fallen economy."
+	icon_state = "qm"
+	item_state = "qm"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps.dmi'
+	lefthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_l.dmi'
+	righthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_r.dmi'
+
+/obj/item/toy/plush/sergal/judas
+	name = "yellow shark plushie"
+	desc = "An adorable stuffed plushie that resembles a yellow security shark."
+	icon_state = "judas"
+	item_state = "judas"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps.dmi'
+	lefthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_l.dmi'
+	righthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_r.dmi'

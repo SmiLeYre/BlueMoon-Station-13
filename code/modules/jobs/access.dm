@@ -386,11 +386,11 @@
 		return "scrambled"
 	if (istype(src, /obj/item/card/id/syndicate))
 		return "scrambled"
-	if (istype(src, /obj/item/card/id/nri_ert))
+	if (istype(src, /obj/item/card/id/nri))
 		return "nri"
 	if (istype(src, /obj/item/card/id/nri_citizen))
 		return "nri"
-	if (istype(src, /obj/item/card/id/sol_ert))
+	if (istype(src, /obj/item/card/id/sol))
 		return "sol"
 	if (istype(src, /obj/item/card/id/sol_citizen))
 		return "sol"

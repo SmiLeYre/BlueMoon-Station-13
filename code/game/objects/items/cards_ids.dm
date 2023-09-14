@@ -639,30 +639,6 @@
 	registered_account = SSeconomy.get_dep_account(ACCOUNT_CAR)
 	. = ..()
 
-/obj/item/card/id/nri_ert
-	name = "\improper NRI ID"
-	desc = "An NRI ID card."
-	icon_state = "ert_commander"
-	registered_name = "Emergency Response Team Commander"
-	assignment = "Emergency Response Team Commander"
-
-/obj/item/card/id/nri_ert/Initialize(mapload)
-	access = get_all_accesses()+get_ert_access("commander")-ACCESS_CHANGE_IDS
-	registered_account = SSeconomy.get_dep_account(ACCOUNT_CAR)
-	. = ..()
-
-/obj/item/card/id/sol_ert
-	name = "\improper SOL ID"
-	desc = "An SOL ID card."
-	icon_state = "ert_commander"
-	registered_name = "Emergency Response Team Commander"
-	assignment = "Emergency Response Team Commander"
-
-/obj/item/card/id/sol_ert/Initialize(mapload)
-	access = get_all_accesses()+get_ert_access("commander")-ACCESS_CHANGE_IDS
-	registered_account = SSeconomy.get_dep_account(ACCOUNT_CAR)
-	. = ..()
-
 /obj/item/card/id/ert/Security
 	icon_state = "ert_security"
 	registered_name = "Security Response Officer"

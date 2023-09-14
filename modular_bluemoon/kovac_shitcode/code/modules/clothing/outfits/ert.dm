@@ -140,7 +140,7 @@
 	mask = /obj/item/clothing/mask/balaclava/breath/inteq
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/hecu/black
-	belt = /obj/item/storage/belt/military
+	belt = /obj/item/storage/belt/military/russianweb
 	ears = /obj/item/radio/headset/nri/bowman
 	r_hand = /obj/item/gun/ballistic/automatic/ak12
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\

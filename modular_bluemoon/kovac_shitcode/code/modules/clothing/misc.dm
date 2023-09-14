@@ -210,14 +210,14 @@
 	name = "SolFed Citizen ID"
 	desc = "An ID made to recognize Solar Federation habbitants and tourists."
 	icon_state = "sol"
-	assignment = "SolFed Citizen"
+	assignment = "Sol"
 	uses_overlays = FALSE
 
 /obj/item/card/id/nri_citizen
 	name = "NRI Citizen ID"
 	desc = "An ID made to recognize Novaya Rossiyskya Imperia habbitants and tourists."
 	icon_state = "nri"
-	assignment = "NRI Citizen"
+	assignment = "NRI"
 	uses_overlays = FALSE
 
 /obj/item/card/id/blumland_citizen
