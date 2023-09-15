@@ -333,7 +333,7 @@ GLOBAL_LIST_INIT(blacklisted_malf_machines, typecacheof(list(
 		to_chat(owner, "<span class='boldnotice'>Error: Signal transmission failed. Reason: Lost connection to network.</span>")
 		to_chat(owner, "<span class='warning'>You can't activate the doomsday device while inside an intelliCard!</span>")
 		return
-	priority_announce("Hostile runtimes detected in all station systems, please deactivate your AI to prevent possible damage to its morality core.", "ВНИМАНИЕ: АНОМАЛИЯ", "aimalf")
+	priority_announce("Во всех станционных системах зафиксировано вредоносное ПО. Пожалуйста, отключите ИИ чтобы предотвратить возможные неисправности его ядра морали.", "ВНИМАНИЕ: АНОМАЛИЯ", "aimalf")
 	set_security_level("delta")
 	var/obj/machinery/doomsday_device/DOOM = new(owner_AI)
 	owner_AI.nuking = TRUE

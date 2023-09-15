@@ -635,9 +635,9 @@
 /obj/machinery/computer/communications/proc/make_announcement(mob/living/user)
 	var/is_ai = issilicon(user)
 	if(!SScommunications.can_announce(user, is_ai))
-		to_chat(user, span_alert("Intercomms recharging. Please stand by."))
+		to_chat(user, span_alert("Интеркомы перезаряжаются. Пожалуйста, подождите."))
 		return
-	var/input = input(user, "Выберите сообщение для объявления экипажу станции.", "Priority Announcement") as message|null
+	var/input = input(user, "Напишите сообщение для объявления экипажу станции.", "Приоритетное оповещение") as message|null
 	if(!input || !user.canUseTopic(src, !issilicon(usr)))
 		return
 	if(!(user.can_speak())) //No more cheating, mime/random mute guy!

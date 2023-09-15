@@ -195,7 +195,7 @@
 				data["occupant"]["stat"] = "Conscious"
 				data["occupant"]["statstate"] = "average"
 			if(UNCONSCIOUS)
-				data["occupant"]["stat"] = "Unconscious"
+				data["occupant"]["stat"] = "Unconscious" // 15.09.2023. Отметка. Перевести
 				data["occupant"]["statstate"] = "average"
 			if(DEAD)
 				data["occupant"]["stat"] = "Dead"

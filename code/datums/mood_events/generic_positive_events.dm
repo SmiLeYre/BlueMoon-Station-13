@@ -1,154 +1,175 @@
+
 /datum/mood_event/hug
-	description = "<span class='nicegreen'>Hugs are nice.</span>\n"
+	description = "<span class='nicegreen'>Обожаю обнимашки!</span>\n"
 	mood_change = 1
 	timeout = 2 MINUTES
 
 /datum/mood_event/arcade
-	description = "<span class='nicegreen'>I beat the arcade game!</span>\n"
+	description = "<span class='nicegreen'>Эта аркадная игра мне не ровень!</span>\n"
 	mood_change = 3
 	timeout = 3000
 
 /datum/mood_event/blessing
-	description = "<span class='nicegreen'>I've been blessed.</span>\n"
 	mood_change = 3
 	timeout = 3000
 
+/datum/mood_event/blessing/add_effects(param)
+	. = ..()
+	var/mob/living/carbon/human/owner_mob = owner_mob()
+	description = "<span class='nicegreen'>Я благословлен[owner_mob.ru_a()].</span>\n"
+
 /datum/mood_event/book_nerd
-	description = "<span class='nicegreen'>I have recently read a book.</span>\n"
+	description = "<span class='nicegreen'>Это была отличная книга.</span>\n"
 	mood_change = 3
 	timeout = 3000
 
 /datum/mood_event/exercise
-	description = "<span class='nicegreen'>Working out releases those endorphins!</span>\n"
+	description = "<span class='nicegreen'>Тренировка позволила мне выработать эндорфин!</span>\n"
 	mood_change = 3
 	timeout = 3000
 
 /datum/mood_event/pet_animal
-	description = "<span class='nicegreen'>Animals are adorable! I can't stop petting them!</span>\n"
+	description = "<span class='nicegreen'>Животные такие милые! Не могу перестать их гладить!</span>\n"
 	mood_change = 5
 	timeout = 5 MINUTES
 
 /datum/mood_event/pet_animal/add_effects(mob/animal)
-	description = "<span class='nicegreen'>\The [animal.name] is adorable! I can't stop petting [animal.ru_na()]!</span>\n"
+	description = "<span class='nicegreen'>[animal.name] - так[animal.ru_aya_oy()] мил[animal.ru_aya()]! Не могу перестать [animal.ru_ego()] гладить!</span>\n"
 
 /datum/mood_event/honk
-	description = "<span class='nicegreen'>Maybe clowns aren't so bad after all. Honk!</span>\n"
+	description = "<span class='nicegreen'>Может, клоуны и не такие уж и плохие? Хонк!</span>\n"
 	mood_change = 2
 	timeout = 2400
 
 /datum/mood_event/bshonk
-	description = "<span class='nicegreen'>Quantum mechanics can be fun and silly, too! Honk!</span>\n"
+	description = "<span class='nicegreen'>Квантовая механика может быть как весёлой, так и глупой! Хонк!</span>\n"
 	mood_change = 6
 	timeout = 4800
 
 /datum/mood_event/perform_cpr
-	description = "<span class='nicegreen'>It feels good to save a life.</span>\n"
+	description = "<span class='nicegreen'>Спасать чужие жизни - прекрасно.</span>\n"
 	mood_change = 6
 	timeout = 3000
 
 /datum/mood_event/oblivious
-	description = "<span class='nicegreen'>What a lovely day.</span>\n"
+	description = "<span class='nicegreen'>Какой чудесный день.</span>\n"
 	mood_change = 3
 
 /datum/mood_event/jolly
-	description = "<span class='nicegreen'>I feel happy for no particular reason.</span>\n"
+	description = "<span class='nicegreen'>Радуюсь безо всякой причины!</span>\n"
 	mood_change = 6
 	timeout = 2 MINUTES
 
 /datum/mood_event/focused
-	description = "<span class='nicegreen'>I have a goal, and I will reach it, whatever it takes!</span>\n" //Used for syndies, nukeops etc so they can focus on their goals
+	description = "<span class='nicegreen'>У меня есть цель, и я достигну её во что бы то ни стало!</span>\n" //Used for syndies, nukeops etc so they can focus on their goals
 	mood_change = 12
 	hidden = TRUE
 
 /datum/mood_event/revolution
-	description = "<span class='nicegreen'>VIVA LA REVOLUTION!</span>\n"
+	description = "<span class='nicegreen'>НАШЕ ДЕЛО ПРАВОЕ! ПОБЕДА БУДЕТ ЗА РЕВОЛЮЦИЕЙ!</span>\n"
 	mood_change = 3
 	hidden = TRUE
 
 /datum/mood_event/cult
-	description = "<span class='nicegreen'>I have seen the truth, praise the almighty one!</span>\n"
 	mood_change = 40 //maybe being a cultist isnt that bad after all
 	hidden = TRUE
 
+/datum/mood_event/cult/add_effects(param)
+	. = ..()
+	var/mob/living/carbon/human/owner_mob = owner_mob()
+	description = "<span class='nicegreen'>Я узрел[owner_mob.ru_a()] правду. Восславьтесь же, высшие силы!</span>\n"
+
 /datum/mood_event/heretics
-	description = "<span class='nicegreen'>THE HIGHER I RISE, THE MORE I SEE.</span>\n"
+	description = "<span class='nicegreen'>ЧЕМ СИЛЬНЕЕ Я ВОЗВЫШАЮСЬ, ТЕМ ЛУЧШЕ ВИЖУ.</span>\n"
 	mood_change = 12 //maybe being a cultist isnt that bad after all
 	hidden = TRUE
 
 /datum/mood_event/family_heirloom
-	description = "<span class='nicegreen'>My family heirloom is safe with me.</span>\n"
+	description = "<span class='nicegreen'>Моя семейная реликвия в безопасности, рядом со мной.</span>\n"
 	mood_change = 1
 
 /datum/mood_event/goodmusic
-	description = "<span class='nicegreen'>There is something soothing about this music.</span>\n"
+	description = "<span class='nicegreen'>В этой музыке что-то есть.</span>\n"
 	mood_change = 3
 	timeout = 600
 
 /datum/mood_event/chemical_euphoria
-	description = "<span class='nicegreen'>Heh...hehehe...hehe...</span>\n"
+	description = "<span class='nicegreen'>Хи...хи-хи-хи...хи-хи-ха-ха...</span>\n"
 	mood_change = 4
 
 /datum/mood_event/chemical_laughter
-	description = "<span class='nicegreen'>Laughter really is the best medicine! Or is it?</span>\n"
+	description = "<span class='nicegreen'>Смех - лучшее лекарство! Или нет?</span>\n"
 	mood_change = 4
 	timeout = 3 MINUTES
 
 /datum/mood_event/chemical_superlaughter
-	description = "<span class='nicegreen'>*WHEEZE*</span>\n"
+	description = "<span class='nicegreen'>*ЗАДЫХАЮСЬ ОТ СМЕХА*</span>\n"
 	mood_change = 12
 	timeout = 3 MINUTES
 
 /datum/mood_event/betterhug
-	description = "<span class='nicegreen'>Someone was very nice to me.</span>\n"
+	description = "<span class='nicegreen'>Кто-то оказался очень добр ко мне.</span>\n"
 	mood_change = 3
 	timeout = 3000
 
 /datum/mood_event/betterhug/add_effects(mob/friend)
-	description = "<span class='nicegreen'>[friend.name] was very nice to me.</span>\n"
+	description = "<span class='nicegreen'>[friend.name] был[friend.ru_a()] очень добр[friend.ru_a()] ко мне.</span>\n"
 
 /datum/mood_event/besthug
-	description = "<span class='nicegreen'>Someone is great to be around, they make me feel so happy!</span>\n"
+	description = "<span class='nicegreen'>Кто-то очень крутой рядом, он заставляет меня переполняться счастьем!</span>\n"
 	mood_change = 5
 	timeout = 3000
 
 /datum/mood_event/besthug/add_effects(mob/friend)
-	description = "<span class='nicegreen'>[friend.name] is great to be around, [friend.ru_who()] makes me feel so happy!</span>\n"
+	description = "<span class='nicegreen'>Так классно, что [friend.name] находится рядом. Не могу нарадоваться!</span>\n"
 
 /datum/mood_event/happy_empath
-	description = "<span class='warning'>Someone seems happy!</span>\n"
+	description = "<span class='warning'>Кто-то неподалеку пребывает в хорошем настроении!</span>\n"
 	mood_change = 3
 	timeout = 600
 
 /datum/mood_event/happy_empath/add_effects(var/mob/happytarget)
-	description = "<span class='nicegreen'>[happytarget.name]'s happiness is infectious!</span>\n"
+	description = "<span class='nicegreen'>Позитив [happytarget.name] распространяется на окружающих словно зараза!</span>\n"
 
 /datum/mood_event/headpat
-	description = "<span class='nicegreen'>Headpats are nice.</span>\n"
+	description = "<span class='nicegreen'>Поглаживания по голове прекрасны.</span>\n"
 	mood_change = 2
 	timeout = 2 MINUTES
 
 /datum/mood_event/hugbox
-	description = "<span class='nicegreen'>I hugged a box of hugs recently.</span>\n"
 	mood_change = 1
 	timeout = 2 MINUTES
 
+/datum/mood_event/hugbox/add_effects(param)
+	. = ..()
+	var/mob/living/carbon/human/owner_mob = owner_mob()
+	description = "<span class='nicegreen'>Недавно я обнял[owner_mob.ru_a()] коробку обнимашек.</span>\n"
+
 /datum/mood_event/plushpet
-	description = "<span class='nicegreen'>I pet a plush recently.</span>\n"
 	mood_change = 1
 	timeout = 3000
 
+/datum/mood_event/plushpet/add_effects(param)
+	. = ..()
+	var/mob/living/carbon/human/owner_mob = owner_mob()
+	description = "<span class='nicegreen'>Недавно я погладил[owner_mob.ru_a()] мягкую игрушку.</span>\n"
+
 /datum/mood_event/plushplay
-	description = "<span class='nicegreen'>I've played with plushes recently.</span>\n"
 	mood_change = 3
 	timeout = 3000
 
+/datum/mood_event/plushplay/add_effects(param)
+	. = ..()
+	var/mob/living/carbon/human/owner_mob = owner_mob()
+	description = "<span class='nicegreen'>Недавно я поиграл[owner_mob.ru_a()] с мягкой игрушкой.</span>\n"
+
 /datum/mood_event/breakfast
-	description = "<span class='nicegreen'>Nothing like a hearty breakfast to start the shift.</span>\n"
+	description = "<span class='nicegreen'>Нет ничего лучше вкусного завтрака в начале рабочей смены.</span>\n"
 	mood_change = 2
 	timeout = 15 MINUTES
 
 /datum/mood_event/nanite_happiness
-	description = "<span class='nicegreen robot'>+++++++HAPPINESS ENHANCEMENT+++++++</span>\n"
+	description = "<span class='nicegreen robot'>+++++++УЛУЧШЕНИЕ СЧАСТЬЯ+++++++</span>\n"
 	mood_change = 7
 
 /datum/mood_event/nanite_happiness/add_effects(message)
@@ -159,69 +180,85 @@
 	mood_change = 0
 //Power gamer stuff below
 /datum/mood_event/drankblood
-	description = "<span class='nicegreen'>I have fed greedly from that which nourishes me.</span>\n"
 	mood_change = 10
 	timeout = 900
 
+/datum/mood_event/drankblood/add_effects(param)
+	. = ..()
+	var/mob/living/carbon/human/owner_mob = owner_mob()
+	description = "<span class='nicegreen'>Недавно я отведал[owner_mob.ru_a()] сладостной крови.</span>\n"
+
 /datum/mood_event/coffinsleep
-	description = "<span class='nicegreen'>I slept in a coffin during the day. I feel whole again.</span>\n"
 	mood_change = 8
 	timeout = 1200
+
+/datum/mood_event/coffinsleep/add_effects(param)
+	. = ..()
+	var/mob/living/carbon/human/owner_mob = owner_mob()
+	description = "<span class='nicegreen'>Недавно я поспал[owner_mob.ru_a()] в гробу. Чувствую, будто заново родил[owner_mob.ru_sya()].</span>\n"
 
 //Cursed stuff below.
 
 /datum/mood_event/orgasm
-	description = "<span class='userlove'>I came!</span>\n" //funny meme haha
 	mood_change = 3
 	timeout = 100 SECONDS
 
+/datum/mood_event/orgasm/add_effects(param)
+	. = ..()
+	var/mob/living/carbon/human/owner_mob = owner_mob()
+	description = "<span class='userlove'>Я кончил[owner_mob.ru_a()]!</span>\n" //funny meme haha
+
 /datum/mood_event/fedpred
-	description = "<span class='nicegreen'>I've devoured someone!</span>\n"
 	mood_change = 3
 
+/datum/mood_event/fedpred/add_effects(param)
+	. = ..()
+	var/mob/living/carbon/human/owner_mob = owner_mob()
+	description = "<span class='nicegreen'>Я кого-то сожрал[owner_mob.ru_a()]!</span>\n"
+
 /datum/mood_event/fedprey
-	description = "<span class='nicegreen'>It feels quite cozy in here.</span>\n"
+	description = "<span class='nicegreen'>А здесь довольно уютно.</span>\n"
 	mood_change = 3
 
 /datum/mood_event/hope_lavaland
-	description = "<span class='nicegreen'>What a peculiar emblem.  It makes me feel hopeful for my future.</span>\n"
+	description = "<span class='nicegreen'>Какая своеобразная эмблема. Даёт мне надежду на будущее.</span>\n"
 	mood_change = 5
 
 /datum/mood_event/artok
-	description = "<span class='nicegreen'>It's nice to see people are making art around here.</span>\n"
+	description = "<span class='nicegreen'>Прекрасно видеть, как окружающие творят на холсте.</span>\n"
 	mood_change = 2
 	timeout = 2 MINUTES
 
 /datum/mood_event/artgood
-	description = "<span class='nicegreen'>What a thought-provoking piece of art. I'll remember that for a while.</span>\n"
+	description = "<span class='nicegreen'>Какой воодушевляющий рисунок. Я его на какое-то время запомню.</span>\n"
 	mood_change = 3
 	timeout = 3 MINUTES
 
 /datum/mood_event/artgreat
-	description = "<span class='nicegreen'>That work of art was so great it made me believe in the goodness of humanity. Says a lot in a place like this.</span>\n"
+	description = "<span class='nicegreen'>Этот рисунок был так прекрасен, что заставил меня поверить в величие человечества. Это многое говорит о нашем обществе.</span>\n"
 	mood_change = 4
 	timeout = 4 MINUTES
 
 /datum/mood_event/cleared_stomach
-	description = "<span class='nicegreen'>Feels nice to get that out of the way!</span>\n"
+	description = "<span class='nicegreen'>Хорошо, что та дрянь теперь не в моем желудке.</span>\n"
 	mood_change = 3
 
 /datum/mood_event/high_five
-	description = "<span class='nicegreen'>I love getting high fives!</span>\n"
+	description = "<span class='nicegreen'>Я люблю давать пять!</span>\n"
 	mood_change = 2
 	timeout = 45 SECONDS
 
 /datum/mood_event/high_ten
-	description = "<span class='nicegreen'>AMAZING! A HIGH-TEN!</span>\n"
+	description = "<span class='nicegreen'>КРУТО! ЛАДУШКИ!</span>\n"
 	mood_change = 3
 	timeout = 45 SECONDS
 
 /datum/mood_event/down_low
-	description = "<span class='nicegreen'>HA! What a rube, they never stood a chance...</span>\n"
+	description = "<span class='nicegreen'>ХА! Какая чушь, у них и шанса то не было</span>\n"
 	mood_change = 4
 	timeout = 1.5 MINUTES
 
 /datum/mood_event/sacrifice_good
-	description = "<span class='nicegreen'>The gods are pleased with this offering!</span>\n"
+	description = "<span class='nicegreen'>Боги довольны моим подношением!</span>\n"
 	mood_change = 5
 	timeout = 3 MINUTES
