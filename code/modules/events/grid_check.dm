@@ -11,7 +11,7 @@
 	start_when = 1
 
 /datum/round_event/grid_check/announce(fake)
-	priority_announce("Обнаружена аномальная активность в энергосети [station_name()]. В качестве меры предосторожности электропитание станции будет отключено на неопределенный срок.", "Критическая Ошибка Питания", ANNOUNCER_POWEROFF)
+	priority_announce("Обнаружена аномальная активность в энергосети [station_name()]. В качестве меры предосторожности электропитание станции будет отключено на неопределенный срок.", "Критический Сбой Питания", ANNOUNCER_POWEROFF)
 
 
 /datum/round_event/grid_check/start()

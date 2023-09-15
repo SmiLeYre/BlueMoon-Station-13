@@ -133,7 +133,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	icon_state = "sec_armor_kit"
 	var/product = /obj/item/clothing/suit/armor/vest/harness //what it makes
-	var/list/fromitem = list(/obj/item/clothing/suit/armor/vest) //what it needs
+	var/list/fromitem = list(/obj/item/clothing/suit/armor/vest/peacekeeper, /obj/item/clothing/suit/armor/vest/alt) //what it needs
 
 /obj/item/harness_kit/afterattack(obj/O, mob/user as mob)
 	if(istype(O, product))

@@ -175,6 +175,7 @@
 	brightness_on = 2
 	light_color = "#FFDDCC"
 	flashlight_power = 0.5
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_EARS
 	var/holo_cooldown = 0
 
 /obj/item/flashlight/pen/afterattack(atom/target, mob/user, proximity_flag)
@@ -194,6 +195,7 @@
 	name = "paramedic penlight"
 	desc = "A high-powered UV penlight intended to help stave off infection in the field on serious burned patients. Probably really bad to look into."
 	icon_state = "penlight_surgical"
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_EARS
 	/// Our current UV cooldown
 	var/uv_cooldown = 0
 	/// How long between UV fryings
