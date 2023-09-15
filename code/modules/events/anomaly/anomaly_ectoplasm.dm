@@ -37,7 +37,7 @@
 		announce_to_ghosts(newAnomaly)
 
 /datum/round_event/anomaly/anomaly_ectoplasm/announce(fake)
-	priority_announce("Паранормальная эктоплазменная вспышка зафиксирована на [ANOMALY_ANNOUNCE_HARMFUL_TEXT] [impact_area.name].", "ВНИМАНИЕ: АНОМАЛИЯ")
+	priority_announce("Паранормальная эктоплазменная вспышка зафиксирована на [ANOMALY_ANNOUNCE_HARMFUL_TEXT] [impact_area.name].", "ВНИМАНИЕ: АНОМАЛИЯ", 'sound/announcer/classic/anomaly/anomaly_ectoplasm.ogg')
 
 /datum/event_admin_setup/anomaly_ectoplasm
 	///The admin-selected intensity

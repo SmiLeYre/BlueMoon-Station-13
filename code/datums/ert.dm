@@ -61,7 +61,7 @@
 	code = "Epsilon"
 	mission = "Защитите Активы Пакта. Сотрудники Пакта тоже являются Активами Пакта."
 	polldesc = "a Nanotrasen asset protection team"
-	ertphrase = "modular_bluemoon/kovac_shitcode/sound/ert/ert_heavysquad_send.ogg"
+	ertphrase = "modular_bluemoon/kovac_shitcode/sound/ert/asset_protection_send.ogg"
 
 /datum/ert/syndiesquad
 	roles = list(/datum/antagonist/ert/syndiesquad)

@@ -12,4 +12,4 @@
 	anomaly_path = /obj/effect/anomaly/bluespace
 
 /datum/round_event/anomaly/anomaly_bluespace/announce(fake)
-	priority_announce("Нестабильная блюспейс аномалия обнаружена на [ANOMALY_ANNOUNCE_MEDIUM_TEXT] [impact_area.name].", "ВНИМАНИЕ: АНОМАЛИЯ")
+	priority_announce("Нестабильная блюспейс аномалия обнаружена на [ANOMALY_ANNOUNCE_MEDIUM_TEXT] [impact_area.name].", "ВНИМАНИЕ: АНОМАЛИЯ", 'sound/announcer/classic/anomaly/anomaly_bluespace.ogg')
