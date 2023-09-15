@@ -17,7 +17,7 @@
 		timeout = 5 MINUTES
 
 /datum/mood_event/nudist_negative
-	description = span_warning("Мне не очень нравится носить это.\n")
+	description = span_warning("Мне не очень комфортно носить это.\n")
 	mood_change = -4
 
 /datum/mood_event/dorsualiphobic_mood_negative
