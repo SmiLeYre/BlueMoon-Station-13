@@ -179,7 +179,7 @@ const PageBuyingShuttle = (props, context) => {
               })}
               tooltip={
                 data.budget < shuttle.creditCost
-                  ? `Вам требуется ещё ${shuttle.creditCost - data.budget} кредитов`
+                  ? `Требуется ещё ${shuttle.creditCost - data.budget} кредитов`
                   : undefined
               }
               tooltipPosition="left"
