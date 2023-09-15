@@ -9,7 +9,7 @@
 	item_state = "centcom_t_skirt"
 
 /obj/item/clothing/under/syndicate/brigdoc
-	name = "brig physician turtleneck"
+	name = "red turtleneck"
 	icon_state = "security_medic_turtleneck"
 	item_state = "security_medic_turtleneck"
 	has_sensor = 3
@@ -18,6 +18,14 @@
 	name = "red skirtleneck"
 	icon_state = "security_medic_turtleneck_skirt"
 	item_state = "security_medic_turtleneck_skirt"
+
+/obj/item/clothing/under/rank/security/officer/tacticool
+	name = "tacticool security jumpsuit"
+	icon_state = "tacticool_sec"
+	item_state = "tacticool_sec"
+	unique_reskin = list(
+		"Red" = list("icon_state" = "tacticool_sec")
+	)
 
 /obj/item/clothing/suit/armor/vest/agent
 	name = "agent armored vest"

@@ -6612,7 +6612,6 @@
 /area/command/meeting_room/council)
 "cpU" = (
 /obj/structure/closet/secure_closet/personal,
-/obj/item/clothing/under/suit/turtle/red,
 /turf/open/floor/carpet,
 /area/commons/dorms)
 "cpW" = (

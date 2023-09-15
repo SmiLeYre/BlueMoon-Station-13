@@ -259,10 +259,6 @@
 	name = "Blue Turtleneck"
 	path = /obj/item/clothing/under/suit/turtle/blue
 
-/datum/gear/uniform/redturtle
-	name = "Red Turtleneck"
-	path = /obj/item/clothing/under/suit/turtle/red
-
 /datum/gear/uniform/polyjump
 	name = "Polychromic Jumpsuit"
 	path = /obj/item/clothing/under/misc/polyjumpsuit

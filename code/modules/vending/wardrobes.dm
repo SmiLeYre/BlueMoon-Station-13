@@ -33,6 +33,7 @@
 					/obj/item/clothing/mask/gas/nri = 2,
 					/obj/item/clothing/under/rank/security/officer/skirt = 5,
 					/obj/item/clothing/under/rank/security/officer/grey = 5,
+					/obj/item/clothing/under/rank/security/officer/tacticool = 3,
 					/obj/item/clothing/under/rank/security/officer/urban_camo = 3,
 					/obj/item/clothing/under/rank/security/officer/solfed_military = 4,
 					/obj/item/clothing/under/rank/security/officer/nri_military = 4,
