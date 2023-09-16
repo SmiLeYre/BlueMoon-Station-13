@@ -46,7 +46,7 @@ export const KeycardAuth = (props, context) => {
                       icon="meteor"
                       fluid
                       onClick={() => act('bsa_unlock')}
-                      content="Протоколы Блюспейс артиллерии" />
+                      content="Протоколы Блюспейс-Артиллерии" />
                   </>
                 )}
               </>
