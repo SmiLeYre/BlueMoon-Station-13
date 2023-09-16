@@ -337,9 +337,9 @@
 		else if(threatlevel >= 4)
 			target = C
 			oldtarget_name = C.name
-			speak("Level [threatlevel] infraction alert!")
+			speak("Нарушение уровня [threatlevel]!")
 			playsound(src, pick('sound/voice/ed209_20sec.ogg', 'sound/voice/edplaceholder.ogg'), 50, FALSE)
-			visible_message("<b>[src]</b> points at [C.name]!")
+			visible_message("<b>[src]</b> показывает на [C.name]!")
 			mode = BOT_HUNT
 			spawn(0)
 				handle_automated_action()	// ensure bot quickly responds to a perp

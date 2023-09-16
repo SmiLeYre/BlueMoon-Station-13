@@ -109,7 +109,7 @@
 	// voice muffling
 	if(stat == UNCONSCIOUS)
 		if(type & MSG_AUDIBLE) //audio
-			to_chat(src, "<I>... You can almost hear something ...</I>")
+			to_chat(src, "<I>... Вы едва можете что-то услышать ...</I>")
 		return
 	to_chat(src, msg)
 
@@ -272,13 +272,13 @@
 		var/obj/item/I = get_item_by_slot(slot)
 		if(istype(I))
 			if(slot in check_obscured_slots())
-				to_chat(src, "<span class='warning'>You are unable to unequip that while wearing other garments over it!</span>")
+				to_chat(src, "<span class='warning'>Вы не можете снять это, пока у вас надето что-то поверх!</span>")
 				return FALSE
 
 			var/mob/living/carbon/human/H = usr
 			if(!I.unequip_delay_self)
 				return TRUE
-			H.visible_message("<span class='notice'>[H] стягивает с себя [I]...</span>", "<span class='notice'>Ты стягиваешь с себя [I]...</span>")
+			H.visible_message("<span class='notice'>[H] снимает с себя [I]...</span>", "<span class='notice'>Вы снимаете с себя [I]...</span>")
 
 			if(!do_after(H, I.unequip_delay_self, target = H))
 				return
@@ -347,7 +347,7 @@
 		return
 
 	if(is_blind())
-		to_chat(src, "<span class='warning'>Something is there but you can't see it!</span>")
+		to_chat(src, "<span class='warning'>Здесь что-то есть, но вы не можете это увидеть!</span>")
 		return
 
 	face_atom(A)

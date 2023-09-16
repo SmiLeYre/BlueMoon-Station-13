@@ -1,5 +1,5 @@
 /obj/item/organ/genital/penis
-	name = "Член"
+	name = "член"
 	desc = "A male reproductive organ."
 	icon_state = "penis"
 	icon = 'icons/obj/genitals/penis.dmi'

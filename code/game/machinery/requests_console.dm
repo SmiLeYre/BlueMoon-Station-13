@@ -303,6 +303,24 @@ GLOBAL_LIST_EMPTY(allConsoles)
 			announceAuth = FALSE
 			screen = 0
 
+//////////////
+	var/ru_department = "" // Используется только в объявлениях
+	if (department == "Head of Personnel's Desk")
+		ru_department = "Глава персонала"
+	else if (department == "Research Director's Desk")
+		ru_department = "Директор отдела исследований"
+	else if (department == "Chief Engineer's Desk")
+		ru_department = "Главный инженер"
+	else if (department == "Chief Medical Officer's Desk")
+		ru_department = "Главный врач"
+	else if (department == "Head of Security's Desk")
+		ru_department = "Глава службы безопасности"
+	else if (department == "Quartermaster's Desk")
+		ru_department = "Квартирмейстер"
+	else
+		ru_department = "Неизвестный"
+/////////////////
+
 	if(href_list["sendAnnouncement"])
 		if(!announcementConsole)
 			updateUsrDialog()
@@ -310,7 +328,7 @@ GLOBAL_LIST_EMPTY(allConsoles)
 		if(isliving(usr))
 			var/mob/living/L = usr
 			message = L.treat_message(message)
-		minor_announce(message, "[department] Объявляет:")
+		minor_announce(message, "[ru_department] объявляет:")
 		GLOB.news_network.SubmitArticle(message, department, "Station Announcements", null)
 		usr.log_talk(message, LOG_SAY, tag = "station announcement from [src]")
 		message_admins("[ADMIN_LOOKUPFLW(usr)] has made a station announcement from [src] at [AREACOORD(usr)].")
