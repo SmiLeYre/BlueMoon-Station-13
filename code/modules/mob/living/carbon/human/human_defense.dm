@@ -735,7 +735,7 @@
 				to_send += "\n<span class='info'>Your [damaged_message] [damaged_plural ? "are" : "is"] hurt.</span>"
 
 			if(roundstart_quirks.len)
-				to_send += "\n<span class='notice'>You have these quirks: [get_trait_string()].</span>"
+				to_send += "\n<span class='notice'>У вас есть следующие особенности: [get_trait_string()].</span>"
 			//SPLURT edit
 			for(var/obj/item/organ/genital/G in internal_organs)
 				if(CHECK_BITFIELD(G.genital_flags, GENITAL_IMPOTENT))
