@@ -1,5 +1,5 @@
 /obj/item/organ/genital/butt
-	name 					= "попа"
+	name 					= "Попа"
 	desc 					= "You see a pair of asscheeks."
 	icon_state 				= "butt"
 	icon 					= 'icons/obj/genitals/butt.dmi'
