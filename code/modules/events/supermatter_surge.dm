@@ -16,9 +16,9 @@
 
 /datum/round_event/supermatter_surge/setup()
 	if(prob(70))
-		power = rand(200,100000)
+		power = rand(200,150000)
 	else
-		power = rand(200,200000)
+		power = rand(200,300000)
 
 /datum/round_event/supermatter_surge/announce()
 	var/severity = ""
@@ -28,17 +28,17 @@
 			var/low_threat_perc = 100-round(100*((power-200)/(100000-200)))
 			if(prob(low_threat_perc))
 				if(prob(low_threat_perc))
-					severity = "low; the supermatter should return to normal operation shortly."
+					severity = "низкая; Спустя время Суперматерия должна вернуться к нормальной работе."
 				else
-					severity = "medium; the supermatter should return to normal operation, but regardless, check if the emitters may need to be turned off temporarily."
+					severity = "средняя; Спустя время Суперматерия должна вернуться к нормальной работе, но в любом случае проверьте, не нужно ли временно отключить Излучатели."
 			else
-				severity = "high; the emitters likely need to be turned off, and if the supermatter's cooling loop is not fortified, pre-cooled gas may need to be added."
+				severity = "высокая; Скорее всего, излучатели придется отключить, а если контур охлаждения Суперматерии не укреплен, то может потребоваться добавление предварительно охлажденного газа."
 				important = TRUE
 		if(100000 to INFINITY)
-			severity = "extreme; emergency action is likely to be required even if coolant loop is fine. Turn off the emitters and make sure the loop is properly cooling gases."
+			severity = "экстремальная; Аварийные Действия для последующего тушения Суперматерии потребуются даже в том случае, если контур охлаждения в порядке. Отключите Излучатели и убедитесь, что контур охлаждает газы должным образом."
 			important = TRUE
 	if(power > 20000 || prob(round(power/200)))
-		priority_announce("Supermatter surge detected. Estimated severity is [severity]", "ВНИМАНИЕ: АНОМАЛИЯ", has_important_message = important)
+		priority_announce("Обнаружен энергетический всплеск Суперматерии. Предполагаемая степень тяжести - [severity]", "ВНИМАНИЕ: АНОМАЛИЯ", has_important_message = important)
 
 /datum/round_event/supermatter_surge/start()
 	var/obj/machinery/power/supermatter_crystal/supermatter = GLOB.main_supermatter_engine

@@ -26,7 +26,7 @@
 	var/pirate_type = PIRATES_ROGUES //pick(PIRATES_ROGUES, PIRATES_SILVERSCALES, PIRATES_DUTCHMAN)
 	var/datum/comm_message/threat_msg = new
 	var/payoff = 0
-	var/payoff_min = 10000 //documented this time
+	var/payoff_min = 25000 //documented this time
 	var/ship_template
 	var/ship_name = "Space Privateers Association"
 	var/initial_send_time = world.time
@@ -47,12 +47,12 @@
 			threat_msg.possible_answers = list("Мы заплатим.","Мы заплатим, но на самом деле нет.")
 
 	threat_msg.answer_callback = CALLBACK(GLOBAL_PROC, .proc/pirates_answered, threat_msg, payoff, ship_name, initial_send_time, response_max_time, ship_template)
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/spawn_pirates, threat_msg, ship_template, FALSE), response_max_time)
 	SScommunications.send_message(threat_msg,unique = TRUE)
 
 /proc/pirates_answered(datum/comm_message/threat_msg, payoff, ship_name, initial_send_time, response_max_time, ship_template)
 	if(world.time > initial_send_time + response_max_time)
 		priority_announce("Слишком поздно умолять о пощаде!", ship_name, 'modular_bluemoon/phenyamomota/sound/announcer/pirate_nopeacedecision.ogg', has_important_message = TRUE)
+		spawn_pirates(threat_msg, ship_template, TRUE)
 		return
 	if(threat_msg && threat_msg.answered == 1)
 		var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)

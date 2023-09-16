@@ -5,22 +5,22 @@ import { Window } from '../layouts';
 
 const damageTypes = [
   {
-    label: 'Brute',
+    label: 'Травмы',
     type: 'bruteLoss',
     color: 'red',
   },
   {
-    label: 'Burn',
+    label: 'Ожоги',
     type: 'fireLoss',
     color: 'orange',
   },
   {
-    label: 'Toxin',
+    label: 'Токсины',
     type: 'toxLoss',
     color: 'green',
   },
   {
-    label: 'Respiratory',
+    label: 'Дыхание',
     type: 'oxyLoss',
     color: 'blue',
   },
@@ -38,12 +38,12 @@ export const OperatingComputer = (props, context) => {
           <Tabs.Tab
             selected={tab === 1}
             onClick={() => setTab(1)}>
-            Patient State
+            Состояние пациента
           </Tabs.Tab>
           <Tabs.Tab
             selected={tab === 2}
             onClick={() => setTab(2)}>
-            Surgery Procedures
+            Хирургические процедуры
           </Tabs.Tab>
         </Tabs>
         {tab === 1 && (
@@ -67,34 +67,34 @@ const PatientStateView = (props, context) => {
   if (!table) {
     return (
       <NoticeBox>
-        No Table Detected
+        Хирургический стол не обнаружен
       </NoticeBox>
     );
   }
   return (
     <Fragment>
-      <Section title="Patient State">
+      <Section title="Состояние пациента">
         {patient && (
           <LabeledList>
             <LabeledList.Item
-              label="State"
+              label="Состояние"
               color={patient.statstate}>
               {patient.stat}
             </LabeledList.Item>
-            <LabeledList.Item label="Blood Type">
+            <LabeledList.Item label="Группа крови">
               {patient.blood_type}
             </LabeledList.Item>
-            <LabeledList.Item label="Health">
+            <LabeledList.Item label="Здоровье">
               <ProgressBar
                 value={patient.health}
                 minValue={patient.minHealth}
                 maxValue={patient.maxHealth}
-                color={patient.health >= 0 ? 'good' : 'average'}>
+                color={patient.health >= 0 ? 'хорошо' : 'удовлетворительно'}>
                 <AnimatedNumber value={patient.health} />
               </ProgressBar>
             </LabeledList.Item>
             {damageTypes.map(type => (
-              <LabeledList.Item key={type.type} label={(patient.is_robotic_organism && type.label === 'Toxin') ? 'Corruption' : type.label}>
+              <LabeledList.Item key={type.type} label={(patient.is_robotic_organism && type.label === 'Токсины') ? 'Разложение' : type.label}>
                 <ProgressBar
                   value={patient[type.type] / patient.maxHealth}
                   color={type.color}>
@@ -104,12 +104,12 @@ const PatientStateView = (props, context) => {
             ))}
           </LabeledList>
         ) || (
-          'No Patient Detected'
+          'Пациент не обнаружен'
         )}
       </Section>
       {procedures.length === 0 && (
         <Section>
-          No Active Procedures
+          Нет активных процедур
         </Section>
       )}
       {procedures.map(procedure => (
@@ -117,22 +117,22 @@ const PatientStateView = (props, context) => {
           key={procedure.name}
           title={procedure.name}>
           <LabeledList>
-            <LabeledList.Item label="Next Step">
+            <LabeledList.Item label="След. процедура">
               {procedure.next_step}
               {procedure.chems_needed && (
                 <Fragment>
-                  <b>Required Chemicals:</b>
+                  <b>Необходимы химикаты:</b>
                   <br />
                   {procedure.chems_needed}
                 </Fragment>
               )}
             </LabeledList.Item>
             {procedure.alternative_step && (
-              <LabeledList.Item label="Alternative Step">
+              <LabeledList.Item label="Альт. процедура">
                 {procedure.alternative_step}
                 {procedure.alt_chems_needed && (
                   <Fragment>
-                    <b>Required Chemicals:</b>
+                    <b>Необходимы химикаты:</b>
                     <br />
                     {procedure.alt_chems_needed}
                   </Fragment>
@@ -152,10 +152,10 @@ const SurgeryProceduresView = (props, context) => {
     surgeries = [],
   } = data;
   return (
-    <Section title="Advanced Surgery Procedures">
+    <Section title="Продвинутые хирургические операции">
       <Button
         icon="download"
-        content="Sync Research Database"
+        content="Синхронизировать БД исследований"
         onClick={() => act('sync')} />
       {surgeries.map(surgery => (
         <Section

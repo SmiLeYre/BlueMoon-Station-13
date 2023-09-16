@@ -118,8 +118,8 @@
 /datum/species/nucleation/on_species_gain(mob/living/carbon/human/H)
 	..()
 	H.light_color = "#1C1C00" // ДАЁМ СВЕТ ЧЕЛИКАМ.
-	H.set_light(3)
-	H.grant_ability_from_source(list(INNATE_ABILITY_NUCLEATID_SHAHID), ABILITY_SOURCE_SPECIES) // ДАЁМ АБИЛКУ ШАХИДА.
+	H.set_light(4)
+//	H.grant_ability_from_source(list(INNATE_ABILITY_NUCLEATID_SHAHID), ABILITY_SOURCE_SPECIES) // ДАЁМ АБИЛКУ ШАХИДА.
 
 /datum/species/nucleation/on_species_loss(mob/living/carbon/human/H)
 	..()
@@ -131,7 +131,7 @@
 /datum/species/nucleation/spec_death(gibbed, mob/living/carbon/human/H) // ВЗРЫВ ПРИ СМЕРТИ. ДОВОЛЬНО МАЛЕНЬКИЙ.
 	var/turf/T = get_turf(H)
 	H.visible_message("<span class='warning'>Тело [H] взрывается, оставляя после себя множество микроскопических кристаллов!</span>")
-	explosion(T, 0, 0, 3, 6, flame_range = 3) // ЕСЛИ ТЫ БЫЛ РЯДОМ - Я ТЕБЕ СОЖАЛЕЮ.
+	explosion(T, 0, 1, 4, 6, flame_range = 5) // ЕСЛИ ТЫ БЫЛ РЯДОМ - Я ТЕБЕ СОЖАЛЕЮ.
 	qdel(H)
 
 // БОМБЕЗНОГО ЯЗЫКА У НИХ НЕ БУДЕТ, ПОТОМУ ЧТО ЭТО ЛЮДИ. ЧТО-ТО ТИПА ПЛАЗМАМЕНОВ.

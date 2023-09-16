@@ -192,7 +192,7 @@
 	. = ..()
 
 /datum/mood_event/hypnosis
-	description = "<span class='hypnophrase'>You don't feel like you're really in control of your body.</span>"
+	description = "<span class='hypnophrase'>Кажется, вы не совсем контроллируете своё тело.</span>"
 
 /mob/living/carbon/verb/remove_chastity_hypnosis()
 	set name = "Escape Chastity Hypnosis"

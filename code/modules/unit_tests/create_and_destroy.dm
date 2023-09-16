@@ -132,6 +132,7 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 	// ignore += subtypesof(/obj/machinery/airlock_controller)
 	// All of them sleep with CHECK_TICK and hang refs. //TODO: Port modern /tg/ techwebs
 	ignore += typesof(/obj/machinery/rnd/production)
+	ignore += typesof(/obj/machinery/satellite)
 	// This one sleeps too in it's AI code
 	ignore += typesof(/mob/living/simple_animal/hostile/swarmer)
 

@@ -21,7 +21,7 @@
 /proc/send_raider_threat()
 	var/datum/comm_message/threat_msg = new
 	var/payoff = 0
-	var/payoff_min = 50000 //documented this time
+	var/payoff_min = 25000 //documented this time
 	var/ship_template
 	var/ship_name = "Admiral Brown's fleet battlecruiser"
 	var/initial_send_time = world.time
@@ -36,17 +36,17 @@
 
 		ship_template = /datum/map_template/shuttle/inteq_collosus
 
-		threat_msg.title = "Сомнительное заявление"
+		threat_msg.title = "Сомнительное Заявление"
 		threat_msg.content = "Джамбо, уроды. Мы тут пролетали неподалеку, и заметили красно-синих голубков. Расклад прост. Гоните [payoff] кредитов, в противном случае мы не поленимся проложить курс нашего крейсера напрямую через вашу станцию."
 		threat_msg.possible_answers = list("Мы заплатим.","Мы заплатим, но на самом деле нет.")
 
 	threat_msg.answer_callback = CALLBACK(GLOBAL_PROC, .proc/raiders_answered, threat_msg, payoff, ship_name, initial_send_time, response_max_time, ship_template)
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/spawn_raiders, threat_msg, ship_template, FALSE), response_max_time)
 	SScommunications.send_message(threat_msg,unique = TRUE)
 
 /proc/raiders_answered(datum/comm_message/threat_msg, payoff, ship_name, initial_send_time, response_max_time, ship_template)
 	if(world.time > initial_send_time + response_max_time)
 		priority_announce("Поговорим на языке силы.", ship_name, 'modular_bluemoon/phenyamomota/sound/announcer/pirate_nopeacedecision.ogg', has_important_message = TRUE)
+		spawn_raiders(threat_msg, ship_template, TRUE)
 		return
 	if(threat_msg && threat_msg.answered == 1)
 		var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)

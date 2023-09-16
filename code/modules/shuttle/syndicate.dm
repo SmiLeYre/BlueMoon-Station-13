@@ -36,7 +36,7 @@
 			board.moved = TRUE
 
 			for(var/mob/M in GLOB.player_list)
-				if(musiclimit > 1)
+				if(musiclimit >= 1)
 					return
 				SEND_SOUND(M, sound('modular_bluemoon/SmiLeY/sounds/Nuclear_Operations.ogg'))
 				musiclimit++

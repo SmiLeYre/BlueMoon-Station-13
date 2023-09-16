@@ -74,8 +74,8 @@
 	name = "\improper NRI Military ID"
 	desc = "An Novaya Rossiyskya Imperia Spetsnaz ID card."
 	icon_state = "nri"
-	registered_name = "NRI Soldier"
-	assignment = "NRI Soldier"
+	registered_name = "NRI"
+	assignment = "NRI"
 	uses_overlays = FALSE
 
 /obj/item/card/id/nri/Initialize(mapload)
@@ -86,8 +86,8 @@
 	name = "\improper SolFed Military ID"
 	desc = "An Solar Federation Military ID card. Provided with special sensors, allowing to unlock all necessary doors for combatants, slightly reminding emag functions."
 	icon_state = "sol"
-	registered_name = "SolFed Soldier"
-	assignment = "SolFed Soldier"
+	registered_name = "Sol"
+	assignment = "Sol"
 	uses_overlays = FALSE
 
 /obj/item/card/id/sol/Initialize(mapload)

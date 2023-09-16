@@ -92,6 +92,7 @@ GLOBAL_LIST_EMPTY(meteor_satellites) // BLUEMOON ADD - список всех п�
 	anchored = FALSE
 	density = TRUE
 	use_power = FALSE
+	armor = list(MELEE = 25, BULLET = 10, LASER = 10, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 70)
 	var/mode = "NTPROBEV0.8"
 	var/active = FALSE
 	var/static/gid = 1

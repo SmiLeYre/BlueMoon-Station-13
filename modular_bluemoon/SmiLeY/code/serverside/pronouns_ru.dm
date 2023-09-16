@@ -34,6 +34,10 @@
 /datum/proc/ru_en(temp_gender = null)
 	. = "ен"
 
+/datum/proc/ru_aya_oy(temp_gender)
+	. = "ой"
+
+
 //like clients, which do have gender.
 /client/ru_who(capitalized, temp_gender)
 	if(!temp_gender)
@@ -107,6 +111,18 @@
 	if(capitalized)
 		. = capitalize(.)
 
+/atom/ru_aya_oy(capitalized, temp_gender)
+	if(!temp_gender)
+		temp_gender = gender
+	. = "ой"
+	switch(temp_gender)
+		if(FEMALE)
+			. = "ая"
+		if(MALE)
+			. = "ой"
+	if(capitalized)
+		. = capitalize(.)
+
 //mobs(and atoms but atoms don't really matter write your own proc overrides) also have gender!
 /atom/ru_who(capitalized, temp_gender)
 	if(!temp_gender)
@@ -166,7 +182,7 @@
 		if(MALE)
 			. = ""
 
-/atom/ru_sya(temp_gender = null, include_l = FALSE)
+/atom/ru_sya(temp_gender = null)
 	if(!temp_gender)
 		temp_gender = gender
 
@@ -175,9 +191,7 @@
 		if(FEMALE)
 			. = "лась"
 		if(MALE)
-			. = "ся"
-			if(include_l)
-				. = "л" + .
+			. = "лся"
 
 /atom/ru_en(temp_gender = null)
 	if(!temp_gender)

@@ -217,7 +217,7 @@
 	. = ..()
 	if (.)
 		power_fail(35, 50)
-		priority_announce("Abnormal activity detected in [station_name()]'s powernet. As a precautionary measure, the station's power will be shut off for an indeterminate duration.", "Critical Power Failure", "poweroff.ogg")
+		priority_announce("В электросети станции [station_name()]'s зарегистрирована аномальная активность. В качестве меры предосторожности, питании станции будет отключено на неопределенный срок.", "Критический Сбой Питания", "poweroff.ogg")
 
 // Subtract cost, and spawn if it's an item.
 /datum/contractor_item/proc/handle_purchase(var/datum/contractor_hub/hub, mob/living/user)

@@ -128,11 +128,12 @@ SUBSYSTEM_DEF(jukeboxes)
 			stack_trace("Invalid jukebox track datum.")
 			continue
 		var/obj/jukebox = jukeinfo[JUKE_BOX]
+		var/turf/jukebox_loc = jukebox.loc
 		if(!istype(jukebox))
 			stack_trace("Nonexistant or invalid object associated with jukebox.")
 			continue
 
-		var/list/audible_zlevels = get_multiz_accessible_levels(jukebox.z) //TODO - for multiz refresh, this should use the cached zlevel connections var in SSMapping. For now this is fine!
+		var/list/audible_zlevels = get_multiz_accessible_levels(jukebox_loc.z) //TODO - for multiz refresh, this should use the cached zlevel connections var in SSMapping. For now this is fine!
 
 		var/sound/song_played = jukeinfo[JUKE_SOUND]
 		var/turf/currentturf = get_turf(jukebox)
@@ -168,10 +169,6 @@ SUBSYSTEM_DEF(jukeboxes)
 				hearer_env = (istype(hearerturf) ? hearerturf.return_air() : null)
 				if(istype(hearer_env))
 					pressure_factor = min(source_pressure, hearer_env.return_pressure())
-
-				if(jukebox.loc == M)
-					audible_zlevels = get_multiz_accessible_levels(M.z)
-
 				if(pressure_factor && targetfalloff && M.can_hear() && (hearerturf.z in audible_zlevels))
 					if(get_area(hearerturf) == currentarea)
 						inrange = TRUE

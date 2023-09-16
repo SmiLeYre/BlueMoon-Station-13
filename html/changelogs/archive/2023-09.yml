@@ -63,3 +63,6 @@
   - rscadd: Vox eye types.
   - rscadd: Vox lungs.
   - rscadd: Vox language.
+2023-09-13:
+  Vhariik:
+  - bugfix: fixed syndie modsuit visor overlay

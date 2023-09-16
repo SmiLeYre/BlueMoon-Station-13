@@ -124,7 +124,7 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	actions_types = list()
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	//mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/suit/space/hardsuit/ert/alert/nri
 	name = "Ratnik-4 hardsuit"
@@ -137,6 +137,10 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 
+/obj/item/storage/belt/military/russianweb
+	desc = "A set of tactical webbing worn by NRI Spetsnaz troopers."
+	icon_state = "russianweb"
+	item_state = "russianweb"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

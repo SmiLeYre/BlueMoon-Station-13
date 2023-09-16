@@ -552,7 +552,7 @@
 				return
 			var/to_send = "<div class='info'>"
 			visible_message("[src] осматривает себя.", "")
-			to_send += "<span class='notice'>You check yourself for injuries.</span>\n"
+			to_send += "<span class='notice'>Вы осматриваете себя на предмет повреждений.</span>\n"
 
 			var/list/missing = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 			for(var/X in bodyparts)
@@ -664,31 +664,31 @@
 
 			switch(nutrition)
 				if(NUTRITION_LEVEL_FULL to INFINITY)
-					to_send += "<span class='info'>You're completely stuffed!</span>\n"
+					to_send += "<span class='info'>Вы объелись!</span>\n"
 				if(NUTRITION_LEVEL_WELL_FED to NUTRITION_LEVEL_FULL)
-					to_send += "<span class='info'>You're well fed!</span>\n"
+					to_send += "<span class='info'>Вы сыты!</span>\n"
 				if(NUTRITION_LEVEL_FED to NUTRITION_LEVEL_WELL_FED)
-					to_send += "<span class='info'>You're not hungry.</span>\n"
+					to_send += "<span class='info'>Вы не голодны.</span>\n"
 				if(NUTRITION_LEVEL_HUNGRY to NUTRITION_LEVEL_FED)
-					to_send += "<span class='info'>You could use a bite to eat.</span>\n"
+					to_send += "<span class='info'>Вам бы перекусить.</span>\n"
 				if(NUTRITION_LEVEL_STARVING to NUTRITION_LEVEL_HUNGRY)
-					to_send += "<span class='info'>You feel quite hungry.</span>\n"
+					to_send += "<span class='info'>У вас ощутимый голод.</span>\n"
 				if(0 to NUTRITION_LEVEL_STARVING)
-					to_send += "<span class='danger'>You're starving!</span>\n"
+					to_send += "<span class='danger'>Вы голодаете!</span>\n"
 
 			switch(thirst)
 				if(THIRST_LEVEL_FULL to INFINITY)
-					to_send += "<span class='info'>You're completely full of water!</span>\n"
+					to_send += "<span class='info'>Вы переполнены водой!</span>\n"
 				if(THIRST_LEVEL_QUENCHED to THIRST_LEVEL_FULL)
-					to_send += "<span class='info'>You're hydrated.</span>\n"
+					to_send += "<span class='info'>Вы напились.</span>\n"
 				if(THIRST_LEVEL_BIT_THIRSTY to THIRST_LEVEL_QUENCHED)
-					to_send += "<span class='info'>You're not thirsty.</span>\n"
+					to_send += "<span class='info'>Вы не испытываете жажду.</span>\n"
 				if(THIRST_LEVEL_THIRSTY to THIRST_LEVEL_BIT_THIRSTY)
-					to_send += "<span class='info'>You could use a drink to quench your thirst.</span>\n"
+					to_send += "<span class='info'>Вам не помешало бы промочить горло.</span>\n"
 				if(THIRST_LEVEL_PARCHED to THIRST_LEVEL_THIRSTY)
-					to_send += "<span class='danger'>You feel quite thirsty!</span>\n"
+					to_send += "<span class='danger'>Вы ощущаете жажду!</span>\n"
 				if(0 to THIRST_LEVEL_PARCHED)
-					to_send += "<span class='danger'>You're parched!</span>\n"
+					to_send += "<span class='danger'>У вас обезвоживание!</span>\n"
 
 			//TODO: Convert these messages into vague messages, thereby encouraging actual dignosis.
 			//Compiles then shows the list of damaged organs and broken organs
@@ -782,7 +782,7 @@
 		return
 
 	visible_message("<span class='notice'>[src] осматривает себя.</span>", "")
-	var/output = "<span class='notice'>You check yourself for injuries.</span><hr>"
+	var/output = "<span class='notice'>Вы осматриваете себя на предмет повреждений.</span><hr>"
 
 	var/list/missing = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 

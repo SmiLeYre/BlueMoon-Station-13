@@ -286,10 +286,11 @@
 	name = "InteQ Collosus";
 	preferred_direction = 4;
 	id = "inteq_collosus";
-	height = 15;
-	width = 13;
+	height = 19;
+	width = 35;
 	dir = 2;
-	port_direction = 8
+	port_direction = 8;
+	dwidth = 17
 	},
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/inteq)

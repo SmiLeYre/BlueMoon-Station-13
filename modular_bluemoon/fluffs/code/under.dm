@@ -46,3 +46,9 @@
 	icon_state = "flektarn"
 	item_state = "flektarn"
 	can_adjust = TRUE
+
+/obj/item/clothing/under/donator/bm/battle_coat
+	name = "battle coat"
+	desc = "A Tatical uniform with hood."
+	icon_state = "battle_coat"
+	item_state = "battle_coat"

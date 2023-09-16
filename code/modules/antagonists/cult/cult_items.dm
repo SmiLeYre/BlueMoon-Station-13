@@ -619,7 +619,7 @@
 		user.DefaultCombatKnockdown(100)
 		to_chat(user, "<span class='warning'>Мощная сила отталкивает вас от [src]!</span>")
 		return
-	if(curselimit > 1)
+	if(curselimit >= 2)
 		to_chat(user, "<span class='notice'>Мы исчерпали свою способность проклинать Космическую Станцию.</span>")
 		return
 	if(locate(/obj/singularity/narsie) in GLOB.poi_list)
