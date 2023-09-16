@@ -418,11 +418,11 @@
 
 /obj/item/card/id/proc/update_label(newname, newjob)
 	if(newname || newjob)
-		name = "[(!newname)	? "identification card"	: "[newname]'s ID Card"][(!newjob) ? "" : " ([newjob])"]"
+		name = "[(!newname)	? "identification card"	: "[newname] - ID Card"][(!newjob) ? "" : " ([newjob])"]"
 		update_icon()
 		return
 
-	name = "[(!registered_name)	? "identification card"	: "[registered_name]'s ID Card"][(!assignment) ? "" : " ([assignment])"]"
+	name = "[(!registered_name)	? "identification card"	: "[registered_name] - ID Card"][(!assignment) ? "" : " ([assignment])"]"
 	update_icon()
 
 /obj/item/card/id/silver
@@ -956,3 +956,9 @@
 	access = get_all_accesses()+get_all_centcom_access()+get_all_syndicate_access()+get_all_ghost_access()
 	registered_account = SSeconomy.get_dep_account(ACCOUNT_CAR)
 	. = ..()
+
+
+/obj/item/card/id/death
+	name = "\improper Death Commando ID"
+	icon_state = "centcom"
+	assignment = "Death Commando"

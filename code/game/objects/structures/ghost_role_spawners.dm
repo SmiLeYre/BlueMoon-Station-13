@@ -552,8 +552,8 @@
 	canloadappearance = TRUE
 
 /obj/effect/mob_spawn/human/solfed/demoman
-	name = "Solar Federation Demoman"
-	outfit = /datum/outfit/ert/sol_soldier_demo
+	name = "Solar Federation Support"
+	outfit = /datum/outfit/ert/sol_soldier_support
 
 /obj/effect/mob_spawn/human/solfed/field_officer
 	name = "Solar Federation Field Officer"

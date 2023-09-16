@@ -394,6 +394,8 @@
 		return "sol"
 	if (istype(src, /obj/item/card/id/sol_citizen))
 		return "sol"
+	if (istype(src, /obj/item/card/id/death))
+		return "deathcommando"
 	var/obj/item/card/id/I = GetID()
 	if(!I)
 		return

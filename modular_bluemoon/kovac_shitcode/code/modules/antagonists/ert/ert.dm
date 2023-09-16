@@ -28,6 +28,11 @@
 	outfit = /datum/outfit/ert/ert_russian_soldier
 	role = "Ефрейтор"
 
+/datum/antagonist/ert/russian_ert/support
+	name = "NRI Spetsnaz Squad"
+	outfit = /datum/outfit/ert/ert_russian_support
+	role = "Лейтенант"
+
 /datum/antagonist/ert/russian_ert/leader
 	name = "NRI Spetsnaz Squad"
 	outfit = /datum/outfit/ert/ert_russian_leader
@@ -38,7 +43,12 @@
 	outfit = /datum/outfit/ert/sol_soldier
 	role = "Космопехотинец"
 
-/datum/antagonist/ert/sol_ert/demo
+/datum/antagonist/ert/sol_ert/support
+	name = "SolFed Squad"
+	outfit = /datum/outfit/ert/sol_soldier_support
+	role = "Космопехотинец"
+
+/datum/antagonist/ert/sol_ert/demo // Не задействуется
 	name = "SolFed Squad"
 	outfit = /datum/outfit/ert/sol_soldier_demo
 	role = "Подрывник"
@@ -47,6 +57,7 @@
 	name = "SolFed Squad"
 	outfit = /datum/outfit/ert/sol_soldier_leader
 	role = "Капитан"
+
 /////////////////////////////////////////
 /datum/antagonist/ert/engineer_squadleader
 	role = "Бригадир"

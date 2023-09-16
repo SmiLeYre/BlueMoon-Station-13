@@ -2,8 +2,8 @@
 
 /obj/item/projectile/bullet/a9x39
 	name = "9x39 bullet"
-	damage = 20
-	wound_bonus = -10
+	damage = 45
+	wound_bonus = 15 // Винтовка ВСС выдается только командиру НРИ, одна на всю игру. Её отвратную скорострельность и боезапас попробуем компенсировать вот таким уроном.
 
 /obj/item/ammo_casing/a9x39
 	name = "9x39 bullet casing"

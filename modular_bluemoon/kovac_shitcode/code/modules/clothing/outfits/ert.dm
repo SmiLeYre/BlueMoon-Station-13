@@ -115,7 +115,6 @@
 	belt = /obj/item/storage/belt/security/full
 	r_hand = /obj/item/gun/ballistic/automatic/l6_saw/unrestricted
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-		/obj/item/clothing/mask/gas/sechailer=1,\
 		/obj/item/storage/ifak=1,\
 		/obj/item/ammo_box/magazine/mm712x82=2)
 
@@ -142,12 +141,12 @@
 	back = /obj/item/storage/backpack/hecu/black
 	belt = /obj/item/storage/belt/military/russianweb
 	ears = /obj/item/radio/headset/nri/bowman
-	r_hand = /obj/item/gun/ballistic/automatic/ak12
+	r_hand = /obj/item/gun/ballistic/automatic/l6_saw/pkmp
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/clothing/mask/gas/sechailer=1,\
 		/obj/item/gun/ballistic/revolver/mateba=1,
 		/obj/item/storage/ifak=1,\
-		/obj/item/ammo_box/magazine/ak12=4)
+		/obj/item/ammo_box/magazine/mm712x82=2)
 
 /datum/outfit/ert/ert_russian_soldier/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()
@@ -161,6 +160,47 @@
 	R.set_frequency(FREQ_NRI)
 
 	H.grant_language(/datum/language/modular_sand/technorussian, TRUE, TRUE)
+
+	var/obj/item/card/id/nri/W = H.wear_id
+	W.registered_name = H.real_name
+	W.update_label(W.registered_name)
+
+
+/datum/outfit/ert/ert_russian_support
+	name = "NRI Spetsnaz Support"
+
+	id = /obj/item/card/id/nri
+	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/nri/adv
+	//head = /obj/item/clothing/head/helmet/alt
+	uniform = /obj/item/clothing/under/rank/security/officer/nri_military
+	mask = /obj/item/clothing/mask/balaclava/breath/inteq
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
+	back = /obj/item/storage/backpack/rucksack/green
+	belt = /obj/item/storage/belt/military/russianweb
+	ears = /obj/item/radio/headset/nri/bowman
+	r_hand = /obj/item/gun/ballistic/automatic/ak12
+	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
+		/obj/item/gun/medbeam=1,
+		/obj/item/storage/firstaid/tactical=1,\
+		/obj/item/storage/barricade=1,\
+		/obj/item/ammo_box/magazine/ak12=4)
+
+/datum/outfit/ert/ert_russian_support/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+	..()
+
+	if(visualsOnly)
+		return
+
+	var/obj/item/radio/R = H.ears
+	R.recalculateChannels()
+
+	R.set_frequency(FREQ_NRI)
+
+	H.grant_language(/datum/language/modular_sand/technorussian, TRUE, TRUE)
+
+	var/obj/item/card/id/nri/W = H.wear_id
+	W.registered_name = H.real_name
+	W.update_label(W.registered_name)
 
 /datum/outfit/ert/ert_russian_leader
 	name = "NRI Spetsnaz Leader"
@@ -176,13 +216,12 @@
 	belt = /obj/item/storage/belt/grenade/full
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber
 	ears = /obj/item/radio/headset/nri/bowman/command
-	r_hand = /obj/item/gun/ballistic/automatic/l6_saw/pkmp
+	r_hand = /obj/item/gun/ballistic/automatic/vss
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 	    /obj/item/choice_beacon/nri_mech=1,\
-		/obj/item/clothing/mask/gas/sechailer=1,\
 		/obj/item/storage/box/syndie_kit/revolver=1,\
 		/obj/item/storage/ifak=1,\
-		/obj/item/ammo_box/magazine/mm712x82=2)
+		/obj/item/ammo_box/magazine/vss_mag=4)
 
 /datum/outfit/ert/ert_russian_leader/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()
@@ -196,6 +235,11 @@
 	R.set_frequency(FREQ_NRI)
 
 	H.grant_language(/datum/language/modular_sand/technorussian, TRUE, TRUE)
+
+	var/obj/item/card/id/nri/W = H.wear_id
+	W.registered_name = H.real_name
+	W.update_label(W.registered_name)
+
 
 //Солдаты армии Солнечной Системы
 /datum/outfit/ert/sol_soldier
@@ -227,6 +271,50 @@
 
 	H.grant_language(/datum/language/modular_sand/solcommon, TRUE, TRUE)
 
+	var/obj/item/card/id/sol/W = H.wear_id
+	W.registered_name = H.real_name
+	W.update_label(W.registered_name)
+
+///////////////
+
+/datum/outfit/ert/sol_soldier_support
+	name = "SolFed Marine Support"
+
+	id = /obj/item/card/id/sol
+	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/sol/adv
+//	head = /obj/item/clothing/head/helmet/alt
+	uniform = /obj/item/clothing/under/rank/security/officer/solfed_military
+	mask = /obj/item/clothing/mask/gas/syndicate/ds/coif
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
+	back = /obj/item/storage/backpack/rucksack
+	belt = /obj/item/storage/belt/military/inteq
+	ears = /obj/item/radio/headset/sol/bowman
+	r_hand = /obj/item/gun/ballistic/automatic/laser
+	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
+		/obj/item/gun/medbeam=1,
+		/obj/item/storage/firstaid/tactical=1,\
+		/obj/item/ammo_box/magazine/recharge = 4,\
+		/obj/item/storage/barricade=1)
+
+/datum/outfit/ert/sol_soldier/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+	..()
+
+	if(visualsOnly)
+		return
+
+	var/obj/item/radio/R = H.ears
+	R.set_frequency(FREQ_SOL)
+	R.freqlock = TRUE
+
+	H.grant_language(/datum/language/modular_sand/solcommon, TRUE, TRUE)
+
+	var/obj/item/card/id/sol/W = H.wear_id
+	W.registered_name = H.real_name
+	W.update_label(W.registered_name)
+
+
+///////////
+
 /datum/outfit/ert/sol_soldier_demo
 	name = "SolFed Demoman"
 
@@ -256,6 +344,11 @@
 	R.freqlock = TRUE
 
 	H.grant_language(/datum/language/modular_sand/solcommon, TRUE, TRUE)
+
+	var/obj/item/card/id/sol/W = H.wear_id
+	W.registered_name = H.real_name
+	W.update_label(W.registered_name)
+
 
 /datum/outfit/ert/sol_soldier_leader
 	name = "SolFed Commander"
@@ -289,6 +382,11 @@
 	R.freqlock = TRUE
 
 	H.grant_language(/datum/language/modular_sand/solcommon, TRUE, TRUE)
+
+	var/obj/item/card/id/sol/W = H.wear_id
+	W.registered_name = H.real_name
+	W.update_label(W.registered_name)
+
 
 
 ///Агенты Внутренних Дел

@@ -1,7 +1,7 @@
 /datum/ert/vdv_ert
 	roles = list(/datum/antagonist/ert/vdv)
 	leader_role = /datum/antagonist/ert/vdv/leader
-	rename_team = "Vozdushno Desantnie Voyska Squad"
+	rename_team = "NRI Vozdushno Desantnie Voyska Squad"
 	teamsize = 7
 	opendoors = FALSE
 	rename_team = "ВДВ"
@@ -11,13 +11,13 @@
 	ertphrase = "modular_bluemoon/kovac_shitcode/sound/ert/nri_send.ogg"
 
 /datum/antagonist/ert/vdv
-	name = "VDV Soldier"
+	name = "NRI VDV Soldier"
 	outfit = /datum/outfit/ert/vdv
 	random_names = TRUE
 	greentext_reward = 15
 
 /datum/antagonist/ert/vdv/leader
-	name = "VDV Leader"
+	name = "NRI VDV Leader"
 	outfit = /datum/outfit/ert/vdv/leader
 	leader = TRUE
 	greentext_reward = 20
@@ -43,7 +43,7 @@
 	access = list(ACCESS_CENT_GENERAL, ACCESS_CENT_LIVING, ACCESS_MAINT_TUNNELS, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_COURT, ACCESS_WEAPONS, ACCESS_MINERAL_STOREROOM)
 
 /datum/outfit/ert/vdv
-	name = "VDV Soldier"
+	name = "NRI VDV Soldier"
 
 	shirt = /obj/item/clothing/underwear/shirt/striped
 	uniform = /obj/item/clothing/under/pants/camo
@@ -55,7 +55,7 @@
 	head = /obj/item/clothing/head/HoS/beret/nri
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	belt = /obj/item/storage/belt/security/vdv
-	id = /obj/item/card/id/ert
+	id = /obj/item/card/id/nri
 	back = /obj/item/storage/backpack/rucksack
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 							/obj/item/ammo_box/magazine/m10mm=3)
@@ -94,7 +94,7 @@
 	W.update_label()
 
 /datum/outfit/ert/vdv/leader
-	name = "VDV Leader"
+	name = "NRI VDV Leader"
 
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/aps
 	gloves = /obj/item/clothing/gloves/color/black

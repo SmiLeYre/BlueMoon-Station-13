@@ -187,6 +187,24 @@
 	tail_state = "ert_gcommander"
 	anthro_mob_worn_overlay = 'modular_bluemoon/kovac_shitcode/icons/solfed/mob_sol_digi.dmi'
 
+/// Advanced hardsuit
+
+/obj/item/clothing/head/helmet/space/hardsuit/ert/alert/sol/adv
+	name = "FCS-B SolFed hardsuit helmet"
+	icon_state = "hardsuit0-solfeds"
+	item_state = "hardsuit0-solfeds"
+	hardsuit_type = "solfeds"
+	armor = list(MELEE = 75, BULLET = 75, LASER = 75, ENERGY = 75, BOMB = 100, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 75)
+
+/obj/item/clothing/suit/space/hardsuit/ert/alert/sol/adv
+	name = "FCS-B SolFed hardsuit"
+	desc = "A reinforced Future Combat Systems Solar marine hardsuit. Provided with special fibers and armor plates."
+	icon_state = "hardsuit0-solfeds"
+	item_state = "hardsuit0-solfeds"
+	hardsuit_type = "solfeds"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/alert/sol/adv
+	armor = list(MELEE = 75, BULLET = 75, LASER = 75, ENERGY = 75, BOMB = 100, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 75)
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //// Posters and stuff
@@ -283,6 +301,10 @@
 	R.freqlock = TRUE
 
 	H.grant_language(/datum/language/modular_sand/solcommon, TRUE, TRUE)
+
+	var/obj/item/card/id/sol/W = H.wear_id
+	W.registered_name = H.real_name
+	W.update_label(W.registered_name)
 
 /datum/outfit/sol_diplomacy/slut
 	name = "SolFed Secretary?"

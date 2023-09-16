@@ -376,13 +376,13 @@
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
 	glasses = /obj/item/clothing/glasses/hud/toggle/thermal
-	back = /obj/item/storage/backpack/security
+	back = /obj/item/storage/backpack/rucksack
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber
 	r_pocket = /obj/item/shield/energy
 	suit_store = /obj/item/tank/internals/emergency_oxygen
 	belt = /obj/item/storage/belt/grenade/full
 	r_hand = /obj/item/gun/energy/pulse/loyalpin
-	id = /obj/item/card/id
+	id = /obj/item/card/id/death
 	ears = /obj/item/radio/headset/headset_cent/alt
 
 	backpack_contents = list(/obj/item/storage/box/survival/security=1,\
@@ -403,13 +403,11 @@
 	var/obj/item/implant/mindshield/L = new //Here you go Deuryn
 	L.implant(H, null, 1)
 
-	var/obj/item/card/id/W = H.wear_id
-	W.icon_state = "centcom"
+	var/obj/item/card/id/death/W = H.wear_id
 	W.access = get_all_accesses()//They get full station access.
 	W.access += get_centcom_access("Death Commando")//Let's add their alloted CentCom access.
-	W.assignment = "Death Commando"
 	W.registered_name = H.real_name
-	W.update_label(W.registered_name, W.assignment)
+	W.update_label(W.registered_name)
 
 /datum/outfit/death_commando/officer
 	name = "Death Commando Officer"
@@ -439,6 +437,6 @@
 		)
 
 /datum/outfit/debug/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	var/obj/item/card/id/W = H.wear_id
+	var/obj/item/card/id/death/W = H.wear_id
 	W.registered_name = H.real_name
 	W.update_label()
