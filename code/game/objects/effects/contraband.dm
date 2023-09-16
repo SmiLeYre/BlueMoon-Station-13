@@ -834,4 +834,36 @@
 	desc = "This informational poster uses Safety Moth(TM) to inform the viewer to help injured/deceased crewmen with their epinephrine injectors."
 	icon_state = "poster_mothepinephrine"
 
+////
+
+/obj/structure/sign/poster/contraband/bread
+	name = "Love"
+	desc = "A large piece of space-resistant printed paper. Everyone's favorite bread, in space."
+	icon_state = "poster_bread"
+
+/obj/structure/sign/poster/contraband/woof
+	name = "Woof"
+	desc = "A large piece of space-resistant printed paper. Emma, the brig's trustworthy fox."
+	icon_state = "poster_woof"
+
+/obj/structure/sign/poster/contraband/slep
+	name = "Sleep"
+	desc = "A large piece of space-resistant printed paper. An advertisement for healthy sleep with cute fox on it."
+	icon_state = "poster_slep"
+
+/obj/structure/sign/poster/contraband/vulp1
+	name = "Vulpes"
+	desc = "A large piece of space-resistant printed paper. Looks like an advertisement for movie about vulpkanins."
+	icon_state = "poster_vulp1"
+
+/obj/structure/sign/poster/contraband/vulp2
+	name = "Vulp Beer"
+	desc = "A large piece of space-resistant printed paper. This poster says, 'Vulpes, Boobs and Beer!'. Probably a new Space Beer advertising company."
+	icon_state = "poster_vulp2"
+
+/obj/structure/sign/poster/contraband/vulp3
+	name = "Vulp Medical"
+	desc = "A large piece of space-resistant printed paper. White vulpkanin on the background of a green cross, one of the interplanetary symbol of health and aid."
+	icon_state = "poster_vulp3"
+
 #undef PLACE_SPEED

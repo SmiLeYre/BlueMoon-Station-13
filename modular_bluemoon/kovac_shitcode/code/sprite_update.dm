@@ -510,6 +510,17 @@
 	health = 250
 	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
 
+/mob/living/simple_animal/pet/cat/alta
+	name = "Alta"
+	desc = "A cute white cat."
+	icon_state = "alta"
+	icon_living = "alta"
+	icon_dead = "alta_dead"
+	held_icon = "alta"
+	unique_pet = TRUE
+	gender = FEMALE
+	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
+
 /mob/living/simple_animal/pet/dog/corgi/Lisa/ada
 	name = "Ada"
 	real_name = "Ada"
@@ -573,6 +584,7 @@
 	desc = "An adorable stuffed plushie that resembles a yellow security shark."
 	icon_state = "judas"
 	item_state = "judas"
+	squeak_override = list('modular_splurt/sound/voice/barks/undertale/voice_alphys.ogg' = 9)
 	icon = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps.dmi'
 	lefthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_l.dmi'
 	righthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_r.dmi'
