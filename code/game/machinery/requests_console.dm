@@ -306,17 +306,17 @@ GLOBAL_LIST_EMPTY(allConsoles)
 //////////////
 	var/ru_department = "" // Используется только в объявлениях
 	if (department == "Head of Personnel's Desk")
-		ru_department = "Глава персонала"
+		ru_department = "Глава Персонала"
 	else if (department == "Research Director's Desk")
-		ru_department = "Директор отдела исследований"
+		ru_department = "Директор Отдела Исследований"
 	else if (department == "Chief Engineer's Desk")
-		ru_department = "Главный инженер"
+		ru_department = "Главный Инженер"
 	else if (department == "Chief Medical Officer's Desk")
-		ru_department = "Главный врач"
+		ru_department = "Главный Врач"
 	else if (department == "Head of Security's Desk")
-		ru_department = "Глава службы безопасности"
+		ru_department = "Глава Службы Безопасности"
 	else if (department == "Quartermaster's Desk")
-		ru_department = "Квартирмейстер"
+		ru_department = "Завхоз"
 	else
 		ru_department = "Неизвестный"
 /////////////////
