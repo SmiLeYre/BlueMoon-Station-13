@@ -349,5 +349,5 @@
 	name = "Shielded Cross"
 	slot = ITEM_SLOT_NECK
 	path = /obj/item/clothing/neck/tie/cross/shielded
-	ckeywhitelist = list("kalifasun")
-	subcategory = LOADOUT_SUBCATEGORIES_DON12
+	ckeywhitelist = list("kalifasun", "dofalt")
+	subcategory = LOADOUT_SUBCATEGORIES_DON21

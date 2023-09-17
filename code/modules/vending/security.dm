@@ -29,6 +29,11 @@
 					/obj/item/clothing/suit/armor/hos/platecarrier = 1,
 					/obj/item/storage/belt/bandolier = 2,
 					/obj/item/storage/belt/military = 2,
+					/obj/item/storage/belt/military/assault/hecu = 1,
+					/obj/item/storage/belt/military/assault/hecu/black = 1,
+					/obj/item/storage/belt/military/assault/hipbag = 1,
+					/obj/item/storage/belt/military/assault/hipbag/tan = 1,
+					/obj/item/storage/belt/military/assault/hipbag/green = 1,
 					/obj/item/storage/bag/ammo = 3)
 	refill_canister = /obj/item/vending_refill/security
 	default_price = PRICE_ALMOST_EXPENSIVE

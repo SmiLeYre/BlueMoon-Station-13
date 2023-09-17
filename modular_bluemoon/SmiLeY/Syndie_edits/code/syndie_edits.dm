@@ -53,12 +53,6 @@
 	flags_inv = HIDEFACE|HIDEFACIALHAIR
 	icon = 'icons/obj/clothing/masks.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/mask.dmi'
-	unique_reskin = list(
-		"Black" = list("icon_state" = "half_mask"),
-		"Green" = list("icon_state" = "half_mask_green"),
-		"Tan" = list("icon_state" = "half_mask_tan"),
-		"Flektarn" = list("icon_state" = "half_mask_flektarn")
-	)
 
 /obj/item/clothing/shoes/combat
 	icon = 'icons/obj/clothing/shoes.dmi'

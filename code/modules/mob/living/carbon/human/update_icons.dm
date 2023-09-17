@@ -609,9 +609,9 @@ There are several things that need to be remembered:
 				alt_icon = dna.species.icon_head
 			var/muzzled = FALSE
 			var/variation_flag = NONE
-			if(dna.species.mutant_bodyparts["mam_snouts"] && dna.features["mam_snouts"] != "None")
+			if(dna.species.mutant_bodyparts["mam_snouts"] && dna.features["mam_snouts"] != "None" && dna.features["mam_snouts"] != "Vox")
 				muzzled = TRUE
-			else if(dna.species.mutant_bodyparts["snout"] && dna.features["snout"] != "None")
+			else if(dna.species.mutant_bodyparts["snout"] && dna.features["snout"] != "None" && dna.features["mam_snouts"] != "Vox")
 				muzzled = TRUE
 			if(muzzled && H.mutantrace_variation & STYLE_MUZZLE && !(H.mutantrace_variation & STYLE_NO_ANTHRO_ICON))
 				alt_icon = H.anthro_mob_worn_overlay || 'icons/mob/clothing/head_muzzled.dmi'
@@ -766,9 +766,9 @@ There are several things that need to be remembered:
 			var/variation_flag = NONE
 			if(head && (head.flags_inv & HIDEMASK))
 				return
-			if(dna.species.mutant_bodyparts["mam_snouts"] && dna.features["mam_snouts"] != "None")
+			if(dna.species.mutant_bodyparts["mam_snouts"] && dna.features["mam_snouts"] != "None" && dna.features["mam_snouts"] != "Vox")
 				muzzled = TRUE
-			else if(dna.species.mutant_bodyparts["snout"] && dna.features["snout"] != "None")
+			else if(dna.species.mutant_bodyparts["snout"] && dna.features["snout"] != "None" && dna.features["mam_snouts"] != "Vox")
 				muzzled = TRUE
 			if(muzzled && M.mutantrace_variation & STYLE_MUZZLE && !(M.mutantrace_variation & STYLE_NO_ANTHRO_ICON))
 				alt_icon = M.anthro_mob_worn_overlay || 'icons/mob/clothing/mask_muzzled.dmi'

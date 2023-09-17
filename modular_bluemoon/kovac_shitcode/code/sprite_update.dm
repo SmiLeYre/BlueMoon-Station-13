@@ -23,6 +23,7 @@
 	name = "tacticool security jumpsuit"
 	icon_state = "tacticool_sec"
 	item_state = "tacticool_sec"
+	can_adjust = FALSE
 	unique_reskin = list(
 		"Red" = list("icon_state" = "tacticool_sec")
 	)
@@ -484,6 +485,33 @@
 
 
 /////////////////////////////////////////////////////////
+
+/obj/item/clothing/mask/gas/sechailer/syndicate/flektarn
+	icon_state = "half_mask_flektarn"
+
+/obj/item/clothing/mask/gas/sechailer/syndicate/green
+	icon_state = "half_mask_green"
+
+/obj/item/clothing/mask/gas/sechailer/syndicate/tan
+	icon_state = "half_mask_tan"
+
+/obj/item/storage/belt/military/assault/hipbag
+	name = "Hipbag"
+	icon_state = "hipbag"
+	item_state = "hipbag"
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/storage/belt/military/assault/hipbag/tan
+	name = "Tan Hipbag"
+	icon_state = "hipbag_tan"
+	item_state = "hipbag_tan"
+
+/obj/item/storage/belt/military/assault/hipbag/green
+	name = "Green Hipbag"
+	icon_state = "hipbag_green"
+	item_state = "hipbag_green"
+
+//////////////////////////////////////////////
 
 /mob/living/simple_animal/pet/dog/corgi/pig/assistant
 	name = "Danya"

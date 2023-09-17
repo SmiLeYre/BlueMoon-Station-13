@@ -40,7 +40,7 @@
 	var/death_emote = "BOT blows apart!"
 	var/capture_one = "BOT is trying to put zipties on CRIMINAL!"
 	var/capture_two = "BOT is trying to put zipties on you!"
-	var/infraction = "Level THREAT_LEVEL infraction alert!"
+	var/infraction = "Нарушения уровня THREAT_LEVEL!"
 	var/taunt = "<b>BOT</b> points at CRIMINAL!"
 	var/attack_one = "BOT has stunned CRIMINAL!"
 	var/attack_two = "BOT has stunned you!"
