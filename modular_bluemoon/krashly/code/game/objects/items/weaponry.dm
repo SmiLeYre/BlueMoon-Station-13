@@ -138,7 +138,7 @@
 
 /obj/item/ammo_box/magazine/ak12
 	name = "\improper AK-12 magazine"
-	desc = "magazine able to hold 30 rounds of 5.45 ammo."
+	desc = "magazine able to hold 30 rounds of 5.56 ammo."
 	icon = 'modular_bluemoon/krashly/icons/obj/weapons/weapons.dmi'
 	icon_state = "ak12_mag"
 	item_state = "ak12_mag"
@@ -149,12 +149,12 @@
 
 /obj/item/ammo_box/magazine/ak12/ap
 	name = "\improper AK-12 armor-piercing magazine"
-	desc = "magazine able to hold 30 rounds of armor-piercing 5.45 ammo."
+	desc = "magazine able to hold 30 rounds of armor-piercing 5.56 ammo."
 	ammo_type = /obj/item/ammo_casing/a556/ap
 
 /obj/item/ammo_box/magazine/ak12/hp
 	name = "\improper AK-12 hollow-point magazine"
-	desc = "magazine able to hold 30 rounds of hollow-point 5.45 ammo."
+	desc = "magazine able to hold 30 rounds of hollow-point 5.56 ammo."
 	ammo_type = /obj/item/ammo_casing/a556/hp
 
 /obj/item/gun/ballistic/automatic/ak12/pindicate

@@ -129,7 +129,6 @@
 	name = "long red forensics coat"
 	icon_state = "forensics_red_long"
 	item_state = "forensics_red_long"
-	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/suit/det_suit/forensicsblue
 	name = "blue forensics coat"
@@ -140,7 +139,6 @@
 	name = "long blue forensics coat"
 	icon_state = "forensics_blue_long"
 	item_state = "forensics_blue_long"
-	mutantrace_variation = STYLE_DIGITIGRADE
 
 //Engineering
 /obj/item/clothing/suit/hazardvest
