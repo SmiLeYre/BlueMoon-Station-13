@@ -136,7 +136,7 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/nri
 	//head = /obj/item/clothing/head/helmet/alt
 	uniform = /obj/item/clothing/under/rank/security/officer/nri_military
-	mask = /obj/item/clothing/mask/balaclava/breath/inteq
+	mask = /obj/item/clothing/mask/gas/syndicate/ds/mouth
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/hecu/black
 	belt = /obj/item/storage/belt/military/russianweb
@@ -173,7 +173,7 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/nri/adv
 	//head = /obj/item/clothing/head/helmet/alt
 	uniform = /obj/item/clothing/under/rank/security/officer/nri_military
-	mask = /obj/item/clothing/mask/balaclava/breath/inteq
+	mask = /obj/item/clothing/mask/gas/syndicate/ds/mouth
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/rucksack/green
 	belt = /obj/item/storage/belt/military/russianweb
@@ -210,7 +210,7 @@
 	suit = /obj/item/clothing/suit/armor/nri_vest
 	head = /obj/item/clothing/head/HoS/beret/nri
 	uniform = /obj/item/clothing/under/rank/security/officer/nri_military
-	mask = /obj/item/clothing/mask/balaclava/breath/inteq
+	mask = /obj/item/clothing/mask/gas/syndicate/ds/mouth
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/hecu
 	belt = /obj/item/storage/belt/grenade/full

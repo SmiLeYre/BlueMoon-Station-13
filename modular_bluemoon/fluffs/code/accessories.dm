@@ -44,3 +44,32 @@
 	item_state = "pomogator"
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/accessories.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'
+
+
+
+/////////
+
+/obj/item/clothing/neck/tie/cross/shielded
+	name = "Radiant relic"
+	desc = "Данный артефакт был известен еще во времена затухания звёзд. Он стал знаменит тем, что излучает направленные лучи света, которые образуют купол вокруг носителя. Поколениями его носили верховные христианские жрецы. Теперь же это не более чем очень дорогой уникальный аксессуар."
+	icon_state = "cross"
+	var/cached_vis_overlay
+
+//Декоративный оверлей при надевании предмета в слот шеи
+/obj/item/clothing/neck/tie/cross/shielded/equipped(mob/living/L, slot)
+	..()
+	if(slot == ITEM_SLOT_NECK)
+		var/layer = (L.layer > MOB_LAYER ? L.layer : MOB_LAYER) + 0.01
+		cached_vis_overlay = SSvis_overlays.add_vis_overlay(L, 'icons/effects/effects.dmi', "shield-golden", layer, GAME_PLANE, L.dir)
+
+/obj/item/clothing/neck/tie/cross/shielded/dropped(mob/living/L)
+	if(cached_vis_overlay)
+		SSvis_overlays.remove_vis_overlay(L, cached_vis_overlay)
+		cached_vis_overlay = null
+	..()
+
+/obj/item/clothing/neck/tie/cross/shielded/Destroy(mob/living/L)
+	if(cached_vis_overlay)
+		SSvis_overlays.remove_vis_overlay(L, cached_vis_overlay)
+		cached_vis_overlay = null
+	return ..()

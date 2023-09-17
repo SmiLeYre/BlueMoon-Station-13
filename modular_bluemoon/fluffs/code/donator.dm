@@ -344,3 +344,10 @@
 	path = /obj/item/harness_kit
 	ckeywhitelist = list("ghoststalin", "g3234")
 	subcategory = LOADOUT_SUBCATEGORIES_DON12
+
+/datum/gear/donator/bm/cross_shielded
+	name = "Shielded Cross"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/neck/tie/cross/shielded
+	ckeywhitelist = list("kalifasun")
+	subcategory = LOADOUT_SUBCATEGORIES_DON21
