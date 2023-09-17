@@ -45,3 +45,11 @@
 	message_mime = "испытывает неприятное удивление."
 	emote_sound = 'modular_bluemoon/kovac_shitcode/sound/new_emotes/worm.ogg'
 	emote_cooldown = 11.6 SECONDS
+
+/datum/emote/living/audio/malf
+	key = "malf"
+	key_third_person = "malf"
+	message = "втыкает."
+	message_mime = "молча втыкает."
+	emote_sound = 'modular_bluemoon/kovac_shitcode/sound/new_emotes/malf.ogg'
+	emote_cooldown = 30.6 SECONDS
