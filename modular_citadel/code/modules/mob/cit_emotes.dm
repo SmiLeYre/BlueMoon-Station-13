@@ -182,6 +182,7 @@
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
+	stat_allowed = UNCONSCIOUS //cats can purr in their sleep
 
 /datum/emote/living/purr/run_emote(mob/living/user, params)
 	. = ..()

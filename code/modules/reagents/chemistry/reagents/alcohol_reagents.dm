@@ -2506,6 +2506,13 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_desc = "Warm milk and some catnip."
 	species_required = "furry"
 
+/datum/reagent/consumable/ethanol/species_drink/frisky_kitty/on_mob_life(mob/living/carbon/M)
+	if(iscatperson(M))
+		if(prob(15))
+			M.emote(pick("nya","purr"))
+			to_chat(M, "<span class = 'notice'>[pick("So tasty~", "Ahh~ can't hold my hapiness!","Tastes perfectly!")]</span>")
+	return ..()
+
 /datum/reagent/consumable/ethanol/species_drink/jell_wyrm
 	name = "Jell Wyrm"
 	color = "#FF6200" //(255, 98, 0)

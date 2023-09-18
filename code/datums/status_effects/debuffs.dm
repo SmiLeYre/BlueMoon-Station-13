@@ -85,7 +85,11 @@
 		carbon_owner.dream()
 	// 2% per second, tick interval is in deciseconds
 	if(prob((tick_interval+1) * 0.2) && owner.health > owner.crit_threshold)
-		owner.emote("snore")
+		var/mob/living/carbon/human/H = owner
+		if(!iscatperson(H))
+			owner.emote("snore")
+		else
+			owner.emote("purr") //cats can purr in their sleep
 
 /**
  * # Transient Status Effect (basetype)

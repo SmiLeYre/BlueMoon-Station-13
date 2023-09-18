@@ -394,3 +394,10 @@
 	icon_state = "bluekeg"
 	reagent_id = /datum/reagent/consumable/ethanol/neurotoxin
 	tank_volume = 100 //2.5x less than the other kegs because it's harder to get
+
+/obj/structure/reagent_dispensers/keg/catnip
+	name = "keg of catnip"
+	desc = "A keg full of hapiness for your cat or felinid."
+	icon_state = "greenkeg"
+	reagent_id = /datum/reagent/pax/catnip
+	tank_volume = 250

@@ -165,3 +165,15 @@
 	message_mime = null
 	emote_sound = 'sound/voice/ura3.ogg'
 	emote_cooldown = 15 SECONDS
+
+/datum/emote/living/audio/uwu
+	key = "uwu"
+	key_third_person = "uwu"
+	message = "lets out an <b>~UwU~</b>"
+	message_mime = null
+	emote_sound = 'sound/voice/uwu1.ogg'
+	emote_cooldown = 5 SECONDS
+
+/datum/emote/living/audio/uwu/run_emote(mob/user, params)
+	emote_sound = pick('sound/voice/uwu1.ogg','sound/voice/uwu2.ogg')
+	. = ..()

@@ -222,7 +222,8 @@
 		/obj/structure/reagent_dispensers/keg/hearty_punch = 3,
 		/obj/structure/reagent_dispensers/keg/red_queen = 3,
 		/obj/structure/reagent_dispensers/keg/narsour = 3,
-		/obj/structure/reagent_dispensers/keg/quintuple_sec = 3)
+		/obj/structure/reagent_dispensers/keg/quintuple_sec = 3,
+		/obj/structure/reagent_dispensers/keg/catnip = 3)
 
 /mob/living/carbon/human/dummy/travelling_trader/bartender/Initialize(mapload) //pick a subtype of ethanol that isn't found in the default set of the booze dispensers reagents
 	. = ..() // RETURN A HINT.
