@@ -495,18 +495,19 @@
 /obj/item/clothing/mask/gas/sechailer/syndicate/tan
 	icon_state = "half_mask_tan"
 
-/obj/item/storage/belt/military/assault/hipbag
+/obj/item/storage/backpack/hipbag
 	name = "Hipbag"
 	icon_state = "hipbag"
 	item_state = "hipbag"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	icon = 'icons/obj/clothing/belts.dmi'
 
-/obj/item/storage/belt/military/assault/hipbag/tan
+/obj/item/storage/backpack/hipbag/tan
 	name = "Tan Hipbag"
 	icon_state = "hipbag_tan"
 	item_state = "hipbag_tan"
 
-/obj/item/storage/belt/military/assault/hipbag/green
+/obj/item/storage/backpack/hipbag/green
 	name = "Green Hipbag"
 	icon_state = "hipbag_green"
 	item_state = "hipbag_green"

@@ -122,6 +122,12 @@
 	icon = 'modular_bluemoon/krashly/icons/obj/poster.dmi'
 	icon_state = "poster_inteq_no_sex"
 
+/obj/structure/sign/poster/contraband/inteq/inteq_vulp
+	name = "InteQ Recruitment"
+	desc = "A brown poster. The words says: 'Even if you jerking off to vulpes, join PMC InteQ. Shatter our enemies!'."
+	icon = 'modular_bluemoon/krashly/icons/obj/poster.dmi'
+	icon_state = "poster_inteq_vulp"
+
 /obj/item/storage/box/inteq_box
 	name = "brown box"
 	desc = "There are definitely no dangerous items inside."

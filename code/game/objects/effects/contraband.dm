@@ -866,4 +866,29 @@
 	desc = "White vulpkanin on the background of a green cross, one of the interplanetary symbol of health and aid."
 	icon_state = "poster_vulp3"
 
+/obj/structure/sign/poster/contraband/hiding
+	name = "Hiding"
+	desc = "A poster showing the peson  hiding in a closet.."
+	icon_state = "hiding"
+
+/obj/structure/sign/poster/contraband/fox
+	name = "Fox"
+	desc = "This poster depicts seriously looking fox."
+	icon_state = "fox"
+
+/obj/structure/sign/poster/contraband/panties
+	name = "Panties"
+	desc = "This lewd poster depicts a half-naked vulpkanin."
+	icon_state = "panties"
+
+/obj/structure/sign/poster/contraband/stockings
+	name = "Stockings"
+	desc = "A poster advertising the Vulp's Secret new collection of underwear."
+	icon_state = "stockings"
+
+/obj/structure/sign/poster/contraband/paws
+	name = "Paws"
+	desc = "This lewd poster depicts a vulpkanine preparing to mate."
+	icon_state = "paws"
+
 #undef PLACE_SPEED
