@@ -174,7 +174,7 @@
 	name = "Luftkuss Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/old_kit
-	ckeywhitelist = list("stgs", "sodastrike", "dolbajob", "hazzi", "krashly")
+	ckeywhitelist = list("stgs", "sodastrike", "dolbajob", "hazzi", "krashly", "fiaskin")
 	subcategory = LOADOUT_SUBCATEGORIES_DON12
 
 /datum/gear/donator/bm/Friskis_Mask
@@ -254,6 +254,13 @@
 	ckeywhitelist = list("vulpshiro", "dolbajob", "stgs", "leony24")
 	subcategory = LOADOUT_SUBCATEGORIES_DON16
 
+/datum/gear/donator/bm/flektarn_casual
+	name = "Flektarn Casual Uniform"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/donator/bm/flektarn_casual
+	ckeywhitelist = list("vulpshiro", "dolbajob", "stgs", "leony24")
+	subcategory = LOADOUT_SUBCATEGORIES_DON16
+
 /datum/gear/donator/bm/flektarn_montur
 	name = "Flektarn Montur"
 	slot = ITEM_SLOT_OCLOTHING
@@ -279,6 +286,13 @@
 	name = "Shiro Silverhand Jacket"
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/donator/bm/SH_jacket
+	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife")
+	subcategory = LOADOUT_SUBCATEGORIES_DON17
+
+/datum/gear/donator/bm/SH_glasses
+	name = "Shiro Silverhand Glasses"
+	slot = ITEM_SLOT_EYES
+	path = /obj/item/clothing/glasses/sunglasses/shiro
 	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife")
 	subcategory = LOADOUT_SUBCATEGORIES_DON17
 

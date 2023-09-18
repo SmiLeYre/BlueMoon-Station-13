@@ -52,6 +52,13 @@
 	item_state = "syndicate-black"
 	can_adjust = TRUE
 
+/obj/item/clothing/under/donator/bm/flektarn_casual
+	name = "flektarn casual uniform"
+	desc = "White tank top with -explosive- camouflaged combat pants."
+	icon_state = "flektarn_casual"
+	item_state = "syndicate-black"
+	can_adjust = FALSE
+
 /obj/item/clothing/under/donator/bm/battle_coat
 	name = "battle coat"
 	desc = "A Tatical uniform with hood."

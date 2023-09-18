@@ -73,3 +73,13 @@
 		SSvis_overlays.remove_vis_overlay(L, cached_vis_overlay)
 		cached_vis_overlay = null
 	return ..()
+
+
+////////.
+
+/obj/item/clothing/glasses/sunglasses/shiro
+	name = "Shiro's Sunglasses"
+	desc = "These silver aviators belong to Shiro Silverhand."
+	icon_state = "shiro"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/accessories.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'

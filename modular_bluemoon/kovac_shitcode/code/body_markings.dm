@@ -87,6 +87,13 @@
 	matrixed_sections = MATRIX_RED_BLUE
 	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
 
+/datum/sprite_accessory/tails_animated/mam_tails_animated/leopard
+	name = "Leopard Tail"
+	icon_state = "leopard"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_BLUE
+	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /datum/sprite_accessory/hair/zoey
@@ -217,6 +224,14 @@
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
 
 /datum/sprite_accessory/tails/human/leopard
+	name = "Leopard Tail"
+	icon_state = "leopard"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_BLUE
+	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
+	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
+
+/datum/sprite_accessory/tails_animated/human/leopard
 	name = "Leopard Tail"
 	icon_state = "leopard"
 	color_src = MATRIXED
