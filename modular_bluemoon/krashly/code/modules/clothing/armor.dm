@@ -218,7 +218,7 @@ obj/item/clothing/suit/donator/bm/cerberus_suit/armored/inkvd
 	desc = "OTA Stormtrooper Hardsuit."
 	icon_state = "hardsuit0-alliance"
 	item_state = "hardsuit0-alliance"
-	tail_state = "hardsuit-white"
+	tail_state = "hardsuit-winter"
 	hardsuit_type = "alliance"
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'

@@ -53,7 +53,7 @@ Contains:
 	desc = "A tactical space suit first developed in a joint effort by the defunct IS-ERI and Nanotrasen in 20XX for military space operations. A tried and true workhorse, it is very difficult to move in but offers robust protection against all threats!"
 	icon_state = "heavy"
 	item_state = "swat_suit"
-	tail_state = "heavy"
+	tail_state = "atmos"
 	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/kitchen/knife/combat)
 	armor = list(MELEE = 40, BULLET = 30, LASER = 30,ENERGY = 30, BOMB = 50, BIO = 90, RAD = 20, FIRE = 100, ACID = 100, WOUND = 25)
 	strip_delay = 120
@@ -318,7 +318,7 @@ Contains:
 	name = "EVA suit"
 	icon_state = "space"
 	item_state = "s_suit"
-	tail_state = "spacenew"
+	tail_state = "syndicate-winter"
 	desc = "A lightweight space suit with the basic ability to protect the wearer from the vacuum of space during emergencies."
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 100, RAD = 20, FIRE = 50, ACID = 65, WOUND = 10)
 
@@ -398,7 +398,7 @@ Contains:
 	desc = "A slimming piece of dubious space carp technology, you suspect it won't stand up to hand-to-hand blows."
 	icon_state = "carp_suit"
 	item_state = "space_suit_syndicate"
-	tail_state = "bombsuit_white"
+	tail_state = "wizard"
 	slowdown = 0	//Space carp magic, never stop believing
 	armor = list(MELEE = -20, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 100, RAD = 75, FIRE = 60, ACID = 75, WOUND = 5) //As whimpy whimpy whoo
 	allowed = list(/obj/item/tank/internals, /obj/item/gun/ballistic/automatic/speargun)	//I'm giving you a hint here
@@ -433,7 +433,7 @@ Contains:
 	desc = "Powerful wards are built into this hardsuit, protecting the user from all manner of paranormal threats."
 	icon_state = "knight_grey"
 	item_state = "knight_grey"
-	tail_state = "hardsuit-paranormal"
+	tail_state = "syndicate-winter"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF
@@ -454,7 +454,7 @@ Contains:
 	name = "inquisitor's hardsuit"
 	icon_state = "hardsuit-inq"
 	item_state = "hardsuit-inq"
-	tail_state = "hardsuit-inquisitor"
+	tail_state = "inq"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal/inquisitor
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal/inquisitor
@@ -514,7 +514,7 @@ Contains:
 	var/torn = FALSE
 	icon_state = "syndicate-orange"
 	item_state = "syndicate-orange"
-	tail_state = "syndicate-orange"
+	tail_state = "orange"
 	slowdown = 2
 	armor = list(MELEE = 5, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 10, FIRE = 0, ACID = 0, WOUND = 5)
 	strip_delay = 65
@@ -549,7 +549,7 @@ Contains:
 	desc = "A custom version of the MK.II SWAT suit, modified to look rugged and tough. Works as a space suit, if you can find a helmet."
 	icon_state = "hunter"
 	item_state = "swat_suit"
-	tail_state = "hardsuit-contractor"
+	tail_state = "contractor"
 	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/kitchen/knife/combat)
 	armor = list(MELEE = 60, BULLET = 40, LASER = 40, ENERGY = 50, BOMB = 100, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 25)
 	strip_delay = 130

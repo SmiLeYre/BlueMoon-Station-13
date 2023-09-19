@@ -36,7 +36,7 @@
 	icon_state = "firesuit"
 	item_state = "firefighter"
 	tail_state = "atmos"
-	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
+	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAUR
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC|STYLE_PAW_TAURIC
 
 
@@ -55,7 +55,7 @@
 	item_state = "firesuit_atmos"
 	tail_state = "atmos"
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
-	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
+	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAUR
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC|STYLE_PAW_TAURIC
 
 /*
@@ -110,7 +110,7 @@
 /obj/item/clothing/suit/bomb_suit/security
 	icon_state = "bombsuit_sec"
 	item_state = "bombsuit_sec"
-	tail_state = "atmos"
+	tail_state = "bomb"
 	allowed = list(/obj/item/gun/energy, /obj/item/melee/baton, /obj/item/restraints/handcuffs)
 
 /obj/item/clothing/head/bomb_hood/white
@@ -120,7 +120,7 @@
 /obj/item/clothing/suit/bomb_suit/white
 	icon_state = "bombsuit_white"
 	item_state = "bombsuit_white"
-	tail_state = "atmos"
+	tail_state = "syndicate-winter"
 
 /*
 * Radiation protection
