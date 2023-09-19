@@ -108,7 +108,7 @@
 	item_state = "SH_jacket"
 	unique_reskin = list(
 		"Default" = list("icon_state" = "SH_jacket"),
-		"Black" = list("icon_state" = "SH_jacket_b")
+		"Black" = list("icon_state" = "SH_jacket_B")
 	)
 
 /obj/item/clothing/suit/toggle/noonar // Наследуем от suit/toggle, чтобы можно было переключать состояние
