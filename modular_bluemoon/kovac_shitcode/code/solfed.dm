@@ -184,7 +184,7 @@
 	//mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/obj_sol.dmi'
 	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/mob_sol.dmi'
-	tail_state = "ert_gcommander"
+	tail_state = "ce"
 	anthro_mob_worn_overlay = 'modular_bluemoon/kovac_shitcode/icons/solfed/mob_sol_digi.dmi'
 
 /// Advanced hardsuit
@@ -194,6 +194,7 @@
 	icon_state = "hardsuit0-solfeds"
 	item_state = "hardsuit0-solfeds"
 	hardsuit_type = "solfeds"
+	tail_state = "ert-alert"
 	armor = list(MELEE = 75, BULLET = 75, LASER = 75, ENERGY = 75, BOMB = 100, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 75)
 
 /obj/item/clothing/suit/space/hardsuit/ert/alert/sol/adv

@@ -390,14 +390,14 @@
 	desc = "Reddish armor."
 	icon_state = "tdred"
 	item_state = "tdred"
-	tail_state = "tdred"
+	tail_state = "syndicate-blood"
 
 /obj/item/clothing/suit/armor/tdome/green
 	name = "thunderdome suit"
 	desc = "Pukish armor."	//classy.
 	icon_state = "tdgreen"
 	item_state = "tdgreen"
-	tail_state = "tdgreen"
+	tail_state = "syndicate-elite"
 
 /obj/item/clothing/suit/armor/riot/knight
 	name = "plate armour"

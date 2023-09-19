@@ -78,7 +78,7 @@
 	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
 	icon_state = "plaguedoc"
 	item_state = "plaguedoc"
-	tail_state = "plaguedoctor"
+	tail_state = "inteq-brown"
 	gas_transfer_coefficient = 0.01
 	permeability_coefficient = 0.01
 	clothing_flags = THICKMATERIAL
@@ -169,7 +169,7 @@ obj/item/clothing/suit/donator/bm/cerberus_suit/armored/inkvd
 	desc = "InteQ elite stormtrooper hardsuit."
 	icon_state = "hardsuit0-inteqe"
 	item_state = "hardsuit0-inteqe"
-	tail_state = "hardsuit1-commsoff"
+	tail_state = "inteq-elite"
 	hardsuit_type = "inteqe"
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
@@ -193,7 +193,7 @@ obj/item/clothing/suit/donator/bm/cerberus_suit/armored/inkvd
 	desc = "InteQ stormtrooper hardsuit."
 	icon_state = "hardsuit0-inteq"
 	item_state = "hardsuit0-inteq"
-	tail_state = "hardsuit1-commsoff"
+	tail_state = "inteq"
 	hardsuit_type = "inteq"
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
@@ -217,7 +217,7 @@ obj/item/clothing/suit/donator/bm/cerberus_suit/armored/inkvd
 	desc = "InteQ shielded stormtrooper hardsuit."
 	icon_state = "hardsuit0-inteq"
 	item_state = "hardsuit0-inteq"
-	tail_state = "hardsuit1-commsoff"
+	tail_state = "inteq"
 	hardsuit_type = "inteq"
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
@@ -240,7 +240,7 @@ obj/item/clothing/suit/donator/bm/cerberus_suit/armored/inkvd
 	name = "brown space suit"
 	icon_state = "space-inteq"
 	item_state = "space-inteq"
-	tail_state = "syndicate-black"
+	tail_state = "inteq-brown"
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/suits_digidrated.dmi'
