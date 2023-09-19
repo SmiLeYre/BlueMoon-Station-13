@@ -121,8 +121,8 @@
 #define FREQ_DS2 1209
 
 #define RADIO_CHANNEL_PIRATE "Illegal"
-#define RADIO_KEY_PIRATE "p"
-#define RADIO_TOKEN_PIRATE ":p"
+#define RADIO_KEY_PIRATE "z"
+#define RADIO_TOKEN_PIRATE ":z"
 #define FREQ_PIRATE 1208
 
 #define RADIO_CHANNEL_INTEQ "InteQ"

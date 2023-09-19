@@ -87,6 +87,8 @@
 /obj/item/radio/proc/make_pirate() // Turns normal radios into pirate radio
 	qdel(keyslot)
 	keyslot = new /obj/item/encryptionkey/pirate
+	syndie = 1
+	recalculateChannels()
 
 /obj/item/radio/proc/make_inteq() // Turns normal radios into InteQ radios!
 	qdel(keyslot)

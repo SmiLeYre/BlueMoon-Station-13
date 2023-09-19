@@ -1,5 +1,5 @@
-/obj/item/radio/headset/pirate/slaver/Initialize()
-	. = ..()
+///obj/item/radio/headset/pirate/slaver/Initialize()
+//	. = ..()
 
-	set_frequency(FREQ_PIRATE)
-	freqlock = TRUE
+//	set_frequency(FREQ_PIRATE)
+//	freqlock = TRUE
