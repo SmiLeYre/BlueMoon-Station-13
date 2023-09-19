@@ -106,6 +106,10 @@
 	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
 	icon_state = "SH_jacket"
 	item_state = "SH_jacket"
+	unique_reskin = list(
+		"Default" = list("icon_state" = "SH_jacket"),
+		"Black" = list("icon_state" = "SH_jacket_b")
+	)
 
 /obj/item/clothing/suit/toggle/noonar // Наследуем от suit/toggle, чтобы можно было переключать состояние
 	name = "syndicate jacket"
