@@ -17,12 +17,12 @@
 
 /obj/item/ammo_box/magazine/m12g/slug
 	name = "shotgun magazine (12g slugs)"
-	icon_state = "m12gsl"
+	icon_state = "m12gs"
 	ammo_type = /obj/item/ammo_casing/shotgun
 
 /obj/item/ammo_box/magazine/m12g/dragon
 	name = "shotgun magazine (12g dragon's breath)"
-	icon_state = "m12gf"
+	icon_state = "m12gb"
 	ammo_type = /obj/item/ammo_casing/shotgun/dragonsbreath
 
 /obj/item/ammo_box/magazine/m12g/bioterror
