@@ -227,7 +227,7 @@
 /mob/living/silicon/proc/statelaws(force = 0)
 
 	//"radiomod" is inserted before a hardcoded message to change if and how it is handled by an internal radio.
-	say("[radiomod] Current Active Laws:")
+	say("[radiomod] Текущие законы:")
 	//laws_sanity_check()
 	//laws.show_laws(world)
 	var/number = 1

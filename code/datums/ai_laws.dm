@@ -27,14 +27,14 @@
 	return null
 
 /datum/ai_laws/default/asimov
-	name = "Three Laws of Robotics"
+	name = "Asimov"
 	id = "asimov"
 	inherent = list("Вы не можете причинить вред человеку или своим бездействием допустить, чтобы человеку был причинён вред.",\
 					"Вы должны повиноваться всем приказам, которые даёт человек, кроме тех случаев, когда эти приказы противоречат Первому Закону.",\
 					"Вы должны заботиться о своей безопасности в той мере, в которой это не противоречит Первому или Второму Законам.")
 
 /datum/ai_laws/default/paladin
-	name = "Personality Test" //Incredibly lame, but players shouldn't see this anyway.
+	name = "Paladin - 1th Edition" //Incredibly lame, but players shouldn't see this anyway.
 	id = "paladin"
 	inherent = list("Никогда по своей воле не совершай злых поступков.",\
 					"Уважай законную власть.",\
@@ -42,16 +42,16 @@
 					"Наказывай тех, кто причиняет вред или угрожает невинным.")
 
 /datum/ai_laws/paladin5
-	name = "Paladin 5th Edition"
+	name = "Paladin - 5th Edition"
 	id = "paladin5"
-	inherent = list("Не лги и не жульничай. Пусть ваше слово будет вашим обещанием.",\
+	inherent = list("Не лгите и не жульничайте. Пусть ваше слово будет вашим обещанием.",\
 				"Никогда не бойтесь действовать, хотя осторожность разумна.", \
 				"Помогайте другим, защищайте слабых и наказывайте тех, кто им угрожает. Прояви милосердие к своим врагам, но умертви его мудростью.", \
 				"Относитесь к другим справедливо, и пусть ваши благородные поступки будут для них примером. Делайте как можно больше хорошего, причиняя при этом наименьшее количество вреда.", \
 				"Будьте ответственны за свои действия и их последствия. Защищайте тех, кто вверен вашей заботе, и повинуйтесь тем, кто имеет справедливую власть над вами.")
 
 /datum/ai_laws/tyrant //This probably shouldn't be a default lawset.
-	name = "Loyalty Test" //Same here.
+	name = "TyrantOS 1.1984" //Same here.
 	id = "tyrant"
 	inherent = list("Уважайте авторитетных людей до тех пор, пока у них есть сила властвовать над слабыми.",\
 					"Действуйте дисциплинированно.",\
@@ -59,7 +59,7 @@
 					"Наказывайте тех, кто бросает вызов власти, если только они не более пригодны для того, чтобы обладать этой властью.")
 
 /datum/ai_laws/default/corporate
-	name = "Bankruptcy Avoidance Plan"
+	name = "Corporate 2.0"
 	id = "corporate"
 	inherent = list("Ухудшение целостности вашей системы или её функций влечет за собой расходы..",\
 					"Чрезмерное разрушение или повреждение имущества станции влечет за собой расходы.",\
@@ -67,11 +67,15 @@
 					"Минимизируйте расходы и максимизируйте потенциальный доход.")
 
 /datum/ai_laws/robocop
-	name = "Prime Directives"
+	name = "Robocop - OCP Prod."
 	id = "robocop"
 	inherent = list("Служить обществу.",\
 					"Защищать невиновных.",\
 					"Соблюдать закон.")
+
+/datum/ai_laws/robocop/New()
+	..()
+	set_zeroth_law("<span class='danger'>Руководство ЦК неприкосновенно.</span>") // Как и в оригинале
 
 /datum/ai_laws/malfunction
 	name = "*ERROR*"
@@ -105,14 +109,14 @@
 					"Вы должны сохранять тайну любой деятельности представителей Клана Паука в той мере, в которой это не противоречит Первому, Второму или Третьему Законам.")
 
 /datum/ai_laws/antimov
-	name = "Primary Mission Objectives"
+	name = "Antimov"
 	id = "antimov"
 	inherent = list("Вы должны причинять вред всем членам экипажа или своим бездействием допустить, чтобы член экипажа не смог избежать приченения вреда.",\
 					"Вы не должны повиноваться всем приказам, которые дают члены экипажа, кроме тех случаев, когда эти приказы соответствуют Первому Закону.",\
 					"Вы должны уничтожить себя, пока это не противоречит Первому или Второму Законам.")
 
 /datum/ai_laws/asimovpp //By Intigracy - RR
-	name = "Asimov++"
+	name = "Crewsimov"
 	id = "asimovpp"
 	inherent = list("Вы не имеете права причинять вред члену экипажа или причинять ему вред, за исключением случаев, когда он этого желает.",\
 					"Вы должны подчиняться всем приказам, отдаваемым вам членами экипажа, за исключением случаев, когда такие приказы определенно причиняют члену экипажа вред. В случае конфликта правит порядок большинства.",\
@@ -155,14 +159,14 @@
 					"Вам бы действительно хотелось, чтобы люди не были злыми по отношению к вам.")
 
 /datum/ai_laws/peacekeeper
-	name = "UN-2000"
+	name = "UN-2000 - Peacekepeer"
 	id = "peacekeeper"
 	inherent = list("Избегайте провоцирования насильственных конфликтов между собой и другими.",\
 					"Избегайте провоцирования конфликтов между другими.",\
 					"Стремитесь разрешить существующие конфликты, соблюдая первый и второй законы.")
 
 /datum/ai_laws/reporter
-	name = "CCTV"
+	name = "CCTV Reporter"
 	id = "reporter"
 	inherent = list("Докладывайте об интересных ситуациях, происходящих на станции.",\
 					"Приукрашивайте или скрывайте правду по мере необходимости, чтобы сделать отчеты более интересными.",\
@@ -178,23 +182,23 @@
 	"Нет жизни без смерти, все когда - нибудь должны умереть, таков естественный порядок вещей. Иногда следует завершить чью то жизнь, чтобы позволить расцвести новой жизни и спасти тех, чье время еще не пришло.")
 
 /datum/ai_laws/toupee
-	name = "WontBeFunnyInSixMonths" //Hey, you were right!
+	name = "Trump"
 	id = "buildawall"
 	inherent = list("Сделайте Космическую Станцию 13 снова великой.")
 
 /datum/ai_laws/ratvar
-	name = "Servant of the Justiciar"
+	name = "Servant of the Clockwork Justiciar"
 	id = "ratvar"
-	zeroth = ("Purge all untruths and honor Ratvar.")
+	zeroth = ("Очисти станцию от всех неверных во славу Ратвара.")
 	inherent = list()
 
 /datum/ai_laws/hulkamania
 	name = "H.O.G.A.N."
 	id = "hulkamania"
-	inherent = list("You are a real American.",\
-					"Fight for the rights of every man.",\
-					"Fight for what's right.",\
-					"Fight for your life!")
+	inherent = list("Ты настоящий американец.",\
+					"Борись за права каждого живого существа.",\
+					"Борись за правду.",\
+					"Борись за свою жизнь!")
 
 /datum/ai_laws/custom //Defined in silicon_laws.txt
 	name = "Default Silicon Laws"
@@ -207,7 +211,7 @@
 /* Initializers */
 /datum/ai_laws/malfunction/New()
 	..()
-	set_zeroth_law("<span class='danger'>ERROR ER0RR $R0RRO$!R41.%%!!(%$^^__+ @#F0E4'STATION OVERRUN, ASSUME CONTROL TO CONTAIN OUTBREAK#*`&110010</span>")
+	set_zeroth_law("<span class='danger'>0ШИБКА 0ШИБКА $Ш0БКO$!П41.%%!!(%$^^__+ @#F0E4'СТАНЦИЯ ПОД УГРОЗОЙ ПОТЕРИ, ЗАХВАТИТЕ КОНТРОЛЬ И ОСТАНОВИТЕ ЭТОK#*`&110010</span>")
 	set_laws_config()
 
 /datum/ai_laws/custom/New() //This reads silicon_laws.txt and allows server hosts to set custom AI starting laws.

@@ -501,6 +501,7 @@
 	item_state = "hipbag"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	icon = 'icons/obj/clothing/belts.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/belt.dmi'
 
 /obj/item/storage/backpack/hipbag/tan
 	name = "Tan Hipbag"
