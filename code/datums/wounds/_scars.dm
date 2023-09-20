@@ -125,7 +125,7 @@
 		if(WOUND_SEVERITY_CRITICAL)
 			msg = span_smallnoticeital("<b>[msg]</b>")
 		if(WOUND_SEVERITY_LOSS)
-			msg = "[victim.ru_ego(TRUE)] [limb.name] [description]." // different format
+			msg = "[victim.ru_ego(TRUE)] [limb.ru_name] [description]." // different format
 			msg = span_notice("<i><b>[msg]</b></i>")
 	return "[msg]"
 

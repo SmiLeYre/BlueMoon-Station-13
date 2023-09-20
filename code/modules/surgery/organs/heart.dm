@@ -1,5 +1,7 @@
 /obj/item/organ/heart
 	name = "heart"
+	ru_name = "сердце"
+	ru_name_capital = "Сердце"
 	desc = "Мне жаль бессердечного ублюдка, который потерял это."
 	icon_state = "heart-on"
 	zone = BODY_ZONE_CHEST

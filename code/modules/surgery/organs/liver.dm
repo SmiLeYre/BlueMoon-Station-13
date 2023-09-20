@@ -4,6 +4,8 @@
 
 /obj/item/organ/liver
 	name = "liver"
+	ru_name = "печень"
+	ru_name_capital = "Печень"
 	icon_state = "liver"
 	w_class = WEIGHT_CLASS_NORMAL
 	zone = BODY_ZONE_CHEST

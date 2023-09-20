@@ -12,6 +12,8 @@
 	var/datum/weakref/original_owner = null
 	var/status = BODYPART_ORGANIC
 	var/needs_processing = FALSE
+	var/ru_name = ""
+	var/ru_name_capital = ""
 
 	var/body_zone //BODY_ZONE_CHEST, BODY_ZONE_L_ARM, etc , used for def_zone
 	var/list/aux_icons // associative list, currently used for hands

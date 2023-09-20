@@ -146,16 +146,16 @@
 		var/obj/item/I = get_active_held_item()
 		if(I && dropItemToGround(I))
 			playsound(loc, 'sound/weapons/slash.ogg', 25, 1, -1)
-			visible_message("<span class='danger'>[M] has disarmed [src]!</span>", \
-					"<span class='userdanger'>[M] has disarmed you!</span>", null, COMBAT_MESSAGE_RANGE, null, M,
-					"<span class='danger'>You have disarmed [src]!</span>")
+			visible_message("<span class='danger'>[M] разоружает [src]!</span>", \
+					"<span class='userdanger'>[M] разоружил вас!</span>", null, COMBAT_MESSAGE_RANGE, null, M,
+					"<span class='danger'>Вы разоружили [src]!</span>")
 		else if(!M.client || prob(5)) // only natural monkeys get to stun reliably, (they only do it occasionaly)
 			playsound(loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
 			DefaultCombatKnockdown(100)
 			log_combat(M, src, "tackled")
-			visible_message("<span class='danger'>[M] has tackled down [src]!</span>", \
-				"<span class='userdanger'>[M] has tackled you down!</span>", null, COMBAT_MESSAGE_RANGE, null, M,
-				"<span class='danger'>You have tackled [src] down!</span>")
+			visible_message("<span class='danger'>[M] повалил [src]!</span>", \
+				"<span class='userdanger'>[M] повалил вас!</span>", null, COMBAT_MESSAGE_RANGE, null, M,
+				"<span class='danger'>Вы повалили [src]!</span>")
 
 	if(M.limb_destroyer)
 		dismembering_strike(M, affecting.body_zone)
@@ -329,7 +329,7 @@
 /mob/living/carbon/human/blob_act(obj/structure/blob/B)
 	if(stat == DEAD)
 		return
-	show_message("<span class='userdanger'>The blob attacks you!</span>")
+	show_message("<span class='userdanger'>Блоб атакует вас!</span>")
 	var/dam_zone = pick(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 	var/obj/item/bodypart/affecting = get_bodypart(ran_zone(dam_zone))
 	apply_damage(5, BRUTE, affecting, run_armor_check(affecting, MELEE))
@@ -361,7 +361,7 @@
 		if(shock_damage * siemens_coeff >= 1 && prob(25))
 			var/obj/item/organ/heart/heart = getorganslot(ORGAN_SLOT_HEART)
 			if(heart.Restart() && stat == CONSCIOUS)
-				to_chat(src, "<span class='notice'>You feel your heart beating again!</span>")
+				to_chat(src, "<span class='notice'>Вы чувствуете, как ваше сердце забилось вновь!</span>")
 	electrocution_animation(40)
 
 /mob/living/carbon/human/emp_act(severity)
@@ -380,7 +380,7 @@
 	for(var/obj/item/bodypart/L in src.bodyparts)
 		if(L.is_robotic_limb())
 			if(!informed)
-				to_chat(src, "<span class='userdanger'>You feel a sharp pain as your robotic limbs overload.</span>")
+				to_chat(src, "<span class='userdanger'>Вы ощущаете острую боль от перегрузки вашей роботизированной конечности.</span>")
 				informed = TRUE
 			L.receive_damage(0,severity/10)
 			if(!do_not_stun)	//Tiny bit better than checking for the trait another six times in succession
@@ -409,7 +409,7 @@
 				update_inv_neck()
 				update_inv_head()
 			else
-				to_chat(src, "<span class='notice'>Your [head_clothes.name] protects your head and face from the acid!</span>")
+				to_chat(src, "<span class='notice'>Ваша одежда - [head_clothes.name] - защищает ваше лицо и голову от кислоты!</span>")
 		else
 			. = get_bodypart(BODY_ZONE_HEAD)
 			if(.)
@@ -430,7 +430,7 @@
 				update_inv_w_uniform()
 				update_inv_wear_suit()
 			else
-				to_chat(src, "<span class='notice'>Your [chest_clothes.name] protects your body from the acid!</span>")
+				to_chat(src, "<span class='notice'>Ваша одежда - [chest_clothes.name] - защищает ваше тело от кислоты!</span>")
 		else
 			. = get_bodypart(BODY_ZONE_CHEST)
 			if(.)

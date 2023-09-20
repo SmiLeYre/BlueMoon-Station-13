@@ -1,5 +1,7 @@
 /obj/item/organ/appendix
 	name = "appendix"
+	ru_name = "аппендикс"
+	ru_name_capital = "Аппендикс"
 	icon_state = "appendix"
 	zone = BODY_ZONE_PRECISE_GROIN
 	slot = ORGAN_SLOT_APPENDIX

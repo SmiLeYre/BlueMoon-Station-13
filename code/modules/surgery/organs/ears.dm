@@ -1,5 +1,7 @@
 /obj/item/organ/ears
 	name = "ears"
+	ru_name = "уши"
+	ru_name_capital = "Уши"
 	icon_state = "ears"
 	desc = "There are three parts to the ear. Inner, middle and outer. Only one of these parts should be normally visible."
 	zone = BODY_ZONE_HEAD

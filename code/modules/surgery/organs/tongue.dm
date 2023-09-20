@@ -2,6 +2,8 @@
 
 /obj/item/organ/tongue
 	name = "tongue"
+	ru_name = "язык"
+	ru_name_capital = "Язык"
 	desc = "A fleshy muscle mostly used for lying."
 	icon_state = "tonguenormal"
 	zone = BODY_ZONE_PRECISE_MOUTH

@@ -86,7 +86,7 @@
 
 /datum/mood_event/table_limbsmash/add_effects(obj/item/bodypart/banged_limb)
 	if(banged_limb)
-		description = "<span class='warning'>Моя грёбанная конечность, [banged_limb.name]! Чёрт возьми, это больно...</span>\n"
+		description = "<span class='warning'>Моя грёбанная конечность, [banged_limb.ru_name]! Чёрт возьми, это больно...</span>\n"
 
 /datum/mood_event/table/add_effects()
 	if(ishuman(owner))

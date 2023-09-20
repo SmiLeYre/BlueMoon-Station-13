@@ -2,6 +2,8 @@
 
 /obj/item/organ/tail
 	name = "tail"
+	ru_name = "хвост"
+	ru_name_capital = "Хвост"
 	desc = "A severed tail. What did you cut this off of?"
 	icon_state = "severedtail"
 	zone = BODY_ZONE_PRECISE_GROIN
