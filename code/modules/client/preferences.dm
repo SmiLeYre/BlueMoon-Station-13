@@ -2210,7 +2210,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							ghost_others = GHOST_OTHERS_SIMPLE
 
 				if("name")
-					var/new_name = input(user, "Choose your character's name:", "Character Preference")  as text|null
+					var/new_name = input(user, "Задайте имя вашего персонажа:", "Character Preference")  as text|null
 					if(new_name)
 						new_name = reject_bad_name(new_name, allow_numbers = TRUE)
 						if(new_name)
@@ -2219,28 +2219,28 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							to_chat(user, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, А-Я, а-я, -, ' and .</font>")
 
 				if("age")
-					var/new_age = tgui_input_number(user, "Choose your character's age:\n([AGE_MIN]-[AGE_MAX_INPUT])", "Character Preference", null, AGE_MAX_INPUT, AGE_MIN)
+					var/new_age = tgui_input_number(user, "Задайте возраст вашего персонажа:\n([AGE_MIN]-[AGE_MAX_INPUT])", "Character Preference", null, AGE_MAX_INPUT, AGE_MIN)
 					if(new_age)
 						age = max(min( round(text2num(new_age)), AGE_MAX_INPUT),AGE_MIN)
 
 				if("security_records")
-					var/rec = stripped_multiline_input(usr, "Set your security record note section. This should be IC!", "Security Records", html_decode(security_records), MAX_FLAVOR_LEN, TRUE)
+					var/rec = stripped_multiline_input(usr, "Напишите заметки службы безопасности о вашем персонаже.", "Security Records", html_decode(security_records), MAX_FLAVOR_LEN, TRUE)
 					if(!isnull(rec))
 						security_records = rec
 
 				if("medical_records")
-					var/rec = stripped_multiline_input(usr, "Set your medical record note section. This should be IC!", "Medical Records", html_decode(medical_records), MAX_FLAVOR_LEN, TRUE)
+					var/rec = stripped_multiline_input(usr, "Напишите медицинские заметки о вашем персонаже.", "Medical Records", html_decode(medical_records), MAX_FLAVOR_LEN, TRUE)
 					if(!isnull(rec))
 						medical_records = rec
 
 				if("flavor_text")
-					var/msg = input(usr, "Задайте описание вашего персонажа. Это также может быть использовано для OOC-заметок и предпочтений!", "Описание Bнешности Персонажа", features["flavor_text"]) as message|null //Skyrat edit, removed stripped_multiline_input()
+					var/msg = input(usr, "Задайте внешнее описание вашего персонажа.", "Описание Bнешности Персонажа", features["flavor_text"]) as message|null //Skyrat edit, removed stripped_multiline_input()
 					if(!isnull(msg))
 						features["flavor_text"] = strip_html_simple(msg, MAX_FLAVOR_LEN, TRUE) //Skyrat edit, removed strip_html_simple()
 
 				//SPLURT edit
 				if("naked_flavor_text")
-					var/msg = input(usr, "Задайте описание вашего персонажа с упором на наготу. Описание предполагает под собой IC-подтекст с последующим описанием, как бы выглядел ваш персонаж, если бы он был голым.", "Описание Bнешности Голого Персонажа", features["naked_flavor_text"]) as message|null
+					var/msg = input(usr, "Задайте описание вашего персонажа без одежды.", "Описание Bнешности Голого Персонажа", features["naked_flavor_text"]) as message|null
 					if(!isnull(msg))
 						features["naked_flavor_text"] = strip_html_simple(msg, MAX_FLAVOR_LEN, TRUE)
 				//SPLURT edit end

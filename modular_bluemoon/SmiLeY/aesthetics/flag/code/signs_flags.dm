@@ -81,6 +81,12 @@
 	icon_state = "flag_syndi"
 	item_flag = /obj/item/sign/flag/syndicate
 
+/obj/structure/sign/flag/vulp
+	name = "flag of Vulpcanines"
+	desc = "Flag of humanoid dog-like organisms from the Vazzend system. Now they live on the Kellun and Dalhstadt, although their original homeland was known as Altam."
+	icon_state = "flag_vulp"
+	item_flag = /obj/item/sign/flag/vulp
+
 /obj/structure/sign/flag/syndicate/directional/north //Pixel offsets get overwritten on New()
 	dir = SOUTH
 	pixel_y = 32
@@ -167,15 +173,15 @@
 			RESKIN_ITEM_STATE = "folded_agurk",
 			sign_path = /obj/structure/sign/flag/ssc
 		),
-		"Mars" = list(
-			RESKIN_ICON_STATE = "folded_mars",
-			RESKIN_ITEM_STATE = "folded_mars",
-			sign_path = /obj/structure/sign/flag/mars
+		"Vulpcanine" = list(
+			RESKIN_ICON_STATE = "folded_vulp",
+			RESKIN_ITEM_STATE = "folded_vulp",
+			sign_path = /obj/structure/sign/flag/vulp
 		),
-		"Mothic" = list(
-			RESKIN_ICON_STATE = "folded_mothic",
-			RESKIN_ITEM_STATE = "folded_mothic",
-			sign_path = /obj/structure/sign/flag/mothic
+		"Human Commonwealth Association" = list(
+			RESKIN_ICON_STATE = "folded_flag_hca",
+			RESKIN_ITEM_STATE = "folded_flag_hca",
+			sign_path = /obj/item/sign/flag/humancommonwealth
 		),
 		"Shigu" = list(
 			RESKIN_ICON_STATE = "folded_shigu",
@@ -186,11 +192,6 @@
 			RESKIN_ICON_STATE = "folded_goldring",
 			RESKIN_ITEM_STATE = "folded_goldring",
 			sign_path = /obj/structure/sign/flag/goldring
-		),
-		"Human Commonwealth Association" = list(
-			RESKIN_ICON_STATE = "folded_flag_hca",
-			RESKIN_ITEM_STATE = "folded_flag_hca",
-			sign_path = /obj/item/sign/flag/humancommonwealth
 		),
 	)
 
@@ -299,3 +300,9 @@
 	desc = "This is the flag of the Gold Ring. The Golden Ring is a megalopolis in the southern part of Tal that has grown to the size of a full-fledged state. Being located around the ColVilous salt Lake, the Golden Ring has become an oasis in the boundless desert where trade and culture flourish"
 	icon_state = "flag_goldring"
 	item_flag = /obj/item/sign/flag/goldring
+
+/obj/item/sign/flag/vulp
+	name = "folded flag of Vulpcanins"
+	desc = "The folded flag of Vulps."
+	icon_state = "folded_vulp"
+	sign_path = /obj/structure/sign/flag/vulp
