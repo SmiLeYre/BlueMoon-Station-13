@@ -4147,6 +4147,7 @@
 #include "modular_bluemoon\rakeideas\flag\code\parties_flags.dm"
 #include "modular_bluemoon\rakeideas\hca\code\hca_forms.dm"
 #include "modular_bluemoon\rbmk_modification\rbmk_modification.dm"
+#include "modular_bluemoon\service_staff\service_staff.dm"
 #include "modular_bluemoon\size_tool\size_tool.dm"
 #include "modular_bluemoon\SmiLeY\aesthetics\airlock\code\airlock.dm"
 #include "modular_bluemoon\SmiLeY\aesthetics\barsign\barsigns.dm"
