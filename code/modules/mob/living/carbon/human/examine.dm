@@ -198,7 +198,7 @@
 		if(client.prefs.toggles & VERB_CONSENT)
 			. += "<b>Игрок разрешил непристойные действия по отношению к его персонажу.</b>"
 		else
-			. += "<b>Игрок НЕ разрешил  непристойные действия по отношению к его персонажем.</b>"
+			. += "<b>Игрок НЕ разрешил непристойные действия по отношению к его персонажу.</b>"
 
 	//SPLURT edit
 	if((user.client?.prefs.cit_toggles & GENITAL_EXAMINE))
@@ -234,13 +234,13 @@
 			damage_text = "выглядит обвисшей и бледноватой"
 		else
 			damage_text = (body_part.brute_dam >= body_part.burn_dam) ? body_part.heavy_brute_msg : body_part.heavy_burn_msg
-		msg += "<B>[ru_ego(TRUE)] [body_part.name] [damage_text]!</B>\n"
+		msg += "<B>[ru_ego(TRUE)] [body_part.ru_name] [damage_text]!</B>\n"
 
 	var/obj/item/organ/vocal_cords/Vc = user.getorganslot(ORGAN_SLOT_VOICE)
 	if(Vc)
 		if(istype(Vc, /obj/item/organ/vocal_cords/velvet))
 			if(client?.prefs.cit_toggles & HYPNO)
-				msg += "<span class='velvet'><i>Вы чувствуете, как резонируют ваши аккорды, глядя на н[t_ego].</i></span>\n"
+				msg += "<span class='velvet'><i>Вы чувствуете, как резонируют ваши голосовые связки при взгляде на н[t_ego].</i></span>\n"
 
 	//stores missing limbs
 	var/l_limbs_missing = 0
@@ -345,9 +345,9 @@
 
 		var/list/bleed_text
 		if(appears_dead)
-			bleed_text = list("<span class='deadsay'><B>Кровь брызгает струйками из [ru_ego(FALSE)]")
+			bleed_text = list("<span class='deadsay'><B>Кровь брызгает струйками из [ru_ego(FALSE)] конечности -")
 		else
-			bleed_text = list("<B>[t_on] имеет кровотечение из [ru_ego(FALSE)]")
+			bleed_text = list("<B>[t_on] имеет кровотечение [ru_ego(FALSE)] в конечности -")
 
 		switch(num_bleeds)
 			if(1 to 2)
@@ -355,7 +355,7 @@
 			if(3 to INFINITY)
 				for(var/i in 1 to (num_bleeds - 1))
 					var/obj/item/bodypart/body_part = bleeding_limbs[i]
-					bleed_text += " [ru_otkuda_zone(body_part.name)],"
+					bleed_text += " [ru_otkuda_zone(body_part.ru_name)],"
 				bleed_text += " и [ru_otkuda_zone(bleeding_limbs[num_bleeds].name)]"
 
 		if(appears_dead)
@@ -368,7 +368,7 @@
 
 		for(var/i in grasped_limbs)
 			var/obj/item/bodypart/grasped_part = i
-			bleed_text += "[t_on] сжимает свою [grasped_part.name], пока из той течёт кровь!\n"
+			bleed_text += "[t_on] сжимает свою конечность - [grasped_part.ru_name] -, пока из той течёт кровь!\n"
 
 		msg += bleed_text.Join()
 
@@ -501,7 +501,7 @@
 					if(R)
 						. += "<a href='?src=[REF(src)];hud=m;evaluation=1'>\[Медицинское заключение\]</a>"
 					if(traitstring)
-						. += "<span class='info'>Обнаружены Физиологические Черты:\n[traitstring]</span>"
+						. += "<span class='info'>Обнаружены особенности:\n[traitstring]</span>"
 
 				if(istype(H.glasses, /obj/item/clothing/glasses/hud/security) || istype(CIH, /obj/item/organ/cyberimp/eyes/hud/security))
 					if(!user.stat && user != src)
@@ -518,7 +518,7 @@
 							"<a href='?src=[REF(src)];hud=s;view_comment=1'>\[Просмотреть комментарии\] </a>",
 							"<a href='?src=[REF(src)];hud=s;add_comment=1'>\[Добавить комментарий\]</a>"), "")
 	else if(isobserver(user) && traitstring)
-		. += "<span class='info'><b>Физиологические Черты:</b> [traitstring]</span>"
+		. += "<span class='info'><b>Особенности:</b> [traitstring]</span>"
 
 	if(LAZYLEN(.) > 2) //Want this to appear after species text
 		.[2] += "<hr>"

@@ -836,7 +836,7 @@
 
 /obj/structure/sign/poster/official/poster_vulp8
 	name = "NT Vulp"
-	desc = "A poster depicting the famous mega-corporation Nanotrasen in form of a vulpcanine. It has a Nanotrasen logo on it."
+	desc = "A poster depicting the famous mega-corporation Nanotrasen in form of a vulpkanin. It has a Nanotrasen logo on it."
 	icon_state = "poster_vulp8"
 
 ////
@@ -878,7 +878,7 @@
 
 /obj/structure/sign/poster/contraband/vulp5
 	name = "Vulptide"
-	desc = "A rebellious poster symbolizing vulpcanine and assistant solidarity."
+	desc = "A rebellious poster symbolizing vulpkanins and assistants solidarity."
 	icon_state = "poster_vulp5"
 
 /obj/structure/sign/poster/contraband/vulp6

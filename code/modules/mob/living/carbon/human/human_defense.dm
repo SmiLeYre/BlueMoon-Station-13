@@ -597,7 +597,7 @@
 				var/no_damage
 				if(status == "в норме" || status == "не повреждена")
 					no_damage = TRUE
-				to_send += "<span class='[no_damage ? "notice" : "warning"]'>Ваша [LB.ru_name] [HAS_TRAIT(src, TRAIT_SELF_AWARE) ? "" : ""] [status].</span>\n"
+				to_send += "<span class='[no_damage ? "notice" : "warning"]'>Ваша [LB.ru_name] [status].</span>\n"
 
 				for(var/thing in LB.wounds)
 					var/datum/wound/W = thing

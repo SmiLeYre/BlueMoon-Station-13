@@ -402,7 +402,7 @@
 	log_combat(src,C,"stunned")
 	if(declare_arrests)
 		var/area/location = get_area(src)
-		speak("[arrest_type ? "Веду Задержание" : "Провожу Арест"] Преступника [C] уровня [threat] в [location].", radio_channel)
+		speak("[arrest_type ? "Веду задержание" : "Произвожу арест"] нарушителя [C] уровня [threat] в локации: [location].", radio_channel)
 	C.visible_message("<span class='danger'>[process_emote("ATTACK_ONE", C)]</span>",\
 							"<span class='userdanger'>[process_emote("ATTACK_TWO", C)]</span>")
 

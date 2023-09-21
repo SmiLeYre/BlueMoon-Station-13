@@ -417,9 +417,9 @@
 				visible_message("<span class='notice'><b>[src]</b> осматривает себя.</span>", "")
 				output = "<span class='notice'>Ты осматриваешь себя.</span><hr>"
 			if(I.isEmbedHarmless())
-				output += "\n\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>[I] застряло в твоей [LB.name]!</a>"
+				output += "\n\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>[I] врезался в вашу конечность - [LB.ru_name]!</a>"
 			else
-				output += "\n\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>[I] застряло в твоей [LB.name]!</a>"
+				output += "\n\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>[I] застрял в вашу конечность - [LB.ru_name]!</a>"
 
 	if(output)
 		to_chat(src, examine_block(output))

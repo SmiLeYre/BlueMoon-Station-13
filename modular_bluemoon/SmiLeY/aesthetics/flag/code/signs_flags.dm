@@ -82,7 +82,7 @@
 	item_flag = /obj/item/sign/flag/syndicate
 
 /obj/structure/sign/flag/vulp
-	name = "flag of Vulpcanines"
+	name = "flag of Vulpkanins"
 	desc = "Flag of humanoid dog-like organisms from the Vazzend system. Now they live on the Kellun and Dalhstadt, although their original homeland was known as Altam."
 	icon_state = "flag_vulp"
 	item_flag = /obj/item/sign/flag/vulp
@@ -173,7 +173,7 @@
 			RESKIN_ITEM_STATE = "folded_agurk",
 			sign_path = /obj/structure/sign/flag/ssc
 		),
-		"Vulpcanine" = list(
+		"Vulpkanin" = list(
 			RESKIN_ICON_STATE = "folded_vulp",
 			RESKIN_ITEM_STATE = "folded_vulp",
 			sign_path = /obj/structure/sign/flag/vulp
@@ -302,7 +302,7 @@
 	item_flag = /obj/item/sign/flag/goldring
 
 /obj/item/sign/flag/vulp
-	name = "folded flag of Vulpcanins"
+	name = "folded flag of Vulpkanins"
 	desc = "The folded flag of Vulps."
 	icon_state = "folded_vulp"
 	sign_path = /obj/structure/sign/flag/vulp
