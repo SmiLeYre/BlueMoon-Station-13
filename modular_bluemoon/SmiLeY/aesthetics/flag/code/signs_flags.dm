@@ -168,10 +168,10 @@
 			RESKIN_ITEM_STATE = "folded_tizira",
 			sign_path = /obj/structure/sign/flag/tizira
 		),
-		"SSC" = list(
-			RESKIN_ICON_STATE = "folded_agurk",
-			RESKIN_ITEM_STATE = "folded_agurk",
-			sign_path = /obj/structure/sign/flag/ssc
+		"Mars" = list(
+			RESKIN_ICON_STATE = "folded_mars",
+			RESKIN_ITEM_STATE = "folded_mars",
+			sign_path = /obj/structure/sign/flag/mars
 		),
 		"Vulpkanin" = list(
 			RESKIN_ICON_STATE = "folded_vulp",
