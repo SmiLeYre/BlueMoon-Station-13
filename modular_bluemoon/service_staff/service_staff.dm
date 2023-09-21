@@ -40,7 +40,8 @@
 
 	family_heirlooms = list(
 		/obj/item/storage/wallet,
-		/obj/item/coin/silver
+		/obj/item/coin/silver,
+		/obj/item/reagent_containers/rag/towel
 	)
 
 /obj/item/pda/entertainer
