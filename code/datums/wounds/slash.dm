@@ -52,7 +52,7 @@
 	if(!limb.current_gauze)
 		return ..()
 
-	var/list/msg = list("Порезы на [victim.ru_ego()] конечности - [limb.ru_name] - перебинтованы")
+	var/list/msg = list("Порезы на [victim.ru_ego()] [limb.ru_name_v] перебинтованы")
 	// how much life we have left in these bandages
 	switch(limb.current_gauze.absorption_capacity)
 		if(0 to 1.25)
@@ -166,13 +166,13 @@
 	for(var/datum/disease/D in victim.diseases)
 		user.ForceContractDisease(D)
 
-	user.visible_message("<span class='notice'>[user] пытается зализать раны на конечности - [limb.ru_name] - персонажа [victim].</span>", "<span class='notice'>Вы пытаетесь зализать раны на конечности - [limb.ru_name] - персонажа [victim]....</span>", ignored_mobs=victim)
+	user.visible_message("<span class='notice'>[user] пытается зализать раны на [limb.ru_name_v] персонажа [victim].</span>", "<span class='notice'>Вы пытаетесь зализать раны на [limb.ru_name_v] персонажа [victim]....</span>", ignored_mobs=victim)
 	to_chat(victim, "<span class='notice'>[user] пытается зализать раны на вашей конечности - [limb.ru_name].</span")
 	if(!do_after(user, base_treat_time, target=victim, extra_checks = CALLBACK(src, .proc/still_exists)))
 		return
 
-	user.visible_message("<span class='notice'>[user] зализывает раны на конечности - [limb.ru_name] - персонажа [victim].</span>", "<span class='notice'>Вы зализываете некоторые раны на конечности - [limb.ru_name] - персонажа [victim].</span>", ignored_mobs=victim)
-	to_chat(victim, "<span class='green'>[user] зализывает раны на вашей конечности - [limb.ru_name]!</span")
+	user.visible_message("<span class='notice'>[user] зализывает раны на [limb.ru_name_v] - персонажа [victim].</span>", "<span class='notice'>Вы зализываете некоторые раны на [limb.ru_name_v] персонажа [victim].</span>", ignored_mobs=victim)
+	to_chat(victim, "<span class='green'>[user] зализывает раны на вашей [limb.ru_name_v]!</span")
 	blood_flow -= 0.5
 	if(isinsect(victim) || iscatperson(victim) || ismammal(victim) || isdwarf(victim) || ismonkey(victim)) // Yep you can lick monkeys.
 		user.reagents.add_reagent(/datum/reagent/hairball, 2)
@@ -196,7 +196,7 @@
 /// If someone's putting a laser gun up to our cut to cauterize it
 /datum/wound/slash/proc/las_cauterize(obj/item/gun/energy/laser/lasgun, mob/user)
 	var/self_penalty_mult = (user == victim ? 1.25 : 1)
-	user.visible_message("<span class='warning'>[user] пытается нацелить [lasgun] на конечность - [limb.ru_name] - персонажа [victim]....</span>", "<span class='userdanger'>Вы пытаетесь нацелить [lasgun] на [user == victim ? "вашу конечность" : "конечность персонажа [victim]"]...</span>")
+	user.visible_message("<span class='warning'>[user] пытается нацелить [lasgun] на рану на [limb.ru_name_v] персонажа [victim]....</span>", "<span class='userdanger'>Вы пытаетесь нацелить [lasgun] на рану на [user == victim ? "вашей конечности" : "конечности персонажа [victim]"]...</span>")
 	if(!do_after(user, base_treat_time  * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, .proc/still_exists)))
 		return
 	var/damage = lasgun.chambered.BB.damage
@@ -211,7 +211,7 @@
 /// If someone is using either a cautery tool or something with heat to cauterize this cut
 /datum/wound/slash/proc/tool_cauterize(obj/item/I, mob/user)
 	var/self_penalty_mult = (user == victim ? 1.5 : 1)
-	user.visible_message("<span class='danger'>[user] пытается прижечь конечность - [limb.ru_name] - персонажа [victim] с помощью [I]...</span>", "<span class='danger'>Вы пытаетесь прижечь [user == victim ? "свою конечность" : "конечность персонажа [victim]"] с помощью [I]...</span>")
+	user.visible_message("<span class='danger'>[user] пытается прижечь раны на [limb.ru_name_v] персонажа [victim] с помощью [I]...</span>", "<span class='danger'>Вы пытаетесь прижечь рану [user == victim ? "своей конечности" : "конечности персонажа [victim]"] с помощью [I]...</span>")
 	if(!do_after(user, base_treat_time * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, .proc/still_exists)))
 		return
 
@@ -225,12 +225,12 @@
 	if(blood_flow > minimum_flow)
 		try_treating(I, user)
 	else if(demotes_to)
-		to_chat(user, "<span class='green'>Вы успешно снижаете тяжесть порезов [user == victim ? "на вашей конечности" : "на конечности персонажа [victim]"].</span>")
+		to_chat(user, "<span class='green'>Вы успешно снижаете тяжесть порезов [user == victim ? "на вашей [limb.ru_name_v]" : "на [limb.ru_name_v] персонажа [victim]"].</span>")
 
 /// If someone is using a suture to close this cut
 /datum/wound/slash/proc/suture(obj/item/stack/medical/suture/I, mob/user)
 	var/self_penalty_mult = (user == victim ? 1.4 : 1)
-	user.visible_message("<span class='notice'>[user] пытается зашить увечия на конечности - [limb.ru_name] - персонажа [victim] с помощью [I]...</span>", "<span class='notice'>Вы пытаетесь зашить [user == victim ? "вашу конечность" : "конечность персонажа [victim]"] с помощью [I]...</span>")
+	user.visible_message("<span class='notice'>[user] пытается зашить увечия на [limb.ru_name_v] персонажа [victim] с помощью [I]...</span>", "<span class='notice'>Вы пытаетесь зашить [user == victim ? "увечия на вашей [limb.ru_name_v]" : "увечия на [limb.ru_name_v] персонажа [victim]"] с помощью [I]...</span>")
 
 	if(!do_after(user, base_treat_time * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, .proc/still_exists)))
 		return
@@ -267,7 +267,7 @@
 	desc = "Patient's skin is ripped clean open, allowing significant blood loss."
 	treat_text = "Speedy application of first-aid grade sutures and clean bandages, followed by vitals monitoring to ensure recovery."
 	examine_desc = "сильно изрезана"
-	occur_text = "широ раскрывается, заставляя вены кровоточить"
+	occur_text = "широко раскрывается, что приводит к венозному кровотечению"
 	sound_effect = 'sound/effects/wounds/blood2.ogg'
 	severity = WOUND_SEVERITY_SEVERE
 	initial_flow = 2

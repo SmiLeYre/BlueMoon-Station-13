@@ -33,7 +33,7 @@
 	if(strikes_to_lose_limb == 0)
 		victim.adjustToxLoss(0.5)
 		if(prob(1))
-			victim.visible_message("<span class='danger'>Инфекция на остатках конечности - [limb.ru_name] - персонажа [victim] тошнотворно пузырится!</span>", "<span class='warning'>Вы чувствуете, как инфекция на остатках вашей конечности - [limb.ru_name] - пульсирует и распространяется по вашим тканям!</span>")
+			victim.visible_message("<span class='danger'>Инфекция на [limb.ru_name_v] персонажа [victim] тошнотворно пузырится!</span>", "<span class='warning'>Вы чувствуете, как инфекция на вашей - [limb.ru_name_v] пульсирует и распространяется по вашим тканям!</span>")
 		return
 
 	if(victim.reagents)
@@ -55,7 +55,7 @@
 
 	// here's the check to see if we're cleared up
 	if((flesh_damage <= 0) && (infestation <= 1))
-		to_chat(victim, "<span class='green'>Вы удалили инфекцию с конечности - [limb.ru_name]!</span>")
+		to_chat(victim, "<span class='green'>Вы удалили инфекцию, что находилась на [limb.ru_name_v]!</span>")
 		qdel(src)
 		return
 
@@ -100,13 +100,13 @@
 			if(prob(infestation))
 				switch(strikes_to_lose_limb)
 					if(3 to INFINITY)
-						to_chat(victim, "<span class='deadsay'>Кожа на вашей конечности -  [limb.ru_name] - буквально сползает, вы чувствуете себя ужасно!</span>")
+						to_chat(victim, "<span class='deadsay'>Кожа на вашей [limb.ru_name_v] буквально сползает, вы чувствуете себя ужасно!</span>")
 					if(2)
-						to_chat(victim, "<span class='deadsay'><b>Инфекция на вашей конечности - [limb.ru_name] обильно сочится, это отвратительно!</b></span>")
+						to_chat(victim, "<span class='deadsay'><b>Инфекция на вашей [limb.ru_name_v] обильно сочится, это отвратительно!</b></span>")
 					if(1)
 						to_chat(victim, "<span class='deadsay'><b>Ваша [limb.ru_name] целиком захвачена инфекций!</b></span>")
 					if(0)
-						to_chat(victim, "<span class='deadsay'><b>Последние нервные окончания на вашей конечности - [limb.ru_name] - затухают, инфекция целиком парализует сустав.</b></span>")
+						to_chat(victim, "<span class='deadsay'><b>Последние нервные окончания на вашей [limb.ru_name_v] - затухают, инфекция целиком парализует сустав.</b></span>")
 						threshold_penalty = 120 // piss easy to destroy
 						var/datum/brain_trauma/severe/paralysis/sepsis = new (limb.body_zone)
 						victim.gain_trauma(sepsis)
@@ -250,6 +250,8 @@
 // we don't even care about first degree burns, straight to second
 /datum/wound/burn/moderate
 	name = "Second Degree Burns"
+	ru_name = "Ожоги второй степени"
+	ru_name_r = "ожогов второй степени"
 	desc = "Patient is suffering considerable burns with mild skin penetration, weakening limb integrity and increased burning sensations."
 	treat_text = "Recommended application of topical ointment or regenerative mesh to affected region."
 	examine_desc = "сильно обгорела и покрылась волдырями"
@@ -264,6 +266,8 @@
 
 /datum/wound/burn/severe
 	name = "Third Degree Burns"
+	ru_name = "Ожоги третьей степени"
+	ru_name_r = "ожогов третьей степени"
 	desc = "Patient is suffering extreme burns with full skin penetration, creating serious risk of infection and greatly reduced limb integrity."
 	treat_text = "Recommended immediate disinfection and excision of any infected skin, followed by bandaging and ointment."
 	examine_desc = "выглядит обугленной, с красными вкраплениями"
@@ -280,6 +284,8 @@
 
 /datum/wound/burn/critical
 	name = "Catastrophic Burns"
+	ru_name = "Ожоги четвертой степени"
+	ru_name_r = "ожогов четвертой степени"
 	desc = "Patient is suffering near complete loss of tissue and significantly charred muscle and bone, creating life-threatening risk of infection and negligible limb integrity."
 	treat_text = "Immediate surgical debriding of any infected skin, followed by potent tissue regeneration formula and bandaging."
 	examine_desc = "представляет собой месиво из костей, расплавленного жира и обугленных тканей"

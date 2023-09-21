@@ -153,7 +153,7 @@
 	description = "<span class='warning'>Я только что вырвал[owner_mob.ru_a()] на себя. Мерзость.</span>\n"
 
 /datum/mood_event/painful_medicine
-	description = "<span class='warning'>Mожет медицина и лечит, но сейчас мне больнее некуда.</span>\n"
+	description = "<span class='warning'>Лекарства делают свои дело, но боль ещё не успела затихнуть.</span>\n"
 	mood_change = -5
 	timeout = 1 MINUTES
 

@@ -13,6 +13,7 @@
 	var/status = BODYPART_ORGANIC
 	var/needs_processing = FALSE
 	var/ru_name = ""
+	var/ru_name_v = ""
 	var/ru_name_capital = ""
 
 	var/body_zone //BODY_ZONE_CHEST, BODY_ZONE_L_ARM, etc , used for def_zone
@@ -68,13 +69,13 @@
 	var/dmg_overlay_type //the type of damage overlay (if any) to use when this bodypart is bruised/burned.
 
 	//Damage messages used by help_shake_act()
-	var/light_brute_msg = "bruised"
-	var/medium_brute_msg = "battered"
-	var/heavy_brute_msg = "mangled"
+	var/light_brute_msg = "немного повреждена"
+	var/medium_brute_msg = "покрыта синяками"
+	var/heavy_brute_msg = "искалечена"
 
-	var/light_burn_msg = "numb"
-	var/medium_burn_msg = "blistered"
-	var/heavy_burn_msg = "peeling away"
+	var/light_burn_msg = "слегка онемела"
+	var/medium_burn_msg = "покрыта волдырями"
+	var/heavy_burn_msg = "отслаивается от костей"
 
 
 	//Some special vars for robotic bodyparts, in the base type to prevent needing typecasting / fancy checks.

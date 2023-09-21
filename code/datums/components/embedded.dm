@@ -140,16 +140,16 @@
 	RegisterSignal(weapon, list(COMSIG_MOVABLE_MOVED, COMSIG_PARENT_QDELETING), .proc/byeItemCarbon)
 	var/damage = 0
 	if(harmful)
-		victim.visible_message("<span class='danger'>[weapon] прорезается в конечность - [limb.ru_name] - персонажа [victim]!</span>",ignored_mobs=victim)
-		to_chat(victim, "<span class='userdanger'>[weapon] прорезается в вашей конечности -  [limb.ru_name]!</span>")
+		victim.visible_message("<span class='danger'>[weapon] прорезается в [limb.ru_name_v] персонажа [victim]!</span>",ignored_mobs=victim)
+		to_chat(victim, "<span class='userdanger'>[weapon] прорезается в вашей [limb.ru_name_v]!</span>")
 		victim.throw_alert("embeddedobject", /atom/movable/screen/alert/embeddedobject)
 		playsound(victim,'sound/weapons/bladeslice.ogg', 40)
 		weapon.add_mob_blood(victim)//it embedded itself in you, of course it's bloody!
 		damage = weapon.w_class * impact_pain_mult
 		SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "embedded", /datum/mood_event/embedded)
 	else
-		victim.visible_message("<span class='danger'>[weapon] застревает в конечности - [limb.ru_name] - персонажа [victim]!</span>",ignored_mobs=victim)
-		to_chat(victim, "<span class='userdanger'>[weapon] застревает в вашей конечности -  [limb.ru_name]!</span>")
+		victim.visible_message("<span class='danger'>[weapon] застревает в [limb.ru_name_v] персонажа [victim]!</span>",ignored_mobs=victim)
+		to_chat(victim, "<span class='userdanger'>[weapon] застревает в вашей [limb.ru_name_v]!</span>")
 
 	if(damage > 0)
 		var/armor = victim.run_armor_check(limb.body_zone, MELEE, "Ваша [limb.ru_name] оказалась защищена благодаря броне.", "Ваша [limb.ru_name] оказалась защищена, удар был смягчен броней.",weapon.armour_penetration)
