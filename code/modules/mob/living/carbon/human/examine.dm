@@ -347,7 +347,7 @@
 		if(appears_dead)
 			bleed_text = list("<span class='deadsay'><B>Кровь брызгает струйками из [ru_ego(FALSE)] конечности -")
 		else
-			bleed_text = list("<B>[t_on] имеет кровотечение [ru_ego(FALSE)] в конечности -")
+			bleed_text = list("<B>[t_on] имеет кровотечение в [ru_ego(FALSE)] конечности -")
 
 		switch(num_bleeds)
 			if(1 to 2)

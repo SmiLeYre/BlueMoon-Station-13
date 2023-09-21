@@ -419,7 +419,7 @@
 			if(I.isEmbedHarmless())
 				output += "\n\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>[I] врезался в вашу конечность - [LB.ru_name]!</a>"
 			else
-				output += "\n\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>[I] застрял в вашу конечность - [LB.ru_name]!</a>"
+				output += "\n\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>[I] застрял в вашей конечности - [LB.ru_name]!</a>"
 
 	if(output)
 		to_chat(src, examine_block(output))

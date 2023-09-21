@@ -3,8 +3,8 @@
 	var/t_His = ru_ego(TRUE)
 	var/t_his = ru_ego()
 	//var/t_him = ru_na()
-	//var/t_has = p_have()
-	var/t_is = p_are()
+	var/t_has = p_have()
+	//var/t_is = p_are()
 
 	. = list("<span class='info'>Это [icon2html(src, user)] \a <EM>[src]</EM>!")
 
