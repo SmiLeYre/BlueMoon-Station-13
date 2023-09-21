@@ -56,6 +56,18 @@
 	icon_state = "flag_mars"
 	item_flag = /obj/item/sign/flag/mars
 
+/obj/structure/sign/flag/mars_sol
+	name = "flag of the Mars"
+	desc = "The flag of Mars. Originally a revolutionary flag during the Martian Rebellions, it has since been adopted as the official flag of the planet controlled by the Solar Federation."
+	icon_state = "flag_mars_sol"
+	item_flag = /obj/item/sign/flag/mars_sol
+
+/obj/structure/sign/flag/ger_sol
+	name = "flag of the FRG"
+	desc = "The flag of the Federal Republic of Germany, known as one of the many Solar Federation regions located on Terra."
+	icon_state = "flag_ger_sol"
+	item_flag = /obj/item/sign/flag/ger_sol
+
 /obj/structure/sign/flag/terragov
 	name = "flag of Sol Federation"
 	desc = "The flag of Sol Federation. It's a symbol of humanity no matter where they go, or how much they wish it wasn't."
@@ -158,20 +170,20 @@
 			RESKIN_ITEM_STATE = "folded_solfed",
 			sign_path = /obj/structure/sign/flag/terragov
 		),
+		"Sol Mars" = list(
+			RESKIN_ICON_STATE = "folded_mars_sol",
+			RESKIN_ITEM_STATE = "folded_mars_sol",
+			sign_path = /obj/structure/sign/flag/mars_sol
+		),
+		"Sol FRG" = list(
+			RESKIN_ICON_STATE = "folded_ger_sol",
+			RESKIN_ITEM_STATE = "folded_ger_sol",
+			sign_path = /obj/structure/sign/flag/ger_sol
+		),
 		"New Russian Empire" = list(
 			RESKIN_ICON_STATE = "folded_nri",
 			RESKIN_ITEM_STATE = "folded_nri",
 			sign_path = /obj/structure/sign/flag/nri
-		),
-		"Tizira" = list(
-			RESKIN_ICON_STATE = "folded_tizira",
-			RESKIN_ITEM_STATE = "folded_tizira",
-			sign_path = /obj/structure/sign/flag/tizira
-		),
-		"Mars" = list(
-			RESKIN_ICON_STATE = "folded_mars",
-			RESKIN_ITEM_STATE = "folded_mars",
-			sign_path = /obj/structure/sign/flag/mars
 		),
 		"Vulpkanin" = list(
 			RESKIN_ICON_STATE = "folded_vulp",
@@ -182,6 +194,11 @@
 			RESKIN_ICON_STATE = "folded_flag_hca",
 			RESKIN_ITEM_STATE = "folded_flag_hca",
 			sign_path = /obj/item/sign/flag/humancommonwealth
+		),
+		"Independent Mars" = list(
+			RESKIN_ICON_STATE = "folded_mars",
+			RESKIN_ITEM_STATE = "folded_mars",
+			sign_path = /obj/structure/sign/flag/mars
 		),
 		"Shigu" = list(
 			RESKIN_ICON_STATE = "folded_shigu",
@@ -306,3 +323,15 @@
 	desc = "The folded flag of Vulps."
 	icon_state = "folded_vulp"
 	sign_path = /obj/structure/sign/flag/vulp
+
+/obj/item/sign/flag/mars_sol
+	name = "folded flag of the Mars"
+	desc = "The folded flag of the Sol Mars."
+	icon_state = "folded_mars_sol"
+	sign_path = /obj/structure/sign/flag/mars_sol
+
+/obj/item/sign/flag/ger_sol
+	name = "folded flag of the FRG"
+	desc = "The folded flag of the Sol FRG."
+	icon_state = "folded_ger_sol"
+	sign_path = /obj/structure/sign/flag/ger_sol
