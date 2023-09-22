@@ -61,7 +61,7 @@
 /obj/item/projectile/bullet/a543
 	name = "5.43mm bullet"
 	damage = 35
-	wound_bonus = 15
+	wound_bonus = 12
 	wound_falloff_tile = 0
 
 /obj/item/ammo_casing/a543

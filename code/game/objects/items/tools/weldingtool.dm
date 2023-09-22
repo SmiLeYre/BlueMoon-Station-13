@@ -40,7 +40,7 @@
 	heat = 3800
 	tool_behaviour = TOOL_WELDER
 	toolspeed = 1
-	wound_bonus = 10
+	wound_bonus = 8
 	bare_wound_bonus = 5
 
 /obj/item/weldingtool/Initialize(mapload)

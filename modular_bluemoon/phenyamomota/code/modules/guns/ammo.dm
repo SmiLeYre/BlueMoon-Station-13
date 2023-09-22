@@ -3,7 +3,7 @@
 /obj/item/projectile/bullet/a556
 	name = "5.56mm bullet"
 	damage = 26
-	wound_bonus = 10
+	wound_bonus = 9
 
 /obj/item/ammo_casing/a556
 	name = "5.56mm bullet casing"
@@ -74,7 +74,7 @@
 /obj/item/projectile/bullet/a762x39
 	name = "7.62x39 bullet"
 	damage = 28
-	wound_bonus = 12
+	wound_bonus = 11
 
 /obj/item/ammo_casing/a762x39
 	name = "7.62x39 bullet casing"
