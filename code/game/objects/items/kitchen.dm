@@ -96,8 +96,8 @@
 	sharpness = SHARP_POINTY
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 50)
 	var/bayonet = FALSE	//Can this be attached to a gun?
-	wound_bonus = -5
-	bare_wound_bonus = 10
+	wound_bonus = 10
+	bare_wound_bonus = 5
 	custom_price = PRICE_NORMAL
 
 /obj/item/kitchen/knife/Initialize(mapload)
@@ -132,8 +132,8 @@
 	sharpness = SHARP_POINTY
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 50)
 	var/bayonet = FALSE	//Can this be attached to a gun?
-	wound_bonus = -5
-	bare_wound_bonus = 10
+	wound_bonus = 10
+	bare_wound_bonus = 5
 	custom_price = PRICE_NORMAL
 
 /obj/item/kitchen/efink/Initialize(mapload)
@@ -310,7 +310,7 @@
 	desc = "A makeshift titanium-infused glass shiv."
 	throwforce = 14
 	throw_range = 7
-	wound_bonus = 10
+	wound_bonus = 7
 	armor = list(MELEE = 25, BULLET = 25, LASER = 25, ENERGY = 25, BOMB = 25, BIO = 0, RAD = 0, FIRE = 50, ACID = 50)
 	custom_materials = list(/datum/material/glass=SHEET_MATERIAL_AMOUNT * 4, /datum/material/titanium=SHEET_MATERIAL_AMOUNT * 2)
 
@@ -324,7 +324,7 @@
 	throw_speed = 4
 	throw_range = 8
 	wound_bonus = 10
-	bare_wound_bonus = 20
+	bare_wound_bonus = 10
 	armor = list(MELEE = 50, BULLET = 50, LASER = 50, ENERGY = 50, BOMB = 50, BIO = 0, RAD = 0, FIRE = 75, ACID = 75)
 	custom_materials = list(/datum/material/glass= SHEET_MATERIAL_AMOUNT * 4, /datum/material/alloy/plastitanium= SHEET_MATERIAL_AMOUNT * 2)
 

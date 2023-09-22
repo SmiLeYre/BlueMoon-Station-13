@@ -5,7 +5,7 @@
 	damage = 110 //gets set to 100 before first mob impact.
 	movement_type = FLYING | PHASING
 	sharpness = NONE
-	wound_bonus = 0
+	wound_bonus = 15
 	dismemberment = 0
 	knockdown = 5 SECONDS
 	stutter = 10 SECONDS

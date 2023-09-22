@@ -255,12 +255,12 @@
 	occur_text = "разрезается, что приводит к кровотечению"
 	sound_effect = 'sound/effects/wounds/blood1.ogg'
 	severity = WOUND_SEVERITY_MODERATE
-	initial_flow = 1.25
+	initial_flow = 1.5
 	minimum_flow = 0.375
 	max_per_type = 3
 	clot_rate = 0.12
-	threshold_minimum = 30
-	threshold_penalty = 10
+	threshold_minimum = 20
+	threshold_penalty = 45
 	status_effect_type = /datum/status_effect/wound/slash/moderate
 	scar_keyword = "slashmoderate"
 
@@ -274,12 +274,12 @@
 	occur_text = "широко раскрывается, что приводит к венозному кровотечению"
 	sound_effect = 'sound/effects/wounds/blood2.ogg'
 	severity = WOUND_SEVERITY_SEVERE
-	initial_flow = 2
+	initial_flow = 2.5
 	minimum_flow = 1.75
 	clot_rate = 0.07
 	max_per_type = 4
-	threshold_minimum = 60
-	threshold_penalty = 25
+	threshold_minimum = 50
+	threshold_penalty = 60
 	demotes_to = /datum/wound/slash/moderate
 	status_effect_type = /datum/status_effect/wound/slash/severe
 	scar_keyword = "slashsevere"
@@ -294,12 +294,12 @@
 	occur_text = "разрывается, разбрызгивая кровь"
 	sound_effect = 'sound/effects/wounds/blood3.ogg'
 	severity = WOUND_SEVERITY_CRITICAL
-	initial_flow = 2.75
+	initial_flow = 3.75
 	minimum_flow = 2.5
 	clot_rate = -0.05 // critical cuts actively get worse instead of better
 	max_per_type = 5
-	threshold_minimum = 90
-	threshold_penalty = 40
+	threshold_minimum = 80
+	threshold_penalty = 90
 	demotes_to = /datum/wound/slash/severe
 	status_effect_type = /datum/status_effect/wound/slash/critical
 	scar_keyword = "slashcritical"

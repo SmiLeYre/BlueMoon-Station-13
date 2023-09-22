@@ -27,7 +27,7 @@
 	name = "7.12x82mm bullet"
 	damage = 40
 	armour_penetration = 5
-	wound_bonus = -50
+	wound_bonus = 10
 	wound_falloff_tile = 0
 
 /obj/item/projectile/bullet/mm712x82_ap
@@ -40,7 +40,7 @@
 	damage = 50
 	armour_penetration = -60
 	sharpness = SHARP_EDGED
-	wound_bonus = -40
+	wound_bonus = 10
 	bare_wound_bonus = 30
 	wound_falloff_tile = -8
 

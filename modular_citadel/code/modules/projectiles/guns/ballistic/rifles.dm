@@ -89,7 +89,7 @@
 	name = "flechette (armor piercing)"
 	damage = 15
 	armour_penetration = 100
-	wound_bonus = -100
+	wound_bonus = 10
 
 /obj/item/projectile/bullet/cflechettes		//causes wounds fast but is heavily countered by armor
 	name = "flechette (serrated)"
@@ -98,7 +98,7 @@
 	wound_bonus = 15
 	sharpness = SHARP_EDGED
 	wound_falloff_tile = 0
-	
+
 ///ammo casings (CASELESS AMMO CASINGS WOOOOOOOO)///
 
 /obj/item/ammo_casing/caseless/flechetteap

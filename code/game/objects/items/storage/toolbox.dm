@@ -22,7 +22,7 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 	var/has_latches = TRUE
 	var/can_rubberify = TRUE
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE //very protecc too
-	wound_bonus = -10
+	wound_bonus = 10
 	bare_wound_bonus = 5
 
 /obj/item/storage/toolbox/greyscale
@@ -115,7 +115,7 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 	icon_state = "toolbox_blue_clean"
 	force = 19
 	throwforce = 22
-	wound_bonus = 0
+	wound_bonus = 15
 	bare_wound_bonus = 10
 
 /obj/item/storage/toolbox/mechanical/old/clean/proc/calc_damage()
