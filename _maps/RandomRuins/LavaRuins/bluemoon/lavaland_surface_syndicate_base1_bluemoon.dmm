@@ -1150,6 +1150,7 @@
 /obj/machinery/button/door{
 	id = "interdynecargo"
 	},
+/obj/item/ammo_box/c9mm,
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "hl" = (
@@ -4195,14 +4196,12 @@
 	pixel_x = 4;
 	pixel_y = -4
 	},
-/obj/item/ammo_box/magazine/sniper_rounds,
-/obj/item/ammo_box/magazine/sniper_rounds,
-/obj/item/ammo_box/magazine/sniper_rounds,
-/obj/item/ammo_box/magazine/sniper_rounds,
 /obj/machinery/light,
 /obj/structure/closet/crate/secure/gear{
 	req_access_txt = "150"
 	},
+/obj/item/ammo_box/c9mm,
+/obj/item/ammo_box/c9mm,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "Fe" = (
@@ -4712,6 +4711,13 @@
 	pixel_y = 5
 	},
 /obj/item/storage/box/beakers/bluespace,
+/obj/item/storage/box/rndboards{
+	pixel_y = 4
+	},
+/obj/item/mmi/posibrain/syndie{
+	pixel_x = 6;
+	pixel_y = 11
+	},
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
 "IH" = (
@@ -5173,13 +5179,7 @@
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "LK" = (
 /obj/structure/table/glass,
-/obj/item/storage/box/rndboards{
-	pixel_y = 4
-	},
-/obj/item/mmi/posibrain/syndie{
-	pixel_x = 6;
-	pixel_y = 11
-	},
+/obj/machinery/cell_charger,
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
 "LL" = (
