@@ -108,7 +108,7 @@ GENETICS SCANNER
 		if(SCANMODE_CHEMICAL)
 			to_chat(user, "<span class='notice'>Вы переключаете анализатор в режим отображения химикатов в теле пациента.</span>")
 		if(SCANMODE_WOUND)
-			to_chat(user, "<span class='notice'>Вы переключаете анализатор в режим отображения дополнительной информации о повреждения.</span>")
+			to_chat(user, "<span class='notice'>Вы переключаете анализатор в режим отображения дополнительной информации о повреждениях.</span>")
 
 /obj/item/healthanalyzer/attack(mob/living/M, mob/living/carbon/human/user)
 	flick("[icon_state]-scan", src)	//makes it so that it plays the scan animation upon scanning, including clumsy scanning
@@ -515,7 +515,7 @@ GENETICS SCANNER
 				for(var/datum/reagent/R in M.reagents.addiction_list)
 					msg += "<span class='danger'>[R.name]</span>\n"
 			else
-				msg += "<span class='notice'>У субъекта нет зависимости к каким-либо.</span>\n"
+				msg += "<span class='notice'>У субъекта нет зависимости к каким-либо реагентам.</span>\n"
 
 			var/datum/reagent/impure/fermiTox/F = M.reagents.has_reagent(/datum/reagent/impure/fermiTox)
 			if(istype(F,/datum/reagent/impure/fermiTox))

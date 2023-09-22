@@ -7,6 +7,8 @@
 	var/brightness_on = 3
 	var/sword_color
 	total_mass = 0.4 //Survival flashlights typically weigh around 5 ounces.
+	wound_bonus = 7
+	bare_wound_bonus = 5
 
 /obj/item/melee/transforming/energy/Initialize(mapload)
 	. = ..()
