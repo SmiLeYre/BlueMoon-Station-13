@@ -131,8 +131,8 @@
 	damage = 30
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/green_laser
 	light_color = LIGHT_COLOR_GREEN
-	wound_bonus = 30
-	bare_wound_bonus =
+	wound_bonus = 20
+	bare_wound_bonus = 20
 
 /obj/item/projectile/beam/emitter/singularity_pull()
 	return
