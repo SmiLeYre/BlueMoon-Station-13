@@ -162,7 +162,7 @@ GENETICS SCANNER
 	var/tox_loss = M.getToxLoss()
 	var/fire_loss = M.getFireLoss()
 	var/brute_loss = M.getBruteLoss()
-	var/mob_status = (M.stat == DEAD ? "<span class='alert'><b>Мертв[M.ru_a()]</b></span>" : "<b>[round(M.health/M.maxHealth,0.01)*100] % healthy</b>")
+	var/mob_status = (M.stat == DEAD ? "<span class='alert'><b>Мертв[M.ru_a()]</b></span>" : "<b>[round(M.health/M.maxHealth,0.01)*100] %</b>")
 
 	if(HAS_TRAIT(M, TRAIT_FAKEDEATH) && !advanced)
 		if(iszombie(M))
@@ -175,7 +175,7 @@ GENETICS SCANNER
 			mob_status = "<span class='alert'><b>Мертв[M.ru_a()]</b></span>"
 			oxy_loss = max(rand(1, 40), oxy_loss, (300 - (tox_loss + fire_loss + brute_loss))) // Random oxygen loss
 
-	var/msg = "<span class='info'>Анализ результатов субъекта: [M]:\n\tОбщее состоянее: [mob_status]</span>"
+	var/msg = "<span class='info'>Результаты анализа субъекта - [M]:\n\tОбщее состоянее: [mob_status]</span>"
 
 	// Damage descriptions
 	if(brute_loss > 10)
@@ -206,12 +206,12 @@ GENETICS SCANNER
 		var/list/damaged = C.get_damaged_bodyparts(1,1)
 		if(length(damaged)>0 || oxy_loss>0 || tox_loss>0 || fire_loss>0)
 			dmgreport += "<table><tr><font face='Verdana'>\
-							<td style='width: 90px;'><font color='#0000CC'>Damage:</font></td>\
-							<td style='width: 55px;'><font color='red'><b>Brute</b></font></td>\
-							<td style='width: 45px;'><font color='orange'><b>Burn</b></font></td>\
-							<td style='width: 45px;'><font color='green'><b>[HAS_TRAIT(C, TRAIT_ROBOTIC_ORGANISM) ? "Corruption" :"Toxin"]</b></font></td>\
-							<td style='width: 90px;'><font color='purple'><b>Suffocation</b></font></td></tr>\
-							<tr><td><font color='#0000CC'>Overall:</font></td>\
+							<td style='width: 90px;'><font color='#0000CC'>Повреждения:</font></td>\
+							<td style='width: 55px;'><font color='red'><b>Травмы</b></font></td>\
+							<td style='width: 45px;'><font color='orange'><b>Ожоги</b></font></td>\
+							<td style='width: 45px;'><font color='green'><b>[HAS_TRAIT(C, TRAIT_ROBOTIC_ORGANISM) ? "Коррозия" :"Токсины"]</b></font></td>\
+							<td style='width: 90px;'><font color='purple'><b>Дыхание</b></font></td></tr>\
+							<tr><td><font color='#0000CC'>Всего:</font></td>\
 							<td><font color='red'>[brute_loss]</font></td>\
 							<td><font color='orange'>[fire_loss]</font></td>\
 							<td><font color='green'>[tox_loss]</font></td>\
@@ -442,10 +442,10 @@ GENETICS SCANNER
 		var/list/wounded_parts = C.get_wounded_bodyparts()
 		for(var/i in wounded_parts)
 			var/obj/item/bodypart/wounded_part = i
-			msg += "<span class='alert ml-1'><b>Внимание: Физическая травма[LAZYLEN(wounded_part.wounds) > 1? "" : ""] обнаружена [wounded_part.ru_name_v]</b>"
+			msg += "<span class='alert ml-1'><b>Внимание: Физическая травма[LAZYLEN(wounded_part.wounds) > 1? "" : ""] обнаружена в [wounded_part.ru_name_v]</b>"
 			for(var/k in wounded_part.wounds)
 				var/datum/wound/W = k
-				msg += "<div class='ml-2'>Тип: [W.name]\nТяжесть: [W.severity_text()]\nРекомендуемое лечение: [W.treat_text]</div>\n" // less lines than in woundscan() so we don't overload people trying to get basic med info
+				msg += "<div class='ml-2'>Тип: [W.ru_name]\nТяжесть: [W.severity_text()]\nРекомендуемое лечение: [W.treat_text]</div>\n" // less lines than in woundscan() so we don't overload people trying to get basic med info
 			msg += "</span>\n"
 
 	for(var/thing in M.diseases)
