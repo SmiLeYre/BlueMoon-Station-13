@@ -247,8 +247,10 @@
 
 /datum/wound/slash/moderate
 	name = "Rough Abrasion"
-	desc = "Patient's skin has been badly scraped, generating moderate blood loss."
-	treat_text = "Application of clean bandages or first-aid grade sutures, followed by food and rest."
+	ru_name = "Сильная царапина"
+	ru_name_r = "сильных царапин"
+	desc = "Кожа пациента сильно поцарапана, что привело к умеренной кровопотере."
+	treat_text = "Наложение повязок или жгутов, с последующим питанием и отдыхом."
 	examine_desc = "порезана"
 	occur_text = "разрезается, что приводит к кровотечению"
 	sound_effect = 'sound/effects/wounds/blood1.ogg'
@@ -264,8 +266,10 @@
 
 /datum/wound/slash/severe
 	name = "Open Laceration"
-	desc = "Patient's skin is ripped clean open, allowing significant blood loss."
-	treat_text = "Speedy application of first-aid grade sutures and clean bandages, followed by vitals monitoring to ensure recovery."
+	ru_name = "Рваная рана"
+	ru_name_r = "рваной раны"
+	desc = "Кожа на конечности пациента повреждена и вскрыта, что привело к обильному кровотечению."
+	treat_text = "Немедленное наложение жгутов или чистых повязок, мониторинг состояния пациента."
 	examine_desc = "сильно изрезана"
 	occur_text = "широко раскрывается, что приводит к венозному кровотечению"
 	sound_effect = 'sound/effects/wounds/blood2.ogg'
@@ -282,8 +286,10 @@
 
 /datum/wound/slash/critical
 	name = "Weeping Avulsion"
-	desc = "Patient's skin is completely torn open, along with significant loss of tissue. Extreme blood loss will lead to quick death without intervention."
-	treat_text = "Immediate bandaging and either suturing or cauterization, followed by supervised resanguination."
+	ru_name = "Разрыв сухожилия"
+	ru_name_r = "разрыва сухожилия"
+	desc = "У пациента наблюдается серьезное повреждение кожного покрова. Отсутствие медицинской помощи приведет к смерти в результате сильнейшей кровопотери."
+	treat_text = "Немедленная перевязка, хирургическое вмешательство с наложением швов и прижиганием увечия, переливание крови."
 	examine_desc = "разрезана до костей, разбрызгивая кровь вокруг"
 	occur_text = "разрывается, разбрызгивая кровь"
 	sound_effect = 'sound/effects/wounds/blood3.ogg'

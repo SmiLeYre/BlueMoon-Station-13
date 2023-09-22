@@ -252,8 +252,8 @@
 	name = "Second Degree Burns"
 	ru_name = "Ожоги второй степени"
 	ru_name_r = "ожогов второй степени"
-	desc = "Patient is suffering considerable burns with mild skin penetration, weakening limb integrity and increased burning sensations."
-	treat_text = "Recommended application of topical ointment or regenerative mesh to affected region."
+	desc = "Пациент получил легкие ожоги, что привело к ослаблению целостности конечности и ощущению жжения."
+	treat_text = "Нанести мазь или регенерирующую сетку на поврежденную область."
 	examine_desc = "сильно обгорела и покрылась волдырями"
 	occur_text = "шипит от образующихся красных ожоговых пятен"
 	severity = WOUND_SEVERITY_MODERATE
@@ -268,8 +268,8 @@
 	name = "Third Degree Burns"
 	ru_name = "Ожоги третьей степени"
 	ru_name_r = "ожогов третьей степени"
-	desc = "Patient is suffering extreme burns with full skin penetration, creating serious risk of infection and greatly reduced limb integrity."
-	treat_text = "Recommended immediate disinfection and excision of any infected skin, followed by bandaging and ointment."
+	desc = "Пациент страдает от серьезных ожогов, ведущих к отмиранию тканей и ухудшению моторики."
+	treat_text = "Немедленная дезинфекция и удаление некротической кожи с последующими обработкой мазью и перевязкой."
 	examine_desc = "выглядит обугленной, с красными вкраплениями"
 	occur_text = "быстро обугливается, обнажая потрескавшуюся кожу и плоть"
 	severity = WOUND_SEVERITY_SEVERE
@@ -286,8 +286,8 @@
 	name = "Catastrophic Burns"
 	ru_name = "Ожоги четвертой степени"
 	ru_name_r = "ожогов четвертой степени"
-	desc = "Patient is suffering near complete loss of tissue and significantly charred muscle and bone, creating life-threatening risk of infection and negligible limb integrity."
-	treat_text = "Immediate surgical debriding of any infected skin, followed by potent tissue regeneration formula and bandaging."
+	desc = "Наблюдается практически полная потеря тканей и значительное обгорание костей и мышц пациента. Конечность может стать нефункциональной целиком."
+	treat_text = "Немедленное хирургическое вмешательство. Удаление некроза, нанесение препаратов для восстановления тканей. Перевязывание конечности."
 	examine_desc = "представляет собой месиво из костей, расплавленного жира и обугленных тканей"
 	occur_text = "испаряется, пока плоть, кости и жир сплавливаются в одну жуткую массу"
 	severity = WOUND_SEVERITY_CRITICAL

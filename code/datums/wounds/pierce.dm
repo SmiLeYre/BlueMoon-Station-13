@@ -127,10 +127,10 @@
 
 /datum/wound/pierce/moderate
 	name = "Minor Breakage"
-	ru_name = "Царапина"
-	ru_name_r = "царапин"
-	desc = "Patient's skin has been broken open, causing severe bruising and minor internal bleeding in affected area."
-	treat_text = "Treat affected site with bandaging or exposure to extreme cold. In dire cases, brief exposure to vacuum may suffice." // space is cold in ss13, so it's like an ice pack!
+	ru_name = "Малая колотая рана"
+	ru_name_r = "малой колотой раны"
+	desc = "Кожа пациента повреждена, что привело к небольшому кровотечению."
+	treat_text = "Перевязать поврежденную кожу или наложить холодный компресс." // space is cold in ss13, so it's like an ice pack!
 	examine_desc = "имеет небольшое отверстие, из которого течёт струйка крови"
 	occur_text = "извергает тонкую струйку крови"
 	sound_effect = 'sound/effects/wounds/pierce1.ogg'
@@ -149,7 +149,7 @@
 	ru_name = "Колотая рана"
 	ru_name_r = "колотой раны"
 	desc = "Patient's internal tissue is penetrated, causing sizeable internal bleeding and reduced limb stability."
-	treat_text = "Repair punctures in skin by suture or cautery, extreme cold may also work."
+	treat_text = "Перекрыть поврежденные участки с помощью жгута или прижигателя. В неординарных ситуациях поможет и воздействие космического вакуума вкупе с сильным холодом."
 	examine_desc = "пробита насквозь, а отверстие проглядывается через остатки кожи"
 	occur_text = "выплескивает струю крови, обнажая сквозную рану"
 	sound_effect = 'sound/effects/wounds/pierce2.ogg'
@@ -167,8 +167,8 @@
 	name = "Ruptured Cavity"
 	ru_name = "Разрыв тканей"
 	ru_name_r = "разрыва тканей"
-	desc = "Patient's internal tissue and circulatory system is shredded, causing significant internal bleeding and damage to internal organs."
-	treat_text = "Surgical repair of puncture wound, followed by supervised resanguination."
+	desc = "Ткани и кровеносная система пациента повреждены. Это привело к обильному внутреннему кровотечению."
+	treat_text = "Хирургическое вмешательство с последующим переливанием крови."
 	examine_desc = "буквально разорвана и едва удерживается обнаженными костями"
 	occur_text = "разрывается, разбрасывая вокруг обломки костей и плоти"
 	sound_effect = 'sound/effects/wounds/pierce3.ogg'

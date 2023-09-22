@@ -196,8 +196,8 @@
 	name = "Joint Dislocation"
 	ru_name = "Вывих"
 	ru_name_r = "вывиха"
-	desc = "Patient's bone has been unset from socket, causing pain and reduced motor function."
-	treat_text = "Recommended application of bonesetter to affected limb, though manual relocation by applying an aggressive grab to the patient and helpfully interacting with afflicted limb may suffice."
+	desc = "Кость пациента неестественно выгнулась, что вызывает болевые ощущения и ухудшает моторику."
+	treat_text = "Использовать костоправ. В крайнем случае возможно, но не рекомендуется вправление конечности своими силами с помощью агрессивного захвата."
 	examine_desc = "неестественно вывихнута"
 	occur_text = "сильно дергается, издавая хруст"
 	severity = WOUND_SEVERITY_MODERATE
@@ -299,8 +299,8 @@
 	name = "Hairline Fracture"
 	ru_name = "Перелом"
 	ru_name_r = "перелома"
-	desc = "Patient's bone has suffered a crack in the foundation, causing serious pain and reduced limb functionality."
-	treat_text = "Recommended light surgical application of bone gel, though a sling of medical gauze will prevent worsening situation."
+	desc = "Кость пациента сломана. Это вызывает сильные боли и серьёзно ухудшает моторику."
+	treat_text = "Хирургическое вмешательство с применением костного геля. Наложение марлевой повязки позволит избежать усугубления ситуации."
 	examine_desc = "сильно распухла и покрылась синяками"
 	occur_text = "набухает от обломков костей и образует неприятного вида синяк"
 
@@ -321,8 +321,8 @@
 	name = "Compound Fracture"
 	ru_name = "Открытый перелом"
 	ru_name_r = "открытого перелома"
-	desc = "Patient's bones have suffered multiple gruesome fractures, causing significant pain and near uselessness of limb."
-	treat_text = "Immediate binding of affected limb, followed by surgical intervention ASAP."
+	desc = "Кости пациента получили множественные серьёзные переломы. Конечность, вкупе с сопутствующими невыносимыми болями, практически не функционирует."
+	treat_text = "Немедленная фиксация конечности с последующим хирургическим вмешательством."
 	examine_desc = "изуродована и раздроблена, держась только благодаря тканям"
 	occur_text = "надламывается, из-за чего кости выходят наружу"
 
@@ -421,14 +421,14 @@
 	. += "<div class='ml-3'>"
 
 	if(!gelled)
-		. += "Alternative Treatment: Apply bone gel directly to injured limb, then apply surgical tape to begin bone regeneration. This is both excruciatingly painful and slow, and only recommended in dire circumstances.\n"
+		. += "Альтернативное лечение: Нанести костный гель прямо на поврежденную конечность, после чего перевязать её хирургической лентой. Рекомендуется применять в экстренных ситуациях, ввиду медлительности и болезненности данной процедуры.\n"
 	else if(!taped)
-		. += "<span class='notice'>Continue Alternative Treatment: Apply surgical tape directly to injured limb to begin bone regeneration. Note, this is both excruciatingly painful and slow.</span>\n"
+		. += "<span class='notice'>Продолжайте альтернативное лечение: Нанесите хирургическое ленту прямо на поврежденную конечность. Стоит учесть: эта процедура болезненна и медленна.</span>\n"
 	else
-		. += "<span class='notice'>Note: Bone regeneration in effect. Bone is [round(regen_points_current*100/regen_points_needed)]% regenerated.</span>\n"
+		. += "<span class='notice'>Уточнение: Восстановление костей началось. Кости восстановились на [round(regen_points_current*100/regen_points_needed)]%.</span>\n"
 
 	if(limb.body_zone == BODY_ZONE_HEAD)
-		. += "Cranial Trauma Detected: Patient will suffer random bouts of [severity == WOUND_SEVERITY_SEVERE ? "mild" : "severe"] brain traumas until bone is repaired."
+		. += "Обнаружена черепно-мозговая травма: Пациент будет испытывать неконтроллируемые [severity == WOUND_SEVERITY_SEVERE ? "приступы средней тяжести" : "тяжелые приступы"] до того момента, как кости будут восстановлены."
 	else if(limb.body_zone == BODY_ZONE_CHEST && victim.blood_volume)
-		. += "Ribcage Trauma Detected: Further trauma to chest is likely to worsen internal bleeding until bone is repaired."
+		. += "Обнаружена травма грудной клетки: Последующие повреждения будут усиливать внутреннее кровотечения до того момента, пока кости не будут восстановлены."
 	. += "</div>"

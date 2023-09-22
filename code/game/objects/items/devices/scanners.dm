@@ -97,34 +97,34 @@ GENETICS SCANNER
 	register_item_context()
 
 /obj/item/healthanalyzer/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to analyze себя with [src]! The display shows that [user.ru_who()] dead!</span>")
+	user.visible_message("<span class='suicide'>[user] анализирует свое состояние с помощью [src]! Интерфейс показывает что [user.ru_who()] - мертв[user.ru_aya()]!</span>")
 	return BRUTELOSS
 
 /obj/item/healthanalyzer/attack_self(mob/user)
 	scanmode = (scanmode + 1) % 3
 	switch(scanmode)
 		if(SCANMODE_HEALTH)
-			to_chat(user, "<span class='notice'>You switch the health analyzer to check physical health.</span>")
+			to_chat(user, "<span class='notice'>Вы переключаете анализатор в режим отображения физического состояния пациента.</span>")
 		if(SCANMODE_CHEMICAL)
-			to_chat(user, "<span class='notice'>You switch the health analyzer to scan chemical contents.</span>")
+			to_chat(user, "<span class='notice'>Вы переключаете анализатор в режим отображения химикатов в теле пациента.</span>")
 		if(SCANMODE_WOUND)
-			to_chat(user, "<span class='notice'>You switch the health analyzer to report extra info on wounds.</span>")
+			to_chat(user, "<span class='notice'>Вы переключаете анализатор в режим отображения дополнительной информации о повреждения.</span>")
 
 /obj/item/healthanalyzer/attack(mob/living/M, mob/living/carbon/human/user)
 	flick("[icon_state]-scan", src)	//makes it so that it plays the scan animation upon scanning, including clumsy scanning
 
 	// Clumsiness/brain damage check
 	if ((HAS_TRAIT(user, TRAIT_CLUMSY) || HAS_TRAIT(user, TRAIT_DUMB)) && prob(50))
-		user.visible_message("<span class='warning'>[user] analyzes the floor's vitals!</span>", \
-							"<span class='notice'>You stupidly try to analyze the floor's vitals!</span>")
-		to_chat(user, "<span class='info'>Analyzing results for The floor:\n\tOverall status: <b>Healthy</b></span>\
+		user.visible_message("<span class='warning'>[user] анализирует состояние пола!</span>", \
+							"<span class='notice'>Вы по-идиотски пытаетесь анализировать пол!</span>")
+		to_chat(user, "<span class='info'>Анализ состояния:\n\tОбщее состояние: <b>Здоров</b></span>\
 					\n<span class='info'>Key: <font color='blue'>Suffocation</font>/<font color='green'>Toxin</font>/<font color='#FF8000'>Burn</font>/<font color='red'>Brute</font></span>\
 					\n<span class='info'>\tDamage specifics: <font color='blue'>0</font>-<font color='green'>0</font>-<font color='#FF8000'>0</font>-<font color='red'>0</font></span>\
-					\n<span class='info'>Body temperature: ???</span>")
+					\n<span class='info'>Температура тела: ???</span>")
 		return
 
-	user.visible_message("<span class='notice'>[user] analyzes [M]'s vitals.</span>", \
-						"<span class='notice'>You analyze [M]'s vitals.</span>")
+	user.visible_message("<span class='notice'>[user] анализирует показатели персонажа [M].</span>", \
+						"<span class='notice'>Вы анализируете показатели персонажа [M].</span>")
 
 	if(scanmode == SCANMODE_HEALTH)
 		healthscan(user, M, mode, advanced)
@@ -360,24 +360,24 @@ GENETICS SCANNER
 		var/has_liver = C.dna && !(NOLIVER in C.dna.species.species_traits)
 		var/has_stomach = C.dna && !(NOSTOMACH in C.dna.species.species_traits)
 		if(!M.getorganslot(ORGAN_SLOT_EYES))
-			msg += "<span class='alert'><b>Subject does not have eyes.</b></span>\n"
+			msg += "<span class='alert'><b>У субъекта отсутствуют глаза.</b></span>\n"
 		if(!M.getorganslot(ORGAN_SLOT_EARS))
-			msg += "<span class='alert'><b>Subject does not have ears.</b></span>\n"
+			msg += "<span class='alert'><b>У субъекта отсутсвуют уши.</b></span>\n"
 		if(!M.getorganslot(ORGAN_SLOT_BRAIN))
-			msg += "<span class='alert'><b>Subject's brain function is non-existent!</b></span>\n"
+			msg += "<span class='alert'><b>У субъекта отсутствуют функции мозга!</b></span>\n"
 		if(has_liver && !M.getorganslot(ORGAN_SLOT_LIVER))
-			msg += "<span class='alert'><b>Subject's liver is missing!</b></span>\n"
+			msg += "<span class='alert'><b>У субъекта отсутствует печень!</b></span>\n"
 		if(blooded && !M.getorganslot(ORGAN_SLOT_HEART))
-			msg += "<span class='alert'><b>Subject's heart is missing!</b></span>\n"
+			msg += "<span class='alert'><b>У субъекта отсутствует сердце!</b></span>\n"
 		if(breathes && !M.getorganslot(ORGAN_SLOT_LUNGS))
-			msg += "<span class='alert'><b>Subject's lungs have collapsed from trauma!</b></span>\n"
+			msg += "<span class='alert'><b>Лёгкие пациента разорвались из-за травмы!</b></span>\n"
 		if(has_stomach && !M.getorganslot(ORGAN_SLOT_STOMACH))
-			msg += "<span class='alert'><b>Subject's stomach is missing!</span>\n"
+			msg += "<span class='alert'><b>У субъекта отсутствует желудок!</span>\n"
 
 
 		if(M.radiation)
-			msg += "<span class='alert'>Subject is irradiated.</span>\n"
-			msg += "<span class='info'>Radiation Level: [M.radiation] rad</span>\n"
+			msg += "<span class='alert'>Субъект заражен радиацией.</span>\n"
+			msg += "<span class='info'>Показатели радиоактивного заражения: [M.radiation] rad</span>\n"
 
 
 
@@ -411,29 +411,29 @@ GENETICS SCANNER
 		else if (S.flying_species != initial(S.flying_species))
 			mutant = TRUE
 
-		msg += "\n<span class='info'>Reported Species: [H.spec_trait_examine_font()][H.dna.custom_species ? H.dna.custom_species : S.name]</font></span>\n"
-		msg += "<span class='info'>Base Species: [H.spec_trait_examine_font()][S.name]</font></span>\n"
+		msg += "\n<span class='info'>Раса: [H.spec_trait_examine_font()][H.dna.custom_species ? H.dna.custom_species : S.name]</font></span>\n"
+		msg += "<span class='info'>Раса-прародитель: [H.spec_trait_examine_font()][S.name]</font></span>\n"
 		if(mutant)
-			msg += "<span class='info'>Subject has mutations present.</span>\n"
-	msg += "<span class='info'>Body temperature: [round(M.bodytemperature-T0C,0.1)] &deg;C ([round(M.bodytemperature*1.8-459.67,0.1)] &deg;F)</span>\n"
+			msg += "<span class='info'>У субъекта имеются мутации.</span>\n"
+	msg += "<span class='info'>Температура тела: [round(M.bodytemperature-T0C,0.1)] &deg;C ([round(M.bodytemperature*1.8-459.67,0.1)] &deg;F)</span>\n"
 
 	// Time of death
 	if(M.tod && (M.stat == DEAD || ((HAS_TRAIT(M, TRAIT_FAKEDEATH)) && !advanced)))
 		var/zdelta = round(rand(-world.time, world.time) - M.timeofdeath)
 		if(iszombie(M))
-			msg += "<span class='danger'>Subject died [DisplayTimeText(zdelta)] ago, defibrillation may be possible!</span>"
-			msg += "<span class='danger'> Anomaly detected.</span>\n"
+			msg += "<span class='danger'>Субъект умер [DisplayTimeText(zdelta)] назад, дефибрилляция ещё возможна!</span>"
+			msg += "<span class='danger'> Онаружена аномалия.</span>\n"
 		else
-			msg += "<span class='info'>Time of Death:</span> [M.tod]\n"
+			msg += "<span class='info'>Время смерти:</span> [M.tod]\n"
 			var/tdelta = round(world.time - M.timeofdeath)
 			if(tdelta < (DEFIB_TIME_LIMIT * 10))
 				if(heart_ded)
-					msg += "<span class='danger'>Subject died [DisplayTimeText(tdelta)] ago, heart requires surgical intervention for defibrillation.</span>"
+					msg += "<span class='danger'>Субъект умер [DisplayTimeText(tdelta)] назад, требуется вмешательство в сердце для дефибрилляции.</span>"
 				else
-					msg += "<span class='danger'>Subject died [DisplayTimeText(tdelta)] ago, defibrillation may be possible!</span>"
+					msg += "<span class='danger'>Субъект умер [DisplayTimeText(tdelta)] назад, дефибрилляция ещё возможна!</span>"
 				if(advanced)
 					if(H.get_ghost() || H.key || H.client)//Since it can last a while.
-						msg += "<span class='danger'> Intervention recommended.</span>\n"
+						msg += "<span class='danger'> Вмешательство рекомендовано.</span>\n"
 					else
 						msg += "\n"
 	// Wounds
@@ -442,16 +442,16 @@ GENETICS SCANNER
 		var/list/wounded_parts = C.get_wounded_bodyparts()
 		for(var/i in wounded_parts)
 			var/obj/item/bodypart/wounded_part = i
-			msg += "<span class='alert ml-1'><b>Warning: Physical trauma[LAZYLEN(wounded_part.wounds) > 1? "s" : ""] detected in [wounded_part.name]</b>"
+			msg += "<span class='alert ml-1'><b>Внимание: Физическая травма[LAZYLEN(wounded_part.wounds) > 1? "" : ""] обнаружена [wounded_part.ru_name_v]</b>"
 			for(var/k in wounded_part.wounds)
 				var/datum/wound/W = k
-				msg += "<div class='ml-2'>Type: [W.name]\nSeverity: [W.severity_text()]\nRecommended Treatment: [W.treat_text]</div>\n" // less lines than in woundscan() so we don't overload people trying to get basic med info
+				msg += "<div class='ml-2'>Тип: [W.name]\nТяжесть: [W.severity_text()]\nРекомендуемое лечение: [W.treat_text]</div>\n" // less lines than in woundscan() so we don't overload people trying to get basic med info
 			msg += "</span>\n"
 
 	for(var/thing in M.diseases)
 		var/datum/disease/D = thing
 		if(!(D.visibility_flags & HIDDEN_SCANNER))
-			msg += "<span class='alert'><b>Warning: [D.form] detected</b>\nName: [D.name].\nType: [D.spread_text].\nStage: [D.stage]/[D.max_stages].\nPossible Cure: [D.cure_text]</span>\n"
+			msg += "<span class='alert'><b>Внимание: обнаружена инфекция - [D.form]</b>\nНаименования: [D.name].\nТип: [D.spread_text].\nСтадия: [D.stage]/[D.max_stages].\nВозможное лечение: [D.cure_text]</span>\n"
 
 	// Blood Level
 	if(M.has_dna())
@@ -460,7 +460,7 @@ GENETICS SCANNER
 		if(blood_typepath)
 			if(ishuman(C))
 				if(H.is_bleeding())
-					msg += "<span class='danger'>Subject is bleeding!</span>\n"
+					msg += "<span class='danger'>У субъекта кровотечение!</span>\n"
 			var/blood_percent = round((C.scan_blood_volume() / (BLOOD_VOLUME_NORMAL * C.blood_ratio))*100)
 			var/integrated_blood_percent = round((C.integrating_blood / (BLOOD_VOLUME_NORMAL * C.blood_ratio))*100)
 			var/blood_type = C.dna.blood_type
@@ -471,19 +471,19 @@ GENETICS SCANNER
 
 
 			if((C.scan_blood_volume() + C.integrating_blood) <= (BLOOD_VOLUME_SAFE * C.blood_ratio) && (C.scan_blood_volume() + C.integrating_blood) > (BLOOD_VOLUME_OKAY*C.blood_ratio))
-				msg += "<span class='danger'>LOW [HAS_TRAIT(C, TRAIT_ROBOTIC_ORGANISM) ? "coolant" : "blood"] level [blood_percent] %, [C.scan_blood_volume()] cl[C.integrating_blood? ", with [integrated_blood_percent] % of it integrating, [C.integrating_blood] cl " : ""].</span> <span class='info'>type: [blood_type]</span>\n"
+				msg += "<span class='danger'>НИЗКИЙ УРОВЕНЬ [HAS_TRAIT(C, TRAIT_ROBOTIC_ORGANISM) ? "хладогента" : "крови"] [blood_percent] %, [C.scan_blood_volume()] cl[C.integrating_blood? ", и ещё поступает [integrated_blood_percent] %, [C.integrating_blood] cl " : ""].</span> <span class='info'>type: [blood_type]</span>\n"
 			else if((C.scan_blood_volume() + C.integrating_blood) <= (BLOOD_VOLUME_OKAY * C.blood_ratio))
-				msg += "<span class='danger'>CRITICAL [HAS_TRAIT(C, TRAIT_ROBOTIC_ORGANISM) ? "coolant" : "blood"] level [blood_percent] %, [C.scan_blood_volume()] cl[C.integrating_blood? ", with [integrated_blood_percent] % of it integrating, [C.integrating_blood] cl " : ""].</span> <span class='info'>type: [blood_type]</span>\n"
+				msg += "<span class='danger'>КРИТИЧЕСКИЙ УРОВЕНЬ [HAS_TRAIT(C, TRAIT_ROBOTIC_ORGANISM) ? "хладогента" : "крови"] [blood_percent] %, [C.scan_blood_volume()] cl[C.integrating_blood? ", и ещё поступает [integrated_blood_percent] %, [C.integrating_blood] cl " : ""].</span> <span class='info'>type: [blood_type]</span>\n"
 			else
-				msg += "<span class='info'>[HAS_TRAIT(C, TRAIT_ROBOTIC_ORGANISM) ? "Coolant" : "Blood"] level [blood_percent] %, [C.scan_blood_volume()] cl[C.integrating_blood? ", with [integrated_blood_percent] % of it integrating, [C.integrating_blood] cl " : ""]. type: [blood_type]</span>\n"
+				msg += "<span class='info'>[HAS_TRAIT(C, TRAIT_ROBOTIC_ORGANISM) ? "Показатель уровня хладогента" : "Показатель уровня крови"] [blood_percent] %, [C.scan_blood_volume()] cl[C.integrating_blood? ", и ещё поступает [integrated_blood_percent] %, [C.integrating_blood] cl " : ""]. type: [blood_type]</span>\n"
 
 
 		var/cyberimp_detect
 		for(var/obj/item/organ/cyberimp/CI in C.internal_organs)
 			if(CI.status == ORGAN_ROBOTIC && !CI.syndicate_implant)
-				cyberimp_detect += "[C.name] is modified with a [CI.name].<br>"
+				cyberimp_detect += "[C.name] модифицирован с помощью [CI.name].<br>"
 		if(cyberimp_detect)
-			msg += "<span class='notice'>Detected cybernetic modifications:</span>\n"
+			msg += "<span class='notice'>Обнаружены кибернетические модификации:</span>\n"
 			msg += "<span class='notice'>[cyberimp_detect]</span>\n"
 	to_chat(user, examine_block(msg))
 	SEND_SIGNAL(M, COMSIG_HEALTH_SCAN, user)//SPLURT EDIT ADD - gregnancy
@@ -501,35 +501,35 @@ GENETICS SCANNER
 					reagents += R
 
 				if(length(reagents))
-					msg += "<span class='notice'>Subject contains the following reagents:</span>\n"
+					msg += "<span class='notice'>В организме субъекта присутствуют следующие реагенты:</span>\n"
 					for(var/datum/reagent/R in reagents)
 						var/invalid_reagent = is_reagent_processing_invalid(R, M)
-						msg += "<span class='notice'>[invalid_reagent ? "<font color='grey'>" : ""][R.volume] units of [R.name][invalid_reagent ? "</font>" : ""][R.overdosed == 1 ? "</span> - <span class='boldannounce'>OVERDOSING</span>" : ".</span>"]\n"
+						msg += "<span class='notice'>[invalid_reagent ? "<font color='grey'>" : ""][R.volume] единиц реагента [R.name][invalid_reagent ? "</font>" : ""][R.overdosed == 1 ? "</span> - <span class='boldannounce'>ПЕРЕДОЗ</span>" : ".</span>"]\n"
 				else
-					msg += "<span class='notice'>Subject contains no reagents.</span>\n"
+					msg += "<span class='notice'>У субъекта в организме нет реагентов.</span>\n"
 
 			else
-				msg += "<span class='notice'>Subject contains no reagents.</span>\n"
+				msg += "<span class='notice'>У субъекта в организме нет реагентов.</span>\n"
 			if(M.reagents.addiction_list.len)
-				msg += "<span class='boldannounce'>Subject is addicted to the following reagents:</span>\n"
+				msg += "<span class='boldannounce'>У субъекта есть зависимость к следующим реагентам:</span>\n"
 				for(var/datum/reagent/R in M.reagents.addiction_list)
 					msg += "<span class='danger'>[R.name]</span>\n"
 			else
-				msg += "<span class='notice'>Subject is not addicted to any reagents.</span>\n"
+				msg += "<span class='notice'>У субъекта нет зависимости к каким-либо.</span>\n"
 
 			var/datum/reagent/impure/fermiTox/F = M.reagents.has_reagent(/datum/reagent/impure/fermiTox)
 			if(istype(F,/datum/reagent/impure/fermiTox))
 				switch(F.volume)
 					if(5 to 10)
-						msg += "<span class='notice'>Subject contains a low amount of toxic isomers.</span>\n"
+						msg += "<span class='notice'Субъект содержит в себе незначительное количество токсичных изомеров.</span>\n"
 					if(10 to 25)
-						msg += "<span class='danger'>Subject contains toxic isomers.</span>\n"
+						msg += "<span class='danger'>Субъект содержит в себе токсичные изомеры.</span>\n"
 					if(25 to 50)
-						msg += "<span class='danger'>Subject contains a substantial amount of toxic isomers.</span>\n"
+						msg += "<span class='danger'>Субъект содержит в себе повышенное количество токсичных изомеров.</span>\n"
 					if(50 to 95)
-						msg += "<span class='danger'>Subject contains a high amount of toxic isomers.</span>\n"
+						msg += "<span class='danger'>Субъект содержит в себе очень много токсичных изомеров.</span>\n"
 					if(95 to INFINITY)
-						msg += "<span class='danger'>Subject contains a extremely dangerous amount of toxic isomers.</span>\n"
+						msg += "<span class='danger'>Субъект содержит в себе крайне опасное количество токсичных изомеров.</span>\n"
 
 			msg += "</span>"
 			to_chat(user, examine_block(msg))
@@ -545,9 +545,9 @@ GENETICS SCANNER
 	mode = !mode
 	switch (mode)
 		if(1)
-			to_chat(usr, "The scanner now shows specific limb damage.")
+			to_chat(usr, "Сканер теперь показывает повреждения отдельно взятой конечности.")
 		if(0)
-			to_chat(usr, "The scanner no longer shows limb damage.")
+			to_chat(usr, "Сканер теперь не показывает повреждения конечности.")
 
 /obj/item/healthanalyzer/advanced
 	name = "advanced health analyzer"
@@ -565,7 +565,7 @@ GENETICS SCANNER
 		if(render_list == "")
 			render_list += "<blockquote class='warning'>"
 		var/obj/item/bodypart/wounded_part = i
-		render_list += "<span class='alert ml-1'><b>Warning: Physical trauma[LAZYLEN(wounded_part.wounds) > 1? "s" : ""] detected in [wounded_part.name]</b>"
+		render_list += "<span class='alert ml-1'><b>Внимание: Физические травмы[LAZYLEN(wounded_part.wounds) > 1? "" : ""] обнаружены в [wounded_part.ru_name_v]</b>"
 		for(var/k in wounded_part.wounds)
 			var/datum/wound/W = k
 			render_list += "<div class='ml-2'>[W.get_scanner_description()]</div>\n"
