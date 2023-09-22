@@ -94,7 +94,7 @@
 
 // Quirk examine text
 /datum/quirk/Hypnotic_gaze/proc/quirk_examine_Hypnotic_gaze(atom/examine_target, mob/living/carbon/human/examiner, list/examine_list)
-	examine_list += "[quirk_holder.ru_ego(TRUE)] необычайно сверкают..."
+	examine_list += "[quirk_holder.ru_ego(TRUE)] глаза необычайно сверкают..."
 
 /datum/quirk/overweight
 	name = "Лишний Вес"
