@@ -25,8 +25,8 @@
 /datum/emote/living/audio/ohyes
 	key = "ohyes"
 	key_third_person = "ohyes"
-	message = "приятно удивлен."
-	message_mime = "приятно удивлен."
+	message = "испытывает приятное удивление."
+	message_mime = "испытывает приятное удивление."
 	emote_sound = 'modular_bluemoon/kovac_shitcode/sound/new_emotes/ohyes.ogg'
 	emote_cooldown = 11.6 SECONDS
 
@@ -60,4 +60,12 @@
 	message = "прижимает палец к своему рту, издавая 'ТССС'."
 	message_mime = "прижимает палец к своему рту, издавая 'ТССС'."
 	emote_sound = 'modular_bluemoon/kovac_shitcode/sound/new_emotes/tsss.ogg'
-	emote_cooldown = 30 SECONDS
+	emote_cooldown = 11.6 SECONDS
+
+/datum/emote/living/audio/hellothere
+	key = "hellothere"
+	key_third_person = "hellothere"
+	message = "приветствует вас."
+	message_mime = "молча приветствует вас."
+	emote_sound = 'modular_bluemoon/kovac_shitcode/sound/new_emotes/hi.ogg'
+	emote_cooldown = 11.6 SECONDS
