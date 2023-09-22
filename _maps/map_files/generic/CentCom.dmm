@@ -4792,7 +4792,7 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership)
 "efj" = (
-/obj/structure/sign/flag/tizira,
+/obj/structure/sign/flag/mars,
 /turf/closed/indestructible/fakeglass,
 /area/tdome/tdomeobserve)
 "efD" = (
@@ -27620,7 +27620,7 @@
 /turf/open/floor/holofloor/carpet,
 /area/holodeck/rec_center/lounge)
 "xYp" = (
-/obj/structure/sign/flag/mothic,
+/obj/structure/sign/flag/vulp,
 /turf/closed/indestructible/fakeglass,
 /area/tdome/tdomeobserve)
 "xYF" = (

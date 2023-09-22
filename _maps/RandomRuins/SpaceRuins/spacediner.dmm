@@ -437,10 +437,6 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/grill,
-/obj/machinery/light/small/broken{
-	dir = 1;
-	icon_state = "bulb-broken"
-	},
 /obj/machinery/power/apc/highcap/five_k{
 	name = "Space Diner APC";
 	pixel_y = 24
@@ -450,6 +446,10 @@
 "bu" = (
 /obj/machinery/deepfryer,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/broken{
+	dir = 1;
+	icon_state = "bulb-broken"
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/diner/interior)
 "bv" = (
