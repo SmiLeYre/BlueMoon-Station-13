@@ -118,8 +118,8 @@ GENETICS SCANNER
 		user.visible_message("<span class='warning'>[user] анализирует состояние пола!</span>", \
 							"<span class='notice'>Вы по-идиотски пытаетесь анализировать пол!</span>")
 		to_chat(user, "<span class='info'>Анализ состояния:\n\tОбщее состояние: <b>Здоров</b></span>\
-					\n<span class='info'>Key: <font color='blue'>Suffocation</font>/<font color='green'>Toxin</font>/<font color='#FF8000'>Burn</font>/<font color='red'>Brute</font></span>\
-					\n<span class='info'>\tDamage specifics: <font color='blue'>0</font>-<font color='green'>0</font>-<font color='#FF8000'>0</font>-<font color='red'>0</font></span>\
+					\n<span class='info'>Тип: <font color='blue'>Дыхание</font>/<font color='green'>Токсины</font>/<font color='#FF8000'>Ожоги</font>/<font color='red'>Травмы</font></span>\
+					\n<span class='info'>\tПоказатели урона: <font color='blue'>0</font>-<font color='green'>0</font>-<font color='#FF8000'>0</font>-<font color='red'>0</font></span>\
 					\n<span class='info'>Температура тела: ???</span>")
 		return
 

@@ -9,6 +9,8 @@
 	armour_penetration = 50
 	zone_accuracy_factor = 100		//guarunteed 100%
 	var/breakthings = TRUE
+	wound_bonus = 20
+	bare_wound_bonus = 10
 
 /obj/item/projectile/bullet/p50/on_hit(atom/target, blocked = 0)
 	if(isobj(target) && (blocked != 100) && breakthings)
@@ -23,6 +25,8 @@
 	dismemberment = 0
 	knockdown = 0
 	breakthings = FALSE
+	wound_bonus = 5
+	bare_wound_bonus = 0
 
 /obj/item/projectile/bullet/p50/soporific/on_hit(atom/target, blocked = FALSE)
 	if((blocked != 100) && isliving(target))
