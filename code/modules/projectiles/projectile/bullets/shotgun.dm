@@ -2,7 +2,7 @@
 	name = "12g shotgun slug"
 	damage = 45
 	sharpness = SHARP_POINTY
-	wound_bonus = 10
+	wound_bonus = 6
 
 /obj/item/projectile/bullet/shotgun_slug/executioner
 	name = "executioner slug" // admin only, can dismember limbs
