@@ -21,7 +21,28 @@
 	/// If we let off blood when hit, the max blood lost is this * the incoming damage
 	var/internal_bleeding_coefficient
 
+	/// If we deal lung traumas, when is the next one due?
+	var/next_trauma_cycle
+
+	/// How long do we wait for the next lung stroke?
+	var/trauma_cycle_cooldown = 1.5 MINUTES
+
+/datum/wound/pierce/apply_wound(obj/item/bodypart/L, silent, datum/wound/old_wound, smited)
+	if(L.body_zone == BODY_ZONE_CHEST && severity == WOUND_SEVERITY_SEVERE)
+		ru_name = "Пробитие лёгкого"
+		ru_name_r = "пробития лёгкого"
+		occur_text = "раскалывается, приводя к обильному кашлю"
+		examine_desc = "имеет углубленную выемку, из которой выходит воздух"
+	. = ..()
+
 /datum/wound/pierce/wound_injury(datum/wound/old_wound)
+	if(limb.body_zone == BODY_ZONE_CHEST && severity == WOUND_SEVERITY_SEVERE)
+		processes = TRUE
+		victim.adjustOxyLoss(15)
+		victim.adjustOrganLoss(ORGAN_SLOT_LUNGS,10)
+		victim.emote("cough")
+		next_trauma_cycle = world.time + (rand(100-20, 100+20) * 0.01 * trauma_cycle_cooldown)
+
 	blood_flow = initial_flow
 
 /datum/wound/pierce/receive_damage(wounding_type, wounding_dmg, wound_bonus)
@@ -56,6 +77,12 @@
 				victim.add_splatter_floor(get_step(victim.loc, victim.dir))
 
 /datum/wound/pierce/handle_process()
+	. = ..()
+	if(limb.body_zone == BODY_ZONE_CHEST && severity == WOUND_SEVERITY_SEVERE && world.time > next_trauma_cycle)
+		next_trauma_cycle = world.time + (rand(100-20, 100+20) * 0.01 * trauma_cycle_cooldown)
+		victim.adjustOxyLoss(15)
+		victim.emote("gasp")
+
 	blood_flow = min(blood_flow, WOUND_SLASH_MAX_BLOODFLOW)
 
 	if(victim.bodytemperature < (BODYTEMP_NORMAL -  10))
@@ -135,12 +162,12 @@
 	occur_text = "извергает тонкую струйку крови"
 	sound_effect = 'sound/effects/wounds/pierce1.ogg'
 	severity = WOUND_SEVERITY_MODERATE
-	initial_flow = 1.5
+	initial_flow = 1.3
 	gauzed_clot_rate = 0.8
 	internal_bleeding_chance = 45
 	internal_bleeding_coefficient = 1.1
-	threshold_minimum = 55
-	threshold_penalty = 15
+	threshold_minimum = 40
+	threshold_penalty = 10
 	status_effect_type = /datum/status_effect/wound/pierce/moderate
 	scar_keyword = "piercemoderate"
 
@@ -154,12 +181,12 @@
 	occur_text = "выплескивает струю крови, обнажая сквозную рану"
 	sound_effect = 'sound/effects/wounds/pierce2.ogg'
 	severity = WOUND_SEVERITY_SEVERE
-	initial_flow = 2
+	initial_flow = 1.7
 	gauzed_clot_rate = 0.6
 	internal_bleeding_chance = 65
 	internal_bleeding_coefficient = 1.3
-	threshold_minimum = 85
-	threshold_penalty = 35
+	threshold_minimum = 70
+	threshold_penalty = 15
 	status_effect_type = /datum/status_effect/wound/pierce/severe
 	scar_keyword = "piercesevere"
 
@@ -173,12 +200,12 @@
 	occur_text = "разрывается, разбрасывая вокруг обломки костей и плоти"
 	sound_effect = 'sound/effects/wounds/pierce3.ogg'
 	severity = WOUND_SEVERITY_CRITICAL
-	initial_flow = 3.5
+	initial_flow = 2.5
 	gauzed_clot_rate = 0.4
 	internal_bleeding_chance = 80
 	internal_bleeding_coefficient = 1.6
 	threshold_minimum = 105
-	threshold_penalty = 55
+	threshold_penalty = 20
 	status_effect_type = /datum/status_effect/wound/pierce/critical
 	scar_keyword = "piercecritical"
 	wound_flags = (FLESH_WOUND | ACCEPTS_GAUZE | MANGLES_FLESH)
