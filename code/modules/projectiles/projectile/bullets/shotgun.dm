@@ -16,9 +16,9 @@
 
 /obj/item/projectile/bullet/shotgun_beanbag
 	name = "beanbag slug"
-	damage = 10
+	damage = 5
 	stamina = 70
-	wound_bonus = 20
+	wound_bonus = 2
 	sharpness = SHARP_NONE
 	embedding = null
 
