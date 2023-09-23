@@ -57,7 +57,7 @@ SHITCODE AHEAD. BE ADVISED. Also comment extravaganza
 	appearance_flags = 0
 	mouse_opacity = MOUSE_OPACITY_ICON
 	wound_bonus = 0
-	bare_wound_bonus = 5
+	bare_wound_bonus = 2
 	var/size = 3
 	var/charging = FALSE
 
