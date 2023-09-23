@@ -1867,7 +1867,9 @@
 /turf/open/floor/engine/o2,
 /area/ruin/lavaland/unpowered/deepspaceone/engineering)
 "mY" = (
-/obj/structure/closet/secure_closet/contraband/armory,
+/obj/structure/closet/secure_closet/contraband/armory{
+	req_access = null
+	},
 /obj/effect/spawner/lootdrop/armory_contraband,
 /obj/effect/spawner/lootdrop/armory_contraband,
 /obj/effect/spawner/lootdrop/armory_contraband,
@@ -5766,7 +5768,9 @@
 /turf/open/indestructible/hoteltile,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "PS" = (
-/obj/structure/safe,
+/obj/structure/safe{
+	req_access = s
+	},
 /obj/item/storage/box/syndie_kit/chameleon/ghostcafe{
 	desc = "It's a box, for storing things.";
 	name = "chameleon kit"
