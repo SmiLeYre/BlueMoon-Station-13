@@ -5769,7 +5769,7 @@
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "PS" = (
 /obj/structure/safe{
-	req_access = s
+	req_access = list("syndicate")
 	},
 /obj/item/storage/box/syndie_kit/chameleon/ghostcafe{
 	desc = "It's a box, for storing things.";
