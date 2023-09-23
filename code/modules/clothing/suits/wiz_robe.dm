@@ -302,6 +302,7 @@
 	desc = "Not all wizards are afraid of getting up close and personal."
 	icon_state = "battlemage"
 	item_state = "battlemage"
+	tail_state = "wizard_battle"
 	recharge_rate = 0.1
 	max_charges = 15
 	current_charges = 15

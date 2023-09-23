@@ -534,7 +534,7 @@ Contains:
 	name = "paramedic EVA suit"
 	icon_state = "paramedic-eva"
 	item_state = "paramedic-eva"
-	tail_state = "ert-commander"
+	tail_state = "paramed"
 	desc = "A deep blue space suit decorated with medical insignia to indicate that the wearer is trained emergency medical personnel."
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/roller)
 
