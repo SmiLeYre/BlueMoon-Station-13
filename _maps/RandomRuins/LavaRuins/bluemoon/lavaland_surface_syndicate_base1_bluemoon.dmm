@@ -1150,7 +1150,6 @@
 /obj/machinery/button/door{
 	id = "interdynecargo"
 	},
-/obj/item/ammo_box/c9mm,
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "hl" = (
@@ -1177,6 +1176,10 @@
 	dir = 1
 	},
 /obj/structure/flora/rock,
+/obj/item/clothing/neck/cloak/syndiecap,
+/obj/item/clothing/suit/toggle/labcoat/depjacket/sec{
+	name = "brig officer jacket"
+	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "hA" = (
@@ -1283,7 +1286,21 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "iw" = (
-/obj/structure/table,
+/obj/structure/closet/secure_closet{
+	icon_state = "sec";
+	name = "brig officer gear locker";
+	req_access_txt = "151"
+	},
+/obj/item/storage/belt/security/full,
+/obj/item/gun/energy/disabler,
+/obj/item/clothing/mask/gas/syndicate/ds,
+/obj/item/clothing/neck/cloak/syndiecap,
+/obj/item/clothing/suit/toggle/labcoat/depjacket/sec{
+	name = "brig officer jacket"
+	},
+/obj/item/clothing/under/rank/security/officer/util/syndicate,
+/obj/item/storage/belt/security/webbing/ds,
+/obj/item/clothing/head/beret/sec/syndicate,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "ix" = (
@@ -1851,6 +1868,7 @@
 /area/ruin/lavaland/unpowered/deepspaceone/engineering)
 "mY" = (
 /obj/structure/closet/secure_closet/contraband/armory,
+/obj/effect/spawner/lootdrop/armory_contraband,
 /obj/effect/spawner/lootdrop/armory_contraband,
 /obj/effect/spawner/lootdrop/armory_contraband,
 /obj/effect/spawner/lootdrop/armory_contraband,
@@ -8013,9 +8031,9 @@ mb
 Zz
 Fa
 hG
-iw
+zj
 vM
-iw
+lw
 hG
 Fa
 Zz
@@ -8131,9 +8149,9 @@ jA
 Zz
 FE
 gs
-zj
+iw
 hq
-lw
+iw
 mK
 Gp
 Zz
