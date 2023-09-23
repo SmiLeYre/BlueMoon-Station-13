@@ -56,6 +56,7 @@
 	name = "4.6x30mm bullet"
 	damage = 5
 	stamina = 30
+	wound_bonus = 3
 
 ///toy memes///
 
