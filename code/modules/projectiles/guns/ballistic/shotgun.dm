@@ -260,6 +260,7 @@
 /obj/item/gun/ballistic/shotgun/automatic/combat/warden
 	name = "Warden's Combat Shotgun"
 	desc = "A modified version of the semi-automatic combat shotgun with a collapsible stock and a safety that prevents firing while folded. For close encounters."
+	fire_delay = 4
 	recoil = 5
 	spread = 2
 

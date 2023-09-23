@@ -57,7 +57,7 @@
 /obj/item/ammo_box/magazine/internal/shot/com/rsh12
 	name = "rsh-15 internal magazine"
 	ammo_type = /obj/item/ammo_casing/shotgun/rubbershot
-	max_ammo = 4
+	max_ammo = 6
 
 /obj/item/gun/ballistic/shotgun/rsh12
 	name = "RSH-15"
