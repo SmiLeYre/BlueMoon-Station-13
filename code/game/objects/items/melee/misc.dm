@@ -342,7 +342,7 @@
 	var/weight_class_on // What is the new size class when turned on
 	var/sword_point = TRUE
 
-	wound_bonus = 10
+	wound_bonus = 5
 
 /obj/item/melee/classic_baton/Initialize(mapload)
 	. = ..()

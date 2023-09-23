@@ -96,8 +96,8 @@
 	sharpness = SHARP_POINTY
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 50)
 	var/bayonet = FALSE	//Can this be attached to a gun?
-	wound_bonus = 8
-	bare_wound_bonus = 5
+	wound_bonus = 6
+	bare_wound_bonus = 10
 	custom_price = PRICE_NORMAL
 
 /obj/item/kitchen/knife/Initialize(mapload)
@@ -132,8 +132,8 @@
 	sharpness = SHARP_POINTY
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 50)
 	var/bayonet = FALSE	//Can this be attached to a gun?
-	wound_bonus = 10
-	bare_wound_bonus = 5
+	wound_bonus = 6
+	bare_wound_bonus = 10
 	custom_price = PRICE_NORMAL
 
 /obj/item/kitchen/efink/Initialize(mapload)
@@ -194,8 +194,8 @@
 	custom_materials = list(/datum/material/iron=18000)
 	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	w_class = WEIGHT_CLASS_NORMAL
-	wound_bonus = 9
-	bare_wound_bonus = 10
+	wound_bonus = 6
+	bare_wound_bonus = 13
 	custom_price = PRICE_EXPENSIVE
 
 /obj/item/kitchen/knife/combat
@@ -206,8 +206,8 @@
 	embedding = list("pain_mult" = 4, "embed_chance" = 65, "fall_chance" = 10, "ignore_throwspeed_threshold" = TRUE)
 	force = 16
 	throwforce = 16
-	wound_bonus = 12
-	bare_wound_bonus = 15
+	wound_bonus = 8
+	bare_wound_bonus = 11
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
 	bayonet = TRUE
 
@@ -219,8 +219,8 @@
 	embedding = list("pain_mult" = 4, "embed_chance" = 35, "fall_chance" = 10)
 	force = 15
 	throwforce = 15
-	wound_bonus = 11
-	bare_wound_bonus = 10
+	wound_bonus = 6
+	bare_wound_bonus = 11
 	bayonet = TRUE
 
 /obj/item/kitchen/knife/combat/survival/knuckledagger
@@ -329,8 +329,8 @@
 	throwforce = 15
 	throw_speed = 4
 	throw_range = 8
-	wound_bonus = 10
-	bare_wound_bonus = 10
+	wound_bonus = 6
+	bare_wound_bonus = 16
 	armor = list(MELEE = 50, BULLET = 50, LASER = 50, ENERGY = 50, BOMB = 50, BIO = 0, RAD = 0, FIRE = 75, ACID = 75)
 	custom_materials = list(/datum/material/glass= SHEET_MATERIAL_AMOUNT * 4, /datum/material/alloy/plastitanium= SHEET_MATERIAL_AMOUNT * 2)
 

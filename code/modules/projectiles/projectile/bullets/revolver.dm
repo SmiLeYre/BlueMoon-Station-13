@@ -24,7 +24,7 @@
 	ricochet_auto_aim_angle = 10
 	ricochet_auto_aim_range = 3
 	wound_bonus = 5
-	bare_wound_bonus = 10
+	bare_wound_bonus = 8
 	embedding = list(embed_chance=15, fall_chance=2, jostle_chance=2, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.4, pain_mult=3, jostle_pain_mult=5, rip_time=10)
 
 /obj/item/projectile/bullet/c38/match
@@ -36,7 +36,7 @@
 	ricochet_incidence_leeway = 50
 	ricochet_decay_chance = 1
 	ricochet_decay_damage = 1
-	wound_bonus = 10
+	wound_bonus = 7
 
 /obj/item/projectile/bullet/c38/match/bouncy
 	name = ".38 Rubber bullet"

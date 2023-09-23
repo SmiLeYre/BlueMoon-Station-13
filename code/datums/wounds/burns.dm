@@ -274,7 +274,7 @@
 	occur_text = "быстро обугливается, обнажая потрескавшуюся кожу и плоть"
 	severity = WOUND_SEVERITY_SEVERE
 	damage_mulitplier_penalty = 1.2
-	threshold_minimum = 50
+	threshold_minimum = 40
 	threshold_penalty = 60
 	status_effect_type = /datum/status_effect/wound/burn/severe
 	treatable_by = list(/obj/item/flashlight/pen/paramedic, /obj/item/stack/medical/ointment, /obj/item/stack/medical/mesh)
@@ -293,7 +293,7 @@
 	severity = WOUND_SEVERITY_CRITICAL
 	damage_mulitplier_penalty = 1.5
 	sound_effect = 'sound/effects/wounds/sizzle2.ogg'
-	threshold_minimum = 100
+	threshold_minimum = 80
 	threshold_penalty = 120
 	status_effect_type = /datum/status_effect/wound/burn/critical
 	treatable_by = list(/obj/item/flashlight/pen/paramedic, /obj/item/stack/medical/ointment, /obj/item/stack/medical/mesh)

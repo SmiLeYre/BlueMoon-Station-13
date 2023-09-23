@@ -204,8 +204,8 @@
 	viable_zones = list(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 	interaction_efficiency_penalty = 1.8
 	limp_slowdown = 1.8
-	threshold_minimum = 10
-	threshold_penalty = 25
+	threshold_minimum = 20
+	threshold_penalty = 30
 	treatable_tool = TOOL_BONESET
 	wound_flags = (BONE_WOUND)
 	status_effect_type = /datum/status_effect/wound/blunt/moderate
