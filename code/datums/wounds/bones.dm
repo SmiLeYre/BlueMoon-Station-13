@@ -203,8 +203,8 @@
 	severity = WOUND_SEVERITY_MODERATE
 	viable_zones = list(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 	interaction_efficiency_penalty = 1.8
-	limp_slowdown = 1.5
-	threshold_minimum = 55
+	limp_slowdown = 1.3
+	threshold_minimum = 60
 	threshold_penalty = 15
 	treatable_tool = TOOL_BONESET
 	wound_flags = (BONE_WOUND)
@@ -306,7 +306,7 @@
 
 	severity = WOUND_SEVERITY_SEVERE
 	interaction_efficiency_penalty = 2.5
-	limp_slowdown = 3.5
+	limp_slowdown = 3.2
 	threshold_minimum = 95
 	threshold_penalty = 35
 	treatable_by = list(/obj/item/stack/sticky_tape/surgical, /obj/item/stack/medical/bone_gel)
