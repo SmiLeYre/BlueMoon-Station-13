@@ -25,7 +25,7 @@
 	var/ship_template
 	var/ship_name = "Admiral Brown's fleet battlecruiser"
 	var/initial_send_time = world.time
-	var/response_max_time = 5 MINUTES
+	var/response_max_time = 3 MINUTES
 
 	ship_name = pick(strings(PIRATE_NAMES_FILE, "rogue_names"))
 
