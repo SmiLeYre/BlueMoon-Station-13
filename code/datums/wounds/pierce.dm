@@ -25,7 +25,7 @@
 	var/next_trauma_cycle
 
 	/// How long do we wait for the next lung stroke?
-	var/trauma_cycle_cooldown = 1.5 MINUTES
+	var/trauma_cycle_cooldown = 1.3 MINUTES
 
 /datum/wound/pierce/apply_wound(obj/item/bodypart/L, silent, datum/wound/old_wound, smited)
 	if(L.body_zone == BODY_ZONE_CHEST && severity == WOUND_SEVERITY_SEVERE)
@@ -39,7 +39,7 @@
 	if(limb.body_zone == BODY_ZONE_CHEST && severity == WOUND_SEVERITY_SEVERE)
 		processes = TRUE
 		victim.adjustOxyLoss(15)
-		victim.adjustOrganLoss(ORGAN_SLOT_LUNGS,10)
+		victim.adjustOrganLoss(ORGAN_SLOT_LUNGS,15)
 		victim.emote("cough")
 		next_trauma_cycle = world.time + (rand(100-20, 100+20) * 0.01 * trauma_cycle_cooldown)
 
@@ -80,7 +80,7 @@
 	. = ..()
 	if(limb.body_zone == BODY_ZONE_CHEST && severity == WOUND_SEVERITY_SEVERE && world.time > next_trauma_cycle)
 		next_trauma_cycle = world.time + (rand(100-20, 100+20) * 0.01 * trauma_cycle_cooldown)
-		victim.adjustOxyLoss(15)
+		victim.adjustOxyLoss(20)
 		victim.emote("gasp")
 
 	blood_flow = min(blood_flow, WOUND_SLASH_MAX_BLOODFLOW)
