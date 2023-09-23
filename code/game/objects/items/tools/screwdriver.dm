@@ -34,7 +34,7 @@
 		"yellow" = rgb(255, 165, 0)
 	)
 
-	wound_bonus = 6
+	wound_bonus = 5
 	bare_wound_bonus = 9
 
 /obj/item/screwdriver/suicide_act(mob/user)

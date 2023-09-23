@@ -11,7 +11,7 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 	force = 12
 	throwforce = 12
 	wound_bonus = 7
-	bare_wound_bonus = 10
+	bare_wound_bonus = 9
 	throw_speed = 2
 	throw_range = 7
 	w_class = WEIGHT_CLASS_BULKY

@@ -59,7 +59,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	force = 14
 	throwforce = 10
-	wound_bonus = 15
+	wound_bonus = 8
 	bare_wound_bonus = 10
 	reach = 2
 	w_class = WEIGHT_CLASS_NORMAL
