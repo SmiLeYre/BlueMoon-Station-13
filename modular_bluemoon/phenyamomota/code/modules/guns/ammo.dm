@@ -20,7 +20,7 @@
 /obj/item/projectile/bullet/a556_ap
 	name = "5.56mm armor-piercing bullet"
 	damage = 19
-	wound_bonus = 5
+	wound_bonus = 6
 	armour_penetration = 40
 
 /obj/item/ammo_casing/a556/ap
@@ -74,7 +74,7 @@
 /obj/item/projectile/bullet/a762x39
 	name = "7.62x39 bullet"
 	damage = 28
-	wound_bonus = 11
+	wound_bonus = 10
 
 /obj/item/ammo_casing/a762x39
 	name = "7.62x39 bullet casing"
@@ -92,7 +92,7 @@
 /obj/item/projectile/bullet/a762x39_ap
 	name = "7.62x39 armor-piercing bullet"
 	damage = 24
-	wound_bonus = 6
+	wound_bonus = 7
 	armour_penetration = 40
 
 /obj/item/ammo_casing/a762x39/ap
