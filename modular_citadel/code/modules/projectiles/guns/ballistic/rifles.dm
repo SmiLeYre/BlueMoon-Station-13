@@ -54,7 +54,7 @@
 
 /obj/item/projectile/bullet/c46x30mm/rubber
 	name = "4.6x30mm bullet"
-	damage = 5
+	damage = 2.5
 	stamina = 30
 	wound_bonus = 3
 
