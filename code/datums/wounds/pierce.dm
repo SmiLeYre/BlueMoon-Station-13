@@ -135,7 +135,7 @@
 	occur_text = "извергает тонкую струйку крови"
 	sound_effect = 'sound/effects/wounds/pierce1.ogg'
 	severity = WOUND_SEVERITY_MODERATE
-	initial_flow = 2
+	initial_flow = 1.5
 	gauzed_clot_rate = 0.8
 	internal_bleeding_chance = 45
 	internal_bleeding_coefficient = 1.1
@@ -154,7 +154,7 @@
 	occur_text = "выплескивает струю крови, обнажая сквозную рану"
 	sound_effect = 'sound/effects/wounds/pierce2.ogg'
 	severity = WOUND_SEVERITY_SEVERE
-	initial_flow = 3
+	initial_flow = 2
 	gauzed_clot_rate = 0.6
 	internal_bleeding_chance = 65
 	internal_bleeding_coefficient = 1.3
@@ -173,7 +173,7 @@
 	occur_text = "разрывается, разбрасывая вокруг обломки костей и плоти"
 	sound_effect = 'sound/effects/wounds/pierce3.ogg'
 	severity = WOUND_SEVERITY_CRITICAL
-	initial_flow = 4
+	initial_flow = 3.5
 	gauzed_clot_rate = 0.4
 	internal_bleeding_chance = 80
 	internal_bleeding_coefficient = 1.6

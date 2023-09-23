@@ -255,7 +255,7 @@
 	occur_text = "разрезается, что приводит к кровотечению"
 	sound_effect = 'sound/effects/wounds/blood1.ogg'
 	severity = WOUND_SEVERITY_MODERATE
-	initial_flow = 1.5
+	initial_flow = 1.3
 	minimum_flow = 0.375
 	max_per_type = 3
 	clot_rate = 0.12
@@ -274,7 +274,7 @@
 	occur_text = "широко раскрывается, что приводит к венозному кровотечению"
 	sound_effect = 'sound/effects/wounds/blood2.ogg'
 	severity = WOUND_SEVERITY_SEVERE
-	initial_flow = 2.5
+	initial_flow = 2.3
 	minimum_flow = 1.75
 	clot_rate = 0.07
 	max_per_type = 4
