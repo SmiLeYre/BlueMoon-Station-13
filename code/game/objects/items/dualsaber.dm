@@ -23,8 +23,8 @@
 	max_integrity = 200
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 100, ACID = 70)
 	resistance_flags = FIRE_PROOF
-	wound_bonus = 10
-	bare_wound_bonus = 15
+	wound_bonus = 7
+	bare_wound_bonus = 13
 	block_parry_data = /datum/block_parry_data/dual_esword
 	block_chance = 60
 	var/hacked = FALSE

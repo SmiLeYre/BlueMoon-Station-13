@@ -21,7 +21,7 @@
 	block_chance = 50
 	armour_penetration = 50
 	wound_bonus = 7
-	bare_wound_bonus = 14
+	bare_wound_bonus = 13
 	w_class = WEIGHT_CLASS_NORMAL
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
