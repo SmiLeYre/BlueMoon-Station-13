@@ -21,3 +21,4 @@
 #define IS_NINJA_SUIT_NET_CREATION(action) (istype(action, /datum/action/item_action/ninjanet))
 #define IS_NINJA_SUIT_SWORD_RECALL(action) (istype(action, /datum/action/item_action/ninja_sword_recall))
 #define IS_NINJA_SUIT_STEALTH(action) (istype(action, /datum/action/item_action/ninja_stealth))
+#define IS_NINJA_SUIT_NINJASTATUS(action) (istype(action, /datum/action/item_action/ninjastatus))

@@ -142,6 +142,9 @@
 	if(IS_NINJA_SUIT_STEALTH(action))
 		toggle_stealth()
 		return TRUE
+	if(IS_NINJA_SUIT_NINJASTATUS(action))
+		ninjastatus()
+		return TRUE
 	return FALSE
 
 /obj/item/clothing/suit/space/space_ninja/run_block(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = ATTACK_TYPE_MELEE)

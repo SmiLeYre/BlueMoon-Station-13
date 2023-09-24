@@ -2,7 +2,8 @@
 	name = "Toggle Stealth"
 	desc = "Toggles stealth mode on and off."
 	button_icon_state = "ninja_cloak"
-	icon_icon = 'icons/mob/actions/actions_minor_antag.dmi'
+	icon_icon = 'icons/mob/actions/actions_ninja.dmi'
+	background_icon_state = "background_green"
 
 /**
  * Proc called to toggle ninja stealth.

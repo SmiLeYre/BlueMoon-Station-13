@@ -2,8 +2,8 @@
 	name = "Energy Net (40E)"
 	desc = "Captures a fallen opponent in a net of energy."
 	button_icon_state = "energynet"
-	icon_icon = 'icons/effects/effects.dmi'
-
+	icon_icon = 'icons/mob/actions/actions_ninja.dmi'
+	background_icon_state = "background_green"
 /**
  * Proc called to ensnare a person in a energy net.
  *

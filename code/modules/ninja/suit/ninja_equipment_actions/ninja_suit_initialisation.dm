@@ -26,6 +26,7 @@ GLOBAL_LIST_INIT(ninja_deinitialize_messages, list(
 
 /datum/action/item_action/initialize_ninja_suit
 	name = "Toggle Ninja Suit"
+	background_icon_state = "background_green"
 
 /**
  * Toggles the ninja suit on/off

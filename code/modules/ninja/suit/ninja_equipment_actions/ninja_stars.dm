@@ -1,8 +1,9 @@
 /datum/action/item_action/ninjastar
 	name = "Create Throwing Stars (1E)"
 	desc = "Creates a throwing star in your hand, if possible."
-	button_icon_state = "throwingstar"
-	icon_icon = 'icons/obj/items_and_weapons.dmi'
+	button_icon_state = "shuriken"
+	icon_icon = 'icons/mob/actions/actions_ninja.dmi'
+	background_icon_state = "background_green"
 
 /**
  * Proc called to create a ninja star in the ninja's hands.
