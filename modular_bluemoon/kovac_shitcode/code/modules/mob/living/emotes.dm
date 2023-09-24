@@ -54,7 +54,7 @@
 	emote_sound = 'modular_bluemoon/kovac_shitcode/sound/new_emotes/malf.ogg'
 	emote_cooldown = 30.6 SECONDS
 
-/datum/emote/living/audio/malf
+/datum/emote/living/audio/tsss
 	key = "tsss"
 	key_third_person = "tsss"
 	message = "прижимает палец к своему рту, издавая 'ТССС'."
