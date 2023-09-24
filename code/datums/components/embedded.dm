@@ -169,7 +169,7 @@
 		damage *= 0.5
 	if(harmful && prob(pain_chance_current))
 		limb.receive_damage(brute=(1-pain_stam_pct) * damage, stamina=pain_stam_pct * damage, wound_bonus = CANT_WOUND)
-		to_chat(victim, "<span class='userdanger'>[limb.ru_name] ноет от боли из-за застревания в ней [weapon]!</span>")
+		to_chat(victim, "<span class='userdanger'>Ваша [limb.ru_name] ноет от боли из-за застревания в ней [weapon]!</span>")
 
 
 /// Called when then item randomly falls out of a carbon. This handles the damage and descriptors, then calls safe_remove()

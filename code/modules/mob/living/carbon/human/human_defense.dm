@@ -633,12 +633,12 @@
 				var/bleed_text = "<span class='danger'>У вас кровотечение в"
 				switch(num_bleeds)
 					if(1 to 2)
-						bleed_text += " [bleeding_limbs[1].name][num_bleeds == 2 ? " and [bleeding_limbs[2].name]" : ""]"
+						bleed_text += " [bleeding_limbs[1].name][num_bleeds == 2 ? " and [bleeding_limbs[2].ru_name_v]" : ""]"
 					if(3 to INFINITY)
 						for(var/i in 1 to (num_bleeds - 1))
 							var/obj/item/bodypart/BP = bleeding_limbs[i]
 							bleed_text += " [BP.ru_name_v],"
-						bleed_text += " и [bleeding_limbs[num_bleeds].name]"
+						bleed_text += " и [bleeding_limbs[num_bleeds].ru_name_v]"
 				bleed_text += "!</span>"
 				to_send += "\n[bleed_text]"
 			if(getStaminaLoss())
