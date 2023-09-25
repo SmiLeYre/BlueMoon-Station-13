@@ -45,6 +45,12 @@
 	e_cost = 130
 	select_name = "maim"
 
+/obj/item/ammo_casing/energy/laser/hellfire/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		M.IgniteMob()
+
 /obj/item/ammo_casing/energy/laser/pulse
 	projectile_type = /obj/item/projectile/beam/pulse
 	e_cost = 200
