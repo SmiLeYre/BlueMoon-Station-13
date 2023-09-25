@@ -8,8 +8,8 @@
 
 // The communications computer
 /obj/machinery/computer/communications
-	name = "communications console"
-	desc = "A console used for high-priority announcements and emergencies."
+	name = "консоль коммуникации"
+	desc = "Эта консоль используется для объявления важной информации по станции, для связи с ЦК и Синдикатом, или для повышения уровня тревоги."
 	icon_screen = "comm"
 	icon_keyboard = "tech_key"
 	req_access = list(ACCESS_HEADS)
@@ -45,8 +45,8 @@
 	var/syndicate = FALSE
 
 /obj/machinery/computer/communications/syndicate
-	name = "Syndicate Communications Console"
-	desc = "A Syndicate console used for high-priority announcements and emergencies."
+	name = "консоль коммуникации Синдиката"
+	desc = "Эта консоль используется для объявления важной информации по станции, для связи с ЦК и Синдикатом, или для повышения уровня тревоги."
 	icon_screen = "commsyndie"
 	icon_keyboard = "syndie_key"
 	req_access = list(ACCESS_SYNDICATE_LEADER)
@@ -157,11 +157,11 @@
 				var/obj/item/held_item = usr.get_active_held_item()
 				var/obj/item/card/id/id_card = held_item?.GetID()
 				if (!istype(id_card))
-					to_chat(usr, span_warning("You need to swipe your ID!"))
+					to_chat(usr, span_warning("Вам нужно провести своим ID!"))
 					playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 					return
 				if (!(ACCESS_CAPTAIN in id_card.access))
-					to_chat(usr, span_warning("You are not authorized to do this!"))
+					to_chat(usr, span_warning("У вас нет доступа!"))
 					playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 					return
 
@@ -173,13 +173,13 @@
 
 			set_security_level(new_sec_level)
 
-			to_chat(usr, span_notice("Authorization confirmed. Modifying security level."))
+			to_chat(usr, span_notice("Доступ разрешён. Обновляю уровень угрозы."))
 			playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 
 			// Only notify people if an actual change happened
 			log_game("[key_name(usr)] has changed the security level to [params["newSecurityLevel"]] with [src] at [AREACOORD(usr)].")
 			message_admins("[ADMIN_LOOKUPFLW(usr)] has changed the security level to [params["newSecurityLevel"]] with [src] at [AREACOORD(usr)].")
-			deadchat_broadcast(" has changed the security level to [params["newSecurityLevel"]] with [src] at [span_name("[get_area_name(usr, TRUE)]")].", span_name("[usr.real_name]"), usr, message_type=DEADCHAT_ANNOUNCEMENT)
+			deadchat_broadcast(" сменил уровень угрозы [params["newSecurityLevel"]] с помощью [src] в [span_name("[get_area_name(usr, TRUE)]")].", span_name("[usr.real_name]"), usr, message_type=DEADCHAT_ANNOUNCEMENT)
 
 			alert_level_tick += 1
 		if ("deleteMessage")
@@ -209,9 +209,12 @@
 			var/message = trim(html_encode(params["message"]), MAX_MESSAGE_LEN)
 
 			var/emagged = obj_flags & EMAGGED
-			if (emagged)
+			if (emagged && SSticker.mode.name == "Extended")
 				message_syndicate(message, usr)
 				to_chat(usr, span_danger("SYSERR @l(19833)of(transmit.dm): !@$ СООБЩЕНИЕ УСПЕШНО ОТПРАВЛЕНО ПО ПОДПРОСТРАНСТВЕННОЙ СВЯЗИ."))
+			else if (emagged)
+				message_inteq(message, usr)
+				to_chat(usr, span_danger("SYSERR @l(19833)of(transmit.dm): $^#^@#%@== СООБЩЕНИЕ УСПЕШНО БЫЛО ОТПРАВЛЕНО ВСЕГО ЗА 0,523 МИЛЛИСЕКУНД. АДРЕСАТ НАХОДИТСЯ ВСЕГО В $%#^@ КИЛЛОМЕТРАХ $#y%)%&==..."))
 			else if(syndicate)
 				message_syndicate(message, usr)
 				to_chat(usr, span_danger("Сообщение успешно отправлено по Подпространственной Связи."))
@@ -236,7 +239,7 @@
 			// if (!can_purchase_this_shuttle(shuttle))
 			// 	return
 			if (!shuttle.prerequisites_met())
-				to_chat(usr, span_alert("You have not met the requirements for purchasing this shuttle."))
+				to_chat(usr, span_alert("Требования для покупки этого шаттла - не выполнены!"))
 				return
 			var/datum/bank_account/bank_account = SSeconomy.get_dep_account(ACCOUNT_CAR)
 			if (bank_account.account_balance < shuttle.credit_cost)
@@ -248,7 +251,7 @@
 			SSshuttle.existing_shuttle = SSshuttle.emergency
 			SSshuttle.action_load(shuttle, replace = TRUE)
 			bank_account.adjust_money(-shuttle.credit_cost)
-			minor_announce("[usr.real_name] has purchased [shuttle.name] for [shuttle.credit_cost] credits.[shuttle.extra_desc ? " [shuttle.extra_desc]" : ""]" , "Shuttle Purchase")
+			minor_announce("[usr.real_name] купил шаттл [shuttle.name] за [shuttle.credit_cost] кредитов.[shuttle.extra_desc ? " [shuttle.extra_desc]" : ""]" , "Shuttle Purchase")
 			message_admins("[ADMIN_LOOKUPFLW(usr)] purchased [shuttle.name].")
 			log_shuttle("[key_name(usr)] has purchased [shuttle.name].")
 			SSblackbox.record_feedback("text", "shuttle_purchase", 1, shuttle.name)
@@ -266,8 +269,8 @@
 			var/reason = trim(html_encode(params["reason"]), MAX_MESSAGE_LEN)
 			nuke_request(reason, usr)
 			to_chat(usr, span_notice("Request sent."))
-			usr.log_message("has requested the nuclear codes from CentCom with reason \"[reason]\"", LOG_SAY)
-			priority_announce("Запрос на коды от ядерного заряда станции для активации протокола самоуничтожения были запрошены [usr]. Решение будет отправлено в ближайшее время.", "Запрошены Коды Ядерного Самоуничтожения", SSstation.announcer.get_rand_report_sound())
+			usr.log_message("запросил коды запуска систем ядерного самоуничтожения с причиной \"[reason]\"", LOG_SAY)
+			priority_announce("Запрос на коды от ядерного заряда станции для активации протокола самоуничтожения были запрошены [usr]. Решение будет отправлено в ближайшее время.", "Запрошены коды для запуска систем ядерного самоуничтожения.", SSstation.announcer.get_rand_report_sound())
 			playsound(src, 'sound/machines/terminal_prompt.ogg', 50, FALSE)
 			COOLDOWN_START(src, important_action_cooldown, IMPORTANT_ACTION_COOLDOWN)
 		if ("restoreBackupRoutingData")
@@ -348,8 +351,8 @@
 			if (obj_flags & EMAGGED)
 				authenticated = TRUE
 				authorize_access = get_all_accesses()
-				authorize_name = "Unknown"
-				to_chat(usr, span_warning("[src] lets out a quiet alarm as its login is overridden."))
+				authorize_name = "NULL"
+				to_chat(usr, span_warning("[src] испускает тихий щелчок, а на консоли высвечивает полный доступ."))
 				playsound(src, 'sound/machines/terminal_alert.ogg', 25, FALSE)
 			else if(isliving(usr))
 				var/mob/living/L = usr
@@ -389,16 +392,16 @@
 							C.setBought(FALSE)
 
 							for(var/obj/machinery/computer/slavery/tracked_slave_console in GLOB.tracked_slave_consoles)
-								priority_announce("Космическая Станция отменяет плату в [C.price] кредитов за [M.real_name]. Как жаль!", sender_override = GLOB.slavers_team_name)
-								tracked_slave_console.radioAnnounce("The station has recalled the ransom funds for [C.loc.name].")
+								priority_announce("Станция отменяет плату в [C.price] кредитов за [M.real_name].", sender_override = GLOB.slavers_team_name)
+								tracked_slave_console.radioAnnounce("Станция отказалась платить за [C.loc.name].")
 
 						else
 							bank.adjust_money(-C.price)
 							C.setBought(TRUE)
 
 							for(var/obj/machinery/computer/slavery/tracked_slave_console in GLOB.tracked_slave_consoles)
-								priority_announce("Космическая Станция оплачивает возвращение [M.real_name] всего за [C.price] кредитов. Замечательно!", sender_override = GLOB.slavers_team_name)
-								tracked_slave_console.radioAnnounce("The station has paid the ransom funds for [C.loc.name].")
+								priority_announce("Станция оплачивает возвращение [M.real_name] за [C.price] кредитов.", sender_override = GLOB.slavers_team_name)
+								tracked_slave_console.radioAnnounce("Станция заплатила выкуп за [C.loc.name].")
 					break
 
 /obj/machinery/computer/communications/ui_data(mob/user)
@@ -570,8 +573,15 @@
 /obj/machinery/computer/communications/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if (!ui)
-		ui = new(user, src, "CommunicationsConsole")
-		ui.open()
+		if (EMAGGED && SSticker.mode.name == "Extended")
+			ui = new(user, src, "CommunicationsConsole")
+			ui.open()
+		else if (EMAGGED)
+			ui = new(user, src, "CommunicationsConsoleInteq")
+			ui.open()
+		else if ()
+			ui = new(user, src, "CommunicationsConsole")
+			ui.open()
 
 /obj/machinery/computer/communications/ui_static_data(mob/user)
 	return list(
@@ -636,7 +646,7 @@
 /obj/machinery/computer/communications/proc/make_announcement(mob/living/user)
 	var/is_ai = issilicon(user)
 	if(!SScommunications.can_announce(user, is_ai))
-		to_chat(user, span_alert("Интеркомы перезаряжаются. Пожалуйста, подождите."))
+		to_chat(user, span_alert("Система оповещения испытывает перегрузку. Пожалуйста, подождите."))
 		return
 	var/input = input(user, "Напишите сообщение для объявления экипажу станции.", "Приоритетное оповещение") as message|null
 	if(!input || !user.canUseTopic(src, !issilicon(usr)))
@@ -647,7 +657,7 @@
 	else
 		input = user.treat_message(input) //Adds slurs and so on. Someone should make this use languages too.
 	SScommunications.make_announcement(user, is_ai, input, syndicate)
-	deadchat_broadcast(" made a priority announcement from [span_name("[get_area_name(usr, TRUE)]")].", span_name("[user.real_name]"), user, message_type=DEADCHAT_ANNOUNCEMENT)
+	deadchat_broadcast(" делает важное объявление в [span_name("[get_area_name(usr, TRUE)]")].", span_name("[user.real_name]"), user, message_type=DEADCHAT_ANNOUNCEMENT)
 
 /obj/machinery/computer/communications/proc/post_status(command, data1, data2)
 

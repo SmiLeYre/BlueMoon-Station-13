@@ -150,7 +150,7 @@ SUBSYSTEM_DEF(security_level)
 						FA.update_icon()
 
 			if(SEC_LEVEL_LAMBDA)
-				minor_announce(CONFIG_GET(string/alert_lambda), "Внимание! КОД - ЛЯМБДА!")
+				minor_announce(CONFIG_GET(string/alert_lambda), "Внимание! Код - ЛЯМБДА!")
 				sound_to_playing_players('modular_bluemoon/kovac_shitcode/sound/lambda_code.ogg')
 				addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(set_stationwide_emergency_lighting)), 10 SECONDS)
 				if(SSshuttle.emergency.mode == SHUTTLE_CALL || SSshuttle.emergency.mode == SHUTTLE_RECALL)
@@ -183,7 +183,7 @@ SUBSYSTEM_DEF(security_level)
 				return
 
 			if(SEC_LEVEL_DELTA)
-				minor_announce(CONFIG_GET(string/alert_delta), "Тревога! КОД - ДЕЛЬТА!")
+				minor_announce(CONFIG_GET(string/alert_delta), "Тревога! Код - ДЕЛЬТА!")
 				sound_to_playing_players('sound/misc/alerts/delta.ogg')
 				addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(set_stationwide_emergency_lighting)), 10 SECONDS)
 				GLOB.security_level = SEC_LEVEL_DELTA
@@ -287,7 +287,7 @@ SUBSYSTEM_DEF(security_level)
 		INVOKE_ASYNC(A, TYPE_PROC_REF(/obj/machinery/power/apc, update), FALSE)
 
 /proc/epsilon_process()
-	minor_announce(CONFIG_GET(string/alert_epsilon), "Внимание! КОД - ЭПСИЛОН!")
+	minor_announce(CONFIG_GET(string/alert_epsilon), "Внимание! Код - ЭПСИЛОН!")
 	sound_to_playing_players('sound/misc/alerts/epsilon.ogg')
 	GLOB.security_level = SEC_LEVEL_EPSILON
 	var/obj/machinery/computer/communications/C = locate() in GLOB.machines
