@@ -1,6 +1,6 @@
 /obj/item/melee
 	item_flags = NEEDS_PERMIT
-	wound_bonus = 5
+	wound_bonus = 4
 
 /obj/item/melee/proc/check_martial_counter(mob/living/carbon/human/target, mob/living/carbon/human/user)
 	if(target.check_martial_melee_block())

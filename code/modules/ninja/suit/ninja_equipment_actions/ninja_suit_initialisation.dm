@@ -78,7 +78,8 @@ GLOBAL_LIST_INIT(ninja_deinitialize_messages, list(
 			s_busy = FALSE
 
 	to_chat(ninja, "<span class='notice'>[message]</span>")
-	playsound(ninja, 'sound/effects/sparks1.ogg', 10, TRUE)
+	playsound(ninja, 'sound/effects/sparks1.ogg', 25, TRUE)
+	playsound(ninja, 'sound/mecha/mechmove03.ogg', 15, TRUE)
 
 	if (phase < NINJA_COMPLETE_PHASE)
 		addtimer(CALLBACK(src, .proc/ninitialize, delay, ninja, phase + 1), delay)

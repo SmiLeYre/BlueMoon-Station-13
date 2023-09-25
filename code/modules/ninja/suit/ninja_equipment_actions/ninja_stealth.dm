@@ -45,3 +45,62 @@
 						"<span class='notice'>You are now visible.</span>")
 		return TRUE
 	return FALSE
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/datum/action/item_action/ninja_stealth_wisdom
+	name = "Toggle Upgraded Stealth"
+	desc = "Toggles Upgraded stealth mode on and off."
+	button_icon_state = "ninja_spirit_form_blue"
+	icon_icon = 'icons/mob/actions/actions_ninja.dmi'
+	background_icon_state = "background_green"
+
+/obj/item/clothing/suit/space/space_ninja/proc/toggle_stealth_wisdom()
+	var/mob/living/carbon/human/ninja = affecting
+	if(!ninja)
+		return
+	if(stealth)
+		cancel_stealth()
+	else
+		if(cell.charge <= 0)
+			to_chat(ninja, "<span class='warning'>You don't have enough power to enable Stealth!</span>")
+			return
+		stealth = !stealth
+		animate(ninja, alpha = 18,time = 6)
+		ninja.visible_message("<span class='warning'>[ninja.name] vanishes into thin air!</span>", \
+						"<span class='notice'>You are now mostly invisible to normal detection.</span>")
+
+/////////////////////////////////////////////////////
+/datum/action/item_action/ninja_resonance
+	name = "Resonance (60E)"
+	desc = "Emit a stunning robitic shriek, disabling all neaby carbon and silicon forms."
+	button_icon_state = "resonance"
+	icon_icon = 'icons/mob/actions/actions_ninja.dmi'
+	background_icon_state = "background_green"
+
+/obj/item/clothing/suit/space/space_ninja/ronin/proc/ninja_resonance()
+	var/mob/living/carbon/human/ninja = affecting
+	if(ninjacost(600,N_STEALTH_CANCEL))
+		return
+	for(var/mob/living/M in get_hearers_in_view(4, ninja))
+		if(iscarbon(M))
+			var/mob/living/carbon/C = M
+			if(!C.mind || !C.mind.has_antag_datum(/datum/antagonist/ninja))
+				C.AdjustConfused(10 SECONDS)
+				C.Slowed(5 SECONDS)
+				C.Jitter(100 SECONDS)
+			else
+				SEND_SOUND(C, sound('sound/effects/screech.ogg'))
+
+		if(issilicon(M))
+			SEND_SOUND(M, sound('sound/weapons/flash.ogg'))
+			M.DefaultCombatKnockdown(rand(25,50))
+
+	for(var/obj/machinery/light/L in range(4, ninja))
+		L.on = 1
+		L.break_light_tube()
+	playsound(get_turf(ninja), 'sound/effects/resonance.ogg', 75, TRUE, 5)
+	s_coold = 10
+	return TRUE
+
+/////////////////////////////////////////////////////////////////////////////////////
