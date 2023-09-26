@@ -19,16 +19,11 @@
 /datum/quirk/depression
 	name = "Депрессия"
 	desc = "Иногда вы просто ненавидите жизнь."
-	name = "Депрессия"
-	desc = "Иногда вы просто ненавидите жизнь."
 	mob_trait = TRAIT_DEPRESSION
 	value = -1
 	gain_text = "<span class='danger'>У вас начинается депрессия.</span>"
-	lose_text = "<span class='notice'>У вас больше нет депрессии.</span>" //if only it were that easy!
 	medical_record_text = "У пациента наблюдаются серьёзные перепады настроения, вызывающие острые периоды депрессии."
-	gain_text = "<span class='danger'>У вас начинается депрессия.</span>"
 	lose_text = "<span class='notice'>У вас больше нет депрессии.</span>" //if only it were that easy!
-	medical_record_text = "У пациента наблюдаются серьёзные перепады настроения, вызывающие острые периоды депрессии."
 	mood_quirk = TRUE
 	processing_quirk = TRUE
 

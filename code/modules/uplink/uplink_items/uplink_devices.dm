@@ -255,6 +255,7 @@
 	cost = 2
 	surplus = 75
 	restricted = TRUE
+	purchasable_from = ~(UPLINK_SYNDICATE)
 
 /datum/uplink_item/device_tools/syndietome
 	name = "Syndicate Tome"
