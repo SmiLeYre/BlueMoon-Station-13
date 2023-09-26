@@ -8,7 +8,7 @@
 
 // The communications computer
 /obj/machinery/computer/communications
-	name = "консоль коммуникации"
+	name = "Сommunications Сonsole"
 	desc = "Эта консоль используется для объявления важной информации по станции, для связи с ЦК и Синдикатом, или для повышения уровня тревоги."
 	icon_screen = "comm"
 	icon_keyboard = "tech_key"
@@ -45,7 +45,7 @@
 	var/syndicate = FALSE
 
 /obj/machinery/computer/communications/syndicate
-	name = "консоль коммуникации Синдиката"
+	name = "Illegal Communications Console"
 	desc = "Эта консоль используется для объявления важной информации по станции, для связи с ЦК и Синдикатом, или для повышения уровня тревоги."
 	icon_screen = "commsyndie"
 	icon_keyboard = "syndie_key"
