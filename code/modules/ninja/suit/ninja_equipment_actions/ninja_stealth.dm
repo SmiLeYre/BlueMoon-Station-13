@@ -72,7 +72,7 @@
 
 /////////////////////////////////////////////////////
 /datum/action/item_action/ninja_resonance
-	name = "Resonance (60E)"
+	name = "Resonance (50E)"
 	desc = "Emit a stunning robitic shriek, disabling all neaby carbon and silicon forms."
 	button_icon_state = "resonance"
 	icon_icon = 'icons/mob/actions/actions_ninja.dmi'
@@ -80,7 +80,7 @@
 
 /obj/item/clothing/suit/space/space_ninja/ronin/proc/ninja_resonance()
 	var/mob/living/carbon/human/ninja = affecting
-	if(ninjacost(600,N_STEALTH_CANCEL))
+	if(ninjacost(500,N_STEALTH_CANCEL))
 		return
 	for(var/mob/living/M in get_hearers_in_view(4, ninja))
 		if(iscarbon(M))
