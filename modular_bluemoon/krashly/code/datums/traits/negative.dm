@@ -28,7 +28,7 @@
 	. = ..()
 	imp_in.dust(TRUE, TRUE, TRUE)
 
-/obj/item/implant/onelife/add()
+/datum/quirk/onelife/add()
 	var/mob/living/carbon/human/H = quirk_holder
 	if (!H)
 		return
