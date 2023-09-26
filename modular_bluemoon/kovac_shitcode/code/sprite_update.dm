@@ -521,6 +521,7 @@
 	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
 	maxHealth = 250
 	health = 250
+	gender = MALE
 
 /mob/living/simple_animal/pet/fox/fennec/eldritch
 	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
@@ -538,6 +539,7 @@
 	mob_size = MOB_SIZE_LARGE
 	maxHealth = 250
 	health = 250
+	gender = MALE
 	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
 
 /mob/living/simple_animal/pet/cat/alta
