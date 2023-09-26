@@ -23,3 +23,5 @@
 		// and never is updated outside of user input.
 		ui.set_autoupdate(FALSE)
 		ui.open()
+
+#define IS_INTEQ(mob) (mob.mind?.has_antag_datum(/datum/antagonist/traitor) || mob.mind?.has_antag_datum(/datum/antagonist/raiders) || mob.mind?.has_antag_datum(/datum/antagonist/nukeop))
