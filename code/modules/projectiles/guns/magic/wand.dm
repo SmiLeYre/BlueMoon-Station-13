@@ -209,8 +209,8 @@
 	desc = "Федерация Космических Магов запатентовала Ядерные Бомбы ещё задолго до их появления среди так называемых технологий. И мы с лёгкостью это докажем!"
 	fire_sound = 'sound/magic/short_alert.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/nuclear
-	icon_state = "locker"
-	item_state = "locker"
+	icon_state = "bomb"
+	item_state = "bomb"
 	w_class = WEIGHT_CLASS_HUGE
 	slot_flags = ITEM_SLOT_BACK
 	max_charges = 1

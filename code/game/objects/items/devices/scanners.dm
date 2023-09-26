@@ -118,7 +118,7 @@ GENETICS SCANNER
 		user.visible_message("<span class='warning'>[user] анализирует состояние пола!</span>", \
 							"<span class='notice'>Вы по-идиотски пытаетесь анализировать пол!</span>")
 		to_chat(user, "<span class='info'>Анализ состояния:\n\tОбщее состояние: <b>Здоров</b></span>\
-					\n<span class='info'>Тип: <font color='blue'>Дыхание</font>/<font color='green'>Токсины</font>/<font color='#FF8000'>Ожоги</font>/<font color='red'>Травмы</font></span>\
+					\n<span class='info'>Тип: <font color='blue'>Удушение</font>/<font color='green'>Токсины</font>/<font color='#FF8000'>Ожоги</font>/<font color='red'>Травмы</font></span>\
 					\n<span class='info'>\tПоказатели урона: <font color='blue'>0</font>-<font color='green'>0</font>-<font color='#FF8000'>0</font>-<font color='red'>0</font></span>\
 					\n<span class='info'>Температура тела: ???</span>")
 		return
@@ -210,7 +210,7 @@ GENETICS SCANNER
 							<td style='width: 55px;'><font color='red'><b>Травмы</b></font></td>\
 							<td style='width: 45px;'><font color='orange'><b>Ожоги</b></font></td>\
 							<td style='width: 45px;'><font color='green'><b>[HAS_TRAIT(C, TRAIT_ROBOTIC_ORGANISM) ? "Коррозия" :"Токсины"]</b></font></td>\
-							<td style='width: 90px;'><font color='purple'><b>Дыхание</b></font></td></tr>\
+							<td style='width: 90px;'><font color='purple'><b>Удушение</b></font></td></tr>\
 							<tr><td><font color='#0000CC'>Всего:</font></td>\
 							<td><font color='red'>[brute_loss]</font></td>\
 							<td><font color='orange'>[fire_loss]</font></td>\
@@ -263,7 +263,7 @@ GENETICS SCANNER
 						temp_message += " <span class='alert'>Субъект глухой.</span>"
 					else
 						if(ears.damage)
-							damage_message += " <span class='alert'>Субъект имеет [ears.damage > ears.maxHealth ? "постоянные ": "временные "] барабанных перепонок</span>"
+							damage_message += " <span class='alert'>Субъект имеет [ears.damage > ears.maxHealth ? "постоянные ": "временные "] повреждения барабанных перепонок.</span>"
 						if(ears.deaf)
 							damage_message += " <span class='alert'>Субъект [ears.damage > ears.maxHealth ? "навечно ": "временно "] оглох.</span>"
 

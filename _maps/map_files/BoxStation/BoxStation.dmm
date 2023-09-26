@@ -1920,9 +1920,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/delivery,
-/obj/structure/sign/poster/official/pda_ad800{
-	pixel_y = 32
-	},
 /turf/open/floor/plasteel,
 /area/hallway/primary/central)
 "aji" = (
@@ -17186,10 +17183,10 @@
 /turf/closed/wall,
 /area/command/heads_quarters/hop)
 "bmp" = (
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plating,
-/area/maintenance/central)
+/obj/machinery/photocopier,
+/obj/effect/turf_decal/bot,
+/turf/open/floor/plasteel,
+/area/hallway/primary/central)
 "bmq" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/closed/wall,
@@ -17745,6 +17742,7 @@
 /obj/machinery/firealarm{
 	pixel_y = 27
 	},
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel,
 /area/cargo/office)
 "bnK" = (
@@ -58716,6 +58714,10 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/command/bridge)
+"qaB" = (
+/obj/machinery/photocopier,
+/turf/open/floor/plasteel,
+/area/cargo/office)
 "qbq" = (
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -92236,7 +92238,7 @@ bbR
 fZx
 cBq
 bbR
-bbR
+qaB
 bwd
 bxC
 byK
@@ -94029,8 +94031,8 @@ bgH
 bie
 bjB
 bkW
-bmp
 bjz
+bmp
 ajh
 bqy
 cBr

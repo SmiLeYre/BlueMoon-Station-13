@@ -238,7 +238,7 @@
 			toggle_stealth(TRUE)
 			return
 		if(wearer)
-			wearer.alpha = 4
+			wearer.alpha = 10
 			wearer.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 			if(current_charge <= (power_decrease * 15)) // there are 30 seconds to full discharge
 				playsound(get_turf(src), 'sound/rig/loudbeep.ogg', 100, 1, 1)
@@ -299,7 +299,7 @@
 			slowdown = 1.4
 			new /obj/effect/temp_visual/emp/pulse(get_turf(src))
 			playsound(get_turf(src), 'sound/effects/pop.ogg', 100, 1, -6)
-			wearer.alpha = 4
+			wearer.alpha = 10
 			wearer.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 			START_PROCESSING(SSobj, src)
 
@@ -521,6 +521,7 @@
 	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
 	maxHealth = 250
 	health = 250
+	gender = MALE
 
 /mob/living/simple_animal/pet/fox/fennec/eldritch
 	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
@@ -538,6 +539,7 @@
 	mob_size = MOB_SIZE_LARGE
 	maxHealth = 250
 	health = 250
+	gender = MALE
 	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
 
 /mob/living/simple_animal/pet/cat/alta

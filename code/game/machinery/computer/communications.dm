@@ -579,7 +579,7 @@
 		else if (EMAGGED)
 			ui = new(user, src, "CommunicationsConsoleInteq")
 			ui.open()
-		else if ()
+		else
 			ui = new(user, src, "CommunicationsConsole")
 			ui.open()
 

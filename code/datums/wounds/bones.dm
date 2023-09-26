@@ -34,7 +34,7 @@
 	Overwriting of base procs
 */
 /datum/wound/blunt/wound_injury(datum/wound/old_wound = null)
-	if(limb.body_zone == BODY_ZONE_HEAD && brain_trauma_group)
+	if(limb.body_zone == BODY_ZONE_HEAD && severity == WOUND_SEVERITY_CRITICAL && brain_trauma_group)
 		processes = TRUE
 		active_trauma = victim.gain_trauma_type(brain_trauma_group, TRAUMA_RESILIENCE_WOUND)
 		next_trauma_cycle = world.time + (rand(100-WOUND_BONE_HEAD_TIME_VARIANCE, 100+WOUND_BONE_HEAD_TIME_VARIANCE) * 0.01 * trauma_cycle_cooldown)
@@ -59,7 +59,7 @@
 
 /datum/wound/blunt/handle_process()
 	. = ..()
-	if(limb.body_zone == BODY_ZONE_HEAD && brain_trauma_group && world.time > next_trauma_cycle)
+	if(limb.body_zone == BODY_ZONE_HEAD && severity == WOUND_SEVERITY_CRITICAL && brain_trauma_group && world.time > next_trauma_cycle)
 		if(active_trauma)
 			QDEL_NULL(active_trauma)
 		else
@@ -204,7 +204,7 @@
 	viable_zones = list(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 	interaction_efficiency_penalty = 1.8
 	limp_slowdown = 1.3
-	threshold_minimum = 35
+	threshold_minimum = 45
 	threshold_penalty = 10
 	treatable_tool = TOOL_BONESET
 	wound_flags = (BONE_WOUND)
@@ -343,7 +343,7 @@
 
 // doesn't make much sense for "a" bone to stick out of your head
 /datum/wound/blunt/critical/apply_wound(obj/item/bodypart/L, silent, datum/wound/old_wound, smited)
-	if(L.body_zone == BODY_ZONE_HEAD)
+	if(L.body_zone == BODY_ZONE_HEAD && severity == WOUND_SEVERITY_CRITICAL)
 		occur_text = "раскалывается, обнажая сквозь пелену крови и плоти потрескавшийся череп"
 		examine_desc = "имеет выемку, из которой торчат куски черепа"
 	. = ..()
@@ -427,8 +427,8 @@
 	else
 		. += "<span class='notice'>Уточнение: Восстановление костей началось. Кости восстановились на [round(regen_points_current*100/regen_points_needed)]%.</span>\n"
 
-	if(limb.body_zone == BODY_ZONE_HEAD)
-		. += "Обнаружена черепно-мозговая травма: Пациент будет испытывать неконтроллируемые [severity == WOUND_SEVERITY_SEVERE ? "приступы средней тяжести" : "тяжелые приступы"] до того момента, как кости будут восстановлены."
+	if(limb.body_zone == BODY_ZONE_HEAD && severity == WOUND_SEVERITY_CRITICAL)
+		. += "Обнаружена черепно-мозговая травма: Пациент будет испытывать неконтроллируемые [severity == WOUND_SEVERITY_CRITICAL ? "приступы средней тяжести" : "тяжелые приступы"] до того момента, как кости будут восстановлены."
 	else if(limb.body_zone == BODY_ZONE_CHEST && victim.blood_volume)
 		. += "Обнаружена травма грудной клетки: Последующие повреждения будут усиливать внутреннее кровотечения до того момента, пока кости не будут восстановлены."
 	. += "</div>"

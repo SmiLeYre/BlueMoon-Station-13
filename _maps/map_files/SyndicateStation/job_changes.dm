@@ -279,3 +279,8 @@
 	. = ..()
 	if(SSmapping.config?.map_name == "Syndicate Station")
 		outfit = /datum/outfit/job/assistant/syndicate
+
+/datum/job/bouncer/New()
+	. = ..()
+	if(SSmapping.config?.map_name == "Syndicate Station")
+		outfit = /datum/outfit/job/bouncer/syndicate

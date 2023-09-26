@@ -329,7 +329,7 @@
 	desc = "Федерация Космических Магов запатентовала Ядерные Бомбы ещё задолго до их появления среди так называемых технологий. И мы с лёгкостью это докажем!"
 	item_path = /obj/item/gun/magic/wand/nuclear
 	dynamic_requirement = 80
-	cost = 10
+	cost = 8
 
 /datum/spellbook_entry/item/staffnuclear/Buy(mob/living/carbon/human/user,obj/item/spellbook/book)
 	. =..()
@@ -434,7 +434,7 @@
 	name = "Bottle of Blood"
 	desc = "A bottle of magically infused blood, the smell of which will attract extradimensional beings when broken. Be careful though, the kinds of creatures summoned by blood magic are indiscriminate in their killing, and you yourself may become a victim."
 	item_path = /obj/item/antag_spawner/slaughter_demon
-	limit = 3
+	limit = 2
 	category = "Assistance"
 	dynamic_requirement = 60
 

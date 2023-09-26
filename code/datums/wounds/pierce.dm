@@ -28,7 +28,7 @@
 	var/trauma_cycle_cooldown = 1.3 MINUTES
 
 /datum/wound/pierce/apply_wound(obj/item/bodypart/L, silent, datum/wound/old_wound, smited)
-	if(L.body_zone == BODY_ZONE_CHEST && severity == WOUND_SEVERITY_SEVERE)
+	if(L.body_zone == BODY_ZONE_CHEST && (severity == WOUND_SEVERITY_SEVERE || severity == WOUND_SEVERITY_CRITICAL))
 		ru_name = "Пробитие лёгкого"
 		ru_name_r = "пробития лёгкого"
 		occur_text = "раскалывается, приводя к обильному кашлю"
@@ -36,7 +36,7 @@
 	. = ..()
 
 /datum/wound/pierce/wound_injury(datum/wound/old_wound)
-	if(limb.body_zone == BODY_ZONE_CHEST && severity == WOUND_SEVERITY_SEVERE)
+	if(limb.body_zone == BODY_ZONE_CHEST && (severity == WOUND_SEVERITY_SEVERE || severity == WOUND_SEVERITY_CRITICAL))
 		processes = TRUE
 		victim.adjustOxyLoss(15)
 		victim.adjustOrganLoss(ORGAN_SLOT_LUNGS,15)
@@ -78,7 +78,7 @@
 
 /datum/wound/pierce/handle_process()
 	. = ..()
-	if(limb.body_zone == BODY_ZONE_CHEST && severity == WOUND_SEVERITY_SEVERE && world.time > next_trauma_cycle)
+	if(limb.body_zone == BODY_ZONE_CHEST && (severity == WOUND_SEVERITY_SEVERE || severity == WOUND_SEVERITY_CRITICAL) && world.time > next_trauma_cycle)
 		next_trauma_cycle = world.time + (rand(100-20, 100+20) * 0.01 * trauma_cycle_cooldown)
 		victim.adjustOxyLoss(20)
 		victim.emote("gasp")
@@ -166,7 +166,7 @@
 	gauzed_clot_rate = 0.8
 	internal_bleeding_chance = 45
 	internal_bleeding_coefficient = 1.1
-	threshold_minimum = 40
+	threshold_minimum = 45
 	threshold_penalty = 10
 	status_effect_type = /datum/status_effect/wound/pierce/moderate
 	scar_keyword = "piercemoderate"

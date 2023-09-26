@@ -56,7 +56,7 @@
 	name = "Ash Walker"
 	id = SPECIES_ASHWALKER
 	limbs_id = SPECIES_LIZARD
-	species_traits = list(MUTCOLORS,EYECOLOR,LIPS,DIGITIGRADE,CAN_SCAR,HAS_FLESH,HAS_BONE)
+	species_traits = list(MUTCOLORS,EYECOLOR,HAIR,DIGITIGRADE,FACEHAIR,LIPS,HORNCOLOR,WINGCOLOR,CAN_SCAR,HAS_FLESH,HAS_BONE)
 	inherent_traits = list(TRAIT_CHUNKYFINGERS)
 	mutantlungs = /obj/item/organ/lungs/ashwalker
 	mutanteyes = /obj/item/organ/eyes/night_vision
@@ -72,8 +72,8 @@
 		for(var/obj/item/bodypart/leggie in C.bodyparts)
 			if(leggie.body_zone == BODY_ZONE_L_LEG || leggie.body_zone == BODY_ZONE_R_LEG)
 				leggie.update_limb(FALSE, C)
-	if(C.dna.features["mam_snouts"] != "Sharp")
-		C.dna.features["mam_snouts"] = "Sharp"
+	//if(C.dna.features["mam_snouts"] != "Sharp")
+		//C.dna.features["mam_snouts"] = "Sharp"
 	C.dna.features["mcolor2"] = C.dna.features["mcolor"] //for no funne rainbows
 	C.dna.features["mcolor3"] = C.dna.features["mcolor"]
 
