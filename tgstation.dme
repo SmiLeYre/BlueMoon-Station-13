@@ -10,7 +10,6 @@
 // END_FILE_DIR
 
 // BEGIN_PREFERENCES
-#define DEBUG
 // END_PREFERENCES
 
 // BEGIN_INCLUDE
@@ -2228,6 +2227,7 @@
 #include "code\modules\clothing\shoes\miscellaneous.dm"
 #include "code\modules\clothing\shoes\taeclowndo.dm"
 #include "code\modules\clothing\spacesuits\_spacesuits.dm"
+#include "code\modules\clothing\spacesuits\contractor_hardsuit.dm"
 #include "code\modules\clothing\spacesuits\hardsuit.dm"
 #include "code\modules\clothing\spacesuits\miscellaneous.dm"
 #include "code\modules\clothing\spacesuits\plasmamen.dm"
@@ -2297,6 +2297,7 @@
 #include "code\modules\events\communications_blackout.dm"
 #include "code\modules\events\devil.dm"
 #include "code\modules\events\disease_outbreak.dm"
+#include "code\modules\events\door_runtime.dm"
 #include "code\modules\events\dust.dm"
 #include "code\modules\events\electrical_storm.dm"
 #include "code\modules\events\fake_virus.dm"
@@ -2321,6 +2322,7 @@
 #include "code\modules\events\prison_break.dm"
 #include "code\modules\events\processor_overload.dm"
 #include "code\modules\events\radiation_storm.dm"
+#include "code\modules\events\rogue_drones.dm"
 #include "code\modules\events\scrubber_overflow.dm"
 #include "code\modules\events\sentience.dm"
 #include "code\modules\events\shuttle_catastrophe.dm"
@@ -2347,6 +2349,8 @@
 #include "code\modules\events\anomaly\anomaly_placer.dm"
 #include "code\modules\events\anomaly\anomaly_pyro.dm"
 #include "code\modules\events\anomaly\anomaly_vortex.dm"
+#include "code\modules\events\anomaly\tear.dm"
+#include "code\modules\events\anomaly\tear_honk.dm"
 #include "code\modules\events\holiday\halloween.dm"
 #include "code\modules\events\holiday\vday.dm"
 #include "code\modules\events\holiday\xmas.dm"
@@ -3057,6 +3061,7 @@
 #include "code\modules\mob\living\simple_animal\hostile\giant_spider.dm"
 #include "code\modules\mob\living\simple_animal\hostile\goose.dm"
 #include "code\modules\mob\living\simple_animal\hostile\headcrab.dm"
+#include "code\modules\mob\living\simple_animal\hostile\headslug.dm"
 #include "code\modules\mob\living\simple_animal\hostile\hivebot.dm"
 #include "code\modules\mob\living\simple_animal\hostile\hostile.dm"
 #include "code\modules\mob\living\simple_animal\hostile\illusion.dm"
@@ -3120,6 +3125,7 @@
 #include "code\modules\mob\living\simple_animal\hostile\mining_mobs\elites\pandora.dm"
 #include "code\modules\mob\living\simple_animal\hostile\retaliate\bat.dm"
 #include "code\modules\mob\living\simple_animal\hostile\retaliate\clown.dm"
+#include "code\modules\mob\living\simple_animal\hostile\retaliate\drone.dm"
 #include "code\modules\mob\living\simple_animal\hostile\retaliate\frog.dm"
 #include "code\modules\mob\living\simple_animal\hostile\retaliate\ghost.dm"
 #include "code\modules\mob\living\simple_animal\hostile\retaliate\retaliate.dm"
@@ -3774,6 +3780,7 @@
 #include "code\modules\spells\spell_types\pointed\blind.dm"
 #include "code\modules\spells\spell_types\pointed\mind_transfer.dm"
 #include "code\modules\spells\spell_types\pointed\pointed.dm"
+#include "code\modules\station_goals\bluespace_tap.dm"
 #include "code\modules\station_goals\bsa.dm"
 #include "code\modules\station_goals\dna_vault.dm"
 #include "code\modules\station_goals\shield.dm"

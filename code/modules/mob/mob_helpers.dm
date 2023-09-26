@@ -540,6 +540,12 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 /mob/proc/can_hear()
 	. = TRUE
 
+/mob/living/proc/check_death_method()
+	return TRUE
+
+/mob/living/carbon/human/check_death_method()
+	return death()
+
 /proc/bloodtype_to_color(var/type)
 	. = BLOOD_COLOR_HUMAN
 	switch(type)

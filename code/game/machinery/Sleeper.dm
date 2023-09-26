@@ -243,6 +243,7 @@
 	. = ..()
 	obj_flags |= EMAGGED
 	scramble_chem_buttons()
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	to_chat(user, "<span class='warning'>You scramble the sleeper's user interface!</span>")
 	return TRUE
 

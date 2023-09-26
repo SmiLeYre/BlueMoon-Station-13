@@ -63,6 +63,7 @@
 		return
 	if(!only_current_user_can_interact)
 		obj_flags |= EMAGGED
+		log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 		you_die_in_the_game_you_die_for_real = TRUE
 		sparks.start()
 		addtimer(CALLBACK(src, .proc/emagNotify), 150)

@@ -173,6 +173,7 @@ GLOBAL_LIST_EMPTY(announcement_systems)
 	. = ..()
 	if(obj_flags & EMAGGED)
 		return
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	obj_flags |= EMAGGED
 	act_up()
 	return TRUE

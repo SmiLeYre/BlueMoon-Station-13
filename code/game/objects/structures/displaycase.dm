@@ -548,6 +548,7 @@
 	. = ..()
 	payments_acc = null
 	req_access = list()
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	to_chat(user, "<span class='warning'>[src]'s card reader fizzles and smokes, and the account owner is reset.</span>")
 
 /obj/structure/displaycase/forsale/examine(mob/user)

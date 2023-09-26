@@ -1,7 +1,7 @@
 // C3D (Borgs)
 
 /obj/item/projectile/bullet/c3d
-	damage = 20
+	damage = 30
 
 // Mech LMG
 

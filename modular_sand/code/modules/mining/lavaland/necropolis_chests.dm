@@ -146,7 +146,6 @@
 	damage_type = BRUTE
 	hitsound = 'sound/effects/splat.ogg'
 	knockdown = 0
-	var/chain
 
 /obj/item/projectile/heckhook/fire(setAngle)
 	if(firer)

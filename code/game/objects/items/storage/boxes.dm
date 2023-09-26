@@ -899,9 +899,6 @@
 		var/randomFigure = pick(subtypesof(/obj/item/toy/prize/))
 		new randomFigure(src)
 
-
-
-
 /obj/item/storage/box/papersack
 	name = "paper sack"
 	desc = "A sack neatly crafted out of paper."

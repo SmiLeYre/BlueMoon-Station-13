@@ -169,6 +169,7 @@
 /obj/machinery/autodoc/emag_act(mob/user)
 	if(obj_flags & EMAGGED)
 		return
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	obj_flags |= EMAGGED
 	to_chat(user, span_warning("You reprogram [src]'s surgery procedures."))
 

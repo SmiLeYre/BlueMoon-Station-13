@@ -18,7 +18,7 @@
 	spawncount = rand(12, 20)
 
 /datum/round_event/spider_infestation/announce(fake)
-	priority_announce("Неизвестные признаки жизни обнаружены на борту [station_name()]. Заблокируйте любой внешний доступ, включая воздуховоды и вентиляцию.", "Вторжение на Борт", "aliens")
+	priority_announce("Неизвестные признаки жизни обнаружены на борту [station_name()]. Заблокируйте любой внешний доступ, включая воздуховоды и вентиляцию.", "ВНИМАНИЕ: НЕОПОЗНАННЫЕ ФОРМЫ ЖИЗНИ", "aliens")
 
 
 /datum/round_event/spider_infestation/start()

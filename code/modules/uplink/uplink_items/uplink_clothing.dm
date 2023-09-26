@@ -62,6 +62,14 @@
 	cost = 8
 	purchasable_from = ~(UPLINK_TRAITORS | UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS) //you can't buy it in nuke, because the elite hardsuit costs the same while being better
 
+/datum/uplink_item/suits/chameleon_hardsuit
+	name = "Chameleon Hardsuit"
+	desc = "A top-tier Hardsuit developed with cooperation of Cybersun Industries and the Gorlex Marauders, a favorite of Syndicate Contractors. \
+	In addition, it has an in-built chameleon system, allowing you to disguise your hardsuit to the most common variations on your mission area. \
+	This one disquised as engineering hardsuit."
+	cost = 10 //reskinned blood-red hardsuit with chameleon
+	item = /obj/item/storage/box/inteq_kit/chameleon_hardsuit
+
 /datum/uplink_item/suits/hardsuit/elite
 	name = "Elite Syndicate Hardsuit"
 	desc = "An upgraded, elite version of the Syndicate hardsuit. It features fireproofing, and also \

@@ -128,6 +128,7 @@
 	cost = 25
 	player_minimum = 25
 	cant_discount = TRUE
+	hijack_only = TRUE
 	purchasable_from = ~UPLINK_NUKE_OPS
 
 /datum/uplink_item/stealthy_weapons/sleepy_pen

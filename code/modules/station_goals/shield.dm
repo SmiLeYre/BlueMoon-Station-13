@@ -8,11 +8,11 @@ GLOBAL_LIST_EMPTY(meteor_satellites) // BLUEMOON ADD - список всех п�
 	var/coverage_goal = 500
 
 /datum/station_goal/station_shield/get_report()
-	return {" Станция находится в зоне, полной космического мусора.
+	return {" <b>Сооружение щитов станции</b><br>
+			Станция находится в зоне, полной космического мусора.
 			У нас есть прототип системы защиты, которую вы должны развернуть, чтобы уменьшить количество несчастных случаев, связанных с столкновениями.
-
-			Спутники и системы управления доступны к заказу в карго.
-			"}
+			<br><br>
+			Спутники и системы управления доступны к заказу в карго."}
 
 
 /datum/station_goal/station_shield/on_report()
@@ -325,6 +325,7 @@ GLOBAL_LIST_EMPTY(meteor_satellites) // BLUEMOON ADD - список всех п�
 	. = ..()
 	if(obj_flags & EMAGGED)
 		return
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	obj_flags |= EMAGGED
 	to_chat(user, "<span class='notice'>You access the satellite's debug mode, increasing the chance of meteor strikes.</span>")
 	if(active)

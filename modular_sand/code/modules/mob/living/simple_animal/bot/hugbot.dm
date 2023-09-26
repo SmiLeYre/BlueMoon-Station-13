@@ -171,6 +171,7 @@
 	if(emagged == 2)
 		if(user)
 			to_chat(user, "<span class='notice'>You short out [src]'s manipulator pressure sensors.</span>")
+			log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 		visible_message("<span class='danger'>[src]'s arm twitches violently!</span>")
 		flick("medibot_spark", src)
 		playsound(src, "sparks", 75, 1)

@@ -475,6 +475,7 @@
 	inject_self = COMBAT_SELF_SPRAY
 	penetrates = TRUE
 	to_chat(user, "You overcharge [src]'s control circuit.")
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	obj_flags |= EMAGGED
 	return TRUE
 

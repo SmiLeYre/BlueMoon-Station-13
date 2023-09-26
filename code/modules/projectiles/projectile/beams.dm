@@ -34,6 +34,12 @@
 	. = ..()
 	transform *= 2
 
+/obj/item/projectile/beam/laser/hellfire/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		M.IgniteMob()
+
 /obj/item/projectile/beam/laser/heavylaser
 	name = "heavy laser"
 	icon_state = "heavylaser"

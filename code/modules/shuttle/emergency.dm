@@ -253,7 +253,7 @@
 
 	var/time = TIME_LEFT
 	message_admins("[ADMIN_LOOKUPFLW(user.client)] has emagged the emergency shuttle [time] seconds before launch.")
-	log_shuttle("[key_name(user)] has emagged the emergency shuttle in [COORD(src)] [time] seconds before launch.")
+	log_admin("[key_name(usr)] has emagged the emergency shuttle in [AREACOORD(src)] [time] seconds before launch.")
 	obj_flags |= EMAGGED
 	SSshuttle.emergency.movement_force = list("KNOCKDOWN" = 60, "THROW" = 20)//YOUR PUNY SEATBELTS can SAVE YOU NOW, MORTAL
 	var/datum/species/S = new
@@ -551,6 +551,7 @@
 	. = SEND_SIGNAL(src, COMSIG_ATOM_EMAG_ACT)
 	if(obj_flags & EMAGGED)
 		return
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	obj_flags |= EMAGGED
 	to_chat(user, "<span class='warning'>You fry the pod's alert level checking system.</span>")
 	return TRUE
@@ -572,7 +573,7 @@
 
 	if(obj_flags & EMAGGED)
 		return
-
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	admin_controlled = !(new_level < SEC_LEVEL_RED)
 
 /obj/docking_port/stationary/random

@@ -633,7 +633,7 @@
 				var/bleed_text = "<span class='danger'>У вас кровотечение в"
 				switch(num_bleeds)
 					if(1 to 2)
-						bleed_text += " [bleeding_limbs[1].name][num_bleeds == 2 ? " and [bleeding_limbs[2].ru_name_v]" : ""]"
+						bleed_text += " [bleeding_limbs[1].ru_name_v][num_bleeds == 2 ? " and [bleeding_limbs[2].ru_name_v]" : ""]"
 					if(3 to INFINITY)
 						for(var/i in 1 to (num_bleeds - 1))
 							var/obj/item/bodypart/BP = bleeding_limbs[i]

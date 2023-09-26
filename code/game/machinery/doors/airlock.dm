@@ -1280,6 +1280,7 @@
 /obj/machinery/door/airlock/proc/prison_open()
 	if(obj_flags & EMAGGED)
 		return
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	locked = FALSE
 	src.open()
 	locked = TRUE
@@ -1320,6 +1321,7 @@
 		return
 	operating = TRUE
 	update_icon(AIRLOCK_EMAG, 1)
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	addtimer(CALLBACK(src, .proc/open_sesame), 6)
 	return TRUE
 

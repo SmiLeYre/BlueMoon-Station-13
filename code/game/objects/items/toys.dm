@@ -193,7 +193,7 @@
 	src.bullets--
 	user.visible_message("<span class='danger'>[user] fires [src] at [target]!</span>", \
 						"<span class='danger'>You fire [src] at [target]!</span>", \
-						 "<span class='italics'>You hear a gunshot!</span>")
+						"<span class='italics'>You hear a gunshot!</span>")
 
 /obj/item/toy/ammo/gun
 	name = "capgun ammo"
@@ -1561,3 +1561,63 @@
 	icon_state = "shell[rand(1,3)]"
 	color = pickweight(possible_colors)
 	setDir(pick(GLOB.cardinals))
+
+/obj/item/toy/prizeball
+	name = "prize ball"
+	desc = "A toy is a toy, but a prize ball could be anything! It could even be a toy!"
+	icon = 'icons/obj/machines/arcade.dmi'
+	icon_state = "prizeball_1"
+	var/opening = 0
+	var/possible_contents = list(/obj/effect/spawner/lootdrop/figure, /obj/effect/spawner/lootdrop/therapy)
+
+/obj/effect/spawner/lootdrop/figure
+	name = "Random Action Figure"
+	desc = "This is a random toy action figure"
+	icon = 'icons/obj/toy.dmi'
+	icon_state = "nuketoy"
+
+/obj/effect/spawner/lootdrop/figure/should_spawn_on_init()
+	return pick(subtypesof(/obj/item/toy/figure))
+
+/obj/effect/spawner/lootdrop/therapy
+	name = "Random Therapy Doll"
+	desc = "This is a random therapy doll."
+	icon = 'icons/obj/toy.dmi'
+	icon_state = "therapyred"
+
+/obj/effect/spawner/lootdrop/therapy/should_spawn_on_init()
+	return pick(subtypesof(/obj/item/toy/therapy)) //exclude the base type.
+
+/obj/item/toy/prizeball/figure
+	name = "action figure capsule"
+	desc = "Contains one action figure!"
+	possible_contents = list(/obj/effect/spawner/lootdrop/figure)
+
+/obj/item/toy/prizeball/therapy
+	name = "therapy doll capsule"
+	desc = "Contains one squishy therapy doll."
+	possible_contents = list(/obj/effect/spawner/lootdrop/therapy)
+
+/obj/item/toy/therapy
+	name = "Therapy Doll"
+	desc = "A toy for therapeutic and recreational purposes."
+	icon = 'icons/obj/toy.dmi'
+	icon_state = "therapyred"
+	item_state = "egg4"
+	w_class = WEIGHT_CLASS_TINY
+	var/cooldown = 0
+	resistance_flags = FLAMMABLE
+
+/obj/item/toy/therapy/New()
+	..()
+	var/therapy_color = pick("green","blue","red", "orange", "purple", "yellow")
+	if(therapy_color)
+		desc += " This one is [therapy_color]."
+		icon_state = "therapy[therapy_color]"
+
+/obj/item/toy/therapy/attack_self(mob/user)
+	if(cooldown < world.time - 8)
+		to_chat(user, "<span class='notice'>You relieve some stress with \the [src].</span>")
+		playsound(user, 'sound/items/squeaktoy.ogg', 20, 1)
+		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "plushpet", /datum/mood_event/plushpet)
+		cooldown = world.time

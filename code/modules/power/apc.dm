@@ -896,6 +896,7 @@
 		obj_flags |= EMAGGED
 		locked = FALSE
 		to_chat(user, "<span class='notice'>You emag the APC interface.</span>")
+		log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 		update_appearance()
 	return TRUE
 

@@ -259,6 +259,7 @@
 	new /obj/item/radio/headset/heads/ntr(src)
 	new /obj/item/stamp/syndicate(src)
 	new /obj/item/stamp/ntr(src)
+	new /obj/item/lighter/nt_rep(src)
 	new /obj/item/clothing/accessory/lawyers_badge(src)
 	new /obj/item/clothing/accessory/lawyers_badge(src)
 	new /obj/item/clothing/accessory/lawyers_badge(src)

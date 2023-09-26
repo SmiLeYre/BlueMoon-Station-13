@@ -351,11 +351,11 @@ Class Procs:
 /obj/machinery/proc/can_transact(obj/item/card/id/thecard, allowdepartment, silent)
 	if(!istype(thecard))
 		if(!silent)
-			say("No card found.")
+			say("Карта не найдена.")
 		return FALSE
 	else if (!thecard.registered_account)
 		if(!silent)
-			say("No account found.")
+			say("Аккаунт не найден.")
 		return FALSE
 //	else if(!allowdepartment && !thecard.registered_account.account_job)
 //		if(!silent)
@@ -387,19 +387,19 @@ Class Procs:
 		if(I)
 			var/datum/bank_account/insurance = I.registered_account
 			if(!insurance)
-				say("[market_verb] NAP Violation: No bank account found.")
+				say("[market_verb] NAP Violation: Не найден банковский счёт.")
 				nap_violation(L)
 				return FALSE
 			else
 				if(!insurance.adjust_money(-fair_market_price))
-					say("[market_verb] NAP Violation: Unable to pay.")
+					say("[market_verb] NAP Violation: Невозможно оплатить.")
 					nap_violation(L)
 					return FALSE
 				var/datum/bank_account/D = SSeconomy.get_dep_account(payment_department)
 				if(D)
 					D.adjust_money(fair_market_price)
 		else
-			say("[market_verb] NAP Violation: No ID card found.")
+			say("[market_verb] NAP Violation: Карта не найдена.")
 			nap_violation(L)
 			return FALSE
 	return TRUE
@@ -436,7 +436,7 @@ Class Procs:
 	else
 		user.DelayNextAction(CLICK_CD_MELEE)
 		user.do_attack_animation(src, ATTACK_EFFECT_PUNCH)
-		user.visible_message("<span class='danger'>[user.name] smashes against \the [src.name] with its paws.</span>", null, null, COMBAT_MESSAGE_RANGE)
+		user.visible_message("<span class='danger'>[user.name] бьёт \the [src.name] своими лапами.</span>", null, null, COMBAT_MESSAGE_RANGE)
 		take_damage(4, BRUTE, MELEE, 1)
 
 /obj/machinery/attack_robot(mob/user)
@@ -468,7 +468,7 @@ Class Procs:
 	. = !(state_open || panel_open || is_operational() || (flags_1 & NODECONSTRUCT_1)) && I.tool_behaviour == TOOL_CROWBAR
 	if(.)
 		I.play_tool_sound(src, 50)
-		visible_message("<span class='notice'>[usr] pries open \the [src].</span>", "<span class='notice'>You pry open \the [src].</span>")
+		visible_message("<span class='notice'>[usr] вскрывает \the [src].</span>", "<span class='notice'>Вы вскрыли \the [src].</span>")
 		open_machine()
 
 /obj/machinery/proc/default_deconstruction_crowbar(obj/item/I, ignore_panel = 0)
@@ -550,11 +550,11 @@ Class Procs:
 		if(!panel_open)
 			panel_open = TRUE
 			icon_state = icon_state_open
-			to_chat(user, "<span class='notice'>You open the maintenance hatch of [src].</span>")
+			to_chat(user, "<span class='notice'>Вы скручиваете панель обслуживания [src] с винтов.</span>")
 		else
 			panel_open = FALSE
 			icon_state = icon_state_closed
-			to_chat(user, "<span class='notice'>You close the maintenance hatch of [src].</span>")
+			to_chat(user, "<span class='notice'>Вы вкручиваете панель обслуживания [src] обратно.</span>")
 		return TRUE
 	return FALSE
 
@@ -562,13 +562,13 @@ Class Procs:
 	if(panel_open && I.tool_behaviour == TOOL_WRENCH)
 		I.play_tool_sound(src, 50)
 		setDir(turn(dir,-90))
-		to_chat(user, "<span class='notice'>You rotate [src].</span>")
+		to_chat(user, "<span class='notice'>Вы поворачиваете [src].</span>")
 		return 1
 	return 0
 
 /obj/proc/can_be_unfasten_wrench(mob/user, silent) //if we can unwrench this object; returns SUCCESSFUL_UNFASTEN and FAILED_UNFASTEN, which are both TRUE, or CANT_UNFASTEN, which isn't.
 	if(!(isfloorturf(loc) || istype(loc, /turf/open/indestructible)) && !anchored)
-		to_chat(user, "<span class='warning'>[src] needs to be on the floor to be secured!</span>")
+		to_chat(user, "<span class='warning'>[src] должен находится на полу, чтобы закрутить!</span>")
 		return FAILED_UNFASTEN
 	return SUCCESSFUL_UNFASTEN
 
@@ -578,7 +578,7 @@ Class Procs:
 		if(!can_be_unfasten || can_be_unfasten == FAILED_UNFASTEN)
 			return can_be_unfasten
 		if(time)
-			to_chat(user, "<span class='notice'>You begin [anchored ? "un" : ""]securing [src]...</span>")
+			to_chat(user, "<span class='notice'>Вы начинаете [anchored ? "un" : ""]вкручивать [src]...</span>")
 		I.play_tool_sound(src, 50)
 		var/prev_anchored = anchored
 		//as long as we're the same anchored state and we're either on a floor or are anchored, toggle our anchored state
@@ -632,7 +632,7 @@ Class Procs:
 									B.moveToNullspace()
 							SEND_SIGNAL(W, COMSIG_TRY_STORAGE_INSERT, A, null, null, TRUE)
 							component_parts -= A
-							to_chat(user, "<span class='notice'>[capitalize(A.name)] replaced with [B.name].</span>")
+							to_chat(user, "<span class='notice'>[capitalize(A.name)] заменил с помощью [B.name].</span>")
 							shouldplaysound = 1 //Only play the sound when parts are actually replaced!
 							break
 			RefreshParts()
@@ -645,7 +645,7 @@ Class Procs:
 
 /obj/machinery/proc/display_parts(mob/user)
 	. = list()
-	. += "<span class='notice'>It contains the following parts:</span>"
+	. += "<span class='notice'>Содержит следующие детали:</span>"
 	for(var/obj/item/C in component_parts)
 		. += "<span class='notice'>[icon2html(C, user)] \A [C].</span>"
 	. = jointext(., "")
@@ -653,18 +653,18 @@ Class Procs:
 /obj/machinery/examine(mob/user)
 	. = ..()
 	if(stat & BROKEN)
-		. += "<span class='notice'>It looks broken and non-functional.</span>"
+		. += "<span class='notice'>Выглядит сломанным и не рабочим.</span>"
 	if(!(resistance_flags & INDESTRUCTIBLE))
 		if(resistance_flags & ON_FIRE)
-			. += "<span class='warning'>It's on fire!</span>"
+			. += "<span class='warning'>Оно горит!</span>"
 		var/healthpercent = (obj_integrity/max_integrity) * 100
 		switch(healthpercent)
 			if(50 to 99)
-				. += "It looks slightly damaged."
+				. += "Выглядит слегка поврежденным."
 			if(25 to 50)
-				. += "It appears heavily damaged."
+				. += "Выглядит крайне поврежденным."
 			if(0 to 25)
-				. += "<span class='warning'>It's falling apart!</span>"
+				. += "<span class='warning'>Вот-вот развалится!</span>"
 	if(user.research_scanner && component_parts)
 		. += display_parts(user, TRUE)
 
@@ -719,7 +719,7 @@ Class Procs:
  * However, the proc may also be used elsewhere.
  */
 /obj/machinery/proc/AI_notify_hack()
-	var/alertstr = "<span class='userdanger'>Network Alert: Hacking attempt detected[get_area(src)?" in [get_area_name(src, TRUE)]":". Unable to pinpoint location"].</span>"
+	var/alertstr = "<span class='userdanger'>Network Alert: Замечена попытка взлома[get_area(src)?" в [get_area_name(src, TRUE)]":". Невозможно отследить местоположение"].</span>"
 	for(var/mob/living/silicon/ai/AI in GLOB.player_list)
 		to_chat(AI, alertstr)
 

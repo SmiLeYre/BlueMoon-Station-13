@@ -12,21 +12,17 @@ Our Solutions:
 Our Method:
 • Override the supermatter's explode() proc to respect the bombcap.
 • Scan through the player list an count how many alive engineers are there. If you sign up as an engineer, you consent to fixing the damage.
-Custom Bombcaps:
-• Small Delam: 1, 2, 5
-• Medium Delam: 2, 3, 10
-• Big Delam: 3, 5, 15
 */
 
-#define EXPLOSION_MODIFIER_SMALL 50
-#define EXPLOSION_MODIFIER_MEDIUM 100
-#define EXPLOSION_MODIFIER_LARGE 200
+#define EXPLOSION_MODIFIER_SMALL 100
+#define EXPLOSION_MODIFIER_MEDIUM 200
+#define EXPLOSION_MODIFIER_LARGE 300
 
 // Let's turn the base explosion power down a little...
 /obj/machinery/power/supermatter_crystal
-	explosion_power = 80
+	explosion_power = 120
 /obj/machinery/power/supermatter_crystal/shard
-	explosion_power = 40
+	explosion_power = 60
 
 // Proc to screen the mob list for engineers. We'll need this later!
 /proc/count_alive_engineers(mob/M)

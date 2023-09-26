@@ -648,7 +648,7 @@
 	qdel(src)
 
 /obj/item/slimepotion/slime/sentience
-	name = "intelligence potion"
+	name = "Intelligence Potion"
 	desc = "A miraculous chemical mix that grants human like intelligence to living beings."
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "potpink"

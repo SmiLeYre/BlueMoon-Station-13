@@ -252,3 +252,9 @@
 /// Like SPT_PROB_RATE but easier to use, simply put `if(SPT_PROB(10, 5))`
 #define SPT_PROB(prob_per_second_percent, seconds_per_tick) (prob(100*SPT_PROB_RATE((prob_per_second_percent)/100, (seconds_per_tick))))
 // )
+
+/proc/round_down(num)
+	if(round(num) != num)
+		return round(num--)
+	else
+		return num

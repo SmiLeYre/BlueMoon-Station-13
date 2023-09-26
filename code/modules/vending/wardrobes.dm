@@ -471,7 +471,8 @@
 					/obj/item/clothing/neck/cloak/bishop = 1, //BlueMoon changes
 					/obj/item/clothing/neck/cloak/bishopblack= 1) //BlueMoon changes
 	premium = list(/obj/item/toy/plush/plushvar = 1,
-					/obj/item/toy/plush/narplush = 1)
+					/obj/item/toy/plush/narplush = 1,
+					/obj/item/lighter/black = 1)
 	refill_canister = /obj/item/vending_refill/wardrobe/chap_wardrobe
 	payment_department = ACCOUNT_SRV
 /obj/item/vending_refill/wardrobe/chap_wardrobe

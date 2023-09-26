@@ -200,6 +200,7 @@
 	. = ..()
 	if(obj_flags & EMAGGED)
 		return
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	if(scanning)
 		to_chat(user, span_warning("Turn off [src] before you perform this action!"))
 		return

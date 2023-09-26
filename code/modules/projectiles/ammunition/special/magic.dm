@@ -47,6 +47,9 @@
 /obj/item/ammo_casing/magic/locker
 	projectile_type = /obj/item/projectile/magic/locker
 
+/obj/item/ammo_casing/magic/nuclear
+	projectile_type = /obj/item/projectile/magic/aoe/nuclear
+
 //Spell book ammo casing
 /obj/item/ammo_casing/magic/book
 	projectile_type = /obj/item/projectile/magic/spellcard/book
