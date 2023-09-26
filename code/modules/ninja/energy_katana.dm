@@ -144,7 +144,7 @@
 	armour_penetration = 39
 	wound_bonus = 7
 	bare_wound_bonus = 14
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_BULKY
 	hitsound = 'sound/weapons/bladeslice2.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	slot_flags = ITEM_SLOT_BELT
