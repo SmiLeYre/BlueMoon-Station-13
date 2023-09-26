@@ -29,6 +29,7 @@
 	belt = /obj/item/energy_katana
 	back = /obj/item/storage/backpack/hipbag
 	implants = list(/obj/item/implant/explosive)
+	backpack_contents = list(/obj/item/reagent_containers/glass/bottle/vial/large/combat=1)
 
 
 /datum/outfit/ninja/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
@@ -59,6 +60,7 @@
 	belt = /obj/item/energy_naginata
 	back = /obj/item/storage/backpack/hipbag
 	implants = list(/obj/item/implant/explosive)
+	backpack_contents = list(/obj/item/reagent_containers/glass/bottle/vial/large/combat=2)
 
 
 /datum/outfit/ninja_ronin/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)

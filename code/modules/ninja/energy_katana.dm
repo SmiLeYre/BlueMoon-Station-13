@@ -138,7 +138,7 @@
 	item_state = "energy_naginata1"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	force = 12
+	force = 40
 	throwforce = 15
 	block_chance = 55
 	armour_penetration = 39

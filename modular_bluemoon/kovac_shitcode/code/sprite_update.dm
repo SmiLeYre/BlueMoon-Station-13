@@ -238,7 +238,7 @@
 			toggle_stealth(TRUE)
 			return
 		if(wearer)
-			wearer.alpha = 10
+			wearer.alpha = 12
 			wearer.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 			if(current_charge <= (power_decrease * 15)) // there are 30 seconds to full discharge
 				playsound(get_turf(src), 'sound/rig/loudbeep.ogg', 100, 1, 1)
@@ -299,7 +299,7 @@
 			slowdown = 1.4
 			new /obj/effect/temp_visual/emp/pulse(get_turf(src))
 			playsound(get_turf(src), 'sound/effects/pop.ogg', 100, 1, -6)
-			wearer.alpha = 10
+			wearer.alpha = 12
 			wearer.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 			START_PROCESSING(SSobj, src)
 

@@ -3,7 +3,7 @@
 	typepath = /datum/round_event/ghost_role/space_ninja
 	max_occurrences = 1
 	weight = 10
-	earliest_start = 60 MINUTES
+	earliest_start = 45 MINUTES
 	min_players = 35
 	dynamic_should_hijack = TRUE
 	category = EVENT_CATEGORY_INVASION

@@ -66,7 +66,7 @@
 			to_chat(ninja, "<span class='warning'>You don't have enough power to enable Stealth!</span>")
 			return
 		stealth = !stealth
-		animate(ninja, alpha = 18,time = 6)
+		animate(ninja, alpha = 12,time = 6)
 		ninja.visible_message("<span class='warning'>[ninja.name] vanishes into thin air!</span>", \
 						"<span class='notice'>You are now mostly invisible to normal detection.</span>")
 
@@ -86,15 +86,15 @@
 		if(iscarbon(M))
 			var/mob/living/carbon/C = M
 			if(!C.mind || !C.mind.has_antag_datum(/datum/antagonist/ninja))
-				C.AdjustConfused(10 SECONDS)
-				C.Slowed(5 SECONDS)
-				C.Jitter(100 SECONDS)
+				C.AdjustConfused(8 SECONDS)
+				C.Slowed(8 SECONDS)
+				C.Jitter(30 SECONDS)
 			else
 				SEND_SOUND(C, sound('sound/effects/screech.ogg'))
 
 		if(issilicon(M))
 			SEND_SOUND(M, sound('sound/weapons/flash.ogg'))
-			M.DefaultCombatKnockdown(rand(25,50))
+			M.DefaultCombatKnockdown(rand(30,60))
 
 	for(var/obj/machinery/light/L in range(4, ninja))
 		L.on = 1

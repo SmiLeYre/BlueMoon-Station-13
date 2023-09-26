@@ -259,7 +259,7 @@
 	minimum_flow = 0.375
 	max_per_type = 3
 	clot_rate = 0.12
-	threshold_minimum = 45
+	threshold_minimum = 50
 	threshold_penalty = 10
 	status_effect_type = /datum/status_effect/wound/slash/moderate
 	scar_keyword = "slashmoderate"
@@ -278,7 +278,7 @@
 	minimum_flow = 1.75
 	clot_rate = 0.07
 	max_per_type = 4
-	threshold_minimum = 70
+	threshold_minimum = 75
 	threshold_penalty = 15
 	demotes_to = /datum/wound/slash/moderate
 	status_effect_type = /datum/status_effect/wound/slash/severe
@@ -290,7 +290,7 @@
 	ru_name_r = "разрыва сухожилия"
 	desc = "У пациента наблюдается серьезное повреждение кожного покрова. Отсутствие медицинской помощи приведет к смерти в результате сильнейшей кровопотери."
 	treat_text = "Немедленная перевязка, хирургическое вмешательство с наложением швов и прижиганием увечия, переливание крови."
-	examine_desc = "разрезана до костей, разбрызгивая кровь вокруг"
+	examine_desc = "разрезана до костей, кровь брызжет вокруг"
 	occur_text = "разрывается, разбрызгивая кровь"
 	sound_effect = 'sound/effects/wounds/blood3.ogg'
 	severity = WOUND_SEVERITY_CRITICAL

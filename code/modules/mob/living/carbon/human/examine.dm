@@ -506,7 +506,7 @@
 				if(istype(H.glasses, /obj/item/clothing/glasses/hud/security) || istype(CIH, /obj/item/organ/cyberimp/eyes/hud/security))
 					if(!user.stat && user != src)
 					//|| !user.canmove || user.restrained()) Fluff: Sechuds have eye-tracking technology and sets 'arrest' to people that the wearer looks and blinks at.
-						var/criminal = "None"
+						var/criminal = "Отсутствуют"
 
 						R = find_record("name", perpname, GLOB.data_core.security)
 						if(R)

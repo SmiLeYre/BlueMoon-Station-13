@@ -255,7 +255,7 @@
 //////////////////////
 
 /obj/item/clothing/suit/space/space_ninja/ronin // Yokai red ninja suit
-	armor = list(MELEE = 40, BULLET = 40, LASER = 30, ENERGY = 40, BOMB = 40, BIO = 30, RAD = 30, FIRE = 100, ACID = 100)
+	armor = list(MELEE = 45, BULLET = 45, LASER = 35, ENERGY = 45, BOMB = 45, BIO = 30, RAD = 30, FIRE = 100, ACID = 100)
 	s_delay = 20
 	s_longdelay = 100
 	actions_types = list(/datum/action/item_action/initialize_ninja_suit, /datum/action/item_action/ninjastatus, /datum/action/item_action/ninja_resonance, /datum/action/item_action/ninjaboost, /datum/action/item_action/ninjastar_lethal, /datum/action/item_action/ninja_naginata_recall)
