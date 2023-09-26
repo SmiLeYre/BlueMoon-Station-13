@@ -4111,6 +4111,7 @@
 #include "modular_bluemoon\kovac_shitcode\code\modules\vehicles\mecha.dm"
 #include "modular_bluemoon\kovac_shitcode\code\modules\vending\medical_additional.dm"
 #include "modular_bluemoon\krashly\code\datums\components\uplink.dm"
+#include "modular_bluemoon\krashly\code\datums\traits\negative.dm"
 #include "modular_bluemoon\krashly\code\game\hair_face.dm"
 #include "modular_bluemoon\krashly\code\game\outfits.dm"
 #include "modular_bluemoon\krashly\code\game\shuttles.dm"

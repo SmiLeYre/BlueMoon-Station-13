@@ -130,6 +130,7 @@
 #define TRAIT_ANTIMAGIC			"anti_magic"
 #define TRAIT_HOLY				"holy"
 #define TRAIT_DEPRESSION		"depression"
+#define TRAIT_ONELIFE			"onelife"
 #define TRAIT_JOLLY				"jolly"
 #define TRAIT_NOCRITDAMAGE		"no_crit"
 #define TRAIT_NOSLIPWATER		"noslip_water"
