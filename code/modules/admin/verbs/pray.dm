@@ -67,7 +67,7 @@
 /// Used by communications consoles to message the Syndicate
 /proc/message_syndicate(text, mob/sender)
 	var/msg = copytext_char(sanitize(text), 1, MAX_MESSAGE_LEN)
-	log_command_message(msg, sender, FALSE)
+	log_command_message(msg, sender, TRUE)
 	msg = "<span class='adminnotice'><b><font color=crimson>SYNDICATE:</font>[ADMIN_FULLMONTY(sender)] [ADMIN_SYNDICATE_REPLY(sender)]:</b> [msg]</span>"
 	to_chat(GLOB.admins, msg, confidential = TRUE)
 	for(var/obj/machinery/computer/communications/console in GLOB.machines)
