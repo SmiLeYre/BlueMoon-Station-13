@@ -15,3 +15,23 @@
 		if(has_quirk(quirk))
 			dust(TRUE, TRUE, TRUE)
 	return
+
+/obj/item/implant/onelife
+	icon_state = ""
+	actions_types = list()
+
+/obj/item/implant/onelife/trigger(emote, mob/source)
+	if(emote == "deathgasp")
+		activate("death")
+
+/obj/item/implant/onelife/activate(cause)
+	. = ..()
+	imp_in.dust(TRUE, TRUE, TRUE)
+
+/obj/item/implant/onelife/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	if (!H)
+		return
+	var/obj/item/implant/onelife/E = new
+	E.implant(H)
+	H.update_icons()
