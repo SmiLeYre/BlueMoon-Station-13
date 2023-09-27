@@ -82,7 +82,7 @@
 	sleep(600)
 	if(QDELETED(src))
 		priority_announce("Датчики более не фиксируют обозначенного пространственного разлома. Решения ЦК отозваны. Тем не менее, рекомендуется произвести немедленную эвакуацию персонала.","Центральное Командование, Отдел Работы с Реальностью")
-    addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(cult_ending_helper), CULT_FAILURE_NARSIE_KILLED), 2 SECONDS)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(cult_ending_helper), CULT_FAILURE_NARSIE_KILLED), 2 SECONDS)
 		return
 	if(resolved == FALSE)
 		resolved = TRUE
