@@ -410,7 +410,7 @@
 
 /datum/objective/sacrifice/update_explanation_text()
 	if(target)
-		explanation_text = "Принести в жертву [target], [target.assigned_role] с помощью руны жертвоприношения, [target.p_them()] на ней и тремя собратьями вокруг неё."
+		explanation_text = "Принести в жертву [target], [target.assigned_role] с помощью руны жертвоприношения, жертвой на ней и тремя собратьями вокруг неё."
 	else
 		explanation_text = "Заслон уже была ослаблен, переходите к финальной цели."
 

@@ -94,7 +94,7 @@
 	//belt =
 	back = /obj/item/storage/backpack/hipbag
 	implants = list(/obj/item/implant/explosive)
-
+	backpack_contents = list(/obj/item/tank/jetpack/oxygen/harness=1) // У этого подтипа ниндзя нет рывков, а добраться до станции как-то надо, да и по космосу немного полетать сможет.
 
 /datum/outfit/ninja_wisdom/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	H.grant_language(/datum/language/neokanji)

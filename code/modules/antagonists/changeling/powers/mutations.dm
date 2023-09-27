@@ -149,7 +149,7 @@
 	dna_cost = 2
 	loudness = 2
 	req_human = TRUE
-	recharge_slowdown = 0.6
+	recharge_slowdown = 0
 	weapon_type = /obj/item/melee/arm_blade
 	weapon_name_simple = "blade"
 
@@ -533,7 +533,7 @@
 	dna_cost = 1
 	loudness = 2
 	req_human = TRUE
-	recharge_slowdown = 0.6
+	recharge_slowdown = 0 // BlueMoon 27.09.2023. Не вижу смысла в замедлении перезарядки генов, особенно с учетом не особо сильных позиций генки. Тоже и с мечом.
 
 	suit_type = /obj/item/clothing/suit/armor/changeling
 	helmet_type = /obj/item/clothing/head/helmet/changeling
@@ -662,7 +662,7 @@
 	dna_cost = 2
 	loudness = 2
 	req_human = TRUE
-	recharge_slowdown = 0.6
+	recharge_slowdown = 0
 
 	glove_type = /obj/item/clothing/gloves/fingerless/pugilist/cling // just punch his head off dude
 	glove_name_simple = "bone gauntlets"

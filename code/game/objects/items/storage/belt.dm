@@ -76,7 +76,9 @@
 		/obj/item/carpentry/borer,
 		/obj/item/carpentry/glue,
 		/obj/item/inducer,
-		/obj/item/lightreplacer
+		/obj/item/lightreplacer,
+		/obj/item/healthanalyzer, /// Для робототехников
+		/obj/item/surgical_drapes ///
 		))
 	STR.can_hold = can_hold
 

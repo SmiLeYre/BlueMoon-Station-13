@@ -71,9 +71,9 @@
 
 /obj/singularity/narsie/large/cult/proc/begin_the_end()
 	sleep(50)
-	priority_announce("An acausal dimensional event has been detected in your sector. Event has been flagged EXTINCTION-CLASS. Directing all available assets toward simulating solutions. SOLUTION ETA: 60 SECONDS.","Центральное Командование, Отдел Работы с Реальностью", 'sound/misc/airraid.ogg')
+	priority_announce("В вашем секторе зафиксирован крупный пространственный разлом. Разлому присвоен класс опасности: ВЫМИРАНИЕ ВСЕГО ЖИВОГО. Сделайте всё возможное, чтобы остановить это. У ВАС ЕСТЬ 60 СЕКУНД.","Центральное Командование, Отдел Работы с Реальностью", 'sound/misc/airraid.ogg')
 	sleep(500)
-	priority_announce("Simulations on acausal dimensional event complete. Deploying solution package now. Deployment ETA: ONE MINUTE. ","Центральное Командование, Отдел Работы с Реальностью")
+	priority_announce("Пространственный разлом принял необратимый характер. Мы развертываем последние оставшиеся силы. У ВАС ОСТАЕТСЯ ОДНА МИНУТА НА СПАСЕНИЕ.","Центральное Командование, Отдел Работы с Реальностью")
 	sleep(50)
 	set_security_level("delta")
 	SSshuttle.registerHostileEnvironment(src)
@@ -81,7 +81,7 @@
 	SSpersistence.station_was_destroyed = TRUE
 	sleep(600)
 	if(QDELETED(src))
-		priority_announce("Accausal event alert rescinded. Eldritch presence no longer reading on sensors. Solution package disarmed. Reccomend immediate evacuation","Центральное Командование, Отдел Работы с Реальностью")
+		priority_announce("Датчики более не фиксируют обозначенного пространственного разлома. Решения ЦК отозваны. Тем не менее, рекомендуется произвести немедленную эвакуацию персонала.","Центральное Командование, Отдел Работы с Реальностью")
 		return
 	if(resolved == FALSE)
 		resolved = TRUE
