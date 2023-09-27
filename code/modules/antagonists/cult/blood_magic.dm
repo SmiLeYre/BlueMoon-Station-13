@@ -167,7 +167,7 @@
 						 "<span class='cultitalic'>You speak the cursed words, emitting an EMP blast from your hand.</span>")
 	empulse_using_range(owner, 8)
 	owner.whisper(invocation, language = /datum/language/common)
-	owner.emote("scream")
+	playsound(get_turf(owner), BLOOD_SCREAMS_PICK, 65, 1, 1)
 	charges--
 	if(charges<=0)
 		qdel(src)
@@ -392,7 +392,7 @@
 /obj/item/melee/blood_magic/proc/post_cast(atom/target, mob/living/carbon/user, proximity)
 	if(invocation)
 		user.whisper(invocation, language = /datum/language/common)
-		user.emote("scream")
+		playsound(get_turf(user), BLOOD_SCREAMS_PICK, 65, 1, 1)
 	if(health_cost)
 		if(user.active_hand_index == 1)
 			user.apply_damage(health_cost, BRUTE, BODY_ZONE_L_ARM)
