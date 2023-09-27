@@ -146,19 +146,19 @@
 
 /datum/antagonist/ninja/proc/choosePath(mob/living/carbon/human/ninja = owner.current)
 	if(!isobserver(ninja))
-		var/type = tgui_alert(ninja, "Выберите предпочительную экипировку", "Космический ниндзя", list("Путь Ёкая", "Путь Паука", "Путь Мудрости"))
-
-		if(type == "Путь Ёкая")
-			give_equipment = TRUE
-			ninja_outfit = /datum/outfit/ninja_ronin
-
-		if(type == "Путь Паука")
-			give_equipment = TRUE
-			ninja_outfit = /datum/outfit/ninja
-
-		if(type == "Путь Мудрости")
-			give_equipment = TRUE
-			ninja_outfit = /datum/outfit/ninja_wisdom
+		//var/type = tgui_alert(ninja, "Выберите предпочительную экипировку", "Космический ниндзя", list("Путь Ёкая", "Путь Паука", "Путь Мудрости"))
+		var/choices = list("Путь Ёкая", "Путь Паука", "Путь Мудрости")
+		var/choice = input(ninja, "Выберите предпочительную экипировку", "Космический ниндзя") in choices
+		switch(choice)
+			if("Путь Ёкая")
+				give_equipment = TRUE
+				ninja_outfit = /datum/outfit/ninja_ronin
+			if("Путь Паука")
+				give_equipment = TRUE
+				ninja_outfit = /datum/outfit/ninja
+			if("Путь Мудрости")
+				give_equipment = TRUE
+				ninja_outfit = /datum/outfit/ninja_wisdom
 
 	if(give_equipment)
 		ninja.delete_equipment()
