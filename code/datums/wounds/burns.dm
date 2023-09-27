@@ -258,7 +258,7 @@
 	occur_text = "шипит от образующихся красных ожоговых пятен"
 	severity = WOUND_SEVERITY_MODERATE
 	damage_mulitplier_penalty = 1.1
-	threshold_minimum = 55
+	threshold_minimum = 50
 	threshold_penalty = 5 // burns cause significant decrease in limb integrity compared to other wounds
 	status_effect_type = /datum/status_effect/wound/burn/moderate
 	flesh_damage = 5
