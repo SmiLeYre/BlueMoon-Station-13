@@ -360,7 +360,9 @@ effective or pretty fucking useless.
 	var/turf/mobloc = get_turf(C)
 	var/list/turfs = new/list()
 	var/found_turf = FALSE
-	var/list/bagholding = typecacheof(/obj/item/storage/backpack/holding)
+	var/static/list/bag_cache = typecacheof(/obj/item/storage/backpack/holding)
+	var/atom/movable/teleatom = bag_cache
+	var/list/bagholding = typecache_filter_list(teleatom.GetAllContents(), bag_cache)
 	for(var/turf/T in range(user, tp_range))
 		if(!(length(bagholding) && !flawless)) //Chaos if you have a bag of holding
 			if(get_dir(C, T) != C.dir)

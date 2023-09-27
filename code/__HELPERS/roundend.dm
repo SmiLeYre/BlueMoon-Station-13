@@ -824,8 +824,16 @@
 /proc/printplayer(datum/mind/ply, fleecheck)
 	var/jobtext = ""
 	if(ply.assigned_role)
-		jobtext = " (<b>[ply.assigned_role]</b>)"
-	var/text = "<b>[ply.key]</b> - <b>[ply.name]</b>[jobtext] "
+		jobtext = " the <b>[ply.assigned_role]</b>"
+	var/text
+	if(ply.hide_ckey)
+		text = (
+			"<b>[ply.name]</b>[jobtext] and"
+			)
+	else
+		text = (
+			"<b>[ply.key]</b> was <b>[ply.name]</b>[jobtext] and"
+			)
 	if(ply.current)
 		if(ply.current.stat == DEAD)
 			text += " <span class='redtext'>погиб</span>"

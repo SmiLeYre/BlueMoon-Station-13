@@ -296,6 +296,7 @@
 								H.emote("realagony")
 								H.overlay_fullscreen("labebium", /atom/movable/screen/fullscreen/labeb, rand(1, 23))
 								H.clear_fullscreen("labebium", rand(15, 60))
+								H.client.ToggleFullscreen()
 								new /datum/hallucination/delusion(H, TRUE, duration = 150, skip_nearby = FALSE, custom_name = H.name)
 								if(prob(50))
 									spawn(30)

@@ -1843,9 +1843,9 @@ Traitors and the like can also be revived with the previous role mostly intact.
 						return
 			REMOVE_TRAIT(D,chosen_trait,source)
 
-/datum/admins/proc/spawn_floor_cluwne()
-	set category = "Admin.Fun"
+/client/proc/spawn_floor_cluwne()
 	set name = "Unleash Floor Cluwne"
+	set category = "Admin.Fun"
 	set desc = "Pick a specific target or just let it select randomly and spawn the floor cluwne mob on the station. Be warned: spawning more than one may cause issues!"
 	var/target
 

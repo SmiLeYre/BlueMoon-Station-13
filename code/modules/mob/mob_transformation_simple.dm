@@ -14,7 +14,7 @@
 	if(istext(new_type))
 		new_type = text2path(new_type)
 
-	if( !ispath(new_type) )
+	if(!ispath(new_type) )
 		to_chat(usr, "Invalid type path (new_type = [new_type]) in change_mob_type(). Contact a coder.")
 		return
 
@@ -47,7 +47,7 @@
 		D.updateappearance(mutcolor_update=1, mutations_overlay_update=1)
 	else if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		client?.prefs.copy_to(H)
+		H.client?.prefs.copy_to(H)
 		H.dna.update_dna_identity()
 
 	if(mind && isliving(M))

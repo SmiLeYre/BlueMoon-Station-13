@@ -105,6 +105,7 @@
 			QDELETED(user) \
 			|| (!(timed_action_flags & IGNORE_USER_LOC_CHANGE) && !drifting && user.loc != user_loc) \
 			|| (!(timed_action_flags & IGNORE_HELD_ITEM) && user.get_active_held_item() != holding) \
+			|| (!(timed_action_flags & IGNORE_INCAPACITATED) && user.incapacitated()) \
 			|| (extra_checks && !extra_checks.Invoke()) \
 		)
 			. = FALSE

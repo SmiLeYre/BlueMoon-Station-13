@@ -1564,8 +1564,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<b>Chastity Interactions :</b> <a href='?_src_=prefs;preference=chastitypref'>[(cit_toggles & CHASTITY) ? "Allowed" : "Disallowed"]</a><br>"
 					dat += "<b>Genital Stimulation Modifiers :</b> <a href='?_src_=prefs;preference=stimulationpref'>[(cit_toggles & STIMULATION) ? "Allowed" : "Disallowed"]</a><br>"
 					dat += "<b>Edging :</b> <a href='?_src_=prefs;preference=edgingpref'>[(cit_toggles & EDGING) ? "Allowed" : "Disallowed"]</a><br>"
+					dat += "<b>Receive Cum Covering :</b> <a href='?_src_=prefs;preference=cumontopref'>[(cit_toggles & CUM_ONTO) ? "Allowed" : "Disallowed"]</a><br>"
 					dat += "<span style='border-radius: 2px;border:1px dotted white;cursor:help;' title='Enables verbs involving farts, shit and piss.'>?</span> "
 					dat += "<b>Unholy ERP verbs :</b> <a href='?_src_=prefs;preference=unholypref'>[unholypref]</a><br>" //https://www.youtube.com/watch?v=OHKARc-GObU
+					dat += "<span style='border-radius: 2px;border:1px dotted white;cursor:help;' title='Enables macro / micro stepping and stomping interactions.'>?</span> "
+//					dat += "<b>Stomping Interactions :</b> <a href='?_src_=prefs;preference=stomppref'>[stomppref ? "Yes" : "No"]</a><br>"
 					//END OF SPLURT EDIT
 					//SKYRAT EDIT
 					dat += "<span style='border-radius: 2px;border:1px dotted white;cursor:help;' title='Enables verbs involving ear/brain fucking.'>?</span> " //SPLURT Edit (wow! editception???)
@@ -3592,6 +3595,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							mobsexpref = "No"
 						if("No")
 							mobsexpref = "Yes"
+//				if("stomppref") // What the fuck is this?
+//					stomppref = !stomppref
 				//Skyrat edit - *someone* offered me actual money for this shit
 				if("extremepref") //i hate myself for doing this
 					switch(extremepref) //why the fuck did this need to use cycling instead of input from a list
@@ -4000,6 +4005,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					cit_toggles ^= STIMULATION
 				if("edgingpref")
 					cit_toggles ^= EDGING
+				if("cumontopref")
+					cit_toggles ^= CUM_ONTO
 				//
 
 	if(href_list["preference"] == "gear")

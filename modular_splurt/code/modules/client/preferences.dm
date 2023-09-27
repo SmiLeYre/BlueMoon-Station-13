@@ -6,6 +6,7 @@
 /datum/preferences
 	max_save_slots = DEFAULT_SAVE_SLOTS
 	var/unholypref = "No" //Goin 2 hell fo dis one
+//	var/stomppref = TRUE // Please step on me.
 	var/list/gfluid_blacklist = list() //Stuff you don't want people to cum into you
 	var/new_character_creator = TRUE // old/new character creator
 	var/show_in_directory = 1	//Show in Character Directory
@@ -1070,6 +1071,8 @@
 			//SPLURT EDIT
 			dat += "<span style='border-radius: 2px;border:1px dotted white;cursor:help;' title='Enables verbs involving farts, shit and piss.'>?</span> "
 			dat += "<b>Unholy ERP verbs :</b> <a href='?_src_=prefs;preference=unholypref'>[unholypref]</a><br>" //https://www.youtube.com/watch?v=OHKARc-GObU
+			dat += "<span style='border-radius: 2px;border:1px dotted white;cursor:help;' title='Enables macro / micro stepping and stomping interactions.'>?</span> "
+//			dat += "<b>Stomping Interactions :</b> <a href='?_src_=prefs;preference=stomppref'>[stomppref ? "Yes" : "No"]</a><br>"
 			//END OF SPLURT EDIT
 			//SKYRAT EDIT
 			dat += "<span style='border-radius: 2px;border:1px dotted white;cursor:help;' title='Enables verbs involving ear/brain fucking.'>?</span> "

@@ -110,6 +110,8 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 				else
 					content += "\n"
 
+//				content += " <b>| Stomping Interactions:</b> [L.client.prefs.stomppref ? "Yes" : "No"]\n"
+
 				if(L.client.prefs.extremepref == "Yes")
 					content += "<br><b>Extreme content:</b> [L.client.prefs.extremepref] <b>| Extreme content harm:</b> [L.client.prefs.extremeharm]\n"
 

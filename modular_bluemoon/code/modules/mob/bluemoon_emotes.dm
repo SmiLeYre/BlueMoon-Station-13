@@ -180,9 +180,8 @@
 
 /datum/emote/living/audio/real_agony
 	key = "realagony"
-	key_third_person = "realagonys"
+	key_third_person = "realagony"
 	message = "кричит в агонии!"
-	emote_type = EMOTE_AUDIBLE
 	emote_cooldown = 1 SECONDS
 
 /datum/emote/living/audio/real_agony/run_emote(mob/living/user)
@@ -192,7 +191,7 @@
 	if(H.mind?.miming)
 		return
 	if(ismonkey(user))
-		return pick('sound/creatures/monkey/monkey_screech_1.ogg',\
+		return emote_sound = pick('sound/creatures/monkey/monkey_screech_1.ogg',\
 					'sound/creatures/monkey/monkey_screech_2.ogg',\
 					'sound/creatures/monkey/monkey_screech_3.ogg',\
 					'sound/creatures/monkey/monkey_screech_4.ogg',\
@@ -201,11 +200,11 @@
 					'sound/creatures/monkey/monkey_screech_7.ogg')
 	if(ishumanbasic(H) || iscatperson(H))
 		if(user.gender == FEMALE)
-			return pick('modular_bluemoon/smiley/sounds/emotes/agony_female_1.ogg',\
+			return emote_sound = pick('modular_bluemoon/smiley/sounds/emotes/agony_female_1.ogg',\
 						'modular_bluemoon/smiley/sounds/emotes/agony_female_2.ogg',\
 						'modular_bluemoon/smiley/sounds/emotes/agony_female_3.ogg')
 		else
-			return pick('modular_bluemoon/smiley/sounds/emotes/agony_male_1.ogg',\
+			return emote_sound = pick('modular_bluemoon/smiley/sounds/emotes/agony_male_1.ogg',\
 						'modular_bluemoon/smiley/sounds/emotes/agony_male_2.ogg',\
 						'modular_bluemoon/smiley/sounds/emotes/agony_male_3.ogg',\
 						'modular_bluemoon/smiley/sounds/emotes/agony_male_4.ogg',\
@@ -215,4 +214,4 @@
 						'modular_bluemoon/smiley/sounds/emotes/agony_male_8.ogg',\
 						'modular_bluemoon/smiley/sounds/emotes/agony_male_9.ogg')
 	else if(isflyperson(H) || isinsect(H))
-		return 'modular_citadel/sound/voice/scream_moth.ogg'
+		return emote_sound = 'modular_citadel/sound/voice/scream_moth.ogg'

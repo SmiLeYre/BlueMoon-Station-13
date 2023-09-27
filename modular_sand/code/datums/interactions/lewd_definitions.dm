@@ -411,6 +411,8 @@
 /mob/living/proc/cum(mob/living/partner, target_orifice)
 	if(HAS_TRAIT(src, TRAIT_NEVERBONER))
 		return FALSE
+	if(SEND_SIGNAL(src, COMSIG_MOB_PRE_CAME, target_orifice, partner))
+		return FALSE
 	var/message
 	var/u_His = p_their()
 	var/u_He = p_they()
@@ -818,7 +820,8 @@
 			else
 				H.mob_climax(TRUE, "sex", partner, !cumin, target_gen)
 	set_lust(0)
-	SEND_SIGNAL(src, COMSIG_MOB_CAME, target_orifice, partner, cumin, last_genital)
+
+	SEND_SIGNAL(src, COMSIG_MOB_POST_CAME, target_orifice, partner, cumin, last_genital)
 
 	return TRUE
 
@@ -870,13 +873,12 @@
 	var/lust_tolerance = get_lust_tolerance()
 	if(lust >= lust_tolerance)
 		if(prob(10))
-			to_chat(src, "<b>Вам трудно удержаться от оргазма!!</b>")
+			to_chat(src, "<b>Вам трудно удержаться от оргазма!</b>")
+			moan()
 			return FALSE
 		if(lust >= (lust_tolerance * 3))
-			cum(partner, orifice)
-			return TRUE
-	else
-		moan()
+			if(cum(partner, orifice))
+				return TRUE
 	return FALSE
 
 /mob/living/proc/get_unconsenting(extreme = FALSE, list/ignored_mobs)

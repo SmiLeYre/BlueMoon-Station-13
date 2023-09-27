@@ -29,6 +29,7 @@
 
 	message = "<span class='lewd'>\The <b>[user]</b> [pick(lines)]</span>"
 	user.visible_message(message, ignored_mobs = user.get_unconsenting())
+	user.handle_post_sex(NORMAL_LUST, CUM_TARGET_BREASTS, user)
 	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/oral1.ogg',
 						'modular_sand/sound/interactions/oral2.ogg'), 70, 1, -1)
 
@@ -91,6 +92,7 @@
 			liquid_container.reagents.add_reagent(milktype, rand(1,3 * modifier))
 
 			user.visible_message(span_lewd("<b>\The [user]</b> выдавливает содержимое груди <b>[target]</b> в [liquid_container]."), ignored_mobs = user.get_unconsenting())
+			target.handle_post_sex(NORMAL_LUST, CUM_TARGET_HAND, liquid_container ? liquid_container : user, CUM_TARGET_BREASTS)
 			playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/squelch1.ogg', 50, 1, -1)
 	else
 		if(user.a_intent == INTENT_HARM)
