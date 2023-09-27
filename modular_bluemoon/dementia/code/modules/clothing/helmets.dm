@@ -45,4 +45,8 @@
 			RESKIN_ICON_STATE = "helmet_flektarn",
 			RESKIN_ITEM_STATE = "helmet_flektarn"
 		),
+		"Multicam" = list(
+			RESKIN_ICON_STATE = "helmet_multicam",
+			RESKIN_ITEM_STATE = "helmet_multicam"
+		),
 	)
