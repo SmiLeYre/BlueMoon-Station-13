@@ -238,7 +238,7 @@
 
 /obj/item/stunblade_kit
 	name = "Stunblade Kit"
-	desc = "A modkit for making an stunbaton into a stunbaton."
+	desc = "A modkit for making an stunbaton into a stunblade."
 	icon = 'modular_splurt/icons/obj/clothing/reinforcekits.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	icon_state = "sec_armor_kit"
