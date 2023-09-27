@@ -54,7 +54,7 @@
 	desc = "An american automatic rifle chambered for the 5.56 round, designed for use by Special Ops."
 	icon_state = "m16_tactical"
 	burst_size = 5
-	fire_delay = 10
+	fire_delay = 3
 
 /obj/item/gun/ballistic/automatic/m16a4/tactical/update_icon_state()
 	if(magazine)

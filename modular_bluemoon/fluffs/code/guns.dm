@@ -230,6 +230,6 @@
 	casing_ejector = 0
 	spread = 30		//Assault Rifleeeeeee
 	w_class = WEIGHT_CLASS_NORMAL
-	burst_size = 4	//Shh.
-	fire_delay = 1
+	burst_size = 1	//Shh.
+	fire_delay = 15
 	automatic_burst_overlay = FALSE
