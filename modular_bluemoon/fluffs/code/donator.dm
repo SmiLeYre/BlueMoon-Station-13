@@ -233,6 +233,13 @@
 	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife")
 	subcategory = LOADOUT_SUBCATEGORIES_DON17
 
+/datum/gear/donator/bm/stunblade
+	name = "Stunblade Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/stunblade_kit
+	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife", "stgs")
+	subcategory = LOADOUT_SUBCATEGORIES_DON17
+
 /datum/gear/donator/bm/aviator_helmet
 	name = "Aviator Helmet"
 	slot = ITEM_SLOT_HEAD
