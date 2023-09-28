@@ -27,6 +27,12 @@
 		H.update_mutant_bodyparts()
 		H.update_hair()
 
+/obj/item/icona_madonna
+	name = "Madonna icon"
+	desc = "Icon of the great Madonna"
+	icon =  'modular_bluemoon/krashly/icons/obj/structures.dmi'
+	icon_state = "madonna"
+
 /obj/structure/sign/flag/skull
 	name = "flag of PMC Skull"
 	desc = "Black flag with a skull in the center. Has a red lining. The flag smells of blood."

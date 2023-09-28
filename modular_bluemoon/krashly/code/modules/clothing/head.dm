@@ -33,6 +33,13 @@
 	item_state = "centcom_envirohelm"
 
 //InteQ
+/obj/item/clothing/head/HoS/inteq_honorable_vanguard
+	name = "honorable vanguard beret"
+	desc = "The pinacle of fashion for any aspiring mercenary leader. Designed to protect the head from light impacts."
+	icon = 'modular_bluemoon/krashly/icons/obj/clothing/head.dmi'
+	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/head.dmi'
+	icon_state = "inteq_honorable_beret"
+	item_state = "inteq_honorable_beret"
 
 /obj/item/clothing/head/HoS/inteq_vanguard
 	name = "vanguard beret"
@@ -42,8 +49,16 @@
 	icon_state = "inteq_beret"
 	item_state = "inteq_beret"
 
+/obj/item/clothing/head/HoS/inteq_cap
+	name = "vanguard cap"
+	desc = "The pinacle of fashion for any aspiring mercenary leader. Designed to protect the head from light impacts."
+	icon = 'modular_bluemoon/krashly/icons/obj/clothing/head.dmi'
+	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/head.dmi'
+	icon_state = "inteq_peaked"
+	item_state = "inteq_peaked"
+
 /obj/item/clothing/head/soft/inteq
-	name = "InteQ cap"
+	name = "InteQ softcap"
 	desc = "Brown cap with a badge."
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/head.dmi'
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/head.dmi'
@@ -52,7 +67,7 @@
 	soft_type = "inteq"
 
 /obj/item/clothing/head/soft/inteq_med
-	name = "InteQ medic cap"
+	name = "InteQ medic's softcap"
 	desc = "White cap with a badge."
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/head.dmi'
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/head.dmi'
@@ -67,6 +82,14 @@
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/head.dmi'
 	icon_state = "inteq_swat"
 	item_state = "inteq_swat"
+
+/obj/item/clothing/head/helmet/inteq
+	name = "InteQ helmet"
+	desc = "Black helmet with visor. (You can attach a flashlight to it)."
+	icon = 'modular_bluemoon/krashly/icons/obj/clothing/head.dmi'
+	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/head.dmi'
+	icon_state = "inteq_helmet"
+	item_state = "inteq_helmet"
 
 /obj/item/clothing/head/maid/syndicate/inteq
 	name = "InteQ maid headband"

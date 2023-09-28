@@ -1,6 +1,7 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "f" = (
 /obj/effect/decal/cleanable/blood/gibs/body,
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plating/airless,
 /area/ruin/space)
 "g" = (
@@ -15,6 +16,10 @@
 /area/template_noop)
 "r" = (
 /turf/closed/wall,
+/area/ruin/space)
+"s" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/asteroid/airless,
 /area/ruin/space)
 "t" = (
 /obj/structure/lattice,
@@ -181,7 +186,7 @@ Z
 Z
 Z
 Z
-I
+s
 n
 M
 M
@@ -278,7 +283,7 @@ n
 n
 n
 n
-I
+s
 Z
 Z
 Z

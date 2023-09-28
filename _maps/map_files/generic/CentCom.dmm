@@ -1321,7 +1321,6 @@
 /obj/structure/table/reinforced,
 /obj/item/book/manual/wiki/medical_cloning,
 /obj/effect/turf_decal/tile/blue/fourcorners,
-/obj/effect/turf_decal/tile/blue/fourcorners,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/white,
 /area/syndicate_mothership)
@@ -3011,11 +3010,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/ferry)
-"cIZ" = (
-/obj/structure/closet/crate/engineering,
-/obj/effect/spawner/lootdrop/maintenance/two,
-/turf/open/floor/plating,
-/area/syndicate_mothership)
 "cJl" = (
 /obj/structure/chair/office/dark,
 /obj/effect/turf_decal/siding/wood,
@@ -4507,7 +4501,6 @@
 /obj/effect/decal/cleanable/blood/splats,
 /obj/structure/statue/bone/rib,
 /obj/effect/turf_decal/tile/blue/fourcorners,
-/obj/effect/turf_decal/tile/blue/fourcorners,
 /turf/open/floor/iron/white,
 /area/syndicate_mothership)
 "dOl" = (
@@ -4562,6 +4555,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plating,
 /area/syndicate_mothership)
 "dQC" = (
@@ -5509,7 +5503,6 @@
 /obj/effect/decal/cleanable/blood/old,
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/tile/blue/fourcorners,
-/obj/effect/turf_decal/tile/blue/fourcorners,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/white,
 /area/syndicate_mothership)
@@ -5531,6 +5524,9 @@
 /area/syndicate_mothership)
 "eHQ" = (
 /obj/structure/safe,
+/obj/item/clothing/head/HoS/inteq_honorable_vanguard,
+/obj/item/clothing/suit/armor/inteq/honorable_vanguard,
+/obj/item/clothing/under/inteq_honorable_vanguard,
 /turf/open/floor/wood/wood_parquet,
 /area/syndicate_mothership)
 "eIb" = (
@@ -6690,7 +6686,6 @@
 /area/syndicate_mothership)
 "fCk" = (
 /obj/machinery/clonepod,
-/obj/effect/turf_decal/tile/blue/fourcorners,
 /obj/effect/turf_decal/tile/blue/fourcorners,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/white,
@@ -8074,7 +8069,6 @@
 "gIg" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/turf_decal/tile/brown/fourcorners,
-/obj/effect/turf_decal/tile/brown/fourcorners,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/white,
 /area/syndicate_mothership)
@@ -8776,7 +8770,7 @@
 /turf/open/floor/padded,
 /area/slavers)
 "hmP" = (
-/obj/structure/closet/emcloset,
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plating,
 /area/syndicate_mothership)
 "hns" = (
@@ -9134,7 +9128,6 @@
 /turf/open/floor/holofloor/plating,
 /area/holodeck/rec_center/refuel)
 "hDt" = (
-/obj/effect/turf_decal/tile/blue/fourcorners,
 /obj/effect/turf_decal/tile/blue/fourcorners,
 /obj/machinery/light/small{
 	dir = 1
@@ -10138,6 +10131,10 @@
 	},
 /turf/open/floor/plasteel/cafeteria,
 /area/centcom/holding)
+"iya" = (
+/mob/living/simple_animal/hostile/carp/cayenne,
+/turf/open/floor/iron/dark,
+/area/syndicate_mothership)
 "izj" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
@@ -14439,7 +14436,6 @@
 "mmZ" = (
 /obj/machinery/computer,
 /obj/effect/turf_decal/tile/blue/fourcorners,
-/obj/effect/turf_decal/tile/blue/fourcorners,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/white,
 /area/syndicate_mothership)
@@ -14518,6 +14514,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plating,
 /area/syndicate_mothership)
 "mqj" = (
@@ -15783,7 +15780,6 @@
 /area/centcom/supply)
 "nnX" = (
 /obj/effect/turf_decal/tile/brown/fourcorners,
-/obj/effect/turf_decal/tile/brown/fourcorners,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/white,
 /area/syndicate_mothership)
@@ -16320,7 +16316,6 @@
 /area/tdome/arena)
 "nIq" = (
 /obj/effect/rune/blood_boil,
-/obj/effect/turf_decal/tile/brown/fourcorners,
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/white,
@@ -17236,7 +17231,6 @@
 /area/space)
 "oDZ" = (
 /obj/structure/barricade/wooden,
-/obj/effect/turf_decal/tile/brown/fourcorners,
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/white,
@@ -19108,7 +19102,6 @@
 /obj/structure/table/reinforced,
 /obj/item/paper/fluff/ruins/exp_cloning/log,
 /obj/effect/turf_decal/tile/blue/fourcorners,
-/obj/effect/turf_decal/tile/blue/fourcorners,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/white,
 /area/syndicate_mothership)
@@ -20685,7 +20678,6 @@
 /obj/structure/girder,
 /obj/structure/holosign/barrier,
 /obj/effect/turf_decal/tile/brown/fourcorners,
-/obj/effect/turf_decal/tile/brown/fourcorners,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/white,
 /area/syndicate_mothership)
@@ -21615,6 +21607,11 @@
 	},
 /turf/open/floor/mineral/titanium/blue,
 /area/centcom/evac)
+"soV" = (
+/obj/effect/turf_decal/tile/brown/fourcorners,
+/mob/living/simple_animal/hostile/carp/brown/beret,
+/turf/open/floor/iron/dark,
+/area/syndicate_mothership)
 "spb" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/structure/closet,
@@ -22086,11 +22083,10 @@
 /turf/open/floor/mineral/titanium/blue,
 /area/centcom/holding)
 "sJX" = (
-/obj/effect/turf_decal/tile/brown{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/brown,
-/mob/living/simple_animal/hostile/carp/cayenne,
+/obj/effect/turf_decal/tile/dark_green/fourcorners,
+/obj/effect/turf_decal/tile/dark_blue/fourcorners,
+/obj/structure/table/wood,
+/obj/item/clothing/under/inteq_honorable_vanguard,
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership)
 "sKR" = (
@@ -23446,8 +23442,11 @@
 /turf/open/floor/iron/white,
 /area/syndicate_mothership)
 "tYc" = (
-/obj/structure/filingcabinet/filingcabinet,
-/turf/open/floor/plating,
+/obj/effect/turf_decal/box/corners{
+	dir = 1
+	},
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/iron/dark,
 /area/syndicate_mothership)
 "tYT" = (
 /obj/machinery/door/airlock/centcom{
@@ -25397,7 +25396,6 @@
 /area/centcom/supply)
 "vLr" = (
 /obj/structure/barricade/wooden/crude,
-/obj/effect/turf_decal/tile/brown/fourcorners,
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/white,
@@ -35283,7 +35281,7 @@ vlZ
 tmX
 hgo
 tmX
-cIZ
+hmP
 hgo
 apW
 oNp
@@ -39632,7 +39630,7 @@ sdM
 sdM
 sdM
 oNp
-qjR
+hmP
 lnW
 hgo
 hgo
@@ -39647,7 +39645,7 @@ xfY
 veH
 iCS
 tmX
-tYc
+hmP
 wHj
 hgo
 tmX
@@ -43744,7 +43742,7 @@ iFA
 oks
 oks
 tmX
-nid
+sJX
 lQL
 xfY
 cHJ
@@ -44056,7 +44054,7 @@ xKw
 xfY
 xfY
 tmX
-lFT
+hmP
 lFT
 hgo
 tmX
@@ -46349,7 +46347,7 @@ tmX
 xuZ
 aPi
 vMU
-sJX
+kiH
 kiH
 bRD
 pxO
@@ -46438,7 +46436,7 @@ iEw
 xfY
 xfY
 xfY
-xfY
+iya
 xfY
 xfY
 xzn
@@ -46863,7 +46861,7 @@ arL
 kSr
 qIf
 iXj
-xKw
+soV
 bWv
 avp
 tmX
@@ -52000,7 +51998,7 @@ hgo
 tmX
 hbW
 jBl
-tPv
+tYc
 tmX
 sdM
 sdM
@@ -58140,7 +58138,7 @@ sdM
 sdM
 sdM
 tmX
-hgo
+hmP
 hgo
 ibY
 cUv
@@ -59940,7 +59938,7 @@ tmX
 aFc
 rti
 tmX
-hgo
+hmP
 tmX
 xKw
 cUv

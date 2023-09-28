@@ -51,12 +51,13 @@
 /obj/machinery/airalarm/all_access{
 	pixel_y = 25
 	},
-/obj/structure/closet/secure_closet/brig{
-	name = "Prisoner Locker";
-	req_access_txt = "150"
-	},
 /obj/item/clothing/head/helmet/space/eva,
 /obj/item/clothing/suit/space/eva,
+/obj/structure/closet/secure_closet{
+	req_access_txt = "150"
+	},
+/obj/item/clothing/under/rank/prisoner,
+/obj/item/clothing/shoes/sneakers/orange,
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq/collosus)
 "aG" = (
@@ -490,9 +491,9 @@
 /obj/item/lighter{
 	pixel_y = 5
 	},
-/obj/item/storage/backpack/duffelbag/syndie/c4,
 /obj/item/inteq_sledgehammer,
 /obj/item/inteq/uplink/radio/nuclear,
+/obj/item/storage/backpack/duffelbag/syndie/inteq/c4,
 /turf/open/floor/wood/wood_parquet,
 /area/shuttle/inteq/collosus)
 "oa" = (
@@ -825,6 +826,11 @@
 /obj/machinery/computer/shuttle/inteq_collosus{
 	dir = 8
 	},
+/obj/item/icona_madonna{
+	icon = 'modular_bluemoon/krashly/icons/obj/structures.dmi';
+	pixel_x = 25;
+	layer = 5
+	},
 /turf/open/floor/wood/wood_parquet,
 /area/shuttle/inteq/collosus)
 "uB" = (
@@ -845,7 +851,9 @@
 /area/shuttle/inteq/collosus)
 "uH" = (
 /obj/structure/closet/crate/large,
-/obj/item/vending_refill/inteq_vendomat,
+/obj/item/bodybag/containment/prisoner,
+/obj/item/bodybag/containment/prisoner,
+/obj/item/bodybag/containment/prisoner,
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq/collosus)
 "vc" = (
@@ -1031,7 +1039,6 @@
 /obj/item/storage/firstaid/regular{
 	pixel_x = 5
 	},
-/obj/item/storage/backpack/duffelbag/syndie/surgery,
 /obj/effect/turf_decal/box/white/corners,
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/hypospray/medipen,
@@ -1040,6 +1047,7 @@
 	pixel_x = 8;
 	pixel_y = 4
 	},
+/obj/item/storage/backpack/duffelbag/syndie/inteq/surgery,
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq/collosus)
 "AB" = (

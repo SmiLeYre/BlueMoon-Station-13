@@ -9,6 +9,10 @@
 "t" = (
 /turf/open/floor/plating/asteroid,
 /area/ruin/space)
+"u" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/asteroid,
+/area/ruin/space)
 "G" = (
 /obj/item/holosign_creator/atmos,
 /turf/open/floor/plating/asteroid,
@@ -172,7 +176,7 @@ R
 b
 b
 b
-t
+u
 t
 P
 Y

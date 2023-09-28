@@ -22,6 +22,7 @@
 	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/cobweb,
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargobay)
 "ag" = (
@@ -34,6 +35,7 @@
 /obj/structure/sign/warning/vacuum{
 	pixel_y = 32
 	},
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargobay)
 "ai" = (
@@ -360,6 +362,7 @@
 	desc = "A thick gelatinous surface covers the floor.  Someone get the golashes.";
 	name = "gelatinous floor"
 	},
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost)
 "bj" = (
@@ -820,6 +823,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/powerstorage)
 "cq" = (
@@ -1606,6 +1610,11 @@
 	},
 /turf/open/floor/plating/asteroid,
 /area/ruin/space/has_grav/derelictoutpost)
+"jb" = (
+/obj/effect/turf_decal/delivery,
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "lk" = (
 /obj/machinery/power/apc{
 	dir = 4;
@@ -1840,6 +1849,20 @@
 /obj/structure/glowshroom/single,
 /turf/open/floor/plating/asteroid,
 /area/ruin/space/has_grav/derelictoutpost)
+"zc" = (
+/obj/effect/decal/cleanable/blood/old{
+	dir = 9;
+	icon_state = "trails_1";
+	name = "dried blood trail"
+	},
+/obj/structure/alien/weeds{
+	color = "#4BAE56";
+	desc = "A thick gelatinous surface covers the floor.  Someone get the golashes.";
+	name = "gelatinous floor"
+	},
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/has_grav/derelictoutpost)
 "Ap" = (
 /obj/effect/decal/cleanable/blood/old{
 	dir = 6;
@@ -1894,6 +1917,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost)
+"Cc" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/derelictoutpost/cargobay)
 "Cx" = (
 /obj/machinery/spaceship_navigation_beacon/invion,
 /turf/closed/wall,
@@ -1922,6 +1949,7 @@
 	icon_state = "trails_1";
 	name = "dried blood trail"
 	},
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plating/asteroid,
 /area/ruin/space/has_grav/derelictoutpost)
 "Ds" = (
@@ -1953,6 +1981,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost)
+"Ha" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "HH" = (
 /obj/effect/decal/cleanable/blood/old{
 	dir = 10;
@@ -1977,6 +2009,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost)
+"Jh" = (
+/obj/structure/alien/weeds{
+	color = "#4BAE56";
+	desc = "A thick gelatinous surface covers the floor.  Someone get the golashes.";
+	name = "gelatinous floor"
+	},
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/has_grav/derelictoutpost)
 "Jv" = (
 /obj/item/ammo_casing/c45{
 	caliber = null;
@@ -1996,6 +2037,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargobay)
+"Ko" = (
+/obj/structure/alien/weeds{
+	color = "#4BAE56";
+	desc = "A thick gelatinous surface covers the floor.  Someone get the golashes.";
+	name = "gelatinous floor"
+	},
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/derelictoutpost)
 "Kz" = (
 /obj/effect/decal/cleanable/blood/old{
 	dir = 4;
@@ -2454,7 +2504,7 @@ dS
 eh
 eh
 Ds
-ak
+Cc
 ab
 aR
 aZ
@@ -2519,7 +2569,7 @@ cG
 ak
 db
 ab
-VU
+zc
 dm
 dL
 dT
@@ -2666,7 +2716,7 @@ ab
 lY
 Lr
 dL
-dX
+jb
 dW
 dW
 rb
@@ -2742,7 +2792,7 @@ dY
 dW
 eq
 rb
-dW
+Ha
 dL
 aR
 aZ
@@ -2846,7 +2896,7 @@ ab
 rY
 ds
 dL
-dW
+Ha
 dW
 dW
 rb
@@ -3095,7 +3145,7 @@ cP
 aK
 cR
 ds
-cR
+Jh
 cR
 fF
 ef
@@ -3344,7 +3394,7 @@ Bt
 cj
 cB
 bF
-bl
+Ko
 dl
 bF
 bl

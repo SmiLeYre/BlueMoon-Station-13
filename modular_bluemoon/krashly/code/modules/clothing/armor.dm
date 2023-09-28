@@ -119,6 +119,12 @@ obj/item/clothing/suit/donator/bm/cerberus_suit/armored/inkvd
 	icon_state = "armor"
 	item_state = "armor"
 
+/obj/item/clothing/suit/armor/inteq/honorable_vanguard
+	name = "InteQ black armored coat"
+	desc = "Lush overcoat with fur around the neck. Has armor plates in its composition."
+	icon_state = "armor_inteq_honorable_battlecoat"
+	item_state = "armor_inteq_honorable_battlecoat"
+
 /obj/item/clothing/suit/armor/inteq/vanguard
 	name = "InteQ armored coat"
 	desc = "Lush overcoat with fur around the neck. Has armor plates in its composition."
