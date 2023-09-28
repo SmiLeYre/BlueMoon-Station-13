@@ -243,7 +243,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	icon_state = "sec_armor_kit"
 	var/product = /obj/item/melee/baton/stunblade //what it makes
-	var/list/fromitem = list(/obj/item/melee/baton) //what it needs
+	var/list/fromitem = list(/obj/item/melee/baton, /obj/item/melee/baton/loaded) //what it needs
 
 /obj/item/stunblade_kit/afterattack(obj/O, mob/user as mob)
 	if(istype(O, product))

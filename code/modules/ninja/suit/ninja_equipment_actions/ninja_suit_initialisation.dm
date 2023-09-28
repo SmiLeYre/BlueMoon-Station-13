@@ -8,7 +8,7 @@ GLOBAL_LIST_INIT(ninja_initialize_messages, list(
 	"Now initializing...",
 	"Securing external locking mechanism...\nNeural-net established.",
 	"Extending neural-net interface...\nNow monitoring brain wave pattern...",
-	"Linking neural-net interface...\nPattern <b class='nicegreen'>GREEN</b>, continuing operation.",
+	"Linking neural-net interface...\nStatus <b class='nicegreen'>LINKED</b>, continuing operation.",
 	"VOID-shift device status: <B>ONLINE</B>.\nCLOAK-tech device status: <B>ONLINE</B>.",
 	"Primary system status: <B>ONLINE</B>.\nBackup system status: <B>ONLINE</B>.\nCurrent energy capacity: ",
 	"All systems operational. Welcome to <B>SpiderOS</B>, "

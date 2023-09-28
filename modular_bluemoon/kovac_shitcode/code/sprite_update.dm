@@ -527,6 +527,7 @@
 	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
 	maxHealth = 100
 	health = 100
+	held_icon = "fennec_eldritch"
 
 /mob/living/simple_animal/pet/cat/moro
 	name = "Moro"

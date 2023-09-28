@@ -113,7 +113,7 @@
 		if("mass_rejuvenate")
 			var/choice = input("Are you sure you want to rejuvenate all players?") in list("Yes", "Cancel")
 			if(choice == "Yes")
-				message_admins("[key_name_admin(holder)] has rejuvenate all players.")
+				message_admins("[key_name_admin(holder)] has rejuvenated all players.")
 				for(var/mob/living/M in GLOB.mob_list)
 					M.revive(full_heal = 1, admin_revive = 1)
 		if("list_bombers")

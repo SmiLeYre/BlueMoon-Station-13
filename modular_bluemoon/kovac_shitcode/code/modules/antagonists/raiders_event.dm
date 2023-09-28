@@ -65,7 +65,7 @@
 	if(!skip_answer_check && threat_msg?.answered == 1)
 		return
 
-	var/list/candidates = pollGhostCandidates("Do you wish to be considered for InteQ Raiders?", ROLE_TRAITOR)
+	var/list/candidates = pollGhostCandidates("Вы желаете стать рейдером InteQ?", ROLE_TRAITOR)
 	shuffle_inplace(candidates)
 
 	var/datum/map_template/shuttle/ship = new ship_template
@@ -89,7 +89,7 @@
 			else
 				notify_ghosts("The InteQ ship has an object of interest: [spawner]!", source=spawner, action=NOTIFY_ORBIT, header="Something's Interesting!")
 
-	priority_announce("В секторе обнаружен вооружённный корабль.", "Отдел ССО Пакта Синих Лун", 'modular_bluemoon/kovac_shitcode/sound/inteq_raiders.ogg')
+	priority_announce("В секторе обнаружен вооружённный корабль.", "Отдел ССО Пакта Синих Лун", 'modular_bluemoon/phenyamomota/sound/announcer/pirate_incoming.ogg')
 
 /// Dynamic ruleset additions
 /datum/dynamic_ruleset/midround/raiders
