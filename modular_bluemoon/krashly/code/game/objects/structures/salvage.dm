@@ -74,7 +74,7 @@ GLOBAL_LIST_INIT(salvage_list, list(
 	icon_state = "wreck_server"
 	custom_materials = list(/datum/material/uranium = 20000, /datum/material/gold = 20000, /datum/material/bluespace = 1000)
 
-	/obj/structure/salvage/wooden_frame
+/obj/structure/salvage/wooden_frame
 	name = "broken wooden frame"
 	icon_state = "makeshift_frame3_Wooden"
 	custom_materials = list(/datum/material/wood = 20000, /datum/material/iron = 5000)
