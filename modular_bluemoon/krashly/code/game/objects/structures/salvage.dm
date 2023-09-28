@@ -28,6 +28,16 @@ GLOBAL_LIST_INIT(salvage_list, list(
 	. += "<span class='notice'>Кажется это давно заброшенная техника. Она скреплена <b>болтами</b>.</span>"
 	. += "<span class='notice'>Используйте гаечный ключ, чтобы забрать оставшиеся ресурсы.</span>"
 
+/obj/structure/salvage/attackby(obj/item/W, mob/living/user, params)
+	. = ..()
+	if(W.tool_behaviour == TOOL_WRENCH)
+		to_chat(user, "<span class='notice'>Вы начинаете разбирать обломки...</span>")
+		if(W.use_tool(src, user, 40, volume=50))
+			to_chat(user, "<span class='notice'>Вы успешно разобрали обломки.</span>")
+			deconstruct(TRUE)
+	else
+		return ..()
+
 /obj/structure/salvage/deconstruct(disassembled)
 	if(!(flags_1 & NODECONSTRUCT_1))
 		for(var/i in custom_materials)
