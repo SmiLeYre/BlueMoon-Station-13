@@ -429,8 +429,8 @@
 		"mission" = list("desc" = "Mission", "type" = "string", "value" = ertemplate.mission),
 		"polldesc" = list("desc" = "Ghost poll description", "type" = "string", "value" = ertemplate.polldesc),
 		"ertphrase" = list("desc" = "ERT Sending Sound", "type" = "string", "value" = ertemplate.ertphrase),
-		"enforce_human" = list("desc" = "Enforce human authority", "type" = "boolean", "value" = "[(CONFIG_GET(flag/enforce_human_authority) ? "Да" : "Нет")]"),
-		"open_armory" = list("desc" = "Open armory doors", "type" = "boolean", "value" = "[(ertemplate.opendoors ? "Да" : "Нет")]"),
+		"enforce_human" = list("desc" = "Enforce human authority", "type" = "boolean", "value" = "[(CONFIG_GET(flag/enforce_human_authority) ? "Yes" : "No")]"),
+		"open_armory" = list("desc" = "Open armory doors", "type" = "boolean", "value" = "[(ertemplate.opendoors ? "Yes" : "No")]"),
 		)
 	)
 
@@ -453,8 +453,8 @@
 		ertemplate.mission = prefs["mission"]["value"]
 		ertemplate.polldesc = prefs["polldesc"]["value"]
 		ertemplate.ertphrase = prefs["ertphrase"]["value"]
-		ertemplate.enforce_human = prefs["enforce_human"]["value"] == "Да" ? TRUE : FALSE
-		ertemplate.opendoors = prefs["open_armory"]["value"] == "Да" ? TRUE : FALSE
+		ertemplate.enforce_human = prefs["enforce_human"]["value"] == "Yes" ? TRUE : FALSE
+		ertemplate.opendoors = prefs["open_armory"]["value"] == "Yes" ? TRUE : FALSE
 		priority_announce("Attention, [station_name()]. Мы формируем [ertemplate.polldesc] для отправки на станцию. Ожидайте.", "ERT Protocol Activated", 'modular_bluemoon/kovac_shitcode/sound/ert/ert_send.ogg') //BlueMoon sound
 
 		var/list/mob/candidates = pollGhostCandidates("Do you wish to be considered for [ertemplate.polldesc]?", "Deathsquad", null)

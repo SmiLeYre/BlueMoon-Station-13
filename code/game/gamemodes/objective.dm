@@ -1366,7 +1366,7 @@ GLOBAL_LIST_EMPTY(possible_sabotages)
 			return FALSE
 
 		var/area/shuttle/vox_raiders/A = locate()
-		var/area/shuttle/inteq/B = locate()
+		var/area/shuttle/inteq/collosus/B = locate()
 
 		for(var/mob/living/carbon/human/M in A)
 			if(target.current == M)

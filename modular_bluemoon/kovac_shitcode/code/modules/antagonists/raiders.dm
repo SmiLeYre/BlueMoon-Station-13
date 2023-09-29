@@ -41,7 +41,7 @@
 	getbooty.team = src
 	for(var/obj/machinery/computer/piratepad_control/P in GLOB.machines)
 		var/area/A = get_area(P)
-		if(istype(A,/area/shuttle/inteq))
+		if(istype(A,/area/shuttle/inteq/collosus))
 			getbooty.cargo_hold = P
 			break
 	getbooty.update_explanation_text()

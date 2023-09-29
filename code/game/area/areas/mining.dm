@@ -19,8 +19,8 @@
 	ambientsounds = MINING
 	area_flags = VALID_TERRITORY | UNIQUE_AREA | NO_ALERTS
 	sound_environment = SOUND_AREA_STANDARD_STATION
-	// min_ambience_cooldown = 70 SECONDS
-	// max_ambience_cooldown = 220 SECONDS
+	min_ambience_cooldown = 70 SECONDS
+	max_ambience_cooldown = 220 SECONDS
 
 /area/mine/unexplored
 	name = "Mine"
@@ -36,8 +36,8 @@
 	ambientsounds = MINING
 	area_flags = VALID_TERRITORY | UNIQUE_AREA | NO_ALERTS | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED | MEGAFAUNA_SPAWN_ALLOWED
 	map_generator = /datum/map_generator/cave_generator
-	// min_ambience_cooldown = 70 SECONDS
-	// max_ambience_cooldown = 220 SECONDS
+	min_ambience_cooldown = 70 SECONDS
+	max_ambience_cooldown = 220 SECONDS
 
 /area/mine/lobby
 	name = "Mining Station"
@@ -101,6 +101,7 @@
 	flags_1 = NONE
 	area_flags = VALID_TERRITORY | UNIQUE_AREA | FLORA_ALLOWED
 	sound_environment = SOUND_AREA_LAVALAND
+	shipambience = 'sound/ambience/zone/magma.ogg'
 
 /area/lavaland/surface
 	name = "Lavaland"
@@ -113,8 +114,8 @@
 	// ambience_index = AMBIENCE_MINING
 	ambientsounds = MINING
 	area_flags = VALID_TERRITORY | UNIQUE_AREA | FLORA_ALLOWED | NO_ALERTS
-	// min_ambience_cooldown = 70 SECONDS
-	// max_ambience_cooldown = 220 SECONDS
+	min_ambience_cooldown = 70 SECONDS
+	max_ambience_cooldown = 220 SECONDS
 
 /area/lavaland/underground
 	name = "Lavaland Caves"
@@ -127,8 +128,8 @@
 	// ambience_index = AMBIENCE_MINING
 	ambientsounds = MINING
 	area_flags = VALID_TERRITORY | UNIQUE_AREA | FLORA_ALLOWED | NO_ALERTS
-	// min_ambience_cooldown = 70 SECONDS
-	// max_ambience_cooldown = 220 SECONDS
+	min_ambience_cooldown = 70 SECONDS
+	max_ambience_cooldown = 220 SECONDS
 
 /area/lavaland/surface/outdoors
 	name = "Lavaland Wastes"
@@ -169,8 +170,8 @@
 	// ambience_index = AMBIENCE_MINING
 	ambientsounds = MINING
 	area_flags = UNIQUE_AREA | FLORA_ALLOWED | NO_ALERTS
-	// min_ambience_cooldown = 70 SECONDS
-	// max_ambience_cooldown = 220 SECONDS
+	min_ambience_cooldown = 70 SECONDS
+	max_ambience_cooldown = 220 SECONDS
 
 /area/icemoon/surface/outdoors // weather happens here
 	name = "Icemoon Wastes"
@@ -202,8 +203,8 @@
 	// ambience_index = AMBIENCE_MINING
 	ambientsounds = MINING
 	area_flags = UNIQUE_AREA | FLORA_ALLOWED | NO_ALERTS
-	// min_ambience_cooldown = 70 SECONDS
-	// max_ambience_cooldown = 220 SECONDS
+	min_ambience_cooldown = 70 SECONDS
+	max_ambience_cooldown = 220 SECONDS
 
 /area/icemoon/underground/unexplored // mobs and megafauna and ruins spawn here
 	name = "Icemoon Caves"

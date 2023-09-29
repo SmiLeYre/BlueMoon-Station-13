@@ -11,6 +11,8 @@
 
 /area/ruin/lavaland/powered/beach
 	icon_state = "dk_yellow"
+	shipambience = 'sound/ambience/zone/magma.ogg'
+	ambientsounds = list('sound/ambience/shore.ogg', 'sound/ambience/seag1.ogg','sound/ambience/seag2.ogg','sound/ambience/seag2.ogg','sound/ambience/ambiodd.ogg','sound/ambience/ambinice.ogg')
 
 /area/ruin/lavaland/powered/clownplanet
 	icon_state = "dk_yellow"
