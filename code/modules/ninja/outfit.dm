@@ -47,7 +47,7 @@
 	name = "Space Ninja - Ronin"
 	uniform = /obj/item/clothing/under/syndicate/combat
 	suit = /obj/item/clothing/suit/space/space_ninja/ronin
-	glasses = /obj/item/clothing/glasses/hud/security/night
+	glasses = /obj/item/clothing/glasses/night/syndicate/red
 	mask = /obj/item/clothing/mask/gas/space_ninja
 	head = /obj/item/clothing/head/helmet/space/space_ninja
 	ears = /obj/item/radio/headset

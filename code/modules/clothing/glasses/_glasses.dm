@@ -143,6 +143,9 @@
 	flash_protect = 1
 	vision_correction = 1
 
+/obj/item/clothing/glasses/night/syndicate/red
+	icon_state = "securityhudnight"
+
 /obj/item/clothing/glasses/science/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] is tightening \the [src]'s straps around [user.ru_ego()] neck! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return OXYLOSS

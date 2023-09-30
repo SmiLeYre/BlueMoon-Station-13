@@ -238,7 +238,7 @@
 			toggle_stealth(TRUE)
 			return
 		if(wearer)
-			wearer.alpha = 12
+			wearer.alpha = 6
 			wearer.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 			if(current_charge <= (power_decrease * 15)) // there are 30 seconds to full discharge
 				playsound(get_turf(src), 'sound/rig/loudbeep.ogg', 100, 1, 1)
@@ -299,7 +299,7 @@
 			slowdown = 1.4
 			new /obj/effect/temp_visual/emp/pulse(get_turf(src))
 			playsound(get_turf(src), 'sound/effects/pop.ogg', 100, 1, -6)
-			wearer.alpha = 12
+			wearer.alpha = 6
 			wearer.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 			START_PROCESSING(SSobj, src)
 
@@ -432,7 +432,7 @@
 	name = "spike"
 	icon_state = "throwingstar"
 	icon = 'icons/obj/items_and_weapons.dmi'
-	damage = 35
+	damage = 40
 	damage_type = BRUTE
 	nodamage = 0
 	eyeblur = 0
@@ -440,7 +440,7 @@
 	knockdown = 0
 	stamina = 10
 	knockdown_stamoverride = 0
-	armour_penetration = 30
+	armour_penetration = 65
 	embedding = list("pain_mult" = 4, "embed_chance" = 100, "fall_chance" = 0, "embed_chance_turf_mod" = 15)
 
 

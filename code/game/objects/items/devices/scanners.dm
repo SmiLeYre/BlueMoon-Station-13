@@ -451,7 +451,7 @@ GENETICS SCANNER
 	for(var/thing in M.diseases)
 		var/datum/disease/D = thing
 		if(!(D.visibility_flags & HIDDEN_SCANNER))
-			msg += "<span class='alert'><b>Внимание: обнаружена инфекция - [D.form]</b>\nНаименования: [D.name].\nТип: [D.spread_text].\nСтадия: [D.stage]/[D.max_stages].\nВозможное лечение: [D.cure_text]</span>\n"
+			msg += "<span class='alert'><b>Внимание: обнаружена инфекция - [D.form]</b>\nНаименование: [D.name].\nТип: [D.spread_text].\nСтадия: [D.stage]/[D.max_stages].\nВозможное лечение: [D.cure_text]</span>\n"
 
 	// Blood Level
 	if(M.has_dna())

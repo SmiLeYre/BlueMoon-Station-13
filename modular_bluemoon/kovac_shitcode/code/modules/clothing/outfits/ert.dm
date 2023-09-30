@@ -399,7 +399,7 @@
 	//head = /obj/item/clothing/head/beret/sec/syndicate
 	shoes = /obj/item/clothing/shoes/laceup
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
-	back = /obj/item/storage/backpack/hecu/black
+	back = /obj/item/storage/backpack/hipbag
 	belt = /obj/item/storage/belt/security/full
 	r_hand = /obj/item/gun/ballistic/automatic/ar
 	l_pocket = /obj/item/clothing/accessory/lawyers_badge
@@ -427,7 +427,7 @@
 	suit = /obj/item/clothing/suit/armor/vest/agent
 	shoes = /obj/item/clothing/shoes/laceup
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
-	back = /obj/item/storage/backpack/hecu/black
+	back = /obj/item/storage/backpack/hipbag
 	belt = /obj/item/storage/belt/security/full
 	r_hand = /obj/item/gun/ballistic/automatic/wt550
 	l_pocket = /obj/item/clothing/accessory/lawyers_badge

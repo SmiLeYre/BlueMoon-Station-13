@@ -659,8 +659,8 @@
 /datum/emote/living/audio/wtune
 	key = "whistletune"
 	key_third_person = "whistletunes"
-	message = "whistles a tune."
-	message_mime = "makes an expression as if whistling."
+	message = "насвистывает мелодию."
+	message_mime = "делает вид, что насвистывает что-то ртом."
 	emote_sound = 'modular_splurt/sound/voice/wtune1.ogg'
 	emote_cooldown = 14.55 SECONDS // Uses longest sound's time.
 
@@ -683,8 +683,8 @@
 /datum/emote/living/audio/terror
 	key = "terror"
 	key_third_person = "terrors"
-	message = "whistles some dreadful tune..."
-	message_mime = "stares with aura full of dread..."
+	message = "насвистывает какую-то жуткую мелодию..."
+	message_mime = "смотрит взглядом, полным ужаса..."
 	emote_sound = 'modular_splurt/sound/voice/terror1.ogg'
 	emote_cooldown = 24.07 SECONDS // Uses longest sound's time.
 
@@ -976,8 +976,8 @@
 /datum/emote/living/audio/buff
 	key = "buff"
 	key_third_person = "buffs"
-	message = "shows off their muscles."
-	message_param = "shows off their muscles to %t."
+	message = "показывает свои мускулы."
+	message_param = "показывает свои мускулы %t."
 	emote_sound = 'modular_splurt/sound/voice/buff.ogg'
 	emote_cooldown = 4.77 SECONDS
 	emote_pitch_variance = FALSE
@@ -1050,8 +1050,8 @@
 /datum/emote/living/audio/moo
 	key = "moo"
 	key_third_person = "moos"
-	message = "moos!"
-	message_mime = "acts like a mooing cow."
+	message = "мычит!"
+	message_mime = "пытается замычать словно корова!"
 	emote_sound = 'modular_splurt/sound/voice/moo.ogg'
 	emote_cooldown = 1.7 SECONDS
 
@@ -1082,12 +1082,25 @@
 /datum/emote/living/audio/scream2
 	key = "scream2"
 	key_third_person = "screams2"
-	message = "screams!"
-	message_mime = "acts out a rather silly scream!"
+	message = "кричит!"
+	message_mime = "делате вид, что издает какой-то дурацкий крик!"
 	emote_sound = 'modular_splurt/sound/voice/cscream1.ogg'
-	emote_cooldown = 3.3 SECONDS // Uses longest sound's time.
+	emote_cooldown = 3.3 SECONDS
 	emote_pitch_variance = FALSE
 
 /datum/emote/living/audio/scream2/run_emote(mob/user, params)
-	emote_sound = pick('modular_splurt/sound/voice/cscream1.ogg', 'modular_splurt/sound/voice/cscream2.ogg', 'modular_splurt/sound/voice/cscream3.ogg', 'modular_splurt/sound/voice/cscream4.ogg', 'modular_splurt/sound/voice/cscream5.ogg', 'modular_splurt/sound/voice/cscream6.ogg', 'modular_splurt/sound/voice/cscream7.ogg', 'modular_splurt/sound/voice/cscream8.ogg', 'modular_splurt/sound/voice/cscream9.ogg', 'modular_splurt/sound/voice/cscream10.ogg', 'modular_splurt/sound/voice/cscream11.ogg')
+	emote_sound = pick('modular_splurt/sound/voice/cscream1.ogg', 'modular_splurt/sound/voice/cscream2.ogg', 'modular_splurt/sound/voice/cscream4.ogg', 'modular_splurt/sound/voice/cscream5.ogg')
+	. = ..()
+
+/datum/emote/living/audio/scream3
+	key = "scream3"
+	key_third_person = "screams3"
+	message = "кричит!"
+	message_mime = "делате вид, что издает какой-то дурацкий крик!"
+	emote_sound = 'modular_splurt/sound/voice/cscream3.ogg'
+	emote_cooldown = 3.3 SECONDS
+	emote_pitch_variance = FALSE
+
+/datum/emote/living/audio/scream3/run_emote(mob/user, params)
+	emote_sound = pick('modular_splurt/sound/voice/cscream3.ogg', 'modular_splurt/sound/voice/cscream6.ogg', 'modular_splurt/sound/voice/cscream7.ogg', 'modular_splurt/sound/voice/cscream8.ogg', 'modular_splurt/sound/voice/cscream9.ogg', 'modular_splurt/sound/voice/cscream10.ogg', 'modular_splurt/sound/voice/cscream11.ogg')
 	. = ..()

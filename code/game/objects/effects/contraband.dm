@@ -431,10 +431,10 @@
 	desc = "A poster advertising a movie about some masked men."
 	icon_state = "poster_bumba"
 
-/obj/structure/sign/poster/contraband/steppy
-	name = "Step On Me"
-	desc = "A phrase associated with a chubby reptile notoriously used in uncivilized Orion space as a deterrent towards would be pirate vessels by instructing them to 'fuck around and find out'."
-	icon_state = "steppy"
+///obj/structure/sign/poster/contraband/steppy
+	//name = "Step On Me"
+	//desc = "A phrase associated with a chubby reptile notoriously used in uncivilized Orion space as a deterrent towards would be pirate vessels by instructing them to 'fuck around and find out'."
+	//icon_state = "steppy"
 
 /obj/structure/sign/poster/contraband/scum
 	name = "Security are Scum"

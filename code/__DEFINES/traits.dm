@@ -257,6 +257,9 @@
 //used because it's more reliable than checking for the component
 #define TRAIT_DULLAHAN "dullahan"
 
+#define TRAIT_AKIMBO	"akimbo"
+
+
 // mobility flag traits
 // IN THE FUTURE, IT WOULD BE NICE TO DO SOMETHING SIMILAR TO https://github.com/tgstation/tgstation/pull/48923/files (ofcourse not nearly the same because I have my.. thoughts on it)
 // BUT FOR NOW, THESE ARE HOOKED TO DO update_mobility() VIA COMSIG IN living_mobility.dm

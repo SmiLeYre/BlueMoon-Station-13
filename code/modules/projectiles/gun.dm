@@ -365,9 +365,10 @@
 				user.dropItemToGround(src, TRUE)
 				return
 
-	if(weapon_weight == WEAPON_HEAVY && user.get_inactive_held_item())
-		to_chat(user, "<span class='userdanger'>You need both hands free to fire [src]!</span>")
-		return
+	if (!(HAS_TRAIT(user, TRAIT_AKIMBO)))
+		if(weapon_weight == WEAPON_HEAVY && user.get_inactive_held_item())
+			to_chat(user, "<span class='userdanger'>You need both hands free to fire [src]!</span>")
+			return
 
 	user.DelayNextAction()
 
