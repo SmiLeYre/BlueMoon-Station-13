@@ -286,3 +286,6 @@
 	else
 		icon_state = "stunblade"
 		item_state = "stunblade"
+
+/obj/item/melee/baton/stunblade/get_worn_belt_overlay(icon_file)
+	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "-stunblade")
