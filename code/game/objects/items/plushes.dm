@@ -9,6 +9,7 @@
 	attack_verb = list("thumped", "whomped", "bumped")
 	w_class = WEIGHT_CLASS_SMALL
 	resistance_flags = FLAMMABLE
+	obj_flags = UNIQUE_RENAME
 	var/list/squeak_override //Weighted list; If you want your plush to have different squeak sounds use this
 	var/stuffed = TRUE //If the plushie has stuffing in it
 	var/unstuffable = FALSE //for plushies that can't be stuffed
@@ -196,7 +197,7 @@
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT,"plush_nostuffing", /datum/mood_event/plush_nostuffing)
 
 /obj/item/toy/plush/attackby(obj/item/I, mob/living/user, params)
-	if(I.get_sharpness())
+	if(I.get_sharpness() && !(istype(I, /obj/item/pen)))
 		if(!grenade)
 			if(unstuffable)
 				to_chat(user, "<span class='notice'>Nothing to do here.</span>")
