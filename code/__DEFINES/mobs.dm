@@ -63,10 +63,10 @@
 #define BODYPART_ROBOTIC   2
 #define BODYPART_HYBRID    3
 #define BODYPART_NANITES   4
-
-#define HYBRID_BODYPART_DAMAGE_THRESHHOLD 25 //How much damage has to be suffered until the damage threshhold counts as passed
-#define HYBRID_BODYPART_THESHHOLD_MINDAMAGE 10 //Which damage value this limb cannot be healed out of via easy nonsurgical means if the threshhold has been passed, state resets if damage value goes below mindamage.
-
+// BLUEMOON CHANGES START - повышен порог урона и максимального ремонтируемого урона, с 25 до 30 и 10 до 20
+#define HYBRID_BODYPART_DAMAGE_THRESHHOLD 30 //How much damage has to be suffered until the damage threshhold counts as passed
+#define HYBRID_BODYPART_THESHHOLD_MINDAMAGE 20 //Which damage value this limb cannot be healed out of via easy nonsurgical means if the threshhold has been passed, state resets if damage value goes below mindamage.
+// BLUEMOON CHANGES END
 #define BODYPART_NOT_DISABLED 0
 #define BODYPART_DISABLED_DAMAGE 1
 #define BODYPART_DISABLED_PARALYSIS 2

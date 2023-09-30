@@ -145,7 +145,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 			to_chat(user, "<span class='warning'>[src] is already at maximum fuel load.</span>")
 			return FALSE
 		to_chat(user, "<span class='notice'>You start to insert [W] into [src]...</span>")
-		radiation_pulse(src, temperature)
+		radiation_pulse(get_turf(src), temperature) // BLUEMOON CHANGES - более безопасная проверка на src.loc
 		if(do_after(user, 5 SECONDS, target=src))
 			if(!fuel_rods.len)
 				start_up() //That was the first fuel rod. Let's heat it up.
@@ -153,7 +153,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 				investigate_log("Reactor first started by [key_name(user)] at [AREACOORD(src)]", INVESTIGATE_SINGULO)
 			fuel_rods += W
 			W.forceMove(src)
-			radiation_pulse(src, temperature) //Wear protective equipment when even breathing near a reactor!
+			radiation_pulse(get_turf(src), temperature) // BLUEMOON CHANGES - более безопасная проверка на src.loc
 			investigate_log("Rod added to reactor by [key_name(user)] at [AREACOORD(src)]", INVESTIGATE_SINGULO)
 		return TRUE
 	if(istype(W, /obj/item/sealant))
@@ -360,7 +360,7 @@ BLUEMOON REMOVAL END */
 		temperature -= 10 //Nothing to heat us up, so.
 	handle_alerts() //Let's check if they're about to die, and let them know.
 	update_icon()
-	radiation_pulse(src, temperature*radioactivity_spice_multiplier)
+	radiation_pulse(get_turf(src), temperature*radioactivity_spice_multiplier) // BLUEMOON CHANGES - более безопасная проверка на src.loc
 	if(power >= 93 && world.time >= next_flicker) //You're overloading the reactor. Give a more subtle warning that power is getting out of control.
 		next_flicker = world.time + 2 MINUTES
 		for(var/obj/machinery/light/L in GLOB.machines)
@@ -947,6 +947,14 @@ BLUEMOON REMOVAL END */
 	set_light(3)
 	AddComponent(/datum/component/radioactive, 1000, src, 0)
 
+// BLUEMOON ADD START - удаление компонента радиации для предотвращения тысяч рантаймов после отсутствия source при удалении
+/obj/effect/decal/nuclear_waste/Destroy()
+	var/datum/component/radioactive/contamination = GetComponent(/datum/component/radioactive)
+	if(contamination)
+		qdel(contamination)
+	. = ..()
+// BLUEMOON ADD END
+
 /obj/effect/decal/nuclear_waste/epicenter //The one that actually does the irradiating. This is to avoid every bit of sludge PROCESSING
 	name = "Dense nuclear sludge"
 
@@ -973,11 +981,11 @@ BLUEMOON REMOVAL END */
 	if(isliving(AM))
 		var/mob/living/L = AM
 		playsound(loc, 'sound/effects/gib_step.ogg', HAS_TRAIT(L, TRAIT_LIGHT_STEP) ? 20 : 50, 1)
-	radiation_pulse(src, 500, 5) //MORE RADS
+	radiation_pulse(get_turf(src), 500, 5) // BLUEMOON CHANGES - более безопасная проверка на src.loc
 
 /obj/effect/decal/nuclear_waste/attackby(obj/item/tool, mob/user)
 	if(tool.tool_behaviour == TOOL_SHOVEL)
-		radiation_pulse(src, 1000, 5) //MORE RADS
+		radiation_pulse(get_turf(src), 1000, 5) // BLUEMOON CHANGES - более безопасная проверка на src.loc
 		to_chat(user, "<span class='notice'>You start to clear [src]...</span>")
 		if(tool.use_tool(src, user, 50, volume=100))
 			to_chat(user, "<span class='notice'>You clear [src]. </span>")

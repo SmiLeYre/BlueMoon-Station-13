@@ -281,7 +281,7 @@
 		if(verbose)
 			to_chat(user, "<span class='warning'>We already have this DNA in storage!</span>")
 		return
-	if(!target.has_dna())
+	if(!target.has_dna() || HAS_TRAIT(target, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - генокрад не может поглощать ДНКа синтетиков
 		if(verbose)
 			to_chat(user, "<span class='warning'>[target] is not compatible with our biology.</span>")
 		return

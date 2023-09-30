@@ -240,6 +240,10 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	/// List of family heirlooms this species can get with the family heirloom quirk. List of types.
 	var/list/family_heirlooms
 
+	/// BLUEMOON ADD START - если брут или бёрн ниже этого порога, то урон не наносится
+	var/minimal_damage_threshold = 0
+	// BLUEMOON ADD END
+
 ///////////
 // PROCS //
 ///////////
@@ -410,10 +414,10 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			stomach = new()
 		stomach.Insert(C)
 
-	if(appendix && (!should_have_appendix || replace_current))
+	if(!mutantappendix && appendix && (!should_have_appendix || replace_current))
 		appendix.Remove(TRUE)
 		QDEL_NULL(appendix)
-	if(should_have_appendix && !appendix)
+	if(should_have_appendix && !appendix && mutantappendix)
 		appendix = new()
 		appendix.Insert(C)
 
@@ -1293,7 +1297,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			if(!HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM))
 				H.adjustBruteLoss(1)
 			else
-				H.adjustFireLoss(1) //Robots melt instead of taking brute.
+				H.adjustToxLoss(1, toxins_type = TOX_SYSCORRUPT) // BLUEMOON CHANGES - вместо урона ожогами, у синтетиков начинают пегреваться внутренности, что выражено уроном токсинами
 
 /datum/species/proc/spec_death(gibbed, mob/living/carbon/human/H)
 	if(H)
@@ -2352,6 +2356,10 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(BRUTE)
 			H.damageoverlaytemp = 20
 			var/damage_amount = forced ? damage : damage * hit_percent * brutemod * H.physiology.brute_mod
+			// BLUEMOON ADD START - если урона ниже минимального наносимого для расы, то он не наносится
+			if(minimal_damage_threshold && damage_amount < minimal_damage_threshold)
+				return 1
+			// BLUEMOON ADD END
 			if(BP)
 				if(BP.receive_damage(damage_amount, 0, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness))
 					H.update_damage_overlays()
@@ -2363,6 +2371,10 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(BURN)
 			H.damageoverlaytemp = 20
 			var/damage_amount = forced ? damage : damage * hit_percent * burnmod * H.physiology.burn_mod
+			// BLUEMOON ADD START - если урона ниже минимального наносимого для расы, то он не наносится
+			if(minimal_damage_threshold && damage_amount < minimal_damage_threshold)
+				return 1
+			// BLUEMOON ADD END
 			if(BP)
 				if(BP.receive_damage(0, damage_amount, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness))
 					H.update_damage_overlays()
@@ -2489,16 +2501,18 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			firemodifier = min(firemodifier, 0)
 			burn_damage = max(log(2-firemodifier,(H.bodytemperature-BODYTEMP_NORMAL))-5,0) // this can go below 5 at log 2.5
 		if (burn_damage)
+			var/alert_type = HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM) ? /atom/movable/screen/alert/sweat_robotic : /atom/movable/screen/alert/sweat // BLUEMOON ADD - для разделения алёртов синтетиков и органиков
 			switch(burn_damage)
 				if(0 to 2)
-					H.throw_alert("temp", /atom/movable/screen/alert/sweat, 1)
+					H.throw_alert("temp", alert_type, 1) // BLUEMOON CHANGES
 				if(2 to 4)
-					H.throw_alert("temp", /atom/movable/screen/alert/sweat, 2)
+					H.throw_alert("temp", alert_type, 2) // BLUEMOON CHANGES
 				else
-					H.throw_alert("temp", /atom/movable/screen/alert/sweat, 3)
+					H.throw_alert("temp", alert_type, 3) // BLUEMOON CHANGES
 		burn_damage = burn_damage * heatmod * H.physiology.heat_mod
 		if (H.stat < UNCONSCIOUS && (prob(burn_damage) * 10) / 4) //40% for level 3 damage on humans
-			H.emote("scream")
+			if(!HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - синтетики не кричат, когда перегреваются
+				H.emote("scream")
 		H.apply_damage(burn_damage, BURN)
 
 	else if(H.bodytemperature < (BODYTEMP_COLD_DAMAGE_LIMIT + cold_offset) && !HAS_TRAIT(H, TRAIT_RESISTCOLD))

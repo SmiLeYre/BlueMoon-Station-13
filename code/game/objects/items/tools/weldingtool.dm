@@ -267,7 +267,7 @@
 // When welding is about to start, run a normal tool_use_check, then flash a mob if it succeeds.
 /obj/item/weldingtool/tool_start_check(mob/living/user, amount=0)
 	. = tool_use_check(user, amount)
-	if(. && user)
+	if(. && user && !HAS_TRAIT(user, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - сварочный аппарат не наносит урон глазам синтетиков
 		user.flash_act(light_intensity)
 
 // Flash the user during welding progress
@@ -275,7 +275,8 @@
 	. = ..()
 	if(. && user)
 		if (progress_flash_divisor == 0)
-			user.flash_act(min(light_intensity,1))
+			if(!HAS_TRAIT(user, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - сварочный аппарат не наносит урон глазам синтетиков
+				user.flash_act(min(light_intensity,1))
 			progress_flash_divisor = initial(progress_flash_divisor)
 		else
 			progress_flash_divisor--

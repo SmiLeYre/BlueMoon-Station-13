@@ -17,9 +17,9 @@
 	)
 
 	minimum_pressure = HAZARD_LOW_PRESSURE + 10
-	maximum_pressure = LAVALAND_EQUIPMENT_EFFECT_PRESSURE - 1
+	maximum_pressure = LAVALAND_EQUIPMENT_EFFECT_PRESSURE - 10 // BLUEMOON CHANGES - чтобы синтетики перегревались на планетоиде со временем без охладителя
 
-	minimum_temp = 281
+	minimum_temp = 315 // BLUEMOON CHANGES - чтобы синтетики перегревались на планетоиде со временем без охладителя
 	maximum_temp = 320
 
 /datum/atmosphere/lavaland/generate_gas_string()

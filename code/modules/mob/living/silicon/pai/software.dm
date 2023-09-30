@@ -402,7 +402,7 @@
 		M.visible_message("<span class='notice'>[M] presses [M.ru_ego()] thumb against [P].</span>",\
 						"<span class='notice'>You press your thumb against [P].</span>",\
 						"<span class='notice'>[P] makes a sharp clicking sound as it extracts DNA material from [M].</span>")
-		if(!M.has_dna())
+		if(!M.has_dna()) // TODO BLUEMOON - сделать флафовое описание поинтереснее для синтетиков?
 			to_chat(P, "<b>No DNA detected</b>")
 			return
 		to_chat(P, "<font color = red><h3>[M]'s UE string : [M.dna.unique_enzymes]</h3></font>")

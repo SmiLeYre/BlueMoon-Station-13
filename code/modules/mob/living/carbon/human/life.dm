@@ -336,6 +336,11 @@
 	if(we_breath)
 		adjustOxyLoss(8)
 		Unconscious(80)
+	// BLUEMOON ADD START - системы синтетиков отказывают без "сердца", постепенно выходя из строя и выдавая ошибки
+	if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
+		adjustToxLoss(1, toxins_type = TOX_SYSCORRUPT)
+		return TRUE
+	// BLUEMOON ADD END
 	// Tissues die without blood circulation
 	adjustBruteLoss(2)
 

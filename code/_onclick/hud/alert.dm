@@ -230,10 +230,17 @@
 	name = "Sweating"
 	desc = "You're sweating! Get somewhere cooler and take off any insulating clothing like a fire suit."
 	icon_state = "sweat"
-
+// BLUEMOON ADD START - особое описание для оповещения синтетикам о перегреве
+/atom/movable/screen/alert/sweat_robotic
+	name = "High Internal Temperature"
+	desc = "Your internal systems alert you about overheat. The temperature may damage your hull. Use a portable cooling unit or find an atmosphere \
+	with comfortable settings."
+	icon_state = "sweat" //TODO: отдельный спрайт
+// BLUEMOON ADD END
 /atom/movable/screen/alert/shiver
 	name = "Shivering"
 	desc = "You're shivering! Get somewhere warmer and take off any insulating clothing like a space suit."
+	icon_state = "shiver" // BLUEMOON ADD - отсутствовала иконка
 
 /atom/movable/screen/alert/lowpressure
 	name = "Low Pressure"

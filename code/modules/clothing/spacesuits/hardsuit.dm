@@ -112,6 +112,7 @@
 /obj/item/clothing/suit/space/hardsuit/Initialize(mapload)
 	if(jetpack && ispath(jetpack))
 		jetpack = new jetpack(src)
+	allowed += list(/obj/item/device/cooler) // BLUEMOON ADD - на все скафандры есть возможность повесить ПОУ
 	return ..()
 
 /obj/item/clothing/suit/space/hardsuit/attackby(obj/item/I, mob/user, params)

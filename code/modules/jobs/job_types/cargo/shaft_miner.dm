@@ -55,6 +55,14 @@
 
 	chameleon_extras = /obj/item/gun/energy/kinetic_accelerator
 
+// BLUEMOON ADD START - шахтёрским синтетикам с начала их смены выдаётся заряженная шахтёрская ПОУ
+/datum/outfit/job/miner/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+	if(HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM))
+		l_pocket = belt
+		belt = /obj/item/device/cooler/lavaland/charged
+	. = ..()
+// BLUEMOON ADD END
+
 /datum/outfit/job/miner/syndicate
 	name = "Syndicate Shaft Miner"
 	jobtype = /datum/job/mining

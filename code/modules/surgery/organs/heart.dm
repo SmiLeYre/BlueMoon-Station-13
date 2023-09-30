@@ -93,12 +93,24 @@
 		else if(beat == BEAT_FAST)
 			owner.stop_sound_channel(CHANNEL_HEARTBEAT)
 			beat = BEAT_NONE
-
 	if(organ_flags & ORGAN_FAILING)	//heart broke, stopped beating, death imminent
-		if(owner.stat == CONSCIOUS)
-			owner.visible_message("<span class='userdanger'>[owner] clutches at [owner.ru_ego()] chest as if [owner.ru_ego()] heart is stopping!</span>")
-		owner.set_heartattack(TRUE)
-		failed = TRUE
+		// BLUEMOON ADD START - фикс для спама сообщениями в чат при остановки кибер-сердца и бесполезности этой остановки
+		if(organ_flags & ORGAN_SYNTHETIC)
+			if(owner.stat == CONSCIOUS && !failed) // синты не падают в обморок от остановки сердца, потому дополнительная проверка
+				if(HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM))
+					to_chat(owner, span_danger("Fatal error detected in the [src] - Seek for replace immediately."))
+				else
+					owner.visible_message(\
+					span_warning("[owner] clutches at [owner.ru_ego()] chest in the heart's area!"), \
+					span_danger("You feel a terrible pain in your heart!"))
+			beating = 0
+			failed = TRUE
+		else
+		// BLUEMOON ADD END
+			if(owner.stat == CONSCIOUS)
+				owner.visible_message("<span class='userdanger'>[owner] clutches at [owner.ru_ego()] chest as if [owner.ru_ego()] heart is stopping!</span>")
+			owner.set_heartattack(TRUE)
+			failed = TRUE
 
 /obj/item/organ/heart/slime
 	name = "mitochondria"
@@ -266,6 +278,22 @@
 	name = "IPC heart"
 	desc = "An electronic pump that regulates hydraulic functions, the electronics have EMP shielding."
 	icon_state = "heart-c"
+	organ_flags = ORGAN_SYNTHETIC // BLUEMOON ADD - органы синтетиков не должны гнить и должны быть подвержены ЭМИ
+
+// BLUEMOON ADD START - шанс на выход из строя
+/obj/item/organ/heart/ipc/emp_act(severity)
+	. = ..()
+	if(. & EMP_PROTECT_SELF)
+		return
+	if(!COOLDOWN_FINISHED(src, severe_cooldown)) //So we cant just spam emp to kill people.
+		owner.Dizzy(10)
+		owner.losebreath += 10
+		COOLDOWN_START(src, severe_cooldown, 20 SECONDS)
+	if(prob(10)) //Chance of permanent effects
+		organ_flags |= ORGAN_SYNTHETIC_EMP //Starts organ faliure - gonna need replacing soon.
+		if(HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM))
+			to_chat(owner, span_danger("Fatal failure detected in \the [src] - Emergency mod activated for next 4 minutes - Seek for replace immediately."))
+// BLUEMOON ADD END
 
 /obj/item/organ/heart/freedom
 	name = "heart of freedom"

@@ -85,7 +85,7 @@
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	inverse_chem_val 		= 0
 	var/obj/item/organ/tongue/nT
-	chemical_flags = REAGENT_DONOTSPLIT | REAGENT_ALL_PROCESS
+	chemical_flags = REAGENT_DONOTSPLIT | REAGENT_ORGANIC_PROCESS // BLUEMOON CHANES - только для органиков
 	pH = 5
 	var/obj/item/organ/tongue/T
 	can_synth = TRUE

@@ -697,9 +697,11 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 
 
 /mob/living/carbon/proc/get_environment_cooling_efficiency()
+/* BLUEMOON REMOVAL START - для защиты от космоса, у синтетиков теперь есть portable cooling unit. Скафандры не должны работать
 	var/suitlink = check_suitlinking()
 	if(suitlink)
 		return suitlink //If you are wearing full EVA or lavaland hazard gear (on lavaland), assume it has been made to accomodate your cooling needs.
+BLUEMOON REMOVAL END */
 	var/datum/gas_mixture/environment = loc.return_air()
 	if(!environment)
 		return 0

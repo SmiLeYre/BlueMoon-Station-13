@@ -192,7 +192,7 @@
 		coolant = owner.blood_volume
 		total_efficiency = owner.get_cooling_efficiency()
 		environ_efficiency = owner.get_environment_cooling_efficiency()
-		suitlink_efficiency = owner.check_suitlinking()
+		suitlink_efficiency = owner.check_suitlinking() // BLUEMOON TODO REDO - suitlink больше нет у синтетиков
 	else
 		coolant = rand(1, 600)
 		total_efficiency = rand(1, 15) / 10

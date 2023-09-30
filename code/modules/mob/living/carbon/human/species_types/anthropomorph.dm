@@ -25,16 +25,21 @@
 	id = SPECIES_MAMMAL_SYNTHETIC
 
 	species_traits = list(MUTCOLORS,NOTRANSSTING,EYECOLOR,LIPS,HAIR,FACEHAIR,ROBOTIC_LIMBS,HAS_FLESH,HAS_BONE,WINGCOLOR,HORNCOLOR)
-	inherent_traits = list(TRAIT_EASYDISMEMBER,TRAIT_LIMBATTACHMENT,TRAIT_NO_PROCESS_FOOD, TRAIT_ROBOTIC_ORGANISM, TRAIT_RESISTLOWPRESSURE, TRAIT_NOBREATH, TRAIT_AUXILIARY_LUNGS)
+	inherent_traits = list(TRAIT_EASYDISMEMBER,TRAIT_LIMBATTACHMENT,TRAIT_NO_PROCESS_FOOD, TRAIT_ROBOTIC_ORGANISM, TRAIT_RESISTLOWPRESSURE, TRAIT_NOBREATH, TRAIT_AUXILIARY_LUNGS, TRAIT_VIRUSIMMUNE) // BLUEMOON CHANES - добавлена защита от вирусов
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID|MOB_BEAST
 
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ipc
 	gib_types = list(/obj/effect/gibspawner/ipc, /obj/effect/gibspawner/ipc/bodypartless)
 
+// BLUEMOON ADD START
+	punchdamagelow = 5 // больше среднего урона с руки, чем у людей
+	minimal_damage_threshold = 5 // слабый удар кулаком не наносит повреждений - по сути, баллон и более половины ударов кулаком всё ещё сильнее
+// BLUEMOON ADD END
+
 	coldmod = 0.5
 	heatmod = 1.2
 	cold_offset = SYNTH_COLD_OFFSET	//Can handle pretty cold environments, but it's still a slightly bad idea if you enter a room thats full of near-absolute-zero gas
-	blacklisted_quirks = list(/datum/quirk/coldblooded)
+	blacklisted_quirks = list(/datum/quirk/coldblooded, /datum/quirk/bloodfledge)
 	balance_point_values = TRUE
 
 	//Just robo looking parts.
@@ -46,6 +51,7 @@
 	mutantears = /obj/item/organ/ears/ipc
 	mutanttongue = /obj/item/organ/tongue/robot/ipc
 	mutant_brain = /obj/item/organ/brain/ipc
+	mutantappendix = null // BLUEMOON REMOVAL - у синтетиков нет аппендикса
 
 	//special cybernetic organ for getting power from apcs
 	mutant_organs = list(/obj/item/organ/cyberimp/arm/power_cord)

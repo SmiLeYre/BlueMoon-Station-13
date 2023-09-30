@@ -506,6 +506,12 @@
 		scantemp = "Unable to locate valid genetic data."
 		playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
 		return
+	// BLUEMOON ADD START - нельзя сканировать синтетиков
+	if(HAS_TRAIT(mob_occupant, TRAIT_ROBOTIC_ORGANISM))
+		scantemp = "ERROR. Insert a living occupant."
+		playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
+		return
+	// BLUEMOON ADD END
 	if(!experimental)
 		if(mob_occupant.suiciding || mob_occupant.hellbound)
 			scantemp = "Subject's brain is not responding to scanning stimuli."

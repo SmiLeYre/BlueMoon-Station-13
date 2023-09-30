@@ -48,6 +48,11 @@
 		return
 	if(!isturf(user.loc))
 		return
+	// BLUEMOON ADD START - жала генокрадов не работают против синтетиков
+	if(HAS_TRAIT(target, TRAIT_ROBOTIC_ORGANISM))
+		to_chat(user, span_warning("Our sting appears ineffective against machines."))
+		return FALSE
+	// BLUEMOON ADD END
 	if(!length(get_path_to(user, target, max_distance = changeling.sting_range, simulated_only = FALSE)))
 		return // no path within the sting's range is found. what a weird place to use the pathfinding system
 	if(target.mind && target.mind.has_antag_datum(/datum/antagonist/changeling))

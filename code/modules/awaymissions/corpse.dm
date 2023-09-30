@@ -93,6 +93,11 @@
 /obj/effect/mob_spawn/proc/special(mob/M)
 	return
 
+// BLUEMOON ADD START - особые действия после выставления персонажу расы и внешности игрока (ставлю сюда, чтобы повысить читаемость)
+/obj/effect/mob_spawn/proc/special_post_appearance(mob/M)
+	return
+// BLUEMOON ADD END
+
 /obj/effect/mob_spawn/proc/equip(mob/M)
 	return
 
@@ -152,6 +157,7 @@
 				to_chat(M,"<span class='boldwarning'>В Эксту посещать станцию допустимо, в Динамику запрещено!</span>")
 		MM.name = M.real_name
 		M.checkloadappearance()
+		special_post_appearance(M, name) // BLUEMOON ADD
 	if(uses > 0)
 		uses--
 	if(!permanent && !uses)

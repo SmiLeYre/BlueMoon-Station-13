@@ -436,7 +436,8 @@
 	var/is_cooling = 0
 	var/cooling_coolant_drain = 5	//Coolant (blood) use per tick of active cooling.
 	var/next_warn = BLOOD_VOLUME_NORMAL
-	actions_types = list(/datum/action/item_action/organ_action/toggle)
+//	actions_types = list(/datum/action/item_action/organ_action/toggle) (BLUEMOON REMOVAL - заменено на portable coolant unit)
+	organ_flags = ORGAN_SYNTHETIC // BLUEMOON ADD - органы синтетиков не должны гнить и должны быть подвержены ЭМИ
 
 /obj/item/organ/lungs/ipc/emp_act(severity) //Should probably put it somewhere else later
 	. = ..()
@@ -448,6 +449,13 @@
 			owner.adjust_bodytemperature(30*TEMPERATURE_DAMAGE_COEFFICIENT)
 		if(50 to INFINITY)
 			owner.adjust_bodytemperature(100*TEMPERATURE_DAMAGE_COEFFICIENT)
+
+	// BLUEMOON ADD START - шанс на перманентный выход из строя
+	if(prob(10)) //Chance of permanent effects
+		organ_flags |= ORGAN_SYNTHETIC_EMP //Starts organ faliure - gonna need replacing soon.
+		if(HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM))
+			to_chat(owner, span_danger("Fatal failure detected in the cooling system - Seek for replace immediately."))
+	// BLUEMOON ADD END
 
 /obj/item/organ/lungs/ipc/ui_action_click(mob/user, actiontype)
 	if(!owner)

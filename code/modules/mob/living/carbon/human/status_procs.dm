@@ -27,6 +27,10 @@
 	if(istype(dna.species, /datum/species/skeleton)) //skeletons shouldn't be husks.
 		cure_husk()
 		return
+	// BLUEMOON ADD START - синтетики не могут быть хаскнуты
+	if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
+		return
+	// BLUEMOON ADD END
 	. = ..()
 	if(.)
 		update_hair()

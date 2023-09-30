@@ -4,7 +4,7 @@ Has a version for organic people and robotic/synthetic ones, considering robotic
 */
 /datum/surgery/purge_corruption
 	name = "Purge corruption"
-	desc = "A highly complex and time-consuming surgery used to purge any corruption currently present in a robot. Will knock out the patient for an amount of time proportional to corruption purged."
+	desc = "A highly complex and time-consuming surgery used to purge any corruption currently present in a robot. Will knock out the patient for an amount of time proportional to corruption purged. It also removes radiation." // BLUEMOON ADD - добавлено уточнение про устранение радиации
 	steps = list(
 			/datum/surgery_step/incise,
 			/datum/surgery_step/retract_skin,
@@ -81,6 +81,7 @@ Has a version for organic people and robotic/synthetic ones, considering robotic
 		"[user] completes the surgery on [target].")
 	var/purged = target.getToxLoss(TOX_SYSCORRUPT)
 	target.setToxLoss(0, toxins_type = TOX_SYSCORRUPT)
+	target.radiation = 0 // BLUEMOON ADD - т.к. у них не процессятся реагенты, пока нет возможности вывести радиацию кроме как этой операцией
 	target.Unconscious(round(purged * 0.2, 1))
 	return TRUE
 
