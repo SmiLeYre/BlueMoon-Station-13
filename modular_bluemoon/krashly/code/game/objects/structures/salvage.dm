@@ -16,6 +16,7 @@ GLOBAL_LIST_INIT(salvage_list, list(
 	desc = "Если ты это видишь - пиши @Krashly"
 	icon = 'modular_bluemoon/krashly/icons/obj/structures.dmi'
 	icon_state = "protolathe"
+	density = TRUE
 	climbable = TRUE
 	anchored = TRUE
 	resistance_flags = FIRE_PROOF | LAVA_PROOF | ACID_PROOF | UNACIDABLE
@@ -58,58 +59,58 @@ GLOBAL_LIST_INIT(salvage_list, list(
 	name = "broken protolathe"
 	desc = "Сломанный протолат. Определенно больше не работает."
 	icon_state = "wreck_protolathe"
-	custom_materials = list(/datum/material/iron = 20000, /datum/material/glass = 20000)
+	custom_materials = list(/datum/material/iron = 40000, /datum/material/glass = 40000)
 
 /obj/structure/salvage/circuit_imprinter
 	name = "broken circuit imprinter"
 	desc = "Сломанный аппарат для печати плат. Даже если бы вы имели рабочий аппарат для печати плат - вы бы не смогли починить этот."
 	icon_state = "wreck_circuit_imprinter"
-	custom_materials = list(/datum/material/iron = 20000, /datum/material/glass = 20000)
+	custom_materials = list(/datum/material/iron = 40000, /datum/material/glass = 40000)
 
 /obj/structure/salvage/destructive_analyzer
 	name = "broken destructive analyzer"
 	desc = "Прогнивший анализатор. Больше он не послужит на благо науке."
 	icon_state = "wreck_d_analyzer"
-	custom_materials = list(/datum/material/iron = 20000, /datum/material/glass = 20000)
+	custom_materials = list(/datum/material/iron = 40000, /datum/material/glass = 40000)
 
 /obj/structure/salvage/autolathe
 	name = "broken autolathe"
 	desc = "Ржавый автолат. Можно забыть про элементарные детали."
 	icon_state = "wreck_autolathe"
-	custom_materials = list(/datum/material/iron = 20000, /datum/material/glass = 20000)
+	custom_materials = list(/datum/material/iron = 40000, /datum/material/glass = 40000)
 
 /obj/structure/salvage/remains
 	name = "broken machine"
 	desc = "Останки техники былого. Кажется что-то поблёскивает внутри..."
 	icon_state = "wreck_remains"
-	custom_materials = list(/datum/material/uranium = 20000, /datum/material/gold = 20000)
+	custom_materials = list(/datum/material/uranium = 40000, /datum/material/gold = 40000)
 
 /obj/structure/salvage/server
 	name = "broken server"
 	desc = "Сломанный сервер. Кажется что-то поблёскивает внутри..."
 	icon_state = "wreck_server"
-	custom_materials = list(/datum/material/uranium = 20000, /datum/material/gold = 20000, /datum/material/bluespace = 1000)
+	custom_materials = list(/datum/material/uranium = 40000, /datum/material/gold = 40000, /datum/material/bluespace = 2000)
 
 /obj/structure/salvage/wooden_frame
 	name = "broken wooden frame"
 	desc = "Деревянная конструкция. Вы не видите возможность её использовать, кроме как разобрать."
 	icon_state = "makeshift_frame3_Wooden"
-	custom_materials = list(/datum/material/wood = 20000, /datum/material/iron = 5000)
+	custom_materials = list(/datum/material/wood = 40000, /datum/material/iron = 10000)
 
 /obj/structure/salvage/metal_frame
 	name = "broken metal frame"
 	desc = "Металлическая конструкция. Она кажется крепкой, но стоит вам ткнуть в неё пальцем - она мягко ломается."
 	icon_state = "makeshift_frame3_Metal"
-	custom_materials = list(/datum/material/wood = 5000, /datum/material/iron = 20000, /datum/material/plasma = 5000)
+	custom_materials = list(/datum/material/wood = 10000, /datum/material/iron = 40000, /datum/material/plasma = 10000)
 
 /obj/structure/salvage/pda
 	name = "broken pda imprinter"
 	desc = "Бывший покрасчик ПДА. Сейчас только куча материалов."
 	icon_state = "wreck_pda"
-	custom_materials = list(/datum/material/iron = 20000, /datum/material/glass = 20000, /datum/material/plasma = 5000, /datum/material/diamond = 2000)
+	custom_materials = list(/datum/material/iron = 40000, /datum/material/glass = 40000, /datum/material/plasma = 10000, /datum/material/diamond = 10000)
 
 /obj/structure/salvage/computer
 	name = "broken computer"
 	desc = "Интересно, на таком выйдет запустить 'Рок 1993'?"
 	icon_state = "computer_broken"
-	custom_materials = list(/datum/material/iron = 20000, /datum/material/glass = 20000, /datum/material/gold = 20000)
+	custom_materials = list(/datum/material/iron = 40000, /datum/material/glass = 40000, /datum/material/gold = 40000)
