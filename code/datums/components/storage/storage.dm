@@ -649,7 +649,7 @@
 		return
 
 	if(rustle_sound)
-		playsound(A, "rustle", 50, 1, -5)
+		playsound(A, 'modular_bluemoon/krashly/sound/items/unzip.ogg', 50, 1, -5)
 
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
@@ -699,7 +699,7 @@
 		A.add_fingerprint(user)
 		user_show_to_mob(user, trigger_on_found = TRUE)
 		if(rustle_sound)
-			playsound(A, "rustle", 50, 1, -5)
+			playsound(A, 'modular_bluemoon/krashly/sound/items/unzip.ogg', 50, 1, -5)
 		return TRUE
 
 	if(user.can_hold_items() && !user.incapacitated())
