@@ -65,6 +65,36 @@
 /obj/item/storage/backpack/attack_self(mob/user)
 	playsound(src.loc, on_sound, 40, 1)
 
+/datum/component/storage/backpack
+	dupe_mode = COMPONENT_DUPE_UNIQUE
+
+/datum/component/storage/backpack/on_alt_click(datum/source, mob/user)
+	if(!isliving(user) || !user.CanReach(parent))
+		return
+	if(check_locked(source, user, TRUE))
+		return TRUE
+
+	var/atom/A = parent
+	if(!quickdraw)
+		A.add_fingerprint(user)
+		user_show_to_mob(user, trigger_on_found = TRUE)
+		if(rustle_sound)
+			playsound(A, 'modular_bluemoon/krashly/sound/items/unzip.ogg', 50, 1, -5)
+		return TRUE
+
+/datum/component/storage/backpack/on_attack_hand(datum/source, mob/user)
+	var/atom/A = parent
+	if(!attack_hand_interact)
+		return
+	if(user.active_storage == src && A.loc == user) //if you're already looking inside the storage item
+		user.active_storage.close(user)
+		close(user)
+		. = COMPONENT_NO_ATTACK_HAND
+		return
+
+	if(rustle_sound)
+		playsound(A, 'modular_bluemoon/krashly/sound/items/unzip.ogg', 50, 1, -5)
+
 /obj/item/storage/briefcase
 	var/on_sound = 'modular_bluemoon/krashly/sound/items/briefcase.ogg'
 

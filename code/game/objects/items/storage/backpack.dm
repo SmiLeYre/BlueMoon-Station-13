@@ -23,7 +23,7 @@
 
 /obj/item/storage/backpack/ComponentInitialize()
 	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	var/datum/component/storage/backpack/STR = GetComponent(/datum/component/storage/backpack)
 	STR.storage_flags = STORAGE_FLAGS_VOLUME_DEFAULT
 	STR.max_volume = STORAGE_VOLUME_BACKPACK
 	STR.max_w_class = MAX_WEIGHT_CLASS_BACKPACK
@@ -34,7 +34,7 @@
 
 /obj/item/storage/backpack/old/ComponentInitialize()
 	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	var/datum/component/storage/backpack/STR = GetComponent(/datum/component/storage/backpack)
 	STR.max_combined_w_class = 12
 
 /obj/item/storage/backpack/holding
@@ -367,7 +367,7 @@
 
 /obj/item/storage/backpack/duffelbag/med/surgery/ComponentInitialize()
 	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	var/datum/component/storage/backpack/STR = GetComponent(/datum/component/storage/backpack)
 	var/static/list/can_hold = typecacheof(list(
 		/obj/item/healthanalyzer,
 		/obj/item/dnainjector,
