@@ -1,6 +1,6 @@
 /obj/item/toy/fluff/bant
 	name = "polychromic bow"
-	desc = "A polychromic bow. (Alt+CLCK for change variants (23 possible))."
+	desc = "Полихромический бант. (Alt+CLCK for change variants (23 possible))."
 	icon = 'modular_bluemoon/krashly/icons/mob/clothing/bant.dmi'
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/bant.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/bant.dmi'
@@ -58,7 +58,7 @@
 
 /obj/item/clothing/accessory/skull_patch
 	name = "PMC Skull Patch"
-	desc = "Patch of a long-gone PMC. It is embroidered with a Skull in red outline. The inscription reads: 'For Blood and Honor!'"
+	desc = "Нашивка давно ушедшей ЧВК. На нем вышит череп красным контуром. Надпись гласит: «За кровь и честь!»'"
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/patch.dmi'
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/patch.dmi'
 	icon_state = "patch"

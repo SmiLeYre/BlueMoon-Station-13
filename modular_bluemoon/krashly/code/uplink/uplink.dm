@@ -19,8 +19,12 @@
 
 /obj/item/inteq/uplink/AltClick(mob/user)
 	. = ..()
-	to_chat(user, span_warning("The Uplink turns to dust in your hands."))
-	qdel(src)
+	var/pred = alert("Сжечь Аплинк?","Аплинк", "Да", "Нет")
+	if(pred == "Да")
+		to_chat(user, span_warning("Аплинк превращается в пепел на ваших глазах."))
+		qdel(src)
+	else
+		return
 
 /obj/item/inteq/uplink/radio
 	name = "InteQ Radio Uplink"
@@ -56,8 +60,12 @@
 
 /obj/item/syndicate_uplink/AltClick(mob/user)
 	. = ..()
-	to_chat(user, span_warning("The Uplink turns to dust in your hands."))
-	qdel(src)
+	var/pred = alert("Сжечь Аплинк?","Аплинк", "Да", "Нет")
+	if(pred == "Да")
+		to_chat(user, span_warning("Аплинк превращается в пепел на ваших глазах."))
+		qdel(src)
+	else
+		return
 
 /obj/item/syndicate_uplink_high
 	name = "Great One Syndicate Uplink"
@@ -82,8 +90,12 @@
 
 /obj/item/syndicate_uplink_high/AltClick(mob/user)
 	. = ..()
-	to_chat(user, span_warning("The Uplink turns to dust in your hands."))
-	qdel(src)
+	var/pred = alert("Сжечь Аплинк?","Аплинк", "Да", "Нет")
+	if(pred == "Да")
+		to_chat(user, span_warning("Аплинк превращается в пепел на ваших глазах."))
+		qdel(src)
+	else
+		return
 
 /obj/item/syndicate_uplink_high/nuclear
 	name = "syndicate strike team uplink"

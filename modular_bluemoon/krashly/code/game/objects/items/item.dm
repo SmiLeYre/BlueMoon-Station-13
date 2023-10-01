@@ -1,6 +1,6 @@
 /obj/item/hand_mirror
 	name = "hand mirror"
-	desc = "Fancy mirror with a short handle. Designed to fix hair before unexpected sex." // О нет, шутки про ЕРП...
+	desc = "Красивое зеркальце. Самое то чтобы поправить свою прическу после какого бы то ни было инцедента."
 	icon = 'modular_bluemoon/krashly/icons/obj/hand_mirror.dmi'
 	icon_state = "mirror"
 	w_class = WEIGHT_CLASS_SMALL
@@ -29,13 +29,13 @@
 
 /obj/item/icona_madonna
 	name = "Madonna icon"
-	desc = "Icon of the great Madonna"
+	desc = "Икона великой Мадонны."
 	icon =  'modular_bluemoon/krashly/icons/obj/structures.dmi'
 	icon_state = "madonna"
 
 /obj/structure/sign/flag/skull
 	name = "flag of PMC Skull"
-	desc = "Black flag with a skull in the center. Has a red lining. The flag smells of blood."
+	desc = "Черный флаг с Черепом по центру. Флаг пахнет кровью."
 	icon = 'modular_bluemoon/krashly/icons/obj/skull_flag.dmi'
 	icon_state = "full"
 	item_flag = /obj/item/sign/flag/skull
@@ -45,7 +45,7 @@
 
 /obj/item/sign/flag/skull
 	name = "folded flag of the PMC Skull"
-	desc = "The folded flag of the PMC Skull."
+	desc = "Сложенный флаг ЧВК 'Череп'."
 	flag_type = "skull"
 	icon = 'modular_bluemoon/krashly/icons/obj/skull_flag.dmi'
 	icon_state = "mini"
@@ -74,14 +74,14 @@
 
 /obj/structure/sign/flag/inteq
 	name = "flag of PMC InteQ"
-	desc = "Orange-Brown flag with a shield in the center. Has a Yellow lining. The flag smells of blood."
+	desc = "Коричнево-Оранжевый флаг с щитом по центру. Флаг пахнет кровью."
 	icon = 'modular_bluemoon/krashly/icons/obj/inteq_flag.dmi'
 	icon_state = "full"
 	item_flag = /obj/item/sign/flag/inteq
 
 /obj/item/sign/flag/inteq
 	name = "folded flag of the PMC InteQ"
-	desc = "The folded flag of the PMC InteQ."
+	desc = "Сложенный флаг ЧВК 'InteQ'."
 	flag_type = "inteq"
 	icon = 'modular_bluemoon/krashly/icons/obj/inteq_flag.dmi'
 	icon_state = "mini"
@@ -100,43 +100,43 @@
 
 /obj/structure/sign/poster/contraband/inteq/inteq_recruitment
 	name = "InteQ Recruitment"
-	desc = "See the galaxy! Shatter megacorporations! Join today!"
+	desc = "Увидь Галактику! Заработай денег! Вступай сегодня!"
 	icon = 'modular_bluemoon/krashly/icons/obj/poster.dmi'
 	icon_state = "poster_inteq"
 
 /obj/structure/sign/poster/contraband/inteq/inteq_sign
 	name = "InteQ poster"
-	desc = "A shrouded organization that fights the pact between the NT and the Syndicate."
+	desc = "Частная Военная Компания, занимающаяся обороной частных предприятий и выполнением заказов. В данный момент они хотят уничтожить Пакт между НТ и Синдикатом..."
 	icon = 'modular_bluemoon/krashly/icons/obj/poster.dmi'
 	icon_state = "poster_inteq_baza"
 
 /obj/structure/sign/poster/contraband/inteq/inteq_better_dead
 	name = "Better Dead!"
-	desc = "Crush our enemies!"
+	desc = "Сокрушим врагов!"
 	icon = 'modular_bluemoon/krashly/icons/obj/poster.dmi'
 	icon_state = "poster_inteq_better_dead"
 
 /obj/structure/sign/poster/contraband/inteq/inteq_no_peace
 	name = "No peace!"
-	desc = "Make money, not friends, join PMC InteQ!"
+	desc = "Не имей сто друзей, а имей сто рублей, Вступай в ЧВК 'InteQ'!"
 	icon = 'modular_bluemoon/krashly/icons/obj/poster.dmi'
 	icon_state = "poster_inteq_no_love"
 
 /obj/structure/sign/poster/contraband/inteq/inteq_no_sex
 	name = "No SEX"
-	desc = "Stop jerking off, join PMC InteQ!"
+	desc = "Хватит дрочить, вступай в ЧВК 'InteQ'!"
 	icon = 'modular_bluemoon/krashly/icons/obj/poster.dmi'
 	icon_state = "poster_inteq_no_sex"
 
 /obj/structure/sign/poster/contraband/inteq/inteq_vulp
 	name = "InteQ Recruitment"
-	desc = "A brown poster. The words says: 'Even if you jerking off to vulpes, join PMC InteQ. Shatter our enemies!'."
+	desc = "Коричневый постер. На нём написано: 'Даже если ты дрочишь на вульп, вступай в ЧВК 'InteQ'. Сокрушим врагов вместе!'."
 	icon = 'modular_bluemoon/krashly/icons/obj/poster.dmi'
 	icon_state = "poster_inteq_vulp"
 
 /obj/item/storage/box/inteq_box
 	name = "brown box"
-	desc = "There are definitely no dangerous items inside."
+	desc = "В неё определенно нет ничего опасного."
 	icon = 'modular_bluemoon/krashly/icons/obj/box.dmi'
 	icon_state = "inteqbox"
 
@@ -155,7 +155,7 @@
 	new /obj/item/storage/backpack/security/inteq(src)
 
 /obj/item/soap/inteq
-	desc = "An untrustworthy bar of soap made of strong chemical agents that dissolve blood faster."
+	desc = "Жёлтое мыло с крайне мощными химическими агентами, которые отмывают кровь быстрее."
 	icon_state = "soapinteq"
 	cleanspeed = 10
 	icon = 'modular_bluemoon/krashly/icons/obj/inteq_soap.dmi'
@@ -164,7 +164,7 @@
 
 /obj/item/reagent_containers/food/snacks/intecookies
 	name = "InteCookies"
-	desc = "Shortbread cookies in the shape of a shield."
+	desc = "Песочное печенье, каждое из которых в форме маленьких щитов."
 	icon = 'modular_bluemoon/krashly/icons/obj/inteq_snacks.dmi'
 	icon_state = "inteqcookies"
 	trash = /obj/item/trash/intecookies
@@ -183,13 +183,13 @@
 
 /obj/item/storage/fancy/cigarettes/cigpack_inteq
 	name = "cigarette packet"
-	desc = "An obscure brand of cigarettes."
+	desc = "Пачка сигарет от известной ЧВК."
 	icon = 'modular_bluemoon/krashly/icons/obj/inteq_cigarettes.dmi'
 	icon_state = "inteq"
 	spawn_type = /obj/item/clothing/mask/cigarette/inteq
 
 /obj/item/clothing/mask/cigarette/inteq
-	desc = "An unknown brand cigarette."
+	desc = "Сигарета от известной ЧВК."
 	list_reagents = list(/datum/reagent/drug/nicotine = 15, /datum/reagent/medicine/omnizine = 15)
 
 /obj/item/toy/mecha/hermes

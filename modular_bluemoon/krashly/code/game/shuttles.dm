@@ -7,7 +7,7 @@
 
 /obj/machinery/computer/shuttle/lf_haron
 	name = "Haron Control"
-	desc = "Used to control the Haron."
+	desc = "Используется для полётов на Хароне."
 	icon_screen = "syndishuttle"
 	icon_keyboard = "syndie_key"
 	light_color = LIGHT_COLOR_RED
@@ -21,7 +21,7 @@
 
 /obj/machinery/computer/camera_advanced/shuttle_docker/lf_haron
 	name = "Haron Navigation Computer"
-	desc = "The Navigation console for the Haron."
+	desc = "Навигационная консоль Харона."
 	icon_screen = "syndishuttle"
 	icon_keyboard = "syndie_key"
 	shuttleId = "lf_haron"

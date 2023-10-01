@@ -2,7 +2,7 @@
 
 /obj/item/claymore/cerberus
 	name = "claymore"
-	desc = "What are you standing around staring at this for? Get to killing!"
+	desc = "Чего ты пялишься? Руби врагов!"
 	icon = 'modular_bluemoon/krashly/icons/obj/weapons/weapons.dmi'
 	icon_state = "siegesword"
 	item_state = "claymore"
@@ -12,7 +12,7 @@
 
 /obj/item/claymore/censor
 	name = "silver sword"
-	desc = "A silver sword with patterns on its blade and handle. Dried blood on the edge of the blade is frightening."
+	desc = "Серебрянный меч с гравировкой на лезвии и рукояти. Подсохшая кровь на лезвии будоражит ваш рассудок."
 	icon = 'modular_bluemoon/krashly/icons/obj/weapons/weapons.dmi'
 	icon_state = "silversword"
 	item_state = "bastard"
@@ -22,7 +22,7 @@
 
 /obj/item/claymore/baron
 	name = "silver sabre"
-	desc = "A silver sabre with patterns on its blade and handle. Dried blood on the edge of the blade is frightening."
+	desc = "Серебрянная сабля с гравировкой на лезвии и рукояти. Подсохшая кровь на лезвии будоражит ваш рассудок."
 	icon = 'modular_bluemoon/krashly/icons/obj/weapons/weapons.dmi'
 	icon_state = "sabre"
 	item_state = "sabre"
@@ -113,7 +113,7 @@
 
 /obj/item/gun/ballistic/automatic/ak12
 	name = "\improper AK-12 rifle"
-	desc = "A simple-to-use automatic assault rifle that was used hundreds of years ago, but has not become obsolete to this day."
+	desc = "Простая в использовании Автоматическая Винтовка. Её придумали ещё столетия назад, а популярна она и по сей день."
 	icon = 'modular_bluemoon/krashly/icons/obj/weapons/weapons.dmi'
 	icon_state = "ak12"
 	lefthand_file = 'modular_bluemoon/krashly/icons/mob/inhands/weapons/lefthand.dmi'
@@ -138,7 +138,7 @@
 
 /obj/item/ammo_box/magazine/ak12
 	name = "\improper AK-12 magazine"
-	desc = "magazine able to hold 30 rounds of 5.56 ammo."
+	desc = "Магазин способный держать 30 патронов калибра 5.56мм."
 	icon = 'modular_bluemoon/krashly/icons/obj/weapons/weapons.dmi'
 	icon_state = "ak12_mag"
 	item_state = "ak12_mag"
@@ -149,12 +149,12 @@
 
 /obj/item/ammo_box/magazine/ak12/ap
 	name = "\improper AK-12 armor-piercing magazine"
-	desc = "magazine able to hold 30 rounds of armor-piercing 5.56 ammo."
+	desc = "Магазин способный держать 30 бронепробивающих патронов калибра 5.56мм."
 	ammo_type = /obj/item/ammo_casing/a556/ap
 
 /obj/item/ammo_box/magazine/ak12/hp
 	name = "\improper AK-12 hollow-point magazine"
-	desc = "magazine able to hold 30 rounds of hollow-point 5.56 ammo."
+	desc = "Магазин способный держать 30 разрывных патронов калибра 5.56мм."
 	ammo_type = /obj/item/ammo_casing/a556/hp
 
 /obj/item/gun/ballistic/automatic/ak12/pindicate
