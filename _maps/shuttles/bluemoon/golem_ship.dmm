@@ -159,8 +159,17 @@
 /turf/open/floor/mineral/titanium/purple,
 /area/shuttle/golems)
 "y" = (
-/obj/machinery/computer/camera_advanced/shuttle_docker/golems{
-	dir = 4
+/obj/structure/fans/tiny,
+/obj/machinery/door/airlock/titanium,
+/obj/docking_port/mobile{
+	dir = 2;
+	dwidth = 2;
+	height = 13;
+	id = "ferry";
+	name = "freedom shuttle";
+	port_direction = 1;
+	preferred_direction = 4;
+	width = 5
 	},
 /turf/open/floor/mineral/titanium/purple,
 /area/shuttle/golems)
@@ -256,21 +265,6 @@
 	},
 /turf/open/floor/mineral/titanium/purple,
 /area/shuttle/golems)
-"P" = (
-/obj/structure/fans/tiny,
-/obj/machinery/door/airlock/titanium,
-/obj/docking_port/mobile{
-	dir = 2;
-	dwidth = 2;
-	height = 13;
-	id = "ferry";
-	name = "freedom shuttle";
-	port_direction = 1;
-	preferred_direction = 4;
-	width = 5
-	},
-/turf/open/floor/mineral/titanium/purple,
-/area/shuttle/golems)
 "Q" = (
 /obj/machinery/light/small,
 /turf/open/floor/mineral/titanium/purple,
@@ -290,6 +284,12 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
+/area/shuttle/golems)
+"W" = (
+/obj/machinery/computer/camera_advanced/shuttle_docker/golems{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium/purple,
 /area/shuttle/golems)
 "Y" = (
 /obj/machinery/door/airlock/titanium,
@@ -344,7 +344,7 @@ b
 H
 b
 r
-y
+W
 G
 T
 b
@@ -570,7 +570,7 @@ f
 b
 "}
 (16,1,1) = {"
-P
+y
 e
 I
 b
