@@ -45,7 +45,35 @@
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/accessories.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'
 
+////////////////////////////////
 
+/obj/item/sponge_kit
+	name = "Sponge Vloes Modification Kit"
+	desc = "A modkit for making a default boxing gloves into a yellow gloves."
+	icon = 'modular_splurt/icons/obj/clothing/reinforcekits.dmi'
+	w_class = WEIGHT_CLASS_SMALL
+	icon_state = "sec_armor_kit"
+	var/product = /obj/item/clothing/gloves/boxing/sponge //what it makes
+	var/list/fromitem = list(/obj/item/clothing/gloves/boxing, /obj/item/clothing/gloves/boxing/blue, /obj/item/clothing/gloves/boxing/green) //what it needs
+
+/obj/item/pomogator_kit/afterattack(obj/O, mob/user as mob)
+	if(istype(O, product))
+		to_chat(user,"<span class='warning'>[O] is already modified!")
+		return
+	if(O.type in fromitem) //makes sure O is the right thing
+		new product(usr.loc) //spawns the product
+		user.visible_message("<span class='warning'>[user] modifies [O]!","<span class='warning'>You modify the [O]!")
+		qdel(O) //Gets rid of the baton
+		qdel(src) //gets rid of the kit
+	else
+		to_chat(user, "<span class='warning'> You can't modify [O] with this kit!</span>")
+
+
+/obj/item/clothing/gloves/boxing/sponge
+	icon_state = "sponge"
+	item_state = "sponge"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/hands.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/hands.dmi'
 
 /////////
 

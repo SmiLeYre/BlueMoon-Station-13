@@ -359,6 +359,13 @@
 	ckeywhitelist = list("danik10p")
 	subcategory = LOADOUT_SUBCATEGORIES_DON12
 
+/datum/gear/donator/bm/sponge
+	name = "Sponge Modification Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/sponge_kit
+	ckeywhitelist = list("danik10p")
+	subcategory = LOADOUT_SUBCATEGORIES_DON12
+
 /datum/gear/donator/bm/battle_coat
 	name = "Battle Coat"
 	slot = ITEM_SLOT_ICLOTHING
