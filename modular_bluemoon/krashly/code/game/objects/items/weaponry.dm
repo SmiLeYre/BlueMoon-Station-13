@@ -159,11 +159,3 @@
 
 /obj/item/gun/ballistic/automatic/ak12/pindicate
 	pin = /obj/item/firing_pin/implant/pindicate
-
-// Убираем тазер.
-
-/obj/item/gun/energy/e_gun/advtaser
-	ammo_type = /obj/item/ammo_casing/energy/disabler
-
-/obj/item/gun/energy/e_gun/advtaser/altafterattack(atom/target, mob/user, proximity_flag, params)
-	return
