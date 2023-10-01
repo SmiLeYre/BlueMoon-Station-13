@@ -331,7 +331,7 @@
 	var/stun_time_silicon = 60 // How long it stuns silicons for - 6 seconds.
 	var/affect_silicon = FALSE // Does it stun silicons.
 	var/on_sound // "On" sound, played when switching between able to stun or not.
-	var/on_stun_sound = "sound/effects/woodhit.ogg" // Default path to sound for when we stun.
+	var/on_stun_sound = 'sound/effects/woodhit.ogg' // Default path to sound for when we stun.
 	var/stun_animation = TRUE // Do we animate the "hit" when stunning.
 	var/on = TRUE // Are we on or off
 	var/on_icon_state // What is our sprite when turned on

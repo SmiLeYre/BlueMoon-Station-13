@@ -15,6 +15,8 @@
 	var/on = FALSE
 	var/brightness_on = 4 //range of light when on
 	var/flashlight_power = 0.8 //strength of the light when on
+	var/soundon = 'sound/weapons/magin.ogg' //BM Changes
+	var/soundoff = 'sound/weapons/magout.ogg' //BM Changes
 	light_color = "#ffeecb"
 
 /obj/item/flashlight/Initialize(mapload)
@@ -37,7 +39,7 @@
 /obj/item/flashlight/attack_self(mob/user)
 	on = !on
 	update_brightness(user)
-	playsound(src, on ? 'sound/weapons/magin.ogg' : 'sound/weapons/magout.ogg', 40, TRUE)
+	playsound(src, on ? soundon : soundoff, 40, TRUE) //BM Changes (soundon : soundoff)
 	for(var/X in actions)
 		var/datum/action/A = X
 		A.UpdateButtonIcon()

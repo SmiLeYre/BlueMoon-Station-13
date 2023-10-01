@@ -4131,6 +4131,7 @@
 #include "modular_bluemoon\krashly\code\game\objects\structures\window.dm"
 #include "modular_bluemoon\krashly\code\game\turfs\simulated\floor\misc_floor.dm"
 #include "modular_bluemoon\krashly\code\game\turfs\simulated\wall\reinf_walls.dm"
+#include "modular_bluemoon\krashly\code\modules\sound.dm"
 #include "modular_bluemoon\krashly\code\modules\antagonists\traitor\inteq_agents.dm"
 #include "modular_bluemoon\krashly\code\modules\antagonists\traitor\classes\inteq_agents.dm"
 #include "modular_bluemoon\krashly\code\modules\clothing\accessories.dm"
