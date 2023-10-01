@@ -787,7 +787,11 @@
 /turf/open/floor/wood/wood_parquet,
 /area/syndicate_mothership)
 "aPP" = (
-/obj/vehicle/sealed/mecha/combat/gygax/dark/loaded/hermes,
+/obj/structure/window/reinforced/fulltile{
+	max_integrity = 5000;
+	name = "hardened window";
+	obj_integrity = 5000
+	},
 /turf/open/floor/plasteel/dark,
 /area/ctf/arena)
 "aQi" = (
@@ -3753,7 +3757,8 @@
 /turf/open/floor/grass/grass0,
 /area/centcom/ferry)
 "dnb" = (
-/obj/vehicle/sealed/mecha/combat/marauder/loaded,
+/obj/effect/spawner/lootdrop/melee,
+/turf/open/space/basic,
 /turf/open/floor/plasteel/dark,
 /area/ctf/arena)
 "doi" = (
@@ -6624,10 +6629,6 @@
 "fyW" = (
 /turf/closed/indestructible/fakeglass,
 /area/tdome/tdomeadmin)
-"fzo" = (
-/obj/vehicle/sealed/mecha/combat/marauder/mauler/loaded/ares,
-/turf/open/floor/plasteel/dark,
-/area/ctf/arena)
 "fzq" = (
 /obj/item/cardboard_cutout{
 	desc = "They seem to be ignoring you... Typical.";
@@ -8963,7 +8964,7 @@
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "hxT" = (
-/obj/item/card/id/syndicate,
+/turf/open/space/basic,
 /turf/open/floor/plasteel/dark,
 /area/ctf/arena)
 "hxW" = (
@@ -10881,10 +10882,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership)
-"jhX" = (
-/obj/structure/barricade/wooden,
-/turf/open/floor/plasteel/dark,
-/area/ctf/arena)
 "jie" = (
 /obj/effect/turf_decal/snowdin_station_sign/up/five,
 /turf/open/floor/iron/dark,
@@ -12319,10 +12316,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/prison)
-"kul" = (
-/obj/item/card/id/syndicate/inteq,
-/turf/open/floor/plasteel/dark,
-/area/ctf/arena)
 "kus" = (
 /obj/item/kirbyplants/hedge{
 	anchored = 1
@@ -20477,10 +20470,6 @@
 	},
 /turf/open/floor/wood/wood_parquet,
 /area/syndicate_mothership)
-"rqh" = (
-/obj/vehicle/sealed/mecha/combat/marauder/mauler/loaded,
-/turf/open/floor/plasteel/dark,
-/area/ctf/arena)
 "rqo" = (
 /obj/machinery/computer/security{
 	dir = 8
@@ -84361,14 +84350,7 @@ sdM
 sdM
 sdM
 qvg
-rqh
-hxT
-qvg
-mHL
-mHL
-ovq
-mHL
-mHL
+dbT
 mHL
 mHL
 mHL
@@ -84376,7 +84358,14 @@ mHL
 ovq
 mHL
 mHL
-qvg
+mHL
+mHL
+mHL
+mHL
+ovq
+mHL
+mHL
+mHL
 hxT
 dnb
 qvg
@@ -84618,8 +84607,8 @@ sdM
 sdM
 sdM
 qvg
-qvg
-jhX
+mHL
+mHL
 qvg
 mHL
 mHL
@@ -84634,8 +84623,8 @@ mHL
 mHL
 mHL
 qvg
-jhX
 qvg
+mHL
 qvg
 sdM
 sdM
@@ -84876,22 +84865,22 @@ sdM
 sdM
 qvg
 mHL
-mHL
-mHL
-mHL
-mHL
-mHL
-qvg
-qvg
-qvg
-qvg
 qvg
 qvg
 mHL
 mHL
 mHL
+qvg
+qvg
+aPP
+aPP
+qvg
+qvg
 mHL
 mHL
+mHL
+mHL
+qvg
 mHL
 qvg
 sdM
@@ -85654,8 +85643,8 @@ mHL
 mHL
 mHL
 mHL
-qvg
-qvg
+aPP
+aPP
 mHL
 mHL
 mHL
@@ -85911,7 +85900,7 @@ mHL
 ovq
 mHL
 mHL
-qvg
+aPP
 ovq
 mHL
 mHL
@@ -86679,8 +86668,8 @@ qvg
 ovq
 qvg
 mHL
-mHL
-mHL
+aPP
+aPP
 ovq
 mHL
 mHL
@@ -87716,7 +87705,7 @@ mHL
 mHL
 mHL
 dbT
-qvg
+aPP
 mHL
 mHL
 ovq
@@ -88744,7 +88733,7 @@ ovq
 qvg
 mHL
 ovq
-qvg
+aPP
 ovq
 qvg
 qvg
@@ -89766,13 +89755,13 @@ mHL
 mHL
 mHL
 mHL
-qvg
+aPP
 mHL
 mHL
 mHL
 mHL
 mHL
-qvg
+aPP
 mHL
 mHL
 ovq
@@ -90023,7 +90012,7 @@ mHL
 ovq
 mHL
 mHL
-qvg
+aPP
 ovq
 mHL
 mHL
@@ -90791,8 +90780,8 @@ qvg
 ovq
 qvg
 mHL
-mHL
-mHL
+aPP
+aPP
 ovq
 mHL
 dbT
@@ -91565,7 +91554,7 @@ mHL
 mHL
 mHL
 mHL
-qvg
+aPP
 ovq
 mHL
 mHL
@@ -91822,8 +91811,8 @@ mHL
 ovq
 mHL
 mHL
-qvg
-qvg
+aPP
+aPP
 mHL
 mHL
 mHL
@@ -92586,22 +92575,22 @@ sdM
 sdM
 qvg
 mHL
-mHL
+qvg
 mHL
 mHL
 mHL
 mHL
 qvg
 qvg
+aPP
+aPP
 qvg
 qvg
+mHL
+mHL
+mHL
 qvg
 qvg
-mHL
-mHL
-mHL
-mHL
-mHL
 mHL
 qvg
 sdM
@@ -92842,24 +92831,24 @@ sdM
 sdM
 sdM
 qvg
-qvg
-jhX
-qvg
-mHL
-mHL
-mHL
-mHL
-mHL
-mHL
-mHL
-mHL
-mHL
-mHL
-mHL
 mHL
 qvg
-jhX
 qvg
+mHL
+mHL
+mHL
+mHL
+mHL
+mHL
+mHL
+mHL
+mHL
+mHL
+mHL
+mHL
+qvg
+mHL
+mHL
 qvg
 sdM
 sdM
@@ -93099,9 +93088,9 @@ sdM
 sdM
 sdM
 qvg
-aPP
-kul
-qvg
+dbT
+mHL
+mHL
 mHL
 mHL
 mHL
@@ -93114,9 +93103,9 @@ ovq
 mHL
 mHL
 mHL
-qvg
-kul
-fzo
+mHL
+mHL
+dbT
 qvg
 sdM
 sdM
