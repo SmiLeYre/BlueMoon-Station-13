@@ -183,7 +183,9 @@
 /obj/item/toy/plush/attack_self(mob/user)
 	. = ..()
 	if(stuffed || grenade)
-		to_chat(user, "<span class='notice'>You pet [src]. D'awww.</span>")
+		user.visible_message("<span class='notice'>[user] pets [src]. D'awww.</span>", \
+			"<span class='notice'>You pet [src]. D'awww.</span>")
+		new /obj/effect/temp_visual/heart(user.loc)
 		if(grenade && !grenade.active)
 			if(istype(grenade, /obj/item/grenade/chem_grenade))
 				var/obj/item/grenade/chem_grenade/G = grenade
