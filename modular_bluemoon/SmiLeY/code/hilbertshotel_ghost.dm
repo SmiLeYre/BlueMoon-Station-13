@@ -28,6 +28,10 @@
 	name = "Apartment_2"
 	mappath = '_maps/templates/apartment_2.dmm'
 
+/datum/map_template/ghost_cafe_rooms/three
+	name = "Apartment_3"
+	mappath = '_maps/templates/apartment_3.dmm'
+
 /datum/map_template/ghost_cafe_rooms/bar
 	name = "Apartment_bar"
 	mappath = '_maps/templates/apartment_bar.dmm'
