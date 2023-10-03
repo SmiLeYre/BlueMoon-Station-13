@@ -18038,7 +18038,7 @@
 /obj/item/radio/headset/headset_medsci,
 /obj/item/folder/white,
 /turf/open/floor/plasteel/white,
-/area/medical/medbay/central)
+/area/medical/genetics)
 "bon" = (
 /turf/closed/wall/r_wall,
 /area/medical/genetics)
@@ -18051,7 +18051,7 @@
 "boq" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plasteel/white,
-/area/medical/medbay/central)
+/area/medical/genetics)
 "bor" = (
 /obj/structure/table,
 /obj/item/clothing/gloves/color/latex,
@@ -19106,7 +19106,7 @@
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plasteel/white,
-/area/medical/medbay/central)
+/area/medical/genetics)
 "brb" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
@@ -19128,11 +19128,8 @@
 /turf/open/floor/plasteel/white,
 /area/medical/genetics)
 "brd" = (
-/obj/machinery/vending/medical{
-	pixel_x = -2
-	},
-/turf/open/floor/plasteel/white,
-/area/medical/genetics)
+/turf/closed/wall/r_wall,
+/area/command/heads_quarters/cmo)
 "bre" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -19172,7 +19169,7 @@
 	pixel_y = 2
 	},
 /turf/open/floor/plasteel/white,
-/area/medical/medbay/central)
+/area/medical/genetics)
 "brk" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -20410,7 +20407,7 @@
 	},
 /obj/structure/bed/roller,
 /turf/open/floor/plasteel/white,
-/area/medical/genetics)
+/area/medical/medbay/central)
 "bui" = (
 /obj/machinery/airalarm{
 	dir = 1;
@@ -20946,10 +20943,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/purple,
-/turf/open/floor/plasteel/white,
-/area/medical/genetics)
-"bvv" = (
-/obj/structure/bed/roller,
 /turf/open/floor/plasteel/white,
 /area/medical/genetics)
 "bvw" = (
@@ -22486,7 +22479,7 @@
 	},
 /obj/machinery/computer/med_data,
 /turf/open/floor/plasteel/cafeteria,
-/area/medical/genetics)
+/area/command/heads_quarters/cmo)
 "bze" = (
 /obj/machinery/airalarm{
 	dir = 4;
@@ -22576,7 +22569,7 @@
 /obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk,
 /turf/open/floor/plasteel/cafeteria,
-/area/medical/genetics)
+/area/command/heads_quarters/cmo)
 "bzp" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
@@ -22592,7 +22585,7 @@
 	},
 /obj/machinery/suit_storage_unit/cmo,
 /turf/open/floor/plasteel/cafeteria,
-/area/medical/genetics)
+/area/command/heads_quarters/cmo)
 "bzq" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -23672,7 +23665,7 @@
 /obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk,
 /turf/open/floor/plasteel/white,
-/area/medical/genetics)
+/area/medical/medbay/central)
 "bBP" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
@@ -25291,7 +25284,7 @@
 	},
 /obj/machinery/computer/crew,
 /turf/open/floor/plasteel/cafeteria,
-/area/medical/genetics)
+/area/command/heads_quarters/cmo)
 "bFF" = (
 /obj/machinery/light,
 /obj/structure/chair{
@@ -26447,7 +26440,7 @@
 /obj/structure/table/glass,
 /obj/item/storage/box/rxglasses,
 /turf/open/floor/plasteel/white,
-/area/medical/medbay/central)
+/area/medical/genetics)
 "bIr" = (
 /obj/machinery/door/airlock/medical{
 	name = "Patient Room";
@@ -28010,7 +28003,7 @@
 /obj/item/pen,
 /obj/item/stack/packageWrap,
 /turf/open/floor/plasteel/white,
-/area/medical/genetics)
+/area/medical/medbay/central)
 "bMd" = (
 /turf/closed/wall/r_wall,
 /area/maintenance/aft)
@@ -107169,7 +107162,7 @@ bua
 bua
 ajB
 bua
-bvv
+bqP
 bhh
 bhh
 btV
@@ -107932,15 +107925,15 @@ bfL
 bfL
 bla
 bmY
-bhh
-bhh
-bhh
+bsL
+bsL
+bsL
 bpE
 bKQ
 bum
 bvq
 bua
-brd
+bBL
 bhh
 bhh
 bBC
@@ -108454,7 +108447,7 @@ bpE
 buq
 bvt
 bye
-bon
+brd
 bBN
 bEi
 bFO
@@ -109739,7 +109732,7 @@ bvu
 bux
 bvy
 bon
-bon
+brd
 bBN
 bBN
 bBN
