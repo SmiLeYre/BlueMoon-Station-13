@@ -1502,7 +1502,7 @@
 "afS" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/closed/wall,
-/area/medical/medbay/zone2,
+/area/medical/medbay/zone2)
 "afT" = (
 /obj/structure/chair{
 	dir = 4
