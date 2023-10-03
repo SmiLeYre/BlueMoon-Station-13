@@ -8,7 +8,7 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	w_class = WEIGHT_CLASS_SMALL
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	//BlueMoon Edit
-	var/list/static/hotel_maps = list("Generic (Don't Use)", "Apartment", "Apartment_1", "Apartment_2", "Apartment_bar", "Apartment_syndi")
+	var/list/static/hotel_maps = list("Generic (Don't Use)", "Apartment", "Apartment_1", "Apartment_2", "Apartment_3", "Apartment_bar", "Apartment_syndi")
 	var/datum/map_template/ghost_cafe_rooms/ghost_cafe_rooms_apartment
 	var/datum/map_template/ghost_cafe_rooms/one/ghost_cafe_rooms_apartment_one
 	var/datum/map_template/ghost_cafe_rooms/two/ghost_cafe_rooms_apartment_two

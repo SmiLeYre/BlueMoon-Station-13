@@ -47764,6 +47764,15 @@
 /obj/effect/turf_decal/stripes/blue/corner{
 	dir = 1
 	},
+/turf/open/floor/wood,
+/area/service/bar)
+"heu" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/blue/corner{
+	dir = 1
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -63607,9 +63616,6 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/zone2)
