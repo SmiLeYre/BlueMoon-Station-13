@@ -1289,7 +1289,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	//Medbay is a large area, these additional areas help level out APC load.
 
 /area/medical/medbay/zone2
-	name = "Medbay"
+	name = "Medbay Lounge Zone"
 	icon_state = "medbay2"
 
 /area/medical/medbay/zone3
