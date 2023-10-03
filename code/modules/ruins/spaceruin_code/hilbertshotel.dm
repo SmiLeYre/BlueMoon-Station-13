@@ -12,6 +12,7 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	var/datum/map_template/ghost_cafe_rooms/ghost_cafe_rooms_apartment
 	var/datum/map_template/ghost_cafe_rooms/one/ghost_cafe_rooms_apartment_one
 	var/datum/map_template/ghost_cafe_rooms/two/ghost_cafe_rooms_apartment_two
+	var/datum/map_template/ghost_cafe_rooms/three/ghost_cafe_rooms_apartment_three
 	var/datum/map_template/ghost_cafe_rooms/bar/ghost_cafe_rooms_apartment_bar
 	var/datum/map_template/ghost_cafe_rooms/syndi/ghost_cafe_rooms_apartment_syndi
 	//BlueMoon Edit
@@ -39,6 +40,7 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	ghost_cafe_rooms_apartment = new()
 	ghost_cafe_rooms_apartment_one = new()
 	ghost_cafe_rooms_apartment_two = new()
+	ghost_cafe_rooms_apartment_three = new()
 	ghost_cafe_rooms_apartment_bar = new()
 	ghost_cafe_rooms_apartment_syndi = new()
 	//BlueMoon Edit
@@ -158,6 +160,8 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 				ghost_cafe_rooms_apartment_one.load(locate(roomReservation.bottom_left_coords[1], roomReservation.bottom_left_coords[2], roomReservation.bottom_left_coords[3]))
 			if("Apartment_2")
 				ghost_cafe_rooms_apartment_two.load(locate(roomReservation.bottom_left_coords[1], roomReservation.bottom_left_coords[2], roomReservation.bottom_left_coords[3]))
+			if("Apartment_3")
+				ghost_cafe_rooms_apartment_three.load(locate(roomReservation.bottom_left_coords[1], roomReservation.bottom_left_coords[2], roomReservation.bottom_left_coords[3]))
 			if("Apartment_bar")
 				ghost_cafe_rooms_apartment_bar.load(locate(roomReservation.bottom_left_coords[1], roomReservation.bottom_left_coords[2], roomReservation.bottom_left_coords[3]))
 			if("Apartment_syndi")
