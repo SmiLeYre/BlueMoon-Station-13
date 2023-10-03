@@ -262,3 +262,8 @@
 	description = "<span class='nicegreen'>Боги довольны моим подношением!</span>\n"
 	mood_change = 5
 	timeout = 3 MINUTES
+
+/datum/mood_event/hide_in_box
+	description = "<span class='nicegreen'>В коробочке на удивление приятно</span>\n"
+	mood_change = 3
+	timeout = 2 MINUTES

@@ -23,7 +23,7 @@
 
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	var/def_zone = ""	//Aiming at
-	var/atom/movable/firer = null//Who shot it
+	var/mob/firer = null//Who shot it
 	var/atom/fired_from = null // the atom that the projectile was fired from (gun, turret)	var/suppressed = FALSE	//Attack message
 	var/suppressed = FALSE	//Attack message
 	var/candink = FALSE //Can this projectile play the dink sound when hitting the head?
@@ -190,6 +190,8 @@
 	var/embed_falloff_tile
 	/// For telling whether we want to roll for bone breaking or lacerations if we're bothering with wounds
 	sharpness = SHARP_NONE
+
+	var/chain = null
 
 /obj/item/projectile/Initialize(mapload)
 	. = ..()

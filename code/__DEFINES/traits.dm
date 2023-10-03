@@ -79,7 +79,6 @@
 #define TRAIT_EMOTEMUTE			"emotemute"
 #define TRAIT_LOOC_MUTE			"looc_mute" //Just like unconsciousness, it disables LOOC salt.
 #define TRAIT_AOOC_MUTE			"aooc_mute" //Same as above but for AOOC.
-#define TRAIT_SEWED				"sewed"
 #define TRAIT_DEAF				"deaf"
 #define TRAIT_NEARSIGHT			"nearsighted"
 #define TRAIT_FAT				"fat"
@@ -131,6 +130,7 @@
 #define TRAIT_ANTIMAGIC			"anti_magic"
 #define TRAIT_HOLY				"holy"
 #define TRAIT_DEPRESSION		"depression"
+#define TRAIT_ONELIFE			"onelife"
 #define TRAIT_JOLLY				"jolly"
 #define TRAIT_NOCRITDAMAGE		"no_crit"
 #define TRAIT_NOSLIPWATER		"noslip_water"
@@ -256,6 +256,9 @@
 #define TRAIT_PAPER_SKIN "paper_skin"
 //used because it's more reliable than checking for the component
 #define TRAIT_DULLAHAN "dullahan"
+
+#define TRAIT_AKIMBO	"akimbo"
+
 
 // mobility flag traits
 // IN THE FUTURE, IT WOULD BE NICE TO DO SOMETHING SIMILAR TO https://github.com/tgstation/tgstation/pull/48923/files (ofcourse not nearly the same because I have my.. thoughts on it)

@@ -124,6 +124,8 @@
 			be defused, and some crew may attempt to do so."
 	item = /obj/item/sbeacondrop/bomb
 	cost = 11
+	hijack_only = TRUE
+	purchasable_from = UPLINK_NUKE_OPS
 
 /datum/uplink_item/explosives/syndicate_detonator
 	name = "Syndicate Detonator"
@@ -133,7 +135,7 @@
 			the blast radius before using the detonator."
 	item = /obj/item/syndicatedetonator
 	cost = 3
-	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE
+	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_TRAITORS
 
 /datum/uplink_item/explosives/syndicate_minibomb
 	name = "Syndicate Minibomb"

@@ -319,7 +319,7 @@
 		if(target_move.can_crawl_through())
 			if(is_type_in_typecache(target_move, GLOB.ventcrawl_machinery))
 				user.visible_message("<span class='notice'>Что-то вылезает из вентиляции...</span>", "<span class='notice'>Ты вылезаешь из вентиляции.")
-				if(!do_after(user, 25, target = vent_found, required_mobility_flags = MOBILITY_MOVE))
+				if(!do_after(user, 2 SECONDS, target = vent_found))
 					return
 				user.forceMove(target_move.loc) //handle entering and so on.
 
@@ -334,16 +334,14 @@
 					playsound(src, 'sound/machines/ventcrawl.ogg', 50, 1, -3)
 	else if(is_type_in_typecache(src, GLOB.ventcrawl_machinery) && can_crawl_through()) //if we move in a way the pipe can connect, but doesn't - or we're in a vent
 		user.visible_message("<span class='notice'>Что-то вылезает из вентиляции...</span>", "<span class='notice'>Ты вылезаешь из вентиляции.")
-		if(!do_after(user, 25, target = vent_found, required_mobility_flags = MOBILITY_MOVE))
+		if(!do_after(user, 2 SECONDS, target = vent_found))
 			return
 		user.forceMove(target_move.loc) //handle entering and so on.
-
 
 /obj/machinery/atmospherics/AltClick(mob/living/L)
 	if(is_type_in_typecache(src, GLOB.ventcrawl_machinery))
 		return SEND_SIGNAL(L, COMSIG_HANDLE_VENTCRAWL, src)
 	return ..()
-
 
 /obj/machinery/atmospherics/proc/can_crawl_through()
 	return TRUE

@@ -69,8 +69,6 @@
 					/obj/item/clothing/suit/armor/hecu = 2,
 					/obj/item/storage/backpack/hecu = 2,
 					/obj/item/storage/backpack/hecu/black = 2,
-					/obj/item/storage/belt/military/assault/hecu = 2,
-					/obj/item/storage/belt/military/assault/hecu/black = 2,
 					/obj/item/storage/backpack/rucksack = 1,
 					/obj/item/storage/backpack/rucksack/blue = 1,
 					/obj/item/storage/backpack/rucksack/navy = 1,
@@ -473,7 +471,8 @@
 					/obj/item/clothing/neck/cloak/bishop = 1, //BlueMoon changes
 					/obj/item/clothing/neck/cloak/bishopblack= 1) //BlueMoon changes
 	premium = list(/obj/item/toy/plush/plushvar = 1,
-					/obj/item/toy/plush/narplush = 1)
+					/obj/item/toy/plush/narplush = 1,
+					/obj/item/lighter/black = 1)
 	refill_canister = /obj/item/vending_refill/wardrobe/chap_wardrobe
 	payment_department = ACCOUNT_SRV
 /obj/item/vending_refill/wardrobe/chap_wardrobe
@@ -637,6 +636,9 @@
 		/obj/item/clothing/shoes/combat = 3,
 		/obj/item/clothing/mask/gas/syndicate = 3,
 		/obj/item/clothing/mask/gas/sechailer/syndicate = 3,
+		/obj/item/clothing/mask/gas/sechailer/syndicate/flektarn = 3,
+		/obj/item/clothing/mask/gas/sechailer/syndicate/green = 3,
+		/obj/item/clothing/mask/gas/sechailer/syndicate/tan = 3,
 		/obj/item/clothing/suit/hooded/wintercoat/syndicate = 1,
 		/obj/item/clothing/head/soft/sec/syndicate = 3,
 		/obj/item/clothing/head/beret/sec/syndicate = 3,

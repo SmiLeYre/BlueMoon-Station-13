@@ -253,13 +253,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/abandonedzoo)
 "aI" = (
-/obj/structure/table/reinforced,
-/obj/machinery/computer/med_data/laptop{
-	dir = 8;
-	pixel_y = 1
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/salvage/computer{
+	dir = 8
 	},
 /turf/open/floor/plasteel{
 	icon_state = "dark"
@@ -669,13 +667,13 @@
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/abandonedzoo)
 "bz" = (
-/obj/machinery/space_heater,
 /obj/structure/disposalpipe/segment{
 	dir = 9
 	},
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/structure/salvage/protolathe,
 /turf/open/floor/plasteel{
 	icon_state = "dark"
 	},
@@ -860,6 +858,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/abandonedzoo)
+"wq" = (
+/obj/structure/salvage/remains,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/abandonedzoo)
 "KN" = (
 /turf/template_noop,
 /area/space/nearstation)
@@ -965,7 +967,7 @@ ac
 bx
 bE
 bv
-bv
+wq
 ac
 aa
 "}

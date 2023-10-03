@@ -1,4 +1,8 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"i" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space)
 "m" = (
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space)
@@ -70,7 +74,7 @@ n
 n
 n
 n
-m
+i
 J
 J
 "}
@@ -94,7 +98,7 @@ m
 J
 "}
 (5,1,1) = {"
-m
+i
 n
 n
 m
@@ -220,7 +224,7 @@ m
 n
 n
 m
-m
+i
 n
 n
 n
@@ -251,7 +255,7 @@ m
 n
 n
 n
-m
+i
 n
 m
 n
@@ -330,7 +334,7 @@ J
 J
 m
 m
-m
+i
 m
 m
 m

@@ -43,7 +43,7 @@
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/shoes.dmi'
 	anthro_mob_worn_overlay = 'modular_splurt/icons/mob/clothing/shoes_digi.dmi'
 
-/obj/item/clothing/shoes/jackboots/tall/Initialize() // BlueMoon 08.09.2023 - сапоги переделаны в армейские кирзачи. Смысла от звука каблуков больше нет.
+/obj/item/clothing/shoes/jackboots/tall/Initialize()
 	. = ..()
 	AddComponent(/datum/component/squeak, list('modular_splurt/sound/effects/footstep/highheel1.ogg' = 1,'modular_splurt/sound/effects/footstep/highheel2.ogg' = 1), 75)
 

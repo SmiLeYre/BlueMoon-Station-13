@@ -163,6 +163,11 @@
 	set category = "Эмоции.3: Простые Действия"
 	emote("kiss")
 
+/mob/living/verb/emote_uwu()
+	set name = "> Увукнуть "
+	set category = "Эмоции.2: Звуковые Действия"
+	emote("uwu")
+
 /mob/living/verb/emote_ara1()
 	set name = "> Ара 1 "
 	set category = "Эмоции.2: Звуковые Действия"

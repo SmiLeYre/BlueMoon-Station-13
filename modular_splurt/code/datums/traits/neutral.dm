@@ -94,7 +94,7 @@
 
 // Quirk examine text
 /datum/quirk/Hypnotic_gaze/proc/quirk_examine_Hypnotic_gaze(atom/examine_target, mob/living/carbon/human/examiner, list/examine_list)
-	examine_list += "[quirk_holder.p_their(TRUE)] eyes glimmer with an entrancing power..."
+	examine_list += "[quirk_holder.ru_ego(TRUE)] глаза необычайно сверкают..."
 
 /datum/quirk/overweight
 	name = "Лишний Вес"
@@ -132,6 +132,44 @@
 		if(initial(species.disliked_food) & ~MEAT)
 			species.disliked_food &= ~MEAT
 
+//Zombies + Cumplus Fix\\ Ёбнулись? Нахуй идите.
+//datum/quirk/undead
+//    name = "Undeath"
+//    desc = "Your body, be it anomalous, or just outright refusing to die - has indeed become undead. Due to this you may be more susceptible to burn-based weaponry."
+//    value = 0
+//    mob_trait = TRAIT_UNDEAD
+//    processing_quirk = TRUE
+//    var/list/zperks = list(TRAIT_RESISTCOLD,TRAIT_STABLEHEART,TRAIT_EASYDISMEMBER,TRAIT_NOBREATH,TRAIT_VIRUSIMMUNE,TRAIT_RADIMMUNE,TRAIT_FAKEDEATH,TRAIT_NOSOFTCRIT, TRAIT_NOPULSE)
+//
+///datum/quirk/undead/add()
+//    . = ..()
+//    var/mob/living/carbon/human/H = quirk_holder
+//    if(H.mob_biotypes == MOB_ROBOTIC)
+//        return FALSE //Lol, lmao, even
+//    H.mob_biotypes += MOB_UNDEAD
+//    for(var/A = 1, A <= zperks.len, A++)
+//        ADD_TRAIT(H,zperks[A],ROUNDSTART_TRAIT)
+//
+///datum/quirk/undead/remove()
+//    . = ..()
+//    var/mob/living/carbon/human/H = quirk_holder
+//    H.mob_biotypes -= MOB_UNDEAD
+//    for(var/A = 1, A <= zperks.len, A++)
+//        REMOVE_TRAIT(H,zperks[A], null)
+//
+///datum/quirk/undead/on_process()
+//    . = ..()
+//    var/mob/living/carbon/human/H = quirk_holder
+//    H.adjust_nutrition(-0.05)//The Undead are Hungry.
+//    H.set_screwyhud(SCREWYHUD_HEALTHY)
+//    H.adjustOxyLoss(-3) //Stops a defibrilator bug. Note to future self: Fix defib bug.
+//    H.adjustBruteLoss(-0.5) //The undead will only regenerate if not burnt beyond a specific threshold. A good value is 50 as that will strain them if they decide to spacewalk near fusion.
+//    if(H.getBruteLoss() > 0 && H.getFireLoss() <= 50 || H.getFireLoss() > 0 && H.getFireLoss() <= 50)
+//        H.adjustBruteLoss(-0.5, forced = TRUE)
+//        H.adjustFireLoss(-0.15, forced = TRUE)
+//    else if (H.getToxLoss() <= 90)
+//        H.adjustToxLoss(-0.3, forced = TRUE)
+
 /datum/quirk/cum_plus
 	name = "Сверхпродуктивные Гениталии"
 	desc = "Ваши гениталии производят и вмещают больше, чем обычно."
@@ -139,30 +177,66 @@
 	gain_text = span_notice("Вы чувствуете давление в паху.")
 	lose_text = span_notice("Вы чувствуете, как ваш пах стал легче.")
 	medical_record_text = "Гениталии пациента демонстрируют высокую продуктивность."
+	var/increasedcum
 
 /datum/quirk/cum_plus/add()
 	var/mob/living/carbon/M = quirk_holder
-	if(M.getorganslot("testicles"))
-		var/obj/item/organ/genital/testicles/T = M.getorganslot("testicles")
-		T.fluid_mult = 1.5 //Base is 1
-		T.fluid_max_volume = 5
+	if(M.getorganslot(ORGAN_SLOT_TESTICLES))
+		var/obj/item/organ/genital/testicles/T = M.getorganslot(ORGAN_SLOT_TESTICLES)
+		T.fluid_mult += 0.5 //Base is 1
+		T.fluid_max_volume *= 1.75 //Fixes this.
 
 /datum/quirk/cum_plus/remove()
 	var/mob/living/carbon/M = quirk_holder
 	if(!M)
 		return
-	if(quirk_holder.getorganslot("testicles"))
-		var/obj/item/organ/genital/testicles/T = M.getorganslot("testicles")
-		T.fluid_mult = 1 //Base is 1
-		T.fluid_max_volume = 3 //Base is 3
+	if(quirk_holder.getorganslot(ORGAN_SLOT_TESTICLES))
+		var/obj/item/organ/genital/testicles/T = M.getorganslot(ORGAN_SLOT_TESTICLES)
+		T.fluid_mult -= 0.5 //Base is 1
+		T.fluid_max_volume *= 0.25 //Base is 50
 
 /datum/quirk/cum_plus/on_process()
 	var/mob/living/carbon/M = quirk_holder //If you get balls later, then this will still proc
-	if(M.getorganslot("testicles"))
-		var/obj/item/organ/genital/testicles/T = M.getorganslot("testicles")
-		if(T.fluid_max_volume <= 5 || T.fluid_mult <= 0.2) //INVALID EXPRESSION?
+	if(M.getorganslot(ORGAN_SLOT_TESTICLES))
+		var/obj/item/organ/genital/testicles/T = M.getorganslot(ORGAN_SLOT_TESTICLES)
+		if(!increasedcum)
 			T.fluid_mult = 1.5 //Base is 0.133
-			T.fluid_max_volume = 5
+			T.fluid_max_volume *= 1.75
+			increasedcum = TRUE
+
+/datum/quirk/milk_plus
+	name = "Сверхпродуктивная Грудь"
+	desc = "Ваша грудь производит и вмещает больше, чем обычно."
+	value = 0
+	gain_text = span_notice("Вы чувствуете давление в груди.")
+	lose_text = span_notice("Вы чувствуете, что ваша грудь стала легче.")
+	medical_record_text = "Грудь пациента демонстрируют высокую продуктивность."
+	var/increasedcum
+
+/datum/quirk/milk_plus/add()
+	var/mob/living/carbon/M = quirk_holder
+	if(M.getorganslot(ORGAN_SLOT_BREASTS))
+		var/obj/item/organ/genital/breasts/T = M.getorganslot(ORGAN_SLOT_BREASTS)
+		T.fluid_mult += 0.5 //Base is 1
+		T.fluid_max_volume *= 1.75 //Fixes this.
+
+/datum/quirk/milk_plus/remove()
+	var/mob/living/carbon/M = quirk_holder
+	if(!M)
+		return
+	if(quirk_holder.getorganslot(ORGAN_SLOT_BREASTS))
+		var/obj/item/organ/genital/breasts/T = M.getorganslot(ORGAN_SLOT_BREASTS)
+		T.fluid_mult -= 0.5 //Base is 1
+		T.fluid_max_volume *= 0.25 //Base is 50
+
+/datum/quirk/milk_plus/on_process()
+	var/mob/living/carbon/M = quirk_holder //If you get balls later, then this will still proc
+	if(M.getorganslot(ORGAN_SLOT_BREASTS))
+		var/obj/item/organ/genital/breasts/T = M.getorganslot(ORGAN_SLOT_BREASTS)
+		if(!increasedcum)
+			T.fluid_mult = 1.5 //Base is 0.133
+			T.fluid_max_volume *= 1.75
+			increasedcum = TRUE
 
 //You are a CIA agent.
 /datum/quirk/cosglow
@@ -786,7 +860,7 @@
 			return
 
 		// Alert user in chat
-		to_chat(quirk_mob, span_nicegreen("You begin to feel better without the restraint of clothing!"))
+		to_chat(quirk_mob, span_nicegreen("Вам намного лучше без сковывающих вас обносков!"))
 
 		// Set nude status
 		is_nude = TRUE
@@ -801,7 +875,7 @@
 			return
 
 		// Alert user in chat
-		to_chat(quirk_mob, span_warning("The clothes feel wrong on your body..."))
+		to_chat(quirk_mob, span_warning("Одежда вашему телу не подходит..."))
 
 		// Set nude status
 		is_nude = FALSE
@@ -810,7 +884,7 @@
 	SIGNAL_HANDLER
 
 	// Define default status term
-	var/mood_term = "content with [quirk_holder.p_their()] lack of"
+	var/mood_term = "в радостном состоянии из-за отсутствия на себе"
 
 	// Define default span class
 	var/span_class
@@ -818,13 +892,13 @@
 	// Check if dressed
 	if(!is_nude)
 		// Set negative term
-		mood_term = "disturbed by wearing"
+		mood_term = "в раздражении из-за ношения на себе"
 
 		// Set negative span class
 		span_class = "warning"
 
 	// Add examine text
-	examine_list += "<span class='[span_class]'>[quirk_holder.p_they(TRUE)] appear[quirk_holder.p_s()] [mood_term] clothing.</span>"
+	examine_list += "<span class='[span_class]'>[quirk_holder.p_they_ru(TRUE)] [mood_term] одежды.</span>"
 
 /datum/quirk/masked_mook
 	name = "Синдром Бейна"
@@ -1022,3 +1096,12 @@ var/static/list/ukraine_replacements = list(
 /datum/quirk/modular/remove()
 	var/mob/living/carbon/human/C = quirk_holder
 	remove_verb(C,/mob/living/proc/alterlimbs)
+
+/datum/quirk/messy
+	name = "Messy"
+	desc = "Due to your unique biology/construction/bluespace magic you always manage to make a mess when you cum, even if it's not possible in normal circumstances."
+	value = 0
+	mob_trait = TRAIT_MESSY
+	gain_text = span_lewd("You feel like covering something in layer of your fluids.")
+	lose_text = span_notice("You don't feel 'messy' anymore.")
+	medical_record_text = "Had to be sedated after covering entire hospital wing with cum."

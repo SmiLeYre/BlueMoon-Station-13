@@ -8,17 +8,17 @@
 	dir = 9
 	},
 /turf/closed/wall/r_wall/syndicate,
-/area/shuttle/syndicate/bridge)
+/area/shuttle/inteq/bridge)
 "ac" = (
 /turf/closed/wall/r_wall/syndicate,
-/area/shuttle/syndicate/bridge)
+/area/shuttle/inteq/bridge)
 "ad" = (
 /obj/machinery/porta_turret/syndicate/shuttle{
 	faction = list("InteQ");
 	dir = 10
 	},
 /turf/closed/wall/r_wall/syndicate,
-/area/shuttle/syndicate/hallway)
+/area/shuttle/inteq/hallway)
 "ae" = (
 /obj/structure/window/plastitanium,
 /obj/machinery/door/poddoor/shutters{
@@ -27,24 +27,24 @@
 	},
 /obj/structure/grille,
 /turf/open/floor/plating,
-/area/shuttle/syndicate/bridge)
+/area/shuttle/inteq/bridge)
 "af" = (
 /turf/closed/wall/r_wall/syndicate,
-/area/shuttle/syndicate/hallway)
+/area/shuttle/inteq/hallway)
 "ag" = (
 /obj/machinery/computer/med_data/syndie{
 	icon_keyboard = "inteq_key"
 	},
 /obj/effect/turf_decal/bot_white,
 /turf/open/floor/iron/dark/smooth_large,
-/area/shuttle/syndicate/bridge)
+/area/shuttle/inteq/bridge)
 "ah" = (
 /obj/machinery/computer/crew/syndie{
 	icon_keyboard = "inteq_key"
 	},
 /obj/effect/turf_decal/bot_white,
 /turf/open/floor/iron/dark/smooth_large,
-/area/shuttle/syndicate/bridge)
+/area/shuttle/inteq/bridge)
 "ai" = (
 /obj/machinery/computer/camera_advanced/shuttle_docker/syndicate{
 	icon_keyboard = "inteq_key";
@@ -52,7 +52,7 @@
 	},
 /obj/effect/turf_decal/bot_white,
 /turf/open/floor/iron/dark/smooth_large,
-/area/shuttle/syndicate/bridge)
+/area/shuttle/inteq/bridge)
 "aj" = (
 /obj/machinery/computer/shuttle/syndicate{
 	icon_keyboard = "inteq_key";
@@ -60,25 +60,25 @@
 	},
 /obj/effect/turf_decal/bot_white,
 /turf/open/floor/iron/dark/smooth_large,
-/area/shuttle/syndicate/bridge)
+/area/shuttle/inteq/bridge)
 "ak" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/iron/dark/smooth_large,
-/area/shuttle/syndicate/bridge)
+/area/shuttle/inteq/bridge)
 "al" = (
 /obj/machinery/computer/camera_advanced/syndie{
 	icon_keyboard = "inteq_key"
 	},
 /obj/effect/turf_decal/bot_white,
 /turf/open/floor/iron/dark/smooth_large,
-/area/shuttle/syndicate/bridge)
+/area/shuttle/inteq/bridge)
 "am" = (
 /obj/machinery/computer/secure_data/syndie{
 	icon_keyboard = "inteq_key"
 	},
 /obj/effect/turf_decal/bot_white,
 /turf/open/floor/iron/dark/smooth_large,
-/area/shuttle/syndicate/bridge)
+/area/shuttle/inteq/bridge)
 "an" = (
 /obj/structure/table/reinforced,
 /obj/machinery/status_display/evac{
@@ -90,17 +90,17 @@
 	},
 /obj/item/folder/yellow,
 /turf/open/floor/iron/dark/smooth_large,
-/area/shuttle/syndicate/bridge)
+/area/shuttle/inteq/bridge)
 "ao" = (
 /obj/structure/chair/office/dark{
 	dir = 8;
 	name = "tactical swivel chair"
 	},
 /turf/open/floor/iron/dark/smooth_large,
-/area/shuttle/syndicate/bridge)
+/area/shuttle/inteq/bridge)
 "ap" = (
 /turf/open/floor/iron/dark/smooth_large,
-/area/shuttle/syndicate/bridge)
+/area/shuttle/inteq/bridge)
 "aq" = (
 /obj/structure/chair/office/dark{
 	dir = 1;
@@ -114,14 +114,14 @@
 	req_access_txt = "150"
 	},
 /turf/open/floor/iron/dark/smooth_large,
-/area/shuttle/syndicate/bridge)
+/area/shuttle/inteq/bridge)
 "ar" = (
 /obj/structure/chair/office/dark{
 	dir = 4;
 	name = "tactical swivel chair"
 	},
 /turf/open/floor/iron/dark/smooth_large,
-/area/shuttle/syndicate/bridge)
+/area/shuttle/inteq/bridge)
 "as" = (
 /obj/structure/table/reinforced,
 /obj/machinery/status_display/ai{
@@ -132,31 +132,31 @@
 	dir = 4
 	},
 /turf/open/floor/iron/dark/smooth_large,
-/area/shuttle/syndicate/bridge)
+/area/shuttle/inteq/bridge)
 "at" = (
 /turf/open/floor/iron/dark/smooth_half,
-/area/shuttle/syndicate/bridge)
+/area/shuttle/inteq/bridge)
 "au" = (
 /obj/machinery/status_display/evac,
 /turf/closed/wall/r_wall/syndicate,
-/area/shuttle/syndicate/bridge)
+/area/shuttle/inteq/bridge)
 "av" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Cockpit";
 	req_access_txt = "150"
 	},
 /turf/open/floor/iron/dark/smooth_large,
-/area/shuttle/syndicate/bridge)
+/area/shuttle/inteq/bridge)
 "aw" = (
 /obj/machinery/porta_turret/syndicate/shuttle{
 	faction = list("InteQ");
 	dir = 9
 	},
 /turf/closed/wall/r_wall/syndicate,
-/area/shuttle/syndicate/eva)
+/area/shuttle/inteq/eva)
 "ax" = (
 /turf/closed/wall/r_wall/syndicate,
-/area/shuttle/syndicate/eva)
+/area/shuttle/inteq/eva)
 "ay" = (
 /obj/structure/table/reinforced,
 /obj/item/stack/cable_coil/white,
@@ -165,12 +165,12 @@
 /turf/open/floor/iron/dark/smooth_half{
 	dir = 1
 	},
-/area/shuttle/syndicate/hallway)
+/area/shuttle/inteq/hallway)
 "az" = (
 /turf/open/floor/iron/dark/smooth_half{
 	dir = 1
 	},
-/area/shuttle/syndicate/hallway)
+/area/shuttle/inteq/hallway)
 "aA" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/box/handcuffs{
@@ -181,10 +181,10 @@
 /turf/open/floor/iron/dark/smooth_half{
 	dir = 1
 	},
-/area/shuttle/syndicate/hallway)
+/area/shuttle/inteq/hallway)
 "aB" = (
 /turf/closed/wall/r_wall/syndicate,
-/area/shuttle/syndicate/airlock)
+/area/shuttle/inteq/airlock)
 "aC" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4;
@@ -193,10 +193,10 @@
 /turf/open/floor/iron/dark/smooth_half{
 	dir = 1
 	},
-/area/shuttle/syndicate/hallway)
+/area/shuttle/inteq/hallway)
 "aD" = (
 /turf/open/floor/iron/dark/smooth_large,
-/area/shuttle/syndicate/hallway)
+/area/shuttle/inteq/hallway)
 "aE" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 8;
@@ -205,21 +205,21 @@
 /turf/open/floor/iron/dark/smooth_half{
 	dir = 1
 	},
-/area/shuttle/syndicate/hallway)
+/area/shuttle/inteq/hallway)
 "aF" = (
 /obj/machinery/porta_turret/syndicate/shuttle{
 	faction = list("InteQ");
 	dir = 5
 	},
 /turf/closed/wall/r_wall/syndicate,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "aG" = (
 /obj/machinery/porta_turret/syndicate/shuttle{
 	faction = list("InteQ");
 	dir = 9
 	},
 /turf/closed/wall/r_wall/syndicate,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "aH" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4;
@@ -231,7 +231,7 @@
 /turf/open/floor/iron/dark/smooth_half{
 	dir = 1
 	},
-/area/shuttle/syndicate/hallway)
+/area/shuttle/inteq/hallway)
 "aI" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 8;
@@ -243,23 +243,23 @@
 /turf/open/floor/iron/dark/smooth_half{
 	dir = 1
 	},
-/area/shuttle/syndicate/hallway)
+/area/shuttle/inteq/hallway)
 "aJ" = (
 /turf/closed/wall/r_wall/syndicate,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "aK" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "aL" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},
 /obj/machinery/suit_storage_unit/syndicate/inteq,
 /turf/open/floor/iron/dark/small,
-/area/shuttle/syndicate/eva)
+/area/shuttle/inteq/eva)
 "aM" = (
 /turf/open/floor/iron/dark/smooth_large,
-/area/shuttle/syndicate/eva)
+/area/shuttle/inteq/eva)
 "aO" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4;
@@ -267,10 +267,10 @@
 	},
 /obj/effect/turf_decal/bot_white,
 /turf/open/floor/iron/dark/small,
-/area/shuttle/syndicate/airlock)
+/area/shuttle/inteq/airlock)
 "aP" = (
 /turf/open/floor/iron/dark/smooth_large,
-/area/shuttle/syndicate/airlock)
+/area/shuttle/inteq/airlock)
 "aQ" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/toolbox/syndicate,
@@ -279,26 +279,26 @@
 	dir = 9
 	},
 /turf/open/floor/iron/dark/small,
-/area/shuttle/syndicate/airlock)
+/area/shuttle/inteq/airlock)
 "aR" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
 /obj/machinery/suit_storage_unit/syndicate/inteq,
 /turf/open/floor/iron/dark/small,
-/area/shuttle/syndicate/eva)
+/area/shuttle/inteq/eva)
 "aS" = (
 /obj/effect/turf_decal/bot_white,
 /obj/vehicle/ridden/atv/snowmobile,
 /obj/item/key,
 /turf/open/floor/iron/dark/small,
-/area/shuttle/syndicate/eva)
+/area/shuttle/inteq/eva)
 "aT" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
 /turf/open/floor/iron/dark/small,
-/area/shuttle/syndicate/airlock)
+/area/shuttle/inteq/airlock)
 "aU" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/machinery/light{
@@ -306,19 +306,19 @@
 	},
 /obj/effect/turf_decal/bot_white,
 /turf/open/floor/iron/dark/small,
-/area/shuttle/syndicate/eva)
+/area/shuttle/inteq/eva)
 "aV" = (
 /obj/structure/grille,
 /obj/structure/window/plastitanium,
 /turf/open/floor/plating,
-/area/shuttle/syndicate/hallway)
+/area/shuttle/inteq/hallway)
 "aW" = (
 /obj/machinery/door/airlock/external{
 	name = "Ready Room";
 	req_access_txt = "150"
 	},
 /turf/open/floor/iron/dark/smooth_large,
-/area/shuttle/syndicate/hallway)
+/area/shuttle/inteq/hallway)
 "aX" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4;
@@ -329,7 +329,7 @@
 	dir = 8
 	},
 /turf/open/floor/iron/dark/small,
-/area/shuttle/syndicate/airlock)
+/area/shuttle/inteq/airlock)
 "aY" = (
 /obj/machinery/door/poddoor{
 	id = "smindicate";
@@ -358,41 +358,41 @@
 	dir = 1
 	},
 /turf/open/floor/iron/elevatorshaft,
-/area/shuttle/syndicate/airlock)
+/area/shuttle/inteq/airlock)
 "ba" = (
 /obj/machinery/door/airlock/external{
 	name = "E.V.A. Gear Storage";
 	req_access_txt = "150"
 	},
 /turf/open/floor/iron/dark/smooth_large,
-/area/shuttle/syndicate/eva)
+/area/shuttle/inteq/eva)
 "bb" = (
 /obj/machinery/door/airlock/external{
 	req_access_txt = "150"
 	},
 /turf/open/floor/iron/dark/smooth_large,
-/area/shuttle/syndicate/airlock)
+/area/shuttle/inteq/airlock)
 "bd" = (
 /obj/structure/sign/warning/vacuum/external,
 /turf/closed/wall/r_wall/syndicate,
-/area/shuttle/syndicate/airlock)
+/area/shuttle/inteq/airlock)
 "be" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
 	},
 /obj/machinery/suit_storage_unit/syndicate/inteq,
 /turf/open/floor/iron/dark/small,
-/area/shuttle/syndicate/eva)
+/area/shuttle/inteq/eva)
 "bg" = (
 /obj/structure/grille,
 /obj/structure/window/plastitanium,
 /turf/open/floor/plating,
-/area/shuttle/syndicate/eva)
+/area/shuttle/inteq/eva)
 "bh" = (
 /obj/structure/grille,
 /obj/structure/window/plastitanium,
 /turf/open/floor/plating,
-/area/shuttle/syndicate/airlock)
+/area/shuttle/inteq/airlock)
 "bi" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/bot_white,
@@ -402,21 +402,21 @@
 /obj/item/clothing/suit/space/syndicate/inteq,
 /obj/item/clothing/head/helmet/space/syndicate/inteq,
 /turf/open/floor/iron/dark/small,
-/area/shuttle/syndicate/airlock)
+/area/shuttle/inteq/airlock)
 "bj" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "bk" = (
 /obj/machinery/status_display/ai,
 /turf/closed/wall/r_wall/syndicate,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "bm" = (
 /turf/closed/wall/r_wall/syndicate,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "bn" = (
 /obj/machinery/status_display/evac,
 /turf/closed/wall/r_wall/syndicate,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "bo" = (
 /obj/machinery/nuclearbomb/syndicate{
 	anchored = 1
@@ -425,20 +425,20 @@
 	dir = 1
 	},
 /turf/open/floor/lf_haron/shuttle6,
-/area/shuttle/syndicate/hallway)
+/area/shuttle/inteq/hallway)
 "bq" = (
 /obj/machinery/sleeper/syndie{
 	dir = 4
 	},
 /obj/effect/turf_decal/bot_white,
 /turf/open/floor/iron/dark,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "bs" = (
 /obj/machinery/light{
 	dir = 1
 	},
 /turf/open/floor/iron/dark,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "bt" = (
 /obj/item/reagent_containers/glass/bottle/epinephrine{
 	pixel_x = 6
@@ -473,7 +473,7 @@
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/bot_white,
 /turf/open/floor/iron/dark,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "bu" = (
 /obj/structure/table/reinforced,
 /obj/item/stack/medical/gauze,
@@ -481,17 +481,17 @@
 /obj/item/stack/medical/mesh,
 /obj/effect/turf_decal/bot_white,
 /turf/open/floor/iron/dark,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "bv" = (
 /obj/structure/grille,
 /obj/structure/window/plastitanium,
 /turf/open/floor/plating,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "bw" = (
 /obj/structure/grille,
 /obj/structure/window/plastitanium,
 /turf/open/floor/plating,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "bx" = (
 /obj/item/stock_parts/cell/high{
 	pixel_x = -3;
@@ -500,7 +500,7 @@
 /obj/item/stock_parts/cell/high,
 /obj/structure/table/reinforced,
 /turf/open/floor/iron/dark,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "by" = (
 /obj/item/screwdriver{
 	pixel_y = 9
@@ -510,7 +510,7 @@
 	},
 /obj/structure/table/reinforced,
 /turf/open/floor/iron/dark,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "bz" = (
 /obj/item/wrench,
 /obj/item/assembly/infra,
@@ -519,7 +519,7 @@
 	dir = 1
 	},
 /turf/open/floor/iron/dark,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "bA" = (
 /obj/item/assembly/signaler,
 /obj/item/assembly/signaler,
@@ -533,7 +533,7 @@
 	},
 /obj/structure/table/reinforced,
 /turf/open/floor/iron/dark,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "bB" = (
 /obj/item/weldingtool/largetank{
 	pixel_y = 3
@@ -541,16 +541,16 @@
 /obj/item/multitool,
 /obj/structure/table/reinforced,
 /turf/open/floor/iron/dark,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "bC" = (
 /obj/structure/bed/roller,
 /obj/machinery/iv_drip,
 /obj/effect/turf_decal/bot_white,
 /turf/open/floor/iron/dark,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "bD" = (
 /turf/open/floor/iron/dark,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "bE" = (
 /obj/machinery/light{
 	dir = 8
@@ -558,7 +558,7 @@
 /turf/open/floor/iron/dark/smooth_half{
 	dir = 1
 	},
-/area/shuttle/syndicate/hallway)
+/area/shuttle/inteq/hallway)
 "bF" = (
 /obj/machinery/light{
 	dir = 4
@@ -566,25 +566,25 @@
 /turf/open/floor/iron/dark/smooth_half{
 	dir = 1
 	},
-/area/shuttle/syndicate/hallway)
+/area/shuttle/inteq/hallway)
 "bG" = (
 /turf/open/floor/iron/dark,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "bH" = (
 /turf/open/floor/iron/dark,
-/area/shuttle/syndicate/hallway)
+/area/shuttle/inteq/hallway)
 "bI" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},
 /turf/open/floor/iron/smooth,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "bJ" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
 /turf/open/floor/iron/smooth,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "bK" = (
 /obj/machinery/door/airlock/hatch{
 	req_access_txt = "150"
@@ -593,13 +593,13 @@
 	dir = 1
 	},
 /turf/open/floor/iron/smooth,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "bL" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
 /turf/open/floor/iron/smooth,
-/area/shuttle/syndicate/hallway)
+/area/shuttle/inteq/hallway)
 "bM" = (
 /obj/machinery/door/airlock/hatch{
 	req_access_txt = "150"
@@ -608,19 +608,19 @@
 	dir = 1
 	},
 /turf/open/floor/iron/smooth,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "bN" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
 /turf/open/floor/iron/smooth,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "bO" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},
 /turf/open/floor/iron/smooth,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "bQ" = (
 /obj/effect/turf_decal/bot_white,
 /obj/item/pickaxe/drill/diamonddrill,
@@ -630,38 +630,38 @@
 /obj/structure/closet/syndicate/inteq/personal,
 /obj/item/pda/syndicate,
 /turf/open/floor/iron/dark,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "bR" = (
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/item/reagent_containers/glass/beaker,
 /obj/item/reagent_containers/dropper,
 /turf/open/floor/iron/dark,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "bS" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
 	},
 /turf/open/floor/iron/smooth,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "bT" = (
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/iron/smooth,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "bU" = (
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/iron/smooth,
-/area/shuttle/syndicate/hallway)
+/area/shuttle/inteq/hallway)
 "bV" = (
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/iron/smooth,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "bW" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
 	},
 /turf/open/floor/iron/smooth,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "bY" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -671,7 +671,7 @@
 /obj/structure/table/reinforced,
 /obj/item/toy/plush/nukeplushie,
 /turf/open/floor/iron/dark,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "bZ" = (
 /obj/machinery/door/window{
 	dir = 1;
@@ -679,13 +679,13 @@
 	req_access_txt = "150"
 	},
 /turf/open/floor/iron/dark,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "ca" = (
 /obj/structure/window/reinforced{
 	dir = 1
 	},
 /turf/open/floor/iron/dark,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "cb" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -701,7 +701,7 @@
 	},
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/dark,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "cc" = (
 /obj/item/storage/firstaid/regular{
 	pixel_x = 3;
@@ -714,13 +714,13 @@
 	},
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/dark,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "ce" = (
 /obj/structure/table/reinforced,
 /obj/effect/landmark/start/nuclear_equipment,
 /obj/effect/landmark/start/nuclear_equipment,
 /turf/open/floor/iron/dark,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "cf" = (
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced{
@@ -735,13 +735,13 @@
 /obj/item/grenade/syndieminibomb,
 /obj/item/grenade/syndieminibomb,
 /turf/open/floor/iron/dark,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "cg" = (
 /obj/structure/window/reinforced{
 	dir = 1
 	},
 /turf/open/floor/iron/dark,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "ch" = (
 /obj/machinery/door/window{
 	dir = 1;
@@ -749,7 +749,7 @@
 	req_access_txt = "150"
 	},
 /turf/open/floor/iron/dark,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "ci" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -757,7 +757,7 @@
 /obj/structure/table/reinforced,
 /obj/item/aicard,
 /turf/open/floor/iron/dark,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "cj" = (
 /obj/item/surgicaldrill,
 /obj/item/circular_saw,
@@ -766,7 +766,7 @@
 	dir = 8
 	},
 /turf/open/floor/iron/dark,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "ck" = (
 /obj/structure/sink{
 	dir = 4;
@@ -776,35 +776,35 @@
 	pixel_x = 30
 	},
 /turf/open/floor/iron/dark,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "cl" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
-/area/shuttle/syndicate/hallway)
+/area/shuttle/inteq/hallway)
 "cn" = (
 /obj/machinery/light{
 	dir = 4
 	},
 /turf/open/floor/iron/dark,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "co" = (
 /obj/item/cautery,
 /obj/item/scalpel,
 /obj/structure/table/reinforced,
 /turf/open/floor/iron/dark/small,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "cp" = (
 /obj/structure/table/optable,
 /obj/item/surgical_drapes,
 /obj/effect/turf_decal/bot_white,
 /turf/open/floor/iron/dark/small,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "cq" = (
 /obj/item/retractor,
 /obj/item/hemostat,
 /obj/structure/table/reinforced,
 /turf/open/floor/iron/dark/small,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "cr" = (
 /obj/structure/shuttle/engine/heater,
 /obj/structure/window/reinforced{
@@ -812,17 +812,17 @@
 	},
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plating/airless,
-/area/shuttle/syndicate/hallway)
+/area/shuttle/inteq/hallway)
 "cs" = (
 /obj/machinery/recharge_station,
 /turf/open/floor/iron/dark/small,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "ct" = (
 /obj/machinery/telecomms/allinone{
 	intercept = 1
 	},
 /turf/open/floor/iron/dark/small,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "cu" = (
 /obj/structure/shuttle/engine/heater,
 /obj/structure/window/reinforced{
@@ -830,22 +830,22 @@
 	},
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plating/airless,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "cv" = (
 /obj/structure/shuttle/engine/propulsion/left,
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plating/airless,
-/area/shuttle/syndicate/hallway)
+/area/shuttle/inteq/hallway)
 "cw" = (
 /obj/structure/shuttle/engine/propulsion,
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plating/airless,
-/area/shuttle/syndicate/hallway)
+/area/shuttle/inteq/hallway)
 "cx" = (
 /obj/structure/shuttle/engine/propulsion/right,
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plating/airless,
-/area/shuttle/syndicate/hallway)
+/area/shuttle/inteq/hallway)
 "cy" = (
 /obj/structure/shuttle/engine/heater,
 /obj/structure/window/reinforced{
@@ -853,44 +853,44 @@
 	},
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plating/airless,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "cz" = (
 /obj/structure/shuttle/engine/propulsion/left,
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plating/airless,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "cA" = (
 /obj/structure/shuttle/engine/propulsion,
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plating/airless,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "cB" = (
 /obj/structure/shuttle/engine/propulsion/right,
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plating/airless,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "cE" = (
 /obj/structure/shuttle/engine/propulsion/left,
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plating/airless,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "cF" = (
 /obj/structure/shuttle/engine/propulsion,
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plating/airless,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "cG" = (
 /obj/structure/shuttle/engine/propulsion/right,
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plating/airless,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "dp" = (
 /obj/machinery/porta_turret/syndicate/shuttle{
 	faction = list("InteQ");
 	dir = 10
 	},
 /turf/closed/wall/r_wall/syndicate,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "ie" = (
 /obj/structure/sign/poster/contraband/inteq/inteq_recruitment{
 	pixel_x = -33
@@ -898,14 +898,14 @@
 /turf/open/floor/iron/dark/smooth_half{
 	dir = 1
 	},
-/area/shuttle/syndicate/hallway)
+/area/shuttle/inteq/hallway)
 "pd" = (
 /obj/machinery/porta_turret/syndicate/shuttle{
 	faction = list("InteQ");
 	dir = 5
 	},
 /turf/closed/wall/r_wall/syndicate,
-/area/shuttle/syndicate/bridge)
+/area/shuttle/inteq/bridge)
 "qf" = (
 /obj/structure/sign/poster/contraband/inteq/inteq_sign{
 	pixel_x = 33
@@ -913,46 +913,53 @@
 /turf/open/floor/iron/dark/smooth_half{
 	dir = 1
 	},
-/area/shuttle/syndicate/hallway)
+/area/shuttle/inteq/hallway)
 "qk" = (
 /obj/effect/turf_decal/bot_white,
 /obj/vehicle/ridden/atv/snowmobile,
 /obj/item/key,
 /turf/open/floor/iron/dark/small,
-/area/shuttle/syndicate/airlock)
+/area/shuttle/inteq/airlock)
+"qN" = (
+/obj/machinery/porta_turret/syndicate/shuttle{
+	faction = list("InteQ");
+	dir = 5
+	},
+/turf/closed/wall/r_wall/syndicate,
+/area/shuttle/inteq/airlock)
 "tb" = (
 /obj/structure/grille,
 /obj/structure/window/plastitanium,
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 "us" = (
 /obj/structure/grille,
 /obj/structure/window/plastitanium,
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "vv" = (
 /obj/effect/turf_decal/bot_white,
 /obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/iron/dark/small,
-/area/shuttle/syndicate/eva)
+/area/shuttle/inteq/eva)
 "In" = (
 /obj/machinery/porta_turret/syndicate/shuttle{
 	faction = list("InteQ");
 	dir = 6
 	},
 /turf/closed/wall/r_wall/syndicate,
-/area/shuttle/syndicate/hallway)
+/area/shuttle/inteq/hallway)
 "MJ" = (
 /obj/machinery/porta_turret/syndicate/shuttle{
 	faction = list("InteQ");
 	dir = 6
 	},
 /turf/closed/wall/r_wall/syndicate,
-/area/shuttle/syndicate/medical)
+/area/shuttle/inteq/medical)
 "Sz" = (
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/iron/dark,
-/area/shuttle/syndicate/armory)
+/area/shuttle/inteq/armory)
 
 (1,1,1) = {"
 aa
@@ -1212,8 +1219,8 @@ at
 ac
 af
 af
-af
-af
+aB
+aB
 aB
 aB
 bb
@@ -1337,7 +1344,7 @@ aa
 aa
 aa
 aa
-aF
+qN
 aB
 aB
 aY

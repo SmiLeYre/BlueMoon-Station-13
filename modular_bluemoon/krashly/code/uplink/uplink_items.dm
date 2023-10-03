@@ -4,14 +4,14 @@
 
 /datum/uplink_item/inteq/poster
 	name = "Propaganda poster"
-	desc = "Let them know who is the boss!"
+	desc = "Пусть они знают, кто здесь Босс!"
 	item = /obj/item/poster/random_inteq
 	cost = 1
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 
 /datum/uplink_item/inteq/clothes_box
 	name = "InteQ Starter Pack"
-	desc = "A box with a full set of clothes and armor designed by InteQ. Murderous drip."
+	desc = "Полная одежды и брони, коробка, являющаяся брендом ЧВК InteQ. Убийственный дрип."
 	item = /obj/item/storage/box/inteq_box/inteq_clothes
 	cost = 4
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
@@ -27,14 +27,14 @@
 
 /datum/uplink_item/suits/hardsuit/elite // Traitor ELITE EXPENSIVE hardsuit, not for the nuke ops
 	name = "Elite InteQ Hardsuit"
-	desc = "The latest InteQ developments in the field of Hardsuits. MORE ARMOOOOOR!!!"
+	desc = "Последний разработки ЧВК InteQ в сфере Хардсьюитов. БОЛЬШЕ БРОНИИИИИ!!!"
 	item = /obj/item/clothing/suit/space/hardsuit/syndi/elite/inteq
 	cost = 16
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
 
 /datum/uplink_item/inteq/ak12
 	name = "AK-12 Automatic Assault Rifle"
-	desc = "The stolen blueprints from the NRI helped us a lot to release our small modification for the AK-12. Use it."
+	desc = "Чертежы что мы выкрали у НРИ, помогли создать нам свою собственную небольшую модификацию АК-12. Пользуйся."
 	item = /obj/item/gun/ballistic/automatic/ak12
 	cost = 22
 	purchasable_from = (UPLINK_NUKE_OPS)

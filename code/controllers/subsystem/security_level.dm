@@ -56,7 +56,7 @@ SUBSYSTEM_DEF(security_level)
 				if(C)
 					C.post_status("alert", "bluealert")
 				unset_stationwide_emergency_lighting()
-				sound_to_playing_players('sound/misc/alerts/voybluealert.ogg', volume = 50) // Citadel change - Makes alerts play a sound
+				sound_to_playing_players('sound/misc/alerts/voybluealert.ogg', volume = 50)
 				for(var/obj/machinery/firealarm/FA in GLOB.machines)
 					if(is_station_level(FA.z))
 						FA.update_icon()
@@ -78,7 +78,7 @@ SUBSYSTEM_DEF(security_level)
 				if(C)
 					C.post_status("alert", "orangealert")
 				unset_stationwide_emergency_lighting()
-				sound_to_playing_players('sound/misc/alerts/orange.ogg', volume = 50) // Citadel change - Makes alerts play a sound
+				sound_to_playing_players('sound/misc/alerts/orange.ogg', volume = 50)
 				for(var/obj/machinery/firealarm/FA in GLOB.machines)
 					if(is_station_level(FA.z))
 						FA.update_icon()
@@ -100,7 +100,7 @@ SUBSYSTEM_DEF(security_level)
 				if(C)
 					C.post_status("alert", "violetalert")
 				unset_stationwide_emergency_lighting()
-				sound_to_playing_players('sound/misc/alerts/violet.ogg', volume = 50) // Citadel change - Makes alerts play a sound
+				sound_to_playing_players('sound/misc/alerts/violet.ogg', volume = 50)
 				for(var/obj/machinery/firealarm/FA in GLOB.machines)
 					if(is_station_level(FA.z))
 						FA.update_icon()
@@ -122,7 +122,7 @@ SUBSYSTEM_DEF(security_level)
 				if(C)
 					C.post_status("alert", "amberalert")
 				unset_stationwide_emergency_lighting()
-				sound_to_playing_players('sound/misc/alerts/amber.ogg', volume = 50) // Citadel change - Makes alerts play a sound
+				sound_to_playing_players('sound/misc/alerts/amber.ogg', volume = 50)
 				for(var/obj/machinery/firealarm/FA in GLOB.machines)
 					if(is_station_level(FA.z))
 						FA.update_icon()
@@ -139,91 +139,33 @@ SUBSYSTEM_DEF(security_level)
 							SSshuttle.emergency.modTimer(0.625)
 				else
 					minor_announce(CONFIG_GET(string/alert_red_downto), "Внимание! Код - КРАСНЫЙ!")
+				unset_stationwide_emergency_lighting()
+				sound_to_playing_players('sound/misc/alerts/red.ogg', volume = 50)
 				GLOB.security_level = SEC_LEVEL_RED
 				var/obj/machinery/computer/communications/C = locate() in GLOB.machines
 				if(C)
 					C.post_status("alert", "redalert")
-				for(var/mob/M in GLOB.player_list)
-					var/turf/T = get_turf(M)
-					if(!M.client || !is_station_level(T.z))
-						continue
-					SEND_SOUND(M, sound('sound/effects/powerloss.ogg'))
-				addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(set_stationwide_emergency_lighting)), 1.5 SECONDS)
-				sound_to_playing_players('sound/misc/alerts/red.ogg', volume = 50) // Citadel change - Makes alerts play a sound
 				for(var/obj/machinery/firealarm/FA in GLOB.machines)
 					if(is_station_level(FA.z))
 						FA.update_icon()
 
 			if(SEC_LEVEL_LAMBDA)
-				minor_announce(CONFIG_GET(string/alert_lambda), "Внимание! КОД - ЛЯМБДА!",1)
-				if(SSshuttle.emergency.mode == SHUTTLE_CALL || SSshuttle.emergency.mode == SHUTTLE_RECALL)
-					if(GLOB.security_level < SEC_LEVEL_BLUE)
-						SSshuttle.emergency.modTimer(0.25)
-					else if(GLOB.security_level == SEC_LEVEL_BLUE)
-						SSshuttle.emergency.modTimer(0.416)
-					else
-						SSshuttle.emergency.modTimer(0.625)
-				GLOB.security_level = SEC_LEVEL_LAMBDA
-				var/obj/machinery/computer/communications/C = locate() in GLOB.machines
-				if(C)
-					C.post_status("alert", "lambdaalert")
-				for(var/mob/M in GLOB.player_list)
-					var/turf/T = get_turf(M)
-					if(!M.client || !is_station_level(T.z))
-						continue
-					SEND_SOUND(M, sound('sound/effects/powerloss.ogg'))
-				addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(set_stationwide_emergency_lighting)), 1.5 SECONDS)
-				sound_to_playing_players('modular_bluemoon/kovac_shitcode/sound/lambda_code.ogg') // Citadel change - Makes alerts play a sound
-				INVOKE_ASYNC(src, .proc/move_shuttle)
-
-				for(var/obj/machinery/firealarm/FA in GLOB.machines)
-					if(is_station_level(FA.z))
-						FA.update_icon()
-				for(var/obj/machinery/computer/shuttle/pod/pod in GLOB.machines)
-					pod.admin_controlled = FALSE
-
-			if(SEC_LEVEL_EPSILON)
-				for(var/mob/M in GLOB.player_list)
-					var/turf/T = get_turf(M)
-					if(!M.client || !is_station_level(T.z))
-						continue
-					SEND_SOUND(M, sound('sound/effects/powerloss.ogg'))
-				addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(set_stationwide_emergency_lighting)), 1.5 SECONDS)
-				addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(epsilon_process)), 15 SECONDS)
-				for(var/obj/machinery/firealarm/FA in GLOB.machines)
-					if(is_station_level(FA.z))
-						FA.update_icon()
+				set_stationwide_emergency_lighting()
+				addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(lambda_process)), 10 SECONDS)
 				INVOKE_ASYNC(src, .proc/move_shuttle)
 				SSblackbox.record_feedback("tally", "security_level_changes", 1, NUM2SECLEVEL(GLOB.security_level))
-				return
+
+			if(SEC_LEVEL_EPSILON)
+				set_stationwide_emergency_lighting()
+				addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(epsilon_process)), 10 SECONDS)
+				INVOKE_ASYNC(src, .proc/move_shuttle)
+				SSblackbox.record_feedback("tally", "security_level_changes", 1, NUM2SECLEVEL(GLOB.security_level))
 
 			if(SEC_LEVEL_DELTA)
-				minor_announce(CONFIG_GET(string/alert_delta), "Тревога! КОД - ДЕЛЬТА!",1)
-				GLOB.security_level = SEC_LEVEL_DELTA
-				var/obj/machinery/computer/communications/C = locate() in GLOB.machines
-				if(C)
-					C.post_status("alert", "deltaalert")
+				set_stationwide_emergency_lighting()
+				addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(delta_process)), 10 SECONDS)
+				SSblackbox.record_feedback("tally", "security_level_changes", 1, NUM2SECLEVEL(GLOB.security_level))
 
-				if(SSshuttle.emergency.mode == SHUTTLE_CALL || SSshuttle.emergency.mode == SHUTTLE_RECALL)
-					if(GLOB.security_level < SEC_LEVEL_BLUE)
-						SSshuttle.emergency.modTimer(0.25)
-					else if(GLOB.security_level == SEC_LEVEL_BLUE)
-						SSshuttle.emergency.modTimer(0.416)
-					else
-						SSshuttle.emergency.modTimer(0.625)
-
-				for(var/mob/M in GLOB.player_list)
-					var/turf/T = get_turf(M)
-					if(!M.client || !is_station_level(T.z))
-						continue
-					SEND_SOUND(M, sound('sound/effects/powerloss.ogg'))
-				addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(set_stationwide_emergency_lighting)), 1.5 SECONDS)
-				sound_to_playing_players('sound/misc/alerts/delta.ogg')
-				for(var/obj/machinery/firealarm/FA in GLOB.machines)
-					if(is_station_level(FA.z))
-						FA.update_icon()
-				for(var/obj/machinery/computer/shuttle/pod/pod in GLOB.machines)
-					pod.admin_controlled = FALSE
 		if(new_level >= SEC_LEVEL_RED)
 			for(var/obj/machinery/door/D in GLOB.machines)
 				if(D.red_alert_access)
@@ -258,13 +200,18 @@ SUBSYSTEM_DEF(security_level)
 		make_maint_all_access()
 
 /proc/set_stationwide_emergency_lighting()
+	for(var/mob/M in GLOB.player_list)
+		var/turf/T = get_turf(M)
+		if(!M.client || !is_station_level(T.z))
+			continue
+		SEND_SOUND(M, sound('sound/effects/powerloss.ogg'))
 	for(var/obj/machinery/power/apc/A in GLOB.apcs_list)
 		var/area/AR = get_area(A)
 		if(!is_station_level(A.z))
 			continue
 		A.emergency_lights = FALSE
 		AR.area_emergency_mode = TRUE
-		A.update()
+		INVOKE_ASYNC(A, TYPE_PROC_REF(/obj/machinery/power/apc, update), FALSE)
 	for(var/area/A as anything in GLOB.sortedAreas)
 		if(!is_station_level(A.z))
 			continue
@@ -300,20 +247,55 @@ SUBSYSTEM_DEF(security_level)
 			continue
 		A.emergency_lights = TRUE
 		AR.area_emergency_mode = FALSE
-		A.update()
+		INVOKE_ASYNC(A, TYPE_PROC_REF(/obj/machinery/power/apc, update), FALSE)
 
 /proc/epsilon_process()
-	minor_announce(CONFIG_GET(string/alert_epsilon), "Внимание! КОД - ЭПСИЛОН!",1)
+	minor_announce(CONFIG_GET(string/alert_epsilon), "Внимание! Код - ЭПСИЛОН!")
+	sound_to_playing_players('sound/misc/alerts/epsilon.ogg')
 	GLOB.security_level = SEC_LEVEL_EPSILON
+	for(var/obj/machinery/firealarm/FA in GLOB.machines)
+		if(is_station_level(FA.z))
+			FA.update_icon()
 	var/obj/machinery/computer/communications/C = locate() in GLOB.machines
 	if(C)
 		C.post_status("alert", "epsilonalert")
-	sound_to_playing_players('sound/misc/alerts/epsilon.ogg')
-	for(var/area/A as anything in GLOB.sortedAreas)
-		if(!is_station_level(A.z))
-			continue
-		for(var/obj/machinery/light/L in A)
-			if(L.status)
-				continue
-			L.fire_mode = TRUE
-			L.update()
+
+/proc/lambda_process()
+	minor_announce(CONFIG_GET(string/alert_lambda), "Внимание! Код - ЛЯМБДА!")
+	sound_to_playing_players('modular_bluemoon/kovac_shitcode/sound/lambda_code.ogg')
+	GLOB.security_level = SEC_LEVEL_LAMBDA
+	for(var/obj/machinery/firealarm/FA in GLOB.machines)
+		if(is_station_level(FA.z))
+			FA.update_icon()
+	for(var/obj/machinery/computer/shuttle/pod/pod in GLOB.machines)
+		pod.admin_controlled = FALSE
+	if(SSshuttle.emergency.mode == SHUTTLE_CALL || SSshuttle.emergency.mode == SHUTTLE_RECALL)
+		if(GLOB.security_level < SEC_LEVEL_BLUE)
+			SSshuttle.emergency.modTimer(0.25)
+		else if(GLOB.security_level == SEC_LEVEL_BLUE)
+			SSshuttle.emergency.modTimer(0.416)
+		else
+			SSshuttle.emergency.modTimer(0.625)
+	var/obj/machinery/computer/communications/C = locate() in GLOB.machines
+	if(C)
+		C.post_status("alert", "lambdaalert")
+
+/proc/delta_process()
+	minor_announce(CONFIG_GET(string/alert_delta), "Тревога! Код - ДЕЛЬТА!")
+	sound_to_playing_players('sound/misc/alerts/delta.ogg')
+	GLOB.security_level = SEC_LEVEL_DELTA
+	for(var/obj/machinery/firealarm/FA in GLOB.machines)
+		if(is_station_level(FA.z))
+			FA.update_icon()
+	var/obj/machinery/computer/communications/C = locate() in GLOB.machines
+	if(C)
+		C.post_status("alert", "deltaalert")
+	if(SSshuttle.emergency.mode == SHUTTLE_CALL || SSshuttle.emergency.mode == SHUTTLE_RECALL)
+		if(GLOB.security_level < SEC_LEVEL_BLUE)
+			SSshuttle.emergency.modTimer(0.25)
+		else if(GLOB.security_level == SEC_LEVEL_BLUE)
+			SSshuttle.emergency.modTimer(0.416)
+		else
+			SSshuttle.emergency.modTimer(0.625)
+	for(var/obj/machinery/computer/shuttle/pod/pod in GLOB.machines)
+		pod.admin_controlled = FALSE

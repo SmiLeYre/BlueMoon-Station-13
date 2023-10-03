@@ -122,7 +122,7 @@
 
 	last_announcement = message
 
-	var/voxType = input(src, "Which VOX to use?", "VOX-type") in list("male", "female", "military")
+	var/voxType = input(src, "Which VOX to use?", "VOX-type") in list("male", "female", "military", "alliance")
 
 	if(!message || announcing_vox > world.time)
 		return
@@ -151,6 +151,8 @@
 			incorrect_words += word
 		if(!GLOB.vox_sounds_military[word] && voxType == "military")
 			incorrect_words += word
+		if(!GLOB.vox_sounds_alliance[word] && voxType == "alliance")
+			incorrect_words += word
 
 	if(incorrect_words.len)
 		to_chat(src, "<span class='notice'>These words are not available on the announcement system: [english_list(incorrect_words)].</span>")
@@ -168,7 +170,7 @@
 
 	word = lowertext(word)
 
-	if( (GLOB.vox_sounds[word] && voxType == "female") || (GLOB.vox_sounds_male[word] && voxType == "male") || (GLOB.vox_sounds_military[word] && voxType == "military"))
+	if( (GLOB.vox_sounds[word] && voxType == "female") || (GLOB.vox_sounds_male[word] && voxType == "male") || (GLOB.vox_sounds_military[word] && voxType == "military") ||  (GLOB.vox_sounds_alliance[word] && voxType == "alliance"))
 
 		var/sound_file
 
@@ -176,6 +178,8 @@
 			sound_file = GLOB.vox_sounds[word]
 		else if (voxType == "military")
 			sound_file = GLOB.vox_sounds_military[word]
+		else if (voxType == "alliance")
+			sound_file = GLOB.vox_sounds_alliance[word]
 		else
 			sound_file = GLOB.vox_sounds_male[word]
 		var/sound/voice = sound(sound_file, wait = 1, channel = CHANNEL_VOX)

@@ -100,7 +100,7 @@
 		return
 	T.assume_air_moles(tank.air_contents, gasperfist * fisto_setting)
 	T.air_update_turf()
-	target.apply_damage(totalitemdamage * fisto_setting, BRUTE, wound_bonus = -25*fisto_setting**2)
+	target.apply_damage(totalitemdamage * fisto_setting, BRUTE, wound_bonus = -5*fisto_setting**2)
 	target.visible_message("<span class='danger'>[user]'s powerfist lets out a loud hiss as [user.ru_who()] punch[user.p_es()] [target.name]!</span>", \
 		"<span class='userdanger'>You cry out in pain as [user]'s punch flings you backwards!</span>")
 	new /obj/effect/temp_visual/kinetic_blast(target.loc)

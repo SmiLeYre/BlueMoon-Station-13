@@ -2,6 +2,8 @@
 
 /obj/item/organ/lungs
 	name = "lungs"
+	ru_name = "лёгкие"
+	ru_name_capital = "Лёгкие"
 	desc = "Looking at them makes you start manual breathing."
 	icon_state = "lungs"
 	zone = BODY_ZONE_CHEST

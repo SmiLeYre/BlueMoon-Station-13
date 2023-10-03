@@ -2,7 +2,7 @@
 	name = "InteQ Sledgehammer Mutant"
 	typepath = /datum/round_event/gigachad_inteq
 	max_occurrences = 2
-	weight = 30
+	weight = 15
 	category = EVENT_CATEGORY_ENTITIES
 
 /datum/round_event/gigachad_inteq/announce(fake)

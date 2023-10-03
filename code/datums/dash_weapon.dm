@@ -3,6 +3,7 @@
 	desc = "Teleport to the targeted location."
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
 	button_icon_state = "jetboot"
+	background_icon_state = "background_green"
 	var/current_charges = 1
 	var/max_charges = 1
 	var/charge_rate = 250

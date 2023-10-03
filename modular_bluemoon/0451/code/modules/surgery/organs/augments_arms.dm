@@ -12,6 +12,7 @@
 	. = ..()
 	if(obj_flags & EMAGGED)
 		return
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	obj_flags |= EMAGGED
 	to_chat(usr, "<span class='notice'>You unlock [src]'s energy blade!</span>")
 	items_list += new /obj/item/melee/implantarmblade/energy(src)

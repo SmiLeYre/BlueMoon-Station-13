@@ -95,7 +95,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 /obj/item/radio/headset/syndicate/alt //undisguised bowman with flash protection
 	name = "Syndicate Headset"
-	desc = "Боевые наушники Синдиката, способные прослушивать рацию всех ближайших используемых диапазонов. Защищает глаза от резких вспышек."
+	desc = "Боевые наушники Синдиката, способные прослушивать рацию всех ближайших используемых диапазонов. Защищает уши от громких звуков."
 	icon_state = "syndie_headset"
 	item_state = "syndie_headset"
 	bowman = TRUE
@@ -118,7 +118,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 /obj/item/radio/headset/inteq/alt //undisguised bowman with flash protection
 	name = "InteQ Headset"
-	desc = "Боевые наушники InteQ, способные прослушивать рацию всех ближайших используемых диапазонов. Защищает глаза от резких вспышек."
+	desc = "Боевые наушники InteQ, способные прослушивать рацию всех ближайших используемых диапазонов. Защищает уши от громких звуков."
 	icon_state = "inteq_headset_alt"
 	item_state = "inteq_headset_alt"
 	//freqlock = TRUE

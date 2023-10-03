@@ -22,7 +22,6 @@
 	if(!allowed(usr))
 		to_chat(usr, "<span class='danger'>Access denied.</span>")
 		return
-
 	switch(action)
 		if("move")
 			if(istype(src, /obj/machinery/computer/shuttle/syndicate/drop_pod))
@@ -34,13 +33,12 @@
 				to_chat(usr, "<span class='warning'>You've issued a combat challenge to the station! You've got to give them at least [DisplayTimeText(SYNDICATE_CHALLENGE_TIMER - world.time)] more to allow them to prepare.</span>")
 				return
 			board.moved = TRUE
-
-			for(var/mob/M in GLOB.player_list)
-				if(musiclimit >= 1)
-					return
-				SEND_SOUND(M, sound('modular_bluemoon/SmiLeY/sounds/Nuclear_Operations.ogg'))
-				musiclimit++
-
+			if(board?.challenge && board.moved == TRUE)
+				for(var/mob/M in GLOB.player_list)
+					if(musiclimit >= 1)
+						return
+					SEND_SOUND(M, sound('modular_bluemoon/SmiLeY/sounds/Nuclear_Operations.ogg'))
+					musiclimit++
 	return ..()
 
 /obj/machinery/computer/shuttle/syndicate/recall

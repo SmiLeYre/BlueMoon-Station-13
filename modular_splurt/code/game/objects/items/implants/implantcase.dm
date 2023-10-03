@@ -6,5 +6,6 @@
 			to_chat(user, "<span class='warning'>[src] has no functional safeties to emag.</span>")
 			return
 		to_chat(user, "<span class='notice'>You short out [src]'s safeties.</span>")
+		log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 		name = "implant case - 'Genital Fluid (Hacked)'"
 		I.emag_act()

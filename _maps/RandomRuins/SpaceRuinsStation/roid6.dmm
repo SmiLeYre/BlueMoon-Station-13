@@ -57,6 +57,10 @@
 "J" = (
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space)
+"L" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space)
 "O" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
@@ -80,6 +84,7 @@
 /obj/item/shard{
 	icon_state = "medium"
 	},
+/obj/structure/salvage/computer,
 /turf/open/floor/plating{
 	icon_state = "platingdmg2"
 	},
@@ -191,7 +196,7 @@ q
 W
 U
 U
-J
+L
 v
 "}
 (7,1,1) = {"

@@ -39,7 +39,7 @@
 	else
 		if(!resting)
 			set_resting(TRUE, FALSE)
-			to_chat(src, "<span class='notice'>You are now laying down.</span>")
+			to_chat(src, "<span class='notice'>Вы ложитесь.</span>")
 		else
 			resist_a_rest()
 

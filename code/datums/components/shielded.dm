@@ -53,6 +53,7 @@
 
 /datum/component/shielded/UnregisterFromParent()
 	. = ..()
+	STOP_PROCESSING(SSdcs, src)
 	if(parent != holder) //not a mob, thus an item.
 		UnregisterSignal(parent, list(COMSIG_ITEM_RUN_BLOCK,COMSIG_ITEM_CHECK_BLOCK,COMSIG_ITEM_EQUIPPED,COMSIG_ITEM_DROPPED))
 	if(holder)

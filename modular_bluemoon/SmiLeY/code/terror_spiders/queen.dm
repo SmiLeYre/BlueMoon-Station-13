@@ -296,6 +296,7 @@
 		return
 	canlay -= numlings
 	eggslaid += numlings
+	playsound(src.loc, 'sound/creatures/terrorspiders/web.ogg', 50, 1)
 	switch(eggtype)
 		if(TS_DESC_KNIGHT)
 			DoLayTerrorEggs(/mob/living/simple_animal/hostile/poison/terror_spider/knight, numlings)
@@ -351,7 +352,7 @@
 	playsound(src.loc, 'sound/creatures/terrorspiders/queen_shriek.ogg', 100, 1)
 	for(var/obj/machinery/light/L in orange(light_range, src))
 		if(L.on && prob(light_chance))
-			L.break_light_tube()
+			INVOKE_ASYNC(L, TYPE_PROC_REF(/obj/machinery/light, break_light_tube))
 	for(var/obj/machinery/camera/C in orange(camera_range, src))
 		if(C.status && prob(camera_chance))
 			C.toggle_cam(src, 0)

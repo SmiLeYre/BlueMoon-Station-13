@@ -66,6 +66,19 @@
 /obj/structure/closet/cardboard/handle_lock_removal()
 	return
 
+/obj/structure/closet/cardboard/after_close(mob/living/toucher) //damn felinids in my box again!
+	. = ..()
+	for(var/mob/living/carbon/H in contents)
+		if(iscatperson(H))
+			to_chat(H, "<span class = 'notice'>Surprisingly, it feels quite comfortable here...</span>")
+		while(iscatperson(H) && !opened && H.loc == src)
+			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "hide_in_box", /datum/mood_event/hide_in_box)
+			if(prob(50))
+				H.emote("purr")
+			if(prob(50))
+				to_chat(H, "<span class = 'notice'>[pick("Awww~ So comfy~", "I could sleep here if I wanted to...","My little shelter from this cruel world.","I'm feeling safe inside.")]</span>")
+			sleep(8 SECONDS)
+
 /obj/structure/closet/cardboard/metal
 	name = "large metal box"
 	desc = "THE COWARDS! THE FOOLS!"

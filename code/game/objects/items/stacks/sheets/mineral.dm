@@ -266,6 +266,9 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
 	material_type = /datum/material/bananium
 	walltype = /turf/closed/wall/mineral/bananium
 
+/obj/item/stack/sheet/mineral/bananium/fifty
+	amount = 50
+
 GLOBAL_LIST_INIT(bananium_recipes, list ( \
 	new/datum/stack_recipe("bananium tile", /obj/item/stack/tile/mineral/bananium, 1, 4, 20), \
 	new/datum/stack_recipe("hilarious ingot", /obj/item/ingot/bananium, 6, time = 100), \
@@ -425,6 +428,9 @@ GLOBAL_LIST_INIT(snow_recipes, list ( \
 	sheettype = "abductor"
 	merge_type = /obj/item/stack/sheet/mineral/abductor
 	walltype = /turf/closed/wall/mineral/abductor
+
+/obj/item/stack/sheet/mineral/abductor/fifty
+	amount = 50
 
 GLOBAL_LIST_INIT(abductor_recipes, list ( \
 	new/datum/stack_recipe("alien bed", /obj/structure/bed/abductor, 2, one_per_turf = 1, on_floor = 1), \

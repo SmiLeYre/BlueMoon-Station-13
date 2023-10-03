@@ -34,8 +34,8 @@
 		"yellow" = rgb(255, 165, 0)
 	)
 
-	wound_bonus = -10
-	bare_wound_bonus = 5
+	wound_bonus = 5
+	bare_wound_bonus = 9
 
 /obj/item/screwdriver/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] is stabbing [src] into [user.ru_ego()] [pick("temple", "heart")]! It looks like [user.p_theyre()] trying to commit suicide!</span>")

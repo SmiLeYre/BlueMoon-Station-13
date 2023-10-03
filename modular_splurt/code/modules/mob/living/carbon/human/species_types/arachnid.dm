@@ -28,8 +28,8 @@
 	var/nutrition_threshold = NUTRITION_LEVEL_FED
 	if (H.nutrition >= nutrition_threshold)
 		to_chat(H, "<i>You begin spinning some web...</i>")
-		if(!do_after(H, 10 SECONDS, 1, T))
-			to_chat(H, "<span class='warning'>Your web spinning was interrupted!</span>")
+		if(!do_after(H, 10 SECONDS, T))
+			to_chat(H, span_warning("Your web spinning was interrupted!"))
 			return
 		H.adjust_nutrition(-spinner_rate)
 		addtimer(VARSET_CALLBACK(src, web_ready, TRUE), web_cooldown)
@@ -85,9 +85,9 @@
 				if(response == "No")
 					to_chat(H, "<span class='warning'>[L] resists your attempts to wrap [L.ru_na()]!</span>")
 					return
-		H.visible_message("<span class='danger'>[H] starts to wrap [A] into a cocoon!</span>","<span class='warning'>You start to wrap [A] into a cocoon.</span>")
-		if(!do_after(H, 10 SECONDS, 1, A))
-			to_chat(H, "<span class='warning'>Your web spinning was interrupted!</span>")
+		H.visible_message(span_danger("[H] starts to wrap [A] into a cocoon!"),span_warning("You start to wrap [A] into a cocoon."))
+		if(!do_after(H, 10 SECONDS, A))
+			to_chat(H, span_warning("Your web spinning was interrupted!"))
 			return
 		H.adjust_nutrition(spinner_rate * -3)
 		var/obj/structure/arachnid/cocoon/C = new(A.loc)

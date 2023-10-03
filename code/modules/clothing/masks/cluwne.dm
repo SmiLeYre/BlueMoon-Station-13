@@ -96,11 +96,11 @@
 			H.dropItemToGround(src)
 			H.cluwneify()
 			qdel(src)
-		/*else if(is_very_cursed && can_cluwne)
+		else if(is_very_cursed && can_cluwne)
 			var/turf/T = get_turf(src)
 			var/mob/living/simple_animal/hostile/floor_cluwne/S = new(T)
 			S.Acquire_Victim(user)
 			log_admin("[key_name(user)] summoned a floor cluwne using the [src]")
 			message_admins("[key_name(user)] summoned a floor cluwne using the [src]")
-			to_chat(H, "<span class='warning'>The mask suddenly slips off your face and... slides under the floor?</span>")*/
+			to_chat(H, "<span class='warning'>The mask suddenly slips off your face and... slides under the floor?</span>")
 	to_chat(H, "<i>...dneirf uoy ot gnoleb ton seod tahT</i>")

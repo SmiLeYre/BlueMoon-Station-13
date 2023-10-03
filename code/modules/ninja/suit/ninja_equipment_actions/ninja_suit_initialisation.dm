@@ -8,7 +8,7 @@ GLOBAL_LIST_INIT(ninja_initialize_messages, list(
 	"Now initializing...",
 	"Securing external locking mechanism...\nNeural-net established.",
 	"Extending neural-net interface...\nNow monitoring brain wave pattern...",
-	"Linking neural-net interface...\nPattern <b class='nicegreen'>GREEN</b>, continuing operation.",
+	"Linking neural-net interface...\nStatus <b class='nicegreen'>LINKED</b>, continuing operation.",
 	"VOID-shift device status: <B>ONLINE</B>.\nCLOAK-tech device status: <B>ONLINE</B>.",
 	"Primary system status: <B>ONLINE</B>.\nBackup system status: <B>ONLINE</B>.\nCurrent energy capacity: ",
 	"All systems operational. Welcome to <B>SpiderOS</B>, "
@@ -26,6 +26,7 @@ GLOBAL_LIST_INIT(ninja_deinitialize_messages, list(
 
 /datum/action/item_action/initialize_ninja_suit
 	name = "Toggle Ninja Suit"
+	background_icon_state = "background_green"
 
 /**
  * Toggles the ninja suit on/off
@@ -77,7 +78,8 @@ GLOBAL_LIST_INIT(ninja_deinitialize_messages, list(
 			s_busy = FALSE
 
 	to_chat(ninja, "<span class='notice'>[message]</span>")
-	playsound(ninja, 'sound/effects/sparks1.ogg', 10, TRUE)
+	playsound(ninja, 'sound/effects/sparks1.ogg', 25, TRUE)
+	playsound(ninja, 'sound/mecha/mechmove03.ogg', 15, TRUE)
 
 	if (phase < NINJA_COMPLETE_PHASE)
 		addtimer(CALLBACK(src, .proc/ninitialize, delay, ninja, phase + 1), delay)

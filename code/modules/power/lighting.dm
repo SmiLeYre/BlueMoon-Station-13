@@ -194,7 +194,7 @@
 	var/on = FALSE					// 1 if on, 0 if off
 	var/on_gs = FALSE
 	var/static_power_used = 0
-	var/brightness = 9			// luminosity when on, also used in power calculation
+	var/brightness = 8			// luminosity when on, also used in power calculation
 	var/bulb_power = 0.75			// basically the alpha of the emitted light source
 	var/bulb_colour = "#cae2fa"	// befault colour of the light.
 	var/status = LIGHT_OK		// LIGHT_OK, _EMPTY, _BURNED or _BROKEN
@@ -220,7 +220,7 @@
 	var/no_emergency = FALSE	// if true, this light cannot ever have an emergency mode
 
 	var/bulb_emergency_brightness_mul = 0.25	// multiplier for this light's base brightness in emergency power mode
-	var/bulb_emergency_colour = "#ff2323"	// determines the colour of the light while it's in emergency mode
+	var/bulb_emergency_colour = "#ff4e4e"	// determines the colour of the light while it's in emergency mode
 	var/bulb_emergency_pow_mul = 0.75	// the multiplier for determining the light's power in emergency mode
 	var/bulb_emergency_pow_min = 0.5	// the minimum value for the light's power in emergency mode
 	var/hijacked = FALSE	// if true, the light is in a hijacked area
@@ -328,7 +328,6 @@
 	var/area/A = get_area(src)
 	if(A)
 		on = FALSE
-//		A.update_lights()
 	QDEL_NULL(cell)
 	return ..()
 
@@ -395,6 +394,7 @@
 			else
 				use_power = ACTIVE_POWER_USE
 				set_light(BR, PO, CO)
+				playsound(src.loc, 'sound/ambience/light_on.ogg', 65, 1)
 	else if(has_emergency_power(LIGHT_EMERGENCY_POWER_USE) && !turned_off())
 		use_power = IDLE_POWER_USE
 		emergency_mode = TRUE
@@ -426,8 +426,8 @@
 		if (cell.charge == cell.maxcharge)
 			return PROCESS_KILL
 		cell.charge = min(cell.maxcharge, cell.charge + LIGHT_EMERGENCY_POWER_USE) //Recharge emergency power automatically while not using it
-//	if(emergency_mode && !use_emergency_power(LIGHT_EMERGENCY_POWER_USE))
-//		update(FALSE) //Disables emergency mode and sets the color to normal
+	if(emergency_mode && use_emergency_power(LIGHT_EMERGENCY_POWER_USE))
+		update() //Disables emergency mode and sets the color to normal
 
 /obj/machinery/light/proc/burn_out()
 	if(status == LIGHT_OK)
@@ -700,7 +700,7 @@
 	L.switchcount = switchcount
 	switchcount = 0
 
-	L.update()
+	INVOKE_ASYNC(L, TYPE_PROC_REF(/obj/machinery/light, update))
 	L.forceMove(loc)
 
 	if(user) //puts it in our active hand
@@ -915,6 +915,210 @@
 			if(L.status)
 				continue
 			L.fire_mode = FALSE
-			L.update()
+			INVOKE_ASYNC(L, TYPE_PROC_REF(/obj/machinery/light, update))
 	if(current_apc)
 		RegisterSignal(current_area, COMSIG_AREA_POWER_CHANGE, PROC_REF(update), override = TRUE)
+
+/obj/machinery/light/broken
+	status = LIGHT_BROKEN
+	icon_state = "tube-broken"
+
+/obj/machinery/light/built
+	icon_state = "tube-empty"
+	start_with_cell = FALSE
+	status = LIGHT_EMPTY
+
+/obj/machinery/light/no_nightlight
+	nightshift_enabled = FALSE
+
+/obj/machinery/light/warm
+	bulb_colour = "#fae5c1"
+
+/obj/machinery/light/warm/no_nightlight
+	nightshift_allowed = FALSE
+
+/obj/machinery/light/warm/dim
+	nightshift_allowed = FALSE
+	bulb_power = 0.6
+
+/obj/machinery/light/cold
+	bulb_colour = LIGHT_COLOR_FAINT_BLUE
+	nightshift_light_color = LIGHT_COLOR_FAINT_BLUE
+
+/obj/machinery/light/cold/no_nightlight
+	nightshift_allowed = FALSE
+
+/obj/machinery/light/cold/dim
+	nightshift_allowed = FALSE
+	bulb_power = 0.6
+
+/obj/machinery/light/red
+	bulb_colour = "#FF3232"
+	nightshift_allowed = FALSE
+	no_emergency = TRUE
+
+/obj/machinery/light/red/dim
+	brightness = 4
+	bulb_power = 0.7
+	bulb_emergency_brightness_mul = 2
+
+/obj/machinery/light/blacklight
+	bulb_colour = "#A700FF"
+	nightshift_allowed = FALSE
+
+/obj/machinery/light/dim
+	nightshift_allowed = FALSE
+	bulb_colour = "#FFDDCC"
+	bulb_power = 0.6
+
+// the smaller bulb light fixture
+
+/obj/machinery/light/small
+	icon_state = "bulb"
+	base_state = "bulb"
+	fitting = "bulb"
+	brightness = 4
+	nightshift_brightness = 4
+	bulb_emergency_brightness_mul = 3
+	bulb_colour = "#FFD6AA"
+	bulb_emergency_colour = "#bd3f46"
+	desc = "A small lighting fixture."
+	light_type = /obj/item/light/bulb
+
+/obj/machinery/light/small/broken
+	status = LIGHT_BROKEN
+	icon_state = "bulb-broken"
+
+/obj/machinery/light/small/built
+	icon_state = "bulb-empty"
+	start_with_cell = FALSE
+	status = LIGHT_EMPTY
+
+/obj/machinery/light/small/dim
+	brightness = 2.4
+
+/obj/machinery/light/small/red
+	bulb_colour = "#FF3232"
+	no_emergency = TRUE
+	nightshift_allowed = FALSE
+	bulb_emergency_colour = "#ff1100"
+
+/obj/machinery/light/small/red/dim
+	brightness = 2
+	bulb_power = 0.8
+	bulb_emergency_brightness_mul = 2
+
+/obj/machinery/light/small/blacklight
+	bulb_colour = "#A700FF"
+	nightshift_allowed = FALSE
+	brightness = 4
+	bulb_emergency_brightness_mul = 3
+	bulb_emergency_colour = "#d400ff"
+
+// Kneecapping light values every light at a time.
+/obj/machinery/light/dim
+	brightness = 4
+	nightshift_brightness = 4
+	bulb_colour = LIGHT_COLOR_TUNGSTEN
+	bulb_power = 0.4
+
+/obj/machinery/light/small
+	brightness = 5
+	nightshift_brightness = 4.5
+	bulb_colour = LIGHT_COLOR_TUNGSTEN
+	bulb_power = 0.9
+
+/obj/machinery/light/cold
+	nightshift_light_color = null
+
+/obj/machinery/light/warm
+	bulb_colour = LIGHT_COLOR_TUNGSTEN
+	nightshift_light_color = null
+
+/// Create directional subtypes for a path to simplify mapping.
+#define MAPPING_DIRECTIONAL_HELPERS(path, offset) ##path/directional/north {\
+	dir = NORTH; \
+	pixel_y = offset; \
+} \
+##path/directional/south {\
+	dir = SOUTH; \
+	pixel_y = -offset; \
+} \
+##path/directional/east {\
+	dir = EAST; \
+	pixel_x = offset; \
+} \
+##path/directional/west {\
+	dir = WEST; \
+	pixel_x = -offset; \
+}
+
+// -------- Directional presets
+// The directions are backwards on the lights we have now
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light, 0)
+
+// ---- Broken tube
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/broken, 0)
+
+// ---- Tube construct
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct, 0)
+
+// ---- Tube frames
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/built, 0)
+
+// ---- No nightlight tubes
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/no_nightlight, 0)
+
+// ---- Warm light tubes
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/warm, 0)
+
+// ---- No nightlight warm light tubes
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/warm/no_nightlight, 0)
+
+// ---- Dim warm light tubes
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/warm/dim, 0)
+
+// ---- Cold light tubes
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/cold, 0)
+
+// ---- No nightlight cold light tubes
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/cold/no_nightlight, 0)
+
+// ---- Dim cold light tubes
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/cold/dim, 0)
+
+// ---- Red tubes
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/red, 0)
+
+// ---- Red dim tubes
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/red/dim, 0)
+
+// ---- Blacklight tubes
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/blacklight, 0)
+
+// ---- Dim tubes
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/dim, 0)
+
+
+// -------- Bulb lights
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small, 0)
+
+// ---- Bulb construct
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct/small, 0)
+
+// ---- Bulb frames
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 0)
+
+// ---- Broken bulbs
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/broken, 0)
+
+// ---- Red bulbs
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/dim, 0)
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/red, 0)
+
+// ---- Red dim bulbs
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/red/dim, 0)
+
+// ---- Blacklight bulbs
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/blacklight, 0)

@@ -14,25 +14,31 @@
 	ricochets_max = 50	//Honk!
 	ricochet_chance = 80
 	is_reflectable = TRUE
-	wound_bonus = -20
-	bare_wound_bonus = 10
+	wound_bonus = 6
+	bare_wound_bonus = 8
 
 /obj/item/projectile/beam/laser
 	tracer_type = /obj/effect/projectile/tracer/laser
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
-	wound_bonus = -30
-	bare_wound_bonus = 40
+	wound_bonus = 8
+	bare_wound_bonus = 12
 
 //overclocked laser, does a bit more damage but has much higher wound power (-0 vs -20)
 /obj/item/projectile/beam/laser/hellfire
 	name = "hellfire laser"
-	wound_bonus = 0
+	wound_bonus = 15
 	damage = 25
 
 /obj/item/projectile/beam/laser/hellfire/Initialize(mapload)
 	. = ..()
 	transform *= 2
+
+/obj/item/projectile/beam/laser/hellfire/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		M.IgniteMob()
 
 /obj/item/projectile/beam/laser/heavylaser
 	name = "heavy laser"
@@ -104,7 +110,7 @@
 	tracer_type = /obj/effect/projectile/tracer/pulse
 	muzzle_type = /obj/effect/projectile/muzzle/pulse
 	impact_type = /obj/effect/projectile/impact/pulse
-	wound_bonus = 10
+	wound_bonus = 20
 
 /obj/item/projectile/beam/pulse/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -131,8 +137,8 @@
 	damage = 30
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/green_laser
 	light_color = LIGHT_COLOR_GREEN
-	wound_bonus = -40
-	bare_wound_bonus = 70
+	wound_bonus = 20
+	bare_wound_bonus = 20
 
 /obj/item/projectile/beam/emitter/singularity_pull()
 	return

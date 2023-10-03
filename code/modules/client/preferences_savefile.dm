@@ -5,7 +5,7 @@
 //	You do not need to raise this if you are adding new values that have sane defaults.
 //	Only raise this value when changing the meaning/format/name/layout of an existing value
 //	where you would want the updater procs below to run
-#define SAVEFILE_VERSION_MAX	58
+#define SAVEFILE_VERSION_MAX	58.01
 
 /*
 SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Carn
@@ -730,9 +730,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	return 1
 
-/datum/preferences/proc/load_character(slot, bypass_cooldown = FALSE)
-	if(!path)
-		return FALSE
+/datum/preferences/proc/load_character(slot, bypass_cooldown = FALSE, savefile/provided)
+	if(!provided)
+		if(!path)
+			return FALSE
 	if(!bypass_cooldown)
 		if(world.time < loadcharcooldown) //This is before the check to see if the filepath exists to ensure that BYOND can't get hung up on read attempts when the hard drive is a little slow
 			if(istype(parent))
@@ -741,9 +742,30 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		loadcharcooldown = world.time + PREF_SAVELOAD_COOLDOWN
 	if(!fexists(path))
 		return FALSE
-	var/savefile/S = new /savefile(path)
+	var/savefile/S
+	if(provided)
+		S = provided
+	else
+		S = new /savefile(path)
 	if(!S)
 		return FALSE
+
+	S.cd = "/"
+	if(!slot)
+		slot = default_slot
+	slot = sanitize_integer(slot, 1, max_save_slots, initial(default_slot))
+	if(slot != default_slot)
+		default_slot = slot
+		WRITE_FILE(S["default_slot"] , slot)
+
+	if(!provided)
+		S.cd = "/character[slot]"
+	var/needs_update = savefile_needs_update(S)
+	if(needs_update == -2)		//fatal, can't load any data
+		return FALSE
+
+	. = TRUE
+
 	features = list(
 "mcolor" = "FFFFFF",
 "mcolor2" = "FFFFFF",
@@ -835,22 +857,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 "neckfire" = FALSE,
 "neckfire_color" = "ffffff"
 )
-
-
-	S.cd = "/"
-	if(!slot)
-		slot = default_slot
-	slot = sanitize_integer(slot, 1, max_save_slots, initial(default_slot))
-	if(slot != default_slot)
-		default_slot = slot
-		WRITE_FILE(S["default_slot"] , slot)
-
-	S.cd = "/character[slot]"
-	var/needs_update = savefile_needs_update(S)
-	if(needs_update == -2)		//fatal, can't load any data
-		return FALSE
-
-	. = TRUE
 
 	//Species
 	var/species_id
@@ -1322,7 +1328,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	return 1
 
-/datum/preferences/proc/save_character(bypass_cooldown = FALSE)
+/datum/preferences/proc/save_character(bypass_cooldown = FALSE, export = FALSE)
 	if(!path)
 		return 0
 	if(!bypass_cooldown)
@@ -1331,10 +1337,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 				to_chat(parent, "<span class='warning'>You're attempting to save your character a little too fast. Wait half a second, then try again.</span>")
 			return 0
 		savecharcooldown = world.time + PREF_SAVELOAD_COOLDOWN
-	var/savefile/S = new /savefile(path)
+	var/savefile/S = new /savefile(export ? null : path)
 	if(!S)
 		return 0
-	S.cd = "/character[default_slot]"
+	if(!export)
+		S.cd = "/character[default_slot]"
 
 	WRITE_FILE(S["version"]			, SAVEFILE_VERSION_MAX)	//load_character will sanitize any bad data, so assume up-to-date.)
 
@@ -1568,7 +1575,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	splurt_character_pref_save(S)
 
-	return 1
+	return S
 
 
 #undef SAVEFILE_VERSION_MAX

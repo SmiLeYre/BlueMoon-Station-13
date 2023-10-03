@@ -385,6 +385,10 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/djstation)
+"XG" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating,
+/area/ruin/space/djstation)
 
 (1,1,1) = {"
 aa
@@ -543,7 +547,7 @@ ac
 ac
 ac
 ag
-ah
+XG
 ah
 ah
 am
@@ -643,7 +647,7 @@ ac
 ac
 ac
 ag
-ah
+XG
 ah
 al
 ah

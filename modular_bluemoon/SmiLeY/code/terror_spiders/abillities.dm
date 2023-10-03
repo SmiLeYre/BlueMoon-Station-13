@@ -321,7 +321,7 @@
 	desc = "Emits a loud shriek that weakens your enemies."
 	action_icon_state = "terror_shriek"
 	action_background_icon_state = "bg_terror"
-	cooldown_min = 60 SECONDS
+	cooldown_min = 30 SECONDS
 	clothes_req = FALSE
 	inner_radius = 6
 	sound = 'sound/creatures/terrorspiders/princess_shriek.ogg'
@@ -442,6 +442,6 @@
 				do_sparks(5, 1, target)
 
 		for(var/obj/machinery/light/lamp in target_turf.contents)
-			lamp.break_light_tube()
+			INVOKE_ASYNC(lamp, TYPE_PROC_REF(/obj/machinery/light, break_light_tube))
 
 //KING??// one day..

@@ -967,7 +967,7 @@
 	else
 		to_chat(src,"<span class='notice'>You try to remove [who]'s [what.name].</span>")
 		what.add_fingerprint(src)
-	if(do_mob(src, who, round(what.strip_delay / strip_mod), ignorehelditem = TRUE))
+	if(do_mob(src, who, round(what.strip_delay / strip_mod), timed_action_flags = IGNORE_HELD_ITEM))
 		if(what && Adjacent(who))
 			if(islist(where))
 				var/list/L = where
@@ -1197,7 +1197,7 @@
 	if(fire_stacks > 0 && !on_fire)
 		on_fire = 1
 		visible_message("<span class='warning'>[src] catches fire!</span>", \
-						"<span class='userdanger'>You're set on fire!</span>")
+						"<span class='userdanger'>Вы горите!</span>")
 		new/obj/effect/dummy/lighting_obj/moblight/fire(src)
 		throw_alert(FIRE, /atom/movable/screen/alert/fire)
 		update_fire()

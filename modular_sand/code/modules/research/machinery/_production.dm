@@ -5,6 +5,8 @@
 	gen_access()
 
 /obj/machinery/rnd/production/ui_interact(mob/user)
+	if(isobserver(user))
+		return
 	// Check if user can use machine
 	if(!user.can_use_production(src))
 		// Warn in local chat and return

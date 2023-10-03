@@ -156,14 +156,23 @@
 
 /datum/supply_pack/engineering/bsa
 	name = "Bluespace Artillery Parts"
-	desc = "Гордость Центрального коммандования Нанотрасен. Легендарная артиллерийская пушка Bluespace - это разрушительный подвиг человеческой инженерии и свидетельство решимости военного времени. Для правильного строительства требуются высокоразвитые исследования. "
+	desc = "Гордость Центрального командования. Легендарная артиллерийская пушка Bluespace - это разрушительный подвиг человеческой инженерии и свидетельство решимости военного времени. Для правильного строительства требуются высокоразвитые исследования. "
 	cost = 15000
 	special = TRUE
 	contains = list(/obj/item/circuitboard/machine/bsa/front,
 					/obj/item/circuitboard/machine/bsa/middle,
 					/obj/item/circuitboard/machine/bsa/back,
 					/obj/item/circuitboard/computer/bsa_control)
-	crate_name= "bluespace artillery parts crate"
+	crate_name= "Bluespace Artillery Parts crate"
+
+/datum/supply_pack/engineering/bluespace_tap
+	name = "Bluespace Harvester Parts"
+	desc = "Гордость Центрального Командования. Собиратель Блюспейс-Частиц."
+	cost = 15000
+	special = TRUE
+	contains = list(/obj/item/circuitboard/machine/bluespace_tap,
+					/obj/item/paper/bluespace_tap)
+	crate_name= "Bluespace Harvester parts crate"
 
 /datum/supply_pack/engineering/dna_vault
 	name = "DNA Vault Parts"
@@ -182,7 +191,7 @@
 /datum/supply_pack/engineering/dna_probes
 	name = "DNA Vault Samplers"
 	desc = "Содержит пять ДНК-зондов для использования в хранилище ДНК."
-	cost = 3000
+	cost = 8000
 	special = TRUE
 	contains = list(/obj/item/dna_probe,
 					/obj/item/dna_probe,
@@ -194,7 +203,7 @@
 /datum/supply_pack/engineering/shield_sat
 	name = "Shield Generator Satellite"
 	desc = "Защитите само существование этой станции с помощью этих средств противометеоритной защиты. Содержит три генератора щита."
-	cost = 4000
+	cost = 8000
 	contains = list(
 					/obj/machinery/satellite/meteor_shield,
 					/obj/machinery/satellite/meteor_shield,
@@ -204,6 +213,6 @@
 /datum/supply_pack/engineering/shield_sat_control
 	name = "Shield System Control Board"
 	desc = "Система управления для спутниковой системы генератора щита."
-	cost = 4000
+	cost = 12000
 	contains = list(/obj/item/circuitboard/computer/sat_control)
 	crate_name= "shield control board crate"

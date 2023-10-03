@@ -4,30 +4,31 @@
 
 /datum/round_event_control/spider_terror
 	name = "Terror Spider Infestation"
-	typepath = /datum/round_event/spider_terror
+	typepath = /datum/round_event/ghost_role/spider_terror
 	weight = 1
 	max_occurrences = 1
 	min_players = 40
 	category = EVENT_CATEGORY_ENTITIES
 	description = "Spawns spider eggs, ready to hatch."
 
-/datum/round_event/spider_terror
+/datum/round_event/ghost_role/spider_terror
 	announce_when = 240
+	role_name = "Паук Ужаса"
 	var/spawncount = 1
 	var/successSpawn = FALSE	//So we don't make a command report if nothing gets spawned.
 
-/datum/round_event/spider_terror/setup()
+/datum/round_event/ghost_role/spider_terror/setup()
 	announce_when = rand(announce_when, announce_when + 30)
 
-/datum/round_event/spider_terror/announce()
+/datum/round_event/ghost_role/spider_terror/announce()
 	if(successSpawn)
 		priority_announce("Вспышка биологической угрозы 3-го уровня зафиксирована на борту станции [station_name()]. Всему персоналу надлежит сдержать её распространение любой ценой!", "ВНИМАНИЕ: БИОЛОГИЧЕСКАЯ УГРОЗА.", 'sound/effects/siren-spooky.ogg')
 
-/datum/round_event/spider_terror/start()
+/datum/round_event/ghost_role/spider_terror/start()
 	// It is necessary to wrap this to avoid the event triggering repeatedly.
 	INVOKE_ASYNC(src, PROC_REF(wrappedstart))
 
-/datum/round_event/spider_terror/proc/wrappedstart()
+/datum/round_event/ghost_role/spider_terror/proc/wrappedstart()
 	var/spider_type
 	var/infestation_type
 	if((length(GLOB.clients)) >= TS_HIGHPOP_TRIGGER)
@@ -55,7 +56,7 @@
 		if(6)
 			spider_type = /mob/living/simple_animal/hostile/poison/terror_spider/prince
 			spawncount = 1
-	var/list/candidates = pollCandidates("Вы хотите занять роль Паука Ужаса?", ROLE_TERROR_SPIDER, TRUE, 60 SECONDS)
+	var/list/candidates = get_candidates(ROLE_TERROR_SPIDER, null, ROLE_TERROR_SPIDER)
 	if(length(candidates) < spawncount)
 		message_admins("Warning: not enough players volunteered to be terrors. Could only spawn [length(candidates)] out of [spawncount]!")
 	while(spawncount && length(candidates))

@@ -136,7 +136,7 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/nri
 	//head = /obj/item/clothing/head/helmet/alt
 	uniform = /obj/item/clothing/under/rank/security/officer/nri_military
-	mask = /obj/item/clothing/mask/balaclava/breath/inteq
+	mask = /obj/item/clothing/mask/gas/syndicate/ds/mouth
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/hecu/black
 	belt = /obj/item/storage/belt/military/russianweb
@@ -173,7 +173,7 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/nri/adv
 	//head = /obj/item/clothing/head/helmet/alt
 	uniform = /obj/item/clothing/under/rank/security/officer/nri_military
-	mask = /obj/item/clothing/mask/balaclava/breath/inteq
+	mask = /obj/item/clothing/mask/gas/syndicate/ds/mouth
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/rucksack/green
 	belt = /obj/item/storage/belt/military/russianweb
@@ -210,7 +210,7 @@
 	suit = /obj/item/clothing/suit/armor/nri_vest
 	head = /obj/item/clothing/head/HoS/beret/nri
 	uniform = /obj/item/clothing/under/rank/security/officer/nri_military
-	mask = /obj/item/clothing/mask/balaclava/breath/inteq
+	mask = /obj/item/clothing/mask/gas/syndicate/ds/mouth
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/hecu
 	belt = /obj/item/storage/belt/grenade/full
@@ -399,7 +399,7 @@
 	//head = /obj/item/clothing/head/beret/sec/syndicate
 	shoes = /obj/item/clothing/shoes/laceup
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
-	back = /obj/item/storage/backpack/hecu/black
+	back = /obj/item/storage/backpack/hipbag
 	belt = /obj/item/storage/belt/security/full
 	r_hand = /obj/item/gun/ballistic/automatic/ar
 	l_pocket = /obj/item/clothing/accessory/lawyers_badge
@@ -427,7 +427,7 @@
 	suit = /obj/item/clothing/suit/armor/vest/agent
 	shoes = /obj/item/clothing/shoes/laceup
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
-	back = /obj/item/storage/backpack/hecu/black
+	back = /obj/item/storage/backpack/hipbag
 	belt = /obj/item/storage/belt/security/full
 	r_hand = /obj/item/gun/ballistic/automatic/wt550
 	l_pocket = /obj/item/clothing/accessory/lawyers_badge

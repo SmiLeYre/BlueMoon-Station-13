@@ -212,6 +212,16 @@
 	burst_size = 4
 	burst_shot_delay = 1
 
+/obj/item/gun/ballistic/shotgun/toy/tommygun
+	name = "Tommy Gun"
+	desc = "Looks almost like the real thing! Great for practicing Drive-bys. Ages 8 and up."
+	icon = 'icons/obj/guns/toy.dmi'
+	icon_state = "tommygun"
+	item_state = "shotgun"
+	fire_sound = 'sound/weapons/gunshot.ogg'
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/toy/tommygun
+	w_class = WEIGHT_CLASS_SMALL
+
 /obj/item/gun/ballistic/automatic/ar
 	name = "\improper NT-ARG 'Boarder'"
 	desc = "A robust assault rifle used by Nanotrasen fighting forces."
@@ -365,6 +375,15 @@
 		icon_state = "sniper-mag"
 	else
 		icon_state = "sniper"
+
+/obj/item/gun/ballistic/automatic/sniper_rifle/toy
+	name = "donksoft sniper rifle"
+	desc = "A recoil-operated, semi-automatic donksoft sniper rifle. Perfect to annoy/kill the neighbour’s cat! Ages 8 and up."
+	icon = 'icons/obj/guns/toy.dmi'
+	fire_sound = 'sound/weapons/gunshot.ogg'
+	can_suppress = FALSE
+	zoomable = FALSE
+	mag_type = /obj/item/ammo_box/magazine/toy/sniper_rounds
 
 /obj/item/gun/ballistic/automatic/sniper_rifle/syndicate
 	name = "syndicate sniper rifle"

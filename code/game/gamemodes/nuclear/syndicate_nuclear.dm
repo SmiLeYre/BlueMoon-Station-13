@@ -42,9 +42,10 @@
 
 	if(!istype(H))
 		return
-	if(SSticker.mode.name == "Extended")
+	if(SSticker.mode.name == "Extended" && name != "Nuclear Operative")
 		H.equipOutfit(/datum/outfit/syndicate/lone)
 		priority_announce("Приветствую, Станция. Мы отправляем к вам Специалиста по Защите Ядерного Диска ввиду того, что заметили недостаточную его безопасность. Bстречайте.", "[title] Фрегат ССО Синдиката")
+		print_command_report("Приветствую, Станция. Мы отправляем к вам Специалиста по Защите Ядерного Диска ввиду того, что заметили недостаточную его безопасность. Bстречайте.", "[title] Фрегат ССО Синдиката")
 	else
 		H.equipOutfit(nukeop_outfit)
 

@@ -21,6 +21,7 @@
 /obj/item/organ/cyberimp/arm/clockwork/emag_act()
 	if(obj_flags & EMAGGED)
 		return
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	obj_flags |= EMAGGED
 	to_chat(usr, "<span class='notice'>You emag [src], hoping it'll achieve something..</span>")
 

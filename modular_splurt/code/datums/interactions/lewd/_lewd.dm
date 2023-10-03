@@ -235,7 +235,10 @@
 			else
 				H.mob_climax(TRUE, "sex", partner, !cumin, target_gen)
 	set_lust(0)
-	SEND_SIGNAL(src, COMSIG_MOB_CAME, target_orifice, partner, cumin, last_genital)
+
+	SEND_SIGNAL(src, COMSIG_MOB_POST_CAME, target_orifice, partner, cumin, last_genital)
+
+	return TRUE
 
 /mob/living/get_unconsenting(extreme, list/ignored_mobs, var/unholy)
 	for(var/mob/M in range(7, src))

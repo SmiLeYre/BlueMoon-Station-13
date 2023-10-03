@@ -2596,7 +2596,7 @@
 	input_tag = "o2_in_bunker";
 	name = "Oxygen Supply Control";
 	output_tag = "o2_out_bunker";
-	sensors = list("o2_sensor_bunker" = "Tank")
+	sensors = list("o2_sensor_bunker"="Tank")
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
@@ -2942,6 +2942,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/power)
 "gB" = (
@@ -2957,7 +2958,7 @@
 	input_tag = "n2_in_bunker";
 	name = "Nitrogen Supply Control";
 	output_tag = "n2_out_bunker";
-	sensors = list("n2_sensor_bunker" = "Tank")
+	sensors = list("n2_sensor_bunker"="Tank")
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
@@ -3002,6 +3003,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/deepstorage/power)
 "gK" = (
@@ -3154,6 +3156,7 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/deepstorage/crusher)
 "hf" = (

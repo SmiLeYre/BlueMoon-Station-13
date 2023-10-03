@@ -176,24 +176,24 @@
 
 	//CIT CHANGES - makes it impossible to throw while in stamina softcrit
 	if(IS_STAMCRIT(src))
-		to_chat(src, "<span class='warning'>You're too exhausted.</span>")
+		to_chat(src, "<span class='warning'>Вы слишком устали.</span>")
 		return
 
 	var/random_turn = a_intent == INTENT_HARM
 	//END OF CIT CHANGES
 
-	var/obj/item/I = get_active_held_item()
+	var/obj/item/held_item = get_active_held_item()
 
 	var/atom/movable/thrown_thing
 	var/mob/living/throwable_mob
 
-	if(istype(I, /obj/item/clothing/head/mob_holder))
-		var/obj/item/clothing/head/mob_holder/holder = I
+	if(istype(held_item, /obj/item/clothing/head/mob_holder))
+		var/obj/item/clothing/head/mob_holder/holder = held_item
 		if(holder.held_mob)
 			throwable_mob = holder.held_mob
 			holder.release()
 
-	if(!I || throwable_mob)
+	if(!held_item || throwable_mob)
 		if(!throwable_mob && pulling && isliving(pulling) && grab_state >= GRAB_AGGRESSIVE)
 			throwable_mob = pulling
 
@@ -202,7 +202,7 @@
 			if(pulling)
 				stop_pulling()
 			if(HAS_TRAIT(src, TRAIT_PACIFISM))
-				to_chat(src, "<span class='notice'>You gently let go of [throwable_mob].</span>")
+				to_chat(src, "<span class='notice'>Ты осторожно кладёшь [throwable_mob] под себя.</span>")
 				return
 			if(!UseStaminaBuffer(STAM_COST_THROW_MOB * ((throwable_mob.mob_size+1)**2), TRUE))
 				return
@@ -210,21 +210,33 @@
 			var/turf/end_T = get_turf(target)
 			if(start_T && end_T)
 				log_combat(src, throwable_mob, "thrown", addition="grab from tile in [AREACOORD(start_T)] towards tile at [AREACOORD(end_T)]")
+	else
+		thrown_thing = held_item.on_thrown(src, target)
 
-	else if(!(I.item_flags & ABSTRACT) && !HAS_TRAIT(I, TRAIT_NODROP))
-		thrown_thing = I
-		dropItemToGround(I)
+	if(isliving(thrown_thing)) // Благодаря этому и thrown_thing = held_item.on_thrown(src, target) мы можем кидать космонавтиков с плеча.
+		var/turf/start_T = get_turf(loc)
+		var/turf/end_T = get_turf(target)
+		if(start_T && end_T)
+			log_combat(src, thrown_thing, "thrown", addition="grab from tile in [AREACOORD(start_T)] towards tile at [AREACOORD(end_T)]")
 
-		if(HAS_TRAIT(src, TRAIT_PACIFISM) && I.throwforce)
-			to_chat(src, "<span class='notice'>You set [I] down gently on the ground.</span>")
+	else if(!(held_item.item_flags & ABSTRACT) && !HAS_TRAIT(held_item, TRAIT_NODROP))
+		thrown_thing = held_item
+		dropItemToGround(held_item)
+
+		if(HAS_TRAIT(src, TRAIT_PACIFISM) && held_item.throwforce)
+			to_chat(src, "<span class='notice'>You set [held_item] down gently on the ground.</span>")
 			return
 
-		if(!UseStaminaBuffer(I.getweight(src, STAM_COST_THROW_MULT, SKILL_THROW_STAM_COST), warn = TRUE))
+		if(!UseStaminaBuffer(held_item.getweight(src, STAM_COST_THROW_MULT, SKILL_THROW_STAM_COST), warn = TRUE))
 			return
 
 	if(thrown_thing)
 		var/power_throw = 0
 		if(HAS_TRAIT(src, TRAIT_HULK))
+			power_throw++
+		if(HAS_TRAIT(src, TRAIT_DWARF))
+			power_throw--
+		if(HAS_TRAIT(thrown_thing, TRAIT_DWARF))
 			power_throw++
 		if(pulling && grab_state >= GRAB_NECK)
 			power_throw++
@@ -279,19 +291,22 @@
 	if(restrained())
 		// too soon.
 		var/buckle_cd = 600
+		var/obj/item/restraints/O = src.get_item_by_slot(ITEM_SLOT_HANDCUFFED)
+		var/allow_breakout_movement = IGNORE_INCAPACITATED
+		if(O?.allow_breakout_movement)
+			allow_breakout_movement = (IGNORE_INCAPACITATED|IGNORE_USER_LOC_CHANGE|IGNORE_TARGET_LOC_CHANGE)
 		if(handcuffed)
-			var/obj/item/restraints/O = src.get_item_by_slot(ITEM_SLOT_HANDCUFFED)
 			buckle_cd = O.breakouttime
 		MarkResistTime()
-		visible_message("<span class='warning'>[src] attempts to unbuckle [ru_na()]self!</span>", \
-					"<span class='notice'>You attempt to unbuckle yourself... (This will take around [round(buckle_cd/600,1)] minute\s, and you need to stay still.)</span>")
-		if(do_after(src, buckle_cd, 0, target = src, required_mobility_flags = MOBILITY_RESIST))
+		visible_message("<span class='warning'>[src] пытается выбраться!</span>", \
+					"<span class='notice'>Ты пытаешься выбраться... (Это займёт около [round(buckle_cd/600,1)] минут и тебе не стоит двигаться в процессе.)</span>")
+		if(do_after(src, buckle_cd, target = src, timed_action_flags = allow_breakout_movement, extra_checks = CALLBACK(src, PROC_REF(cuff_resist_check))))
 			if(!buckled)
 				return
 			buckled.user_unbuckle_mob(src, src)
 		else
 			if(src && buckled)
-				to_chat(src, "<span class='warning'>You fail to unbuckle yourself!</span>")
+				to_chat(src, "<span class='warning'>Тебе не удалось выбраться!</span>")
 	else
 		buckled.user_unbuckle_mob(src,src)
 
@@ -299,13 +314,13 @@
 	fire_stacks -= 5
 	DefaultCombatKnockdown(60, TRUE, TRUE)
 	spin(32,2)
-	visible_message("<span class='danger'>[src] rolls on the floor, trying to put [ru_na()]self out!</span>", \
-		"<span class='notice'>You stop, drop, and roll!</span>")
+	visible_message("<span class='danger'>[src] падает и крутится, сбрасывая с себя пламя!</span>", \
+		"<span class='notice'>Вы остановились, упали и начали крутиться!</span>")
 	MarkResistTime(30)
 	sleep(30)
 	if(fire_stacks <= 0)
-		visible_message("<span class='danger'>[src] has successfully extinguished [ru_na()]self!</span>", \
-			"<span class='notice'>You extinguish yourself.</span>")
+		visible_message("<span class='danger'>[src] успешно сбрасывает с себя пламя!</span>", \
+			"<span class='notice'>Вы успешно потушили себя.</span>")
 		ExtinguishMob()
 
 /mob/living/carbon/resist_restraints()
@@ -320,52 +335,38 @@
 
 /mob/living/carbon/proc/cuff_resist(obj/item/I, breakouttime = 600, cuff_break = 0)
 	if(I.item_flags & BEING_REMOVED)
-		to_chat(src, "<span class='warning'>You're already attempting to remove [I]!</span>")
+		to_chat(src, "<span class='warning'>Вы уже пытаетесь сбросить [I]!</span>")
 		return
+	var/obj/item/restraints/R = istype(I, /obj/item/restraints) ? I : null
+	var/allow_breakout_movement = IGNORE_INCAPACITATED
+	if(R?.allow_breakout_movement)
+		allow_breakout_movement = (IGNORE_INCAPACITATED|IGNORE_USER_LOC_CHANGE|IGNORE_TARGET_LOC_CHANGE)
 	I.item_flags |= BEING_REMOVED
 	breakouttime = I.breakouttime
-	var/datum/cuffbreak_checker/cuffbreak_checker = new(get_turf(src), istype(I, /obj/item/restraints)? I : null)
 	if(!cuff_break)
-		visible_message("<span class='warning'>[src] attempts to remove [I]!</span>")
-		to_chat(src, "<span class='notice'>You attempt to remove [I]... (This will take around [DisplayTimeText(breakouttime)] and you need to stand still.)</span>")
-		if(do_after_advanced(src, breakouttime, src, NONE, CALLBACK(cuffbreak_checker, /datum/cuffbreak_checker.proc/check_movement), required_mobility_flags = MOBILITY_RESIST))
+		visible_message("<span class='warning'>[src] пытается сбросить [I]!</span>")
+		to_chat(src, "<span class='notice'>Ты пытаешься сбросить [I]... (Это займёт около [DisplayTimeText(breakouttime)] секунд и тебе не стоит делать лишних движений.)</span>")
+		if(do_after(src, breakouttime, target = src, timed_action_flags = allow_breakout_movement, extra_checks = CALLBACK(src, PROC_REF(cuff_resist_check))))
 			clear_cuffs(I, cuff_break)
 		else
-			to_chat(src, "<span class='warning'>You fail to remove [I]!</span>")
+			to_chat(src, "<span class='warning'>Тебе не удалось сбросить [I]!</span>")
 
 	else if(cuff_break == FAST_CUFFBREAK)
 		breakouttime = 50
-		visible_message("<span class='warning'>[src] is trying to break [I]!</span>")
-		to_chat(src, "<span class='notice'>You attempt to break [I]... (This will take around 5 seconds and you need to stand still.)</span>")
-		if(do_after_advanced(src, breakouttime, src, NONE, CALLBACK(cuffbreak_checker, /datum/cuffbreak_checker.proc/check_movement), required_mobility_flags = MOBILITY_RESIST))
+		visible_message("<span class='warning'>[src] пытается сломать [I]!</span>")
+		to_chat(src, "<span class='notice'>Ты пытаешься сломать [I]... (Это займёт около пяти секунд и тебе не стоит делать лишних движений.)</span>")
+		if(do_after(src, breakouttime, target = src, timed_action_flags = allow_breakout_movement, extra_checks = CALLBACK(src, PROC_REF(cuff_resist_check))))
 			clear_cuffs(I, cuff_break)
 		else
-			to_chat(src, "<span class='warning'>You fail to break [I]!</span>")
+			to_chat(src, "<span class='warning'>Тебе не удалось сломать [I]!</span>")
 
 	else if(cuff_break == INSTANT_CUFFBREAK)
 		clear_cuffs(I, cuff_break)
 
-	QDEL_NULL(cuffbreak_checker)
 	I.item_flags &= ~BEING_REMOVED
 
-/datum/cuffbreak_checker
-	var/turf/last
-	var/obj/item/restraints/cuffs
-
-/datum/cuffbreak_checker/New(turf/initial_turf, obj/item/restraints/R)
-	last = initial_turf
-	if(R)
-		cuffs = R
-
-/datum/cuffbreak_checker/proc/check_movement(atom/user, delay, atom/target, time_left, do_after_flags, required_mobility_flags, required_combat_flags, mob_redirect, stage, initially_held_item, tool, list/passed_in)
-	if(get_turf(user) != last)
-		last = get_turf(user)
-		passed_in[1] = 0.5
-		if(cuffs && !cuffs.allow_breakout_movement)
-			return DO_AFTER_STOP
-	else
-		passed_in[1] = 1
-	return DO_AFTER_CONTINUE
+/mob/living/carbon/proc/cuff_resist_check()
+	return !incapacitated(ignore_restraints = TRUE)
 
 /mob/living/carbon/proc/uncuff()
 	if (handcuffed)
@@ -639,6 +640,14 @@
 
 		if(!isnull(G.lighting_alpha))
 			lighting_alpha = min(lighting_alpha, G.lighting_alpha)
+
+	if(head)
+		var/obj/item/clothing/head/H = head
+		sight |= H.vision_flags
+		see_in_dark = max(H.darkness_view, see_in_dark)
+
+		if(!isnull(H.lighting_alpha))
+			lighting_alpha = min(lighting_alpha, H.lighting_alpha)
 
 	if(dna)
 		for(var/X in dna.mutations)

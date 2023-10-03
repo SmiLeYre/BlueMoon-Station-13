@@ -458,7 +458,7 @@
 	. = ..()
 	if(obj_flags & EMAGGED)
 		return
-
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	to_chat(user, "<span class='warning'>A mesmerizing Rhumba beat starts playing from the arcade machine's speakers!</span>")
 	temp = "<br><center><h2>If you die in the game, you die for real!<center><h2>"
 	max_passive = 6

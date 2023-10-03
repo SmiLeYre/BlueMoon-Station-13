@@ -1,5 +1,7 @@
 /obj/item/organ/stomach
 	name = "stomach"
+	ru_name = "желудок"
+	ru_name_capital = "Желудок"
 	icon_state = "stomach"
 	w_class = WEIGHT_CLASS_NORMAL
 	zone = BODY_ZONE_CHEST

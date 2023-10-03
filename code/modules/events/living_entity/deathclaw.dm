@@ -2,7 +2,7 @@
 	name = "Spawn Funclaw in Maints"
 	typepath = /datum/round_event/deathclaw_in_maints
 	max_occurrences = 5
-	weight = 60
+	weight = 50
 	category = EVENT_CATEGORY_ENTITIES
 
 /datum/round_event/deathclaw_in_maints/announce(fake)

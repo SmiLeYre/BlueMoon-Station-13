@@ -34,7 +34,6 @@ GLOBAL_LIST_INIT(anus_traits, list("[TRAIT_HYPERSENS_ANUS]" = 3, "[TRAIT_OVERSTI
 
 			return amount
 
-
 	// Set a G variable to a proper genital instead of a string if it's one.
 	var/obj/item/organ/genital/G = istype(genital, /obj/item/organ/genital) ? genital : getorganslot(genital)
 
@@ -79,7 +78,7 @@ GLOBAL_LIST_INIT(anus_traits, list("[TRAIT_HYPERSENS_ANUS]" = 3, "[TRAIT_OVERSTI
 		return TRUE
 	return FALSE
 
-/mob/living/carbon/handle_post_sex(amount, orifice, mob/living/partner, organ = null)
+/mob/living/carbon/handle_post_sex(amount, orifice, mob/living/partner, organ = null, cum_inside = FALSE, anonymous = FALSE)
 	if(organ)
 		amount = check_stimulation(amount, organ)
 

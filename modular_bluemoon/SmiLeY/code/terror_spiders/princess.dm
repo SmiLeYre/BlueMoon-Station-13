@@ -22,7 +22,7 @@
 	health = 200
 	speed = -0.1
 	delay_web = 20
-	deathmessage = "Emits a  piercing screech and slowly falls on the ground."
+	deathmessage = "Emits a piercing screech and slowly falls on the ground."
 	death_sound = 'sound/creatures/terrorspiders/princess_death.ogg'
 	spider_tier = TS_TIER_3
 	move_resist = MOVE_FORCE_STRONG // no more pushing a several hundred if not thousand pound spider
@@ -128,5 +128,5 @@
 	name = "princess venom"
 	icon_state = "toxin4"
 	damage = 25
-	stamina = 25
+	stamina = 75
 	damage_type = BURN

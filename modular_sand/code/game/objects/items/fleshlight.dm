@@ -102,7 +102,7 @@
 			targetting = CUM_TARGET_URETHRA
 		if(CUM_TARGET_URETHRA)
 			targetting = CUM_TARGET_PENIS
-	to_chat(user, "<span class='notice'>Теперь вы нацелены на \an [targetting].</span>")
+	to_chat(user, "<span class='notice'>Теперь вы нацелены на [targetting].</span>")
 
 /obj/item/portallight/examine(mob/user)
 	. = ..()
@@ -116,6 +116,8 @@
 	updatesleeve()
 
 /obj/item/portallight/attack(mob/living/carbon/human/M, mob/living/carbon/human/user)
+	if(portalunderwear == null)
+		return
 	var/user_message = ""
 	var/target_message = ""
 	var/user_lust_amt = NONE
@@ -259,7 +261,7 @@
 					switch(portalunderwear.targetting)
 						if(CUM_TARGET_PENIS)
 							user_message = (user == M) ? "присасывается к [penis_names[3]] [name]" : "использует <b>'[src]'</b> по прямому назначению и стимулирует член кого-то на другой стороне усилиями ротика <b>[M]</b>, таким образом заставляя посасывать [penis_names[3]] [name]"
-							target_message = "suck on your [penis_names[4]]"
+							target_message = "отсасывает твой [penis_names[4]]"
 							target = CUM_TARGET_MOUTH
 							user_lust_amt = LOW_LUST
 							target_lust_amt = NORMAL_LUST
@@ -304,7 +306,7 @@
 						switch(portalunderwear.targetting)
 							if(CUM_TARGET_PENIS)
 								user_message = (user == M) ? "надрачивает [penis_names[3]] [name]" : "использует <b>[M]</b> по прямому назначению и надрачивает [penis_names[3]] [name]"
-								target_message = "jerk you off"
+								target_message = "надрачивает твой пенис"
 								target = CUM_TARGET_HAND
 								user_lust_amt = NONE
 								target_lust_amt = NORMAL_LUST
@@ -386,7 +388,7 @@
 	if(user_message)
 		if(portal_target && (portal_target?.client?.prefs.toggles & VERB_CONSENT || !portal_target.ckey))
 			user.visible_message("<span class='lewd'>[user] [user_message].</span>")
-			if(M.can_penetrating_genital_cum() && M.handle_post_sex(user_lust_amt, target, portal_target, target)) //SPLURT edit
+			if(M.can_penetrating_genital_cum() && M.handle_post_sex(user_lust_amt, portalunderwear.targetting, portal_target, null, TRUE, TRUE))
 				switch(target)
 					if(CUM_TARGET_PENIS)
 						switch(portalunderwear.targetting)
@@ -430,7 +432,7 @@
 					playlewdinteractionsound(loc, 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1)
 
 			to_chat(portal_target, "<span class='lewd'>Кто-то использует сопряжённый <b>'[name]'</b>, этот кто-то [target_message].</span>")
-			if(portal_target.handle_post_sex(target_lust_amt, portalunderwear.targetting, M, portalunderwear.targetting)) //SPLURT edit
+			if(portal_target.handle_post_sex(target_lust_amt, portalunderwear.targetting, M, null, TRUE, TRUE))
 
 				switch(portalunderwear.targetting)
 					if(CUM_TARGET_VAGINA)
@@ -457,20 +459,22 @@
 								to_chat(M, "<span class='userlove'>Вы ощущаете, как анус сжимается вокруг вашей ножки!</span>")
 					if(CUM_TARGET_PENIS)
 						switch(target)
-							if(CUM_TARGET_PENIS, CUM_TARGET_HAND)
-								to_chat(M, "<span class='userlove'>Вы ощущаете, как [portalunderwear.targetting] дергается несколько раз, прежде чем кончить прямо на твою [target]!</span>")
+							if(CUM_TARGET_PENIS)
+								to_chat(M, "<span class='userlove'>Вы ощущаете, как [pick(list("член", "пенис", "хрен"))] дергается несколько раз, прежде чем кончить прямо на твой [pick(list("член", "пенис", "хрен"))]!</span>")
+							if(CUM_TARGET_HAND)
+								to_chat(M, "<span class='userlove'>Вы ощущаете, как [pick(list("член", "пенис", "хрен"))] дергается несколько раз, прежде чем кончить прямо на твои пальцы!</span>")
 							if(CUM_TARGET_VAGINA, CUM_TARGET_ANUS, CUM_TARGET_MOUTH)
-								to_chat(M, "<span class='userlove'>Вы ощущаете, как [portalunderwear.targetting] дергается несколько раз, прежде чем кончить прямо на твою [target]!</span>")
+								to_chat(M, "<span class='userlove'>Вы ощущаете, как [pick(list("член", "пенис", "хрен"))] дергается несколько раз, прежде чем кончить прямо на твою дырочку!</span>")
 							if(CUM_TARGET_FEET)
-								to_chat(M, "<span class='userlove'>Вы ощущаете, как [portalunderwear.targetting] дергается несколько раз, прежде чем кончить прямо на твою ножку!</span>")
+								to_chat(M, "<span class='userlove'>Вы ощущаете, как [pick(list("член", "пенис", "хрен"))] дергается несколько раз, прежде чем кончить прямо на твою ножку!</span>")
 							if(CUM_TARGET_URETHRA)
-								to_chat(M, "<span class='userlove'>cum in your urethra</span>")
+								to_chat(M, "<span class='userlove'>Вы ощущаете, как кто-то кончает в твою уретру!</span>")
 					if(CUM_TARGET_MOUTH)
 						switch(target)
 							if(CUM_TARGET_PENIS)
-								to_chat(M, "<span class='userlove'>Вы ощущаете, как губы дрожат, обхватывая твои [target]!</span>")
+								to_chat(M, "<span class='userlove'>Вы ощущаете, как губы дрожат, обхватывая твой пенис!</span>")
 							if(CUM_TARGET_VAGINA, CUM_TARGET_ANUS)
-								to_chat(M, "<span class='userlove'>Вы ощущаете, как язык дрожит, облизывая твой [target]!</span>")
+								to_chat(M, "<span class='userlove'>Вы ощущаете, как язык дрожит, облизывая твою дырочку!</span>")
 							if(CUM_TARGET_MOUTH)
 								to_chat(M, "<span class='userlove'>Вы ощущаете, как губы дрожат при их взаимодействии с твоими!</span>")
 							if(CUM_TARGET_HAND)

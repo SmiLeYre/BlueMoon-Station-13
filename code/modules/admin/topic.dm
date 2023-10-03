@@ -2720,7 +2720,7 @@
 
 		var/list/bans
 
-		var/list/dat = list("<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><body>")
+		var/list/dat = list("<meta http-equiv='Content-Type' content='text/html; charset=utf-8'><body>")
 
 		if(response.errored)
 			dat += "<br>Failed to connect to CentCom."

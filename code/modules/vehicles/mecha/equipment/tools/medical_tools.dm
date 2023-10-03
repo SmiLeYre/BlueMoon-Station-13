@@ -131,7 +131,7 @@
 		return
 	return {"<html>
 				<head>
-				<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+				<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
 				<title>[patient] statistics</title>
 				<script language='javascript' type='text/javascript'>
 				[js_byjax]
@@ -395,7 +395,7 @@
 /obj/item/mecha_parts/mecha_equipment/medical/syringe_gun/proc/get_reagents_page()
 	var/output = {"<html>
 						<head>
-						<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+						<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
 						<title>Reagent Synthesizer</title>
 						<script language='javascript' type='text/javascript'>
 						[js_byjax]

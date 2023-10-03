@@ -515,13 +515,12 @@
 	return ..()
 
 /obj/item/storage/box/syndicate/contractor_loadout/PopulateContents()
-	new /obj/item/clothing/head/helmet/space/syndicate/contract(src)
-	new /obj/item/clothing/suit/space/syndicate/contract(src)
+	new /obj/item/storage/box/inteq_kit/chameleon_hardsuit(src)
 	new /obj/item/pinpointer/crew/contractor(src)
 	new /obj/item/clothing/mask/chameleon(src)
 	new /obj/item/card/id/syndicate(src)
 	new /obj/item/storage/fancy/cigarettes/cigpack_syndicate(src)
-	new /obj/item/lighter(src)
+	new /obj/item/lighter/contractor(src)
 
 /obj/item/storage/box/syndie_kit/contract_kit/PopulateContents()
 	new /obj/item/modular_computer/tablet/syndicate_contract_uplink/preset/uplink(src)
@@ -593,3 +592,21 @@
 	for(var/i in implants)
 		group.register(i)
 	desc += " The implants are registered to the \"[group.name]\" group."
+
+/obj/item/storage/box/inteq_kit/chameleon_hardsuit
+	name = "Oxygen Deprivation First Aid Kit"
+	desc = "A first aid kit that contains four pills of salbutamol, which is able to counter injuries caused by suffocation. Also contains a health analyzer to determine the health of the patient."
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "firstaid-o2"
+	item_state = "firstaid-o2"
+
+/obj/item/storage/box/syndie_kit/space/inteq/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.can_hold = typecacheof(list(/obj/item/clothing/suit/space/hardsuit/contractor, /obj/item/tank/internals/emergency_oxygen, /obj/item/clothing/mask/gas))
+
+/obj/item/storage/box/inteq_kit/chameleon_hardsuit/PopulateContents()
+	new /obj/item/clothing/suit/space/hardsuit/contractor(src)
+	new /obj/item/clothing/mask/gas/syndicate(src)
+	new /obj/item/tank/internals/emergency_oxygen/engi/syndi(src)

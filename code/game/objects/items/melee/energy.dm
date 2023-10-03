@@ -7,6 +7,8 @@
 	var/brightness_on = 3
 	var/sword_color
 	total_mass = 0.4 //Survival flashlights typically weigh around 5 ounces.
+	wound_bonus = 6
+	bare_wound_bonus = 12
 
 /obj/item/melee/transforming/energy/Initialize(mapload)
 	. = ..()
@@ -85,6 +87,8 @@
 	attack_verb_on = list()
 	light_color = "#40ceff"
 	total_mass = null
+	wound_bonus = 6
+	bare_wound_bonus = 15
 
 /obj/item/melee/transforming/energy/axe/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] swings [src] towards [user.ru_ego()] head! It looks like [user.p_theyre()] trying to commit suicide!</span>")

@@ -49,11 +49,26 @@
 	name = "flektarn combat uniform"
 	desc = "Black turtleneck with -explosive- camouflaged combat pants."
 	icon_state = "flektarn"
-	item_state = "flektarn"
+	item_state = "syndicate-black"
 	can_adjust = TRUE
+
+/obj/item/clothing/under/donator/bm/flektarn_casual
+	name = "flektarn casual uniform"
+	desc = "White tank top with -explosive- camouflaged combat pants."
+	icon_state = "flektarn_casual"
+	item_state = "syndicate-black"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/donator/bm/battle_coat
 	name = "battle coat"
 	desc = "A Tatical uniform with hood."
 	icon_state = "battle_coat"
-	item_state = "battle_coat"
+	item_state = "bl_suit"
+
+/obj/item/clothing/under/donator/bm/ellys_suit
+	name = "Ellys Suit"
+	desc = "A costume in white and black colors."
+	icon_state = "ellys_uniform"
+	item_state = "white_suit"
+	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
+	can_adjust = FALSE

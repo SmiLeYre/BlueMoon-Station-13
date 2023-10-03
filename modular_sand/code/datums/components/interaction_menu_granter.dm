@@ -201,6 +201,7 @@
 		.["chastity_pref"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, CHASTITY)
 		.["stimulation_pref"] = 	!!CHECK_BITFIELD(prefs.cit_toggles, STIMULATION)
 		.["edging_pref"] =			!!CHECK_BITFIELD(prefs.cit_toggles, EDGING)
+		.["cum_onto_pref"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, CUM_ONTO)
 
 /proc/num_to_pref(num)
 	switch(num)
@@ -364,6 +365,8 @@
 					TOGGLE_BITFIELD(prefs.cit_toggles, STIMULATION)
 				if("edging_pref")
 					TOGGLE_BITFIELD(prefs.cit_toggles, EDGING)
+				if("cum_onto_pref")
+					TOGGLE_BITFIELD(prefs.cit_toggles, CUM_ONTO)
 				//
 				else
 					return FALSE

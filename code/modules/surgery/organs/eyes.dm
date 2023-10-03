@@ -4,6 +4,8 @@
 
 /obj/item/organ/eyes
 	name = BODY_ZONE_PRECISE_EYES
+	ru_name = "глаза"
+	ru_name_capital = "Глаза"
 	icon_state = "eyeballs"
 	desc = "I see you!"
 	zone = BODY_ZONE_PRECISE_EYES

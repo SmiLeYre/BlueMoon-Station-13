@@ -23,6 +23,7 @@
 	name = "tacticool security jumpsuit"
 	icon_state = "tacticool_sec"
 	item_state = "tacticool_sec"
+	can_adjust = FALSE
 	unique_reskin = list(
 		"Red" = list("icon_state" = "tacticool_sec")
 	)
@@ -237,7 +238,7 @@
 			toggle_stealth(TRUE)
 			return
 		if(wearer)
-			wearer.alpha = 4
+			wearer.alpha = 6
 			wearer.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 			if(current_charge <= (power_decrease * 15)) // there are 30 seconds to full discharge
 				playsound(get_turf(src), 'sound/rig/loudbeep.ogg', 100, 1, 1)
@@ -298,7 +299,7 @@
 			slowdown = 1.4
 			new /obj/effect/temp_visual/emp/pulse(get_turf(src))
 			playsound(get_turf(src), 'sound/effects/pop.ogg', 100, 1, -6)
-			wearer.alpha = 4
+			wearer.alpha = 6
 			wearer.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 			START_PROCESSING(SSobj, src)
 
@@ -431,7 +432,7 @@
 	name = "spike"
 	icon_state = "throwingstar"
 	icon = 'icons/obj/items_and_weapons.dmi'
-	damage = 35
+	damage = 40
 	damage_type = BRUTE
 	nodamage = 0
 	eyeblur = 0
@@ -439,7 +440,7 @@
 	knockdown = 0
 	stamina = 10
 	knockdown_stamoverride = 0
-	armour_penetration = 30
+	armour_penetration = 65
 	embedding = list("pain_mult" = 4, "embed_chance" = 100, "fall_chance" = 0, "embed_chance_turf_mod" = 15)
 
 
@@ -485,17 +486,48 @@
 
 /////////////////////////////////////////////////////////
 
+/obj/item/clothing/mask/gas/sechailer/syndicate/flektarn
+	icon_state = "half_mask_flektarn"
+
+/obj/item/clothing/mask/gas/sechailer/syndicate/green
+	icon_state = "half_mask_green"
+
+/obj/item/clothing/mask/gas/sechailer/syndicate/tan
+	icon_state = "half_mask_tan"
+
+/obj/item/storage/backpack/hipbag
+	name = "Hipbag"
+	icon_state = "hipbag"
+	item_state = "hipbag"
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	icon = 'icons/obj/clothing/belts.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/belt.dmi'
+
+/obj/item/storage/backpack/hipbag/tan
+	name = "Tan Hipbag"
+	icon_state = "hipbag_tan"
+	item_state = "hipbag_tan"
+
+/obj/item/storage/backpack/hipbag/green
+	name = "Green Hipbag"
+	icon_state = "hipbag_green"
+	item_state = "hipbag_green"
+
+//////////////////////////////////////////////
+
 /mob/living/simple_animal/pet/dog/corgi/pig/assistant
 	name = "Danya"
 	real_name = "Danya"
 	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
 	maxHealth = 250
 	health = 250
+	gender = MALE
 
 /mob/living/simple_animal/pet/fox/fennec/eldritch
 	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
 	maxHealth = 100
 	health = 100
+	held_icon = "fennec_eldritch"
 
 /mob/living/simple_animal/pet/cat/moro
 	name = "Moro"
@@ -508,6 +540,7 @@
 	mob_size = MOB_SIZE_LARGE
 	maxHealth = 250
 	health = 250
+	gender = MALE
 	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
 
 /mob/living/simple_animal/pet/cat/alta
@@ -556,7 +589,7 @@
 	item_state = "raita"
 
 /obj/item/toy/plush/mammal/fox/emma/aiko
-	name = "aiko plushie"
+	name = "Aiko Plushie"
 	icon_state = "aiko"
 	item_state = "aiko"
 

@@ -392,10 +392,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 /mob/living/proc/can_speak_vocal(message) //Check AFTER handling of xeno and ling channels
 	var/obj/item/bodypart/leftarm = get_bodypart(BODY_ZONE_L_ARM)
 	var/obj/item/bodypart/rightarm = get_bodypart(BODY_ZONE_R_ARM)
-	if(HAS_TRAIT(src, TRAIT_SEWED) && get_selected_language() != /datum/language/signlanguage)
-		return FALSE
-
-	if(HAS_TRAIT(src, TRAIT_MUTE))
+	if(HAS_TRAIT(src, TRAIT_MUTE) && get_selected_language() != /datum/language/signlanguage)
 		return FALSE
 
 	if (get_selected_language() == /datum/language/signlanguage)

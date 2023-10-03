@@ -77,7 +77,7 @@
 	. = ..()
 	if(iswendigo(pulledby)) //Grip is too strong, nonetheless.
 		to_chat(src, "<span class='danger'>The grip is too strong! I need some time...</span>")
-		if(do_after(src, 200, target=pulledby))
+		if(do_after(src, 200, target = pulledby))
 			to_chat(src, "<span class='danger'>I break free off [pulledby]'s grip!</span>")
 			return TRUE
 

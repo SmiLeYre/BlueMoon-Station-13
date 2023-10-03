@@ -2,10 +2,10 @@
 #define DEFAULT_ANNOUNCEMENT_SOUND "default_announcement"
 
 /// Preset central command names to chose from for centcom reports.
-#define CENTCOM_PRESET "Central Command"
-#define SYNDICATE_PRESET "The Syndicate"
-#define WIZARD_PRESET "The Wizard Federation"
-#define CUSTOM_PRESET "Custom Command Name"
+#define CENTCOM_PRESET "Центральное Командование"
+#define SYNDICATE_PRESET "Триглав"
+#define WIZARD_PRESET "Космическая Федерация Магов"
+#define CUSTOM_PRESET "Введите Текст"
 
 // ^ ^ ^ BlueMoon edit
 
@@ -1045,7 +1045,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	id_select += "</select>"
 
 	var/dat = {"
-	<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>Create Outfit</title></head><body>
+	<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'><title>Create Outfit</title></head><body>
 	<form name="outfit" action="byond://?src=[REF(src)];[HrefToken()]" method="get">
 	<input type="hidden" name="src" value="[REF(src)]">
 	[HrefTokenFormField()]
@@ -1842,10 +1842,10 @@ Traitors and the like can also be revived with the previous role mostly intact.
 					if(!source)
 						return
 			REMOVE_TRAIT(D,chosen_trait,source)
-/*
+
 /client/proc/spawn_floor_cluwne()
-	set category = "Admin.Fun"
 	set name = "Unleash Floor Cluwne"
+	set category = "Admin.Fun"
 	set desc = "Pick a specific target or just let it select randomly and spawn the floor cluwne mob on the station. Be warned: spawning more than one may cause issues!"
 	var/target
 
@@ -1862,4 +1862,3 @@ Traitors and the like can also be revived with the previous role mostly intact.
 		new /mob/living/simple_animal/hostile/floor_cluwne(T)
 	log_admin("[key_name(usr)] spawned floor cluwne.")
 	message_admins("[key_name(usr)] spawned floor cluwne.")
-*/

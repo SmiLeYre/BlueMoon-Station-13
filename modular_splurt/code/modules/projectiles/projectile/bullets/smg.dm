@@ -9,7 +9,7 @@
 /obj/item/projectile/bullet/c45/lethal
 	name = ".45 bullet"
 	damage = 30
-	wound_bonus = -10
+	wound_bonus = 6
 	stamina = 0
 	wound_falloff_tile = -10
 	sharpness = SHARP_EDGED

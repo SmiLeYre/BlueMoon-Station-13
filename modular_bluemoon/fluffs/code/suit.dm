@@ -101,11 +101,15 @@
 	item_state = "flektarn_montur"
 
 /obj/item/clothing/suit/donator/bm/SH_jacket
-	name = "Shiro Silverhand Jacket"
+	name = "Shiro's Samurai Jacket"
 	desc = "Iconic jacket of the Shiro Silverhand he wore in his Samurai days."
 	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
 	icon_state = "SH_jacket"
 	item_state = "SH_jacket"
+	unique_reskin = list(
+		"Default" = list("icon_state" = "SH_jacket"),
+		"Black" = list("icon_state" = "SH_jacket_B")
+	)
 
 /obj/item/clothing/suit/toggle/noonar // Наследуем от suit/toggle, чтобы можно было переключать состояние
 	name = "syndicate jacket"
@@ -155,3 +159,10 @@
 	dog_fashion = null
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
+
+/obj/item/clothing/suit/donator/bm/ellys_hoodie
+	name = "Ellys Mantle"
+	desc = "A hoodie in grey and white colors."
+	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
+	icon_state = "ellys_hoodie"
+	item_state = "hostrench"

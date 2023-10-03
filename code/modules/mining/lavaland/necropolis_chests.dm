@@ -531,7 +531,6 @@
 	knockdown = 5
 	damage_type = BRUTE
 	hitsound = 'sound/effects/splat.ogg'
-	var/chain
 
 /obj/item/projectile/hook/fire(setAngle)
 	if(firer)

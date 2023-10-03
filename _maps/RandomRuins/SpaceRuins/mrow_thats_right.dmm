@@ -381,6 +381,7 @@
 /turf/open/floor/plasteel/white/side,
 /area/ruin/space/has_grav/powered/cat_man)
 "bg" = (
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plasteel/white/corner{
 	dir = 8
 	},
@@ -530,6 +531,7 @@
 	},
 /area/ruin/space/has_grav/powered/cat_man)
 "bC" = (
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plasteel/white/corner{
 	dir = 1
 	},
@@ -726,6 +728,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 5
 	},
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/cat_man)
 "ca" = (
@@ -938,6 +941,10 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/cat_man)
+"OY" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/carpet,
 /area/ruin/space/has_grav/powered/cat_man)
 "RT" = (
 /obj/machinery/door/airlock/external,
@@ -1255,7 +1262,7 @@ aN
 aS
 aS
 aS
-aS
+OY
 ad
 bL
 aI

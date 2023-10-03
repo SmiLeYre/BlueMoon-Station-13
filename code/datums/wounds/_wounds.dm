@@ -90,6 +90,9 @@
 	/// What flags apply to this wound
 	var/wound_flags = (FLESH_WOUND | BONE_WOUND | ACCEPTS_GAUZE)
 
+	var/ru_name = ""
+	var/ru_name_r = ""
+
 /datum/wound/Destroy()
 	if(limb?.wounds && (src in limb.wounds)) // destroy can call remove_wound() and remove_wound() calls qdel, so we check to make sure there's anything to remove first
 		remove_wound()
@@ -147,14 +150,14 @@
 		return
 
 	if(!(silent || demoted))
-		var/msg = "<span class='danger'>[victim]'s [limb.name] [occur_text]!</span>"
+		var/msg = "<span class='danger'>[limb.ru_name_capital] персонажа [victim] [occur_text]!</span>"
 		var/vis_dist = COMBAT_MESSAGE_RANGE
 
 		if(severity != WOUND_SEVERITY_MODERATE)
 			msg = "<b>[msg]</b>"
 			vis_dist = DEFAULT_MESSAGE_RANGE
 
-		victim.visible_message(msg, "<span class='userdanger'>Моя [limb.name] [occur_text]!!</span>", vision_distance = vis_dist)
+		victim.visible_message(msg, "<span class='userdanger'>Моя [limb.ru_name] [occur_text]!</span>", vision_distance = vis_dist)
 		if(sound_effect)
 			playsound(L.owner, sound_effect, 70 + 20 * severity, TRUE)
 
@@ -317,11 +320,11 @@
   * * mob/user: The user examining the wound's owner, if that matters
   */
 /datum/wound/proc/get_examine_description(mob/user)
-	. = "[victim.ru_ego(TRUE)] [limb.name] [examine_desc]"
+	. = "[victim.ru_ego(TRUE)] [limb.ru_name] [examine_desc]"
 	. = severity <= WOUND_SEVERITY_MODERATE ? "[.]." : "<B>[.]!</B>"
 
 /datum/wound/proc/get_scanner_description(mob/user)
-	return "Тип: [name]\nТяжесть: [severity_text()]\nОписание: [desc]\nВозможное лечение: [treat_text]"
+	return "Тип: [ru_name]\nТяжесть: [severity_text()]\nОписание: [desc]\nРекомендуемое лечение: [treat_text]"
 
 /datum/wound/proc/severity_text()
 	switch(severity)

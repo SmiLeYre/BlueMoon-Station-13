@@ -36,7 +36,7 @@
 		return
 
 //ambition start
-	var/list/body = list("<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>Options for [M.key]</title></head>")
+	var/list/body = list("<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'><title>Options for [M.key]</title></head>")
 //ambition end
 	body += "<body>Options panel for <b>[M]</b>"
 	if(M.client)

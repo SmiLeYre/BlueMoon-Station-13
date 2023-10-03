@@ -338,6 +338,7 @@
 	. = ..()
 	if(!occupant)
 		return
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	to_chat(user, "<span class='warning'>You corrupt the genetic compiler.</span>")
 	malfunction()
 	return TRUE

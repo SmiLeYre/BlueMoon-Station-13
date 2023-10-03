@@ -149,7 +149,7 @@
 	dna_cost = 2
 	loudness = 2
 	req_human = TRUE
-	recharge_slowdown = 0.6
+	recharge_slowdown = 0
 	weapon_type = /obj/item/melee/arm_blade
 	weapon_name_simple = "blade"
 
@@ -167,12 +167,12 @@
 	throwforce = 0 //Just to be on the safe side
 	throw_range = 0
 	throw_speed = 0
-	armour_penetration = 20
+	armour_penetration = 35
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = SHARP_EDGED
-	wound_bonus = -60
-	bare_wound_bonus = 20
+	wound_bonus = 10
+	bare_wound_bonus = 15
 	var/can_drop = FALSE
 	var/fake = FALSE
 	total_mass = TOTAL_MASS_HAND_REPLACEMENT
@@ -312,7 +312,6 @@
 	damage_type = BRUTE
 	range = 8
 	hitsound = 'sound/weapons/thudswoosh.ogg'
-	var/chain
 	var/obj/item/ammo_casing/magic/tentacle/source //the item that shot it
 
 /obj/item/projectile/tentacle/Initialize(mapload)
@@ -376,6 +375,7 @@
 
 					if(INTENT_DISARM)
 						var/obj/item/I = C.get_active_held_item()
+						armour_penetration = 100
 						if(I)
 							if(C.dropItemToGround(I))
 								C.visible_message("<span class='danger'>[I] is yanked off [C]'s hand by [src]!</span>","<span class='userdanger'>A tentacle pulls [I] away from you!</span>")
@@ -533,7 +533,7 @@
 	dna_cost = 1
 	loudness = 2
 	req_human = TRUE
-	recharge_slowdown = 0.6
+	recharge_slowdown = 0 // BlueMoon 27.09.2023. Не вижу смысла в замедлении перезарядки генов, особенно с учетом не особо сильных позиций генки. Тоже и с мечом.
 
 	suit_type = /obj/item/clothing/suit/armor/changeling
 	helmet_type = /obj/item/clothing/head/helmet/changeling
@@ -662,7 +662,7 @@
 	dna_cost = 2
 	loudness = 2
 	req_human = TRUE
-	recharge_slowdown = 0.6
+	recharge_slowdown = 0
 
 	glove_type = /obj/item/clothing/gloves/fingerless/pugilist/cling // just punch his head off dude
 	glove_name_simple = "bone gauntlets"

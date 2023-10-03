@@ -442,6 +442,7 @@
 			stored_research.add_design(found_design)
 	to_chat(user, "<span class='warning'>A warning flashes onto the screen, stating that safety overrides have been deactivated!</span>")
 	obj_flags |= EMAGGED
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	update_static_data(user)
 
 /obj/machinery/limbgrower/AltClick(mob/living/user)

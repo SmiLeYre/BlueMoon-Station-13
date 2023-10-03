@@ -17,7 +17,7 @@
 	desc = "A suit that protects against biological contamination."
 	icon_state = "bio"
 	item_state = "bio_suit"
-	tail_state = "bio_cmo"
+	tail_state = "syndicate-winter"
 	w_class = WEIGHT_CLASS_BULKY
 	gas_transfer_coefficient = 0.01
 	permeability_coefficient = 0.01
@@ -38,7 +38,7 @@
 
 /obj/item/clothing/suit/bio_suit/general
 	icon_state = "bio_virology"
-	tail_state = "bio_virology"
+	tail_state = "syndicate-winter"
 
 //Virology biosuit, green stripe
 /obj/item/clothing/head/bio_hood/virology
@@ -46,7 +46,7 @@
 
 /obj/item/clothing/suit/bio_suit/virology
 	icon_state = "bio_virology"
-	tail_state = "bio_virology"
+	tail_state = "syndicate-winter"
 
 //Security biosuit, grey with red stripe across the chest
 /obj/item/clothing/head/bio_hood/security
@@ -56,7 +56,7 @@
 /obj/item/clothing/suit/bio_suit/security
 	armor = list(MELEE = 25, BULLET = 15, LASER = 25, ENERGY = 10, BOMB = 25, BIO = 100, RAD = 80, FIRE = 30, ACID = 100)
 	icon_state = "bio_security"
-	tail_state = "bio_security"
+	tail_state = "syndicate-winter"
 
 //Janitor's biosuit, grey with purple arms
 /obj/item/clothing/head/bio_hood/janitor
@@ -64,7 +64,7 @@
 
 /obj/item/clothing/suit/bio_suit/janitor
 	icon_state = "bio_janitor"
-	tail_state = "bio_janitor"
+	tail_state = "syndicate-winter"
 
 //Scientist's biosuit, white with a pink-ish hue
 /obj/item/clothing/head/bio_hood/scientist
@@ -72,7 +72,7 @@
 
 /obj/item/clothing/suit/bio_suit/scientist
 	icon_state = "bio_scientist"
-	tail_state = "bio_scientist"
+	tail_state = "syndicate-winter"
 
 //CMO's biosuit, blue stripe
 /obj/item/clothing/suit/bio_suit/cmo
@@ -80,7 +80,7 @@
 
 /obj/item/clothing/head/bio_hood/cmo
 	icon_state = "bio_cmo"
-	tail_state = "bio_cmo"
+	tail_state = "syndicate-winter"
 
 //Plague Dr mask can be found in clothing/masks/gasmask.dm
 /obj/item/clothing/suit/bio_suit/plaguedoctorsuit
@@ -88,7 +88,7 @@
 	desc = "It protected doctors from the Black Death, back then. You bet your arse it's gonna help you against viruses."
 	icon_state = "plaguedoctor"
 	item_state = "bio_suit"
-	tail_state = "plaguedoctor"
+	tail_state = "ert-alert"
 	strip_delay = 40
 	equip_delay_other = 20
 	slowdown = 0

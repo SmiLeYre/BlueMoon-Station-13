@@ -1656,7 +1656,7 @@
 			to_chat(U, span_warning("[C] already has a limb attached there!"))
 			return
 		C.visible_message(span_warning("[U] is attempting to attach [L] onto [C]!"), span_userdanger("[U] is attempting to re-attach one of your limbs!"))
-		if(do_after(U,40,target = C) && C.Adjacent(U))
+		if(do_after(U, 40, target = C) && C.Adjacent(U))
 			L.attach_limb(C)
 			C.visible_message(span_warning("[U] successfully attaches [L] onto [C]"), span_userdanger("[U] has successfully attached a [L.name] onto you; you can use that limb again!"))
 			return
@@ -1678,7 +1678,7 @@
 			return
 		C.visible_message(span_warning("[U] is attempting to remove one of [C]'s limbs!"), span_userdanger("[U] is attempting to disconnect one of your limbs!"))
 		var/obj/item/bodypart/B = C.get_bodypart(U.zone_selected)
-		if(C.Adjacent(U) && do_after(U,40,target = C))
+		if(C.Adjacent(U) && do_after(U, 40, target = C))
 			var/obj/item/bodypart/D = C.get_bodypart(U.zone_selected)
 			if(B != D)
 				to_chat(U, span_warning("You cannot target a different limb while already removing another!"))

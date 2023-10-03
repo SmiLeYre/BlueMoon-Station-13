@@ -106,6 +106,7 @@
 					/obj/item/defibrillator/loaded = 1,
 					/obj/item/wallframe/defib_mount = 1,
 					/obj/item/sensor_device = 2,
+					/obj/item/clothing/glasses/hud/health/sunglasses = 4,
 					/obj/item/pinpointer/crew = 2)
 
 /obj/machinery/vending/medical/syndicate_access/Initialize(mapload)

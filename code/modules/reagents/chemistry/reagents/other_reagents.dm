@@ -2359,9 +2359,23 @@
 	value = REAGENT_VALUE_UNCOMMON
 
 /datum/reagent/moonsugar/on_mob_life(mob/living/carbon/M)
-	if(prob(20))
-		to_chat(M, "You find yourself unable to supress the desire to meow!")
-		M.emote("nya")
+	if(iscatperson(M)) //"drugs" for felinids
+		M.set_drugginess(30)
+		if(prob(20))
+			to_chat(M, "<span class = 'notice'>[pick("Headpats feel nice.", "The feeling of a hairball...", "Backrubs would be nice.", "Whats behind those doors?", "Wanna huuugs~", "Pat me pleeease~", "That corner looks suspicious...", "Rub my belly pleeease~")]</span>")
+		if(prob(20))
+			M.nextsoundemote = world.time - 10 //"too early BZHZHZH"
+			M.emote(pick("nya","mewo","meow","purr","anyo","uwu","stare","spin"))
+		if((istype(M) && M.dna && M.dna.species && M.dna.species.can_wag_tail(M)) && !M.dna.species.is_wagging_tail())
+			M.emote("wag")
+		if(prob(5))
+			M.emote("spin")
+			M.lay_down()
+			to_chat(M, "<span class = 'notice'>[pick("Wanna reeest~","Waaaw~","Wanna plaaay!~","Play with meee~")]</span>")
+	else
+		if(prob(20))
+			to_chat(M, "You find yourself unable to supress the desire to meow!")
+			M.emote("nya")
 	..()
 
 /datum/reagent/changeling_string
@@ -2410,12 +2424,31 @@
 	description = "A colorless liquid that makes people more peaceful and felines more happy."
 	metabolization_rate = 1.75 * REAGENTS_METABOLISM
 	value = REAGENT_VALUE_COMMON
+	pH = 8
+	glass_icon_state = "glass_cucumber"
+	glass_name = "glass of catnip"
+	glass_desc = "Cup of hapiness for felinids"
+	shot_glass_icon_state = "shotglassgreen"
 
 /datum/reagent/pax/catnip/on_mob_life(mob/living/carbon/M)
-	if(prob(20))
-		M.emote("nya")
-	if(prob(20))
-		to_chat(M, "<span class = 'notice'>[pick("Headpats feel nice.", "The feeling of a hairball...", "Backrubs would be nice.", "Whats behind those doors?")]</span>")
+	if(iscatperson(M)) //"drugs" for felinids
+		M.set_drugginess(30)
+		if(prob(20))
+			to_chat(M, "<span class = 'notice'>[pick("Headpats feel nice.", "The feeling of a hairball...", "Backrubs would be nice.", "Whats behind those doors?", "Wanna huuugs~", "Pat me pleeease~", "That corner looks suspicious...", "Rub my belly pleeease~")]</span>")
+		if(prob(20))
+			M.nextsoundemote = world.time - 10 //"too early BZHZHZH"
+			M.emote(pick("nya","mewo","meow","purr","anyo","uwu","stare","spin"))
+		if((istype(M) && M.dna && M.dna.species && M.dna.species.can_wag_tail(M)) && !M.dna.species.is_wagging_tail())
+			M.emote("wag")
+		if(prob(5))
+			M.emote("spin")
+			M.lay_down()
+			to_chat(M, "<span class = 'notice'>[pick("Wanna reeest~","Waaaw~","Wanna plaaay!~","Play with meee~")]</span>")
+	else
+		if(prob(20))
+			M.emote("nya")
+		if(prob(20))
+			to_chat(M, "<span class = 'notice'>[pick("Headpats feel nice.", "The feeling of a hairball...", "Backrubs would be nice.", "Whats behind those doors?")]</span>")
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/list/adjusted = H.adjust_arousal(2,"catnip", aphro = TRUE)

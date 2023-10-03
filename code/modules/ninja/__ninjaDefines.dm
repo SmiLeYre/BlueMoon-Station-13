@@ -21,3 +21,9 @@
 #define IS_NINJA_SUIT_NET_CREATION(action) (istype(action, /datum/action/item_action/ninjanet))
 #define IS_NINJA_SUIT_SWORD_RECALL(action) (istype(action, /datum/action/item_action/ninja_sword_recall))
 #define IS_NINJA_SUIT_STEALTH(action) (istype(action, /datum/action/item_action/ninja_stealth))
+#define IS_NINJA_SUIT_NINJASTATUS(action) (istype(action, /datum/action/item_action/ninjastatus))
+
+#define IS_NINJA_SUIT_NAGINATA_RECALL(action) (istype(action, /datum/action/item_action/ninja_naginata_recall))
+#define IS_NINJA_SUIT_STAR_LETHAL_CREATION(action) (istype(action, /datum/action/item_action/ninjastar_lethal))
+#define IS_NINJA_SUIT_RESONANCE(action) (istype(action, /datum/action/item_action/ninja_resonance))
+#define IS_NINJA_SUIT_STEALTH_WISDOM(action) (istype(action, /datum/action/item_action/ninja_stealth_wisdom))

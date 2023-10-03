@@ -1,10 +1,12 @@
 /datum/wound/loss
 	name = "Dismembered"
 	desc = "oof ouch!!"
+	ru_name = "Расчленение"
+	ru_name_r = "расчленения"
 
 	sound_effect = 'sound/effects/dismember.ogg'
 	severity = WOUND_SEVERITY_LOSS
-	threshold_minimum = 180
+	threshold_minimum = 160
 	status_effect_type = null
 	scar_keyword = "dismember"
 	wound_flags = null
@@ -19,19 +21,19 @@
 
 	switch(wounding_type)
 		if(WOUND_BLUNT)
-			occur_text = "is shattered through the last bone holding it together, severing it completely!"
+			occur_text = "отрывается от последнего обломка костей, что её удерживал!"
 		if(WOUND_SLASH)
-			occur_text = "is slashed through the last tissue holding it together, severing it completely!"
+			occur_text = "отрывается в результате режущей раны!"
 		if(WOUND_PIERCE)
-			occur_text = "is pierced through the last tissue holding it together, severing it completely!"
+			occur_text = "отрывается в результате колотой раны!"
 		if(WOUND_BURN)
-			occur_text = "is completely incinerated, falling to dust!"
+			occur_text = "сгорает целиком, обращаясь в пепел!"
 
 	victim = dismembered_part.owner
 
-	var/msg = "<span class='bolddanger'>[victim]'s [dismembered_part.name] [occur_text]!</span>"
+	var/msg = "<span class='bolddanger'>[dismembered_part.ru_name_capital] персонажа [victim] [occur_text]!</span>"
 
-	victim.visible_message(msg, "<span class='userdanger'>Your [dismembered_part.name] [occur_text]!</span>")
+	victim.visible_message(msg, "<span class='userdanger'>Ваша [dismembered_part.ru_name] [occur_text]!</span>")
 
 	limb = dismembered_part
 	severity = WOUND_SEVERITY_LOSS

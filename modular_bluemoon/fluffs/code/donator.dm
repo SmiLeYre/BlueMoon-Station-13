@@ -44,6 +44,20 @@
 	ckeywhitelist = list("reaperdb")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
+/datum/gear/donator/bm/ellys_suit
+	name = "Ellys Costume"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/donator/bm/ellys_suit
+	ckeywhitelist = list("chowny")
+	subcategory = LOADOUT_SUBCATEGORIES_DON12
+
+/datum/gear/donator/bm/ellys_hoodie
+	name = "Ellys Hoodie"
+	slot = ITEM_SLOT_OCLOTHING
+	path = /obj/item/clothing/suit/donator/bm/ellys_hoodie
+	ckeywhitelist = list("chowny")
+	subcategory = LOADOUT_SUBCATEGORIES_DON12
+
 /datum/gear/donator/bm/modern_watch
 	name = "modern watch"
 	slot = ITEM_SLOT_GLOVES
@@ -160,7 +174,7 @@
 	name = "Luftkuss Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/old_kit
-	ckeywhitelist = list("stgs", "sodastrike", "dolbajob", "hazzi", "krashly")
+	ckeywhitelist = list("stgs", "sodastrike", "dolbajob", "hazzi", "krashly", "fiaskin")
 	subcategory = LOADOUT_SUBCATEGORIES_DON12
 
 /datum/gear/donator/bm/Friskis_Mask
@@ -219,6 +233,13 @@
 	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife")
 	subcategory = LOADOUT_SUBCATEGORIES_DON17
 
+/datum/gear/donator/bm/stunblade
+	name = "Stunblade Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/stunblade_kit
+	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife", "leony24", "stgs")
+	subcategory = LOADOUT_SUBCATEGORIES_DON17
+
 /datum/gear/donator/bm/aviator_helmet
 	name = "Aviator Helmet"
 	slot = ITEM_SLOT_HEAD
@@ -237,6 +258,13 @@
 	name = "Flektarn Combat Uniform"
 	slot = ITEM_SLOT_ICLOTHING
 	path = /obj/item/clothing/under/donator/bm/flektarn
+	ckeywhitelist = list("vulpshiro", "dolbajob", "stgs", "leony24")
+	subcategory = LOADOUT_SUBCATEGORIES_DON16
+
+/datum/gear/donator/bm/flektarn_casual
+	name = "Flektarn Casual Uniform"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/donator/bm/flektarn_casual
 	ckeywhitelist = list("vulpshiro", "dolbajob", "stgs", "leony24")
 	subcategory = LOADOUT_SUBCATEGORIES_DON16
 
@@ -265,6 +293,13 @@
 	name = "Shiro Silverhand Jacket"
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/donator/bm/SH_jacket
+	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife")
+	subcategory = LOADOUT_SUBCATEGORIES_DON17
+
+/datum/gear/donator/bm/SH_glasses
+	name = "Shiro Silverhand Glasses"
+	slot = ITEM_SLOT_EYES
+	path = /obj/item/clothing/glasses/sunglasses/shiro
 	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife")
 	subcategory = LOADOUT_SUBCATEGORIES_DON17
 
@@ -324,6 +359,13 @@
 	ckeywhitelist = list("danik10p")
 	subcategory = LOADOUT_SUBCATEGORIES_DON12
 
+/datum/gear/donator/bm/sponge
+	name = "Sponge Modification Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/sponge_kit
+	ckeywhitelist = list("danik10p")
+	subcategory = LOADOUT_SUBCATEGORIES_DON12
+
 /datum/gear/donator/bm/battle_coat
 	name = "Battle Coat"
 	slot = ITEM_SLOT_ICLOTHING
@@ -343,4 +385,18 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/harness_kit
 	ckeywhitelist = list("ghoststalin", "g3234")
+	subcategory = LOADOUT_SUBCATEGORIES_DON12
+
+/datum/gear/donator/bm/cross_shielded
+	name = "Shielded Cross"
+	slot = ITEM_SLOT_NECK
+	path = /obj/item/clothing/neck/tie/cross/shielded
+	ckeywhitelist = list("kalifasun", "dofalt")
+	subcategory = LOADOUT_SUBCATEGORIES_DON21
+
+/datum/gear/donator/bm/miner_plushie
+	name = "Miner Plushie"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/toy/plush/miner
+	ckeywhitelist = list("cheburek228")
 	subcategory = LOADOUT_SUBCATEGORIES_DON12

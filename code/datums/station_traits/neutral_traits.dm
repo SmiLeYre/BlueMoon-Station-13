@@ -161,6 +161,7 @@
 	//set_station_name(new_name)
 
 	//print_command_report(centcom_announcement)
+	//priority_announce(centcom_announcement)
 
 //datum/station_trait/randomizing_station_name/fast
 //	name = "Randomizing station name - Fast"

@@ -2,7 +2,7 @@
 	name = "Cat Surgeon"
 	typepath = /datum/round_event/cat_surgeon
 	max_occurrences = 2
-	weight = 30
+	weight = 25
 	category = EVENT_CATEGORY_ENTITIES
 
 /datum/round_event/cat_surgeon/announce(fake)

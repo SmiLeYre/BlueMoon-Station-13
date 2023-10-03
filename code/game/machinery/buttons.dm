@@ -114,6 +114,7 @@
 	. = ..()
 	if(obj_flags & EMAGGED)
 		return
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	req_access = list()
 	req_one_access = list()
 	playsound(src, "sparks", 100, 1)

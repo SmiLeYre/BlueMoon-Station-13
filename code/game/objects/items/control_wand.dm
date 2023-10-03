@@ -64,13 +64,19 @@
 
 /obj/item/door_remote/away
 	name = "Away Door Remote"
-	icon_state = "gangtool-yellow"
-	region_access = 7
+	icon_state = "gangtool-syndie"
+	region_access = 8
 
 /obj/item/door_remote/captain
 	name = "command door remote"
 	icon_state = "gangtool-yellow"
 	region_access = 7
+
+/obj/item/door_remote/quartermaster
+	name = "supply door remote"
+	desc = "Remotely controls airlocks. This remote has additional Vault access."
+	icon_state = "gangtool-green"
+	region_access = 6
 
 /obj/item/door_remote/chief_engineer
 	name = "engineering door remote"
@@ -82,21 +88,15 @@
 	icon_state = "gangtool-purple"
 	region_access = 4
 
-/obj/item/door_remote/head_of_security
-	name = "security door remote"
-	icon_state = "gangtool-red"
-	region_access = 2
-
-/obj/item/door_remote/quartermaster
-	name = "supply door remote"
-	desc = "Remotely controls airlocks. This remote has additional Vault access."
-	icon_state = "gangtool-green"
-	region_access = 6
-
 /obj/item/door_remote/chief_medical_officer
 	name = "medical door remote"
 	icon_state = "gangtool-blue"
 	region_access = 3
+
+/obj/item/door_remote/head_of_security
+	name = "security door remote"
+	icon_state = "gangtool-red"
+	region_access = 2
 
 /obj/item/door_remote/civillian
 	name = "civilian door remote"

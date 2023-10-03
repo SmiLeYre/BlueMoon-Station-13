@@ -134,10 +134,10 @@
 /obj/item/stack/medical/gauze/try_heal(mob/living/M, mob/user, silent)
 	var/obj/item/bodypart/limb = M.get_bodypart(check_zone(user.zone_selected))
 	if(!limb)
-		to_chat(user, "<span class='notice'>There's nothing there to bandage!</span>")
+		to_chat(user, "<span class='notice'>Нечего перевязывать!</span>")
 		return
 	if(!LAZYLEN(limb.wounds))
-		to_chat(user, "<span class='notice'>There's no wounds that require bandaging on [user==M ? "your" : "[M]'s"] [limb.name]!</span>") // good problem to have imo
+		to_chat(user, "<span class='notice'>[user==M ? "Ваша [limb.ru_name]" : "[limb.ru_name_capital] персонажа [M]"] не требует перевязки!</span>")
 		return
 
 	var/gauzeable_wound = FALSE
@@ -147,36 +147,36 @@
 			gauzeable_wound = TRUE
 			break
 	if(!gauzeable_wound)
-		to_chat(user, "<span class='notice'>There's no wounds that require bandaging on [user==M ? "your" : "[M]'s"] [limb.name]!</span>") // good problem to have imo
+		to_chat(user, "<span class='notice'>[user==M ? "Ваша [limb.ru_name]" : "[limb.ru_name_capital] персонажа [M]"] не требует перевязки!</span>")
 		return
 
 	if(limb.current_gauze && (limb.current_gauze.absorption_capacity * 0.8 > absorption_capacity)) // ignore if our new wrap is < 20% better than the current one, so someone doesn't bandage it 5 times in a row
-		to_chat(user, "<span class='warning'>The bandage currently on [user==M ? "your" : "[M]'s"] [limb.name] is still in good condition!</span>")
+		to_chat(user, "<span class='warning'>Повязка, что наложена на [user==M ? "вашей [limb.ru_name_v]" : "[limb.ru_name_v] персонажа[M]"], пока ещё хорошем состоянии!</span>")
 		return
 
-	user.visible_message("<span class='warning'>[user] begins wrapping the wounds on [M]'s [limb.name] with [src]...</span>", "<span class='warning'>You begin wrapping the wounds on [user == M ? "your" : "[M]'s"] [limb.name] with [src]...</span>")
+	user.visible_message("<span class='warning'>[user] пытается перевязать рану на [limb.ru_name_v] персонажа [M] с помощью [src]...</span>", "<span class='warning'>Вы пытаетесь перевязать раны на [user == M ? "вашей [limb.ru_name_v]" : "[limb.ru_name_v] персонажа [M]"] с помощью [src]...</span>")
 
 	if(!do_after(user, (user == M ? self_delay : other_delay), target=M))
 		return
 
-	user.visible_message("<span class='green'>[user] applies [src] to [M]'s [limb.name].</span>", "<span class='green'>You bandage the wounds on [user == M ? "yourself" : "[M]'s"] [limb.name].</span>")
+	user.visible_message("<span class='green'>[user] наносит [src] на конечность персонажа [M]</span>", "<span class='green'>Вы пытаетесь перевязать раны на [user == M ? "своей конечности" : "конечности персонажа [M]"].</span>")
 	limb.apply_gauze(src)
 
 /obj/item/stack/medical/gauze/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_WIRECUTTER || I.get_sharpness())
 		if(get_amount() < 2)
-			to_chat(user, "<span class='warning'>You need at least two gauzes to do this!</span>")
+			to_chat(user, "<span class='warning'>Вам необходимо как минимум две марлевых повязки!</span>")
 			return
 		new /obj/item/stack/sheet/cloth(user.drop_location())
-		user.visible_message("[user] cuts [src] into pieces of cloth with [I].", \
-					 "<span class='notice'>You cut [src] into pieces of cloth with [I].</span>", \
-					 "<span class='italics'>You hear cutting.</span>")
+		user.visible_message("[user] разрезает [src] на части с помощью [I].", \
+					 "<span class='notice'>Вы разрезаете [src] на части с помощью [I].</span>", \
+					 "<span class='italics'>Вы слышите звук разрезания ткани.</span>")
 		use(2)
 	else if(I.is_drainable() && I.reagents.has_reagent(/datum/reagent/space_cleaner/sterilizine))
 		if(!I.reagents.has_reagent(/datum/reagent/space_cleaner/sterilizine, 5))
-			to_chat(user, "<span class='warning'>There's not enough sterilizine in [I] to sterilize [src]!</span>")
+			to_chat(user, "<span class='warning'>Не хватает стерилизина в [I], чтобы обработать [src]!</span>")
 			return
-		user.visible_message("<span class='notice'>[user] sterilizes [src] with the contents of [I].</span>", "<span class='notice'>You pour the contents of [I] onto [src], sterilizing it.</span>")
+		user.visible_message("<span class='notice'>[user] обрабатывает [src] с помощью содержимого [I].</span>", "<span class='notice'>Вы выливаете содержимое [I] на [src], обрабатывая это.</span>")
 		I.reagents.remove_reagent(/datum/reagent/space_cleaner/sterilizine, 5)
 		new /obj/item/stack/medical/gauze/adv/one(user.drop_location())
 		use(1)
@@ -184,7 +184,7 @@
 		return ..()
 
 /obj/item/stack/medical/gauze/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] begins tightening \the [src] around [user.ru_ego()] neck! It looks like [user.ru_who()] forgot how to use medical supplies!</span>")
+	user.visible_message("<span class='suicide'>[user] пытается обвязать \the [src] вокруг [user.ru_ego()] шеи! Похоже, [user.ru_who()] не совсем понимает, как пользоваться медикаментами!</span>")
 	return OXYLOSS
 
 /obj/item/stack/medical/gauze/one

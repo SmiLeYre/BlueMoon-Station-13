@@ -203,8 +203,8 @@
 	var/mob/living/silicon/ai/killer = owner.current
 	if(!killer || !istype(killer))
 		return
-	var/law = "Accomplish your objectives at all costs."
-	var/law_borg = "Accomplish your AI's objectives at all costs."
+	var/law = "Выполните все свои цели любой ценой."
+	var/law_borg = "Выполните все цели Искусственного Интеллекта любой ценой."
 	killer.set_zeroth_law(law, law_borg)
 	killer.set_syndie_radio()
 	to_chat(killer, "Your radio has been upgraded! Use :t to speak on an encrypted channel with InteQ Agents!")

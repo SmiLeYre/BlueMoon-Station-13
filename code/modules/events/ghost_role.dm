@@ -29,7 +29,7 @@
 			if(control && control.occurrences > 0)	//Don't refund if it hasn't
 				control.occurrences--
 			return
-		var/waittime = 300 * (2^retry)
+		var/waittime = 600 * (2^retry)
 		message_admins("The event will not spawn a [role_name] until certain \
 			conditions are met. Waiting [waittime/10]s and then retrying.")
 		addtimer(CALLBACK(src, .proc/try_spawning, 0, ++retry), waittime)
@@ -66,7 +66,7 @@
 	var/list/mob/dead/observer/regular_candidates
 	// don't get their hopes up
 	if(priority_candidates.len < minimum_required)
-		regular_candidates = pollGhostCandidates("Do you wish to be considered for the special role of '[role_name]'?", jobban, gametypecheck, be_special)
+		regular_candidates = pollGhostCandidates("Хотите ли вы занять роль '[role_name]'?", jobban, gametypecheck, be_special)
 	else
 		regular_candidates = list()
 

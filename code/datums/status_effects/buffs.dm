@@ -256,7 +256,7 @@
 		if(isliving(B.current))
 			var/mob/living/M = B.current
 			SEND_SOUND(M, sound('sound/hallucinations/veryfar_noise.ogg'))
-			to_chat(M, "<span class='cultlarge'>The Cult's Master, [owner], has fallen in \the [A]!</span>")
+			to_chat(M, "<span class='cultlarge'>Мастер Кровавых Кульистов, [owner], пал где-то в [A]!</span>")
 
 /datum/status_effect/cult_master/tick()
 	if(owner.stat != DEAD && !alive)

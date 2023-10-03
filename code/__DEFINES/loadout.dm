@@ -87,7 +87,6 @@
 #define LOADOUT_CAN_NAME					(1<<0) //renaming items
 #define LOADOUT_CAN_DESCRIPTION				(1<<1) //adding a custom description to items
 #define LOADOUT_CAN_COLOR_POLYCHROMIC		(1<<2)
-#define LOADOUT_CAN_FREQCODE				(1<<3)
 
 /* the names of the customization tabs
 #define SETTINGS_TAB			0

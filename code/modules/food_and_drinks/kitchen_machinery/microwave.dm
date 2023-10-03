@@ -284,6 +284,10 @@
 			for(var/atom/movable/ingredient as anything in ingredients)
 				var/image/ingredient_overlay = image(ingredient, src)
 				. -= ingredient_overlay
+				. -= ingredient_overlay
+				. -= ingredient_overlay
+				. -= ingredient_overlay
+				. -= ingredient_overlay
 			//QDEL_LIST(ingredients)
 			update_appearance()
 		else
@@ -301,6 +305,10 @@
 			dirty = 0
 			for(var/atom/movable/ingredient as anything in ingredients)
 				var/image/ingredient_overlay = image(ingredient, src)
+				. -= ingredient_overlay
+				. -= ingredient_overlay
+				. -= ingredient_overlay
+				. -= ingredient_overlay
 				. -= ingredient_overlay
 			//QDEL_LIST(ingredients)
 			update_appearance()

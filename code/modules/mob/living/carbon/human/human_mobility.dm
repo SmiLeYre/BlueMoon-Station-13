@@ -9,12 +9,12 @@
 		return TRUE
 	else if(!CHECK_MOBILITY(src, MOBILITY_RESIST))
 		if(!automatic)
-			to_chat(src, "<span class='warning'>You are unable to stand up right now.</span>")
+			to_chat(src, "<span class='warning'>Вы не можете встать в данный момент.</span>")
 		return FALSE
 	else
 		var/totaldelay = 3 //A little bit less than half of a second as a baseline for getting up from a rest
 		if(IS_STAMCRIT(src))
-			to_chat(src, "<span class='warning'>You're too exhausted to get up!")
+			to_chat(src, "<span class='warning'>Вы слишком устали, чтобы подняться!")
 			return FALSE
 		combat_flags |= COMBAT_FLAG_RESISTING_REST
 		var/health_deficiency = max((maxHealth - (health - getStaminaLoss()))*0.5, 0)
@@ -24,18 +24,19 @@
 		var/standupwarning = "[src] and everyone around them should probably yell at the dev team"
 		switch(health_deficiency)
 			if(-INFINITY to 10)
-				standupwarning = "[src] stands right up!"
+				standupwarning = "[src] встает!"
 			if(10 to 35)
-				standupwarning = "[src] tries to stand up."
+				standupwarning = "[src] встаёт."
 			if(35 to 60)
-				standupwarning = "[src] slowly pushes [ru_na()]self upright."
+				standupwarning = "[src] медленно встаёт."
 			if(60 to 80)
-				standupwarning = "[src] weakly attempts to stand up."
+				standupwarning = "[src] вяло встаёт."
 			if(80 to INFINITY)
-				standupwarning = "[src] struggles to stand up."
-		var/usernotice = automatic ? "<span class='notice'>You are now getting up. (Auto)</span>" : "<span class='notice'>You are now getting up.</span>"
+				standupwarning = "[src] с трудом встает."
+		var/usernotice = automatic ? "<span class='notice'>Вы сейчас встаете. (Автоматически)</span>" : "<span class='notice'>Вы сейчас встаете.</span>"
+		update_icon()
 		visible_message("<span class='notice'>[standupwarning]</span>", usernotice, vision_distance = 5)
-		if(do_after(src, totaldelay, target = src, required_mobility_flags = MOBILITY_RESIST))
+		if(do_after(src, totaldelay, target = src, timed_action_flags = (IGNORE_USER_LOC_CHANGE|IGNORE_TARGET_LOC_CHANGE|IGNORE_HELD_ITEM|IGNORE_INCAPACITATED), extra_checks = CALLBACK(src, PROC_REF(cuff_resist_check))))
 			set_resting(FALSE, TRUE)
 
 			combat_flags &= ~COMBAT_FLAG_RESISTING_REST
@@ -43,7 +44,8 @@
 		else
 			combat_flags &= ~COMBAT_FLAG_RESISTING_REST
 			if(resting)		//we didn't shove ourselves up or something
-				visible_message("<span class='notice'>[src] falls right back down.</span>", "<span class='notice'>You fall right back down.</span>")
+				visible_message("<span class='notice'>[src] падает под себя.</span>", "<span class='notice'>Вы падаете под себя.</span>")
+				update_icon()
 				if(has_gravity())
 					playsound(src, "bodyfall", 20, 1)
 			return FALSE

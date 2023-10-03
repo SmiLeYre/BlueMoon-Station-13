@@ -307,7 +307,7 @@
 	sharpness = SHARP_EDGED
 	tool_behaviour = TOOL_SAW
 	toolspeed = 1
-	wound_bonus = 5
+	wound_bonus = 8
 	bare_wound_bonus = 10
 
 /obj/item/circular_saw/Initialize(mapload)

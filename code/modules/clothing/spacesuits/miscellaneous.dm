@@ -22,7 +22,7 @@ Contains:
 	desc = "An advanced tactical space helmet."
 	icon_state = "deathsquad"
 	item_state = "deathsquad"
-	armor = list(MELEE = 80, BULLET = 80, LASER = 50, ENERGY = 50, BOMB = 100, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 30)
+	armor = list(MELEE = 80, BULLET = 80, LASER = 50, ENERGY = 50, BOMB = 100, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 50)
 	strip_delay = 130
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF
@@ -53,7 +53,7 @@ Contains:
 	desc = "A tactical space suit first developed in a joint effort by the defunct IS-ERI and Nanotrasen in 20XX for military space operations. A tried and true workhorse, it is very difficult to move in but offers robust protection against all threats!"
 	icon_state = "heavy"
 	item_state = "swat_suit"
-	tail_state = "heavy"
+	tail_state = "atmos"
 	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/kitchen/knife/combat)
 	armor = list(MELEE = 40, BULLET = 30, LASER = 30,ENERGY = 30, BOMB = 50, BIO = 90, RAD = 20, FIRE = 100, ACID = 100, WOUND = 25)
 	strip_delay = 120
@@ -101,7 +101,7 @@ Contains:
 	name = "NASA Voidsuit"
 	icon_state = "void"
 	item_state = "void"
-	tail_state = "void-red"
+	tail_state = "ert-security"
 	desc = "An old, NASA CentCom branch designed, dark red space suit."
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/multitool)
 	mutantrace_variation = STYLE_DIGITIGRADE
@@ -116,7 +116,7 @@ Contains:
 	name = "Engineering Voidsuit"
 	icon_state = "void"
 	item_state = "void"
-	tail_state = "void-red"
+	tail_state = "ert-security"
 	desc = "A CentCom engineering dark red space suit. Age has degraded the suit making is difficult to move around in."
 	slowdown = 4
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/multitool)
@@ -197,7 +197,7 @@ Contains:
 	desc = "Standard issue command suit for the ERT."
 	icon_state = "ert_command"
 	item_state = "ert_command"
-	tail_state = "ert_commander"
+	tail_state = "ert-commander"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert
 	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
 	armor = list(MELEE = 65, BULLET = 50, LASER = 50, ENERGY = 50, BOMB = 50, BIO = 100, RAD = 100, FIRE = 80, ACID = 80, WOUND = 30)
@@ -216,7 +216,7 @@ Contains:
 	desc = "Standard issue security suit for the ERT."
 	icon_state = "ert_security"
 	item_state = "ert_security"
-	tail_state = "ert_security"
+	tail_state = "ert-security"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/sec
 
 	//ERT Engineering
@@ -230,7 +230,7 @@ Contains:
 	desc = "Standard issue engineer suit for the ERT."
 	icon_state = "ert_engineer"
 	item_state = "ert_engineer"
-	tail_state = "ert_engineer"
+	tail_state = "ert-engineer"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/engi
 
 	//ERT Medical
@@ -244,7 +244,7 @@ Contains:
 	desc = "Standard issue medical suit for the ERT."
 	icon_state = "ert_medical"
 	item_state = "ert_medical"
-	tail_state = "ert_medical"
+	tail_state = "ert-medical"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/med
 
 	//Red alert ERT
@@ -265,7 +265,7 @@ Contains:
 	desc = "Red alert command suit for the ERT. This one is more armored than its standard version."
 	icon_state = "ert_command-alert"
 	item_state = "ert_command-alert"
-	tail_state = "ert_gcommander"
+	tail_state = "ert-alert"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/alert
 	armor = list(MELEE = 70, BULLET = 55, LASER = 50, ENERGY = 50, BOMB = 65, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 50)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
@@ -283,7 +283,7 @@ Contains:
 	desc = "Red alert security suit for the ERT. This one is more armored than its standard version."
 	icon_state = "ert_security-alert"
 	item_state = "ert_security-alert"
-	tail_state = "ert_gsecurity"
+	tail_state = "ert-alert"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/alert/sec
 
 	//ERT Engineering
@@ -297,7 +297,7 @@ Contains:
 	desc = "Red alert engineer suit for the ERT. This one is more armored than its standard version."
 	icon_state = "ert_engineer-alert"
 	item_state = "ert_engineer-alert"
-	tail_state = "ert_gengineer"
+	tail_state = "ert-alert"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/alert/engi
 
 	//ERT Medical
@@ -311,14 +311,14 @@ Contains:
 	desc = "Red alert medical suit for the ERT. This one is more armored than its standard version."
 	icon_state = "ert_medical-alert"
 	item_state = "ert_medical-alert"
-	tail_state = "ert_gmedical"
+	tail_state = "ert-alert"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/alert/med
 
 /obj/item/clothing/suit/space/eva
 	name = "EVA suit"
 	icon_state = "space"
 	item_state = "s_suit"
-	tail_state = "spacenew"
+	tail_state = "syndicate-winter"
 	desc = "A lightweight space suit with the basic ability to protect the wearer from the vacuum of space during emergencies."
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 100, RAD = 20, FIRE = 50, ACID = 65, WOUND = 10)
 
@@ -346,7 +346,7 @@ Contains:
 	desc = "A special suit that protects against radiation and space. Not much else unfortunately."
 	icon_state = "hardsuit-rad"
 	item_state = "nothing"
-	tail_state = "rad"
+	tail_state = "ert-engineer"
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 100, RAD = 100, FIRE = 0, ACID = 0, WOUND = 5)
 	resistance_flags = FIRE_PROOF
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
@@ -368,7 +368,7 @@ Contains:
 	desc = "An advanced, light suit, fabricated from a mixture of synthetic feathers and space-resistant material. A gun holster appears to be integrated into the suit and the wings appear to be stuck in 'freedom' mode."
 	icon_state = "freedom"
 	item_state = "freedom"
-	tail_state = "void-ntblue"
+	tail_state = "ert-commander"
 	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
 	armor = list(MELEE = 20, BULLET = 40, LASER = 30,ENERGY = 25, BOMB = 100, BIO = 100, RAD = 100, FIRE = 80, ACID = 80, WOUND = 20)
 	strip_delay = 130
@@ -398,7 +398,7 @@ Contains:
 	desc = "A slimming piece of dubious space carp technology, you suspect it won't stand up to hand-to-hand blows."
 	icon_state = "carp_suit"
 	item_state = "space_suit_syndicate"
-	tail_state = "bombsuit_white"
+	tail_state = "wizard"
 	slowdown = 0	//Space carp magic, never stop believing
 	armor = list(MELEE = -20, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 100, RAD = 75, FIRE = 60, ACID = 75, WOUND = 5) //As whimpy whimpy whoo
 	allowed = list(/obj/item/tank/internals, /obj/item/gun/ballistic/automatic/speargun)	//I'm giving you a hint here
@@ -433,7 +433,7 @@ Contains:
 	desc = "Powerful wards are built into this hardsuit, protecting the user from all manner of paranormal threats."
 	icon_state = "knight_grey"
 	item_state = "knight_grey"
-	tail_state = "hardsuit-paranormal"
+	tail_state = "syndicate-winter"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF
@@ -454,7 +454,7 @@ Contains:
 	name = "inquisitor's hardsuit"
 	icon_state = "hardsuit-inq"
 	item_state = "hardsuit-inq"
-	tail_state = "hardsuit-inquisitor"
+	tail_state = "inq"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal/inquisitor
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal/inquisitor
@@ -479,7 +479,7 @@ Contains:
 	desc = "Voices echo from the hardsuit, driving the user insane."
 	icon_state = "hardsuit-beserker"
 	item_state = "hardsuit-beserker"
-	tail_state = "hardsuit-berserker"
+	tail_state = "syndicate-blood"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal/beserker
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal/beserker
@@ -514,7 +514,7 @@ Contains:
 	var/torn = FALSE
 	icon_state = "syndicate-orange"
 	item_state = "syndicate-orange"
-	tail_state = "syndicate-orange"
+	tail_state = "orange"
 	slowdown = 2
 	armor = list(MELEE = 5, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 10, FIRE = 0, ACID = 0, WOUND = 5)
 	strip_delay = 65
@@ -534,7 +534,7 @@ Contains:
 	name = "paramedic EVA suit"
 	icon_state = "paramedic-eva"
 	item_state = "paramedic-eva"
-	tail_state = "paramedic-eva"
+	tail_state = "paramed"
 	desc = "A deep blue space suit decorated with medical insignia to indicate that the wearer is trained emergency medical personnel."
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/roller)
 
@@ -549,7 +549,7 @@ Contains:
 	desc = "A custom version of the MK.II SWAT suit, modified to look rugged and tough. Works as a space suit, if you can find a helmet."
 	icon_state = "hunter"
 	item_state = "swat_suit"
-	tail_state = "hardsuit-contractor"
+	tail_state = "contractor"
 	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/kitchen/knife/combat)
 	armor = list(MELEE = 60, BULLET = 40, LASER = 40, ENERGY = 50, BOMB = 100, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 25)
 	strip_delay = 130

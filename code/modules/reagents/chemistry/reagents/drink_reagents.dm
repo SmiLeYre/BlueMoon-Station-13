@@ -235,6 +235,10 @@
 			. = 1
 	if(holder.has_reagent(/datum/reagent/consumable/capsaicin))
 		holder.remove_reagent(/datum/reagent/consumable/capsaicin, 2)
+	if(iscatperson(M)) //cats go purr
+		if(prob(15))
+			to_chat(M, "<span class = 'notice'>[pick("Mmmm~ milk~","Ahh~ fresh milk~","Milk is so tasty!")]</span>")
+			M.emote("purr")
 	..()
 
 /datum/reagent/consumable/soymilk
@@ -1079,10 +1083,24 @@
 
 /datum/reagent/consumable/catnip_tea/on_mob_life(mob/living/carbon/M)
 	M.adjustStaminaLoss(min(50 - M.getStaminaLoss(), 3))
-	if(prob(20))
-		M.emote("nya")
-	if(prob(20))
-		to_chat(M, "<span class = 'notice'>[pick("Headpats feel nice.", "Backrubs would be nice.", "Mew")]</span>")
+	if(iscatperson(M)) //"drugs" for felinids
+		M.set_drugginess(15)
+		if(prob(20))
+			to_chat(M, "<span class = 'notice'>[pick("Headpats feel nice.", "The feeling of a hairball...", "Backrubs would be nice.", "Whats behind those doors?", "Wanna huuugs~", "Pat me pleeease~", "That corner looks suspicious...", "Rub my belly pleeease~")]</span>")
+		if(prob(20))
+			M.nextsoundemote = world.time - 10 //"too early BZHZHZH"
+			M.emote(pick("nya","mewo","meow","purr","anyo","uwu","stare","spin"))
+		if((istype(M) && M.dna && M.dna.species && M.dna.species.can_wag_tail(M)) && !M.dna.species.is_wagging_tail())
+			M.emote("wag")
+		if(prob(5))
+			M.emote("spin")
+			M.lay_down()
+			to_chat(M, "<span class = 'notice'>[pick("Wanna reeest~","Waaaw~","Wanna plaaay!~","Play with meee~")]</span>")
+	else
+		if(prob(20))
+			M.emote("nya")
+		if(prob(20))
+			to_chat(M, "<span class = 'notice'>[pick("Headpats feel nice.", "The feeling of a hairball...", "Backrubs would be nice.", "Whats behind those doors?")]</span>")
 	if(ishuman(M) && !(M.client?.prefs.cit_toggles & NO_APHRO))
 		var/mob/living/carbon/human/H = M
 		var/list/adjusted = H.adjust_arousal(5,aphro = TRUE)

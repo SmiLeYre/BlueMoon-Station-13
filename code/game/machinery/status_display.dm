@@ -563,6 +563,7 @@
 		to_chat(user, "<span class='warning'>Ничего интересного не произошло!!</span>")
 		return
 	obj_flags |= EMAGGED
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	to_chat(user, "<span class='notice'>Вы взломали дисплей. Осуществляется взлом систем...</span>")
 	addtimer(CALLBACK(src, .proc/syndie_display_good), 10 SECONDS)
 	return TRUE

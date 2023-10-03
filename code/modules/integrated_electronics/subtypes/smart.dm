@@ -91,6 +91,10 @@
 	.=..()
 	idc = new(src)
 
+/obj/item/integrated_circuit/smart/advanced_pathfinder/Destroy()
+	. = ..()
+	idc = null
+
 /obj/item/integrated_circuit/smart/advanced_pathfinder/do_work()
 	if(!assembly)
 		activate_pin(3)

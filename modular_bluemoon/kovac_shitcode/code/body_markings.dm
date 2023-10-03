@@ -87,6 +87,13 @@
 	matrixed_sections = MATRIX_RED_BLUE
 	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
 
+/datum/sprite_accessory/tails_animated/mam_tails_animated/leopard
+	name = "Leopard Tail"
+	icon_state = "leopard"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_BLUE
+	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /datum/sprite_accessory/hair/zoey
@@ -103,9 +110,50 @@
 	name = "Sabitsuki"
 	icon_state = "hair_sabitsuki"
 
+/datum/sprite_accessory/hair/zoey/katara
+	name = "Katara"
+	icon_state = "hair_katara_s"
+	icon = 'modular_bluemoon/SmiLeY/icons/mob/hairs.dmi'
+
+/datum/sprite_accessory/hair/zoey/katara/ponytail_80
+	name = "Ponytail 80s"
+	icon_state = "hair_80s_ponytail_alt_2"
+
+/datum/sprite_accessory/hair/zoey/katara/longemo
+	name = "Longemo"
+	icon_state = "hair_longemo_alt_2"
+
+/datum/sprite_accessory/hair/zoey/katara/halfshaved
+	name = "Half Shaved"
+	icon_state = "hair_halfshaved_s"
+
+/datum/sprite_accessory/hair/zoey/katara/halfshavedemo
+	name = "Half Shaved Demo"
+	icon_state = "hair_halfshavedemo_s"
+
+/datum/sprite_accessory/hair/zoey/katara/shavedbun
+	name = "Shaved Bun"
+	icon_state = "hair_shavedbun_s"
+
+/datum/sprite_accessory/hair/zoey/katara/undercut
+	name = "Undercut Alt"
+	icon_state = "hair_undercut_s"
+
+/datum/sprite_accessory/hair/zoey/katara/undercut_fem
+	name = "Undercut Fem"
+	icon_state = "hair_undercut_fem_s"
+
+/datum/sprite_accessory/hair/zoey/katara/angel
+	name = "Angel"
+	icon_state = "hair_angel_s"
+
+/datum/sprite_accessory/hair/zoey/katara/chub
+	name = "Half Shaved Demo"
+	icon_state = "hair_chub_s"
+
 ////
 
-/datum/sprite_accessory/hair/zoey/jagged
+/datum/sprite_accessory/hair/zoey/jagged_s
 	name = "Vulp Jagged"
 	icon_state = "jagged_s"
 	recommended_species = list("mammal", "undead_mammal")
@@ -147,6 +195,20 @@
 	matrixed_sections = MATRIX_RED_BLUE
 	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
 
+////////////////////////////////////////////////////////////////////////////////////////
+
+/datum/sprite_accessory/ears/human/elf/elf_wide
+	name = "Elf Wide"
+	icon_state = "elfwide"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
+
+/datum/sprite_accessory/ears/human/elf/elf_wide/elf_broad
+	name = "Elf Broad"
+	icon_state = "elfbroad"
+
+/datum/sprite_accessory/ears/human/elf/elf_wide/elf_longer
+	name = "Elf longer"
+	icon_state = "elflonger"
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -176,6 +238,14 @@
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
 
 /datum/sprite_accessory/tails/human/leopard
+	name = "Leopard Tail"
+	icon_state = "leopard"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_BLUE
+	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
+	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
+
+/datum/sprite_accessory/tails_animated/human/leopard
 	name = "Leopard Tail"
 	icon_state = "leopard"
 	color_src = MATRIXED

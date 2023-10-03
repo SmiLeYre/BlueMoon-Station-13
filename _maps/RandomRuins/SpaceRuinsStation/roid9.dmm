@@ -175,6 +175,10 @@
 /obj/machinery/microwave,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav)
+"S" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space)
 "T" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
 	dir = 6
@@ -258,7 +262,7 @@ C
 C
 C
 C
-v
+S
 v
 e
 e
@@ -371,7 +375,7 @@ C
 C
 v
 v
-v
+S
 C
 C
 C
@@ -393,7 +397,7 @@ C
 C
 v
 v
-v
+S
 C
 C
 C

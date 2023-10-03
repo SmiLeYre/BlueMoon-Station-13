@@ -1,4 +1,4 @@
-/area/syndicate_mothership/syndicate_fighter
+/area/shuttle/syndicate/fighter
 	name = "Syndicate Fighter"
 
 /obj/item/circuitboard/computer/syndicate/fighter
@@ -29,7 +29,7 @@
 	y_offset = 1
 	space_turfs_only = FALSE
 
-/area/syndicate_mothership/syndicate_dropship
+/area/shuttle/syndicate/dropship
 	name = "Syndicate Dropship"
 
 /obj/item/circuitboard/computer/syndicate/dropship
@@ -60,7 +60,7 @@
 	y_offset = 1
 	space_turfs_only = FALSE
 
-/area/syndicate_mothership/syndicate_frigate
+/area/shuttle/syndicate/frigate
 	name = "Syndicate Battle Frigate"
 
 /obj/item/circuitboard/computer/syndicate/frigate

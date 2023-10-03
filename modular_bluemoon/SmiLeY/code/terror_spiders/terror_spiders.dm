@@ -44,7 +44,7 @@ GLOBAL_LIST_EMPTY(ts_spiderling_list)
 	var/regeneration = 2 //pure regen on life
 	var/degenerate = FALSE // if TRUE, they slowly degen until they all die off.
 	//also regenerates by using /datum/status_effect/terror/food_regen when wraps a carbon, wich grants full health witin ~25 seconds
-	damage_coeff = list(BRUTE = 0.75, BURN = 1.25, TOX = 1, CLONE = 0, STAMINA = 0, OXY = 0.2)
+	damage_coeff = list(BRUTE = 0.75, BURN = 2.5, TOX = 1, CLONE = 0, STAMINA = 0, OXY = 0.2)
 
 	//ATTACK
 	melee_damage_lower = 15
@@ -147,6 +147,10 @@ GLOBAL_LIST_EMPTY(ts_spiderling_list)
 	if(ventcrawler)
 		AddElement(/datum/element/ventcrawling, given_tier = VENTCRAWLER_ALWAYS)
 
+/mob/living/simple_animal/hostile/poison/terror_spider/get_status_tab_items()
+	. = ..()
+	. += "Intent: [a_intent]"
+
 // --------------------------------------------------------------------------------
 // --------------------- TERROR SPIDERS: SHARED ATTACK CODE -----------------------
 // --------------------------------------------------------------------------------
@@ -197,9 +201,8 @@ GLOBAL_LIST_EMPTY(ts_spiderling_list)
 		else if(G.reagents && (iscarbon(G)))
 			var/can_poison = 1
 			if(ishuman(G))
-				var/datum/reagent/R
 				var/mob/living/carbon/human/H = G
-				if(!(R.chemical_flags & REAGENT_ORGANIC_PROCESS) || (!H.physiology.tox_mod))
+				if(!(H.metabolism_efficiency & REAGENT_ORGANIC_PROCESS) || (!H.physiology.tox_mod))
 					can_poison = 0
 			spider_specialattack(G,can_poison)
 		else

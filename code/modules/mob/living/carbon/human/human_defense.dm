@@ -146,16 +146,16 @@
 		var/obj/item/I = get_active_held_item()
 		if(I && dropItemToGround(I))
 			playsound(loc, 'sound/weapons/slash.ogg', 25, 1, -1)
-			visible_message("<span class='danger'>[M] has disarmed [src]!</span>", \
-					"<span class='userdanger'>[M] has disarmed you!</span>", null, COMBAT_MESSAGE_RANGE, null, M,
-					"<span class='danger'>You have disarmed [src]!</span>")
+			visible_message("<span class='danger'>[M] разоружает [src]!</span>", \
+					"<span class='userdanger'>[M] разоружил вас!</span>", null, COMBAT_MESSAGE_RANGE, null, M,
+					"<span class='danger'>Вы разоружили [src]!</span>")
 		else if(!M.client || prob(5)) // only natural monkeys get to stun reliably, (they only do it occasionaly)
 			playsound(loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
 			DefaultCombatKnockdown(100)
 			log_combat(M, src, "tackled")
-			visible_message("<span class='danger'>[M] has tackled down [src]!</span>", \
-				"<span class='userdanger'>[M] has tackled you down!</span>", null, COMBAT_MESSAGE_RANGE, null, M,
-				"<span class='danger'>You have tackled [src] down!</span>")
+			visible_message("<span class='danger'>[M] повалил [src]!</span>", \
+				"<span class='userdanger'>[M] повалил вас!</span>", null, COMBAT_MESSAGE_RANGE, null, M,
+				"<span class='danger'>Вы повалили [src]!</span>")
 
 	if(M.limb_destroyer)
 		dismembering_strike(M, affecting.body_zone)
@@ -329,7 +329,7 @@
 /mob/living/carbon/human/blob_act(obj/structure/blob/B)
 	if(stat == DEAD)
 		return
-	show_message("<span class='userdanger'>The blob attacks you!</span>")
+	show_message("<span class='userdanger'>Блоб атакует вас!</span>")
 	var/dam_zone = pick(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 	var/obj/item/bodypart/affecting = get_bodypart(ran_zone(dam_zone))
 	apply_damage(5, BRUTE, affecting, run_armor_check(affecting, MELEE))
@@ -361,7 +361,7 @@
 		if(shock_damage * siemens_coeff >= 1 && prob(25))
 			var/obj/item/organ/heart/heart = getorganslot(ORGAN_SLOT_HEART)
 			if(heart.Restart() && stat == CONSCIOUS)
-				to_chat(src, "<span class='notice'>You feel your heart beating again!</span>")
+				to_chat(src, "<span class='notice'>Вы чувствуете, как ваше сердце забилось вновь!</span>")
 	electrocution_animation(40)
 
 /mob/living/carbon/human/emp_act(severity)
@@ -380,7 +380,7 @@
 	for(var/obj/item/bodypart/L in src.bodyparts)
 		if(L.is_robotic_limb())
 			if(!informed)
-				to_chat(src, "<span class='userdanger'>You feel a sharp pain as your robotic limbs overload.</span>")
+				to_chat(src, "<span class='userdanger'>Вы ощущаете острую боль от перегрузки вашей роботизированной конечности.</span>")
 				informed = TRUE
 			L.receive_damage(0,severity/10)
 			if(!do_not_stun)	//Tiny bit better than checking for the trait another six times in succession
@@ -409,7 +409,7 @@
 				update_inv_neck()
 				update_inv_head()
 			else
-				to_chat(src, "<span class='notice'>Your [head_clothes.name] protects your head and face from the acid!</span>")
+				to_chat(src, "<span class='notice'>Ваша одежда - [head_clothes.name] - защищает ваше лицо и голову от кислоты!</span>")
 		else
 			. = get_bodypart(BODY_ZONE_HEAD)
 			if(.)
@@ -430,7 +430,7 @@
 				update_inv_w_uniform()
 				update_inv_wear_suit()
 			else
-				to_chat(src, "<span class='notice'>Your [chest_clothes.name] protects your body from the acid!</span>")
+				to_chat(src, "<span class='notice'>Ваша одежда - [chest_clothes.name] - защищает ваше тело от кислоты!</span>")
 		else
 			. = get_bodypart(BODY_ZONE_CHEST)
 			if(.)
@@ -462,7 +462,7 @@
 				update_inv_w_uniform()
 				update_inv_wear_suit()
 			else
-				to_chat(src, "<span class='notice'>Your [arm_clothes.name] protects your arms and hands from the acid!</span>")
+				to_chat(src, "<span class='notice'>Ваша одежда - [arm_clothes.name] - защищает ваши руки от кислоты!</span>")
 		else
 			. = get_bodypart(BODY_ZONE_R_ARM)
 			if(.)
@@ -488,7 +488,7 @@
 				update_inv_w_uniform()
 				update_inv_wear_suit()
 			else
-				to_chat(src, "<span class='notice'>Your [leg_clothes.name] protects your legs and feet from the acid!</span>")
+				to_chat(src, "<span class='notice'>Ваша одежда - [leg_clothes.name] - защищает ваши ноги от кислоты!</span>")
 		else
 			. = get_bodypart(BODY_ZONE_R_LEG)
 			if(.)
@@ -546,7 +546,7 @@
 		if(src == M)
 			if(has_status_effect(STATUS_EFFECT_CHOKINGSTRAND))
 				to_chat(src, "<span class='notice'>You attempt to remove the durathread strand from around your neck.</span>")
-				if(do_after(src, 35, null, src))
+				if(do_after(src, 3.5 SECONDS, src))
 					to_chat(src, "<span class='notice'>You succesfuly remove the durathread strand.</span>")
 					remove_status_effect(STATUS_EFFECT_CHOKINGSTRAND)
 				return
@@ -571,9 +571,9 @@
 						burndamage += rand(30,40)
 
 				if(HAS_TRAIT(src, TRAIT_SELF_AWARE))
-					status = "[brutedamage] brute damage and [burndamage] burn damage"
+					status = "[brutedamage] процентов увечий и [burndamage] процентов ожогов"
 					if(!brutedamage && !burndamage)
-						status = "no damage"
+						status = "не повреждена"
 
 				else
 					if(brutedamage > 0)
@@ -583,7 +583,7 @@
 					if(brutedamage > (limb_max_damage*0.8))
 						status = LB.heavy_brute_msg
 					if(brutedamage > 0 && burndamage > 0)
-						status += " and "
+						status += " и "
 
 					if(burndamage > (limb_max_damage*0.8))
 						status += LB.heavy_burn_msg
@@ -593,34 +593,34 @@
 						status += LB.light_burn_msg
 
 					if(status == "")
-						status = "OK"
+						status = "в норме"
 				var/no_damage
-				if(status == "OK" || status == "no damage")
+				if(status == "в норме" || status == "не повреждена")
 					no_damage = TRUE
-				to_send += "<span class='[no_damage ? "notice" : "warning"]'>Your [LB.name] [HAS_TRAIT(src, TRAIT_SELF_AWARE) ? "has" : "is"] [status].</span>\n"
+				to_send += "<span class='[no_damage ? "notice" : "warning"]'>Ваша [LB.ru_name] [status].</span>\n"
 
 				for(var/thing in LB.wounds)
 					var/datum/wound/W = thing
 					var/msg
 					switch(W.severity)
 						if(WOUND_SEVERITY_TRIVIAL)
-							msg = "<span class='danger'>Your [LB.name] is suffering [W.a_or_from] [lowertext(W.name)].</span>"
+							msg = "<span class='danger'>Ваша [LB.ru_name] страдает от [lowertext(W.ru_name_r)].</span>"
 						if(WOUND_SEVERITY_MODERATE)
-							msg = "<span class='warning'>Your [LB.name] is suffering [W.a_or_from] [lowertext(W.name)]!</span>"
+							msg = "<span class='warning'>Ваша [LB.ru_name] страдает от [lowertext(W.ru_name_r)]!</span>"
 						if(WOUND_SEVERITY_SEVERE)
-							msg = "<span class='warning'><b>Your [LB.name] is suffering [W.a_or_from] [lowertext(W.name)]!</b></span>"
+							msg = "<span class='warning'><b>Ваша [LB.ru_name] страдает от [lowertext(W.ru_name_r)]!</b></span>"
 						if(WOUND_SEVERITY_CRITICAL)
-							msg = "\t <span class='warning'><b>Your [LB.name] is suffering [W.a_or_from] [lowertext(W.name)]!!</b></span>"
+							msg = "\t <span class='warning'><b>Ваша [LB.ru_name] страдает от [lowertext(W.ru_name_r)]!!</b></span>"
 					to_send += "\n[msg]"
 
 				for(var/obj/item/I in LB.embedded_objects)
 					if(I.isEmbedHarmless())
-						to_send += "\n\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>There is \a [I] stuck to your [LB.name]!</a>"
+						to_send += "\n\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>В вашей [LB.ru_name_v] прорезался \a [I]!</a>"
 					else
-						to_send += "\n\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>There is \a [I] embedded in your [LB.name]!</a>"
+						to_send += "\n\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>В вашей [LB.ru_name_v] застрял \a [I]!</a>"
 
 			for(var/t in missing)
-				to_send += "<span class='boldannounce'>Your [parse_zone(t)] is missing!</span>\n"
+				to_send += "<span class='boldannounce'>Ваша [parse_zone(t)] отсутствует!</span>\n"
 
 			if(is_bleeding())
 				var/list/obj/item/bodypart/bleeding_limbs = list()
@@ -630,37 +630,37 @@
 						bleeding_limbs += BP
 
 				var/num_bleeds = LAZYLEN(bleeding_limbs)
-				var/bleed_text = "<span class='danger'>You are bleeding from your"
+				var/bleed_text = "<span class='danger'>У вас кровотечение в"
 				switch(num_bleeds)
 					if(1 to 2)
-						bleed_text += " [bleeding_limbs[1].name][num_bleeds == 2 ? " and [bleeding_limbs[2].name]" : ""]"
+						bleed_text += " [bleeding_limbs[1].ru_name_v][num_bleeds == 2 ? " and [bleeding_limbs[2].ru_name_v]" : ""]"
 					if(3 to INFINITY)
 						for(var/i in 1 to (num_bleeds - 1))
 							var/obj/item/bodypart/BP = bleeding_limbs[i]
-							bleed_text += " [BP.name],"
-						bleed_text += " and [bleeding_limbs[num_bleeds].name]"
+							bleed_text += " [BP.ru_name_v],"
+						bleed_text += " и [bleeding_limbs[num_bleeds].ru_name_v]"
 				bleed_text += "!</span>"
 				to_send += "\n[bleed_text]"
 			if(getStaminaLoss())
 				if(getStaminaLoss() > 30)
-					to_send += "<span class='info'>You're completely exhausted.</span>\n"
+					to_send += "<span class='info'>Вы полностью измотаны.</span>\n"
 				else
-					to_send += "<span class='info'>You feel fatigued.</span>\n"
+					to_send += "<span class='info'>Вы чувствуете усталость.</span>\n"
 			if(HAS_TRAIT(src, TRAIT_SELF_AWARE))
 				if(toxloss)
 					if(toxloss > 10)
-						to_send += "<span class='danger'>You feel sick.</span>\n"
+						to_send += "<span class='danger'>Вам нехорошо.</span>\n"
 					else if(toxloss > 20)
-						to_send += "<span class='danger'>You feel nauseated.</span>\n"
+						to_send += "<span class='danger'>Вам становится очень плохо.</span>\n"
 					else if(toxloss > 40)
-						to_send += "<span class='danger'>You feel very unwell!</span>\n"
+						to_send += "<span class='danger'>Вы ощущаете тошноту!</span>\n"
 				if(oxyloss)
 					if(oxyloss > 10)
-						to_send += "<span class='danger'>You feel lightheaded.</span>\n"
+						to_send += "<span class='danger'>У вас кружится голова.</span>\n"
 					else if(oxyloss > 20)
-						to_send += "<span class='danger'>Your thinking is clouded and distant.</span>\n"
+						to_send += "<span class='danger'>У вас темнеет в глазах.</span>\n"
 					else if(oxyloss > 30)
-						to_send += "<span class='danger'>You're choking!</span>\n"
+						to_send += "<span class='danger'>Вы задыхаетесь!</span>\n"
 
 			switch(nutrition)
 				if(NUTRITION_LEVEL_FULL to INFINITY)
@@ -696,43 +696,43 @@
 			var/list/damaged = list()
 			var/broken_message
 			var/damaged_message
-			var/broken_plural
-			var/damaged_plural
+			//var/broken_plural
+			//var/damaged_plural
 			//Sets organs into their proper list
 			for(var/O in internal_organs)
 				var/obj/item/organ/organ = O
 				if(organ.organ_flags & ORGAN_FAILING)
 					if(broken.len)
 						broken += ", "
-					broken += organ.name
+					broken += organ.ru_name
 				else if(organ.damage > organ.low_threshold)
 					if(damaged.len)
 						damaged += ", "
-					damaged += organ.name
+					damaged += organ.ru_name
 			//Checks to enforce proper grammar, inserts words as necessary into the list
 			if(broken.len)
 				if(broken.len > 1)
-					broken.Insert(broken.len, "and ")
-					broken_plural = TRUE
-				else
-					var/holder = broken[1]	//our one and only element
-					if(holder[length(holder)] == "s")
-						broken_plural = TRUE
+					broken.Insert(broken.len, "и ")
+					//broken_plural = TRUE
+				//else
+					//var/holder = broken[1]	//our one and only element
+					//if(holder[length(holder)] == "")
+						//broken_plural = TRUE
 				//Put the items in that list into a string of text
 				for(var/B in broken)
 					broken_message += B
-				to_send += "\n<span class='warning'> Your [broken_message] [broken_plural ? "are" : "is"] non-functional!</span>"
+				to_send += "\n<span class='warning'> Ваша орган - [broken_message] - не функционирует!</span>"
 			if(damaged.len)
 				if(damaged.len > 1)
-					damaged.Insert(damaged.len, "and ")
-					damaged_plural = TRUE
-				else
-					var/holder = damaged[1]
-					if(holder[length(holder)] == "s")
-						damaged_plural = TRUE
+					damaged.Insert(damaged.len, "и ")
+					//damaged_plural = TRUE
+				//else
+					//var/holder = damaged[1]
+					//if(holder[length(holder)] == "")
+						//damaged_plural = TRUE
 				for(var/D in damaged)
 					damaged_message += D
-				to_send += "\n<span class='info'>Your [damaged_message] [damaged_plural ? "are" : "is"] hurt.</span>"
+				to_send += "\n<span class='info'>Ваш орган - [damaged_message] - повреждён.</span>"
 
 			if(roundstart_quirks.len)
 				to_send += "\n<span class='notice'>У вас есть следующие особенности: [get_trait_string()].</span>"
@@ -805,9 +805,9 @@
 				burndamage += rand(30,40)
 
 		if(HAS_TRAIT(src, TRAIT_SELF_AWARE))
-			status = "[brutedamage] brute damage and [burndamage] burn damage"
+			status = "[brutedamage] процентов увечий и [burndamage] процентов ожогов"
 			if(!brutedamage && !burndamage)
-				status = "no damage"
+				status = "не повреждена"
 
 		else
 			if(brutedamage > 0)
@@ -817,7 +817,7 @@
 			if(brutedamage > (limb_max_damage*0.8))
 				status = LB.heavy_brute_msg
 			if(brutedamage > 0 && burndamage > 0)
-				status += " and "
+				status += " и "
 
 			if(burndamage > (limb_max_damage*0.8))
 				status += LB.heavy_burn_msg
@@ -827,38 +827,38 @@
 				status += LB.light_burn_msg
 
 			if(status == "")
-				status = "OK"
+				status = "в норме"
 		var/no_damage
-		if(status == "OK" || status == "no damage")
+		if(status == "в норме" || status == "не повреждена")
 			no_damage = TRUE
 		var/isdisabled = " "
 		if(LB.is_disabled())
-			isdisabled = " is disabled "
+			isdisabled = " не функционирует "
 			if(no_damage)
-				isdisabled += " but otherwise "
+				isdisabled += " но в остальном "
 			else
-				isdisabled += " and "
-		output += "\n\t <span class='[no_damage ? "notice" : "warning"]'>Your [LB.name][isdisabled][self_aware ? " has " : " is "][status].</span>"
+				isdisabled += " и "
+		output += "\n\t <span class='[no_damage ? "notice" : "warning"]'>Ваша [LB.ru_name][isdisabled][self_aware ? "  " : "  "][status].</span>"
 
 		for(var/thing in LB.wounds)
 			var/datum/wound/W = thing
 			var/msg
 			switch(W.severity)
 				if(WOUND_SEVERITY_TRIVIAL)
-					msg = "\t <span class='danger'>Your [LB.name] is suffering [W.a_or_from] [lowertext(W.name)].</span>"
+					msg = "\t <span class='danger'>Ваша [LB.ru_name] страдает от [lowertext(W.ru_name_r)].</span>"
 				if(WOUND_SEVERITY_MODERATE)
-					msg = "\t <span class='warning'>Your [LB.name] is suffering [W.a_or_from] [lowertext(W.name)]!</span>"
+					msg = "\t <span class='warning'>Ваша [LB.ru_name] страдает от [lowertext(W.ru_name_r)]!</span>"
 				if(WOUND_SEVERITY_SEVERE)
-					msg = "\t <span class='warning'><b>Your [LB.name] is suffering [W.a_or_from] [lowertext(W.name)]!</b></span>"
+					msg = "\t <span class='warning'><b>Ваша [LB.ru_name] страдает от [lowertext(W.ru_name_r)]!</b></span>"
 				if(WOUND_SEVERITY_CRITICAL)
-					msg = "\t <span class='warning'><b>Your [LB.name] is suffering [W.a_or_from] [lowertext(W.name)]!!</b></span>"
+					msg = "\t <span class='warning'><b>Ваша [LB.ru_name] страдает от [lowertext(W.ru_name_r)]!!</b></span>"
 			output += "\n[msg]"
 
 		for(var/obj/item/I in LB.embedded_objects)
 			if(I.isEmbedHarmless())
-				output += "\n\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>There is \a [I] stuck to your [LB.name]!</a>"
+				output += "\n\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>В вашей [LB.ru_name_v] прорезался \a [I]!</a>"
 			else
-				output += "\n\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>There is \a [I] embedded in your [LB.name]!</a>"
+				output += "\n\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>В вашей [LB.ru_name_v] застрял \a [I]!</a>"
 	to_chat(src, examine_block(output))
 
 /mob/living/carbon/human/damage_clothes(damage_amount, damage_type = BRUTE, damage_flag = 0, def_zone)

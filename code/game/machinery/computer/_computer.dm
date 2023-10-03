@@ -1,5 +1,5 @@
 /obj/machinery/computer
-	name = "computer"
+	name = "Computer"
 	icon = 'icons/obj/computer.dmi'
 	icon_state = "computer"
 	density = TRUE
@@ -74,7 +74,7 @@
 	if(..())
 		return TRUE
 	if(circuit && !(flags_1&NODECONSTRUCT_1))
-		to_chat(user, "<span class='notice'>You start to disconnect the monitor...</span>")
+		to_chat(user, "<span class='notice'>Вы начинаете отсоединять монитор...</span>")
 		if(I.use_tool(src, user, 20, volume=50))
 			deconstruct(TRUE, user)
 	return TRUE
@@ -126,7 +126,7 @@
 			A.set_anchored(TRUE)
 			if(stat & BROKEN)
 				if(user)
-					to_chat(user, "<span class='notice'>The broken glass falls out.</span>")
+					to_chat(user, "<span class='notice'>Осколки стекла высыпаются из монитора.</span>")
 				else
 					playsound(src, 'sound/effects/hit_on_shattered_glass.ogg', 70, TRUE)
 				new /obj/item/shard(drop_location())
@@ -135,7 +135,7 @@
 				A.icon_state = "3"
 			else
 				if(user)
-					to_chat(user, "<span class='notice'>You disconnect the monitor.</span>")
+					to_chat(user, "<span class='notice'>Вы отсоединили монитор.</span>")
 				A.state = 4
 				A.icon_state = "4"
 		for(var/obj/C in src)

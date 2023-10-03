@@ -12,7 +12,7 @@
 	announce_when	= 400
 
 	minimum_required = 1
-	role_name = "alien larva"
+	role_name = "Личинка Ксеноморфа"
 
 	// 50% chance of being incremented by one
 	var/spawncount = 1
@@ -34,7 +34,7 @@
 
 /datum/round_event/ghost_role/alien_infestation/announce(fake)
 	if(successSpawn || fake)
-		priority_announce("Неопознанные признаки жизни обнаружены на борту [station_name()]. Заблокируйте любой внешний доступ, включая воздуховоды и вентиляцию.", "Вторжение на борт", "aliens", has_important_message = TRUE)
+		priority_announce("Вспышка биологической угрозы 4-го уровня зафиксирована на борту станции [station_name()]. Всему персоналу надлежит сдержать её распространение любой ценой!", "ВНИМАНИЕ: БИОЛОГИЧЕСКАЯ УГРОЗА", 'sound/effects/siren-spooky.ogg', has_important_message = TRUE)
 
 
 /datum/round_event/ghost_role/alien_infestation/spawn_role()

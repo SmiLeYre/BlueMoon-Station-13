@@ -22,8 +22,8 @@
 	var/war_cry = "AAAAARGH!!!"
 	var/icon_prefix = "spearglass"
 	var/wielded = FALSE // track wielded status on item
-	wound_bonus = -15
-	bare_wound_bonus = 15
+	wound_bonus = 6
+	bare_wound_bonus = 10
 
 /obj/item/spear/Initialize(mapload)
 	. = ..()
@@ -118,7 +118,7 @@
 			throw_range = 8
 			throw_speed = 5
 			custom_materials = list(/datum/material/iron= HALF_SHEET_MATERIAL_AMOUNT, /datum/material/alloy/titaniumglass= HALF_SHEET_MATERIAL_AMOUNT * 2)
-			wound_bonus = -10
+			wound_bonus = 8
 			icon_prefix = "speartitanium"
 			AddComponent(/datum/component/two_handed, force_unwielded=13, force_wielded=18, icon_wielded="[icon_prefix]1")
 		if(/obj/item/shard/plastitanium)
@@ -127,8 +127,8 @@
 			throw_range = 9
 			throw_speed = 5
 			custom_materials = list(/datum/material/iron= HALF_SHEET_MATERIAL_AMOUNT, /datum/material/alloy/plastitaniumglass= HALF_SHEET_MATERIAL_AMOUNT * 2)
-			wound_bonus = -10
-			bare_wound_bonus = 20
+			wound_bonus = 12
+			bare_wound_bonus = 10
 			icon_prefix = "spearplastitanium"
 			AddComponent(/datum/component/two_handed, force_unwielded=13, force_wielded=20, icon_wielded="[icon_prefix]1")
 

@@ -79,8 +79,8 @@
 	source.visible_message("<span class='warning'>[user] starts picking up [source].</span>", \
 					"<span class='userdanger'>[user] starts picking you up!</span>")
 	source.balloon_alert(user, "picking up")
-	var/time_required = COMPARE_SIZES(source, user) * 40 //Scale how fast the pickup will be depending on size difference
-	if(!do_after(user, time_required, target = source))
+	var/time_required = COMPARE_SIZES(source, user) * 4 SECONDS //Scale how fast the pickup will be depending on size difference
+	if(!do_after(user, time_required, source))
 		return FALSE
 
 	if(user.get_active_held_item())
@@ -108,14 +108,14 @@
 	slot_flags = ITEM_SLOT_FEET | ITEM_SLOT_HEAD | ITEM_SLOT_ID | ITEM_SLOT_BACK | ITEM_SLOT_NECK
 	w_class = null //handled by their size
 
-//TODO: add a timer to escape someone's grip dependant on size diff
 /obj/item/clothing/head/mob_holder/micro/container_resist(mob/living/user)
 	if(user.incapacitated())
 		to_chat(user, "<span class='warning'>You can't escape while you're restrained like this!</span>")
 		return
-	var/mob/living/L = loc
-	visible_message("<span class='warning'>[src] begins to squirm in [L]'s grasp!</span>")
-	if(!do_after(user, 4 SECONDS, target = src, required_mobility_flags = MOBILITY_RESIST))
+	var/mob/living/L = get_atom_on_turf(src, /mob/living)
+	visible_message(span_warning("[src] begins to squirm in [L]'s grasp!"))
+	var/time_required = COMPARE_SIZES(L, user) / 4 SECONDS //Scale how fast the resisting will be depending on size difference
+	if(!do_after(user, time_required, L, IGNORE_TARGET_LOC_CHANGE|IGNORE_HELD_ITEM))
 		if(!user || user.stat != CONSCIOUS || user.loc != src)
 			return
 		to_chat(loc, "<span class='warning'>[src] stops resisting.</span>")

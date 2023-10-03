@@ -335,8 +335,8 @@ GLOBAL_VAR_INIT(floor_cluwnes, 0)
 							forceMove(H.loc)
 				to_chat(H, "<span class='userdanger'>You feel the floor closing in on your feet!</span>")
 				H.Paralyze(300)
-				INVOKE_ASYNC(H, /mob.proc/emote, "scream")
-				H.adjustBruteLoss(10)
+				INVOKE_ASYNC(H, /mob.proc/emote, "realagony")
+				H.adjustBruteLoss(60)
 				manifested = TRUE
 				Manifest()
 				if(!eating)
@@ -400,8 +400,9 @@ GLOBAL_VAR_INIT(floor_cluwnes, 0)
 		H.add_splatter_floor(T)
 	if(do_after(src, 50, target = H))
 		H.unequip_everything()//more runtime prevention
-		if(prob(75))
-			H.gib(FALSE)
+		if(prob(50))
+			H.death()
+			qdel(src)
 		else
 			H.cluwneify()
 			H.adjustBruteLoss(30)
@@ -413,6 +414,7 @@ GLOBAL_VAR_INIT(floor_cluwnes, 0)
 			H.anchored = initial(H.anchored)
 			H.blur_eyes(10)
 			animate(H.client,color = old_color, time = 20)
+			qdel(src)
 
 	eating = FALSE
 	switch_stage = switch_stage * 0.75 //he gets faster after each feast

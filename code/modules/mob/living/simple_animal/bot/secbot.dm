@@ -40,7 +40,7 @@
 	var/death_emote = "BOT blows apart!"
 	var/capture_one = "BOT is trying to put zipties on CRIMINAL!"
 	var/capture_two = "BOT is trying to put zipties on you!"
-	var/infraction = "Level THREAT_LEVEL infraction alert!"
+	var/infraction = "Нарушения уровня THREAT_LEVEL!"
 	var/taunt = "<b>BOT</b> points at CRIMINAL!"
 	var/attack_one = "BOT has stunned CRIMINAL!"
 	var/attack_two = "BOT has stunned you!"
@@ -365,7 +365,7 @@
 	playsound(src, 'sound/weapons/cablecuff.ogg', 30, TRUE, -2)
 	C.visible_message("<span class='danger'>[process_emote("CAPTURE_ONE", C)]</span>",\
 						"<span class='userdanger'>[process_emote("CAPTURE_TWO", C)]</span>")
-	if(do_after(src, 60, FALSE, C))
+	if(do_after(src, 60, C))
 		attempt_handcuff(C)
 
 /mob/living/simple_animal/bot/secbot/proc/attempt_handcuff(mob/living/carbon/C)
@@ -402,7 +402,7 @@
 	log_combat(src,C,"stunned")
 	if(declare_arrests)
 		var/area/location = get_area(src)
-		speak("[arrest_type ? "Веду Задержание" : "Провожу Арест"] Преступника [C] уровня [threat] в [location].", radio_channel)
+		speak("[arrest_type ? "Веду задержание" : "Произвожу арест"] нарушителя [C] уровня [threat] в локации: [location].", radio_channel)
 	C.visible_message("<span class='danger'>[process_emote("ATTACK_ONE", C)]</span>",\
 							"<span class='userdanger'>[process_emote("ATTACK_TWO", C)]</span>")
 

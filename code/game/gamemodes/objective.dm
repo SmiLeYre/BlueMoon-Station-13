@@ -516,7 +516,7 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 
 /datum/objective/survive
 	name = "survive"
-	explanation_text = "Stay alive until the end."
+	explanation_text = "Оставайтесь в живых до конца."
 
 /datum/objective/survive/check_completion()
 	var/list/datum/mind/owners = get_owners()
@@ -719,7 +719,7 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 
 /datum/objective/download/update_explanation_text()
 	..()
-	explanation_text = "Удостоверься в том, что эксперимент идёт как по маслу. Скачай [target_amount] технологий на диск."
+	explanation_text = "Скачать [target_amount] технологий из отдела исследований на чистый диск."
 
 /datum/objective/download/check_completion()
 	var/datum/techweb/checking = new
@@ -1366,7 +1366,7 @@ GLOBAL_LIST_EMPTY(possible_sabotages)
 			return FALSE
 
 		var/area/shuttle/vox_raiders/A = locate()
-		var/area/syndicate_mothership/inteq/B = locate()
+		var/area/shuttle/inteq/collosus/B = locate()
 
 		for(var/mob/living/carbon/human/M in A)
 			if(target.current == M)

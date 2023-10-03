@@ -472,16 +472,16 @@
 /obj/item/card/id/syndicate/afterattack(obj/item/O, mob/user, proximity)
 	if(!proximity)
 		return
-	if(!uses)
-		to_chat(usr, "<span class='notice'>Микросканеры устройства издают отрицательное жужжание при попытке использовать его больше одного раза.</span>")
+	if(istype(O, /obj/item/card/id) && !uses)
+		to_chat(usr, "<span class='notice'>Микросканеры устройства издают отрицательное жужжание при попытке использовать их ещё раз.</span>")
 		playsound(src, 'sound/effects/light_flicker.ogg', 100, 1)
 		return
-	uses = max(uses - 1, 0)
 	if(istype(O, /obj/item/card/id))
 		var/obj/item/card/id/I = O
 		src.access |= I.access
-		if(isliving(user) && user.mind)
-			to_chat(usr, "<span class='notice'>Микросканеры устройства активизируются при проведении ею по Идентификационной Карте и копируют её доступ.</span>")
+		uses = max(uses - 1, 0)
+		to_chat(usr, "<span class='notice'>Микросканеры устройства активизируются при проведении ею по Идентификационной Карте и копируют её доступ.</span>")
+		playsound(src, 'sound/effects/light_flicker.ogg', 100, 1)
 
 /obj/item/card/id/syndicate/attack_self(mob/user)
 	if(isliving(user) && user.mind)

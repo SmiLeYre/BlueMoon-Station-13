@@ -85,6 +85,7 @@
 	. = ..()
 	if(parent_turret.obj_flags & EMAGGED)
 		return
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	to_chat(user, "<span class='notice'>You short out [parent_turret]'s threat assessment circuits.</span>")
 	visible_message("[parent_turret] hums oddly...")
 	parent_turret.obj_flags |= EMAGGED

@@ -239,6 +239,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plating,
 /area/awaymission/BMPship/Fore)
 "aY" = (
@@ -342,6 +343,7 @@
 /turf/open/floor/plating/airless,
 /area/awaymission/BMPship/Fore)
 "bu" = (
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plasteel{
 	icon_state = "wood-broken"
 	},
@@ -445,6 +447,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 2
 	},
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plating,
 /area/awaymission/BMPship/Aft)
 "bO" = (
@@ -508,6 +511,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
 	},
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plating,
 /area/awaymission/BMPship/Aft)
 "bV" = (
@@ -851,6 +855,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plasteel/cafeteria,
 /area/awaymission/BMPship/Midship)
 "cP" = (
@@ -923,9 +928,7 @@
 /turf/open/floor/carpet,
 /area/awaymission/BMPship/Fore)
 "da" = (
-/obj/structure/frame/computer{
-	anchored = 1
-	},
+/obj/structure/salvage/computer,
 /turf/open/floor/carpet,
 /area/awaymission/BMPship/Fore)
 "db" = (
@@ -1151,6 +1154,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plasteel,
 /area/awaymission/BMPship/Aft)
 "dE" = (
@@ -1999,8 +2003,7 @@
 /turf/open/floor/plating/asteroid/airless,
 /area/awaymission/BMPship)
 "fT" = (
-/obj/structure/frame/computer{
-	anchored = 1;
+/obj/structure/salvage/computer{
 	dir = 1
 	},
 /turf/open/floor/plating/airless{
@@ -2008,8 +2011,7 @@
 	},
 /area/awaymission/BMPship/Fore)
 "fU" = (
-/obj/structure/frame/computer{
-	anchored = 1;
+/obj/structure/salvage/computer{
 	dir = 1
 	},
 /turf/open/floor/plating/airless{
@@ -2174,6 +2176,7 @@
 /obj/item/stack/cable_coil{
 	amount = 5
 	},
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plating/airless,
 /area/awaymission/BMPship/Midship)
 "gy" = (
@@ -2449,17 +2452,85 @@
 "hE" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/awaymission/BMPship/Fore)
+"kw" = (
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plasteel,
+/area/awaymission/BMPship/Midship)
+"ql" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg1"
+	},
+/area/awaymission/BMPship/Midship)
+"rq" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating,
+/area/awaymission/BMPship/Aft)
+"rI" = (
+/obj/machinery/sleep_console,
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/airless,
+/area/awaymission/BMPship/Midship)
+"to" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/asteroid/airless,
+/area/awaymission/BMPship)
 "vh" = (
 /turf/template_noop,
 /area/space/nearstation)
+"vU" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/airless,
+/area/awaymission/BMPship/Midship)
+"xA" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg1"
+	},
+/area/awaymission/BMPship/Fore)
 "EQ" = (
 /obj/structure/lattice,
 /turf/template_noop,
 /area/awaymission/BMPship/Midship)
+"ET" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/carpet,
+/area/awaymission/BMPship/Fore)
+"ML" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating,
+/area/awaymission/BMPship/Fore)
 "RA" = (
 /obj/machinery/spaceship_navigation_beacon/invion,
 /turf/closed/mineral/random,
 /area/awaymission/BMPship)
+"Sl" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg3"
+	},
+/area/awaymission/BMPship/Fore)
+"UR" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating,
+/area/awaymission/BMPship/Aft)
+"VW" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plasteel,
+/area/awaymission/BMPship/Aft)
 
 (1,1,1) = {"
 aa
@@ -2842,7 +2913,7 @@ hx
 ee
 ee
 bV
-bV
+ET
 aT
 aI
 aa
@@ -2944,7 +3015,7 @@ bV
 bV
 bV
 bV
-bV
+ET
 aT
 fu
 fI
@@ -2962,7 +3033,7 @@ fS
 fS
 fS
 fS
-fS
+to
 fS
 gb
 gb
@@ -3152,7 +3223,7 @@ eT
 aT
 fy
 fL
-fv
+Sl
 cG
 cG
 gH
@@ -3170,7 +3241,7 @@ gb
 gb
 gb
 fS
-fS
+to
 fS
 fS
 aa
@@ -3288,7 +3359,7 @@ aa
 aa
 aa
 cG
-aW
+ML
 bp
 bv
 aq
@@ -3360,7 +3431,7 @@ fV
 aq
 gq
 gp
-ft
+xA
 gp
 gb
 gb
@@ -3751,7 +3822,7 @@ aa
 am
 ap
 aq
-ce
+kw
 ce
 ce
 ce
@@ -3851,7 +3922,7 @@ am
 aa
 EQ
 aq
-gt
+ql
 aq
 cf
 cs
@@ -3866,7 +3937,7 @@ ce
 ce
 ce
 ce
-ce
+kw
 fm
 gs
 aq
@@ -3970,7 +4041,7 @@ ce
 dy
 ce
 fm
-at
+vU
 gL
 gs
 gb
@@ -4102,7 +4173,7 @@ aa
 aa
 aa
 aq
-at
+vU
 at
 bb
 ha
@@ -4178,7 +4249,7 @@ at
 gt
 at
 at
-at
+vU
 fm
 gb
 gb
@@ -4285,7 +4356,7 @@ fm
 fS
 fS
 fS
-fS
+to
 aa
 aa
 aa
@@ -4310,7 +4381,7 @@ ax
 at
 at
 at
-bB
+rI
 aq
 ck
 cu
@@ -4794,7 +4865,7 @@ cE
 ht
 hq
 al
-ai
+rq
 ac
 aa
 aa
@@ -4867,7 +4938,7 @@ ae
 ht
 al
 ac
-aG
+UR
 al
 bi
 al
@@ -4969,7 +5040,7 @@ aa
 aa
 ae
 ht
-aG
+UR
 al
 bk
 al
@@ -4994,7 +5065,7 @@ gX
 cE
 cE
 cE
-cE
+VW
 ht
 ae
 aa

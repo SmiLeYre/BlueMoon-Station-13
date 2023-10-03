@@ -807,7 +807,7 @@
 
 /mob/living/silicon/ai/proc/set_syndie_radio()
 	if(radio)
-		radio.make_syndie()
+		radio.make_inteq()
 
 /mob/living/silicon/ai/proc/set_automatic_say_channel()
 	set name = "Set Auto Announce Mode"

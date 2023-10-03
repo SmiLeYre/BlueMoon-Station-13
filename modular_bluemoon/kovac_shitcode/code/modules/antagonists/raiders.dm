@@ -41,7 +41,7 @@
 	getbooty.team = src
 	for(var/obj/machinery/computer/piratepad_control/P in GLOB.machines)
 		var/area/A = get_area(P)
-		if(istype(A,/area/syndicate_mothership/inteq))
+		if(istype(A,/area/shuttle/inteq/collosus))
 			getbooty.cargo_hold = P
 			break
 	getbooty.update_explanation_text()
@@ -172,9 +172,6 @@
 	H.update_icons()
 
 ////// Shuttle (Krashly) ///////////
-
-/area/syndicate_mothership/inteq
-	name = "InteQ Shuttle"
 
 /datum/map_template/shuttle/inteq_collosus
 	prefix = "_maps/shuttles/bluemoon/"

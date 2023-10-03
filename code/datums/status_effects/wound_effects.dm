@@ -1,8 +1,8 @@
 
 // The shattered remnants of your broken limbs fill you with determination!
 /atom/movable/screen/alert/status_effect/determined
-	name = "Determined"
-	desc = "The serious wounds you've sustained have put your body into fight-or-flight mode! Now's the time to look for an exit!"
+	name = "Решительность"
+	desc = "Тяжелые раны заставляют ваш организм переполняться адреналином! Пора делать ноги!"
 	icon_state = "regenerative_core"
 
 /datum/status_effect/determined
@@ -11,10 +11,10 @@
 
 /datum/status_effect/determined/on_apply()
 	. = ..()
-	owner.visible_message("<span class='danger'>[owner] grits [owner.ru_ego()] teeth in pain!</span>", "<span class='notice'><b>Your senses sharpen as your body tenses up from the wounds you've sustained!</b></span>", vision_distance=COMBAT_MESSAGE_RANGE)
+	owner.visible_message("<span class='danger'>[owner] стискивает зубы от боли!</span>", "<span class='notice'><b>Ваши чувства обостряются из-за ран, которые вы получили!</b></span>", vision_distance=COMBAT_MESSAGE_RANGE)
 
 /datum/status_effect/determined/on_remove()
-	owner.visible_message("<span class='danger'>[owner]'s body slackens noticeably!</span>", "<span class='warning'><b>Your adrenaline rush dies off, and the pain from your wounds come aching back in...</b></span>", vision_distance=COMBAT_MESSAGE_RANGE)
+	owner.visible_message("<span class='danger'>[owner] заметно расслабляется!</span>", "<span class='warning'><b>Ваш прилив адреналина заканчивается, и боль от полученных ран снова разносится по телу...</b></span>", vision_distance=COMBAT_MESSAGE_RANGE)
 	return ..()
 
 /datum/status_effect/limp
@@ -100,8 +100,8 @@
 
 // wound alert
 /atom/movable/screen/alert/status_effect/wound
-	name = "Wounded"
-	desc = "Your body has sustained serious damage, click here to inspect yourself."
+	name = "Ранен"
+	desc = "Ваше тело серьезно пострадало. Нажмите сюда, чтобы осмотреть себя."
 
 /atom/movable/screen/alert/status_effect/wound/Click()
 	var/mob/living/carbon/C = usr

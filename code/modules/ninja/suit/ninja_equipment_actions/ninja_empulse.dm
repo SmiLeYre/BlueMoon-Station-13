@@ -4,7 +4,8 @@
 	name = "EM Burst (50E)"
 	desc = "Disable any nearby technology with an electro-magnetic pulse."
 	button_icon_state = "emp"
-	icon_icon = 'icons/mob/actions/actions_spells.dmi'
+	icon_icon = 'icons/mob/actions/actions_ninja.dmi'
+	background_icon_state = "background_green"
 
 /**
  * Proc called to allow the ninja to EMP the nearby area.

@@ -46,6 +46,7 @@
 	throwforce = 12.5
 	force = 10
 	obj_flags |= EMAGGED
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	visible_message("<span class='danger'>[src] stares at [user] angrily before going docile.</span>")
 
 /obj/item/toy/plush/goatplushie/angry/Destroy()

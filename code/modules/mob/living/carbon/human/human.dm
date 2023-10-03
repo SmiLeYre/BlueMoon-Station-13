@@ -84,33 +84,6 @@
 			. += "Chemical Storage: [changeling.chem_charges]/[changeling.chem_storage]"
 			. += "Absorbed DNA: [changeling.absorbedcount]"
 
-	//NINJACODE
-	if(istype(wear_suit, /obj/item/clothing/suit/space/space_ninja)) //Only display if actually a ninja.
-		var/obj/item/clothing/suit/space/space_ninja/SN = wear_suit
-		. += "SpiderOS Status: [SN.s_initialized ? "Initialized" : "Disabled"]"
-		. += "Current Time: [STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)]"
-		if(SN.s_initialized)
-			//Suit gear
-			. += "Energy Charge: [round(SN.cell.charge/100)]%"
-			//Ninja status
-			. += "Fingerprints: [md5(dna.uni_identity)]"
-			. += "Unique Identity: [dna.unique_enzymes]"
-			. += "Overall Status: [stat > 1 ? "dead" : "[health]% healthy"]"
-			. += "Nutrition Status: [nutrition]"
-			. += "Hydration Status: [thirst]"
-			. += "Oxygen Loss: [getOxyLoss()]"
-			. += "Toxin Levels: [getToxLoss()]"
-			. += "Burn Severity: [getFireLoss()]"
-			. += "Brute Trauma: [getBruteLoss()]"
-			. += "Radiation Levels: [radiation] rad"
-			. += "Body Temperature: [bodytemperature-T0C] degrees C ([bodytemperature*1.8-459.67] degrees F)"
-
-			//Diseases
-			if(length(diseases))
-				. += "Viruses:"
-				for(var/thing in diseases)
-					var/datum/disease/D = thing
-					. += "* [D.name], Type: [D.spread_text], Stage: [D.stage]/[D.max_stages], Possible Cure: [D.cure_text]"
 
 // called when something steps onto a human
 // this could be made more general, but for now just handle mulebot
@@ -535,11 +508,11 @@
 			var/suff = min(C.getOxyLoss(), 7)
 			C.adjustOxyLoss(-suff)
 			C.updatehealth()
-			to_chat(C, "<span class='unconscious'>You feel a breath of fresh air enter your lungs... It feels good...</span>")
+			to_chat(C, "<span class='unconscious'>Вы ощущаете поток свежеого воздуха... Как же хорошо...</span>")
 		else if(they_breathe && !they_lung)
-			to_chat(C, "<span class='unconscious'>You feel a breath of fresh air... but you don't feel any better...</span>")
+			to_chat(C, "<span class='unconscious'>Вы ощущаете поток свежого воздуха... Но вам едва ли становится лучше..</span>")
 		else
-			to_chat(C, "<span class='unconscious'>You feel a breath of fresh air... which is a sensation you don't recognise...</span>")
+			to_chat(C, "<span class='unconscious'>Вы ощущаете поток свежего воздуха... неизвестно, откуда...</span>")
 
 /mob/living/carbon/human/cuff_resist(obj/item/I)
 	if(dna && dna.check_mutation(HULK))
@@ -816,7 +789,7 @@
 
 //src is the user that will be carrying, target is the mob to be carried
 /mob/living/carbon/human/proc/can_piggyback(mob/living/target)
-	return (iscarbon(target) || ispAI(target)) && target.stat == CONSCIOUS
+	return !incapacitated(ignore_restraints = TRUE) && (istype(target) && target.stat == CONSCIOUS && CHECK_MOBILITY(src, MOBILITY_STAND))
 
 /mob/living/carbon/human/proc/can_be_firemanned(mob/living/carbon/target)
 	return (ishuman(target) && !CHECK_MOBILITY(target, MOBILITY_STAND)) || ispAI(target)
@@ -826,35 +799,36 @@
 	var/skills_space = "" //cobby told me to do this
 	if(HAS_TRAIT(src, TRAIT_QUICKER_CARRY))
 		carrydelay = 30
-		skills_space = "expertly "
+		skills_space = "профессионально "
 	else if(HAS_TRAIT(src, TRAIT_QUICK_CARRY))
 		carrydelay = 40
-		skills_space = "quickly "
+		skills_space = "быстро "
 	// BLUEMOON ADDITION AHEAD - тяжёлых и сверхтяжёлых персонажей нельзя нести на плече
 	if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))
 		to_chat(src, span_warning("You tried to lift [target], but they are too heavy!"))
 		return
 	// BLUEMOON ADDITION END
 	if(can_be_firemanned(target) && !incapacitated(FALSE, TRUE))
-		visible_message("<span class='notice'>[src] starts [skills_space]lifting [target] onto their back..</span>",
+		visible_message("<span class='notice'>[src] [skills_space]поднимает [target] на свои плечи.</span>",
 		//Joe Medic starts quickly/expertly lifting Grey Tider onto their back..
-		"<span class='notice'>[carrydelay < 35 ? "Using your gloves' nanochips, you" : "You"] [skills_space]start to lift [target] onto your back[carrydelay == 40 ? ", while assisted by the nanochips in your gloves.." : "..."]</span>")
+		"<span class='notice'>[carrydelay < 35 ? "Используя перчатки с наночипами, вы" : "Вы"] [skills_space]поднимаете [target] на свои плечи[carrydelay == 40 ? ", всё благодаря наночипов в ваших перчатках..." : "..."]</span>")
 		//(Using your gloves' nanochips, you/You) ( /quickly/expertly) start to lift Grey Tider onto your back(, while assisted by the nanochips in your gloves../...)
-		if(do_after(src, carrydelay, TRUE, target))
+		if(do_after(src, carrydelay, target, extra_checks = CALLBACK(src, PROC_REF(can_be_firemanned), target)))
 			//Second check to make sure they're still valid to be carried
 			if(can_be_firemanned(target) && !incapacitated(FALSE, TRUE))
 				buckle_mob(target, TRUE, TRUE, 90, 1, 0, TRUE)
 				return
-		visible_message("<span class='warning'>[src] fails to fireman carry [target]!")
+		visible_message("<span class='warning'>[src] не поднимает [target] за свои плечи!")
 	else
 		if (ishuman(target))
-			to_chat(src, "<span class='notice'>You can't fireman carry [target] while they're standing!</span>")
+			to_chat(src, "<span class='notice'>Вы не можете поднять [target] на свои плечи, ибо [target] стоит!</span>")
 		else
-			to_chat(src, "<span class='notice'>You can't seem to fireman carry that kind of species.</span>")
+			to_chat(src, "<span class='notice'>Вам не удалось поднять [src].</span>")
 
 /mob/living/carbon/human/proc/piggyback(mob/living/carbon/target)
 	if(can_piggyback(target))
-		visible_message("<span class='notice'>[target] starts to climb onto [src]...</span>")
+		visible_message("<span class='notice'>[target] начинает забираться на [src]...</span>")
+
 		// BLUEMOON ADDITION START - тяжёлые персонажи дольше забираются на спину
 		var/climb_on_time = 1.5 SECONDS
 		if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))
@@ -862,7 +836,8 @@
 		else if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY))
 			climb_on_time = 2.5 SECONDS
 		// BLUEMOON ADDITION END
-		if(do_after(target, climb_on_time, target = src, required_mobility_flags = MOBILITY_STAND)) // BLUEMOON CHANGES
+
+		if(!do_after(target, climb_on_time, target = src) || !can_piggyback(target))
 			if(can_piggyback(target))
 				if(target.incapacitated(FALSE, TRUE) || incapacitated(FALSE, TRUE))
 					target.visible_message("<span class='warning'>[target] can't hang onto [src]!</span>")
@@ -893,15 +868,15 @@
 					// BLUEMOON ADDITION END
 				buckle_mob(target, TRUE, TRUE, 0, 1, 2, FALSE)
 		else
-			visible_message("<span class='warning'>[target] fails to climb onto [src]!</span>")
+			visible_message("<span class='warning'>[target] не удаётся забраться на [src]!</span>")
 	else
-		to_chat(target, "<span class='warning'>You can't piggyback ride [src] right now!</span>")
+		to_chat(target, "<span class='warning'>Ты не можешь прокатиться на спине [src] прямо сейчас!</span>")
 
 /mob/living/carbon/human/buckle_mob(mob/living/target, force = FALSE, check_loc = TRUE, lying_buckle = 0, hands_needed = 0, target_hands_needed = 0, fireman = FALSE)
 	if(!force)//humans are only meant to be ridden through piggybacking and special cases
 		return
 	if(!is_type_in_typecache(target, can_ride_typecache))
-		target.visible_message("<span class='warning'>[target] really can't seem to mount [src]...</span>")
+		target.visible_message("<span class='warning'>[target] действительно не может поднять [src]...</span>")
 		return
 	buckle_lying = lying_buckle
 	var/datum/component/riding/human/riding_datum = LoadComponent(/datum/component/riding/human)

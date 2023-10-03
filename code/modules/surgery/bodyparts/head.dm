@@ -1,5 +1,8 @@
 /obj/item/bodypart/head
 	name = BODY_ZONE_HEAD
+	ru_name = "голова"
+	ru_name_v = "голове"
+	ru_name_capital = "Голова"
 	desc = "Didn't make sense not to live for fun, your brain gets smart but your head gets dumb."
 	icon = 'icons/mob/human_parts.dmi'
 	icon_state = "default_human_head"

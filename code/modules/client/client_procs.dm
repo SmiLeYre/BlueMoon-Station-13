@@ -510,6 +510,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		if (menuitem)
 			menuitem.Load_checked(src)
 
+	SSambience.remove_ambience_client(src)
+
 	view_size = new(src, getScreenSize(prefs.widescreenpref))
 	view_size.resetFormat()
 	view_size.setZoomMode()

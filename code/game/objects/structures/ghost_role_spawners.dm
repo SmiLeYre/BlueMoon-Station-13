@@ -7,6 +7,8 @@
 	name = "\improper Ghost Role"
 	job_rank = ROLE_GHOSTROLE
 	show_in_antagpanel = FALSE
+	soft_antag = FALSE
+	show_name_in_check_antagonists = FALSE
 	show_to_ghosts = TRUE
 	antagpanel_category = "Ghost Role"
 	var/datum/team/ghost_role/ghost_team
@@ -1388,7 +1390,7 @@
 	backpack_contents = list(
 		/obj/item/storage/box/survival = 1,
 		/obj/item/crowbar/red = 1,
-		)
+		/obj/item/lighter/gonzofist = 1)
 	id = /obj/item/card/id/syndicate/advanced/black/command
 	implants = list(/obj/item/implant/weapons_auth)
 	id_trim = /datum/id_trim/syndicom/ds2

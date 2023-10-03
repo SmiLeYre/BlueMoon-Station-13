@@ -109,7 +109,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/pda_style = MONO
 	var/pda_color = "#808000"
 	var/pda_skin = PDA_SKIN_ALT
-
+	var/pda_ringtone = "beep"
 
 	var/uses_glasses_colour = 0
 
@@ -490,6 +490,22 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							name = "Character[i]"
 						dat += "<a style='white-space:nowrap;' href='?_src_=prefs;preference=changeslot;num=[i];' [i == default_slot ? "class='linkOn'" : ""]>[name]</a> "
 					dat += "</center>"
+
+			dat += "<HR>"
+
+			dat += "<center>"
+			var/client_file = user.client.Import()
+			var/savefile_name
+			if(client_file)
+				var/savefile/cache_savefile = new(user.client.Import())
+				if(!cache_savefile["deleted"] || savefile_needs_update(cache_savefile) != -2)
+					cache_savefile["real_name"] >> savefile_name
+			dat += "Local storage: [savefile_name ? savefile_name : "Empty"]"
+			dat += "<br />"
+			dat += "<a href='?_src_=prefs;preference=export_slot'>Export current slot</a>"
+			dat += "<a [savefile_name ? "href='?_src_=prefs;preference=import_slot' style='white-space:normal;'" : "class='linkOff'"]>Import into current slot</a>"
+			dat += "<a href='?_src_=prefs;preference=delete_local_copy' style='white-space:normal;background:#eb2e2e;'>Delete locally saved character</a>"
+			dat += "</center>"
 
 			dat += "<HR>"
 
@@ -1268,8 +1284,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 										extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_rename=1;loadout_gear_name=[html_encode(gear.name)];'>Name</a> [loadout_item[LOADOUT_CUSTOM_NAME] ? loadout_item[LOADOUT_CUSTOM_NAME] : "N/A"]"
 									if(gear.loadout_flags & LOADOUT_CAN_DESCRIPTION)
 										extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_redescribe=1;loadout_gear_name=[html_encode(gear.name)];'>Description</a>"
-									if(gear.loadout_flags & LOADOUT_CAN_FREQCODE)
-										extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_freqcode=1;loadout_gear_name=[html_encode(gear.name)];'>Freq/Code</a>"
 								else if((gear_points - gear.cost) < 0)
 									class_link = "style='white-space:normal;' class='linkOff'"
 								else if(donoritem)
@@ -1338,6 +1352,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<b>PDA Color:</b> <span style='border:1px solid #161616; background-color: [pda_color];'><font color='[color_hex2num(pda_color) < 200 ? "FFFFFF" : "000000"]'>[pda_color]</font></span> <a href='?_src_=prefs;preference=pda_color;task=input'>Change</a><BR>"
 					dat += "<b>PDA Style:</b> <a href='?_src_=prefs;task=input;preference=pda_style'>[pda_style]</a><br>"
 					dat += "<b>PDA Reskin:</b> <a href='?_src_=prefs;task=input;preference=pda_skin'>[pda_skin]</a><br>"
+					dat += "<b>PDA Ringtone:</b> <a href='?_src_=prefs;task=input;preference=pda_ringtone'>[pda_ringtone]</a><br>"
 					dat += "<br>"
 					dat += "<b>Ghost Ears:</b> <a href='?_src_=prefs;preference=ghost_ears'>[(chat_toggles & CHAT_GHOSTEARS) ? "All Speech" : "Nearest Creatures"]</a><br>"
 					dat += "<b>Ghost Radio:</b> <a href='?_src_=prefs;preference=ghost_radio'>[(chat_toggles & CHAT_GHOSTRADIO) ? "All Messages":"No Messages"]</a><br>"
@@ -1565,8 +1580,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<b>Chastity Interactions :</b> <a href='?_src_=prefs;preference=chastitypref'>[(cit_toggles & CHASTITY) ? "Allowed" : "Disallowed"]</a><br>"
 					dat += "<b>Genital Stimulation Modifiers :</b> <a href='?_src_=prefs;preference=stimulationpref'>[(cit_toggles & STIMULATION) ? "Allowed" : "Disallowed"]</a><br>"
 					dat += "<b>Edging :</b> <a href='?_src_=prefs;preference=edgingpref'>[(cit_toggles & EDGING) ? "Allowed" : "Disallowed"]</a><br>"
+					dat += "<b>Receive Cum Covering :</b> <a href='?_src_=prefs;preference=cumontopref'>[(cit_toggles & CUM_ONTO) ? "Allowed" : "Disallowed"]</a><br>"
 					dat += "<span style='border-radius: 2px;border:1px dotted white;cursor:help;' title='Enables verbs involving farts, shit and piss.'>?</span> "
 					dat += "<b>Unholy ERP verbs :</b> <a href='?_src_=prefs;preference=unholypref'>[unholypref]</a><br>" //https://www.youtube.com/watch?v=OHKARc-GObU
+					dat += "<span style='border-radius: 2px;border:1px dotted white;cursor:help;' title='Enables macro / micro stepping and stomping interactions.'>?</span> "
+//					dat += "<b>Stomping Interactions :</b> <a href='?_src_=prefs;preference=stomppref'>[stomppref ? "Yes" : "No"]</a><br>"
 					//END OF SPLURT EDIT
 					//SKYRAT EDIT
 					dat += "<span style='border-radius: 2px;border:1px dotted white;cursor:help;' title='Enables verbs involving ear/brain fucking.'>?</span> " //SPLURT Edit (wow! editception???)
@@ -2211,7 +2229,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							ghost_others = GHOST_OTHERS_SIMPLE
 
 				if("name")
-					var/new_name = input(user, "Choose your character's name:", "Character Preference")  as text|null
+					var/new_name = input(user, "Задайте имя вашего персонажа:", "Character Preference")  as text|null
 					if(new_name)
 						new_name = reject_bad_name(new_name, allow_numbers = TRUE)
 						if(new_name)
@@ -2220,28 +2238,28 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							to_chat(user, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, А-Я, а-я, -, ' and .</font>")
 
 				if("age")
-					var/new_age = tgui_input_number(user, "Choose your character's age:\n([AGE_MIN]-[AGE_MAX_INPUT])", "Character Preference", null, AGE_MAX_INPUT, AGE_MIN)
+					var/new_age = tgui_input_number(user, "Задайте возраст вашего персонажа:\n([AGE_MIN]-[AGE_MAX_INPUT])", "Character Preference", null, AGE_MAX_INPUT, AGE_MIN)
 					if(new_age)
 						age = max(min( round(text2num(new_age)), AGE_MAX_INPUT),AGE_MIN)
 
 				if("security_records")
-					var/rec = stripped_multiline_input(usr, "Set your security record note section. This should be IC!", "Security Records", html_decode(security_records), MAX_FLAVOR_LEN, TRUE)
+					var/rec = stripped_multiline_input(usr, "Напишите заметки службы безопасности о вашем персонаже.", "Security Records", html_decode(security_records), MAX_FLAVOR_LEN, TRUE)
 					if(!isnull(rec))
 						security_records = rec
 
 				if("medical_records")
-					var/rec = stripped_multiline_input(usr, "Set your medical record note section. This should be IC!", "Medical Records", html_decode(medical_records), MAX_FLAVOR_LEN, TRUE)
+					var/rec = stripped_multiline_input(usr, "Напишите медицинские заметки о вашем персонаже.", "Medical Records", html_decode(medical_records), MAX_FLAVOR_LEN, TRUE)
 					if(!isnull(rec))
 						medical_records = rec
 
 				if("flavor_text")
-					var/msg = input(usr, "Задайте описание вашего персонажа. Это также может быть использовано для OOC-заметок и предпочтений!", "Описание Bнешности Персонажа", features["flavor_text"]) as message|null //Skyrat edit, removed stripped_multiline_input()
+					var/msg = input(usr, "Задайте внешнее описание вашего персонажа.", "Описание Bнешности Персонажа", features["flavor_text"]) as message|null //Skyrat edit, removed stripped_multiline_input()
 					if(!isnull(msg))
 						features["flavor_text"] = strip_html_simple(msg, MAX_FLAVOR_LEN, TRUE) //Skyrat edit, removed strip_html_simple()
 
 				//SPLURT edit
 				if("naked_flavor_text")
-					var/msg = input(usr, "Задайте описание вашего персонажа с упором на наготу. Описание предполагает под собой IC-подтекст с последующим описанием, как бы выглядел ваш персонаж, если бы он был голым.", "Описание Bнешности Голого Персонажа", features["naked_flavor_text"]) as message|null
+					var/msg = input(usr, "Задайте описание вашего персонажа без одежды.", "Описание Bнешности Голого Персонажа", features["naked_flavor_text"]) as message|null
 					if(!isnull(msg))
 						features["naked_flavor_text"] = strip_html_simple(msg, MAX_FLAVOR_LEN, TRUE)
 				//SPLURT edit end
@@ -3216,17 +3234,21 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						if (parent && parent.mob && parent.mob.hud_used)
 							parent.mob.hud_used.update_ui_style(ui_style2icon(UI_style))
 				if("pda_style")
-					var/pickedPDAStyle = input(user, "Choose your PDA style.", "Character Preference", pda_style)  as null|anything in GLOB.pda_styles
+					var/pickedPDAStyle = input(user, "Выбирайте стиль своего КПК.", "Character Preference", pda_style)  as null|anything in GLOB.pda_styles
 					if(pickedPDAStyle)
 						pda_style = pickedPDAStyle
 				if("pda_color")
-					var/pickedPDAColor = input(user, "Choose your PDA Interface color.", "Character Preference",pda_color) as color|null
+					var/pickedPDAColor = input(user, "Выбирайте цвет интерфейса своего КПК.", "Character Preference",pda_color) as color|null
 					if(pickedPDAColor)
 						pda_color = pickedPDAColor
 				if("pda_skin")
-					var/pickedPDASkin = input(user, "Choose your PDA reskin.", "Character Preference", pda_skin) as null|anything in GLOB.pda_reskins
+					var/pickedPDASkin = input(user, "Выбирайте модель своего КПК.", "Character Preference", pda_skin) as null|anything in GLOB.pda_reskins
 					if(pickedPDASkin)
 						pda_skin = pickedPDASkin
+				if("pda_ringtone")
+					var/pickedPDARingtone = reject_bad_name(input(user, "Выбирайте рингтон своего КПК.", "Character Preference", pda_ringtone) as null|text, TRUE)
+					if(pickedPDARingtone)
+						pda_ringtone = pickedPDARingtone
 				if ("max_chat_length")
 					var/desiredlength = input(user, "Choose the max character length of shown Runechat messages. Valid range is 1 to [CHAT_MESSAGE_MAX_LENGTH] (default: [initial(max_chat_length)]))", "Character Preference", max_chat_length)  as null|num
 					if (!isnull(desiredlength))
@@ -3589,6 +3611,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							mobsexpref = "No"
 						if("No")
 							mobsexpref = "Yes"
+//				if("stomppref") // What the fuck is this?
+//					stomppref = !stomppref
 				//Skyrat edit - *someone* offered me actual money for this shit
 				if("extremepref") //i hate myself for doing this
 					switch(extremepref) //why the fuck did this need to use cycling instead of input from a list
@@ -3997,7 +4021,33 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					cit_toggles ^= STIMULATION
 				if("edgingpref")
 					cit_toggles ^= EDGING
+				if("cumontopref")
+					cit_toggles ^= CUM_ONTO
 				//
+				if("export_slot")
+					var/savefile/S = save_character(export = TRUE)
+					if(istype(S, /savefile))
+						user.client.Export(S)
+						tgui_alert_async(user, "Successfully saved character slot")
+					else
+						tgui_alert_async(user, "Failed saving character slot")
+						return
+
+				if("import_slot")
+					var/savefile/S = new(user.client.Import())
+					if(istype(S, /savefile))
+						if(load_character(provided = S) == TRUE)
+							tgui_alert_async(user, "Successfully loaded character slot.")
+						else
+							tgui_alert_async(user, "Failed loading character slot")
+							return
+					else
+						tgui_alert_async(user, "Failed loading character slot")
+						return
+
+				if("delete_local_copy")
+					user.client.clear_export()
+					tgui_alert_async(user, "Local save data erased.")
 
 	if(href_list["preference"] == "gear")
 		if(href_list["clear_loadout"])
@@ -4084,29 +4134,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				var/new_description = stripped_input(user, "Enter new description for item. Maximum 500 characters.", "Loadout Item Redescribing", null, 500)
 				if(new_description)
 					user_gear[LOADOUT_CUSTOM_DESCRIPTION] = new_description
-
-			if(href_list["loadout_freqcode"] && (G.loadout_flags & LOADOUT_CAN_FREQCODE))
-				var/action
-				var/params
-				var/frequency = FREQ_SIGNALER
-				var/code = DEFAULT_SIGNALER_CODE
-				var/obj/item/assembly/signaler/loadout
-				switch(action)
-					if("freq")
-						frequency = unformat_frequency(params["freq"])
-						frequency = sanitize_frequency(frequency, TRUE)
-						loadout.set_frequency(frequency)
-						. = TRUE
-					if("code")
-						code = text2num(params["code"])
-						code = round(code)
-						. = TRUE
-				var/list/data = list()
-				data["frequency"] = frequency
-				data["code"] = code
-				data["minFrequency"] = MIN_FREE_FREQ
-				data["maxFrequency"] = MAX_FREE_FREQ
-				return data
 
 	ShowChoices(user)
 	return 1

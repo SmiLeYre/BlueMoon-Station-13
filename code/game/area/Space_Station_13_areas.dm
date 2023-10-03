@@ -96,8 +96,8 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	ambientsounds = MINING
 	flags_1 = CAN_BE_DIRTY_1
 	sound_environment = SOUND_AREA_ASTEROID
-	// min_ambience_cooldown = 70 SECONDS
-	// max_ambience_cooldown = 220 SECONDS
+	min_ambience_cooldown = 70 SECONDS
+	max_ambience_cooldown = 220 SECONDS
 
 /area/asteroid/nearstation
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
@@ -213,6 +213,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	// airlock_wires = /datum/wires/airlock/maint
 	sound_environment = SOUND_AREA_TUNNEL_ENCLOSED
 	minimap_color = "#454545"
+	forced_ambience = TRUE
+	min_ambience_cooldown = 12 SECONDS
+	max_ambience_cooldown = 20 SECONDS
 
 //Maintenance - Departmental
 
@@ -967,6 +970,8 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	ambientsounds = HOLY
 	flags_1 = NONE
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
+	min_ambience_cooldown = 90 SECONDS
+	max_ambience_cooldown = 180 SECONDS
 
 /area/service/chapel/main
 	name = "Chapel"
@@ -1253,8 +1258,8 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	// ambience_index = AMBIENCE_MEDICAL
 	// airlock_wires = /datum/wires/airlock/medbay
 	sound_environment = SOUND_AREA_STANDARD_STATION
-	// min_ambience_cooldown = 90 SECONDS
-	// max_ambience_cooldown = 180 SECONDS
+	min_ambience_cooldown = 90 SECONDS
+	max_ambience_cooldown = 180 SECONDS
 	ambientsounds = MEDICAL
 
 /area/medical/clinic
@@ -1475,6 +1480,8 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Detective's Office"
 	icon_state = "detective"
 	ambientsounds = list('sound/ambience/ambidet1.ogg','sound/ambience/ambidet2.ogg')
+	min_ambience_cooldown = 90 SECONDS
+	max_ambience_cooldown = 180 SECONDS
 
 /area/security/detectives_office/private_investigators_office
 	name = "Private Investigator's Office"

@@ -400,9 +400,7 @@ SUBSYSTEM_DEF(shuttle)
 		emergency.mode = SHUTTLE_STRANDED
 		emergency.timer = null
 		emergency.sound_played = FALSE
-		priority_announce("Hostile environment detected. \
-			Departure has been postponed indefinitely pending \
-			conflict resolution.", null, 'sound/misc/notice1.ogg', "Priority")
+		priority_announce("На станции обнаружено особо враждебное присутствие. Отлет отложен на неопределенный срок до разрешения конфликта.", null, 'sound/misc/notice1.ogg', "Priority")
 	if(!emergencyNoEscape && (emergency.mode == SHUTTLE_STRANDED))
 		emergency.mode = SHUTTLE_DOCKED
 		emergency.setTimer(emergencyDockTime)
@@ -679,7 +677,7 @@ SUBSYSTEM_DEF(shuttle)
 /datum/controller/subsystem/shuttle/proc/autoEnd() //CIT CHANGE - allows shift to end without being a proper shuttle call?
 	if(EMERGENCY_IDLE_OR_RECALLED)
 		SSshuttle.emergency.request(silent = TRUE)
-		priority_announce("Смена подошла к концу, был вызван Шаттл Отбытия. [GLOB.security_level == SEC_LEVEL_RED ? "Красный Цветовой Код подтверждён: Отправка Эвакуационного Шаттла. " : "" ]Он прибудет через [emergency.timeLeft(600)] минут.", null, "shuttlecalled", "Priority")
+		priority_announce("Смена подошла к концу, был вызван шаттл эвакации. [GLOB.security_level == SEC_LEVEL_RED ? "Подтверждён код Красный подтверждён: Отправка эвакуационного шаттла. " : "" ]Он прибудет через [emergency.timeLeft(600)] минут.", null, "shuttlecalled", "Priority")
 		log_game("Round end vote passed. Shuttle has been auto-called.")
 		message_admins("Round end vote passed. Shuttle has been auto-called.")
 	emergencyNoRecall = TRUE

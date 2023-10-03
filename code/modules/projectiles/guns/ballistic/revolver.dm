@@ -256,6 +256,7 @@
 				return
 
 		user.visible_message("<span class='danger'>*click*</span>")
+		balloon_alert(user, "Щёлк!")
 		playsound(src, "gun_dry_fire", 30, 1)
 
 /obj/item/gun/ballistic/revolver/russian/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)

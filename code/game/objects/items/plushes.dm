@@ -2,13 +2,14 @@
 	name = "plush"
 	desc = "This is the special coder plush, do not steal."
 	icon = 'icons/obj/plushes.dmi'
-	lefthand_file = 'modular_splurt/icons/mob/inhands/misc/plushes-lefthand.dmi'
-	righthand_file = 'modular_splurt/icons/mob/inhands/misc/plushes-right.dmi'
+	lefthand_file = 'icons/mob/inhands/misc/plushes-lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/misc/plushes-right.dmi'
 	icon_state = "debug"
-	item_state = "plushie_sus"
+	item_state = "debug"
 	attack_verb = list("thumped", "whomped", "bumped")
 	w_class = WEIGHT_CLASS_SMALL
 	resistance_flags = FLAMMABLE
+	obj_flags = UNIQUE_RENAME
 	var/list/squeak_override //Weighted list; If you want your plush to have different squeak sounds use this
 	var/stuffed = TRUE //If the plushie has stuffing in it
 	var/unstuffable = FALSE //for plushies that can't be stuffed
@@ -182,7 +183,9 @@
 /obj/item/toy/plush/attack_self(mob/user)
 	. = ..()
 	if(stuffed || grenade)
-		to_chat(user, "<span class='notice'>You pet [src]. D'awww.</span>")
+		user.visible_message("<span class='notice'>[user] pets [src]. D'awww.</span>", \
+			"<span class='notice'>You pet [src]. D'awww.</span>")
+		new /obj/effect/temp_visual/heart(user.loc)
 		if(grenade && !grenade.active)
 			if(istype(grenade, /obj/item/grenade/chem_grenade))
 				var/obj/item/grenade/chem_grenade/G = grenade
@@ -196,7 +199,7 @@
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT,"plush_nostuffing", /datum/mood_event/plush_nostuffing)
 
 /obj/item/toy/plush/attackby(obj/item/I, mob/living/user, params)
-	if(I.get_sharpness())
+	if(I.get_sharpness() && !(istype(I, /obj/item/pen)))
 		if(!grenade)
 			if(unstuffable)
 				to_chat(user, "<span class='notice'>Nothing to do here.</span>")
@@ -648,33 +651,78 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	attack_verb = list("mini-shot", "mini-eat", "mini-killed")
 
 // Little cute Ninja plushie
+#define GREEN_NINJA_SKIN "Green Space Ninja Plushie"
+#define BLUE_NINJA_SKIN "Blue Space Ninja Plushie"
+#define RED_NINJA_SKIN "Red Space Ninja Plushie"
+
 /obj/item/toy/plush/ninja
-	name = "space ninja plushie"
-	desc = "A protagonist of one of the most popular cartoon series on this side of galaxy. \"運命の忍者矢\""
+	name = GREEN_NINJA_SKIN
+	desc = "Главный герой одного из самых популярных мультсериалов по ту сторону галактики. \"運命の忍者矢\""
 	icon_state = "ninja_plushie_green"
 	item_state = "ninja_plushie_green"
 	attack_verb = list("shot", "nuked", "detonated")
-	var/cooldown = 0
-
-/obj/item/toy/plush/ninja/attack_self(mob/user as mob)
-	. = ..()
-	if(cooldown < world.time)
-		cooldown = (world.time + 30) //3 second cooldown
-		var/plushie_color = pick("green","blue","red")
-		switch (plushie_color)
-			if("green")
-				icon_state = "ninja_plushie_green"
-				item_state = "ninja_plushie_green"
-				user.visible_message(span_notice("The [name] says \"I am not afraid of the darkness! I am the darkness!\""))
-			if("blue")
-				icon_state = "ninja_plushie_blue"
-				item_state = "ninja_plushie_blue"
-				user.visible_message(span_notice("The [name] says \"Your simple light won't stop me!\""))
-			if("red")
-				icon_state = "ninja_plushie_red"
-				item_state = "ninja_plushie_red"
-				user.visible_message(span_notice("The [name] says \"You can run, but you can't hide!\""))
 	squeak_override = list('sound/effects/hit_punch.ogg' = 1)
+	always_reskinnable = TRUE
+	unique_reskin = list(
+		GREEN_NINJA_SKIN = list(RESKIN_ICON_STATE = "ninja_plushie_green", RESKIN_ITEM_STATE = "ninja_plushie_green"),
+		BLUE_NINJA_SKIN = list(RESKIN_ICON_STATE = "ninja_plushie_blue", RESKIN_ITEM_STATE = "ninja_plushie_blue"),
+		RED_NINJA_SKIN = list(RESKIN_ICON_STATE = "ninja_plushie_red", RESKIN_ITEM_STATE = "ninja_plushie_red")
+	)
+	COOLDOWN_DECLARE(change_ninja_cooldown)
+
+/obj/item/toy/plush/ninja/reskin_obj(mob/user)
+	. = ..()
+	name = current_skin
+	if(COOLDOWN_FINISHED(src, change_ninja_cooldown))
+		COOLDOWN_START(src, change_ninja_cooldown, 3 SECONDS)
+		switch(current_skin)
+			if(BLUE_NINJA_SKIN)
+				say("Какой-то свет не остановит меня!")
+			if(RED_NINJA_SKIN)
+				say("Ты можешь бежать... но ты не сможешь спрятаться!")
+			else
+				say("Я не боюсь темноты! Я и есть тьма!")
+	if(ismob(loc))
+		var/mob/M = loc
+		M.update_inv_hands()
+
+#undef GREEN_NINJA_SKIN
+#undef BLUE_NINJA_SKIN
+#undef RED_NINJA_SKIN
+
+#define BASIC_MINER_SKIN "Miner Plushie"
+#define RED_MINER_SKIN "Bloody Miner Plushie"
+
+/obj/item/toy/plush/miner
+	name = BASIC_MINER_SKIN
+	desc = "Тот самый Шахтёр, способный провести геноцид планетарного объекта."
+	icon_state = "miner_plushie"
+	item_state = "miner_plushie"
+	attack_verb = list("killed", "slashed", "annihilates")
+	squeak_override = list('sound/effects/hit_punch.ogg' = 1)
+	always_reskinnable = TRUE
+	unique_reskin = list(
+		BASIC_MINER_SKIN = list(RESKIN_ICON_STATE = "miner_plushie", RESKIN_ITEM_STATE = "miner_plushie"),
+		RED_MINER_SKIN = list(RESKIN_ICON_STATE = "bloody_miner_plushie", RESKIN_ITEM_STATE = "bloody_miner_plushie")
+	)
+	COOLDOWN_DECLARE(change_miner_cooldown)
+
+/obj/item/toy/plush/miner/reskin_obj(mob/user)
+	. = ..()
+	name = current_skin
+	if(COOLDOWN_FINISHED(src, change_miner_cooldown))
+		COOLDOWN_START(src, change_miner_cooldown, 3 SECONDS)
+		switch(current_skin)
+			if(BASIC_MINER_SKIN)
+				say("Ну вот. Сегодня я умру.")
+			else
+				say("Кишки, огромные кишки! Убей их… должен убить их всех! Разорвать… и… рвать! Демоны… они повсюду. Должен… убить их всех!")
+	if(ismob(loc))
+		var/mob/M = loc
+		M.update_inv_hands()
+
+#undef BASIC_MINER_SKIN
+#undef RED_MINER_SKIN
 
 /obj/item/toy/plush/slimeplushie
 	name = "slime plushie"
@@ -905,7 +953,7 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	name = "Hairball"
 	desc = "A bundle of undigested fibers and scales. Yuck."
 	icon_state = "Hairball"
-	item_state = "Hairball"
+	item_state = "plushie_sus"
 	unstuffable = TRUE
 	young = TRUE // Your own mouth-baby.
 	squeak_override = list('sound/misc/splort.ogg'=1)

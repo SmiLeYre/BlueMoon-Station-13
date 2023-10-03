@@ -48,8 +48,8 @@
 /datum/element/crawl_under/proc/do_crawl(obj/structure/source, mob/living/user)
 	if(QDELETED(source) || QDELETED(user)) //sanity
 		return
-	to_chat(user, span_notice("Вы начинаете лезть под [source].."))
-	if(!do_after(user, 20, FALSE, source) || (user.mobility_flags & MOBILITY_STAND || user.incapacitated(TRUE, FALSE, TRUE)))
+	to_chat(user, span_notice("Вы начинаете лезть под [source]..."))
+	if(!do_after(user, 20, source) || (user.mobility_flags & MOBILITY_STAND || user.incapacitated(TRUE, FALSE, TRUE)))
 		to_chat(user, span_warning("У вас не получилось залезть под [source]!"))
 		return
 

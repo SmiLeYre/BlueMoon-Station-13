@@ -544,6 +544,7 @@
 		contraband = TRUE
 		obj_flags |= EMAGGED
 		to_chat(user, "<span class='notice'>You adjust [src]'s routing and receiver spectrum, unlocking special supplies and contraband.</span>")
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	return TRUE
 
 /obj/item/circuitboard/computer/cargo/configure_machine(obj/machinery/computer/cargo/machine)
@@ -566,6 +567,7 @@
 		contraband = TRUE
 		obj_flags |= EMAGGED
 		to_chat(user, "<span class='notice'>You change the routing protocols, allowing the Drop Pod to land anywhere on the station.</span>")
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	return TRUE
 
 /obj/item/circuitboard/computer/cargo/express/multitool_act(mob/living/user)

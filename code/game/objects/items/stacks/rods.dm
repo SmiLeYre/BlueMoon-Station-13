@@ -19,6 +19,8 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 	throwforce = 10
 	throw_speed = 3
 	throw_range = 7
+	wound_bonus = 4
+	bare_wound_bonus = 3
 	custom_materials = list(/datum/material/iron=1000)
 	max_amount = 50
 	attack_verb = list("hit", "bludgeoned", "whacked")

@@ -8,7 +8,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
-	custom_materials = list(/datum/material/iron=60, /datum/material/glass=30)
+	custom_materials = list(/datum/material/iron=SMALL_MATERIAL_AMOUNT * 0.6, /datum/material/glass=SMALL_MATERIAL_AMOUNT * 0.3)
 	force = 2
 	throwforce = 2
 	speech_span = SPAN_ROBOT
@@ -30,14 +30,21 @@
 	///Sound loop that plays when recording or playing back.
 	var/datum/looping_sound/tape_recorder_hiss/soundloop
 
+/datum/looping_sound/tape_recorder_hiss
+	mid_sounds = list('sound/items/taperecorder/taperecorder_hiss_mid.ogg' = 1)
+	start_sound = list('sound/items/taperecorder/taperecorder_hiss_start.ogg' = 1)
+	volume = 10
+
 /obj/item/taperecorder/Initialize(mapload)
 	. = ..()
 	if(starting_tape_type)
 		mytape = new starting_tape_type(src)
 	update_icon()
+	soundloop = new(src)
 	update_appearance()
 
 /obj/item/taperecorder/Destroy()
+	QDEL_NULL(soundloop)
 	QDEL_NULL(mytape)
 	return ..()
 
@@ -76,6 +83,12 @@
 
 	if(mytape)
 		icons_available += list("Eject" = image(radial_icon_file,"eject"))
+
+/obj/item/taperecorder/proc/update_sound()
+	if(!playing && !recording)
+		soundloop.stop()
+	else
+		soundloop.start()
 
 /obj/item/taperecorder/attackby(obj/item/I, mob/user, params)
 	if(!mytape && istype(I, /obj/item/tape))
@@ -175,6 +188,7 @@
 	if(mytape.used_capacity < mytape.max_capacity)
 		recording = TRUE
 		balloon_alert(usr, "started recording")
+		update_sound()
 		update_appearance()
 		var/used = mytape.used_capacity //to stop runtimes when you eject the tape
 		var/max = mytape.max_capacity
@@ -212,6 +226,7 @@
 		playing = FALSE
 	time_warned = FALSE
 	update_appearance()
+	update_sound()
 
 /obj/item/taperecorder/verb/play()
 	set name = "Play Tape"
@@ -235,6 +250,7 @@
 
 	playing = TRUE
 	update_appearance()
+	update_sound()
 	balloon_alert(usr, "started playing")
 	playsound(src, 'sound/items/taperecorder/taperecorder_play.ogg', 50, FALSE)
 	var/used = mytape.used_capacity //to stop runtimes when you eject the tape
@@ -358,10 +374,11 @@
 	desc = "A magnetic tape that can hold up to ten minutes of content on either side."
 	icon_state = "tape_white"
 	icon = 'icons/obj/device.dmi'
+	item_state = "analyzer"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	w_class = WEIGHT_CLASS_TINY
-	custom_materials = list(/datum/material/iron=20, /datum/material/glass=5)
+	custom_materials = list(/datum/material/iron=SMALL_MATERIAL_AMOUNT * 0.2, /datum/material/glass = SMALL_MATERIAL_AMOUNT * 0.05)
 	force = 1
 	throwforce = 0
 	obj_flags = UNIQUE_RENAME //my mixtape

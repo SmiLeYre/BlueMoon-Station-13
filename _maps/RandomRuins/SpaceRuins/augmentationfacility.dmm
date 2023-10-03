@@ -27,21 +27,12 @@
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "h" = (
-/obj/machinery/mecha_part_fabricator,
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
+/obj/effect/spawner/lootdrop/salvage,
+/turf/closed/mineral/random/high_chance,
 /area/ruin/powered)
 "i" = (
-/obj/structure/table,
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/stack/sheet/glass/fifty,
-/obj/item/stack/sheet/metal/fifty,
+/obj/structure/salvage/protolathe,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "j" = (
@@ -83,7 +74,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/aug_manipulator,
+/obj/structure/salvage/pda,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "r" = (
@@ -183,18 +174,11 @@
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "G" = (
-/obj/machinery/light,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/airalarm{
 	dir = 1;
 	pixel_y = -22
 	},
-/turf/open/floor/plasteel,
-/area/ruin/powered)
-"H" = (
-/obj/effect/decal/cleanable/oil,
-/obj/machinery/light,
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "I" = (
@@ -220,11 +204,11 @@
 /turf/closed/wall/r_wall/rust,
 /area/ruin/powered)
 "M" = (
-/obj/structure/mecha_wreckage/ripley,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
 	dir = 4
 	},
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "N" = (
@@ -429,9 +413,9 @@ a
 a
 b
 b
-c
+h
 d
-e
+i
 n
 o
 x
@@ -475,7 +459,7 @@ b
 c
 c
 d
-h
+e
 p
 r
 z
@@ -497,12 +481,12 @@ b
 c
 c
 Y
-i
+g
 p
 s
 A
 o
-H
+x
 f
 f
 d
@@ -571,7 +555,7 @@ E
 T
 d
 d
-c
+h
 c
 b
 a

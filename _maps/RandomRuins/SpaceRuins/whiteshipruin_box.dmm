@@ -38,8 +38,7 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/whiteship/box)
 "oG" = (
-/obj/structure/frame/computer{
-	anchored = 1;
+/obj/structure/salvage/computer{
 	dir = 8
 	},
 /turf/open/floor/mineral/titanium/white,
@@ -88,11 +87,7 @@
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
 "sW" = (
-/obj/machinery/computer{
-	desc = "A computer long since rendered non-functional due to lack of maintenance. Spitting out error messages.";
-	dir = 8;
-	name = "Broken Computer"
-	},
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
 "td" = (
@@ -139,10 +134,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/whiteship/box)
 "yu" = (
-/obj/machinery/computer{
-	desc = "A computer long since rendered non-functional due to lack of maintenance. Spitting out error messages.";
-	name = "Broken Computer"
-	},
+/obj/structure/salvage/computer,
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
 "yv" = (
@@ -152,6 +144,10 @@
 	pixel_y = -5
 	},
 /turf/open/floor/mineral/titanium/white,
+/area/ruin/space/has_grav/whiteship/box)
+"zA" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/whiteship/box)
 "zF" = (
 /obj/machinery/door/window,
@@ -212,11 +208,10 @@
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
 "NT" = (
-/obj/structure/frame/computer{
-	anchored = 1;
+/obj/structure/light_construct,
+/obj/structure/salvage/computer{
 	dir = 1
 	},
-/obj/structure/light_construct,
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
 "Os" = (
@@ -280,12 +275,10 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/whiteship/box)
 "Ya" = (
-/obj/structure/frame/computer{
-	anchored = 1
-	},
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/structure/salvage/computer,
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
 "Zh" = (
@@ -360,7 +353,7 @@ Xp
 Xp
 Xp
 ei
-Os
+sW
 Os
 Os
 ei
@@ -385,7 +378,7 @@ Xp
 ei
 Os
 Os
-Os
+sW
 ei
 Xp
 Xp
@@ -429,7 +422,7 @@ Xp
 Xp
 Xp
 ei
-Os
+sW
 Os
 xi
 ei
@@ -676,7 +669,7 @@ ei
 Xp
 ei
 Tc
-Zh
+zA
 Zh
 Tc
 ei
@@ -689,8 +682,8 @@ Os
 Tc
 ei
 Tc
-Zh
-Zh
+zA
+zA
 Tc
 ei
 Xp
@@ -755,7 +748,7 @@ Os
 Os
 Os
 Os
-Os
+sW
 Os
 Os
 ei
@@ -907,7 +900,7 @@ ei
 ry
 Os
 Os
-Os
+sW
 Os
 ak
 Os
@@ -934,7 +927,7 @@ Os
 Os
 ei
 Tc
-Os
+sW
 Os
 Os
 Os
@@ -950,7 +943,7 @@ ei
 "}
 (29,1,1) = {"
 ei
-Os
+sW
 Os
 Os
 Os
@@ -1054,7 +1047,7 @@ Dg
 ps
 Dg
 Os
-Os
+sW
 Os
 Os
 Tc
@@ -1074,7 +1067,7 @@ RD
 Os
 Os
 qi
-sW
+oG
 Dg
 Os
 Os

@@ -208,6 +208,7 @@
 /obj/machinery/power/port_gen/pacman/emag_act(mob/user)
 	if(obj_flags & EMAGGED)
 		return
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	obj_flags |= EMAGGED
 	emp_act(100)
 

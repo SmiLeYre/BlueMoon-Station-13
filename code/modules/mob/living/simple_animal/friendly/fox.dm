@@ -114,3 +114,4 @@
 	speak_chance = 15
 	maxHealth = 50
 	health = 50
+	gender = MALE

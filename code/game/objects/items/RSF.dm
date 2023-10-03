@@ -131,6 +131,7 @@ RSF
 /obj/item/cookiesynth/emag_act(mob/user)
 	. = ..()
 	obj_flags ^= EMAGGED
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	if(obj_flags & EMAGGED)
 		to_chat(user, "<span class='warning'>You short out [src]'s reagent safety checker!</span>")
 	else

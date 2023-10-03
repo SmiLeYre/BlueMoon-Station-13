@@ -85,7 +85,11 @@
 		carbon_owner.dream()
 	// 2% per second, tick interval is in deciseconds
 	if(prob((tick_interval+1) * 0.2) && owner.health > owner.crit_threshold)
-		owner.emote("snore")
+		var/mob/living/carbon/human/H = owner
+		if(!iscatperson(H))
+			owner.emote("snore")
+		else
+			owner.emote("purr") //cats can purr in their sleep
 
 /**
  * # Transient Status Effect (basetype)
@@ -1066,7 +1070,7 @@
 	if(usr != owner)
 		return
 	to_chat(owner, "<span class='notice'>You attempt to remove the durathread strand from around your neck.</span>")
-	if(do_after(owner, 35, null, owner))
+	if(do_after(owner, 3.5 SECONDS, owner))
 		if(isliving(owner))
 			var/mob/living/L = owner
 			to_chat(owner, "<span class='notice'>You successfully remove the durathread strand.</span>")

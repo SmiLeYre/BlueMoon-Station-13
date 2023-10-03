@@ -64,6 +64,15 @@
 
 //InteQ
 
+/obj/item/clothing/under/inteq_honorable_vanguard
+	name = "black combat turtleneck"
+	desc = "It sits comfortably, does not hinder movement, and most importantly, it is very stylish."
+	icon = 'modular_bluemoon/krashly/icons/obj/clothing/under.dmi'
+	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/under.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/under_digidrated.dmi'
+	icon_state = "inteq_honorable"
+	item_state = "inteq_honorable"
+
 /obj/item/clothing/under/inteq
 	name = "brown combat turtleneck"
 	desc = "It sits comfortably, does not hinder movement, and most importantly, it is very stylish."

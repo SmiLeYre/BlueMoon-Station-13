@@ -6,6 +6,7 @@ GLOBAL_LIST_INIT(command_positions, list(
 	"Research Director",
 	"Chief Medical Officer",
 	"Quartermaster",
+	"NanoTrasen Representative",
 	"Blueshield"))
 
 GLOBAL_LIST_INIT(engineering_positions, list(
@@ -14,7 +15,6 @@ GLOBAL_LIST_INIT(engineering_positions, list(
 	"Atmospheric Technician"))
 
 GLOBAL_LIST_INIT(law_positions, list(
-	"NanoTrasen Representative",
 	"Lawyer",
 	"Bridge Officer"))
 

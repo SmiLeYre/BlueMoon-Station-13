@@ -60,7 +60,7 @@
 	rename_team = "Asset Protection Team"
 	code = "Epsilon"
 	mission = "Защитите Активы Пакта. Сотрудники Пакта тоже являются Активами Пакта."
-	polldesc = "a Nanotrasen asset protection team"
+	polldesc = "a Nanotrasen Asset Protection Team"
 	ertphrase = "modular_bluemoon/kovac_shitcode/sound/ert/asset_protection_send.ogg"
 
 /datum/ert/syndiesquad

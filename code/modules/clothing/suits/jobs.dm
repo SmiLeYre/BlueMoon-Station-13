@@ -129,7 +129,6 @@
 	name = "long red forensics coat"
 	icon_state = "forensics_red_long"
 	item_state = "forensics_red_long"
-	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/suit/det_suit/forensicsblue
 	name = "blue forensics coat"
@@ -140,7 +139,6 @@
 	name = "long blue forensics coat"
 	icon_state = "forensics_blue_long"
 	item_state = "forensics_blue_long"
-	mutantrace_variation = STYLE_DIGITIGRADE
 
 //Engineering
 /obj/item/clothing/suit/hazardvest
@@ -238,9 +236,11 @@
 /obj/item/clothing/suit/toggle/labcoat/paramedic
 	name = "paramedic vest"
 	desc = "A dark blue vest with reflective strips for emergency medical technicians."
-	icon_state = "paramedic-vest"
-	item_state = "paramedic-vest"
+	icon_state = "labcoat_paramedic"
+	item_state = "labcoat_paramedic"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	icon = 'modular_bluemoon/phenyamomota/icon/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_bluemoon/phenyamomota/icon/mob/clothing/suits.dmi'
 
 /obj/item/clothing/suit/toggle/labcoat/emt
 	name = "emt vest"
@@ -248,12 +248,16 @@
 	icon_state = "labcoat_emt"
 	item_state = "labcoat_emt"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	icon = 'modular_bluemoon/phenyamomota/icon/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_bluemoon/phenyamomota/icon/mob/clothing/suits.dmi'
 
 /obj/item/clothing/suit/toggle/labcoat/emt/red
 	name = "red emt vest"
 	desc = "A red vest with reflective strips for emergency medical technicians."
 	icon_state = "labcoat_emtred"
 	item_state = "labcoat_emtred"
+	icon = 'modular_bluemoon/phenyamomota/icon/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_bluemoon/phenyamomota/icon/mob/clothing/suits.dmi'
 
 /obj/item/clothing/suit/toggle/labcoat/emt/highvis
 	name = "high visibility emt vest"

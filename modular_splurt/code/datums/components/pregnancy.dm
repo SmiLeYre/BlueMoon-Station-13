@@ -426,5 +426,5 @@
 /datum/component/pregnancy/proc/handle_damage(datum/source, damage, damagetype, def_zone)
 	SIGNAL_HANDLER
 
-	if(def_zone == BODY_ZONE_CHEST && damage > 20 && prob(40))
+	if(def_zone == BODY_ZONE_CHEST && damage > 5 && prob(40))
 		fetus_mortus()

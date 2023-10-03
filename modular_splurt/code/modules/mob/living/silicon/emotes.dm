@@ -655,8 +655,8 @@
 /datum/emote/living/audio/wtune
 	key = "whistle_tune"
 	key_third_person = "whistle_tunes"
-	message = "whistles a tune."
-	message_mime = "makes an expression as if whistling."
+	message = "насвистывает мелодию."
+	message_mime = "имитирует насвистывание своем ртом."
 	emote_sound = 'modular_splurt/sound/voice/wtune1.ogg'
 	emote_cooldown = 14.55 SECONDS // Uses longest sound's time.
 
@@ -670,8 +670,8 @@
 /datum/emote/living/audio/terror
 	key = "terror"
 	key_third_person = "terrors"
-	message = "whistles some dreadful tune..."
-	message_mime = "stares with aura full of dread..."
+	message = "насвистывает какую-то жуткую мелодию..."
+	message_mime = "смотрит на вас взглядом, полным ужаса..."
 	emote_sound = 'modular_splurt/sound/voice/terror1.ogg'
 	emote_cooldown = 13.07 SECONDS // Uses longest sound's time.
 

@@ -21,12 +21,6 @@
 "f" = (
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/powered/advancedlab)
-"g" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/powered/advancedlab)
 "h" = (
 /obj/structure/table/glass,
 /obj/item/crowbar/advanced,
@@ -37,7 +31,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/powered/advancedlab)
 "i" = (
-/obj/machinery/computer/rdconsole,
+/obj/structure/salvage/computer,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/powered/advancedlab)
 "j" = (
@@ -80,9 +74,6 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/powered/advancedlab)
 "p" = (
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/structure/table/glass,
 /obj/item/paper{
 	default_raw_text = "As of yet, our experiments have seen a fair bit of success. Unfortunately, our business partners have stopped funding us as they realised they utterly hate each other. To whoever finds this place, they are yours. Use them how you will. I leave you with the next generation of greytiding.";
@@ -93,10 +84,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/powered/advancedlab)
 "q" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/structure/table/glass,
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/powered/advancedlab)
 "r" = (
@@ -122,10 +110,6 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/powered/advancedlab)
 "u" = (
-/obj/machinery/light/small{
-	dir = 4;
-	icon_state = "bulb"
-	},
 /obj/structure/closet,
 /obj/item/clothing/suit/hooded/wintercoat/miner,
 /obj/item/clothing/shoes/sneakers/brown,
@@ -310,7 +294,7 @@ b
 d
 j
 l
-q
+l
 s
 O
 b
@@ -367,7 +351,7 @@ a
 (5,1,1) = {"
 a
 b
-f
+R
 f
 n
 n
@@ -407,17 +391,17 @@ a
 (7,1,1) = {"
 a
 b
-g
 f
 f
 f
 f
 f
+q
 b
 P
 P
 M
-R
+f
 M
 a
 a
@@ -427,7 +411,7 @@ a
 (8,1,1) = {"
 a
 N
-f
+q
 f
 f
 f

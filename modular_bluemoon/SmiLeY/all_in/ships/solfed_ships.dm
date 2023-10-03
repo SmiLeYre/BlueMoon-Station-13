@@ -1,4 +1,4 @@
-/area/syndicate_mothership/solfed_corvette
+/area/shuttle/solfed/corvette
 	name = "Solar Federation Corvette"
 
 /obj/item/circuitboard/computer/solfed/corvette
@@ -25,7 +25,7 @@
 	y_offset = 1
 	space_turfs_only = FALSE
 
-/area/syndicate_mothership/solfed_destroyer
+/area/shuttle/solfed/destroyer
 	name = "Solar Federation Destroyer"
 
 /obj/item/circuitboard/computer/solfed/destroyer
@@ -52,7 +52,7 @@
 	y_offset = 1
 	space_turfs_only = FALSE
 
-/area/syndicate_mothership/solfed_frigate
+/area/shuttle/solfed/frigate
 	name = "Solar Federation Battle Frigate"
 
 /obj/item/circuitboard/computer/solfed/frigate

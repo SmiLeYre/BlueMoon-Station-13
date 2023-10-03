@@ -2,6 +2,10 @@
 	icon = 'modular_bluemoon/phenyamomota/icon/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_bluemoon/phenyamomota/icon/mob/clothing/suits.dmi'
 
+/obj/item/clothing/suit/toggle/labcoat/depjacket
+	icon = 'icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
+
 /obj/item/clothing/suit/toggle/labcoat/cmo
 	icon = 'modular_bluemoon/phenyamomota/icon/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_bluemoon/phenyamomota/icon/mob/clothing/suits.dmi'

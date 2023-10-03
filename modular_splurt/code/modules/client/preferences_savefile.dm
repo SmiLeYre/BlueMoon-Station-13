@@ -10,6 +10,8 @@
 	directory_tag			= sanitize_inlist(directory_tag, GLOB.char_directory_tags, initial(directory_tag))
 	directory_erptag		= sanitize_inlist(directory_erptag, GLOB.char_directory_erptags, initial(directory_erptag))
 	directory_ad			= strip_html_simple(directory_ad, MAX_FLAVOR_LEN)
+	// Get stomping preferences.
+//	S["stomp_pref"] >> stomppref
 
 /datum/preferences/proc/splurt_character_pref_save(savefile/S) //TODO: modularize our other savefile edits... maybe?
 	//Character directory
@@ -18,10 +20,16 @@
 	WRITE_FILE(S["directory_erptag"], directory_erptag)
 	WRITE_FILE(S["directory_ad"], directory_ad)
 
+	// Stomping preferences.
+//	WRITE_FILE(S["stomp_pref"], stomppref)
+
 /datum/preferences/update_preferences(current_version, savefile/S)
 	. = ..()
 	if(current_version < 57.01) //a
 		new_character_creator = TRUE
+
+//	if(current_version < 58.01) // Stomp pref.
+//		stomppref = TRUE
 
 /datum/preferences/update_character(current_version, savefile/S)
 	. = ..()

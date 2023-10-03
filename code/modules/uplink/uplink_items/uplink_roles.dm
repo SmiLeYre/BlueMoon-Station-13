@@ -88,6 +88,7 @@
 	item = /obj/item/his_grace
 	cost = 20
 	restricted_roles = list("Chaplain")
+	hijack_only = TRUE //This is a murderbone weapon, as such, it should only be available in those scenarios.
 	surplus = 5 //Very low chance to get it in a surplus crate even without being the chaplain
 
 /datum/uplink_item/role_restricted/clockwork_slab
@@ -256,3 +257,18 @@
 	cost = 11
 	restricted_roles = list("Station Engineer")
 
+/datum/uplink_item/role_restricted/combat_rcd
+	name = "Syndicate RCD"
+	desc = "Special RCD capable to destroy reinforced walls and have 500 matter units instead of 100."
+	cost = 6
+	item = /obj/item/construction/rcd/combat
+	restricted_roles = list("Chief Engineer", "Station Engineer", "Atmospheric Technician")
+
+/datum/uplink_item/role_restricted/gbs
+	name = "GBS virus bottle"
+	desc = "A bottle containing Gravitokinetic Bipotential SADS culture. Also known as GBS, extremely deadly virus."
+	item = /obj/item/reagent_containers/glass/bottle/gbs
+	cost = 12
+	restricted_roles = list("Virologist")
+	surplus = 0
+	hijack_only = TRUE

@@ -957,10 +957,6 @@
 "SF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/jukebox/emagged,
-/obj/item/jukebox/emagged{
-	pixel_x = 5;
-	pixel_y = 5
-	},
 /turf/open/floor/iron/shuttle/arrivals/sign_1{
 	initial_gas_mix = "n2=100;TEMP=293.15"
 	},

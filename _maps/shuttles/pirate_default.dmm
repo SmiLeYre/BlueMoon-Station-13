@@ -1228,7 +1228,6 @@
 /obj/structure/closet/secure_closet/personal/cabinet,
 /obj/item/bedsheet/pirate,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/jukebox/emagged,
 /turf/open/floor/wood,
 /area/shuttle/pirate)
 "cf" = (
@@ -1488,7 +1487,6 @@
 	pixel_x = -8
 	},
 /obj/item/gun/ballistic/automatic/ak47/pindicate,
-/obj/item/jukebox/emagged,
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
 "cD" = (

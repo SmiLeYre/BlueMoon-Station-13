@@ -57,7 +57,7 @@
 /obj/item/ammo_box/magazine/internal/shot/com/rsh12
 	name = "rsh-15 internal magazine"
 	ammo_type = /obj/item/ammo_casing/shotgun/rubbershot
-	max_ammo = 4
+	max_ammo = 6
 
 /obj/item/gun/ballistic/shotgun/rsh12
 	name = "RSH-15"
@@ -201,8 +201,8 @@
 	throwforce = 5
 	throw_speed = 2
 	throw_range = 3
-	wound_bonus = 30
-	bare_wound_bonus = 50
+	wound_bonus = 25
+	bare_wound_bonus = 30
 	armour_penetration = 70
 	attack_speed = CLICK_CD_MELEE * 1.2
 	w_class = WEIGHT_CLASS_BULKY

@@ -35,8 +35,8 @@
 		if(I.w_class > WEIGHT_CLASS_NORMAL)
 			to_chat(user,"<span class='warning'>[I] is too large to fit into your [src]</span>")
 			return
-		user.visible_message("<span class='warning'>[hound.name] is ingesting [I] into their [src.name].</span>", "<span class='notice'>You start ingesting [target] into your [src.name]...</span>")
-		if(do_after(user, 15, target = target) && length(contents) < max_item_count)
+		user.visible_message(span_warning("[hound.name] is ingesting [I] into their [src.name]."), span_notice("You start ingesting [target] into your [src.name]..."))
+		if(do_after(user, 1.5 SECONDS, target) && length(contents) < max_item_count)
 			I.forceMove(src)
 			I.visible_message("<span class='warning'>[hound.name]'s garbage processor groans lightly as [I] slips inside.</span>", "<span class='notice'>Your garbage compactor groans lightly as [I] slips inside.</span>")
 			playsound(hound, 'sound/machines/disposalflush.ogg', 50, 1)
@@ -59,8 +59,8 @@
 		if(trashman.buckled)
 			to_chat(user,"<span class='warning'>[trashman] is buckled and can not be put into your [src].</span>")
 			return
-		user.visible_message("<span class='warning'>[hound.name] is ingesting [trashman] into their [src].</span>", "<span class='notice'>You start ingesting [trashman] into your [src.name]...</span>")
-		if(do_after(user, 30, target = trashman) && !patient && !trashman.buckled && length(contents) < max_item_count)
+		user.visible_message(span_warning("[hound.name] is ingesting [trashman] into their [src]."), span_notice("You start ingesting [trashman] into your [src.name]..."))
+		if(do_after(user, 3 SECONDS, trashman) && !patient && !trashman.buckled && length(contents) < max_item_count)
 			trashman.forceMove(src)
 			trashman.reset_perspective(src)
 			update_gut(user)

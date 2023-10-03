@@ -15,6 +15,10 @@
 "p" = (
 /turf/open/floor/holofloor/beach/water,
 /area/ruin/space/has_grav)
+"q" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space)
 "t" = (
 /obj/effect/overlay/palmtree_r,
 /turf/open/floor/holofloor/beach,
@@ -240,7 +244,7 @@ L
 L
 L
 L
-T
+q
 o
 "}
 (13,1,1) = {"

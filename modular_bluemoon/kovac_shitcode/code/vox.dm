@@ -1,7 +1,6 @@
 #define SPECIES_VOX		"vox"
 
 ///Костыли. Морда невидима, как и хвост, который изначально привязан к телу.
-//Лютiй спагетти-код в update_icons.dmi проверяет snout и устанавливает воксам файлы масок и шлемов. Попозже подразберусь и заменю на человеческий.
 /datum/sprite_accessory/tails/mam_tails/vox
 	name = "Vox"
 	icon_state = "vox_tail"

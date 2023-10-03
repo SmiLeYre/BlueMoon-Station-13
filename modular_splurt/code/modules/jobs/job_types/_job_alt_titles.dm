@@ -392,7 +392,7 @@
 		"Security Agent",
 		"Probation Officer",
 		"Guardsman",
-		"Civil Protection Cosplayer",
+		"Civil Protection",
 		"Police Officer",
 		"Tyranny Lover",
 		"Cerberus",
