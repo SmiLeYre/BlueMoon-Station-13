@@ -53472,9 +53472,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
 /turf/open/floor/plating,
 /area/maintenance/aft)
 "lOr" = (
@@ -57560,15 +57557,6 @@
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
 /area/maintenance/fore)
-"pjF" = (
-/obj/machinery/door/poddoor/shutters/preopen{
-	desc = "Privacy shutters for the Private Study. Stops people spying in on your game.";
-	id = "PrivateCMO";
-	name = "Private Study Privacy Shutters"
-	},
-/obj/effect/spawner/structure/window,
-/turf/open/floor/wood,
-/area/service/library)
 "pjO" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -63611,9 +63599,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
 /obj/structure/chair/sofa/left/brown,
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/zone2)
@@ -66480,6 +66465,15 @@
 	icon_state = "platingdmg1"
 	},
 /area/maintenance/starboard)
+"wrk" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	desc = "Privacy shutters for the Private Study. Stops people spying in on your game.";
+	id = "PrivateCMO";
+	name = "Private Study Privacy Shutters"
+	},
+/obj/effect/spawner/structure/window,
+/turf/open/floor/wood,
+/area/service/library)
 "wrX" = (
 /obj/effect/turf_decal/tile/blue,
 /obj/effect/turf_decal/tile/red{
@@ -111582,7 +111576,7 @@ pto
 sjx
 rMk
 rMk
-pjF
+wrk
 aRO
 aIt
 aRN
