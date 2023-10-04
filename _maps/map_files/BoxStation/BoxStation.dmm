@@ -18037,10 +18037,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/central)
-"boq" = (
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plasteel/white,
-/area/medical/genetics)
 "bor" = (
 /obj/structure/table,
 /obj/item/clothing/gloves/color/latex,
@@ -19094,7 +19090,7 @@
 	dir = 4
 	},
 /obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plasteel/white,
+/turf/open/floor/plating,
 /area/medical/genetics)
 "brb" = (
 /obj/effect/turf_decal/tile/blue{
@@ -53097,7 +53093,7 @@
 /area/command/bridge)
 "lAw" = (
 /obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plasteel/white,
+/turf/open/floor/plating,
 /area/medical/medbay/zone2)
 "lAB" = (
 /obj/structure/sign/nanotrasen,
@@ -66465,15 +66461,6 @@
 	icon_state = "platingdmg1"
 	},
 /area/maintenance/starboard)
-"wrk" = (
-/obj/machinery/door/poddoor/shutters/preopen{
-	desc = "Privacy shutters for the Private Study. Stops people spying in on your game.";
-	id = "PrivateCMO";
-	name = "Private Study Privacy Shutters"
-	},
-/obj/effect/spawner/structure/window,
-/turf/open/floor/wood,
-/area/service/library)
 "wrX" = (
 /obj/effect/turf_decal/tile/blue,
 /obj/effect/turf_decal/tile/red{
@@ -107485,9 +107472,9 @@ qSf
 wJA
 bkR
 bfL
-boq
+bpE
 bra
-boq
+bpE
 bua
 bvn
 bwL
@@ -111576,7 +111563,7 @@ pto
 sjx
 rMk
 rMk
-wrk
+qfD
 aRO
 aIt
 aRN

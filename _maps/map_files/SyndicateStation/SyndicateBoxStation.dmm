@@ -25069,7 +25069,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/medical/chemistry)
 "bmU" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plating,
@@ -26217,9 +26216,8 @@
 /turf/open/floor/mineral/plastitanium,
 /area/medical/chemistry)
 "bpE" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/effect/spawner/structure/window/plastitanium,
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/plating,
 /area/medical/genetics)
 "bpF" = (
 /obj/structure/table/reinforced,
@@ -28149,12 +28147,11 @@
 /turf/open/floor/mineral/plastitanium,
 /area/science)
 "buq" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
 /obj/effect/spawner/structure/window/plastitanium,
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/plating,
 /area/medical/genetics)
 "bur" = (
 /obj/structure/cable{
@@ -32365,7 +32362,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/spawner/structure/window/reinforced,
 /obj/effect/spawner/structure/window/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
 	desc = "Privacy shutters for the Private Study. Stops people spying in on your game.";
@@ -32467,12 +32463,10 @@
 /turf/open/floor/mineral/plastitanium,
 /area/science/storage)
 "bEh" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/effect/spawner/structure/window/plastitanium,
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/plating,
 /area/medical/medbay/zone2)
 "bEi" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/effect/spawner/structure/window/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
 	desc = "Privacy shutters for the Private Study. Stops people spying in on your game.";
@@ -33128,9 +33122,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/spawner/structure/window/reinforced,
 /obj/effect/spawner/structure/window/plastitanium,
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/plating,
 /area/medical/genetics)
 "bFF" = (
 /obj/machinery/light,
@@ -53787,11 +53780,6 @@
 "fWi" = (
 /turf/open/floor/mineral/plastitanium,
 /area/service/bar)
-"fWM" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/effect/spawner/structure/window/plastitanium,
-/turf/open/floor/plating,
-/area/medical/medbay/central)
 "fZR" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 8
@@ -105066,7 +105054,7 @@ bpL
 bpL
 bJE
 bJE
-fWM
+bog
 bEd
 brj
 brj
