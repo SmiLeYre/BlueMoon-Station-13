@@ -28643,9 +28643,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/medical/genetics)
 "bvv" = (
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
-/turf/open/floor/mineral/plastitanium,
-/area/medical/genetics)
+)
 "bvy" = (
 /obj/machinery/camera{
 	c_tag = "Genetics Research";
@@ -105065,7 +105063,7 @@ bzm
 bzm
 bJE
 bJE
-bvv
+bJE
 bEd
 brb
 brb
@@ -107744,6 +107742,7 @@ cNd
 cNd
 cNd
 cNd
+bvv
 "}
 (159,1,1) = {"
 cNd
