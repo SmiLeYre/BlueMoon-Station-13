@@ -53154,15 +53154,6 @@
 /obj/effect/landmark/navigate_destination/minisat_access_ai,
 /turf/open/space,
 /area/ai_monitored/turret_protected/aisat)
-"lCF" = (
-/obj/effect/turf_decal/tile/blue{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/light/colour_cycle/dancefloor_a,
-/area/service/bar)
 "lDq" = (
 /obj/structure/alien/weeds,
 /obj/structure/table/wood/fancy/black,
@@ -103346,7 +103337,7 @@ dDz
 ggj
 oDG
 hdv
-lCF
+hdv
 fDD
 nRB
 aJC
