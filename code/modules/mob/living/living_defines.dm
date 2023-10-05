@@ -186,8 +186,6 @@
 	var/native_fov = FOV_90_DEGREES
 	/// Lazy list of FOV traits that will apply a FOV view when handled.
 	var/list/fov_traits
-	//BLUEMON ADD - FUZZY
-	var/fuzzy = FALSE
 	///The x amount a mob's sprite should be offset due to the current position they're in
 	var/body_position_pixel_x_offset = 0
 	///The y amount a mob's sprite should be offset due to the current position they're in or size (e.g. lying down moves your sprite down)

@@ -4,5 +4,12 @@
       *chuckle2, *ah, *boss, *attention, *ammo (boolets), *wepon.'
   - tweak: Increased *tt2 volume.
 2023-10-03:
+  BongaTheProto:
+  - rscadd: adds a sharp/fuzzy scaling toggle and verb to make macro characters not
+      look awful
+  - rscadd: Adds a ninja mask replica to the tier 2 donator loadout
+  K4rlox:
+  - rscdel: removes wall
+  - tweak: makes the gas mask in loadouts no longer restricted
   Vhariik:
   - rscdel: Sci machinery

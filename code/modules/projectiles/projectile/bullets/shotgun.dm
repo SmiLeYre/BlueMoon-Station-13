@@ -1,7 +1,7 @@
 /obj/item/projectile/bullet/shotgun_slug
 	name = "12g shotgun slug"
 	damage = 45
-	sharpness = SHARP_POINTY
+	sharpness = SHARP_POINTY // SHARP_POINTY
 	wound_bonus = 6
 
 /obj/item/projectile/bullet/shotgun_slug/executioner

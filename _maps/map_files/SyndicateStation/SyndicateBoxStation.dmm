@@ -26217,7 +26217,7 @@
 /area/medical/chemistry)
 "bpE" = (
 /obj/effect/spawner/structure/window/plastitanium,
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/medical/genetics)
 "bpF" = (
 /obj/structure/table/reinforced,
@@ -28151,7 +28151,7 @@
 	dir = 4
 	},
 /obj/effect/spawner/structure/window/plastitanium,
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/medical/genetics)
 "bur" = (
 /obj/structure/cable{
@@ -32464,7 +32464,7 @@
 /area/science/storage)
 "bEh" = (
 /obj/effect/spawner/structure/window/plastitanium,
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/medical/medbay/zone2)
 "bEi" = (
 /obj/effect/spawner/structure/window/plastitanium,
@@ -33123,7 +33123,7 @@
 	dir = 4
 	},
 /obj/effect/spawner/structure/window/plastitanium,
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/medical/genetics)
 "bFF" = (
 /obj/machinery/light,
@@ -52041,7 +52041,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/security/execution/transfer)
 "ebE" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/effect/spawner/structure/window/plastitanium,
 /turf/open/space,
 /area/security/range)
@@ -53780,6 +53779,10 @@
 "fWi" = (
 /turf/open/floor/mineral/plastitanium,
 /area/service/bar)
+"fWM" = (
+/obj/effect/spawner/structure/window/plastitanium,
+/turf/open/floor/plating,
+/area/medical/medbay/central)
 "fZR" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 8
@@ -54828,7 +54831,6 @@
 /turf/open/floor/wood/wood_diagonal,
 /area/security/prison)
 "hxm" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/effect/spawner/structure/window/plastitanium,
 /turf/open/space/basic,
 /area/security/range)
@@ -105054,7 +105056,7 @@ bpL
 bpL
 bJE
 bJE
-bog
+fWM
 bEd
 brj
 brj

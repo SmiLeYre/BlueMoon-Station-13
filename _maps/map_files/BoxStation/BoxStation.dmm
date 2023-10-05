@@ -53156,9 +53156,14 @@
 /turf/open/space,
 /area/ai_monitored/turret_protected/aisat)
 "lCF" = (
-/obj/machinery/smartfridge/organ/preloaded,
-/turf/open/floor/plasteel/white,
-/area/medical/surgery)
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/light/colour_cycle/dancefloor_a,
+/area/service/bar)
 "lDq" = (
 /obj/structure/alien/weeds,
 /obj/structure/table/wood/fancy/black,
@@ -54666,9 +54671,6 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /obj/structure/disposalpipe/segment{
 	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -66452,6 +66454,15 @@
 	icon_state = "platingdmg1"
 	},
 /area/maintenance/starboard)
+"wrk" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	desc = "Privacy shutters for the Private Study. Stops people spying in on your game.";
+	id = "PrivateCMO";
+	name = "Private Study Privacy Shutters"
+	},
+/obj/effect/spawner/structure/window,
+/turf/open/floor/wood,
+/area/service/library)
 "wrX" = (
 /obj/effect/turf_decal/tile/blue,
 /obj/effect/turf_decal/tile/red{
@@ -103337,7 +103348,7 @@ dDz
 ggj
 oDG
 hdv
-hdv
+lCF
 fDD
 nRB
 aJC
@@ -111554,7 +111565,7 @@ pto
 sjx
 rMk
 rMk
-qfD
+wrk
 aRO
 aIt
 aRN

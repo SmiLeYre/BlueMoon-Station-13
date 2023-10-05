@@ -1409,12 +1409,3 @@
 			STAMINA:<font size='1'><a href='?_src_=vars;[HrefToken()];mobToDamage=[refid];adjustDamage=stamina' id='stamina'>[getStaminaLoss()]</a>
 		</font>
 	"}
-
-//BLUEMOON ADD START - FUZZY
-/mob/living/verb/switch_scaling()
-	set name = "Switch scaling mode"
-	set category = "IC"
-	set desc = "Switch sharp/fuzzy scaling for current mob."
-	appearance_flags ^= PIXEL_SCALE
-	fuzzy = !fuzzy
-//BLUEMOON ADD END - FUZZY

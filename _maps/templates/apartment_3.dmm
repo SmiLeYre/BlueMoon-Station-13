@@ -79,6 +79,9 @@
 	desc = "Despite their age, they seem clean and capable of providing hot water just as well as their modern counterparts. Hopefully Nanotrasen cleaned the water pipes this well...";
 	dir = 4
 	},
+/obj/machinery/light{
+	color = "FFB43A"
+	},
 /turf/open/floor/iron/white/smooth_large,
 /area/hilbertshotel)
 "dx" = (
@@ -113,12 +116,9 @@
 /turf/open/space/bluespace,
 /area/hilbertshotel)
 "eH" = (
-/obj/machinery/door/airlock/grunge{
-	name = "Elevator door";
-	req_access_txt = "200"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/mineral_door/transparent,
 /turf/open/floor/pod/dark,
 /area/hilbertshotel)
 "eN" = (
@@ -210,7 +210,9 @@
 /turf/open/floor/carpet/royalblue,
 /area/hilbertshotel)
 "jC" = (
-/obj/structure/falsewall,
+/obj/structure/falsewall{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
@@ -261,6 +263,9 @@
 /area/hilbertshotel)
 "mk" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/effect/turf_decal/siding{
+	dir = 4
+	},
 /turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "mH" = (
@@ -294,7 +299,8 @@
 /area/hilbertshotel)
 "oa" = (
 /obj/machinery/light/floor{
-	light_color = "#f27d0c"
+	light_color = "#f27d0c";
+	color = "FFB43A"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 5
@@ -341,6 +347,9 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding{
 	dir = 4
 	},
 /turf/open/floor/wood/wood_tiled,
@@ -478,9 +487,7 @@
 	},
 /obj/item/restraints/handcuffs/cable/white,
 /obj/effect/decal/cleanable/blood/old,
-/obj/structure/chair/noose{
-	pixel_y = 11
-	},
+/obj/structure/chair/noose,
 /turf/open/floor/pod/light,
 /area/hilbertshotel)
 "xp" = (
@@ -525,10 +532,12 @@
 /area/hilbertshotel)
 "Am" = (
 /obj/machinery/button{
-	pixel_y = 26
+	pixel_y = 26;
+	id = "elevator"
 	},
 /obj/machinery/button{
-	pixel_y = 37
+	pixel_y = 37;
+	id = "elevator"
 	},
 /obj/effect/turf_decal/siding/dark{
 	dir = 8
@@ -625,7 +634,8 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/hilbertshotel/layer3,
-/obj/structure/reagent_dispensers/watertank/high,
+/obj/structure/closet/crate/wooden,
+/obj/item/stack/sheet/mineral/wood/fifty,
 /turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "Fh" = (
@@ -652,7 +662,8 @@
 /area/hilbertshotel)
 "Gi" = (
 /obj/machinery/light{
-	dir = 1
+	dir = 1;
+	color = "FFB43A"
 	},
 /obj/structure/bedsheetbin/towel,
 /obj/structure/table,
@@ -688,6 +699,7 @@
 	pixel_y = 7
 	},
 /obj/effect/decal/cleanable/cobweb,
+/obj/item/nutcracker,
 /turf/open/floor/pod/light,
 /area/hilbertshotel)
 "IJ" = (
@@ -758,11 +770,11 @@
 /turf/closed/indestructible/wall,
 /area/hilbertshotel)
 "Lp" = (
-/obj/item/melee/classic_baton/telescopic/newspaper{
-	pixel_x = 7
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
+	},
+/obj/item/newspaper{
+	pixel_x = 4
 	},
 /turf/open/floor/carpet{
 	icon_state = "carpetsymbol";
@@ -808,6 +820,9 @@
 "Nr" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 9
+	},
+/obj/effect/turf_decal/siding{
+	dir = 4
 	},
 /turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
@@ -875,10 +890,12 @@
 /area/hilbertshotel)
 "PP" = (
 /obj/machinery/button{
-	pixel_y = -25
+	pixel_y = -25;
+	id = "elevator"
 	},
 /obj/machinery/button{
-	pixel_y = -35
+	pixel_y = -35;
+	id = "elevator"
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/hilbertshotel/layer3{
 	dir = 4
@@ -1000,6 +1017,9 @@
 	dir = 1
 	},
 /obj/machinery/light,
+/obj/effect/turf_decal/siding{
+	dir = 4
+	},
 /turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "TE" = (
@@ -1025,6 +1045,12 @@
 	dir = 1
 	},
 /obj/machinery/light,
+/turf/open/floor/wood/wood_tiled,
+/area/hilbertshotel)
+"Ul" = (
+/obj/effect/turf_decal/siding{
+	dir = 4
+	},
 /turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "Uv" = (
@@ -1396,7 +1422,7 @@ mk
 TO
 mk
 Nr
-bU
+Ul
 Tw
 Zg
 "}

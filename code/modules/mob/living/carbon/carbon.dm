@@ -860,9 +860,13 @@
 		else
 			if(health <= crit_threshold && !HAS_TRAIT(src, TRAIT_NOSOFTCRIT))
 				stat = SOFT_CRIT
+				filters += BM_FILTER_HARDCRIT
 				SEND_SIGNAL(src, COMSIG_DISABLE_COMBAT_MODE)
+			if(stat == DEAD)
+				filters -= BM_FILTER_HARDCRIT
 			else
 				stat = CONSCIOUS
+				filters -= BM_FILTER_HARDCRIT
 			if(eye_blind <= 1)
 				adjust_blindness(-1)
 		update_mobility()

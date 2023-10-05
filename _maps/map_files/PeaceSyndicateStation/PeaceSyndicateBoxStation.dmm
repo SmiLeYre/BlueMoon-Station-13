@@ -26878,7 +26878,7 @@
 /area/medical/genetics)
 "brj" = (
 /obj/effect/spawner/structure/window/plastitanium,
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/medical/medbay/zone2)
 "brk" = (
 /obj/structure/cable{
@@ -28642,7 +28642,7 @@
 /obj/effect/turf_decal/tile/purple,
 /turf/open/floor/mineral/plastitanium,
 /area/medical/genetics)
-"bvw" = (
+"bvv" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
 /turf/open/floor/mineral/plastitanium,
 /area/medical/genetics)
@@ -53772,7 +53772,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/hallway/primary/central)
 "fQl" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/effect/spawner/structure/window/plastitanium,
 /turf/open/space/basic,
 /area/security/range)
@@ -57219,7 +57218,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/command/blueshieldoffice)
 "kzd" = (
-/obj/effect/spawner/structure/window/reinforced,
 /obj/effect/spawner/structure/window/plastitanium,
 /turf/open/space,
 /area/security/range)
@@ -105067,7 +105065,7 @@ bzm
 bzm
 bJE
 bJE
-bog
+bvv
 bEd
 brb
 brb

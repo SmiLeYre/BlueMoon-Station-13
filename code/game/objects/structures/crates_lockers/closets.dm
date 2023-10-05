@@ -380,13 +380,12 @@
 	else if(!isitem(O))
 		return
 	var/turf/T = get_turf(src)
-	var/list/targets = list(O, src)
 	add_fingerprint(user)
 	user.visible_message("<span class='warning'>[user] [actuallyismob ? "tries to ":""]stuff [O] into [src].</span>", \
 		"<span class='warning'>You [actuallyismob ? "try to ":""]stuff [O] into [src].</span>", \
 		"<span class='hear'>You hear clanging.</span>")
 	if(actuallyismob)
-		if(do_after_mob(user, targets, 40))
+		if(do_after(user, 4 SECONDS, O))
 			user.visible_message("<span class='notice'>[user] stuffs [O] into [src].</span>", \
 				"<span class='notice'>You stuff [O] into [src].</span>", \
 				"<span class='hear'>You hear a loud metal bang.</span>")

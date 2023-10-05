@@ -472,9 +472,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["menuoptions"] >> menuoptions
 	S["enable_tips"] >> enable_tips
 	S["tip_delay"] >> tip_delay
-	S["pda_style"] >> pda_style
-	S["pda_color"] >> pda_color
-	S["pda_skin"] >> pda_skin
 
 	// Custom hotkeys
 	S["key_bindings"] >> key_bindings
@@ -554,9 +551,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	ghost_others = sanitize_inlist(ghost_others, GLOB.ghost_others_options, GHOST_OTHERS_DEFAULT_OPTION)
 	menuoptions = SANITIZE_LIST(menuoptions)
 	be_special = SANITIZE_LIST(be_special)
-	pda_style = sanitize_inlist(pda_style, GLOB.pda_styles, initial(pda_style))
-	pda_color = sanitize_hexcolor(pda_color, 6, 1, initial(pda_color))
-	pda_skin = sanitize_inlist(pda_skin, GLOB.pda_reskins, PDA_SKIN_ALT)
 	screenshake = sanitize_integer(screenshake, 0, 800, initial(screenshake))
 	damagescreenshake = sanitize_integer(damagescreenshake, 0, 2, initial(damagescreenshake))
 	autostand = sanitize_integer(autostand, 0, 1, initial(autostand))
@@ -685,9 +679,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["menuoptions"], menuoptions)
 	WRITE_FILE(S["enable_tips"], enable_tips)
 	WRITE_FILE(S["tip_delay"], tip_delay)
-	WRITE_FILE(S["pda_style"], pda_style)
-	WRITE_FILE(S["pda_color"], pda_color)
-	WRITE_FILE(S["pda_skin"], pda_skin)
+
 	WRITE_FILE(S["key_bindings"], key_bindings)
 	WRITE_FILE(S["modless_key_bindings"], modless_key_bindings)
 	WRITE_FILE(S["favorite_outfits"], favorite_outfits)
@@ -1326,6 +1318,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	splurt_character_pref_load(S)
 
+	bluemoon_character_pref_load(S)
+
 	return 1
 
 /datum/preferences/proc/save_character(bypass_cooldown = FALSE, export = FALSE)
@@ -1574,6 +1568,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	cit_character_pref_save(S)
 
 	splurt_character_pref_save(S)
+
+	bluemoon_character_pref_save(S)
 
 	return S
 
