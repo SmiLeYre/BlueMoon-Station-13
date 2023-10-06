@@ -84,6 +84,10 @@
 	},
 /turf/open/floor/iron/white/smooth_large,
 /area/hilbertshotel)
+"dl" = (
+/obj/machinery/light_switch/directional/south,
+/turf/open/floor/carpet/royalblack,
+/area/hilbertshotel)
 "dx" = (
 /obj/structure/chair/comfy/black{
 	pixel_y = 6;
@@ -421,6 +425,10 @@
 	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
 	},
 /area/hilbertshotel)
+"sU" = (
+/obj/machinery/light_switch/directional/south,
+/turf/open/floor/iron/white/smooth_large,
+/area/hilbertshotel)
 "sV" = (
 /obj/machinery/vending/dinnerware{
 	contraband = list(/obj/item/kitchen/rollingpin=2,/obj/item/kitchen/knife/butcher=2,/obj/item/reagent_containers/food/condiment/flour=4)
@@ -682,6 +690,10 @@
 	dir = 5
 	},
 /turf/open/floor/carpet/royalblue,
+/area/hilbertshotel)
+"Gm" = (
+/obj/machinery/light_switch/directional/south,
+/turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "Hp" = (
 /obj/structure/bookcase/random,
@@ -1120,6 +1132,7 @@
 /obj/item/reagent_containers/blood/BPlus{
 	pixel_x = 9
 	},
+/obj/machinery/light_switch/directional/south,
 /turf/open/floor/pod/light,
 /area/hilbertshotel)
 "Wc" = (
@@ -1162,6 +1175,7 @@
 /area/hilbertshotel)
 "XI" = (
 /obj/structure/rack,
+/obj/machinery/light_switch/directional/north,
 /turf/open/floor/carpet/red,
 /area/hilbertshotel)
 "Ym" = (
@@ -1340,7 +1354,7 @@ Kv
 Zg
 Hp
 Fi
-Fi
+dl
 Zg
 pu
 tm
@@ -1364,7 +1378,7 @@ OY
 ON
 Wy
 ix
-bU
+Gm
 Zg
 Zg
 Uv
@@ -1431,7 +1445,7 @@ Zg
 aA
 bi
 yJ
-Dd
+sU
 Zg
 tR
 Zg
