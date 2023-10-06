@@ -73816,7 +73816,7 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	id = "permaextwindow3";
+	id = "permaextwindow2";
 	name = "Privacy Shutters";
 	pixel_x = 25
 	},
@@ -102022,7 +102022,7 @@
 "oFo" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/door{
-	id = "permaextwindow4";
+	id = "permaextwindow";
 	name = "Privacy Shutters";
 	pixel_y = 25
 	},
@@ -110532,7 +110532,7 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "permaextwindow3";
+	id = "permaextwindow2";
 	name = "Privacy Shutters"
 	},
 /turf/open/floor/plating,
@@ -120935,7 +120935,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "permaextwindow4";
+	id = "permaextwindow3";
 	name = "Privacy Shutters"
 	},
 /turf/open/floor/plating,
