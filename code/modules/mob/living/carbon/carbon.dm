@@ -860,20 +860,23 @@
 		else
 			if(health <= crit_threshold && !HAS_TRAIT(src, TRAIT_NOSOFTCRIT))
 				stat = SOFT_CRIT
-				filters += BM_FILTER_HARDCRIT
 				SEND_SIGNAL(src, COMSIG_DISABLE_COMBAT_MODE)
-			if(stat == DEAD)
-				filters -= BM_FILTER_HARDCRIT
 			else
 				stat = CONSCIOUS
-				filters -= BM_FILTER_HARDCRIT
 			if(eye_blind <= 1)
 				adjust_blindness(-1)
 		update_mobility()
+	update_crit_status()
 	update_damage_hud()
 	update_health_hud()
 	update_hunger_and_thirst_hud()
 	med_hud_set_status()
+
+/mob/living/carbon/proc/update_crit_status()
+	if(health <= crit_threshold)
+		add_filter("hardcrit", 1, BM_FILTER_HARDCRIT)
+	else
+		remove_filter("hardcrit")
 
 //called when we get cuffed/uncuffed
 /mob/living/carbon/proc/update_handcuffed()

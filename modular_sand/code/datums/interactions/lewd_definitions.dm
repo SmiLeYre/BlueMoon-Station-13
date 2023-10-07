@@ -88,8 +88,8 @@
 	lust = num
 	lastlusttime = world.time
 
-/mob/living/proc/toggle_anus_always_accessible()
-	anus_always_accessible = !anus_always_accessible
+/mob/living/proc/toggle_anus_always_accessible(accessibility)
+	anus_always_accessible = isnull(accessibility) ? !anus_always_accessible : accessibility
 
 /mob/living/proc/has_genital(slot, visibility = REQUIRE_ANY)
 	var/mob/living/carbon/C = src

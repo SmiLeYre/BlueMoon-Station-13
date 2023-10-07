@@ -234,6 +234,14 @@
 		"butt_visibility"	= GEN_VISIBLE_NO_UNDIES,
 		"belly_visibility"	= GEN_VISIBLE_NO_UNDIES,
 		"anus_visibility" 	= GEN_VISIBLE_NO_UNDIES,
+
+		"breasts_accessible" = FALSE,
+		"cock_accessible" = FALSE,
+		"balls_accessible" = FALSE,
+		"vag_accessible" = FALSE,
+		"butt_accessible" = FALSE,
+		"anus_accessible" = FALSE,
+
 		"cock_stuffing" = FALSE,
 		"balls_stuffing" = FALSE,
 		"vag_stuffing" = FALSE,

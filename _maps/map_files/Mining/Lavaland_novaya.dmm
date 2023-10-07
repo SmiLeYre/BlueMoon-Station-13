@@ -3732,7 +3732,7 @@
 /turf/open/floor/plasteel/dark,
 /area/mine/laborcamp)
 "dsH" = (
-/turf/closed/mineral/random/low_chance,
+/turf/closed/mineral/random/low_chance/volcanic,
 /area/mine/xenoarch_area_b)
 "dsI" = (
 /obj/structure/window/reinforced/survival_pod,
@@ -11486,7 +11486,7 @@
 /turf/open/floor/plasteel,
 /area/mine/living_quarters)
 "lab" = (
-/turf/closed/mineral/random/low_chance,
+/turf/closed/mineral/random/low_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "lar" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -12057,7 +12057,7 @@
 /turf/open/floor/plating,
 /area/mine/storage)
 "lzC" = (
-/turf/closed/mineral/random/low_chance,
+/turf/closed/mineral/random/low_chance/volcanic,
 /area/ruin/lavaland/unpowered/ash_walkers)
 "lzU" = (
 /obj/effect/turf_decal/siding/thinplating/dark/corner,
@@ -17712,7 +17712,7 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/lavaland/unpowered/ash_walkers)
 "qMC" = (
-/turf/closed/mineral/random/low_chance,
+/turf/closed/mineral/random/low_chance/volcanic,
 /area/lavaland/surface/outdoors/explored)
 "qNm" = (
 /obj/structure/disposalpipe/segment{
@@ -20295,7 +20295,7 @@
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/engineering)
 "tmu" = (
-/turf/closed/mineral/random/low_chance,
+/turf/closed/mineral/random/low_chance/volcanic,
 /area/lavaland/surface/outdoors/unexplored)
 "tmL" = (
 /obj/machinery/airalarm{
@@ -23021,7 +23021,7 @@
 	},
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "vYg" = (
-/turf/closed/mineral/random/low_chance,
+/turf/closed/mineral/random/low_chance/volcanic,
 /area/lavaland/surface/outdoors/unexplored/danger)
 "vYu" = (
 /obj/structure/stone_tile/cracked{
@@ -23557,7 +23557,7 @@
 /area/mine/xenoarch)
 "wDU" = (
 /obj/structure/fans/tiny/invisible,
-/turf/closed/mineral/random/low_chance,
+/turf/closed/mineral/random/low_chance/volcanic,
 /area/mine/xenoarch_area_b)
 "wEd" = (
 /obj/structure/stone_tile/cracked{
