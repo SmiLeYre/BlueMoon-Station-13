@@ -1318,10 +1318,14 @@
 		"(Janitor) Haydee" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "haydeejan"), // SPLURT Addon
 		"(Janitor) Meka" = image(icon = 'modular_splurt/icons/mob/robots_32x64.dmi', icon_state = "mekajani"), // SPLURT Addon
 		"(Waiter) Meka" = image(icon = 'modular_splurt/icons/mob/robots_32x64.dmi', icon_state = "mekaserve_alt"), // SPLURT Addon
-		"FMeka" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "fmekaserv"), // Lyoll Request (Skyrat Port)
-		"K4" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "k4tserve"), // Lyoll Request (Skyrat Port)
-		"K4 Alt" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "k4tserve_alt1"), // Lyoll Request (Skyrat Port)
-		"MMeka" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "mmekaserv") // Lyoll Request (Skyrat Port)
+		"(Service) FMeka" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "fmekaserv"), // Lyoll Request (Skyrat Port)
+		"(Service) K4" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "k4tserve"), // Lyoll Request (Skyrat Port)
+		"(Service) K4 Alt" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "k4tserve_alt1"), // Lyoll Request (Skyrat Port)
+		"(Service) MMeka" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "mmekaserv"), // Lyoll Request (Skyrat Port)
+		"(Janitor) FMeka" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "fmekajani"), // Lyoll Request (Skyrat Port)
+		"(Janitor) K4" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "k4tjani"), // Lyoll Request (Skyrat Port)
+		"(Janitor) K4 Alt" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "k4tjani_alt1"), // Lyoll Request (Skyrat Port)
+		"(Janitor) MMeka" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "mmekajani") // Lyoll Request (Skyrat Port)
 		)
 		var/list/L = list("(Service) DarkK9" = "k50", "(Service) Vale" = "valeserv", "(Service) ValeDark" = "valeservdark",
 						"(Janitor) Scrubpuppy" = "scrubpup")
@@ -1536,20 +1540,36 @@
 			cyborg_base_icon = "mekaserve_alt"
 			cyborg_icon_override = 'modular_splurt/icons/mob/robots_32x64.dmi'
 			hat_offset = 3
-		if("FMeka") //Lyoll Request (Skyrat Port)
+		if("(Service) FMeka") //Lyoll Request (Skyrat Port)
 			cyborg_base_icon = "fmekaserv"
 			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
 			canrest = TRUE
-		if("K4") //Lyoll Request (Skyrat Port)
+		if("(Service) K4") //Lyoll Request (Skyrat Port)
 			cyborg_base_icon = "k4tserve"
 			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
 			canrest = TRUE
-		if("K4 Alt") //Lyoll Request (Skyrat Port)
+		if("(Service) K4 Alt") //Lyoll Request (Skyrat Port)
 			cyborg_base_icon = "k4tserve_alt1"
 			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
 			canrest = TRUE
-		if("MMeka") //Lyoll Request (Skyrat Port)
+		if("(Service) MMeka") //Lyoll Request (Skyrat Port)
 			cyborg_base_icon = "mmekaserv"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
+		if("(Janitor) FMeka") //Lyoll Request (Skyrat Port)
+			cyborg_base_icon = "fmekajani"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
+		if("(Janitor) K4") //Lyoll Request (Skyrat Port)
+			cyborg_base_icon = "k4tjani"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
+		if("(Janitor) K4 Alt") //Lyoll Request (Skyrat Port)
+			cyborg_base_icon = "k4tjani_alt1"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
+		if("(Janitor) MMeka") //Lyoll Request (Skyrat Port)
+			cyborg_base_icon = "mmekajani"
 			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
 			canrest = TRUE
 		else
