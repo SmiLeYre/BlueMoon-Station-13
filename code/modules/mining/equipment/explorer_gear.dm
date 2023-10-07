@@ -86,16 +86,16 @@
 	armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 5, BIO = 50, RAD = 0, FIRE = 20, ACID = 40, WOUND = 5)
 	resistance_flags = FIRE_PROOF
 
-///obj/item/clothing/mask/gas/explorer/attack_self(mob/user)
-	//adjustmask(user)
+/obj/item/clothing/mask/gas/explorer/attack_self(mob/user)
+	adjustmask(user)
 
-///obj/item/clothing/mask/gas/explorer/adjustmask(user)
-	//..()
-	//w_class = mask_adjusted ? WEIGHT_CLASS_NORMAL : WEIGHT_CLASS_SMALL
+/obj/item/clothing/mask/gas/explorer/adjustmask(user)
+	..()
+	w_class = mask_adjusted ? WEIGHT_CLASS_NORMAL : WEIGHT_CLASS_SMALL
 
-///obj/item/clothing/mask/gas/explorer/folded/Initialize(mapload)
-	//. = ..()
-	//adjustmask()
+/obj/item/clothing/mask/gas/explorer/folded/Initialize(mapload)
+	. = ..()
+	adjustmask()
 
 /obj/item/clothing/suit/space/hostile_environment
 	name = "H.E.C.K. suit"
