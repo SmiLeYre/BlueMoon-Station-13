@@ -10,7 +10,6 @@
 // END_FILE_DIR
 
 // BEGIN_PREFERENCES
-#define DEBUG // Включать только в случае, если необходимо проверить рантаймы и прочие поломки/приколы.
 // END_PREFERENCES
 
 // BEGIN_INCLUDE
@@ -2041,7 +2040,6 @@
 #include "code\modules\atmospherics\machinery\components\unary_devices\unary_devices.dm"
 #include "code\modules\atmospherics\machinery\components\unary_devices\vent_pump.dm"
 #include "code\modules\atmospherics\machinery\components\unary_devices\vent_scrubber.dm"
-#include "modular_bluemoon\code\datums\traits\neutral.dm"
 #include "code\modules\atmospherics\machinery\other\meter.dm"
 #include "code\modules\atmospherics\machinery\other\miner.dm"
 #include "code\modules\atmospherics\machinery\pipes\bluespace.dm"
@@ -4038,6 +4036,7 @@
 #include "modular_bluemoon\0451\code\modules\surgery\organs\augments_eyes.dm"
 #include "modular_bluemoon\anti_normalizer_quirk\anti_normalizer_quirk.dm"
 #include "modular_bluemoon\bigtalk\bigtalk.dm"
+#include "modular_bluemoon\code\datums\traits\neutral.dm"
 #include "modular_bluemoon\code\game\objects\items\plushes.dm"
 #include "modular_bluemoon\code\modules\client\preferences_savefile.dm"
 #include "modular_bluemoon\code\modules\jobs\job_types\job.dm"
