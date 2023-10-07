@@ -1,6 +1,6 @@
 // SUIT STORAGE UNIT /////////////////
 /obj/machinery/suit_storage_unit
-	name = "Suit storage unit"
+	name = "Suit Storage Unit"
 	desc = "Промышленная установка, предназначенная для хранения и дезактивации облученного оборудования. Он оснащен встроенным механизмом УФ-прижигания. Небольшая предупреждающая этикетка сообщает, что органические вещества не должны попадать внутрь устройства."
 	icon = 'icons/obj/machines/suit_storage.dmi'
 	icon_state = "classic"
@@ -55,7 +55,7 @@
 	var/charge_rate = 250
 
 /obj/machinery/suit_storage_unit/industrial
-	name = "Industrial suit storage unit"
+	name = "Industrial Suit Storage Unit"
 	icon_state = "industrial"
 	base_icon_state = "industrial"
 
