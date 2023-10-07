@@ -400,3 +400,10 @@
 	path = /obj/item/toy/plush/miner
 	ckeywhitelist = list("cheburek228")
 	subcategory = LOADOUT_SUBCATEGORIES_DON12
+
+/datum/gear/donator/bm/omega_plushie
+	name = "Omega Plushie"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/toy/plush/nukeplushie/omega
+	ckeywhitelist = list("malopharan")
+	subcategory = LOADOUT_SUBCATEGORIES_DON12

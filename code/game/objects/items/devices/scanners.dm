@@ -486,6 +486,7 @@ GENETICS SCANNER
 			msg += "<span class='notice'>Обнаружены кибернетические модификации:</span>\n"
 			msg += "<span class='notice'>[cyberimp_detect]</span>\n"
 	to_chat(user, examine_block(msg))
+	playsound(get_turf(user), 'sound/rig/shortbeep.ogg', 50, 1, 1)
 	SEND_SIGNAL(M, COMSIG_HEALTH_SCAN, user)//SPLURT EDIT ADD - gregnancy
 	SEND_SIGNAL(M, COMSIG_NANITE_SCAN, user, FALSE)
 
