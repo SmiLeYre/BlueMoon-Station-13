@@ -414,7 +414,11 @@
 		"Drake" = image(icon = 'modular_sand/icons/mob/cyborg/drakemech.dmi', icon_state = "drakemedbox"),
 		"Fembot" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/robots.dmi', icon_state = "fembot-medic"), //Gardelin0 Addon
 		"Meka" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "mekamed"), //Krashly Request
-		"Assaultron" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "assaultron_medical") // SPLURT Addon
+		"Assaultron" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "assaultron_medical"), // SPLURT Addon
+		"FMeka" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "fmekamed"), // Lyoll Request (Skyrat Port)
+		"K4" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "k4tmed"), // Lyoll Request (Skyrat Port)
+		"K4 Alt" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "k4tmed_alt1"), // Lyoll Request (Skyrat Port)
+		"MMeka" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "mmekamed") // Lyoll Request (Skyrat Port)
 		)
 		var/list/L = list("Medihound" = "medihound", "Medihound Dark" = "medihounddark", "Vale" = "valemed")
 		for(var/a in L)
@@ -552,6 +556,22 @@
 			cyborg_base_icon = "mekamed"
 			cyborg_icon_override = 'modular_splurt/icons/mob/robots_32x64.dmi'
 			hat_offset = 3
+		if("FMeka") //Lyoll Request (Skyrat Port)
+			cyborg_base_icon = "fmekamed"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
+		if("K4") //Lyoll Request (Skyrat Port)
+			cyborg_base_icon = "k4tmed"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
+		if("K4 Alt") //Lyoll Request (Skyrat Port)
+			cyborg_base_icon = "k4tmed_alt1"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
+		if("MMeka") //Lyoll Request (Skyrat Port)
+			cyborg_base_icon = "mmekamed"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
 		else
 			return FALSE
 	return ..()
@@ -627,7 +647,11 @@
 		"Drake" = image(icon = 'modular_sand/icons/mob/cyborg/drakemech.dmi', icon_state = "drakeengbox"),
 		"Fembot" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/robots.dmi', icon_state = "fembot-engineering"), //Gardelin0 Addon
 		"Meka" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "mekaengi"), //Krashly Request
-		"Assaultron" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "assaultron_engi") // SPLURT Addon
+		"Assaultron" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "assaultron_engi"), // SPLURT Addon
+		"FMeka" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "fmekaeng"), // Lyoll Request (Skyrat Port)
+		"K4" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "k4tengi"), // Lyoll Request (Skyrat Port)
+		"K4 Alt" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "k4tengi_alt1"), // Lyoll Request (Skyrat Port)
+		"MMeka" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "mmekaeng") // Lyoll Request (Skyrat Port)
 		)
 		var/list/L = list("Pup Dozer" = "pupdozer", "Vale" = "valeeng")
 		for(var/a in L)
@@ -765,6 +789,22 @@
 			cyborg_base_icon = "haydeeengi"
 			cyborg_icon_override = 'modular_splurt/icons/mob/robots.dmi'
 			hat_offset = 3
+		if("FMeka") //Lyoll Request (Skyrat Port)
+			cyborg_base_icon = "fmekaeng"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
+		if("K4") //Lyoll Request (Skyrat Port)
+			cyborg_base_icon = "k4tengi"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
+		if("K4 Alt") //Lyoll Request (Skyrat Port)
+			cyborg_base_icon = "k4tengi_alt1"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
+		if("MMeka") //Lyoll Request (Skyrat Port)
+			cyborg_base_icon = "mmekaeng"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
 		else
 			return FALSE
 	return ..()
@@ -824,7 +864,10 @@
 		"Drake" = image(icon = 'modular_sand/icons/mob/cyborg/drakemech.dmi', icon_state = "drakesecbox"),
 		"Fembot" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/robots.dmi', icon_state = "fembot-security"), //Gardelin0 Addon
 		"Assaultron" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "assaultron_sec"), // SPLURT Addon
-		"Haydee" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "haydeesec") // SPLURT Addon
+		"Haydee" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "haydeesec"), // SPLURT Addon
+		"FMeka" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "fmekasec"), // Lyoll Request (Skyrat Port)
+		"K4" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "k4tsec"), // Lyoll Request (Skyrat Port)
+		"MMeka" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "mmekasec") // Lyoll Request (Skyrat Port)
 		)
 		var/list/L = list("K9" = "k9", "Vale" = "valesec", "K9 Dark" = "k9dark")
 		for(var/a in L)
@@ -963,6 +1006,18 @@
 			cyborg_base_icon = "haydeesec"
 			cyborg_icon_override = 'modular_splurt/icons/mob/robots.dmi'
 			hat_offset = 3
+		if("FMeka") //Lyoll Request (Skyrat Port)
+			cyborg_base_icon = "fmekasec"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
+		if("K4") //Lyoll Request (Skyrat Port)
+			cyborg_base_icon = "k4tsec"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
+		if("MMeka") //Lyoll Request (Skyrat Port)
+			cyborg_base_icon = "mmekasec"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
 		else
 			return FALSE
 	return ..()
@@ -1022,7 +1077,10 @@
 		"Fembot" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/robots.dmi', icon_state = "fembot-peace"), //Gardelin0 Addon
 		"Meka" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "mekacargo"), //Krashly Request
 		"Assaultron" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "assaultron_peacekeeper"), // SPLURT Adoon
-		"Haydee" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "haydeepk") // SPLURT Addon
+		"Haydee" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "haydeepk"), // SPLURT Addon
+		"FMeka" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "fmekapeace"), // Lyoll Request (Skyrat Port)
+		"K4" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "k4tpeace"), // Lyoll Request (Skyrat Port)
+		"MMeka" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "mmekapeace") // Lyoll Request (Skyrat Port)
 		))
 	var/peace_borg_icon = show_radial_menu(R, R , peace_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
 	switch(peace_borg_icon)
@@ -1099,6 +1157,18 @@
 			cyborg_base_icon = "mekapeace"
 			cyborg_icon_override = 'modular_splurt/icons/mob/robots_32x64.dmi'
 			hat_offset = 3
+		if("FMeka") //Lyoll Request (Skyrat Port)
+			cyborg_base_icon = "fmekapeace"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
+		if("K4") //Lyoll Request (Skyrat Port)
+			cyborg_base_icon = "k4tpeace"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
+		if("MMeka") //Lyoll Request (Skyrat Port)
+			cyborg_base_icon = "mmekapeace"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
 		else
 			return FALSE
 	return ..()
@@ -1248,6 +1318,14 @@
 		"(Janitor) Haydee" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "haydeejan"), // SPLURT Addon
 		"(Janitor) Meka" = image(icon = 'modular_splurt/icons/mob/robots_32x64.dmi', icon_state = "mekajani"), // SPLURT Addon
 		"(Waiter) Meka" = image(icon = 'modular_splurt/icons/mob/robots_32x64.dmi', icon_state = "mekaserve_alt"), // SPLURT Addon
+		"(Service) FMeka" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "fmekaserv"), // Lyoll Request (Skyrat Port)
+		"(Service) K4" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "k4tserve"), // Lyoll Request (Skyrat Port)
+		"(Service) K4 Alt" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "k4tserve_alt1"), // Lyoll Request (Skyrat Port)
+		"(Service) MMeka" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "mmekaserv"), // Lyoll Request (Skyrat Port)
+		"(Janitor) FMeka" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "fmekajani"), // Lyoll Request (Skyrat Port)
+		"(Janitor) K4" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "k4tjani"), // Lyoll Request (Skyrat Port)
+		"(Janitor) K4 Alt" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "k4tjani_alt1"), // Lyoll Request (Skyrat Port)
+		"(Janitor) MMeka" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "mmekajani") // Lyoll Request (Skyrat Port)
 		)
 		var/list/L = list("(Service) DarkK9" = "k50", "(Service) Vale" = "valeserv", "(Service) ValeDark" = "valeservdark",
 						"(Janitor) Scrubpuppy" = "scrubpup")
@@ -1462,6 +1540,38 @@
 			cyborg_base_icon = "mekaserve_alt"
 			cyborg_icon_override = 'modular_splurt/icons/mob/robots_32x64.dmi'
 			hat_offset = 3
+		if("(Service) FMeka") //Lyoll Request (Skyrat Port)
+			cyborg_base_icon = "fmekaserv"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
+		if("(Service) K4") //Lyoll Request (Skyrat Port)
+			cyborg_base_icon = "k4tserve"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
+		if("(Service) K4 Alt") //Lyoll Request (Skyrat Port)
+			cyborg_base_icon = "k4tserve_alt1"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
+		if("(Service) MMeka") //Lyoll Request (Skyrat Port)
+			cyborg_base_icon = "mmekaserv"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
+		if("(Janitor) FMeka") //Lyoll Request (Skyrat Port)
+			cyborg_base_icon = "fmekajani"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
+		if("(Janitor) K4") //Lyoll Request (Skyrat Port)
+			cyborg_base_icon = "k4tjani"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
+		if("(Janitor) K4 Alt") //Lyoll Request (Skyrat Port)
+			cyborg_base_icon = "k4tjani_alt1"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
+		if("(Janitor) MMeka") //Lyoll Request (Skyrat Port)
+			cyborg_base_icon = "mmekajani"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
 		else
 			return FALSE
 	return ..()
@@ -1526,7 +1636,11 @@
 		"Fembot" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/robots.dmi', icon_state = "fembot-miner"), //Gardelin0 Addon
 		"Meka" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "mekamine"), //Krashly Request
 		"Assaultron" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "assaultron_mining"), // SPLURT
-		"Haydee" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "haydeeminer") // SPLURT Addon
+		"Haydee" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "haydeeminer"), // SPLURT Addon
+		"FMeka" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "fmekamine"), // Lyoll Request (Skyrat Port)
+		"K4" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "k4tmine"), // Lyoll Request (Skyrat Port)
+		"K4 Alt" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "k4tmine_alt1"), // Lyoll Request (Skyrat Port)
+		"MMeka" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "mmekamine") // Lyoll Request (Skyrat Port)
 		)
 		var/list/L = list("Blade" = "blade", "Vale" = "valemine")
 		for(var/a in L)
@@ -1645,6 +1759,22 @@
 			cyborg_base_icon = "mekamine"
 			cyborg_icon_override = 'modular_splurt/icons/mob/robots_32x64.dmi'
 			hat_offset = 3
+		if("FMeka") //Lyoll Request (Skyrat Port)
+			cyborg_base_icon = "fmekamine"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
+		if("K4") //Lyoll Request (Skyrat Port)
+			cyborg_base_icon = "k4tmine"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
+		if("K4 Alt") //Lyoll Request (Skyrat Port)
+			cyborg_base_icon = "k4tmine_alt1"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
+		if("MMeka") //Lyoll Request (Skyrat Port)
+			cyborg_base_icon = "mmekamine"
+			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
+			canrest = TRUE
 		else
 			return FALSE
 	return ..()

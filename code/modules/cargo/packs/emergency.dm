@@ -256,8 +256,21 @@
 
 /datum/supply_pack/emergency/spacesuit
 	name = "Space Suit Crate"
+	desc = "Содержит два EVA костюма. Для открытия требуется доступ EVA."
+	cost = 4500
+	contains = list(/obj/item/clothing/suit/space/eva,
+					/obj/item/clothing/suit/space/eva,
+					/obj/item/clothing/head/helmet/space/eva,
+					/obj/item/clothing/head/helmet/space/eva,
+					/obj/item/clothing/mask/breath,
+					/obj/item/clothing/mask/breath)
+	crate_name = "space suit crate"
+	crate_type = /obj/structure/closet/crate/secure
+
+/datum/supply_pack/emergency/oldspacesuit
+	name = "Space Suit Crate"
 	desc = "Содержит два устаревших костюма от Space-Goodwill. Для открытия требуется доступ EVA."
-	cost = 3000
+	cost = 2000
 	contains = list(/obj/item/clothing/suit/space,
 					/obj/item/clothing/suit/space,
 					/obj/item/clothing/head/helmet/space,
@@ -270,7 +283,7 @@
 /datum/supply_pack/emergency/soft_suit
 	name = "Space Suits (Fragile)"
 	desc = "Бомбы взрываются слева и справа? Метеориты летают вокруг станции ? Ну что ж! Вот два хрупких скафандра на случай чрезвычайных ситуаций. Поставляется с воздухом и масками."
-	cost = 1200
+	cost = 4500
 	contains = list(/obj/item/tank/internals/air,
 					/obj/item/tank/internals/air,
 					/obj/item/clothing/mask/gas,

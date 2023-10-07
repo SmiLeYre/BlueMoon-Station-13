@@ -308,7 +308,7 @@
 			M.adjustFireLoss(-reac_volume)
 			if(show_message)
 				to_chat(M, "<span class='danger'>You feel your burns healing! It stings like hell!</span>")
-			M.emote("scream")
+			//M.emote("scream")
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
 	..()
 
@@ -373,7 +373,7 @@
 			M.adjustBruteLoss(-reac_volume)
 			if(show_message)
 				to_chat(M, "<span class='danger'>You feel your bruises healing! It stings like hell!</span>")
-			M.emote("scream")
+			//M.emote("scream")
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
 	..()
 

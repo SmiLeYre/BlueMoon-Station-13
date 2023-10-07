@@ -87,8 +87,10 @@
 			var/mob/living/carbon/C = M
 			if(!C.mind || !C.mind.has_antag_datum(/datum/antagonist/ninja))
 				C.AdjustConfused(8 SECONDS)
+				C.adjustEarDamage(0, 15)
 				C.Slowed(8 SECONDS)
 				C.Jitter(30 SECONDS)
+				C.DefaultCombatKnockdown(25)
 			else
 				SEND_SOUND(C, sound('sound/effects/screech.ogg'))
 
