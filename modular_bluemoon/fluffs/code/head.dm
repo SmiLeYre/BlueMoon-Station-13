@@ -66,7 +66,7 @@
 
 /obj/item/clothing/head/donator/bm/nvg_beret // civil version of nri antagonist beret
 	name = "covet ops headgear"
-	desc = "A special headger containing unknown fibers and electronics, providing the NVG effect for it's user. Formally."
+	desc = "A special headger containing unknown fibers and electronics, providing the NVG effect for it's user. Formerly."
 	icon_state = "nri_drg_ushanka"
 	item_state = "nri_drg_ushanka"
 	icon = 'modular_bluemoon/kovac_shitcode/icons/rus/obj_drg.dmi'
