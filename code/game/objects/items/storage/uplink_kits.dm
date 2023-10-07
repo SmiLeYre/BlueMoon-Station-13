@@ -520,7 +520,7 @@
 	new /obj/item/clothing/mask/chameleon(src)
 	new /obj/item/card/id/syndicate(src)
 	new /obj/item/storage/fancy/cigarettes/cigpack_syndicate(src)
-	//new /obj/item/lighter/contractor(src) // 07.10 Все новые зажигалки работают некорректно. Эта, как я понимаю, единственная, которую можно достать в игре на данный момент.
+	new /obj/item/lighter/contractor(src)
 
 /obj/item/storage/box/syndie_kit/contract_kit/PopulateContents()
 	new /obj/item/modular_computer/tablet/syndicate_contract_uplink/preset/uplink(src)
