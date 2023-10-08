@@ -12,8 +12,8 @@
 /obj/item/genital_equipment/chastity_cage/metal/item_inserted(datum/source, obj/item/organ/genital/G, mob/user)
 	. = ..()
 
-	var/mob/living/carbon/human/H = equipment.get_wearer()
-	RegisterSignal(H, COMSIG_MOVABLE_MOVED, .proc/on_move)
+	var/mob/living/carbon/human/H = G.owner
+	RegisterSignal(equipment.get_wearer(), COMSIG_MOVABLE_MOVED, .proc/on_move)
 
 	skin_overlay = mutable_appearance(icon, "worn_[icon_state]_[cage_sprite]_skin", skin_overlay_layer)
 	skin_overlay.color = G.color
@@ -27,7 +27,7 @@
 							"<span class='warning'>You jingle slightly as you move.")
 
 /obj/item/genital_equipment/chastity_cage/metal/item_removed(datum/source, obj/item/organ/genital/G, mob/user)
-	var/mob/living/carbon/human/H = equipment.get_wearer()
-	UnregisterSignal(H, COMSIG_MOVABLE_MOVED)
+	var/mob/living/carbon/human/H = G.owner
+	UnregisterSignal(equipment.get_wearer(), COMSIG_MOVABLE_MOVED)
 	H.cut_overlay(skin_overlay)
 	. = ..()
