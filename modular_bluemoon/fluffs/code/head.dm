@@ -64,7 +64,7 @@
 	icon_state = "flektarn_beret"
 	item_state = "flektarn_beret"
 
-/obj/item/clothing/head/donator/bm/nvg_beret // civil version of nri antagonist beret
+/obj/item/clothing/head/donator/bm/nri_drg_head // civil version of nri antagonist beret
 	name = "covet ops headgear"
 	desc = "A special headger containing unknown fibers and electronics, providing the NVG effect for it's user. Formerly."
 	icon_state = "nri_drg_ushanka"
