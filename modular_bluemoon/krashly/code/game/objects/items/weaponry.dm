@@ -159,3 +159,35 @@
 
 /obj/item/gun/ballistic/automatic/ak12/pindicate
 	pin = /obj/item/firing_pin/implant/pindicate
+
+////////////////////////////////////////////////////////////////////////////////////
+/obj/item/gun/ballistic/automatic/ak12/r
+	name = "\improper Pink AK-12 rifle"
+	icon_state = "akr12"
+	item_state = "akr12"
+	fire_delay = 4
+	mag_type = /obj/item/ammo_box/magazine/ak12/r
+	//fire_sound = 'modular_bluemoon/krashly/sound/ak12_fire.ogg'
+
+/obj/item/gun/ballistic/automatic/ak12/r/update_icon_state()
+	if(magazine)
+		icon_state = "akr12"
+		item_state = "akr12"
+	else
+		icon_state = "akr12_e"
+		item_state = "akr12_e"
+
+/obj/item/ammo_box/magazine/ak12/r
+	name = "\improper Pink AK-12 magazine"
+	icon_state = "akr12_mag"
+	item_state = "akr12_mag"
+
+/datum/supply_pack/security/armory/ak12r
+	name = "Pink AK-12 Rifle Crate"
+	desc = "Contains one high-powered, fully automatic rifle, and three mags. Requires Armory access to open."
+	cost = 35000
+	contains = list(/obj/item/gun/ballistic/automatic/ak12/r,
+					/obj/item/ammo_box/magazine/ak12/r,
+					/obj/item/ammo_box/magazine/ak12/r,
+					/obj/item/ammo_box/magazine/ak12/r)
+	crate_name = "pink ak12 rifle crate"
