@@ -352,7 +352,6 @@
 	anthro_mob_worn_overlay = 'modular_sand/icons/mob/clothing/suit_digi.dmi'
 	item_state = "praetor"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/deathsquad/praetor
-	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
 	resistance_flags = FIRE_PROOF | LAVA_PROOF | ACID_PROOF | GOLIATH_RESISTANCE
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	clothing_flags = THICKMATERIAL // no space protection
@@ -367,7 +366,6 @@
 	icon_state = "praetor"
 	mob_overlay_icon = 'modular_sand/icons/mob/clothing/head.dmi'
 	anthro_mob_worn_overlay  = 'modular_sand/icons/mob/clothing/head_muzzled.dmi'
-	mutantrace_variation = STYLE_MUZZLE | STYLE_NO_ANTHRO_ICON
 	resistance_flags = FIRE_PROOF | LAVA_PROOF | ACID_PROOF | GOLIATH_RESISTANCE
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	clothing_flags = THICKMATERIAL | ALLOWINTERNALS // no space protection

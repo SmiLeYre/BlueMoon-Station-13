@@ -575,6 +575,7 @@
 	held_icon = "emma"
 	see_in_dark = 10
 	gender = FEMALE
+	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
 
 ///////////////
 
