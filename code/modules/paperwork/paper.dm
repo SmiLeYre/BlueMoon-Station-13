@@ -328,6 +328,20 @@
 		return
 	. += span_warning("You cannot read it!")
 
+/obj/item/paper/attack(mob/M, mob/user)
+	if(M.zone_selected == BODY_ZONE_PRECISE_EYES)
+		if(do_mob(user, M, 0.7 SECONDS))
+			user.visible_message("<span class='notice'>[user] shows the paper to you. </span>", \
+				"<span class='notice'>You hold up a paper and show it to [M]. </span>")
+			M.examinate(src)
+		else
+			to_chat(user, span_warning("You fail to show the paper to [M]."))
+		//f(ishuman(M) && !M.is_blind() && M.can_read(src))
+		//ui_interact(M)
+		//return
+	else
+		..()
+
 /obj/item/paper/ui_status(mob/user,/datum/ui_state/state)
 	// Are we on fire?  Hard to read if so
 	if(resistance_flags & ON_FIRE)
