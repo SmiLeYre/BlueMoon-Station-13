@@ -404,8 +404,8 @@ SUBSYSTEM_DEF(shuttle)
 	if(!emergencyNoEscape && (emergency.mode == SHUTTLE_STRANDED))
 		emergency.mode = SHUTTLE_DOCKED
 		emergency.setTimer(emergencyDockTime)
-		priority_announce("Hostile environment resolved. \
-			You have 3 minutes to board the Emergency Shuttle.",
+		priority_announce("Враждебное присутствие искоренено. \
+			У вас есть три минуты, чтобы взойти на борт шаттла.",
 			null, "shuttledock", "Priority")
 
 //try to move/request to dockHome if possible, otherwise dockAway. Mainly used for admin buttons

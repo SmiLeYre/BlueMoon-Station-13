@@ -567,6 +567,15 @@
 	held_icon = "ada"
 	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
 
+/mob/living/simple_animal/pet/fox/emma
+	name = "Emma"
+	icon_state = "emma"
+	icon_living = "emma"
+	icon_dead = "emma_dead"
+	held_icon = "emma"
+	see_in_dark = 10
+	gender = FEMALE
+
 ///////////////
 
 /obj/item/toy/plush/mammal/fox/emma
@@ -621,3 +630,11 @@
 	icon = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps.dmi'
 	lefthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_l.dmi'
 	righthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_r.dmi'
+
+/obj/item/toy/plush/nukeplushie/omega
+	name = "omega plushie"
+	desc = "This plushie really has an empty noggin and zero thoughts about commiting something especially cruel."
+	icon_state = "omega"
+	item_state = "omega"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps.dmi'
+	squeak_override = list('modular_bluemoon/kovac_shitcode/sound/vulps/ooh.ogg' = 9)

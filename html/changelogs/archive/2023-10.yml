@@ -13,3 +13,13 @@
   - tweak: makes the gas mask in loadouts no longer restricted
   Vhariik:
   - rscdel: Sci machinery
+2023-10-04:
+  SmiLeYre and SandPoot:
+  - rscadd: Patting plushies will make hearts like patting Ian.
+  - rscadd: Plushies can be renamed.
+  - rscadd: Added some extra plushies.
+  - imageadd: Added held sprite for most modular plushies.
+2023-10-05:
+  Anonymous:
+  - bugfix: Fixes Bane Syndrome quirk overwriting loadout's masks. Now the mask from
+      the quirk will be dropped onto floor if you use loadout one.

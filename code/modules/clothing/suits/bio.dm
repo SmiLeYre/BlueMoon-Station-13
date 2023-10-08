@@ -15,7 +15,7 @@
 /obj/item/clothing/suit/bio_suit
 	name = "Bio Suit"
 	desc = "A suit that protects against biological contamination."
-	icon_state = "bio"
+	icon_state = "bio_general"
 	item_state = "bio_suit"
 	tail_state = "syndicate-winter"
 	w_class = WEIGHT_CLASS_BULKY

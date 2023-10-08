@@ -111,7 +111,8 @@
 		"stamp-mime" = 'icons/stamp_icons/large_stamp-mime.png',
 		"stamp-centcom" = 'icons/stamp_icons/large_stamp-centcom.png',
 		"stamp-syndicate" = 'icons/stamp_icons/large_stamp-syndicate.png',
-		"stamp-ntr" = 'icons/stamp_icons/large_stamp-rep.png'
+		"stamp-ntr" = 'icons/stamp_icons/large_stamp-rep.png',
+		"stamp-warden" = 'icons/stamp_icons/large_stamp-warden.png'
 	)
 
 

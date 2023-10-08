@@ -17,6 +17,7 @@
 				C.adjustEarDamage(0, 30)
 				C.confused += 25
 				C.Jitter(50)
+				C.DefaultCombatKnockdown(20)
 			else
 				SEND_SOUND(C, sound('sound/effects/screech.ogg'))
 

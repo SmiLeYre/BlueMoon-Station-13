@@ -1998,6 +1998,14 @@
 /obj/item/gps/mining,
 /turf/open/floor/mineral/titanium/purple,
 /area/ruin/lavaland/powered/golem_ship)
+"bKy" = (
+/obj/structure/disposalpipe/segment{
+	desc = "An underfloor disposal pipe. This one has been applied with an acid-proof coating.";
+	dir = 10;
+	name = "Acid-Proof disposal pipe"
+	},
+/turf/closed/wall,
+/area/mine/xenoarch)
 "bLh" = (
 /obj/structure/stone_tile/block{
 	dir = 4
@@ -4860,14 +4868,13 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/lavaland/unpowered/ash_walkers)
 "eAz" = (
-/obj/machinery/light{
-	dir = 8
+/obj/structure/disposalpipe/trunk{
+	dir = 1
 	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/mine/xenoarch_area_c)
+/obj/structure/disposaloutlet,
+/obj/effect/turf_decal/stripes/end,
+/turf/open/floor/plating,
+/area/lavaland/surface/outdoors)
 "eAB" = (
 /obj/structure/frame/computer{
 	anchored = 1;
@@ -5401,6 +5408,17 @@
 	},
 /turf/open/floor/circuit,
 /area/mine/maintenance)
+"eZg" = (
+/obj/effect/turf_decal/tile/purple{
+	dir = 8
+	},
+/obj/structure/disposalpipe/segment{
+	desc = "An underfloor disposal pipe. This one has been applied with an acid-proof coating.";
+	dir = 4;
+	name = "Acid-Proof disposal pipe"
+	},
+/turf/open/floor/plasteel/dark,
+/area/mine/xenoarch_area_c)
 "eZz" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 5
@@ -7802,6 +7820,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/mine/maintenance)
+"hyC" = (
+/obj/structure/disposalpipe/segment{
+	desc = "An underfloor disposal pipe. This one has been applied with an acid-proof coating.";
+	dir = 4;
+	name = "Acid-Proof disposal pipe"
+	},
+/turf/closed/wall,
+/area/mine/xenoarch)
 "hyE" = (
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plasteel/freezer,
@@ -8413,6 +8439,15 @@
 /obj/machinery/chem_dispenser/mutagensaltpeter,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/lavaland/powered/seedvault)
+"ibh" = (
+/obj/effect/turf_decal/tile/purple{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/mine/xenoarch_area_c)
 "ibu" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 4
@@ -10840,6 +10875,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
+"kwO" = (
+/obj/structure/disposalpipe/segment{
+	dir = 5
+	},
+/turf/closed/wall,
+/area/mine/xenoarch)
 "kwQ" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/jukebox/disco{
@@ -16614,6 +16655,14 @@
 /obj/machinery/space_heater,
 /turf/open/floor/plating,
 /area/mine/production)
+"pNr" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/structure/disposalpipe/junction/flip{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/open/floor/plasteel/dark,
+/area/mine/xenoarch_area_c)
 "pOb" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4
@@ -18291,6 +18340,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
+"rkO" = (
+/obj/structure/disposalpipe/junction/flip,
+/turf/closed/wall,
+/area/mine/xenoarch)
 "rkR" = (
 /obj/structure/barricade/wooden/crude,
 /obj/machinery/door/airlock/medical/glass{
@@ -25370,6 +25423,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch_area_c)
+"ygt" = (
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
+/turf/closed/wall,
+/area/mine/xenoarch)
 "ygP" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
@@ -125371,10 +125430,10 @@ pRc
 nIR
 sOU
 wan
+ibh
 moF
-eAz
 moF
-moF
+eZg
 wEP
 ayj
 wdn
@@ -125631,7 +125690,7 @@ etX
 etX
 etX
 etX
-etX
+pNr
 mTC
 xfJ
 wdn
@@ -127147,8 +127206,8 @@ uXb
 gJF
 men
 fMI
-gRU
-vAU
+rkO
+eAz
 vAU
 vAU
 vAU
@@ -127404,7 +127463,7 @@ uXb
 qbh
 eMm
 gsu
-uXb
+hyC
 vAU
 vAU
 vAU
@@ -127661,8 +127720,8 @@ uXb
 qbh
 eMm
 ith
-uXb
-uXb
+bKy
+kwO
 uXb
 uXb
 uXb
@@ -127919,7 +127978,7 @@ aHt
 hKu
 kMS
 ajt
-uXb
+hyC
 faS
 lTj
 hZD
@@ -128176,7 +128235,7 @@ gTf
 ccF
 fle
 lTj
-uXb
+hyC
 lTj
 lTj
 lTj
@@ -128690,7 +128749,7 @@ gTf
 vdk
 wzI
 gRU
-uXb
+ygt
 uXb
 uXb
 uXb

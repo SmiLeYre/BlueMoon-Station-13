@@ -25634,10 +25634,6 @@
 /obj/effect/mapping_helpers/airlock/unres,
 /turf/open/floor/mineral/plastitanium,
 /area/medical/medbay/central)
-"bog" = (
-/obj/effect/spawner/structure/window/plastitanium,
-/turf/open/floor/plating,
-/area/medical/medbay/central)
 "boh" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/medical/glass{
@@ -33848,6 +33844,9 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plating,
 /area/maintenance/aft)
 "bHr" = (
@@ -35889,9 +35888,6 @@
 	icon_state = "1-2"
 	},
 /obj/structure/disposalpipe/junction,
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plating,
 /area/maintenance/aft)
@@ -102480,12 +102476,12 @@ bpu
 bqP
 bsy
 bEe
-bog
+fWM
 ajv
 bxN
 bze
 asL
-bog
+fWM
 bCG
 bBd
 bFw
@@ -102999,7 +102995,7 @@ bxQ
 bvm
 bDT
 bxQ
-bog
+fWM
 bzU
 bBe
 bCS
@@ -103246,18 +103242,18 @@ ihR
 bjV
 blj
 bmK
-bog
-bog
+fWM
+fWM
 bxQ
 bsx
 bsr
-bog
+fWM
 bwD
 bxQ
 bxQ
 bAq
 bJE
-bog
+fWM
 bDW
 bKR
 bJE
@@ -103765,7 +103761,7 @@ bpv
 bxQ
 bsx
 btV
-bog
+fWM
 bwF
 bxQ
 bxQ
@@ -104279,7 +104275,7 @@ bJE
 bKL
 brf
 btV
-bog
+fWM
 bwH
 bxS
 bzh
@@ -104793,7 +104789,7 @@ bpx
 bpP
 brf
 bxQ
-bog
+fWM
 bwJ
 bxU
 bzi
