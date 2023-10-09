@@ -201,7 +201,7 @@
 	throwforce = 5
 	throw_speed = 2
 	throw_range = 3
-	wound_bonus = 25
+	wound_bonus = 30
 	bare_wound_bonus = 30
 	armour_penetration = 70
 	attack_speed = CLICK_CD_MELEE * 1.2
@@ -221,7 +221,7 @@
 
 /obj/item/inteq_sledgehammer/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=10, force_wielded=25, icon_wielded="sledgehammer1")
+	AddComponent(/datum/component/two_handed, force_unwielded=10, force_wielded=33, icon_wielded="sledgehammer1")
 
 /// triggered on wield of two handed item
 /obj/item/inteq_sledgehammer/proc/on_wield(obj/item/source, mob/user)

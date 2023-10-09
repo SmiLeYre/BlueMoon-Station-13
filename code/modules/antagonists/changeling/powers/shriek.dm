@@ -14,10 +14,11 @@
 		if(iscarbon(M))
 			var/mob/living/carbon/C = M
 			if(!C.mind || !C.mind.has_antag_datum(/datum/antagonist/changeling))
-				C.adjustEarDamage(0, 30)
+				C.adjustEarDamage(15, 30)
 				C.confused += 25
 				C.Jitter(50)
-				C.DefaultCombatKnockdown(20)
+				C.DefaultCombatKnockdown(25)
+				C.apply_damage(8, BRUTE)
 			else
 				SEND_SOUND(C, sound('sound/effects/screech.ogg'))
 

@@ -11112,6 +11112,7 @@
 /obj/effect/turf_decal/tile/brown,
 /obj/structure/table/wood,
 /obj/item/paper_bin,
+/obj/item/storage/fancy/cigarettes/cigpack_inteq,
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership)
 "jua" = (
@@ -11925,7 +11926,7 @@
 /obj/effect/turf_decal/tile/dark_green/half/contrasted{
 	dir = 4
 	},
-/obj/item/reagent_containers/food/snacks/chips,
+/obj/item/toy/figure/inteq,
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership)
 "kcn" = (
@@ -15656,6 +15657,7 @@
 /obj/effect/turf_decal/tile/dark_green/fourcorners,
 /obj/effect/turf_decal/tile/dark_blue/fourcorners,
 /obj/structure/table/wood,
+/obj/item/toy/figure/inteq,
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership)
 "nin" = (
@@ -16383,6 +16385,7 @@
 "nNi" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/table/wood,
+/obj/item/toy/figure/inteq,
 /turf/open/floor/wood/wood_parquet,
 /area/syndicate_mothership)
 "nNk" = (
@@ -18155,10 +18158,10 @@
 	},
 /obj/effect/turf_decal/tile/brown,
 /obj/structure/table/wood,
-/obj/item/storage/fancy/cigarettes/cigpack_inteq,
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/item/toy/figure/inteq,
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership)
 "pyL" = (
@@ -23875,6 +23878,7 @@
 /obj/effect/turf_decal/tile/dark_green/anticorner/contrasted{
 	dir = 4
 	},
+/obj/item/reagent_containers/food/snacks/chips,
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership)
 "uwf" = (

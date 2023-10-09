@@ -49,6 +49,11 @@
 	path = /obj/item/clothing/suit/toggle/jacket/flannel/brown
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
+/datum/gear/suit/jacketflannelwhite
+	name = "White flannel jacket"
+	path = /obj/item/clothing/suit/toggle/jacket/flannel/white
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
 /datum/gear/suit/jacketleather
 	name = "Leather jacket"
 	path = /obj/item/clothing/suit/jacket/leather

@@ -111,3 +111,14 @@
 	icon_state = "shiro"
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/accessories.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'
+
+
+////////////////////////
+
+/obj/item/clothing/accessory/booma_patch
+	name = "BSF ArmPatch"
+	desc = "«BoomahSpecialForces» — предплечевая выполненная на заказ нашивка, означающая о принадлежности к некоему отряду Бумахов, или, для более углублённых в тему людей, Бустеров!"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/accessories.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'
+	icon_state = "booma"
+	item_state = "booma"

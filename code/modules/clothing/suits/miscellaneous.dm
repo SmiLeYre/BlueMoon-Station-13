@@ -455,6 +455,12 @@
 	icon_state = "flannel_brown"
 	item_state = "flannel_brown"
 	togglename = "buttons"
+/obj/item/clothing/suit/toggle/jacket/flannel/white
+	name = "white flannel jacket"
+	desc = "Comfy and supposedly flammable."
+	icon_state = "flannel_white"
+	item_state = "flannel_white"
+	togglename = "buttons"
 /obj/item/clothing/suit/toggle/jacket/whitehoodie
 	name = "soft hoodie"
 	desc = "A soft hoodie with a TailorCo brand on the tag."

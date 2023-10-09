@@ -86,3 +86,10 @@
 	item_state = "white_suit"
 	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
 	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/booma
+	name = "Boomah Turtleneck"
+	desc = "Водолазка выполненная под специальный заказ для служащих в группировке Бустеров. Выполнена в кремово-белом исполнении, с нанесенным характерным логотипом группировки."
+	icon_state = "booma"
+	item_state = "booma"
+	can_adjust = TRUE

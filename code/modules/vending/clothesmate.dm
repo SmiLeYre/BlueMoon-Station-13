@@ -18,6 +18,7 @@
 					/obj/item/clothing/suit/toggle/jacket/flannel/red = 4,
 					/obj/item/clothing/suit/toggle/jacket/flannel/aqua = 4,
 					/obj/item/clothing/suit/toggle/jacket/flannel/brown = 4,
+					/obj/item/clothing/suit/toggle/jacket/flannel/white = 4,
 					/obj/item/clothing/suit/jacket/puffer/vest = 4,
 					/obj/item/clothing/suit/jacket/puffer = 4,
 					/obj/item/clothing/suit/hooded/cloak/david = 4,

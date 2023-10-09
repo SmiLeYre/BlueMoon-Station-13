@@ -138,7 +138,7 @@ GLOBAL_LIST_EMPTY(allConsoles)
 	var/dat = ""
 	switch(screen)
 		if(1)	//req. assistance
-			dat += "Which department do you need assistance from?<br><br>"
+			dat += "Из какого отдела вам нужна помощь?<br><br>"
 			dat += "<table width='100%'>"
 			for(var/dpt in GLOB.req_console_assistance)
 				if(dpt == department)
@@ -146,17 +146,17 @@ GLOBAL_LIST_EMPTY(allConsoles)
 				dat += "<tr>"
 				dat += "<td width='55%'>[dpt]</td>"
 				dat += "<td width='45%'>"
-				dat += "<a href='?src=[REF(src)];write=[ckey(dpt)];priority=1'>Normal</a>"
-				dat += "<a href='?src=[REF(src)];write=[ckey(dpt)];priority=2'>High</a>"
+				dat += "<a href='?src=[REF(src)];write=[ckey(dpt)];priority=1'>Обычный</a>"
+				dat += "<a href='?src=[REF(src)];write=[ckey(dpt)];priority=2'>Высокий</a>"
 				if(hackState)
-					dat += "<a href='?src=[REF(src)];write=[ckey(dpt)];priority=3'>EXTREME</a>"
+					dat += "<a href='?src=[REF(src)];write=[ckey(dpt)];priority=3'>ЭКСТРЕМАЛЬНЫЙ</a>"
 				dat += "</td>"
 				dat += "</tr>"
 			dat += "</table>"
-			dat += "<br><A href='?src=[REF(src)];setScreen=0'><< Back</A><br>"
+			dat += "<br><A href='?src=[REF(src)];setScreen=0'><< Назад</A><br>"
 
 		if(2)	//req. supplies
-			dat += "Which department do you need supplies from?<br><br>"
+			dat += "Из какого отдела вам нужны припасы?<br><br>"
 			dat += "<table width='100%'>"
 			for(var/dpt in GLOB.req_console_supplies)
 				if(dpt == department)
@@ -165,17 +165,17 @@ GLOBAL_LIST_EMPTY(allConsoles)
 				dat += "<tr>"
 				dat += "<td width='55%'>[dpt]</td>"
 				dat += "<td width='45%'>"
-				dat += "<a href='?src=[REF(src)];write=[ckey(dpt)];priority=1'>Normal</a>"
-				dat += "<a href='?src=[REF(src)];write=[ckey(dpt)];priority=2'>High</a>"
+				dat += "<a href='?src=[REF(src)];write=[ckey(dpt)];priority=1'>Обычный</a>"
+				dat += "<a href='?src=[REF(src)];write=[ckey(dpt)];priority=2'>Высокий</a>"
 				if(hackState)
-					dat += "<a href='?src=[REF(src)];write=[ckey(dpt)];priority=3'>EXTREME</a>"
+					dat += "<a href='?src=[REF(src)];write=[ckey(dpt)];priority=3'>ЭКСТРЕМАЛЬНЫЙ</a>"
 				dat += "</td>"
 				dat += "</tr>"
 			dat += "</table>"
-			dat += "<br><A href='?src=[REF(src)];setScreen=0'><< Back</A><br>"
+			dat += "<br><A href='?src=[REF(src)];setScreen=0'><< Назад</A><br>"
 
 		if(3)	//relay information
-			dat += "Which department would you like to send information to?<br><br>"
+			dat += "В какой отдел вы хотите отправить информацию?<br><br>"
 			dat += "<table width='100%'>"
 			for(var/dpt in GLOB.req_console_information)
 				if(dpt == department)
@@ -183,22 +183,22 @@ GLOBAL_LIST_EMPTY(allConsoles)
 				dat += "<tr>"
 				dat += "<td width='55%'>[dpt]</td>"
 				dat += "<td width='45%'>"
-				dat += "<a href='?src=[REF(src)];write=[ckey(dpt)];priority=1'>Normal</a>"
-				dat += "<a href='?src=[REF(src)];write=[ckey(dpt)];priority=2'>High</a>"
+				dat += "<a href='?src=[REF(src)];write=[ckey(dpt)];priority=1'>Обычный</a>"
+				dat += "<a href='?src=[REF(src)];write=[ckey(dpt)];priority=2'>Высокий</a>"
 				if(hackState)
-					dat += "<a href='?src=[REF(src)];write=[ckey(dpt)];priority=3'>EXTREME</a>"
+					dat += "<a href='?src=[REF(src)];write=[ckey(dpt)];priority=3'>ЭКСТРЕМАЛЬНЫЙ</a>"
 				dat += "</td>"
 				dat += "</tr>"
 			dat += "</table>"
-			dat += "<br><a href='?src=[REF(src)];setScreen=0'><< Back</a><br>"
+			dat += "<br><a href='?src=[REF(src)];setScreen=0'><< Назад</a><br>"
 
 		if(6)	//sent successfully
-			dat += "<span class='good'>Message sent.</span><br><br>"
-			dat += "<a href='?src=[REF(src)];setScreen=0'>Continue</a><br>"
+			dat += "<span class='good'>Сообщение отправлено.</span><br><br>"
+			dat += "<a href='?src=[REF(src)];setScreen=0'>Продолжить</a><br>"
 
 		if(7)	//unsuccessful; not sent
-			dat += "<span class='bad'>An error occurred.</span><br><br>"
-			dat += "<a href='?src=[REF(src)];setScreen=0'>Continue</a><br>"
+			dat += "<span class='bad'>Произошла ошибка.</span><br><br>"
+			dat += "<a href='?src=[REF(src)];setScreen=0'>Продолжить</a><br>"
 
 		if(8)	//view messages
 			for(var/obj/machinery/requests_console/Console in GLOB.allConsoles)
@@ -212,64 +212,64 @@ GLOBAL_LIST_EMPTY(allConsoles)
 			for(var/msg in messages) // This puts more recent messages at the *top*, where they belong.
 				messageComposite = "<div class='block'>[msg]</div>" + messageComposite
 			dat += messageComposite
-			dat += "<br><a href='?src=[REF(src)];setScreen=0'><< Back to Main Menu</a><br>"
+			dat += "<br><a href='?src=[REF(src)];setScreen=0'><< Вернуться в главное меню</a><br>"
 
 		if(9)	//authentication before sending
-			dat += "<b>Message Authentication</b> <br><br>"
-			dat += "<b>Message for [dpt]:</b> [message] <br><br>"
-			dat += "<div class='notice'>You may authenticate your message now by scanning your ID or your stamp</div> <br>"
+			dat += "<b>Авторизация сообщения</b> <br><br>"
+			dat += "<b>Сообщение для [dpt]:</b> [message] <br><br>"
+			dat += "<div class='notice'>Вы можете подтвердить подлинность сообщения, отсканировав свою карту или печать.</div> <br>"
 
-			dat += "<b>Validated by:</b> [msgVerified ? "<span class='good'><b>[msgVerified]</b></span>" : "<i>Not Validated</i>"] <br>"
-			dat += "<b>Stamped by:</b> [msgStamped ? "<span class='boldnotice'>[msgStamped]</span>" : "<i>Not Stamped</i>"] <br><br>"
+			dat += "<b>Утверждено:</b> [msgVerified ? "<span class='good'><b>[msgVerified]</b></span>" : "<i>Не прошло утверждение</i>"] <br>"
+			dat += "<b>Печать выставлена:</b> [msgStamped ? "<span class='boldnotice'>[msgStamped]</span>" : "<i>Не проставлена печать</i>"] <br><br>"
 
-			dat += "<a href='?src=[REF(src)];department=[dpt]'>Send Message</a> <br><br>"
-			dat += "<a href='?src=[REF(src)];setScreen=0'><< Discard Message</a> <br>"
+			dat += "<a href='?src=[REF(src)];department=[dpt]'>Отправить сообщение</a> <br><br>"
+			dat += "<a href='?src=[REF(src)];setScreen=0'><< Очистить сообщение</a> <br>"
 
 		if(10)	//send announcement
-			dat += "<h3>Station-wide Announcement</h3>"
+			dat += "<h3>Станционное объявление</h3>"
 			if(announceAuth)
-				dat += "<div class='notice'>Authentication accepted</div><br>"
+				dat += "<div class='notice'>Авторизация пройдена</div><br>"
 			else
-				dat += "<div class='notice'>Swipe your card to authenticate yourself</div> <br>"
-			dat += "<b>Message: </b>[message ? message : "<i>No Message</i>"] <br>"
-			dat += "<a href='?src=[REF(src)];writeAnnouncement=1'>[message ? "Edit" : "Write"] Message</a> <br><br>"
+				dat += "<div class='notice'>Проведите картой для авторизации</div> <br>"
+			dat += "<b>Сообщение: </b>[message ? message : "<i>Отсутствует</i>"] <br>"
+			dat += "<a href='?src=[REF(src)];writeAnnouncement=1'>[message ? "Отредактировать" : "Написать"] сообщение</a> <br><br>"
 			if((announceAuth || IsAdminGhost(user)) && message)
-				dat += "<a href='?src=[REF(src)];sendAnnouncement=1'>Announce Message</a> <br>"
+				dat += "<a href='?src=[REF(src)];sendAnnouncement=1'>Сделать объявление</a> <br>"
 			else
-				dat += "<span class='linkOff'>Announce Message</span> <br>"
-			dat += "<br><a href='?src=[REF(src)];setScreen=0'><< Back</a> <br>"
+				dat += "<span class='linkOff'>Сделать объявление</span> <br>"
+			dat += "<br><a href='?src=[REF(src)];setScreen=0'><< Назад</a> <br>"
 
 		else	//main menu
 			screen = 0
 			announceAuth = FALSE
 			if(newmessagepriority == NORMAL_MESSAGE_PRIORITY)
-				dat += "<div class='notice'>There are new messages</div><br>"
+				dat += "<div class='notice'>Имеются новые сообщения</div><br>"
 			if(newmessagepriority == HIGH_MESSAGE_PRIORITY)
-				dat += "<div class='notice'>There are new <b>PRIORITY</b> messages</div><br>"
+				dat += "<div class='notice'>Имеются новые сообщения <b>особой важности.</b></div><br>"
 			if(newmessagepriority == EXTREME_MESSAGE_PRIORITY)
-				dat += "<div class='notice'>There are new <b>EXTREME PRIORITY</b> messages</div><br>"
+				dat += "<div class='notice'>Имеются новые сообщения <b>ЭКСТРЕМАЛЬНОЙ ВАЖНОСТИ</b>.</div><br>"
 
-			dat += "<a href='?src=[REF(src)];setScreen=8'>View Messages</a> <br><br>"
+			dat += "<a href='?src=[REF(src)];setScreen=8'>Посмотреть сообщения</a> <br><br>"
 
-			dat += "<a href='?src=[REF(src)];setScreen=1'>Request Assistance</a> <br>"
-			dat += "<a href='?src=[REF(src)];setScreen=2'>Request Supplies</a> <br>"
-			dat += "<a href='?src=[REF(src)];setScreen=3'>Relay Anonymous Information</a> <br><br>"
+			dat += "<a href='?src=[REF(src)];setScreen=1'>Запросить помощь</a> <br>"
+			dat += "<a href='?src=[REF(src)];setScreen=2'>Запросить припасы</a> <br>"
+			dat += "<a href='?src=[REF(src)];setScreen=3'>Передача анонимной информации</a> <br><br>"
 
 			if(!emergency)
-				dat += "<a href='?src=[REF(src)];emergency=1'>Emergency: Security</a> <br>"
-				dat += "<a href='?src=[REF(src)];emergency=2'>Emergency: Engineering</a> <br>"
-				dat += "<a href='?src=[REF(src)];emergency=3'>Emergency: Medical</a> <br><br>"
+				dat += "<a href='?src=[REF(src)];emergency=1'>Охранная тревога</a> <br>"
+				dat += "<a href='?src=[REF(src)];emergency=2'>Инженерная тревога</a> <br>"
+				dat += "<a href='?src=[REF(src)];emergency=3'>Медицинская тревога</a> <br><br>"
 			else
-				dat += "<b><div class='bad'>[emergency] has been dispatched to this location.</div></b> <br><br>"
+				dat += "<b><div class='bad'>[emergency] ТРЕВОГА НА ДАННОМ МЕСТОПОЛОЖЕНИИ!</div></b> <br><br>"
 
 			if(announcementConsole)
-				dat += "<a href='?src=[REF(src)];setScreen=10'>Send Station-wide Announcement</a> <br><br>"
+				dat += "<a href='?src=[REF(src)];setScreen=10'>Отправить станционное объявление</a> <br><br>"
 			if(silent)
-				dat += "Speaker <a href='?src=[REF(src)];setSilent=0'>OFF</a>"
+				dat += "Динамик <a href='?src=[REF(src)];setSilent=0'>ВЫКЛ</a>"
 			else
-				dat += "Speaker <a href='?src=[REF(src)];setSilent=1'>ON</a>"
+				dat += "Динамик <a href='?src=[REF(src)];setSilent=1'>ВКЛ</a>"
 
-	var/datum/browser/popup = new(user, "req_console", "[department] Requests Console", 450, 440)
+	var/datum/browser/popup = new(user, "req_console", "Консоль запросов", 450, 440)
 	popup.set_content(dat)
 	popup.open()
 
@@ -281,7 +281,7 @@ GLOBAL_LIST_EMPTY(allConsoles)
 
 	if(href_list["write"])
 		dpt = ckey(reject_bad_text(href_list["write"])) //write contains the string of the receiving department's name
-		var/new_message = stripped_input(usr, "Write your message:", "Awaiting Input", "", MAX_MESSAGE_LEN)
+		var/new_message = stripped_input(usr, "Напишите сообщение:", "Ввод", "", MAX_MESSAGE_LEN)
 		if(new_message)
 			message = new_message
 			screen = 9
@@ -294,7 +294,7 @@ GLOBAL_LIST_EMPTY(allConsoles)
 			priority = NORMAL_MESSAGE_PRIORITY //:salt:
 
 	if(href_list["writeAnnouncement"])
-		var/new_message = reject_bad_text(stripped_input(usr, "Write your message:", "Awaiting Input", "", MAX_MESSAGE_LEN))
+		var/new_message = reject_bad_text(stripped_input(usr, "Напишите сообщение:", "Ввод", "", MAX_MESSAGE_LEN))
 		if(new_message)
 			message = new_message
 			priority = text2num(href_list["priority"])
@@ -328,8 +328,9 @@ GLOBAL_LIST_EMPTY(allConsoles)
 		if(isliving(usr))
 			var/mob/living/L = usr
 			message = L.treat_message(message)
-		minor_announce(message, "[ru_department] объявляет:")
-		GLOB.news_network.SubmitArticle(message, department, "Station Announcements", null)
+		//minor_announce(message, "[ru_department] объявляет:")
+		priority_announce(message, "[ru_department] Объявляет", 'sound/announcer/tonelow.ogg', "Priority")
+		GLOB.news_network.SubmitArticle(message, department, "Станционное Объявление", null)
 		usr.log_talk(message, LOG_SAY, tag = "station announcement from [src]")
 		message_admins("[ADMIN_LOOKUPFLW(usr)] has made a station announcement from [src] at [AREACOORD(usr)].")
 		announceAuth = FALSE
@@ -354,7 +355,7 @@ GLOBAL_LIST_EMPTY(allConsoles)
 				emergency = "BНИМАНИЕ: МЕДИЦИНСКИЙ ОТДЕЛ!"
 		if(radio_freq)
 			Radio.set_frequency(radio_freq)
-			Radio.talk_into(src, "[emergency] Тревога в [department]!!", radio_freq)
+			Radio.talk_into(src, "[emergency] ТРЕВОГА В ЛОКАЦИИ: [department]!", radio_freq)
 			update_icon()
 			addtimer(CALLBACK(src, .proc/clear_emergency), 5 MINUTES)
 
@@ -499,7 +500,7 @@ GLOBAL_LIST_EMPTY(allConsoles)
 			if(!silent)
 				playsound(src, 'sound/machines/twobeep.ogg', 50, 1)
 				say(title)
-			messages += "<span class='bad'>High Priority</span><br><b>From:</b> [linkedsender]<br>[message]" //the fuck is this not being sent
+			messages += "<span class='bad'>Высокий приоритет</span><br><b>От:</b> [linkedsender]<br>[message]" //the fuck is this not being sent
 
 		if(EXTREME_MESSAGE_PRIORITY)		// Extreme Priority
 			if(newmessagepriority < EXTREME_MESSAGE_PRIORITY)
@@ -508,7 +509,7 @@ GLOBAL_LIST_EMPTY(allConsoles)
 			//we ignore the silent option because this is !!!IMPORTANT!!!
 			playsound(src, 'sound/machines/twobeep.ogg', 50, 1)
 			say(title)
-			messages += "<span class='bad'><b>!!!Extreme Priority!!!</span></b><br><b>From:</b> [linkedsender]<br>[message]"
+			messages += "<span class='bad'><b>!!!Экстремальный приоритет!!!</span></b><br><b>От:</b> [linkedsender]<br>[message]"
 
 		else		// Normal priority
 			if(newmessagepriority < NORMAL_MESSAGE_PRIORITY)
@@ -546,21 +547,23 @@ GLOBAL_LIST_EMPTY(allConsoles)
 		if(!ID)
 			return
 		if(screen == 9)
-			msgVerified = "Verified by [ID.registered_name] ([ID.assignment])"
+			msgVerified = "Авторизовано с помощью карты: [ID.registered_name] ([ID.assignment])"
+			playsound(get_turf(user), 'sound/machines/auth.ogg', 75, 1, 1)
 			updateUsrDialog()
 		if(screen == 10)
 			if(ACCESS_RC_ANNOUNCE in ID.access)
 				announceAuth = TRUE
+				playsound(get_turf(user), 'sound/machines/auth.ogg', 75, 1, 1)
 			else
 				announceAuth = FALSE
-				to_chat(user, "<span class='warning'>You are not authorized to send announcements!</span>")
+				to_chat(user, "<span class='warning'>Вы не авторизованы для отправки объявлений!</span>")
 			updateUsrDialog()
 		return
 
 	if(istype(O, /obj/item/stamp))
 		if(screen == 9)
 			var/obj/item/stamp/T = O
-			msgStamped = "Stamped with the [T.name]"
+			msgStamped = "Проштамповано с помощью: [T.name]"
 			updateUsrDialog()
 		return
 	return ..()
