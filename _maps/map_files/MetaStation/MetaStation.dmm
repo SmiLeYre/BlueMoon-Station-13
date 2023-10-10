@@ -85340,10 +85340,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
-"wAt" = (
-/obj/item/clothing/neck/petcollar,
-/turf/open/floor/spooktime/cobble/roadsideE,
-/area/service/park)
 "wAX" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/cable{
@@ -126966,7 +126962,7 @@ oWo
 api
 tjO
 tjO
-wAt
+tjO
 lfF
 lKQ
 xuR
