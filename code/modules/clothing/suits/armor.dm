@@ -124,6 +124,7 @@
 	cold_protection = CHEST|ARMS
 	heat_protection = CHEST|ARMS
 	strip_delay = 80
+	armor = list(MELEE = 40, BULLET = 35, LASER = 35, ENERGY = 45, BOMB = 25, BIO = 0, RAD = 0, FIRE = 60, ACID = 60, WOUND = 15)
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	unique_reskin = list(
 		"Black" = list("icon_state" = "platecarrier"),
