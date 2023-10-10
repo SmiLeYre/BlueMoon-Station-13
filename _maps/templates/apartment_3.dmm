@@ -156,9 +156,6 @@
 /obj/structure/sign/poster/contraband/random{
 	pixel_x = -31
 	},
-/obj/structure/closet/crate/bin{
-	pixel_x = -6
-	},
 /turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "fB" = (
@@ -179,19 +176,7 @@
 	},
 /area/hilbertshotel)
 "id" = (
-/obj/item/weldingtool{
-	pixel_x = -9;
-	pixel_y = 4
-	},
 /obj/structure/table,
-/obj/item/screwdriver{
-	pixel_y = -7
-	},
-/obj/item/wirecutters{
-	pixel_y = 6
-	},
-/obj/item/restraints/handcuffs/cable/white,
-/obj/machinery/vending/wallmed/directional/north,
 /turf/open/floor/pod/light,
 /area/hilbertshotel)
 "in" = (
@@ -314,8 +299,6 @@
 "oK" = (
 /obj/structure/table,
 /obj/item/dildo_machine_kit,
-/obj/item/carpentry/handsaw,
-/obj/item/magicwand,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/hilbertshotel/layer3{
 	dir = 1
 	},
@@ -493,7 +476,6 @@
 /obj/structure/chair{
 	dir = 4
 	},
-/obj/item/restraints/handcuffs/cable/white,
 /obj/effect/decal/cleanable/blood/old,
 /obj/structure/chair/noose,
 /turf/open/floor/pod/light,
@@ -706,12 +688,7 @@
 "HZ" = (
 /obj/structure/table,
 /obj/item/electropack/shockcollar,
-/obj/item/assembly/flash/handheld{
-	pixel_x = 9;
-	pixel_y = 7
-	},
 /obj/effect/decal/cleanable/cobweb,
-/obj/item/nutcracker,
 /turf/open/floor/pod/light,
 /area/hilbertshotel)
 "IJ" = (
@@ -795,13 +772,6 @@
 /area/hilbertshotel)
 "MJ" = (
 /obj/structure/table,
-/obj/item/electropack/vibrator{
-	pixel_x = -10
-	},
-/obj/item/electropack/vibrator/small{
-	pixel_x = -5;
-	pixel_y = -4
-	},
 /obj/item/reagent_containers/glass/bottle/hexacrocin{
 	pixel_x = 10;
 	pixel_y = 7
@@ -809,10 +779,6 @@
 /obj/item/reagent_containers/syringe{
 	pixel_x = -5;
 	pixel_y = 14
-	},
-/obj/item/assembly/signaler{
-	pixel_x = 2;
-	pixel_y = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /turf/open/floor/pod/light,
@@ -1050,6 +1016,7 @@
 "TU" = (
 /obj/structure/table,
 /obj/item/lighter/gold,
+/obj/structure/chair/sofa/right,
 /turf/open/floor/carpet/royalblue,
 /area/hilbertshotel)
 "Uh" = (
@@ -1114,15 +1081,7 @@
 /turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "VY" = (
-/obj/item/dildo/human{
-	pixel_x = -7
-	},
 /obj/structure/table,
-/obj/item/dildo/flared/gigantic,
-/obj/item/scalpel{
-	pixel_x = -1;
-	pixel_y = 18
-	},
 /obj/item/reagent_containers/blood/BPlus{
 	pixel_x = 9
 	},
