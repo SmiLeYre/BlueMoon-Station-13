@@ -301,7 +301,7 @@
 	for(var/mob/living/target in targets)
 		if(iscarbon(target))
 			to_chat(target, "<span class='danger'><b>A spike of pain drives into your head and scrambles your thoughts!</b></span>")
-			target.AdjustConfused(20 SECONDS)
+			target.AdjustConfused(20 SECONDS, 10, 20)
 			target.Slowed(2 SECONDS)
 			target.Jitter(600 SECONDS)
 

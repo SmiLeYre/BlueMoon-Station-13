@@ -86,7 +86,7 @@
 		if(iscarbon(M))
 			var/mob/living/carbon/C = M
 			if(!C.mind || !C.mind.has_antag_datum(/datum/antagonist/ninja))
-				C.AdjustConfused(8 SECONDS)
+				C.AdjustConfused(8 SECONDS, 10, 20)
 				C.adjustEarDamage(10, 20)
 				C.Slowed(10 SECONDS)
 				C.Jitter(30 SECONDS)

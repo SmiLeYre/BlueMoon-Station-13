@@ -412,7 +412,7 @@ GENETICS SCANNER
 			mutant = TRUE
 
 		msg += "\n<span class='info'>Раса: [H.spec_trait_examine_font()][H.dna.custom_species ? H.dna.custom_species : S.name]</font></span>\n"
-		msg += "<span class='info'>Раса-прародитель: [H.spec_trait_examine_font()][S.name]</font></span>\n"
+		msg += "<span class='info'>Первоначальная раса: [H.spec_trait_examine_font()][S.name]</font></span>\n"
 		if(mutant)
 			msg += "<span class='info'>У субъекта имеются мутации.</span>\n"
 	msg += "<span class='info'>Температура тела: [round(M.bodytemperature-T0C,0.1)] &deg;C ([round(M.bodytemperature*1.8-459.67,0.1)] &deg;F)</span>\n"

@@ -260,7 +260,7 @@
 	max_per_type = 3
 	clot_rate = 0.12
 	threshold_minimum = 40
-	threshold_penalty = 12
+	threshold_penalty = 8
 	status_effect_type = /datum/status_effect/wound/slash/moderate
 	scar_keyword = "slashmoderate"
 
@@ -278,7 +278,7 @@
 	minimum_flow = 1.75
 	clot_rate = 0.07
 	max_per_type = 4
-	threshold_minimum = 70
+	threshold_minimum = 65
 	threshold_penalty = 15
 	demotes_to = /datum/wound/slash/moderate
 	status_effect_type = /datum/status_effect/wound/slash/severe
