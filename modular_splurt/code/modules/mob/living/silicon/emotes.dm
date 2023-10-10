@@ -655,8 +655,8 @@
 /datum/emote/living/audio/wtune
 	key = "whistle_tune"
 	key_third_person = "whistle_tunes"
-	message = "whistles a tune."
-	message_mime = "makes an expression as if whistling."
+	message = "насвистывает мелодию."
+	message_mime = "имитирует насвистывание своем ртом."
 	emote_sound = 'modular_splurt/sound/voice/wtune1.ogg'
 	emote_cooldown = 14.55 SECONDS // Uses longest sound's time.
 
@@ -670,8 +670,8 @@
 /datum/emote/living/audio/terror
 	key = "terror"
 	key_third_person = "terrors"
-	message = "whistles some dreadful tune..."
-	message_mime = "stares with aura full of dread..."
+	message = "насвистывает какую-то жуткую мелодию..."
+	message_mime = "смотрит на вас взглядом, полным ужаса..."
 	emote_sound = 'modular_splurt/sound/voice/terror1.ogg'
 	emote_cooldown = 13.07 SECONDS // Uses longest sound's time.
 
@@ -773,6 +773,16 @@
 	message_mime = "acts out a howl!"
 	emote_sound = 'modular_splurt/sound/voice/wolfhowl.ogg'
 	emote_cooldown = 12.04 SECONDS
+	emote_volume = 100
+
+/datum/emote/living/audio/howl/run_emote(mob/user, params)
+	if (HAS_TRAIT(user, TRAIT_AWOO))
+		var/mob/living/carbon/M = user
+		var/datum/quirk/awoo/quirk_target = locate() in M.roundstart_quirks
+		quirk_target.last_awoo = world.time
+		quirk_target.chance = quirk_target.default_chance
+		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "to_awoo", /datum/mood_event/to_awoo)
+	. = ..()
 
 /datum/emote/living/audio/coyhowl
 	key = "coyhowl"

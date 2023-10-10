@@ -208,7 +208,7 @@
 
 /datum/contractor_item/blackout
 	name = "Blackout"
-	desc = "Request Syndicate Command to distrupt the station's powernet. Disables power across the station for a short duration."
+	desc = "Request InteQ Command to distrupt the station's powernet. Disables power across the station for a short duration."
 	item_icon = "fa-bolt"
 	limited = 2
 	cost = 3
@@ -242,9 +242,9 @@
 	return TRUE
 
 /obj/item/pinpointer/crew/contractor
-	name = "contractor pinpointer"
+	name = "Contractor Pinpointer"
 	desc = "A handheld tracking device that locks onto certain signals. Ignores suit sensors, but is much less accurate."
-	icon_state = "pinpointer_syndicate"
+	icon_state = "pinpointer_hunter"
 	item_state = "pinpointer_black"
 	minimum_range = 10
 	has_owner = TRUE

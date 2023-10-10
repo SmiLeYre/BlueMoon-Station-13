@@ -32,8 +32,7 @@
 
 /datum/action/bloodsucker/gohome/proc/flicker_lights(var/flicker_range, var/beat_volume)
 	for(var/obj/machinery/light/L in view(flicker_range, get_turf(owner)))
-	playsound(get_turf(owner), 'sound/effects/singlebeat.ogg', beat_volume, 1)
-
+		playsound(get_turf(owner), 'sound/effects/singlebeat.ogg', beat_volume, 1)
 
 /datum/action/bloodsucker/gohome/ActivatePower()
 	var/mob/living/carbon/user = owner

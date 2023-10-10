@@ -1115,14 +1115,14 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/derelict/bridge/access)
 "dG" = (
-/obj/structure/frame/computer,
+/obj/structure/salvage/computer,
 /turf/open/floor/plasteel,
 /area/ruin/space/derelict/bridge)
 "dH" = (
-/obj/structure/frame/computer,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/structure/salvage/computer,
 /turf/open/floor/plasteel,
 /area/ruin/space/derelict/bridge)
 "dI" = (
@@ -3021,7 +3021,7 @@
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/derelict/hallway/primary)
 "ka" = (
-/obj/structure/frame/computer,
+/obj/structure/salvage/computer,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/derelict/hallway/primary)
 "kb" = (
@@ -3434,6 +3434,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plating/airless,
 /area/ruin/space/derelict/atmospherics)
 "lw" = (
@@ -3713,10 +3714,10 @@
 /turf/template_noop,
 /area/template_noop)
 "mw" = (
-/obj/structure/frame/computer,
 /obj/structure/window/reinforced{
 	dir = 4
 	},
+/obj/structure/salvage/computer,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/derelict/atmospherics)
 "mx" = (
@@ -3837,6 +3838,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/derelict/hallway/secondary)
 "mW" = (
@@ -4435,7 +4437,7 @@
 /turf/open/floor/plasteel/airless,
 /area/solars/derelict_aft)
 "oE" = (
-/obj/structure/frame/computer{
+/obj/structure/salvage/computer{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -4443,6 +4445,10 @@
 "rK" = (
 /turf/template_noop,
 /area/ruin/space/derelict/medical)
+"su" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plasteel,
+/area/ruin/space/derelict/arrival)
 "tS" = (
 /turf/template_noop,
 /area/ruin/unpowered/no_grav)
@@ -4471,6 +4477,10 @@
 /obj/item/stack/rods,
 /turf/open/floor/plating/airless,
 /area/ruin/space/derelict/hallway/primary/port)
+"Bb" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/derelict/hallway/primary)
 "Bx" = (
 /turf/open/floor/plasteel/airless{
 	icon_state = "damaged3"
@@ -4485,6 +4495,12 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/derelict/arrival)
+"Et" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plasteel/airless{
+	icon_state = "damaged3"
+	},
+/area/space/nearstation)
 "Ev" = (
 /turf/open/floor/plasteel/airless{
 	icon_state = "damaged2"
@@ -4494,10 +4510,18 @@
 /obj/structure/grille,
 /turf/template_noop,
 /area/space/nearstation)
+"GJ" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
 "GM" = (
 /obj/structure/lattice,
 /turf/template_noop,
 /area/ruin/unpowered/no_grav)
+"Ht" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plasteel,
+/area/ruin/space/derelict/solar_control)
 "Ih" = (
 /turf/open/floor/plasteel/airless{
 	icon_state = "damaged3"
@@ -4508,6 +4532,20 @@
 	icon_state = "floorscorched2"
 	},
 /area/space/nearstation)
+"IM" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plasteel/airless{
+	icon_state = "damaged3"
+	},
+/area/ruin/space/derelict/arrival)
+"JC" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/derelict/se_solar)
+"KF" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plasteel,
+/area/ruin/space/derelict/bridge)
 "KN" = (
 /turf/closed/wall,
 /area/ruin/space/derelict/hallway/primary/port)
@@ -4529,12 +4567,36 @@
 "Lv" = (
 /turf/closed/wall,
 /area/space/nearstation)
+"LR" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/derelict/bridge/ai_upload)
+"Ne" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered/no_grav)
+"Nk" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plasteel/airless{
+	icon_state = "damaged5"
+	},
+/area/ruin/space/derelict/hallway/primary)
 "Oj" = (
 /turf/closed/wall/r_wall,
 /area/ruin/space/derelict/bridge/access)
+"Op" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plasteel/airless{
+	icon_state = "damaged4"
+	},
+/area/ruin/space/derelict/bridge/ai_upload)
 "OT" = (
 /turf/closed/wall/r_wall,
 /area/ruin/space/derelict/hallway/primary/port)
+"PN" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/airless,
+/area/ruin/space/derelict/hallway/secondary)
 "Rd" = (
 /obj/item/stack/cable_coil/red,
 /turf/open/floor/plasteel/airless{
@@ -4549,12 +4611,24 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plasteel,
 /area/ruin/space/derelict/gravity_generator)
+"Ss" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plasteel,
+/area/ruin/space/derelict/bridge/access)
 "Sv" = (
 /turf/closed/wall/r_wall,
 /area/space/nearstation)
+"SP" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/derelict/hallway/primary/port)
 "Tm" = (
 /turf/open/floor/plating/airless,
 /area/ruin/space/derelict/hallway/primary/port)
+"TY" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/airless,
+/area/ruin/space/derelict/hallway/primary)
 "Uz" = (
 /turf/open/floor/plating/airless,
 /area/space/nearstation)
@@ -4567,14 +4641,25 @@
 	icon_state = "damaged2"
 	},
 /area/ruin/space/derelict/singularity_engine)
+"Xs" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/derelict/hallway/secondary)
 "YU" = (
 /obj/item/drone_shell/dusty,
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plasteel,
 /area/ruin/space/derelict/bridge/access)
 "ZB" = (
 /obj/structure/lattice,
 /turf/template_noop,
 /area/space/nearstation)
+"ZR" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plasteel/airless{
+	icon_state = "floorscorched1"
+	},
+/area/ruin/space/derelict/hallway/primary)
 
 (1,1,1) = {"
 aa
@@ -7136,7 +7221,7 @@ fZ
 kN
 kW
 fZ
-jY
+ZR
 lF
 gL
 gL
@@ -7716,7 +7801,7 @@ gL
 ZB
 gL
 md
-mU
+Xs
 mZ
 ny
 ac
@@ -8146,7 +8231,7 @@ hz
 jk
 hv
 fZ
-go
+Bb
 js
 go
 gc
@@ -8159,7 +8244,7 @@ go
 go
 go
 fZ
-lG
+Nk
 go
 go
 gm
@@ -9620,7 +9705,7 @@ go
 gc
 go
 gk
-Vz
+SP
 Tm
 lz
 lz
@@ -10438,7 +10523,7 @@ nV
 nV
 wK
 og
-nR
+JC
 nB
 aa
 aa
@@ -10751,7 +10836,7 @@ go
 kJ
 fZ
 KN
-Vz
+SP
 Vz
 lE
 lE
@@ -10811,7 +10896,7 @@ bj
 bj
 bj
 ax
-bz
+LR
 bE
 bK
 bY
@@ -10890,7 +10975,7 @@ nP
 nP
 nZ
 nR
-nR
+JC
 nB
 aa
 aa
@@ -10924,7 +11009,7 @@ bj
 bj
 bj
 ax
-bE
+Op
 bE
 bQ
 bK
@@ -11077,7 +11162,7 @@ fZ
 gz
 hD
 gk
-Bx
+Et
 IA
 IA
 iq
@@ -11112,7 +11197,7 @@ mZ
 mZ
 nG
 nM
-nR
+JC
 nX
 oa
 oi
@@ -11448,7 +11533,7 @@ mU
 mU
 mU
 mU
-mZ
+PN
 nH
 nN
 nN
@@ -11492,14 +11577,14 @@ ax
 bz
 bO
 bO
-bz
-bz
+LR
+LR
 ax
 bj
 bj
 bj
 cs
-cx
+Ss
 cK
 cx
 cT
@@ -11522,7 +11607,7 @@ ge
 fx
 fx
 fZ
-gL
+TY
 aa
 ZB
 ch
@@ -12156,7 +12241,7 @@ ap
 aa
 aa
 at
-az
+Ht
 aB
 aN
 aT
@@ -12394,9 +12479,9 @@ as
 bk
 bA
 bH
-az
-az
-az
+Ht
+Ht
+Ht
 bH
 az
 az
@@ -12655,7 +12740,7 @@ ay
 ay
 ay
 gW
-hr
+IM
 hq
 gV
 ib
@@ -12725,7 +12810,7 @@ as
 as
 as
 az
-az
+Ht
 as
 az
 as
@@ -12752,7 +12837,7 @@ cs
 dI
 ea
 eb
-ea
+KF
 ea
 eS
 oE
@@ -12776,7 +12861,7 @@ gV
 gV
 gV
 gV
-Uz
+GJ
 ZB
 hc
 kc
@@ -13239,7 +13324,7 @@ hf
 hP
 hf
 hf
-hf
+su
 jJ
 ay
 ch
@@ -13334,7 +13419,7 @@ aY
 gV
 hf
 hf
-hf
+su
 hf
 ic
 is
@@ -13342,7 +13427,7 @@ iG
 gW
 jd
 hf
-hf
+su
 hf
 hP
 hf
@@ -13551,7 +13636,7 @@ aa
 aa
 aa
 aa
-ay
+Ne
 ay
 ay
 gD
@@ -13574,7 +13659,7 @@ hf
 ks
 kC
 gW
-hf
+su
 hf
 hf
 hf

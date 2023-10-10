@@ -184,6 +184,13 @@ distance_multiplier - Can be used to multiply the distance at which the sound is
 
 		S.falloff = isnull(max_distance)? FALLOFF_SOUNDS : max_distance //use max_distance, else just use 1 as we are a direct sound so falloff isnt relevant.
 
+		if(iscarbon(src))
+			if(HAS_TRAIT(src, TRAIT_AWOO))
+				if((S.file == 'modular_citadel/sound/voice/awoo.ogg' || S.file == 'modular_splurt/sound/voice/wolfhowl.ogg') && distance > 0)
+					var/mob/living/carbon/M = src
+					var/datum/quirk/awoo/quirk_target = locate() in M.roundstart_quirks
+					quirk_target.do_awoo()
+
 		/*
 		/// Tg reverb removed
 		if(S.environment == SOUND_ENVIRONMENT_NONE)

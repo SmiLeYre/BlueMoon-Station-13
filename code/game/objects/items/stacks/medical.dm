@@ -151,10 +151,10 @@
 		return
 
 	if(limb.current_gauze && (limb.current_gauze.absorption_capacity * 0.8 > absorption_capacity)) // ignore if our new wrap is < 20% better than the current one, so someone doesn't bandage it 5 times in a row
-		to_chat(user, "<span class='warning'>Повязка, что наложена на [user==M ? "вашу конечность - [limb.ru_name]" : "конечность - [limb.ru_name] - персонажа[M]"], пока ещё хорошем состоянии!</span>")
+		to_chat(user, "<span class='warning'>Повязка, что наложена на [user==M ? "вашей [limb.ru_name_v]" : "[limb.ru_name_v] персонажа[M]"], пока ещё хорошем состоянии!</span>")
 		return
 
-	user.visible_message("<span class='warning'>[user] пытается перевязать конечность - [limb.ru_name] - персонажа [M] с помощью [src]...</span>", "<span class='warning'>Вы пытаетесь перевязать раны на [user == M ? "вашей конечности" : "конечности персонажа [M]"] с помощью [src]...</span>")
+	user.visible_message("<span class='warning'>[user] пытается перевязать рану на [limb.ru_name_v] персонажа [M] с помощью [src]...</span>", "<span class='warning'>Вы пытаетесь перевязать раны на [user == M ? "вашей [limb.ru_name_v]" : "[limb.ru_name_v] персонажа [M]"] с помощью [src]...</span>")
 
 	if(!do_after(user, (user == M ? self_delay : other_delay), target=M))
 		return
@@ -184,7 +184,7 @@
 		return ..()
 
 /obj/item/stack/medical/gauze/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] begins tightening \the [src] around [user.ru_ego()] neck! It looks like [user.ru_who()] forgot how to use medical supplies!</span>")
+	user.visible_message("<span class='suicide'>[user] пытается обвязать \the [src] вокруг [user.ru_ego()] шеи! Похоже, [user.ru_who()] не совсем понимает, как пользоваться медикаментами!</span>")
 	return OXYLOSS
 
 /obj/item/stack/medical/gauze/one

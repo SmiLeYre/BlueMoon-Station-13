@@ -581,7 +581,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron=1150, /datum/material/glass=75)
 	attack_verb = list("hit", "bludgeoned", "whacked", "bonked")
-	wound_bonus = -10
+	wound_bonus = 5
 
 /obj/item/wirerod/Initialize(mapload)
 	. = ..()
@@ -776,8 +776,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	block_parry_data = /datum/block_parry_data/liquidator
 	var/default_parry_data = /datum/block_parry_data/liquidator
 	var/quick_parry_data = /datum/block_parry_data/liquidator/quick_parry
-	bare_wound_bonus = 0
-	wound_bonus = 0
+	bare_wound_bonus = 5
+	wound_bonus = 8
 
 /obj/item/staff/broom/liquidator/on_active_parry(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, list/block_return, parry_efficiency, parry_time)
 	. = ..()
@@ -981,7 +981,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	force = 10
-	wound_bonus = -10
+	wound_bonus = 8
 	throwforce = 12
 	attack_verb = list("beat", "smacked")
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 3.5, /datum/material/iron = MINERAL_MATERIAL_AMOUNT * 3.5)
@@ -1016,7 +1016,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	obj_flags = UNIQUE_RENAME
 	var/chaplain_spawnable = TRUE
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
-	wound_bonus = -5
+	wound_bonus = 10
 
 /obj/item/melee/baseball_bat/chaplain/Initialize(mapload)
 	. = ..()

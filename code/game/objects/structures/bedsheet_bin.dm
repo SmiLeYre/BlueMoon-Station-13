@@ -145,7 +145,7 @@ GLOBAL_LIST_INIT(double_bedsheets, list(/obj/item/bedsheet/double,
 /obj/item/bedsheet/vulp
 	name = "vulp bedsheet"
 	icon_state = "sheetvulp1"
-	dream_messages = list("furries", "vulpcanine", "what the heck")
+	dream_messages = list("furries", "vulps", "what the heck")
 
 /obj/item/bedsheet/vulp/vulp2
 	icon_state = "sheetvulp2"

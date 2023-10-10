@@ -37,10 +37,18 @@
 
 /datum/gear/donator/jukebox
 	name = "Handled Jukebox"
-	slot = ITEM_SLOT_MASK
+	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/jukebox
 	ckeywhitelist = list()
 	cost = 4
+	donator_group_id = DONATOR_GROUP_TIER_1
+
+/datum/gear/donator/purple_zippo
+	name = "Purple Zippo"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/lighter/purple
+	ckeywhitelist = list()
+	cost = 1
 	donator_group_id = DONATOR_GROUP_TIER_1
 
 /datum/gear/donator/raiqbawks

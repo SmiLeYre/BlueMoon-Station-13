@@ -442,6 +442,6 @@
 				do_sparks(5, 1, target)
 
 		for(var/obj/machinery/light/lamp in target_turf.contents)
-			lamp.break_light_tube()
+			INVOKE_ASYNC(lamp, TYPE_PROC_REF(/obj/machinery/light, break_light_tube))
 
 //KING??// one day..

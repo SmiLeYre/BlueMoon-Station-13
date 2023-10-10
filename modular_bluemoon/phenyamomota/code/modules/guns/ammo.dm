@@ -2,8 +2,8 @@
 
 /obj/item/projectile/bullet/a556
 	name = "5.56mm bullet"
-	damage = 26
-	wound_bonus = -5
+	damage = 22
+	wound_bonus = 9
 
 /obj/item/ammo_casing/a556
 	name = "5.56mm bullet casing"
@@ -19,8 +19,8 @@
 
 /obj/item/projectile/bullet/a556_ap
 	name = "5.56mm armor-piercing bullet"
-	damage = 19
-	wound_bonus = -5
+	damage = 18
+	wound_bonus = 6
 	armour_penetration = 40
 
 /obj/item/ammo_casing/a556/ap
@@ -36,8 +36,8 @@
 
 /obj/item/projectile/bullet/a556_hp
 	name = "5.56mm hollow-point bullet"
-	damage = 32
-	wound_bonus = -20
+	damage = 26
+	wound_bonus = 10
 	armour_penetration = -50
 
 /obj/item/ammo_casing/a556/hp
@@ -74,7 +74,7 @@
 /obj/item/projectile/bullet/a762x39
 	name = "7.62x39 bullet"
 	damage = 28
-	wound_bonus = 5
+	wound_bonus = 10
 
 /obj/item/ammo_casing/a762x39
 	name = "7.62x39 bullet casing"
@@ -92,7 +92,7 @@
 /obj/item/projectile/bullet/a762x39_ap
 	name = "7.62x39 armor-piercing bullet"
 	damage = 24
-	wound_bonus = 5
+	wound_bonus = 7
 	armour_penetration = 40
 
 /obj/item/ammo_casing/a762x39/ap
@@ -108,8 +108,8 @@
 
 /obj/item/projectile/bullet/a762x39_hp
 	name = "7.62x39 hollow-point bullet"
-	damage = 30
-	wound_bonus = 5
+	damage = 25
+	wound_bonus = 15
 	armour_penetration = -50
 
 /obj/item/ammo_casing/a762x39/hp

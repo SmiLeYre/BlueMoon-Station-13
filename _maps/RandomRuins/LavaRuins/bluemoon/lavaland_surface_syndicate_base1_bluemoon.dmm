@@ -1176,6 +1176,10 @@
 	dir = 1
 	},
 /obj/structure/flora/rock,
+/obj/item/clothing/neck/cloak/syndiecap,
+/obj/item/clothing/suit/toggle/labcoat/depjacket/sec{
+	name = "brig officer jacket"
+	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "hA" = (
@@ -1282,7 +1286,21 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "iw" = (
-/obj/structure/table,
+/obj/structure/closet/secure_closet{
+	icon_state = "sec";
+	name = "brig officer gear locker";
+	req_access_txt = "150"
+	},
+/obj/item/storage/belt/security/full,
+/obj/item/gun/energy/disabler,
+/obj/item/clothing/mask/gas/syndicate/ds,
+/obj/item/clothing/neck/cloak/syndiecap,
+/obj/item/clothing/suit/toggle/labcoat/depjacket/sec{
+	name = "brig officer jacket"
+	},
+/obj/item/clothing/under/rank/security/officer/util/syndicate,
+/obj/item/storage/belt/security/webbing/ds,
+/obj/item/clothing/head/beret/sec/syndicate,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "ix" = (
@@ -1364,7 +1382,7 @@
 /turf/open/floor/engine,
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
 "jj" = (
-/obj/structure/chair/sofa/corp/left,
+/obj/structure/chair/sofa/corp/right,
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /turf/open/floor/plasteel/white/side{
 	dir = 5
@@ -1582,7 +1600,7 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "lu" = (
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -1849,7 +1867,10 @@
 /turf/open/floor/engine/o2,
 /area/ruin/lavaland/unpowered/deepspaceone/engineering)
 "mY" = (
-/obj/structure/closet/secure_closet/contraband/armory,
+/obj/structure/closet/secure_closet/contraband/armory{
+	req_access = null
+	},
+/obj/effect/spawner/lootdrop/armory_contraband,
 /obj/effect/spawner/lootdrop/armory_contraband,
 /obj/effect/spawner/lootdrop/armory_contraband,
 /obj/effect/spawner/lootdrop/armory_contraband,
@@ -2720,7 +2741,7 @@
 /turf/open/floor/wood,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "uX" = (
-/obj/structure/chair/sofa/corp/right,
+/obj/structure/chair/sofa/corp/left,
 /turf/open/floor/plasteel/white/side{
 	dir = 1
 	},
@@ -4195,14 +4216,12 @@
 	pixel_x = 4;
 	pixel_y = -4
 	},
-/obj/item/ammo_box/magazine/sniper_rounds,
-/obj/item/ammo_box/magazine/sniper_rounds,
-/obj/item/ammo_box/magazine/sniper_rounds,
-/obj/item/ammo_box/magazine/sniper_rounds,
 /obj/machinery/light,
 /obj/structure/closet/crate/secure/gear{
 	req_access_txt = "150"
 	},
+/obj/item/ammo_box/c9mm,
+/obj/item/ammo_box/c9mm,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "Fe" = (
@@ -4712,6 +4731,13 @@
 	pixel_y = 5
 	},
 /obj/item/storage/box/beakers/bluespace,
+/obj/item/storage/box/rndboards{
+	pixel_y = 4
+	},
+/obj/item/mmi/posibrain/syndie{
+	pixel_x = 6;
+	pixel_y = 11
+	},
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
 "IH" = (
@@ -5173,13 +5199,7 @@
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "LK" = (
 /obj/structure/table/glass,
-/obj/item/storage/box/rndboards{
-	pixel_y = 4
-	},
-/obj/item/mmi/posibrain/syndie{
-	pixel_x = 6;
-	pixel_y = 11
-	},
+/obj/machinery/cell_charger,
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
 "LL" = (
@@ -5748,7 +5768,9 @@
 /turf/open/indestructible/hoteltile,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "PS" = (
-/obj/structure/safe,
+/obj/structure/safe{
+	req_access = list("syndicate")
+	},
 /obj/item/storage/box/syndie_kit/chameleon/ghostcafe{
 	desc = "It's a box, for storing things.";
 	name = "chameleon kit"
@@ -6686,7 +6708,7 @@
 /turf/open/floor/engine,
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
 "WK" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -8013,9 +8035,9 @@ mb
 Zz
 Fa
 hG
-iw
+zj
 vM
-iw
+lw
 hG
 Fa
 Zz
@@ -8131,9 +8153,9 @@ jA
 Zz
 FE
 gs
-zj
+iw
 hq
-lw
+iw
 mK
 Gp
 Zz

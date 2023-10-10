@@ -134,6 +134,7 @@
 	. = ..()
 	always_emagged = TRUE
 	safety = !safety
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	to_chat(user, "<span class='warning'>You silently [safety ? "enable" : "disable"] [src]'s safety protocols with the cryptographic sequencer.</span>")
 	return TRUE
 

@@ -99,5 +99,10 @@
 	icon_state = "stamp-ntr"
 	dye_color = DYE_CENTCOM
 
+/obj/item/stamp/warden
+	name = "warden's rubber stamp"
+	icon_state = "stamp-warden"
+	dye_color = DYE_RED
+
 /obj/item/stamp/attack_paw(mob/user)
 	return attack_hand(user)

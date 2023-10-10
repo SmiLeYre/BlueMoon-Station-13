@@ -549,7 +549,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		playsound(src, 'sound/items/welder.ogg', 50, 1)
 		return FIRELOSS
 	else
-		user.visible_message("<span class='suicide'>[user] begins whacking себя with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		user.visible_message("<span class='suicide'>[user] begins whacking themself with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 		return BRUTELOSS
 
 /obj/item/lighter/update_icon_state()
@@ -696,7 +696,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	if(get_temperature())
 		. = "<span class='notice'>After some fiddling, [user] manages to light [A] with [src].</span>"
 
-
 /obj/item/lighter/slime
 	name = "Slime Zippo"
 	desc = "A specialty zippo made from slimes and industry. Has a much hotter flame than normal."
@@ -706,6 +705,121 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	overlay_state = "slime"
 	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/medicine/pyroxadone = 5)
 
+//EXTRA LIGHTERS
+/obj/item/lighter/nt_rep
+	name = "Gold Engraved Zippo"
+	desc = "An engraved golden Zippo lighter with the letters NT on it."
+	icon_state = "lighter_overlay_zippo_nt"
+	overlay_state = "zippo_nt"
+	item_state = "ntzippo"
+
+/obj/item/lighter/blue
+	name = "Blue Zippo Lighter"
+	desc = "A zippo lighter made of some blue metal."
+	icon_state = "lighter_overlay_bluezippo"
+	overlay_state = "bluezippo"
+	item_state = "bluezippo"
+
+/obj/item/lighter/purple
+	name = "Purple Engraved Zippo"
+	desc = "All craftsspacemanship is of the highest quality. It is encrusted with refined plasma sheets. On the item is an image of a dwarf and the words 'Strike the Earth!' etched onto the side."
+	icon_state = "lighter_overlay_purple_zippo"
+	overlay_state = "purple_zippo"
+	item_state = "rubysfluffzippo"
+
+/obj/item/lighter/black
+	name = "Black Zippo Lighter"
+	desc = "A black zippo lighter."
+	icon_state = "lighter_overlay_blackzippo"
+	overlay_state = "blackzippo"
+	item_state = "chapzippo"
+
+/obj/item/lighter/engraved
+	name = "QM Engraved Zippo Lighter"
+	desc = "A intricately engraved zippo lighter."
+	icon_state = "lighter_overlay_engravedzippo"
+	overlay_state = "engravedzippo"
+	item_state = "engravedzippo"
+
+/obj/item/lighter/gonzofist
+	name = "Gonzo Fist Zippo"
+	desc = "A Zippo lighter with the iconic Gonzo Fist on a matte black finish."
+	icon_state = "lighter_overlay_gonzozippo"
+	overlay_state = "gonzozippo"
+	item_state = "gonzozippo"
+
+/obj/item/lighter/cap
+	name = "Captain's Zippo"
+	desc = "A limited edition gold Zippo espesially for NT Captains. Looks extremely expensive."
+	icon_state = "lighter_overlay_zippo_cap"
+	overlay_state = "zippo_cap"
+	item_state = "capzippo"
+
+/obj/item/lighter/hop
+	name = "Head of Personnel Zippo"
+	desc = "A limited edition Zippo for NT Heads. Tries it best to look like captain's."
+	icon_state = "lighter_overlay_zippo_hop"
+	overlay_state = "zippo_hop"
+	item_state = "hopzippo"
+
+/obj/item/lighter/hos
+	name = "Head of Security Zippo"
+	desc = "A limited edition Zippo for NT Heads. Fuel it with clown's tears."
+	icon_state = "lighter_overlay_zippo_hos"
+	overlay_state = "zippo_hos"
+	item_state = "hoszippo"
+
+/obj/item/lighter/cmo
+	name = "Chief Medical Officer Zippo"
+	desc = "A limited edition Zippo for NT Heads. Made of hypoallergenic steel."
+	icon_state = "lighter_overlay_zippo_cmo"
+	overlay_state = "zippo_cmo"
+	item_state = "bluezippo"
+
+/obj/item/lighter/ce
+	name = "Chief Engineer Zippo"
+	desc = "A limited edition Zippo for NT Heads. Somebody've tried to repair cover with blue tape."
+	icon_state = "lighter_overlay_zippo_ce"
+	overlay_state = "zippo_ce"
+	item_state = "cezippo"
+
+/obj/item/lighter/rd
+	name = "Research Director Zippo"
+	desc = "A limited edition Zippo for NT Heads. Uses advanced tech to make fire from plasma."
+	icon_state = "lighter_overlay_zippo_rd"
+	overlay_state = "zippo_rd"
+	item_state = "rdzippo"
+
+//Ninja-Zippo//
+/obj/item/lighter/ninja
+	name = "\"Shinobi on a rice field\" Zippo"
+	desc = "A custom made Zippo. It looks almost like a bag of noodles. There is a blood stain on it, and it smells like burnt rice..."
+	icon = 'icons/obj/ninjaobjects.dmi'
+	lefthand_file = 'icons/mob/inhands/antag/ninja_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/antag/ninja_righthand.dmi'
+	icon_state = "lighter_overlay_zippo_ninja"
+	overlay_state = "zippo_ninja"
+	item_state = "zippo_ninja"
+
+/obj/item/lighter/gold
+	name = "\improper Engraved Zippo"
+	desc = "A shiny and relatively expensive zippo lighter. There's a small etched in verse on the bottom that reads, 'No Gods, No Masters, Only Man.'"
+	icon = 'icons/obj/custom.dmi'
+	icon_state = "gold_zippo"
+	item_state = "gold_zippo"
+	w_class = WEIGHT_CLASS_TINY
+	flags_1 = CONDUCT_1
+	slot_flags = ITEM_SLOT_BELT
+	heat = 1500
+	resistance_flags = FIRE_PROOF
+	light_color = LIGHT_COLOR_FIRE
+
+/obj/item/lighter/contractor
+	name = "Contractor Zippo Lighter"
+	desc = "An unique black and gold zippo commonly carried by elite Syndicate agents."
+	icon_state = "lighter_overlay_contractorzippo"
+	overlay_state = "contractorzippo"
+	item_state = "contractorzippo"
 
 ///////////
 //ROLLING//
@@ -814,6 +928,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	super = FALSE
 	to_chat(user, "<span class='warning'>You maximize the voltage of [src].</span>")
 	add_overlay("vapeopen_high")
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	var/datum/effect_system/spark_spread/sp = new /datum/effect_system/spark_spread //for effect
 	sp.set_up(5, 1, src)
 	sp.start()
@@ -1088,8 +1203,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		firecharges = 0
 		bongturnoff()
 
-
-
 /obj/item/bong/proc/bongturnon()
 	icon_state = icon_on
 	item_state = "bongon"
@@ -1099,8 +1212,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_state = icon_off
 	item_state = "bongoff"
 	set_light(0, 0.0)
-
-
 
 /obj/item/bong/coconut
 	name = "Coconut Bong"

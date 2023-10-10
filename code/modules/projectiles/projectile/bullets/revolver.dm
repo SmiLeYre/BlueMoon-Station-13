@@ -3,12 +3,16 @@
 /obj/item/projectile/bullet/n762
 	name = "7.62x38mmR bullet"
 	damage = 60
+	wound_bonus = 10
+	bare_wound_bonus = 4
 
 // .50AE (Desert Eagle)
 
 /obj/item/projectile/bullet/a50AE
 	name = ".50AE bullet"
 	damage = 60
+	wound_bonus = 15
+	bare_wound_bonus = 5
 
 // .38 (Detective's Gun)
 
@@ -19,8 +23,8 @@
 	ricochet_chance = 50
 	ricochet_auto_aim_angle = 10
 	ricochet_auto_aim_range = 3
-	wound_bonus = -20
-	bare_wound_bonus = 10
+	wound_bonus = 5
+	bare_wound_bonus = 8
 	embedding = list(embed_chance=15, fall_chance=2, jostle_chance=2, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.4, pain_mult=3, jostle_pain_mult=5, rip_time=10)
 
 /obj/item/projectile/bullet/c38/match
@@ -32,7 +36,7 @@
 	ricochet_incidence_leeway = 50
 	ricochet_decay_chance = 1
 	ricochet_decay_damage = 1
-	wound_bonus = 0
+	wound_bonus = 7
 
 /obj/item/projectile/bullet/c38/match/bouncy
 	name = ".38 Rubber bullet"
@@ -114,7 +118,7 @@
 /obj/item/projectile/bullet/a357
 	name = ".357 bullet"
 	damage = 60
-	wound_bonus = -70
+	wound_bonus = 10
 
 /obj/item/projectile/bullet/a357/ap
 	name = ".357 armor-piercing bullet"
@@ -149,5 +153,5 @@
 	name = ".45-70 Govt bullet"
 	damage = 60
 	armour_penetration = 40
-	wound_bonus = -80
+	wound_bonus = 10
 

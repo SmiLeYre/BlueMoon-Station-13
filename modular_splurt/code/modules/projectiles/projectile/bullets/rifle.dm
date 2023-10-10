@@ -8,7 +8,7 @@
 /obj/item/projectile/bullet/a308
 	name = ".308 bullet"
 	damage = 45
-	wound_bonus = -15
+	wound_bonus = 15
 	wound_falloff_tile = 0
 
 /obj/item/ammo_casing/a308/sleepy
@@ -40,7 +40,7 @@
 	name = ".308 Rubber bullet"
 	damage = 3
 	armour_penetration = 0
-	wound_bonus = 0
+	wound_bonus = 5
 	stamina = 30
 	sharpness = SHARP_NONE
 	embedding = null
@@ -48,7 +48,7 @@
 /obj/item/projectile/bullet/kaiju
 	name = "8.83 Kaiju Bullet"
 	damage = 100
-	wound_bonus = 0
+	wound_bonus = 5
 	wound_falloff_tile = 0
 
 /obj/item/ammo_casing/kaiju
@@ -61,7 +61,7 @@
 /obj/item/projectile/bullet/a543
 	name = "5.43mm bullet"
 	damage = 35
-	wound_bonus = -15
+	wound_bonus = 12
 	wound_falloff_tile = 0
 
 /obj/item/ammo_casing/a543
@@ -75,7 +75,7 @@
 	name = "5.43mm Rubber bullet"
 	damage = 1
 	armour_penetration = 0
-	wound_bonus = 0
+	wound_bonus = 5
 	stamina = 30
 	sharpness = SHARP_NONE
 	embedding = null
@@ -101,7 +101,7 @@
 	name = ".45 Long Rubber bullet"
 	damage = 3
 	armour_penetration = 0
-	wound_bonus = 0
+	wound_bonus = 5
 	stamina = 35
 	sharpness = SHARP_NONE
 	embedding = null
@@ -110,6 +110,6 @@
 	name = ".45 Long Lethal bullet"
 	damage = 35
 	armour_penetration = 0
-	wound_bonus = -5
+	wound_bonus = 15
 	stamina = 0
 	sharpness = SHARP_EDGED

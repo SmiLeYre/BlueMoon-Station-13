@@ -158,6 +158,10 @@
 /obj/item/gun/energy/pumpaction/toy,
 /turf/open/floor/engine,
 /area/ruin/powered)
+"O" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/powered)
 "P" = (
 /obj/machinery/spaceship_navigation_beacon/invion,
 /turf/closed/wall/mineral/titanium/survival/pod,
@@ -245,7 +249,7 @@ a
 a
 b
 b
-b
+O
 b
 b
 b
@@ -255,7 +259,7 @@ a
 a
 a
 a
-b
+O
 b
 c
 c
@@ -475,7 +479,7 @@ a
 a
 b
 b
-b
+O
 c
 c
 d
@@ -557,7 +561,7 @@ d
 c
 c
 c
-b
+O
 "}
 (19,1,1) = {"
 a
@@ -655,7 +659,7 @@ a
 b
 b
 b
-b
+O
 b
 b
 a

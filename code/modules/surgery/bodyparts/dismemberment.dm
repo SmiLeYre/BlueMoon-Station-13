@@ -20,7 +20,7 @@
 	if(!silent)
 		C.visible_message("<span class='danger'><B>[C]'s [name] is violently dismembered!</B></span>")
 	if(!harmless)
-		C.emote("scream")
+		C.emote("realagony")
 		SEND_SIGNAL(C, COMSIG_ADD_MOOD_EVENT, "dismembered", /datum/mood_event/dismembered)
 	else C.emote("pain")
 	drop_limb()

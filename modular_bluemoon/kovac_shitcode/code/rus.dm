@@ -306,3 +306,21 @@
 	neck = /obj/item/clothing/neck/cloak/nri_cloak
 	r_hand = /obj/item/gun/ballistic/shotgun/rsh12
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/poster/nri=5, /obj/item/ammo_box/shotgun/loaded/buckshot=4)
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////area
+
+//NRI Antagonist clothes and stuff
+
+/obj/item/clothing/under/syndicate/nri_drg
+	name = "covert ops tactical uniform"
+	desc = "A non-descript and slightly suspicious looking uniform."
+	icon_state = "nri_drg"
+	item_state = "nri_drg"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/rus/obj_drg.dmi'
+	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/rus/mob_drg.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/kovac_shitcode/icons/rus/mob_drg_digi.dmi'
+	can_adjust = FALSE
+	unique_reskin = list(
+		"Camo" = list("icon_state" = "nri_drg"),
+		"Turtleneck" = list("icon_state" = "nri_drg_alt")
+	)

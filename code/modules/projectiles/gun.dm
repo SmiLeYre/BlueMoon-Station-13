@@ -74,6 +74,9 @@
 	var/obj/item/kitchen/knife/bayonet
 	var/mutable_appearance/knife_overlay
 	var/can_bayonet = FALSE
+	//SPLURT EDIT ADD
+	var/bayonet_diagonal = FALSE
+	//SPKURT EDIT ADD END
 	var/datum/action/item_action/toggle_gunlight/alight
 	var/mutable_appearance/flashlight_overlay
 
@@ -239,8 +242,9 @@
 	return TRUE
 
 /obj/item/gun/proc/shoot_with_empty_chamber(mob/living/user as mob|obj)
-	to_chat(user, "<span class='danger'>*click*</span>")
+	to_chat(user, "<span class='danger'>*щёлк*</span>")
 	playsound(src, "gun_dry_fire", 30, 1)
+	balloon_alert(user, "Щёлк!")
 
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
 	if(recoil)
@@ -361,9 +365,10 @@
 				user.dropItemToGround(src, TRUE)
 				return
 
-	if(weapon_weight == WEAPON_HEAVY && user.get_inactive_held_item())
-		to_chat(user, "<span class='userdanger'>You need both hands free to fire [src]!</span>")
-		return
+	if (!(HAS_TRAIT(user, TRAIT_AKIMBO)))
+		if(weapon_weight == WEAPON_HEAVY && user.get_inactive_held_item())
+			to_chat(user, "<span class='userdanger'>You need both hands free to fire [src]!</span>")
+			return
 
 	user.DelayNextAction()
 
@@ -733,6 +738,11 @@
 		if(bayonet.icon_state in icon_states('icons/obj/guns/bayonets.dmi'))		//Snowflake state?
 			state = bayonet.icon_state
 		var/icon/bayonet_icons = 'icons/obj/guns/bayonets.dmi'
+		//SPLURT EDIT ADD
+		if(bayonet_diagonal == TRUE )
+			state = "bayonet_diagonal"
+			bayonet_icons = 'modular_splurt/icons/obj/guns/bayonets.dmi'
+		//SPLURT EDIT ADD END
 		knife_overlay = mutable_appearance(bayonet_icons, state)
 		knife_overlay.pixel_x = knife_x_offset
 		knife_overlay.pixel_y = knife_y_offset

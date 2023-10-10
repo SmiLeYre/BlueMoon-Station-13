@@ -233,6 +233,7 @@
 	. = SEND_SIGNAL(src, COMSIG_ATOM_EMAG_ACT)
 	if(!locked)
 		return
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	boom(user)
 	return TRUE
 

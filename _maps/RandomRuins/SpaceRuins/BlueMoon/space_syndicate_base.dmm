@@ -7731,7 +7731,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	color = "#DE3A3A"
 	},
 /turf/open/floor/wood,
@@ -9120,7 +9120,7 @@
 	req_access_txt = "150";
 	name = "Dorms Blast Door Control"
 	},
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	color = "#DE3A3A";
 	dir = 4
 	},
@@ -9618,7 +9618,7 @@
 	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/power/apc/auto_name/north,
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	color = "#DE3A3A";
 	dir = 4
 	},
@@ -11534,7 +11534,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	color = "#DE3A3A"
 	},
 /turf/open/floor/wood,

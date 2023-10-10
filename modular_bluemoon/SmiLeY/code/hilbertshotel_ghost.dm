@@ -28,6 +28,10 @@
 	name = "Apartment_2"
 	mappath = '_maps/templates/apartment_2.dmm'
 
+/datum/map_template/ghost_cafe_rooms/three
+	name = "Apartment_3"
+	mappath = '_maps/templates/apartment_3.dmm'
+
 /datum/map_template/ghost_cafe_rooms/bar
 	name = "Apartment_bar"
 	mappath = '_maps/templates/apartment_bar.dmm'
@@ -35,3 +39,11 @@
 /datum/map_template/ghost_cafe_rooms/syndi
 	name = "Apartment_syndi"
 	mappath = '_maps/templates/apartment_syndi.dmm'
+
+/datum/map_template/ghost_cafe_rooms/dojo
+	name = "Apartment_dojo"
+	mappath = '_maps/templates/apartment_dojo.dmm'
+
+/datum/map_template/ghost_cafe_rooms/sauna
+	name = "Apartment_sauna"
+	mappath = '_maps/templates/apartment_sauna.dmm'

@@ -103,6 +103,7 @@
 	name = "hacked genital fluid implant"
 	use_blacklist = FALSE
 	obj_flags |= EMAGGED
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 
 /*
  * Action datum

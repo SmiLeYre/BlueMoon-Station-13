@@ -34,8 +34,8 @@
 	w_class = WEIGHT_CLASS_SMALL
 	force = 15
 	throwforce = 25
-	wound_bonus = -30
-	bare_wound_bonus = 30
+	wound_bonus = 10
+	bare_wound_bonus = 20
 	armour_penetration = 35
 	actions_types = list(/datum/action/item_action/cult_dagger)
 
@@ -57,8 +57,8 @@
 	w_class = WEIGHT_CLASS_BULKY
 	force = 30 // whoever balanced this got beat in the head by a bible too many times good lord
 	throwforce = 10
-	wound_bonus = -80
-	bare_wound_bonus = 30
+	wound_bonus = 20
+	bare_wound_bonus = 15
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "rended")
 
@@ -790,6 +790,15 @@
 		qdel(spear_act)
 	return ..()
 
+/obj/item/cult_spear/pickup(mob/living/user)
+	. = ..()
+	if(!iscultist(user))
+		to_chat(user, "<span class='cultlarge'>\"You want to be blind, do you?\"</span>")
+		user.dropItemToGround(src, TRUE)
+		user.Dizzy(30)
+		user.DefaultCombatKnockdown(100)
+		user.blind_eyes(30)
+
 /obj/item/cult_spear/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	var/turf/T = get_turf(hit_atom)
 	if(isliving(hit_atom))
@@ -883,6 +892,15 @@
 	if(halberd_act)
 		qdel(halberd_act)
 	return ..()
+
+/obj/item/cult_halberd/pickup(mob/living/user)
+	. = ..()
+	if(!iscultist(user))
+		to_chat(user, "<span class='cultlarge'>\"You want to be blind, do you?\"</span>")
+		user.dropItemToGround(src, TRUE)
+		user.Dizzy(30)
+		user.DefaultCombatKnockdown(100)
+		user.blind_eyes(30)
 
 /obj/item/cult_halberd/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	var/turf/T = get_turf(hit_atom)

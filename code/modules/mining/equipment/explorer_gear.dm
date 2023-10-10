@@ -10,7 +10,7 @@
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	hoodtype = /obj/item/clothing/head/hooded/explorer
-	armor = list(MELEE = 30, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 50, BIO = 100, RAD = 50, FIRE = 50, ACID = 50)
+	armor = list(MELEE = 30, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 50, BIO = 100, RAD = 50, FIRE = 50, ACID = 50, WOUND = 15)
 	flags_inv = HIDEJUMPSUIT|HIDETAUR
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/resonator, /obj/item/mining_scanner, /obj/item/t_scanner/adv_mining_scanner, /obj/item/gun/energy/kinetic_accelerator, /obj/item/pickaxe)
 	resistance_flags = FIRE_PROOF
@@ -179,7 +179,7 @@
 	icon_state = "heva"
 	item_state = "heva"
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
-	armor = list(MELEE = 20, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 20, BIO = 100, RAD = 20, FIRE = 100, ACID = 20)
+	armor = list(MELEE = 20, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 20, BIO = 100, RAD = 20, FIRE = 100, ACID = 20, WOUND = 15)
 	resistance_flags = FIRE_PROOF | GOLIATH_WEAKNESS
 
 /obj/item/clothing/head/hooded/explorer/heva/equipped(mob/living/carbon/human/user, slot)
@@ -199,7 +199,7 @@
 	icon_state = "heva"
 	item_state = "heva"
 	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEYES|HIDEEARS|HIDEHAIR
-	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 60, FIRE = 40, ACID = 50)
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 60, FIRE = 40, ACID = 50, WOUND = 15)
 
 /****************Exo-Suit and Mask****************/
 
@@ -214,7 +214,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	hoodtype = /obj/item/clothing/head/hooded/explorer/exo
-	armor = list(MELEE = 55, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 50, BIO = 25, RAD = 25, FIRE = 10, ACID = 10)
+	armor = list(MELEE = 55, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 50, BIO = 25, RAD = 25, FIRE = 10, ACID = 10, WOUND = 20)
 	resistance_flags = FIRE_PROOF | GOLIATH_RESISTANCE
 
 /obj/item/clothing/head/hooded/explorer/exo
@@ -225,7 +225,7 @@
 	anthro_mob_worn_overlay = 'modular_sand/icons/mob/clothing/head_muzzled.dmi'
 	icon_state = "exo"
 	item_state = "exo"
-	armor = list(MELEE = 55, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 50, BIO = 25, RAD = 25, FIRE = 10, ACID = 10)
+	armor = list(MELEE = 55, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 50, BIO = 25, RAD = 25, FIRE = 10, ACID = 10, WOUND = 20)
 	resistance_flags = FIRE_PROOF | GOLIATH_RESISTANCE
 
 /obj/item/clothing/mask/gas/exo

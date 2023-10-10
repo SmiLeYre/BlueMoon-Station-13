@@ -308,7 +308,6 @@
 
 	CHECK_TICK
 
-	// handle_hearts()
 	handle_hearts()
 
 	if(CONFIG_GET(flag/reveal_everything))
@@ -409,7 +408,7 @@
 	//Station Goals
 	parts += goal_report()
 	//Economy & Money
-	parts += market_report()
+//	parts += market_report()
 	//Ambitions
 	parts += ambitions_report()
 
@@ -636,29 +635,29 @@
 		return "<div class='panel stationborder'><ul>[parts.Join()]</ul></div>"
 
 ///Generate a report for how much money is on station, as well as the richest crewmember on the station.
-/datum/controller/subsystem/ticker/proc/market_report()
-	var/list/parts = list()
-	///This is the richest account on station at roundend.
-	var/datum/bank_account/mr_moneybags
-	///This is the station's total wealth at the end of the round.
-	var/station_vault = 0
-	///How many players joined the round.
-	var/total_players = GLOB.joined_player_list.len
-	for(var/obj/item/card/id/id in SSeconomy.bank_accounts)
-		var/datum/bank_account/current_acc = SSeconomy.bank_accounts[id]
-		station_vault += current_acc.account_balance
-		if(!mr_moneybags || mr_moneybags.account_balance < current_acc.account_balance)
-			mr_moneybags = current_acc
-	parts += "<div class='panel stationborder'><span class='header'>Экономический отчёт</span><br>"
-	parts += "Всего было заработано [SSeconomy.station_total] кредитов экипажем.<br>"
-	if(total_players > 0)
-		parts += "В среднем каждый заработал [SSeconomy.station_total/total_players] кредитов.<br>"
-		log_econ("Roundend credit total: [station_vault] credits. Average Credits: [station_vault/total_players]")
-	if(mr_moneybags)
-		parts += "Самый богатый член экипажа был <b>[mr_moneybags.account_holder] с [mr_moneybags.account_balance]</b> заработанными кредитами!</div>"
-	else
-		parts += "Чудесным образом никто не заработал кредиты за эту смену! Придётся резать бюджеты...</div>"
-	return parts
+///datum/controller/subsystem/ticker/proc/market_report()
+//	var/list/parts = list()
+//	///This is the richest account on station at roundend.
+//	var/datum/bank_account/mr_moneybags
+//	///This is the station's total wealth at the end of the round.
+//	var/station_vault = 0
+//	///How many players joined the round.
+//	var/total_players = GLOB.joined_player_list.len
+//	for(var/obj/item/card/id/id in SSeconomy.bank_accounts)
+//		var/datum/bank_account/current_acc = SSeconomy.bank_accounts[id]
+//		station_vault += current_acc.account_balance
+//		if(!mr_moneybags || mr_moneybags.account_balance < current_acc.account_balance)
+//			mr_moneybags = current_acc
+//	parts += "<div class='panel stationborder'><span class='header'>Экономический отчёт</span><br>"
+//	parts += "Всего было заработано [SSeconomy.station_total] кредитов экипажем.<br>"
+//	if(total_players > 0)
+//		parts += "В среднем каждый заработал [SSeconomy.station_total/total_players] кредитов.<br>"
+//		log_econ("Roundend credit total: [station_vault] credits. Average Credits: [station_vault/total_players]")
+//	if(mr_moneybags)
+//		parts += "Самый богатый член экипажа был <b>[mr_moneybags.account_holder] с [mr_moneybags.account_balance]</b> заработанными кредитами!</div>"
+//	else
+//		parts += "Чудесным образом никто не заработал кредиты за эту смену! Придётся резать бюджеты...</div>"
+//	return parts
 
 /datum/controller/subsystem/ticker/proc/ambitions_report()
 	var/list/parts = list()
@@ -824,8 +823,16 @@
 /proc/printplayer(datum/mind/ply, fleecheck)
 	var/jobtext = ""
 	if(ply.assigned_role)
-		jobtext = " (<b>[ply.assigned_role]</b>)"
-	var/text = "<b>[ply.key]</b> - <b>[ply.name]</b>[jobtext] "
+		jobtext = " the <b>[ply.assigned_role]</b>"
+	var/text
+	if(ply.hide_ckey)
+		text = (
+			"<b>[ply.name]</b>[jobtext] and"
+			)
+	else
+		text = (
+			"<b>[ply.key]</b> was <b>[ply.name]</b>[jobtext] and"
+			)
 	if(ply.current)
 		if(ply.current.stat == DEAD)
 			text += " <span class='redtext'>погиб</span>"

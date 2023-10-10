@@ -123,7 +123,7 @@
 
 /datum/mood_event/family_heirloom_missing
 	description = "<span class='warning'>Я скучаю по своей семейной реликвии...</span>\n"
-	mood_change = -4
+	mood_change = -8
 
 /datum/mood_event/healsbadman
 	description = "<span class='warning'>Чувствую себя намного лучше, но неприятный осадок ещё остался.</span>\n"
@@ -153,7 +153,7 @@
 	description = "<span class='warning'>Я только что вырвал[owner_mob.ru_a()] на себя. Мерзость.</span>\n"
 
 /datum/mood_event/painful_medicine
-	description = "<span class='warning'>Mожет медицина и лечит, но сейчас мне больнее некуда.</span>\n"
+	description = "<span class='warning'>Лекарства делают свои дело, но боль ещё не успела затихнуть.</span>\n"
 	mood_change = -5
 	timeout = 1 MINUTES
 

@@ -352,6 +352,7 @@
 	. = ..()
 	if(obj_flags & EMAGGED)
 		return
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	locked = FALSE
 	obj_flags |= EMAGGED
 	user?.visible_message("[user.name] emags [src].","<span class='notice'>You short out the lock.</span>")

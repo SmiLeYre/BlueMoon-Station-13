@@ -10,7 +10,7 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
  */
 /datum/gateway_destination
 	var/name = "Unknown Destination"
-	var/wait = 30 /// How long after roundstart this destination becomes active
+	var/wait = 0 /// How long after roundstart this destination becomes active
 	var/enabled = TRUE /// If disabled, the destination won't be available
 	var/hidden = FALSE /// Will not show on gateway controls at all.
 
@@ -25,9 +25,14 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 		. = "Connection desynchronized. Recalibration in progress."
 
 /* Check if the movable is allowed to arrive at this destination (exile implants mostly) */
+/** SKYRAT EDIT - CYBORGS CANT USE GETWAY
 /datum/gateway_destination/proc/incoming_pass_check(atom/movable/AM)
 	return TRUE
-
+**/
+// Just a reminder that the home gateway overrides this proc so if a borg someone finds themself in an away mission they can still leave
+/datum/gateway_destination/proc/incoming_pass_check(atom/movable/AM)
+	return !iscyborg(AM)
+// SKYRAT EDIT - END
 /* Get the actual turf we'll arrive at */
 /datum/gateway_destination/proc/get_target_turf()
 	CRASH("get target turf not implemented for this destination type")
@@ -89,7 +94,7 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 
 /datum/gateway_destination/gateway/post_transfer(atom/movable/AM)
 	. = ..()
-	addtimer(CALLBACK(AM,/atom/movable.proc/setDir,SOUTH),0)
+	addtimer(CALLBACK(AM, TYPE_PROC_REF(/atom/movable, setDir),SOUTH),0)
 
 /* Special home destination, so we can check exile implants */
 /datum/gateway_destination/gateway/home
@@ -133,6 +138,19 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 	invisibility = INVISIBILITY_ABSTRACT
 
 /obj/effect/gateway_portal_bumper/Bumped(atom/movable/AM)
+	//SKYRAT EDIT ADDITION
+	var/list/type_blacklist = list(
+		/obj/item/mmi,
+		/mob/living/silicon,
+	)
+	if(is_type_in_list(AM, type_blacklist))
+		return
+	for(var/atom/movable/content_item as anything in AM.get_all_contents())
+		if(!is_type_in_list(content_item, type_blacklist))
+			continue
+		to_chat(AM, span_warning("[content_item] seems to be blocking you from entering the gateway!"))
+		return
+	//SKYRAT EDIT END
 	if(get_dir(src,AM) == SOUTH)
 		gateway.Transfer(AM)
 
@@ -170,18 +188,40 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 	/// bumper object, the thing that starts actual teleport
 	var/obj/effect/gateway_portal_bumper/portal
 	/// Visual object for handling the viscontents
-	var/obj/effect/gateway_portal_effect/portal_visuals
-	/// Overlay of the lights. They light up fully when it charges fully.
-	var/image/light_overlay
+	var/atom/movable/screen/map_view/gateway_port/portal_visuals
+	var/teleportion_possible = FALSE
+	var/transport_active = FALSE
+
+	//SKYRAT EDIT ADDITION
+	var/requires_key = FALSE
+	var/key_used = FALSE
+
+/obj/item/key/gateway
+	name = "global recall key"
+	desc = "Recall to the Global Gateway."
+	icon = 'modular_bluemoon/smiley/icons/abductorkey.dmi'
+	icon_state = "gateway_key"
+	resistance_flags = INDESTRUCTIBLE
+
+/obj/machinery/gateway/attacked_by(obj/item/I, mob/living/user)
+	. = ..()
+	if(istype(I, /obj/item/key/gateway) && requires_key)
+		to_chat(user, "<span class='notice'>You insert [src] into the keyway, unlocking the gateway!</span>")
+		key_used = TRUE
+		qdel(I)
+		return
+	//SKYRAT EDIT END
 
 /obj/machinery/gateway/Initialize(mapload)
 	generate_destination()
 	update_appearance()
 	portal_visuals = new
-	vis_contents += portal_visuals
+	portal_visuals.generate_view("gateway_popup_[REF(src)]")
+	portal_visuals.update_portal_filters()
 	return ..()
 
 /obj/machinery/gateway/Destroy()
+	QDEL_NULL(portal_visuals)
 	destination.target_gateway = null
 	GLOB.gateway_destinations -= destination
 	destination = null
@@ -198,25 +238,51 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 	target = null
 	dest.deactivate(src)
 	QDEL_NULL(portal)
-	if(use_power == ACTIVE_POWER_USE)
-		use_power = IDLE_POWER_USE
+	use_power(IDLE_POWER_USE)
+	transport_active = FALSE
 	update_appearance()
 	portal_visuals.reset_visuals()
 
 /obj/machinery/gateway/process()
 	if((stat & (NOPOWER)) && use_power)
+		teleportion_possible = FALSE
 		if(target)
 			deactivate()
 		return
-	if(light_overlay)
+	if(teleportion_possible)
 		return
-	for(var/datum/gateway_destination/destination as anything in GLOB.gateway_destinations)
-		if(!destination.is_available())
+	for(var/datum/gateway_destination/possible_destination as anything in GLOB.gateway_destinations)
+		if(!valid_destination(possible_destination) || !possible_destination.is_available())
 			continue
-		light_overlay = image(icon, "portal_light")
-		light_overlay.alpha = 0
-		animate(light_overlay, 3 SECONDS, alpha = 255)
-		add_overlay(light_overlay)
+		teleportion_possible = TRUE
+		update_appearance()
+		break
+
+/obj/machinery/gateway/proc/valid_destination(datum/gateway_destination/possible_destination)
+	if(possible_destination == destination)
+		return FALSE
+	if(istype(possible_destination, /datum/gateway_destination/gateway))
+		var/datum/gateway_destination/gateway/gateway_dest = possible_destination
+		if(gateway_dest.target_gateway == gateway_dest.target_gateway)
+			return FALSE
+	return TRUE
+
+/obj/machinery/gateway/proc/show_light_overlays(light_state, toggle)
+	if(!toggle)
+		return list()
+
+	var/list/image/to_animate = list()
+	to_animate += image('icons/obj/machines/gateway.dmi', light_state)
+	var/image/glowing_light = image('icons/obj/machines/gateway.dmi', light_state)
+	glowing_light.color = GLOB.emissive_color
+	SET_PLANE_EXPLICIT(glowing_light, EMISSIVE_PLANE, src)
+	to_animate += glowing_light
+	return to_animate
+
+/obj/machinery/gateway/update_overlays()
+	. = ..()
+	. += show_light_overlays("portal_light", teleportion_possible)
+	. += show_light_overlays("portal_effect", transport_active)
 
 /obj/machinery/gateway/safe_throw_at(atom/target, range, speed, mob/thrower, spin = TRUE, diagonals_first = FALSE, datum/callback/callback, force = MOVE_FORCE_STRONG, gentle = FALSE)
 	return
@@ -228,11 +294,16 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 /obj/machinery/gateway/proc/activate(datum/gateway_destination/D)
 	if(!powered() || target)
 		return
+	//SKYRAT EDIT ADDITION
+	if(requires_key && !key_used)
+		return
+	//SKYRAT EDIT END
 	target = D
 	target.activate(destination)
 	portal_visuals.setup_visuals(target)
+	transport_active = TRUE
 	generate_bumper()
-	use_power = ACTIVE_POWER_USE
+	use_power(ACTIVE_POWER_USE)
 	update_appearance()
 
 /obj/machinery/gateway/proc/Transfer(atom/movable/AM)
@@ -240,6 +311,19 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 		return
 	AM.forceMove(target.get_target_turf())
 	target.post_transfer(AM)
+
+/obj/machinery/gateway/attack_ghost(mob/user)
+	. = ..()
+	if(.)
+		return
+	var/turf/tar_turf = target?.get_target_turf()
+	if(isnull(tar_turf))
+		to_chat(user, span_warning("There's no active destination for the gateway... or it's broken. Maybe try again later?"))
+		return
+//	if(is_secret_level(tar_turf.z) && !user.client?.holder)
+//		to_chat(user, span_warning("The gateway destination is secret."))
+//		return
+	Transfer(user)
 
 /* Station's primary gateway */
 /obj/machinery/gateway/centerstation
@@ -271,6 +355,20 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 
 /obj/machinery/gateway/away/interact(mob/user, special_state)
 	. = ..()
+	//SKYRAT EDIT ADDITION
+	var/list/type_blacklist = list(
+		/obj/item/mmi,
+		/mob/living/silicon,
+		/obj/item/borg/upgrade/ai,
+	)
+	if(is_type_in_list(user, type_blacklist))
+		return
+	for(var/atom/movable/content_item as anything in user.get_contents())
+		if(!is_type_in_list(content_item, type_blacklist))
+			continue
+		to_chat(user, span_warning("[content_item] seems to be blocking you from entering the gateway!"))
+		return
+	//SKYRAT EDIT END
 	if(!target)
 		if(!GLOB.the_gateway)
 			to_chat(user,span_warning("Home gateway is not responding!"))
@@ -284,6 +382,7 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 /obj/machinery/computer/gateway_control
 	name = "Gateway Control"
 	desc = "Human friendly interface to the mysterious gate next to it."
+	req_access = list(ACCESS_GATEWAY) //SKYRAT EDIT ADDITION
 	var/obj/machinery/gateway/G
 
 /obj/machinery/computer/gateway_control/Initialize(mapload, obj/item/circuitboard/C)
@@ -294,6 +393,7 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 	. = ..()
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
+		G.portal_visuals.display_to(user)
 		ui = new(user, src, "Gateway", name)
 		ui.open()
 
@@ -302,12 +402,13 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 	.["gateway_present"] = G
 	.["gateway_status"] = G ? G.powered() : FALSE
 	.["current_target"] = G?.target?.get_ui_data()
+	.["gateway_mapkey"] = G.portal_visuals.assigned_map
 	var/list/destinations = list()
 	if(G)
-		for(var/datum/gateway_destination/D in GLOB.gateway_destinations)
-			if(D == G.destination)
+		for(var/datum/gateway_destination/possible_destination in GLOB.gateway_destinations)
+			if(!G.valid_destination(possible_destination))
 				continue
-			destinations += list(D.get_ui_data())
+			destinations += list(possible_destination.get_ui_data())
 	.["destinations"] = destinations
 
 /obj/machinery/computer/gateway_control/ui_act(action, list/params)
@@ -319,6 +420,13 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 			try_to_linkup()
 			return TRUE
 		if("activate")
+			//SKYRAT EDIT ADDITION BEGIN
+			if(ishuman(usr))
+				var/mob/living/carbon/human/interacting_human = usr
+				if(!allowed(interacting_human))
+					to_chat(interacting_human, "<span class='notice'>Error, you do not have the required access to link up the gateway.</span>")
+					return FALSE
+			//SKYRAT EDIT END
 			var/datum/gateway_destination/D = locate(params["destination"]) in GLOB.gateway_destinations
 			try_to_connect(D)
 			return TRUE
@@ -326,6 +434,10 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 			if(G?.target)
 				G.deactivate()
 			return TRUE
+
+/obj/machinery/computer/gateway_control/ui_close(mob/user)
+	. = ..()
+	user.client.clear_map(user)
 
 /obj/machinery/computer/gateway_control/proc/try_to_linkup()
 	G = locate(/obj/machinery/gateway) in view(7,get_turf(src))
@@ -341,36 +453,68 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 	default_raw_text = "Congratulations,<br><br>Your station has been selected to carry out the Gateway Project.<br><br>The equipment will be shipped to you at the start of the next quarter.<br> You are to prepare a secure location to house the equipment as outlined in the attached documents.<br><br>--Nanotrasen Bluespace Research"
 	name = "Confidential Correspondence, Pg 1"
 
-/obj/effect/gateway_portal_effect
-	appearance_flags = KEEP_TOGETHER|TILE_BOUND|PIXEL_SCALE
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-	vis_flags = VIS_INHERIT_ID
-	layer = GATEWAY_UNDERLAY_LAYER //Slightly lower than gateway itself
-	var/alpha_icon = 'icons/obj/machines/gateway.dmi'
-	var/alpha_icon_state = "portal_mask"
+/atom/movable/screen/map_view/gateway_port
 	var/datum/gateway_destination/our_destination
+	/// Handles the background of the portal, ensures the effect well, works properly
+	var/atom/movable/screen/background/cam_background
 
+/atom/movable/screen/map_view/gateway_port/Initialize(mapload, datum/hud/hud_owner)
+	. = ..()
+	cam_background = new
+	cam_background.del_on_map_removal = FALSE
+	// Draw above everything
+	cam_background.layer = 200
+	cam_background.plane = HIGHEST_EVER_PLANE
+	cam_background.blend_mode = BLEND_OVERLAY
 
-/obj/effect/gateway_portal_effect/proc/setup_visuals(datum/gateway_destination/D)
+/atom/movable/screen/map_view/proc/generate_view(map_key)
+	// Map keys have to start and end with an A-Z character,
+	// and definitely NOT with a square bracket or even a number.
+	// I wasted 6 hours on this. :agony:
+	// -- Stylemistake
+	assigned_map = map_key
+	set_position(1, 1)
+
+/atom/movable/screen/map_view/gateway_port/generate_view(map_key)
+	. = ..()
+	cam_background.assigned_map = assigned_map
+	cam_background.fill_rect(1, 1, 3, 3)
+
+/atom/movable/screen/map_view/gateway_port/Destroy()
+	QDEL_NULL(cam_background)
+	return ..()
+
+/atom/movable/screen/map_view/gateway_port/proc/display_to(mob/show_to)
+	show_to.client.register_map_obj(cam_background)
+
+/atom/movable/screen/map_view/gateway_port/proc/setup_visuals(datum/gateway_destination/D)
 	our_destination = D
 	update_portal_filters()
 
-/obj/effect/gateway_portal_effect/proc/reset_visuals()
+/atom/movable/screen/map_view/gateway_port/proc/reset_visuals()
 	our_destination = null
 	update_portal_filters()
 
-/obj/effect/gateway_portal_effect/proc/update_portal_filters()
-	clear_filters()
+/atom/movable/screen/map_view/gateway_port/proc/update_portal_filters()
+	cam_background.clear_filters()
+	// ok so what this used to do was render the tiles "on the other side" of the gateway onto the gateway mask
+	// Unfortunately since I've removed the plane inheriting from /atom vis_flags, this no longer works
+	// You could setup gateways to draw onto "lower then everything" z layers, but generating a whole stack of plane masters
+	// Just for this one effect is kinda silly. Maybe next time
+	// Rather then that, let's just render a little preview port to the console, because for reasons that's trivial
 	vis_contents = null
 
-	if(!our_destination)
+	var/turf/center_turf = our_destination?.get_target_turf()
+	if(!center_turf)
+		// Draw static
+		cam_background.icon_state = "scanline2"
+		cam_background.color = null
+		cam_background.alpha = 255
 		return
 
-	add_filter("portal_alpha", 1, list("type" = "alpha", "icon" = icon(alpha_icon, alpha_icon_state), "x" = 32, "y" = 32))
-	add_filter("portal_blur", 1, list("type" = "blur", "size" = 0.5))
-	add_filter("portal_ripple", 1, list("type" = "ripple", "size" = 2, "radius" = 1, "falloff" = 1, "y" = 7))
+	cam_background.add_filter("portal_blur", 1, list("type" = "blur", "size" = 0.5))
 
-	animate(get_filter("portal_ripple"), time = 1.3 SECONDS, loop = -1, easing = LINEAR_EASING, radius = 32)
-
-	var/turf/center_turf = our_destination.get_target_turf()
-	vis_contents += block(locate(center_turf.x - 1, center_turf.y - 1, center_turf.z), locate(center_turf.x + 1, center_turf.y + 1, center_turf.z))
+	vis_contents += TURF_NEIGHBORS(center_turf)
+	cam_background.icon_state = "scanline4"
+	cam_background.color = "#adadff"
+	cam_background.alpha = 128

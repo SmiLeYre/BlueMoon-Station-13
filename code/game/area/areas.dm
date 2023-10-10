@@ -61,7 +61,19 @@
 	var/parallax_move_angle = 0
 
 	var/list/ambientsounds = GENERIC
+
 	flags_1 = CAN_BE_DIRTY_1
+
+	///Used to define constant (loop) area ambience
+	var/shipambience = 'sound/ambience/shipambience.ogg'
+
+	///Used to decide what the minimum time between ambience is
+	var/min_ambience_cooldown = 30 SECONDS
+	///Used to decide what the maximum time between ambience is
+	var/max_ambience_cooldown = 60 SECONDS
+
+	///Does this area immediately play an ambience track upon enter?
+	var/forced_ambience = FALSE
 
 	var/list/firedoors
 	var/list/cameras
@@ -529,7 +541,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	if(area_emergency_mode) //Fires are not legally allowed if the power is off
 		return
 	for(var/obj/machinery/light/L in get_sub_areas_contents(src))
-		L.update()
+		INVOKE_ASYNC(L, TYPE_PROC_REF(/obj/machinery/light, update))
 
 /area/proc/updateicon()
 /**
@@ -651,36 +663,50 @@ GLOBAL_LIST_EMPTY(teleportlocs)
  * If the area has ambience, then it plays some ambience music to the ambience channel
  */
 /area/Entered(atom/movable/M, atom/OldLoc)
-	set waitfor = FALSE
-	SEND_SIGNAL(src, COMSIG_AREA_ENTERED, M)
-	SEND_SIGNAL(M, COMSIG_ENTER_AREA, src) //The atom that enters the area
-	if(!isliving(M))
-		return
 
 	var/mob/living/L = M
 	var/turf/oldTurf = get_turf(OldLoc)
 	var/area/A = oldTurf?.loc
+	var/area/my_area = get_area(L)
+
+
+	set waitfor = FALSE
+	SEND_SIGNAL(src, COMSIG_AREA_ENTERED, M, A)
+	SEND_SIGNAL(M, COMSIG_ENTER_AREA, src) //The atom that enters the area
+
+	if(!isliving(M))
+		return
+
 	if(A && (A.has_gravity != has_gravity))
 		L.update_gravity(L.mob_has_gravity())
 
 	if(!L.ckey)
 		return
 
-	// Ambience goes down here -- make sure to list each area separately for ease of adding things in later, thanks! Note: areas adjacent to each other should have the same sounds to prevent cutoff when possible.- LastyScratch
-	if(L.client && !L.client.ambience_playing && L.client.prefs.toggles & SOUND_SHIP_AMBIENCE)
-		L.client.ambience_playing = 1
-		SEND_SOUND(L, sound('sound/ambience/shipambience.ogg', repeat = 1, wait = 0, volume = 35, channel = CHANNEL_BUZZ))
+	if(L.client.prefs.toggles & SOUND_SHIP_AMBIENCE && shipambience != A.shipambience)
+		L.client.ambience_playing = 0
+		if(L.client && !L.client.ambience_playing)
+			L.client.ambience_playing = 1
+			SEND_SOUND(L, sound(my_area.shipambience, repeat = 1, wait = 0, volume = 35, channel = CHANNEL_BUZZ))
 
 	if(!(L.client && (L.client.prefs.toggles & SOUND_AMBIENCE)))
 		return //General ambience check is below the ship ambience so one can play without the other
 
-	if(prob(35))
-		var/sound = pick(ambientsounds)
+	addtimer(CALLBACK(L.client, /client/proc/update_ambience), 2)
 
-		if(!L.client.played)
-			SEND_SOUND(L, sound(sound, repeat = 0, wait = 0, volume = 25, channel = CHANNEL_AMBIENCE))
-			L.client.played = TRUE
-			addtimer(CALLBACK(L.client, /client/proc/ResetAmbiencePlayed), 600)
+	//if(prob(40))
+		//var/sound = pick(ambientsounds)
+
+	//.	if(!L.client.played)
+	//		SEND_SOUND(L, sound(sound, repeat = 0, wait = 0, volume = 25, channel = CHANNEL_AMBIENCE))
+	//		L.client.played = TRUE
+	//		addtimer(CALLBACK(L.client, /client/proc/ResetAmbiencePlayed), 250)
+
+/client/proc/update_ambience()
+	if(SSambience.ambience_listening_clients[src] > world.time)
+		return // If already properly set we don't want to reset the timer.
+	SSambience.ambience_listening_clients[src] = world.time + 10 SECONDS //Just wait 10 seconds before the next one aight mate? cheers.
+
 
 ///Divides total beauty in the room by roomsize to allow us to get an average beauty per tile.
 /area/proc/update_beauty()

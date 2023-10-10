@@ -129,7 +129,7 @@
 		return
 	H.set_heartattack(FALSE)
 	if(H.stat == CONSCIOUS || H.stat == SOFT_CRIT)
-		to_chat(H, "<span class='notice'>You feel your heart beating again!</span>")
+		to_chat(H, "<span class='notice'>Ваше сердце снова забилось!</span>")
 
 #undef MAX_HEAL_COOLDOWN
 #undef DEF_CONVALESCENCE_TIME

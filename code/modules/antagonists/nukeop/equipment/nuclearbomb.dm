@@ -30,6 +30,7 @@
 	var/interior = ""
 	var/proper_bomb = TRUE //Please
 	var/obj/effect/countdown/nuclearbomb/countdown
+	COOLDOWN_DECLARE(cooldown)
 
 /obj/machinery/nuclearbomb/Initialize(mapload)
 	. = ..()
@@ -388,10 +389,16 @@
 				playsound(src, 'sound/machines/nuke/angry_beep.ogg', 50, FALSE)
 		if("arm")
 			if(auth && yes_code && !safety && !exploded)
-				playsound(src, 'sound/machines/nuke/confirm_beep.ogg', 50, FALSE)
-				set_active()
-				update_ui_mode()
-				. = TRUE
+				if(COOLDOWN_FINISHED(src, cooldown))
+					COOLDOWN_START(src, cooldown, 10 SECONDS)
+					playsound(src, 'sound/machines/nuke/confirm_beep.ogg', 50, FALSE)
+					set_active()
+					update_ui_mode()
+					. = TRUE
+				else
+					playsound(src, 'sound/machines/nuke/angry_beep.ogg', 50, FALSE)
+					visible_message("<span class='danger'>[src] ещё перезаряжается!</span>", null, null, COMBAT_MESSAGE_RANGE)
+					return
 			else
 				playsound(src, 'sound/machines/nuke/angry_beep.ogg', 50, FALSE)
 		if("anchor")

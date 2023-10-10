@@ -42,7 +42,7 @@
 /obj/vehicle/sealed/mecha/combat/honker/get_stats_html(mob/user)
 	var/output = {"<html>
 						<head>
-						<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+						<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
 						<title>[src.name] data</title>
 						<style>
 						body {color: #00ff00; background: #32CD32; font-family:"Courier",monospace; font-size: 12px;}

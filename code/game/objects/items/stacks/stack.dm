@@ -343,6 +343,11 @@
 			if(object.density)
 				to_chat(usr, "<span class='warning'>There is \a [object.name] here. You cant make \a [recipe.title] here!</span>")
 				return FALSE
+	if(recipe.check_density)
+		for(var/obj/object in dest_turf)
+			if(object.density && !(object.obj_flags & IGNORE_DENSITY) || object.obj_flags & BLOCKS_CONSTRUCTION)
+				balloon_alert(usr, "something is in the way!")
+				return FALSE
 	if(recipe.placement_checks)
 		switch(recipe.placement_checks)
 			if(STACK_CHECK_CARDINALS)

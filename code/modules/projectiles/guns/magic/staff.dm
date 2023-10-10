@@ -106,5 +106,3 @@
 	item_state = "locker"
 	max_charges = 6
 	recharge_rate = 4
-
-

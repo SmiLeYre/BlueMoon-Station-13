@@ -173,7 +173,7 @@ Burning extracts:
 	var/area/A = get_area(user.loc)
 	for(var/obj/machinery/light/L in A) //Shamelessly copied from the APC effect.
 		L.on = TRUE
-		L.break_light_tube()
+		INVOKE_ASYNC(L, TYPE_PROC_REF(/obj/machinery/light, break_light_tube))
 		L.on = FALSE
 		stoplag()
 	..()

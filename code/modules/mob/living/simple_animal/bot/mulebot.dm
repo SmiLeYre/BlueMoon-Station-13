@@ -122,6 +122,7 @@
 		locked = !locked
 		if(user)
 			to_chat(user, "<span class='notice'>You [locked ? "lock" : "unlock"] [src]'s controls!</span>")
+			log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	flick("mulebot-emagged", src)
 	playsound(src, "sparks", 100, FALSE)
 

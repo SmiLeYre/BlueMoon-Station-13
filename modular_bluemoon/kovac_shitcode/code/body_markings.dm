@@ -195,6 +195,20 @@
 	matrixed_sections = MATRIX_RED_BLUE
 	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
 
+////////////////////////////////////////////////////////////////////////////////////////
+
+/datum/sprite_accessory/ears/human/elf/elf_wide
+	name = "Elf Wide"
+	icon_state = "elfwide"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
+
+/datum/sprite_accessory/ears/human/elf/elf_wide/elf_broad
+	name = "Elf Broad"
+	icon_state = "elfbroad"
+
+/datum/sprite_accessory/ears/human/elf/elf_wide/elf_longer
+	name = "Elf longer"
+	icon_state = "elflonger"
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 

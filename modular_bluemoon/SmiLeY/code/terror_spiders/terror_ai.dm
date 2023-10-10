@@ -141,7 +141,7 @@
 				if(!L.status)
 					step_to(src,L)
 					L.on = 1
-					L.break_light_tube()
+					INVOKE_ASYNC(L, TYPE_PROC_REF(/obj/machinery/light, break_light_tube))
 					do_attack_animation(L)
 					visible_message("<span class='danger'>[src] smashes the [L.name].</span>")
 					return

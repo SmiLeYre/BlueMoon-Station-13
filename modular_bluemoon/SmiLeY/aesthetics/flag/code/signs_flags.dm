@@ -56,6 +56,18 @@
 	icon_state = "flag_mars"
 	item_flag = /obj/item/sign/flag/mars
 
+/obj/structure/sign/flag/mars_sol
+	name = "flag of the Mars"
+	desc = "The flag of Mars. Originally a revolutionary flag during the Martian Rebellions, it has since been adopted as the official flag of the planet controlled by the Solar Federation."
+	icon_state = "flag_mars_sol"
+	item_flag = /obj/item/sign/flag/mars_sol
+
+/obj/structure/sign/flag/ger_sol
+	name = "flag of the FRG"
+	desc = "The flag of the Federal Republic of Germany, known as one of the many Solar Federation regions located on Terra."
+	icon_state = "flag_ger_sol"
+	item_flag = /obj/item/sign/flag/ger_sol
+
 /obj/structure/sign/flag/terragov
 	name = "flag of Sol Federation"
 	desc = "The flag of Sol Federation. It's a symbol of humanity no matter where they go, or how much they wish it wasn't."
@@ -80,6 +92,12 @@
 	desc = "The flag of the Sothran Syndicate. Previously used by the Sothran people as a way of declaring opposition against the Nanotrasen, now it became an intergalactic symbol of the same, yet way more skewed purpose, as more groups of interest have joined the rebellion's side for their own gain."
 	icon_state = "flag_syndi"
 	item_flag = /obj/item/sign/flag/syndicate
+
+/obj/structure/sign/flag/vulp
+	name = "flag of Vulpkanins"
+	desc = "Flag of humanoid dog-like organisms from the Vazzend system. Now they live on the Kellun and Dalhstadt, although their original homeland was known as Altam."
+	icon_state = "flag_vulp"
+	item_flag = /obj/item/sign/flag/vulp
 
 /obj/structure/sign/flag/syndicate/directional/north //Pixel offsets get overwritten on New()
 	dir = SOUTH
@@ -152,30 +170,35 @@
 			RESKIN_ITEM_STATE = "folded_solfed",
 			sign_path = /obj/structure/sign/flag/terragov
 		),
+		"Sol Mars" = list(
+			RESKIN_ICON_STATE = "folded_mars_sol",
+			RESKIN_ITEM_STATE = "folded_mars_sol",
+			sign_path = /obj/structure/sign/flag/mars_sol
+		),
+		"Sol FRG" = list(
+			RESKIN_ICON_STATE = "folded_ger_sol",
+			RESKIN_ITEM_STATE = "folded_ger_sol",
+			sign_path = /obj/structure/sign/flag/ger_sol
+		),
 		"New Russian Empire" = list(
 			RESKIN_ICON_STATE = "folded_nri",
 			RESKIN_ITEM_STATE = "folded_nri",
 			sign_path = /obj/structure/sign/flag/nri
 		),
-		"Tizira" = list(
-			RESKIN_ICON_STATE = "folded_tizira",
-			RESKIN_ITEM_STATE = "folded_tizira",
-			sign_path = /obj/structure/sign/flag/tizira
+		"Vulpkanin" = list(
+			RESKIN_ICON_STATE = "folded_vulp",
+			RESKIN_ITEM_STATE = "folded_vulp",
+			sign_path = /obj/structure/sign/flag/vulp
 		),
-		"SSC" = list(
-			RESKIN_ICON_STATE = "folded_agurk",
-			RESKIN_ITEM_STATE = "folded_agurk",
-			sign_path = /obj/structure/sign/flag/ssc
+		"Human Commonwealth Association" = list(
+			RESKIN_ICON_STATE = "folded_flag_hca",
+			RESKIN_ITEM_STATE = "folded_flag_hca",
+			sign_path = /obj/item/sign/flag/humancommonwealth
 		),
-		"Mars" = list(
+		"Independent Mars" = list(
 			RESKIN_ICON_STATE = "folded_mars",
 			RESKIN_ITEM_STATE = "folded_mars",
 			sign_path = /obj/structure/sign/flag/mars
-		),
-		"Mothic" = list(
-			RESKIN_ICON_STATE = "folded_mothic",
-			RESKIN_ITEM_STATE = "folded_mothic",
-			sign_path = /obj/structure/sign/flag/mothic
 		),
 		"Shigu" = list(
 			RESKIN_ICON_STATE = "folded_shigu",
@@ -186,11 +209,6 @@
 			RESKIN_ICON_STATE = "folded_goldring",
 			RESKIN_ITEM_STATE = "folded_goldring",
 			sign_path = /obj/structure/sign/flag/goldring
-		),
-		"Human Commonwealth Association" = list(
-			RESKIN_ICON_STATE = "folded_flag_hca",
-			RESKIN_ITEM_STATE = "folded_flag_hca",
-			sign_path = /obj/item/sign/flag/humancommonwealth
 		),
 	)
 
@@ -299,3 +317,21 @@
 	desc = "This is the flag of the Gold Ring. The Golden Ring is a megalopolis in the southern part of Tal that has grown to the size of a full-fledged state. Being located around the ColVilous salt Lake, the Golden Ring has become an oasis in the boundless desert where trade and culture flourish"
 	icon_state = "flag_goldring"
 	item_flag = /obj/item/sign/flag/goldring
+
+/obj/item/sign/flag/vulp
+	name = "folded flag of Vulpkanins"
+	desc = "The folded flag of Vulps."
+	icon_state = "folded_vulp"
+	sign_path = /obj/structure/sign/flag/vulp
+
+/obj/item/sign/flag/mars_sol
+	name = "folded flag of the Mars"
+	desc = "The folded flag of the Sol Mars."
+	icon_state = "folded_mars_sol"
+	sign_path = /obj/structure/sign/flag/mars_sol
+
+/obj/item/sign/flag/ger_sol
+	name = "folded flag of the FRG"
+	desc = "The folded flag of the Sol FRG."
+	icon_state = "folded_ger_sol"
+	sign_path = /obj/structure/sign/flag/ger_sol

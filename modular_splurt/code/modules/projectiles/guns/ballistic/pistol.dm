@@ -15,7 +15,7 @@
 	icon_state = "enforcer_black"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/e45
-	can_suppress = FALSE
+	can_suppress = TRUE
 	can_flashlight = 1
 	flight_x_offset = 18
 	flight_y_offset = 14
@@ -44,7 +44,7 @@
 	icon_state = "enforcer_red"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/e45
-	can_suppress = FALSE
+	can_suppress = TRUE
 	can_flashlight = 1
 	flight_x_offset = 18
 	flight_y_offset = 14
@@ -60,7 +60,7 @@
 	icon_state = "enforcer_gold"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/e45
-	can_suppress = FALSE
+	can_suppress = TRUE
 	can_flashlight = 1
 	flight_x_offset = 18
 	flight_y_offset = 14

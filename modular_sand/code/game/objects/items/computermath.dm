@@ -230,10 +230,10 @@
 		say("Warning! Incorrect answer.")
 		switch(reward_type)
 			if("Science")
-				say("Research data has been corrupted. [points_lost] science points have been lost.")
+				say("Исследовательские данные были повреждены. Утеряно [points_lost] очков исследования.")
 				SSresearch.science_tech.remove_point_list(list(TECHWEB_POINT_TYPE_GENERIC = points_lost))
 			if("Cargo")
-				say("To solve the resulting bureaucratic error, [points_lost] cargo points have been deducted from the balance.")
+				say("С целью разрешить бюрократическую ошибку, [points_lost] очков карго было списано с баланса.")
 				var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
 				if(D)
 					D.adjust_money(-points_lost)
@@ -247,12 +247,12 @@
 	// Award points for a correct answer.
 	switch(reward_type)
 		if("Science")
-			say("Correct data received. Applying to research algorithms...")
-			say("Completed. [points_awarded] science points added.")
+			say("Получены корректные данные. Применяются алгоритмы исследований...")
+			say("Выполнено. [points_awarded] исследовательских очков начислено.")
 			SSresearch.science_tech.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = points_awarded))
 		if("Cargo")
-			say("Correct data received. Updating cargo manifests...")
-			say("Completed. [points_awarded] cargo points have been added to station balance.")
+			say("Получены корректные данные. Обновление манифеста карго...")
+			say("Выполнено. [points_awarded] очков карго добавлено на баланс станции.")
 			var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
 			if(D)
 				D.adjust_money(points_awarded)
@@ -292,7 +292,7 @@
 	var/old_charge_count = charge_count
 	charge_count = SSshuttle.problem_computer_charges
 	if(charge_count > old_charge_count)
-		say("A new problem solving opportunity has become available! There are now [charge_count] problems to be solved.")
+		say("Для решения стали доступны новые задачи! На данный момент доступно [charge_count] задач.")
 
 /obj/item/computermath/cargo/check_charges()
 	if(SSshuttle.problem_computer_charges > 0)
@@ -314,7 +314,7 @@
 	var/old_charge_count = charge_count
 	charge_count = SSresearch.problem_computer_charges
 	if(charge_count > old_charge_count)
-		say("A new problem solving opportunity has become available! There are now [charge_count] problems to be solved.")
+		say("Для решения стали доступны новые задачи! На данный момент доступно [charge_count] задач.")
 
 /obj/item/computermath/science/check_charges()
 	if(SSresearch.problem_computer_charges > 0)

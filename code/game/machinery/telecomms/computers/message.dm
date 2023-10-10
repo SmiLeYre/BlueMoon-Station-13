@@ -341,6 +341,7 @@
 	obj_flags |= EMAGGED
 	spark_system.set_up(5, 0, src)
 	spark_system.start()
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	var/obj/item/paper/monitorkey/MK = new(loc, linkedServer)
 	// Will help make emagging the console not so easy to get away with.
 	MK.default_raw_text += "<br><br><font color='red'>�%@%(*$%&(�&?*(%&�/{}</font>"

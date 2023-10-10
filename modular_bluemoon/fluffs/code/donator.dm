@@ -233,6 +233,13 @@
 	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife")
 	subcategory = LOADOUT_SUBCATEGORIES_DON17
 
+/datum/gear/donator/bm/stunblade
+	name = "Stunblade Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/stunblade_kit
+	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife", "leony24", "stgs", "lonofera")
+	subcategory = LOADOUT_SUBCATEGORIES_DON17
+
 /datum/gear/donator/bm/aviator_helmet
 	name = "Aviator Helmet"
 	slot = ITEM_SLOT_HEAD
@@ -352,6 +359,13 @@
 	ckeywhitelist = list("danik10p")
 	subcategory = LOADOUT_SUBCATEGORIES_DON12
 
+/datum/gear/donator/bm/sponge
+	name = "Sponge Modification Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/sponge_kit
+	ckeywhitelist = list("danik10p")
+	subcategory = LOADOUT_SUBCATEGORIES_DON12
+
 /datum/gear/donator/bm/battle_coat
 	name = "Battle Coat"
 	slot = ITEM_SLOT_ICLOTHING
@@ -379,3 +393,31 @@
 	path = /obj/item/clothing/neck/tie/cross/shielded
 	ckeywhitelist = list("kalifasun", "dofalt")
 	subcategory = LOADOUT_SUBCATEGORIES_DON21
+
+/datum/gear/donator/bm/miner_plushie
+	name = "Miner Plushie"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/toy/plush/miner
+	ckeywhitelist = list("cheburek228")
+	subcategory = LOADOUT_SUBCATEGORIES_DON12
+
+/datum/gear/donator/bm/omega_plushie
+	name = "Omega Plushie"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/toy/plush/nukeplushie/omega
+	ckeywhitelist = list("malopharan")
+	subcategory = LOADOUT_SUBCATEGORIES_DON12
+
+/datum/gear/donator/bm/nri_drg
+	name = "Covert Ops Tactical Uniform"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/donator/bm/nri_drg
+	ckeywhitelist = list("vulpshiro", "dolbajob", "stgs", "leony24", "krashly")
+	subcategory = LOADOUT_SUBCATEGORIES_DON12
+
+/datum/gear/donator/bm/nri_drg_head
+	name = "Covert Ops Headgear"
+	slot = ITEM_SLOT_HEAD
+	path = /obj/item/clothing/head/donator/bm/nri_drg_head
+	ckeywhitelist = list("vulpshiro", "dolbajob", "stgs", "leony24", "krashly")
+	subcategory = LOADOUT_SUBCATEGORIES_DON12

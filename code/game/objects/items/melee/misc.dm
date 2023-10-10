@@ -1,5 +1,6 @@
 /obj/item/melee
 	item_flags = NEEDS_PERMIT
+	wound_bonus = 4
 
 /obj/item/melee/proc/check_martial_counter(mob/living/carbon/human/target, mob/living/carbon/human/user)
 	if(target.check_martial_melee_block())
@@ -58,7 +59,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	force = 14
 	throwforce = 10
-	wound_bonus = 15
+	wound_bonus = 8
 	bare_wound_bonus = 10
 	reach = 2
 	w_class = WEIGHT_CLASS_NORMAL
@@ -330,7 +331,7 @@
 	var/stun_time_silicon = 60 // How long it stuns silicons for - 6 seconds.
 	var/affect_silicon = FALSE // Does it stun silicons.
 	var/on_sound // "On" sound, played when switching between able to stun or not.
-	var/on_stun_sound = "sound/effects/woodhit.ogg" // Default path to sound for when we stun.
+	var/on_stun_sound = 'sound/effects/woodhit.ogg' // Default path to sound for when we stun.
 	var/stun_animation = TRUE // Do we animate the "hit" when stunning.
 	var/on = TRUE // Are we on or off
 	var/on_icon_state // What is our sprite when turned on
@@ -341,7 +342,7 @@
 	var/weight_class_on // What is the new size class when turned on
 	var/sword_point = TRUE
 
-	wound_bonus = 15
+	wound_bonus = 5
 
 /obj/item/melee/classic_baton/Initialize(mapload)
 	. = ..()

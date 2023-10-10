@@ -1,9 +1,9 @@
-/mob/living/proc/surrender()
+/mob/living/verb/surrender()
 	set name = "> Сдаться"
 	set category = "Эмоции.1: Специальные Действия"
 	emote("surrender")
 
-/mob/living/proc/emote_faint()
+/mob/living/verb/emote_faint()
 	set name = "> Потерять Сознание"
 	set category = "Эмоции.1: Специальные Действия"
 	emote("faint")
@@ -33,7 +33,7 @@
 	set category = "Эмоции.1: Специальные Действия"
 	emote("facehoof")
 
-/mob/living/proc/emote_wag()
+/mob/living/verb/emote_wag()
 	set name = "< Махать хвостом >"
 	set category = "Эмоции.1: Специальные Действия"
 	emote("wag")
@@ -53,17 +53,17 @@
 	set category = "Эмоции.1: Специальные Действия"
 	emote("flip")
 
-/mob/living/proc/emote_rock()
+/mob/living/verb/emote_rock()
 	set name = "< Рошамбо: Камень >"
 	set category = "Эмоции.1: Специальные Действия"
 	emote("rock")
 
-/mob/living/proc/emote_scissors()
+/mob/living/verb/emote_scissors()
 	set name = "< Рошамбо: Ножницы >"
 	set category = "Эмоции.1: Специальные Действия"
 	emote("scissors")
 
-/mob/living/proc/emote_paper()
+/mob/living/verb/emote_paper()
 	set name = "< Рошамбо: Бумага >"
 	set category = "Эмоции.1: Специальные Действия"
 	emote("paper")
@@ -315,7 +315,7 @@
 
 /mob/living/verb/emote_moan()
 	set name = "> Постанывать "
-	set category = "Эмоции.2: Звуковые Действия"
+	set category = "Эмоции.1: Специальные Действия"
 	emote("moan")
 
 /mob/living/verb/emote_shake()
@@ -478,167 +478,167 @@
 	set category = "Эмоции.3: Простые Действия"
 	emote("handshake")
 
-/mob/living/proc/emote_suka1()
+/mob/living/verb/emote_suka1()
 	set name = "< Сука! >"
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("suka")
 
-/mob/living/proc/emote_suka2()
+/mob/living/verb/emote_suka2()
 	set name = "< Агрессивное Сука! >"
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("suka2")
 
-/mob/living/proc/emote_ura1()
+/mob/living/verb/emote_ura1()
 	set name = "< Ура! >"
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("ura")
 
-/mob/living/proc/emote_ura2()
+/mob/living/verb/emote_ura2()
 	set name = "< Громкое Ура! >"
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("ura2")
 
-/mob/living/proc/emote_ura3()
+/mob/living/verb/emote_ura3()
 	set name = "< Очень Громкое Ура! >"
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("ura3")
 
-/mob/living/proc/emote_chitter1()
+/mob/living/verb/emote_chitter1()
 	set name = "< Читтер! >"
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("chitter")
 
-/mob/living/proc/emote_chitter2()
+/mob/living/verb/emote_chitter2()
 	set name = "< Читтер Иначе! >"
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("chitter2")
 
-/mob/living/proc/emote_awoo()
+/mob/living/verb/emote_awoo()
 	set name = "< Выть >"
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("awoo")
 
-/mob/living/proc/emote_growl1()
+/mob/living/verb/emote_growl1()
 	set name = "< Рычать >"
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("growl")
 
-/mob/living/proc/emote_growl2()
+/mob/living/verb/emote_growl2()
 	set name = "< Рычать Агрессивно >"
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("growl2")
 
-/mob/living/proc/emote_growl3()
+/mob/living/verb/emote_growl3()
 	set name = "< Рычать Иначе >"
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("rawr")
 
-/mob/living/proc/emote_purr()
+/mob/living/verb/emote_purr()
 	set name = "< Мурчать >"
-	set category = "Эмоции.2: Звуковые Действия"
+	set category = "Эмоции.1: Специальные Действия"
 	emote("purr")
 
-/mob/living/proc/emote_hiss()
+/mob/living/verb/emote_hiss()
 	set name = "< Шипеть >"
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("hiss")
 
-/mob/living/proc/emote_warble()
+/mob/living/verb/emote_warble()
 	set name = "< Трель >"
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("warble")
 
-/mob/living/proc/emote_wurble()
+/mob/living/verb/emote_wurble()
 	set name = "< Труль >"
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("wurble")
 
-/mob/living/proc/emote_squish()
+/mob/living/verb/emote_squish()
 	set name = "< Хлюпать >"
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("squish")
 
-/mob/living/proc/emote_ping()
+/mob/living/verb/emote_ping()
 	set name = "< Звенеть >"
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("ping")
 
-/mob/living/proc/emote_beep()
+/mob/living/verb/emote_beep()
 	set name = "< Пищать >"
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("beep")
 
-/mob/living/proc/emote_buzz()
+/mob/living/verb/emote_buzz()
 	set name = "< Жужжать >"
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("buzz")
 
-/mob/living/proc/emote_buzz2()
+/mob/living/verb/emote_buzz2()
 	set name = "< Жужжать раздраженно >"
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("buzz2")
 
-/mob/living/proc/emote_hack()
+/mob/living/verb/emote_hack()
 	set name = "< Взламываться >"
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("hack")
 
-/mob/living/proc/emote_syndicate()
+/mob/living/verb/emote_syndicate()
 	set name = "< Задание Синдиката >"
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("syndicate")
 
-/mob/living/proc/emote_jacket1()
+/mob/living/verb/emote_jacket1()
 	set name = "< Какое время? >"
-	set category = "Эмоции.2: Звуковые Действия"
+	set category = "Эмоции.1: Специальные Действия"
 	emote("jacket")
 
-/mob/living/proc/emote_jacket2()
+/mob/living/verb/emote_jacket2()
 	set name = "< Нужна Помощь? >"
-	set category = "Эмоции.2: Звуковые Действия"
+	set category = "Эмоции.1: Специальные Действия"
 	emote("jacket2")
 
-/mob/living/proc/emote_bulldozer1()
+/mob/living/verb/emote_bulldozer1()
 	set name = "< Ты перед Стеной! >"
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("bulldozer")
 
-/mob/living/proc/emote_bulldozer2()
+/mob/living/verb/emote_bulldozer2()
 	set name = "< Оставайся Жив! >"
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("bulldozer2")
 
-/mob/living/proc/emote_cloaker1()
+/mob/living/verb/emote_cloaker1()
 	set name = "< Агрессивное Приближение! >"
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("cloaker")
 
-/mob/living/proc/emote_cloaker2()
+/mob/living/verb/emote_cloaker2()
 	set name = "< Не бей себя! >"
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("cloaker2")
 
-/mob/living/proc/emote_cloaker3()
+/mob/living/verb/emote_cloaker3()
 	set name = "< Причина Ареста >"
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("cloaker3")
 
-/mob/living/proc/emote_cloaker4()
+/mob/living/verb/emote_cloaker4()
 	set name = "< Безопасное Слово >"
 	set category = "Эмоции.3: Простые Действия"
 	emote("cloaker4")
 
-/mob/living/proc/emote_protect()
+/mob/living/verb/emote_protect()
 	set name = "< Император Защищает >"
 	set category = "Эмоции.3: Простые Действия"
 	emote("protect")
 
-/mob/living/proc/emote_meow()
+/mob/living/verb/emote_meow()
 	set name = "< Мяу >"
-	set category = "Эмоции.3: Простые Действия"
+	set category = "Эмоции.1: Специальные Действия"
 	emote("meow")
 
-/mob/living/proc/emote_mewo()
+/mob/living/verb/emote_mewo()
 	set name = "< Мияу >"
-	set category = "Эмоции.3: Простые Действия"
+	set category = "Эмоции.1: Специальные Действия"
 	emote("mewo")

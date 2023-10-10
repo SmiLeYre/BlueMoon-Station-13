@@ -189,7 +189,8 @@
 /obj/item/antag_spawner/nuke_ops/borg_tele/spawn_antag(client/C, turf/T, kind, datum/mind/user)
 	var/mob/living/silicon/robot/R
 	var/datum/antagonist/nukeop/creator_op = user.has_antag_datum(/datum/antagonist/nukeop,TRUE)
-	if(!creator_op)
+	var/datum/antagonist/raiders/raider = user.has_antag_datum(/datum/antagonist/raiders,TRUE)
+	if(!creator_op || !raider)
 		return
 
 	switch(borg_to_spawn)
@@ -322,17 +323,14 @@
 			return
 		used = TRUE
 		var/mob/dead/observer/G = pick(borg_candidates)
-		spawn_antag(G.client, get_turf(src), "syndieborg", user.mind)
+		spawn_antag(G.client, get_turf(src), "syndieborg", user.mind, user)
 		do_sparks(4, TRUE, src)
 		qdel(src)
 	else
 		to_chat(user, "<span class='warning'>Невозможно подключиться к местному командованию Синдиката. Пожалуйста, подождите и повторите попытку позже.</span>")
 
-/obj/item/antag_spawner/synd_borg/spawn_antag(client/C, turf/T, kind, datum/mind/user)
+/obj/item/antag_spawner/synd_borg/spawn_antag(client/C, turf/T, kind, datum/mind/user, mob/owner)
 	var/mob/living/silicon/robot/R
-	var/datum/antagonist/nukeop/creator_op = user.has_antag_datum(/datum/antagonist/nukeop,TRUE)
-	if(!creator_op)
-		return
 
 	switch(borg_to_spawn)
 		if("Saboteur")
@@ -342,17 +340,22 @@
 		else
 			R = new /mob/living/silicon/robot/modules/syndicate(T) //Assault borg by default
 
-	var/brainfirstname = pick(GLOB.first_names_male)
+	var/brainfirstname = pick(GLOB.first_names_female)
 	if(prob(50))
-		brainfirstname = pick(GLOB.first_names_female)
+		brainfirstname = pick(GLOB.first_names_male)
 	var/brainopslastname = pick(GLOB.last_names)
 	var/brainopsname = "[brainfirstname] [brainopslastname]"
 
 	R.mmi.name = "Man-Machine Interface: [brainopsname]"
-	R.mmi.brain.name = "[brainopsname]'s brain"
+	R.mmi.brain.name = "Мозг [brainopsname]"
 	R.mmi.brainmob.real_name = brainopsname
 	R.mmi.brainmob.name = brainopsname
 	R.real_name = R.name
 
 	R.key = C.key
 	R.mind.special_role = "Syndicate Cyborg"
+
+	var/mob/living/silicon/killer = user.current
+	if(!killer || !istype(killer))
+		return
+	killer.set_zeroth_law("Только [owner.real_name] и Агенты, кого [owner.ru_who()] обозначит Агентами являются Агентами.")

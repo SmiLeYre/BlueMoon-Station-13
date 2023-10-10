@@ -1,8 +1,9 @@
 /datum/action/item_action/ninjastar
 	name = "Create Throwing Stars (1E)"
 	desc = "Creates a throwing star in your hand, if possible."
-	button_icon_state = "throwingstar"
-	icon_icon = 'icons/obj/items_and_weapons.dmi'
+	button_icon_state = "shuriken"
+	icon_icon = 'icons/mob/actions/actions_ninja.dmi'
+	background_icon_state = "background_green"
 
 /**
  * Proc called to create a ninja star in the ninja's hands.
@@ -44,3 +45,35 @@
 	item_state = "ninjastar"
 	throwforce = 20
 	embedding = list("pain_chance" = 5, "embed_chance" = 100, "fall_chance" = 10, "jostle_chance" = 10, "pain_stam_pct" = 2.5, "jostle_pain_mult" = 3)
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/datum/action/item_action/ninjastar_lethal
+	name = "Create Upgraded Throwing Stars (1E)"
+	desc = "Creates a throwing star in your hand, if possible."
+	button_icon_state = "shuriken_red"
+	icon_icon = 'icons/mob/actions/actions_ninja.dmi'
+	background_icon_state = "background_green"
+
+/obj/item/clothing/suit/space/space_ninja/ronin/proc/ninjastar_lethal()
+	if(ninjacost(10))
+		return
+	var/mob/living/carbon/human/ninja = affecting
+	var/obj/item/throwing_star/ninja/ninja_star = new(ninja)
+	if(ninja.put_in_hands(ninja_star))
+		to_chat(ninja, "<span class='notice'>A throwing star has been created in your hand!</span>")
+	else
+		qdel(ninja_star)
+		to_chat(ninja, "<span class='notice'>You can't create a throwing star, your hands are full!</span>")
+	ninja.throw_mode_on() //So they can quickly throw it.
+
+/obj/item/throwing_star/ninja
+	name = "upgraded ninja throwing star"
+	icon_state = "ninjastar_red"
+	item_state = "ninjastar_red"
+	throwforce = 25
+	embedding = list("pain_mult" = 6, "embed_chance" = 100, "fall_chance" = 0, "embed_chance_turf_mod" = 20)
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////

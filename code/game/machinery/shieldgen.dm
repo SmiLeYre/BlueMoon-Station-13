@@ -196,12 +196,13 @@
 /obj/machinery/shieldgen/emag_act(mob/user)
 	. = ..()
 	if(obj_flags & EMAGGED)
-		to_chat(user, "<span class='warning'>The access controller is damaged!</span>")
+		to_chat(user, "<span class='warning'>Контроллер доступа поврежден!</span>")
 		return
 	obj_flags |= EMAGGED
 	locked = FALSE
 	playsound(src, "sparks", 100, 1)
-	to_chat(user, "<span class='warning'>You short out the access controller.</span>")
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
+	to_chat(user, "<span class='warning'>Вы замыкаете контроллер доступа.</span>")
 	return TRUE
 
 /obj/machinery/shieldgen/update_icon_state()
@@ -390,12 +391,13 @@
 /obj/machinery/shieldwallgen/emag_act(mob/user)
 	. = ..()
 	if(obj_flags & EMAGGED)
-		to_chat(user, "<span class='warning'>The access controller is damaged!</span>")
+		to_chat(user, "<span class='warning'>Контроллер доступа поврежден!</span>")
 		return
 	obj_flags |= EMAGGED
 	locked = FALSE
 	playsound(src, "sparks", 100, 1)
-	to_chat(user, "<span class='warning'>You short out the access controller.</span>")
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
+	to_chat(user, "<span class='warning'>Вы замыкаете контроллер доступа.</span>")
 	return TRUE
 
 //////////////Containment Field START

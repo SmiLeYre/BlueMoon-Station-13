@@ -157,6 +157,7 @@
 	. = ..()
 	if(obj_flags & EMAGGED)
 		return
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	Emag()
 	return TRUE
 
@@ -206,7 +207,7 @@
 			if(target.status != LIGHT_EMPTY)
 				AddShards(1, U)
 				target.status = LIGHT_EMPTY
-				target.update()
+				INVOKE_ASYNC(target, TYPE_PROC_REF(/obj/machinery/light, update))
 
 			var/obj/item/light/L2 = new target.light_type()
 
@@ -215,7 +216,7 @@
 			target.rigged = (obj_flags & EMAGGED ? 1 : 0)
 			target.brightness = L2.brightness
 			target.on = target.has_power()
-			target.update()
+			INVOKE_ASYNC(target, TYPE_PROC_REF(/obj/machinery/light, update))
 			qdel(L2)
 
 			if(target.on && target.rigged)

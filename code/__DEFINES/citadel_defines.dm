@@ -5,6 +5,8 @@
 //Filters
 #define CIT_FILTER_STAMINACRIT filter(type="drop_shadow", x=0, y=0, size=-3, color="#04080F")
 
+#define BM_FILTER_HARDCRIT list(type="drop_shadow", x=0, y=0, size=-3, color="#04080F")
+
 //organ defines
 #define BUTT_LAYER_INDEX		1
 #define ANUS_LAYER_INDEX		2
@@ -134,6 +136,7 @@
 #define STIMULATION			(1<<19)
 #define EDGING				(1<<20)
 #define NO_DISCO_DANCE		(1<<21)
+#define CUM_ONTO			(1<<22)
 //Note: reminder, if you're a coder adding more bitflags here in the event we add more horny things, the maximum is (1<<23).
 #define TOGGLES_CITADEL 0
 

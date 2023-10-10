@@ -1,8 +1,8 @@
 /obj/item/projectile/bullet/shotgun_slug
 	name = "12g shotgun slug"
 	damage = 45
-	sharpness = SHARP_POINTY
-	wound_bonus = 0
+	sharpness = SHARP_POINTY // SHARP_POINTY
+	wound_bonus = 6
 
 /obj/item/projectile/bullet/shotgun_slug/executioner
 	name = "executioner slug" // admin only, can dismember limbs
@@ -16,9 +16,9 @@
 
 /obj/item/projectile/bullet/shotgun_beanbag
 	name = "beanbag slug"
-	damage = 10
+	damage = 5
 	stamina = 70
-	wound_bonus = 20
+	wound_bonus = 2
 	sharpness = SHARP_NONE
 	embedding = null
 

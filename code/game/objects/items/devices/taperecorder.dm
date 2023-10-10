@@ -281,7 +281,7 @@
 
 /obj/item/taperecorder/attack_self(mob/user)
 	if(!mytape)
-		balloon_alert(user, "it's empty!")
+		balloon_alert(user, "Пусто!")
 		return
 
 	update_available_icons()

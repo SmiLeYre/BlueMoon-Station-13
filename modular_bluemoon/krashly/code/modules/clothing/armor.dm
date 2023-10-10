@@ -119,6 +119,12 @@ obj/item/clothing/suit/donator/bm/cerberus_suit/armored/inkvd
 	icon_state = "armor"
 	item_state = "armor"
 
+/obj/item/clothing/suit/armor/inteq/honorable_vanguard
+	name = "InteQ black armored coat"
+	desc = "Lush overcoat with fur around the neck. Has armor plates in its composition."
+	icon_state = "armor_inteq_honorable_battlecoat"
+	item_state = "armor_inteq_honorable_battlecoat"
+
 /obj/item/clothing/suit/armor/inteq/vanguard
 	name = "InteQ armored coat"
 	desc = "Lush overcoat with fur around the neck. Has armor plates in its composition."
@@ -175,6 +181,20 @@ obj/item/clothing/suit/donator/bm/cerberus_suit/armored/inkvd
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/suits_digidrated.dmi'
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/inteq
+
+/obj/item/clothing/suit/space/hardsuit/syndi/elite/inteq/equipped(mob/user, slot)
+	..()
+	if(slot == ITEM_SLOT_OCLOTHING)
+		if(!IS_INTEQ(user))
+			to_chat(user, "<span class='danger'><B>СКАФАНДР МОДЕЛЬ ДВА</B>: Обнаружены неавторизованные сигнатуры. <B>Производится нейтрализация экипировки.</B></span>")
+			playsound(get_turf(src), 'sound/machines/nuke/confirm_beep.ogg', 65, 1, 1)
+			addtimer(CALLBACK(src, .proc/explode), 3 SECONDS)
+
+/obj/item/clothing/suit/space/hardsuit/syndi/elite/inteq/proc/explode()
+	do_sparks(3, 1, src)
+	explosion(src.loc,0,1,1,1)
+	qdel(src)
+
 //////////
 
 //Helmet_STANDART
@@ -251,6 +271,20 @@ obj/item/clothing/suit/donator/bm/cerberus_suit/armored/inkvd
 	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/suits_digidrated.dmi'
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/shielded/syndi/inteq
 	shield_state = "shield-yellow"
+
+/obj/item/clothing/suit/space/hardsuit/shielded/syndi/inteq/equipped(mob/user, slot)
+	..()
+	if(slot == ITEM_SLOT_OCLOTHING)
+		if(!IS_INTEQ(user))
+			to_chat(user, "<span class='danger'><B>СКАФАНДР МОДЕЛЬ ОДИН - ЩИТ</B>: Обнаружены неавторизованные сигнатуры. <B>Производится нейтрализация экипировки.</B></span>")
+			playsound(get_turf(src), 'sound/machines/nuke/confirm_beep.ogg', 65, 1, 1)
+			addtimer(CALLBACK(src, .proc/explode), 3 SECONDS)
+
+/obj/item/clothing/suit/space/hardsuit/shielded/syndi/inteq/proc/explode()
+	do_sparks(3, 1, src)
+	explosion(src.loc,0,1,1,1)
+	qdel(src)
+
 //////////
 
 ///Kovac added

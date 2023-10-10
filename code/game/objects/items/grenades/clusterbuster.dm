@@ -171,6 +171,10 @@
 	name = "WELCOME TO HELL"
 	payload = /obj/item/grenade/chem_grenade/clf3
 
+/obj/item/grenade/clusterbuster/honk
+	name = "Mega Honk Grenade"
+	payload = /obj/item/grown/bananapeel
+
 //random clusterbuster spawner
 /obj/item/grenade/clusterbuster/random
 	icon_state = "random_clusterbang"

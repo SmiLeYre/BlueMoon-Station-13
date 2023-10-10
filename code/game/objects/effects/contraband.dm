@@ -431,10 +431,10 @@
 	desc = "A poster advertising a movie about some masked men."
 	icon_state = "poster_bumba"
 
-/obj/structure/sign/poster/contraband/steppy
-	name = "Step On Me"
-	desc = "A phrase associated with a chubby reptile notoriously used in uncivilized Orion space as a deterrent towards would be pirate vessels by instructing them to 'fuck around and find out'."
-	icon_state = "steppy"
+///obj/structure/sign/poster/contraband/steppy
+	//name = "Step On Me"
+	//desc = "A phrase associated with a chubby reptile notoriously used in uncivilized Orion space as a deterrent towards would be pirate vessels by instructing them to 'fuck around and find out'."
+	//icon_state = "steppy"
 
 /obj/structure/sign/poster/contraband/scum
 	name = "Security are Scum"
@@ -834,6 +834,11 @@
 	desc = "This informational poster uses Safety Moth(TM) to inform the viewer to help injured/deceased crewmen with their epinephrine injectors."
 	icon_state = "poster_mothepinephrine"
 
+/obj/structure/sign/poster/official/poster_vulp8
+	name = "NT Vulp"
+	desc = "A poster depicting the famous mega-corporation Nanotrasen in form of a vulpkanin. It has a Nanotrasen logo on it."
+	icon_state = "poster_vulp8"
+
 ////
 
 /obj/structure/sign/poster/contraband/bread
@@ -870,6 +875,21 @@
 	name = "White Wolf Aiko"
 	desc = "Белоснежная вульпиниха в тёмных стрингах. Присмотревшись, вы обнаружили цену в Девятьсот Тысяч Кредитов на Универсального Клона Айко."
 	icon_state = "poster_vulp4"
+
+/obj/structure/sign/poster/contraband/vulp5
+	name = "Vulptide"
+	desc = "A rebellious poster symbolizing vulpkanins and assistants solidarity."
+	icon_state = "poster_vulp5"
+
+/obj/structure/sign/poster/contraband/vulp6
+	name = "Vulp Hacking Guide"
+	desc = "This poster shows a vulp hacking the airlock somewhere in technical tunnels."
+	icon_state = "poster_vulp6"
+
+/obj/structure/sign/poster/contraband/vulp7
+	name = "Syndie Vulp"
+	desc = "A poster portraying the infamous crime conglomerate in form of a naked vulpkanin. It has a Syndicate's insignia on it."
+	icon_state = "poster_vulp7"
 
 /obj/structure/sign/poster/contraband/hiding
 	name = "Hiding"

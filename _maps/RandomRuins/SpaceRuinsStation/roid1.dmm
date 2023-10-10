@@ -8,6 +8,10 @@
 "q" = (
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space)
+"v" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space)
 
 (1,1,1) = {"
 e
@@ -41,7 +45,7 @@ e
 "}
 (4,1,1) = {"
 e
-q
+v
 m
 m
 m
@@ -76,7 +80,7 @@ m
 m
 m
 m
-q
+v
 e
 "}
 (8,1,1) = {"

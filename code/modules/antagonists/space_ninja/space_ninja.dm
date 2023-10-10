@@ -10,7 +10,10 @@
 	///Whether or not this ninja will obtain objectives
 	var/give_objectives = TRUE
 	///Whether or not this ninja receives the standard equipment
-	var/give_equipment = TRUE
+	var/give_equipment = FALSE
+	///
+	var/ninja_outfit
+
 	soft_antag = FALSE // BLUEMOON ADDITION
 
 /proc/is_ninja(mob/living/M)
@@ -32,8 +35,13 @@
   * * ninja - The human to receive the gear
   * * Returns a proc call on the given human which will equip them with all the gear.
   */
+
+/datum/antagonist/ninja/proc/equip_space_ninja_pre(mob/living/carbon/human/ninja = owner.current) // Ниндзя спавнится в космосе. Значит, экипируем его в первичный комплект заранее, чтобы не сдулся.
+	if(!isobserver(ninja))
+		ninja.equipOutfit(/datum/outfit/ninja_pre)
+
 /datum/antagonist/ninja/proc/equip_space_ninja(mob/living/carbon/human/ninja = owner.current)
-	return ninja.equipOutfit(/datum/outfit/ninja)
+	return ninja.equipOutfit(ninja_outfit)
 
 /**
   * Proc that adds the proper memories to the antag datum
@@ -58,7 +66,7 @@
 	explanation_text = "Взломайте консоль охраны, используя перчатки, чтобы установить арест на весь экипаж. ИИ получит уведомление в тот момент, когда вы начнёте!"
 
 /datum/objective/terror_message
-	explanation_text = "Взломайте консоль охраны, используя перчатки, чтобы наслать на станцию ещё одну угрозу. ИИ получит уведомление в тот момент, когда вы начнёте!"
+	explanation_text = "Взломайте консоль капитана, используя перчатки, чтобы наслать на станцию ещё одну угрозу. ИИ получит уведомление в тот момент, когда вы начнёте!"
 
 /**
   * Proc that adds all the ninja's objectives to the antag datum.
@@ -91,7 +99,7 @@
 		bombobjective.detonation_location = selected_area
 		break
 	if(bombobjective.detonation_location)
-		bombobjective.explanation_text = "Детонируйте взрывпакет в локации: [bombobjective.detonation_location].  В других местах взрывчатка не будет работать!"
+		bombobjective.explanation_text = "Детонируйте взрывпакет в локации: [bombobjective.detonation_location]. В других местах взрывчатка не будет работать!"
 		objectives += bombobjective
 
 	//Security Scramble, set to complete upon using your gloves on a security console
@@ -117,8 +125,10 @@
 	if(give_objectives)
 		addObjectives()
 	addMemories()
-	if(give_equipment)
-		equip_space_ninja(owner.current)
+
+	equip_space_ninja_pre()
+	choosePath()
+
 
 	owner.current.mind.assigned_role = ROLE_NINJA
 	owner.current.mind.special_role = ROLE_NINJA
@@ -132,3 +142,25 @@
 	new_owner.add_antag_datum(src)
 	message_admins("[key_name_admin(admin)] has ninja'ed [key_name_admin(new_owner)].")
 	log_admin("[key_name(admin)] has ninja'ed [key_name(new_owner)].")
+
+
+/datum/antagonist/ninja/proc/choosePath(mob/living/carbon/human/ninja = owner.current)
+	if(!isobserver(ninja))
+		//var/type = tgui_alert(ninja, "Выберите предпочительную экипировку", "Космический ниндзя", list("Путь Ёкая", "Путь Паука", "Путь Мудрости"))
+		var/choices = list("Путь Ёкая", "Путь Паука", "Путь Мудрости")
+		var/choice = input(ninja, "Выберите предпочительную экипировку", "Космический ниндзя") in choices
+		switch(choice)
+			if("Путь Ёкая")
+				give_equipment = TRUE
+				ninja_outfit = /datum/outfit/ninja_ronin
+			if("Путь Паука")
+				give_equipment = TRUE
+				ninja_outfit = /datum/outfit/ninja
+			if("Путь Мудрости")
+				give_equipment = TRUE
+				ninja_outfit = /datum/outfit/ninja_wisdom
+
+	if(give_equipment)
+		ninja.delete_equipment()
+		equip_space_ninja(ninja)
+

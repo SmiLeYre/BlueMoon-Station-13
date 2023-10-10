@@ -61,6 +61,8 @@
 	throwforce = 15
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "tore", "lacerated", "ripped", "diced", "rended")
+	wound_bonus = 30
+	bare_wound_bonus = 35
 
 /obj/item/melee/sickly_blade/attack(mob/living/target, mob/living/user)
 	if(!(IS_HERETIC(user) || IS_HERETIC_MONSTER(user)))
@@ -124,8 +126,6 @@
 	desc = "A crescent blade born from a fleshwarped creature. Keenly aware, it seeks to spread to others the suffering it has endured from its dreadful origins."
 	icon_state = "flesh_blade"
 	item_state = "flesh_blade"
-	wound_bonus = 30
-	bare_wound_bonus = 35
 
 /obj/item/melee/sickly_blade/void
 	name = "void blade"

@@ -163,6 +163,7 @@
 		var/obj/item/clothing/C = I
 		if(C.tint || initial(C.tint))
 			update_tint()
+		//if(I.vision_flags || I.darkness_view || I.invis_override || I.invis_view || !isnull(I.lighting_alpha))
 		update_sight()
 	if(I.flags_inv & HIDEMASK || forced)
 		update_inv_wear_mask()

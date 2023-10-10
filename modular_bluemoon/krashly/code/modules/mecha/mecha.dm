@@ -1,6 +1,6 @@
 ///InteQ "Durand" Mecha
 /obj/vehicle/sealed/mecha/combat/marauder/mauler/loaded/ares
-	desc = "God of War among Mecha. SolFed developments in the field of exoskeletons have borne fruit. Armored Ares will mince your enemy."
+	desc = "Бог Войны среди Мехов. Разработки Солнечной Федерации дали нам Ареса. Бронированная машина будет давить ваших врагов."
 	name = "\improper MIB-02 Ares"
 	icon = 'modular_bluemoon/krashly/icons/obj/mecha/ares.dmi'
 	icon_state = "ares"
@@ -25,7 +25,7 @@
 
 ///InteQ "Gygax" Mecha
 /obj/vehicle/sealed/mecha/combat/gygax/dark/loaded/hermes
-	desc = "God of Cunning among Mecha. SolFed developments in the field of exoskeletons have borne fruit. Fast and agile Hermes will mince your enemy."
+	desc = "Отличный для быстрых атак Мех. Разработки Солнечной Федерации позволили нападать с флангов на металлической коннице. Гермес не заменим своей маневренностью и скоростью."
 	name = "\improper MIB-01 Hermes"
 	icon = 'modular_bluemoon/krashly/icons/obj/mecha/hermes.dmi'
 	icon_state = "hermes"

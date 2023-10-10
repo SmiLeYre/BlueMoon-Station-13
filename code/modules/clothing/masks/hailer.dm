@@ -153,6 +153,7 @@ GLOBAL_LIST_EMPTY(sechailers)
 	if(!safety)
 		return
 	safety = FALSE
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	to_chat(user, "<span class='warning'>You silently fry [src]'s vocal circuit with the cryptographic sequencer.</span>")
 	return TRUE
 

@@ -1,4 +1,4 @@
-/mob/living/carbon/human/mob_climax_partner(obj/item/organ/genital/G, mob/living/L, spillage, mb_time, obj/item/organ/genital/Lgen, forced = FALSE)
+/mob/living/carbon/human/mob_climax_partner(obj/item/organ/genital/G, mob/living/L, spillage = TRUE, mb_time = 30, obj/item/organ/genital/Lgen = null, forced = FALSE, anonymous = FALSE)
 	. = ..()
 	L.receive_climax(src, Lgen, G, spillage, forced = forced)
 	if(iswendigo(L))
@@ -43,12 +43,12 @@
 		eggo.forceMove(container)
 		eggo.AddComponent(/datum/component/pregnancy, src, partner, baby_type)
 
-/mob/living/carbon/human/do_climax(datum/reagents/R, atom/target, obj/item/organ/genital/sender, spill, cover, obj/item/organ/genital/receiver)
+/mob/living/carbon/human/do_climax(datum/reagents/R, atom/target, obj/item/organ/genital/sender, spill, cover = FALSE, obj/item/organ/genital/receiver, anonymous = FALSE)
 	if(!sender)
 		return
 	if(!target || !R)
 		return
-	if(SEND_SIGNAL(src, COMSIG_MOB_CLIMAX, R, target, sender, receiver, spill))
+	if(SEND_SIGNAL(src, COMSIG_MOB_CLIMAX, R, target, sender, receiver, spill, anonymous))
 		return
 
 	var/cached_fluid
@@ -64,7 +64,7 @@
 		var/obj/item/organ/genital/penis/bepis = sender
 		if(locate(/obj/item/genital_equipment/sounding) in bepis.contents)
 			spill = TRUE
-			to_chat(src, "<span class='userlove'>You feel your sounding rod being pushed out of your cockhole with the burst of jizz!</span>")
+			to_chat(src, "<span class='userlove'>Ты чувствуешь, как стержень выталкивается из твоей уретры вместе со струей оргазменной жидкости!</span>")
 			var/obj/item/genital_equipment/sounding/rod = locate(/obj/item/genital_equipment/sounding) in bepis.contents
 			rod.forceMove(get_turf(src))
 
@@ -72,17 +72,22 @@
 		if(istype(sender, /obj/item/organ/genital/penis))
 			var/obj/item/organ/genital/testicles/testicles = sender
 			var/size = testicles.size
+			var/balls_size_0 = list("cum_normal", "cum_normal_1", "cum_normal_2", "cum_normal_3", "cum_normal_4", "", "", "", "", "", "", "", "", "", "")
+			var/balls_size_1 = list("cum_normal", "cum_normal_1", "cum_normal_2", "cum_normal_3", "cum_normal_4", "", "", "", "", "")
+			var/balls_size_2 = list("cum_normal", "cum_normal_1", "cum_normal_2", "cum_normal_3", "cum_normal_4")
+			var/balls_size_3 = list("cum_normal", "cum_normal_1", "cum_normal_2", "cum_normal_3", "cum_normal_4", "cum_large", "cum_large", "cum_large", "cum_large", "cum_large")
+			var/balls_size_4 = list("cum_normal", "cum_normal_1", "cum_normal_2", "cum_normal_3", "cum_normal_4", "cum_large", "cum_large", "cum_large", "cum_large", "cum_large", "cum_large", "cum_large", "cum_large", "cum_large", "cum_large")
 			switch(size)
 				if(BALLS_SIZE_MIN)
-					size = pick("", "", "", "cum_normal")
+					size = pick(balls_size_0)
 				if(BALLS_SIZE_DEF)
-					size = pick("", "", "cum_normal", "cum_normal")
+					size = pick(balls_size_1)
 				if(BALLS_SIZE_2)
-					size = pick("", "cum_normal", "cum_normal", "cum_large")
+					size = pick(balls_size_2)
 				if(BALLS_SIZE_3)
-					size = pick("cum_normal", "cum_normal", "cum_large", "cum_large")
+					size = pick(balls_size_3)
 				if(BALLS_SIZE_MAX)
-					size = pick("cum_normal", "cum_large", "cum_large", "cum_large")
+					size = pick(balls_size_4)
 			target.add_cum_overlay(size)
 
 	. = ..()

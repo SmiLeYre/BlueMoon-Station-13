@@ -16,7 +16,7 @@
 	damtype = "brute"
 	total_mass = TOTAL_MASS_HAND_REPLACEMENT
 	sharpness = SHARP_EDGED
-	wound_bonus = -30
+	wound_bonus = 10
 	bare_wound_bonus = 15
 
 /obj/item/zombie_hand/Initialize(mapload)

@@ -442,7 +442,6 @@
 	var/zap_power = 20000
 	var/zap_range = 15
 	var/zap_flags = ZAP_MOB_DAMAGE | ZAP_MOB_STUN | ZAP_OBJ_DAMAGE
-	var/chain
 	var/mob/living/caster
 
 /obj/item/projectile/magic/aoe/lightning/fire(setAngle)
@@ -464,6 +463,25 @@
 /obj/item/projectile/magic/aoe/lightning/Destroy()
 	qdel(chain)
 	. = ..()
+
+/obj/item/projectile/magic/aoe/nuclear
+	name = "Bolt of Nuclear Bomb"
+	icon_state = "nuclear_bomb"
+	damage = 10
+	damage_type = BRUTE
+	nodamage = 0
+	pixels_per_second = TILES_TO_PIXELS(1.5)
+	flag = MAGIC
+
+/obj/item/projectile/magic/aoe/nuclear/on_hit(target)
+	. = ..()
+	if(ismob(target))
+		var/mob/living/M = target
+		if(M.anti_magic_check())
+			visible_message("<span class='warning'>[src] vanishes into smoke on contact with [target]!</span>")
+			return BULLET_ACT_BLOCK
+	var/turf/T = get_turf(target)
+	explosion(T, GLOB.MAX_EX_DEVESTATION_RANGE, GLOB.MAX_EX_HEAVY_RANGE, GLOB.MAX_EX_LIGHT_RANGE, GLOB.MAX_EX_FLASH_RANGE)
 
 /obj/item/projectile/magic/aoe/fireball
 	name = "bolt of fireball"

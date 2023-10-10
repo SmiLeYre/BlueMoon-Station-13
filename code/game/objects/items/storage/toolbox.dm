@@ -10,6 +10,8 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 	flags_1 = CONDUCT_1
 	force = 12
 	throwforce = 12
+	wound_bonus = 7
+	bare_wound_bonus = 9
 	throw_speed = 2
 	throw_range = 7
 	w_class = WEIGHT_CLASS_BULKY
@@ -22,9 +24,6 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 	var/has_latches = TRUE
 	var/can_rubberify = TRUE
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE //very protecc too
-	wound_bonus = -10
-	bare_wound_bonus = 5
-
 /obj/item/storage/toolbox/greyscale
 	icon_state = "toolbox_default"
 	item_state = "toolbox_default"
@@ -115,8 +114,8 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 	icon_state = "toolbox_blue_clean"
 	force = 19
 	throwforce = 22
-	wound_bonus = 0
-	bare_wound_bonus = 10
+	wound_bonus = 9
+	bare_wound_bonus = 11
 
 /obj/item/storage/toolbox/mechanical/old/clean/proc/calc_damage()
 	var/power = 0

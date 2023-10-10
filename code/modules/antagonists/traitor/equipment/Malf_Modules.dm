@@ -463,11 +463,11 @@ GLOBAL_LIST_INIT(blacklisted_malf_machines, typecacheof(list(
 	if(C)
 		C.post_status("alert", "lockdown")
 
-	minor_announce("Hostile runtime detected in door controllers. Isolation lockdown protocols are now in effect. Please remain calm.","Network Alert:", TRUE)
+	minor_announce("Вредоносное программное обеспечение обнаружено в системе контроля шл+юзов. Задействованы протоколы изоляции. Пожалуйста, сохраняйте спокойствие.","ВНИМАНИЕ: УЯЗВИМОСТЬ СЕТИ", TRUE)
 	to_chat(owner, "<span class='danger'>Lockdown initiated. Network reset in 90 seconds.</span>")
 	addtimer(CALLBACK(GLOBAL_PROC, .proc/minor_announce,
-		"Automatic system reboot complete. Have a secure day.",
-		"Network reset:"), 900)
+		"Автоматическая перезагрузка системы завершена. Хорошего вам дня.",
+		"ПЕРЕЗАГРУЗКА СЕТИ:"), 900)
 
 
 //Destroy RCDs: Detonates all non-cyborg RCDs on the station.

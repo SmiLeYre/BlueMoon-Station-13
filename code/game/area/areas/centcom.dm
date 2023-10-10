@@ -155,7 +155,10 @@
 	area_flags = VALID_TERRITORY | UNIQUE_AREA | NOTELEPORT
 	flags_1 = NONE
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
-	ambientsounds = HIGHSEC
+	ambientsounds = SHUTTLE_MILITARY
+	shipambience = 'sound/ambience/zone/stadium.ogg'
+	min_ambience_cooldown = 15 SECONDS
+	max_ambience_cooldown = 40 SECONDS
 
 /area/syndicate_mothership/control
 	name = "Syndicate Control Room"

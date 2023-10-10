@@ -66,14 +66,14 @@
 	for(var/mob/living/player in GLOB.player_list)
 		if(player.stat != DEAD && player.loc && is_station_level(player.loc.z) && !iscultist(player) && !isanimal(player))
 			souls_needed[player] = TRUE
-	soul_goal = round(1 + LAZYLEN(souls_needed) * 0.75)
+	soul_goal = round(1 + LAZYLEN(souls_needed) * 0.25)
 	INVOKE_ASYNC(src, .proc/begin_the_end)
 
 /obj/singularity/narsie/large/cult/proc/begin_the_end()
 	sleep(50)
-	priority_announce("An acausal dimensional event has been detected in your sector. Event has been flagged EXTINCTION-CLASS. Directing all available assets toward simulating solutions. SOLUTION ETA: 60 SECONDS.","Центральное Командование, Отдел Работы с Реальностью", 'sound/misc/airraid.ogg')
+	priority_announce("В вашем секторе зафиксирован крупный пространственный разлом. Разлому присвоен класс опасности: ВЫМИРАНИЕ ВСЕГО ЖИВОГО. Сделайте всё возможное, чтобы остановить это. У ВАС ЕСТЬ 60 СЕКУНД.","Центральное Командование, Отдел Работы с Реальностью", 'sound/misc/airraid.ogg')
 	sleep(500)
-	priority_announce("Simulations on acausal dimensional event complete. Deploying solution package now. Deployment ETA: ONE MINUTE. ","Центральное Командование, Отдел Работы с Реальностью")
+	priority_announce("Пространственный разлом принял необратимый характер. Мы развертываем последние оставшиеся силы. У ВАС ОСТАЕТСЯ ОДНА МИНУТА НА СПАСЕНИЕ.","Центральное Командование, Отдел Работы с Реальностью")
 	sleep(50)
 	set_security_level("delta")
 	SSshuttle.registerHostileEnvironment(src)
@@ -81,12 +81,13 @@
 	SSpersistence.station_was_destroyed = TRUE
 	sleep(600)
 	if(QDELETED(src))
-		priority_announce("Accausal event alert rescinded. Eldritch presence no longer reading on sensors. Solution package disarmed. Reccomend immediate evacuation","Центральное Командование, Отдел Работы с Реальностью")
+		priority_announce("Датчики более не фиксируют обозначенного пространственного разлома. Решения ЦК отозваны. Тем не менее, рекомендуется произвести немедленную эвакуацию персонала.","Центральное Командование, Отдел Работы с Реальностью")
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(cult_ending_helper), CULT_FAILURE_NARSIE_KILLED), 2 SECONDS)
 		return
 	if(resolved == FALSE)
 		resolved = TRUE
 		sound_to_playing_players('sound/machines/alarm.ogg')
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/cult_ending_helper), 120)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(cult_ending_helper), CULT_VICTORY_NUKE), 2 SECONDS)
 
 /obj/singularity/narsie/large/cult/Destroy()
 	GLOB.cult_narsie = null
@@ -95,11 +96,17 @@
 /proc/ending_helper()
 	SSticker.force_ending = 1
 
-/proc/cult_ending_helper(var/no_explosion = 0)
-	if(no_explosion)
-		Cinematic(CINEMATIC_CULT,world,CALLBACK(GLOBAL_PROC,/proc/ending_helper))
-	else
-		Cinematic(CINEMATIC_CULT_NUKE,world,CALLBACK(GLOBAL_PROC,/proc/ending_helper))
+/proc/cult_ending_helper(ending_type = CULT_VICTORY_NUKE)
+	switch(ending_type)
+
+		if(CULT_FAILURE_NARSIE_KILLED)
+			Cinematic(CINEMATIC_CULT,world,CALLBACK(GLOBAL_PROC,/proc/ending_helper))
+
+		if(CULT_VICTORY_MASS_CONVERSION)
+			Cinematic(CINEMATIC_CULT,world,CALLBACK(GLOBAL_PROC,/proc/ending_helper))
+
+		if(CULT_VICTORY_NUKE)
+			Cinematic(CINEMATIC_CULT,world,CALLBACK(GLOBAL_PROC,/proc/ending_helper))
 
 //ATTACK GHOST IGNORING PARENT RETURN VALUE
 /obj/singularity/narsie/large/attack_ghost(mob/dead/observer/user as mob)

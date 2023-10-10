@@ -69,6 +69,7 @@
 	dir = 4;
 	icon_state = "plating"
 	},
+/obj/effect/spawner/lootdrop/salvage,
 /turf/template_noop,
 /area/template_noop)
 "ao" = (
@@ -112,6 +113,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plasteel/airless/dark,
 /area/shuttle/caravan/freighter3)
 "aw" = (
@@ -149,14 +151,14 @@
 /area/shuttle/caravan/freighter3)
 "aI" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/frame/computer{
-	dir = 8
-	},
 /obj/item/shard,
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/structure/salvage/computer{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark{
@@ -264,11 +266,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/structure/door_assembly/door_assembly_com{
-	anchored = 1;
-	density = 0;
-	name = "broken airlock"
-	},
 /turf/open/floor/plasteel/airless/dark,
 /area/shuttle/caravan/freighter2)
 "bd" = (
@@ -335,9 +332,9 @@
 /area/ruin/unpowered)
 "dF" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/frame/computer,
 /obj/item/shard,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/salvage/computer,
 /turf/open/floor/mineral/plastitanium/airless,
 /area/ruin/unpowered)
 "dL" = (
@@ -806,10 +803,10 @@
 "ih" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/frame/computer{
+/obj/item/shard,
+/obj/structure/salvage/computer{
 	dir = 8
 	},
-/obj/item/shard,
 /turf/open/floor/plasteel/airless{
 	icon_state = "damaged3"
 	},
@@ -930,7 +927,6 @@
 /area/shuttle/caravan/freighter3)
 "iH" = (
 /obj/structure/table/reinforced,
-/obj/machinery/cell_charger,
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
@@ -938,12 +934,12 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
+/obj/structure/salvage/remains,
 /turf/open/floor/plasteel/dark{
 	initial_gas_mix = "TEMP=2.7"
 	},
 /area/shuttle/caravan/freighter3)
 "iT" = (
-/obj/machinery/space_heater,
 /obj/machinery/power/terminal{
 	dir = 1
 	},
@@ -953,6 +949,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plating/airless,
 /area/shuttle/caravan/freighter2)
 "iU" = (
@@ -1017,6 +1014,7 @@
 	name = "Cargo Blast Door Control";
 	pixel_y = -24
 	},
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plasteel/airless/dark,
 /area/shuttle/caravan/freighter3)
 "je" = (
@@ -1315,6 +1313,10 @@
 	},
 /turf/open/floor/plating/airless,
 /area/shuttle/caravan/freighter3)
+"Ad" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/unpowered)
 "GL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/external{
@@ -2589,7 +2591,7 @@ aa
 aa
 ad
 bt
-dD
+Ad
 bt
 bt
 bt

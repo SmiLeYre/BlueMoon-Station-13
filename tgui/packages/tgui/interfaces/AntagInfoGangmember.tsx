@@ -26,13 +26,13 @@ export const AntagInfoGangmember = (props, context) => {
         <Section fill>
           <Stack vertical>
             <Stack.Item textColor="red" fontSize="20px">
-              {gang_name} for life! You are a {antag_name}!
+              {gang_name} вперёд! Ты - {antag_name}!
             </Stack.Item>
             <Stack.Item fontSize="18px">
-              As a gang member, support your family above all!
-              Tag turf with a spraycan, wear your family&apos;s clothes,
-              induct new members with induction packages,
-              and accomplish your family objective.
+              Будучи членом банды, прежде всего поддерживайте свою семью!
+              Помечайте Отделы с помощью баллончика, носите одежду Семьи,
+              приглашайте экипаж в свою банду при помощи пакетиков
+              и выполняйте свою семейную задачу.
             </Stack.Item>
             <Stack.Divider />
             <Stack.Item>
@@ -72,7 +72,7 @@ const GangClothesPrintout = (props, context) => {
               name="tshirt" />
           </Stack.Item>
           <Stack.Item bold>
-            Wear the following to represent the {gang_name}:
+            Носите это, чтобы представлять {gang_name}:
           </Stack.Item>
         </Stack>
       </Stack.Item>
@@ -102,14 +102,14 @@ const GangPhonePrintout = () => {
               name="phone" />
           </Stack.Item>
           <Stack.Item bold>
-            You were given a cell phone with your induction package!
+            Вам был выдан сотовый телефон для связи!
           </Stack.Item>
         </Stack>
       </Stack.Item>
       <Stack.Item>
         <BlockQuote>
-          Use it in hand to activate it, then speak into it to talk with
-          your other family members.
+          Используйте его для переговоров с членами
+          своей семьи.
         </BlockQuote>
       </Stack.Item>
     </Stack>
@@ -125,7 +125,7 @@ const GangObjectivePrintout = (props, context) => {
   return (
     <Stack vertical>
       <Stack.Item bold fontSize="16px">
-        Your family&apos;s goal:
+        Цель Твоей Семьи:
       </Stack.Item>
       <Stack.Item>
         {gang_objective

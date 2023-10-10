@@ -22,16 +22,18 @@
 	name = "Handled Jukebox"
 	desc = "Переносная колонка для крутых. ТЕПЕРЬ ВЗЛОМАННАЯ."
 	obj_flags = EMAGGED
-
-/obj/item/jukebox/emag_act(mob/user)
-	. = ..()
-	if(obj_flags & EMAGGED)
-		return
-	obj_flags |= EMAGGED
 	queuecost = PRICE_FREE
-	req_one_access = null
-	to_chat(user, "<span class='notice'>You've bypassed [src]'s audio volume limiter, and enabled free play.</span>")
-	return TRUE
+
+///obj/item/jukebox/emag_act(mob/user)
+//	. = ..()
+//	if(obj_flags & EMAGGED)
+//		return
+//	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
+//	obj_flags |= EMAGGED
+//	queuecost = PRICE_FREE
+//	req_one_access = null
+//	to_chat(user, "<span class='notice'>You've bypassed [src]'s audio volume limiter, and enabled free play.</span>")
+//	return TRUE
 
 /obj/item/jukebox/update_icon_state()
 	if(active)

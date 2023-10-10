@@ -1197,7 +1197,7 @@
 	if(fire_stacks > 0 && !on_fire)
 		on_fire = 1
 		visible_message("<span class='warning'>[src] catches fire!</span>", \
-						"<span class='userdanger'>You're set on fire!</span>")
+						"<span class='userdanger'>Вы горите!</span>")
 		new/obj/effect/dummy/lighting_obj/moblight/fire(src)
 		throw_alert(FIRE, /atom/movable/screen/alert/fire)
 		update_fire()
@@ -1409,12 +1409,3 @@
 			STAMINA:<font size='1'><a href='?_src_=vars;[HrefToken()];mobToDamage=[refid];adjustDamage=stamina' id='stamina'>[getStaminaLoss()]</a>
 		</font>
 	"}
-
-//BLUEMOON ADD START - FUZZY
-/mob/living/verb/switch_scaling()
-	set name = "Switch scaling mode"
-	set category = "IC"
-	set desc = "Switch sharp/fuzzy scaling for current mob."
-	appearance_flags ^= PIXEL_SCALE
-	fuzzy = !fuzzy
-//BLUEMOON ADD END - FUZZY

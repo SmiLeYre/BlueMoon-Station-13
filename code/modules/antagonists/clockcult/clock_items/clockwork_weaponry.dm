@@ -6,6 +6,8 @@
 	icon = 'icons/obj/clockwork_objects.dmi'
 	lefthand_file = 'icons/mob/inhands/antag/clockwork_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/antag/clockwork_righthand.dmi'
+	wound_bonus = 10
+	bare_wound_bonus = 5
 	var/datum/action/innate/call_weapon/action //Some melee weapons use an action that lets you return and dismiss them
 
 /obj/item/clockwork/weapon/Initialize(mapload, new_action)

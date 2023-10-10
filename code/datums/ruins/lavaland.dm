@@ -58,7 +58,7 @@
 	description = "Lumbering humanoids, made out of precious metals, move inside this ship. They frequently leave to mine more minerals, which they somehow turn into more of them. \
 	Seem very intent on research and individual liberty, and also geology based naming?"
 	cost = 20
-	prefix = "_maps/RandomRuins/AnywhereRuins/"
+	prefix = "_maps/shuttles/bluemoon/"
 	suffix = "golem_ship.dmm"
 	allow_duplicates = FALSE
 
@@ -283,3 +283,19 @@
 	suffix = "lavaland_surface_elephant_graveyard.dmm"
 	allow_duplicates = FALSE
 	cost = 10
+
+/datum/map_template/ruin/lavaland/ratvar_boss
+	name = "Ratvar Boss"
+	id = "ratvarboss"
+	description = "Последний Оплот Ратваровцев на Лаваленде..."
+	suffix = "lavaland_surface_ratvar_boss.dmm"
+	allow_duplicates = FALSE
+	cost = 20
+
+/datum/map_template/ruin/lavaland/narsie_boss
+	name = "Narsie Boss"
+	id = "narsieboss"
+	description = "Последний Оплот Нарсистов на Лаваленде..."
+	suffix = "lavaland_surface_narsie_boss.dmm"
+	allow_duplicates = FALSE
+	cost = 20

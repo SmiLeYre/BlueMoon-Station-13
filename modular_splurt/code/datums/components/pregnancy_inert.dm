@@ -62,8 +62,11 @@
 		eggs_stored += 1
 		eggs_stored = min(3, eggs_stored)
 
-/datum/component/ovipositor/proc/on_climax(datum/source, datum/reagents/senders_cum, atom/target, obj/item/organ/genital/sender, obj/item/organ/genital/receiver, spill)
+/datum/component/ovipositor/proc/on_climax(datum/source, datum/reagents/senders_cum, atom/target, obj/item/organ/genital/sender, obj/item/organ/genital/receiver, spill, anonymous)
 	SIGNAL_HANDLER
+
+	if(prob(30))
+		return FALSE
 
 	var/obj/item/organ/genital/stuff = parent
 	if(stuff != sender && stuff.linked_organ != sender)
@@ -74,14 +77,11 @@
 
 	if(receiver && isliving(target))
 		if(CHECK_BITFIELD(receiver.genital_flags, GENITAL_CAN_STUFF))
-			return lay_eg(receiver, senders_cum)
-	return lay_eg(get_turf(carrier), senders_cum)
+			return lay_eg(receiver, senders_cum, anonymous)
+	return lay_eg(get_turf(carrier), senders_cum, anonymous)
 
-/datum/component/ovipositor/proc/lay_eg(atom/location, datum/reagents/senders_cum)
-	to_chat(carrier, span_userlove("You feel your egg sliding slowly inside!"))
-
-	if(prob(30))
-		return FALSE
+/datum/component/ovipositor/proc/lay_eg(atom/location, datum/reagents/senders_cum, anonymous)
+	to_chat(carrier, span_userlove("Вы чувствуете яйцо глубоко внутри и оно начинает скользить всё ниже!"))
 
 	if(isorgan(location))
 		var/obj/item/organ/recv = location
@@ -104,11 +104,17 @@
 		var/obj/item/organ/recv = location
 		var/datum/component/genital_equipment/equipment = eggo.GetComponent(/datum/component/genital_equipment)
 		equipment.holder_genital = recv
-		carrier.visible_message(span_userlove("[carrier] laid an egg!"), \
-			span_userlove("You laid an egg inside [recv.owner]'s [recv]"))
+		if(anonymous)
+			carrier.visible_message(span_userlove("[carrier] откладывает яйцо!"), \
+				span_userlove("Вы откладываете яйцо в [recv]!"))
+			to_chat(recv, span_userlove("Кто-то откладывает в тебя яйцо!"))
+		else
+			carrier.visible_message(span_userlove("[carrier] откладывает яйцо!"), \
+				span_userlove("Вы откладываете яйцо в [recv] [recv.owner]"))
+			to_chat(recv, span_userlove("[carrier] откладывает в тебя яйцо!"))
 	else
-		carrier.visible_message(span_notice("[carrier] laid an egg!"), \
-			span_nicegreen("The egg came out!"))
+		carrier.visible_message(span_notice("[carrier] откладывает яйцо!"), \
+			span_nicegreen("Яйцо... отложено!"))
 
 	playsound(carrier, 'sound/effects/splat.ogg', 70, TRUE)
 

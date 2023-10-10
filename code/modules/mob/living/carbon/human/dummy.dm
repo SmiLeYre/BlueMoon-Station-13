@@ -85,6 +85,7 @@ GLOBAL_LIST_EMPTY(dummy_mob_list)
 
 		if(ishuman(target))
 			var/mob/living/carbon/human/human_target = target
+			SSquirks.AssignQuirks(human_target, human_target.client, TRUE, TRUE, null, FALSE, human_target)
 			human_target.copy_clothing_prefs(copycat)
 
 		copycat.updateappearance(icon_update=TRUE, mutcolor_update=TRUE, mutations_overlay_update=TRUE)

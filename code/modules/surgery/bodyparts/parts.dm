@@ -1,6 +1,7 @@
 /obj/item/bodypart/chest
 	name = BODY_ZONE_CHEST
 	ru_name = "грудь"
+	ru_name_v = "груди"
 	ru_name_capital = "Грудь"
 	desc = "It's impolite to stare at a person's chest."
 	icon_state = "default_human_chest"
@@ -56,6 +57,7 @@
 /obj/item/bodypart/l_arm
 	name = "left arm"
 	ru_name = "левая рука"
+	ru_name_v = "левой руке"
 	ru_name_capital = "Левая рука"
 	desc = "Did you know that the word 'sinister' stems originally from the \
 		Latin 'sinestra' (left hand), because the left hand was supposed to \
@@ -122,6 +124,7 @@
 /obj/item/bodypart/r_arm
 	name = "right arm"
 	ru_name = "правая рука"
+	ru_name_v = "правой руке"
 	ru_name_capital = "Правая рука"
 	desc = "Over 87% of humans are right handed. That figure is much lower \
 		among humans missing their right arm."
@@ -187,6 +190,7 @@
 /obj/item/bodypart/l_leg
 	name = "left leg"
 	ru_name = "левая нога"
+	ru_name_v = "левой ноге"
 	ru_name_capital = "Левая нога"
 	desc = "Some athletes prefer to tie their left shoelaces first for good \
 		luck. In this instance, it probably would not have helped."
@@ -246,6 +250,7 @@
 /obj/item/bodypart/r_leg
 	name = "right leg"
 	ru_name = "правая нога"
+	ru_name_v = "правой ноге"
 	ru_name_capital = "Правая нога"
 	desc = "You put your right leg in, your right leg out. In, out, in, out, \
 		shake it all about. And apparently then it detaches.\n\

@@ -199,3 +199,19 @@
 	charges--
 	user.take_overall_damage(0,30)
 	to_chat(user, "<span class='warning'>You zap yourself. Why?</span>")
+
+/////////////////////////////////////
+//WAND OF NUCLEAR BOMB
+/////////////////////////////////////
+
+/obj/item/gun/magic/wand/nuclear
+	name = "Staff of Nuclear Bomb"
+	desc = "Федерация Космических Магов запатентовала Ядерные Бомбы ещё задолго до их появления среди так называемых технологий. И мы с лёгкостью это докажем!"
+	fire_sound = 'sound/magic/short_alert.ogg'
+	ammo_type = /obj/item/ammo_casing/magic/nuclear
+	icon_state = "bomb"
+	item_state = "bomb"
+	w_class = WEIGHT_CLASS_HUGE
+	slot_flags = ITEM_SLOT_BACK
+	max_charges = 1
+	recharge_rate = 120

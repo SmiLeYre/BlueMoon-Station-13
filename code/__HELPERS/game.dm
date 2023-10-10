@@ -631,4 +631,4 @@
 			var/area/A = C.area
 			if(GLOB.typecache_powerfailure_safe_areas[A.type])
 				continue
-			C.energy_fail(rand(duration_min,duration_max))
+			INVOKE_ASYNC(C, TYPE_PROC_REF(/obj/machinery/power/apc, energy_fail), rand(duration_min,duration_max))

@@ -140,6 +140,7 @@
 		to_chat(user, span_warning("You'd need to turn the [src] on first."))
 		return FALSE
 	to_chat(user, span_notice("You swipe \the [src]. It's screen briefly shows a message reading \"MEMORY CODE INJECTION DETECTED AND SUCCESSFULLY QUARANTINED\"."))
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	return FALSE
 
 /// Borg Built-in tablet interface

@@ -1,0 +1,3126 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aw" = (
+/obj/structure/stone_tile/surrounding,
+/obj/structure/stone_tile/center,
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"bt" = (
+/obj/structure/stone_tile/cracked{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/sacrificealtar,
+/obj/item/melee/sickly_blade/ash,
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"bJ" = (
+/obj/structure/stone_tile/surrounding_tile,
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 1
+	},
+/obj/effect/clockwork/overlay/floor,
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"bL" = (
+/obj/structure/stone_tile/cracked{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile,
+/obj/item/storage/toolbox/brass/prefilled/ratvar,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"cp" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile/cracked,
+/obj/machinery/telecomms/relay/preset/reebe,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"dB" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile/surrounding_tile/cracked,
+/obj/structure/trap/fire,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"dO" = (
+/obj/structure/stone_tile/slab,
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"dW" = (
+/obj/structure/flora/rock,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"dX" = (
+/obj/structure/necropolis_arch,
+/obj/structure/bonfire/prelit,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"ee" = (
+/obj/structure/stone_tile/block,
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile/cracked{
+	dir = 4
+	},
+/obj/machinery/telecomms/relay/preset/reebe,
+/obj/structure/window/reinforced/clockwork{
+	dir = 8
+	},
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"ey" = (
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"gj" = (
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 8
+	},
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile/surrounding_tile,
+/obj/structure/stone_tile/center,
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"gy" = (
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/effect/mob_spawn/human/corpse/miner,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"hy" = (
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile/surrounding_tile,
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 8
+	},
+/obj/effect/clockwork/overlay/floor,
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"hE" = (
+/obj/structure/stone_tile/cracked{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile,
+/obj/structure/window/reinforced/clockwork{
+	dir = 1
+	},
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"hN" = (
+/obj/structure/stone_tile/block{
+	dir = 8
+	},
+/obj/structure/stone_tile,
+/obj/effect/clockwork/overlay/floor,
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"id" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile/cracked,
+/obj/structure/window/reinforced/clockwork{
+	dir = 1;
+	max_integrity = 180
+	},
+/obj/structure/chair/bronze{
+	dir = 1
+	},
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"ii" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile/block/cracked,
+/obj/machinery/telecomms/relay/preset/reebe,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"ij" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 4
+	},
+/obj/structure/stone_tile/cracked{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"il" = (
+/obj/structure/stone_tile/block/burnt{
+	dir = 4
+	},
+/obj/structure/stone_tile/block{
+	dir = 8
+	},
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"iQ" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 8
+	},
+/obj/structure/stone_tile/cracked,
+/obj/structure/stone_tile/cracked{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"iT" = (
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"jc" = (
+/obj/structure/stone_tile/block,
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"jg" = (
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 4
+	},
+/obj/structure/stone_tile/surrounding_tile,
+/obj/structure/stone_tile/center,
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"jU" = (
+/obj/structure/stone_tile/center,
+/obj/structure/stone_tile/surrounding,
+/obj/structure/trap/fire,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"kV" = (
+/obj/structure/necropolis_gate/ashwalker,
+/obj/structure/stone_tile/slab,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"lm" = (
+/obj/structure/stone_tile/cracked{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"lz" = (
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 8
+	},
+/obj/effect/clockwork/overlay/floor,
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"lN" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/destructible/clockwork/trap/power_nullifier,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"ma" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 4
+	},
+/obj/structure/stone_tile/cracked{
+	dir = 4
+	},
+/obj/structure/stone_tile/cracked{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"md" = (
+/obj/structure/stone_tile/slab,
+/obj/machinery/door/airlock/bronze,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"mI" = (
+/obj/structure/stone_tile/block,
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"na" = (
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile/surrounding_tile,
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 4
+	},
+/obj/effect/clockwork/overlay/floor,
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"nM" = (
+/obj/structure/window/reinforced/clockwork{
+	dir = 1
+	},
+/obj/structure/stone_tile/block/cracked{
+	dir = 1
+	},
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"nX" = (
+/obj/structure/stone_tile/cracked{
+	dir = 4
+	},
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"oa" = (
+/obj/structure/stone_tile/block{
+	dir = 4
+	},
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"og" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 4
+	},
+/obj/structure/stone_tile/block/cracked{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"oh" = (
+/obj/structure/statue/bone/rib,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"ol" = (
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"ou" = (
+/obj/structure/stone_tile/block,
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile/cracked{
+	dir = 4
+	},
+/obj/structure/window/reinforced/clockwork{
+	dir = 8
+	},
+/obj/machinery/telecomms/relay/preset/reebe,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"oH" = (
+/obj/structure/stone_tile/cracked{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile,
+/obj/structure/window/reinforced/clockwork{
+	dir = 4
+	},
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"pu" = (
+/obj/structure/stone_tile/block,
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/effect/clockwork/overlay/floor,
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"pK" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/trap/fire,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"qg" = (
+/obj/structure/stone_tile/slab,
+/obj/item/clothing/suit/bronze,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"qL" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/asteroid/goliath/beast,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"qP" = (
+/turf/closed/indestructible/riveted/boss,
+/area/ruin/lavaland/unpowered)
+"rm" = (
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 4
+	},
+/obj/effect/clockwork/overlay/floor,
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"rt" = (
+/obj/structure/stone_tile/block{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile/cracked,
+/obj/item/restraints/handcuffs/clockwork,
+/obj/structure/table/reinforced{
+	icon_state = "brass_table";
+	icon = 'icons/obj/smooth_structures/brass_table.dmi'
+	},
+/obj/item/stack/sheet/bronze/thirty,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"sz" = (
+/obj/structure/stone_tile/block/burnt{
+	dir = 4
+	},
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"sE" = (
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"sQ" = (
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"tn" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 1
+	},
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"tq" = (
+/obj/structure/stone_tile/cracked{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"tE" = (
+/obj/structure/stone_tile/block{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/effect/clockwork/overlay/floor,
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"tR" = (
+/obj/structure/stone_tile/block,
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/item/clothing/suit/armor/clockwork,
+/obj/structure/table/reinforced{
+	icon_state = "brass_table";
+	icon = 'icons/obj/smooth_structures/brass_table.dmi'
+	},
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"vf" = (
+/obj/structure/stone_tile/block{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/clockcultistranged,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"vJ" = (
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile/cracked{
+	dir = 8
+	},
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"wC" = (
+/obj/structure/stone_tile/slab,
+/obj/effect/mob_spawn/human/corpse/miner,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"wN" = (
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 1
+	},
+/obj/effect/clockwork/overlay/floor,
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"wY" = (
+/obj/structure/stone_tile/block{
+	dir = 1
+	},
+/obj/structure/stone_tile,
+/obj/structure/stone_tile/cracked{
+	dir = 8
+	},
+/obj/machinery/telecomms/relay/preset/reebe,
+/obj/structure/window/reinforced/clockwork{
+	dir = 4;
+	max_integrity = 180
+	},
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"wZ" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/machinery/telecomms/relay/preset/reebe,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"xp" = (
+/obj/structure/stone_tile/block{
+	dir = 8
+	},
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/item/clockwork/alloy_shards/clockgolem_remains,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"xu" = (
+/obj/structure/stone_tile/cracked{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"xH" = (
+/obj/structure/stone_tile/slab,
+/mob/living/simple_animal/hostile/big_legion,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"xQ" = (
+/obj/structure/stone_tile/slab,
+/obj/item/clothing/mask/gas/german,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"xU" = (
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"ye" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile/cracked,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"yr" = (
+/obj/structure/stone_tile/block{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile/cracked,
+/obj/structure/sacrificealtar,
+/obj/item/clothing/head/helmet/clockwork,
+/obj/item/clockwork/weapon/ratvarian_spear,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"ys" = (
+/obj/structure/bonfire/prelit,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"yK" = (
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 4
+	},
+/obj/structure/stone_tile/surrounding_tile/cracked,
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 8
+	},
+/obj/structure/stone_tile/center/cracked,
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"yL" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile/cracked,
+/obj/structure/window/reinforced/clockwork{
+	dir = 1
+	},
+/obj/structure/window/reinforced/clockwork,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"yO" = (
+/obj/structure/window/reinforced/clockwork,
+/obj/structure/stone_tile/block/burnt,
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"yU" = (
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/ruin/lavaland/unpowered)
+"zD" = (
+/obj/structure/headpike,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"zE" = (
+/obj/structure/stone_tile/slab/burnt,
+/obj/item/clothing/head/bronze,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"zK" = (
+/obj/structure/stone_tile/block{
+	dir = 8
+	},
+/obj/structure/stone_tile/block{
+	dir = 4
+	},
+/obj/item/nullrod,
+/obj/structure/sacrificealtar,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"zU" = (
+/obj/structure/stone_tile/surrounding/cracked,
+/obj/structure/stone_tile/center/cracked,
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"AL" = (
+/obj/structure/destructible/clockwork/wall_gear,
+/turf/closed/indestructible/riveted/boss,
+/area/ruin/lavaland/unpowered)
+"AP" = (
+/obj/structure/stone_tile/block{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/effect/clockwork/overlay/floor,
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"Br" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile/surrounding_tile/cracked,
+/obj/item/clothing/shoes/bronze,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"Cm" = (
+/obj/structure/stone_tile/cracked{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile,
+/obj/structure/window/reinforced/clockwork,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"Cq" = (
+/obj/structure/headpike,
+/obj/structure/stone_tile/center/burnt,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"Cw" = (
+/obj/structure/stone_tile/cracked{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/sacrificealtar,
+/obj/item/melee/chainofcommand/jungle,
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"CD" = (
+/obj/structure/statue/bone/rib{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"CQ" = (
+/obj/structure/stone_tile/slab/burnt,
+/obj/machinery/door/airlock/bronze,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"Dl" = (
+/obj/structure/stone_tile/surrounding/cracked,
+/obj/structure/stone_tile/center/burnt,
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"DN" = (
+/obj/structure/necropolis_arch,
+/obj/structure/stone_tile/slab,
+/obj/structure/necropolis_gate/ashwalker,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"Ey" = (
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/asteroid/miner,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"ES" = (
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile/cracked{
+	dir = 1
+	},
+/obj/structure/stone_tile,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"Fe" = (
+/obj/structure/stone_tile/block{
+	dir = 1
+	},
+/obj/structure/stone_tile,
+/obj/effect/clockwork/overlay/floor,
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"Fk" = (
+/obj/structure/stone_tile/block{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile,
+/obj/machinery/telecomms/relay/preset/reebe,
+/obj/structure/window/reinforced/clockwork{
+	dir = 8
+	},
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"Gi" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/trap/fire,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"Gj" = (
+/obj/structure/stone_tile/block{
+	dir = 4
+	},
+/obj/structure/trap/fire,
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"Gr" = (
+/obj/structure/stone_tile/block,
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/machinery/telecomms/relay/preset/reebe,
+/obj/structure/window/reinforced/clockwork{
+	dir = 4;
+	max_integrity = 180
+	},
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"Gs" = (
+/obj/structure/stone_tile/block{
+	dir = 4
+	},
+/obj/structure/stone_tile/block{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/boss/clockcultistboss,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"GF" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile/block/cracked,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"GG" = (
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 8
+	},
+/obj/structure/window/reinforced/clockwork{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"GU" = (
+/obj/structure/stone_tile/center,
+/obj/structure/stone_tile/surrounding,
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"GZ" = (
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"HQ" = (
+/obj/structure/stone_tile/surrounding_tile,
+/obj/effect/clockwork/overlay/floor,
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"Id" = (
+/obj/structure/stone_tile/cracked,
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/window/reinforced/clockwork{
+	dir = 8
+	},
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"ID" = (
+/obj/structure/stone_tile/block/cracked,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"IJ" = (
+/obj/structure/stone_tile/surrounding,
+/obj/structure/stone_tile/center/cracked,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"IM" = (
+/obj/structure/stone_tile/cracked{
+	dir = 8
+	},
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"IU" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile/surrounding_tile/cracked,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"Js" = (
+/obj/structure/stone_tile/center,
+/obj/structure/stone_tile/surrounding,
+/obj/item/clockwork/alloy_shards/clockgolem_remains,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"JA" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile/block/cracked,
+/obj/structure/window/reinforced/clockwork,
+/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/magmawing,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"JI" = (
+/obj/structure/stone_tile/block{
+	dir = 8
+	},
+/obj/structure/stone_tile,
+/obj/structure/stone_tile/cracked{
+	dir = 1
+	},
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"JS" = (
+/obj/structure/stone_tile/block,
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/window/reinforced/clockwork{
+	dir = 4
+	},
+/obj/machinery/telecomms/relay/preset/reebe,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"JU" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/window/reinforced/clockwork{
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/magmawing,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"Ki" = (
+/obj/structure/stone_tile/block{
+	dir = 1
+	},
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/clockcultistmelee,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"Kj" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 4
+	},
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"Kl" = (
+/obj/structure/stone_tile/block/burnt{
+	dir = 8
+	},
+/obj/structure/stone_tile/block{
+	dir = 4
+	},
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"Kz" = (
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"KZ" = (
+/obj/structure/stone_tile/block{
+	dir = 8
+	},
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"Ln" = (
+/obj/structure/stone_tile/surrounding_tile/burnt,
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile/center/cracked,
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"LK" = (
+/obj/structure/stone_tile/slab/burnt,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"LW" = (
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 1
+	},
+/obj/structure/stone_tile/surrounding_tile/cracked,
+/obj/structure/stone_tile/center/cracked,
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"Ma" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 8
+	},
+/obj/structure/stone_tile/cracked{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"MK" = (
+/obj/structure/stone_tile/center,
+/obj/effect/mob_spawn/human/corpse/miner/explorer,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"MP" = (
+/obj/effect/mob_spawn/human/corpse/miner/explorer,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"MT" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile,
+/mob/living/simple_animal/hostile/clockcultistranged,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"MZ" = (
+/obj/structure/stone_tile/center,
+/obj/structure/stone_tile/surrounding,
+/mob/living/simple_animal/hostile/big_legion,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"Na" = (
+/obj/structure/stone_tile/block/burnt{
+	dir = 1
+	},
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"Oh" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile/cracked,
+/obj/structure/window/reinforced/clockwork{
+	dir = 1
+	},
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"Ok" = (
+/obj/structure/stone_tile/surrounding/cracked{
+	dir = 1
+	},
+/obj/structure/stone_tile/center/cracked,
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"OH" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 4
+	},
+/obj/structure/stone_tile/block{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/clockcultistranged,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"OO" = (
+/obj/structure/stone_tile/slab,
+/mob/living/simple_animal/hostile/asteroid/imp,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"Pg" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 4
+	},
+/obj/structure/stone_tile/cracked{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"Pi" = (
+/obj/structure/stone_tile/slab,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"Pw" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 8
+	},
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"Px" = (
+/obj/structure/fluff/drake_statue/falling{
+	move_resist = 40000
+	},
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"PK" = (
+/obj/structure/stone_tile/cracked{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"Qc" = (
+/obj/structure/stone_tile/cracked{
+	dir = 8
+	},
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"Qs" = (
+/obj/structure/stone_tile/surrounding/cracked,
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"QE" = (
+/obj/structure/stone_tile/cracked{
+	dir = 4
+	},
+/obj/structure/stone_tile/cracked{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"Ra" = (
+/obj/structure/stone_tile/slab,
+/obj/item/clockwork/alloy_shards/clockgolem_remains,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"RH" = (
+/obj/structure/stone_tile/center,
+/obj/structure/stone_tile/surrounding,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"RR" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile/cracked,
+/obj/structure/window/reinforced/clockwork,
+/obj/structure/chair/bronze,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"SD" = (
+/obj/structure/closet/crate/necropolis/tendril/random,
+/obj/effect/clockwork/overlay/floor,
+/turf/open/space/basic,
+/area/ruin/lavaland/unpowered)
+"SO" = (
+/obj/structure/stone_tile/cracked{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile,
+/obj/structure/closet/crate/necropolis/tendril/random,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"Tx" = (
+/obj/structure/window/reinforced/clockwork{
+	dir = 8
+	},
+/obj/structure/stone_tile/block/burnt{
+	dir = 8;
+	pixel_y = 1
+	},
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"UI" = (
+/obj/structure/stone_tile/surrounding_tile/burnt,
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 1
+	},
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 4
+	},
+/obj/structure/stone_tile/center/cracked,
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"UR" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile,
+/obj/structure/stone_tile/cracked{
+	dir = 4
+	},
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"Vd" = (
+/obj/structure/headpike,
+/obj/structure/stone_tile/surrounding/cracked,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"Ve" = (
+/obj/structure/stone_tile/block,
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/item/clothing/mask/gas/dagoth,
+/obj/structure/table/reinforced{
+	icon_state = "brass_table";
+	icon = 'icons/obj/smooth_structures/brass_table.dmi'
+	},
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"Vr" = (
+/obj/structure/stone_tile/cracked{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"VQ" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"Wn" = (
+/obj/structure/stone_tile/cracked{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"Wo" = (
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"Wz" = (
+/obj/structure/stone_tile/block{
+	dir = 8
+	},
+/obj/structure/trap/fire,
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"WD" = (
+/obj/structure/stone_tile/block{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/effect/clockwork/overlay/floor,
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"WI" = (
+/obj/structure/stone_tile/block,
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/effect/clockwork/overlay/floor,
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"Xq" = (
+/obj/structure/stone_tile/block{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/effect/clockwork/overlay/floor,
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"Xt" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/window/reinforced/clockwork{
+	dir = 8
+	},
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"XG" = (
+/obj/structure/stone_tile/block{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"XH" = (
+/obj/structure/stone_tile/cracked,
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/anvil/obtainable/bronze,
+/obj/structure/window/reinforced/clockwork{
+	dir = 8
+	},
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"XJ" = (
+/obj/structure/stone_tile/block/burnt{
+	dir = 8
+	},
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"XN" = (
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 1
+	},
+/obj/effect/clockwork/overlay/floor,
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"XW" = (
+/obj/structure/ore_box,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"XY" = (
+/obj/structure/stone_tile/surrounding/cracked{
+	dir = 8
+	},
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"Yh" = (
+/obj/structure/stone_tile/cracked,
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile/cracked{
+	dir = 4
+	},
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"Yn" = (
+/obj/structure/stone_tile/slab/cracked,
+/obj/machinery/door/airlock/bronze,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"Yp" = (
+/obj/structure/stone_tile/slab/cracked,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"YN" = (
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile/block/cracked{
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/clockcultistmelee,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"YT" = (
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile/center,
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"Zj" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 1
+	},
+/obj/structure/stone_tile/block,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"Zx" = (
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile/surrounding_tile/burnt,
+/obj/structure/stone_tile/center,
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"ZA" = (
+/obj/structure/stone_tile/center/cracked,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/lavaland/unpowered)
+"ZH" = (
+/obj/structure/stone_tile/slab,
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"ZN" = (
+/obj/structure/stone_tile/surrounding,
+/obj/structure/stone_tile/center,
+/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/magmawing,
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+"ZO" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/cursed_money,
+/turf/open/indestructible/boss,
+/area/ruin/lavaland/unpowered)
+"ZX" = (
+/obj/structure/stone_tile/block{
+	dir = 1
+	},
+/turf/open/floor/clockwork/reebe,
+/area/ruin/lavaland/unpowered)
+
+(1,1,1) = {"
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+ey
+ey
+ey
+ey
+ey
+yU
+yU
+yU
+"}
+(2,1,1) = {"
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+ey
+ey
+yU
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+yU
+yU
+"}
+(3,1,1) = {"
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+yU
+yU
+"}
+(4,1,1) = {"
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+ey
+ey
+ey
+ey
+qP
+qP
+qP
+qP
+qP
+qP
+qP
+qP
+qP
+ey
+ey
+yU
+yU
+"}
+(5,1,1) = {"
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+qP
+JS
+JA
+yO
+SO
+nM
+JU
+wY
+qP
+ey
+ey
+yU
+yU
+"}
+(6,1,1) = {"
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+qP
+Ve
+yL
+Qc
+Tx
+Qs
+Oh
+yr
+qP
+ey
+ey
+yU
+yU
+"}
+(7,1,1) = {"
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+qP
+ou
+vJ
+GG
+Id
+Xt
+UR
+Fk
+qP
+ey
+ey
+yU
+yU
+"}
+(8,1,1) = {"
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+ey
+ey
+ey
+qP
+qP
+qP
+qP
+qP
+qP
+qP
+qP
+qP
+qP
+qP
+qP
+qP
+qP
+md
+qP
+qP
+qP
+ey
+ey
+yU
+yU
+"}
+(9,1,1) = {"
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+ey
+ey
+ey
+ey
+ey
+qP
+AL
+Pi
+RH
+ol
+lN
+RH
+Ra
+Yp
+RH
+LK
+qP
+pK
+AL
+Pi
+LK
+wC
+qP
+ey
+yU
+yU
+yU
+"}
+(10,1,1) = {"
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+ey
+yU
+yU
+ey
+ey
+ey
+ey
+ey
+qP
+IU
+Pi
+qP
+qP
+qP
+qP
+qP
+qP
+qP
+dO
+qP
+Pi
+qP
+qP
+qP
+Pi
+qP
+ey
+yU
+yU
+yU
+"}
+(11,1,1) = {"
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+qP
+md
+qP
+qP
+Pi
+IU
+ZH
+ol
+RH
+AL
+Pi
+Pi
+Yp
+Pi
+Pi
+Pi
+Pi
+qP
+XW
+sQ
+yU
+yU
+"}
+(12,1,1) = {"
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+ey
+ey
+ey
+qP
+qP
+qP
+AL
+qP
+qP
+qP
+dO
+Yp
+qP
+Js
+qP
+qP
+qP
+wC
+qP
+qP
+qP
+Ra
+qP
+qP
+qP
+qP
+qP
+sQ
+Cq
+sQ
+yU
+"}
+(13,1,1) = {"
+yU
+yU
+yU
+yU
+yU
+yU
+ey
+ey
+ey
+ey
+ey
+qP
+ii
+VQ
+bL
+Gi
+wZ
+qP
+qP
+ol
+qP
+OO
+qP
+LK
+IU
+Pi
+qP
+pK
+qP
+Yp
+qP
+OO
+IU
+Pi
+qP
+sQ
+sQ
+MP
+dW
+"}
+(14,1,1) = {"
+yU
+yU
+yU
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+AL
+ye
+tq
+xH
+xu
+ye
+AL
+Pi
+Pi
+AL
+IU
+qP
+md
+qP
+qP
+qP
+Pi
+Pi
+Pi
+qP
+ol
+qP
+Pi
+qP
+dX
+sQ
+sQ
+sQ
+"}
+(15,1,1) = {"
+yU
+yU
+yU
+ey
+qP
+qP
+qP
+qP
+qP
+qP
+qP
+qP
+LW
+Kl
+RH
+Kl
+Zx
+qP
+Yp
+qP
+qP
+ol
+qP
+RH
+ol
+IU
+AL
+RH
+qP
+qP
+qP
+lN
+qP
+Yp
+qP
+sQ
+ZA
+sQ
+sQ
+"}
+(16,1,1) = {"
+yU
+yU
+ey
+ey
+qP
+XJ
+Wo
+nX
+Pw
+XJ
+Wo
+AL
+tn
+rm
+Wz
+lz
+jc
+AL
+Pi
+Pi
+qP
+Yp
+qP
+qP
+qP
+ol
+qP
+Pi
+ol
+Pi
+qP
+qP
+qP
+Pi
+qP
+sQ
+zD
+Kz
+CD
+"}
+(17,1,1) = {"
+yU
+yU
+ey
+ey
+qP
+Cw
+vf
+Pg
+XG
+Wn
+XY
+qP
+zU
+AP
+ZN
+hN
+yK
+qP
+qP
+ol
+Pi
+dO
+Pi
+Pi
+qP
+LK
+qP
+qP
+qP
+Yp
+qP
+Pi
+LK
+ol
+qP
+sQ
+ys
+zD
+zD
+"}
+(18,1,1) = {"
+yU
+yU
+ey
+ey
+qP
+jg
+ol
+ES
+Vr
+Ki
+Pi
+qP
+WD
+bJ
+oa
+na
+pu
+qP
+qP
+qP
+qP
+qP
+qP
+RH
+qP
+Pi
+Pi
+IU
+qP
+md
+qP
+IU
+qP
+qP
+qP
+qP
+ma
+ij
+QE
+"}
+(19,1,1) = {"
+yU
+ey
+ey
+ey
+qP
+zK
+OH
+IJ
+Gs
+Yp
+Pi
+kV
+aw
+mI
+Px
+ZX
+aw
+md
+dO
+Pi
+qP
+jU
+qP
+Pi
+qP
+qP
+AL
+lN
+qP
+qP
+qP
+Pi
+qP
+RH
+ol
+DN
+og
+Zj
+og
+"}
+(20,1,1) = {"
+yU
+ey
+ey
+ey
+qP
+YT
+Yh
+iT
+Wn
+YN
+Pi
+qP
+Fe
+hy
+KZ
+wN
+WI
+qP
+qP
+gy
+AL
+Pi
+qP
+ol
+Pi
+IU
+Yp
+OO
+IU
+pK
+qP
+GU
+AL
+Pi
+qP
+qP
+Ma
+iQ
+PK
+"}
+(21,1,1) = {"
+ey
+ey
+ey
+ey
+qP
+bt
+MT
+JI
+xp
+sE
+Ok
+qP
+UI
+Xq
+ZN
+tE
+Ln
+qP
+Pi
+Pi
+qP
+LK
+qP
+qP
+qP
+ol
+qP
+qP
+qP
+zE
+qP
+LK
+qP
+LK
+qP
+yU
+ys
+zD
+zD
+"}
+(22,1,1) = {"
+ey
+ey
+ey
+ey
+qP
+sz
+Kj
+IM
+sz
+Wo
+Wo
+AL
+Na
+XN
+Gj
+HQ
+jc
+AL
+RH
+qP
+qP
+Pi
+IU
+Pi
+qP
+ol
+qP
+Pi
+Pi
+RH
+qP
+xQ
+qP
+ol
+qP
+sQ
+zD
+sQ
+oh
+"}
+(23,1,1) = {"
+ey
+ey
+ey
+ey
+qP
+qP
+qP
+qP
+qP
+qP
+qP
+qP
+Dl
+il
+MZ
+il
+gj
+qP
+Yp
+dO
+qP
+qP
+qP
+lN
+qP
+Pi
+AL
+Ra
+qP
+qP
+qP
+ol
+qP
+Pi
+qP
+sQ
+sQ
+dW
+sQ
+"}
+(24,1,1) = {"
+yU
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+AL
+GF
+Gi
+Pi
+VQ
+VQ
+AL
+qP
+ol
+RH
+pK
+qP
+CQ
+qP
+RH
+qP
+LK
+Yn
+Ey
+qP
+IU
+md
+Yp
+qP
+dX
+sQ
+ID
+MK
+"}
+(25,1,1) = {"
+yU
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+qP
+cp
+tq
+lm
+xu
+cp
+qP
+qP
+AL
+Pi
+qP
+AL
+Pi
+qP
+Pi
+qP
+Pi
+qP
+qP
+qP
+qP
+qP
+Pi
+qP
+sQ
+sQ
+sQ
+sQ
+"}
+(26,1,1) = {"
+yU
+yU
+yU
+yU
+yU
+yU
+ey
+ey
+ey
+ey
+ey
+qP
+qP
+qP
+AL
+qP
+qP
+qP
+ZO
+qP
+Pi
+xU
+Pi
+RH
+qP
+IU
+qP
+Pi
+qP
+wC
+Pi
+ol
+qP
+LK
+qP
+sQ
+Vd
+XW
+yU
+"}
+(27,1,1) = {"
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+qP
+dB
+qP
+qP
+IU
+qP
+Pi
+Yp
+Pi
+qP
+IU
+ol
+LK
+AL
+Pi
+Pi
+IU
+qP
+sQ
+sQ
+yU
+yU
+"}
+(28,1,1) = {"
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+qP
+ol
+qP
+qP
+Ra
+qP
+qP
+qP
+OO
+qP
+qP
+Pi
+qP
+qP
+qP
+jU
+qP
+qP
+ey
+yU
+yU
+yU
+"}
+(29,1,1) = {"
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+qP
+RH
+Yp
+Pi
+Pi
+Pi
+RH
+ol
+Yp
+pK
+qP
+ol
+RH
+qP
+Br
+Yp
+qg
+qP
+ey
+ey
+yU
+yU
+"}
+(30,1,1) = {"
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+ey
+ey
+ey
+ey
+qP
+qP
+qP
+qP
+qP
+qP
+qP
+qP
+qP
+qP
+qP
+CQ
+qP
+qP
+qP
+qP
+qP
+qP
+ey
+ey
+yU
+yU
+"}
+(31,1,1) = {"
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+qP
+Gr
+GF
+VQ
+oH
+qL
+VQ
+wY
+qP
+ey
+ey
+yU
+yU
+"}
+(32,1,1) = {"
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+qP
+tR
+id
+Cm
+SD
+hE
+RR
+rt
+qP
+ey
+ey
+ey
+yU
+"}
+(33,1,1) = {"
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+qP
+ee
+vJ
+GZ
+XH
+VQ
+UR
+Fk
+qP
+ey
+ey
+ey
+yU
+"}
+(34,1,1) = {"
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+ey
+ey
+ey
+ey
+ey
+qP
+qP
+qP
+qP
+qP
+qP
+qP
+qP
+qP
+ey
+ey
+ey
+yU
+"}
+(35,1,1) = {"
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+yU
+"}
+(36,1,1) = {"
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+yU
+"}
+(37,1,1) = {"
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+ey
+yU
+yU
+"}

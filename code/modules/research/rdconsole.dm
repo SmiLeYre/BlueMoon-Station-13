@@ -188,6 +188,7 @@ Nothing else in the console has ID requirements.
 	. = ..()
 	if(obj_flags & EMAGGED)
 		return
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	to_chat(user, "<span class='notice'>You disable the security protocols[locked? " and unlock the console":""].</span>")
 	playsound(src, "sparks", 75, 1)
 	obj_flags |= EMAGGED

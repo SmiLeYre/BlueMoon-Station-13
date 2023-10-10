@@ -418,7 +418,7 @@
 	weight = 3
 	cost = 30 //BLUEMOON CHANGES
 	requirements = list(101,101,101,101,101,101,60,40,30,10) //BLUEMOON CHANGES
-	var/list/operative_cap = list(2,2,3,3,4,5,5,5,5,5)
+	var/list/operative_cap = list(3,3,3,3,4,5,5,5,5,5)
 	var/datum/team/nuclear/nuke_team
 	flags = HIGH_IMPACT_RULESET
 
@@ -998,7 +998,7 @@
 
 /datum/dynamic_ruleset/midround/bloodsuckers
 	name = "Bloodsuckers"
-	antag_flag = "Bloodsucker"
+	antag_flag = "Bloodsucker Mid"
 	antag_flag_override = ROLE_BLOODSUCKER
 	antag_datum = /datum/antagonist/bloodsucker
 	protected_roles = list("Prisoner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain")

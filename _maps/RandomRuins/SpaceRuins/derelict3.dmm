@@ -17,9 +17,18 @@
 /obj/structure/lattice,
 /turf/template_noop,
 /area/space/nearstation)
+"g" = (
+/obj/structure/lattice,
+/obj/effect/spawner/lootdrop/salvage,
+/turf/template_noop,
+/area/space/nearstation)
 "A" = (
 /obj/machinery/spaceship_navigation_beacon/invion,
 /turf/closed/wall,
+/area/ruin/unpowered/no_grav)
+"Q" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/airless,
 /area/ruin/unpowered/no_grav)
 
 (1,1,1) = {"
@@ -78,7 +87,7 @@ a
 a
 a
 b
-b
+Q
 b
 b
 b
@@ -210,7 +219,7 @@ d
 d
 d
 b
-b
+Q
 b
 c
 "}
@@ -271,7 +280,7 @@ a
 a
 a
 a
-d
+g
 d
 d
 b
@@ -307,7 +316,7 @@ d
 a
 e
 d
-b
+Q
 a
 "}
 (10,1,1) = {"
@@ -395,7 +404,7 @@ a
 d
 d
 d
-d
+g
 a
 a
 a
@@ -548,7 +557,7 @@ d
 b
 b
 b
-b
+Q
 c
 b
 b
@@ -581,9 +590,9 @@ b
 c
 c
 c
-b
+Q
 c
-b
+Q
 b
 d
 a
@@ -611,7 +620,7 @@ d
 d
 b
 c
-b
+Q
 b
 b
 b
@@ -700,7 +709,7 @@ b
 b
 b
 c
-b
+Q
 b
 d
 d
@@ -731,7 +740,7 @@ b
 b
 b
 c
-b
+Q
 b
 b
 b
@@ -795,7 +804,7 @@ b
 b
 b
 c
-b
+Q
 b
 b
 b
@@ -832,7 +841,7 @@ c
 b
 d
 d
-d
+g
 d
 b
 b
@@ -901,7 +910,7 @@ b
 b
 b
 b
-b
+Q
 c
 b
 b
@@ -965,9 +974,9 @@ b
 b
 c
 c
-b
+Q
 c
-b
+Q
 b
 b
 a

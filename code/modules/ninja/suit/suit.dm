@@ -14,9 +14,9 @@
 	icon_state = "s-ninja"
 	item_state = "s-ninja_suit"
 	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/stock_parts/cell)
-	slowdown = 0.25
+	slowdown = 1
 	resistance_flags = LAVA_PROOF | ACID_PROOF
-	armor = list(MELEE = 40, BULLET = 30, LASER = 20,ENERGY = 30, BOMB = 30, BIO = 30, RAD = 30, FIRE = 100, ACID = 100)
+	armor = list(MELEE = 40, BULLET = 30, LASER = 20, ENERGY = 30, BOMB = 30, BIO = 30, RAD = 30, FIRE = 100, ACID = 100)
 	tail_state = ""
 
 	actions_types = list(/datum/action/item_action/initialize_ninja_suit, /datum/action/item_action/ninjastatus, /datum/action/item_action/ninjaboost, /datum/action/item_action/ninjapulse, /datum/action/item_action/ninjastar, /datum/action/item_action/ninjanet, /datum/action/item_action/ninja_sword_recall, /datum/action/item_action/ninja_stealth)
@@ -28,6 +28,7 @@
 	var/datum/techweb/stored_research
 	var/obj/item/disk/tech_disk/t_disk//To copy design onto disk.
 	var/obj/item/energy_katana/energyKatana //For teleporting the katana back to the ninja (It's an ability)
+	var/obj/item/energy_naginata/energyNaginata
 
 		//Other articles of ninja gear worn together, used to easily reference them after initializing.
 	var/obj/item/clothing/head/helmet/space/space_ninja/n_hood
@@ -64,7 +65,6 @@
 	if(!user == affecting)
 		return
 	. += "All systems operational. Current energy capacity: <B>[DisplayEnergy(cell.charge)]</B>.\n"+\
-	"The CLOAK-tech device is <B>[stealth?"active":"inactive"]</B>.\n"+\
 	"[a_boost?"An adrenaline boost is available to use.":"There is no adrenaline boost available.  Try refilling the suit with 20 units of radium."]"
 
 /obj/item/clothing/suit/space/space_ninja/Initialize(mapload)
@@ -141,6 +141,9 @@
 		return TRUE
 	if(IS_NINJA_SUIT_STEALTH(action))
 		toggle_stealth()
+		return TRUE
+	if(IS_NINJA_SUIT_NINJASTATUS(action))
+		ninjastatus()
 		return TRUE
 	return FALSE
 
@@ -241,3 +244,163 @@
 	qdel(n_gloves)
 	qdel(n_shoes)
 	qdel(src)
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// 24.09.2023 - BlueMoon Ninja Additions
+
+/obj/item/clothing/suit/space/space_ninja/pre // Used at first ninja's spawn
+	actions_types = list()
+
+//////////////////////
+
+/obj/item/clothing/suit/space/space_ninja/ronin // Yokai red ninja suit
+	armor = list(MELEE = 50, BULLET = 50, LASER = 40, ENERGY = 50, BOMB = 45, BIO = 30, RAD = 30, FIRE = 100, ACID = 100)
+	s_delay = 20
+	s_longdelay = 100
+	actions_types = list(/datum/action/item_action/initialize_ninja_suit, /datum/action/item_action/ninjastatus, /datum/action/item_action/ninja_resonance, /datum/action/item_action/ninjaboost, /datum/action/item_action/ninjastar_lethal, /datum/action/item_action/ninja_naginata_recall)
+
+/obj/item/clothing/suit/space/space_ninja/ronin/Initialize(mapload)
+	. = ..()
+	cell.charge = 7500
+
+/obj/item/clothing/suit/space/space_ninja/ronin/ui_action_click(mob/user, action)
+	if(IS_NINJA_SUIT_INITIALIZATION(action))
+		toggle_on_off()
+		return TRUE
+	if(!s_initialized)
+		to_chat(user, "<span class='warning'><b>ERROR</b>: suit offline. Please activate suit.</span>")
+		return FALSE
+	if(s_coold > 0)
+		to_chat(user, "<span class='warning'><b>ERROR</b>: suit is on cooldown.</span>")
+		return FALSE
+	if(IS_NINJA_SUIT_BOOST(action))
+		ninjaboost()
+		return TRUE
+	if(IS_NINJA_SUIT_STAR_LETHAL_CREATION(action))
+		ninjastar_lethal()
+		return TRUE
+	if(IS_NINJA_SUIT_RESONANCE(action))
+		ninja_resonance()
+		return TRUE
+	if(IS_NINJA_SUIT_NAGINATA_RECALL(action))
+		ninja_naginata_recall()
+		return TRUE
+	if(IS_NINJA_SUIT_NINJASTATUS(action))
+		ninjastatus()
+		return TRUE
+	return FALSE
+
+/obj/item/clothing/suit/space/space_ninja/ronin/lock_suit(mob/living/carbon/human/ninja)
+	if(!istype(ninja))
+		return FALSE
+	if(!IS_SPACE_NINJA(ninja))
+		to_chat(ninja, "<span class='danger'><B>fÄTaL ÈÈRRoR</B>: 382200-*#00CÖDE <B>RED</B>\nUNAUHORIZED USÈ DETÈCeD\nCoMMÈNCING SUB-R0UIN3 13...\nTÈRMInATING U-U-USÈR...</span>")
+		ninja.gib()
+		return FALSE
+	if(!istype(ninja.head, /obj/item/clothing/head/helmet/space/space_ninja))
+		to_chat(ninja, "<span class='userdanger'>ERROR</span>: 100113 UNABLE TO LOCATE HEAD GEAR\nABORTING...")
+		return FALSE
+	if(!istype(ninja.shoes, /obj/item/clothing/shoes/space_ninja))
+		to_chat(ninja, "<span class='userdanger'>ERROR</span>: 122011 UNABLE TO LOCATE FOOT GEAR\nABORTING...")
+		return FALSE
+	if(!istype(ninja.gloves, /obj/item/clothing/gloves/space_ninja))
+		to_chat(ninja, "<span class='userdanger'>ERROR</span>: 110223 UNABLE TO LOCATE HAND GEAR\nABORTING...")
+		return FALSE
+	affecting = ninja
+	ADD_TRAIT(src, TRAIT_NODROP, NINJA_SUIT_TRAIT) //colons make me go all |=
+	slowdown = 0
+	icon_state = "s-ninjar"
+	n_hood = ninja.head
+	ADD_TRAIT(n_hood, TRAIT_NODROP, NINJA_SUIT_TRAIT)
+	n_shoes = ninja.shoes
+	ADD_TRAIT(n_shoes, TRAIT_NODROP, NINJA_SUIT_TRAIT)
+	//n_shoes.slowdown--
+	n_shoes.icon_state = "s-ninjar"
+	n_shoes.item_state = "s-ninjar"
+	n_gloves = ninja.gloves
+	ADD_TRAIT(n_gloves, TRAIT_NODROP, NINJA_SUIT_TRAIT)
+	n_gloves.icon_state = "s-ninjar"
+	n_gloves.item_state = "s-ninjar"
+	n_mask = ninja.wear_mask
+	n_mask.icon_state = "s-ninjar"
+	n_mask.item_state = "s-ninjar"
+
+	ADD_TRAIT(ninja, TRAIT_NOGUNS, NINJA_SUIT_TRAIT)
+	return TRUE
+
+///////////////////////////////
+
+/obj/item/clothing/suit/space/space_ninja/wisdom // Wisdom tan ninja suit
+	armor = list(MELEE = 20, BULLET = 20, LASER = 15, ENERGY = 15, BOMB = 25, BIO = 30, RAD = 30, FIRE = 100, ACID = 100)
+	s_cost = 1
+	s_acost = 5
+	s_delay = 60
+	s_longdelay = 300
+	actions_types = list(/datum/action/item_action/initialize_ninja_suit, /datum/action/item_action/ninjastatus, /datum/action/item_action/ninjapulse, /datum/action/item_action/ninjanet,/datum/action/item_action/ninja_stealth_wisdom)
+
+/obj/item/clothing/suit/space/space_ninja/wisdom/Initialize(mapload)
+	. = ..()
+	cell.charge = 12500
+
+/obj/item/clothing/suit/space/space_ninja/wisdom/ui_action_click(mob/user, action)
+	if(IS_NINJA_SUIT_INITIALIZATION(action))
+		toggle_on_off()
+		return TRUE
+	if(!s_initialized)
+		to_chat(user, "<span class='warning'><b>ERROR</b>: suit offline. Please activate suit.</span>")
+		return FALSE
+	if(s_coold > 0)
+		to_chat(user, "<span class='warning'><b>ERROR</b>: suit is on cooldown.</span>")
+		return FALSE
+	if(IS_NINJA_SUIT_EMP(action))
+		ninjapulse()
+		return TRUE
+	if(IS_NINJA_SUIT_NET_CREATION(action))
+		ninjanet()
+		return TRUE
+	if(IS_NINJA_SUIT_STEALTH_WISDOM(action))
+		toggle_stealth_wisdom()
+		return TRUE
+	if(IS_NINJA_SUIT_NINJASTATUS(action))
+		ninjastatus()
+		return TRUE
+	return FALSE
+
+/obj/item/clothing/suit/space/space_ninja/wisdom/lock_suit(mob/living/carbon/human/ninja)
+	if(!istype(ninja))
+		return FALSE
+	if(!IS_SPACE_NINJA(ninja))
+		to_chat(ninja, "<span class='danger'><B>fÄTaL ÈÈRRoR</B>: 382200-*#00CÖDE <B>RED</B>\nUNAUHORIZED USÈ DETÈCeD\nCoMMÈNCING SUB-R0UIN3 13...\nTÈRMInATING U-U-USÈR...</span>")
+		ninja.gib()
+		return FALSE
+	if(!istype(ninja.head, /obj/item/clothing/head/helmet/space/space_ninja))
+		to_chat(ninja, "<span class='userdanger'>ERROR</span>: 100113 UNABLE TO LOCATE HEAD GEAR\nABORTING...")
+		return FALSE
+	if(!istype(ninja.shoes, /obj/item/clothing/shoes/space_ninja))
+		to_chat(ninja, "<span class='userdanger'>ERROR</span>: 122011 UNABLE TO LOCATE FOOT GEAR\nABORTING...")
+		return FALSE
+	if(!istype(ninja.gloves, /obj/item/clothing/gloves/space_ninja))
+		to_chat(ninja, "<span class='userdanger'>ERROR</span>: 110223 UNABLE TO LOCATE HAND GEAR\nABORTING...")
+		return FALSE
+	affecting = ninja
+	ADD_TRAIT(src, TRAIT_NODROP, NINJA_SUIT_TRAIT) //colons make me go all |=
+	slowdown = 0
+	icon_state = "s-ninjaw"
+	n_hood = ninja.head
+	ADD_TRAIT(n_hood, TRAIT_NODROP, NINJA_SUIT_TRAIT)
+	n_shoes = ninja.shoes
+	ADD_TRAIT(n_shoes, TRAIT_NODROP, NINJA_SUIT_TRAIT)
+	//n_shoes.slowdown--
+	n_shoes.icon_state = "s-ninjaw"
+	n_shoes.item_state = "s-ninjaw"
+	n_gloves = ninja.gloves
+	ADD_TRAIT(n_gloves, TRAIT_NODROP, NINJA_SUIT_TRAIT)
+	n_gloves.icon_state = "s-ninjaw"
+	n_gloves.item_state = "s-ninjaw"
+	n_mask = ninja.wear_mask
+	n_mask.icon_state = "s-ninjaw"
+	n_mask.item_state = "s-ninjaw"
+
+	ADD_TRAIT(ninja, TRAIT_NOGUNS, NINJA_SUIT_TRAIT)
+	return TRUE

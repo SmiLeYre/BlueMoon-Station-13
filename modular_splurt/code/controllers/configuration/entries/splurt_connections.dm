@@ -7,17 +7,17 @@
 
 /datum/config_entry/multi_keyed_flag/vpn_bypass/OnPostload()
 	var/list/new_entries = list()
-	for(var/key in config_entry_value)
+	for(var/key in default)
 		new_entries[ckey(key)] = world.realtime
-	config_entry_value = new_entries
+	default = new_entries
 
 /datum/config_entry/multi_keyed_flag/vpn_bypass/proc/add_bypass(ckeytobypass)
 	if(IsAdminAdvancedProcCall())
 		return
-	config_entry_value |= ckey(ckeytobypass)
-	config_entry_value[ckey(ckeytobypass)] = world.realtime
+	default |= ckey(ckeytobypass)
+	default[ckey(ckeytobypass)] = world.realtime
 
 /datum/config_entry/multi_keyed_flag/vpn_bypass/proc/rev_bypass(ckeytobypass)
 	if(IsAdminAdvancedProcCall())
 		return
-	config_entry_value -= ckey(ckeytobypass)
+	default -= ckey(ckeytobypass)

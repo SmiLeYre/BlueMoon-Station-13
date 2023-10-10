@@ -152,8 +152,10 @@
 		H.dna?.update_ui_block(DNA_LEFT_EYE_COLOR_BLOCK)
 		H.dna?.update_ui_block(DNA_RIGHT_EYE_COLOR_BLOCK)
 		REMOVE_TRAIT(H, TRAIT_CULT_EYES, "valid_cultist")
+		H.mind.remove_antag_datum(/datum/antagonist/cult)
 		H.update_body()
 		H.cut_overlays()
+		H.remove_overlay(ANTAG_LAYER)
 		H.regenerate_icons()
 
 /datum/antagonist/cult/on_removal()
@@ -410,7 +412,7 @@
 
 /datum/objective/sacrifice/update_explanation_text()
 	if(target)
-		explanation_text = "Принести в жертву [target], [target.assigned_role] с помощью руны жертвоприношения, [target.p_them()] на ней и тремя собратьями вокруг неё."
+		explanation_text = "Принести в жертву [target], [target.assigned_role] с помощью руны жертвоприношения, жертвой на ней и тремя собратьями вокруг неё."
 	else
 		explanation_text = "Заслон уже была ослаблен, переходите к финальной цели."
 

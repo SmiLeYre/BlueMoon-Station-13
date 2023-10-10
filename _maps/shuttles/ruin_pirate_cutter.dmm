@@ -426,10 +426,6 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/item/jukebox/emagged{
-	pixel_x = 5;
-	pixel_y = 10
-	},
 /obj/item/grenade/smokebomb{
 	pixel_x = -4
 	},

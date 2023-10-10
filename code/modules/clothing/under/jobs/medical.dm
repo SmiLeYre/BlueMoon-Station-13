@@ -91,6 +91,9 @@
 	icon_state = "pmedred"
 	item_state = "pmedred"
 	can_adjust = FALSE
+	icon = 'modular_bluemoon/phenyamomota/icon/obj/clothing/under.dmi'
+	mob_overlay_icon = 'modular_bluemoon/phenyamomota/icon/mob/clothing/under.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/phenyamomota/icon/mob/clothing/under_digi.dmi'
 
 /obj/item/clothing/under/rank/medical/paramedic/light
 	desc = "It's made of a special fiber that provides minor protection against biohazards. It has a dark blue cross on the chest denoting that the wearer is a trained paramedic."

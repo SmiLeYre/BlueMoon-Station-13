@@ -230,6 +230,62 @@
 	casing_ejector = 0
 	spread = 30		//Assault Rifleeeeeee
 	w_class = WEIGHT_CLASS_NORMAL
-	burst_size = 4	//Shh.
-	fire_delay = 1
+	burst_size = 1	//Shh.
+	fire_delay = 15
 	automatic_burst_overlay = FALSE
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+/obj/item/stunblade_kit
+	name = "Stunblade Kit"
+	desc = "A modkit for making an stunbaton into a stunblade."
+	icon = 'modular_splurt/icons/obj/clothing/reinforcekits.dmi'
+	w_class = WEIGHT_CLASS_SMALL
+	icon_state = "sec_armor_kit"
+	var/product = /obj/item/melee/baton/stunblade //what it makes
+	var/list/fromitem = list(/obj/item/melee/baton, /obj/item/melee/baton/loaded) //what it needs
+
+/obj/item/stunblade_kit/afterattack(obj/O, mob/user as mob)
+	if(istype(O, product))
+		to_chat(user,"<span class='warning'>[O] is already modified!")
+		return
+	if(O.type in fromitem) //makes sure O is the right thing
+		new product(usr.loc) //spawns the product
+		user.visible_message("<span class='warning'>[user] modifies [O]!","<span class='warning'>You modify the [O]!")
+		qdel(O) //Gets rid of the baton
+		qdel(src) //gets rid of the kit
+
+
+/obj/item/melee/baton/stunblade
+	name = "folding stunblade"
+	desc = "A stunblade made of several segments collapse into each other much like a spyglass, thus it can fit inside of the handle entirely. This utility combined with its dense metal makes it perfect for defensive maneuvers."
+	item_state = "stunblade"
+	icon_state = "stunblade"
+	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+
+/obj/item/melee/baton/stunblade/switch_status(new_status = FALSE, silent = FALSE)
+	if(turned_on != new_status)
+		turned_on = new_status
+		if(!silent)
+			playsound(loc, 'modular_bluemoon/fluffs/sound/weapon/stunblade.ogg', 75, 1, -1)
+		if(turned_on)
+			START_PROCESSING(SSobj, src)
+		else
+			STOP_PROCESSING(SSobj, src)
+	update_icon()
+
+/obj/item/melee/baton/stunblade/update_icon_state()
+	if(turned_on)
+		icon_state = "stunblade_active"
+		item_state = "stunblade_active"
+	else if(!cell)
+		icon_state = "stunblade_nocell"
+		item_state = "stunblade"
+	else
+		icon_state = "stunblade"
+		item_state = "stunblade"
+
+/obj/item/melee/baton/stunblade/get_worn_belt_overlay(icon_file)
+	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "-stunblade")

@@ -68,6 +68,14 @@
 	cost = 2
 	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE
 
+/datum/uplink_item/device_tools/magboots/advance
+	name = "Advanced Blood-Red Magboots"
+	desc = "A pair of magnetic boots with a Syndicate paintjob that assist with freer movement in space or on-station during gravitational generator failures. \
+	These reverse-engineered knockoffs of Nanotrasen's 'Advanced Magboots' not slow you down in simulated-gravity environments and provide protection against slipping on the space lube."
+	item = /obj/item/clothing/shoes/magboots/syndie/advance
+	cost = 6
+	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE
+
 /datum/uplink_item/device_tools/compressionkit
 	name = "Bluespace Compression Kit"
 	desc = "A modified version of a BSRPED that can be used to reduce the size of most items while retaining their original functions! \
@@ -200,6 +208,13 @@
 	item = /obj/item/healthanalyzer/rad_laser
 	cost = 3
 
+/datum/uplink_item/device_tools/shadowcloak
+	name = "cloaker belt"
+	desc = "Makes you invisible for short periods of time. Recharges in darkness."
+	item = /obj/item/shadowcloak
+	cost = 5
+	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
+
 /datum/uplink_item/device_tools/riflery_primer
 	name = "Riflery Primer"
 	desc = "An old book with blood and vodka stains on it. Freshly pulled from a dusty crate in some old warehouse, \
@@ -223,6 +238,7 @@
 			and other supplies helpful for a field medic."
 	item = /obj/item/storage/firstaid/tactical/nukeop
 	cost = 4
+	surplus = 75
 	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE
 
 /datum/uplink_item/device_tools/surgerybag
@@ -246,6 +262,7 @@
 	cost = 2
 	surplus = 75
 	restricted = TRUE
+	purchasable_from = ~(UPLINK_SYNDICATE)
 
 /datum/uplink_item/device_tools/syndietome
 	name = "Syndicate Tome"
@@ -274,19 +291,6 @@
 	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE
 	restricted = TRUE
 
-//this seems like a terrible idea to me, so commenting it out for now. -Shell
-/*
-/datum/uplink_item/device_tools/tc_rod
-	name = "Telecrystal Fuel Rod"
-	desc = "This special fuel rod has eight material slots that can be inserted with telecrystals, \
-			once the rod has been fully depleted, you will be able to harvest the extra telecrystals. \
-			Please note: This Rod fissiles much faster than it's regular counterpart, it doesn't take \
-			much to overload the reactor with these..."
-	item = /obj/item/twohanded/required/fuel_rod/material/telecrystal
-	cost = 7
-*/
-
-/* for now
 /datum/uplink_item/device_tools/suspiciousphone
 	name = "Protocol CRAB-17 Phone"
 	desc = "The Protocol CRAB-17 Phone, a phone borrowed from an unknown third party, it can be used to crash the space market, funneling the losses of the crew to your bank account.\
@@ -295,5 +299,12 @@
 	cost = 7
 	restricted = TRUE
 	limited_stock = 1
-*/
 
+/datum/uplink_item/device_tools/syndicate_teleporter
+	name = "Experimental Syndicate Teleporter"
+	desc = "The Syndicate teleporter is a handheld device that teleports the user 4-8 meters forward. \
+			Beware, teleporting into a wall will make the teleporter do a parallel emergency teleport, \
+			but if that emergency teleport fails, it will kill you. \
+			Has 4 charges, recharges, warranty voided if exposed to EMP."
+	item = /obj/item/storage/box/syndie_kit/teleporter
+	cost = 8

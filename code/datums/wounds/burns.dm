@@ -33,7 +33,7 @@
 	if(strikes_to_lose_limb == 0)
 		victim.adjustToxLoss(0.5)
 		if(prob(1))
-			victim.visible_message("<span class='danger'>Инфекция на остатках конечности - [limb.ru_name] - персонажа [victim] тошнотворно пузырится!</span>", "<span class='warning'>Вы чувствуете, как инфекция на остатках вашей конечности - [limb.ru_name] - пульсирует и распространяется по вашим тканям!</span>")
+			victim.visible_message("<span class='danger'>Инфекция на [limb.ru_name_v] персонажа [victim] тошнотворно пузырится!</span>", "<span class='warning'>Вы чувствуете, как инфекция на вашей - [limb.ru_name_v] пульсирует и распространяется по вашим тканям!</span>")
 		return
 
 	if(victim.reagents)
@@ -55,7 +55,7 @@
 
 	// here's the check to see if we're cleared up
 	if((flesh_damage <= 0) && (infestation <= 1))
-		to_chat(victim, "<span class='green'>Вы удалили инфекцию с конечности - [limb.ru_name]!</span>")
+		to_chat(victim, "<span class='green'>Вы удалили инфекцию, что находилась на [limb.ru_name_v]!</span>")
 		qdel(src)
 		return
 
@@ -100,13 +100,13 @@
 			if(prob(infestation))
 				switch(strikes_to_lose_limb)
 					if(3 to INFINITY)
-						to_chat(victim, "<span class='deadsay'>Кожа на вашей конечности -  [limb.ru_name] - буквально сползает, вы чувствуете себя ужасно!</span>")
+						to_chat(victim, "<span class='deadsay'>Кожа на вашей [limb.ru_name_v] буквально сползает, вы чувствуете себя ужасно!</span>")
 					if(2)
-						to_chat(victim, "<span class='deadsay'><b>Инфекция на вашей конечности - [limb.ru_name] обильно сочится, это отвратительно!</b></span>")
+						to_chat(victim, "<span class='deadsay'><b>Инфекция на вашей [limb.ru_name_v] обильно сочится, это отвратительно!</b></span>")
 					if(1)
 						to_chat(victim, "<span class='deadsay'><b>Ваша [limb.ru_name] целиком захвачена инфекций!</b></span>")
 					if(0)
-						to_chat(victim, "<span class='deadsay'><b>Последние нервные окончания на вашей конечности - [limb.ru_name] - затухают, инфекция целиком парализует сустав.</b></span>")
+						to_chat(victim, "<span class='deadsay'><b>Последние нервные окончания на вашей [limb.ru_name_v] - затухают, инфекция целиком парализует сустав.</b></span>")
 						threshold_penalty = 120 // piss easy to destroy
 						var/datum/brain_trauma/severe/paralysis/sepsis = new (limb.body_zone)
 						victim.gain_trauma(sepsis)
@@ -250,28 +250,32 @@
 // we don't even care about first degree burns, straight to second
 /datum/wound/burn/moderate
 	name = "Second Degree Burns"
-	desc = "Patient is suffering considerable burns with mild skin penetration, weakening limb integrity and increased burning sensations."
-	treat_text = "Recommended application of topical ointment or regenerative mesh to affected region."
+	ru_name = "Ожоги второй степени"
+	ru_name_r = "ожогов второй степени"
+	desc = "Пациент получил легкие ожоги, что привело к ослаблению целостности конечности и ощущению жжения."
+	treat_text = "Нанести мазь или регенерирующую сетку на поврежденную область."
 	examine_desc = "сильно обгорела и покрылась волдырями"
 	occur_text = "шипит от образующихся красных ожоговых пятен"
 	severity = WOUND_SEVERITY_MODERATE
-	damage_mulitplier_penalty = 1.05
-	threshold_minimum = 50
-	threshold_penalty = 30 // burns cause significant decrease in limb integrity compared to other wounds
+	damage_mulitplier_penalty = 1.1
+	threshold_minimum = 45
+	threshold_penalty = 8 // burns cause significant decrease in limb integrity compared to other wounds
 	status_effect_type = /datum/status_effect/wound/burn/moderate
 	flesh_damage = 5
 	scar_keyword = "burnmoderate"
 
 /datum/wound/burn/severe
 	name = "Third Degree Burns"
-	desc = "Patient is suffering extreme burns with full skin penetration, creating serious risk of infection and greatly reduced limb integrity."
-	treat_text = "Recommended immediate disinfection and excision of any infected skin, followed by bandaging and ointment."
+	ru_name = "Ожоги третьей степени"
+	ru_name_r = "ожогов третьей степени"
+	desc = "Пациент страдает от серьезных ожогов, ведущих к отмиранию тканей и ухудшению моторики."
+	treat_text = "Немедленная дезинфекция и удаление некротической кожи с последующими обработкой мазью и перевязкой."
 	examine_desc = "выглядит обугленной, с красными вкраплениями"
 	occur_text = "быстро обугливается, обнажая потрескавшуюся кожу и плоть"
 	severity = WOUND_SEVERITY_SEVERE
-	damage_mulitplier_penalty = 1.1
-	threshold_minimum = 90
-	threshold_penalty = 40
+	damage_mulitplier_penalty = 1.2
+	threshold_minimum = 80
+	threshold_penalty = 10
 	status_effect_type = /datum/status_effect/wound/burn/severe
 	treatable_by = list(/obj/item/flashlight/pen/paramedic, /obj/item/stack/medical/ointment, /obj/item/stack/medical/mesh)
 	infestation_rate = 0.05 // appx 13 minutes to reach sepsis without any treatment
@@ -280,15 +284,17 @@
 
 /datum/wound/burn/critical
 	name = "Catastrophic Burns"
-	desc = "Patient is suffering near complete loss of tissue and significantly charred muscle and bone, creating life-threatening risk of infection and negligible limb integrity."
-	treat_text = "Immediate surgical debriding of any infected skin, followed by potent tissue regeneration formula and bandaging."
+	ru_name = "Ожоги четвертой степени"
+	ru_name_r = "ожогов четвертой степени"
+	desc = "Наблюдается практически полная потеря тканей и значительное обгорание костей и мышц пациента. Конечность может стать нефункциональной целиком."
+	treat_text = "Немедленное хирургическое вмешательство. Удаление некроза, нанесение препаратов для восстановления тканей. Перевязывание конечности."
 	examine_desc = "представляет собой месиво из костей, расплавленного жира и обугленных тканей"
 	occur_text = "испаряется, пока плоть, кости и жир сплавливаются в одну жуткую массу"
 	severity = WOUND_SEVERITY_CRITICAL
-	damage_mulitplier_penalty = 1.15
+	damage_mulitplier_penalty = 1.5
 	sound_effect = 'sound/effects/wounds/sizzle2.ogg'
-	threshold_minimum = 150
-	threshold_penalty = 80
+	threshold_minimum = 135
+	threshold_penalty = 15
 	status_effect_type = /datum/status_effect/wound/burn/critical
 	treatable_by = list(/obj/item/flashlight/pen/paramedic, /obj/item/stack/medical/ointment, /obj/item/stack/medical/mesh)
 	infestation_rate = 0.15 // appx 4.33 minutes to reach sepsis without any treatment

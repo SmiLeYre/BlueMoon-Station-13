@@ -14,6 +14,11 @@
 	flags_1 = CAN_BE_DIRTY_1
 	// area_limited_icon_smoothing = /area/shuttle
 	sound_environment = SOUND_ENVIRONMENT_ROOM
+	shipambience = 'sound/ambience/zone/shuttle.ogg'
+	forced_ambience = TRUE
+	ambientsounds = SHUTTLE
+	min_ambience_cooldown = 20 SECONDS
+	max_ambience_cooldown = 35 SECONDS
 
 /area/shuttle/Initialize(mapload)
 	if(!canSmoothWithAreas)
@@ -38,7 +43,7 @@
 
 /area/shuttle/solfed
 	name = "Solfed Shuttle"
-	ambientsounds = HIGHSEC
+	ambientsounds = SHUTTLE_MILITARY
 	canSmoothWithAreas = /area/shuttle/solfed
 
 /area/shuttle/syndicate/bridge
@@ -65,7 +70,7 @@
 
 /area/shuttle/inteq
 	name = "InteQ Infiltrator"
-	ambientsounds = HIGHSEC
+	ambientsounds = SHUTTLE_MILITARY
 	canSmoothWithAreas = /area/shuttle/inteq
 
 /area/shuttle/inteq/bridge

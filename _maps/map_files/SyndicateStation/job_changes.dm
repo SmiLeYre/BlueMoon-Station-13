@@ -265,11 +265,6 @@
 	if(SSmapping.config?.map_name == "Syndicate Station")
 		return get_all_accesses()
 
-/datum/job/prisoner/New()
-	. = ..()
-	if(SSmapping.config?.map_name == "Syndicate Station")
-		outfit = /datum/outfit/ds2/prisoner
-
 /datum/job/stowaway/New()
 	. = ..()
 	if(SSmapping.config?.map_name == "Syndicate Station")
@@ -279,3 +274,8 @@
 	. = ..()
 	if(SSmapping.config?.map_name == "Syndicate Station")
 		outfit = /datum/outfit/job/assistant/syndicate
+
+/datum/job/bouncer/New()
+	. = ..()
+	if(SSmapping.config?.map_name == "Syndicate Station")
+		outfit = /datum/outfit/job/bouncer/syndicate

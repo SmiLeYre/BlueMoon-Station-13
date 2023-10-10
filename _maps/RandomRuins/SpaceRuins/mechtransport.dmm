@@ -84,6 +84,7 @@
 /area/ruin/space/has_grav/powered/mechtransport)
 "u" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/mineral/titanium/airless,
 /area/ruin/space/has_grav/powered/mechtransport)
 "v" = (
@@ -181,6 +182,7 @@
 /turf/open/floor/mineral/titanium/airless,
 /area/ruin/space/has_grav/powered/mechtransport)
 "R" = (
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg3"
 	},
@@ -191,6 +193,11 @@
 /area/ruin/space/has_grav/powered/mechtransport)
 "T" = (
 /turf/template_noop,
+/area/ruin/space/has_grav/powered/mechtransport)
+"U" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/mineral/titanium/airless,
 /area/ruin/space/has_grav/powered/mechtransport)
 "V" = (
 /obj/item/stack/rods,
@@ -257,7 +264,7 @@ c
 g
 l
 d
-t
+U
 w
 C
 G

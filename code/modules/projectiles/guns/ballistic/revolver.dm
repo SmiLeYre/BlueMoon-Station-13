@@ -256,6 +256,7 @@
 				return
 
 		user.visible_message("<span class='danger'>*click*</span>")
+		balloon_alert(user, "Щёлк!")
 		playsound(src, "gun_dry_fire", 30, 1)
 
 /obj/item/gun/ballistic/revolver/russian/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
@@ -393,7 +394,7 @@
 		return ..()
 	if(process_fire(user, user, FALSE, null, BODY_ZONE_HEAD))
 		user.visible_message("<span class='warning'>[user] somehow manages to shoot себя in the face!</span>", "<span class='userdanger'>You somehow shoot yourself in the face! How the hell?!</span>")
-		user.emote("scream")
+		user.emote("realagony")
 		user.drop_all_held_items()
 		user.DefaultCombatKnockdown(80)
 

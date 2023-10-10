@@ -68,20 +68,6 @@
 	mutantrace_variation = NONE
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0)
 
-
-/obj/item/lighter/gold
-	name = "\improper Engraved Zippo"
-	desc = "A shiny and relatively expensive zippo lighter. There's a small etched in verse on the bottom that reads, 'No Gods, No Masters, Only Man.'"
-	icon = 'icons/obj/custom.dmi'
-	icon_state = "gold_zippo"
-	item_state = "gold_zippo"
-	w_class = WEIGHT_CLASS_TINY
-	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
-	heat = 1500
-	resistance_flags = FIRE_PROOF
-	light_color = LIGHT_COLOR_FIRE
-
 /obj/item/clothing/neck/scarf/zomb
 	name = "A special scarf"
 	icon = 'icons/obj/custom.dmi'
@@ -113,7 +99,6 @@
 	desc = "While a normal carrot would be good for your eyes, this one seems a bit more for hugging then eating."
 	icon = 'icons/obj/hydroponics/harvest.dmi'
 	icon_state = "carrot"
-	item_state = "carrot"
 	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("slapped")
 	resistance_flags = FLAMMABLE
@@ -146,7 +131,6 @@
 	desc = "A festive plush that squeeks when you squeeze it!"
 	icon = 'icons/obj/custom.dmi'
 	icon_state = "pine_c"
-	item_state = "pine_c"
 	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("slapped")
 	resistance_flags = FLAMMABLE
@@ -548,7 +532,6 @@
 /obj/item/toy/plush/mammal/dog/fritz
 	icon = 'icons/obj/custom.dmi'
 	icon_state = "fritz"
-	item_state = "fritz"
 	attack_verb = list("barked", "boofed", "shotgun'd")
 	obj_flags = UNIQUE_RENAME
 	unique_reskin = list(

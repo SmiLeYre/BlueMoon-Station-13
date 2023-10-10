@@ -24,13 +24,15 @@
 			var/file2use = (style_flags & STYLE_ALL_TAURIC) ? 'modular_citadel/icons/mob/64x32_effects.dmi' : 'icons/effects/blood.dmi'
 			. += mutable_appearance(file2use, "[blood_overlay_type]blood", color = blood_DNA_to_color(), blend_mode = blood_DNA_to_blend())
 		var/mob/living/carbon/human/M = loc
-		if(ishuman(M) && M.w_uniform)
-			var/obj/item/clothing/under/U = M.w_uniform
-			if(!isvox(M) || !isplasmaman(M))
-				if(M.dna.features["tail_primary"])
-					var/tail_under_suit = tail_suit_worn_overlay || 'modular_bluemoon/SmiLeY/icons/mob/clothing/tails_digi.dmi'
-					. += mutable_appearance(tail_under_suit, tail_state)
+		if(!ishuman(loc))
+			return
+		if(!isvox(M) || !isplasmaman(M))
+			if(M.dna.features["tail_primary"] && M.dna.features["tail_secondary"])
+				var/tail_under_suit = tail_suit_worn_overlay || 'modular_bluemoon/SmiLeY/icons/mob/clothing/tails_digi.dmi'
+				. += mutable_appearance(tail_under_suit, tail_state)
+		var/obj/item/clothing/under/U = M.w_uniform
 			//SANDSTORM EDIT
+		if(ishuman(M) && M.w_uniform)
 			if(istype(U) && length(U.attached_accessories))
 				for(var/obj/item/clothing/accessory/attached in U.attached_accessories)
 					if(attached.above_suit)

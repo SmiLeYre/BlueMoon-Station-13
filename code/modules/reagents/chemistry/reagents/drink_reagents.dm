@@ -236,7 +236,7 @@
 	if(holder.has_reagent(/datum/reagent/consumable/capsaicin))
 		holder.remove_reagent(/datum/reagent/consumable/capsaicin, 2)
 	if(iscatperson(M)) //cats go purr
-		if(prob(15))
+		if(prob(5))
 			to_chat(M, "<span class = 'notice'>[pick("Mmmm~ milk~","Ahh~ fresh milk~","Milk is so tasty!")]</span>")
 			M.emote("purr")
 	..()

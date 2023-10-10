@@ -17,32 +17,44 @@
 	if(!milkers || !milktype)
 		return
 
-	var/datum/reagent/milk = find_reagent_object_from_type(milktype)
+	if(milkers.climaxable(target, TRUE))
+		var/datum/reagent/milk = find_reagent_object_from_type(milktype)
 
-	var/milktext = milk.name
+		var/milktext = milk.name
 
-	lines = list(
-		"прижимает свою грудь ко рту <b>[target]</b>, направляет свой сосок на язык и выплёскивает тёплое <b>'[lowertext(milktext)]'</b>",
-		"наполняет рот \the <b>[target]</b> тёплым и довольно сладким на первовкусие <b>'[lowertext(milktext)]'</b>, когда в свою очередь сжимает сиськи и тяжело дышит",
-		"позволяет большому количеству <b>'[lowertext(milktext)]'</b> орошить горло \the <b>[target]</b>!"
-	)
+		lines = list(
+			"прижимает свою грудь ко рту <b>[target]</b>, направляет свой сосок на язык и выплёскивает тёплое <b>'[lowertext(milktext)]'</b>",
+			"наполняет рот \the <b>[target]</b> тёплым и довольно сладким на первовкусие <b>'[lowertext(milktext)]'</b>, когда в свою очередь сжимает сиськи и тяжело дышит",
+			"позволяет большому количеству <b>'[lowertext(milktext)]'</b> орошить горло \the <b>[target]</b>!"
+		)
 
-	message = "<span class='lewd'>\The <b>[user]</b> [pick(lines)]</span>"
-	user.visible_message(message, ignored_mobs = user.get_unconsenting())
-	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/oral1.ogg',
-						'modular_sand/sound/interactions/oral2.ogg'), 70, 1, -1)
+		message = "<span class='lewd'>\The <b>[user]</b> [pick(lines)]</span>"
+		user.visible_message(message, ignored_mobs = user.get_unconsenting())
+		user.handle_post_sex(LOW_LUST, null, target, ORGAN_SLOT_BREASTS)
+		playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/oral1.ogg',
+							'modular_sand/sound/interactions/oral2.ogg'), 70, 1, -1)
 
-	switch(milkers.size)
-		if("c", "d", "e")
-			modifier = 2
-		if("f", "g", "h")
-			modifier = 3
-		else
-			if(milkers.size in GLOB.breast_values)
-				modifier = clamp(GLOB.breast_values[milkers.size] - 5, 0, INFINITY)
+		switch(milkers.size)
+			if("c", "d", "e")
+				modifier = 2
+			if("f", "g", "h")
+				modifier = 3
 			else
-				modifier = 1
-	target.reagents.add_reagent(milktype, rand(1,3 * modifier))
+				if(milkers.size in GLOB.breast_values)
+					modifier = clamp(GLOB.breast_values[milkers.size] - 5, 0, INFINITY)
+				else
+					modifier = 1
+		target.reagents.add_reagent(milktype, rand(1,3 * modifier))
+	else
+		lines = list(
+			"прижимает свою грудь ко рту <b>[target]</b>, позволяя пососать свой сосок",
+			"прижимает рот <b>[target]</b> к своему соску, давая возможность обсосать его"
+		)
+		message = "<span class='lewd'>\The <b>[user]</b> [pick(lines)]</span>"
+		user.visible_message(message, ignored_mobs = user.get_unconsenting())
+		user.handle_post_sex(LOW_LUST, null, target, ORGAN_SLOT_BREASTS)
+		playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/oral1.ogg',
+							'modular_sand/sound/interactions/oral2.ogg'), 70, 1, -1)
 
 /datum/interaction/lewd/titgrope
 	description = "Грудь. Сжать в ладони."
@@ -77,22 +89,29 @@
 		var/milktype = milkers?.fluid_id
 
 		if(milkers && milktype)
-			var/modifier
-			switch(milkers.size)
-				if("c", "d", "e")
-					modifier = 2
-				if("f", "g", "h")
-					modifier = 3
-				else
-					if(milkers.size in GLOB.breast_values) //SPLURT edit - global breast values
-						modifier = clamp(GLOB.breast_values[milkers.size] - 5, 0, INFINITY)
+			if(milkers.climaxable(target, TRUE))
+				var/modifier
+				switch(milkers.size)
+					if("c", "d", "e")
+						modifier = 2
+					if("f", "g", "h")
+						modifier = 3
 					else
-						modifier = 1
-			liquid_container.reagents.add_reagent(milktype, rand(1,3 * modifier))
+						if(milkers.size in GLOB.breast_values) //SPLURT edit - global breast values
+							modifier = clamp(GLOB.breast_values[milkers.size] - 5, 0, INFINITY)
+						else
+							modifier = 1
+				liquid_container.reagents.add_reagent(milktype, rand(1,3 * modifier))
 
-			user.visible_message(span_lewd("<b>\The [user]</b> выдавливает содержимое груди <b>[target]</b> в [liquid_container]."), ignored_mobs = user.get_unconsenting())
-			playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/squelch1.ogg', 50, 1, -1)
+				user.visible_message(span_lewd("<b>\The [user]</b> выдавливает содержимое груди <b>[target]</b> в [liquid_container]."), ignored_mobs = user.get_unconsenting())
+				target.handle_post_sex(LOW_LUST, null, user, ORGAN_SLOT_BREASTS)
+				playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/squelch1.ogg', 50, 1, -1)
+			else
+				user.visible_message(span_lewd("<b>[user]</b> пытается выдоить содержимое груди <b>[target]</b> в [liquid_container], но ничего не выходит...."), ignored_mobs = user.get_unconsenting())
+				target.handle_post_sex(LOW_LUST, null, user, ORGAN_SLOT_BREASTS)
+
 	else
+		target.handle_post_sex(NORMAL_LUST, CUM_TARGET_HAND, user, CUM_TARGET_BREASTS)
 		if(user.a_intent == INTENT_HARM)
 			user.visible_message(
 					pick(span_lewd("\The <b>[user]</b> грубо лапает грудь <b>[target]</b>."),
@@ -126,8 +145,7 @@
 						span_lewd("\The <b>[target]</b> задыхается от возбуждения."),
 						span_lewd("\The <b>[target]</b> возбуждённо урчит."),
 						span_lewd("\The <b>[target]</b> возбуждённо мурлычет.")))
-				if(target.get_lust() < 5)
-					target.set_lust(5)
+				target.handle_post_sex(LOW_LUST, null, user, ORGAN_SLOT_BREASTS)
 			if(target.a_intent == INTENT_DISARM)
 				if (target.restrained())
 					user.visible_message(
@@ -141,8 +159,7 @@
 							span_lewd("\The <b>[target]</b> хихикает, вырываясь из рук <b>[user]</b>."),
 							span_lewd("\The <b>[target]</b> скользит в сторону от приближающегося <b>[user]</b>."),
 							span_lewd("\The <b>[target]</b> с отсутствующим сопротивлением толкает обнажённую грудь вперёд в руки <b>[user]</b>.")))
-				if(target.get_lust() < 10)
-					target.add_lust(1)
+				target.handle_post_sex(LOW_LUST, null, user, ORGAN_SLOT_BREASTS)
 		if(target.a_intent == INTENT_GRAB)
 			user.visible_message(
 					pick(span_lewd("\The <b>[target]</b> крепко сжимает запястье <b>[user]</b>."),

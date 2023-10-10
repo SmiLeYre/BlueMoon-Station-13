@@ -343,7 +343,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/hilbertshotel)
 "qJ" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	color = "#DE3A3A";
 	dir = 1
 	},
@@ -501,7 +501,7 @@
 /turf/open/floor/light/red,
 /area/hilbertshotel)
 "wC" = (
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	color = "#DE3A3A";
 	dir = 1
 	},

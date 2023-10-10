@@ -1,8 +1,8 @@
 /datum/round_event_control/shuttle_catastrophe
 	name = "Shuttle Catastrophe"
 	typepath = /datum/round_event/shuttle_catastrophe
-	weight = 50
-	max_occurrences = 3
+	weight = 20
+	max_occurrences = 1
 	category = EVENT_CATEGORY_ANOMALIES
 
 /datum/round_event_control/shuttle_catastrophe/canSpawnEvent(players, gamemode)

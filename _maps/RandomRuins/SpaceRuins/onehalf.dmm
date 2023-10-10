@@ -649,6 +649,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf/drone_bay)
 "bG" = (
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf/drone_bay)
 "bH" = (
@@ -767,7 +768,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/structure/frame/computer,
+/obj/structure/salvage/computer,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/onehalf/bridge)
 "ce" = (
@@ -1209,6 +1210,27 @@
 	},
 /turf/template_noop,
 /area/template_noop)
+"it" = (
+/obj/structure/salvage/computer{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/onehalf/bridge)
+"kB" = (
+/obj/structure/lattice,
+/obj/effect/spawner/lootdrop/salvage,
+/turf/template_noop,
+/area/ruin/space/has_grav/onehalf/hallway)
+"pe" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plasteel/airless{
+	icon_state = "damaged5"
+	},
+/area/ruin/space/has_grav/onehalf/hallway)
+"vU" = (
+/obj/structure/salvage/computer,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/onehalf/bridge)
 "Cu" = (
 /obj/machinery/spaceship_navigation_beacon/invion,
 /turf/closed/wall,
@@ -1220,6 +1242,14 @@
 /obj/structure/lattice,
 /turf/template_noop,
 /area/space/nearstation)
+"NI" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/onehalf/hallway)
+"VQ" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/onehalf/bridge)
 
 (1,1,1) = {"
 aa
@@ -1270,12 +1300,12 @@ aa
 aa
 ae
 ak
-ax
+kB
 aI
 ax
 bg
 bw
-aj
+NI
 bV
 aa
 aa
@@ -1408,7 +1438,7 @@ ag
 bi
 bx
 bP
-aj
+NI
 aa
 aa
 cA
@@ -1456,7 +1486,7 @@ bR
 ax
 aj
 cB
-aj
+NI
 ax
 bR
 bQ
@@ -1502,7 +1532,7 @@ cu
 cD
 cL
 cP
-aJ
+pe
 dd
 ac
 aa
@@ -1656,7 +1686,7 @@ cn
 cI
 cn
 cS
-ce
+it
 df
 ac
 aa
@@ -1672,13 +1702,13 @@ aZ
 bq
 bD
 bU
-ce
+vU
 cn
 cn
 cn
 cn
 cn
-ce
+it
 df
 ac
 aa
@@ -1700,7 +1730,7 @@ cn
 cJ
 cn
 cT
-cn
+VQ
 dg
 dk
 aa

@@ -234,6 +234,14 @@
 		"butt_visibility"	= GEN_VISIBLE_NO_UNDIES,
 		"belly_visibility"	= GEN_VISIBLE_NO_UNDIES,
 		"anus_visibility" 	= GEN_VISIBLE_NO_UNDIES,
+
+		"breasts_accessible" = FALSE,
+		"cock_accessible" = FALSE,
+		"balls_accessible" = FALSE,
+		"vag_accessible" = FALSE,
+		"butt_accessible" = FALSE,
+		"anus_accessible" = FALSE,
+
 		"cock_stuffing" = FALSE,
 		"balls_stuffing" = FALSE,
 		"vag_stuffing" = FALSE,
@@ -246,6 +254,15 @@
 		"balls_fluid"		= /datum/reagent/consumable/semen,
 		"womb_fluid"		= /datum/reagent/consumable/semen/femcum,
 		"breasts_fluid"		= /datum/reagent/consumable/milk,
+
+		"breasts_accessible" = FALSE,
+		"cock_accessible" = FALSE,
+		"balls_accessible" = FALSE,
+		"vag_accessible" = FALSE,
+		"butt_accessible" = FALSE,
+		"anus_accessible" = FALSE,
+		"belly_accessible" = FALSE,
+
 		"ipc_screen"		= snowflake_ipc_antenna_list ? pick(snowflake_ipc_antenna_list) : "None",
 		"ipc_antenna"		= "None",
 		"flavor_text"		= "",

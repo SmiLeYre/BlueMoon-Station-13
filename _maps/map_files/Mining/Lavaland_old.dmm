@@ -756,7 +756,7 @@
 /turf/open/floor/plating,
 /area/mine/xenoarch_area_c)
 "cE" = (
-/obj/structure/chair/sofa/corp/right,
+/obj/structure/chair/sofa/corp/left,
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
@@ -785,7 +785,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/structure/chair/sofa/corp/left,
+/obj/structure/chair/sofa/corp/right,
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
@@ -1042,7 +1042,7 @@
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
-/obj/structure/chair/sofa/corp/right,
+/obj/structure/chair/sofa/corp/left,
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
 "df" = (
@@ -1252,7 +1252,7 @@
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "dx" = (
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/red{
@@ -1270,7 +1270,7 @@
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
 "dz" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -1282,7 +1282,7 @@
 /obj/machinery/firealarm{
 	pixel_y = 24
 	},
-/obj/structure/chair/sofa/corp/left,
+/obj/structure/chair/sofa/corp/right,
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
 "dB" = (
@@ -1518,7 +1518,7 @@
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "dU" = (
-/obj/structure/chair/sofa/corp/right,
+/obj/structure/chair/sofa/corp/left,
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
@@ -1532,7 +1532,7 @@
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
 "dW" = (
-/obj/structure/chair/sofa/corp/left,
+/obj/structure/chair/sofa/corp/right,
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_c)
 "dX" = (
@@ -1901,7 +1901,7 @@
 /turf/open/floor/plating,
 /area/mine/xenoarch_area_c)
 "eH" = (
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/red,
@@ -1925,7 +1925,7 @@
 /area/mine/xenoarch_area_c)
 "eN" = (
 /obj/machinery/light,
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/red,
@@ -6115,7 +6115,7 @@
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_b)
 "og" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -6128,7 +6128,7 @@
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_b)
 "oi" = (
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -6180,26 +6180,26 @@
 /turf/open/floor/grass/grass0,
 /area/mine/xenoarch_area_b)
 "op" = (
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_b)
 "oq" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_b)
 "or" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_b)
 "os" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	dir = 8
 	},
 /obj/structure/sign/poster/official/random{
@@ -6405,7 +6405,7 @@
 /turf/open/floor/plasteel/freezer,
 /area/mine/laborcamp)
 "pa" = (
-/obj/structure/chair/sofa/corp/right,
+/obj/structure/chair/sofa/corp/left,
 /turf/open/floor/plasteel,
 /area/mine/storage)
 "pb" = (
@@ -13018,7 +13018,7 @@
 /turf/open/floor/plasteel/dark,
 /area/mine/laborcamp)
 "IR" = (
-/obj/structure/chair/sofa/corp/left,
+/obj/structure/chair/sofa/corp/right,
 /turf/open/floor/plasteel,
 /area/mine/storage)
 "IS" = (

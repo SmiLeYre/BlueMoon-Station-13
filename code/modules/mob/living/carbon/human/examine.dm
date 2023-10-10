@@ -18,11 +18,11 @@
 		var/mob/living/L = user
 		if(HAS_TRAIT(L, TRAIT_PROSOPAGNOSIA) || HAS_TRAIT(L, TRAIT_INVISIBLE_MAN))
 			obscure_name = TRUE
-	. = list("<span class='info'>Это же <EM>[!obscure_name ? name : "Неизвестный"]</EM>!")
+	. = list("<span class='info'>Это - <EM>[!obscure_name ? name : "Неизвестный"]</EM>!")
 	if(skipface || get_visible_name() == "Unknown")
 		. += "Вы не можете разобрать, к какому виду относится находящееся перед вами существо."
 	else
-		. += "Это же <EM>[spec_trait_examine_font()][dna.custom_species ? dna.custom_species : dna.species.name]</EM></font>!"
+		. += "[ru_ego(TRUE)] раса - <EM>[spec_trait_examine_font()][dna.custom_species ? dna.custom_species : dna.species.name]</EM></font>!"
 	if(user?.stat == CONSCIOUS && ishuman(user))
 		user.visible_message(span_small("<b>[user]</b> смотрит на <b>[!obscure_name ? name : "Неизвестного"]</b>.") , span_small("Смотрю на <b>[!obscure_name ? name : "Неизвестного"]</b>.") , null, COMBAT_MESSAGE_RANGE)
 	var/list/obscured = check_obscured_slots()
@@ -198,12 +198,12 @@
 		if(client.prefs.toggles & VERB_CONSENT)
 			. += "<b>Игрок разрешил непристойные действия по отношению к его персонажу.</b>"
 		else
-			. += "<b>Игрок НЕ разрешил  непристойные действия по отношению к его персонажем.</b>"
+			. += "<b>Игрок НЕ разрешил непристойные действия по отношению к его персонажу.</b>"
 
 	//SPLURT edit
 	if((user.client?.prefs.cit_toggles & GENITAL_EXAMINE))
 		for(var/obj/item/organ/genital/G in internal_organs)
-			if(CHECK_BITFIELD(G.genital_flags, GENITAL_CHASTENED))
+			if(CHECK_BITFIELD(G.genital_flags, GENITAL_CHASTENED) && G.is_exposed())
 				. += "[t_on] носит БДСМ-клетку. БДСМ-клетка покрывает [G.name]."
 	//
 	var/list/missing = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
@@ -234,13 +234,13 @@
 			damage_text = "выглядит обвисшей и бледноватой"
 		else
 			damage_text = (body_part.brute_dam >= body_part.burn_dam) ? body_part.heavy_brute_msg : body_part.heavy_burn_msg
-		msg += "<B>[ru_ego(TRUE)] [body_part.name] [damage_text]!</B>\n"
+		msg += "<B>[ru_ego(TRUE)] [body_part.ru_name] [damage_text]!</B>\n"
 
 	var/obj/item/organ/vocal_cords/Vc = user.getorganslot(ORGAN_SLOT_VOICE)
 	if(Vc)
 		if(istype(Vc, /obj/item/organ/vocal_cords/velvet))
 			if(client?.prefs.cit_toggles & HYPNO)
-				msg += "<span class='velvet'><i>Вы чувствуете, как резонируют ваши аккорды, глядя на н[t_ego].</i></span>\n"
+				msg += "<span class='velvet'><i>Вы чувствуете, как резонируют ваши голосовые связки при взгляде на н[t_ego].</i></span>\n"
 
 	//stores missing limbs
 	var/l_limbs_missing = 0
@@ -345,18 +345,18 @@
 
 		var/list/bleed_text
 		if(appears_dead)
-			bleed_text = list("<span class='deadsay'><B>Кровь брызгает струйками из [ru_ego(FALSE)]")
+			bleed_text = list("<span class='deadsay'><B>Кровь брызгает струйками из [ru_ego(FALSE)] конечности -")
 		else
-			bleed_text = list("<B>[t_on] имеет кровотечение из [ru_ego(FALSE)]")
+			bleed_text = list("<B>У н[ru_ego(FALSE)] кровотечение в области")
 
 		switch(num_bleeds)
 			if(1 to 2)
-				bleed_text += " [ru_otkuda_zone(bleeding_limbs[1].name)][num_bleeds == 2 ? " и [ru_otkuda_zone(bleeding_limbs[2].name)]" : ""]"
+				bleed_text += " [ru_otkuda_zone(bleeding_limbs[1].ru_name)][num_bleeds == 2 ? " и [ru_otkuda_zone(bleeding_limbs[2].ru_name)]" : ""]"
 			if(3 to INFINITY)
 				for(var/i in 1 to (num_bleeds - 1))
 					var/obj/item/bodypart/body_part = bleeding_limbs[i]
-					bleed_text += " [ru_otkuda_zone(body_part.name)],"
-				bleed_text += " и [ru_otkuda_zone(bleeding_limbs[num_bleeds].name)]"
+					bleed_text += " [ru_otkuda_zone(body_part.ru_name)],"
+				bleed_text += " и [ru_otkuda_zone(bleeding_limbs[num_bleeds].ru_name)]"
 
 		if(appears_dead)
 			bleed_text += ", но очень медленно.</span></B>\n"
@@ -368,7 +368,7 @@
 
 		for(var/i in grasped_limbs)
 			var/obj/item/bodypart/grasped_part = i
-			bleed_text += "[t_on] сжимает свою [grasped_part.name], пока из той течёт кровь!\n"
+			bleed_text += "[t_on] сжимает свою конечность - [grasped_part.ru_name] -, пока из той течёт кровь!\n"
 
 		msg += bleed_text.Join()
 
@@ -501,12 +501,12 @@
 					if(R)
 						. += "<a href='?src=[REF(src)];hud=m;evaluation=1'>\[Медицинское заключение\]</a>"
 					if(traitstring)
-						. += "<span class='info'>Обнаружены Физиологические Черты:\n[traitstring]</span>"
+						. += "<span class='info'>Обнаружены особенности:\n[traitstring]</span>"
 
 				if(istype(H.glasses, /obj/item/clothing/glasses/hud/security) || istype(CIH, /obj/item/organ/cyberimp/eyes/hud/security))
 					if(!user.stat && user != src)
 					//|| !user.canmove || user.restrained()) Fluff: Sechuds have eye-tracking technology and sets 'arrest' to people that the wearer looks and blinks at.
-						var/criminal = "None"
+						var/criminal = "Отсутствуют"
 
 						R = find_record("name", perpname, GLOB.data_core.security)
 						if(R)
@@ -518,7 +518,7 @@
 							"<a href='?src=[REF(src)];hud=s;view_comment=1'>\[Просмотреть комментарии\] </a>",
 							"<a href='?src=[REF(src)];hud=s;add_comment=1'>\[Добавить комментарий\]</a>"), "")
 	else if(isobserver(user) && traitstring)
-		. += "<span class='info'><b>Физиологические Черты:</b> [traitstring]</span>"
+		. += "<span class='info'><b>Особенности:</b> [traitstring]</span>"
 
 	if(LAZYLEN(.) > 2) //Want this to appear after species text
 		.[2] += "<hr>"

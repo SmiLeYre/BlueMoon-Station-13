@@ -191,6 +191,7 @@
 		to_chat(user, span_notice("You swipe \the [src]. A console window momentarily fills the screen, with white text rapidly scrolling past."))
 		return TRUE
 	to_chat(user, span_notice("You swipe \the [src]. A console window fills the screen, but it quickly closes itself after only a few lines are written to it."))
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	return FALSE
 
 /obj/item/modular_computer/examine(mob/user)
