@@ -2,6 +2,10 @@
 "aaW" = (
 /obj/structure/closet/crate/engineering,
 /obj/effect/spawner/lootdrop/maintenance,
+/obj/machinery/light/small{
+	dir = 1;
+	light_power = 0.45
+	},
 /turf/open/floor/plating,
 /area/syndicate_mothership)
 "aby" = (
@@ -9131,7 +9135,8 @@
 "hDt" = (
 /obj/effect/turf_decal/tile/blue/fourcorners,
 /obj/machinery/light/small{
-	dir = 1
+	dir = 1;
+	light_power = 0.45
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/white,
@@ -9334,7 +9339,6 @@
 /area/centcom/evac)
 "hKQ" = (
 /obj/structure/table/reinforced,
-/obj/machinery/light/small,
 /turf/open/floor/iron/white,
 /area/syndicate_mothership)
 "hKZ" = (
@@ -16893,6 +16897,10 @@
 /obj/structure/flora/ausbushes/palebush,
 /turf/open/floor/holofloor/grass,
 /area/holodeck/rec_center/pet_lounge)
+"ons" = (
+/obj/machinery/porta_turret/syndicate/energy/pirate/inteq,
+/turf/closed/indestructible/syndicate,
+/area/syndicate_mothership)
 "ont" = (
 /obj/machinery/door/window/westleft{
 	dir = 2;
@@ -24598,6 +24606,10 @@
 	},
 /turf/open/floor/holofloor,
 /area/holodeck/rec_center/basketball)
+"vbX" = (
+/obj/machinery/door/poddoor,
+/turf/closed/indestructible/fakeglass,
+/area/syndicate_mothership)
 "vdj" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Intersection";
@@ -34497,16 +34509,16 @@ sdM
 sdM
 sdM
 tmX
-oNp
+vbX
 qrC
-oNp
+vbX
 tmX
 tmX
-oNp
-oNp
-oNp
-oNp
-oNp
+vbX
+vbX
+vbX
+vbX
+vbX
 tmX
 tmX
 sdM
@@ -52249,7 +52261,7 @@ tmX
 urp
 xfY
 pLw
-tmX
+ons
 sdM
 sdM
 sdM
@@ -52506,7 +52518,7 @@ tmX
 pQm
 xfY
 omK
-cFc
+tmX
 sdM
 sdM
 sdM
@@ -62501,7 +62513,7 @@ sdM
 sdM
 sdM
 sdM
-tmX
+hHg
 tmX
 tmX
 tmX
@@ -62529,7 +62541,7 @@ eYA
 eYA
 vdn
 tmX
-tmX
+hHg
 sdM
 sdM
 sdM

@@ -4125,6 +4125,7 @@
 #include "modular_bluemoon\krashly\code\game\hair_face.dm"
 #include "modular_bluemoon\krashly\code\game\outfits.dm"
 #include "modular_bluemoon\krashly\code\game\shuttles.dm"
+#include "modular_bluemoon\krashly\code\game\area\Space_Station_13_areas.dm"
 #include "modular_bluemoon\krashly\code\game\gamemodes\traitor\inteq_agents.dm"
 #include "modular_bluemoon\krashly\code\game\machinery\doors\airlock_types.dm"
 #include "modular_bluemoon\krashly\code\game\objects\items\item.dm"
