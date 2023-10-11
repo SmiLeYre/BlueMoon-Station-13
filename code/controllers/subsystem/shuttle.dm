@@ -249,7 +249,7 @@ SUBSYSTEM_DEF(shuttle)
 		return
 
 	var/area/signal_origin = get_area(user)
-	var/emergency_reason = "\nNature of emergency:\n\n[call_reason]"
+	var/emergency_reason = "\nПричина вызова:\n\n[call_reason]"
 	var/security_num = GLOB.security_level
 	switch(security_num)
 		if(SEC_LEVEL_RED,SEC_LEVEL_DELTA,SEC_LEVEL_LAMBDA)
