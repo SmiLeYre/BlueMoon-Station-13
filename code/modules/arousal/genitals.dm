@@ -41,7 +41,8 @@
 		return FALSE
 	if(!((HAS_TRAIT(owner,TRAIT_PERMABONER) && !new_state) || HAS_TRAIT(owner,TRAIT_NEVERBONER) && new_state))
 		aroused_state = new_state
-	owner.log_message("[src]'s arousal was [new_state ? "enabled" : "disabled"] due to [cause]", LOG_EMOTE)
+	if(cause)
+		owner.log_message("[src]'s arousal was [new_state ? "enabled" : "disabled"] due to [cause]", LOG_EMOTE)
 	return aroused_state
 
 /obj/item/organ/genital/proc/update()
@@ -164,15 +165,15 @@
 	var/obj/item/organ/genital/picked_organ
 	picked_organ = input(src, "Choose which genitalia to toggle arousal on", "Set genital arousal", null) in genital_list
 	if(picked_organ)
-		//SPLURT edit
-		if(CHECK_BITFIELD(picked_organ.genital_flags, GENITAL_CHASTENED))
-			to_chat(src, "<span class='userlove'>Your [pick(GLOB.dick_nouns)] twitches against its cage!</span>")
-			return
-		if(CHECK_BITFIELD(picked_organ.genital_flags, GENITAL_IMPOTENT))
-			if(istype(picked_organ, /obj/item/organ/genital/penis))
+		if(istype(picked_organ, /obj/item/organ/genital/penis))
+			//SPLURT edit
+			if(CHECK_BITFIELD(picked_organ.genital_flags, GENITAL_CHASTENED))
+				to_chat(src, "<span class='userlove'>Your [pick(GLOB.dick_nouns)] twitches against its cage!</span>")
+				return
+			if(CHECK_BITFIELD(picked_organ.genital_flags, GENITAL_IMPOTENT))
 				to_chat(src, "<span class='userlove'>Your [pick(GLOB.dick_nouns)] simply won't go up!</span>")
-			return
-		//
+				return
+			//
 		var/original_state = picked_organ.aroused_state
 		picked_organ.set_aroused_state(!picked_organ.aroused_state)
 		if(original_state != picked_organ.aroused_state)

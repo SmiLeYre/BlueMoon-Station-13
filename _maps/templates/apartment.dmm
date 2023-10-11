@@ -345,7 +345,7 @@
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/hilbertshotel)
 "uX" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	dir = 8
 	},
 /turf/open/floor/carpet,
@@ -835,7 +835,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 1
 	},
-/obj/structure/chair/sofa/corp/right,
+/obj/structure/chair/sofa/corp/left,
 /turf/open/floor/carpet,
 /area/hilbertshotel)
 "UU" = (

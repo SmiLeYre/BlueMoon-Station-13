@@ -1,7 +1,40 @@
 ###############################################################################################
-# Words that will block in character chat messages from sending.                              #
+# Words that will have punish in character chat messages from sending.                              #
 # Case is not important. Commented-out examples are listed below, just remove the "#".        #
 ###############################################################################################
-#lol
-#omg
-#wtf
+lol
+omg
+wtf
+шиткур
+щиткур
+щиткуры
+трейтор
+трейторы
+генка
+генки
+ассистуха
+ассистухи
+ассистуры
+варден
+ЕРП
+ЕРПшка
+ЕРПешка
+ХОС
+бикер
+бикеры
+бикера
+лол
+кек
+крит
+экста
+динамик
+антаг
+омг
+бтв
+чзх
+рофл
+кринж
+изи
+линг
+нюка
+фулл

@@ -578,6 +578,7 @@
 "adO" = (
 /obj/machinery/computer/secure_data,
 /obj/effect/turf_decal/bot,
+/obj/item/paper/fluff/ruins/security_arsenal,
 /turf/open/floor/plasteel/dark,
 /area/command/heads_quarters/hos)
 "adQ" = (
@@ -3171,6 +3172,7 @@
 /obj/effect/turf_decal/tile/red/half{
 	dir = 1
 	},
+/obj/item/paper/fluff/ruins/security_arsenal,
 /turf/open/floor/plasteel/dark,
 /area/security/warden)
 "ama" = (
@@ -45319,22 +45321,11 @@
 	dir = 1;
 	layer = 2.9
 	},
-/obj/item/gun/ballistic/automatic/pistol/enforcer{
-	pixel_x = -3;
+/obj/item/gun/grenadelauncher{
 	pixel_y = 3
 	},
-/obj/item/gun/ballistic/automatic/pistol/enforcer{
-	layer = 3.1
-	},
-/obj/item/gun/ballistic/automatic/pistol/enforcer{
-	layer = 3.2;
-	pixel_x = 3;
+/obj/item/gun/grenadelauncher{
 	pixel_y = -3
-	},
-/obj/item/gun/ballistic/automatic/pistol/enforcer{
-	layer = 3.3;
-	pixel_x = 6;
-	pixel_y = -6
 	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
@@ -53156,14 +53147,9 @@
 /turf/open/space,
 /area/ai_monitored/turret_protected/aisat)
 "lCF" = (
-/obj/effect/turf_decal/tile/blue{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/light/colour_cycle/dancefloor_a,
-/area/service/bar)
+/obj/machinery/smartfridge/organ,
+/turf/open/floor/plasteel/white,
+/area/medical/surgery)
 "lDq" = (
 /obj/structure/alien/weeds,
 /obj/structure/table/wood/fancy/black,
@@ -54647,18 +54633,19 @@
 	},
 /obj/structure/rack,
 /obj/effect/turf_decal/bot,
-/obj/item/ammo_box/magazine/e45/lethal,
-/obj/item/ammo_box/magazine/e45/lethal,
-/obj/item/ammo_box/magazine/e45/lethal,
-/obj/item/ammo_box/magazine/e45/lethal,
-/obj/item/ammo_box/magazine/e45/lethal,
-/obj/item/ammo_box/magazine/e45/lethal,
-/obj/item/ammo_box/magazine/e45/lethal,
-/obj/item/ammo_box/magazine/e45/lethal,
-/obj/item/ammo_box/magazine/e45/lethal,
-/obj/item/ammo_box/magazine/e45/lethal,
-/obj/item/ammo_box/magazine/e45/lethal,
-/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/melee/breaching_hammer{
+	pixel_x = -3;
+	pixel_y = 3
+	},
+/obj/item/melee/breaching_hammer,
+/obj/item/melee/breaching_hammer{
+	pixel_y = -3;
+	pixel_x = 3
+	},
+/obj/item/melee/breaching_hammer{
+	pixel_x = 6;
+	pixel_y = -6
+	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "mLS" = (
@@ -63081,10 +63068,13 @@
 /obj/structure/rack,
 /obj/effect/turf_decal/bot,
 /obj/item/clothing/suit/armor/hos/platecarrier{
-	pixel_x = 3
+	pixel_x = -3;
+	pixel_y = 3
 	},
+/obj/item/clothing/suit/armor/hos/platecarrier,
 /obj/item/clothing/suit/armor/hos/platecarrier{
-	pixel_x = -3
+	pixel_x = 3;
+	pixel_y = -3
 	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
@@ -64854,11 +64844,6 @@
 	pixel_y = -3
 	},
 /obj/effect/turf_decal/bot,
-/obj/item/gun/energy/e_gun{
-	layer = 3.3;
-	pixel_x = 6;
-	pixel_y = -6
-	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "vqP" = (
@@ -67955,6 +67940,16 @@
 	pixel_x = 2;
 	pixel_y = -2
 	},
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "xNf" = (
@@ -68234,11 +68229,15 @@
 /obj/structure/rack,
 /obj/structure/window/reinforced,
 /obj/effect/turf_decal/bot,
-/obj/item/gun/energy/laser/carbine,
-/obj/item/gun/energy/laser/carbine,
-/obj/item/gun/energy/laser/carbine,
-/obj/item/gun/energy/laser/carbine,
-/obj/item/gun/energy/laser/carbine,
+/obj/item/gun/energy/laser{
+	pixel_x = -3;
+	pixel_y = 3
+	},
+/obj/item/gun/energy/laser,
+/obj/item/gun/energy/laser{
+	pixel_x = 3;
+	pixel_y = -3
+	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "yaC" = (
@@ -103348,7 +103347,7 @@ dDz
 ggj
 oDG
 hdv
-lCF
+hdv
 fDD
 nRB
 aJC

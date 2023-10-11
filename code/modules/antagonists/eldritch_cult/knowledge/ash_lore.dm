@@ -116,7 +116,7 @@
 
 /datum/eldritch_knowledge/spell/nightwatchers_rite/on_gain(mob/user)
 	. = ..()
-	priority_announce("Обнаружены крупные тепловые сигнатуры! Надвигается разрастающийся пламенный ужас..", sound = 'sound/misc/notice1.ogg')
+	priority_announce("Внимание, [station_name()]. [user.real_name] излучает пространственную нестабильность, в связи с которой обнаружены крупные тепловые сигнатуры! Надвигается разрастающийся пламенный ужас..", sound = 'sound/misc/notice1.ogg')
 
 /datum/eldritch_knowledge/ash_blade_upgrade
 	name = "Fiery Blade"

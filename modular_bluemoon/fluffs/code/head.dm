@@ -63,3 +63,15 @@
 	desc = "Five-color, -explosive- beret in camouflage colors with a golden badge."
 	icon_state = "flektarn_beret"
 	item_state = "flektarn_beret"
+
+/obj/item/clothing/head/donator/bm/nri_drg_head // civil version of nri antagonist beret
+	name = "covet ops headgear"
+	desc = "A special headger containing unknown fibers and electronics, providing the NVG effect for it's user. Formerly."
+	icon_state = "nri_drg_ushanka"
+	item_state = "nri_drg_ushanka"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/rus/obj_drg.dmi'
+	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/rus/mob_drg.dmi'
+	unique_reskin = list(
+		"Ushanka" = list("icon_state" = "nri_drg_ushanka"),
+		"Beret" = list("icon_state" = "nri_drg_beret")
+	)

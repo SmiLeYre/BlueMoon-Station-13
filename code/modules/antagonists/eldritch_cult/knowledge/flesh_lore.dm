@@ -265,4 +265,4 @@
 
 /datum/eldritch_knowledge/spell/touch_of_madness/on_gain(mob/user)
 	. = ..()
-	priority_announce("Смрад гнилой плоти разносится по округе... Надвигается нечто поистине мерзкое!", sound = 'sound/misc/notice1.ogg')
+	priority_announce("Внимание, [station_name()]. [user.real_name] излучает пространственную нестабильность, в связи с которой смрад гнилой плоти разносится по округе... надвигается нечто поистине мерзкое!", sound = 'sound/misc/notice1.ogg')

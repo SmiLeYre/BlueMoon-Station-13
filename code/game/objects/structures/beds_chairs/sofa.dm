@@ -75,10 +75,10 @@ COLORED_SOFA(/obj/structure/chair/sofa, maroon, SOFA_MAROON)
 	desc = "Soft and cushy."
 	icon_state = "corp_sofamiddle"
 
-/obj/structure/chair/sofa/corp/left
+/obj/structure/chair/sofa/corp/right
 	icon_state = "corp_sofaend_left"
 
-/obj/structure/chair/sofa/corp/right
+/obj/structure/chair/sofa/corp/left
 	icon_state = "corp_sofaend_right"
 
 /obj/structure/chair/sofa/corp/corner

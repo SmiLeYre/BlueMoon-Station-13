@@ -780,6 +780,14 @@
 	emote_sound = 'modular_splurt/sound/voice/yap.ogg'
 	emote_cooldown = 10.28 SECONDS
 
+/datum/emote/living/audio/yip
+	key = "yip"
+	key_third_person = "yips"
+	message = "yips!"
+	message_mime = "acts out a yip!"
+	emote_sound = 'modular_splurt/sound/voice/yip.ogg'
+	emote_cooldown = 0.2 SECONDS
+
 /datum/emote/living/audio/bork
 	key = "bork"
 	key_third_person = "borks"
@@ -809,6 +817,16 @@
 	message_mime = "acts out a howl!"
 	emote_sound = 'modular_splurt/sound/voice/wolfhowl.ogg'
 	emote_cooldown = 12.04 SECONDS
+	emote_volume = 100
+
+/datum/emote/living/audio/howl/run_emote(mob/user, params)
+	if (HAS_TRAIT(user, TRAIT_AWOO))
+		var/mob/living/carbon/M = user
+		var/datum/quirk/awoo/quirk_target = locate() in M.roundstart_quirks
+		quirk_target.last_awoo = world.time
+		quirk_target.chance = quirk_target.default_chance
+		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "to_awoo", /datum/mood_event/to_awoo)
+	. = ..()
 
 /datum/emote/living/audio/coyhowl
 	key = "coyhowl"

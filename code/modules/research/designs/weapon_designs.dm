@@ -16,6 +16,7 @@
 	name = "Speed Loader (.38)"
 	id = "sec_38lethal"
 	build_path = /obj/item/ammo_box/c38/lethal
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/c38_trac
 	name = "Speed Loader (.38 TRAC)"
@@ -26,6 +27,7 @@
 	build_path = /obj/item/ammo_box/c38/trac
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_BLUE
 
 /datum/design/c38_hotshot
 	name = "Speed Loader (.38 Hot Shot)"
@@ -36,6 +38,7 @@
 	build_path = /obj/item/ammo_box/c38/hotshot
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/c38_iceblox
 	name = "Speed Loader (.38 Iceblox)"
@@ -46,6 +49,7 @@
 	build_path = /obj/item/ammo_box/c38/iceblox
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_AMBER
 
 //////////////////
 //Mag-Rifle Mags//
@@ -60,6 +64,7 @@
 	build_path = /obj/item/ammo_box/magazine/mmag/lethal
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/mag_magrifle/nl
 	name = "Magrifle Magazine (Non-Lethal)"
@@ -67,6 +72,7 @@
 	id = "mag_magrifle_nl"
 	materials = list(/datum/material/iron = 6000, /datum/material/silver = 500, /datum/material/titanium = 500)
 	build_path = /obj/item/ammo_box/magazine/mmag
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/mag_magpistol
 	name = "Magpistol Magazine"
@@ -77,6 +83,7 @@
 	build_path = /obj/item/ammo_box/magazine/mmag/small/lethal
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/mag_magpistol/nl
 	name = "Magpistol Magazine (Non-Lethal)"
@@ -84,6 +91,7 @@
 	id = "mag_magpistol_nl"
 	materials = list(/datum/material/iron = 3000, /datum/material/silver = 250, /datum/material/titanium = 250)
 	build_path = /obj/item/ammo_box/magazine/mmag/small
+	min_security_level = SEC_LEVEL_AMBER
 
 //////////////
 //WT550 Mags//
@@ -98,6 +106,7 @@
 	build_path = /obj/item/ammo_box/magazine/wt550m9
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/mag_oldsmg/ap_mag
 	name = "WT-550 Semi-Auto SMG Armour Piercing Magazine (4.6x30mm AP)"
@@ -106,6 +115,7 @@
 	materials = list(/datum/material/iron = 6000, /datum/material/silver = 600)
 	build_path = /obj/item/ammo_box/magazine/wt550m9/wtap
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/mag_oldsmg/ic_mag
 	name = "WT-550 Semi-Auto SMG Incendiary Magazine (4.6x30mm IC)"
@@ -122,6 +132,7 @@
 	materials = list(/datum/material/iron = 6000, /datum/material/silver = 600, /datum/material/uranium = 2000)
 	build_path = /obj/item/ammo_box/magazine/wt550m9/wttx
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/mag_oldsmg/rubber_mag
 	name = "WT-550 Semi-Auto SMG rubberbullets Magazine (4.6x30mm rubber)"
@@ -130,6 +141,7 @@
 	materials = list(/datum/material/iron = 6000)
 	build_path = /obj/item/ammo_box/magazine/wt550m9/wtrubber
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_BLUE
 
 //////////////
 //Ammo Shells/
@@ -139,7 +151,7 @@
 	name = "stripper clip (shotgun shells)"
 	id = "sec_shellclip"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 5000)
+	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/ammo_box/shotgun
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -161,24 +173,28 @@
 	build_type = PROTOLATHE
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/buckshot_shell/sec
 	id = "sec_bshot"
 	build_type = PROTOLATHE
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_BLUE
 
 /datum/design/shotgun_dart/sec
 	id = "sec_dart"
 	build_type = PROTOLATHE
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_BLUE
 
 /datum/design/incendiary_slug/sec
 	id = "sec_islug"
 	build_type = PROTOLATHE
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/stunshell
 	name = "Stun Shell"
@@ -199,6 +215,7 @@
 	build_path = /obj/item/ammo_casing/shotgun/techshell
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_SCIENCE
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/cryostatis_shotgun_dart
 	name = "Cryostasis Shotgun Dart"
@@ -209,6 +226,7 @@
 	build_path = /obj/item/ammo_casing/shotgun/dart/noreact
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	min_security_level = SEC_LEVEL_AMBER
 
 //////////////
 //Firing Pins/
@@ -257,6 +275,7 @@
 	build_path = /obj/item/gun/energy/laser/carbine/nopin
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/stunrevolver
 	name = "Tesla Revolver"
@@ -267,6 +286,7 @@
 	build_path = /obj/item/gun/energy/tesla_revolver
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/nuclear_gun
 	name = "Advanced Energy Gun"
@@ -277,6 +297,7 @@
 	build_path = /obj/item/gun/energy/e_gun/nuclear
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/beamrifle
 	name = "Beam Marksman Rifle"
@@ -287,6 +308,7 @@
 	build_path = /obj/item/gun/energy/beam_rifle
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/decloner
 	name = "Decloner"
@@ -298,6 +320,7 @@
 	build_path = /obj/item/gun/energy/decloner
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/rapidsyringe
 	name = "Rapid Syringe Gun"
@@ -308,6 +331,7 @@
 	build_path = /obj/item/gun/syringe/rapidsyringe
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/temp_gun
 	name = "Temperature Gun"
@@ -318,6 +342,7 @@
 	build_path = /obj/item/gun/energy/temperature
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/flora_gun
 	name = "Floral Somatoray"
@@ -338,6 +363,7 @@
 	build_path = /obj/item/gun/energy/xray
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/ioncarbine
 	name = "Ion Carbine"
@@ -348,6 +374,7 @@
 	build_path = /obj/item/gun/energy/ionrifle/carbine
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/wormhole_projector
 	name = "Bluespace Wormhole Projector"
@@ -378,6 +405,7 @@
 	build_path = /obj/item/gun/energy/kinetic_accelerator/crossbow/large
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/magpistol
 	name = "Magpistol"
@@ -388,6 +416,7 @@
 	build_path = /obj/item/gun/ballistic/automatic/magrifle/pistol/nopin
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/magrifle
 	name = "Magrifle"
@@ -398,6 +427,7 @@
 	build_path = /obj/item/gun/ballistic/automatic/magrifle/nopin
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_AMBER
 
 ///////////
 //Grenades/
@@ -509,3 +539,4 @@
 	build_path = /obj/item/melee/baton/boomerang
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_BLUE

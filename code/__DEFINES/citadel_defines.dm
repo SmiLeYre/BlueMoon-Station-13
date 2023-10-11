@@ -5,7 +5,7 @@
 //Filters
 #define CIT_FILTER_STAMINACRIT filter(type="drop_shadow", x=0, y=0, size=-3, color="#04080F")
 
-#define BM_FILTER_HARDCRIT filter(type="drop_shadow", x=0, y=0, size=-3, color="#04080F")
+#define BM_FILTER_HARDCRIT list(type="drop_shadow", x=0, y=0, size=-3, color="#04080F")
 
 //organ defines
 #define BUTT_LAYER_INDEX		1

@@ -712,3 +712,25 @@
 	build_path = /obj/item/gun/ballistic/automatic/l6_saw/toy/unrestricted
 	category = list("hacked", "Rifles")
 	build_type = TOYLATHE | NO_PUBLIC_LATHE
+
+////////////////////////////
+/datum/design/autoylathe/figure/inteq
+	name = "Inteq"
+	id = "inteqfigure"
+	materials = list(/datum/material/plastic = 500, /datum/material/iron = 50)
+	build_path = /obj/item/toy/figure/inteq
+	category = list("hacked", "Figurines")
+
+/datum/design/autoylathe/figure/prisoner
+	name = "Prisoner"
+	id = "prisonerfigure"
+	materials = list(/datum/material/plastic = 500, /datum/material/iron = 50)
+	build_path = /obj/item/toy/figure/prisoner
+	category = list("hacked", "Figurines")
+
+/datum/design/autoylathe/figure/paramedic
+	name = "Paramedic"
+	id = "paramedfigure"
+	materials = list(/datum/material/plastic = 500, /datum/material/iron = 50)
+	build_path = /obj/item/toy/figure/paramedic
+	category = list("hacked", "Figurines")

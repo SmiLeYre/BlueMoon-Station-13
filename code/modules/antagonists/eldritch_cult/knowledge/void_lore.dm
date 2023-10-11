@@ -167,7 +167,7 @@
 
 /datum/eldritch_knowledge/spell/domain_expansion/on_gain(mob/user)
 	. = ..()
-	priority_announce("Эхо утерянных в космосе душ разносится по округе... Вы можете ощутить зловещее присутствие! ", sound = 'sound/misc/notice1.ogg')
+	priority_announce("Внимание, [station_name()]. [user.real_name] излучает пространственную нестабильность, в связи с которой эхо утерянных в космосе душ разносится по округе... вы можете ощутить зловещее присутствие! ", sound = 'sound/misc/notice1.ogg')
 
 /datum/eldritch_knowledge/final/void_final
 	name = "Waltz at the End of Time"

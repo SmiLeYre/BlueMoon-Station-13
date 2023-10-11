@@ -39,3 +39,11 @@
 /datum/map_template/ghost_cafe_rooms/syndi
 	name = "Apartment_syndi"
 	mappath = '_maps/templates/apartment_syndi.dmm'
+
+/datum/map_template/ghost_cafe_rooms/dojo
+	name = "Apartment_dojo"
+	mappath = '_maps/templates/apartment_dojo.dmm'
+
+/datum/map_template/ghost_cafe_rooms/sauna
+	name = "Apartment_sauna"
+	mappath = '_maps/templates/apartment_sauna.dmm'

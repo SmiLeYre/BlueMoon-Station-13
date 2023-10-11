@@ -139,7 +139,13 @@
 	if(user.nextsoundemote >= world.time)
 		return
 	user.nextsoundemote = world.time + 7
-	playsound(user, 'modular_citadel/sound/voice/awoo.ogg', 50, 1, -1)
+	playsound(user, 'modular_citadel/sound/voice/awoo.ogg', 100, 1, -1)
+	if (HAS_TRAIT(user, TRAIT_AWOO))
+		var/datum/quirk/awoo/quirk_target = locate() in user.roundstart_quirks
+		quirk_target.last_awoo = world.time
+		quirk_target.chance = quirk_target.default_chance
+		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "to_awoo", /datum/mood_event/to_awoo)
+
 
 /datum/emote/living/hiss
 	key = "hiss"

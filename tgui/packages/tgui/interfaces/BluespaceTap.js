@@ -23,7 +23,11 @@ export const BluespaceTap = (props, context) => {
     || 'good'
   );
   return (
-    <Window resizable>
+    <Window
+    title="Bluespace Harvester"
+    resizable
+    width={500}
+    height={600}>
       <Window.Content scrollable>
         {!!emagged && (
           <NoticeBox danger={1}>

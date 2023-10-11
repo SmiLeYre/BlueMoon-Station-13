@@ -394,7 +394,7 @@
 		return ..()
 	if(process_fire(user, user, FALSE, null, BODY_ZONE_HEAD))
 		user.visible_message("<span class='warning'>[user] somehow manages to shoot себя in the face!</span>", "<span class='userdanger'>You somehow shoot yourself in the face! How the hell?!</span>")
-		user.emote("scream")
+		user.emote("realagony")
 		user.drop_all_held_items()
 		user.DefaultCombatKnockdown(80)
 

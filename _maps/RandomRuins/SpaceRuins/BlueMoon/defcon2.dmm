@@ -2103,10 +2103,11 @@
 /turf/open/floor/iron/white,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "lR" = (
-/obj/machinery/door/airlock/glass_large{
-	dir = 8
-	},
 /obj/machinery/door/firedoor/solid,
+/obj/machinery/door/airlock/public/glass{
+	name = "Hydroponics";
+	req_access = list("tarkoff")
+	},
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/garden)
 "lS" = (
@@ -3371,7 +3372,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/forehall)
 "sK" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4651,8 +4652,10 @@
 "Au" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/door/airlock/engineering{
-	name = "Engineering"
+	name = "Engineering";
+	req_access = list("tarkoff")
 	},
+/obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/door/firedoor/solid,
@@ -5000,7 +5003,7 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/port_tarkon/developement)
 "Cx" = (
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/blood,
@@ -5356,7 +5359,7 @@
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "Ez" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5720,17 +5723,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/cult,
 /area/ruin/space/has_grav/port_tarkon/observ)
-"Gk" = (
-/obj/machinery/door/airlock/glass_large{
-	dir = 8;
-	req_access_txt = "66"
-	},
-/obj/machinery/door/firedoor/solid,
-/obj/effect/decal/cleanable/blood/tracks{
-	dir = 4
-	},
-/turf/open/floor/plasteel/cult,
-/area/ruin/space/has_grav/port_tarkon/comms)
 "Gl" = (
 /obj/structure/statue/bone/rib,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6970,6 +6962,10 @@
 "Mz" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/tank/air,
+/obj/machinery/door/airlock/security{
+	name = "Brig";
+	req_access_txt = "66"
+	},
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "MB" = (
@@ -7168,7 +7164,7 @@
 /turf/open/floor/plasteel/cult,
 /area/ruin/space/has_grav/port_tarkon/atmos)
 "NH" = (
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -7440,6 +7436,10 @@
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/door/firedoor/solid,
+/obj/machinery/door/airlock/public/glass{
+	name = "Hydroponics";
+	req_access = list("tarkoff")
+	},
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/garden)
 "Pz" = (
@@ -7966,7 +7966,14 @@
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/turf_decal/tile/blue/half{
+	dir = 1
+	},
 /obj/machinery/door/firedoor/solid,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/door/airlock/command/glass{
+	name = "Bridge"
+	},
 /turf/open/floor/plasteel/cult,
 /area/ruin/space/has_grav/port_tarkon/comms)
 "Su" = (
@@ -11936,7 +11943,7 @@ ZN
 OM
 OM
 Sq
-Gk
+OM
 OM
 OM
 YK

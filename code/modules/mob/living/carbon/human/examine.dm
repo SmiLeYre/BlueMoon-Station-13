@@ -203,7 +203,7 @@
 	//SPLURT edit
 	if((user.client?.prefs.cit_toggles & GENITAL_EXAMINE))
 		for(var/obj/item/organ/genital/G in internal_organs)
-			if(CHECK_BITFIELD(G.genital_flags, GENITAL_CHASTENED))
+			if(CHECK_BITFIELD(G.genital_flags, GENITAL_CHASTENED) && G.is_exposed())
 				. += "[t_on] носит БДСМ-клетку. БДСМ-клетка покрывает [G.name]."
 	//
 	var/list/missing = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)

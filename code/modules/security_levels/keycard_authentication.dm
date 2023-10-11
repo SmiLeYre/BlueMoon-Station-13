@@ -61,7 +61,7 @@ GLOBAL_DATUM_INIT(keycard_events, /datum/events, new)
 			return UI_CLOSE
 	return ..()
 
-/obj/machinery/keycard_auth/ui_act(action, params)
+/obj/machinery/keycard_auth/ui_act(action, params, mob/user)
 	if(..() || waiting)
 		return
 	var/obj/item/card/id/ID = usr.get_idcard(TRUE)
@@ -73,19 +73,23 @@ GLOBAL_DATUM_INIT(keycard_events, /datum/events, new)
 		if("red_alert")
 			if(!event_source)
 				sendEvent(KEYCARD_RED_ALERT, ID)
+				playsound(get_turf(user), 'sound/machines/auth.ogg', 75, 1, 1)
 				. = TRUE
 		if("emergency_maint")
 			if(!event_source)
 				sendEvent(KEYCARD_EMERGENCY_MAINTENANCE_ACCESS, ID)
+				playsound(get_turf(user), 'sound/machines/auth.ogg', 75, 1, 1)
 				. = TRUE
 		if("auth_swipe")
 			if(event_source && ID != first_id && first_id)
 				event_source.trigger_event(usr)
 				event_source = null
+				playsound(get_turf(user), 'sound/machines/auth.ogg', 75, 1, 1)
 				. = TRUE
 		if("bsa_unlock")
 			if(!event_source)
 				sendEvent(KEYCARD_BSA_UNLOCK, ID)
+				playsound(get_turf(user), 'sound/machines/auth.ogg', 75, 1, 1)
 				. = TRUE
 
 /obj/machinery/keycard_auth/proc/sendEvent(event_type, trigger_id)

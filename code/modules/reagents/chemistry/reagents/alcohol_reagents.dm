@@ -242,7 +242,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 			M.emote("scream")
 
 	if(prob(3) && iscarbon(M))
-		M.visible_message("<span class='danger'>[M] starts having a seizure!</span>", "<span class='userdanger'>You have a seizure!</span>")
+		M.visible_message("<span class='danger'>[M] падает в припадке!</span>", "<span class='userdanger'>У вас начался припадок!</span>")
 		M.Unconscious(100)
 		M.Jitter(350)
 
@@ -2508,7 +2508,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/species_drink/frisky_kitty/on_mob_life(mob/living/carbon/M)
 	if(iscatperson(M))
-		if(prob(15))
+		if(prob(5))
 			M.emote(pick("nya","purr"))
 			to_chat(M, "<span class = 'notice'>[pick("So tasty~", "Ahh~ can't hold my hapiness!","Tastes perfectly!")]</span>")
 	return ..()

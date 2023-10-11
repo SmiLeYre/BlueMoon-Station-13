@@ -27,7 +27,7 @@
 		M.adjust_nutrition(1)
 
 	if(iscatperson(M) && HAS_TRAIT(M,TRAIT_DUMB_CUM)) //special "milk" tastes nice for special felinids
-		if(prob(10))
+		if(prob(5))
 			to_chat(M, "<span class = 'notice'>[pick("Mmmm~ boy's milk feels so good inside me~", "Ahh~ boy's milk~")]</span>")
 			M.emote("purr")
 
@@ -37,7 +37,7 @@
 		M.adjust_nutrition(0.5)
 
 	if(iscatperson(M) && HAS_TRAIT(M,TRAIT_DUMB_CUM))
-		if(prob(10))
+		if(prob(5))
 			to_chat(M, "<span class = 'notice'>[pick("Mmmm~ boy's milk feels so good inside me~", "Ahh~ boy's milk~")]</span>")
 			M.emote("purr")
 
@@ -137,7 +137,7 @@
 			return
 
 		// Character has a seisure
-		M.visible_message("<span class='danger'>[M] starts having a seizure!</span>", "<span class='userdanger'>You have a seizure!</span>")
+		M.visible_message("<span class='danger'>[M] падает в припадке!</span>", "<span class='userdanger'>У вас начался припадок!</span>")
 		M.Unconscious(120)
 		to_chat(M, "<span class='cultlarge'>[pick("The moon is close. It will be a long hunt tonight.", "Ludwig, why have you forsaken me?", \
 		"The night is near its end...", "Fear the blood...")]</span>")

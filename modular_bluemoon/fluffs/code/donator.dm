@@ -230,14 +230,14 @@
 	name = "Araki Nue Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/nue_kit
-	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife")
+	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife", "z67")
 	subcategory = LOADOUT_SUBCATEGORIES_DON17
 
 /datum/gear/donator/bm/stunblade
 	name = "Stunblade Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/stunblade_kit
-	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife", "leony24", "stgs")
+	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife", "leony24", "stgs", "lonofera", "z67")
 	subcategory = LOADOUT_SUBCATEGORIES_DON17
 
 /datum/gear/donator/bm/aviator_helmet
@@ -293,14 +293,14 @@
 	name = "Shiro Silverhand Jacket"
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/donator/bm/SH_jacket
-	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife")
+	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife", "z67")
 	subcategory = LOADOUT_SUBCATEGORIES_DON17
 
 /datum/gear/donator/bm/SH_glasses
 	name = "Shiro Silverhand Glasses"
 	slot = ITEM_SLOT_EYES
 	path = /obj/item/clothing/glasses/sunglasses/shiro
-	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife")
+	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife", "z67")
 	subcategory = LOADOUT_SUBCATEGORIES_DON17
 
 /datum/gear/donator/bm/emma_plush
@@ -399,4 +399,46 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/toy/plush/miner
 	ckeywhitelist = list("cheburek228")
+	subcategory = LOADOUT_SUBCATEGORIES_DON12
+
+/datum/gear/donator/bm/omega_plushie
+	name = "Omega Plushie"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/toy/plush/nukeplushie/omega
+	ckeywhitelist = list("malopharan")
+	subcategory = LOADOUT_SUBCATEGORIES_DON12
+
+/datum/gear/donator/bm/nri_drg
+	name = "Covert Ops Tactical Uniform"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/donator/bm/nri_drg
+	ckeywhitelist = list("vulpshiro", "dolbajob", "stgs", "leony24", "krashly")
+	subcategory = LOADOUT_SUBCATEGORIES_DON12
+
+/datum/gear/donator/bm/nri_drg_head
+	name = "Covert Ops Headgear"
+	slot = ITEM_SLOT_HEAD
+	path = /obj/item/clothing/head/donator/bm/nri_drg_head
+	ckeywhitelist = list("vulpshiro", "dolbajob", "stgs", "leony24", "krashly")
+	subcategory = LOADOUT_SUBCATEGORIES_DON12
+
+/datum/gear/donator/bm/booma_patch
+	name = "Boomah Patch"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/accessory/booma_patch
+	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife")
+	subcategory = LOADOUT_SUBCATEGORIES_DON17
+
+/datum/gear/donator/bm/booma
+	name = "Boomah Turtleneck"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/donator/bm/booma
+	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife")
+	subcategory = LOADOUT_SUBCATEGORIES_DON17
+
+/datum/gear/donator/bm/vance_plush
+	name = "Vance Plush"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/toy/plush/sergal/judas/vance
+	ckeywhitelist = list("littlemouse2729")
 	subcategory = LOADOUT_SUBCATEGORIES_DON12

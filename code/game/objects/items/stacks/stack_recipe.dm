@@ -27,6 +27,8 @@
 	var/trait_booster
 	/// How much the trait above, if supplied, boosts the construct speed of this item
 	var/trait_modifier = 1
+	/// If the atom checks that there are objects with density in the same turf when being built. TRUE by default
+	var/check_density = TRUE
 
 /datum/stack_recipe/New(
 	title,
@@ -42,6 +44,7 @@
 	applies_mats = FALSE,
 	trait_booster,
 	trait_modifier = 1,
+	check_density = TRUE,
 )
 
 	src.title = title
@@ -56,6 +59,7 @@
 	src.applies_mats = applies_mats
 	src.trait_booster = trait_booster
 	src.trait_modifier = trait_modifier
+	src.check_density = check_density
 
 /*
  * Recipe list datum

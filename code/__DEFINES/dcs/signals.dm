@@ -795,3 +795,6 @@
 
 /// from /obj/item/detective_scanner/scan(): (mob/user, list/extra_data)
 #define COMSIG_DETECTIVE_SCANNED "det_scanned"
+
+/// Used by /obj/item/melee/breaching_hammer
+#define COMSIG_BREACHING "breaching_signal_woop_woop"

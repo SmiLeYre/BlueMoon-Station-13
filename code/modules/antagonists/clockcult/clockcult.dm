@@ -213,8 +213,8 @@
 	SSticker.mode.servants_of_ratvar -= owner
 	SSticker.mode.update_servant_icons_removed(owner)
 	if(!silent)
-		owner.current.visible_message("<span class='deconversion_message'>[owner.current] seems to have remembered [owner.current.ru_ego()] true allegiance!</span>", null, null, null, owner.current)
-		to_chat(owner, "<span class='userdanger'>A cold, cold darkness flows through your mind, extinguishing the Justiciar's light and all of your memories as his servant.</span>")
+		owner.current.visible_message("<span class='deconversion_message'>[owner.current] выглядит так, будто бы верну[owner.current.ru_sya()] в своё исходное состояние!</span>", null, null, null, owner.current)
+		to_chat(owner, "<span class='userdanger'>Холодная, холодная тьма проникает в ваш разум, погасив свет Юстициара Ратвара и все ваши воспоминания как его слуги.</span>")
 	owner.current.log_message("has renounced the cult of Ratvar!", LOG_ATTACK, color="#BE8700")
 	owner.special_role = null
 	if(iscyborg(owner.current))

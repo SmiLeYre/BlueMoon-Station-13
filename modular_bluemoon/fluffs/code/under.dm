@@ -59,6 +59,20 @@
 	item_state = "syndicate-black"
 	can_adjust = FALSE
 
+/obj/item/clothing/under/donator/bm/nri_drg // civil variant of nri antagonist uniform
+	name = "covert ops tactical uniform"
+	desc = "A non-descript and slightly suspicious looking uniform."
+	icon_state = "nri_drg"
+	item_state = "nri_drg"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/rus/obj_drg.dmi'
+	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/rus/mob_drg.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/kovac_shitcode/icons/rus/mob_drg_digi.dmi'
+	can_adjust = FALSE
+	unique_reskin = list(
+		"Camo" = list("icon_state" = "nri_drg"),
+		"Turtleneck" = list("icon_state" = "nri_drg_alt")
+	)
+
 /obj/item/clothing/under/donator/bm/battle_coat
 	name = "battle coat"
 	desc = "A Tatical uniform with hood."
@@ -72,3 +86,10 @@
 	item_state = "white_suit"
 	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
 	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/booma
+	name = "Boomah Turtleneck"
+	desc = "Водолазка выполненная под специальный заказ для служащих в группировке Бустеров. Выполнена в кремово-белом исполнении, с нанесенным характерным логотипом группировки."
+	icon_state = "booma"
+	item_state = "booma"
+	can_adjust = TRUE

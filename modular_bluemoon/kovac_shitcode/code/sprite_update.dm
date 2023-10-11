@@ -567,10 +567,20 @@
 	held_icon = "ada"
 	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
 
+/mob/living/simple_animal/pet/fox/emma
+	name = "Emma"
+	icon_state = "emma"
+	icon_living = "emma"
+	icon_dead = "emma_dead"
+	held_icon = "emma"
+	see_in_dark = 10
+	gender = FEMALE
+	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
+
 ///////////////
 
 /obj/item/toy/plush/mammal/fox/emma
-	name = "emma plushie"
+	name = "Emma plushie"
 	desc = "An adorable stuffed toy resembling a vulp."
 	icon_state = "emma"
 	item_state = "emma"
@@ -579,12 +589,12 @@
 	righthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_r.dmi'
 
 /obj/item/toy/plush/mammal/fox/emma/shiro
-	name = "shiro plushie"
+	name = "Shiro plushie"
 	icon_state = "shiro"
 	item_state = "shiro"
 
 /obj/item/toy/plush/mammal/fox/emma/raita
-	name = "raita plushie"
+	name = "Raita plushie"
 	icon_state = "raita"
 	item_state = "raita"
 
@@ -592,6 +602,11 @@
 	name = "Aiko Plushie"
 	icon_state = "aiko"
 	item_state = "aiko"
+
+/obj/item/toy/plush/mammal/fox/emma/red
+	name = "Red plushie"
+	icon_state = "red"
+	item_state = "red"
 
 /obj/item/toy/plush/nukeplushie/who
 	name = "security officer plushie"
@@ -621,3 +636,18 @@
 	icon = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps.dmi'
 	lefthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_l.dmi'
 	righthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_r.dmi'
+
+/obj/item/toy/plush/nukeplushie/omega
+	name = "Omega plushie"
+	desc = "This plushie really has an empty noggin and zero thoughts about commiting something especially cruel."
+	icon_state = "omega"
+	item_state = "omega"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps.dmi'
+	squeak_override = list('modular_bluemoon/kovac_shitcode/sound/vulps/ooh.ogg' = 9)
+
+/obj/item/toy/plush/sergal/judas/vance
+	name = "Vance plushie"
+	desc = "A plush rodent, she smells like cheese and xenobiology!"
+	icon_state = "vance"
+	item_state = "vance"
+	squeak_override = list('sound/items/toysqueak1.ogg' = 3, 'sound/items/toysqueak2.ogg' = 3, 'sound/items/toysqueak3.ogg' = 3)

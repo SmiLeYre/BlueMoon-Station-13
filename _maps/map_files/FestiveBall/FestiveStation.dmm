@@ -23135,7 +23135,7 @@
 /turf/open/floor/plasteel/dark,
 /area/commons/fitness/recreation)
 "biM" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	dir = 4
 	},
 /obj/effect/decal/festive/christmas_ivy_string,
@@ -23179,7 +23179,7 @@
 /turf/open/floor/festive/sidewalk,
 /area/edina/street/primary/perimeter)
 "biT" = (
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	dir = 8
 	},
 /obj/structure/window/spawner/east,
@@ -23302,7 +23302,7 @@
 /turf/open/floor/festive/alleyway,
 /area/edina)
 "bjk" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	dir = 4
 	},
 /obj/structure/window/spawner/west,
@@ -23318,7 +23318,7 @@
 /turf/open/floor/carpet/arcade,
 /area/commons/fitness/recreation)
 "bjm" = (
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	dir = 8
 	},
 /obj/effect/decal/festive/christmas_ivy_string,
@@ -23370,7 +23370,7 @@
 /turf/open/floor/plasteel/dark,
 /area/commons/fitness/recreation)
 "bju" = (
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	dir = 4
 	},
 /turf/open/floor/carpet/arcade,
@@ -23380,21 +23380,21 @@
 /turf/open/floor/carpet/arcade,
 /area/commons/fitness/recreation)
 "bjw" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	dir = 8
 	},
 /obj/structure/window/spawner/east,
 /turf/open/floor/carpet/arcade,
 /area/commons/fitness/recreation)
 "bjx" = (
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	dir = 4
 	},
 /obj/structure/window/spawner/west,
 /turf/open/floor/carpet/arcade,
 /area/commons/fitness/recreation)
 "bjy" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	dir = 8
 	},
 /turf/open/floor/carpet/arcade,
@@ -55820,7 +55820,7 @@
 /turf/open/floor/wood,
 /area/maintenance/bar)
 "sVW" = (
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	dir = 4
 	},
 /turf/open/floor/grass/snow/edina,

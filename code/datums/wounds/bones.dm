@@ -204,8 +204,8 @@
 	viable_zones = list(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 	interaction_efficiency_penalty = 1.8
 	limp_slowdown = 1.3
-	threshold_minimum = 45
-	threshold_penalty = 10
+	threshold_minimum = 35
+	threshold_penalty = 13
 	treatable_tool = TOOL_BONESET
 	wound_flags = (BONE_WOUND)
 	status_effect_type = /datum/status_effect/wound/blunt/moderate
@@ -307,8 +307,8 @@
 	severity = WOUND_SEVERITY_SEVERE
 	interaction_efficiency_penalty = 2.5
 	limp_slowdown = 3.2
-	threshold_minimum = 80
-	threshold_penalty = 15
+	threshold_minimum = 65
+	threshold_penalty = 17
 	treatable_by = list(/obj/item/stack/sticky_tape/surgical, /obj/item/stack/medical/bone_gel)
 	status_effect_type = /datum/status_effect/wound/blunt/severe
 	scar_keyword = "bluntsevere"
@@ -330,7 +330,7 @@
 	interaction_efficiency_penalty = 6
 	limp_slowdown = 6.5
 	sound_effect = 'sound/effects/wounds/crack2.ogg'
-	threshold_minimum = 130
+	threshold_minimum = 115
 	threshold_penalty = 25
 	disabling = TRUE
 	treatable_by = list(/obj/item/stack/sticky_tape/surgical, /obj/item/stack/medical/bone_gel)

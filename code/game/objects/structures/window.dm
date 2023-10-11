@@ -203,7 +203,7 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 		return 1
 	. = ..()
 
-/obj/structure/window/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
+/obj/structure/window/on_attack_hand(mob/user as mob|obj, act_intent = user.a_intent, unarmed_attack_flags)
 	if(!can_be_reached(user))
 		return
 	if(user.a_intent == INTENT_HARM)

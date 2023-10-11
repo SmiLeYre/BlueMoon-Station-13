@@ -18,6 +18,8 @@
 	// this might be all in all unnecessary with current code if some changes are made
 	var/goody = PACK_GOODY_NONE //Small items can be grouped into a single crate.They also come in a closet/lockbox instead of a full crate, so the 700 min doesn't apply
 	var/can_private_buy = TRUE //Can it be purchased privately by each crewmember?
+	/// If this pack comes shipped in a specific pod when launched from the express console
+	var/special_pod
 
 /datum/supply_pack/proc/generate(atom/A, datum/bank_account/paying_account)
 	var/obj/structure/closet/crate/C

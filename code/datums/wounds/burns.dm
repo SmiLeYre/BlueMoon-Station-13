@@ -258,8 +258,8 @@
 	occur_text = "шипит от образующихся красных ожоговых пятен"
 	severity = WOUND_SEVERITY_MODERATE
 	damage_mulitplier_penalty = 1.1
-	threshold_minimum = 50
-	threshold_penalty = 5 // burns cause significant decrease in limb integrity compared to other wounds
+	threshold_minimum = 40
+	threshold_penalty = 8 // burns cause significant decrease in limb integrity compared to other wounds
 	status_effect_type = /datum/status_effect/wound/burn/moderate
 	flesh_damage = 5
 	scar_keyword = "burnmoderate"
@@ -274,7 +274,7 @@
 	occur_text = "быстро обугливается, обнажая потрескавшуюся кожу и плоть"
 	severity = WOUND_SEVERITY_SEVERE
 	damage_mulitplier_penalty = 1.2
-	threshold_minimum = 90
+	threshold_minimum = 75
 	threshold_penalty = 10
 	status_effect_type = /datum/status_effect/wound/burn/severe
 	treatable_by = list(/obj/item/flashlight/pen/paramedic, /obj/item/stack/medical/ointment, /obj/item/stack/medical/mesh)
@@ -293,7 +293,7 @@
 	severity = WOUND_SEVERITY_CRITICAL
 	damage_mulitplier_penalty = 1.5
 	sound_effect = 'sound/effects/wounds/sizzle2.ogg'
-	threshold_minimum = 140
+	threshold_minimum = 130
 	threshold_penalty = 15
 	status_effect_type = /datum/status_effect/wound/burn/critical
 	treatable_by = list(/obj/item/flashlight/pen/paramedic, /obj/item/stack/medical/ointment, /obj/item/stack/medical/mesh)

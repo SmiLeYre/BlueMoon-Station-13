@@ -16,18 +16,19 @@
 		if(target.has_breasts(REQUIRE_EXPOSED))
 			var/modifier = 1
 			var/obj/item/organ/genital/breasts/B = target.getorganslot(ORGAN_SLOT_BREASTS)
-			switch(B.size)
-				if("c", "d", "e")
-					modifier = 2
-				if("f", "g", "h")
-					modifier = 3
-				else
-					if(B.size in GLOB.breast_values)
-						modifier = clamp(GLOB.breast_values[B.size] - 5, 0, INFINITY)
+			if(B.climaxable(target, TRUE))
+				switch(B.size)
+					if("c", "d", "e")
+						modifier = 2
+					if("f", "g", "h")
+						modifier = 3
 					else
-						modifier = 1
-			if(B.fluid_id)
-				user.reagents.add_reagent(B.fluid_id, rand(1,2 * modifier) * user.get_fluid_mod(B)) //SPLURT edit
+						if(B.size in GLOB.breast_values)
+							modifier = clamp(GLOB.breast_values[B.size] - 5, 0, INFINITY)
+						else
+							modifier = 1
+				if(B.fluid_id)
+					user.reagents.add_reagent(B.fluid_id, rand(1,2 * modifier) * user.get_fluid_mod(B)) //SPLURT edit
 
 	if(user.a_intent == INTENT_HARM)
 		user.visible_message(
@@ -36,18 +37,19 @@
 		if(target.has_breasts(REQUIRE_EXPOSED))
 			var/modifier = 1
 			var/obj/item/organ/genital/breasts/B = target.getorganslot(ORGAN_SLOT_BREASTS)
-			switch(B.size)
-				if("c", "d", "e")
-					modifier = 2
-				if("f", "g", "h")
-					modifier = 3
-				else
-					if(B.size in GLOB.breast_values)
-						modifier = clamp(GLOB.breast_values[B.size] - 5, 0, INFINITY)
+			if(B.climaxable(target, TRUE))
+				switch(B.size)
+					if("c", "d", "e")
+						modifier = 2
+					if("f", "g", "h")
+						modifier = 3
 					else
-						modifier = 1
-			if(B.fluid_id)
-				user.reagents.add_reagent(B.fluid_id, rand(1,3 * modifier)) //aggressive sucking leads to high rewards
+						if(B.size in GLOB.breast_values)
+							modifier = clamp(GLOB.breast_values[B.size] - 5, 0, INFINITY)
+						else
+							modifier = 1
+				if(B.fluid_id)
+					user.reagents.add_reagent(B.fluid_id, rand(1,3 * modifier)) //aggressive sucking leads to high rewards
 
 	if(user.a_intent == INTENT_GRAB)
 		user.visible_message(
@@ -57,18 +59,19 @@
 		if(target.has_breasts(REQUIRE_EXPOSED))
 			var/modifier = 1
 			var/obj/item/organ/genital/breasts/B = target.getorganslot(ORGAN_SLOT_BREASTS)
-			switch(B.size)
-				if("c", "d", "e")
-					modifier = 2
-				if("f", "g", "h")
-					modifier = 3
-				else
-					if(B.size in GLOB.breast_values)
-						modifier = clamp(GLOB.breast_values[B.size] - 5, 0, INFINITY)
+			if(B.climaxable(target, TRUE))
+				switch(B.size)
+					if("c", "d", "e")
+						modifier = 2
+					if("f", "g", "h")
+						modifier = 3
 					else
-						modifier = 1
-			if(B.fluid_id)
-				user.reagents.add_reagent(B.fluid_id, rand(1,3 * modifier)) //aggressive sucking leads to high rewards
+						if(B.size in GLOB.breast_values)
+							modifier = clamp(GLOB.breast_values[B.size] - 5, 0, INFINITY)
+						else
+							modifier = 1
+				if(B.fluid_id)
+					user.reagents.add_reagent(B.fluid_id, rand(1,3 * modifier)) //aggressive sucking leads to high rewards
 
 	if(prob(5 + target.get_lust()))
 		if(target.a_intent == INTENT_HELP)
@@ -80,8 +83,7 @@
 					"<span class='lewd'>\The <b>[target]</b> тихонько вздрагивает.</span>",
 					"<span class='lewd'>\The <b>[target]</b> возбуждённо проводит пальцем вдоль своей груди.</span>",
 					"<span class='lewd'>\The <b>[target]</b> дрожит от возбуждения и довольно выдыхает, когда \the <b>[user]</b> наслаждается содержимым грудей.</span>"))
-			if(target.get_lust() < 5)
-				target.handle_post_sex(5, CUM_TARGET_MOUTH, user, ORGAN_SLOT_BREASTS) //SPLURT edit
+			target.handle_post_sex(LOW_LUST, null, user, ORGAN_SLOT_BREASTS)
 		if(target.a_intent == INTENT_DISARM)
 			if (target.restrained())
 				if(!target.has_breasts())
@@ -109,8 +111,7 @@
 							"<span class='lewd'>\The <b>[target]</b> хихикает, вырываясь из рук <b>[user]</b>.</span>",
 							"<span class='lewd'>\The <b>[target]</b> нежно проводит рукой <b>[user]</b>'s вдоль обнажённых грудей.</span>",
 							"<span class='lewd'>\The <b>[target]</b> толкает обнажённую грудь вперёд и дразняще проводит несколькими пальцами <b>[user]</b> по своему соску.</span>"))
-			if(target.get_lust() < 10)
-				target.handle_post_sex(NORMAL_LUST, CUM_TARGET_MOUTH, user, ORGAN_SLOT_BREASTS) //SPLURT edit
+			target.handle_post_sex(LOW_LUST, null, user, ORGAN_SLOT_BREASTS)
 	if(target.a_intent == INTENT_GRAB)
 		user.visible_message(
 				pick("<span class='lewd'>\The <b>[target]</b> крепко сжимает запястье <b>[user]</b>.</span>",

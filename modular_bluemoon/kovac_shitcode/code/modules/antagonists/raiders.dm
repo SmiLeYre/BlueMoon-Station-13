@@ -145,7 +145,7 @@
 	var/command_radio = FALSE
 
 /datum/outfit/inteq_raider/vanguard
-	name = "InteQ Vanguard Raider"
+	name = "InteQ Vanguard"
 	id = /obj/item/card/id/syndicate/anyone/inteq
 	suit = /obj/item/clothing/suit/armor/inteq/vanguard
 	head = /obj/item/clothing/head/HoS/inteq_vanguard
@@ -170,6 +170,12 @@
 	H.grant_language(/datum/language/codespeak, TRUE, TRUE)
 	H.faction |= ROLE_INTEQ
 	H.update_icons()
+
+/datum/outfit/inteq_raider/vanguard/honorable
+	name = "InteQ Honorable Vanguard"
+	suit = /obj/item/clothing/suit/armor/inteq/honorable_vanguard
+	head = /obj/item/clothing/head/HoS/inteq_honorable_vanguard
+	uniform = /obj/item/clothing/under/inteq_honorable_vanguard
 
 ////// Shuttle (Krashly) ///////////
 

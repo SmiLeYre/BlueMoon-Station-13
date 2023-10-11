@@ -156,6 +156,7 @@
 	flags_1 = NONE
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	ambientsounds = SHUTTLE_MILITARY
+	shipambience = 'sound/ambience/zone/stadium.ogg'
 	min_ambience_cooldown = 15 SECONDS
 	max_ambience_cooldown = 40 SECONDS
 

@@ -11,7 +11,7 @@
 
 /datum/mutation/human/epilepsy/on_life()
 	if(prob(1 * GET_MUTATION_SYNCHRONIZER(src)) && owner.stat == CONSCIOUS)
-		owner.visible_message("<span class='danger'>[owner] starts having a seizure!</span>", "<span class='userdanger'>You have a seizure!</span>")
+		owner.visible_message("<span class='danger'>[owner] падает в припадке!</span>", "<span class='userdanger'>У вас начался припадок!</span>")
 		owner.Unconscious(200 * GET_MUTATION_POWER(src))
 		owner.Jitter(1000 * GET_MUTATION_POWER(src))
 		SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "epilepsy", /datum/mood_event/epilepsy)

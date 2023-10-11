@@ -455,6 +455,12 @@
 	icon_state = "flannel_brown"
 	item_state = "flannel_brown"
 	togglename = "buttons"
+/obj/item/clothing/suit/toggle/jacket/flannel/white
+	name = "white flannel jacket"
+	desc = "Comfy and supposedly flammable."
+	icon_state = "flannel_white"
+	item_state = "flannel_white"
+	togglename = "buttons"
 /obj/item/clothing/suit/toggle/jacket/whitehoodie
 	name = "soft hoodie"
 	desc = "A soft hoodie with a TailorCo brand on the tag."
@@ -1386,3 +1392,44 @@
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
+/obj/item/clothing/suit/toggle/jacket/hawaiian
+	name = "black hawaiian shirt"
+	desc = "Лёгкая и удобная рубашка."
+	icon_state = "hawaiiblack"
+	item_state = "hawaiiblack"
+	togglename = "buttons"
+
+/obj/item/clothing/suit/toggle/jacket/hawaiian/fuch
+	name = "fuch hawaiian shirt"
+	desc = "Лёгкая и удобная рубашка."
+	icon_state = "hawaiifuchs"
+	item_state = "hawaiifuchs"
+	togglename = "buttons"
+
+/obj/item/clothing/suit/toggle/jacket/hawaiian/vine
+	name = "vine hawaiian shirt"
+	desc = "Лёгкая и удобная рубашка."
+	icon_state = "hawaiivine"
+	item_state = "hawaiivine"
+	togglename = "buttons"
+
+/obj/item/clothing/suit/toggle/jacket/hawaiian/orange
+	name = "orange hawaiian shirt"
+	desc = "Лёгкая и удобная рубашка."
+	icon_state = "hawaiiorange"
+	item_state = "hawaiiorange"
+	togglename = "buttons"
+
+/obj/item/clothing/suit/toggle/jacket/hawaiian/motu
+	name = "motu hawaiian shirt"
+	desc = "Лёгкая и удобная рубашка."
+	icon_state = "hawaiimotu"
+	item_state = "hawaiimotu"
+	togglename = "buttons"
+
+/obj/item/clothing/suit/toggle/jacket/hawaiian/vice
+	name = "vice hawaiian shirt"
+	desc = "Лёгкая и удобная рубашка."
+	icon_state = "hawaiivice"
+	item_state = "hawaiivice"
+	togglename = "buttons"

@@ -23,12 +23,12 @@
 /datum/config_entry/flag/see_own_notes	//Can players see their own admin notes
 
 /datum/config_entry/number/note_fresh_days
-	default  = null
+	default = null
 	min_val = 0
 	integer = FALSE
 
 /datum/config_entry/number/note_stale_days
-	default  = null
+	default = null
 	min_val = 0
 	integer = FALSE
 

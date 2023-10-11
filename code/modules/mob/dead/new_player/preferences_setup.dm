@@ -56,6 +56,10 @@
 		if(PREVIEW_PREF_LOADOUT)
 			SSjob.equip_loadout(parent.mob, mannequin, bypass_prereqs = TRUE, can_drop = FALSE)
 			SSjob.post_equip_loadout(parent.mob, mannequin, bypass_prereqs = TRUE, can_drop = FALSE)
+		if(PREVIEW_PREF_NAKED_AROUSED)
+			for(var/obj/item/organ/genital/genital in mannequin.internal_organs)
+				if(CHECK_BITFIELD(genital.genital_flags, GENITAL_CAN_AROUSE))
+					genital.set_aroused_state(TRUE, null)
 
 	mannequin.regenerate_icons()
 
