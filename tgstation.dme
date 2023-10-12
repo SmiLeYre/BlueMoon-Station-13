@@ -10,7 +10,6 @@
 // END_FILE_DIR
 
 // BEGIN_PREFERENCES
-#define DEBUG // Включать только в случае, если необходимо проверить рантаймы и прочие поломки/приколы.
 // END_PREFERENCES
 
 // BEGIN_INCLUDE
