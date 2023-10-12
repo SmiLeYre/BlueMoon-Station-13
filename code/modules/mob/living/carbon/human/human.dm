@@ -837,7 +837,7 @@
 			climb_on_time = 2.5 SECONDS
 		// BLUEMOON ADDITION END
 
-		if(!do_after(target, climb_on_time, target = src) || !can_piggyback(target))
+		if(do_after(target, climb_on_time, src, IGNORE_INCAPACITATED, extra_checks = CALLBACK(src, PROC_REF(can_piggyback), target)))
 			if(can_piggyback(target))
 				if(target.incapacitated(FALSE, TRUE) || incapacitated(FALSE, TRUE))
 					target.visible_message("<span class='warning'>[target] can't hang onto [src]!</span>")

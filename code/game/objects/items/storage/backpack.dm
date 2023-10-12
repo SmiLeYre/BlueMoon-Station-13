@@ -417,6 +417,7 @@
 		/obj/item/implanter,
 		/obj/item/pinpointer/crew,
 		/obj/item/reagent_containers/chem_pack,
+		/obj/item/razor,
 		/obj/item/stack/sticky_tape
 		))
 	STR.can_hold = can_hold

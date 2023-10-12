@@ -6,25 +6,25 @@
 	icon_deny = "sec-deny"
 	light_mask = "sec-light-mask"
 	req_access = list(ACCESS_SECURITY)
-	products = list(/obj/item/restraints/handcuffs = 8,
-					/obj/item/restraints/handcuffs/kinky = 8,
-					/obj/item/restraints/handcuffs/cable/zipties = 10,
+	products = list(/obj/item/restraints/handcuffs = 6,
+					/obj/item/restraints/handcuffs/kinky = 6,
+					/obj/item/restraints/handcuffs/cable/zipties = 6,
 					/obj/item/grenade/flashbang = 4,
-					/obj/item/assembly/flash/handheld = 5,
-					/obj/item/reagent_containers/food/snacks/donut = 12,
-					/obj/item/storage/box/evidence = 6,
-					/obj/item/flashlight/seclite = 4,
+					/obj/item/assembly/flash/handheld = 4,
+					/obj/item/reagent_containers/food/snacks/donut = 3,
+					/obj/item/storage/box/evidence = 3,
+					/obj/item/flashlight/seclite = 3,
 					/obj/item/restraints/legcuffs/bola/energy = 10,
 					/obj/item/secbat = 5)
 	contraband = list(/obj/item/clothing/glasses/sunglasses = 2,
 					/obj/item/storage/fancy/donut_box = 2,
 					/obj/item/storage/belt/sabre/secbelt = 1)
 	premium = list(/obj/item/coin/antagtoken = 1,
-					/obj/item/clothing/head/helmet/blueshirt = 5, //BlueMoon edit
-					/obj/item/clothing/suit/armor/vest/blueshirt = 5, //BlueMoon edit
-					/obj/item/clothing/under/rank/security/officer/blueshirt = 5, //BlueMoon edit
-					/obj/item/clothing/gloves/tackler = 5, //BlueMoon edit
-					/obj/item/grenade/stingbang = 5, //BlueMoon edit
+					/obj/item/clothing/head/helmet/blueshirt = 4, //BlueMoon edit
+					/obj/item/clothing/suit/armor/vest/blueshirt = 4, //BlueMoon edit
+					/obj/item/clothing/under/rank/security/officer/blueshirt = 4, //BlueMoon edit
+					/obj/item/clothing/gloves/tackler = 4, //BlueMoon edit
+					/obj/item/grenade/stingbang = 4, //BlueMoon edit
 					/obj/item/ssword_kit = 1,
 					/obj/item/clothing/suit/armor/hos/platecarrier = 1,
 					/obj/item/storage/belt/bandolier = 2,

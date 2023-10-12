@@ -12,6 +12,8 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb_continuous = list("whacks","breaches","bulldozes","flings","thwachs")
 	attack_verb_simple = list("breach","hammer","whack","slap","thwach","fling")
+	siemens_coefficient = 0
+	permeability_coefficient = 0.05
 	/// Delay between door hits
 	var/breaching_delay = 2 SECONDS
 	/// The door we aim to breach

@@ -29,11 +29,11 @@
 		return
 	user.whisper("O bidai nabora se[pick("'","`")]sma.", language = /datum/language/common)
 	user.whisper(html_decode(message))
-	var/title = "Acolyte"
+	var/title = "Послушник"
 	var/span = "cult italic"
 	if(user.mind && user.mind.has_antag_datum(/datum/antagonist/cult/master))
 		span = "cultlarge"
-		title = "Master"
+		title = "Проповедник"
 	else if(!ishuman(user))
 		title = "Construct"
 	my_message = "<span class='[span]'><b>[title] [findtextEx(user.name, user.real_name) ? user.name : "[user.real_name] (as [user.name])"]:</b> [message]</span>"

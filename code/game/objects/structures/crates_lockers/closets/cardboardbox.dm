@@ -17,18 +17,92 @@
 	var/move_delay = FALSE
 	var/egged = 0
 	var/use_mob_movespeed = FALSE //Citadel adds snowflake box handling
+	can_buckle = FALSE
+	buckle_lying = FALSE
+	max_buckled_mobs = 1
+	buckle_prevents_pull = FALSE
+	var/mutable_appearance/front
+	var/can_sit_inside = TRUE	//в агентской коробке нельзя сидеть внутри и выглядывать из неё
+
+/obj/structure/closet/cardboard/Initialize(mapload)
+	. = ..()
+	/*if(opened)
+		can_buckle = TRUE
+	else
+		can_buckle = FALSE*/
+	if(can_sit_inside)
+		front = GetFront()
+		front.layer = ABOVE_MOB_LAYER
+		var/datum/component/riding/D = LoadComponent(/datum/component/riding)	//теперь коробка это ТС и требует регистрации в ГИБДД
+		D.set_vehicle_dir_layer(SOUTH, OBJ_LAYER)
+		D.set_vehicle_dir_layer(NORTH, OBJ_LAYER)
+		D.set_vehicle_dir_layer(EAST, OBJ_LAYER)
+		D.set_vehicle_dir_layer(WEST, OBJ_LAYER)
+		D.vehicle_move_delay = 4
+
+/obj/structure/closet/cardboard/examine(mob/user)
+	. = ..()
+	if(can_sit_inside)
+		if(!has_buckled_mobs())
+			. += "<span class='notice'>Drag your sprite to sit in it.</span>"
+		else
+			. += "<span class='notice'><b>[buckled_mobs[1]]</b> is sitting inside.</span>"
+			. += "<span class='notice'>Alt-click to take creatures out of it.</span>"
+
+/*/obj/structure/closet/cardboard/process()
+	for(var/m in buckled_mobs)*/
+
+/obj/structure/closet/cardboard/proc/GetFront()
+	return mutable_appearance('icons/obj/closet.dmi', "cardboard_front")
+
+/obj/structure/closet/cardboard/proc/update_front()
+	if(has_buckled_mobs())
+		add_overlay(front)
+	else
+		cut_overlay(front)
+
+/obj/structure/closet/cardboard/post_buckle_mob(mob/living/M)
+	. = ..()
+	update_front()
+	sitting_inside(M)
+	//add_overlay(front)
+
+
+/obj/structure/closet/cardboard/proc/sitting_inside(mob/living/M)
+	var/mob/living/carbon/human/H = M
+	for(H in buckled_mobs)
+		if(iscatperson(H))
+			to_chat(H, "<span class = 'notice'>Surprisingly, it feels quite comfortable here...</span>")
+		while(iscatperson(H) && H.buckled && opened)
+			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "hide_in_box", /datum/mood_event/hide_in_box)
+			if(prob(50))
+				to_chat(H, "<span class = 'notice'>[pick("They won't get me if I hide inside.","I might look silly, but I don't care.","It would be nice if someone patted me...")]</span>")
+			sleep(30 SECONDS)
+
+/obj/structure/closet/cardboard/post_unbuckle_mob(mob/living/M)
+	. = ..()
+	update_front()
+	//cut_overlay(front)
 
 /obj/structure/closet/cardboard/relaymove(mob/living/user, direction)
-	if(opened || move_delay || !CHECK_MOBILITY(user, MOBILITY_MOVE) || !isturf(loc) || !has_gravity(loc))
-		return
-	move_delay = TRUE
-	var/oldloc = loc
-	step(src, direction)
-	user.setDir(direction)
-	if(oldloc != loc)
-		addtimer(CALLBACK(src, .proc/ResetMoveDelay), (use_mob_movespeed ? user.movement_delay() : CONFIG_GET(number/movedelay/walk_delay)) * move_speed_multiplier)
+	if(can_sit_inside)
+		if(move_delay || !CHECK_MOBILITY(user, MOBILITY_MOVE) || !isturf(loc) || !has_gravity(loc))
+			return
+		if(opened && !has_buckled_mobs())
+			return
+		var/datum/component/riding/riding_datum = GetComponent(/datum/component/riding)
+		riding_datum.handle_ride(user, direction)
 	else
-		ResetMoveDelay()
+		if(opened || move_delay || !CHECK_MOBILITY(user, MOBILITY_MOVE) || !isturf(loc) || !has_gravity(loc))
+			return
+		move_delay = TRUE
+		var/oldloc = loc
+		step(src, direction)
+		user.setDir(direction)
+		if(oldloc != loc)
+			addtimer(CALLBACK(src, .proc/ResetMoveDelay), (use_mob_movespeed ? user.movement_delay() : CONFIG_GET(number/movedelay/walk_delay)) * move_speed_multiplier)
+		else
+			ResetMoveDelay()
 
 /obj/structure/closet/cardboard/proc/ResetMoveDelay()
 	move_delay = FALSE
@@ -44,6 +118,10 @@
 			break
 		if(Snake)
 			alerted = fov_viewers(world.view,src)
+	if(can_sit_inside)
+		can_buckle = TRUE
+		for(var/mob/living/L in src.contents)
+			buckle_mob(L)
 	..()
 	if(LAZYLEN(alerted))
 		egged = world.time + SNAKE_SPAM_TICKS
@@ -52,7 +130,11 @@
 				if(!L.incapacitated(ignore_restraints = 1))
 					L.face_atom(src)
 				L.do_alert_animation(L)
-		playsound(loc, 'sound/machines/chime.ogg', 50, FALSE, -5)
+		var/mob/living/carbon/C = buckled_mobs[1]
+		if(iscatperson(C))
+			C.emote(pick("nya","meow"))
+		else
+			playsound(loc, 'sound/machines/chime.ogg', 25, FALSE, -5)
 
 /mob/living/proc/do_alert_animation(atom/A)
 	var/image/I = image('icons/obj/closet.dmi', A, "cardboard_special", A.layer+1)
@@ -60,17 +142,30 @@
 	I.alpha = 0
 	animate(I, pixel_z = 32, alpha = 255, time = 5, easing = ELASTIC_EASING)
 
+/obj/structure/closet/cardboard/close(mob/living/user)
+	if(has_buckled_mobs())
+		var/mob/living/L = buckled_mobs[1]
+		unbuckle_mob(L)
+	can_buckle = FALSE
+	..()
+
 /obj/structure/closet/cardboard/handle_lock_addition() //Whoever heard of a lockable cardboard box anyway
 	return
 
 /obj/structure/closet/cardboard/handle_lock_removal()
 	return
 
+/obj/structure/closet/cardboard/AltClick(mob/user)
+	if(has_buckled_mobs())
+		user_unbuckle_mob(buckled_mobs[1],user)
+		return TRUE
+
+
 /obj/structure/closet/cardboard/after_close(mob/living/toucher) //damn felinids in my box again!
 	. = ..()
 	for(var/mob/living/carbon/H in contents)
 		if(iscatperson(H))
-			to_chat(H, "<span class = 'notice'>Surprisingly, it feels quite comfortable here...</span>")
+			to_chat(H, "<span class = 'notice'>You feel quite safe inside your box.</span>")
 		while(iscatperson(H) && !opened && H.loc == src)
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "hide_in_box", /datum/mood_event/hide_in_box)
 			if(prob(50))
@@ -78,6 +173,9 @@
 			if(prob(50))
 				to_chat(H, "<span class = 'notice'>[pick("Awww~ So comfy~", "I could sleep here if I wanted to...","My little shelter from this cruel world.","I'm feeling safe inside.")]</span>")
 			sleep(8 SECONDS)
+
+/obj/structure/closet/cardboard/set_spooky_trap()	//boxes are for felinids, not for skeletonts
+	return
 
 /obj/structure/closet/cardboard/metal
 	name = "large metal box"
@@ -90,4 +188,8 @@
 	cutting_tool = TOOL_WELDER
 	open_sound = 'sound/machines/click.ogg'
 	material_drop = /obj/item/stack/sheet/plasteel
+
+/obj/structure/closet/cardboard/metal/GetFront()
+	return mutable_appearance('icons/obj/closet.dmi', "metalbox_front")
+
 #undef SNAKE_SPAM_TICKS

@@ -274,28 +274,28 @@
 	name = "\improper Emergency Response Team commander Helmet"
 	desc = "An in-atmosphere helmet worn by the commander of a Nanotrasen Emergency Response Team. Has blue highlights."
 	icon_state = "erthelmet_cmd"
-	mutantrace_variation = STYLE_MUZZLE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 //Security
 /obj/item/clothing/head/helmet/swat/security
 	name = "\improper Emergency Response Team security Helmet"
 	desc = "An in-atmosphere helmet worn by security members of the Nanotrasen Emergency Response Team. Has red highlights."
 	icon_state = "erthelmet_sec"
-	mutantrace_variation = STYLE_MUZZLE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 //Engineer
 /obj/item/clothing/head/helmet/swat/engineer
 	name = "\improper Emergency Response Team engineer Helmet"
 	desc = "An in-atmosphere helmet worn by engineering members of the Nanotrasen Emergency Response Team. Has orange highlights."
 	icon_state = "erthelmet_eng"
-	mutantrace_variation = STYLE_MUZZLE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 //Medical
 /obj/item/clothing/head/helmet/swat/medical
 	name = "\improper Emergency Response Team medical Helmet"
 	desc = "A set of armor worn by medical members of the Nanotrasen Emergency Response Team. Has red and white highlights."
 	icon_state = "erthelmet_med"
-	mutantrace_variation = STYLE_MUZZLE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 //Janitorial
 /obj/item/clothing/head/helmet/swat/janitor

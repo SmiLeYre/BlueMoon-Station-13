@@ -429,7 +429,7 @@
 	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife")
 	subcategory = LOADOUT_SUBCATEGORIES_DON17
 
-/datum/gear/donator/bm/flektarn
+/datum/gear/donator/bm/booma
 	name = "Boomah Turtleneck"
 	slot = ITEM_SLOT_ICLOTHING
 	path = /obj/item/clothing/under/donator/bm/booma

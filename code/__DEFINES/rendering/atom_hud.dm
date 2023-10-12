@@ -84,6 +84,7 @@
 #define SECHUD_BARTENDER "hudbartender"
 #define SECHUD_BOTANIST "hudbotanist"
 #define SECHUD_BOUNCER "hudbouncer"
+#define SECHUD_ETERTAINER "hudentertainer" // BLUEMOON ADD
 #define SECHUD_CAPTAIN "hudcaptain"
 #define SECHUD_CARGO_TECHNICIAN "hudcargotechnician"
 #define SECHUD_CHAPLAIN "hudchaplain"

@@ -646,7 +646,7 @@
 /obj/item/storage/belt/bandolier/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 18
+	STR.max_items = 25
 	STR.display_numerical_stacking = TRUE
 	STR.can_hold = typecacheof(list(
 		/obj/item/ammo_casing

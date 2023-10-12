@@ -124,8 +124,8 @@
 	mag_type = /obj/item/ammo_box/magazine/ak12
 	can_suppress = FALSE
 	weapon_weight = WEAPON_HEAVY
-	burst_size = 2
-	fire_delay = 2
+	burst_size = 3
+	fire_delay = 1
 	fire_sound = 'modular_bluemoon/krashly/sound/ak12_fire.ogg'
 
 /obj/item/gun/ballistic/automatic/ak12/update_icon_state()

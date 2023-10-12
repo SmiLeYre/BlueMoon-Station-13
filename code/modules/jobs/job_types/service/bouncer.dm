@@ -28,7 +28,6 @@
 	)
 
 	alt_titles = list(
-		"Waiter",
 		"Bodyguard",
 		"Hired Muscle",
 		"Service Guard",
