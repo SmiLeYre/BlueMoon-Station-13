@@ -32,10 +32,58 @@
 	excludefromjob = list("Captain")
 
 /datum/objective_item/steal/rubberducky
-	name = "Уточку-Капитана Капитана."
+	name = "Уточку Капитана."
 	targetitem = /obj/item/bikehorn/rubberducky/captain
 	difficulty = 10
 	excludefromjob = list("Captain")
+
+/datum/objective_item/steal/zippo_cap
+	name = "Зажигалку Капитана."
+	targetitem = /obj/item/lighter/cap
+	difficulty = 10
+	excludefromjob = list("Captain")
+
+/datum/objective_item/steal/zippo_hop
+	name = "Зажигалку ГП."
+	targetitem = /obj/item/lighter/hop
+	difficulty = 6
+	excludefromjob = list("Head of Personnel")
+
+/datum/objective_item/steal/zippo_hos
+	name = "Зажигалку ГСБ."
+	targetitem = /obj/item/lighter/hos
+	difficulty = 10
+	excludefromjob = list("Head Of Security")
+
+/datum/objective_item/steal/zippo_nt_rep
+	name = "Зажигалку Представителя Пакта."
+	targetitem = /obj/item/lighter/nt_rep
+	difficulty = 10
+	excludefromjob = list("NanoTrasen Representative")
+
+/datum/objective_item/steal/zippo_cmo
+	name = "Зажигалку Старшего Медицинского Офицера."
+	targetitem = /obj/item/lighter/cmo
+	difficulty = 5
+	excludefromjob = list("Chief Medical Officer")
+
+/datum/objective_item/steal/zippo_ce
+	name = "Зажигалку Старшего Инженера."
+	targetitem = /obj/item/lighter/ce
+	difficulty = 5
+	excludefromjob = list("Chief Engineer")
+
+/datum/objective_item/steal/zippo_rd
+	name = "Зажигалку Научного Руководителя."
+	targetitem = /obj/item/lighter/ce
+	difficulty = 5
+	excludefromjob = list("Research Director")
+
+/datum/objective_item/steal/zippo_qm
+	name = "Зажигалку Завхоза."
+	targetitem = /obj/item/lighter/engraved
+	difficulty = 2
+	excludefromjob = list("Quartermaster")
 
 /datum/objective_item/steal/hoslaser
 	name = "личное вооружение Синего Щита или Главы Службы Безопасности."

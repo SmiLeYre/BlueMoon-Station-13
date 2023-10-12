@@ -114,7 +114,6 @@
 
 /datum/config_entry/number/shuttle_refuel_delay
 	default = 12000
-	integer = FALSE
 	min_val = 0
 
 /datum/config_entry/flag/show_game_type_odds	//if set this allows players to see the odds of each roundtype on the get revision screen
@@ -357,3 +356,6 @@
 
 /datum/config_entry/flag/deathmatch_arena
 	default = TRUE
+
+/datum/config_entry/str_list/randomizing_station_name_message
+	default = list()

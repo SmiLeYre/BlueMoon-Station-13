@@ -1854,11 +1854,17 @@ Traitors and the like can also be revived with the previous role mostly intact.
 
 	var/turf/T = get_turf(usr)
 	target = input("Any specific target in mind? Please note only live, non cluwned, human targets are valid.", "Target", target) as null|anything in GLOB.player_list
-	if(target && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		var/mob/living/simple_animal/hostile/floor_cluwne/FC = new /mob/living/simple_animal/hostile/floor_cluwne(T)
+
+	if(target)
+		log_admin("[key_name(usr)] spawned floor cluwne, heading for [target].")
+		message_admins("[key_name(usr)] spawned floor cluwne, heading for [target].")
+	else
+		log_admin("[key_name(usr)] spawned floor cluwne, roaming freely.")
+		message_admins("[key_name(usr)] spawned floor cluwne, roaming freely.")
+
+	var/mob/living/carbon/human/H = target
+	if(istype(H))
+		var/mob/living/simple_animal/hostile/floor_cluwne/FC = new(T)
 		FC.Acquire_Victim(H)
 	else
 		new /mob/living/simple_animal/hostile/floor_cluwne(T)
-	log_admin("[key_name(usr)] spawned floor cluwne.")
-	message_admins("[key_name(usr)] spawned floor cluwne.")

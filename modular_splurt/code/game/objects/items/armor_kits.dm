@@ -37,8 +37,8 @@
 	if(C.armor.getRating(ACID) < 90)
 		C.armor = C.armor.setRating(ACID = 90)
 		used = TRUE
-	if(C.armor.getRating(WOUND) < 10)
-		C.armor = C.armor.setRating(WOUND = 10)
+	if(C.armor.getRating(WOUND) < 20)
+		C.armor = C.armor.setRating(WOUND = 20)
 		used = TRUE
 
 	if(used)
@@ -91,6 +91,9 @@
 		used = TRUE
 	if(C.armor.getRating(ACID) < 60)
 		C.armor = C.armor.setRating(ACID = 60)
+		used = TRUE
+	if(C.armor.getRating(WOUND) < 20)
+		C.armor = C.armor.setRating(ACID = 20)
 		used = TRUE
 
 	if(used)
@@ -191,6 +194,9 @@
 		used = TRUE
 	if(C.armor.getRating(ACID) < 50)
 		C.armor = C.armor.setRating(ACID = 50)
+		used = TRUE
+	if(C.armor.getRating(WOUND) < 10)
+		C.armor = C.armor.setRating(WOUND = 10)
 		used = TRUE
 
 	if(used)

@@ -119,6 +119,10 @@
 		target.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [target]!</span>", \
 						"<span class='userdanger'>[user] splashes the contents of [src] onto [target]!</span>")
 		log_combat(user, target, "splashed", src)
+		if(iscarbon(target))
+			var/mob/living/carbon/human/C = target
+			if(iscatperson(C))
+				C.emote("hiss")
 		reagents.reaction(target, TOUCH)
 		reagents.clear_reagents()
 		return

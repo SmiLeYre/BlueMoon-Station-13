@@ -431,7 +431,7 @@
 	if(anonymous)
 		partner_name = "<b>НЕИЗВЕСТНЫЙ</b>"
 	else
-		partner_name = "[partner_name]"
+		partner_name = "<b>[partner]</b>"
 
 	if(src != partner)
 		if(ismob(partner))
@@ -500,12 +500,12 @@
 						if(CUM_TARGET_FEET)
 							if(!last_lewd_datum.require_target_num_feet)
 								if(partner.has_feet())
-									message = "кончает на [partner_name]'s [partner.has_feet() == 1 ? pick("стопу", "ножку") : pick("стопу", "ножку")]."
+									message = "кончает на [partner_name] [partner.has_feet() == 1 ? pick("стопу", "ножку") : pick("стопу", "ножку")]."
 								else
 									message = "кончает под себя!"
 							else
 								if(partner.has_feet())
-									message = "кончает на [partner_name]'s [last_lewd_datum.require_target_feet == 1 ? pick("стопу", "ножку") : pick("стопу", "ножку")]."
+									message = "кончает на [partner_name] [last_lewd_datum.require_target_feet == 1 ? pick("стопу", "ножку") : pick("стопу", "ножку")]."
 								else
 									message = "кончает под себя!"
 						//weird shit goes here
@@ -577,12 +577,12 @@
 						if(CUM_TARGET_FEET)
 							if(!last_lewd_datum.require_target_num_feet)
 								if(partner.has_feet())
-									message = "обливает [partner_name]'s [partner.has_feet() == 1 ? pick("стопу", "ножку") : pick("стопу", "ножку")]."
+									message = "обливает [partner_name] [partner.has_feet() == 1 ? pick("стопу", "ножку") : pick("стопу", "ножку")]."
 								else
 									message = "обливает пространство под собой сквиртом!"
 							else
 								if(partner.has_feet())
-									message = "обливает [partner_name]'s [last_lewd_datum.require_target_feet == 1 ? pick("стопу", "ножку") : pick("стопу", "ножку")]."
+									message = "обливает [partner_name] [last_lewd_datum.require_target_feet == 1 ? pick("стопу", "ножку") : pick("стопу", "ножку")]."
 								else
 									message = "обливает пространство под собой сквиртом!"
 						//weird shit goes here
@@ -676,12 +676,12 @@
 							if(CUM_TARGET_FEET)
 								if(!last_lewd_datum || !last_lewd_datum.require_target_num_feet)
 									if(partner.has_feet())
-										message = "кончает на [partner_name]'s [partner.has_feet() == 1 ? pick("стопу", "ножку") : pick("стопу", "ножку")]."
+										message = "кончает на [partner_name] [partner.has_feet() == 1 ? pick("стопу", "ножку") : pick("стопу", "ножку")]."
 									else
 										message = "кончает под себя!"
 								else
 									if(partner.has_feet())
-										message = "кончает на [partner_name]'s [last_lewd_datum.require_target_feet == 1 ? pick("стопу", "ножку") : pick("стопу", "ножку")]."
+										message = "кончает на [partner_name] [last_lewd_datum.require_target_feet == 1 ? pick("стопу", "ножку") : pick("стопу", "ножку")]."
 									else
 										message = "кончает под себя!"
 							//weird shit goes here
@@ -712,7 +712,7 @@
 						switch(target_orifice)
 							if(CUM_TARGET_MOUTH)
 								if(partner.has_mouth() && partner.mouth_is_free())
-									message = "кончает прямо в [partner_name]'s mouth."
+									message = "кончает прямо в [partner_name] ротик."
 									cumin = TRUE
 								else
 									message = "обливает лицо [partner_name] сквиртом."
@@ -743,7 +743,7 @@
 								if(partner.has_breasts(REQUIRE_EXPOSED))
 									message = "обливает грудь [partner_name] сквиртом."
 								else
-									message = "обливает [partner_name]'s chest and neck."
+									message = "обливает грудь и шейку [partner_name] сквиртом."
 							if(NUTS_TO_FACE)
 								if(partner.has_mouth() && partner.mouth_is_free())
 									message = "энергично засовывает свои яйца в рот партнёра перед тем, как выпустить густое, липкое семя в глаза и волосы [partner_name]."
@@ -754,12 +754,12 @@
 							if(CUM_TARGET_FEET)
 								if(!last_lewd_datum || !last_lewd_datum.require_target_num_feet)
 									if(partner.has_feet())
-										message = "обливает [partner_name]'s [partner.has_feet() == 1 ? pick("стопу", "ножку") : pick("стопу", "ножку")]."
+										message = "обливает [partner_name] [partner.has_feet() == 1 ? pick("стопу", "ножку") : pick("стопу", "ножку")]."
 									else
 										message = "обливает пространство под собой сквиртом!"
 								else
 									if(partner.has_feet())
-										message = "обливает [partner_name]'s [last_lewd_datum.require_target_feet == 1 ? pick("стопу", "ножку") : pick("стопу", "ножку")]."
+										message = "обливает [partner_name] [last_lewd_datum.require_target_feet == 1 ? pick("стопу", "ножку") : pick("стопу", "ножку")]."
 									else
 										message = "обливает пространство под собой сквиртом!"
 							//weird shit goes here

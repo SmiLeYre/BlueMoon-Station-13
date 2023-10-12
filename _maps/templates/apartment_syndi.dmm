@@ -13,7 +13,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/hilbertshotel)
 "bk" = (
-/obj/machinery/smartfridge/food,
+/obj/structure/table/reinforced,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/hilbertshotel)
 "bK" = (
@@ -80,12 +80,9 @@
 /area/hilbertshotel)
 "eK" = (
 /obj/effect/spawner/lootdrop/three_course_meal,
-/obj/item/storage/fancy/cigarettes/cigpack_syndicate{
-	pixel_y = 6;
-	pixel_x = 3
-	},
 /obj/structure/table,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/hilbertshotel/layer3,
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/kitchen_coldroom,
 /area/hilbertshotel)
 "eT" = (
@@ -94,7 +91,6 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
-/obj/machinery/vending/wallmed/directional/west,
 /turf/open/floor/mineral/plastitanium/red,
 /area/hilbertshotel)
 "fB" = (
@@ -343,7 +339,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/hilbertshotel)
 "qJ" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	color = "#DE3A3A";
 	dir = 1
 	},
@@ -389,9 +385,6 @@
 	},
 /obj/item/storage/fancy/candle_box{
 	pixel_x = 4
-	},
-/obj/item/storage/book/bible/syndicate{
-	pixel_x = -13
 	},
 /obj/machinery/light{
 	dir = 8
@@ -501,7 +494,7 @@
 /turf/open/floor/light/red,
 /area/hilbertshotel)
 "wC" = (
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	color = "#DE3A3A";
 	dir = 1
 	},
@@ -869,6 +862,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 10
 	},
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/kitchen_coldroom,
 /area/hilbertshotel)
 "XF" = (

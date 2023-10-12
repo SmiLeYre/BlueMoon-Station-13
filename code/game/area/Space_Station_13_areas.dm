@@ -216,6 +216,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	forced_ambience = TRUE
 	min_ambience_cooldown = 12 SECONDS
 	max_ambience_cooldown = 20 SECONDS
+	shipambience = 'sound/ambience/maintambience.ogg'
 
 //Maintenance - Departmental
 
@@ -587,6 +588,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/command/heads_quarters/rd
 	name = "Research Director's Office"
 	icon_state = "rd_office"
+	shipambience = 'sound/ambience/zone/sci.ogg'
 
 /area/command/heads_quarters/rd/private
 	name = "Research Director's Private Quarters"
@@ -1610,6 +1612,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/science
 	name = "Science Division"
 	icon_state = "science"
+	shipambience = 'sound/ambience/zone/sci.ogg'
 	// airlock_wires = /datum/wires/airlock/science
 	sound_environment = SOUND_AREA_STANDARD_STATION
 

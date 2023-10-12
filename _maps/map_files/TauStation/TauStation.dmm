@@ -1881,7 +1881,7 @@
 /turf/open/floor/plasteel,
 /area/security/prison/cells)
 "aIC" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -9561,7 +9561,7 @@
 /turf/closed/wall/r_wall,
 /area/maintenance/disposal/incinerator)
 "dqI" = (
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	dir = 4
 	},
 /obj/machinery/light/small,
@@ -10430,6 +10430,7 @@
 /obj/machinery/computer/secure_data{
 	dir = 8
 	},
+/obj/item/paper/fluff/ruins/security_arsenal,
 /turf/open/floor/plasteel/dark,
 /area/security/warden)
 "dDH" = (
@@ -10644,15 +10645,20 @@
 /turf/open/floor/plating,
 /area/maintenance/fore)
 "dII" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/bot,
+/obj/item/gun/energy/laser{
+	pixel_x = -3;
+	pixel_y = 3
+	},
+/obj/item/gun/energy/laser,
+/obj/item/gun/energy/laser{
+	pixel_x = 3;
+	pixel_y = -3
+	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 8
 	},
-/obj/structure/rack,
-/obj/item/gun/energy/laser/carbine,
-/obj/item/gun/energy/laser/carbine,
-/obj/item/gun/energy/laser/carbine,
-/obj/item/gun/energy/laser/carbine,
-/obj/item/gun/energy/laser/carbine,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "dIR" = (
@@ -12686,7 +12692,7 @@
 /turf/open/floor/plasteel,
 /area/commons/dorms)
 "etW" = (
-/obj/structure/chair/sofa/corp/right,
+/obj/structure/chair/sofa/corp/left,
 /obj/structure/sign/poster/contraband/random{
 	pixel_y = 32
 	},
@@ -12747,6 +12753,7 @@
 /obj/item/gun/energy/temperature/security,
 /obj/item/gun/energy/ionrifle,
 /obj/item/clothing/suit/armor/laserproof,
+/obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "euq" = (
@@ -17157,6 +17164,7 @@
 /obj/effect/spawner/lootdrop/armory_contraband,
 /obj/effect/spawner/lootdrop/armory_contraband,
 /obj/effect/spawner/lootdrop/armory_contraband,
+/obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "fSA" = (
@@ -18581,29 +18589,43 @@
 /area/maintenance/department/security/upper)
 "gwv" = (
 /obj/structure/closet/secure_closet/lethalshots,
+/obj/item/ammo_box/magazine/wt550m9,
+/obj/item/ammo_box/magazine/wt550m9,
+/obj/item/ammo_box/magazine/wt550m9,
+/obj/item/ammo_box/magazine/wt550m9,
+/obj/item/ammo_box/magazine/wt550m9,
+/obj/item/ammo_box/magazine/wt550m9,
+/obj/item/ammo_box/magazine/wt550m9,
+/obj/item/ammo_box/magazine/wt550m9,
+/obj/item/ammo_box/magazine/wt550m9,
+/obj/item/ammo_box/magazine/wt550m9/wtap{
+	pixel_x = 2;
+	pixel_y = -2
+	},
+/obj/item/ammo_box/magazine/wt550m9/wtap{
+	pixel_x = 2;
+	pixel_y = -2
+	},
+/obj/item/ammo_box/magazine/wt550m9/wtap{
+	pixel_x = 2;
+	pixel_y = -2
+	},
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/machinery/camera/motion{
+	c_tag = "Armory Motion Sensor"
+	},
+/obj/effect/turf_decal/bot,
 /obj/machinery/light{
 	dir = 1
-	},
-/obj/item/ammo_box/magazine/wt550m9,
-/obj/item/ammo_box/magazine/wt550m9,
-/obj/item/ammo_box/magazine/wt550m9,
-/obj/item/ammo_box/magazine/wt550m9,
-/obj/item/ammo_box/magazine/wt550m9,
-/obj/item/ammo_box/magazine/wt550m9,
-/obj/item/ammo_box/magazine/wt550m9,
-/obj/item/ammo_box/magazine/wt550m9,
-/obj/item/ammo_box/magazine/wt550m9,
-/obj/item/ammo_box/magazine/wt550m9/wtap{
-	pixel_x = 2;
-	pixel_y = -2
-	},
-/obj/item/ammo_box/magazine/wt550m9/wtap{
-	pixel_x = 2;
-	pixel_y = -2
-	},
-/obj/item/ammo_box/magazine/wt550m9/wtap{
-	pixel_x = 2;
-	pixel_y = -2
 	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
@@ -22037,6 +22059,7 @@
 /obj/item/ammo_box/magazine/wt550m9/wtrubber,
 /obj/item/ammo_box/magazine/wt550m9/wtrubber,
 /obj/item/ammo_box/magazine/wt550m9/wtrubber,
+/obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "hDb" = (
@@ -25280,7 +25303,7 @@
 /turf/open/floor/plasteel/dark/side,
 /area/hallway/primary/starboard)
 "iKZ" = (
-/obj/structure/chair/sofa/corp/right,
+/obj/structure/chair/sofa/corp/left,
 /turf/open/floor/plasteel/dark,
 /area/service/bar)
 "iLl" = (
@@ -36076,7 +36099,7 @@
 /turf/open/floor/plasteel/dark,
 /area/commons/cryopod)
 "myb" = (
-/obj/structure/chair/sofa/corp/left,
+/obj/structure/chair/sofa/corp/right,
 /turf/open/floor/plasteel/dark,
 /area/service/bar)
 "myn" = (
@@ -36233,6 +36256,7 @@
 	pixel_y = -3;
 	spawnwithmagazine = 0
 	},
+/obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "mBF" = (
@@ -38471,6 +38495,7 @@
 /obj/machinery/computer/secure_data{
 	dir = 8
 	},
+/obj/item/paper/fluff/ruins/security_arsenal,
 /turf/open/floor/plasteel/dark,
 /area/command/heads_quarters/hos)
 "nkG" = (
@@ -38939,7 +38964,7 @@
 /turf/open/floor/plating,
 /area/maintenance/fore)
 "nua" = (
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -38968,7 +38993,7 @@
 /turf/open/floor/plasteel/dark/side,
 /area/science/xenobiology)
 "nuw" = (
-/obj/structure/chair/sofa/corp/left,
+/obj/structure/chair/sofa/corp/right,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
@@ -40134,7 +40159,7 @@
 /turf/open/floor/engine,
 /area/engineering/main)
 "nQt" = (
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	dir = 4
 	},
 /obj/structure/window{
@@ -42896,7 +42921,7 @@
 /turf/open/floor/plasteel,
 /area/security/prison)
 "oTn" = (
-/obj/structure/chair/sofa/corp/left,
+/obj/structure/chair/sofa/corp/right,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -43688,6 +43713,7 @@
 	pixel_x = 6;
 	pixel_y = -6
 	},
+/obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "pih" = (
@@ -44145,32 +44171,17 @@
 /area/science/robotics/mechbay)
 "ppb" = (
 /obj/structure/rack,
-/obj/item/ammo_box/magazine/e45/lethal,
-/obj/item/ammo_box/magazine/e45/lethal,
-/obj/item/ammo_box/magazine/e45/lethal,
-/obj/item/ammo_box/magazine/e45/lethal,
-/obj/item/ammo_box/magazine/e45/lethal,
-/obj/item/ammo_box/magazine/e45/lethal,
-/obj/item/ammo_box/magazine/e45/lethal,
-/obj/item/ammo_box/magazine/e45/lethal,
-/obj/item/ammo_box/magazine/e45/lethal,
-/obj/item/ammo_box/magazine/e45/lethal,
-/obj/item/ammo_box/magazine/e45/lethal,
-/obj/item/ammo_box/magazine/e45/lethal,
-/obj/item/gun/ballistic/automatic/pistol/enforcer{
+/obj/effect/turf_decal/bot,
+/obj/item/melee/breaching_hammer{
 	pixel_x = -3;
 	pixel_y = 3
 	},
-/obj/item/gun/ballistic/automatic/pistol/enforcer{
-	layer = 3.1
+/obj/item/melee/breaching_hammer,
+/obj/item/melee/breaching_hammer{
+	pixel_y = -3;
+	pixel_x = 3
 	},
-/obj/item/gun/ballistic/automatic/pistol/enforcer{
-	layer = 3.2;
-	pixel_x = 3;
-	pixel_y = -3
-	},
-/obj/item/gun/ballistic/automatic/pistol/enforcer{
-	layer = 3.3;
+/obj/item/melee/breaching_hammer{
 	pixel_x = 6;
 	pixel_y = -6
 	},
@@ -45014,12 +45025,20 @@
 /area/tcommsat/computer)
 "pES" = (
 /obj/structure/rack,
+/obj/effect/turf_decal/bot,
+/obj/item/clothing/suit/armor/hos/platecarrier{
+	pixel_x = -3;
+	pixel_y = 3
+	},
+/obj/item/clothing/suit/armor/hos/platecarrier,
+/obj/item/clothing/suit/armor/hos/platecarrier{
+	pixel_x = 3;
+	pixel_y = -3
+	},
 /obj/machinery/airalarm{
 	dir = 8;
 	pixel_x = 23
 	},
-/obj/item/clothing/suit/armor/hos/platecarrier,
-/obj/item/clothing/suit/armor/hos/platecarrier,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "pFb" = (
@@ -45491,6 +45510,20 @@
 	},
 /obj/machinery/recharger{
 	pixel_x = 5
+	},
+/obj/item/storage/box/flashbangs{
+	pixel_x = -3;
+	pixel_y = 3
+	},
+/obj/item/storage/box/flashbangs{
+	pixel_x = 6;
+	pixel_y = 3
+	},
+/obj/item/gun/grenadelauncher{
+	pixel_y = 3
+	},
+/obj/item/gun/grenadelauncher{
+	pixel_y = -3
 	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
@@ -47662,6 +47695,8 @@
 	pixel_x = 3;
 	pixel_y = -3
 	},
+/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/bot,
 /obj/item/clothing/suit/armor/riot{
 	pixel_x = 3;
 	pixel_y = -3
@@ -47671,6 +47706,10 @@
 	pixel_y = 3
 	},
 /obj/item/clothing/head/helmet/riot,
+/obj/item/clothing/head/helmet/riot{
+	pixel_x = 3;
+	pixel_y = -3
+	},
 /obj/item/clothing/head/helmet/riot{
 	pixel_x = 3;
 	pixel_y = -3
@@ -49662,7 +49701,7 @@
 /turf/open/floor/plasteel/cafeteria,
 /area/service/kitchen)
 "rmh" = (
-/obj/structure/chair/sofa/corp/left,
+/obj/structure/chair/sofa/corp/right,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -56681,7 +56720,7 @@
 /turf/open/floor/plasteel/white,
 /area/medical/genetics)
 "tHk" = (
-/obj/structure/chair/sofa/corp/right,
+/obj/structure/chair/sofa/corp/left,
 /turf/open/floor/carpet/black,
 /area/commons/dorms)
 "tHA" = (
@@ -57257,6 +57296,7 @@
 	pixel_x = 26;
 	req_access_txt = "3"
 	},
+/obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "tOT" = (
@@ -57562,7 +57602,7 @@
 /turf/open/floor/plasteel,
 /area/cargo/storage)
 "tTM" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	dir = 8
 	},
 /obj/machinery/light{
@@ -60384,7 +60424,7 @@
 /turf/open/floor/plasteel,
 /area/security/brig)
 "uSl" = (
-/obj/structure/chair/sofa/corp/right,
+/obj/structure/chair/sofa/corp/left,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -63407,6 +63447,7 @@
 	pixel_x = 3;
 	pixel_y = -3
 	},
+/obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "vPv" = (
@@ -63468,7 +63509,7 @@
 /turf/open/floor/plasteel,
 /area/hallway/primary/aft)
 "vQj" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	dir = 4
 	},
 /turf/open/floor/carpet/royalblack,

@@ -47,14 +47,14 @@
 		return // no adjusting made here
 	var/enabling = strength > 0
 	for(var/obj/item/organ/genital/G in internal_organs)
-		//SPLURT edit
-		if(CHECK_BITFIELD(G.genital_flags, GENITAL_CHASTENED) && enabling)
-			to_chat(src, "<span class='userlove'>Your [pick(GLOB.dick_nouns)] twitches against its cage!</span>")
-			continue
-		if(CHECK_BITFIELD(G.genital_flags, GENITAL_IMPOTENT) && enabling)
-			if(istype(G, /obj/item/organ/genital/penis))
+		if(istype(G, /obj/item/organ/genital/penis))
+			//SPLURT edit
+			if(CHECK_BITFIELD(G.genital_flags, GENITAL_CHASTENED) && enabling)
+				to_chat(src, "<span class='userlove'>Your [pick(GLOB.dick_nouns)] twitches against its cage!</span>")
+				continue
+			if(CHECK_BITFIELD(G.genital_flags, GENITAL_IMPOTENT) && enabling)
 				to_chat(src, "<span class='userlove'>Your [pick(GLOB.dick_nouns)] simply won't go up!</span>")
-			continue
+				continue
 		//
 		if(G.genital_flags & GENITAL_CAN_AROUSE && !G.aroused_state && prob(abs(strength)*G.sensitivity * arousal_rate))
 			G.set_aroused_state(enabling,cause)

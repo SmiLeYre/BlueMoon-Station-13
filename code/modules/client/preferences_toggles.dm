@@ -164,6 +164,19 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggle_instruments)()
 /datum/verbs/menu/Settings/Sound/toggle_instruments/Get_checked(client/C)
 	return C.prefs.toggles & SOUND_INSTRUMENTS
 
+TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggle_jukeboxes)()
+	set name = "Hear/Silence Jukeboxes"
+	set category = "Preferences"
+	set desc = "Hear In-game Jukeboxes"
+	usr.client.prefs.toggles ^= SOUND_JUKEBOXES
+	usr.client.prefs.save_preferences()
+	if(usr.client.prefs.toggles & SOUND_JUKEBOXES)
+		to_chat(usr, "You will now hear people playing musical Jukeboxes.")
+	else
+		to_chat(usr, "You will no longer hear musical Jukeboxes.")
+	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Jukeboxes", "[usr.client.prefs.toggles & SOUND_JUKEBOXES ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+/datum/verbs/menu/Settings/Sound/toggle_jukeboxes/Get_checked(client/C)
+	return C.prefs.toggles & SOUND_JUKEBOXES
 
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, Toggle_Soundscape)()
 	set name = "Hear/Silence Ambience"

@@ -86,6 +86,10 @@
 	icon_state = "ntrberet"
 	item_state = "ntrberet"
 
+/obj/item/clothing/shoes/laceup/ntr // даем великому и ужасному судье раундстартом ноуслип туфли
+	name = "distinguished laceup shoes"
+	clothing_flags = NOSLIP
+
 /datum/outfit/job/ntr
 	name = "NanoTrasen Representative"
 	jobtype = /datum/job/ntr
@@ -98,7 +102,7 @@
 	uniform = /obj/item/clothing/under/rank/civilian/lawyer/black/alt
 	suit = /obj/item/clothing/suit/armor/ntr
 	head = /obj/item/clothing/head/beret/sec/ntr
-	shoes = /obj/item/clothing/shoes/jackboots
+	shoes = /obj/item/clothing/shoes/laceup/ntr
 	l_pocket = /obj/item/melee/classic_baton/telescopic
 	r_pocket = /obj/item/clothing/accessory/lawyers_badge
 
@@ -124,7 +128,7 @@
 	uniform = /obj/item/clothing/under/rank/civilian/lawyer/black/alt
 	suit = /obj/item/clothing/suit/armor/ntr
 	head = /obj/item/clothing/head/beret/sec/ntr
-	shoes = /obj/item/clothing/shoes/jackboots/tall
+	shoes = /obj/item/clothing/shoes/laceup/ntr
 	l_pocket = /obj/item/melee/classic_baton/telescopic
 
 	backpack = /obj/item/storage/backpack/duffelbag/syndie

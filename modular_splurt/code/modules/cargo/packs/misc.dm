@@ -601,7 +601,7 @@
 	)
 	crate_name = "plague doctor crate"
 
-/datum/supply_pack/randomised/costumes/tesh_cloaks_vr
+/datum/supply_pack/costumes_toys/randomised/tesh_cloaks_vr
 	name = "Teshari cloaks"
 
 	contains = list(
@@ -622,7 +622,7 @@
 
 
 
-/datum/supply_pack/randomised/costumes/tesh_cloaks_b_vr
+/datum/supply_pack/costumes_toys/randomised/tesh_cloaks_b_vr
 	name = "Teshari cloaks (black)"
 
 	contains = list(
@@ -644,7 +644,7 @@
 
 
 
-/datum/supply_pack/randomised/costumes/tesh_beltcloaks_vr
+/datum/supply_pack/costumes_toys/randomised/tesh_beltcloaks_vr
 	name = "Teshari cloaks (belted)"
 
 	contains = list(
@@ -665,7 +665,7 @@
 
 
 
-/datum/supply_pack/randomised/costumes/tesh_beltcloaks_b_vr
+/datum/supply_pack/costumes_toys/randomised/tesh_beltcloaks_b_vr
 	name = "Teshari cloaks (belted, black)"
 
 	contains = list(
@@ -688,7 +688,7 @@
 
 
 
-/datum/supply_pack/randomised/costumes/tesh_hoodcloaks_vr
+/datum/supply_pack/costumes_toys/randomised/tesh_hoodcloaks_vr
 	name = "Teshari cloaks (hooded)"
 
 	contains = list(
@@ -708,7 +708,7 @@
 
 
 
-/datum/supply_pack/randomised/costumes/tesh_hoodcloaks_b_vr
+/datum/supply_pack/costumes_toys/randomised/tesh_hoodcloaks_b_vr
 	name = "Teshari cloaks (hooded, black)"
 
 	contains = list(

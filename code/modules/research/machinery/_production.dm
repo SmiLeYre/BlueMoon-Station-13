@@ -20,6 +20,8 @@
 
 	var/offstation_security_levels
 
+	var/lathe_prod_time = 0.5
+
 /obj/machinery/rnd/production/Initialize(mapload)
 	if(mapload && offstation_security_levels)
 		log_mapping("Depricated var named \"offstation_security_levels\" at ([x], [y], [z])!")
@@ -102,6 +104,7 @@
 		if(efficient_with(O.type))
 			O.set_custom_materials(matlist)
 			O.rnd_crafted(src)
+			playsound(src, 'sound/machines/prod_done.ogg', 50)
 	SSblackbox.record_feedback("nested tally", "item_printed", amount, list("[type]", "[path]"))
 	investigate_log("[key_name(user)] built [amount] of [path] at [src]([type]).", INVESTIGATE_RESEARCH)
 
@@ -175,8 +178,9 @@
 	if(production_animation)
 		flick(production_animation, src)
 	var/timecoeff = D.lathe_time_factor * print_cost_coeff
-	addtimer(CALLBACK(src, .proc/reset_busy), (20 * timecoeff * amount) ** 0.5)
-	addtimer(CALLBACK(src, .proc/do_print, D.build_path, amount, efficient_mats, D.dangerous_construction, usr), (20 * timecoeff * amount) ** 0.5)
+	addtimer(CALLBACK(src, .proc/reset_busy), (20 * timecoeff * amount) ** lathe_prod_time)
+	addtimer(CALLBACK(src, .proc/do_print, D.build_path, amount, efficient_mats, D.dangerous_construction, usr), (20 * timecoeff * amount) ** lathe_prod_time)
+	playsound(src, 'sound/machines/prod.ogg', 50)
 	return TRUE
 
 /obj/machinery/rnd/production/proc/search(string)

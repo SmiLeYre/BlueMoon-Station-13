@@ -237,8 +237,17 @@
 	if(msg)
 		to_chat(user, "<span class='notice'>[msg]</span>")
 
+/obj/item/energy_naginata/equipped(mob/living/carbon/human/ninja, slot)
+	..()
+	if(!IS_SPACE_NINJA(ninja))
+		to_chat(ninja, "<span class='danger'><B>fÄTaL ÈÈRRoR</B>: 382200-*#00CÖDE <B>RED</B>\nUNAUHORIZED USÈ DETÈCeD\nCoMMÈNCING SUB-R0UIN3 13...\nTÈRMInATING U-U-USÈR...</span>")
+		playsound(get_turf(src), 'sound/machines/nuke/confirm_beep.ogg', 65, 1, 1)
+		addtimer(CALLBACK(src, .proc/explode), 3 SECONDS)
 
-
+/obj/item/energy_naginata/proc/explode()
+	do_sparks(3, 1, src)
+	explosion(src.loc,0,1,1,1)
+	qdel(src)
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////

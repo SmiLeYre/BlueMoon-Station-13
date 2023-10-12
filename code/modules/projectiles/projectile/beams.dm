@@ -16,6 +16,7 @@
 	is_reflectable = TRUE
 	wound_bonus = 6
 	bare_wound_bonus = 8
+	armour_penetration = 15
 
 /obj/item/projectile/beam/laser
 	tracer_type = /obj/effect/projectile/tracer/laser

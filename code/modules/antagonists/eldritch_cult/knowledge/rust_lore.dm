@@ -169,7 +169,7 @@
 
 /datum/eldritch_knowledge/spell/grasp_of_decay/on_gain(mob/user)
 	. = ..()
-	priority_announce("Дует ржавый ветер... Пол скрипит, сдавливаясь под приближающейся угрозой!", sound = 'sound/misc/notice1.ogg')
+	priority_announce("Внимание, [station_name()]. [user.real_name] излучает пространственную нестабильность, в связи с которой дует ржавый ветер... пол скрипит, сдавливаясь под приближающейся угрозой!", sound = 'sound/misc/notice1.ogg')
 
 /datum/eldritch_knowledge/final/rust_final
 	name = "Rustbringer's Oath"

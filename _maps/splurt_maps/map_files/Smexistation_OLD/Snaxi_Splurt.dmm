@@ -3061,7 +3061,7 @@
 /turf/closed/wall,
 /area/maintenance/aft)
 "aIt" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	dir = 1
 	},
 /turf/open/floor/carpet/orange,
@@ -11702,7 +11702,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
-/obj/structure/chair/sofa/corp/left,
+/obj/structure/chair/sofa/corp/right,
 /turf/open/floor/carpet/orange,
 /area/engineering/break_room)
 "dFJ" = (
@@ -15762,7 +15762,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
 	},
-/obj/structure/chair/sofa/corp/right,
+/obj/structure/chair/sofa/corp/left,
 /turf/open/floor/carpet/orange,
 /area/engineering/break_room)
 "fBk" = (
@@ -20233,7 +20233,7 @@
 /turf/open/floor/wood,
 /area/command/corporate_showroom)
 "hCp" = (
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	dir = 1
 	},
 /turf/open/floor/carpet/orange,
@@ -21211,7 +21211,7 @@
 /turf/open/floor/plasteel/dark,
 /area/medical/medbay/central)
 "hWQ" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -24184,7 +24184,7 @@
 /turf/open/floor/plasteel/dark,
 /area/security)
 "jot" = (
-/obj/structure/chair/sofa/corp/right,
+/obj/structure/chair/sofa/corp/left,
 /obj/structure/sign/poster/official/do_not_question{
 	pixel_y = 32
 	},
@@ -29442,7 +29442,7 @@
 /turf/open/floor/plating/snowed/smoothed/icemoon,
 /area/icemoon/surface/outdoors)
 "lHM" = (
-/obj/structure/chair/sofa/corp/left,
+/obj/structure/chair/sofa/corp/right,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
 /obj/machinery/airalarm{
 	pixel_y = 26
@@ -29927,7 +29927,7 @@
 /area/ai_monitored/turret_protected/aisat/service)
 "lWi" = (
 /obj/machinery/airalarm/directional/east,
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,

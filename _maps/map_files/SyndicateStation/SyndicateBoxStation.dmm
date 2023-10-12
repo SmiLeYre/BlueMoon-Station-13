@@ -1435,6 +1435,7 @@
 "adO" = (
 /obj/machinery/computer/secure_data,
 /obj/effect/turf_decal/bot,
+/obj/item/paper/fluff/ruins/security_arsenal,
 /turf/open/floor/mineral/plastitanium/red,
 /area/command/heads_quarters/hos)
 "adQ" = (
@@ -1738,55 +1739,46 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/security/prison)
 "aew" = (
-/obj/structure/closet/secure_closet/lethalshots,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/machinery/light/small{
 	dir = 8
 	},
-/obj/item/ammo_box/magazine/wt550m9,
-/obj/item/ammo_box/magazine/wt550m9,
-/obj/item/ammo_box/magazine/wt550m9,
-/obj/item/ammo_box/magazine/wt550m9,
-/obj/item/ammo_box/magazine/wt550m9,
-/obj/item/ammo_box/magazine/wt550m9,
-/obj/item/ammo_box/magazine/wt550m9,
-/obj/item/ammo_box/magazine/wt550m9,
-/obj/item/ammo_box/magazine/wt550m9,
-/obj/item/ammo_box/magazine/wt550m9,
-/obj/item/ammo_box/magazine/wt550m9,
-/obj/item/ammo_box/magazine/wt550m9,
-/obj/item/ammo_box/magazine/wt550m9,
-/obj/item/ammo_box/magazine/wt550m9,
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -26
+/obj/machinery/airalarm{
+	dir = 4;
+	pixel_x = -23
 	},
+/obj/structure/closet/secure_closet/lethalshots,
+/obj/item/ammo_box/magazine/wt550m9,
+/obj/item/ammo_box/magazine/wt550m9,
+/obj/item/ammo_box/magazine/wt550m9,
+/obj/item/ammo_box/magazine/wt550m9,
+/obj/item/ammo_box/magazine/wt550m9,
+/obj/item/ammo_box/magazine/wt550m9,
+/obj/item/ammo_box/magazine/wt550m9,
+/obj/item/ammo_box/magazine/wt550m9,
+/obj/item/ammo_box/magazine/wt550m9,
+/obj/item/ammo_box/magazine/wt550m9/wtap{
+	pixel_x = 2;
+	pixel_y = -2
+	},
+/obj/item/ammo_box/magazine/wt550m9/wtap{
+	pixel_x = 2;
+	pixel_y = -2
+	},
+/obj/item/ammo_box/magazine/wt550m9/wtap{
+	pixel_x = 2;
+	pixel_y = -2
+	},
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
 /obj/effect/turf_decal/bot,
-/obj/item/ammo_box/magazine/wt550m9/wtap{
-	pixel_x = 2;
-	pixel_y = -2
-	},
-/obj/item/ammo_box/magazine/wt550m9/wtap{
-	pixel_x = 2;
-	pixel_y = -2
-	},
-/obj/item/ammo_box/magazine/wt550m9/wtap{
-	pixel_x = 2;
-	pixel_y = -2
-	},
-/obj/item/ammo_box/magazine/wt550m9/wtap{
-	pixel_x = 2;
-	pixel_y = -2
-	},
-/obj/item/ammo_box/magazine/wt550m9/wtap{
-	pixel_x = 2;
-	pixel_y = -2
-	},
-/obj/item/ammo_box/magazine/wt550m9/wtap{
-	pixel_x = 2;
-	pixel_y = -2
-	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ai_monitored/security/armory)
 "aex" = (
@@ -1808,6 +1800,7 @@
 	pixel_x = 3;
 	pixel_y = -3
 	},
+/obj/structure/window/reinforced,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ai_monitored/security/armory)
 "aey" = (
@@ -2065,11 +2058,7 @@
 	pixel_x = 3;
 	pixel_y = -3
 	},
-/obj/item/gun/energy/e_gun{
-	layer = 3.3;
-	pixel_x = 6;
-	pixel_y = -6
-	},
+/obj/structure/window/reinforced,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ai_monitored/security/armory)
 "afc" = (
@@ -2494,6 +2483,9 @@
 /obj/structure/closet/secure_closet{
 	name = "nonlethal ammunition";
 	req_access = "list(1)"
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -26
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ai_monitored/security/armory)
@@ -5562,6 +5554,7 @@
 	dir = 8
 	},
 /obj/machinery/computer/secure_data,
+/obj/item/paper/fluff/ruins/security_arsenal,
 /turf/open/floor/mineral/plastitanium/red,
 /area/security/warden)
 "alZ" = (
@@ -11284,7 +11277,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/hallway/secondary/entry)
 "aCr" = (
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
@@ -13498,7 +13491,7 @@
 	dir = 1;
 	light_color = "#c1caff"
 	},
-/obj/structure/chair/sofa/corp/right,
+/obj/structure/chair/sofa/corp/left,
 /turf/open/floor/mineral/plastitanium,
 /area/service/library)
 "aIt" = (
@@ -13527,7 +13520,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/structure/chair/sofa/corp/left,
+/obj/structure/chair/sofa/corp/right,
 /turf/open/floor/mineral/plastitanium,
 /area/service/library)
 "aIx" = (
@@ -16082,7 +16075,7 @@
 	dir = 1
 	},
 /obj/effect/landmark/start/assistant,
-/obj/structure/chair/sofa/corp/right,
+/obj/structure/chair/sofa/corp/left,
 /turf/open/floor/carpet/black,
 /area/service/bar)
 "aQc" = (
@@ -18883,7 +18876,7 @@
 /obj/structure/window/plasma{
 	dir = 1
 	},
-/obj/structure/chair/sofa/corp/right,
+/obj/structure/chair/sofa/corp/left,
 /turf/open/floor/carpet/black,
 /area/service/bar)
 "aXj" = (
@@ -25633,10 +25626,6 @@
 	},
 /obj/effect/mapping_helpers/airlock/unres,
 /turf/open/floor/mineral/plastitanium,
-/area/medical/medbay/central)
-"bog" = (
-/obj/effect/spawner/structure/window/plastitanium,
-/turf/open/floor/plating,
 /area/medical/medbay/central)
 "boh" = (
 /obj/machinery/door/firedoor,
@@ -33848,6 +33837,9 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plating,
 /area/maintenance/aft)
 "bHr" = (
@@ -35889,9 +35881,6 @@
 	icon_state = "1-2"
 	},
 /obj/structure/disposalpipe/junction,
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plating,
 /area/maintenance/aft)
@@ -36200,25 +36189,23 @@
 /turf/open/floor/mineral/plastitanium,
 /area/engineering/atmos)
 "bMY" = (
-/obj/structure/rack,
+/obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
 	dir = 1;
-	pixel_y = 1
+	layer = 2.9
 	},
-/obj/item/gun/ballistic/automatic/pistol/enforcer{
+/obj/structure/rack,
+/obj/effect/turf_decal/bot,
+/obj/item/melee/breaching_hammer{
 	pixel_x = -3;
 	pixel_y = 3
 	},
-/obj/item/gun/ballistic/automatic/pistol/enforcer{
-	layer = 3.1
+/obj/item/melee/breaching_hammer,
+/obj/item/melee/breaching_hammer{
+	pixel_y = -3;
+	pixel_x = 3
 	},
-/obj/item/gun/ballistic/automatic/pistol/enforcer{
-	layer = 3.2;
-	pixel_x = 3;
-	pixel_y = -3
-	},
-/obj/item/gun/ballistic/automatic/pistol/enforcer{
-	layer = 3.3;
+/obj/item/melee/breaching_hammer{
 	pixel_x = 6;
 	pixel_y = -6
 	},
@@ -47341,10 +47328,13 @@
 /obj/structure/rack,
 /obj/effect/turf_decal/bot,
 /obj/item/clothing/suit/armor/hos/platecarrier{
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 3
 	},
+/obj/item/clothing/suit/armor/hos/platecarrier,
 /obj/item/clothing/suit/armor/hos/platecarrier{
-	pixel_x = 4
+	pixel_x = 3;
+	pixel_y = -3
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ai_monitored/security/armory)
@@ -53302,6 +53292,10 @@
 	},
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/bot,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ai_monitored/security/armory)
 "fsq" = (
@@ -53646,7 +53640,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/security/prison)
 "fLN" = (
-/obj/structure/chair/sofa/corp/left,
+/obj/structure/chair/sofa/corp/right,
 /turf/open/floor/mineral/plastitanium/red,
 /area/maintenance/bar)
 "fMp" = (
@@ -55807,7 +55801,7 @@
 /obj/structure/sign/poster/contraband/borg_fancy_2{
 	pixel_y = -32
 	},
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
@@ -56570,26 +56564,20 @@
 /area/engineering/atmos)
 "jWH" = (
 /obj/structure/rack,
-/obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 1
+/obj/effect/turf_decal/bot,
+/obj/item/gun/energy/laser{
+	pixel_x = -3;
+	pixel_y = 3
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/item/gun/energy/laser,
+/obj/item/gun/energy/laser{
+	pixel_x = 3;
+	pixel_y = -3
+	},
+/obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/red{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/bot,
-/obj/item/gun/energy/laser/carbine,
-/obj/item/gun/energy/laser/carbine,
-/obj/item/gun/energy/laser/carbine,
-/obj/item/gun/energy/laser/carbine,
-/obj/item/gun/energy/laser/carbine,
+/obj/structure/window/reinforced,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ai_monitored/security/armory)
 "jYQ" = (
@@ -57487,6 +57475,16 @@
 	},
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/bot,
+/obj/item/gun/grenadelauncher{
+	pixel_y = 3
+	},
+/obj/item/gun/grenadelauncher{
+	pixel_y = -3
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ai_monitored/security/armory)
 "kZS" = (
@@ -60421,7 +60419,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/medical/morgue)
 "oKh" = (
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -60886,7 +60884,7 @@
 /turf/open/floor/plasteel/kitchen_coldroom,
 /area/commons/dorms)
 "puV" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
@@ -61992,7 +61990,7 @@
 /turf/open/floor/carpet/black,
 /area/commons/dorms)
 "rgW" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
@@ -62579,7 +62577,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/engineering/atmos)
 "rVy" = (
-/obj/structure/chair/sofa/corp/right,
+/obj/structure/chair/sofa/corp/left,
 /turf/open/floor/mineral/plastitanium/red,
 /area/maintenance/bar)
 "rVN" = (
@@ -62956,7 +62954,7 @@
 	},
 /area/security/prison)
 "sAH" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -63509,7 +63507,7 @@
 /area/maintenance/starboard/aft)
 "ttP" = (
 /obj/effect/landmark/start/assistant,
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	dir = 1
 	},
 /turf/open/floor/carpet/black,
@@ -63546,7 +63544,7 @@
 /obj/structure/noticeboard{
 	pixel_y = -27
 	},
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	dir = 1
 	},
 /turf/open/floor/carpet/black,
@@ -63975,7 +63973,7 @@
 /turf/open/space/basic,
 /area/space/nearstation)
 "tSY" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	dir = 1
 	},
 /turf/open/floor/carpet/black,
@@ -64339,7 +64337,7 @@
 /turf/open/floor/plating,
 /area/maintenance/fore)
 "usO" = (
-/obj/structure/chair/sofa/corp/left,
+/obj/structure/chair/sofa/corp/right,
 /turf/open/floor/mineral/plastitanium,
 /area/maintenance/bar)
 "uua" = (
@@ -65543,7 +65541,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/security/prison)
 "wfC" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
@@ -65904,7 +65902,7 @@
 /obj/structure/window/plasma{
 	dir = 1
 	},
-/obj/structure/chair/sofa/corp/left,
+/obj/structure/chair/sofa/corp/right,
 /turf/open/floor/carpet/black,
 /area/service/bar)
 "wyE" = (
@@ -102480,12 +102478,12 @@ bpu
 bqP
 bsy
 bEe
-bog
+fWM
 ajv
 bxN
 bze
 asL
-bog
+fWM
 bCG
 bBd
 bFw
@@ -102999,7 +102997,7 @@ bxQ
 bvm
 bDT
 bxQ
-bog
+fWM
 bzU
 bBe
 bCS
@@ -103246,18 +103244,18 @@ ihR
 bjV
 blj
 bmK
-bog
-bog
+fWM
+fWM
 bxQ
 bsx
 bsr
-bog
+fWM
 bwD
 bxQ
 bxQ
 bAq
 bJE
-bog
+fWM
 bDW
 bKR
 bJE
@@ -103765,7 +103763,7 @@ bpv
 bxQ
 bsx
 btV
-bog
+fWM
 bwF
 bxQ
 bxQ
@@ -104279,7 +104277,7 @@ bJE
 bKL
 brf
 btV
-bog
+fWM
 bwH
 bxS
 bzh
@@ -104793,7 +104791,7 @@ bpx
 bpP
 brf
 bxQ
-bog
+fWM
 bwJ
 bxU
 bzi

@@ -24,7 +24,7 @@
 				loud, crunchy sound and giving you great pain!</span>",
 				"<span class='italics'>You hear organic matter ripping \
 				and tearing!</span>")
-			C.emote("scream")
+			C.emote("realagony")
 			C.regenerate_limbs(1)
 		C.regenerate_organs()
 		for(var/i in C.all_wounds)

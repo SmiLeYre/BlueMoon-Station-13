@@ -295,7 +295,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/survivalpod/nonpowered)
 "bb" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	dir = 4
 	},
 /turf/open/floor/festive/wooden/wooden1,
@@ -310,7 +310,7 @@
 /turf/open/floor/carpet/royalblue,
 /area/survivalpod/nonpowered)
 "be" = (
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	dir = 8
 	},
 /turf/open/floor/festive/wooden/wooden1,

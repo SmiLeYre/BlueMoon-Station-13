@@ -100,13 +100,13 @@
 	switch(ending_type)
 
 		if(CULT_FAILURE_NARSIE_KILLED)
-			Cinematic(CINEMATIC_CULT_FA,world,CALLBACK(GLOBAL_PROC,/proc/ending_helper))
+			Cinematic(CINEMATIC_CULT,world,CALLBACK(GLOBAL_PROC,/proc/ending_helper))
 
 		if(CULT_VICTORY_MASS_CONVERSION)
 			Cinematic(CINEMATIC_CULT,world,CALLBACK(GLOBAL_PROC,/proc/ending_helper))
 
 		if(CULT_VICTORY_NUKE)
-			Cinematic(CINEMATIC_CULT_NUKE,world,CALLBACK(GLOBAL_PROC,/proc/ending_helper))
+			Cinematic(CINEMATIC_CULT,world,CALLBACK(GLOBAL_PROC,/proc/ending_helper))
 
 //ATTACK GHOST IGNORING PARENT RETURN VALUE
 /obj/singularity/narsie/large/attack_ghost(mob/dead/observer/user as mob)

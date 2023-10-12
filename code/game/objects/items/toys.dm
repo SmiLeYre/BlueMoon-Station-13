@@ -1498,9 +1498,24 @@
 	toysound = 'sound/effects/explosionfar.ogg'
 
 /obj/item/toy/figure/syndie
-	name = "Nuclear Operative action figure"
+	name = "Syndicate Operative action figure"
 	icon_state = "syndie"
+	toysay = "Protect that fucking disk!"
+
+/obj/item/toy/figure/inteq
+	name = "Nuclear Inteq Operative action figure"
+	icon_state = "inteq"
 	toysay = "Get that fucking disk!"
+
+/obj/item/toy/figure/prisoner
+	name = "prisoner action figure"
+	icon_state = "prisoner"
+	toysay = "Riot!"
+
+/obj/item/toy/figure/paramedic
+	name = "paramedic action figure"
+	icon_state = "paramedic"
+	toysay = "Turn on your sensors."
 
 /obj/item/toy/figure/secofficer
 	name = "Security Officer action figure"

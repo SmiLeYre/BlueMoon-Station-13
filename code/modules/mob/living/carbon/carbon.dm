@@ -345,7 +345,7 @@
 	breakouttime = I.breakouttime
 	if(!cuff_break)
 		visible_message("<span class='warning'>[src] пытается сбросить [I]!</span>")
-		to_chat(src, "<span class='notice'>Ты пытаешься сбросить [I]... (Это займёт около [DisplayTimeText(breakouttime)] секунд и тебе не стоит делать лишних движений.)</span>")
+		to_chat(src, "<span class='notice'>Ты пытаешься сбросить [I]... (Это займёт около [DisplayTimeText(breakouttime)]. Тебе не стоит делать лишних движений.)</span>")
 		if(do_after(src, breakouttime, target = src, timed_action_flags = allow_breakout_movement, extra_checks = CALLBACK(src, PROC_REF(cuff_resist_check))))
 			clear_cuffs(I, cuff_break)
 		else
@@ -354,7 +354,7 @@
 	else if(cuff_break == FAST_CUFFBREAK)
 		breakouttime = 50
 		visible_message("<span class='warning'>[src] пытается сломать [I]!</span>")
-		to_chat(src, "<span class='notice'>Ты пытаешься сломать [I]... (Это займёт около пяти секунд и тебе не стоит делать лишних движений.)</span>")
+		to_chat(src, "<span class='notice'>Ты пытаешься сломать [I]... (Это займёт около пяти секунд. Тебе не стоит делать лишних движений.)</span>")
 		if(do_after(src, breakouttime, target = src, timed_action_flags = allow_breakout_movement, extra_checks = CALLBACK(src, PROC_REF(cuff_resist_check))))
 			clear_cuffs(I, cuff_break)
 		else
@@ -873,10 +873,9 @@
 	med_hud_set_status()
 
 /mob/living/carbon/proc/update_crit_status()
+	remove_filter("hardcrit")
 	if(health <= crit_threshold)
-		add_filter("hardcrit", 1, BM_FILTER_HARDCRIT)
-	else
-		remove_filter("hardcrit")
+		add_filter("hardcrit", 2, BM_FILTER_HARDCRIT)
 
 //called when we get cuffed/uncuffed
 /mob/living/carbon/proc/update_handcuffed()

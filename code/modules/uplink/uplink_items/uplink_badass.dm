@@ -43,6 +43,7 @@
 	cost = 20
 	cant_discount = TRUE
 	illegal_tech = FALSE
+	purchasable_from = UPLINK_SYNDICATE
 
 /datum/uplink_item/badass/syndiecash
 	name = "Briefcase Full of Cash"
@@ -100,3 +101,12 @@
 	desc = "A cardpack filled with top-tier TCG cards."
 	item = /obj/item/cardpack/syndicate
 	cost = 1
+
+/datum/uplink_item/badass/toy_inteq
+	name = "InteQ Operative Toy"
+	desc = "Show them who is the boss."
+	item = /obj/item/toy/figure/inteq
+	cost = 1
+	cant_discount = TRUE
+	illegal_tech = FALSE
+	purchasable_from = ~(UPLINK_SYNDICATE)

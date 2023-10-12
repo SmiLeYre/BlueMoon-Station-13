@@ -178,8 +178,8 @@ interface with the mining shuttle at the landing site if a mobile beacon is also
 	possible_destinations += "[landing_zone.id];"
 
 //Serves as a nice mechanic to people get ready for the launch.
-	minor_announce("Auxiliary base landing zone coordinates locked in for [A]. Launch command now available!")
-	to_chat(user, "<span class='notice'>Landing zone set.</span>")
+	minor_announce("Координаты посадочной зоны вспомогательной базы были установлены на: [A]. Доступна команда на запуск!")
+	to_chat(user, "<span class='notice'>Установлена зона посадки.</span>")
 	return ZONE_SET
 
 
