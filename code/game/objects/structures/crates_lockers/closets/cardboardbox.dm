@@ -69,14 +69,13 @@
 
 
 /obj/structure/closet/cardboard/proc/sitting_inside(mob/living/M)
-	var/mob/living/carbon/human/H = M
-	for(H in buckled_mobs)
-		if(iscatperson(H))
-			to_chat(H, "<span class = 'notice'>Surprisingly, it feels quite comfortable here...</span>")
-		while(iscatperson(H) && H.buckled && opened)
-			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "hide_in_box", /datum/mood_event/hide_in_box)
+	for(M in buckled_mobs)
+		if(iscatperson(M))
+			to_chat(M, "<span class = 'notice'>Surprisingly, it feels quite comfortable here...</span>")
+		while(iscatperson(M) && M.buckled && opened)
+			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "hide_in_box", /datum/mood_event/hide_in_box)
 			if(prob(50))
-				to_chat(H, "<span class = 'notice'>[pick("They won't get me if I hide inside.","I might look silly, but I don't care.","It would be nice if someone patted me...")]</span>")
+				to_chat(M, "<span class = 'notice'>[pick("They won't get me if I hide inside.","I might look silly, but I don't care.","It would be nice if someone patted me...")]</span>")
 			sleep(30 SECONDS)
 
 /obj/structure/closet/cardboard/post_unbuckle_mob(mob/living/M)

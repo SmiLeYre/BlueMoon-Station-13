@@ -2,9 +2,8 @@
 
 /datum/interaction/lewd/display_interaction(mob/living/user, mob/living/target)
 	. = ..()
-	var/mob/living/carbon/human/H = target
-	if((iscatperson(H) && type == /datum/interaction/lewd))
-		H.emote(pick("nya","meow")) //W-what are you doing S-senpai? >///<
+	if((iscatperson(target) && type == /datum/interaction/lewd))
+		target.emote(pick("nya","meow")) //W-what are you doing S-senpai? >///<
 
 	if(!(isclownjob(target) && type == /datum/interaction/lewd))
 		return
