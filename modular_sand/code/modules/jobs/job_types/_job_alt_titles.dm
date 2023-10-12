@@ -77,7 +77,7 @@
 		"Bishop", // How about you actually say something about it instead of crying on a downstream's comments i won't read.
 		"Pontiff"
 		)
-/*
+/* BLUEMOON REMOVAL - развлекатель теперь отдельная профессия
 /datum/job/clown //The most useless role in the game, delet this
 	alt_titles = list(
 		"Entertainer"
