@@ -617,7 +617,7 @@
 	name = "emergency space suit"
 	icon_state = "syndicate-orange"
 	item_state = "syndicate-orange"
-	tail_state = "syndicate-orange"
+	tail_state = "orange"
 	slowdown = 3
 
 /obj/item/pickaxe/emergency
