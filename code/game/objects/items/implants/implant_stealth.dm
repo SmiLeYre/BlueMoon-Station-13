@@ -11,6 +11,7 @@
 	icon_state = "agentbox"
 	max_integrity = 1
 	use_mob_movespeed = TRUE
+	can_sit_inside = FALSE
 
 /obj/structure/closet/cardboard/agent/proc/go_invisible()
 	animate(src, , alpha = 0, time = 5)
