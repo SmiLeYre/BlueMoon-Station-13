@@ -753,6 +753,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 			to_chat(H, "<span class='notice'>Вот это уже по МУЖИЦКИ!</span>")
 			if(real_dorf)
 				boozepwr = 100 // Don't want dwarves to die because of a low booze power
+				M.emote("me", EMOTE_VISIBLE, "exclaims: \"ROCK AND STONE!\"")
+				playsound(M, "modular_bluemoon/sound/voice/rock_and_stone[pick("1","2","3")].ogg", 100, FALSE)
 			else
 				boozepwr = 5 //We've had worse in the mines
 			dorf_mode = TRUE
