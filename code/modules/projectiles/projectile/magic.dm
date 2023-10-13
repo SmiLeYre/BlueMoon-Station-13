@@ -152,9 +152,6 @@
 
 		if("robot")
 			var/robot = pick(200;/mob/living/silicon/robot,
-							/mob/living/silicon/robot/modules/syndicate,
-							/mob/living/silicon/robot/modules/syndicate/medical,
-							/mob/living/silicon/robot/modules/syndicate/saboteur,
 							/mob/living/silicon/robot/modules/inteq, //BM Changes /Krashly
 							/mob/living/silicon/robot/modules/inteq/medical, //BM Changes /Krashly
 							/mob/living/silicon/robot/modules/inteq/saboteur, //BM Changes /Krashly
