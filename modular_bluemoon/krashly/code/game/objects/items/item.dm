@@ -221,3 +221,87 @@
 	name = "A polychromic bow"
 	path = /obj/item/toy/fluff/bant
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
+
+/////// Заказ Алхимика. ///////
+// Общие шмотки в лодаут:
+
+/datum/gear/mask/pipe
+	name = "Smoking Pipe"
+	path = /obj/item/clothing/mask/cigarette/pipe
+	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
+
+/datum/gear/head/rose
+	name = "Rose"
+	path = /obj/item/grown/rose
+	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
+
+// Рескин шмоток:
+
+/obj/item/paper/book_alch
+	name = "Alchemist's Book"
+	desc = "Покрылась пылью и кажется заполнена странными рунами."
+	icon = 'modular_bluemoon/krashly/icons/obj/alchemist.dmi'
+
+/obj/item/storage/wallet/cat_alch
+	name = "Alchemist's Neko Wallet"
+	desc = "Этот кот просит денег."
+	icon = 'modular_bluemoon/krashly/icons/obj/alchemist.dmi'
+	icon_state = "maneki-neko"
+
+// Шмотки в конкретный лодаут по Кею.
+
+/datum/gear/donator/bm/book_alch
+	name = "Alchemist's Book"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/paper/book_alch
+	ckeywhitelist = list("Troll_Andrew")
+	subcategory = LOADOUT_SUBCATEGORIES_DON22
+
+/datum/gear/donator/bm/cat_alch
+	name = "Alchemist's Neko Wallet"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/storage/wallet/cat_alch
+	ckeywhitelist = list("Troll_Andrew")
+	subcategory = LOADOUT_SUBCATEGORIES_DON22
+
+/datum/gear/donator/bm/vape
+	name = "Vape"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/mask/vape
+	ckeywhitelist = list("Troll_Andrew")
+	subcategory = LOADOUT_SUBCATEGORIES_DON22
+
+/datum/gear/donator/bm/electropack
+	name = "Electropack"
+	slot = ITEM_SLOT_HANDS
+	path = /obj/item/electropack
+	ckeywhitelist = list("Troll_Andrew")
+	subcategory = LOADOUT_SUBCATEGORIES_DON22
+
+/datum/gear/donator/bm/straight_jacket
+	name = "Straight Jacket"
+	slot = ITEM_SLOT_OCLOTHING
+	path = /obj/item/clothing/suit/straight_jacket
+	ckeywhitelist = list("Troll_Andrew")
+	subcategory = LOADOUT_SUBCATEGORIES_DON22
+
+/datum/gear/donator/bm/boxing
+	name = "Boxing Gloves"
+	slot = ITEM_SLOT_GLOVES
+	path = /obj/item/clothing/gloves/boxing
+	ckeywhitelist = list("Troll_Andrew")
+	subcategory = LOADOUT_SUBCATEGORIES_DON22
+
+/datum/gear/donator/bm/coconut_bong
+	name = "Coconut Bong"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/bong/coconut
+	ckeywhitelist = list("Troll_Andrew")
+	subcategory = LOADOUT_SUBCATEGORIES_DON22
+
+/datum/gear/donator/bm/armyknife
+	name = "Army Knife"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/armyknife
+	ckeywhitelist = list("Troll_Andrew")
+	subcategory = LOADOUT_SUBCATEGORIES_DON22
