@@ -194,7 +194,7 @@
 
 /datum/quirk/ropebunny
 	name = "Rope Bunny"
-	desc = "You have mastered all forms of bondage! You can create bondage rope out of cloth, and bondage bolas out of bondage rope!"
+	desc = "Вы обучены искусно вязать верёвки любой формы. Вы можете создавать веревку из ткани, а из этой веревки - болы!"
 	value = 2
 
 /datum/quirk/ropebunny/add()
@@ -218,7 +218,7 @@
 	mob_trait = TRAIT_HALLOWED
 	gain_text = span_notice("Вы чувствуете, как святая энергия начинает течь по вашему телу.")
 	lose_text = span_notice("Вы чувствуете, как угасает ваша святая энергия...")
-	medical_record_text = "Patient has unidentified hallowed material concentrated in their blood. Please consult a chaplain."
+	medical_record_text = "У пациента обнаружены неопознанные освященные материалы в крови. Проконсультируйтесь с капелланом."
 
 /datum/quirk/hallowed/add()
 	// Define quirk mob.

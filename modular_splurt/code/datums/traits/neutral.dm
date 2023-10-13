@@ -240,12 +240,12 @@
 
 //You are a CIA agent.
 /datum/quirk/cosglow
-	name = "Cosmetic Glow"
-	desc = "You glow! Be it an obscure radiation emission, or simple Bioluminescent properties.."
+	name = "Косметическая подсветка"
+	desc = "Ваше тело слегка светится! Что бы это не значило - излучение от радиации или люминисцентных грибов вдоль кожного покрова.."
 	value = 0
 	mob_trait = TRAIT_COSGLOW
-	gain_text = span_notice("You feel empowered by a three-letter agency!")
-	lose_text = span_notice("You realize that working for the space CIA sucks!")
+	gain_text = span_notice("Вы ощущаете приток света вокруг себя!")
+	lose_text = span_notice("Вы осознаете, что косплеить космическое ЦРУ совсем не для вас!")
 
 /datum/quirk/cosglow/add()
 	// Define quirk holder mob
@@ -1098,10 +1098,10 @@ var/static/list/ukraine_replacements = list(
 	remove_verb(C,/mob/living/proc/alterlimbs)
 
 /datum/quirk/messy
-	name = "Messy"
-	desc = "Due to your unique biology/construction/bluespace magic you always manage to make a mess when you cum, even if it's not possible in normal circumstances."
+	name = "Грязнуля"
+	desc = "Из-за биологических особенностей вашего тела или блюспейс аномалии вы всегда устраиваете бардак, когда кончаете. Даже в тех обстоятельствах, когда это казалось бы невозможно."
 	value = 0
 	mob_trait = TRAIT_MESSY
-	gain_text = span_lewd("You feel like covering something in layer of your fluids.")
-	lose_text = span_notice("You don't feel 'messy' anymore.")
-	medical_record_text = "Had to be sedated after covering entire hospital wing with cum."
+	gain_text = span_lewd("Вы хотите покрыть что-то с помощью своих органических жидкостей.")
+	lose_text = span_notice("Вы более не ощущаете себя 'грязнулей'.")
+	medical_record_text = "Врачу пришлось принять успокоительное после того, как пациент обкончал весь медбей."
