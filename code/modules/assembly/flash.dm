@@ -123,7 +123,7 @@
 				var/diff = power * CONFUSION_STACK_MAX_MULTIPLIER - M.confused
 				M.confused += min(power, diff)
 			if(user)
-				terrible_conversion_proc(M, user)
+				//terrible_conversion_proc(M, user)
 				visible_message("<span class='disarm'>[user] ошеломляет [M] флешером!</span>")
 				to_chat(user, "<span class='danger'>Ты ошеломил [M] флешером!</span>")
 				to_chat(M, "<span class='userdanger'>[user] ошеломляет тебя флешером!</span>")
