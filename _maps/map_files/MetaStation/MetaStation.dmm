@@ -15122,12 +15122,12 @@
 /area/hallway/primary/starboard)
 "bla" = (
 /obj/effect/spawner/structure/window/reinforced,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
 /obj/machinery/door/poddoor{
 	id = "caproom";
 	name = "Captain's Room Door"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
 	},
 /turf/open/floor/plating,
 /area/command/heads_quarters/captain/private)
@@ -21873,12 +21873,6 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor,
-/obj/machinery/button/door{
-	id = "gateshutter";
-	name = "Gateway Shutter Control";
-	pixel_y = 26;
-	req_access_txt = "19"
-	},
 /obj/effect/turf_decal/tile/dark_green{
 	dir = 1
 	},
@@ -25635,12 +25629,6 @@
 /turf/open/floor/plasteel/white,
 /area/science/research)
 "ceV" = (
-/obj/machinery/button/door{
-	id = "gateshutter";
-	name = "Gateway Shutter Control";
-	req_access_txt = "19";
-	pixel_x = -26
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 8
 	},
