@@ -997,7 +997,7 @@
 // Не добавлено в аутфит, т.к. раса ставится ПОСЛЕ выставления аутфита
 /obj/effect/mob_spawn/human/tarkon/special_post_appearance(mob/living/carbon/human/new_spawn)
 	if(HAS_TRAIT(new_spawn, TRAIT_ROBOTIC_ORGANISM))
-		new_spawn.equip_to_slot_or_del(new /obj/item/device/cooler/charged(new_spawn), ITEM_SLOT_OCLOTHING, TRUE)
+		new_spawn.put_in_l_hand(new /obj/item/device/cooler/charged(new_spawn))
 	. = ..()
 
 /datum/outfit/tarkoff
