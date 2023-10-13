@@ -4137,6 +4137,7 @@
 #include "modular_bluemoon\krashly\code\game\objects\items\weaponry.dm"
 #include "modular_bluemoon\krashly\code\game\objects\items\storage\backpack.dm"
 #include "modular_bluemoon\krashly\code\game\objects\items\storage\closet.dm"
+#include "modular_bluemoon\krashly\code\game\objects\structures\other.dm"
 #include "modular_bluemoon\krashly\code\game\objects\structures\salvage.dm"
 #include "modular_bluemoon\krashly\code\game\objects\structures\vendomate.dm"
 #include "modular_bluemoon\krashly\code\game\objects\structures\window.dm"
