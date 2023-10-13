@@ -25,7 +25,7 @@
 	id = SPECIES_MAMMAL_SYNTHETIC
 
 	species_traits = list(MUTCOLORS,NOTRANSSTING,EYECOLOR,LIPS,HAIR,FACEHAIR,ROBOTIC_LIMBS,HAS_FLESH,HAS_BONE,WINGCOLOR,HORNCOLOR)
-	inherent_traits = list(TRAIT_EASYDISMEMBER,TRAIT_LIMBATTACHMENT,TRAIT_NO_PROCESS_FOOD, TRAIT_ROBOTIC_ORGANISM, TRAIT_RESISTLOWPRESSURE, TRAIT_NOBREATH, TRAIT_AUXILIARY_LUNGS, TRAIT_VIRUSIMMUNE) // BLUEMOON CHANES - добавлена защита от вирусов
+	inherent_traits = list(TRAIT_EASYDISMEMBER,TRAIT_LIMBATTACHMENT,TRAIT_NO_PROCESS_FOOD, TRAIT_ROBOTIC_ORGANISM, TRAIT_RESISTLOWPRESSURE, TRAIT_NOBREATH, TRAIT_AUXILIARY_LUNGS, TRAIT_VIRUSIMMUNE) // BLUEMOON CHANGES - добавлена защита от вирусов
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID|MOB_BEAST
 
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ipc
@@ -39,7 +39,7 @@
 	coldmod = 0.5
 	heatmod = 1.2
 	cold_offset = SYNTH_COLD_OFFSET	//Can handle pretty cold environments, but it's still a slightly bad idea if you enter a room thats full of near-absolute-zero gas
-	blacklisted_quirks = list(/datum/quirk/coldblooded, /datum/quirk/bloodfledge)
+	blacklisted_quirks = list(/datum/quirk/coldblooded, /datum/quirk/bloodfledge) // BLUEMOON ADD - добавлен квирк кровопийцы в исключение, т.к. кровь мешает питанию через энергию
 	balance_point_values = TRUE
 
 	//Just robo looking parts.

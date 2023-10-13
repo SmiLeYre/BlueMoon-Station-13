@@ -22,7 +22,7 @@
 	coldmod = 0.5
 	heatmod = 1.2
 	cold_offset = SYNTH_COLD_OFFSET	//Can handle pretty cold environments, but it's still a slightly bad idea if you enter a room thats full of near-absolute-zero gas
-	blacklisted_quirks = list(/datum/quirk/coldblooded, /datum/quirk/bloodfledge)
+	blacklisted_quirks = list(/datum/quirk/coldblooded, /datum/quirk/bloodfledge) // BLUEMOON ADD - добавлен квирк кровопийцы в исключение, т.к. кровь мешает питанию через энергию
 	balance_point_values = TRUE
 
 	//Just robo looking parts.
