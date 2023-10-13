@@ -35,7 +35,7 @@
 			locked = FALSE
 			update_icon()
 		else
-			to_chat(user, "<span class='warning'>Access denied.</span>")
+			to_chat(user, "<span class='warning'>Доступ запрещён.</span>")
 
 /obj/item/nanite_remote/emag_act(mob/user)
 	if(obj_flags & EMAGGED)

@@ -30,12 +30,9 @@
 	deathmessage = "suddenly breaks apart."
 	del_on_death = 1
 	var/passive_mode = TRUE // if true, don't target anything.
-	var/datum/effect_system/trail_follow/ion/ion_trail
 
 /mob/living/simple_animal/hostile/malf_drone/Initialize(mapload)
 	. = ..()
-	ion_trail = new
-	ion_trail.set_up(src)
 	update_icons()
 
 /mob/living/simple_animal/hostile/malf_drone/Process_Spacemove(check_drift = 0)

@@ -845,7 +845,7 @@
 				to_chat(user, "<span class='warning'>[AI.name] is currently unresponsive, and cannot be uploaded.</span>")
 				return
 			if((LAZYLEN(occupants) >= max_occupants) || dna_lock) //Normal AIs cannot steal mechs!
-				to_chat(user, "<span class='warning'>Access denied. [name] is [LAZYLEN(occupants) >= max_occupants ? "currently fully occupied" : "secured with a DNA lock"].</span>")
+				to_chat(user, "<span class='warning'>Доступ запрещён. [name] is [LAZYLEN(occupants) >= max_occupants ? "currently fully occupied" : "secured with a DNA lock"].</span>")
 				return
 			AI.control_disabled = FALSE
 			AI.radio_enabled = TRUE
@@ -928,11 +928,11 @@
 	if(dna_lock && M.has_dna())
 		var/mob/living/carbon/entering_carbon = M
 		if(entering_carbon.dna.unique_enzymes != dna_lock)
-			to_chat(M, "<span class='warning'>Access denied. [name] is secured with a DNA lock.</span>")
+			to_chat(M, "<span class='warning'>Доступ запрещён. [name] is secured with a DNA lock.</span>")
 			log_message("Permission denied (DNA LOCK).", LOG_MECHA)
 			return
 	if(!operation_allowed(M))
-		to_chat(M, "<span class='warning'>Access denied. Insufficient operation keycodes.</span>")
+		to_chat(M, "<span class='warning'>Доступ запрещён. Insufficient operation keycodes.</span>")
 		log_message("Permission denied (No keycode).", LOG_MECHA)
 		return
 	if(M.buckled)
@@ -1000,7 +1000,7 @@
 		to_chat(user, "<span class='warning'>It's full!</span>")
 		return FALSE
 	if(dna_lock && (!B.stored_dna || (dna_lock != B.stored_dna.unique_enzymes)))
-		to_chat(user, "<span class='warning'>Access denied. [name] is secured with a DNA lock.</span>")
+		to_chat(user, "<span class='warning'>Доступ запрещён. [name] is secured with a DNA lock.</span>")
 		return FALSE
 
 	visible_message("<span class='notice'>[user] starts to insert an MMI into [name].</span>")

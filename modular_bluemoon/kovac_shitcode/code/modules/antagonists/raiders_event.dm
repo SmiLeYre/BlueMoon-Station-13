@@ -29,7 +29,7 @@
 
 	ship_name = pick(strings(PIRATE_NAMES_FILE, "rogue_names"))
 
-	priority_announce("Входящая подпространственная передача данных. Открыт защищенный канал связи на всех коммуникационных консолях.", "Сомнительное заявление", SSstation.announcer.get_rand_report_sound(), has_important_message = TRUE)
+	priority_announce("Входящая подпространственная передача данных. Открыт защищенный канал связи на всех коммуникационных консолях.", "Сомнительное Заявление", SSstation.announcer.get_rand_report_sound(), has_important_message = TRUE)
 	var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
 	if(D)
 		payoff = max(payoff_min, FLOOR(D.account_balance * 0.9, 1000))

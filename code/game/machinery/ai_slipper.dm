@@ -42,7 +42,7 @@
 
 /obj/machinery/ai_slipper/interact(mob/user)
 	if(!allowed(user))
-		to_chat(user, "<span class='danger'>Access denied.</span>")
+		to_chat(user, "<span class='danger'>Доступ запрещён.</span>")
 		return
 	if(!uses)
 		to_chat(user, "<span class='danger'>[src] is out of foam and cannot be activated.</span>")

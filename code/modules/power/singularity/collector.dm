@@ -129,7 +129,7 @@
 			else
 				to_chat(user, "<span class='warning'>The controls can only be locked when \the [src] is active!</span>")
 		else
-			to_chat(user, "<span class='danger'>Access denied.</span>")
+			to_chat(user, "<span class='danger'>Доступ запрещён.</span>")
 			return TRUE
 	else
 		return ..()

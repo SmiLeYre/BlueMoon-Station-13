@@ -45,6 +45,8 @@ GLOBAL_LIST_INIT(civilian_positions, list(
 	"Bartender",
 	"Botanist",
 	"Cook",
+	"Bouncer",
+	"Entertainer",
 	"Janitor",
 	"Curator",
 	"Chaplain",
@@ -52,8 +54,7 @@ GLOBAL_LIST_INIT(civilian_positions, list(
 	"Mime",
 	"Prisoner",
 	"Assistant",
-	"Stowaway",
-	"Bouncer"))
+	"Stowaway"))
 
 //we really need to split service into civillian positions officially, until then this is my solution
 GLOBAL_LIST_INIT(service_food_positions, list(

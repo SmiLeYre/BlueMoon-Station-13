@@ -170,10 +170,9 @@
 	log_combat(user, pushed_mob, "tabled", null, "onto [src]")
 	if(!ishuman(pushed_mob))
 		return
-	var/mob/living/carbon/human/H = pushed_mob
-	if(iscatperson(H))
-		H.emote("nya")
-	SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "table", /datum/mood_event/table)
+	if(iscatperson(pushed_mob))
+		pushed_mob.emote("nya")
+	SEND_SIGNAL(pushed_mob, COMSIG_ADD_MOOD_EVENT, "table", /datum/mood_event/table)
 	// BLUEMOON ADDITION AHEAD - тяжёлые и сверхтяжёлые персонажи при толчке на стол ломают его
 	if(HAS_TRAIT(pushed_mob, TRAIT_BLUEMOON_HEAVY_SUPER) || HAS_TRAIT(pushed_mob, TRAIT_BLUEMOON_HEAVY))
 		pushed_mob.visible_message("<span class='danger'>[user] breaks [src] with [pushed_mob]'s weight!</span>", \

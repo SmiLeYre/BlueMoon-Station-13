@@ -1575,3 +1575,28 @@
 		new /obj/item/grenade/frag(src)
 	else
 		new /obj/item/toy/snappop(src)
+
+/obj/item/storage/box/coffeepack
+	name = "Arabica Beans"
+	desc = "A bag containing fresh, dry coffee arabica beans. Ethically sourced and packaged by Waffle Corp."
+	icon_state = "arabica_beans"
+	illustration = null
+	icon = 'icons/obj/food/containers.dmi'
+	var/beantype = /obj/item/reagent_containers/food/snacks/grown/coffee
+
+/obj/item/storage/box/coffeepack/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 5
+	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/food/snacks/grown/coffee))
+
+/obj/item/storage/box/coffeepack/PopulateContents()
+	for(var/i in 1 to 5)
+		var/obj/item/reagent_containers/food/snacks/grown/coffee/bean = new beantype(src)
+		bean.add_atom_colour(COLOR_DRIED_TAN, FIXED_COLOUR_PRIORITY) //give them the tan just like from the drying rack
+
+/obj/item/storage/box/coffeepack/robusta
+	name = "Robusta Beans"
+	desc = "A bag containing fresh, dry coffee robusta beans. Ethically sourced and packaged by Waffle Corp."
+	icon_state = "robusta_beans"
+	beantype = /obj/item/reagent_containers/food/snacks/grown/coffee/robusta

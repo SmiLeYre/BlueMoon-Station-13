@@ -249,11 +249,16 @@
 	name = "robust coffee"
 	desc = "Careful, the beverage you're about to enjoy is extremely hot."
 	icon_state = "coffee"
+	icon = 'code/modules/food_and_drinks/coffee.dmi'
 	list_reagents = list(/datum/reagent/consumable/coffee = 30)
 	spillable = TRUE
 	resistance_flags = FREEZE_PROOF
 	isGlass = FALSE
 	foodtype = BREAKFAST
+
+/obj/item/reagent_containers/cup/glass/coffee/no_lid
+	icon_state = "coffee_empty"
+	list_reagents = null
 
 //Used by MREs
 /obj/item/reagent_containers/food/drinks/coffee/type2
@@ -637,3 +642,18 @@
 	desc = "An old stained mug used for filling with dwarven ale."
 	icon_state = "manlydorfglass"
 	isGlass = FALSE //it's a wooden mug!
+
+/obj/item/reagent_containers/food/drinks/coffee_cup
+	name = "Coffee Cup"
+	desc = "A heat-formed plastic coffee cup. Can theoretically be used for other hot drinks, if you're feeling adventurous."
+	icon = 'code/modules/food_and_drinks/coffee.dmi'
+	icon_state = "coffee_cup_e"
+	base_icon_state = "coffee_cup"
+	possible_transfer_amounts = list(10)
+	volume = 30
+	spillable = TRUE
+	isGlass = FALSE
+
+/obj/item/reagent_containers/food/drinks/coffee_cup/update_icon_state()
+	icon_state = reagents.total_volume ? base_icon_state : "[base_icon_state]_e"
+	return ..()

@@ -452,6 +452,12 @@ AI MODULES
 	name = "Solar Federation Core AI Module"
 	law_id = "solfed"
 
+/********************  TRUMP   ********************/
+
+/obj/item/aiModule/core/full/trump
+	name = "Build a Wall Core AI Module"
+	law_id = "buildawall"
+
 /******************** Freeform Core ******************/
 
 /obj/item/aiModule/core/freeformcore

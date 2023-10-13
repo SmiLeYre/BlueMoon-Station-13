@@ -54,7 +54,7 @@
 
 /obj/structure/sign/barsign/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(!allowed(user))
-		to_chat(user, "<span class='info'>Access denied.</span>")
+		to_chat(user, "<span class='info'>Доступ запрещён.</span>")
 		return
 	if (broken)
 		to_chat(user, "<span class ='danger'>The controls seem unresponsive.</span>")
@@ -64,7 +64,7 @@
 /obj/structure/sign/barsign/attackby(obj/item/I, mob/user)
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
 		if(!allowed(user))
-			to_chat(user, "<span class='info'>Access denied.</span>")
+			to_chat(user, "<span class='info'>Доступ запрещён.</span>")
 			return
 		if(!panel_open)
 			to_chat(user, "<span class='notice'>You open the maintenance panel.</span>")

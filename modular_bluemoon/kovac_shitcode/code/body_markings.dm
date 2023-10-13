@@ -94,6 +94,20 @@
 	matrixed_sections = MATRIX_RED_BLUE
 	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
 
+/datum/sprite_accessory/tails/mam_tails/otiea
+	name = "Otie (Alt)"
+	icon_state = "otiea"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/otiea
+	name = "Otie (Alt)"
+	icon_state = "otiea"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /datum/sprite_accessory/hair/zoey

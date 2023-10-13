@@ -23,7 +23,7 @@
 
 	sentience_report += "Основываясь на [data], мы считаем, что [one] из [pets] станции развил [strength] уровень интеллекта и способность к общению."
 
-	priority_announce(sentience_report, "Отдел бесполезных оповещений", 'sound/announcer/classic/sentinence.ogg')
+	priority_announce(sentience_report, "Отдел Бесполезных Оповещений", 'sound/announcer/classic/sentinence.ogg')
 
 /datum/round_event/ghost_role/sentience/spawn_role()
 	var/list/mob/dead/observer/candidates

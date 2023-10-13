@@ -86,13 +86,28 @@
 	if(is_wired)
 		. += span_info("It has barbed wire along the top.")
 
-/obj/structure/deployable_barricade/proc/on_try_exit(atom/movable/mover, turf/target)
+/obj/structure/deployable_barricade/proc/on_try_exit(datum/source, atom/movable/leaving, direction)
 	SIGNAL_HANDLER
 
-	if(get_dir(loc, target) & dir)
-		var/checking = PHASING | FLYING | FLOATING
-		return !density || mover.throwing || mover.movement_type & checking || mover.move_force >= MOVE_FORCE_EXTREMELY_STRONG
+	if(leaving == typesof(/turf/open/floor))
+		return
 
+	if(get_dir(loc, leaving) == dir)
+		return
+
+	if (!density)
+		return
+
+	if (leaving.throwing)
+		return
+
+	if (leaving.movement_type & (PHASING | FLYING | FLOATING))
+		return
+
+	if (leaving.move_force >= MOVE_FORCE_EXTREMELY_STRONG)
+		return
+
+	leaving.Bump(src)
 	return COMPONENT_ATOM_BLOCK_EXIT
 
 /obj/structure/deployable_barricade/CanPass(atom/movable/mover, turf/target)

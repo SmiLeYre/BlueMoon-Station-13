@@ -339,7 +339,7 @@ DEFINE_BITFIELD(turret_flags, list(
 			locked = !locked
 			to_chat(user, "<span class='notice'>Controls are now [locked ? "locked" : "unlocked"].</span>")
 		else
-			to_chat(user, "<span class='alert'>Access denied.</span>")
+			to_chat(user, "<span class='alert'>Доступ запрещён.</span>")
 	else if(I.tool_behaviour == TOOL_MULTITOOL && !locked)
 		if(!multitool_check_buffer(user, I))
 			return
@@ -991,7 +991,7 @@ DEFINE_BITFIELD(turret_flags, list(
 			locked = !locked
 			to_chat(user, "<span class='notice'>You [ locked ? "lock" : "unlock"] the panel.</span>")
 		else
-			to_chat(user, "<span class='alert'>Access denied.</span>")
+			to_chat(user, "<span class='alert'>Доступ запрещён.</span>")
 
 /obj/machinery/turretid/emag_act(mob/user)
 	if(obj_flags & EMAGGED)

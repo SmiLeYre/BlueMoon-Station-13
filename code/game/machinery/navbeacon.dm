@@ -115,7 +115,7 @@
 				src.locked = !src.locked
 				to_chat(user, "<span class='notice'>Controls are now [src.locked ? "locked" : "unlocked"].</span>")
 			else
-				to_chat(user, "<span class='danger'>Access denied.</span>")
+				to_chat(user, "<span class='danger'>Доступ запрещён.</span>")
 			updateDialog()
 		else
 			to_chat(user, "<span class='warning'>You must open the cover first!</span>")

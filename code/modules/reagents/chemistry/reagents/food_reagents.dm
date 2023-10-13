@@ -187,6 +187,31 @@
 		M.adjustToxLoss(3)
 	return ..()
 
+/datum/reagent/consumable/creamer
+	name = "Coffee Creamer"
+	description = "Powdered milk for cheap coffee. How delightful."
+	taste_description = "milk"
+	color = "#efeff0"
+	nutriment_factor = 1.5
+
+/datum/reagent/consumable/choccyshake
+	name = "Chocolate Shake"
+	description = "A frosty chocolate milkshake."
+	color = "#541B00"
+	quality = DRINK_VERYGOOD
+	nutriment_factor = 8
+	taste_description = "sweet creamy chocolate"
+	chemical_flags = REAGENT_ALL_PROCESS
+	value = REAGENT_VALUE_UNCOMMON
+
+/datum/reagent/consumable/korta_nectar
+	name = "Korta Nectar"
+	description = "A sweet, sugary syrup made from crushed sweet korta nuts."
+	color = "#d3a308"
+	nutriment_factor = 5
+	metabolization_rate = 1 * REAGENTS_METABOLISM
+	taste_description = "peppery sweetness"
+
 /datum/reagent/consumable/virus_food
 	name = "Virus Food"
 	description = "A mixture of water and milk. Virus cells can use this mixture to reproduce."

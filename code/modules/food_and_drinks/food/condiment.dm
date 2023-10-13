@@ -227,8 +227,6 @@
 	list_reagents = list(/datum/reagent/consumable/mayonnaise = 50)
 	possible_states = list()
 
-
-
 //Food packs. To easily apply deadly toxi... delicious sauces to your food!
 
 /obj/item/reagent_containers/food/condiment/pack
@@ -305,11 +303,6 @@
 	originalname = "hotsauce"
 	list_reagents = list(/datum/reagent/consumable/capsaicin = 10)
 
-/obj/item/reagent_containers/food/condiment/pack/astrotame
-	name = "astrotame pack"
-	originalname = "astrotame"
-	list_reagents = list(/datum/reagent/consumable/astrotame = 5)
-
 //Other Sauce
 /obj/item/reagent_containers/food/condiment/pack/bbqsauce
 	name = "bbq sauce pack"
@@ -320,3 +313,27 @@
 	name = "soy sauce pack"
 	originalname = "soy sauce"
 	list_reagents = list(/datum/reagent/consumable/soysauce = 10)
+
+/obj/item/reagent_containers/food/condiment/pack/creamer
+	name = "coffee creamer pack"
+	desc = "Better not think about what they're making this from."
+	icon_state = "condi_creamer"
+	list_reagents = list(/datum/reagent/consumable/creamer = 10)
+
+/obj/item/reagent_containers/food/condiment/pack/sugar
+	name = "sugar pack"
+	desc = "Tasty spacey sugar!"
+	icon_state = "condi_sugar"
+	list_reagents = list(/datum/reagent/consumable/sugar = 10)
+
+/obj/item/reagent_containers/food/condiment/pack/chocolate
+	name = "chocolate sprinkle pack"
+	desc= "The amount of sugar thats already there wasn't enough for you?"
+	icon_state = "condi_chocolate"
+	list_reagents = list(/datum/reagent/consumable/choccyshake = 10)
+
+/obj/item/reagent_containers/food/condiment/pack/astrotame
+	name = "astrotame pack"
+	originalname = "astrotame"
+	icon_state = "condi_astrotame"
+	list_reagents = list(/datum/reagent/consumable/astrotame = 10)

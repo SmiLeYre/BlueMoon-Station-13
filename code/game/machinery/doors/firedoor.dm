@@ -377,7 +377,7 @@
 	var/status1 = check_door_side(T)
 	var/status2 = check_door_side(T2)
 	if((status1 == 1 && status2 == -1) || (status1 == -1 && status2 == 1))
-		to_chat(user, "<span class='warning'>Access denied. Try closing another firedoor to minimize decompression, or using a crowbar.</span>")
+		to_chat(user, "<span class='warning'>Доступ запрещён. Try closing another firedoor to minimize decompression, or using a crowbar.</span>")
 		return FALSE
 	return TRUE
 

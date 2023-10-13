@@ -79,7 +79,7 @@ interface with the mining shuttle at the landing site if a mobile beacon is also
 	usr.set_machine(src)
 	add_fingerprint(usr)
 	if(!allowed(usr))
-		to_chat(usr, "<span class='danger'>Access denied.</span>")
+		to_chat(usr, "<span class='danger'>Доступ запрещён.</span>")
 		return
 
 	if(href_list["move"])

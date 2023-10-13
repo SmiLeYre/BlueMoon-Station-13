@@ -489,7 +489,7 @@
 				to_chat(user, "<span class='notice'>You [ locked ? "lock" : "unlock"] [src]'s cover.</span>")
 				update_icons()
 			else
-				to_chat(user, "<span class='danger'>Access denied.</span>")
+				to_chat(user, "<span class='danger'>Доступ запрещён.</span>")
 
 	else if(istype(W, /obj/item/borg/upgrade/))
 		var/obj/item/borg/upgrade/U = W

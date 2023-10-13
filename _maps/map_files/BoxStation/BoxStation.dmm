@@ -56915,10 +56915,6 @@
 /obj/effect/spawner/lootdrop/keg,
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
-"oFe" = (
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/space,
-/area/security/range)
 "oFf" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 4
@@ -66107,7 +66103,7 @@
 /area/service/chapel/main)
 "wdr" = (
 /obj/effect/spawner/structure/window/reinforced,
-/turf/open/space/basic,
+/turf/open/floor/plating,
 /area/security/range)
 "wdv" = (
 /obj/structure/fans/tiny/invisible,
@@ -66440,12 +66436,12 @@
 	},
 /area/maintenance/starboard)
 "wrk" = (
+/obj/effect/spawner/structure/window,
 /obj/machinery/door/poddoor/shutters/preopen{
 	desc = "Privacy shutters for the Private Study. Stops people spying in on your game.";
-	id = "PrivateCMO";
+	id = "PrivateStudy1";
 	name = "Private Study Privacy Shutters"
 	},
-/obj/effect/spawner/structure/window,
 /turf/open/floor/wood,
 /area/service/library)
 "wrX" = (
@@ -102522,7 +102518,7 @@ aaa
 aoV
 aoV
 aoV
-oFe
+wdr
 xxp
 rXg
 xxp

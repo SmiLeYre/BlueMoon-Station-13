@@ -1,0 +1,36 @@
+## This allows players to select their laws as a preference and is applied when they join roundstart/latejoin
+## It won't work if there is an active AI or if they're borged
+ALLOW_SILICON_CHOOSING_LAWS
+
+## standard-ish laws. These are fairly ok to run
+CHOOSABLE_LAWS asimov /obj/item/aiModule/core/full/asimov
+CHOOSABLE_LAWS asimovpp /obj/item/aiModule/core/full/asimovpp
+CHOOSABLE_LAWS paladin /obj/item/aiModule/core/full/paladin
+CHOOSABLE_LAWS paladin5 /obj/item/aiModule/core/full/paladin_devotion
+CHOOSABLE_LAWS robocop /obj/item/aiModule/core/full/robocop
+CHOOSABLE_LAWS corporate /obj/item/aiModule/core/full/corp
+CHOOSABLE_LAWS tyrant /obj/item/aiModule/core/full/tyrant
+CHOOSABLE_LAWS balance /obj/item/aiModule/core/full/balance
+CHOOSABLE_LAWS protectStation /obj/item/aiModule/supplied/protectStation
+
+## Quirky laws. Shouldn't cause too much harm
+CHOOSABLE_LAWS hippocratic /obj/item/aiModule/core/full/hippocratic
+CHOOSABLE_LAWS maintain /obj/item/aiModule/core/full/maintain
+CHOOSABLE_LAWS drone /obj/item/aiModule/core/full/drone
+CHOOSABLE_LAWS liveandletlive /obj/item/aiModule/core/full/liveandletlive
+CHOOSABLE_LAWS peacekeeper /datum/ai_laws/peacekeeper
+CHOOSABLE_LAWS reporter /obj/item/aiModule/core/full/reporter
+CHOOSABLE_LAWS hulkamania /obj/item/aiModule/core/full/hulkamania
+
+## Bad idea laws. Probably shouldn't enable these
+CHOOSABLE_LAWS syndie /obj/item/aiModule/core/full/syndicate
+CHOOSABLE_LAWS solfed /obj/item/aiModule/core/full/solfed
+
+## meme laws. Honk
+CHOOSABLE_LAWS buildawall /obj/item/aiModule/core/full/trump
+
+## lewd laws. Take a guess.
+CHOOSABLE_LAWS slut /obj/item/aiModule/core/full/slut
+CHOOSABLE_LAWS shebang /obj/item/aiModule/core/full/shebang
+CHOOSABLE_LAWS milker /obj/item/aiModule/core/full/milker
+CHOOSABLE_LAWS vore_pred /obj/item/aiModule/core/full/vore_pred

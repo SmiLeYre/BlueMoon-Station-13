@@ -28,10 +28,8 @@
 		if(user.a_intent == INTENT_HARM)
 			M.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [M]!</span>", \
 							"<span class='userdanger'>[user] splashes the contents of [src] onto [M]!</span>")
-			if(iscarbon(M))
-				var/mob/living/carbon/human/C = M
-				if(iscatperson(C))
-					C.emote("hiss")
+			if(iscatperson(M))
+				M.emote("hiss")
 			var/R = reagents?.log_list()
 			if(isturf(target) && reagents.reagent_list.len && thrownby)
 				log_combat(thrownby, target, "splashed (thrown) [english_list(reagents.reagent_list)]")

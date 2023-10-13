@@ -676,7 +676,7 @@
 		return TRUE
 	if(allowed(user))
 		return TRUE
-	to_chat(user, "<span class='notice'>Access denied.</span>")
+	to_chat(user, "<span class='notice'>Доступ запрещён.</span>")
 
 /obj/structure/closet/on_object_saved(depth)
 	if(depth >= 10)

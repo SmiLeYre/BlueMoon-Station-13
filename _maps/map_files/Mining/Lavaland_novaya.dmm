@@ -1785,7 +1785,7 @@
 	dir = 9
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/ruin/lavaland/unpowered/deepspaceone/main)
 "bAT" = (
 /obj/effect/turf_decal/stripes/corner,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
@@ -2301,7 +2301,7 @@
 /obj/structure/table,
 /obj/item/toy/cards/deck/syndicate,
 /turf/open/floor/pod/dark,
-/area/lavaland/surface/outdoors)
+/area/ruin/lavaland/unpowered/deepspaceone/main)
 "bXS" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable/yellow{
@@ -2332,6 +2332,10 @@
 /obj/structure/stone_tile/block/cracked,
 /turf/open/indestructible/boss,
 /area/lavaland/surface/outdoors)
+"bZG" = (
+/obj/structure/lattice/catwalk,
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/lavaland/unpowered/deepspaceone/main)
 "bZK" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -3053,13 +3057,20 @@
 	dir = 8
 	},
 /turf/open/floor/pod/dark,
-/area/lavaland/surface/outdoors)
+/area/ruin/lavaland/unpowered/deepspaceone/main)
 "cKl" = (
 /obj/machinery/light/small{
 	dir = 1
 	},
 /turf/open/floor/grass/grass0,
 /area/mine/xenoarch_area_b)
+"cKq" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/lavaland/unpowered/deepspaceone/main)
 "cKv" = (
 /obj/machinery/conveyor_switch/oneway{
 	dir = 8;
@@ -3117,7 +3128,7 @@
 	dir = 8
 	},
 /turf/open/floor/pod/dark,
-/area/lavaland/surface/outdoors)
+/area/ruin/lavaland/unpowered/deepspaceone/main)
 "cMK" = (
 /obj/machinery/door/firedoor,
 /obj/structure/cable/yellow{
@@ -4586,6 +4597,9 @@
 /obj/machinery/washing_machine,
 /turf/open/floor/plasteel,
 /area/mine/living_quarters)
+"eia" = (
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "eig" = (
 /obj/structure/table/reinforced/brass,
 /obj/item/clothing/head/helmet/clockwork,
@@ -4852,7 +4866,7 @@
 	},
 /obj/item/stack/rods/ten,
 /turf/open/floor/pod/dark,
-/area/lavaland/surface/outdoors)
+/area/ruin/lavaland/unpowered/deepspaceone/main)
 "ezU" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 8
@@ -5992,7 +6006,7 @@
 	dir = 8
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/ruin/lavaland/unpowered/deepspaceone/main)
 "fDK" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 1
@@ -6516,7 +6530,7 @@
 	pixel_y = 11
 	},
 /turf/open/floor/pod/dark,
-/area/lavaland/surface/outdoors)
+/area/ruin/lavaland/unpowered/deepspaceone/main)
 "gdn" = (
 /obj/machinery/light{
 	dir = 4;
@@ -6665,7 +6679,7 @@
 	},
 /obj/effect/decal/cleanable/oil/streak,
 /turf/open/floor/pod/dark,
-/area/lavaland/surface/outdoors)
+/area/ruin/lavaland/unpowered/deepspaceone/main)
 "gow" = (
 /obj/machinery/light/small,
 /obj/machinery/camera{
@@ -6998,7 +7012,7 @@
 	dir = 8
 	},
 /turf/open/floor/pod/dark,
-/area/lavaland/surface/outdoors)
+/area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "gGB" = (
 /obj/item/storage/box/rxglasses,
 /obj/structure/stone_tile{
@@ -8346,7 +8360,7 @@
 	},
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/pod/dark,
-/area/lavaland/surface/outdoors)
+/area/ruin/lavaland/unpowered/deepspaceone/main)
 "hWE" = (
 /obj/structure/stone_tile/surrounding,
 /obj/structure/closet/crate/necropolis/tendril,
@@ -10032,7 +10046,7 @@
 	},
 /obj/item/storage/toolbox/mechanical,
 /turf/open/floor/pod/dark,
-/area/lavaland/surface/outdoors)
+/area/ruin/lavaland/unpowered/deepspaceone/main)
 "jJV" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 8
@@ -11695,7 +11709,7 @@
 	pixel_y = 6
 	},
 /turf/open/floor/pod/dark,
-/area/lavaland/surface/outdoors)
+/area/ruin/lavaland/unpowered/deepspaceone/main)
 "lfZ" = (
 /obj/machinery/light{
 	dir = 8
@@ -14292,7 +14306,7 @@
 	dir = 1
 	},
 /turf/open/floor/pod/dark,
-/area/lavaland/surface/outdoors)
+/area/ruin/lavaland/unpowered/deepspaceone/main)
 "nsf" = (
 /obj/structure/window/reinforced/survival_pod{
 	dir = 4
@@ -14684,7 +14698,7 @@
 	dir = 4
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "nIj" = (
 /obj/structure/stone_tile/cracked{
 	dir = 4
@@ -15497,7 +15511,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "oBH" = (
 /obj/structure/stone_tile{
 	dir = 8
@@ -16646,7 +16660,7 @@
 /obj/structure/table,
 /obj/item/binoculars,
 /turf/open/floor/pod/dark,
-/area/lavaland/surface/outdoors)
+/area/ruin/lavaland/unpowered/deepspaceone/main)
 "pMw" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 1
@@ -19828,7 +19842,7 @@
 "sLv" = (
 /obj/structure/lattice/catwalk,
 /turf/open/lava/smooth/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "sLA" = (
 /obj/structure/table,
 /obj/machinery/microwave{
@@ -20868,7 +20882,7 @@
 "tNE" = (
 /obj/item/toy/figure/syndie,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "tPl" = (
 /obj/structure/stone_tile/block,
 /turf/open/chasm/lavaland,
@@ -22929,7 +22943,7 @@
 	dir = 4
 	},
 /turf/open/floor/pod/dark,
-/area/lavaland/surface/outdoors)
+/area/ruin/lavaland/unpowered/deepspaceone/main)
 "vPi" = (
 /turf/closed/wall/r_wall,
 /area/ruin/lavaland/powered/seedvault)
@@ -23482,7 +23496,7 @@
 	dir = 8
 	},
 /turf/open/floor/pod/dark,
-/area/lavaland/surface/outdoors)
+/area/ruin/lavaland/unpowered/deepspaceone/main)
 "wzo" = (
 /obj/structure/stone_tile/block{
 	dir = 1
@@ -23945,7 +23959,7 @@
 	dir = 1
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/ruin/lavaland/unpowered/deepspaceone/main)
 "wOz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/conveyor{
@@ -24026,6 +24040,9 @@
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plating,
 /area/mine/production)
+"wRx" = (
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "wSy" = (
 /turf/closed/wall/r_wall,
 /area/mine/storage)
@@ -98072,7 +98089,7 @@ vAU
 vAU
 vAU
 wNy
-sLv
+bZG
 vPa
 cAH
 gyR
@@ -98329,7 +98346,7 @@ vAU
 vAU
 vAU
 wNy
-sLv
+bZG
 pMv
 cAH
 ral
@@ -98586,7 +98603,7 @@ vAU
 vAU
 vAU
 wNy
-sLv
+bZG
 cJe
 cAH
 ral
@@ -98843,7 +98860,7 @@ vAU
 vAU
 vAU
 wNy
-sLv
+bZG
 nrJ
 cAH
 ral
@@ -99608,10 +99625,10 @@ gWp
 uZI
 sRT
 uls
-sLv
-sLv
-sLv
-sLv
+bZG
+bZG
+bZG
+bZG
 kix
 xzb
 vZv
@@ -100112,7 +100129,7 @@ vAU
 vAU
 vAU
 vAU
-gIl
+eia
 uls
 vRb
 bym
@@ -100369,7 +100386,7 @@ vAU
 vAU
 vAU
 vAU
-gIl
+eia
 uls
 wAW
 eKp
@@ -100625,7 +100642,7 @@ lab
 vAU
 vAU
 vAU
-gIl
+eia
 tNE
 uls
 rdU
@@ -101664,10 +101681,10 @@ guR
 guR
 cxz
 uls
-sLv
-sLv
-sLv
-sLv
+bZG
+bZG
+bZG
+bZG
 kix
 mKs
 pHL
@@ -101921,10 +101938,10 @@ dls
 bHy
 uls
 uls
-nHR
-nHR
-nHR
-nHR
+cKq
+cKq
+cKq
+cKq
 kdh
 ufD
 cix
@@ -102441,7 +102458,7 @@ vAU
 vAU
 vAU
 wNy
-sLv
+bZG
 nrJ
 ueH
 orU
@@ -102698,7 +102715,7 @@ vAU
 vAU
 vAU
 wNy
-sLv
+bZG
 vPa
 ueH
 orU
@@ -102955,7 +102972,7 @@ vAU
 vAU
 vAU
 wNy
-sLv
+bZG
 lfL
 ueH
 orU
@@ -103212,7 +103229,7 @@ vAU
 vAU
 vAU
 wNy
-sLv
+bZG
 gdj
 ueH
 old
@@ -105776,7 +105793,7 @@ vAU
 vAU
 vAU
 vAU
-gIl
+wRx
 fhH
 xIy
 dDM
@@ -106290,7 +106307,7 @@ vAU
 vAU
 vAU
 vAU
-gIl
+wRx
 kdh
 gvi
 gvi
