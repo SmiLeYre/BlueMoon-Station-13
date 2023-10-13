@@ -155,6 +155,9 @@
 							/mob/living/silicon/robot/modules/syndicate,
 							/mob/living/silicon/robot/modules/syndicate/medical,
 							/mob/living/silicon/robot/modules/syndicate/saboteur,
+							/mob/living/silicon/robot/modules/inteq, //BM Changes /Krashly
+							/mob/living/silicon/robot/modules/inteq/medical, //BM Changes /Krashly
+							/mob/living/silicon/robot/modules/inteq/saboteur, //BM Changes /Krashly
 							200;/mob/living/simple_animal/drone/polymorphed)
 			new_mob = new robot(M.loc)
 			if(issilicon(new_mob))
