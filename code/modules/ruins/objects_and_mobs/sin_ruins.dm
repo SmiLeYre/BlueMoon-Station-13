@@ -15,7 +15,12 @@
 	if(obj_flags & IN_USE)
 		return
 	obj_flags |= IN_USE
-	user.adjustCloneLoss(20)
+	// BLUEMOON ADD START - у роботов не должно быть клон-урона, так что, урон внутренним системам
+	if(HAS_TRAIT(user, TRAIT_ROBOTIC_ORGANISM))
+		user.adjustToxLoss(20, toxins_type = TOX_SYSCORRUPT)
+	else
+	// BLUEMOON ADD END
+		user.adjustCloneLoss(20)
 	if(user.stat)
 		to_chat(user, "<span class='userdanger'>No... just one more try...</span>")
 		user.gib()

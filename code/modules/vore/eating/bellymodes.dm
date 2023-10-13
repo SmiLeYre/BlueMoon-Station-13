@@ -226,8 +226,9 @@
 				// Deal digestion damage (and feed the pred)
 				if(!(M.status_flags & GODMODE))
 					M.adjustFireLoss(digest_burn)
-					M.adjustToxLoss(2) // something something plasma based acids
-					M.adjustCloneLoss(1) // eventually this'll kill you if you're healing everything else, you nerds.
+					M.adjustToxLoss(2, toxins_type = TOX_OMNI) // something something plasma based acids // BLUEMOON CHANGES - TOX_OMNI для урона системам синтетика
+					if(!HAS_TRAIT(M, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD START - у роботов не должно быть клон-урона
+						M.adjustCloneLoss(1) // eventually this'll kill you if you're healing everything else, you nerds.
 				//Contaminate or gurgle items
 			var/obj/item/T = pick(touchable_items)
 			if(istype(T))
