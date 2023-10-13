@@ -8667,6 +8667,9 @@
 	id = "briglockdown";
 	name = "brig shutters"
 	},
+/obj/structure/desk_bell{
+	pixel_y = -8
+	},
 /turf/open/floor/plasteel/dark,
 /area/security/brig)
 "aEW" = (
@@ -26109,6 +26112,9 @@
 	dir = 8
 	},
 /obj/item/toy/figure/md,
+/obj/structure/desk_bell{
+	pixel_y = -5
+	},
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/central)
 "cfT" = (
@@ -26255,6 +26261,9 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "research_shutters";
 	name = "research shutters"
+	},
+/obj/structure/desk_bell{
+	pixel_x = -10
 	},
 /turf/open/floor/plating,
 /area/science/lab)
@@ -50155,6 +50164,9 @@
 	},
 /obj/effect/landmark/navigate_destination/hop,
 /obj/item/toy/figure/hop,
+/obj/structure/desk_bell{
+	pixel_x = -10
+	},
 /turf/open/floor/plasteel,
 /area/command/heads_quarters/hop)
 "eIP" = (
@@ -61072,6 +61084,11 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/surgery)
+"kgP" = (
+/obj/effect/turf_decal/tile/yellow/half/contrasted,
+/obj/structure/table/glass,
+/turf/open/floor/plasteel,
+/area/engineering/break_room)
 "kgW" = (
 /obj/machinery/power/apc{
 	areastring = "/area/ai_monitored/command/nuke_storage";
@@ -65089,6 +65106,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/hallway/secondary/entry)
+"mdW" = (
+/obj/effect/turf_decal/tile/yellow/half/contrasted,
+/obj/structure/chair/comfy/brown{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/engineering/break_room)
 "med" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -68140,6 +68164,9 @@
 	},
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
+	},
+/obj/structure/desk_bell{
+	pixel_y = -8
 	},
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
@@ -72741,6 +72768,9 @@
 	dir = 4
 	},
 /obj/item/toy/figure/bartender,
+/obj/structure/desk_bell{
+	pixel_x = -5
+	},
 /turf/open/floor/plasteel,
 /area/service/bar)
 "pJd" = (
@@ -77364,6 +77394,9 @@
 	},
 /obj/effect/turf_decal/tile/green{
 	dir = 8
+	},
+/obj/structure/desk_bell{
+	pixel_y = -5
 	},
 /turf/open/floor/plasteel,
 /area/service/hydroponics)
@@ -83708,6 +83741,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
+"uZI" = (
+/obj/effect/turf_decal/tile/yellow/half/contrasted,
+/obj/structure/chair/comfy/brown{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/engineering/break_room)
 "uZM" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -85021,6 +85061,9 @@
 	dir = 1
 	},
 /obj/item/reagent_containers/food/snacks/pie/cream,
+/obj/structure/desk_bell{
+	pixel_x = -5
+	},
 /turf/open/floor/plasteel/cafeteria,
 /area/service/kitchen)
 "vIz" = (
@@ -89690,6 +89733,9 @@
 	pixel_y = 7
 	},
 /obj/item/pen,
+/obj/structure/desk_bell{
+	pixel_y = -8
+	},
 /turf/open/floor/plasteel,
 /area/cargo/office)
 "xOn" = (
@@ -134238,7 +134284,7 @@ atm
 atm
 iYP
 anM
-mmU
+mdW
 iYP
 kmP
 wOW
@@ -134495,7 +134541,7 @@ dgA
 dgI
 dIc
 bfN
-mmU
+kgP
 iYP
 mtJ
 xiO
@@ -134752,7 +134798,7 @@ ack
 gmO
 aRN
 tMN
-mmU
+kgP
 iYP
 sCD
 haK
@@ -135009,7 +135055,7 @@ dgB
 dgK
 fdP
 tMN
-mmU
+uZI
 iYP
 aNC
 brM
