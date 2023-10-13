@@ -208,11 +208,11 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 		return
 	if(user.a_intent == INTENT_HARM)
 		user.visible_message(span_warning("[user] долбится об [src]!"))
-		balloon_alert(user, "СТУК!!!")
+		balloon_alert_to_viewers(user, "СТУК!!!")
 		playsound(src, 'sound/effects/Glassknock.ogg', 100, 1)
 	else if(user.a_intent != INTENT_HARM)
 		user.visible_message("[user] стучится в [src].")
-		balloon_alert(user, "Тук-тук!")
+		balloon_alert_to_viewers(user, "Тук-тук!")
 		playsound(src, 'sound/effects/Glassknock.ogg', 50, 1)
 	add_fingerprint(user)
 
