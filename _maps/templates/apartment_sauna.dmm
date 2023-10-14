@@ -2,6 +2,7 @@
 "aN" = (
 /obj/structure/dresser,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/hilbertshotel/layer3,
+/obj/machinery/light_switch/directional/east,
 /turf/open/floor/carpet/red,
 /area/hilbertshotel)
 "bd" = (
@@ -121,6 +122,13 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
+/turf/open/floor/carpet/royalblue,
+/area/hilbertshotel)
+"gV" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/machinery/light_switch/directional/north,
 /turf/open/floor/carpet/royalblue,
 /area/hilbertshotel)
 "gZ" = (
@@ -394,6 +402,14 @@
 /obj/machinery/light,
 /turf/open/floor/carpet/royalblue,
 /area/hilbertshotel)
+"ut" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/machinery/light_switch/directional/east,
+/turf/open/floor/carpet/royalblue,
+/area/hilbertshotel)
 "uG" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -466,6 +482,14 @@
 /obj/structure/sign/painting/library{
 	pixel_y = -32
 	},
+/turf/open/floor/carpet/royalblue,
+/area/hilbertshotel)
+"xU" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/light_switch/directional/west,
 /turf/open/floor/carpet/royalblue,
 /area/hilbertshotel)
 "zr" = (
@@ -544,6 +568,10 @@
 	light_color = "#e8eaff"
 	},
 /turf/open/pool,
+/area/hilbertshotel)
+"CY" = (
+/obj/machinery/light_switch/directional/east,
+/turf/open/floor/wood,
 /area/hilbertshotel)
 "CZ" = (
 /obj/structure/fireplace{
@@ -997,7 +1025,7 @@ tS
 eb
 hJ
 OE
-vL
+gV
 Zm
 OE
 Sv
@@ -1049,7 +1077,7 @@ OE
 OE
 oR
 zR
-hJ
+CY
 OE
 vL
 Zm
@@ -1090,7 +1118,7 @@ ix
 ND
 fH
 ed
-ed
+xU
 bG
 ed
 bd
@@ -1108,7 +1136,7 @@ Pn
 fy
 QM
 wy
-Pn
+ut
 zr
 Pn
 wy

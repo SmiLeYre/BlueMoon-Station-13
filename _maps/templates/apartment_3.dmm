@@ -1016,7 +1016,6 @@
 "TU" = (
 /obj/structure/table,
 /obj/item/lighter/gold,
-/obj/structure/chair/sofa/right,
 /turf/open/floor/carpet/royalblue,
 /area/hilbertshotel)
 "Uh" = (
