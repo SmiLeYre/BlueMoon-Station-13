@@ -313,12 +313,12 @@
 		else
 			msg += "[t_on] выглядит довольно плотно.\n"
 	switch(disgust)
-		if(DISGUST_LEVEL_GROSS to DISGUST_LEVEL_VERYGROSS)
-			msg += "[t_on] выглядит немного неприятно.\n"
+		if(DISGUST_LEVEL_GROSS to DISGUST_LEVEL_VERYGROSS)	//Не он отвратительный, а ему отвратительно.
+			msg += "[ru_emu(TRUE)] слегка неприятно.\n"	//a bit grossed out
 		if(DISGUST_LEVEL_VERYGROSS to DISGUST_LEVEL_DISGUSTED)
-			msg += "[t_on] выглядит очень неприятно.\n"
+			msg += "[ru_emu(TRUE)] заметно тошно.\n"	//really grossed out
 		if(DISGUST_LEVEL_DISGUSTED to INFINITY)
-			msg += "[t_on] выглядит отвратительно.\n"
+			msg += "[ru_ego(TRUE)] физиономия демонстрирует абсолютное отвращение.\n"	//extremely disgusted
 
 	if(!HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
 		var/apparent_blood_volume = blood_volume
