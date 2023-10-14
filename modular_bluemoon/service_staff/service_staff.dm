@@ -57,3 +57,20 @@
 	belt = /obj/item/pda/entertainer
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/misc/assistantformal
+
+/datum/outfit/job/entertainer/syndicate
+	name = "Syndicate Entertainer"
+	jobtype = /datum/job/entertainer
+
+	//belt = /obj/item/pda/syndicate/no_deto
+
+	ears = /obj/item/radio/headset/headset_srv
+	uniform = /obj/item/clothing/under/rank/civilian/util
+	shoes = /obj/item/clothing/shoes/jackboots
+
+	backpack = /obj/item/storage/backpack/duffelbag/syndie
+	satchel = /obj/item/storage/backpack/duffelbag/syndie
+	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
+	box = /obj/item/storage/box/survival/syndie
+	pda_slot = ITEM_SLOT_BELT
+	backpack_contents = list(/obj/item/syndicate_uplink=1)

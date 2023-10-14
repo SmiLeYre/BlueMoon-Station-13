@@ -85,7 +85,7 @@
 	desc = "A suit designed for safety when handling explosives."
 	icon_state = "bombsuit"
 	item_state = "bombsuit"
-	tail_state = "atmos"
+	tail_state = "bombsuit"
 	w_class = WEIGHT_CLASS_BULKY
 	gas_transfer_coefficient = 0.01
 	permeability_coefficient = 0.01
@@ -110,7 +110,7 @@
 /obj/item/clothing/suit/bomb_suit/security
 	icon_state = "bombsuit_sec"
 	item_state = "bombsuit_sec"
-	tail_state = "bomb"
+	tail_state = "bombsuit_sec"
 	allowed = list(/obj/item/gun/energy, /obj/item/melee/baton, /obj/item/restraints/handcuffs)
 
 /obj/item/clothing/head/bomb_hood/white
@@ -120,7 +120,7 @@
 /obj/item/clothing/suit/bomb_suit/white
 	icon_state = "bombsuit_white"
 	item_state = "bombsuit_white"
-	tail_state = "syndicate-winter"
+	tail_state = "bombsuit_sci"
 
 /*
 * Radiation protection
