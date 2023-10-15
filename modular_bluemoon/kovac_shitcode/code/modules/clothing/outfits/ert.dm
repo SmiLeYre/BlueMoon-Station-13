@@ -3,9 +3,9 @@
 	name = "Firesquad Commander"
 
 	id = /obj/item/card/id/ert
-	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/sec
+	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/sec/fire
 	glasses = /obj/item/clothing/glasses/thermal/eyepatch
-	back = /obj/item/storage/backpack/ert_commander/ert_security
+	back = /obj/item/storage/backpack/rucksack
 	belt = /obj/item/storage/belt/grenade/fire_grenade
 	r_hand = /obj/item/gun/energy/laser/hellgun
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
@@ -29,9 +29,9 @@
 	name = "Firesquad Trooper"
 
 	id = /obj/item/card/id/ert/Security
-	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/sec
+	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/sec/fire
 	glasses = /obj/item/clothing/glasses/thermal/eyepatch
-	back = /obj/item/storage/backpack/ert_commander/ert_security
+	back = /obj/item/storage/backpack/rucksack
 	belt = /obj/item/storage/belt/grenade/fire_grenade
 	l_hand = /obj/item/gun/energy/laser/hellgun
 	r_hand = /obj/item/flamethrower/full/tank/m240

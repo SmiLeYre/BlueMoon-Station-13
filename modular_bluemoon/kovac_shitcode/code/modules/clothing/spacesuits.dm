@@ -2,24 +2,20 @@
 /obj/item/clothing/head/helmet/space/hardsuit/ert/alert/sec/fire
     name = "Firesquad Helmet"
     desc = "Fireproof ERT trooper hardsuit helmet."
-    icon_state = "hardsuit0-warden"
-    item_state = "hardsuit0-warden"
-    icon = 'modular_bluemoon/kovac_shitcode/icons/obj/clothing/hats.dmi'
-    mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/head.dmi'
-    hardsuit_type = "warden"
+    icon_state = "hardsuit0-fire"
+    item_state = "hardsuit0-fire"
+    hardsuit_type = "fire"
     mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+    actions_types = list()
 
 //Хардсьют огненного ертшника
 /obj/item/clothing/suit/space/hardsuit/ert/alert/sec/fire
 	name = "Firesquad Suit"
 	desc = "Fireproof ERT trooper hardsuit."
-	icon_state = "hardsuit0-warden"
-	icon_state = "hardsuit0-warden"
-	icon = 'modular_bluemoon/kovac_shitcode/icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/suit.dmi'
+	icon_state = "ert_security-alert"
+	icon_state = "ert_security-alert"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/alert/sec/fire
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-	hardsuit_type = "warden"
+	hardsuit_type = "alert"
 
 	//Хардсьюты клоун опсов
 //Helmet_ELITE
@@ -28,10 +24,7 @@
 	desc = "HONK HONK HONK Bith ass motherfucker!"
 	icon_state = "hardsuit0-clown"
 	item_state = "hardsuit0-clown"
-	icon = 'modular_bluemoon/kovac_shitcode/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/head.dmi'
 	hardsuit_type = "clown"
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 //Suit_ELITE
 /obj/item/clothing/suit/space/hardsuit/syndi/elite/clown
 	name = "HONK elite hardsuit"
