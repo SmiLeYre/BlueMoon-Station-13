@@ -254,54 +254,54 @@
 	name = "Alchemist's Book"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/paper/book_alch
-	ckeywhitelist = list("Troll_Andrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON22
+	ckeywhitelist = list("trollandrew")
+	subcategory = LOADOUT_SUBCATEGORIES_DON18
 
 /datum/gear/donator/bm/cat_alch
 	name = "Alchemist's Neko Wallet"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/storage/wallet/cat_alch
-	ckeywhitelist = list("Troll_Andrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON22
+	ckeywhitelist = list("trollandrew")
+	subcategory = LOADOUT_SUBCATEGORIES_DON18
 
 /datum/gear/donator/bm/vape
 	name = "Vape"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/mask/vape
-	ckeywhitelist = list("Troll_Andrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON22
+	ckeywhitelist = list("trollandrew")
+	subcategory = LOADOUT_SUBCATEGORIES_DON18
 
 /datum/gear/donator/bm/electropack
 	name = "Electropack"
 	slot = ITEM_SLOT_HANDS
 	path = /obj/item/electropack
-	ckeywhitelist = list("Troll_Andrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON22
+	ckeywhitelist = list("trollandrew")
+	subcategory = LOADOUT_SUBCATEGORIES_DON18
 
 /datum/gear/donator/bm/straight_jacket
 	name = "Straight Jacket"
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/straight_jacket
-	ckeywhitelist = list("Troll_Andrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON22
+	ckeywhitelist = list("trollandrew")
+	subcategory = LOADOUT_SUBCATEGORIES_DON18
 
 /datum/gear/donator/bm/boxing
 	name = "Boxing Gloves"
 	slot = ITEM_SLOT_GLOVES
 	path = /obj/item/clothing/gloves/boxing
-	ckeywhitelist = list("Troll_Andrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON22
+	ckeywhitelist = list("trollandrew")
+	subcategory = LOADOUT_SUBCATEGORIES_DON18
 
 /datum/gear/donator/bm/coconut_bong
 	name = "Coconut Bong"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/bong/coconut
-	ckeywhitelist = list("Troll_Andrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON22
+	ckeywhitelist = list("trollandrew")
+	subcategory = LOADOUT_SUBCATEGORIES_DON18
 
 /datum/gear/donator/bm/armyknife
 	name = "Army Knife"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/armyknife
-	ckeywhitelist = list("Troll_Andrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON22
+	ckeywhitelist = list("trollandrew")
+	subcategory = LOADOUT_SUBCATEGORIES_DON18
