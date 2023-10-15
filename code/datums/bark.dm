@@ -127,6 +127,8 @@
 	name = "Nya"
 	id = "nya"
 	soundpath = 'modular_citadel/sound/voice/nya.ogg'
+	minspeed = 6
+	maxspeed = 12
 
 /datum/bark/moff
 	name = "Moff"
