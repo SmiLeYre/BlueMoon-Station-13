@@ -442,3 +442,9 @@
 	path = /obj/item/toy/plush/sergal/judas/vance
 	ckeywhitelist = list("littlemouse2729")
 	subcategory = LOADOUT_SUBCATEGORIES_DON12
+
+/datum/gear/donator/bm/pet
+	name = "Pet Beacon"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/choice_beacon/pet
+	ckeywhitelist = list("mixalic")

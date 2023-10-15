@@ -19,7 +19,7 @@
 	new_mob_message = "<span class='brass'>The soul vessel emits a jet of steam before its cogwheel smooths out.</span>"
 	dead_message = "<span class='deadsay'>Its cogwheel, scratched and dented, lies motionless.</span>"
 	recharge_message = "<span class='warning'>The soul vessel's internal geis capacitor is still recharging!</span>"
-	possible_names = list("Judge", "Guard", "Servant", "Smith", "Auger")
+	possible_names = list("Судья", "Страж", "Служитель", "Кузнец", "Спираль")
 	autoping = FALSE
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	force_replace_ai_name = TRUE

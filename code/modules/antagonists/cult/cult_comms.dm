@@ -35,7 +35,7 @@
 		span = "cultlarge"
 		title = "Проповедник"
 	else if(!ishuman(user))
-		title = "Construct"
+		title = "Конструкт"
 	my_message = "<span class='[span]'><b>[title] [findtextEx(user.name, user.real_name) ? user.name : "[user.real_name] (as [user.name])"]:</b> [message]</span>"
 	for(var/i in GLOB.player_list)
 		var/mob/M = i
