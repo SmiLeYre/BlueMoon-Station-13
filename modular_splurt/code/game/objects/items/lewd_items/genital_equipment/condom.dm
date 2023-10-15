@@ -74,7 +74,7 @@
 
 /obj/item/genital_equipment/condom/throw_impact(atom/hit_atom)
 	. = ..()
-	if(!.) //if we're not being caught
+	if(!. && reagents.total_volume) //if we're not being caught
 		splat(hit_atom)
 
 /obj/item/genital_equipment/condom/proc/splat(atom/movable/hit_atom)
