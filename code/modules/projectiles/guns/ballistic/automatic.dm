@@ -109,7 +109,6 @@
 	knife_x_offset = 25
 	knife_y_offset = 12
 	automatic_burst_overlay = FALSE
-	fire_delay = 3
 
 /obj/item/gun/ballistic/automatic/wt550/afterattack()
 	. = ..()
