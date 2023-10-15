@@ -106,7 +106,7 @@
 		if(GEN_ALLOW_EGG_STUFFING)
 			TOGGLE_BITFIELD(genital_flags, GENITAL_CAN_STUFF)
 			if(owner)
-				owner.log_message("Allowed egg stuffing in their [src]",LOG_EMOTE)
+				owner.log_message("Allowed toys and egg stuffing in their [src]",LOG_EMOTE)
 
 	if(update && owner && ishuman(owner)) //recast to use update genitals proc
 		var/mob/living/carbon/human/H = owner

@@ -68,7 +68,7 @@
 
 			var/extras = "None"
 			if(CHECK_BITFIELD(genital.genital_flags, GENITAL_CAN_STUFF))
-				extras = "Allows egg stuffing"
+				extras = "Allows toys and egg stuffing"
 
 			genital_entry["extras"] = extras
 			genital_entry["visibility"] = visibility

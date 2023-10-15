@@ -198,7 +198,7 @@ const ModeToIcon = {
   "Hidden by clothes": "tshirt",
   "Hidden by underwear": "low-vision",
   "Always hidden": "eye-slash",
-  "Allows egg stuffing": "egg",
+  "Allows toys and egg stuffing": "egg",
 };
 
 const ToggleSettings = (props, context) => {
