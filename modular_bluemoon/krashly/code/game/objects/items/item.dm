@@ -242,6 +242,29 @@
 	desc = "Покрылась пылью и кажется заполнена странными рунами."
 	icon = 'modular_bluemoon/krashly/icons/obj/alchemist.dmi'
 
+/obj/item/paper/book_alch/AltClick(mob/living/user, obj/item/I)
+	if(!user.canUseTopic(src, BE_CLOSE))
+		return
+	if(istype(src, /obj/item/paper/carbon))
+		var/obj/item/paper/carbon/Carbon = src
+		if(!Carbon.copied)
+			to_chat(user, span_notice("Take off the carbon copy first."))
+			return
+	//Origami Master
+	var/datum/action/innate/origami/origami_action = locate() in user.actions
+	if(origami_action?.active)
+		make_plane(user, I, /obj/item/paperplane/syndicate)
+	else
+		make_plane(user, I, /obj/item/paperplane/book_alch)
+
+/obj/item/paperplane/book_alch
+	name = "Alchemist's Book"
+	desc = "Покрылась пылью и кажется заполнена странными рунами."
+	icon = 'modular_bluemoon/krashly/icons/obj/alchemist.dmi'
+	throw_range = 1
+	throw_speed = 1
+	throwforce = 2
+
 /obj/item/storage/wallet/cat_alch
 	name = "Alchemist's Neko Wallet"
 	desc = "Этот кот просит денег."
