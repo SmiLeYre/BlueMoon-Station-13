@@ -21,6 +21,10 @@
 	else if(type == "Syndicate")
 		announcement += "<h1 class='alert'>Синдикат Объявляет</h1>"
 		GLOB.news_network.SubmitArticle(html_encode(text), "Синдикат Объявляет", "Станционное Объявление", null)
+	else if(type == "AI")
+		announcement += "<h1 class='alert'>Искусственный Интеллект</h1>"
+		if (title && length(title) > 0)
+			announcement += "<br><h2 class='alert'>[html_encode(title)]</h2>"
 
 	else
 		if(!sender_override)

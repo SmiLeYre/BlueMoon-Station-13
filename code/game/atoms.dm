@@ -621,7 +621,7 @@
 	. = list()
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE_MORE, user, .)
 	if(!LAZYLEN(.)) // lol ..length
-		return list("<span class='notice'><i>Вы осматриваете - [src] - получше, но не более не находите ничего интересного...</i></span>")
+		return list("<span class='notice'><i>Вы осматриваете - [src] - получше, но более не находите ничего интересного...</i></span>")
 
 /**
  * Updates the appearence of the icon

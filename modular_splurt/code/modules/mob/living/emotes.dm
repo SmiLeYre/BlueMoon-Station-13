@@ -1077,8 +1077,8 @@
 /datum/emote/living/audio/untitledgoose
 	key = "goosehonk"
 	key_third_person = "honks"
-	message = "honks!"
-	message_mime = "looks like a duck from hell!"
+	message = "хонкает!"
+	message_mime = "выглядит как утка, сошедшая из ада!"
 	emote_sound = 'modular_splurt/sound/voice/goosehonk/sfx_goose_honk_b_01.ogg'
 	emote_cooldown = 0.8 SECONDS
 
@@ -1089,8 +1089,8 @@
 /datum/emote/living/audio/untitledgooseB
 	key = "goosehonkb"
 	key_third_person = "honks differently"
-	message = "honks differently!"
-	message_mime = "looks like a duck from hell!"
+	message = "хонкает по-другому!"
+	message_mime = "выглядит как утка, сошедшая из ада!"
 	emote_sound = 'modular_splurt/sound/voice/goosehonk/sfx_goose_honk_b_01.ogg'
 	emote_cooldown = 0.8 SECONDS
 
@@ -1127,8 +1127,8 @@
 /datum/emote/living/audio/moan2
 	key = "moan2"
 	key_third_person = "moans2"
-	message = "moans somewhat manly!"
-	message_mime = "acts out a rather manly moan!"
+	message = "стонет!"
+	message_mime = "делает вид, что издает стон!"
 	emote_sound = 'modular_splurt/sound/voice/gachi/moan1.ogg'
 	emote_cooldown = 2.7 SECONDS // Uses longest sound's time.
 
@@ -1139,8 +1139,8 @@
 /datum/emote/living/audio/woop
 	key = "woop"
 	key_third_person = "woops"
-	message = "woops!"
-	message_mime = "silently woops!"
+	message = "выпускает из своего рта странный звук!"
+	message_mime = "делает вид, что выпускает из своего рта странный звук!"
 	emote_sound = 'modular_splurt/sound/voice/gachi/woop.ogg'
 	emote_volume = 35
 	emote_cooldown = 0.4 SECONDS
@@ -1155,15 +1155,15 @@
 /datum/emote/living/audio/pardon
 	key = "sorry"
 	key_third_person = "sorrys"
-	message = "exclaims, \"Oh shit, I am sorry!\""
+	message = "приносит свои глубочайшие извинения"
 	emote_sound = 'modular_splurt/sound/voice/gachi/sorry.ogg'
 	emote_cooldown = 1.3 SECONDS
 
 /datum/emote/living/audio/fock
 	key = "fuckyou"
 	key_third_person = "fuckyous"
-	message = "curses someone!"
-	message_mime = "silently curses someone!"
+	message = "посылает кого-то!"
+	message_mime = "молча посылает кого-то!"
 	emote_sound = 'modular_splurt/sound/voice/gachi/fockyou1.ogg'
 	emote_cooldown = 1.18 SECONDS // Uses longest sound's time.
 
@@ -1174,24 +1174,24 @@
 /datum/emote/living/audio/letsgo
 	key = "go"
 	key_third_person = "goes"
-	message = "yells, \"Come on, lets go!\""
-	message_mime = "motions moving forward!"
+	message = "кричит: \"Давай, вперёд!\""
+	message_mime = "молча призывает двигаться вперёд!"
 	emote_sound = 'modular_splurt/sound/voice/gachi/go.ogg'
 	emote_cooldown = 1.6 SECONDS
 
 /datum/emote/living/audio/chuckle2
 	key = "chuckle2"
 	key_third_person = "chuckles2"
-	message = "chuckles."
-	message_mime = "chuckles silently."
+	message = "хихикает."
+	message_mime = "делает вид, что хихикает."
 	emote_sound = 'modular_splurt/sound/voice/gachi/chuckle.ogg'
 	emote_cooldown = 1.01 SECONDS
 
 /datum/emote/living/audio/boss
 	key = "boss"
 	key_third_person = "boss"
-	message = "seeks the boss of this place!"
-	message_mime = "stares at the potential boss of this place!"
+	message = "ищи босса этого места!"
+	message_mime = "высматривает босса этого места!"
 	emote_sound = 'modular_splurt/sound/voice/gachi/boss.ogg'
 	emote_cooldown = 1.68 SECONDS
 
@@ -1207,8 +1207,8 @@
 /datum/emote/living/audio/ah
 	key = "ah"
 	key_third_person = "ahs"
-	message = "ahs!"
-	message_mime = "ahs silently!"
+	message = "ахает!"
+	message_mime = "тихо ахает!"
 	emote_sound = 'modular_splurt/sound/voice/gachi/ah.ogg'
 	emote_cooldown = 0.67 SECONDS
 	emote_volume = 25
@@ -1216,8 +1216,8 @@
 /datum/emote/living/audio/boolets
 	key = "ammo"
 	key_third_person = "ammos"
-	message = "is requesting ammo!"
-	message_mime = "seem to ask for ammo!"
+	message = "запрашивает боеприпасы!"
+	message_mime = "похоже, хочет попросить боеприпасов!"
 	emote_sound = 'modular_splurt/sound/voice/gachi/boolets.ogg'
 	emote_cooldown = 1.1 SECONDS // Uses longest sound's time.
 	emote_volume = 10
@@ -1229,8 +1229,8 @@
 /datum/emote/living/audio/wepon
 	key = "wepon"
 	key_third_person = "wepons"
-	message = "is requesting bigger weapons!"
-	message_mime = "seem to ask for weapons!"
+	message = "запрашивает большие пушки!"
+	message_mime = "похоже, хочет попросить пушек!"
 	emote_sound = 'modular_splurt/sound/voice/gachi/wepons.ogg'
 	emote_cooldown = 1.07 SECONDS
 	emote_volume = 10

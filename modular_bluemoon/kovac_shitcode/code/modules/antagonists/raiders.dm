@@ -176,6 +176,8 @@
 	suit = /obj/item/clothing/suit/armor/inteq/honorable_vanguard
 	head = /obj/item/clothing/head/HoS/inteq_honorable_vanguard
 	uniform = /obj/item/clothing/under/inteq_honorable_vanguard
+	r_hand = /obj/item/gun/ballistic/revolver/inteq
+	r_pocket = /obj/item/ammo_box/a357
 
 ////// Shuttle (Krashly) ///////////
 

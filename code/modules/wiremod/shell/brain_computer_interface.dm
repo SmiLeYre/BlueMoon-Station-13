@@ -216,7 +216,7 @@
 		if (resolved_owner.stat == DEAD)
 			return
 
-		to_chat(resolved_owner, "<i>You hear a strange, robotic voice in your head...</i> \"[span_robot("[html_encode(sent_message)]")]\"")
+		to_chat(resolved_owner, "<i>Вы слышите странный механический голос в голове...</i> \"[span_robot("[html_encode(sent_message)]")]\"")
 
 /obj/item/circuit_component/bci_core/proc/on_organ_implanted(datum/source, mob/living/carbon/owner)
 	SIGNAL_HANDLER

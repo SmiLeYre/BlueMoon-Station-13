@@ -385,7 +385,7 @@ GLOBAL_LIST_INIT(blacklisted_malf_machines, typecacheof(list(
 /obj/machinery/doomsday_device/process()
 	var/turf/T = get_turf(src)
 	if(!T || !is_station_level(T.z))
-		minor_announce("DOOMSDAY DEVICE OUT OF STATION RANGE, ABORTING", "ERROR ER0RR $R0RRO$!R41.%%!!(%$^^__+ @#F0E4", TRUE)
+		minor_announce("УСТРОЙСТВО СУДНОГО ДНЯ НАХОДИТСЯ ВНЕ СТАНЦИИ, ОТМЕНА", "ОШИБКА 0ШИБК0 $Ш0ШШO$!R41.%%!!(%$^^__+ @#F0E4", TRUE)
 		SSshuttle.clearHostileEnvironment(src)
 		qdel(src)
 		return
@@ -397,7 +397,7 @@ GLOBAL_LIST_INIT(blacklisted_malf_machines, typecacheof(list(
 		timing = FALSE
 		detonate()
 	else if(world.time >= next_announce)
-		minor_announce("[sec_left] SECONDS UNTIL DOOMSDAY DEVICE ACTIVATION!", "ERROR ER0RR $R0RRO$!R41.%%!!(%$^^__+ @#F0E4", TRUE)
+		minor_announce("[sec_left] СЕКУНД ДО АКТИВАЦИИ УСТРОЙСТВА СУДНОГО ДНЯ!", "ОШИБКА 0ШИБК0 $Ш0ШШO$!R41.%%!!(%$^^__+ @#F0E4", TRUE)
 		next_announce += DOOMSDAY_ANNOUNCE_INTERVAL
 
 /obj/machinery/doomsday_device/proc/detonate()
@@ -411,9 +411,9 @@ GLOBAL_LIST_INIT(blacklisted_malf_machines, typecacheof(list(
 			continue
 		if(issilicon(L))
 			continue
-		to_chat(L, "<span class='userdanger'>The blast wave from [src] tears you atom from atom!</span>")
+		to_chat(L, "<span class='userdanger'>Взрывная волна от [src] расщепляет вас на атомы!</span>")
 		L.dust()
-	to_chat(world, "<B>The AI cleansed the station of life with the doomsday device!</B>")
+	to_chat(world, "<B>Искусственный интеллект очистил станцию с помощью устройства судного дня!</B>")
 	SSticker.force_ending = 1
 
 

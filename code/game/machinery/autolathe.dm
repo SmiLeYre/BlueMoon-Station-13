@@ -223,6 +223,7 @@
 				use_power(power)
 				icon_state = "autolathe_n"
 				var/time = is_stack ? 32 : (32 * coeff * multiplier) ** 0.8
+				playsound(src, 'sound/machines/prod.ogg', 50)
 				addtimer(CALLBACK(src, .proc/make_item, power, materials_used, custom_materials, multiplier, coeff, is_stack, usr), time)
 				. = TRUE
 			else
@@ -236,7 +237,7 @@
 
 /obj/machinery/autolathe/attackby(obj/item/O, mob/living/user, params)
 	if(busy)
-		balloon_alert(user, "it's busy!")
+		balloon_alert(user, "Занято!")
 		return TRUE
 
 	if(user.a_intent == INTENT_HARM) //so we can hit the machine
@@ -247,7 +248,7 @@
 
 	if(istype(O, /obj/item/disk/design_disk))
 		user.visible_message(span_notice("[user] begins to load \the [O] in \the [src]..."),
-			balloon_alert(user, "uploading design..."),
+			balloon_alert(user, "Загрузка схемы..."),
 			span_hear("You hear the chatter of a floppy drive."))
 		busy = TRUE
 		if(do_after(user, 14.4, target = src))
@@ -266,7 +267,7 @@
 		return TRUE
 
 	if(panel_open)
-		balloon_alert(user, "close the panel first!")
+		balloon_alert(user, "Сначала нужно закрыть панель!")
 		return FALSE
 
 	return ..()
@@ -274,7 +275,7 @@
 /obj/machinery/autolathe/screwdriver_act(mob/living/user, obj/item/I)
 	. = ..()
 	if(busy)
-		balloon_alert(user, "it's busy!")
+		balloon_alert(user, "Занято!")
 		return STOP_ATTACK_PROC_CHAIN
 
 	if(default_deconstruction_screwdriver(user, "autolathe_t", "autolathe", I))
@@ -283,7 +284,7 @@
 /obj/machinery/autolathe/crowbar_act(mob/living/user, obj/item/I)
 	. = ..()
 	if(busy)
-		balloon_alert(user, "it's busy!")
+		balloon_alert(user, "Занято!")
 		return STOP_ATTACK_PROC_CHAIN
 
 	if(default_deconstruction_crowbar(I))
@@ -292,7 +293,7 @@
 /obj/machinery/autolathe/multitool_act(mob/living/user, obj/item/I)
 	. = ..()
 	if(busy)
-		balloon_alert(user, "it's busy!")
+		balloon_alert(user, "Занято!")
 		return STOP_ATTACK_PROC_CHAIN
 
 	if(panel_open)
@@ -302,7 +303,7 @@
 /obj/machinery/autolathe/wirecutter_act(mob/living/user, obj/item/I)
 	. = ..()
 	if(busy)
-		balloon_alert(user, "it's busy!")
+		balloon_alert(user, "Занято!")
 		return STOP_ATTACK_PROC_CHAIN
 
 	if(panel_open)
@@ -345,6 +346,7 @@
 
 	icon_state = "autolathe"
 	busy = FALSE
+	playsound(src, 'sound/machines/prod_done.ogg', 50)
 
 /obj/machinery/autolathe/RefreshParts()
 	var/mat_capacity = 0

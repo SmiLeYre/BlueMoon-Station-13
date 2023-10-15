@@ -110,7 +110,7 @@ This file contains the cult dagger and rune list code
 		if(!(A in summon_objective.summon_spots))  // Check again to make sure they didn't move
 			to_chat(user, "<span class='cultlarge'>The Geometer can only be summoned where the veil is weak - in [english_list(summon_objective.summon_spots)]!</span>")
 			return
-		priority_announce("Аватар Эльдрического Бога вызывается со стороны [user] где-то в районе [A.map_name] из неизвестного Измерения. Нарушьте течение ритуала любой ценой!","Центральное Командование, Отдел Работы с Реальностью", "spanomalies")
+		priority_announce("Аватар Эльдрического Бога вызывается [user] из неизвестного измерения где-то в районе локации: [A.map_name]. Нарушьте ход ритуала любой ценой! ЛЮБОЙ!","Центральное Командование, Отдел Работы с Реальностью", "spanomalies")
 		for(var/B in spiral_range_turfs(1, user, 1))
 			var/obj/structure/emergency_shield/sanguine/N = new(B)
 			shields += N

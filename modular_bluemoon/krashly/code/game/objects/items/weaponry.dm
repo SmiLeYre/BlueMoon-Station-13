@@ -191,3 +191,7 @@
 					/obj/item/ammo_box/magazine/ak12/r,
 					/obj/item/ammo_box/magazine/ak12/r)
 	crate_name = "pink ak12 rifle crate"
+
+
+/obj/item/gun/ballistic/revolver/inteq
+	icon_state = "revolver_inteq"
