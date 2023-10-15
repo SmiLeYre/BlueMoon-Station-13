@@ -69,7 +69,7 @@
 		var/mob/living/carbon/human/traitor_mob = owner.current
 		if(traitor_mob && istype(traitor_mob))
 			if(!silent)
-				to_chat(traitor_mob, "Your training has allowed you to overcome your clownish nature, allowing you to wield weapons without harming yourself.")
+				to_chat(traitor_mob, "Тренировки позволили вам отринуть клоунскую натуру, теперь вы можете использовать оружие без риска ранить себя.")
 			traitor_mob.dna.remove_mutation(CLOWNMUT)
 	update_overthrow_icons_added()
 

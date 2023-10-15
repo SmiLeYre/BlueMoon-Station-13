@@ -147,7 +147,7 @@
 		var/mob/living/carbon/human/H = M
 		if(istype(H))
 			if(!silent)
-				to_chat(H, "Your training has allowed you to overcome your clownish nature, allowing you to wield weapons without harming yourself.")
+				to_chat(H, "Тренировки позволили вам отринуть клоунскую натуру, теперь вы можете использовать оружие без риска ранить себя.")
 			H.dna.remove_mutation(CLOWNMUT)
 	RegisterSignal(M, COMSIG_MOVABLE_HEAR, .proc/handle_hearing)
 

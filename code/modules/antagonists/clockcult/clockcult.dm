@@ -98,7 +98,7 @@
 	if(!istype(H))
 		return
 	if (owner.assigned_role == "Clown")
-		to_chat(owner, "Your training has allowed you to overcome your clownish nature, allowing you to wield weapons without harming yourself.")
+		to_chat(owner, "Тренировки позволили вам отринуть клоунскую натуру, теперь вы можете использовать оружие без риска ранить себя.")
 		H.dna.remove_mutation(CLOWNMUT)
 	. += cult_give_item(/obj/item/clockwork/slab, H)
 	. += cult_give_item(/obj/item/clockwork/replica_fabricator, H)

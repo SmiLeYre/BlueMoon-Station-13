@@ -18,7 +18,7 @@
 	/// What message should the player receive when they are being demoted, and the revolution has won?
 	var/victory_message = "The revolution has overpowered the command staff! Viva la revolution! Execute any head of staff and security should you find them alive."
 	soft_antag = FALSE // BLUEMOON ADDITION
-	var/rev_cooldown = 0
+	//var/rev_cooldown = 0
 
 /datum/antagonist/rev/can_be_owned(datum/mind/new_owner)
 	. = ..()
@@ -310,7 +310,7 @@
 	var/max_headrevs = 3
 	var/list/ex_headrevs = list() // Dynamic removes revs on loss, used to keep a list for the roundend report.
 	var/list/ex_revs = list()
-	var/list/reasons = list()
+	//var/list/reasons = list()
 
 /datum/team/revolution/proc/update_objectives(initial = FALSE)
 	var/untracked_heads = SSjob.get_all_heads()
@@ -554,69 +554,67 @@
 
 ///////////////////////////////////////////////////////////////////////
 
-/mob/proc/RevConvert()
-	set name = "Recruit a Revolutionary"
-	set category = "Revolution"
-
-	if(!is_head_revolutionary(src))
-		verbs -= /mob/proc/RevConvert
-		return FALSE
-
-	var/list/Possible = list()
-	for(var/mob/living/carbon/human/P in oview(src))
-		if(stat == CONSCIOUS && P.client && P.mind && (!is_revolutionary(P) || !is_head_revolutionary(P)))
-			Possible += P
-	if(!Possible.len)
-		to_chat(src, "<span class='warning'>Рядом нет никого, кто мог бы стать революционером.</span>")
-		return
-
-	var/mob/living/carbon/human/M = input("Выберите, кого хотите завербовать.", "Viva la revolution!", null) as mob in Possible
-	if(!is_revolutionary(src))
-		verbs -= /mob/proc/RevConvert
-		return FALSE
-
-	if(is_head_revolutionary(M) || is_revolutionary(M))
-		to_chat(src, "<span class='bold warning'>[M] уже находится в рядах мятежников!</span>")
-	else if(HAS_TRAIT(M, TRAIT_MINDSHIELD))
-		to_chat(src, "<span class='bold warning'>[M] не подвергается вербовке из-за импланта защиты разума!</span>")
-	else
-		var/datum/antagonist/rev/head/lead = mind.has_antag_datum(/datum/antagonist/rev/head)
-		if(world.time < lead.rev_cooldown)
-			to_chat(src, "<span class='warning'>Подождите пять секунд перед новой попыткой вербовки.</span>")
-			return
-		to_chat(src, "<span class='warning'>Вербуем персонажа [M]...</span>")
-		log_admin("[key_name(src)]) attempted to convert [M].")
-		message_admins("<span class='warning'>[key_name_admin(src)] attempted to convert [M]. [ADMIN_JMP(src)]</span>")
-		var/datum/team/revolution/rev = lead.get_team()
-		rev.convert_revolutionare_by_invite(M, src)
-
-/datum/team/revolution/proc/convert_revolutionare_by_invite(mob/possible_rev, mob/inviter)
-	if(!inviter)
-		return FALSE
-	var/datum/antagonist/rev/head/lead = inviter.mind.has_antag_datum(/datum/antagonist/rev/head)
-	var/choice = tgui_alert(possible_rev, "Вы желаете присоединиться к революции?", "Viva la revolution!", list("Нет","Да"))
-	if(choice == "Да")
-		if(lead.add_revolutionary(possible_rev.mind))
-			to_chat(inviter, "<span class='bold_notice'>[possible_rev] присоединяется к революции!</span>")
-			to_chat(possible_rev, "<span class='notice'>Вы присоединяетесь к революции!</span>")
-			return TRUE
-		else
-			to_chat(inviter, "<span class='bold warning'>[possible_rev] не подвергается конвертации!</span>")
-			return FALSE
-	to_chat(possible_rev, "<span class='warning'>Вы отвергаете крамольные идеи о восстании!</span>")
-	to_chat(inviter, "<span class='bold warning'>[possible_rev] не поддерживает революцию!</span>")
-	lead.rev_cooldown = world.time + 5 SECONDS
-	return FALSE
-
-/datum/antagonist/rev/head/on_gain()
-	. = ..()
-	add_verb(owner.current, /mob/proc/RevConvert)
-
-/datum/antagonist/rev/head/on_removal()
-	remove_verb(owner.current, /mob/proc/RevConvert)
-	. = ..()
-
-
+///mob/proc/RevConvert()
+//	set name = "Recruit a Revolutionary"
+//	set category = "Revolution"
+//
+//	if(!is_head_revolutionary(src))
+//		verbs -= /mob/proc/RevConvert
+//		return FALSE
+//
+//	var/list/Possible = list()
+//	for(var/mob/living/carbon/human/P in oview(src))
+//		if(stat == CONSCIOUS && P.client && P.mind && (!is_revolutionary(P) || !is_head_revolutionary(P)))
+//			Possible += P
+//	if(!Possible.len)
+//		to_chat(src, "<span class='warning'>Рядом нет никого, кто мог бы стать революционером.</span>")
+//		return
+//
+//	var/mob/living/carbon/human/M = input("Выберите, кого хотите завербовать.", "Viva la revolution!", null) as mob in Possible
+//	if(!is_revolutionary(src))
+//		verbs -= /mob/proc/RevConvert
+//		return FALSE
+//
+//	if(is_head_revolutionary(M) || is_revolutionary(M))
+//		to_chat(src, "<span class='bold warning'>[M] уже находится в рядах мятежников!</span>")
+//	else if(HAS_TRAIT(M, TRAIT_MINDSHIELD))
+//		to_chat(src, "<span class='bold warning'>[M] не подвергается вербовке из-за импланта защиты разума!</span>")
+//	else
+//		var/datum/antagonist/rev/head/lead = mind.has_antag_datum(/datum/antagonist/rev/head)
+//		if(world.time < lead.rev_cooldown)
+//			to_chat(src, "<span class='warning'>Подождите пять секунд перед новой попыткой вербовки.</span>")
+//			return
+//		to_chat(src, "<span class='warning'>Вербуем персонажа [M]...</span>")
+//		log_admin("[key_name(src)]) attempted to convert [M].")
+//		message_admins("<span class='warning'>[key_name_admin(src)] attempted to convert [M]. [ADMIN_JMP(src)]</span>")
+//		var/datum/team/revolution/rev = lead.get_team()
+//		rev.convert_revolutionare_by_invite(M, src)
+//
+///datum/team/revolution/proc/convert_revolutionare_by_invite(mob/possible_rev, mob/inviter)
+//	if(!inviter)
+//		return FALSE
+//	var/datum/antagonist/rev/head/lead = inviter.mind.has_antag_datum(/datum/antagonist/rev/head)
+//	var/choice = tgui_alert(possible_rev, "Вы желаете присоединиться к революции?", "Viva la revolution!", list("Нет","Да"))
+//	if(choice == "Да")
+//		if(lead.add_revolutionary(possible_rev.mind))
+//			to_chat(inviter, "<span class='bold_notice'>[possible_rev] присоединяется к революции!</span>")
+//			to_chat(possible_rev, "<span class='notice'>Вы присоединяетесь к революции!</span>")
+//			return TRUE
+//		else
+//			to_chat(inviter, "<span class='bold warning'>[possible_rev] не подвергается конвертации!</span>")
+//			return FALSE
+//	to_chat(possible_rev, "<span class='warning'>Вы отвергаете крамольные идеи о восстании!</span>")
+//	to_chat(inviter, "<span class='bold warning'>[possible_rev] не поддерживает революцию!</span>")
+//	lead.rev_cooldown = world.time + 5 SECONDS
+//	return FALSE
+//
+///datum/antagonist/rev/head/on_gain()
+//	. = ..()
+//	add_verb(owner.current, /mob/proc/RevConvert)
+//
+///datum/antagonist/rev/head/on_removal()
+//	remove_verb(owner.current, /mob/proc/RevConvert)
+//	. = ..()
 
 #undef DECONVERTER_STATION_WIN
 #undef DECONVERTER_REVS_WIN
