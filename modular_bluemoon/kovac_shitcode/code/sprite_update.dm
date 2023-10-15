@@ -651,3 +651,23 @@
 	icon_state = "vance"
 	item_state = "vance"
 	squeak_override = list('sound/items/toysqueak1.ogg' = 3, 'sound/items/toysqueak2.ogg' = 3, 'sound/items/toysqueak3.ogg' = 3)
+
+
+///////////////////
+
+
+/obj/item/storage/backpack/ert_commander
+	name = "Tactical Backpack"
+	icon_state = "ert_commander"
+
+/obj/item/storage/backpack/ert_commander/ert_security
+	icon_state = "ert_security"
+
+/obj/item/storage/backpack/ert_commander/ert_medical
+	icon_state = "ert_medical"
+
+/obj/item/storage/backpack/ert_commander/ert_engineering
+	icon_state = "ert_engineering"
+
+/obj/item/storage/backpack/ert_commander/ert_janitor
+	icon_state = "ert_janitor"

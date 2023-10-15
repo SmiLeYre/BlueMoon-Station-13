@@ -3,9 +3,9 @@
 	name = "Firesquad Commander"
 
 	id = /obj/item/card/id/ert
-	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/sec/fire
+	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/sec
 	glasses = /obj/item/clothing/glasses/thermal/eyepatch
-	back = /obj/item/storage/backpack/security
+	back = /obj/item/storage/backpack/ert_commander/ert_security
 	belt = /obj/item/storage/belt/grenade/fire_grenade
 	r_hand = /obj/item/gun/energy/laser/hellgun
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
@@ -29,9 +29,9 @@
 	name = "Firesquad Trooper"
 
 	id = /obj/item/card/id/ert/Security
-	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/sec/fire
+	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/sec
 	glasses = /obj/item/clothing/glasses/thermal/eyepatch
-	back = /obj/item/storage/backpack/security
+	back = /obj/item/storage/backpack/ert_commander/ert_security
 	belt = /obj/item/storage/belt/grenade/fire_grenade
 	l_hand = /obj/item/gun/energy/laser/hellgun
 	r_hand = /obj/item/flamethrower/full/tank/m240
@@ -58,7 +58,7 @@
 	id = /obj/item/card/id/ert
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
-	back = /obj/item/storage/backpack/captain
+	back = /obj/item/storage/backpack/ert_commander
 	belt = /obj/item/storage/belt/grenade/full
 	r_hand = /obj/item/gun/ballistic/automatic/shotgun/bulldog/unrestricted
 	//l_hand = /obj/item/melee/powerfist
@@ -86,7 +86,7 @@
 	id = /obj/item/card/id/ert/Security
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/sec
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
-	back = /obj/item/storage/backpack/security
+	back = /obj/item/storage/backpack/ert_commander/ert_security
 	belt = /obj/item/storage/belt/grenade/full
 	r_hand = /obj/item/gun/ballistic/automatic/ar
 	l_hand = /obj/item/melee/powerfist
@@ -111,7 +111,7 @@
 	id = /obj/item/card/id/ert/Security
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/sec
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
-	back = /obj/item/storage/backpack/security
+	back = /obj/item/storage/backpack/ert_commander/ert_security
 	belt = /obj/item/storage/belt/security/full
 	r_hand = /obj/item/gun/ballistic/automatic/l6_saw/unrestricted
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\

@@ -34,7 +34,7 @@
 	mask = /obj/item/clothing/mask/gas/sechailer
 	suit = /obj/item/clothing/suit/armor/hos/command
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
-	back = /obj/item/storage/backpack/captain
+	back = /obj/item/storage/backpack/ert_commander
 	belt = /obj/item/storage/belt/security/full
 	r_hand = /obj/item/gun/energy/e_gun/advtaser
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
@@ -47,7 +47,7 @@
 	id = /obj/item/card/id/ert
 	suit = /obj/item/clothing/suit/space/hardsuit/ert
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
-	back = /obj/item/storage/backpack/captain
+	back = /obj/item/storage/backpack/ert_commander
 	belt = /obj/item/storage/belt/security/full
 	r_hand = /obj/item/gun/ballistic/automatic/wt550
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
@@ -94,7 +94,7 @@
 	suit = /obj/item/clothing/suit/armor/hos/security
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	belt = /obj/item/storage/belt/security/full
-	back = /obj/item/storage/backpack/security
+	back = /obj/item/storage/backpack/ert_commander/ert_security
 	r_hand = /obj/item/gun/energy/e_gun/advtaser
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/storage/firstaid/tactical/slaver=1,
@@ -109,7 +109,7 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/sec
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	belt = /obj/item/storage/belt/security/full
-	back = /obj/item/storage/backpack/security
+	back = /obj/item/storage/backpack/ert_commander/ert_security
 	r_hand = /obj/item/gun/ballistic/automatic/wt550
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/storage/box/handcuffs=1,\
@@ -158,7 +158,7 @@
 	mask = /obj/item/clothing/mask/gas/sechailer
 	suit = /obj/item/clothing/suit/armor/hos/medical
 	glasses = /obj/item/clothing/glasses/hud/health
-	back = /obj/item/storage/backpack/satchel/med
+	back = /obj/item/storage/backpack/ert_commander/ert_medical
 	belt = /obj/item/storage/belt/medical/surgery_belt_adv/cmo
 	l_hand = /obj/item/storage/firstaid/regular
 	r_hand = /obj/item/gun/energy/e_gun/advtaser
@@ -174,7 +174,7 @@
 	mask = /obj/item/clothing/mask/gas/sechailer
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/med
 	glasses = /obj/item/clothing/glasses/hud/health
-	back = /obj/item/storage/backpack/satchel/med
+	back = /obj/item/storage/backpack/ert_commander/ert_medical
 	belt = /obj/item/storage/belt/medical/surgery_belt_adv/cmo
 	l_hand = /obj/item/storage/firstaid/regular
 	r_hand = /obj/item/gun/ballistic/automatic/wt550
@@ -226,7 +226,7 @@
 	mask = /obj/item/clothing/mask/gas/sechailer
 	suit = /obj/item/clothing/suit/armor/hos/engineer
 	glasses =  /obj/item/clothing/glasses/meson/engine
-	back = /obj/item/storage/backpack/industrial
+	back = /obj/item/storage/backpack/ert_commander/ert_engineering
 	belt = /obj/item/storage/belt/utility/full
 	r_hand = /obj/item/gun/energy/e_gun/advtaser
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
@@ -242,7 +242,7 @@
 	id = /obj/item/card/id/ert/Engineer
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/engi
 	glasses =  /obj/item/clothing/glasses/meson/engine
-	back = /obj/item/storage/backpack/industrial
+	back = /obj/item/storage/backpack/ert_commander/ert_engineering
 	belt = /obj/item/storage/belt/utility/full
 	r_hand = /obj/item/gun/ballistic/automatic/wt550
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
@@ -293,7 +293,7 @@
 	head = /obj/item/clothing/head/helmet/swat/janitor
 	suit = /obj/item/clothing/suit/armor/hos/janitor
 	glasses = /obj/item/clothing/glasses/night/syndicate
-	back = /obj/item/storage/backpack/captain
+	back = /obj/item/storage/backpack/ert_commander/ert_janitor
 	belt = /obj/item/storage/belt/janitor/ert_maid
 	r_hand = /obj/item/gun/energy/e_gun/advtaser
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
