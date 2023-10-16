@@ -1398,6 +1398,7 @@
 	icon_state = "hawaiiblack"
 	item_state = "hawaiiblack"
 	togglename = "buttons"
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/suit/toggle/jacket/hawaiian/fuch
 	name = "fuch hawaiian shirt"
