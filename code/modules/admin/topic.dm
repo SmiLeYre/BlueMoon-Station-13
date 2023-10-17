@@ -1450,6 +1450,7 @@
 			return tgui_alert(usr, "The game has already started.")
 
 		dynamic_mode_options(usr)
+	/* BLUEMOON REMOVAL START - мы используем GLOB.round_type
 	else if(href_list["f_dynamic_force_extended"])
 		if(!check_rights(R_ADMIN))
 			return
@@ -1458,7 +1459,7 @@
 		log_admin("[key_name(usr)] set 'forced_extended' to [GLOB.dynamic_forced_extended].")
 		message_admins("[key_name(usr)] set 'forced_extended' to [GLOB.dynamic_forced_extended].")
 		dynamic_mode_options(usr)
-
+	/ BLUEMOON REMOVAL END */
 	else if(href_list["f_dynamic_no_stacking"])
 		if(!check_rights(R_ADMIN))
 			return
@@ -1468,22 +1469,17 @@
 		message_admins("[key_name(usr)] set 'no_stacking' to [GLOB.dynamic_no_stacking].")
 		dynamic_mode_options(usr)
 //BLUEMOON ADDITION START
-	else if(href_list["f_teambased_dynamic"])
+	else if(href_list["f_round_type"])
 		if(!check_rights(R_ADMIN))
 			return
 
-		GLOB.teambased_dynamic = !GLOB.teambased_dynamic
-		log_admin("[key_name(usr)] set 'team based dynamic' to [GLOB.teambased_dynamic].")
-		message_admins("[key_name(usr)] set 'team based dynamic' to [GLOB.teambased_dynamic].")
-		dynamic_mode_options(usr)
+		var/chosen_type = input("Выберите вариацию динамика","Round Type Choose") as null|anything in list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT, ROUNDTYPE_EXTENDED)
+		GLOB.round_type = chosen_type
+		GLOB.master_mode = chosen_type
 
-	else if(href_list["f_extended_dynamic"])
-		if(!check_rights(R_ADMIN))
-			return
+		log_admin("[key_name(usr)] изменяет режим игры на [chosen_type].")
+		to_chat(world, "<span class='adminnotice'><b>Выставлен режим [GLOB.master_mode].</b></span>")
 
-		GLOB.dynamic_extended = !GLOB.dynamic_extended
-		log_admin("[key_name(usr)] set 'extended dynamic' to [GLOB.dynamic_extended].")
-		message_admins("[key_name(usr)] set 'extended dynamic' to [GLOB.dynamic_extended].")
 		dynamic_mode_options(usr)
 //BLUEMOON ADDITION END
 	else if(href_list["f_dynamic_stacking_limit"])

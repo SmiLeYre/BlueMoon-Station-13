@@ -19,8 +19,6 @@ GLOBAL_LIST_EMPTY(dynamic_forced_roundstart_ruleset)
 // Forced threat level, setting this to zero or higher forces the roundstart threat to the value.
 GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 // BLUEMOON ADD
-// Командный динамик
-GLOBAL_VAR_INIT(teambased_dynamic, FALSE)
 // Очки для уровней угрозы от различных вариаций динамика
 // Значения изменяются при выборе вариаций динамика
 GLOBAL_VAR_INIT(dynamic_type_threat_min, 40)
@@ -175,9 +173,13 @@ GLOBAL_VAR_INIT(round_type, ROUNDTYPE_DYNAMIC_MEDIUM)
 	dat += "Parameters: centre = [threat_curve_centre] ; width = [threat_curve_width].<br/>"
 	dat += "Split parameters: centre = [roundstart_split_curve_centre] ; width = [roundstart_split_curve_width].<br/>"
 	dat += "<i>On average, <b>[peaceful_percentage]</b>% of the rounds are more peaceful.</i><br/>"
+	/* BLUEMOON CHANGES START - мы используем GLOB.round_type
 	dat += "Forced extended: <a href='?src=\ref[src];[HrefToken()];forced_extended=1'><b>[GLOB.dynamic_forced_extended ? "On" : "Off"]</b></a><br/>"
 	dat += "Dynamic extended: <a href='?src=\ref[src];[HrefToken()];extended=1'><b>[GLOB.dynamic_extended ? "On" : "Off"]</b></a><br/>"
-	dat += "Team Based Dynamic: <a href='?src=\ref[src];[HrefToken()];teambased=1'><b>[GLOB.teambased_dynamic ? "On" : "Off"]</b></a><br/>"
+	/ BLUEMOON CHANGES END */
+	// BLUEMOON ADD START - мы используем GLOB.round_type
+	dat += "Dynamic Round Type: <a href='?src=\ref[src];[HrefToken()];round_type_choose=1'><b>[GLOB.round_type]</b></a><br/>"
+	// BLUEMOON ADD END
 	dat += "No stacking (only one round-ender): <a href='?src=\ref[src];[HrefToken()];no_stacking=1'><b>[GLOB.dynamic_no_stacking ? "On" : "Off"]</b></a><br/>"
 	dat += "Stacking limit: [GLOB.dynamic_stacking_limit] <a href='?src=\ref[src];[HrefToken()];stacking_limit=1'>\[Adjust\]</A>"
 	dat += "<br/>"
@@ -205,14 +207,19 @@ GLOBAL_VAR_INIT(round_type, ROUNDTYPE_DYNAMIC_MEDIUM)
 		message_admins("[usr.key] has attempted to override the game mode panel!")
 		log_admin("[key_name(usr)] tried to use the game mode panel without authorization.")
 		return
+	/* BLUEMOON ADD START - мы используем GLOB.round_type
 	if (href_list["forced_extended"])
 		GLOB.dynamic_forced_extended = !GLOB.dynamic_forced_extended
 	else if (href_list["Extended"])
 		GLOB.dynamic_extended = !GLOB.dynamic_extended
-//BLUEMOON ADD START - необходимо для изменения через game panel
-	else if (href_list["teambased"])
-		GLOB.teambased_dynamic = !GLOB.teambased_dynamic
-//BLUEMOON ADD END
+	/ BLUEMOON ADD END */
+	// BLUEMOON ADD START
+	if (href_list["round_type_choose"])
+		var/chosen_type = input("Выберите вариацию динамика","Round Type Choose") as null|anything in list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT)
+		message_admins("[key_name(usr)] изменяет режим игры [GLOB.round_type] на [chosen_type]. Это повлияет только на доступность появления новых антагонистов.")
+		GLOB.round_type = chosen_type
+		GLOB.master_mode = "[chosen_type] (Changed Midgame)"
+	// BLUEMOON ADD END
 	else if (href_list["no_stacking"])
 		GLOB.dynamic_no_stacking = !GLOB.dynamic_no_stacking
 	else if (href_list["adjustthreat"])
@@ -488,12 +495,14 @@ BLUEMOON REMOVAL END*/
 			spend_roundstart_budget(picking_roundstart_rule(rule, scaled_times, forced = TRUE))
 
 /datum/game_mode/dynamic/proc/roundstart(list/roundstart_rules)
+	/* BLUEMOON ADD START - мы используем GLOB.round_type
 	if (GLOB.dynamic_forced_extended)
 		log_game("DYNAMIC: Starting a round of forced extended.")
 		return TRUE
 	if (GLOB.dynamic_extended)
 		log_game("DYNAMIC: Starting a round of dynamic extended.")
 		return TRUE
+	/ BLUEMOON ADD END */
 	var/list/drafted_rules = list()
 	for (var/datum/dynamic_ruleset/roundstart/rule in roundstart_rules)
 		if (!rule.weight)
@@ -528,11 +537,11 @@ BLUEMOON REMOVAL END*/
 		if (check_blocking(ruleset.blocking_rules, rulesets_picked))
 			drafted_rules[ruleset] = null
 			continue
-//BLUEMOON ADD START - проверки для вариаций динамика
+		// BLUEMOON ADD START - проверки для вариаций динамика
 		if(!(GLOB.round_type in ruleset.required_round_type))
 			drafted_rules[ruleset] = null
 			continue
-//BLUEMOON ADD END
+		// BLUEMOON ADD END
 		round_start_budget_left -= cost
 
 		rulesets_picked[ruleset] += 1
@@ -761,7 +770,7 @@ BLUEMOON REMOVAL END*/
 	return FALSE
 
 /datum/game_mode/dynamic/make_antag_chance(mob/living/carbon/human/newPlayer)
-	if (GLOB.dynamic_forced_extended)
+	if(GLOB.round_type == ROUNDTYPE_EXTENDED) // BLUEMOON CHANGES
 		return
 	if(EMERGENCY_ESCAPED_OR_ENDGAMED) // No more rules after the shuttle has left
 		return
