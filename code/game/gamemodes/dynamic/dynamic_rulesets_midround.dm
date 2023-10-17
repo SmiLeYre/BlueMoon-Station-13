@@ -191,6 +191,7 @@
 	protected_roles = list("Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")  //BLUEMOON CHANGES
 	restricted_roles = list("Cyborg", "AI", "Positronic Brain")
 	required_candidates = 1
+	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) // BLUEMOON ADD
 	weight = 0  //BLUEMOON CHANGES
 	cost = 8  //BLUEMOON CHANGES
 	requirements = list(101,40,30,20,10,10,10,10,10,10)
@@ -256,6 +257,7 @@
 	antag_flag_override = ROLE_FAMILIES
 	restricted_roles = list("AI", "Cyborg", "Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")  //BLUEMOON CHANGES
 	required_candidates = 9
+	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
 	weight = 4 //BLUEMOON CHANGES
 	cost = 10 //BLUEMOON CHANGES - низкая цена, т.к. надо в соло поднять семью
 	requirements = list(101,101,101,50,30,20,10,10,10,10)
@@ -318,6 +320,7 @@
 	exclusive_roles = list("AI")
 	required_enemies = list(0,0,0,0,0,0,0,0,0,0)
 	required_candidates = 1
+	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
 	weight = 6 //BLUEMOON CHANGES
 	cost = 15 //BLUEMOON CHANGES - было 35, сейчас это обычный предатель
 	requirements = list(101,101,80,70,60,60,50,50,40,40)
@@ -368,6 +371,7 @@
 	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGES
 	required_enemies = list(0,0,0,0,0,0,0,0,0,0)
 	required_candidates = 1
+	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
 	weight = 5 //BLUEMOON CHANGES
 	cost = 15 //BLUEMOON CHANGES
 	requirements = list(101,101,100,60,40,20,20,20,10,10)
@@ -417,6 +421,7 @@
 	required_candidates = 5
 	weight = 3
 	cost = 30 //BLUEMOON CHANGES
+	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
 	requirements = list(101,101,101,101,101,101,60,40,30,10) //BLUEMOON CHANGES
 	var/list/operative_cap = list(3,3,3,3,4,5,5,5,5,5)
 	var/datum/team/nuclear/nuke_team
@@ -462,6 +467,7 @@
 	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Chaplain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
 	required_enemies = list(1,1,1,1,1,1,0,0,0,0)
 	required_candidates = 2
+	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
 	weight = 3
 	cost = 20
 	requirements = list(101,101,101,101,50,40,30,20,10,10)
@@ -525,6 +531,7 @@
 	restricted_roles = list("AI", "Cyborg", "Prisoner") //BLUEMOON CHANGES
 	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Chaplain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
 	required_enemies = list(1,1,1,1,1,1,0,0,0,0)
+	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
 	required_candidates = 6
 	weight = 3
 	cost = 20
@@ -590,6 +597,7 @@
 	required_candidates = 1
 	weight = 3 //BLUEMOON CHANGES
 	cost = 10
+	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
 	requirements = list(101,101,101,101,50,40,30,20,10,10)
 	repeatable = TRUE
 	team_based_allowed = TRUE //BLUEMOON ADDITION
@@ -608,6 +616,7 @@
 	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGES
 	required_enemies = list(0,0,0,0,0,0,0,0,0,0)
 	required_candidates = 1
+	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
 	weight = 3 //BLUEMOON CHANGES
 	cost = 10
 	requirements = list(101,101,101,101,50,40,30,20,10,10)
@@ -648,6 +657,7 @@
 	required_candidates = 1
 	weight = 3
 	cost = 10
+	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
 	requirements = list(101,101,101,101,50,40,30,20,10,10)
 	repeatable = TRUE
 	var/list/vents = list()
@@ -695,6 +705,7 @@
 	required_candidates = 1
 	weight = 6 //BLUEMOON CHANGES
 	cost = 10
+	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) // BLUEMOON ADD
 	requirements = list(101,101,101,50,30,25,20,10,10,10) //BLUEMOON CHANGES
 	repeatable = TRUE
 	var/list/spawn_locs = list()
@@ -742,6 +753,7 @@
 	required_candidates = 1
 	weight = 6 //BLUEMOON CHANGES
 	cost = 10
+	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
 	requirements = list(101,101,101,101,50,40,30,20,10,10)
 	repeatable = TRUE
 	var/list/spawn_locs = list()
@@ -788,6 +800,7 @@
 	required_applicants = 2
 	weight = 3
 	cost = 10
+	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
 	requirements = list(101,101,101,101,101,30,20,15,10,10)
 	repeatable = TRUE
 	var/datum/team/abductor_team/new_team
@@ -824,6 +837,7 @@
 	required_type = /mob/dead/observer
 	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGES
 	required_enemies = list(0,0,0,0,6,6,5,5,4,0) //BLUEMOON CHANGES
+	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
 	required_candidates = 0
 	weight = 2 //BLUEMOON CHANGES
 	cost = 10
@@ -858,6 +872,7 @@
 	antag_flag_override = ROLE_NINJA
 	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGES
 	required_enemies = list(0,0,0,0,5,5,4,4,3,0) //BLUEMOON CHANGES
+	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
 	required_candidates = 1
 	weight = 6 //BLUEMOON CHANGES
 	cost = 10
@@ -902,6 +917,7 @@
 	required_candidates = 1
 	weight = 3 //BLUEMOON CHANGES
 	cost = 10
+	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
 	requirements = list(101,101,101,50,30,25,20,10,10,10) //BLUEMOON CHANGES
 	repeatable = TRUE
 	var/dead_mobs_required = 20
@@ -948,6 +964,7 @@
 	required_candidates = 1
 	weight = 6 //BLUEMOON CHANGES
 	cost = 10
+	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) // BLUEMOON ADD
 	requirements = list(101,101,101,50,30,25,20,10,10,10) //BLUEMOON CHANGES
 	repeatable = TRUE
 	team_based_allowed = TRUE //BLUEMOON ADDITION - literally plague during war
@@ -968,6 +985,7 @@
 	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGE
 	required_enemies = list(0,0,0,0,0,5,4,3,3,3) //BLUEMOON CHANGES
 	required_candidates = 0
+	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
 	weight = 6 //BLUEMOON CHANGES
 	cost = 10
 	requirements = list(101,101,101,101,101,40,30,20,10,10) //BLUEMOON CHANGES
@@ -1006,6 +1024,7 @@
 	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGES
 	required_enemies = 3
 	required_candidates = 1
+	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) // BLUEMOON ADD
 	weight = 6
 	cost = 15
 	scaling_cost = 10

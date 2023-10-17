@@ -17,6 +17,7 @@
 	weight = 13 //BLUEMOON CHANGES
 	cost = 8 // Avoid raising traitor threat above 10, as it is the default low cost ruleset.
 	scaling_cost = 9
+	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) // BLUEMOON ADD
 	requirements = list(101,10,10,10,10,10,10,10,10,10) //BLUEMOON CHANGES
 	antag_cap = list("denominator" = 20) //BLUEMOON CHANGES
 	var/autotraitor_cooldown = (30 MINUTES) //BLUEMOON CHANGES
@@ -52,13 +53,14 @@
 /datum/dynamic_ruleset/roundstart/traitorbro
 	name = "Blood Brothers"
 	antag_flag = ROLE_BROTHER
-	antag_datum = /datum/antagonist/brother/
+	antag_datum = /datum/antagonist/brother
 	protected_roles = list("Shaft Miner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
 	restricted_roles = list("Cyborg", "AI")
 	required_candidates = 2
 	weight = 6 //BLUEMOON CHANGES
 	cost = 15
 	scaling_cost = 15
+	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM)
 	requirements = list(101,101,101,101,60,50,40,30,20,10) //BLUEMOON CHANGES
 	antag_cap = 2 // Can pick 3 per team, but rare enough it doesn't matter.
 	var/list/datum/team/brother_team/pre_brother_teams = list()
@@ -106,6 +108,7 @@
 	required_candidates = 1
 	weight = 8 //BLUEMOON CHANGES
 	cost = 15 //BLUEMOON CHANGES
+	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) // BLUEMOON ADD
 	scaling_cost = 10
 	requirements = list(101,101,60,50,40,30,20,15,10,10) //BLUEMOON CHANGES
 	antag_cap = 1 //BLUEMOON CHANGES
@@ -142,6 +145,7 @@
 	weight = 8 //BLUEMOON CHANGES
 	cost = 15
 	scaling_cost = 9
+	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) // BLUEMOON ADD
 	requirements = list(101,101,101,50,40,20,20,15,10,10) //higher because of 'round end'
 	antag_cap = 1 //BLUEMOON CHANGES
 
@@ -182,6 +186,7 @@
 	required_candidates = 1
 	weight = 6 //BLUEMOON CHANGES
 	cost = 20
+	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
 	requirements = list(101,101,101,60,40,20,20,20,10,10)  //BLUEMOON CHANGES
 	var/list/roundstart_wizards = list()
 
@@ -226,6 +231,7 @@
 	weight = 3  //BLUEMOON CHANGES
 	cost = 20
 	//requirements = list(100,90,80,60,40,30,10,10,10,10)
+	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
 	requirements = list(101,101,101,101,101,60,40,20,15,10) //BLUEMOON CHANGES
 	flags = HIGH_IMPACT_RULESET
 	antag_cap = list("denominator" = 20, "offset" = 1)
@@ -283,6 +289,7 @@
 	weight = 3 //BLUEMOON CHANGES
 	cost = 20
 	requirements = list(101,101,101,101,101,101,60,40,30,10) //BLUEMOON CHANGES
+	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
 	flags = HIGH_IMPACT_RULESET
 	antag_cap = list("denominator" = 18, "offset" = 1)
 	var/datum/team/nuclear/nuke_team
@@ -368,6 +375,7 @@
 	weight = 3 //BLUEMOON CHANGES
 	delay = 5 MINUTES //BLUEMOON CHANGES
 	cost = 20
+	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
 	requirements = list(101,101,101,101,101,60,50,40,30,20) //BLUEMOON CHANGES
 	antag_cap = 3
 	flags = HIGH_IMPACT_RULESET
@@ -449,6 +457,7 @@
 	required_candidates = 2
 	weight = 3
 	cost = 20
+	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
 	requirements = list(101,101,101,101,101,50,40,30,20,15) //BLUEMOON CHANGES
 	flags = HIGH_IMPACT_RULESET
 	antag_cap = list("denominator" = 20, "offset" = 1)
@@ -505,6 +514,7 @@
 	required_candidates = 3 //BLUEMOON CHANGES
 	weight = 3
 	cost = 15
+	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
 	requirements = list(0,101,101,101,40,20,20,10,10,10) //BLUEMOON CHANGES
 	flags = HIGH_IMPACT_RULESET
 	antag_cap = list("denominator" = 5, "offset" = 1) //BLUEMOON ADDITION
@@ -699,6 +709,7 @@ BLUEMOON REMOVAL END*/
 	antag_flag_override = ROLE_NINJA
 	flags = LONE_RULESET
 	required_candidates = 1
+	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
 	weight = 6 //BLUEMOON CHANGES
 	cost = 20
 	requirements = list(101,101,101,60,40,20,20,20,10,10)
@@ -749,6 +760,7 @@ BLUEMOON REMOVAL END*/
 	weight = 3
 	cost = 20
 	flags = HIGH_IMPACT_RULESET
+	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
 	requirements = list(101,101,101,60,40,20,20,20,10,10)
 	var/list/vents = list()
 	team_based_allowed = TRUE
@@ -802,6 +814,7 @@ BLUEMOON REMOVAL END*/
 	antag_datum = /datum/antagonist/bloodsucker
 	protected_roles = list("Prisoner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
 	restricted_roles = list("AI", "Cyborg")
+	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) // BLUEMOON ADD
 	required_candidates = 1
 	weight = 6
 	cost = 15

@@ -20,6 +20,7 @@
 #include "code\__byond_version_compat.dm"
 #include "code\_compile_options.dm"
 #include "code\world.dm"
+#include "code\__BLUEMOONCODE\_DEFINES\gamemode.dm"
 #include "code\__BLUEMOONCODE\_DEFINES\say.dm"
 #include "code\__BLUEMOONCODE\_DEFINES\slowdowns.dm"
 #include "code\__BLUEMOONCODE\_DEFINES\time.dm"

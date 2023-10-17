@@ -1,13 +1,4 @@
 #define VOTE_COOLDOWN 10
-//BLUEMOON CHANGES START
-#define ROUNDTYPE_DYNAMIC "Dynamic (Random)"
-
-#define ROUNDTYPE_DYNAMIC_TEAMBASED "Dynamic (Team-Based)"
-#define ROUNDTYPE_DYNAMIC_HARD "Dynamic (Hard)"
-#define ROUNDTYPE_DYNAMIC_MEDIUM "Dynamic (Medium)"
-#define ROUNDTYPE_DYNAMIC_LIGHT "Dynamic (Light)"
-#define ROUNDTYPE_EXTENDED "Extended"
-//BLUEMOON CHANGES END
 
 SUBSYSTEM_DEF(vote)
 	name = "Vote"
@@ -408,6 +399,8 @@ SUBSYSTEM_DEF(vote)
 							GLOB.dynamic_type_threat_min = 25
 							GLOB.dynamic_type_threat_max = 40
 							GLOB.dynamic_extended = TRUE
+
+					GLOB.round_type = . // Выбранная вариация становится типом раунда, который используется для пресетов антагонистов
 
 					SSpersistence.RecordDynamicType(.)
 //BLUEMOON CHANGES END
@@ -864,13 +857,3 @@ SUBSYSTEM_DEF(vote)
 		var/datum/player_details/P = GLOB.player_details[owner.ckey]
 		if(P)
 			P.player_actions -= src
-
-//BLUEMOON ADD START
-#undef ROUNDTYPE_DYNAMIC
-
-#undef ROUNDTYPE_DYNAMIC_TEAMBASED
-#undef ROUNDTYPE_DYNAMIC_HARD
-#undef ROUNDTYPE_DYNAMIC_MEDIUM
-#undef ROUNDTYPE_DYNAMIC_LIGHT
-#undef ROUNDTYPE_EXTENDED
-//BLUEMOON ADD END

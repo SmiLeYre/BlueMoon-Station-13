@@ -80,6 +80,11 @@
 	/// If written as a linear equation, will be in the form of `list("denominator" = denominator, "offset" = offset).
 	var/antag_cap = 0
 
+	// BLUEMOON ADD START -
+	var/list/required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT)
+
+	// BLUEMOON ADD END
+
 /datum/dynamic_ruleset/New()
 	// Rulesets can be instantiated more than once, such as when an admin clicks
 	// "Execute Midround Ruleset". Thus, it would be wrong to perform any

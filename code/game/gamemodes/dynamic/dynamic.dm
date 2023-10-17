@@ -18,12 +18,15 @@ GLOBAL_VAR_INIT(dynamic_stacking_limit, 90)
 GLOBAL_LIST_EMPTY(dynamic_forced_roundstart_ruleset)
 // Forced threat level, setting this to zero or higher forces the roundstart threat to the value.
 GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
-// BLUEMOON ADD - командный динамик
+// BLUEMOON ADD
+// Командный динамик
 GLOBAL_VAR_INIT(teambased_dynamic, FALSE)
 // Очки для уровней угрозы от различных вариаций динамика
 // Значения изменяются при выборе вариаций динамика
 GLOBAL_VAR_INIT(dynamic_type_threat_min, 40)
 GLOBAL_VAR_INIT(dynamic_type_threat_max, 60)
+// Некоторые пресеты антагонистов не могут выпасть не в свой тип.
+GLOBAL_VAR_INIT(round_type, ROUNDTYPE_DYNAMIC_MEDIUM)
 // BLUEMOON ADD END
 
 /datum/game_mode/dynamic
@@ -526,11 +529,7 @@ BLUEMOON REMOVAL END*/
 			drafted_rules[ruleset] = null
 			continue
 //BLUEMOON ADD START - проверки для вариаций динамика
-		if(!(ruleset.flags & HIGH_IMPACT_RULESET) && GLOB.teambased_dynamic && !ruleset.team_based_allowed)
-			drafted_rules[ruleset] = null
-			continue
-
-		if(ruleset.flags & HIGH_IMPACT_RULESET && GLOB.dynamic_extended)
+		if(!(GLOB.round_type in ruleset.required_round_type))
 			drafted_rules[ruleset] = null
 			continue
 //BLUEMOON ADD END
@@ -606,8 +605,10 @@ BLUEMOON REMOVAL END*/
 			return FALSE
 		// Check if the ruleset is high impact and if a high impact ruleset has been executed
 		else if(new_rule.flags & HIGH_IMPACT_RULESET)
+			/* BLUEMOON REMOVAL START - глоб больше не используется, его заменил glob.round_type
 			if(GLOB.dynamic_extended)
-				return FALSE
+				continue
+			/ BLUEMOON REMOVAL END */
 			if(high_impact_ruleset_executed && threat_level < GLOB.dynamic_stacking_limit && GLOB.dynamic_no_stacking)
 				return FALSE
 
@@ -664,15 +665,17 @@ BLUEMOON REMOVAL END*/
 			for (var/datum/dynamic_ruleset/midround/rule in midround_rules)
 				if (!rule.weight)
 					continue
-//BLUEMOON ADD START - в тимбазу некоторые режимы не должны ролиться
-				if(!(rule.flags & HIGH_IMPACT_RULESET) && GLOB.teambased_dynamic && !rule.team_based_allowed)
+				// BLUEMOON ADD START - в тимбазу некоторые режимы не должны ролиться
+				if(!(GLOB.round_type in rule.required_round_type))
 					continue
-//BLUEMOON ADD END
+				// BLUEMOON ADD END
 				if(rule.flags & HIGH_IMPACT_RULESET)
 					if (high_impact_ruleset_executed && threat_level < GLOB.dynamic_stacking_limit && GLOB.dynamic_no_stacking)
 						continue
+					/* BLUEMOON REMOVAL START - глоб больше не используется, его заменил glob.round_type
 					if(GLOB.dynamic_extended)
 						continue
+					/ BLUEMOON REMOVAL END */
 				if (rule.acceptable(current_players[CURRENT_LIVING_PLAYERS].len, threat_level) && mid_round_budget >= rule.cost)
 					rule.trim_candidates()
 					if (rule.ready())
@@ -783,11 +786,11 @@ BLUEMOON REMOVAL END*/
 				if (threat_level < GLOB.dynamic_stacking_limit && GLOB.dynamic_no_stacking)
 					if(rule.flags & HIGH_IMPACT_RULESET) //BLUEMOON CHANGES - убран && high_impact_ruleset_executed
 				//BLUEMOON ADDITION START
-						if(GLOB.dynamic_extended)
+						if(GLOB.round_type == ROUNDTYPE_DYNAMIC_LIGHT)
 							continue
 						else if(high_impact_ruleset_executed)
 							continue
-				if(GLOB.teambased_dynamic)// && !rule.team_based_allowed) - временно убранно в комментарий, т.к. среди лэйтжоина нет крутых командных антагов
+				if(GLOB.round_type == ROUNDTYPE_DYNAMIC_TEAMBASED)// && !rule.team_based_allowed) - временно убранно в комментарий, т.к. среди лэйтжоина нет крутых командных антагов
 					continue
 				//BLUEMOON ADDITION END
 				rule.candidates = list(newPlayer)
