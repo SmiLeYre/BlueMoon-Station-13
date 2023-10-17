@@ -808,7 +808,6 @@ BLUEMOON REMOVAL END*/
 	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
 	requirements = list(101,101,101,60,40,20,20,20,10,10)
 	var/list/vents = list()
-	team_based_allowed = TRUE
 	antag_cap = list("denominator" = 20, "offset" = 1)
 
 /datum/dynamic_ruleset/roundstart/xenomorph/pre_execute()

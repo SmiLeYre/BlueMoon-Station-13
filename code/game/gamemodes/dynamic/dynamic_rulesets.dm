@@ -12,8 +12,6 @@
 	var/persistent = FALSE
 	/// If set to TRUE, dynamic mode will be able to draft this ruleset again later on. (doesn't apply for roundstart rules)
 	var/repeatable = FALSE
-	/// BLUEMOON ADD - if set to TRUE, can appear during team-based dynamic
-	var/team_based_allowed = FALSE
 	/// If set higher than 0 decreases weight by itself causing the ruleset to appear less often the more it is repeated.
 	var/repeatable_weight_decrease = 2
 	/// List of players that are being drafted for this rule
@@ -80,9 +78,8 @@
 	/// If written as a linear equation, will be in the form of `list("denominator" = denominator, "offset" = offset).
 	var/antag_cap = 0
 
-	// BLUEMOON ADD START -
+	// BLUEMOON ADD START - если GLOB.round_type (выставляется через голосование или админами) нет в списке, то рулсет не может выпасть
 	var/list/required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT)
-
 	// BLUEMOON ADD END
 
 /datum/dynamic_ruleset/New()

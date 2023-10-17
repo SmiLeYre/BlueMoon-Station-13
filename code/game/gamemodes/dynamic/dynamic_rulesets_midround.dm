@@ -618,7 +618,6 @@
 	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
 	requirements = list(101,101,101,101,50,40,30,20,10,10)
 	repeatable = TRUE
-	team_based_allowed = TRUE //BLUEMOON ADDITION
 
 /datum/dynamic_ruleset/midround/from_ghosts/blob/generate_ruleset_body(mob/applicant)
 	var/body = applicant.become_overmind()
@@ -683,7 +682,6 @@
 	requirements = list(101,101,101,101,50,40,30,20,10,10)
 	repeatable = TRUE
 	var/list/vents = list()
-	team_based_allowed = TRUE //BLUEMOON ADDITION
 
 /datum/dynamic_ruleset/midround/from_ghosts/xenomorph/execute()
 	// 50% chance of being incremented by one
@@ -731,7 +729,6 @@
 	requirements = list(101,101,101,50,30,25,20,10,10,10) //BLUEMOON CHANGES
 	repeatable = TRUE
 	var/list/spawn_locs = list()
-	team_based_allowed = TRUE //BLUEMOON ADDITION
 
 /datum/dynamic_ruleset/midround/from_ghosts/nightmare/execute()
 	for(var/X in GLOB.xeno_spawn)
@@ -779,7 +776,6 @@
 	requirements = list(101,101,101,101,50,40,30,20,10,10)
 	repeatable = TRUE
 	var/list/spawn_locs = list()
-	team_based_allowed = TRUE //BLUEMOON ADDITION
 
 /datum/dynamic_ruleset/midround/from_ghosts/space_dragon/execute()
 	for(var/obj/effect/landmark/carpspawn/C in GLOB.landmarks_list)
@@ -826,7 +822,6 @@
 	requirements = list(101,101,101,101,101,30,20,15,10,10)
 	repeatable = TRUE
 	var/datum/team/abductor_team/new_team
-	team_based_allowed = TRUE //BLUEMOON ADDITION
 
 /datum/dynamic_ruleset/midround/from_ghosts/abductors/ready(forced = FALSE)
 	if (required_candidates > (dead_players.len + list_observers.len))
@@ -865,7 +860,6 @@
 	cost = 10
 	requirements = list(101,101,101,101,50,40,30,20,10,10)
 	repeatable = TRUE
-	team_based_allowed = TRUE //BLUEMOON ADDITION
 
 /datum/dynamic_ruleset/midround/swarmers/execute()
 	var/list/spawn_locs = list()
@@ -945,7 +939,6 @@
 	var/dead_mobs_required = 20
 	var/need_extra_spawns_value = 15
 	var/list/spawn_locs = list()
-	team_based_allowed = TRUE //BLUEMOON ADDITION
 
 /datum/dynamic_ruleset/midround/from_ghosts/revenant/acceptable(population=0, threat=0)
 	if(GLOB.dead_mob_list.len < dead_mobs_required)
@@ -989,7 +982,6 @@
 	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) // BLUEMOON ADD
 	requirements = list(101,101,101,50,30,25,20,10,10,10) //BLUEMOON CHANGES
 	repeatable = TRUE
-	team_based_allowed = TRUE //BLUEMOON ADDITION - literally plague during war
 
 /datum/dynamic_ruleset/midround/from_ghosts/sentient_disease/generate_ruleset_body(mob/applicant)
 	var/mob/camera/disease/virus = new /mob/camera/disease(SSmapping.get_station_center())
@@ -1012,7 +1004,6 @@
 	cost = 10
 	requirements = list(101,101,101,101,101,40,30,20,10,10) //BLUEMOON CHANGES
 	repeatable = TRUE
-	team_based_allowed = 1 //BLUEMOON ADDITION
 
 /datum/dynamic_ruleset/midround/pirates/acceptable(population=0, threat=0)
 	if (!SSmapping.empty_space)
