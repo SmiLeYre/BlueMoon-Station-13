@@ -607,7 +607,7 @@ BLUEMOON REMOVAL END*/
 		else if(new_rule.flags & HIGH_IMPACT_RULESET)
 			/* BLUEMOON REMOVAL START - глоб больше не используется, его заменил glob.round_type
 			if(GLOB.dynamic_extended)
-				continue
+				return FALSE
 			/ BLUEMOON REMOVAL END */
 			if(high_impact_ruleset_executed && threat_level < GLOB.dynamic_stacking_limit && GLOB.dynamic_no_stacking)
 				return FALSE
@@ -784,13 +784,10 @@ BLUEMOON REMOVAL END*/
 			if (rule.acceptable(current_players[CURRENT_LIVING_PLAYERS].len, threat_level) && mid_round_budget >= rule.cost)
 				// No stacking : only one round-ender, unless threat level > stacking_limit.
 				if (threat_level < GLOB.dynamic_stacking_limit && GLOB.dynamic_no_stacking)
-					if(rule.flags & HIGH_IMPACT_RULESET) //BLUEMOON CHANGES - убран && high_impact_ruleset_executed
+					if(rule.flags & HIGH_IMPACT_RULESET && high_impact_ruleset_executed)
+						continue
 				//BLUEMOON ADDITION START
-						if(GLOB.round_type == ROUNDTYPE_DYNAMIC_LIGHT)
-							continue
-						else if(high_impact_ruleset_executed)
-							continue
-				if(GLOB.round_type == ROUNDTYPE_DYNAMIC_TEAMBASED)// && !rule.team_based_allowed) - временно убранно в комментарий, т.к. среди лэйтжоина нет крутых командных антагов
+				if(!(GLOB.round_type in rule.required_round_type))
 					continue
 				//BLUEMOON ADDITION END
 				rule.candidates = list(newPlayer)
