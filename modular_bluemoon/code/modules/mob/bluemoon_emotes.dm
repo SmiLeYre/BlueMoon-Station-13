@@ -4,7 +4,7 @@
 	message = "growl!"
 	message_mime = "growl."
 	emote_sound = 'sound/voice/growl.ogg'
-	emote_cooldown = 10 SECONDS
+	emote_cooldown = 4 SECONDS
 
 /datum/emote/living/audio/wurble
 	key = "wurble"
@@ -12,7 +12,7 @@
 	message = "wurble!"
 	message_mime = "wurble."
 	emote_sound = 'sound/voice/wurble.ogg'
-	emote_cooldown = 10 SECONDS
+	emote_cooldown = 4 SECONDS
 
 /datum/emote/living/audio/warble
 	key = "warble"
@@ -20,7 +20,7 @@
 	message = "warble!"
 	message_mime = "warble."
 	emote_sound = 'sound/voice/warbles.ogg'
-	emote_cooldown = 10 SECONDS
+	emote_cooldown = 4 SECONDS
 
 /datum/emote/living/audio/trills
 	key = "trills"
@@ -28,7 +28,7 @@
 	message = "trills!"
 	message_mime = "trills."
 	emote_sound = 'sound/voice/trills.ogg'
-	emote_cooldown = 10 SECONDS
+	emote_cooldown = 4 SECONDS
 
 /datum/emote/living/audio/woof
 	key = "woof"
@@ -36,7 +36,6 @@
 	message = "lets out a woof."
 	message_mime = "lets out a woof."
 	emote_sound = 'sound/voice/woof.ogg'
-	emote_cooldown = 10 SECONDS
 
 /datum/emote/living/audio/cloaker1
 	key = "cloaker"
@@ -140,7 +139,7 @@
 	message = "lets out a <b>anyo!</b>"
 	message_mime = null
 	emote_sound = 'sound/voice/anyo.ogg'
-	emote_cooldown = 5 SECONDS
+	emote_cooldown = 3 SECONDS
 
 /datum/emote/living/audio/ura1
 	key = "ura"
@@ -172,7 +171,7 @@
 	message = "lets out an <b>~UwU~</b>"
 	message_mime = null
 	emote_sound = 'sound/voice/uwu1.ogg'
-	emote_cooldown = 5 SECONDS
+	emote_cooldown = 3 SECONDS
 
 /datum/emote/living/audio/uwu/run_emote(mob/user, params)
 	emote_sound = pick('sound/voice/uwu1.ogg','sound/voice/uwu2.ogg')
@@ -194,7 +193,7 @@
 		var/mob/living/carbon/c = user
 		c.reindex_screams()
 	if(!user.is_muzzled() && !miming)
-		user.nextsoundemote = world.time + 1
+		user.nextsoundemote = world.time + 5 SECONDS
 		if(issilicon(user))
 			sound = 'modular_citadel/sound/voice/scream_silicon.ogg'
 			if(iscyborg(user))

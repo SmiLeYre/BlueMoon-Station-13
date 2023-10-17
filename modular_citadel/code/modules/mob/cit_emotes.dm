@@ -1,7 +1,7 @@
 #define INSULTS_FILE "insult.json"
 
 /mob
-	var/nextsoundemote = 10
+	var/nextsoundemote = 1 SECONDS
 
 /datum/emote/living/insult
 	key = "insult"
@@ -27,7 +27,7 @@
 		var/mob/living/carbon/c = user
 		c.reindex_screams()
 	if(!user.is_muzzled() && !miming)
-		user.nextsoundemote = world.time + 3
+		user.nextsoundemote = world.time + 3 SECONDS
 		if(issilicon(user))
 			sound = 'modular_citadel/sound/voice/scream_silicon.ogg'
 			if(iscyborg(user))
@@ -87,7 +87,7 @@
 		return
 	if(user.nextsoundemote >= world.time)
 		return
-	user.nextsoundemote = world.time + 7
+	user.nextsoundemote = world.time + 5 SECONDS
 	playsound(user, 'modular_citadel/sound/voice/snap.ogg', 50, 1, -1)
 
 /datum/emote/living/snap2
@@ -104,7 +104,7 @@
 		return
 	if(user.nextsoundemote >= world.time)
 		return
-	user.nextsoundemote = world.time + 7
+	user.nextsoundemote = world.time + 8 SECONDS
 	playsound(user, 'modular_citadel/sound/voice/snap2.ogg', 50, 1, -1)
 
 /datum/emote/living/snap3
@@ -121,7 +121,7 @@
 		return
 	if(user.nextsoundemote >= world.time)
 		return
-	user.nextsoundemote = world.time + 7
+	user.nextsoundemote = world.time + 8 SECONDS
 	playsound(user, 'modular_citadel/sound/voice/snap3.ogg', 50, 1, -1)
 
 /datum/emote/living/awoo
@@ -138,7 +138,7 @@
 		return
 	if(user.nextsoundemote >= world.time)
 		return
-	user.nextsoundemote = world.time + 7
+	user.nextsoundemote = world.time + 7 SECONDS
 	playsound(user, 'modular_citadel/sound/voice/awoo.ogg', 100, 1, -1)
 	if (HAS_TRAIT(user, TRAIT_AWOO))
 		var/datum/quirk/awoo/quirk_target = locate() in user.roundstart_quirks
@@ -161,7 +161,7 @@
 		return
 	if(user.nextsoundemote >= world.time)
 		return
-	user.nextsoundemote = world.time + 7
+	user.nextsoundemote = world.time + 2 SECONDS
 	playsound(user, 'modular_citadel/sound/voice/hiss.ogg', 50, 1, -1)
 
 /datum/emote/living/meow
@@ -178,7 +178,7 @@
 		return
 	if(user.nextsoundemote >= world.time)
 		return
-	user.nextsoundemote = world.time + 7
+	user.nextsoundemote = world.time + 1 SECONDS
 	playsound(user, 'modular_citadel/sound/voice/meow1.ogg', 50, 1, -1)
 
 /datum/emote/living/purr
@@ -196,7 +196,7 @@
 		return
 	if(user.nextsoundemote >= world.time)
 		return
-	user.nextsoundemote = world.time + 7
+	user.nextsoundemote = world.time + 9 SECONDS
 	playsound(user, 'modular_citadel/sound/voice/purr.ogg', 100, 1, -1)
 
 /datum/emote/living/nya
@@ -213,7 +213,7 @@
 		return
 	if(user.nextsoundemote >= world.time)
 		return
-	user.nextsoundemote = world.time + 7
+	user.nextsoundemote = world.time + 1 SECONDS
 	playsound(user, 'modular_citadel/sound/voice/nya.ogg', 50, 1, -1)
 
 /datum/emote/living/weh
@@ -230,7 +230,7 @@
 		return
 	if(user.nextsoundemote >= world.time)
 		return
-	user.nextsoundemote = world.time + 7
+	user.nextsoundemote = world.time + 3 SECONDS
 	playsound(user, 'modular_citadel/sound/voice/weh.ogg', 50, 1, -1)
 
 /datum/emote/living/peep
@@ -247,7 +247,7 @@
 		return
 	if(user.nextsoundemote >= world.time)
 		return
-	user.nextsoundemote = world.time + 7
+	user.nextsoundemote = world.time + 3 SECONDS
 	playsound(user, 'modular_citadel/sound/voice/peep.ogg', 50, 1, -1)
 
 /datum/emote/living/dab
@@ -271,7 +271,7 @@
 		return
 	if(user.nextsoundemote >= world.time)
 		return
-	user.nextsoundemote = world.time + 7
+	user.nextsoundemote = world.time + 5 SECONDS
 	playsound(user, 'modular_citadel/sound/voice/mothsqueak.ogg', 50, 1, -1)
 
 /datum/emote/living/merp
@@ -288,7 +288,7 @@
 		return
 	if(user.nextsoundemote >= world.time)
 		return
-	user.nextsoundemote = world.time + 7
+	user.nextsoundemote = world.time + 1 SECONDS
 	playsound(user, 'modular_citadel/sound/voice/merp.ogg', 50, 1, -1)
 
 /datum/emote/living/bark
@@ -305,7 +305,7 @@
 		return
 	if(user.nextsoundemote >= world.time)
 		return
-	user.nextsoundemote = world.time + 7
+	user.nextsoundemote = world.time + 1 SECONDS
 	var/sound = pick('modular_citadel/sound/voice/bark1.ogg', 'modular_citadel/sound/voice/bark2.ogg')
 	playsound(user, sound, 50, 1, -1)
 
@@ -323,7 +323,7 @@
 		return
 	if(user.nextsoundemote >= world.time)
 		return
-	user.nextsoundemote = world.time + 7
+	user.nextsoundemote = world.time + 3 SECONDS
 	var/sound = pick('sound/voice/slime_squish.ogg')
 	playsound(user, sound, 50, 1, -1)
 
@@ -341,7 +341,7 @@
 		return
 	if(user.nextsoundemote >= world.time)
 		return
-	user.nextsoundemote = world.time + 7
+	user.nextsoundemote = world.time + 3 SECONDS
 	var/sound
 	if(user.gender == MALE)
 		sound = pick('modular_citadel/sound/voice/human_male_pain_1.ogg', 'modular_citadel/sound/voice/human_male_pain_2.ogg', 'modular_citadel/sound/voice/human_male_pain_3.ogg', 'modular_citadel/sound/voice/human_male_pain_rare.ogg', 'modular_citadel/sound/voice/human_male_scream_1.ogg', 'modular_citadel/sound/voice/human_male_scream_2.ogg', 'modular_citadel/sound/voice/human_male_scream_3.ogg', 'modular_citadel/sound/voice/human_male_scream_4.ogg')

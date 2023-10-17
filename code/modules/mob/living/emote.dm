@@ -93,8 +93,8 @@
 	. = ..()
 	if(ishuman(user))
 		if(user.nextsoundemote >= world.time)
-			to_chat(user, span_warning("Рано! Очень рано!!"))
-			SEND_SOUND(user, 'sound/machines/buzz-sigh.ogg')
+			//to_chat(user, span_warning("Рано! Очень рано!!"))
+			//SEND_SOUND(user, 'sound/machines/buzz-sigh.ogg')
 			return
 		user.nextsoundemote = world.time + 5 SECONDS
 		user.SpinAnimation(8,4)
@@ -374,6 +374,13 @@
 	message = "кричит."
 	message_mime = "изображает крик!"
 	emote_type = EMOTE_AUDIBLE
+
+/datum/emote/living/scream/run_emote(mob/user, params, type_override, intentional)
+	. = ..()
+	if(ishuman(user))
+		if(user.nextsoundemote >= world.time)
+			return
+		user.nextsoundemote = world.time + 3 SECONDS
 
 /datum/emote/living/scowl
 	key = "scowl"

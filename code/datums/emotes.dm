@@ -41,7 +41,7 @@
 
 /datum/emote/proc/run_emote(mob/user, params, type_override, intentional = FALSE)
 	. = TRUE
-	if(!can_run_emote(user, TRUE, intentional))
+	if(!can_run_emote(user, TRUE, intentional) || user.nextsoundemote >= world.time)
 		return FALSE
 	var/msg = select_message_type(user)
 	if(params && message_param)

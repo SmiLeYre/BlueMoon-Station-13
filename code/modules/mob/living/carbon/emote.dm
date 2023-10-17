@@ -134,8 +134,8 @@
 				user.adjustEarDamage(-5, -5)
 	if(user.nextsoundemote >= world.time)
 		return
-	user.nextsoundemote = world.time + 7
-	playsound(user, 'modular_citadel/sound/voice/purr.ogg', 50, 1, -1)
+	user.nextsoundemote = world.time + 9 SECONDS
+	playsound(user, 'modular_citadel/sound/voice/purr.ogg', 50, 1, -1)	//почему мурчание?
 
 /datum/emote/living/carbon/human/mumble
 	key = "mumble"

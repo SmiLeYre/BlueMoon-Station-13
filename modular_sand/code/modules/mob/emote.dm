@@ -31,7 +31,7 @@
 		return
 	if(user.nextsoundemote >= world.time)
 		return
-	user.nextsoundemote = world.time + 7
+	user.nextsoundemote = world.time + 1 SECONDS
 	playsound(user, 'modular_sand/sound/voice/peep_once.ogg', 50, 1, -1)
 
 /datum/emote/living/peep2
@@ -48,5 +48,5 @@
 		return
 	if(user.nextsoundemote >= world.time)
 		return
-	user.nextsoundemote = world.time + 7
+	user.nextsoundemote = world.time + 3 SECONDS
 	playsound(user, 'modular_citadel/sound/voice/peep.ogg', 50, 1, -1)
