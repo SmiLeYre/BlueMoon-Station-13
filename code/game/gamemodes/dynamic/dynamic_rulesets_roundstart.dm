@@ -25,14 +25,16 @@
 
 /datum/dynamic_ruleset/roundstart/traitor/pre_execute(population)
 	. = ..()
+	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
+	if(candidates.len <= 0)
+		log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+		return FALSE
+	// BLUEMOON ADD END
 	COOLDOWN_START(src, autotraitor_cooldown_check, autotraitor_cooldown)
 	var/num_traitors = get_antag_cap(population) * (scaled_times + 1)
 	for (var/i = 1 to num_traitors)
 		var/mob/M = pick_n_take(candidates)
-//BLUEMOON ADDITION AHEAD - если в кандидатах на роль трейтора будет маг, выдаст рантайм
-		if(!M.mind)
-			continue
-//BLUEMOON ADDITION END
 		assigned += M.mind
 		M.mind.special_role = ROLE_TRAITOR
 		M.mind.restricted_roles = restricted_roles
@@ -115,6 +117,12 @@
 
 /datum/dynamic_ruleset/roundstart/changeling/pre_execute(population)
 	. = ..()
+	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
+	if(candidates.len <= 0)
+		log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+		return FALSE
+	// BLUEMOON ADD END
 	var/num_changelings = get_antag_cap(population) * (scaled_times + 1)
 	for (var/i = 1 to num_changelings)
 		var/mob/M = pick_n_take(candidates)
@@ -151,6 +159,12 @@
 
 /datum/dynamic_ruleset/roundstart/heretics/pre_execute(population)
 	. = ..()
+	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
+	if(candidates.len <= 0)
+		log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+		return FALSE
+	// BLUEMOON ADD END
 	var/num_ecult = get_antag_cap(population) * (scaled_times + 1)
 
 	for (var/i = 1 to num_ecult)
@@ -201,6 +215,12 @@
 	. = ..()
 	if(GLOB.wizardstart.len == 0)
 		return FALSE
+	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
+	if(candidates.len <= 0)
+		log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+		return FALSE
+	// BLUEMOON ADD END
 	var/mob/M = pick_n_take(candidates)
 	if (M)
 		assigned += M.mind
@@ -245,8 +265,12 @@
 	. = ..()
 	var/cultists = get_antag_cap(population)
 	for(var/cultists_number = 1 to cultists)
+		// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
 		if(candidates.len <= 0)
+			log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+			message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 			break
+		// BLUEMOON ADD END
 		var/mob/M = pick_n_take(candidates)
 		assigned += M.mind
 		M.mind.special_role = ROLE_CULTIST
@@ -303,8 +327,12 @@
 	// If ready() did its job, candidates should have 5 or more members in it
 	var/operatives = get_antag_cap(population)
 	for(var/operatives_number = 1 to operatives)
+		// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
 		if(candidates.len <= 0)
+			log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+			message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 			break
+		// BLUEMOON ADD END
 		var/mob/M = pick_n_take(candidates)
 		assigned += M.mind
 		M.mind.assigned_role = "Nuclear Operative"
@@ -392,8 +420,12 @@
 	message_admins("В связи с особенностями игрового режима и заходом игроков после начала раунда, до выдачи ролей революцинерам осталось <b>[delay/10] минут.</b>")
 	var/max_candidates = get_antag_cap(population)
 	for(var/i = 1 to max_candidates)
+		// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
 		if(candidates.len <= 0)
+			log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+			message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 			break
+		// BLUEMOON ADD END
 		var/mob/M = pick_n_take(candidates)
 		assigned += M.mind
 		M.mind.restricted_roles = restricted_roles
@@ -471,8 +503,12 @@
 	. = ..()
 	var/cultists = get_antag_cap(population)
 	for(var/cultists_number = 1 to cultists)
+		// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
 		if(candidates.len <= 0)
+			log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+			message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 			break
+		// BLUEMOON ADD END
 		var/mob/M = pick_n_take(candidates)
 		assigned += M.mind
 		M.mind.special_role = ROLE_SERVANT_OF_RATVAR
@@ -623,8 +659,12 @@ BLUEMOON REMOVAL END*/
 	var/carriers_to_make = max(round(mode.roundstart_pop_ready / players_per_carrier, 1), 1)
 
 	for(var/j = 0, j < carriers_to_make, j++)
-		if (!candidates.len)
+		// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
+		if(candidates.len <= 0)
+			log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+			message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 			break
+		// BLUEMOON ADD END
 		var/mob/carrier = pick_n_take(candidates)
 		assigned += carrier.mind
 		carrier.mind.special_role = "Monkey Leader"
@@ -731,9 +771,14 @@ BLUEMOON REMOVAL END*/
 	return TRUE
 
 /datum/dynamic_ruleset/roundstart/space_ninja/execute()
+	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
+	if(candidates.len <= 0)
+		log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+		return FALSE
+	// BLUEMOON ADD END
 	var/mob/candidate = pick_n_take(candidates)
-	if(candidate)
-		assigned += candidate.mind
+	assigned += candidate.mind
 
 	for(var/datum/mind/M in assigned)
 
@@ -787,9 +832,14 @@ BLUEMOON REMOVAL END*/
 		return FALSE
 
 /datum/dynamic_ruleset/roundstart/xenomorph/execute()
+	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
+	if(candidates.len <= 0)
+		log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+		return FALSE
+	// BLUEMOON ADD END
 	var/mob/candidate = pick_n_take(candidates)
-	if(candidate)
-		assigned += candidate.mind
+	assigned += candidate.mind
 
 	var/obj/vent = pick_n_take(vents)
 	for(var/datum/mind/M in assigned)
@@ -824,6 +874,12 @@ BLUEMOON REMOVAL END*/
 
 /datum/dynamic_ruleset/roundstart/bloodsuckers/pre_execute(population)
 	. = ..()
+	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
+	if(candidates.len <= 0)
+		log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+		return FALSE
+	// BLUEMOON ADD END
 	var/num_bloodsuckers = get_antag_cap(population) * (scaled_times + 1)
 	for (var/i = 1 to num_bloodsuckers)
 		var/mob/M = pick_n_take(candidates)

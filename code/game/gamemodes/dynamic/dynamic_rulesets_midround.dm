@@ -234,6 +234,12 @@
 	return ..()
 
 /datum/dynamic_ruleset/midround/autotraitor/execute()
+	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
+	if(living_players.len <= 0)
+		log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+		return FALSE
+	// BLUEMOON ADD END
 	var/mob/M = pick(living_players)
 	assigned += M
 	living_players -= M
@@ -342,8 +348,12 @@
 			candidates -= player
 
 /datum/dynamic_ruleset/midround/malf/execute()
-	if(!candidates || !candidates.len)
+	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
+	if(candidates.len <= 0)
+		log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		return FALSE
+	// BLUEMOON ADD END
 	var/mob/living/silicon/ai/M = pick_n_take(candidates)
 	assigned += M.mind
 	var/datum/antagonist/traitor/AI = new
@@ -498,8 +508,12 @@
 			candidates -= player //no double dipping
 
 /datum/dynamic_ruleset/midround/ratvar_awakening/execute()
-	if(!candidates || !candidates.len)
+	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
+	if(candidates.len <= 0)
+		log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		return FALSE
+	// BLUEMOON ADD END
 	for(var/i = 0; i < required_candidates; i++)
 		if(!candidates.len)
 			break
@@ -564,8 +578,12 @@
 			candidates -= player //no double dipping
 
 /datum/dynamic_ruleset/midround/narsie_awakening/execute()
-	if(!candidates || !candidates.len)
+	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
+	if(candidates.len <= 0)
+		log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		return FALSE
+	// BLUEMOON ADD END
 	for(var/i = 0; i < required_candidates; i++)
 		if(!candidates.len)
 			break
@@ -635,8 +653,12 @@
 			candidates -= player
 
 /datum/dynamic_ruleset/midround/blob_infection/execute()
-	if(!candidates || !candidates.len)
+	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
+	if(candidates.len <= 0)
+		log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		return FALSE
+	// BLUEMOON ADD END
 	var/mob/living/carbon/human/blob_antag = pick_n_take(candidates)
 	assigned += blob_antag.mind
 	blob_antag.mind.special_role = antag_flag
@@ -1046,6 +1068,12 @@
 
 /datum/dynamic_ruleset/midround/bloodsuckers/pre_execute(population)
 	. = ..()
+	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
+	if(candidates.len <= 0)
+		log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+		return FALSE
+	// BLUEMOON ADD END
 	var/num_bloodsuckers = get_antag_cap(population) * (scaled_times + 1)
 	for (var/i = 1 to num_bloodsuckers)
 		var/mob/M = pick_n_take(candidates)
