@@ -256,6 +256,28 @@ SUBSYSTEM_DEF(ticker)
 		emergency_swap++
 		return 0
 
+	// BLUEMOON ADD START - присвоение минимального и максимального возможного уровня угрозы
+	switch(mode)
+		if(ROUNDTYPE_DYNAMIC_TEAMBASED)
+			GLOB.dynamic_type_threat_min = 55 //от 1 до 2 командных антагов
+			GLOB.dynamic_type_threat_max = 100
+			GLOB.dynamic_no_stacking = FALSE //Welcome To Space Iraq
+		if(ROUNDTYPE_DYNAMIC_HARD)
+			GLOB.dynamic_type_threat_min = 75
+			GLOB.dynamic_type_threat_max = 100
+		if(ROUNDTYPE_DYNAMIC_MEDIUM)
+			GLOB.dynamic_type_threat_min = 40
+			GLOB.dynamic_type_threat_max = 60
+		if(ROUNDTYPE_DYNAMIC_LIGHT)
+			GLOB.dynamic_type_threat_min = 50
+			GLOB.dynamic_type_threat_max = 70
+		if(ROUNDTYPE_EXTENDED)
+			GLOB.dynamic_type_threat_min = 0
+			GLOB.dynamic_type_threat_max = 0
+		if("dynamic")
+			GLOB.master_mode = ROUNDTYPE_DYNAMIC_MEDIUM
+	// BLUEMOON ADD END
+
 	CHECK_TICK
 	//Configure mode and assign player to special mode stuff
 	var/can_continue = 0

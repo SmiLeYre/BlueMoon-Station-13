@@ -368,42 +368,16 @@ SUBSYSTEM_DEF(vote)
 			if("roundtype") //CIT CHANGE - adds the roundstart extended/dynamic vote
 				if(SSticker.current_state > GAME_STATE_PREGAME)//Don't change the mode if the round already started.
 					return message_admins("A vote has tried to change the gamemode, but the game has already started. Aborting.")
-//BLUEMOON CHANGES START - если результат ..., то...
-				GLOB.master_mode = "Dynamic (Hard)"
-
-				if(. == ROUNDTYPE_EXTENDED)
-					GLOB.dynamic_forced_extended = TRUE
-					GLOB.master_mode = "Extended"
-					GLOB.dynamic_type_threat_min = 0
-					GLOB.dynamic_type_threat_max = 0
-				else //впереди только динамики
+				// BLUEMOON CHANGES START - если не экста, то берётся случайная вариация динамика
+				if(. != ROUNDTYPE_EXTENDED)
 					var/dynamic_pick = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) - SSpersistence.last_dynamic_gamemode
 					. = pick(dynamic_pick)
-					switch(.)
-						if(ROUNDTYPE_DYNAMIC_TEAMBASED)
-							GLOB.master_mode = "Dynamic (Team Based)"
-							GLOB.dynamic_type_threat_min = 55 //от 1 до 2 командных антагов
-							GLOB.dynamic_type_threat_max = 100
-							GLOB.teambased_dynamic = TRUE
-							GLOB.dynamic_no_stacking = FALSE //Welcome To Space Iraq
-						if(ROUNDTYPE_DYNAMIC_HARD)
-							GLOB.master_mode = "Dynamic (Hard)"
-							GLOB.dynamic_type_threat_min = 75
-							GLOB.dynamic_type_threat_max = 100
-						if(ROUNDTYPE_DYNAMIC_MEDIUM)
-							GLOB.master_mode = "Dynamic (Medium)"
-							GLOB.dynamic_type_threat_min = 40
-							GLOB.dynamic_type_threat_max = 60
-						if(ROUNDTYPE_DYNAMIC_LIGHT)
-							GLOB.master_mode = "Dynamic (Light)"
-							GLOB.dynamic_type_threat_min = 25
-							GLOB.dynamic_type_threat_max = 40
-							GLOB.dynamic_extended = TRUE
-
-					GLOB.round_type = . // Выбранная вариация становится типом раунда, который используется для пресетов антагонистов
 
 					SSpersistence.RecordDynamicType(.)
-//BLUEMOON CHANGES END
+
+				GLOB.round_type = . // Выбранная вариация становится типом раунда, который используется для пресетов антагонистов
+				GLOB.master_mode = .
+				// BLUEMOON CHANGES END
 				message_admins("The gamemode has been voted for, and has been changed to: [GLOB.master_mode]")
 				log_admin("Gamemode has been voted for and switched to: [GLOB.master_mode].")
 			if("restart")
