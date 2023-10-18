@@ -2081,6 +2081,11 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/Iforce = I.force //to avoid runtimes on the forcesay checks at the bottom. Some items might delete themselves if you drop them. (stunning yourself, ninja swords)
 	var/Iwound_bonus = I.wound_bonus
 
+	/* BLUEMOON ADD START - если урона ниже минимального наносимого для расы, то он не наносится
+	if(minimal_damage_threshold && totitemdamage < minimal_damage_threshold)
+		armor_block = 100
+	*/
+
 	// this way, you can't wound with a surgical tool on help intent if they have a surgery active and are laying down, so a misclick with a circular saw on the wrong limb doesn't bleed them dry (they still get hit tho)
 	if((I.item_flags & SURGICAL_TOOL) && user.a_intent == INTENT_HELP && (H.mobility_flags & ~MOBILITY_STAND) && (LAZYLEN(H.surgeries) > 0))
 		Iwound_bonus = CANT_WOUND
@@ -2359,10 +2364,6 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(BRUTE)
 			H.damageoverlaytemp = 20
 			var/damage_amount = forced ? damage : damage * hit_percent * brutemod * H.physiology.brute_mod
-			// BLUEMOON ADD START - если урона ниже минимального наносимого для расы, то он не наносится
-			if(minimal_damage_threshold && damage_amount < minimal_damage_threshold)
-				return 1
-			// BLUEMOON ADD END
 			if(BP)
 				if(BP.receive_damage(damage_amount, 0, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness))
 					H.update_damage_overlays()
@@ -2374,10 +2375,6 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(BURN)
 			H.damageoverlaytemp = 20
 			var/damage_amount = forced ? damage : damage * hit_percent * burnmod * H.physiology.burn_mod
-			// BLUEMOON ADD START - если урона ниже минимального наносимого для расы, то он не наносится
-			if(minimal_damage_threshold && damage_amount < minimal_damage_threshold)
-				return 1
-			// BLUEMOON ADD END
 			if(BP)
 				if(BP.receive_damage(0, damage_amount, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness))
 					H.update_damage_overlays()
@@ -2513,10 +2510,12 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				else
 					H.throw_alert("temp", alert_type, 3) // BLUEMOON CHANGES
 		burn_damage = burn_damage * heatmod * H.physiology.heat_mod
-		if (H.stat < UNCONSCIOUS && (prob(burn_damage) * 10) / 4) //40% for level 3 damage on humans
-			if(!HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - синтетики не кричат, когда перегреваются
+		if(!HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM))
+			if (H.stat < UNCONSCIOUS && (prob(burn_damage) * 10) / 4) //40% for level 3 damage on humans
 				H.emote("scream")
-		H.apply_damage(burn_damage, BURN)
+			H.apply_damage(burn_damage, BURN)
+		else
+			H.adjustToxLoss(burn_damage / 2, toxins_type = TOX_SYSCORRUPT)
 
 	else if(H.bodytemperature < (BODYTEMP_COLD_DAMAGE_LIMIT + cold_offset) && !HAS_TRAIT(H, TRAIT_RESISTCOLD))
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "hot")
