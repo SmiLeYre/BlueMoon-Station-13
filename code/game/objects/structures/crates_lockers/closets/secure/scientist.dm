@@ -11,7 +11,7 @@
 	new /obj/item/clothing/head/beret/rd(src)
 	new /obj/item/clothing/suit/bio_suit/scientist(src)
 	new /obj/item/clothing/head/bio_hood/scientist(src)
-	new /obj/item/clothing/suit/toggle/labcoat(src)
+	new /obj/item/clothing/suit/toggle/labcoat/rd(src)
 	new /obj/item/clothing/under/rank/rnd/research_director(src)
 	new /obj/item/clothing/under/rank/rnd/research_director/skirt(src)
 	new /obj/item/clothing/under/rank/rnd/research_director/alt(src)

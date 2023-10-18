@@ -30,6 +30,7 @@
 					/obj/item/clothing/shoes/jackboots = 3,
 					/obj/item/clothing/shoes/jackboots/toeless = 3,
 					/obj/item/clothing/shoes/jackboots/tall = 3,
+					/obj/item/clothing/shoes/jackboots/tall_default = 1,
 					/obj/item/clothing/under/bm/blackrevdress = 3,
 					/obj/item/clothing/under/bm/whiterevdress = 3,
 					/obj/item/clothing/under/bm/angelrevskirt = 3,

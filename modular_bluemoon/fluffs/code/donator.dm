@@ -233,6 +233,13 @@
 	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife", "z67")
 	subcategory = LOADOUT_SUBCATEGORIES_DON17
 
+/datum/gear/donator/bm/malorian
+	name = "Araki Malorian Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/malorian_kit
+	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife", "z67")
+	subcategory = LOADOUT_SUBCATEGORIES_DON17
+
 /datum/gear/donator/bm/stunblade
 	name = "Stunblade Kit"
 	slot = ITEM_SLOT_BACKPACK
@@ -442,3 +449,9 @@
 	path = /obj/item/toy/plush/sergal/judas/vance
 	ckeywhitelist = list("littlemouse2729")
 	subcategory = LOADOUT_SUBCATEGORIES_DON12
+
+/datum/gear/donator/bm/pet
+	name = "Pet Beacon"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/choice_beacon/pet
+	ckeywhitelist = list("mixalic")

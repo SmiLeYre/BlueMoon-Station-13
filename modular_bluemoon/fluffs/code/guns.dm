@@ -216,6 +216,37 @@
 	can_suppress = FALSE
 	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/nue_shoot.ogg'
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/obj/item/malorian_kit
+	name = "Araki Malorian Kit"
+	desc = "A modkit for making an Enforcer into a Araki Malorian."
+	icon = 'modular_splurt/icons/obj/clothing/reinforcekits.dmi'
+	w_class = WEIGHT_CLASS_SMALL
+	icon_state = "sec_armor_kit"
+	var/product = /obj/item/gun/ballistic/automatic/pistol/enforcer/malorian //what it makes
+	var/list/fromitem = list(/obj/item/gun/ballistic/automatic/pistol/enforcer/nomag, /obj/item/gun/ballistic/automatic/pistol/enforcer, /obj/item/gun/ballistic/automatic/pistol/enforcerred, /obj/item/gun/ballistic/automatic/pistol/enforcergold) //what it needs
+
+/obj/item/malorian_kit/afterattack(obj/O, mob/user as mob)
+	if(istype(O, product))
+		to_chat(user,"<span class='warning'>[O] is already modified!")
+		return
+	if(O.type in fromitem) //makes sure O is the right thing
+		new product(usr.loc) //spawns the product
+		user.visible_message("<span class='warning'>[user] modifies [O]!","<span class='warning'>You modify the [O]!")
+		qdel(O) //Gets rid of the baton
+		qdel(src) //gets rid of the kit
+
+
+
+/obj/item/gun/ballistic/automatic/pistol/enforcer/malorian
+	name = "\improper Araki Malorian"
+	desc = "A big fucking gun."
+	icon = 'modular_bluemoon/fluffs/icons/obj/64x64.dmi'
+	icon_state = "arakiarms"
+	can_suppress = FALSE
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/nue_shoot.ogg'
+
 
 //////////////////// AM4 уже есть в лодауте донатеров. Это лишь его рескин.
 

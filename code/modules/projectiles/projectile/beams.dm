@@ -151,6 +151,7 @@
 	impact_type = /obj/effect/projectile/impact/laser/emitter
 	wound_bonus = 0
 	bare_wound_bonus = 0
+	armour_penetration = 0
 	impact_effect_type = null
 
 /obj/item/projectile/beam/lasertag

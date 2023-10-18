@@ -2352,10 +2352,12 @@
 		L.ForceContractDisease(new /datum/disease/transformation/gondola(), FALSE, TRUE)
 
 /datum/reagent/moonsugar
-	name = "Moonsugar"
+	name = "Moon Sugar"
 	description = "The primary precursor for an ancient feline delicacy known as skooma. While it has no notable effects on it's own, mixing it with morphine in a chilled container may yield interesting results."
 	color = "#FAEAFF"
 	taste_description = "synthetic catnip"
+	glass_name = "Moon sugar"
+	glass_desc = "They say it's not addictive unlike skooma, so it's safe to drink it... maybe..."
 	value = REAGENT_VALUE_UNCOMMON
 
 /datum/reagent/moonsugar/on_mob_life(mob/living/carbon/M)

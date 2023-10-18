@@ -600,6 +600,7 @@
 	var/targetting = CUM_TARGET_VAGINA
 	equip_delay_self = 2 SECONDS
 	equip_delay_other = 5 SECONDS
+	body_parts_covered = NONE
 	is_edible = 0
 
 /obj/item/clothing/underwear/briefs/panties/portalpanties/attack_self(mob/user)
@@ -617,10 +618,9 @@
 			targetting = CUM_TARGET_VAGINA
 
 	slot_flags         = targetting == CUM_TARGET_MOUTH ? ITEM_SLOT_MASK  : ITEM_SLOT_UNDERWEAR
-	body_parts_covered = targetting == CUM_TARGET_MOUTH ? NONE            : GROIN
 	flags_cover        = targetting == CUM_TARGET_MOUTH ? MASKCOVERSMOUTH : NONE
 	visor_flags_cover  = targetting == CUM_TARGET_MOUTH ? MASKCOVERSMOUTH : NONE
-	name               = targetting == CUM_TARGET_MOUTH ? "portal mask"   : "portal panties"
+	name               = targetting == CUM_TARGET_MOUTH ? "Портальная Маска"   : "Портальные Трусики"
 
 	to_chat(user, "<span class='notice'>Теперь при надевании портал будет обращен к вашему [targetting].</span>")
 	update_portal()

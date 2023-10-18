@@ -384,7 +384,7 @@
 	return ..()
 
 /datum/reagent/consumable/ethanol/twinkjuice
-	name = "Twink Juice"
+	name = "Boy Kisser"
 	description = "A long slender fruity drink with a green thick liquid inside. It smells nice and, and probably tastes fruity."
 	color = "#3fd2ff"
 	taste_description = "a concoction of dubious origins, and dubious purposes"

@@ -77,6 +77,7 @@
 					/obj/item/clothing/neck/tie/blue = 2,
 					/obj/item/clothing/under/rank/blueshield/formal/skirt = 2,
 					/obj/item/clothing/shoes/jackboots/tall = 2,
+					/obj/item/clothing/shoes/jackboots/tall_default = 2,
 					/obj/item/clothing/suit/armor/vest/bluesheid/spacecoat = 2,
 					/obj/item/clothing/suit/armor/vest/bluesheid/jacket = 2,
 					/obj/item/clothing/under/rank/blueshield/formal/pmc_leader_jumpsuit = 2,
