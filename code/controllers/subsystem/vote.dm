@@ -380,9 +380,7 @@ SUBSYSTEM_DEF(vote)
 				// BLUEMOON CHANGES START - если не экста, то берётся случайная вариация динамика
 				if(. != ROUNDTYPE_EXTENDED)
 					var/list/dynamic_pick = list()
-					switch(GLOB.joined_player_list.len)
-						if(-INFINITY to ROUNDTYPE_PLAYERCOUNT_EXTENDED_MAX)
-							dynamic_pick = list(ROUNDTYPE_EXTENDED)
+					switch(length(GLOB.clients))
 
 						if(ROUNDTYPE_PLAYERCOUNT_DYNAMIC_LOWPOP_MIN to ROUNDTYPE_PLAYERCOUNT_DYNAMIC_LOWPOP_MAX)
 							dynamic_pick = list(ROUNDTYPE_DYNAMIC_LIGHT)
@@ -398,7 +396,7 @@ SUBSYSTEM_DEF(vote)
 						SSpersistence.RecordDynamicType(.)
 					else
 						. = ROUNDTYPE_EXTENDED
-						to_chat(world, "<span class='boldannounce'>Что-то пошло очень не так. Сообщите разработчику. Для предотвращения ошибок, был выставлен режим [ROUNDTYPE_EXTENDED].</span>")
+						to_chat(world, "<span class='boldannounce'>Недостаточно игроков для иных режимов, кроме [ROUNDTYPE_EXTENDED].</span>")
 
 				GLOB.round_type = . // Выбранная вариация становится типом раунда, который используется для пресетов антагонистов
 				GLOB.master_mode = .
