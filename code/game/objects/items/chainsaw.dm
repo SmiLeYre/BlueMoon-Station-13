@@ -59,7 +59,7 @@
 /obj/item/chainsaw/attack_self(mob/user)
 	on = !on
 	to_chat(user, "As you pull the starting cord dangling from [src], [on ? "it begins to whirr." : "the chain stops moving."]")
-	playsound(src, 'sound/weapons/chainsawhit.ogg', 100, 1)
+	playsound(src, 'sound/weapons/chainsawstart.ogg', 65, 1)
 	force = on ? force_on : initial(force)
 	throwforce = on ? force_on : force
 	update_icon()

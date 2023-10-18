@@ -1,13 +1,15 @@
-/obj/item/Kovac_Kit
-	name = "Kovac Gun Kit"
-	desc = "A modkit for making a Enforcer Gun into a Kovac Gun."
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/obj/item/modkit
+	name = "modkit"
+	desc = "A modkit for making something into something."
 	icon = 'modular_splurt/icons/obj/clothing/reinforcekits.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	icon_state = "sec_armor_kit"
-	var/product = /obj/item/gun/ballistic/automatic/pistol/enforcer/steyr //what it makes
-	var/list/fromitem = list(/obj/item/gun/ballistic/automatic/pistol/enforcer/nomag, /obj/item/gun/ballistic/automatic/pistol/enforcer, /obj/item/gun/ballistic/automatic/pistol/enforcerred, /obj/item/gun/ballistic/automatic/pistol/enforcergold) //what it needs
+	var/product //what it makes
+	var/list/fromitem = list() //what it needs
 
-/obj/item/Kovac_Kit/afterattack(obj/O, mob/user as mob)
+/obj/item/modkit/afterattack(obj/O, mob/user as mob)
 	if(istype(O, product))
 		to_chat(user,"<span class='warning'>[O] is already modified!")
 		return
@@ -18,6 +20,14 @@
 		qdel(src) //gets rid of the kit
 	else
 		to_chat(user, "<span class='warning'> You can't modify [O] with this kit!</span>")
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/obj/item/modkit/Kovac_Kit
+	name = "Kovac Gun Kit"
+	desc = "A modkit for making a Enforcer Gun into a Kovac Gun."
+	product = /obj/item/gun/ballistic/automatic/pistol/enforcer/steyr
+	fromitem = list(/obj/item/gun/ballistic/automatic/pistol/enforcer/nomag, /obj/item/gun/ballistic/automatic/pistol/enforcer, /obj/item/gun/ballistic/automatic/pistol/enforcerred, /obj/item/gun/ballistic/automatic/pistol/enforcergold)
 
 /obj/item/gun/ballistic/automatic/pistol/enforcer/steyr
 	name = "\improper Steyr MWS"
@@ -27,26 +37,11 @@
 	can_suppress = FALSE
 	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/steyr_shoot.ogg'
 
-/obj/item/auto9_kit
+/obj/item/modkit/auto9_kit
 	name = "Auto 9 Kit"
 	desc = "A modkit for making a WT-550 Gun into a Auto 9 Gun."
-	icon = 'modular_splurt/icons/obj/clothing/reinforcekits.dmi'
-	w_class = WEIGHT_CLASS_SMALL
-	icon_state = "sec_armor_kit"
-	var/product = /obj/item/gun/ballistic/automatic/wt550/auto9 //what it makes
-	var/list/fromitem = list(/obj/item/gun/ballistic/automatic/wt550) //what it needs
-
-/obj/item/auto9_kit/afterattack(obj/O, mob/user as mob)
-	if(istype(O, product))
-		to_chat(user,"<span class='warning'>[O] is already modified!")
-		return
-	if(O.type in fromitem) //makes sure O is the right thing
-		new product(usr.loc) //spawns the product
-		user.visible_message("<span class='warning'>[user] modifies [O]!","<span class='warning'>You modify the [O]!")
-		qdel(O) //Gets rid of the baton
-		qdel(src) //gets rid of the kit
-	else
-		to_chat(user, "<span class='warning'> You can't modify [O] with this kit!</span>")
+	product = /obj/item/gun/ballistic/automatic/wt550/auto9
+	fromitem = list(/obj/item/gun/ballistic/automatic/wt550)
 
 /obj/item/gun/ballistic/automatic/wt550/auto9
 	name = "\improper Auto 9"
@@ -66,26 +61,11 @@
 	else
 		icon_state = "auto9-e"
 
-/obj/item/m240_kit
+/obj/item/modkit/m240_kit
 	name = "M240 Kit"
 	desc = "A modkit for making a Flamethrower into a M240."
-	icon = 'modular_splurt/icons/obj/clothing/reinforcekits.dmi'
-	w_class = WEIGHT_CLASS_SMALL
-	icon_state = "sec_armor_kit"
-	var/product = /obj/item/flamethrower/full/tank/m240 //what it makes
-	var/list/fromitem = list(/obj/item/flamethrower, /obj/item/flamethrower/full, /obj/item/flamethrower/full/tank) //what it needs
-
-/obj/item/m240_kit/afterattack(obj/O, mob/user as mob)
-	if(istype(O, product))
-		to_chat(user,"<span class='warning'>[O] is already modified!")
-		return
-	if(O.type in fromitem) //makes sure O is the right thing
-		new product(usr.loc) //spawns the product
-		user.visible_message("<span class='warning'>[user] modifies [O]!","<span class='warning'>You modify the [O]!")
-		qdel(O) //Gets rid of the baton
-		qdel(src) //gets rid of the kit
-	else
-		to_chat(user, "<span class='warning'> You can't modify [O] with this kit!</span>")
+	product = /obj/item/flamethrower/full/tank/m240
+	fromitem = list(/obj/item/flamethrower, /obj/item/flamethrower/full, /obj/item/flamethrower/full/tank)
 
 /obj/item/flamethrower/full/tank/m240
 	name = "M240 Flamethrower"
@@ -100,26 +80,11 @@
 /obj/item/flamethrower/update_icon_state()
 	item_state = "m240_[lit]"
 
-/obj/item/old_kit
+/obj/item/modkit/old_kit
 	name = "H&K Luftkuss Kit"
 	desc = "A modkit for making a hybrid taser into a H&K Luftkuss."
-	icon = 'modular_splurt/icons/obj/clothing/reinforcekits.dmi'
-	w_class = WEIGHT_CLASS_SMALL
-	icon_state = "sec_armor_kit"
-	var/product = /obj/item/gun/energy/e_gun/advtaser_old //what it makes
-	var/list/fromitem = list(/obj/item/gun/energy/e_gun/advtaser) //what it needs
-
-/obj/item/old_kit/afterattack(obj/O, mob/user as mob)
-	if(istype(O, product))
-		to_chat(user,"<span class='warning'>[O] is already modified!")
-		return
-	if(O.type in fromitem) //makes sure O is the right thing
-		new product(usr.loc) //spawns the product
-		user.visible_message("<span class='warning'>[user] modifies [O]!","<span class='warning'>You modify the [O]!")
-		qdel(O) //Gets rid of the baton
-		qdel(src) //gets rid of the kit
-	else
-		to_chat(user, "<span class='warning'> You can't modify [O] with this kit!</span>")
+	product = /obj/item/gun/energy/e_gun/advtaser_old
+	fromitem = list(/obj/item/gun/energy/e_gun/advtaser)
 
 /obj/item/gun/energy/e_gun/advtaser_old
 	name = "H&K Luftkuss"
@@ -157,26 +122,11 @@
 
 ////////////
 
-/obj/item/dominator_kit
+/obj/item/modkit/dominator_kit
 	name = "Dominator Kit"
 	desc = "A modkit for making a hybrid taser into a Dominator."
-	icon = 'modular_splurt/icons/obj/clothing/reinforcekits.dmi'
-	w_class = WEIGHT_CLASS_SMALL
-	icon_state = "sec_armor_kit"
-	var/product = /obj/item/gun/energy/e_gun/advtaser/dominator //what it makes
-	var/list/fromitem = list(/obj/item/gun/energy/e_gun/advtaser) //what it needs
-
-/obj/item/dominator_kit/afterattack(obj/O, mob/user as mob)
-	if(istype(O, product))
-		to_chat(user,"<span class='warning'>[O] is already modified!")
-		return
-	if(O.type in fromitem) //makes sure O is the right thing
-		new product(usr.loc) //spawns the product
-		user.visible_message("<span class='warning'>[user] modifies [O]!","<span class='warning'>You modify the [O]!")
-		qdel(O) //Gets rid of the baton
-		qdel(src) //gets rid of the kit
-	else
-		to_chat(user, "<span class='warning'> You can't modify [O] with this kit!</span>")
+	product = /obj/item/gun/energy/e_gun/advtaser/dominator
+	fromitem = list(/obj/item/gun/energy/e_gun/advtaser)
 
 /obj/item/gun/energy/e_gun/advtaser/dominator
 	name = "\improper Dominator"
@@ -189,24 +139,11 @@
 
 /////////////////
 
-/obj/item/nue_kit
+/obj/item/modkit/nue_kit
 	name = "Araki Nue Kit"
 	desc = "A modkit for making an Enforcer into a Araki Nue."
-	icon = 'modular_splurt/icons/obj/clothing/reinforcekits.dmi'
-	w_class = WEIGHT_CLASS_SMALL
-	icon_state = "sec_armor_kit"
-	var/product = /obj/item/gun/ballistic/automatic/pistol/enforcer/nue //what it makes
-	var/list/fromitem = list(/obj/item/gun/ballistic/automatic/pistol/enforcer/nomag, /obj/item/gun/ballistic/automatic/pistol/enforcer, /obj/item/gun/ballistic/automatic/pistol/enforcerred, /obj/item/gun/ballistic/automatic/pistol/enforcergold) //what it needs
-
-/obj/item/nue_kit/afterattack(obj/O, mob/user as mob)
-	if(istype(O, product))
-		to_chat(user,"<span class='warning'>[O] is already modified!")
-		return
-	if(O.type in fromitem) //makes sure O is the right thing
-		new product(usr.loc) //spawns the product
-		user.visible_message("<span class='warning'>[user] modifies [O]!","<span class='warning'>You modify the [O]!")
-		qdel(O) //Gets rid of the baton
-		qdel(src) //gets rid of the kit
+	product = /obj/item/gun/ballistic/automatic/pistol/enforcer/nue
+	fromitem = list(/obj/item/gun/ballistic/automatic/pistol/enforcer/nomag, /obj/item/gun/ballistic/automatic/pistol/enforcer, /obj/item/gun/ballistic/automatic/pistol/enforcerred, /obj/item/gun/ballistic/automatic/pistol/enforcergold)
 
 /obj/item/gun/ballistic/automatic/pistol/enforcer/nue
 	name = "\improper Araki Nue"
@@ -218,35 +155,43 @@
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/obj/item/malorian_kit
-	name = "Araki Malorian Kit"
+/obj/item/modkit/malorian_kit
+	name = "Malorian Kit"
 	desc = "A modkit for making an Enforcer into a Araki Malorian."
-	icon = 'modular_splurt/icons/obj/clothing/reinforcekits.dmi'
-	w_class = WEIGHT_CLASS_SMALL
-	icon_state = "sec_armor_kit"
-	var/product = /obj/item/gun/ballistic/automatic/pistol/enforcer/malorian //what it makes
-	var/list/fromitem = list(/obj/item/gun/ballistic/automatic/pistol/enforcer/nomag, /obj/item/gun/ballistic/automatic/pistol/enforcer, /obj/item/gun/ballistic/automatic/pistol/enforcerred, /obj/item/gun/ballistic/automatic/pistol/enforcergold) //what it needs
+	product = /obj/item/gun/ballistic/automatic/pistol/enforcer/malorian
+	fromitem = list(/obj/item/gun/ballistic/automatic/pistol/enforcer/nomag, /obj/item/gun/ballistic/automatic/pistol/enforcer, /obj/item/gun/ballistic/automatic/pistol/enforcerred, /obj/item/gun/ballistic/automatic/pistol/enforcergold)
 
-/obj/item/malorian_kit/afterattack(obj/O, mob/user as mob)
-	if(istype(O, product))
-		to_chat(user,"<span class='warning'>[O] is already modified!")
-		return
-	if(O.type in fromitem) //makes sure O is the right thing
-		new product(usr.loc) //spawns the product
-		user.visible_message("<span class='warning'>[user] modifies [O]!","<span class='warning'>You modify the [O]!")
-		qdel(O) //Gets rid of the baton
-		qdel(src) //gets rid of the kit
-
-
+/obj/item/modkit/malorian_mag_kit
+	name = "Malorian Mag Kit"
+	desc = "A modkit for making an Enforcer mag into a Malorian mag."
+	product = /obj/item/ammo_box/magazine/e45/malorian
+	fromitem = list(/obj/item/ammo_box/magazine/e45, /obj/item/ammo_box/magazine/e45/taser, /obj/item/ammo_box/magazine/e45/lethal, /obj/item/ammo_box/magazine/e45/stun, /obj/item/ammo_box/magazine/e45/hydra)
 
 /obj/item/gun/ballistic/automatic/pistol/enforcer/malorian
-	name = "\improper Araki Malorian"
-	desc = "A big fucking gun."
+	name = "\improper Araki Arms 3516"
+	desc = "Unique heavy pistol manufactured by Araki Arms. Taking already successful design of previous Araki Nue, this one was designed to the personal specifications of Shiro."
 	icon = 'modular_bluemoon/fluffs/icons/obj/64x64.dmi'
 	icon_state = "arakiarms"
 	can_suppress = FALSE
 	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/nue_shoot.ogg'
+	mag_type = /obj/item/ammo_box/magazine/e45/malorian
 
+/obj/item/ammo_box/magazine/e45/malorian
+	name = "Araki Arms magazine"
+	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
+	//icon_state = "mag"
+	desc = "An Araki Arms magazine. Can be loaded with .45 ammo."
+
+/obj/item/storage/box/malorian_mag
+
+/obj/item/storage/box/malorian_mag/PopulateContents()
+	new /obj/item/modkit/malorian_mag_kit(src)
+	new /obj/item/modkit/malorian_mag_kit(src)
+	new /obj/item/modkit/malorian_mag_kit(src)
+	new /obj/item/modkit/malorian_mag_kit(src)
+	new /obj/item/modkit/malorian_mag_kit(src)
+	new /obj/item/modkit/malorian_mag_kit(src)
+	new /obj/item/modkit/malorian_mag_kit(src)
 
 //////////////////// AM4 уже есть в лодауте донатеров. Это лишь его рескин.
 
@@ -267,25 +212,11 @@
 
 /////////////////////////////////////////////////////////////////////////////////////
 
-/obj/item/stunblade_kit
+/obj/item/modkit/stunblade_kit
 	name = "Stunblade Kit"
 	desc = "A modkit for making an stunbaton into a stunblade."
-	icon = 'modular_splurt/icons/obj/clothing/reinforcekits.dmi'
-	w_class = WEIGHT_CLASS_SMALL
-	icon_state = "sec_armor_kit"
-	var/product = /obj/item/melee/baton/stunblade //what it makes
-	var/list/fromitem = list(/obj/item/melee/baton, /obj/item/melee/baton/loaded) //what it needs
-
-/obj/item/stunblade_kit/afterattack(obj/O, mob/user as mob)
-	if(istype(O, product))
-		to_chat(user,"<span class='warning'>[O] is already modified!")
-		return
-	if(O.type in fromitem) //makes sure O is the right thing
-		new product(usr.loc) //spawns the product
-		user.visible_message("<span class='warning'>[user] modifies [O]!","<span class='warning'>You modify the [O]!")
-		qdel(O) //Gets rid of the baton
-		qdel(src) //gets rid of the kit
-
+	product = /obj/item/melee/baton/stunblade
+	fromitem = list(/obj/item/melee/baton, /obj/item/melee/baton/loaded)
 
 /obj/item/melee/baton/stunblade
 	name = "folding stunblade"
@@ -320,3 +251,34 @@
 
 /obj/item/melee/baton/stunblade/get_worn_belt_overlay(icon_file)
 	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "-stunblade")
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+/obj/item/modkit/pf940_kit
+	name = "PF940 Kit"
+	desc = "A modkit for making an Enforcer into a PF940."
+	product = /obj/item/gun/ballistic/automatic/pistol/enforcer/pf940
+	fromitem = list(/obj/item/gun/ballistic/automatic/pistol/enforcer/nomag, /obj/item/gun/ballistic/automatic/pistol/enforcer, /obj/item/gun/ballistic/automatic/pistol/enforcerred, /obj/item/gun/ballistic/automatic/pistol/enforcergold)
+
+/obj/item/modkit/pf940_kit_g22
+	name = "PF940 G22 Kit"
+	desc = "A modkit for making a G22 into a PF940."
+	product = /obj/item/gun/ballistic/automatic/pistol/enforcer/pf940
+	fromitem = list(/obj/item/gun/ballistic/automatic/pistol/enforcer/nomag, /obj/item/gun/ballistic/automatic/pistol/enforcer, /obj/item/gun/ballistic/automatic/pistol/enforcerred, /obj/item/gun/ballistic/automatic/pistol/enforcergold)
+
+/obj/item/gun/ballistic/automatic/pistol/enforcer/pf940
+	name = "\improper PF940"
+	desc = "A heavily modified Glock 21 pistol with some ergonomic parts and a caliber converted to .45, making it easy to find ammo at Edem stations. Your team is down, you're the only fella left. You- You'll just have to figure it out."
+	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
+	icon_state = "pf940"
+	can_suppress = FALSE
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/pf940_shoot.ogg'
+
+/obj/item/gun/ballistic/automatic/pistol/g22/pf940
+	name = "\improper PF940"
+	desc = "A heavily modified Glock 21 pistol with some ergonomic parts and a caliber converted to .45, making it easy to find ammo at Edem stations. Your team is down, you're the only fella left. You- You'll just have to figure it out."
+	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
+	icon_state = "pf940"
+	can_suppress = FALSE
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/pf940_shoot.ogg'

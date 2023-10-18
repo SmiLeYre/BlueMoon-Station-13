@@ -24,7 +24,7 @@
 
 		// Deliberately the same message framing as nanite message + ghost deathrattle
 		var/mob/living/recipient = implant.imp_in
-		to_chat(recipient, "<i>Вы слышите странный механический голос в голове...</i>Раб божий \"<span class='robot'><b>[name]</b> отдал Богу душу в локации: <b>[area]</b>.</span>\"")
+		to_chat(recipient, "<i>Вы слышите странный механический голос в голове...</i>\"<span class='robot'><b>[name]</b> отдал[owner.ru_a()] Богу душу в локации: <b>[area]</b>.</span>\"")
 		SEND_SOUND(recipient, pick(
 		'sound/items/knell1.ogg',
 		'sound/items/knell2.ogg',
