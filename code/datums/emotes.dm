@@ -42,6 +42,8 @@
 
 /datum/emote/proc/run_emote(mob/user, params, type_override, intentional = FALSE)
 	. = TRUE
+	if(emote_type != EMOTE_AUDIBLE)
+		ignore_cooldown = TRUE
 	if(!can_run_emote(user, TRUE, intentional) || (user.nextsoundemote >= world.time && !ignore_cooldown))
 		return FALSE
 	var/msg = select_message_type(user)
