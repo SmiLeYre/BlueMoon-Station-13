@@ -299,6 +299,7 @@
 	cost = 7
 	restricted = TRUE
 	limited_stock = 1
+	purchasable_from = ~(UPLINK_SYNDICATE)
 
 /datum/uplink_item/device_tools/syndicate_teleporter
 	name = "Experimental Syndicate Teleporter"

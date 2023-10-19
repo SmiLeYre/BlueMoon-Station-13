@@ -182,10 +182,10 @@
 	key_third_person = "realagony"
 	message = "кричит в агонии!"
 	emote_type = EMOTE_AUDIBLE
-	//emote_cooldown = 4 SECONDS
+	emote_cooldown = 5 SECONDS
 
 /datum/emote/living/real_agony/run_emote(mob/living/user, params) //I can't not port this shit, come on.
-	if(user.nextsoundemote >= world.time || user.stat != CONSCIOUS)
+	if(user.stat != CONSCIOUS)
 		return
 	var/sound
 	var/miming = user.mind ? user.mind.miming : 0
@@ -193,7 +193,6 @@
 		var/mob/living/carbon/c = user
 		c.reindex_screams()
 	if(!user.is_muzzled() && !miming)
-		user.nextsoundemote = world.time + 5 SECONDS
 		if(issilicon(user))
 			sound = 'modular_citadel/sound/voice/scream_silicon.ogg'
 			if(iscyborg(user))

@@ -622,10 +622,27 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						dat += "<i>The server has disabled choosing your own laws, you can still choose and save, but it won't do anything in-game.</i><br>"
 					dat += "<b>Starting lawset:</b> <a href='?_src_=prefs;task=input;preference=silicon_lawset'>[silicon_lawset ? silicon_lawset : "No custom"]</a><br>"
 
-//					if(silicon_lawset)
-//						var/datum/ai_laws/laws = null
-//						to_chat(usr, "<b>Соблюдайте данные законы:</b>")
-//						laws.show_laws(usr)
+					if(silicon_lawset)
+						var/list/config_laws = CONFIG_GET(keyed_list/choosable_laws)
+						var/obj/item/aiModule/law_board = GLOB.all_law_boards[text2path(config_laws[silicon_lawset])]
+						if(law_board)
+							var/law_number = 1
+							if(length(law_board.laws))
+								for(var/law_text in law_board.laws)
+									dat += "[law_number]: [law_text]<br>"
+									law_number++
+							else if(istype(law_board, /obj/item/aiModule/core/full))
+								var/obj/item/aiModule/core/full/full_boardtype = law_board
+								for(var/datum/ai_laws/law_prototype in typesof(/datum/ai_laws))
+									if(full_boardtype.law_id != initial(law_prototype.id))
+										continue
+									var/datum/ai_laws/law_datum = new law_prototype
+									for(var/law_text in law_datum.get_law_list(TRUE))
+										dat += "[law_text]<br>"
+									qdel(law_datum) // hiss i hate everything in this else
+									break
+							else
+								dat += "I was unable to find the laws for your lawset, sorry <font style='translate: rotate(90deg)'>:(</font>"
 
 					dat += "</td>"
 

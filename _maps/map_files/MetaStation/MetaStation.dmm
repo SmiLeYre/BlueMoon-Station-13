@@ -73822,6 +73822,7 @@
 /obj/effect/turf_decal/tile/brown{
 	dir = 8
 	},
+/obj/machinery/computer/bounty,
 /turf/open/floor/plasteel,
 /area/cargo/office)
 "qsU" = (

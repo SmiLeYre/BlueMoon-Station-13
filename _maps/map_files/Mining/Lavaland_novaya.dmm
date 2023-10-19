@@ -5839,6 +5839,9 @@
 	dir = 4;
 	pixel_x = 11
 	},
+/obj/structure/reagent_dispensers/spacecleanertank{
+	pixel_y = 30
+	},
 /turf/open/floor/plasteel,
 /area/mine/production)
 "fuu" = (
@@ -6784,9 +6787,6 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/lavaland/unpowered/ash_walkers)
 "guG" = (
-/obj/structure/sign/poster/official/no_erp{
-	pixel_y = -32
-	},
 /obj/effect/turf_decal/siding/wood/corner,
 /obj/structure/chair/pew/left{
 	dir = 4
@@ -11262,6 +11262,9 @@
 "kNL" = (
 /obj/structure/reagent_dispensers/watertank/high,
 /obj/item/reagent_containers/glass/bucket/wood,
+/obj/structure/sign/poster/contraband/yes_erp{
+	pixel_y = 30
+	},
 /turf/open/floor/plasteel,
 /area/mine/living_quarters)
 "kNU" = (

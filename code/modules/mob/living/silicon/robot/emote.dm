@@ -59,11 +59,13 @@
 	key = "sad"
 	message = "plays a sad trombone..."
 	sound = 'sound/misc/sadtrombone.ogg'
+	emote_cooldown = 6 SECONDS
 
 /datum/emote/sound/silicon/warn
 	key = "warn"
 	message = "blares an alarm!"
 	sound = 'sound/machines/warning-buzzer.ogg'
+	emote_cooldown = 5 SECONDS
 
 /mob/living/silicon/robot/verb/powerwarn()
 	set category = "Robot Commands"

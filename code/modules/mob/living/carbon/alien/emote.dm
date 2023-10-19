@@ -8,6 +8,7 @@
 	key_third_person = "hisses"
 	message_alien = "hisses."
 	message_larva = "hisses softly."
+	emote_cooldown = 2 SECONDS
 
 /datum/emote/living/alien/hiss/run_emote(mob/user, params)
 	. = ..()
@@ -20,6 +21,7 @@
 	message_alien = "roars."
 	message_larva = "softly roars."
 	emote_type = EMOTE_AUDIBLE
+	emote_cooldown = 5 SECONDS
 
 /datum/emote/living/alien/roar/run_emote(mob/user, params)
 	. = ..()

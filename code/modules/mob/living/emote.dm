@@ -41,6 +41,7 @@
 	key_third_person = "chuckles"
 	message = "усмехается."
 	emote_type = EMOTE_AUDIBLE
+	emote_cooldown = 3 SECONDS
 
 /datum/emote/living/chuckle/run_emote(mob/user, params)
 	. = ..()
@@ -88,15 +89,11 @@
 	key_third_person = "dances"
 	message = "радостно танцует."
 	restraint_check = TRUE
+	emote_cooldown = 3 SECONDS
 
 /datum/emote/living/dance/run_emote(mob/user, params, type_override, intentional)
 	. = ..()
 	if(ishuman(user))
-		if(user.nextsoundemote >= world.time)
-			//to_chat(user, span_warning("Рано! Очень рано!!"))
-			//SEND_SOUND(user, 'sound/machines/buzz-sigh.ogg')
-			return
-		user.nextsoundemote = world.time + 5 SECONDS
 		user.SpinAnimation(8,4)
 		user.spin(30, 1)
 
@@ -268,6 +265,7 @@
 
 /datum/emote/living/audio_emote
 	emote_type = EMOTE_AUDIBLE
+	emote_cooldown = 1 SECONDS
 
 /datum/emote/living/audio_emote/can_run_emote(mob/living/user, status_check = TRUE)
 	. = ..()
@@ -280,6 +278,7 @@
 	key_third_person = "laughs"
 	message = "смеётся."
 	message_mime = "тихо смеётся!"
+	emote_cooldown = 3 SECONDS
 
 /datum/emote/living/audio_emote/laugh/run_emote(mob/user, params)
 	. = ..()
@@ -374,13 +373,7 @@
 	message = "кричит."
 	message_mime = "изображает крик!"
 	emote_type = EMOTE_AUDIBLE
-
-/datum/emote/living/scream/run_emote(mob/user, params, type_override, intentional)
-	. = ..()
-	if(ishuman(user))
-		if(user.nextsoundemote >= world.time)
-			return
-		user.nextsoundemote = world.time + 3 SECONDS
+	emote_cooldown = 3 SECONDS
 
 /datum/emote/living/scowl
 	key = "scowl"
@@ -544,6 +537,7 @@
 	key_third_person = "yawns"
 	message = "зевает."
 	emote_type = EMOTE_AUDIBLE
+	emote_cooldown = 3 SECONDS
 
 /datum/emote/living/yawn/run_emote(mob/user, params)
 	. = ..()
@@ -624,6 +618,7 @@
 	message = "в процессе взлома Синдикатом."
 	sound = 'sound/machines/AISyndiHack.ogg'
 	mob_type_allowed_typecache = list(/mob/living/brain, /mob/living/silicon, /mob/living/carbon/human, /mob/camera/aiEye)
+	emote_cooldown = 10 SECONDS
 
 /datum/emote/sound/beep
 	key = "beep"
