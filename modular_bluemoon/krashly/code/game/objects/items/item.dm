@@ -279,7 +279,6 @@
 	path = /obj/item/paper/book_alch
 	ckeywhitelist = list("trollandrew")
 	subcategory = LOADOUT_SUBCATEGORIES_DON18
-	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
 /datum/gear/donator/bm/cat_alch
 	name = "Alchemist's Neko Wallet"
@@ -287,7 +286,6 @@
 	path = /obj/item/storage/wallet/cat_alch
 	ckeywhitelist = list("trollandrew")
 	subcategory = LOADOUT_SUBCATEGORIES_DON18
-	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
 /datum/gear/donator/bm/vape
 	name = "Vape"
@@ -295,7 +293,6 @@
 	path = /obj/item/clothing/mask/vape
 	ckeywhitelist = list("trollandrew")
 	subcategory = LOADOUT_SUBCATEGORIES_DON18
-	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
 /datum/gear/donator/bm/electropack
 	name = "Electropack"
@@ -303,7 +300,6 @@
 	path = /obj/item/electropack
 	ckeywhitelist = list("trollandrew")
 	subcategory = LOADOUT_SUBCATEGORIES_DON18
-	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
 /datum/gear/donator/bm/straight_jacket
 	name = "Straight Jacket"
@@ -311,7 +307,6 @@
 	path = /obj/item/clothing/suit/straight_jacket
 	ckeywhitelist = list("trollandrew")
 	subcategory = LOADOUT_SUBCATEGORIES_DON18
-	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
 /datum/gear/donator/bm/boxing
 	name = "Boxing Gloves"
@@ -319,7 +314,6 @@
 	path = /obj/item/clothing/gloves/boxing
 	ckeywhitelist = list("trollandrew")
 	subcategory = LOADOUT_SUBCATEGORIES_DON18
-	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
 /datum/gear/donator/bm/coconut_bong
 	name = "Coconut Bong"
@@ -327,7 +321,6 @@
 	path = /obj/item/bong/coconut
 	ckeywhitelist = list("trollandrew")
 	subcategory = LOADOUT_SUBCATEGORIES_DON18
-	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
 /datum/gear/donator/bm/armyknife
 	name = "Army Knife"
@@ -335,4 +328,3 @@
 	path = /obj/item/armyknife
 	ckeywhitelist = list("trollandrew")
 	subcategory = LOADOUT_SUBCATEGORIES_DON18
-	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
