@@ -671,7 +671,7 @@ BLUEMOON REMOVAL END*/
 
 		var/chance_to_appear = get_midround_injection_chance() // BLUEMOON ADD - берём отсюда шанс для появления антагонистов, чтобы потом вывести его админам
 
-		if(prob(chance_to_appear())) // BLUEMOON CHANGES - было prob(get_midround_injection_chance()
+		if(prob(chance_to_appear)) // BLUEMOON CHANGES - было prob(get_midround_injection_chance()
 			var/list/drafted_rules = list()
 			for (var/datum/dynamic_ruleset/midround/rule in midround_rules)
 				if (!rule.weight)
