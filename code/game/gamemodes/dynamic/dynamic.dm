@@ -669,7 +669,9 @@ BLUEMOON REMOVAL END*/
 
 		last_midround_injection_attempt = world.time
 
-		if (prob(get_midround_injection_chance()))
+		var/chance_to_appear = get_midround_injection_chance() // BLUEMOON ADD - берём отсюда шанс для появления антагонистов, чтобы потом вывести его админам
+
+		if(prob(chance_to_appear())) // BLUEMOON CHANGES - было prob(get_midround_injection_chance()
 			var/list/drafted_rules = list()
 			for (var/datum/dynamic_ruleset/midround/rule in midround_rules)
 				if (!rule.weight)
@@ -694,6 +696,11 @@ BLUEMOON REMOVAL END*/
 		else if (random_event_hijacked == HIJACKED_TOO_SOON)
 			message_admins("DYNAMIC: Midround injection failed when random event was hijacked. Spawning another random event in its place.")
 			log_game("DYNAMIC: Midround injection failed when random event was hijacked. Spawning another random event in its place.")
+		// BLUEMOON ADD START - больше логирования и информации о режиме админам
+		else
+			message_admins("DYNAMIC: Шанс на появление антагонистов в [chance_to_appear] не прошёл.")
+			log_game("DYNAMIC: Шанс на появление антагонистов в [chance_to_appear] не прошёл.")
+		// BLUEMOON ADD END
 
 			// A random event antag would have rolled had this injection check passed.
 			// As a refund, spawn a non-ghost-role random event.
@@ -709,16 +716,17 @@ BLUEMOON REMOVAL END*/
 		return 100
 	var/chance = 0
 	var/effective_living_players = current_players[CURRENT_LIVING_PLAYERS].len
-/*BLUEMOON REMOVAL START - динамичная экста (лайт динамик) не должны сокращать количество игроков
+	/* BLUEMOON REMOVAL START - динамичная экста (лайт динамик) не должны сокращать количество игроков
 	if(GLOB.dynamic_extended)
 		effective_living_players = min(effective_living_players, length(SSjob.get_living_sec())*2 + length(SSjob.get_living_heads()))
-BLUEMOON REMOVAL END*/
+	/ BLUEMOON REMOVAL END*/
 	var/max_pop_per_antag = max(5,15 - round(threat_level/10) - round(effective_living_players/5))
 	if (!current_players[CURRENT_LIVING_ANTAGS].len)
-/*BLUEMOON REMOVAL START - динамичная экста (лайт динамик) не должны уменьшать шанс появления ролей
+		/* BLUEMOON REMOVAL START - динамичная экста (лайт динамик) не должны уменьшать шанс появления ролей
 		if(GLOB.dynamic_extended)
 			chance += min(50,effective_living_players*5)
-		else BLUEMOON REMOVAL END*/
+		else
+		/ BLUEMOON REMOVAL END*/
 		chance += 50 // No antags at all? let's boost those odds!
 	else
 		var/current_pop_per_antag = effective_living_players / current_players[CURRENT_LIVING_ANTAGS].len
@@ -726,8 +734,10 @@ BLUEMOON REMOVAL END*/
 			chance += min(50, 25+10*(current_pop_per_antag-max_pop_per_antag))
 		else
 			chance += 25-10*(max_pop_per_antag-current_pop_per_antag)
+	/* BLUEMOON REMOVAL START - мёртвыми могут быть в т.ч. игроки не со станции, из-за чего система работает некорректно
 	if (current_players[CURRENT_DEAD_PLAYERS].len > current_players[CURRENT_LIVING_PLAYERS].len)
 		chance -= 30 // More than half the crew died? ew, let's calm down on antags
+	/ BLUEMOON REMOVAL END */
 	if (mid_round_budget > higher_injection_chance_minimum_threat)
 		chance += higher_injection_chance
 	if (mid_round_budget < lower_injection_chance_minimum_threat)
