@@ -696,16 +696,17 @@ BLUEMOON REMOVAL END*/
 		else if (random_event_hijacked == HIJACKED_TOO_SOON)
 			message_admins("DYNAMIC: Midround injection failed when random event was hijacked. Spawning another random event in its place.")
 			log_game("DYNAMIC: Midround injection failed when random event was hijacked. Spawning another random event in its place.")
-		// BLUEMOON ADD START - больше логирования и информации о режиме админам
-		else
-			message_admins("DYNAMIC: Шанс на появление антагонистов в [chance_to_appear] не прошёл.")
-			log_game("DYNAMIC: Шанс на появление антагонистов в [chance_to_appear] не прошёл.")
-		// BLUEMOON ADD END
 
 			// A random event antag would have rolled had this injection check passed.
 			// As a refund, spawn a non-ghost-role random event.
 			SSevents.spawnEvent()
 			SSevents.reschedule()
+
+		// BLUEMOON ADD START - больше логирования и информации о режиме админам
+		else
+			message_admins("DYNAMIC: Шанс на появление антагонистов в [chance_to_appear] не прошёл.")
+			log_game("DYNAMIC: Шанс на появление антагонистов в [chance_to_appear] не прошёл.")
+		// BLUEMOON ADD END
 
 		random_event_hijacked = HIJACKED_NOTHING
 
