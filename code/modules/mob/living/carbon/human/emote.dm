@@ -88,6 +88,7 @@
 	key = "wag"
 	key_third_person = "wags"
 	message = "начинает вилять своим хвостом."
+	ignore_cooldown = TRUE
 
 /datum/emote/living/carbon/human/wag/run_emote(mob/user, params)
 	. = ..()
@@ -119,6 +120,7 @@
 	key = "wing"
 	key_third_person = "wings"
 	message = "хлопает своими крыльями."
+	ignore_cooldown = TRUE
 
 /datum/emote/living/carbon/human/wing/run_emote(mob/user, params)
 	. = ..()

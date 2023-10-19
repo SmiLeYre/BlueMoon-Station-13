@@ -112,7 +112,7 @@
 		return FALSE
 
 	// Check cooldown
-	if(user?.nextsoundemote >= world.time)
+	if(user?.nextsoundemote >= world.time && !ignore_cooldown)
 		//to_chat(user, span_warning("Рано! Очень рано!!"))
 		//SEND_SOUND(user, 'sound/machines/buzz-sigh.ogg')
 		return FALSE

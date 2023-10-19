@@ -19,6 +19,7 @@
 	var/stat_allowed = CONSCIOUS
 	var/static/list/emote_list = list()
 	var/static/regex/stop_bad_mime = regex(@"says|exclaims|yells|asks")
+	var/ignore_cooldown = FALSE
 
 	var/chat_popup = TRUE //Skyrat edit
 	var/image_popup
@@ -41,7 +42,7 @@
 
 /datum/emote/proc/run_emote(mob/user, params, type_override, intentional = FALSE)
 	. = TRUE
-	if(!can_run_emote(user, TRUE, intentional) || user.nextsoundemote >= world.time)
+	if(!can_run_emote(user, TRUE, intentional) || (user.nextsoundemote >= world.time && !ignore_cooldown))
 		return FALSE
 	var/msg = select_message_type(user)
 	if(params && message_param)
