@@ -3,6 +3,7 @@
 	key_third_person = "cries"
 	message = "рыдает."
 	emote_type = EMOTE_AUDIBLE
+	emote_cooldown = 4 SECONDS
 
 /datum/emote/living/carbon/human/cry/run_emote(mob/user, params)
 	. = ..()
@@ -51,6 +52,7 @@
 	key_third_person = "mawps"
 	message = "раздраженно бормочет что-то на своём."
 	emote_type = EMOTE_AUDIBLE
+	emote_cooldown = 8 SECONDS
 
 /datum/emote/living/carbon/human/mawp/run_emote(mob/living/user, params)
 	. = ..()
@@ -58,9 +60,6 @@
 		if(ishuman(user))
 			if(prob(10))
 				user.adjustEarDamage(-5, -5)
-	if(user.nextsoundemote >= world.time)
-		return
-	user.nextsoundemote = world.time + 9 SECONDS
 	playsound(user, 'modular_citadel/sound/voice/purr.ogg', 50, 1, -1)	//почему мурчание?
 
 /datum/emote/living/carbon/human/mumble
@@ -88,7 +87,6 @@
 	key = "wag"
 	key_third_person = "wags"
 	message = "начинает вилять своим хвостом."
-	ignore_cooldown = TRUE
 
 /datum/emote/living/carbon/human/wag/run_emote(mob/user, params)
 	. = ..()
@@ -120,7 +118,6 @@
 	key = "wing"
 	key_third_person = "wings"
 	message = "хлопает своими крыльями."
-	ignore_cooldown = TRUE
 
 /datum/emote/living/carbon/human/wing/run_emote(mob/user, params)
 	. = ..()
@@ -218,6 +215,7 @@
 	key_third_person = "syndicates"
 	message = "получает миссию со стороны Синдиката."
 	sound = 'sound/voice/syndicate.ogg'
+	emote_cooldown = 8 SECONDS
 
 //rock paper scissors emote handling
 /mob/living/carbon/human/proc/beginRockPaperScissors(var/chosen_move)

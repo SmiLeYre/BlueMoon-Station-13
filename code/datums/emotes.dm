@@ -19,7 +19,13 @@
 	var/stat_allowed = CONSCIOUS
 	var/static/list/emote_list = list()
 	var/static/regex/stop_bad_mime = regex(@"says|exclaims|yells|asks")
-	var/ignore_cooldown = FALSE
+
+	/**
+	 * Delay for emotes: for all emotes default = 0, for audio ones = 1 SECONDS (is determined later).
+	 * If ==0, the emote doesn't not create a delay and also ignores it.
+	 * If >0, takes into account the delay and adds its own delay.
+	 */
+	var/emote_cooldown = 0
 
 	var/chat_popup = TRUE //Skyrat edit
 	var/image_popup
@@ -42,9 +48,7 @@
 
 /datum/emote/proc/run_emote(mob/user, params, type_override, intentional = FALSE)
 	. = TRUE
-	if(emote_type != EMOTE_AUDIBLE)
-		ignore_cooldown = TRUE
-	if(!can_run_emote(user, TRUE, intentional) || (user.nextsoundemote >= world.time && !ignore_cooldown))
+	if(!can_run_emote(user, TRUE, intentional) || (user.nextsoundemote >= world.time && emote_cooldown))
 		return FALSE
 	var/msg = select_message_type(user)
 	if(params && message_param)
@@ -83,6 +87,8 @@
 	if(image_popup)
 		flick_emote_popup_on_mob(user, image_popup, 40)
 	//End of skyrat changes
+	if(emote_cooldown)
+		user.nextsoundemote = world.time + emote_cooldown
 
 /datum/emote/proc/replace_pronoun(mob/user, message)
 	if(findtext(message, "their"))
@@ -165,6 +171,7 @@
 	var/vary = FALSE	//used for the honk borg emote
 	var/volume = 50
 	mob_type_allowed_typecache = list(/mob/living/brain, /mob/living/silicon, /mob/camera/aiEye)
+	emote_cooldown = 1 SECONDS
 
 /datum/emote/sound/run_emote(mob/user, params)
 	. = ..()
