@@ -82418,7 +82418,7 @@
 /obj/item/ammo_box/magazine/wt550m9/wtap{
 	pixel_x = 2;
 	pixel_y = -2
-	},32/lethal,
+	},
 /obj/item/ammo_box/magazine/e32/lethal,
 /obj/item/ammo_box/magazine/e32/lethal,
 /obj/item/ammo_box/magazine/e32/lethal,
