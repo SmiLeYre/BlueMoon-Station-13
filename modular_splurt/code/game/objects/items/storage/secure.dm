@@ -1,18 +1,18 @@
-/obj/item/storage/secure/briefcase/hos/hos_e45_pack
+/obj/item/storage/secure/briefcase/hos/hos_e32_pack
 	name = "\improper \'Enforcer\' gun kit"
 	desc = "A storage case for a Enforcer Handgun. Bullets for everyone! !"
 
 
-/obj/item/storage/secure/briefcase/hos/hos_e45_pack/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/pistol/enforcerred(src)
-	new /obj/item/ammo_box/magazine/e45/lethal(src)
-	new /obj/item/ammo_box/magazine/e45/lethal(src)
-	new /obj/item/ammo_box/magazine/e45(src)
-	new /obj/item/ammo_box/magazine/e45(src)
-	new /obj/item/ammo_box/magazine/e45(src)
-	new /obj/item/ammo_box/magazine/e45/taser(src)
-	new /obj/item/ammo_box/magazine/e45/taser(src)
-	new /obj/item/ammo_box/magazine/e45/taser(src)
+/obj/item/storage/secure/briefcase/hos/hos_e32_pack/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/enforcerred/o32(src)
+	new /obj/item/ammo_box/magazine/e32/lethal(src)
+	new /obj/item/ammo_box/magazine/e32/lethal(src)
+	new /obj/item/ammo_box/magazine/e32(src)
+	new /obj/item/ammo_box/magazine/e32(src)
+	new /obj/item/ammo_box/magazine/e32(src)
+	new /obj/item/ammo_box/magazine/e32/taser(src)
+	new /obj/item/ammo_box/magazine/e32/taser(src)
+	new /obj/item/ammo_box/magazine/e32/taser(src)
 
 // Sec Officer Boxes
 
@@ -23,15 +23,15 @@
 /obj/item/storage/secure/briefcase/cop/advtaser_box/PopulateContents()
 	new /obj/item/gun/energy/e_gun/advtaser(src)
 
-/obj/item/storage/secure/briefcase/cop/e45_box
+/obj/item/storage/secure/briefcase/cop/e32_box
 	name = "\improper Enforcer handgun box"
 	desc = "A storage case for a Mk. 58 Enforcer. Peace through power!"
 
-/obj/item/storage/secure/briefcase/cop/e45_box/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/pistol/enforcer/nomag(src)
-	new /obj/item/ammo_box/magazine/e45/taser(src)
-	new /obj/item/ammo_box/magazine/e45/taser(src)
-	new /obj/item/ammo_box/magazine/e45/taser(src)
+/obj/item/storage/secure/briefcase/cop/e32_box/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/enforcer/o32/nomag(src)
+	new /obj/item/ammo_box/magazine/e32/taser(src)
+	new /obj/item/ammo_box/magazine/e32/taser(src)
+	new /obj/item/ammo_box/magazine/e32/taser(src)
 
 //Blueshield melee options
 
