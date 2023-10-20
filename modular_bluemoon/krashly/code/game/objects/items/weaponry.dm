@@ -624,3 +624,47 @@
 	materials = list(/datum/material/iron = 30000)
 	build_path = /obj/item/ammo_box/c32/lethal
 	category = list("hacked", "Security")
+
+/obj/item/ammo_box/c32
+	name = "ammo box (.32 Rubber)"
+	icon = 'modular_splurt/icons/obj/ammo.dmi'
+
+/obj/item/ammo_box/c32/taser
+	name = "ammo box (.32 Taser)"
+	icon_state = "32box-y"
+	ammo_type = /obj/item/ammo_casing/c32/taser
+
+/obj/item/ammo_box/c32/lethal
+	name = "ammo box (.32 Lethal)"
+	icon_state = "32box-r"
+	ammo_type = /obj/item/ammo_casing/c32/lethal
+
+/obj/item/ammo_box/c32/stun
+	name = "ammo box (.32 Stun)"
+	icon_state = "32box-c"
+	ammo_type = /obj/item/ammo_casing/c32/stun
+
+/obj/item/ammo_box/c32/laser
+	name = "ammo box (.32 Laser)"
+	icon_state = "32box-o"
+	ammo_type = /obj/item/ammo_casing/c32/laser
+
+/obj/item/ammo_box/c32/hydra
+	name = "ammo box (.32 Hydra-shock)"
+	icon_state = "32box-g"
+	ammo_type = /obj/item/ammo_casing/c32/hydra
+
+/obj/item/ammo_box/c32/hotshot
+	name = "ammo box (.32 Hotshot)"
+	icon_state = "32box-o"
+	ammo_type = /obj/item/ammo_casing/c32/hotshot
+
+/obj/item/ammo_box/c32/ion
+	name = "ammo box (.32 Ion)"
+	icon_state = "32box-c"
+	ammo_type = /obj/item/ammo_casing/c32/ion
+
+/obj/item/ammo_box/c32/trac
+	name = "ammo box (.32 Trac)"
+	ammo_type = /obj/item/ammo_casing/c32/trac
+
