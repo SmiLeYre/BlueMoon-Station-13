@@ -33,32 +33,27 @@
 	name = "Enforcer Non-lethal Ammo Crate"
 	desc = "Contains 10 8-round magazines for the Mk. 58 Enforcer. Requires Armory access to open."
 	cost = 900
-	contains = list(/obj/item/ammo_box/magazine/e45,
-					/obj/item/ammo_box/magazine/e45/taser,
-					/obj/item/ammo_box/magazine/e45/trac,
-					/obj/item/ammo_box/magazine/e45,
-					/obj/item/ammo_box/magazine/e45/taser,
-					/obj/item/ammo_box/magazine/e45/trac,
-					/obj/item/ammo_box/magazine/e45,
-					/obj/item/ammo_box/magazine/e45/taser,
-					/obj/item/ammo_box/magazine/e45/trac,
-					/obj/item/ammo_box/magazine/e45)
+	contains = list(/obj/item/ammo_box/magazine/e32,
+					/obj/item/ammo_box/magazine/e32/taser,
+					/obj/item/ammo_box/magazine/e32,
+					/obj/item/ammo_box/magazine/e32/taser,
+					/obj/item/ammo_box/magazine/e32,
+					/obj/item/ammo_box/magazine/e32/taser,
+					/obj/item/ammo_box/magazine/e32/trac,
+					/obj/item/ammo_box/magazine/e32)
 	crate_name = "pistol ammo crate"
 
 /datum/supply_pack/security/armory/e45ammolethal
 	name = "Enforcer Lethal Ammo Crate"
 	desc = "Contains 10 8-round magazines for the Mk. 58 Enforcer. Requires Armory access to open."
 	cost = 1200
-	contains = list(/obj/item/ammo_box/magazine/e45/lethal,
-					/obj/item/ammo_box/magazine/e45/hydra,
-					/obj/item/ammo_box/magazine/e45/hotshot,
-					/obj/item/ammo_box/magazine/e45/hydra,
-					/obj/item/ammo_box/magazine/e45/lethal,
-					/obj/item/ammo_box/magazine/e45/hydra,
-					/obj/item/ammo_box/magazine/e45/hotshot,
-					/obj/item/ammo_box/magazine/e45/hotshot,
-					/obj/item/ammo_box/magazine/e45/lethal,
-					/obj/item/ammo_box/magazine/e45/hydra)
+	contains = list(/obj/item/ammo_box/magazine/e32/lethal,
+					/obj/item/ammo_box/magazine/e32/lethal,
+					/obj/item/ammo_box/magazine/e32/hydra,
+					/obj/item/ammo_box/magazine/e32/hotshot,
+					/obj/item/ammo_box/magazine/e32/hotshot,
+					/obj/item/ammo_box/magazine/e32/lethal,
+					/obj/item/ammo_box/magazine/e32/hydra)
 	crate_name = "pistol ammo crate"
 
 /datum/supply_pack/security/armory/riotgun
@@ -74,25 +69,25 @@
 	name = "Enforcer pistol crate"
 	desc = "Contains 3 Enforcer handguns. Requires Armory access to open."
 	cost = 3500
-	contains = list(/obj/item/gun/ballistic/automatic/pistol/enforcer,
-					/obj/item/gun/ballistic/automatic/pistol/enforcer,
-					/obj/item/gun/ballistic/automatic/pistol/enforcer)
+	contains = list(/obj/item/gun/ballistic/automatic/pistol/enforcer/o32,
+					/obj/item/gun/ballistic/automatic/pistol/enforcer/o32,
+					/obj/item/gun/ballistic/automatic/pistol/enforcer/o32)
 	crate_name = "enforcer pistol crate"
 
 /datum/supply_pack/security/armory/cap_e45 // I am mad I even have to do this. -Radar Fuckers keep exploting this, moved it to the armory section
-	name = "Captain's Enforcer .45"
+	name = "Captain's Enforcer .32"
 	desc = "A gold handgun meant for the Captain."
 	access = ACCESS_CAPTAIN
 	cost = 6000
-	contains = list(/obj/item/gun/ballistic/automatic/pistol/enforcergold,
-    /obj/item/ammo_box/magazine/e45/lethal,
-    /obj/item/ammo_box/magazine/e45/lethal,
-    /obj/item/ammo_box/magazine/e45,
-    /obj/item/ammo_box/magazine/e45,
-    /obj/item/ammo_box/magazine/e45,
-    /obj/item/ammo_box/magazine/e45/taser,
-    /obj/item/ammo_box/magazine/e45/taser,
-    /obj/item/ammo_box/magazine/e45/taser)
+	contains = list(/obj/item/gun/ballistic/automatic/pistol/enforcergold/o32,
+    /obj/item/ammo_box/magazine/e32/lethal,
+    /obj/item/ammo_box/magazine/e32/lethal,
+    /obj/item/ammo_box/magazine/e32,
+    /obj/item/ammo_box/magazine/e32,
+    /obj/item/ammo_box/magazine/e32,
+    /obj/item/ammo_box/magazine/e32/taser,
+    /obj/item/ammo_box/magazine/e32/taser,
+    /obj/item/ammo_box/magazine/e32/taser)
 	crate_name = "captain's .45"
 
 /datum/supply_pack/security/armory/blaster
