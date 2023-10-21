@@ -484,6 +484,7 @@
 	taste_description = "burning"
 //	chemical_flags = REAGENT_ALL_PROCESS (BLUEMOON REMOVAL - роботы не должны получать эффекты реагента)
 	value = REAGENT_VALUE_VERY_RARE
+	accelerant_quality = 20
 
 /datum/reagent/hellwater/on_mob_life(mob/living/carbon/M)
 	if(HAS_TRAIT(M, TRAIT_CURSED_BLOOD))
@@ -1283,6 +1284,7 @@
 	glass_desc = "Unless you're an industrial tool, this is probably not safe for consumption."
 	pH = 4
 	boiling_point = 400
+	accelerant_quality = 10
 
 /datum/reagent/fuel/define_gas()
 	var/datum/gas/G = ..()

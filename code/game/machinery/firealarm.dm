@@ -167,9 +167,10 @@
 	return TRUE
 
 /obj/machinery/firealarm/temperature_expose(datum/gas_mixture/air, temperature, volume)
-	if((temperature > T0C + 200 || temperature < BODYTEMP_COLD_DAMAGE_LIMIT) && COOLDOWN_FINISHED(src, last_alarm) && !(obj_flags & EMAGGED) && detecting && !stat)
+	var/turf/open/T = get_turf(src)
+	if((temperature >= FIRE_MINIMUM_TEMPERATURE_TO_EXIST || temperature < BODYTEMP_COLD_DAMAGE_LIMIT || (istype(T) && T.turf_fire)) && (last_alarm+FIREALARM_COOLDOWN < world.time) && !(obj_flags & EMAGGED) && detecting && !stat)
 		alarm()
-	return ..()
+	..()
 
 /obj/machinery/firealarm/proc/alarm(mob/user)
 	if(!is_operational() || !COOLDOWN_FINISHED(src, last_alarm))

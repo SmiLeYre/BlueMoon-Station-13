@@ -410,12 +410,14 @@ const FunTab = (props, context) => {
               onClick={() => act("changebombcap")} />
           </Stack.Item>
           <Stack.Item>
-            <NoticeBox
-              mb={-0.5}
+          <Button
+              color="red"
+              icon="user-secret"
+              lineHeight={lineHeightNormal}
               width={buttonWidthNormal}
-              height={lineHeightNormal}>
-              Your admin button here, coder!
-            </NoticeBox>
+              content="Mass Aikofication!"
+              onClick={() => act("aikofication")}>
+            </Button>
           </Stack.Item>
         </Stack>
       </Stack.Item>

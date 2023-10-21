@@ -1266,3 +1266,10 @@
 		var/datum/reagent/R = GLOB.chemical_reagents_list[X]
 		if(ckey(chem_name) == ckey(lowertext(R.name)))
 			return X
+
+/datum/reagents/proc/get_total_accelerant_quality()
+	var/quality = 0
+	for(var/datum/reagent/reagent in reagent_list)
+		if(istype(reagent))
+			quality += reagent.volume * reagent.accelerant_quality
+	return quality

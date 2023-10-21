@@ -74,6 +74,7 @@
 	taste_mult = 1.5
 	color = "#8228A0"
 	toxpwr = 3
+	accelerant_quality = 10
 	pH = 4
 	value = REAGENT_VALUE_RARE //sheets are worth more
 
@@ -338,6 +339,7 @@
 	color = "#9ACD32"
 	toxpwr = 0.5
 	taste_description = "burning"
+	accelerant_quality = 10
 	pH = 13
 	value = REAGENT_VALUE_VERY_RARE
 

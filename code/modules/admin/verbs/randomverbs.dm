@@ -1408,7 +1408,8 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	var/list/punishment_list = list(
 		ADMIN_PUNISHMENT_PIE,
 		ADMIN_PUNISHMENT_CUSTOM_PIE,
-		// ADMIN_PUNISHMENT_AIKO,
+		ADMIN_PUNISHMENT_AIKO,
+		ADMIN_PUNISHMENT_CUM_JAR,
 		ADMIN_PUNISHMENT_FIREBALL,
 		ADMIN_PUNISHMENT_LIGHTNING,
 		ADMIN_PUNISHMENT_BRAINDAMAGE,
@@ -1512,10 +1513,29 @@ Traitors and the like can also be revived with the previous role mostly intact.
 					if(amount)
 						A.reagents.add_reagent(chosen_id, amount)
 						A.splat(target)
-		// if(ADMIN_PUNISHMENT_AIKO)
-		// 	switch(input(usr, "What to do now", "Setting appearance") as list())
-		// 	var/file =
-		// 	var/mob/living/carbon/victim
+		if(ADMIN_PUNISHMENT_AIKO)
+			if(!ishuman(target))
+				alert(usr, "ERROR: This doesn't look like a human now, does it?")
+				return
+			var/mob/living/carbon/human/human_target = target
+			switch(input(usr, "What to do now<br>The GLOBAL currently contains [GLOB.dna_for_copying ? GLOB.dna_for_copying.real_name : "Nothing"]", "Setting appearance") as null|anything in list("Save", "Load"))
+				if("Save")
+					if(!GLOB.dna_for_copying || !istype(GLOB.dna_for_copying, /datum/dna))
+						GLOB.dna_for_copying = new
+					human_target.dna.copy_dna(GLOB.dna_for_copying)
+					message_admins("[key_name(human_target)]'s dna has been saved into the punishment buffer.")
+				if("Load")
+					if(!GLOB.dna_for_copying || !istype(GLOB.dna_for_copying, /datum/dna))
+						alert(usr, "ERROR: There's nothing to copy!")
+						return
+					var/old_name = human_target.real_name
+					GLOB.dna_for_copying.transfer_identity(human_target, TRUE)
+					human_target.real_name = human_target.dna.real_name
+					human_target.updateappearance(mutcolor_update=1)
+					human_target.domutcheck()
+					human_target.visible_message("[old_name] transforms into [human_target.real_name]")
+					message_admins("[key_name(human_target)]'s dna has been loaded from the punishment buffer.")
+
 		if(ADMIN_PUNISHMENT_CUM_JAR)
 			var/ass = tgui_alert(usr, "Ты уверен?","SECURE. CONTAIN. PROTECT.", list("Да.","Нет."))
 			if(ass=="Нет.")

@@ -153,11 +153,18 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 			QDEL_NULL(stashed_air)
 			return
 		var/turf/open/newTurf = .
+		if(turf_fire)
+			if(isgroundlessturf(newTurf))
+				qdel(turf_fire)
+			else
+				newTurf.turf_fire = turf_fire
 		newTurf.air.copy_from(stashed_air)
 		newTurf.update_air_ref(planetary_atmos ? 1 : 2)
 		QDEL_NULL(stashed_air)
 	else
 		flags |= CHANGETURF_RECALC_ADJACENT
+		if(turf_fire)
+			qdel(turf_fire)
 		if(ispath(path,/turf/closed))
 			. = ..()
 			var/turf/open/newTurf = .

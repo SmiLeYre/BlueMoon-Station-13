@@ -17,6 +17,7 @@
 	wound_bonus = 6
 	bare_wound_bonus = 8
 	armour_penetration = 15
+	var/fire_hazard = FALSE
 
 /obj/item/projectile/beam/laser
 	tracer_type = /obj/effect/projectile/tracer/laser
@@ -24,12 +25,14 @@
 	impact_type = /obj/effect/projectile/impact/laser
 	wound_bonus = 8
 	bare_wound_bonus = 12
+	var/fire_hazard = TRUE
 
 //overclocked laser, does a bit more damage but has much higher wound power (-0 vs -20)
 /obj/item/projectile/beam/laser/hellfire
 	name = "hellfire laser"
 	wound_bonus = 15
 	damage = 25
+	fire_hazard = TRUE
 
 /obj/item/projectile/beam/laser/hellfire/Initialize(mapload)
 	. = ..()
@@ -45,17 +48,22 @@
 	name = "heavy laser"
 	icon_state = "heavylaser"
 	damage = 40
+	fire_hazard = TRUE
 	tracer_type = /obj/effect/projectile/tracer/heavy_laser
 	muzzle_type = /obj/effect/projectile/muzzle/heavy_laser
 	impact_type = /obj/effect/projectile/impact/heavy_laser
 
 /obj/item/projectile/beam/laser/on_hit(atom/target, blocked = FALSE)
-	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
 		M.IgniteMob()
 	else if(isturf(target))
 		impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser/wall
+	if(fire_hazard)
+		var/turf/open/target_turf = get_turf(target)
+		if(istype(target_turf))
+			target_turf.IgniteTurf(rand(8, 16))
+	return ..()
 
 /obj/item/projectile/beam/weak
 	damage = 15
@@ -117,6 +125,9 @@
 	. = ..()
 	if (!QDELETED(target) && (isturf(target) || istype(target, /obj/structure/)))
 		target.ex_act(EXPLODE_HEAVY)
+	var/turf/open/target_turf = get_turf(target)
+	if(istype(target_turf))
+		target_turf.IgniteTurf(rand(8, 22), "blue")
 
 /obj/item/projectile/beam/pulse/shotgun
 	damage = 40
