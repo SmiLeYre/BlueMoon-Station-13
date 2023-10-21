@@ -26,10 +26,10 @@
 /obj/item/modkit/Kovac_Kit
 	name = "Kovac Gun Kit"
 	desc = "A modkit for making a Enforcer Gun into a Kovac Gun."
-	product = /obj/item/gun/ballistic/automatic/pistol/enforcer/o32/steyr
-	fromitem = list(/obj/item/gun/ballistic/automatic/pistol/enforcer/o32/nomag, /obj/item/gun/ballistic/automatic/pistol/enforcer/o32, /obj/item/gun/ballistic/automatic/pistol/enforcerred/o32, /obj/item/gun/ballistic/automatic/pistol/enforcergold/o32)
+	product = /obj/item/gun/ballistic/automatic/pistol/enforcer/steyr
+	fromitem = list(/obj/item/gun/ballistic/automatic/pistol/enforcer/nomag, /obj/item/gun/ballistic/automatic/pistol/enforcer, /obj/item/gun/ballistic/automatic/pistol/enforcerred, /obj/item/gun/ballistic/automatic/pistol/enforcergold)
 
-/obj/item/gun/ballistic/automatic/pistol/enforcer/o32/steyr
+/obj/item/gun/ballistic/automatic/pistol/enforcer/steyr
 	name = "\improper Steyr MWS"
 	desc = "An antique semi-automatic pistol, heavily modified by the MWS defence manufacturing company. Provided with a better ammo cartridge and reinforced parts, it fits perfectly for resolving various security tasks. You can also notice Kovac's family sign drawn on it's handgrip."
 	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
@@ -142,10 +142,10 @@
 /obj/item/modkit/nue_kit
 	name = "Araki Nue Kit"
 	desc = "A modkit for making an Enforcer into a Araki Nue."
-	product = /obj/item/gun/ballistic/automatic/pistol/enforcer/o32/nue
-	fromitem = list(/obj/item/gun/ballistic/automatic/pistol/enforcer/o32/nomag, /obj/item/gun/ballistic/automatic/pistol/enforcer/o32, /obj/item/gun/ballistic/automatic/pistol/enforcerred/o32, /obj/item/gun/ballistic/automatic/pistol/enforcergold/o32)
+	product = /obj/item/gun/ballistic/automatic/pistol/enforcer/nue
+	fromitem = list(/obj/item/gun/ballistic/automatic/pistol/enforcer/nomag, /obj/item/gun/ballistic/automatic/pistol/enforcer, /obj/item/gun/ballistic/automatic/pistol/enforcerred, /obj/item/gun/ballistic/automatic/pistol/enforcergold)
 
-/obj/item/gun/ballistic/automatic/pistol/enforcer/o32/nue
+/obj/item/gun/ballistic/automatic/pistol/enforcer/nue
 	name = "\improper Araki Nue"
 	desc = "Semi-automatic, double-action pistol that was engineered to fit any hand. The handle is decorated with orange-colored ergonomic rubber with a Vulpkanin muzzle on it. It's looks familiar."
 	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
@@ -158,29 +158,29 @@
 /obj/item/modkit/malorian_kit
 	name = "Malorian Kit"
 	desc = "A modkit for making an Enforcer into a Araki Malorian."
-	product = /obj/item/gun/ballistic/automatic/pistol/enforcer/o32/malorian
-	fromitem = list(/obj/item/gun/ballistic/automatic/pistol/enforcer/o32/nomag, /obj/item/gun/ballistic/automatic/pistol/enforcer/o32, /obj/item/gun/ballistic/automatic/pistol/enforcerred/o32, /obj/item/gun/ballistic/automatic/pistol/enforcergold/o32)
+	product = /obj/item/gun/ballistic/automatic/pistol/enforcer/malorian
+	fromitem = list(/obj/item/gun/ballistic/automatic/pistol/enforcer/nomag, /obj/item/gun/ballistic/automatic/pistol/enforcer, /obj/item/gun/ballistic/automatic/pistol/enforcerred, /obj/item/gun/ballistic/automatic/pistol/enforcergold)
 
 /obj/item/modkit/malorian_mag_kit
 	name = "Malorian Mag Kit"
 	desc = "A modkit for making an Enforcer mag into a Malorian mag."
-	product = /obj/item/ammo_box/magazine/e32/malorian
-	fromitem = list(/obj/item/ammo_box/magazine/e32, /obj/item/ammo_box/magazine/e32/taser, /obj/item/ammo_box/magazine/e32/lethal, /obj/item/ammo_box/magazine/e32/stun, /obj/item/ammo_box/magazine/e32/hydra)
+	product = /obj/item/ammo_box/magazine/e45/malorian
+	fromitem = list(/obj/item/ammo_box/magazine/e45, /obj/item/ammo_box/magazine/e45/taser, /obj/item/ammo_box/magazine/e45/lethal, /obj/item/ammo_box/magazine/e45/stun, /obj/item/ammo_box/magazine/e45/hydra)
 
-/obj/item/gun/ballistic/automatic/pistol/enforcer/o32/malorian
+/obj/item/gun/ballistic/automatic/pistol/enforcer/malorian
 	name = "\improper Araki Arms 3516"
 	desc = "Unique heavy pistol manufactured by Araki Arms. Taking already successful design of previous Araki Nue, this one was designed to the personal specifications of Shiro."
 	icon = 'modular_bluemoon/fluffs/icons/obj/64x64.dmi'
 	icon_state = "arakiarms"
 	can_suppress = FALSE
 	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/nue_shoot.ogg'
-	mag_type = /obj/item/ammo_box/magazine/e32/malorian
+	mag_type = /obj/item/ammo_box/magazine/e45/malorian
 
-/obj/item/ammo_box/magazine/e32/malorian
+/obj/item/ammo_box/magazine/e45/malorian
 	name = "Araki Arms magazine"
 	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
 	//icon_state = "mag"
-	desc = "An Araki Arms magazine. Can be loaded with .32 ammo."
+	desc = "An Araki Arms magazine. Can be loaded with .45 ammo."
 
 /obj/item/storage/box/malorian_mag
 
@@ -258,18 +258,18 @@
 /obj/item/modkit/pf940_kit
 	name = "PF940 Kit"
 	desc = "A modkit for making an Enforcer into a PF940."
-	product = /obj/item/gun/ballistic/automatic/pistol/enforcer/o32/pf940
-	fromitem = list(/obj/item/gun/ballistic/automatic/pistol/enforcer/o32/nomag, /obj/item/gun/ballistic/automatic/pistol/enforcer/o32, /obj/item/gun/ballistic/automatic/pistol/enforcerred/o32, /obj/item/gun/ballistic/automatic/pistol/enforcergold/o32)
+	product = /obj/item/gun/ballistic/automatic/pistol/enforcer/pf940
+	fromitem = list(/obj/item/gun/ballistic/automatic/pistol/enforcer/nomag, /obj/item/gun/ballistic/automatic/pistol/enforcer, /obj/item/gun/ballistic/automatic/pistol/enforcerred, /obj/item/gun/ballistic/automatic/pistol/enforcergold)
 
 /obj/item/modkit/pf940_kit_g22
 	name = "PF940 G22 Kit"
 	desc = "A modkit for making a G22 into a PF940."
-	product = /obj/item/gun/ballistic/automatic/pistol/enforcer/o32/pf940
-	fromitem = list(/obj/item/gun/ballistic/automatic/pistol/enforcer/o32/nomag, /obj/item/gun/ballistic/automatic/pistol/enforcer/o32, /obj/item/gun/ballistic/automatic/pistol/enforcerred/o32, /obj/item/gun/ballistic/automatic/pistol/enforcergold/o32)
+	product = /obj/item/gun/ballistic/automatic/pistol/enforcer/pf940
+	fromitem = list(/obj/item/gun/ballistic/automatic/pistol/enforcer/nomag, /obj/item/gun/ballistic/automatic/pistol/enforcer, /obj/item/gun/ballistic/automatic/pistol/enforcerred, /obj/item/gun/ballistic/automatic/pistol/enforcergold)
 
-/obj/item/gun/ballistic/automatic/pistol/enforcer/o32/pf940
+/obj/item/gun/ballistic/automatic/pistol/enforcer/pf940
 	name = "\improper PF940"
-	desc = "A heavily modified Glock 21 pistol with some ergonomic parts and a caliber converted to .32, making it easy to find ammo at Edem stations. Your team is down, you're the only fella left. You- You'll just have to figure it out."
+	desc = "A heavily modified Glock 21 pistol with some ergonomic parts and a caliber converted to .45, making it easy to find ammo at Edem stations. Your team is down, you're the only fella left. You- You'll just have to figure it out."
 	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
 	icon_state = "pf940"
 	can_suppress = FALSE
@@ -277,7 +277,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/g22/pf940
 	name = "\improper PF940"
-	desc = "A heavily modified Glock 21 pistol with some ergonomic parts and a caliber converted to .32, making it easy to find ammo at Edem stations. Your team is down, you're the only fella left. You- You'll just have to figure it out."
+	desc = "A heavily modified Glock 21 pistol with some ergonomic parts and a caliber converted to .45, making it easy to find ammo at Edem stations. Your team is down, you're the only fella left. You- You'll just have to figure it out."
 	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
 	icon_state = "pf940"
 	can_suppress = FALSE

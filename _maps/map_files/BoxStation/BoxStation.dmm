@@ -67939,12 +67939,16 @@
 	pixel_x = 2;
 	pixel_y = -2
 	},
-/obj/item/ammo_box/magazine/e32/lethal,
-/obj/item/ammo_box/magazine/e32/lethal,
-/obj/item/ammo_box/magazine/e32/lethal,
-/obj/item/ammo_box/magazine/e32/lethal,
-/obj/item/ammo_box/magazine/e32/lethal,
-/obj/item/ammo_box/magazine/e32/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
+/obj/item/ammo_box/magazine/e45/lethal,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "xNf" = (

@@ -1,6 +1,6 @@
 /obj/machinery/vending/security/Initialize()
 	var/list/extra_products = list(
-		/obj/item/ammo_box/magazine/e32/taser = 10,
+		/obj/item/ammo_box/magazine/e45/taser = 10,
 		/obj/item/device/hailer = 10,
 		/obj/item/clothing/suit/armor/vest/peacekeeper = 5,
 		/obj/item/clothing/suit/armor/vest/metrocop = 2,

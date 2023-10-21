@@ -122,93 +122,93 @@
 // Pistol Magazines for the Sec Tecfab, yes its just easier to put it here for my own Sanity - Radar
 
 
-// /datum/design/e45/e45rubber
-// 	name = "Enforcer magazine (.45 Rubber)"
-// 	desc = "A magazine of .45 Rubber for the Mk. 58 Enforcer"
-// 	id = "e45_rubber"
-// 	build_type = PROTOLATHE
-// 	materials = list(/datum/material/iron = 1200)
-// 	build_path = /obj/item/ammo_box/magazine/e45
-// 	category = list("Ammo")
-// 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+/datum/design/e45/e45rubber
+	name = "Enforcer magazine (.45 Rubber)"
+	desc = "A magazine of .45 Rubber for the Mk. 58 Enforcer"
+	id = "e45_rubber"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 1200)
+	build_path = /obj/item/ammo_box/magazine/e45
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-// /datum/design/e45/e45lethal
-// 	name = "Enforcer magazine (.45 Lethal)"
-// 	desc = "A magazine of .45 Lethal for the Mk. 58 Enforcer"
-// 	id = "e45_lethal"
-// 	build_type = PROTOLATHE
-// 	materials = list(/datum/material/iron = 1200)
-// 	build_path = /obj/item/ammo_box/magazine/e45/lethal
-// 	category = list("Ammo")
-// 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+/datum/design/e45/e45lethal
+	name = "Enforcer magazine (.45 Lethal)"
+	desc = "A magazine of .45 Lethal for the Mk. 58 Enforcer"
+	id = "e45_lethal"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 1200)
+	build_path = /obj/item/ammo_box/magazine/e45/lethal
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-// /datum/design/e45/e45taser
-// 	name = "Enforcer magazine (.45 Taser)"
-// 	desc = "A magazine of .45 Taser for the Mk. 58 Enforcer"
-// 	id = "e45_taser"
-// 	build_type = PROTOLATHE
-// 	materials = list(/datum/material/iron = 1200)
-// 	build_path = /obj/item/ammo_box/magazine/e45/taser
-// 	category = list("Ammo")
-// 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+/datum/design/e45/e45taser
+	name = "Enforcer magazine (.45 Taser)"
+	desc = "A magazine of .45 Taser for the Mk. 58 Enforcer"
+	id = "e45_taser"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 1200)
+	build_path = /obj/item/ammo_box/magazine/e45/taser
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-// /datum/design/e45/e45trac
-// 	name = "Enforcer magazine (.45 Tracking)"
-// 	desc = "A magazine of .45 Tracking for the Mk. 58 Enforcer"
-// 	id = "e45_trac"
-// 	build_type = PROTOLATHE
-// 	materials = list(/datum/material/iron = 1200)
-// 	build_path = /obj/item/ammo_box/magazine/e45/trac
-// 	category = list("Ammo")
-// 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+/datum/design/e45/e45trac
+	name = "Enforcer magazine (.45 Tracking)"
+	desc = "A magazine of .45 Tracking for the Mk. 58 Enforcer"
+	id = "e45_trac"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 1200)
+	build_path = /obj/item/ammo_box/magazine/e45/trac
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-// /datum/design/e45/hotshot
-// 	name = "Enforcer magazine (.45 Hotshot)"
-// 	desc = "A magazine of .45 Hotshot for the Mk. 58 Enforcer"
-// 	id = "e45_hot"
-// 	build_type = PROTOLATHE
-// 	materials = list(/datum/material/iron = 1200)
-// 	build_path = /obj/item/ammo_box/magazine/e45/hotshot
-// 	category = list("Ammo")
-// 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+/datum/design/e45/hotshot
+	name = "Enforcer magazine (.45 Hotshot)"
+	desc = "A magazine of .45 Hotshot for the Mk. 58 Enforcer"
+	id = "e45_hot"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 1200)
+	build_path = /obj/item/ammo_box/magazine/e45/hotshot
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-// /datum/design/e45/hydra
-// 	name = "Enforcer magazine (.45 Hydra)"
-// 	desc = "A magazine of .45 Hydra-Shock for the Mk. 58 Enforcer"
-// 	id = "e45_hydra"
-// 	build_type = PROTOLATHE
-// 	materials = list(/datum/material/iron = 1200)
-// 	build_path = /obj/item/ammo_box/magazine/e45/hydra
-// 	category = list("Ammo")
-// 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+/datum/design/e45/hydra
+	name = "Enforcer magazine (.45 Hydra)"
+	desc = "A magazine of .45 Hydra-Shock for the Mk. 58 Enforcer"
+	id = "e45_hydra"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 1200)
+	build_path = /obj/item/ammo_box/magazine/e45/hydra
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-// /datum/design/e45/e45ion
-// 	name = "Enforcer magazine (.45 Ion)"
-// 	desc = "A magazine of .45 Ion for the Mk. 58 Enforcer"
-// 	id = "e45_ion"
-// 	build_type = PROTOLATHE
-// 	materials = list(/datum/material/iron = 1200, /datum/material/uranium = 50)
-// 	build_path = /obj/item/ammo_box/magazine/e45/ion
-// 	category = list("Ammo")
-// 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+/datum/design/e45/e45ion
+	name = "Enforcer magazine (.45 Ion)"
+	desc = "A magazine of .45 Ion for the Mk. 58 Enforcer"
+	id = "e45_ion"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 1200, /datum/material/uranium = 50)
+	build_path = /obj/item/ammo_box/magazine/e45/ion
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-// /datum/design/e45/e45stun
-// 	name = "Enforcer magazine (.45 Stun)"
-// 	desc = "A magazine of .45 Stun for the Mk. 58 Enforcer"
-// 	id = "e45_stun"
-// 	build_type = PROTOLATHE
-// 	materials = list(/datum/material/iron = 1200, /datum/material/uranium = 50)
-// 	build_path = /obj/item/ammo_box/magazine/e45/stun
-// 	category = list("Ammo")
-// 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+/datum/design/e45/e45stun
+	name = "Enforcer magazine (.45 Stun)"
+	desc = "A magazine of .45 Stun for the Mk. 58 Enforcer"
+	id = "e45_stun"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 1200, /datum/material/uranium = 50)
+	build_path = /obj/item/ammo_box/magazine/e45/stun
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 
-// /datum/design/e45/e45laser
-// 	name = "Enforcer magazine (.45 Laser)"
-// 	desc = "A magazine of .45 Laser for the Mk. 58 Enforcer"
-// 	id = "e45_laser"
-// 	build_type = PROTOLATHE
-// 	materials = list(/datum/material/iron = 1200, /datum/material/uranium = 50)
-// 	build_path = /obj/item/ammo_box/magazine/e45/laser
-// 	category = list("Ammo")
-// 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+/datum/design/e45/e45laser
+	name = "Enforcer magazine (.45 Laser)"
+	desc = "A magazine of .45 Laser for the Mk. 58 Enforcer"
+	id = "e45_laser"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 1200, /datum/material/uranium = 50)
+	build_path = /obj/item/ammo_box/magazine/e45/laser
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
