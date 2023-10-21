@@ -101,6 +101,12 @@
 	icon_state = "synthspray"
 	list_reagents = list(/datum/reagent/medicine/synthflesh = 120)
 
+/obj/item/reagent_containers/hypospray/combat/synthflesh
+	name = "Combat Hypospray with Synthflesh"
+	item_state = "holy_hypo"
+	icon_state = "holy_hypo"
+	list_reagents = list(/datum/reagent/medicine/synthflesh = 120)
+
 /obj/item/reagent_containers/medspray/sterilizine
 	name = "sterilizer spray"
 	desc = "Spray bottle loaded with non-toxic sterilizer. Useful in preparation for surgery."
