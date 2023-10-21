@@ -64,7 +64,7 @@
 	update_icon()
 	var/datum/component/butchering/butchering = src.GetComponent(/datum/component/butchering)
 	butchering.butchering_enabled = on
-	if(!on)
+	if(on)
 		playsound(src, 'sound/weapons/chainsawstart.ogg', 65, 1)
 
 	if(on)
