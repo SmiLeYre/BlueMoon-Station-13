@@ -23,7 +23,7 @@ SUBSYSTEM_DEF(communications)
 		return FALSE
 	if(is_silicon)
 		//minor_announce(html_decode(input),"[user.name] объявляет:")
-		priority_announce(html_decode(input), "[user.name] объявляет:", 'sound/announcer/ai_tone.ogg', "AI")
+		priority_announce(html_decode(input), "[user.name] объявляет:", 'sound/announcer/ai_tone.ogg', "AI", has_important_message = TRUE)
 		COOLDOWN_START(src, silicon_message_cooldown, COMMUNICATION_COOLDOWN_AI)
 	else
 		priority_announce(html_decode(user.treat_message(input)), null, 'sound/misc/announce.ogg', "Captain", has_important_message = TRUE)
