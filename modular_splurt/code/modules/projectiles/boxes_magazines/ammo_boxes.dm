@@ -113,7 +113,7 @@
 	desc = "A box of .45 Rubber"
 	id = "c45r"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 2000)
+	materials = list(/datum/material/iron = 20000)
 	build_path = /obj/item/ammo_box/c45
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -123,7 +123,7 @@
 	desc = "A box of .45 Lethal"
 	id = "c45leath"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 2000)
+	materials = list(/datum/material/iron = 20000)
 	build_path = /obj/item/ammo_box/c45/lethal
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -133,7 +133,7 @@
 	desc = "A box of .45 Taser"
 	id = "c45t"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 2000)
+	materials = list(/datum/material/iron = 20000)
 	build_path = /obj/item/ammo_box/c45/taser
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -143,7 +143,7 @@
 	desc = "A box of .45 Hydra-shock"
 	id = "c45hydra"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 2000)
+	materials = list(/datum/material/iron = 20000)
 	build_path = /obj/item/ammo_box/c45/hydra
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -153,7 +153,7 @@
 	desc = "A box of .45 Hotshot"
 	id = "c45hot"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 2000)
+	materials = list(/datum/material/iron = 20000)
 	build_path = /obj/item/ammo_box/c45/hotshot
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -163,7 +163,7 @@
 	desc = "A box of .45 Trac"
 	id = "c45trac"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 2000)
+	materials = list(/datum/material/iron = 20000)
 	build_path = /obj/item/ammo_box/c45/trac
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -173,7 +173,7 @@
 	desc = "A box of .45 Stun"
 	id = "c45stun"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 2000, /datum/material/uranium = 150)
+	materials = list(/datum/material/iron = 20000, /datum/material/uranium = 1500)
 	build_path = /obj/item/ammo_box/c45/stun
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -183,7 +183,7 @@
 	desc = "A box of .45 Laser"
 	id = "c45las"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 2000, /datum/material/uranium = 150)
+	materials = list(/datum/material/iron = 20000, /datum/material/uranium = 1500)
 	build_path = /obj/item/ammo_box/c45/laser
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -193,7 +193,7 @@
 	desc = "A box of .45 Ion"
 	id = "c45ion"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 2000, /datum/material/uranium = 150)
+	materials = list(/datum/material/iron = 20000, /datum/material/uranium = 1500)
 	build_path = /obj/item/ammo_box/c45/ion
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
