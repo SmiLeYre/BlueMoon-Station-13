@@ -21,8 +21,8 @@
 	stamina = 0
 	armour_penetration = -65
 	sharpness = SHARP_EDGED
-	wound_bonus = 15 // 30 WTF
-	bare_wound_bonus = 15 // 30 WTF
+	wound_bonus = 30 // 30 WTF
+	bare_wound_bonus = 30 // 30 WTF
 	embedding = list(embed_chance=75, fall_chance=3, jostle_chance=4, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.4, pain_mult=5, jostle_pain_mult=6, rip_time=10)
 	wound_falloff_tile = -5
 	embed_falloff_tile = -15
