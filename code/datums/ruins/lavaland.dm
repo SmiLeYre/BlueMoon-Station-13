@@ -290,7 +290,7 @@
 	description = "Последний Оплот Ратваровцев на Лаваленде..."
 	suffix = "lavaland_surface_ratvar_boss.dmm"
 	allow_duplicates = FALSE
-	cost = 20
+	cost = 10
 
 /datum/map_template/ruin/lavaland/narsie_boss
 	name = "Narsie Boss"
@@ -298,4 +298,47 @@
 	description = "Последний Оплот Нарсистов на Лаваленде..."
 	suffix = "lavaland_surface_narsie_boss.dmm"
 	allow_duplicates = FALSE
-	cost = 20
+	cost = 10
+
+/datum/map_template/ruin/lavaland/russianbunker
+	name = "Russian Bunker"
+	id = "russianbunker"
+	description = "A russian bunker containing high technology, its abandoned but its security systems are still functional"
+	suffix = "lavaland_surface_russianbunker.dmm"
+	cost = 10
+	allow_duplicates = FALSE
+
+/datum/map_template/ruin/lavaland/prisoners
+	name = "Prisoner Crash"
+	id = "prisoner-crash"
+	description = "This incredibly high security shuttle clearly didn't have \
+		'avoiding lavafilled hellscapes' as a design priority. As such, it \
+		has crashed, waking the prisoners from their cryostasis, and setting \
+		them loose on the wastes. If they live long enough, that is."
+	suffix = "lavaland_surface_prisoner_crash.dmm"
+	cost = 15
+	allow_duplicates = FALSE
+
+/datum/map_template/ruin/lavaland/goliathmound
+	name = "Goliath Mound"
+	id = "goliathmound"
+	description = "More tentacles than one of my japanese animes"
+	suffix = "lavaland_surface_goliathmound.dmm"
+	cost = 5
+	allow_duplicates = FALSE
+
+/datum/map_template/ruin/lavaland/chemistry
+	name= "Abandoned Chemistry Lab"
+	id = "chemistry"
+	description = "A seemingly innocent-looking lab, with an assault pod outside..."
+	suffix = "lavaland_surface_chemistry.dmm"
+	allow_duplicates = FALSE
+	cost = 10
+
+/datum/map_template/ruin/lavaland/I
+	name = "Necromancer Tower"
+	id = "I"
+	description = "It contains the secrets of life and death"
+	suffix = "lavaland_surface_I.dmm"
+	cost = 5
+	allow_duplicates = FALSE

@@ -442,3 +442,9 @@
 	suffix = "roid10.dmm"
 	name = "Maze Roid"
 	description = "Mineral asteroid. Ft. Brief maze."
+
+/datum/map_template/ruin/space/syndicate_derelict_station
+	id = "syndicatederelictstation"
+	suffix = "syndicate_derelict_station.dmm"
+	name = "Syndicate Derelict Station"
+	description = "A remote station once used to be a syndicate research wing. Due to an unknown issue, it has been since abandoned as a bunch of floating debris."

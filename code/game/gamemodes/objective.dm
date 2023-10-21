@@ -207,7 +207,7 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 /datum/objective/assassinate/once/update_explanation_text()
 	..()
 	if(target && target.current)
-		explanation_text = "Наша цель - [target.name], [!target_role_type ? target.assigned_role : target.special_role]. Пусть эта Цель будет наказана! Изнасилуй, сломай колени или вовсе убей один раз. В итоге цель должна остаться живой!"
+		explanation_text = "Наша цель - [target.name], [!target_role_type ? target.assigned_role : target.special_role]. Убей эту цель насмерть!"
 		START_PROCESSING(SSprocessing,src)
 	else
 		explanation_text = "Свободная Задача"
@@ -313,7 +313,7 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 /datum/objective/debrain/update_explanation_text()
 	..()
 	if(target && target.current)
-		explanation_text = "Влюби в себя [target.name], [!target_role_type ? target.assigned_role : target.special_role]!"
+		explanation_text = "Укради мозг [target.name], [!target_role_type ? target.assigned_role : target.special_role]!"
 	else
 		explanation_text = "Свободная Задача"
 

@@ -359,6 +359,44 @@
 	body_parts_covered = CHEST|ARMS
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
+/obj/item/clothing/head/helmet/juggernaut
+	name = "Zeal Team Helmet"
+	desc = "I...am...the...JUGGERNAUT!!!"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/hats.dmi'
+	icon_state = "juggernauthelm"
+	item_state = "juggernauthelm"
+	armor = list(MELEE = 80, BULLET = 60, LASER = 40, ENERGY = 60, BOMB = 80, BIO = 100, RAD = 50, FIRE = 95, ACID = 95)
+	strip_delay = 120
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	heat_protection = HEAD
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	flash_protect = TRUE
+	obj_flags = IMMUTABLE_SLOW
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
+	slowdown = 0.5
+
+/obj/item/clothing/suit/armor/heavy/juggernaut
+	name = "Zeal Team Heavy Suit"
+	desc = "I... am... the... JUGGERNAUT!!!"
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
+	icon_state = "juggernaut"
+	item_state = "juggernaut"
+	tail_state = "bomb"
+	mutantrace_variation = STYLE_DIGITIGRADE
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS|FEET
+	armor = list(MELEE = 80, BULLET = 60, LASER = 40, ENERGY = 60, BOMB = 80, BIO = 100, RAD = 50, FIRE = 95, ACID = 95)
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	cold_protection = CHEST|GROIN|LEGS|ARMS|FEET
+	heat_protection = CHEST|GROIN|LEGS|ARMS|FEET
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	max_heat_protection_temperature = COAT_MAX_TEMP_PROTECT
+	strip_delay = 120
+	slowdown = 0.5
+	obj_flags = IMMUTABLE_SLOW
+	flags_inv = HIDESHOES|HIDEJUMPSUIT
+
 /obj/item/clothing/suit/ran
 	name = "shikigami costume"
 	desc = "A costume that looks like a certain shikigami, is super fluffy."
