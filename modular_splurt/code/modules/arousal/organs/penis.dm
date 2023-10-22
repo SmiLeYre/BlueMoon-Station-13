@@ -72,18 +72,21 @@
 	if(!istype(target_turf))
 		return
 	for(var/i in 0 to length_multiplier)
-		target_turf = get_step(target_turf, owner.dir)
+		//target_turf = get_step(target_turf, owner.dir)
 		for(var/object in target_turf.contents)
-			if(isturf(object))
-				continue
+			//if(isturf(object))
+				//continue
 			if(ishuman(object))
 				var/mob/living/carbon/human/H = object
-				if(!(H.client?.prefs.cit_toggles & CUM_ONTO))
+				//if(!(H.client?.prefs.cit_toggles & CUM_ONTO))
+					//continue
+				if(H != partner)
 					continue
-			LAZYADD(cumsplashed_items, object)
+				LAZYADD(cumsplashed_items, object)	//у нас все равно сейчас только на хуманов накладывается оверлей
+		target_turf = get_step(target_turf, owner.dir)
 		if(cumsplashed_items.len)
 			break
 
 	// splash affected objects
 	for(var/atom/object in cumsplashed_items)
-		object.add_cum_overlay(initial(linked_organ.fluid_id.color), length_multiplier > 1 ? TRUE : FALSE)
+		object.add_cum_overlay(length_multiplier > 1 ? "cum_large" : "cum_normal", initial(linked_organ.fluid_id.color))	//тут можно миллиард проверок впихнуть на наличие BIG BALLS/etc но пусть хотя бы так пока работает.

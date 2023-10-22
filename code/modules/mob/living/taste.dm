@@ -44,6 +44,8 @@
 	.=..()
 	if(!.)
 		return
+	if(from.has_reagent(/datum/reagent/consumable/semen) && (HAS_TRAIT(src, TRAIT_DUMB_CUM) || HAS_TRAIT(src, TRAIT_GFLUID_DETECT)))
+		to_chat(src, span_love("Вы узнаете хорошо знакомый вам вкус свежей спермы~"))
 	if ((from.pH > 12.5) || (from.pH < 1.5))
 		T.applyOrganDamage(5)
 		to_chat(src, "<span class='warning'>You taste chemical burns!</span>")
