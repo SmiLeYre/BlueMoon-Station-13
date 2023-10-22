@@ -183,16 +183,6 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/engine
 	resistance_flags = FIRE_PROOF
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_ALL_TAURIC
-	unique_reskin = list(
-		"Default" = list(
-			"icon_state" = "hardsuit-engineering",
-			"tail_state" = "engi-tail"
-		),
-		"Alt" = list(
-			"icon_state" = "hardsuit-engineering2",
-			"tail_state" = "atmos"
-		)
-	)
 
 	//Atmospherics
 /obj/item/clothing/head/helmet/space/hardsuit/engine/atmos
