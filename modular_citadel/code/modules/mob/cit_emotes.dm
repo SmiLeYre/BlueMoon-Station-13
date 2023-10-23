@@ -41,13 +41,14 @@
 			sound = 'sound/creatures/gorilla.ogg'
 		if(ishuman(user))
 			user.adjustOxyLoss(5)
-			sound = pick('modular_citadel/sound/voice/scream_m1.ogg', 'modular_citadel/sound/voice/scream_m2.ogg')
-			if(user.gender == FEMALE)
+			if(user.gender != FEMALE || (user.gender == PLURAL && ismasculine(user)))
+				sound = pick('modular_citadel/sound/voice/scream_m1.ogg', 'modular_citadel/sound/voice/scream_m2.ogg')
+			if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
 				sound = pick('modular_citadel/sound/voice/scream_f1.ogg', 'modular_citadel/sound/voice/scream_f2.ogg')
 			if(is_species(user, /datum/species/jelly))
-				if(user.gender == FEMALE)
+				if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
 					sound = pick('modular_citadel/sound/voice/scream_jelly_f1.ogg', 'modular_citadel/sound/voice/scream_jelly_f2.ogg')
-				else
+				else if(user.gender != FEMALE || (user.gender == PLURAL && ismasculine(user)))
 					sound = pick('modular_citadel/sound/voice/scream_jelly_m1.ogg', 'modular_citadel/sound/voice/scream_jelly_m2.ogg')
 			if(is_species(user, /datum/species/android) || is_species(user, /datum/species/synth) || is_species(user, /datum/species/ipc))
 				sound = 'modular_citadel/sound/voice/scream_silicon.ogg'
@@ -175,7 +176,7 @@
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
 	stat_allowed = UNCONSCIOUS //cats can purr in their sleep
-	emote_cooldown = 8 SECONDS
+	emote_cooldown = 5 SECONDS
 
 /datum/emote/living/purr/run_emote(mob/living/user, params)
 	. = ..()
@@ -307,9 +308,9 @@
 	if(!.)
 		return
 	var/sound
-	if(user.gender == MALE)
+	if(user.gender == MALE || (user.gender == PLURAL && ismasculine(user)))
 		sound = pick('modular_citadel/sound/voice/human_male_pain_1.ogg', 'modular_citadel/sound/voice/human_male_pain_2.ogg', 'modular_citadel/sound/voice/human_male_pain_3.ogg', 'modular_citadel/sound/voice/human_male_pain_rare.ogg', 'modular_citadel/sound/voice/human_male_scream_1.ogg', 'modular_citadel/sound/voice/human_male_scream_2.ogg', 'modular_citadel/sound/voice/human_male_scream_3.ogg', 'modular_citadel/sound/voice/human_male_scream_4.ogg')
-	else
+	else if(user.gender != MALE || (user.gender == PLURAL && isfeminine(user)))
 		sound = pick('modular_citadel/sound/voice/human_female_pain_1.ogg', 'modular_citadel/sound/voice/human_female_pain_2.ogg', 'modular_citadel/sound/voice/human_female_pain_3.ogg', 'modular_citadel/sound/voice/human_female_scream_2.ogg', 'modular_citadel/sound/voice/human_female_scream_3.ogg', 'modular_citadel/sound/voice/human_female_scream_4.ogg')
 	playsound(user, sound, 75, 0, 0)
 
