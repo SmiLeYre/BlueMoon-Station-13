@@ -123,8 +123,12 @@
 /atom/proc/AIAltClick(mob/living/silicon/ai/user)
 	return AltClick(user)
 
-/atom/proc/AIShiftClick()
+/atom/proc/AIShiftClick(mob/living/silicon/ai/user)
+	//return ShiftClick(user)
+	if(user.client)
+		user.examinate(src)
 	return
+
 /atom/proc/AICtrlShiftClick()
 	return
 
