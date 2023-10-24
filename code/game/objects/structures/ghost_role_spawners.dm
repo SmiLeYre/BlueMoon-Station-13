@@ -575,6 +575,8 @@
 	implants = list(/obj/item/implant/weapons_auth, /obj/item/implant/deathrattle, /obj/item/implant/explosive, /obj/item/implant/mindshield)
 	id = /obj/item/card/id/syndicate
 
+	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
+
 /datum/outfit/syndicate_empty/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	H.faction |= ROLE_SYNDICATE
 
@@ -994,12 +996,6 @@
 	loadout_enabled = TRUE
 	computer_area = /area/ruin/space/has_grav/port_tarkon/centerhall
 
-// Не добавлено в аутфит, т.к. раса ставится ПОСЛЕ выставления аутфита
-/obj/effect/mob_spawn/human/tarkon/special_post_appearance(mob/living/carbon/human/new_spawn)
-	if(HAS_TRAIT(new_spawn, TRAIT_ROBOTIC_ORGANISM))
-		new_spawn.put_in_l_hand(new /obj/item/device/cooler/charged(new_spawn))
-	. = ..()
-
 /datum/outfit/tarkoff
 	name = "Default Port Tarkov Outfit"
 	uniform = /obj/item/clothing/under/rank/cargo/util
@@ -1011,6 +1007,8 @@
 	l_pocket = /obj/item/card/mining_point_card
 	r_pocket = /obj/item/mining_voucher
 	ears = /obj/item/radio/headset/tarkoff
+
+	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
 
 /datum/outfit/tarkoff/post_equip(mob/living/carbon/human/tarkoff, visualsOnly = FALSE)
 	var/obj/item/card/id/id_card = tarkoff.wear_id

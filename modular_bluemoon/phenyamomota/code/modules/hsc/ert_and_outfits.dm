@@ -64,6 +64,8 @@
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber
 	suit_store = /obj/item/tank/internals/doubleoxygen
 
+	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
+
 /datum/outfit/hsc/medic
 	name = "HSC Medic"
 	uniform = /obj/item/clothing/under/syndicate/combat
