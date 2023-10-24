@@ -996,6 +996,8 @@
 	loadout_enabled = TRUE
 	computer_area = /area/ruin/space/has_grav/port_tarkon/centerhall
 
+	give_cooler_to_mob_if_synth = TRUE
+
 /datum/outfit/tarkoff
 	name = "Default Port Tarkov Outfit"
 	uniform = /obj/item/clothing/under/rank/cargo/util
@@ -1007,8 +1009,6 @@
 	l_pocket = /obj/item/card/mining_point_card
 	r_pocket = /obj/item/mining_voucher
 	ears = /obj/item/radio/headset/tarkoff
-
-	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
 
 /datum/outfit/tarkoff/post_equip(mob/living/carbon/human/tarkoff, visualsOnly = FALSE)
 	var/obj/item/card/id/id_card = tarkoff.wear_id
