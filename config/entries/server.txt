@@ -38,7 +38,7 @@ TICKLAG 0.5
 FPS 20
 
 ## Set to prevent anyone but those ckeys listed in config/whitelist.txt and config/admins.txt from joining your server
-#USEWHITELIST
+USEWHITELIST
 
 ## set a hosted by name for unix platforms
 HOSTEDBY Yournamehere

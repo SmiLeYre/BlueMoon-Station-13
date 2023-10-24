@@ -142,6 +142,11 @@
 	// Is this camera located in or attached to a living thing? If so, assume the camera's loc is the living thing.
 	var/cam_location = isliving(active_camera.loc) || ismachinery(active_camera.loc) ? active_camera.loc : active_camera // BLUEMOON CHANGES - добавлена проверку на наличие в машинарии
 
+	//if(istype(active_camera.loc, /obj/item/integrated_circuit/output/video_camera))	//Пока что оставлю так. На будущее.
+		//cam_location = (active_camera.loc).loc
+		//if(iscarbon((active_camera.loc).loc))
+			//cam_location = ((active_camera.loc).loc).loc
+
 	// If we're not forcing an update for some reason and the cameras are in the same location,
 	// we don't need to update anything.
 	// Most security cameras will end here as they're not moving.
@@ -153,6 +158,9 @@
 	last_camera_turf = get_turf(cam_location)
 
 	var/list/visible_things = active_camera.isXRay() ? range(active_camera.view_range, cam_location) : view(active_camera.view_range, cam_location)
+
+	if(istype(active_camera.loc, /obj/item/integrated_circuit/output/video_camera))
+		visible_things = view(active_camera.view_range, newturf)
 
 	for(var/turf/visible_turf in visible_things)
 		visible_turfs += visible_turf

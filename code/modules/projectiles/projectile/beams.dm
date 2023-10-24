@@ -25,7 +25,6 @@
 	impact_type = /obj/effect/projectile/impact/laser
 	wound_bonus = 8
 	bare_wound_bonus = 12
-	var/fire_hazard = TRUE
 
 //overclocked laser, does a bit more damage but has much higher wound power (-0 vs -20)
 /obj/item/projectile/beam/laser/hellfire

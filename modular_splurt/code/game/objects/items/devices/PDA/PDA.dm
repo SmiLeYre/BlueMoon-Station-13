@@ -18,7 +18,11 @@
 		if(HAS_TRAIT(pda_user, TRAIT_DUMB_CUM_CRAVE))
 			// Set message data
 			tnote += "<i><b>&larr; From <a href='byond://?src=[REF(src)];choice=Message;target=[REF(signal.source)]'>[signal.data["name"]]</a> ([signal.data["job"]]):</b></i> <a href='byond://?src=[REF(src)];choice=toggle_block;target=[signal.data["name"]]'>(BLOCK/UNBLOCK)</a><br>[signal.format_message()]<br>"
-
+			if (!silent)	//отправитель думает, что его намеренно игнорят, а получатель думает, что полковнику никто не пишет...
+				playsound(src, 'sound/machines/twobeep.ogg', 50, 1)
+				audible_message("[icon2html(src, hearers(src))] *[ttone]*", null, 3)
+			new_alert = TRUE
+			update_icon(TRUE)
 			// Return with no other effects
 			return
 

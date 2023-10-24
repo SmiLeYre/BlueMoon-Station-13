@@ -159,6 +159,9 @@
 
 	var/list/visible_things = active_camera.isXRay() ? range(active_camera.view_range, cam_location) : view(active_camera.view_range, cam_location)
 
+	if(istype(active_camera.loc, /obj/item/integrated_circuit/output/video_camera))
+		visible_things = view(active_camera.view_range, newturf)
+
 	for(var/turf/visible_turf in visible_things)
 		visible_turfs += visible_turf
 

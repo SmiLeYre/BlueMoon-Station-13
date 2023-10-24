@@ -147,7 +147,7 @@
 /area/lavaland/surface/outdoors)
 "y" = (
 /obj/item/paper/crumpled/bloody{
-	info = "Week 2, day 6. <B>Success!<B> I've managed to synthesize a small amount of solid plasma! The block I created took days to stabilize and cool down, but after running some tests it's exceeding all my expectactions. I'll have to refine the process more before sending a sample to Centcom, but soon we won't have to waste thousands of credits sending those miners to work in this... hellscape anymore. The rest of my mineral samples remained stable too. I'll just have to hope those Space Pirates won't track me down after I stole their trisulfideoxide again... I've hidden the recipe in the safe for now. Code is 8124."
+	default_raw_text = "Week 2, day 6. <B>Success!<B> I've managed to synthesize a small amount of solid plasma! The block I created took days to stabilize and cool down, but after running some tests it's exceeding all my expectactions. I'll have to refine the process more before sending a sample to Centcom, but soon we won't have to waste thousands of credits sending those miners to work in this... hellscape anymore. The rest of my mineral samples remained stable too. I'll just have to hope those Space Pirates won't track me down after I stole their trisulfideoxide again... I've hidden the recipe in the safe for now. Code is 8124."
 	},
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plating/lavaland_baseturf,
@@ -155,7 +155,7 @@
 "z" = (
 /obj/item/storage/secure/safe,
 /obj/item/paper{
-	info = "Mix 30 units of O2 with precisely 12 units of \[br]\[i]*a few paragraphs are torn out*\[/i] \[br]within an oxygenated atmosphere of roughly 650-degree Chlorine. Once the gray mass has solidifed, carefully remove it (hot!) and place in distilled water. Check the object regularly. Once the outer layer peels off, the plasma should shine below! \[br]Note, the recipe is a work-in-progress and should not be attempted without proper safety precautions.";
+	default_raw_text = "Mix 30 units of O2 with precisely 12 units of \[br]\[i]*a few paragraphs are torn out*\[/i] \[br]within an oxygenated atmosphere of roughly 650-degree Chlorine. Once the gray mass has solidifed, carefully remove it (hot!) and place in distilled water. Check the object regularly. Once the outer layer peels off, the plasma should shine below! \[br]Note, the recipe is a work-in-progress and should not be attempted without proper safety precautions.";
 	name = "Plasma Synthetizing Recipe"
 	},
 /turf/closed/wall/r_wall,

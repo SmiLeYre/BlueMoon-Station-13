@@ -464,7 +464,7 @@ GLOBAL_LIST_INIT(paper_blanks, init_paper_blanks())
 		if(spec.ass_image)
 			temp_img = icon(spec.ass_image)
 		else
-			temp_img = icon(ass.gender == FEMALE ? 'icons/ass/assfemale.png' : 'icons/ass/assmale.png')
+			temp_img = icon(H.dna.features["body_model"] == FEMALE ? 'icons/ass/assfemale.png' : 'icons/ass/assmale.png')
 	else if(isalienadult(ass)) //Xenos have their own asses, thanks to Pybro.
 		temp_img = icon('icons/ass/assalien.png')
 	else if(issilicon(ass))

@@ -53,7 +53,7 @@
 	surplus = 30
 
 /datum/uplink_item/stealthy_weapons/derringerpack/purchase(mob/user, datum/component/uplink/U)
-	if(prob(1)) //For the 1%
+	if(prob(10)) //For the 10%
 		item = /obj/item/storage/fancy/cigarettes/derringer/gold
 	..()
 

@@ -16201,10 +16201,6 @@
 /obj/structure/table/reinforced/brass,
 /turf/open/indestructible/boss,
 /area/lavaland/surface/outdoors)
-"poU" = (
-/obj/item/clockwork/alloy_shards/clockgolem_remains,
-/turf/open/floor/plating/asteroid/basalt/lava,
-/area/lavaland/surface/outdoors)
 "ppW" = (
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plating,
@@ -22079,10 +22075,6 @@
 "uVo" = (
 /turf/open/floor/engine/air,
 /area/mine/xenoarch_area_a)
-"uVp" = (
-/obj/item/clothing/shoes/bronze,
-/turf/open/floor/plating/asteroid/basalt/lava,
-/area/lavaland/surface/outdoors)
 "uWg" = (
 /obj/structure/stone_tile/cracked{
 	dir = 4
@@ -126933,7 +126925,7 @@ lab
 lab
 lab
 lab
-ivD
+lab
 lab
 lab
 lab
@@ -127955,7 +127947,7 @@ lab
 lab
 lab
 ivD
-poU
+ctP
 lab
 lab
 lab
@@ -128214,7 +128206,7 @@ lab
 ivD
 lab
 lab
-uVp
+ctP
 ivD
 lab
 lab

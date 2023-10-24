@@ -10,9 +10,9 @@
 	var/mob/living/carbon/C = user
 	if(. && isrobotic(user))
 		do_fake_sparks(5,FALSE,user)
-	if(user.gender == FEMALE)
+	if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
 		playsound(C, pick('sound/voice/female_cry1.ogg', 'sound/voice/female_cry2.ogg'), 50, 1)
-	else
+	else if(user.gender != FEMALE || (user.gender == PLURAL && ismasculine(user)))
 		playsound(C, pick('sound/voice/male_cry1.ogg', 'sound/voice/male_cry2.ogg'), 50, 1)
 
 /datum/emote/living/carbon/human/dap

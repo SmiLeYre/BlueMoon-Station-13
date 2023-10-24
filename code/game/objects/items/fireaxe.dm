@@ -19,6 +19,8 @@
 	resistance_flags = FIRE_PROOF
 	wound_bonus = 7
 	bare_wound_bonus = 12
+	tool_behaviour = TOOL_CROWBAR
+	can_force_powered = TRUE
 	var/wielded = FALSE // track wielded status on item
 
 /obj/item/fireaxe/Initialize(mapload)
@@ -71,3 +73,41 @@
 /obj/item/fireaxe/boneaxe/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded=5, force_wielded=23, icon_wielded="bone_axe1")
+
+/obj/item/fireaxe/energized
+	desc = "Someone with a love for fire axes decided to turn this one into a high-powered energy weapon. Seems excessive."
+	armour_penetration = 30
+	var/charge = 90
+	var/max_charge = 90
+
+/obj/item/fireaxe/energized/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed, force_unwielded=12, force_wielded=30, icon_wielded="fireaxe2")
+
+/obj/item/fireaxe/energized/update_icon_state()
+		icon_state = "fireaxe0"
+
+/obj/item/fireaxe/energized/Initialize(mapload)
+	. = ..()
+	START_PROCESSING(SSobj, src)
+
+/obj/item/fireaxe/energized/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	return ..()
+
+/obj/item/fireaxe/energized/process()
+	charge = min(charge + 1, max_charge)
+
+/obj/item/fireaxe/energized/attack(mob/M, mob/user)
+	. = ..()
+	if(wielded && charge == max_charge)
+		if(isliving(M))
+			var/mob/living/target = M
+			charge = 0
+			playsound(loc, 'sound/magic/lightningbolt.ogg', 5, 1)
+			user.visible_message("<span class='danger'>[user] slams the charged axe into [M.name] with all [user.p_their()] might!</span>")
+			do_sparks(1, 1, src)
+			target.DefaultCombatKnockdown(60)
+			target.confused += 15
+			var/atom/throw_target = get_edge_target_turf(M, get_dir(src, get_step_away(M, src)))
+			M.throw_at(throw_target, 5, 1)

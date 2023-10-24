@@ -2358,7 +2358,7 @@
 	description = "The primary precursor for an ancient feline delicacy known as skooma. While it has no notable effects on it's own, mixing it with morphine in a chilled container may yield interesting results."
 	color = "#FAEAFF"
 	taste_description = "synthetic catnip"
-	glass_name = "Moon sugar"
+	glass_name = "Moon Sugar"
 	glass_desc = "They say it's not addictive unlike skooma, so it's safe to drink it... maybe..."
 	value = REAGENT_VALUE_UNCOMMON
 

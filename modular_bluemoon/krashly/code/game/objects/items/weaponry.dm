@@ -195,3 +195,6 @@
 
 /obj/item/gun/ballistic/revolver/inteq
 	icon_state = "revolver_inteq"
+
+/obj/item/gun/ballistic/automatic/c20r
+	projectile_damage_multiplier = 1.5
