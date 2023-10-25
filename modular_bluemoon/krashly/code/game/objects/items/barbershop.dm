@@ -39,7 +39,7 @@
 	if(location == BODY_ZONE_PRECISE_MOUTH)
 		return()
 	else
-		H.hair_style = var/new_hairstyle = input(user, "Select a hair style", "Grooming")  as null|anything in GLOB.hair_styles_list
+		H.hair_style = input(usr, "Select a hair style", "Grooming")  as null|anything in GLOB.hair_styles_list
 
 	H.update_hair()
 	playsound(loc, 'modular_bluemoon/krashly/sound/scissors.ogg', 20, 1)
@@ -58,7 +58,7 @@
 
 /obj/item/razor/straight_razor/shave(mob/living/carbon/human/H, location = BODY_ZONE_PRECISE_MOUTH)
 	if(location == BODY_ZONE_PRECISE_MOUTH)
-		H.facial_hair_style = var/new_facial_hairstyle = input(user, "Select a facial hair style", "Grooming")  as null|anything in GLOB.facial_hair_styles_list
+		H.facial_hair_style = input(usr, "Select a facial hair style", "Grooming")  as null|anything in GLOB.facial_hair_styles_list
 	else
 		return()
 
