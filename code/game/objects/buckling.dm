@@ -67,6 +67,11 @@
 			var/mob/living/L = M.pulledby
 			L.reset_pull_offsets(M, TRUE)
 
+	// BLUEMOON ADD START
+	if(!pre_buckle_mob(M))
+		return FALSE
+	// BLUEMOON ADD END
+
 	// if(!check_loc && M.loc != loc)
 	if(M.loc != loc)
 		M.forceMove(loc)
@@ -80,7 +85,7 @@
 	post_buckle_mob(M)
 
 	// BLUEMOON ADDITION AHEAD - запрет на усаживание сверхтяжёлого персонажа посторонними
-	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER)) // проверка не раньше, т.к. в post_buckle_mob обратаюыватся объекты-исключения, на которые другие могут, но сверхтяжёлые персонажи не могут сесть
+	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER)) // проверка не раньше, т.к. в post_buckle_mob обратаюыватся объекты-исключения, на которые сверхтяжёлые персонажи садятся с особым эффектом
 		if(!M.buckled) // чтобы лишний раз не появлялось сообщение о попытке сесть
 			return FALSE
 		if(M != usr)
@@ -123,6 +128,12 @@
 		unbuckle_mob(m, force)
 
 //Handle any extras after buckling
+
+// BLUEMOON ADD START - взаимодействие с объектами до момента, пока моб считается севшим на него.
+/atom/movable/proc/pre_buckle_mob(mob/living/M)
+	return TRUE
+// BLUEMOON ADD END
+
 //Called on buckle_mob()
 /atom/movable/proc/post_buckle_mob(mob/living/M)
 
