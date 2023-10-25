@@ -36,7 +36,7 @@
 	//special cybernetic organ for getting power from apcs
 	mutant_organs = list(/obj/item/organ/cyberimp/arm/power_cord)
 
-	exotic_bloodtype = "S"
+	exotic_bloodtype = "HF" // BLUEMOON EDIT - было "S"
 	exotic_blood_color = BLOOD_COLOR_OIL
 
 	tail_type = "mam_tail"

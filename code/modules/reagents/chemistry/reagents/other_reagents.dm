@@ -101,7 +101,7 @@
 			pH = 2.5
 
 		if(data["blood_type"] == "HF")
-			name = "Hydraulic Blood"
+			name = "Hydraulic Fluid" // BLUEMOON EDIT - was "Hydraulic Blood"
 			taste_description = "burnt oil"
 			pH = 9.75
 

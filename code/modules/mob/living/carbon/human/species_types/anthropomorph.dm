@@ -61,7 +61,7 @@
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
 
-	exotic_bloodtype = "S"
+	exotic_bloodtype = "HF" // BLUEMOON EDIT - было "S"
 	exotic_blood_color = BLOOD_COLOR_OIL
 	allowed_limb_ids = list("mammal","aquatic","avian", "human")
 	species_category = SPECIES_CATEGORY_ROBOT
