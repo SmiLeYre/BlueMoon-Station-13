@@ -21108,6 +21108,11 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/item/clothing/gloves/combat/maid/inteq,
+/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
+/obj/item/clothing/head/maid/syndicate/inteq,
+/obj/item/clothing/under/inteq_maid,
+/obj/item/clothing/shoes/laceup,
 /turf/open/floor/wood/wood_parquet,
 /area/syndicate_mothership)
 "cpQ" = (
