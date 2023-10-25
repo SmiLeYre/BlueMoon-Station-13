@@ -282,7 +282,7 @@
 		"O+" = list("O-", "O+","SY"),
 		"L" = list("L","SY"),
 		"U" = list("A-", "A+", "B-", "B+", "O-", "O+", "AB-", "AB+", "L", "U","SY", "BUG"),
-		"HF" = list("HF", "SY"),
+		"HF" = list("HF"), // BLUEMOON EDIT - было "HF" = list("HF", "SY"),
 		"X*" = list("X*", "SY"),
 		"SY" = list("SY"),
 		"GEL" = list("GEL","SY"),
