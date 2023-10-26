@@ -230,6 +230,12 @@
 		return
 
 	if(use_command)
+		// BLUEMOON ADD START - чтобы работал большой текст у больших и маленький персонажей
+		if(spans & SPAN_BIG)
+			spans &= ~SPAN_BIG
+		if(spans & SPAN_SMALL)
+			spans &= ~SPAN_SMALL
+		// BLUEMOON ADD END
 		spans |= commandspan
 
 	/*

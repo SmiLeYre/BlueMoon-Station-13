@@ -329,16 +329,13 @@
 	. += span_warning("You cannot read it!")
 
 /obj/item/paper/attack(mob/M, mob/user)
-	if(M.zone_selected == BODY_ZONE_PRECISE_EYES)
+	if(user.zone_selected == BODY_ZONE_PRECISE_EYES)
 		if(do_mob(user, M, 0.7 SECONDS))
 			user.visible_message("<span class='notice'>[user] shows the paper to you. </span>", \
 				"<span class='notice'>You hold up a paper and show it to [M]. </span>")
 			M.examinate(src)
 		else
 			to_chat(user, span_warning("You fail to show the paper to [M]."))
-		//f(ishuman(M) && !M.is_blind() && M.can_read(src))
-		//ui_interact(M)
-		//return
 	else
 		..()
 
@@ -348,6 +345,10 @@
 		return UI_CLOSE
 	if(camera_holder && can_show_to_mob_through_camera(user) || request_state)
 		return UI_UPDATE
+	if(isAI(user))
+		var/mob/living/silicon/ai/ai_user = user
+		if(!(ai_user.control_disabled || ai_user.stat == DEAD))
+			return UI_UPDATE
 	if(!in_range(user, src) && !isobserver(user))
 		return UI_CLOSE
 	if(user.incapacitated(TRUE, TRUE) || (isobserver(user) && !IsAdminGhost(user)))
@@ -361,6 +362,8 @@
 		return UI_CLOSE
 	if(in_contents_of(/obj/machinery/door/airlock) || in_contents_of(/obj/item/clipboard))
 		return UI_INTERACTIVE
+	if(in_contents_of(/mob/living/carbon) && !in_contents_of(user))
+		return UI_UPDATE
 	return ..()
 
 /obj/item/paper/can_interact(mob/user)

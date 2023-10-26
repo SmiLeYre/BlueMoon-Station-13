@@ -144,6 +144,8 @@
 
 	var/command_radio = FALSE
 
+	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
+
 /datum/outfit/inteq_raider/vanguard
 	name = "InteQ Vanguard"
 	id = /obj/item/card/id/syndicate/anyone/inteq

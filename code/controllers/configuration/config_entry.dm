@@ -2,6 +2,7 @@
 #define VALUE_MODE_TEXT 1
 #define VALUE_MODE_FLAG 2
 #define VALUE_MODE_NUM_LIST 3
+#define VALUE_MODE_TYPE 4
 
 #define KEY_MODE_TEXT 0
 #define KEY_MODE_TYPE 1
@@ -214,7 +215,7 @@
 		if(lowercase_key)
 			key_name = lowertext(key_name)
 		if(key_pos)
-			key_value = copytext(str_val, key_pos + length(str_val[key_pos]))
+			key_value = copytext(str_val, key_pos + length(splitter))
 		var/new_key
 		var/new_value
 		var/continue_check_value
@@ -250,6 +251,11 @@
 					new_list += temp
 				new_value = new_list
 				continue_check_value = new_list.len
+			if(VALUE_MODE_TYPE)
+				new_value = key_value
+				if(!ispath(new_value))
+					new_value = text2path(new_value)
+				continue_check_value = ispath(new_value)
 		if(continue_check_value && continue_check_key && ValidateListEntry(new_key, new_value))
 			new_key = preprocess_key(new_key)
 			new_value = preprocess_value(new_value)

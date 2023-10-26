@@ -12,6 +12,8 @@
 	belt = /obj/item/tank/internals/emergency_oxygen/double
 	id = /obj/item/card/id/gold
 
+	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
+
 /datum/outfit/santa/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	if(visualsOnly)
 		return

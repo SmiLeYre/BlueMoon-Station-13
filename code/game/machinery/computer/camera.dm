@@ -133,7 +133,7 @@
 
 /obj/machinery/computer/security/proc/update_active_camera_screen()
 	// Show static if can't use the camera
-	if(!active_camera?.can_use())
+	if(QDELETED(active_camera) || !active_camera?.can_use())
 		show_camera_static()
 		return
 

@@ -13,9 +13,9 @@
 	success_sound = 'sound/surgery/cautery2.ogg'
 
 /datum/surgery_step/sew_up_the_mouth/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>Вы начинаете зашивать <b>[parse_zone(target_zone)]</b> <b>[target]</b>...</span>",
-		"<b>[user]</b> начинает зашивать <b>[parse_zone(target_zone)]</b> <b>[target]</b>.",
-		"<b>[user]</b> начинает зашивать <b>[parse_zone(target_zone)]</b> <b>[target]</b>.")
+	display_results(user, target, "<span class='notice'>Вы начинаете зашивать <b>[ru_parse_zone(target_zone)]</b> <b>[target]</b>...</span>",
+		"<b>[user]</b> начинает зашивать <b>[ru_parse_zone(target_zone)]</b> <b>[target]</b>.",
+		"<b>[user]</b> начинает зашивать <b>[ru_parse_zone(target_zone)]</b> <b>[target]</b>.")
 
 /datum/surgery_step/sew_up_the_mouth/tool_check(mob/user, obj/item/tool)
 	if(implement_type == TOOL_WELDER || implement_type == /obj/item)
@@ -49,9 +49,9 @@
 	success_sound = 'sound/surgery/cautery2.ogg'
 
 /datum/surgery_step/unsew_up_the_mouth/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>Вы начинаете расшивать <b>[parse_zone(target_zone)]</b> <b>[target]</b>...</span>",
-		"<b>[user]</b> начинает расшивать <b>[parse_zone(target_zone)]</b> <b>[target]</b>.",
-		"<b>[user]</b> начинает расшивать <b>[parse_zone(target_zone)]</b> <b>[target]</b>.")
+	display_results(user, target, "<span class='notice'>Вы начинаете расшивать <b>[ru_parse_zone(target_zone)]</b> <b>[target]</b>...</span>",
+		"<b>[user]</b> начинает расшивать <b>[ru_parse_zone(target_zone)]</b> <b>[target]</b>.",
+		"<b>[user]</b> начинает расшивать <b>[ru_parse_zone(target_zone)]</b> <b>[target]</b>.")
 
 /datum/surgery_step/unsew_up_the_mouth/tool_check(mob/user, obj/item/tool)
 	if(implement_type == TOOL_WELDER || implement_type == /obj/item)

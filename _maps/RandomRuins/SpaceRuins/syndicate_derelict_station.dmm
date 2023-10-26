@@ -603,6 +603,7 @@
 /area/ruin/space/has_grav/syndiederelict/medbay)
 "lk" = (
 /obj/machinery/atmospherics/components/binary/pump/on/layer3,
+/mob/living/simple_animal/hostile/pirate/melee/space,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/syndiederelict/engineering)
 "lp" = (
@@ -726,6 +727,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/syndiederelict/research)
 "ns" = (
 /obj/machinery/power/smes/engineering{
@@ -1093,6 +1095,7 @@
 	pixel_x = -25;
 	start_charge = 0
 	},
+/mob/living/simple_animal/hostile/pirate/melee/space,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/syndiederelict/engineering)
 "vv" = (
@@ -1129,6 +1132,7 @@
 /area/ruin/space/has_grav/syndiederelict/research)
 "vU" = (
 /obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/syndiederelict/research)
 "vV" = (
 /obj/structure/lattice,
@@ -2186,6 +2190,7 @@
 /obj/structure/grille,
 /obj/item/stack/sheet/plastitaniumglass,
 /obj/item/stack/sheet/plastitaniumglass,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/syndiederelict/research)
 "Rl" = (
 /obj/structure/disposalpipe/segment{
@@ -2554,6 +2559,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 8
 	},
+/obj/item/beacon,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/syndiederelict/engineering)
 "ZO" = (

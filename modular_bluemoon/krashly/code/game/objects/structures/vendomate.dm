@@ -45,3 +45,6 @@
 
 /obj/item/vending_refill/inteq_vendomat
 	machine_name = "InteDrobe"
+
+/obj/machinery/vending/kink
+	light_mask = "kink-light-mask"

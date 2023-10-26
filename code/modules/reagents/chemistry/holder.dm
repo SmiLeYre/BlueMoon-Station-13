@@ -1176,8 +1176,9 @@
 	return current_reagent.post_copy_data()
 
 /datum/reagents/proc/get_reagent(type)
-	var/list/cached_reagents = reagent_list
-	. = locate(type) in cached_reagents
+	for(var/datum/reagent/R in reagent_list)
+		if(R.type == type)
+			return R
 
 /datum/reagents/proc/generate_taste_message(minimum_percent=15)
 	var/list/out = list()
