@@ -12,7 +12,7 @@
 	if(!istype(our_guy))
 		return
 	if(our_guy.hair_style == "Bald")
-		return()
+		return
 	to_chat(user, "<span class='notice'>Вы начинаете расчесывать свои волосы...</span>")
 	if(do_after(user, 10 SECONDS, our_guy))
 		to_chat(user, "<span class='notice'>Вы причесали себя.</span>")
@@ -37,7 +37,7 @@
 
 /obj/item/razor/scissors/shave(mob/living/carbon/human/H, location = BODY_ZONE_PRECISE_MOUTH)
 	if(location == BODY_ZONE_PRECISE_MOUTH)
-		return()
+		return
 	else
 		H.hair_style = input(usr, "Select a hair style", "Grooming")  as null|anything in GLOB.hair_styles_list
 
@@ -60,7 +60,7 @@
 	if(location == BODY_ZONE_PRECISE_MOUTH)
 		H.facial_hair_style = input(usr, "Select a facial hair style", "Grooming")  as null|anything in GLOB.facial_hair_styles_list
 	else
-		return()
+		return
 
 	H.update_hair()
 	playsound(loc, 'modular_bluemoon/krashly/sound/straight_razor.ogg', 20, 1)
