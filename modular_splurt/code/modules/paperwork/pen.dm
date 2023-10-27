@@ -12,6 +12,7 @@
 				if(!iscarbon(T)) //not carbon.
 					return
 
+				// BLUEMOON EDIT START - возможность писать на отдельных частях тела
 				var/try_to_write_on_genitals = FALSE
 				var/target_body_part
 
@@ -45,6 +46,7 @@
 				var/obj/item/G
 				if(try_to_write_on_genitals && T.exposed_genitals.len)
 					G = user:pick_receiving_organ(T, NONE, "Pick a genital to write on", "PRESS CANCEL to write on the targeted body part")
+				// BLUEMOON ADD END
 
 				/* BLUEMOON REMOVAL START - сверху более умная реализация по отдельным частям тела
 				if(!T.is_chest_exposed())
