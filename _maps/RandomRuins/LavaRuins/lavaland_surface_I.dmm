@@ -39,7 +39,7 @@
 /area/ruin/unpowered)
 "aO" = (
 /turf/template_noop,
-/area/lavaland/surface/outdoors)
+/area/template_noop)
 "aP" = (
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)

@@ -93,10 +93,8 @@
 /obj/effect/mob_spawn/proc/special(mob/M)
 	return
 
-// BLUEMOON ADD START - особые действия после выставления персонажу расы и внешности игрока (ставлю сюда, чтобы повысить читаемость)
-/obj/effect/mob_spawn/proc/special_post_appearance(mob/M)
+/obj/effect/mob_spawn/proc/special_post_appearance(mob/H)
 	return
-// BLUEMOON ADD END
 
 /obj/effect/mob_spawn/proc/equip(mob/M)
 	return
@@ -206,12 +204,29 @@
 	assignedrole = "Ghost Role"
 	var/datum/team/ghost_role/ghost_team
 
+	var/give_cooler_to_mob_if_synth = FALSE // BLUEMOON ADD - если персонаж - синтетик, то ему выдаётся заряженный космический охладитель. Для специальных ролей
+
 /obj/effect/mob_spawn/human/Initialize(mapload)
 	if(ispath(outfit))
 		outfit = new outfit()
 	if(!outfit)
 		outfit = new /datum/outfit
 	return ..()
+
+// BLUEMOON ADD START - особые действия после выставления персонажу расы и внешности игрока (ставлю сюда, чтобы повысить читаемость)
+/obj/effect/mob_spawn/human/special_post_appearance(mob/H)
+	// Не добавлено в аутфит, т.к. раса ставится ПОСЛЕ выставления аутфита
+	if(give_cooler_to_mob_if_synth)
+		if(HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM))
+			if(!r_hand)
+				H.put_in_r_hand(new /obj/item/device/cooler/charged(H))
+			else if(!l_hand)
+				H.put_in_l_hand(new /obj/item/device/cooler/charged(H))
+			else
+				to_chat(H, span_reallybig("Не забудьте забрать космический охладитель под собой.")) // чтобы не упустили из виду при резком спавне
+				new /obj/item/device/cooler/charged(H.loc)
+	. = ..()
+// BLUEMOON ADD END
 
 /obj/effect/mob_spawn/human/equip(mob/living/carbon/human/H)
 	if(mob_species)

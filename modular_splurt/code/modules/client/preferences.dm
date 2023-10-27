@@ -139,29 +139,14 @@
 
 			if(silicon_lawset)
 				var/list/config_laws = CONFIG_GET(keyed_list/choosable_laws)
-				var/obj/item/aiModule/law_board = GLOB.all_law_boards[text2path(config_laws[silicon_lawset])]
-				if(law_board)
-					var/law_number = 1
-					if(length(law_board.laws))
-						for(var/law_text in law_board.laws)
-							dat += "[law_number]: [law_text]<br>"
-							law_number++
-					else if(istype(law_board, /obj/item/aiModule/core/full))
-						var/obj/item/aiModule/core/full/full_boardtype = law_board
-						for(var/datum/ai_laws/law_prototype in typesof(/datum/ai_laws))
-							if(full_boardtype.law_id != initial(law_prototype.id))
-								continue
-							var/datum/ai_laws/law_datum = new law_prototype
-							for(var/law_text in law_datum.get_law_list(TRUE))
-								dat += "[law_text]<br>"
-							qdel(law_datum) // hiss i hate everything in this else
-							break
-					else
-						dat += "I was unable to find the laws for your lawset, sorry <font style='translate: rotate(90deg)'>:(</font>"
+				var/datum/ai_laws/law_datum = GLOB.all_law_datums[config_laws[silicon_lawset]]
+				if(law_datum)
+					dat += "<i>[law_datum]</i><br>"
+					dat += english_list(law_datum.get_law_list(TRUE),
+						"I was unable to find the laws for your lawset, sorry  <font style='translate: rotate(90deg)'>:(</font>",
+						"<br>", "<br>")
 
-			dat += "</td>"
-
-			dat += "</tr></table>"
+			dat += "</td></tr></table>"
 
 		//Character Appearance
 		if(APPEARANCE_TAB)

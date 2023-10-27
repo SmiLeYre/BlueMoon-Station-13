@@ -2,4 +2,6 @@
 
 /datum/config_entry/keyed_list/choosable_laws
 	key_mode = KEY_MODE_TEXT
-	value_mode = VALUE_MODE_TEXT
+	value_mode = VALUE_MODE_TYPE
+	splitter = " | "
+	lowercase_key = FALSE

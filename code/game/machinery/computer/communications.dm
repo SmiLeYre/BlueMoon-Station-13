@@ -45,12 +45,12 @@
 	var/syndicate = FALSE
 
 /obj/machinery/computer/communications/syndicate
-	name = "Illegal Communications Console"
-	desc = "Эта консоль используется для объявления важной информации по станции, для связи с ЦК и Синдикатом, или для повышения уровня тревоги."
+	name = "Syndicate Communications Console"
 	icon_screen = "commsyndie"
 	icon_keyboard = "syndie_key"
 	req_access = list(ACCESS_SYNDICATE_LEADER)
 	light_color = LIGHT_COLOR_BLOOD_MAGIC
+	obj_flags = EMAGGED
 	syndicate = TRUE
 
 /obj/machinery/computer/communications/syndicate/emag_act(mob/user, obj/item/card/emag/emag_card)
@@ -197,6 +197,8 @@
 			emergency_meeting(usr)
 		if ("makePriorityAnnouncement")
 			if (!authenticated_as_silicon_or_captain(usr))
+				if(syndicate == TRUE)
+					make_announcement(usr)
 				return
 			make_announcement(usr)
 		if ("messageAssociates")
@@ -236,8 +238,6 @@
 			var/datum/map_template/shuttle/shuttle = locate(params["shuttle"]) in shuttles
 			if (!istype(shuttle))
 				return
-			// if (!can_purchase_this_shuttle(shuttle))
-			// 	return
 			if (!shuttle.prerequisites_met())
 				to_chat(usr, span_alert("Требования для покупки этого шаттла - не выполнены!"))
 				return
@@ -245,8 +245,6 @@
 			if (bank_account.account_balance < shuttle.credit_cost)
 				return
 			SSshuttle.shuttle_purchased = SHUTTLEPURCHASE_PURCHASED
-			// for(var/datum/round_event_control/shuttle_insurance/insurance_event in SSevents.control)
-			// 	insurance_event.weight *= 20
 			SSshuttle.unload_preview()
 			SSshuttle.existing_shuttle = SSshuttle.emergency
 			SSshuttle.action_load(shuttle, replace = TRUE)
@@ -262,6 +260,10 @@
 				return
 			SSshuttle.cancelEvac(usr)
 		if ("requestNukeCodes")
+			if (syndicate == TRUE)
+				balloon_alert_to_viewers("ОШИБКА")
+				to_chat(usr, span_danger("ОШИБКА"))
+				return
 			if (!authenticated_as_non_silicon_captain(usr))
 				return
 			if (!COOLDOWN_FINISHED(src, important_action_cooldown))
@@ -274,6 +276,10 @@
 			playsound(src, 'sound/machines/terminal_prompt.ogg', 50, FALSE)
 			COOLDOWN_START(src, important_action_cooldown, IMPORTANT_ACTION_COOLDOWN)
 		if ("restoreBackupRoutingData")
+			if (syndicate == TRUE)
+				balloon_alert_to_viewers("ОШИБКА")
+				to_chat(usr, span_danger("ОШИБКА"))
+				return
 			if (!authenticated_as_non_silicon_captain(usr))
 				return
 			if (!(obj_flags & EMAGGED))
@@ -456,7 +462,7 @@
 				data["canLogOut"] = !issilicon(user)
 				data["shuttleCanEvacOrFailReason"] = SSshuttle.canEvac(user)
 				if(syndicate)
-					data["shuttleCanEvacOrFailReason"] = "You cannot summon the shuttle from this console!"
+					data["shuttleCanEvacOrFailReason"] = "Вы не можете вызвать Шаттл Эвакуации с этой консоли!"
 
 				var/list/slaves = list()
 				data["slaves"] = list()
@@ -574,7 +580,7 @@
 /obj/machinery/computer/communications/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if (!ui)
-		if (EMAGGED && SSticker.mode.name == "Extended")
+		if (EMAGGED && SSticker.mode.name == "Extended" || syndicate == TRUE)
 			ui = new(user, src, "CommunicationsConsole")
 			ui.open()
 		else if (EMAGGED)

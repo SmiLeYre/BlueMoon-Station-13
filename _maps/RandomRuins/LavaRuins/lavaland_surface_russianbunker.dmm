@@ -1,7 +1,7 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
 /turf/template_noop,
-/area/lavaland/surface/outdoors)
+/area/template_noop)
 "ab" = (
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -488,7 +488,7 @@
 "mQ" = (
 /obj/effect/mob_spawn/human/corpse/damaged,
 /turf/template_noop,
-/area/lavaland/surface/outdoors)
+/area/template_noop)
 "nj" = (
 /obj/effect/mine/stun,
 /obj/effect/mob_spawn/human/corpse/nanotrasensoldier,

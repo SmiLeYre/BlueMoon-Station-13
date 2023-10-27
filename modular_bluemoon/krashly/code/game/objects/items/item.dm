@@ -202,7 +202,7 @@
 	name = "toy Ares"
 	icon = 'modular_bluemoon/krashly/icons/obj/toys.dmi'
 	icon_state = "toy_ares"
-	max_combat_health = 7 //300 integrity
+	max_combat_health = 7 //350 integrity
 
 
 // Лодаут

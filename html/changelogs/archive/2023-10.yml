@@ -40,3 +40,18 @@
   - rscadd: Adds holo HUD sunglasses to the game, invisible versions of normal HUD
       sunglasses.
   - rscadd: Implements holo HUD sunglasses to the loadout screen.
+2023-10-20:
+  SmiLeYre and SandPoot.:
+  - rscadd: Silicons can choose their lawset if allowed by the server host (enabled
+      in configs).
+2023-10-24:
+  ariaworld:
+  - rscadd: Vacuum resistance quirk.
+  - rscadd: Various head markings.
+  - rscadd: Haydee head (Snout).
+  - rscadd: 'Body Morpher expansion: Body size, genital color, hair color, horns.'
+  - bugfix: Teshari eyes being one pixel to the left.
+2023-10-26:
+  BongaTheProto:
+  - tweak: moves the flavor texts and related to the background tab
+  - code_imp: merges 20 commits from upstream

@@ -8,6 +8,8 @@
 	back = /obj/item/tank/jetpack/oxygen
 	mask = /obj/item/clothing/mask/breath
 
+	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
+
 /datum/outfit/tournament
 	name = "tournament standard red"
 
@@ -91,6 +93,8 @@
 	head = /obj/item/clothing/head/helmet/space/pirate/bandana
 	ears = /obj/item/radio/headset/pirate
 	id = /obj/item/card/id/pirate
+
+	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
 
 /datum/outfit/pirate/space/captain
 	head = /obj/item/clothing/head/helmet/space/pirate
@@ -392,6 +396,8 @@
 		/obj/item/pinpointer/nuke=1,\
 		/obj/item/grenade/plastic/x4=1)
 
+	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
+
 /datum/outfit/death_commando/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	if(visualsOnly)
 		return
@@ -435,6 +441,8 @@
 		/obj/item/storage/part_replacer/bluespace/tier5=1,\
 		/obj/item/debug/human_spawner=1,\
 		)
+
+	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
 
 /datum/outfit/debug/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	var/obj/item/card/id/death/W = H.wear_id

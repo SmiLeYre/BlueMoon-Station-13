@@ -95,12 +95,17 @@
 			// sandstorm edit - advanced cum drip
 			var/amount_to_transfer = R.total_volume * (spill ? sender.fluid_transfer_factor : 1)
 			R.trans_to(target, amount_to_transfer, log = TRUE)
-			if(ishuman(target))
-				// Nope, on the mouth doesn't count.
-				if(!(istype(last_lewd_datum, /datum/interaction/lewd/facefuck) || istype(last_lewd_datum, /datum/interaction/lewd/throatfuck) || istype(last_lewd_datum, /datum/interaction/lewd/oral/blowjob) || istype(last_lewd_datum, /datum/interaction/lewd/oral/selfsuck)))
-					var/datum/reagent/consumable/semen/salty_drink = target.reagents.get_reagent(/datum/reagent/consumable/semen)
-					if(salty_drink != null)
+			if(ishuman(target) && (istype(sender, /obj/item/organ/genital/penis)))
+				var/datum/reagent/consumable/semen/salty_drink = src.reagents.get_reagent(sender.linked_organ.fluid_id)
+				if(salty_drink)
+					if(istype(receiver, /obj/item/organ/genital/anus))
+						var/obj/item/organ/genital/anus/rec = getorganslot(ORGAN_SLOT_ANUS)
 						salty_drink.amount_to_drip += amount_to_transfer
+						rec.filled = TRUE
+					if(istype(receiver, /obj/item/organ/genital/vagina))
+						var/obj/item/organ/genital/vagina/rec = getorganslot(ORGAN_SLOT_VAGINA)
+						salty_drink.amount_to_drip += amount_to_transfer
+						rec.filled = TRUE
 			//
 	sender.last_orgasmed = world.time
 	R.clear_reagents()

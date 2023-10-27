@@ -13,7 +13,6 @@
 		who = world
 	else
 		who = src
-	to_chat(who, "<b>Соблюдайте данные законы:</b>")
 
 	src.laws_sanity_check()
 	src.laws.show_laws(who)

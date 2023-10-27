@@ -49,6 +49,7 @@
 	implants = list(/obj/item/implant/sad_trombone)
 
 	uplink_type = /obj/item/uplink/clownop
+	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
 
 /datum/outfit/syndicate/clownop/no_crystals
 	tc = 0

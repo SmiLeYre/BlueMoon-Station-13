@@ -409,6 +409,7 @@
 	var/command_radio = FALSE
 	var/uplink_type = /obj/item/syndicate_uplink_high/nuclear
 
+	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
 
 /datum/outfit/syndicate/leader
 	name = "Syndicate Leader - Basic"
