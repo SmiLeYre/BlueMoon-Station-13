@@ -463,13 +463,14 @@
 					/obj/item/clothing/head/pharaoh = 2,
 					/obj/item/clothing/neck/tie/cross = 7,
 					/obj/item/storage/fancy/candle_box = 3,
-					/obj/item/clothing/head/clownmitre = 3, //BlueMoon changes
-					/obj/item/clothing/suit/chaplain/clownpriest = 3, //BlueMoon changes
-					/obj/item/clothing/suit/chaplain/shrinehand = 3, //BlueMoon changes
-					/obj/item/clothing/suit/hooded/chaplain_hoodie/monk_robe = 2, //BlueMoon changes
-					/obj/item/clothing/neck/oldcross = 6,  //BlueMoon changes
-					/obj/item/clothing/neck/epitrachelion = 1, //BlueMoon changes
-					/obj/item/clothing/neck/cloak/bishop = 1, //BlueMoon changes
+					/obj/item/storage/fancy/ringbox/silver = 4, // BLUEMOON ADD - для проведения свадеб,
+					/obj/item/clothing/head/clownmitre = 3, //BlueMoon changes,
+					/obj/item/clothing/suit/chaplain/clownpriest = 3, //BlueMoon changes,
+					/obj/item/clothing/suit/chaplain/shrinehand = 3, //BlueMoon changes,
+					/obj/item/clothing/suit/hooded/chaplain_hoodie/monk_robe = 2, //BlueMoon changes,
+					/obj/item/clothing/neck/oldcross = 6,  //BlueMoon changes,
+					/obj/item/clothing/neck/epitrachelion = 1, //BlueMoon changes,
+					/obj/item/clothing/neck/cloak/bishop = 1, //BlueMoon changes,
 					/obj/item/clothing/neck/cloak/bishopblack= 1) //BlueMoon changes
 	premium = list(/obj/item/toy/plush/plushvar = 1,
 					/obj/item/toy/plush/narplush = 1,
