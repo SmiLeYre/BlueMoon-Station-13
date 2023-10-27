@@ -1,4 +1,4 @@
-/obj/structure/chair/bed/dildo_machine
+/obj/structure/bed/dildo_machine
 	name = "Dildo machine"
 	desc = "It provides pleasure."
 	icon = 'modular_bluemoon/Gardelin0/icons/obj/lewd_devices.dmi'
@@ -11,11 +11,11 @@
 	var/fuck_hole
 	buckle_lying = TRUE
 
-/obj/structure/chair/bed/dildo_machine/New()
+/obj/structure/bed/dildo_machine/New()
 	..()
 	add_overlay(mutable_appearance('modular_bluemoon/Gardelin0/icons/obj/lewd_devices.dmi', "dilmachine_over", MOB_LAYER + 1))
 
-/obj/structure/chair/bed/dildo_machine/verb/change_hole()
+/obj/structure/bed/dildo_machine/verb/change_hole()
 	set name = "Change hole"
 	set category = "Object"
 	set src in oview(1)
@@ -26,7 +26,7 @@
 		if("anus")
 			hole = CUM_TARGET_ANUS
 
-/obj/structure/chair/bed/dildo_machine/verb/change_mode()
+/obj/structure/bed/dildo_machine/verb/change_mode()
 	set name = "Change mode"
 	set category = "Object"
 	set src in oview(1)
@@ -41,7 +41,7 @@
 		if(mode == "high")
 			intencity = 18
 
-/obj/structure/chair/bed/dildo_machine/verb/toggle()
+/obj/structure/bed/dildo_machine/verb/toggle()
 	set name = "Toggle dildo machine"
 	set category = "Object"
 	set src in oview(1)
@@ -55,7 +55,7 @@
 	else
 		to_chat(usr, "[src] выкл.")
 
-/obj/structure/chair/bed/dildo_machine/proc/fuck()
+/obj/structure/bed/dildo_machine/proc/fuck()
 	if(!on)
 		return
 
@@ -95,7 +95,7 @@
 								if(prob(50))
 									M.emote("moan")
 
-/obj/structure/chair/bed/dildo_machine/attackby(obj/item/used_item, mob/user, params)
+/obj/structure/bed/dildo_machine/attackby(obj/item/used_item, mob/user, params)
 	if(istype(used_item, /obj/item/screwdriver))
 		to_chat(user, span_notice("You unscrew the frame and begin to deconstruct it..."))
 		if(used_item.use_tool(src, user, 8 SECONDS, volume = 50))
@@ -121,7 +121,7 @@
 			to_chat(user, span_notice("You screw the frame to the floor and begin to construct it..."))
 			if(used_item.use_tool(src, user, 8 SECONDS, volume = 50))
 				to_chat(user, span_notice("You assemble it."))
-				new /obj/structure/chair/bed/dildo_machine (src.loc)
+				new /obj/structure/bed/dildo_machine (src.loc)
 				qdel(src)
 			return
 	else
