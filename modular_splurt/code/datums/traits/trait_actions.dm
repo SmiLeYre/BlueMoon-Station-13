@@ -861,7 +861,7 @@
 				blood_valid = FALSE
 
 				// Set blood type name
-				blood_name = "hydraulic fluid"
+				blood_name = "hydraulic fluid" // BLUEMOON EDIT - was "coolant"
 
 				// Check if blood types match
 				if(blood_type_match)

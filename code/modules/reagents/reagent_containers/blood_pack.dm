@@ -45,7 +45,7 @@
 
 /obj/item/reagent_containers/blood/random/Initialize(mapload)
 	icon_state = "bloodpack"
-	blood_type = pick("A+", "A-", "B+", "B-", "O+", "O-", "L", "SY", "GEL", "BUG")
+	blood_type = pick("A+", "A-", "B+", "B-", "O+", "O-", "L", "SY", "GEL", "BUG") // BLUEMOON EDIT - убрано "HF"
 	return ..()
 
 /obj/item/reagent_containers/blood/APlus
