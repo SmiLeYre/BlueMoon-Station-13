@@ -1,5 +1,8 @@
 /obj/item/organ/genital/vagina
 	name = "вагина"
+	ru_name = "вагина" // BLUEMOON ADD
+	ru_name_v = "вагине" // BLUEMOON ADD
+	ru_name_capital = "Вагина" // BLUEMOON ADD
 	desc = "A female reproductive organ."
 	icon = 'icons/obj/genitals/vagina.dmi'
 	icon_state = ORGAN_SLOT_VAGINA

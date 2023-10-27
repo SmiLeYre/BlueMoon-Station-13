@@ -1,5 +1,8 @@
 /obj/item/organ/genital/butt
 	name 					= "Попа"
+	ru_name				 	= "попа" // BLUEMOON ADD
+	ru_name_v 				= "попе" // BLUEMOON ADD
+	ru_name_capital 		= "Попа" // BLUEMOON ADD
 	desc 					= "You see a pair of asscheeks."
 	icon_state 				= "butt"
 	icon 					= 'icons/obj/genitals/butt.dmi'

@@ -1,5 +1,8 @@
 /obj/item/organ/genital/testicles
 	name = "яйца"
+	ru_name = "яйца" // BLUEMOON ADD
+	ru_name_v = "яйцах" // BLUEMOON ADD
+	ru_name_capital = "Яйца" // BLUEMOON ADD
 	desc = "A male reproductive organ."
 	icon_state = "testicles"
 	icon = 'icons/obj/genitals/testicles.dmi'

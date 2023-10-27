@@ -3,6 +3,9 @@
 
 /obj/item/organ/genital/breasts
 	name = "Грудь"
+	ru_name = "грудь" // BLUEMOON ADD
+	ru_name_v = "груди" // BLUEMOON ADD
+	ru_name_capital = "Грудь" // BLUEMOON ADD
 	desc = "Female milk producing organs."
 	icon_state = "breasts"
 	icon = 'icons/obj/genitals/breasts.dmi'
