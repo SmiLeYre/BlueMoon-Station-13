@@ -56,6 +56,57 @@
 	new /obj/effect/particle_effect/foam(loc)
 	return (TOXLOSS)
 
+// BLUEMOON ADD START - введено мытье отдельных частей тела, чтобы смывать с них надписи
+/obj/item/soap/attack(mob/living/target, mob/living/user)
+	if(ishuman(target))
+		var/mob/living/carbon/human/H = target // BLUEMOON EDIT
+
+		// Проверка, не закрыта ли часть тела
+		var/target_limb
+
+		target_limb = zone2body_parts_covered_complicated(user.zone_selected)
+
+		if(!target_limb)
+			to_chat(user, span_warning("You must choose a bodypart on your doll to write on!"))
+			return
+
+		var/list/items_on_target = list()
+		items_on_target = H.get_equipped_items()
+
+		for(var/A in items_on_target)
+			var/obj/item/worn_clothes = A
+			if(worn_clothes.body_parts_covered & target_limb)
+				to_chat(user, span_warning("The target body part is covered with their clothes."))
+				return
+
+		switch(user.zone_selected)
+			if(BODY_ZONE_PRECISE_MOUTH)
+				H.visible_message("<span class='warning'>\the [user] begins to wash out \the [target]'s mouth with [src.name]!</span>", "<span class='danger'>[user] is starting to wash out your mouth with [src.name]! IT'S AWFUL!</span>") //washes mouth out with soap sounds better than 'the soap' here
+				if(do_after(user, 4 SECONDS, target = H))
+					H.visible_message("<span class='notice'>\the [user] washes \the [target]'s mouth out with [src.name]!</span>", "<span class='danger'>[user] washes out your mouth with [src.name]! IT WAS AWFUL!</span>") //washes mouth out with soap sounds better than 'the soap' here
+					H.lip_style = null //removes lipstick
+					H.update_body()
+					return
+			if(BODY_ZONE_PRECISE_EYES)
+				target_limb = BODY_ZONE_HEAD
+			if(BODY_ZONE_PRECISE_GROIN) // технически, у моба нет органа таза на момент написания
+				target_limb = BODY_ZONE_CHEST
+			else
+				target_limb = user.zone_selected
+
+		var/obj/item/bodypart/affected = H.get_bodypart(target_limb)
+
+		H.visible_message(span_notice("[user] begins to wash [target]'s [affected] with [name]!"), span_notice("[user] is starting to wash your [affected] with [name]!"))
+		if(do_after(user, 4 SECONDS, target = H))
+			H.visible_message(span_notice("[user] washed up [target]'s [affected]!"), span_notice("[user] washed up your [affected]!"))
+			target.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
+			target.clean_blood()
+			SEND_SIGNAL(target, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_MEDIUM)
+			target.wash_cream()
+			target.wash_cum()
+			affected.writtentext = ""
+// BLUEMOON ADD END
+
 /obj/item/soap/afterattack(atom/target, mob/user, proximity)
 	. = ..()
 	if(!proximity || !check_allowed_items(target))
@@ -69,12 +120,14 @@
 		if(do_after(user, src.cleanspeed, target = target))
 			to_chat(user, "<span class='notice'>You scrub \the [target.name] out.</span>")
 			qdel(target)
+	/* BLUEMOON REMOVAL START - технически, этот кусок не работает, т.к. прок не работает на хуманов
 	else if(ishuman(target) && user.zone_selected == BODY_ZONE_PRECISE_MOUTH)
 		var/mob/living/carbon/human/H = user
 		user.visible_message("<span class='warning'>\the [user] washes \the [target]'s mouth out with [src.name]!</span>", "<span class='notice'>You wash \the [target]'s mouth out with [src.name]!</span>") //washes mouth out with soap sounds better than 'the soap' here
 		H.lip_style = null //removes lipstick
 		H.update_body()
 		return
+	/ BLUEMOON REMOVAL END */
 	else if(istype(target, /obj/structure/window))
 		user.visible_message("[user] begins to clean \the [target.name] with [src]...", "<span class='notice'>You begin to clean \the [target.name] with [src]...</span>")
 		if(do_after(user, src.cleanspeed, target = target))

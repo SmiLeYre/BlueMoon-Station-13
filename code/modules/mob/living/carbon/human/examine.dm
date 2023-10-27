@@ -227,19 +227,7 @@
 
 			// BLUEMOON ADD START - отображение написанного на части тела только в случае, если она видима
 			var/covered_area
-			switch(BP.body_zone)
-				if(BODY_ZONE_HEAD)
-					covered_area = HEAD
-				if(BODY_ZONE_CHEST)
-					covered_area = CHEST
-				if(BODY_ZONE_L_ARM)
-					covered_area = ARM_LEFT
-				if(BODY_ZONE_R_ARM)
-					covered_area = ARM_RIGHT
-				if(BODY_ZONE_L_LEG)
-					covered_area = LEG_LEFT
-				if(BODY_ZONE_R_LEG)
-					covered_area = LEG_RIGHT
+			covered_area = zone2body_parts_covered_complicated(BP.body_zone)
 
 			if(!covered_area) // если в будущем введутся новые органы, чтобы этот момент не забыли
 				to_chat(user, span_danger("DEV: При осмотре обнаружен неизвестный орган, сообщите разработчикам!"))
@@ -453,7 +441,7 @@
 		// BLUEMOON ADD START - отображение надписей на теле, если они видимы и есть
 		if(show_written_on_bodypart_text != "")
 			msg += show_written_on_bodypart_text
-		if(user.client?.cit_toggles & GENITAL_EXAMINE)
+		if(user.client?.prefs.cit_toggles & GENITAL_EXAMINE)
 		// BLUEMOON ADD END
 			for(var/obj/item/organ/genital/G in internal_organs)
 				if(length(G.writtentext) && istype(G) && G.is_exposed())

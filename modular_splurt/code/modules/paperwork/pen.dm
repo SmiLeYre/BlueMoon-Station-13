@@ -16,19 +16,7 @@
 				var/try_to_write_on_genitals = FALSE
 				var/target_body_part
 
-				switch(user.zone_selected)
-					if(BODY_ZONE_HEAD, BODY_ZONE_PRECISE_EYES, BODY_ZONE_PRECISE_MOUTH)
-						target_body_part = HEAD
-
-					if(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN)
-						target_body_part = CHEST
-						try_to_write_on_genitals = TRUE
-
-					if(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM)
-						target_body_part = ARMS
-
-					if(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
-						target_body_part = LEGS
+				target_body_part = zone2body_parts_covered_complicated(user.zone_selected)
 
 				if(!target_body_part)
 					to_chat(user, span_warning("You must choose a bodypart on your doll to write on!"))
