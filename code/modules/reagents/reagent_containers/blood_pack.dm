@@ -76,7 +76,10 @@
 	blood_type = "SY"
 
 /obj/item/reagent_containers/blood/oilblood
+	name = "hydraulic fluid pack" // BLUEMOON ADD
+	desc = "Contains hydraulic fluid used in synthetics." // BLUEMOON ADD
 	blood_type = "HF"
+	labelled = TRUE // BLUEMOON ADD
 
 /obj/item/reagent_containers/blood/jellyblood
 	blood_type = "GEL"

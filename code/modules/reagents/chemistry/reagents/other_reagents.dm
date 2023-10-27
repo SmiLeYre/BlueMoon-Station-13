@@ -60,6 +60,14 @@
 	if((blood_id in GLOB.blood_reagent_types) && !HAS_TRAIT(C, TRAIT_NOMARROW) && !HAS_TRAIT(C, TRAIT_BLOODFLEDGE))
 		if(!data || !(data["blood_type"] in get_safe_blood(C.dna.blood_type)))	//we only care about bloodtype here because this is where the poisoning should be
 			C.adjustToxLoss(rand(2,8)*REM, TRUE, TRUE)	//forced to ensure people don't use it to gain beneficial toxin as slime person
+	// BLUEMOON ADD START - синтетики могут пить свою же "кровь" (гидравлическую жидкость), чтобы восполнять её запасы
+	if(HAS_TRAIT(C, TRAIT_ROBOTIC_ORGANISM))
+		if(data && (data["blood_type"] in get_safe_blood(C.dna.blood_type)))
+			if(C.blood_volume > BLOOD_VOLUME_NORMAL) // если крови слишком много, она не восполняет запасы в организме
+				to_chat(C, span_warning("[C] leaks out with hydraulic fluid! It streams from holes in hull parts."))
+			else //восполнение крови в соотношении 1 к 1
+				C.blood_volume = max(C.blood_volume + round(metabolization_rate, 0.1), 0)
+	// BLUEMOON ADD END
 	..()
 
 /datum/reagent/blood/reaction_obj(obj/O, volume)

@@ -128,7 +128,7 @@
 
 /atom/movable/screen/synth/coolant_counter
 	icon = 'icons/mob/screen_synth.dmi'
-	name = "Coolant System Readout"
+	name = "Hydraulic Fluid System Readout" // BLUEMOON EDIT - написал "гидравлическая жидкость"
 	icon_state = "coolant-3-1"
 	screen_loc = ui_coolant_display
 	var/jammed = 0
@@ -198,7 +198,7 @@
 		total_efficiency = rand(1, 15) / 10
 		environ_efficiency = rand(1, 20) / 10
 	. += "<span class='notice'>Performing internal cooling system diagnostics:</span>"
-	. += "<span class='notice'>Coolant level: [coolant] units, [round((coolant / (BLOOD_VOLUME_NORMAL * owner.blood_ratio)) * 100, 0.1)] percent</span>"
+	. += "<span class='notice'>Hydraulic fluid level: [coolant] units, [round((coolant / (BLOOD_VOLUME_NORMAL * owner.blood_ratio)) * 100, 0.1)] percent</span>" // BLUEMOON EDIT - написал "гидравлическая жидкость"
 	. += "<span class='notice'>Current Cooling Efficiency: [round(total_efficiency * 100, 0.1)] percent, [suitlink_efficiency ? "<font color='green'>active suitlink detected</font>, guaranteeing <font color='green'>[suitlink_efficiency * 100]%</font> environmental cooling efficiency." : "environment viability: [round(environ_efficiency * 100, 0.1)] percent."]</span>"
 
 /atom/movable/screen/synth/coolant_counter/proc/jam(amount, cap = 20)

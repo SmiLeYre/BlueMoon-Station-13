@@ -47,8 +47,9 @@
 	if(from.has_reagent(/datum/reagent/consumable/semen) && (HAS_TRAIT(src, TRAIT_DUMB_CUM) || HAS_TRAIT(src, TRAIT_GFLUID_DETECT)))
 		to_chat(src, span_love("Вы узнаете хорошо знакомый вам вкус свежей спермы~"))
 	if ((from.pH > 12.5) || (from.pH < 1.5))
-		T.applyOrganDamage(5)
-		to_chat(src, "<span class='warning'>You taste chemical burns!</span>")
+		if(!(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))) // BLUEMOON ADD - синтетики в ином случае получают химические ожоги, если пьют гидравлическую жидкость
+			T.applyOrganDamage(5)
+			to_chat(src, "<span class='warning'>You taste chemical burns!</span>")
 	if(istype(T, /obj/item/organ/tongue/cybernetic))
 		to_chat(src, "<span class='notice'>Your tongue moves on it's own in response to the liquid.</span>")
 		say("The pH is appropriately [round(from.pH, 1)].")
