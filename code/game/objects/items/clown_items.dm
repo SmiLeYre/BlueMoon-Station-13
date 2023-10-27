@@ -104,7 +104,7 @@
 		var/obj/item/bodypart/affected = H.get_bodypart(target_limb)
 
 		if(try_to_clean_genitals)
-			if(BODY_ZONE_PRECISE_GROIN) // механически, моется не таз, а грудь
+			if(user.zone_selected == BODY_ZONE_PRECISE_GROIN) // механически, моется не таз, а грудь
 				H.visible_message(span_lewd("[user] begins to wash [target]'s groin with [name], as well as taking in account their genitals there."), span_lewd("[user] is starting to wash your groin with [name]... And your genitals their."))
 			else
 				H.visible_message(span_lewd("[user] begins to wash [target]'s [affected] with [name], as well as taking in account their private parts."), span_lewd("[user] is starting to wash your [affected] with [name]... And your private parts."))
