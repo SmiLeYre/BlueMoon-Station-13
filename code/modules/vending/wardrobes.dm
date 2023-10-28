@@ -463,7 +463,8 @@
 					/obj/item/clothing/head/pharaoh = 2,
 					/obj/item/clothing/neck/tie/cross = 7,
 					/obj/item/storage/fancy/candle_box = 3,
-					/obj/item/storage/fancy/ringbox/silver = 4, // BLUEMOON ADD - для проведения свадеб,
+					/obj/item/toy/plush/plushvar = 1, // BLUEMOON ADD - перенесено из категории примиума,
+					/obj/item/toy/plush/narplush = 1, // BLUEMOON ADD - перенесено из категории примиума,
 					/obj/item/clothing/head/clownmitre = 3, //BlueMoon changes,
 					/obj/item/clothing/suit/chaplain/clownpriest = 3, //BlueMoon changes,
 					/obj/item/clothing/suit/chaplain/shrinehand = 3, //BlueMoon changes,
@@ -472,10 +473,12 @@
 					/obj/item/clothing/neck/epitrachelion = 1, //BlueMoon changes,
 					/obj/item/clothing/neck/cloak/bishop = 1, //BlueMoon changes,
 					/obj/item/clothing/neck/cloak/bishopblack= 1) //BlueMoon changes
-	premium = list(/obj/item/toy/plush/plushvar = 1,
-					/obj/item/toy/plush/narplush = 1,
+	premium = list(/obj/item/storage/fancy/ringbox/silver = 4, // BLUEMOON ADD - для проведения свадеб,
+					/obj/item/storage/fancy/ringbox = 4, // BLUEMOON ADD - для проведения свадеб,
+					/obj/item/storage/fancy/ringbox/diamond = 4, // BLUEMOON ADD - для проведения свадеб,
 					/obj/item/lighter/black = 1)
 	refill_canister = /obj/item/vending_refill/wardrobe/chap_wardrobe
+	extra_price = PRICE_ALMOST_ONE_GRAND * 1.1
 	payment_department = ACCOUNT_SRV
 /obj/item/vending_refill/wardrobe/chap_wardrobe
 	machine_name = "DeusVend"
