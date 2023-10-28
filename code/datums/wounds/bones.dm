@@ -96,7 +96,8 @@
 		else
 			victim.visible_message("<span class='danger'>[victim] слабо бьет [target] [victim.ru_ego()] сломанной конечностью - [limb.ru_name], изнывая от боли!</span>", \
 			"<span class='userdanger'>Вам не удается ударить [target] из-за боли и перелома в вашей конечности - [limb.ru_name]!</span>", vision_distance=COMBAT_MESSAGE_RANGE)
-			victim.emote("scream")
+			if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+				victim.emote("scream")
 			victim.Stun(0.5 SECONDS)
 			limb.receive_damage(brute=rand(3,7))
 			return COMPONENT_NO_ATTACK_HAND
@@ -115,10 +116,20 @@
 			if(1 to 6)
 				victim.bleed(blood_bled, TRUE)
 			if(7 to 13)
-				victim.visible_message("<span class='smalldanger'>[victim] выкашлывивает немного крови из [victim.ru_ego()] грудной клетки.</span>", "<span class='danger'>Вы выкашливаете немного крови из своей грудной клетки.</span>", vision_distance=COMBAT_MESSAGE_RANGE)
+				// BLUEMOON ADD START - кастомное описание для роботов
+				if(HAS_TRAIT(M, TRAIT_ROBOTIC_ORGANISM))
+					// TO DO
+				else
+				// BLUEMOON ADD END
+					victim.visible_message("<span class='smalldanger'>[victim] выкашлывивает немного крови из [victim.ru_ego()] грудной клетки.</span>", "<span class='danger'>Вы выкашливаете немного крови из своей грудной клетки.</span>", vision_distance=COMBAT_MESSAGE_RANGE)
 				victim.bleed(blood_bled, TRUE)
 			if(14 to 19)
-				victim.visible_message("<span class='smalldanger'>[victim] выкашливает кровь из [victim.ru_ego()] грудной клетки!</span>", "<span class='danger'>Вы выкашливаете кровь из своей грудной клетки!</span>", vision_distance=COMBAT_MESSAGE_RANGE)
+				// BLUEMOON ADD START - кастомное описание для роботов
+				if(HAS_TRAIT(M, TRAIT_ROBOTIC_ORGANISM))
+					// TO DO
+				else
+				// BLUEMOON ADD END
+					victim.visible_message("<span class='smalldanger'>[victim] выкашливает кровь из [victim.ru_ego()] грудной клетки!</span>", "<span class='danger'>Вы выкашливаете кровь из своей грудной клетки!</span>", vision_distance=COMBAT_MESSAGE_RANGE)
 				if(ishuman(victim))
 					var/mob/living/carbon/human/H = victim
 					new /obj/effect/temp_visual/dir_setting/bloodsplatter(victim.loc, victim.dir, H.dna.species.exotic_blood_color)
@@ -126,7 +137,12 @@
 					new /obj/effect/temp_visual/dir_setting/bloodsplatter(victim.loc, victim.dir)
 				victim.bleed(blood_bled)
 			if(20 to INFINITY)
-				victim.visible_message("<span class='danger'>[victim] закашливывается и сплёвывает кучу крови из [victim.ru_ego()] грудной клетки!</span>", "<span class='danger'><b>Вы обильно кашляете и сплёвываете кучу крови из своей грудной клетки!</b></span>", vision_distance=COMBAT_MESSAGE_RANGE)
+				// BLUEMOON ADD START - кастомное описание для роботов
+				if(HAS_TRAIT(M, TRAIT_ROBOTIC_ORGANISM))
+					// TO DO
+				else
+				// BLUEMOON ADD END
+					victim.visible_message("<span class='danger'>[victim] закашливывается и сплёвывает кучу крови из [victim.ru_ego()] грудной клетки!</span>", "<span class='danger'><b>Вы обильно кашляете и сплёвываете кучу крови из своей грудной клетки!</b></span>", vision_distance=COMBAT_MESSAGE_RANGE)
 				victim.bleed(blood_bled)
 				if(ishuman(victim))
 					var/mob/living/carbon/human/H = victim
@@ -134,7 +150,6 @@
 				else
 					new /obj/effect/temp_visual/dir_setting/bloodsplatter(victim.loc, victim.dir)
 				victim.add_splatter_floor(get_step(victim.loc, victim.dir))
-
 
 /datum/wound/blunt/get_examine_description(mob/user)
 	if(!limb.current_gauze && !gelled && !taped)
@@ -211,9 +226,24 @@
 	status_effect_type = /datum/status_effect/wound/blunt/moderate
 	scar_keyword = "bluntmoderate"
 
+// BLUEMOON ADD START - модификатор текста, чтобы у синтетиков не "ломались кости", а были "повреждены приводы", оставляя суть травмы без изменений.
+/datum/wound/blunt/moderate/apply_typo_modification()
+	if(HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM))
+		ru_name = "Повреждение крепления конечности" //крепления конечности
+		ru_name_r = "повреждения крепления конечности"
+		desc = "Крепление конечности платформы некорректно повернуто. Это сказывается на моторике."
+		treat_text = "Использовать костоправ. В крайнем случае возможно, но не рекомендуется вправление конечности своими силами с помощью агрессивного захвата."
+		examine_desc = "неестественно выгнута"
+		treatable_tool = TOOL_WRENCH
+	return
+// BLUEMOON ADD END
+
 /datum/wound/blunt/moderate/crush()
 	if(prob(33))
-		victim.visible_message("<span class='danger'>Вывихнутая [limb.ru_name] персонажа [victim] возвращается на место!</span>", "<span class='userdanger'>Ваша вывихнутая [limb.ru_name] возвращается на место! Ау!</span>")
+		if(HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM))
+			victim.visible_message("<span class='danger'>Сдвинутое крепление [limb.ru_name] [victim] возвращается на место!</span>", "<span class='userdanger'>Ваше сдвинутое крепление у [limb.ru_name] возвращается на место! Система в норме.</span>")
+		else
+			victim.visible_message("<span class='danger'>Вывихнутая [limb.ru_name] [victim] возвращается на место!</span>", "<span class='userdanger'>Ваша вывихнутая [limb.ru_name] возвращается на место! Ау!</span>")
 		remove_wound()
 
 /datum/wound/blunt/moderate/try_handling(mob/living/carbon/human/user)
@@ -221,11 +251,11 @@
 		return FALSE
 
 	if(user.grab_state == GRAB_PASSIVE)
-		to_chat(user, "<span class='warning'>Необходимо взять персонажа [victim] в агрессивный захват с целью дальнейших манипуляций с [victim.ru_ego()] конечностью!</span>")
+		to_chat(user, "<span class='warning'>Необходимо взять [victim] в агрессивный захват с целью дальнейших манипуляций с [victim.ru_ego()] конечностью!</span>")
 		return TRUE
 
 	if(user.grab_state >= GRAB_AGGRESSIVE)
-		user.visible_message("<span class='danger'>[user] начинает впралять вывих на [limb.ru_name_v] - персонажа [victim]!</span>", "<span class='notice'>Вы начинаете вправлять вывих на [limb.ru_name_v] персонажа [victim]...</span>", ignored_mobs=victim)
+		user.visible_message("<span class='danger'>[user] начинает впралять вывих на [limb.ru_name_v] - [victim]!</span>", "<span class='notice'>Вы начинаете вправлять вывих на [limb.ru_name_v] у [victim]...</span>", ignored_mobs=victim)
 		to_chat(victim, "<span class='userdanger'>[user] начинает вправлять вывих на вашей [limb.ru_name_v]!</span>")
 		if(user.a_intent == INTENT_HELP)
 			chiropractice(user)
@@ -243,7 +273,8 @@
 	if(prob(65))
 		user.visible_message("<span class='danger'>[user] вправляет вывих на [limb.ru_name_v] персонажа [victim]!</span>", "<span class='notice'>Вы вправляете вывих на [limb.ru_name_v] персонажа [victim]!</span>", ignored_mobs=victim)
 		to_chat(victim, "<span class='userdanger'>[user] вправляет вашу вывих на [limb.ru_name_v] - на место!</span>")
-		victim.emote("scream")
+		if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM))
+			victim.emote("scream")
 		limb.receive_damage(brute=20, wound_bonus=CANT_WOUND)
 		qdel(src)
 	else
@@ -262,7 +293,8 @@
 	if(prob(65))
 		user.visible_message("<span class='danger'>[user] с резким хрустом вправляет вывих на [limb.ru_name_v] персонажа [victim]!</span>", "<span class='notice'>Вы с резким хрустом вправляете вывих на [limb.ru_name_v] персонажа [victim]!</span>", ignored_mobs=victim)
 		to_chat(victim, "<span class='userdanger'>[user] с резким хрустом вправляет вывих на вашей [limb.ru_name_v]!</span>")
-		victim.emote("scream")
+		if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM))
+			victim.emote("scream")
 		limb.receive_damage(brute=25, wound_bonus=30)
 	else
 		user.visible_message("<span class='danger'>[user] болезненно выкручивает вывих на [limb.ru_name_v] персонажа [victim].</span>", "<span class='danger'>Вы болезненно выкручиваете вывих на [limb.ru_name_v] персонажа [victim]!</span>", ignored_mobs=victim)
@@ -288,7 +320,8 @@
 		user.visible_message("<span class='danger'>[user] восстанавливает конечность - [limb.ru_name] - персонажа [victim]!</span>", "<span class='nicegreen'>Вы завершаете восстановление конечности - [limb.ru_name] - персонажа [victim]!</span>", victim)
 		to_chat(victim, "<span class='userdanger'>[user] восстанавливает вашу конечность - [limb.ru_name]!</span>")
 
-	victim.emote("scream")
+	if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM))
+		victim.emote("scream")
 	qdel(src)
 
 /*
@@ -360,7 +393,8 @@
 		return
 
 	I.use(1)
-	victim.emote("scream")
+	if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+		victim.emote("scream")
 	if(user != victim)
 		user.visible_message("<span class='notice'>[user] с шипящим звуком наносит [I] на конечность - [limb.ru_name] - персонажа [victim]!</span>", "<span class='notice'>Вы наносите [I] на конечность - [limb.ru_name] - персонажа [victim]!</span>", ignored_mobs=victim)
 		to_chat(victim, "<span class='userdanger'>[user] наносит [I] на вашу на конечность - [limb.ru_name]. Вы чувствуете, как ваши кости болезнено хрустят, срастаясь и перестриваясь.</span>")

@@ -51,7 +51,8 @@
 		var/obj/item/organ/eyes/eyes = victim.getorganslot(ORGAN_SLOT_EYES)
 		to_chat(victim, "<span class='heavy_brass'>\"It looks like Nar'Sie's dogs really don't value their eyes.\"</span>")
 		to_chat(victim, "<span class='userdanger'>Your eyes explode with horrific pain!</span>")
-		victim.emote("scream")
+		if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+			victim.emote("scream")
 		eyes?.applyOrganDamage(eyes.maxHealth)
 		victim.adjust_blurriness(30)
 		victim.adjust_blindness(30)

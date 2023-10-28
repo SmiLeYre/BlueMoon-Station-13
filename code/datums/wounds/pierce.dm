@@ -145,7 +145,8 @@
 	user.visible_message("<span class='green'>[user] прижигает увечия персонажа [victim].</span>", "<span class='green'>Вы прижигаете увечия персонажа [victim].</span>")
 	limb.receive_damage(burn = 2 + severity, wound_bonus = CANT_WOUND)
 	if(prob(30))
-		victim.emote("scream")
+		if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+			victim.emote("scream")
 	var/blood_cauterized = (0.6 / self_penalty_mult) * 0.5
 	blood_flow -= blood_cauterized
 
