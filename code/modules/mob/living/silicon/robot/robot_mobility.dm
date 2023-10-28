@@ -15,7 +15,7 @@
 	return mobility_flags
 
 // BLUEMOON ADD START - киборги не могут брать сверхтяжёлых персонажей на свой корпус
-/mob/living/silicon/robot/post_buckle_mob(mob/living/M)
+/mob/living/silicon/robot/pre_buckle_mob(mob/living/M)
 	. = ..()
 	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER))
 		usr.visible_message(span_warning("<b>[usr]</b> tried to put <b>[M]</b> on its sheel, but [M.p_they()] weight too much!."), \

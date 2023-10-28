@@ -137,7 +137,7 @@
 	else
 		layer = OBJ_LAYER
 
-/obj/structure/chair/post_buckle_mob(mob/living/M)
+/obj/structure/chair/pre_buckle_mob(mob/living/M)
 	. = ..()
 	handle_layer()
 	// BLUEMOON ADDITION AHEAD - стул ломается при попытке сесть на него сверхтяжёлым персонажем
