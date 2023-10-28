@@ -146,6 +146,8 @@ Class Procs:
 	/// TRUE for on, FALSE for off, -1 for never checked
 	var/appearance_power_state = -1
 
+	var/allow_oversized_characters = FALSE // BLUEMOON ADD - чтобы большие персонажи могли помещаться в некоторые машины
+
 /obj/machinery/Initialize(mapload)
 	if(!armor)
 		armor = list(MELEE = 25, BULLET = 10, LASER = 10, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 70)
@@ -248,7 +250,7 @@ Class Procs:
 				continue
 			if(isliving(AM))
 				var/mob/living/L = am
-				if(L.buckled || L.mob_size >= MOB_SIZE_LARGE)
+				if(L.buckled || (!allow_oversized_characters && L.mob_size >= MOB_SIZE_LARGE)) // BLUEMOON EDIT - добавлено allow_oversized_characters
 					continue
 			target = am
 
