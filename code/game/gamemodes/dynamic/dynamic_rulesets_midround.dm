@@ -1010,7 +1010,7 @@
 	cost = 15
 	scaling_cost = 10
 	requirements = list(101,101,60,50,40,30,20,15,10,10)
-	antag_cap = list("denominator" = 24, "offset" = 1)
+	antag_cap = list("denominator" = 39, "offset" = 1)
 
 /datum/dynamic_ruleset/midround/bloodsuckers/trim_candidates()
 	. = ..()
