@@ -51,6 +51,7 @@
 
 	var/static/list/all_powers = typecacheof(/datum/action/changeling,TRUE)
 
+	reminded_times_left = 2 // BLUEMOON ADD
 
 /datum/antagonist/changeling/Destroy()
 	QDEL_NULL(cellular_emporium)
