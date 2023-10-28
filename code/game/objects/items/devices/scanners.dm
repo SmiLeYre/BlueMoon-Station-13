@@ -471,11 +471,11 @@ GENETICS SCANNER
 
 
 			if((C.scan_blood_volume() + C.integrating_blood) <= (BLOOD_VOLUME_SAFE * C.blood_ratio) && (C.scan_blood_volume() + C.integrating_blood) > (BLOOD_VOLUME_OKAY*C.blood_ratio))
-				msg += "<span class='danger'>НИЗКИЙ УРОВЕНЬ [HAS_TRAIT(C, TRAIT_ROBOTIC_ORGANISM) ? "хладогента" : "крови"] [blood_percent] %, [C.scan_blood_volume()] cl[C.integrating_blood? ", и ещё поступает [integrated_blood_percent] %, [C.integrating_blood] cl " : ""].</span> <span class='info'>type: [blood_type]</span>\n"
+				msg += "<span class='danger'>НИЗКИЙ УРОВЕНЬ [HAS_TRAIT(C, TRAIT_ROBOTIC_ORGANISM) ? "гидравлической жидкости" : "крови"] [blood_percent] %, [C.scan_blood_volume()] cl[C.integrating_blood? ", и ещё поступает [integrated_blood_percent] %, [C.integrating_blood] cl " : ""].</span> <span class='info'>type: [blood_type]</span>\n"
 			else if((C.scan_blood_volume() + C.integrating_blood) <= (BLOOD_VOLUME_OKAY * C.blood_ratio))
-				msg += "<span class='danger'>КРИТИЧЕСКИЙ УРОВЕНЬ [HAS_TRAIT(C, TRAIT_ROBOTIC_ORGANISM) ? "хладогента" : "крови"] [blood_percent] %, [C.scan_blood_volume()] cl[C.integrating_blood? ", и ещё поступает [integrated_blood_percent] %, [C.integrating_blood] cl " : ""].</span> <span class='info'>type: [blood_type]</span>\n"
+				msg += "<span class='danger'>КРИТИЧЕСКИЙ УРОВЕНЬ [HAS_TRAIT(C, TRAIT_ROBOTIC_ORGANISM) ? "гидравлической жидкости" : "крови"] [blood_percent] %, [C.scan_blood_volume()] cl[C.integrating_blood? ", и ещё поступает [integrated_blood_percent] %, [C.integrating_blood] cl " : ""].</span> <span class='info'>type: [blood_type]</span>\n"
 			else
-				msg += "<span class='info'>[HAS_TRAIT(C, TRAIT_ROBOTIC_ORGANISM) ? "Показатель уровня хладогента" : "Показатель уровня крови"] [blood_percent] %, [C.scan_blood_volume()] cl[C.integrating_blood? ", и ещё поступает [integrated_blood_percent] %, [C.integrating_blood] cl " : ""]. type: [blood_type]</span>\n"
+				msg += "<span class='info'>[HAS_TRAIT(C, TRAIT_ROBOTIC_ORGANISM) ? "Показатель уровня гидравлической жидкости" : "Показатель уровня крови"] [blood_percent] %, [C.scan_blood_volume()] cl[C.integrating_blood? ", и ещё поступает [integrated_blood_percent] %, [C.integrating_blood] cl " : ""]. type: [blood_type]</span>\n"
 
 
 		var/cyberimp_detect
