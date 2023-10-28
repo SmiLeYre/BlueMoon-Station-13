@@ -139,26 +139,45 @@
 	to_chat(user, span_notice("You switch the PCU [on ? "on" : "off"]."))
 
 /obj/item/device/cooler/proc/drain_power(atom/target, mob/user, var/is_apc = FALSE)
-	var/obj/item/stock_parts/cell/cell = target
 	var/maxcapacity = FALSE // Если достигнут максимальный заряд, прекращаем заряжаться
-	var/maxdrain = is_apc ? cell.maxcharge / 2 : 0 // Нельзя высасывать более половины АПЦ
 
-	if(cell.charge)
-		if(maxdrain > 0 && cell.charge - 500 <= maxdrain) // если сосём из АПЦ и осталось менее половины энергии, заранее не сосём
-			user.visible_message(span_notice("[user] puts the PCU's magnetic charger on the APC, but nothing happens."), span_warning("You hold the magnetic charger over the APC but nothing happens. A safety protocol prevents charge if the APC's power lower than half."))
+	if(is_apc)
+		var/obj/machinery/power/apc/apc = target
+
+		user.visible_message(span_notice("[user] puts the PCU's magnetic charger on [is_apc ? "the APC" : "\a [target]"]."), span_notice("You hold the magnetic charger over [is_apc ? "the APC" : "\a [target]"]. It's getting hotter."))
+		while(charge < max_charge) // Если не достигнут максимальный заряд ПОУ и в источник ещё есть заряд, продолжаем заряжаться
+
+			if(!target.use_power(drain))
+				user.visible_message(span_notice("[user] takes back the PCU's magnetic charger as it buzzes."), span_warning("The magnetic charger buzzes - the APC cannot give it more charge. You take it back and place it in the socket on the PCU."))
+				break
+
+			if(charge + drain > max_charge)
+				drain = max_charge - charge
+				maxcapacity = TRUE
+				playsound(src.loc, 'sound/machines/beep.ogg', 50, 0)
+
+			if(do_after(user, 1.5 SECONDS, target = user))
+				charge += drain
+				target.update_icon()
+				if(maxcapacity)
+					user.visible_message(span_notice("[user] takes back the PCU's magnetic charger."), span_notice("You take back the magnetic charger as it beep and place it in the socket on the PCU."))
+			else
+				user.visible_message(span_notice("[user] takes back the PCU's magnetic charger."), span_notice("You take back the magnetic charger and place it in the socket on the PCU."))
+				break
+
+
+	if(istype(target, /obj/item/stock_parts/cell))
+		var/obj/item/stock_parts/cell/cell = target
+
+		if(!cell.charge)
 			return
 
 		user.visible_message(span_notice("[user] puts the PCU's magnetic charger on [is_apc ? "the APC" : "\a [target]"]."), span_notice("You hold the magnetic charger over [is_apc ? "the APC" : "\a [target]"]. It's getting hotter."))
-		while(cell.charge > 0 && !maxcapacity) // Если не достигнут максимальный заряд ПОУ и в источник ещё есть заряд, продолжаем заряжаться
+		while(cell.charge > 0 && !maxcapacity)
 			var/drain = 500
 
 			if(cell.charge < drain) // Высасываем оставшийся заряд, а не сверх него
 				drain = cell.charge
-
-			if(maxdrain) // Если высосали половину АПЦ, дальше не сосём
-				if(cell.charge - drain <= maxdrain)
-					user.visible_message(span_notice("[user] takes back the PCU's magnetic charger as it buzzes."), span_warning("The magnetic charger buzzes - the APC cannot give it more charge. You take it back and place it in the socket on the PCU."))
-					break
 
 			if(charge + drain > max_charge)
 				drain = max_charge - charge
@@ -177,12 +196,12 @@
 
 /obj/item/device/cooler/attack_obj(atom/target, mob/user)
 	if(istype(target, /obj/machinery/power/apc))
-		var/obj/machinery/power/apc/apc = target
-		if(apc.cell)
-			target = apc.cell
-		else
-			user.visible_message(span_notice("[user] puts the PCU's magnetic charger on the APC, but nothing happens."), span_warning("You hold the magnetic charger over the APC but nothing happens. Its cell seems to be out of charge."))
-			return
+//		var/obj/machinery/power/apc/apc = target
+//		if(apc.cell)
+//			target = apc.cell
+//		else
+//			user.visible_message(span_notice("[user] puts the PCU's magnetic charger on the APC, but nothing happens."), span_warning("You hold the magnetic charger over the APC but nothing happens. Its cell seems to be out of charge."))
+//			return
 		drain_power(target, user, is_apc = TRUE)
 		return
 	. = ..()
