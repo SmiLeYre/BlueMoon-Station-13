@@ -22147,6 +22147,9 @@
 /obj/item/restraints/legcuffs/beartrap,
 /obj/item/restraints/legcuffs/beartrap,
 /obj/item/reagent_containers/spray/cleaner,
+/obj/structure/reagent_dispensers/spacecleanertank{
+	pixel_y = -30
+	},
 /turf/open/floor/plasteel,
 /area/service/janitor)
 "bee" = (

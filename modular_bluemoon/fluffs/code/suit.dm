@@ -53,25 +53,12 @@
 	icon_state = "censor_fem"
 	item_state = "censor_fem"
 
-/obj/item/Dina_Kit
+/obj/item/modkit/Dina_Kit
 	name = "Kikimora Suit Kit"
 	desc = "A modkit for making a Elite Syndicate Hardsuit into a Kikimora MK1."
-	icon = 'icons/obj/vending_restock.dmi'
-	icon_state = "refill_donksoft"
-	var/product = /obj/item/clothing/suit/space/hardsuit/security/kikimora //what it makes
-	var/list/fromitem = list(/obj/item/clothing/suit/space/hardsuit/security) //what it needs
+	product = /obj/item/clothing/suit/space/hardsuit/security/kikimora
+	fromitem = list(/obj/item/clothing/suit/space/hardsuit/security)
 
-/obj/item/Dina_Kit/afterattack(obj/O, mob/user as mob)
-	if(istype(O, product))
-		to_chat(user,"<span class='warning'>[O] is already modified!")
-		return
-	if(O.type in fromitem) //makes sure O is the right thing
-		new product(usr.loc) //spawns the product
-		user.visible_message("<span class='warning'>[user] modifies [O]!","<span class='warning'>You modify the [O]!")
-		qdel(O) //Gets rid of the baton
-		qdel(src) //gets rid of the kit
-	else
-		to_chat(user, "<span class='warning'> You can't modify [O] with this kit!</span>")
 /obj/item/clothing/head/helmet/space/hardsuit/security/kikimora
 	name = "ACS.Kikimora-MK2 Helmet"
 	desc = "Модифицированный штатный Бронескафандр Лорданианских пилотов для ВКД даже в боевых условиях. Выполняет все необходимые от него функции."
@@ -130,26 +117,12 @@
 
 /////
 
-/obj/item/harness_kit
+/obj/item/modkit/harness_kit
 	name = "Harness Armor Kit"
 	desc = "A modkit for making an armor vest into a Harness Armor."
-	icon = 'modular_splurt/icons/obj/clothing/reinforcekits.dmi'
-	w_class = WEIGHT_CLASS_SMALL
-	icon_state = "sec_armor_kit"
-	var/product = /obj/item/clothing/suit/armor/vest/harness //what it makes
-	var/list/fromitem = list(/obj/item/clothing/suit/armor/vest/peacekeeper, /obj/item/clothing/suit/armor/vest/alt) //what it needs
+	product = /obj/item/clothing/suit/armor/vest/harness
+	fromitem = list(/obj/item/clothing/suit/armor/vest/peacekeeper, /obj/item/clothing/suit/armor/vest/alt)
 
-/obj/item/harness_kit/afterattack(obj/O, mob/user as mob)
-	if(istype(O, product))
-		to_chat(user,"<span class='warning'>[O] is already modified!")
-		return
-	if(O.type in fromitem) //makes sure O is the right thing
-		new product(usr.loc) //spawns the product
-		user.visible_message("<span class='warning'>[user] modifies [O]!","<span class='warning'>You modify the [O]!")
-		qdel(O) //Gets rid of the baton
-		qdel(src) //gets rid of the kit
-	else
-		to_chat(user, "<span class='warning'> You can't modify [O] with this kit!</span>")
 
 /obj/item/clothing/suit/armor/vest/harness // Наследуем от armor/vest, модифицируется только из комплекта для брони при клике по жилету
 	name = "Harness Armor"

@@ -222,6 +222,7 @@
 	vend_reply = "Спасибо за использование RoboDrobe!"
 	products = list(/obj/item/clothing/glasses/hud/diagnostic = 3,
 					/obj/item/stack/medical/nanogel = 5,
+					/obj/item/reagent_containers/blood/oilblood = 5, // BLUEMOON ADD - гидравлическая жидкость для синтетиков,
 					/obj/item/clothing/head/beret/robo = 3,
 					/obj/item/clothing/under/rank/rnd/roboticist = 3,
 					/obj/item/clothing/under/rank/rnd/roboticist/sleek = 3,

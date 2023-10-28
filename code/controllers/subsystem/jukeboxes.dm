@@ -58,7 +58,7 @@ SUBSYSTEM_DEF(jukeboxes)
 	for(var/mob/M in GLOB.player_list)
 		if(!M.client)
 			continue
-		if(!(M.client.prefs.toggles & SOUND_JUKEBOXE))
+		if(!(M.client.prefs.toggles & SOUND_JUKEBOXES))
 			continue
 
 		SEND_SOUND(M, song_to_init)
@@ -157,7 +157,7 @@ SUBSYSTEM_DEF(jukeboxes)
 		for(var/mob/M in GLOB.player_list)
 			if(!M.client)
 				continue
-			if(!(M.client.prefs.toggles & SOUND_JUKEBOXE))
+			if(!(M.client.prefs.toggles & SOUND_JUKEBOXES))
 				M.stop_sound_channel(jukeinfo[JUKE_CHANNEL])
 				continue
 

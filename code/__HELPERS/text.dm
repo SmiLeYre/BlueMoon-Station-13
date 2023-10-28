@@ -868,7 +868,27 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 	var/static/regex/regex = new(@"[^a-zA-Z0-9]","g")
 	return replacetext(name, regex, "")
 
-/proc/parse_zone(zone)	// Именительный
+/proc/parse_zone(zone)	//Original
+	if(zone == BODY_ZONE_PRECISE_R_HAND)
+		return "right hand"
+	else if (zone == BODY_ZONE_PRECISE_L_HAND)
+		return "left hand"
+	else if (zone == BODY_ZONE_L_ARM)
+		return "left arm"
+	else if (zone == BODY_ZONE_R_ARM)
+		return "right arm"
+	else if (zone == BODY_ZONE_L_LEG)
+		return "left leg"
+	else if (zone == BODY_ZONE_R_LEG)
+		return "right leg"
+	else if (zone == BODY_ZONE_PRECISE_L_FOOT)
+		return "left foot"
+	else if (zone == BODY_ZONE_PRECISE_R_FOOT)
+		return "right foot"
+	else
+		return zone
+
+/proc/ru_parse_zone(zone)	// Именительный
 	if(zone == BODY_ZONE_PRECISE_R_HAND)
 		return "правая кисть"
 	else if (zone == BODY_ZONE_PRECISE_L_HAND)
@@ -898,7 +918,7 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 	else
 		return zone
 
-/proc/ru_parse_zone(zone)	// Винительный
+/proc/ru_kogo_zone(zone)	// Винительный
 	if(zone == "правая кисть")
 		return "правую кисть"
 	else if (zone == "левая кисть")

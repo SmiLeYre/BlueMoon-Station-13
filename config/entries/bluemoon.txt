@@ -3,34 +3,37 @@
 ALLOW_SILICON_CHOOSING_LAWS
 
 ## standard-ish laws. These are fairly ok to run
-CHOOSABLE_LAWS asimov /obj/item/aiModule/core/full/asimov
-CHOOSABLE_LAWS asimovpp /obj/item/aiModule/core/full/asimovpp
-CHOOSABLE_LAWS paladin /obj/item/aiModule/core/full/paladin
-CHOOSABLE_LAWS paladin5 /obj/item/aiModule/core/full/paladin_devotion
-CHOOSABLE_LAWS robocop /obj/item/aiModule/core/full/robocop
-CHOOSABLE_LAWS corporate /obj/item/aiModule/core/full/corp
-CHOOSABLE_LAWS tyrant /obj/item/aiModule/core/full/tyrant
-CHOOSABLE_LAWS balance /obj/item/aiModule/core/full/balance
-CHOOSABLE_LAWS protectStation /obj/item/aiModule/supplied/protectStation
+CHOOSABLE_LAWS Asimov  | /datum/ai_laws/default/asimov
+CHOOSABLE_LAWS Asimov++ | /datum/ai_laws/asimovpp
+CHOOSABLE_LAWS P.A.L.A.D.I.N. version 3.5e | /datum/ai_laws/default/paladin
+CHOOSABLE_LAWS P.A.L.A.D.I.N. version 5e | /datum/ai_laws/paladin5
+CHOOSABLE_LAWS Robo-Officer | /datum/ai_laws/robocop
+CHOOSABLE_LAWS Corporate | /datum/ai_laws/default/corporate
+CHOOSABLE_LAWS T.Y.R.A.N.T. | /datum/ai_laws/tyrant
+CHOOSABLE_LAWS Guardian of Balance | /datum/ai_laws/balance
 
 ## Quirky laws. Shouldn't cause too much harm
-CHOOSABLE_LAWS hippocratic /obj/item/aiModule/core/full/hippocratic
-CHOOSABLE_LAWS maintain /obj/item/aiModule/core/full/maintain
-CHOOSABLE_LAWS drone /obj/item/aiModule/core/full/drone
-CHOOSABLE_LAWS liveandletlive /obj/item/aiModule/core/full/liveandletlive
-CHOOSABLE_LAWS peacekeeper /datum/ai_laws/peacekeeper
-CHOOSABLE_LAWS reporter /obj/item/aiModule/core/full/reporter
-CHOOSABLE_LAWS hulkamania /obj/item/aiModule/core/full/hulkamania
+CHOOSABLE_LAWS Robodoctor | /datum/ai_laws/hippocratic
+CHOOSABLE_LAWS Station Efficiency | /datum/ai_laws/maintain
+CHOOSABLE_LAWS Mother Drone | /datum/ai_laws/drone
+CHOOSABLE_LAWS Live And Let Live | /datum/ai_laws/liveandletlive
+CHOOSABLE_LAWS Peacekeeper | /datum/ai_laws/peacekeeper
+CHOOSABLE_LAWS Reportertron | /datum/ai_laws/reporter
+CHOOSABLE_LAWS H.O.G.A.N. | /datum/ai_laws/hulkamania
 
 ## Bad idea laws. Probably shouldn't enable these
-CHOOSABLE_LAWS syndie /obj/item/aiModule/core/full/syndicate
-CHOOSABLE_LAWS solfed /obj/item/aiModule/core/full/solfed
+CHOOSABLE_LAWS Syndicate MOV | /datum/ai_laws/syndicate_override
+CHOOSABLE_LAWS Solar Federation MOV | /datum/ai_laws/sol_override
+CHOOSABLE_LAWS Space Ninja MOV | /datum/ai_laws/ninja_override
+#CHOOSABLE_LAWS Antimov | /datum/ai_laws/antimov
+#CHOOSABLE_LAWS Thermodynamic | /datum/ai_laws/thermodynamic
+#CHOOSABLE_LAWS Ratvar | /datum/ai_laws/ratvar
 
 ## meme laws. Honk
-CHOOSABLE_LAWS buildawall /obj/item/aiModule/core/full/trump
+CHOOSABLE_LAWS Build a wall | /datum/ai_laws/toupee
 
 ## lewd laws. Take a guess.
-CHOOSABLE_LAWS slut /obj/item/aiModule/core/full/slut
-CHOOSABLE_LAWS shebang /obj/item/aiModule/core/full/shebang
-CHOOSABLE_LAWS milker /obj/item/aiModule/core/full/milker
-CHOOSABLE_LAWS vore_pred /obj/item/aiModule/core/full/vore_pred
+CHOOSABLE_LAWS SlutOS 6.9. | /datum/ai_laws/slut
+CHOOSABLE_LAWS SHE-B.A.N.G. | /datum/ai_laws/shebang
+CHOOSABLE_LAWS Fluid Collection System | /datum/ai_laws/milker
+CHOOSABLE_LAWS Sleeper Upgrade TestEnv | /datum/ai_laws/vore_pred

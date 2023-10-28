@@ -178,6 +178,7 @@
 	desc = "An old model of revolver that originated in Russia. Able to be suppressed. Uses 7.62x38mmR ammo."
 	icon_state = "nagant"
 	can_suppress = TRUE
+	fire_sound = "sound/weapons/revolvershot2.ogg"
 
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev762
 

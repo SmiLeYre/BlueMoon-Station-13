@@ -101,7 +101,7 @@
 	icon = 'modular_splurt/icons/obj/guns/projectile.dmi'
 	icon_state = "brushgun"
 	item_state = "leveraction"
-	fire_sound = "sound/weapons/revolvershot.ogg"
+	fire_sound = "sound/weapons/revolvershot2.ogg"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/levergun/brush2
 
 /obj/item/gun/ballistic/shotgun/brush2/attack_self(mob/living/user)

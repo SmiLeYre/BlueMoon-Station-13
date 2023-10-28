@@ -138,7 +138,7 @@
 
 /datum/computer_file/program/secureye/proc/update_active_camera_screen()
 	// Show static if can't use the camera
-	if(!active_camera?.can_use())
+	if(QDELETED(active_camera) || !active_camera?.can_use())
 		show_camera_static()
 		return
 
@@ -158,6 +158,9 @@
 	last_camera_turf = get_turf(cam_location)
 
 	var/list/visible_things = active_camera.isXRay() ? range(active_camera.view_range, cam_location) : view(active_camera.view_range, cam_location)
+
+	if(istype(active_camera.loc, /obj/item/integrated_circuit/output/video_camera))
+		visible_things = view(active_camera.view_range, newturf)
 
 	for(var/turf/visible_turf in visible_things)
 		visible_turfs += visible_turf

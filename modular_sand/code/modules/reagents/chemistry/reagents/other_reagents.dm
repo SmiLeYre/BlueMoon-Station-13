@@ -23,9 +23,22 @@
 /datum/reagent/consumable/semen/on_mob_life(mob/living/carbon/M)
 	. = ..()
 	if(amount_to_drip && M.is_groin_exposed())
-		amount_to_drip = max(0, amount_to_drip - metabolization_rate)
-		var/obj/effect/decal/cleanable/semendrip/drip = new(get_turf(M))
-		drip.add_blood_DNA(data)
+		var/obj/item/organ/genital/anus/A = M.getorganslot(ORGAN_SLOT_ANUS)
+		var/obj/item/organ/genital/vagina/V = M.getorganslot(ORGAN_SLOT_VAGINA)
+		if(A)
+			if(A.filled == TRUE && !(locate(/obj/item/buttplug) in A.contents))
+				amount_to_drip = max(0, amount_to_drip - metabolization_rate)
+				var/obj/effect/decal/cleanable/semendrip/drip = new(get_turf(M))
+				drip.add_blood_DNA(data)
+				if(!amount_to_drip)
+					A.filled = FALSE
+		if(V)
+			if(V.filled == TRUE && !(locate(/obj/item/buttplug) in V.contents))
+				amount_to_drip = max(0, amount_to_drip - metabolization_rate)
+				var/obj/effect/decal/cleanable/semendrip/drip = new(get_turf(M))
+				drip.add_blood_DNA(data)
+				if(!amount_to_drip)
+					V.filled = FALSE
 
 /*/datum/reagent/dragon_blood/admin
 	name = "Special dragon blood"

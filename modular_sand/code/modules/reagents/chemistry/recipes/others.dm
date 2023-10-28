@@ -46,6 +46,7 @@
 
 /datum/chemical_reaction/anomaly/on_reaction(datum/reagents/holder, multiplier)
 	var/location = get_turf(holder.my_atom)
+	playsound(location, 'sound/effects/phasein.ogg', 100, 1)
 	for(var/i in 1 to multiplier)
 		switch(id)
 			if("gravity_anomaly")

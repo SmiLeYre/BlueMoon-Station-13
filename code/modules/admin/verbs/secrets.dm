@@ -384,6 +384,23 @@
 				var/mob/living/silicon/beepboop = silicon
 				chosenboard.install(beepboop.laws, usr)
 				qdel(new_board)
+		if("aikofication")
+			if(!is_funmin)
+				return
+			var/amount_modified = 0
+			for(var/mob/living/carbon/human/H in GLOB.player_list)
+				if(!GLOB.dna_for_copying || !istype(GLOB.dna_for_copying, /datum/dna))
+					alert(usr, "ERROR: There's nothing to copy!")
+					return
+				GLOB.dna_for_copying.transfer_identity(H, TRUE)
+				H.real_name = H.dna.real_name
+				H.updateappearance(mutcolor_update=1)
+				H.domutcheck()
+				amount_modified++
+			message_admins("[key_name_admin(holder)] transformed <b>EVERYONE</b> ([amount_modified] player\s) \
+				into [GLOB.dna_for_copying.real_name]!")
+			log_admin("[key_name(holder)] has transformed everyone ([amount_modified] player\s) into [GLOB.dna_for_copying.real_name].")
+
 		if("blackout")
 			if(!is_funmin)
 				return

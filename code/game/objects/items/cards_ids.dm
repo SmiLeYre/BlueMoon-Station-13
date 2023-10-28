@@ -177,7 +177,7 @@
 	playsound(src, 'sound/items/bikehorn.ogg', 50, 1)
 
 /obj/item/card/id
-	name = "identification card"
+	name = "Identification Card"
 	desc = "A card used to provide ID and determine access across the station."
 	icon_state = "id"
 	item_state = "card-id"
@@ -186,7 +186,7 @@
 	slot_flags = ITEM_SLOT_ID
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 100, ACID = 100)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	var/id_type_name = "identification card"
+	var/id_type_name = "Identification Card"
 	var/mining_points = 0 //For redeeming at mining equipment vendors
 	var/list/access = list()
 	var/registered_name = null // The name registered_name on the card
@@ -219,6 +219,7 @@
 		my_store.my_card = null
 		my_store = null
 	cached_flat_icon = null //SPLURT edit
+	QDEL_NULL(access)
 	return ..()
 
 /obj/item/card/id/vv_edit_var(var_name, var_value)

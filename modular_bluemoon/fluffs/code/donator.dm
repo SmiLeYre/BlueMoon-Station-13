@@ -110,7 +110,7 @@
 /datum/gear/donator/bm/Shigu_Kit
 	name = "Butcher Knife Kit"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/shigu_kit
+	path = /obj/item/modkit/shigu_kit
 	ckeywhitelist = list("lakomkin0911")
 	subcategory = LOADOUT_SUBCATEGORIES_DON08
 
@@ -145,35 +145,35 @@
 /datum/gear/donator/bm/Dina_Kit
 	name = "Kikimora Suit Kit"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/Dina_Kit
+	path = /obj/item/modkit/Dina_Kit
 	ckeywhitelist = list("xdinka")
 	subcategory = LOADOUT_SUBCATEGORIES_DON11
 
 /datum/gear/donator/bm/Kovac_Gun
 	name = "Kovac Gun"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/Kovac_Kit
+	path = /obj/item/modkit/Kovac_Kit
 	ckeywhitelist = list("stgs", "krashly", "dolbajob", "hazzi")
 	subcategory = LOADOUT_SUBCATEGORIES_DON12
 
 /datum/gear/donator/bm/auto9_gun
 	name = "Auto 9 Kit"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/auto9_kit
+	path = /obj/item/modkit/auto9_kit
 	ckeywhitelist = list("stgs", "sodastrike", "dolbajob", "hazzi", "krashly")
 	subcategory = LOADOUT_SUBCATEGORIES_DON12
 
 /datum/gear/donator/bm/m240_gun
 	name = "M240 Kit"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/m240_kit
+	path = /obj/item/modkit/m240_kit
 	ckeywhitelist = list("stgs", "sodastrike", "dolbajob", "hazzi", "krashly")
 	subcategory = LOADOUT_SUBCATEGORIES_DON12
 
 /datum/gear/donator/bm/luftkuss_gun
 	name = "Luftkuss Kit"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/old_kit
+	path = /obj/item/modkit/old_kit
 	ckeywhitelist = list("stgs", "sodastrike", "dolbajob", "hazzi", "krashly", "fiaskin")
 	subcategory = LOADOUT_SUBCATEGORIES_DON12
 
@@ -222,28 +222,35 @@
 /datum/gear/donator/bm/dominator
 	name = "Dominator Kit"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/dominator_kit
+	path = /obj/item/modkit/dominator_kit
 	ckeywhitelist = list("shalun228")
 	subcategory = LOADOUT_SUBCATEGORIES_DON19
 
 /datum/gear/donator/bm/nue
 	name = "Araki Nue Kit"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/nue_kit
+	path = /obj/item/modkit/nue_kit
 	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife", "z67")
 	subcategory = LOADOUT_SUBCATEGORIES_DON17
 
 /datum/gear/donator/bm/malorian
 	name = "Araki Malorian Kit"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/malorian_kit
+	path = /obj/item/modkit/malorian_kit
+	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife", "z67")
+	subcategory = LOADOUT_SUBCATEGORIES_DON17
+
+/datum/gear/donator/bm/malorian_mag
+	name = "Malorian Mag Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/storage/box/malorian_mag
 	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife", "z67")
 	subcategory = LOADOUT_SUBCATEGORIES_DON17
 
 /datum/gear/donator/bm/stunblade
 	name = "Stunblade Kit"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/stunblade_kit
+	path = /obj/item/modkit/stunblade_kit
 	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife", "leony24", "stgs", "lonofera", "z67")
 	subcategory = LOADOUT_SUBCATEGORIES_DON17
 
@@ -362,14 +369,14 @@
 /datum/gear/donator/bm/pomogator
 	name = "Pomogator Modification Kit"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/pomogator_kit
+	path = /obj/item/modkit/pomogator_kit
 	ckeywhitelist = list("danik10p")
 	subcategory = LOADOUT_SUBCATEGORIES_DON12
 
 /datum/gear/donator/bm/sponge
 	name = "Sponge Modification Kit"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/sponge_kit
+	path = /obj/item/modkit/sponge_kit
 	ckeywhitelist = list("danik10p")
 	subcategory = LOADOUT_SUBCATEGORIES_DON12
 
@@ -390,7 +397,7 @@
 /datum/gear/donator/bm/harness
 	name = "Harness Armor Modification Kit"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/harness_kit
+	path = /obj/item/modkit/harness_kit
 	ckeywhitelist = list("ghoststalin", "g3234")
 	subcategory = LOADOUT_SUBCATEGORIES_DON12
 
@@ -455,3 +462,17 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/choice_beacon/pet
 	ckeywhitelist = list("mixalic")
+
+/datum/gear/donator/bm/p940
+	name = "P940 Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/modkit/pf940_kit
+	ckeywhitelist = list("leony24")
+	subcategory = LOADOUT_SUBCATEGORIES_DON06
+
+/datum/gear/donator/bm/p940_g22
+	name = "P940 G22 Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/modkit/pf940_kit_g22
+	ckeywhitelist = list("leony24")
+	subcategory = LOADOUT_SUBCATEGORIES_DON06

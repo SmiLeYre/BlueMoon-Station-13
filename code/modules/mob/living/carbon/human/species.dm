@@ -1848,6 +1848,15 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		target.set_last_attacker(user)
 		user.dna.species.spec_unarmedattacked(user, target)
 
+		// BLUEMOON ADD START - если урона ниже минимального наносимого для расы, то он не наносится
+		if(minimal_damage_threshold && damage <= minimal_damage_threshold)
+			damage = 0
+			if(HAS_TRAIT(target, TRAIT_ROBOTIC_ORGANISM))
+				target.visible_message(span_warning("Корпус [target] слишком прочный, удар не повредил его!"), span_notice("Корпус нивелирует наносимые повреждения."))
+			else
+				target.visible_message("Кожа [target] слишком прочная, удар не повредил её!", span_notice("Кожа даже не повреждается от наносимых повреждений."))
+		// BLUEMOON ADD END
+
 		if(user.limb_destroyer)
 			target.dismembering_strike(user, affecting.body_zone)
 
@@ -2055,9 +2064,6 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 /datum/species/proc/spec_attacked_by(obj/item/I, mob/living/user, obj/item/bodypart/affecting, intent, mob/living/carbon/human/H, attackchain_flags = NONE, damage_multiplier = 1)
 	var/totitemdamage = H.pre_attacked_by(I, user) * damage_multiplier
 
-	if(H.mind == null)
-		return
-
 	if(!affecting) //Something went wrong. Maybe the limb is missing?
 		affecting = H.get_bodypart(BODY_ZONE_CHEST) //If the limb is missing, or something went terribly wrong, just hit the chest instead
 
@@ -2076,10 +2082,22 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	hit_area = affecting.name
 	var/def_zone = affecting.body_zone
 
-	var/armor_block = H.run_armor_check(affecting, MELEE, "<span class='notice'>Your armor has protected your [hit_area].</span>", "<span class='notice'>Your armor has softened a hit to your [hit_area].</span>",I.armour_penetration)
-	armor_block = min(90,armor_block) //cap damage reduction at 90%
+	// BLUEMOON ADD START - если урона ниже минимального наносимого для расы, то он не наносится
+	var/armor_block = 0
+	if(minimal_damage_threshold && totitemdamage <= minimal_damage_threshold)
+		totitemdamage = 0
+		if(HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM))
+			H.visible_message(span_warning("Корпус [H] слишком прочный, удар не повредил его!"), span_notice("Корпус нивелирует наносимые повреждения."))
+		else
+			H.visible_message("Кожа [H] слишком прочная, удар не повредил её!", span_notice("Кожа даже не повреждается от наносимых повреждений."))
+	else
+	// BLUEMOON ADD END
+		armor_block = H.run_armor_check(affecting, MELEE, "<span class='notice'>Your armor has protected your [hit_area].</span>", "<span class='notice'>Your armor has softened a hit to your [hit_area].</span>",I.armour_penetration) // BLUEMOON CHANGES - var/armor_block перенесён выше
+		armor_block = min(90,armor_block) //cap damage reduction at 90%
+
 	var/Iforce = I.force //to avoid runtimes on the forcesay checks at the bottom. Some items might delete themselves if you drop them. (stunning yourself, ninja swords)
 	var/Iwound_bonus = I.wound_bonus
+
 
 	// this way, you can't wound with a surgical tool on help intent if they have a surgery active and are laying down, so a misclick with a circular saw on the wrong limb doesn't bleed them dry (they still get hit tho)
 	if((I.item_flags & SURGICAL_TOOL) && user.a_intent == INTENT_HELP && (H.mobility_flags & ~MOBILITY_STAND) && (LAZYLEN(H.surgeries) > 0))
@@ -2126,6 +2144,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 					else
 						H.adjustOrganLoss(ORGAN_SLOT_BRAIN, I.force * 0.2)
 
+					if(H.mind == null)
+						return
 					if(H.mind.has_antag_datum(/datum/antagonist/rev))
 						if(H.stat == CONSCIOUS && H != user && prob(I.force + ((100 - H.health) * 0.5))) // rev deconversion through blunt trauma.
 							var/datum/antagonist/rev/rev = H.mind.has_antag_datum(/datum/antagonist/rev)
@@ -2359,10 +2379,6 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(BRUTE)
 			H.damageoverlaytemp = 20
 			var/damage_amount = forced ? damage : damage * hit_percent * brutemod * H.physiology.brute_mod
-			// BLUEMOON ADD START - если урона ниже минимального наносимого для расы, то он не наносится
-			if(minimal_damage_threshold && damage_amount < minimal_damage_threshold)
-				return 1
-			// BLUEMOON ADD END
 			if(BP)
 				if(BP.receive_damage(damage_amount, 0, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness))
 					H.update_damage_overlays()
@@ -2374,10 +2390,6 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(BURN)
 			H.damageoverlaytemp = 20
 			var/damage_amount = forced ? damage : damage * hit_percent * burnmod * H.physiology.burn_mod
-			// BLUEMOON ADD START - если урона ниже минимального наносимого для расы, то он не наносится
-			if(minimal_damage_threshold && damage_amount < minimal_damage_threshold)
-				return 1
-			// BLUEMOON ADD END
 			if(BP)
 				if(BP.receive_damage(0, damage_amount, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness))
 					H.update_damage_overlays()
@@ -2513,10 +2525,12 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				else
 					H.throw_alert("temp", alert_type, 3) // BLUEMOON CHANGES
 		burn_damage = burn_damage * heatmod * H.physiology.heat_mod
-		if (H.stat < UNCONSCIOUS && (prob(burn_damage) * 10) / 4) //40% for level 3 damage on humans
-			if(!HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - синтетики не кричат, когда перегреваются
+		if(!HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM))
+			if (H.stat < UNCONSCIOUS && (prob(burn_damage) * 10) / 4) //40% for level 3 damage on humans
 				H.emote("scream")
-		H.apply_damage(burn_damage, BURN)
+			H.apply_damage(burn_damage, BURN)
+		else
+			H.adjustToxLoss(burn_damage / 2, toxins_type = TOX_SYSCORRUPT)
 
 	else if(H.bodytemperature < (BODYTEMP_COLD_DAMAGE_LIMIT + cold_offset) && !HAS_TRAIT(H, TRAIT_RESISTCOLD))
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "hot")

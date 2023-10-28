@@ -50,7 +50,7 @@
 	opendoors = TRUE
 	rename_team = "Deathsquad"
 	code = "Delta"
-	mission = "Разберитесь с проблемами, достойными Дельта-Кода."
+	mission = "Уничтожить Космическую Станцию, включая активы, в том числе весь Экипаж."
 	polldesc = "an elite Nanotrasen Strike Team"
 	ertphrase = "modular_bluemoon/kovac_shitcode/sound/ert/deathsquad_send_in.ogg"
 

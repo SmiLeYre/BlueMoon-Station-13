@@ -1,5 +1,5 @@
 /datum/keybinding/carbon/showoff
-	hotkey_keys = list("Unbound")
+	hotkey_keys = list("ShiftG")
 	name = "showoff"
 	full_name = "Show your held item"
 	description = "Show your held item, people close to you can examine it, \

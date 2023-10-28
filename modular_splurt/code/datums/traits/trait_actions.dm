@@ -856,12 +856,12 @@
 		// Switch for target's blood type
 		switch(blood_type_target)
 			// Synth blood
-			if("S")
+			if("S", "HF")// BLUEMOON EDIT - было "S"
 				// Mark blood as invalid
 				blood_valid = FALSE
 
 				// Set blood type name
-				blood_name = "coolant"
+				blood_name = "hydraulic fluid" // BLUEMOON EDIT - was "coolant"
 
 				// Check if blood types match
 				if(blood_type_match)

@@ -357,7 +357,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/turf/open/floor/iron/elevatorshaft,
+/turf/open/floor/iron/dark/small,
 /area/shuttle/inteq/airlock)
 "ba" = (
 /obj/machinery/door/airlock/external{
@@ -577,13 +577,13 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},
-/turf/open/floor/iron/smooth,
+/turf/open/floor/iron/dark/smooth_large,
 /area/shuttle/inteq/medical)
 "bJ" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/turf/open/floor/iron/smooth,
+/turf/open/floor/iron/dark/smooth_large,
 /area/shuttle/inteq/medical)
 "bK" = (
 /obj/machinery/door/airlock/hatch{
@@ -592,13 +592,13 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/turf/open/floor/iron/smooth,
+/turf/open/floor/iron/dark/smooth_large,
 /area/shuttle/inteq/medical)
 "bL" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/turf/open/floor/iron/smooth,
+/turf/open/floor/iron/dark/smooth_edge,
 /area/shuttle/inteq/hallway)
 "bM" = (
 /obj/machinery/door/airlock/hatch{
@@ -607,19 +607,19 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/turf/open/floor/iron/smooth,
+/turf/open/floor/iron/dark/smooth_large,
 /area/shuttle/inteq/armory)
 "bN" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/turf/open/floor/iron/smooth,
+/turf/open/floor/iron/dark/smooth_large,
 /area/shuttle/inteq/armory)
 "bO" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},
-/turf/open/floor/iron/smooth,
+/turf/open/floor/iron/dark/smooth_large,
 /area/shuttle/inteq/armory)
 "bQ" = (
 /obj/effect/turf_decal/bot_white,
@@ -642,25 +642,27 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
 	},
-/turf/open/floor/iron/smooth,
+/turf/open/floor/iron/dark/smooth_large,
 /area/shuttle/inteq/medical)
 "bT" = (
 /obj/effect/turf_decal/stripes/line,
-/turf/open/floor/iron/smooth,
+/turf/open/floor/iron/dark/smooth_large,
 /area/shuttle/inteq/medical)
 "bU" = (
 /obj/effect/turf_decal/stripes/line,
-/turf/open/floor/iron/smooth,
+/turf/open/floor/iron/dark/smooth_edge{
+	dir = 1
+	},
 /area/shuttle/inteq/hallway)
 "bV" = (
 /obj/effect/turf_decal/stripes/line,
-/turf/open/floor/iron/smooth,
+/turf/open/floor/iron/dark/smooth_large,
 /area/shuttle/inteq/armory)
 "bW" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
 	},
-/turf/open/floor/iron/smooth,
+/turf/open/floor/iron/dark/smooth_large,
 /area/shuttle/inteq/armory)
 "bY" = (
 /obj/structure/window/reinforced{

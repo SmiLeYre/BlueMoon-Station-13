@@ -133,10 +133,19 @@
 	medical_record_text = "У пациента навязчивая одержимость семенными жидкостями."
 	mood_quirk = TRUE
 	var/timer
-	var/timer_trigger = 15 MINUTES
+	var/timer_trigger
+	var/reminder_timer
+	var/reminder_trigger
+	var/list/trigger_phrases = list(
+										"У тебя урчит в животе, а на ум приходит сперма.",\
+										"Уф-ф, сейчас бы не помешало раздобыть спермы...",\
+										"Было бы неплохо сейчас потребить спермы!",\
+										"Ты начинаешь тосковать по сперме..."
+									  )
 
 /datum/quirk/dumb4cum/add()
 	// Set timer
+	timer_trigger = rand(9000, 18000)
 	timer = addtimer(CALLBACK(src, .proc/crave), timer_trigger, TIMER_STOPPABLE)
 
 /datum/quirk/dumb4cum/remove()
@@ -153,22 +162,21 @@
 
 	// Remove timer
 	deltimer(timer)
+	deltimer(reminder_timer)
 
 /datum/quirk/dumb4cum/proc/crave()
 	// Check if conscious
 	if(quirk_holder.stat == CONSCIOUS)
 		// Display emote
-		quirk_holder.emote("sigh")
+		//quirk_holder.emote("sigh")	//это происходит настолько не к месту... пусть игрок сам отыгрывает.
 
 		// Define list of phrases
-		var/list/trigger_phrases = list(
-										"У тебя урчит в животе, а на ум приходит сперма.",\
-										"Уф-ф, сейчас бы не помешало раздобыть спермы...",\
-										"Было бы неплохо сейчас потребить спермы!",\
-										"Ты начинаешь тосковать по сперме..."
-									  )
+
 		// Alert user in chat
 		to_chat(quirk_holder, span_love("[pick(trigger_phrases)]"))
+
+	reminder_trigger = rand(3000, 9000)
+	reminder_timer = addtimer(CALLBACK(src, .proc/reminder), reminder_trigger, TIMER_STOPPABLE)
 
 	// Add active status trait
 	ADD_TRAIT(quirk_holder, TRAIT_DUMB_CUM_CRAVE, DUMB_CUM_TRAIT)
@@ -180,6 +188,13 @@
 
 	// Add negative mood effect
 	SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, QMOOD_DUMB_CUM, /datum/mood_event/cum_craving)
+
+/datum/quirk/dumb4cum/proc/reminder()
+	to_chat(quirk_holder, span_love("[pick(trigger_phrases)]"))
+	deltimer(reminder_timer)
+	reminder_timer = null
+	reminder_trigger = rand(3000, 9000)
+	reminder_timer = addtimer(CALLBACK(src, .proc/reminder), reminder_trigger, TIMER_STOPPABLE)
 
 /datum/quirk/dumb4cum/proc/uncrave()
 	// Remove active status trait
@@ -195,8 +210,10 @@
 
 	// Remove timer
 	deltimer(timer)
+	deltimer(reminder_timer)
 	timer = null
-
+	reminder_timer = null
+	timer_trigger = rand(9000, 18000)
 	// Add new timer
 	timer = addtimer(CALLBACK(src, .proc/crave), timer_trigger, TIMER_STOPPABLE)
 

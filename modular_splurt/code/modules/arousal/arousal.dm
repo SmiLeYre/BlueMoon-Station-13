@@ -128,11 +128,17 @@
 	to_chat(L, "<span class='userlove'>[src] climaxes all over you using [ru_ego()] [G.name]!</span>")
 	do_climax(fluid_source, L, G, spillage, cover = TRUE)
 
-/atom/proc/add_cum_overlay(size = "cum_normal") //This can go in a better spot, for now its here.
+/mob/living/carbon/human
+	var/covered_in_cum = FALSE
+
+/atom/proc/add_cum_overlay(size = "cum_normal", cum_color = "#FFFFFF") //This can go in a better spot, for now its here.
 	if(!istype(src, /mob/living/carbon/human))
 		return
 	if(initial(icon) && initial(icon_state))
-		add_overlay(mutable_appearance('modular_splurt/icons/effects/cumoverlay.dmi', size), ICON_MULTIPLY)
+		add_overlay(mutable_appearance('modular_splurt/icons/effects/cumoverlay.dmi', size, color = cum_color), ICON_MULTIPLY)
+		var/mob/living/carbon/human/H = src
+		H.covered_in_cum = TRUE
+		to_chat(H, span_love("Кажется тебя немножко забрызгали~"))
 
 /mob/living/carbon/human/proc/getPercentAroused()
     var/percentage = ((get_lust() / (get_lust_tolerance() * 3)) * 100)
@@ -141,6 +147,9 @@
 /atom/proc/wash_cum()
 	cut_overlay(mutable_appearance('modular_splurt/icons/effects/cumoverlay.dmi', "cum_normal"))
 	cut_overlay(mutable_appearance('modular_splurt/icons/effects/cumoverlay.dmi', "cum_large"))
+	if(ishuman(src))
+		var/mob/living/carbon/human/H = src
+		H.covered_in_cum = FALSE
 	return TRUE
 
 //arousal hud display

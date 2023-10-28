@@ -134,6 +134,8 @@
 	var/command_radio = FALSE
 	var/uplink_type = /obj/item/inteq/uplink/radio/nuclear
 
+	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
+
 /datum/outfit/inteq/leader
 	name = "InteQ Leader - Basic"
 	id = /obj/item/card/id/syndicate/nuke_leader/inteq

@@ -31,6 +31,7 @@
 	var/useable = TRUE
 	var/list/food_reagents = list(/datum/reagent/consumable/nutriment = 5)
 	var/ru_name = ""
+	var/ru_name_v = ""
 	var/ru_name_capital = ""
 
 /obj/item/organ/Initialize(mapload)
@@ -175,7 +176,7 @@
 /obj/item/organ/examine(mob/user)
 	. = ..()
 
-	. += "<hr><span class='notice'>Можно вставить в [parse_zone(zone)].</span>"
+	. += "<hr><span class='notice'>Можно вставить в [ru_parse_zone(zone)].</span>"
 
 	if(organ_flags & ORGAN_FAILING)
 		if(status == ORGAN_ROBOTIC)

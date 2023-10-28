@@ -118,7 +118,7 @@
 
 /datum/station_trait/overflow_job_bureaucracy/proc/set_overflow_job_override(datum/source)
 	SIGNAL_HANDLER
-	var/datum/job/picked_job = pick(SSjob.name_occupations)
+	var/datum/job/picked_job = pick(SSjob.occupations)
 	chosen_job_name = lowertext(picked_job) // like Chief Engineers vs like chief engineers
 	SSjob.set_overflow_role(picked_job.type)
 
