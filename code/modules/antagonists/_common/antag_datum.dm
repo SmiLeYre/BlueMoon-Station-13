@@ -153,9 +153,9 @@ GLOBAL_LIST_EMPTY(antagonists_to_remind) // BLUEMOON ADD - список анта
 				пакости в раунде и отыгрыш явного плохого парня. Не игнорируйте свою роль, сделайте что-то необычное выпустите пар с интересом для себя и других."))
 				time_of_last_antag_remind = world.time
 				reminded_times_left -= 1
-				if(!reminded_times_left)
-					to_chat(owner, span_danger("Это последнее напоминание. Be cool, not lame."))
-					GLOB.antagonists_to_remind -= src
+	else
+		to_chat(owner, span_danger("Это последнее напоминание. Be cool, not lame."))
+		GLOB.antagonists_to_remind -= src
 // BLUEMOON ADD END
 
 // Adds the specified antag hud to the player. Usually called in an antag datum file
