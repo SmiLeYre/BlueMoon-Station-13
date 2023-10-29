@@ -194,12 +194,6 @@
 
 /obj/item/device/cooler/attack_obj(atom/target, mob/user)
 	if(istype(target, /obj/machinery/power/apc))
-//		var/obj/machinery/power/apc/apc = target
-//		if(apc.cell)
-//			target = apc.cell
-//		else
-//			user.visible_message(span_notice("[user] puts the PCU's magnetic charger on the APC, but nothing happens."), span_warning("You hold the magnetic charger over the APC but nothing happens. Its cell seems to be out of charge."))
-//			return
 		drain_power(target, user, is_apc = TRUE)
 		return
 	. = ..()

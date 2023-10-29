@@ -112,7 +112,7 @@
 		if(demotes_to)
 			replace_wound(demotes_to)
 		else
-			to_chat(victim, "<span class='green'>Ваша [limb.ru_name] перестала истекать кровью из-за порезов!</span>")
+			to_chat(victim, "<span class='green'>Ваша [limb.ru_name] перестала истекать [HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM) ? "гидравлической жидкость" : "кровью"] из-за порезов!</span>") // BLUEMOON EDIT - добавлена проверка для роботов
 			qdel(src)
 
 
@@ -223,12 +223,12 @@
 		return
 
 	user.visible_message("<span class='green'>[user] прижигает увечия персонажа [victim].</span>", "<span class='green'Вы прижагаете увечия персонажа [victim].</span>")
-	limb.receive_damage(burn = 2 + severity, wound_bonus = CANT_WOUND)
-	if(prob(30))
-		if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+	if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+		limb.receive_damage(burn = 2 + severity, wound_bonus = CANT_WOUND)
+		if(prob(30))
 			victim.emote("scream")
-	var/blood_cauterized = (0.6 / self_penalty_mult)
-	blood_flow -= blood_cauterized
+		var/blood_cauterized = (0.6 / self_penalty_mult)
+		blood_flow -= blood_cauterized
 
 	if(blood_flow > minimum_flow)
 		try_treating(I, user)
@@ -287,6 +287,8 @@
 		treat_text = "Сварить обшивку сваркой."
 		examine_desc = "прорезана"
 		occur_text = "надрывается, образуя прорезь в обшивке, из которой течёт чёрная жижа"
+		wound_flags = FLESH_WOUND
+		treatable_tool = TOOL_WELDER
 	return
 // BLUEMOON ADD END
 
@@ -319,6 +321,8 @@
 		treat_text = "Сварить обшивку сваркой."
 		examine_desc = "сильно надорвана"
 		occur_text = "надрывается от удара, расплёскивая чёрную жижу вокруг"
+		wound_flags = FLESH_WOUND
+		treatable_tool = TOOL_WELDER
 // BLUEMOON ADD END
 
 /datum/wound/slash/critical
@@ -351,4 +355,7 @@
 		treat_text = "Сварить разрез сваркой и пополнить запасы гидравлической жидкости."
 		examine_desc = "разорвана до внутренностей, искриться"
 		occur_text = "разрывается, показывая провада в снопах искр и разбрызгивая чёрную жижу под напором"
+		wound_flags = (FLESH_WOUND | MANGLES_FLESH)
+		treatable_tool = TOOL_WELDER
+
 // BLUEMOON ADD END
