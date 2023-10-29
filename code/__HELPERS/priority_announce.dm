@@ -9,7 +9,7 @@
 		sound = pick(SSstation.announcer.event_sounds[sound])
 
 	if(type == "Priority")
-		announcement += "<h1 class='alert'>Приоритетное Объявление</h1>"
+		announcement += "<h1 class='alert'>Приоритетно</h1>"
 		if (title && length(title) > 0)
 			announcement += "<br><h2 class='alert'>[html_encode(title)]</h2>"
 	else if(type == "Captain")

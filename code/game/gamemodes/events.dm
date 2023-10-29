@@ -30,7 +30,7 @@
 
 /proc/power_restore()
 
-	priority_announce("Power has been restored to [station_name()]. We apologize for the inconvenience.", "Power Systems Nominal", "poweron")
+	priority_announce("Питание на станции [station_name()] было восстановлено. Приносим извинения за неудобства.", "Отделение Электропитания", "poweron")
 	for(var/obj/machinery/power/apc/C in GLOB.machines)
 		if(C.cell && is_station_level(C.z))
 			C.cell.charge = C.cell.maxcharge
@@ -53,7 +53,7 @@
 
 /proc/power_restore_quick()
 
-	priority_announce("All SMESs on [station_name()] have been recharged. We apologize for the inconvenience.", "Power Systems Nominal", "poweron")
+	priority_announce("Все энергохранилища на станции [station_name()] были перезаряжены. Приносим извинения за неудобства.", "Отделение Электропитания", "poweron")
 	for(var/obj/machinery/power/smes/S in GLOB.machines)
 		if(!is_station_level(S.z))
 			continue
