@@ -195,7 +195,7 @@
 		SEND_SIGNAL(victim, COMSIG_CARBON_LOSE_WOUND, src, limb)
 	if(limb && !ignore_limb)
 		LAZYREMOVE(limb.wounds, src)
-		limb.update_wounds(replaced)New
+		limb.update_wounds(replaced)
 
 /**
   * replace_wound() is used when you want to replace the current wound with a new wound, presumably of the same category, just of a different severity (either up or down counts)

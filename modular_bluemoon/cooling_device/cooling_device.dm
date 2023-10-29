@@ -140,6 +140,7 @@
 
 /obj/item/device/cooler/proc/drain_power(atom/target, mob/user, var/is_apc = FALSE)
 	var/maxcapacity = FALSE // Если достигнут максимальный заряд, прекращаем заряжаться
+	var/drain = 500
 
 	if(is_apc)
 		var/obj/machinery/power/apc/apc = target
@@ -147,7 +148,7 @@
 		user.visible_message(span_notice("[user] puts the PCU's magnetic charger on [is_apc ? "the APC" : "\a [target]"]."), span_notice("You hold the magnetic charger over [is_apc ? "the APC" : "\a [target]"]. It's getting hotter."))
 		while(charge < max_charge) // Если не достигнут максимальный заряд ПОУ и в источник ещё есть заряд, продолжаем заряжаться
 
-			if(!target.use_power(drain))
+			if(!apc.use_power(drain))
 				user.visible_message(span_notice("[user] takes back the PCU's magnetic charger as it buzzes."), span_warning("The magnetic charger buzzes - the APC cannot give it more charge. You take it back and place it in the socket on the PCU."))
 				break
 
@@ -156,15 +157,13 @@
 				maxcapacity = TRUE
 				playsound(src.loc, 'sound/machines/beep.ogg', 50, 0)
 
-			if(do_after(user, 1.5 SECONDS, target = user))
-				charge += drain
-				target.update_icon()
-				if(maxcapacity)
-					user.visible_message(span_notice("[user] takes back the PCU's magnetic charger."), span_notice("You take back the magnetic charger as it beep and place it in the socket on the PCU."))
-			else
+			if(!do_after(user, 1.5 SECONDS, target = user))
 				user.visible_message(span_notice("[user] takes back the PCU's magnetic charger."), span_notice("You take back the magnetic charger and place it in the socket on the PCU."))
 				break
-
+			charge += drain
+			target.update_icon()
+			if(maxcapacity)
+				user.visible_message(span_notice("[user] takes back the PCU's magnetic charger."), span_notice("You take back the magnetic charger as it beep and place it in the socket on the PCU."))
 
 	if(istype(target, /obj/item/stock_parts/cell))
 		var/obj/item/stock_parts/cell/cell = target
@@ -174,7 +173,6 @@
 
 		user.visible_message(span_notice("[user] puts the PCU's magnetic charger on [is_apc ? "the APC" : "\a [target]"]."), span_notice("You hold the magnetic charger over [is_apc ? "the APC" : "\a [target]"]. It's getting hotter."))
 		while(cell.charge > 0 && !maxcapacity)
-			var/drain = 500
 
 			if(cell.charge < drain) // Высасываем оставшийся заряд, а не сверх него
 				drain = cell.charge
@@ -184,15 +182,15 @@
 				maxcapacity = TRUE
 				playsound(src.loc, 'sound/machines/beep.ogg', 50, 0)
 
-			if(do_after(user, 1.5 SECONDS, target = user))
-				cell.charge -= drain
-				charge += drain
-				target.update_icon()
-				if(maxcapacity || !cell.charge)
-					user.visible_message(span_notice("[user] takes back the PCU's magnetic charger."), span_notice("You take back the magnetic charger as it beep and place it in the socket on the PCU."))
-			else
+			if(!do_after(user, 1.5 SECONDS, target = user))
 				user.visible_message(span_notice("[user] takes back the PCU's magnetic charger."), span_notice("You take back the magnetic charger and place it in the socket on the PCU."))
 				break
+
+			cell.charge -= drain
+			charge += drain
+			target.update_icon()
+			if(maxcapacity || !cell.charge)
+				user.visible_message(span_notice("[user] takes back the PCU's magnetic charger."), span_notice("You take back the magnetic charger as it beep and place it in the socket on the PCU."))
 
 /obj/item/device/cooler/attack_obj(atom/target, mob/user)
 	if(istype(target, /obj/machinery/power/apc))

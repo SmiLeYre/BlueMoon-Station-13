@@ -117,7 +117,7 @@
 				victim.bleed(blood_bled, TRUE)
 			if(7 to 13)
 				// BLUEMOON ADD START - кастомное описание для роботов
-				if(HAS_TRAIT(M, TRAIT_ROBOTIC_ORGANISM))
+				if(HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM))
 					// TO DO
 				else
 				// BLUEMOON ADD END
@@ -125,7 +125,7 @@
 				victim.bleed(blood_bled, TRUE)
 			if(14 to 19)
 				// BLUEMOON ADD START - кастомное описание для роботов
-				if(HAS_TRAIT(M, TRAIT_ROBOTIC_ORGANISM))
+				if(HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM))
 					// TO DO
 				else
 				// BLUEMOON ADD END
@@ -138,7 +138,7 @@
 				victim.bleed(blood_bled)
 			if(20 to INFINITY)
 				// BLUEMOON ADD START - кастомное описание для роботов
-				if(HAS_TRAIT(M, TRAIT_ROBOTIC_ORGANISM))
+				if(HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM))
 					// TO DO
 				else
 				// BLUEMOON ADD END
