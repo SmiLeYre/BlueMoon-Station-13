@@ -946,9 +946,13 @@
 
 /datum/status_effect/stabilized/lightpink/on_apply()
 	ADD_TRAIT(owner, TRAIT_FREESPRINT, "stabilized_slime")
-	// BLUEMOON ADD START - снижение повышения скорости за квирк "сверхтяжёлый"
-	if(HAS_TRAIT(owner, TRAIT_BLUEMOON_HEAVY_SUPER))
+	// BLUEMOON ADD START - снижение повышения скорости за большого персонажа
+	if(get_size(owner) > 1)
 		owner.add_movespeed_modifier(/datum/movespeed_modifier/status_effect/slime/light_pink/lesser)
+		/*
+		var/datum/movespeed_modifier/status_effect/slime/light_pink/LP = owner.get_cached_movespeed_modifier(/datum/movespeed_modifier/status_effect/slime/light_pink)
+		LP.multiplicative_slowdown = -0.5 // Здесь должна быть формула за каждый процент, но я не осилил
+		*/
 	else
 	// BLUEMOON ADD END
 		owner.add_movespeed_modifier(/datum/movespeed_modifier/status_effect/slime/light_pink)
