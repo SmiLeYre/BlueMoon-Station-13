@@ -946,7 +946,12 @@
 
 /datum/status_effect/stabilized/lightpink/on_apply()
 	ADD_TRAIT(owner, TRAIT_FREESPRINT, "stabilized_slime")
-	owner.add_movespeed_modifier(/datum/movespeed_modifier/status_effect/slime/light_pink)
+	// BLUEMOON ADD START - снижение повышения скорости за квирк "сверхтяжёлый"
+	if(HAS_TRAIT(owner, TRAIT_BLUEMOON_HEAVY_SUPER))
+		owner.add_movespeed_modifier(/datum/movespeed_modifier/status_effect/slime/light_pink/lesser)
+	else
+	// BLUEMOON ADD END
+		owner.add_movespeed_modifier(/datum/movespeed_modifier/status_effect/slime/light_pink)
 	return ..()
 
 /datum/status_effect/stabilized/lightpink/tick()

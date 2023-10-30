@@ -59,3 +59,6 @@
 	multiplicative_slowdown = -2
 	complex_calculation = TRUE
 	absolute_max_tiles_per_second = 7
+
+/datum/movespeed_modifier/status_effect/slime/light_pink/lesser
+	multiplicative_slowdown = -0.5
