@@ -22,6 +22,8 @@
 		var/datum/game_mode/dynamic/mode = SSticker.mode
 		if(dynamic_requirement > 0 && mode.threat_level < dynamic_requirement)
 			return 0
+	else if(istype(SSticker.mode,/datum/game_mode/extended) && dynamic_requirement)
+		return 0
 	return 1
 
 /datum/spellbook_entry/proc/CanBuy(mob/living/carbon/human/user,obj/item/spellbook/book) // Specific circumstances
@@ -510,6 +512,7 @@
 /datum/spellbook_entry/summon/ghosts
 	name = "Summon Ghosts"
 	desc = "Spook the crew out by making them see dead people. Be warned, ghosts are capricious and occasionally vindicative, and some will use their incredibly minor abilities to frustrate you."
+	dynamic_requirement = 60
 	cost = 0
 
 /datum/spellbook_entry/summon/ghosts/IsAvailible()
