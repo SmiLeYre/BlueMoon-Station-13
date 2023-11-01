@@ -430,7 +430,7 @@
 	if(!owner || . & EMP_PROTECT_SELF)
 		return
 	to_chat(owner, "<span class='warning'>Alert: Perception visuals overload!</span>")
-	owner.flash_act(visual = 1)
+	owner.flash_act(intensity = 0, visual = TRUE)
 
 	// BLUEMOON ADD START - шанс на перманентный выход из строя
 	owner.blur_eyes(rand(5,10))
