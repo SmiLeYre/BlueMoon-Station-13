@@ -181,7 +181,7 @@
 /obj/vehicle/pre_buckle_mob(mob/living/M)
 	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER))
 		usr.visible_message(span_warning("[usr] tried to get [M] on [src], but it doesn't move. Too much weight!."), span_warning("You tried to get [M] on [src], but it doesn't move. Too much weight!"))
-		unbuckle_all_mobs()
+		unbuckle_mob(M, TRUE)
 		return
 	. = ..()
 // BLUEMOON ADDITION END

@@ -137,13 +137,14 @@
 	else
 		layer = OBJ_LAYER
 
-/obj/structure/chair/pre_buckle_mob(mob/living/M)
+/obj/structure/chair/post_buckle_mob(mob/living/M)
 	. = ..()
 	handle_layer()
 	// BLUEMOON ADDITION AHEAD - стул ломается при попытке сесть на него сверхтяжёлым персонажем
 	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER))
 		visible_message(span_warning("[src] buckles under the weight of [M] causing it to break!"))
 		playsound(src, 'modular_bluemoon/heavy_and_superheavy_quirks/chair_break.ogg', 70, TRUE)
+		unbuckle_mob(M, TRUE)
 		deconstruct(FALSE)
 	// BLUEMOON ADDITION END
 
