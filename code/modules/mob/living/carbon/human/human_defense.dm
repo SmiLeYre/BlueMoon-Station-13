@@ -604,13 +604,13 @@
 					var/msg
 					switch(W.severity)
 						if(WOUND_SEVERITY_TRIVIAL)
-							msg = "<span class='danger'>Ваша [LB.ru_name] страдает от [lowertext(W.ru_name_r)].</span>"
+							msg = "<span class='danger'>Ваша [LB.ru_name] страдает от [lowertext(W.ru_name_r)].</span>\n"
 						if(WOUND_SEVERITY_MODERATE)
-							msg = "<span class='warning'>Ваша [LB.ru_name] страдает от [lowertext(W.ru_name_r)]!</span>"
+							msg = "<span class='warning'>Ваша [LB.ru_name] страдает от [lowertext(W.ru_name_r)]!</span>\n"
 						if(WOUND_SEVERITY_SEVERE)
-							msg = "<span class='warning'><b>Ваша [LB.ru_name] страдает от [lowertext(W.ru_name_r)]!</b></span>"
+							msg = "<span class='warning'><b>Ваша [LB.ru_name] страдает от [lowertext(W.ru_name_r)]!</b></span>\n"
 						if(WOUND_SEVERITY_CRITICAL)
-							msg = "\t <span class='warning'><b>Ваша [LB.ru_name] страдает от [lowertext(W.ru_name_r)]!!</b></span>"
+							msg = "\t <span class='warning'><b>Ваша [LB.ru_name] страдает от [lowertext(W.ru_name_r)]!!</b></span>\n"
 					to_send += "\n[msg]"
 
 				for(var/obj/item/I in LB.embedded_objects)
@@ -640,7 +640,7 @@
 							bleed_text += " [BP.ru_name_v],"
 						bleed_text += " и [bleeding_limbs[num_bleeds].ru_name_v]"
 				bleed_text += "!</span>"
-				to_send += "\n[bleed_text]"
+				to_send += "\n[bleed_text]\n"
 			if(getStaminaLoss())
 				if(getStaminaLoss() > 30)
 					to_send += "<span class='info'>Вы полностью измотаны.</span>\n"
