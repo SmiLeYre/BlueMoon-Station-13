@@ -443,7 +443,7 @@
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
 		return
-	to_chat(owner, "<span class='warning'>Alert: Critical cooling system failure!</span>")
+	to_chat(owner, "<span class='warning'>Alert: Moderate cooling system failure!</span>")
 	switch(severity)
 		if(1 to 50)
 			owner.adjust_bodytemperature(30*TEMPERATURE_DAMAGE_COEFFICIENT)
@@ -454,7 +454,7 @@
 	if(prob(10)) //Chance of permanent effects
 		organ_flags |= ORGAN_SYNTHETIC_EMP //Starts organ faliure - gonna need replacing soon.
 		if(HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM))
-			to_chat(owner, span_danger("Fatal failure detected in the cooling system - Seek for replace immediately."))
+			to_chat(owner, span_userdanger("Fatal failure detected in the cooling system - Seek for replace immediately."))
 	// BLUEMOON ADD END
 
 /obj/item/organ/lungs/ipc/ui_action_click(mob/user, actiontype)

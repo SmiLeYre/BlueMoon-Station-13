@@ -691,6 +691,7 @@
 		if(C.internal_organs)
 			for(var/organ in C.internal_organs)
 				var/obj/item/organ/O = organ
+				O.organ_flags &= ~ORGAN_SYNTHETIC_EMP // BLUEMOON ADD
 				O.setOrganDamage(0)
 
 //proc called by revive(), to check if we can actually ressuscitate the mob (we don't want to revive him and have him instantly die again)
