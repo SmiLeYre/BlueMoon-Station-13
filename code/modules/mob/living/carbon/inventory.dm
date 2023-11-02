@@ -79,8 +79,11 @@
 			head = I
 			head_update(I)
 		if(ITEM_SLOT_NECK)
-			wear_neck = I
-			update_inv_neck(I)
+			if(ishuman(src))
+				not_handled = TRUE
+			else
+				wear_neck = I
+				update_inv_neck(I)
 		if(ITEM_SLOT_HANDCUFFED)
 			handcuffed = I
 			update_handcuffed()
@@ -122,6 +125,8 @@
 		if(!QDELETED(src))
 			wear_mask_update(I, toggle_off = 1)
 	if(I == wear_neck)
+		if(ishuman(src))
+			return TRUE
 		wear_neck = null
 		if(!QDELETED(src))
 			update_inv_neck(I)

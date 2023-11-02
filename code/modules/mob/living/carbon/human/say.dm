@@ -15,6 +15,8 @@
 		var/obj/item/clothing/mask/chameleon/V = wear_mask
 		if(V.voice_change && wear_id)
 			var/obj/item/card/id/idcard = wear_id.GetID()
+			if(!idcard)
+				idcard = wear_neck.GetID()
 			if(istype(idcard))
 				return idcard.registered_name
 			else

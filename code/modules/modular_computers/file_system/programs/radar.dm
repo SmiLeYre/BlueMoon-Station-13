@@ -231,6 +231,8 @@
 		var/crewmember_name = "Unknown"
 		if(humanoid.wear_id)
 			var/obj/item/card/id/ID = humanoid.wear_id.GetID()
+			if(!ID)
+				ID = humanoid.wear_neck.GetID()
 			if(ID?.registered_name)
 				crewmember_name = ID.registered_name
 		var/list/crewinfo = list(
