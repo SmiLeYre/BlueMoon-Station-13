@@ -107,7 +107,7 @@
 	// if it returns 0, it will run the usual on_mob_life for that reagent. otherwise, it will stop after running handle_chemicals for the species.
 
 /mob/living/carbon/human/can_track(mob/living/user)
-	if(wear_id && (istype(wear_id.GetID(), /obj/item/card/id/syndicate) || istype(wear_neck.GetID(), /obj/item/card/id/syndicate)))
+	if((wear_id && istype(wear_id?.GetID(), /obj/item/card/id/syndicate)) || (wear_neck && istype(wear_neck?.GetID(), /obj/item/card/id/syndicate)))
 		return 0
 	if(istype(head, /obj/item/clothing/head))
 		var/obj/item/clothing/head/hat = head
