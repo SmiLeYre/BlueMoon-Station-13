@@ -9,13 +9,10 @@
 	if(!(z in SSmapping.levels_by_trait(ZTRAIT_STATION))) //No launching pods that have already launched
 		return ..()
 
-
 /obj/docking_port/mobile/assault_pod/initiate_docking(obj/docking_port/stationary/S1)
 	. = ..()
 	if(!istype(S1, /obj/docking_port/stationary/transit))
 		playsound(get_turf(src.loc), 'sound/effects/explosion1.ogg',50,1)
-
-
 
 /obj/item/assault_pod
 	name = "Assault Pod Targeting Device"
@@ -31,7 +28,6 @@
 	var/width = 7
 	var/height = 7
 	var/lz_dir = 1
-
 
 /obj/item/assault_pod/attack_self(mob/living/user)
 	var/target_area

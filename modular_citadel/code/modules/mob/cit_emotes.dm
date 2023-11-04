@@ -1,7 +1,7 @@
 #define INSULTS_FILE "insult.json"
 
 /mob
-	var/nextsoundemote = 10
+	var/nextsoundemote = 1 SECONDS
 
 /datum/emote/living/insult
 	key = "insult"
@@ -19,7 +19,7 @@
 	. = ..()
 
 /datum/emote/living/scream/run_emote(mob/living/user, params) //I can't not port this shit, come on.
-	if(user.nextsoundemote >= world.time || user.stat != CONSCIOUS)
+	if(user.stat != CONSCIOUS)
 		return
 	var/sound
 	var/miming = user.mind ? user.mind.miming : 0
@@ -27,7 +27,6 @@
 		var/mob/living/carbon/c = user
 		c.reindex_screams()
 	if(!user.is_muzzled() && !miming)
-		user.nextsoundemote = world.time + 3
 		if(issilicon(user))
 			sound = 'modular_citadel/sound/voice/scream_silicon.ogg'
 			if(iscyborg(user))
@@ -42,13 +41,14 @@
 			sound = 'sound/creatures/gorilla.ogg'
 		if(ishuman(user))
 			user.adjustOxyLoss(5)
-			sound = pick('modular_citadel/sound/voice/scream_m1.ogg', 'modular_citadel/sound/voice/scream_m2.ogg')
-			if(user.gender == FEMALE)
+			if(user.gender != FEMALE || (user.gender == PLURAL && ismasculine(user)))
+				sound = pick('modular_citadel/sound/voice/scream_m1.ogg', 'modular_citadel/sound/voice/scream_m2.ogg')
+			if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
 				sound = pick('modular_citadel/sound/voice/scream_f1.ogg', 'modular_citadel/sound/voice/scream_f2.ogg')
 			if(is_species(user, /datum/species/jelly))
-				if(user.gender == FEMALE)
+				if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
 					sound = pick('modular_citadel/sound/voice/scream_jelly_f1.ogg', 'modular_citadel/sound/voice/scream_jelly_f2.ogg')
-				else
+				else if(user.gender != FEMALE || (user.gender == PLURAL && ismasculine(user)))
 					sound = pick('modular_citadel/sound/voice/scream_jelly_m1.ogg', 'modular_citadel/sound/voice/scream_jelly_m2.ogg')
 			if(is_species(user, /datum/species/android) || is_species(user, /datum/species/synth) || is_species(user, /datum/species/ipc))
 				sound = 'modular_citadel/sound/voice/scream_silicon.ogg'
@@ -80,14 +80,12 @@
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = TRUE
 	restraint_check = TRUE
+	emote_cooldown = 5 SECONDS
 
 /datum/emote/living/snap/run_emote(mob/living/user, params)
 	. = ..()
 	if(!.)
 		return
-	if(user.nextsoundemote >= world.time)
-		return
-	user.nextsoundemote = world.time + 7
 	playsound(user, 'modular_citadel/sound/voice/snap.ogg', 50, 1, -1)
 
 /datum/emote/living/snap2
@@ -97,14 +95,12 @@
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = TRUE
 	restraint_check = TRUE
+	emote_cooldown = 8 SECONDS
 
 /datum/emote/living/snap2/run_emote(mob/living/user, params)
 	. = ..()
 	if(!.)
 		return
-	if(user.nextsoundemote >= world.time)
-		return
-	user.nextsoundemote = world.time + 7
 	playsound(user, 'modular_citadel/sound/voice/snap2.ogg', 50, 1, -1)
 
 /datum/emote/living/snap3
@@ -114,14 +110,12 @@
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = TRUE
 	restraint_check = TRUE
+	emote_cooldown = 8 SECONDS
 
 /datum/emote/living/snap3/run_emote(mob/living/user, params)
 	. = ..()
 	if(!.)
 		return
-	if(user.nextsoundemote >= world.time)
-		return
-	user.nextsoundemote = world.time + 7
 	playsound(user, 'modular_citadel/sound/voice/snap3.ogg', 50, 1, -1)
 
 /datum/emote/living/awoo
@@ -131,14 +125,12 @@
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
+	emote_cooldown = 7 SECONDS
 
 /datum/emote/living/awoo/run_emote(mob/living/user, params)
 	. = ..()
 	if(!.)
 		return
-	if(user.nextsoundemote >= world.time)
-		return
-	user.nextsoundemote = world.time + 7
 	playsound(user, 'modular_citadel/sound/voice/awoo.ogg', 100, 1, -1)
 	if (HAS_TRAIT(user, TRAIT_AWOO))
 		var/datum/quirk/awoo/quirk_target = locate() in user.roundstart_quirks
@@ -154,14 +146,12 @@
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
+	emote_cooldown = 2 SECONDS
 
 /datum/emote/living/hiss/run_emote(mob/living/user, params)
 	. = ..()
 	if(!.)
 		return
-	if(user.nextsoundemote >= world.time)
-		return
-	user.nextsoundemote = world.time + 7
 	playsound(user, 'modular_citadel/sound/voice/hiss.ogg', 50, 1, -1)
 
 /datum/emote/living/meow
@@ -176,9 +166,6 @@
 	. = ..()
 	if(!.)
 		return
-	if(user.nextsoundemote >= world.time)
-		return
-	user.nextsoundemote = world.time + 7
 	playsound(user, 'modular_citadel/sound/voice/meow1.ogg', 50, 1, -1)
 
 /datum/emote/living/purr
@@ -189,14 +176,12 @@
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
 	stat_allowed = UNCONSCIOUS //cats can purr in their sleep
+	emote_cooldown = 5 SECONDS
 
 /datum/emote/living/purr/run_emote(mob/living/user, params)
 	. = ..()
 	if(!.)
 		return
-	if(user.nextsoundemote >= world.time)
-		return
-	user.nextsoundemote = world.time + 7
 	playsound(user, 'modular_citadel/sound/voice/purr.ogg', 100, 1, -1)
 
 /datum/emote/living/nya
@@ -211,9 +196,6 @@
 	. = ..()
 	if(!.)
 		return
-	if(user.nextsoundemote >= world.time)
-		return
-	user.nextsoundemote = world.time + 7
 	playsound(user, 'modular_citadel/sound/voice/nya.ogg', 50, 1, -1)
 
 /datum/emote/living/weh
@@ -223,14 +205,12 @@
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
+	emote_cooldown = 2 SECONDS
 
 /datum/emote/living/weh/run_emote(mob/living/user, params)
 	. = ..()
 	if(!.)
 		return
-	if(user.nextsoundemote >= world.time)
-		return
-	user.nextsoundemote = world.time + 7
 	playsound(user, 'modular_citadel/sound/voice/weh.ogg', 50, 1, -1)
 
 /datum/emote/living/peep
@@ -240,14 +220,12 @@
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
+	emote_cooldown = 3 SECONDS
 
 /datum/emote/living/peep/run_emote(mob/living/user, params)
 	. = ..()
 	if(!.)
 		return
-	if(user.nextsoundemote >= world.time)
-		return
-	user.nextsoundemote = world.time + 7
 	playsound(user, 'modular_citadel/sound/voice/peep.ogg', 50, 1, -1)
 
 /datum/emote/living/dab
@@ -264,14 +242,12 @@
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
+	emote_cooldown = 3 SECONDS
 
 /datum/emote/living/mothsqueak/run_emote(mob/living/user, params)
 	. = ..()
 	if(!.)
 		return
-	if(user.nextsoundemote >= world.time)
-		return
-	user.nextsoundemote = world.time + 7
 	playsound(user, 'modular_citadel/sound/voice/mothsqueak.ogg', 50, 1, -1)
 
 /datum/emote/living/merp
@@ -286,9 +262,6 @@
 	. = ..()
 	if(!.)
 		return
-	if(user.nextsoundemote >= world.time)
-		return
-	user.nextsoundemote = world.time + 7
 	playsound(user, 'modular_citadel/sound/voice/merp.ogg', 50, 1, -1)
 
 /datum/emote/living/bark
@@ -303,9 +276,6 @@
 	. = ..()
 	if(!.)
 		return
-	if(user.nextsoundemote >= world.time)
-		return
-	user.nextsoundemote = world.time + 7
 	var/sound = pick('modular_citadel/sound/voice/bark1.ogg', 'modular_citadel/sound/voice/bark2.ogg')
 	playsound(user, sound, 50, 1, -1)
 
@@ -321,9 +291,6 @@
 	. = ..()
 	if(!.)
 		return
-	if(user.nextsoundemote >= world.time)
-		return
-	user.nextsoundemote = world.time + 7
 	var/sound = pick('sound/voice/slime_squish.ogg')
 	playsound(user, sound, 50, 1, -1)
 
@@ -334,18 +301,16 @@
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
+	emote_cooldown = 3 SECONDS
 
 /datum/emote/living/pain/run_emote(mob/living/user, params)
 	. = ..()
 	if(!.)
 		return
-	if(user.nextsoundemote >= world.time)
-		return
-	user.nextsoundemote = world.time + 7
 	var/sound
-	if(user.gender == MALE)
+	if(user.gender == MALE || (user.gender == PLURAL && ismasculine(user)))
 		sound = pick('modular_citadel/sound/voice/human_male_pain_1.ogg', 'modular_citadel/sound/voice/human_male_pain_2.ogg', 'modular_citadel/sound/voice/human_male_pain_3.ogg', 'modular_citadel/sound/voice/human_male_pain_rare.ogg', 'modular_citadel/sound/voice/human_male_scream_1.ogg', 'modular_citadel/sound/voice/human_male_scream_2.ogg', 'modular_citadel/sound/voice/human_male_scream_3.ogg', 'modular_citadel/sound/voice/human_male_scream_4.ogg')
-	else
+	else if(user.gender != MALE || (user.gender == PLURAL && isfeminine(user)))
 		sound = pick('modular_citadel/sound/voice/human_female_pain_1.ogg', 'modular_citadel/sound/voice/human_female_pain_2.ogg', 'modular_citadel/sound/voice/human_female_pain_3.ogg', 'modular_citadel/sound/voice/human_female_scream_2.ogg', 'modular_citadel/sound/voice/human_female_scream_3.ogg', 'modular_citadel/sound/voice/human_female_scream_4.ogg')
 	playsound(user, sound, 75, 0, 0)
 

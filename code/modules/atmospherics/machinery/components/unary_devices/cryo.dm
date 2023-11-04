@@ -188,7 +188,7 @@
 				if(!treating_organs)
 					treating_organs = TRUE
 					playsound(src, 'sound/machines/cryo_warning.ogg', volume) // Bug the doctors.
-					var/msg = "Patient vitals fully recovered, continuing automated organ treatment."
+					var/msg = "Жизненные показатели пациента полностью восстановлены. Восстановление органов продолжается."
 					radio.talk_into(src, msg, radio_channel)
 			else
 				treating_organs = FALSE
@@ -197,7 +197,7 @@
 				if(!treating_wounds) // if we have wounds and haven't already alerted the doctors we're only dealing with the wounds, let them know
 					treating_wounds = TRUE
 					playsound(src, 'sound/machines/cryo_warning.ogg', volume) // Bug the doctors.
-					var/msg = "Patient vitals fully recovered, continuing automated wound treatment."
+					var/msg = "Жизненные показатели пациента полностью восстановлены. Лечение продолжается."
 					radio.talk_into(src, msg, radio_channel)
 			else // otherwise if we were only treating wounds and now we don't have any, turn off treating_wounds so we can boot 'em out
 				treating_wounds = FALSE
@@ -206,9 +206,9 @@
 			on = FALSE
 			update_icon()
 			playsound(src, 'sound/machines/cryo_warning.ogg', volume) // Bug the doctors.
-			var/msg = "Patient fully restored."
+			var/msg = "Пациент полностью восстановился."
 			if(autoeject) // Eject if configured.
-				msg += " Auto ejecting patient now."
+				msg += " Протокол извлечения пациента."
 				open_machine()
 			radio.talk_into(src, msg, radio_channel)
 			return

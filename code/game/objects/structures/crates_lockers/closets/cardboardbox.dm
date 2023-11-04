@@ -49,9 +49,6 @@
 			. += "<span class='notice'><b>[buckled_mobs[1]]</b> is sitting inside.</span>"
 			. += "<span class='notice'>Alt-click to take creatures out of it.</span>"
 
-/*/obj/structure/closet/cardboard/process()
-	for(var/m in buckled_mobs)*/
-
 /obj/structure/closet/cardboard/proc/GetFront()
 	return mutable_appearance('icons/obj/closet.dmi', "cardboard_front")
 
@@ -106,6 +103,17 @@
 /obj/structure/closet/cardboard/proc/ResetMoveDelay()
 	move_delay = FALSE
 
+/obj/structure/closet/cardboard/process()
+	for(var/mob/living/carbon/H in contents)
+		if(iscatperson(H))
+			//to_chat(H, "<span class = 'notice'>You feel quite safe inside your box.</span>")
+			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "hide_in_box", /datum/mood_event/hide_in_box)
+			if(prob(10))
+				H.emote("purr")
+			if(prob(10))
+				to_chat(H, "<span class = 'notice'>[pick("Awww~ So comfy~", "I could sleep here if I wanted to...","My little shelter from this cruel world.","I'm feeling safe inside.")]</span>")
+			//sleep(8 SECONDS)
+
 /obj/structure/closet/cardboard/open()
 	if(opened || !can_open())
 		return 0
@@ -117,6 +125,7 @@
 			break
 		if(Snake)
 			alerted = fov_viewers(world.view,src)
+	STOP_PROCESSING(SSobj,src)
 	if(can_sit_inside)
 		can_buckle = TRUE
 		for(var/mob/living/L in src.contents)
@@ -146,6 +155,7 @@
 		var/mob/living/L = buckled_mobs[1]
 		unbuckle_mob(L)
 	can_buckle = FALSE
+	START_PROCESSING(SSobj,src)
 	..()
 
 /obj/structure/closet/cardboard/handle_lock_addition() //Whoever heard of a lockable cardboard box anyway
@@ -165,13 +175,6 @@
 	for(var/mob/living/carbon/H in contents)
 		if(iscatperson(H))
 			to_chat(H, "<span class = 'notice'>You feel quite safe inside your box.</span>")
-		while(iscatperson(H) && !opened && H.loc == src)
-			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "hide_in_box", /datum/mood_event/hide_in_box)
-			if(prob(50))
-				H.emote("purr")
-			if(prob(50))
-				to_chat(H, "<span class = 'notice'>[pick("Awww~ So comfy~", "I could sleep here if I wanted to...","My little shelter from this cruel world.","I'm feeling safe inside.")]</span>")
-			sleep(8 SECONDS)
 
 /obj/structure/closet/cardboard/set_spooky_trap()	//boxes are for felinids, not for skeletonts
 	return

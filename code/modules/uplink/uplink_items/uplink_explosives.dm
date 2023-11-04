@@ -125,7 +125,7 @@
 	item = /obj/item/sbeacondrop/bomb
 	cost = 11
 	hijack_only = TRUE
-	purchasable_from = UPLINK_NUKE_OPS
+	purchasable_from = ~(UPLINK_SYNDICATE)
 
 /datum/uplink_item/explosives/syndicate_detonator
 	name = "Syndicate Detonator"

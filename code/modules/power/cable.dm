@@ -179,9 +179,9 @@ By design, d1 is the smallest direction and d2 is the highest
 
 	else if(W.tool_behaviour == TOOL_MULTITOOL)
 		if(powernet && (powernet.avail > 0))		// is it powered?
-			to_chat(user, "<span class='danger'>[DisplayPower(powernet.avail)] in power network.</span>")
+			to_chat(user, "<span class='danger'>Суммарная мощность: [DisplayPower(powernet.avail)].</span>")
 		else
-			to_chat(user, "<span class='danger'>The cable is not powered.</span>")
+			to_chat(user, "<span class='danger'>Кабель выдаёт нулевые значения статической нагрузки.</span>")
 		shock(user, 5, 0.2)
 
 	src.add_fingerprint(user)
@@ -196,7 +196,9 @@ By design, d1 is the smallest direction and d2 is the highest
 
 /obj/structure/cable/attack_ghost(mob/dead/observer/user)
 	if(powernet && (powernet.avail > 0))
-		to_chat(user, "<span class='danger'>[DisplayPower(powernet.avail)] in power network.</span>")
+		to_chat(user, "<span class='danger'>Суммарная мощность: [DisplayPower(powernet.avail)].</span>")
+	else
+		to_chat(user, "<span class='danger'>Кабель выдаёт нулевые значения статической нагрузки.</span>")
 	return ..()
 
 // shock the user with probability prb

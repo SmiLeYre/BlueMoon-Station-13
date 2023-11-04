@@ -60,6 +60,14 @@
 	if((blood_id in GLOB.blood_reagent_types) && !HAS_TRAIT(C, TRAIT_NOMARROW) && !HAS_TRAIT(C, TRAIT_BLOODFLEDGE))
 		if(!data || !(data["blood_type"] in get_safe_blood(C.dna.blood_type)))	//we only care about bloodtype here because this is where the poisoning should be
 			C.adjustToxLoss(rand(2,8)*REM, TRUE, TRUE)	//forced to ensure people don't use it to gain beneficial toxin as slime person
+	// BLUEMOON ADD START - синтетики могут пить свою же "кровь" (гидравлическую жидкость), чтобы восполнять её запасы
+	if(HAS_TRAIT(C, TRAIT_ROBOTIC_ORGANISM))
+		if(data && (data["blood_type"] in get_safe_blood(C.dna.blood_type)))
+			if(C.blood_volume > BLOOD_VOLUME_NORMAL) // если крови слишком много, она не восполняет запасы в организме
+				to_chat(C, span_warning("[C] leaks out with hydraulic fluid! It streams from holes in hull parts."))
+			else //восполнение крови в соотношении 1 к 1
+				C.blood_volume = max(C.blood_volume + round(metabolization_rate, 0.1), 0)
+	// BLUEMOON ADD END
 	..()
 
 /datum/reagent/blood/reaction_obj(obj/O, volume)
@@ -101,7 +109,7 @@
 			pH = 2.5
 
 		if(data["blood_type"] == "HF")
-			name = "Hydraulic Blood"
+			name = "Hydraulic Fluid" // BLUEMOON EDIT - was "Hydraulic Blood"
 			taste_description = "burnt oil"
 			pH = 9.75
 
@@ -368,6 +376,26 @@
 		to_chat(L, "<span class='userdanger'>Священный Туман распространяется по вашему сознанию, ослабляя связь с Жёлтым Измерением и очищая вас от влияния Юстициара Ратвара!</span>")
 	else if(iscultist(L))
 		to_chat(L, "<span class='userdanger'>Священный Туман распространяется по вашему сознанию, ослабляя связь с Красным Измерением и очищая вас от влияния Нар-Си</span>")
+	else if(HAS_TRAIT(L,TRAIT_RUSSIAN))
+		// Alert user of holy water effect.
+		to_chat(L, span_nicegreen("Святая вода питает и заряжает энергией!"))
+	else
+		to_chat(L, span_nicegreen("Священный Туман распространяется по вашему сознанию."))
+
+	if(HAS_TRAIT(L, TRAIT_HALLOWED) || usr.job == "Chaplain")
+		L.drowsyness = max(L.drowsyness-5, 0)
+		L.AdjustUnconscious(-20, FALSE)
+		L.AdjustAllImmobility(-40, FALSE)
+		L.adjustStaminaLoss(-10, FALSE)
+		L.adjustToxLoss(-2, FALSE, TRUE)
+		L.adjustOxyLoss(-2, FALSE)
+		L.adjustBruteLoss(-2, FALSE)
+		L.adjustFireLoss(-2, FALSE)
+		L.heal_overall_damage(2,2)
+		L.adjust_disgust(-3)
+		if(ishuman(L) && L.blood_volume < (BLOOD_VOLUME_NORMAL*L.blood_ratio))
+			L.adjust_integration_blood(3)
+		return
 
 /datum/reagent/water/holywater/on_mob_end_metabolize(mob/living/L)
 	REMOVE_TRAIT(L, TRAIT_HOLY, type)
@@ -463,6 +491,8 @@
 		M.adjustOxyLoss(-2, FALSE)
 		M.adjustBruteLoss(-2, FALSE)
 		M.adjustFireLoss(-2, FALSE)
+		M.heal_overall_damage(2,2)
+		M.adjust_disgust(-3)
 		if(ishuman(M) && M.blood_volume < (BLOOD_VOLUME_NORMAL*M.blood_ratio))
 			M.adjust_integration_blood(3)
 	else  // Will deal about 90 damage when 50 units are thrown
@@ -471,6 +501,8 @@
 		M.adjustFireLoss(2, FALSE)
 		M.adjustOxyLoss(2, FALSE)
 		M.adjustBruteLoss(2, FALSE)
+		M.heal_overall_damage(-2,-2)
+		M.adjust_disgust(6)
 	holder.remove_reagent(type, 1)
 	return TRUE
 
@@ -484,6 +516,7 @@
 	taste_description = "burning"
 //	chemical_flags = REAGENT_ALL_PROCESS (BLUEMOON REMOVAL - роботы не должны получать эффекты реагента)
 	value = REAGENT_VALUE_VERY_RARE
+	accelerant_quality = 20
 
 /datum/reagent/hellwater/on_mob_life(mob/living/carbon/M)
 	if(HAS_TRAIT(M, TRAIT_CURSED_BLOOD))
@@ -1283,6 +1316,7 @@
 	glass_desc = "Unless you're an industrial tool, this is probably not safe for consumption."
 	pH = 4
 	boiling_point = 400
+	accelerant_quality = 10
 
 /datum/reagent/fuel/define_gas()
 	var/datum/gas/G = ..()
@@ -2352,10 +2386,12 @@
 		L.ForceContractDisease(new /datum/disease/transformation/gondola(), FALSE, TRUE)
 
 /datum/reagent/moonsugar
-	name = "Moonsugar"
+	name = "Moon Sugar"
 	description = "The primary precursor for an ancient feline delicacy known as skooma. While it has no notable effects on it's own, mixing it with morphine in a chilled container may yield interesting results."
 	color = "#FAEAFF"
 	taste_description = "synthetic catnip"
+	glass_name = "Moon Sugar"
+	glass_desc = "They say it's not addictive unlike skooma, so it's safe to drink it... maybe..."
 	value = REAGENT_VALUE_UNCOMMON
 
 /datum/reagent/moonsugar/on_mob_life(mob/living/carbon/M)

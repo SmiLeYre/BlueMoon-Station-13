@@ -65,6 +65,14 @@
 		if(display_error)
 			to_chat(owner, "<span class='warning'>Your victim has no blood to take.</span>")
 		return FALSE
+	// BLUEMOON ADD START - вампиры, чтобы не быть перебафанными, не могут питаться персонажами, которыми не управляли игроки
+	if(iscarbon(target))
+		var/mob/living/carbon/C = target
+		if(!C.last_mind)
+			if(display_error)
+				to_chat(owner, "<span class='warning'>Your victim's blood is too thin and won't sate your hunger. (You must hunt for characters of other players)</span>")
+			return FALSE
+	// BLUEMOON ADD END
 	if(ishuman(target))
 		var/mob/living/carbon/human/H = target
 		if(!H.can_inject(owner, TRUE, BODY_ZONE_HEAD) && target == owner.pulling && owner.grab_state < GRAB_AGGRESSIVE)

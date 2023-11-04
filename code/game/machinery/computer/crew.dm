@@ -158,6 +158,8 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 					continue
 
 				I = H.wear_id ? H.wear_id.GetID() : null
+				if(!I)
+					I = H.wear_neck ? H.wear_neck.GetID() : null
 
 				if (I)
 					name = I.registered_name

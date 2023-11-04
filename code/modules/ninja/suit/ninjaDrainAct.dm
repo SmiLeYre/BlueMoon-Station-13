@@ -203,6 +203,20 @@
 		if(objective && objective.doors_required <= ninja_gloves.door_hack_counter)
 			objective.completed = TRUE
 
+/obj/machinery/door/window/ninjadrain_act(obj/item/clothing/suit/space/space_ninja/ninja_suit, mob/living/carbon/human/ninja, obj/item/clothing/gloves/space_ninja/ninja_gloves)
+	if(!ninja_suit || !ninja || !ninja_gloves)
+		return INVALID_DRAIN
+
+	if(!operating && density && hasPower() && !(obj_flags & EMAGGED))
+		emag_act()
+		ninja_gloves.door_hack_counter++
+		var/datum/antagonist/ninja/ninja_antag = ninja.mind.has_antag_datum(/datum/antagonist/ninja)
+		if(!ninja_antag)
+			return
+		var/datum/objective/door_jack/objective = locate() in ninja_antag.objectives
+		if(objective && objective.doors_required <= ninja_gloves.door_hack_counter)
+			objective.completed = TRUE
+
 //WIRE//
 /obj/structure/cable/ninjadrain_act(obj/item/clothing/suit/space/space_ninja/ninja_suit, mob/living/carbon/human/ninja, obj/item/clothing/gloves/space_ninja/ninja_gloves)
 	if(!ninja_suit || !ninja || !ninja_gloves)

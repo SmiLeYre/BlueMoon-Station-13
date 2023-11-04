@@ -79,6 +79,11 @@
 	mood_change = 3
 	timeout = 2400
 
+/datum/mood_event/favorite_food/russian
+	description = "<span class='nicegreen'>Ммм... наконец-то, блядь, нормальная еда... водка!</span>\n"
+	mood_change = 6
+	timeout = 4800
+
 /datum/mood_event/gross_food
 	description = "<span class='warning'>Мне вообще не понравилась эта еда.</span>\n"
 	mood_change = -2

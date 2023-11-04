@@ -7,6 +7,7 @@
 	var/mode = "normal"
 	var/intencity
 	var/on = 0
+	item_chair = null // нельзя брать в руки
 
 /obj/structure/chair/sybian/New()
 	..()

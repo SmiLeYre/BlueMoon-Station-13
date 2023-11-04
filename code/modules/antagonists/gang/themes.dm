@@ -15,14 +15,14 @@
 	///If this isn't null, everyone gets this objective.
 	var/list/everyone_objective = null
 	///How many gangsters should each gang start with? Recommend to keep this in the ballpark of ensuring 9-10 total gangsters spawn.
-	var/starting_gangsters = 8
+	var/starting_gangsters = 3
 
 /datum/gang_theme/goodfellas
 	name = "Хорошие Парни"
 	description = "Вы слушаете 108.9 Swing, весь джаз, всю ночь напролет, без рекламы. Мы хотели бы воспользоваться этим временем, чтобы напомнить вам, чтобы вы избегали прокуренных подсобных помещений и \
 	подозрительных личностей в костюмах и шляпах. Не заключайте сделок, за которые не сможете расплатиться."
 	involved_gangs = list(/datum/antagonist/gang/russian_mafia, /datum/antagonist/gang/italian_mob)
-	starting_gangsters = 8
+	starting_gangsters = 3
 	gang_objectives = list(
 
 		/datum/antagonist/gang/russian_mafia = "Здравствуйте, товарищ. Наши показатели падают. Нам нужно, чтобы ты поднял эти показатели. \
@@ -41,7 +41,7 @@
 	кто заберет домой кубок BIG GAME MMDXXXVIII - это Sybil Slickers и Basil Boys! В настоящее время между этими командами идет спор, кто же одержит победу? Это зависит \
 	от команд и тренеров! Играем в мяч!"
 	involved_gangs = list(/datum/antagonist/gang/sybil_slickers, /datum/antagonist/gang/basil_boys)
-	starting_gangsters = 8
+	starting_gangsters = 3
 	gang_objectives = list(
 
 		/datum/antagonist/gang/sybil_slickers = "Итак, наступил БОЛЬШОЙ ДЕНЬ БОЛЬШОЙ ИГРЫ MMDXXXVIII! Подготовьте своих игроков к игре, и \
@@ -61,7 +61,7 @@
 	По слухам, в этом районе происходит куча костюмированных суперзлодеев! Следите за злым смехом, драматическими открытиями и яркими костюмами! \
 	Если вы заметите легендарных агентов O.S.I., пожалуйста, позвоните на наш номер 867-5309! Люди могут назвать меня сумасшедшим, но я клянусь, что они существуют!"
 	involved_gangs = list(/datum/antagonist/gang/henchmen, /datum/antagonist/gang/osi)
-	starting_gangsters = 8
+	starting_gangsters = 3
 	gang_objectives = list(
 
 		/datum/antagonist/gang/henchmen = "ХЕНЧМЕНЫ! Это я, ваш начальник, МОНАРХ! Я послал вас на эту жалкую станцию с одной целью, и только с одной! \
@@ -84,7 +84,7 @@
 	Также есть относительно радикальный лагерь для любителей серии SMT с позицией 'Все игры франшизы SMT считаются SMT играми', они зовутся Phantom Thieves of Hearts! \
 	Мы вернемся к дебатам после того, как будет получено сообщение от наших спонсоров!"
 	involved_gangs = list(/datum/antagonist/gang/jackbros, /datum/antagonist/gang/phantom)
-	starting_gangsters = 8
+	starting_gangsters = 3
 	gang_objectives = list(
 
 		/datum/antagonist/gang/jackbros = "Привет, друзья! У нас сегодня в космосе прохладная станция! \
@@ -106,7 +106,7 @@
 	Помните, ковбои и ковбойши, если вы услышали это на моей радиостанции, это не значит, что вы должны это делать! \
 	Если вы увидите бандитов и грабителей поездов, обязательно сообщите об этом в местный отдел шерифа!"
 	involved_gangs = list(/datum/antagonist/gang/dutch, /datum/antagonist/gang/driscoll)
-	starting_gangsters = 8
+	starting_gangsters = 3
 	gang_objectives = list(
 
 		/datum/antagonist/gang/dutch = "Послушайте, ребята, у меня есть план. \
@@ -130,7 +130,7 @@
 	от спонсора сегодняшней программы, компании Majima Construction: Мы строим дерьмо!"
 	involved_gangs = list(/datum/antagonist/gang/yakuza, /datum/antagonist/gang/irs)
 	bonus_first_gangster_items = list(/obj/item/storage/secure/briefcase/syndie) // the cash
-	starting_gangsters = 8
+	starting_gangsters = 3
 	gang_objectives = list(
 
 		/datum/antagonist/gang/yakuza = "Добро пожаловать на станцию, новобранец. Мы, компания Majima Construction, являемся легальным предприятием, и т.д. и т.п. \

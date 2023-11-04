@@ -7950,6 +7950,9 @@
 /obj/structure/table,
 /obj/item/reagent_containers/spray/cleaner,
 /obj/item/reagent_containers/spray/cleaner,
+/obj/structure/reagent_dispensers/spacecleanertank{
+	pixel_y = 30
+	},
 /turf/open/floor/plasteel,
 /area/service/janitor)
 "uA" = (
@@ -8721,6 +8724,7 @@
 /obj/structure/sink{
 	pixel_y = 22
 	},
+/obj/structure/reagent_dispensers/watertank/high,
 /turf/open/floor/plasteel,
 /area/service/janitor)
 "wA" = (

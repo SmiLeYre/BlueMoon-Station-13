@@ -80,12 +80,10 @@
 /area/shuttle/lambda)
 "F" = (
 /obj/structure/closet,
-/obj/item/clothing/suit/space/hardsuit/ert/alert/sec{
-	name = "reinforced security suit"
-	},
-/obj/item/clothing/suit/space/hardsuit/ert/alert/sec{
-	name = "reinforced security suit"
-	},
+/obj/item/clothing/suit/armor/heavy/juggernaut,
+/obj/item/clothing/head/helmet/juggernaut,
+/obj/item/clothing/suit/armor/heavy/juggernaut,
+/obj/item/clothing/head/helmet/juggernaut,
 /obj/item/clothing/suit/space/hardsuit/syndi,
 /obj/item/clothing/suit/space/hardsuit/syndi,
 /turf/open/floor/pod/light,

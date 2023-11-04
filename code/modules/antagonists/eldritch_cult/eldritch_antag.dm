@@ -16,6 +16,8 @@
 	var/ascended = FALSE
 	var/datum/mind/yandere
 
+	reminded_times_left = 2 // BLUEMOON ADD
+
 /datum/antagonist/heretic/admin_add(datum/mind/new_owner,mob/admin)
 	give_equipment = TRUE
 	new_owner.add_antag_datum(src)

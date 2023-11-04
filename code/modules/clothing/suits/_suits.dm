@@ -26,7 +26,7 @@
 		var/mob/living/carbon/human/M = loc
 		if(!ishuman(loc))
 			return
-		if(!isvox(M) || !isplasmaman(M))
+		if(istype(M) || M.dna || M.dna.species || M.dna.species.can_wag_tail(M) || !isvox(M))
 			if(M.dna.features["tail_primary"] && M.dna.features["tail_secondary"])
 				var/tail_under_suit = tail_suit_worn_overlay || 'modular_bluemoon/SmiLeY/icons/mob/clothing/tails_digi.dmi'
 				. += mutable_appearance(tail_under_suit, tail_state)

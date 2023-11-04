@@ -71632,13 +71632,6 @@
 /obj/item/stack/sheet/cardboard{
 	amount = 14
 	},
-/obj/item/radio/intercom{
-	desc = "Talk through this. It looks like it has been modified to not broadcast.";
-	name = "Prison Intercom (General)";
-	pixel_x = -1;
-	pixel_y = 30;
-	prison_radio = 1
-	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
@@ -73828,6 +73821,12 @@
 	id = "permaextwindow2";
 	name = "Privacy Shutters";
 	pixel_x = 25
+	},
+/obj/item/radio/intercom{
+	desc = "Talk through this. It looks like it has been modified to not broadcast.";
+	name = "Prison Intercom (General)";
+	prison_radio = 1;
+	pixel_y = -30
 	},
 /turf/open/floor/plasteel/chapel_floor,
 /area/security/prison/upper)
@@ -107219,6 +107218,9 @@
 	},
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
+	},
+/obj/structure/reagent_dispensers/spacecleanertank{
+	pixel_x = -30
 	},
 /turf/open/floor/plasteel,
 /area/service/janitor)

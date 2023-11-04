@@ -50,7 +50,7 @@
 
 /obj/item/paper/fluff/balls/spookyasylum/healstaffnote
     name = "Shipping Manifest 'Healing Staves'"
-    info = "Contained in this chest are several magical healing staves created by NT sanctioned warlocks, please use them in the event an employee is injured during the festivities. We hope you have a safe and enjoyable celebration, remember you are expected to return to work promptly at its conclusion.<br>We apologize in the unlikely event the contents of the crate are scattered around the asylum by its teleportation."
+	default_raw_text = "Contained in this chest are several magical healing staves created by NT sanctioned warlocks, please use them in the event an employee is injured during the festivities. We hope you have a safe and enjoyable celebration, remember you are expected to return to work promptly at its conclusion.<br>We apologize in the unlikely event the contents of the crate are scattered around the asylum by its teleportation."
 
 //Dorm Buttons
 

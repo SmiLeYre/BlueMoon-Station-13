@@ -67,8 +67,11 @@
 	var/obj/item/pda/pda = wear_id
 	var/obj/item/card/id/id = wear_id
 	var/obj/item/modular_computer/tablet/tablet = wear_id
-	if(istype(wallet))
+	var/obj/item/clothing/neck/petcollar/petcollar = wear_neck
+	if(istype(wallet) && wallet.front_id)
 		id = wallet.front_id
+	if(istype(petcollar) && petcollar.access_id)
+		id = petcollar.access_id
 	if(istype(id))
 		. = id.registered_name
 	else if(istype(pda))
@@ -90,6 +93,8 @@
 	var/obj/item/card/id/id_card = wear_id?.GetID()
 	if(!id_card)
 		id_card = belt?.GetID()
+	if(!id_card)
+		id_card = wear_neck?.GetID()
 	return id_card || .
 
 /mob/living/carbon/human/IsAdvancedToolUser()
@@ -102,7 +107,7 @@
 	// if it returns 0, it will run the usual on_mob_life for that reagent. otherwise, it will stop after running handle_chemicals for the species.
 
 /mob/living/carbon/human/can_track(mob/living/user)
-	if(wear_id && istype(wear_id.GetID(), /obj/item/card/id/syndicate))
+	if((wear_id && istype(wear_id?.GetID(), /obj/item/card/id/syndicate)) || (wear_neck && istype(wear_neck?.GetID(), /obj/item/card/id/syndicate)))
 		return 0
 	if(istype(head, /obj/item/clothing/head))
 		var/obj/item/clothing/head/hat = head

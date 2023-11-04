@@ -24,8 +24,6 @@
 
 	var/static/regex/ic_filter_regex
 
-	var/deathmatch_arena = TRUE
-
 /datum/controller/configuration/proc/admin_reload()
 	if(IsAdminAdvancedProcCall())
 		return

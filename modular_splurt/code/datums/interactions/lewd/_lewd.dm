@@ -29,9 +29,9 @@
 	var/list/moans
 	if(isalien(src))
 		moans = list('sound/voice/hiss6.ogg')
-	else if(gender == FEMALE)
+	else if(gender == FEMALE || (gender == PLURAL && isfeminine(src)))
 		moans = list('modular_splurt/sound/voice/moan_f1.ogg', 'modular_splurt/sound/voice/moan_f2.ogg', 'modular_splurt/sound/voice/moan_f3.ogg', 'modular_splurt/sound/voice/moan_f4.ogg', 'modular_splurt/sound/voice/moan_f5.ogg', 'modular_splurt/sound/voice/moan_f6.ogg', 'modular_splurt/sound/voice/moan_f7.ogg')
-	else
+	else if(gender != FEMALE || (gender == PLURAL && ismasculine(src)))
 		moans = list('modular_splurt/sound/voice/moan_m1.ogg', 'modular_splurt/sound/voice/moan_m2.ogg', 'modular_splurt/sound/voice/moan_m3.ogg')
 	playlewdinteractionsound(src, pick(moans), 50, 1, 4, 1.2, ignored_mobs = get_unconsenting())
 
@@ -210,13 +210,13 @@
 			to_chat(src, "<font color='red'> Теперь ты раб <b>[W]</b>! Служи, служи и ещё раз служи!!! </font>")
 	if(!message)
 		return ..()
-	if(gender == MALE)
+	if(gender == MALE || (gender == PLURAL && ismasculine(src)))
 		playlewdinteractionsound(loc, pick('modular_sand/sound/interactions/final_m1.ogg',
 							'modular_sand/sound/interactions/final_m2.ogg',
 							'modular_sand/sound/interactions/final_m3.ogg',
 							'modular_sand/sound/interactions/final_m4.ogg',
 							'modular_sand/sound/interactions/final_m5.ogg'), 90, 1, 0)
-	else if(gender == FEMALE)
+	else if(gender == FEMALE || (gender == PLURAL && isfeminine(src)))
 		playlewdinteractionsound(loc, pick('modular_sand/sound/interactions/final_f1.ogg',
 							'modular_sand/sound/interactions/final_f2.ogg',
 							'modular_sand/sound/interactions/final_f3.ogg'), 70, 1, 0)

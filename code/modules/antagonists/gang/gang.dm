@@ -30,6 +30,8 @@
 	/// A reference to the handler datum that manages the families gamemode. In case of no handler (admin-spawned during round), this will be null; this is fine.
 	var/datum/gang_handler/handler
 	soft_antag = FALSE // BLUEMOON ADDITION
+	reminded_times_left = 1 // BLUEMOON ADD - 1 напоминания достаточно, чтобы не играли в мирномага
+	time_needed_to_remind = 5 MINUTES // BLUEMOON ADD
 
 /datum/outfit/gangster
 	name = "Gangster (Preview only)"

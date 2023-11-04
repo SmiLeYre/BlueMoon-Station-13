@@ -1,5 +1,8 @@
 /obj/item/organ/genital/penis
-	name = "Член"
+	name = "член"
+	ru_name = "член" // BLUEMOON ADD
+	ru_name_v = "члене" // BLUEMOON ADD
+	ru_name_capital = "Член" // BLUEMOON ADD
 	desc = "A male reproductive organ."
 	icon_state = "penis"
 	icon = 'icons/obj/genitals/penis.dmi'

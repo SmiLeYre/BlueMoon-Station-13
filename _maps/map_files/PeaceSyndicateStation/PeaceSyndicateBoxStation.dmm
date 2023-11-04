@@ -32089,6 +32089,9 @@
 	},
 /obj/item/pen,
 /obj/item/key/janitor,
+/obj/structure/reagent_dispensers/spacecleanertank{
+	pixel_y = -30
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/service/janitor)
 "bDr" = (

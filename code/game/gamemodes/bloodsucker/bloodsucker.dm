@@ -184,6 +184,8 @@
 		H.set_species(/datum/species/human)
 		H.real_name = H.client.prefs.custom_names["human"]
 		var/obj/item/card/id/ID = H.wear_id?.GetID()
+		if(!ID)
+			ID = H.wear_neck?.GetID()
 		if(ID)
 			ID.registered_name = H.real_name
 			ID.update_label()

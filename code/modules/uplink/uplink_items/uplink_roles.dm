@@ -232,7 +232,7 @@
 /datum/uplink_item/role_restricted/taeclowndo_shoes
 	name = "Tae-clown-do Shoes"
 	desc = "A pair of shoes for the most elite agents of the honkmotherland. They grant the mastery of taeclowndo with some honk-fu moves as long as they're worn."
-	cost = 14
+	cost = 7
 	item = /obj/item/clothing/shoes/clown_shoes/taeclowndo
 	restricted_roles = list("Clown")
 
@@ -272,3 +272,10 @@
 	restricted_roles = list("Virologist")
 	surplus = 0
 	hijack_only = TRUE
+
+/datum/uplink_item/role_restricted/energizedfireaxe
+	name = "Energized Fire Axe"
+	desc = "A fire axe with a massive energy charge built into it. Upon striking someone while charged it will throw them backwards while stunning them briefly, but will take some time to charge up again. It is also much sharper than a regular axe and can pierce light armor."
+	item = /obj/item/fireaxe/energized
+	cost = 4
+	restricted_roles = list("Chief Engineer", "Station Engineer", "Atmospheric Technician")

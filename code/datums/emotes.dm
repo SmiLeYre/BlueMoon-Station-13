@@ -20,6 +20,13 @@
 	var/static/list/emote_list = list()
 	var/static/regex/stop_bad_mime = regex(@"says|exclaims|yells|asks")
 
+	/**
+	 * Delay for emotes: for all emotes default = 0, for audio ones = 1 SECONDS (is determined later).
+	 * If ==0, the emote doesn't not create a delay and also ignores it.
+	 * If >0, takes into account the delay and adds its own delay.
+	 */
+	var/emote_cooldown = 0
+
 	var/chat_popup = TRUE //Skyrat edit
 	var/image_popup
 
@@ -41,7 +48,7 @@
 
 /datum/emote/proc/run_emote(mob/user, params, type_override, intentional = FALSE)
 	. = TRUE
-	if(!can_run_emote(user, TRUE, intentional))
+	if(!can_run_emote(user, TRUE, intentional) || (user.nextsoundemote >= world.time && emote_cooldown))
 		return FALSE
 	var/msg = select_message_type(user)
 	if(params && message_param)
@@ -80,6 +87,8 @@
 	if(image_popup)
 		flick_emote_popup_on_mob(user, image_popup, 40)
 	//End of skyrat changes
+	if(emote_cooldown)
+		user.nextsoundemote = world.time + emote_cooldown
 
 /datum/emote/proc/replace_pronoun(mob/user, message)
 	if(findtext(message, "their"))
@@ -94,9 +103,9 @@
     . = message
     var/sound
     if(!muzzle_ignore && user.is_muzzled() && emote_type == EMOTE_AUDIBLE)
-        if(user.gender == FEMALE)
+        if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
             sound = pick('modular_splurt/sound/voice/moan_f1.ogg', 'modular_splurt/sound/voice/moan_f2.ogg', 'modular_splurt/sound/voice/moan_f3.ogg', 'modular_splurt/sound/voice/moan_f4.ogg', 'modular_splurt/sound/voice/moan_f5.ogg', 'modular_splurt/sound/voice/moan_f6.ogg', 'modular_splurt/sound/voice/moan_f7.ogg')
-        else
+        else if(user.gender != FEMALE || (user.gender == PLURAL && ismasculine(user)))
             sound = pick('modular_splurt/sound/voice/moan_m1.ogg', 'modular_splurt/sound/voice/moan_m2.ogg', 'modular_splurt/sound/voice/moan_m3.ogg')
         playsound(user.loc, sound, 50, 1, 4, 1.2)
         return "makes a [pick("strong ", "weak ", "")]noise."
@@ -162,6 +171,7 @@
 	var/vary = FALSE	//used for the honk borg emote
 	var/volume = 50
 	mob_type_allowed_typecache = list(/mob/living/brain, /mob/living/silicon, /mob/camera/aiEye)
+	emote_cooldown = 1 SECONDS
 
 /datum/emote/sound/run_emote(mob/user, params)
 	. = ..()

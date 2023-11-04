@@ -303,7 +303,7 @@
 	mix_sound = 'sound/weapons/taser.ogg'
 
 /datum/chemical_reaction/twinkjuice
-	name = "Twink Juice"
+	name = "Boy Kisser"
 	id = /datum/reagent/consumable/ethanol/twinkjuice
 	results = list(/datum/reagent/consumable/ethanol/twinkjuice = 6)
 	required_reagents = list(

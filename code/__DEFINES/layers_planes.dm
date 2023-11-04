@@ -222,8 +222,6 @@
 #define ABOVE_SINGULARITY_LAYER 2
 
 #define FOV_EFFECTS_LAYER 2 //Blindness effects are not layer 4, they lie to you
-/// A value of /datum/preference/numeric/multiz_performance that disables the option
-#define MULTIZ_PERFORMANCE_DISABLE -1
 
 //Plane master critical flags
 //Describes how different plane masters behave when they are being culled for performance reasons

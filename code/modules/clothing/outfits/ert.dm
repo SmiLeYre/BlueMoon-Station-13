@@ -10,6 +10,8 @@
 	l_pocket = /obj/item/extinguisher/mini
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 
+	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
+
 /datum/outfit/ert/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	if(visualsOnly)
 		return
@@ -232,8 +234,8 @@
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/storage/firstaid/tactical=1,\
 		/obj/item/crowbar/power=1,\
-		/obj/item/rcd_ammo/large=2,\
-		/obj/item/construction/rcd/loaded=1)
+		/obj/item/rcd_ammo/large=2)
+	l_hand = /obj/item/construction/rcd/combat
 
 /datum/outfit/ert/engineer
 	name = "ERT Engineer - Blue Alert"
@@ -249,8 +251,8 @@
 		/obj/item/melee/baton/loaded=1,\
 		/obj/item/ammo_box/magazine/wt550m9=3,\
 		/obj/item/storage/ifak=1,\
-		/obj/item/rcd_ammo/large=2,\
-		/obj/item/construction/rcd/loaded=1)
+		/obj/item/rcd_ammo/large=2)
+	l_hand = /obj/item/construction/rcd/combat
 
 /datum/outfit/ert/engineer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()

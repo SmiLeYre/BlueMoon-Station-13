@@ -204,7 +204,7 @@
 	spell = /obj/effect/proc_holder/spell/aimed/fireball
 	spellname = "fireball"
 	icon_state ="bookfireball"
-	desc = "This book feels warm to the touch."
+	desc = "Эта книга ощущается тёплой..."
 	remarks = list("Aim...AIM, FOOL!", "Just catching them on fire won't do...", "Accounting for crosswinds... really?", "I think I just burned my hand...", "Why the dumb stance? It's just a flick of the hand...", "OMEE... ONI... Ugh...", "What's the difference between a fireball and a pyroblast...")
 
 /obj/item/book/granter/spell/fireball/recoil(mob/user)

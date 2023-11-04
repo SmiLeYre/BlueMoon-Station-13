@@ -3,15 +3,16 @@
 	key_third_person = "cries"
 	message = "рыдает."
 	emote_type = EMOTE_AUDIBLE
+	emote_cooldown = 4 SECONDS
 
 /datum/emote/living/carbon/human/cry/run_emote(mob/user, params)
 	. = ..()
 	var/mob/living/carbon/C = user
 	if(. && isrobotic(user))
 		do_fake_sparks(5,FALSE,user)
-	if(user.gender == FEMALE)
+	if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
 		playsound(C, pick('sound/voice/female_cry1.ogg', 'sound/voice/female_cry2.ogg'), 50, 1)
-	else
+	else if(user.gender != FEMALE || (user.gender == PLURAL && ismasculine(user)))
 		playsound(C, pick('sound/voice/male_cry1.ogg', 'sound/voice/male_cry2.ogg'), 50, 1)
 
 /datum/emote/living/carbon/human/dap
@@ -51,6 +52,7 @@
 	key_third_person = "mawps"
 	message = "раздраженно бормочет что-то на своём."
 	emote_type = EMOTE_AUDIBLE
+	emote_cooldown = 8 SECONDS
 
 /datum/emote/living/carbon/human/mawp/run_emote(mob/living/user, params)
 	. = ..()
@@ -58,10 +60,7 @@
 		if(ishuman(user))
 			if(prob(10))
 				user.adjustEarDamage(-5, -5)
-	if(user.nextsoundemote >= world.time)
-		return
-	user.nextsoundemote = world.time + 7
-	playsound(user, 'modular_citadel/sound/voice/purr.ogg', 50, 1, -1)
+	playsound(user, 'modular_citadel/sound/voice/purr.ogg', 50, 1, -1)	//почему мурчание?
 
 /datum/emote/living/carbon/human/mumble
 	key = "mumble"
@@ -216,6 +215,7 @@
 	key_third_person = "syndicates"
 	message = "получает миссию со стороны Синдиката."
 	sound = 'sound/voice/syndicate.ogg'
+	emote_cooldown = 8 SECONDS
 
 //rock paper scissors emote handling
 /mob/living/carbon/human/proc/beginRockPaperScissors(var/chosen_move)

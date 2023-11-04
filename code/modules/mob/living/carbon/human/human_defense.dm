@@ -620,7 +620,7 @@
 						to_send += "\n\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>В вашей [LB.ru_name_v] застрял \a [I]!</a>"
 
 			for(var/t in missing)
-				to_send += "<span class='boldannounce'>Ваша [parse_zone(t)] отсутствует!</span>\n"
+				to_send += "<span class='boldannounce'>Ваша [ru_parse_zone(t)] отсутствует!</span>\n"
 
 			if(is_bleeding())
 				var/list/obj/item/bodypart/bleeding_limbs = list()

@@ -341,7 +341,7 @@
 
 			else
 				friendly_check = TRUE
-				if (iscatperson(H) && prob(50)) //felinids love headpats
+				if(iscatperson(H)) //felinids love headpats
 					H.emote("purr")
 				if(HAS_TRAIT(H, TRAIT_HEADPAT_SLUT))
 					M.visible_message("<span class='notice'><b>[M]</b> похлопывает <b>[src]</b> по голове! Он[ru_a()] выглядит невероятно довольно!</span>", \
