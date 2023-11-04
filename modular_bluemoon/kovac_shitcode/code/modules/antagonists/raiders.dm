@@ -222,6 +222,9 @@
 	armor = list(MELEE = 50, BULLET = 30, LASER = 30, ENERGY = 30, BOMB = 50, BIO = 0, RAD = 0, FIRE = 90, ACID = 90)
 	faction = list("InteQ")
 
+/obj/machinery/porta_turret/syndicate/energy/pirate/inteq/assess_perp(mob/living/carbon/human/perp)
+	return 10
+
 /obj/machinery/mineral/ore_redemption/inteq
 	req_access = list(ACCESS_SYNDICATE)
 
