@@ -552,8 +552,8 @@
 					remove_status_effect(STATUS_EFFECT_CHOKINGSTRAND)
 				return
 			var/to_send = "<div class='info'>"
-			visible_message("[src] осматривает себя.", "")
-			to_send += "<span class='notice'>Вы осматриваете себя на предмет повреждений.</span>\n"
+			visible_message("<span class='notice'>[src] осматривает себя.</span>","")
+			to_send += "<span class='notice'><center><b>Вы осматриваете себя</b></span></center><hr>"
 
 			var/list/missing = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 			for(var/X in bodyparts)
@@ -595,6 +595,8 @@
 
 					if(status == "")
 						status = "в норме"
+						if(LB.wounds)
+							status = "имеет увечье."
 				var/no_damage
 				if(status == "в норме" || status == "не повреждена")
 					no_damage = TRUE
@@ -605,20 +607,20 @@
 					var/msg
 					switch(W.severity)
 						if(WOUND_SEVERITY_TRIVIAL)
-							msg = "<span class='danger'>Ваша [LB.ru_name] страдает от [lowertext(W.ru_name_r)].</span>\n"
+							msg = "<span class='danger'>Она страдает от [lowertext(W.ru_name_r)].</span>\n"
 						if(WOUND_SEVERITY_MODERATE)
-							msg = "<span class='warning'>Ваша [LB.ru_name] страдает от [lowertext(W.ru_name_r)]!</span>\n"
+							msg = "<span class='warning'>Она страдает от [lowertext(W.ru_name_r)]!</span>\n"
 						if(WOUND_SEVERITY_SEVERE)
-							msg = "<span class='warning'><b>Ваша [LB.ru_name] страдает от [lowertext(W.ru_name_r)]!</b></span>\n"
+							msg = "<span class='warning'><b>Она страдает от [lowertext(W.ru_name_r)]!</b></span>\n"
 						if(WOUND_SEVERITY_CRITICAL)
-							msg = "\t <span class='warning'><b>Ваша [LB.ru_name] страдает от [lowertext(W.ru_name_r)]!!</b></span>\n"
-					to_send += "\n[msg]"
+							msg = "<span class='warning'><b>Она страдает от [lowertext(W.ru_name_r)]!!</b></span>\n"
+					to_send += "   [msg]"
 
 				for(var/obj/item/I in LB.embedded_objects)
 					if(I.isEmbedHarmless())
-						to_send += "\n\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>В вашей [LB.ru_name_v] прорезался \a [I]!</a>"
+						to_send += "\n\t<a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>В вашей [LB.ru_name_v] прорезался \a [I]!</a>"
 					else
-						to_send += "\n\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>В вашей [LB.ru_name_v] застрял \a [I]!</a>"
+						to_send += "\n\t<a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>В вашей [LB.ru_name_v] застрял \a [I]!</a>"
 
 			for(var/t in missing)
 				to_send += "<span class='boldannounce'>Ваша [ru_parse_zone(t)] отсутствует!</span>\n"
