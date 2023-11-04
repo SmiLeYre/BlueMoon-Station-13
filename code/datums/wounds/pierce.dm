@@ -156,8 +156,8 @@
 		limb.receive_damage(burn = 2 + severity, wound_bonus = CANT_WOUND)
 		if(prob(30))
 			victim.emote("scream")
-		var/blood_cauterized = (0.6 / self_penalty_mult) * 0.5
-		blood_flow -= blood_cauterized
+	var/blood_cauterized = (0.6 / self_penalty_mult) * 0.5
+	blood_flow -= blood_cauterized
 
 	if(blood_flow > 0)
 		try_treating(I, user)

@@ -539,7 +539,8 @@
 		. = disabled //inertia, to avoid limbs healing 0.1 damage and being re-enabled
 		if(get_damage(TRUE) >= disable_threshold * (HAS_TRAIT(owner, TRAIT_EASYLIMBDISABLE) ? 0.6 : 1)) //Easy limb disable disables the limb at 40% health instead of 0%
 			if(!last_maxed && !silent)
-				owner.emote("scream")
+				if(!HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+					owner.emote("scream")
 				last_maxed = TRUE
 			if(!is_organic_limb(FALSE) || stamina_dam >= disable_threshold)
 				return BODYPART_DISABLED_DAMAGE
@@ -995,7 +996,7 @@
 	update_disabled()
 
 /obj/item/bodypart/proc/get_bleed_rate()
-	if(!is_organic_limb()) // maybe in the future we can bleed oil from aug parts, but not now
+	if(!is_organic_limb() && !HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON EDIT - добавлена проверка на robotic_organism
 		return
 	var/bleed_rate = 0
 	if(generic_bleedstacks > 0)

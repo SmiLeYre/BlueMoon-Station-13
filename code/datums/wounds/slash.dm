@@ -227,8 +227,8 @@
 		limb.receive_damage(burn = 2 + severity, wound_bonus = CANT_WOUND)
 		if(prob(30))
 			victim.emote("scream")
-		var/blood_cauterized = (0.6 / self_penalty_mult)
-		blood_flow -= blood_cauterized
+	var/blood_cauterized = (0.6 / self_penalty_mult)
+	blood_flow -= blood_cauterized
 
 	if(blood_flow > minimum_flow)
 		try_treating(I, user)
@@ -282,11 +282,12 @@
 /datum/wound/slash/moderate/apply_typo_modification()
 	if(HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM))
 		ru_name = "Прорезь обшивки"
-		ru_name_r = "прорезь обшивки"
+		ru_name_r = "прорези обшивки"
 		desc = "В обшивке заметный порез, приводящий к умеренной потери жидкостей."
 		treat_text = "Сварить обшивку сваркой."
 		examine_desc = "прорезана"
 		occur_text = "надрывается, образуя прорезь в обшивке, из которой течёт чёрная жижа"
+		clot_rate = 0
 		wound_flags = FLESH_WOUND
 		treatable_tool = TOOL_WELDER
 	return
@@ -321,6 +322,7 @@
 		treat_text = "Сварить обшивку сваркой."
 		examine_desc = "сильно надорвана"
 		occur_text = "надрывается от удара, расплёскивая чёрную жижу вокруг"
+		clot_rate = 0
 		wound_flags = FLESH_WOUND
 		treatable_tool = TOOL_WELDER
 // BLUEMOON ADD END
@@ -355,6 +357,7 @@
 		treat_text = "Сварить разрез сваркой и пополнить запасы гидравлической жидкости."
 		examine_desc = "разорвана до внутренностей, искриться"
 		occur_text = "разрывается, показывая провада в снопах искр и разбрызгивая чёрную жижу под напором"
+		clot_rate = 0
 		wound_flags = (FLESH_WOUND | MANGLES_FLESH)
 		treatable_tool = TOOL_WELDER
 
