@@ -596,7 +596,7 @@
 					if(status == "")
 						status = "в норме"
 						if(LB.wounds)
-							status = "имеет увечье."
+							status = "имеет увечье"
 				var/no_damage
 				if(status == "в норме" || status == "не повреждена")
 					no_damage = TRUE
