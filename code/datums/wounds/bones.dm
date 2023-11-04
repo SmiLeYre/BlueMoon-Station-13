@@ -15,6 +15,8 @@
 	var/taped
 	/// Have we been bone gel'd?
 	var/gelled
+	/// Наногель нанесён?
+	var/nano_gelled // BLUEMOON ADD
 	/// If we did the gel + surgical tape healing method for fractures, how many regen points we need
 	var/regen_points_needed
 	/// Our current counter for gel + surgical tape regeneration
@@ -73,7 +75,10 @@
 	if(prob(severity * 2))
 		victim.take_bodypart_damage(rand(2, severity * 2), stamina=rand(2, severity * 2.5), wound_bonus=CANT_WOUND)
 		if(prob(33))
-			to_chat(victim, "<span class='danger'>Вы ощущаете острую боль в теле, пока ваши кости восстанавливаются!</span>")
+			if(HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM))
+				to_chat(victim, "<span class='danger'>Ваша гидравлика продолжает восстанавливаться, в процессе надрывая обшивку рядом!</span>")
+			else
+				to_chat(victim, "<span class='danger'>Вы ощущаете острую боль в теле, пока ваши кости восстанавливаются!</span>")
 
 	if(regen_points_current > regen_points_needed)
 		if(!victim || !limb)
@@ -350,6 +355,20 @@
 	internal_bleeding_chance = 40
 	wound_flags = (BONE_WOUND | ACCEPTS_GAUZE | MANGLES_BONE)
 
+// BLUEMOON ADD START - модификатор текста, чтобы у синтетиков не "ломались кости", а были "повреждены приводы", оставляя суть травмы без изменений.
+/datum/wound/blunt/severe/apply_typo_modification()
+	if(HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM))
+		ru_name = "Повреждение гидравлики"
+		ru_name_r = "Повреждения гидравлики"
+		desc = "Гидравлика сильно повреждена и треснула. Серьёзно ухудшает моторику."
+		treat_text = "Глубокий ремонт (или нанесение наногеля на поврежденный привод)."
+		examine_desc = "трешит и хрустит"
+		occur_text = "трешит с неприятным звуком"
+		wound_flags = (BONE_WOUND | MANGLES_BONE)
+		treatable_by = list(/obj/item/stack/medical/nanogel)
+	return
+// BLUEMOON ADD END
+
 /datum/wound/blunt/critical
 	name = "Compound Fracture"
 	ru_name = "Открытый перелом"
@@ -374,12 +393,48 @@
 	internal_bleeding_chance = 60
 	wound_flags = (BONE_WOUND | ACCEPTS_GAUZE | MANGLES_BONE)
 
+// BLUEMOON ADD START - модификатор текста, чтобы у синтетиков не "ломались кости", а были "повреждены приводы", оставляя суть травмы без изменений.
+/datum/wound/blunt/critical/apply_typo_modification()
+	if(HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM))
+		ru_name = "Разрыв гидравлики"
+		ru_name_r = "разрыва гидравлики"
+		desc = "Гидравлика переломалась и практически не функционирует."
+		treat_text = "Глубокий ремонт (или нанесение наногеля на поврежденный привод)."
+		examine_desc = "раздроблена и не работает, держась на обшивке и проводах вокруг разорванной гидравлики"
+		occur_text = "надламывается, из-за чего гидравлика выходят наружу"
+		wound_flags = (BONE_WOUND | MANGLES_BONE)
+		treatable_by = list(/obj/item/stack/medical/nanogel)
+	return
+// BLUEMOON ADD END
+
 // doesn't make much sense for "a" bone to stick out of your head
 /datum/wound/blunt/critical/apply_wound(obj/item/bodypart/L, silent, datum/wound/old_wound, smited)
 	if(L.body_zone == BODY_ZONE_HEAD && severity == WOUND_SEVERITY_CRITICAL)
 		occur_text = "раскалывается, обнажая сквозь пелену крови и плоти потрескавшийся череп"
 		examine_desc = "имеет выемку, из которой торчат куски черепа"
 	. = ..()
+
+// BLUEMOON ADD START - нанесение наногеля на рану (только для синтетиков)
+/datum/wound/blunt/proc/nanogel(obj/item/stack/medical/nanogel/I, mob/user)
+	if(nano_gelled)
+		to_chat(user, "<span class='warning'>[user == victim ? "Ваша [limb.ru_name]" : "[limb.ru_name_capital] персонажа [victim]"] уже покрыта нано гелем!</span>")
+		return
+
+	user.visible_message("<span class='danger'>[user] пытаетесь нанести [I] на [limb.ru_name] [victim]...</span>", "<span class='warning'>Вы пытаетесь нанести [I] на [limb.ru_name] [user == victim ? "" : "[victim]"].</span>")
+
+	if(!do_after(user, base_treat_time * 1.5 * (user == victim ? 1.5 : 1), target = victim, extra_checks=CALLBACK(src, .proc/still_exists)))
+		return
+
+	I.use(1)
+	user.visible_message("<span class='notice'>[user] с шипящим звуком наносит [I] на [limb.ru_name] [victim]!</span>", "<span class='notice'>Вы наносите [I] на [limb.ru_name] [victim]!</span>", ignored_mobs=victim)
+	to_chat(victim, "<span class='userdanger'>[user] наносит [I] на вашу [limb.ru_name]. Нано гель вскоре начнёт считывать данные, подбирая нужную форму для приводов.</span>")
+
+	regen_points_current = 0
+	regen_points_needed = 30 SECONDS * (user == victim ? 1.5 : 1) * (severity - 1)
+
+	nano_gelled = TRUE
+	processes = TRUE
+// BLUEMOON ADD END
 
 /// if someone is using bone gel on our wound
 /datum/wound/blunt/proc/gel(obj/item/stack/medical/bone_gel/I, mob/user)
@@ -444,6 +499,12 @@
 	processes = TRUE
 
 /datum/wound/blunt/treat(obj/item/I, mob/user)
+	// BLUEMOON ADD START - ремонт роботов наногелем
+	if(HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM))
+		if(istype(I, /obj/item/stack/medical/nanogel))
+			nanogel(I, user)
+		return
+	// BLUEMOON ADD END
 	if(istype(I, /obj/item/stack/medical/bone_gel))
 		gel(I, user)
 	else if(istype(I, /obj/item/stack/sticky_tape/surgical))
