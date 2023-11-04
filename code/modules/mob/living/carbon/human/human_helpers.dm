@@ -68,10 +68,10 @@
 	var/obj/item/card/id/id = wear_id
 	var/obj/item/modular_computer/tablet/tablet = wear_id
 	var/obj/item/clothing/neck/petcollar/petcollar = wear_neck
-	if(istype(petcollar))
-		id = petcollar.access_id
-	if(istype(wallet))
+	if(istype(wallet) && wallet.front_id)
 		id = wallet.front_id
+	if(istype(petcollar) && petcollar.access_id)
+		id = petcollar.access_id
 	if(istype(id))
 		. = id.registered_name
 	else if(istype(pda))
