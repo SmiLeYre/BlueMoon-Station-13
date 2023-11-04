@@ -68,6 +68,8 @@
 	var/obj/item/card/id/id = wear_id
 	var/obj/item/modular_computer/tablet/tablet = wear_id
 	var/obj/item/clothing/neck/petcollar/petcollar = wear_neck
+	if(istype(petcollar))
+		id = petcollar.access_id
 	if(istype(wallet))
 		id = wallet.front_id
 	if(istype(id))
@@ -78,8 +80,6 @@
 		var/obj/item/computer_hardware/card_slot/card_slot = tablet.all_components[MC_CARD]
 		if(card_slot?.stored_card)
 			. = card_slot.stored_card.registered_name
-	if(istype(petcollar))
-		id = petcollar.access_id
 	if(!.)
 		. = if_no_id	//to prevent null-names making the mob unclickable
 	return
