@@ -191,7 +191,6 @@
 		examine_desc = "покрыто маленькими отверстиями, из которых течёт жёрная жижа"
 		occur_text = "начинает истекать чёрной жижей"
 		treatable_tool = TOOL_WELDER
-		clot_rate = 0
 	return
 
 /datum/wound/pierce/severe
@@ -223,7 +222,6 @@
 		examine_desc = "пробита насквозь, чёрная жидкость вытекает."
 		occur_text = "выплескивает струю чёрной жижи, обнажая сквозную пробоину"
 		treatable_tool = TOOL_WELDER
-		clot_rate = 0
 	return
 
 /datum/wound/pierce/critical
@@ -256,5 +254,4 @@
 		occur_text = "разрывается со всплеском чёрной жижи, разбрасывая вокруг обломки обшивки и приводов"
 		wound_flags = (FLESH_WOUND | MANGLES_FLESH)
 		treatable_tool = TOOL_WELDER
-		clot_rate = 0
 	return
