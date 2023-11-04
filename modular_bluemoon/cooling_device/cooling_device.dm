@@ -4,7 +4,7 @@
 	name = "portable cooling unit"
 	desc = "PCU is a large portable heat sink with liquid cooled radiator packaged into a modified backpack. \
 	It has an internal power unit with power rating of 10 KJ. There is the magnetic charger on top of the PCU for recharging. \
-	System of strapes allows it to be worn <b>as a suit, on your back, strapped to a hazard vest or a hardsuit</b>."
+	System of strapes allows it to be worn <b>as a suit, on your back, strapped to a hazard vest, an armor or a hardsuit</b>."
 	w_class = WEIGHT_CLASS_BULKY // Не лезет в сумку
 	icon = 'modular_bluemoon/cooling_device/cooling_device.dmi'
 	mob_overlay_icon = 'modular_bluemoon/cooling_device/cooling_device_back.dmi'
@@ -37,7 +37,7 @@
 	name = "mining cooling unit"
 	desc = "PCU is a large portable heat sink with liquid cooled radiator packaged into a modified backpack. \
 	It has an internal power unit with rating of 6 KJ, which can be charge with APCs or power cells with the magnetic charger on top of PCU. \
-	System of strapes allows it to be worn <b>as a suit, on your back, on belt, strapped to a hazard vest, an exploration suit or a hardsuit</b>. \
+	System of strapes allows it to be worn <b>as a suit, on your back, on belt, strapped to a hazard vest, an armor an exploration suit or a hardsuit</b>. \
 	Cooling efficient was significantly reduced, but it still can be used for planetary operations."
 	slot_flags = ITEM_SLOT_BELT |  ITEM_SLOT_BACK | ITEM_SLOT_OCLOTHING
 	force = 5 // маленький, но далеко не лёгкий
