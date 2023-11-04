@@ -505,7 +505,8 @@
 		if(affecting.name == BODY_ZONE_HEAD)
 			if(prob(min(acidpwr*acid_volume/10, 90))) //Applies disfigurement
 				affecting.receive_damage(acidity, 2*acidity)
-				emote("scream")
+				if(!HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+					emote("scream")
 				facial_hair_style = "Shaved"
 				hair_style = "Bald"
 				update_hair()

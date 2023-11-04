@@ -442,7 +442,8 @@
 	var/mob/living/M = H.pulledby
 	if(M.electrocute_act(30, H))
 		M.visible_message("<span class='danger'>[M] is electrocuted by [M.ru_ego()] contact with [H]!</span>")
-		M.emote("scream")
+		if(!HAS_TRAIT(M, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+			M.emote("scream")
 
 /obj/item/shockpaddles/proc/do_disarm(mob/living/M, mob/living/user)
 	if(req_defib && defib.safety)
@@ -505,7 +506,8 @@
 			user.visible_message("<span class='boldannounce'><i>[user] shocks [H] with \the [src]!</span>", "<span class='warning'>You shock [H] with \the [src]!</span>")
 			playsound(src, 'sound/machines/defib_zap.ogg', 100, 1, -1)
 			playsound(src, 'sound/weapons/egloves.ogg', 100, 1, -1)
-			H.emote("scream")
+			if(!HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+				H.emote("scream")
 			shock_touching(45, H)
 			if(H.can_heartattack() && !H.undergoing_cardiac_arrest())
 				if(!H.stat)

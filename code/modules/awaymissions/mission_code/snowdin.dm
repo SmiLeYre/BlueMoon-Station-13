@@ -209,7 +209,8 @@
 	burn_human.adjustFireLoss(25)
 	if(plasma_parts.len)
 		var/obj/item/bodypart/burn_limb = pick(plasma_parts) //using the above-mentioned list to get a choice of limbs
-		burn_human.emote("scream")
+		if(!HAS_TRAIT(burn_human, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+			burn_human.emote("scream")
 		burn_human.update_body_parts()
 		burn_human.visible_message(span_warning("[burn_human] screams in pain as [burn_human.p_their()] [burn_limb] melts down to the bone!"), \
 			span_userdanger("You scream out in pain as your [burn_limb] melts down to the bone, leaving an eerie plasma-like glow where flesh used to be!"))

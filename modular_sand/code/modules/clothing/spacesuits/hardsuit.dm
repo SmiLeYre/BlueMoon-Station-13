@@ -102,7 +102,8 @@
 	playsound(src.loc, 'modular_sand/sound/misc/suitmalf.ogg', 60, 1, 10)
 	if (ishuman(user) && (user.wear_suit == src))
 		to_chat(user, span_danger("The motors on your armor cease to function, causing the full weight of the suit to weigh on you all at once!"))
-		user.emote("scream")
+		if(!HAS_TRAIT(user, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+			user.emote("scream")
 		user.adjustStaminaLoss(stamdamageemp)
 		user.adjustBruteLoss(brutedamageemp)
 	if(prob(explodioprobemp))

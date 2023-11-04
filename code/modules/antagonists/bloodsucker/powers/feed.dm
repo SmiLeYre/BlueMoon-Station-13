@@ -241,7 +241,8 @@
 				user.add_mob_blood(target) // Put target's blood on us. The donor goes in the ( )
 				target.add_mob_blood(target)
 				target.take_overall_damage(10,0)
-				target.emote("scream")
+				if(!HAS_TRAIT(target, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+					target.emote("scream")
 
 			// Killed Target?
 			if(was_alive)

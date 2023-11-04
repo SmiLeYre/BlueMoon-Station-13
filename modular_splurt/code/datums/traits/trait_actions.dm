@@ -804,7 +804,8 @@
 		// Check for masochism
 		if(!HAS_TRAIT(bite_target, TRAIT_MASO))
 			// Force bite_target to play the scream emote
-			bite_target.emote("scream")
+			if(!HAS_TRAIT(bite_target, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+				bite_target.emote("scream")
 
 		// Log the biting action failure
 		log_combat(action_owner,bite_target,"bloodfledge bitten (interrupted)")
