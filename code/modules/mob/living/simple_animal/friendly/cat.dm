@@ -93,7 +93,7 @@
 	pass_flags = PASSMOB
 	mob_size = MOB_SIZE_SMALL
 	collar_type = "kitten"
-	childtype = null
+	childtype = null // BLUEMOON ADD
 
 /mob/living/simple_animal/pet/cat/floppa
 	name = "Floppa"
