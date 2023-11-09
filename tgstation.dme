@@ -4168,6 +4168,7 @@
 #include "modular_bluemoon\krashly\code\uplink\uplink.dm"
 #include "modular_bluemoon\krashly\code\uplink\uplink_items.dm"
 #include "modular_bluemoon\loadout_rings\rings.dm"
+#include "modular_bluemoon\new_police_baton\new_police_baton.dm"
 #include "modular_bluemoon\phenyamomota\code\modules\cargo\packs\engineering.dm"
 #include "modular_bluemoon\phenyamomota\code\modules\clothing\labcoat.dm"
 #include "modular_bluemoon\phenyamomota\code\modules\clothing\under_med.dm"
