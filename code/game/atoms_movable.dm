@@ -330,10 +330,17 @@
 			var/mob/living/carbon/human/user = src
 			if(user.dna.check_mutation(HULK)) // халки могут тащить
 				can_pull = TRUE
+			for(var/datum/antagonist/antagonist_role in user.mind?.antag_datums) // некоторые антагонисты могут тащить
+				if(antagonist_role.type in list(/datum/antagonist/heretic, /datum/antagonist/abductor/agent, /datum/antagonist/abductor/scientist))
+					can_pull = TRUE
+					break
 			if(istype(user.back, /obj/item/mod/control)) // обычные персонажи с активированными клешнями из МОДа на спине могут тащить
 				var/obj/item/mod/control/MOD = user.back
-				if(MOD.active || istype(MOD.selected_module, /obj/item/mod/module/clamp))
+				if(MOD.active && istype(MOD.selected_module, /obj/item/mod/module/clamp))
 					can_pull = TRUE
+			var/item_in_hand = user.get_active_held_item()
+			if(istype(item_in_hand, /obj/item/gun/magic/contractor_hook)) // персонажи с некоторыми предметами в активной руке могут тащить
+				can_pull = TRUE
 		if(!can_pull)
 			to_chat(src, span_warning("[pulling] is too heavy, you cannot move them around!"))
 			stop_pulling()
@@ -394,10 +401,17 @@
 				var/mob/living/carbon/human/user = src
 				if(user.dna.check_mutation(HULK)) // халки могут тащить
 					can_pull = TRUE
+				for(var/datum/antagonist/antagonist_role in user.mind?.antag_datums) // некоторые антагонисты могут тащить
+					if(antagonist_role.type in list(/datum/antagonist/heretic, /datum/antagonist/abductor/agent, /datum/antagonist/abductor/scientist))
+						can_pull = TRUE
+						break
 				if(istype(user.back, /obj/item/mod/control)) // обычные персонажи с активированными клешнями из МОДа на спине могут тащить
 					var/obj/item/mod/control/MOD = user.back
-					if(MOD.active || istype(MOD.selected_module, /obj/item/mod/module/clamp))
+					if(MOD.active && istype(MOD.selected_module, /obj/item/mod/module/clamp))
 						can_pull = TRUE
+				var/item_in_hand = user.get_active_held_item()
+				if(istype(item_in_hand, /obj/item/gun/magic/contractor_hook)) // персонажи с некоторыми предметами в активной руке могут тащить
+					can_pull = TRUE
 			if(!can_pull)
 				to_chat(src, span_warning("[pulling] is too heavy, you cannot move them around!"))
 				stop_pulling()
