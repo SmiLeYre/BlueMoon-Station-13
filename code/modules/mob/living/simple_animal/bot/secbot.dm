@@ -21,7 +21,7 @@
 	data_hud_type = DATA_HUD_SECURITY_ADVANCED
 	path_image_color = "#FF0000"
 
-	var/baton_type = /obj/item/melee/baton
+	var/baton_type = /obj/item/melee/classic_baton/peacekeeper
 	var/mob/living/carbon/target
 	var/oldtarget_name
 	var/threatlevel = FALSE

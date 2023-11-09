@@ -264,21 +264,21 @@ Peacekeeper Hypospray // BlueMoon 16.08 2023 - передано Вардену. 
 			var/atom/A = V
 			pkbaton_list[initial(A.name)] = A
 	return pkbaton_list
-
+/* BLUEMOON REMOVAL - убираем для теста полицейских дубинок в СБ
 /obj/item/storage/secure/briefcase/pkbaton/stunbaton
 	name = "\improper Stun Baton box"
 	desc = "A storage case for a high-tech Stun baton. Pick up that can."
 
 /obj/item/storage/secure/briefcase/pkbaton/stunbaton/PopulateContents()
 	new /obj/item/melee/baton/loaded(src)
-
+*/
 /obj/item/storage/secure/briefcase/pkbaton/detbaton
 	name = "\improper Nightstick box"
 	desc = "A storage case for a nightstick. A beat-cop classic."
 
 /obj/item/storage/secure/briefcase/pkbaton/detbaton/PopulateContents()
-	new /obj/item/melee/classic_baton(src)
-
+	new /obj/item/melee/classic_baton/peacekeeper(src)
+/*  - убираем для теста полицейских дубинок в СБ
 /obj/item/storage/secure/briefcase/pkbaton/prova
 	name = "\improper Prova box"
 	desc = "A storage case for a Prova. Teach them the way of John Prodman."
@@ -293,7 +293,7 @@ Peacekeeper Hypospray // BlueMoon 16.08 2023 - передано Вардену. 
 
 /obj/item/storage/secure/briefcase/pkbaton/tbaton/PopulateContents()
 	new /obj/item/melee/classic_baton/telescopic(src)
-
+*/
 // Peacekeeper Locker
 
 /obj/structure/closet/secure_closet/peacekeeper

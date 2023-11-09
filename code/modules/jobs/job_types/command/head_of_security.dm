@@ -100,7 +100,7 @@
 	mask = /obj/item/clothing/mask/gas/sechailer
 	suit = /obj/item/clothing/suit/space/hardsuit/security/hos
 	suit_store = /obj/item/tank/internals/oxygen
-	backpack_contents = list(/obj/item/melee/baton/loaded=1)
+	backpack_contents = list(/obj/item/melee/classic_baton/peacekeeper=1) // BLUEMOON EDIT - был обычный заряженный станбатон
 
 /datum/outfit/job/hos/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()

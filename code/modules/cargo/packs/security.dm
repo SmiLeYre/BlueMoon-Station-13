@@ -202,7 +202,7 @@
 					/obj/item/clothing/mask/gas/sechailer)
 	crate_name = "security clothing crate"
 	can_private_buy = TRUE
-
+/* BLUEMOON REMOVAL - убрано ТОЛЬКО НА ВРЕМЯ ТЕСТА. Потом отбалансировать появление (если вообще оставить)
 /datum/supply_pack/security/baton
 	name = "Stun Batons Crate"
 	desc = "Вооружите Силы Гражданской Обороны тремя электрошоковыми дубинками. Батарейки в комплекте. Для открытия требуется доступ СБ."
@@ -211,6 +211,17 @@
 					/obj/item/melee/baton/loaded,
 					/obj/item/melee/baton/loaded)
 	crate_name = "stun baton crate"
+*/
+// BLUEMOON ADD START - полицейские дубинки в карго
+/datum/supply_pack/security/police_baton
+	name = "Police Batons Crate"
+	desc = "Вооружите Силы Гражданской Обороны тремя полицейскими дубинками. Для открытия требуется доступ СБ."
+	cost = 1200
+	contains = list(/obj/item/melee/classic_baton/peacekeeper,
+					/obj/item/melee/classic_baton/peacekeeper,
+					/obj/item/melee/classic_baton/peacekeeper)
+	crate_name = "police baton crate"
+// BLUEMOON ADD END
 
 /datum/supply_pack/security/taser
 	name = "Taser Crate"

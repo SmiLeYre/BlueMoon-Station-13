@@ -341,6 +341,7 @@
 	var/force_off // Damage when off - not stunning
 	var/weight_class_on // What is the new size class when turned on
 	var/sword_point = TRUE
+	var/can_knockdown = TRUE // BLUEMOON ADD - если включено, то дубинка с удара роняет сразу на пол
 
 	wound_bonus = 5
 
@@ -437,7 +438,11 @@
 			if(stun_animation)
 				user.do_attack_animation(target)
 			playsound(get_turf(src), on_stun_sound, 75, 1, -1)
-			var/countered = block_return[BLOCK_RETURN_MITIGATION_PERCENT] > block_percent_to_counter
+			var/countered = TRUE
+			if(!can_knockdown) // BLUEMOON ADD
+				target.apply_damage(2, BRUTE)
+			else
+				countered = block_return[BLOCK_RETURN_MITIGATION_PERCENT] > block_percent_to_counter
 			target.DefaultCombatKnockdown(softstun_ds, TRUE, FALSE, countered? 0 : hardstun_ds, stam_dmg, !countered)
 			additional_effects_carbon(target, user)
 			log_combat(user, target, "stunned", src)

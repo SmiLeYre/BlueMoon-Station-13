@@ -36,13 +36,13 @@
 //Blueshield melee options
 
 /obj/item/storage/secure/briefcase/bsbaton/stunbaton
-	name = "\improper Stun Baton box"
-	desc = "A storage case for a high-tech Stun baton. Pick up that can."
+	name = "\improper Police Baton box" // BLUEMOON EDIT
+	desc = "A storage case for a Police Stun baton. Push that crowd back." // BLUEMOON EDIT
 
 /obj/item/storage/secure/briefcase/bsbaton/stunbaton/PopulateContents()
-	new  /obj/item/melee/baton(src)
+//	new  /obj/item/melee/baton(src) (BLUEMOON REMOVAL) - не имеет смысла, в поясе уже есть всё это
 	new /obj/item/storage/belt/security/full(src)
-
+/* BLUEMOON REMOVAL - убирается на время теста полицейской дубинки
 /obj/item/storage/secure/briefcase/bsbaton/stunsword
 	name = "\improper Stun Sword box"
 	desc = "A storage case for a high-tech Stun sword. The ninjas will fear you."
@@ -50,7 +50,7 @@
 /obj/item/storage/secure/briefcase/bsbaton/stunsword/PopulateContents()
 	new /obj/item/storage/belt/sabre/secbelt(src)
 	new /obj/item/stock_parts/cell/high/plus(src)
-
+*/
 /obj/item/storage/secure/briefcase/bsbaton/tele
 	name = "\improper APS Baton Box"
 	desc = "A storage case for a Telescopic Baton. Poke them with a stick!"
