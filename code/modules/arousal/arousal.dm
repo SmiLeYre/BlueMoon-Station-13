@@ -119,9 +119,9 @@
 				var/datum/reagents/copy = new()
 				R.copy_to(copy, R.total_volume)
 				// Nope, on the mouth doesn't count.
-				if(istype(last_genital, /obj/item/organ/genital/penis) && (last_orifice == CUM_TARGET_VAGINA || last_orifice == CUM_TARGET_ANUS))
+				if(istype(sender, /obj/item/organ/genital/penis) && (istype(receiver, /obj/item/organ/genital/vagina) || istype(receiver, /obj/item/organ/genital/anus)))	//проблема с портальными трусами, работает 50/50
 					if(copy.total_volume > 0)
-						cummed_on.apply_status_effect(STATUS_EFFECT_DRIPPING_CUM, copy, get_blood_dna_list())
+						cummed_on.apply_status_effect(STATUS_EFFECT_DRIPPING_CUM, copy, get_blood_dna_list(), receiver)
 			R.trans_to(target, amount_to_transfer, log = TRUE)
 		//
 	sender.last_orgasmed = world.time

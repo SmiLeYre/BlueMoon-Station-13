@@ -23,7 +23,6 @@
 	var/clit_diam = 0.25
 	var/clit_len = 0.25
 	var/list/vag_types = list("тентяклевидная", "зубастая", "волосатая", "лопатковидная", "мохнатая")
-	var/filled
 
 /obj/item/organ/genital/vagina/update_appearance()
 	. = ..()

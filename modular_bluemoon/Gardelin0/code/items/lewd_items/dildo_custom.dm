@@ -86,15 +86,6 @@
 	)
 	AddComponent(/datum/component/genital_equipment, list(ORGAN_SLOT_PENIS, ORGAN_SLOT_WOMB, ORGAN_SLOT_VAGINA, ORGAN_SLOT_BREASTS, ORGAN_SLOT_ANUS), procs_list)
 
-/obj/item/buttplug/Destroy()
-	. = ..()
-	if(istype(loc, /obj/item/organ/genital/vagina))
-		var/obj/item/organ/genital/vagina/vagina = loc
-		vagina.filled = FALSE
-	if(istype(loc, /obj/item/organ/genital/anus))
-		var/obj/item/organ/genital/anus/anus = loc
-		anus.filled = FALSE
-
 /obj/item/buttplug/proc/item_inserting(datum/source, obj/item/organ/genital/G, mob/living/user)
 	. = TRUE
 	if(!(G.owner.client?.prefs?.erppref == "Yes"))
@@ -143,15 +134,6 @@
 		"after_inserting" = CALLBACK(src, .proc/item_inserted),
 	)
 	AddComponent(/datum/component/genital_equipment, list(ORGAN_SLOT_PENIS, ORGAN_SLOT_WOMB, ORGAN_SLOT_VAGINA, ORGAN_SLOT_BREASTS, ORGAN_SLOT_ANUS), procs_list)
-
-/obj/item/dildo/Destroy()
-	. = ..()
-	if(istype(loc, /obj/item/organ/genital/vagina))
-		var/obj/item/organ/genital/vagina/vagina = loc
-		vagina.filled = FALSE
-	if(istype(loc, /obj/item/organ/genital/anus))
-		var/obj/item/organ/genital/anus/anus = loc
-		anus.filled = FALSE
 
 /obj/item/dildo/proc/item_inserting(datum/source, obj/item/organ/genital/G, mob/living/user)
 	. = TRUE

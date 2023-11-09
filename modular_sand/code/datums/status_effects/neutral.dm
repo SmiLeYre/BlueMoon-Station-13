@@ -1,13 +1,18 @@
 /datum/status_effect/dripping_cum
 	id = "dripping_cum"
+	status_type = STATUS_EFFECT_MULTIPLE
 	// We only end when we run out!
 	duration = -1
 	tick_interval = 1 SECONDS
 	alert_type = /atom/movable/screen/alert/status_effect/dripping_cum
 	var/datum/reagents/contents
 	var/list/blood_DNA
+	var/cum_in_anus = 0
+	var/cum_in_vagina = 0
+	var/anus_can_leak
+	var/vagina_can_leak
 
-/datum/status_effect/dripping_cum/on_creation(mob/living/carbon/human/new_owner, datum/reagents/add_or_merge, list/blood_DNA)
+/datum/status_effect/dripping_cum/on_creation(mob/living/carbon/human/new_owner, datum/reagents/add_or_merge, list/blood_DNA, obj/item/organ/genital/hole)
 	. = ..()
 	if(QDELETED(src) || !.)
 		return
@@ -16,6 +21,10 @@
 		return
 	if(isnull(contents))
 		contents = new(300, NO_REACT)
+	if(istype(hole, /obj/item/organ/genital/anus))
+		cum_in_anus += add_or_merge.total_volume
+	if(istype(hole, /obj/item/organ/genital/vagina))
+		cum_in_vagina += add_or_merge.total_volume
 	add_or_merge.trans_to(contents, add_or_merge.total_volume)
 	if(blood_DNA)
 		LAZYINITLIST(src.blood_DNA)
@@ -31,6 +40,11 @@
 		qdel(src)
 		return
 
+	if(!owner.alerts["dripping_cum"]) // only one alert is shared between all instances
+		var/atom/movable/screen/alert/status_effect/A = owner.throw_alert(id, alert_type)
+		A.attached_effect = src
+		linked_alert = A
+
 	if(!can_drip())
 		return
 
@@ -39,6 +53,10 @@
 	var/obj/effect/decal/cleanable/semen/S = locate(/obj/effect/decal/cleanable/semen) in location
 	if(S)
 		if(contents.trans_to(S, 1))
+			if(cum_in_anus > 0)
+				cum_in_anus--
+			else if(cum_in_vagina > 0)
+				cum_in_vagina--
 			S.blood_DNA |= blood_DNA
 			S.update_icon()
 			return
@@ -46,6 +64,10 @@
 
 	var/obj/effect/decal/cleanable/semendrip/drip = (locate(/obj/effect/decal/cleanable/semendrip) in location) || new(location)
 	if(contents.trans_to(drip, 1))
+		if(cum_in_anus > 0)
+			cum_in_anus--
+		else if(cum_in_vagina > 0)
+			cum_in_vagina--
 		drip.blood_DNA |= blood_DNA
 		drip.update_icon()
 		if(drip.reagents.total_volume >= 10)
@@ -67,10 +89,6 @@
 		var/valid = FALSE
 		if(is_type_in_typecache(clothes.type, GLOB.skirt_peekable))
 			valid = TRUE
-		if((A && A.filled) == TRUE && !(locate(/obj/item/buttplug) in A.contents) || (A && A.filled) == TRUE && !(locate(/obj/item/dildo) in A.contents))
-			valid = FALSE
-		if((V && V.filled) == TRUE && !(locate(/obj/item/buttplug) in V.contents) || (V && V.filled) == TRUE && !(locate(/obj/item/dildo) in V.contents))
-			valid = FALSE
 		else if(!CHECK_BITFIELD(clothes.body_parts_covered, GROIN))
 			valid = TRUE
 		if(!valid)
@@ -85,6 +103,16 @@
 		return FALSE
 	if(human_owner.bodytemperature < TCRYO)
 		return FALSE
+	if(A && !((locate(/obj/item/buttplug) in A?.contents) || (locate(/obj/item/dildo) in A?.contents)))
+		anus_can_leak = TRUE
+	else
+		anus_can_leak = FALSE
+	if(V && !((locate(/obj/item/buttplug) in V?.contents) || (locate(/obj/item/dildo) in V?.contents)))
+		vagina_can_leak = TRUE
+	else
+		vagina_can_leak = FALSE
+	if(!(((cum_in_anus > 0) && anus_can_leak) || ((cum_in_vagina > 0) && vagina_can_leak)))
+		return FALSE
 	return TRUE
 
 /atom/movable/screen/alert/status_effect/dripping_cum
@@ -96,7 +124,7 @@
 /atom/movable/screen/alert/status_effect/dripping_cum/MouseEntered(location,control,params)
 	desc = initial(desc)
 	var/datum/status_effect/dripping_cum/dripping_cum = attached_effect
-	desc += "<br>You feel like there is about [round(dripping_cum.contents.total_volume, 25)] units inside you."
+	desc += "<br>You feel like there is about [round(dripping_cum.contents.total_volume, 25)] units inside you. Or even more..."
 	if(!dripping_cum.can_drip())
 		desc += "<br>For some reason such as your hole being covered, you are no longer dripping and this amount is not decreasing."
 	..()
