@@ -16,10 +16,10 @@
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 50, BIO = 0, RAD = 0, FIRE = 80, ACID = 80)
 	attack_speed = CLICK_CD_MELEE
 
-	var/stamina_loss_amount = 35
+	var/stamina_loss_amount = 30 // BLUEMOON EDIT - было 35
 	var/turned_on = FALSE
 	var/armor_pen = 100
-	var/knockdown = TRUE
+	var/knockdown = FALSE // BLUEMOON EDIT - было TRUE, убираем роняние батоном через ПКМ
 	/// block percent needed to prevent knockdown/disarm
 	var/block_percent_to_counter = 50
 	var/obj/item/stock_parts/cell/cell
@@ -29,12 +29,12 @@
 	var/cooldown_duration = 2.5 SECONDS //How long our baton rightclick goes on cooldown for after applying a knockdown
 	var/status_duration = 3 SECONDS //how long our status effects last for otherwise
 	COOLDOWN_DECLARE(shove_cooldown)
-
+/* BLUEMOON REMOVAL - убираем роняние от ПКМ батона
 /obj/item/melee/baton/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>Right click attack while in combat mode to knockdown, but only once per [cooldown_duration / 10] seconds.</span>"
 	. += "<span class='notice'>This knockdown will also put them off balance for  [status_duration / 20] seconds, allowing you to shove a weapon out of their hand with a right click in Disarm intent.</span>"
-
+*/
 /obj/item/melee/baton/get_cell()
 	. = cell
 	if(iscyborg(loc))
@@ -233,8 +233,7 @@
 
 	if(user && !user.UseStaminaBuffer(getweight(user, STAM_COST_BATON_MOB_MULT), warn = TRUE))
 		return FALSE
-
-	if(shoving && COOLDOWN_FINISHED(src, shove_cooldown) && !HAS_TRAIT(L, TRAIT_IWASBATONED)) //Rightclicking applies a knockdown, but only once every couple of seconds, based on the cooldown_duration var. If they were recently knocked down, they can't be knocked down again by a baton.
+	if(shoving && COOLDOWN_FINISHED(src, shove_cooldown) && !HAS_TRAIT(L, TRAIT_IWASBATONED) && knockdown) //Rightclicking applies a knockdown, but only once every couple of seconds, based on the cooldown_duration var. If they were recently knocked down, they can't be knocked down again by a baton.
 		L.DefaultCombatKnockdown(50, override_stamdmg = 0)
 		L.apply_status_effect(STATUS_EFFECT_TASED_WEAK_NODMG, status_duration) //Even if they shove themselves up, they're still slowed.
 		L.apply_status_effect(STATUS_EFFECT_OFF_BALANCE, status_duration) //They're very likely to drop items if shoved briefly after a knockdown.
@@ -247,6 +246,7 @@
 		L.apply_status_effect(STATUS_EFFECT_STAGGERED, status_duration)
 
 	L.apply_damage (final_stamina_loss_amount, STAMINA, BODY_ZONE_CHEST, zap_block)
+	L.apply_damage(2, BRUTE) // BLUEMOON ADD - 2 урона по случайным частям тела за факт удара дубинкой
 	L.apply_effect(EFFECT_STUTTER, stamina_loss_amount)
 	SEND_SIGNAL(L, COMSIG_LIVING_MINOR_SHOCK)
 	if(user)
@@ -378,6 +378,7 @@
 	hitcost = 2000
 	throw_hit_chance = 99  //Have you prayed today?
 	custom_materials = list(/datum/material/iron = 10000, /datum/material/glass = 4000, /datum/material/silver = 10000, /datum/material/gold = 2000)
+	knockdown = TRUE // BLUEMOON ADD - чтобы бумеранг при попадании мог ронять на пол
 
 /obj/item/melee/baton/boomerang/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force)
 	if(turned_on)
