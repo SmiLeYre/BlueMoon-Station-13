@@ -153,7 +153,7 @@
 /obj/item/reagent_containers/glass/bottle/vial/large/synthflesh
 	name = "large orange hypovial (synthflesh)"
 	icon_state = "hypoviallarge-k"
-	list_reagents = list(/datum/reagent/medicine/synthflesh = 60)
+	list_reagents = list(/datum/reagent/medicine/synthflesh = 120)
 
 /obj/item/reagent_containers/glass/bottle/vial/large/combat
 	name = "combat hypovial"

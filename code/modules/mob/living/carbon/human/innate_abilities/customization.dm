@@ -23,7 +23,7 @@
 /datum/action/innate/ability/humanoid_customization/proc/change_form()
 	var/mob/living/carbon/human/H = owner
 
-	var/select_alteration = input(owner, "Select what part of your form to alter", "Form Alteration", "cancel") in list("Body Color", "Eye Color","Hair Style", "Genitals", "Tail", "Snout", "Wings", "Markings", "Ears", "Taur body", "Penis", "Vagina", "Penis Length", "Breast Size", "Breast Shape", "Butt Size", "Belly Size", "Body Size", "Genital Color", "Horns", "Hair Color", "Skin Tone (Non-Mutant)", "Cancel")
+	var/select_alteration = input(owner, "Select what part of your form to alter", "Form Alteration", "cancel") in list("Body Color", "Eye Color","Hair Style", "Genitals", "Tail", "Snout", "Wings", "Markings", "Ears", "Taur body", "Penis", "Vagina", "Penis Length", "Breast Size", "Breast Shape", "Butt Size", "Belly Size", /* BLUEMOON REMOVAL START "Body Size", BLUEMOON REMOVAL END */ "Genital Color", "Horns", "Hair Color", "Skin Tone (Non-Mutant)", "Cancel")
 
 	if(select_alteration == "Body Color")
 		var/new_color = input(owner, "Choose your skin color:", "Race change","#"+H.dna.features["mcolor"]) as color|null
@@ -271,6 +271,7 @@
 		H.apply_overlay()
 		H.give_genital(/obj/item/organ/genital/belly)
 
+	/* BLUEMOON REMOVAL START - размер персонажа на блюмуне слишком сильно отличается в особенностях механик от сплюрта, как и в тематике сервера, чтобы давать возможность его так легко изменять
 	else if (select_alteration == "Body Size")
 		// Check if the user has the size_normalized component attached, to avoid body size accumulation bug
 		var/datum/component/size_normalized = H.GetComponent(/datum/component/size_normalized)
@@ -282,7 +283,7 @@
 			if(new_body_size)
 				var/chosen_size = clamp(new_body_size * 0.01, CONFIG_GET(number/body_size_min), CONFIG_GET(number/body_size_max))
 				H.update_size(chosen_size)
-
+	/ BLUEMOON REMOVAL END */
 	else if (select_alteration == "Genital Color")
 		var/genital_part = input(owner, "Select what part of your genitals to alter", "Genital Color", "cancel") in list("Penis", "Butt", "Balls", "Anus", "Vagina", "Breasts", "Belly", "Toggle genitals using skintone", "Cancel")
 		if(genital_part == "Toggle genitals using skintone")
@@ -359,7 +360,7 @@
 			else
 				H.skin_tone = new_s_tone
 
-		H.update_body()		
+		H.update_body()
 
 /// SPLURT EDIT END
 	else

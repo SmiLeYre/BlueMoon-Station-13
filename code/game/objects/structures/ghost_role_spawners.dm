@@ -823,6 +823,7 @@
 	flavour_text = "You know one thing for sure. You arent actually alive. Are you in a simulation?"
 	skip_reentry_check = TRUE
 	banType = ROLE_GHOSTCAFE
+	back = /obj/item/storage/backpack/holding/satchel // BLUEMOON ADD
 
 /datum/action/toggle_dead_chat_mob
 	icon_icon = 'icons/mob/mob.dmi'

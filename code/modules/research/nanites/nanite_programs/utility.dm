@@ -215,6 +215,7 @@
 	if(ishuman(host_mob))
 		var/mob/living/carbon/human/H = host_mob
 		potential_items += H.wear_id
+		potential_items += H.wear_neck
 	else if(isanimal(host_mob))
 		potential_items += host_mob.pulling
 		var/mob/living/simple_animal/A = host_mob

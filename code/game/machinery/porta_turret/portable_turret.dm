@@ -565,7 +565,7 @@ DEFINE_BITFIELD(turret_flags, list(
 			return 10
 
 	if(turret_flags & TURRET_FLAG_AUTH_WEAPONS)	//check for weapon authorization
-		if(isnull(perp.wear_id) || istype(perp.wear_id.GetID(), /obj/item/card/id/syndicate))
+		if((isnull(perp.wear_id) || istype(perp.wear_id?.GetID(), /obj/item/card/id/syndicate)) && (isnull(perp.wear_neck) || istype(perp.wear_neck?.GetID(), /obj/item/card/id/syndicate)))
 
 			if(allowed(perp)) //if the perp has security access, return 0
 				return 0
@@ -761,7 +761,14 @@ DEFINE_BITFIELD(turret_flags, list(
 	return
 
 /obj/machinery/porta_turret/syndicate/assess_perp(mob/living/carbon/human/perp)
-	return 10 //Syndicate turrets shoot everything not in their faction
+	var/obj/item/card/id/target_card = perp.get_idcard(FALSE)
+	if(target_card && (ACCESS_SYNDICATE in target_card?.access) && istype(target_card, /obj/item/card/id/syndicate))
+		if(istype(target_card, /obj/item/card/id/syndicate/inteq) || istype(target_card, /obj/item/card/id/syndicate/anyone/inteq) || istype(target_card, /obj/item/card/id/syndicate/nuke_leader/inteq))
+			return 10	//no InteQ allowed!
+		else
+			return 0
+	else
+		return 10 //Syndicate turrets shoot everything not in their faction
 
 /obj/machinery/porta_turret/syndicate/energy
 	icon_state = "standard_stun"
@@ -790,10 +797,16 @@ DEFINE_BITFIELD(turret_flags, list(
 	integrity_failure = 0.08
 	armor = list(MELEE = 50, BULLET = 30, LASER = 30, ENERGY = 30, BOMB = 50, BIO = 0, RAD = 0, FIRE = 90, ACID = 90)
 
+/obj/machinery/porta_turret/syndicate/energy/pirate/assess_perp(mob/living/carbon/human/perp)
+	return 10
+
 /obj/machinery/porta_turret/syndicate/energy/raven
 	stun_projectile =  /obj/item/projectile/beam/laser
 	stun_projectile_sound = 'sound/weapons/laser.ogg'
 	faction = list("neutral","silicon","turret")
+
+/obj/machinery/porta_turret/syndicate/energy/raven/assess_perp(mob/living/carbon/human/perp)
+	return 10
 
 /obj/machinery/porta_turret/syndicate/pod
 	integrity_failure = 0.5

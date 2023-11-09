@@ -56,7 +56,7 @@
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/hsc
 	uniform = /obj/item/clothing/under/rank/medical/doctor/util
 	mask = /obj/item/clothing/mask/surgical
-	shoes = /obj/item/clothing/shoes/jackboots/tall
+	shoes = /obj/item/clothing/shoes/jackboots/tall_default
 	suit =  /obj/item/clothing/suit/toggle/labcoat/virologist
 	suit_store =  /obj/item/flashlight/pen
 

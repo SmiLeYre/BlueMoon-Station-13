@@ -1,7 +1,7 @@
 /datum/antagonist/syndicate_op
 	name = "Nuclear Operative"
 	roundend_category = "Syndicate operatives" //just in case
-	antagpanel_category = "NukeOp"
+	antagpanel_category = "SyndicateOp"
 	job_rank = ROLE_OPERATIVE
 	antag_moodlet = /datum/mood_event/focused
 	threat = 10
@@ -42,7 +42,7 @@
 
 	if(!istype(H))
 		return
-	if(SSticker.mode.name == "Extended" && name != "Nuclear Operative")
+	if(SSticker.mode.name == "Extended" && antagpanel_category != "SyndicateOp")
 		H.equipOutfit(/datum/outfit/syndicate/lone)
 		priority_announce("Приветствую, Станция. Мы отправляем к вам Специалиста по Защите Ядерного Диска ввиду того, что заметили недостаточную его безопасность. Bстречайте.", "[title] Фрегат ССО Синдиката")
 		print_command_report("Приветствую, Станция. Мы отправляем к вам Специалиста по Защите Ядерного Диска ввиду того, что заметили недостаточную его безопасность. Bстречайте.", "[title] Фрегат ССО Синдиката")
@@ -57,7 +57,7 @@
 
 /datum/antagonist/syndicate_op/greet()
 	owner.current.playsound_local(get_turf(owner.current), 'sound/ambience/antag/ops.ogg',100,0)
-	to_chat(owner, "<span class='notice'>Вы [nuke_team ? nuke_team.syndicate_name : "Синдикатовский"] Оперативник!</span>")
+	to_chat(owner, "<span class='notice'>Вы Оперативник Синдиката!</span>")
 	owner.announce_objectives()
 
 /datum/antagonist/syndicate_op/on_gain()

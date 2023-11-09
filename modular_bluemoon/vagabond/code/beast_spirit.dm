@@ -10,7 +10,7 @@
 	icon_living = "male"
 	icon_dead = "male-dead"
 	gender = MALE
-	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
+	mob_biotypes = MOB_BEAST
 	stat_attack = UNCONSCIOUS
 	speak_emote = list("growls", "roars")
 	emote_hear = list("grumbles.","grawls.")

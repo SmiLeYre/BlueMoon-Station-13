@@ -357,6 +357,23 @@
 		if(BODY_ZONE_R_LEG)
 			return list(LEG_RIGHT, FOOT_RIGHT)
 
+// BLUEMOON ADD START - Применяется, когда нужна специфичная часть тела
+/proc/zone2body_parts_covered_complicated(def_zone)
+	switch(def_zone)
+		if(BODY_ZONE_HEAD, BODY_ZONE_PRECISE_EYES, BODY_ZONE_PRECISE_MOUTH)
+			return HEAD
+		if(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN)
+			return CHEST
+		if(BODY_ZONE_L_ARM)
+			return ARM_LEFT
+		if(BODY_ZONE_R_ARM)
+			return ARM_RIGHT
+		if(BODY_ZONE_L_LEG)
+			return LEG_LEFT
+		if(BODY_ZONE_R_LEG)
+			return LEG_RIGHT
+// BLUEMOON ADD END
+
 //Turns a Body_parts_covered bitfield into a list of organ/limb names.
 //(I challenge you to find a use for this) -I found a use for it!!
 /proc/body_parts_covered2organ_names(bpc)

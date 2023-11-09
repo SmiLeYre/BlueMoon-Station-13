@@ -13,6 +13,11 @@
 /obj/item/ammo_box/magazine/recharge/attack_self() //No popping out the "bullets"
 	return
 
+/obj/item/ammo_box/magazine/recharge/lasgun
+	name = "Lasgun Power Pack"
+	ammo_type = /obj/item/ammo_casing/caseless/laser
+	max_ammo = 20
+
 // MWS Magazine //
 /obj/item/ammo_box/magazine/mws_mag
 	name = "microbattery magazine"

@@ -1,21 +1,6 @@
-//Main code edits
-/datum/quirk/photographer
-	desc = "Вы берете с собой камеру и фотоальбом, куда бы вы ни пошли. Также, вы быстрее фотографируете."
-
-/datum/quirk/photographer/on_spawn()
-	. = ..()
-	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/storage/photo_album/photo_album = new(get_turf(H))
-	H.put_in_hands(photo_album)
-	H.equip_to_slot(photo_album, ITEM_SLOT_BACKPACK)
-	photo_album.persistence_id = "personal_[H.mind.key]" // this is a persistent album, the ID is tied to the account's key to avoid tampering
-	photo_album.persistence_load()
-	photo_album.name = "Фотоальбом [H.real_name]"
-
-//Own stuff
 /datum/quirk/tough
 	name = "Стойкость"
-	desc = "Ваше аномально крепкое тело может вынести на 25% больше урона."
+	desc = "Ваше аномально крепкое тело может вынести на 20% больше урона."
 	value = 3
 	medical_record_text = "Пациент продемонстрировал аномально высокую устойчивость к травмам."
 	gain_text = "<span class='notice'>Вы чувствуете крепость в мышцах.</span>"
@@ -212,49 +197,46 @@
 	. = ..()
 
 /datum/quirk/hallowed
-	name = "Святой дух"
+	name = "Святой Дух"
 	desc = "Вы были благословлены высшими силами или каким-то иным образом наделены святой энергией. Святая вода восстановит ваше здоровье!"
-	value = 4 // Maybe up the cost if more is added later.
+	value = 2
 	mob_trait = TRAIT_HALLOWED
 	gain_text = span_notice("Вы чувствуете, как святая энергия начинает течь по вашему телу.")
 	lose_text = span_notice("Вы чувствуете, как угасает ваша святая энергия...")
 	medical_record_text = "У пациента обнаружены неопознанные освященные материалы в крови. Проконсультируйтесь с капелланом."
 
 /datum/quirk/hallowed/add()
-	// Define quirk mob.
-	//var/mob/living/carbon/human/quirk_mob = quirk_holder
-
-	//// Give the holy trait.
-	//ADD_TRAIT(quirk_mob, TRAIT_HOLY, "quirk_hallowed")
-
-	//// Give the antimagic trait.
-	//ADD_TRAIT(quirk_mob, TRAIT_ANTIMAGIC, "quirk_hallowed")
-
-	// Makes the user holy.
-	//quirk_mob.mind.isholy = TRUE // Нуллрод за 1 очко. Какой наркоман на сплюрте это кодил???
-
 	// Add examine text.
 	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/quirk_examine_Hallowed)
 
 /datum/quirk/hallowed/remove()
-	// Define quirk mob.
-	//var/mob/living/carbon/human/quirk_mob = quirk_holder
-
-	// Remove the holy trait.
-	//REMOVE_TRAIT(quirk_mob, TRAIT_HOLY, "quirk_hallowed")
-
-	// Remove the antimagic trait.
-	//REMOVE_TRAIT(quirk_mob, TRAIT_ANTIMAGIC, "quirk_hallowed")
-
-	// Makes the user not holy.
-	//quirk_mob.mind.isholy = FALSE
-
 	// Remove examine text
 	UnregisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE)
 
 // Quirk examine text.
 /datum/quirk/hallowed/proc/quirk_examine_Hallowed(atom/examine_target, mob/living/carbon/human/examiner, list/examine_list)
 	examine_list += "[quirk_holder.ru_who(TRUE)] излучает священную силу..."
+
+/datum/quirk/russian
+	name = "Русский дух"
+	desc = "Вы были благословлены высшими силами или каким-то иным образом наделены святой энергией. С вами Бог!"
+	value = 2
+	mob_trait = TRAIT_RUSSIAN
+	gain_text = span_notice("Вы чувствуете, как Бог следит за вами!")
+	lose_text = span_notice("Вы чувствуете, как угасает ваша вера в Бога...")
+	medical_record_text = "У пациента обнаружен Ангел-Хранитель."
+
+/datum/quirk/russian/add()
+	// Add examine text.
+	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/quirk_examine_russian)
+
+/datum/quirk/russian/remove()
+	// Remove examine text
+	UnregisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE)
+
+// Quirk examine text.
+/datum/quirk/russian/proc/quirk_examine_russian(atom/examine_target, mob/living/carbon/human/examiner, list/examine_list)
+	examine_list += "[quirk_holder.ru_who(TRUE)] излучает русский дух..."
 
 ///datum/quirk/bomber
 //	name = "Подрывник-Самоубийца"

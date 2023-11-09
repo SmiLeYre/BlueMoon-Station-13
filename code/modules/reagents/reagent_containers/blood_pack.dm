@@ -45,7 +45,7 @@
 
 /obj/item/reagent_containers/blood/random/Initialize(mapload)
 	icon_state = "bloodpack"
-	blood_type = pick("A+", "A-", "B+", "B-", "O+", "O-", "L", "SY", "HF", "GEL", "BUG")
+	blood_type = pick("A+", "A-", "B+", "B-", "O+", "O-", "L", "SY", "GEL", "BUG") // BLUEMOON EDIT - убрано "HF"
 	return ..()
 
 /obj/item/reagent_containers/blood/APlus
@@ -76,7 +76,10 @@
 	blood_type = "SY"
 
 /obj/item/reagent_containers/blood/oilblood
+	name = "hydraulic fluid pack" // BLUEMOON ADD
+	desc = "Contains hydraulic fluid used in synthetics." // BLUEMOON ADD
 	blood_type = "HF"
+	labelled = TRUE // BLUEMOON ADD
 
 /obj/item/reagent_containers/blood/jellyblood
 	blood_type = "GEL"

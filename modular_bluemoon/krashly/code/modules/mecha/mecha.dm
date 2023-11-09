@@ -49,17 +49,3 @@
 			/obj/item/mecha_parts/part/durand_right_arm,
 			/obj/item/mecha_parts/part/durand_left_leg,
 			/obj/item/mecha_parts/part/durand_right_leg)
-
-/obj/vehicle/sealed/mecha/combat/gygax/dark/loaded/hermes/Initialize(mapload)
-	. = ..()
-	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/thrusters/ion(src)
-	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot
-	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/anticcw_armor_booster
-	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/antiproj_armor_booster
-	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/tesla_energy_relay
-	ME.attach(src)
-	max_ammo()

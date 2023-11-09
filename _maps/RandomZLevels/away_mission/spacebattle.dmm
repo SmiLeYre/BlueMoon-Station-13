@@ -437,7 +437,7 @@
 /turf/open/floor/plasteel,
 /area/awaymission/spacebattle/cruiser)
 "ce" = (
-/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/stormtrooper/anthro/fox,
+/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/stormtrooper,
 /turf/open/floor/plasteel/airless,
 /area/awaymission/spacebattle/cruiser)
 "cf" = (
@@ -497,7 +497,7 @@
 "cw" = (
 /obj/item/ammo_casing/c10mm,
 /obj/item/ammo_casing/c10mm,
-/obj/effect/spawner/lootdrop/hostile/syndicate,
+/obj/effect/spawner/lootdrop/hostile/inteq,
 /turf/open/floor/plasteel{
 	icon_state = "damaged2"
 	},
@@ -656,6 +656,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 2
 	},
+/obj/effect/mine/explosive,
 /turf/open/floor/plasteel,
 /area/awaymission/spacebattle/cruiser)
 "cU" = (
@@ -901,7 +902,7 @@
 /turf/open/floor/plating,
 /area/awaymission/spacebattle/cruiser)
 "dP" = (
-/obj/structure/reagent_dispensers/fueltank,
+/obj/structure/reagent_dispensers/fueltank/limitka,
 /turf/open/floor/plating,
 /area/awaymission/spacebattle/cruiser)
 "dQ" = (
@@ -1005,11 +1006,11 @@
 /turf/open/floor/plating,
 /area/awaymission/spacebattle/cruiser)
 "ee" = (
-/obj/effect/spawner/lootdrop/hostile/syndicate,
+/obj/effect/spawner/lootdrop/hostile/inteq,
 /turf/open/floor/mineral/plastitanium/yellow,
 /area/awaymission/spacebattle/syndicate4)
 "ef" = (
-/obj/effect/spawner/lootdrop/hostile/syndicate,
+/obj/effect/spawner/lootdrop/hostile/inteq,
 /turf/open/floor/mineral/plastitanium/yellow,
 /area/awaymission/spacebattle/syndicate3)
 "eg" = (
@@ -1198,6 +1199,9 @@
 /area/awaymission/spacebattle/syndicate4)
 "eT" = (
 /obj/structure/closet/crate,
+/obj/item/ammo_box/magazine/recharge,
+/obj/item/ammo_box/magazine/recharge,
+/obj/effect/spawner/lootdrop/syndicate_present,
 /turf/open/floor/plating,
 /area/awaymission/spacebattle/cruiser)
 "eU" = (
@@ -1266,6 +1270,7 @@
 "fb" = (
 /obj/structure/closet/crate,
 /obj/item/clothing/glasses/night,
+/obj/effect/spawner/lootdrop/syndicate_present,
 /turf/open/floor/plating,
 /area/awaymission/spacebattle/cruiser)
 "fc" = (
@@ -1321,6 +1326,7 @@
 /obj/item/light/tube,
 /obj/item/light/tube,
 /obj/item/light/tube,
+/obj/effect/spawner/lootdrop/syndicate_present,
 /turf/open/floor/plating,
 /area/awaymission/spacebattle/cruiser)
 "fo" = (
@@ -1625,6 +1631,7 @@
 "gc" = (
 /obj/structure/closet/crate,
 /obj/item/poster/random_contraband,
+/obj/effect/spawner/lootdrop/syndicate_present,
 /turf/open/floor/plating,
 /area/awaymission/spacebattle/cruiser)
 "gd" = (
@@ -1706,12 +1713,14 @@
 "gp" = (
 /obj/structure/closet/crate/secure/weapon,
 /obj/item/ammo_casing/a357,
+/obj/item/gun/energy/laser,
 /turf/open/floor/plating,
 /area/awaymission/spacebattle/cruiser)
 "gq" = (
 /obj/structure/closet/crate,
 /obj/item/lipstick/black,
 /obj/item/lipstick/jade,
+/obj/effect/spawner/lootdrop/syndicate_present,
 /turf/open/floor/plating,
 /area/awaymission/spacebattle/cruiser)
 "gr" = (
@@ -1787,6 +1796,7 @@
 /obj/structure/closet/crate,
 /obj/item/stack/spacecash/c1000,
 /obj/item/stack/spacecash/c1000,
+/obj/effect/spawner/lootdrop/syndicate_present,
 /turf/open/floor/plating,
 /area/awaymission/spacebattle/cruiser)
 "gF" = (
@@ -1994,6 +2004,8 @@
 "hn" = (
 /obj/structure/closet/crate/large,
 /obj/effect/spawner/lootdrop/healing_kits,
+/obj/item/card/id/syndicate,
+/obj/effect/spawner/lootdrop/syndicate_present,
 /turf/open/floor/plating,
 /area/awaymission/spacebattle/cruiser)
 "ho" = (
@@ -2041,6 +2053,7 @@
 "hw" = (
 /obj/structure/closet/crate/large,
 /mob/living/simple_animal/pet/dog/corgi/puppy,
+/obj/effect/spawner/lootdrop/syndicate_present,
 /turf/open/floor/plating,
 /area/awaymission/spacebattle/cruiser)
 "hx" = (
@@ -2141,7 +2154,6 @@
 /area/awaymission/spacebattle/cruiser)
 "hQ" = (
 /obj/item/stack/sheet/metal,
-/obj/effect/mine/explosive,
 /turf/open/floor/plasteel{
 	icon_state = "damaged4"
 	},
@@ -2156,7 +2168,7 @@
 /obj/structure/chair{
 	dir = 8
 	},
-/obj/effect/spawner/lootdrop/hostile/syndicate,
+/obj/effect/spawner/lootdrop/hostile/inteq,
 /turf/open/floor/mineral/plastitanium/yellow,
 /area/awaymission/spacebattle/syndicate7)
 "hU" = (
@@ -2244,6 +2256,9 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
+/obj/item/gun/ballistic/automatic/laser/lasgun,
+/obj/item/ammo_box/magazine/recharge/lasgun,
+/obj/item/ammo_box/magazine/recharge/lasgun,
 /turf/open/floor/engine,
 /area/awaymission/spacebattle/cruiser)
 "il" = (
@@ -2477,7 +2492,7 @@
 /turf/open/floor/plating,
 /area/awaymission/spacebattle/cruiser)
 "jr" = (
-/mob/living/simple_animal/hostile/syndicate/melee/space/anthro/lizard,
+/mob/living/simple_animal/hostile/syndicate/melee/space,
 /turf/open/floor/plating/airless,
 /area/awaymission/spacebattle/cruiser)
 "js" = (
@@ -2570,6 +2585,7 @@
 "jE" = (
 /obj/structure/closet/crate,
 /obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/lootdrop/syndicate_present,
 /turf/open/floor/plating,
 /area/awaymission/spacebattle/cruiser)
 "jF" = (
@@ -2577,6 +2593,7 @@
 /obj/item/ammo_box/magazine/recharge,
 /obj/item/ammo_box/magazine/recharge,
 /obj/item/ammo_box/magazine/recharge,
+/obj/effect/spawner/lootdrop/syndicate_present,
 /turf/open/floor/plating,
 /area/awaymission/spacebattle/cruiser)
 "jG" = (
@@ -2584,7 +2601,6 @@
 	id = "spacebattlearmory1";
 	name = "Secure Cache 1"
 	},
-/obj/effect/mine/explosive,
 /turf/open/floor/engine,
 /area/awaymission/spacebattle/cruiser)
 "jH" = (
@@ -2594,6 +2610,7 @@
 "jI" = (
 /obj/structure/closet/crate,
 /obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/lootdrop/syndicate_present,
 /turf/open/floor/engine,
 /area/awaymission/spacebattle/cruiser)
 "jJ" = (
@@ -2608,7 +2625,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
-/obj/effect/spawner/lootdrop/hostile/syndicate,
+/obj/effect/spawner/lootdrop/hostile/inteq,
 /turf/open/floor/plasteel,
 /area/awaymission/spacebattle/cruiser)
 "jL" = (
@@ -2634,6 +2651,7 @@
 "jN" = (
 /obj/structure/closet/crate,
 /obj/item/ammo_box/magazine/recharge,
+/obj/effect/spawner/lootdrop/syndicate_present,
 /turf/open/floor/plating,
 /area/awaymission/spacebattle/cruiser)
 "jO" = (
@@ -2657,7 +2675,6 @@
 	id = "spacebattlearmory2";
 	name = "Secure Cache 2"
 	},
-/obj/effect/mine/explosive,
 /turf/open/floor/engine,
 /area/awaymission/spacebattle/cruiser)
 "jR" = (
@@ -2693,7 +2710,7 @@
 /turf/open/floor/engine,
 /area/awaymission/spacebattle/cruiser)
 "jY" = (
-/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/stormtrooper/anthro/fox,
+/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/stormtrooper,
 /turf/open/floor/plating/airless,
 /area/awaymission/spacebattle/cruiser)
 "ka" = (
@@ -2883,11 +2900,12 @@
 "lK" = (
 /obj/structure/closet/crate/large,
 /obj/effect/spawner/lootdrop/glowstick,
+/obj/effect/spawner/lootdrop/syndicate_present,
 /turf/open/floor/plating,
 /area/awaymission/spacebattle/cruiser)
 "ml" = (
 /obj/effect/decal/cleanable/robot_debris/gib,
-/obj/effect/spawner/lootdrop/hostile/syndicate,
+/obj/effect/spawner/lootdrop/hostile/inteq,
 /turf/open/floor/mineral/plastitanium/yellow,
 /area/awaymission/spacebattle/cruiser)
 "mo" = (
@@ -2923,6 +2941,7 @@
 /obj/structure/closet/crate,
 /obj/item/stack/ore/bluespace_crystal/artificial,
 /obj/item/stack/ore/bluespace_crystal/artificial,
+/obj/effect/spawner/lootdrop/syndicate_present,
 /turf/open/floor/plating,
 /area/awaymission/spacebattle/cruiser)
 "qA" = (
@@ -2932,11 +2951,11 @@
 /area/awaymission/spacebattle/cruiser)
 "ry" = (
 /obj/structure/toilet,
-/obj/effect/spawner/lootdrop/hostile/syndicate,
+/obj/effect/spawner/lootdrop/hostile/inteq,
 /turf/open/floor/plasteel/freezer,
 /area/awaymission/spacebattle/cruiser)
 "tn" = (
-/obj/effect/spawner/lootdrop/hostile/syndicate,
+/obj/effect/spawner/lootdrop/hostile/inteq,
 /turf/open/floor/plasteel/airless,
 /area/awaymission/spacebattle/cruiser)
 "tM" = (
@@ -2950,18 +2969,11 @@
 "vw" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/awaymission/spacebattle/syndicate5)
-"vW" = (
-/obj/item/stack/sheet/metal,
-/obj/effect/mine/explosive,
-/turf/open/floor/plasteel{
-	icon_state = "damaged1"
-	},
-/area/awaymission/spacebattle/cruiser)
 "xZ" = (
 /obj/structure/chair{
 	dir = 8
 	},
-/obj/effect/spawner/lootdrop/hostile/syndicate,
+/obj/effect/spawner/lootdrop/hostile/inteq,
 /turf/open/floor/mineral/plastitanium/yellow,
 /area/awaymission/spacebattle/syndicate2)
 "zi" = (
@@ -2969,38 +2981,50 @@
 /turf/open/floor/mineral/plastitanium/yellow/airless,
 /area/space/nearstation)
 "zm" = (
-/obj/effect/spawner/lootdrop/hostile/syndicate,
+/obj/effect/spawner/lootdrop/hostile/inteq,
 /turf/open/floor/plasteel/white,
 /area/awaymission/spacebattle/cruiser)
 "zS" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/awaymission/spacebattle/syndicate6)
+"zW" = (
+/obj/structure/closet/crate,
+/obj/item/ammo_box/magazine/recharge/lasgun,
+/obj/item/ammo_box/magazine/recharge/lasgun,
+/obj/effect/spawner/lootdrop/syndicate_present,
+/turf/open/floor/plating,
+/area/awaymission/spacebattle/cruiser)
 "Bn" = (
 /obj/structure/chair{
 	dir = 4
 	},
-/obj/effect/spawner/lootdrop/hostile/syndicate,
+/obj/effect/spawner/lootdrop/hostile/inteq,
 /turf/open/floor/mineral/plastitanium/yellow,
 /area/awaymission/spacebattle/syndicate2)
 "BO" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/awaymission/spacebattle/syndicate2)
+"Cd" = (
+/obj/structure/closet/crate/large,
+/obj/effect/spawner/lootdrop/healing_kits,
+/obj/effect/spawner/lootdrop/syndicate_present,
+/turf/open/floor/plating,
+/area/awaymission/spacebattle/cruiser)
 "Ce" = (
-/obj/effect/spawner/lootdrop/hostile/syndicate,
+/obj/effect/spawner/lootdrop/hostile/inteq,
 /turf/open/floor/mineral/plastitanium/yellow,
 /area/awaymission/spacebattle/syndicate1)
-"CT" = (
-/obj/structure/bed,
-/obj/item/bedsheet,
-/obj/effect/mine/explosive,
-/turf/open/floor/plasteel,
-/area/awaymission/spacebattle/cruiser)
 "Dv" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/awaymission/spacebattle/syndicate3)
 "DJ" = (
 /mob/living/simple_animal/hostile/syndicate/ranged/space/anthro/cat,
 /turf/open/floor/plasteel/airless,
+/area/awaymission/spacebattle/cruiser)
+"DL" = (
+/obj/machinery/door/unpowered/shuttle,
+/obj/effect/mine/explosive,
+/turf/open/floor/plasteel,
 /area/awaymission/spacebattle/cruiser)
 "EC" = (
 /obj/structure/closet/crate,
@@ -3012,35 +3036,36 @@
 /turf/open/floor/plasteel/rockvault/alien,
 /area/awaymission/spacebattle/secret)
 "FA" = (
-/obj/effect/spawner/lootdrop/hostile/syndicate,
+/obj/effect/spawner/lootdrop/hostile/inteq,
 /turf/open/floor/plasteel/freezer,
 /area/awaymission/spacebattle/cruiser)
 "FR" = (
-/obj/effect/spawner/lootdrop/hostile/syndicate,
+/obj/effect/spawner/lootdrop/hostile/inteq,
 /turf/open/floor/plasteel,
-/area/awaymission/spacebattle/cruiser)
-"GP" = (
-/obj/effect/mine/explosive,
-/turf/open/floor/wood,
 /area/awaymission/spacebattle/cruiser)
 "HV" = (
 /obj/structure/closet/crate/large,
 /obj/effect/spawner/lootdrop/cig_packs,
+/obj/effect/spawner/lootdrop/syndicate_present,
 /turf/open/floor/plating,
 /area/awaymission/spacebattle/cruiser)
 "In" = (
 /obj/structure/chair{
 	dir = 4
 	},
-/obj/effect/spawner/lootdrop/hostile/syndicate,
+/obj/effect/spawner/lootdrop/hostile/inteq,
 /turf/open/floor/mineral/plastitanium/yellow,
 /area/awaymission/spacebattle/cruiser)
 "Iv" = (
 /obj/effect/spawner/lootdrop/syndicate_present,
 /turf/open/floor/mineral/plastitanium/yellow/airless,
 /area/space/nearstation)
+"Jt" = (
+/obj/vehicle/sealed/mecha/combat/gygax/dark,
+/turf/open/floor/plating,
+/area/awaymission/spacebattle/cruiser)
 "KL" = (
-/obj/effect/spawner/lootdrop/hostile/syndicate,
+/obj/effect/spawner/lootdrop/hostile/inteq,
 /turf/open/floor/mineral/plastitanium/yellow,
 /area/awaymission/spacebattle/cruiser)
 "Lp" = (
@@ -3056,11 +3081,11 @@
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/hostile/syndicate,
+/obj/effect/spawner/lootdrop/hostile/inteq,
 /turf/open/floor/plasteel,
 /area/awaymission/spacebattle/cruiser)
 "Mq" = (
-/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/stormtrooper/anthro/fox,
+/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/stormtrooper,
 /turf/open/floor/plating,
 /area/awaymission/spacebattle/cruiser)
 "MZ" = (
@@ -3068,16 +3093,22 @@
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/hostile/syndicate,
+/obj/effect/spawner/lootdrop/hostile/inteq,
 /turf/open/floor/plasteel,
 /area/awaymission/spacebattle/cruiser)
 "Og" = (
-/obj/effect/spawner/lootdrop/hostile/syndicate,
+/obj/effect/spawner/lootdrop/hostile/inteq,
 /turf/open/floor/mineral/plastitanium/yellow,
 /area/awaymission/spacebattle/syndicate6)
 "Pm" = (
 /obj/structure/fans/tiny/invisible,
 /turf/open/floor/plating/airless,
+/area/awaymission/spacebattle/cruiser)
+"QL" = (
+/obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/armory_contraband,
+/obj/effect/spawner/lootdrop/syndicate_present,
+/turf/open/floor/plating,
 /area/awaymission/spacebattle/cruiser)
 "Su" = (
 /obj/structure/table/reinforced,
@@ -3085,7 +3116,7 @@
 /turf/open/floor/mineral/plastitanium/yellow,
 /area/awaymission/spacebattle/syndicate3)
 "Un" = (
-/mob/living/simple_animal/hostile/syndicate/ranged/smg/anthro,
+/mob/living/simple_animal/hostile/syndicate/ranged/smg,
 /turf/open/floor/plasteel,
 /area/awaymission/spacebattle/cruiser)
 "Ut" = (
@@ -3116,7 +3147,7 @@
 /turf/open/floor/engine,
 /area/awaymission/spacebattle/cruiser)
 "VL" = (
-/obj/effect/spawner/lootdrop/hostile/syndicate,
+/obj/effect/spawner/lootdrop/hostile/inteq,
 /turf/open/floor/mineral/plastitanium/yellow,
 /area/awaymission/spacebattle/syndicate5)
 "VV" = (
@@ -3124,10 +3155,12 @@
 /obj/effect/spawner/lootdrop/syndicate_present,
 /turf/open/floor/mineral/plastitanium/yellow,
 /area/awaymission/spacebattle/syndicate7)
-"Wm" = (
-/obj/effect/decal/cleanable/blood,
-/obj/effect/mine/explosive,
-/turf/open/floor/plasteel,
+"We" = (
+/obj/structure/rack,
+/obj/item/gun/ballistic/automatic/laser,
+/obj/item/ammo_box/magazine/recharge,
+/obj/item/ammo_box/magazine/recharge,
+/turf/open/floor/engine,
 /area/awaymission/spacebattle/cruiser)
 "Wv" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -3143,7 +3176,7 @@
 /turf/open/floor/mineral/plastitanium/yellow,
 /area/awaymission/spacebattle/syndicate2)
 "WL" = (
-/obj/effect/spawner/lootdrop/hostile/syndicate,
+/obj/effect/spawner/lootdrop/hostile/inteq,
 /turf/open/floor/mineral/plastitanium/yellow,
 /area/awaymission/spacebattle/syndicate2)
 "Yq" = (
@@ -3156,7 +3189,7 @@
 /area/awaymission/spacebattle/syndicate1)
 "Zr" = (
 /obj/effect/decal/cleanable/blood,
-/obj/effect/spawner/lootdrop/hostile/syndicate,
+/obj/effect/spawner/lootdrop/hostile/inteq,
 /turf/open/floor/plasteel,
 /area/awaymission/spacebattle/cruiser)
 
@@ -24870,7 +24903,7 @@ dj
 ht
 el
 ih
-js
+We
 ju
 jA
 jD
@@ -26658,7 +26691,7 @@ ab
 ab
 bT
 cd
-cd
+DL
 bT
 bT
 bT
@@ -27190,7 +27223,7 @@ cK
 cK
 el
 el
-el
+jA
 el
 cK
 cK
@@ -27712,7 +27745,7 @@ cK
 ka
 ka
 lK
-hn
+Cd
 bT
 bT
 bT
@@ -28466,14 +28499,14 @@ cc
 cA
 cc
 bT
+Jt
 dL
-dL
 cK
 cK
 cK
-eT
-eT
-jJ
+zW
+zW
+QL
 fn
 jN
 jN
@@ -29491,7 +29524,7 @@ cA
 cc
 cA
 cc
-CT
+cA
 cr
 bT
 dO
@@ -33866,7 +33899,7 @@ cc
 cc
 FR
 cc
-vW
+fL
 cn
 cn
 cc
@@ -35165,7 +35198,7 @@ gL
 gM
 hg
 gy
-GP
+gy
 gy
 hs
 cQ
@@ -45434,7 +45467,7 @@ el
 bT
 cc
 kl
-Wm
+cr
 bT
 ab
 ab

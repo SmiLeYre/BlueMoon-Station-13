@@ -77,7 +77,7 @@
 	belt = /obj/item/storage/belt/utility/chief/full
 	ears = /obj/item/radio/headset/heads/ce
 	uniform = /obj/item/clothing/under/rank/captain/util
-	shoes = /obj/item/clothing/shoes/jackboots/tall
+	shoes = /obj/item/clothing/shoes/jackboots/tall_default
 	head = /obj/item/clothing/head/hardhat/red/upgraded
 	gloves = /obj/item/clothing/gloves/combat
 	neck = /obj/item/clothing/neck/cloak/syndiecap

@@ -31,6 +31,7 @@
 	var/useable = TRUE
 	var/list/food_reagents = list(/datum/reagent/consumable/nutriment = 5)
 	var/ru_name = ""
+	var/ru_name_v = ""
 	var/ru_name_capital = ""
 
 /obj/item/organ/Initialize(mapload)

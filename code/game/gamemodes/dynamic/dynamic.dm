@@ -633,6 +633,10 @@ BLUEMOON REMOVAL END*/
 	return FALSE
 
 /datum/game_mode/dynamic/process()
+	// BLUEMOON ADD START - напоминание антагонистам, что они антагонисты
+	for(var/datum/antagonist/A in GLOB.antagonists_to_remind)
+		A.remind_them_they_are_antagonists()
+	// BLUEMOON ADD END
 	for (var/datum/dynamic_ruleset/rule in current_rules)
 		if(rule.rule_process() == RULESET_STOP_PROCESSING) // If rule_process() returns 1 (RULESET_STOP_PROCESSING), stop processing.
 			current_rules -= rule

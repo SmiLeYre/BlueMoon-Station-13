@@ -1,3 +1,34 @@
+/datum/block_parry_data/liquidator // fucked up parry data, emphasizing quicker, shorter parries
+	parry_stamina_cost = 10 // be wise about when you parry, though, else you won't be able to fight enough to make it count
+	parry_time_windup = 0
+	parry_time_active = 10 // small parry window
+	parry_time_spindown = 0
+	// parry_flags = PARRY_DEFAULT_HANDLE_FEEDBACK		// liquidator users can no longer strike while parrying
+	parry_time_perfect = 1.5
+	parry_time_perfect_leeway = 1
+	parry_imperfect_falloff_percent = 7.5
+	parry_efficiency_to_counterattack = 120
+	parry_efficiency_considered_successful = 65		// VERY generous
+	parry_efficiency_perfect = 120
+	parry_efficiency_perfect_override = list(
+		TEXT_ATTACK_TYPE_PROJECTILE = 30,
+	)
+	parry_failed_stagger_duration = 3 SECONDS
+	parry_data = list(
+		PARRY_COUNTERATTACK_MELEE_ATTACK_CHAIN = 2.5, // 10*2.5 = 25, 11*2.5 = 27.5, 12*2.5 = 30, 13*2.5 = 32.5
+	)
+
+/datum/block_parry_data/liquidator/quick_parry // emphasizing REALLY SHORT PARRIES
+	parry_stamina_cost = 8 // still more costly than most parries, but less than a full liquidator parry
+	parry_time_active = 5 // REALLY small parry window
+	parry_time_perfect = 2.5 // however...
+	parry_time_perfect_leeway = 2 // the entire time, the parry is perfect
+	parry_failed_stagger_duration = 1 SECONDS
+	// still, don't fucking miss your parries or you're down stamina and staggered to shit
+
+/datum/block_parry_data/liquidator/quick_parry/proj
+	parry_efficiency_perfect_override = list()
+
 /obj/item/broom
 	name = "broom"
 	desc = "This is my BROOMSTICK! It can be used manually or braced with two hands to sweep items as you move. It has a telescopic handle for compact storage."
@@ -12,6 +43,13 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("swept", "brushed off", "bludgeoned", "whacked")
 	resistance_flags = FLAMMABLE
+	block_parry_data = /datum/block_parry_data/liquidator
+
+/obj/item/staff/broom/on_active_parry(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, list/block_return, parry_efficiency, parry_time)
+	. = ..()
+	if(!typesof(object, /obj/item/broom))
+		// no counterattack.
+		block_return[BLOCK_RETURN_FORCE_NO_PARRY_COUNTERATTACK] = TRUE
 
 /obj/item/broom/Initialize(mapload)
 	. = ..()
@@ -65,3 +103,22 @@
 	J.put_in_cart(src, user)
 	J.mybroom=src
 	J.update_icon()
+
+/obj/item/broom/liquidator
+	name = "Грабли Ликвидатора"
+	desc = "Грабли, используемые для борьбы со всяким дерьмом."
+	icon = 'icons/obj/wizard.dmi'
+	icon_state = "rake"
+	lefthand_file = 'icons/mob/inhands/weapons/staves_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/staves_righthand.dmi'
+	force = 19
+	w_class = WEIGHT_CLASS_NORMAL
+	throwforce = 28
+	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	sharpness = SHARP_EDGED
+	resistance_flags = FLAMMABLE
+	var/quick_parry = FALSE // false = default parry, true = really small parry window
+	item_flags = ITEM_CAN_PARRY
+	bare_wound_bonus = 5
+	wound_bonus = 8

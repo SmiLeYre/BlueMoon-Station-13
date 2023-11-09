@@ -116,6 +116,8 @@
 
 	implants = list(/obj/item/implant/mindshield)
 
+	accessory = /obj/item/clothing/accessory/permit/head
+
 /datum/outfit/job/ntr/syndicate
 	name = "Syndicate Representative"
 	jobtype = /datum/job/ntr

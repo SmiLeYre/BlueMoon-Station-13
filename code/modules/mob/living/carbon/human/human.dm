@@ -211,8 +211,13 @@
 						var/allowed_access = null
 						var/obj/item/clothing/glasses/G = H.glasses
 						if (!(G.obj_flags & EMAGGED))
+							var/list/access = list()
 							if(H.wear_id)
-								var/list/access = H.wear_id.GetAccess()
+								access += H.wear_id.GetAccess()
+								if(ACCESS_SEC_DOORS in access)
+									allowed_access = H.get_authentification_name()
+							if(H.wear_neck)
+								access += H.wear_neck.GetAccess()
 								if(ACCESS_SEC_DOORS in access)
 									allowed_access = H.get_authentification_name()
 						else

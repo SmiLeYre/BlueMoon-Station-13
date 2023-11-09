@@ -1,5 +1,8 @@
 /obj/item/organ/genital/vagina
 	name = "вагина"
+	ru_name = "вагина" // BLUEMOON ADD
+	ru_name_v = "вагине" // BLUEMOON ADD
+	ru_name_capital = "Вагина" // BLUEMOON ADD
 	desc = "A female reproductive organ."
 	icon = 'icons/obj/genitals/vagina.dmi'
 	icon_state = ORGAN_SLOT_VAGINA
@@ -8,7 +11,7 @@
 	size = 1 //There is only 1 size right now
 	shape = DEF_VAGINA_SHAPE
 	genital_flags = CAN_MASTURBATE_WITH|CAN_CLIMAX_WITH|GENITAL_CAN_AROUSE|GENITAL_UNDIES_HIDDEN|CAN_CUM_INTO|HAS_EQUIPMENT
-	masturbation_verb = "finger"
+	masturbation_verb = "мастурбировать"
 	arousal_verb = "Вы чувствуете сильную влагу в вашей промежности"
 	unarousal_verb = "Возбуждение пропадает, влаги становится меньше"
 	fluid_transfer_factor = 0.1 //Yes, some amount is exposed to you, go get your AIDS
@@ -20,7 +23,6 @@
 	var/clit_diam = 0.25
 	var/clit_len = 0.25
 	var/list/vag_types = list("тентяклевидная", "зубастая", "волосатая", "лопатковидная", "мохнатая")
-	var/filled
 
 /obj/item/organ/genital/vagina/update_appearance()
 	. = ..()

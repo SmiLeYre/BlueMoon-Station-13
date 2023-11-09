@@ -43,6 +43,15 @@
 	var/const/FREQ_LISTENING = 1
 	//FREQ_BROADCASTING = 2
 
+	/// overlay when speaker is on
+	var/overlay_speaker_idle = "s_idle"
+	/// overlay when recieving a message
+	var/overlay_speaker_active = "s_active"
+	/// overlay when mic is on
+	var/overlay_mic_idle = "m_idle"
+	/// overlay when speaking a message (is displayed simultaniously with speaker_active)
+	var/overlay_mic_active = "m_active"
+
 /obj/item/radio/suicide_act(mob/living/user)
 	user.visible_message("<span class='suicide'>[user] starts bouncing [src] off [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return BRUTELOSS
@@ -354,6 +363,15 @@
 		. += "<span class='notice'>It can be attached and modified.</span>"
 	else
 		. += "<span class='notice'>It cannot be modified or attached.</span>"
+
+/obj/item/radio/update_overlays()
+	. = ..()
+	if(unscrewed)
+		return
+	if(broadcasting && overlay_mic_idle)
+		. += overlay_mic_idle
+	if(listening && overlay_speaker_idle)
+		. += overlay_speaker_idle
 
 /obj/item/radio/attackby(obj/item/W, mob/user, params)
 	add_fingerprint(user)

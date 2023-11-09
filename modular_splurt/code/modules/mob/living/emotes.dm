@@ -1212,3 +1212,48 @@
 	emote_sound = 'modular_splurt/sound/voice/gachi/wepons.ogg'
 	emote_cooldown = 5 SECONDS
 	emote_volume = 10
+
+/datum/emote/living/audio/sciteam
+	key = "sciteam"
+	key_third_person = "sciteams"
+	message = "exclaims, \"I am with the <b>Science</b> team!\""
+	message_mime = "gestures being with the Science team!"
+	emote_sound = 'modular_splurt/sound/voice/sciteam.ogg'
+	emote_cooldown = 1.32 SECONDS
+	emote_volume = 90
+
+/datum/emote/living/audio/ambatukam
+	key = "ambatukam"
+	key_third_person = "ambatukams"
+	message = "is about to come!"
+	message_mime = "seems like about to come!"
+	emote_sound = 'modular_splurt/sound/voice/ambatukam.ogg'
+	emote_cooldown = 2.75 SECONDS
+	//emote_volume = 30
+
+/datum/emote/living/audio/ambatukam2
+	key = "ambatukam2"
+	key_third_person = "ambatukams2"
+	message = "is about to come in harmony!"
+	message_mime = "seems like about to come in harmony!"
+	emote_sound = 'modular_splurt/sound/voice/ambatukam_harmony.ogg'
+	emote_cooldown = 3.42 SECONDS
+	//emote_volume = 60
+
+/datum/emote/living/audio/eekum
+	key = "eekumbokum"
+	key_third_person = "eekumbokums"
+	message = "eekum-bokums!"
+	message_mime = "seem to eekum-bokum!"
+	emote_sound = 'modular_splurt/sound/voice/eekum-bokum.ogg'
+	emote_cooldown = 0.9 SECONDS // Uses longest sound's time.
+
+/datum/emote/living/audio/eekum/run_emote(mob/user, params)
+	switch(user.gender)
+		if(MALE) // Game's SFX
+			emote_sound = 'modular_splurt/sound/voice/eekum-bokum.ogg'
+		if(FEMALE) // Korone's
+			emote_sound = pick('modular_splurt/sound/voice/eekum-bokum_f1.ogg', 'modular_splurt/sound/voice/eekum-bokum_f2.ogg')
+		else // Both
+			emote_sound = pick('modular_splurt/sound/voice/eekum-bokum.ogg', 'modular_splurt/sound/voice/eekum-bokum_f1.ogg', 'modular_splurt/sound/voice/eekum-bokum_f2.ogg')
+	. = ..()

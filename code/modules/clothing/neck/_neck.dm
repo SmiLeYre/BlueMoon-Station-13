@@ -174,11 +174,17 @@
 	var/poly_colors = list("#00BBBB")
 	var/tagname = null
 	var/treat_path = /obj/item/reagent_containers/food/snacks/cookie
+	var/obj/item/card/id/access_id = null
+	var/list/collar_access
 
 /obj/item/clothing/neck/petcollar/Initialize(mapload)
 	. = ..()
 	if(treat_path)
 		new treat_path(src)
+
+/obj/item/clothing/neck/petcollar/Destroy()
+	QDEL_NULL(access_id)
+	return ..()
 
 /obj/item/clothing/neck/petcollar/ComponentInitialize()
 	. = ..()
@@ -186,9 +192,39 @@
 		return
 	AddElement(/datum/element/polychromic, poly_colors, poly_states)
 
+/obj/item/clothing/neck/petcollar/get_examine_string(mob/user, thats)
+	. = ..()
+	if(access_id)
+		//. += " with [icon2html(access_id.get_cached_flat_icon(), user)] \a [access_id] clipped onto it."
+		. += " with \a [access_id.get_examine_string(user)] clipped onto it"
+
 /obj/item/clothing/neck/petcollar/attack_self(mob/user)
 	tagname = stripped_input(user, "Would you like to change the name on the tag?", "Name your new pet", "Spot", MAX_NAME_LEN)
 	name = "[initial(name)] - [tagname]"
+
+/obj/item/clothing/neck/petcollar/Entered(atom/movable/AM)
+	. = ..()
+	if(istype(AM, /obj/item/card/id))
+		access_id = AM
+		refreshID()
+
+/obj/item/clothing/neck/petcollar/Exited(atom/movable/AM)
+	. = ..()
+	if(istype(AM, /obj/item/card/id))
+		access_id = null
+		refreshID()
+
+/obj/item/clothing/neck/petcollar/proc/refreshID()
+	if(ishuman(loc))
+		var/mob/living/carbon/human/H = loc
+		if(H.wear_neck == src)
+			H.sec_hud_set_ID()
+
+/obj/item/clothing/neck/petcollar/GetAccess()
+	return access_id ? access_id.GetAccess() : ..()
+
+/obj/item/clothing/neck/petcollar/GetID()
+	return access_id ? access_id : ..()
 
 /obj/item/clothing/neck/petcollar/ribbon
 	name = "ribbon pet collar"

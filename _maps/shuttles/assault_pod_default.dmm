@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "b" = (
-/obj/machinery/porta_turret/syndicate/pod{
+/obj/machinery/porta_turret/syndicate{
 	faction = list("InteQ")
 	},
 /turf/closed/wall/mineral/plastitanium,

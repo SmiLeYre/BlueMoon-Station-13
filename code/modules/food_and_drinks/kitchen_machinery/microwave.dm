@@ -281,13 +281,6 @@
 			playsound(loc, 'sound/effects/spray3.ogg', 50, TRUE, -6)
 			user.visible_message(span_notice("[user] cleans \the [src]."), span_notice("You clean \the [src]."))
 			dirty = 0
-			for(var/atom/movable/ingredient as anything in ingredients)
-				var/image/ingredient_overlay = image(ingredient, src)
-				. -= ingredient_overlay
-				. -= ingredient_overlay
-				. -= ingredient_overlay
-				. -= ingredient_overlay
-				. -= ingredient_overlay
 			//QDEL_LIST(ingredients)
 			update_appearance()
 		else
@@ -303,13 +296,6 @@
 		if(do_after(user, cleanspeed, target = src))
 			user.visible_message(span_notice("[user] cleans \the [src]."), span_notice("You clean \the [src]."))
 			dirty = 0
-			for(var/atom/movable/ingredient as anything in ingredients)
-				var/image/ingredient_overlay = image(ingredient, src)
-				. -= ingredient_overlay
-				. -= ingredient_overlay
-				. -= ingredient_overlay
-				. -= ingredient_overlay
-				. -= ingredient_overlay
 			//QDEL_LIST(ingredients)
 			update_appearance()
 		return TRUE

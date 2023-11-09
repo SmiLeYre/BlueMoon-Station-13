@@ -1,4 +1,5 @@
 GLOBAL_LIST_EMPTY(antagonists)
+GLOBAL_LIST_EMPTY(antagonists_to_remind) // BLUEMOON ADD - список антагонистов, которые каждый тик пытаются получить напоминание о своей роли
 
 /datum/antagonist
 	///Public name for this antagonist. Appears for player prompts and round-end reports.
@@ -76,6 +77,12 @@ GLOBAL_LIST_EMPTY(antagonists)
 	///button to access antag interface
 	var/datum/action/antag_info/info_button
 
+	// BLUEMOON ADD START
+	var/time_of_last_antag_remind = 0 // время последнего напоминания антагонисту о том, что ему нужно проявлять активность
+	var/time_needed_to_remind = 12 MINUTES // сколько времени должно пройти, чтобы напоминание повторилось
+	var/reminded_times_left = 0 // сколько раз будет повторяться напоминание
+	// BLUEMOON ADD END
+
 /datum/antagonist/New()
 	GLOB.antagonists += src
 	typecache_datum_blacklist = typecacheof(typecache_datum_blacklist)
@@ -135,6 +142,22 @@ GLOBAL_LIST_EMPTY(antagonists)
 	SIGNAL_HANDLER
 	return
 
+// BLUEMOON ADD START - напоминание антагонистам о том, кто они и что должны делать
+/datum/antagonist/proc/remind_them_they_are_antagonists()
+	if(reminded_times_left)
+		if(owner)
+			if(time_of_last_antag_remind + time_needed_to_remind < world.time)
+				to_chat(owner, span_big_warning("Ваша роль в раунде - [name]."))
+				to_chat(owner, span_warning("Вы - антагонист. Угроза для экипажа."))
+				to_chat(owner, span_warning("Вы - 1 из [GLOB.clients.len] игроков, у которого есть привилегия на \
+				пакости в раунде и отыгрыш явного плохого парня. Не игнорируйте свою роль, сделайте что-то необычное выпустите пар с интересом для себя и других."))
+				time_of_last_antag_remind = world.time
+				reminded_times_left -= 1
+	else
+		to_chat(owner, span_danger("Это последнее напоминание. Be cool, not lame."))
+		GLOB.antagonists_to_remind -= src
+// BLUEMOON ADD END
+
 // Adds the specified antag hud to the player. Usually called in an antag datum file
 /datum/antagonist/proc/add_antag_hud(antag_hud_type, antag_hud_name, mob/living/mob_override)
 	var/datum/atom_hud/antag/hud = GLOB.huds[antag_hud_type]
@@ -193,6 +216,11 @@ GLOBAL_LIST_EMPTY(antagonists)
 		owner.current.client.holder.auto_deadmin()
 	if(!soft_antag && owner.current.stat != DEAD)
 		owner.current.add_to_current_living_antags()
+
+	// BLUEMOON ADD START - если датум с игроком, то он начинает каждый тик прозваниваться, чтобы напомнить игроку о роли
+	if(reminded_times_left && owner)
+		GLOB.antagonists_to_remind += src
+	// BLUEMOON ADD END
 
 	// cit skill
 	if(skill_modifiers)

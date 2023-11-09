@@ -13,6 +13,7 @@
 		"Maximum Security Prisoner",
 		"SuperMax Security Prisoner",
 		"Protective Custody Prisoner",
+		"Prison Slut",
 		"Security Slave"
 		)
 

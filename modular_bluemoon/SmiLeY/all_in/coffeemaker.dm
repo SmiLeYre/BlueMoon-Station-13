@@ -399,7 +399,7 @@
 /obj/machinery/coffeemaker/proc/toggle_steam()
 	QDEL_NULL(particles)
 	if(brewing)
-		var/datum/effect_system/smoke_spread/steam = new /datum/effect_system/smoke_spread()
+		var/datum/effect_system/smoke_spread/transparent/small/steam = new /datum/effect_system/smoke_spread/transparent/small()
 		steam.set_up(1, 0, src)
 		steam.attach(src)
 		steam.start()

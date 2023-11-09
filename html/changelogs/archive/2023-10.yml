@@ -55,3 +55,10 @@
   BongaTheProto:
   - tweak: moves the flavor texts and related to the background tab
   - code_imp: merges 20 commits from upstream
+  CEO of Mememotes:
+  - rscadd: Added *eekumbokum (differs depending on gender), *sciteam (HL Scientist)
+      and *ambatukam (plus alternative with choir).
+2023-10-31:
+  RachelDoe:
+  - bugfix: Kinkmate contraband item "Breast reduction pills" now contains stated
+      item, instead of penis reduction pills

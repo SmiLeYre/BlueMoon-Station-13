@@ -74,7 +74,7 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/helmet/sec
 	suit = /obj/item/clothing/suit/armor/vest/alt
-	shoes = /obj/item/clothing/shoes/jackboots/tall
+	shoes = /obj/item/clothing/shoes/jackboots/tall_default
 	l_pocket = /obj/item/storage/bag/security
 	r_pocket = /obj/item/assembly/flash/handheld
 	//suit_store = /obj/item/gun/energy/e_gun/advtaser

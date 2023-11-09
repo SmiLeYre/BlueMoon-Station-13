@@ -47,7 +47,7 @@
 	ears = /obj/item/radio/headset/headset_med
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/hsc
 	uniform = /obj/item/clothing/under/rank/medical/doctor/util
-	shoes = /obj/item/clothing/shoes/jackboots/tall
+	shoes = /obj/item/clothing/shoes/jackboots/tall_default
 	l_hand = /obj/item/clipboard
 	r_hand = /obj/item/storage/briefcase/medical
 	l_pocket = /obj/item/laser_pointer

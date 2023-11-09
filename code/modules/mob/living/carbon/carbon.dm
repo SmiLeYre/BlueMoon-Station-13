@@ -643,6 +643,8 @@
 
 	if(head)
 		var/obj/item/clothing/head/H = head
+		if(!istype(H, /obj/item/clothing/head))
+			return
 		sight |= H.vision_flags
 		see_in_dark = max(H.darkness_view, see_in_dark)
 

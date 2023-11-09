@@ -29899,6 +29899,11 @@
 	id = "research_shutters_2";
 	name = "research shutters"
 	},
+/obj/machinery/door/window/eastright{
+	name = "Research and Development Desk";
+	req_one_access_txt = "7;29";
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/science/lab)
 "cpd" = (
@@ -76015,15 +76020,10 @@
 /area/cargo/storage)
 "qGG" = (
 /obj/effect/turf_decal/tile/dark_green,
-/obj/machinery/power/apc/highcap/ten_k{
-	areastring = "/area/hallway/primary/central";
-	dir = 1;
-	name = "Central Primary Hallway APC";
-	pixel_x = 23
-	},
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
+/obj/machinery/power/apc/auto_name/east,
 /turf/open/floor/plasteel,
 /area/hallway/primary/central)
 "qGP" = (
@@ -77257,9 +77257,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
-"rin" = (
-/turf/open/space/basic,
-/area/science/research/abandoned)
 "rio" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/command{
@@ -79112,6 +79109,7 @@
 /obj/machinery/door/airlock/maintenance{
 	req_one_access_txt = "12;5;39;6"
 	},
+/obj/structure/barricade/wooden,
 /turf/open/floor/plating,
 /area/science/research/abandoned)
 "sdd" = (
@@ -96446,7 +96444,7 @@ oRp
 oRp
 oRp
 oRp
-rin
+oRp
 oRp
 oRp
 oRp

@@ -23,7 +23,6 @@ GLOBAL_LIST_EMPTY(ghost_records)
 	interaction_flags_machine = INTERACT_MACHINE_OFFLINE
 	req_one_access = list(ACCESS_HEADS, ACCESS_ARMORY) // Heads of staff or the warden can go here to claim recover items from their department that people went were cryodormed with.
 	var/mode = null
-	unique_icon = TRUE
 
 	// Used for logging people entering cryosleep and important items they are carrying.
 	var/list/frozen_crew = list()
@@ -48,7 +47,6 @@ GLOBAL_LIST_EMPTY(ghost_records)
 /obj/machinery/computer/cryopod/Initialize(mapload)
 	. = ..()
 	GLOB.cryopod_computers += src
-	radio = new radio(src)
 
 /obj/machinery/computer/cryopod/Destroy()
 	GLOB.cryopod_computers -= src
@@ -280,9 +278,9 @@ GLOBAL_LIST_EMPTY(ghost_records)
 
 	if(user != target && target.client)
 		if(iscyborg(target))
-			to_chat(user, span_danger("You can't put [target] into [src]. [target.ru_who(capitalized = TRUE)] online."))
+			to_chat(user, span_danger("You can't put [target] into [src]. [target.p_theyre(capitalized = TRUE)] online."))
 		else
-			to_chat(user, span_danger("You can't put [target] into [src]. [target.ru_who(capitalized = TRUE)] conscious."))
+			to_chat(user, span_danger("You can't put [target] into [src]. [target.p_theyre(capitalized = TRUE)] conscious."))
 		return
 	else if(target.client) // mob has client
 		if(tgalert(target, "Would you like to [tele ? "be teleported out" : "enter cryosleep"]?", "Enter Cryopod?", "Yes", "No") != "Yes")
@@ -523,7 +521,6 @@ GLOBAL_LIST_EMPTY(ghost_records)
 		pod.name = initial_name
 
 // Wake-up notifications
-
 /obj/effect/mob_spawn
 	/// For figuring out where the local cryopod computer is. Must be set for cryo computer announcements.
 	var/area/computer_area
@@ -531,9 +528,9 @@ GLOBAL_LIST_EMPTY(ghost_records)
 /obj/machinery/computer/cryopod/proc/announce(message_type, rank)
 	switch(message_type)
 		if("CRYO_JOIN")
-			radio.talk_into(src, "[usr][rank ? ", [rank]" : ""] просыпается после крио-заморозки.", announcement_channel)
+			radio.talk_into(src, "[usr] просыпается после крио-заморозки.", announcement_channel)
 		if("CRYO_LEAVE")
-			radio.talk_into(src, "[usr][rank ? ", [rank]" : ""] возвращается в крио-заморозку.", announcement_channel)
+			radio.talk_into(src, "[usr] возвращается в крио-заморозку.", announcement_channel)
 
 /obj/effect/mob_spawn/human/Initialize(mapload)
 	. = ..()
@@ -541,7 +538,6 @@ GLOBAL_LIST_EMPTY(ghost_records)
 
 /obj/effect/mob_spawn/human/special(mob/living/carbon/human/spawned_mob, datum/team/ghost_role/ghostovich)
 	. = ..()
-
 	if(ishuman(spawned_mob))
 		if(ghost_team)
 			spawned_mob.mind.add_antag_datum(/datum/antagonist/ghost_role, ghost_team)
@@ -552,6 +548,7 @@ GLOBAL_LIST_EMPTY(ghost_records)
 	record.fields["name"] = spawned_mob.real_name
 	record.fields["rank"] = name
 	GLOB.ghost_records.Add(record)
+
 	if(control_computer)
 		control_computer.announce("CRYO_JOIN", spawned_mob.real_name, name)
 
@@ -563,7 +560,6 @@ GLOBAL_LIST_EMPTY(ghost_records)
 		var/area/area = get_area(cryo_console) // Define moment
 		if(area.type == computer_area)
 			return console
-
 	return
 
 /obj/effect/mob_spawn/human/lavaland_syndicate

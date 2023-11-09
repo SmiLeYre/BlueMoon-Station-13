@@ -49,18 +49,18 @@
 	name = "Syndicate Stormtrooper Fox"
 	desc = "An anthromorphic fox member of the Syndicate."
 
-/obj/effect/spawner/lootdrop/hostile/syndicate
+/obj/effect/spawner/lootdrop/hostile/inteq
 	icon = 'icons/effects/landmarks_static.dmi'
 	icon_state = "snukeop_leader_spawn"
 	lootcount = 1
 	loot = list(
-		/mob/living/simple_animal/hostile/syndicate/ranged/space/anthro/cat,
-		/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/stormtrooper/anthro/fox,
-		/mob/living/simple_animal/hostile/syndicate/melee/space/anthro/lizard,
-		/mob/living/simple_animal/hostile/syndicate/melee/anthro,
-		/mob/living/simple_animal/hostile/syndicate/melee/sword/anthro,
-		/mob/living/simple_animal/hostile/syndicate/ranged/smg/anthro,
-		/mob/living/simple_animal/hostile/syndicate/ranged/anthro
+		/mob/living/simple_animal/hostile/syndicate/ranged/space,
+		/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/stormtrooper,
+		/mob/living/simple_animal/hostile/syndicate/melee/space,
+		/mob/living/simple_animal/hostile/syndicate/melee,
+		/mob/living/simple_animal/hostile/syndicate/melee/sword,
+		/mob/living/simple_animal/hostile/syndicate/ranged/smg,
+		/mob/living/simple_animal/hostile/syndicate/ranged
 	)
 // Cult
 /mob/living/simple_animal/hostile/cult

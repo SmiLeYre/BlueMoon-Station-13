@@ -238,6 +238,7 @@
 	new /obj/item/circuitboard/machine/techfab/department/security(src)
 	new /obj/item/storage/photo_album/HoS(src)
 	new /obj/item/card/id/departmental_budget/sec(src)
+	new /obj/item/lighter/hos(src)
 	new /obj/item/mod/construction/armor/safeguard(src)
 	new /obj/item/mod/module/jetpack(src)
 	new /obj/item/mod/module/holster(src)

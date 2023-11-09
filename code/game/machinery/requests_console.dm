@@ -319,6 +319,10 @@ GLOBAL_LIST_EMPTY(allConsoles)
 		ru_department = "Завхоз"
 	else if (department == "Telecomms Admin")
 		ru_department = "Администрация Телекоммуникаций"
+	else if (department == "Bridge")
+		ru_department = "Мостик"
+	else if (department == "Cargo Bay")
+		ru_department = "Складской отдел"
 	else
 		ru_department = "Неизвестный"
 /////////////////
@@ -331,7 +335,7 @@ GLOBAL_LIST_EMPTY(allConsoles)
 			var/mob/living/L = usr
 			message = L.treat_message(message)
 		//minor_announce(message, "[ru_department] объявляет:")
-		priority_announce(message, "[ru_department] Объявляет", 'sound/announcer/tonelow.ogg', "Priority", has_important_message = TRUE)
+		priority_announce(message, "[ru_department] Объявляет (— [usr.name])", 'sound/announcer/tonelow.ogg', "Priority", has_important_message = TRUE)
 		GLOB.news_network.SubmitArticle(message, department, "Станционное Объявление", null)
 		usr.log_talk(message, LOG_SAY, tag = "station announcement from [src]")
 		message_admins("[ADMIN_LOOKUPFLW(usr)] has made a station announcement from [src] at [AREACOORD(usr)].")
@@ -520,7 +524,7 @@ GLOBAL_LIST_EMPTY(allConsoles)
 			if(!silent)
 				playsound(src, 'sound/machines/twobeep.ogg', 50, 1)
 				say(title)
-			messages += "<b>From:</b> [linkedsender]<br>[message]"
+			messages += "<b>От:</b> [linkedsender]<br>[message]"
 
 /obj/machinery/requests_console/attackby(obj/item/O, mob/user, params)
 	if(O.tool_behaviour == TOOL_CROWBAR)

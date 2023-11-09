@@ -13,8 +13,10 @@
 /mob/living/carbon/human/GetVoice()
 	if(istype(wear_mask, /obj/item/clothing/mask/chameleon))
 		var/obj/item/clothing/mask/chameleon/V = wear_mask
-		if(V.voice_change && wear_id)
-			var/obj/item/card/id/idcard = wear_id.GetID()
+		if(V.voice_change && (wear_id || wear_neck))
+			var/obj/item/card/id/idcard = wear_id?.GetID()
+			if(!idcard)
+				idcard = wear_neck?.GetID()
 			if(istype(idcard))
 				return idcard.registered_name
 			else

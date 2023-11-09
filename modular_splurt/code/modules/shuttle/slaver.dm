@@ -15,7 +15,7 @@
 	possible_destinations = "slaver_away"
 
 /obj/machinery/computer/camera_advanced/shuttle_docker/slaver
-	name = "slaver Shuttle Navigation Computer"
+	name = "Slaver Shuttle Navigation Computer"
 	desc = "Used to designate a precise transit location for the slaver shuttle."
 	icon_screen = "syndishuttle"
 	icon_keyboard = "syndie_key"

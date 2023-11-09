@@ -3535,7 +3535,9 @@
 /obj/item/card/id/away/hotel,
 /obj/item/card/id/away/hotel,
 /obj/item/card/id/away/hotel,
-/obj/structure/closet/secure_closet,
+/obj/structure/closet/secure_closet{
+	req_access_txt = "203"
+	},
 /obj/item/radio/headset/headset_srv/hotel,
 /obj/item/radio/headset/headset_srv/hotel,
 /obj/item/radio/headset/headset_srv/hotel,
@@ -6359,7 +6361,9 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/hotel)
 "Ep" = (
-/obj/structure/closet/secure_closet,
+/obj/structure/closet/secure_closet{
+	req_access_txt = "203"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/hotel/security)
 "Eq" = (
@@ -6935,7 +6939,8 @@
 /area/ruin/space/has_grav/hotel)
 "GY" = (
 /obj/machinery/door/window/brigdoor{
-	dir = 4
+	dir = 4;
+	req_access_txt = "203"
 	},
 /obj/effect/turf_decal/tile/red{
 	dir = 4

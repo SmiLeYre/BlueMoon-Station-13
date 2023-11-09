@@ -19,6 +19,8 @@
 	var/victory_message = "The revolution has overpowered the command staff! Viva la revolution! Execute any head of staff and security should you find them alive."
 	soft_antag = FALSE // BLUEMOON ADDITION
 	//var/rev_cooldown = 0
+	reminded_times_left = 1 // BLUEMOON ADD - 1 напоминания достаточно, чтобы не играли в мирномага
+	time_needed_to_remind = 5 MINUTES // BLUEMOON ADD
 
 /datum/antagonist/rev/can_be_owned(datum/mind/new_owner)
 	. = ..()

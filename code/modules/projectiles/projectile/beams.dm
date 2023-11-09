@@ -26,6 +26,10 @@
 	wound_bonus = 8
 	bare_wound_bonus = 12
 
+/obj/item/projectile/beam/laser/lasgun
+	damage = 12.5
+	armour_penetration = 25
+
 //overclocked laser, does a bit more damage but has much higher wound power (-0 vs -20)
 /obj/item/projectile/beam/laser/hellfire
 	name = "hellfire laser"

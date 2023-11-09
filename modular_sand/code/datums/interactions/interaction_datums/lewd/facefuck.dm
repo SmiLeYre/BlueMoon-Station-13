@@ -82,9 +82,9 @@
 			if("penis")
 				if(user.has_penis() || user.has_strapon())
 					if(user.is_fucking(partner, CUM_TARGET_THROAT))
-						message = "вытягивает свой орган из горла \the <b>[partner]</b> и сладко усмехается."
+						message = "вытягивает свой орган из горла \the <b>[partner]</b>."
 					else
-						message = "засовывает свои гениталии в рот \the <b>[partner]</b>"
+						message = "засовывает свои гениталии в рот \the <b>[partner]</b>."
 				else
 					improv = TRUE
 		if(improv)

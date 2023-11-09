@@ -185,13 +185,3 @@
 
 /obj/effect/landmark/navigate_destination/psychologist
 	location = "Psychologist's office"
-
-/obj/effect/landmark/start/eorgwarp
-	name = "eorgwarp"
-	icon = 'icons/effects/landmarks_static.dmi'
-	icon_state = "x"
-
-/obj/effect/landmark/start/eorgwarp/Initialize()
-	..()
-	GLOB.eorgwarp += get_turf(src)
-	return INITIALIZE_HINT_QDEL

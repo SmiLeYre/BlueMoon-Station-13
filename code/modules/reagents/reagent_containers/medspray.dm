@@ -101,11 +101,14 @@
 	icon_state = "synthspray"
 	list_reagents = list(/datum/reagent/medicine/synthflesh = 120)
 
-/obj/item/reagent_containers/hypospray/combat/synthflesh
+/obj/item/hypospray/mkii/CMO/combat/synthflesh
 	name = "Combat Hypospray with Synthflesh"
+	icon = 'icons/obj/syringe.dmi'
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	item_state = "holy_hypo"
 	icon_state = "holy_hypo"
-	list_reagents = list(/datum/reagent/medicine/synthflesh = 120)
+	start_vial = /obj/item/reagent_containers/glass/bottle/vial/large/synthflesh
 
 /obj/item/reagent_containers/medspray/sterilizine
 	name = "sterilizer spray"

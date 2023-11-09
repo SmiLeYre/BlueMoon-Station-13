@@ -151,6 +151,7 @@
 			fire_power -= TURF_FIRE_POWER_LOSS_ON_LOW_TEMP * ((FIRE_MINIMUM_TEMPERATURE_TO_EXIST - temperature) / FIRE_MINIMUM_TEMPERATURE_TO_EXIST)
 		fire_power--
 		if(fire_power <= 0)
+			open_turf.ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 			qdel(src)
 			return
 		fire_pressure_check()

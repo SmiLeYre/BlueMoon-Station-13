@@ -369,28 +369,28 @@
 		if ( eyes_covered && mouth_covered )
 			return
 		else if ( mouth_covered )	// Reduced effects if partially protected
-			if(prob(5))
-				victim.emote("scream")
-			victim.blur_eyes(3)
-			victim.blind_eyes(2)
-			victim.confused = max(M.confused, 3)
-			victim.damageoverlaytemp = 60
-			victim.DefaultCombatKnockdown(80, override_hardstun = 0.1, override_stamdmg = min(reac_volume * 3, 15))
+			if(prob(50))
+				victim.emote("realagony")
+			victim.blur_eyes(6)
+			victim.blind_eyes(4)
+			victim.confused = max(M.confused, 6)
+			victim.damageoverlaytemp = 120
+			victim.DefaultCombatKnockdown(160, override_hardstun = 0.1, override_stamdmg = min(reac_volume * 3, 15))
 			victim.add_movespeed_modifier(/datum/movespeed_modifier/reagent/pepperspray)
 			addtimer(CALLBACK(victim, /mob.proc/remove_movespeed_modifier, /datum/movespeed_modifier/reagent/pepperspray), 10 SECONDS)
 			return
 		else if ( eyes_covered ) // Eye cover is better than mouth cover
-			victim.blur_eyes(3)
-			victim.damageoverlaytemp = 30
+			victim.blur_eyes(6)
+			victim.damageoverlaytemp = 60
 			return
 		else // Oh dear :D
 			if(prob(5))
-				victim.emote("scream")
-			victim.blur_eyes(5)
-			victim.blind_eyes(3)
-			victim.confused = max(M.confused, 6)
-			victim.damageoverlaytemp = 75
-			victim.DefaultCombatKnockdown(80, override_hardstun = 0.1, override_stamdmg = min(reac_volume * 5, 25))
+				victim.emote("realagony")
+			victim.blur_eyes(10)
+			victim.blind_eyes(6)
+			victim.confused = max(M.confused, 12)
+			victim.damageoverlaytemp = 150
+			victim.DefaultCombatKnockdown(160, override_hardstun = 0.1, override_stamdmg = min(reac_volume * 5, 25))
 			victim.add_movespeed_modifier(/datum/movespeed_modifier/reagent/pepperspray)
 			addtimer(CALLBACK(victim, /mob.proc/remove_movespeed_modifier, /datum/movespeed_modifier/reagent/pepperspray), 10 SECONDS)
 		victim.update_damage_hud()
