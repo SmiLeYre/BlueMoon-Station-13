@@ -1,14 +1,14 @@
 /datum/status_effect/dripping_cum
 	id = "dripping_cum"
-	// We only end when we run out!
 	status_type = STATUS_EFFECT_MULTIPLE
+	// We only end when we run out!
 	duration = -1
 	tick_interval = 1 SECONDS
 	alert_type = /atom/movable/screen/alert/status_effect/dripping_cum
 	var/datum/reagents/contents
 	var/list/blood_DNA
-	var/cum_in_anus
-	var/cum_in_vagina
+	var/cum_in_anus = 0
+	var/cum_in_vagina = 0
 	var/anus_can_leak
 	var/vagina_can_leak
 
