@@ -111,7 +111,9 @@
 		if(iscyborg(user) && user.a_intent != INTENT_HARM) //to save asimov borgs a LOT of heartache
 			return TRUE
 		if(tool && tool.item_flags & SURGICAL_TOOL) //Just because you used the wrong tool it doesn't mean you meant to whack the patient with it
+			/* BLUERMOON REMOVAL START - перенесено в try_op
 			to_chat(user, "<span class='warning'>This step requires a different tool!</span>")
+			/ BLUEMOON REMOVAL END */
 			return TRUE
 
 /datum/surgery/proc/get_surgery_step()
@@ -188,28 +190,37 @@
 
 			// операция наживую, очень больно
 			if(check_for_pain)
-				patient.Jitter(100) // 20 секунд у всего
-				patient.Dizzy(100)
-				patient.stuttering = max(patient.stuttering, 20)
-				patient.adjustStaminaLoss(40)
-				patient.blur_eyes(20)
-				SEND_SIGNAL(patient, COMSIG_ADD_MOOD_EVENT, "surgery_pain", /datum/mood_event/surgery_pain)
 
-				if(prob(50))
-					to_chat(patient, span_big_warning(pick(\
-						"ГОСПОДИ, КАК ЖЕ БОЛЬНО!", "ЗВЁЗДЫ, МЕНЯ РЕЖУТ НАЖИВУЮ!", "УБЕЙТЕ МЕНЯ, Я НЕ ВЫНЕСУ!", "Я ХОЧУ ЖИТЬ! ПОМОГИТЕ!", "УБЕРИТЕ ИХ ОТ МЕНЯ!", \
-						"УБЛЮДОК! ТВАРЬ! КАК ЖЕ БОЛЬНО!", "АААГХ!", "АААААА!", "ПОМОГИТЕ, Я НЕ МОГУ!", "СПАСИТЕ, МЕНЯ РЕЖУТ!", "АААААААААААА!")))
-				switch(rand(1,10))
-					if(1 to 8)
-						if(prob(50))
-							patient.forcesay(pick("AAA!!", "АААХ!!", "ААГХ!!"))
-							patient.emote("me", EMOTE_VISIBLE, pick(list(\
-								"елозит и кричит от боли!", "выгибается и кричит от агонии!", "трясётся и кричит от боли!", "дрожит и вскрикивает от боли!", \
-								"кричит от боли!", "елозит на месте и кричит от боли!", "жмурится и вопит в агонии!")))
-						else
-							patient.emote(pick("realagony", "scream"))
-					if(9 to 10)
-						patient.emote("cry")
+				// сердечный приступ от боли
+				if(prob(1)) // С учётом кучи проваленных попыток, это серьезный шанс
+					if(!patient.undergoing_cardiac_arrest())
+						patient.visible_message(span_danger("[patient] несколько раз дёргается перед тем, как замереть в скрюченной позе... [patient.ru_who(TRUE)] не дышит!"), span_big_warning("СЕРДЦЕ! БОЛЬ В ГРУДИ..."))
+						patient.set_heartattack(TRUE)
+						patient.jitteriness = 0 // перестаём дрожать
+
+				if(!patient.IsUnconscious())
+					patient.Jitter(100) // 20 секунд у всего
+					patient.Dizzy(100)
+					patient.stuttering = max(patient.stuttering, 20)
+					patient.adjustStaminaLoss(40)
+					patient.blur_eyes(20)
+					SEND_SIGNAL(patient, COMSIG_ADD_MOOD_EVENT, "surgery_pain", /datum/mood_event/surgery_pain)
+
+					if(prob(50))
+						to_chat(patient, span_big_warning(pick(\
+							"ГОСПОДИ, КАК ЖЕ БОЛЬНО!", "ЗВЁЗДЫ, МЕНЯ РЕЖУТ НАЖИВУЮ!", "УБЕЙТЕ МЕНЯ, Я НЕ ВЫНЕСУ!", "Я ХОЧУ ЖИТЬ! ПОМОГИТЕ!", "УБЕРИТЕ ИХ ОТ МЕНЯ!", \
+							"УБЛЮДОК! ТВАРЬ! КАК ЖЕ БОЛЬНО!", "АААГХ!", "АААААА!", "ПОМОГИТЕ, Я НЕ МОГУ!", "СПАСИТЕ, МЕНЯ РЕЖУТ!", "АААААААААААА!")))
+					switch(rand(1,10))
+						if(1 to 8)
+							if(prob(50))
+								patient.say(pick("AAA!!", "АААХ!!", "ААГХ!!"))
+								patient.emote("me", EMOTE_VISIBLE, pick(list(\
+									"елозит и кричит от боли!", "выгибается и кричит от агонии!", "трясётся и кричит от боли!", "дрожит и вскрикивает от боли!", \
+									"кричит от боли!", "елозит на месте и кричит от боли!", "жмурится и вопит в агонии!")))
+							else
+								patient.emote(pick("realagony", "scream"))
+						if(9 to 10)
+							patient.emote("cry")
 
 	propability += pain_propability_debuff
 	// BLUEMOON ADDITION END

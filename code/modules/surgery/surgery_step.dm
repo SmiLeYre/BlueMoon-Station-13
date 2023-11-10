@@ -50,6 +50,10 @@
 				return TRUE
 			else
 				surgery.status--
+	// BLUEMOON ADD START - перенесено сюда оповещение о неправильном инструменте для предотвращения лишнего дубля
+	if(!success)
+		to_chat(user, "<span class='warning'>This step requires a different tool!</span>")
+	// BLUEMOON ADD END
 	return FALSE
 
 /datum/surgery_step/proc/initiate(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, try_to_fail = FALSE)
@@ -79,6 +83,14 @@
 		if(implement_type)	//this means it isn't a require hand or any item step.
 			prob_chance = implements[implement_type]
 		prob_chance *= surgery.get_propability_multiplier()
+		// BLUEMOON ADD START - самооперирование - чертовски сложное дело
+		if(target == user)
+			if(HAS_TRAIT(target, CAN_BE_OPERATED_WITHOUT_PAIN)) // Роботам и некоторым другим расам даётся проще. Они не чувствуют боли
+				display_results(target, self_message = "<span class='notice'>Вы пытаетесь отремонтироваться самостоятельно. Это не так сложно, как было бы органику, но это неудобно.</span>")
+				prob_chance = min(prob_chance, 80)
+			else
+				prob_chance = min(prob_chance, 20)
+		// BLUEMOON ADD END
 
 		if((prob(prob_chance) || (iscyborg(user) && !silicons_obey_prob)) && chem_check(target) && !try_to_fail)
 			if(success(user, target, target_zone, tool, surgery))
@@ -130,7 +142,7 @@
 	playsound(get_turf(target), success_sound, 75, TRUE, falloff_exponent = 12, falloff_distance = 1)
 
 /datum/surgery_step/proc/failure(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='warning'>You screw up!</span>",
+	display_results(user, target, "<span class='warning'>You screw up! Repeat the step!</span>", // BLUEMOON EDIT - добавлено про повтор
 		"<span class='warning'>[user] screws up!</span>",
 		"[user] finishes.", TRUE) //By default the patient will notice if the wrong thing has been cut
 	return FALSE
