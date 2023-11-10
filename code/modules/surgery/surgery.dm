@@ -21,11 +21,14 @@
 	var/datum/wound/operated_wound								//The actual wound datum instance we're targeting
 	var/datum/wound/targetable_wound							//The wound type this surgery targets
 
+	var/must_be_performed_while_awake = FALSE // BLUEMOON ADD - операция обязательно должна проводиться, когда пациент в сознании
+
 /datum/surgery/New(surgery_target, surgery_location, surgery_bodypart)
 	..()
 	if(surgery_target)
 		target = surgery_target
 		target.surgeries += src
+		target.SetSleeping(0) // BLUEMOON ADD - пациент не может уснуть через кнопку во вкладке IC
 		if(surgery_location)
 			location = surgery_location
 		if(surgery_bodypart)
@@ -142,6 +145,73 @@
 	// BLUEMOON ADDITION AHEAD - сверх-большие персонажи ломают собой столы. Поблажка, дабы с ними всё ещё можно было проводить нормально операции
 	if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))
 		propability = 0.8
+
+	// Шансы на операции в зависимости от состояния пациента
+	var/check_for_painkillers = FALSE
+	var/check_for_pain = FALSE
+	var/pain_propability_debuff = 0
+	if(ishuman(target))
+		var/mob/living/carbon/human/patient = target
+		if(!HAS_TRAIT(patient, CAN_BE_OPERATED_WITHOUT_PAIN)) // на некоторых расах операцию можно проводить без дебафов
+			if(patient.stat == DEAD && patient.timeofdeath + 2 MINUTES > world.time) // персонаж погиб И это было недавно (нужно для предотвращения убийства-и-немедленной-операции)
+				patient.visible_message(span_warning("[patient] погиб менее двух минут назад, тело ещё напряжено от трупного спазма и его намного сложнее оперировать!"), vision_distance = 1)
+				pain_propability_debuff -= 0.5
+			else if(patient.IsUnconscious() || patient.stat == DEAD) // без сознания или уже в гост-чате
+				// Нет штрафов
+			else if(patient.IsParalyzed() || patient.IsStun()) // не может совершать сложные движения, но всё ещё минимальная мимика присутствует
+				pain_propability_debuff -= 0.2
+				check_for_painkillers = TRUE
+				check_for_pain = TRUE
+			else if(patient.handcuffed) // в сознании, может двигаться, но скован наручниками и привязан
+				pain_propability_debuff -= 0.4
+				check_for_painkillers = TRUE
+				check_for_pain = TRUE
+			else // пациент в сознании, не скован
+				pain_propability_debuff -= 0.6 // Операция на полу без обезбола - гарантированный провал без химии и другой помощи
+				check_for_painkillers = TRUE
+				check_for_pain = TRUE
+
+			if(check_for_painkillers && (IS_IN_STASIS(patient) || HAS_TRAIT(patient, TRAIT_PAINKILLER)))
+				pain_propability_debuff = 0
+				check_for_pain = FALSE
+				SEND_SIGNAL(patient, COMSIG_ADD_MOOD_EVENT, "surgery_pain", /datum/mood_event/surgery_pain/painkiller)
+				if(prob(5))
+					to_chat(patient, span_warning(pick(
+						"Меня оперируют без анестезии... Не по себе от этого.", "А что чувствует доктор, когда режет меня?", \
+						"Что если доктор сделает что-то не так? Я что-то почувствую?", "Боюсь подумать, что это было бы без наркоза.", \
+						"Я вообще ничего не чувствую там, где меня оперируют...", "У меня онемение, я ничего не чувствую в месте операции!")))
+
+			// для операций на мозге, пациенту следует быть в сознании
+			if(must_be_performed_while_awake && (target.IsUnconscious() || target.stat == DEAD))
+				patient.visible_message(span_warning("Для этой операции требуется, чтобы пациент находился в сознании. Шанс провала гораздо выше!"), vision_distance = 1)
+				propability -= 0.5
+
+			// операция наживую, очень больно
+			if(check_for_pain)
+				patient.Jitter(100) // 20 секунд у всего
+				patient.Dizzy(100)
+				patient.stuttering = max(patient.stuttering, 20)
+				patient.adjustStaminaLoss(40)
+				patient.blur_eyes(20)
+				SEND_SIGNAL(patient, COMSIG_ADD_MOOD_EVENT, "surgery_pain", /datum/mood_event/surgery_pain)
+
+				if(prob(50))
+					to_chat(patient, span_big_warning(pick(\
+						"ГОСПОДИ, КАК ЖЕ БОЛЬНО!", "ЗВЁЗДЫ, МЕНЯ РЕЖУТ НАЖИВУЮ!", "УБЕЙТЕ МЕНЯ, Я НЕ ВЫНЕСУ!", "Я ХОЧУ ЖИТЬ! ПОМОГИТЕ!", "УБЕРИТЕ ИХ ОТ МЕНЯ!", \
+						"УБЛЮДОК! ТВАРЬ! КАК ЖЕ БОЛЬНО!", "АААГХ!", "АААААА!", "ПОМОГИТЕ, Я НЕ МОГУ!", "СПАСИТЕ, МЕНЯ РЕЖУТ!", "АААААААААААА!")))
+				switch(rand(1,10))
+					if(1 to 8)
+						if(prob(50))
+							patient.forcesay(pick("AAA!!", "АААХ!!", "ААГХ!!"))
+							patient.emote("me", EMOTE_VISIBLE, pick(list(\
+								"елозит и кричит от боли!", "выгибается и кричит от агонии!", "трясётся и кричит от боли!", "дрожит и вскрикивает от боли!", \
+								"кричит от боли!", "елозит на месте и кричит от боли!", "жмурится и вопит в агонии!")))
+						else
+							patient.emote(pick("realagony", "scream"))
+					if(9 to 10)
+						patient.emote("cry")
+
+	propability += pain_propability_debuff
 	// BLUEMOON ADDITION END
 
 	return propability + success_multiplier

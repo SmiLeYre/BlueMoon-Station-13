@@ -482,12 +482,13 @@
 			if(show_message)
 				to_chat(M, "<span class='warning'>Your stomach feels empty and cramps!</span>")
 		else
+			/* BLUEMOON REMOVAL START - шанс на операцию за обезболивающее перенесен
 			var/mob/living/carbon/C = M
 			for(var/s in C.surgeries)
 				var/datum/surgery/S = s
 				S.success_multiplier = max(0.1, S.success_multiplier)
 				// +10% success propability on each step, useful while operating in less-than-perfect conditions
-
+			/ BLUEMOON REMOVAL END */
 			if(show_message)
 				to_chat(M, "<span class='danger'>You feel your injuries fade away to nothing!</span>" )
 	..()
