@@ -1,4 +1,4 @@
-/datum/species/ipc/New()
+/datum/species/spectrebot/New()
 	. = ..()
 
 	// Define inherent traits to add
