@@ -4266,6 +4266,7 @@
 #include "modular_bluemoon\SmiLeY\venicle\funny_movement\funny_movement.dm"
 #include "modular_bluemoon\SmiLeY\venicle\funny_movement\human_rocket.dm"
 #include "modular_bluemoon\station_agents_cards\cards_id.dm"
+#include "modular_bluemoon\surgery_traits\surgery_traits.dm"
 #include "modular_bluemoon\vagabond\code\beast_spirit.dm"
 #include "modular_bluemoon\vagabond\code\trenchcoats_and_shit.dm"
 #include "modular_bluemoon\vagabond\code\tyler_durden.dm"
