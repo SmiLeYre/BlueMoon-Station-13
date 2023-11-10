@@ -51,7 +51,7 @@
 			else
 				surgery.status--
 	// BLUEMOON ADD START - перенесено сюда оповещение о неправильном инструменте для предотвращения лишнего дубля
-	if(!success)
+	if(!success && !tool.tool_behaviour == TOOL_CAUTERY) // каутеры for some reason вызывают ошибки, более красивого фикса не придумал
 		to_chat(user, "<span class='warning'>This step requires a different tool!</span>")
 	// BLUEMOON ADD END
 	return FALSE
@@ -86,8 +86,11 @@
 		// BLUEMOON ADD START - самооперирование - чертовски сложное дело
 		if(target == user)
 			if(HAS_TRAIT(target, CAN_BE_OPERATED_WITHOUT_PAIN)) // Роботам и некоторым другим расам даётся проще. Они не чувствуют боли
-				display_results(target, self_message = "<span class='notice'>Вы пытаетесь отремонтироваться самостоятельно. Это не так сложно, как было бы органику, но это неудобно.</span>")
+				display_results(target, self_message = "<span class='notice'>Вы пытаетесь [HAS_TRAIT(target, TRAIT_ROBOTIC_ORGANISM) ? "отремонтироваться" : "вылечитья"] самостоятельно. Это не так сложно, как было бы [HAS_TRAIT(target, TRAIT_ROBOTIC_ORGANISM) ? "органикам" : "другим расам"], но неудобно.</span>")
 				prob_chance = min(prob_chance, 80)
+			else if(HAS_TRAIT(target, TRAIT_BLUEMOON_FEAR_OF_SURGEONS))
+				to_chat(target, span_danger("Я НЕ СПРАВЛЮСЬ! Я НЕ СМОГУ! Я НЕ СПРАВЛЮСЬ!"))
+				prob_chance = 0
 			else
 				prob_chance = min(prob_chance, 20)
 		// BLUEMOON ADD END
@@ -101,6 +104,10 @@
 				user.mind?.auto_gain_experience(/datum/skill/numerical/surgery, SKILL_GAIN_SURGERY_PER_STEP * multi)
 				advance = TRUE
 		else
+			// BLUEMOON ADD START - небольшое количество урон за провал этапа для избежания лёгкого брутфорса низкого шанса операций
+			var/obj/item/bodypart/affecting = target.get_bodypart(ran_zone(target.zone_selected))
+			target.apply_damage(tool.force / 2, tool.damtype, affecting, wound_bonus = tool.wound_bonus, bare_wound_bonus = tool.bare_wound_bonus, sharpness = tool.sharpness)
+			// BLUEMOON ADD END
 			if(failure(user, target, target_zone, tool, surgery))
 				play_failure_sound(user, target, target_zone, tool, surgery)
 				advance = TRUE
