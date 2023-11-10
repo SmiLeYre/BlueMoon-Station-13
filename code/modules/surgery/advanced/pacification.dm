@@ -12,6 +12,8 @@
 	possible_locs = list(BODY_ZONE_HEAD)
 	requires_bodypart_type = 0
 
+	must_be_performed_while_awake = TRUE // BLUEMOON ADD - операции на мозги проводятся, когда пациент находится в сознаии
+
 /datum/surgery/advanced/pacify/can_start(mob/user, mob/living/carbon/target, obj/item/tool)
 	. = ..()
 	var/obj/item/organ/brain/B = target.getorganslot(ORGAN_SLOT_BRAIN)
