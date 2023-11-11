@@ -90,8 +90,8 @@
 				user.visible_message("[user] drapes [I] over [M]'s [parse_zone(selected_zone)] to prepare for surgery.", \
 					"<span class='notice'>You drape [I] over [M]'s [parse_zone(selected_zone)] to prepare for \an [procedure.name].</span>")
 				// BLUEMOON ADD START
-				if(M.AmountSleeping() > 20)
-					M.SetSleeping(20) //пациент не может уснуть через кнопку во вкладке
+				if(M.AmountSleeping() > 50)
+					M.SetSleeping(50) //пациент не может уснуть через кнопку во вкладке
 				if(!HAS_TRAIT(M, CAN_BE_OPERATED_WITHOUT_PAIN))
 					if(procedure.special_surgery_traits.len) // подсказка хирургу при начале процедуры
 						if(OPERATION_NEED_FULL_ANESTHETIC in procedure.special_surgery_traits)

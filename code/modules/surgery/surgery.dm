@@ -155,10 +155,13 @@
 	if(ishuman(target))
 		var/mob/living/carbon/human/patient = target
 		if(!HAS_TRAIT(patient, CAN_BE_OPERATED_WITHOUT_PAIN)) // на некоторых расах операцию можно проводить без дебафов
+
+			var/in_conscious = !(patient.IsSleeping() || patient.stat >= 2 || patient.IsUnconscious()) // убого, при этом, если не провряется что-то из заявленного, были моменты "пробуждения" пациента
+
 			if(patient.stat == DEAD && patient.timeofdeath + 2 MINUTES > world.time) // персонаж погиб И это было недавно (нужно для предотвращения убийства-и-немедленной-операции)
 				patient.visible_message(span_warning("[patient] погиб менее двух минут назад, тело ещё напряжено от трупного спазма и его намного сложнее оперировать!"), vision_distance = 1)
 				pain_propability_debuff -= 0.5
-			else if(patient.IsUnconscious() || patient.stat == DEAD) // без сознания или уже в гост-чате
+			else if(!in_conscious) // без сознания или уже в гост-чате
 				// Нет штрафов
 			else if(patient.IsParalyzed() || patient.IsStun()) // не может совершать сложные движения, но всё ещё минимальная мимика присутствует
 				pain_propability_debuff -= 0.2
@@ -217,15 +220,15 @@
 
 			// специальные проверки для некоторых операций
 			if(special_surgery_traits.len)
-				if((OPERATION_NEED_FULL_ANESTHETIC in special_surgery_traits) && !(target.IsUnconscious() || target.stat == DEAD)) // пациент без сознания и операция это требует
+				if((OPERATION_NEED_FULL_ANESTHETIC in special_surgery_traits) && in_conscious) // пациент в сознания и операция это требует
 					surgeon_requirments_debuff -= 0.5
 					check_for_pain = TRUE // никакой высокой болевой порог или обезболивающее не поможет тебе сохранять хладнокровие, когда вскрывают грудную клетку
 
-				if(OPERATION_MUST_BE_PERFORMED_AWAKE in special_surgery_traits && (target.IsUnconscious() || target.stat == DEAD)) // пациент в сознании и операция это требует
+				if(OPERATION_MUST_BE_PERFORMED_AWAKE in special_surgery_traits && !in_conscious) // пациент без сознании и операция это требует
 					surgeon_requirments_debuff -= 0.5
 
 			// операция наживую, очень больно
-			if(check_for_pain)
+			if(check_for_pain && in_conscious)
 				// сердечный приступ от боли
 				if(prob(1)) // С учётом кучи проваленных попыток, это серьезный шанс
 					if(!patient.undergoing_cardiac_arrest())
