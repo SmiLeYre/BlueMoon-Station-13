@@ -164,7 +164,7 @@
 				pain_propability_debuff -= 0.2
 				check_for_painkillers = TRUE
 				check_for_pain = TRUE
-			else if(patient.handcuffed || istype(patient.wear_suit(/obj/item/clothing/suit/straight_jacket))) // в сознании, может двигаться, но скован наручниками или смерительной рубашкой
+			else if(patient.handcuffed || istype(patient.wear_suit, /obj/item/clothing/suit/straight_jacket)) // в сознании, может двигаться, но скован наручниками или смерительной рубашкой
 				pain_propability_debuff -= 0.4
 				check_for_painkillers = TRUE
 				check_for_pain = TRUE
