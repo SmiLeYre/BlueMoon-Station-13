@@ -33229,14 +33229,6 @@
 /obj/machinery/light,
 /turf/open/floor/mineral/plastitanium,
 /area/medical/genetics)
-"bFP" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 9
-	},
-/turf/closed/wall/r_wall/syndicate{
-	smooth = 2
-	},
-/area/command/heads_quarters/cmo)
 "bFQ" = (
 /obj/structure/sign/warning/nosmoking{
 	pixel_x = -32
@@ -55490,6 +55482,9 @@
 	},
 /turf/open/floor/plating,
 /area/medical/medbay/zone2)
+"iyq" = (
+/turf/open/floor/plating,
+/area/medical/virology)
 "iyG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
@@ -56122,6 +56117,10 @@
 /obj/structure/fans/tiny,
 /turf/open/floor/plating,
 /area/hallway/secondary/entry)
+"jvA" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
+/turf/open/floor/mineral/plastitanium,
+/area/medical/genetics)
 "jvO" = (
 /obj/structure/rack,
 /obj/item/flashlight{
@@ -57048,6 +57047,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/plastitanium,
 /area/security/prison)
+"knG" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 9
+	},
+/turf/closed/wall/r_wall/syndicate{
+	smooth = 2
+	},
+/area/maintenance/aft)
 "kob" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/disposalpipe/segment,
@@ -65944,6 +65951,10 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/engineering/atmos)
+"wvn" = (
+/obj/effect/spawner/structure/window/plastitanium,
+/turf/open/floor/plating,
+/area/space)
 "wvX" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light,
@@ -107717,6 +107728,7 @@ brd
 brd
 btl
 but
+jvA
 bua
 bzq
 bBP
@@ -107724,10 +107736,10 @@ bCZ
 bEk
 bFG
 bIw
-bFP
+knG
 bpL
 bKQ
-bAw
+iyq
 bNd
 bOt
 bOr
@@ -107739,7 +107751,7 @@ bRQ
 bOm
 bXc
 bYe
-bNd
+bzs
 bZS
 caR
 bzs
@@ -107756,8 +107768,7 @@ cAe
 cmj
 cne
 bHd
-bPn
-aaa
+wvn
 aaa
 aaa
 aaa

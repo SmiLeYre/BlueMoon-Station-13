@@ -78841,7 +78841,7 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	id = "Xeno Dorms";
+	id = "Cabin9";
 	name = "Door Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_y = 25;
@@ -81204,7 +81204,7 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	id = "Space Dorms";
+	id = "Cabin8";
 	name = "Door Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_y = -25;
@@ -86652,8 +86652,8 @@
 /area/engineering/main)
 "vJf" = (
 /obj/machinery/door/airlock{
-	id_tag = "Cabin7";
-	name = "Cabin 1"
+	id_tag = "Cabin9";
+	name = "Cabin 6"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -87516,8 +87516,8 @@
 /area/command/heads_quarters/ce)
 "wdQ" = (
 /obj/machinery/door/airlock{
-	id_tag = "Cabin6";
-	name = "Cabin 2"
+	id_tag = "Cabin8";
+	name = "Cabin 5"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4

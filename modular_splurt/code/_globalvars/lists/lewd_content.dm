@@ -8,6 +8,8 @@ GLOBAL_LIST_INIT(skirt_peekable, list(
 	/obj/item/clothing/under/costume/loincloth = TRUE,
 	/obj/item/clothing/under/costume/loincloth/cloth = TRUE,
 	/obj/item/clothing/under/costume/loincloth/cloth/sensor = TRUE,
+	/obj/item/clothing/under/costume/maid = TRUE,
+	/obj/item/clothing/under/syndicate/maid = TRUE
 	))
 
 /*

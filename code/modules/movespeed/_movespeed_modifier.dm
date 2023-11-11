@@ -198,10 +198,20 @@ GLOBAL_LIST_EMPTY(movespeed_modification_cache)
 /// Get the global config movespeed of a mob by type
 /mob/proc/get_config_multiplicative_speed(floating = FALSE)
 	var/list/read = floating? GLOB.mob_config_movespeed_type_lookup_floating : GLOB.mob_config_movespeed_type_lookup
+	/* BLUEMOON REMOVAL START
 	if(!islist(read) || !read[type])
 		return 0
 	else
 		return read[type]
+	/ BLUEMOON REMOVAL END */
+	// BLUEMOON ADD START - добавлена поддержка квирка на сверхтяжёлого
+	var/value = 0
+	if(read[type])
+		value = read[type]
+	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER) && floating)
+		value += 1 // сверхтяжёлые персонажи в ином случае летают по вакууму на сверх-скоростях
+	return value
+	// BLUEMOON ADD END
 
 /// Go through the list of movespeed modifiers and calculate a final movespeed. ANY ADD/REMOVE DONE IN UPDATE_MOVESPEED MUST HAVE THE UPDATE ARGUMENT SET AS FALSE!
 /mob/proc/update_movespeed()

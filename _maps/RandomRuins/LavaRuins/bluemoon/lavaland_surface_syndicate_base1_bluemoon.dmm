@@ -1967,7 +1967,7 @@
 /turf/open/floor/plasteel/shuttle,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "nT" = (
-/mob/living/simple_animal/hostile/syndicate{
+/mob/living/simple_animal/hostile/syndicate/real_syndicate{
 	desc = "It's HIM.";
 	environment_smash = 0;
 	name = "John Syndicate"

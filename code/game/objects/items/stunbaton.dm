@@ -215,6 +215,11 @@
 	var/zap_block = L.run_armor_check(BODY_ZONE_CHEST, MELEE, null, null, zap_penetration) //armor check, including calculation for armor penetration, for our attack
 	final_stamina_loss_amount = block_calculate_resultant_damage(final_stamina_loss_amount, return_list)
 
+	// BLUEMOON ADD START - больших и тяжёлых существ проблематично нормально оглушить
+	if(HAS_TRAIT(L, TRAIT_BLUEMOON_HEAVY_SUPER))
+		final_stamina_loss_amount *= 0.5
+	// BLUEMOON ADD END
+
 	var/obj/item/stock_parts/cell/our_cell = get_cell()
 
 	if(!our_cell)
@@ -250,8 +255,9 @@
 	L.apply_effect(EFFECT_STUTTER, stamina_loss_amount)
 	SEND_SIGNAL(L, COMSIG_LIVING_MINOR_SHOCK)
 	if(user)
-		L.Jitter(25)
-		L.Dizzy(25)
+		if(!(HAS_TRAIT(L, TRAIT_BLUEMOON_HEAVY_SUPER))) // BLUEMOON ADD - больших и тяжёлых существ проблематично нормально оглушить
+			L.Jitter(25)
+			L.Dizzy(25)
 		L.set_last_attacker(user)
 		L.visible_message("<span class='danger'>[user] has [shoved ? "brutally stunned" : "stunned"] [L] with [src]!</span>", \
 								"<span class='userdanger'>[user] has [shoved ? "brutally stunnned" : "stunned"] you with [src]!</span>")

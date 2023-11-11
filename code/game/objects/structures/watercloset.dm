@@ -135,6 +135,16 @@
 	else
 		return ..()
 
+// BLUEMOON ADD START - туалет ломается при попытке сесть на него сверхтяжёлым персонажем
+/obj/structure/toilet/post_buckle_mob(mob/living/M)
+	. = ..()
+	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER))
+		visible_message(span_warning("[src] buckles under the weight of [M] causing it to break!"))
+		playsound(src, 'sound/effects/Glassbr2.ogg', 70, TRUE)
+		unbuckle_mob(M, TRUE)
+		deconstruct(FALSE)
+// BLUEMOON ADD END
+
 /obj/structure/toilet/secret
 	var/secret_type = null
 

@@ -602,8 +602,7 @@ GLOBAL_LIST(objective_player_choices)
 		/datum/objective/survive,
 		/datum/objective/martyr,
 		/datum/objective/steal,
-		/datum/objective/download,
-		/datum/objective/inteq_agents,
+		/datum/objective/download
 		)
 
 	for(var/t in allowed_types)
@@ -633,8 +632,7 @@ GLOBAL_LIST(objective_choices)
 		/datum/objective/nuclear/revert,
 		/datum/objective/absorb,
 		/datum/objective/rescue_prisoner,
-		/datum/objective/custom,
-		/datum/objective/inteq_agents
+		/datum/objective/custom
 		)
 
 	for(var/t in allowed_types)

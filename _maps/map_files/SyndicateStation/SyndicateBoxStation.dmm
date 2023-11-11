@@ -26837,14 +26837,8 @@
 /turf/open/floor/mineral/plastitanium,
 /area/medical/medbay/central)
 "bri" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	dir = 1
-	},
 /obj/structure/table/glass,
-/obj/item/storage/box/disks{
-	pixel_x = 2;
-	pixel_y = 2
-	},
+/obj/item/storage/box/disks,
 /turf/open/floor/mineral/plastitanium,
 /area/medical/genetics)
 "brj" = (
@@ -27351,13 +27345,6 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/aft)
-"bsv" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/open/floor/mineral/plastitanium,
-/area/medical/genetics)
 "bsw" = (
 /obj/machinery/door/airlock/research{
 	name = "Robotics Lab";
@@ -27631,16 +27618,16 @@
 /turf/open/floor/mineral/plastitanium,
 /area/science)
 "bti" = (
+/obj/structure/table,
+/obj/item/book/manual/wiki/medical_cloning{
+	pixel_y = 6
+	},
+/obj/item/storage/box/bodybags,
 /obj/item/storage/box/rxglasses{
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/storage/box/bodybags,
-/obj/structure/table,
 /obj/item/pen,
-/obj/item/book/manual/wiki/medical_cloning{
-	pixel_y = 6
-	},
 /turf/open/floor/mineral/plastitanium,
 /area/medical/genetics)
 "btj" = (
@@ -28108,6 +28095,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/medical/genetics)
 "bum" = (
+/obj/effect/landmark/start/geneticist,
 /obj/machinery/holopad,
 /turf/open/floor/mineral/plastitanium,
 /area/medical/genetics)
@@ -28116,7 +28104,6 @@
 	icon_state = "1-4"
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
-/obj/structure/closet/secure_closet/medical1,
 /turf/open/floor/mineral/plastitanium,
 /area/medical/genetics)
 "buo" = (
@@ -28136,10 +28123,13 @@
 /turf/open/floor/mineral/plastitanium,
 /area/science)
 "buq" = (
+/obj/machinery/door/airlock/research/glass{
+	name = "Genetics Research";
+	req_access_txt = "5; 9; 68"
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/mineral/plastitanium,
 /area/medical/genetics)
 "bur" = (
@@ -28546,10 +28536,28 @@
 /turf/open/floor/mineral/plastitanium,
 /area/medical/medbay/central)
 "bvn" = (
-/obj/machinery/clonepod,
+/obj/machinery/camera{
+	c_tag = "Genetics Cloning";
+	dir = 4;
+	network = list("ss13","medbay")
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -24;
+	pixel_y = 6
+	},
+/obj/machinery/button/door{
+	desc = "A remote control switch for the genetics doors.";
+	id = "GeneticsDoor";
+	name = "Genetics Exit Button";
+	normaldoorcontrol = 1;
+	pixel_x = -24;
+	pixel_y = -9
+	},
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/machinery/clonepod,
 /turf/open/floor/mineral/plastitanium,
 /area/medical/genetics)
 "bvo" = (
@@ -28565,14 +28573,12 @@
 /turf/open/floor/mineral/plastitanium,
 /area/medical/genetics)
 "bvq" = (
-/obj/structure/chair,
-/obj/effect/landmark/start/geneticist,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
 /obj/machinery/airalarm{
 	dir = 1;
 	pixel_y = -22
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/medical/genetics)
@@ -28596,14 +28602,10 @@
 /turf/open/floor/mineral/plastitanium,
 /area/medical/genetics)
 "bvt" = (
-/obj/machinery/door/airlock/research/glass{
-	name = "Genetics Research";
-	req_access_txt = "5; 9; 68"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/turf/open/floor/mineral/plastitanium,
+/turf/closed/wall,
 /area/medical/genetics)
 "bvu" = (
 /obj/effect/turf_decal/tile/purple{
@@ -29084,36 +29086,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/medical/medbay/central)
-"bwL" = (
-/obj/machinery/camera{
-	c_tag = "Genetics Cloning";
-	dir = 4;
-	network = list("ss13","medbay")
-	},
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -24;
-	pixel_y = 6
-	},
-/obj/structure/closet/wardrobe/grey,
-/obj/item/clothing/under/costume/kilt,
-/obj/item/clothing/under/rank/civilian/janitor/maid,
-/obj/item/clothing/under/dress/skirt,
-/obj/item/clothing/under/misc/assistantformal,
-/obj/item/clothing/head/beret/black,
-/obj/item/clothing/head/beret,
-/obj/item/clothing/head/beret/black,
-/obj/item/clothing/head/beret,
-/obj/machinery/button/door{
-	desc = "A remote control switch for the genetics doors.";
-	id = "GeneticsDoor";
-	name = "Genetics Exit Button";
-	normaldoorcontrol = 1;
-	pixel_x = -24;
-	pixel_y = -9
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/medical/genetics)
 "bwM" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -34262,11 +34234,11 @@
 /turf/open/floor/carpet/blackred,
 /area/medical/medbay/zone2)
 "bIq" = (
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
-	dir = 4
-	},
 /obj/structure/table/glass,
 /obj/item/storage/box/rxglasses,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 9
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/medical/genetics)
 "bIr" = (
@@ -59712,6 +59684,14 @@
 /obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plating,
 /area/security/prison)
+"nIN" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/closet/secure_closet/medical1,
+/turf/open/floor/mineral/plastitanium,
+/area/medical/genetics)
 "nJP" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 5
@@ -60363,6 +60343,18 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/starboard)
+"oCA" = (
+/obj/structure/closet/wardrobe/grey,
+/obj/item/clothing/head/beret,
+/obj/item/clothing/head/beret/black,
+/obj/item/clothing/head/beret,
+/obj/item/clothing/head/beret/black,
+/obj/item/clothing/under/misc/assistantformal,
+/obj/item/clothing/under/dress/skirt,
+/obj/item/clothing/under/rank/civilian/janitor/maid,
+/obj/item/clothing/under/costume/kilt,
+/turf/open/floor/mineral/plastitanium,
+/area/medical/genetics)
 "oCF" = (
 /obj/structure/closet/crate{
 	icon_state = "crateopen"
@@ -60948,11 +60940,11 @@
 /turf/open/floor/plasteel/kitchen_coldroom,
 /area/commons/dorms)
 "puV" = (
-/obj/structure/chair/sofa/corp/right{
-	dir = 1
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 8
+	},
+/obj/structure/chair/sofa/corp/left{
+	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/maintenance/bar)
@@ -67171,6 +67163,10 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plating,
 /area/maintenance/fore/secondary)
+"ydO" = (
+/obj/effect/spawner/structure/window/plastitanium,
+/turf/open/space/basic,
+/area/medical/genetics)
 "yeA" = (
 /obj/machinery/status_display/evac,
 /turf/closed/wall/r_wall/syndicate{
@@ -89491,7 +89487,7 @@ bCq
 mqZ
 rVy
 cNW
-rgW
+aCr
 bcU
 dfL
 aXL
@@ -89748,7 +89744,7 @@ bCq
 mqZ
 fLN
 fxa
-aCr
+rgW
 bcU
 dfL
 aLt
@@ -90782,7 +90778,7 @@ fxa
 puV
 rVy
 fxa
-sAH
+oKh
 bLv
 bUs
 bLv
@@ -91033,13 +91029,13 @@ bCq
 mqZ
 usO
 xJa
-oKh
+sAH
 usO
 mpI
-oKh
+sAH
 usO
 izv
-oKh
+sAH
 bCq
 bUs
 bCq
@@ -105657,8 +105653,8 @@ bqQ
 bsx
 bst
 bfJ
-buf
 bxQ
+buf
 bwK
 bxQ
 bxQ
@@ -105913,9 +105909,9 @@ boc
 bqW
 brh
 bua
-bua
 bGU
 wXg
+bGU
 bua
 bEh
 bEh
@@ -106168,11 +106164,11 @@ bkR
 bfL
 bpE
 bFE
-bpE
+ydO
 bua
 bvn
-bwL
 brd
+oCA
 bua
 bKQ
 bBJ
@@ -107454,8 +107450,8 @@ bmZ
 bpG
 bqZ
 brk
-bsv
 bzp
+nIN
 bun
 bvr
 bua

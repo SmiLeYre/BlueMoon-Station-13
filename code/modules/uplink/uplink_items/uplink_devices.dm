@@ -209,7 +209,7 @@
 	cost = 3
 
 /datum/uplink_item/device_tools/shadowcloak
-	name = "cloaker belt"
+	name = "Cloaker Belt"
 	desc = "Makes you invisible for short periods of time. Recharges in darkness."
 	item = /obj/item/shadowcloak
 	cost = 5
@@ -301,11 +301,11 @@
 	limited_stock = 1
 	purchasable_from = ~(UPLINK_SYNDICATE)
 
-/datum/uplink_item/device_tools/syndicate_teleporter
-	name = "Experimental Syndicate Teleporter"
-	desc = "The Syndicate teleporter is a handheld device that teleports the user 4-8 meters forward. \
-			Beware, teleporting into a wall will make the teleporter do a parallel emergency teleport, \
-			but if that emergency teleport fails, it will kill you. \
-			Has 4 charges, recharges, warranty voided if exposed to EMP."
-	item = /obj/item/storage/box/syndie_kit/teleporter
-	cost = 8
+///datum/uplink_item/device_tools/syndicate_teleporter					ДОДЕЛАТЬ
+//	name = "Experimental Syndicate Teleporter"					ДОДЕЛАТЬ
+//	desc = "The Syndicate teleporter is a handheld device that teleports the user 4-8 meters forward. \					ДОДЕЛАТЬ
+//			Beware, teleporting into a wall will make the teleporter do a parallel emergency teleport, \					ДОДЕЛАТЬ
+//			but if that emergency teleport fails, it will kill you. \					ДОДЕЛАТЬ
+//			Has 4 charges, recharges, warranty voided if exposed to EMP."					ДОДЕЛАТЬ
+//	item = /obj/item/storage/box/syndie_kit/teleporter					ДОДЕЛАТЬ
+//	cost = 8					ДОДЕЛАТЬ

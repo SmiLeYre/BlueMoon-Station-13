@@ -59,7 +59,8 @@
 		else
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "vow", /datum/mood_event/broken_vow)
 			to_chat(H, "<span class='notice'>Вы нарушили Обет Молчания.</span>")
-			H.add_quirk(/datum/quirk/cursed, STATUS_EFFECT_TRAIT)
+			if(!H.mind?.antag_datums)
+				H.add_quirk(/datum/quirk/cursed, STATUS_EFFECT_TRAIT)
 
 // These spells can only be gotten from the "Guide for Advanced Mimery series" for Mime Traitors.
 

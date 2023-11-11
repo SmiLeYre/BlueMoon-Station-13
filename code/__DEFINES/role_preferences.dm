@@ -39,7 +39,6 @@
 #define ROLE_DEATHSQUAD             "deathsquad"
 #define ROLE_LAVALAND               "lavaland"
 #define ROLE_INTERNAL_AFFAIRS		"internal affairs agent"
-#define ROLE_INTEQ_AGENT			"inteq agent"
 #define ROLE_FAMILIES 				"family boss"
 #define ROLE_FAMILY_HEAD_ASPIRANT 	"family head aspirant"
 #define ROLE_BLOODSUCKER			"bloodsucker"
@@ -80,7 +79,6 @@ GLOBAL_LIST_INIT(special_roles, list(
 	ROLE_SERVANT_OF_RATVAR = /datum/game_mode/clockwork_cult,
 	ROLE_OVERTHROW = /datum/game_mode/overthrow,
 	ROLE_INTERNAL_AFFAIRS = /datum/game_mode/traitor/internal_affairs,
-	ROLE_INTEQ_AGENT = /datum/game_mode/traitor/inteq_agents,
 	ROLE_SENTIENCE,
 	ROLE_HERETIC = /datum/game_mode/heretics,
 	ROLE_BLOODSUCKER = /datum/game_mode/bloodsucker,

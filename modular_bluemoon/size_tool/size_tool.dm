@@ -65,6 +65,13 @@
 		return TRUE
 	return FALSE
 
+// если на персонажа надет нормалайзер, он не может залезть внутрь (это приводит к ошибкам с выставлением размера)
+/obj/item/melee/sizetool/proc/check_for_normalizer(mob/target)
+	if(target.GetComponent(/datum/component/size_normalized))
+		visible_message(span_warning("[src] beeps, as it denies user with normalization devices!"))
+		return FALSE // запрет
+	return TRUE // разрешение
+
 /obj/item/melee/sizetool/attack(mob/living/target, mob/living/carbon/human/user)
 	if(user.a_intent != INTENT_HELP) // если режим взаимодействия не "help", то устройством можно бить
 		return . = ..()
@@ -134,6 +141,10 @@
 			if(!cell || !cell.use(charge_per_use))
 				to_chat(user, span_warning("[src] goes cold after failed usage. Looks like its power cell has gone out of charge."))
 				return
+
+		if(!check_for_normalizer(user))
+			to_chat(user, span_warning("[src] goes cold after failed usage. It vibrates, as if it located normalization device on the target."))
+			return
 
 		/* - ДОБАВИТЬ СЮДА ТРЕЙТ, ЗАПРЕЩАЮЩИЙ ИЗМЕНЯТЬ РАЗМЕР, ЕСЛИ ЦЕЛЬ НЕВОСПРИИМЧИВА К НОРМАЛАЙЗЕРУ!
 		if(HAS_TRAIT(target, TRAIT_BLUEMOON_ANTI_NORMALIZER))

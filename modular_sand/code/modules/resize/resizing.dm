@@ -173,13 +173,11 @@
 //Proc for scaling brute damage on size difference
 /mob/living/carbon/proc/sizediffBruteloss(mob/living/carbon/target)
 	var/B = COMPARE_SIZES(src, target) * 3 //macro divided by micro, times 3
-	to_chat(src, "[B]")
 	// BLUEMOON ADDITION AHEAD - усиление конечно результата за наличие квирка на тяжесть или сверхтяжесть
 	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY))
 		B *= 2
 	else if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
 		B *= 3
-	to_chat(src, "Конечная [B]")
 	// BLUEMOON ADDITION END
 	target.adjustBruteLoss(B) //final result in brute loss
 

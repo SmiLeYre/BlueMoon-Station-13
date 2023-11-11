@@ -32390,6 +32390,12 @@
 /obj/item/book/codex_gigas,
 /turf/open/floor/plasteel/bluespace,
 /area/centcom)
+"sCg" = (
+/obj/machinery/jukebox/disco{
+	set_obj_flags = "EMAGGED"
+	},
+/turf/open/floor/light/colour_cycle/dancefloor_a,
+/area/centcom/holding)
 "sCs" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Equipment Room";
@@ -35080,7 +35086,6 @@
 /obj/item/storage/box/drinkingglasses{
 	pixel_x = 4
 	},
-/obj/item/card/emag,
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding)
 "wBW" = (
@@ -36222,7 +36227,8 @@
 /area/shuttle/inteq/collosus)
 "ydD" = (
 /obj/machinery/jukebox{
-	req_one_access = null
+	req_one_access = null;
+	set_obj_flags = "EMAGGED"
 	},
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding)
@@ -45088,7 +45094,7 @@ tNq
 tNq
 fxk
 fHq
-wQH
+sCg
 fHq
 mtA
 jVl

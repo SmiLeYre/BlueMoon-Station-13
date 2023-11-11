@@ -211,6 +211,7 @@
 		R.mob_transforming = FALSE
 		R.resize = ShrinkSize/100
 		R.update_transform()
+		R.add_movespeed_modifier(/datum/movespeed_modifier/reagent/freon)
 		//R.update_size(ShrinkSize/100)
 		R.hasShrunk = TRUE
 
@@ -219,6 +220,7 @@
 	if (. && R.hasShrunk)
 		R.transform = null
 		R.hasShrunk = FALSE
+		R.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/freon)
 
 /obj/item/borg/upgrade/transform/syndicatejack
     name = "borg module picker (Syndicate)"
