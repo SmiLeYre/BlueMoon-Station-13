@@ -154,7 +154,7 @@
 	var/surgeon_requirments_debuff = 0
 	if(ishuman(target))
 		var/mob/living/carbon/human/patient = target
-		if(!HAS_TRAIT(patient, CAN_BE_OPERATED_WITHOUT_PAIN)) // на некоторых расах операцию можно проводить без дебафов
+		if(!HAS_TRAIT(patient, CAN_BE_OPERATED_WITHOUT_PAIN) || !isbloodfledge(patient)) // на некоторых расах операцию можно проводить без дебафов
 
 			var/in_conscious = !(patient.IsSleeping() || patient.stat >= 2 || patient.IsUnconscious()) // убого, при этом, если не провряется что-то из заявленного, были моменты "пробуждения" пациента
 
