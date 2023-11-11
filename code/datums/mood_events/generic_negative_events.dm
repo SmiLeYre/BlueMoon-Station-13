@@ -34,14 +34,14 @@
 
 // BLUEMOON ADD START - от операции на живую очень больно
 /datum/mood_event/surgery_pain
-	description = "<span class='danger'>Меня оперировали без наркоза! Это было чудовищно больно!</span>\n"
+	description = "<span class='boldwarning'>Меня оперировали без наркоза! Это было чудовищно больно!</span>\n"
 	mood_change = -6
 	timeout = 5 MINUTES
 
 // Вариация операции для персонажей с высоким болевым порогом
 /datum/mood_event/surgery_pain/lesser
 	description = "<span class='danger'>Меня оперировали без наркоза... Это было чертовски больно.</span>\n"
-	mood_change = -3
+	mood_change = -4
 	timeout = 4 MINUTES
 
 // Вариация для оперирования персонажей, которые боятся операций

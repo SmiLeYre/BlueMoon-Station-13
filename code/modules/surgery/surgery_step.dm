@@ -70,6 +70,10 @@
 		speed_mod = tool.toolspeed //faster tools mean faster surgeries, but also less experience.
 	if(user.mind)
 		speed_mod = user.mind.action_skill_mod(/datum/skill/numerical/surgery, speed_mod, THRESHOLD_UNTRAINED, FALSE)
+	// BLUEMOON ADD START - если операцию умышленно пытаются провалить, игроку стоит знать об этом
+	if(try_to_fail)
+		to_chat(user, span_warning("Вы действуете так, что незаметно провалите этот этап!"))
+	// BLUEMOON ADD END
 	var/delay = time * speed_mod
 	if(target == user)
 		if(HAS_TRAIT(target, TRAIT_PAINKILLER))
@@ -93,6 +97,8 @@
 				prob_chance = 0
 			else
 				prob_chance = min(prob_chance, 20)
+		if(prob_chance <= 0 && !try_to_fail)
+			to_chat(user, span_warning("Условия операции слишком ужасны, ничего не выйдет!"))
 		// BLUEMOON ADD END
 
 		if((prob(prob_chance) || (iscyborg(user) && !silicons_obey_prob)) && chem_check(target) && !try_to_fail)
@@ -105,7 +111,7 @@
 				advance = TRUE
 		else
 			// BLUEMOON ADD START - небольшое количество урон за провал этапа для избежания лёгкого брутфорса низкого шанса операций
-			var/obj/item/bodypart/affecting = target.get_bodypart(ran_zone(target.zone_selected))
+			var/obj/item/bodypart/affecting = target.get_bodypart(check_zone(user.zone_selected))
 			target.apply_damage(tool.force / 2, tool.damtype, affecting, wound_bonus = tool.wound_bonus, bare_wound_bonus = tool.bare_wound_bonus, sharpness = tool.sharpness)
 			// BLUEMOON ADD END
 			if(failure(user, target, target_zone, tool, surgery))

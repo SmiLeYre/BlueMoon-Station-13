@@ -89,6 +89,17 @@
 				var/datum/surgery/procedure = new S.type(M, selected_zone, affecting)
 				user.visible_message("[user] drapes [I] over [M]'s [parse_zone(selected_zone)] to prepare for surgery.", \
 					"<span class='notice'>You drape [I] over [M]'s [parse_zone(selected_zone)] to prepare for \an [procedure.name].</span>")
+				// BLUEMOON ADD START
+				if(M.AmountSleeping() > 20)
+					M.SetSleeping(20) //пациент не может уснуть через кнопку во вкладке IC
+				if(procedure.special_surgery_traits.len) // подсказка хирургу при начале процедуры
+					if(OPERATION_NEED_FULL_ANESTHETIC in procedure.special_surgery_traits)
+						to_chat(user, span_danger("Эта операция требует, чтобы пациент был без сознания для снижения риска провала. Обезболивающее поможет смягчить эффект."))
+					if(OPERATION_MUST_BE_PERFORMED_AWAKE in procedure.special_surgery_traits)
+						to_chat(user, span_boldwarning("Эта операция требует, чтобы пациент обязательно находился в сознании для снижения шанса провала. Рекомендуется также обезболивающее."))
+				else
+					to_chat(user, span_notice("Для этой операции достаточно дать пациенту обезболивающее. Например, распылить сильный алкоголь или дать \"мазь шахтёра\"."))
+				// BLUEMOON ADD END
 
 				log_combat(user, M, "operated on", null, "(OPERATION TYPE: [procedure.name]) (TARGET AREA: [selected_zone])")
 			else
