@@ -218,14 +218,10 @@
 			// специальные проверки для некоторых операций
 			if(special_surgery_traits.len)
 				if((OPERATION_NEED_FULL_ANESTHETIC in special_surgery_traits) && !(target.IsUnconscious() || target.stat == DEAD)) // пациент без сознания и операция это требует
-					if(prob(20)) // напоминание
-						patient.visible_message(span_warning("Для этой операции требуется полная анестезия, шанс провала гораздо выше!"), vision_distance = 1)
 					surgeon_requirments_debuff -= 0.5
 					check_for_pain = TRUE // никакой высокой болевой порог или обезболивающее не поможет тебе сохранять хладнокровие, когда вскрывают грудную клетку
 
 				if(OPERATION_MUST_BE_PERFORMED_AWAKE in special_surgery_traits && (target.IsUnconscious() || target.stat == DEAD)) // пациент в сознании и операция это требует
-					if(prob(20)) // напоминание
-						patient.visible_message(span_warning("Для этой операции требуется, чтобы пациент находился в сознании. Шанс провала гораздо выше!"), vision_distance = 1)
 					surgeon_requirments_debuff -= 0.5
 
 			// операция наживую, очень больно
