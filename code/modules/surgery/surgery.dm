@@ -158,8 +158,8 @@
 
 			var/in_conscious = !(patient.IsSleeping() || patient.stat >= 2 || patient.IsUnconscious()) // убого, при этом, если не провряется что-то из заявленного, были моменты "пробуждения" пациента
 
-			if(patient.stat == DEAD && patient.timeofdeath + 2 MINUTES > world.time) // персонаж погиб И это было недавно (нужно для предотвращения убийства-и-немедленной-операции)
-				patient.visible_message(span_warning("[patient] погиб менее двух минут назад, тело ещё напряжено от трупного спазма и его намного сложнее оперировать!"), vision_distance = 1)
+			if(patient.stat == DEAD && patient.timeofdeath + 50 SECONDS > world.time) // персонаж погиб И это было недавно (нужно для предотвращения убийства-и-немедленной-операции)
+				patient.visible_message(span_warning("[patient] погиб менее минуты назад, тело ещё напряжено от трупного спазма и его намного сложнее оперировать!"), vision_distance = 1)
 				pain_propability_debuff -= 0.5
 			else if(!in_conscious) // без сознания или уже в гост-чате
 				// Нет штрафов
