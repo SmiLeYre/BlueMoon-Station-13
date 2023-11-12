@@ -92,7 +92,7 @@
 				// BLUEMOON ADD START
 				if(M.AmountSleeping() > 50)
 					M.SetSleeping(50) //пациент не может уснуть через кнопку во вкладке
-				if(!HAS_TRAIT(M, CAN_BE_OPERATED_WITHOUT_PAIN) || !isbloodfledge(M))
+				if(!HAS_TRAIT(M, CAN_BE_OPERATED_WITHOUT_PAIN) && !isbloodfledge(M))
 					if(procedure.special_surgery_traits.len) // подсказка хирургу при начале процедуры
 						if(OPERATION_NEED_FULL_ANESTHETIC in procedure.special_surgery_traits)
 							to_chat(user, span_danger("Эта операция требует, чтобы пациент был без сознания для снижения риска провала. Обезболивающее поможет смягчить эффект."))
