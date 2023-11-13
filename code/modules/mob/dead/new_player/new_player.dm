@@ -561,6 +561,12 @@
 
 
 /mob/dead/new_player/proc/LateChoices()
+	// BLUEMOON ADD START - предупреждение, если у игрока включены роли
+	if((client.prefs.toggles & MIDROUND_ANTAG) && !(client.prefs.toggles & NO_ANTAG))
+		if(alert(src, "У вас включена возможность стать антагонистом посреди раунда. Вы уверены, что не хотите выключить её?", "...Клянусь, что не сдам роль...", "Я готов", "Прошу временно отключить") == "Прошу временно отключить")
+			client.prefs.toggles ^= MIDROUND_ANTAG
+			to_chat(src, "<span class='redtext'>На этот раунд, у вас отключена возможность стать антагонистом посреди раунда (её можно включить в Character Setup > Preferences).</span>")
+	// BLUEMOON ADD END
 
 	var/level = "green"
 	switch(GLOB.security_level)

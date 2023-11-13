@@ -175,7 +175,7 @@
 	var/list/antag_candidates = list()
 
 	for(var/mob/living/carbon/human/H in living_crew)
-		if(H.client && H.client.prefs.allow_midround_antag)
+		if(H.client?.prefs.toggles & MIDROUND_ANTAG) // BLUEMOON EDIT - было, чей параметр в коде не изменяется H.client && H.client.prefs.allow_midround_antag
 			antag_candidates += H
 
 	if(!antag_candidates)

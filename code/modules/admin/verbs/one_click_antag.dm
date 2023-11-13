@@ -35,8 +35,12 @@
 /datum/admins/proc/isReadytoRumble(mob/living/carbon/human/applicant, targetrole, onstation = TRUE, conscious = TRUE)
 	if(applicant.mind.special_role)
 		return FALSE
-	if(!(targetrole in applicant.client.prefs.be_special))
+	if(!HAS_ANTAG_PREF(applicant.client, targetrole)) // BLUEMOON EDIT - было if(!(targetrole in applicant.client.prefs.be_special))
 		return FALSE
+	// BLUEMOON ADD START - проверка на то, включено ли разрешение на бытие антагонистом посреди раунда
+	if(applicant.client.prefs.toggles & MIDROUND_ANTAG)
+		return FALSE
+	// BLUEMOON ADD END
 	if(onstation)
 		var/turf/T = get_turf(applicant)
 		if(!is_station_level(T.z))

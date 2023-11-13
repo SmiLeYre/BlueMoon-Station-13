@@ -14,6 +14,10 @@
 			candidates.Remove(P)
 		else if((exclusive_roles.len > 0) && !(P.mind.assigned_role in exclusive_roles)) // Is the rule exclusive to their job?
 			candidates.Remove(P)
+		// BLUEMOON ADD START
+		else if(!(P.client.prefs.toggles & MIDROUND_ANTAG)) // У игрока отключен преф "быть антагонистом посреди раунда"
+			candidates.Remove(P)
+		// BLUEMOON ADD END
 		else if(antag_flag_override)
 			if(!(HAS_ANTAG_PREF(P.client, antag_flag_override)))
 				candidates.Remove(P)

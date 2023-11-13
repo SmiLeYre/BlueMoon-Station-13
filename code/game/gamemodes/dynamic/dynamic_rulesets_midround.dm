@@ -64,6 +64,11 @@
 			if ((exclusive_roles.len > 0) && !(M.mind.assigned_role in exclusive_roles)) // Is the rule exclusive to their job?
 				trimmed_list.Remove(M)
 				continue
+			// BLUEMOON ADD START
+			if(!(M.client.prefs.toggles & MIDROUND_ANTAG) && required_type != /mob/dead/observer) // У игрока отключен преф "быть антагонистом посреди раунда" и это не запрос для гостов
+				trimmed_list.Remove(M)
+				continue
+			// BLUEMOON ADD END
 	return trimmed_list
 
 // You can then for example prompt dead players in execute() to join as strike teams or whatever
