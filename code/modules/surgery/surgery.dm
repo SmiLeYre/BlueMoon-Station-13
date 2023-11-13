@@ -223,7 +223,9 @@
 			if(special_surgery_traits.len)
 				if((OPERATION_NEED_FULL_ANESTHETIC in special_surgery_traits) && in_conscious) // пациент в сознания и операция это требует
 					surgeon_requirments_debuff -= 0.5
-					check_for_pain = TRUE // никакой высокой болевой порог или обезболивающее не поможет тебе сохранять хладнокровие, когда вскрывают грудную клетку
+					if(prob(30))
+						if(IS_IN_STASIS(patient) || HAS_TRAIT(patient, TRAIT_PAINKILLER))
+							patient.visible_message(span_warning("[patient] под обезболивающим. Это помогает облегчить операцию, но он всё ещё слегка двигается, что затрудняет операцию."), span_notice("Я под обезболивающим... Но кажется, всё равно слегка двигаюсь и мешаю этим врачу при операции."), vision_distance = 1)
 
 				if(OPERATION_MUST_BE_PERFORMED_AWAKE in special_surgery_traits && !in_conscious) // пациент без сознании и операция это требует
 					surgeon_requirments_debuff -= 0.5
