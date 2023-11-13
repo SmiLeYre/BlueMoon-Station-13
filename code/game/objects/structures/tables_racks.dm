@@ -708,7 +708,7 @@
 	var/mob/living/carbon/human/patient = null
 	var/obj/machinery/computer/operating/computer = null
 // BLUEMOON ADD START
-	var/obj/item/tank/tank = null // баллон внутри
+	var/obj/item/tank/internals/tank = null // баллон внутри
 	var/obj/item/clothing/mask/mask = null // маска внутри
 
 /obj/structure/table/optable/examine(mob/user)
@@ -807,7 +807,7 @@
 /obj/structure/table/optable/attackby(obj/item/I, mob/living/user, attackchain_flags, damage_multiplier)
 	if(user.a_intent == INTENT_HELP)
 		if(!tank)
-			if(istype(I, /obj/item/tank))
+			if(istype(I, /obj/item/tank/internals))
 				if(user.transferItemToLoc(I, src))
 					user.visible_message("[user] закрепляет [I] сбоку операционного стола.", span_notice("Вы закрепляете [I] сбоку операционного стола."))
 					tank = I
