@@ -388,6 +388,7 @@
 #include "code\_onclick\hud\screentip.dm"
 #include "code\_onclick\hud\simple_animal.dm"
 #include "code\_onclick\hud\swarmer.dm"
+#include "code\_onclick\hud\bluemoon\alert.dm"
 #include "code\_onclick\hud\screen_objects\clickdelay.dm"
 #include "code\_onclick\hud\screen_objects\sprint.dm"
 #include "code\_onclick\hud\screen_objects\stamina.dm"
