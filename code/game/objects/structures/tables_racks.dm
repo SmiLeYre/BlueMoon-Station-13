@@ -708,32 +708,28 @@
 	var/mob/living/carbon/human/patient = null
 	var/obj/machinery/computer/operating/computer = null
 // BLUEMOON ADD START
-	var/obj/item/tank/internals/anesthetic/tank = null // баллон внутри
-	var/obj/item/clothing/mask/breath/medical/mask = null // маска внутри
+	var/obj/item/tank/tank = null // баллон внутри
+	var/obj/item/clothing/mask/mask = null // маска внутри
 
 /obj/structure/table/optable/examine(mob/user)
 	. = ..()
 	. += "<hr>"
-	if(tank)
-		. += span_info("Сбоку на нём закреплён [tank].")
-	else
-		. += span_warning("Сбоку есть пустое место под баллон с анестезией.")
-	if(mask)
-		. += span_info("На стойке висит [mask].")
-	else
-		. += span_warning("Сбоку находится пустая стойка для медицинский кислородной маски.")
-	if(computer)
-		. += span_info("Операционный стол подключен к компьютеру рядом через кабель на полу.")
 
-	if(tank && mask)
-		. += span_info("<br>Можно попробовать включить оборудование для анестезии, если положить кого-то на стол.")
+	if(tank). += span_info("Сбоку на нём закреплён [tank].")
+	else . += span_warning("Сбоку есть пустое место под ёмкость с газом (баллон или канистру).")
+
+	if(mask) . += span_info("На стойке висит [mask].")
+	else . += span_warning("Сбоку находится пустая стойка для маски.")
+
+	if(computer) . += span_info("Операционный стол подключен к компьютеру рядом через кабель на полу.")
+
+	if(tank && mask) . += span_info("<br>Можно попробовать включить оборудование для анестезии, если положить кого-то на стол.")
 
 /obj/structure/table/optable/attack_hand(mob/user, act_intent, attackchain_flags)
 	. = ..()
 	if(tank && mask)
 		check_patient()
 		if(!patient)
-			to_chat(user, span_warning("На операционном столе никто не лежит, чтобы включить анестезию!"))
 			return
 		if(!patient.internal) // у пациента не включена подача воздуха
 			to_chat(user, span_notice("Вы начинаете включать подачу анестетика."))
@@ -767,8 +763,12 @@
 				patient.transferItemToLoc(mask, src, TRUE)
 			patient.internal = null
 	else
-		to_chat(user, span_warning("[src] не имеет прикрепленного к нему баллона с кислородом или маски!"))
+		to_chat(user, span_warning("[src] не имеет прикрепленного к нему баллона или маски!"))
 		return
+
+/obj/structure/table/optable/attack_robot(mob/user)
+	if(Adjacent(user))
+		return attack_hand(user)
 
 /obj/structure/table/optable/process()
 	var/turf/T = get_turf(src)
@@ -789,17 +789,17 @@
 		to_chat(user, span_notice("Вы убираете [tank] с бока операционного стола."))
 		user.put_in_hands(tank)
 		tank = null
-	else if(mask && !patient.internal)
+	else if(mask && !patient?.internal)
 		to_chat(user, span_notice("Вы убираете [mask] со стойки операционного стола."))
 		user.put_in_hands(mask)
 		mask = null
 
 /obj/structure/table/optable/Destroy()
 	if(tank)
-		tank.forceMove(src.loc)
+		tank.forceMove(loc)
 		tank = null
 	if(mask)
-		mask.forceMove(src.loc)
+		mask.forceMove(loc)
 		mask = null
 	STOP_PROCESSING(SSobj, src)
 	. = ..()
@@ -807,17 +807,19 @@
 /obj/structure/table/optable/attackby(obj/item/I, mob/living/user, attackchain_flags, damage_multiplier)
 	if(user.a_intent == INTENT_HELP)
 		if(!tank)
-			if(istype(I, /obj/item/tank/internals/anesthetic))
-				user.visible_message("[user] закрепляет [I] сбоку операционного стола.", span_notice("Вы закрепляете [I] сбоку операционного стола."))
-				I.forceMove(src)
-				tank = I
-				return
+			if(istype(I, /obj/item/tank))
+				if(user.transferItemToLoc(I, src))
+					user.visible_message("[user] закрепляет [I] сбоку операционного стола.", span_notice("Вы закрепляете [I] сбоку операционного стола."))
+					tank = I
+					return
 		if(!mask)
-			if(istype(I, /obj/item/clothing/mask/breath/medical))
-				user.visible_message("[user] закрепляет [I] на стойку для маски.", span_notice("Вы закрепляете [I] на стойку для маски."))
-				I.forceMove(src)
-				mask = I
-				return
+			if(istype(I, /obj/item/clothing/mask))
+				var/obj/item/clothing/mask/potential_mask = I
+				if(potential_mask.clothing_flags & ALLOWINTERNALS) // можно использовать для дыхания
+					if(user.transferItemToLoc(I, src))
+						user.visible_message("[user] закрепляет [I] на стойку для маски.", span_notice("Вы закрепляете [I] на стойку для маски."))
+						mask = I
+						return
 	. = ..()
 // BLUEMOON ADD END
 
