@@ -4054,6 +4054,7 @@
 #include "modular_bluemoon\code\modules\jobs\job_types\synthetics\cyborg.dm"
 #include "modular_bluemoon\code\modules\language\felinid.dm"
 #include "modular_bluemoon\code\modules\mob\bluemoon_emotes.dm"
+#include "modular_bluemoon\code\modules\reagents\chemistry\recipes\recipes.dm"
 #include "modular_bluemoon\cooling_device\cooling_device.dm"
 #include "modular_bluemoon\DarwickTheDork\skyrat_ported\code\modules\mob\dead\new_player\sprite_accessories\body_markings.dm"
 #include "modular_bluemoon\dementia\code\modules\clothing\hats.dm"
