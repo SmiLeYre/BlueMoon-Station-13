@@ -21,6 +21,7 @@
 	desc = "A cheap .22LR Revolver. Pray the timing keeps."
 	icon_state = "22revolver"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev22lr
+	fire_sound = "sound/weapons/revolvershot2.ogg"
 
 /obj/item/gun/ballistic/revolver/r45l
 	name = "\improper .45 Long Revolver"
@@ -34,6 +35,7 @@
 		"Cowboy" = list("icon_state" = "357colt"),
 		"Lucky" = list("icon_state" = "lucky") //Well do ya?
 	)
+	fire_sound = "sound/weapons/revolvershot2.ogg"
 
 /obj/item/gunpart/revolver22frame
 	name = ".22 revolver frame"

@@ -111,10 +111,7 @@
 		update_icon()
 
 /obj/structure/sauna_oven/proc/update_steam_particles()
-	var/datum/effect_system/smoke_spread/steam = new /datum/effect_system/smoke_spread()
-	steam.set_up(1, 0, src)
-	steam.attach(src)
-	steam.start()
+	new /obj/effect/temp_visual/small_smoke/halfsecond(get_turf(src))
 
 #undef SAUNA_H2O_TEMP
 #undef SAUNA_LOG_FUEL

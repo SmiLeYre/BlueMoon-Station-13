@@ -16,4 +16,4 @@
 /datum/element/bigtalk/proc/handle_speech(datum/source, list/speech_args)
 	SIGNAL_HANDLER
 
-	speech_args[SPEECH_SPANS] |= SPAN_BIG
+	speech_args[SPEECH_SPANS] |= SPAN_BIG // todo: не придумал фикс, чтобы в мегафоны был большой текст (этот спан его оверрайдит)

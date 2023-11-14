@@ -39,7 +39,7 @@
 	name = "tall heels jackboots"
 	desc = "A pair of knee-high jackboots, complete with heels. All style, all the time."
 	icon = 'modular_splurt/icons/obj/clothing/shoes.dmi'
-	icon_state = "jackboots-tall"
+	icon_state = "jackboots-heels-tall"
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/shoes.dmi'
 	anthro_mob_worn_overlay = 'modular_splurt/icons/mob/clothing/shoes_digi.dmi'
 

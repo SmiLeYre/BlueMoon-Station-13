@@ -354,8 +354,5 @@
 /datum/config_entry/number/commendation_percent_poll
 	integer = FALSE
 
-/datum/config_entry/flag/deathmatch_arena
-	default = TRUE
-
 /datum/config_entry/str_list/randomizing_station_name_message
 	default = list()

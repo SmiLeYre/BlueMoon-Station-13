@@ -397,6 +397,20 @@ GLOBAL_LIST_EMPTY(species_datums)
 		if(H.dna && istype(H.dna.species, species_datum))
 			. = TRUE
 
+/proc/ismasculine(A)
+	. = FALSE
+	if(iscarbon(A))
+		var/mob/living/carbon/C = A
+		if(C.dna.features["body_model"] == MALE)
+			. = TRUE
+
+/proc/isfeminine(A)
+	. = FALSE
+	if(iscarbon(A))
+		var/mob/living/carbon/C = A
+		if(C.dna.features["body_model"] == FEMALE)
+			. = TRUE
+
 /proc/spawn_atom_to_turf(spawn_type, target, amount, admin_spawn=FALSE, list/extra_args)
 	var/turf/T = get_turf(target)
 	if(!T)

@@ -59,3 +59,4 @@
 	multiplicative_slowdown = -2
 	complex_calculation = TRUE
 	absolute_max_tiles_per_second = 7
+	variable = TRUE // BLUEMOON ADD - нужно, чтобы можно было через код обновлять в течении раунда

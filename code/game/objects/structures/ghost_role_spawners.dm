@@ -575,6 +575,8 @@
 	implants = list(/obj/item/implant/weapons_auth, /obj/item/implant/deathrattle, /obj/item/implant/explosive, /obj/item/implant/mindshield)
 	id = /obj/item/card/id/syndicate
 
+	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
+
 /datum/outfit/syndicate_empty/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	H.faction |= ROLE_SYNDICATE
 
@@ -818,9 +820,10 @@
 	loadout_enabled = FALSE
 	assignedrole = "Ghost Cafe Visitor"
 	short_desc = "Вы посетитель Призрачного Кафе!"
-	flavour_text = "You know one thing for sure. You arent actually alive. Are you in a simulation?"
+	flavour_text = "Вы совершенно уверены в одном. Вы не живое существо. Вы в симуляции? Заходя за данную роль вы соглашаетесь с тем, что на территории Гост-Кафе полностью отсутствуют какие-либо правила Ролевой Игры. Тем не менее, базовые серверные правила не отменяются. Вы должны вести себя адекватно так, чтобы не мешать другим игрокам и не портить саму локацию. Если в чём-то не уверены или нужна помощь - всегда можете попросить помощи Администратора. Несоблюдение базовых норм поведения повлекут за собой наказание."
 	skip_reentry_check = TRUE
 	banType = ROLE_GHOSTCAFE
+	back = /obj/item/storage/backpack/holding/satchel // BLUEMOON ADD
 
 /datum/action/toggle_dead_chat_mob
 	icon_icon = 'icons/mob/mob.dmi'
@@ -994,11 +997,7 @@
 	loadout_enabled = TRUE
 	computer_area = /area/ruin/space/has_grav/port_tarkon/centerhall
 
-// Не добавлено в аутфит, т.к. раса ставится ПОСЛЕ выставления аутфита
-/obj/effect/mob_spawn/human/tarkon/special_post_appearance(mob/living/carbon/human/new_spawn)
-	if(HAS_TRAIT(new_spawn, TRAIT_ROBOTIC_ORGANISM))
-		new_spawn.put_in_l_hand(new /obj/item/device/cooler/charged(new_spawn))
-	. = ..()
+	give_cooler_to_mob_if_synth = TRUE
 
 /datum/outfit/tarkoff
 	name = "Default Port Tarkov Outfit"

@@ -20094,6 +20094,9 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/bot,
+/obj/structure/reagent_dispensers/spacecleanertank{
+	pixel_x = 30
+	},
 /turf/open/floor/plasteel/dark/side{
 	dir = 4
 	},

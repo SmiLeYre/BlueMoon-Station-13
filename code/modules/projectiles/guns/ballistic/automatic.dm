@@ -178,8 +178,7 @@
 /obj/item/gun/ballistic/automatic/m90/update_icon_state()
 	icon_state = "[initial(icon_state)][magazine ? "" : "-e"]"
 
-/*
-/obj/item/gun/ballistic/automatic/m90/burst_select()
+/obj/item/gun/ballistic/automatic/m90/fire_select()
 	var/mob/living/carbon/human/user = usr
 	switch(select)
 		if(0)
@@ -196,7 +195,6 @@
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 	update_icon()
 	return
-*/
 
 /obj/item/gun/ballistic/automatic/tommygun
 	name = "\improper Thompson SMG"
@@ -433,3 +431,21 @@
 
 /obj/item/gun/ballistic/automatic/laser/update_icon_state()
 	icon_state = "oldrifle[magazine ? "-[CEILING(get_ammo(0)/4, 1)*4]" : ""]"
+
+/obj/item/gun/ballistic/automatic/laser/lasgun
+	name = "Thilium Boarding Lascarbine"
+	desc = "The Thilium-pattern lascarbine, Is a special type of larcarbines used for CQC."
+	icon = 'icons/obj/guns/40x32_energy.dmi'
+	icon_state = "boarding"
+	item_state = "laser-wielded"
+	mag_type = /obj/item/ammo_box/magazine/recharge/lasgun
+	automatic_burst_overlay = FALSE
+	fire_delay = 2
+	can_suppress = FALSE
+	burst_size = 1
+	actions_types = list()
+	fire_sound = 'sound/weapons/lasgun.ogg'
+	casing_ejector = FALSE
+
+/obj/item/gun/ballistic/automatic/laser/update_icon_state()
+	icon_state = "boarding"

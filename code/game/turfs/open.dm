@@ -20,6 +20,10 @@
 	/// Dirt level to spawn dirt. Null to use config.
 	var/dirt_spawn_threshold
 
+	/// How much fuel this open turf provides to turf fires
+	var/flammability = 0.2
+	var/obj/effect/abstract/turf_fire/turf_fire
+
 /turf/open/ComponentInitialize()
 	. = ..()
 	if(wet)
@@ -331,3 +335,12 @@
 		air.set_moles(GAS_CO2, max(air.get_moles(GAS_CO2)-(pulse_strength/1000),0))
 		air.set_moles(GAS_O2, max(air.get_moles(GAS_O2)-(pulse_strength/2000),0))
 		air.adjust_moles(GAS_PLUOXIUM, pulse_strength/4000)
+
+/turf/open/IgniteTurf(power, fire_color="red")
+	if(air.get_moles(GAS_O2) < 1)
+		return
+	if(turf_fire)
+		turf_fire.AddPower(power)
+		return
+	if(!isgroundlessturf(src))
+		new /obj/effect/abstract/turf_fire(src, power, fire_color)

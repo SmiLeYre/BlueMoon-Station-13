@@ -206,15 +206,45 @@
 			if(CHECK_BITFIELD(G.genital_flags, GENITAL_CHASTENED) && G.is_exposed())
 				. += "[t_on] носит БДСМ-клетку. БДСМ-клетка покрывает [G.name]."
 	//
+	if(covered_in_cum)
+		. += "<span style='color:["#FFFFFF"]';>[t_on] измазан[t_a] свежими половыми выделениями...</span>\n" //"Вы чувствуете, как от [t_ego] тела пахнет <b>'<span style='color:[cummies.color]';>[cummies.name]</span>'</b>..."
+
 	var/list/missing = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 	var/list/disabled = list()
-	var/list/writing = list()
+//	var/list/writing = list() - BLUEMOON REMOVAL (не используется, заменено на show_written_on_bodypart_text)
+
+	// BLUEMOON ADD START - отображение написанного на части тела только в случае, если она видима
+	var/show_written_on_bodypart_text = ""
+
+	var/list/items_on_target = list()
+	items_on_target = get_equipped_items()
+	// BLUEMOON ADD END
+
 	for(var/X in bodyparts)
 		var/obj/item/bodypart/BP = X
 		if(BP.disabled)
 			disabled += BP
-		if(BP.writtentext)
-			writing += BP
+
+		if(BP.writtentext != "") // BLUEMOON EDIT - добавлено != ""
+//			writing += BP - BLUEMOON REMOVAL START - (не используется, заменено на show_written_on_bodypart_text)
+
+			// BLUEMOON ADD START - отображение написанного на части тела только в случае, если она видима
+			var/covered_area
+			covered_area = zone2body_parts_covered_complicated(BP.body_zone)
+
+			if(!covered_area) // если в будущем введутся новые органы, чтобы этот момент не забыли
+				to_chat(user, span_danger("DEV: При осмотре обнаружен неизвестный орган, сообщите разработчикам!"))
+				covered_area = CHEST
+
+			var/show_text = TRUE
+			for(var/obj/item/worn_clothes in items_on_target)
+				if(worn_clothes.body_parts_covered & covered_area)
+					show_text = FALSE
+					break
+
+			if(show_text)
+				show_written_on_bodypart_text += span_warning("На [t_ego] [BP.ru_name_v] написано: \"[html_encode(BP.writtentext)]\".\n")
+			// BLUEMOON ADD END
 		missing -= BP.body_zone
 		for(var/obj/item/I in BP.embedded_objects)
 			if(I.isEmbedHarmless())
@@ -247,14 +277,14 @@
 	var/r_limbs_missing = 0
 	for(var/t in missing)
 		if(t==BODY_ZONE_HEAD)
-			msg += "<span class='deadsay'><B>[ru_ego(TRUE)] [ru_exam_parse_zone(parse_zone(t))] отсутствует!</B></span>\n"
+			msg += "<span class='deadsay'><B>[ru_ego(TRUE)] [ru_exam_parse_zone(ru_parse_zone(t))] отсутствует!</B></span>\n"
 			continue
 		if(t == BODY_ZONE_L_ARM || t == BODY_ZONE_L_LEG)
 			l_limbs_missing++
 		else if(t == BODY_ZONE_R_ARM || t == BODY_ZONE_R_LEG)
 			r_limbs_missing++
 
-		msg += "<span class='warning'><B>[ru_ego(TRUE)] [ru_exam_parse_zone(parse_zone(t))] отсутствует!</B></span>\n"
+		msg += "<span class='warning'><B>[ru_ego(TRUE)] [ru_exam_parse_zone(ru_parse_zone(t))] отсутствует!</B></span>\n"
 
 	if(l_limbs_missing >= 2 && r_limbs_missing == 0)
 		msg += "[t_on] стоит на правой ножке.\n"
@@ -405,13 +435,20 @@
 			else
 				msg += "[t_on] имеет дикие, космические глаза, которые в свою очередь имеют странный, абсолютно ненормальный вид.\n"
 
+		/* BLUEMON REMOVAL START - заменено show_written_on_bodypart_text
 		for(var/X in writing)
 			if(!w_uniform)
 				var/obj/item/bodypart/BP = X
 				msg += "<span class='warning'>На [t_ego] [BP.name] написано: \"[html_encode(BP.writtentext)]\".</span>\n"
-		for(var/obj/item/organ/genital/G in internal_organs)
-			if(length(G.writtentext) && istype(G) && G.is_exposed())
-				msg += "<span class='warning'>На [t_ego] [G.name] написано: \"[html_encode(G.writtentext)]\".</span>\n"
+		/ BLUEMOON REMOVAL END */
+		// BLUEMOON ADD START - отображение надписей на теле, если они видимы и есть
+		if(show_written_on_bodypart_text != "")
+			msg += show_written_on_bodypart_text
+		if(user.client?.prefs.cit_toggles & GENITAL_EXAMINE)
+		// BLUEMOON ADD END
+			for(var/obj/item/organ/genital/G in internal_organs)
+				if(length(G.writtentext) && istype(G) && G.is_exposed())
+					msg += "<span class='warning'>На [t_ego] [G.ru_name_v] написано: \"[html_encode(G.writtentext)]\".</span>\n"
 
 		if(!user)
 			return

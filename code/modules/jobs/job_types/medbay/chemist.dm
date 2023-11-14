@@ -58,7 +58,7 @@
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/hsc
 	ears = /obj/item/radio/headset/headset_med
 	uniform = /obj/item/clothing/under/rank/medical/doctor/util
-	shoes = /obj/item/clothing/shoes/jackboots/tall
+	shoes = /obj/item/clothing/shoes/jackboots/tall_default
 	suit =  /obj/item/clothing/suit/toggle/labcoat/chemist
 
 	backpack = /obj/item/storage/backpack/duffelbag/syndie/med

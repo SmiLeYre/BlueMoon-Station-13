@@ -643,6 +643,7 @@ GLOBAL_LIST_INIT(strippable_corgi_items, create_strippable_list(list(
 	pass_flags = PASSMOB
 	mob_size = MOB_SIZE_SMALL
 	collar_type = "puppy"
+	childtype = null // BLUEMOON ADD
 
 	vocal_pitch = 1.6
 

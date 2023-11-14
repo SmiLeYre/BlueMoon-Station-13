@@ -110,7 +110,9 @@
 	for(var/i in 1 to multiplier)
 		switch(id)
 			if("solid_burger")
-				var/list/random_burger = list(typecacheof(/obj/item/reagent_containers/food/snacks/burger))
+				var/list/burgers = list(typecacheof(/obj/item/reagent_containers/food/snacks/burger))
+				playsound(location, 'sound/effects/phasein.ogg', 100, 1)
+				var/random_burger = pick(burgers)
 				new random_burger(location)
 
 /datum/reagent/drug/pendosovka/on_mob_metabolize(mob/living/M)

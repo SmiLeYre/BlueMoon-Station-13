@@ -311,6 +311,7 @@
 	. = ..()
 	if(start_with_cell && !no_emergency)
 		cell = new/obj/item/stock_parts/cell/emergency_light(src)
+	set_layer_by_dir() // BLUEMOON ADD START
 	spawn(2)
 		switch(fitting)
 			if("tube")
@@ -330,6 +331,12 @@
 		on = FALSE
 	QDEL_NULL(cell)
 	return ..()
+
+// BLUEMOON ADD START - если лампа смотрит вниз, то она находится "под" мобом, чтобы можно было корректно её загораживать своим спрайтом
+/obj/machinery/light/proc/set_layer_by_dir()
+	if(dir == NORTH)
+		layer = MOB_LOWER_LAYER
+// BLUEMOON ADD END
 
 /obj/machinery/light/update_icon_state()
 	switch(status)		// set icon_states
@@ -891,6 +898,11 @@
 	layer = 2.5
 	light_type = /obj/item/light/bulb
 	fitting = "floor" //making deconstruction give out the right type.
+
+// BLUEMOON ADD START - если лампа смотрит вниз, то она находится "под" мобом, чтобы можно было корректно её загораживать своим спрайтом
+/obj/machinery/light/floor/set_layer_by_dir()
+	return TRUE
+// BLUEMOON ADD END
 
 // attempts to set emergency lights
 /obj/machinery/light/proc/set_emergency_lights()

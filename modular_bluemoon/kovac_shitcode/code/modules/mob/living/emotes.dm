@@ -52,7 +52,7 @@
 	message = "втыкает."
 	message_mime = "молча втыкает."
 	emote_sound = 'modular_bluemoon/kovac_shitcode/sound/new_emotes/malf.ogg'
-	emote_cooldown = 30.6 SECONDS
+	emote_cooldown = 15 SECONDS
 
 /datum/emote/living/audio/tsss
 	key = "tsss"

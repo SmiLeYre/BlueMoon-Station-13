@@ -1,3 +1,4 @@
+GLOBAL_DATUM(dna_for_copying, /datum/dna)
 
 /////////////////////////// DNA DATUM
 /datum/dna
@@ -55,9 +56,12 @@
 	destination.dna.nameless = nameless
 	destination.dna.custom_species = custom_species
 	destination.dna.temporary_mutations = temporary_mutations.Copy()
+	SSquirks.AssignQuirks(destination, destination.client, TRUE, TRUE, null, FALSE, destination)
 	if(ishuman(destination))
 		var/mob/living/carbon/human/H = destination
 		H.give_genitals(TRUE)//This gives the body the genitals of this DNA. Used for any transformations based on DNA
+		H.grad_style = H.grad_style
+		H.grad_color = H.grad_color
 	if(transfer_SE)
 		destination.dna.mutation_index = mutation_index
 		destination.dna.default_mutation_genes = default_mutation_genes

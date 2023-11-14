@@ -47,5 +47,6 @@
 #define TRAIT_BODY_MORPHER		"body_morpher"
 #define TRAIT_LESS_NIGHTMARE	"less_nightmare"
 #define TRAIT_HALLOWED			"hallowed"
+#define TRAIT_RUSSIAN			"russian"
 #define TRAIT_HARD_SOLES 		"hard_soles"
 #define TRAIT_MESSY				"messy"

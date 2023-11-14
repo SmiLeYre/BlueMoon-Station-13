@@ -54968,6 +54968,9 @@
 /area/cargo/storage)
 "tfa" = (
 /obj/structure/reagent_dispensers/watertank/high,
+/obj/structure/reagent_dispensers/spacecleanertank{
+	pixel_x = -30
+	},
 /turf/open/floor/plasteel,
 /area/service/janitor)
 "tff" = (

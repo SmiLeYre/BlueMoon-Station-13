@@ -15,8 +15,8 @@
 
 
 /mob/living/simple_animal/hostile/syndicate
-	name = "Syndicate Operative"
-	desc = "Death to Nanotrasen."
+	name = "InteQ Operative"
+	desc = "Смерть Nanotrasen и Синдикату!"
 	icon = 'icons/mob/simple_human.dmi'
 	icon_state = "syndicate"
 	icon_living = "syndicate"
@@ -42,7 +42,7 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/syndicatesoldier)
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 15
-	faction = list(ROLE_SYNDICATE)
+	faction = list(ROLE_INTEQ)
 	check_friendly_fire = 1
 	status_flags = CANPUSH
 	del_on_death = 1
@@ -51,12 +51,19 @@
 
 	footstep_type = FOOTSTEP_MOB_SHOE
 
+/mob/living/simple_animal/hostile/syndicate/real_syndicate
+	name = "Syndicate Operative"
+	desc = "Смерть InteQ!"
+	icon_state = "real_syndicate"
+	icon_living = "real_syndicate"
+	faction = list(ROLE_SYNDICATE)
+
 ///////////////Melee////////////
 
 /mob/living/simple_animal/hostile/syndicate/space
 	icon_state = "syndicate_space"
 	icon_living = "syndicate_space"
-	name = "Syndicate Commando"
+	name = "InteQ Commando"
 	maxHealth = 170
 	health = 170
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
@@ -71,7 +78,7 @@
 /mob/living/simple_animal/hostile/syndicate/space/stormtrooper
 	icon_state = "syndicate_stormtrooper"
 	icon_living = "syndicate_stormtrooper"
-	name = "Syndicate Stormtrooper"
+	name = "InteQ Stormtrooper"
 	maxHealth = 250
 	health = 250
 
@@ -86,13 +93,13 @@
 	loot = list(/obj/effect/gibspawner/human)
 	attack_verb_continuous = "slashes"
 	attack_verb_simple = "slash"
-	attack_sound = 'sound/weapons/bladeslice.ogg'
+	attack_sound = 'modular_bluemoon/kovac_shitcode/sound/weapons/sledge.ogg'
 	status_flags = 0
 
 /mob/living/simple_animal/hostile/syndicate/melee/space
 	icon_state = "syndicate_space_knife"
 	icon_living = "syndicate_space_knife"
-	name = "Syndicate Commando"
+	name = "InteQ Commando"
 	maxHealth = 170
 	health = 170
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
@@ -107,7 +114,7 @@
 /mob/living/simple_animal/hostile/syndicate/melee/space/stormtrooper
 	icon_state = "syndicate_stormtrooper_knife"
 	icon_living = "syndicate_stormtrooper_knife"
-	name = "Syndicate Stormtrooper"
+	name = "InteQ Stormtrooper"
 	maxHealth = 250
 	health = 250
 
@@ -134,14 +141,14 @@
 
 /mob/living/simple_animal/hostile/syndicate/melee/sword/bullet_act(obj/item/projectile/Proj)
 	if(prob(50))
-		visible_message("<span class='danger'>[src] blocks [Proj] with its shield!</span>")
+		visible_message("<span class='danger'>[src] blocks [Proj] with its sword!</span>")
 		return BULLET_ACT_BLOCK
 	return ..()
 
 /mob/living/simple_animal/hostile/syndicate/melee/sword/space
 	icon_state = "syndicate_space_sword"
 	icon_living = "syndicate_space_sword"
-	name = "Syndicate Commando"
+	name = "InteQ Commando"
 	maxHealth = 170
 	health = 170
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
@@ -161,7 +168,7 @@
 /mob/living/simple_animal/hostile/syndicate/melee/sword/space/stormtrooper
 	icon_state = "syndicate_stormtrooper_sword"
 	icon_living = "syndicate_stormtrooper_sword"
-	name = "Syndicate Stormtrooper"
+	name = "InteQ Stormtrooper"
 	maxHealth = 250
 	health = 250
 
@@ -186,7 +193,7 @@
 /mob/living/simple_animal/hostile/syndicate/ranged/space
 	icon_state = "syndicate_space_pistol"
 	icon_living = "syndicate_space_pistol"
-	name = "Syndicate Commando"
+	name = "InteQ Commando"
 	maxHealth = 170
 	health = 170
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
@@ -201,7 +208,7 @@
 /mob/living/simple_animal/hostile/syndicate/ranged/space/stormtrooper
 	icon_state = "syndicate_stormtrooper_pistol"
 	icon_living = "syndicate_stormtrooper_pistol"
-	name = "Syndicate Stormtrooper"
+	name = "InteQ Stormtrooper"
 	maxHealth = 250
 	health = 250
 
@@ -219,7 +226,7 @@
 /mob/living/simple_animal/hostile/syndicate/ranged/smg/space
 	icon_state = "syndicate_space_smg"
 	icon_living = "syndicate_space_smg"
-	name = "Syndicate Commando"
+	name = "InteQ Commando"
 	maxHealth = 170
 	health = 170
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
@@ -234,7 +241,7 @@
 /mob/living/simple_animal/hostile/syndicate/ranged/smg/space/stormtrooper
 	icon_state = "syndicate_stormtrooper_smg"
 	icon_living = "syndicate_stormtrooper_smg"
-	name = "Syndicate Stormtrooper"
+	name = "InteQ Stormtrooper"
 	maxHealth = 250
 	health = 250
 
@@ -249,7 +256,7 @@
 /mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space
 	icon_state = "syndicate_space_shotgun"
 	icon_living = "syndicate_space_shotgun"
-	name = "Syndicate Commando"
+	name = "InteQ Commando"
 	maxHealth = 170
 	health = 170
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
@@ -264,7 +271,7 @@
 /mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/stormtrooper
 	icon_state = "syndicate_stormtrooper_shotgun"
 	icon_living = "syndicate_stormtrooper_shotgun"
-	name = "Syndicate Stormtrooper"
+	name = "InteQ Stormtrooper"
 	maxHealth = 250
 	health = 250
 

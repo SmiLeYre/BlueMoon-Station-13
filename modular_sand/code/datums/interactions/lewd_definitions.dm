@@ -806,13 +806,13 @@
 				target_gen = c_partner.getorganslot(ORGAN_SLOT_BREASTS)
 			if(CUM_TARGET_PENIS)
 				target_gen = c_partner.getorganslot(ORGAN_SLOT_PENIS)
-	if(gender == MALE)
+	if(gender == MALE || (gender == PLURAL && ismasculine(src)))
 		playlewdinteractionsound(loc, pick('modular_sand/sound/interactions/final_m1.ogg',
 							'modular_sand/sound/interactions/final_m2.ogg',
 							'modular_sand/sound/interactions/final_m3.ogg',
 							'modular_sand/sound/interactions/final_m4.ogg',
 							'modular_sand/sound/interactions/final_m5.ogg'), 90, 1, 0)
-	else
+	else if(gender != MALE || (gender == PLURAL && isfeminine(src)))
 		playlewdinteractionsound(loc, pick('modular_sand/sound/interactions/final_f1.ogg',
 							'modular_sand/sound/interactions/final_f2.ogg',
 							'modular_sand/sound/interactions/final_f3.ogg'), 70, 1, 0)

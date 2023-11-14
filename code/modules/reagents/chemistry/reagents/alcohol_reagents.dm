@@ -16,6 +16,7 @@
 	pH = 7.33
 	boiling_point = 351.38
 	value = REAGENT_VALUE_VERY_COMMON //don't bother tweaking all drinks values, way too many can easily be done roundstart or with an upgraded dispenser.
+	accelerant_quality = 5
 
 /*
 Boozepwr Chart

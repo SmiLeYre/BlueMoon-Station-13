@@ -343,7 +343,8 @@
 /datum/job/geneticist/New()
 	var/list/extra_titles = list(
 		"Genetics Researcher",
-		"Gene-Slut"
+		"Gene-Slut",
+		"Gene-Stud"
 	)
 	LAZYADD(alt_titles, extra_titles)
 	. = ..()
@@ -378,6 +379,7 @@
 	var/list/extra_titles = list(
 		"Gumshoe",
 		"Slutective",
+		"Studective",
 		"Van Dorn Agent",
 		"Forensic Investigator",
 		"Cinder Dick",

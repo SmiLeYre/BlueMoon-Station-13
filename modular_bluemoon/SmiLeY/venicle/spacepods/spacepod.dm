@@ -621,7 +621,7 @@
 
 	for(var/obj/machinery/door/poddoor/multi_tile/P in orange(3,src))
 		for(var/mob/living/carbon/human/O in contents)
-			if(P.check_access(O.get_active_held_item()) || P.check_access(O.wear_id))
+			if(P.check_access(O.get_active_held_item()) || P.check_access(O.wear_id) || P.check_access(O.wear_neck))
 				if(P.density)
 					P.open()
 					return TRUE

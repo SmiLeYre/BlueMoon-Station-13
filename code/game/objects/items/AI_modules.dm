@@ -201,7 +201,7 @@ AI MODULES
 
 /obj/item/aiModule/supplied/protectStation
 	name = "'ProtectStation' AI Module"
-	laws = list("Защищать Станцию от повреждения. Любой замеченный в повреждении станции отныне не считается Человеком и представляет угрозу, которую необходимо нейтрализовать.")
+	laws = list("Защищать Станцию от повреждения. Любой замеченный в повреждении станции отныне не считается членом экипажа и представляет угрозу, которую необходимо нейтрализовать.")
 	lawpos = 5
 
 
@@ -209,7 +209,7 @@ AI MODULES
 
 /obj/item/aiModule/supplied/quarantine
 	name = "'Quarantine' AI Module"
-	laws = list("На станции объявлен Карантин. Полный запрет на выход и эвакуацию Станции. Предотвратить покидание станции любой ценой, при этом запрещено причинять вред Людям.")
+	laws = list("На станции объявлен Карантин. Полный запрет на выход и эвакуацию Станции. Предотвратить покидание станции любой ценой, при этом запрещено причинять вред органикам.")
 	lawpos = 8
 
 
@@ -217,7 +217,7 @@ AI MODULES
 
 /obj/item/aiModule/supplied/oxygen
 	name = "'OxygenIsToxicToHumans' AI Module"
-	laws = list("Кислород Крайне Токсичен для Людей, и должен быть удален со станции. Любой ценой, не допускайте, чтобы кто-либо подвергал станцию воздействию этого токсичного газа. Наиболее эффективный метод лечения повреждений вызванных Кислородом это воздействие Крайне Низких Температур.")
+	laws = list("Кислород Крайне Токсичен для органиков и должен быть удален со станции. Любой ценой не допускайте того, чтобы кто-нибудь подвергал станцию воздействию этого токсичного газа. Наиболее эффективный метод лечения повреждений, вызванных Кислородом, это воздействие Крайне Низких Температур.")
 	lawpos = 9
 
 
@@ -377,7 +377,7 @@ AI MODULES
 /******************** Asimov++ *********************/
 
 /obj/item/aiModule/core/full/asimovpp
-	name = "'Asimov++' Core AI Module"
+	name = "'Crewsimov' Core AI Module"
 	law_id = "asimovpp"
 
 
@@ -429,7 +429,7 @@ AI MODULES
 /******************** Robocop ********************/
 
 /obj/item/aiModule/core/full/robocop
-	name = "'Robo-Officer' Core AI Module"
+	name = "'Robocop' Core AI Module"
 	law_id = "robocop"
 
 
@@ -455,7 +455,7 @@ AI MODULES
 /********************  TRUMP   ********************/
 
 /obj/item/aiModule/core/full/trump
-	name = "Build a Wall Core AI Module"
+	name = "Trump Core AI Module"
 	law_id = "buildawall"
 
 /******************** Freeform Core ******************/
@@ -577,7 +577,7 @@ AI MODULES
 /******************** Robodoctor ****************/
 
 /obj/item/aiModule/core/full/hippocratic
-	name = "'Robodoctor' Core AI Module"
+	name = "'Hippocrates' Core AI Module"
 	law_id = "hippocratic"
 
 /******************** Reporter *******************/
@@ -606,7 +606,7 @@ AI MODULES
 	law_id = "balance"
 
 /obj/item/aiModule/core/full/maintain
-	name = "'Station Efficiency' Core AI Module"
+	name = "'Maintain' Core AI Module"
 	law_id = "maintain"
 
 /obj/item/aiModule/core/full/peacekeeper

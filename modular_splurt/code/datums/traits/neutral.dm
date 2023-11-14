@@ -44,6 +44,21 @@
 	lose_text = span_notice("Теперь поглаживания не кажутся настолько уж плохими...")
 	medical_record_text = "Пациента мало заботят или раздражают чужие прикосновения."
 
+/datum/quirk/headpat_hater/add()
+
+	var/mob/living/carbon/human/quirk_mob = quirk_holder
+
+	var/datum/action/cooldown/toggle_distant/act_toggle = new
+	act_toggle.Grant(quirk_mob)
+
+/datum/quirk/headpat_hater/remove()
+
+	var/mob/living/carbon/human/quirk_mob = quirk_holder
+
+	var/datum/action/cooldown/toggle_distant/act_toggle = locate() in quirk_mob.actions
+	if(act_toggle)
+		act_toggle.Remove(quirk_mob)
+
 /datum/quirk/headpat_slut
 	name = "Тактилофилия"
 	desc = "Вам нравится, когда другие прикасаются к вашей голове! Может, даже слишком... когда другие гладят вас по голове, это повышает ваше настроение и возбуждает вас."

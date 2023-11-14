@@ -671,3 +671,121 @@
 
 /obj/item/storage/backpack/ert_commander/ert_janitor
 	icon_state = "ert_janitor"
+
+///////////////////////////////////////////////////////////////////////////
+
+/obj/item/clothing/suit/space/hardsuit/engine
+	unique_reskin = list(
+		"Default" = list(
+			"icon_state" = "hardsuit-engineering",
+			"tail_state" = "engineer"
+		),
+		"Alt" = list(
+			"icon_state" = "hardsuit-engineering2",
+			"tail_state" = "engi-tail"
+		)
+	)
+
+/obj/item/clothing/suit/space/hardsuit/engine/reskin_obj(mob/M)
+	. = ..()
+
+	var/obj/item/clothing/head/helmet/space/hardsuit/engine/mining_helmet
+	if(istype(helmet))
+		mining_helmet = helmet
+
+	switch(current_skin)
+		if("Default")
+
+			if(mining_helmet)
+				mining_helmet.icon_state = initial(mining_helmet.icon_state)
+
+		if("Alt")
+
+			if(mining_helmet)
+				mining_helmet.icon_state = "hardsuit0-engineering2"
+
+/obj/item/clothing/head/helmet/space/hardsuit/engine/update_icon_state()
+	switch(suit.current_skin)
+		if("Alt")
+			icon_state = "hardsuit[on]-engineering2"
+		else
+			. = ..()
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+/obj/item/clothing/suit/space/hardsuit/engine/atmos
+	unique_reskin = list(
+		"Default" = list(
+			"icon_state" = "hardsuit-atmospherics",
+			"tail_state" = "atmos"
+		),
+		"Alt" = list(
+			"icon_state" = "hardsuit-atmospherics2",
+			"tail_state" = "atmos-tail"
+		)
+	)
+
+/obj/item/clothing/suit/space/hardsuit/engine/atmos/reskin_obj(mob/M)
+	. = ..()
+
+	var/obj/item/clothing/head/helmet/space/hardsuit/engine/atmos/mining_helmet
+	if(istype(helmet))
+		mining_helmet = helmet
+
+	switch(current_skin)
+		if("Default")
+
+			if(mining_helmet)
+				mining_helmet.icon_state = initial(mining_helmet.icon_state)
+
+		if("Alt")
+
+			if(mining_helmet)
+				mining_helmet.icon_state = "hardsuit0-atmospherics2"
+
+/obj/item/clothing/head/helmet/space/hardsuit/engine/atmos/update_icon_state()
+	switch(suit.current_skin)
+		if("Alt")
+			icon_state = "hardsuit[on]-atmospherics2"
+		else
+			. = ..()
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+/obj/item/clothing/suit/space/hardsuit/engine/elite
+	unique_reskin = list(
+		"Default" = list(
+			"icon_state" = "hardsuit-white",
+			"tail_state" = "ce"
+		),
+		"Alt" = list(
+			"icon_state" = "hardsuit-white2",
+			"tail_state" = "ce-tail"
+		)
+	)
+
+/obj/item/clothing/suit/space/hardsuit/engine/elite/reskin_obj(mob/M)
+	. = ..()
+
+	var/obj/item/clothing/head/helmet/space/hardsuit/engine/elite/mining_helmet
+	if(istype(helmet))
+		mining_helmet = helmet
+
+	switch(current_skin)
+		if("Default")
+
+			if(mining_helmet)
+				mining_helmet.icon_state = initial(mining_helmet.icon_state)
+
+		if("Alt")
+
+			if(mining_helmet)
+				mining_helmet.icon_state = "hardsuit0-white2"
+
+/obj/item/clothing/head/helmet/space/hardsuit/engine/elite/update_icon_state()
+	switch(suit.current_skin)
+		if("Alt")
+			icon_state = "hardsuit[on]-white2"
+		else
+			. = ..()

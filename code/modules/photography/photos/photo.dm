@@ -41,9 +41,9 @@
 
 /obj/item/photo/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] is taking one last look at \the [src]! It looks like [user.ru_who()] giving in to death!</span>")//when you wanna look at photo of waifu one last time before you die...
-	if (user.gender == MALE)
+	if (user.gender == MALE || (user.gender == PLURAL && ismasculine(user)))
 		playsound(user, 'sound/voice/human/manlaugh1.ogg', 50, TRUE)//EVERY TIME I DO IT MAKES ME LAUGH
-	else if (user.gender == FEMALE)
+	else if (user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
 		playsound(user, 'sound/voice/human/womanlaugh.ogg', 50, TRUE)
 	return OXYLOSS
 
@@ -97,3 +97,6 @@
 	if(n_name && (loc == usr || loc.loc && loc.loc == usr) && CHECK_MOBILITY(L, MOBILITY_USE))
 		name = "photo[(n_name ? text("- '[n_name]'") : null)]"
 	add_fingerprint(usr)
+	
+/obj/item/photo/old
+	icon_state = "photo_old"

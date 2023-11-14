@@ -29,6 +29,12 @@
 	variance = 25
 	select_name = "scatter"
 
+/obj/item/ammo_casing/energy/laser/scatter/pulse
+	projectile_type = /obj/item/projectile/beam/pulse
+	e_cost = 200
+	select_name = "ANNIHILATE"
+	fire_sound = 'sound/weapons/1pulse.ogg'
+
 /obj/item/ammo_casing/energy/laser/scatter/disabler
 	projectile_type = /obj/item/projectile/beam/disabler
 	pellets = 3

@@ -144,6 +144,8 @@
 
 	var/command_radio = FALSE
 
+	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
+
 /datum/outfit/inteq_raider/vanguard
 	name = "InteQ Vanguard"
 	id = /obj/item/card/id/syndicate/anyone/inteq
@@ -219,6 +221,9 @@
 	integrity_failure = 0.08
 	armor = list(MELEE = 50, BULLET = 30, LASER = 30, ENERGY = 30, BOMB = 50, BIO = 0, RAD = 0, FIRE = 90, ACID = 90)
 	faction = list("InteQ")
+
+/obj/machinery/porta_turret/syndicate/energy/pirate/inteq/assess_perp(mob/living/carbon/human/perp)
+	return 10
 
 /obj/machinery/mineral/ore_redemption/inteq
 	req_access = list(ACCESS_SYNDICATE)

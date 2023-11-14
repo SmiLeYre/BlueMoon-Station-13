@@ -1176,8 +1176,9 @@
 	return current_reagent.post_copy_data()
 
 /datum/reagents/proc/get_reagent(type)
-	var/list/cached_reagents = reagent_list
-	. = locate(type) in cached_reagents
+	for(var/datum/reagent/R in reagent_list)
+		if(R.type == type)
+			return R
 
 /datum/reagents/proc/generate_taste_message(minimum_percent=15)
 	var/list/out = list()
@@ -1266,3 +1267,10 @@
 		var/datum/reagent/R = GLOB.chemical_reagents_list[X]
 		if(ckey(chem_name) == ckey(lowertext(R.name)))
 			return X
+
+/datum/reagents/proc/get_total_accelerant_quality()
+	var/quality = 0
+	for(var/datum/reagent/reagent in reagent_list)
+		if(istype(reagent))
+			quality += reagent.volume * reagent.accelerant_quality
+	return quality

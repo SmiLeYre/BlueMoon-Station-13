@@ -5,7 +5,7 @@
 	department_flag = CIVILIAN
 	faction = "Station"
 	total_positions = 2
-	spawn_positions = 1
+	spawn_positions = 2
 	supervisors = "the head of personnel"
 	selection_color = "#bbe291"
 
@@ -42,7 +42,7 @@
 
 	//belt = /obj/item/pda/syndicate/no_deto
 
-	shoes = /obj/item/clothing/shoes/jackboots/tall
+	shoes = /obj/item/clothing/shoes/jackboots/tall_default
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/util
 

@@ -5,7 +5,7 @@
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/mask.dmi'
 	icon_state = "officer_mask"
 	item_state = "officer_mask"
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	mutantrace_variation = STYLE_MUZZLE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/mask/surgical/plaguedoc_new
 	name = "plague doctor mask"
@@ -14,6 +14,7 @@
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/mask.dmi'
 	icon_state = "plaguedoc_mask"
 	item_state = "plaguedoc_mask"
+	mutantrace_variation = STYLE_MUZZLE|STYLE_NO_ANTHRO_ICON
 	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/mask_muzzled.dmi'
 	actions_types = list()
 

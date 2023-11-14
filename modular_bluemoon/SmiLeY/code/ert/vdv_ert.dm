@@ -49,7 +49,7 @@
 	uniform = /obj/item/clothing/under/pants/camo
 	suit = /obj/item/clothing/suit/armor/nri_vest
 	suit_store = /obj/item/melee/classic_baton
-	shoes = /obj/item/clothing/shoes/jackboots/tall
+	shoes = /obj/item/clothing/shoes/jackboots/tall_default
 	gloves = /obj/item/clothing/gloves/fingerless
 	ears = /obj/item/radio/headset/headset_cent/alt
 	head = /obj/item/clothing/head/HoS/beret/nri

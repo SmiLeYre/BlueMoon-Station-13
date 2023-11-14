@@ -62,7 +62,7 @@
 
 	ears = /obj/item/radio/headset/heads/qm
 	uniform = /obj/item/clothing/under/rank/captain/util
-	shoes = /obj/item/clothing/shoes/jackboots/tall
+	shoes = /obj/item/clothing/shoes/jackboots/tall_default
 	glasses = /obj/item/clothing/glasses/sunglasses
 	l_hand = /obj/item/clipboard
 

@@ -274,3 +274,5 @@
 	icon_state = "clockitool"
 	toolspeed = 0.2
 
+/obj/item/multitool/advanced/brass/update_icon_state()
+	return

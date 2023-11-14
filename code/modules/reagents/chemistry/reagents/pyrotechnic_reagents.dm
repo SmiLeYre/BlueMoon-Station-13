@@ -47,6 +47,7 @@
 	metabolization_rate = 4
 	chemical_flags = REAGENT_ALL_PROCESS
 	taste_description = "burning"
+	accelerant_quality = 20
 	/* no gaseous CLF3 until i can think of a good way to get it to burn that doesn't destroy matter in mysterious ways
 	boiling_point = 289.4
 	*/
@@ -162,6 +163,7 @@
 	reagent_state = LIQUID
 	color = "#FA00AF"
 	taste_description = "burning"
+	accelerant_quality = 20
 	boiling_point = T20C-10
 	value = REAGENT_VALUE_UNCOMMON
 
@@ -194,6 +196,7 @@
 	reagent_state = LIQUID
 	color = "#FA00AF"
 	taste_description = "burning"
+	accelerant_quality = 20
 	value = REAGENT_VALUE_COMMON
 
 // Smells like victory...

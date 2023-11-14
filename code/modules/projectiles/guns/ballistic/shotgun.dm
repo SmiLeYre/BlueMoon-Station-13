@@ -368,7 +368,7 @@
 	name = "Lever-Action Rifle"
 	desc = "While lever-actions have been horribly out of date for hundreds of years now, \
 	the reported potential versatility of .38 Special is worth paying attention to."
-	fire_sound = "sound/weapons/revolvershot.ogg"
+	fire_sound = "sound/weapons/revolvershot2.ogg"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/levergun
 	icon_state = "levercarabine"
 	item_state = "leveraction"
@@ -390,4 +390,4 @@
 	icon_state = "brushgun"
 	item_state = "leveraction"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/levergun/brush
-	fire_sound = "sound/weapons/revolvershot.ogg"
+	fire_sound = "sound/weapons/revolvershot2.ogg"

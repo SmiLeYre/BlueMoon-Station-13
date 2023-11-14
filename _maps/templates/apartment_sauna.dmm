@@ -272,6 +272,7 @@
 /obj/machinery/pool/filter{
 	pixel_y = -17
 	},
+/obj/structure/railing,
 /turf/open/floor/iron/white,
 /area/hilbertshotel)
 "oR" = (

@@ -81,7 +81,7 @@
 	gloves = /obj/item/clothing/gloves/color/captain
 	uniform = /obj/item/clothing/under/rank/captain/util
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
-	shoes = /obj/item/clothing/shoes/jackboots/tall
+	shoes = /obj/item/clothing/shoes/jackboots/tall_default
 	head = /obj/item/clothing/head/HoS/syndicate
 
 	backpack = /obj/item/storage/backpack/duffelbag/syndie

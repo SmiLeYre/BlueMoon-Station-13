@@ -8,7 +8,7 @@
 	icon_gib = "deathclaw_gib"
 	pixel_x = -16
 	gender = MALE
-	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
+	mob_biotypes = MOB_ORGANIC
 	stat_attack = UNCONSCIOUS
 	speak = list("ROAR!","Rawr!","GRRAAGH!","Growl!")
 	speak_emote = list("growls", "roars")

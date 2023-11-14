@@ -15,6 +15,16 @@
 			return
 		if(istype(loccheck.loc, /area/fabric_of_reality))
 			to_chat(user, "<span class='danger'>You can't do that here!</span>")
+		// BLUEMOO ADD START - в зоне госткафе нельзя устраивать разломы
+		if(istype(get_area(loccheck), /area/centcom/holding))
+			user.visible_message(span_warning("[user] tried to open a tear in fabric and reality... So will be punished for this."),span_big_warning("You ough to be ashamed for what you have tried to do, little grief slut."))
+			if(ishuman(user))
+				sleep(2 SECONDS)
+				var/mob/living/carbon/human/H = user
+				H.DefaultCombatKnockdown(1400)
+				H.cum()
+			return
+		// BLUEMOON ADD END
 		to_chat(user, "<span class='danger'>The Bluespace interfaces of the two devices catastrophically malfunction!</span>")
 		qdel(W)
 		playsound(loccheck,'sound/effects/supermatter.ogg', 200, 1)

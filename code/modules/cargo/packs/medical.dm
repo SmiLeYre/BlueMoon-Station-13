@@ -43,6 +43,18 @@
 	crate_name = "blood freezer"
 	crate_type = /obj/structure/closet/crate/freezer
 
+// BLUEMOON ADD START - кровь для синтетиков
+/datum/supply_pack/medical/oilblood
+	name = "Hydraulic Fluid Cans Crate"
+	desc = "Содержит три канистры с гидравлической жидкостью. Обычно, применяется в механике и для замены жидкостей внутри синтетиков."
+	cost = 1500
+	contains = list(/obj/item/reagent_containers/blood/oilblood,
+					/obj/item/reagent_containers/blood/oilblood,
+					/obj/item/reagent_containers/blood/oilblood)
+	crate_name = "hydraulic fluid crate"
+	crate_type = /obj/structure/closet/crate
+// BLUEMOON ADD END
+
 /datum/supply_pack/medical/chemical
 	name = "Chemical Starter Kit Crate"
 	desc = "Содержит двенадцать различных химических веществ для всех забавных экспериментов, которые вы можете провести."

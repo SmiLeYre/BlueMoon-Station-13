@@ -121,8 +121,8 @@
 		target.visible_message("<span class='danger'>[user] has hit [target][head_attack_message] with a bottle of [src.name]!</span>", \
 				"<span class='userdanger'>[user] has hit [target][head_attack_message] with a bottle of [src.name]!</span>")
 	else
-		user.visible_message("<span class='danger'>[target] hits [target.ru_na()]self with a bottle of [src.name][head_attack_message]!</span>", \
-				"<span class='userdanger'>[target] hits [target.ru_na()]self with a bottle of [src.name][head_attack_message]!</span>")
+		user.visible_message("<span class='danger'>[target] hits [target.p_them()]self with a bottle of [src.name][head_attack_message]!</span>", \
+				"<span class='userdanger'>[target] hits [target.p_them()]self with a bottle of [src.name][head_attack_message]!</span>")
 
 	//Attack logs
 	log_combat(user, target, "attacked", src)
@@ -648,16 +648,21 @@
 	return
 
 /obj/item/reagent_containers/food/drinks/bottle/molotov/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
-	var/firestarter = 0
-	for(var/datum/reagent/R in reagents.reagent_list)
-		for(var/A in accelerants)
-			if(istype(R,A))
-				firestarter = 1
-				break
-	if(firestarter && active)
+	var/fire_power = reagents.get_total_accelerant_quality()
+	if(active && fire_power > 0)
 		hit_atom.fire_act()
-		new /obj/effect/hotspot(get_turf(hit_atom))
-	..()
+		if(isliving(hit_atom))
+			var/mob/living/L = hit_atom
+			L.adjust_fire_stacks()
+		if(fire_power > 10)
+			var/turf/center_turf = get_turf(hit_atom)
+			if(isclosedturf(center_turf) && isopenturf(get_turf(src)))
+				center_turf = get_turf(src) // if it hits a wall, light the floor in front of the wall on fire, not the wall itself
+			center_turf.IgniteTurf(fire_power)
+			for(var/turf/T in center_turf.reachableAdjacentAtmosTurfs())
+				if(prob(fire_power))
+					T.IgniteTurf(fire_power)
+	return ..()
 
 /obj/item/reagent_containers/food/drinks/bottle/molotov/attackby(obj/item/I, mob/user, params)
 	if(I.get_temperature() && !active)

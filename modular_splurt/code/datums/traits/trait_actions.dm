@@ -856,12 +856,12 @@
 		// Switch for target's blood type
 		switch(blood_type_target)
 			// Synth blood
-			if("S")
+			if("S", "HF")// BLUEMOON EDIT - было "S"
 				// Mark blood as invalid
 				blood_valid = FALSE
 
 				// Set blood type name
-				blood_name = "coolant"
+				blood_name = "hydraulic fluid" // BLUEMOON EDIT - was "coolant"
 
 				// Check if blood types match
 				if(blood_type_match)
@@ -1497,7 +1497,7 @@
 	var/glow_color = "#39ff14" // Neon green
 
 	// Thickness of glow outline
-	var/glow_range = 1 //Less than radfiend
+	var/glow_range = 2
 
 
 /datum/action/cosglow/update_glow/Grant()
@@ -1507,7 +1507,7 @@
 	var/mob/living/carbon/human/action_mob = owner
 
 	// Add outline effect
-	action_mob.add_filter("rad_fiend_glow", 1, list("type" = "outline", "color" = glow_color+"30", "size" = glow_range))
+	action_mob.add_filter("cos_glow", 1, list("type" = "outline", "color" = glow_color+"30", "size" = glow_range))
 
 /datum/action/cosglow/update_glow/Remove()
 	. = ..()
@@ -1516,7 +1516,7 @@
 	var/mob/living/carbon/human/action_mob = owner
 
 	// Remove glow
-	action_mob.remove_filter("rad_fiend_glow")
+	action_mob.remove_filter("cos_glow")
 
 /datum/action/cosglow/update_glow/Trigger()
 	. = ..()
@@ -1540,8 +1540,8 @@
 	glow_range = (input_range ? clamp(input_range, 0, 4) : glow_range) //More customisable, so you know when you're looking at someone with Radfiend (doom) or a normal player.
 
 	// Update outline effect
-	action_mob.remove_filter("rad_fiend_glow")
-	action_mob.add_filter("rad_fiend_glow", 1, list("type" = "outline", "color" = glow_color+"30", "size" = glow_range))
+	action_mob.remove_filter("cos_glow")
+	action_mob.add_filter("cos_glow", 1, list("type" = "outline", "color" = glow_color+"30", "size" = glow_range))
 
 //
 // Quirk: Rad Fiend
@@ -1690,6 +1690,26 @@
 		else
 			to_chat(U, span_warning("You and [C] must both stand still for you to remove one of their limbs!"))
 			return
+
+/datum/action/cooldown/toggle_distant
+	name = "Toggle Distant"
+	desc = "Allows you to let your headpat-guard down, or put it back up."
+	icon_icon = 'modular_splurt/icons/mob/actions/lewd_actions/lewd_icons.dmi'
+	button_icon_state = "pain_max"
+
+/datum/action/cooldown/toggle_distant/Trigger()
+	. = ..()
+	if(!.)
+		return
+
+	var/mob/living/carbon/human/action_owner = owner
+
+	if(HAS_TRAIT(action_owner, TRAIT_DISTANT))
+		REMOVE_TRAIT(action_owner, TRAIT_DISTANT, ROUNDSTART_TRAIT)
+		to_chat(action_owner, span_notice("You let your headpat-guard down!"))
+	else
+		ADD_TRAIT(action_owner, TRAIT_DISTANT, ROUNDSTART_TRAIT)
+		to_chat(action_owner, span_warning("You let your headpat-guard up!"))
 
 #undef HYPNOEYES_COOLDOWN_NORMAL
 #undef HYPNOEYES_COOLDOWN_BRAINWASH

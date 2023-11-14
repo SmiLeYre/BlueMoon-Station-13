@@ -655,6 +655,9 @@ GLOBAL_LIST_EMPTY(allCasters)
 				scanned_user ="[ID.registered_name] ([ID.assignment])"
 			else
 				scanned_user ="Unknown"
+		else if(human_user.wear_neck?.GetID())
+			var/obj/item/card/id/ID = human_user.wear_neck.GetID()
+			scanned_user ="[ID.registered_name] ([ID.assignment])"
 		else
 			scanned_user ="Unknown"
 	else if(issilicon(user))

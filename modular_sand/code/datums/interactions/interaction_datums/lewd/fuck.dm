@@ -15,7 +15,7 @@
 	if(user.is_fucking(partner, CUM_TARGET_VAGINA))
 		message = "[pick(
 			"долбится в киску <b>[partner]</b>.",
-			"проникает во влагалище <b>[partner]</b>",
+			"проникает во влагалище <b>[partner]</b>.",
 			"глубоко вводит свой [genital_name] в кисоньку <b>[partner]</b>.",
 			"с силой загоняет свои гениталии в вагину <b>[partner]</b> и шлёпается своими яйцами.")]"
 	else
@@ -23,7 +23,7 @@
 		user.set_is_fucking(partner, CUM_TARGET_VAGINA, user.getorganslot(ORGAN_SLOT_PENIS))
 
 	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/champ1.ogg',
-						'modular_sand/sound/interactions/champ2.ogg'), 50, 1, -1)
+						'modular_sand/sound/interactions/champ2.ogg'), 70, 1, -1)
 	user.visible_message(span_lewd("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	if(user.can_penetrating_genital_cum())
 		user.handle_post_sex(NORMAL_LUST, CUM_TARGET_VAGINA, partner, ORGAN_SLOT_PENIS) //SPLURT edit

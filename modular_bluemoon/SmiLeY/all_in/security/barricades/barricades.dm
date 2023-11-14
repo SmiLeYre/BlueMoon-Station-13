@@ -86,13 +86,13 @@
 	if(is_wired)
 		. += span_info("It has barbed wire along the top.")
 
-/obj/structure/deployable_barricade/proc/on_try_exit(datum/source, atom/movable/leaving, direction)
+/obj/structure/deployable_barricade/proc/on_try_exit(datum/source, atom/movable/leaving)
 	SIGNAL_HANDLER
 
-	if(leaving == typesof(/turf/open/floor))
+	if(leaving == src)
 		return
 
-	if(get_dir(loc, leaving) == dir)
+	if(!(leaving.dir & dir))
 		return
 
 	if (!density)

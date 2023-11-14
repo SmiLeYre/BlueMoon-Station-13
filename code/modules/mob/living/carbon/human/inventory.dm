@@ -126,6 +126,10 @@
 			wear_id = I
 			sec_hud_set_ID()
 			update_inv_wear_id()
+		if(ITEM_SLOT_NECK)
+			wear_neck = I
+			sec_hud_set_ID()
+			update_inv_neck()
 		// Sandstorm edit
 		if(ITEM_SLOT_EARS_LEFT)
 			ears = I
@@ -316,6 +320,11 @@
 		sec_hud_set_ID()
 		if(!QDELETED(src))
 			update_inv_wear_id()
+	else if(I == wear_neck)
+		wear_neck = null
+		sec_hud_set_ID()
+		if(!QDELETED(src))
+			update_inv_neck()
 	else if(I == r_store)
 		r_store = null
 		if(!QDELETED(src))

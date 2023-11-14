@@ -21,7 +21,7 @@
 	)
 	crate_name = "Blastwave Costume Crate"
 
-/datum/supply_pack/security/helmets
+/datum/supply_pack/security/helmets/special
 	name = "Special Helmet Crate"
 	desc = "Contains three Special Helmet Crate with NVG-device. Requires Security access to open."
 	cost = 24200
@@ -31,7 +31,7 @@
 					/obj/item/clothing/head/helmet/nvg/hecu)
 	crate_name = "Special Helmet Crate"
 
-/datum/supply_pack/security/armor
+/datum/supply_pack/security/armor/liquidator
 	name = "Liquidator's Kit"
 	desc = "A freaking Liquidator Kit that makes VERY strange noises..."
 	cost = 4510
@@ -43,9 +43,28 @@
 					/obj/item/clothing/mask/gas/soviet,
 					/obj/item/clothing/under/syndicate/rus_army,
 					/obj/item/clothing/under/syndicate/rus_army,
-					/obj/item/staff/broom/liquidator,
-					/obj/item/staff/broom/liquidator)
+					/obj/item/broom/liquidator,
+					/obj/item/broom/liquidator)
 	crate_name = "Liquidator's Kit"
+
+/datum/supply_pack/security/lasguns
+	name = "Lasgun's Kit"
+	desc = "Коробочка с автоматическими лазерными винтовками."
+	cost = 16000
+	contains = list(/obj/item/gun/ballistic/automatic/laser/lasgun,
+					/obj/item/gun/ballistic/automatic/laser/lasgun,
+					/obj/item/gun/ballistic/automatic/laser/lasgun,
+					/obj/item/ammo_box/magazine/recharge/lasgun,
+					/obj/item/ammo_box/magazine/recharge/lasgun,
+					/obj/item/ammo_box/magazine/recharge/lasgun,
+					/obj/item/ammo_box/magazine/recharge/lasgun,
+					/obj/item/ammo_box/magazine/recharge/lasgun,
+					/obj/item/ammo_box/magazine/recharge/lasgun,
+					/obj/item/ammo_box/magazine/recharge/lasgun,
+					/obj/item/ammo_box/magazine/recharge/lasgun,
+					/obj/item/ammo_box/magazine/recharge/lasgun,
+					/obj/item/ammo_box/magazine/recharge/lasgun)
+	crate_name = "Lasgun's Kit"
 
 /datum/supply_pack/security/armor
 	name = "C.U.C.K.S Deployable Barricades"

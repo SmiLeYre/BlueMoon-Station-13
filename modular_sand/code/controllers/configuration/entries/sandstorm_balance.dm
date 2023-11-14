@@ -29,9 +29,9 @@
 /datum/config_entry/number/crypto_heat_power
 	default = 100
 
-/*
- * The contained configuration values are currently unimplemented
- *
+
+//  * The contained configuration values are currently unimplemented
+//  *
 // Cryptominer processing time
 /datum/config_entry/number/crypto_mining_time
 	default = 3000
@@ -49,7 +49,7 @@
 
 /datum/config_entry/number/crypto_power_use_process
 	default = 20
-*/
+
 
 /// AUTODOC ///
 // Autodoc processing time

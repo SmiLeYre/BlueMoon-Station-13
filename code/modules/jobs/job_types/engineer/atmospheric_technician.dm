@@ -58,7 +58,7 @@
 	//l_pocket = /obj/item/pda/syndicate/no_deto
 	ears = /obj/item/radio/headset/headset_eng
 	uniform = /obj/item/clothing/under/rank/engineering/engineer/util
-	shoes = /obj/item/clothing/shoes/jackboots/tall
+	shoes = /obj/item/clothing/shoes/jackboots/tall_default
 	r_pocket = /obj/item/analyzer
 	gloves = /obj/item/clothing/gloves/combat
 	head = /obj/item/clothing/head/hardhat/red/upgraded

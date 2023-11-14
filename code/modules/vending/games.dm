@@ -12,6 +12,10 @@
 					/obj/item/cardpack/series_one = 100,
 					/obj/item/tcgcard_binder = 5,
 					/obj/item/canvas = 3,
+					/obj/item/canvas/nineteenXnineteen = 3,
+					/obj/item/canvas/twentyfour_twentyfour = 3,
+					/obj/item/canvas/twentythreeXnineteen = 3,
+					/obj/item/canvas/twentythreeXtwentythree = 3,
 					/obj/item/toy/crayon/spraycan = 3,
 					/obj/item/dyespray=3,
 					)

@@ -40,6 +40,12 @@
 		use_bold = FALSE,
 	)
 
+// BLUEMOON ADD START - дополнительное описание
+/obj/item/pen/examine(user, distance)
+	. = ..()
+	. += span_info("Ручкой можно оставлять надписи на частях тела.") // рассказываем о механиках через описания
+// BLUEMOON ADD END
+
 /obj/item/pen/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] is scribbling numbers all over себя with [src]! It looks like [user.ru_who()] trying to commit sudoku...</span>")
 	return(BRUTELOSS)

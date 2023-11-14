@@ -31,4 +31,4 @@
 	else
 		H.revive(full_heal = 1)
 	qdel(src)
-	user.log_message("[user] used [src] to heal [H == user ? "[H.ru_na()]self" : H]! Wake the fuck up, Samurai!", LOG_ATTACK, color="green") //Logging for 'old' style legion core use, when clicking on a sprite of yourself or another.
+	user.log_message("[user] used [src] to heal [H == user ? "[H.p_them()]self" : H]! Wake the fuck up, Samurai!", LOG_ATTACK, color="green") //Logging for 'old' style legion core use, when clicking on a sprite of yourself or another.

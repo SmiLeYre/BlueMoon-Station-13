@@ -20,14 +20,19 @@
 
 /turf/open/floor/plasteel/airless
 	initial_gas_mix = AIRLESS_ATMOS
+
 /turf/open/floor/plasteel/telecomms
 	initial_gas_mix = TCOMMS_ATMOS
 
-
 /turf/open/floor/plasteel/dark
 	icon_state = "darkfull"
+
 /turf/open/floor/plasteel/dark/airless
 	initial_gas_mix = AIRLESS_ATMOS
+
+/turf/open/floor/plasteel/dark/lavaland
+	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
+
 /turf/open/floor/plasteel/dark/telecomms
 	initial_gas_mix = TCOMMS_ATMOS
 /turf/open/floor/plasteel/airless/dark

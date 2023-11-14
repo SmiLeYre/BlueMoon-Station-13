@@ -1,6 +1,6 @@
 /obj/item/projectile/bullet/c45 // Yes I know I am changing how .45 weapons work by making the basic ammo less-than-lethal. This just makes this easier in the long run with mags
 	name = ".45 rubber bullet"
-	damage = 10
+	damage = 5 //10 before
 	stamina = 30
 	sharpness = NONE
 
@@ -8,11 +8,11 @@
 
 /obj/item/projectile/bullet/c45/lethal
 	name = ".45 bullet"
-	damage = 30
-	wound_bonus = 6
+	damage = 20 // 30 before
+	wound_bonus = 4 // 6 before
 	stamina = 0
 	wound_falloff_tile = -10
-	sharpness = SHARP_EDGED
+	sharpness = NONE // AHUY
 
 
 /obj/item/projectile/bullet/c45/hydra
@@ -21,15 +21,15 @@
 	stamina = 0
 	armour_penetration = -65
 	sharpness = SHARP_EDGED
-	wound_bonus = 30
-	bare_wound_bonus = 30
+	wound_bonus = 30 // 30 WTF
+	bare_wound_bonus = 30 // 30 WTF
 	embedding = list(embed_chance=75, fall_chance=3, jostle_chance=4, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.4, pain_mult=5, jostle_pain_mult=6, rip_time=10)
 	wound_falloff_tile = -5
 	embed_falloff_tile = -15
 
 /obj/item/projectile/bullet/c45/trac
 	name = ".45 TRAC bullet"
-	damage = 15
+	damage = 10 // 15 before
 	stamina = 0
 
 /obj/item/projectile/bullet/c45/ion
@@ -48,7 +48,7 @@
 
 /obj/item/projectile/bullet/c45/hotshot //similar to incendiary bullets, but do not leave a flaming trail
 	name = ".45 Hot Shot bullet"
-	damage = 20
+	damage = 15 // 20 before
 	stamina = 0
 	sharpness = SHARP_EDGED
 

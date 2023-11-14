@@ -1,11 +1,11 @@
-#define SYNDICATE_CHALLENGE_TIMER 15000	// ¯\_(ツ)_/¯ minutes
+#define SYNDICATE_CHALLENGE_TIMER 9000	// 15 minutes
 
 /obj/machinery/computer/shuttle/syndicate
 	name = "InteQ shuttle terminal"
 	desc = "The terminal used to control the InteQ transport shuttle."
 	circuit = /obj/item/circuitboard/computer/syndicate_shuttle
-	icon_screen = "syndishuttle"
-	icon_keyboard = "syndie_key"
+	icon_screen = "inteqshuttle"
+	icon_keyboard = "inteq_key"
 	light_color = LIGHT_COLOR_ORANGE
 	req_access = list(ACCESS_SYNDICATE)
 	shuttleId = "syndicate"
@@ -18,7 +18,6 @@
 	return ..()
 
 /obj/machinery/computer/shuttle/syndicate/ui_act(action, params)
-	var/static/musiclimit = 0
 	if(!allowed(usr))
 		to_chat(usr, "<span class='danger'>Доступ запрещён.</span>")
 		return
@@ -26,20 +25,26 @@
 		if("move")
 			if(istype(src, /obj/machinery/computer/shuttle/syndicate/drop_pod))
 				if(!is_centcom_level(z))
-					to_chat(usr, "<span class='warning'>Pods are one way!</span>")
+					to_chat(usr, "<span class='warning'>Под уже использован!</span>")
 					return
 			var/obj/item/circuitboard/computer/syndicate_shuttle/board = circuit
 			if(board?.challenge && world.time < SYNDICATE_CHALLENGE_TIMER)
-				to_chat(usr, "<span class='warning'>You've issued a combat challenge to the station! You've got to give them at least [DisplayTimeText(SYNDICATE_CHALLENGE_TIMER - world.time)] more to allow them to prepare.</span>")
+				to_chat(usr, "<span class='warning'>Вы объявили станции Войну! Вы должны прождать [DisplayTimeText(SYNDICATE_CHALLENGE_TIMER - world.time)] перед началом атаки.</span>")
 				return
 			board.moved = TRUE
 			if(board?.challenge && board.moved == TRUE)
-				for(var/mob/M in GLOB.player_list)
-					if(musiclimit >= 1)
-						return
-					SEND_SOUND(M, sound('modular_bluemoon/SmiLeY/sounds/Nuclear_Operations.ogg'))
-					musiclimit++
+				war_music()
 	return ..()
+
+/obj/machinery/computer/shuttle/syndicate/proc/war_music()
+	var/static/musiclimit = 0
+	for(var/mob/H in GLOB.player_list)
+		if(!(H.client))
+			continue
+		if(musiclimit >= 1)
+			return
+		SEND_SOUND(H, sound('modular_bluemoon/SmiLeY/sounds/Nuclear_Operations.ogg'))
+		musiclimit++
 
 /obj/machinery/computer/shuttle/syndicate/recall
 	name = "InteQ shuttle recall terminal"

@@ -8,7 +8,7 @@
 	//var/timer	//можно через таймеры, но я бы предпочел псевдорандом
 	//var/timer_trigger = 1 MINUTES
 	var/last_awoo
-	var/default_chance = 0.1 //десятая часть процента
+	var/default_chance = 0.01 //одна сотая процента
 	var/chance = 0.01
 	processing_quirk = TRUE
 	mood_quirk = TRUE

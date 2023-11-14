@@ -202,13 +202,13 @@
 			for(var/burn_content in burn_closet.contents)
 				burn_stuff(burn_content)
 
-	var/mob/living/burn_living = burn_target
-	burn_living.update_fire()
-
-	burn_living.adjustFireLoss(lava_damage * delta_time)
-	if(!QDELETED(burn_living)) //mobs turning into object corpses could get deleted here.
-		burn_living.adjust_fire_stacks(lava_firestacks * delta_time)
-		burn_living.IgniteMob()
+	if(ismob(burn_target))
+		var/mob/living/burn_living = burn_target
+		burn_living.update_fire()
+		burn_living.adjustFireLoss(lava_damage * delta_time)
+		if(!QDELETED(burn_living)) //mobs turning into object corpses could get deleted here.
+			burn_living.adjust_fire_stacks(lava_firestacks * delta_time)
+			burn_living.IgniteMob()
 
 /turf/open/lava/smooth
 	name = "lava"

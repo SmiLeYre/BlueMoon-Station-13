@@ -349,31 +349,6 @@
 
 	sleep(5 SECONDS)
 
-	teleport_players_to_eorg_area()
-
-/datum/controller/subsystem/ticker/proc/teleport_players_to_eorg_area()
-	if(!config.deathmatch_arena)
-		return
-	for(var/mob/living/M in GLOB.player_list)
-		if(!M.client.prefs.eorg_enabled)
-			continue
-		var/eorg = alert("Хотите принять участие на ЕОРГ-арене?", "End of Round Deathmatch Arena", "Да", "Нет")
-		if(eorg == "Нет" || !eorg)
-			return
-		spawn_gladiator(M)
-
-/datum/controller/subsystem/ticker/proc/spawn_gladiator(mob/M, transfer_mind = TRUE)
-	var/mob/living/carbon/human/L = new(pick(GLOB.eorgwarp))
-	if(transfer_mind)
-		M.mind.transfer_to(L)
-	else
-		L.key = M.key
-	L.playsound_local(null, ARENA_MUSIC, vary = FALSE, frequency = null)
-	L.equipOutfit(/datum/outfit/ert/greybois)
-	L.name = L.key
-	L.real_name = L.name
-	to_chat(L, "<span class='warning'>Добро пожаловать в End of Round Deathmatch Arena! Оторвитесь по полной и выпустите пар!!</span>")
-
 /datum/controller/subsystem/ticker/proc/standard_reboot()
 	if(ready_for_reboot)
 		if(mode.station_was_nuked)

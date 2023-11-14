@@ -694,3 +694,11 @@ GLOBAL_LIST_EMPTY(station_turfs)
 		if(turf_to_check.density || LinkBlockedWithAccess(turf_to_check, caller, ID))
 			continue
 		. += turf_to_check
+
+/// Called when attempting to set fire to a turf
+/turf/proc/IgniteTurf(power, fire_color="red")
+	return
+
+/// Returns adjacent turfs in cardinal directions that are reachable via atmos
+/turf/proc/reachableAdjacentAtmosTurfs()
+	return atmos_adjacent_turfs

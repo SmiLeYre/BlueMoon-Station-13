@@ -133,10 +133,20 @@
 			dat += "</td>"
 
 			dat += "<h2>Silicon preferences</h2>"
-			dat += "<b>Starting lawset:</b> <a href='?_src_=prefs;task=input;preference=silicon_lawset'>[silicon_lawset]</a><br>"
-			dat += "</td>"
+			if(!CONFIG_GET(flag/allow_silicon_choosing_laws))
+				dat += "<i>The server has disabled choosing your own laws, you can still choose and save, but it won't do anything in-game.</i><br>"
+			dat += "<b>Starting lawset:</b> <a href='?_src_=prefs;task=input;preference=silicon_lawset'>[silicon_lawset ? silicon_lawset : "No custom"]</a><br>"
 
-			dat += "</tr></table>"
+			if(silicon_lawset)
+				var/list/config_laws = CONFIG_GET(keyed_list/choosable_laws)
+				var/datum/ai_laws/law_datum = GLOB.all_law_datums[config_laws[silicon_lawset]]
+				if(law_datum)
+					dat += "<i>[law_datum]</i><br>"
+					dat += english_list(law_datum.get_law_list(TRUE),
+						"I was unable to find the laws for your lawset, sorry  <font style='translate: rotate(90deg)'>:(</font>",
+						"<br>", "<br>")
+
+			dat += "</td></tr></table>"
 
 		//Character Appearance
 		if(APPEARANCE_TAB)

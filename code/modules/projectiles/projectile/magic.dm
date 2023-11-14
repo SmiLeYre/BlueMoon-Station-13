@@ -125,6 +125,7 @@
 	if(!istype(M) || M.stat == DEAD || M.mob_transforming || (GODMODE & M.status_flags))
 		return
 
+	tgui_alert_async(M, "ВНИМАНИЕ! ВЫ БЫЛИ ОБРАЩЕНЫ В ДРУГОЕ СУЩЕСТВО!! ИЗУЧИТЕ СВОЮ НОВУЮ ОБОЛОЧКУ И ИГРАЙТЕ!!")
 	M.mob_transforming = TRUE
 	M.Paralyze(INFINITY)
 	M.icon = null
@@ -145,7 +146,7 @@
 
 	var/mob/living/new_mob
 
-	var/randomize = pick("monkey","robot","slime","xeno","humanoid","animal")
+	var/randomize = pick("robot","robot","robot","robot","robot","monkey","slime","xeno","humanoid","animal")
 	switch(randomize)
 		if("monkey")
 			new_mob = new /mob/living/carbon/monkey(M.loc)
@@ -169,6 +170,7 @@
 				Robot.mmi.transfer_identity(M)	//Does not transfer key/client.
 				Robot.clear_inherent_laws(0)
 				Robot.clear_zeroth_law(0)
+				Robot.laws = new /datum/ai_laws/antimov()
 
 		if("slime")
 			new_mob = new /mob/living/simple_animal/slime/random(M.loc)
@@ -176,7 +178,7 @@
 		if("xeno")
 			var/Xe
 			if(M.ckey)
-				Xe = pick(/mob/living/carbon/alien/humanoid/hunter,/mob/living/carbon/alien/humanoid/sentinel)
+				Xe = pick(/mob/living/carbon/alien/humanoid/hunter,/mob/living/carbon/alien/humanoid/sentinel, /mob/living/carbon/alien/humanoid/drone, /mob/living/carbon/alien/humanoid/royal/praetorian)
 			else
 				Xe = pick(/mob/living/carbon/alien/humanoid/hunter,/mob/living/simple_animal/hostile/alien/sentinel)
 			new_mob = new Xe(M.loc)

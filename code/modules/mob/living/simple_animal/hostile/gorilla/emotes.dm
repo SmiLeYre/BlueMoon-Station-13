@@ -7,3 +7,4 @@
 	message = "oogas."
 	message_param = "oogas at %t."
 	sound = 'sound/creatures/gorilla.ogg'
+	emote_cooldown = 3 SECONDS

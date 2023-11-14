@@ -69,7 +69,7 @@
 	neck = /obj/item/clothing/neck/cloak/syndiecap
 	ears = /obj/item/radio/headset/heads/hop
 	uniform = /obj/item/clothing/under/rank/captain/util
-	shoes = /obj/item/clothing/shoes/jackboots/tall
+	shoes = /obj/item/clothing/shoes/jackboots/tall_default
 	head = /obj/item/clothing/head/hopcap
 
 	backpack = /obj/item/storage/backpack/duffelbag/syndie

@@ -164,19 +164,19 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggle_instruments)()
 /datum/verbs/menu/Settings/Sound/toggle_instruments/Get_checked(client/C)
 	return C.prefs.toggles & SOUND_INSTRUMENTS
 
-TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggle_jukeboxe)()
+TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggle_jukeboxes)()
 	set name = "Hear/Silence Jukeboxes"
 	set category = "Preferences"
 	set desc = "Hear In-game Jukeboxes"
-	usr.client.prefs.toggles ^= SOUND_JUKEBOXE
+	usr.client.prefs.toggles ^= SOUND_JUKEBOXES
 	usr.client.prefs.save_preferences()
-	if(usr.client.prefs.toggles & SOUND_JUKEBOXE)
+	if(usr.client.prefs.toggles & SOUND_JUKEBOXES)
 		to_chat(usr, "You will now hear people playing musical Jukeboxes.")
 	else
 		to_chat(usr, "You will no longer hear musical Jukeboxes.")
-	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Jukeboxes", "[usr.client.prefs.toggles & SOUND_JUKEBOXE ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-/datum/verbs/menu/Settings/Sound/toggle_jukeboxe/Get_checked(client/C)
-	return C.prefs.toggles & SOUND_JUKEBOXE
+	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Jukeboxes", "[usr.client.prefs.toggles & SOUND_JUKEBOXES ? "Enabled" : "Disabled"]"))
+/datum/verbs/menu/Settings/Sound/toggle_jukeboxes/Get_checked(client/C)
+	return C.prefs.toggles & SOUND_JUKEBOXES
 
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, Toggle_Soundscape)()
 	set name = "Hear/Silence Ambience"
@@ -457,13 +457,3 @@ GLOBAL_LIST_INIT(ghost_orbits, list(GHOST_ORBIT_CIRCLE,GHOST_ORBIT_TRIANGLE,GHOS
 	prefs.save_preferences()
 	to_chat(src, "You will [(prefs.chat_toggles & CHAT_PRAYER) ? "now" : "no longer"] see prayerchat.")
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Prayer Visibility", "[prefs.chat_toggles & CHAT_PRAYER ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-
-/client/verb/toggle_eorg()
-	set name = "Toggle End of Round Deathmatch"
-	set category = "Preferences"
-	set desc = "At the end of the round you will be teleported to thunderdome to freely bash your fellow colleagues."
-
-	prefs.eorg_enabled = !prefs.eorg_enabled
-	prefs.save_preferences()
-	to_chat(src, "You [prefs.eorg_enabled ? "will be" : "won't be"] teleported to Thunderdome at round end.")
-	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle EORG", "[usr.client.prefs.eorg_enabled ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

@@ -197,6 +197,7 @@
 	var/mob/living/carbon/human/human_micro = held_mob
 	if(istype(human_micro))
 		. += human_micro.wear_id?.GetAccess()
+		. += human_micro.wear_neck?.GetAccess()
 
 /obj/item/clothing/head/mob_holder/micro/GetID()
 	. = ..()

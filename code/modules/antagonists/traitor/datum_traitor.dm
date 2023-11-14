@@ -23,6 +23,7 @@
 
 	threat = 5
 	soft_antag = FALSE // BLUEMOON ADDITION
+	reminded_times_left = 2 // BLUEMOON ADD
 
 /datum/antagonist/traitor/New()
 	if(!GLOB.traitor_classes.len)//Only need to fill the list when it's needed.

@@ -45,6 +45,7 @@
 	message_mime = "делает вид, что издает стон!"
 	emote_type = EMOTE_AUDIBLE
 	stat_allowed = SOFT_CRIT
+	emote_cooldown = 2 SECONDS
 
 /datum/emote/living/carbon/roll
 	key = "roll"
@@ -125,6 +126,7 @@
 	key_third_person = "mawps"
 	message = "раздраженно бормочет что-то на своём."
 	emote_type = EMOTE_AUDIBLE
+	emote_cooldown = 8 SECONDS
 
 /datum/emote/living/carbon/human/mawp/run_emote(mob/living/user, params)
 	. = ..()
@@ -132,10 +134,7 @@
 		if(ishuman(user))
 			if(prob(10))
 				user.adjustEarDamage(-5, -5)
-	if(user.nextsoundemote >= world.time)
-		return
-	user.nextsoundemote = world.time + 7
-	playsound(user, 'modular_citadel/sound/voice/purr.ogg', 50, 1, -1)
+	playsound(user, 'modular_citadel/sound/voice/purr.ogg', 50, 1, -1)	//почему мурчание?
 
 /datum/emote/living/carbon/human/mumble
 	key = "mumble"
@@ -231,6 +230,7 @@
 	key_third_person = "syndicates"
 	message = "получает миссию со стороны Синдиката."
 	sound = 'sound/voice/syndicate.ogg'
+	emote_cooldown = 8 SECONDS
 
 /datum/emote/sound/human/rawr
 	key = "rawr"

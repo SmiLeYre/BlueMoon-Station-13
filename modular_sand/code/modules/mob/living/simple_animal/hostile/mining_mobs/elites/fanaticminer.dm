@@ -217,6 +217,42 @@
 		/obj/item/clothing/head/bronze = 1,
 		/obj/item/clothing/suit/bronze = 1)
 
+/datum/outfit/job/miner/equipped/priest/slave
+	name = "Shaft Miner (Slave)"
+	shoes = /obj/item/clothing/shoes/invisiboots
+	backpack = /obj/item/storage/backpack/satchel/bone
+	uniform = /obj/item/clothing/under/costume/loincloth
+	mask = null
+	ears = null
+	belt = null
+	gloves = null
+	backpack_contents = list(
+		/obj/item/flashlight/seclite=1,
+		/obj/item/stack/marker_beacon/ten = 1)
+
+/obj/effect/mob_spawn/human/ash_walkers_slave
+	name = "Ashwalkers Slave"
+	mob_name = "Ashwalkers Slave"
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "oldpod"
+	short_desc = "Вы раб или рабыня Пепельных Ящеров с Лаваленда."
+	flavour_text = "Вам всё нравится."
+	important_info = "Выполняйте ЛЮБЫЕ требования Эшей. Желание сбежать на станцию должно быть минимальным."
+	assignedrole = "Ash Walker"
+	roundstart = FALSE
+	death = FALSE
+	random = TRUE
+	canloadappearance = TRUE
+	loadout_enabled = FALSE
+
+/obj/effect/mob_spawn/human/ash_walkers_slave/special_post_appearance(mob/living/new_spawn)
+	. = ..()
+	new_spawn.grant_language(/datum/language/draconic, TRUE, TRUE, LANGUAGE_MIND)
+	var/obj/item/organ/lungs/ashwalker/lungs = new /obj/item/organ/lungs/ashwalker()
+	lungs.Insert(new_spawn)
+	var/obj/item/organ/eyes/night_vision/eyes = new /obj/item/organ/eyes/night_vision()
+	eyes.Insert(new_spawn)
+
 /obj/effect/temp_visual/dragon_swoop/priest
 	duration = 5
 	color = rgb(255,0,0)

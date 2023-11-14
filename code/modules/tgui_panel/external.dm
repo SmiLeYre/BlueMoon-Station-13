@@ -35,3 +35,10 @@
 	// Force show the panel to see if there are any errors
 	winset(src, "output", "is-disabled=1&is-visible=0")
 	winset(src, "browseroutput", "is-disabled=0;is-visible=1")
+
+/mob/verb/fix_overlays()
+	set name = "Fix Overlays"
+	set category = "OOC"
+
+	cut_overlays()
+	regenerate_icons()

@@ -246,6 +246,8 @@
 	holder.icon_state = "hudno_id"
 	if(wear_id?.GetID())
 		holder.icon_state = "hud[ckey(wear_id.get_job_name())]"
+	else if(wear_neck?.GetID())
+		holder.icon_state = "hud[ckey(wear_neck.get_job_name())]"
 	sec_hud_set_security_status()
 
 /mob/living/proc/sec_hud_set_implants()
