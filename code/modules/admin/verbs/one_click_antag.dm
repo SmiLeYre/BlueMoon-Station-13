@@ -11,12 +11,13 @@
 /datum/admins/proc/one_click_antag()
 
 	var/dat = {"
-		<a href='?src=[REF(src)];[HrefToken()];makeAntag=traitors'>Make Traitors</a><br>
-		<a href='?src=[REF(src)];[HrefToken()];makeAntag=heretics'>Make Heretics</a><br>
-		<a href='?src=[REF(src)];[HrefToken()];makeAntag=changelings'>Make Changelings</a><br>
-		<a href='?src=[REF(src)];[HrefToken()];makeAntag=revs'>Make Revs</a><br>
-		<a href='?src=[REF(src)];[HrefToken()];makeAntag=cult'>Make Cult</a><br>
-		<a href='?src=[REF(src)];[HrefToken()];makeAntag=clockcult'>Make Clockwork Cult</a><br>
+		<a href='?src=[REF(src)];[HrefToken()];makeAntag=traitors'>Make 1 Traitor</a><br>
+		<a href='?src=[REF(src)];[HrefToken()];makeAntag=heretics'>Make 1 Heretic</a><br>
+		<a href='?src=[REF(src)];[HrefToken()];makeAntag=changelings'>Make 1 Changeling</a><br>
+		<a href='?src=[REF(src)];[HrefToken()];makeAntag=bloodsucker'>Make 1 Bloodsucker</a><br>
+		<a href='?src=[REF(src)];[HrefToken()];makeAntag=revs'>Make 1 Head Rev</a><br>
+		<a href='?src=[REF(src)];[HrefToken()];makeAntag=cult'>Make 1 Nar'Sie Cultist</a><br>
+		<a href='?src=[REF(src)];[HrefToken()];makeAntag=clockcult'>Make 1 Clockwork Cultist</a><br>
 		<a href='?src=[REF(src)];[HrefToken()];makeAntag=blob'>Make Blob</a><br>
 		<a href='?src=[REF(src)];[HrefToken()];makeAntag=wizard'>Make Wizard (Requires Ghosts)</a><br>
 		<a href='?src=[REF(src)];[HrefToken()];makeAntag=nukeops'>Make Nuke Team (Requires Ghosts)</a><br>
@@ -38,7 +39,7 @@
 	if(!HAS_ANTAG_PREF(applicant.client, targetrole)) // BLUEMOON EDIT - было if(!(targetrole in applicant.client.prefs.be_special))
 		return FALSE
 	// BLUEMOON ADD START - проверка на то, включено ли разрешение на бытие антагонистом посреди раунда
-	if(applicant.client.prefs.toggles & MIDROUND_ANTAG)
+	if(!(applicant.client.prefs.toggles & MIDROUND_ANTAG))
 		return FALSE
 	// BLUEMOON ADD END
 	if(onstation)
@@ -71,7 +72,7 @@
 					candidates += applicant
 
 	if(candidates.len)
-		var/numTraitors = min(candidates.len, 3)
+		var/numTraitors = 1 // BLUEMOON EDIT - поставил 1, чтобы легче контролировать количество, а было min(candidates.len, 3)
 
 		for(var/i = 0, i<numTraitors, i++)
 			H = pick(candidates)
@@ -81,6 +82,35 @@
 		return 1
 
 
+	return 0
+
+/datum/admins/proc/makeBloodsucker()
+	var/datum/game_mode/bloodsucker/temp = new
+
+	if(CONFIG_GET(flag/protect_roles_from_antagonist))
+		temp.restricted_jobs += temp.protected_jobs
+
+	if(CONFIG_GET(flag/protect_assistant_from_antagonist))
+		temp.restricted_jobs += "Assistant"
+
+	var/list/mob/living/carbon/human/candidates = list()
+	var/mob/living/carbon/human/H = null
+
+	for(var/mob/living/carbon/human/applicant in GLOB.player_list)
+		if(isReadytoRumble(applicant, ROLE_BLOODSUCKER))
+			if(temp.age_check(applicant.client))
+				if(!(applicant.job in temp.restricted_jobs))
+					candidates += applicant
+		if(HAS_TRAIT(applicant, TRAIT_BLUEMOON_HEAVY_SUPER)) // никаких сверхтяжёлых кровососов
+			candidates -= applicant
+		else if(HAS_TRAIT(applicant, TRAIT_ROBOTIC_ORGANISM)) // никаких роботов-вампиров из далекого космоса
+			candidates -= applicant
+
+	if(candidates.len)
+		H = pick(candidates)
+		H.mind.add_antag_datum(ANTAG_DATUM_BLOODSUCKER)
+		H.mind.special_role = ROLE_BLOODSUCKER
+		return 1
 	return 0
 
 /datum/admins/proc/makeHeretics()
@@ -102,7 +132,7 @@
 					candidates += applicant
 
 	if(candidates.len)
-		var/numHeretics = min(candidates.len, 3)
+		var/numHeretics = 1 // BLUEMOON EDIT - БЫЛО min(candidates.len, 3)
 
 		for(var/i = 0, i<numHeretics, i++)
 			H = pick(candidates)
@@ -130,9 +160,13 @@
 			if(temp.age_check(applicant.client))
 				if(!(applicant.job in temp.restricted_jobs))
 					candidates += applicant
+		// BLUEMOON ADD START
+		if(HAS_TRAIT(applicant, TRAIT_ROBOTIC_ORGANISM)) // никаких роботов-вампиров из далекого космоса
+			candidates -= applicant
+		// BLUEMOON ADD END
 
 	if(candidates.len)
-		var/numChangelings = min(candidates.len, 3)
+		var/numChangelings = 1 // BLUEMOON EDIT - было min(candidates.len, 3)
 
 		for(var/i = 0, i<numChangelings, i++)
 			H = pick(candidates)
@@ -162,7 +196,7 @@
 					candidates += applicant
 
 	if(candidates.len)
-		var/numRevs = min(candidates.len, 3)
+		var/numRevs = 1 // BLUEMOON EDIT - было min(candidates.len, 3)
 
 		for(var/i = 0, i<numRevs, i++)
 			H = pick(candidates)
@@ -201,7 +235,7 @@
 					candidates += applicant
 
 	if(candidates.len)
-		var/numCultists = min(candidates.len, 4)
+		var/numCultists = 1 // BLUEMOON EDIT - было min(candidates.len, 4)
 
 		for(var/i = 0, i<numCultists, i++)
 			H = pick(candidates)
@@ -231,7 +265,7 @@
 					candidates += applicant
 
 	if(candidates.len)
-		var/numCultists = min(candidates.len, 4)
+		var/numCultists = 1 // BLUEMOON EDIT - было min(candidates.len, 4)
 
 		for(var/i = 0, i<numCultists, i++)
 			H = pick(candidates)

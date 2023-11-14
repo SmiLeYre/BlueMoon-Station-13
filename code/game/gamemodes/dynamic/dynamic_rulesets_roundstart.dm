@@ -200,7 +200,7 @@
 	antag_flag = ROLE_WIZARD
 	antag_datum = /datum/antagonist/wizard
 	flags = LONE_RULESET
-	minimum_required_age = 14
+	minimum_required_age = 0 // BLUEMOON EDIT
 	restricted_roles = list("Head of Security", "Captain") // Just to be sure that a wizard getting picked won't ever imply a Captain or HoS not getting drafted
 	required_candidates = 1
 	weight = 6 //BLUEMOON CHANGES
@@ -249,7 +249,7 @@
 	name = "Blood Cult"
 	antag_flag = ROLE_CULTIST
 	antag_datum = /datum/antagonist/cult
-	minimum_required_age = 14
+	minimum_required_age = 0 // BLUEMOON EDIT
 	restricted_roles = list("AI", "Cyborg", "Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Chaplain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
 	required_candidates = 2
 	weight = 3  //BLUEMOON CHANGES
@@ -310,7 +310,7 @@
 	antag_flag = ROLE_OPERATIVE
 	antag_datum = /datum/antagonist/nukeop
 	var/datum/antagonist/antag_leader_datum = /datum/antagonist/nukeop/leader
-	minimum_required_age = 14
+	minimum_required_age = 0 // BLUEMOON EDIT
 	restricted_roles = list("Head of Security", "Captain") // Just to be sure that a nukie getting picked won't ever imply a Captain or HoS not getting drafted
 	required_candidates = 5
 	weight = 3 //BLUEMOON CHANGES
@@ -399,7 +399,7 @@
 	antag_flag = ROLE_REV_HEAD
 	antag_flag_override = ROLE_REV
 	antag_datum = /datum/antagonist/rev/head
-	minimum_required_age = 14
+	minimum_required_age = 0 // BLUEMOON EDIT
 	restricted_roles = list("AI", "Cyborg", "Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
 	required_candidates = 3
 	weight = 3 //BLUEMOON CHANGES
@@ -485,7 +485,7 @@
 	name = "Clock Cult"
 	antag_flag = ROLE_SERVANT_OF_RATVAR
 	antag_datum = /datum/antagonist/clockcult
-	minimum_required_age = 14
+	minimum_required_age = 0 // BLUEMOON EDIT
 	restricted_roles = list("AI", "Cyborg", "Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Chaplain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
 	required_candidates = 2
 	weight = 3

@@ -10,8 +10,8 @@
 	config_tag = "traitor"
 	antag_flag = ROLE_TRAITOR
 	false_report_weight = 20 //Reports of traitors are pretty common.
-	restricted_jobs = list("Prisoner", "Cyborg")//They are part of the AI if he is traitor so are they, they use to get double chances
-	protected_jobs = list("Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Chief Engineer", "Chief Medical Officer", "Research Director", "Quartermaster", "Blueshield", "Brig Physician", "Peacekeeper", "NanoTrasen Representative", "Lawyer")	//citadel change - adds HoP, CE, CMO, and RD to ling role blacklist
+	restricted_jobs = list("AI", "Cyborg") //BLUEMOON CHANGES
+	protected_jobs = list("Shaft Miner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
 	required_players = 0
 	required_enemies = 1
 	recommended_enemies = 4

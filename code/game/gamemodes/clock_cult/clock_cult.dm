@@ -138,7 +138,7 @@ Credit where due:
 	required_players = 24 //Fixing this directly for now since apparently config machine for forcing modes broke.
 	required_enemies = 3
 	recommended_enemies = 5
-	enemy_minimum_age = 7
+	enemy_minimum_age = 0 // BLUEMOON EDIT - было 7, сделал 0, т.к. на сервере ВЛ и загриферить ролью тяжело
 	protected_jobs = list("Prisoner", "AI", "Cyborg", "Security Officer", "Warden", "Detective", "Head of Security", "Head of Personnel", "Chief Engineer", "Chief Medical Officer", "Research Director", "Quartermaster", "Blueshield", "Brig Physician", "Peacekeeper", "NanoTrasen Representative", "Lawyer", "Chaplain") //Silicons can eventually be converted
 	restricted_jobs = list("Chaplain", "Captain")
 	announce_span = "brass"

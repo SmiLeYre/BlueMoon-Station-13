@@ -23,7 +23,7 @@
 	/// The antagonist datum that is assigned to the mobs mind on ruleset execution.
 	var/datum/antagonist/antag_datum = null
 	/// The required minimum account age for this ruleset.
-	var/minimum_required_age = 7
+	var/minimum_required_age = 0 // BLUEMOON EDIT - было 7
 	/// If set, and config flag protect_roles_from_antagonist is false, then the rule will not pick players from these roles.
 	var/list/protected_roles = list()
 	/// If set, rule will deny candidates from those roles always.

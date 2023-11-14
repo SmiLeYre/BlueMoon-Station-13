@@ -7,7 +7,7 @@
 	required_enemies = 2
 	recommended_enemies = 5
 	antag_flag = ROLE_OPERATIVE
-	enemy_minimum_age = 7
+	enemy_minimum_age = 0 // BLUEMOON EDIT - было 7, сделал 0, т.к. на сервере ВЛ и загриферить ролью тяжело
 
 	announce_span = "danger"
 	announce_text = "InteQ forces are approaching the station in an attempt to destroy it!\n\
