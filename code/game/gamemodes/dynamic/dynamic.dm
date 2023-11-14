@@ -709,7 +709,6 @@ BLUEMOON REMOVAL END*/
 		// BLUEMOON ADD START - больше логирования и информации о режиме админам
 		else
 			message_admins("DYNAMIC: Шанс на появление антагонистов в [chance_to_appear] не прошёл.")
-			log_game("DYNAMIC: Шанс на появление антагонистов в [chance_to_appear] не прошёл.")
 		// BLUEMOON ADD END
 
 		random_event_hijacked = HIJACKED_NOTHING

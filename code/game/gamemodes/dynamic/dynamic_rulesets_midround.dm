@@ -241,7 +241,6 @@
 /datum/dynamic_ruleset/midround/autotraitor/execute()
 	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
 	if(living_players.len <= 0)
-		log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		return FALSE
 	// BLUEMOON ADD END
@@ -355,7 +354,6 @@
 /datum/dynamic_ruleset/midround/malf/execute()
 	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
 	if(candidates.len <= 0)
-		log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		return FALSE
 	// BLUEMOON ADD END
@@ -515,7 +513,6 @@
 /datum/dynamic_ruleset/midround/ratvar_awakening/execute()
 	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
 	if(candidates.len <= 0)
-		log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		return FALSE
 	// BLUEMOON ADD END
@@ -585,7 +582,6 @@
 /datum/dynamic_ruleset/midround/narsie_awakening/execute()
 	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
 	if(candidates.len <= 0)
-		log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		return FALSE
 	// BLUEMOON ADD END
@@ -659,7 +655,6 @@
 /datum/dynamic_ruleset/midround/blob_infection/execute()
 	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
 	if(candidates.len <= 0)
-		log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		return FALSE
 	// BLUEMOON ADD END
@@ -1061,12 +1056,15 @@
 			candidates -= player
 		else if(HAS_TRAIT(player, TRAIT_MINDSHIELD)) // никаких кровососов с защитой разума
 			candidates -= player
+		else if(HAS_TRAIT(player, TRAIT_BLUEMOON_HEAVY_SUPER)) // никаких сверхтяжёлых кровососов
+			candidates -= player
+		else if(HAS_TRAIT(player, TRAIT_ROBOTIC_ORGANISM)) // никаких роботов-вампиров из далекого космоса
+			candidates -= player
 
 /datum/dynamic_ruleset/midround/bloodsuckers/pre_execute(population)
 	. = ..()
 	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
 	if(candidates.len <= 0)
-		log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		return FALSE
 	// BLUEMOON ADD END

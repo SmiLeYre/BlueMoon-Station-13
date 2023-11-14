@@ -27,7 +27,6 @@
 	. = ..()
 	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
 	if(candidates.len <= 0)
-		log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		return FALSE
 	// BLUEMOON ADD END
@@ -119,7 +118,6 @@
 	. = ..()
 	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
 	if(candidates.len <= 0)
-		log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		return FALSE
 	// BLUEMOON ADD END
@@ -130,6 +128,14 @@
 		M.mind.restricted_roles = restricted_roles
 		M.mind.special_role = ROLE_CHANGELING
 	return TRUE
+
+// BLUEMOON ADD START
+/datum/dynamic_ruleset/roundstart/changeling/trim_candidates()
+	. = ..()
+	for(var/mob/P in candidates)
+		if(HAS_TRAIT(P, TRAIT_ROBOTIC_ORGANISM)) // никаких роботов-генокрадов из далекого космоса
+			candidates -= P
+// BLUEMOON ADD END
 
 /datum/dynamic_ruleset/roundstart/changeling/execute()
 	for(var/datum/mind/changeling in assigned)
@@ -161,7 +167,6 @@
 	. = ..()
 	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
 	if(candidates.len <= 0)
-		log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		return FALSE
 	// BLUEMOON ADD END
@@ -217,7 +222,6 @@
 		return FALSE
 	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
 	if(candidates.len <= 0)
-		log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		return FALSE
 	// BLUEMOON ADD END
@@ -267,7 +271,6 @@
 	for(var/cultists_number = 1 to cultists)
 		// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
 		if(candidates.len <= 0)
-			log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 			message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 			break
 		// BLUEMOON ADD END
@@ -329,7 +332,6 @@
 	for(var/operatives_number = 1 to operatives)
 		// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
 		if(candidates.len <= 0)
-			log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 			message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 			break
 		// BLUEMOON ADD END
@@ -422,7 +424,6 @@
 	for(var/i = 1 to max_candidates)
 		// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
 		if(candidates.len <= 0)
-			log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 			message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 			break
 		// BLUEMOON ADD END
@@ -505,7 +506,6 @@
 	for(var/cultists_number = 1 to cultists)
 		// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
 		if(candidates.len <= 0)
-			log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 			message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 			break
 		// BLUEMOON ADD END
@@ -661,7 +661,6 @@ BLUEMOON REMOVAL END*/
 	for(var/j = 0, j < carriers_to_make, j++)
 		// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
 		if(candidates.len <= 0)
-			log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 			message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 			break
 		// BLUEMOON ADD END
@@ -773,7 +772,6 @@ BLUEMOON REMOVAL END*/
 /datum/dynamic_ruleset/roundstart/space_ninja/execute()
 	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
 	if(candidates.len <= 0)
-		log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		return FALSE
 	// BLUEMOON ADD END
@@ -833,7 +831,6 @@ BLUEMOON REMOVAL END*/
 /datum/dynamic_ruleset/roundstart/xenomorph/execute()
 	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
 	if(candidates.len <= 0)
-		log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		return FALSE
 	// BLUEMOON ADD END
@@ -875,7 +872,6 @@ BLUEMOON REMOVAL END*/
 	. = ..()
 	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
 	if(candidates.len <= 0)
-		log_game("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		return FALSE
 	// BLUEMOON ADD END
@@ -886,6 +882,14 @@ BLUEMOON REMOVAL END*/
 		M.mind.restricted_roles = restricted_roles
 		M.mind.special_role = antag_flag
 	return TRUE
+
+/datum/dynamic_ruleset/roundstart/bloodsuckers/trim_candidates()
+	. = ..()
+	for(var/mob/P in candidates)
+		if(HAS_TRAIT(P, TRAIT_BLUEMOON_HEAVY_SUPER)) // никаких сверхтяжёлых кровососов
+			candidates -= P
+		else if(HAS_TRAIT(P, TRAIT_ROBOTIC_ORGANISM)) // никаких роботов-вампиров из далекого космоса
+			candidates -= P
 
 //////////////////////////////////////////////
 //                                          //

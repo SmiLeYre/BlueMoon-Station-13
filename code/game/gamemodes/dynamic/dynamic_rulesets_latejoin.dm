@@ -189,6 +189,12 @@
 	antag_cap = list("denominator" = 24)
 	repeatable = TRUE
 
+/datum/dynamic_ruleset/latejoin/silent_changeling/trim_candidates()
+	. = ..()
+	for(var/mob/P in candidates)
+		if(HAS_TRAIT(P, TRAIT_ROBOTIC_ORGANISM)) // никаких роботов-вампиров из далекого космоса
+			candidates -= P
+
 //////////////////////////////////////////////
 //                                          //
 //            LATE BLOODSUCKERS             //
@@ -212,5 +218,13 @@
 	requirements = list(101,101,60,50,40,30,20,15,10,10)
 	antag_cap = list("denominator" = 39, "offset" = 1)
 	repeatable = TRUE
+
+/datum/dynamic_ruleset/latejoin/bloodsuckers/trim_candidates()
+	. = ..()
+	for(var/mob/P in candidates)
+		if(HAS_TRAIT(P, TRAIT_BLUEMOON_HEAVY_SUPER)) // никаких сверхтяжёлых кровососов
+			candidates -= P
+		else if(HAS_TRAIT(P, TRAIT_ROBOTIC_ORGANISM)) // никаких роботов-вампиров из далекого космоса
+			candidates -= P
 
 //BLUEMOON ADD END
