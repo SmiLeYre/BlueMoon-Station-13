@@ -6795,12 +6795,12 @@
 /turf/open/floor/plating,
 /area/maintenance/port/fore)
 "ayv" = (
-/obj/machinery/airalarm{
-	pixel_y = 23
-	},
 /obj/item/radio/off,
 /obj/item/assembly/timer,
 /obj/structure/rack,
+/obj/effect/turf_decal/stripes/line{
+	dir = 10
+	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/command/storage/eva)
 "ayw" = (
@@ -6894,20 +6894,26 @@
 /obj/machinery/camera/motion{
 	c_tag = "EVA Motion Sensor"
 	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 10
+	},
+/obj/machinery/firealarm{
+	pixel_y = 24
+	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/command/storage/eva)
 "ayL" = (
 /turf/closed/wall/r_wall,
 /area/ai_monitored/command/storage/eva)
 "ayM" = (
-/obj/machinery/firealarm{
-	pixel_y = 24
-	},
 /obj/structure/rack,
 /obj/item/tank/jetpack/carbondioxide/eva,
 /obj/item/tank/jetpack/carbondioxide/eva,
 /obj/item/tank/jetpack/carbondioxide/eva,
 /obj/item/tank/jetpack/carbondioxide/eva,
+/obj/effect/turf_decal/stripes/line{
+	dir = 6
+	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/command/storage/eva)
 "ayN" = (
@@ -6921,6 +6927,7 @@
 /obj/item/flashlight,
 /obj/item/flashlight,
 /obj/item/clothing/glasses/welding,
+/obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/command/storage/eva)
 "ayO" = (
@@ -6931,6 +6938,9 @@
 	},
 /obj/item/screwdriver{
 	pixel_y = 16
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 6
 	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/command/storage/eva)
@@ -6954,6 +6964,7 @@
 	},
 /obj/machinery/cell_charger,
 /obj/item/stock_parts/cell/high/plus,
+/obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/command/storage/eva)
 "ayV" = (
@@ -7410,6 +7421,9 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},
+/obj/machinery/camera{
+	c_tag = "EVA Central"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/command/storage/eva)
 "aAY" = (
@@ -7439,16 +7453,8 @@
 /turf/open/floor/plating,
 /area/maintenance/fore)
 "aBj" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
+/obj/structure/sign/warning/deathsposal,
+/turf/closed/wall/r_wall,
 /area/ai_monitored/command/storage/eva)
 "aBk" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -7576,9 +7582,6 @@
 /obj/machinery/requests_console{
 	department = "EVA";
 	pixel_x = -32
-	},
-/obj/machinery/light{
-	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ai_monitored/command/storage/eva)
@@ -8395,11 +8398,13 @@
 /area/maintenance/fore)
 "aEW" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/closed/wall/r_wall,
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
 /area/ai_monitored/command/storage/eva)
 "aEY" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/closed/wall/r_wall,
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
 /area/ai_monitored/command/storage/eva)
 "aEZ" = (
 /turf/open/floor/plasteel/dark,
@@ -9080,6 +9085,11 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
+/obj/item/radio/intercom{
+	dir = 4;
+	name = "Station Intercom (General)";
+	pixel_x = -31
+	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/command/storage/eva)
 "aHP" = (
@@ -9638,6 +9648,10 @@
 "aKB" = (
 /turf/closed/wall,
 /area/hallway/primary/port)
+"aKD" = (
+/obj/machinery/door/firedoor,
+/turf/open/floor/plasteel/dark,
+/area/ai_monitored/command/storage/eva)
 "aKF" = (
 /obj/effect/turf_decal/tile/blue,
 /obj/effect/turf_decal/tile/blue{
@@ -41838,6 +41852,13 @@
 /obj/machinery/light,
 /turf/open/floor/plasteel,
 /area/security/brig)
+"cJD" = (
+/obj/machinery/suit_storage_unit/standard_unit,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ai_monitored/command/storage/eva)
 "cJE" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -46643,9 +46664,6 @@
 /obj/structure/closet/secure_closet/engineering_electrical,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
-	},
-/obj/machinery/camera{
-	c_tag = "EVA Central"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/command/storage/eva)
@@ -54676,6 +54694,14 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel,
 /area/hallway/primary/central)
+"mNd" = (
+/obj/machinery/door/airlock/command/glass{
+	name = "EVA Storage";
+	req_access_txt = "18"
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/plasteel/dark,
+/area/ai_monitored/command/storage/eva)
 "mNi" = (
 /obj/machinery/light_switch{
 	pixel_x = -20
@@ -55640,6 +55666,16 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/security/brig)
+"nCQ" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/airalarm{
+	dir = 8;
+	pixel_x = 24
+	},
+/turf/open/floor/plasteel/dark,
+/area/ai_monitored/command/storage/eva)
 "nCU" = (
 /obj/structure/table/wood/fancy/royalblack,
 /obj/item/paicard,
@@ -57611,6 +57647,19 @@
 	},
 /turf/open/floor/plasteel,
 /area/science/mixing)
+"poq" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/suit_storage_unit/standard_unit,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ai_monitored/command/storage/eva)
 "poA" = (
 /obj/structure/disposalpipe/segment{
 	dir = 6
@@ -64509,10 +64558,8 @@
 /turf/open/floor/carpet,
 /area/service/library)
 "vbD" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
 /area/ai_monitored/command/storage/eva)
 "vcx" = (
 /obj/effect/decal/cleanable/dirt,
@@ -93811,11 +93858,11 @@ tAB
 awg
 axy
 ayK
-aBj
-aBq
+azE
+poq
 aBO
 aDE
-ayL
+aBj
 aGo
 aHN
 aJj
@@ -94072,11 +94119,11 @@ azE
 aBq
 aCa
 aDB
-ayL
+vbD
 aGq
 azW
 azW
-iCP
+mNd
 aFc
 aJq
 aOE
@@ -94586,7 +94633,7 @@ eVA
 qiy
 rnH
 aEZ
-aEZ
+aKD
 aEZ
 iOE
 aEZ
@@ -95100,7 +95147,7 @@ ltc
 aBq
 aBr
 aDE
-ayL
+vbD
 glR
 azW
 azW
@@ -95353,11 +95400,11 @@ vym
 kIS
 axz
 ayO
-ltc
+nCQ
 aBq
-vbD
-aDE
-ayL
+azW
+cJD
+aBj
 aAW
 aCc
 aJl
