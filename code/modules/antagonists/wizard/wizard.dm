@@ -85,6 +85,7 @@
 /datum/antagonist/wizard/on_removal()
 	unregister()
 	owner.RemoveAllSpells() // TODO keep track which spells are wizard spells which innate stuff
+	owner.special_role = null // BLUEMOON ADD
 	return ..()
 
 /datum/antagonist/wizard/proc/equip_wizard()

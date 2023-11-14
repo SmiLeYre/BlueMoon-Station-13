@@ -104,6 +104,7 @@
 		that imprint on generic teams, but i'm too lazy to refactor THAT too */
 	var/datum/atom_hud/gang_hud = GLOB.huds[ANTAG_HUD_GANGSTER]
 	gang_hud.remove_hud_from(owner.current)
+	owner.special_role = null // BLUEMOON ADD
 	..()
 
 /datum/antagonist/gang/apply_innate_effects(mob/living/mob_override)
