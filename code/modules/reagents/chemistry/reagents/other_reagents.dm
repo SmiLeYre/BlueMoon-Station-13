@@ -2202,7 +2202,7 @@
 
 /datum/reagent/romerol/reaction_mob(mob/living/carbon/human/H, method=TOUCH, reac_volume)
 	// Silently add the zombie infection organ to be activated upon death
-	if(!H.getorganslot(ORGAN_SLOT_ZOMBIE))
+	if(!H.getorganslot(ORGAN_SLOT_ZOMBIE) && !HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - добавлена проверка для роботов
 		var/obj/item/organ/zombie_infection/nodamage/ZI = new()
 		ZI.Insert(H)
 	..()

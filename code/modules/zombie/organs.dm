@@ -25,6 +25,11 @@
 
 /obj/item/organ/zombie_infection/Insert(var/mob/living/carbon/M, special = 0, drop_if_replaced = TRUE)
 	. = ..()
+	// BLUEMOON ADD START - роботы вообще не могут быть зомби
+	if(owner.mob_biotypes & MOB_ROBOTIC)
+		qdel(src)
+		return
+	// BLUEMOON ADD END
 	START_PROCESSING(SSobj, src)
 
 /obj/item/organ/zombie_infection/Remove(special = FALSE)
