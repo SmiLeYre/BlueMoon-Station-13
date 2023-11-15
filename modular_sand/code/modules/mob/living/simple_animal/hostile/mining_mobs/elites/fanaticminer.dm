@@ -253,6 +253,16 @@
 	var/obj/item/organ/eyes/night_vision/eyes = new /obj/item/organ/eyes/night_vision()
 	eyes.Insert(new_spawn)
 
+	if(HAS_TRAIT(new_spawn, TRAIT_ROBOTIC_ORGANISM))
+		if(!r_hand)
+			new_spawn.put_in_r_hand(new /obj/item/device/cooler/lavaland/charged(new_spawn))
+		else if(!l_hand)
+			new_spawn.put_in_l_hand(new /obj/item/device/cooler/lavaland/charged(new_spawn))
+		else
+			to_chat(new_spawn, span_reallybig("Не забудьте забрать  охладитель под собой.")) // чтобы не упустили из виду при резком спавне
+			new /obj/item/device/cooler/lavaland/charged(new_spawn.loc)
+		new /obj/item/stock_parts/cell/bluespace(new_spawn.loc)
+
 /obj/effect/temp_visual/dragon_swoop/priest
 	duration = 5
 	color = rgb(255,0,0)
