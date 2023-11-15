@@ -167,12 +167,14 @@
 		R.update_transform()
 		//R.update_size(ExpandSize/100)
 		R.hasExpanded = TRUE
+		R.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/changed_robot_size) // BLUEMOON ADD
 
 /obj/item/borg/upgrade/expand/deactivate(mob/living/silicon/robot/R, user = usr)
 	. = ..()
 	if (. && R.hasExpanded)
 		R.transform = null
 		R.hasExpanded = FALSE
+		R.remove_movespeed_modifier(/datum/movespeed_modifier/changed_robot_size) // BLUEMOON ADD
 
 /obj/item/borg/upgrade/shrink
 	name = "borg shrinker"
@@ -211,6 +213,8 @@
 		R.mob_transforming = FALSE
 		R.resize = ShrinkSize/100
 		R.update_transform()
+/*		R.add_movespeed_modifier(/datum/movespeed_modifier/reagent/freon) / BLUEMOON REMOVAL - увеличиваем степень замедления роботов, уменьшенных или увеличенных в размере */
+		R.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/changed_robot_size/shrink) // BLUEMOON ADD
 		//R.update_size(ShrinkSize/100)
 		R.hasShrunk = TRUE
 
@@ -219,6 +223,9 @@
 	if (. && R.hasShrunk)
 		R.transform = null
 		R.hasShrunk = FALSE
+/*		R.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/freon) / BLUEMOON REMOVAL - увеличиваем степень замедления роботов, уменьшенных или увеличенных в размере */
+		R.remove_movespeed_modifier(/datum/movespeed_modifier/changed_robot_size/shrink) // BLUEMOON ADD
+
 
 /obj/item/borg/upgrade/transform/syndicatejack
     name = "borg module picker (Syndicate)"

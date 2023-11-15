@@ -950,6 +950,10 @@
 	return ..()
 
 /datum/status_effect/stabilized/lightpink/tick()
+	// BLUEMOON ADD START - умное изменение ускорения на основании размера персонажа
+	if(get_size(owner) > 1)
+		owner.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/status_effect/slime/light_pink, multiplicative_slowdown = -2*(1/get_size(owner))**2) // Спасибо Максималу за формулу
+	// BLUEMOON ADD END
 	for(var/mob/living/carbon/human/H in range(1, get_turf(owner)))
 		if(H != owner && H.stat != DEAD && H.health <= 0 && !H.reagents.has_reagent(/datum/reagent/medicine/epinephrine))
 			to_chat(owner, "[linked_extract] pulses in sync with [H]'s heartbeat, trying to keep [H.ru_na()] alive.")

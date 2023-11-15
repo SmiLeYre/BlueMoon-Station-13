@@ -44,7 +44,7 @@
 	. = ..()
 	if(!CONFIG_GET(flag/disable_human_mood))
 		AddComponent(/datum/component/mood)
-	AddComponent(/datum/component/combat_mode)
+/*	AddComponent(/datum/component/combat_mode) / BLUEMOON REMOVAL - боевые индикаторы присваиваются всем мобам в другом файле */
 	AddElement(/datum/element/flavor_text/carbon/temporary, "", "Set Pose (Temporary Flavor Text)", "This should be used only for things pertaining to the current round!", _save_key = null)
 	AddElement(/datum/element/strippable, GLOB.strippable_human_items, /mob/living/carbon/human/.proc/should_strip)
 

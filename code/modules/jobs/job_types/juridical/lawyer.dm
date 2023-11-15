@@ -69,7 +69,7 @@
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	uniform = /obj/item/clothing/under/rank/civilian/lawyer/really_black
 	//suit = /obj/item/clothing/suit/toggle/lawyer/black
-	shoes = /obj/item/clothing/shoes/jackboots/tall
+	shoes = /obj/item/clothing/shoes/jackboots/tall_default
 	l_hand = /obj/item/storage/briefcase/lawyer
 	l_pocket = /obj/item/laser_pointer
 	r_pocket = /obj/item/clothing/accessory/lawyers_badge

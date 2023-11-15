@@ -139,7 +139,7 @@
 	id = /obj/item/card/id/away
 	ears = /obj/item/radio/headset
 	uniform = /obj/item/clothing/under/rank/civilian/util
-	shoes = /obj/item/clothing/shoes/jackboots/tall
+	shoes = /obj/item/clothing/shoes/jackboots/tall_default
 	head = /obj/item/clothing/head/beret/black
 	r_pocket = /obj/item/pda
 	back = /obj/item/storage/backpack

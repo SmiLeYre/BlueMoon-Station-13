@@ -121,7 +121,7 @@
 								gut.climax_modify_size(src, getorganslot(ORGAN_SLOT_PENIS), target_orifice)
 
 					if(CUM_TARGET_ARMPIT)
-						message = "кончает в подмышку <b>[partner]</b>"
+						message = "кончает в подмышку <b>[partner]</b>."
 
 					if(CUM_TARGET_MOUTH, CUM_TARGET_THROAT, CUM_TARGET_VAGINA, CUM_TARGET_ANUS)
 						if(c_partner)
@@ -280,7 +280,7 @@
 			if(istype(src, /mob/living)) // Argh.
 				var/mob/living/H = src
 				H.adjustOxyLoss(3)
-			message = "сосёт себе"
+			message = "сосёт себе."
 			lust_increase += 5
 		else
 			var/improv = FALSE
@@ -440,9 +440,9 @@
 	var/message
 	//var/u_His = ru_ego()
 	var/list/lines = list(
-		"сдавливает лицо <b>[target]</b> между своих сисек",
-		"прижимает свою грудь к лицу <b>[target]</b>",
-		"прижимает голову <b>[target]</b> к своему декольте"
+		"сдавливает лицо <b>[target]</b> между своих сисек.",
+		"прижимает свою грудь к лицу <b>[target]</b>.",
+		"прижимает голову <b>[target]</b> к своему декольте."
 		)
 
 	message = "<span class='lewd'>\The <b>[src]</b> [pick(lines)]</span>"
@@ -454,10 +454,10 @@
 /mob/living/proc/lick_sweat(mob/living/target)
 	var/message
 	//var/t_His = target.ru_ego()
-	var/list/lines = list("вылизывает тельце \the <b>[target]</b>",
-							"слизывает соленый пот, стекающий по коже <b>[target]</b>",
-							"наслаждается вкусом промокшего тела \the <b>[target]</b>",
-							"вдыхает запах мускуса и пьет теплый пот \the <b>[target]</b>")
+	var/list/lines = list("вылизывает тельце \the <b>[target]</b>.",
+							"слизывает соленый пот, стекающий по коже <b>[target]</b>.",
+							"наслаждается вкусом промокшего тела \the <b>[target]</b>.",
+							"вдыхает запах мускуса и пьет теплый пот \the <b>[target]</b>.")
 
 	message = "<span class='lewd'>\The <b>[src]</b> [pick(lines)]</span>"
 	visible_message(message, ignored_mobs = get_unconsenting())
@@ -486,8 +486,8 @@
 	//var/list/musk = list("musky ", "sweaty ", "damp ", "smelly ", "")
 	var/list/lines = list(
 		"засовывает свой нос глубже в подмышку \the <b>[target]</b>, делая небольшой [pick(list("вдох носом", "лизь", "тычок"))].",
-		"прижимает свое личико под мышкой \the <b>[target]</b> [pick(list("пробуя на вкус и облизывая", "внюхиваясь в этот запах"))]",
-		"продвигает лицо глубже в подмышку \the <b>[target]</b>, обрабатывая там все языком и носом"
+		"прижимает свое личико под мышкой \the <b>[target]</b> [pick(list("пробуя на вкус и облизывая", "внюхиваясь в этот запах"))].",
+		"продвигает лицо глубже в подмышку \the <b>[target]</b>, обрабатывая там все языком и носом."
 	)
 
 	message = "<span class='lewd'>\The <b>[src]</b> [pick(lines)]</span>"
@@ -507,7 +507,7 @@
 
 	if(is_fucking(target, CUM_TARGET_ARMPIT))
 		lines = list(
-			"проводит член вперёд и назад под мышкой <b>[target]</b>",
+			"проводит член вперёд и назад под мышкой <b>[target]</b>.",
 			"капает предэякулятом на всю потную подмышку <b>[target]</b>, грубо сношая эти теплые объятия.",
 			"толкает свой орган под руку <b>[target]</b>, используя подмышку как мастурбатор."
 		)
@@ -571,15 +571,15 @@
 
 	if(target.is_fucking(src, CUM_TARGET_BREASTS))
 		lines = list(
-			"водит своей мягкой грудью вверх и вниз по члену <b>[target]</b>",
-			"сжимает свои сиськи вокруг длины стержня <b>[target]</b>",
-			"похотливо мастурбирует орган <b>[target]</b> с помощью своих упругих сисек"
+			"водит своей мягкой грудью вверх и вниз по члену <b>[target]</b>.",
+			"сжимает свои сиськи вокруг длины стержня <b>[target]</b>.",
+			"похотливо мастурбирует орган <b>[target]</b> с помощью своих упругих сисек."
 		)
 	else
 		lines = list(
-			"зажимает грудь вокруг пульсирующщего члена <b>[target]</b>, окутывая теплотой и заботой всю длину",
-			"обволакивает твердый стержень <b>[target]</b> своими сиськами, плотно и с хлюпаньем сжимая его",
-			"ползволяет своим дыням упасть прямо на жирный член <b>[target]</b>, удерживая его в декольте"
+			"зажимает грудь вокруг пульсирующщего члена <b>[target]</b>, окутывая теплотой и заботой всю длину.",
+			"обволакивает твердый стержень <b>[target]</b> своими сиськами, плотно и с хлюпаньем сжимая его.",
+			"ползволяет своим дыням упасть прямо на жирный член <b>[target]</b>, удерживая его в декольте."
 		)
 		target.set_is_fucking(src, CUM_TARGET_BREASTS, getorganslot(ORGAN_SLOT_PENIS))
 
@@ -658,7 +658,6 @@
 /mob/living/proc/do_nipfuck(mob/living/target)
 	var/message
 	var/list/lines
-	var/u_His = ru_ego()
 	var/genital_name = get_penetrating_genital_name()
 	//var/t_His = target.ru_ego()
 	if(is_fucking(target, CUM_TARGET_NIPPLE) && target.has_breasts(REQUIRE_EXPOSED))
@@ -669,8 +668,8 @@
 		)
 	else if(target.has_breasts(REQUIRE_EXPOSED))
 		lines = list(
-			"прижимает свой пульсирующий конец к пухлому соску <b>[target]</b>, вдавливая всю длину до упора с влажным шлепком",
-			"stretches \the <b>[target]</b>'s nipple with his fingers, before forcing it open with the whole girth of [u_His] twitching [genital_name]"
+			"прижимает свой пульсирующий конец к пухлому соску <b>[target]</b>, вдавливая всю длину до упора с влажным шлепком.",
+			"обхватывает сосок <b>[target]</b> вводит в него свой палец, после чего вводит внутрь свой [genital_name]."
 		)
 	else
 		lines = list(
@@ -703,9 +702,9 @@
 		)
 	else
 		lines = list(
-			"прижимает свой кончик к мягким ляжкам <b>[target]</b>, вскоре проталкивая всю длинну прямо между ними",
-			"подставляет свой член к ногам <b>[target]</b>, вонзая во весь его размер в объятия бёдер",
-			"целует междуножье <b>[target]</b> своим кончиком, прямо перед тем как протиснуться между бёдер всем членом"
+			"прижимает свой кончик к мягким ляжкам <b>[target]</b>, вскоре проталкивая всю длинну прямо между ними.",
+			"подставляет свой член к ногам <b>[target]</b>, вонзая во весь его размер в объятия бёдер.",
+			"целует междуножье <b>[target]</b> своим кончиком, прямо перед тем как протиснуться между бёдер всем членом."
 		)
 		set_is_fucking(target, CUM_TARGET_THIGHS, getorganslot(ORGAN_SLOT_PENIS))
 

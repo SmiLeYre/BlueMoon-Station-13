@@ -12,7 +12,6 @@
 	genital_flags = UPDATE_OWNER_APPEARANCE|GENITAL_UNDIES_HIDDEN|CAN_CUM_INTO|HAS_EQUIPMENT
 	shape = "пончиковидный"
 	layer_index = ANUS_LAYER_INDEX
-	var/filled
 
 /obj/item/organ/genital/anus/upon_link()
 	. = ..()

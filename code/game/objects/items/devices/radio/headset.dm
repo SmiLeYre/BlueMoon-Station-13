@@ -34,6 +34,12 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	dog_fashion = null
 	var/bowman = FALSE
 
+	// headset is too small to display overlays
+	overlay_speaker_idle = null
+	overlay_speaker_active = null
+	overlay_mic_idle = null
+	overlay_mic_active = null
+
 /obj/item/radio/headset/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] begins putting \the [src]'s antenna up [user.ru_ego()] nose! It looks like [user.ru_who()] trying to give себя cancer!</span>")
 	return TOXLOSS

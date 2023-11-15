@@ -70,7 +70,7 @@
 	//belt = /obj/item/pda/syndicate/no_deto
 
 	ears = /obj/item/radio/headset/headset_cargo/mining
-	shoes = /obj/item/clothing/shoes/jackboots/tall
+	shoes = /obj/item/clothing/shoes/jackboots/tall_default
 	gloves = /obj/item/clothing/gloves/combat
 	uniform = /obj/item/clothing/under/rank/cargo/util
 	l_pocket = /obj/item/reagent_containers/hypospray/medipen/survival

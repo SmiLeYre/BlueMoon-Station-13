@@ -1,6 +1,3 @@
-#define GROWTH_MODE 1
-#define SHRINK_MODE 0
-
 /obj/item/melee/sizetool
 	name = "size tool"
 	desc = "A small tool with ability to change size of living creatures. While manufactured by Syntech, it was banned in most of the civilized countries, \
@@ -18,8 +15,9 @@
 
 	var/obj/item/stock_parts/cell/cell
 	var/in_use = FALSE
-	var/mode = SHRINK_MODE
-	var/charge_per_use = 1000
+	var/size_set_to = 1
+	var/charge_per_use
+	var/time_per_use = 5 //секунды (важно для гост кафе)
 
 /obj/item/melee/sizetool/Initialize(mapload)
 	. = ..()
@@ -27,9 +25,18 @@
 	register_item_context()
 
 /obj/item/melee/sizetool/attack_self(mob/user)
-	mode = !mode // изменение режима
-	to_chat(user, span_notice("You switch [src] to <b>[mode ? "growth" : "shrink"]</b> mode."))
 	. = ..()
+	var/size_select
+
+	if(check_for_ghostcafe())
+		size_select = tgui_input_number(usr, "Set prefered size (25-600%).", "Set Size", size_set_to * 100, 600, 25)
+		size_set_to = clamp((size_select/100), RESIZE_MICRO, RESIZE_MACRO)
+	else
+		size_select = tgui_input_number(usr, "Set prefered size (25-200%).", "Set Size", size_set_to * 100, 200, 25)
+		size_set_to = clamp((size_select/100), RESIZE_MICRO, RESIZE_BIG)
+	if(!size_select) return
+
+	to_chat(usr, "<span class='notice'>You set the size to [size_set_to * 100]%</span>")
 
 /obj/item/melee/sizetool/attackby(obj/item/new_item, mob/user, params)
 	if(istype(new_item, /obj/item/stock_parts/cell)) // замена батарейки
@@ -58,7 +65,7 @@
 		. += span_info("Its cell can be removed with a screwdriver.")
 	else
 		. += span_warning("[src] does not have a power source installed.")
-	. += span_info("You can use it in ghostcafe to make your size bigger than 200%")
+	. += span_info("Current prefered size set to [size_set_to * 100]%")
 
 /obj/item/melee/sizetool/proc/check_for_ghostcafe() // Вы можете использовать весь функционал (в виде повышения размера до 800%) в госткафе
 	if(istype(get_area(src), /area/centcom/holding))
@@ -67,92 +74,50 @@
 
 /obj/item/melee/sizetool/attack(mob/living/target, mob/living/carbon/human/user)
 	if(user.a_intent != INTENT_HELP) // если режим взаимодействия не "help", то устройством можно бить
-		return . = ..()
-	if(!isliving(target) || issilicon(target)) // только для существ, не киборгов
-		return
-	if(cell?.charge < charge_per_use) // есть ли батарейка и хватает ли в ней энергии
-		to_chat(user, span_warning("[src] has not enough power to be used."))
-		return
+		return ..()
 	if(in_use) // нельзя спамить
 		return
-
-	var/new_size = RESIZE_NORMAL
-	switch(mode) // проверка режима
-
-		if(SHRINK_MODE)
-			switch(get_size(target))
-				if(RESIZE_MACRO to INFINITY)
-					new_size = RESIZE_HUGE
-				if(RESIZE_HUGE to RESIZE_MACRO)
-					new_size = RESIZE_BIG
-				if(RESIZE_BIG to RESIZE_HUGE)
-					new_size = RESIZE_NORMAL
-				if(RESIZE_NORMAL to RESIZE_BIG)
-					new_size = RESIZE_SMALL
-				if(RESIZE_SMALL to RESIZE_NORMAL)
-					new_size = RESIZE_TINY
-				if(RESIZE_TINY to RESIZE_SMALL)
-					new_size = RESIZE_MICRO
-				if((0 - INFINITY) to RESIZE_NORMAL)
-					to_chat(user, span_warning("[src] buzzes as it cannot make [target] smaller."))
-					return
-
-		if(GROWTH_MODE)
-			switch(get_size(target))
-				if(RESIZE_MACRO to INFINITY)
-					to_chat(user, span_warning("[src] buzzes as it cannot make [target] bigger."))
-					return
-				if(RESIZE_HUGE to RESIZE_MACRO)
-					if(!check_for_ghostcafe())
-						to_chat(user, span_warning("[src] buzzes as it cannot make [target] bigger."))
-						return
-					new_size = RESIZE_MACRO
-				if(RESIZE_BIG to RESIZE_HUGE)
-					if(!check_for_ghostcafe())
-						to_chat(user, span_warning("[src] buzzes as it cannot make [target] bigger."))
-						return
-					new_size = RESIZE_HUGE
-				if(RESIZE_NORMAL to RESIZE_BIG)
-					new_size = RESIZE_BIG
-				if(RESIZE_SMALL to RESIZE_NORMAL)
-					new_size = RESIZE_NORMAL
-				if(RESIZE_TINY to RESIZE_SMALL)
-					new_size = RESIZE_SMALL
-				if(RESIZE_MICRO to RESIZE_TINY)
-					new_size = RESIZE_TINY
-				if((0 - INFINITY) to RESIZE_MICRO)
-					new_size = RESIZE_MICRO
+	if(!isliving(target) || issilicon(target)) // только для существ, не киборгов
+		return
+	var/ghostcafe = check_for_ghostcafe()
+	var/target_size = get_size(target)
+	var/diff = abs(size_set_to - target_size)
+	if(!diff) return
+	if(!ghostcafe) //welp если в гост кафе, то статичные 5 секунд на любое изменение размера
+		charge_per_use = diff * 4000 // 1000 энергии на каждые 25% размера
+		time_per_use = diff * 20 //5 секунд на 25% размера
+		if(cell?.charge < charge_per_use) // есть ли батарейка и хватает ли в ней энергии
+			to_chat(user, span_warning("[src] has not enough power to be used."))
+			return
 
 	in_use = TRUE // использование началось
 
-	user.visible_message(span_warning("[user] points [src] at [target] and hold its trigger!"), span_notice("You point your [src] at [target] and hold the trigger. It begins to vibrate and is getting hotter, as the charge is being gained."))
+	user.visible_message(span_warning("[user] points [src] at [target] and hold its trigger!"), span_notice("You point your [src] at [target] and hold the trigger. It begins to vibrate and is getting hotter, as the charge is being gained. You need [time_per_use] seconds to finish."))
 
-	if(do_after(user, 5 SECONDS, target = target)) // КД перед применением на цель
+	if(do_after(user, time_per_use SECONDS, target = target)) // КД перед применением на цель
 		in_use = FALSE
 
-		if(!check_for_ghostcafe()) // в госткафе заряд не тратится
-			if(!cell || !cell.use(charge_per_use))
-				to_chat(user, span_warning("[src] goes cold after failed usage. Looks like its power cell has gone out of charge."))
-				return
+		if(!ghostcafe && (!cell || !cell.use(charge_per_use))) // в госткафе заряд не тратится
+			to_chat(user, span_warning("[src] goes cold after failed usage. Looks like its power cell has gone out of charge."))
+			return
 
-		/* - ДОБАВИТЬ СЮДА ТРЕЙТ, ЗАПРЕЩАЮЩИЙ ИЗМЕНЯТЬ РАЗМЕР, ЕСЛИ ЦЕЛЬ НЕВОСПРИИМЧИВА К НОРМАЛАЙЗЕРУ!
+		if(target.GetComponent(/datum/component/size_normalized)) //нормализаторы не дружат с изменениями размера во время их ношения
+			to_chat(user, span_warning("[src] goes cold after failed usage. It vibrates, as if it located normalization device on the target."))
+			return
+
 		if(HAS_TRAIT(target, TRAIT_BLUEMOON_ANTI_NORMALIZER))
 			to_chat(user, span_notice("[src] buzzes in your hand while goes cold after usage. Looks like nothing changed?"))
 			playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 1)
 			return
-		*/
 
-		target.update_size(new_size)
+		target.update_size(size_set_to)
 
 		playsound(target, 'sound/effects/magic.ogg', 50, 1)
 		target.flash_lighting_fx(3, 3, LIGHT_COLOR_PURPLE)
-		target.visible_message(span_warning("A flash of purple light engulfs \the [target], before [target.ru_who()] jump[target.p_s()] to [mode ? "bigger" : "smaller"] size!"), \
-		span_notice("You feel warm for a moment, before everything [mode ? "becomes smaller" : "becomes bigger"]..."))
+		target.visible_message(span_warning("A flash of purple light engulfs \the [target], before [target.ru_who()] jump[target.p_s()] to [target_size > size_set_to ? "bigger" : "smaller"] size!"), \
+		span_notice("You feel warm for a moment, before everything [target_size > size_set_to  ? "becomes smaller" : "becomes bigger"]..."))
 		return
 	else
 		in_use = FALSE // использование прервано
 		to_chat(user, span_warning("You must stand still to use [src]!"))
 		return
-
-#undef GROWTH_MODE
-#undef SHRINK_MODE

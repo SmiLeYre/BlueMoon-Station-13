@@ -68,7 +68,7 @@ GLOBAL_LIST_EMPTY(cached_previews)
 	var/unknown = FALSE
 	if (iscarbon(M))
 		var/mob/living/carbon/C = M
-		unknown = (C.wear_mask && (C.wear_mask.flags_inv & HIDEFACE) && !isobserver(user)) || (C.head && (C.head.flags_inv & HIDEFACE) && !isobserver(user))
+		unknown = (C.wear_mask && (C.wear_mask.flags_inv & HIDEEYES) && !isobserver(user)) || (C.head && (C.head.flags_inv & HIDEEYES) && !isobserver(user))
 		data["flavortext"] = (!unknown) ? (M?.client?.prefs?.features["flavor_text"] || "") : "Скрыто"
 		if (istype(M, /mob/living/carbon/human))
 			var/mob/living/carbon/human/H = C

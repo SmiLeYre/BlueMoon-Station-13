@@ -16,7 +16,7 @@
 /obj/item/ammo_box/magazine/recharge/lasgun
 	name = "Lasgun Power Pack"
 	ammo_type = /obj/item/ammo_casing/caseless/laser
-	max_ammo = 50
+	max_ammo = 20
 
 // MWS Magazine //
 /obj/item/ammo_box/magazine/mws_mag

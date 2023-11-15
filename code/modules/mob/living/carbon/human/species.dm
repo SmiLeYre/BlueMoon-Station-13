@@ -2241,7 +2241,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		// BLUEMOON ADD END
 		if(!user.UseStaminaBuffer(shove_up_stamina_cost, TRUE)) // BLUEMOON CHANGES
 			return
-		user.visible_message("<span class='notice'>[user] forces [ru_na()]self up to [ru_ego()] feet!</span>", "<span class='notice'>You force yourself up to your feet!</span>")
+		user.visible_message("<span class='notice'>[user] forces [p_them()]self up to [ru_ego()] feet!</span>", "<span class='notice'>You force yourself up to your feet!</span>")
 		user.set_resting(FALSE, TRUE)
 		playsound(user, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 

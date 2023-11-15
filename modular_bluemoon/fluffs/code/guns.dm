@@ -282,3 +282,40 @@
 	icon_state = "pf940"
 	can_suppress = FALSE
 	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/pf940_shoot.ogg'
+
+/obj/item/modkit/ks23_kit
+	name = "KS-23 Shotgun Kit"
+	desc = "A modkit for making a Shotgun into a KS-23."
+	product = /obj/item/gun/ballistic/shotgun/riot/ks_23
+	fromitem = list(/obj/item/gun/ballistic/shotgun, /obj/item/gun/ballistic/shotgun/riot, /obj/item/gun/ballistic/shotgun/riot/syndicate)
+
+/obj/item/gun/ballistic/shotgun/riot/ks_23
+	name = "\improper KS-23"
+	desc = "Карабин Специальный-23М - ружьё с нарезным стволом. Многофункциональное полицейское оружие, предназначенное для пресечения массовых беспорядков, избирательного силового, психического и химического воздействия на правонарушителей."
+	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+	//chosen_icon = 'icons/mob/clothing/back.dmi'
+	icon_state = "KS-23M"
+	can_suppress = FALSE
+	fire_sound = 'modular_bluemoon/fluffs/sound/shoot.ogg'
+
+/obj/item/gun/ballistic/shotgun/riot/ks_23/update_icon_state()
+	. = ..()
+	icon_state = "KS-23M[chambered ? "" : "-e"]"
+
+/obj/item/modkit/g36_kit
+	name = "G36 Kit"
+	desc = "A modkit for making a AK-12 into a G36."
+	product = /obj/item/gun/ballistic/automatic/ak12/g36
+	fromitem = list(/obj/item/gun/ballistic/automatic/ak12, /obj/item/gun/ballistic/automatic/ak12/r)
+
+/obj/item/gun/ballistic/automatic/ak12/g36
+	name = "\improper G-36"
+	desc = "Heckler & Koch Gewehr 36, G36 - семейство стрелкового оружия, разработанное в начале 1990-х немецкой компанией Heckler & Koch, под внутрифирменным обозначением HK 50, для замены хорошо известной автоматической винтовки HK G3."
+	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+	//chosen_icon = 'icons/mob/clothing/back.dmi'
+	icon_state = "G36"
+	fire_sound = 'modular_bluemoon/fluffs/sound/shoot.ogg'

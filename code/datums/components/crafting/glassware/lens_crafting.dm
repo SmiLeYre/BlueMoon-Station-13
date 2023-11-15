@@ -17,8 +17,9 @@
 /obj/item/glasswork/glass_base/laserpointer_shell/attackby(obj/item/I, mob/user, params)
 	..()
 	if(istype(I, /obj/item/stock_parts/capacitor))
-		new next_step(user.loc, 1)
+		new next_step(user.loc)
 		qdel(src)
+		qdel(I)
 
 /obj/item/glasswork/glass_base/laserpointer_shell_1
 	name = "powered laser pointer assembly"
@@ -30,8 +31,9 @@
 /obj/item/glasswork/glass_base/laserpointer_shell_1/attackby(obj/item/I, mob/user, params)
 	..()
 	if(istype(I, /obj/item/glasswork/glass_base/lens))
-		new next_step(user.loc, 1)
+		new next_step(user.loc)
 		qdel(src)
+		qdel(I)
 
 /obj/item/glasswork/glass_base/laserpointer_shell_2
 	name = "near-complete laser pointer assembly"
@@ -44,7 +46,7 @@
 	..()
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
 		if(do_after(user,260, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			qdel(src)
 
 //NERD SHIT - 5000
@@ -60,8 +62,9 @@
 	..()
 	if(istype(I, /obj/item/glasswork/glass_base/lens))
 		if(do_after(user,60, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			qdel(src)
+			qdel(I)
 
 /obj/item/glasswork/glass_base/glasses_frame_1
 	name = "glasses frame"
@@ -74,8 +77,9 @@
 	..()
 	if(istype(I, /obj/item/glasswork/glass_base/lens))
 		if(do_after(user,60, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			qdel(src)
+			qdel(I)
 
 /obj/item/glasswork/glass_base/glasses_frame_2
 	name = "glasses frame"
@@ -88,7 +92,7 @@
 	..()
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
 		if(do_after(user,180, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			qdel(src)
 
 /obj/item/glasswork/glasses

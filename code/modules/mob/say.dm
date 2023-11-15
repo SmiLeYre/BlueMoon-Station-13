@@ -25,9 +25,6 @@
 
 	client?.last_activity = world.time
 
-	if(findtext(message, GLOB.has_eol_punctuation))
-		message += "."
-
 	say(message)
 
 /mob/verb/me_typing_indicator()

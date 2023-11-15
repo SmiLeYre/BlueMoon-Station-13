@@ -85,6 +85,13 @@
 			return BULLET_ACT_BLOCK
 		totaldamage = block_calculate_resultant_damage(totaldamage, returnlist)
 	var/armor = run_armor_check(def_zone, P.flag, null, null, P.armour_penetration, null)
+
+	// BLUEMOON ADD START - больших и тяжёлых существ проблематично нормально оглушить
+	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
+		if(P.damage_type == STAMINA)
+			totaldamage *= 0.5
+	// BLUEMOON ADD END
+
 	if(!P.nodamage)
 		apply_damage(totaldamage, P.damage_type, def_zone, armor, wound_bonus = P.wound_bonus, bare_wound_bonus = P.bare_wound_bonus, sharpness = P.sharpness)
 		if(P.dismemberment)

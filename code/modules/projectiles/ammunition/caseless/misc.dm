@@ -20,6 +20,7 @@
 	projectile_type = /obj/item/projectile/beam/laser/lasgun
 	fire_sound = 'sound/weapons/lasgun.ogg'
 	firing_effect_type = /obj/effect/temp_visual/dir_setting/firing_effect/energy
+	click_cooldown_override = 1
 
 /obj/item/ammo_casing/caseless/laser/gatling
 	projectile_type = /obj/item/projectile/beam/weak/penetrator

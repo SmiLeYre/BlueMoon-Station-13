@@ -1,18 +1,3 @@
-//Main code edits
-/datum/quirk/photographer
-	desc = "Вы берете с собой камеру и фотоальбом, куда бы вы ни пошли. Также, вы быстрее фотографируете."
-
-/datum/quirk/photographer/on_spawn()
-	. = ..()
-	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/storage/photo_album/photo_album = new(get_turf(H))
-	H.put_in_hands(photo_album)
-	H.equip_to_slot(photo_album, ITEM_SLOT_BACKPACK)
-	photo_album.persistence_id = "personal_[H.mind.key]" // this is a persistent album, the ID is tied to the account's key to avoid tampering
-	photo_album.persistence_load()
-	photo_album.name = "Фотоальбом [H.real_name]"
-
-//Own stuff
 /datum/quirk/tough
 	name = "Стойкость"
 	desc = "Ваше аномально крепкое тело может вынести на 20% больше урона."

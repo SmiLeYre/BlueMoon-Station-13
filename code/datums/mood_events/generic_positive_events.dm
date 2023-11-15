@@ -201,7 +201,7 @@
 
 /datum/mood_event/orgasm
 	mood_change = 3
-	timeout = 100 SECONDS
+	timeout = 3 MINUTES
 
 /datum/mood_event/orgasm/add_effects(param)
 	. = ..()

@@ -20,7 +20,7 @@
 	/// Chance to spread into adjacent tiles (0-100)
 	var/spreadIntoAdjacentChance = 75
 	/// Internal seed of the glowshroom, stats are stored here
-	var/obj/item/seeds/myseed = /obj/item/seeds/glowshroom
+	var/obj/item/seeds/myseed
 	/// Turfs where the glowshroom cannot spread to
 	var/static/list/blacklisted_glowshroom_turfs = typecacheof(list(
 	/turf/open/lava,
@@ -65,7 +65,7 @@
 		myseed = newseed.Copy()
 		myseed.forceMove(src)
 	else
-		myseed = new myseed(src)
+		myseed = new /obj/item/seeds/glowshroom(src)
 	if(spread)
 		myseed.potency -= round(myseed.potency * 0.25) // Reduce potency of the little mushie if it's spreading
 	if(mutate_stats) //baby mushrooms have different stats :3
@@ -108,6 +108,8 @@
 /obj/structure/glowshroom/proc/Spread()
 	var/turf/ownturf = get_turf(src)
 	var/shrooms_planted = 0
+	if(!myseed)
+		return
 	for(var/i in 1 to myseed.yield)
 		var/chance_stats = ((myseed.potency + myseed.endurance * 2) * 0.2) // Chance of generating a new mushroom based on stats
 		var/chance_generation = (100 / (generation * generation)) // This formula gives you diminishing returns based on generation. 100% with 1st gen, decreasing to 25%, 11%, 6, 4, 2...

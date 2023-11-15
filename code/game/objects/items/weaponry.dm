@@ -1170,7 +1170,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 		return
 
 	playsound(get_turf(owner), 'sound/effects/hit_punch.ogg', 50, TRUE, -1)
-	owner.visible_message("<span class='danger'>[owner] shamefully bops [owner.ru_na()]self with [owner.ru_ego()] [src.name].</span>", "<span class='userdanger'>You shamefully bop yourself with your [src.name].</span>", \
+	owner.visible_message("<span class='danger'>[owner] shamefully bops [owner.p_them()]self with [owner.ru_ego()] [src.name].</span>", "<span class='userdanger'>You shamefully bop yourself with your [src.name].</span>", \
 		"<span class='hear'>You hear a dull thud!</span>")
 	log_combat(owner, owner, "bopped", src.name, "(self)")
 	owner.do_attack_animation(owner)

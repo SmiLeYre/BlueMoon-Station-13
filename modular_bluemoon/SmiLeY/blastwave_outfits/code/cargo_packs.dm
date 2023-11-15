@@ -50,7 +50,7 @@
 /datum/supply_pack/security/lasguns
 	name = "Lasgun's Kit"
 	desc = "Коробочка с автоматическими лазерными винтовками."
-	cost = 12000
+	cost = 16000
 	contains = list(/obj/item/gun/ballistic/automatic/laser/lasgun,
 					/obj/item/gun/ballistic/automatic/laser/lasgun,
 					/obj/item/gun/ballistic/automatic/laser/lasgun,

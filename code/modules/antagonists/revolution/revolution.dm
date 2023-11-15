@@ -429,6 +429,7 @@
 			if (target_body.stat == DEAD)
 				target_body.makeUncloneable()
 			else
+				mind.add_antag_datum(/datum/antagonist/rev)
 				mind.announce_objectives()
 
 		for (var/job_name in GLOB.command_positions + GLOB.security_positions)

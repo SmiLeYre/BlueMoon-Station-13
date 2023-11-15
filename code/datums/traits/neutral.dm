@@ -182,3 +182,25 @@
 
 /datum/quirk/dullahan/post_add()
 	quirk_holder.AddComponent(/datum/component/dullahan)
+
+/datum/quirk/photographer
+	name = "Фотограф"
+	desc = "Вы знаете как пользоваться фотоаппаратом, сокращая время между фотографией."
+	value = 0
+	mob_trait = TRAIT_PHOTOGRAPHER
+	gain_text = "<span class='notice'>Вы знаете всё о фотографиях.</span>"
+	lose_text = "<span class='danger'>Вы забываете, как работают фотокамеры.</span>"
+	medical_record_text = "Пациент упоминает фотографию, как хобби для снятия стресса."
+
+/datum/quirk/photographer/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/obj/item/storage/photo_album/photo_album = new(get_turf(H))
+	H.put_in_hands(photo_album)
+	H.equip_to_slot(photo_album, ITEM_SLOT_BACKPACK)
+	photo_album.persistence_id = "personal_[H.mind.key]" // this is a persistent album, the ID is tied to the account's key to avoid tampering
+	photo_album.persistence_load()
+	photo_album.name = "[H.real_name]'s Photo Album"
+	var/obj/item/camera/camera = new(get_turf(H))
+	H.put_in_hands(camera)
+	H.equip_to_slot(camera, ITEM_SLOT_BACKPACK) //SPLURT Edit
+	H.regenerate_icons()

@@ -51,7 +51,7 @@
 	suit = /obj/item/clothing/suit/apron
 	gloves = /obj/item/clothing/gloves/botanic_leather
 	suit_store = /obj/item/plant_analyzer
-	shoes = /obj/item/clothing/shoes/jackboots/tall
+	shoes = /obj/item/clothing/shoes/jackboots/tall_default
 
 	backpack = /obj/item/storage/backpack/duffelbag/syndie
 	satchel = /obj/item/storage/backpack/duffelbag/syndie

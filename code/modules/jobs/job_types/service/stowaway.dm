@@ -69,7 +69,7 @@ GLOBAL_LIST_EMPTY(roundstart_stowaway)
 	id = /obj/item/card/id/stowaway_stolen
 
 	uniform = /obj/item/clothing/under/syndicate/combat
-	shoes = /obj/item/clothing/shoes/jackboots/tall
+	shoes = /obj/item/clothing/shoes/jackboots/tall_default
 	ears = null
 	belt = /obj/item/storage/belt/utility/atmostech
 	gloves = /obj/item/clothing/gloves/color/yellow

@@ -71,7 +71,7 @@
 	return pick("Праздничный Сектор |","Новый Сектор |","Похмельный Сектор |","Новогодний Сектор |")
 
 /datum/holiday/groundhog
-	name = "День Сурка"
+	name = "день Сурка"
 	begin_day = 2
 	begin_month = FEBRUARY
 	drone_hat = /obj/item/clothing/head/helmet/space/chronos
@@ -99,7 +99,7 @@
 	begin_month = JUNE
 
 /datum/holiday/birthday
-	name = "День рождения Space Station 13"
+	name = "день рождения Space Station 13"
 	begin_day = 16
 	begin_month = FEBRUARY
 	drone_hat = /obj/item/clothing/head/festive
@@ -145,7 +145,7 @@
 	begin_month = FEBRUARY
 
 /datum/holiday/pi
-	name = "День Пи"
+	name = "день Пи"
 	begin_day = 14
 	begin_month = MARCH
 
@@ -153,7 +153,7 @@
 	return pick("Синусоидный Сектор |","Косинусоидный Сектор |","Тангенсный Сектор |","Пересекающий Сектор |", "Не пересекающий Сектор |", "Котангенсный Сектор |")
 
 /datum/holiday/no_this_is_patrick
-	name = "День Святого Патрика"
+	name = "день Святого Патрика"
 	begin_day = 17
 	begin_month = MARCH
 	drone_hat = /obj/item/clothing/head/soft/green
@@ -177,7 +177,7 @@
 			P.client.playtitlemusic()
 
 /datum/holiday/spess
-	name = "День Космонавта"
+	name = "день Космонавта"
 	begin_day = 12
 	begin_month = APRIL
 	drone_hat = /obj/item/clothing/head/syndicatefake
@@ -186,7 +186,7 @@
 	return "В этот день более 600 лет назад товарищ Юрий Гагарин впервые отправился в космос!"
 
 /datum/holiday/fourtwenty
-	name = "День Четыре Двадцать"
+	name = "день Четыре Двадцать"
 	begin_day = 20
 	begin_month = APRIL
 
@@ -202,18 +202,18 @@
 	return pick("Пышечный Сектор |","Ассамский Сектор |","Улунгский Сектор |","Пу-эрский Сектор |","Сладкочаевый Сектор |","Зелёный Сектор |","Чёрный Сектор |")
 
 /datum/holiday/earth
-	name = "День Земли"
+	name = "день Земли"
 	begin_day = 22
 	begin_month = APRIL
 
 /datum/holiday/labor
-	name = "День Труда"
+	name = "день Труда"
 	begin_day = 1
 	begin_month = MAY
 	drone_hat = /obj/item/clothing/head/hardhat
 
 /datum/holiday/firefighter
-	name = "День Пожарника"
+	name = "день Пожарника"
 	begin_day = 4
 	begin_month = MAY
 	drone_hat = /obj/item/clothing/head/hardhat/red
@@ -222,7 +222,7 @@
 	return pick("Горящий Сектор |","Пылающий Сектор |","Плазменный Сектор |","Огненный Сектор |")
 
 /datum/holiday/pobeda
-	name = "День Победы"
+	name = "день Победы"
 	begin_day = 9
 	begin_month = MAY
 
@@ -230,7 +230,7 @@
 	return pick("Ветеранский Сектор |","Победный Сектор |","Ряженый Сектор |","Окопный Сектор |","Дедовский Сектор |")
 
 /datum/holiday/bee
-	name = "День пчёл"
+	name = "день пчёл"
 	begin_day = 20
 	begin_month = MAY
 	drone_hat = /obj/item/clothing/mask/rat/bee
@@ -239,18 +239,18 @@
 	return pick("Пчёлочный Сектор |","Медовый Сектор |","Роевой Сектор |","Бжжжжжж Сектор |","Медовуховый Сектор |","Жужжащий Сектор |")
 
 /datum/holiday/summersolstice
-	name = "День Летнего Солнцестояния"
+	name = "день Летнего Солнцестояния"
 	begin_day = 21
 	begin_month = JUNE
 
 /datum/holiday/doctor
-	name = "День Доктора"
+	name = "день Доктора"
 	begin_day = 1
 	begin_month = JULY
 	drone_hat = /obj/item/clothing/head/nursehat
 
 /datum/holiday/ufo
-	name = "День НЛО"
+	name = "день НЛО"
 	begin_day = 2
 	begin_month = JULY
 	drone_hat = /obj/item/clothing/mask/facehugger/dead
@@ -259,7 +259,7 @@
 	return pick("Ayy Сектор |","Правдивый Сектор |","Цукалосный Сектор |","Малдеровый Сектор |","Скаллевый Сектор |") //Yes it is!
 
 /datum/holiday/usa
-	name = "День Независимости США"
+	name = "день Независимости США"
 	begin_day = 4
 	begin_month = JULY
 
@@ -288,12 +288,12 @@
 	return pick("Australian Сектор |","New Zealand Сектор |","Poppy Сектор |", "Southern Cross Сектор |")
 
 /datum/holiday/writer
-	name = "День Писателя"
+	name = "день Писателя"
 	begin_day = 8
 	begin_month = JULY
 
 /datum/holiday/france
-	name = "День взятия Бастилии"
+	name = "день взятия Бастилии"
 	begin_day = 14
 	begin_month = JULY
 	drone_hat = /obj/item/clothing/head/beret
@@ -305,7 +305,7 @@
 	return "Ты слышишь, как люди поют?"
 
 /datum/holiday/friendship
-	name = "День дружбы"
+	name = "день дружбы"
 	begin_day = 30
 	begin_month = JULY
 
@@ -313,7 +313,7 @@
 	return "Есть волшебный [name]!"
 
 /datum/holiday/pirate
-	name = "День Говорения-как-пират"
+	name = "день Говорения-как-пират"
 	begin_day = 19
 	begin_month = SEPTEMBER
 	drone_hat = /obj/item/clothing/head/pirate
@@ -325,7 +325,7 @@
 	return pick("Yarr Сектор |","Scurvy Сектор |","Yo-ho-ho Сектор |")
 
 /datum/holiday/programmers
-	name = "День Программиста"
+	name = "день Программиста"
 
 /datum/holiday/programmers/shouldCelebrate(dd, mm, yyyy, ddd) //Programmer's day falls on the 2^8th day of the year
 	if(mm == 9)
@@ -341,7 +341,7 @@
 	return pick("</span> |","DEBUG |","NULL |","/list |","EVENT PREFIX NOT FOUND |") //Portability
 
 /datum/holiday/questions
-	name = "День Глупых Вопросов"
+	name = "день Глупых Вопросов"
 	begin_day = 28
 	begin_month = SEPTEMBER
 
@@ -349,7 +349,7 @@
 	return "Имеете [name]?"
 
 /datum/holiday/animal
-	name = "День Животных"
+	name = "день Животных"
 	begin_day = 4
 	begin_month = OCTOBER
 
@@ -357,13 +357,13 @@
 	return pick("Parrot Сектор |","Corgi Сектор |","Cat Сектор |","Pug Сектор |","Goat Сектор |","Fox Сектор |")
 
 /datum/holiday/smile
-	name = "День Улыбок"
+	name = "день Улыбок"
 	begin_day = 7
 	begin_month = OCTOBER
 	drone_hat = /obj/item/clothing/head/papersack/smiley
 
 /datum/holiday/boss
-	name = "День Босса"
+	name = "день Босса"
 	begin_day = 16
 	begin_month = OCTOBER
 	drone_hat = /obj/item/clothing/head/that
@@ -382,7 +382,7 @@
 	return pick("Bone-Rattling Сектор |","Mr. Bones' Own Сектор |","2SPOOKY Сектор |","Spooky Сектор |","Scary Сектор |","Skeletons Сектор |")
 
 /datum/holiday/vegan
-	name = "День Вегана"
+	name = "день Вегана"
 	begin_day = 1
 	begin_month = NOVEMBER
 
@@ -390,7 +390,7 @@
 	return pick("Tofu Сектор |", "Tempeh Сектор |", "Seitan Сектор |", "Tofurkey Сектор |")
 
 /datum/holiday/october_revolution
-	name = "День, когда ебанные коммунисты взяли эту страну."
+	name = "день, когда ебанные коммунисты взяли эту страну."
 	begin_day = 6
 	begin_month = NOVEMBER
 	end_day = 7
@@ -399,26 +399,26 @@
 	return pick("Коммунистический Сектор |", "Советский Сектор |", "Большевиковский Сектор |", "Социалистический Сектор |", "Красный Сектор |", "Рабочий Сектор |")
 
 /datum/holiday/kindness
-	name = "День доброты"
+	name = "день доброты"
 	begin_day = 13
 	begin_month = NOVEMBER
 
 /datum/holiday/flowers
-	name = "День цветов"
+	name = "день цветов"
 	begin_day = 19
 	begin_month = NOVEMBER
 	drone_hat = /obj/item/clothing/head/peaceflower
 
 /datum/holiday/hello
-	name = "'Привет' День"
+	name = "день ПРИВЕТОВ"
 	begin_day = 21
 	begin_month = NOVEMBER
 
 /datum/holiday/hello/greet()
-	return pick("Aloha Сектор |", "Bonjour Сектор |", "Hello Сектор |", "Hi Сектор |", "Greetings Сектор |", "Salutations Сектор |", "Bienvenidos Сектор |", "Hola Сектор |", "Howdy Сектор |", "Ni hao Сектор |", "Guten Tag Сектор |", "Konnichiwa Сектор |", "G'day cunt Сектор |")
+	return pick("Aloha Сектор |", "Bonjour Сектор |", "Hello Сектор |", "Hi Сектор |", "Greetings Сектор |", "Salutations Сектор |", "Bienvenidos Сектор |", "Hola Сектор |", "Howdy Сектор |", "Ni hao Сектор |", "Guten Tag Сектор |", "Konnichiwa Сектор |", "G'day cunt Сектор |", "Здорова Сектор |")
 
 /datum/holiday/human_rights
-	name = "День прав человека"
+	name = "день прав человека"
 	begin_day = 10
 	begin_month = DECEMBER
 
@@ -447,7 +447,7 @@
 	end_day = 1
 
 /datum/holiday/lifeday
-	name = "День Жизни"
+	name = "день Жизни"
 	begin_day = 17
 	begin_month = NOVEMBER
 
@@ -492,7 +492,7 @@
 	return "Приятных новогодних праздников!"
 
 /datum/holiday/boxing
-	name = "День подарков"
+	name = "день подарков"
 	begin_day = 26
 	begin_month = DECEMBER
 
@@ -550,7 +550,7 @@
 	return pick("Fluffy Сектор |","Bunny Сектор |","Easter Сектор |","Egg Сектор |")
 
 /datum/holiday/ianbirthday
-	name = "День Рождения Яна" //github.com/tgstation/tgstation/commit/de7e4f0de0d568cd6e1f0d7bcc3fd34700598acb
+	name = "день Рождения Яна" //github.com/tgstation/tgstation/commit/de7e4f0de0d568cd6e1f0d7bcc3fd34700598acb
 	begin_month = SEPTEMBER
 	begin_day = 9
 	end_day = 10

@@ -275,6 +275,8 @@
 						prefs.erppref = value
 				if("noncon_pref")
 					if(prefs.nonconpref == value)
+						message_admins("[parent_mob.real_name] меняет параметр Нон-Кон на [value].")
+						log_admin("[parent_mob.real_name] меняет параметр Нон-Кон на [value].")
 						return FALSE
 					else
 						prefs.nonconpref = value

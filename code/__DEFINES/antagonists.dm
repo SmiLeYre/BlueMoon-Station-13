@@ -1,5 +1,4 @@
 #define TRAITOR_HUMAN /datum/traitor_class/human/freeform
-#define TRAITOR_INTEQ /datum/traitor_class/human/inteq_agents
 #define TRAITOR_AI /datum/traitor_class/ai
 
 #define NUKE_RESULT_FLUKE 0

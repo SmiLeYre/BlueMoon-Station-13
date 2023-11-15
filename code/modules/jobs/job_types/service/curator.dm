@@ -49,7 +49,7 @@
 
 	//belt = /obj/item/pda/syndicate/no_deto
 
-	shoes = /obj/item/clothing/shoes/jackboots/tall
+	shoes = /obj/item/clothing/shoes/jackboots/tall_default
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/util
 	l_hand = /obj/item/storage/bag/books

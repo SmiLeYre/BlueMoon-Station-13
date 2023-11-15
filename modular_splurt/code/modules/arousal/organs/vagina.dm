@@ -15,8 +15,9 @@
 	if(!. || !linked_organ)
 		return
 
-	if(get_size(owner) < 1.25 && !HAS_TRAIT(owner,TRAIT_MESSY))
+	if(!HAS_TRAIT(owner,TRAIT_MESSY))
 		return
+
 	// get target objects
 	var/turf/target_turf = get_turf(owner)
 	if(!istype(target_turf))

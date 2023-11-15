@@ -73,7 +73,7 @@
 	if(!. && !silent)
 		to_chat(H, "<span class='warning'>Твой [name] не в состоянии производить собственную жидкость, ведь у него отсутствуют органы для этого.</span>")
 
-/mob/living/carbon/human/proc/do_climax(datum/reagents/R, atom/target, obj/item/organ/genital/sender, spill, cover = FALSE, obj/item/organ/genital/receiver, anonymous = FALSE)
+/mob/living/carbon/human/proc/do_climax(datum/reagents/R, atom/target, obj/item/organ/genital/sender, spill = TRUE, cover = FALSE, obj/item/organ/genital/receiver, anonymous = FALSE)
 	if(!sender)
 		return
 	if(!target || !R)
@@ -89,24 +89,54 @@
 		to_chat(src, "<span class='userlove'>Ты чувствуешь, как презерватив наполняется изнутри твоей спермой!</span>")
 		R.trans_to(condomning, R.total_volume)
 	else
-		if(spill && R.total_volume >= 5)
-			R.reaction(turfing ? target : target.loc, TOUCH, 1, 0)
+		if(spill && R.total_volume > 0)
+			var/turf/location = get_turf(target)
+			var/obj/effect/decal/cleanable/semen/S = locate(/obj/effect/decal/cleanable/semen) in location
+			var/obj/effect/decal/cleanable/semen/femcum/F = locate(/obj/effect/decal/cleanable/semen/femcum) in location
+			if(istype(sender, /obj/item/organ/genital/penis))
+				if(S)
+					if(R.trans_to(S, R.total_volume))
+						S.blood_DNA |= get_blood_dna_list()
+						S.update_icon()
+						return
+				else
+					var/obj/effect/decal/cleanable/semendrip/drip = (locate(/obj/effect/decal/cleanable/semendrip) in location) || new(location)
+					if(R.trans_to(drip, R.total_volume))
+						drip.blood_DNA |= get_blood_dna_list()
+						drip.update_icon()
+						if(drip.reagents.total_volume >= 10)
+							S = new(location)
+							drip.reagents.trans_to(S, drip.reagents.total_volume)
+							S.blood_DNA |= drip.blood_DNA
+							S.update_icon()
+							qdel(drip)
+						return
+			if(istype(sender, /obj/item/organ/genital/vagina))
+				if(F)
+					if(R.trans_to(F, R.total_volume))
+						F.blood_DNA |= get_blood_dna_list()
+						F.update_icon()
+						return
+				else
+					F = new(location)
+					if(R.trans_to(F, R.total_volume))
+						F.blood_DNA |= get_blood_dna_list()
+						F.update_icon()
+						return
+
 		if(!turfing)
 			// sandstorm edit - advanced cum drip
 			var/amount_to_transfer = R.total_volume * (spill ? sender.fluid_transfer_factor : 1)
+			var/mob/living/carbon/human/cummed_on = target
+			if(istype(cummed_on))
+				var/datum/reagents/copy = new()
+				R.copy_to(copy, R.total_volume)
+				// Nope, on the mouth doesn't count.
+				if(istype(sender, /obj/item/organ/genital/penis) && (istype(receiver, /obj/item/organ/genital/vagina) || istype(receiver, /obj/item/organ/genital/anus)))	//проблема с портальными трусами, работает 50/50
+					if(copy.total_volume > 0)
+						cummed_on.apply_status_effect(STATUS_EFFECT_DRIPPING_CUM, copy, get_blood_dna_list(), receiver)
 			R.trans_to(target, amount_to_transfer, log = TRUE)
-			if(ishuman(target) && (istype(sender, /obj/item/organ/genital/penis)))
-				var/datum/reagent/consumable/semen/salty_drink = src.reagents.get_reagent(sender.linked_organ.fluid_id)
-				if(salty_drink)
-					if(istype(receiver, /obj/item/organ/genital/anus))
-						var/obj/item/organ/genital/anus/rec = getorganslot(ORGAN_SLOT_ANUS)
-						salty_drink.amount_to_drip += amount_to_transfer
-						rec.filled = TRUE
-					if(istype(receiver, /obj/item/organ/genital/vagina))
-						var/obj/item/organ/genital/vagina/rec = getorganslot(ORGAN_SLOT_VAGINA)
-						salty_drink.amount_to_drip += amount_to_transfer
-						rec.filled = TRUE
-			//
+		//
 	sender.last_orgasmed = world.time
 	R.clear_reagents()
 	//sandstorm edit - gain momentum from dirty deeds.
@@ -141,10 +171,10 @@
 	if(!fluid_source)
 		return
 	if(mb_time)
-		to_chat(src,"<span class='userlove'>Вы начали [G.masturbation_verb] прямо над <b>[container]</b>. [G.name] в готовности к этому...</span>")
+		to_chat(src,"<span class='userlove'>Вы начали [G.masturbation_verb] прямо над <b>[container]</b>. [G.ru_name_capital] в готовности к этому...</span>")
 		if(!do_after(src, mb_time, target = src) || !in_range(src, container) || !G.climaxable(src, TRUE))
 			return
-	to_chat(src,"<span class='userlove'>[G.name] стимулируется вашими же усилиями, вы пытаетесь наполнить <b>[container]</b>.</span>")
+	to_chat(src,"<span class='userlove'>[G.ru_name_capital] стимулируется вашими же усилиями, вы пытаетесь наполнить <b>[container]</b>.</span>")
 	message_admins("[ADMIN_LOOKUPFLW(src)] использует [ru_ego()] [G.name], чтобы наполнить <b>[container]</b> [G.get_fluid_name()].")
 	log_consent("[key_name(src)] использует [ru_ego()] [G.name], чтобы наполнить <b>[container]</b> [G.get_fluid_name()].")
 	do_climax(fluid_source, container, G, FALSE, cover = TRUE)
@@ -241,7 +271,7 @@
 			to_chat(src, "<span class='warning'>Вы должны подождать [DisplayTimeText((mb_cd_timer - world.time), TRUE)] до того, как можете сделать это снова!</span>")
 		return
 
-	if(!client?.prefs.arousable || !has_dna())
+	if(!(client?.prefs.arousable || !ckey) || !has_dna())
 		return
 
 	if(HAS_TRAIT(src, TRAIT_NEVERBONER))

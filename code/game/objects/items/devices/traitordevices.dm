@@ -201,8 +201,8 @@ effective or pretty fucking useless.
 	attack_verb = list("whipped", "lashed", "disciplined")
 
 	var/mob/living/carbon/human/user = null
-	var/charge = 300
-	var/max_charge = 300
+	var/charge = 3000
+	var/max_charge = 3000
 	var/on = FALSE
 	var/old_alpha = 50
 	actions_types = list(/datum/action/item_action/toggle)
@@ -254,6 +254,10 @@ effective or pretty fucking useless.
 			charge = min(max_charge,charge + 50) //Charge in the dark
 		animate(user,alpha = clamp(255 - charge,0,255),time = 10)
 
+/obj/item/shadowcloak/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	. = ..()
+	if(on)
+		charge = max(0, charge - 1500)
 
 /obj/item/jammer
 	name = "radio jammer"

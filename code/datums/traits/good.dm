@@ -115,22 +115,6 @@
 	H.equip_to_slot_if_possible(musicaltuner, ITEM_SLOT_BACKPACK)
 	H.regenerate_icons()
 
-/datum/quirk/photographer
-	name = "Фотограф"
-	desc = "Вы знаете как пользоваться фотоаппаратом, сокращая время между фотографией."
-	value = 1
-	mob_trait = TRAIT_PHOTOGRAPHER
-	gain_text = "<span class='notice'>Вы знаете всё о фотографиях.</span>"
-	lose_text = "<span class='danger'>Вы забываете, как работают фотокамеры.</span>"
-	medical_record_text = "Пациент упоминает фотографию, как хобби для снятия стресса."
-
-/datum/quirk/photographer/on_spawn()
-	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/camera/camera = new(get_turf(H))
-	H.put_in_hands(camera)
-	H.equip_to_slot(camera, ITEM_SLOT_BACKPACK) //SPLURT Edit
-	H.regenerate_icons()
-
 /datum/quirk/selfaware
 	name = "Сознательный"
 	desc = "Вы хорошо знаете собственное тело и можете точно оценивать серьёзность ваших ран."

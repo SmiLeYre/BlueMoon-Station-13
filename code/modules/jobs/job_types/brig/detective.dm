@@ -64,7 +64,7 @@
 	ears = /obj/item/radio/headset/headset_sec/alt
 	uniform = /obj/item/clothing/under/rank/security/officer/util
 	neck = /obj/item/clothing/neck/tie/black
-	shoes = /obj/item/clothing/shoes/jackboots/tall
+	shoes = /obj/item/clothing/shoes/jackboots/tall_default
 	suit = /obj/item/clothing/suit/det_suit
 	gloves = /obj/item/clothing/gloves/combat
 	head = /obj/item/clothing/head/fedora/det_hat
