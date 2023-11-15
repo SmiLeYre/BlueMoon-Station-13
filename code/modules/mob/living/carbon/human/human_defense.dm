@@ -380,7 +380,12 @@
 	for(var/obj/item/bodypart/L in src.bodyparts)
 		if(L.is_robotic_limb())
 			if(!informed)
-				to_chat(src, "<span class='userdanger'>Вы ощущаете острую боль от перегрузки вашей роботизированной конечности.</span>")
+				// BLUEMOON ADD START
+				if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
+					to_chat(src, "<span class='userdanger'>Alert: перегрузка конечностей.</span>")
+				else
+				// BLUEMOON ADD END
+					to_chat(src, "<span class='userdanger'>Вы ощущаете острую боль от перегрузки вашей роботизированной конечности.</span>")
 				informed = TRUE
 			L.receive_damage(0,severity/10)
 			if(!do_not_stun)	//Tiny bit better than checking for the trait another six times in succession

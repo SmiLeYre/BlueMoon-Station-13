@@ -26,6 +26,15 @@
 	var/operated = FALSE	//whether the heart's been operated on to fix some of its damages
 	var/key_for_dreamer = null
 
+// BLUEMOON ADD START
+/obj/item/organ/heart/Insert(mob/living/carbon/organ_mob, special, drop_if_replaced)
+	. = ..()
+	if(HAS_TRAIT(organ_mob, TRAIT_ROBOTIC_ORGANISM))
+		low_threshold_passed = span_info("[name]: обнаружены умеренные повреждения. Риск отказа системы. Рекомендуется замена.")
+		high_threshold_passed = span_warning("[name]: обнаружены тяжёлые повреждения. Риск отказа системы. Требуется замена.")
+		now_fixed = span_info("[name]: функционирование системы восстановлено.")
+// BLUEMOON ADD END
+
 /obj/item/organ/heart/update_icon_state()
 	if(beating)
 		icon_state = "[icon_base]-on"

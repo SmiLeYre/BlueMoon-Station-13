@@ -109,6 +109,19 @@
 	// see code\modules\surgery\limb_augmentation.dm, or code\game\machinery\limbgrower.dm
 	var/forcereplace = FALSE
 
+/obj/item/bodypart/New()
+	. = ..()
+	// BLUEMOON ADD START
+	if(is_robotic_limb())
+		light_brute_msg = "искрится"
+		medium_brute_msg = "покрыта множеством вмятин"
+		heavy_brute_msg = "отваливается"
+
+		light_burn_msg = "покрыта сажей"
+		medium_burn_msg = "обуглена"
+		heavy_burn_msg = "расплавлена"
+	// BLUEMOON ADD END
+
 /obj/item/bodypart/examine(mob/user)
 	. = ..()
 	if(brute_dam > DAMAGE_PRECISION)
