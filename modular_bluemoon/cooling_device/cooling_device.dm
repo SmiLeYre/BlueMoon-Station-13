@@ -41,7 +41,7 @@
 	Cooling efficient was significantly reduced, but it still can be used for planetary operations."
 	slot_flags = ITEM_SLOT_BELT |  ITEM_SLOT_BACK | ITEM_SLOT_OCLOTHING
 	force = 5 // маленький, но далеко не лёгкий
-	max_cooling = 4 // этого вполне хватает для планетоида
+	max_cooling = 6 // этого вполне хватает для планетоида
 	charge_consumption = 3.3 // 30 минут работы при полном заряде
 	max_charge = 6000
 	custom_materials = list(/datum/material/iron = 22000, /datum/material/glass = 3000)
