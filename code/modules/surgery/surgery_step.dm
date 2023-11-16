@@ -67,7 +67,7 @@
 	if(user.mind)
 		speed_mod = user.mind.action_skill_mod(/datum/skill/numerical/surgery, speed_mod, THRESHOLD_UNTRAINED, FALSE)
 	var/delay = time * speed_mod
-	if(target == user)
+	if(target == user && !HAS_TRAIT(target, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON EDIT - добавлена проверка на роботизированный организм
 		if(HAS_TRAIT(target, TRAIT_PAINKILLER))
 			display_results(user, self_message = "<span class='notice'>You begin performing a surgery on yourself with painkillers, you'll be able to do it faster than without it.</span>")
 			delay = delay * 7

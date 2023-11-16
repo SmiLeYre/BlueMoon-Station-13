@@ -63,7 +63,7 @@
 	// BLUEMOON ADD START - синтетики могут пить свою же "кровь" (гидравлическую жидкость), чтобы восполнять её запасы
 	if(HAS_TRAIT(C, TRAIT_ROBOTIC_ORGANISM))
 		if(data && (data["blood_type"] in get_safe_blood(C.dna.blood_type)))
-			C.blood_volume = max(C.blood_volume + round(metabolization_rate, 0.1), 0) //восполнение крови в соотношении 1 к 1
+			C.blood_volume = C.blood_volume + clamp(volume, 0, metabolization_rate) //восполнение крови в соотношении 1 к 1
 	// BLUEMOON ADD END
 	..()
 
