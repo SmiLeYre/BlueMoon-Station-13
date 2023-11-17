@@ -317,6 +317,7 @@
 	if(pulling.anchored || pulling.move_resist > move_force || !pulling.Adjacent(src))
 		stop_pulling()
 		return FALSE
+	/* TODO - убрать (перенесено в can_be_pulled)
 	// BLUEMOON ADDITION AHEAD - проверка на возможность тащить мышкой сверхтяжёлого персонажа
 	if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY_SUPER))
 		var/can_pull = FALSE
@@ -346,6 +347,7 @@
 			stop_pulling()
 			return
 	// BLUEMOON ADDITION END
+	*/
 	if(isliving(pulling))
 		var/mob/living/L = pulling
 		if(L.buckled && L.buckled.buckle_prevents_pull) //if they're buckled to something that disallows pulling, prevent it
@@ -388,6 +390,7 @@
 		if(pulling.anchored || pulling.move_resist > move_force)
 			stop_pulling()
 			return
+		/* TODO: убрать (перенесено в can_be_pulled)
 		// BLUEMOON ADDITION AHEAD - Проверка на возможность ТЯНУТЬ сверхтяжёлого персонажа
 		if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY_SUPER))
 			var/can_pull = FALSE
@@ -417,6 +420,7 @@
 				stop_pulling()
 				return
 		// BLUEMOON ADDITION END
+		*/
 	if(pulledby && moving_diagonally != FIRST_DIAG_STEP && get_dist(src, pulledby) > 1)		//separated from our puller and not in the middle of a diagonal move.
 		pulledby.stop_pulling()
 
