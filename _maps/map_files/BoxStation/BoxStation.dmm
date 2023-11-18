@@ -9816,7 +9816,7 @@
 "aLD" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/newscaster{
-	pixel_x = -32
+	pixel_y = 32
 	},
 /obj/machinery/light{
 	dir = 1
@@ -12055,7 +12055,7 @@
 "aWE" = (
 /obj/machinery/computer/med_data,
 /obj/machinery/newscaster{
-	pixel_x = -32
+	pixel_y = 32
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -12659,7 +12659,7 @@
 /area/command/meeting_room)
 "aZz" = (
 /obj/machinery/newscaster{
-	pixel_x = -32
+	pixel_y = 32
 	},
 /turf/open/floor/wood,
 /area/command/meeting_room)
@@ -15023,7 +15023,7 @@
 "bhl" = (
 /obj/structure/filingcabinet,
 /obj/machinery/newscaster{
-	pixel_x = -32
+	pixel_y = 32
 	},
 /obj/effect/turf_decal/tile/red{
 	dir = 1
@@ -22260,7 +22260,7 @@
 /area/security/checkpoint/supply)
 "byN" = (
 /obj/machinery/newscaster{
-	pixel_x = -32
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel,
 /area/hallway/primary/central)
@@ -28631,7 +28631,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/newscaster{
-	pixel_x = -32
+	pixel_y = 32
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /obj/effect/turf_decal/tile/red{
@@ -51065,7 +51065,7 @@
 /area/maintenance/starboard/fore)
 "jHM" = (
 /obj/machinery/newscaster{
-	pixel_x = -32
+	pixel_y = 32
 	},
 /obj/structure/disposalpipe/trunk,
 /obj/machinery/disposal/bin,
