@@ -55804,7 +55804,8 @@
 "hqK" = (
 /obj/machinery/door/airlock/maintenance/external{
 	name = "Sauna";
-	id_tag = "saunab"
+	id_tag = "saunab";
+	id = "Sauna"
 	},
 /obj/machinery/door/firedoor,
 /obj/structure/fans/tiny,
@@ -75620,7 +75621,7 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	id = "Sauna";
+	id = s;
 	name = "Cabin Bolt Control";
 	normaldoorcontrol = 1;
 	specialfunctions = 4;
@@ -82232,7 +82233,8 @@
 "tEv" = (
 /obj/machinery/door/airlock/maintenance/external{
 	name = "Sauna";
-	id_tag = "saunab"
+	id_tag = "saunab";
+	id = "Sauna"
 	},
 /obj/structure/fans/tiny,
 /obj/machinery/door/firedoor,
