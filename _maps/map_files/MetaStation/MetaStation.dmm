@@ -75621,7 +75621,7 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	id = s;
+	id = "Sauna";
 	name = "Cabin Bolt Control";
 	normaldoorcontrol = 1;
 	specialfunctions = 4;
@@ -82234,7 +82234,7 @@
 /obj/machinery/door/airlock/maintenance/external{
 	name = "Sauna";
 	id_tag = "saunab";
-	id = "Sauna"
+	id = s
 	},
 /obj/structure/fans/tiny,
 /obj/machinery/door/firedoor,
