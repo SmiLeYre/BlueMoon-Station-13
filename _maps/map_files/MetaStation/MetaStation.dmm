@@ -16712,10 +16712,6 @@
 	},
 /turf/open/floor/wood,
 /area/service/bar)
-"brn" = (
-/obj/effect/spawner/structure/window/reinforced,
-/turf/closed/wall,
-/area/service/sauna)
 "bro" = (
 /obj/structure/flora/rock/pile,
 /obj/machinery/vending/cola/buzz_fuzz,
@@ -75624,7 +75620,7 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	id = "saunab";
+	id = "Sauna";
 	name = "Cabin Bolt Control";
 	normaldoorcontrol = 1;
 	specialfunctions = 4;
@@ -134489,7 +134485,7 @@ gVH
 wKW
 aNz
 gRa
-brn
+gRa
 gRa
 gRa
 gRa
