@@ -107,6 +107,7 @@
 	icon_state = ""
 	slot_flags = ITEM_SLOT_FEET | ITEM_SLOT_HEAD | ITEM_SLOT_ID | ITEM_SLOT_BACK | ITEM_SLOT_NECK
 	w_class = null //handled by their size
+	body_parts_covered = FEET // BLUEMOON ADD - чтобы нельзя было брать более 1 персонажа в ноги, TODO - сделать возможность брать несколько маленьких
 
 /obj/item/clothing/head/mob_holder/micro/container_resist(mob/living/user)
 	if(user.incapacitated())
