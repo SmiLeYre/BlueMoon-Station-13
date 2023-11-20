@@ -82234,7 +82234,7 @@
 /obj/machinery/door/airlock/maintenance/external{
 	name = "Sauna";
 	id_tag = "saunab";
-	id = s
+	id = "Sauna"
 	},
 /obj/structure/fans/tiny,
 /obj/machinery/door/firedoor,
