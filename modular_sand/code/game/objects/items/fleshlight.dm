@@ -90,6 +90,7 @@
 	var/obj/item/clothing/underwear/briefs/panties/portalpanties/portalunderwear
 	var/targetting      = CUM_TARGET_PENIS
 	var/useable 		= FALSE
+	var/list/available_panties = list()
 
 /obj/item/portallight/attack_self(mob/user)
 	. = ..()
@@ -110,6 +111,18 @@
 		. += "<span class='notice'>Устройство не сопряжено. Для сопряжения проведите устройством по паре трусиков портала.</span>"
 	else
 		. += "<span class='notice'>Устройство сопряжено и ожидает использования по прямому назначению.</span>"
+	if(available_panties.len)
+		. += "Alt-Click to choose panties."
+
+/obj/item/portallight/AltClick(mob/user)
+	. = ..()
+	var/obj/item/clothing/underwear/briefs/panties/portalpanties/to_connect
+	if(available_panties.len)
+		to_connect = tgui_input_list(user, "Choose...", "Available panties", available_panties, null)
+	if(to_connect)
+		portalunderwear = to_connect //pair the panties on the fleshlight.
+		icon_state = "paired" //we are paired!
+		to_connect.update_portal()
 
 /obj/item/portallight/update_appearance(updates)
 	. = ..()
@@ -577,6 +590,9 @@
 		useable = FALSE
 
 /obj/item/portallight/Destroy()
+	if(available_panties.len)
+		for(var/obj/item/clothing/underwear/briefs/panties/portalpanties/temp in available_panties)
+			temp.portallight -= src
 	if(portalunderwear)
 		portalunderwear.portallight -= src
 		if(isliving(portalunderwear.loc))
@@ -635,24 +651,26 @@
 /obj/item/clothing/underwear/briefs/panties/portalpanties/attackby(obj/item/I, mob/living/user) //pairing
 	if(istype(I, /obj/item/portallight))
 		var/obj/item/portallight/P = I
-		if(!P.portalunderwear) //make sure it aint linked to someone else
+		if(!(P in portallight))
+			if(!portallight.len)
+				RegisterSignal(user, COMSIG_PARENT_QDELETING, .proc/drop_out)
 			portallight += P //pair the fleshlight
-			P.portalunderwear = src //pair the panties on the fleshlight.
-			P.icon_state = "paired" //we are paired!
+			P.available_panties += src
+			P.portalunderwear = src
+			P.icon_state = "paired"
+			update_portal()
 			playsound(src, 'sound/machines/ping.ogg', 50, FALSE)
 			to_chat(user, "<span class='notice'>[P] был успешно связан.</span>")
-			update_portal()
-			RegisterSignal(user, COMSIG_PARENT_QDELETING, .proc/drop_out)
-		else if(P in portallight)
+		else
 			portallight -= P
-			P.portalunderwear = null
-			P.updatesleeve()
-			P.icon_state = "unpaired"
+			P.available_panties -= src
+			if(P.portalunderwear == src || !P.available_panties.len)
+				P.portalunderwear = null
+				P.updatesleeve()
+				P.icon_state = "unpaired"
 			to_chat(user, "<span class='notice'>[P] был успешно отвязан.</span>")
 			if(!portallight.len)
 				UnregisterSignal(user, COMSIG_PARENT_QDELETING)
-		else
-			to_chat(user, "<span class='notice'>[P] уже находится в паре. Отвяжите его от предыдущего устройства.</span>")
 	else
 		..() //just allows people to hit it with other objects, if they so wished.
 
@@ -709,6 +727,7 @@
 		moveToNullspace() // loc cannot be human so let's destroy ourselves out of anything
 		for(var/obj/item/portallight/temp in portallight)
 			temp.portalunderwear = null
+			temp.available_panties -= src
 			temp.updatesleeve()
 	. = ..()
 
@@ -725,11 +744,12 @@
 /obj/item/clothing/underwear/briefs/panties/portalpanties/proc/update_portal()
 	if(portallight.len)
 		for(var/obj/item/portallight/P in portallight)
-			if(targetting == CUM_TARGET_PENIS)
-				P.icon = 'modular_sand/icons/obj/dildo.dmi'
-			else
-				P.icon = 'modular_sand/icons/obj/fleshlight.dmi'
-			P.updatesleeve()
+			if(P.portalunderwear == src)
+				if(targetting == CUM_TARGET_PENIS)
+					P.icon = 'modular_sand/icons/obj/dildo.dmi'
+				else
+					P.icon = 'modular_sand/icons/obj/fleshlight.dmi'
+				P.updatesleeve()
 
 /obj/item/storage/box/portallight
 	name =  "Portal Fleshlight and Underwear"
