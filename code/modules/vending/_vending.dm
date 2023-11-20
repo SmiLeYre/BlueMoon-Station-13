@@ -916,7 +916,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 		// 	return
 			account = C?.registered_account
 		else
-			account = SSeconomy.get_dep_account(ACCOUNT_CIV)
+			account = SSeconomy.get_dep_account(ACCOUNT_SCI)
 
 		var/discounts = FALSE
 		try // too lazy, and i do NOT want to use for() to check, as & is faster
@@ -1189,7 +1189,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 					return
 				account = C.registered_account
 			else
-				account = SSeconomy.get_dep_account(ACCOUNT_CIV)
+				account = SSeconomy.get_dep_account(ACCOUNT_SCI)
 			for(var/obj/O in contents)
 				if(format_text(O.name) == N)
 					S = O
