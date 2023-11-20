@@ -126,8 +126,8 @@
 		to_chat(user, "This can't be eaten!")
 		return FALSE
 
-	// BLUEMOON ADD START - сверхтяжёлых персонажей нельзя перемещать с помощью Vore
-	if(HAS_TRAIT(prey, TRAIT_BLUEMOON_HEAVY_SUPER))
+	// BLUEMOON ADD START - сверхтяжёлых персонажей нельзя перемещать с помощью Vore, если жрёт не такой же сверхтяж
+	if(HAS_TRAIT(prey, TRAIT_BLUEMOON_HEAVY_SUPER) && !HAS_TRAIT(pred, TRAIT_BLUEMOON_HEAVY_SUPER))
 		to_chat(user, span_warning("[pred] слишком тяжёлый для этого!"))
 		return FALSE
 	// BLUEMOON ADD END
