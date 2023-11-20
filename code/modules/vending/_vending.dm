@@ -779,7 +779,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 	. = list()
 	var/obj/item/card/id/C
 	if(iscyborg(user) || isAI(user) || isdrone(user))
-		var/datum/bank_account/Civ = SSeconomy.get_dep_account(ACCOUNT_CIV)
+		var/datum/bank_account/Civ = SSeconomy.get_dep_account(ACCOUNT_SCI)
 		.["user"] = list()
 		.["user"]["name"] = user.name
 		.["user"]["cash"] = Civ.account_balance
