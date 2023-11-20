@@ -51,7 +51,7 @@
 			else
 				surgery.status--
 	// BLUEMOON ADD START - перенесено сюда оповещение о неправильном инструменте для предотвращения лишнего дубля
-	if(!success && !tool.tool_behaviour == TOOL_CAUTERY) // каутеры for some reason вызывают ошибки, более красивого фикса не придумал
+	if(!success && !tool?.tool_behaviour == TOOL_CAUTERY) // каутеры for some reason вызывают ошибки, более красивого фикса не придумал
 		to_chat(user, "<span class='warning'>This step requires a different tool!</span>")
 	// BLUEMOON ADD END
 	return FALSE
@@ -111,8 +111,9 @@
 				advance = TRUE
 		else
 			// BLUEMOON ADD START - небольшое количество урон за провал этапа для избежания лёгкого брутфорса низкого шанса операций
-			var/obj/item/bodypart/affecting = target.get_bodypart(check_zone(user.zone_selected))
-			target.apply_damage(tool.force / 2, tool.damtype, affecting, wound_bonus = tool.wound_bonus, bare_wound_bonus = tool.bare_wound_bonus, sharpness = tool.sharpness)
+			if(tool)
+				var/obj/item/bodypart/affecting = target.get_bodypart(check_zone(user.zone_selected))
+				target.apply_damage(tool.force / 2, tool.damtype, affecting, wound_bonus = tool.wound_bonus, bare_wound_bonus = tool.bare_wound_bonus, sharpness = tool.sharpness)
 			// BLUEMOON ADD END
 			if(failure(user, target, target_zone, tool, surgery))
 				play_failure_sound(user, target, target_zone, tool, surgery)
