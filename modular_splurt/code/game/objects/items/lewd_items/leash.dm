@@ -98,7 +98,7 @@ Icons, maybe?
 			leashtime = 5
 		// BLUEMOON ADDITION START - свертяжей нельзя таскать поводком
 		if(HAS_TRAIT(C, TRAIT_BLUEMOON_HEAVY_SUPER)) // Сверхтяжёлые персонажи заставляют двигаться ЗА собой, если они на поводке
-			to_chat(user, span_notice("[C] is too heavy to be moved on leash. It would be useless."))
+			to_chat(user, span_warning("[C] is too heavy to be moved on leash. It would be useless."))
 			return
 		// BLUEMOON ADDITION END
 		if(do_mob(user, C, leashtime)) //do_mob adds a progress bar, but then we also check to see if they have a collar
