@@ -168,10 +168,13 @@
 		return
 
 	var/mob/old_pulled_mob
+	var/mob/old_pulling_mob
 	var/turf/old_src_loc = loc
 
 	if(pulling)
 		old_pulled_mob = pulling
+	if(pulledby)
+		old_pulling_mob = pulledby
 
 	forceMove(target.loc)
 
@@ -180,6 +183,10 @@
 		pulling = old_pulled_mob
 		old_pulled_mob.pulledby = src
 		update_pull_hud_icon()
+	if(old_pulling_mob)
+		pulledby = old_pulling_mob
+		old_pulling_mob.pulling = src
+		old_pulling_mob.update_pull_hud_icon()
 // BLUEMOON ADD END
 
 //Proc for scaling stamina damage on size difference
