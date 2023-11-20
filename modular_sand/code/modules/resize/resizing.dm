@@ -42,7 +42,7 @@
 				return TRUE
 
 		//Smaller person stepping under a larger person
-		if(COMPARE_SIZES(target, user) >= 2)
+		if(COMPARE_SIZES(target, user) >= 1.85 && target.a_intent == INTENT_HELP)
 			//user.forceMove(target.loc) BLUEMOON REMOVAL - пересено в micro_move_to_target_turf
 			micro_move_to_target_turf(target) // BLUEMOON ADD
 			now_pushing = 0
