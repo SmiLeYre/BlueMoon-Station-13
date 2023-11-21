@@ -1236,7 +1236,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	features["breasts_size"] = sanitize_inlist(features["breasts_size"], B_sizes, BREASTS_SIZE_DEF)
 	features["cock_length"] = sanitize_integer(features["cock_length"], min_D, max_D, COCK_SIZE_DEF)
-	features["cock_diameter_ratio"] = sanitize_integer(features["cock_diameter_ratio"], min_diameter_ratio, max_diameter_ratio, COCK_DIAMETER_RATIO_DEF)
+	features["cock_diameter_ratio"] = sanitize_num_clamp(features["cock_diameter_ratio"], min_diameter_ratio, max_diameter_ratio, COCK_DIAMETER_RATIO_DEF) // BLUEMOON EDIT - sanitize_integer заменён на sanitize_num_clamp, т.к. первый округляет значения, а по условиям округление не подходит
 	features["butt_size"] = sanitize_integer(features["butt_size"], min_B, max_B, BUTT_SIZE_DEF)
 	features["belly_size"] = sanitize_integer(features["belly_size"], min_belly, max_belly, BELLY_SIZE_DEF)
 	features["breasts_shape"] = sanitize_inlist(features["breasts_shape"], GLOB.breasts_shapes_list, DEF_BREASTS_SHAPE)
