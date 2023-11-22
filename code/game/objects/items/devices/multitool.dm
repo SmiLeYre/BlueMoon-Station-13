@@ -56,7 +56,7 @@
 	if(selected_io || buffer)
 		. += "<span class='notice'>Activate [src] to detach the data wire or clear buffer.</span>"
 	if(buffer)
-		. += "<span class='notice'>Its buffer contains [buffer].</span>"
+		. += "<span class='notice'>Its buffer contains <b>[buffer]</b>.</span>"
 
 /obj/item/multitool/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] puts the [src] to [user.ru_ego()] chest. It looks like [user.ru_who()] trying to pulse [user.ru_ego()] heart off!</span>")
