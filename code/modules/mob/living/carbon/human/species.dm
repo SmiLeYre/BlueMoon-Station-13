@@ -1601,7 +1601,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 	//The fucking TRAIT_FAT mutation is the dumbest shit ever. It makes the code so difficult to work with
 	if(HAS_TRAIT(H, TRAIT_FAT))//I share your pain, past coder.
-		if(H.overeatduration < 100)
+		if(H.overeatduration < 100) //And so do I.
 			to_chat(H, "<span class='notice'>You feel fit again!</span>")
 			REMOVE_TRAIT(H, TRAIT_FAT, OBESITY)
 			H.remove_movespeed_modifier(/datum/movespeed_modifier/obesity)
@@ -1613,6 +1613,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			//
 			H.update_inv_wear_suit()
 	else
+		if(HAS_TRAIT(H, TRAIT_INCUBUS || TRAIT_SUCCUBUS))
+			return //Imagine getting fat from hot load - Gardelin0
 		if(H.overeatduration >= 100)
 			to_chat(H, "<span class='danger'>You suddenly feel blubbery!</span>")
 			ADD_TRAIT(H, TRAIT_FAT, OBESITY)

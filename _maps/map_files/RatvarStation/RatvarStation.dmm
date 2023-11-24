@@ -51994,15 +51994,6 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/clockwork/reebe,
 /area/service/hydroponics/garden)
-"ggh" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/open/floor/clockwork/reebe,
-/area/ai_monitored/security/armory)
 "ggj" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/light/small{
@@ -76625,19 +76616,6 @@
 /obj/item/folder/red,
 /obj/structure/table,
 /obj/item/book/manual/splurt_space_law{
-	pixel_x = -3;
-	pixel_y = 5
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/machinery/newscaster/security_unit{
-	pixel_y = -30
-	},
-/obj/item/folder/red,
-/obj/item/folder/red,
-/obj/structure/table,
-/obj/item/book/manual/wiki/security_space_law{
 	pixel_x = -3;
 	pixel_y = 5
 	},
@@ -113902,7 +113880,7 @@ aaa
 adD
 aeq
 xZA
-ggh
+afg
 aga
 iJl
 ahH

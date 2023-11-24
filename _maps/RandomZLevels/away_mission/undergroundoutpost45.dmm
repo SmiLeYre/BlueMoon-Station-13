@@ -34,6 +34,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/awaystart,
 /obj/item/storage/firstaid/toxin,
+/obj/item/storage/firstaid/toxin,
 /turf/open/floor/plasteel{
 	dir = 8;
 	heat_capacity = 1e+006;
@@ -2119,7 +2120,6 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
-/obj/item/gun/energy/laser,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -2280,6 +2280,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
+/obj/item/gun/energy/laser/carbine,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -5233,7 +5234,6 @@
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
 	},
-/obj/structure/barricade/sandbags,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -5255,7 +5255,6 @@
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
 	},
-/obj/structure/barricade/sandbags,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -5745,7 +5744,6 @@
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
 	},
-/obj/structure/barricade/sandbags,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -6817,7 +6815,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
-/obj/item/gun/energy/laser,
+/obj/item/gun/energy/laser/carbine,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -8923,6 +8921,7 @@
 /obj/item/reagent_containers/spray/cleaner,
 /obj/item/clothing/glasses/hud/health,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/storage/backpack/duffelbag/med/surgery,
 /turf/open/floor/plasteel/white/corner{
 	heat_capacity = 1e+006
 	},
@@ -9833,6 +9832,7 @@
 /obj/machinery/door/airlock{
 	name = "Unisex Showers"
 	},
+/obj/structure/barricade/wooden/crude,
 /turf/open/floor/plasteel/freezer{
 	heat_capacity = 1e+006
 	},
@@ -13996,16 +13996,6 @@
 	heat_capacity = 1e+006
 	},
 /area/awaymission/undergroundoutpost45/crew_quarters)
-"FC" = (
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
-	dir = 1
-	},
-/obj/structure/barricade/sandbags,
-/turf/open/floor/plasteel{
-	heat_capacity = 1e+006
-	},
-/area/awaymission/undergroundoutpost45/crew_quarters)
 "FW" = (
 /mob/living/simple_animal/hostile/poison/terror_spider/healer,
 /turf/open/floor/plasteel{
@@ -14391,13 +14381,7 @@
 	},
 /area/awaymission/undergroundoutpost45/research)
 "Pk" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
-	dir = 1
-	},
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
@@ -14548,21 +14532,6 @@
 	heat_capacity = 1e+006
 	},
 /area/awaymission/undergroundoutpost45/research)
-"So" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/item/gun/energy/plasma/MP40k,
-/turf/open/floor/plating{
-	heat_capacity = 1e+006
-	},
-/area/awaymission/undergroundoutpost45/research)
 "SA" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/poison/terror_spider/healer,
@@ -14581,6 +14550,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
+/obj/item/storage/firstaid,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -41664,7 +41634,7 @@ hc
 rD
 st
 tl
-So
+tP
 gy
 ad
 ad
@@ -46532,8 +46502,8 @@ eJ
 eJ
 eJ
 gr
-gA
-gs
+Pk
+Mx
 fN
 mr
 mX
@@ -46789,8 +46759,8 @@ eJ
 eJ
 eJ
 gr
-Mx
-Mx
+gs
+gs
 fO
 ms
 mY
@@ -47560,8 +47530,8 @@ iF
 jb
 jv
 jS
-FC
-FC
+hK
+hK
 fN
 mu
 na
@@ -49616,7 +49586,7 @@ iI
 fO
 fO
 jV
-Pk
+ks
 lk
 fO
 fO

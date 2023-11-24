@@ -482,12 +482,13 @@
 			if(show_message)
 				to_chat(M, "<span class='warning'>Your stomach feels empty and cramps!</span>")
 		else
+			/* BLUEMOON REMOVAL START - шанс на операцию за обезболивающее перенесен
 			var/mob/living/carbon/C = M
 			for(var/s in C.surgeries)
 				var/datum/surgery/S = s
 				S.success_multiplier = max(0.1, S.success_multiplier)
 				// +10% success propability on each step, useful while operating in less-than-perfect conditions
-
+			/ BLUEMOON REMOVAL END */
 			if(show_message)
 				to_chat(M, "<span class='danger'>You feel your injuries fade away to nothing!</span>" )
 	..()
@@ -833,11 +834,13 @@
 /datum/reagent/medicine/morphine/on_mob_metabolize(mob/living/L)
 	..()
 	ADD_TRAIT(L, TRAIT_PAINKILLER, PAINKILLER_MORPHINE) //SKYRAT EDIT, Painkiller.
+	L.throw_alert("painkiller", /atom/movable/screen/alert/painkiller) // BLUEMOON ADD
 	L.add_movespeed_mod_immunities(type, list(/datum/movespeed_modifier/damage_slowdown, /datum/movespeed_modifier/damage_slowdown_flying, /datum/movespeed_modifier/monkey_health_speedmod))
 
 /datum/reagent/medicine/morphine/on_mob_end_metabolize(mob/living/L)
 	L.remove_movespeed_mod_immunities(type, list(/datum/movespeed_modifier/damage_slowdown, /datum/movespeed_modifier/damage_slowdown_flying, /datum/movespeed_modifier/monkey_health_speedmod))
 	REMOVE_TRAIT(L, TRAIT_PAINKILLER, PAINKILLER_MORPHINE) //SKYRAT EDIT, Painkiller.
+	L.clear_alert("painkiller", /atom/movable/screen/alert/painkiller) // BLUEMOON ADD
 	..()
 
 /datum/reagent/medicine/morphine/on_mob_life(mob/living/carbon/M)
@@ -847,7 +850,7 @@
 		if(12 to 24)
 			M.drowsyness += 1
 		if(24 to INFINITY)
-			M.Sleeping(40, 0)
+			M.Sleeping(100, 0) // BLUEMOON EDIT - было 40, сделал 100. Морфин по итогу не накладывает сон и человек просыпается быстро.
 			. = 1
 	..()
 

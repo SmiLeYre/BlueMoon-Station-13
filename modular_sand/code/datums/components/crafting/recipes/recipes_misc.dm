@@ -86,3 +86,25 @@
 	time = 100
 	subcategory = CAT_TOOL
 	category = CAT_MISCELLANEOUS
+
+/datum/crafting_recipe/blowing_rod
+	name = "Glassblowing rod"
+	result = /obj/item/glasswork/blowing_rod
+	reqs = list(/obj/item/stack/rods = 3)
+	tools = list(TOOL_WELDER)
+	time = 10 SECONDS
+	subcategory = CAT_TOOL
+	category = CAT_MISCELLANEOUS
+
+/datum/crafting_recipe/glasskit
+	name = "Glasswork Tools"
+	result = /obj/item/glasswork/glasskit
+	reqs = list(/obj/item/stack/sheet/leather = 2,
+				/obj/item/stack/sheet/mineral/wood = 2,
+				/obj/item/stack/rods = 4,
+				/obj/item/stack/sheet/metal = 2
+				)
+	tools = list(TOOL_WELDER, TOOL_WIRECUTTER)
+	time = 10 SECONDS
+	subcategory = CAT_TOOL
+	category = CAT_MISCELLANEOUS

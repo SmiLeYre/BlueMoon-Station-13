@@ -8,7 +8,8 @@
 
 /datum/mood_event/cum_craving
 	description = span_warning("МНЕ... НУЖНА... СПЕРМА...\n") // Я умер от испанского стыда, переводя ЕРП мудлеты. - прим. переводчика
-	mood_change = -20
+	//mood_change = -20
+	mood_change = -5 //STOP BEING SUICIDAL BECAUSE OF THE LACK OF CUM! - Gardelin0
 
 /datum/mood_event/cum_stuffed
 	description = span_nicegreen("Вкусная была еда! Ням-ням!\n")
