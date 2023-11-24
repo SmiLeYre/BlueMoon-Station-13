@@ -707,6 +707,121 @@
 	buckle_requires_restraints = 1
 	var/mob/living/carbon/human/patient = null
 	var/obj/machinery/computer/operating/computer = null
+// BLUEMOON ADD START
+	var/obj/item/tank/internals/tank = null // баллон внутри
+	var/obj/item/clothing/mask/mask = null // маска внутри
+
+/obj/structure/table/optable/examine(mob/user)
+	. = ..()
+	. += "<hr>"
+
+	if(tank). += span_info("Сбоку на нём закреплён [tank].")
+	else . += span_warning("Сбоку есть пустое место под ёмкость с газом (баллон или канистру).")
+
+	if(mask) . += span_info("На стойке висит [mask].")
+	else . += span_warning("Сбоку находится пустая стойка для маски.")
+
+	if(computer) . += span_info("Операционный стол подключен к компьютеру рядом через кабель на полу.")
+
+	if(tank && mask) . += span_info("<br>Можно попробовать включить оборудование для анестезии, если положить кого-то на стол.")
+
+/obj/structure/table/optable/attack_hand(mob/user, act_intent, attackchain_flags)
+	. = ..()
+	if(tank && mask)
+		check_patient()
+		if(!patient)
+			return
+		if(!patient.internal) // у пациента не включена подача воздуха
+			to_chat(user, span_notice("Вы начинаете включать подачу анестетика."))
+			if(patient.stat != UNCONSCIOUS) // пациент без сознания не видит сообщение ниже
+				to_chat(patient, span_danger("[user] пытается включить подачу анестетика!"))
+			if(!do_after(user, 3 SECONDS, patient))
+				return
+			if(patient.wear_mask)
+				if(isclothing(patient.wear_mask)) // это одежда
+					var/obj/item/clothing/patient_item_in_mask_slot = patient.wear_mask
+					if(!(patient_item_in_mask_slot.clothing_flags & ALLOWINTERNALS)) // можно использовать для дыхания
+						if(!patient.dropItemToGround(patient.wear_mask)) // если нельзя, то можно ли снять
+							to_chat(patient, span_danger("У вас не получилось снять маску с [patient], чтобы надеть кислородную маску!"))
+							return
+				else // это предмет
+					if(!patient.dropItemToGround(patient.wear_mask))
+						to_chat(patient, span_danger("У вас не получилось убрать предмет с лица [patient], чтобы надеть кислородную маску!"))
+						return
+			patient.equip_to_slot_if_possible(mask, ITEM_SLOT_MASK)
+			if(!patient.wear_mask) // если головы нет, например
+				to_chat(patient, span_danger("У вас не получилось надеть кислородную маску на [patient]!"))
+				return
+			patient.internal = tank
+			user.visible_message("[user] подключает оборудование для анестезии к [patient] и проворачиваете клапан.", span_notice("Вы открываете клапан с анестезией. Убедитесь, что пациент спит и можно начинать."))
+			START_PROCESSING(SSobj, src)
+		else
+			if(!do_after(user, 1 SECONDS, patient))
+				return
+			user.visible_message("[user] отключает подачу анестетика к [patient].", span_notice("Вы проворачиваете клапан и отключаете подачу анестезии."))
+			if(patient.wear_mask == mask)
+				patient.transferItemToLoc(mask, src, TRUE)
+			patient.internal = null
+	else
+		to_chat(user, span_warning("[src] не имеет прикрепленного к нему баллона или маски!"))
+		return
+
+/obj/structure/table/optable/attack_robot(mob/user)
+	if(Adjacent(user))
+		return attack_hand(user)
+
+/obj/structure/table/optable/process()
+	var/turf/T = get_turf(src)
+	if(!mask || !tank || (mask && get_turf(mask) != T) || (tank && get_turf(tank) != T))
+		if(tank && patient?.internal == tank)
+			patient.internal = null
+		if(mask && get_turf(mask) != T)
+			visible_message(span_notice("[mask] срывается и возвращается на место по втягивающемуся шлангу."))
+			patient.transferItemToLoc(mask, src, TRUE)
+		STOP_PROCESSING(SSobj, src)
+
+/obj/structure/table/optable/AltClick(mob/living/user)
+	..()
+	if(!ishuman(user))
+		to_chat(user, span_warning("Это слишком сложно для вас!"))
+		return
+	if(tank && !patient?.internal)
+		to_chat(user, span_notice("Вы убираете [tank] с бока операционного стола."))
+		user.put_in_hands(tank)
+		tank = null
+	else if(mask && !patient?.internal)
+		to_chat(user, span_notice("Вы убираете [mask] со стойки операционного стола."))
+		user.put_in_hands(mask)
+		mask = null
+
+/obj/structure/table/optable/Destroy()
+	if(tank)
+		tank.forceMove(loc)
+		tank = null
+	if(mask)
+		mask.forceMove(loc)
+		mask = null
+	STOP_PROCESSING(SSobj, src)
+	. = ..()
+
+/obj/structure/table/optable/attackby(obj/item/I, mob/living/user, attackchain_flags, damage_multiplier)
+	if(user.a_intent == INTENT_HELP)
+		if(!tank)
+			if(istype(I, /obj/item/tank/internals))
+				if(user.transferItemToLoc(I, src))
+					user.visible_message("[user] закрепляет [I] сбоку операционного стола.", span_notice("Вы закрепляете [I] сбоку операционного стола."))
+					tank = I
+					return
+		if(!mask)
+			if(istype(I, /obj/item/clothing/mask))
+				var/obj/item/clothing/mask/potential_mask = I
+				if(potential_mask.clothing_flags & ALLOWINTERNALS) // можно использовать для дыхания
+					if(user.transferItemToLoc(I, src))
+						user.visible_message("[user] закрепляет [I] на стойку для маски.", span_notice("Вы закрепляете [I] на стойку для маски."))
+						mask = I
+						return
+	. = ..()
+// BLUEMOON ADD END
 
 /obj/structure/table/optable/New()
 	..()

@@ -338,7 +338,7 @@
 			if((check.clothing_flags & ALLOWINTERNALS))
 				internals = TRUE
 	if(internal)
-		if(internal.loc != src)
+		if(internal.loc != src && !istype(internal.loc, /obj/structure/table/optable)) // BLUEMOON ADD - добавлено проверка на хирургический стол, чтобы можно было пользоваться баллоном из него
 			internal = null
 			update_internals_hud_icon(0)
 		else if (!internals && !getorganslot(ORGAN_SLOT_BREATHING_TUBE))

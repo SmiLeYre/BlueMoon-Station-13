@@ -24638,6 +24638,17 @@
 	},
 /turf/open/floor/iron/white,
 /area/centcom/holding)
+"gSh" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/genericbush,
+/obj/machinery/nuclearbomb/beer{
+	icon_state = "bananiumbomb_base"
+	},
+/turf/open/floor/grass,
+/area/centcom)
 "gSj" = (
 /turf/closed/wall,
 /area/centcom/holding)
@@ -26771,7 +26782,6 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/pointybush,
 /obj/item/reagent_containers/pill/adminordrazine,
-/obj/machinery/nuclearbomb/syndicate/bananium,
 /turf/open/floor/grass,
 /area/centcom)
 "jYx" = (
@@ -29775,12 +29785,6 @@
 "oom" = (
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding)
-"oox" = (
-/obj/effect/portal/permanent{
-	id = "testchamber"
-	},
-/turf/open/space/basic,
-/area/space)
 "ooT" = (
 /obj/structure/mineral_door/wood,
 /obj/structure/fans/tiny/invisible,
@@ -76131,7 +76135,7 @@ aaa
 aaa
 aaa
 aaa
-oox
+aaa
 aaa
 aaa
 aaa
@@ -95703,7 +95707,7 @@ sKx
 fwW
 bUd
 iAf
-eRp
+gSh
 awj
 iAf
 eby

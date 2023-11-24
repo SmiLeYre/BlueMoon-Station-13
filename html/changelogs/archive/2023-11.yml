@@ -37,3 +37,14 @@
       the OG PR.
   - rscadd: Repurposes ported sciraptor and sci-catborg sprites to be an alternative
       service (janitor) module.
+2023-11-18:
+  Chlorotrifluoride:
+  - imageadd: modified sprites of tall jackboots, toeless jackboots and toeless workboots.
+  MysteryMan21333:
+  - rscadd: Adds werewolves!
+  - rscadd: Added new borg sprites, Mr. Handy variations, Cyclone, Sentry Bot, Securitron,
+      Etc.
+  - balance: reworks magic carp for xenobiology, reworks monkey processors, & improved
+      code for xenobiology.
+  - bugfix: prevents bluespace anomalies from shitting on cameras & logging for sentience
+      potion on admin side.
