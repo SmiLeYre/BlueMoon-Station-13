@@ -20,8 +20,8 @@
 	var/lust_increase = NORMAL_LUST
 
 	if(partner.is_fucking(user, CUM_TARGET_MOUTH))
-		if(prob(partner.get_sexual_potency())) //Removed oxygen loss. - Gardelin0
-			user.adjustOxyLoss(3)
+		if(prob(partner.get_sexual_potency()))
+			user.adjustOxyLoss(1)
 			message = "становится всё проворней и проворней в случае с членом \the <b>[partner]</b>."
 			lust_increase += 5
 		else

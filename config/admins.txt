@@ -8,5 +8,4 @@
 # NOTE: syntax was changed to allow hyphenation of ranknames, since spaces are stripped.      #
 ###############################################################################################
 
-Gardelin0 = Host
-Gardie0 = Host
+yourckeygoeshere = Host
