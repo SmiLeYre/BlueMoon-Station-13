@@ -12,7 +12,7 @@
 	var/overlays_file = 'modular_bluemoon/Gardelin0/icons/obj/lewd_devices.dmi'
 	var/static/list/gloryhole_overlays = list()
 	anchored = 1
-	dir = 0
+	dir = 2
 	item_chair = null // нельзя брать в руки
 
 /obj/structure/chair/gloryhole/Destroy()
@@ -42,8 +42,6 @@
 
 	if(has_buckled_mobs())
 		state_overlay = get_gloryhole_overlay("[icon_state]_[over_state]", overlays_file)
-	else
-		state_overlay = get_gloryhole_overlay("[icon_state]_nothing", overlays_file)
 
 	if(letter)
 		letter_overlay = get_gloryhole_overlay(letter_type, overlays_file)
@@ -118,24 +116,27 @@
 		for(var/m in buckled_mobs)
 			var/mob/living/carbon/human/M = m
 			switch(over_state)
+				if("nothing")
+					over_state = "over"
+					M.dir = 2
 				if("over")
 					over_state = "b_over"
-					M.dir = 0
+					M.dir = 2
 				if("b_over")
 					over_state = "o_over"
-					M.dir = 0
+					M.dir = 2
 				if("o_over")
 					over_state = "ob_over"
-					M.dir = 0
+					M.dir = 2
 				if("ob_over")
 					over_state = "all_over"
-					M.dir = 0
+					M.dir = 2
 				if("all_over")
 					over_state = "bb_over"
 					M.dir = 1
 				if("bb_over")
 					over_state = "over"
-					M.dir = 0
+					M.dir = 2
 
 		to_chat(usr, "Доступные дырочки изменены.")
 		update_icon()
@@ -300,40 +301,5 @@
 				to_chat(user, span_notice("You assemble it."))
 				new /obj/structure/chair/gloryhole (src.loc)
 				qdel(src)
-	else
-		return ..()
-
-/obj/structure/chair/gloryhole/wooden
-	icon_state = "gloryholew"
-
-/obj/structure/chair/gloryhole/wooden/attackby(obj/item/used_item, mob/user, params)
-	if(istype(used_item, /obj/item/screwdriver))
-		to_chat(user, span_notice("You unscrew the frame and begin to deconstruct it..."))
-		if(used_item.use_tool(src, user, 8 SECONDS, volume = 50))
-			to_chat(user, span_notice("You disassemble it."))
-			new /obj/item/gloryhole_kit_w (src.loc)
-			qdel(src)
-	else
-		return ..()
-
-/obj/item/gloryhole_kit_w
-	name = "gloryhole construction kit (wooden)"
-	desc = "Construction requires a screwdriver. Put it on the ground first!"
-	icon = 'modular_bluemoon/Gardelin0/icons/obj/lewd_devices.dmi'
-	icon_state = "kit"
-	throwforce = 0
-	var/unwrapped = 0
-	w_class = WEIGHT_CLASS_HUGE
-
-/obj/item/gloryhole_kit_w/attackby(obj/item/used_item, mob/user, params) //constructing a bed here.
-	add_fingerprint(user)
-	if(istype(used_item, /obj/item/screwdriver))
-		if (!(item_flags & IN_INVENTORY) && !(item_flags & IN_STORAGE))
-			to_chat(user, span_notice("You screw the frame to the floor and begin to construct it..."))
-			if(used_item.use_tool(src, user, 8 SECONDS, volume = 50))
-				to_chat(user, span_notice("You assemble it."))
-				new /obj/structure/chair/gloryhole/wooden (src.loc)
-				qdel(src)
-			return
 	else
 		return ..()
