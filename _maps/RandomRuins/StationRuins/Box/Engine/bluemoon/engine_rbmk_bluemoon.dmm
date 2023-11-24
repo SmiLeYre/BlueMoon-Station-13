@@ -107,8 +107,8 @@
 /turf/open/floor/engine,
 /area/engineering/main/reactor_core)
 "dk" = (
-/obj/machinery/atmospherics/pipe/simple/green/visible{
-	dir = 4
+/obj/machinery/atmospherics/pipe/manifold/green/visible{
+	dir = 1
 	},
 /turf/open/floor/engine,
 /area/engineering/main/reactor_core)
@@ -912,8 +912,10 @@
 /turf/open/floor/engine,
 /area/engineering/main/reactor_core)
 "vI" = (
-/obj/machinery/atmospherics/components/binary/pump/on{
-	dir = 1
+/obj/machinery/atmospherics/components/binary/passive_gate{
+	on = 1;
+	name = "Coolant Input Topup";
+	target_pressure = 45
 	},
 /turf/open/floor/engine,
 /area/engineering/main/reactor_core)
@@ -1234,6 +1236,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/cyan/visible,
 /turf/open/floor/engine,
 /area/engineering/main/reactor_core)
 "EG" = (
@@ -1427,6 +1430,13 @@
 	},
 /turf/open/floor/plating,
 /area/engineering/main/reactor_core)
+"Lh" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/visible,
+/turf/closed/wall/r_wall,
+/area/engineering/main/reactor_core)
 "Ll" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -1566,9 +1576,7 @@
 /turf/open/space/basic,
 /area/space/nearstation)
 "Qj" = (
-/obj/machinery/atmospherics/components/binary/pump{
-	name = "Gas to Waste"
-	},
+/obj/machinery/atmospherics/components/binary/valve/digital,
 /turf/open/floor/engine,
 /area/engineering/main/reactor_core)
 "Qs" = (
@@ -1645,6 +1653,15 @@
 	},
 /turf/open/floor/plating,
 /area/engineering/main/reactor_core)
+"RK" = (
+/obj/structure/lattice,
+/obj/machinery/atmospherics/components/unary/relief_valve{
+	dir = 1;
+	open_pressure = 4200;
+	close_pressure = 3800
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
 "So" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
@@ -1728,9 +1745,7 @@
 /turf/open/floor/engine,
 /area/engineering/main/reactor_core)
 "Vi" = (
-/obj/machinery/atmospherics/components/binary/valve{
-	name = "Gas To Coolant"
-	},
+/obj/machinery/atmospherics/pipe/simple/green/visible,
 /turf/open/floor/engine,
 /area/engineering/main/reactor_core)
 "Vt" = (
@@ -1792,8 +1807,8 @@
 /turf/open/floor/engine,
 /area/engineering/main/reactor_core)
 "Xq" = (
-/obj/machinery/atmospherics/components/binary/valve{
-	name = "Radiator Damage Bypass"
+/obj/machinery/atmospherics/components/binary/valve/digital{
+	name = "Radiator Loop Bypass"
 	},
 /turf/open/floor/engine,
 /area/engineering/main/reactor_core)
@@ -2277,8 +2292,8 @@ mY
 mY
 mY
 dk
-mY
-iY
+vI
+SB
 mY
 Ck
 Sx
@@ -2362,11 +2377,11 @@ lA
 mY
 xQ
 mY
-iY
-mY
+Hj
+tt
 Ex
-Vc
-tw
+Lh
+RK
 tw
 tw
 tw
@@ -2471,7 +2486,7 @@ pF
 mY
 mY
 Hl
-vI
+tt
 tt
 tt
 DF

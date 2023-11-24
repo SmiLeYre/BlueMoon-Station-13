@@ -31,6 +31,7 @@
 
 /datum/antagonist/ashwalker/on_removal()
 	. = ..()
+	owner.special_role = null // BLUEMOON ADD
 	UnregisterSignal(owner.current, COMSIG_MOB_EXAMINATE)
 
 /datum/antagonist/ashwalker/proc/on_examinate(datum/source, atom/A)

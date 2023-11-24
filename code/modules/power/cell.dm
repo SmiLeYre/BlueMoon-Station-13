@@ -185,7 +185,7 @@
 		return 0
 
 /obj/item/stock_parts/cell/get_part_rating()
-	return rating * maxcharge
+	return self_recharge > 0 ? rating * maxcharge * self_recharge * 5 : rating * maxcharge
 
 /* Cell variants*/
 /obj/item/stock_parts/cell/empty

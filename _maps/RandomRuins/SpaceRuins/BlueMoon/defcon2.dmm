@@ -6962,10 +6962,6 @@
 "Mz" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/tank/air,
-/obj/machinery/door/airlock/security{
-	name = "Brig";
-	req_access_txt = "66"
-	},
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/port_tarkon/centerhall)
 "MB" = (

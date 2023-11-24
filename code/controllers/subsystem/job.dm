@@ -380,14 +380,17 @@ SUBSYSTEM_DEF(job)
 	JobDebug("DO, Handling unrejectable unassigned")
 	//Mop up people who can't leave.
 	for(var/mob/dead/new_player/player in unassigned) //Players that wanted to back out but couldn't because they're antags (can you feel the edge case?)
+/* BLUEMOON REMOVAL START - убираем вариант получения рандомной роли при получении антажки, оставляя только ассистента
 		if(player.client.prefs.joblessrole == BERANDOMJOB) //Gives the player a random role if their preferences are set to it
 			if(!GiveRandomJob(player))
 				if(!AssignRole(player, SSjob.overflow_role)) //If everything is already filled, make them the overflow role
 					return FALSE //Living on the edge, the forced antagonist couldn't be assigned to overflow role (bans, client age) - just reroll
+
 		else //If the player prefers to return to lobby or be an assistant, give them assistant
-			if(!AssignRole(player, SSjob.overflow_role))
-				if(!GiveRandomJob(player)) //The forced antagonist couldn't be assigned to overflow role (bans, client age) - give a random role
-					return FALSE //Somehow the forced antagonist couldn't be assigned to the overflow role or the a random role - reroll
+/ BLUEMOON REMOVAL END */
+		if(!AssignRole(player, SSjob.overflow_role))
+			if(!GiveRandomJob(player)) //The forced antagonist couldn't be assigned to overflow role (bans, client age) - give a random role
+				return FALSE //Somehow the forced antagonist couldn't be assigned to the overflow role or the a random role - reroll
 
 	return validate_required_jobs(required_jobs)
 

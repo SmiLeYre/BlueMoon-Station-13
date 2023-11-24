@@ -51,6 +51,7 @@
 
 /datum/antagonist/rev/on_removal()
 	remove_objectives()
+	owner.special_role = null // BLUEMOON ADD
 	. = ..()
 
 /datum/antagonist/rev/greet()
