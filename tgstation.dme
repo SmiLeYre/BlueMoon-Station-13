@@ -4096,6 +4096,7 @@
 #include "modular_bluemoon\Gardelin0\code\items\lewd_items\tentacle_panties.dm"
 #include "modular_bluemoon\Gardelin0\code\mob\tentacles.dm"
 #include "modular_bluemoon\Gardelin0\code\obj\lewd_devices\dildo_machine.dm"
+#include "modular_bluemoon\Gardelin0\code\obj\lewd_devices\glory_hole.dm"
 #include "modular_bluemoon\Gardelin0\code\obj\lewd_devices\sybian.dm"
 #include "modular_bluemoon\Gardelin0\code\vending\clothesmate.dm"
 #include "modular_bluemoon\Gardelin0\code\vending\kinkmate.dm"

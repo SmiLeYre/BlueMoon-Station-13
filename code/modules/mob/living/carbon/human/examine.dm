@@ -338,6 +338,8 @@
 	if(nutrition < NUTRITION_LEVEL_STARVING - 50)
 		msg += "[t_on] выглядит смертельно истощённо.\n"
 	else if(nutrition >= NUTRITION_LEVEL_FAT)
+		if(HAS_TRAIT(src, TRAIT_INCUBUS || TRAIT_SUCCUBUS))
+			return //Imagine getting fat from hot load - Gardelin0
 		if(user.nutrition < NUTRITION_LEVEL_STARVING - 50)
 			msg += "[t_on] выглядит довольно толстенько, словно какой-то поросёнок. Очень вкусный поросёнок.\n"
 		else

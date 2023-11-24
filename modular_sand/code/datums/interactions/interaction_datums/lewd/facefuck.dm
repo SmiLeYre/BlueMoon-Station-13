@@ -111,6 +111,7 @@
 	require_user_penis = REQUIRE_EXPOSED
 	require_target_mouth = TRUE
 	max_distance = 1
+	extreme = TRUE //Stop killing people without their fucking consent! - Gardelin0
 
 /datum/interaction/lewd/throatfuck/display_interaction(mob/living/user, mob/living/partner)
 	var/message
