@@ -57915,8 +57915,7 @@
 "imx" = (
 /obj/machinery/door/airlock/maintenance/external{
 	name = "Sauna";
-	id_tag = "saunab";
-	id = "Sauna"
+	id_tag = "saunab"
 	},
 /obj/structure/fans/tiny,
 /obj/machinery/door/firedoor,
@@ -85018,8 +85017,7 @@
 "uSI" = (
 /obj/machinery/door/airlock/maintenance/external{
 	name = "Sauna";
-	id_tag = "saunab";
-	id = "Sauna"
+	id_tag = "saunab"
 	},
 /obj/machinery/door/firedoor,
 /obj/structure/fans/tiny,
@@ -87638,7 +87636,7 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	id = "Sauna";
+	id = "saunab";
 	name = "Cabin Bolt Control";
 	normaldoorcontrol = 1;
 	specialfunctions = 4;
