@@ -5,7 +5,7 @@
 	icon_state = "gloryhole"
 	var/over_state = "nothing"
 	var/restrains = 0
-	var/self_unbuckle_time = 5 MINUTES
+	var/self_unbuckle_time = 2 MINUTES
 	var/aphrodisiac
 	var/obj/item/letter //Any papers pinned to the gloryhole
 	var/obj/item/picture //Any photos pinned to the gloryhole
@@ -188,14 +188,14 @@
 /obj/structure/chair/gloryhole/proc/handle_unbuckling(mob/living/buckled_mob, user)
 	if(buckled_mob == user)
 		if(restrains)
-			var/input = input(usr,"Вы уверены что хотите попытаться слезть сами? Это займёт более 5 минут и имеет шанс недуачи!") as null|anything in list("Да", "Нет")
+			var/input = input(usr,"Вы уверены что хотите попытаться слезть сами? Это займёт более 2 минут и имеет шанс неудачи!") as null|anything in list("Да", "Нет")
 			if(input == "Да")
 				if(do_after(user, self_unbuckle_time, src))
-					if(prob(50))
-						return TRUE
-					else
+					if(prob(30))
 						to_chat(usr, "Не получилось!")
 						return FALSE
+					else
+						return TRUE
 				else
 					return FALSE
 			else
@@ -206,6 +206,9 @@
 
 /obj/structure/chair/gloryhole/MouseDrop_T(mob/living/M, mob/living/user)
 	if(istype(M))
+		if(!iscarbon(M)) //No cleanbot fucking - no fun allowed!
+			to_chat(usr, "Не помещается!")
+			return
 		if(get_turf(M) != get_turf(src) && user.stat == CONSCIOUS)
 			var/message = M == user ? "[M] climbs in the [src]." : "[user] puts [M] in the [src]."
 			var/self_message = M == user ? "You climb in the [src]." : "You put [M] in the [src]."
@@ -222,9 +225,11 @@
 	set category = "Object"
 	set src in oview(1)
 	if(has_buckled_mobs())
+		if(!isliving(usr)) //no ghosts allowed
+			return
 		for(var/m in buckled_mobs)
 			var/mob/living/carbon/human/M = m
-			var/input = input(usr,"Change intensity mode") as null|anything in list("crocin", "hexacrocin")
+			var/input = input(usr,"Какой афродизиак ввести?") as null|anything in list("crocin", "hexacrocin")
 			if(M == usr)
 				to_chat(usr, "Не дотянуться до кнопки!")
 				return
