@@ -111,7 +111,12 @@
 
 				// Deal digestion damage (and feed the pred)
 				if(!(M.status_flags & GODMODE))
-					M.adjustFireLoss(digest_burn)
+					//BLUEMOON EDIT STARTS
+					var/damage_mod = 1
+					if(M.maxHealth < 100) //big guy перевариваются дольше
+						damage_mod = M.maxHealth * 0.01 //1 процент от максимума хп при хп меньше 100
+					M.adjustFireLoss(digest_burn * damage_mod)
+					//BLUEMOON EDIT ENDS
 					owner.adjust_nutrition(1)
 
 			//Contaminate or gurgle items

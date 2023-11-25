@@ -51,7 +51,7 @@
 	var/turf/location = get_turf(owner)
 
 	var/obj/effect/decal/cleanable/semen/S = locate(/obj/effect/decal/cleanable/semen) in location
-	if(S)
+	if(S && !istype(S, /obj/effect/decal/cleanable/semen/femcum))
 		if(contents.trans_to(S, 1))
 			if(cum_in_anus > 0)
 				cum_in_anus--

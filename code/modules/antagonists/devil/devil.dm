@@ -524,6 +524,7 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 
 /datum/antagonist/devil/on_removal()
 	to_chat(owner.current, "<span class='userdanger'>Your infernal link has been severed! You are no longer a devil!</span>")
+	owner.special_role = null // BLUEMOON ADD
 	.=..()
 
 /datum/antagonist/devil/apply_innate_effects(mob/living/mob_override)

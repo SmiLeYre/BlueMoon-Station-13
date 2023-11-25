@@ -62,39 +62,48 @@
 		switch(href_list["makeAntag"])
 			if("traitors")
 				if(src.makeTraitors())
-					message_admins("[key_name_admin(usr)] created traitors.")
-					log_admin("[key_name(usr)] created traitors.")
+					message_admins("[key_name_admin(usr)] created a traitor.")
+					log_admin("[key_name(usr)] created a traitor.")
 				else
-					message_admins("[key_name_admin(usr)] tried to create traitors. Unfortunately, there were no candidates available.")
-					log_admin("[key_name(usr)] failed to create traitors.")
+					message_admins("[key_name_admin(usr)] tried to create a traitor. Unfortunately, there were no candidates available.")
+					log_admin("[key_name(usr)] failed to create a traitor.")
 			if("heretics")
 				if(src.makeHeretics())
-					message_admins("[key_name_admin(usr)] created heretics.")
-					log_admin("[key_name(usr)] created heretics.")
+					message_admins("[key_name_admin(usr)] created a heretic.")
+					log_admin("[key_name(usr)] created a heretic.")
 				else
-					message_admins("[key_name_admin(usr)] tried to create heretics. Unfortunately, there were no candidates available.")
-					log_admin("[key_name(usr)] failed to create heretics.")
+					message_admins("[key_name_admin(usr)] tried to create a heretic. Unfortunately, there were no candidates available.")
+					log_admin("[key_name(usr)] failed to create a heretic.")
 			if("changelings")
 				if(src.makeChangelings())
-					message_admins("[key_name(usr)] created changelings.")
-					log_admin("[key_name(usr)] created changelings.")
+					message_admins("[key_name(usr)] created a changeling.")
+					log_admin("[key_name(usr)] created a changeling.")
 				else
-					message_admins("[key_name_admin(usr)] tried to create changelings. Unfortunately, there were no candidates available.")
-					log_admin("[key_name(usr)] failed to create changelings.")
+					message_admins("[key_name_admin(usr)] tried to create a changeling. Unfortunately, there were no candidates available.")
+					log_admin("[key_name(usr)] failed to create a changeling.")
+			// BLUEMOON ADD START
+			if("bloodsucker")
+				if(src.makeBloodsucker())
+					message_admins("[key_name_admin(usr)] created a bloodsucker.")
+					log_admin("[key_name(usr)] created a bloodsucker.")
+				else
+					message_admins("[key_name_admin(usr)] tried to create a bloodsucker. Unfortunately, there were no candidates available.")
+					log_admin("[key_name(usr)] failed to create a bloodsucker.")
+			// BLUEMOON ADD END
 			if("revs")
 				if(src.makeRevs())
-					message_admins("[key_name(usr)] started a revolution.")
-					log_admin("[key_name(usr)] started a revolution.")
+					message_admins("[key_name(usr)] created a revolution head.")
+					log_admin("[key_name(usr)] created a revolution head.")
 				else
-					message_admins("[key_name_admin(usr)] tried to start a revolution. Unfortunately, there were no candidates available.")
-					log_admin("[key_name(usr)] failed to start a revolution.")
+					message_admins("[key_name_admin(usr)] tried to creat a revolution head. Unfortunately, there were no candidates available.")
+					log_admin("[key_name(usr)] failed to create a revolution head.")
 			if("cult")
 				if(src.makeCult())
-					message_admins("[key_name(usr)] started a cult.")
-					log_admin("[key_name(usr)] started a cult.")
+					message_admins("[key_name(usr)] created a Nar'Sie cultist.")
+					log_admin("[key_name(usr)] started a Nar'Sie cultist.")
 				else
-					message_admins("[key_name_admin(usr)] tried to start a cult. Unfortunately, there were no candidates available.")
-					log_admin("[key_name(usr)] failed to start a cult.")
+					message_admins("[key_name_admin(usr)] tried to creat a Nar'Sie cultist. Unfortunately, there were no candidates available.")
+					log_admin("[key_name(usr)] failed to create a Nar'Sie cultist.")
 			if("wizard")
 				message_admins("[key_name(usr)] is creating a wizard...")
 				if(src.makeWizard())
@@ -168,11 +177,11 @@
 					log_admin("[key_name(usr)] failed to create an abductor team.")
 			if("clockcult")
 				if(src.makeClockCult())
-					message_admins("[key_name(usr)] started a clockwork cult.")
-					log_admin("[key_name(usr)] started a clockwork cult.")
+					message_admins("[key_name(usr)] created a Clockwork cultist.")
+					log_admin("[key_name(usr)] started a Clockwork cultist.")
 				else
-					message_admins("[key_name_admin(usr)] tried to start a clockwork cult. Unfortunately, there were no candidates available.")
-					log_admin("[key_name(usr)] failed to start a clockwork cult.")
+					message_admins("[key_name_admin(usr)] tried to start a Clockwork cultist. Unfortunately, there were no candidates available.")
+					log_admin("[key_name(usr)] failed to start a Clockwork cultist.")
 			if("revenant")
 				if(src.makeRevenant())
 					message_admins("[key_name(usr)] created a revenant.")
@@ -1450,6 +1459,7 @@
 			return tgui_alert(usr, "The game has already started.")
 
 		dynamic_mode_options(usr)
+	/* BLUEMOON REMOVAL START - мы используем GLOB.round_type
 	else if(href_list["f_dynamic_force_extended"])
 		if(!check_rights(R_ADMIN))
 			return
@@ -1458,7 +1468,7 @@
 		log_admin("[key_name(usr)] set 'forced_extended' to [GLOB.dynamic_forced_extended].")
 		message_admins("[key_name(usr)] set 'forced_extended' to [GLOB.dynamic_forced_extended].")
 		dynamic_mode_options(usr)
-
+	/ BLUEMOON REMOVAL END */
 	else if(href_list["f_dynamic_no_stacking"])
 		if(!check_rights(R_ADMIN))
 			return
@@ -1468,22 +1478,17 @@
 		message_admins("[key_name(usr)] set 'no_stacking' to [GLOB.dynamic_no_stacking].")
 		dynamic_mode_options(usr)
 //BLUEMOON ADDITION START
-	else if(href_list["f_teambased_dynamic"])
+	else if(href_list["f_round_type"])
 		if(!check_rights(R_ADMIN))
 			return
 
-		GLOB.teambased_dynamic = !GLOB.teambased_dynamic
-		log_admin("[key_name(usr)] set 'team based dynamic' to [GLOB.teambased_dynamic].")
-		message_admins("[key_name(usr)] set 'team based dynamic' to [GLOB.teambased_dynamic].")
-		dynamic_mode_options(usr)
+		var/chosen_type = input("Выберите вариацию динамика","Round Type Choose") as null|anything in list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT, ROUNDTYPE_EXTENDED)
+		GLOB.round_type = chosen_type
+		GLOB.master_mode = chosen_type
 
-	else if(href_list["f_extended_dynamic"])
-		if(!check_rights(R_ADMIN))
-			return
+		log_admin("[key_name(usr)] изменяет режим игры на [chosen_type].")
+		to_chat(world, "<span class='adminnotice'><b>Выставлен режим [GLOB.master_mode].</b></span>")
 
-		GLOB.dynamic_extended = !GLOB.dynamic_extended
-		log_admin("[key_name(usr)] set 'extended dynamic' to [GLOB.dynamic_extended].")
-		message_admins("[key_name(usr)] set 'extended dynamic' to [GLOB.dynamic_extended].")
 		dynamic_mode_options(usr)
 //BLUEMOON ADDITION END
 	else if(href_list["f_dynamic_stacking_limit"])

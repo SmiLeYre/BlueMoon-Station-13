@@ -309,12 +309,25 @@
 
 	if(!environment_is_safe(environment))
 		adjustHealth(unsuitable_atmos_damage)
+		// BLUEMOON ADD START - оповещения для игрока, чтобы ХП не пропадало "само по себе"
+		if(client)
+			if(!(world.time % 3))
+				to_chat(client, span_userdanger("Здесь что-то не так с воздухом!"))
+		// BLUEMOON ADD END
 
 	handle_temperature_damage()
 
 /mob/living/simple_animal/proc/handle_temperature_damage()
 	if((bodytemperature < minbodytemp) || (bodytemperature > maxbodytemp))
 		adjustHealth(unsuitable_atmos_damage)
+		// BLUEMOON ADD START - оповещения для игрока, чтобы ХП не пропадало "само по себе"
+		if(client)
+			if(!(world.time % 3))
+				if(bodytemperature < minbodytemp)
+					to_chat(client, span_userdanger("Здесь слишком холодно!"))
+				if(bodytemperature > maxbodytemp)
+					to_chat(client, span_userdanger("Здесь слишком горячо!"))
+		// BLUEMOON ADD END
 
 /mob/living/simple_animal/gib(no_brain, no_organs, no_bodyparts, datum/explosion/was_explosion)
 	if(butcher_results || guaranteed_butcher_results)
