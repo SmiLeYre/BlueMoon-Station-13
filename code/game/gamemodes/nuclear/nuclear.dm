@@ -143,6 +143,15 @@
 	r_hand = /obj/item/nuclear_challenge
 	command_radio = TRUE
 
+// BLUEMOON ADD START - командная коробочка для командира
+/datum/outfit/inteq/leader/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
+	. = ..()
+	var/list/extra_backpack_items = list(
+		/obj/item/storage/box/pinpointer_squad
+	)
+	LAZYADD(backpack_contents, extra_backpack_items)
+// BLUEMOON ADD END
+
 /datum/outfit/inteq/no_crystals
 	tc = 0
 
