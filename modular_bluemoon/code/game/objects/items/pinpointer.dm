@@ -5,7 +5,7 @@ GLOBAL_LIST_INIT(possible_squad_leader_first_names, list(\
 // Трекер на командира
 
 /obj/item/pinpointer/squad
-	name = "squad leader tracker"
+	name = "S.Q.U.A.D. tracker"
 	desc = "A handheld tracking device that locates the leader. <b>SQUAD, ON ME!</b>"
 	icon_state = "pinpointer_syndicate"
 	item_state = "pinpointer_black"
@@ -97,7 +97,7 @@ GLOBAL_LIST_INIT(possible_squad_leader_first_names, list(\
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/squad_tracker
-	name = "Squad Leader Tracker"
+	name = "S.Q.U.A.D. Tracker"
 	desc = "A handheld tracking device that locates the leader. <b>SQUAD, ON ME!</b>"
 	id = "squad_tracker"
 	build_type = PROTOLATHE
