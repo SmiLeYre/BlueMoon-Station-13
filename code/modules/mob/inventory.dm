@@ -516,3 +516,19 @@
 
 /mob/canReachInto(atom/user, atom/target, list/next, view_only, obj/item/tool)
 	return ..() && (user == src)
+
+/mob/living/carbon/get_access_locations()
+	. = ..()
+	. |= list(get_active_hand())
+
+/mob/proc/get_id_card()
+	for(var/obj/item/I in get_access_locations())
+		if(I.GetID())
+			return I.GetID()
+
+/mob/proc/get_all_id_cards()
+	var/list/obj/item/card/id/id_cards = list()
+	for(var/obj/item/I in get_access_locations())
+		if(I.GetID())
+			id_cards += I.GetID()
+	return id_cards

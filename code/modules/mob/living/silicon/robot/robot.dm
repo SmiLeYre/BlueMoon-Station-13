@@ -15,7 +15,7 @@
 	spark_system.set_up(5, 0, src)
 	spark_system.attach(src)
 
-	wires = new /datum/wires/robot(src)
+	set_wires(new /datum/wires/robot(src))
 	AddElement(/datum/element/empprotection, EMP_PROTECT_WIRES)
 	// AddElement(/datum/element/ridable, /datum/component/riding/creature/cyborg)
 	RegisterSignal(src, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, .proc/charge)

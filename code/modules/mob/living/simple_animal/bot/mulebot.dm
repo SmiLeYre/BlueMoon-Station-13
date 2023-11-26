@@ -51,7 +51,7 @@
 
 /mob/living/simple_animal/bot/mulebot/Initialize(mapload)
 	. = ..()
-	wires = new /datum/wires/mulebot(src)
+	set_wires(new /datum/wires/mulebot(src))
 	var/datum/job/cargo_tech/J = new/datum/job/cargo_tech
 	access_card.access = J.get_access()
 	prev_access = access_card.access

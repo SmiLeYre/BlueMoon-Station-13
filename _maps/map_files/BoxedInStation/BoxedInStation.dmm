@@ -11162,7 +11162,7 @@
 /turf/open/floor/plasteel,
 /area/commons/fitness/pool)
 "fPO" = (
-/obj/machinery/computer/libraryconsole/bookmanagement,
+/obj/machinery/computer/library/checkout,
 /turf/closed/wall,
 /area/service/library)
 "fQe" = (

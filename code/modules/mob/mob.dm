@@ -1142,3 +1142,6 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
   */
 /mob/proc/on_item_dropped(obj/item/I)
 	return
+
+/mob/proc/get_access_locations()
+	return list()

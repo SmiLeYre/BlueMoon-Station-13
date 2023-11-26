@@ -12,8 +12,6 @@
 	var/persistent = FALSE
 	/// If set to TRUE, dynamic mode will be able to draft this ruleset again later on. (doesn't apply for roundstart rules)
 	var/repeatable = FALSE
-	/// BLUEMOON ADD - if set to TRUE, can appear during team-based dynamic
-	var/team_based_allowed = FALSE
 	/// If set higher than 0 decreases weight by itself causing the ruleset to appear less often the more it is repeated.
 	var/repeatable_weight_decrease = 2
 	/// List of players that are being drafted for this rule
@@ -25,7 +23,7 @@
 	/// The antagonist datum that is assigned to the mobs mind on ruleset execution.
 	var/datum/antagonist/antag_datum = null
 	/// The required minimum account age for this ruleset.
-	var/minimum_required_age = 7
+	var/minimum_required_age = 0 // BLUEMOON EDIT - было 7
 	/// If set, and config flag protect_roles_from_antagonist is false, then the rule will not pick players from these roles.
 	var/list/protected_roles = list()
 	/// If set, rule will deny candidates from those roles always.
@@ -79,6 +77,10 @@
 	/// Written as a linear equation--ceil(x/denominator) + offset, or as a fixed constant.
 	/// If written as a linear equation, will be in the form of `list("denominator" = denominator, "offset" = offset).
 	var/antag_cap = 0
+
+	// BLUEMOON ADD START - если GLOB.round_type (выставляется через голосование или админами) нет в списке, то рулсет не может выпасть
+	var/list/required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT)
+	// BLUEMOON ADD END
 
 /datum/dynamic_ruleset/New()
 	// Rulesets can be instantiated more than once, such as when an admin clicks

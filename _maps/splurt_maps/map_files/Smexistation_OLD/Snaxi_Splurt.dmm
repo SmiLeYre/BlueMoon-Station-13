@@ -15291,7 +15291,7 @@
 /area/service/chapel/main)
 "foJ" = (
 /obj/structure/table/wood/fancy,
-/obj/machinery/computer/libraryconsole/bookmanagement,
+/obj/machinery/computer/library/checkout,
 /turf/open/floor/plasteel/cult,
 /area/service/library)
 "fpa" = (
@@ -19477,7 +19477,7 @@
 /area/commons/dorms)
 "hnE" = (
 /obj/structure/table/wood,
-/obj/machinery/computer/libraryconsole/bookmanagement,
+/obj/machinery/computer/library/checkout,
 /obj/structure/sign/plaques/kiddie/library{
 	pixel_y = 31
 	},

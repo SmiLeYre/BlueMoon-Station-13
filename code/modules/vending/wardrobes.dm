@@ -582,11 +582,11 @@
 
 /obj/machinery/vending/wardrobe/cap_wardrobe
 	name = "Captain's Wardrobe"
-	desc = "The latest and greatest in Nanotrasen fashion for your great leader."
+	desc = "Последние достижения в области Nanotrasen для вашего великого лидера."
 	icon_state = "capsdrobe"
 	icon_deny = "capsdrobe-deny"
-	product_slogans = "Только самое лучшее для лучших."
-	vend_reply = "A wonderful day to you, great leader."
+	product_slogans = "Только лучшее для лучших."
+	vend_reply = "Прекрасного Вам дня, замечательный руководитель."
 	products = list(/obj/item/clothing/suit/hooded/wintercoat/captain = 1,
 					/obj/item/storage/backpack/captain = 1,
 					/obj/item/storage/backpack/satchel/cap = 1,
@@ -611,6 +611,7 @@
 					/obj/item/clothing/gloves/color/captain = 1,
 					/obj/item/clothing/neck/cloak/syndiecap = 2, // BlueMoon Add
 					/obj/item/clothing/neck/cloak/syndieadm = 1) // BlueMoon Add
+
 	refill_canister = /obj/item/vending_refill/wardrobe/cap_wardrobe
 	payment_department = ACCOUNT_SEC
 	default_price = PRICE_ALMOST_EXPENSIVE

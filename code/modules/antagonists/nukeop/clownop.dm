@@ -13,6 +13,7 @@
 
 /datum/antagonist/nukeop/clownop/on_removal()
 	REMOVE_TRAIT(owner, TRAIT_CLOWN_MENTALITY, CLOWNOP_TRAIT)
+	owner.special_role = null // BLUEMOON ADD
 	return ..()
 
 /datum/antagonist/nukeop/leader/clownop

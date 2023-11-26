@@ -9,23 +9,18 @@ import { Component, InfernoNode, RefObject, createRef } from 'inferno';
 import { addScrollableNode, removeScrollableNode } from '../events';
 import { canRender, classes } from 'common/react';
 
-type SectionProps = BoxProps & {
-  className?: string;
-  title?: InfernoNode;
-  buttons?: InfernoNode;
-  fill?: boolean;
-  fitted?: boolean;
-  scrollable?: boolean;
-  scrollableHorizontal?: boolean;
+interface SectionProps extends BoxProps {
+  readonly className?: string;
+  readonly title?: string;
+  readonly buttons?: InfernoNode;
+  readonly fill?: boolean;
+  readonly fitted?: boolean;
+  readonly scrollable?: boolean;
   /** @deprecated This property no longer works, please remove it. */
-  level?: never;
+  readonly level?: boolean;
   /** @deprecated Please use `scrollable` property */
-  overflowY?: never;
-  /** @member Allows external control of scrolling. */
-  scrollableRef?: RefObject<HTMLDivElement>;
-  /** @member Callback function for the `scroll` event */
-  onScroll?: (this: GlobalEventHandlers, ev: Event) => any;
-};
+  readonly overflowY?: any;
+}
 
 export class Section extends Component<SectionProps> {
   scrollableRef: RefObject<HTMLDivElement>;

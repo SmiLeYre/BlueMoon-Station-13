@@ -64,6 +64,7 @@
 	ClearAllPowersAndStats()// Clear Powers & Stats
 	clear_bloodsucker_objectives()	// Objectives
 	update_bloodsucker_icons_removed(owner.current)// Clear Antag HUD
+	owner.special_role = null // BLUEMOON ADD
 	. = ..()
 
 

@@ -15,6 +15,7 @@
 	одни, туземные сородичи обеспокоены вашим присутствием, а особенно знаниями, которыми вы обладаете. Может есть возможность с ними \
 	договорится? При этом всём чужаки с Небесных Крепостей добрались и до этих земель. \n\n\
 	Будьте на чеку, не дайте трудам потомков, отдавших свои жизни ради вас, пасть Пеплом за зря. Цикл должен продолжаться!"
+	important_info = "Защищайте Тендрил своего племени. Охота на шахтёров допустима только в Динамик."
 	mob_species = /datum/species/lizard/ashwalker/western
 	gender_bias = FEMALE
 	canloadappearance = TRUE
@@ -29,6 +30,7 @@
 	Сверх этого, с небесных крепостей из Холодного Камня, на ваши земли спустились скитальцы с далёких Звёзд. Их рудокопы накладывают \
 	священные пальцы на Некрополь, свои грязные лапы. Не дайте им украсть дары великой матери и лишить вас пищи. \n\n\
 	Охота должна быть здравой, цикл должен продолжаться, грядущие поколения должны жить!"
+	important_info = "Защищайте Тендрил своего племени. Охота на шахтёров допустима только в Динамик."
 	mob_species = /datum/species/lizard/ashwalker/eastern
 	gender_bias = MALE
 	canloadappearance = TRUE
@@ -36,7 +38,7 @@
 //Portable dangerous-environment sleepers: Spawns in exposed to ash storms shelter.
 //Characters in this role could have been conscious for a long time, surviving on the planet. They may also know Draconic language by contacting with ashwalkers.
 /obj/effect/mob_spawn/human/wandering_hermit
-	name = "portable dangerous-environment sleeper"
+	name = "Portable Dangerous-Environment Sleeper"
 	desc = "The glass is slightly cracked, but there is still air inside. You can see somebody inside. They seems to be sleeping deeply."
 	job_description = "Wandering Hermit"
 	icon = 'icons/obj/lavaland/spawners.dmi'

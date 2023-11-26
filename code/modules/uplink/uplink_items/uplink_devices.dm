@@ -212,7 +212,7 @@
 	name = "Cloaker Belt"
 	desc = "Makes you invisible for short periods of time. Recharges in darkness."
 	item = /obj/item/shadowcloak
-	cost = 5
+	cost = 10
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
 
 /datum/uplink_item/device_tools/riflery_primer

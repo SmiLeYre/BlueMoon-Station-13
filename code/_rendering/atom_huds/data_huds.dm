@@ -281,16 +281,31 @@
 		var/datum/data/record/R = find_record("name", perpname, GLOB.data_core.security)
 		if(R)
 			switch(R.fields["criminal"])
-				if("*Arrest*")
+				if(SEC_RECORD_STATUS_EXECUTE)
+					holder.icon_state = "hudexecute"
+					return
+				if(SEC_RECORD_STATUS_ARREST)
 					holder.icon_state = "hudwanted"
 					return
-				if("Incarcerated")
-					holder.icon_state = "hudincarcerated"
+				if(SEC_RECORD_STATUS_SEARCH)
+					holder.icon_state = "hudsearch"
 					return
-				if("Paroled")
+				if(SEC_RECORD_STATUS_MONITOR)
+					holder.icon_state = "hudmonitor"
+					return
+				if(SEC_RECORD_STATUS_DEMOTE)
+					holder.icon_state = "huddemote"
+					return
+				if(SEC_RECORD_STATUS_INCARCERATED)
+					holder.icon_state = "hudprisoner"
+					return
+				if(SEC_RECORD_STATUS_PAROLLED)
 					holder.icon_state = "hudparolled"
 					return
-				if("Discharged")
+				if(SEC_RECORD_STATUS_RELEASED)
+					holder.icon_state = "hudreleased"
+					return
+				if(SEC_RECORD_STATUS_DISCHARGED)
 					holder.icon_state = "huddischarged"
 					return
 	holder.icon_state = null
@@ -523,3 +538,37 @@
 		holder.icon_state = "electrified"
 	else
 		holder.icon_state = ""
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	I'll just put this somewhere near the end...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/// Helper function to add a "comment" to a data record. Used for medical or security records.
+/mob/living/carbon/human/proc/add_comment(mob/commenter, comment_kind, comment_text)
+	var/perpname = get_visible_name(TRUE) //gets the name of the perp, works if they have an id or if their face is uncovered
+	if(!perpname)
+		return
+	var/datum/data/record/R
+	switch(comment_kind)
+		if("security")
+			R = find_record("name", perpname, GLOB.data_core.security)
+		if("medical")
+			R = find_record("name", perpname, GLOB.data_core.medical)
+	if(!R)
+		return
+
+	var/commenter_display = "Something(???)"
+	if(ishuman(commenter))
+		var/mob/living/carbon/human/U = commenter
+		commenter_display = "[U.get_authentification_name()] ([U.get_assignment()])"
+	else if(iscyborg(commenter))
+		var/mob/living/silicon/robot/U = commenter
+		commenter_display = "[U.name] ([U.designation] [U.braintype])"
+	else if(isAI(commenter))
+		var/mob/living/silicon/ai/U = commenter
+		commenter_display = "[U.name] (artificial intelligence)"
+	comment_text = "Made by [commenter_display] on [GLOB.current_date_string] [STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)]:<br>[comment_text]"
+
+	if(!R.fields["comments"])
+		R.fields["comments"] = list()
+	R.fields["comments"] += list(comment_text)

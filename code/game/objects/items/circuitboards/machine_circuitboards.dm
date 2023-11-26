@@ -1553,3 +1553,13 @@
 	icon_state = "engineering"
 	build_path = /obj/machinery/research/explosive_compressor
 	req_components = list(/obj/item/stock_parts/matter_bin = 3)
+
+/obj/item/circuitboard/machine/fax
+	name = "Fax Machine (Machine Board)"
+	icon_state = "command"
+	build_path = /obj/machinery/fax
+	req_components = list(
+		/obj/item/stock_parts/subspace/crystal = 1,
+		/obj/item/stock_parts/scanning_module = 1,
+		/obj/item/stock_parts/micro_laser = 1,
+		/obj/item/stock_parts/manipulator = 1,)

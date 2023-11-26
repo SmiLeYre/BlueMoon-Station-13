@@ -36,7 +36,7 @@
 	var/round_converted = 0 //0: round not converted, 1: round going to convert, 2: round converted
 	var/reroll_friendly 	//During mode conversion only these are in the running
 	var/continuous_sanity_checked	//Catches some cases where config options could be used to suggest that modes without antagonists should end when all antagonists die
-	var/enemy_minimum_age = 7 //How many days must players have been playing before they can play this antagonist
+	var/enemy_minimum_age = 0 //How many days must players have been playing before they can play this antagonist // BLUEMOON EDIT - было 7, сделал 0, т.к. на сервере ВЛ и загриферить ролью тяжело
 
 	var/announce_span = "warning" //The gamemode's name will be in this span during announcement.
 	var/announce_text = "This gamemode forgot to set a descriptive text! Uh oh!" //Used to describe a gamemode when it's announced.
@@ -175,7 +175,7 @@
 	var/list/antag_candidates = list()
 
 	for(var/mob/living/carbon/human/H in living_crew)
-		if(H.client && H.client.prefs.allow_midround_antag)
+		if(H.client?.prefs.toggles & MIDROUND_ANTAG) // BLUEMOON EDIT - было, чей параметр в коде не изменяется H.client && H.client.prefs.allow_midround_antag
 			antag_candidates += H
 
 	if(!antag_candidates)

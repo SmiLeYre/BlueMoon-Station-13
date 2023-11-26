@@ -226,10 +226,11 @@
 	var/has_owner = FALSE
 	var/can_transfer = TRUE //if golems can switch bodies to this new shell
 	var/mob/living/owner = null //golem's owner if it has one
-	short_desc = "You are a Free Golem. Your family worships The Liberator."
-	flavour_text = "In his infinite and divine wisdom, he set your clan free to \
-	travel the stars with a single declaration: \"Yeah go do whatever.\" Though you are bound to the one who created you, it is customary in your society to repeat those same words to newborn \
-	golems, so that no golem may ever be forced to serve again."
+	short_desc = "Вы - свободный голем. Ваша семья поклоняется Освободителю."
+	flavour_text = "В своей бесконечной и божественной мудрости Освободитель освободил ваш клан, чтобы \
+	путешествовать по звездам с одним единственным заявлением: \ 'Да, делай что хочешь.'\ Хотя вы связаны с тем, кто вас создал, в вашем обществе принято повторять эти же слова новорожденным \
+	големам, чтобы ни один голем никогда не был вынужден служить снова."
+	important_info = "Вы не Антагонист."
 
 /obj/effect/mob_spawn/human/golem/Initialize(mapload, datum/species/golem/species = null, mob/creator = null)
 	if(species) //spawners list uses object name to register so this goes before ..()
@@ -361,14 +362,15 @@
 
 //Broken rejuvenation pod: Spawns in animal hospitals in lavaland. Ghosts become disoriented interns and are advised to search for help.
 /obj/effect/mob_spawn/human/doctor/alive/lavaland
-	name = "broken rejuvenation pod"
+	name = "Broken Rejuvenation Pod"
 	desc = "A small sleeper typically used to instantly restore minor wounds. This one seems broken, and its occupant is comatose."
 	job_description = "Lavaland Veterinarian"
 	mob_name = "a translocated vet"
-	short_desc = "You are a animal doctor who just woke up in lavaland"
-	flavour_text = "What...? Where are you? Where are the others? This is still the animal hospital - you should know, you've been an intern here for weeks - but \
-	you see them right now. So where is \
-	everyone? Where did they go? What happened to the hospital? And is that <i>smoke</i> you smell? You need to find someone else. Maybe they c	everyone's gone. One of the cats scratched you just a few minutes ago. That's why you were in the pod - to heal the scratch. The scabs are still fresh; an tell you what happened."
+	short_desc = "Вы - врач-животновод, только что проснувшийся в Лаваланде."
+	flavour_text = "Что...? Где вы? Где остальные? Это все еще больница для животных - вы должны знать, вы были здесь интерном в течение нескольких недель - но \
+	вы видите, что очутились где-то в неизвестном месте прямо сейчас. Так где же \
+	все? Куда они делись? Что случилось с больницей? И этот запах дыма? Вам нужно найти кого-нибудь еще. Может быть, они думают, что все ушли. Одна из кошек поцарапала тебя всего несколько минут назад. Поэтому вы и были в капсуле - чтобы залечить царапину. Струпья еще свежие..."
+	important_info = "Вы не Антагонист."
 	assignedrole = "Translocated Vet"
 	canloadappearance = TRUE
 

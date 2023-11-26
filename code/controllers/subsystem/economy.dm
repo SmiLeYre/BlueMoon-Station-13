@@ -184,7 +184,7 @@ SUBSYSTEM_DEF(economy)
 			continue
 		V.reset_prices(V.product_records, V.coin_records)
 	earning_report = "<b>Экономический отчет сектора</b><br><br> В настоящее время цены поставщиков в секторе <b>[SSeconomy.inflation_value()*100]%</b>.<br><br> Расходная мощность станции в настоящее время <b>[station_total] кредит[get_num_string(station_total)]</b>, а целевое довольствие экипажа составляет <b>[station_target] кредит[get_num_string(station_target)]</b>.<br><br> Это всё от <i>Отдел экономистов NanoTrasen</i>."
-	GLOB.news_network.SubmitArticle(earning_report, "Экономический отчет сектора", "Станционное Объявление", null)
+	GLOB.news_network.SubmitArticle(earning_report, "Экономический Отчет Сектора", "Станционные Объявления", null)
 
 /**
  * Proc that returns a value meant to shift inflation values in vendors, based on how much money exists on the station.

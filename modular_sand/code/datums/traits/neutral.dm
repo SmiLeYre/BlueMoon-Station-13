@@ -94,3 +94,10 @@
 
 	// Add quirk message
 	examine_list += span_love("<b>[quirk_holder.ru_who(TRUE)]</b> испытывает [heat_type], однозначно желая [positional_orientation].")
+
+/datum/quirk/dnc_order
+	name = "Приказ Не Клонировать"
+	desc = "На вас записан приказ 'Не клонировать', в котором, как бы это странно не звучало, говорится, что вас нельзя клонировать. Вы все еще можете быть оживлены другими способами."
+	value = 0
+	mob_trait = TRAIT_DNC_ORDER
+	medical_record_text = "Пациент имеет приказ DNC (Не Клонировать), в результате чего попытка воспользоваться клонированием будет отклонена."

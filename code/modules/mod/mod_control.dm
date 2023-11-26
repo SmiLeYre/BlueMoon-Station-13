@@ -104,7 +104,7 @@
 	ui_theme = theme.ui_theme
 	cell_drain = theme.cell_drain
 	initial_modules += theme.inbuilt_modules
-	wires = new /datum/wires/mod(src)
+	set_wires(new /datum/wires/mod(src))
 	if(ispath(cell))
 		cell = new cell(src)
 	helmet = new /obj/item/clothing/head/helmet/space/mod(src)
