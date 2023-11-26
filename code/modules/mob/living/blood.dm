@@ -47,9 +47,11 @@
 				if(blood_volume < BLOOD_VOLUME_MAXIMUM)
 					blood_volume += blood_diff
 
+			// BLUEMOON ADD START - роботы не восстанавливают кровь привычными путями
 			if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
 				blood_volume = min(BLOOD_VOLUME_NORMAL, blood_volume)
-			else if(blood_volume < BLOOD_VOLUME_NORMAL)
+			// BLUEMOON ADD END
+			else if(blood_volume < BLOOD_VOLUME_NORMAL) // BLUEMOON EDIT - в начале добавлено else
 				var/nutrition_ratio = 0
 				if(!HAS_TRAIT(src, TRAIT_NOHUNGER))
 					switch(nutrition)
