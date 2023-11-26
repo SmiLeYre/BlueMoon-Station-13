@@ -267,6 +267,12 @@
 	if(M == src && check_self_for_injuries())
 		return
 
+// BLUEMOON ADD START - девайны для проигрывания определённого звука (вместо 2 или даже 3) при применении интента
+#define SOUND_PAT 1
+#define SOUND_BOOP 2
+
+	var/sound_to_play = SOUND_PAT // чтобы проигрывался только 1 звук, а не 2-3
+// BLUEMOON ADD END
 	if(health >= 0 && !(HAS_TRAIT(src, TRAIT_FAKEDEATH)) || iszombie(src))
 		var/friendly_check = FALSE
 		if(mob_run_block(M, 0, M.name, ATTACK_TYPE_UNARMED, 0, null, null, null))
@@ -315,13 +321,14 @@
 
 			// Если есть квирк "отдалённый", персонажу не нравятся бупы в нос
 			else if(HAS_TRAIT(H, TRAIT_DISTANT)) //No mood buff since you're not really liking it.
-				M.visible_message("<span class='warning'><b>[H]</b> резко осматривается на <b>[M]</b>, когда [ru_ego()] гладят по голове! Кажется, [ru_who()] раздражен[ru_a()]...</span>", \
-					"<span class='warning'>Вы гладите <b>[H]</b> по голове! Кажется, [ru_ego()] глаза презрительно смещаются в вашу сторону...</span>")
+				M.visible_message("<span class='warning'><b>[H]</b> резко осматривается на <b>[M]</b>, когда [ru_ego()] бупает в нос! Кажется, [ru_who()] раздражен[ru_a()]...</span>", \
+					"<span class='warning'>Вы бупаете <b>[H]</b> в нос! Кажется, [ru_ego()] глаза презрительно смещаются в вашу сторону...</span>")
+				sound_to_play = SOUND_BOOP // BLUEMOON EDIT - было playsound(src, 'sound/items/Nose_boop.ogg', 50, 0)
 				H.add_lust(-5) //Why are you touching me?
 				if(prob(20))
 					M.visible_message("<span class='warning'><b>[H]</b> быстро выкручивает руку <b>[M]</b>!</span>", \
 						"<span class='boldwarning'>Твоя рука выкручивается в хватке <b>[H]</b>! Может, тебе следовало понять тот явственный намек...</span>")
-					playsound(get_turf(H), 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+					// playsound(get_turf(H), 'sound/weapons/thudswoosh.ogg', 50, 1, -1) // BLUEMOON REMOVAL - звук проигрывается в конце
 					M.emote("scream")
 					M.dropItemToGround(M.get_active_held_item())
 					var/hand = pick(BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND)
@@ -336,7 +343,7 @@
 						"<span class='notice'><b>[M]</b> бупает носик <b>[src]</b>.</span>", \
 						"<span class='notice'>Ты бупаешь носик <b>[src]</b>!</span>", target = src,
 						target_message = "<span class='notice'><b>[M]</b> бупает твой носик!</span>")
-				playsound(src, 'sound/items/Nose_boop.ogg', 50, 0)
+				sound_to_play = SOUND_BOOP // BLUEMOON EDIT - было playsound(src, 'sound/items/Nose_boop.ogg', 50, 0)
 
 		else if(check_zone(M.zone_selected) == BODY_ZONE_HEAD)
 			var/mob/living/carbon/human/H = src
@@ -367,9 +374,8 @@
 				if(prob(20)) // BLUEMOON EDIT - было 5%
 					M.visible_message("<span class='warning'><b>[H]</b> быстро выкручивает руку <b>[M]</b>!</span>", \
 						"<span class='boldwarning'>Твоя рука выкручивается в хватке <b>[H]</b>! Может, тебе следовало понять тот явственный намек...</span>")
-					playsound(get_turf(H), 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+					// playsound(get_turf(H), 'sound/weapons/thudswoosh.ogg', 50, 1, -1) // BLUEMOON REMOVAL - звук проигрывается в конце
 					M.emote("scream")
-					M.dropItemToGround(M.get_active_held_item())
 					var/hand = pick(BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND)
 					M.apply_damage(50, STAMINA, hand)
 					M.apply_damage(5, BRUTE, hand)
@@ -436,7 +442,19 @@
 		else
 			set_resting(FALSE, FALSE)
 		update_mobility()
-		playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+		// playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1) // BLUEMOON REMOVAL
+		// BLUEMOON ADD START - проигрышь только 1 звука
+		switch(sound_to_play)
+			if(SOUND_BOOP)
+				playsound(src, 'sound/items/Nose_boop.ogg', 50, 1, -1)
+			if(SOUND_PAT)
+				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+		//BLUEMOON ADD END
+
+// BLUEMOON ADD START
+#undef SOUND_PAT
+#undef SOUND_BOOP
+// BLUEMOON ADD END
 
 /// Check ourselves to see if we've got any shrapnel, return true if we do. This is a much simpler version of what humans do, we only indicate we're checking ourselves if there's actually shrapnel
 /mob/living/carbon/proc/check_self_for_injuries()
