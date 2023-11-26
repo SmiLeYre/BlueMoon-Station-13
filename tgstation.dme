@@ -4045,7 +4045,6 @@
 #include "modular_bluemoon\bigtalk\bigtalk.dm"
 #include "modular_bluemoon\code\controllers\configuration\entries\silicon.dm"
 #include "modular_bluemoon\code\datums\traits\neutral.dm"
-#include "modular_bluemoon\code\game\objects\items\pinpointer.dm"
 #include "modular_bluemoon\code\game\objects\items\plushes.dm"
 #include "modular_bluemoon\code\modules\client\preferences_savefile.dm"
 #include "modular_bluemoon\code\modules\client\loadout\uniform.dm"

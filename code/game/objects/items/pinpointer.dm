@@ -179,8 +179,6 @@
 /obj/item/pinpointer/pair
 	name = "pair pinpointer"
 	desc = "A handheld tracking device that locks onto its other half of the matching pair."
-	icon_state = "pinpointer_syndicate" // BLUEMOON ADD
-	item_state = "pinpointer_black" // BLUEMOON ADD - чтобы проще отличать от пинпоинтера на диск
 	var/other_pair
 
 /obj/item/pinpointer/pair/Destroy()
