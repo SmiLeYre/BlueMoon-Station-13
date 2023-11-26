@@ -7,7 +7,6 @@ related to the antag that could be a datum
 /datum/antagonist/wendigo
 	name = "wendigo"
 	antagpanel_category = "Wendigo"
-	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/wendigo/on_gain()
 	if(istype(owner.current, /mob/living/carbon/human))

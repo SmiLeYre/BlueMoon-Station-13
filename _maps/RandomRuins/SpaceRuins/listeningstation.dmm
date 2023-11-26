@@ -1234,7 +1234,7 @@
 /area/ruin/space/has_grav/listeningstation)
 "rx" = (
 /obj/structure/table/wood,
-/obj/machinery/computer/libraryconsole/bookmanagement{
+/obj/machinery/computer/library/checkout{
 	pixel_y = 7
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -1971,7 +1971,7 @@
 /area/ruin/space/has_grav/listeningstation)
 "RY" = (
 /obj/structure/table/reinforced,
-/obj/machinery/computer/libraryconsole/bookmanagement,
+/obj/machinery/computer/library/checkout,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/listeningstation)
 "So" = (

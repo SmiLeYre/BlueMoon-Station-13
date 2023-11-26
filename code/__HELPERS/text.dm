@@ -1143,3 +1143,9 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 	for(var/s in GLOB.rus_unicode_conversion_hex)
 		text = replacetext(text, "\\u[GLOB.rus_unicode_conversion_hex[s]]", s)
 	return json_decode(text)
+
+//Adds 'u' number of zeros ahead of the text 't'
+/proc/add_zero(t, u)
+	while(length(t) < u)
+		t = "0[t]"
+	return t

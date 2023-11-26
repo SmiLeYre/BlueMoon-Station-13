@@ -224,7 +224,7 @@
 			var/obj/item/stack/S = W
 			S.use(1)
 			obj_integrity = max_integrity
-			to_chat(user, "<span class='notice'>You repair [src] with [S].</span>")
+			to_chat(user, "<span class='notice'>Вы починили [src] with [S].</span>")
 	else
 		return ..()
 

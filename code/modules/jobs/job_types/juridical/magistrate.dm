@@ -9,7 +9,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	minimal_player_age = 35
-	supervisors = "Nanotrasen officials and Space law"
+	supervisors = "Представители Центрального Командования и Космический Закон"
 	selection_color = "#7e3d48"
 	considered_combat_role = FALSE
 	exp_requirements = 180

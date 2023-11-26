@@ -10862,7 +10862,7 @@
 /area/mine/storage)
 "Bz" = (
 /obj/structure/table,
-/obj/machinery/computer/libraryconsole/bookmanagement,
+/obj/machinery/computer/library/checkout,
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},

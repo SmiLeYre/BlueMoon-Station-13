@@ -477,6 +477,7 @@
 	base_build_path = /obj/machinery/smartfridge/organ/preloaded
 	initial_contents = list(
 		/obj/item/reagent_containers/medspray/synthtissue = 1,
+		/obj/item/reagent_containers/glass/bottle/morphine = 1, // BLUEMOON ADD - обезболивающее для операций,
 		/obj/item/reagent_containers/medspray/sterilizine = 1)
 
 /obj/machinery/smartfridge/organ/preloaded/Initialize(mapload)

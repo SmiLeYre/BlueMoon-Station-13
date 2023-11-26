@@ -678,6 +678,9 @@
 		if("message")
 			status_signal.data["msg1"] = data1
 			status_signal.data["msg2"] = data2
+			if(istype(usr, /mob/living))
+				log_admin("STATUS: [key_name(usr)] set status screen with [src]. Message: [data1] [data2]")
+				message_admins("STATUS: [key_name(usr)] set status screen with [src]. Message: [data1] [data2]")
 		if("alert")
 			status_signal.data["picture_state"] = data1
 

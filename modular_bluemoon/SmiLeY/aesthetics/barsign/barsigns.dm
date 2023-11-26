@@ -1,4 +1,4 @@
-/obj/machinery/barsign
+/obj/structure/sign/barsign
     icon = 'modular_bluemoon/SmiLeY/aesthetics/barsign/barsigns.dmi'
 
 /datum/barsign/maltesefalcon

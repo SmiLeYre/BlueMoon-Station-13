@@ -218,7 +218,7 @@ GLOBAL_LIST_EMPTY(meteor_satellites) // BLUEMOON ADD - список всех п�
 
 /obj/machinery/satellite/meteor_shield
 	name = "\improper Point-Defence Satellite"
-	desc = "A meteor point-defense satellite."
+	desc = "A meteor point-defense satellite. Best to place in range of 10-20 meters from the hull to have more coverage."
 	mode = "M-SHIELD"
 	speed_process = TRUE
 	var/kill_range = 20 // BLUEMOON CHANGES (было 14)

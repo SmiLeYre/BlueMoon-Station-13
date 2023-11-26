@@ -6,7 +6,6 @@
 	threat = 5
 	show_to_ghosts = TRUE
 	var/datum/team/pirate/crew
-	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/pirate/greet()
 	SEND_SOUND(owner.current, sound('sound/ambience/antag/pirate.ogg'))

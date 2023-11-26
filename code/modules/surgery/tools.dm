@@ -161,7 +161,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	force = 10
 	toolspeed = 0.7
-	heat = 3500
+	heat = 0 // BLUEMOON EDIT - чтобы прижигание не путали с дрелью
 
 /obj/item/surgicaldrill/advanced/Initialize(mapload)
 	. = ..()
@@ -173,10 +173,12 @@
 		tool_behaviour = TOOL_CAUTERY
 		to_chat(user, "<span class='notice'>You focus the lenses of [src], it is now in mending mode.</span>")
 		icon_state = "cautery_a"
+		heat = 3500 // BLUEMOON ADD - чтобы прижигание не путали с дрелью
 	else
 		tool_behaviour = TOOL_DRILL
 		to_chat(user, "<span class='notice'>You dilate the lenses of [src], it is now in drilling mode.</span>")
 		icon_state = "surgicaldrill_a"
+		heat = 0 // BLUEMOON ADD - чтобы прижигание не путали с дрелью
 
 /obj/item/surgicaldrill/advanced/examine(mob/living/user)
 	. = ..()

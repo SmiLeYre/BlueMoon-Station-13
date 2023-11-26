@@ -6,7 +6,6 @@
 	antagpanel_category = "Cult"
 	antag_moodlet = /datum/mood_event/cult
 	threat = 3
-	soft_antag = FALSE // BLUEMOON ADDITION
 	var/datum/action/innate/cult/comm/communion = new
 	var/datum/action/innate/cult/mastervote/vote = new
 	var/datum/action/innate/cult/blood_magic/magic = new
@@ -166,6 +165,7 @@
 		owner.current.log_message("has renounced the cult of Nar'Sie!", LOG_ATTACK, color="#960000")
 	if(cult_team?.blood_target && cult_team.blood_target_image && owner.current.client)
 		owner.current.client.images -= cult_team.blood_target_image
+	owner.special_role = null // BLUEMOON ADD
 	. = ..()
 
 /datum/antagonist/cult/admin_add(datum/mind/new_owner,mob/admin)

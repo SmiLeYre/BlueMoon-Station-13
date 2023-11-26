@@ -20,7 +20,6 @@
 	var/list/datum/action/powers = list()// Purchased powers
 	var/list/datum/objective/objectives_given = list()	// For removal if needed.
 	threat = 1
-	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/vassal/can_be_owned(datum/mind/new_owner)
 	// If we weren't created by a bloodsucker, then we cannot be a vassal (assigned from antag panel)
@@ -85,7 +84,7 @@
 	owner.current.remove_language(/datum/language/vampiric, TRUE, TRUE, LANGUAGE_VASSAL)
 	// Clear Antag HUD
 	update_vassal_icons_removed(owner.current)
-
+	owner.special_role = null // BLUEMOON ADD
 	. = ..()
 
 /datum/antagonist/vassal/greet()

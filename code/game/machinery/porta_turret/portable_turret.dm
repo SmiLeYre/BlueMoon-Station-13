@@ -415,9 +415,9 @@ DEFINE_BITFIELD(turret_flags, list(
 	if(cover && obj_integrity < max_integrity)
 		if(!I.tool_start_check(user, amount=0))
 			return
-		user.visible_message("[user] is welding the turret.", \
-						"<span class='notice'>You begin repairing the turret...</span>", \
-						"<span class='italics'>You hear welding.</span>")
+		user.visible_message("[user] чинит турель сваркой.", \
+						"<span class='notice'>Вы начинаете чинить турель...</span>", \
+						"<span class='italics'>Вы слышите звук сварки.</span>")
 		if(I.use_tool(src, user, 40, volume=50))
 			obj_integrity = max_integrity
 			user.visible_message("[user.name] has repaired [src].", \
@@ -578,7 +578,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	if(turret_flags & TURRET_FLAG_SHOOT_CRIMINALS)	//if the turret can check the records, check if they are set to *Arrest* on records
 		var/perpname = perp.get_face_name(perp.get_id_name())
 		var/datum/data/record/R = find_record("name", perpname, GLOB.data_core.security)
-		if(!R || (R.fields["criminal"] == "*Arrest*"))
+		if(!R || (R.fields["criminal"] == SEC_RECORD_STATUS_ARREST || SEC_RECORD_STATUS_EXECUTE || SEC_RECORD_STATUS_INCARCERATED))
 			threatcount += 4
 
 	if((turret_flags & TURRET_FLAG_SHOOT_UNSHIELDED) && (!HAS_TRAIT(perp, TRAIT_MINDSHIELD)))

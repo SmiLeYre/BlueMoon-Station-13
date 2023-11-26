@@ -11,7 +11,6 @@
 	antagpanel_category = "Syndicate Mutineers"
 	job_rank = ROLE_TRAITOR // simply use the traitor preference & jobban settings
 	threat = 5
-	soft_antag = FALSE // BLUEMOON ADDITION
 	var/datum/team/overthrow/team
 	var/static/list/possible_useful_items
 

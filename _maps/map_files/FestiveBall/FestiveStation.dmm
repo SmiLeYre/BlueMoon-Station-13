@@ -7410,7 +7410,7 @@
 /area/security/prison)
 "asO" = (
 /obj/structure/table,
-/obj/machinery/computer/libraryconsole/bookmanagement,
+/obj/machinery/computer/library/checkout,
 /turf/open/floor/wood,
 /area/security/prison)
 "asP" = (
@@ -40512,7 +40512,7 @@
 /area/commons/lounge)
 "bUY" = (
 /obj/structure/table/wood/fancy/red,
-/obj/machinery/computer/libraryconsole/bookmanagement{
+/obj/machinery/computer/library/checkout{
 	pixel_y = 8
 	},
 /obj/structure/disposalpipe/segment{

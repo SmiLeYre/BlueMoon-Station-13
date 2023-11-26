@@ -85,6 +85,7 @@
 	new /obj/item/clothing/suit/armor/brigdoc(src)
 	new /obj/item/clothing/suit/armor/brigdoc/labcoat(src)
 	new /obj/item/mod/module/clamp(src) //BLUEMOOB ADDITION - для перемещения сверхтяжёлых персонажей
+	new /obj/item/reagent_containers/glass/bottle/morphine(src) // BLUEMOON ADD - для операций
 
 /obj/structure/closet/secure_closet/blueshield
 	name = "blueshield's locker"
@@ -264,6 +265,7 @@
 	new /obj/item/clothing/accessory/lawyers_badge(src)
 	new /obj/item/camera/detective(src)
 	new /obj/item/storage/box/evidence(src)
+	new /obj/item/melee/classic_baton/telescopic/centcom(src)
 	new /obj/item/folder(src)
 	new /obj/item/folder(src)
 	new /obj/item/folder(src)

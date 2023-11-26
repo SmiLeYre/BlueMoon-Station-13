@@ -6929,6 +6929,11 @@
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
+/obj/machinery/fax{
+	fax_name = "Unknown Syndicate Fax";
+	name = "DS-2 Fax Machine";
+	syndicate_network = 1
+	},
 /turf/open/floor/iron/dark/textured_half,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "DH" = (
@@ -10155,7 +10160,7 @@
 	dir = 5
 	},
 /obj/structure/table/wood,
-/obj/machinery/computer/libraryconsole/bookmanagement{
+/obj/machinery/computer/library/checkout{
 	pixel_y = 7
 	},
 /turf/open/floor/wood/wood_parquet,

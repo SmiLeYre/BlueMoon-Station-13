@@ -2223,7 +2223,7 @@
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
 "bUO" = (
 /obj/structure/table/wood,
-/obj/machinery/computer/libraryconsole/bookmanagement,
+/obj/machinery/computer/library/checkout,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
@@ -10085,7 +10085,7 @@
 /area/lavaland/surface/outdoors)
 "jLi" = (
 /obj/structure/table,
-/obj/machinery/computer/libraryconsole/bookmanagement,
+/obj/machinery/computer/library/checkout,
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},

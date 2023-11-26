@@ -136,3 +136,9 @@
 //deepcore mining scanner
 #define SCANMODE_SURFACE 0 //scans ore, old mining scanner behavior
 #define SCANMODE_DEEPCORE 1 //scans for deepcore mining spots, old deeep core scanner behavior
+
+// Computer login types
+#define LOGIN_TYPE_NORMAL 1
+#define LOGIN_TYPE_AI 2
+#define LOGIN_TYPE_ROBOT 3
+#define LOGIN_TYPE_ADMIN 4

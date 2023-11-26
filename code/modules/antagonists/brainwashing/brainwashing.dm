@@ -34,6 +34,7 @@
 	show_name_in_check_antagonists = TRUE
 	ui_name = "AntagInfoBrainwashed"
 	suicide_cry = "FOR... SOMEONE!!"
+	soft_antag = TRUE //BLUEMOON ADD - дружелюбные, малозначимые гостроли не должны считаться за антагонистов (ломает динамик)
 
 /datum/antagonist/brainwashed/ui_static_data(mob/user)
 	. = ..()

@@ -530,6 +530,11 @@
 	set name = "Sleep"
 	set category = "IC"
 
+	// BLUEMOON ADD START - невозможно уснуть, пока тебя оперируют
+	if(surgeries.len)
+		to_chat(src, "<span class='danger'>На мне хотят провести операцию, я не могу заставить себя уснуть!</span>")
+		return
+	// BLUEMOON ADD END
 	if(IsSleeping())
 		to_chat(src, "<span class='notice'>You are already sleeping.</span>")
 		return

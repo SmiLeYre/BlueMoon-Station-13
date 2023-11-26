@@ -96,3 +96,7 @@
 /datum/gear/uniform/sexymaid
 	name = "Sexy maid uniform"
 	path = /obj/item/clothing/under/dress/skirt/maidsexy
+
+/datum/gear/uniform/dress/turtledress
+	name = "Turtleneck dress"
+	path = /obj/item/clothing/under/dress/turtledress
