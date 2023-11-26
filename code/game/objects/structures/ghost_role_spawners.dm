@@ -637,6 +637,15 @@
 	mask = /obj/item/clothing/mask/cigarette/cigar/havana
 	glasses = /obj/item/clothing/glasses/thermal/eyepatch
 
+// BLUEMOON ADD START - командная коробочка для командира
+/datum/outfit/syndicate_empty/battlecruiser/assault/captain/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
+	. = ..()
+	var/list/extra_backpack_items = list(
+		/obj/item/storage/box/pinpointer_squad
+	)
+	LAZYADD(backpack_contents, extra_backpack_items)
+// BLUEMOON ADD END
+
 //Ancient cryogenic sleepers. Players become NT crewmen from a hundred year old space station, now on the verge of collapse.
 /obj/effect/mob_spawn/human/oldsec
 	name = "old cryogenics pod"
