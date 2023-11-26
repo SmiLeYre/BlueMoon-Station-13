@@ -4,7 +4,6 @@
 	antagpanel_category = "Disease"
 	show_to_ghosts = TRUE
 	var/disease_name = ""
-	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/disease/on_gain()
 	owner.special_role = "Sentient Disease"

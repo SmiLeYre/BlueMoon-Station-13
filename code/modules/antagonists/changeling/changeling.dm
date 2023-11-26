@@ -12,7 +12,6 @@
 	job_rank = ROLE_CHANGELING
 	antag_moodlet = /datum/mood_event/focused
 	threat = 10
-	soft_antag = FALSE // BLUEMOON ADDITION
 	var/you_are_greet = TRUE
 	var/give_objectives = TRUE
 	var/team_mode = FALSE //Should assign team objectives ?

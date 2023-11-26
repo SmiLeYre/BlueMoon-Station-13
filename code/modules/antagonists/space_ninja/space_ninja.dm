@@ -14,8 +14,6 @@
 	///
 	var/ninja_outfit
 
-	soft_antag = FALSE // BLUEMOON ADDITION
-
 /proc/is_ninja(mob/living/M)
 	return M && M.mind && M.mind.has_antag_datum(/datum/antagonist/ninja)
 

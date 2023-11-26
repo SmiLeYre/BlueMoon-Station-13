@@ -7,7 +7,7 @@
 	name = "\improper Ghost Role"
 	job_rank = ROLE_GHOSTROLE
 	show_in_antagpanel = FALSE
-	soft_antag = FALSE
+	soft_antag = TRUE
 	show_name_in_check_antagonists = FALSE
 	show_to_ghosts = TRUE
 	antagpanel_category = "Ghost Role"

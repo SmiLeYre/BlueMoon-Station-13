@@ -7,6 +7,7 @@
 	show_to_ghosts = TRUE
 	var/datum/team/fugitive_hunters/hunter_team
 	var/backstory = "error"
+	soft_antag = TRUE //BLUEMOON ADD - дружелюбные, малозначимые гостроли не должны считаться за антагонистов (ломает динамик)
 
 /datum/antagonist/fugitive_hunter/apply_innate_effects(mob/living/mob_override)
 	var/mob/living/M = mob_override || owner.current

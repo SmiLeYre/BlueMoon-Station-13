@@ -12,7 +12,6 @@
 	var/send_to_spawnpoint = TRUE //Should the user be moved to default spawnpoint.
 	var/nukeop_outfit = /datum/outfit/syndicate
 	var/title
-	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/syndicate_op/proc/update_synd_icons_added(mob/living/M)
 	var/datum/atom_hud/antag/opshud = GLOB.huds[ANTAG_HUD_OPS]

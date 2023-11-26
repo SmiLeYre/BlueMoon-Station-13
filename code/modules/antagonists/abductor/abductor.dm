@@ -13,7 +13,6 @@
 	var/outfit
 	var/landmark_type
 	var/greet_text
-	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/abductor/agent
 	name = "Abductor Agent"
