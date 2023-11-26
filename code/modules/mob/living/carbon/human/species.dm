@@ -1932,7 +1932,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		return FALSE
 	else if(aim_for_groin && (target == user || target.lying || same_dir) && (target_on_help || target_restrained || target_aiming_for_groin))
 		if(target.client?.prefs.cit_toggles & NO_ASS_SLAP)
-			to_chat(user,"A force stays your hand, preventing you from slapping \the [target]'s ass!")
+			to_chat(user, span_warning("По какой-то причине вы не можете сделать это с [target].")) // BLUEMOON EDIT, было 	to_chat(user,"A force stays your hand, preventing you from slapping \the [target]'s ass!")
+			to_chat(user, span_warning(span_small("Игрок отключил механическую возможность шлепать себя. Попробуйте отыгрывать это через действия."))) // BLUEMOON ADD
 			return FALSE
 		if(!user.UseStaminaBuffer(3, warn = TRUE))
 			return FALSE
@@ -1959,7 +1960,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			target.mob_climax(forced_climax=TRUE, cause = "masochism")
 		if (!HAS_TRAIT(target, TRAIT_PERMABONER))
 			stop_wagging_tail(target)
-		playsound(target.loc, 'sound/weapons/slap.ogg', 50, 1, -1)
+		// playsound(target.loc, 'sound/weapons/slap.ogg', 50, 1, -1) // BLUEMOON REMOVAL - это дубль звука сверху (почему он вообще существует?)
 		target.visible_message(\
 			"<span class='danger'>\The [user] slaps [user == target ? "[user.ru_ego()] own" : "\the [target]'s"] ass!</span>",\
 			"<span class='notice'>[user] slaps your ass! </span>",\
