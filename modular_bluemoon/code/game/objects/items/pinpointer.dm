@@ -22,7 +22,7 @@ GLOBAL_LIST_INIT(possible_squad_leader_first_names, list(\
 		if(leader_beacon.tracking_name)
 			. += "<hr>"
 			. += span_info("Вы - часть отряда <b>\"[leader_beacon.tracking_name]\"</b>.")
-	. += span_info("Трекер можно поднести к маячку лидера, чтобы присоедениться к его отряду.")
+	. += span_info("Трекер можно поднести к маячку лидера, чтобы присоединиться к его отряду.")
 
 /obj/item/pinpointer/squad/scan_for_target()
 	set_target(leader)
