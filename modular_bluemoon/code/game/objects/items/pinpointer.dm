@@ -5,7 +5,7 @@ GLOBAL_LIST_INIT(possible_squad_leader_first_names, list(\
 // Трекер на командира
 
 /obj/item/pinpointer/squad
-	name = "S.Q.U.A.D. tracker"
+	name = "squad tracker"
 	desc = "A handheld tracking device that locates the leader. <b>SQUAD, ON ME!</b>"
 	icon_state = "pinpointer_syndicate"
 	item_state = "pinpointer_black"
@@ -30,7 +30,7 @@ GLOBAL_LIST_INIT(possible_squad_leader_first_names, list(\
 // Командирский маячок
 
 /obj/item/squad_leader_tracker
-	name = "S.Q.U.A.D. beacon"
+	name = "squad beacon"
 	desc = "Устройство с функционалом маячка. Излучает сигнал, улавливаемый определёнными пинпоинтерами. \
 	Такая модель часто используется в военных и полу-военных подразделениях для поиска командира отряда - её они и носят. \
 	Как правило, к ней прикреплены только те маячки, что идут в комплекте. Позволяет усилить организацию над приматами и детьми до 8 лет."
@@ -88,7 +88,7 @@ GLOBAL_LIST_INIT(possible_squad_leader_first_names, list(\
 // Добавление обоих предметов в техфабы с начала смены
 
 /datum/design/squad_beacon
-	name = "S.Q.U.A.D. Beacon"
+	name = "Squad Beacon"
 	id = "squad_beacon"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 3000, /datum/material/glass = 1500, /datum/material/gold = 200)
@@ -97,7 +97,7 @@ GLOBAL_LIST_INIT(possible_squad_leader_first_names, list(\
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/squad_tracker
-	name = "S.Q.U.A.D. Tracker"
+	name = "Squad Tracker"
 	desc = "A handheld tracking device that locates the leader. <b>SQUAD, ON ME!</b>"
 	id = "squad_tracker"
 	build_type = PROTOLATHE
