@@ -36,7 +36,7 @@ GLOBAL_LIST_INIT(possible_squad_leader_first_names, list(\
 	Как правило, к ней прикреплены только те маячки, что идут в комплекте. Позволяет усилить организацию над приматами и детьми до 8 лет."
 	w_class = WEIGHT_CLASS_TINY
 	icon = 'icons/obj/device.dmi'
-	icon_state = "gangtool-red"
+	icon_state = "gangtool-white"
 	item_state = "radio"
 	var/tracking_name = ""
 
