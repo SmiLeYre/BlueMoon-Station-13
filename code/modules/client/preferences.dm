@@ -122,7 +122,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/age = 30						//age of character
 	//Sandstorm CHANGES BEGIN
 	var/erppref = "Ask"
-	var/nonconpref = "Can Refuse in LOOC"
+	var/nonconpref = "Ask"
 	var/vorepref = "Ask"
 	var/mobsexpref = "No" //Added by Gardelin0 - Sex(mostly non-con) with hostile mobs(tentacles)
 	var/extremepref = "No" //This is for extreme shit, maybe even literal shit, better to keep it on no by default
@@ -3664,10 +3664,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("noncon_pref")
 					switch(nonconpref)
 						if("Yes")
-							nonconpref = "Can Refuse in LOOC"
-						if("Can Refuse in LOOC")
-							nonconpref = "Watch the OOC-notes"
-						if("Watch the OOC-notes")
+							nonconpref = "Ask"
+						if("Ask")
 							nonconpref = "No"
 						if("No")
 							nonconpref = "Yes"

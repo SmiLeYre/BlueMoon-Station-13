@@ -28,13 +28,13 @@
 				if(!(alt_titles_preferences[job.title] in job.alt_titles))
 					alt_titles_preferences.Remove(job.title)
 
-	erppref = sanitize_inlist(S["erp_pref"], GLOB.lewd_prefs_choices, "Can Refuse in LOOC")
-	nonconpref = sanitize_inlist(S["noncon_pref"], GLOB.lewd_prefs_choices, "Can Refuse in LOOC")
-	vorepref = sanitize_inlist(S["vore_pref"], GLOB.lewd_prefs_choices, "Can Refuse in LOOC")
+	erppref = sanitize_inlist(S["erp_pref"], GLOB.lewd_prefs_choices, "Ask")
+	nonconpref = sanitize_inlist(S["noncon_pref"], GLOB.lewd_prefs_choices, "Ask")
+	vorepref = sanitize_inlist(S["vore_pref"], GLOB.lewd_prefs_choices, "Ask")
 	mobsexpref = sanitize_inlist(S["mobsex_pref"], GLOB.lewd_prefs_choices, "No") //Hentai
-	unholypref = sanitize_inlist(S["unholypref"], GLOB.lewd_prefs_choices, "Can Refuse in LOOC") //I AM MENTAL I AM MAD I AM INSANE
+	unholypref = sanitize_inlist(S["unholypref"], GLOB.lewd_prefs_choices, "Ask") //I AM MENTAL I AM MAD I AM INSANE
 	extremepref = sanitize_inlist(S["extreme_pref"], GLOB.lewd_prefs_choices, "No") //god has forsaken me
-	extremeharm = sanitize_inlist(S["extreme_harm"], (GLOB.lewd_prefs_choices - "Can Refuse in LOOC"), "No") //hacky for not saving "Ask"
+	extremeharm = sanitize_inlist(S["extreme_harm"], (GLOB.lewd_prefs_choices - "Ask"), "No") //hacky for not saving "Ask"
 	if(extremepref == "No")
 		extremeharm = "No"
 	enable_personal_chat_color	= sanitize_integer(enable_personal_chat_color, 0, 1, initial(enable_personal_chat_color))
