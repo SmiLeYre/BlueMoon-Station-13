@@ -29,17 +29,18 @@ interface CharacterProfileContext {
   oocnotes: string;
   species_name: string;
   custom_species_lore: string;
+  security_records: string;
+  medical_records: string;
   vore_tag: string;
   erp_tag: string;
   mob_tag: string;
-  hornyantags_tag: string;
   nc_tag: string;
   unholy_tag: string;
   extreme_tag: string;
   very_extreme_tag: string;
 }
 
-export const CharacterProfile = (props, context) => {
+export const CharacterProfileForGhosts = (props, context) => {
   const { act, data } = useBackend<CharacterProfileContext>(context);
 
   const tags = [
@@ -47,7 +48,6 @@ export const CharacterProfile = (props, context) => {
     { name: "Non-Con", title: "Изнасилование", value: data.nc_tag },
     { name: "Vore", title: "Поедание/Проглатывание", value: data.vore_tag },
     { name: "Mob-Sex", title: "Совокупление с Мобами", value: data.mob_tag },
-    { name: "Horny Antags", title: "Жертва хорни антагов", value: data.hornyantags_tag },	
     { name: "Unholy", title: "Грязный секс", value: data.unholy_tag },
     { name: "Extreme", title: "Жестокий секс", value: data.extreme_tag },
     { name: "Extreme Harm", title: "Очень жестокий секс", value: data.very_extreme_tag },
@@ -63,12 +63,8 @@ export const CharacterProfile = (props, context) => {
         </Tabs>
         <Flex>
           <Flex.Item pl="10px">
-          {
-            // убрал проверку на ношение маски для отображения хеда
-            }
-         { /*  {!data.is_unknown ? (<CharacterProfileImageElement />)
-              : (<Box />)}*/}
-            <CharacterProfileImageElement />
+            {!data.is_unknown ? (<CharacterProfileImageElement />)
+              : (<Box />)}
             <CharacterModelImageElement />
           </Flex.Item>
           <Flex.Item Flex-direction="column" pl="10px" width="100%">
@@ -88,6 +84,26 @@ export const CharacterProfile = (props, context) => {
                     ? (<Flex.Item style={{ "white-space": "pre-line" }}>{data.flavortext_naked}</Flex.Item>)
                     : (<Box />)}
                   {!data.flavortext && !data.flavortext_naked ? ("Отсутствует") : (<Box />)}
+                </Flex>
+              </Section>
+            </Collapsible>
+            <Collapsible title="База Данных Службы Безопасности" open>
+              <Section>
+                <Flex direction="column">
+                  {data.security_records
+                    ? (<Flex.Item style={{ "white-space": "pre-line" }}>{data.security_records}</Flex.Item>)
+                    : (<Box />)}
+                  {!data.security_records ? ("Отсутствует") : (<Box />)}
+                </Flex>
+              </Section>
+            </Collapsible>
+            <Collapsible title="База Данных Медицинского Отдела" open>
+              <Section>
+                <Flex direction="column">
+                  {data.medical_records
+                    ? (<Flex.Item style={{ "white-space": "pre-line" }}>{data.medical_records}</Flex.Item>)
+                    : (<Box />)}
+                  {!data.medical_records ? ("Отсутствует") : (<Box />)}
                 </Flex>
               </Section>
             </Collapsible>

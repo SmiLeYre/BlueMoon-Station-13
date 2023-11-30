@@ -51,6 +51,8 @@ GLOBAL_LIST_EMPTY(cached_previews)
 	data["oocnotes"] = M?.client?.prefs?.features["ooc_notes"] || ""
 	data["species_name"] = M?.client?.prefs?.custom_species || "Космонавтик"
 	data["custom_species_lore"] = M?.client?.prefs.features["custom_species_lore"] || "Не имеющий описания своей расы космонавтик. Просто космонавтик!"
+	data["security_records"] = M?.client?.prefs.security_records || "" //BLUEMOON ADD - призраки видят базы данных в описании персонажей
+	data["medical_records"] = M?.client?.prefs.medical_records || "" //BLUEMOON ADD - призраки видят базы данных в описании персонажей
 	data["vore_tag"] = M?.client?.prefs?.vorepref || "No"
 	data["erp_tag"] = M?.client?.prefs?.erppref || "No"
 	data["mob_tag"] = M?.client?.prefs?.mobsexpref || "No"
@@ -118,7 +120,12 @@ GLOBAL_LIST_EMPTY(cached_previews)
 	if (!ui)
 		user.client.register_map_obj(examine_panel_screen)
 		examine_panel_screen.setDir(SOUTH)
-		ui = new(user, src, "CharacterProfile", "Профиль персонажа [M]")
+		// BLUEMOON ADD START - призраки видят базы данных в описании персонажей
+		if(isobserver(user))
+			ui = new(user, src, "CharacterProfileForGhosts", "Профиль персонажа [M]")
+		else
+		// BLUEMOON ADD END
+			ui = new(user, src, "CharacterProfile", "Профиль персонажа [M]")
 		ui.open()
 
 /datum/description_profile/ui_act(action, list/params)
