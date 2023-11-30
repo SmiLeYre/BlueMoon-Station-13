@@ -1,5 +1,5 @@
 GLOBAL_VAR_INIT(bluemoon_criminal_quirk_warden_name, "") // имя для вардена, чтобы во всех записях было одинаковым
-GLOBAL_LIST_INIT(bluemoon_criminal_quirk_sergeants_names, list()) // на ЦК "два" сержанта
+GLOBAL_VAR_INIT(bluemoon_criminal_quirk_sergeants_names, "")
 GLOBAL_VAR_INIT(bluemoon_criminal_quirk_hos_name, "")
 GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 
