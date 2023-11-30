@@ -130,19 +130,24 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 
 			switch(rand(1,19))
 				// СТАТЬИ 100-ОЙ КАТЕГОРИИ
-				if(1) // Порча имущества (ПЕРЕДЕЛАТЬ В ВАНДАЛИЗМ)
+				if(1) // Порча имущества
 					crime_number = "100"
 					crime_description = pick(\
 					"Порча [pick("имущества","личных вещей","пожитков")] [pick("[victim_name]","[victim_name] ([victim_job])")]")
 
-					know_about_crime_description = pick("С трудом помнится прошлый вечер... Кажется, вы что-то ломали у [possible_random_places].")
+					know_about_crime = TRUE
+					know_about_crime_description = pick(\
+					"С трудом помнится прошлый вечер... Кажется, вы что-то отобрали у [victim_name] и сломали. Даже не помните, почему.", \
+					"Вы вспоминаете, что устроили перепалку с [victim_name] и даже что-то у него испортили. Так и надо, мудаку.")
 				if(2) // Угрозы насилием
 					crime_number = "101-1"
 					crime_description = pick(\
 					"[pick("Выкрикивал[quirk_holder.ru_a()] угрозы в адрес", "Угрозы", "Угрожал[quirk_holder.ru_a()]", "Угрозы насилием", "Угрозы физической расправы", "Обещал[quirk_holder.ru_a()] избить", "Обещал[quirk_holder.ru_a()] нанести увечья",)] [victim_name] ([victim_job])")
 
-					know_about_crime = TRUE // Если спросят, кому угрожал, чтобы помнили хоть что-то
-					know_about_crime_description = pick("Кажется, вы наговорили много лишнего в адрес [victim_name]... Кажется, это был [victim_job]? Даже обещали побить или что-то сломать. Уже тяжело вспомнить, из-за чего.")
+					know_about_crime = TRUE
+					know_about_crime_description = pick(\
+					"Кажется, вы наговорили много лишнего в адрес [victim_name]... Вроде, это был [victim_job]? Даже обещали побить или что-то сломать. Уже тяжело вспомнить, из-за чего.",\
+					"Вы обещали побить [victim_name]. Будет за языком следить в следующий раз.")
 
 				if(3) // Оскорбления младших глав
 					victim_job = pick(victim_job_senior)
@@ -161,21 +166,37 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 					know_about_crime_description = pick("Кажется, вы наговорили много лишнего и оскорбительного в адрес [victim_name]... Это кажется был [victim_job]?")
 
 				if(5) // Хулиганство
+					var/severity = rand(1,3)
 					crime_number = "104"
-					crime_description = pick(\
-					"[pick("Писал","Наносил")] [quirk_holder.ru_a()] оскорбительные надписи у [possible_random_places]", \
-					"[pick("Разукрашивал","Портил")][quirk_holder.ru_a()] [pick("пол","стёкла","потолок (как?)","стены","шлюзы")] у [possible_random_places]", \
-					"Написал[quirk_holder.ru_a()] \"[pick("СБ свиньи","СБ пидарасы","нахуй СБ","ГСБ хуесос","ГСБ пидорас","детектив ЧМО","СБ гандоны","щиткурити")]\" [pick("перед","напротив","рядом","неподалёку от")] [pick("корпуса охраны","брига","отсека охраны")]")
+
+					switch(severity)
+						if(1)
+							crime_description = pick(\
+							"[pick("Разукрашивал","Портил")][quirk_holder.ru_a()] [pick("пол","стёкла","потолок (как?)","стены","шлюзы")] у [possible_random_places]")
+							know_about_crime_description = pick(\
+							"Вы хорошо помните, как разукрашивали местность у [possible_random_places]. Возможно, охрана была недовольна.")
+						if(2)
+							crime_description = pick(\
+							"[pick("Писал","Наносил")][quirk_holder.ru_a()] оскорбительные надписи у [possible_random_places]")
+							know_about_crime_description = pick(\
+							"Вы хорошо помните, как писали оскорбления у [possible_random_places]. Возможно, охрана была недовольна.")
+						if(3)
+							crime_description = pick(\
+							"Написал[quirk_holder.ru_a()] \"[pick("СБ свиньи","СБ пидарасы","нахуй СБ","ГСБ хуесос","ГСБ пидорас","детектив ЧМО","СБ гандоны","щиткурити")]\" [pick("перед","напротив","рядом","неподалёку от")] [pick("корпуса охраны","брига","отсека охраны")]")
+							know_about_crime_description = pick(\
+							"Вы в холодном поту вспоминаете, как писали оскорбления в адрес охраны. Почему ощущение, что в эту смену оно может аукнуться?")
+
+					know_about_crime = TRUE // Будет странно, если персонаж не будет помнить, как писал гадости о ГСБ
 
 				if(6) // Засорение эфира
 					crime_number = "106" // TODO ПРОНОУНСЫ
 					crime_description = pick(\
 					"[pick("Засорял[quirk_holder.ru_a()] эфир", "Неприлично спорил[quirk_holder.ru_a()] в радиоканал", "Засорение рации", "Долго руга[quirk_holder.ru_sya()] в радио")]")
 
-					know_about_crime_description = pick("Вы весело покатались на мехе.")
+					know_about_crime_description = pick("Вы очень неплохо поругались с кем-то в рацию не так давно. Почему ощущение, что это может аукнуться?")
 
 				if(7) // Незаконное пребывание
-					crime_number = "108" // TODO ПРОНОУНСЫ
+					crime_number = "108"
 					crime_description = pick(\
 					"[pick("Отказыва[quirk_holder.ru_sya()] выходить из [possible_random_places] после требований покинуть зону от персонала", \
 					"Не выходил[quirk_holder.ru_a()] из [possible_random_places] по требованию от сотрудников СБ")]")
@@ -225,6 +246,7 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 						know_about_crime_description += pick(\
 						", но уже плохо помните, за что.", " за оскорбление вашего родственника.",\
 						" из-за какой-то хрени... Даже стыдно сейчас.", " из-за разных политических взглядов.")
+					know_about_crime = TRUE // Будет странно, если персонаж не будет помнить, как писал гадости о ГСБ
 				if(10) // Нежелательный контакт
 					victim_job = pick(victim_job_generic + victim_job_senior + victim_job_command)
 
@@ -232,7 +254,10 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 					crime_description = pick(\
 					"[pick("Приставал[quirk_holder.ru_a()] к", "Постоянно трётся рядом с", "Сексуальное домогательство", "Унизительные сексуальные комментарии по отношению к")] [victim_name]")
 
-					know_about_crime_description = pick("Кажется, вы были не в себе, когда пытались флиртовать с [victim_name]...")
+					know_about_crime_description = pick(\
+					"Кажется, вы были не в себе, когда пытались флиртовать с [victim_name]...",\
+					"Вы переживаете - что ответит [victim_name] на ваши неловкие попытки флирта? Воспримет за шутку?",\
+					"Вы на спор попытались переспать с [victim_name]. То, как вам ответили - отличная смешная история, которую можно будет рассказать друзьям.")
 				if(11) // Превышение самообороны
 					crime_number = "202-2"
 					crime_description = pick(\
@@ -241,7 +266,11 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 					"Вырывал[quirk_holder.ru_a()] [victim_name] из рук СБ и наносил[quirk_holder.ru_a()] удары в месть за нападение", \
 					"Избивал[quirk_holder.ru_a()] нападавшего, когда он сдался")
 
-					know_about_crime_description = pick("Вы помните, как на вас напал какой-то обмудок, из-за чего вы жёстко его избили. Охране это не понравилось, но удалось уйти.")
+					know_about_crime_description = pick(\
+					"Вы помните, как на вас напал какой-то обмудок, из-за чего вы жёстко его избили. Охране это не понравилось, но удалось уйти.",\
+					"На вас кто-то напал и пришлось защититься, но кажется, вы превысили самооборону...",\
+					"Этот мудила, что влетев на вас с ножом, явно не ожидал, что один удар ногой сложит его пополам. Интересно, после пятого удара ногой в голову он вообще живой остался?")
+					know_about_crime = TRUE // Будет странно, если персонаж не будет помнить, как писал гадости о ГСБ
 				if(12) // Неисполнение приказа
 					crime_number = "203"
 					crime_description = pick(\
@@ -250,9 +279,7 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 					"Неподчинение офицеру на таможне в требовании показать сумку. Куда-то пропал[quirk_holder.ru_a()] вместе с ней в толпе")
 
 					know_about_crime_description = pick(\
-					"Вы помните, как на вас напал какой-то обмудок, из-за чего вы жёстко его избили. Охране это не понравилось, но удалось уйти.",\
-					"На вас кто-то напал и пришлось защититься, но кажется, вы превысили самооборону...",\
-					"Этот мудила, что влетев на вас с ножом, явно не ожидал, что один удар ногой сложит его пополам. Интересно, после пятого удара ногой в голову он вообще живой остался?")
+					"Кажется, вас о чём-то просила охрана? Почему вы только сейчас об этом вспоминаете?")
 
 				if(13) // Нарушение регуляций
 					crime_number = "203-1"
@@ -287,6 +314,7 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 					"Убегал[quirk_holder.ru_a()] на мехе, не возвращал, пострадавших нет", \
 					"Угнал[quirk_holder.ru_a()] мех с роботехнической палубы")
 
+					know_about_crime = TRUE // Будет странно, если персонаж не будет помнить, как писал гадости о ГСБ
 					know_about_crime_description = pick("Вы не так давно весело покатались на мехе! Ещё веселее было смеяться над охраной, что не могла вас догнать... Правда, без меха уже не смешно.")
 
 				if(17) // Вандализм
@@ -296,6 +324,7 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 					"Устроил[quirk_holder.ru_a()] погром у [possible_random_places]", \
 					"Дебоширил[quirk_holder.ru_a()] у [possible_random_places]")
 
+					know_about_crime = TRUE // Будет странно, если персонаж не будет помнить, как писал гадости о ГСБ
 					know_about_crime_description = pick(\
 					"С трудом помнится прошлый вечер... Кажется, вы что-то ломали у [possible_random_places].", \
 					"Вы хорошо повеселились у [possible_random_places] с друзьями, но охрана вас разогнала. Что если они помнят вас?", \
@@ -316,6 +345,7 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 					"[pick("Совершил[quirk_holder.ru_a()]","Произвел[quirk_holder.ru_a()]")] кражу [pick("фамильной ценности","личных вещей","предметов","пожитков")] [pick("[victim_name]","[victim_name] ([victim_job])")]", \
 					"[pick("Украл[quirk_holder.ru_a()]", "Своровал[quirk_holder.ru_a()]","Выкрал[quirk_holder.ru_a()]")] [pick("фамильную ценность","личные вещей","предметы","пожитки")] у  [pick("[victim_name]","[victim_name] ([victim_job])")]")
 
+					know_about_crime = TRUE // Будет странно, если персонаж не будет помнить, как писал гадости о ГСБ
 					know_about_crime_description = pick(\
 					"Вы помните, как что-то украли у [victim_name]... Кажется, он [victim_job].", \
 					"[victim_name], [victim_job] что-то кричал о том, что его обокрали. Вы были рядом. На вас ведь не подумают? Верно?")
