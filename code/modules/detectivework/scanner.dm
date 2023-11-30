@@ -33,6 +33,7 @@
 	if(log.len && !scanning)
 		scanning = TRUE
 		to_chat(user, "<span class='notice'>Printing report, please wait...</span>")
+		playsound(src, 'sound/items/taperecorder/taperecorder_print.ogg', 50, FALSE)
 		addtimer(CALLBACK(src, .proc/print_report), 100)
 	else
 		to_chat(user, "<span class='notice'>The scanner has no logs or is in use.</span>")

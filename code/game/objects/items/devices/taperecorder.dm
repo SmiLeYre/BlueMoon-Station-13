@@ -9,6 +9,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
 	custom_materials = list(/datum/material/iron=SMALL_MATERIAL_AMOUNT * 0.6, /datum/material/glass=SMALL_MATERIAL_AMOUNT * 0.3)
+	flags_1 = HEAR_1
 	force = 2
 	throwforce = 2
 	speech_span = SPAN_TAPE_RECORDER
@@ -158,7 +159,7 @@
 	. = ..()
 	if(mytape && recording)
 		mytape.timestamp += mytape.used_capacity
-		mytape.storedinfo += "\[[time2text(mytape.used_capacity,"mm:ss")]\] [raw_message]"
+		mytape.storedinfo += "\[[time2text(mytape.used_capacity,"mm:ss")]\] [quoteless_say_quote(message)]"
 
 
 /obj/item/taperecorder/verb/record()
