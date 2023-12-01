@@ -127,6 +127,13 @@
 		// Do nothing
 		return
 
+	// Bluemoon add
+	// Forces the game to check client prefs. If they are disabled - nothing should work??????? Should it????
+	for(var/mob/M in GLOB.player_list)
+		if(!M.client)
+			continue
+		if(!(M.client.prefs.toggles & EMOTE_VERB_SOUNDS))
+			return
 	// Play sound
 	// Accepts all possible parameters
 	playsound(user.loc, emote_sound, emote_volume, emote_pitch_variance, emote_range, emote_falloff_exponent, emote_frequency, emote_channel, emote_check_pressure, emote_ignore_walls, emote_falloff_distance, emote_wetness, emote_dryness, emote_distance_multiplier, emote_distance_multiplier_min_range)
