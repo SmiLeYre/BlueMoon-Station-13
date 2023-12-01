@@ -502,13 +502,6 @@
 	if(require_ooc_consent)
 		if((!target.ckey) || (target.client && target.client.prefs.toggles & VERB_CONSENT))
 			return TRUE
-		// BLUEMOON ADD START - проверка, чтобы не шлепали по жопе со включенным флагом на запрет для этого
-		if(description == "Шлёпнуть по заднице.") // убого
-			if(target.client?.prefs.cit_toggles & NO_ASS_SLAP)
-				to_chat(user, span_warning("По какой-то причине, вы не можете сделать это с [target]."))
-				to_chat(user, span_warning(span_small("Игрок отключил механическую возможность шлепать себя. Попробуйте отыгрывать это через действия.")))
-				return FALSE
-		// BLUEMOON ADD END
 	return FALSE
 
 /datum/interaction/lewd/post_interaction(mob/living/user, mob/living/target)
