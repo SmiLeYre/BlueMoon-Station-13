@@ -178,6 +178,22 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggle_jukeboxes)()
 /datum/verbs/menu/Settings/Sound/toggle_jukeboxes/Get_checked(client/C)
 	return C.prefs.toggles & SOUND_JUKEBOXES
 
+//BLUEMOON ADD-ON UNTIL I RE-MODULE THIS S-H-I-T
+TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggle_emotes)()
+	set name = "Hear/Silence Emotes"
+	set category = "Preferences"
+	set desc = "Hear/Silence those Emotes"
+	usr.client.prefs.toggles ^= EMOTE_VERB_SOUNDS
+	usr.client.prefs.save_preferences()
+	if(usr.client.prefs.toggles & EMOTE_VERB_SOUNDS)
+		to_chat(usr, "You will now hear people spammin' *laughking emotes.")
+	else
+		to_chat(usr, "You will no longer hear utter shittery.")
+	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Emotes", "[usr.client.prefs.toggles & EMOTE_VERB_SOUNDS ? "Enabled" : "Disabled"]"))
+/datum/verbs/menu/Settings/Sound/toggle_emotes/Get_checked(client/C)
+	return C.prefs.toggles & EMOTE_VERB_SOUNDS
+//BLUEMOON ADD-ON END
+
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, Toggle_Soundscape)()
 	set name = "Hear/Silence Ambience"
 	set category = "Preferences"
