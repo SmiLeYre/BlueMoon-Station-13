@@ -16,6 +16,8 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 	статей из 100-ой и 200-ой категорий. Нужно будет как-то решить вопрос со службой безопасности... В добавок, ваш персонаж может не знать, что именно он натворил. \
 	Если повезёт, статус ареста с начала смены не будет выставлен вовсе, оставляя только заметку в базе, которую могут не заметить."
 	value = 0
+	gain_text = span_warning("Ты любишь преступать закон, не так ли?")
+	on_spawn_immediate = FALSE
 
 /datum/quirk/bluemoon_criminal/on_spawn()
 	. = ..()
@@ -25,55 +27,21 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 		GLOB.bluemoon_criminal_quirk_hos_name = random_unique_name(pick(MALE,FEMALE))
 		GLOB.bluemoon_criminal_quirk_commander_name = random_unique_name(pick(MALE,FEMALE))
 
-	addtimer(CALLBACK(src, .proc/create_security_crime), 1 MINUTES, FALSE)
+	var/mob/living/carbon/human/H = quirk_holder
+	var/time_before_creating_crimes = 1 MINUTES
+	H.start_create_security_crime_timer(time_before_creating_crimes)
+	addtimer(CALLBACK(src, .proc/on_crime_creation), time_before_creating_crimes + 10 SECONDS, TIMER_DELETE_ME) // Если вызвать qdel сразу после объявления таймера, будет рантайм
 
-/datum/quirk/bluemoon_criminal/proc/create_security_crime()
-	var/datum/data/record/target_records = find_record("name", quirk_holder.name, GLOB.data_core.security)
+/datum/quirk/bluemoon_criminal/proc/on_crime_creation()
+	qdel(src)
+
+/mob/living/carbon/human/proc/start_create_security_crime_timer(var/time_to_create_crimes = 1 MINUTES) // таймер меньше времени, чем занимает старт раунда, может привести к отсутствию внесения данных, т.к. нет БД
+	addtimer(CALLBACK(src, /mob/living/carbon/human/proc/create_security_crime), time_to_create_crimes, TIMER_UNIQUE|TIMER_DELETE_ME)
+
+/mob/living/carbon/human/proc/create_security_crime()
+	var/datum/data/record/target_records = find_record("name", name, GLOB.data_core.security)
 	if(target_records)
 		var/crime // полная информация о нарушении, нужна только в конце
-
-		// Переменные для жертв преступлений
-
-		var/victim_name = "WRONG, REPORT2DEV"
-		switch(rand(1,80))
-			if(1 to 20)
-				victim_name = random_unique_name(MALE)
-			if(21 to 40)
-				victim_name = random_unique_name(FEMALE)
-			if(41 to 50)
-				victim_name = "[pick(GLOB.posibrain_names)]"
-				if(prob(50))
-					victim_name += "-[rand(1,999)]"
-			if(51 to 55)
-				victim_name = random_unique_lizard_name(MALE)
-			if(56 to 60)
-				victim_name = random_unique_lizard_name(FEMALE)
-			if(61 to 65)
-				victim_name = random_unique_moth_name()
-//				if(71 to 80) (нет файла)
-//					victim_name = random_unique_arachnid_name()
-			if(66 to 70)
-				victim_name = random_unique_plasmaman_name()
-			if(71 to 75)
-				victim_name = vox_name()
-			if(76 to 80)
-				victim_name = random_unique_ethereal_name()
-
-		var/list/victim_job_generic = list(
-			"офицер СБ","врач","старший сотрудник","ботаник","ассистент","бармен","повар","библиотекарь","механик","психолог","священник","продавец","уборщик")
-
-		var/list/victim_job_senior = list(
-			"СЕ", "СИ", "Старший Инженер", "Главный Инженер", "КМ", "Квартирмейстер", "Каптёр", "СМО", "Старший Врач", "Главврач", "Офицер Командования", "Офицер Мостика")
-
-		var/list/victim_job_command = list(
-			"ГП", "ХОП", "Глава Персонала", "Капитан", "Адмирал НТ", "Директор Сектора", "Администратор",
-			"НТР", "Представитель Корпорации", "Представитель НТ", "Представитель Синдиката", "Адмирал Синдиката")
-
-		var/victim_job = pick(victim_job_generic)
-
-		// Места преступлений
-
-		var/possible_random_places = pick("бара","кафе","брига","мостика","медицинского отсека","сада","инженерного отсека","голодека","общежития","жилого комплекса","бильярдной","клуба","VR-зала","развлекательного центра")
 
 		// Фактическая информация о заметке в базе данных
 
@@ -104,6 +72,12 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 
 		if(prob(60))
 			target_records.fields["criminal"] = "*Arrest*"
+			sec_hud_set_security_status()
+
+		var/know_about_crime_title_shown = FALSE
+		var/know_about_crime_title = pick( // заголовок
+		"Вы нарушили закон!", "За вами охотятся арбитры!", "Ваши нарушения не остались без внимания!", "О вас не забыли!", "О вас не забудут!", \
+		"Вы в розыске!", "За вами охотится охрана!", "Охрана на хвосте!", "WOOP, WOOP - THIS IS SOUND OF THE POLICE!")
 
 		var/i = 1
 		switch(rand(1,10))
@@ -115,12 +89,52 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 				i = 3
 		while(i > 0)
 
+			// Переменные для жертв преступлений
+
+			var/victim_name = "WRONG, REPORT2DEV" // имя жертвы преступления
+			switch(rand(1,80))
+				if(1 to 20)
+					victim_name = random_unique_name(MALE)
+				if(21 to 40)
+					victim_name = random_unique_name(FEMALE)
+				if(41 to 50)
+					victim_name = "[pick(GLOB.posibrain_names)]"
+					if(prob(50))
+						victim_name += "-[rand(1,999)]"
+				if(51 to 55)
+					victim_name = random_unique_lizard_name(MALE)
+				if(56 to 60)
+					victim_name = random_unique_lizard_name(FEMALE)
+				if(61 to 65)
+					victim_name = random_unique_moth_name()
+		//				if(71 to 80) (нет файла)
+		//					victim_name = random_unique_arachnid_name()
+				if(66 to 70)
+					victim_name = random_unique_plasmaman_name()
+				if(71 to 75)
+					victim_name = vox_name()
+				if(76 to 80)
+					victim_name = random_unique_ethereal_name()
+
+			var/list/victim_job_generic = list( // обычные профессии
+				"офицер СБ","врач","старший сотрудник","ботаник","ассистент","бармен","повар","библиотекарь","механик","психолог","священник","продавец","уборщик")
+
+			var/list/victim_job_senior = list( // профессии посерьезнее
+				"СЕ", "СИ", "Старший Инженер", "Главный Инженер", "КМ", "Квартирмейстер", "Каптёр", "СМО", "Старший Врач", "Главврач", "Офицер Командования", "Офицер Мостика")
+
+			var/list/victim_job_command = list( // за оскорбление этих людей можно сесть
+				"ГП", "ХОП", "Глава Персонала", "Капитан", "Адмирал НТ", "Директор Сектора", "Администратор",
+				"НТР", "Представитель Корпорации", "Представитель НТ", "Представитель Синдиката", "Адмирал Синдиката")
+
+			var/victim_job = pick(victim_job_generic)
+
+			// Места преступлений
+
+			var/possible_random_places = pick("бара","кафе","брига","мостика","медицинского отсека","сада","инженерного отсека","голодека","общежития","жилого комплекса","бильярдной","клуба","VR-зала","развлекательного центра")
+
 			// Сообщения игроку в случае, если он знает, что совершил преступление.
 
-			var/know_about_crime = FALSE // заголовок
-			var/know_about_crime_title = pick(
-			"Вы нарушили закон!", "Вы вами охотятся арбитры!", "Ваши нарушения не остались без внимания!", "О вас не забыли!", "О вас не забудут!", \
-			"Вы в розыске!", "За вами охотится охрана!", "Охрана на хвосте!", "WOOP, WOOP - THIS IS SOUND OF THE POLICE!")
+			var/know_about_crime = FALSE
 			var/know_about_crime_description // описание ниже заголовка
 
 			if(prob(50))
@@ -142,7 +156,7 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 				if(2) // Угрозы насилием
 					crime_number = "101-1"
 					crime_description = pick(\
-					"[pick("Выкрикивал[quirk_holder.ru_a()] угрозы в адрес", "Угрозы", "Угрожал[quirk_holder.ru_a()]", "Угрозы насилием", "Угрозы физической расправы", "Обещал[quirk_holder.ru_a()] избить", "Обещал[quirk_holder.ru_a()] нанести увечья",)] [victim_name] ([victim_job])")
+					"[pick("Выкрикивал[ru_a()] угрозы в адрес", "Угрозы", "Угрожал[ru_a()]", "Угрозы насилием", "Угрозы физической расправы", "Обещал[ru_a()] избить", "Обещал[ru_a()] нанести увечья",)] [victim_name] ([victim_job])")
 
 					know_about_crime = TRUE
 					know_about_crime_description = pick(\
@@ -154,14 +168,14 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 
 					crime_number = "101-2"
 					crime_description = pick(\
-					"[pick("Выкрикивал[quirk_holder.ru_a()] оскорбительные выражения о", "Очень много ругани о", "Оскорбление", "Оскорбления", "Унижение личного достоинства")] [victim_name] ([victim_job])")
+					"[pick("Выкрикивал[ru_a()] оскорбительные выражения о", "Очень много ругани о", "Оскорбление", "Оскорбления", "Унижение личного достоинства")] [victim_name] ([victim_job])")
 
 					know_about_crime_description = pick("Кажется, вы наговорили много лишнего и оскорбительного в адрес [victim_name]... Кажется, это был [victim_job]?...")
 
 				if(4) // Оскорбления младших сотрудников
 					crime_number = "102"
 					crime_description = pick(\
-					"[pick("Выкрикивал[quirk_holder.ru_a()] оскорбительные выражения о", "Очень много ругани о", "Оскорбление", "Оскорбления", "Унижение личного достоинства")] [victim_name] ([victim_job])")
+					"[pick("Выкрикивал[ru_a()] оскорбительные выражения о", "Очень много ругани о", "Оскорбление", "Оскорбления", "Унижение личного достоинства")] [victim_name] ([victim_job])")
 
 					know_about_crime_description = pick("Кажется, вы наговорили много лишнего и оскорбительного в адрес [victim_name]... Это кажется был [victim_job]?")
 
@@ -172,34 +186,34 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 					switch(severity)
 						if(1)
 							crime_description = pick(\
-							"[pick("Разукрашивал","Портил")][quirk_holder.ru_a()] [pick("пол","стёкла","потолок (как?)","стены","шлюзы")] у [possible_random_places]")
+							"[pick("Разукрашивал","Портил")][ru_a()] [pick("пол","стёкла","потолок (как?)","стены","шлюзы")] у [possible_random_places]")
 							know_about_crime_description = pick(\
 							"Вы хорошо помните, как разукрашивали местность у [possible_random_places]. Возможно, охрана была недовольна.")
 						if(2)
 							crime_description = pick(\
-							"[pick("Писал","Наносил")][quirk_holder.ru_a()] оскорбительные надписи у [possible_random_places]")
+							"[pick("Писал","Наносил")][ru_a()] оскорбительные надписи у [possible_random_places]")
 							know_about_crime_description = pick(\
 							"Вы хорошо помните, как писали оскорбления у [possible_random_places]. Возможно, охрана была недовольна.")
 						if(3)
 							crime_description = pick(\
-							"Написал[quirk_holder.ru_a()] \"[pick("СБ свиньи","СБ пидарасы","нахуй СБ","ГСБ хуесос","ГСБ пидорас","детектив ЧМО","СБ гандоны","щиткурити")]\" [pick("перед","напротив","рядом","неподалёку от")] [pick("корпуса охраны","брига","отсека охраны")]")
+							"Написал[ru_a()] \"[pick("СБ свиньи","СБ пидарасы","нахуй СБ","ГСБ хуесос","ГСБ пидорас","детектив ЧМО","СБ гандоны","щиткурити")]\" напротив [pick("корпуса охраны","брига","отсека охраны")]")
 							know_about_crime_description = pick(\
 							"Вы в холодном поту вспоминаете, как писали оскорбления в адрес охраны. Почему ощущение, что в эту смену оно может аукнуться?")
 
 					know_about_crime = TRUE // Будет странно, если персонаж не будет помнить, как писал гадости о ГСБ
 
 				if(6) // Засорение эфира
-					crime_number = "106" // TODO ПРОНОУНСЫ
+					crime_number = "106"
 					crime_description = pick(\
-					"[pick("Засорял[quirk_holder.ru_a()] эфир", "Неприлично спорил[quirk_holder.ru_a()] в радиоканал", "Засорение рации", "Долго руга[quirk_holder.ru_sya()] в радио")]")
+					"[pick("Засорял[ru_a()] эфир", "Неприлично спорил[ru_a()] в радиоканал", "Засорение рации", "Долго руга[ru_sya()] в радио")]")
 
 					know_about_crime_description = pick("Вы очень неплохо поругались с кем-то в рацию не так давно. Почему ощущение, что это может аукнуться?")
 
 				if(7) // Незаконное пребывание
 					crime_number = "108"
 					crime_description = pick(\
-					"[pick("Отказыва[quirk_holder.ru_sya()] выходить из [possible_random_places] после требований покинуть зону от персонала", \
-					"Не выходил[quirk_holder.ru_a()] из [possible_random_places] по требованию от сотрудников СБ")]")
+					"[pick("Отказыва[ru_sya()] выходить из [possible_random_places] после требований покинуть зону от персонала", \
+					"Не выходил[ru_a()] из [possible_random_places] по требованию от сотрудников СБ")]")
 
 					know_about_crime_description = pick("Вас просили выйти из [possible_random_places], от чего вы отказывались.")
 
@@ -210,14 +224,14 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 					if(prob(50))
 						major_disgrace = TRUE
 						crime_description = pick(\
-						"[pick("Выкрикивал[quirk_holder.ru_a()] оскорбительные выражения о", "Очень много руficerгани о", "Оскорбление", "Оскорбления", "Распространние недостоверных слухов о", "Распространение клеветы о", "Распространение слухов о", "Клевета в адрес", "Оскорбление сотрудников")] [major_name]")
+						"[pick("Выкрикивал[ru_a()] оскорбительные выражения о", "Очень много ругани о", "Оскорбление", "Оскорбления", "Распространние недостоверных слухов о", "Распространение клеветы о", "Распространение слухов о", "Клевета в адрес", "Оскорбление сотрудников")] [major_name]")
 
 					else
 						victim_job = pick(victim_job_command)
 
 					crime_number = "201-1"
 					crime_description = pick(\
-					"[pick("Выкрикивал[quirk_holder.ru_a()] оскорбительные выражения о", "Очень много ругани о", "Оскорбление", "Оскорбления", "Унижение личного достоинства")] [victim_name] ([victim_job])")
+					"[pick("Выкрикивал[ru_a()] оскорбительные выражения о", "Очень много ругани о", "Оскорбление", "Оскорбления", "Унижение личного достоинства")] [victim_name] ([victim_job])")
 
 					if(major_disgrace)
 						know_about_crime_description = pick("Вы не так давно кричали оскорбления в адрес [major_name]... За вами ведь не придут? Да?")
@@ -228,12 +242,12 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 
 					crime_number = "202"
 					crime_description = pick(\
-					"[pick("Толкал[quirk_holder.ru_a()]","Пихал[quirk_holder.ru_a()]","Толкнул[quirk_holder.ru_a()]")] [victim_name] ([victim_job])")
+					"[pick("Толкал[ru_a()]","Пихал[ru_a()]","Толкнул[ru_a()]")] [victim_name] ([victim_job])")
 
 					if(prob(60))
 						punched = TRUE
 						crime_description = pick(\
-						"[pick("Побил[quirk_holder.ru_a()]","Вступил[quirk_holder.ru_a()] в драку с","Нападение на","Напал[quirk_holder.ru_a()] на","Атаковал[quirk_holder.ru_a()]","Ударил[quirk_holder.ru_a()]","Ударил[quirk_holder.ru_a()] несколько раз")] [victim_name] ([victim_job])")
+						"[pick("Побил[ru_a()]","Вступил[ru_a()] в драку с","Нападение на","Напал[ru_a()] на","Атаковал[ru_a()]","Ударил[ru_a()]","Ударил[ru_a()] несколько раз")] [victim_name] ([victim_job])")
 
 
 					if(punched)
@@ -252,7 +266,7 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 
 					crime_number = "202-1"
 					crime_description = pick(\
-					"[pick("Приставал[quirk_holder.ru_a()] к", "Постоянно трётся рядом с", "Сексуальное домогательство", "Унизительные сексуальные комментарии по отношению к")] [victim_name]")
+					"[pick("Приставал[ru_a()] к", "Постоянно трётся рядом с", "Сексуальное домогательство", "Унизительные сексуальные комментарии по отношению к")] [victim_name]")
 
 					know_about_crime_description = pick(\
 					"Кажется, вы были не в себе, когда пытались флиртовать с [victim_name]...",\
@@ -261,10 +275,10 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 				if(11) // Превышение самообороны
 					crime_number = "202-2"
 					crime_description = pick(\
-					"Во время драки с [victim_name] превысил[quirk_holder.ru_a()] самооборону, чуть не убив", \
-					"Добивал[quirk_holder.ru_a()] лежавшего на полу [victim_name] после нападения на себя", \
-					"Вырывал[quirk_holder.ru_a()] [victim_name] из рук СБ и наносил[quirk_holder.ru_a()] удары в месть за нападение", \
-					"Избивал[quirk_holder.ru_a()] нападавшего, когда он сдался")
+					"Во время драки с [victim_name] превысил[ru_a()] самооборону, чуть не убив", \
+					"Добивал[ru_a()] лежавшего на полу [victim_name] после нападения на себя", \
+					"Вырывал[ru_a()] [victim_name] из рук СБ и наносил[ru_a()] удары в месть за нападение", \
+					"Избивал[ru_a()] нападавшего, когда он сдался")
 
 					know_about_crime_description = pick(\
 					"Вы помните, как на вас напал какой-то обмудок, из-за чего вы жёстко его избили. Охране это не понравилось, но удалось уйти.",\
@@ -274,9 +288,9 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 				if(12) // Неисполнение приказа
 					crime_number = "203"
 					crime_description = pick(\
-					"Очень долго не покидал[quirk_holder.ru_a()] место преступления после требований офицеров охраны", \
+					"Очень долго не покидал[ru_a()] место преступления после требований офицеров охраны", \
 					"Отказ от выполнения приказа в одной из смен, убытков нет", \
-					"Неподчинение офицеру на таможне в требовании показать сумку. Куда-то пропал[quirk_holder.ru_a()] вместе с ней в толпе")
+					"Неподчинение офицеру на таможне в требовании показать сумку. Куда-то пропал[ru_a()] вместе с ней в толпе")
 
 					know_about_crime_description = pick(\
 					"Кажется, вас о чём-то просила охрана? Почему вы только сейчас об этом вспоминаете?")
@@ -284,8 +298,8 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 				if(13) // Нарушение регуляций
 					crime_number = "203-1"
 					crime_description = pick(\
-					"Спорил[quirk_holder.ru_a()] с главой, отказываясь надевать средства индивидуальной защиты", \
-					"Во время биологической угроыз не носила маску, в том числе после требований сотрудников охраны и медбея", "Курил[quirk_holder.ru_a()] в медбее")
+					"Спорил[ru_a()] с главой, отказываясь надевать средства индивидуальной защиты", \
+					"Во время биологической угроыз не носила маску, в том числе после требований сотрудников охраны и медбея", "Курил[ru_a()] в медбее")
 
 					know_about_crime_description = pick("Кажется, вы в какой-то момент нарушали регуляции.")
 
@@ -293,8 +307,8 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 					crime_number = "204"
 					crime_description = pick(\
 					"Постоянно оставляет открытыми шкафчики со снаряжением", "Бросает снаряжение отдела на пол для общего доступа", \
-					"Таскал[quirk_holder.ru_a()] тело по полу, оставляя кровавый след", \
-					"Во время биологической угроыз не носила маску, в том числе после требований сотрудников охраны и медбея", "Курил[quirk_holder.ru_a()] в медбее")
+					"Таскал[ru_a()] тело по полу, оставляя кровавый след", \
+					"Во время биологической угроыз не носила маску, в том числе после требований сотрудников охраны и медбея", "Курил[ru_a()] в медбее")
 
 					know_about_crime_description = pick("Кажется, вы в какой-то момент нарушали технику безопасности.")
 
@@ -310,21 +324,21 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 				if(16) // Незаконное пилотирование
 					crime_number = "205"
 					crime_description = pick(\
-					"Ката[quirk_holder.ru_sya()] на чужом экзокостюме без привязки к доступу", \
-					"Убегал[quirk_holder.ru_a()] на мехе, не возвращал, пострадавших нет", \
-					"Угнал[quirk_holder.ru_a()] мех с роботехнической палубы")
+					"Ката[ru_sya()] на чужом экзокостюме без привязки к доступу", \
+					"Убегал[ru_a()] на мехе, не возвращал, пострадавших нет", \
+					"Угнал[ru_a()] мех с роботехнической палубы")
 
-					know_about_crime = TRUE // Будет странно, если персонаж не будет помнить, как писал гадости о ГСБ
+					know_about_crime = TRUE
 					know_about_crime_description = pick("Вы не так давно весело покатались на мехе! Ещё веселее было смеяться над охраной, что не могла вас догнать... Правда, без меха уже не смешно.")
 
 				if(17) // Вандализм
 					crime_number = "206"
 					crime_description = pick(\
-					"[pick("Ломал","Бил","Крушил","Повреждал")][quirk_holder.ru_a()] [pick("стёкла","столы","горшки","лампочки")] у [possible_random_places]", \
-					"Устроил[quirk_holder.ru_a()] погром у [possible_random_places]", \
-					"Дебоширил[quirk_holder.ru_a()] у [possible_random_places]")
+					"[pick("Ломал","Бил","Крушил","Повреждал")][ru_a()] [pick("стёкла","столы","горшки","лампочки")] у [possible_random_places]", \
+					"Устроил[ru_a()] погром у [possible_random_places]", \
+					"Дебоширил[ru_a()] у [possible_random_places]")
 
-					know_about_crime = TRUE // Будет странно, если персонаж не будет помнить, как писал гадости о ГСБ
+					know_about_crime = TRUE
 					know_about_crime_description = pick(\
 					"С трудом помнится прошлый вечер... Кажется, вы что-то ломали у [possible_random_places].", \
 					"Вы хорошо повеселились у [possible_random_places] с друзьями, но охрана вас разогнала. Что если они помнят вас?", \
@@ -333,7 +347,7 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 				if(18) // Неуважение к умершим
 					crime_number = "206-1"
 					crime_description = pick(\
-					"[pick("Нелицеприятно","Оскорбительно","Грубо","Отвратительно")] [pick("шутил[quirk_holder.ru_a()]","выража[quirk_holder.ru_sya()]","высказыва[quirk_holder.ru_sya()]","отзыва[quirk_holder.ru_sya()]","говорил[quirk_holder.ru_a()]")] о [pick("погибших","умерших","усопших","кадаврах","трупах","ушедших","мертвых")]")
+					"[pick("Нелицеприятно","Оскорбительно","Грубо","Отвратительно")] [pick("шутил[ru_a()]","выража[ru_sya()]","высказыва[ru_sya()]","отзыва[ru_sya()]","говорил[ru_a()]")] о [pick("погибших","умерших","усопших","кадаврах","трупах","ушедших","мертвых")]")
 
 					know_about_crime_description = pick(\
 					"Вы неплохо пошутили над фактом смерти, но возможно, кто-то запомнил этот поступок. Ведь так нельзя.", \
@@ -342,18 +356,20 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 				if(19) // Мелкая кража
 					crime_number = "207"
 					crime_description = pick(\
-					"[pick("Совершил[quirk_holder.ru_a()]","Произвел[quirk_holder.ru_a()]")] кражу [pick("фамильной ценности","личных вещей","предметов","пожитков")] [pick("[victim_name]","[victim_name] ([victim_job])")]", \
-					"[pick("Украл[quirk_holder.ru_a()]", "Своровал[quirk_holder.ru_a()]","Выкрал[quirk_holder.ru_a()]")] [pick("фамильную ценность","личные вещей","предметы","пожитки")] у  [pick("[victim_name]","[victim_name] ([victim_job])")]")
+					"[pick("Совершил[ru_a()]","Произвел[ru_a()]")] кражу [pick("фамильной ценности","личных вещей","предметов","пожитков")] [pick("[victim_name]","[victim_name] ([victim_job])")]", \
+					"[pick("Украл[ru_a()]", "Своровал[ru_a()]","Выкрал[ru_a()]")] [pick("фамильную ценность","личные вещей","предметы","пожитки")] у  [pick("[victim_name]","[victim_name] ([victim_job])")]")
 
-					know_about_crime = TRUE // Будет странно, если персонаж не будет помнить, как писал гадости о ГСБ
+					know_about_crime = TRUE
 					know_about_crime_description = pick(\
 					"Вы помните, как что-то украли у [victim_name]... Кажется, он [victim_job].", \
 					"[victim_name], [victim_job] что-то кричал о том, что его обокрали. Вы были рядом. На вас ведь не подумают? Верно?")
 
 			// Оповещаем цель, если ей повезло помнить свои нарушения
 			if(know_about_crime)
-				to_chat(quirk_holder, span_userdanger(know_about_crime_title))
-				to_chat(quirk_holder, span_danger(know_about_crime_description))
+				if(!know_about_crime_title_shown)
+					to_chat(src, span_userdanger(know_about_crime_title))
+				to_chat(src, span_danger(know_about_crime_description))
+				know_about_crime_title_shown = TRUE
 
 			// Различные дополнения от различных должностей
 			crime_description += ". "
@@ -362,9 +378,9 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 					if(prob(70))
 						if(prob(70))
 							crime_description += "[pick("Оформить не успели - поставьте там нужный статус и комментарий, как наказание понесёт",\
-								"На запросы не отзыва[quirk_holder.ru_sya()]. Сделайте что нужно и поставьте статус, а также комментарий, как наказание понесёт", \
+								"На запросы не отзыва[ru_sya()]. Сделайте что нужно и поставьте статус, а также комментарий, как наказание понесёт", \
 								"Наказание не понесено", "Оформить наказание не успели", "Оформить наказание позже с занесением в комментарии", "Пока писали и подтвержила ордер, смена кончилась", \
-								"Смена заканчивается, потом оформите", "На допрос не яви[quirk_holder.ru_sya()]", \
+								"Смена заканчивается, потом оформите", "На допрос не яви[ru_sya()]", \
 								"Наказание не [pick("назначено","оформлено")] - [pick("произведите","оформите","накажите","сделайте что нужно")] и поставьте отметку в комментарии со статусом нужным")]."
 						else
 							crime_description += "[pick(\
@@ -374,15 +390,15 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 				if(ISSUER_TYPE_SECURITY_WARDEN)
 					if(prob(85))
 						crime_description += "[pick("Оформить не успели - поставьте там нужный статус и комментарий, как наказание понесёт",\
-							"На запросы на отзыва[quirk_holder.ru_sya()]. Сделайте что нужно и поставьте статус, а также комментарий, как наказание понесёт",\
+							"На запросы на отзыва[ru_sya()]. Сделайте что нужно и поставьте статус, а также комментарий, как наказание понесёт",\
 							"Наказание не понесено", "Оформить наказание не успели", "Оформить наказание позже с занесением в комментарии",\
-							"Смена заканчивается, потом оформите", "На допрос не яви[quirk_holder.ru_sya()]", \
+							"Смена заканчивается, потом оформите", "На допрос не яви[ru_sya()]", \
 							"Наказание не [pick("назначено","оформлено")] - [pick("произведите","оформите","накажите","сделайте что нужно")] и поставьте отметку в комментарии со статусом нужным")]."
 				if(ISSUER_TYPE_SECURITY_HEAD)
-					crime_description += "[pick("Клянусь Богом, я снесу башню тому офицеру, что [quirk_holder.ru_ego()] отпустил. Коллеги, пожалуйста, закончите работу",\
+					crime_description += "[pick("Клянусь Богом, я снесу башню тому офицеру, что [ru_ego()] отпустил. Коллеги, пожалуйста, закончите работу",\
 						"У офицеров проблемы с дисциплиной, решаем по мере возможного. Наказание не выдано, выдайте самостоятельно. Рассчитываю на вас",\
 						"Наказание не понесено", "Оформить наказание не успели, субъект скрылся", "Оформить наказание позже с занесением в комментарии",\
-						"На допрос не яви[quirk_holder.ru_sya()]", "Это последний день, когда я заполняю за этих дегенератов базу данных",\
+						"На допрос не яви[ru_sya()]", "Это последний день, когда я заполняю за этих дегенератов базу данных",\
 						"Наказание не [pick("назначено","оформлено")] - [pick("произведите","оформите","накажите","сделайте что нужно")] и поставьте отметку в комментарии со статусом нужным")]."
 				if(ISSUER_TYPE_COMMANDER)
 					if(prob(50))
@@ -398,8 +414,8 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 			GLOB.data_core.addMinorCrime(target_records.fields["id"], crime)
 			// Когда i = 0, добавление новых нарушений прекращается
 			i -= 1
-
-	REMOVE_TRAIT(quirk_holder, mob_trait, ROUNDSTART_TRAIT)
+	else // БД не найдена
+		to_chat(src, span_danger("Кажется, у вас не существует базы данных, чтобы добавить в неё нарушения закона."))
 
 #undef ISSUER_TYPE_SECURITY_OFFICER
 #undef ISSUER_TYPE_SECURITY_WARDEN
