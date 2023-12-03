@@ -61,20 +61,19 @@ export const CharacterProfile = (props, context) => {
         </Tabs>
         <Flex>
           <Flex.Item pl="10px">
-<<<<<<< Updated upstream
           {
             // убрал проверку на ношение маски для отображения хеда
-=======
-            {
-            // убрал проверку
->>>>>>> Stashed changes
             }
          { /*  {!data.is_unknown ? (<CharacterProfileImageElement />)
               : (<Box />)}*/}
-            <CharacterProfileImageElement />
             <CharacterModelImageElement />
           </Flex.Item>
           <Flex.Item Flex-direction="column" pl="10px" width="100%">
+            <Collapsible title={`Раса - ${data.species_name}`} open>
+              <Section style={{ "white-space": "pre-line" }}>
+                {data.custom_species_lore}
+              </Section>
+            </Collapsible>
             <Collapsible title="Описание Персонажа" open>
               <Section>
                 <Flex direction="column">
@@ -92,11 +91,6 @@ export const CharacterProfile = (props, context) => {
                     : (<Box />)}
                   {!data.flavortext && !data.flavortext_naked ? ("Отсутствует") : (<Box />)}
                 </Flex>
-              </Section>
-            </Collapsible>
-            <Collapsible title={`Раса - ${data.species_name}`} open>
-              <Section style={{ "white-space": "pre-line" }}>
-                {data.custom_species_lore}
               </Section>
             </Collapsible>
             <Collapsible title="Внеигровые заметки" open>
