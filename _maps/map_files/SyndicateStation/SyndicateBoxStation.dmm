@@ -28823,6 +28823,9 @@
 /obj/machinery/sleeper{
 	dir = 8
 	},
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/medical/medbay/central)
 "bwF" = (
@@ -55284,6 +55287,11 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 4
 	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 24;
+	pixel_y = -28
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/medical/surgery)
 "iVH" = (
@@ -58658,19 +58666,6 @@
 	},
 /turf/open/floor/plating,
 /area/engineering/gravity_generator)
-"mJi" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/suit_storage_unit/syndicate/softsuit,
-/turf/open/floor/plating,
-/area/maintenance/fore)
 "mJy" = (
 /obj/structure/table,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -60621,16 +60616,6 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/security/brig)
-"pmd" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -24
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/medical/medbay/central)
 "pnc" = (
 /obj/effect/turf_decal/tile/blue,
 /obj/effect/turf_decal/tile/blue{
@@ -92554,7 +92539,7 @@ ueW
 dbg
 obZ
 mJE
-mJi
+awg
 axy
 ayK
 azE
@@ -102619,7 +102604,7 @@ fWM
 ajv
 xYL
 ggx
-pmd
+bxQ
 fWM
 bCG
 bBd

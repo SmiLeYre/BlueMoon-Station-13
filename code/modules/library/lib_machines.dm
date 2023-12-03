@@ -105,7 +105,7 @@ GLOBAL_LIST_INIT(library_section_names, list("Any", "Fiction", "Non-Fiction", "A
 	if("[id]" in cached_books)
 		return cached_books["[id]"]
 
-	var/datum/db_query/query = SSdbcore.NewQuery("SELECT id, author, title, category, content, ckey, flagged FROM [format_table_name("library")] WHERE id=:id", list(
+	var/datum/db_query/query = SSdbcore.NewQuery("SELECT id, author, title, content, category, ckey, flagged FROM [format_table_name("library")] WHERE id=:id", list(
 		"id" = text2num(id)
 	))
 	if(!query.warn_execute())
@@ -119,8 +119,8 @@ GLOBAL_LIST_INIT(library_section_names, list("Any", "Fiction", "Non-Fiction", "A
 			"id"      =query.item[1],
 			"author"  =query.item[2],
 			"title"   =query.item[3],
-			"category"=query.item[4],
-			"content" =query.item[5],
+			"content" =query.item[4],
+			"category"=query.item[5],
 			"ckey"    =query.item[6],
 			"flagged" =query.item[7]
 		))

@@ -182,3 +182,8 @@
 	name = "Book: Summon Cumburger"
 	path = /obj/item/book/granter/spell/summon_cumburger
 	cost = 4
+
+/datum/gear/backpack/laser_pointer
+	name = "Laser Pointer"
+	path = /obj/item/laser_pointer
+	cost = 1

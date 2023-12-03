@@ -35123,7 +35123,10 @@
 /area/syndicate_mothership/control)
 "wsJ" = (
 /obj/structure/table/reinforced,
-/obj/machinery/fax,
+/obj/machinery/fax{
+	fax_name = "Intern Fax Machine";
+	name = "Intern Fax Machine"
+	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "wsN" = (

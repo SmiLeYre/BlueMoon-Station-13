@@ -121,7 +121,7 @@
 	icon_state = "syndimaid_arms"
 
 /obj/item/clothing/under/syndicate/maid
-	name = "Tactical Maid outfit"
+	name = "Tactical Maid Outfit"
 	desc = "A 'tactical' skirtleneck fashioned to the likeness of a maid outfit. Why the Syndicate has these, you'll never know."
 	icon_state = "syndimaid"
 	mutantrace_variation = STYLE_NO_ANTHRO_ICON|STYLE_DIGITIGRADE
@@ -134,7 +134,7 @@
 	attach_accessory(A)
 
 /obj/item/clothing/under/syndicate/maid_revealing
-	name = "Revealing Tactical Maid outfit"
+	name = "Revealing Tactical Maid Outfit"
 	desc = "A 'tactical' skirtleneck fashioned to the likeness of a maid outfit. Why the Syndicate has these, you'll never know."
 	icon = 'modular_bluemoon/Gardelin0/icons/clothing/object/uniforms.dmi'
 	mob_overlay_icon = 'modular_bluemoon/Gardelin0/icons/clothing/worn/uniform.dmi'
@@ -146,7 +146,7 @@
 	can_adjust = FALSE
 
 /obj/item/clothing/accessory/maidcorset/syndicate
-	name = "syndicate maid apron"
+	name = "Syndicate Maid Apron"
 	desc = "Practical? No. Tactical? Also no. Cute? Most definitely yes."
 	icon = 'icons/obj/clothing/accessories.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/accessories.dmi'

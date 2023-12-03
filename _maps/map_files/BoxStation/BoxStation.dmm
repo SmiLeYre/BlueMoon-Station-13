@@ -24227,6 +24227,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/white,
 /area/medical/surgery)
 "bFw" = (
@@ -41230,11 +41233,11 @@
 /turf/closed/wall,
 /area/maintenance/fore/secondary)
 "cQt" = (
-/obj/structure/cable{
-	dir = 1
-	},
 /obj/structure/closet/secure_closet/medical2,
 /obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel,
 /area/medical/surgery)
 "cQu" = (
@@ -61478,9 +61481,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
 /turf/open/floor/plasteel/white/side{
 	dir = 4
 	},
@@ -69145,6 +69145,9 @@
 	dir = 1
 	},
 /obj/machinery/stasis,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/white/side{
 	dir = 1
 	},

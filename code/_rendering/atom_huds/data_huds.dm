@@ -297,7 +297,7 @@
 					holder.icon_state = "huddemote"
 					return
 				if(SEC_RECORD_STATUS_INCARCERATED)
-					holder.icon_state = "hudprisoner"
+					holder.icon_state = "hudcarcerated"
 					return
 				if(SEC_RECORD_STATUS_PAROLLED)
 					holder.icon_state = "hudparolled"

@@ -207,3 +207,7 @@
 /datum/gear/head/kabuto
 	name = "Kabuto helmet"
 	path = /obj/item/clothing/head/kabuto
+
+/datum/gear/head/maid_headband
+	name = "Tactical Maid Headband"
+	path = /obj/item/clothing/head/maid/syndicate

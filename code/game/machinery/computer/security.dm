@@ -129,15 +129,23 @@
 									crimstat = E.fields["criminal"]
 							var/background
 							switch(crimstat)
-								if("*Arrest*")
+								if(SEC_RECORD_STATUS_ARREST)
 									background = "'background-color:#990000;'"
-								if("Incarcerated")
+								if(SEC_RECORD_STATUS_EXECUTE)
+									background = "'background-color:#990000;'"
+								if(SEC_RECORD_STATUS_INCARCERATED)
+									background = "'background-color:#990000;'"
+								if(SEC_RECORD_STATUS_RELEASED)
+									background = "'background-color:#4F7529;'"
+								if(SEC_RECORD_STATUS_PAROLLED)
+									background = "'background-color:#4F7529;'"
+								if(SEC_RECORD_STATUS_DEMOTE)
 									background = "'background-color:#CD6500;'"
-								if("Paroled")
+								if(SEC_RECORD_STATUS_SEARCH)
 									background = "'background-color:#CD6500;'"
-								if("Discharged")
+								if(SEC_RECORD_STATUS_MONITOR)
 									background = "'background-color:#006699;'"
-								if("None")
+								if(SEC_RECORD_STATUS_DISCHARGED)
 									background = "'background-color:#4F7529;'"
 								if("")
 									background = "''" //"'background-color:#FFFFFF;'"
@@ -495,7 +503,7 @@ What a mess.*/
 					R.fields["name"] = active1.fields["name"]
 					R.fields["id"] = active1.fields["id"]
 					R.name = text("Security Record #[]", R.fields["id"])
-					R.fields["criminal"] = "None"
+					R.fields["criminal"] = SEC_RECORD_STATUS_NONE
 					R.fields["mi_crim"] = list()
 					R.fields["ma_crim"] = list()
 					R.fields["notes"] = "No notes."
@@ -525,7 +533,7 @@ What a mess.*/
 				R.fields["name"] = active1.fields["name"]
 				R.fields["id"] = active1.fields["id"]
 				R.name = text("Security Record #[]", R.fields["id"])
-				R.fields["criminal"] = "None"
+				R.fields["criminal"] = SEC_RECORD_STATUS_NONE
 				R.fields["mi_crim"] = list()
 				R.fields["ma_crim"] = list()
 				R.fields["notes"] = "No notes."
@@ -685,11 +693,16 @@ What a mess.*/
 						if(istype(active2, /datum/data/record))
 							temp = "<h5>Criminal Status:</h5>"
 							temp += "<ul>"
-							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=none'>None</a></li>"
-							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=arrest'>*Arrest*</a></li>"
-							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=incarcerated'>Incarcerated</a></li>"
-							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=paroled'>Paroled</a></li>"
-							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=released'>Discharged</a></li>"
+							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=none'>Ничего</a></li>"
+							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=arrest'>*Арестовать*</a></li>"
+							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=execute'>*Уничтожить*</a></li>"
+							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=incarcerated'>Отбывает Срок</a></li>"
+							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=released'>Выпустили</a></li>"
+							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=parolled'>УДО</a></li>"
+							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=demote'>Уволить</a></li>"
+							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=search'>Искать</a></li>"
+							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=monitor'>Наблюдать</a></li>"
+							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=discharged'>Сняты Обвинения</a></li>"
 							temp += "</ul>"
 					if("rank")
 						if(istype(active1, /datum/data/record) && ((ACCESS_CAPTAIN in logged_access) || (ACCESS_HOP in logged_access)))
@@ -715,15 +728,26 @@ What a mess.*/
 							var/old_field = active2.fields["criminal"]
 							switch(href_list["criminal2"])
 								if("none")
-									active2.fields["criminal"] = "None"
+									active2.fields["criminal"] = SEC_RECORD_STATUS_NONE
 								if("arrest")
-									active2.fields["criminal"] = "*Arrest*"
+									active2.fields["criminal"] = SEC_RECORD_STATUS_ARREST
+								if("execute")
+									active2.fields["criminal"] = SEC_RECORD_STATUS_EXECUTE
 								if("incarcerated")
-									active2.fields["criminal"] = "Incarcerated"
-								if("paroled")
-									active2.fields["criminal"] = "Paroled"
+									active2.fields["criminal"] = SEC_RECORD_STATUS_INCARCERATED
 								if("released")
-									active2.fields["criminal"] = "Discharged"
+									active2.fields["criminal"] = SEC_RECORD_STATUS_RELEASED
+								if("parolled")
+									active2.fields["criminal"] = SEC_RECORD_STATUS_PAROLLED
+								if("demote")
+									active2.fields["criminal"] = SEC_RECORD_STATUS_DEMOTE
+								if("search")
+									active2.fields["criminal"] = SEC_RECORD_STATUS_SEARCH
+								if("monitor")
+									active2.fields["criminal"] = SEC_RECORD_STATUS_MONITOR
+								if("discharged")
+									active2.fields["criminal"] = SEC_RECORD_STATUS_DISCHARGED
+
 							investigate_log("[active1.fields["name"]] has been set from [old_field] to [active2.fields["criminal"]] by [key_name(usr)].", INVESTIGATE_RECORDS)
 							for(var/mob/living/carbon/human/H in GLOB.carbon_list)
 								H.sec_hud_set_security_status()
