@@ -589,7 +589,7 @@
 /obj/structure/ladder/unbreakable/rune{
 	color = "#ff0000";
 	desc = "ONE HUNDRED AND TEN PERCENT REAL.";
-	id = "levelen";
+	id = "levelenn";
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/floor/iron/kitchen/herringbone,
@@ -4579,7 +4579,7 @@
 	color = "#000000";
 	desc = "It is time to bust out of this joint";
 	height = 1;
-	id = "levelen";
+	id = "levelenn";
 	mouse_opacity = 0;
 	name = "\improper secret escape route"
 	},
