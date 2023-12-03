@@ -3,7 +3,7 @@
 /obj/structure/filingcabinet/security,
 /turf/open/indestructible,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "ab" = (
 /turf/open/space,
@@ -11,7 +11,7 @@
 "ac" = (
 /turf/closed/indestructible/necropolis,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 1"
 	})
 "ae" = (
 /mob/living/simple_animal/chick{
@@ -23,12 +23,12 @@
 	},
 /turf/open/indestructible/spooknecropolis,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 1"
 	})
 "af" = (
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 14"
 	})
 "ai" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -39,19 +39,19 @@
 	},
 /turf/open/floor/holofloor/snow,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 2"
 	})
 "ak" = (
 /obj/structure/shipping_container/deforest,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "al" = (
 /obj/structure/sign/flag/inteq,
 /turf/closed/wall/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "am" = (
 /obj/item/storage/toolbox/gold_fake,
@@ -59,7 +59,7 @@
 /obj/structure/closet/crate,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 9"
 	})
 "aq" = (
 /obj/structure/chair/office{
@@ -69,14 +69,14 @@
 /obj/effect/landmark/awaystart,
 /turf/open/indestructible,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "az" = (
 /obj/item/trash/candle,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/rust,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 3"
 	})
 "aH" = (
 /obj/structure/closet/crate/necropolis,
@@ -87,32 +87,32 @@
 /obj/item/kitchen/knife/combat/survival/knuckledagger,
 /turf/open/indestructible/spooknecropolis,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 1"
 	})
 "aJ" = (
 /obj/structure/destructible/cult/tome,
 /turf/open/floor/iron/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 5"
 	})
 "aK" = (
 /obj/machinery/recharger,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "aL" = (
 /obj/structure/sign/poster/contraband/nri_pistol,
 /turf/closed/indestructible/wall,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "aW" = (
 /obj/effect/turf_decal/delivery,
 /obj/structure/shipping_container/donk_co,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "aZ" = (
 /mob/living/simple_animal/hostile/jungle/mook{
@@ -122,7 +122,7 @@
 	},
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 14"
 	})
 "bg" = (
 /obj/structure/table,
@@ -131,19 +131,19 @@
 	},
 /turf/open/indestructible/sound,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "bn" = (
 /obj/structure/ore_box,
 /turf/open/indestructible/cobble,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 7"
 	})
 "bo" = (
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/circuit/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "bB" = (
 /obj/structure/flora/junglebush/c,
@@ -162,7 +162,7 @@
 /obj/item/seeds/kudzu,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 8"
 	})
 "bK" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/hunter{
@@ -173,7 +173,7 @@
 	},
 /turf/open/floor/catwalk_floor,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 15"
 	})
 "bQ" = (
 /obj/structure/stone_tile/block/burnt,
@@ -184,13 +184,13 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "bV" = (
 /obj/effect/mob_spawn/human/corpse/damaged,
 /turf/open/floor/padded,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 11"
 	})
 "bW" = (
 /mob/living/simple_animal/hostile/skeleton/plasmaminer/jackhammer{
@@ -198,19 +198,19 @@
 	},
 /turf/open/floor/padded,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 11"
 	})
 "bZ" = (
 /obj/structure/shipping_container/cybersun,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "ci" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/open/indestructible,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "cj" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -221,7 +221,7 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "cq" = (
 /mob/living/simple_animal/hostile/crazysci{
@@ -232,7 +232,7 @@
 	},
 /turf/open/floor/padded,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 11"
 	})
 "cr" = (
 /obj/structure/fluff/drake_statue/falling,
@@ -241,7 +241,7 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "cs" = (
 /mob/living/simple_animal/hostile/russian/ranged/trooper{
@@ -250,7 +250,7 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "cJ" = (
 /obj/structure/chair/comfy,
@@ -261,7 +261,7 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "cM" = (
 /mob/living/simple_animal/hostile/sptrooper{
@@ -270,7 +270,7 @@
 	},
 /turf/open/floor/catwalk_floor,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 15"
 	})
 "cP" = (
 /obj/effect/decal/cleanable/blood,
@@ -278,13 +278,13 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/indestructible/spooknecropolis,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 1"
 	})
 "cQ" = (
 /obj/structure/shipping_container/interdyne,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "cR" = (
 /obj/structure/statue/sandstone/venus{
@@ -292,17 +292,25 @@
 	},
 /turf/open/indestructible/cobble,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 7"
+	})
+"cU" = (
+/obj/structure/flora/junglebush/c,
+/turf/open/misc/grass,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 6"
 	})
 "cV" = (
 /obj/structure/showcase/mecha/marauder,
 /turf/open/floor/iron/kitchen/herringbone,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Party Party Party!"
 	})
 "cX" = (
-/turf/closed/indestructible/riveted,
-/area/space)
+/turf/closed/indestructible/rock,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 14"
+	})
 "de" = (
 /obj/machinery/door/keycard,
 /turf/open/indestructible{
@@ -310,7 +318,7 @@
 	icon_state = "carpet"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "df" = (
 /obj/structure/table,
@@ -320,7 +328,7 @@
 /obj/item/paper_bin,
 /turf/open/indestructible,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "dl" = (
 /mob/living/simple_animal/hostile/retaliate/spaceman{
@@ -328,7 +336,15 @@
 	},
 /turf/open/floor/padded,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 11"
+	})
+"dt" = (
+/obj/machinery/sleeper/syndie/fullupgrade,
+/turf/open/floor/plating/asteroid/basalt{
+	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
+	},
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 10"
 	})
 "dA" = (
 /mob/living/simple_animal/hostile/looter{
@@ -340,32 +356,40 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/rust,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 3"
 	})
 "dB" = (
 /obj/structure/rack/shelf,
 /obj/item/gun/medbeam,
 /turf/open/floor/padded,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 11"
+	})
+"dC" = (
+/obj/structure/flora/tree/jungle/small{
+	layer = 3
+	},
+/turf/open/misc/grass,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 6"
 	})
 "ep" = (
 /turf/closed/mineral/ash_rock,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 7"
 	})
 "ew" = (
 /obj/structure/flora/tree/jungle,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 6"
 	})
 "eB" = (
 /obj/machinery/modular_computer/console,
 /turf/open/floor/iron/kitchen,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 4"
 	})
 "eL" = (
 /turf/closed/wall/mineral/titanium/spaceship,
@@ -376,14 +400,14 @@
 	},
 /turf/open/floor/iron/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 5"
 	})
 "eV" = (
 /obj/structure/table,
 /obj/item/documents/syndicate,
 /turf/open/floor/iron/kitchen,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 4"
 	})
 "eW" = (
 /obj/structure/table,
@@ -392,14 +416,22 @@
 	},
 /turf/open/indestructible/sound,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "eZ" = (
 /turf/closed/indestructible/rock/snow/ice{
 	layer = 111
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 2"
+	})
+"fa" = (
+/obj/structure/flora/tree/jungle{
+	layer = 6
+	},
+/turf/open/misc/grass,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 14"
 	})
 "fc" = (
 /obj/machinery/door/airlock/medical/glass,
@@ -408,14 +440,14 @@
 /obj/item/restraints/legcuffs/beartrap/prearmed,
 /turf/open/floor/padded,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 11"
 	})
 "fi" = (
 /obj/structure/rack/shelf,
 /obj/item/mecha_parts/mecha_equipment/anticcw_armor_booster,
 /turf/open/indestructible/sound,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "fq" = (
 /mob/living/simple_animal/hostile/asteroid/lobstrosity/lava{
@@ -427,7 +459,7 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 10"
 	})
 "ft" = (
 /obj/item/clothing/suit/straight_jacket,
@@ -440,7 +472,12 @@
 	},
 /turf/open/floor/padded,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 11"
+	})
+"fv" = (
+/turf/open/misc/grass,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 8"
 	})
 "fw" = (
 /obj/structure/stone_tile/block/burnt{
@@ -450,13 +487,13 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "fC" = (
 /obj/structure/spacevine,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 8"
 	})
 "fD" = (
 /obj/structure/table/wood/poker,
@@ -465,7 +502,7 @@
 /obj/item/toy/cards/cardhand,
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "fE" = (
 /obj/structure/table/wood,
@@ -473,7 +510,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/vodka,
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "fI" = (
 /obj/structure/stone_tile/block/burnt,
@@ -481,13 +518,28 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
+	})
+"fK" = (
+/obj/structure/flora/tree/jungle{
+	layer = 4
+	},
+/obj/structure/flora/ausbushes/fernybush,
+/turf/open/misc/grass,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 14"
+	})
+"fQ" = (
+/obj/structure/flora/tree/jungle,
+/turf/open/misc/grass,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 14"
 	})
 "fR" = (
 /obj/structure/sign/poster/contraband/syndicate_pistol,
 /turf/closed/indestructible/wall,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "fW" = (
 /obj/structure/stone_tile/slab/burnt,
@@ -495,13 +547,13 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "fX" = (
 /obj/structure/shipping_container/nthi,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "ga" = (
 /obj/structure/stone_tile/block/burnt{
@@ -514,7 +566,7 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "gb" = (
 /mob/living/simple_animal/hostile/syndicate/melee{
@@ -525,13 +577,13 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "gf" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 14"
 	})
 "gk" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -542,19 +594,19 @@
 	},
 /turf/open/floor/iron/kitchen/herringbone,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Party Party Party!"
 	})
 "gm" = (
 /obj/effect/mob_spawn/human/corpse/miner/explorer,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 9"
 	})
 "gp" = (
 /obj/structure/flora/ausbushes/palebush,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 6"
 	})
 "gr" = (
 /obj/structure/closet/crate/large,
@@ -563,12 +615,12 @@
 /obj/effect/spawner/lootdrop/bluespace_tap/food,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "gE" = (
 /turf/open/floor/festive/cobblestone/safe,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 7"
 	})
 "gO" = (
 /mob/living/simple_animal/hostile/netherworld{
@@ -581,7 +633,7 @@
 	},
 /turf/open/floor/iron/kitchen,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 4"
 	})
 "gT" = (
 /obj/structure/stone_tile{
@@ -591,74 +643,88 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "gU" = (
 /turf/closed/wall/ice,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "gX" = (
 /turf/closed/indestructible/wall,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "hg" = (
 /obj/structure/fermenting_barrel,
 /turf/open/indestructible/cobble,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 7"
 	})
 "hl" = (
 /obj/structure/table,
 /obj/machinery/recharger,
 /turf/open/indestructible/sound,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "ho" = (
 /obj/machinery/recharger,
 /turf/open/floor/catwalk_floor,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 15"
 	})
 "hr" = (
 /obj/structure/salvage/metal_frame,
 /turf/open/floor/catwalk_floor,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 15"
+	})
+"hs" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 9"
 	})
 "hu" = (
 /obj/structure/signpost,
 /turf/open/indestructible/cobble,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 7"
 	})
 "hD" = (
 /obj/structure/destructible/cult/talisman,
 /obj/effect/mob_spawn/human/corpse/miner/mod,
 /turf/open/floor/iron/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 1"
+	})
+"hL" = (
+/obj/structure/flora/tree/jungle{
+	layer = 3
+	},
+/turf/open/misc/grass,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 14"
 	})
 "hN" = (
 /obj/effect/spawner/lootdrop/pizzaparty,
 /obj/structure/table,
+/obj/item/reagent_containers/food/drinks/beer,
 /turf/open/floor/iron/kitchen/herringbone,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Party Party Party!"
 	})
 "hP" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "hR" = (
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 10"
 	})
 "hT" = (
 /obj/structure/chair/office,
@@ -668,7 +734,7 @@
 /obj/effect/landmark/awaystart,
 /turf/open/indestructible,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "hU" = (
 /mob/living/simple_animal/hostile/syndicate/melee/space/stormtrooper{
@@ -679,29 +745,29 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "hW" = (
 /obj/structure/chair/stool/bar,
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "hX" = (
 /obj/structure/shuttle/engine/large,
 /turf/open/floor/fakespace,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 9"
 	})
 "ia" = (
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "in" = (
 /turf/closed/wall/mineral/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 1"
 	})
 "is" = (
 /obj/machinery/sleeper/party{
@@ -709,19 +775,25 @@
 	},
 /turf/open/floor/iron/kitchen/herringbone,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Party Party Party!"
 	})
 "iv" = (
 /obj/structure/flora/rock/icy,
 /turf/open/floor/holofloor/snow,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 2"
 	})
 "iw" = (
 /obj/structure/sign/plaques,
 /turf/closed/wall/mineral/titanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 11"
+	})
+"ix" = (
+/obj/machinery/sleeper/syndie/fullupgrade,
+/turf/open/misc/grass,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 8"
 	})
 "iE" = (
 /obj/effect/turf_decal/delivery/blue,
@@ -729,7 +801,7 @@
 /obj/item/circuitboard/machine/vending/donksofttoyvendor,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "iN" = (
 /obj/structure/stone_tile/slab,
@@ -738,12 +810,12 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "iR" = (
 /turf/open/floor/circuit/green,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "jf" = (
 /obj/structure/flora/junglebush/large{
@@ -751,13 +823,13 @@
 	},
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 8"
 	})
 "jl" = (
 /obj/item/trash/candle,
 /turf/open/floor/plating/rust,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 3"
 	})
 "jn" = (
 /obj/structure/table/wood,
@@ -765,19 +837,19 @@
 /obj/item/lighter,
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "jr" = (
 /obj/structure/flora/junglebush/c,
 /obj/machinery/recharger,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 8"
 	})
 "ju" = (
-/turf/open/space,
+/turf/closed/wall/mineral/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 5"
 	})
 "jN" = (
 /mob/living/simple_animal/hostile/syndicate/mecha_pilot{
@@ -793,7 +865,7 @@
 	},
 /turf/open/indestructible,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "jV" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -804,7 +876,7 @@
 	},
 /turf/open/floor/catwalk_floor,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 15"
 	})
 "ka" = (
 /obj/structure/closet/crate/large,
@@ -814,12 +886,12 @@
 /obj/effect/turf_decal/caution/stand_clear/white,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "kd" = (
 /turf/closed/indestructible/riveted,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "kf" = (
 /obj/structure/table,
@@ -831,7 +903,7 @@
 	},
 /turf/open/indestructible/sound,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "kv" = (
 /obj/effect/turf_decal/delivery/blue,
@@ -840,13 +912,23 @@
 /obj/item/reagent_containers/food/drinks/bottle/applejack,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
+	})
+"ky" = (
+/turf/open/floor/fakespace,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Boss 2"
 	})
 "kB" = (
 /obj/structure/salvage/computer,
 /turf/open/floor/catwalk_floor,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 15"
+	})
+"kH" = (
+/turf/closed/indestructible/rock,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 10"
 	})
 "kU" = (
 /obj/effect/turf_decal/delivery/blue,
@@ -854,13 +936,13 @@
 /obj/item/ammo_box/c45/hydra,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "kW" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/rust,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 3"
 	})
 "kX" = (
 /mob/living/simple_animal/hostile/pirate/ranged/space{
@@ -870,7 +952,7 @@
 	},
 /turf/open/floor/fakespace,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 9"
 	})
 "la" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -881,17 +963,23 @@
 	},
 /turf/open/floor/plating/rust,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 3"
 	})
 "lj" = (
 /turf/open/floor/padded,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 11"
 	})
 "lm" = (
 /turf/closed/indestructible/opshuttle,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 9"
+	})
+"lq" = (
+/obj/structure/flora/junglebush/c,
+/turf/open/misc/grass,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 14"
 	})
 "lt" = (
 /obj/structure/stone_tile/block/cracked{
@@ -901,7 +989,7 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "lv" = (
 /obj/structure/closet/crate/large,
@@ -910,25 +998,32 @@
 /obj/item/reagent_containers/food/drinks/beer/almost_empty,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "lx" = (
 /obj/item/trash/cheesie,
 /turf/open/floor/plating/rust,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 3"
 	})
 "lK" = (
 /turf/open/floor/fakespace,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 9"
 	})
 "lR" = (
 /obj/structure/window/plastitanium,
 /obj/structure/grille,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 9"
+	})
+"lS" = (
+/obj/structure/flora/tree/jungle/small,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/misc/grass,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 14"
 	})
 "mc" = (
 /turf/open/indestructible/cobble{
@@ -936,12 +1031,12 @@
 	icon_state = "black"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "???"
 	})
 "mk" = (
 /turf/closed/wall/mineral/titanium/spaceship,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 15"
 	})
 "mp" = (
 /mob/living/simple_animal/hostile/construct/builder/hostile{
@@ -949,32 +1044,32 @@
 	},
 /turf/open/floor/iron/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 1"
 	})
 "mr" = (
 /obj/machinery/airalarm,
 /turf/closed/indestructible/wall,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "ms" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/plating/rust,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 3"
 	})
 "mt" = (
 /obj/structure/sign/departments/medbay/alt,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 11"
 	})
 "mD" = (
 /obj/structure/table,
 /obj/item/paper/pamphlet/violent_video_games,
 /turf/open/indestructible/sound,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "mF" = (
 /obj/structure/stone_tile/block/cracked{
@@ -984,7 +1079,7 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "mO" = (
 /mob/living/simple_animal/hostile/asteroid/wolf{
@@ -993,19 +1088,19 @@
 	},
 /turf/open/floor/holofloor/snow,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 2"
 	})
 "mW" = (
 /obj/structure/salvage/protolathe,
 /turf/open/floor/catwalk_floor,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 15"
 	})
 "nh" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/iron/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 5"
 	})
 "nn" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -1019,19 +1114,19 @@
 	},
 /turf/open/floor/fakespace,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 9"
 	})
 "np" = (
 /obj/structure/bookcase/random,
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "nq" = (
 /obj/structure/barricade/security/murderdome,
 /turf/open/indestructible,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "nB" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -1045,12 +1140,17 @@
 	},
 /turf/open/indestructible/cobble,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 7"
+	})
+"nE" = (
+/turf/open/floor/iron/cult,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 5"
 	})
 "nM" = (
 /turf/open/floor/iron/kitchen,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 4"
 	})
 "nP" = (
 /mob/living/simple_animal/hostile/syndicate/ranged/smg{
@@ -1063,7 +1163,7 @@
 /obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "nV" = (
 /obj/structure/spacevine,
@@ -1075,26 +1175,31 @@
 	},
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 8"
 	})
 "nX" = (
 /obj/structure/destructible/cult/pylon,
 /turf/open/floor/iron/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 1"
 	})
 "of" = (
 /obj/machinery/door/keycard/library,
 /turf/open/floor/iron/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 1"
 	})
 "ol" = (
 /obj/structure/spacevine,
 /obj/structure/flora/junglebush/large,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 8"
+	})
+"om" = (
+/turf/closed/wall/r_wall/rust,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 3"
 	})
 "oB" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -1105,13 +1210,13 @@
 	},
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 6"
 	})
 "oN" = (
 /obj/structure/rack,
 /turf/open/indestructible/sound,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "oQ" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -1122,7 +1227,7 @@
 	},
 /turf/open/floor/iron/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 5"
 	})
 "oR" = (
 /obj/structure/flora/tree/jungle{
@@ -1130,13 +1235,13 @@
 	},
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 6"
 	})
 "oW" = (
 /obj/machinery/door/window,
 /turf/open/indestructible,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "oZ" = (
 /mob/living/simple_animal/hostile/pirate/melee/space{
@@ -1146,7 +1251,7 @@
 	},
 /turf/open/floor/fakespace,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 9"
 	})
 "pd" = (
 /obj/structure/stone_tile/slab,
@@ -1155,7 +1260,7 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "pe" = (
 /mob/living/simple_animal/hostile/cult/magic{
@@ -1165,13 +1270,13 @@
 	},
 /turf/open/floor/iron/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 5"
 	})
 "pf" = (
 /obj/structure/shipping_container/gorlex/red,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "pn" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -1185,27 +1290,27 @@
 	},
 /turf/open/floor/padded,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 11"
 	})
 "ps" = (
 /obj/structure/flora/junglebush/b,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 8"
 	})
 "pt" = (
 /obj/structure/rack/shelf,
 /obj/item/storage/toolbox,
 /turf/open/indestructible/sound,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "pA" = (
 /obj/effect/decal/cleanable/vomit/old,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/rust,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 3"
 	})
 "pE" = (
 /obj/effect/spawner/structure/window{
@@ -1213,25 +1318,25 @@
 	},
 /turf/open/floor/iron/kitchen,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 4"
 	})
 "pG" = (
 /obj/structure/salvage/remains,
 /turf/open/floor/catwalk_floor,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 15"
 	})
 "pM" = (
 /obj/structure/sign/poster/contraband/bountyhunters,
 /turf/closed/indestructible/wall,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "pX" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 6"
 	})
 "pY" = (
 /obj/effect/turf_decal/delivery/blue,
@@ -1239,12 +1344,12 @@
 /obj/item/vending_refill/donksoft,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "qe" = (
 /turf/closed/indestructible/rock/snow/ice,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 2"
 	})
 "qn" = (
 /obj/structure/rack,
@@ -1253,7 +1358,13 @@
 /obj/item/ammo_box/magazine/smgm45,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
+	})
+"qq" = (
+/obj/structure/destructible/cult/pylon,
+/turf/open/floor/iron/cult,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 6"
 	})
 "qu" = (
 /obj/structure/table,
@@ -1271,13 +1382,13 @@
 /obj/item/clothing/suit/toggle/labcoat/mad/techcoat,
 /turf/open/floor/iron/kitchen,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 4"
 	})
 "qA" = (
 /mob/living/simple_animal/hostile/russian/ranged/mosin,
 /turf/open/indestructible,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "qC" = (
 /obj/structure/closet/crate/necropolis,
@@ -1293,12 +1404,19 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 10"
+	})
+"qD" = (
+/obj/effect/spawner/lootdrop/pizzaparty,
+/obj/structure/table,
+/turf/open/floor/iron/kitchen/herringbone,
+/area/awaymission/errorroom{
+	name = "Party Party Party!"
 	})
 "qF" = (
 /turf/open/lava,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 10"
 	})
 "qK" = (
 /obj/structure/closet/crate/large,
@@ -1307,40 +1425,40 @@
 /obj/item/reagent_containers/food/snacks/candy,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "qQ" = (
 /obj/vehicle/sealed/mecha/combat/gygax/bluespace,
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/circuit/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "qV" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 8"
 	})
 "rc" = (
 /obj/machinery/gateway/away,
 /turf/open/floor/iron/kitchen/herringbone,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Party Party Party!"
 	})
 "rf" = (
 /turf/open/water{
 	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 7"
 	})
 "ro" = (
 /obj/machinery/mech_bay_recharge_port,
 /turf/open/indestructible/sound,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "rp" = (
 /obj/structure/flora/ash/cacti,
@@ -1348,7 +1466,7 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 10"
 	})
 "rt" = (
 /obj/structure/stone_tile/block/burnt{
@@ -1361,7 +1479,7 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "ru" = (
 /obj/effect/turf_decal/delivery/blue,
@@ -1369,13 +1487,13 @@
 /obj/item/reagent_containers/food/drinks/bottle/champagne/empty,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "rv" = (
 /obj/structure/showcase/horrific_experiment,
 /turf/open/floor/iron/kitchen,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 4"
 	})
 "ry" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -1386,7 +1504,7 @@
 	},
 /turf/open/indestructible,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "rE" = (
 /obj/machinery/computer/mech_bay_power_console{
@@ -1394,13 +1512,26 @@
 	},
 /turf/open/indestructible/sound,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
+	})
+"rF" = (
+/obj/structure/destructible/cult/pylon,
+/turf/open/floor/iron/cult,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 5"
+	})
+"rG" = (
+/obj/structure/flora/tree/jungle,
+/obj/structure/flora/ausbushes/fernybush,
+/turf/open/misc/grass,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 14"
 	})
 "rL" = (
 /obj/effect/decal/cleanable/oil,
 /turf/open/indestructible/sound,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "rQ" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -1414,7 +1545,7 @@
 	},
 /turf/open/floor/iron/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 5"
 	})
 "rS" = (
 /obj/structure/bed/secbed{
@@ -1423,7 +1554,7 @@
 /obj/item/bedsheet/random,
 /turf/open/floor/padded,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 11"
 	})
 "rW" = (
 /obj/structure/closet/crate/large,
@@ -1432,7 +1563,7 @@
 /obj/item/reagent_containers/food/snacks/beans,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "sh" = (
 /obj/structure/stone_tile/block/burnt{
@@ -1443,13 +1574,13 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "si" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "sq" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -1462,36 +1593,36 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 10"
 	})
 "sx" = (
 /obj/item/key,
 /turf/open/floor/holofloor/snow,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 2"
 	})
 "sI" = (
 /obj/structure/flora/ausbushes/fernybush,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 14"
 	})
 "sS" = (
 /obj/structure/flora/grass/both,
 /turf/open/floor/holofloor/snow,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 2"
 	})
 "sU" = (
 /turf/closed/wall/r_wall/syndicate/nosmooth,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 4"
 	})
 "ti" = (
 /obj/structure/filingcabinet/chestdrawer,
 /turf/open/indestructible/sound,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "tk" = (
 /obj/structure/chair/office{
@@ -1501,7 +1632,7 @@
 /obj/effect/decal/remains/human,
 /turf/open/indestructible,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "tl" = (
 /obj/structure/flora/ausbushes/fullgrass,
@@ -1512,7 +1643,7 @@
 	},
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 14"
 	})
 "ts" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -1523,13 +1654,13 @@
 	},
 /turf/open/floor/iron/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 1"
 	})
 "tE" = (
 /obj/structure/cannon/trash,
 /turf/open/floor/plating/rust,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 3"
 	})
 "tG" = (
 /obj/effect/turf_decal/loading_area/red{
@@ -1537,14 +1668,14 @@
 	},
 /turf/open/indestructible,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "tL" = (
 /obj/structure/destructible/cult/pylon,
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/iron/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 1"
 	})
 "ue" = (
 /obj/structure/flora/rock,
@@ -1552,7 +1683,7 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 10"
 	})
 "uf" = (
 /obj/structure/stone_tile/slab,
@@ -1560,14 +1691,19 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
+	})
+"ug" = (
+/turf/open/floor/mineral/plastitanium,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 9"
 	})
 "um" = (
 /obj/structure/rack,
 /obj/item/carpentry/hammer,
 /turf/open/indestructible/sound,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "un" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -1582,32 +1718,38 @@
 /obj/effect/decal/cleanable/vomit/old,
 /turf/open/floor/plating/rust,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 3"
 	})
 "uv" = (
 /obj/machinery/jukebox,
 /turf/open/floor/iron/kitchen/herringbone,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Party Party Party!"
 	})
 "uy" = (
 /obj/structure/sign/poster/contraband/scum,
 /turf/closed/indestructible/wall,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "uH" = (
 /obj/structure/closet/crate/large,
 /obj/item/reagent_containers/food/drinks/bottle/molotov,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
+	})
+"uK" = (
+/obj/structure/reagent_dispensers/beerkeg,
+/turf/open/floor/iron/kitchen/herringbone,
+/area/awaymission/errorroom{
+	name = "Party Party Party!"
 	})
 "uL" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/iron/kitchen,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 4"
 	})
 "uO" = (
 /obj/structure/closet/crate/trashcart,
@@ -1620,20 +1762,20 @@
 /obj/item/gun/energy/laser/hellgun,
 /turf/open/floor/plating/rust,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 3"
 	})
 "uS" = (
 /obj/structure/spacevine,
 /obj/structure/flora/junglebush/b,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 8"
 	})
 "uY" = (
 /obj/structure/flora/bush,
 /turf/open/floor/holofloor/snow,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 2"
 	})
 "va" = (
 /mob/living/simple_animal/hostile/dark_wizard{
@@ -1645,20 +1787,20 @@
 	},
 /turf/open/indestructible/cobble,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 7"
 	})
 "vd" = (
 /obj/machinery/recharger,
 /turf/open/floor/holofloor/snow,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 2"
 	})
 "vf" = (
 /obj/structure/closet/crate/large,
 /obj/item/reagent_containers/food/drinks/bottle/applejack,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "vj" = (
 /obj/structure/table/wood/poker,
@@ -1666,7 +1808,7 @@
 /obj/item/toy/cards/cardhand,
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "vp" = (
 /mob/living/simple_animal/hostile/retaliate/clown/clownhulk/chlown{
@@ -1674,14 +1816,14 @@
 	},
 /turf/open/floor/padded,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 11"
 	})
 "vC" = (
 /obj/structure/closet/crate/large,
 /obj/item/reagent_containers/food/drinks/bottle/grenadine,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "vH" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -1695,7 +1837,7 @@
 	},
 /turf/open/floor/catwalk_floor,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 15"
 	})
 "vI" = (
 /obj/structure/stone_tile/block/cracked{
@@ -1705,7 +1847,7 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "vK" = (
 /obj/item/slime_extract/gold,
@@ -1713,12 +1855,12 @@
 /obj/item/storage/fancy/cigarettes/derringer/gold,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 9"
 	})
 "vM" = (
 /turf/closed/indestructible/hotelwall,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Party Party Party!"
 	})
 "vR" = (
 /turf/closed/wall/r_wall/rust,
@@ -1730,7 +1872,7 @@
 /obj/effect/decal/remains/robot,
 /turf/open/indestructible,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "vU" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -1744,7 +1886,7 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "vX" = (
 /obj/structure/table,
@@ -1757,7 +1899,7 @@
 	},
 /turf/open/indestructible,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "wd" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -1771,14 +1913,14 @@
 	icon_state = "black"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "???"
 	})
 "wl" = (
 /obj/structure/flora/tree/jungle,
 /obj/structure/flora/ausbushes/fernybush,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 6"
 	})
 "wA" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -1792,13 +1934,13 @@
 	icon_state = "carpet"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "wJ" = (
 /obj/machinery/recharger,
 /turf/open/floor/festive/alleyway/safe,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 7"
 	})
 "wK" = (
 /obj/structure/closet/crate/large,
@@ -1807,7 +1949,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/absinthe/premium,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "wN" = (
 /obj/structure/table/wood,
@@ -1818,19 +1960,24 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "wO" = (
 /turf/open/floor/iron/kitchen/herringbone,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Party Party Party!"
 	})
 "wP" = (
 /obj/item/trash/cheesie,
 /obj/item/trash/candy,
 /turf/open/floor/plating/rust,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 3"
+	})
+"wV" = (
+/turf/open/misc/grass,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 6"
 	})
 "xb" = (
 /obj/structure/flora/tree/jungle{
@@ -1838,13 +1985,13 @@
 	},
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 6"
 	})
 "xc" = (
 /obj/structure/shipping_container/conarex,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "xg" = (
 /mob/living/simple_animal/hostile/syndicate/ranged/shotgun{
@@ -1855,7 +2002,7 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "xo" = (
 /obj/structure/rack/shelf,
@@ -1868,7 +2015,7 @@
 	},
 /turf/open/indestructible/sound,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "xq" = (
 /mob/living/simple_animal/hostile/jungle/seedling{
@@ -1879,18 +2026,18 @@
 	},
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 14"
 	})
 "xC" = (
 /obj/structure/sign/warning/securearea,
 /turf/closed/indestructible/rock,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "xD" = (
 /turf/open/floor/plating/rust,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 3"
 	})
 "xH" = (
 /obj/structure/stone_tile/block/cracked{
@@ -1900,12 +2047,12 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "xL" = (
 /turf/open/floor/festive/stairs/stairseast,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 7"
 	})
 "xO" = (
 /turf/closed/indestructible/necropolis,
@@ -1918,7 +2065,7 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "yd" = (
 /obj/structure/fluff/paper/stack{
@@ -1926,7 +2073,7 @@
 	},
 /turf/open/floor/iron/kitchen,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 4"
 	})
 "ye" = (
 /obj/structure/stone_tile/burnt{
@@ -1936,7 +2083,7 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "yf" = (
 /obj/item/stack/sheet/plasteel,
@@ -1944,30 +2091,35 @@
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/circuit/green,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "yh" = (
 /obj/structure/sign/poster/contraband/communist_state,
 /turf/closed/wall/ice,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
+	})
+"yj" = (
+/turf/closed/indestructible/rock,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 6"
 	})
 "yo" = (
 /obj/structure/shipping_container/kosmologistika,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "yq" = (
 /turf/closed/wall/mineral/titanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 11"
 	})
 "ys" = (
 /obj/item/trash/candy,
 /turf/open/floor/plating/rust,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 3"
 	})
 "yt" = (
 /obj/structure/fluff/paper/stack{
@@ -1975,7 +2127,7 @@
 	},
 /turf/open/floor/iron/kitchen,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 4"
 	})
 "yF" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -1986,63 +2138,69 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "yG" = (
 /obj/structure/shipping_container/donk_co,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "yH" = (
 /obj/structure/flora/tree/spookytimexl,
 /turf/open/floor/holofloor/snow,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 2"
+	})
+"yK" = (
+/obj/structure/flora/ausbushes/fernybush,
+/turf/open/misc/grass,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 6"
 	})
 "yR" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/catwalk_floor,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 15"
 	})
 "yU" = (
 /obj/structure/salvage/circuit_imprinter,
 /turf/open/floor/catwalk_floor,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 15"
 	})
 "yV" = (
 /obj/item/trash/cheesie,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/rust,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 3"
 	})
 "yY" = (
 /obj/structure/flora/rock/pile/icy,
 /turf/open/floor/holofloor/snow,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 2"
 	})
 "zd" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/padded,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 11"
 	})
 "zk" = (
 /obj/machinery/status_display/syndie,
 /turf/closed/wall/mineral/titanium/spaceship,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 15"
 	})
 "zl" = (
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/open/indestructible/spooknecropolis,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 1"
 	})
 "zs" = (
 /obj/structure/mecha_wreckage/marauder,
@@ -2050,7 +2208,7 @@
 /obj/effect/decal/cleanable/robot_debris/gib,
 /turf/open/floor/circuit/green,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "zv" = (
 /obj/item/stack/cable_coil/cut,
@@ -2058,14 +2216,20 @@
 /obj/effect/decal/cleanable/robot_debris,
 /turf/open/floor/circuit/green,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "zC" = (
 /obj/structure/shipping_container/nakamura,
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
+	})
+"zO" = (
+/obj/machinery/sleeper/syndie/fullupgrade,
+/turf/open/misc/grass,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 14"
 	})
 "zU" = (
 /obj/structure/flora/tree/jungle{
@@ -2073,7 +2237,7 @@
 	},
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 6"
 	})
 "zY" = (
 /obj/structure/spacevine,
@@ -2084,7 +2248,7 @@
 	},
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 8"
 	})
 "Ah" = (
 /obj/machinery/light{
@@ -2094,19 +2258,19 @@
 /obj/structure/table,
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "Aq" = (
 /obj/machinery/recharger,
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "At" = (
 /obj/effect/decal/cleanable/vomit/old,
 /turf/open/floor/plating/rust,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 3"
 	})
 "AC" = (
 /turf/open/indestructible{
@@ -2114,34 +2278,34 @@
 	icon_state = "carpet"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "AE" = (
 /obj/effect/decal/cleanable/blood/gibs/human/limb,
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/iron/kitchen,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 4"
 	})
 "AK" = (
 /obj/structure/shipping_container/gorlex/red,
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "AM" = (
 /obj/structure/shipping_container/gorlex,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "AR" = (
 /obj/structure/destructible/cult/talisman,
 /obj/effect/mob_spawn/human/corpse/geneticist,
 /turf/open/floor/iron/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 1"
 	})
 "AS" = (
 /obj/structure/closet/crate/secure/soviet,
@@ -2158,14 +2322,20 @@
 /obj/item/storage/toolbox/ammo,
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "AT" = (
 /obj/structure/shipping_container/kosmologistika,
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
+	})
+"AV" = (
+/obj/machinery/recharger,
+/turf/open/misc/grass,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 14"
 	})
 "AX" = (
 /turf/closed/wall/mineral/plastitanium,
@@ -2174,7 +2344,7 @@
 /obj/machinery/vending/sovietsoda,
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "Bh" = (
 /obj/structure/flora/tree/jungle{
@@ -2183,33 +2353,39 @@
 	},
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 6"
 	})
 "Bi" = (
 /obj/structure/spacevine,
 /obj/structure/punji_sticks,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 8"
+	})
+"Bs" = (
+/obj/machinery/recharger,
+/turf/open/floor/iron/cult,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Boss 1"
 	})
 "Bt" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 6"
 	})
 "Bv" = (
 /obj/structure/extinguisher_cabinet,
 /turf/closed/indestructible/wall,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "Bw" = (
 /obj/machinery/recharger,
 /obj/effect/decal/cleanable/blood,
 /turf/open/indestructible/spooknecropolis,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 1"
 	})
 "Bx" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -2223,20 +2399,20 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "By" = (
 /obj/structure/bed/secbed,
 /obj/item/bedsheet/runtime,
 /turf/open/floor/padded,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 11"
 	})
 "BC" = (
 /obj/structure/sign/warning/securearea,
 /turf/closed/wall/mineral/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 1"
 	})
 "BF" = (
 /obj/structure/stone_tile/slab/cracked,
@@ -2250,38 +2426,38 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "BK" = (
 /obj/structure/barricade/security/murderdome,
 /obj/structure/barricade/security/murderdome,
 /turf/open/indestructible,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "BW" = (
 /obj/effect/decal/cleanable/blood/gibs/core,
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/iron/kitchen,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 4"
 	})
 "BY" = (
 /obj/item/storage/toolbox,
 /turf/open/floor/circuit/green,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "Cl" = (
 /obj/machinery/door/airlock/external,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 9"
 	})
 "Cn" = (
 /turf/open/floor/circuit/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "CE" = (
 /obj/structure/flora/tree/jungle{
@@ -2290,13 +2466,13 @@
 /obj/structure/flora/ausbushes/fernybush,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 6"
 	})
 "CK" = (
 /obj/structure/destructible/cult/talisman,
 /turf/open/floor/iron/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 1"
 	})
 "CQ" = (
 /obj/structure/closet/crate/bin,
@@ -2304,7 +2480,7 @@
 /obj/item/trash/pistachios,
 /turf/open/indestructible,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "CT" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -2318,7 +2494,7 @@
 	},
 /turf/open/floor/holofloor/snow,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 2"
 	})
 "CV" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -2332,14 +2508,14 @@
 	},
 /turf/open/indestructible/spooknecropolis,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 1"
 	})
 "CW" = (
 /obj/structure/destructible/cult/talisman,
 /obj/effect/mob_spawn/human/corpse/miner/explorer,
 /turf/open/floor/iron/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 1"
 	})
 "Dc" = (
 /mob/living/simple_animal/hostile/pirate/ranged/space{
@@ -2349,7 +2525,7 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 9"
 	})
 "Dl" = (
 /mob/living/simple_animal/hostile/skeleton/templar{
@@ -2362,20 +2538,20 @@
 	},
 /turf/open/indestructible/cobble,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 7"
 	})
 "Dp" = (
 /obj/effect/turf_decal/delivery/blue,
 /obj/structure/rack,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "Dx" = (
 /obj/structure/shipping_container/nakamura,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "Dy" = (
 /obj/structure/flora/tree/jungle{
@@ -2383,7 +2559,7 @@
 	},
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 6"
 	})
 "DF" = (
 /obj/structure/stone_tile/block/burnt{
@@ -2393,19 +2569,19 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "DG" = (
 /obj/machinery/vending/boozeomat,
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "DJ" = (
 /obj/structure/barricade/wooden/snowed,
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "DR" = (
 /obj/structure/anvil,
@@ -2414,32 +2590,38 @@
 	},
 /turf/open/floor/festive/alleyway/safe,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 7"
 	})
 "DV" = (
 /obj/structure/destructible/cult/forge,
 /obj/structure/constructshell,
 /turf/open/floor/iron/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 1"
 	})
 "Ea" = (
 /obj/structure/sign/flag/skull,
 /turf/closed/indestructible/riveted,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
+	})
+"Eh" = (
+/obj/structure/flora/junglebush/large,
+/turf/open/misc/grass,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 6"
 	})
 "Ej" = (
 /obj/machinery/recharger,
 /turf/open/floor/fakespace,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 9"
 	})
 "Es" = (
 /obj/structure/flora/junglebush/large,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 8"
 	})
 "Ew" = (
 /obj/structure/stone_tile/block/cracked,
@@ -2450,24 +2632,29 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "EE" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/bearsteak,
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
+	})
+"EI" = (
+/turf/open/floor/plating/asteroid/basalt{
+	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
+	},
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Boss 2"
 	})
 "EJ" = (
 /mob/living/simple_animal/hostile/cult/warrior{
-	health = 140;
-	maxHealth = 140;
 	stop_automated_movement = 1
 	},
 /turf/open/floor/iron/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 5"
 	})
 "EK" = (
 /obj/structure/statue/bronze/marx{
@@ -2477,7 +2664,7 @@
 /obj/structure/table/wood/poker,
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "EQ" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/random{
@@ -2489,19 +2676,19 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 10"
 	})
 "ET" = (
 /obj/structure/salvage/server,
 /turf/open/floor/catwalk_floor,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 15"
 	})
 "EV" = (
 /obj/structure/loot_pile/maint,
 /turf/open/floor/plating/rust,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 3"
 	})
 "Fb" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -2512,7 +2699,7 @@
 	},
 /turf/open/floor/iron/kitchen,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 4"
 	})
 "Fc" = (
 /obj/structure/fluff/big_chain,
@@ -2521,14 +2708,20 @@
 	icon_state = "black"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "???"
+	})
+"Fd" = (
+/obj/structure/flora/junglebush/large,
+/turf/open/misc/grass,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 14"
 	})
 "Ff" = (
 /obj/machinery/clonepod/experimental,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/iron/kitchen,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 4"
 	})
 "Fj" = (
 /obj/structure/flora/tree/jungle/small{
@@ -2536,7 +2729,7 @@
 	},
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 14"
 	})
 "Fl" = (
 /obj/structure/table,
@@ -2557,13 +2750,13 @@
 /obj/machinery/recharger,
 /turf/open/floor/iron/kitchen,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 4"
 	})
 "Fo" = (
 /obj/structure/shipping_container/vitezstvi,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "Fp" = (
 /mob/living/simple_animal/hostile/deth{
@@ -2573,14 +2766,14 @@
 	},
 /turf/open/floor/catwalk_floor,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 15"
 	})
 "Ft" = (
 /obj/structure/chair/sofa/corp/right,
 /obj/effect/landmark/awaystart,
 /turf/open/indestructible,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "Fx" = (
 /obj/structure/fluff/paper/stack{
@@ -2588,7 +2781,7 @@
 	},
 /turf/open/floor/iron/kitchen,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 4"
 	})
 "FF" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -2599,7 +2792,12 @@
 	},
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 8"
+	})
+"FH" = (
+/turf/closed/indestructible/rock,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 8"
 	})
 "FJ" = (
 /obj/structure/table,
@@ -2608,13 +2806,13 @@
 	},
 /turf/open/indestructible/sound,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "FM" = (
 /obj/machinery/recharger,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 6"
 	})
 "FN" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -2628,7 +2826,7 @@
 	},
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 14"
 	})
 "FS" = (
 /obj/structure/stone_tile/block/cracked,
@@ -2636,7 +2834,7 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "Gb" = (
 /mob/living/simple_animal/hostile/cult/magic/elite{
@@ -2647,7 +2845,7 @@
 	},
 /turf/open/floor/iron/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 1"
 	})
 "Gk" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -2661,20 +2859,20 @@
 	},
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 6"
 	})
 "Gl" = (
 /obj/structure/chair/sofa/corp,
 /obj/effect/landmark/awaystart,
 /turf/open/indestructible,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "Gm" = (
 /obj/structure/furnace,
 /turf/open/indestructible/cobble,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 7"
 	})
 "Gv" = (
 /obj/structure/table,
@@ -2684,14 +2882,14 @@
 /obj/item/clipboard,
 /turf/open/floor/iron/kitchen,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 4"
 	})
 "Gw" = (
 /obj/structure/flora/tree/jungle/small,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 6"
 	})
 "Gy" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -2707,19 +2905,19 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 10"
 	})
 "GF" = (
 /turf/open/floor/festive/alleyway/safe,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 7"
 	})
 "GG" = (
 /obj/structure/destructible/cult/talisman,
 /obj/effect/mob_spawn/human/corpse/clown,
 /turf/open/floor/iron/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 5"
 	})
 "GQ" = (
 /obj/item/chainsaw{
@@ -2728,7 +2926,7 @@
 	},
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 6"
 	})
 "GY" = (
 /obj/structure/spacevine,
@@ -2736,19 +2934,19 @@
 /obj/structure/flora/junglebush/b,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 8"
 	})
 "Hk" = (
 /obj/structure/flora/ashtree,
 /turf/open/floor/holofloor/snow,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 2"
 	})
 "Hl" = (
 /obj/structure/shipping_container/nanotrasen,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "Ho" = (
 /obj/structure/fluff/paper/stack{
@@ -2756,7 +2954,7 @@
 	},
 /turf/open/floor/iron/kitchen,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 4"
 	})
 "Hq" = (
 /obj/item/stack/ore/gold,
@@ -2765,20 +2963,20 @@
 /obj/structure/closet/crate,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 9"
 	})
 "Hr" = (
 /obj/structure/chair/sofa/corp/left,
 /obj/effect/landmark/awaystart,
 /turf/open/indestructible,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "HB" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/fakespace,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 9"
 	})
 "HG" = (
 /obj/structure/spacevine,
@@ -2786,31 +2984,37 @@
 /obj/structure/flora/junglebush/large,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 8"
 	})
 "HP" = (
 /obj/structure/noticeboard/rd,
 /turf/closed/wall/r_wall/syndicate/nosmooth,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 4"
 	})
 "HT" = (
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "HU" = (
 /obj/structure/destructible/cult/talisman,
 /obj/item/book/granter/spell/random,
 /turf/open/floor/iron/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 1"
+	})
+"HW" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/misc/grass,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 6"
 	})
 "HX" = (
 /turf/open/indestructible/spooknecropolis,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 1"
 	})
 "Ii" = (
 /obj/structure/flora/ash/leaf_shroom,
@@ -2818,7 +3022,7 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "Io" = (
 /obj/structure/table/wood/poker,
@@ -2828,14 +3032,25 @@
 /obj/item/toy/cards/cardhand,
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
+	})
+"Ip" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/open/misc/grass,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 6"
 	})
 "Iy" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 14"
+	})
+"Iz" = (
+/turf/closed/mineral,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 9"
 	})
 "IK" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -2849,7 +3064,7 @@
 	},
 /turf/open/floor/iron/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 1"
 	})
 "IL" = (
 /obj/structure/chair/office/dark{
@@ -2860,20 +3075,20 @@
 	},
 /turf/open/indestructible/sound,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "IO" = (
 /obj/structure/flora/grass/green,
 /turf/open/floor/holofloor/snow,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 2"
 	})
 "IT" = (
 /obj/structure/shipping_container,
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "Jr" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -2884,14 +3099,20 @@
 	},
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 14"
+	})
+"Jy" = (
+/obj/structure/flora/ausbushes/grassybush,
+/turf/open/misc/grass,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 6"
 	})
 "JD" = (
 /obj/structure/destructible/cult/talisman,
 /obj/effect/mob_spawn/human/corpse/cook,
 /turf/open/floor/iron/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 1"
 	})
 "JK" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -2902,7 +3123,7 @@
 	},
 /turf/open/floor/fakespace,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 9"
 	})
 "JN" = (
 /mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/stormtrooper/anthro{
@@ -2915,7 +3136,13 @@
 /obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
+	})
+"JP" = (
+/obj/structure/flora/ausbushes/leafybush,
+/turf/open/misc/grass,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 14"
 	})
 "JQ" = (
 /obj/structure/flora/tree/jungle{
@@ -2924,7 +3151,7 @@
 /obj/structure/flora/ausbushes/fernybush,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 6"
 	})
 "JS" = (
 /obj/structure/fluff/paper/stack{
@@ -2932,13 +3159,13 @@
 	},
 /turf/open/floor/iron/kitchen,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 4"
 	})
 "JU" = (
 /obj/effect/decal/cleanable/blood,
 /turf/open/indestructible/spooknecropolis,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 1"
 	})
 "JX" = (
 /obj/effect/turf_decal/delivery/blue,
@@ -2946,7 +3173,7 @@
 /obj/item/ammo_box/c45/lethal,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "Ke" = (
 /obj/item/banner/security{
@@ -2954,7 +3181,7 @@
 	},
 /turf/open/indestructible/cobble,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 7"
 	})
 "Kf" = (
 /obj/structure/rack/shelf,
@@ -2973,7 +3200,7 @@
 	},
 /turf/open/indestructible/sound,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "Kq" = (
 /obj/effect/turf_decal/delivery/blue,
@@ -2984,24 +3211,24 @@
 /obj/item/storage/box/donkpockets,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "Kr" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/holofloor/snow,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 2"
 	})
 "Kt" = (
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "KH" = (
 /obj/machinery/recharger,
 /turf/open/floor/padded,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 11"
 	})
 "KO" = (
 /mob/living/simple_animal/hostile/bear/russian{
@@ -3011,13 +3238,13 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "KZ" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 14"
 	})
 "Lb" = (
 /obj/item/pickaxe/diamond,
@@ -3026,7 +3253,7 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 10"
 	})
 "Lc" = (
 /obj/structure/rack/shelf,
@@ -3039,7 +3266,7 @@
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser,
 /turf/open/indestructible/sound,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "Lf" = (
 /mob/living/simple_animal/hostile/russian/ranged/officer{
@@ -3049,7 +3276,7 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "Lm" = (
 /obj/item/stack/sheet/mineral/gold,
@@ -3058,7 +3285,7 @@
 /obj/structure/closet/crate,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 9"
 	})
 "Lo" = (
 /obj/structure/table,
@@ -3066,7 +3293,7 @@
 /obj/item/pen,
 /turf/open/indestructible/sound,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "Lv" = (
 /obj/structure/flora/ash/tall_shroom,
@@ -3074,14 +3301,14 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 10"
 	})
 "Lx" = (
 /obj/structure/destructible/cult/talisman,
 /obj/item/clothing/suit/cultrobes,
 /turf/open/floor/iron/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 5"
 	})
 "LA" = (
 /obj/structure/stone_tile/slab/cracked,
@@ -3095,7 +3322,12 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
+	})
+"LJ" = (
+/turf/closed/mineral/ash_rock,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 10"
 	})
 "LM" = (
 /turf/closed/indestructible{
@@ -3104,7 +3336,7 @@
 	name = "void"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "???"
 	})
 "LN" = (
 /mob/living/simple_animal/hostile/cultistmelee{
@@ -3116,7 +3348,7 @@
 	},
 /turf/open/floor/iron/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 1"
 	})
 "LO" = (
 /obj/structure/flora/ash/stem_shroom,
@@ -3124,26 +3356,26 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 10"
 	})
 "LQ" = (
 /obj/structure/table,
 /obj/item/documents/nanotrasen,
 /turf/open/indestructible/sound,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "LR" = (
 /obj/structure/flora/tree/jungle/small,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 14"
 	})
 "LV" = (
 /obj/effect/turf_decal/delivery/blue,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "Md" = (
 /obj/structure/loot_pile/maint{
@@ -3151,12 +3383,18 @@
 	},
 /turf/open/floor/plating/rust,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 3"
 	})
 "Mf" = (
 /turf/open/indestructible/cobble,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 7"
+	})
+"Mg" = (
+/obj/structure/flora/tree/jungle/small,
+/turf/open/misc/grass,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 6"
 	})
 "Mi" = (
 /obj/structure/table,
@@ -3166,7 +3404,7 @@
 /obj/item/newspaper,
 /turf/open/indestructible,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "Mj" = (
 /mob/living/simple_animal/hostile/russian/ranged/mosin{
@@ -3176,7 +3414,7 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "Mn" = (
 /obj/structure/stone_tile{
@@ -3186,7 +3424,7 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "Mp" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -3200,18 +3438,18 @@
 	},
 /turf/open/floor/iron/kitchen,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 4"
 	})
 "Mr" = (
 /obj/effect/decal/cleanable/shreds,
 /turf/open/floor/circuit/green,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "MB" = (
 /turf/closed/indestructible/rock,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "MC" = (
 /obj/structure/spacevine,
@@ -3223,7 +3461,7 @@
 /obj/structure/flora/junglebush/large,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 8"
 	})
 "MP" = (
 /obj/structure/rack/shelf,
@@ -3236,25 +3474,25 @@
 	},
 /turf/open/indestructible/sound,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "Nh" = (
 /obj/effect/decal/cleanable/blood,
 /turf/closed/indestructible/necropolis,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 1"
 	})
 "Nq" = (
 /obj/structure/flora/ausbushes/brflowers,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 14"
 	})
 "Nv" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 14"
 	})
 "NH" = (
 /mob/living/simple_animal/hostile/cultistmelee{
@@ -3267,7 +3505,7 @@
 	},
 /turf/open/floor/iron/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 1"
 	})
 "NK" = (
 /obj/structure/anvil,
@@ -3277,7 +3515,7 @@
 	},
 /turf/open/floor/festive/alleyway/safe,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 7"
 	})
 "NV" = (
 /obj/structure/anvil,
@@ -3287,25 +3525,31 @@
 	},
 /turf/open/floor/festive/alleyway/safe,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 7"
 	})
 "Od" = (
 /obj/effect/decal/remains/human,
 /turf/open/indestructible/spooknecropolis,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 1"
+	})
+"Og" = (
+/obj/structure/flora/ausbushes/brflowers,
+/turf/open/misc/grass,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 6"
 	})
 "Op" = (
 /obj/structure/salvage/protolathe,
 /turf/closed/wall/mineral/titanium/spaceship,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 15"
 	})
 "Ou" = (
 /obj/effect/decal/hammerandsickle,
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "Oy" = (
 /mob/living/simple_animal/hostile/megafauna/sand{
@@ -3315,9 +3559,6 @@
 	AIStatus = 4;
 	digitalcamo = 1;
 	digitalinvis = 1;
-	minimum_distance = 3;
-	native_fov = 360;
-	turns_per_move = 0;
 	vision_range = 10;
 	stop_automated_movement = 1
 	},
@@ -3326,12 +3567,12 @@
 	icon_state = "black"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "???"
 	})
 "OC" = (
 /turf/closed/mineral,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "OG" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -3348,7 +3589,12 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
+	})
+"ON" = (
+/turf/closed/mineral,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 10"
 	})
 "OP" = (
 /obj/structure/spacevine,
@@ -3357,20 +3603,20 @@
 /obj/structure/flora/junglebush/large,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 8"
 	})
 "OT" = (
 /obj/item/trash/pistachios,
 /turf/open/floor/plating/rust,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 3"
 	})
 "Pe" = (
 /obj/structure/spacevine,
 /obj/structure/flora/junglebush/c,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 8"
 	})
 "Pi" = (
 /obj/effect/turf_decal/loading_area{
@@ -3378,14 +3624,14 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "Pj" = (
 /obj/effect/decal/cleanable/blood/gibs/body,
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/iron/kitchen,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 4"
 	})
 "Pn" = (
 /obj/machinery/recharger,
@@ -3393,7 +3639,7 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 10"
 	})
 "Pp" = (
 /obj/structure/table,
@@ -3404,13 +3650,13 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "Px" = (
 /obj/structure/anvil,
 /turf/open/indestructible/cobble,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 7"
 	})
 "PA" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -3424,25 +3670,25 @@
 	},
 /turf/open/floor/iron/kitchen/herringbone,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Party Party Party!"
 	})
 "PB" = (
 /obj/machinery/door/airlock/medical/glass,
 /obj/effect/mapping_helpers/airlock/access/all/syndicate,
 /turf/open/floor/padded,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 11"
 	})
 "PG" = (
 /turf/closed/mineral/random,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 8"
 	})
 "PJ" = (
 /obj/machinery/computer/security/telescreen/entertainment,
 /turf/closed/wall/mineral/titanium/spaceship,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 15"
 	})
 "PM" = (
 /obj/structure/chair/office,
@@ -3454,7 +3700,7 @@
 	},
 /turf/open/indestructible,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "PO" = (
 /obj/structure/fluff/drake_statue,
@@ -3463,19 +3709,21 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "PX" = (
 /obj/item/a_gift/anything{
-	name = "Strange orb";
-	desc = "A seething mass of fog and blue energy discharges. It seems it is taking the form of what you have dreamed of for so long..."
+	name = "Gift"
+	},
+/obj/item/a_gift/anything{
+	name = "Gift"
 	},
 /turf/open/indestructible/cobble{
 	name = "void";
 	icon_state = "black"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "???"
 	})
 "Qc" = (
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion{
@@ -3487,7 +3735,7 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 10"
 	})
 "Qd" = (
 /mob/living/simple_animal/hostile/russian/ranged/trooper{
@@ -3495,30 +3743,30 @@
 	},
 /turf/open/indestructible,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "Qg" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "Qo" = (
 /obj/structure/flora/tree/spookytimexl,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 6"
 	})
 "Qr" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 11"
 	})
 "Qs" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/padded,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 11"
 	})
 "Qv" = (
 /mob/living/simple_animal/chick{
@@ -3531,41 +3779,44 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/indestructible/spooknecropolis,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 1"
 	})
 "Qz" = (
 /obj/effect/turf_decal/caution/stand_clear/white,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "QD" = (
 /obj/structure/table,
 /obj/item/paper_bin,
 /turf/open/indestructible/sound,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "QE" = (
 /obj/structure/sign/poster/contraband/gl,
 /turf/closed/indestructible/wall,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "QG" = (
 /obj/structure/rack,
 /obj/item/wrench/power,
 /turf/open/indestructible/sound,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "QN" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/burger/bearger,
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
+"QP" = (
+/turf/closed/indestructible/rock,
+/area/space)
 "QW" = (
 /obj/structure/stone_tile/slab,
 /obj/machinery/door/keycard/library,
@@ -3573,25 +3824,25 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "QX" = (
 /obj/structure/healingfountain,
 /turf/open/indestructible/cobble,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 7"
 	})
 "QY" = (
 /obj/structure/flora/tree/spookylog,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 6"
 	})
 "Ra" = (
 /obj/structure/flora/tree/pine,
 /turf/open/floor/holofloor/snow,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 2"
 	})
 "Rd" = (
 /obj/structure/table/wood/poker,
@@ -3599,13 +3850,13 @@
 /obj/item/toy/cards/deck/syndicate,
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "Rh" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/indestructible/spooknecropolis,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 1"
 	})
 "Ri" = (
 /turf/open/space/basic,
@@ -3618,7 +3869,20 @@
 	},
 /turf/open/floor/iron/kitchen,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 4"
+	})
+"Rs" = (
+/turf/open/floor/catwalk_floor,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Boss 3"
+	})
+"Rw" = (
+/obj/structure/flora/tree/jungle{
+	layer = 6
+	},
+/turf/open/misc/grass,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 6"
 	})
 "RB" = (
 /obj/structure/flora/tree/jungle/small{
@@ -3626,12 +3890,12 @@
 	},
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 14"
 	})
 "RF" = (
 /turf/open/floor/catwalk_floor,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 15"
 	})
 "RJ" = (
 /obj/structure/table/wood/poker,
@@ -3641,18 +3905,18 @@
 /obj/item/toy/cards/cardhand,
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "RZ" = (
 /turf/open/indestructible,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "Sc" = (
 /obj/structure/sign/poster/contraband/revolver,
 /turf/closed/indestructible/wall,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "Sg" = (
 /obj/structure/flora/junglebush/c,
@@ -3661,7 +3925,7 @@
 	},
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 8"
 	})
 "Sr" = (
 /obj/structure/table/wood,
@@ -3669,7 +3933,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/vodka,
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "Sz" = (
 /obj/structure/salvage/destructive_analyzer,
@@ -3678,13 +3942,13 @@
 	},
 /turf/open/floor/catwalk_floor,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 15"
 	})
 "SI" = (
 /obj/machinery/firealarm,
 /turf/closed/indestructible/wall,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "SM" = (
 /obj/structure/spacevine,
@@ -3692,7 +3956,7 @@
 /obj/structure/flora/junglebush/c,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 8"
 	})
 "SO" = (
 /obj/structure/stone_tile/cracked,
@@ -3700,7 +3964,7 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "SR" = (
 /obj/structure/closet/crate,
@@ -3708,7 +3972,7 @@
 /obj/item/gun/ballistic/revolver/golden,
 /turf/open/floor/fakespace,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 9"
 	})
 "SU" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
@@ -3716,13 +3980,13 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "SX" = (
 /obj/machinery/modular_computer/console,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 9"
 	})
 "Tc" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -3739,7 +4003,7 @@
 	icon_state = "black"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "???"
 	})
 "Td" = (
 /mob/living/simple_animal/hostile/werewolf{
@@ -3751,7 +4015,7 @@
 	},
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 6"
 	})
 "Tf" = (
 /obj/structure/stone_tile{
@@ -3761,13 +4025,13 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "Ti" = (
 /obj/item/trash/rkibble,
 /turf/open/floor/plating/rust,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 3"
 	})
 "Tk" = (
 /obj/structure/chair/stool/bar,
@@ -3777,7 +4041,7 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "Tl" = (
 /obj/structure/chair/sofa/corp,
@@ -3786,13 +4050,19 @@
 	},
 /turf/open/indestructible,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "Tm" = (
 /obj/structure/flora/tree/jungle,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 6"
+	})
+"Tp" = (
+/obj/structure/destructible/cult/tome,
+/turf/open/floor/iron/cult,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Boss 1"
 	})
 "Tz" = (
 /obj/machinery/door/airlock/medical/glass,
@@ -3800,18 +4070,26 @@
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/padded,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 11"
 	})
 "TB" = (
 /obj/machinery/recharger,
 /turf/open/floor/iron/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 5"
+	})
+"TG" = (
+/turf/closed/indestructible/rock,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 14"
+	},
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 14"
 	})
 "TH" = (
 /turf/open/floor/iron/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 1"
 	})
 "TK" = (
 /obj/structure/flora/tree/jungle{
@@ -3819,13 +4097,13 @@
 	},
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 6"
 	})
 "TQ" = (
 /obj/structure/sacrificealtar,
 /turf/open/indestructible/cobble,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 7"
 	})
 "TY" = (
 /obj/structure/chair/office/dark{
@@ -3836,7 +4114,7 @@
 	},
 /turf/open/indestructible,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "Uj" = (
 /obj/structure/spacevine,
@@ -3844,7 +4122,7 @@
 /obj/structure/spacevine,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 8"
 	})
 "Uo" = (
 /obj/structure/stone_tile/burnt,
@@ -3852,7 +4130,7 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "Uq" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -3866,13 +4144,13 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "Ux" = (
 /obj/effect/mine/stun,
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "UA" = (
 /obj/structure/rack/shelf,
@@ -3882,13 +4160,13 @@
 /obj/item/clothing/under/inteq_med,
 /turf/open/floor/padded,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 11"
 	})
 "UB" = (
 /obj/machinery/chem_master/condimaster,
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "UG" = (
 /obj/structure/flora/tree/spookylog,
@@ -3901,13 +4179,13 @@
 /obj/item/gun/ballistic/shotgun/brush2,
 /turf/open/floor/holofloor/snow,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 2"
 	})
 "UP" = (
 /obj/item/storage/firstaid/tactical/nukeop,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 14"
 	})
 "UV" = (
 /obj/structure/table,
@@ -3917,20 +4195,20 @@
 /obj/item/pen/red,
 /turf/open/indestructible,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "Vf" = (
 /obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "Vh" = (
 /obj/structure/rack,
 /obj/item/weldingtool/hugetank,
 /turf/open/indestructible/sound,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "Vl" = (
 /obj/structure/flora/ashtree,
@@ -3938,7 +4216,7 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 10"
 	})
 "Vn" = (
 /obj/structure/stone_tile/slab/cracked,
@@ -3946,7 +4224,7 @@
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 2"
 	})
 "Vz" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -3956,7 +4234,7 @@
 	},
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 6"
 	})
 "VC" = (
 /mob/living/simple_animal/hostile/netherworld{
@@ -3969,7 +4247,7 @@
 	},
 /turf/open/floor/iron/kitchen,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 4"
 	})
 "VN" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -3982,7 +4260,7 @@
 /obj/effect/decal/cleanable/blood/gibs/torso,
 /turf/open/indestructible/spooknecropolis,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 1"
 	})
 "VZ" = (
 /obj/machinery/porta_turret/syndicate/energy/raven{
@@ -3995,7 +4273,7 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "Wl" = (
 /obj/structure/table,
@@ -4003,19 +4281,19 @@
 /obj/item/jukebox,
 /turf/open/indestructible,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "Wq" = (
 /obj/structure/barricade/sandbags,
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "Wt" = (
 /obj/structure/flora/ausbushes/leafybush,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 6"
 	})
 "Wv" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -4030,47 +4308,47 @@
 /obj/structure/flora/junglebush/c,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 8"
 	})
 "WF" = (
 /obj/structure/flora/tree/dead,
 /turf/open/floor/holofloor/snow,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 2"
 	})
 "WG" = (
 /obj/machinery/chem_dispenser/drinks/beer,
 /obj/structure/table,
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 13"
 	})
 "WH" = (
 /obj/structure/shipping_container/cybersun,
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "WK" = (
 /obj/effect/turf_decal/delivery/blue,
 /obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 "WM" = (
 /obj/structure/flora/grass/brown,
 /turf/open/floor/holofloor/snow,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 2"
 	})
 "WN" = (
 /obj/structure/flora/junglebush/large,
 /obj/structure/flora/junglebush/large,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 8"
 	})
 "WS" = (
 /obj/structure/signpost/salvation{
@@ -4083,12 +4361,12 @@
 	},
 /turf/open/floor/iron/cult,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 1"
 	})
 "WV" = (
 /turf/open/floor/mech_bay_recharge_floor,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "WX" = (
 /mob/living/simple_animal/hostile/cat_butcherer{
@@ -4096,13 +4374,18 @@
 	},
 /turf/open/floor/padded,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 11"
 	})
 "WZ" = (
 /obj/structure/salvage/pda,
 /turf/open/floor/catwalk_floor,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 15"
+	})
+"Xg" = (
+/turf/open/indestructible,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 0"
 	})
 "Xm" = (
 /turf/closed/indestructible{
@@ -4115,7 +4398,7 @@
 /obj/effect/decal/cleanable/blood/gibs/limb,
 /turf/open/indestructible/spooknecropolis,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 1"
 	})
 "XC" = (
 /obj/effect/decal/cleanable/blood,
@@ -4123,31 +4406,61 @@
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/open/indestructible/spooknecropolis,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 1"
+	})
+"XM" = (
+/obj/structure/flora/tree/jungle/small{
+	layer = 6
+	},
+/turf/open/misc/grass,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 6"
 	})
 "XO" = (
 /turf/open/floor/holofloor/snow,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 2"
 	})
 "XR" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/festive/alleyway/safe,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 7"
+	})
+"XS" = (
+/obj/structure/flora/ausbushes/palebush,
+/turf/open/misc/grass,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 14"
+	})
+"XU" = (
+/obj/structure/flora/tree/jungle{
+	layer = 4
+	},
+/turf/open/misc/grass,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 14"
 	})
 "Yc" = (
 /obj/structure/closet/crate/large,
 /obj/item/reagent_containers/food/drinks/bottle/holywater/hell,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
+	})
+"Yf" = (
+/obj/structure/flora/ash/stem_shroom,
+/turf/open/floor/plating/asteroid/basalt{
+	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
+	},
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Boss 2"
 	})
 "Yl" = (
 /obj/structure/flora/junglebush/c,
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 8"
 	})
 "Yq" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -4158,12 +4471,12 @@
 	},
 /turf/open/floor/festive/alleyway/safe,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 7"
 	})
 "Yu" = (
 /turf/open/indestructible/sound,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "YK" = (
 /obj/structure/flora/tree/jungle{
@@ -4171,7 +4484,7 @@
 	},
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 6"
 	})
 "YL" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -4185,20 +4498,33 @@
 	},
 /turf/open/indestructible/sound,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "YM" = (
 /obj/structure/salvage/destructive_analyzer,
 /turf/open/floor/catwalk_floor,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 15"
+	})
+"YN" = (
+/obj/structure/flora/tree/jungle,
+/turf/open/misc/grass,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 8"
 	})
 "YO" = (
 /obj/structure/loot_pile/maint,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/rust,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 3"
+	})
+"Zr" = (
+/turf/open/floor/plating/asteroid/basalt{
+	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
+	},
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 14"
 	})
 "Zw" = (
 /obj/item/stack/cable_coil/cut,
@@ -4206,7 +4532,7 @@
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/circuit/green,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Boss 3"
 	})
 "ZH" = (
 /mob/living/simple_animal/hostile/looter/ranged{
@@ -4217,7 +4543,7 @@
 	},
 /turf/open/floor/plating/rust,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 3"
 	})
 "ZI" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -4228,7 +4554,24 @@
 	},
 /turf/open/floor/padded,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 11"
+	})
+"ZJ" = (
+/obj/item/a_gift/anything{
+	name = "Gift"
+	},
+/turf/open/indestructible/cobble{
+	name = "void";
+	icon_state = "black"
+	},
+/area/awaymission/errorroom{
+	name = "???"
+	})
+"ZK" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/misc/grass,
+/area/awaymission/errorroom{
+	name = "Kill kill kill! Level 14"
 	})
 "ZQ" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -4242,7 +4585,7 @@
 	},
 /turf/open/indestructible,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 0"
 	})
 "ZV" = (
 /obj/structure/flora/tree/jungle{
@@ -4250,7 +4593,7 @@
 	},
 /turf/open/misc/grass,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 8"
 	})
 "ZY" = (
 /obj/structure/closet/crate/large,
@@ -4260,7 +4603,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/champagne/empty,
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/errorroom{
-	name = "Kill kill kill!"
+	name = "Kill kill kill! Level 12"
 	})
 
 (1,1,1) = {"
@@ -4298,7 +4641,7 @@ qe
 qe
 qe
 xO
-xO
+Ri
 Ri
 Ri
 Ri
@@ -4524,10 +4867,10 @@ ab
 Ri
 gX
 Hr
-RZ
-RZ
-RZ
-RZ
+Xg
+Xg
+Xg
+Xg
 ci
 gX
 Ri
@@ -4555,7 +4898,7 @@ qe
 qe
 qe
 xO
-xO
+Ri
 Ri
 Ri
 Ri
@@ -4781,11 +5124,11 @@ ab
 Ri
 pM
 Tl
-RZ
+Xg
 aq
 hT
-RZ
-RZ
+Xg
+Xg
 Sc
 Ri
 Ri
@@ -4812,7 +5155,7 @@ sS
 qe
 qe
 xO
-xO
+Ri
 Ri
 Ri
 Ri
@@ -4956,18 +5299,18 @@ MB
 OC
 OC
 OC
-hR
-hR
-hR
-hR
+EI
+EI
+EI
+EI
 ye
 uf
 OG
 uf
 Uo
-hR
-hR
-hR
+EI
+EI
+EI
 OC
 OC
 OC
@@ -5038,11 +5381,11 @@ ab
 Ri
 gX
 Gl
-RZ
+Xg
 tk
 hT
-RZ
-RZ
+Xg
+Xg
 gX
 Ri
 Ri
@@ -5069,7 +5412,7 @@ Ra
 qe
 qe
 xO
-xO
+Ri
 Ri
 Ri
 Ri
@@ -5212,21 +5555,21 @@ MB
 MB
 OC
 OC
-hR
-hR
-hR
-hR
-hR
-hR
+EI
+EI
+EI
+EI
+EI
+EI
 ye
 uf
 Uo
-hR
+EI
 Ii
-hR
-hR
-hR
-hR
+EI
+EI
+EI
+EI
 OC
 MB
 MB
@@ -5295,10 +5638,10 @@ ab
 Ri
 gX
 vS
-RZ
+Xg
 aq
 PM
-RZ
+Xg
 ZQ
 gX
 Ri
@@ -5326,7 +5669,7 @@ XO
 qe
 qe
 xO
-xO
+Ri
 Ri
 Ri
 Ri
@@ -5437,7 +5780,7 @@ lK
 lK
 lK
 lK
-OC
+Iz
 lK
 lK
 lK
@@ -5468,23 +5811,23 @@ xO
 MB
 MB
 OC
-hR
-hR
-hR
-hR
-hR
-hR
+EI
+EI
+EI
+EI
+EI
+EI
 Ii
-hR
-hR
-hR
-hR
-hR
-hR
+EI
+EI
+EI
+EI
+EI
+EI
 Ii
-hR
-hR
-hR
+EI
+EI
+EI
 MB
 MB
 xO
@@ -5552,11 +5895,11 @@ ab
 Ri
 QE
 Ft
-RZ
+Xg
 aq
 hT
-RZ
-RZ
+Xg
+Xg
 fR
 Ri
 Ri
@@ -5583,7 +5926,7 @@ XO
 qe
 qe
 xO
-xO
+Ri
 Ri
 Ri
 Ri
@@ -5693,15 +6036,15 @@ lm
 lK
 lK
 lK
-OC
-OC
-OC
+Iz
+Iz
+Iz
 lK
 lK
 lK
 lK
 lK
-OC
+Iz
 lK
 lm
 lm
@@ -5724,24 +6067,24 @@ Ri
 xO
 MB
 MB
-hR
-hR
+EI
+EI
 Ii
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
 MB
 MB
 xO
@@ -5809,11 +6152,11 @@ ab
 Ri
 gX
 CQ
-RZ
-RZ
-RZ
-RZ
-RZ
+Xg
+Xg
+Xg
+Xg
+Xg
 gX
 Ri
 Ri
@@ -5840,7 +6183,7 @@ XO
 qe
 qe
 xO
-xO
+Ri
 Ri
 Ri
 Ri
@@ -5951,14 +6294,14 @@ lK
 lK
 lK
 lK
-OC
-OC
-OC
-OC
+Iz
+Iz
+Iz
+Iz
 lK
 lK
-OC
-OC
+Iz
+Iz
 lK
 lm
 lm
@@ -5982,23 +6325,23 @@ xO
 MB
 MB
 OC
-hR
-hR
-hR
-LO
-hR
-hR
-hR
-hR
-hR
-hR
-LO
-hR
-hR
-hR
-hR
-hR
-hR
+EI
+EI
+EI
+Yf
+EI
+EI
+EI
+EI
+EI
+EI
+Yf
+EI
+EI
+EI
+EI
+EI
+EI
 MB
 MB
 xO
@@ -6069,8 +6412,8 @@ df
 Mi
 UV
 vX
-RZ
-RZ
+Xg
+Xg
 gX
 Ri
 Ri
@@ -6097,7 +6440,7 @@ mO
 qe
 qe
 xO
-xO
+Ri
 Ri
 Ri
 Ri
@@ -6204,18 +6547,18 @@ Ri
 xO
 lm
 lm
-OC
-OC
+Iz
+Iz
 lK
 lK
 lK
 lK
-OC
+Iz
 lK
 lK
 lK
-OC
-OC
+Iz
+Iz
 lK
 lm
 lm
@@ -6239,21 +6582,21 @@ xO
 MB
 MB
 OC
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
 OC
 OC
 MB
@@ -6324,10 +6667,10 @@ Ri
 gX
 aa
 TY
-RZ
+Xg
 Wl
-RZ
-RZ
+Xg
+Xg
 uy
 Ri
 Ri
@@ -6354,7 +6697,7 @@ XO
 qe
 qe
 xO
-xO
+Ri
 Ri
 Ri
 Ri
@@ -6461,8 +6804,8 @@ Ri
 xO
 lm
 lm
-OC
-OC
+Iz
+Iz
 lK
 lK
 lK
@@ -6471,7 +6814,7 @@ lK
 lK
 lK
 lK
-OC
+Iz
 lK
 lK
 lm
@@ -6497,19 +6840,19 @@ MB
 MB
 OC
 OC
-hR
-hR
-hR
-hR
-hR
-hR
-LO
-hR
-hR
-hR
-hR
-hR
-hR
+EI
+EI
+EI
+EI
+EI
+EI
+Yf
+EI
+EI
+EI
+EI
+EI
+EI
 OC
 OC
 OC
@@ -6580,11 +6923,11 @@ ab
 Ri
 gX
 aa
-RZ
-RZ
+Xg
+Xg
 oW
-RZ
-RZ
+Xg
+Xg
 gX
 Ri
 Ri
@@ -6611,7 +6954,7 @@ sS
 qe
 qe
 xO
-xO
+Ri
 Ri
 Ri
 Ri
@@ -6726,7 +7069,7 @@ lK
 lK
 lK
 lK
-OC
+Iz
 lK
 lK
 lK
@@ -6753,22 +7096,22 @@ xO
 MB
 MB
 OC
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
 Ii
-hR
-hR
-LO
+EI
+EI
+Yf
 OC
 MB
 MB
@@ -6868,7 +7211,7 @@ XO
 qe
 qe
 xO
-xO
+Ri
 Ri
 Ri
 Ri
@@ -7009,24 +7352,24 @@ Ri
 xO
 MB
 MB
-hR
-hR
-hR
-hR
+EI
+EI
+EI
+EI
 Ii
-hR
-hR
-hR
+EI
+EI
+EI
 Mn
 pd
 xY
-hR
-hR
-hR
-hR
-hR
-hR
-hR
+EI
+EI
+EI
+EI
+EI
+EI
+EI
 MB
 MB
 xO
@@ -7097,8 +7440,8 @@ Ri
 Ri
 Ri
 gX
-RZ
-RZ
+Xg
+Xg
 gX
 Ri
 Ri
@@ -7125,7 +7468,7 @@ yH
 qe
 qe
 xO
-xO
+Ri
 Ri
 Ri
 Ri
@@ -7266,24 +7609,24 @@ Ri
 xO
 MB
 MB
-hR
-hR
-hR
-hR
-hR
-hR
-hR
+EI
+EI
+EI
+EI
+EI
+EI
+EI
 Mn
 Vn
 Vn
 fW
 Tf
-hR
-hR
-hR
-hR
-hR
-hR
+EI
+EI
+EI
+EI
+EI
+EI
 MB
 MB
 xO
@@ -7354,8 +7697,8 @@ ab
 ab
 ab
 gX
-RZ
-RZ
+Xg
+Xg
 gX
 Ri
 Ri
@@ -7382,7 +7725,7 @@ qe
 qe
 qe
 xO
-xO
+Ri
 Ri
 Ri
 Ri
@@ -7524,23 +7867,23 @@ xO
 MB
 MB
 OC
-hR
-hR
-hR
-hR
-hR
-hR
+EI
+EI
+EI
+EI
+EI
+EI
 iN
 fW
 BF
 Vn
 pd
-hR
-hR
-LO
-hR
-hR
-hR
+EI
+EI
+Yf
+EI
+EI
+EI
 MB
 MB
 xO
@@ -7611,8 +7954,8 @@ ab
 ab
 ab
 gX
-RZ
-RZ
+Xg
+Xg
 gX
 Ri
 Ri
@@ -7639,7 +7982,7 @@ qe
 qe
 qe
 xO
-xO
+Ri
 Ri
 Ri
 Ri
@@ -7682,7 +8025,7 @@ TH
 nX
 NH
 TH
-aJ
+Tp
 TH
 TH
 nX
@@ -7747,17 +8090,17 @@ xO
 lm
 lm
 lK
-hP
-hP
-hP
+hs
+hs
+hs
 lR
 lR
 lR
 lR
-hP
+hs
 Cl
-hP
-hP
+hs
+hs
 lK
 lm
 lm
@@ -7780,22 +8123,22 @@ Ri
 xO
 MB
 MB
-hR
-hR
-LO
-hR
-hR
-hR
-hR
+EI
+EI
+Yf
+EI
+EI
+EI
+EI
 ye
 fW
 fW
 Vn
 SO
-hR
-hR
-hR
-hR
+EI
+EI
+EI
+EI
 OC
 OC
 MB
@@ -7868,8 +8211,8 @@ ab
 ab
 ab
 gX
-RZ
-RZ
+Xg
+Xg
 gX
 Ri
 Ri
@@ -7896,7 +8239,7 @@ qe
 xO
 xO
 xO
-xO
+Ri
 Ri
 Ri
 Ri
@@ -8003,18 +8346,18 @@ Ri
 xO
 lm
 lm
-hP
+hs
 SX
 Dc
 gm
-Kt
+ug
 Dc
-Kt
-Kt
+ug
+ug
 gm
-Kt
+ug
 Lm
-Kt
+ug
 hX
 lm
 lm
@@ -8037,23 +8380,23 @@ Ri
 xO
 MB
 MB
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
 gT
 pd
 SO
-hR
-hR
-hR
-hR
-hR
-hR
+EI
+EI
+EI
+EI
+EI
+EI
 OC
 MB
 MB
@@ -8125,7 +8468,7 @@ ab
 ab
 ab
 gX
-RZ
+Xg
 ry
 gX
 Ri
@@ -8260,18 +8603,18 @@ Ri
 xO
 lm
 lm
-hP
+hs
 SX
-Kt
-Kt
-Kt
-Kt
-Kt
-Kt
-Kt
+ug
+ug
+ug
+ug
+ug
+ug
+ug
 Dc
 Hq
-Kt
+ug
 lK
 lm
 lm
@@ -8294,24 +8637,24 @@ Ri
 xO
 MB
 MB
-hR
-hR
-hR
-hR
-hR
-LO
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
+EI
+EI
+EI
+EI
+EI
+Yf
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
 MB
 MB
 xO
@@ -8517,18 +8860,18 @@ Ri
 xO
 lm
 lm
-hP
+hs
 SX
-Kt
-Kt
+ug
+ug
 Dc
-Kt
+ug
 gm
-Kt
-Kt
-Kt
+ug
+ug
+ug
 vK
-Kt
+ug
 hX
 lm
 lm
@@ -8551,24 +8894,24 @@ Ri
 xO
 MB
 MB
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
 Ii
-hR
-hR
-hR
-LO
-hR
-hR
-hR
+EI
+EI
+EI
+Yf
+EI
+EI
+EI
 Ii
-hR
+EI
 MB
 MB
 xO
@@ -8774,18 +9117,18 @@ Ri
 xO
 lm
 lm
-hP
+hs
 SX
-Kt
-Kt
-Kt
-Kt
-Kt
-Kt
-Kt
-Kt
+ug
+ug
+ug
+ug
+ug
+ug
+ug
+ug
 am
-Kt
+ug
 lK
 lm
 lm
@@ -8809,22 +9152,22 @@ xO
 MB
 MB
 OC
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
 OC
 MB
 MB
@@ -9032,17 +9375,17 @@ xO
 lm
 lm
 lK
-hP
-hP
-hP
+hs
+hs
+hs
 lR
 lR
 lR
 lR
-hP
+hs
 Cl
-hP
-hP
+hs
+hs
 lK
 lm
 lm
@@ -9066,21 +9409,21 @@ xO
 MB
 MB
 OC
-hR
-hR
-hR
-hR
-hR
-LO
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
+EI
+EI
+EI
+EI
+EI
+Yf
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
 OC
 OC
 MB
@@ -9324,22 +9667,22 @@ MB
 MB
 OC
 OC
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
 Ii
-hR
-hR
-hR
-hR
-hR
+EI
+EI
+EI
+EI
+EI
 OC
-hR
+EI
 MB
 MB
 xO
@@ -9580,22 +9923,22 @@ xO
 MB
 MB
 OC
-hR
+EI
 Ii
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
 Ii
 MB
 MB
@@ -9838,22 +10181,22 @@ MB
 MB
 OC
 OC
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
+EI
 OC
-hR
-hR
-hR
+EI
+EI
+EI
 MB
 MB
 xO
@@ -10096,7 +10439,7 @@ MB
 OC
 OC
 OC
-hR
+EI
 Mn
 PO
 xY
@@ -10109,7 +10452,7 @@ xY
 OC
 OC
 OC
-hR
+EI
 OC
 MB
 MB
@@ -10828,9 +11171,9 @@ Ri
 Ri
 Ri
 xO
-ac
-ac
-ac
+xO
+xO
+xO
 lm
 lm
 lm
@@ -11460,18 +11803,18 @@ ab
 ab
 "}
 (29,1,1) = {"
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
+xO
+xO
+xO
+xO
+xO
+xO
+xO
+xO
+xO
+xO
+xO
+xO
 ab
 ab
 ab
@@ -11717,6 +12060,7 @@ ab
 ab
 "}
 (30,1,1) = {"
+xO
 ac
 ac
 ac
@@ -11727,8 +12071,7 @@ ac
 ac
 ac
 ac
-ac
-ac
+xO
 ab
 ab
 ab
@@ -11863,7 +12206,7 @@ lm
 lm
 lm
 SR
-lK
+ky
 lK
 lK
 lK
@@ -11974,7 +12317,7 @@ ab
 ab
 "}
 (31,1,1) = {"
-ac
+xO
 ac
 HX
 HX
@@ -11985,7 +12328,7 @@ HX
 JU
 HX
 ac
-ac
+xO
 ab
 ab
 ab
@@ -12231,7 +12574,7 @@ ab
 ab
 "}
 (32,1,1) = {"
-ac
+xO
 ac
 ae
 HX
@@ -12242,28 +12585,6 @@ JU
 JU
 ae
 ac
-ac
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-xO
-vR
-vR
-vR
-vR
-vR
-vR
-vR
-vR
-vR
-vR
-vR
-vR
 xO
 ab
 ab
@@ -12273,21 +12594,43 @@ ab
 ab
 ab
 ab
+xO
+om
+om
+om
+om
+om
+om
+om
+om
+om
+om
+om
+om
+xO
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 xO
-in
-in
-in
-in
-in
-in
-in
-in
-in
-in
-in
-in
+ju
+ju
+ju
+ju
+ju
+ju
+ju
+ju
+ju
+ju
+ju
+ju
 xO
 ab
 ab
@@ -12488,7 +12831,7 @@ ab
 ab
 "}
 (33,1,1) = {"
-ac
+xO
 ac
 HX
 HX
@@ -12499,28 +12842,6 @@ JU
 XC
 HX
 ac
-ac
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-xO
-vR
-vR
-vR
-vR
-vR
-vR
-vR
-vR
-vR
-vR
-vR
-vR
 xO
 ab
 ab
@@ -12530,21 +12851,43 @@ ab
 ab
 ab
 ab
+xO
+om
+om
+om
+om
+om
+om
+om
+om
+om
+om
+om
+om
+xO
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 xO
-in
-in
-in
-in
-in
-in
-in
-in
-in
-in
-in
-in
+ju
+ju
+ju
+ju
+ju
+ju
+ju
+ju
+ju
+ju
+ju
+ju
 xO
 ab
 ab
@@ -12745,7 +13088,7 @@ ab
 ab
 "}
 (34,1,1) = {"
-ac
+xO
 ac
 HX
 HX
@@ -12756,7 +13099,7 @@ JU
 JU
 JU
 ac
-ac
+xO
 ab
 ab
 ab
@@ -12766,8 +13109,8 @@ ab
 ab
 ab
 xO
-vR
-vR
+om
+om
 xD
 xD
 xD
@@ -12776,8 +13119,8 @@ un
 xD
 xD
 OT
-vR
-vR
+om
+om
 xO
 ab
 ab
@@ -12790,18 +13133,18 @@ ab
 ab
 ab
 xO
-in
-in
-TH
-TH
-TH
-TH
+ju
+ju
+nE
+nE
+nE
+nE
 rQ
-TH
-TH
-TH
-in
-in
+nE
+nE
+nE
+ju
+ju
 xO
 ab
 ab
@@ -13002,7 +13345,7 @@ ab
 ab
 "}
 (35,1,1) = {"
-ac
+xO
 ac
 HX
 JU
@@ -13013,7 +13356,7 @@ JU
 ae
 JU
 ac
-ac
+xO
 ab
 ab
 ab
@@ -13023,8 +13366,8 @@ ab
 ab
 ab
 xO
-vR
-vR
+om
+om
 EV
 OT
 xD
@@ -13033,8 +13376,8 @@ xD
 ys
 EV
 xD
-vR
-vR
+om
+om
 xO
 ab
 ab
@@ -13047,18 +13390,18 @@ ab
 ab
 ab
 xO
-in
-in
-TH
-TH
-TH
-TH
-TH
-TH
-TH
-TH
-in
-in
+ju
+ju
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+ju
+ju
 xO
 ab
 ab
@@ -13259,7 +13602,7 @@ ab
 ab
 "}
 (36,1,1) = {"
-ac
+xO
 ac
 JU
 zl
@@ -13270,7 +13613,7 @@ HX
 HX
 Xy
 ac
-ac
+xO
 ab
 ab
 ab
@@ -13280,8 +13623,8 @@ ab
 ab
 ab
 xO
-vR
-vR
+om
+om
 ys
 xD
 kW
@@ -13290,8 +13633,8 @@ EV
 xD
 xD
 xD
-vR
-vR
+om
+om
 xO
 ab
 ab
@@ -13304,18 +13647,18 @@ ab
 ab
 ab
 xO
-in
-in
-TH
-TH
-nX
-TH
-TH
-nX
-TH
-TH
-in
-in
+ju
+ju
+nE
+nE
+rF
+nE
+nE
+rF
+nE
+nE
+ju
+ju
 xO
 ab
 ab
@@ -13445,7 +13788,7 @@ lt
 MB
 SU
 DF
-hR
+EI
 MB
 xO
 ab
@@ -13516,7 +13859,7 @@ ab
 ab
 "}
 (37,1,1) = {"
-ac
+xO
 ac
 HX
 HX
@@ -13527,7 +13870,7 @@ HX
 HX
 HX
 ac
-ac
+xO
 ab
 ab
 ab
@@ -13537,8 +13880,8 @@ ab
 ab
 ab
 xO
-vR
-vR
+om
+om
 xD
 xD
 YO
@@ -13547,8 +13890,8 @@ xD
 xD
 jl
 OT
-vR
-vR
+om
+om
 xO
 ab
 ab
@@ -13561,18 +13904,18 @@ ab
 ab
 ab
 xO
-in
-in
-TH
-TH
-TH
-TH
-TH
-TH
-TH
-TH
-in
-in
+ju
+ju
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+ju
+ju
 xO
 ab
 ab
@@ -13773,7 +14116,7 @@ ab
 ab
 "}
 (38,1,1) = {"
-ac
+xO
 ac
 HX
 ae
@@ -13784,7 +14127,7 @@ JU
 Od
 Qv
 ac
-ac
+xO
 ab
 ab
 ab
@@ -13794,8 +14137,8 @@ ab
 ab
 ab
 xO
-vR
-vR
+om
+om
 At
 lx
 xD
@@ -13804,8 +14147,8 @@ OT
 wP
 xD
 xD
-vR
-vR
+om
+om
 xO
 ab
 ab
@@ -13818,18 +14161,18 @@ ab
 ab
 ab
 xO
-in
-in
-TH
-TH
-TH
-TH
-TH
-TH
-TH
-TH
-in
-in
+ju
+ju
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+ju
+ju
 xO
 ab
 ab
@@ -13851,7 +14194,7 @@ TH
 TH
 TH
 in
-TB
+Bs
 TH
 TH
 in
@@ -14030,7 +14373,7 @@ ab
 ab
 "}
 (39,1,1) = {"
-ac
+xO
 ac
 Xy
 HX
@@ -14041,7 +14384,7 @@ JU
 HX
 zl
 ac
-ac
+xO
 ab
 ab
 ab
@@ -14051,8 +14394,8 @@ ab
 ab
 ab
 xO
-vR
-vR
+om
+om
 xD
 xD
 EV
@@ -14061,8 +14404,8 @@ kW
 At
 EV
 ys
-vR
-vR
+om
+om
 xO
 ab
 ab
@@ -14075,18 +14418,18 @@ ab
 ab
 ab
 xO
-in
-in
-TH
-TH
-TH
+ju
+ju
+nE
+nE
+nE
 GG
 aJ
-TH
-TH
-TH
-in
-in
+nE
+nE
+nE
+ju
+ju
 xO
 ab
 ab
@@ -14287,7 +14630,7 @@ ab
 ab
 "}
 (40,1,1) = {"
-ac
+xO
 ac
 HX
 HX
@@ -14298,7 +14641,7 @@ Xy
 HX
 HX
 ac
-ac
+xO
 ab
 ab
 ab
@@ -14308,8 +14651,8 @@ ab
 ab
 ab
 xO
-vR
-vR
+om
+om
 xD
 EV
 xD
@@ -14318,8 +14661,8 @@ At
 At
 xD
 xD
-vR
-vR
+om
+om
 xO
 ab
 ab
@@ -14332,18 +14675,18 @@ ab
 ab
 ab
 xO
-in
-in
-TH
-TH
-TH
-TH
-TH
-TH
-TH
-TH
-in
-in
+ju
+ju
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+ju
+ju
 xO
 ab
 ab
@@ -14544,7 +14887,7 @@ ab
 ab
 "}
 (41,1,1) = {"
-ac
+xO
 ac
 ac
 ac
@@ -14555,7 +14898,7 @@ ac
 ac
 ac
 ac
-ac
+xO
 ab
 ab
 ab
@@ -14565,8 +14908,8 @@ ab
 ab
 ab
 xO
-vR
-vR
+om
+om
 kW
 pA
 xD
@@ -14575,8 +14918,8 @@ xD
 EV
 xD
 yV
-vR
-vR
+om
+om
 xO
 ab
 ab
@@ -14589,18 +14932,18 @@ ab
 ab
 ab
 xO
-in
-in
-TH
-TH
-nX
-TH
-TH
-nX
-TH
-TH
-in
-in
+ju
+ju
+nE
+nE
+rF
+nE
+nE
+rF
+nE
+nE
+ju
+ju
 xO
 ab
 ab
@@ -14801,18 +15144,18 @@ ab
 ab
 "}
 (42,1,1) = {"
-ab
-ab
-ac
+xO
+xO
+xO
 ac
 ac
 HX
 JU
 ac
 ac
-ac
-ac
-ac
+xO
+xO
+xO
 ab
 ab
 ab
@@ -14822,8 +15165,8 @@ ab
 ab
 ab
 xO
-vR
-vR
+om
+om
 Ti
 az
 ZH
@@ -14832,8 +15175,8 @@ xD
 OT
 dA
 kW
-vR
-vR
+om
+om
 xO
 ab
 ab
@@ -14846,18 +15189,18 @@ ab
 ab
 ab
 xO
-in
-in
-TH
+ju
+ju
+nE
 pe
-TH
-TH
+nE
+nE
 EJ
-TH
-TH
-TH
-in
-in
+nE
+nE
+nE
+ju
+ju
 xO
 ab
 ab
@@ -15060,14 +15403,14 @@ ab
 (43,1,1) = {"
 ab
 ab
-ac
+xO
 ac
 Nh
 JU
 HX
 ac
 ac
-ac
+xO
 ab
 ab
 ab
@@ -15079,8 +15422,8 @@ ab
 ab
 ab
 xO
-vR
-vR
+om
+om
 xD
 xD
 xD
@@ -15089,8 +15432,8 @@ lx
 xD
 kW
 xD
-vR
-vR
+om
+om
 xO
 ab
 ab
@@ -15103,18 +15446,18 @@ ab
 ab
 ab
 xO
-in
-in
-nX
-TH
-TH
-TH
-TH
-TH
-TH
-nX
-in
-in
+ju
+ju
+rF
+nE
+nE
+nE
+nE
+nE
+nE
+rF
+ju
+ju
 xO
 ab
 ab
@@ -15317,14 +15660,14 @@ ab
 (44,1,1) = {"
 ab
 ab
-ac
+xO
 ac
 HX
 zl
 HX
 HX
 ac
-ac
+xO
 ab
 ab
 ab
@@ -15336,18 +15679,18 @@ ab
 ab
 ab
 xO
-vR
-vR
-vR
-vR
-vR
+om
+om
+om
+om
+om
 Md
 Md
-vR
-vR
-vR
-vR
-vR
+om
+om
+om
+om
+om
 xO
 ab
 ab
@@ -15360,18 +15703,18 @@ ab
 ab
 ab
 xO
-in
-in
-in
-in
-in
+ju
+ju
+ju
+ju
+ju
 eP
 eP
-in
-in
-in
-in
-in
+ju
+ju
+ju
+ju
+ju
 xO
 ab
 ab
@@ -15574,14 +15917,14 @@ ab
 (45,1,1) = {"
 ab
 ab
-ac
+xO
 ac
 Bw
 XC
 cP
 HX
 ac
-ac
+xO
 ab
 ab
 ab
@@ -15593,18 +15936,18 @@ ab
 ab
 ab
 xO
-vR
-vR
-vR
-vR
-vR
+om
+om
+om
+om
+om
 Md
 xD
-vR
-vR
-vR
-vR
-vR
+om
+om
+om
+om
+om
 xO
 ab
 ab
@@ -15617,18 +15960,18 @@ ab
 ab
 ab
 xO
-in
-in
-in
-in
-in
-TH
-TH
-in
-in
-in
-in
-in
+ju
+ju
+ju
+ju
+ju
+nE
+nE
+ju
+ju
+ju
+ju
+ju
 xO
 ab
 ab
@@ -15831,14 +16174,14 @@ ab
 (46,1,1) = {"
 ab
 ab
-ac
+xO
 ac
 aH
 JU
 VN
 JU
 ac
-ac
+xO
 ab
 ab
 ab
@@ -15852,14 +16195,14 @@ ab
 xO
 xO
 xO
-vR
-vR
-vR
+om
+om
+om
 kW
 kW
-vR
-vR
-vR
+om
+om
+om
 vR
 vR
 xO
@@ -15874,18 +16217,18 @@ ab
 ab
 ab
 xO
-in
-in
-in
-in
-in
-TH
-TH
-in
-in
-in
-in
-in
+ju
+ju
+ju
+ju
+ju
+nE
+nE
+ju
+ju
+ju
+ju
+ju
 xO
 ab
 ab
@@ -16088,14 +16431,14 @@ ab
 (47,1,1) = {"
 ab
 ab
-ac
+xO
 ac
 Rh
 JU
 JU
 JU
 ac
-ac
+xO
 ab
 ab
 ab
@@ -16109,14 +16452,14 @@ ab
 ab
 ab
 xO
-vR
-vR
+om
+om
 xD
 xD
 kW
 kW
-vR
-vR
+om
+om
 xO
 xO
 xO
@@ -16133,14 +16476,14 @@ ab
 xO
 xO
 xO
-in
-in
-nX
-TH
-TH
-nX
-in
-in
+ju
+ju
+rF
+nE
+nE
+rF
+ju
+ju
 xO
 xO
 xO
@@ -16345,14 +16688,14 @@ ab
 (48,1,1) = {"
 ab
 ab
+xO
 ac
 ac
 ac
 ac
 ac
 ac
-ac
-ac
+xO
 ab
 ab
 ab
@@ -16366,14 +16709,14 @@ ab
 ab
 ab
 xO
-vR
-vR
+om
+om
 tE
 xD
 xD
 kW
-vR
-vR
+om
+om
 xO
 ab
 ab
@@ -16390,14 +16733,14 @@ ab
 ab
 ab
 xO
-in
-in
+ju
+ju
 TB
-TH
-TH
-TH
-in
-in
+nE
+nE
+nE
+ju
+ju
 xO
 ab
 ab
@@ -16602,14 +16945,14 @@ ab
 (49,1,1) = {"
 ab
 ab
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
+xO
+xO
+xO
+xO
+xO
+xO
+xO
+xO
 ab
 ab
 ab
@@ -16623,14 +16966,14 @@ ab
 ab
 ab
 xO
-vR
-vR
+om
+om
 uO
 xD
 la
 xD
-vR
-vR
+om
+om
 xO
 ab
 ab
@@ -16647,14 +16990,14 @@ ab
 ab
 ab
 xO
-in
-in
+ju
+ju
 Lx
-TH
+nE
 oQ
-TH
-in
-in
+nE
+ju
+ju
 xO
 ab
 ab
@@ -16702,23 +17045,23 @@ ab
 ab
 ab
 xO
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+FH
+FH
+FH
+FH
+FH
+FH
+FH
+FH
+FH
+FH
+FH
+FH
+FH
+FH
+FH
+FH
+FH
 xO
 ab
 ab
@@ -16880,14 +17223,14 @@ ab
 ab
 ab
 xO
-vR
-vR
+om
+om
 ms
 xD
 xD
 xD
-vR
-vR
+om
+om
 xO
 ab
 ab
@@ -16904,14 +17247,14 @@ ab
 ab
 ab
 xO
-in
-in
+ju
+ju
 nh
-TH
-TH
-nX
-in
-in
+nE
+nE
+qq
+ju
+ju
 xO
 ab
 ab
@@ -16959,7 +17302,7 @@ ab
 ab
 ab
 xO
-MB
+FH
 PG
 PG
 PG
@@ -16975,7 +17318,7 @@ PG
 PG
 PG
 PG
-MB
+FH
 xO
 ab
 ab
@@ -17137,14 +17480,14 @@ ab
 ab
 ab
 xO
-vR
-vR
-vR
-vR
-vR
-vR
-vR
-vR
+om
+om
+om
+om
+om
+om
+om
+om
 xO
 ab
 ab
@@ -17161,14 +17504,14 @@ ab
 ab
 ab
 xO
-in
-in
-in
-in
-in
-in
-in
-in
+ju
+ju
+ju
+ju
+ju
+ju
+ju
+ju
 xO
 ab
 ab
@@ -17216,23 +17559,23 @@ ab
 ab
 ab
 xO
-MB
+FH
 PG
-af
-Tm
-af
-af
+fv
+YN
+fv
+fv
 Es
-af
+fv
 Wv
-af
+fv
 Es
-af
-Tm
-af
+fv
+YN
+fv
 Yl
 PG
-MB
+FH
 xO
 ab
 ab
@@ -17253,23 +17596,23 @@ ab
 ab
 ab
 xO
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
 xO
 ab
 ab
@@ -17394,14 +17737,14 @@ Ri
 Ri
 ab
 xO
-vR
-vR
-vR
-vR
-vR
-vR
-vR
-vR
+om
+om
+om
+om
+om
+om
+om
+om
 xO
 ab
 ab
@@ -17418,14 +17761,14 @@ ab
 ab
 ab
 xO
-in
-in
-in
-in
-in
-in
-in
-in
+ju
+ju
+ju
+ju
+ju
+ju
+ju
+ju
 xO
 Ri
 ab
@@ -17473,23 +17816,23 @@ ab
 ab
 ab
 xO
-MB
+FH
 PG
 Es
-af
+fv
 Es
-Tm
-af
-af
+YN
+fv
+fv
 Yl
 ZV
 Es
-af
+fv
 Es
-af
+fv
 Es
 PG
-MB
+FH
 xO
 ab
 ab
@@ -17510,23 +17853,23 @@ ab
 ab
 ab
 xO
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
 xO
 ab
 ab
@@ -17730,23 +18073,23 @@ ab
 ab
 ab
 xO
-MB
+FH
 PG
 Es
 Es
-af
-af
+fv
+fv
 Es
 Yl
-af
+fv
 Yl
-af
-af
-af
-af
+fv
+fv
+fv
+fv
 Sg
 PG
-MB
+FH
 xO
 ab
 ab
@@ -17767,8 +18110,8 @@ ab
 ab
 ab
 xO
-MB
-MB
+kH
+kH
 qF
 qF
 qF
@@ -17782,8 +18125,8 @@ hR
 qF
 qF
 qF
-MB
-MB
+kH
+kH
 xO
 ab
 ab
@@ -17987,23 +18330,23 @@ ab
 ab
 ab
 xO
-MB
+FH
 PG
-af
-af
+fv
+fv
 Es
-af
+fv
 Yl
-af
+fv
 Yl
-af
-af
+fv
+fv
 Es
 Es
-af
+fv
 Yl
 PG
-MB
+FH
 xO
 ab
 ab
@@ -18024,8 +18367,8 @@ ab
 ab
 ab
 xO
-MB
-MB
+kH
+kH
 qF
 qF
 hR
@@ -18039,8 +18382,8 @@ hR
 hR
 qF
 qF
-MB
-MB
+kH
+kH
 xO
 ab
 ab
@@ -18244,23 +18587,23 @@ ab
 ab
 ab
 xO
-MB
+FH
 PG
-Tm
-af
-af
+YN
+fv
+fv
 Yl
-af
-af
-af
+fv
+fv
+fv
 Es
 Yl
-af
-af
-Tm
-af
+fv
+fv
+YN
+fv
 PG
-MB
+FH
 xO
 ab
 ab
@@ -18281,8 +18624,8 @@ ab
 ab
 ab
 xO
-MB
-MB
+kH
+kH
 qF
 hR
 hR
@@ -18296,8 +18639,8 @@ hR
 hR
 Lv
 qF
-MB
-MB
+kH
+kH
 xO
 ab
 ab
@@ -18501,23 +18844,23 @@ ab
 ab
 ab
 xO
-MB
+FH
 PG
-af
-af
+fv
+fv
 Yl
-af
+fv
 Yl
 Es
-af
-af
+fv
+fv
 Yl
 Yl
 Yl
-af
-af
+fv
+fv
 PG
-MB
+FH
 xO
 ab
 ab
@@ -18538,9 +18881,9 @@ ab
 ab
 ab
 xO
-MB
-MB
-OC
+kH
+kH
+ON
 hR
 hR
 hR
@@ -18548,13 +18891,13 @@ hR
 hR
 hR
 Vl
-OC
+ON
 hR
 Lv
 hR
 hR
-MB
-MB
+kH
+kH
 xO
 ab
 ab
@@ -18758,23 +19101,23 @@ ab
 ab
 ab
 xO
-MB
+FH
 PG
-af
+fv
 Es
-af
+fv
 jf
-af
-af
+fv
+fv
 Yl
-af
-af
+fv
+fv
 Yl
 Es
-af
-af
+fv
+fv
 PG
-MB
+FH
 xO
 ab
 ab
@@ -18795,23 +19138,23 @@ ab
 ab
 ab
 xO
-MB
-MB
+kH
+kH
 hR
 hR
 hR
 ue
-OC
+ON
 hR
 rp
-OC
-OC
-OC
-OC
+ON
+ON
+ON
+ON
 hR
 hR
-MB
-MB
+kH
+kH
 xO
 ab
 ab
@@ -19015,23 +19358,23 @@ ab
 ab
 ab
 xO
-MB
+FH
 PG
 Es
-af
-af
+fv
+fv
 Es
-af
+fv
 Es
-af
+fv
 Yl
 Es
-af
-af
-af
+fv
+fv
+fv
 Es
 PG
-MB
+FH
 xO
 ab
 ab
@@ -19052,23 +19395,23 @@ ab
 ab
 ab
 xO
-MB
-MB
+kH
+kH
 hR
 hR
 hR
-OC
-OC
+ON
+ON
 hR
 hR
 hR
 hR
-OC
+ON
 EQ
 hR
 hR
-MB
-MB
+kH
+kH
 xO
 ab
 ab
@@ -19272,23 +19615,23 @@ ab
 ab
 ab
 xO
-MB
+FH
 PG
-af
-af
+fv
+fv
 Es
 Es
-af
-af
+fv
+fv
 Yl
-af
-af
+fv
+fv
 WN
-af
+fv
 Yl
-af
+fv
 PG
-MB
+FH
 xO
 ab
 ab
@@ -19309,8 +19652,8 @@ ab
 ab
 ab
 xO
-MB
-MB
+kH
+kH
 Qc
 hR
 hR
@@ -19323,9 +19666,9 @@ hR
 hR
 hR
 hR
-hR
-MB
-MB
+Zr
+kH
+kH
 xO
 ab
 ab
@@ -19529,23 +19872,23 @@ ab
 ab
 ab
 xO
-MB
+FH
 PG
-af
+fv
 Yl
-af
-af
+fv
+fv
 Yl
-af
+fv
 Es
-af
+fv
 Es
-af
+fv
 ps
 Yl
-af
+fv
 PG
-MB
+FH
 xO
 ab
 ab
@@ -19566,8 +19909,8 @@ ab
 ab
 ab
 xO
-MB
-MB
+kH
+kH
 hR
 hR
 hR
@@ -19581,8 +19924,8 @@ hR
 ue
 hR
 hR
-MB
-MB
+kH
+kH
 xO
 ab
 ab
@@ -19753,25 +20096,25 @@ Ri
 Ri
 Ri
 xO
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
 xO
 ab
 ab
@@ -19786,23 +20129,23 @@ ab
 ab
 ab
 xO
-MB
+FH
 PG
-af
+fv
 Yl
 Es
-af
+fv
 Yl
 Yl
-af
-af
+fv
+fv
 Yl
 Yl
-af
-af
+fv
+fv
 Yl
 PG
-MB
+FH
 xO
 ab
 ab
@@ -19823,23 +20166,23 @@ ab
 ab
 ab
 xO
-MB
-MB
+kH
+kH
 hR
 hR
 Lv
 hR
 hR
-OC
-OC
-OC
+ON
+ON
+ON
 hR
 hR
 hR
 hR
 hR
-MB
-MB
+kH
+kH
 xO
 ab
 ab
@@ -20010,25 +20353,25 @@ Ri
 Ri
 Ri
 xO
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
 xO
 ab
 ab
@@ -20043,23 +20386,23 @@ ab
 ab
 ab
 xO
-MB
+FH
 PG
 Es
 Yl
-af
-af
+fv
+fv
 Es
-af
+fv
 Es
 Es
-af
+fv
 Yl
-af
+fv
 Es
-af
+fv
 PG
-MB
+FH
 xO
 ab
 ab
@@ -20080,23 +20423,23 @@ ab
 ab
 ab
 xO
-MB
-MB
+kH
+kH
 hR
 hR
 hR
 hR
-OC
-OC
-OC
+ON
+ON
+ON
 ue
 hR
 rp
 hR
 fq
-OC
-MB
-MB
+ON
+kH
+kH
 xO
 ab
 ab
@@ -20198,25 +20541,25 @@ ab
 ab
 "}
 (63,1,1) = {"
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
 xO
 Ri
 Ri
@@ -20267,25 +20610,25 @@ Ri
 Ri
 Ri
 xO
-MB
-MB
-af
-LR
-af
-af
-RB
-sI
-af
+yj
+yj
+wV
+Mg
+wV
+wV
+XM
+yK
+wV
 Gk
-gf
-af
-af
-af
+Jy
+wV
+wV
+wV
 TK
-LR
-sI
-MB
-MB
+Mg
+yK
+yj
+yj
 xO
 ab
 ab
@@ -20300,23 +20643,23 @@ ab
 ab
 ab
 xO
-MB
+FH
 PG
-af
+fv
 Yl
 Es
-af
-af
-af
-af
-af
+fv
+fv
+fv
+fv
+fv
 Es
-af
+fv
 Yl
-af
-af
+fv
+fv
 PG
-MB
+FH
 xO
 ab
 ab
@@ -20337,23 +20680,23 @@ ab
 ab
 ab
 xO
-MB
-MB
+kH
+kH
 hR
-OC
-hR
-hR
-hR
-fq
-OC
+ON
 hR
 hR
 hR
 hR
-OC
-OC
-MB
-MB
+ON
+hR
+hR
+hR
+hR
+ON
+ON
+kH
+kH
 xO
 ab
 ab
@@ -20455,25 +20798,25 @@ ab
 ab
 "}
 (64,1,1) = {"
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
 xO
 Ri
 Ri
@@ -20524,25 +20867,25 @@ Ri
 Ri
 Ri
 xO
-MB
-MB
-af
-af
-af
+yj
+yj
+wV
+wV
+wV
 Tm
-gf
-gf
-af
+Jy
+Jy
+wV
 pX
-af
-af
-af
-af
-af
-af
+wV
+wV
+wV
+wV
+wV
+wV
 Tm
-MB
-MB
+yj
+yj
 xO
 ab
 ab
@@ -20557,23 +20900,23 @@ ab
 ab
 ab
 xO
-MB
+FH
 PG
-af
+fv
 Es
-af
+fv
 Pe
 Yl
 Es
-af
+fv
 fC
-af
+fv
 ps
 ps
-af
-af
+fv
+fv
 PG
-MB
+FH
 xO
 ab
 ab
@@ -20594,23 +20937,23 @@ ab
 ab
 ab
 xO
-MB
-MB
-OC
-OC
+kH
+kH
+ON
+ON
 hR
 hR
 hR
-hR
+fq
 hR
 hR
 hR
 Qc
 hR
 hR
-OC
-MB
-MB
+ON
+kH
+kH
 xO
 ab
 ab
@@ -20712,8 +21055,8 @@ ab
 ab
 "}
 (65,1,1) = {"
-MB
-MB
+cX
+cX
 af
 LR
 af
@@ -20726,11 +21069,11 @@ gf
 af
 af
 af
-TK
+hL
 LR
 sI
-MB
-MB
+cX
+cX
 xO
 Ri
 Ri
@@ -20781,25 +21124,25 @@ Ri
 Ri
 Ri
 xO
-MB
-MB
-af
+yj
+yj
+wV
 YK
-af
-gf
-gf
+wV
+Jy
+Jy
 zU
-af
-af
-af
-KZ
-af
-Fj
-af
-af
-LR
-MB
-MB
+wV
+wV
+wV
+Ip
+wV
+dC
+wV
+wV
+Mg
+yj
+yj
 xO
 ab
 ab
@@ -20814,12 +21157,12 @@ Ri
 ab
 ab
 xO
-MB
+FH
 PG
 Pe
-af
-af
-af
+fv
+fv
+fv
 fC
 Yl
 Pe
@@ -20827,10 +21170,10 @@ Bi
 Yl
 uS
 Es
-af
+fv
 Es
 PG
-MB
+FH
 xO
 ab
 ab
@@ -20851,11 +21194,11 @@ ab
 ab
 ab
 xO
-MB
-MB
-OC
-OC
-OC
+kH
+kH
+ON
+ON
+ON
 hR
 Qc
 hR
@@ -20866,8 +21209,8 @@ hR
 hR
 hR
 Lv
-MB
-MB
+kH
+kH
 xO
 ab
 ab
@@ -20969,25 +21312,25 @@ ab
 ab
 "}
 (66,1,1) = {"
-MB
-MB
+cX
+cX
 af
 af
 af
-Tm
+fQ
 gf
 gf
 af
-pX
+ZK
 af
 af
 af
 af
 af
 af
-Tm
-MB
-MB
+fQ
+cX
+cX
 xO
 Ri
 Ri
@@ -21038,25 +21381,25 @@ Ri
 Ri
 Ri
 xO
-MB
-MB
-af
-af
-sI
+yj
+yj
+wV
+wV
+yK
 Tm
-af
-Yl
-af
-af
-af
-af
-af
-gf
+wV
+cU
+wV
+wV
+wV
+wV
+wV
+Jy
 CE
-af
+wV
 Tm
-MB
-MB
+yj
+yj
 xO
 ab
 ab
@@ -21071,7 +21414,7 @@ Ri
 ab
 ab
 xO
-MB
+FH
 PG
 fC
 Pe
@@ -21084,10 +21427,10 @@ GY
 Pe
 Pe
 Es
-af
-af
+fv
+fv
 PG
-MB
+FH
 xO
 ab
 ab
@@ -21108,10 +21451,10 @@ ab
 ab
 ab
 xO
-MB
-MB
+kH
+kH
 fq
-OC
+ON
 EQ
 hR
 hR
@@ -21123,8 +21466,8 @@ hR
 hR
 hR
 hR
-MB
-MB
+kH
+kH
 xO
 ab
 ab
@@ -21226,10 +21569,10 @@ ab
 ab
 "}
 (67,1,1) = {"
-MB
-MB
+cX
+cX
 af
-YK
+XU
 af
 gf
 gf
@@ -21243,8 +21586,8 @@ af
 af
 af
 LR
-MB
-MB
+cX
+cX
 xO
 Ri
 Ri
@@ -21295,25 +21638,25 @@ Ri
 Ri
 Ri
 xO
-MB
-MB
-af
-Fj
-sI
-af
+yj
+yj
+wV
+dC
+yK
+wV
 xb
-af
-af
-KZ
-af
-af
-af
-af
-sI
-Fj
-af
-MB
-MB
+wV
+wV
+Ip
+wV
+wV
+wV
+wV
+yK
+dC
+wV
+yj
+yj
 xO
 ab
 ab
@@ -21328,7 +21671,7 @@ Ri
 ab
 ab
 xO
-MB
+FH
 PG
 ol
 MC
@@ -21341,10 +21684,10 @@ nV
 HG
 ol
 Bi
-af
+fv
 Yl
 PG
-MB
+FH
 xO
 ab
 ab
@@ -21365,23 +21708,23 @@ ab
 ab
 ab
 xO
-MB
-MB
+kH
+kH
 hR
 hR
 hR
 hR
 ue
 hR
-OC
+ON
 LO
 hR
 ue
 hR
 hR
 hR
-MB
-MB
+kH
+kH
 xO
 ab
 ab
@@ -21483,14 +21826,14 @@ ab
 ab
 "}
 (68,1,1) = {"
-MB
-MB
+cX
+cX
 af
 af
 sI
 af
 af
-Yl
+lq
 af
 af
 af
@@ -21499,9 +21842,9 @@ af
 gf
 sI
 af
-Tm
-MB
-MB
+fQ
+cX
+cX
 xO
 Ri
 Ri
@@ -21552,25 +21895,25 @@ Ri
 Ri
 Ri
 xO
-MB
-MB
-af
-sI
-af
-af
-Es
-af
-af
-af
-af
-af
-af
-gf
-af
-sI
-LR
-MB
-MB
+yj
+yj
+wV
+yK
+wV
+wV
+Eh
+wV
+wV
+wV
+wV
+wV
+wV
+Jy
+wV
+yK
+Mg
+yj
+yj
 xO
 ab
 ab
@@ -21585,7 +21928,7 @@ ab
 ab
 ab
 xO
-MB
+FH
 PG
 fC
 fC
@@ -21597,11 +21940,11 @@ Bi
 uS
 uS
 Pe
-af
+fv
 Yl
 Pe
 PG
-MB
+FH
 xO
 ab
 ab
@@ -21622,23 +21965,23 @@ ab
 ab
 ab
 xO
-MB
-MB
+kH
+kH
 hR
 hR
 rp
 hR
 hR
 Lv
-OC
-OC
+ON
+ON
 hR
 Qc
 hR
-OC
+ON
 hR
-MB
-MB
+kH
+kH
 xO
 ab
 ab
@@ -21740,8 +22083,8 @@ ab
 ab
 "}
 (69,1,1) = {"
-MB
-MB
+cX
+cX
 af
 Fj
 sI
@@ -21757,8 +22100,8 @@ af
 sI
 Fj
 af
-MB
-MB
+cX
+cX
 xO
 Ri
 Ri
@@ -21809,25 +22152,25 @@ Ri
 Ri
 Ri
 xO
-MB
-MB
-af
+yj
+yj
+wV
 JQ
-af
+wV
 oR
-af
+wV
 gp
-af
-af
-gf
-af
-af
-gf
-gf
+wV
+wV
+Jy
+wV
+wV
+Jy
+Jy
 wl
-af
-MB
-MB
+wV
+yj
+yj
 xO
 ab
 ab
@@ -21842,7 +22185,7 @@ ab
 ab
 ab
 xO
-MB
+FH
 PG
 Yl
 SM
@@ -21856,9 +22199,9 @@ Pe
 ol
 MC
 ol
-af
+fv
 PG
-MB
+FH
 xO
 ab
 ab
@@ -21879,23 +22222,23 @@ ab
 ab
 ab
 xO
-MB
-MB
+kH
+kH
 hR
 hR
 hR
 hR
 hR
-OC
-OC
+ON
+ON
 hR
 hR
 hR
 hR
 hR
 hR
-MB
-MB
+kH
+kH
 xO
 ab
 ab
@@ -21997,13 +22340,13 @@ ab
 ab
 "}
 (70,1,1) = {"
-MB
-MB
+cX
+cX
 af
 sI
 af
 af
-Es
+Fd
 af
 af
 af
@@ -22014,8 +22357,8 @@ gf
 af
 sI
 LR
-MB
-MB
+cX
+cX
 xO
 Ri
 Ri
@@ -22066,25 +22409,25 @@ Ri
 Ri
 Ri
 xO
-MB
-MB
-sI
-af
-Es
-af
-af
-af
-af
-af
-af
-af
-af
-af
-af
-sI
+yj
+yj
+yK
+wV
+Eh
+wV
+wV
+wV
+wV
+wV
+wV
+wV
+wV
+wV
+wV
+yK
 Tm
-MB
-MB
+yj
+yj
 xO
 ab
 ab
@@ -22099,7 +22442,7 @@ ab
 ab
 ab
 xO
-MB
+FH
 PG
 fC
 SM
@@ -22113,9 +22456,9 @@ Bi
 fC
 ol
 fC
-af
+fv
 PG
-MB
+FH
 xO
 ab
 ab
@@ -22136,11 +22479,11 @@ ab
 ab
 ab
 xO
-MB
-MB
+kH
+kH
 hR
 hR
-OC
+ON
 hR
 hR
 hR
@@ -22151,8 +22494,8 @@ hR
 EQ
 hR
 hR
-MB
-MB
+kH
+kH
 xO
 ab
 ab
@@ -22254,14 +22597,14 @@ ab
 ab
 "}
 (71,1,1) = {"
-MB
-MB
+cX
+cX
 af
-JQ
+fK
 af
 af
 af
-gp
+XS
 af
 af
 gf
@@ -22271,8 +22614,8 @@ gf
 gf
 sI
 af
-MB
-MB
+cX
+cX
 xO
 Ri
 Ri
@@ -22323,25 +22666,25 @@ Ri
 Ri
 Ri
 xO
-MB
-MB
-af
-af
-ZV
+yj
+yj
+wV
+wV
+Rw
 Wt
-af
-KZ
-af
-af
-af
-af
+wV
+Ip
+wV
+wV
+wV
+wV
 gp
-af
-af
-af
-sI
-MB
-MB
+wV
+wV
+wV
+yK
+yj
+yj
 xO
 ab
 ab
@@ -22356,7 +22699,7 @@ ab
 ab
 ab
 xO
-MB
+FH
 PG
 Bi
 qV
@@ -22372,7 +22715,7 @@ fC
 fC
 Pe
 PG
-MB
+FH
 xO
 ab
 ab
@@ -22393,23 +22736,23 @@ ab
 ab
 ab
 xO
-MB
-MB
+kH
+kH
 hR
 hR
-OC
-OC
+ON
+ON
 hR
 hR
 fq
 hR
 Vl
 hR
-OC
-OC
+ON
+ON
 hR
-MB
-MB
+kH
+kH
 xO
 ab
 ab
@@ -22511,11 +22854,11 @@ ab
 ab
 "}
 (72,1,1) = {"
-MB
-MB
+cX
+cX
 sI
 af
-Es
+Fd
 af
 af
 af
@@ -22527,9 +22870,9 @@ af
 af
 af
 sI
-Tm
-MB
-MB
+fQ
+cX
+cX
 xO
 Ri
 Ri
@@ -22580,25 +22923,25 @@ Ri
 Ri
 Ri
 xO
-MB
-MB
-sI
+yj
+yj
+yK
 Tm
-af
-af
-af
-af
-af
-af
-af
-KZ
-af
-af
-af
-Nv
+wV
+wV
+wV
+wV
+fv
+wV
+wV
+Ip
+wV
+wV
+wV
+HW
 Tm
-MB
-MB
+yj
+yj
 xO
 ab
 ab
@@ -22613,7 +22956,7 @@ ab
 ab
 ab
 xO
-MB
+FH
 PG
 PG
 PG
@@ -22629,7 +22972,7 @@ PG
 PG
 PG
 PG
-MB
+FH
 xO
 ab
 ab
@@ -22650,8 +22993,8 @@ ab
 ab
 ab
 xO
-MB
-MB
+kH
+kH
 hR
 hR
 hR
@@ -22665,8 +23008,8 @@ hR
 hR
 rp
 hR
-MB
-MB
+kH
+kH
 xO
 ab
 ab
@@ -22768,25 +23111,25 @@ ab
 ab
 "}
 (73,1,1) = {"
-MB
-MB
+cX
+cX
 af
 af
-ZV
-Wt
+fa
+JP
 af
 KZ
 af
 af
 af
 af
-gp
+XS
 af
 af
 af
 sI
-MB
-MB
+cX
+cX
 xO
 Ri
 Ri
@@ -22837,25 +23180,25 @@ Ri
 Ri
 Ri
 xO
-MB
-MB
-sI
-af
-af
-af
-af
-af
-af
+yj
+yj
+yK
+wV
+wV
+wV
+wV
+wV
+wV
 Qo
-af
-af
-af
-af
-af
+wV
+wV
+wV
+wV
+wV
 Vz
-gf
-MB
-MB
+Jy
+yj
+yj
 xO
 ab
 ab
@@ -22870,23 +23213,23 @@ ab
 ab
 ab
 xO
-MB
-MB
-MB
-MB
-MB
-MB
+FH
+FH
+FH
+FH
+FH
+FH
 PG
 ol
 ol
 ol
 PG
-MB
-MB
-MB
-MB
-MB
-MB
+FH
+FH
+FH
+FH
+FH
+FH
 xO
 ab
 ab
@@ -22907,8 +23250,8 @@ ab
 ab
 ab
 xO
-MB
-MB
+kH
+kH
 hR
 hR
 hR
@@ -22922,8 +23265,8 @@ hR
 hR
 hR
 hR
-MB
-MB
+kH
+kH
 xO
 ab
 ab
@@ -23025,10 +23368,10 @@ ab
 ab
 "}
 (74,1,1) = {"
-MB
-MB
+cX
+cX
 sI
-Tm
+fQ
 af
 af
 af
@@ -23041,9 +23384,9 @@ af
 af
 af
 Nv
-Tm
-MB
-MB
+fQ
+cX
+cX
 xO
 Ri
 Ri
@@ -23077,7 +23420,7 @@ RF
 RF
 RF
 RF
-RF
+Rs
 RF
 RF
 RF
@@ -23094,25 +23437,25 @@ Ri
 Ri
 Ri
 xO
-MB
-MB
+yj
+yj
 wl
-Yl
-af
-af
-gf
-af
-af
-af
+cU
+wV
+wV
+Jy
+wV
+wV
+wV
 QY
-af
-af
-af
-af
-af
-LR
-MB
-MB
+wV
+wV
+wV
+wV
+wV
+Mg
+yj
+yj
 xO
 ab
 ab
@@ -23131,7 +23474,7 @@ xO
 xO
 xO
 xO
-MB
+FH
 PG
 PG
 Es
@@ -23139,11 +23482,11 @@ ol
 Es
 PG
 PG
-MB
-MB
-MB
-MB
-MB
+FH
+xO
+xO
+xO
+xO
 xO
 ab
 ab
@@ -23164,23 +23507,23 @@ ab
 ab
 ab
 xO
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+kH
+kH
+kH
+kH
+kH
+kH
+kH
 hR
 Lb
-ep
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+LJ
+kH
+kH
+kH
+kH
+kH
+kH
+kH
 xO
 ab
 ab
@@ -23282,8 +23625,8 @@ ab
 ab
 "}
 (75,1,1) = {"
-MB
-MB
+cX
+cX
 sI
 af
 af
@@ -23299,8 +23642,8 @@ af
 af
 Iy
 gf
-MB
-MB
+cX
+cX
 xO
 Ri
 Ri
@@ -23351,25 +23694,25 @@ Ri
 Ri
 Ri
 xO
-MB
-MB
-sI
+yj
+yj
+yK
 Tm
 pX
-af
-af
-af
-Nq
+wV
+wV
+wV
+Og
 Td
-af
-af
-af
-af
-af
+wV
+wV
+wV
+wV
+wV
 ew
-af
-MB
-MB
+wV
+yj
+yj
 xO
 ab
 ab
@@ -23388,19 +23731,15 @@ ab
 ab
 ab
 xO
-MB
+FH
 PG
 Yl
-af
+fv
 Es
-af
+fv
 Yl
 PG
-MB
-xO
-xO
-xO
-xO
+FH
 xO
 ab
 ab
@@ -23420,24 +23759,28 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
 xO
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-ep
-ep
-ep
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+LJ
+LJ
+LJ
+kH
+kH
+kH
+kH
+kH
+kH
+kH
 xO
 ab
 ab
@@ -23539,10 +23882,10 @@ ab
 ab
 "}
 (76,1,1) = {"
-MB
-MB
-wl
-Yl
+cX
+cX
+rG
+lq
 af
 af
 gf
@@ -23556,8 +23899,8 @@ af
 af
 af
 LR
-MB
-MB
+cX
+cX
 xO
 Ri
 Ri
@@ -23608,25 +23951,25 @@ Ri
 Ri
 Ri
 xO
-MB
-MB
+yj
+yj
 JQ
-af
-af
-af
-af
-af
-af
-KZ
-af
-af
-af
-af
-af
-Nv
-LR
-MB
-MB
+wV
+wV
+wV
+wV
+wV
+wV
+Ip
+wV
+wV
+wV
+wV
+wV
+HW
+Mg
+yj
+yj
 xO
 ab
 ab
@@ -23645,7 +23988,7 @@ ab
 ab
 ab
 xO
-MB
+FH
 PG
 Es
 Es
@@ -23653,7 +23996,7 @@ Yl
 Yl
 Es
 PG
-MB
+FH
 xO
 ab
 ab
@@ -23682,15 +24025,15 @@ xO
 xO
 xO
 xO
-MB
-MB
-MB
-ep
-ep
+kH
+kH
+kH
+LJ
+LJ
 hR
-MB
-MB
-MB
+kH
+kH
+kH
 xO
 xO
 xO
@@ -23796,11 +24139,11 @@ ab
 ab
 "}
 (77,1,1) = {"
-MB
-MB
+cX
+cX
 sI
-Tm
-pX
+fQ
+ZK
 af
 aZ
 af
@@ -23813,8 +24156,8 @@ af
 af
 Nv
 af
-MB
-MB
+cX
+cX
 xO
 Ri
 Ri
@@ -23865,25 +24208,25 @@ Ri
 Ri
 Ri
 xO
-MB
-MB
-af
-af
-af
-af
+yj
+yj
+wV
+wV
+wV
+wV
 gp
-af
-af
-af
-af
-af
-af
-af
-af
-Nv
-ZV
-MB
-MB
+wV
+wV
+wV
+wV
+wV
+wV
+wV
+wV
+HW
+Rw
+yj
+yj
 xO
 ab
 ab
@@ -23902,15 +24245,15 @@ ab
 ab
 ab
 xO
-MB
+FH
 PG
 jr
 Es
 FF
-af
+fv
 Yl
 PG
-MB
+FH
 xO
 ab
 ab
@@ -23939,15 +24282,15 @@ ab
 ab
 ab
 xO
-MB
-MB
+kH
+kH
 hR
 hR
 hR
 hR
 hR
-MB
-MB
+kH
+kH
 xO
 ab
 ab
@@ -24053,9 +24396,9 @@ ab
 ab
 "}
 (78,1,1) = {"
-MB
-MB
-JQ
+cX
+cX
+fK
 af
 af
 af
@@ -24070,8 +24413,8 @@ af
 af
 Nv
 LR
-MB
-MB
+cX
+cX
 xO
 Ri
 Ri
@@ -24122,25 +24465,25 @@ Ri
 Ri
 Ri
 xO
-MB
-MB
-af
+yj
+yj
+wV
 Tm
-af
-af
-af
-af
-af
-af
-af
-gf
-af
-af
-af
+wV
+wV
+wV
+wV
+wV
+wV
+wV
+Jy
+wV
+wV
+wV
 Gw
-af
-MB
-MB
+wV
+yj
+yj
 xO
 ab
 ab
@@ -24159,15 +24502,15 @@ ab
 ab
 ab
 xO
-MB
+FH
 PG
 bB
-af
+fv
 Yl
-af
+fv
 Es
 PG
-MB
+FH
 xO
 ab
 ab
@@ -24196,15 +24539,15 @@ ab
 ab
 ab
 xO
-MB
-MB
+kH
+kH
 hR
 hR
 hR
 hR
 hR
-MB
-MB
+kH
+kH
 xO
 ab
 ab
@@ -24310,13 +24653,13 @@ ab
 ab
 "}
 (79,1,1) = {"
-MB
-MB
+cX
+cX
 af
 af
 af
 af
-gp
+XS
 af
 af
 af
@@ -24326,9 +24669,9 @@ aZ
 af
 af
 Nv
-ZV
-MB
-MB
+fa
+cX
+cX
 xO
 Ri
 Ri
@@ -24379,25 +24722,25 @@ Ri
 Ri
 Ri
 xO
-MB
-MB
-af
-af
-af
-af
-af
-af
-af
+yj
+yj
+wV
+wV
+wV
+wV
+wV
+wV
+wV
 pX
-af
-af
-af
-af
-af
-af
+wV
+wV
+wV
+wV
+wV
+wV
 Tm
-MB
-MB
+yj
+yj
 xO
 ab
 ab
@@ -24416,15 +24759,15 @@ ab
 ab
 ab
 xO
-MB
+FH
 PG
-Bt
+ix
 Es
 Es
 Yl
 Yl
 PG
-MB
+FH
 xO
 ab
 ab
@@ -24453,15 +24796,15 @@ ab
 ab
 ab
 xO
-MB
-MB
+kH
+kH
 Pn
 hR
 sq
 hR
 hR
-MB
-MB
+kH
+kH
 xO
 ab
 ab
@@ -24567,10 +24910,10 @@ ab
 ab
 "}
 (80,1,1) = {"
-MB
-MB
+cX
+cX
 af
-Tm
+fQ
 af
 af
 aZ
@@ -24582,10 +24925,10 @@ gf
 af
 af
 af
-Gw
+lS
 af
-MB
-MB
+cX
+cX
 xO
 Ri
 Ri
@@ -24636,25 +24979,25 @@ Ri
 Ri
 Ri
 xO
-MB
-MB
+yj
+yj
 Tm
-af
-RB
-af
-af
-gf
-af
-af
-af
-af
-af
-af
-af
-Nv
-af
-MB
-MB
+wV
+XM
+wV
+wV
+Jy
+wV
+wV
+wV
+wV
+wV
+wV
+wV
+HW
+wV
+yj
+yj
 xO
 ab
 ab
@@ -24673,7 +25016,7 @@ ab
 ab
 ab
 xO
-MB
+FH
 PG
 PG
 PG
@@ -24681,7 +25024,7 @@ PG
 PG
 PG
 PG
-MB
+FH
 xO
 ab
 ab
@@ -24710,15 +25053,15 @@ ab
 ab
 ab
 xO
-MB
-MB
+kH
+kH
 qC
 hR
 hR
 hR
 hR
-MB
-MB
+kH
+kH
 xO
 ab
 ab
@@ -24824,8 +25167,8 @@ ab
 ab
 "}
 (81,1,1) = {"
-MB
-MB
+cX
+cX
 af
 af
 af
@@ -24833,16 +25176,16 @@ af
 af
 af
 af
-pX
+ZK
 aZ
 af
 af
 af
 af
 af
-Tm
-MB
-MB
+fQ
+cX
+cX
 xO
 Ri
 Ri
@@ -24893,25 +25236,25 @@ Ri
 Ri
 Ri
 xO
-MB
-MB
-af
-af
-Es
-af
-af
-af
-af
-af
-af
-af
+yj
+yj
+wV
+wV
+Eh
+wV
+wV
+wV
+wV
+wV
+wV
+wV
 pX
-af
-af
+wV
+wV
 Tm
-af
-MB
-MB
+wV
+yj
+yj
 xO
 ab
 ab
@@ -24930,15 +25273,15 @@ ab
 ab
 ab
 xO
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+FH
+FH
+FH
+FH
+FH
+FH
+FH
+FH
+FH
 xO
 ab
 ab
@@ -24967,15 +25310,15 @@ ab
 ab
 ab
 xO
-MB
-MB
-SU
+kH
+kH
+dt
 hR
 hR
 hR
 hR
-MB
-MB
+kH
+kH
 xO
 ab
 ab
@@ -25081,9 +25424,9 @@ ab
 ab
 "}
 (82,1,1) = {"
-MB
-MB
-Tm
+cX
+cX
+fQ
 af
 RB
 af
@@ -25098,8 +25441,8 @@ af
 af
 Nv
 af
-MB
-MB
+cX
+cX
 xO
 Ri
 Ri
@@ -25150,25 +25493,25 @@ Ri
 Ri
 Ri
 xO
-MB
-MB
-af
-af
+yj
+yj
+wV
+wV
 Tm
-af
-RB
-af
-af
-KZ
-af
-af
+wV
+XM
+wV
+wV
+Ip
+wV
+wV
 Wt
-af
-af
-af
-af
-MB
-MB
+wV
+wV
+wV
+wV
+yj
+yj
 xO
 ab
 ab
@@ -25224,15 +25567,15 @@ ab
 ab
 ab
 xO
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
 xO
 ab
 ab
@@ -25338,11 +25681,11 @@ ab
 ab
 "}
 (83,1,1) = {"
-MB
-MB
+cX
+cX
 af
 af
-Es
+Fd
 af
 af
 aZ
@@ -25353,10 +25696,10 @@ af
 tl
 af
 af
-Tm
+fQ
 af
-MB
-MB
+cX
+cX
 xO
 Ri
 Ri
@@ -25407,25 +25750,25 @@ Ri
 Ri
 Ri
 xO
-MB
-MB
-af
-af
-Es
-af
-Nq
-af
-af
-af
-af
-af
-LR
-af
-af
-af
+yj
+yj
+wV
+wV
+Eh
+wV
+Og
+wV
+wV
+wV
+wV
+wV
+Mg
+wV
+wV
+wV
 Tm
-MB
-MB
+yj
+yj
 xO
 ab
 ab
@@ -25481,15 +25824,15 @@ ab
 ab
 ab
 xO
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
 xO
 ab
 ab
@@ -25595,11 +25938,11 @@ ab
 ab
 "}
 (84,1,1) = {"
-MB
-MB
+cX
+cX
 af
 af
-Tm
+fQ
 af
 RB
 af
@@ -25607,13 +25950,13 @@ af
 KZ
 af
 af
-Wt
+JP
 af
 af
 af
 af
-MB
-MB
+cX
+cX
 xO
 Ri
 Ri
@@ -25664,25 +26007,25 @@ Ri
 Ri
 Ri
 xO
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
 Dy
-af
+wV
 Bh
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
 xO
 ab
 ab
@@ -25852,11 +26195,11 @@ ab
 ab
 "}
 (85,1,1) = {"
-MB
-MB
+cX
+cX
 af
 af
-Es
+Fd
 af
 Nq
 af
@@ -25868,9 +26211,9 @@ af
 af
 af
 af
-Tm
-MB
-MB
+fQ
+cX
+cX
 xO
 Ri
 Ri
@@ -25921,25 +26264,25 @@ Ri
 Ri
 Ri
 xO
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-af
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+wV
 Dy
-af
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+wV
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
 xO
 ab
 ab
@@ -26109,25 +26452,25 @@ ab
 ab
 "}
 (86,1,1) = {"
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
 af
 af
 af
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
 xO
 Ri
 Ri
@@ -26178,25 +26521,25 @@ Ri
 Ri
 Ri
 xO
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-af
-af
-af
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+wV
+wV
+wV
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
 xO
 ab
 ab
@@ -26366,25 +26709,25 @@ ab
 ab
 "}
 (87,1,1) = {"
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
 af
 af
 af
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
 xO
 Ri
 Ri
@@ -26435,25 +26778,25 @@ Ri
 Ri
 Ri
 xO
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-af
-af
-af
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+wV
+wV
+wV
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
 xO
 ab
 ab
@@ -26623,25 +26966,25 @@ ab
 ab
 "}
 (88,1,1) = {"
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
 af
 af
 af
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
 xO
 Ri
 Ri
@@ -26697,15 +27040,15 @@ xO
 xO
 xO
 xO
-MB
-MB
-af
-af
-af
-af
-af
-MB
-MB
+yj
+yj
+wV
+wV
+wV
+wV
+wV
+yj
+yj
 xO
 xO
 xO
@@ -26880,25 +27223,25 @@ ab
 ab
 "}
 (89,1,1) = {"
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
 af
 xq
 af
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
 xO
 Ri
 Ri
@@ -26954,15 +27297,15 @@ ab
 ab
 ab
 xO
-MB
-MB
+yj
+yj
 FM
-af
-af
-af
-af
-MB
-MB
+wV
+wV
+wV
+wV
+yj
+yj
 xO
 ab
 ab
@@ -27142,15 +27485,15 @@ xO
 xO
 xO
 xO
-MB
-MB
+cX
+cX
 af
 af
 af
 af
 af
-MB
-MB
+cX
+cX
 xO
 xO
 xO
@@ -27211,15 +27554,15 @@ ab
 ab
 ab
 xO
-MB
-MB
+yj
+yj
 GQ
-af
+wV
 oB
-af
-af
-MB
-MB
+wV
+wV
+yj
+yj
 xO
 ab
 ab
@@ -27399,15 +27742,15 @@ ab
 ab
 ab
 xO
-MB
-MB
+cX
+cX
 af
 af
 af
 af
 af
-MB
-MB
+cX
+cX
 xO
 ab
 ab
@@ -27468,15 +27811,15 @@ ab
 ab
 ab
 xO
-MB
-MB
+yj
+yj
 QY
-af
-af
-af
-af
-MB
-MB
+wV
+wV
+wV
+wV
+yj
+yj
 xO
 ab
 ab
@@ -27656,15 +27999,15 @@ ab
 ab
 ab
 xO
-MB
-MB
-FM
+cX
+cX
+AV
 af
 Jr
 af
 af
-MB
-MB
+cX
+cX
 xO
 ab
 ab
@@ -27725,15 +28068,15 @@ ab
 ab
 ab
 xO
-MB
-MB
+yj
+yj
 Bt
-af
-af
-af
-af
-MB
-MB
+wV
+wV
+wV
+wV
+yj
+yj
 xO
 ab
 ab
@@ -27913,15 +28256,15 @@ ab
 ab
 ab
 xO
-MB
-MB
+cX
+cX
 UP
 af
 af
 af
 af
-MB
-MB
+cX
+cX
 xO
 ab
 ab
@@ -27982,15 +28325,15 @@ ab
 ab
 ab
 xO
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
 xO
 ab
 ab
@@ -28170,15 +28513,15 @@ ab
 ab
 ab
 xO
-MB
-MB
-Bt
+cX
+cX
+zO
 af
 af
 af
 af
-MB
-MB
+cX
+cX
 xO
 ab
 ab
@@ -28239,15 +28582,15 @@ ab
 ab
 ab
 xO
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
+yj
 xO
 ab
 ab
@@ -28427,15 +28770,15 @@ ab
 ab
 ab
 xO
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+cX
+cX
+cX
+cX
+cX
+TG
+QP
+cX
+cX
 xO
 ab
 ab
@@ -28684,15 +29027,15 @@ ab
 ab
 ab
 xO
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
+cX
 xO
 ab
 ab
@@ -42606,25 +42949,25 @@ Ri
 Ri
 Ri
 Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
+xO
+xO
+xO
+xO
+xO
+xO
+xO
+xO
+xO
+xO
+xO
+xO
+xO
+xO
+xO
+xO
+xO
+xO
+xO
 Ri
 Ri
 Ri
@@ -42863,7 +43206,7 @@ Ri
 Ri
 Ri
 Ri
-Ri
+xO
 kd
 kd
 kd
@@ -42881,7 +43224,7 @@ kd
 kd
 kd
 kd
-Ri
+xO
 Ri
 Ri
 Ri
@@ -43120,7 +43463,7 @@ Ri
 Ri
 Ri
 Ri
-Ri
+xO
 kd
 Kf
 Zw
@@ -43138,7 +43481,7 @@ Cn
 Cn
 pt
 kd
-Ri
+xO
 Ri
 Ri
 Ri
@@ -43377,7 +43720,7 @@ Ri
 Ri
 Ri
 Ri
-Ri
+xO
 kd
 Lc
 Mr
@@ -43395,7 +43738,7 @@ qQ
 Cn
 fi
 kd
-Ri
+xO
 Ri
 Ri
 Ri
@@ -43634,7 +43977,7 @@ Ri
 Ri
 Ri
 Ri
-Ri
+xO
 kd
 MP
 iR
@@ -43652,7 +43995,7 @@ Cn
 Cn
 fi
 kd
-Ri
+xO
 Ri
 Ri
 Ri
@@ -43891,7 +44234,7 @@ Ri
 Ri
 Ri
 Ri
-Ri
+xO
 kd
 xo
 Yu
@@ -43909,7 +44252,7 @@ Yu
 Yu
 xo
 kd
-Ri
+xO
 Ri
 Ri
 Ri
@@ -44148,7 +44491,7 @@ Ri
 Ri
 Ri
 Ri
-Ri
+xO
 kd
 Yu
 Yu
@@ -44166,7 +44509,7 @@ Yu
 Yu
 Yu
 kd
-Ri
+xO
 Ri
 Ri
 Ri
@@ -44405,7 +44748,7 @@ Ri
 Ri
 Ri
 Ri
-Ri
+xO
 kd
 kf
 Yu
@@ -44423,7 +44766,7 @@ Yu
 Yu
 FJ
 kd
-Ri
+xO
 Ri
 Ri
 Ri
@@ -44662,7 +45005,7 @@ Ri
 Ri
 Ri
 Ri
-Ri
+xO
 kd
 eW
 IL
@@ -44680,7 +45023,7 @@ Yu
 IL
 QD
 kd
-Ri
+xO
 Ri
 Ri
 Ri
@@ -44919,7 +45262,7 @@ Ri
 Ri
 Ri
 Ri
-Ri
+xO
 kd
 Lo
 LQ
@@ -44937,7 +45280,7 @@ hl
 mD
 Lo
 kd
-Ri
+xO
 Ri
 Ri
 Ri
@@ -45176,7 +45519,7 @@ Ri
 Ri
 Ri
 Ri
-Ri
+xO
 kd
 kd
 kd
@@ -45194,7 +45537,7 @@ Ea
 kd
 kd
 kd
-Ri
+xO
 Ri
 Ri
 Ri
@@ -45433,7 +45776,7 @@ Ri
 Ri
 Ri
 Ri
-Ri
+xO
 kd
 RZ
 RZ
@@ -45451,7 +45794,7 @@ RZ
 RZ
 RZ
 kd
-Ri
+xO
 Ri
 Ri
 Ri
@@ -45690,7 +46033,7 @@ Ri
 Ri
 Ri
 Ri
-Ri
+xO
 kd
 RZ
 RZ
@@ -45708,7 +46051,7 @@ RZ
 RZ
 RZ
 kd
-Ri
+xO
 Ri
 Ri
 Ri
@@ -45947,7 +46290,7 @@ Ri
 Ri
 Ri
 Ri
-Ri
+xO
 kd
 RZ
 RZ
@@ -45965,7 +46308,7 @@ RZ
 RZ
 RZ
 kd
-Ri
+xO
 Ri
 Ri
 Ri
@@ -46204,7 +46547,7 @@ Ri
 Ri
 Ri
 Ri
-Ri
+xO
 kd
 RZ
 RZ
@@ -46222,7 +46565,7 @@ RZ
 RZ
 RZ
 kd
-Ri
+xO
 Ri
 Ri
 Ri
@@ -46461,7 +46804,7 @@ Ri
 Ri
 Ri
 Ri
-Ri
+xO
 kd
 RZ
 RZ
@@ -46479,7 +46822,7 @@ RZ
 RZ
 RZ
 kd
-Ri
+xO
 Ri
 Ri
 Ri
@@ -46718,7 +47061,7 @@ Ri
 Ri
 Ri
 Ri
-Ri
+xO
 kd
 RZ
 RZ
@@ -46736,7 +47079,7 @@ RZ
 RZ
 RZ
 kd
-Ri
+xO
 Ri
 Ri
 Ri
@@ -46975,7 +47318,7 @@ Ri
 Ri
 Ri
 Ri
-Ri
+xO
 kd
 RZ
 RZ
@@ -46993,7 +47336,7 @@ RZ
 RZ
 RZ
 kd
-Ri
+xO
 Ri
 Ri
 Ri
@@ -47232,7 +47575,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -47250,7 +47593,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -47489,7 +47832,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -47507,7 +47850,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -47746,7 +48089,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -47764,7 +48107,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -48003,7 +48346,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -48021,7 +48364,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -48260,7 +48603,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 nq
@@ -48278,7 +48621,7 @@ nq
 nq
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -48517,7 +48860,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 nq
@@ -48535,7 +48878,7 @@ nq
 nq
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -48774,7 +49117,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -48792,7 +49135,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -49031,7 +49374,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -49049,7 +49392,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -49288,7 +49631,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -49306,7 +49649,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -49545,7 +49888,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -49563,7 +49906,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -49802,7 +50145,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -49820,7 +50163,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -50059,7 +50402,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -50077,7 +50420,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -50316,7 +50659,7 @@ ab
 ab
 ab
 Ri
-ab
+xO
 kd
 RZ
 RZ
@@ -50334,7 +50677,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -50573,7 +50916,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -50591,7 +50934,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -50830,7 +51173,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -50848,7 +51191,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -51087,7 +51430,7 @@ ab
 ab
 ab
 Ri
-ab
+xO
 kd
 RZ
 RZ
@@ -51105,7 +51448,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -51344,7 +51687,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -51362,7 +51705,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -51601,7 +51944,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -51619,7 +51962,7 @@ nq
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -51858,7 +52201,7 @@ ab
 ab
 ab
 Ri
-ab
+xO
 kd
 RZ
 nq
@@ -51876,7 +52219,7 @@ BK
 nq
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -52115,7 +52458,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -52133,7 +52476,7 @@ nq
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -52372,7 +52715,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -52390,7 +52733,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -52629,7 +52972,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -52647,7 +52990,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -52886,7 +53229,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -52904,7 +53247,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -53143,7 +53486,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -53161,7 +53504,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -53400,7 +53743,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -53418,7 +53761,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -53657,7 +54000,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -53675,7 +54018,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -53914,7 +54257,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -53932,7 +54275,7 @@ nq
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -54171,7 +54514,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -54189,7 +54532,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -54428,7 +54771,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -54446,7 +54789,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -54685,7 +55028,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -54703,7 +55046,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -54942,7 +55285,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -54960,7 +55303,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -55199,7 +55542,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -55217,7 +55560,7 @@ nq
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -55456,7 +55799,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -55474,7 +55817,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -55713,7 +56056,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -55731,7 +56074,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -55970,7 +56313,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -55988,7 +56331,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -56227,7 +56570,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -56245,7 +56588,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -56484,7 +56827,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -56502,7 +56845,7 @@ nq
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -56741,7 +57084,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -56759,7 +57102,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -56998,7 +57341,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -57016,7 +57359,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -57255,7 +57598,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -57273,7 +57616,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -57512,7 +57855,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -57530,7 +57873,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -57769,7 +58112,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -57787,7 +58130,7 @@ nq
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -58026,7 +58369,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -58044,7 +58387,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -58283,7 +58626,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 RZ
 RZ
@@ -58301,7 +58644,7 @@ RZ
 RZ
 RZ
 kd
-ab
+xO
 ab
 ab
 ab
@@ -58540,7 +58883,7 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 kd
 kd
@@ -58558,7 +58901,7 @@ kd
 kd
 kd
 kd
-ab
+xO
 ab
 ab
 ab
@@ -58797,25 +59140,25 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+xO
+xO
+xO
+xO
+xO
+xO
+xO
 kd
 AC
 AC
 AC
-cX
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+kd
+xO
+xO
+xO
+xO
+xO
+xO
+xO
 ab
 ab
 ab
@@ -59060,13 +59403,13 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 AC
 AC
 AC
-cX
-ab
+kd
+xO
 ab
 ab
 ab
@@ -59317,13 +59660,13 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 AC
 AC
 AC
-cX
-ab
+kd
+xO
 ab
 ab
 ab
@@ -59574,13 +59917,13 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 AC
 AC
 AC
-cX
-ab
+kd
+xO
 ab
 ab
 ab
@@ -59831,13 +60174,13 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 AC
 AC
 AC
-cX
-ab
+kd
+xO
 ab
 ab
 ab
@@ -60088,13 +60431,13 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 AC
 AC
 AC
-cX
-ab
+kd
+xO
 ab
 ab
 ab
@@ -60345,13 +60688,13 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 AC
 AC
 AC
-cX
-ab
+kd
+xO
 ab
 ab
 ab
@@ -60602,13 +60945,13 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 AC
 AC
 AC
-cX
-ab
+kd
+xO
 ab
 ab
 ab
@@ -60859,13 +61202,13 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 AC
 AC
 AC
-cX
-ab
+kd
+xO
 ab
 ab
 ab
@@ -61116,13 +61459,13 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 AC
 AC
 AC
-cX
-ab
+kd
+xO
 ab
 ab
 ab
@@ -61255,8 +61598,8 @@ mc
 mc
 mc
 Fc
-PX
-PX
+ZJ
+ZJ
 mc
 mc
 mc
@@ -61373,13 +61716,13 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 AC
 AC
 AC
-cX
-ab
+kd
+xO
 ab
 ab
 ab
@@ -61513,7 +61856,7 @@ mc
 mc
 mc
 PX
-PX
+ZJ
 mc
 mc
 mc
@@ -61630,13 +61973,13 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 AC
 AC
 AC
-cX
-ab
+kd
+xO
 ab
 ab
 ab
@@ -61769,7 +62112,7 @@ mc
 mc
 mc
 mc
-PX
+ZJ
 mc
 mc
 mc
@@ -61887,13 +62230,13 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 AC
 AC
 AC
-cX
-ab
+kd
+xO
 ab
 ab
 ab
@@ -62144,13 +62487,13 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 AC
 AC
 AC
-cX
-ab
+kd
+xO
 ab
 ab
 ab
@@ -62401,13 +62744,13 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 AC
 AC
 AC
-cX
-ab
+kd
+xO
 ab
 ab
 ab
@@ -62658,13 +63001,13 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 AC
 AC
 AC
-cX
-ab
+kd
+xO
 ab
 ab
 ab
@@ -62797,7 +63140,7 @@ mc
 mc
 mc
 mc
-PX
+ZJ
 mc
 mc
 mc
@@ -62915,13 +63258,13 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 AC
 AC
 AC
-cX
-ab
+kd
+xO
 ab
 ab
 ab
@@ -63054,7 +63397,7 @@ mc
 mc
 mc
 mc
-PX
+ZJ
 PX
 mc
 mc
@@ -63172,13 +63515,13 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 AC
 AC
 AC
-cX
-ab
+kd
+xO
 ab
 ab
 ab
@@ -63311,8 +63654,8 @@ mc
 mc
 mc
 Fc
-PX
-PX
+ZJ
+ZJ
 mc
 mc
 mc
@@ -63429,13 +63772,13 @@ ab
 ab
 ab
 ab
-ab
+xO
 kd
 AC
 AC
 AC
-cX
-ab
+kd
+xO
 ab
 ab
 ab
@@ -63632,20 +63975,6 @@ ab
 "}
 (232,1,1) = {"
 ab
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
 ab
 ab
 ab
@@ -63687,12 +64016,26 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+xO
 kd
 AC
 AC
 AC
-cX
-ab
+kd
+xO
 ab
 ab
 ab
@@ -63889,20 +64232,6 @@ ab
 "}
 (233,1,1) = {"
 ab
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
 ab
 ab
 ab
@@ -63944,12 +64273,26 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+xO
 kd
 AC
 AC
 AC
-cX
-ab
+kd
+xO
 ab
 ab
 ab
@@ -64146,20 +64489,6 @@ ab
 "}
 (234,1,1) = {"
 ab
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
 ab
 ab
 ab
@@ -64201,12 +64530,26 @@ ab
 ab
 ab
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+xO
 kd
 AC
 AC
 AC
-cX
-ab
+kd
+xO
 ab
 ab
 ab
@@ -64403,8 +64746,8 @@ ab
 "}
 (235,1,1) = {"
 ab
-ju
-ju
+ab
+ab
 vM
 vM
 vM
@@ -64414,9 +64757,6 @@ vM
 vM
 vM
 vM
-ju
-ju
-ju
 ab
 ab
 ab
@@ -64458,12 +64798,15 @@ ab
 ab
 ab
 ab
+ab
+ab
+xO
 kd
 AC
 AC
 AC
-cX
-ab
+kd
+xO
 ab
 ab
 ab
@@ -64660,8 +65003,8 @@ ab
 "}
 (236,1,1) = {"
 ab
-ju
-ju
+ab
+ab
 vM
 wO
 wO
@@ -64669,11 +65012,8 @@ wO
 uv
 is
 wO
-wO
+uK
 vM
-ju
-ju
-ju
 ab
 ab
 ab
@@ -64715,12 +65055,15 @@ ab
 ab
 ab
 ab
+ab
+ab
+xO
 kd
 AC
 wA
 AC
-cX
-ab
+kd
+xO
 ab
 ab
 ab
@@ -64917,8 +65260,8 @@ ab
 "}
 (237,1,1) = {"
 ab
-ju
-ju
+ab
+ab
 vM
 cV
 wO
@@ -64928,9 +65271,6 @@ wO
 wO
 wO
 vM
-ju
-ju
-ju
 ab
 ab
 ab
@@ -64972,12 +65312,15 @@ ab
 ab
 ab
 ab
+ab
+ab
+xO
 kd
 kd
 kd
 kd
-cX
-ab
+kd
+xO
 ab
 ab
 ab
@@ -65174,8 +65517,8 @@ ab
 "}
 (238,1,1) = {"
 ab
-ju
-ju
+ab
+ab
 vM
 wO
 wO
@@ -65185,9 +65528,6 @@ wO
 wO
 wO
 vM
-ju
-ju
-ju
 ab
 ab
 ab
@@ -65231,10 +65571,13 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
+xO
+xO
+xO
+xO
+xO
+xO
+xO
 ab
 ab
 ab
@@ -65431,8 +65774,8 @@ ab
 "}
 (239,1,1) = {"
 ab
-ju
-ju
+ab
+ab
 vM
 wO
 rc
@@ -65442,9 +65785,9 @@ PA
 wO
 wO
 vM
-ju
-ju
-ju
+ab
+ab
+ab
 ab
 ab
 ab
@@ -65688,8 +66031,8 @@ ab
 "}
 (240,1,1) = {"
 ab
-ju
-ju
+ab
+ab
 vM
 wO
 wO
@@ -65699,9 +66042,9 @@ wO
 wO
 wO
 vM
-ju
-ju
-ju
+ab
+ab
+ab
 ab
 ab
 ab
@@ -65945,8 +66288,8 @@ ab
 "}
 (241,1,1) = {"
 ab
-ju
-ju
+ab
+ab
 vM
 cV
 wO
@@ -65956,9 +66299,9 @@ hN
 wO
 wO
 vM
-ju
-ju
-ju
+ab
+ab
+ab
 ab
 ab
 ab
@@ -66202,20 +66545,20 @@ ab
 "}
 (242,1,1) = {"
 ab
-ju
-ju
+ab
+ab
 vM
 wO
 wO
 wO
 hN
-hN
+qD
 wO
 gk
 vM
-ju
-ju
-ju
+ab
+ab
+ab
 ab
 ab
 ab
@@ -66459,8 +66802,8 @@ ab
 "}
 (243,1,1) = {"
 ab
-ju
-ju
+ab
+ab
 vM
 vM
 vM
@@ -66470,9 +66813,9 @@ vM
 vM
 vM
 vM
-ju
-ju
-ju
+ab
+ab
+ab
 ab
 ab
 ab
@@ -66716,20 +67059,20 @@ ab
 "}
 (244,1,1) = {"
 ab
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -66973,20 +67316,20 @@ ab
 "}
 (245,1,1) = {"
 ab
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
-ju
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
