@@ -1,0 +1,55 @@
+"a" = (/turf/closed/indestructible/rock,/area/horny_antags)
+"b" = (/turf/open/indestructible/cobble,/area/horny_antags)
+"c" = (/turf/closed/indestructible/necropolis,/area/horny_antags/qareen)
+"d" = (/obj/structure/destructible/cult/pylon,/turf/open/indestructible/boss,/area/horny_antags/qareen)
+"e" = (/obj/effect/decal/cleanable/ash,/turf/open/indestructible/boss,/area/horny_antags/qareen)
+"f" = (/obj/effect/mob_spawn/qareen,/turf/open/indestructible/boss,/area/horny_antags/qareen)
+"g" = (/turf/open/indestructible/boss,/area/horny_antags/qareen)
+"h" = (/obj/structure/destructible/cult/pylon,/obj/effect/decal/cleanable/cobweb/cobweb2,/turf/open/indestructible/boss,/area/horny_antags/qareen)
+"i" = (/obj/effect/decal/cleanable/semen/femcum,/turf/open/indestructible/boss,/area/horny_antags/qareen)
+"j" = (/obj/effect/custom_portal/Hotel,/turf/open/indestructible/boss,/area/horny_antags/qareen)
+"k" = (/obj/effect/custom_portal/Station,/turf/open/indestructible/boss,/area/horny_antags/qareen)
+"l" = (/obj/effect/decal/cleanable/semen,/turf/open/indestructible/boss,/area/horny_antags/qareen)
+
+(1,1,1) = {"
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbbcccccccbbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbccdefghccbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbcggggiggcbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbcjggeggkcbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbcgglggggcbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbccdgfgdccbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbbcccccccbbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaa
+aabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+"}

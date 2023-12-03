@@ -189,13 +189,14 @@
 				else
 					message_admins("[key_name_admin(usr)] tried to create a revenant. Unfortunately, there were no candidates available.")
 					log_admin("[key_name(usr)] failed to create a revenant.")
-			if("qareen")
-				if(src.makeQareen())
-					message_admins("[key_name(usr)] created a qareen.")
-					log_admin("[key_name(usr)] created a qareen.")
-				else
-					message_admins("[key_name_admin(usr)] tried to create a qareen. Unfortunately, there were no candidates available.")
-					log_admin("[key_name(usr)] failed to create a qareen.")
+
+//			if("qareen")	Temporary removed. - Gardelin0
+//				if(src.makeQareen())
+//					message_admins("[key_name(usr)] created a qareen.")
+//					log_admin("[key_name(usr)] created a qareen.")
+//				else
+//				message_admins("[key_name_admin(usr)] tried to create a qareen. Unfortunately, there were no candidates available.")
+//					log_admin("[key_name(usr)] failed to create a qareen.")
 
 	else if(href_list["dbsearchckey"] || href_list["dbsearchadmin"] || href_list["dbsearchip"] || href_list["dbsearchcid"])
 		var/adminckey = href_list["dbsearchadmin"]

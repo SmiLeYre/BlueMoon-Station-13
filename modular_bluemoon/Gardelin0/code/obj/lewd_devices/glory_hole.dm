@@ -14,6 +14,7 @@
 	anchored = 1
 	dir = 2
 	item_chair = null // нельзя брать в руки
+	flags_1 = NODECONSTRUCT_1
 
 /obj/structure/chair/gloryhole/Destroy()
 	..()
@@ -100,9 +101,11 @@
 				. += "<span class='notice'>Имеется доступ к дырочкам спереди.</span>"
 			if("b_over")
 				. += "<span class='notice'>Имеется доступ к дырочкам спереди и груди.</span>"
+			if("bo_over")
+				. += "<span class='notice'>Имеется доступ к груди.</span>"
 			if("o_over")
 				. += "<span class='notice'>Имеется доступ ко рту.</span>"
-			if("bo_over")
+			if("ob_over")
 				. += "<span class='notice'>Имеется доступ ко рту и груди.</span>"
 			if("all_over")
 				. += "<span class='notice'>Имеется доступ к дырочкам спереди, рту и груди.</span>"
@@ -123,6 +126,9 @@
 					over_state = "b_over"
 					M.dir = 2
 				if("b_over")
+					over_state = "bo_over"
+					M.dir = 2
+				if("bo_over")
 					over_state = "o_over"
 					M.dir = 2
 				if("o_over")
@@ -188,7 +194,7 @@
 /obj/structure/chair/gloryhole/proc/handle_unbuckling(mob/living/buckled_mob, user)
 	if(buckled_mob == user)
 		if(restrains)
-			var/input = input(usr,"Вы уверены что хотите попытаться слезть сами? Это займёт более 2 минут и имеет шанс неудачи!") as null|anything in list("Да", "Нет")
+			var/input = tgui_alert(usr, "Вы уверены что хотите попытаться слезть сами? Это займёт более 2 минут и имеет шанс неудачи!", "Уверены?", list("Да", "Нет"))
 			if(input == "Да")
 				if(do_after(user, self_unbuckle_time, src))
 					if(prob(30))
@@ -229,17 +235,16 @@
 			return
 		for(var/m in buckled_mobs)
 			var/mob/living/carbon/human/M = m
-			var/input = input(usr,"Какой афродизиак ввести?") as null|anything in list("crocin", "hexacrocin")
+			var/input = tgui_alert(usr, "Какой афродизиак ввести?", "Афродизиак", list("crocin", "hexacrocin"))
 			if(M == usr)
 				to_chat(usr, "Не дотянуться до кнопки!")
 				return
-			if(input)
-				aphrodisiac = input
-				if(aphrodisiac == "crocin")
+			switch(input)
+				if("crocin")
 					M.reagents.add_reagent(/datum/reagent/drug/aphrodisiac, 15)
 					to_chat(usr, "[input] введён.")
 					playsound(loc, "modular_bluemoon/Gardelin0/sound/effect/lewd/toys/injection.ogg", 30, 1)
-				if(aphrodisiac ==	"hexacrocin")
+				if("hexacrocin")
 					M.reagents.add_reagent(/datum/reagent/drug/aphrodisiacplus, 15)
 					to_chat(usr, "[input] введён.")
 					playsound(loc, "modular_bluemoon/Gardelin0/sound/effect/lewd/toys/injection.ogg", 30, 1)
@@ -248,8 +253,14 @@
 		return
 
 /obj/structure/chair/gloryhole/attackby(obj/item/used_item, mob/user, params)
-	if(istype(used_item, /obj/item/screwdriver))
+	if(used_item.tool_behaviour == TOOL_WRENCH)
+		to_chat(user, "<span class='notice'>You begin to [anchored ? "unwrench" : "wrench"] [src].</span>")
+		if(used_item.use_tool(src, user, 20, volume=30))
+			to_chat(user, "<span class='notice'>You successfully [anchored ? "unwrench" : "wrench"] [src].</span>")
+			setAnchored(!anchored)
+	else if(istype(used_item, /obj/item/screwdriver))
 		to_chat(user, span_notice("You unscrew the frame and begin to deconstruct it..."))
+		playsound(loc, "'sound/items/screwdriver.ogg'", 30, 1)
 		if(used_item.use_tool(src, user, 8 SECONDS, volume = 50))
 			to_chat(user, span_notice("You disassemble it."))
 			new /obj/item/gloryhole_kit (src.loc)
@@ -260,11 +271,13 @@
 			letter.forceMove(get_turf(user))
 			letter = null
 			update_icon()
+			playsound(loc, "sound/items/wirecutter.ogg", 30, 1)
 		if(picture)
 			user.visible_message("<span class='notice'>[user] cuts down [picture] from [src].</span>", "<span class='notice'>You remove [picture] from [src].</span>")
 			picture.forceMove(get_turf(user))
 			picture = null
 			update_icon()
+			playsound(loc, "sound/items/wirecutter.ogg", 30, 1)
 	else if(istype(used_item, /obj/item/paper))
 		if(letter)
 			to_chat(user, "<span class='warning'>There's already something pinned to this gloryhole! Use wirecutters to remove it.</span>")
@@ -302,6 +315,7 @@
 	if(istype(used_item, /obj/item/screwdriver))
 		if (!(item_flags & IN_INVENTORY) && !(item_flags & IN_STORAGE))
 			to_chat(user, span_notice("You screw the frame to the floor and begin to construct it..."))
+			playsound(loc, "'sound/items/screwdriver.ogg'", 30, 1)
 			if(used_item.use_tool(src, user, 8 SECONDS, volume = 50))
 				to_chat(user, span_notice("You assemble it."))
 				new /obj/structure/chair/gloryhole (src.loc)

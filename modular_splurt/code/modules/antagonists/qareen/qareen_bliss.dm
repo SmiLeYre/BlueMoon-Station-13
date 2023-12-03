@@ -5,7 +5,7 @@
 	spread_flags = DISEASE_SPREAD_NON_CONTAGIOUS
 	cure_text = "Holy water or Semen."
 	spread_text = "A fog of pink unholy energy"
-	cures = list(/datum/reagent/water/holywater, /datum/reagent/consumable/semen)
+	cures = list(/datum/reagent/water/holywater, /datum/reagent/consumable/semen, /datum/reagent/consumable/semen/femcum, /datum/reagent/consumable/milk)
 	cure_chance = 5
 	agent = "Unholy Forces"
 	viable_mobtypes = list(/mob/living/carbon/human)
@@ -14,13 +14,10 @@
 	severity = DISEASE_SEVERITY_MEDIUM
 	var/bliss_stage_1 = FALSE
 	var/bliss_stage_2 = FALSE
+	//Removed pink coloring - was making vicitm's sprite
 
 /datum/disease/qarbliss/cure()
 	if(affected_mob)
-		affected_mob.remove_atom_colour(TEMPORARY_COLOUR_PRIORITY, "#1d2953")
-		if(affected_mob.dna && affected_mob.dna.species)
-			affected_mob.dna.species.handle_mutant_bodyparts(affected_mob)
-			affected_mob.dna.species.handle_hair(affected_mob)
 		SEND_SIGNAL(affected_mob, COMSIG_CLEAR_MOOD_EVENT, "qar_bliss")
 	..()
 
@@ -60,11 +57,8 @@
 				if (ishuman(affected_mob))
 					var/mob/living/carbon/human/H = affected_mob
 					H.mob_climax(TRUE,"Bliss",src,TRUE)
-				if(affected_mob.dna?.species)
-					affected_mob.dna.species.handle_mutant_bodyparts(affected_mob,"#fff0ff")
-					affected_mob.dna.species.handle_hair(affected_mob,"#da6eda")
 				affected_mob.visible_message("<span class='warning'>[affected_mob] looks utterly depraved.</span>", "<span class='revennotice'>You suddenly feel like your skin is <i>tingling</i>...</span>")
-				affected_mob.add_atom_colour("#ffdaf3", TEMPORARY_COLOUR_PRIORITY)
+				new /obj/effect/temp_visual/love_heart(affected_mob.loc)
 				new /obj/effect/temp_visual/revenant(affected_mob.loc)
 				// addtimer(CALLBACK(src, .proc/blessings), 150)
 		if(7)

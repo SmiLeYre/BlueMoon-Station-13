@@ -10,9 +10,9 @@
 #define QAREEN_NAME_FILE "qareen_names.json"
 
 /mob/living/simple_animal/qareen
-	name = "qareen"
+	name = "Qareen"
 	desc = "A horny spirit."
-	icon = 'modular_splurt/icons/mob/mob.dmi'
+	icon = 'modular_bluemoon/Gardelin0/icons/mob/qareen.dmi'	//It looks pretty tho! - Gardelin0
 	icon_state = "qareen_idle"
 	var/icon_idle = "qareen_idle"
 	var/icon_reveal = "qareen_revealed"
@@ -86,28 +86,21 @@
 	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/qareen/defile(null))
 	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/qareen/overload(null))
 	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/qareen/bliss(null))
-	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/qareen/malfunction(null))
-	random_qareen_name()
+//	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/qareen/malfunction(null))	Reserved for later. - Gardelin0
 
-/mob/living/simple_animal/qareen/proc/random_qareen_name()
-	var/built_name = ""
-	built_name += pick(strings(QAREEN_NAME_FILE, "spirit_type"))
-	built_name += " "
-	built_name += pick(strings(QAREEN_NAME_FILE, "adverb"))
-	built_name += pick(strings(QAREEN_NAME_FILE, "theme"))
-	name = built_name
+//Removed random names, because revenant names seem too hostile
 
 /mob/living/simple_animal/qareen/Login()
 	..()
 	var/qareen_greet
-	qareen_greet += "<span class='deadsay'><span class='big bold'>You are a qareen.</span></span>"
-	qareen_greet += "<b>Your formerly mundane spirit has been infused with alien energies and empowered into a qareen.</b>"
-	qareen_greet += "<b>You are not dead, not alive, but somewhere in between. You are capable of limited interaction with both worlds.</b>"
-	qareen_greet += "<b>You are invincible and invisible to everyone but other ghosts. Most abilities will reveal you, rendering you vulnerable.</b>"
-	qareen_greet += "<b>To function, you are to drain the life essence from creatures. This essence is a resource, as well as your health, and will power all of your abilities.</b>"
-	qareen_greet += "<b><i>You do not remember anything of your past lives, nor will you remember anything about this one after your death.</i></b>"
+	qareen_greet += "<span class='deadsay'><span class='big bold'>Вы есть qareen.</span></span>" //Rough translation by Gardelin0
+	qareen_greet += "<b>Ваш прежде мирской дух был запитан инопланетной энергией и преобразован в qareen.</b>"
+	qareen_greet += "<b>Вы не являетесь ни живым, ни мёртвым, а чем-то посередине. Вы способны взаимодействовать с обоими мирами.</b>"
+	qareen_greet += "<b>Вы неуязвимы и невидимы для живых, но не для призраков. Однако большинство способностей материализуют вас, делая уязвимым.</b>"
+	qareen_greet += "<b>Для своей подпидки вы должны высасывать жизненную эссенцию похоти из существ. Эта эссенция является как ресурсом, так и вашим здоровьем, от которого заряжаются все ваши способности.</b>"
+	qareen_greet += "<b><i>Вы ничего не помните о своих прошлых жизнях и ничего не вспомните о текущей после своей смерти.</i></b>"
 	qareen_greet += "<b>Be sure to read our discord rules for antagonists to learn more.</b>"
-	qareen_greet += "<b>You are also able to telekinetically throw objects by clickdragging them.</b>"
+	qareen_greet += "<b>Вы также можете телекинетически бросать предметы, перетаскивая их с помощью clickdragging.</b>"
 	to_chat(src, qareen_greet)
 	if(!generated_objectives_and_spells)
 		generated_objectives_and_spells = TRUE
@@ -456,7 +449,7 @@
 /obj/item/ectoplasm/qareen/Destroy()
 	if(!QDELETED(qareen))
 		qdel(qareen)
-	return ..()
+	..()
 
 /mob/living/simple_animal/qareen/proc/qareenThrow(over, mob/user, obj/item/throwable)
 	var/mob/living/simple_animal/qareen/spooker = user

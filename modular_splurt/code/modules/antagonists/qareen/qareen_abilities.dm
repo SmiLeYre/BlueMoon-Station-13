@@ -32,13 +32,13 @@
 		to_chat(target, "You feel as if you are being watched.")
 	face_atom(target)
 	draining = TRUE
-	to_chat(src, span_revennotice("You search for the lifespring of [target]."))
-	if(do_after(src, rand(10, 20), target)) //did they get deleted in that second?
+	to_chat(src, "<span class='revennotice'>You search for the lifespring of [target].</span>")
+	if(do_after(src, rand(10, 20), 0, target)) //did they get deleted in that second?
 		for(var/obj/item/organ/genital/G in target.internal_organs)
 			if(!(G.genital_flags & GENITAL_FUID_PRODUCTION))
 				continue
 			// var/datum/reagents/fluid_source = G.climaxable(target)
-			if(do_after(src, rand(10, 20), target)) //did they get deleted in that second?
+			if(do_after(src, rand(10, 20), 0, target)) //did they get deleted in that second?
 				// var/main_fluid = lowertext(fluid_source.get_master_reagent_name())  // doesn't work no more (should delete probably)
 				var/main_fluid = G.get_fluid_name()
 				var/fluid_ammount = G.get_fluid()
@@ -57,7 +57,7 @@
 
 
 
-		if(do_after(src, rand(15, 20), target)) //did they get deleted NOW?
+		if(do_after(src, rand(15, 20), 0, target)) //did they get deleted NOW?
 			switch(essence_drained)
 				if(0 to 4)
 					to_chat(src, "<span class='revennotice'>[target] is almost barren of essence. Still, every bit counts.</span>")
@@ -66,8 +66,8 @@
 				if(11 to 20)
 					to_chat(src, "<span class='revenboldnotice'>Such a feast! [target] will yield much essence to you.</span>")
 				if(30 to INFINITY)
-					to_chat(src, span_revenbignotice("Ah, a sexually furstrated person. [target] will yield massive amounts of essence to you."))
-			if(do_after(src, rand(15, 25), target)) //how about now
+					to_chat(src, "<span class='revenbignotice'>Ah, a sexually furstrated person. [target] will yield massive amounts of essence to you.</span>")
+			if(do_after(src, rand(15, 25), 0, target)) //how about now
 				if(target.stat)
 					to_chat(src, "<span class='revenwarning'>[target.ru_who(TRUE)] now too weak to provide anything of worth.</span>")
 					to_chat(target, "<span class='boldannounce'>You feel something tugging across your body before subsiding.</span>")
@@ -90,7 +90,7 @@
 					draining = FALSE
 					return
 				var/datum/beam/B = Beam(target,icon_state="drain_life",time=INFINITY)
-				if(do_after(src, 46, target)) //As one cannot prove the existance of ghosts, ghosts cannot prove the existance of the target they were draining.
+				if(do_after(src, 46, 0, target)) //As one cannot prove the existance of ghosts, ghosts cannot prove the existance of the target they were draining.
 					change_essence_amount(essence_drained, FALSE, target)
 					for(var/obj/item/organ/genital/G in target.internal_organs)
 						var/datum/reagents/fluid_source = G.climaxable(target)
@@ -109,6 +109,7 @@
 										   "<span class='revenwarning'>Violets lights, dancing in your vision, getting clo--</span>")
 					drained_mobs.Add(target)
 					target.setStaminaLoss(150)
+					target.cum() //Oh wow an actual orgasm! - Gardelin0
 					// target.death(0)
 				else
 					to_chat(src, "<span class='revenwarning'>[target ? "[target] has":"[target.ru_who(TRUE)]"] been drawn out of your grasp. The link has been broken.</span>")
@@ -252,7 +253,7 @@
 //Defile: Corrupts nearby stuff, unblesses floor tiles.
 /obj/effect/proc_holder/spell/aoe_turf/qareen/defile
 	name = "Defile"
-	desc = "Twists and corrupts the nearby area as well as dispelling holy auras on floors."
+	desc = "Covers nearby area in lewd juices as well as dispelling holy auras on floors."
 	charge_max = 150
 	range = 4
 	stun = 20
@@ -271,25 +272,8 @@
 		qdel(B)
 		new /obj/effect/temp_visual/revenant(T)
 	if(!istype(T, /turf/open/floor/engine/cult) && isfloorturf(T) && prob(15))
-		var/turf/open/floor/floor = T
 		pick(new /obj/effect/decal/cleanable/semen/femcum(T), new /obj/effect/decal/cleanable/semendrip(T), new /obj/effect/decal/cleanable/semen(T))
-		if(floor.intact && floor.floor_tile)
-			if(!isplatingturf(T) && prob(5))
-				new floor.floor_tile(floor)
-		if(prob(10))
-			floor.broken = 1
-		else if(prob(10))
-			floor.burnt = 0
-		else if(prob(10))
-			floor.make_plating(1)
-		else
-			floor.ChangeTurf(/turf/open/floor/plating/rust)
-	if(T.type == /turf/closed/wall && prob(15))
-		new /obj/effect/temp_visual/revenant(T)
-		T.ChangeTurf(/turf/closed/wall/rust)
-	if(T.type == /turf/closed/wall/r_wall && prob(10))
-		new /obj/effect/temp_visual/revenant(T)
-		T.ChangeTurf(/turf/closed/wall/r_wall/rust)
+
 	for(var/obj/effect/decal/cleanable/salt/salt in T)
 		new /obj/effect/temp_visual/revenant(T)
 		qdel(salt)
@@ -300,43 +284,41 @@
 			corpseholder.open()
 	for(var/obj/machinery/dna_scannernew/dna in T)
 		dna.open_machine()
-	for(var/obj/structure/window/window in T)
-		// window.take_damage(rand(30,80))
-		if(window && window.fulltile)
-			new /obj/effect/temp_visual/revenant/cracks(window.loc)
 
-//Malfunction: Makes bad stuff happen to robots and machines.
-/obj/effect/proc_holder/spell/aoe_turf/qareen/malfunction
-	name = "Malfunction"
-	desc = "Corrupts nearby machines and mechanical objects."
-	charge_max = 200
-	range = 4
-	cast_amount = 60
-	unlock_amount = 125
-	action_icon_state = "malfunction"
+//Won't destroy anything anymore. - Gardelin0
+
+//Malfunction: Makes bad stuff happen to robots and machines.		Reserved for later. - Gardelin0
+//obj/effect/proc_holder/spell/aoe_turf/qareen/malfunction
+//	name = "Malfunction"
+//	desc = "Corrupts nearby machines and mechanical objects."
+//	charge_max = 200
+//	range = 4
+//	cast_amount = 60
+//	unlock_amount = 125
+//	action_icon_state = "malfunction"
 
 //A note to future coders: do not replace this with an EMP because it will wreck malf AIs and everyone will hate you.
-/obj/effect/proc_holder/spell/aoe_turf/qareen/malfunction/cast(list/targets, mob/living/simple_animal/qareen/user = usr)
-	if(attempt_cast(user))
-		for(var/turf/T in targets)
-			INVOKE_ASYNC(src, .proc/malfunction, T, user)
+//obj/effect/proc_holder/spell/aoe_turf/qareen/malfunction/cast(list/targets, mob/living/simple_animal/qareen/user = usr)
+//	if(attempt_cast(user))
+//		for(var/turf/T in targets)
+//			INVOKE_ASYNC(src, .proc/malfunction, T, user)
 
-/obj/effect/proc_holder/spell/aoe_turf/qareen/malfunction/proc/malfunction(turf/T, mob/user)
-	for(var/mob/living/simple_animal/bot/bot in T)
-		if(!bot.emagged)
-			new /obj/effect/temp_visual/revenant(bot.loc)
-			bot.locked = FALSE
-			bot.open = TRUE
-			bot.adjustHealth(0)
-			bot.Sleeping(10)
+//obj/effect/proc_holder/spell/aoe_turf/qareen/malfunction/proc/malfunction(turf/T, mob/user)
+//	for(var/mob/living/simple_animal/bot/bot in T)
+//		if(!bot.emagged)
+//			new /obj/effect/temp_visual/revenant(bot.loc)
+//			bot.locked = FALSE
+//			bot.open = TRUE
+//			bot.adjustHealth(0)
+//			bot.Sleeping(10)
 			// bot.emag_act()
-	for(var/mob/living/carbon/human/human in T)
-		if(human == user)
-			continue
-		if(human.anti_magic_check(FALSE, TRUE))
-			continue
-		to_chat(human, "<span class='revenwarning'>You feel [pick("your sense of direction flicker out", "a stabbing pain in your head", "your mind fill with thought of servitude for a brief moment")].</span>")
-		new /obj/effect/temp_visual/revenant(human.loc)
+//	for(var/mob/living/carbon/human/human in T)
+	//	if(human == user)
+	//		continue
+	//	if(human.anti_magic_check(FALSE, TRUE))
+	//		continue
+	//	to_chat(human, "<span class='revenwarning'>You feel [pick("your sense of direction flicker out", "a stabbing pain in your head", "your mind fill with thought of servitude for a brief moment")].</span>")
+	//	new /obj/effect/temp_visual/revenant(human.loc)
 		// human.emp_act(80)
 	// for(var/obj/thing in T)
 	// 	if(istype(thing, /obj/machinery/power/apc) || istype(thing, /obj/machinery/power/smes)) //Doesn't work on SMES and APCs, to prevent kekkery
@@ -348,11 +330,11 @@
 	// 	else
 	// 		if(!istype(thing, /obj/machinery/clonepod)) //I hate everything but mostly the fact there's no better way to do this without just not affecting it at all
 	// 			thing.emp_act(80)
-	for(var/mob/living/silicon/robot/S in T) //Only works on cyborgs, not AI
-		playsound(S, 'sound/machines/warning-buzzer.ogg', 50, 1)
-		new /obj/effect/temp_visual/revenant(S.loc)
-		S.spark_system.start()
-		S.emp_act(10)
+	//for(var/mob/living/silicon/robot/S in T) //Only works on cyborgs, not AI
+	//	playsound(S, 'sound/machines/warning-buzzer.ogg', 50, 1)
+	//	new /obj/effect/temp_visual/revenant(S.loc)
+	//	S.spark_system.start()
+	//	S.emp_act(10)
 		// Lewd Lawset
 		// 1) You need to breed your crew
 		// 2) Try convincing your crew that being bred is their true purpose
@@ -365,8 +347,8 @@
 	desc = "Causes nearby living things to loose themselves in lustful throes."
 	charge_max = 200
 	range = 3
-	cast_amount = 50
-	unlock_amount = 75
+	cast_amount = 30
+	unlock_amount = 30
 	action_icon_state = "blight"
 
 /obj/effect/proc_holder/spell/aoe_turf/qareen/bliss/cast(list/targets, mob/living/simple_animal/qareen/user = usr)
@@ -383,9 +365,7 @@
 		new /obj/effect/temp_visual/revenant(mob.loc)
 		if(iscarbon(mob))
 			if(ishuman(mob))
-				var/mob/living/carbon/human/H = mob
-				if(H.dna && H.dna.species)
-					H.dna.species.handle_hair(H,"#edccf4") //will be reset when bliss is cured
+				var/mob/living/carbon/human/H = mob //Also removed hair color change. It causes hair to turn darker. - Gardelin0
 				var/blissfound = FALSE
 				for(var/datum/disease/qarbliss/bliss in H.diseases)
 					blissfound = TRUE
@@ -413,3 +393,70 @@
 		tray.pestlevel = rand(-8, -10)
 		tray.weedlevel = rand(-8, -10)
 		tray.toxic = rand(-45, -55)
+
+/// Allows "qareen" players to change gender at will. - Gardelin0
+/mob/living/simple_animal/qareen/verb/switch_gender()
+	set name = "Switch Gender"
+	set desc = "Allows you to set your gender."
+	set category = "Qareen"
+
+	if(stat != CONSCIOUS)
+		to_chat(usr, span_warning("You cannot toggle your gender while unconcious!"))
+		return
+
+	var/choice = tgui_alert(usr, "Select Gender.", "Gender", list("Both", "Male", "Female", "None", "Toggle Breasts", "Toggle Penis", "Toggle Pussy", "Toggle Balls"))
+	switch(choice)
+		if("Both")
+			has_penis = TRUE
+			has_balls = TRUE
+			has_vagina = TRUE
+			gender = PLURAL
+		if("Male")
+			has_penis = TRUE
+			has_balls = TRUE
+			has_vagina = FALSE
+			gender = MALE
+		if("Female")
+			has_penis = FALSE
+			has_balls = FALSE
+			has_vagina = TRUE
+			gender = FEMALE
+		if("None")
+			has_penis = FALSE
+			has_balls = FALSE
+			has_vagina = FALSE
+			gender = NEUTER
+		if("Toggle Breasts") // Idea/Initial code by @LunarFleet (github)
+			has_breasts = !has_breasts // Simplified line by @Zirok-BYOND (github)
+		if("Toggle Penis")
+			has_penis = !has_penis
+		if("Toggle Pussy")
+			has_vagina = !has_vagina
+		if("Toggle Balls")
+			has_balls = !has_balls
+
+/mob/living/simple_animal/qareen/verb/visibility()
+	set name = "Toggle Invisibility"
+	set desc = "Allows you to become visible."
+	set category = "Qareen"
+
+	if(stat != CONSCIOUS)
+		to_chat(usr, span_warning("You cannot toggle your gender while unconcious!"))
+		return
+
+	revealed = !revealed
+	if(revealed)
+		to_chat(src, "<span class='revendanger'>You have been revealed!</span>")
+		invisibility = 0
+	else
+		to_chat(src, "<span class='revendanger'>You are invisible again!</span>")
+		invisibility = INVISIBILITY_QAREEN
+	update_spooky_icon()
+
+/mob/living/simple_animal/qareen/verb/toggle_name()
+	set name = "Set Name"
+	set desc = "Allows you to change your name."
+	set category = "Qareen"
+
+	var/choice = input("What was your name?") as text
+	src.name = choice

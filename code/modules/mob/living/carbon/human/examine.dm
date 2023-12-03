@@ -261,7 +261,7 @@
 		if(HAS_TRAIT(body_part, TRAIT_DISABLED_BY_WOUND))
 			continue // skip if it's disabled by a wound (cuz we'll be able to see the bone sticking out!)
 		if(!(body_part.get_damage(include_stamina = FALSE) >= body_part.max_damage)) //we don't care if it's stamcritted
-			damage_text = "[body_part.is_robotic_limb() ? "висит и болтается" : "обвисла и побледнела"]" // BLUEMOON EDIT - добавлена проверка на роботизированные конечности
+			damage_text = "выглядит обвисшей и бледноватой"
 		else
 			damage_text = (body_part.brute_dam >= body_part.burn_dam) ? body_part.heavy_brute_msg : body_part.heavy_burn_msg
 		msg += "<B>[ru_ego(TRUE)] [body_part.ru_name] [damage_text]!</B>\n"
@@ -338,12 +338,11 @@
 	if(nutrition < NUTRITION_LEVEL_STARVING - 50)
 		msg += "[t_on] выглядит смертельно истощённо.\n"
 	else if(nutrition >= NUTRITION_LEVEL_FAT)
-		if(HAS_TRAIT(src, TRAIT_INCUBUS || TRAIT_SUCCUBUS))
-			return //Imagine getting fat from hot load - Gardelin0
-		if(user.nutrition < NUTRITION_LEVEL_STARVING - 50)
-			msg += "[t_on] выглядит довольно толстенько, словно какой-то поросёнок. Очень вкусный поросёнок.\n"
-		else
-			msg += "[t_on] выглядит довольно плотно.\n"
+		if(!HAS_TRAIT(src, TRAIT_SUCCUBUS) && !HAS_TRAIT(src, TRAIT_INCUBUS))	//Imagine getting fat from hot load - Gardelin0
+			if(user.nutrition < NUTRITION_LEVEL_STARVING - 50)
+				msg += "[t_on] выглядит довольно толстенько, словно какой-то поросёнок. Очень вкусный поросёнок.\n"
+			else
+				msg += "[t_on] выглядит довольно плотно.\n"
 	switch(disgust)
 		if(DISGUST_LEVEL_GROSS to DISGUST_LEVEL_VERYGROSS)	//Не он отвратительный, а ему отвратительно.
 			msg += "[ru_emu(TRUE)] слегка неприятно.\n"	//a bit grossed out
@@ -480,7 +479,7 @@
 			if(SOFT_CRIT)
 				msg += "<span class='deadsay'>[t_on] едва в сознании.</span>\n"
 			if(CONSCIOUS)
-				if(HAS_TRAIT(src, TRAIT_DUMB) && !HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON EDIT - добавлена проверка на роботов
+				if(HAS_TRAIT(src, TRAIT_DUMB))
 					msg += "[t_on] имеет глупое выражение лица.\n"
 		if(getorgan(/obj/item/organ/brain))
 			if(ai_controller?.ai_status == AI_STATUS_ON)
@@ -488,7 +487,7 @@
 			if(!key)
 				msg += "<span class='warning'>[t_on] кататоник. Стресс от жизни в глубоком космосе сильно повлиял на н[t_ego]. Восстановление маловероятно.</span>\n"
 			else if(!client)
-				msg += "<span class='warning'><B>Не стоит [ru_ego()] трогать.</B> [t_on] имеет пустой, рассеянный взгляд и кажется совершенно не реагирующим ни на что. В этом состоянии [t_on] находится [round(((world.time - lastclienttime) / (1 MINUTES)), 1)] минут. [t_on] может выйти из этого состояни в ближайшее время.\n" //SKYRAT CHANGE - ssd indicator
+				msg += "<span class='warning'><B>Не стоит [ru_ego(TRUE)] трогать.</B> [t_on] имеет пустой, рассеянный взгляд и кажется совершенно не реагирующим ни на что. В этом состоянии [t_on] находится [round(((world.time - lastclienttime) / (1 MINUTES)), 1)] минут. [t_on] может выйти из этого состояни в ближайшее время.\n" //SKYRAT CHANGE - ssd indicator
 
 	var/trait_exam = common_trait_examine()
 	if (!isnull(trait_exam))
@@ -514,34 +513,33 @@
 		. += span_warning("[msg.Join("")]")
 
 	var/traitstring = get_trait_string()
-	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
-		var/obj/item/organ/cyberimp/eyes/hud/CIH = H.getorgan(/obj/item/organ/cyberimp/eyes/hud)
-		if(istype(H.glasses, /obj/item/clothing/glasses/hud) || CIH)
-			var/perpname = get_face_name(get_id_name(""))
-			if(perpname)
-				var/datum/data/record/R = find_record("name", perpname, GLOB.data_core.general)
-				if(R)
-					. += "<span class='deptradio'>Rank:</span> [R.fields["rank"]]\n<a href='?src=[REF(src)];hud=1;photo_front=1'>\[Front photo\]</a><a href='?src=[REF(src)];hud=1;photo_side=1'>\[Side photo\]</a>"
-				if(istype(H.glasses, /obj/item/clothing/glasses/hud/security) || istype(CIH, /obj/item/organ/cyberimp/eyes/hud/security))
-					if(!user.stat && user != src)
-					//|| !user.canmove || user.restrained()) Fluff: Sechuds have eye-tracking technology and sets 'arrest' to people that the wearer looks and blinks at.
-						var/criminal = "None"
-						R = find_record("name", perpname, GLOB.data_core.security)
-						if(R)
+
+	if(hasHUD(user, DATA_HUD_SECURITY_BASIC))
+		var/perpname = get_visible_name(TRUE)
+		var/criminal = "None"
+		var/commentLatest = "ERROR: Unable to locate a data core entry for this person." //If there is no datacore present, give this
+
+		if(perpname)
+			for(var/datum/data/record/E in GLOB.data_core.general)
+				if(E.fields["name"] == perpname)
+					for(var/datum/data/record/R in GLOB.data_core.security)
+						if(R.fields["id"] == E.fields["id"])
 							criminal = R.fields["criminal"]
-						. += jointext(list("<span class='deptradio'>Criminal status:</span> <a href='?src=[REF(src)];hud=s;status=1'>\[[criminal]\]</a>",
-							"<span class='deptradio'>Security record:</span> <a href='?src=[REF(src)];hud=s;view=1'>\[View\]</a>",
-							"<a href='?src=[REF(src)];hud=s;add_crime=1'>\[Add crime\]</a>",
-							"<a href='?src=[REF(src)];hud=s;view_comment=1'>\[View comment log\]</a>",
-							"<a href='?src=[REF(src)];hud=s;add_comment=1'>\[Add comment\]</a>"), "")
+							if(LAZYLEN(R.fields["comments"])) //if the commentlist is present
+								var/list/comments = R.fields["comments"]
+								commentLatest = LAZYACCESS(comments, comments.len) //get the latest entry from the comment log
+							else
+								commentLatest = "No entries." //If present but without entries (=target is recognized crew)
+
+			var/criminal_status = hasHUD(user, DATA_HUD_SECURITY_ADVANCED) ? "<a href='?src=[UID()];criminal=1'>\[[criminal]\]</a>" : "\[[criminal]\]"
+			msg += "<span class = 'deptradio'>Criminal status:</span> [criminal_status]\n"
+			msg += "<span class = 'deptradio'>Security records:</span> <a href='?src=[UID()];secrecordComment=`'>\[View comment log\]</a> <a href='?src=[UID()];secrecordadd=`'>\[Add comment\]</a>\n"
+			msg += "<span class = 'deptradio'>Latest entry:</span> [commentLatest]\n"
+
 
 	if(hasHUD(user,DATA_HUD_MEDICAL_BASIC))
 		var/perpname = get_visible_name(TRUE)
 		var/medical = "None"
-
-		if(traitstring)
-			. += "<span class='info'>Detected physiological traits:\n[traitstring]</span>"
 
 		for(var/datum/data/record/E in GLOB.data_core.general)
 			if(E.fields["name"] == perpname)

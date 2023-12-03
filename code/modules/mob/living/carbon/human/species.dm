@@ -1613,19 +1613,18 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			//
 			H.update_inv_wear_suit()
 	else
-		if(HAS_TRAIT(H, TRAIT_INCUBUS || TRAIT_SUCCUBUS))
-			return //Imagine getting fat from hot load - Gardelin0
 		if(H.overeatduration >= 100)
-			to_chat(H, "<span class='danger'>You suddenly feel blubbery!</span>")
-			ADD_TRAIT(H, TRAIT_FAT, OBESITY)
-			H.add_movespeed_modifier(/datum/movespeed_modifier/obesity)
-			H.update_inv_w_uniform()
-			//skyrat edit
-			H.update_inv_w_underwear()
-			H.update_inv_w_socks()
-			H.update_inv_w_shirt()
-			//
-			H.update_inv_wear_suit()
+			if(!HAS_TRAIT(H, TRAIT_INCUBUS) && !HAS_TRAIT(H, TRAIT_SUCCUBUS))
+				to_chat(H, "<span class='danger'>You suddenly feel blubbery!</span>")	//Imagine getting fat from hot load - Gardelin0
+				ADD_TRAIT(H, TRAIT_FAT, OBESITY)
+				H.add_movespeed_modifier(/datum/movespeed_modifier/obesity)
+				H.update_inv_w_uniform()
+				//skyrat edit
+				H.update_inv_w_underwear()
+				H.update_inv_w_socks()
+				H.update_inv_w_shirt()
+				//
+				H.update_inv_wear_suit()
 
 	// nutrition decrease and satiety
 	if (H.nutrition > 0 && H.stat != DEAD && !HAS_TRAIT(H, TRAIT_NOHUNGER))

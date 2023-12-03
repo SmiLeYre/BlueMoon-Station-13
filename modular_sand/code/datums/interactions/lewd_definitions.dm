@@ -806,6 +806,8 @@
 				target_gen = c_partner.getorganslot(ORGAN_SLOT_BREASTS)
 			if(CUM_TARGET_PENIS)
 				target_gen = c_partner.getorganslot(ORGAN_SLOT_PENIS)
+			if(CUM_TARGET_MOUTH)	//Why wasn't it here?! - Gardelin0
+				target_gen = c_partner.getorganslot(ORGAN_SLOT_STOMACH)
 	if(gender == MALE || (gender == PLURAL && ismasculine(src)))
 		playlewdinteractionsound(loc, pick('modular_sand/sound/interactions/final_m1.ogg',
 							'modular_sand/sound/interactions/final_m2.ogg',

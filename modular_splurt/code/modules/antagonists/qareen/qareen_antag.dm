@@ -2,7 +2,7 @@
 	name = "Qareen"
 	show_in_antagpanel = FALSE
 	show_name_in_check_antagonists = TRUE
-	threat = 5
+	threat = 3 //Just a horny antag, threat reduced. - Gardelin0
 	show_to_ghosts = TRUE
 
 /datum/antagonist/qareen/greet()

@@ -1,6 +1,7 @@
 //#define LOWMEMORYMODE //uncomment this to load centcom and runtime station and thats it.
 
 #include "map_files\generic\CentCom.dmm"
+#include "map_files\Gardelin0\spawn_rooms.dmm"	//spawn_rooms are or horny ghost roles to spawn every round. - Gardelin0
 
 #ifndef LOWMEMORYMODE
 	#ifdef ALL_MAPS
