@@ -2,16 +2,14 @@
 "aa" = (
 /obj/structure/filingcabinet/security,
 /turf/open/indestructible,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "ab" = (
 /turf/open/space,
 /area/space)
 "ac" = (
 /turf/closed/indestructible/necropolis,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 1"
+/area/awaymission/Killthemall/Level{
+	name = "Level 1"
 	})
 "ae" = (
 /mob/living/simple_animal/chick{
@@ -22,13 +20,13 @@
 	turns_per_move = 0
 	},
 /turf/open/indestructible/spooknecropolis,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 1"
+/area/awaymission/Killthemall/Level{
+	name = "Level 1"
 	})
 "af" = (
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "ai" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -38,28 +36,28 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/floor/holofloor/snow,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 2"
+/area/awaymission/Killthemall/Level{
+	name = "Level 2"
 	})
 "ak" = (
 /obj/structure/shipping_container/deforest,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "al" = (
 /obj/structure/sign/flag/inteq,
 /turf/closed/wall/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "am" = (
 /obj/item/storage/toolbox/gold_fake,
 /obj/item/reagent_containers/food/drinks/flask/gold,
 /obj/structure/closet/crate,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 9"
+/area/awaymission/Killthemall/Level{
+	name = "Level 9"
 	})
 "aq" = (
 /obj/structure/chair/office{
@@ -68,15 +66,13 @@
 /obj/structure/window/reinforced,
 /obj/effect/landmark/awaystart,
 /turf/open/indestructible,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "az" = (
 /obj/item/trash/candle,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/rust,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 3"
+/area/awaymission/Killthemall/Level{
+	name = "Level 3"
 	})
 "aH" = (
 /obj/structure/closet/crate/necropolis,
@@ -86,33 +82,31 @@
 /obj/item/kitchen/knife/ritual,
 /obj/item/kitchen/knife/combat/survival/knuckledagger,
 /turf/open/indestructible/spooknecropolis,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 1"
+/area/awaymission/Killthemall/Level{
+	name = "Level 1"
 	})
 "aJ" = (
 /obj/structure/destructible/cult/tome,
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 5"
+/area/awaymission/Killthemall/Level{
+	name = "Level 5"
 	})
 "aK" = (
 /obj/machinery/recharger,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "aL" = (
 /obj/structure/sign/poster/contraband/nri_pistol,
 /turf/closed/indestructible/wall,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "aW" = (
 /obj/effect/turf_decal/delivery,
 /obj/structure/shipping_container/donk_co,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "aZ" = (
 /mob/living/simple_animal/hostile/jungle/mook{
@@ -121,8 +115,8 @@
 	turns_per_move = 0
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "bg" = (
 /obj/structure/table,
@@ -130,20 +124,20 @@
 	dir = 6
 	},
 /turf/open/indestructible/sound,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "bn" = (
 /obj/structure/ore_box,
 /turf/open/indestructible/cobble,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 7"
+/area/awaymission/Killthemall/Level{
+	name = "Level 7"
 	})
 "bo" = (
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/circuit/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "bB" = (
 /obj/structure/flora/junglebush/c,
@@ -161,8 +155,8 @@
 /obj/structure/closet/crate,
 /obj/item/seeds/kudzu,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 8"
+/area/awaymission/Killthemall/Level{
+	name = "Level 8"
 	})
 "bK" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/hunter{
@@ -172,8 +166,8 @@
 	stop_automated_movement = 1
 	},
 /turf/open/floor/catwalk_floor,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 15"
+/area/awaymission/Killthemall/Level{
+	name = "Level 15"
 	})
 "bQ" = (
 /obj/structure/stone_tile/block/burnt,
@@ -183,35 +177,33 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "bV" = (
 /obj/effect/mob_spawn/human/corpse/damaged,
 /turf/open/floor/padded,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 11"
+/area/awaymission/Killthemall/Level{
+	name = "Level 11"
 	})
 "bW" = (
 /mob/living/simple_animal/hostile/skeleton/plasmaminer/jackhammer{
 	faction = list("shiz")
 	},
 /turf/open/floor/padded,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 11"
+/area/awaymission/Killthemall/Level{
+	name = "Level 11"
 	})
 "bZ" = (
 /obj/structure/shipping_container/cybersun,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "ci" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/open/indestructible,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "cj" = (
 /obj/structure/ladder/unbreakable/rune{
 	color = "#ff0000";
@@ -220,8 +212,8 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "cq" = (
 /mob/living/simple_animal/hostile/crazysci{
@@ -231,8 +223,8 @@
 	faction = list("shiz")
 	},
 /turf/open/floor/padded,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 11"
+/area/awaymission/Killthemall/Level{
+	name = "Level 11"
 	})
 "cr" = (
 /obj/structure/fluff/drake_statue/falling,
@@ -240,8 +232,8 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "cs" = (
 /mob/living/simple_animal/hostile/russian/ranged/trooper{
@@ -249,8 +241,8 @@
 	stop_automated_movement_when_pulled = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "cJ" = (
 /obj/structure/chair/comfy,
@@ -260,8 +252,8 @@
 	stop_automated_movement_when_pulled = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "cM" = (
 /mob/living/simple_animal/hostile/sptrooper{
@@ -269,47 +261,47 @@
 	stop_automated_movement_when_pulled = 1
 	},
 /turf/open/floor/catwalk_floor,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 15"
+/area/awaymission/Killthemall/Level{
+	name = "Level 15"
 	})
 "cP" = (
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood,
 /turf/open/indestructible/spooknecropolis,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 1"
+/area/awaymission/Killthemall/Level{
+	name = "Level 1"
 	})
 "cQ" = (
 /obj/structure/shipping_container/interdyne,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "cR" = (
 /obj/structure/statue/sandstone/venus{
 	dir = 8
 	},
 /turf/open/indestructible/cobble,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 7"
+/area/awaymission/Killthemall/Level{
+	name = "Level 7"
 	})
 "cU" = (
 /obj/structure/flora/junglebush/c,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "cV" = (
 /obj/structure/showcase/mecha/marauder,
 /turf/open/floor/iron/kitchen/herringbone,
-/area/awaymission/errorroom{
-	name = "Party Party Party!"
+/area/awaymission/Killthemall/start{
+	name = "End"
 	})
 "cX" = (
 /turf/closed/indestructible/rock,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "de" = (
 /obj/machinery/door/keycard,
@@ -317,8 +309,8 @@
 	icon = 'icons/turf/floors/carpet.dmi';
 	icon_state = "carpet"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "df" = (
 /obj/structure/table,
@@ -327,24 +319,22 @@
 	},
 /obj/item/paper_bin,
 /turf/open/indestructible,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "dl" = (
 /mob/living/simple_animal/hostile/retaliate/spaceman{
 	faction = list("shiz")
 	},
 /turf/open/floor/padded,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 11"
+/area/awaymission/Killthemall/Level{
+	name = "Level 11"
 	})
 "dt" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 10"
+/area/awaymission/Killthemall/Level{
+	name = "Level 10"
 	})
 "dA" = (
 /mob/living/simple_animal/hostile/looter{
@@ -355,41 +345,41 @@
 	},
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/rust,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 3"
+/area/awaymission/Killthemall/Level{
+	name = "Level 3"
 	})
 "dB" = (
 /obj/structure/rack/shelf,
 /obj/item/gun/medbeam,
 /turf/open/floor/padded,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 11"
+/area/awaymission/Killthemall/Level{
+	name = "Level 11"
 	})
 "dC" = (
 /obj/structure/flora/tree/jungle/small{
 	layer = 3
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "ep" = (
 /turf/closed/mineral/ash_rock,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 7"
+/area/awaymission/Killthemall/Level{
+	name = "Level 7"
 	})
 "ew" = (
 /obj/structure/flora/tree/jungle,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "eB" = (
 /obj/machinery/modular_computer/console,
 /turf/open/floor/iron/kitchen,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 4"
+/area/awaymission/Killthemall/Level{
+	name = "Level 4"
 	})
 "eL" = (
 /turf/closed/wall/mineral/titanium/spaceship,
@@ -399,15 +389,15 @@
 	max_integrity = 40
 	},
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 5"
+/area/awaymission/Killthemall/Level{
+	name = "Level 5"
 	})
 "eV" = (
 /obj/structure/table,
 /obj/item/documents/syndicate,
 /turf/open/floor/iron/kitchen,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 4"
+/area/awaymission/Killthemall/Level{
+	name = "Level 4"
 	})
 "eW" = (
 /obj/structure/table,
@@ -415,23 +405,23 @@
 	dir = 4
 	},
 /turf/open/indestructible/sound,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "eZ" = (
 /turf/closed/indestructible/rock/snow/ice{
 	layer = 111
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 2"
+/area/awaymission/Killthemall/Level{
+	name = "Level 2"
 	})
 "fa" = (
 /obj/structure/flora/tree/jungle{
 	layer = 6
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "fc" = (
 /obj/machinery/door/airlock/medical/glass,
@@ -439,15 +429,15 @@
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/item/restraints/legcuffs/beartrap/prearmed,
 /turf/open/floor/padded,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 11"
+/area/awaymission/Killthemall/Level{
+	name = "Level 11"
 	})
 "fi" = (
 /obj/structure/rack/shelf,
 /obj/item/mecha_parts/mecha_equipment/anticcw_armor_booster,
 /turf/open/indestructible/sound,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "fq" = (
 /mob/living/simple_animal/hostile/asteroid/lobstrosity/lava{
@@ -458,8 +448,8 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 10"
+/area/awaymission/Killthemall/Level{
+	name = "Level 10"
 	})
 "ft" = (
 /obj/item/clothing/suit/straight_jacket,
@@ -471,13 +461,13 @@
 	stop_automated_movement = 1
 	},
 /turf/open/floor/padded,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 11"
+/area/awaymission/Killthemall/Level{
+	name = "Level 11"
 	})
 "fv" = (
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 8"
+/area/awaymission/Killthemall/Level{
+	name = "Level 8"
 	})
 "fw" = (
 /obj/structure/stone_tile/block/burnt{
@@ -486,14 +476,14 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "fC" = (
 /obj/structure/spacevine,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 8"
+/area/awaymission/Killthemall/Level{
+	name = "Level 8"
 	})
 "fD" = (
 /obj/structure/table/wood/poker,
@@ -501,24 +491,24 @@
 /obj/item/lighter,
 /obj/item/toy/cards/cardhand,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "fE" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/bearsteak,
 /obj/item/reagent_containers/food/drinks/bottle/vodka,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "fI" = (
 /obj/structure/stone_tile/block/burnt,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "fK" = (
 /obj/structure/flora/tree/jungle{
@@ -526,34 +516,32 @@
 	},
 /obj/structure/flora/ausbushes/fernybush,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "fQ" = (
 /obj/structure/flora/tree/jungle,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "fR" = (
 /obj/structure/sign/poster/contraband/syndicate_pistol,
 /turf/closed/indestructible/wall,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "fW" = (
 /obj/structure/stone_tile/slab/burnt,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "fX" = (
 /obj/structure/shipping_container/nthi,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "ga" = (
 /obj/structure/stone_tile/block/burnt{
@@ -565,8 +553,8 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "gb" = (
 /mob/living/simple_animal/hostile/syndicate/melee{
@@ -576,14 +564,14 @@
 	turns_per_move = 0
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "gf" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "gk" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -593,20 +581,20 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/floor/iron/kitchen/herringbone,
-/area/awaymission/errorroom{
-	name = "Party Party Party!"
+/area/awaymission/Killthemall/start{
+	name = "End"
 	})
 "gm" = (
 /obj/effect/mob_spawn/human/corpse/miner/explorer,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 9"
+/area/awaymission/Killthemall/Level{
+	name = "Level 9"
 	})
 "gp" = (
 /obj/structure/flora/ausbushes/palebush,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "gr" = (
 /obj/structure/closet/crate/large,
@@ -614,13 +602,13 @@
 /obj/effect/spawner/lootdrop/bluespace_tap/food,
 /obj/effect/spawner/lootdrop/bluespace_tap/food,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "gE" = (
 /turf/open/floor/festive/cobblestone/safe,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 7"
+/area/awaymission/Killthemall/Level{
+	name = "Level 7"
 	})
 "gO" = (
 /mob/living/simple_animal/hostile/netherworld{
@@ -632,8 +620,8 @@
 	turns_per_move = 0
 	},
 /turf/open/floor/iron/kitchen,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 4"
+/area/awaymission/Killthemall/Level{
+	name = "Level 4"
 	})
 "gT" = (
 /obj/structure/stone_tile{
@@ -642,89 +630,80 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "gU" = (
 /turf/closed/wall/ice,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "gX" = (
 /turf/closed/indestructible/wall,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "hg" = (
 /obj/structure/fermenting_barrel,
 /turf/open/indestructible/cobble,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 7"
+/area/awaymission/Killthemall/Level{
+	name = "Level 7"
 	})
 "hl" = (
 /obj/structure/table,
 /obj/machinery/recharger,
 /turf/open/indestructible/sound,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "ho" = (
 /obj/machinery/recharger,
 /turf/open/floor/catwalk_floor,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 15"
+/area/awaymission/Killthemall/Level{
+	name = "Level 15"
 	})
 "hr" = (
 /obj/structure/salvage/metal_frame,
 /turf/open/floor/catwalk_floor,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 15"
+/area/awaymission/Killthemall/Level{
+	name = "Level 15"
 	})
 "hs" = (
 /turf/closed/wall/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 9"
+/area/awaymission/Killthemall/Level{
+	name = "Level 9"
 	})
 "hu" = (
 /obj/structure/signpost,
 /turf/open/indestructible/cobble,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 7"
+/area/awaymission/Killthemall/Level{
+	name = "Level 7"
 	})
 "hD" = (
 /obj/structure/destructible/cult/talisman,
 /obj/effect/mob_spawn/human/corpse/miner/mod,
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 1"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss1"
 	})
 "hL" = (
 /obj/structure/flora/tree/jungle{
 	layer = 3
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "hN" = (
 /obj/effect/spawner/lootdrop/pizzaparty,
 /obj/structure/table,
 /obj/item/reagent_containers/food/drinks/beer,
 /turf/open/floor/iron/kitchen/herringbone,
-/area/awaymission/errorroom{
-	name = "Party Party Party!"
+/area/awaymission/Killthemall/start{
+	name = "End"
 	})
 "hP" = (
 /turf/closed/wall/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
-	})
-"hR" = (
-/turf/open/floor/plating/asteroid/basalt{
-	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
-	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 10"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "hT" = (
 /obj/structure/chair/office,
@@ -733,9 +712,7 @@
 	},
 /obj/effect/landmark/awaystart,
 /turf/open/indestructible,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "hU" = (
 /mob/living/simple_animal/hostile/syndicate/melee/space/stormtrooper{
 	inertia_move_delay = 0;
@@ -744,64 +721,64 @@
 	turns_per_move = 0
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "hW" = (
 /obj/structure/chair/stool/bar,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "hX" = (
 /obj/structure/shuttle/engine/large,
 /turf/open/floor/fakespace,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 9"
+/area/awaymission/Killthemall/Level{
+	name = "Level 9"
 	})
 "ia" = (
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "in" = (
 /turf/closed/wall/mineral/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 1"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss1"
 	})
 "is" = (
 /obj/machinery/sleeper/party{
 	dir = 4
 	},
 /turf/open/floor/iron/kitchen/herringbone,
-/area/awaymission/errorroom{
-	name = "Party Party Party!"
+/area/awaymission/Killthemall/start{
+	name = "End"
 	})
 "iv" = (
 /obj/structure/flora/rock/icy,
 /turf/open/floor/holofloor/snow,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 2"
+/area/awaymission/Killthemall/Level{
+	name = "Level 2"
 	})
 "iw" = (
 /obj/structure/sign/plaques,
 /turf/closed/wall/mineral/titanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 11"
+/area/awaymission/Killthemall/Level{
+	name = "Level 11"
 	})
 "ix" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 8"
+/area/awaymission/Killthemall/Level{
+	name = "Level 8"
 	})
 "iE" = (
 /obj/effect/turf_decal/delivery/blue,
 /obj/structure/rack,
 /obj/item/circuitboard/machine/vending/donksofttoyvendor,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "iN" = (
 /obj/structure/stone_tile/slab,
@@ -809,47 +786,47 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "iR" = (
 /turf/open/floor/circuit/green,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "jf" = (
 /obj/structure/flora/junglebush/large{
 	layer = 3
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 8"
+/area/awaymission/Killthemall/Level{
+	name = "Level 8"
 	})
 "jl" = (
 /obj/item/trash/candle,
 /turf/open/floor/plating/rust,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 3"
+/area/awaymission/Killthemall/Level{
+	name = "Level 3"
 	})
 "jn" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/meat/steak/bear,
 /obj/item/lighter,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "jr" = (
 /obj/structure/flora/junglebush/c,
 /obj/machinery/recharger,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 8"
+/area/awaymission/Killthemall/Level{
+	name = "Level 8"
 	})
 "ju" = (
 /turf/closed/wall/mineral/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 5"
+/area/awaymission/Killthemall/Level{
+	name = "Level 5"
 	})
 "jN" = (
 /mob/living/simple_animal/hostile/syndicate/mecha_pilot{
@@ -864,8 +841,8 @@
 	stop_automated_movement = 1
 	},
 /turf/open/indestructible,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "jV" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -875,8 +852,8 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/floor/catwalk_floor,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 15"
+/area/awaymission/Killthemall/Level{
+	name = "Level 15"
 	})
 "ka" = (
 /obj/structure/closet/crate/large,
@@ -885,13 +862,13 @@
 /obj/item/reagent_containers/food/drinks/bottle/applejack,
 /obj/effect/turf_decal/caution/stand_clear/white,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "kd" = (
 /turf/closed/indestructible/riveted,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "kf" = (
 /obj/structure/table,
@@ -902,8 +879,8 @@
 	dir = 9
 	},
 /turf/open/indestructible/sound,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "kv" = (
 /obj/effect/turf_decal/delivery/blue,
@@ -911,38 +888,33 @@
 /obj/item/reagent_containers/food/drinks/bottle/applejack,
 /obj/item/reagent_containers/food/drinks/bottle/applejack,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
-	})
-"ky" = (
-/turf/open/floor/fakespace,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "kB" = (
 /obj/structure/salvage/computer,
 /turf/open/floor/catwalk_floor,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 15"
+/area/awaymission/Killthemall/Level{
+	name = "Level 15"
 	})
 "kH" = (
 /turf/closed/indestructible/rock,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 10"
+/area/awaymission/Killthemall/Level{
+	name = "Level 10"
 	})
 "kU" = (
 /obj/effect/turf_decal/delivery/blue,
 /obj/structure/closet/crate/large,
 /obj/item/ammo_box/c45/hydra,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "kW" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/rust,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 3"
+/area/awaymission/Killthemall/Level{
+	name = "Level 3"
 	})
 "kX" = (
 /mob/living/simple_animal/hostile/pirate/ranged/space{
@@ -951,8 +923,8 @@
 	stop_automated_movement_when_pulled = 1
 	},
 /turf/open/floor/fakespace,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 9"
+/area/awaymission/Killthemall/Level{
+	name = "Level 9"
 	})
 "la" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -962,24 +934,24 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/floor/plating/rust,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 3"
+/area/awaymission/Killthemall/Level{
+	name = "Level 3"
 	})
 "lj" = (
 /turf/open/floor/padded,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 11"
+/area/awaymission/Killthemall/Level{
+	name = "Level 11"
 	})
 "lm" = (
 /turf/closed/indestructible/opshuttle,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 9"
+/area/awaymission/Killthemall/Level{
+	name = "Level 9"
 	})
 "lq" = (
 /obj/structure/flora/junglebush/c,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "lt" = (
 /obj/structure/stone_tile/block/cracked{
@@ -988,8 +960,8 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "lv" = (
 /obj/structure/closet/crate/large,
@@ -997,79 +969,77 @@
 /obj/item/reagent_containers/food/drinks/beer/almost_empty,
 /obj/item/reagent_containers/food/drinks/beer/almost_empty,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "lx" = (
 /obj/item/trash/cheesie,
 /turf/open/floor/plating/rust,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 3"
+/area/awaymission/Killthemall/Level{
+	name = "Level 3"
 	})
 "lK" = (
 /turf/open/floor/fakespace,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 9"
+/area/awaymission/Killthemall/Level{
+	name = "Level 9"
 	})
 "lR" = (
 /obj/structure/window/plastitanium,
 /obj/structure/grille,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 9"
+/area/awaymission/Killthemall/Level{
+	name = "Level 9"
 	})
 "lS" = (
 /obj/structure/flora/tree/jungle/small,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "mc" = (
 /turf/open/indestructible/cobble{
 	name = "void";
 	icon_state = "black"
 	},
-/area/awaymission/errorroom{
+/area/awaymission/Killthemall/start{
 	name = "???"
 	})
 "mk" = (
 /turf/closed/wall/mineral/titanium/spaceship,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 15"
+/area/awaymission/Killthemall/Level{
+	name = "Level 15"
 	})
 "mp" = (
 /mob/living/simple_animal/hostile/construct/builder/hostile{
 	maxHealth = 40
 	},
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 1"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss1"
 	})
 "mr" = (
 /obj/machinery/airalarm,
 /turf/closed/indestructible/wall,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "ms" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/plating/rust,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 3"
+/area/awaymission/Killthemall/Level{
+	name = "Level 3"
 	})
 "mt" = (
 /obj/structure/sign/departments/medbay/alt,
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 11"
+/area/awaymission/Killthemall/Level{
+	name = "Level 11"
 	})
 "mD" = (
 /obj/structure/table,
 /obj/item/paper/pamphlet/violent_video_games,
 /turf/open/indestructible/sound,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "mF" = (
 /obj/structure/stone_tile/block/cracked{
@@ -1078,8 +1048,8 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "mO" = (
 /mob/living/simple_animal/hostile/asteroid/wolf{
@@ -1087,20 +1057,20 @@
 	stop_automated_movement_when_pulled = 1
 	},
 /turf/open/floor/holofloor/snow,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 2"
+/area/awaymission/Killthemall/Level{
+	name = "Level 2"
 	})
 "mW" = (
 /obj/structure/salvage/protolathe,
 /turf/open/floor/catwalk_floor,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 15"
+/area/awaymission/Killthemall/Level{
+	name = "Level 15"
 	})
 "nh" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 5"
+/area/awaymission/Killthemall/Level{
+	name = "Level 5"
 	})
 "nn" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -1113,20 +1083,20 @@
 	name = "\improper secret escape route"
 	},
 /turf/open/floor/fakespace,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 9"
+/area/awaymission/Killthemall/Level{
+	name = "Level 9"
 	})
 "np" = (
 /obj/structure/bookcase/random,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "nq" = (
 /obj/structure/barricade/security/murderdome,
 /turf/open/indestructible,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "nB" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -1139,18 +1109,18 @@
 	name = "\improper secret escape route"
 	},
 /turf/open/indestructible/cobble,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 7"
+/area/awaymission/Killthemall/Level{
+	name = "Level 7"
 	})
 "nE" = (
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 5"
+/area/awaymission/Killthemall/Level{
+	name = "Level 5"
 	})
 "nM" = (
 /turf/open/floor/iron/kitchen,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 4"
+/area/awaymission/Killthemall/Level{
+	name = "Level 4"
 	})
 "nP" = (
 /mob/living/simple_animal/hostile/syndicate/ranged/smg{
@@ -1162,8 +1132,8 @@
 /obj/effect/turf_decal/delivery/blue,
 /obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "nV" = (
 /obj/structure/spacevine,
@@ -1174,32 +1144,32 @@
 	turns_per_move = 0
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 8"
+/area/awaymission/Killthemall/Level{
+	name = "Level 8"
 	})
 "nX" = (
 /obj/structure/destructible/cult/pylon,
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 1"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss1"
 	})
 "of" = (
 /obj/machinery/door/keycard/library,
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 1"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss1"
 	})
 "ol" = (
 /obj/structure/spacevine,
 /obj/structure/flora/junglebush/large,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 8"
+/area/awaymission/Killthemall/Level{
+	name = "Level 8"
 	})
 "om" = (
 /turf/closed/wall/r_wall/rust,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 3"
+/area/awaymission/Killthemall/Level{
+	name = "Level 3"
 	})
 "oB" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -1209,14 +1179,14 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "oN" = (
 /obj/structure/rack,
 /turf/open/indestructible/sound,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "oQ" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -1226,23 +1196,21 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 5"
+/area/awaymission/Killthemall/Level{
+	name = "Level 5"
 	})
 "oR" = (
 /obj/structure/flora/tree/jungle{
 	layer = 7
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "oW" = (
 /obj/machinery/door/window,
 /turf/open/indestructible,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "oZ" = (
 /mob/living/simple_animal/hostile/pirate/melee/space{
 	inertia_move_delay = 0;
@@ -1250,8 +1218,8 @@
 	stop_automated_movement_when_pulled = 1
 	},
 /turf/open/floor/fakespace,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 9"
+/area/awaymission/Killthemall/Level{
+	name = "Level 9"
 	})
 "pd" = (
 /obj/structure/stone_tile/slab,
@@ -1259,8 +1227,8 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "pe" = (
 /mob/living/simple_animal/hostile/cult/magic{
@@ -1269,14 +1237,14 @@
 	stop_automated_movement = 1
 	},
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 5"
+/area/awaymission/Killthemall/Level{
+	name = "Level 5"
 	})
 "pf" = (
 /obj/structure/shipping_container/gorlex/red,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "pn" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -1289,67 +1257,65 @@
 	name = "\improper secret escape route"
 	},
 /turf/open/floor/padded,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 11"
+/area/awaymission/Killthemall/Level{
+	name = "Level 11"
 	})
 "ps" = (
 /obj/structure/flora/junglebush/b,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 8"
+/area/awaymission/Killthemall/Level{
+	name = "Level 8"
 	})
 "pt" = (
 /obj/structure/rack/shelf,
 /obj/item/storage/toolbox,
 /turf/open/indestructible/sound,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "pA" = (
 /obj/effect/decal/cleanable/vomit/old,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/rust,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 3"
+/area/awaymission/Killthemall/Level{
+	name = "Level 3"
 	})
 "pE" = (
 /obj/effect/spawner/structure/window{
 	max_integrity = 40
 	},
 /turf/open/floor/iron/kitchen,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 4"
+/area/awaymission/Killthemall/Level{
+	name = "Level 4"
 	})
 "pG" = (
 /obj/structure/salvage/remains,
 /turf/open/floor/catwalk_floor,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 15"
+/area/awaymission/Killthemall/Level{
+	name = "Level 15"
 	})
 "pM" = (
 /obj/structure/sign/poster/contraband/bountyhunters,
 /turf/closed/indestructible/wall,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "pX" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "pY" = (
 /obj/effect/turf_decal/delivery/blue,
 /obj/structure/rack,
 /obj/item/vending_refill/donksoft,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "qe" = (
 /turf/closed/indestructible/rock/snow/ice,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 2"
+/area/awaymission/Killthemall/Level{
+	name = "Level 2"
 	})
 "qn" = (
 /obj/structure/rack,
@@ -1357,14 +1323,14 @@
 /obj/item/ammo_box/magazine/smgm45,
 /obj/item/ammo_box/magazine/smgm45,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "qq" = (
 /obj/structure/destructible/cult/pylon,
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 5"
 	})
 "qu" = (
 /obj/structure/table,
@@ -1381,14 +1347,14 @@
 	},
 /obj/item/clothing/suit/toggle/labcoat/mad/techcoat,
 /turf/open/floor/iron/kitchen,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 4"
+/area/awaymission/Killthemall/Level{
+	name = "Level 4"
 	})
 "qA" = (
 /mob/living/simple_animal/hostile/russian/ranged/mosin,
 /turf/open/indestructible,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "qC" = (
 /obj/structure/closet/crate/necropolis,
@@ -1403,20 +1369,20 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 10"
+/area/awaymission/Killthemall/Level{
+	name = "Level 10"
 	})
 "qD" = (
 /obj/effect/spawner/lootdrop/pizzaparty,
 /obj/structure/table,
 /turf/open/floor/iron/kitchen/herringbone,
-/area/awaymission/errorroom{
-	name = "Party Party Party!"
+/area/awaymission/Killthemall/start{
+	name = "End"
 	})
 "qF" = (
 /turf/open/lava,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 10"
+/area/awaymission/Killthemall/Level{
+	name = "Level 10"
 	})
 "qK" = (
 /obj/structure/closet/crate/large,
@@ -1424,49 +1390,49 @@
 /obj/item/reagent_containers/food/snacks/candy,
 /obj/item/reagent_containers/food/snacks/candy,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "qQ" = (
 /obj/vehicle/sealed/mecha/combat/gygax/bluespace,
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/circuit/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "qV" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 8"
+/area/awaymission/Killthemall/Level{
+	name = "Level 8"
 	})
 "rc" = (
 /obj/machinery/gateway/away,
 /turf/open/floor/iron/kitchen/herringbone,
-/area/awaymission/errorroom{
-	name = "Party Party Party!"
+/area/awaymission/Killthemall/start{
+	name = "End"
 	})
 "rf" = (
 /turf/open/water{
 	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 7"
+/area/awaymission/Killthemall/Level{
+	name = "Level 7"
 	})
 "ro" = (
 /obj/machinery/mech_bay_recharge_port,
 /turf/open/indestructible/sound,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "rp" = (
 /obj/structure/flora/ash/cacti,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 10"
+/area/awaymission/Killthemall/Level{
+	name = "Level 10"
 	})
 "rt" = (
 /obj/structure/stone_tile/block/burnt{
@@ -1478,22 +1444,22 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "ru" = (
 /obj/effect/turf_decal/delivery/blue,
 /obj/structure/rack,
 /obj/item/reagent_containers/food/drinks/bottle/champagne/empty,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "rv" = (
 /obj/structure/showcase/horrific_experiment,
 /turf/open/floor/iron/kitchen,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 4"
+/area/awaymission/Killthemall/Level{
+	name = "Level 4"
 	})
 "ry" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -1503,35 +1469,27 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/indestructible,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "rE" = (
 /obj/machinery/computer/mech_bay_power_console{
 	dir = 8
 	},
 /turf/open/indestructible/sound,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
-	})
-"rF" = (
-/obj/structure/destructible/cult/pylon,
-/turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 5"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "rG" = (
 /obj/structure/flora/tree/jungle,
 /obj/structure/flora/ausbushes/fernybush,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "rL" = (
 /obj/effect/decal/cleanable/oil,
 /turf/open/indestructible/sound,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "rQ" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -1544,8 +1502,8 @@
 	name = "\improper secret escape route"
 	},
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 5"
+/area/awaymission/Killthemall/Level{
+	name = "Level 5"
 	})
 "rS" = (
 /obj/structure/bed/secbed{
@@ -1553,8 +1511,8 @@
 	},
 /obj/item/bedsheet/random,
 /turf/open/floor/padded,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 11"
+/area/awaymission/Killthemall/Level{
+	name = "Level 11"
 	})
 "rW" = (
 /obj/structure/closet/crate/large,
@@ -1562,8 +1520,8 @@
 /obj/item/reagent_containers/food/snacks/beans,
 /obj/item/reagent_containers/food/snacks/beans,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "sh" = (
 /obj/structure/stone_tile/block/burnt{
@@ -1573,14 +1531,14 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "si" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "sq" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -1592,37 +1550,37 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 10"
+/area/awaymission/Killthemall/Level{
+	name = "Level 10"
 	})
 "sx" = (
 /obj/item/key,
 /turf/open/floor/holofloor/snow,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 2"
+/area/awaymission/Killthemall/Level{
+	name = "Level 2"
 	})
 "sI" = (
 /obj/structure/flora/ausbushes/fernybush,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "sS" = (
 /obj/structure/flora/grass/both,
 /turf/open/floor/holofloor/snow,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 2"
+/area/awaymission/Killthemall/Level{
+	name = "Level 2"
 	})
 "sU" = (
 /turf/closed/wall/r_wall/syndicate/nosmooth,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 4"
+/area/awaymission/Killthemall/Level{
+	name = "Level 4"
 	})
 "ti" = (
 /obj/structure/filingcabinet/chestdrawer,
 /turf/open/indestructible/sound,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "tk" = (
 /obj/structure/chair/office{
@@ -1631,9 +1589,7 @@
 /obj/structure/window/reinforced,
 /obj/effect/decal/remains/human,
 /turf/open/indestructible,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "tl" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /mob/living/simple_animal/hostile/jungle/mook{
@@ -1642,8 +1598,8 @@
 	turns_per_move = 0
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "ts" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -1653,57 +1609,55 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 1"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss1"
 	})
 "tE" = (
 /obj/structure/cannon/trash,
 /turf/open/floor/plating/rust,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 3"
+/area/awaymission/Killthemall/Level{
+	name = "Level 3"
 	})
 "tG" = (
 /obj/effect/turf_decal/loading_area/red{
 	dir = 4
 	},
 /turf/open/indestructible,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "tL" = (
 /obj/structure/destructible/cult/pylon,
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 1"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss1"
 	})
 "ue" = (
 /obj/structure/flora/rock,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 10"
+/area/awaymission/Killthemall/Level{
+	name = "Level 10"
 	})
 "uf" = (
 /obj/structure/stone_tile/slab,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "ug" = (
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 9"
+/area/awaymission/Killthemall/Level{
+	name = "Level 9"
 	})
 "um" = (
 /obj/structure/rack,
 /obj/item/carpentry/hammer,
 /turf/open/indestructible/sound,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "un" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -1717,39 +1671,37 @@
 	},
 /obj/effect/decal/cleanable/vomit/old,
 /turf/open/floor/plating/rust,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 3"
+/area/awaymission/Killthemall/Level{
+	name = "Level 3"
 	})
 "uv" = (
 /obj/machinery/jukebox,
 /turf/open/floor/iron/kitchen/herringbone,
-/area/awaymission/errorroom{
-	name = "Party Party Party!"
+/area/awaymission/Killthemall/start{
+	name = "End"
 	})
 "uy" = (
 /obj/structure/sign/poster/contraband/scum,
 /turf/closed/indestructible/wall,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "uH" = (
 /obj/structure/closet/crate/large,
 /obj/item/reagent_containers/food/drinks/bottle/molotov,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "uK" = (
 /obj/structure/reagent_dispensers/beerkeg,
 /turf/open/floor/iron/kitchen/herringbone,
-/area/awaymission/errorroom{
-	name = "Party Party Party!"
+/area/awaymission/Killthemall/start{
+	name = "End"
 	})
 "uL" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/iron/kitchen,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 4"
+/area/awaymission/Killthemall/Level{
+	name = "Level 4"
 	})
 "uO" = (
 /obj/structure/closet/crate/trashcart,
@@ -1761,21 +1713,21 @@
 /obj/item/trash/tray,
 /obj/item/gun/energy/laser/hellgun,
 /turf/open/floor/plating/rust,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 3"
+/area/awaymission/Killthemall/Level{
+	name = "Level 3"
 	})
 "uS" = (
 /obj/structure/spacevine,
 /obj/structure/flora/junglebush/b,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 8"
+/area/awaymission/Killthemall/Level{
+	name = "Level 8"
 	})
 "uY" = (
 /obj/structure/flora/bush,
 /turf/open/floor/holofloor/snow,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 2"
+/area/awaymission/Killthemall/Level{
+	name = "Level 2"
 	})
 "va" = (
 /mob/living/simple_animal/hostile/dark_wizard{
@@ -1786,44 +1738,44 @@
 	turns_per_move = 0
 	},
 /turf/open/indestructible/cobble,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 7"
+/area/awaymission/Killthemall/Level{
+	name = "Level 7"
 	})
 "vd" = (
 /obj/machinery/recharger,
 /turf/open/floor/holofloor/snow,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 2"
+/area/awaymission/Killthemall/Level{
+	name = "Level 2"
 	})
 "vf" = (
 /obj/structure/closet/crate/large,
 /obj/item/reagent_containers/food/drinks/bottle/applejack,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "vj" = (
 /obj/structure/table/wood/poker,
 /obj/item/coin/adamantine,
 /obj/item/toy/cards/cardhand,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "vp" = (
 /mob/living/simple_animal/hostile/retaliate/clown/clownhulk/chlown{
 	faction = list("shiz")
 	},
 /turf/open/floor/padded,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 11"
+/area/awaymission/Killthemall/Level{
+	name = "Level 11"
 	})
 "vC" = (
 /obj/structure/closet/crate/large,
 /obj/item/reagent_containers/food/drinks/bottle/grenadine,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "vH" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -1836,8 +1788,8 @@
 	name = "\improper secret escape route"
 	},
 /turf/open/floor/catwalk_floor,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 15"
+/area/awaymission/Killthemall/Level{
+	name = "Level 15"
 	})
 "vI" = (
 /obj/structure/stone_tile/block/cracked{
@@ -1846,34 +1798,27 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "vK" = (
 /obj/item/slime_extract/gold,
 /obj/structure/closet/crate,
 /obj/item/storage/fancy/cigarettes/derringer/gold,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 9"
+/area/awaymission/Killthemall/Level{
+	name = "Level 9"
 	})
 "vM" = (
 /turf/closed/indestructible/hotelwall,
-/area/awaymission/errorroom{
-	name = "Party Party Party!"
-	})
-"vR" = (
-/turf/closed/wall/r_wall/rust,
-/area/awaymission/errorroom{
-	name = "Kill kill kill!"
+/area/awaymission/Killthemall/start{
+	name = "End"
 	})
 "vS" = (
 /obj/structure/chair/sofa/corp,
 /obj/effect/decal/remains/robot,
 /turf/open/indestructible,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "vU" = (
 /obj/structure/ladder/unbreakable/rune{
 	alpha = 0;
@@ -1885,8 +1830,8 @@
 	name = "\improper secret escape route"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "vX" = (
 /obj/structure/table,
@@ -1898,9 +1843,7 @@
 	dir = 9
 	},
 /turf/open/indestructible,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "wd" = (
 /obj/structure/ladder/unbreakable/rune{
 	color = "#ff0000";
@@ -1912,15 +1855,15 @@
 	name = "void";
 	icon_state = "black"
 	},
-/area/awaymission/errorroom{
+/area/awaymission/Killthemall/start{
 	name = "???"
 	})
 "wl" = (
 /obj/structure/flora/tree/jungle,
 /obj/structure/flora/ausbushes/fernybush,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "wA" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -1933,14 +1876,14 @@
 	icon = 'icons/turf/floors/carpet.dmi';
 	icon_state = "carpet"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "wJ" = (
 /obj/machinery/recharger,
 /turf/open/floor/festive/alleyway/safe,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 7"
+/area/awaymission/Killthemall/Level{
+	name = "Level 7"
 	})
 "wK" = (
 /obj/structure/closet/crate/large,
@@ -1948,8 +1891,8 @@
 /obj/item/reagent_containers/food/drinks/bottle/absinthe/premium,
 /obj/item/reagent_containers/food/drinks/bottle/absinthe/premium,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "wN" = (
 /obj/structure/table/wood,
@@ -1959,39 +1902,39 @@
 	pixel_y = -4
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "wO" = (
 /turf/open/floor/iron/kitchen/herringbone,
-/area/awaymission/errorroom{
-	name = "Party Party Party!"
+/area/awaymission/Killthemall/start{
+	name = "End"
 	})
 "wP" = (
 /obj/item/trash/cheesie,
 /obj/item/trash/candy,
 /turf/open/floor/plating/rust,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 3"
+/area/awaymission/Killthemall/Level{
+	name = "Level 3"
 	})
 "wV" = (
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "xb" = (
 /obj/structure/flora/tree/jungle{
 	layer = 8
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "xc" = (
 /obj/structure/shipping_container/conarex,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "xg" = (
 /mob/living/simple_animal/hostile/syndicate/ranged/shotgun{
@@ -2001,8 +1944,8 @@
 	turns_per_move = 0
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "xo" = (
 /obj/structure/rack/shelf,
@@ -2014,8 +1957,8 @@
 	pixel_y = 8
 	},
 /turf/open/indestructible/sound,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "xq" = (
 /mob/living/simple_animal/hostile/jungle/seedling{
@@ -2025,19 +1968,19 @@
 	turns_per_move = 0
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "xC" = (
 /obj/structure/sign/warning/securearea,
 /turf/closed/indestructible/rock,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "xD" = (
 /turf/open/floor/plating/rust,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 3"
+/area/awaymission/Killthemall/Level{
+	name = "Level 3"
 	})
 "xH" = (
 /obj/structure/stone_tile/block/cracked{
@@ -2046,13 +1989,13 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "xL" = (
 /turf/open/floor/festive/stairs/stairseast,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 7"
+/area/awaymission/Killthemall/Level{
+	name = "Level 7"
 	})
 "xO" = (
 /turf/closed/indestructible/necropolis,
@@ -2064,16 +2007,16 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "yd" = (
 /obj/structure/fluff/paper/stack{
 	dir = 4
 	},
 /turf/open/floor/iron/kitchen,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 4"
+/area/awaymission/Killthemall/Level{
+	name = "Level 4"
 	})
 "ye" = (
 /obj/structure/stone_tile/burnt{
@@ -2082,52 +2025,52 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "yf" = (
 /obj/item/stack/sheet/plasteel,
 /obj/item/carpentry/hammer,
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/circuit/green,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "yh" = (
 /obj/structure/sign/poster/contraband/communist_state,
 /turf/closed/wall/ice,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "yj" = (
 /turf/closed/indestructible/rock,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "yo" = (
 /obj/structure/shipping_container/kosmologistika,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "yq" = (
 /turf/closed/wall/mineral/titanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 11"
+/area/awaymission/Killthemall/Level{
+	name = "Level 11"
 	})
 "ys" = (
 /obj/item/trash/candy,
 /turf/open/floor/plating/rust,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 3"
+/area/awaymission/Killthemall/Level{
+	name = "Level 3"
 	})
 "yt" = (
 /obj/structure/fluff/paper/stack{
 	dir = 8
 	},
 /turf/open/floor/iron/kitchen,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 4"
+/area/awaymission/Killthemall/Level{
+	name = "Level 4"
 	})
 "yF" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -2137,107 +2080,107 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "yG" = (
 /obj/structure/shipping_container/donk_co,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "yH" = (
 /obj/structure/flora/tree/spookytimexl,
 /turf/open/floor/holofloor/snow,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 2"
+/area/awaymission/Killthemall/Level{
+	name = "Level 2"
 	})
 "yK" = (
 /obj/structure/flora/ausbushes/fernybush,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "yR" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/catwalk_floor,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 15"
+/area/awaymission/Killthemall/Level{
+	name = "Level 15"
 	})
 "yU" = (
 /obj/structure/salvage/circuit_imprinter,
 /turf/open/floor/catwalk_floor,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 15"
+/area/awaymission/Killthemall/Level{
+	name = "Level 15"
 	})
 "yV" = (
 /obj/item/trash/cheesie,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/rust,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 3"
+/area/awaymission/Killthemall/Level{
+	name = "Level 3"
 	})
 "yY" = (
 /obj/structure/flora/rock/pile/icy,
 /turf/open/floor/holofloor/snow,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 2"
+/area/awaymission/Killthemall/Level{
+	name = "Level 2"
 	})
 "zd" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/padded,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 11"
+/area/awaymission/Killthemall/Level{
+	name = "Level 11"
 	})
 "zk" = (
 /obj/machinery/status_display/syndie,
 /turf/closed/wall/mineral/titanium/spaceship,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 15"
+/area/awaymission/Killthemall/Level{
+	name = "Level 15"
 	})
 "zl" = (
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/open/indestructible/spooknecropolis,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 1"
+/area/awaymission/Killthemall/Level{
+	name = "Level 1"
 	})
 "zs" = (
 /obj/structure/mecha_wreckage/marauder,
 /obj/effect/decal/cleanable/oil,
 /obj/effect/decal/cleanable/robot_debris/gib,
 /turf/open/floor/circuit/green,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "zv" = (
 /obj/item/stack/cable_coil/cut,
 /obj/effect/decal/cleanable/oil,
 /obj/effect/decal/cleanable/robot_debris,
 /turf/open/floor/circuit/green,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "zC" = (
 /obj/structure/shipping_container/nakamura,
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "zO" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "zU" = (
 /obj/structure/flora/tree/jungle{
 	layer = 9
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "zY" = (
 /obj/structure/spacevine,
@@ -2247,8 +2190,8 @@
 	turns_per_move = 0
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 8"
+/area/awaymission/Killthemall/Level{
+	name = "Level 8"
 	})
 "Ah" = (
 /obj/machinery/light{
@@ -2257,55 +2200,55 @@
 /obj/machinery/chem_dispenser/drinks/fullupgrade,
 /obj/structure/table,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "Aq" = (
 /obj/machinery/recharger,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "At" = (
 /obj/effect/decal/cleanable/vomit/old,
 /turf/open/floor/plating/rust,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 3"
+/area/awaymission/Killthemall/Level{
+	name = "Level 3"
 	})
 "AC" = (
 /turf/open/indestructible{
 	icon = 'icons/turf/floors/carpet.dmi';
 	icon_state = "carpet"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "AE" = (
 /obj/effect/decal/cleanable/blood/gibs/human/limb,
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/iron/kitchen,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 4"
+/area/awaymission/Killthemall/Level{
+	name = "Level 4"
 	})
 "AK" = (
 /obj/structure/shipping_container/gorlex/red,
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "AM" = (
 /obj/structure/shipping_container/gorlex,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "AR" = (
 /obj/structure/destructible/cult/talisman,
 /obj/effect/mob_spawn/human/corpse/geneticist,
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 1"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss1"
 	})
 "AS" = (
 /obj/structure/closet/crate/secure/soviet,
@@ -2321,21 +2264,21 @@
 /obj/item/storage/box/lethalslugs,
 /obj/item/storage/toolbox/ammo,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "AT" = (
 /obj/structure/shipping_container/kosmologistika,
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "AV" = (
 /obj/machinery/recharger,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "AX" = (
 /turf/closed/wall/mineral/plastitanium,
@@ -2343,8 +2286,8 @@
 "Bb" = (
 /obj/machinery/vending/sovietsoda,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "Bh" = (
 /obj/structure/flora/tree/jungle{
@@ -2352,40 +2295,38 @@
 	max_integrity = 40
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "Bi" = (
 /obj/structure/spacevine,
 /obj/structure/punji_sticks,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 8"
+/area/awaymission/Killthemall/Level{
+	name = "Level 8"
 	})
 "Bs" = (
 /obj/machinery/recharger,
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 1"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss1"
 	})
 "Bt" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "Bv" = (
 /obj/structure/extinguisher_cabinet,
 /turf/closed/indestructible/wall,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "Bw" = (
 /obj/machinery/recharger,
 /obj/effect/decal/cleanable/blood,
 /turf/open/indestructible/spooknecropolis,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 1"
+/area/awaymission/Killthemall/Level{
+	name = "Level 1"
 	})
 "Bx" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -2398,21 +2339,21 @@
 	name = "\improper secret escape route"
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "By" = (
 /obj/structure/bed/secbed,
 /obj/item/bedsheet/runtime,
 /turf/open/floor/padded,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 11"
+/area/awaymission/Killthemall/Level{
+	name = "Level 11"
 	})
 "BC" = (
 /obj/structure/sign/warning/securearea,
 /turf/closed/wall/mineral/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 1"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss1"
 	})
 "BF" = (
 /obj/structure/stone_tile/slab/cracked,
@@ -2425,39 +2366,39 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "BK" = (
 /obj/structure/barricade/security/murderdome,
 /obj/structure/barricade/security/murderdome,
 /turf/open/indestructible,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "BW" = (
 /obj/effect/decal/cleanable/blood/gibs/core,
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/iron/kitchen,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 4"
+/area/awaymission/Killthemall/Level{
+	name = "Level 4"
 	})
 "BY" = (
 /obj/item/storage/toolbox,
 /turf/open/floor/circuit/green,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "Cl" = (
 /obj/machinery/door/airlock/external,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 9"
+/area/awaymission/Killthemall/Level{
+	name = "Level 9"
 	})
 "Cn" = (
 /turf/open/floor/circuit/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "CE" = (
 /obj/structure/flora/tree/jungle{
@@ -2465,23 +2406,21 @@
 	},
 /obj/structure/flora/ausbushes/fernybush,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "CK" = (
 /obj/structure/destructible/cult/talisman,
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 1"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss1"
 	})
 "CQ" = (
 /obj/structure/closet/crate/bin,
 /obj/item/trash/cheesie,
 /obj/item/trash/pistachios,
 /turf/open/indestructible,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "CT" = (
 /obj/structure/ladder/unbreakable/rune{
 	alpha = 0;
@@ -2493,8 +2432,8 @@
 	name = "\improper secret escape route"
 	},
 /turf/open/floor/holofloor/snow,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 2"
+/area/awaymission/Killthemall/Level{
+	name = "Level 2"
 	})
 "CV" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -2507,15 +2446,15 @@
 	name = "\improper secret escape route"
 	},
 /turf/open/indestructible/spooknecropolis,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 1"
+/area/awaymission/Killthemall/Level{
+	name = "Level 1"
 	})
 "CW" = (
 /obj/structure/destructible/cult/talisman,
 /obj/effect/mob_spawn/human/corpse/miner/explorer,
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 1"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss1"
 	})
 "Dc" = (
 /mob/living/simple_animal/hostile/pirate/ranged/space{
@@ -2524,8 +2463,8 @@
 	stop_automated_movement_when_pulled = 1
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 9"
+/area/awaymission/Killthemall/Level{
+	name = "Level 9"
 	})
 "Dl" = (
 /mob/living/simple_animal/hostile/skeleton/templar{
@@ -2537,29 +2476,29 @@
 	turns_per_move = 0
 	},
 /turf/open/indestructible/cobble,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 7"
+/area/awaymission/Killthemall/Level{
+	name = "Level 7"
 	})
 "Dp" = (
 /obj/effect/turf_decal/delivery/blue,
 /obj/structure/rack,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "Dx" = (
 /obj/structure/shipping_container/nakamura,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "Dy" = (
 /obj/structure/flora/tree/jungle{
 	max_integrity = 40
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "DF" = (
 /obj/structure/stone_tile/block/burnt{
@@ -2568,20 +2507,20 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "DG" = (
 /obj/machinery/vending/boozeomat,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "DJ" = (
 /obj/structure/barricade/wooden/snowed,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "DR" = (
 /obj/structure/anvil,
@@ -2589,39 +2528,39 @@
 	pixel_x = 8
 	},
 /turf/open/floor/festive/alleyway/safe,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 7"
+/area/awaymission/Killthemall/Level{
+	name = "Level 7"
 	})
 "DV" = (
 /obj/structure/destructible/cult/forge,
 /obj/structure/constructshell,
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 1"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss1"
 	})
 "Ea" = (
 /obj/structure/sign/flag/skull,
 /turf/closed/indestructible/riveted,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "Eh" = (
 /obj/structure/flora/junglebush/large,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "Ej" = (
 /obj/machinery/recharger,
 /turf/open/floor/fakespace,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 9"
+/area/awaymission/Killthemall/Level{
+	name = "Level 9"
 	})
 "Es" = (
 /obj/structure/flora/junglebush/large,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 8"
+/area/awaymission/Killthemall/Level{
+	name = "Level 8"
 	})
 "Ew" = (
 /obj/structure/stone_tile/block/cracked,
@@ -2631,30 +2570,30 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "EE" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/bearsteak,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "EI" = (
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "EJ" = (
 /mob/living/simple_animal/hostile/cult/warrior{
 	stop_automated_movement = 1
 	},
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 5"
+/area/awaymission/Killthemall/Level{
+	name = "Level 5"
 	})
 "EK" = (
 /obj/structure/statue/bronze/marx{
@@ -2663,8 +2602,8 @@
 	},
 /obj/structure/table/wood/poker,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "EQ" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/random{
@@ -2675,20 +2614,20 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 10"
+/area/awaymission/Killthemall/Level{
+	name = "Level 10"
 	})
 "ET" = (
 /obj/structure/salvage/server,
 /turf/open/floor/catwalk_floor,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 15"
+/area/awaymission/Killthemall/Level{
+	name = "Level 15"
 	})
 "EV" = (
 /obj/structure/loot_pile/maint,
 /turf/open/floor/plating/rust,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 3"
+/area/awaymission/Killthemall/Level{
+	name = "Level 3"
 	})
 "Fb" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -2698,8 +2637,8 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/floor/iron/kitchen,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 4"
+/area/awaymission/Killthemall/Level{
+	name = "Level 4"
 	})
 "Fc" = (
 /obj/structure/fluff/big_chain,
@@ -2707,29 +2646,29 @@
 	name = "void";
 	icon_state = "black"
 	},
-/area/awaymission/errorroom{
+/area/awaymission/Killthemall/start{
 	name = "???"
 	})
 "Fd" = (
 /obj/structure/flora/junglebush/large,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "Ff" = (
 /obj/machinery/clonepod/experimental,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/iron/kitchen,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 4"
+/area/awaymission/Killthemall/Level{
+	name = "Level 4"
 	})
 "Fj" = (
 /obj/structure/flora/tree/jungle/small{
 	layer = 3
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "Fl" = (
 /obj/structure/table,
@@ -2749,14 +2688,14 @@
 	},
 /obj/machinery/recharger,
 /turf/open/floor/iron/kitchen,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 4"
+/area/awaymission/Killthemall/Level{
+	name = "Level 4"
 	})
 "Fo" = (
 /obj/structure/shipping_container/vitezstvi,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "Fp" = (
 /mob/living/simple_animal/hostile/deth{
@@ -2765,23 +2704,21 @@
 	stop_automated_movement_when_pulled = 1
 	},
 /turf/open/floor/catwalk_floor,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 15"
+/area/awaymission/Killthemall/Level{
+	name = "Level 15"
 	})
 "Ft" = (
 /obj/structure/chair/sofa/corp/right,
 /obj/effect/landmark/awaystart,
 /turf/open/indestructible,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "Fx" = (
 /obj/structure/fluff/paper/stack{
 	dir = 9
 	},
 /turf/open/floor/iron/kitchen,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 4"
+/area/awaymission/Killthemall/Level{
+	name = "Level 4"
 	})
 "FF" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -2791,13 +2728,13 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 8"
+/area/awaymission/Killthemall/Level{
+	name = "Level 8"
 	})
 "FH" = (
 /turf/closed/indestructible/rock,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 8"
+/area/awaymission/Killthemall/Level{
+	name = "Level 8"
 	})
 "FJ" = (
 /obj/structure/table,
@@ -2805,14 +2742,14 @@
 	pixel_y = 9
 	},
 /turf/open/indestructible/sound,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "FM" = (
 /obj/machinery/recharger,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "FN" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -2825,16 +2762,16 @@
 	name = "\improper secret escape route"
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "FS" = (
 /obj/structure/stone_tile/block/cracked,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "Gb" = (
 /mob/living/simple_animal/hostile/cult/magic/elite{
@@ -2844,8 +2781,8 @@
 	stop_automated_movement_when_pulled = 1
 	},
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 1"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss1"
 	})
 "Gk" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -2858,21 +2795,19 @@
 	name = "\improper secret escape route"
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "Gl" = (
 /obj/structure/chair/sofa/corp,
 /obj/effect/landmark/awaystart,
 /turf/open/indestructible,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "Gm" = (
 /obj/structure/furnace,
 /turf/open/indestructible/cobble,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 7"
+/area/awaymission/Killthemall/Level{
+	name = "Level 7"
 	})
 "Gv" = (
 /obj/structure/table,
@@ -2881,15 +2816,15 @@
 	},
 /obj/item/clipboard,
 /turf/open/floor/iron/kitchen,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 4"
+/area/awaymission/Killthemall/Level{
+	name = "Level 4"
 	})
 "Gw" = (
 /obj/structure/flora/tree/jungle/small,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "Gy" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -2904,20 +2839,20 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 10"
+/area/awaymission/Killthemall/Level{
+	name = "Level 10"
 	})
 "GF" = (
 /turf/open/floor/festive/alleyway/safe,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 7"
+/area/awaymission/Killthemall/Level{
+	name = "Level 7"
 	})
 "GG" = (
 /obj/structure/destructible/cult/talisman,
 /obj/effect/mob_spawn/human/corpse/clown,
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 5"
+/area/awaymission/Killthemall/Level{
+	name = "Level 5"
 	})
 "GQ" = (
 /obj/item/chainsaw{
@@ -2925,36 +2860,36 @@
 	desc = "A versatile power tool. Useful for limbing trees and delimbing humans. This one was improved"
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "GY" = (
 /obj/structure/spacevine,
 /obj/structure/flora/junglebush/c,
 /obj/structure/flora/junglebush/b,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 8"
+/area/awaymission/Killthemall/Level{
+	name = "Level 8"
 	})
 "Hk" = (
 /obj/structure/flora/ashtree,
 /turf/open/floor/holofloor/snow,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 2"
+/area/awaymission/Killthemall/Level{
+	name = "Level 2"
 	})
 "Hl" = (
 /obj/structure/shipping_container/nanotrasen,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "Ho" = (
 /obj/structure/fluff/paper/stack{
 	dir = 5
 	},
 /turf/open/floor/iron/kitchen,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 4"
+/area/awaymission/Killthemall/Level{
+	name = "Level 4"
 	})
 "Hq" = (
 /obj/item/stack/ore/gold,
@@ -2962,67 +2897,65 @@
 /obj/item/reagent_containers/food/snacks/grown/apple/gold,
 /obj/structure/closet/crate,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 9"
+/area/awaymission/Killthemall/Level{
+	name = "Level 9"
 	})
 "Hr" = (
 /obj/structure/chair/sofa/corp/left,
 /obj/effect/landmark/awaystart,
 /turf/open/indestructible,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "HB" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/fakespace,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 9"
+/area/awaymission/Killthemall/Level{
+	name = "Level 9"
 	})
 "HG" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine,
 /obj/structure/flora/junglebush/large,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 8"
+/area/awaymission/Killthemall/Level{
+	name = "Level 8"
 	})
 "HP" = (
 /obj/structure/noticeboard/rd,
 /turf/closed/wall/r_wall/syndicate/nosmooth,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 4"
+/area/awaymission/Killthemall/Level{
+	name = "Level 4"
 	})
 "HT" = (
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "HU" = (
 /obj/structure/destructible/cult/talisman,
 /obj/item/book/granter/spell/random,
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 1"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss1"
 	})
 "HW" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "HX" = (
 /turf/open/indestructible/spooknecropolis,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 1"
+/area/awaymission/Killthemall/Level{
+	name = "Level 1"
 	})
 "Ii" = (
 /obj/structure/flora/ash/leaf_shroom,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "Io" = (
 /obj/structure/table/wood/poker,
@@ -3031,26 +2964,26 @@
 /obj/item/dice/d6,
 /obj/item/toy/cards/cardhand,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "Ip" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "Iy" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "Iz" = (
 /turf/closed/mineral,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 9"
+/area/awaymission/Killthemall/Level{
+	name = "Level 9"
 	})
 "IK" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -3063,8 +2996,8 @@
 	name = "\improper secret escape route"
 	},
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 1"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss1"
 	})
 "IL" = (
 /obj/structure/chair/office/dark{
@@ -3074,21 +3007,21 @@
 	stop_automated_movement = 1
 	},
 /turf/open/indestructible/sound,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "IO" = (
 /obj/structure/flora/grass/green,
 /turf/open/floor/holofloor/snow,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 2"
+/area/awaymission/Killthemall/Level{
+	name = "Level 2"
 	})
 "IT" = (
 /obj/structure/shipping_container,
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "Jr" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -3098,21 +3031,21 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "Jy" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "JD" = (
 /obj/structure/destructible/cult/talisman,
 /obj/effect/mob_spawn/human/corpse/cook,
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 1"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss1"
 	})
 "JK" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -3122,8 +3055,8 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/floor/fakespace,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 9"
+/area/awaymission/Killthemall/Level{
+	name = "Level 9"
 	})
 "JN" = (
 /mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/stormtrooper/anthro{
@@ -3135,14 +3068,14 @@
 /obj/effect/turf_decal/delivery/blue,
 /obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "JP" = (
 /obj/structure/flora/ausbushes/leafybush,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "JQ" = (
 /obj/structure/flora/tree/jungle{
@@ -3150,38 +3083,38 @@
 	},
 /obj/structure/flora/ausbushes/fernybush,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "JS" = (
 /obj/structure/fluff/paper/stack{
 	dir = 1
 	},
 /turf/open/floor/iron/kitchen,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 4"
+/area/awaymission/Killthemall/Level{
+	name = "Level 4"
 	})
 "JU" = (
 /obj/effect/decal/cleanable/blood,
 /turf/open/indestructible/spooknecropolis,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 1"
+/area/awaymission/Killthemall/Level{
+	name = "Level 1"
 	})
 "JX" = (
 /obj/effect/turf_decal/delivery/blue,
 /obj/structure/rack,
 /obj/item/ammo_box/c45/lethal,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "Ke" = (
 /obj/item/banner/security{
 	desc = "The banner of kingdom, ruling this place with an iron fist."
 	},
 /turf/open/indestructible/cobble,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 7"
+/area/awaymission/Killthemall/Level{
+	name = "Level 7"
 	})
 "Kf" = (
 /obj/structure/rack/shelf,
@@ -3199,8 +3132,8 @@
 	pixel_x = 10
 	},
 /turf/open/indestructible/sound,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "Kq" = (
 /obj/effect/turf_decal/delivery/blue,
@@ -3210,25 +3143,25 @@
 /obj/item/storage/box/donkpockets,
 /obj/item/storage/box/donkpockets,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "Kr" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/holofloor/snow,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 2"
+/area/awaymission/Killthemall/Level{
+	name = "Level 2"
 	})
 "Kt" = (
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "KH" = (
 /obj/machinery/recharger,
 /turf/open/floor/padded,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 11"
+/area/awaymission/Killthemall/Level{
+	name = "Level 11"
 	})
 "KO" = (
 /mob/living/simple_animal/hostile/bear/russian{
@@ -3237,14 +3170,14 @@
 	stop_automated_movement_when_pulled = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "KZ" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "Lb" = (
 /obj/item/pickaxe/diamond,
@@ -3252,8 +3185,8 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 10"
+/area/awaymission/Killthemall/Level{
+	name = "Level 10"
 	})
 "Lc" = (
 /obj/structure/rack/shelf,
@@ -3265,8 +3198,8 @@
 	},
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser,
 /turf/open/indestructible/sound,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "Lf" = (
 /mob/living/simple_animal/hostile/russian/ranged/officer{
@@ -3275,8 +3208,8 @@
 	stop_automated_movement_when_pulled = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "Lm" = (
 /obj/item/stack/sheet/mineral/gold,
@@ -3284,31 +3217,31 @@
 /obj/item/lighter/gold,
 /obj/structure/closet/crate,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 9"
+/area/awaymission/Killthemall/Level{
+	name = "Level 9"
 	})
 "Lo" = (
 /obj/structure/table,
 /obj/structure/fluff/paper/stack,
 /obj/item/pen,
 /turf/open/indestructible/sound,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "Lv" = (
 /obj/structure/flora/ash/tall_shroom,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 10"
+/area/awaymission/Killthemall/Level{
+	name = "Level 10"
 	})
 "Lx" = (
 /obj/structure/destructible/cult/talisman,
 /obj/item/clothing/suit/cultrobes,
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 5"
+/area/awaymission/Killthemall/Level{
+	name = "Level 5"
 	})
 "LA" = (
 /obj/structure/stone_tile/slab/cracked,
@@ -3321,13 +3254,13 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "LJ" = (
 /turf/closed/mineral/ash_rock,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 10"
+/area/awaymission/Killthemall/Level{
+	name = "Level 10"
 	})
 "LM" = (
 /turf/closed/indestructible{
@@ -3335,7 +3268,7 @@
 	icon_state = "black";
 	name = "void"
 	},
-/area/awaymission/errorroom{
+/area/awaymission/Killthemall/start{
 	name = "???"
 	})
 "LN" = (
@@ -3347,54 +3280,54 @@
 	stop_automated_movement = 1
 	},
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 1"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss1"
 	})
 "LO" = (
 /obj/structure/flora/ash/stem_shroom,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 10"
+/area/awaymission/Killthemall/Level{
+	name = "Level 10"
 	})
 "LQ" = (
 /obj/structure/table,
 /obj/item/documents/nanotrasen,
 /turf/open/indestructible/sound,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "LR" = (
 /obj/structure/flora/tree/jungle/small,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "LV" = (
 /obj/effect/turf_decal/delivery/blue,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "Md" = (
 /obj/structure/loot_pile/maint{
 	max_integrity = 40
 	},
 /turf/open/floor/plating/rust,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 3"
+/area/awaymission/Killthemall/Level{
+	name = "Level 3"
 	})
 "Mf" = (
 /turf/open/indestructible/cobble,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 7"
+/area/awaymission/Killthemall/Level{
+	name = "Level 7"
 	})
 "Mg" = (
 /obj/structure/flora/tree/jungle/small,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "Mi" = (
 /obj/structure/table,
@@ -3403,9 +3336,7 @@
 	},
 /obj/item/newspaper,
 /turf/open/indestructible,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "Mj" = (
 /mob/living/simple_animal/hostile/russian/ranged/mosin{
 	inertia_move_delay = 0;
@@ -3413,8 +3344,8 @@
 	stop_automated_movement_when_pulled = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "Mn" = (
 /obj/structure/stone_tile{
@@ -3423,8 +3354,8 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "Mp" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -3437,19 +3368,19 @@
 	name = "\improper secret escape route"
 	},
 /turf/open/floor/iron/kitchen,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 4"
+/area/awaymission/Killthemall/Level{
+	name = "Level 4"
 	})
 "Mr" = (
 /obj/effect/decal/cleanable/shreds,
 /turf/open/floor/circuit/green,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "MB" = (
 /turf/closed/indestructible/rock,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "MC" = (
 /obj/structure/spacevine,
@@ -3460,8 +3391,8 @@
 	},
 /obj/structure/flora/junglebush/large,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 8"
+/area/awaymission/Killthemall/Level{
+	name = "Level 8"
 	})
 "MP" = (
 /obj/structure/rack/shelf,
@@ -3473,26 +3404,26 @@
 	pixel_y = 10
 	},
 /turf/open/indestructible/sound,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "Nh" = (
 /obj/effect/decal/cleanable/blood,
 /turf/closed/indestructible/necropolis,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 1"
+/area/awaymission/Killthemall/Level{
+	name = "Level 1"
 	})
 "Nq" = (
 /obj/structure/flora/ausbushes/brflowers,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "Nv" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "NH" = (
 /mob/living/simple_animal/hostile/cultistmelee{
@@ -3504,8 +3435,8 @@
 	maxHealth = 80
 	},
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 1"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss1"
 	})
 "NK" = (
 /obj/structure/anvil,
@@ -3514,8 +3445,8 @@
 	pixel_y = 8
 	},
 /turf/open/floor/festive/alleyway/safe,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 7"
+/area/awaymission/Killthemall/Level{
+	name = "Level 7"
 	})
 "NV" = (
 /obj/structure/anvil,
@@ -3524,32 +3455,32 @@
 	pixel_y = 8
 	},
 /turf/open/floor/festive/alleyway/safe,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 7"
+/area/awaymission/Killthemall/Level{
+	name = "Level 7"
 	})
 "Od" = (
 /obj/effect/decal/remains/human,
 /turf/open/indestructible/spooknecropolis,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 1"
+/area/awaymission/Killthemall/Level{
+	name = "Level 1"
 	})
 "Og" = (
 /obj/structure/flora/ausbushes/brflowers,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "Op" = (
 /obj/structure/salvage/protolathe,
 /turf/closed/wall/mineral/titanium/spaceship,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 15"
+/area/awaymission/Killthemall/Level{
+	name = "Level 15"
 	})
 "Ou" = (
 /obj/effect/decal/hammerandsickle,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "Oy" = (
 /mob/living/simple_animal/hostile/megafauna/sand{
@@ -3566,13 +3497,13 @@
 	name = "void";
 	icon_state = "black"
 	},
-/area/awaymission/errorroom{
+/area/awaymission/Killthemall/start{
 	name = "???"
 	})
 "OC" = (
 /turf/closed/mineral,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "OG" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -3588,13 +3519,13 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "ON" = (
 /turf/closed/mineral,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 10"
+/area/awaymission/Killthemall/Level{
+	name = "Level 10"
 	})
 "OP" = (
 /obj/structure/spacevine,
@@ -3602,44 +3533,44 @@
 /obj/structure/punji_sticks,
 /obj/structure/flora/junglebush/large,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 8"
+/area/awaymission/Killthemall/Level{
+	name = "Level 8"
 	})
 "OT" = (
 /obj/item/trash/pistachios,
 /turf/open/floor/plating/rust,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 3"
+/area/awaymission/Killthemall/Level{
+	name = "Level 3"
 	})
 "Pe" = (
 /obj/structure/spacevine,
 /obj/structure/flora/junglebush/c,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 8"
+/area/awaymission/Killthemall/Level{
+	name = "Level 8"
 	})
 "Pi" = (
 /obj/effect/turf_decal/loading_area{
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "Pj" = (
 /obj/effect/decal/cleanable/blood/gibs/body,
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/iron/kitchen,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 4"
+/area/awaymission/Killthemall/Level{
+	name = "Level 4"
 	})
 "Pn" = (
 /obj/machinery/recharger,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 10"
+/area/awaymission/Killthemall/Level{
+	name = "Level 10"
 	})
 "Pp" = (
 /obj/structure/table,
@@ -3649,14 +3580,14 @@
 	move_to_delay = 0
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "Px" = (
 /obj/structure/anvil,
 /turf/open/indestructible/cobble,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 7"
+/area/awaymission/Killthemall/Level{
+	name = "Level 7"
 	})
 "PA" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -3669,26 +3600,26 @@
 	name = "This is the end"
 	},
 /turf/open/floor/iron/kitchen/herringbone,
-/area/awaymission/errorroom{
-	name = "Party Party Party!"
+/area/awaymission/Killthemall/start{
+	name = "End"
 	})
 "PB" = (
 /obj/machinery/door/airlock/medical/glass,
 /obj/effect/mapping_helpers/airlock/access/all/syndicate,
 /turf/open/floor/padded,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 11"
+/area/awaymission/Killthemall/Level{
+	name = "Level 11"
 	})
 "PG" = (
 /turf/closed/mineral/random,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 8"
+/area/awaymission/Killthemall/Level{
+	name = "Level 8"
 	})
 "PJ" = (
 /obj/machinery/computer/security/telescreen/entertainment,
 /turf/closed/wall/mineral/titanium/spaceship,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 15"
+/area/awaymission/Killthemall/Level{
+	name = "Level 15"
 	})
 "PM" = (
 /obj/structure/chair/office,
@@ -3699,31 +3630,15 @@
 	layer = 3453
 	},
 /turf/open/indestructible,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "PO" = (
 /obj/structure/fluff/drake_statue,
 /obj/structure/stone_tile/slab,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
-	})
-"PX" = (
-/obj/item/a_gift/anything{
-	name = "Gift"
-	},
-/obj/item/a_gift/anything{
-	name = "Gift"
-	},
-/turf/open/indestructible/cobble{
-	name = "void";
-	icon_state = "black"
-	},
-/area/awaymission/errorroom{
-	name = "???"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "Qc" = (
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion{
@@ -3734,39 +3649,39 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 10"
+/area/awaymission/Killthemall/Level{
+	name = "Level 10"
 	})
 "Qd" = (
 /mob/living/simple_animal/hostile/russian/ranged/trooper{
 	stop_automated_movement = 1
 	},
 /turf/open/indestructible,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "Qg" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "Qo" = (
 /obj/structure/flora/tree/spookytimexl,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "Qr" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 11"
+/area/awaymission/Killthemall/Level{
+	name = "Level 11"
 	})
 "Qs" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/padded,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 11"
+/area/awaymission/Killthemall/Level{
+	name = "Level 11"
 	})
 "Qv" = (
 /mob/living/simple_animal/chick{
@@ -3778,85 +3693,80 @@
 	},
 /obj/effect/decal/cleanable/blood,
 /turf/open/indestructible/spooknecropolis,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 1"
+/area/awaymission/Killthemall/Level{
+	name = "Level 1"
 	})
 "Qz" = (
 /obj/effect/turf_decal/caution/stand_clear/white,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "QD" = (
 /obj/structure/table,
 /obj/item/paper_bin,
 /turf/open/indestructible/sound,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "QE" = (
 /obj/structure/sign/poster/contraband/gl,
 /turf/closed/indestructible/wall,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "QG" = (
 /obj/structure/rack,
 /obj/item/wrench/power,
 /turf/open/indestructible/sound,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "QN" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/burger/bearger,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
-"QP" = (
-/turf/closed/indestructible/rock,
-/area/space)
 "QW" = (
 /obj/structure/stone_tile/slab,
 /obj/machinery/door/keycard/library,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "QX" = (
 /obj/structure/healingfountain,
 /turf/open/indestructible/cobble,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 7"
+/area/awaymission/Killthemall/Level{
+	name = "Level 7"
 	})
 "QY" = (
 /obj/structure/flora/tree/spookylog,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "Ra" = (
 /obj/structure/flora/tree/pine,
 /turf/open/floor/holofloor/snow,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 2"
+/area/awaymission/Killthemall/Level{
+	name = "Level 2"
 	})
 "Rd" = (
 /obj/structure/table/wood/poker,
 /obj/item/coin/antagtoken,
 /obj/item/toy/cards/deck/syndicate,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "Rh" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/indestructible/spooknecropolis,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 1"
+/area/awaymission/Killthemall/Level{
+	name = "Level 1"
 	})
 "Ri" = (
 /turf/open/space/basic,
@@ -3868,34 +3778,29 @@
 	turns_per_move = 0
 	},
 /turf/open/floor/iron/kitchen,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 4"
+/area/awaymission/Killthemall/Level{
+	name = "Level 4"
 	})
 "Rs" = (
 /turf/open/floor/catwalk_floor,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Level{
+	name = "Level 15"
 	})
 "Rw" = (
 /obj/structure/flora/tree/jungle{
 	layer = 6
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "RB" = (
 /obj/structure/flora/tree/jungle/small{
 	layer = 6
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
-	})
-"RF" = (
-/turf/open/floor/catwalk_floor,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 15"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "RJ" = (
 /obj/structure/table/wood/poker,
@@ -3904,36 +3809,34 @@
 /obj/item/reagent_containers/food/drinks/bottle/vodka,
 /obj/item/toy/cards/cardhand,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "RZ" = (
 /turf/open/indestructible,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "Sc" = (
 /obj/structure/sign/poster/contraband/revolver,
 /turf/closed/indestructible/wall,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "Sg" = (
 /obj/structure/flora/junglebush/c,
 /obj/structure/flora/tree/jungle{
 	layer = 6
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 8"
+/area/awaymission/Killthemall/Level{
+	name = "Level 8"
 	})
 "Sr" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/meat/steak/bear,
 /obj/item/reagent_containers/food/drinks/bottle/vodka,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "Sz" = (
 /obj/structure/salvage/destructive_analyzer,
@@ -3941,52 +3844,50 @@
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 90, "wound" = 50)
 	},
 /turf/open/floor/catwalk_floor,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 15"
+/area/awaymission/Killthemall/Level{
+	name = "Level 15"
 	})
 "SI" = (
 /obj/machinery/firealarm,
 /turf/closed/indestructible/wall,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "SM" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine,
 /obj/structure/flora/junglebush/c,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 8"
+/area/awaymission/Killthemall/Level{
+	name = "Level 8"
 	})
 "SO" = (
 /obj/structure/stone_tile/cracked,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "SR" = (
 /obj/structure/closet/crate,
 /obj/item/clothing/suit/blackredgold,
 /obj/item/gun/ballistic/revolver/golden,
 /turf/open/floor/fakespace,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 9"
+/area/awaymission/Killthemall/Level{
+	name = "Level 9"
 	})
 "SU" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "SX" = (
 /obj/machinery/modular_computer/console,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 9"
+/area/awaymission/Killthemall/Level{
+	name = "Level 9"
 	})
 "Tc" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -4002,7 +3903,7 @@
 	name = "void";
 	icon_state = "black"
 	},
-/area/awaymission/errorroom{
+/area/awaymission/Killthemall/start{
 	name = "???"
 	})
 "Td" = (
@@ -4014,8 +3915,8 @@
 	turns_per_move = 0
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "Tf" = (
 /obj/structure/stone_tile{
@@ -4024,14 +3925,14 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "Ti" = (
 /obj/item/trash/rkibble,
 /turf/open/floor/plating/rust,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 3"
+/area/awaymission/Killthemall/Level{
+	name = "Level 3"
 	})
 "Tk" = (
 /obj/structure/chair/stool/bar,
@@ -4040,8 +3941,8 @@
 	stop_automated_movement_when_pulled = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "Tl" = (
 /obj/structure/chair/sofa/corp,
@@ -4049,61 +3950,54 @@
 	layer = 12112
 	},
 /turf/open/indestructible,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "Tm" = (
 /obj/structure/flora/tree/jungle,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "Tp" = (
 /obj/structure/destructible/cult/tome,
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 1"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss1"
 	})
 "Tz" = (
 /obj/machinery/door/airlock/medical/glass,
 /obj/effect/mapping_helpers/airlock/access/all/syndicate,
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/padded,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 11"
+/area/awaymission/Killthemall/Level{
+	name = "Level 11"
 	})
 "TB" = (
 /obj/machinery/recharger,
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 5"
+/area/awaymission/Killthemall/Level{
+	name = "Level 5"
 	})
 "TG" = (
-/turf/closed/indestructible/rock,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
-	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
-	})
+/turf/closed/wall/mineral/plastitanium,
+/area/awaymission/Killthemall/Level)
 "TH" = (
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 1"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss1"
 	})
 "TK" = (
 /obj/structure/flora/tree/jungle{
 	layer = 3
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "TQ" = (
 /obj/structure/sacrificealtar,
 /turf/open/indestructible/cobble,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 7"
+/area/awaymission/Killthemall/Level{
+	name = "Level 7"
 	})
 "TY" = (
 /obj/structure/chair/office/dark{
@@ -4113,24 +4007,22 @@
 	layer = 3423423
 	},
 /turf/open/indestructible,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "Uj" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine,
 /obj/structure/spacevine,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 8"
+/area/awaymission/Killthemall/Level{
+	name = "Level 8"
 	})
 "Uo" = (
 /obj/structure/stone_tile/burnt,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "Uq" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -4143,14 +4035,14 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "Ux" = (
 /obj/effect/mine/stun,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "UA" = (
 /obj/structure/rack/shelf,
@@ -4159,14 +4051,14 @@
 /obj/item/clothing/head/soft/inteq_med,
 /obj/item/clothing/under/inteq_med,
 /turf/open/floor/padded,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 11"
+/area/awaymission/Killthemall/Level{
+	name = "Level 11"
 	})
 "UB" = (
 /obj/machinery/chem_master/condimaster,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "UG" = (
 /obj/structure/flora/tree/spookylog,
@@ -4178,14 +4070,14 @@
 	},
 /obj/item/gun/ballistic/shotgun/brush2,
 /turf/open/floor/holofloor/snow,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 2"
+/area/awaymission/Killthemall/Level{
+	name = "Level 2"
 	})
 "UP" = (
 /obj/item/storage/firstaid/tactical/nukeop,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "UV" = (
 /obj/structure/table,
@@ -4194,37 +4086,35 @@
 	},
 /obj/item/pen/red,
 /turf/open/indestructible,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "Vf" = (
 /obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "Vh" = (
 /obj/structure/rack,
 /obj/item/weldingtool/hugetank,
 /turf/open/indestructible/sound,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "Vl" = (
 /obj/structure/flora/ashtree,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 10"
+/area/awaymission/Killthemall/Level{
+	name = "Level 10"
 	})
 "Vn" = (
 /obj/structure/stone_tile/slab/cracked,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "Vz" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -4233,8 +4123,8 @@
 	layer = 3
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "VC" = (
 /mob/living/simple_animal/hostile/netherworld{
@@ -4246,8 +4136,8 @@
 	turns_per_move = 0
 	},
 /turf/open/floor/iron/kitchen,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 4"
+/area/awaymission/Killthemall/Level{
+	name = "Level 4"
 	})
 "VN" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -4259,8 +4149,8 @@
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood/gibs/torso,
 /turf/open/indestructible/spooknecropolis,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 1"
+/area/awaymission/Killthemall/Level{
+	name = "Level 1"
 	})
 "VZ" = (
 /obj/machinery/porta_turret/syndicate/energy/raven{
@@ -4272,28 +4162,26 @@
 	pixel_x = 32
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "Wl" = (
 /obj/structure/table,
 /obj/structure/window/reinforced,
 /obj/item/jukebox,
 /turf/open/indestructible,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "Wq" = (
 /obj/structure/barricade/sandbags,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "Wt" = (
 /obj/structure/flora/ausbushes/leafybush,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "Wv" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -4307,48 +4195,48 @@
 	},
 /obj/structure/flora/junglebush/c,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 8"
+/area/awaymission/Killthemall/Level{
+	name = "Level 8"
 	})
 "WF" = (
 /obj/structure/flora/tree/dead,
 /turf/open/floor/holofloor/snow,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 2"
+/area/awaymission/Killthemall/Level{
+	name = "Level 2"
 	})
 "WG" = (
 /obj/machinery/chem_dispenser/drinks/beer,
 /obj/structure/table,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 13"
+/area/awaymission/Killthemall/Level{
+	name = "Level 13"
 	})
 "WH" = (
 /obj/structure/shipping_container/cybersun,
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "WK" = (
 /obj/effect/turf_decal/delivery/blue,
 /obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "WM" = (
 /obj/structure/flora/grass/brown,
 /turf/open/floor/holofloor/snow,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 2"
+/area/awaymission/Killthemall/Level{
+	name = "Level 2"
 	})
 "WN" = (
 /obj/structure/flora/junglebush/large,
 /obj/structure/flora/junglebush/large,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 8"
+/area/awaymission/Killthemall/Level{
+	name = "Level 8"
 	})
 "WS" = (
 /obj/structure/signpost/salvation{
@@ -4360,33 +4248,31 @@
 	question = "Are you giving up so early? Useless toy"
 	},
 /turf/open/floor/iron/cult,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 1"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss1"
 	})
 "WV" = (
 /turf/open/floor/mech_bay_recharge_floor,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "WX" = (
 /mob/living/simple_animal/hostile/cat_butcherer{
 	faction = list("shiz")
 	},
 /turf/open/floor/padded,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 11"
+/area/awaymission/Killthemall/Level{
+	name = "Level 11"
 	})
 "WZ" = (
 /obj/structure/salvage/pda,
 /turf/open/floor/catwalk_floor,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 15"
+/area/awaymission/Killthemall/Level{
+	name = "Level 15"
 	})
 "Xg" = (
 /turf/open/indestructible,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "Xm" = (
 /turf/closed/indestructible{
 	icon = 'icons/turf/floors.dmi';
@@ -4397,70 +4283,70 @@
 "Xy" = (
 /obj/effect/decal/cleanable/blood/gibs/limb,
 /turf/open/indestructible/spooknecropolis,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 1"
+/area/awaymission/Killthemall/Level{
+	name = "Level 1"
 	})
 "XC" = (
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/open/indestructible/spooknecropolis,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 1"
+/area/awaymission/Killthemall/Level{
+	name = "Level 1"
 	})
 "XM" = (
 /obj/structure/flora/tree/jungle/small{
 	layer = 6
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "XO" = (
 /turf/open/floor/holofloor/snow,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 2"
+/area/awaymission/Killthemall/Level{
+	name = "Level 2"
 	})
 "XR" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/festive/alleyway/safe,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 7"
+/area/awaymission/Killthemall/Level{
+	name = "Level 7"
 	})
 "XS" = (
 /obj/structure/flora/ausbushes/palebush,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "XU" = (
 /obj/structure/flora/tree/jungle{
 	layer = 4
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "Yc" = (
 /obj/structure/closet/crate/large,
 /obj/item/reagent_containers/food/drinks/bottle/holywater/hell,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 "Yf" = (
 /obj/structure/flora/ash/stem_shroom,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 2"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss2"
 	})
 "Yl" = (
 /obj/structure/flora/junglebush/c,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 8"
+/area/awaymission/Killthemall/Level{
+	name = "Level 8"
 	})
 "Yq" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -4470,21 +4356,21 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/floor/festive/alleyway/safe,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 7"
+/area/awaymission/Killthemall/Level{
+	name = "Level 7"
 	})
 "Yu" = (
 /turf/open/indestructible/sound,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "YK" = (
 /obj/structure/flora/tree/jungle{
 	layer = 4
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 6"
+/area/awaymission/Killthemall/Level{
+	name = "Level 6"
 	})
 "YL" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -4497,42 +4383,42 @@
 	name = "\improper secret escape route"
 	},
 /turf/open/indestructible/sound,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "YM" = (
 /obj/structure/salvage/destructive_analyzer,
 /turf/open/floor/catwalk_floor,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 15"
+/area/awaymission/Killthemall/Level{
+	name = "Level 15"
 	})
 "YN" = (
 /obj/structure/flora/tree/jungle,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 8"
+/area/awaymission/Killthemall/Level{
+	name = "Level 8"
 	})
 "YO" = (
 /obj/structure/loot_pile/maint,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/rust,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 3"
+/area/awaymission/Killthemall/Level{
+	name = "Level 3"
 	})
 "Zr" = (
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 10"
 	})
 "Zw" = (
 /obj/item/stack/cable_coil/cut,
 /obj/item/stack/sheet/metal,
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/circuit/green,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Boss 3"
+/area/awaymission/Killthemall/Boss{
+	name = "Boss3"
 	})
 "ZH" = (
 /mob/living/simple_animal/hostile/looter/ranged{
@@ -4542,8 +4428,8 @@
 	stop_automated_movement_when_pulled = 1
 	},
 /turf/open/floor/plating/rust,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 3"
+/area/awaymission/Killthemall/Level{
+	name = "Level 3"
 	})
 "ZI" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -4553,8 +4439,8 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/floor/padded,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 11"
+/area/awaymission/Killthemall/Level{
+	name = "Level 11"
 	})
 "ZJ" = (
 /obj/item/a_gift/anything{
@@ -4564,14 +4450,14 @@
 	name = "void";
 	icon_state = "black"
 	},
-/area/awaymission/errorroom{
+/area/awaymission/Killthemall/start{
 	name = "???"
 	})
 "ZK" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 14"
+/area/awaymission/Killthemall/Level{
+	name = "Level 14"
 	})
 "ZQ" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -4584,16 +4470,14 @@
 	name = "\improper secret escape route"
 	},
 /turf/open/indestructible,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 0"
-	})
+/area/awaymission/Killthemall/start)
 "ZV" = (
 /obj/structure/flora/tree/jungle{
 	layer = 6
 	},
 /turf/open/misc/grass,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 8"
+/area/awaymission/Killthemall/Level{
+	name = "Level 8"
 	})
 "ZY" = (
 /obj/structure/closet/crate/large,
@@ -4602,8 +4486,8 @@
 /obj/item/reagent_containers/food/drinks/bottle/champagne/empty,
 /obj/item/reagent_containers/food/drinks/bottle/champagne/empty,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/errorroom{
-	name = "Kill kill kill! Level 12"
+/area/awaymission/Killthemall/Level{
+	name = "Level 12"
 	})
 
 (1,1,1) = {"
@@ -4838,7 +4722,7 @@ hP
 hP
 hP
 hP
-hP
+TG
 xO
 Ri
 Ri
@@ -5095,7 +4979,7 @@ hP
 hP
 hP
 hP
-hP
+TG
 xO
 Ri
 Ri
@@ -5352,7 +5236,7 @@ Kt
 Kt
 yG
 hP
-hP
+TG
 xO
 Ri
 Ri
@@ -5609,7 +5493,7 @@ Kt
 Kt
 Kt
 hP
-hP
+TG
 xO
 Ri
 Ri
@@ -5866,7 +5750,7 @@ Kt
 Kt
 Kt
 hP
-hP
+TG
 xO
 Ri
 Ri
@@ -6123,7 +6007,7 @@ Kt
 Kt
 Dx
 hP
-hP
+TG
 xO
 Ri
 Ri
@@ -6380,7 +6264,7 @@ Kt
 Kt
 Kt
 hP
-hP
+TG
 xO
 Ri
 Ri
@@ -6637,7 +6521,7 @@ Kt
 Kt
 Kt
 hP
-hP
+TG
 xO
 Ri
 Ri
@@ -6894,7 +6778,7 @@ Kt
 Kt
 yo
 hP
-hP
+TG
 xO
 Ri
 Ri
@@ -7151,7 +7035,7 @@ Kt
 Kt
 Kt
 hP
-hP
+TG
 xO
 Ri
 Ri
@@ -7408,7 +7292,7 @@ Kt
 Kt
 Kt
 hP
-hP
+TG
 xO
 Ri
 Ri
@@ -7665,7 +7549,7 @@ Kt
 Kt
 cQ
 hP
-hP
+TG
 xO
 Ri
 Ri
@@ -7922,7 +7806,7 @@ LV
 Kt
 Kt
 hP
-hP
+TG
 xO
 Ri
 Ri
@@ -8179,7 +8063,7 @@ JN
 Kt
 Kt
 hP
-hP
+TG
 xO
 Ri
 Ri
@@ -8436,7 +8320,7 @@ WK
 Kt
 ak
 hP
-hP
+TG
 xO
 Ri
 Ri
@@ -8693,7 +8577,7 @@ Kt
 Kt
 Kt
 hP
-hP
+TG
 xO
 Ri
 Ri
@@ -8950,7 +8834,7 @@ Kt
 Kt
 Kt
 hP
-hP
+TG
 xO
 Ri
 Ri
@@ -9207,7 +9091,7 @@ Kt
 Kt
 Hl
 hP
-hP
+TG
 xO
 Ri
 Ri
@@ -9464,7 +9348,7 @@ Kt
 Kt
 Kt
 hP
-hP
+TG
 xO
 Ri
 Ri
@@ -9721,7 +9605,7 @@ Kt
 Kt
 Kt
 hP
-hP
+TG
 xO
 Ri
 Ri
@@ -9978,7 +9862,7 @@ Kt
 Kt
 fX
 hP
-hP
+TG
 xO
 Ri
 Ri
@@ -10235,7 +10119,7 @@ Kt
 Kt
 Kt
 hP
-hP
+TG
 xO
 Ri
 Ri
@@ -10492,7 +10376,7 @@ Kt
 Kt
 Kt
 hP
-hP
+TG
 xO
 Ri
 Ri
@@ -10749,7 +10633,7 @@ hP
 hP
 hP
 hP
-hP
+TG
 xO
 Ri
 Ri
@@ -10989,11 +10873,11 @@ Ri
 Ri
 Ri
 xO
-hP
-hP
-hP
-hP
-hP
+TG
+TG
+TG
+TG
+TG
 hP
 hP
 uH
@@ -11001,12 +10885,12 @@ gr
 rW
 hP
 hP
-hP
-hP
-hP
-hP
-hP
-hP
+TG
+TG
+TG
+TG
+TG
+TG
 xO
 Ri
 Ri
@@ -12206,7 +12090,7 @@ lm
 lm
 lm
 SR
-ky
+lK
 lK
 lK
 lK
@@ -13651,10 +13535,10 @@ ju
 ju
 nE
 nE
-rF
+qq
 nE
 nE
-rF
+qq
 nE
 nE
 ju
@@ -14936,10 +14820,10 @@ ju
 ju
 nE
 nE
-rF
+qq
 nE
 nE
-rF
+qq
 nE
 nE
 ju
@@ -15448,14 +15332,14 @@ ab
 xO
 ju
 ju
-rF
+qq
 nE
 nE
 nE
 nE
 nE
 nE
-rF
+qq
 ju
 ju
 xO
@@ -16193,8 +16077,8 @@ ab
 ab
 ab
 xO
-xO
-xO
+om
+om
 om
 om
 om
@@ -16203,8 +16087,8 @@ kW
 om
 om
 om
-vR
-vR
+om
+om
 xO
 ab
 ab
@@ -16449,8 +16333,8 @@ ab
 ab
 ab
 ab
-ab
-ab
+xO
+xO
 xO
 om
 om
@@ -16478,10 +16362,10 @@ xO
 xO
 ju
 ju
-rF
+qq
 nE
 nE
-rF
+qq
 ju
 ju
 xO
@@ -18115,13 +17999,13 @@ kH
 qF
 qF
 qF
-hR
-hR
-hR
+Zr
+Zr
+Zr
 Gy
-hR
-hR
-hR
+Zr
+Zr
+Zr
 qF
 qF
 qF
@@ -18371,15 +18255,15 @@ kH
 kH
 qF
 qF
-hR
-hR
-hR
-hR
+Zr
+Zr
+Zr
+Zr
 LO
-hR
-hR
-hR
-hR
+Zr
+Zr
+Zr
+Zr
 qF
 qF
 kH
@@ -18627,16 +18511,16 @@ xO
 kH
 kH
 qF
-hR
-hR
+Zr
+Zr
 Lv
-hR
-hR
-hR
-hR
-hR
-hR
-hR
+Zr
+Zr
+Zr
+Zr
+Zr
+Zr
+Zr
 Lv
 qF
 kH
@@ -18884,18 +18768,18 @@ xO
 kH
 kH
 ON
-hR
-hR
-hR
-hR
-hR
-hR
+Zr
+Zr
+Zr
+Zr
+Zr
+Zr
 Vl
 ON
-hR
+Zr
 Lv
-hR
-hR
+Zr
+Zr
 kH
 kH
 xO
@@ -19140,19 +19024,19 @@ ab
 xO
 kH
 kH
-hR
-hR
-hR
+Zr
+Zr
+Zr
 ue
 ON
-hR
+Zr
 rp
 ON
 ON
 ON
 ON
-hR
-hR
+Zr
+Zr
 kH
 kH
 xO
@@ -19397,19 +19281,19 @@ ab
 xO
 kH
 kH
-hR
-hR
-hR
+Zr
+Zr
+Zr
 ON
 ON
-hR
-hR
-hR
-hR
+Zr
+Zr
+Zr
+Zr
 ON
 EQ
-hR
-hR
+Zr
+Zr
 kH
 kH
 xO
@@ -19655,17 +19539,17 @@ xO
 kH
 kH
 Qc
-hR
-hR
+Zr
+Zr
 EQ
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
+Zr
+Zr
+Zr
+Zr
+Zr
+Zr
+Zr
+Zr
 Zr
 kH
 kH
@@ -19911,19 +19795,19 @@ ab
 xO
 kH
 kH
-hR
-hR
-hR
-hR
-hR
-hR
-hR
+Zr
+Zr
+Zr
+Zr
+Zr
+Zr
+Zr
 EQ
-hR
-hR
+Zr
+Zr
 ue
-hR
-hR
+Zr
+Zr
 kH
 kH
 xO
@@ -20168,19 +20052,19 @@ ab
 xO
 kH
 kH
-hR
-hR
+Zr
+Zr
 Lv
-hR
-hR
+Zr
+Zr
 ON
 ON
 ON
-hR
-hR
-hR
-hR
-hR
+Zr
+Zr
+Zr
+Zr
+Zr
 kH
 kH
 xO
@@ -20425,17 +20309,17 @@ ab
 xO
 kH
 kH
-hR
-hR
-hR
-hR
+Zr
+Zr
+Zr
+Zr
 ON
 ON
 ON
 ue
-hR
+Zr
 rp
-hR
+Zr
 fq
 ON
 kH
@@ -20682,17 +20566,17 @@ ab
 xO
 kH
 kH
-hR
+Zr
 ON
-hR
-hR
-hR
-hR
+Zr
+Zr
+Zr
+Zr
 ON
-hR
-hR
-hR
-hR
+Zr
+Zr
+Zr
+Zr
 ON
 ON
 kH
@@ -20941,16 +20825,16 @@ kH
 kH
 ON
 ON
-hR
-hR
-hR
+Zr
+Zr
+Zr
 fq
-hR
-hR
-hR
+Zr
+Zr
+Zr
 Qc
-hR
-hR
+Zr
+Zr
 ON
 kH
 kH
@@ -21199,15 +21083,15 @@ kH
 ON
 ON
 ON
-hR
+Zr
 Qc
-hR
+Zr
 EQ
-hR
-hR
-hR
-hR
-hR
+Zr
+Zr
+Zr
+Zr
+Zr
 Lv
 kH
 kH
@@ -21355,21 +21239,21 @@ Ri
 xO
 mk
 pG
-RF
-RF
-RF
-RF
-RF
-RF
-RF
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
 vH
-RF
-RF
-RF
-RF
-RF
-RF
-RF
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
 mk
 xO
 Ri
@@ -21456,16 +21340,16 @@ kH
 fq
 ON
 EQ
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
+Zr
+Zr
+Zr
+Zr
+Zr
+Zr
+Zr
+Zr
+Zr
+Zr
 kH
 kH
 xO
@@ -21611,22 +21495,22 @@ Ri
 Ri
 xO
 mk
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
 mk
 xO
 Ri
@@ -21710,19 +21594,19 @@ ab
 xO
 kH
 kH
-hR
-hR
-hR
-hR
+Zr
+Zr
+Zr
+Zr
 ue
-hR
+Zr
 ON
 LO
-hR
+Zr
 ue
-hR
-hR
-hR
+Zr
+Zr
+Zr
 kH
 kH
 xO
@@ -21868,22 +21752,22 @@ Ri
 Ri
 xO
 mk
-RF
+Rs
 mk
 mk
 mk
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
 mk
 mk
 mk
-RF
+Rs
 mk
 xO
 Ri
@@ -21967,19 +21851,19 @@ ab
 xO
 kH
 kH
-hR
-hR
+Zr
+Zr
 rp
-hR
-hR
+Zr
+Zr
 Lv
 ON
 ON
-hR
+Zr
 Qc
-hR
+Zr
 ON
-hR
+Zr
 kH
 kH
 xO
@@ -22125,22 +22009,22 @@ Ri
 Ri
 xO
 mk
-RF
-RF
-RF
-RF
-RF
+Rs
+Rs
+Rs
+Rs
+Rs
 mk
-RF
-RF
-RF
+Rs
+Rs
+Rs
 pG
 mk
-RF
-RF
-RF
-RF
-RF
+Rs
+Rs
+Rs
+Rs
+Rs
 mk
 xO
 Ri
@@ -22224,19 +22108,19 @@ ab
 xO
 kH
 kH
-hR
-hR
-hR
-hR
-hR
+Zr
+Zr
+Zr
+Zr
+Zr
 ON
 ON
-hR
-hR
-hR
-hR
-hR
-hR
+Zr
+Zr
+Zr
+Zr
+Zr
+Zr
 kH
 kH
 xO
@@ -22382,22 +22266,22 @@ Ri
 Ri
 xO
 mk
-RF
-RF
+Rs
+Rs
 mk
-RF
-RF
+Rs
+Rs
 mk
-RF
-RF
-RF
-RF
+Rs
+Rs
+Rs
+Rs
 mk
-RF
-RF
+Rs
+Rs
 mk
 mW
-RF
+Rs
 mk
 xO
 Ri
@@ -22481,19 +22365,19 @@ ab
 xO
 kH
 kH
-hR
-hR
+Zr
+Zr
 ON
-hR
-hR
-hR
-hR
-hR
-hR
-hR
+Zr
+Zr
+Zr
+Zr
+Zr
+Zr
+Zr
 EQ
-hR
-hR
+Zr
+Zr
 kH
 kH
 xO
@@ -22639,22 +22523,22 @@ Ri
 Ri
 xO
 mk
-RF
-RF
+Rs
+Rs
 mk
-RF
-RF
+Rs
+Rs
 mk
 ET
-RF
-RF
-RF
+Rs
+Rs
+Rs
 mk
-RF
-RF
+Rs
+Rs
 mk
-RF
-RF
+Rs
+Rs
 mk
 xO
 Ri
@@ -22738,19 +22622,19 @@ ab
 xO
 kH
 kH
-hR
-hR
+Zr
+Zr
 ON
 ON
-hR
-hR
+Zr
+Zr
 fq
-hR
+Zr
 Vl
-hR
+Zr
 ON
 ON
-hR
+Zr
 kH
 kH
 xO
@@ -22896,22 +22780,22 @@ Ri
 Ri
 xO
 mk
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
 mk
 xO
 Ri
@@ -22931,7 +22815,7 @@ wV
 wV
 wV
 wV
-fv
+wV
 wV
 wV
 Ip
@@ -22995,19 +22879,19 @@ ab
 xO
 kH
 kH
-hR
-hR
-hR
+Zr
+Zr
+Zr
 Lv
-hR
-hR
-hR
-hR
-hR
-hR
-hR
+Zr
+Zr
+Zr
+Zr
+Zr
+Zr
+Zr
 rp
-hR
+Zr
 kH
 kH
 xO
@@ -23154,21 +23038,21 @@ Ri
 xO
 mk
 WZ
-RF
-RF
+Rs
+Rs
 mk
 mk
 mk
 mk
-RF
-RF
+Rs
+Rs
 mk
 mk
 mk
 mk
-RF
-RF
-RF
+Rs
+Rs
+Rs
 mk
 xO
 Ri
@@ -23252,19 +23136,19 @@ ab
 xO
 kH
 kH
-hR
-hR
-hR
-hR
-hR
-hR
-hR
+Zr
+Zr
+Zr
+Zr
+Zr
+Zr
+Zr
 LO
-hR
-hR
-hR
-hR
-hR
+Zr
+Zr
+Zr
+Zr
+Zr
 kH
 kH
 xO
@@ -23412,20 +23296,20 @@ xO
 mk
 WZ
 bK
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
 Rs
-RF
-RF
-RF
-RF
-RF
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
 mk
 xO
 Ri
@@ -23514,7 +23398,7 @@ kH
 kH
 kH
 kH
-hR
+Zr
 Lb
 LJ
 kH
@@ -23668,20 +23552,20 @@ Ri
 xO
 mk
 YM
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
 bK
 mk
 xO
@@ -23924,22 +23808,22 @@ Ri
 Ri
 xO
 mk
-RF
-RF
-RF
+Rs
+Rs
+Rs
 mk
 kB
-RF
-RF
+Rs
+Rs
 Fp
-RF
-RF
-RF
+Rs
+Rs
+Rs
 yU
 mk
-RF
-RF
-RF
+Rs
+Rs
+Rs
 mk
 xO
 Ri
@@ -24030,7 +23914,7 @@ kH
 kH
 LJ
 LJ
-hR
+Zr
 kH
 kH
 kH
@@ -24181,22 +24065,22 @@ Ri
 Ri
 xO
 mk
-RF
-RF
+Rs
+Rs
 mk
 zk
 kB
-RF
-RF
-RF
-RF
-RF
-RF
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
 mW
 mk
 mk
-RF
-RF
+Rs
+Rs
 mk
 xO
 Ri
@@ -24284,11 +24168,11 @@ ab
 xO
 kH
 kH
-hR
-hR
-hR
-hR
-hR
+Zr
+Zr
+Zr
+Zr
+Zr
 kH
 kH
 xO
@@ -24438,22 +24322,22 @@ Ri
 Ri
 xO
 mk
-RF
-RF
-RF
+Rs
+Rs
+Rs
 mk
 kB
-RF
+Rs
 cM
-RF
+Rs
 cM
-RF
-RF
+Rs
+Rs
 mW
 mk
-RF
-RF
-RF
+Rs
+Rs
+Rs
 mk
 xO
 Ri
@@ -24541,11 +24425,11 @@ ab
 xO
 kH
 kH
-hR
-hR
-hR
-hR
-hR
+Zr
+Zr
+Zr
+Zr
+Zr
 kH
 kH
 xO
@@ -24695,22 +24579,22 @@ Ri
 Ri
 xO
 mk
-RF
-RF
-RF
+Rs
+Rs
+Rs
 mk
 kB
-RF
-RF
-RF
-RF
-RF
-RF
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
 yU
 mk
-RF
-RF
-RF
+Rs
+Rs
+Rs
 mk
 xO
 Ri
@@ -24799,10 +24683,10 @@ xO
 kH
 kH
 Pn
-hR
+Zr
 sq
-hR
-hR
+Zr
+Zr
 kH
 kH
 xO
@@ -24954,18 +24838,18 @@ xO
 Op
 mk
 mk
-RF
-RF
+Rs
+Rs
 cM
-RF
-RF
-RF
-RF
-RF
-RF
-RF
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
 cM
-RF
+Rs
 mk
 mk
 mk
@@ -25056,10 +24940,10 @@ xO
 kH
 kH
 qC
-hR
-hR
-hR
-hR
+Zr
+Zr
+Zr
+Zr
 kH
 kH
 xO
@@ -25210,20 +25094,20 @@ Ri
 xO
 mk
 mW
-RF
-RF
-RF
-RF
-RF
-RF
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
 YM
 YM
-RF
-RF
-RF
-RF
-RF
-RF
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
 ET
 mk
 xO
@@ -25313,10 +25197,10 @@ xO
 kH
 kH
 dt
-hR
-hR
-hR
-hR
+Zr
+Zr
+Zr
+Zr
 kH
 kH
 xO
@@ -25467,20 +25351,20 @@ Ri
 xO
 mk
 mW
-RF
-RF
-RF
-RF
+Rs
+Rs
+Rs
+Rs
 mk
 mk
 PJ
 mk
 mk
 mk
-RF
-RF
-RF
-RF
+Rs
+Rs
+Rs
+Rs
 ET
 mk
 xO
@@ -25723,22 +25607,22 @@ Ri
 Ri
 xO
 mk
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
 mk
 xO
 ab
@@ -25980,22 +25864,22 @@ Ri
 Ri
 xO
 mk
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
-RF
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
 hr
 hr
-RF
-RF
-RF
-RF
+Rs
+Rs
+Rs
+Rs
 mk
 xO
 ab
@@ -26500,7 +26384,7 @@ xO
 eL
 mk
 mk
-RF
+Rs
 yU
 ET
 mk
@@ -26757,9 +26641,9 @@ ab
 xO
 mk
 mk
-RF
-RF
-RF
+Rs
+Rs
+Rs
 mk
 mk
 xO
@@ -27013,11 +26897,11 @@ ab
 ab
 xO
 mk
-RF
-RF
-RF
-RF
-RF
+Rs
+Rs
+Rs
+Rs
+Rs
 mk
 xO
 ab
@@ -27270,11 +27154,11 @@ ab
 ab
 xO
 mk
-RF
-RF
-RF
-RF
-RF
+Rs
+Rs
+Rs
+Rs
+Rs
 mk
 xO
 ab
@@ -27528,10 +27412,10 @@ ab
 xO
 mk
 ho
-RF
+Rs
 jV
-RF
-RF
+Rs
+Rs
 mk
 xO
 ab
@@ -27785,10 +27669,10 @@ ab
 xO
 mk
 Sz
-RF
-RF
-RF
-RF
+Rs
+Rs
+Rs
+Rs
 mk
 xO
 ab
@@ -28042,10 +27926,10 @@ ab
 xO
 mk
 yR
-RF
-RF
-RF
-RF
+Rs
+Rs
+Rs
+Rs
 mk
 xO
 ab
@@ -28775,8 +28659,8 @@ cX
 cX
 cX
 cX
-TG
-QP
+cX
+cX
 cX
 cX
 xO
@@ -61855,7 +61739,7 @@ mc
 mc
 mc
 mc
-PX
+ZJ
 ZJ
 mc
 mc
@@ -63398,7 +63282,7 @@ mc
 mc
 mc
 ZJ
-PX
+ZJ
 mc
 mc
 mc
