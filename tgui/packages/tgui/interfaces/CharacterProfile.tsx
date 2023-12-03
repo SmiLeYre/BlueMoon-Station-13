@@ -66,6 +66,7 @@ export const CharacterProfile = (props, context) => {
             }
          { /*  {!data.is_unknown ? (<CharacterProfileImageElement />)
               : (<Box />)}*/}
+            <CharacterProfileImageElement />
             <CharacterModelImageElement />
           </Flex.Item>
           <Flex.Item Flex-direction="column" pl="10px" width="100%">
