@@ -3,7 +3,7 @@
 	stage_prob = 3
 	max_stages = 7
 	spread_flags = DISEASE_SPREAD_NON_CONTAGIOUS
-	cure_text = "Holy water or Semen."
+	cure_text = "Holy Water, or Milk, or Semen, or Female Semen."
 	spread_text = "A fog of pink unholy energy"
 	cures = list(/datum/reagent/water/holywater, /datum/reagent/consumable/semen,  /datum/reagent/consumable/semen/femcum,  /datum/reagent/consumable/milk)
 	cure_chance = 80
