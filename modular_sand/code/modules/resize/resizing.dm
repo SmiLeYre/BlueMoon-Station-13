@@ -15,13 +15,23 @@
 		//Both small.
 		if(get_size(user) <= RESIZE_A_TINYMICRO && get_size(target) <= RESIZE_A_TINYMICRO)
 			now_pushing = 0
-			user.forceMove(target.loc)
+			//user.forceMove(target.loc) BLUEMOON REMOVAL - пересено в micro_move_to_target_turf
+			micro_move_to_target_turf(target) // BLUEMOON ADD
 			return TRUE
 
 		//Doing messages
-		if(COMPARE_SIZES(user, target) >= 2) //if the initiator is twice the size of the micro
+		if(COMPARE_SIZES(user, target) >= 1.9) //if the initiator is twice the size of the micro // BLUEMOON EDIT - было >= 2
+			// BLUEMOON ADD START - небольшие персонажи мешают крупному тянуть за собой кого-либо
+			if(pulling)
+				if(COMPARE_SIZES(user, target) < 2.2) // Разница слишком велика, чтобы мешать тянуть
+					if(!(world.time % 3))
+						to_chat(src, span_warning("[target] слишком высокий - его нужно раздавить, чтобы протащить [pulling]."))
+					return TRUE
+			// BLUEMOON ADD END
 			now_pushing = 0
-			user.forceMove(target.loc)
+
+			//user.forceMove(target.loc) BLUEMOON REMOVAL - пересено в micro_move_to_target_turf
+			micro_move_to_target_turf(target) // BLUEMOON ADD
 
 			//Smaller person being stepped on
 			if(iscarbon(src))
@@ -32,8 +42,9 @@
 				return TRUE
 
 		//Smaller person stepping under a larger person
-		if(COMPARE_SIZES(target, user) >= 2)
-			user.forceMove(target.loc)
+		if(COMPARE_SIZES(target, user) >= 1.85 && target.a_intent == INTENT_HELP) // BLUEMOON EDIT - добавлена проверка на интент и изменена проверка на размер, было >= 2
+			//user.forceMove(target.loc) BLUEMOON REMOVAL - пересено в micro_move_to_target_turf
+			micro_move_to_target_turf(target) // BLUEMOON ADD
 			now_pushing = 0
 			micro_step_under(target)
 			return TRUE
@@ -63,8 +74,9 @@
 			log_combat(user, target, "stepped on", addition="[user.a_intent] trample")
 			if(user.a_intent == "disarm" && CHECK_MOBILITY(user, MOBILITY_MOVE) && !user.buckled)
 				now_pushing = 0
-				user.forceMove(target.loc)
+				//user.forceMove(target.loc) BLUEMOON REMOVAL - пересено в micro_move_to_target_turf
 				user.sizediffStamLoss(target)
+				micro_move_to_target_turf(target) // BLUEMOON ADD
 				user.add_movespeed_modifier(/datum/movespeed_modifier/stomp, TRUE) //Full stop
 				addtimer(CALLBACK(user, /mob/.proc/remove_movespeed_modifier, MOVESPEED_ID_STOMP, TRUE), 3) //0.3 seconds
 				if(iscarbon(user))
@@ -76,18 +88,19 @@
 
 			if(user.a_intent == "harm" && CHECK_MOBILITY(user, MOBILITY_MOVE) && !user.buckled)
 				now_pushing = 0
-				user.forceMove(target.loc)
+				//user.forceMove(target.loc) BLUEMOON REMOVAL - пересено в micro_move_to_target_turf
 				user.sizediffStamLoss(target)
 				user.sizediffBruteloss(target)
+				micro_move_to_target_turf(target) // BLUEMOON ADD
 				playsound(loc, 'sound/misc/splort.ogg', 50, 1)
 				user.add_movespeed_modifier(/datum/movespeed_modifier/stomp, TRUE)
 				addtimer(CALLBACK(user, /mob/.proc/remove_movespeed_modifier, MOVESPEED_ID_STOMP, TRUE), 10) //1 second
 				//user.Stun(20)
 				// BLUEMOON ADDITION START - персонажи с тяжёлыми квирками наносят больше урона и на дольше станят, но сами получают стан
 				if(HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY))
-					user.Stun(0.5 SECONDS)
+					user.Immobilize(0.5 SECONDS)
 				else if(HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY_SUPER))
-					user.Stun(1 SECONDS)
+					user.Immobilize(1 SECONDS)
 				// BLUEMOON ADDITION END
 				if(iscarbon(user))
 					if(istype(user) && (user.dna.features["taur"] == "Naga" || user.dna.features["taur"] == "Tentacle"))
@@ -98,8 +111,9 @@
 
 			if(user.a_intent == "grab" && CHECK_MOBILITY(user, MOBILITY_MOVE) && !user.buckled)
 				now_pushing = 0
-				user.forceMove(target.loc)
+				//user.forceMove(target.loc) BLUEMOON REMOVAL - пересено в micro_move_to_target_turf
 				user.sizediffStamLoss(target)
+				micro_move_to_target_turf(target) // BLUEMOON ADD
 				user.sizediffStun(target)
 				user.add_movespeed_modifier(/datum/movespeed_modifier/stomp, TRUE)
 				addtimer(CALLBACK(user, /mob/.proc/remove_movespeed_modifier, MOVESPEED_ID_STOMP, TRUE), 7)//About 3/4th a second
@@ -122,8 +136,9 @@
 							SEND_SIGNAL(target, COMSIG_MICRO_PICKUP_FEET, user)
 						return TRUE
 
-		if(COMPARE_SIZES(target, user) >= 2)
-			user.forceMove(target.loc)
+		if(COMPARE_SIZES(target, user) >= 1.85 && target.a_intent == INTENT_HELP) // BLUEMOON EDIT - добавлена проверка на интент и изменена проверка на размер, было >= 2
+			//user.forceMove(target.loc) BLUEMOON REMOVAL - пересено в micro_move_to_target_turf
+			micro_move_to_target_turf(target) // BLUEMOON ADD
 			now_pushing = 0
 			micro_step_under(target)
 			return TRUE

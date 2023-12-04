@@ -242,7 +242,7 @@
 	/// Amount of points to give per mining level
 	var/base_points = 4
 	/// How high the machine can be run before it starts having a chance for dimension breaches.
-	var/safe_levels = 10
+	var/safe_levels = 15
 
 
 /obj/machinery/power/bluespace_tap/New()
@@ -340,7 +340,7 @@
 		input_level--
 	if(prob(input_level - safe_levels + (EMAGGED * 5)))	//at dangerous levels, start doing freaky shit. prob with values less than 0 treat it as 0
 		priority_announce("Непредвиденный скачок напряжения во время работы Блюспейс-Сборщика. Внимание, обнаружены появления внепространственных объектов. Возможная локация: [get_area(src)]. [obj_flags == EMAGGED ? "ВНИМАНИЕ: Ошибка аварийного отключения! Пожалуйста, перейдите к ручной остановке." : "Запущено Аварийное Отключение."]", "ВНИМАНИЕ: Сбой Блюспейс-Сборщика.")
-		if(obj_flags == EMAGGED)
+		if(!(obj_flags & EMAGGED))
 			input_level = 0	//emergency shutdown unless we're sabotaged
 			desired_level = 0
 		for(var/i in 1 to rand(1, 3))

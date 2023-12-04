@@ -878,6 +878,19 @@
 	fitting_swords = list(/obj/item/melee/rapier)
 	starting_sword = /obj/item/melee/rapier
 
+/obj/item/storage/belt/sabre/civil
+	name = "Civil Sabre Sheath"
+	fitting_swords = list(/obj/item/melee/sabre, /obj/item/melee/sabre/civil, /obj/item/melee/baton/stunsword)
+	starting_sword = /obj/item/melee/sabre/civil
+
+/obj/item/melee/sabre/civil
+	name = "Off-duty Officer's Sabre"
+	desc = "Изящное оружие, его мономолекулярная кромка способна с легкостью рассекать плоть и кости."
+	force = 8
+	throwforce = 12
+	armour_penetration = 50
+	block_parry_data = null
+
 /obj/item/storage/belt/sabre/secbelt
 	name = "security sheath"
 	desc = "A statement on modern practical fashion; this limber black sheath is fitted to a lightened security belt, allowing one to look fashionable with their sword-shaped stun-baton, while of course carrying less things."

@@ -16,6 +16,15 @@
 		/obj/item/tank/internals/plasma=3)
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber
 
+// BLUEMOON ADD START - командная коробочка для командира
+/datum/outfit/ert/firesquad_commander/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
+	. = ..()
+	var/list/extra_backpack_items = list(
+		/obj/item/storage/box/pinpointer_squad
+	)
+	LAZYADD(backpack_contents, extra_backpack_items)
+// BLUEMOON ADD END
+
 /datum/outfit/ert/firesquad_commander/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()
 
@@ -70,6 +79,15 @@
 		/obj/item/storage/ifak=1,\
 		/obj/item/ammo_box/magazine/m12g/slug=3)
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber
+
+// BLUEMOON ADD START - командная коробочка для командира
+/datum/outfit/ert/heavysquad_commander/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
+	. = ..()
+	var/list/extra_backpack_items = list(
+		/obj/item/storage/box/pinpointer_squad
+	)
+	LAZYADD(backpack_contents, extra_backpack_items)
+// BLUEMOON ADD END
 
 /datum/outfit/ert/heavysquad_commander/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()
@@ -223,6 +241,15 @@
 		/obj/item/storage/ifak=1,\
 		/obj/item/ammo_box/magazine/vss_mag=4)
 
+// BLUEMOON ADD START - командная коробочка для командира
+/datum/outfit/ert/ert_russian_leader/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
+	. = ..()
+	var/list/extra_backpack_items = list(
+		/obj/item/storage/box/pinpointer_squad
+	)
+	LAZYADD(backpack_contents, extra_backpack_items)
+// BLUEMOON ADD END
+
 /datum/outfit/ert/ert_russian_leader/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()
 
@@ -371,6 +398,15 @@
 		/obj/item/choice_beacon/sol_mech=1,\
 		/obj/item/ammo_box/magazine/m12g/slug=4)
 
+// BLUEMOON ADD START - командная коробочка для командира
+/datum/outfit/ert/sol_soldier_leader/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
+	. = ..()
+	var/list/extra_backpack_items = list(
+		/obj/item/storage/box/pinpointer_squad
+	)
+	LAZYADD(backpack_contents, extra_backpack_items)
+// BLUEMOON ADD END
+
 /datum/outfit/ert/sol_soldier_leader/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()
 
@@ -409,6 +445,15 @@
 		/obj/item/ammo_box/magazine/m556=3,\
 		/obj/item/storage/ifak=1)
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber
+
+// BLUEMOON ADD START - командная коробочка для командира
+/datum/outfit/ert/ntr_ert_leader/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
+	. = ..()
+	var/list/extra_backpack_items = list(
+		/obj/item/storage/box/pinpointer_squad
+	)
+	LAZYADD(backpack_contents, extra_backpack_items)
+// BLUEMOON ADD END
 
 /datum/outfit/ert/ntr_ert_leader/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()
@@ -466,6 +511,15 @@
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/storage/ifak=1)
 	l_pocket = /obj/item/dualsaber
+
+// BLUEMOON ADD START - командная коробочка для командира
+/datum/outfit/ert/maid_leader/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
+	. = ..()
+	var/list/extra_backpack_items = list(
+		/obj/item/storage/box/pinpointer_squad
+	)
+	LAZYADD(backpack_contents, extra_backpack_items)
+// BLUEMOON ADD END
 
 /datum/outfit/ert/maid_leader/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()

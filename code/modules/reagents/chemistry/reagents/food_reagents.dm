@@ -370,7 +370,8 @@
 			return
 		else if ( mouth_covered )	// Reduced effects if partially protected
 			if(prob(50))
-				victim.emote("realagony")
+				if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+					victim.emote("realagony")
 			victim.blur_eyes(6)
 			victim.blind_eyes(4)
 			victim.confused = max(M.confused, 6)
@@ -384,7 +385,7 @@
 			victim.damageoverlaytemp = 60
 			return
 		else // Oh dear :D
-			if(prob(5))
+			if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
 				victim.emote("realagony")
 			victim.blur_eyes(10)
 			victim.blind_eyes(6)
@@ -820,6 +821,20 @@
 		M.adjustFireLoss(-1*REM, 0)
 		. = TRUE
 	..()
+
+// BLUEMOON ADD START - кактусы с лаваленда, а также никтотиновые листья дают эффект обезболивающего для операций
+/datum/reagent/consumable/vitfro/on_mob_metabolize(mob/living/M) //modularisation for miners salve painkiller.
+	..()
+	if(iscarbon(M))
+		ADD_TRAIT(M, TRAIT_PAINKILLER, PAINKILLER_VITFRUIT)
+		M.throw_alert("painkiller", /atom/movable/screen/alert/painkiller)
+
+/datum/reagent/consumable/vitfro/on_mob_end_metabolize(mob/living/M)
+	..()
+	if(iscarbon(M))
+		REMOVE_TRAIT(M, TRAIT_PAINKILLER, PAINKILLER_VITFRUIT)
+		M.clear_alert("painkiller", /atom/movable/screen/alert/painkiller)
+// BLUEMOON ADD END
 
 /datum/reagent/consumable/clownstears
 	name = "Clown's Tears"

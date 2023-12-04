@@ -114,6 +114,14 @@
 	var/medipen_type = /obj/item/reagent_containers/hypospray/medipen
 
 /obj/item/storage/box/survival/PopulateContents()
+	// BLUEMOON ADD - у робототов особый набор для выживания
+	if(HAS_TRAIT(loc, TRAIT_ROBOTIC_ORGANISM))
+		mask_type = null
+		internal_type = null
+		medipen_type = null
+		new /obj/item/stack/cable_coil/random/five(src)
+		new /obj/item/weldingtool/mini(src)
+	// BLUEMOON ADD END
 	new mask_type(src)
 	if(!isnull(medipen_type))
 		new medipen_type(src)

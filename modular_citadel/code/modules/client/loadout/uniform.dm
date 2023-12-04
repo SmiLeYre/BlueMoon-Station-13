@@ -746,3 +746,11 @@
 	path = /obj/item/clothing/under/rank/civilian/polychromic_clown
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
 	restricted_roles = list("Clown")
+
+/datum/gear/uniform/maid
+	name = "Tactical Maid Outfit"
+	path = /obj/item/clothing/under/syndicate/maid
+
+/datum/gear/uniform/maid_revealing
+	name = "Revealing Tactical Maid Outfit"
+	path = /obj/item/clothing/under/syndicate/maid_revealing

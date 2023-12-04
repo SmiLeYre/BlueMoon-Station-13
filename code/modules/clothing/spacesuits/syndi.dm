@@ -28,7 +28,7 @@
 	name = "green space suit"
 	icon_state = "syndicate-green"
 	item_state = "syndicate-green"
-	tail_state = "ert-alertn"
+	tail_state = "ert-alert"
 
 //Dark green syndicate space suit
 /obj/item/clothing/head/helmet/space/syndicate/green/dark

@@ -238,3 +238,14 @@
 	fitted = NO_FEMALE_UNIFORM
 	can_adjust = FALSE
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/under/dress/turtledress
+	name = "Turtleneck dress"
+	desc = "It moves with the body, and it's flattering too, because it accentuates the face and elongates the figure."
+	icon = 'modular_bluemoon/Gardelin0/icons/clothing/object/uniforms.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Gardelin0/icons/clothing/worn/uniform.dmi'
+	icon_state = "turtledress"
+	item_state = "turtledress"
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE

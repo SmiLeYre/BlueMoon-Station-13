@@ -22,6 +22,7 @@
 	icon = 'modular_splurt/icons/obj/clothing/under/suits.dmi'
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/under/suits.dmi'
 	anthro_mob_worn_overlay = 'modular_splurt/icons/mob/clothing/under/suits_digi.dmi'
+	fitted = FEMALE_UNIFORM_TOP //So it won't create holes in skirt texture. - Gardelin0
 
 /obj/item/clothing/under/suit/pencil/black_really
 	name = "executive pencilskirt"

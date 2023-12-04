@@ -159,7 +159,7 @@ The console is located at computer/gulag_teleporter.dm
 	if(id)
 		prisoner.equip_to_appropriate_slot(id)
 	if(R)
-		R.fields["criminal"] = "Incarcerated"
+		R.fields["criminal"] = SEC_RECORD_STATUS_INCARCERATED
 
 /obj/item/circuitboard/machine/gulag_teleporter
 	name = "labor camp teleporter (Machine Board)"

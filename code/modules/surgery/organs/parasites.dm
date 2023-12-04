@@ -25,7 +25,8 @@
 			to_chat(owner, "<span class='danger'>You feel like something is tearing its way out of your skin...</span>")
 			owner.reagents.add_reagent("histamine", 10)
 			if(prob(30))
-				owner.emote("scream")
+				if(!HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+					owner.emote("scream")
 				var/spiders = rand(3,5)
 				for(var/i in 1 to spiders)
 					new/obj/structure/spider/spiderling(get_turf(owner))

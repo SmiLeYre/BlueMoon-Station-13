@@ -385,8 +385,15 @@
 
 /datum/gear/donator/darksabresheath
 	name = "Dark Sabre Sheath"
-	slot = ITEM_SLOT_BACKPACK
+	slot = ITEM_SLOT_BELT
 	path = /obj/item/storage/belt/sabre/darksabre
+	ckeywhitelist = list()
+	donator_group_id = DONATOR_GROUP_TIER_1
+
+/datum/gear/donator/officersabresheath
+	name = "Officer Sabre Sheath"
+	slot = ITEM_SLOT_BELT
+	path = /obj/item/storage/belt/sabre/civil
 	ckeywhitelist = list()
 	donator_group_id = DONATOR_GROUP_TIER_1
 

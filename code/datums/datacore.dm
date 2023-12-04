@@ -86,11 +86,10 @@
 			manifest_inject(N.new_character, N.client, N.client.prefs)
 		CHECK_TICK
 
-/datum/datacore/proc/manifest_modify(name, assignment, trim)
+/datum/datacore/proc/manifest_modify(name, assignment)
 	var/datum/data/record/foundrecord = find_record("name", name, GLOB.data_core.general)
 	if(foundrecord)
 		foundrecord.fields["rank"] = assignment
-		foundrecord.fields["trim"] = trim
 
 /datum/datacore/proc/get_manifest_tg() //copypasted from tg, renamed to avoid namespace conflicts
 	var/list/manifest_out = list()
@@ -108,7 +107,6 @@
 	for(var/datum/data/record/t in GLOB.data_core.general)
 		var/name = t.fields["name"]
 		var/rank = t.fields["rank"]
-		var/trim = t.fields["trim"] // internal jobs by trim type
 		var/department_check = GetJobName(t.fields["rank"])
 		var/has_department = FALSE
 		for(var/department in departments)
@@ -118,8 +116,7 @@
 					manifest_out[department] = list()
 				manifest_out[department] += list(list(
 					"name" = name,
-					"rank" = rank,
-					"trim" = trim
+					"rank" = rank
 				))
 				has_department = TRUE
 				break
@@ -128,8 +125,7 @@
 				manifest_out["Misc"] = list()
 			manifest_out["Misc"] += list(list(
 				"name" = name,
-				"rank" = rank,
-				"trim" = trim
+				"rank" = rank
 			))
 	return manifest_out
 
@@ -289,9 +285,8 @@
 		G.fields["id"]			= id
 		G.fields["name"]		= H.real_name
 		G.fields["rank"]		= assignment
-		G.fields["trim"]		= assignment
 		G.fields["age"]			= H.age
-		G.fields["species"]	= H.dna.species.name
+		G.fields["species"]		= H.dna.species.name
 		G.fields["fingerprint"]	= md5(H.dna.uni_identity)
 		G.fields["p_stat"]		= "Active"
 		G.fields["m_stat"]		= "Stable"
@@ -326,10 +321,13 @@
 		var/datum/data/record/S = new()
 		S.fields["id"]			= id
 		S.fields["name"]		= H.real_name
-		S.fields["criminal"]	= "None"
+		S.fields["criminal"]	= SEC_RECORD_STATUS_NONE
 		S.fields["mi_crim"]		= list()
+		S.fields["mi_crim_d"]	= list()
 		S.fields["ma_crim"]		= list()
+		S.fields["ma_crim_d"]	= "No major crime convictions."
 		S.fields["notes"]		= prefs.security_records || "No notes."
+		LAZYINITLIST(S.fields["comments"])
 		security += S
 
 		//Locked Record
@@ -337,7 +335,6 @@
 		L.fields["id"]			= md5("[H.real_name][H.mind.assigned_role]")	//surely this should just be id, like the others?
 		L.fields["name"]		= H.real_name
 		L.fields["rank"] 		= H.mind.assigned_role
-		L.fields["trim"]		= assignment
 		L.fields["age"]			= H.age
 		if(H.gender == MALE)
 			G.fields["gender"]  = "Male"

@@ -110,6 +110,12 @@
   * * old_wound: If our new wound is a replacement for one of the same time (promotion or demotion), we can reference the old one just before it's removed to copy over necessary vars
   * * smited- If this is a smite, we don't care about this wound for stat tracking purposes (not yet implemented)
   */
+
+// BLUEMOON ADD START - модификатор текста, чтобы у синтетиков не "ломались кости", а были "повреждены приводы", оставляя суть травмы без изменений.
+/datum/wound/proc/apply_typo_modification()
+	return
+// BLUEMOON ADD END
+
 /datum/wound/proc/apply_wound(obj/item/bodypart/L, silent = FALSE, datum/wound/old_wound = null, smited = FALSE)
 	if(!istype(L) || !L.owner || !(L.body_zone in viable_zones) || isalien(L.owner) || !L.is_organic_limb())
 		qdel(src)
@@ -130,6 +136,7 @@
 			return
 
 	victim = L.owner
+	apply_typo_modification() // BLUEMOON ADD, изменяющийся текст для синтетиков
 	RegisterSignal(victim, COMSIG_PARENT_QDELETING, .proc/null_victim)
 	limb = L
 	LAZYADD(victim.all_wounds, src)
@@ -138,7 +145,8 @@
 	if(status_effect_type)
 		victim.apply_status_effect(status_effect_type, src)
 	SEND_SIGNAL(victim, COMSIG_CARBON_GAIN_WOUND, src, limb)
-	victim.emote("scream")
+	if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от получения ран
+		victim.emote("scream")
 	if(!victim.alerts["wound"]) // only one alert is shared between all of the wounds
 		victim.throw_alert("wound", /atom/movable/screen/alert/status_effect/wound)
 

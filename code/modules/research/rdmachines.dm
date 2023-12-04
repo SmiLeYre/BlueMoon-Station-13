@@ -20,7 +20,7 @@
 
 /obj/machinery/rnd/Initialize(mapload)
 	. = ..()
-	wires = new /datum/wires/rnd(src)
+	set_wires(new /datum/wires/rnd(src))
 
 /obj/machinery/rnd/Destroy()
 	QDEL_NULL(wires)

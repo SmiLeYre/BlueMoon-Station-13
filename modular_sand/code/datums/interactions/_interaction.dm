@@ -118,6 +118,11 @@
 	if(!evaluate_target(user, target, silent = FALSE))
 		return
 
+	// BLUEMOON ADD START - специальные проверки от БМ
+	if(!special_check(user, target))
+		return
+	// BLUEMOON ADD END
+
 	if(write_log_user)
 		user.log_message("[write_log_user] [target]", LOG_ATTACK)
 	if(write_log_target)

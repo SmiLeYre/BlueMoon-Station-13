@@ -4,3 +4,12 @@
 	icon = 'modular_bluemoon/Gardelin0/icons/clothing/object/accessories.dmi'
 	mob_overlay_icon = 'modular_bluemoon/Gardelin0/icons/clothing/worn/accessories.dmi'
 	icon_state = "polyband"
+
+/obj/item/clothing/accessory/waistcoat_color
+	name = "waistcoat"
+	desc = "For some classy, murderous fun."
+	icon = 'modular_bluemoon/Gardelin0/icons/clothing/object/accessories.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Gardelin0/icons/clothing/worn/accessories.dmi'
+	icon_state = "waistcoat_color"
+	item_state = "waistcoat_color"
+	minimize_when_attached = FALSE

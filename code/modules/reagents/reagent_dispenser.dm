@@ -320,7 +320,7 @@
 		return TRUE
 	. = ..()
 
-/obj/structure/reagent_dispensers/beerkeg/take_damage(mob/living/carbon/human/M)
+/obj/structure/reagent_dispensers/beerkeg/on_attack_hand(mob/living/carbon/human/M)
 	. = ..()
 	if(ismammal(M))
 		explosion(src, light_impact_range = 3, flame_range = 5, flash_range = 10)

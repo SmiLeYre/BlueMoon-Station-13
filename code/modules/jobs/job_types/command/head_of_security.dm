@@ -106,3 +106,12 @@
 	..()
 
 	H.typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/law
+
+// BLUEMOON ADD START - командная коробочка для командира
+/datum/outfit/job/hos/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
+	. = ..()
+	var/list/extra_backpack_items = list(
+		/obj/item/storage/box/pinpointer_squad
+	)
+	LAZYADD(backpack_contents, extra_backpack_items)
+// BLUEMOON ADD END

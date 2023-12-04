@@ -217,7 +217,7 @@
 	. = ..()
 	regenerate_TLV()
 	RegisterSignal(SSdcs,COMSIG_GLOB_NEW_GAS,.proc/regenerate_TLV)
-	wires = new /datum/wires/airalarm(src)
+	set_wires(new /datum/wires/airalarm(src))
 
 	if(ndir)
 		setDir(ndir)

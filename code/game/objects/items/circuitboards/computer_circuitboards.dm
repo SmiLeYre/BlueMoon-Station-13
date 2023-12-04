@@ -265,21 +265,8 @@
 	build_path = /obj/machinery/computer/holodeck
 
 /obj/item/circuitboard/computer/libraryconsole
-	name = "Library Visitor Console (Computer Board)"
-	build_path = /obj/machinery/computer/libraryconsole
-
-/obj/item/circuitboard/computer/libraryconsole/attackby(obj/item/I, mob/user, params)
-	if(I.tool_behaviour == TOOL_SCREWDRIVER)
-		if(build_path == /obj/machinery/computer/libraryconsole/bookmanagement)
-			name = "Library Visitor Console (Computer Board)"
-			build_path = /obj/machinery/computer/libraryconsole
-			to_chat(user, "<span class='notice'>Defaulting access protocols.</span>")
-		else
-			name = "Book Inventory Management Console (Computer Board)"
-			build_path = /obj/machinery/computer/libraryconsole/bookmanagement
-			to_chat(user, "<span class='notice'>Access protocols successfully updated.</span>")
-	else
-		return ..()
+	name = "Library Check/Out Console (Computer Board)"
+	build_path = /obj/machinery/computer/library/checkout
 
 /obj/item/circuitboard/computer/monastery_shuttle
 	name = "Monastery Shuttle (Computer Board)"

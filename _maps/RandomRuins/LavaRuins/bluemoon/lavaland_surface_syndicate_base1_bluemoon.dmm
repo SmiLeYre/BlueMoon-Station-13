@@ -6104,7 +6104,7 @@
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "RV" = (
 /obj/structure/table/wood,
-/obj/machinery/computer/libraryconsole/bookmanagement,
+/obj/machinery/computer/library/checkout,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},

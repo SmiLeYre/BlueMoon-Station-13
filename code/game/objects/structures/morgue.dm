@@ -257,7 +257,8 @@ GLOBAL_LIST_EMPTY(crematoriums)
 			return
 		for(var/mob/living/M in conts)
 			if (M.stat != DEAD)
-				M.emote("scream")
+				if(!HAS_TRAIT(M, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+					M.emote("scream")
 			if(user)
 				log_combat(user, M, "cremated")
 			else

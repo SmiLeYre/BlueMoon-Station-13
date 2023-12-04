@@ -40,6 +40,7 @@
 					improv = TRUE
 			if("penis")
 				if(user.has_penis() || user.has_strapon())
+					partner.snap_choker(partner, ITEM_SLOT_NECK)	//Snap my choker!~ - Gardelin0
 					message = pick(
 						"грубо трахает \the <b>[partner]</b> в рот с громким чавкающим звуком.",
 						"с силой загоняет свои гениталии в самую глотку \the <b>[partner]</b>.",
@@ -81,6 +82,7 @@
 					improv = TRUE
 			if("penis")
 				if(user.has_penis() || user.has_strapon())
+					partner.snap_choker(partner, ITEM_SLOT_NECK)	//Snap my choker!~ - Gardelin0
 					if(user.is_fucking(partner, CUM_TARGET_THROAT))
 						message = "вытягивает свой орган из горла \the <b>[partner]</b>."
 					else
@@ -111,6 +113,7 @@
 	require_user_penis = REQUIRE_EXPOSED
 	require_target_mouth = TRUE
 	max_distance = 1
+	extreme = TRUE //Stop killing people without their fucking consent! - Gardelin0
 
 /datum/interaction/lewd/throatfuck/display_interaction(mob/living/user, mob/living/partner)
 	var/message
@@ -124,8 +127,8 @@
 			"молотит рот <b>[partner]</b> с чавкающим звуком и раз за разом приземляется своими яйцами аккурат в лицо.")]"
 		if(rand(3))
 			partner.emote("кашляет на [user]")
-			if(prob(1) && istype(partner)) //Handled on modular_splurt
-				partner.adjustOxyLoss(rand(3,6))
+			if(prob(1) && istype(partner))
+				partner.adjustOxyLoss(rand(2,3))
 		if(partner.a_intent == INTENT_HARM)
 			partner.adjustBruteLoss(rand(3,6))
 			retaliation_message = pick(
@@ -145,6 +148,7 @@
 			genital = check
 		user.set_is_fucking(partner, CUM_TARGET_THROAT, genital)
 
+	partner.snap_choker(partner, ITEM_SLOT_NECK)	//Snap my choker!~ - Gardelin0
 	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/oral1.ogg',
 						'modular_sand/sound/interactions/oral2.ogg'), 70, 1, -1)
 	user.visible_message(message = span_lewd("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())

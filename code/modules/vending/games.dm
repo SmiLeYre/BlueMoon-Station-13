@@ -18,6 +18,7 @@
 					/obj/item/canvas/twentythreeXtwentythree = 3,
 					/obj/item/toy/crayon/spraycan = 3,
 					/obj/item/dyespray=3,
+					/obj/item/toy/prizeball/therapy=6,
 					)
 	contraband = list(/obj/item/dice/fudge = 9,
 					/obj/item/cardpack/syndicate = 10)

@@ -34916,7 +34916,7 @@
 /area/security/prison/cells)
 "lYf" = (
 /obj/structure/table/wood,
-/obj/machinery/computer/libraryconsole/bookmanagement,
+/obj/machinery/computer/library/checkout,
 /obj/machinery/light_switch{
 	pixel_y = 28
 	},
@@ -35229,11 +35229,6 @@
 /obj/machinery/teleport/station,
 /turf/open/floor/plating,
 /area/command/teleporter)
-"mdF" = (
-/obj/machinery/computer/libraryconsole,
-/obj/structure/table/wood,
-/turf/open/floor/wood,
-/area/service/library)
 "mdL" = (
 /turf/closed/wall/r_wall,
 /area/security/prison/upper)
@@ -114230,7 +114225,7 @@ pKm
 plz
 leB
 xQH
-mdF
+cZt
 cnZ
 eGr
 vnf

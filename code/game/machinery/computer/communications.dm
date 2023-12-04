@@ -211,7 +211,7 @@
 			var/message = trim(html_encode(params["message"]), MAX_MESSAGE_LEN)
 
 			var/emagged = obj_flags & EMAGGED
-			if (emagged && SSticker.mode.name == "Extended")
+			if (emagged && GLOB.master_mode == "Extended")
 				message_syndicate(message, usr)
 				to_chat(usr, span_danger("SYSERR @l(19833)of(transmit.dm): !@$ СООБЩЕНИЕ УСПЕШНО ОТПРАВЛЕНО ПО ПОДПРОСТРАНСТВЕННОЙ СВЯЗИ."))
 			else if (emagged)
@@ -580,7 +580,7 @@
 /obj/machinery/computer/communications/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if (!ui)
-		if (EMAGGED && SSticker.mode.name == "Extended" || syndicate == TRUE)
+		if (EMAGGED && GLOB.master_mode == "Extended" || syndicate == TRUE)
 			ui = new(user, src, "CommunicationsConsole")
 			ui.open()
 		else if (EMAGGED)
@@ -678,6 +678,9 @@
 		if("message")
 			status_signal.data["msg1"] = data1
 			status_signal.data["msg2"] = data2
+			if(istype(usr, /mob/living))
+				log_admin("STATUS: [key_name(usr)] set status screen with [src]. Message: [data1] [data2]")
+				message_admins("STATUS: [key_name(usr)] set status screen with [src]. Message: [data1] [data2]")
 		if("alert")
 			status_signal.data["picture_state"] = data1
 

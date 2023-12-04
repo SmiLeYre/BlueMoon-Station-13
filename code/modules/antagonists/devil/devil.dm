@@ -93,7 +93,6 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 	delete_on_mind_deletion = FALSE
 	threat = 5
 	show_to_ghosts = TRUE
-	soft_antag = FALSE // BLUEMOON ADDITION
 	var/obligation
 	var/ban
 	var/bane
@@ -524,6 +523,7 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 
 /datum/antagonist/devil/on_removal()
 	to_chat(owner.current, "<span class='userdanger'>Your infernal link has been severed! You are no longer a devil!</span>")
+	owner.special_role = null // BLUEMOON ADD
 	.=..()
 
 /datum/antagonist/devil/apply_innate_effects(mob/living/mob_override)

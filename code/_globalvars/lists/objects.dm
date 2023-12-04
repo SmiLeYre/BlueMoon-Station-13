@@ -16,6 +16,10 @@ GLOBAL_LIST_EMPTY(alarmdisplay)				        //list of all machines or programs th
 GLOBAL_LIST_EMPTY(singularities)				    //list of all singularities on the station (actually technically all engines)
 GLOBAL_LIST_EMPTY(grounding_rods)					//list of all grounding rods on the station
 
+GLOBAL_LIST_INIT(celltimers_list, list()) // list of all cell timers
+GLOBAL_LIST_INIT(cell_logs, list())
+GLOBAL_LIST_INIT(prisoncomputer_list, list())
+
 GLOBAL_LIST(chemical_reactions_list)				//list of all /datum/chemical_reaction datums. Used during chemical reactions
 GLOBAL_LIST(drink_reactions_list)				//list of all /datum/chemical_reaction datums where the output is of type /datum/reagent/consumable for bartender PDA
 GLOBAL_LIST(normalized_chemical_reactions_list)			//list of all /datum/chemical_reaction datums with actual sane indexing for chemistry PDA

@@ -186,6 +186,25 @@
 	user.visible_message("<span class='notice'>\The <b>[user]</b> expertly slides \the <b>[src]</b> down the table.</span>", "<span class='notice'>You slide \the <b>[src]</b> down the table. What a pro.</span>")
 	return
 
+/obj/item/reagent_containers/food/drinks/bullet_act(obj/item/projectile/P)
+	if((isGlass || istype(src, /obj/item/reagent_containers/food/drinks/bottle)) && !QDELING(src) && !QDELETED(src))
+		var/obj/item/broken_bottle/B = new (loc)
+		B.icon_state = icon_state
+		var/icon/I = new('icons/obj/drinks.dmi', src.icon_state)
+		I.Blend(B.broken_outline, ICON_OVERLAY, rand(5), 1)
+		I.SwapColor(rgb(255, 0, 220, 255), rgb(0, 0, 0, 0))
+		B.icon = I
+		B.name = "broken [name]"
+		var/matrix/M = matrix(B.transform)
+		M.Turn(rand(-170, 170))
+		B.transform = M
+		B.pixel_x = rand(-12, 12)
+		B.pixel_y = rand(-12, 12)
+		playsound(src, "shatter", 70, 1)
+		if(prob(33))
+			new/obj/item/shard(drop_location())
+		obj_integrity = 1
+	..()
 
 ////////////////////////////////////////////////////////////////////////////////
 /// Drinks. END

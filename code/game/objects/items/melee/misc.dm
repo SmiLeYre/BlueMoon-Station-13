@@ -93,7 +93,7 @@
 
 /obj/item/melee/sabre
 	name = "Officer's Sabre"
-	desc = "An elegant weapon, its monomolecular edge is capable of cutting through flesh and bone with ease."
+	desc = "Изящное оружие, мономолекулярная кромка которого способно с легкостью рассекать плоть и кости."
 	icon_state = "sabre"
 	item_state = "sabre"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
@@ -529,6 +529,17 @@
 			user?.visible_message("<span class='warning'>[user] collapses [src] back down!</span>")
 	playsound(src.loc, on_sound, 50, 1)
 	add_fingerprint(user)
+
+/obj/item/melee/classic_baton/telescopic/centcom
+	name = "Tactical Covenant Bat"
+	desc = "Выдвижная тактическая бита Центрального Командования Nanotrasen. \
+	В официальных документах эта бита проходит под элегантным названием \"Показатель Власти Двадцать Восемь\". \
+	Выдаваясь только самым верным и эффективным офицерам NanoTrasen, это оружие является одновременно символом статуса \
+	и инструментом высшего правосудия."
+	icon_state = "centcom_bat_0"
+	off_icon_state = "centcom_bat_0"
+	on_icon_state = "centcom_bat_1"
+	on_item_state = "centcom_bat_1"
 
 /obj/item/melee/classic_baton/telescopic/newspaper
 	name = "The Daily Whiplash"

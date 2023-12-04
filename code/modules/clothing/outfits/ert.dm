@@ -56,6 +56,15 @@
 		/obj/item/storage/ifak=1,\
 		/obj/item/ammo_box/magazine/wt550m9=3)
 
+// BLUEMOON ADD START - командная коробочка для командира
+/datum/outfit/ert/commander/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
+	. = ..()
+	var/list/extra_backpack_items = list(
+		/obj/item/storage/box/pinpointer_squad
+	)
+	LAZYADD(backpack_contents, extra_backpack_items)
+// BLUEMOON ADD END
+
 /datum/outfit/ert/commander/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	. = ..()
 

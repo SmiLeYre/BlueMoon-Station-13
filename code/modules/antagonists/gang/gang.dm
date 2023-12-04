@@ -29,7 +29,6 @@
 
 	/// A reference to the handler datum that manages the families gamemode. In case of no handler (admin-spawned during round), this will be null; this is fine.
 	var/datum/gang_handler/handler
-	soft_antag = FALSE // BLUEMOON ADDITION
 	reminded_times_left = 1 // BLUEMOON ADD - 1 напоминания достаточно, чтобы не играли в мирномага
 	time_needed_to_remind = 5 MINUTES // BLUEMOON ADD
 
@@ -104,6 +103,7 @@
 		that imprint on generic teams, but i'm too lazy to refactor THAT too */
 	var/datum/atom_hud/gang_hud = GLOB.huds[ANTAG_HUD_GANGSTER]
 	gang_hud.remove_hud_from(owner.current)
+	owner.special_role = null // BLUEMOON ADD
 	..()
 
 /datum/antagonist/gang/apply_innate_effects(mob/living/mob_override)

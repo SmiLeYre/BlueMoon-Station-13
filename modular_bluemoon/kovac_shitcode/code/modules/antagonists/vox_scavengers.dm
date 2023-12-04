@@ -6,7 +6,6 @@
 	threat = 12
 	show_to_ghosts = TRUE
 	var/datum/team/vox_scavengers/crew
-	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/vox_scavengers/greet()
 	SEND_SOUND(owner.current, sound('modular_bluemoon/kovac_shitcode/sound/vox_spawn.ogg'))

@@ -138,6 +138,7 @@
 		"SolFed Tourist",
 		"NRI Tourist",
 		"Clerk",
+		"Secretary", //I mean, why not? - Gardelin0
 		"Blacksmith",
 		"All-purpose Fleshlight",
 		"All-purpose Dildo",

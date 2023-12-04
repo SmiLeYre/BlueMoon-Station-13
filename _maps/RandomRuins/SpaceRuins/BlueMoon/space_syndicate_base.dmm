@@ -6929,6 +6929,13 @@
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
+/obj/item/paper_bin/carbon{
+	pixel_y = 3
+	},
+/obj/item/pen/fountain/captain{
+	name = "admiral's fountain pen";
+	pixel_y = 5
+	},
 /turf/open/floor/iron/dark/textured_half,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "DH" = (
@@ -8986,12 +8993,10 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
 "MC" = (
 /obj/structure/table/wood,
-/obj/item/paper_bin/carbon{
-	pixel_y = 3
-	},
-/obj/item/pen/fountain/captain{
-	name = "admiral's fountain pen";
-	pixel_y = 5
+/obj/machinery/fax{
+	fax_name = "Unknown Syndicate Fax";
+	name = "DS-2 Fax Machine";
+	syndicate_network = 1
 	},
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
@@ -10155,7 +10160,7 @@
 	dir = 5
 	},
 /obj/structure/table/wood,
-/obj/machinery/computer/libraryconsole/bookmanagement{
+/obj/machinery/computer/library/checkout{
 	pixel_y = 7
 	},
 /turf/open/floor/wood/wood_parquet,

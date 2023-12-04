@@ -23,6 +23,7 @@ GLOBAL_LIST_INIT(glass_recipes, list ( \
 		new/datum/stack_recipe("small bulb flask", /obj/item/glasswork/glass_base/flask_small, 5), \
 		new/datum/stack_recipe("large bottle flask", /obj/item/glasswork/glass_base/flask_large, 15), \
 		new/datum/stack_recipe("tea cup", /obj/item/glasswork/glass_base/tea_cup, 5), \
+		new/datum/stack_recipe("ashtray", /obj/item/ashtray/glass, 1), \
 		new/datum/stack_recipe("tea plate", /obj/item/glasswork/glass_base/tea_plate, 5), \
 	)), \
 ))
@@ -441,3 +442,5 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 /obj/item/shard/plasma/alien
 	name = "alien shard"
 	desc = "A nasty looking shard of advanced alloy glass."
+
+//Made ashtrays craftable. - Gardelin0

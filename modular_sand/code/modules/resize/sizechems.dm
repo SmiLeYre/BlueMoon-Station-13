@@ -76,7 +76,7 @@
 
 /datum/reagent/growthchem/on_mob_life(mob/living/M)
 	var/size = get_size(M)
-	if(size < RESIZE_MACRO)
+	if(size < RESIZE_LARGE) // BLUEMOON EDIT - было RESIZE_MACRO
 		M.update_size(size + 0.025)
 		M.visible_message("<span class='danger'>[pick("[M] grows!", "[M] expands in size!", "[M] pushes outwards in stature!")]</span>", "<span class='danger'>[pick("You feel your body fighting for space and growing!", "The world contracts inwards in every direction!", "You feel your muscles expand, and your surroundings shrink!")]</span>")
 	..()
