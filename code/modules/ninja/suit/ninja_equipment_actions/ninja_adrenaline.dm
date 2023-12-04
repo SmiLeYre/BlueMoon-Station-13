@@ -6,8 +6,9 @@
 	name = "Adrenaline Boost"
 	desc = "Inject a secret chemical that will counteract all movement-impairing effect."
 	button_icon_state = "adrenal"
-	icon_icon = 'icons/obj/implants.dmi'
+	icon_icon = 'icons/mob/actions/actions_ninja.dmi'
 	required_mobility_flags = NONE
+	background_icon_state = "background_green"
 
 /**
  * Proc called to activate space ninja's adrenaline.
@@ -20,7 +21,7 @@
 	if(ninjacost(0,N_ADRENALINE))
 		return
 	var/mob/living/carbon/human/ninja = affecting
-	ninja.do_adrenaline(150, TRUE, 0, 0, TRUE, list(/datum/reagent/medicine/epinephrine = 3, /datum/reagent/medicine/regen_jelly = 10, /datum/reagent/medicine/stimulants = 2), "<span class='boldnotice'>You feel a sudden surge of energy!</span>")
+	ninja.do_adrenaline(150, TRUE, 0, 0, TRUE, list(/datum/reagent/medicine/epinephrine = 15, /datum/reagent/medicine/regen_jelly = 30, /datum/reagent/medicine/stimulants = 30), "<span class='boldnotice'>You feel a sudden surge of energy!</span>")
 	ninja.say(pick("A CORNERED FOX IS MORE DANGEROUS THAN A JACKAL!","HURT ME MOOORRREEE!","IMPRESSIVE!"), forced = "ninjaboost")
 	a_boost = FALSE
 	to_chat(ninja, "<span class='notice'>You have used the adrenaline boost.</span>")

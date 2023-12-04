@@ -48,7 +48,7 @@
 
 /obj/machinery/computer/telescience/examine(mob/user)
 	. = ..()
-	. += span_notice("There are [crystals ? crystals : "no"] bluespace crystal\s in the crystal slots.")
+	. += "<span class='notice'>There are [crystals ? crystals : "no"] bluespace crystal\s in the crystal slots.</span>"
 
 /obj/machinery/computer/telescience/Initialize(mapload)
 	. = ..()
@@ -56,18 +56,18 @@
 		crystals = starting_crystals
 
 /obj/machinery/computer/telescience/attack_paw(mob/user)
-	to_chat(user, span_warning("You are too primitive to use this computer!"))
+	to_chat(user, "<span class='warning'>You are too primitive to use this computer!</span>")
 	return
 
 /obj/machinery/computer/telescience/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stack/ore/bluespace_crystal))
 		var/obj/item/stack/ore/bluespace_crystal/CRYSTAL = W
 		if(crystals >= max_crystals)
-			to_chat(user, span_warning("There are not enough crystal slots."))
+			to_chat(user, "<span class='warning'>There are not enough crystal slots.</span>")
 			return
 		if(!user.dropItemToGround(user.get_active_held_item()))
 			return
-		user.visible_message("[user] inserts [CRYSTAL] into \the [src]'s crystal slot.", span_notice("You insert [CRYSTAL] into \the [src]'s crystal slot."))
+		user.visible_message("[user] inserts [CRYSTAL] into \the [src]'s crystal slot.", "<span class='notice'>You insert [CRYSTAL] into \the [src]'s crystal slot.</span>")
 		balloon_alert(user, "inserted bluespace")
 		CRYSTAL.use(1)
 		crystals++
@@ -79,7 +79,7 @@
 			if(!user.transferItemToLoc(W, src))
 				return
 			inserted_gps = W
-			user.visible_message("[user] inserts [W] into \the [src]'s GPS device slot.", span_notice("You insert [W] into \the [src]'s GPS device slot."))
+			user.visible_message("[user] inserts [W] into \the [src]'s GPS device slot.", "<span class='notice'>You insert [W] into \the [src]'s GPS device slot.</span>")
 			balloon_alert(user, "inserted GPS")
 	else if(W.tool_behaviour == TOOL_MULTITOOL)
 		if(W.buffer && istype(W.buffer, /obj/machinery/telepad))
@@ -180,7 +180,7 @@
 
 /obj/machinery/computer/telescience/proc/telefail()
 	sparks()
-	visible_message(span_warning("The telepad weakly fizzles."))
+	visible_message("<span class='warning'>The telepad weakly fizzles.</span>")
 
 /obj/machinery/computer/telescience/proc/doteleport(mob/user)
 

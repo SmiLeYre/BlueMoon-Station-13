@@ -35,7 +35,7 @@ GLOBAL_VAR_INIT(next_command_message_id, 1)
 		if ("orbit_sender")
 			var/atom/movable/sender = get_mob_by_key(params["sender_ckey"])
 			if(!sender)
-				to_chat(usr, span_notice("This player cannot be observed."))
+				to_chat(usr, "<span class='notice'>This player cannot be observed.</span>")
 				return
 
 			if(!isobserver(admin.mob))

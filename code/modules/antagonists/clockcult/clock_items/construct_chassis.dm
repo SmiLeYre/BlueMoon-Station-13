@@ -78,6 +78,15 @@
 	creation_message = "<span class='neovgre_small bold'>Crimson fire begins to rage in the armor as it rises into the air with its armaments!</span>"
 	construct_type = /mob/living/simple_animal/hostile/clockwork/marauder
 
+//Marauder armor, used to create clockwork marauders - sturdy frontline combatants that can deflect projectiles.
+/obj/item/clockwork/construct_chassis/clocktank
+	name = "Clocktank Chassis"
+	desc = "A pile of sleek and well-polished brass armor. A two small red gemstone sits in its faceplate."
+	icon_state = "smashed_anime_fragment"
+	construct_name = "clockwork tahk"
+	construct_desc = "<span class='neovgre_small'>It will become a <b>clocktank,</b> a well-rounded frontline combatant that can fire his gun.</span>"
+	creation_message = "<span class='neovgre_small bold'>Crimson fire begins to rage in the armor as it rises into the air with its armaments!</span>"
+	construct_type = /mob/living/simple_animal/hostile/clocktank
 
 //Cogscarab shell, used to create cogcarabs - fragile but zippy little drones that build and maintain the base.
 /obj/item/clockwork/construct_chassis/cogscarab

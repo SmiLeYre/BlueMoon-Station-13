@@ -207,7 +207,7 @@
 
 /datum/contractor_item/blackout
 	name = "Blackout"
-	desc = "Request Syndicate Command to distrupt the station's powernet. Disables power across the station for a short duration."
+	desc = "Request InteQ Command to distrupt the station's powernet. Disables power across the station for a short duration."
 	item_icon = "fa-bolt"
 	limited = 2
 	cost = 3
@@ -216,7 +216,7 @@
 	. = ..()
 	if (.)
 		power_fail(35, 50)
-		priority_announce("Abnormal activity detected in [station_name()]'s powernet. As a precautionary measure, the station's power will be shut off for an indeterminate duration.", "Critical Power Failure", "poweroff.ogg")
+	priority_announce("Обнаружена аномальная активность в энергосети [station_name()]. В качестве меры предосторожности электропитание станции будет отключено на неопределенный срок.", "Критический Сбой Питания", ANNOUNCER_POWEROFF)
 
 // Subtract cost, and spawn if it's an item.
 /datum/contractor_item/proc/handle_purchase(var/datum/contractor_hub/hub, mob/living/user)
@@ -241,11 +241,11 @@
 	return TRUE
 
 /obj/item/pinpointer/crew/contractor
-	name = "contractor pinpointer"
+	name = "Contractor Pinpointer"
 	desc = "A handheld tracking device that locks onto certain signals. Ignores suit sensors, but is much less accurate."
-	icon_state = "pinpointer_syndicate"
+	icon_state = "pinpointer_hunter"
 	item_state = "pinpointer_black"
-	minimum_range = 25
+	minimum_range = 10
 	has_owner = TRUE
 	ignore_suit_sensor_level = TRUE
 

@@ -1,13 +1,13 @@
 /datum/quirk/tough
-	name = "Tough"
-	desc = "Your body is abnormally enduring and can take 10% more damage."
-	value = 2
-	medical_record_text = "Patient has an abnormally high capacity for injury."
-	gain_text = span_notice("You feel very sturdy.")
-	lose_text = span_notice("You feel less sturdy.")
+	name = "Стойкость"
+	desc = "Ваше аномально крепкое тело может вынести на 20% больше урона."
+	value = 3
+	medical_record_text = "Пациент продемонстрировал аномально высокую устойчивость к травмам."
+	gain_text = "<span class='notice'>Вы чувствуете крепость в мышцах.</span>"
+	lose_text = "<span class='notice'>Вы чувствуете себя менее крепким.</span>"
 
 /datum/quirk/tough/add()
-	quirk_holder.maxHealth *= 1.1
+	quirk_holder.maxHealth *= 1.20
 
 /datum/quirk/tough/remove()
 	if(!quirk_holder)
@@ -15,13 +15,13 @@
 	quirk_holder.maxHealth *= 0.909 //close enough
 
 /datum/quirk/ashresistance
-	name = "Ashen Resistance"
-	desc = "Your body is adapted to the burning sheets of ash that coat volcanic worlds, though the heavy downpours of silt will still tire you."
+	name = "Пепельная Устойчивость"
+	desc = "Ваше тело адаптировалось к пылающим покровам пепла, которые застилают вулканические миры, но это не значит, что вы не будете уставать."
 	value = 2 //Is not actually THAT good. Does not grant breathing and does stamina damage to the point you are unable to attack. Crippling on lavaland, but you'll survive. Is not a replacement for SEVA suits for this reason. Can be adjusted.
 	mob_trait = TRAIT_ASHRESISTANCE
-	medical_record_text = "Patient has an abnormally thick epidermis."
-	gain_text = span_notice("You feel resistant to burning brimstone.")
-	lose_text = span_notice("You feel less as if your flesh is more flamamble.")
+	medical_record_text = "У пациента аномально плотный эпидермис."
+	gain_text = "<span class='notice'>Вы чувствуете себя устойчивее против горящей серы.</span>"
+	lose_text = "<span class='notice'>Ваша плоть становится более легковоспламеняемой.</span>"
 
 /* --FALLBACK SYSTEM INCASE THE TRAIT FAILS TO WORK. Do NOT enable this without editing ash_storm.dm to deal stamina damage with ash immunity.
 /datum/quirk/ashresistance/add()
@@ -34,12 +34,12 @@
 */
 
 /datum/quirk/rad_fiend
-	name = "Rad Fiend"
-	desc = "You've been blessed by Cherenkov's warming light, causing you to emit a subtle glow at all times. Only -very- intense radiation is capable of penetrating your protective barrier."
+	name = "Рад Фьенд"
+	desc = "Вас благословил согревающий свет Атома, заставляющий вас постоянно излучать едва заметное свечение. Только особо интенсивное излучение способно проникнуть через ваш защитный барьер."
 	value = 2
 	mob_trait = TRAIT_RAD_FIEND
-	gain_text = span_notice("You feel empowered by Cherenkov's glow.")
-	lose_text = span_notice("You realize that rads aren't so rad.")
+	gain_text = span_notice("Вы чувствуете в себе силы благодаря свечению Атома.")
+	lose_text = span_notice("Вы понимаете, что радиация не такая уж безопасная.")
 
 /datum/quirk/rad_fiend/add()
 	// Define quirk holder mob
@@ -60,11 +60,11 @@
 	quirk_mob.remove_filter("rad_fiend_glow")
 
 /datum/quirk/dominant_aura
-	name = "Dominant Aura"
-	desc = "Your mere presence is assertive enough to appear as powerful to other people, so much in fact that the weaker kind can't help but throw themselves at your feet at the snap of a finger."
+	name = "Аура Доминатора"
+	desc = "Ваша аура силы и превосходства настолько выразительна, что пассивы ничего не могут поделать, кроме как броситься вам в ноги по щелчку пальцев."
 	value = 1
-	gain_text = span_notice("You feel like making someone your pet.")
-	lose_text = span_notice("You feel less assertive.")
+	gain_text = "<span class='notice'>Вы хотите сделать кого-нибудь своим питомцем.</span>"
+	lose_text = "<span class='notice'>Вы чувствуете себя менее напористо.</span>"
 
 /datum/quirk/dominant_aura/add()
 	. = ..()
@@ -85,9 +85,9 @@
 	if(!sub.has_quirk(/datum/quirk/well_trained) || (sub == quirk_holder))
 		return
 
-	examine_list += span_lewd("\nYou can't make eye contact with [quirk_holder.p_them()] before flustering away!")
+	examine_list += span_lewd("\nВы испытываете сильный стыд от взгляда на [quirk_holder.ru_na()] и отводите свой взгляд!")
 	if(!TIMER_COOLDOWN_CHECK(user, COOLDOWN_DOMINANT_EXAMINE))
-		to_chat(quirk_holder, span_notice("\The [user] tries to look at you but immediately turns away with a red face..."))
+		to_chat(quirk_holder, span_notice("[user] пытается посмотреть на вас, но тут же отворачивается с красным лицом..."))
 		TIMER_COOLDOWN_START(user, COOLDOWN_DOMINANT_EXAMINE, 10 SECONDS)
 		sub.dir = turn(get_dir(sub, quirk_holder), pick(-90, 90))
 		sub.emote("blush")
@@ -103,51 +103,51 @@
 	for(var/mob/living/carbon/human/sub in hearers(DOMINANT_DETECT_RANGE, quirk_holder))
 		if(!sub.has_quirk(/datum/quirk/well_trained) || (sub == quirk_holder))
 			continue
-		var/good_x = "pet"
+		var/good_x = "питомец"
 		switch(sub.gender)
 			if(MALE)
-				good_x = "boy"
+				good_x = "мальчик"
 			if(FEMALE)
-				good_x = "girl"
+				good_x = "девочка"
 		switch(E?.key)
 			if("snap")
 				sub.dir = get_dir(sub, quirk_holder)
 				sub.emote(pick("blush", "pant"))
-				sub.visible_message(span_notice("\The <b>[sub]</b> turns shyly towards \the <b>[quirk_holder]</b>."),
-									span_lewd("You stare into \the [quirk_holder] submissively."))
+				sub.visible_message(span_notice("\The <b>[sub]</b> застенчиво поворачивается и начинает покорное наблюдение за \the <b>[quirk_holder]</b>. Какая молодчинка!"),
+									span_lewd("Ты покорно смотришь на \the [quirk_holder] и с трудом отводишь свой взгляд!"))
 			if("snap2")
 				sub.dir = get_dir(sub, quirk_holder)
 				sub.KnockToFloor()
 				sub.emote(pick("blush", "pant"))
-				sub.visible_message(span_lewd("\The <b>[sub]</b> submissively throws [sub.p_them()]self on the floor."),
-									span_lewd("You throw yourself on the floor like a pathetic beast on <b>[quirk_holder]</b>'s command."))
+				sub.visible_message(span_lewd("\The <b>[sub]</b> бросается на колени и преклоняет свою голову<b>[quirk_holder]</b>."),
+									span_lewd("Ты бросаешься на свои колени и преклоняешь голову перед <b>[quirk_holder]</b>, будто бы какое-то животное!"))
 			if("snap3")
 				sub.KnockToFloor()
 				step(sub, get_dir(sub, quirk_holder))
 				sub.emote(pick("blush", "pant"))
 				sub.do_jitter_animation(30) //You're being moved anyways
-				sub.visible_message(span_lewd("\The <b>[sub]</b> crawls closer to \the <b>[quirk_holder]</b> on all fours, following [quirk_holder.p_their()] command."),
-									span_lewd("You get on your hands and knees and crawl towards \the <b>[quirk_holder]</b> like a good [good_x] would."))
+				sub.visible_message(span_lewd("\The <b>[sub]</b> бросается на четвереньки и приближается на своих коленях к \the <b>[quirk_holder]</b>"),
+									span_lewd("Ты бросаешься на четвереньки и приближаешься на своих коленях к \the <b>[quirk_holder]</b>! [good_x] в своём репертуаре."))
 		. = TRUE
 
 	if(.)
 		TIMER_COOLDOWN_START(quirk_holder, COOLDOWN_DOMINANT_SNAP, DOMINANT_SNAP_COOLDOWN)
 
 /datum/quirk/arachnid
-	name = "Arachnid"
-	desc = "Your bodily anatomy allows you to spin webs and cocoons, even if you aren't an arachnid! (Note that this quirk does nothing for members of the arachnid species)"
+	name = "Арахнид"
+	desc = "Ваша анатомия позволяет плести паутину и коконы, будучи не арахнидом! (Учтите, что этот навык ничего не даёт расе арахнидов)"
 	value = 1
-	medical_record_text = "Patient has attempted to cover the room in webs, claiming to be \"making a nest\"."
+	medical_record_text = "Пациент попытался покрыть комнату паутиной, заявляя, что \"делает гнездо\"."
 	mob_trait = TRAIT_ARACHNID
-	gain_text = span_notice("You feel a strange sensation near your anus...")
-	lose_text = span_notice("You feel like you can't spin webs anymore...")
+	gain_text = "<span class='notice'>У вас появляется странное ощущение рядом с анусом...</span>"
+	lose_text = "<span class='notice'>Вы чувствуете, что больше не можете вить паутину...</span>"
 	processing_quirk = TRUE
 
 /datum/quirk/arachnid/add()
 	. = ..()
 	var/mob/living/carbon/human/H = quirk_holder
 	if(is_species(H,/datum/species/arachnid))
-		to_chat(H, span_warning("As an arachnid, this quirk does nothing for you, as these abilities are innate to your species."))
+		to_chat(H, "<span class='warning'>Этот навык ничего не даёт арахнидам, так как является встроенным для расы.</span>")
 		return
 	var/datum/action/innate/spin_web/SW = new
 	var/datum/action/innate/spin_cocoon/SC = new
@@ -165,25 +165,25 @@
 	SW?.Remove(H)
 
 /datum/quirk/flutter
-	name = "Flutter"
-	desc = "You are able to move about freely in pressurized low-gravity environments be it through the use of wings, magic, or some other physiological nonsense."
+	name = "Парение"
+	desc = "Вы можете свободно двигаться в герметичной среде с низкой гравитацией при помощи крыльев, магии или другой физиологической чуши."
 	value = 1
 	mob_trait = TRAIT_FLUTTER
 
 /datum/quirk/cloth_eater
-	name = "Clothes Eater"
-	desc = "You can eat most apparel to gain a boost in mood, and to gain some nutrients. (Insects already have this.)"
+	name = "Пожиратель Одежды"
+	desc = "Вы можете съесть большинство одежды, чтобы получить прибавку к настроению и питательные вещества. (Насекомые владеют этим навыком.)"
 	value = 1
 	var/mood_category ="cloth_eaten"
 	mob_trait = TRAIT_CLOTH_EATER
 
 /datum/quirk/ropebunny
 	name = "Rope Bunny"
-	desc = "You have mastered all forms of bondage! You can create bondage rope out of cloth, and bondage bolas out of bondage rope!"
+	desc = "Вы обучены искусно вязать верёвки любой формы. Вы можете создавать веревку из ткани, а из этой веревки - болы!"
 	value = 2
 
 /datum/quirk/ropebunny/add()
-	.=..()
+	. = ..()
 	var/mob/living/carbon/human/H = quirk_holder
 	if (!H)
 		return
@@ -197,66 +197,93 @@
 	. = ..()
 
 /datum/quirk/hallowed
-	name = "Hallowed"
-	desc = "You have been blessed by a higher power or are otherwise imbued with holy energy in some way. Your divine presence drives away magic and the unholy! Holy water will restore your health."
-	value = 1 // Maybe up the cost if more is added later.
+	name = "Святой Дух"
+	desc = "Вы были благословлены высшими силами или каким-то иным образом наделены святой энергией. Святая вода восстановит ваше здоровье!"
+	value = 2
 	mob_trait = TRAIT_HALLOWED
-	gain_text = span_notice("You feel holy energy starting to flow through your body.")
-	lose_text = span_notice("You feel your holy energy fading away...")
-	medical_record_text = "Patient has unidentified hallowed material concentrated in their blood. Please consult a chaplain."
+	gain_text = span_notice("Вы чувствуете, как святая энергия начинает течь по вашему телу.")
+	lose_text = span_notice("Вы чувствуете, как угасает ваша святая энергия...")
+	medical_record_text = "У пациента обнаружены неопознанные освященные материалы в крови. Проконсультируйтесь с капелланом."
 
 /datum/quirk/hallowed/add()
-	// Define quirk mob.
-	var/mob/living/carbon/human/quirk_mob = quirk_holder
-
-	// Give the holy trait.
-	ADD_TRAIT(quirk_mob, TRAIT_HOLY, "quirk_hallowed")
-
-	// Give the antimagic trait.
-	ADD_TRAIT(quirk_mob, TRAIT_ANTIMAGIC, "quirk_hallowed")
-
-	// Makes the user holy.
-	quirk_mob.mind.isholy = TRUE
-
 	// Add examine text.
 	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/quirk_examine_Hallowed)
 
 /datum/quirk/hallowed/remove()
-	// Define quirk mob.
-	var/mob/living/carbon/human/quirk_mob = quirk_holder
-
-	// Remove the holy trait.
-	REMOVE_TRAIT(quirk_mob, TRAIT_HOLY, "quirk_hallowed")
-
-	// Remove the antimagic trait.
-	REMOVE_TRAIT(quirk_mob, TRAIT_ANTIMAGIC, "quirk_hallowed")
-
-	// Makes the user not holy.
-	quirk_mob.mind.isholy = FALSE
-
 	// Remove examine text
 	UnregisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE)
 
 // Quirk examine text.
 /datum/quirk/hallowed/proc/quirk_examine_Hallowed(atom/examine_target, mob/living/carbon/human/examiner, list/examine_list)
-	examine_list += "[quirk_holder.p_they(TRUE)] radiates divine power..."
+	examine_list += "[quirk_holder.ru_who(TRUE)] излучает священную силу..."
 
-/datum/quirk/vacuum_resistance
-    name = "Vacuum Resistance"
-    desc = "Your body, whether due to technology, magic, or genetic engineering - is specially adapted to withstand and operate in the vacuum of space. You may still need a source of breathable air, however."
-    value = 3
-    gain_text = span_notice("Your physique attunes to the silence of space, now able to operate in zero pressure.")
-    lose_text = span_notice("Your physiology reverts as your spacefaring gifts lay dormant once more.")
-    var/list/perks = list(TRAIT_RESISTCOLD, TRAIT_RESISTLOWPRESSURE, TRAIT_LOWPRESSURECOOLING)
+/datum/quirk/russian
+	name = "Русский дух"
+	desc = "Вы были благословлены высшими силами или каким-то иным образом наделены святой энергией. С вами Бог!"
+	value = 2
+	mob_trait = TRAIT_RUSSIAN
+	gain_text = span_notice("Вы чувствуете, как Бог следит за вами!")
+	lose_text = span_notice("Вы чувствуете, как угасает ваша вера в Бога...")
+	medical_record_text = "У пациента обнаружен Ангел-Хранитель."
 
-/datum/quirk/vacuum_resistance/add()
+/datum/quirk/russian/add()
+	// Add examine text.
+	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/quirk_examine_russian)
+
+/datum/quirk/russian/remove()
+	// Remove examine text
+	UnregisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE)
+
+// Quirk examine text.
+/datum/quirk/russian/proc/quirk_examine_russian(atom/examine_target, mob/living/carbon/human/examiner, list/examine_list)
+	examine_list += "[quirk_holder.ru_who(TRUE)] излучает русский дух..."
+
+///datum/quirk/bomber
+//	name = "Подрывник-Самоубийца"
+//	desc = "Благодаря своим связям с Красной Бригадой вы получили специальный имплант для самоуничтожения! Ну или почему-то вы решили ввести себе какую-то зелёную штуку из имплантера с мусорки и теперь вы научились делать что-то потрясное..."
+//	value = 4
+//
+///datum/quirk/bomber/add()
+//	. = ..()
+//	var/mob/living/carbon/human/H = quirk_holder
+//	if (!H)
+//		return
+//	var/obj/item/implant/explosive/E = new
+//	E.implant(H)
+//	H.update_icons()
+
+/datum/quirk/breathing_tube
+	name = "Трубка для Горлового Дыхания"
+	desc = "Похоже, что вам не нравятся стандартные противогазы и прочие методы дыхания в безвоздушных условиях. Есть решение!"
+	value = 1
+	mood_quirk = FALSE
+	processing_quirk = FALSE
+
+/datum/quirk/breathing_tube/on_spawn()
 	. = ..()
-	var/mob/living/carbon/human/H = quirk_holder
-	for(var/perk in perks)
-		ADD_TRAIT(H, perk, ROUNDSTART_TRAIT)
 
-/datum/quirk/vacuum_resistance/remove()
-	. = ..()
-	var/mob/living/carbon/human/H = quirk_holder
-	for(var/perk in perks)
-		REMOVE_TRAIT(H, perk, ROUNDSTART_TRAIT)
+	// Create a new augment item
+	var/obj/item/organ/cyberimp/mouth/breathing_tube/put_in = new
+
+	// Apply the augment to the quirk holder
+	put_in.Insert(quirk_holder, null, TRUE, TRUE)
+
+// /datum/quirk/vacuum_resistance
+    // name = "Vacuum Resistance"
+    // desc = "Your body, whether due to technology, magic, or genetic engineering - is specially adapted to withstand and operate in the vacuum of space. You may still need a source of breathable air, however."
+    // value = 3
+    // gain_text = span_notice("Your physique attunes to the silence of space, now able to operate in zero pressure.")
+    // lose_text = span_notice("Your physiology reverts as your spacefaring gifts lay dormant once more.")
+    // var/list/perks = list(TRAIT_RESISTCOLD, TRAIT_RESISTLOWPRESSURE, TRAIT_LOWPRESSURECOOLING)
+//
+// /datum/quirk/vacuum_resistance/add()
+	// . = ..()
+	// var/mob/living/carbon/human/H = quirk_holder
+	// for(var/perk in perks)
+		// ADD_TRAIT(H, perk, ROUNDSTART_TRAIT)
+//
+// /datum/quirk/vacuum_resistance/remove()
+	// . = ..()
+	// var/mob/living/carbon/human/H = quirk_holder
+	// for(var/perk in perks)
+		// REMOVE_TRAIT(H, perk, ROUNDSTART_TRAIT)

@@ -4,7 +4,7 @@
 		T.opacity = new_opacity
 		T.has_opaque_atom = new_opacity
 		T.reconsider_lights()
-		T.air_update_turf(1)
+		T.air_update_turf(TRUE)
 	update_freelook_sight()
 
 /obj/machinery/door/poddoor/multi_tile

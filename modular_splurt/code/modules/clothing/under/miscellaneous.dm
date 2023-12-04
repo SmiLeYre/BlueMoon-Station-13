@@ -34,6 +34,8 @@
 	mob_overlay_icon = 'modular_splurt/icons/mobs/suits.dmi'
 	can_adjust = FALSE
 	mutantrace_variation = NONE
+	body_parts_covered = CHEST
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/under/lumberjack
 	name = "lumberjack outfit"
@@ -53,17 +55,23 @@
 	can_adjust = FALSE
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	body_parts_covered = CHEST|GROIN
+	unique_reskin = list(
+		"Adjusted" = list("icon_state" = "bunnysuit_d"),
+		"Red" = list("icon_state" = "bunnysuit_r"),
+		"Blue" = list("icon_state" = "bunnysuit_b"),
+		"White" = list("icon_state" = "bunnysuit_w")
+	)
 
 /obj/item/clothing/under/domina
 	name = "Dominatrix Dress"
 	desc = "This dress makes you feel like you wanna get on all fours and beg for more!"
 	icon = 'modular_splurt/icons/obj/clothing/uniforms.dmi'
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/uniform.dmi'
-	icon_state = "domina"
-	item_state = "domina"
+	icon_state = "bluedress"
+	item_state = "bluedress"
 	can_adjust = FALSE
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-	body_parts_covered = CHEST|GROIN|LEGS
+	body_parts_covered = CHEST|GROIN|LEGS // Это буквально платье для тонкоспрайтов с Бея. Оно не работает. Очередной наркоманский элемент папки modular_splurt. Заменил на спрайт синего платья как заглушку до того, как перерисуем.
 
 /obj/item/clothing/under/bluedress
 	name = "Blue Royal Dress"
@@ -73,6 +81,7 @@
 	icon_state = "bluedress"
 	item_state = "bluedress"
 	can_adjust = FALSE
+	fitted = NO_FEMALE_UNIFORM // So it won't delete boobs
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	body_parts_covered = CHEST|GROIN|LEGS
 
@@ -112,6 +121,7 @@
 	icon = 'modular_splurt/icons/obj/clothing/uniforms.dmi'
 	icon_state = "secslutskirt"
 	item_state = "secslutskirt"
+	body_parts_covered = CHEST|GROIN|ARMS
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30, "wound" = 10)
 	can_adjust = FALSE
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/uniform.dmi'
@@ -123,6 +133,7 @@
 	icon_state = "secslutskirtpink"
 	item_state = "secslutskirtpink"
 	can_adjust = FALSE
+	body_parts_covered = CHEST|GROIN|ARMS
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/uniform.dmi'
 	mutantrace_variation = NONE
 
@@ -157,22 +168,20 @@
 	desc = "The uniform of the Brig Physician. Do know harm, with a skirt"
 	icon_state = "brigphysf"
 	item_state = "brigphysf"
+	body_parts_covered = CHEST|GROIN|ARMS
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/under/rank/blueshield
 	name = "blueshield outfit"
 	desc = "The uniform of the Blueshield. It makes you feel protected"
-	icon = 'modular_splurt/icons/obj/clothing/uniforms.dmi'
-	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/uniform.dmi'
-	icon_state = "blueshield"
-	item_state = "blueshield"
+	icon_state = "hosalt_blue"
+	item_state = "hosalt_blue"
 	armor = list("melee" = 10, "bullet" = 5, "laser" = 5,"energy" = 5, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 30, "wound" = 10)
-	can_adjust = FALSE
+	can_adjust = TRUE
 	strip_delay = 50
 	alt_covers_chest = TRUE
 	sensor_mode = SENSOR_COORDS
 	sensor_flags = NONE
-	anthro_mob_worn_overlay = 'modular_splurt/icons/mob/clothing/uniform_digi.dmi'
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_ALL_TAURIC
 
 /obj/item/clothing/under/rank/blueshield/formal
@@ -180,22 +189,26 @@
 	desc = "The formal uniform of the Blueshield. It makes you feel protected while looking great."
 	icon_state = "blueformal"
 	item_state = "blueformal"
+	icon = 'modular_splurt/icons/obj/clothing/uniforms.dmi'
+	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/uniform.dmi'
+	anthro_mob_worn_overlay = 'modular_splurt/icons/mob/clothing/uniform_digi.dmi'
 
 /obj/item/clothing/under/rank/blueshield/formal/skirt
 	name = "blueshield formal skirt"
 	desc = "The formal uniform of the Blueshield. It makes you feel protected while looking great. A lot better than the stuffy pants."
 	icon_state = "blueshieldskirt"
 	item_state = "blueshieldskirt"
+	body_parts_covered = CHEST|GROIN|ARMS
 
 /obj/item/clothing/under/rank/blueshield/skirt
 	name = "blueshield skirt"
 	desc = "The uniform of the Blueshield. It makes you feel protected, even with a bit of a breeze."
-	icon_state = "blueshieldf"
-	item_state = "blueshieldf"
+	icon_state = "hosalt_blue_skirt"
+	item_state = "hosalt_blue_skirt"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/under/plasmaman/security/blueshield
-	name = "security plasma envirosuit"
+	name = "blueshield plasma envirosuit"
 	desc = "A slick black and blue  plasmaman containment suit designed for the Blueshield."
 	icon_state = "bs_envirosuit"
 	item_state = "bs_envirosuit"
@@ -204,12 +217,12 @@
 	armor = list("melee" = 10, "bullet" = 5, "laser" = 5,"energy" = 5, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 30, "wound" = 10)
 
 /obj/item/clothing/head/helmet/space/plasmaman/security/blueshield
-	name = "head of security's plasma envirosuit helmet"
+	name = "blueshield plasma envirosuit helmet"
 	desc = "A plasmaman containment helmet designed for the Blueshield, menacing black with blue stripes."
 	icon_state = "bs_envirohelm"
 	item_state = "bs_envirohelm"
 	icon = 'modular_splurt/icons/obj/clothing/head.dmi'
-	mob_overlay_icon = 'modular_splurt/icons/mobs/head.dmi'
+	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/head.dmi'
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60)
 
 /obj/item/clothing/under/rank/bridgeofficer
@@ -232,6 +245,7 @@
 	name = "bridge officer skirt"
 	icon_state = "bridgesecf"
 	item_state = "bridgesecf"
+	body_parts_covered = CHEST|GROIN|ARMS
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/under/rank/bridgeofficer/formal

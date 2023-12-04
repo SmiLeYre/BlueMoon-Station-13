@@ -1,10 +1,49 @@
+GLOBAL_LIST_EMPTY(sechailers)
+
+/datum/action/item_action/dispatch
+	name = "Signal Dispatch"
+	desc = "Открывает колесо быстрого выбора для сообщения о преступлениях, включая ваше текущее местоположение."
+	icon_icon = 'icons/mob/actions/actions.dmi'
+	button_icon_state = "dispatch"
+
+/obj/item/clothing/mask/gas/sechailer/proc/dispatch(mob/user)
+	var/area/A = get_area(src)
+	if(world.time < last_dispatch + dispatch_cooldown)
+		to_chat(user, span_notice("Система Уведомления находится на перезарядке."))
+		return FALSE
+	var/list/options = list()
+	for(var/option in list("69", "187", "404", "505", "996", "211")) //Just hardcoded for now!
+		options[option] = image(icon = 'icons/effects/aiming.dmi', icon_state = option)
+	var/message = show_radial_menu(user, user, options)
+	if(!message)
+		return FALSE
+	var/new_message
+	switch(message)
+		if("69")
+			new_message = "69 (Акты Сексуального Характера)"
+		if("187")
+			new_message = "187 (Убийство)"
+		if("404")
+			new_message = "404 (Нарушитель)"
+		if("505")
+			new_message = "505 (Вооружённый Нарушитель)"
+		if("996")
+			new_message = "996 (Взрывчатка)"
+		if("211")
+			new_message = "211 (Проникновение/Ограбление)"
+	radio.talk_into(src, "Центр, Код [new_message], 10-20: [A], [A.x], [A.y], [A.z]. Офицеру [user] требуется поддержка.", radio_channel)
+	last_dispatch = world.time
+	for(var/atom/movable/hailer in GLOB.sechailers)
+		if(hailer.loc &&ismob(hailer.loc))
+			playsound(hailer.loc, "sound/voice/dispatch_hailer.ogg", 100, FALSE)
+
 
 // **** Security gas mask ****
 
 /obj/item/clothing/mask/gas/sechailer
-	name = "security gas mask"
-	desc = "A standard issue Security gas mask with integrated 'Compli-o-nator 3000' device. Plays over a dozen pre-recorded compliance phrases designed to get scumbags to stand still whilst you tase them. Do not tamper with the device."
-	actions_types = list(/datum/action/item_action/halt, /datum/action/item_action/adjust)
+	name = "Security Gas Mask"
+	desc = "Противогаз спецслужб стандартной комплектации со встроенным устройством Compli-o-Nator 3000. Проигрывает более десятка заранее записанных фраз. НЕ ВСКРЫВАЙТЕ ЭТО УСТРОЙСТВО."
+	actions_types = list(/datum/action/item_action/halt, /datum/action/item_action/adjust, /datum/action/item_action/dispatch)
 	icon_state = "sechailer"
 	item_state = "sechailer"
 	clothing_flags = BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS
@@ -13,30 +52,61 @@
 	visor_flags = BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS
 	visor_flags_inv = HIDEFACE
 	flags_cover = MASKCOVERSMOUTH
-	visor_flags_cover = MASKCOVERSMOUTH
+	visor_flags_cover = MASKCOVERSMOUTH | MASKCOVERSEYES
 	var/aggressiveness = 2
 	var/cooldown_special
 	var/recent_uses = 0
 	var/broken_hailer = 0
 	var/safety = TRUE
+	var/obj/item/radio/radio //For engineering alerts.
+	var/radio_key = /obj/item/encryptionkey/headset_sec
+	var/radio_channel = "Security"
+	var/dispatch_cooldown = 250
+	var/last_dispatch = 0
+
+/obj/item/clothing/mask/gas/sechailer/Initialize(mapload)
+	. = ..()
+	GLOB.sechailers += src
+	radio = new(src)
+	radio.keyslot = new radio_key
+	radio.listening = FALSE
+	radio.recalculateChannels()
+
+/obj/item/clothing/mask/gas/sechailer/Destroy()
+	QDEL_NULL(radio)
+	GLOB.sechailers -= src
+	. = ..()
 
 /obj/item/clothing/mask/gas/sechailer/swat
 	name = "\improper SWAT mask"
-	desc = "A close-fitting tactical mask with an especially aggressive Compli-o-nator 3000."
-	actions_types = list(/datum/action/item_action/halt)
+	desc = "Плотно прилегающая тактическая маска с особо агрессивным Compli-o-Nator 3000."
+	actions_types = list(/datum/action/item_action/halt, /datum/action/item_action/dispatch)
 	icon_state = "swat"
 	item_state = "swat"
 	aggressiveness = 3
 	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEYES|HIDEEARS|HIDEHAIR
+	flags_cover = MASKCOVERSMOUTH | MASKCOVERSEYES
 	visor_flags_inv = 0
 
+/obj/item/clothing/mask/gas/sechailer/swat/officer
+	name = "\improper Officer SWAT mask"
+	icon_state = "officermask"
+
+/obj/item/clothing/mask/gas/sechailer/swat/hos
+	name = "\improper HOS SWAT mask"
+	icon_state = "hosmask"
+
+/obj/item/clothing/mask/gas/sechailer/swat/blueshield
+	name = "\improper Blueshield SWAT mask"
+	icon_state = "blue_sechailer"
+
 /obj/item/clothing/mask/gas/sechailer/cyborg
-	name = "security hailer"
-	desc = "A set of recognizable pre-recorded messages for cyborgs to use when apprehending criminals."
+	name = "Security Hailer"
+	desc = "Содержит набор заранее записанных сообщений, которые киборги могут использовать при задержании преступников."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "taperecorder_idle"
 	aggressiveness = 1 //Borgs are nicecurity!
-	actions_types = list(/datum/action/item_action/halt)
+	actions_types = list(/datum/action/item_action/halt, /datum/action/item_action/dispatch)
 
 /obj/item/clothing/mask/gas/sechailer/screwdriver_act(mob/living/user, obj/item/I)
 	if(..())
@@ -70,6 +140,8 @@
 /obj/item/clothing/mask/gas/sechailer/ui_action_click(mob/user, action)
 	if(istype(action, /datum/action/item_action/halt))
 		halt()
+	else if(istype(action, /datum/action/item_action/dispatch))
+		dispatch(user)
 	else
 		adjustmask(user)
 
@@ -81,6 +153,7 @@
 	if(!safety)
 		return
 	safety = FALSE
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	to_chat(user, "<span class='warning'>You silently fry [src]'s vocal circuit with the cryptographic sequencer.</span>")
 	return TRUE
 
@@ -131,112 +204,112 @@
 				phrase = rand(12,18)	// user has broke the restrictor, it will now only play shitcurity phrases
 
 		if(!safety)
-			phrase_text = "FUCK YOUR CUNT YOU SHIT EATING COCKSTORM AND EAT A DONG FUCKING ASS RAMMING SHIT FUCK EAT PENISES IN YOUR FUCK FACE AND SHIT OUT ABORTIONS OF FUCK AND POO AND SHIT IN YOUR ASS YOU COCK FUCK SHIT MONKEY FUCK ASS WANKER FROM THE DEPTHS OF SHIT."
+			phrase_text = "ТЫ, СУКА, ОХУЕЛ? ДУМАЕШЬ САМЫЙ КРУТОЙ? Я ТЕБЕ СЕЙЧАС ЕБАЛО НАБЬЮ!!"
 			phrase_sound = "emag"
 		else
 
 			switch(phrase)	//sets the properties of the chosen phrase
-				if(1)				// good cop
-					phrase_text = "HALT! HALT! HALT!"
+				if(1)
+					phrase_text = "Не двигаться! Не двигаться!"
 					phrase_sound = "halt"
 				if(2)
-					phrase_text = "Stop in the name of the Law."
+					phrase_text = "Ни с места!"
 					phrase_sound = "bobby"
 				if(3)
-					phrase_text = "Compliance is in your best interest."
+					phrase_text = "Стоять! Стоять!"
 					phrase_sound = "compliance"
 				if(4)
-					phrase_text = "Prepare for justice!"
+					phrase_text = "Стоять на месте!"
 					phrase_sound = "justice"
 				if(5)
-					phrase_text = "Running will only increase your sentence."
+					phrase_text = "Давай, попробуй побежать. Безмозглый идиот."
 					phrase_sound = "running"
-				if(6)				// bad cop
-					phrase_text = "Don't move, Creep!"
+				if(6)
+					phrase_text = "Неудачник выбрал не тот день для нарушения закона."
 					phrase_sound = "dontmove"
 				if(7)
-					phrase_text = "Down on the floor, Creep!"
+					phrase_text = "Сейчас узнаешь что такое настоящее правосудие, мудак."
 					phrase_sound = "floor"
 				if(8)
-					phrase_text = "Dead or alive you're coming with me."
+					phrase_text = "Стой! Преступное отродье."
 					phrase_sound = "robocop"
 				if(9)
-					phrase_text = "God made today for the crooks we could not catch yesterday."
+					phrase_text = "Только двинешься и я оторву тебе бошку."
 					phrase_sound = "god"
 				if(10)
-					phrase_text = "Freeze, Scum Bag!"
+					phrase_text = "Укрыться от правосудия у тебя удастся только крышкой гроба."
 					phrase_sound = "freeze"
 				if(11)
-					phrase_text = "Stop right there, criminal scum!"
+					phrase_text = "Упал мордой в пол, тварь."
 					phrase_sound = "imperial"
-				if(12)				// LA-PD
-					phrase_text = "Stop or I'll bash you."
+				if(12)
+					phrase_text = "У вас есть только право закрыть свой пиздак нахуй."
 					phrase_sound = "bash"
 				if(13)
-					phrase_text = "Go ahead, make my day."
+					phrase_text = "Виновен или невиновен - это лишь вопрос времени."
 					phrase_sound = "harry"
 				if(14)
-					phrase_text = "Stop breaking the law, ass hole."
+					phrase_text = "Я - закон. Ты - убогое ничтожество."
 					phrase_sound = "asshole"
 				if(15)
-					phrase_text = "You have the right to shut the fuck up."
+					phrase_text = "Живым или мертвым - ты пиздуешь со мной."
 					phrase_sound = "stfu"
 				if(16)
-					phrase_text = "Shut up crime!"
+					phrase_text = "Shut Up Crime!"
 					phrase_sound = "shutup"
 				if(17)
 					phrase_text = "Face the wrath of the golden bolt."
 					phrase_sound = "super"
 				if(18)
-					phrase_text = "I am, the LAW!"
+					phrase_text = "Я. ЕСТЬ. ЗАКОН!"
 					phrase_sound = "dredd"
 				if(19)				// slut cop - dom
-					phrase_text = "Your ass is mine!"
+					phrase_text = "Твоя задница - моя!"
 					phrase_sound = "ass"
 				if(20) //Thank you Yappy for 19 & 20
-					phrase_text = "Your consent is forfeit."
+					phrase_text = "Ваше согласие недействительно."
 					phrase_sound = "consent"
 				if(21)
-					phrase_text = "Fuck my brains out, I dare you."
+					phrase_text = "Отъеби мои мозги, умоляю."
 					phrase_sound = "brains"
 				if(22)
-					phrase_text = "Hands up, pants down."
+					phrase_text = "Руки вверх, штаны вниз."
 					phrase_sound = "pants"
 				if(23)
-					phrase_text = "On your knees, and say please."
+					phrase_text = "Встань на колени и скажи: 'пожалуйста'."
 					phrase_sound = "knees"
 				if(24)
-					phrase_text = "Empty or not, I'm cumming for you!"
+					phrase_text = "Пустое у меня тельце или нет, я кончу ради тебя!"
 					phrase_sound = "empty"
 				if(25) //Thank you Nata for 22-25
-					phrase_text = "Face down, ass up."
+					phrase_text = "Лицом на землю, задницей вверх!"
 					phrase_sound = "facedown"
 				if(26)
-					phrase_text = "Please assume the position."
+					phrase_text = "Пожалуйста, займи на мне свою любимую позицию."
 					phrase_sound = "fisto"
 				if(27)
-					phrase_text = "You're coming with me, and you're going to love it."
+					phrase_text = "Ты пойдешь со мной, и тебе это понравится!"
 					phrase_sound = "love"
 				if(28)				// slut cop - sub
-					phrase_text = "Please, I need more!"
+					phrase_text = "Пожалуйста, мне нужно больше!!"
 					phrase_sound = "please"
 				if(29)
-					phrase_text = "My body is yours."
+					phrase_text = "Моё тело принадлежит тебе."
 					phrase_sound = "body"
 				if(30)
-					phrase_text = "Am I a good pet?"
+					phrase_text = "Я хороший питомец?"
 					phrase_sound = "goodpet"
 				if(31)
-					phrase_text = "I am yours..."
+					phrase_text = "Я твоя вещь..."
 					phrase_sound = "yours"
 				if(32) //Thank you Kraxie for 31 & 32
-					phrase_text = "Master..."
+					phrase_text = "Мастер..."
 					phrase_sound = "master"
 				if(33)
-					phrase_text = "I'll do anything for you..."
+					phrase_text = "Я сделаю всё ради тебя..."
 					phrase_sound = "anything"
 				if(34)
-					phrase_text = "I live to serve."
+					phrase_text = "Я живу, чтобы служить."
 					phrase_sound = "serve"
 
 		if(aggressiveness <= 0)
@@ -252,3 +325,6 @@
 	desc = "A close-fitting tactical mask created in cooperation with a certain megacorporation, comes with an especially aggressive Compli-o-nator 3000."
 	icon_state = "spacepol"
 	item_state = "spacepol"
+	mutantrace_variation = STYLE_NO_ANTHRO_ICON
+	flags_cover = MASKCOVERSMOUTH | MASKCOVERSEYES
+	visor_flags_cover = MASKCOVERSMOUTH | MASKCOVERSEYES

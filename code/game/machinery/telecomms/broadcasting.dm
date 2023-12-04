@@ -154,6 +154,16 @@
 					if(R.can_receive(FREQ_SYNDICATE, list(R.z)))
 						radios |= R
 
+			if (num2text(frequency) in GLOB.reverseradiochannels)
+				for(var/obj/item/radio/R in GLOB.all_radios["[FREQ_INTEQ]"])
+					if(R.can_receive(FREQ_INTEQ, list(R.z)))
+						radios |= R
+
+			if (num2text(frequency) in GLOB.reverseradiochannels)
+				for(var/obj/item/radio/R in GLOB.all_radios["[FREQ_PIRATE]"])
+					if(R.can_receive(FREQ_PIRATE, list(R.z)))
+						radios |= R
+
 		if (TRANSMISSION_RADIO)
 			// Only radios not currently in subspace mode
 			for(var/obj/item/radio/R in GLOB.all_radios["[frequency]"])

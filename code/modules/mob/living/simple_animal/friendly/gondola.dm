@@ -15,6 +15,9 @@
 	response_disarm_simple = "bop"
 	response_harm_continuous = "kicks"
 	response_harm_simple = "kick"
+	speak_emote = list("smiles like :)", "shakes his head from side to side.")
+	emote_hear = list("smiles like :)", "shakes his head from side to side.")
+	emote_see = list("smiles like :)", "shakes his head from side to side.")
 	faction = list("gondola")
 	turns_per_move = 10
 	icon = 'icons/mob/gondolas.dmi'

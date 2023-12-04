@@ -4,7 +4,7 @@ Has a version for organic people and robotic/synthetic ones, considering robotic
 */
 /datum/surgery/purge_corruption
 	name = "Purge corruption"
-	desc = "A highly complex and time-consuming surgery used to purge any corruption currently present in a robot. Will knock out the patient for an amount of time proportional to corruption purged."
+	desc = "A highly complex and time-consuming surgery used to purge any corruption currently present in a robot. Will knock out the patient for an amount of time proportional to corruption purged. It also removes radiation." // BLUEMOON ADD - добавлено уточнение про устранение радиации
 	steps = list(
 			/datum/surgery_step/incise,
 			/datum/surgery_step/retract_skin,
@@ -41,7 +41,7 @@ Has a version for organic people and robotic/synthetic ones, considering robotic
 		return FALSE
 
 /datum/surgery_step/override_safeties
-	name = "Override inbuilt safeguards (multitool)"
+	name = "Отменить Встроенные Защиты (Мультитул)"
 	implements = list(TOOL_MULTITOOL = 100, TOOL_WIRECUTTER = 20)
 	time = 50
 
@@ -63,7 +63,7 @@ Has a version for organic people and robotic/synthetic ones, considering robotic
 	return FALSE
 
 /datum/surgery_step/remove_corruption
-	name = "Initiate system purge (multitool)"
+	name = "Запустить Очистку Системы (Мультитул)"
 	implements = list(TOOL_MULTITOOL = 95, TOOL_WIRECUTTER = 10) //You are relatively safe just using a multitool, but you should use sterilizer or simillar success chance increasing chems regardless.
 	time = 80 //Takes a l o n g time, but completely purges system corruption
 
@@ -74,22 +74,23 @@ Has a version for organic people and robotic/synthetic ones, considering robotic
 
 /datum/surgery_step/remove_corruption/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(!target.getorganslot(ORGAN_SLOT_BRAIN) || !HAS_TRAIT(target, TRAIT_ROBOTIC_ORGANISM))
-		user.visible_message("<span class='warning'>[user] suddenly realises that [user.p_they()] can't actually initiate a system purge in [target]...", "<span class='warning'>You suddenly realise that you cannot initiate a system purge in [target].</span>")
+		user.visible_message("<span class='warning'>[user] suddenly realises that [user.ru_who()] can't actually initiate a system purge in [target]...", "<span class='warning'>You suddenly realise that you cannot initiate a system purge in [target].</span>")
 		return FALSE
 	display_results(user, target, "<span class='notice'>You successfully initate a system purge in [target]...</span>",
 		"[user] successfully initiates a system purge in [target].",
 		"[user] completes the surgery on [target].")
 	var/purged = target.getToxLoss(TOX_SYSCORRUPT)
 	target.setToxLoss(0, toxins_type = TOX_SYSCORRUPT)
+	target.radiation = 0 // BLUEMOON ADD - т.к. у них не процессятся реагенты, пока нет возможности вывести радиацию кроме как этой операцией
 	target.Unconscious(round(purged * 0.2, 1))
 	return TRUE
 
 /datum/surgery_step/remove_corruption/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(!target.getorganslot(ORGAN_SLOT_BRAIN) || !HAS_TRAIT(target, TRAIT_ROBOTIC_ORGANISM))
-		user.visible_message("<span class='warning'>[user] suddenly realises that [user.p_they()] can't actually initiate a system purge in [target]...", "<span class='warning'>You suddenly realise that you cannot initiate a system purge in [target].</span>")
+		user.visible_message("<span class='warning'>[user] suddenly realises that [user.ru_who()] can't actually initiate a system purge in [target]...", "<span class='warning'>You suddenly realise that you cannot initiate a system purge in [target].</span>")
 		return FALSE
-	display_results(user, target, "<span class='notice'>You fail purging [target]'s system of corruption, damaging [target.p_them()] instead...</span>",
-	"[user] fails purging [target]'s system of corruption, damaging [target.p_them()] instead.",
+	display_results(user, target, "<span class='notice'>You fail purging [target]'s system of corruption, damaging [target.ru_na()] instead...</span>",
+	"[user] fails purging [target]'s system of corruption, damaging [target.ru_na()] instead.",
 	"[user] completes the surgery on [target].")
 	target.adjustOrganLoss(ORGAN_SLOT_BRAIN, 40)
 	target.gain_trauma_type(BRAIN_TRAUMA_SEVERE, TRAUMA_RESILIENCE_LOBOTOMY)

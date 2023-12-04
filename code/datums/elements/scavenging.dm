@@ -67,7 +67,7 @@
 	if(!length(methods))
 		return
 	var/text = english_list(methods, "", " or ")
-	examine_list += "<span class='notice'>Looks like [source.p_they()] can be scavenged [length(tool_types) ? "with" : ""][length(methods == 1) ? "" : "either "][length(tool_types) ? "a " : ""][text]</span>"
+	examine_list += "<span class='notice'>Looks like [source.ru_who()] can be scavenged [length(tool_types) ? "with" : ""][length(methods == 1) ? "" : "either "][length(tool_types) ? "a " : ""][text]</span>"
 
 /datum/element/scavenging/proc/scavenge_barehanded(atom/source, mob/user)
 	scavenge(source, user, 1)
@@ -154,6 +154,9 @@
 			else
 				to_chat(user, "<span class='notice'>You found something in [source]... no wait, that's Tom, the mouse! What is he doing here?</span>")
 				new /mob/living/simple_animal/mouse/brown/Tom(source.loc)
+		if(SCAVENGING_SPAWN_TENTACLES)
+			to_chat(user, "<span class='notice'>You found something in [source]... TENTACLES! KYAAA!</span>") //Smiley's request
+			new /mob/living/simple_animal/hostile/tentacles(source.loc)
 		else
 			special = FALSE
 

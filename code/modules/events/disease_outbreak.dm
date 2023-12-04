@@ -1,11 +1,10 @@
 /datum/round_event_control/disease_outbreak
 	name = "Disease Outbreak"
 	typepath = /datum/round_event/disease_outbreak
-	max_occurrences = 1
-	min_players = 3
-	weight = 5
+	max_occurrences = 2
+	min_players = 15
+	weight = 30
 	category = EVENT_CATEGORY_HEALTH
-	description = "A classic or advanced disease will infect some crewmembers."
 
 /datum/round_event/disease_outbreak
 	announce_when	= 15
@@ -23,7 +22,7 @@
 	return FALSE
 
 /datum/round_event/disease_outbreak/announce(fake)
-	priority_announce("Confirmed outbreak of level 7 viral biohazard aboard [station_name()]. All personnel must contain the outbreak.", "Biohazard Alert", "outbreak7")
+	priority_announce("Подтвержденная вспышка вирусной биологической опасности уровня 7 на борту [station_name()]. Весь персонал должен противостоять эпидемии.", "Биологическая тревога", "outbreak7")
 
 /datum/round_event/disease_outbreak/setup()
 	announce_when = rand(15, 30)

@@ -26,7 +26,7 @@
 		return
 
 	if (sender == "Voice in head")
-		to_chat(M, "<i>You hear a voice in your head... <b>[msg]</i></b>")
+		to_chat(M, "<i>Вы слышите голос в голове... <b>[msg]</i></b>")
 	else
 		var/mob/living/carbon/human/H = M
 
@@ -38,11 +38,11 @@
 			to_chat(usr, "The person you are trying to contact is not wearing a headset. Unsent message: [msg]")
 			return
 
-		to_chat(H, "You hear something crackle in your ears for a moment before a voice speaks.  \"Please stand by for a message from [sender == RADIO_CHANNEL_SYNDICATE ? "your benefactor" : "Central Command"].  Message as follows[sender == RADIO_CHANNEL_SYNDICATE ? ", agent." : ":"] <span class='bold'>[msg].</span> Message ends.\"")
+		to_chat(H, "Вы слышите щелчок в ухе прежде, чем голос в вашей голове начинает говорить.  \"Прослушайте сообщение от [sender == RADIO_CHANNEL_SYNDICATE ? "ваших нанимателей" : "ЦК"].  Содержание сообщения[sender == RADIO_CHANNEL_SYNDICATE ? ", агент." : ":"] <span class='bold'>[msg].</span> Конец сообщения.\"")
 
 
 	log_admin("SubtlePM ([sender]): [key_name(usr)] -> [key_name(M)] : [msg]")
-	msg = span_adminnotice("<b> SubtleMessage ([sender]): [key_name_admin(usr)] -> [key_name_admin(M)] :</b> [msg]")
+	msg = "<span class='adminnotice'><b> SubtleMessage ([sender]): [key_name_admin(usr)] -> [key_name_admin(M)] :</b> [msg]</span>"
 	message_admins(msg)
 	admin_ticket_log(M, msg)
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Subtle Message") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

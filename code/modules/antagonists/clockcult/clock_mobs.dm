@@ -22,6 +22,7 @@
 	speech_span = SPAN_ROBOT
 	var/playstyle_string = "<span class='heavy_brass'>You are a bug, yell at whoever spawned you!</span>"
 	var/empower_string = "<span class='heavy_brass'>You have nothing to empower, yell at the coders!</span>" //Shown to the mob when the herald beacon activates
+	typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/clock
 
 /mob/living/simple_animal/hostile/clockwork/Initialize(mapload)
 	. = ..()
@@ -41,7 +42,7 @@
 	return 0 //ouch, my metal-unlikely-to-be-damaged-by-electricity-body
 
 /mob/living/simple_animal/hostile/clockwork/examine(mob/user)
-	var/t_He = p_they(TRUE)
+	var/t_He = ru_who(TRUE)
 	var/t_s = p_s()
 	var/msg = "<span class='brass'>This is [icon2html(src, user)] \a <b>[src]</b>!\n"
 	if(desc)

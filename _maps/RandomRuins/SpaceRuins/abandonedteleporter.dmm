@@ -125,6 +125,10 @@
 /obj/structure/girder,
 /turf/open/floor/plating/airless,
 /area/ruin/space/abandoned_tele)
+"F" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/airless,
+/area/ruin/space/abandoned_tele)
 "O" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -211,7 +215,7 @@ a
 a
 b
 b
-h
+F
 h
 s
 b
@@ -228,7 +232,7 @@ g
 l
 q
 u
-h
+F
 b
 b
 c

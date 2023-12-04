@@ -23,7 +23,7 @@
 		var/mob/living/L = buckled_mobs[1]
 		if(iscarbon(L))
 			L.DefaultCombatKnockdown(100)
-			L.visible_message("<span class='warning'>[L] is maimed as the skewer shatters while still in [L.p_their()] body!</span>")
+			L.visible_message("<span class='warning'>[L] is maimed as the skewer shatters while still in [L.ru_ego()] body!</span>")
 			L.adjustBruteLoss(15)
 		unbuckle_mob(L)
 	return ..()
@@ -115,7 +115,7 @@
 			skewee.visible_message("<span class='warning'>[skewee] painfully slides back down [src].</span>")
 			if(skewee.stat >= UNCONSCIOUS)
 				return //by ratvar, no more spamming my deadchat, holy fuck
-			skewee.emote("pain")
+			skewee.emote("scream")
 			return
 	skewee.visible_message("<span class='danger'>[skewee] comes free of [src] with a squelching pop!</span>", \
 	"<span class='boldannounce'>You come free of [src]!</span>")

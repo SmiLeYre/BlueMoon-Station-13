@@ -66,6 +66,7 @@
 
 /datum/antagonist/cult/greet()
 	to_chat(owner, "<span class='userdanger'>You are a member of the cult!</span>")
+	to_chat(owner, span_big_warning("Не бойтесь, что крики при активации рун услышат - они не распространяются за стены.")) // BLUEMOON ADD
 	owner.current.playsound_local(get_turf(owner.current), 'sound/ambience/antag/bloodcult.ogg', 100, FALSE, pressure_affected = FALSE)//subject to change
 	owner.announce_objectives()
 
@@ -88,13 +89,12 @@
 	if(!istype(H))
 		return
 	if (owner.assigned_role == "Clown")
-		to_chat(owner, "Your training has allowed you to overcome your clownish nature, allowing you to wield weapons without harming yourself.")
+		to_chat(owner, "Тренировки позволили вам отринуть клоунскую натуру, теперь вы можете использовать оружие без риска ранить себя.")
 		H.dna.remove_mutation(CLOWNMUT)
 	. += cult_give_item(/obj/item/melee/cultblade/dagger, H)
 	if(metal)
 		. += cult_give_item(/obj/item/stack/sheet/runed_metal/ten, H)
 	to_chat(owner, "These will help you start the cult on this station. Use them well, and remember - you are not the only one.</span>")
-
 
 /datum/antagonist/cult/proc/cult_give_item(obj/item/item_path, mob/living/carbon/human/mob)
 	var/list/slots = list(
@@ -160,11 +160,12 @@
 	SSticker.mode.cult -= owner
 	SSticker.mode.update_cult_icons_removed(owner)
 	if(!silent)
-		owner.current.visible_message("<span class='deconversion_message'>[owner.current] looks like [owner.current.p_theyve()] just reverted to [owner.current.p_their()] old faith!</span>", null, null, null, owner.current)
-		to_chat(owner.current, "<span class='userdanger'>An unfamiliar white light flashes through your mind, cleansing the taint of the Geometer and all your memories as her servant.</span>")
+		owner.current.visible_message("<span class='deconversion_message'>[owner.current] выглядит так, будто бы верну[owner.current.ru_sya()] в своё исходное состояние!</span>", null, null, null, owner.current)
+		to_chat(owner.current, "<span class='userdanger'>Незнакомый белый свет вспыхивает в вашем сознании, очищая его от следов извне и всех ваших воспоминаний под Её покровительством...</span>")
 		owner.current.log_message("has renounced the cult of Nar'Sie!", LOG_ATTACK, color="#960000")
 	if(cult_team?.blood_target && cult_team.blood_target_image && owner.current.client)
 		owner.current.client.images -= cult_team.blood_target_image
+	owner.special_role = null // BLUEMOON ADD
 	. = ..()
 
 /datum/antagonist/cult/admin_add(datum/mind/new_owner,mob/admin)
@@ -317,6 +318,7 @@
 				SEND_SOUND(B.current, 'sound/hallucinations/im_here1.ogg')
 				to_chat(B.current, "<span class='cultlarge'>Your cult is ascendent and the red harvest approaches - you cannot hide your true nature for much longer!!")
 				addtimer(CALLBACK(src, .proc/ascend, B.current), 200)
+		priority_announce("На вашей станции обнаружена внепространственная активность, связанная с культом Нар’Си. Данные свидетельствуют о том, что в ряды культа обращено около Двадцати Процентов Экипажа Станции. Служба безопасности получает право свободно применять летальную силу против культистов. Прочий персонал должен быть готов защищать себя и свои рабочие места от нападений культистов (в том числе используя летальную силу в качестве крайней меры самообороны), но не должен выслеживать культистов и охотиться на них. Погибшие члены экипажа должны быть оживлены и деконвертированы, как только ситуация будет взята под контроль.", "Центральное Командование, Отдел Работы с Реальностью", 'sound/announcer/classic/_admin_horror_music.ogg')
 		cult_ascendent = TRUE
 
 
@@ -334,8 +336,8 @@
 	if(ishuman(cultist))
 		var/mob/living/carbon/human/H = cultist
 		new /obj/effect/temp_visual/cult/sparks(get_turf(H), H.dir)
-		var/istate = pick("halo1","halo2","halo3","halo4","halo5","halo6")
-		H.add_overlay(mutable_appearance('icons/effects/32x64.dmi', istate, -ANTAG_LAYER))
+		var/istate = pick("halo[rand(1, 6)]")
+		H.add_overlay(mutable_appearance('icons/effects/32x64.dmi', istate, -FIRE_LAYER))
 
 /datum/team/cult/proc/setup_objectives()
 	//SAC OBJECTIVE , todo: move this to objective internals
@@ -409,9 +411,9 @@
 
 /datum/objective/sacrifice/update_explanation_text()
 	if(target)
-		explanation_text = "Sacrifice [target], the [target.assigned_role] via invoking a Sacrifice rune with [target.p_them()] on it and three acolytes around it."
+		explanation_text = "Принести в жертву [target], [target.assigned_role] с помощью руны жертвоприношения, жертвой на ней и тремя собратьями вокруг неё."
 	else
-		explanation_text = "The veil has already been weakened here, proceed to the final objective."
+		explanation_text = "Заслон уже была ослаблен, переходите к финальной цели."
 
 /datum/objective/eldergod
 	var/summoned = FALSE
@@ -428,7 +430,7 @@
 	update_explanation_text()
 
 /datum/objective/eldergod/update_explanation_text()
-	explanation_text = "Summon Nar'Sie by invoking the rune 'Summon Nar'Sie'. <b>The summoning can only be accomplished in [english_list(summon_spots)] - where the veil is weak enough for the ritual to begin.</b>"
+	explanation_text = "Вызвать Нар'Си с помощью руны. <b>Призыв может быть произведен только в следующих местах: [english_list(summon_spots)] - там, где заслон достаточно слаб, чтобы ритуал смог состояться.</b>"
 
 /datum/objective/eldergod/check_completion()
 	return summoned || completed

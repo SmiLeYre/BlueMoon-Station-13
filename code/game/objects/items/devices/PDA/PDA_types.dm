@@ -168,16 +168,23 @@
 	owner = "John Doe"
 	hidden = 1
 
+/obj/item/pda/syndicate/no_deto
+	default_cartridge = /obj/item/cartridge/captain
+	inserted_item = /obj/item/pen/fountain
+	icon_state = "pda-syndi"
+	name = "Military PDA"
+
 /obj/item/pda/chaplain
 	name = "chaplain PDA"
 	icon_state = "pda-chaplain"
+	default_cartridge = /obj/item/cartridge/chaplain
 	ttone = "holy"
 
 /obj/item/pda/lawyer
 	name = "lawyer PDA"
 	default_cartridge = /obj/item/cartridge/lawyer
 	inserted_item = /obj/item/pen/fountain
-	icon_state = "pda-lawyer"
+	icon_state = "pda-security"
 	ttone = "objection"
 
 /obj/item/pda/botanist

@@ -1,6 +1,6 @@
 /datum/antagonist/nukeop
 	name = "Nuclear Operative"
-	roundend_category = "syndicate operatives" //just in case
+	roundend_category = "InteQ operatives" //just in case
 	antagpanel_category = "NukeOp"
 	job_rank = ROLE_OPERATIVE
 	antag_moodlet = /datum/mood_event/focused
@@ -10,7 +10,8 @@
 	var/datum/team/nuclear/nuke_team
 	var/always_new_team = FALSE //If not assigned a team by default ops will try to join existing ones, set this to TRUE to always create new team.
 	var/send_to_spawnpoint = TRUE //Should the user be moved to default spawnpoint.
-	var/nukeop_outfit = /datum/outfit/syndicate
+	var/nukeop_outfit = /datum/outfit/inteq
+	var/title
 
 /datum/antagonist/nukeop/proc/update_synd_icons_added(mob/living/M)
 	var/datum/atom_hud/antag/opshud = GLOB.huds[ANTAG_HUD_OPS]
@@ -33,18 +34,28 @@
 	REMOVE_TRAIT(owner, TRAIT_DISK_VERIFIER, NUKEOP_TRAIT)
 
 /datum/antagonist/nukeop/proc/equip_op()
+	title = pick("Царь", "Босс", "Лидер", "Шеф", "Король", "Пингвин", "Директор", "Лорд", "Оверлорд", "Глав", "Альфа", "Первый", "Bождь", "Бонза", "Айко", "Русич", "Сек", "Мёртвый")
 	if(!ishuman(owner.current))
 		return
 	var/mob/living/carbon/human/H = owner.current
 
-	H.set_species(/datum/species/human) //Plasamen burn up otherwise, and lizards are vulnerable to asimov AIs
+	if(!istype(H))
+		return
+	if(GLOB.master_mode == "Extended")
+		H.equipOutfit(/datum/outfit/syndicate/lone)
+		priority_announce("Приветствую, Станция. Мы отправляем к вам Специалиста по Защите Ядерного Диска ввиду того, что заметили недостаточную его безопасность. Bстречайте.", "Фрегат [title] ССО Синдиката")
+	else
+		H.equipOutfit(nukeop_outfit)
 
-	H.equipOutfit(nukeop_outfit)
+	if(name == "Lone Operative")
+		H.canloadappearance = TRUE
+		H.checkloadappearance()
+
 	return TRUE
 
 /datum/antagonist/nukeop/greet()
 	owner.current.playsound_local(get_turf(owner.current), 'sound/ambience/antag/ops.ogg',100,0)
-	to_chat(owner, "<span class='notice'>You are a [nuke_team ? nuke_team.syndicate_name : "syndicate"] agent!</span>")
+	to_chat(owner, "<span class='notice'>Вы [nuke_team ? nuke_team.syndicate_name : "Интековский"] Оперативник!</span>")
 	owner.announce_objectives()
 
 /datum/antagonist/nukeop/on_gain()
@@ -55,6 +66,7 @@
 	memorize_code()
 	if(send_to_spawnpoint)
 		move_to_spawnpoint()
+
 
 /datum/antagonist/nukeop/get_team()
 	return nuke_team
@@ -72,21 +84,21 @@
 			for(var/obj/machinery/nuclearbomb/beer/beernuke in GLOB.nuke_list)
 				beernuke.r_code = nuke_team.memorized_code
 		else
-			stack_trace("Syndicate nuke not found during nuke team creation.")
+			stack_trace("InteQ nuke not found during nuke team creation.")
 			nuke_team.memorized_code = null
 
 /datum/antagonist/nukeop/proc/give_alias()
 	if(nuke_team && nuke_team.syndicate_name)
 		var/number = 1
 		number = nuke_team.members.Find(owner)
-		owner.current.real_name = "[nuke_team.syndicate_name] Operative #[number]"
+		owner.current.real_name = "[nuke_team.syndicate_name] Оперативник #[number]"
 
 /datum/antagonist/nukeop/proc/memorize_code()
 	if(nuke_team && nuke_team.tracked_nuke && nuke_team.memorized_code)
 		antag_memory += "<B>[nuke_team.tracked_nuke] Code</B>: [nuke_team.memorized_code]<br>"
 		to_chat(owner, "The nuclear authorization code is: <B>[nuke_team.memorized_code]</B>")
 	else
-		to_chat(owner, "Unfortunately the syndicate was unable to provide you with nuclear authorization code.")
+		to_chat(owner, "Unfortunately the InteQ was unable to provide you with nuclear authorization code.")
 
 /datum/antagonist/nukeop/proc/forge_objectives()
 	if(nuke_team)
@@ -119,7 +131,7 @@
 	nuke_team = new_team
 
 /datum/antagonist/nukeop/admin_add(datum/mind/new_owner,mob/admin)
-	new_owner.assigned_role = ROLE_SYNDICATE
+	new_owner.assigned_role = ROLE_INTEQ
 	new_owner.add_antag_datum(src)
 	message_admins("[key_name_admin(admin)] has nuke op'ed [new_owner.current].")
 	log_admin("[key_name(admin)] has nuke op'ed [new_owner.current].")
@@ -139,40 +151,38 @@
 			code = bombue.r_code
 			break
 	if (code)
-		antag_memory += "<B>Syndicate Nuclear Bomb Code</B>: [code]<br>"
+		antag_memory += "<B>InteQ Nuclear Bomb Code</B>: [code]<br>"
 		to_chat(owner.current, "The nuclear authorization code is: <B>[code]</B>")
 	else
 		to_chat(admin, "<span class='danger'>No valid nuke found!</span>")
 
 /datum/antagonist/nukeop/leader
 	name = "Nuclear Operative Leader"
-	nukeop_outfit = /datum/outfit/syndicate/leader
+	nukeop_outfit = /datum/outfit/inteq/leader
 	always_new_team = TRUE
-	var/title
 
 /datum/antagonist/nukeop/leader/memorize_code()
 	..()
-	if(nuke_team && nuke_team.memorized_code)
-		var/obj/item/paper/P = new
-		P.info = "The nuclear authorization code is: <b>[nuke_team.memorized_code]</b>"
-		P.name = "nuclear bomb code"
+	if(nuke_team?.memorized_code)
+		var/obj/item/paper/nuke_code_paper = new
+		nuke_code_paper.add_raw_text("The nuclear authorization code is: <b>[nuke_team.memorized_code]</b>")
+		nuke_code_paper.name = "nuclear bomb code"
 		var/mob/living/carbon/human/H = owner.current
 		if(!istype(H))
-			P.forceMove(get_turf(H))
+			nuke_code_paper.forceMove(get_turf(H))
 		else
-			H.put_in_hands(P, TRUE)
+			H.put_in_hands(nuke_code_paper, TRUE)
 			H.update_icons()
 
 /datum/antagonist/nukeop/leader/give_alias()
-	title = pick("Czar", "Boss", "Commander", "Chief", "Kingpin", "Director", "Overlord")
 	if(nuke_team && nuke_team.syndicate_name)
 		owner.current.real_name = "[nuke_team.syndicate_name] [title]"
 	else
-		owner.current.real_name = "Syndicate [title]"
+		owner.current.real_name = "InteQ [title]"
 
 /datum/antagonist/nukeop/leader/greet()
 	owner.current.playsound_local(get_turf(owner.current), 'sound/ambience/antag/ops.ogg',100,0)
-	to_chat(owner, "<B>You are the Syndicate [title] for this mission. You are responsible for the distribution of telecrystals and your ID is the only one who can open the launch bay doors.</B>")
+	to_chat(owner, "<B>You are the InteQ [title] for this mission. You are responsible for the distribution of credits and your ID is the only one who can open the launch bay doors.</B>")
 	to_chat(owner, "<B>If you feel you are not up to this task, give your ID to another operative.</B>")
 	to_chat(owner, "<B>In your hand you will find a special item capable of triggering a greater challenge for your team. Examine it carefully and consult with your fellow operatives before activating it.</B>")
 	owner.announce_objectives()
@@ -197,7 +207,7 @@
 
 /datum/antagonist/nukeop/leader/proc/ask_name()
 	var/randomname = pick(GLOB.last_names)
-	var/newname = stripped_input(owner.current,"You are the nuke operative [title]. Please choose a last name for your family.", "Name change",randomname)
+	var/newname = stripped_input(owner.current,"Вы Ядерный Оперативник [title]. Пожалуйста, сделайте выбор, как будет называться ваша команда. Не называйте свою команду дебильно или будете взорваны.", "Name change",randomname)
 	if (!newname)
 		newname = randomname
 	else
@@ -211,7 +221,7 @@
 	name = "Lone Operative"
 	always_new_team = TRUE
 	send_to_spawnpoint = FALSE //Handled by event
-	nukeop_outfit = /datum/outfit/syndicate/lone
+	nukeop_outfit = /datum/outfit/inteq/lone/inteq
 
 /datum/antagonist/nukeop/lone/assign_nuke()
 	if(nuke_team && !nuke_team.tracked_nuke)
@@ -229,12 +239,13 @@
 
 /datum/antagonist/nukeop/reinforcement
 	send_to_spawnpoint = FALSE
-	nukeop_outfit = /datum/outfit/syndicate/no_crystals
+	nukeop_outfit = /datum/outfit/inteq/no_crystals
 
 /datum/team/nuclear
 	var/syndicate_name
 	var/obj/machinery/nuclearbomb/tracked_nuke
 	var/core_objective = /datum/objective/nuclear
+	var/revert_objective = /datum/objective/nuclear/revert
 	var/memorized_code
 	var/list/team_discounts
 	var/datum/weakref/war_button_ref
@@ -244,10 +255,15 @@
 	syndicate_name = syndicate_name()
 
 /datum/team/nuclear/proc/update_objectives()
-	if(core_objective)
-		var/datum/objective/O = new core_objective
+	if(GLOB.master_mode == "Extended")
+		var/datum/objective/O = new revert_objective
 		O.team = src
 		objectives += O
+	else
+		if(core_objective)
+			var/datum/objective/O = new core_objective
+			O.team = src
+			objectives += O
 
 /datum/team/nuclear/proc/disk_rescued()
 	for(var/obj/item/disk/nuclear/D in GLOB.poi_list)
@@ -311,10 +327,10 @@
 
 	switch(get_result())
 		if(NUKE_RESULT_FLUKE)
-			parts += "<span class='redtext big'>Humiliating Syndicate Defeat</span>"
-			parts += "<B>The crew of [station_name()] gave [syndicate_name] operatives back their bomb! The syndicate base was destroyed!</B> Next time, don't lose the nuke!"
+			parts += "<span class='redtext big'>Humiliating InteQ Defeat</span>"
+			parts += "<B>The crew of [station_name()] gave [syndicate_name] operatives back their bomb! The InteQ base was destroyed!</B> Next time, don't lose the nuke!"
 		if(NUKE_RESULT_NUKE_WIN)
-			parts += "<span class='greentext big'>Syndicate Major Victory!</span>"
+			parts += "<span class='greentext big'>InteQ Major Victory!</span>"
 			parts += "<B>[syndicate_name] operatives have destroyed [station_name()]!</B>"
 		if(NUKE_RESULT_NOSURVIVORS)
 			parts += "<span class='neutraltext big'>Total Annihilation</span>"
@@ -335,13 +351,13 @@
 			parts += "<span class='neutraltext big'>Neutral Victory!</span>"
 			parts += "<B>The Research Staff failed to secure the authentication disk but did manage to kill most of the [syndicate_name] Operatives!</B>"
 		if(NUKE_RESULT_DISK_STOLEN)
-			parts += "<span class='greentext big'>Syndicate Minor Victory!</span>"
+			parts += "<span class='greentext big'>InteQ Minor Victory!</span>"
 			parts += "<B>[syndicate_name] operatives survived the assault but did not achieve the destruction of [station_name()].</B> Next time, don't lose the disk!"
 		else
 			parts += "<span class='neutraltext big'>Neutral Victory</span>"
 			parts += "<B>Mission aborted!</B>"
 
-	var/text = "<br><span class='header'>The syndicate operatives were:</span>"
+	var/text = "<br><span class='header'>The InteQ operatives were:</span>"
 	var/purchases = ""
 	var/TC_uses = 0
 	LAZYINITLIST(GLOB.uplink_purchase_logs_by_key)
@@ -353,7 +369,7 @@
 			purchases += H.generate_render(show_key = FALSE)
 	text += printplayerlist(members)
 	text += "<br>"
-	text += "(Syndicates used [TC_uses] TC) [purchases]"
+	text += "(InteQ used [TC_uses] CR) [purchases]"
 	if(TC_uses == 0 && SSticker.mode.station_was_nuked && !operatives_dead())
 		text += "<BIG>[icon2html('icons/badass.dmi', world, "badass")]</BIG>"
 
@@ -363,9 +379,9 @@
 
 /datum/team/nuclear/antag_listing_name()
 	if(syndicate_name)
-		return "[syndicate_name] Syndicates"
+		return "[syndicate_name] InteQ"
 	else
-		return "Syndicates"
+		return "InteQ"
 
 /datum/team/nuclear/antag_listing_entry()
 	var/disk_report = "<b>Nuclear Disk(s)</b><br>"

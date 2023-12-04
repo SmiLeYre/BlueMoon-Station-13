@@ -217,7 +217,7 @@
 	. = ..()
 	regenerate_TLV()
 	RegisterSignal(SSdcs,COMSIG_GLOB_NEW_GAS,.proc/regenerate_TLV)
-	wires = new /datum/wires/airalarm(src)
+	set_wires(new /datum/wires/airalarm(src))
 
 	if(ndir)
 		setDir(ndir)
@@ -257,6 +257,7 @@
 			. += "<span class='notice'>It is missing wiring.</span>"
 		if(2)
 			. += "<span class='notice'>Alt-click to [locked ? "unlock" : "lock"] the interface.</span>"
+	. += "<span class='notice'>Текущий уровень угрозы: <b><u>[capitalize(get_security_level())]</u></b>.</span>"
 
 /obj/machinery/airalarm/ui_status(mob/user)
 	if(hasSiliconAccessInArea(user))
@@ -687,7 +688,7 @@
 		return
 
 	if(stat & BROKEN)
-		icon_state = "alarmx"
+		icon_state = "alarm_broken"
 		return
 
 	if(!panel_open)
@@ -911,7 +912,7 @@
 			updateUsrDialog()
 			to_chat(user, "<span class='notice'>You [ locked ? "lock" : "unlock"] the air alarm interface.</span>")
 		else
-			to_chat(user, "<span class='danger'>Access denied.</span>")
+			to_chat(user, "<span class='danger'>Доступ запрещён.</span>")
 	return
 
 /obj/machinery/airalarm/power_change()
@@ -924,6 +925,7 @@
 	. = ..()
 	if(obj_flags & EMAGGED)
 		return
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	obj_flags |= EMAGGED
 	visible_message("<span class='warning'>Sparks fly out of [src]!</span>", "<span class='notice'>You emag [src], disabling its safeties.</span>")
 	playsound(src, "sparks", 50, 1)

@@ -27,7 +27,7 @@
 		style.teach(H,1)
 
 /obj/item/implanter/krav_maga
-	name = "implanter (krav maga)"
+	name = "Implanter (krav maga)"
 	imp_type = /obj/item/implant/krav_maga
 
 /obj/item/implantcase/krav_maga

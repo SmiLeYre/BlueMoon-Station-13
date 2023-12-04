@@ -181,6 +181,37 @@
 	..()
 	. = 1
 
+//BlueMoon. Сахар токсичен для воксов
+/datum/reagent/consumable/sugar/on_mob_life(mob/living/carbon/M)
+	if(isvox(M))
+		M.adjustToxLoss(3)
+	return ..()
+
+/datum/reagent/consumable/creamer
+	name = "Coffee Creamer"
+	description = "Powdered milk for cheap coffee. How delightful."
+	taste_description = "milk"
+	color = "#efeff0"
+	nutriment_factor = 1.5
+
+/datum/reagent/consumable/choccyshake
+	name = "Chocolate Shake"
+	description = "A frosty chocolate milkshake."
+	color = "#541B00"
+	quality = DRINK_VERYGOOD
+	nutriment_factor = 8
+	taste_description = "sweet creamy chocolate"
+	chemical_flags = REAGENT_ALL_PROCESS
+	value = REAGENT_VALUE_UNCOMMON
+
+/datum/reagent/consumable/korta_nectar
+	name = "Korta Nectar"
+	description = "A sweet, sugary syrup made from crushed sweet korta nuts."
+	color = "#d3a308"
+	nutriment_factor = 5
+	metabolization_rate = 1 * REAGENTS_METABOLISM
+	taste_description = "peppery sweetness"
+
 /datum/reagent/consumable/virus_food
 	name = "Virus Food"
 	description = "A mixture of water and milk. Virus cells can use this mixture to reproduce."
@@ -338,28 +369,29 @@
 		if ( eyes_covered && mouth_covered )
 			return
 		else if ( mouth_covered )	// Reduced effects if partially protected
-			if(prob(5))
-				victim.emote("scream")
-			victim.blur_eyes(3)
-			victim.blind_eyes(2)
-			victim.confused = max(M.confused, 3)
-			victim.damageoverlaytemp = 60
-			victim.DefaultCombatKnockdown(80, override_hardstun = 0.1, override_stamdmg = min(reac_volume * 3, 15))
+			if(prob(50))
+				if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+					victim.emote("realagony")
+			victim.blur_eyes(6)
+			victim.blind_eyes(4)
+			victim.confused = max(M.confused, 6)
+			victim.damageoverlaytemp = 120
+			victim.DefaultCombatKnockdown(160, override_hardstun = 0.1, override_stamdmg = min(reac_volume * 3, 15))
 			victim.add_movespeed_modifier(/datum/movespeed_modifier/reagent/pepperspray)
 			addtimer(CALLBACK(victim, /mob.proc/remove_movespeed_modifier, /datum/movespeed_modifier/reagent/pepperspray), 10 SECONDS)
 			return
 		else if ( eyes_covered ) // Eye cover is better than mouth cover
-			victim.blur_eyes(3)
-			victim.damageoverlaytemp = 30
+			victim.blur_eyes(6)
+			victim.damageoverlaytemp = 60
 			return
 		else // Oh dear :D
-			if(prob(5))
-				victim.emote("scream")
-			victim.blur_eyes(5)
-			victim.blind_eyes(3)
-			victim.confused = max(M.confused, 6)
-			victim.damageoverlaytemp = 75
-			victim.DefaultCombatKnockdown(80, override_hardstun = 0.1, override_stamdmg = min(reac_volume * 5, 25))
+			if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+				victim.emote("realagony")
+			victim.blur_eyes(10)
+			victim.blind_eyes(6)
+			victim.confused = max(M.confused, 12)
+			victim.damageoverlaytemp = 150
+			victim.DefaultCombatKnockdown(160, override_hardstun = 0.1, override_stamdmg = min(reac_volume * 5, 25))
 			victim.add_movespeed_modifier(/datum/movespeed_modifier/reagent/pepperspray)
 			addtimer(CALLBACK(victim, /mob.proc/remove_movespeed_modifier, /datum/movespeed_modifier/reagent/pepperspray), 10 SECONDS)
 		victim.update_damage_hud()
@@ -665,10 +697,10 @@
 /datum/reagent/consumable/honey/on_mob_life(mob/living/carbon/M)
 	M.reagents.add_reagent(/datum/reagent/consumable/sugar,3)
 	if(prob(55))
-		M.adjustBruteLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustFireLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustOxyLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustToxLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0, TRUE) //heals TOXINLOVERs
+		M.adjustBruteLoss(-1*REM, 0)
+		M.adjustFireLoss(-1*REM, 0)
+		M.adjustOxyLoss(-1*REM, 0)
+		M.adjustToxLoss(-1*REM, 0, TRUE) //heals TOXINLOVERs
 	..()
 
 /datum/reagent/consumable/honey/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
@@ -753,9 +785,9 @@
 		. = 1
 	if(prob(20))
 		M.losebreath += 4
-		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REAGENTS_EFFECT_MULTIPLIER, 150)
-		M.adjustToxLoss(3*REAGENTS_EFFECT_MULTIPLIER,0)
-		M.adjustStaminaLoss(10*REAGENTS_EFFECT_MULTIPLIER,0)
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM, 150)
+		M.adjustToxLoss(3*REM,0)
+		M.adjustStaminaLoss(10*REM,0)
 		M.blur_eyes(5)
 		. = TRUE
 	..()
@@ -785,10 +817,24 @@
 
 /datum/reagent/consumable/vitfro/on_mob_life(mob/living/carbon/M)
 	if(prob(80))
-		M.adjustBruteLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustFireLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustBruteLoss(-1*REM, 0)
+		M.adjustFireLoss(-1*REM, 0)
 		. = TRUE
 	..()
+
+// BLUEMOON ADD START - кактусы с лаваленда, а также никтотиновые листья дают эффект обезболивающего для операций
+/datum/reagent/consumable/vitfro/on_mob_metabolize(mob/living/M) //modularisation for miners salve painkiller.
+	..()
+	if(iscarbon(M))
+		ADD_TRAIT(M, TRAIT_PAINKILLER, PAINKILLER_VITFRUIT)
+		M.throw_alert("painkiller", /atom/movable/screen/alert/painkiller)
+
+/datum/reagent/consumable/vitfro/on_mob_end_metabolize(mob/living/M)
+	..()
+	if(iscarbon(M))
+		REMOVE_TRAIT(M, TRAIT_PAINKILLER, PAINKILLER_VITFRUIT)
+		M.clear_alert("painkiller", /atom/movable/screen/alert/painkiller)
+// BLUEMOON ADD END
 
 /datum/reagent/consumable/clownstears
 	name = "Clown's Tears"
@@ -811,7 +857,7 @@
 		var/mob/living/carbon/C = M
 		var/obj/item/organ/stomach/ethereal/stomach = C.getorganslot(ORGAN_SLOT_STOMACH)
 		if(istype(stomach))
-			stomach.adjust_charge(reac_volume * REAGENTS_EFFECT_MULTIPLIER)
+			stomach.adjust_charge(reac_volume * REM)
 
 /datum/reagent/consumable/liquidelectricity/on_mob_life(mob/living/carbon/M)
 	if(prob(25) && !isethereal(M))

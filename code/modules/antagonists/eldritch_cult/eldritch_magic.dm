@@ -9,13 +9,13 @@
 	action_icon = 'icons/mob/actions/actions_ecult.dmi'
 	action_icon_state = "ash_shift"
 	action_background_icon_state = "bg_ecult"
-	jaunt_in_time = 13
-	jaunt_duration = 10
+	jaunt_in_time = 20
+	jaunt_duration = 15
 	jaunt_in_type = /obj/effect/temp_visual/dir_setting/ash_shift
 	jaunt_out_type = /obj/effect/temp_visual/dir_setting/ash_shift/out
 
 /obj/effect/proc_holder/spell/targeted/ethereal_jaunt/shift/ash/long
-	jaunt_duration = 50
+	jaunt_duration = 75
 
 /obj/effect/proc_holder/spell/targeted/ethereal_jaunt/shift/ash/play_sound()
 	return
@@ -65,9 +65,9 @@
 	if(iscarbon(target))
 		use_charge = TRUE
 		var/mob/living/carbon/C = target
-		C.adjustBruteLoss(15)
-		C.DefaultCombatKnockdown(50, override_stamdmg = 0)
-		C.adjustStaminaLoss(60)
+		C.adjustBruteLoss(25)
+		C.DefaultCombatKnockdown(60, override_stamdmg = 0)
+		C.adjustStaminaLoss(80)
 	var/list/knowledge = cultie.get_all_knowledge()
 
 	for(var/X in knowledge)
@@ -85,7 +85,7 @@
 	clothes_req = FALSE
 	invocation = "PLI'STI MINO DOMI'KA"
 	invocation_type = "whisper"
-	range = 3
+	range = 6
 	action_icon = 'icons/mob/actions/actions_ecult.dmi'
 	action_icon_state = "corrode"
 	action_background_icon_state = "bg_ecult"
@@ -102,7 +102,7 @@
 /obj/effect/proc_holder/spell/aoe_turf/rust_conversion/small
 	name = "Rust Conversion"
 	desc = "Spreads rust onto nearby surfaces."
-	range = 2
+	range = 4
 
 /obj/effect/proc_holder/spell/pointed/blood_siphon
 	name = "Blood Siphon"
@@ -115,7 +115,7 @@
 	action_icon = 'icons/mob/actions/actions_ecult.dmi'
 	action_icon_state = "blood_siphon"
 	action_background_icon_state = "bg_ecult"
-	range = 9
+	range = 12
 
 /obj/effect/proc_holder/spell/pointed/blood_siphon/cast(list/targets, mob/user)
 	. = ..()
@@ -129,8 +129,8 @@
 	var/mob/living/carbon/carbon_user = user
 	if(isliving(target))
 		var/mob/living/living_target = target
-		living_target.adjustBruteLoss(20)
-		carbon_user.adjustBruteLoss(-20)
+		living_target.adjustBruteLoss(40)
+		carbon_user.adjustBruteLoss(-40)
 	if(iscarbon(target))
 		var/mob/living/carbon/carbon_target = target
 		for(var/bp in carbon_user.bodyparts)
@@ -145,9 +145,9 @@
 				iter_wound.remove_wound()
 				iter_wound.apply_wound(target_bodypart)
 
-		carbon_target.blood_volume -= 20
+		carbon_target.blood_volume -= 40
 		if(carbon_user.blood_volume < BLOOD_VOLUME_MAXIMUM) //we dont want to explode after all
-			carbon_user.adjust_integration_blood(20)
+			carbon_user.adjust_integration_blood(40)
 		return
 
 /obj/effect/proc_holder/spell/pointed/blood_siphon/can_target(atom/target, mob/user, silent)
@@ -180,7 +180,7 @@
 	name = "rust bolt"
 	icon_state = "eldritch_projectile"
 	alpha = 180
-	damage = 30
+	damage = 50
 	damage_type = TOX
 	nodamage = 0
 	hitsound = 'sound/effects/curseattack.ogg'
@@ -219,7 +219,7 @@
 	clothes_req = FALSE
 	invocation = "PLES'TI VI'RIBUS"
 	invocation_type = "whisper"
-	range = 9
+	range = 14
 	action_icon = 'icons/mob/actions/actions_ecult.dmi'
 	action_icon_state = "cleave"
 	action_background_icon_state = "bg_ecult"
@@ -251,7 +251,7 @@
 		var/datum/wound/slash/critical/crit_wound = new
 		crit_wound.apply_wound(bodypart)
 		crit_wound.apply_wound(bodypart)
-		target.adjustBruteLoss(20)
+		target.adjustBruteLoss(45)
 		new /obj/effect/temp_visual/cleave(target.drop_location())
 
 /obj/effect/proc_holder/spell/pointed/cleave/can_target(atom/target, mob/user, silent)
@@ -299,8 +299,8 @@
 	if(iscarbon(target))
 		playsound(user, 'sound/effects/curseattack.ogg', 75, TRUE)
 		var/mob/living/carbon/C = target
-		C.adjustOrganLoss(ORGAN_SLOT_BRAIN,35)
-		C.DefaultCombatKnockdown(50, override_stamdmg = 0)
+		C.adjustOrganLoss(ORGAN_SLOT_BRAIN,60)
+		C.DefaultCombatKnockdown(60, override_stamdmg = 0)
 		C.gain_trauma(/datum/brain_trauma/mild/phobia)
 		to_chat(user,"<span class='warning'>[target.name] has been cursed!</span>")
 		SEND_SIGNAL(target, COMSIG_ADD_MOOD_EVENT, "gates_of_mansus", /datum/mood_event/gates_of_mansus)
@@ -338,7 +338,7 @@
 	if(iscarbon(target))
 		playsound(user, 'sound/effects/curseattack.ogg', 75, TRUE)
 		var/mob/living/carbon/C = target
-		C.DefaultCombatKnockdown(50, override_stamdmg = 0)
+		C.DefaultCombatKnockdown(60, override_stamdmg = 0)
 		C.apply_status_effect(/datum/status_effect/corrosion_curse/lesser)
 		return ..()
 
@@ -440,7 +440,7 @@
 	clothes_req = FALSE
 	invocation = "IGNIS'SAVARIN"
 	invocation_type = "whisper"
-	range = 4
+	range = 8
 	action_icon = 'icons/mob/actions/actions_ecult.dmi'
 	action_icon_state = "fire_ring"
 	action_background_icon_state = "bg_ecult"
@@ -456,7 +456,7 @@
 			new /obj/effect/hotspot(T)
 			T.hotspot_expose(700,50,1)
 			for(var/mob/living/livies in T.contents - centre)
-				livies.adjustFireLoss(5)
+				livies.adjustFireLoss(10)
 		_range++
 		sleep(3)
 
@@ -540,7 +540,7 @@
 
 /obj/effect/proc_holder/spell/targeted/fiery_rebirth
 	name = "Nightwatcher's Rebirth"
-	desc = "Drains nearby alive people that are engulfed in flames. It heals 10 of each damage type per person. If a target is in critical condition it drains the last of their vitality, killing them."
+	desc = "Drains nearby alive people that are engulfed in flames. It heals 15 of each damage type per person. If a target is in critical condition it drains the last of their vitality, killing them."
 	invocation = "PETHRO'MINO'IGNI"
 	invocation_type = "whisper"
 	clothes_req = FALSE
@@ -564,11 +564,11 @@
 		target.adjustFireLoss(20)
 		new /obj/effect/temp_visual/eldritch_smoke(target.drop_location())
 		human_user.ExtinguishMob()
-		human_user.adjustBruteLoss(-10, FALSE)
-		human_user.adjustFireLoss(-10, FALSE)
-		human_user.adjustStaminaLoss(-10, FALSE)
-		human_user.adjustToxLoss(-10, FALSE, TRUE)
-		human_user.adjustOxyLoss(-10)
+		human_user.adjustBruteLoss(-15, FALSE)
+		human_user.adjustFireLoss(-15, FALSE)
+		human_user.adjustStaminaLoss(-15, FALSE)
+		human_user.adjustToxLoss(-15, FALSE, TRUE)
+		human_user.adjustOxyLoss(-15)
 
 /obj/effect/proc_holder/spell/pointed/manse_link
 	name = "Mansus Link"
@@ -578,7 +578,7 @@
 	clothes_req = FALSE
 	invocation = "SUSEI' METO MIN'TIS"
 	invocation_type = "whisper"
-	range = 10
+	range = 12
 	action_icon = 'icons/mob/actions/actions_ecult.dmi'
 	action_icon_state = "mansus_link"
 	action_background_icon_state = "bg_ecult"
@@ -646,7 +646,7 @@
 
 /obj/effect/proc_holder/spell/pointed/trigger/mute/eldritch
 	name = "Silence"
-	desc = "Using the power of the mansus, silences a selected unbeliever for twenty seconds."
+	desc = "Using the power of the mansus, silences a selected unbeliever for thirty seconds."
 	school = "transmutation"
 	charge_max = 1800
 	clothes_req = FALSE
@@ -662,7 +662,7 @@
 
 /obj/effect/proc_holder/spell/targeted/genetic/mute
 	mutations = list(MUT_MUTE)
-	duration = 200
+	duration = 300
 	charge_max = 1200 // needs to be higher than the duration or it'll be permanent
 	sound = 'sound/magic/blind.ogg'
 
@@ -867,15 +867,15 @@
 	for(var/mob/living/living_mob in range(1,user)-user)
 		if(IS_HERETIC(living_mob) || IS_HERETIC_MONSTER(living_mob))
 			continue
-		living_mob.adjustBruteLoss(30)
+		living_mob.adjustBruteLoss(45)
 
 	playsound(user,'sound/magic/voidpull.ogg',75)
 	new /obj/effect/temp_visual/voidin(user.drop_location())
 	for(var/mob/living/livies in view(7,user)-user)
 
 		if(get_dist(user,livies) < 4)
-			livies.AdjustKnockdown(3 SECONDS)
-			livies.AdjustParalyzed(0.5 SECONDS)
+			livies.AdjustKnockdown(5 SECONDS)
+			livies.AdjustParalyzed(0.8 SECONDS)
 
 		for(var/i in 1 to 3)
 			livies.forceMove(get_step_towards(livies,user))
@@ -889,7 +889,7 @@
 	clothes_req = FALSE
 	invocation = "BOOGIE WOOGIE"
 	invocation_type = "none"
-	range = 10
+	range = 15
 	message = "The world around you suddenly shifts!"
 	action_icon = 'icons/mob/actions/actions_ecult.dmi'
 	action_icon_state = "mansus_link"
@@ -928,7 +928,7 @@
 	clothes_req = FALSE
 	invocation = "ISN'YKTI"
 	invocation_type = "shout"
-	range = 3
+	range = 6
 	selection_type = "view"
 	sound = 'sound/magic/voidblink.ogg'
 	action_background_icon_state = "bg_ecult"
@@ -948,8 +948,8 @@
 	range = 0
 	action_icon_state = "time"
 	action_background_icon_state = "bg_ecult"
-	var/timestop_range = 7
-	var/timestop_duration = 200
+	var/timestop_range = 10
+	var/timestop_duration = 250
 	var/static/mutable_appearance/halo
 	var/sound/Snd // shamelessly ripped from lightning.
 

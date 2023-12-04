@@ -5,6 +5,11 @@
 	if(capitalized)
 		. = capitalize(.)
 
+/datum/proc/p_they_ru(capitalized, temp_gender)
+	. = "оно"
+	if(capitalized)
+		. = capitalize(.)
+
 /datum/proc/p_their(capitalized, temp_gender)
 	. = "its"
 	if(capitalized)
@@ -16,7 +21,7 @@
 		. = capitalize(.)
 
 /datum/proc/p_have(temp_gender)
-	. = "has"
+	. = "имеет"
 
 /datum/proc/p_are(temp_gender)
 	. = "is"
@@ -49,6 +54,18 @@
 			. = "she"
 		if(MALE)
 			. = "he"
+	if(capitalized)
+		. = capitalize(.)
+
+/client/p_they_ru(capitalized, temp_gender)
+	if(!temp_gender)
+		temp_gender = gender
+	. = "они"
+	switch(temp_gender)
+		if(FEMALE)
+			. = "она"
+		if(MALE)
+			. = "он"
 	if(capitalized)
 		. = capitalize(.)
 
@@ -128,6 +145,20 @@
 			. = "he"
 		if(PLURAL)
 			. = "they"
+	if(capitalized)
+		. = capitalize(.)
+
+/mob/p_they_ru(capitalized, temp_gender)
+	if(!temp_gender)
+		temp_gender = gender
+	. = "оно"
+	switch(temp_gender)
+		if(FEMALE)
+			. = "она"
+		if(MALE)
+			. = "он"
+		if(PLURAL)
+			. = "они"
 	if(capitalized)
 		. = capitalize(.)
 

@@ -1,8 +1,8 @@
 /datum/round_event_control/carp_migration
 	name = "Carp Migration"
 	typepath = /datum/round_event/carp_migration
-	weight = 15
-	min_players = 2
+	weight = 25
+	min_players = 10
 	earliest_start = 10 MINUTES
 	max_occurrences = 6
 	category = EVENT_CATEGORY_ENTITIES
@@ -25,9 +25,9 @@
 
 /datum/round_event/carp_migration/announce(fake)
 	if(prob(50))
-		priority_announce("Unknown biological entities have been detected near [station_name()], please stand-by.", "Lifesign Alert")
+		priority_announce("Неизвестные биологические организмы были обнаружены вблизи [station_name()], пожалуйста, приготовьтесь.", "ВНИМАНИЕ: НЕОПОЗНАННЫЕ ФОРМЫ ЖИЗНИ")
 	else
-		print_command_report("Unknown biological entities have been detected near [station_name()], you may wish to break out arms.", "Biological entities")
+		print_command_report("Неизвестные биологические организмы были обнаружены вблизи [station_name()], пожалуйста, приготовьтесь.", "ВНИМАНИЕ: НЕОПОЗНАННЫЕ ФОРМЫ ЖИЗНИ")
 
 
 /datum/round_event/carp_migration/start()

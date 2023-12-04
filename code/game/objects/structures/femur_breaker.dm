@@ -11,7 +11,7 @@
 	name = "femur breaker"
 	desc = "A large structure used to break the femurs of traitors and treasonists."
 	icon = 'icons/obj/femur_breaker.dmi'
-	icon_state = "breaker_raised"
+	icon_state = "breaker"
 	can_buckle = TRUE
 	anchored = TRUE
 	density = TRUE
@@ -44,20 +44,20 @@
 			return
 		if (BREAKER_SLAT_DROPPED)
 			slat_status = BREAKER_SLAT_MOVING
-			icon_state = "breaker_raise"
+			icon_state = "breaker"
 			addtimer(CALLBACK(src, .proc/raise_slat), BREAKER_ANIMATION_LENGTH)
 			return
 		if (BREAKER_SLAT_RAISED)
 			if (LAZYLEN(buckled_mobs))
 				if (user.a_intent == INTENT_HARM)
 					user.visible_message("<span class='warning'>[user] begins to pull the lever!</span>",
-						                 "<span class='warning'>You begin to the pull the lever.</span>")
+										"<span class='warning'>You begin to the pull the lever.</span>")
 					current_action = BREAKER_ACTION_INUSE
 
 					if (do_after(user, BREAKER_ACTIVATE_DELAY, target = src) && slat_status == BREAKER_SLAT_RAISED)
 						current_action = 0
 						slat_status = BREAKER_SLAT_MOVING
-						icon_state = "breaker_drop"
+						icon_state = "breaker"
 						drop_slat(user)
 					else
 						current_action = 0
@@ -70,7 +70,7 @@
 					unbuckle_all_mobs()
 			else //HERE
 				slat_status = BREAKER_SLAT_DROPPED
-				icon_state = "breaker_drop"
+				icon_state = "breaker"
 
 /obj/structure/femur_breaker/proc/damage_leg(mob/living/carbon/human/H)
 	var/where_we_snappin_boys = pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
@@ -84,7 +84,7 @@
 
 /obj/structure/femur_breaker/proc/raise_slat()
 	slat_status = BREAKER_SLAT_RAISED
-	icon_state = "breaker_raised"
+	icon_state = "breaker"
 
 /obj/structure/femur_breaker/proc/drop_slat(mob/user)
 	if (buckled_mobs.len)
@@ -107,7 +107,7 @@
 		return FALSE
 
 	if (!istype(M, /mob/living/carbon/human))
-		to_chat(usr, "<span class='warning'>It doesn't look like [M.p_they()] can fit into this properly!</span>")
+		to_chat(usr, "<span class='warning'>It doesn't look like [M.ru_who()] can fit into this properly!</span>")
 		return FALSE
 
 	if (slat_status != BREAKER_SLAT_RAISED)

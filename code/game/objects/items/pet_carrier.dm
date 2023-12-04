@@ -99,8 +99,7 @@
 		return
 	if(target.mob_size > max_occupant_weight)
 		if(ishuman(target))
-			var/mob/living/carbon/human/H = target
-			if(iscatperson(H))
+			if(iscatperson(target))
 				to_chat(user, "<span class='warning'>You'd need a lot of catnip and treats, plus maybe a laser pointer, for that to work.</span>")
 			else
 				to_chat(user, "<span class='warning'>Humans, generally, do not fit into [name]s.</span>")
@@ -193,7 +192,7 @@
 		return FALSE
 	user.visible_message("<span class='notice'>[user] starts loading [target] into [src].</span>", \
 	"<span class='notice'>You start loading [target] into [src]...</span>", null, null, target)
-	to_chat(target, "<span class='userdanger'>[user] starts loading you into [user.p_their()] [name]!</span>")
+	to_chat(target, "<span class='userdanger'>[user] starts loading you into [user.ru_ego()] [name]!</span>")
 	if(!do_mob(user, target, load_time))
 		return FALSE
 	if(target in occupants)
@@ -203,7 +202,7 @@
 		return FALSE
 	user.visible_message("<span class='notice'>[user] loads [target] into [src]!</span>", \
 	"<span class='notice'>You load [target] into [src].</span>", null, null, target)
-	to_chat(target, "<span class='userdanger'>[user] loads you into [user.p_their()] [name]!</span>")
+	to_chat(target, "<span class='userdanger'>[user] loads you into [user.ru_ego()] [name]!</span>")
 	add_occupant(target)
 	return TRUE
 

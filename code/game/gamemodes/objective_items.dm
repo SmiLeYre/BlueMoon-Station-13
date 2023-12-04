@@ -26,50 +26,104 @@
 	return ..()
 
 /datum/objective_item/steal/caplaser
-	name = "the captain's antique laser gun."
+	name = "Антикварный Лазерный Пистолет Капитана."
 	targetitem = /obj/item/gun/energy/laser/captain
-	difficulty = 5
+	difficulty = 8
 	excludefromjob = list("Captain")
 
-/datum/objective_item/steal/hoslaser
-	name = "the head of security's personal laser gun."
-	targetitem = /obj/item/gun/energy/e_gun/hos
+/datum/objective_item/steal/rubberducky
+	name = "Уточку Капитана."
+	targetitem = /obj/item/bikehorn/rubberducky/captain
+	difficulty = 10
+	excludefromjob = list("Captain")
+
+/datum/objective_item/steal/zippo_cap
+	name = "Зажигалку Капитана."
+	targetitem = /obj/item/lighter/cap
+	difficulty = 10
+	excludefromjob = list("Captain")
+
+/datum/objective_item/steal/zippo_hop
+	name = "Зажигалку ГП."
+	targetitem = /obj/item/lighter/hop
+	difficulty = 6
+	excludefromjob = list("Head of Personnel")
+
+/datum/objective_item/steal/zippo_hos
+	name = "Зажигалку ГСБ."
+	targetitem = /obj/item/lighter/hos
 	difficulty = 10
 	excludefromjob = list("Head Of Security")
-	altitems = list(/obj/item/gun/ballistic/revolver/mws, /obj/item/choice_beacon/hosgun) //We now look for either the alt verson of the hos gun or the beacon picker.
+
+/datum/objective_item/steal/zippo_nt_rep
+	name = "Зажигалку Представителя Пакта."
+	targetitem = /obj/item/lighter/nt_rep
+	difficulty = 10
+	excludefromjob = list("NanoTrasen Representative")
+
+/datum/objective_item/steal/zippo_cmo
+	name = "Зажигалку Старшего Медицинского Офицера."
+	targetitem = /obj/item/lighter/cmo
+	difficulty = 5
+	excludefromjob = list("Chief Medical Officer")
+
+/datum/objective_item/steal/zippo_ce
+	name = "Зажигалку Старшего Инженера."
+	targetitem = /obj/item/lighter/ce
+	difficulty = 5
+	excludefromjob = list("Chief Engineer")
+
+/datum/objective_item/steal/zippo_rd
+	name = "Зажигалку Научного Руководителя."
+	targetitem = /obj/item/lighter/ce
+	difficulty = 5
+	excludefromjob = list("Research Director")
+
+/datum/objective_item/steal/zippo_qm
+	name = "Зажигалку Завхоза."
+	targetitem = /obj/item/lighter/engraved
+	difficulty = 2
+	excludefromjob = list("Quartermaster")
+
+/datum/objective_item/steal/hoslaser
+	name = "личное вооружение Синего Щита или Главы Службы Безопасности."
+	targetitem = /obj/item/gun/energy/e_gun/hos
+	difficulty = 8
+	excludefromjob = list("Head Of Security")
+	altitems = list(/obj/item/gun/ballistic/revolver/mws, /obj/item/choice_beacon/hosgun, /obj/item/gun/ballistic/automatic/pistol/g22, /obj/item/gun/ballistic/shotgun/rsh12) //We now look for either the alt verson of the hos gun or the beacon picker.
 
 /datum/objective_item/steal/handtele
-	name = "a hand teleporter."
+	name = "Компактное Телепортирующее Устройство."
 	targetitem = /obj/item/hand_tele
 	difficulty = 5
 	excludefromjob = list("Captain", "Research Director")
 
 /datum/objective_item/steal/jetpack
-	name = "the Captain's jetpack."
+	name = "реактивный ранец Капитана."
 	targetitem = /obj/item/tank/jetpack/oxygen/captain
 	difficulty = 5
 	excludefromjob = list("Captain")
 
 /datum/objective_item/steal/magboots
-	name = "the chief engineer's advanced magnetic boots."
+	name = "усовершенствованные Магнитные Ботинки Главного Инженера."
 	targetitem =  /obj/item/clothing/shoes/magboots/advance
 	difficulty = 5
 	excludefromjob = list("Chief Engineer", "Station Engineer", "Atmospheric Technician")
 
 /datum/objective_item/steal/capmedal
-	name = "the medal of captaincy."
+	name = "медаль Капитана."
 	targetitem = /obj/item/clothing/accessory/medal/gold/captain
-	difficulty = 5
+	difficulty = 10
 	excludefromjob = list("Captain")
 
 /datum/objective_item/steal/hypo
-	name = "the Chief Medical Officer's MKII hypospray."
+	name = "гипоспрей MKII Главного Врача."
 	targetitem = /obj/item/hypospray/mkii/CMO //CITADEL EDIT, changing theft objective for the Hypo MK II
 	difficulty = 5
 	excludefromjob = list("Chief Medical Officer", "Medical Doctor", "Chemist", "Virologist", "Geneticist")
 
 /datum/objective_item/steal/nukedisc
-	name = "the nuclear authentication disk."
+	name = "Диск Ядерной Аутентификации."
 	targetitem = /obj/item/disk/nuclear
 	difficulty = 5
 	excludefromjob = list("Captain")
@@ -78,29 +132,41 @@
 	return !N.fake
 
 /datum/objective_item/steal/reflector
-	name = "a reflector vest."
+	name = "Жилет со Светоотражателями из Арсенала."
 	targetitem = /obj/item/clothing/suit/armor/laserproof
 	difficulty = 3
 	excludefromjob = list("Head of Security", "Warden")
 
 /datum/objective_item/steal/reactive
-	name = "a reactive teleport armor."
+	name = "Реактивная Телепортационная Броня."
 	targetitem = /obj/item/clothing/suit/armor/reactive
 	difficulty = 5
 	excludefromjob = list("Research Director","Scientist", "Roboticist")
 
 /datum/objective_item/steal/documents
-	name = "any set of secret documents of any organization."
+	name = "Секретные Документы."
 	targetitem = /obj/item/documents //Any set of secret documents. Doesn't have to be NT's
 	difficulty = 5
 
+/datum/objective_item/steal/stamp
+	name = "печать представителя Корпорации."
+	targetitem = /obj/item/stamp/ntr
+	difficulty = 2
+	excludefromjob = list("NanoTrasen Representative")
+	altitems = /obj/item/stamp/syndicate
+
+/datum/objective_item/steal/krav_maga
+	name = "особые перчатки Смотрителя службы безопасности."
+	targetitem = /obj/item/clothing/gloves/krav_maga/sec
+	difficulty = 10
+
 /datum/objective_item/steal/blackbox
-	name = "the black box from the onboard blackbox recording device. Take care to wear the proper safety equipment when extracting the black box as the telecommunications array is likely to be under inhospitable conditions."
+	name = "черный ящик из бортового устройства записи. Позаботьтесь о том, чтобы при извлечении черного ящика вы использовали соответствующее оборудование безопасности, так как телекоммуникационный массив, скорее всего, будет находиться в негостеприимных, особо холодных условиях."
 	targetitem = /obj/item/blackbox //steal the forbidden ssblackbox
 	difficulty = 10
 
 /datum/objective_item/steal/nuke_core
-	name = "the heavily radioactive plutonium core from the onboard self-destruct. Take care to wear the proper safety equipment when extracting the core!"
+	name = "радиоактивное плутониевое ядро из Бортовой Системы Самоуничтожения. При извлечении активной зоны необходимо использовать соответствующие средства безопасности!"
 	targetitem = /obj/item/nuke_core
 	difficulty = 15
 
@@ -109,7 +175,7 @@
 	..()
 
 /datum/objective_item/steal/supermatter
-	name = "a sliver of a supermatter crystal. Be sure to use the proper safety equipment when extracting the sliver!"
+	name = "осколок кристалла Суперматерии. При извлечении осколка обязательно используйте надлежащее оборудование для обеспечения безопасности!"
 	targetitem = /obj/item/nuke_core/supermatter_sliver
 	difficulty = 15
 
@@ -122,7 +188,7 @@
 
 //Items with special checks!
 /datum/objective_item/steal/plasma
-	name = "28 moles of plasma (full tank)."
+	name = "двадцать восемь молей плазмы (полный баллон)."
 	targetitem = /obj/item/tank
 	difficulty = 3
 	excludefromjob = list("Chief Engineer","Research Director","Station Engineer","Scientist","Atmospheric Technician")
@@ -135,7 +201,7 @@
 
 
 /datum/objective_item/steal/functionalai
-	name = "a functional AI."
+	name = "функциональный Искусственный Интеллект."
 	targetitem = /obj/item/aicard
 	difficulty = 20 //beyond the impossible
 
@@ -146,7 +212,7 @@
 	return 0
 
 /datum/objective_item/steal/blueprints
-	name = "the station blueprints."
+	name = "Чертежи Станции."
 	targetitem = /obj/item/areaeditor/blueprints
 	difficulty = 10
 	excludefromjob = list("Chief Engineer", "Station Engineer", "Atmospheric Technician")
@@ -162,7 +228,7 @@
 	return FALSE
 
 /datum/objective_item/steal/slime
-	name = "an unused sample of slime extract."
+	name = "неиспользованный Образец Экстракта Слизи."
 	targetitem = /obj/item/slime_extract
 	difficulty = 3
 	excludefromjob = list("Research Director","Scientist", "Roboticist")
@@ -174,12 +240,12 @@
 
 //Unique Objectives
 /datum/objective_item/unique/docs_red
-	name = "the \"Red\" secret documents."
+	name = "\"Красные\" секретные документы."
 	targetitem = /obj/item/documents/syndicate/red
 	difficulty = 10
 
 /datum/objective_item/unique/docs_blue
-	name = "the \"Blue\" secret documents."
+	name = "\"Голубые\" секретные документы."
 	targetitem = /obj/item/documents/syndicate/blue
 	difficulty = 10
 
@@ -248,7 +314,7 @@
 
 //Stack objectives get their own subtype
 /datum/objective_item/stack
-	name = "5 cardboard."
+	name = "пять картонок."
 	targetitem = /obj/item/stack/sheet/cardboard
 	difficulty = 9001
 
@@ -261,16 +327,16 @@
 	return found_amount>=target_amount
 
 /datum/objective_item/stack/diamond
-	name = "10 diamonds."
+	name = "десять алмазов."
 	targetitem = /obj/item/stack/sheet/mineral/diamond
 	difficulty = 10
 
 /datum/objective_item/stack/gold
-	name = "50 gold bars."
+	name = "пятьдесят слитков золота."
 	targetitem = /obj/item/stack/sheet/mineral/gold
 	difficulty = 15
 
 /datum/objective_item/stack/uranium
-	name = "25 refined uranium bars."
+	name = "двадцать пять слитков обработанного урана."
 	targetitem = /obj/item/stack/sheet/mineral/uranium
 	difficulty = 10

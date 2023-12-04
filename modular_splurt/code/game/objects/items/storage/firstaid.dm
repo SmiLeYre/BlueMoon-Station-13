@@ -23,7 +23,7 @@
 	if(empty)
 		return
 	new /obj/item/stack/medical/gauze(src)
-	new /obj/item/defibrillator/compact/combat/loaded(src)
+	new /obj/item/defibrillator/compact/combat(src)
 	new /obj/item/reagent_containers/hypospray/combat/nanites(src)
 	new /obj/item/reagent_containers/medspray/styptic(src)
 	new /obj/item/reagent_containers/medspray/silver_sulf(src)

@@ -56,6 +56,8 @@
   Vhariik:
   - bugfix: missing textures
 2023-08-22:
+  Vhariik:
+  - tweak: mapping fixes!
   LeChatGuid2:
   - rscadd: Added a pet_capsule item which look like a pokeball. interact with it
       once to set the name of your pet and select one of three usually hostile but

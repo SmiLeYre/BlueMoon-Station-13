@@ -265,7 +265,7 @@
 		return ..()
 	busy = TRUE
 	linked_gateway.busy = TRUE
-	user.visible_message("<span class='warning'>The rift begins to ripple as [user] points [user.p_their()] slab at it!</span>", "<span class='brass'> You begin to shutdown the stabilised gateway with your slab.</span>")
+	user.visible_message("<span class='warning'>The rift begins to ripple as [user] points [user.ru_ego()] slab at it!</span>", "<span class='brass'> You begin to shutdown the stabilised gateway with your slab.</span>")
 	linked_gateway.visible_message("<span class='warning'[linked_gateway] begins to ripple, but nothing comes through...</span>")
 	var/datum/beam/B = user.Beam(src, icon_state = "nzcrentrs_power", maxdistance = 50, time = 80) 	//Not too fancy, but this'll do.. for now.
 	if(do_after(user, 80, target = src)) //Eight seconds to initiate the closing, then another two before is closes.

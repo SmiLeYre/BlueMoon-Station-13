@@ -31,7 +31,7 @@
 	background_icon_state = "bg_clock"
 	check_flags = AB_CHECK_RESTRAINED|AB_CHECK_STUN|AB_CHECK_CONSCIOUS
 	buttontooltipstyle = "clockcult"
-	var/title = "Servant"
+	var/title = "Служитель"
 	var/span_for_name = "heavy_brass"
 	var/span_for_message = "brass"
 
@@ -45,6 +45,6 @@
 	if(!input || !IsAvailable())
 		return
 	if(ishuman(owner))
-		clockwork_say(owner, "[text2ratvar("Servants, hear my words: [input]")]", TRUE)
+		clockwork_say(owner, "[text2ratvar("Слуги Юстициара, услышьте мои слова: [input]")]", TRUE)
 	owner.log_talk(input, LOG_SAY, tag="clockwork")
 	titled_hierophant_message(owner, input, span_for_name, span_for_message, title)

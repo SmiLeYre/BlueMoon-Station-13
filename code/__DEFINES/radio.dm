@@ -104,3 +104,44 @@
 #define RADIO_MAGNETS "magnets"
 
 #define DEFAULT_SIGNALER_CODE 30
+
+#define RADIO_CHANNEL_TARKOFF "Tarkov"
+#define RADIO_KEY_TARKOFF "k"
+#define RADIO_TOKEN_TARKOFF ":k"
+#define FREQ_TARKOFF 1243
+
+#define RADIO_CHANNEL_DS1 "DS-1"
+#define RADIO_KEY_DS1 "q"
+#define RADIO_TOKEN_DS1 ":q"
+#define FREQ_DS1 1210
+
+#define RADIO_CHANNEL_DS2 "DS-2"
+#define RADIO_KEY_DS2 "w"
+#define RADIO_TOKEN_DS2 ":w"
+#define FREQ_DS2 1209
+
+#define RADIO_CHANNEL_PIRATE "Illegal"
+#define RADIO_KEY_PIRATE "z"
+#define RADIO_TOKEN_PIRATE ":z"
+#define FREQ_PIRATE 1208
+
+#define RADIO_CHANNEL_INTEQ "InteQ"
+#define RADIO_KEY_INTEQ "i"
+#define RADIO_TOKEN_INTEQ ":i"
+#define FREQ_INTEQ 1207
+
+// BlueMoon Kovac added
+#define RADIO_CHANNEL_SOL "Sol"
+#define RADIO_KEY_SOL "x"
+#define RADIO_TOKEN_SOL ":x"
+#define FREQ_SOL 1244
+
+#define RADIO_CHANNEL_NRI "Rus"
+#define RADIO_KEY_NRI "r"
+#define RADIO_TOKEN_NRI ":r"
+#define FREQ_NRI 1222
+
+#define RADIO_CHANNEL_HOTEL "Hotel"
+#define RADIO_KEY_HOTEL "q"
+#define RADIO_TOKEN_HOTEL ":q"
+#define FREQ_HOTEL 1281

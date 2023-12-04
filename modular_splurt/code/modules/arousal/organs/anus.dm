@@ -1,6 +1,6 @@
 // TEH DONUT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 /obj/item/organ/genital/anus
-	name = "anus"
+	name = "Анус"
 	desc = "You see their squishy donut pucker parting their asscheeks"
 	icon_state = "anus"
 	zone = BODY_ZONE_PRECISE_GROIN
@@ -10,7 +10,7 @@
 	unarousal_verb = "Your pucker stops twitching"
 	linked_organ_slot = ORGAN_SLOT_BUTT
 	genital_flags = UPDATE_OWNER_APPEARANCE|GENITAL_UNDIES_HIDDEN|CAN_CUM_INTO|HAS_EQUIPMENT
-	shape = "donut"
+	shape = "пончиковидный"
 	layer_index = ANUS_LAYER_INDEX
 
 /obj/item/organ/genital/anus/upon_link()
@@ -20,12 +20,18 @@
 	update_appearance()
 
 /obj/item/organ/genital/anus/update_appearance(updates)
-	var/u_His = owner?.p_their() || "their"
+	var/u_His = owner?.ru_ego() || "their"
 
 	var/datum/sprite_accessory/anus/S = GLOB.anus_shapes_list[shape]
 	var/lowershape = lowertext(S?.icon_state || DEF_ANUS_SHAPE)
 
-	desc = "You see [u_His] squishy [lowershape] pucker parting [u_His] asscheeks"
+	switch(lowershape)
+		if("donut")
+			lowershape = "выпуклый"
+		else
+			lowershape = "сплюснутый"
+
+	desc = "Вы наблюдаете [u_His] [lowershape] анус между ягодицами"
 
 	icon_state = "anus_[lowershape]_[size]"
 	if(owner)

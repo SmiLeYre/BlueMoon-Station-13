@@ -11,8 +11,8 @@
 	coldmod = 1.5
 	heatmod = 0.67
 	mutant_bodyparts = list("mcolor" = "0F0", "mcolor2" = "0F0", "mcolor3" = "0F0", "tail_lizard" = "Smooth", "mam_snouts" = "Round",
-							 "horns" = "None", "frills" = "None", "spines" = "None", "mam_body_markings" = list(),
-							  "legs" = "Digitigrade", "taur" = "None", "deco_wings" = "None")
+							"horns" = "None", "frills" = "None", "spines" = "None", "mam_body_markings" = list(),
+							"legs" = "Digitigrade", "taur" = "None", "deco_wings" = "None")
 	attack_verb = "claw"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
@@ -56,7 +56,7 @@
 	name = "Ash Walker"
 	id = SPECIES_ASHWALKER
 	limbs_id = SPECIES_LIZARD
-	species_traits = list(MUTCOLORS,EYECOLOR,LIPS,DIGITIGRADE,CAN_SCAR,HAS_FLESH,HAS_BONE)
+	species_traits = list(MUTCOLORS,EYECOLOR,HAIR,DIGITIGRADE,FACEHAIR,LIPS,HORNCOLOR,WINGCOLOR,CAN_SCAR,HAS_FLESH,HAS_BONE)
 	inherent_traits = list(TRAIT_CHUNKYFINGERS)
 	mutantlungs = /obj/item/organ/lungs/ashwalker
 	mutanteyes = /obj/item/organ/eyes/night_vision
@@ -72,19 +72,20 @@
 		for(var/obj/item/bodypart/leggie in C.bodyparts)
 			if(leggie.body_zone == BODY_ZONE_L_LEG || leggie.body_zone == BODY_ZONE_R_LEG)
 				leggie.update_limb(FALSE, C)
-	if(C.dna.features["mam_snouts"] != "Sharp")
-		C.dna.features["mam_snouts"] = "Sharp"
+	//if(C.dna.features["mam_snouts"] != "Sharp")
+		//C.dna.features["mam_snouts"] = "Sharp"
 	C.dna.features["mcolor2"] = C.dna.features["mcolor"] //for no funne rainbows
 	C.dna.features["mcolor3"] = C.dna.features["mcolor"]
 
 	if(C.gender == MALE)
 		C.dna.features["has_cock"] = TRUE
 		C.dna.features["has_balls"] = TRUE
-		C.dna.features["cock_color"] = "A50021"
-		C.dna.features["cock_girth"] = 0.78 + (0.02 * rand(-4, prob(10) ? 5 : 1)) //chance for a bigger pleasure
-		C.dna.features["cock_shape"] = "Tapered"
-		C.dna.features["cock_length"] = 0.5 + rand(4, prob(10) ? 9 : 6) + rand()
-		C.dna.features["balls_shape"] = "Hidden"
+		C.dna.features["cock_color"] = "[C.dna.features["cock_color"]]"
+		C.dna.features["cock_shape"] = "[C.dna.features["cock_shape"]]"
+		C.dna.features["cock_diameter_ratio"] = "[C.dna.features["cock_diameter_ratio"]]"
+		C.dna.features["testicles_color"] = "[C.dna.features["balls_color"]]"
+		C.dna.features["balls_shape"] = "[C.dna.features["balls_shape"]]"
+
 	else
 		C.dna.features["has_vag"] = TRUE
 		C.dna.features["has_womb"] = TRUE

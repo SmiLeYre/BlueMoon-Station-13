@@ -77,7 +77,7 @@
 	if(C == "speech")
 		if(muzzle == FULL_MUZZLE)
 			muzzle = NO_MUZZLE
-			//playsound(usr, 'sound/weapons/magout.ogg', 40, TRUE, ignore_walls = FALSE)
+			playsound(usr, 'sound/weapons/magout.ogg', 40, TRUE, ignore_walls = FALSE)
 			to_chat(usr, span_notice("Speech switch off"))
 			flags_cover = HEADCOVERSEYES
 			if(usr.get_item_by_slot(ITEM_SLOT_HEAD) == src)
@@ -85,7 +85,7 @@
 				to_chat(usr, span_purple("Your mouth is free. you breathe out with relief."))
 		else if(muzzle == NO_MUZZLE)
 			muzzle = HALF_MUZZLE
-			//playsound(usr, 'sound/weapons/magin.ogg', 40, TRUE, ignore_walls = FALSE)
+			playsound(usr, 'sound/weapons/magin.ogg', 40, TRUE, ignore_walls = FALSE)
 			to_chat(usr, span_notice("Ring gag switch on"))
 			flags_cover = HEADCOVERSEYES //should be unneccesary but fuck it
 			if(usr.get_item_by_slot(ITEM_SLOT_HEAD) == src)
@@ -93,7 +93,7 @@
 				to_chat(usr, span_purple("Something is gagging your mouth! It seems to be partially obstructing yet allowing full access to your mouth, whether you want it or not..."))
 		else if(muzzle == HALF_MUZZLE)
 			muzzle = FULL_MUZZLE
-			//playsound(usr, 'sound/weapons/magin.ogg', 40, TRUE, ignore_walls = FALSE)
+			playsound(usr, 'sound/weapons/magin.ogg', 40, TRUE, ignore_walls = FALSE)
 			to_chat(usr, span_notice("Full gag switch on"))
 			flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 			if(usr.get_item_by_slot(ITEM_SLOT_HEAD) == src)
@@ -103,7 +103,7 @@
 	if(C == "hearing")
 		if(earmuffs == TRUE)
 			earmuffs = FALSE
-			//playsound(usr, 'sound/weapons/magout.ogg', 40, TRUE, ignore_walls = FALSE)
+			playsound(usr, 'sound/weapons/magout.ogg', 40, TRUE, ignore_walls = FALSE)
 			to_chat(usr, span_notice("Hearing switch off"))
 			if(usr.get_item_by_slot(ITEM_SLOT_HEAD) == src)
 				REMOVE_TRAIT(usr, TRAIT_DEAF, CLOTHING_TRAIT)
@@ -111,7 +111,7 @@
 				to_chat(usr, span_purple("Finally you can hear the world around again."))
 		else
 			earmuffs = TRUE
-			//playsound(usr, 'sound/weapons/magin.ogg', 40, TRUE, ignore_walls = FALSE)
+			playsound(usr, 'sound/weapons/magin.ogg', 40, TRUE, ignore_walls = FALSE)
 			to_chat(usr, span_notice("Hearing switch on"))
 			if(usr.get_item_by_slot(ITEM_SLOT_HEAD) == src)
 				ADD_TRAIT(usr, TRAIT_DEAF, CLOTHING_TRAIT)
@@ -122,14 +122,14 @@
 		var/mob/living/carbon/human/user = usr
 		if(prevent_vision == TRUE)
 			prevent_vision = FALSE
-			//playsound(usr, 'sound/weapons/magout.ogg', 40, TRUE, ignore_walls = FALSE)
+			playsound(usr, 'sound/weapons/magout.ogg', 40, TRUE, ignore_walls = FALSE)
 			to_chat(usr, span_notice("Vision switch off"))
 			if(usr.get_item_by_slot(ITEM_SLOT_HEAD) == src)
 				user.become_blind("deprivation_helmet_[REF(src)]")
 				to_chat(usr, span_purple("Helmet no longer restricts your vision."))
 		else
 			prevent_vision = TRUE
-			//playsound(usr, 'sound/weapons/magin.ogg', 40, TRUE, ignore_walls = FALSE)
+			playsound(usr, 'sound/weapons/magin.ogg', 40, TRUE, ignore_walls = FALSE)
 			to_chat(usr, span_notice("Vision switch on"))
 			if(usr.get_item_by_slot(ITEM_SLOT_HEAD) == src)
 				user.become_blind("deprivation_helmet_[REF(src)]")

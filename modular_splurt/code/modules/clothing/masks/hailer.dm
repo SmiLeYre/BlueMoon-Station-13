@@ -1,5 +1,5 @@
 /obj/item/clothing/mask/gas/sechailer/slut
-	name = "slutcurity hailer"
+	name = "Slutcurity Hailer"
 	desc = "A modified Security gas mask designed for softer apprehension, now with a hot pink paintjob!"
 	icon = 'modular_splurt/icons/obj/clothing/masks.dmi'
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/lewd_clothing/head/lewd_masks.dmi'
@@ -15,6 +15,6 @@
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(src == C.wear_mask)
-			to_chat(user, span_warning("The mask is fastened tight! You'll need help taking this off!"))
+			to_chat(user, "<span class='warning'>Маска застегнута наглухо! Вам понадобится помощь, чтобы снять ее!!</span>")
 			return
 	..()

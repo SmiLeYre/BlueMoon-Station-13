@@ -1,5 +1,10 @@
 //IMPORTANT: Multiple animate() calls do not stack well, so try to do them all at once if you can.
 /mob/living/update_transform(do_animate = TRUE)
+//BLUEMOOB ADD START - FUZZY
+	appearance_flags |= PIXEL_SCALE
+	if(fuzzy)
+		appearance_flags &= ~PIXEL_SCALE
+//BLUEMOON ADD END - FUZZY
 	var/matrix/ntransform = matrix(transform) //aka transform.Copy()
 	var/final_pixel_y = pixel_y
 	var/changed = 0

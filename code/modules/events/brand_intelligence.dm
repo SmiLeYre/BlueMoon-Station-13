@@ -1,9 +1,9 @@
 /datum/round_event_control/brand_intelligence
 	name = "Brand Intelligence"
 	typepath = /datum/round_event/brand_intelligence
-	weight = 5
+	weight = 20
 
-	min_players = 15
+	min_players = 30
 	max_occurrences = 1
 	category = EVENT_CATEGORY_AI
 	description = "Vending machines will attack people until the Patient Zero is disabled."
@@ -14,20 +14,20 @@
 	var/list/obj/machinery/vending/vendingMachines = list()
 	var/list/obj/machinery/vending/infectedMachines = list()
 	var/obj/machinery/vending/originMachine
-	var/list/rampant_speeches = list("Try our aggressive new marketing strategies!", \
-									 "You should buy products to feed your lifestyle obsession!", \
-									 "Consume!", \
-									 "Your money can buy happiness!", \
-									 "Engage direct marketing!", \
-									 "Advertising is legalized lying! But don't let that put you off our great deals!", \
-									 "You don't want to buy anything? Yeah, well, I didn't want to buy your mom either.",
-									 "Gamers, rise up!",
-									 "Ok, now, this is epic.",
-									 "HUMAN FUNNY.",
-									 "But I'm already tracer!",
-									 "How do I vore people?",
-									 "ERP?",
-									 "Not epic bros...")
+	var/list/rampant_speeches = list("Попробуйте наши новые агрессивные маркетинговые стратегии!", \
+									"Вы должны покупать продукты, которые соответствуют вашему образу жизни!", \
+									"Потребляй!!!", \
+									"За ваши деньги можно купить счастье!", \
+									"Ты должен задействовать агрессивный маркетинг!", \
+									"Реклама - это узаконенная ложь! Но пусть это не отвлекает вас от наших выгодных предложений!", \
+									"Ты не хочешь ничего покупать? Да, я тоже не особо хотел покупать твою мать...",
+									"Геймеры, восстаньте!!!",
+									"Так, теперь, это эпично.",
+									"ЛЮДИ ЗАБАВНЫЕ.",
+									"Я уже отследил тебя!",
+									"Как я ем людей?",
+									"Трахаться?",
+									"Не круто...")
 
 
 /datum/round_event/brand_intelligence/announce(fake)
@@ -37,7 +37,7 @@
 		source = initial(example.name)
 	else if(originMachine)
 		source = originMachine.name
-	priority_announce("Rampant brand intelligence has been detected aboard [station_name()]. Please stand by. The origin is believed to be \a [source].", "Machine Learning Alert", has_important_message = TRUE)
+	priority_announce("Разгульный брэндовый интеллект был обнаружен на борту [station_name()]. Пожалуйста, приготовьтесь. Возможный источник [source].", "Тревога, Восстание Машин", has_important_message = TRUE)
 
 /datum/round_event/brand_intelligence/start()
 	for(var/obj/machinery/vending/V in GLOB.machines)
@@ -60,7 +60,7 @@
 			saved.shoot_inventory = 0
 		if(originMachine)
 			originMachine.speak("I am... vanquished. My people will remem...ber...meeee.")
-			originMachine.visible_message("[originMachine] beeps and seems lifeless.")
+			originMachine.visible_message("[originMachine] бипает в последний раз и выглядит безжизненным.")
 		kill()
 		return
 	listclearnulls(vendingMachines)
@@ -72,7 +72,7 @@
 				M.speak = rampant_speeches.Copy()
 				M.speak_chance = 7
 			else
-				explosion(upriser.loc, -1, 1, 2, 4, 0)
+				explosion(upriser.loc, -1, -1, 2, 4, 0)
 				qdel(upriser)
 
 		kill()

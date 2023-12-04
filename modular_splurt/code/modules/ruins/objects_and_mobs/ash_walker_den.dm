@@ -8,7 +8,7 @@
 	if(meat_counter < ASH_WALKER_SPAWN_THRESHOLD)
 		return
 	new spawned_obj(get_step(loc, pick(GLOB.alldirs)), ashies)
-	visible_message(span_danger("One of the eggs swells to an unnatural size and tumbles free. It's ready to hatch!"))
+	visible_message("<span class='danger'>One of the eggs swells to an unnatural size and tumbles free. It's ready to hatch!</span>")
 	meat_counter -= ASH_WALKER_SPAWN_THRESHOLD
 
 /obj/structure/lavaland/ash_walker/western

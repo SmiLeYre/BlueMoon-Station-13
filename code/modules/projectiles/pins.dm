@@ -47,6 +47,7 @@
 	. = ..()
 	if(obj_flags & EMAGGED)
 		return
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	obj_flags |= EMAGGED
 	to_chat(user, "<span class='notice'>You override the authentication mechanism.</span>")
 	return TRUE
@@ -97,7 +98,7 @@
 
 // Implant pin, checks for implant
 /obj/item/firing_pin/implant
-	name = "implant-keyed firing pin"
+	name = "Implant-Keyed Firing Pin"
 	desc = "This is a security firing pin which only authorizes users who are implanted with a certain device."
 	fail_message = "<span class='warning'>IMPLANT CHECK FAILED.</span>"
 	var/obj/item/implant/req_implant = null
@@ -110,13 +111,13 @@
 	return FALSE
 
 /obj/item/firing_pin/implant/mindshield
-	name = "mindshield firing pin"
+	name = "Mindshield Firing Pin"
 	desc = "This Security firing pin authorizes the weapon for only mindshield-implanted users."
 	icon_state = "firing_pin_loyalty"
 	req_implant = /obj/item/implant/mindshield
 
 /obj/item/firing_pin/implant/pindicate
-	name = "syndicate firing pin"
+	name = "Illegal Firing Pin"
 	icon_state = "firing_pin_pindi"
 	req_implant = /obj/item/implant/weapons_auth
 
@@ -125,7 +126,7 @@
 // Honk pin, clown's joke item.
 // Can replace other pins. Replace a pin in cap's laser for extra fun!
 /obj/item/firing_pin/clown
-	name = "hilarious firing pin"
+	name = "Hilarious Firing Pin"
 	desc = "Advanced clowntech that can convert any firearm into a far more useful object."
 	color = "#FFFF00"
 	fail_message = "<span class='warning'>HONK!</span>"
@@ -262,7 +263,7 @@
 	var/selection = alert(user, "Which setting would you want to modify?", "Firing Pin Settings", "Minimum Level Setting", "Maximum Level Setting", "Lethals Only Toggle")
 	if(QDELETED(src) || QDELETED(user) || !user.canUseTopic(src, BE_CLOSE))
 		return
-	var/static/list/till_designs_pr_isnt_merged = list("green", "blue", "amber", "red", "delta")
+	var/static/list/till_designs_pr_isnt_merged = list("green", "blue", "amber", "red", "lambda", "delta")
 	switch(selection)
 		if("Minimum Level Setting")
 			var/input = input(user, "Input the new minimum level setting.", "Firing Pin Settings", NUM2SECLEVEL(min_sec_level)) as null|anything in till_designs_pr_isnt_merged
@@ -298,10 +299,12 @@
 				overlay.color = "#b2ff59" //light green
 			if(SEC_LEVEL_BLUE)
 				overlay.color = "#99ccff" //light blue
-			if(SEC_LEVEL_AMBER)
-				overlay.color = "#ffae42" //light yellow/orange
 			if(SEC_LEVEL_RED)
 				overlay.color = "#ff3f34" //light red
+			if(SEC_LEVEL_AMBER)
+				overlay.color = "#ffae42" //light yellow/orange
+			if(SEC_LEVEL_EPSILON)
+				overlay.color = "#ffffff" //light yellow/orange
 			else
 				overlay.color = "#fe59c2" //neon fuchsia
 		. += overlay

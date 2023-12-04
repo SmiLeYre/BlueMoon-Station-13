@@ -46,6 +46,9 @@
 /obj/item/circuitboard/computer/caravan/syndicate3
 	build_path = /obj/machinery/computer/shuttle/caravan/syndicate3
 
+/obj/item/circuitboard/computer/caravan/syndicate4
+	build_path = /obj/machinery/computer/shuttle/caravan/syndicate4
+
 /obj/machinery/computer/shuttle/caravan/trade1
 	name = "Small Freighter Shuttle Console"
 	desc = "Used to control the Small Freighter."
@@ -153,7 +156,7 @@
 	light_color = LIGHT_COLOR_RED
 	circuit = /obj/item/circuitboard/computer/caravan/syndicate3
 	shuttleId = "caravansyndicate3"
-	possible_destinations = "caravansyndicate3_custom;caravansyndicate3_ambush;caravansyndicate3_listeningpost"
+	possible_destinations = "caravansyndicate3_custom;caravansyndicate3_ambush;caravansyndicate1_listeningpost"
 
 /obj/machinery/computer/camera_advanced/shuttle_docker/caravan/syndicate3
 	name = "Syndicate Drop Ship Navigation Computer"
@@ -163,7 +166,56 @@
 	shuttleId = "caravansyndicate3"
 	lock_override = NONE
 	shuttlePortId = "caravansyndicate3_custom"
-	jumpto_ports = list("caravansyndicate3_ambush" = 1, "caravansyndicate3_listeningpost" = 1)
+	jumpto_ports = list("caravansyndicate3_ambush" = 1, "caravansyndicate1_listeningpost" = 1)
 	view_range = 2.5
 	x_offset = -1
 	y_offset = -3
+
+/obj/machinery/computer/shuttle/caravan/syndicate4
+	name = "SBC Starfury Console"
+	desc = "Used to control the Syndicate Drop Ship."
+	icon_screen = "syndishuttle"
+	icon_keyboard = "syndie_key"
+	req_access = list(ACCESS_SYNDICATE)
+	light_color = LIGHT_COLOR_RED
+	circuit = /obj/item/circuitboard/computer/caravan/syndicate4
+	shuttleId = "sbc_corvette"
+	possible_destinations = "sbc_corvette_custom;ds1_syndicate;ds2_syndicate;caravansyndicate1_listeningpost;whiteship_z4"
+
+/obj/machinery/computer/camera_advanced/shuttle_docker/caravan/syndicate4
+	name = "Starfury Navigation Computer"
+	desc = "Used to designate a precise transit location for the Syndicate Drop Ship."
+	icon_screen = "syndishuttle"
+	icon_keyboard = "syndie_key"
+	shuttleId = "sbc_corvette"
+	lock_override = NONE
+	shuttlePortId = "sbc_corvette_custom"
+	jumpto_ports = list("ds2_syndicate" = 1, "caravansyndicate1_listeningpost" = 1, "whiteship_home" = 1, "whiteship_z4" = 1)
+	view_range = 2.5
+	x_offset = 7
+	y_offset = 1
+	designate_time = 500
+
+/obj/machinery/computer/shuttle/ds_syndicate
+	name = "Starfury Navigation Computer"
+	desc = "A console that controls the Syndicate Drop Ship."
+	icon_screen = "syndishuttle"
+	icon_keyboard = "syndie_key"
+	circuit = /obj/item/circuitboard/computer/ds_syndicate
+	shuttleId = "sbc_corvette"
+	possible_destinations = "ds1_syndicate;ds2_syndicate;caravansyndicate1_listeningpost"
+	req_access = list(ACCESS_SYNDICATE)
+	var/allow_silicons = FALSE
+	var/allow_emag = FALSE
+
+/obj/machinery/computer/shuttle/ds_syndicate/emag_act(mob/user)
+	if(!allow_emag)
+		to_chat(user, "<span class='warning'>[src]'s security firewall is far too powerful for you to bypass.</span>")
+		return SEND_SIGNAL(src, COMSIG_ATOM_EMAG_ACT)
+	return ..()
+
+/obj/machinery/computer/shuttle/ds_syndicate/attack_ai()
+	return allow_silicons ? ..() : FALSE
+
+/obj/machinery/computer/shuttle/ds_syndicate/attack_robot()
+	return allow_silicons ? ..() : FALSE

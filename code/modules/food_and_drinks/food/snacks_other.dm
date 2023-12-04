@@ -229,10 +229,12 @@
 	name = "spider lollipop"
 	desc = "Still gross, but at least it has a mountain of sugar on it."
 	icon_state = "spiderlollipop"
+	item_state = "lollipop_stick"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/toxin = 1, /datum/reagent/iron = 10, /datum/reagent/consumable/sugar = 5, /datum/reagent/medicine/omnizine = 2) //lollipop, but vitamins = toxins
 	filling_color = "#00800"
 	tastes = list("cobwebs" = 1, "sugar" = 2)
 	foodtype = JUNKFOOD | SUGAR | ANTITOXIC
+	slot_flags = ITEM_SLOT_MASK
 
 /obj/item/reagent_containers/food/snacks/tobiko
 	name = "tobiko"
@@ -447,11 +449,13 @@
 	desc = "A delicious lollipop. Makes for a great Valentine's present."
 	icon = 'icons/obj/lollipop.dmi'
 	icon_state = "lollipop_stick"
+	item_state = "lollipop_stick"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/iron = 10, /datum/reagent/consumable/sugar = 5, /datum/reagent/medicine/omnizine = 2)	//Honk
 	var/mutable_appearance/head
 	var/headcolor = rgb(0, 0, 0)
 	tastes = list("candy" = 1)
 	foodtype = JUNKFOOD | SUGAR | ANTITOXIC
+	slot_flags = ITEM_SLOT_MASK
 
 /obj/item/reagent_containers/food/snacks/lollipop/Initialize(mapload)
 	. = ..()
@@ -484,11 +488,83 @@
 	if(spamchecking)
 		qdel(src)
 
+/obj/item/reagent_containers/food/snacks/bubblegum
+	name = "bubblegum"
+	desc = "A rubbery strip of gum. Not exactly filling, but it keeps you busy."
+	icon = 'icons/obj/lollipop.dmi'
+	icon_state = "bubblegum"
+	list_reagents = list(/datum/reagent/consumable/sugar = 10, /datum/reagent/medicine/bicaridine = 2, /datum/reagent/medicine/kelotane = 2) //Ржака.
+	tastes = list("candy" = 1)
+	foodtype = JUNKFOOD
+	slot_flags = ITEM_SLOT_MASK
+	w_class = WEIGHT_CLASS_TINY
+
+	/// The amount to metabolize per second
+	var/metabolization_amount = REAGENTS_METABOLISM / 2
+
+/obj/item/reagent_containers/food/snacks/bubblegum/suicide_act(mob/living/user)
+	user.visible_message(span_suicide("[user] swallows [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
+	qdel(src)
+	return TOXLOSS
+
+/obj/item/reagent_containers/food/snacks/bubblegum/Initialize(mapload)
+	. = ..()
+	color = rgb(rand(0, 255), rand(0, 255), rand(0, 255))
+	AddElement(/datum/element/chewable, metabolization_amount = metabolization_amount)
+
+/obj/item/reagent_containers/food/snacks/bubblegum/nicotine
+	name = "nicotine gum"
+	list_reagents = list(/datum/reagent/drug/nicotine = 10, /datum/reagent/consumable/menthol = 5)
+	tastes = list("mint" = 1)
+	color = "#60A584"
+
+/obj/item/reagent_containers/food/snacks/bubblegum/happiness
+	name = "HP+ gum"
+	desc = "A rubbery strip of gum. It smells funny."
+	list_reagents = list(/datum/reagent/drug/happiness = 15)
+	tastes = list("paint thinner" = 1)
+	color = "#EE35FF"
+
+/obj/item/reagent_containers/food/snacks/bubblegum/bubblegum
+	name = "bubblegum gum"
+	desc = "A rubbery strip of gum. You don't feel like eating it is a good idea."
+	color = "#913D3D"
+	list_reagents = list(/datum/reagent/blood = 15)
+	tastes = list("hell" = 1, "people" = 1)
+	metabolization_amount = REAGENTS_METABOLISM
+
+/obj/item/reagent_containers/food/snacks/bubblegum/bubblegum/process()
+	. = ..()
+	if(iscarbon(loc))
+		hallucinate(loc)
+
+/obj/item/reagent_containers/food/snacks/bubblegum/bubblegum/proc/on_removed(atom/source, material_flags)
+	AddComponent(/datum/component/edible)
+
+/obj/item/reagent_containers/food/snacks/bubblegum/bubblegum/proc/OnConsume(mob/living/eater, mob/living/feeder)
+	if(iscarbon(eater))
+		hallucinate(eater)
+
+///This proc has a 5% chance to have a bubblegum line appear, with an 85% chance for just text and 15% for a bubblegum hallucination and scarier text.
+/obj/item/reagent_containers/food/snacks/bubblegum/bubblegum/proc/hallucinate(mob/living/carbon/victim)
+	if(!victim.client || !istype(victim))
+		return
+	if(prob(95)) //cursed by bubblegum
+		return
+	if(prob(15))
+		new /datum/hallucination/oh_yeah(victim)
+		to_chat(victim, span_warning("[pick("Вы слышите слабый шепот.", "Вы чувствуете запах пепла.", "Вы чувствуете жар.", "Вы слышите громкий рев вдалеке.")]"))
+
+/obj/item/reagent_containers/food/snacks/bubblegum/bubblegum/suicide_act(mob/living/user)
+	user.say("Я БЕССМЕРТНЫЙ!!", "Я ЗАХВАЧУ ВЕСЬ МИР!!", "Я ВИЖУ ТЕБЯ!", "НИКТО МЕНЯ НЕ ОСТАНОВИТ", "ТЫ НЕ СМОЖЕШЬ БЕЖАТЬ ВЕЧНО!!!")
+	return ..()
+
 /obj/item/reagent_containers/food/snacks/gumball
 	name = "gumball"
 	desc = "A colorful, sugary gumball."
 	icon = 'icons/obj/lollipop.dmi'
 	icon_state = "gumball"
+	item_state = "bubblegum"
 	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/medicine/bicaridine = 2, /datum/reagent/medicine/kelotane = 2)	//Kek
 	tastes = list("candy")
 	foodtype = JUNKFOOD
@@ -496,6 +572,7 @@
 /obj/item/reagent_containers/food/snacks/gumball/Initialize(mapload)
 	. = ..()
 	color = rgb(rand(0, 255), rand(0, 255), rand(0, 255))
+	AddElement(/datum/element/chewable)
 
 /obj/item/reagent_containers/food/snacks/gumball/cyborg
 	var/spamchecking = TRUE

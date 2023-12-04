@@ -23,7 +23,7 @@
 		return
 	handle_active_genes()
 	//heart attack stuff
-	handle_heart()
+	handle_heart(delta_time, times_fired)
 
 	dna.species.spec_life(src) // for mutantraces
 	return (stat != DEAD) && !QDELETED(src)
@@ -336,11 +336,13 @@
 	if(we_breath)
 		adjustOxyLoss(8)
 		Unconscious(80)
+	// BLUEMOON ADD START - системы синтетиков отказывают без "сердца", постепенно выходя из строя и выдавая ошибки
+	if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
+		adjustToxLoss(1, toxins_type = TOX_SYSCORRUPT)
+		return TRUE
+	// BLUEMOON ADD END
 	// Tissues die without blood circulation
 	adjustBruteLoss(2)
-
-
-
 
 #undef THERMAL_PROTECTION_HEAD
 #undef THERMAL_PROTECTION_CHEST

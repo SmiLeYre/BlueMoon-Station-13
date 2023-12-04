@@ -1,65 +1,35 @@
-Station
-Frontier
-Suffix
-Death-trap
-Space-hulk
-Lab
-Hazard
-Academy
-Spess Junk
-Fishery
-No-Moon
-Tomb
-Crypt
-Hut
-Monkey
-Bomb
-Trade Post
-Fortress
-Village
-Town
-City
-Edition
-Hive
-Complex
-Base
-Facility
-Depot
-Outpost
-Installation
-Drydock
-Observatory
-Array
-Relay
-Monitor
-Platform
-Construct
-Hangar
-Prison
-Center
-Port
-Waystation
-Factory
-Waypoint
-Stopover
-Hub
-HQ
-Office
-Object
-Fortification
-Colony
-Planet-Cracker
-Roost
-Fat Camp
-Airstrip
-Harbor
-Garden
-Continent
-Environment
-Course
-Country
-Province
-Workspace
-Metro
-Warehouse
-Space Junk
+Вокзалина
+Граница
+Смертельная Ловушка
+Лаборатория
+Опасность
+Академия
+Не-Лунная
+Гробница
+Хатка
+Обезьянка
+Бомба
+Торговая Почта
+Крепость
+Деревня
+Полис-Станция
+База
+Установка
+Обсерватория
+Платформа
+Тюрьма
+Путевая Станция
+Дорожная Точка
+Остановка
+Штаб-Квартира
+Колония
+Орбитальная Установка
+Страна
+Провинция
+Пицца
+Хонк-Станция
+Взрывчатка
+Крапива
+Окружающая Среда
+Обезьяновск
+Ставрополь

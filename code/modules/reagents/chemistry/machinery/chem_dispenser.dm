@@ -163,6 +163,7 @@
 		to_chat(user, "<span class='warning'>[src] has no functional safeties to emag.</span>")
 		return
 	to_chat(user, "<span class='notice'>You short out [src]'s safeties.</span>")
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	dispensable_reagents |= emagged_reagents//add the emagged reagents to the dispensable ones
 	obj_flags |= EMAGGED
 	return TRUE
@@ -333,8 +334,8 @@
 		if("clear_recipes")
 			if(!is_operational())
 				return
-			var/yesno = alert("Clear all recipes?",, "Yes","No")
-			if(yesno == "Yes")
+			var/yesno = alert("Очистить все рецепты?",, "Да","Нет")
+			if(yesno == "Да")
 				saved_recipes = list()
 			. = TRUE
 		if("record_recipe")

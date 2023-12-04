@@ -1,16 +1,17 @@
 /datum/round_event_control/shuttle_catastrophe
 	name = "Shuttle Catastrophe"
 	typepath = /datum/round_event/shuttle_catastrophe
-	weight = 10
+	weight = 20
 	max_occurrences = 1
-	category = EVENT_CATEGORY_BUREAUCRATIC
-	description = "Replaces the emergency shuttle with a random one."
+	category = EVENT_CATEGORY_ANOMALIES
 
 /datum/round_event_control/shuttle_catastrophe/canSpawnEvent(players, gamemode)
-	if(SSshuttle.emergency.name == "Build your own shuttle kit")
+	if(SSshuttle.shuttle_purchased == SHUTTLEPURCHASE_FORCED)
+		return FALSE //don't do it if its already been done
+	if(istype(SSshuttle.emergency, /obj/docking_port/mobile/emergency/shuttle_build))
 		return FALSE //don't undo manual player engineering, it also would unload people and ghost them, there's just a lot of problems
-	if(SSshuttle.emergency.in_flight())
-		return FALSE //ditto, problems
+	if(EMERGENCY_AT_LEAST_DOCKED)
+		return FALSE //don't remove all players when its already on station or going to centcom
 	return ..()
 
 
@@ -18,11 +19,11 @@
 	var/datum/map_template/shuttle/new_shuttle
 
 /datum/round_event/shuttle_catastrophe/announce(fake)
-	var/cause = pick("was attacked by [syndicate_name()] Operatives", "mysteriously teleported away", "had its refuelling crew mutiny",
-		"was found with its engines stolen", "\[REDACTED\]", "flew into the sunset, and melted", "learned something from a very wise cow, and left on its own",
-		"had cloning devices on it", "had its shuttle inspector put the shuttle in reverse instead of park, causing the shuttle to crash into the hangar")
+	var/cause = pick("был атакован оперативниками [syndicate_name()]", "таинственным образом телепортировался", "был заблокирован, так как взбунтовалась его дозаправочная бригада",
+		"был найден с украденными двигателями", "\[ЗАСЕКРЕЧЕНО\]", "улетел в закат и растаял", "чему-то научился у очень мудрой коровы и ушел сам по себе",
+		"был с клонирующими устройствами на нём", "увидел инспектор шаттлов и припарковал шаттл задним ходом, в результате чего шаттл врезался в ангар")
 
-	priority_announce("Your emergency shuttle [cause]. Your replacement shuttle will be the [new_shuttle.name] until further notice.", "CentCom Spacecraft Engineering")
+	priority_announce("Ваш эвакуационный шаттл [cause]. В качестве замены вам будет предоставлен [new_shuttle.name] до дальнейшего уведомления.", "Кораблестроение Центрального Командования")
 
 /datum/round_event/shuttle_catastrophe/setup()
 	var/list/valid_shuttle_templates = list()
@@ -35,7 +36,6 @@
 /datum/round_event/shuttle_catastrophe/start()
 	SSshuttle.shuttle_purchased = SHUTTLEPURCHASE_FORCED
 	SSshuttle.unload_preview()
-	SSshuttle.load_template(new_shuttle)
 	SSshuttle.existing_shuttle = SSshuttle.emergency
-	SSshuttle.action_load(new_shuttle)
+	SSshuttle.action_load(new_shuttle, replace = TRUE)
 	log_shuttle("Shuttle Catastrophe set a new shuttle, [new_shuttle.name].")

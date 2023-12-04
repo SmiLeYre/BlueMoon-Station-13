@@ -195,7 +195,7 @@
 				data["occupant"]["stat"] = "Conscious"
 				data["occupant"]["statstate"] = "average"
 			if(UNCONSCIOUS)
-				data["occupant"]["stat"] = "Unconscious"
+				data["occupant"]["stat"] = "Unconscious" // 15.09.2023. Отметка. Перевести
 				data["occupant"]["statstate"] = "average"
 			if(DEAD)
 				data["occupant"]["stat"] = "Dead"
@@ -243,6 +243,7 @@
 	. = ..()
 	obj_flags |= EMAGGED
 	scramble_chem_buttons()
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	to_chat(user, "<span class='warning'>You scramble the sleeper's user interface!</span>")
 	return TRUE
 
@@ -250,6 +251,7 @@
 	if((chem in available_chems) && chem_allowed(chem))
 		occupant.reagents.add_reagent(chem_buttons[chem], 10) //emag effect kicks in here so that the "intended" chem is used for all checks, for extra FUUU
 		if(user)
+			playsound(src, pick('sound/items/medi/hypospray.ogg','sound/items/medi/hypospray2.ogg'), 50, TRUE, 2)
 			log_combat(user, occupant, "injected [chem] into", addition = "via [src]")
 		return TRUE
 

@@ -34,6 +34,8 @@
 		icon = initial(icon)
 		icon_state = "glass_empty"
 		renamedByPlayer = FALSE //so new drinks can rename the glass
+		name = "drinking glass"
+		desc = "Your standard drinking glass."
 
 //Shot glasses!//
 //  This lets us add shots in here instead of lumping them in with drinks because >logic  //
@@ -119,6 +121,10 @@
 		target.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [target]!</span>", \
 						"<span class='userdanger'>[user] splashes the contents of [src] onto [target]!</span>")
 		log_combat(user, target, "splashed", src)
+		if(iscarbon(target))
+			var/mob/living/carbon/human/C = target
+			if(iscatperson(C))
+				C.emote("hiss")
 		reagents.reaction(target, TOUCH)
 		reagents.clear_reagents()
 		return

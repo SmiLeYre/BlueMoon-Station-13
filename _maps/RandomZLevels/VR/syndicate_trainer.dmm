@@ -1442,7 +1442,7 @@
 /turf/open/indestructible,
 /area/awaymission/centcomAway/general)
 "iq" = (
-/obj/structure/closet/secure_closet/hos,
+/obj/structure/closet/secure_closet/armory1,
 /turf/open/indestructible,
 /area/awaymission/centcomAway/general)
 "ir" = (
@@ -2271,9 +2271,7 @@
 /turf/open/indestructible,
 /area/awaymission/centcomAway/hangar)
 "mU" = (
-/obj/structure/rack,
-/obj/item/storage/secure/briefcase,
-/obj/item/storage/belt/utility/full,
+/obj/structure/closet/secure_closet/armory3,
 /turf/open/indestructible,
 /area/awaymission/centcomAway/general)
 "mW" = (
@@ -2502,6 +2500,10 @@
 /area/awaymission/centcomAway/general)
 "zk" = (
 /turf/closed/indestructible/fakeglass,
+/area/awaymission/centcomAway/general)
+"Cd" = (
+/obj/structure/closet/secure_closet/armory2,
+/turf/open/indestructible,
 /area/awaymission/centcomAway/general)
 "GJ" = (
 /obj/structure/chair,
@@ -10659,7 +10661,7 @@ gW
 gW
 gW
 eu
-gW
+Cd
 gW
 gW
 gW

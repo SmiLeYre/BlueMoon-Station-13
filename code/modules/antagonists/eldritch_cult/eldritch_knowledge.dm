@@ -191,7 +191,7 @@
 /datum/eldritch_knowledge/summon/on_finished_recipe(mob/living/user,list/atoms,loc)
 	//we need to spawn the mob first so that we can use it in pollCandidatesForMob, we will move it from nullspace down the code
 	var/mob/living/summoned = new mob_to_summon(loc)
-	message_admins("[summoned.name] is being summoned by [user.real_name] in [loc]")
+	message_admins("[summoned.name] is being summoned by [user.real_name] in <b>[loc]</b>")
 	var/list/mob/dead/observer/candidates = pollCandidatesForMob("Do you want to play as [summoned.name]", ROLE_HERETIC, null, FALSE, 100, summoned)
 	if(!LAZYLEN(candidates))
 		to_chat(user,"<span class='warning'>No ghost could be found...</span>")
@@ -332,6 +332,12 @@
 	next_knowledge = list(/datum/eldritch_knowledge/spell/silence)
 	result_atoms = list(/obj/item/living_heart)
 	route = "Start"
+
+/datum/eldritch_knowledge/living_heart/recreate
+	name = "Recreate Living Heart"
+	desc = "Смочи меня кровью и сбрось свою нынешнюю цель."
+	required_atoms = list(/obj/item/living_heart,/obj/effect/decal/cleanable/blood)
+	result_atoms = list(/obj/item/living_heart)
 
 /datum/eldritch_knowledge/codex_cicatrix
 	name = "Codex Cicatrix"

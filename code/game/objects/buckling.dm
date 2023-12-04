@@ -18,7 +18,7 @@
 			if(act_intent == INTENT_HELP || act_intent == INTENT_GRAB)
 				return
 		if(buckled_mobs.len > 1)
-			var/unbuckled = input(user, "Who do you wish to unbuckle?","Unbuckle Who?") as null|mob in buckled_mobs
+			var/unbuckled = input(user, "Кого вы хотите отстегнуть?","Отстегнуть кого?") as null|mob in buckled_mobs
 			if(user_unbuckle_mob(unbuckled,user))
 				return 1
 		else
@@ -39,7 +39,7 @@
 	if(buckled_mobs.len)
 		return TRUE
 
-//procs that handle the actual buckling and unbuckling
+//procs that handle the actual buckling and unbuckling<b>[src]</b>
 /atom/movable/proc/buckle_mob(mob/living/M, force = FALSE, check_loc = TRUE)
 	LAZYINITLIST(buckled_mobs)
 
@@ -54,9 +54,9 @@
 	M.buckling = src
 	if(!M.can_buckle() && !force)
 		if(M == usr)
-			to_chat(M, "<span class='warning'>You are unable to buckle yourself to [src]!</span>")
+			to_chat(M, "<span class='warning'>Вы не можете занять место на <b>[src]</b>!!</span>")
 		else
-			to_chat(usr, "<span class='warning'>You are unable to buckle [M] to [src]!</span>")
+			to_chat(usr, "<span class='warning'>Вы не в состоянии разместить <b>[M]</b> на <b>[src]</b>!</span>")
 		M.buckling = null
 		return FALSE
 
@@ -66,6 +66,11 @@
 		else if(isliving(M.pulledby))
 			var/mob/living/L = M.pulledby
 			L.reset_pull_offsets(M, TRUE)
+
+	// BLUEMOON ADD START
+	if(!pre_buckle_mob(M))
+		return FALSE
+	// BLUEMOON ADD END
 
 	// if(!check_loc && M.loc != loc)
 	if(M.loc != loc)
@@ -78,6 +83,15 @@
 	M.update_mobility()
 	M.throw_alert("buckled", /atom/movable/screen/alert/restrained/buckled)
 	post_buckle_mob(M)
+
+	// BLUEMOON ADDITION AHEAD - запрет на усаживание сверхтяжёлого персонажа посторонними
+	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER)) // проверка не раньше, т.к. в post_buckle_mob обратаюыватся объекты-исключения, на которые сверхтяжёлые персонажи садятся с особым эффектом
+		if(!M.buckled) // чтобы лишний раз не появлялось сообщение о попытке сесть
+			return FALSE
+		if(M != usr)
+			to_chat(usr, span_warning("Слишком много весит!"))
+			return FALSE
+	// BLUEMOON ADDITION END
 
 	SEND_SIGNAL(src, COMSIG_MOVABLE_BUCKLE, M, force)
 	return TRUE
@@ -114,6 +128,12 @@
 		unbuckle_mob(m, force)
 
 //Handle any extras after buckling
+
+// BLUEMOON ADD START - взаимодействие с объектами до момента, пока моб считается севшим на него.
+/atom/movable/proc/pre_buckle_mob(mob/living/M)
+	return TRUE
+// BLUEMOON ADD END
+
 //Called on buckle_mob()
 /atom/movable/proc/post_buckle_mob(mob/living/M)
 
@@ -129,29 +149,35 @@
 	. = buckle_mob(M, check_loc = check_loc)
 	if(.)
 		if(M == user)
+			// BLUEMOON CHANGES AHEAD - нарративный комментарий, что садится/ложится сверхтяжёлый персонаж
 			M.visible_message(\
-				"<span class='notice'>[M] buckles [M.p_them()]self to [src].</span>",\
-				"<span class='notice'>You buckle yourself to [src].</span>",\
-				"<span class='italics'>You hear metal clanking.</span>")
+				"<span class='notice'>[M] занимает место на <b>[src]</b>. \
+				[HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER) ? "Слышится скрип при попытки удержать вес." : ""]</span>",\
+				"<span class='notice'>Вы занимаете место на <b>[src]</b>. \
+				[HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER) ? "Слышится скрип при попытки удержать вес." : ""]</span>",\
+				"<span class='italics'>Вы слышите металлический лязг.</span>")
 		else
 			M.visible_message(\
-				"<span class='warning'>[user] buckles [M] to [src]!</span>",\
-				"<span class='warning'>[user] buckles you to [src]!</span>",\
-				"<span class='italics'>You hear metal clanking.</span>")
+				"<span class='warning'>[user] размещает <b>[M]</b> на <b>[src]</b>! \
+				[HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER) ? "Слышится скрип при попытки удержать вес." : ""]</span>",\
+				"<span class='warning'>[user] размещает вас на <b>[src]</b>! \
+				[HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER) ? "Слышится скрип при попытки удержать вес." : ""]</span>",\
+				"<span class='italics'>Вы слышите металлический лязг.</span>")
+			// BLUEMOON CHANGES END
 
 /atom/movable/proc/user_unbuckle_mob(mob/living/buckled_mob, mob/user)
 	var/mob/living/M = unbuckle_mob(buckled_mob)
 	if(M)
 		if(M != user)
 			M.visible_message(\
-				"<span class='notice'>[user] unbuckles [M] from [src].</span>",\
-				"<span class='notice'>[user] unbuckles you from [src].</span>",\
-				"<span class='italics'>You hear metal clanking.</span>")
+				"<span class='notice'>[user] поднимает <b>[M]</b> с <b>[src]</b>.</span>",\
+				"<span class='notice'>[user] поднимает вас с <b>[src]</b>.</span>",\
+				"<span class='italics'>Вы слышите металлический лязг.</span>")
 		else
 			M.visible_message(\
-				"<span class='notice'>[M] unbuckles [M.p_them()]self from [src].</span>",\
-				"<span class='notice'>You unbuckle yourself from [src].</span>",\
-				"<span class='italics'>You hear metal clanking.</span>")
+				"<span class='notice'>[M] поднимается с <b>[src]</b>.</span>",\
+				"<span class='notice'>Вы поднимаетесь с <b>[src]</b>.</span>",\
+				"<span class='italics'>Вы слышите металлический лязг.</span>")
 		add_fingerprint(user)
 	if(isliving(M.pulledby))
 		var/mob/living/L = M.pulledby
@@ -164,6 +190,6 @@
 	else if(length(buckled_mobs) == 1)
 		return user_unbuckle_mob(buckled_mobs[1], user)
 	else
-		var/unbuckled = input(user, "Who do you wish to unbuckle?","Unbuckle Who?") as null|mob in buckled_mobs
+		var/unbuckled = input(user, "Кого вы хотите отстегнуть?","Отстегнуть кого?") as null|mob in buckled_mobs
 		return user_unbuckle_mob(unbuckled, user)
 

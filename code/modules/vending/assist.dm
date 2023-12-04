@@ -1,8 +1,6 @@
 /obj/machinery/vending/assist
 	name = "\improper Part-Mart"
 	desc = "All the finest of miscellaneous electronics one could ever need! Not responsible for any injuries caused by reckless misuse of parts."
-	// icon_state = "parts"
-	// icon_deny = "parts-deny"
 
 	products = list(/obj/item/assembly/prox_sensor = 7,
 					/obj/item/assembly/igniter = 6,
@@ -21,7 +19,7 @@
 					/obj/item/flashlight/lantern = 2,
 					/obj/item/beacon = 2)
 	refill_canister = /obj/item/vending_refill/assist
-	product_ads = "Only the finest!;Have some tools.;The most robust equipment.;The finest gear in space!"
+	product_slogans = "Только самое лучшее!;Лом - сила!;Всегда держите монтировку под рукой!;Самое надежное оборудование!;Самое лучшее оборудование в космосе!"
 	default_price = PRICE_REALLY_CHEAP
 	extra_price = PRICE_ALMOST_CHEAP
 	payment_department = NO_FREEBIES

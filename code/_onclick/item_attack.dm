@@ -15,6 +15,8 @@
 			return
 	. = attackchain_flags
 	if(tool_behaviour && ((. = target.tool_act(user, src, tool_behaviour)) & STOP_ATTACK_PROC_CHAIN))
+		if(tool_behaviour == TOOL_MULTITOOL)
+			update_icon()
 		return
 	if((. |= pre_attack(target, user, params, ., damage_multiplier)) & STOP_ATTACK_PROC_CHAIN)
 		return
@@ -89,7 +91,7 @@
 	if(!UseStaminaBufferStandard(user, STAM_COST_ATTACK_MOB_MULT, null, TRUE))
 		return DISCARD_LAST_ACTION
 
-	if(!force)
+	if(!force && !HAS_TRAIT(src, TRAIT_CUSTOM_TAP_SOUND))
 		playsound(loc, 'sound/weapons/tap.ogg', get_clamped_volume(), 1, -1)
 	else if(hitsound)
 		playsound(loc, hitsound, get_clamped_volume(), 1, -1)

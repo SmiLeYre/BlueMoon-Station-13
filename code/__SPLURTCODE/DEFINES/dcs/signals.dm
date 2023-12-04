@@ -5,6 +5,14 @@
 	#define EMOTE_MESSAGE 3
 	#define EMOTE_INTENTIONAL 4
 
+///from /mob/say_dead(): (mob/speaker, message)
+#define COMSIG_MOB_DEADSAY "mob_deadsay"
+	#define MOB_DEADSAY_SIGNAL_INTERCEPT (1<<0)
+/// from base of [/client/proc/handle_spam_prevention] (message, mute_type)
+#define COMSIG_MOB_AUTOMUTE_CHECK "client_automute_check" // The check is performed by the client.
+	/// Prevents the automute system checking this client for repeated messages.
+	#define WAIVE_AUTOMUTE_CHECK (1<<0)
+
 /*
  * # COMSIG_MOB_UPDATE_GENITALS
  * From modular_splurt\code\modules\arousal\genitals.dm

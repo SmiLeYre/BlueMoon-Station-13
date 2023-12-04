@@ -54,3 +54,6 @@ $include splurt/server.txt
 $include splurt/connections.txt
 $include splurt/donator.txt
 $include splurt/autocryo.txt
+
+# Bluemoon stuff!
+$include entries/bluemoon.txt

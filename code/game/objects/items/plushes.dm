@@ -2,10 +2,13 @@
 	name = "plush"
 	desc = "This is the special coder plush, do not steal."
 	icon = 'icons/obj/plushes.dmi'
+	lefthand_file = 'icons/mob/inhands/misc/plushes-lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/misc/plushes-right.dmi'
 	icon_state = "debug"
 	attack_verb = list("thumped", "whomped", "bumped")
 	w_class = WEIGHT_CLASS_SMALL
 	resistance_flags = FLAMMABLE
+	obj_flags = UNIQUE_RENAME
 	lefthand_file = 'icons/mob/inhands/misc/plushes_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/plushes_righthand.dmi'
 	var/list/squeak_override //Weighted list; If you want your plush to have different squeak sounds use this
@@ -624,11 +627,100 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	icon_state = "plushie_spacelizard"
 
 /obj/item/toy/plush/nukeplushie
-	name = "operative plushie"
+	name = "Operative Plushie"
 	desc = "A stuffed toy that resembles a syndicate nuclear operative. The tag claims operatives to be purely fictitious."
 	icon_state = "plushie_nuke"
 	attack_verb = list("shot", "nuked", "detonated")
 	squeak_override = list('sound/effects/hit_punch.ogg' = 1)
+
+/obj/item/toy/plush/nukeplushie/susplushie
+	name = "Suspect Plushie"
+	desc = "A stuffed toy that resembles a red space station employee. The tag claims red employee to be purely fictitious."
+	icon_state = "plushie_sus"
+	attack_verb = list("shot", "eat", "killed")
+
+/obj/item/toy/plush/nukeplushie/minisusplushie
+	name = "Mini Suspect Plushie"
+	desc = "A stuffed toy that resembles a red space station mini employee. The tag claims red employee to be purely fictitious."
+	icon_state = "plushie_minisus"
+	attack_verb = list("mini-shot", "mini-eat", "mini-killed")
+
+// Little cute Ninja plushie
+#define GREEN_NINJA_SKIN "Green Space Ninja Plushie"
+#define BLUE_NINJA_SKIN "Blue Space Ninja Plushie"
+#define RED_NINJA_SKIN "Red Space Ninja Plushie"
+
+/obj/item/toy/plush/ninja
+	name = GREEN_NINJA_SKIN
+	desc = "Главный герой одного из самых популярных мультсериалов по ту сторону галактики. \"運命の忍者矢\""
+	icon_state = "ninja_plushie_green"
+	attack_verb = list("shot", "nuked", "detonated")
+	squeak_override = list('sound/effects/hit_punch.ogg' = 1)
+	always_reskinnable = TRUE
+	unique_reskin = list(
+		GREEN_NINJA_SKIN = list(RESKIN_ICON_STATE = "ninja_plushie_green", RESKIN_ITEM_STATE = "ninja_plushie_green"),
+		BLUE_NINJA_SKIN = list(RESKIN_ICON_STATE = "ninja_plushie_blue", RESKIN_ITEM_STATE = "ninja_plushie_blue"),
+		RED_NINJA_SKIN = list(RESKIN_ICON_STATE = "ninja_plushie_red", RESKIN_ITEM_STATE = "ninja_plushie_red")
+	)
+	COOLDOWN_DECLARE(change_ninja_cooldown)
+
+/obj/item/toy/plush/ninja/reskin_obj(mob/user)
+	. = ..()
+	name = current_skin
+	if(COOLDOWN_FINISHED(src, change_ninja_cooldown))
+		COOLDOWN_START(src, change_ninja_cooldown, 6 SECONDS)
+		switch(current_skin)
+			if(BLUE_NINJA_SKIN)
+				say("Какой-то свет не остановит меня!")
+				playsound(src, 'modular_bluemoon/SmiLeY/sounds/Blue Ninja Plushie.ogg', 50, 1)
+			if(RED_NINJA_SKIN)
+				say("Ты можешь бежать... но ты не сможешь спрятаться!")
+				playsound(src, 'modular_bluemoon/SmiLeY/sounds/Red Ninja Plushie.ogg', 50, 1)
+			else
+				say("Я не боюсь тьмы! Я и есть тьма!")
+				playsound(src, 'modular_bluemoon/SmiLeY/sounds/Green Ninja Plushie.ogg', 50, 1)
+	if(ismob(loc))
+		var/mob/M = loc
+		M.update_inv_hands()
+
+#undef GREEN_NINJA_SKIN
+#undef BLUE_NINJA_SKIN
+#undef RED_NINJA_SKIN
+
+#define BASIC_MINER_SKIN "Miner Plushie"
+#define RED_MINER_SKIN "Bloody Miner Plushie"
+
+/obj/item/toy/plush/miner
+	name = BASIC_MINER_SKIN
+	desc = "Тот самый Шахтёр, способный провести геноцид планетарного объекта."
+	icon_state = "miner_plushie"
+	attack_verb = list("killed", "slashed", "annihilates")
+	squeak_override = list('sound/effects/hit_punch.ogg' = 1)
+	always_reskinnable = TRUE
+	unique_reskin = list(
+		BASIC_MINER_SKIN = list(RESKIN_ICON_STATE = "miner_plushie", RESKIN_ITEM_STATE = "miner_plushie"),
+		RED_MINER_SKIN = list(RESKIN_ICON_STATE = "bloody_miner_plushie", RESKIN_ITEM_STATE = "bloody_miner_plushie")
+	)
+	COOLDOWN_DECLARE(change_miner_cooldown)
+
+/obj/item/toy/plush/miner/reskin_obj(mob/user)
+	. = ..()
+	name = current_skin
+	if(COOLDOWN_FINISHED(src, change_miner_cooldown))
+		COOLDOWN_START(src, change_miner_cooldown, 6 SECONDS)
+		switch(current_skin)
+			if(BASIC_MINER_SKIN)
+				say("Ну вот. Сегодня я умру.")
+				playsound(src, 'modular_bluemoon/SmiLeY/sounds/Miner Plushie.ogg', 50, 1)
+			else
+				say("Кишки, огромные кишки! Убей их… должен убить их всех! Разорвать… и… рвать! Демоны… они повсюду. Должен… убить их всех!")
+				playsound(src, 'modular_bluemoon/SmiLeY/sounds/Bloody Miner Plushie.ogg', 50, 1)
+	if(ismob(loc))
+		var/mob/M = loc
+		M.update_inv_hands()
+
+#undef BASIC_MINER_SKIN
+#undef RED_MINER_SKIN
 
 /obj/item/toy/plush/slimeplushie
 	name = "slime plushie"
@@ -829,6 +921,7 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	name = "Hairball"
 	desc = "A bundle of undigested fibers and scales. Yuck."
 	icon_state = "Hairball"
+	item_state = "plushie_sus"
 	unstuffable = TRUE
 	young = TRUE // Your own mouth-baby.
 	squeak_override = list('sound/misc/splort.ogg'=1)
@@ -913,3 +1006,29 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	if(!Kisser)
 		return
 	plushie_absorb(Kisser)
+
+/obj/item/toy/plush/therapy
+	name = "Therapy Doll"
+	desc = "A toy for therapeutic and recreational purposes."
+	icon = 'icons/obj/toy.dmi'
+	icon_state = "therapyred"
+	item_state = "egg4"
+	attack_verb = list("thumped", "whomped", "bumped")
+	squeak_override = list('sound/items/squeaktoy.ogg'=1)
+	w_class = WEIGHT_CLASS_TINY
+	var/cooldown = 0
+	resistance_flags = FLAMMABLE
+
+/obj/item/toy/plush/therapy/New()
+	..()
+	var/therapy_color = pick("green","blue","red", "orange", "purple", "yellow")
+	if(therapy_color)
+		desc += " This one is [therapy_color]."
+		icon_state = "therapy[therapy_color]"
+
+/obj/item/toy/plush/therapy/attack_self(mob/user)
+	if(cooldown < world.time - 8)
+		to_chat(user, "<span class='notice'>Вы сжимаете анти-стресс игрушку - [src].</span>")
+		playsound(user, 'sound/items/squeaktoy.ogg', 20, 1)
+		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "plushpet", /datum/mood_event/plushpet)
+		cooldown = world.time

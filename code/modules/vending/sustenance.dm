@@ -1,8 +1,7 @@
 /obj/machinery/vending/sustenance
 	name = "\improper Sustenance Vendor"
 	desc = "A vending machine which vends food, as required by section 47-C of the NT's Prisoner Ethical Treatment Agreement."
-	product_slogans = "Enjoy your meal.;Enough calories to support strenuous labor."
-	product_ads = "Sufficiently healthy.;Efficiently produced tofu!;Mmm! So good!;Have a meal.;You need food to live!;Even prisoners deserve their daily bread!;Have some more candy corn!;Try our new ice cups!"
+	product_slogans = "Наслаждайтесь едой.;Достаточно калорий, чтобы поддерживать напряженный труд.;Достаточно полезно.;Эффективно произведенный тофу!;Ммм! Так вкусно!;Поешьте.;Вам нужна еда, чтобы жить!;Даже заключенные заслуживают хлеба насущного!;Съешьте еще конфет-корн!;Попробуйте наши новые стаканчики со льдом.!"
 	light_mask = "snack-light-mask"
 	icon_state = "sustenance"
 	products = list(/obj/item/reagent_containers/food/snacks/tofu = 24,

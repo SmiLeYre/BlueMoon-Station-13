@@ -95,13 +95,14 @@
 	icon_state = "c20r[magazine ? "-[CEILING(get_ammo(0)/4, 1)*4]" : ""][chambered ? "" : "-e"][suppressed ? "-suppressed" : ""]"
 
 /obj/item/gun/ballistic/automatic/wt550
-	name = "security semi-auto PDW"
+	name = "WT-550 PDW"
 	desc = "An outdated personal defence weapon. Uses 4.6x30mm rounds and is designated the WT-550 Semi-Automatic SMG."
 	icon_state = "wt550"
-	item_state = "arg"
+	item_state = "wt550"
 	fire_sound = "sound/weapons/gunshot_smg_alt.ogg"
 	mag_type = /obj/item/ammo_box/magazine/wt550m9
 	can_suppress = FALSE
+	weapon_weight = WEAPON_HEAVY
 	burst_size = 2
 	burst_shot_delay = 1
 	can_bayonet = TRUE
@@ -120,6 +121,7 @@
 	name = "\improper Type U3 Uzi"
 	desc = "A lightweight, burst-fire submachine gun, for when you really want someone dead. Uses 9mm rounds."
 	icon_state = "mini-uzi"
+	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	burst_size = 2
 
@@ -176,8 +178,7 @@
 /obj/item/gun/ballistic/automatic/m90/update_icon_state()
 	icon_state = "[initial(icon_state)][magazine ? "" : "-e"]"
 
-/*
-/obj/item/gun/ballistic/automatic/m90/burst_select()
+/obj/item/gun/ballistic/automatic/m90/fire_select()
 	var/mob/living/carbon/human/user = usr
 	switch(select)
 		if(0)
@@ -194,14 +195,14 @@
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 	update_icon()
 	return
-*/
 
 /obj/item/gun/ballistic/automatic/tommygun
 	name = "\improper Thompson SMG"
 	desc = "Based on the classic 'Chicago Typewriter'."
 	icon_state = "tommygun"
-	item_state = "shotgun"
+	item_state = "arg"
 	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_MEDIUM
 	slot_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/tommygunm45
 	fire_sound = 'sound/weapons/gunshot_smg.ogg'
@@ -209,15 +210,26 @@
 	burst_size = 4
 	burst_shot_delay = 1
 
+/obj/item/gun/ballistic/shotgun/toy/tommygun
+	name = "Tommy Gun"
+	desc = "Looks almost like the real thing! Great for practicing Drive-bys. Ages 8 and up."
+	icon = 'icons/obj/guns/toy.dmi'
+	icon_state = "tommygun"
+	item_state = "shotgun"
+	fire_sound = 'sound/weapons/gunshot.ogg'
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/toy/tommygun
+	w_class = WEIGHT_CLASS_SMALL
+
 /obj/item/gun/ballistic/automatic/ar
 	name = "\improper NT-ARG 'Boarder'"
 	desc = "A robust assault rifle used by Nanotrasen fighting forces."
 	icon_state = "arg"
-	item_state = "arg"
+	item_state = "arifle-wielded"
 	slot_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/m556
 	fire_sound = 'sound/weapons/rifleshot.ogg'
 	can_suppress = FALSE
+	weapon_weight = WEAPON_HEAVY
 	burst_size = 3
 	burst_shot_delay = 1
 
@@ -362,6 +374,15 @@
 	else
 		icon_state = "sniper"
 
+/obj/item/gun/ballistic/automatic/sniper_rifle/toy
+	name = "donksoft sniper rifle"
+	desc = "A recoil-operated, semi-automatic donksoft sniper rifle. Perfect to annoy/kill the neighbour’s cat! Ages 8 and up."
+	icon = 'icons/obj/guns/toy.dmi'
+	fire_sound = 'sound/weapons/gunshot.ogg'
+	can_suppress = FALSE
+	zoomable = FALSE
+	mag_type = /obj/item/ammo_box/magazine/toy/sniper_rounds
+
 /obj/item/gun/ballistic/automatic/sniper_rifle/syndicate
 	name = "syndicate sniper rifle"
 	desc = "An illegally modified .50 cal sniper rifle with suppression compatibility. Quickscoping still doesn't work."
@@ -398,7 +419,7 @@
 	name = "laser rifle"
 	desc = "Though sometimes mocked for the relatively weak firepower of their energy weapons, the logistic miracle of rechargeable ammunition has given Nanotrasen a decisive edge over many a foe."
 	icon_state = "oldrifle"
-	item_state = "arg"
+	item_state = "arifle-wielded"
 	mag_type = /obj/item/ammo_box/magazine/recharge
 	automatic_burst_overlay = FALSE
 	fire_delay = 2
@@ -410,3 +431,21 @@
 
 /obj/item/gun/ballistic/automatic/laser/update_icon_state()
 	icon_state = "oldrifle[magazine ? "-[CEILING(get_ammo(0)/4, 1)*4]" : ""]"
+
+/obj/item/gun/ballistic/automatic/laser/lasgun
+	name = "Thilium Boarding Lascarbine"
+	desc = "The Thilium-pattern lascarbine, Is a special type of larcarbines used for CQC."
+	icon = 'icons/obj/guns/40x32_energy.dmi'
+	icon_state = "boarding"
+	item_state = "laser-wielded"
+	mag_type = /obj/item/ammo_box/magazine/recharge/lasgun
+	automatic_burst_overlay = FALSE
+	fire_delay = 2
+	can_suppress = FALSE
+	burst_size = 1
+	actions_types = list()
+	fire_sound = 'sound/weapons/lasgun.ogg'
+	casing_ejector = FALSE
+
+/obj/item/gun/ballistic/automatic/laser/update_icon_state()
+	icon_state = "boarding"

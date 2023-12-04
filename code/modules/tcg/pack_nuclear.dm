@@ -197,7 +197,7 @@
 
 /datum/tcg_card/pack_nuclear/bomb
 	name = "Syndicate Bomb"
-	desc = "A large and menacing device. Can be bolted down with a wrench."
+	desc = "A large and menacing device, stolen from Syndicate. Can be bolted down with a wrench."
 	rules = "Deal 6 damage to all units on the field after 2 turns."
 	icon_state = "bomb"
 

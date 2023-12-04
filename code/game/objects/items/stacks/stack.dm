@@ -343,6 +343,11 @@
 			if(object.density)
 				to_chat(usr, "<span class='warning'>There is \a [object.name] here. You cant make \a [recipe.title] here!</span>")
 				return FALSE
+	if(recipe.check_density)
+		for(var/obj/object in dest_turf)
+			if(object.density && !(object.obj_flags & IGNORE_DENSITY) || object.obj_flags & BLOCKS_CONSTRUCTION)
+				balloon_alert(usr, "something is in the way!")
+				return FALSE
 	if(recipe.placement_checks)
 		switch(recipe.placement_checks)
 			if(STACK_CHECK_CARDINALS)
@@ -511,6 +516,7 @@
 	fingerprintslast = from.fingerprintslast
 	//TODO bloody overlay
 
-/obj/item/stack/microwave_act(obj/machinery/microwave/M)
-	if(istype(M) && M.dirty < 100)
-		M.dirty += amount
+/obj/item/stack/microwave_act(obj/machinery/microwave/microwave_source, mob/microwaver, randomize_pixel_offset)
+	. = ..()
+	if(istype(microwave_source) && microwave_source.dirty < 100)
+		microwave_source.dirty += amount

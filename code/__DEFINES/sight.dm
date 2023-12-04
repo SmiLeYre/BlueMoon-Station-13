@@ -33,3 +33,7 @@
 #define USE_STATIC_NONE			0
 #define USE_STATIC_TRANSPARENT	1
 #define USE_STATIC_OPAQUE		2
+
+/// Bitfield of sight flags that show things "inside" the blackness plane
+/// We've gotta alpha it down if we get this, cause otherwise the sight flag won't work
+#define BLACKNESS_CUTTING (SEE_MOBS|SEE_OBJS|SEE_TURFS|SEE_TURFS|SEE_TURFS)

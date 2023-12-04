@@ -217,12 +217,12 @@
 	desc = "Bring 3 bodies onto a transmutation rune to shed your human form and ascend to untold power."
 	required_atoms = list(/mob/living/carbon/human)
 	cost = 5
-	sacs_needed = 8
+	sacs_needed = 5
 	route = PATH_FLESH
 
 /datum/eldritch_knowledge/final/flesh_final/on_finished_recipe(mob/living/user, list/atoms, loc)
 	. = ..()
-	priority_announce("$^@&#*$^@(#&$(@&#^$&#^@# Ever coiling vortex. Reality unfolded. THE LORD OF ARMS, [user.real_name] has ascended! Fear the ever twisting hand! $^@&#*$^@(#&$(@&#^$&#^@#","#$^@&#*$^@(#&$(@&#^$&#^@#", 'sound/announcer/classic/spanomalies.ogg')
+	priority_announce("$^@&#*$^@(#&$(@&#^$&#^@# Вихрь крутится в вечном танце. Реальность выворачивается наизнанку. ПОВЕЛИТЕЛЬ, [user.real_name] вознёсся! Бойтесь длани господня! $^@&#*$^@(#&$(@&#^$&#^@#","#$^@&#*$^@(#&$(@&#^$&#^@#", 'modular_bluemoon/kovac_shitcode/sound/eldritch/flesh_lore.ogg')
 	user.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/shed_human_form)
 	if(!ishuman(user))
 		return
@@ -265,4 +265,4 @@
 
 /datum/eldritch_knowledge/spell/touch_of_madness/on_gain(mob/user)
 	. = ..()
-	priority_announce("The stench of rotting flesh fills the air... An approaching abomination has been detected!", sound = 'sound/misc/notice1.ogg')
+	priority_announce("Внимание, [station_name()]. [user.real_name] излучает пространственную нестабильность, в связи с которой смрад гнилой плоти разносится по округе... надвигается нечто поистине мерзкое!", sound = 'sound/misc/notice1.ogg')

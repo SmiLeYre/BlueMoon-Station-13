@@ -1,5 +1,5 @@
 /obj/item/clothing/mask/balaclava
-	name = "balaclava"
+	name = "Balaclava"
 	desc = "LOADSAMONEY"
 	icon_state = "balaclava"
 	item_state = "balaclava"
@@ -13,11 +13,11 @@
 	adjustmask(user)
 
 /obj/item/clothing/mask/balaclava/breath
-	name = "breathaclava"
+	name = "Breathaclava"
 	clothing_flags = ALLOWINTERNALS
 
 /obj/item/clothing/mask/infiltrator
-	name = "insidious balaclava"
+	name = "Insidious Balaclava"
 	desc = "An incredibly suspicious balaclava made with Syndicate nanofibers to absorb impacts slightly while obfuscating the voice and face using a garbled vocoder."
 	icon_state = "syndicate_balaclava"
 	item_state = "syndicate_balaclava"
@@ -80,8 +80,9 @@
 /obj/item/clothing/mask/russian_balaclava
 	name = "russian balaclava"
 	desc = "Protects your face from snow."
+	alternate_screams = RUSSIAN_SCREAMS
 	icon_state = "rus_balaclava"
-	item_state = "rus_balaclava"
+	item_state = "balaclava"
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	visor_flags_inv = HIDEFACE|HIDEFACIALHAIR
 	w_class = WEIGHT_CLASS_SMALL

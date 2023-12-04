@@ -65,22 +65,7 @@
 	item_state = "darkcarapace"
 	blood_overlay_type = "armor"
 	dog_fashion = /datum/dog_fashion/back
-	mutantrace_variation = NONE
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0)
-
-
-/obj/item/lighter/gold
-	name = "\improper Engraved Zippo"
-	desc = "A shiny and relatively expensive zippo lighter. There's a small etched in verse on the bottom that reads, 'No Gods, No Masters, Only Man.'"
-	icon = 'icons/obj/custom.dmi'
-	icon_state = "gold_zippo"
-	item_state = "gold_zippo"
-	w_class = WEIGHT_CLASS_TINY
-	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
-	heat = 1500
-	resistance_flags = FIRE_PROOF
-	light_color = LIGHT_COLOR_FIRE
 
 /obj/item/clothing/neck/scarf/zomb
 	name = "A special scarf"
@@ -373,7 +358,7 @@
 	desc = "Heavenly robes of the kitsune Luna Pumpkin,you can feel radiance coming from them."
 	item_state = "Divine_robes"
 	icon_state = "Divine_robes"
-	mutantrace_variation = NONE
+	mutantrace_variation = STYLE_DIGITIGRADE|USE_TAUR_CLIP_MASK|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/under/custom/leoskimpy
 	name = "Leon's Skimpy Outfit"
@@ -401,9 +386,9 @@
 	icon = 'icons/obj/custom.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/custom_w.dmi'
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/zuliecloak
-	body_parts_covered = CHEST|GROIN|ARMS
+	body_parts_covered = CHEST|ARMS
 	slot_flags = ITEM_SLOT_OCLOTHING | ITEM_SLOT_NECK //it's a cloak. it's cosmetic. so why the hell not? what could possibly go wrong?
-	mutantrace_variation = NONE
+	mutantrace_variation = STYLE_DIGITIGRADE|USE_TAUR_CLIP_MASK|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/head/hooded/cloakhood/zuliecloak
 	name = "NT Special Issue"
@@ -413,7 +398,7 @@
 	icon = 'icons/obj/custom.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/custom_w.dmi'
 	flags_inv = HIDEEARS|HIDEHAIR
-	mutantrace_variation = NONE
+	mutantrace_variation = STYLE_DIGITIGRADE|USE_TAUR_CLIP_MASK|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/suit/blackredgold
 	name = "Multicolor Coat"
@@ -450,6 +435,7 @@
 	desc = "A Russian made old paratrooper jumpsuit, has many pockets for easy storage of gear from a by gone era. As bulky as it looks, its shockingly light!"
 	icon_state = "mw2_russian_para"
 	item_state = "mw2_russian_para"
+	alternate_screams = RUSSIAN_SCREAMS
 	icon = 'icons/obj/custom.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/custom_w.dmi'
 	mutantrace_variation = NONE
@@ -503,7 +489,7 @@
 	item_state = "mikubikini"
 	icon = 'icons/obj/custom.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/custom_w.dmi'
-	mutantrace_variation = NONE
+	mutantrace_variation = STYLE_DIGITIGRADE|USE_TAUR_CLIP_MASK|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/suit/mikujacket
 	name = "starlight singer jacket"
@@ -617,7 +603,7 @@
 	item_state = "smaiden"
 	icon = 'icons/obj/custom.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/custom_w.dmi'
-	mutantrace_variation = NONE
+	mutantrace_variation = STYLE_DIGITIGRADE|USE_TAUR_CLIP_MASK|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/suit/spacehoodie
 	name = "space hoodie"

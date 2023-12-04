@@ -2,8 +2,8 @@
 /datum/round_event_control/stray_cargo
 	name = "Stray Cargo Pod"
 	typepath = /datum/round_event/stray_cargo
-	weight = 5
-	max_occurrences = 4
+	weight = 50
+	max_occurrences = 15
 	earliest_start = 10 MINUTES
 	category = EVENT_CATEGORY_BUREAUCRATIC
 	description = "A pod containing a random supply crate lands on the station."
@@ -15,7 +15,7 @@
 	var/static/list/stray_spawnable_supply_packs = list() ///List of default spawnable supply packs, filtered from the cargo list
 
 /datum/round_event/stray_cargo/announce(fake)
-	priority_announce("Stray cargo pod detected on long-range scanners. Expected location of impact: [impact_area.name].", "Collision Alert", has_important_message = TRUE)
+	priority_announce("На сканерах дальнего действия обнаружена бродячая капсула с товарами. Примерное место приземления: [impact_area.name].", "Опасность Столкновения", has_important_message = TRUE)
 
 /**
 * Tries to find a valid area, throws an error if none are found
@@ -88,10 +88,9 @@
 /datum/round_event_control/stray_cargo/syndicate
 	name = "Stray Syndicate Cargo Pod"
 	typepath = /datum/round_event/stray_cargo/syndicate
-	weight = 0
-	max_occurrences = 0
-	earliest_start = 30 MINUTES
-	description = "A pod containing syndicate gear lands on the station."
+	weight = 75
+	max_occurrences = 5
+	earliest_start = 10 MINUTES
 
 /datum/round_event/stray_cargo/syndicate
 	possible_pack_types = list(/datum/supply_pack/misc/syndicate)

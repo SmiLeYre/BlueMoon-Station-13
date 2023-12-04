@@ -53,25 +53,34 @@
 
 /obj/item/multitool/examine(mob/user)
 	. = ..()
-	if(selected_io)
-		. += "<span class='notice'>Activate [src] to detach the data wire.</span>"
+	if(selected_io || buffer)
+		. += "<span class='notice'>Activate [src] to detach the data wire or clear buffer.</span>"
 	if(buffer)
-		. += "<span class='notice'>Its buffer contains [buffer].</span>"
+		. += "<span class='notice'>Its buffer contains <b>[buffer]</b>.</span>"
 
 /obj/item/multitool/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] puts the [src] to [user.p_their()] chest. It looks like [user.p_theyre()] trying to pulse [user.p_their()] heart off!</span>")
+	user.visible_message("<span class='suicide'>[user] puts the [src] to [user.ru_ego()] chest. It looks like [user.ru_who()] trying to pulse [user.ru_ego()] heart off!</span>")
 	return OXYLOSS//theres a reason it wasnt recommended by doctors
 
 /obj/item/multitool/attack_self(mob/user)
 	if(selected_io)
 		selected_io = null
 		to_chat(user, "<span class='notice'>You clear the wired connection from the multitool.</span>")
+	else if(buffer)
+		buffer = null
+		to_chat(user, "<span class='notice'>You clear the multitool's buffer.</span>")
 	update_icon()
 
 /obj/item/multitool/update_icon_state()
 	icon_state = initial(icon_state)
 	if(selected_io)
-		icon_state += "_red"
+		icon_state += "_wiring"
+	else if(buffer)
+		icon_state += "_buffer"
+
+/obj/item/multitool/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
+	. = ..()
+	update_icon()
 
 /obj/item/proc/wire(var/datum/integrated_io/io, mob/user)
 	if(!io.holder.assembly)
@@ -125,8 +134,8 @@
 	var/track_cooldown = 0
 	var/track_delay = 10 //How often it checks for proximity
 	var/detect_state = PROXIMITY_NONE
-	var/rangealert = 8	//Glows red when inside
-	var/rangewarning = 20 //Glows yellow when inside
+	var/rangealert = 11	//Glows red when inside
+	var/rangewarning = 22 //Glows yellow when inside
 	var/hud_type = DATA_HUD_AI_DETECT
 	var/hud_on = FALSE
 	var/mob/camera/aiEye/remote/ai_detector/eye
@@ -150,8 +159,8 @@
 	return
 
 /obj/item/multitool/ai_detect/update_icon_state()
-	if(selected_io)
-		icon_state = "multitool_red"
+	if(detect_state == PROXIMITY_NONE)
+		..()
 	else
 		icon_state = "[initial(icon_state)][detect_state]"
 
@@ -251,6 +260,9 @@
 	icon_state = "multitool_cyborg"
 	toolspeed = 0.5
 
+/obj/item/multitool/cyborg/update_icon_state()
+	return
+
 /obj/item/multitool/abductor
 	name = "alien multitool"
 	desc = "An omni-technological interface."
@@ -258,6 +270,9 @@
 	icon_state = "multitool"
 	toolspeed = 0.1
 	show_wires = TRUE
+
+/obj/item/multitool/abductor/update_icon_state()
+	return
 
 /obj/item/multitool/advanced
 	name = "advanced multitool"
@@ -267,6 +282,9 @@
 	toolspeed = 0.2
 	show_wires = TRUE
 
+/obj/item/multitool/advanced/update_icon_state()
+	return
+
 /obj/item/multitool/advanced/brass
 	name = "clockwork multitool"
 	desc = "A brass...multitool? With three prongs arcing electricity between them. It vibrates subtly in your hand."
@@ -274,3 +292,5 @@
 	icon_state = "clockitool"
 	toolspeed = 0.2
 
+/obj/item/multitool/advanced/brass/update_icon_state()
+	return

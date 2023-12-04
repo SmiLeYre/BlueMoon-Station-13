@@ -110,7 +110,9 @@
 		"stamp-chap" = 'icons/stamp_icons/large_stamp-chap.png',
 		"stamp-mime" = 'icons/stamp_icons/large_stamp-mime.png',
 		"stamp-centcom" = 'icons/stamp_icons/large_stamp-centcom.png',
-		"stamp-syndicate" = 'icons/stamp_icons/large_stamp-syndicate.png'
+		"stamp-syndicate" = 'icons/stamp_icons/large_stamp-syndicate.png',
+		"stamp-ntr" = 'icons/stamp_icons/large_stamp-rep.png',
+		"stamp-warden" = 'icons/stamp_icons/large_stamp-warden.png'
 	)
 
 
@@ -555,11 +557,6 @@
 		"inventory-undershirt.png" = 'modular_sand/icons/ui_icons/inventory/undershirt.png',
 		"inventory-wrists.png" = 'modular_sand/icons/ui_icons/inventory/wrists.png',
 	)
-
-/// Removes all non-alphanumerics from the text, keep in mind this can lead to id conflicts
-/proc/sanitize_css_class_name(name)
-	var/static/regex/regex = new(@"[^a-zA-Z0-9]","g")
-	return replacetext(name, regex, "")
 
 /datum/asset/simple/tutorial_advisors
 	assets = list(

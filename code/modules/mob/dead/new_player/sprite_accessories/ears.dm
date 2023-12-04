@@ -21,6 +21,8 @@
 	name = "Axolotl"
 	icon_state = "axolotl"
 	icon = 'modular_citadel/icons/mob/mam_ears.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/ears/human/bear
 	name = "Bear"
@@ -239,7 +241,7 @@
 /datum/sprite_accessory/ears/mam_ears/axolotl
 	name = "Axolotl"
 	icon_state = "axolotl"
-	matrixed_sections = MATRIX_RED
+	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/ears/mam_ears/bat
 	name = "Bat"

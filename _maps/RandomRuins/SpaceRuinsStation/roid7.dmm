@@ -108,6 +108,10 @@
 /obj/machinery/microwave,
 /turf/open/floor/plasteel/airless/cafeteria,
 /area/ruin/space)
+"v" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plasteel/airless,
+/area/ruin/space)
 "w" = (
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg1"
@@ -174,6 +178,14 @@
 "I" = (
 /obj/structure/table/wood,
 /obj/item/kitchen/fork,
+/turf/open/floor/plasteel/airless,
+/area/ruin/space)
+"J" = (
+/obj/machinery/light{
+	icon_state = "tube-broken";
+	status = 2
+	},
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space)
 "K" = (
@@ -401,7 +413,7 @@ o
 n
 X
 X
-z
+J
 k
 H
 m
@@ -540,7 +552,7 @@ t
 t
 E
 X
-X
+v
 Z
 Z
 c
@@ -553,7 +565,7 @@ B
 G
 a
 o
-X
+v
 X
 z
 k

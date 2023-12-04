@@ -173,7 +173,7 @@
 			for(var/obj/item/clothing/accessory/attached_accessory in attached_accessories)
 				var/datum/element/polychromic/polychromic = LAZYACCESS(attached_accessory.comp_lookup, "item_worn_overlays")
 				if(!polychromic)
-					var/mutable_appearance/accessory_overlay = mutable_appearance(attached_accessory.mob_overlay_icon, attached_accessory.item_state || attached_accessory.icon_state, ABOVE_HUD_LAYER)
+					var/mutable_appearance/accessory_overlay = mutable_appearance(attached_accessory.mob_overlay_icon, attached_accessory.item_state || attached_accessory.icon_state, -UNIFORM_LAYER)
 					accessory_overlay.alpha = attached_accessory.alpha
 					accessory_overlay.color = attached_accessory.color
 					accessory_overlays += accessory_overlay

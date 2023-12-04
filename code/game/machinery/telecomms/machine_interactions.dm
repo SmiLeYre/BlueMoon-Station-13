@@ -152,6 +152,7 @@
 
 				temp = "-% Buffer successfully flushed. %-"
 				P.buffer = null
+				P.update_icon()
 
 			if("Add" in params)
 				if(!canAccess(usr))
@@ -161,6 +162,7 @@
 					return
 
 				P.buffer = src
+				P.update_icon()
 				temp = "% Successfully stored [REF(P.buffer)] [P.buffer] in buffer %-"
 
 		if("unlink")
@@ -185,7 +187,7 @@
 					newfreq *= 10 // shift the decimal one place
 
 				newfreq = sanitize_frequency(newfreq, TRUE) //sanitize
-				if(newfreq == FREQ_SYNDICATE)
+				if(newfreq == FREQ_SYNDICATE || newfreq == FREQ_INTEQ || newfreq == FREQ_PIRATE)
 					temp = "-% Error: Interference preventing filtering frequency: \"[newfreq] GHz\" %-"
 					return
 				if(newfreq in freq_listening)
@@ -236,7 +238,7 @@
 					newfreq *= 10 // shift the decimal one place
 
 				newfreq = sanitize_frequency(newfreq, TRUE)
-				if(newfreq == FREQ_SYNDICATE)
+				if(newfreq == FREQ_SYNDICATE || newfreq == FREQ_INTEQ || newfreq == FREQ_PIRATE)
 					temp = "-% Error: Interference preventing filtering frequency: \"[newfreq] GHz\" %-"
 					return
 

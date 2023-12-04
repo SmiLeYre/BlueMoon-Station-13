@@ -1,5 +1,5 @@
 #define HIJACK_SYNDIE 1
-#define RUSKY_PARTY 2
+#define RUSKY_PARTY 6
 #define SPIDER_GIFT 3
 #define DEPARTMENT_RESUPPLY 4
 #define ANTIDOTE_NEEDED 5
@@ -11,8 +11,9 @@
 /datum/round_event_control/shuttle_loan
 	name = "Shuttle Loan"
 	typepath = /datum/round_event/shuttle_loan
-	max_occurrences = 1
-	earliest_start = 7 MINUTES
+	max_occurrences = 5
+	weight = 50
+	earliest_start = 10 MINUTES
 	category = EVENT_CATEGORY_BUREAUCRATIC
 	description = "If cargo accepts the offer, fills the shuttle with loot and/or enemies."
 
@@ -22,7 +23,7 @@
 	var/dispatched = 0
 	var/dispatch_type = 0
 	var/bonus_points = 10000
-	var/thanks_msg = "The cargo shuttle should return in five minutes. Have some supply points for your trouble."
+	var/thanks_msg = "Грузовой шаттл должен вернуться через пять минут. Мы начислили вам немного очков за беспокойство."
 
 /datum/round_event/shuttle_loan/setup()
 	dispatch_type = pick(HIJACK_SYNDIE, RUSKY_PARTY, SPIDER_GIFT, DEPARTMENT_RESUPPLY, ANTIDOTE_NEEDED, PIZZA_DELIVERY, ITS_HIP_TO, MY_GOD_JC)
@@ -33,42 +34,42 @@
 	var/title = "CentCom Free Real Estate"
 	switch(dispatch_type)
 		if(HIJACK_SYNDIE)
-			message = "Cargo: The syndicate are trying to infiltrate your station. If you let them hijack your cargo shuttle, you'll save us a headache."
-			title = "CentCom Counter Intelligence"
+			message = "Снабжение: Террористы из группировки InteQ пытаются проникнуть на вашу станцию. Если вы позволите им угнать ваш грузовой шаттл, вы избавите нас от головной боли."
+			title = "Контрразведка Центрального Командования"
 		if(RUSKY_PARTY)
-			message = "Cargo: A group of angry Russians want to have a party. Can you send them your cargo shuttle then make them disappear?"
-			title = "CentCom Russian Outreach Program"
+			message = "Снабжение: Группа злых коммунистов, ренегатов НРИ, хочет устроить вечеринку. Можете отправить им ваш грузовой шаттл, чтобы заставить их исчезнуть?"
+			title = "ФМС Центрального Командования"
 		if(SPIDER_GIFT)
-			message = "Cargo: The Spider Clan has sent us a mysterious gift. Can we ship it to you to see what's inside?"
-			title = "CentCom Diplomatic Corps"
+			message = "Снабжение: Клан Пауков прислал нам загадочный подарок. Мы можем отправить его вам, чтобы вы посмотрели, что внутри?"
+			title = "Дипломатический Корпус Центрального Командования"
 		if(DEPARTMENT_RESUPPLY)
-			message = "Cargo: Seems we've ordered doubles of our department resupply packages this month. Can we send them to you?"
-			title = "CentCom Supply Department"
+			message = "Снабжение: Похоже, в этом месяце мы заказали в два раза больше посылок для пополнения запасов нашего департамента. Мы можем отправить их к вам?"
+			title = "Снабжение Центрального Командования"
 		if(ANTIDOTE_NEEDED)
-			message = "Cargo: Your station has been chosen for an epidemiological research project. Send us your cargo shuttle to receive your research samples."
-			title = "CentCom Research Initiatives"
+			message = "Снабжение: Ваша станция была выбрана для эпидемиологического исследовательского проекта. Отправьте нам ваш грузовой шаттл для получения образцов для исследования."
+			title = "Стартапы Центрального Командования"
 		if(PIZZA_DELIVERY)
-			message = "Cargo: It looks like a neighbouring station accidentally delivered their pizza to you instead."
-			title = "CentCom Spacepizza Division"
+			message = "Снабжение: Похоже, соседняя станция случайно доставила вам пиццу."
+			title = "Отдел Космопиццы Центрального Командования"
 		if(ITS_HIP_TO)
-			message = "Cargo: One of our freighters carrying a bee shipment has been attacked by eco-terrorists. Can you clean up the mess for us?"
-			title = "CentCom Janitorial Division"
+			message = "Снабжение: Один из наших грузовиков с пчелами подвергся нападению со стороны эко-террористов. Можно убрать там всё за нас?"
+			title = "Подразделение Уборщиков Центрального Командования"
 			bonus_points = 20000 //Toxin bees can be unbeelievably lethal
 		if(MY_GOD_JC)
-			message = "Cargo: We have discovered an active Syndicate bomb near our VIP shuttle's fuel lines. If you feel up to the task, we will pay you for defusing it."
-			title = "CentCom Security Division"
+			message = "Снабжение: Мы обнаружили действующую Бомбу Синдиката рядом с топливными линиями нашего VIP шаттла и по нашим данным её установили Террористы Группировки InteQ. Если вы чувствуете, что справитесь с этой задачей, мы заплатим вам за ее разрядку."
+			title = "КСБ Центрального Командования"
 			bonus_points = 45000 //If you mess up, people die and the shuttle gets turned into swiss cheese
 		if(DELTA_CRATES)
-			message = "Cargo: We have discovered a warehouse of DELTA locked crates. We can't store any more of them at CC, can you take them for us?"
-			title = "CentCom Security Division"
+			message = "Снабжение: Мы обнаружили склад запертых DELTA-Ящиков. Мы не можем больше хранить их у себя, не могли бы вы взять их для нас?"
+			title = "КСБ Центрального Командования"
 			bonus_points = 25000 //If you mess up, people die and the shuttle gets turned into swiss cheese
 	if(prob(50))
 		priority_announce(message, title)
 	else
-		print_command_report(message, "Cargo report")
+		print_command_report(message, "Грузовой Шаттл Центрального Командования")
 
 /datum/round_event/shuttle_loan/proc/loan_shuttle()
-	priority_announce(thanks_msg, "Cargo shuttle commandeered by CentCom.")
+	priority_announce(thanks_msg, "Грузовой Шаттл Центрального Командования")
 
 	dispatched = 1
 	var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
@@ -82,23 +83,23 @@
 
 	switch(dispatch_type)
 		if(HIJACK_SYNDIE)
-			SSshuttle.centcom_message += "Syndicate hijack team incoming."
+			SSshuttle.centcom_message += "Прибытие группы захвата ИнтеКью."
 		if(RUSKY_PARTY)
-			SSshuttle.centcom_message += "Partying Russians incoming."
+			SSshuttle.centcom_message += "Прибывающие русские веселятся."
 		if(SPIDER_GIFT)
-			SSshuttle.centcom_message += "Spider Clan gift incoming."
+			SSshuttle.centcom_message += "Приходящий подарок от клана Пауков."
 		if(DEPARTMENT_RESUPPLY)
-			SSshuttle.centcom_message += "Department resupply incoming."
+			SSshuttle.centcom_message += "Департамент пополнения запасов приближается."
 		if(ANTIDOTE_NEEDED)
-			SSshuttle.centcom_message += "Virus samples incoming."
+			SSshuttle.centcom_message += "Входящие образцы вирусов."
 		if(PIZZA_DELIVERY)
-			SSshuttle.centcom_message += "Pizza delivery for [station_name()]"
+			SSshuttle.centcom_message += "Доставка пиццы для [station_name()]."
 		if(ITS_HIP_TO)
-			SSshuttle.centcom_message += "Biohazard cleanup incoming."
+			SSshuttle.centcom_message += "Входящая очистка от биологических угроз."
 		if(MY_GOD_JC)
-			SSshuttle.centcom_message += "Live explosive ordnance incoming. Exercise extreme caution."
+			SSshuttle.centcom_message += "Боевые заряды взрывчатки направлены. Будьте предельно осторожны."
 		if(DELTA_CRATES)
-			SSshuttle.centcom_message += "DELTA Locked crates incoming. Exercise extreme caution."
+			SSshuttle.centcom_message += "Закрытые Дельта-Ящики направлены. Будьте предельно осторожны."
 
 /datum/round_event/shuttle_loan/tick()
 	if(dispatched)
@@ -271,7 +272,7 @@
 
 /obj/item/paper/fluff/bee_objectives
 	name = "Objectives of a Bee Liberation Front Operative"
-	info = "<b>Objective #1</b>. Liberate all bees on the NT transport vessel 2416/B. <b>Success!</b>  <br><b>Objective #2</b>. Escape alive. <b>Failed.</b>"
+	default_raw_text = "<b>Objective #1</b>. Liberate all bees on the NT transport vessel 2416/B. <b>Success!</b>  <br><b>Objective #2</b>. Escape alive. <b>Failed.</b>"
 
 /obj/machinery/syndicatebomb/shuttle_loan/Initialize(mapload)
 	. = ..()
@@ -282,10 +283,10 @@
 
 /obj/item/paper/fluff/cargo/bomb
 	name = "hastly scribbled note"
-	info = "GOOD LUCK!"
+	default_raw_text = "GOOD LUCK!"
 
 /obj/item/paper/fluff/cargo/bomb/allyourbase
-	info = "Somebody set us up the bomb!"
+	default_raw_text = "Somebody set us up the bomb!"
 
 #undef HIJACK_SYNDIE
 #undef RUSKY_PARTY

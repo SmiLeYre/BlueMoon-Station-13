@@ -36,7 +36,7 @@
 		user.temporarilyRemoveItemFromInventory(hand_item, TRUE) //DROPDEL will delete the item
 		if(!silent)
 			playsound(user, 'sound/effects/blobattack.ogg', 30, 1)
-			user.visible_message("<span class='warning'>With a sickening crunch, [user] reforms [user.p_their()] [weapon_name_simple] into an arm!</span>", "<span class='notice'>We assimilate the [weapon_name_simple] back into our body.</span>", "<span class='italics>You hear organic matter ripping and tearing!</span>")
+			user.visible_message("<span class='warning'>With a sickening crunch, [user] reforms [user.ru_ego()] [weapon_name_simple] into an arm!</span>", "<span class='notice'>We assimilate the [weapon_name_simple] back into our body.</span>", "<span class='italics>You hear organic matter ripping and tearing!</span>")
 		var/datum/antagonist/changeling/changeling = user.mind.has_antag_datum(/datum/antagonist/changeling)
 		changeling.chem_recharge_slowdown -= recharge_slowdown
 		user.update_inv_hands()
@@ -96,7 +96,7 @@
 		return TRUE
 	var/mob/living/carbon/human/H = user
 	if(istype(H.wear_suit, suit_type) || istype(H.head, helmet_type))
-		H.visible_message("<span class='warning'>[H] casts off [H.p_their()] [suit_name_simple]!</span>", "<span class='warning'>We cast off our [suit_name_simple].</span>", "<span class='italics'>You hear organic matter ripping and tearing!</span>")
+		H.visible_message("<span class='warning'>[H] casts off [H.ru_ego()] [suit_name_simple]!</span>", "<span class='warning'>We cast off our [suit_name_simple].</span>", "<span class='italics'>You hear organic matter ripping and tearing!</span>")
 		H.temporarilyRemoveItemFromInventory(H.head, TRUE) //The qdel on dropped() takes care of it
 		H.temporarilyRemoveItemFromInventory(H.wear_suit, TRUE)
 		H.update_inv_wear_suit()
@@ -149,7 +149,7 @@
 	dna_cost = 2
 	loudness = 2
 	req_human = TRUE
-	recharge_slowdown = 0.6
+	recharge_slowdown = 0.1
 	weapon_type = /obj/item/melee/arm_blade
 	weapon_name_simple = "blade"
 
@@ -163,16 +163,16 @@
 	righthand_file = 'icons/mob/inhands/antag/changeling_righthand.dmi'
 	item_flags = NEEDS_PERMIT | ABSTRACT | DROPDEL
 	w_class = WEIGHT_CLASS_HUGE
-	force = 25
+	force = 35
 	throwforce = 0 //Just to be on the safe side
 	throw_range = 0
 	throw_speed = 0
-	armour_penetration = 20
+	armour_penetration = 35
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = SHARP_EDGED
-	wound_bonus = -60
-	bare_wound_bonus = 20
+	wound_bonus = 10
+	bare_wound_bonus = 15
 	var/can_drop = FALSE
 	var/fake = FALSE
 	total_mass = TOTAL_MASS_HAND_REPLACEMENT
@@ -214,7 +214,7 @@
 			if(!do_after(user, 100, target = A))
 				return
 		//user.say("Heeeeeeeeeerrre's Johnny!")
-		user.visible_message("<span class='warning'>[user] forces the airlock to open with [user.p_their()] [src]!</span>", "<span class='warning'>We force [src] to open.</span>", \
+		user.visible_message("<span class='warning'>[user] forces the airlock to open with [user.ru_ego()] [src]!</span>", "<span class='warning'>We force [src] to open.</span>", \
 		"<span class='italics'>You hear a metal screeching sound.</span>")
 		A.open(2)
 
@@ -283,7 +283,7 @@
 		qdel(src)
 
 /obj/item/gun/magic/tentacle/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] coils [src] tightly around [user.p_their()] neck! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] coils [src] tightly around [user.ru_ego()] neck! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return (OXYLOSS)
 
 
@@ -312,7 +312,6 @@
 	damage_type = BRUTE
 	range = 8
 	hitsound = 'sound/weapons/thudswoosh.ogg'
-	var/chain
 	var/obj/item/ammo_casing/magic/tentacle/source //the item that shot it
 
 /obj/item/projectile/tentacle/Initialize(mapload)
@@ -341,7 +340,7 @@
 	if(H.Adjacent(C))
 		for(var/obj/item/I in H.held_items)
 			if(I.get_sharpness())
-				C.visible_message("<span class='danger'>[H] impales [C] with [H.p_their()] [I.name]!</span>", "<span class='userdanger'>[H] impales you with [H.p_their()] [I.name]!</span>")
+				C.visible_message("<span class='danger'>[H] impales [C] with [H.ru_ego()] [I.name]!</span>", "<span class='userdanger'>[H] impales you with [H.ru_ego()] [I.name]!</span>")
 				C.apply_damage(I.force, BRUTE, BODY_ZONE_CHEST)
 				H.do_item_attack_animation(C, used_item = I)
 				H.add_mob_blood(C)
@@ -376,6 +375,7 @@
 
 					if(INTENT_DISARM)
 						var/obj/item/I = C.get_active_held_item()
+						armour_penetration = 100
 						if(I)
 							if(C.dropItemToGround(I))
 								C.visible_message("<span class='danger'>[I] is yanked off [C]'s hand by [src]!</span>","<span class='userdanger'>A tentacle pulls [I] away from you!</span>")
@@ -463,7 +463,7 @@
 	if(--remaining_uses < 1)
 		if(ishuman(loc))
 			var/mob/living/carbon/human/H = loc
-			H.visible_message("<span class='warning'>With a sickening crunch, [H] reforms [H.p_their()] shield into an arm!</span>", "<span class='notice'>We assimilate our shield into our body.</span>", "<span class='italics>You hear organic matter ripping and tearing!</span>")
+			H.visible_message("<span class='warning'>With a sickening crunch, [H] reforms [H.ru_ego()] shield into an arm!</span>", "<span class='notice'>We assimilate our shield into our body.</span>", "<span class='italics>You hear organic matter ripping and tearing!</span>")
 		qdel(src)
 
 /***************************************\
@@ -494,13 +494,13 @@
 	clothing_flags = STOPSPRESSUREDAMAGE //Not THICKMATERIAL because it's organic tissue, so if somebody tries to inject something into it, it still ends up in your blood. (also balance but muh fluff)
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/oxygen)
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 90, ACID = 90) //No armor at all.
-	mutantrace_variation = NONE
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/suit/space/changeling/Initialize(mapload)
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, CHANGELING_TRAIT)
 	if(ismob(loc))
-		loc.visible_message("<span class='warning'>[loc.name]\'s flesh rapidly inflates, forming a bloated mass around [loc.p_their()] body!</span>", "<span class='warning'>We inflate our flesh, creating a spaceproof suit!</span>", "<span class='italics'>You hear organic matter ripping and tearing!</span>")
+		loc.visible_message("<span class='warning'>[loc.name]\'s flesh rapidly inflates, forming a bloated mass around [loc.ru_ego()] body!</span>", "<span class='warning'>We inflate our flesh, creating a spaceproof suit!</span>", "<span class='italics'>You hear organic matter ripping and tearing!</span>")
 	START_PROCESSING(SSobj, src)
 
 /obj/item/clothing/suit/space/changeling/process()
@@ -533,8 +533,7 @@
 	dna_cost = 1
 	loudness = 2
 	req_human = TRUE
-	recharge_slowdown = 0.6
-
+	recharge_slowdown = 0.1
 	suit_type = /obj/item/clothing/suit/armor/changeling
 	helmet_type = /obj/item/clothing/head/helmet/changeling
 	suit_name_simple = "armor"
@@ -544,6 +543,7 @@
 	name = "chitinous mass"
 	desc = "A tough, hard covering of black chitin."
 	icon_state = "lingarmor"
+	tail_state = "lingarmor"
 	item_flags = DROPDEL
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	armor = list(MELEE = 70, BULLET = 60, LASER = 30, ENERGY = 40, BOMB = 10, BIO = 4, RAD = 0, FIRE = 50, ACID = 90)
@@ -600,7 +600,7 @@
 		return 1
 	var/mob/living/carbon/human/H = user
 	if(istype(H.gloves, glove_type))
-		H.visible_message("<span class='warning'>With a sickening crunch, [H] reforms [H.p_their()] [glove_name_simple] into hands!</span>", "<span class='warning'>We assimilate our [glove_name_simple].</span>", "<span class='italics'>You hear organic matter ripping and tearing!</span>")
+		H.visible_message("<span class='warning'>With a sickening crunch, [H] reforms [H.ru_ego()] [glove_name_simple] into hands!</span>", "<span class='warning'>We assimilate our [glove_name_simple].</span>", "<span class='italics'>You hear organic matter ripping and tearing!</span>")
 		H.temporarilyRemoveItemFromInventory(H.gloves, TRUE) //The qdel on dropped() takes care of it
 		H.update_inv_gloves()
 		playsound(H.loc, 'sound/effects/blobattack.ogg', 30, 1)
@@ -661,8 +661,7 @@
 	dna_cost = 2
 	loudness = 2
 	req_human = TRUE
-	recharge_slowdown = 0.6
-
+	recharge_slowdown = 0.1
 	glove_type = /obj/item/clothing/gloves/fingerless/pugilist/cling // just punch his head off dude
 	glove_name_simple = "bone gauntlets"
 

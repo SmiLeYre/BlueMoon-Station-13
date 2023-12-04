@@ -7,6 +7,8 @@
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	force = 15
 	throwforce = 10
+	wound_bonus = 5
+	bare_wound_bonus = 10
 	item_state = "pickaxe"
 	lefthand_file = 'icons/mob/inhands/equipment/mining_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
@@ -32,7 +34,7 @@
 		to_chat(user, "<span class='notice'>Tool does not have a configureable dig range.</span>")
 
 /obj/item/pickaxe/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] begins digging into [user.p_their()] chest!  It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins digging into [user.ru_ego()] chest!  It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	if(use_tool(user, user, 30, volume=50))
 		return BRUTELOSS
 	user.visible_message("<span class='suicide'>[user] couldn't do it!</span>")

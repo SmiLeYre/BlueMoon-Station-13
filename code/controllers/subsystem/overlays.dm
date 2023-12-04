@@ -122,6 +122,7 @@ SUBSYSTEM_DEF(overlays)
 
 #define NOT_QUEUED_ALREADY (!(flags_1 & OVERLAY_QUEUED_1))
 #define QUEUE_FOR_COMPILE flags_1 |= OVERLAY_QUEUED_1; SSoverlays.queue += src;
+
 /atom/proc/cut_overlays()
 	LAZYINITLIST(remove_overlays)
 	remove_overlays = overlays.Copy()
@@ -179,6 +180,20 @@ SUBSYSTEM_DEF(overlays)
 			QUEUE_FOR_COMPILE
 	else if(cut_old)
 		cut_overlays()
+
+/// Converts an overlay list into text for debug printing
+/// Of note: overlays aren't actually mutable appearances, they're just appearances
+/// Don't have access to that type tho, so this is the best you're gonna get
+/proc/overlays2text(list/overlays)
+	var/list/unique_overlays = list()
+	// As anything because we're basically doing type coerrsion, rather then actually filtering for mutable apperances
+	for(var/mutable_appearance/overlay as anything in overlays)
+		var/key = "[overlay.icon]-[overlay.icon_state]-[overlay.dir]"
+		unique_overlays[key] += 1
+	var/list/output_text = list()
+	for(var/key in unique_overlays)
+		output_text += "([key]) = [unique_overlays[key]]"
+	return output_text.Join("\n")
 
 #undef NOT_QUEUED_ALREADY
 #undef QUEUE_FOR_COMPILE

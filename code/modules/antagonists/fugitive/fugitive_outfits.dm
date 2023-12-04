@@ -74,6 +74,7 @@
 	mask = /obj/item/clothing/mask/gas/sechailer/swat/spacepol
 	glasses = /obj/item/clothing/glasses/sunglasses
 	ears = /obj/item/radio/headset
+	implants = list(/obj/item/implant/mindshield)
 	l_pocket = /obj/item/ammo_box/magazine/m45
 	r_pocket = /obj/item/restraints/handcuffs
 	id = /obj/item/card/id
@@ -104,6 +105,7 @@
 	mask = /obj/item/clothing/mask/gas/hunter
 	glasses = /obj/item/clothing/glasses/sunglasses/garb
 	ears = /obj/item/radio/headset
+	implants = list(/obj/item/implant/mindshield)
 	l_pocket = /obj/item/tank/internals/plasma/full
 	r_pocket = /obj/item/restraints/handcuffs/cable
 	id = /obj/item/card/id
@@ -126,6 +128,7 @@
 	ears = /obj/item/radio/headset
 	shoes = /obj/item/clothing/shoes/jackboots
 	mask = /obj/item/clothing/mask/scarecrow
+	implants = list(/obj/item/implant/mindshield)
 	r_pocket = /obj/item/restraints/handcuffs/cable
 	id = /obj/item/card/id
 	r_hand = /obj/item/gun/ballistic/shotgun/doublebarrel
@@ -150,6 +153,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	glasses = /obj/item/clothing/glasses/eyepatch
 	r_pocket = /obj/item/restraints/handcuffs/cable
+	implants = list(/obj/item/implant/mindshield)
 	ears = /obj/item/radio/headset
 	id = /obj/item/card/id
 	r_hand = /obj/item/storage/firstaid/regular

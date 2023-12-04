@@ -16,11 +16,11 @@
 	var/strip_silence = FALSE
 
 /obj/item/clothing/accessory/ring/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("\[user] is putting the [src] in [user.p_their()] mouth! It looks like [user] is trying to choke on the [src]!"))
+	user.visible_message("<span class='suicide'>\[user] is putting the [src] in [user.ru_ego()] mouth! It looks like [user] is trying to choke on the [src]!</span>")
 	return OXYLOSS
 
 /obj/item/clothing/accessory/ring/attack_self(mob/user)
-	user.visible_message(span_warning("\The [user] gets down on one knee, presenting \the [src]."),span_warning("You get down on one knee, presenting \the [src]."))
+	user.visible_message("<span class='warning'>\The [user] gets down on one knee, presenting \the [src].</span>","<span class='warning'>You get down on one knee, presenting \the [src].</span>")
 
 /obj/item/clothing/accessory/ring/proc/Touch(atom/A, proximity)
 	return FALSE // return TRUE to cancel attack_hand()

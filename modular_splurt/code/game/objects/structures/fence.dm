@@ -32,16 +32,16 @@
 	if(health < maxhealth)
 		switch(health / maxhealth)
 			if(0.0 to 0.5)
-				. += span_warning("It looks severely damaged!")
+				. += "<span class='warning'>It looks severely damaged!</span>"
 			if(0.25 to 0.5)
-				. += span_warning("It looks damaged!")
+				. += "<span class='warning'>It looks damaged!</span>"
 			if(0.5 to 1.0)
-				. += span_notice("It has a few scrapes and dents.")
+				. += "<span class='notice'>It has a few scrapes and dents.</span>"
 
 /obj/structure/fence/handrail/take_damage(amount)
 	health -= amount
 	if(health <= 0)
-		visible_message(span_warning("\The [src] breaks down!"))
+		visible_message("<span class='warning'>\The [src] breaks down!</span>")
 		playsound(src, 'sound/effects/grillehit.ogg', 50, 1)
 		new /obj/item/stack/rods(get_turf(src))
 		qdel(src)

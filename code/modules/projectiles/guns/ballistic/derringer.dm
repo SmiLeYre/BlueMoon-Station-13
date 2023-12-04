@@ -7,7 +7,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/derringer
 	fire_delay = 5
 	obj_flags = UNIQUE_RENAME
-	fire_sound = 'sound/weapons/revolvershot.ogg'
+	fire_sound = 'sound/weapons/revolvershot2.ogg'
 	casing_ejector = FALSE
 	w_class = WEIGHT_CLASS_TINY
 

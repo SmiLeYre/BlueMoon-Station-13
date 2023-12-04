@@ -9,6 +9,9 @@
 #define TEXT_EAST			"[EAST]"
 #define TEXT_WEST			"[WEST]"
 
+/// Inverse direction, taking into account UP|DOWN if necessary.
+#define REVERSE_DIR(dir) ( ((dir & 85) << 1) | ((dir & 170) >> 1) )
+
 /// yeah yeah i'm a lazy asshole who can't debug yeah yeah
 #define DEBUG_LINE message_admins("DEBUG: [__FILE__] [__LINE__] executing!")
 
@@ -56,10 +59,10 @@ Will print: "/mob/living/carbon/human/death" (you can optionally embed it in a s
 #define SHOES_LAYER				21
 #define GLOVES_LAYER			20
 #define WRISTS_LAYER			19
-#define EAR_RIGHT_LAYER			18
-#define EAR_LEFT_LAYER			17
-#define SUIT_LAYER				16
-#define GENITALS_EXPOSED_LAYER	15
+#define GENITALS_EXPOSED_LAYER	18
+#define EAR_RIGHT_LAYER			17
+#define EAR_LEFT_LAYER			16
+#define SUIT_LAYER				15
 #define GLASSES_LAYER			14
 #define BELT_LAYER				13		//Possible make this an overlay of somethign required to wear a belt?
 #define SUIT_STORE_LAYER		12
@@ -85,6 +88,7 @@ Will print: "/mob/living/carbon/human/death" (you can optionally embed it in a s
 //AND -1 MEANS "ABOVE", OK?, OK!?!
 #define ABOVE_SHOES_LAYER			(SHOES_LAYER-1)
 #define ABOVE_BODY_FRONT_LAYER		(BODY_FRONT_LAYER-1)
+#define ABOVE_HEAD_LAYER			(HEAD_LAYER-1) // BlueMoon added
 
 //some arbitrary defines to be used by self-pruning global lists. (see master_controller)
 #define PROCESS_KILL 26	//Used to trigger removal from a processing list
@@ -128,6 +132,7 @@ Will print: "/mob/living/carbon/human/death" (you can optionally embed it in a s
 #define PRINTER_FONT "Times New Roman"
 #define SIGNFONT "Times New Roman"
 #define CHARCOAL_FONT "Candara"
+#define SIGNATURE_FONT "Segoe Script"
 
 #define RESIZE_DEFAULT_SIZE 1
 
@@ -163,7 +168,7 @@ GLOBAL_LIST_EMPTY(bloody_footprints_cache)
 
 //Blood Decal Colors
 #define BLOOD_COLOR_HUMAN			"#dc0000"
-#define BLOOD_COLOR_XENO			"#94a83c"
+#define BLOOD_COLOR_XENO			"#9cff75"
 #define BLOOD_COLOR_OIL				"#301d02"
 #define BLOOD_COLOR_SYNTHETIC		"#3f48aa"
 #define BLOOD_COLOR_SLIME			"#00ff90"
@@ -478,11 +483,6 @@ GLOBAL_LIST_INIT(pda_reskins, list(
 #define BONE_SCAR_FILE "wounds/bone_scar_desc.json"
 #define SCAR_LOC_FILE "wounds/scar_loc.json"
 
-
-//Fullscreen overlay resolution in tiles.
-#define FULLSCREEN_OVERLAY_RESOLUTION_X 15
-#define FULLSCREEN_OVERLAY_RESOLUTION_Y 15
-
 #define SUMMON_GUNS "guns"
 #define SUMMON_MAGIC "magic"
 
@@ -505,7 +505,7 @@ GLOBAL_LIST_INIT(pda_reskins, list(
 #define EGG_LAYING_MESSAGES list("lays an egg.","squats down and croons.","begins making a huge racket.","begins clucking raucously.")
 
 // list of all null rod weapons
-#define HOLY_WEAPONS /obj/item/nullrod, /obj/item/dualsaber/hypereutactic/chaplain, /obj/item/gun/energy/laser/redtag/hitscan/chaplain, /obj/item/multitool/chaplain, /obj/item/clothing/gloves/fingerless/pugilist/chaplain, /obj/item/melee/baseball_bat/chaplain
+#define HOLY_WEAPONS /obj/item/nullrod, /obj/item/dualsaber/hypereutactic/chaplain, /obj/item/gun/energy/laser/redtag/hitscan/chaplain, /obj/item/multitool/chaplain, /obj/item/clothing/gloves/fingerless/pugilist/chaplain, /obj/item/melee/baseball_bat/chaplain, /obj/item/staff/bostaff/chaplain
 
 // Used by PDA and cartridge code to reduce repetitiveness of spritesheets
 #define PDAIMG(what) {"<span class="pda16x16 [#what]"></span>"}
@@ -571,6 +571,7 @@ GLOBAL_LIST_INIT(pda_reskins, list(
 #define SCAVENGING_SPAWN_MOUSE		"spawn_mouse"
 #define SCAVENGING_SPAWN_MICE		"spawn_mice"
 #define SCAVENGING_SPAWN_TOM		"spawn_tom_the_mouse"
+#define SCAVENGING_SPAWN_TENTACLES	"spawn_tentacles" //Smiley's request
 
 //Scavenging element defines for ckey/mind restrictions.
 #define NO_LOOT_RESTRICTION			0
@@ -590,3 +591,6 @@ GLOBAL_LIST_INIT(pda_reskins, list(
 #define NOTIFY_JUMP "jump"
 #define NOTIFY_ATTACK "attack"
 #define NOTIFY_ORBIT "orbit"
+
+GLOBAL_LIST_INIT(month_names, list("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"))
+GLOBAL_LIST_INIT(day_names, list("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"))

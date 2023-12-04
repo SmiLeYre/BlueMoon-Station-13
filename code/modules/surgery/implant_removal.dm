@@ -6,7 +6,7 @@
 
 //extract implant
 /datum/surgery_step/extract_implant
-	name = "extract implant"
+	name = "Изъять Импланты"
 	implements = list(TOOL_HEMOSTAT = 100, TOOL_CROWBAR = 65)
 	time = 64
 	success_sound = 'sound/surgery/hemostat1.ogg'

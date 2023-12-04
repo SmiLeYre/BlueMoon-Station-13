@@ -49,7 +49,7 @@
   DrPainis:
   - bugfix: The universe has realized that not every species uses hemoglobin again.
   Putnam3145:
-  - refactor: '"REM" removed, replaced with "REAGENTS_EFFECT_MULTIPLIER", which "REM"
+  - refactor: '"REM" removed, replaced with "REM", which "REM"
       is short for'
 2021-11-13:
   Putnam3145:

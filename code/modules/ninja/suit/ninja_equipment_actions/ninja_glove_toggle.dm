@@ -3,6 +3,7 @@
 	desc = "Switch between normal interaction and drain mode."
 	button_icon_state = "s-ninjan"
 	icon_icon = 'icons/obj/clothing/gloves.dmi'
+	background_icon_state = "background_green"
 
 /**
  * Proc called to toggle the ninja glove's special abilities.

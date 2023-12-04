@@ -38,14 +38,17 @@
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/head.dmi'
 
 /obj/item/clothing/head/helmet/metrocop
-	name = "civil protection helmet"
+	name = "Civil Protection Helmet"
 	desc = "Sadly lacks a working voice encoder."
 	icon_state = "metrocop_helmet"
 	item_state = "metrocop_helmet"
 	icon = 'modular_splurt/icons/obj/clothing/head.dmi'
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/head.dmi'
+	anthro_mob_worn_overlay = 'modular_splurt/icons/mob/clothing/head_muzzled.dmi'
+	can_flashlight = TRUE
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	flags_inv = HIDEHAIR | HIDEEYES | HIDEFACE | HIDEFACIALHAIR
+	mutantrace_variation = STYLE_MUZZLE
 
 /obj/item/clothing/head/beret/sec/peacekeeper/warden
 	name = "warden's peacekeeper beret"
@@ -64,8 +67,6 @@
 	desc = "Keep your head safe while under fire."
 	icon_state = "secmed_helmet"
 	item_state = "secmed_helmet"
-	icon = 'modular_splurt/icons/obj/clothing/head.dmi'
-	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/head.dmi'
 
 /obj/item/clothing/head/beret/sec/bitch
 	name = "security's bitch beret"

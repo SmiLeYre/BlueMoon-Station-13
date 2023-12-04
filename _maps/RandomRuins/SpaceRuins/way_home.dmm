@@ -16,6 +16,10 @@
 /obj/machinery/spaceship_navigation_beacon/invion,
 /turf/closed/mineral/random,
 /area/ruin/space/way_home)
+"Y" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/way_home)
 
 (1,1,1) = {"
 a
@@ -351,7 +355,7 @@ b
 b
 b
 b
-c
+Y
 c
 c
 c
@@ -377,7 +381,7 @@ b
 b
 b
 b
-c
+Y
 c
 c
 a
@@ -415,7 +419,7 @@ c
 c
 c
 c
-c
+Y
 b
 b
 b

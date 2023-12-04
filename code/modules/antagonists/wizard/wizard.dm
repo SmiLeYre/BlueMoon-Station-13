@@ -22,6 +22,8 @@
 	var/outfit_type = /datum/outfit/wizard
 	var/wiz_age = WIZARD_AGE_MIN /* Wizards by nature cannot be too young. */
 	show_to_ghosts = TRUE
+	reminded_times_left = 1 // BLUEMOON ADD - 1 напоминания достаточно, чтобы не играли в мирномага
+	time_needed_to_remind = 5 MINUTES // BLUEMOON ADD
 
 /datum/antagonist/wizard/on_gain()
 	register()
@@ -87,6 +89,7 @@
 /datum/antagonist/wizard/on_removal()
 	unregister()
 	owner.RemoveAllSpells() // TODO keep track which spells are wizard spells which innate stuff
+	owner.special_role = null // BLUEMOON ADD
 	return ..()
 
 /datum/antagonist/wizard/proc/equip_wizard()
@@ -157,7 +160,7 @@
 	wiz_age = APPRENTICE_AGE_MIN
 
 /datum/antagonist/wizard/apprentice/greet()
-	to_chat(owner, "<B>You are [master.current.real_name]'s apprentice! You are bound by magic contract to follow [master.p_their()] orders and help [master.p_them()] in accomplishing [master.p_their()] goals.")
+	to_chat(owner, "<B>Я ученик [master.current.real_name]! Из-за магического контракта я обязан следовать [master.ru_ego()] приказам и помогать [master.ru_emu()] в достижении целей.")
 	owner.announce_objectives()
 
 /datum/antagonist/wizard/apprentice/register()

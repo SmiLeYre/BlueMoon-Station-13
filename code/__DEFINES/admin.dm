@@ -51,6 +51,7 @@
 #define ADMIN_KICK(user) "(<a href='?_src_=holder;[HrefToken(TRUE)];boot2=[REF(user)]'>KICK</a>)"
 #define ADMIN_CENTCOM_REPLY(user) "(<a href='?_src_=holder;[HrefToken(TRUE)];CentComReply=[REF(user)]'>RPLY</a>)"
 #define ADMIN_SYNDICATE_REPLY(user) "(<a href='?_src_=holder;[HrefToken(TRUE)];SyndicateReply=[REF(user)]'>RPLY</a>)"
+#define ADMIN_INTEQ_REPLY(user) "(<a href='?_src_=holder;[HrefToken(TRUE)];InteQReply=[REF(user)]'>RPLY</a>)"
 #define ADMIN_SC(user) "(<a href='?_src_=holder;[HrefToken(TRUE)];adminspawncookie=[REF(user)]'>SC</a>)"
 #define ADMIN_SMITE(user) "(<a href='?_src_=holder;[HrefToken(TRUE)];adminsmite=[REF(user)]'>SMITE</a>)"
 #define ADMIN_LOOKUP(user) "[key_name_admin(user)][ADMIN_QUE(user)]"
@@ -80,6 +81,8 @@
 #define ADMIN_PUNISHMENT_MAZING "Puzzle"
 #define ADMIN_PUNISHMENT_PIE "Cream Pie"
 #define ADMIN_PUNISHMENT_CUSTOM_PIE "Custom Cream Pie"
+#define ADMIN_PUNISHMENT_AIKO "Aikofication"
+#define ADMIN_PUNISHMENT_CUM_JAR "Cum Jar"
 #define ADMIN_PUNISHMENT_SHOES "Knot Shoes"
 #define ADMIN_PUNISHMENT_CRACK ":B:oneless"
 #define ADMIN_PUNISHMENT_BLEED ":B:loodless"
@@ -105,4 +108,7 @@
 /// for asay pings, this is the index in the return list for [/proc/check_admin_pings] that contains the message modified with underlines for the spotted names
 #define ADMINSAY_PING_UNDERLINE_NAME_INDEX "!underlined_names"
 
-#define DEFAULT_CENTCOM_NAME "Central Command"
+#define DEFAULT_CENTCOM_NAME "Центральное Командование"
+
+/// Displays "(SHOW)" in the chat, when clicked it tries to show atom(paper). First you need to set the request_state variable to TRUE for the paper.
+#define ADMIN_SHOW_PAPER(atom) "(<A href='?_src_=holder;[HrefToken(forceGlobal = TRUE)];show_paper=[REF(atom)]'>SHOW</a>)"

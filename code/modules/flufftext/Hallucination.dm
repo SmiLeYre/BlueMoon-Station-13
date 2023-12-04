@@ -20,6 +20,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	/datum/hallucination/self_delusion = 2,
 	/datum/hallucination/naked = 2,
 	/datum/hallucination/delusion = 2,
+	/datum/hallucination/delusion/custom = 0,
 	/datum/hallucination/shock = 1,
 	/datum/hallucination/death = 1,
 	/datum/hallucination/oh_yeah = 1,
@@ -49,6 +50,8 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	var/natural = TRUE
 	var/mob/living/carbon/target
 	var/feedback_details //extra info for investigate
+	/// Who's our next highest abstract parent type?
+	var/abstract_hallucination_parent = /datum/hallucination
 
 /datum/hallucination/New(mob/living/carbon/C, forced = TRUE)
 	set waitfor = FALSE
@@ -511,6 +514,9 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 /datum/hallucination/delusion
 	var/list/image/delusions = list()
 
+/// Used for making custom delusions.
+/datum/hallucination/delusion/custom
+
 /datum/hallucination/delusion/New(mob/living/carbon/C, forced, force_kind = null , duration = 300,skip_nearby = TRUE, custom_icon = null, custom_icon_file = null, custom_name = null)
 	set waitfor = FALSE
 	. = ..()
@@ -671,14 +677,16 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		"[pick_list_replacements(HAL_LINES_FILE, "aggressive")]",\
 		"[pick_list_replacements(HAL_LINES_FILE, "help")]!!",\
 		"[pick_list_replacements(HAL_LINES_FILE, "escape")]",\
-		"I'm infected, [pick_list_replacements(HAL_LINES_FILE, "infection_advice")]!")
+		"Я заражён, [pick_list_replacements(HAL_LINES_FILE, "infection_advice")]!")
 
-	var/radio_messages = list("[pick_list_replacements(HAL_LINES_FILE, "people")] is [pick_list_replacements(HAL_LINES_FILE, "accusations")]!",\
-		"Help!",\
-		"[pick_list_replacements(HAL_LINES_FILE, "threat")] in [pick_list_replacements(HAL_LINES_FILE, "location")][prob(50)?"!":"!!"]",\
-		"[pick("Where's [target.first_name()]?", "Set [target.first_name()] to arrest!")]",\
-		"[pick("C","Ai, c","Someone c","Rec")]all the shuttle!",\
-		"AI [pick("rogue", "is dead")]!!")
+	var/radio_messages = list("[pick_list_replacements(HAL_LINES_FILE, "people")] [pick_list_replacements(HAL_LINES_FILE, "accusations")]!",\
+		"Помогите!",\
+		"[pick_list_replacements(HAL_LINES_FILE, "threat")] в [pick_list_replacements(HAL_LINES_FILE, "location")][prob(50)?"!":"!!"]",\
+		"[pick("Где [target.first_name()]?", "Аррестуйте [target.first_name()]!")]",\
+		"[pick("По","Кто-нибудь, по","От")]зовите шаттл!",\
+		"[pick_list_replacements(HAL_LINES_FILE, "prikols")]",\
+		"У [pick_list_replacements(HAL_LINES_FILE, "jobs")] [pick_list_replacements(HAL_LINES_FILE, "tator-items")]!!!",\
+		"ИИ [pick("сбойный", "уничтожен")]!!")
 
 	var/list/mob/living/carbon/people = list()
 	var/mob/living/carbon/person = null
@@ -742,32 +750,32 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	if(other)
 		if(close_other) //increase the odds
 			for(var/i in 1 to 5)
-				message_pool.Add("<span class='warning'>You feel a tiny prick!</span>")
+				message_pool.Add(span_warning("Что-то укололо меня!"))
 		var/obj/item/storage/equipped_backpack = other.get_item_by_slot(ITEM_SLOT_BACK)
 		if(istype(equipped_backpack))
 			for(var/i in 1 to 5) //increase the odds
-				message_pool.Add("<span class='notice'>[other] puts the [pick(\
-					"revolver","energy sword","cryptographic sequencer","power sink","energy bow",\
-					"hybrid taser","stun baton","flash","syringe gun","circular saw","tank transfer valve",\
-					"ritual dagger","clockwork slab","spellbook",\
-					"pulse rifle","captain's spare ID","hand teleporter","hypospray","antique laser gun","X-01 MultiPhase Energy Gun","station's blueprints"\
-					)] into [equipped_backpack].</span>")
+				message_pool.Add("<span class='notice'>[other] кладёт [pick(\
+					"револьвер .357 калибра","energy sword","cryptographic sequencer","power sink","мини энергетический арбалет",\
+					"гибридный тазер","электрошоковая дубинка","flash","шприцевой пистолет","циркулярная пила","tank transfer valve",\
+					"ritual dagger","spellbook",\
+					"импульсный карабин","запасная ID-карта капитана","ручной телепортер","hypospray","Антикварный лазерный пистолет","X-01 MultiPhase Energy Gun","station's blueprints"\
+					)] в [equipped_backpack].</span>")
 
-		message_pool.Add("<B>[other]</B> [pick("sneezes","coughs")].")
+		message_pool.Add("<B>[other]</B> [pick("чихает","кашляет")].")
 
-	message_pool.Add("<span class='notice'>You hear something squeezing through the ducts...</span>", \
-		"<span class='notice'>Your [pick("arm", "leg", "back", "head")] itches.</span>",\
-		"<span class='warning'>You feel [pick("hot","cold","dry","wet","woozy","faint")].</span>",
-		"<span class='warning'>Your stomach rumbles.</span>",
-		"<span class='warning'>Your head hurts.</span>",
-		"<span class='warning'>You hear a faint buzz in your head.</span>",
-		"<B>[target]</B> sneezes.")
+	message_pool.Add(span_notice("Что-то ползает по трубам...") , \
+		span_notice("[pick("Рука", "Нога", "Спина", "Голова")] чешется.") ,\
+		span_warning("Ощущаю [pick("жар","холод","сухость","сырость","головокружение","слабость")].") ,
+		span_warning("В животе что-то грохочет.") ,
+		span_warning("Голова болит.") ,
+		span_warning("Голова гудит.") ,
+		"<B>[target]</B> чихает.")
 	if(prob(10))
-		message_pool.Add("<span class='warning'>Behind you.</span>",\
-			"<span class='warning'>You hear a faint laughter.</span>",
-			"<span class='warning'>You see something move.</span>",
-			"<span class='warning'>You hear skittering on the ceiling.</span>",
-			"<span class='warning'>You see an inhumanly tall silhouette moving in the distance.</span>")
+		message_pool.Add(span_warning("Позади меня.") ,\
+			span_warning("Кто-то тихо смеётся.") ,
+			span_warning("Что-то движется.") ,
+			span_warning("Что-то шумит на потолке.") ,
+			span_warning("Что-то движется ко мне."))
 	if(prob(10))
 		message_pool.Add("[pick_list_replacements(HAL_LINES_FILE, "advice")]")
 	var/chosen = pick(message_pool)
@@ -890,8 +898,8 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	feedback_details += "Type: [message]"
 	switch(message)
 		if("blob alert")
-			to_chat(target, "<h1 class='alert'>Biohazard Alert</h1>")
-			to_chat(target, "<br><br><span class='alert'>Confirmed outbreak of level 5 biohazard aboard [station_name()]. All personnel must contain the outbreak.</span><br><br>")
+			to_chat(target, "<h1 class='alert'>BНИМАНИЕ БИОУГРОЗА</h1>")
+			to_chat(target, "<br><br><span class='alert'>Подтверждена вспышка биологической опасности пятого уровня на борту [station_name()]. Весь персонал должен сдерживать вспышку.</span><br><br>")
 			SEND_SOUND(target, SSstation.announcer.event_sounds[ANNOUNCER_OUTBREAK5])
 		if("ratvar")
 			target.playsound_local(target, 'sound/machines/clockcult/ark_deathrattle.ogg', 50, FALSE, pressure_affected = FALSE)
@@ -900,19 +908,19 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 			target.playsound_local(target, 'sound/effects/explosion_distant.ogg', 50, FALSE, pressure_affected = FALSE)
 		if("shuttle dock")
 			to_chat(target, "<h1 class='alert'>Priority Announcement</h1>")
-			to_chat(target, "<br><br><span class='alert'>The Emergency Shuttle has docked with the station. You have 3 minutes to board the Emergency Shuttle.</span><br><br>")
+			to_chat(target, "<br><br><span class='alert'>Эвакуационный Шаттл пристыковался к станции. У вас есть 3 минуты для посадки.</span><br><br>")
 			SEND_SOUND(target, SSstation.announcer.event_sounds[ANNOUNCER_SHUTTLEDOCK])
 		if("malf ai") //AI is doomsdaying!
-			to_chat(target, "<h1 class='alert'>Anomaly Alert</h1>")
-			to_chat(target, "<br><br><span class='alert'>Hostile runtimes detected in all station systems, please deactivate your AI to prevent possible damage to its morality core.</span><br><br>")
+			to_chat(target, "<h1 class='alert'>ВНИМАНИЕ: АНОМАЛИЯ</h1>")
+			to_chat(target, "<br><br><span class='alert'>Все станционные системы подверглись воздействию вредоносного ПО. Немедленно отключите искусственный интеллект станции, во избежание её уничтожения.</span><br><br>")
 			SEND_SOUND(target, SSstation.announcer.event_sounds[ANNOUNCER_AIMALF])
 		if("meteors") //Meteors inbound!
-			to_chat(target, "<h1 class='alert'>Meteor Alert</h1>")
+			to_chat(target, "<h1 class='alert'>BНИМАНИЕ: МЕТЕОРЫ</h1>")
 			to_chat(target, "<br><br><span class='alert'>[generateMeteorString(rand(60, 90),FALSE,pick(GLOB.cardinals))]</span><br><br>")
 			SEND_SOUND(target, SSstation.announcer.event_sounds[ANNOUNCER_METEORS])
 		if("supermatter")
 			SEND_SOUND(target, 'sound/magic/charge.ogg')
-			to_chat(target, "<span class='boldannounce'>You feel reality distort for a moment...</span>")
+			to_chat(target, "<span class='boldannounce'>Вы чувствуете, как реальность на мгновение искажается...</span>")
 
 /datum/hallucination/hudscrew
 
@@ -1188,7 +1196,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	fire_overlay = image('icons/mob/OnFire.dmi', target, "Standing", ABOVE_MOB_LAYER)
 	if(target.client)
 		target.client.images += fire_overlay
-	to_chat(target, "<span class='userdanger'>You're set on fire!</span>")
+	to_chat(target, "<span class='userdanger'>Вы горите!</span>")
 	target.throw_alert("fire", /atom/movable/screen/alert/fire, override = TRUE)
 	sleep(20)
 	for(var/i in 1 to 3)
@@ -1328,7 +1336,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		return
 	var/mob/living/carbon/G = pick(mobsyup)
 	if (prob(50))
-		C.visible_message("<span class='warning'>[C] falls to the ground screaming and clutching [C.p_their()] wrist!</span>", \
+		C.visible_message("<span class='warning'>[C] falls to the ground screaming and clutching [C.ru_ego()] wrist!</span>", \
 						  "<span class='userdanger'>[G] grabs your wrist and violently wrenches it to the side!</span>")
 		C.emote("scream")
 		C.dropItemToGround(C.get_active_held_item())
@@ -1359,3 +1367,69 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	if(target.client)
 		target.client.images.Remove(image)
 	return ..()
+
+/// Helper to give the passed mob the ability to select a hallucination from the list of all hallucination subtypes.
+/proc/select_hallucination_type(mob/user, message = "Select a hallucination subtype", title = "Choose Hallucination")
+	var/static/list/hallucinations
+	if(!hallucinations)
+		hallucinations = typesof(/datum/hallucination)
+		for(var/datum/hallucination/hallucination_type as anything in hallucinations)
+			if(initial(hallucination_type.abstract_hallucination_parent) == hallucination_type)
+				hallucinations -= hallucination_type
+
+	var/chosen = tgui_input_list(user, message, title, hallucinations)
+	if(!chosen || !ispath(chosen, /datum/hallucination))
+		return null
+
+	return chosen
+
+/// Helper to give the passed mob the ability to create a delusion hallucination (even a custom one).
+/// Returns a list of arguments - pass these to _cause_hallucination to cause the desired hallucination
+/proc/create_delusion(mob/user)
+	var/static/list/delusions
+	if(!delusions)
+		delusions = typesof(/datum/hallucination/delusion)
+		for(var/datum/hallucination/delusion_type as anything in delusions)
+			if(initial(delusion_type.abstract_hallucination_parent) == delusion_type)
+				delusions -= delusion_type
+
+	var/chosen = tgui_input_list(user, "Select a delusion type. Custom will allow for custom icon entry.", "Select Delusion", delusions)
+	if(!chosen || !ispath(chosen, /datum/hallucination/delusion))
+		return
+
+	var/list/delusion_args = list()
+	var/static/list/options = list("Yes", "No")
+	var/duration = tgui_input_number(user, "How long should it last in seconds?", "Delusion: Duration", max_value = INFINITY, min_value = 1, default = 30)
+	var/affects_us = (tgui_alert(user, "Should they see themselves as the delusion?", "Delusion: Affects us", options) == "Yes")
+	var/affects_others = (tgui_alert(user, "Should they see everyone else delusion?", "Delusion: Affects others", options) == "Yes")
+	var/skip_nearby = (tgui_alert(user, "Should the delusion only affect people outside of their view?", "Delusion: Skip in view", options) == "Yes")
+	var/play_wabbajack = (tgui_alert(user, "Play the wabbajack sound when it happens?", "Delusion: Wabbajack sound", options) == "Yes")
+
+	delusion_args = list(
+		chosen,
+		"forced delusion",
+		duration = duration * 1 SECONDS,
+		affects_us = affects_us,
+		affects_others = affects_others,
+		skip_nearby = skip_nearby,
+		play_wabbajack = play_wabbajack,
+	)
+
+	if(ispath(chosen, /datum/hallucination/delusion/custom))
+		var/custom_icon_file = input(user, "Pick file for custom delusion:", "Custom Delusion: File") as null|file
+		if(!custom_icon_file)
+			return
+
+		var/custom_icon_state = tgui_input_text(user, "What icon state do you wanna use from the file?", "Custom Delusion: Icon State")
+		if(!custom_icon_state)
+			return
+
+		var/custom_name = tgui_input_text(user, "What name should it show up as? (Can be empty)", "Custom Delusion: Name")
+
+		delusion_args += list(
+			custom_icon_file = custom_icon_file,
+			custom_icon_state = custom_icon_state,
+			custom_name = custom_name,
+		)
+
+	return delusion_args

@@ -10,7 +10,7 @@
 /obj/item/card/id/vampire
 	name = "Bloodfledge ID"
 	desc = "An ID made to easily recognize bloodsucker fledglings without requiring medical scans."
-	icon = 'modular_splurt/icons/obj/card.dmi'
+	icon = 'modular_bluemoon/vagabond/icons/obj/vampirecard.dmi'
 	icon_state = "vampire"
 	assignment = "Bloodsucker Fledgling"
 	uses_overlays = FALSE

@@ -9,6 +9,8 @@
  */
 GLOBAL_LIST_EMPTY(cryopod_computers)
 
+GLOBAL_LIST_EMPTY(ghost_records)
+
 //Main cryopod console.
 /obj/machinery/computer/cryopod
 	name = "general oversight console"
@@ -28,6 +30,11 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	/// Does this console store items? if NOT, will dump all items when the user cryo's instead
 	var/allow_items = TRUE
 
+	/// This is what the announcement system uses to make announcements. Make sure to set a radio that has the channel you want to broadcast on.
+	var/obj/item/radio/headset/radio = /obj/item/radio/headset/silicon/pai
+	/// The channel to be broadcast on, valid values are the values of any of the "RADIO_CHANNEL_" defines.
+	var/announcement_channel = null // RADIO_CHANNEL_COMMON doesn't work here.
+
 	var/storage_type = "crewmembers"
 	var/storage_name = "Cryogenic/Teleporter Oversight Control"
 
@@ -40,9 +47,11 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 /obj/machinery/computer/cryopod/Initialize(mapload)
 	. = ..()
 	GLOB.cryopod_computers += src
+	radio = new radio(src)
 
 /obj/machinery/computer/cryopod/Destroy()
 	GLOB.cryopod_computers -= src
+	QDEL_NULL(radio)
 	return ..()
 
 /obj/machinery/computer/cryopod/update_icon_state()
@@ -512,3 +521,56 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	if (pod)
 		pod.open_machine()
 		pod.name = initial_name
+
+// Wake-up notifications
+/obj/effect/mob_spawn
+	/// For figuring out where the local cryopod computer is. Must be set for cryo computer announcements.
+	var/area/computer_area
+
+/obj/machinery/computer/cryopod/proc/announce(message_type, user, rank)
+	switch(message_type)
+		if("CRYO_JOIN")
+			radio.talk_into(src, "[user][rank ? ", [rank]" : ""] просыпается после крио-заморозки.", announcement_channel)
+		if("CRYO_LEAVE")
+			radio.talk_into(src, "[user][rank ? ", [rank]" : ""] возвращается в крио-заморозку.", announcement_channel)
+
+/obj/effect/mob_spawn/human/Initialize(mapload)
+	. = ..()
+	ghost_team = new /datum/team/ghost_role()
+
+/obj/effect/mob_spawn/human/special(mob/living/carbon/human/spawned_mob, datum/team/ghost_role/ghostovich)
+	. = ..()
+	if(ishuman(spawned_mob))
+		if(ghost_team)
+			spawned_mob.mind.add_antag_datum(/datum/antagonist/ghost_role, ghost_team)
+			ghost_team.players_spawned += (spawned_mob.key)
+
+	var/obj/machinery/computer/cryopod/control_computer = find_control_computer()
+	var/alt_name = get_spawner_outfit_name()
+	GLOB.ghost_records.Add(list(list("name" = spawned_mob.real_name, "rank" = alt_name ? alt_name : name)))
+
+	if(control_computer)
+		control_computer.announce("CRYO_JOIN", spawned_mob.real_name, name)
+
+/obj/effect/mob_spawn/human/proc/find_control_computer()
+	if(!computer_area)
+		return
+	for(var/cryo_console as anything in GLOB.cryopod_computers)
+		var/obj/machinery/computer/cryopod/console = cryo_console
+		var/area/area = get_area(cryo_console) // Define moment
+		if(area.type == computer_area)
+			return console
+	return
+
+/**
+ * Returns the the alt name for this spawner, which is 'outfit.name'.
+ *
+ * For when you might want to use that for things instead of the name var.
+ * example: the DS2 spawners, which have a number of different types of spawner with the same name.
+ */
+/obj/effect/mob_spawn/human/proc/get_spawner_outfit_name()
+	if(use_outfit_name)
+		return initial(outfit.name)
+
+/obj/effect/mob_spawn/human/lavaland_syndicate
+	computer_area = /area/ruin/lavaland/unpowered/deepspaceone/dormitories

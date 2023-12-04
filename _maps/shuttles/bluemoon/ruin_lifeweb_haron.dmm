@@ -1,0 +1,869 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ay" = (
+/obj/machinery/computer/shuttle/lf_haron{
+	dir = 1
+	},
+/turf/open/floor/lf_haron/bar2_red{
+	dir = 4
+	},
+/area/shuttle/lf_haron)
+"bL" = (
+/turf/open/floor/lf_haron/f7{
+	dir = 5
+	},
+/area/shuttle/lf_haron)
+"cA" = (
+/turf/closed/wall/r_wall/lf_haron/second,
+/area/shuttle/lf_haron)
+"dC" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/turf/open/floor/lf_haron/polar{
+	dir = 6
+	},
+/area/shuttle/lf_haron)
+"dP" = (
+/obj/structure/table/reinforced,
+/obj/item/clothing/gloves/color/latex/nitrile,
+/obj/item/clothing/gloves/color/latex,
+/turf/open/floor/lf_haron/shuttle3,
+/area/shuttle/lf_haron)
+"ez" = (
+/turf/closed/wall/r_wall/lf_haron{
+	dir = 8
+	},
+/area/shuttle/lf_haron)
+"eY" = (
+/turf/closed/wall/r_wall/lf_haron{
+	dir = 5
+	},
+/area/shuttle/lf_haron)
+"fF" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
+/turf/open/floor/lf_haron/shuttle6,
+/area/shuttle/lf_haron)
+"fH" = (
+/turf/open/floor/lf_haron/bar3{
+	dir = 8
+	},
+/area/shuttle/lf_haron)
+"gD" = (
+/turf/open/floor/lf_haron/shuttle3,
+/area/shuttle/lf_haron)
+"gY" = (
+/turf/closed/wall/r_wall/lf_haron{
+	dir = 1
+	},
+/area/shuttle/lf_haron)
+"he" = (
+/obj/structure/reagent_dispensers/watertank,
+/turf/open/floor/lf_haron/bar3,
+/area/shuttle/lf_haron)
+"jl" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/box/handcuffs,
+/turf/open/floor/lf_haron/f7{
+	dir = 9
+	},
+/area/shuttle/lf_haron)
+"jB" = (
+/obj/structure/closet/gimmick{
+	name = "closet"
+	},
+/obj/item/storage/backpack/satchel/lfwb,
+/obj/item/clothing/shoes/laceup,
+/obj/item/clothing/suit/donator/bm/cerberus_suit/butler,
+/obj/item/clothing/under/butler,
+/obj/item/clothing/accessory/ring/silver,
+/obj/item/radio/headset/syndicate/alt,
+/obj/item/candle/infinite/candlestick,
+/obj/item/clothing/gloves/color/white,
+/turf/open/floor/lf_haron/f7{
+	dir = 9
+	},
+/area/shuttle/lf_haron)
+"jO" = (
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/food/drinks/drinkingglass,
+/obj/item/reagent_containers/food/drinks/drinkingglass,
+/obj/item/storage/box/matches,
+/turf/open/floor/lf_haron/f7{
+	dir = 9
+	},
+/area/shuttle/lf_haron)
+"kg" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/turf/open/floor/lf_haron/f7{
+	dir = 9
+	},
+/area/shuttle/lf_haron)
+"kB" = (
+/obj/structure/closet/crate/wooden,
+/obj/item/mop,
+/obj/item/reagent_containers/glass/bucket/wood,
+/obj/item/storage/fancy/cigarettes/cigars,
+/turf/open/floor/lf_haron/f7{
+	dir = 9
+	},
+/area/shuttle/lf_haron)
+"lR" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/closet/secure_closet/freezer,
+/obj/item/reagent_containers/food/snacks/meat/steak,
+/obj/item/reagent_containers/food/snacks/meat/steak,
+/obj/item/reagent_containers/food/snacks/meat/steak,
+/obj/item/reagent_containers/glass/beaker/waterbottle/large,
+/obj/item/reagent_containers/glass/beaker/waterbottle/large,
+/obj/item/reagent_containers/glass/beaker/waterbottle/large,
+/turf/open/floor/lf_haron/bar3,
+/area/shuttle/lf_haron)
+"mD" = (
+/turf/closed/wall/r_wall/lf_haron/diagonal{
+	dir = 5
+	},
+/area/shuttle/lf_haron)
+"mK" = (
+/obj/structure/closet/gimmick{
+	name = "closet"
+	},
+/obj/item/claymore/cerberus,
+/obj/item/shield/riot/roman/cerberus,
+/obj/item/clothing/suit/donator/bm/cerberus_suit/armored,
+/obj/item/clothing/head/donator/bm/cerberus_helmet/armored,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/accessory/ring/silver,
+/obj/item/restraints/legcuffs/bola/tactical,
+/obj/item/restraints/handcuffs,
+/obj/item/radio/headset/syndicate/alt,
+/obj/item/gun/energy/taser/bolestrel,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/item/clothing/under/common,
+/obj/item/storage/backpack/satchel/lfwb,
+/obj/item/clothing/mask/gas/sechailer/syndicate,
+/turf/open/floor/lf_haron/f7{
+	dir = 9
+	},
+/area/shuttle/lf_haron)
+"nk" = (
+/obj/machinery/door/airlock/external/lf_haron,
+/turf/open/floor/lf_haron/f7{
+	dir = 9
+	},
+/area/shuttle/lf_haron)
+"ot" = (
+/turf/closed/wall/r_wall/lf_haron/second{
+	dir = 5
+	},
+/area/shuttle/lf_haron)
+"pc" = (
+/turf/closed/wall/r_wall/lf_haron/second{
+	dir = 1
+	},
+/area/shuttle/lf_haron)
+"qa" = (
+/turf/closed/wall/r_wall/lf_haron/second{
+	dir = 9
+	},
+/area/shuttle/lf_haron)
+"qW" = (
+/obj/machinery/door/airlock/external/lf_haron,
+/turf/open/floor/lf_haron/bar3{
+	dir = 1
+	},
+/area/shuttle/lf_haron)
+"rw" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/closet/gimmick{
+	name = "closet"
+	},
+/obj/item/storage/backpack/duffelbag/sec/surgery,
+/obj/item/storage/box/lights/bulbs,
+/obj/item/claymore/cerberus,
+/obj/item/claymore/cerberus,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/head/donator/bm/cerberus_helmet/armored,
+/obj/item/clothing/head/donator/bm/cerberus_helmet/armored,
+/obj/item/clothing/suit/donator/bm/cerberus_suit/armored,
+/obj/item/clothing/suit/donator/bm/cerberus_suit/armored,
+/obj/item/clothing/mask/gas/sechailer/syndicate,
+/obj/item/clothing/mask/gas/sechailer/syndicate,
+/obj/item/clothing/mask/gas/sechailer/syndicate,
+/obj/item/storage/backpack/duffelbag/sec/surgery,
+/obj/item/gun/energy/taser/bolestrel,
+/obj/item/gun/energy/taser/bolestrel,
+/obj/item/gun/energy/taser/bolestrel,
+/obj/item/storage/fancy/cigarettes/cigars,
+/obj/item/storage/box/matches,
+/turf/open/floor/lf_haron/bar2{
+	dir = 4
+	},
+/area/shuttle/lf_haron)
+"sg" = (
+/turf/open/floor/lf_haron/polar,
+/area/shuttle/lf_haron)
+"sk" = (
+/obj/structure/table/survival_pod,
+/obj/item/clothing/suit/baroness,
+/obj/item/clothing/under/baron,
+/obj/item/storage/backpack/satchel/lfwb,
+/obj/item/clothing/shoes/dominaheels,
+/obj/item/radio/headset/syndicate/alt,
+/obj/item/kitchen/knife/combat/survival,
+/obj/item/clothing/accessory/ring/diamond,
+/obj/item/clothing/gloves/evening,
+/obj/item/clothing/gloves/color/white,
+/turf/open/floor/lf_haron/bar2_red{
+	dir = 4
+	},
+/area/shuttle/lf_haron)
+"tz" = (
+/obj/machinery/light/small,
+/turf/open/floor/lf_haron/shuttle3,
+/area/shuttle/lf_haron)
+"us" = (
+/obj/machinery/computer{
+	dir = 4;
+	pixel_x = -7
+	},
+/turf/open/floor/lf_haron/polar{
+	dir = 5
+	},
+/area/shuttle/lf_haron)
+"vW" = (
+/obj/machinery/door/airlock/external/lf_haron,
+/obj/structure/fans/tiny/invisible,
+/obj/docking_port/mobile{
+	name = "Haron";
+	preferred_direction = 4;
+	id = "lf_haron";
+	height = 15;
+	width = 13;
+	dir = 2;
+	port_direction = 8
+	},
+/turf/open/floor/lf_haron/f7{
+	dir = 9
+	},
+/area/shuttle/lf_haron)
+"wb" = (
+/turf/closed/wall/r_wall/lf_haron/second{
+	dir = 8
+	},
+/area/shuttle/lf_haron)
+"we" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/structure/chair/wood/normal,
+/turf/open/floor/lf_haron/f7{
+	dir = 9
+	},
+/area/shuttle/lf_haron)
+"wl" = (
+/obj/machinery/door/window/northleft,
+/turf/open/floor/lf_haron/bar2_red{
+	dir = 4
+	},
+/area/shuttle/lf_haron)
+"wA" = (
+/obj/structure/closet/gimmick{
+	name = "closet"
+	},
+/obj/item/claymore/cerberus,
+/obj/item/shield/riot/roman/cerberus,
+/obj/item/clothing/suit/donator/bm/cerberus_suit/armored,
+/obj/item/clothing/head/donator/bm/cerberus_helmet/armored,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/accessory/ring/silver,
+/obj/item/restraints/legcuffs/bola/tactical,
+/obj/item/restraints/handcuffs,
+/obj/item/radio/headset/syndicate/alt,
+/obj/item/gun/energy/taser/bolestrel,
+/obj/item/clothing/under/common,
+/obj/item/storage/backpack/satchel/lfwb,
+/obj/item/clothing/mask/gas/sechailer/syndicate,
+/obj/item/clothing/gloves/combat,
+/turf/open/floor/lf_haron/shuttle6,
+/area/shuttle/lf_haron)
+"wG" = (
+/turf/open/floor/lf_haron/polar{
+	dir = 6
+	},
+/area/shuttle/lf_haron)
+"xa" = (
+/turf/closed/wall/r_wall/lf_haron{
+	dir = 6
+	},
+/area/shuttle/lf_haron)
+"ya" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/lf_haron/shuttle3,
+/area/shuttle/lf_haron)
+"Av" = (
+/turf/closed/wall/r_wall/lf_haron{
+	dir = 10
+	},
+/area/shuttle/lf_haron)
+"AI" = (
+/turf/open/floor/lf_haron/f7{
+	dir = 9
+	},
+/area/shuttle/lf_haron)
+"BA" = (
+/obj/machinery/door/airlock/external/lf_haron,
+/turf/open/floor/lf_haron/bar3{
+	dir = 4
+	},
+/area/shuttle/lf_haron)
+"BO" = (
+/obj/structure/closet/gimmick{
+	name = "closet"
+	},
+/obj/item/claymore/cerberus,
+/obj/item/shield/riot/roman/cerberus,
+/obj/item/clothing/suit/donator/bm/cerberus_suit/armored,
+/obj/item/clothing/head/donator/bm/cerberus_helmet/armored,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/accessory/ring/silver,
+/obj/item/restraints/legcuffs/bola/tactical,
+/obj/item/restraints/handcuffs,
+/obj/item/radio/headset/syndicate/alt,
+/obj/item/gun/energy/taser/bolestrel,
+/obj/item/clothing/under/common,
+/obj/item/storage/backpack/satchel/lfwb,
+/obj/item/clothing/mask/gas/sechailer/syndicate,
+/turf/open/floor/lf_haron/f7{
+	dir = 9
+	},
+/area/shuttle/lf_haron)
+"Db" = (
+/obj/structure/shuttle/engine/heater{
+	dir = 1
+	},
+/obj/structure/window/reinforced,
+/turf/open/floor/lf_haron/shuttle6,
+/area/shuttle/lf_haron)
+"Ei" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/structure/closet/gimmick{
+	name = "closet"
+	},
+/obj/item/storage/backpack/satchel/lfwb,
+/obj/item/clothing/shoes/laceup,
+/obj/item/clothing/under/aesculapius,
+/obj/item/clothing/mask/surgical/aesthetic,
+/obj/item/clothing/accessory/ring,
+/obj/item/radio/headset/syndicate/alt,
+/obj/item/gun/energy/taser/bolestrel/censor,
+/obj/item/kitchen/knife/combat/survival,
+/turf/open/floor/lf_haron/f7{
+	dir = 9
+	},
+/area/shuttle/lf_haron)
+"EJ" = (
+/turf/open/floor/lf_haron/bar3{
+	dir = 4
+	},
+/area/shuttle/lf_haron)
+"EL" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/lf_haron/polar,
+/area/shuttle/lf_haron)
+"Fe" = (
+/obj/structure/chair/comfy/shuttle,
+/turf/open/floor/lf_haron/polar{
+	dir = 5
+	},
+/area/shuttle/lf_haron)
+"Hp" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/turf/open/floor/lf_haron/f7{
+	dir = 9
+	},
+/area/shuttle/lf_haron)
+"HP" = (
+/obj/machinery/computer/camera_advanced/shuttle_docker/lf_haron{
+	dir = 1
+	},
+/turf/open/floor/lf_haron/bar2_red{
+	dir = 4
+	},
+/area/shuttle/lf_haron)
+"HS" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/meat/steak,
+/obj/item/kitchen/fork,
+/obj/item/reagent_containers/food/drinks/drinkingglass,
+/turf/open/floor/lf_haron/f7{
+	dir = 9
+	},
+/area/shuttle/lf_haron)
+"Ig" = (
+/turf/closed/wall/r_wall/lf_haron/diagonal{
+	dir = 9
+	},
+/area/shuttle/lf_haron)
+"Ja" = (
+/obj/structure/table/survival_pod,
+/obj/item/clothing/head/donator/bm/pt_crown,
+/obj/item/clothing/suit/donator/bm/cerberus_suit/armored/baron,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/accessory/ring/diamond,
+/obj/item/radio/headset/syndicate/alt,
+/obj/item/gun/energy/taser/bolestrel/censor,
+/obj/item/claymore/baron,
+/obj/item/clothing/under/baron,
+/obj/item/clothing/neck/baron,
+/obj/item/storage/backpack/satchel/lfwb,
+/turf/open/floor/lf_haron/bar2_red{
+	dir = 4
+	},
+/area/shuttle/lf_haron)
+"Ke" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/machinery/computer/operating{
+	dir = 8
+	},
+/turf/open/floor/lf_haron/shuttle6,
+/area/shuttle/lf_haron)
+"Ko" = (
+/obj/structure/table/optable,
+/turf/open/floor/lf_haron/polar{
+	dir = 6
+	},
+/area/shuttle/lf_haron)
+"KL" = (
+/turf/closed/wall/r_wall/lf_haron{
+	dir = 4
+	},
+/area/shuttle/lf_haron)
+"Lm" = (
+/turf/closed/wall/r_wall/lf_haron,
+/area/shuttle/lf_haron)
+"Lp" = (
+/obj/machinery/door/airlock/external/lf_haron,
+/turf/open/floor/lf_haron/bar3{
+	dir = 8
+	},
+/area/shuttle/lf_haron)
+"LX" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/machinery/door/window/northright,
+/turf/open/floor/lf_haron/bar2_red{
+	dir = 4
+	},
+/area/shuttle/lf_haron)
+"Mu" = (
+/obj/structure/closet/gimmick{
+	name = "closet"
+	},
+/obj/item/claymore/censor,
+/obj/item/clothing/suit/donator/bm/cerberus_suit/armored/censor,
+/obj/item/shield/riot/roman/cerberus,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/accessory/ring,
+/obj/item/restraints/legcuffs/bola/tactical,
+/obj/item/restraints/handcuffs,
+/obj/item/radio/headset/syndicate/alt,
+/obj/item/gun/energy/taser/bolestrel/censor,
+/obj/item/clothing/under/common,
+/obj/item/storage/backpack/satchel/lfwb,
+/obj/item/clothing/mask/gas/sechailer/syndicate,
+/turf/open/floor/lf_haron/f7{
+	dir = 9
+	},
+/area/shuttle/lf_haron)
+"MF" = (
+/obj/structure/closet/crate/freezer,
+/turf/open/floor/lf_haron/shuttle3,
+/area/shuttle/lf_haron)
+"NF" = (
+/turf/open/space/basic,
+/area/template_noop)
+"NK" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/fancy/candle_box,
+/obj/item/kitchen/knife/butcher,
+/turf/open/floor/lf_haron/f7{
+	dir = 9
+	},
+/area/shuttle/lf_haron)
+"NZ" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/closet/gimmick{
+	name = "closet"
+	},
+/obj/item/shield/riot/roman/cerberus,
+/obj/item/clothing/suit/donator/bm/cerberus_suit/armored,
+/obj/item/clothing/head/donator/bm/cerberus_helmet/armored,
+/obj/item/spear/cerberus,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/accessory/ring/silver,
+/obj/item/restraints/legcuffs/bola/tactical,
+/obj/item/restraints/handcuffs,
+/obj/item/radio/headset/syndicate/alt,
+/obj/item/gun/energy/taser/bolestrel,
+/obj/item/clothing/under/common,
+/obj/item/storage/backpack/satchel/lfwb,
+/obj/item/clothing/mask/gas/sechailer/syndicate,
+/turf/open/floor/lf_haron/f7{
+	dir = 9
+	},
+/area/shuttle/lf_haron)
+"Rv" = (
+/obj/structure/closet/gimmick{
+	name = "closet"
+	},
+/obj/item/claymore/cerberus/bardiche,
+/obj/item/shield/riot/roman/cerberus,
+/obj/item/clothing/suit/donator/bm/cerberus_suit/armored,
+/obj/item/clothing/head/donator/bm/cerberus_helmet/armored,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/accessory/ring/silver,
+/obj/item/restraints/legcuffs/bola/tactical,
+/obj/item/restraints/handcuffs,
+/obj/item/radio/headset/syndicate/alt,
+/obj/item/gun/energy/taser/bolestrel,
+/obj/item/clothing/under/common,
+/obj/item/storage/backpack/satchel/lfwb,
+/obj/item/clothing/mask/gas/sechailer/syndicate,
+/turf/open/floor/lf_haron/shuttle6,
+/area/shuttle/lf_haron)
+"RS" = (
+/turf/closed/wall/r_wall/lf_haron/text/second,
+/area/shuttle/lf_haron)
+"UL" = (
+/turf/closed/wall/r_wall/lf_haron/text/first,
+/area/shuttle/lf_haron)
+"US" = (
+/obj/structure/shuttle/engine/propulsion/burst/left{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/shuttle/lf_haron)
+"Vb" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/belt/medical/aesculapus,
+/turf/open/floor/lf_haron/f7{
+	dir = 9
+	},
+/area/shuttle/lf_haron)
+"VH" = (
+/turf/open/floor/lf_haron/polar{
+	dir = 5
+	},
+/area/shuttle/lf_haron)
+"Wk" = (
+/turf/closed/wall/r_wall/lf_haron/diagonal{
+	dir = 8
+	},
+/area/shuttle/lf_haron)
+"Wu" = (
+/turf/closed/wall/r_wall/lf_haron/second{
+	dir = 6
+	},
+/area/shuttle/lf_haron)
+"Xe" = (
+/obj/structure/table/wood,
+/obj/item/candle/infinite/candlestick,
+/turf/open/floor/lf_haron/f7{
+	dir = 9
+	},
+/area/shuttle/lf_haron)
+"XE" = (
+/turf/closed/wall/r_wall/lf_haron/diagonal{
+	dir = 6
+	},
+/area/shuttle/lf_haron)
+"XI" = (
+/turf/closed/wall/r_wall/lf_haron/text/third,
+/area/shuttle/lf_haron)
+"Ya" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/box/handcuffs,
+/obj/item/storage/box/matches,
+/obj/item/storage/fancy/cigarettes/cigars,
+/turf/open/floor/lf_haron/bar2_red,
+/area/shuttle/lf_haron)
+"YB" = (
+/obj/machinery/computer{
+	dir = 1
+	},
+/turf/open/floor/lf_haron/bar2_red{
+	dir = 4
+	},
+/area/shuttle/lf_haron)
+"YI" = (
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/turf/open/floor/lf_haron/bar2_red,
+/area/shuttle/lf_haron)
+"YJ" = (
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/turf/open/floor/lf_haron/shuttle6,
+/area/shuttle/lf_haron)
+"Za" = (
+/obj/structure/chair/wood/normal{
+	dir = 1
+	},
+/turf/open/floor/lf_haron/f7{
+	dir = 9
+	},
+/area/shuttle/lf_haron)
+
+(1,1,1) = {"
+Wk
+cA
+xa
+eY
+cA
+xa
+cA
+xa
+Av
+eY
+cA
+eY
+mD
+NF
+NF
+"}
+(2,1,1) = {"
+US
+Db
+Ei
+AI
+Vb
+ez
+we
+HS
+Xe
+HS
+Za
+us
+ez
+mD
+NF
+"}
+(3,1,1) = {"
+ez
+pc
+dP
+AI
+EJ
+BA
+EJ
+gD
+gD
+gD
+gD
+AI
+AI
+ez
+mD
+"}
+(4,1,1) = {"
+wb
+MF
+gD
+gD
+fH
+ez
+kB
+jB
+jO
+NK
+lR
+gD
+gD
+gD
+Lm
+"}
+(5,1,1) = {"
+ot
+fF
+dC
+Ko
+Ke
+xa
+eY
+ez
+xa
+Av
+eY
+Lp
+Lm
+Lp
+gY
+"}
+(6,1,1) = {"
+ez
+cA
+ez
+ez
+ez
+qa
+Hp
+Hp
+Hp
+YJ
+ez
+VH
+KL
+he
+KL
+"}
+(7,1,1) = {"
+US
+Db
+mK
+Rv
+Mu
+Wu
+ya
+gD
+gD
+gD
+qW
+VH
+Ya
+ez
+ez
+"}
+(8,1,1) = {"
+ez
+pc
+AI
+wG
+AI
+ot
+gD
+gD
+gD
+tz
+UL
+sg
+Fe
+YB
+cA
+"}
+(9,1,1) = {"
+vW
+bL
+AI
+wG
+AI
+nk
+AI
+kg
+kg
+jl
+RS
+EL
+Fe
+ay
+Wu
+"}
+(10,1,1) = {"
+ez
+wb
+AI
+wG
+AI
+xa
+nk
+ez
+xa
+eY
+XI
+sg
+Fe
+HP
+pc
+"}
+(11,1,1) = {"
+US
+Db
+BO
+wA
+NZ
+cA
+gD
+rw
+pc
+Ja
+wl
+VH
+YI
+ez
+Ig
+"}
+(12,1,1) = {"
+XE
+ez
+ez
+ez
+ez
+ez
+xa
+eY
+ez
+sk
+LX
+VH
+ez
+Ig
+NF
+"}
+(13,1,1) = {"
+NF
+NF
+NF
+NF
+NF
+NF
+NF
+NF
+XE
+xa
+Av
+eY
+Ig
+NF
+NF
+"}

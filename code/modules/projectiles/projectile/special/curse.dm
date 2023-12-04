@@ -54,3 +54,10 @@
 			animate(B, alpha = 0, time = 32)
 	return ..()
 
+/obj/item/projectile/curse_hand/hel //Used in helbital's impure reagent
+	name = "Hel's grasp"
+	damage = 24
+	knockdown = 0 //Lets not stun people!
+	pixels_per_second = TILES_TO_PIXELS(8)
+	range = 20
+	color = "#ff7e7e"//Tint it slightly

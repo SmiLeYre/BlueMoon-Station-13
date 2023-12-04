@@ -231,3 +231,40 @@
 /// Gives the number of pixels in an orthogonal line of tiles.
 #define TILES_TO_PIXELS(tiles)			(tiles * PIXELS)
 // )
+
+// oof, what a mouthful
+// Used in status_procs' "adjust" to let them modify a status effect by a given
+// amount, without inadverdently increasing it in the wrong direction
+/proc/directional_bounded_sum(orig_val, modifier, bound_lower, bound_upper)
+	var/new_val = orig_val + modifier
+	if(modifier > 0)
+		if(new_val > bound_upper)
+			new_val = max(orig_val, bound_upper)
+	else if(modifier < 0)
+		if(new_val < bound_lower)
+			new_val = min(orig_val, bound_lower)
+	return new_val
+
+/// Converts a probability/second chance to probability/seconds_per_tick chance
+/// For example, if you want an event to happen with a 10% per second chance, but your proc only runs every 5 seconds, do `if(prob(100*SPT_PROB_RATE(0.1, 5)))`
+#define SPT_PROB_RATE(prob_per_second, seconds_per_tick) (1 - (1 - (prob_per_second)) ** (seconds_per_tick))
+
+/// Like SPT_PROB_RATE but easier to use, simply put `if(SPT_PROB(10, 5))`
+#define SPT_PROB(prob_per_second_percent, seconds_per_tick) (prob(100*SPT_PROB_RATE((prob_per_second_percent)/100, (seconds_per_tick))))
+// )
+
+/proc/round_down(num)
+	if(round(num) != num)
+		return round(num--)
+	else
+		return num
+
+/// Calculate the angle produced by a pair of x and y deltas
+/proc/delta_to_angle(x, y)
+	if(!y)
+		return (x >= 0) ? 90 : 270
+	. = arctan(x/y)
+	if(y < 0)
+		. += 180
+	else if(x < 0)
+		. += 360

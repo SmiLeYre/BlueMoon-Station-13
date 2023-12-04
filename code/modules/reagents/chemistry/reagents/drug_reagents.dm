@@ -59,7 +59,7 @@
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "smoked", /datum/mood_event/smoked, name)
 	M.AdjustAllImmobility(-20, 0)
 	M.AdjustUnconscious(-20, 0)
-	M.adjustStaminaLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustStaminaLoss(-0.5*REM, 0)
 	..()
 	. = 1
 
@@ -83,30 +83,30 @@
 	. = 1
 
 /datum/reagent/drug/crank/overdose_process(mob/living/M)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustToxLoss(2*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustBruteLoss(2*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM)
+	M.adjustToxLoss(2*REM, 0)
+	M.adjustBruteLoss(2*REM, 0)
 	..()
 	. = 1
 
 /datum/reagent/drug/crank/addiction_act_stage1(mob/living/M)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 5*REAGENTS_EFFECT_MULTIPLIER)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 5*REM)
 	..()
 
 /datum/reagent/drug/crank/addiction_act_stage2(mob/living/M)
-	M.adjustToxLoss(5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustToxLoss(5*REM, 0)
 	..()
 	. = 1
 
 /datum/reagent/drug/crank/addiction_act_stage3(mob/living/M)
-	M.adjustBruteLoss(5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustBruteLoss(5*REM, 0)
 	..()
 	. = 1
 
 /datum/reagent/drug/crank/addiction_act_stage4(mob/living/M)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 3*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustToxLoss(5*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustBruteLoss(5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 3*REM)
+	M.adjustToxLoss(5*REM, 0)
+	M.adjustBruteLoss(5*REM, 0)
 	..()
 	. = 1
 
@@ -128,14 +128,14 @@
 	..()
 
 /datum/reagent/drug/krokodil/overdose_process(mob/living/M)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.25*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustToxLoss(0.25*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.25*REM)
+	M.adjustToxLoss(0.25*REM, 0)
 	..()
 	. = 1
 
 /datum/reagent/drug/krokodil/addiction_act_stage1(mob/living/M)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustToxLoss(2*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM)
+	M.adjustToxLoss(2*REM, 0)
 	..()
 	. = 1
 
@@ -147,7 +147,7 @@
 /datum/reagent/drug/krokodil/addiction_act_stage3(mob/living/M)
 	if(prob(25))
 		to_chat(M, "<span class='danger'>Your skin starts to peel away...</span>")
-	M.adjustBruteLoss(3*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustBruteLoss(3*REM, 0)
 	..()
 	. = 1
 
@@ -155,10 +155,10 @@
 	CHECK_DNA_AND_SPECIES(M)
 	if(!istype(M.dna.species, /datum/species/krokodil_addict))
 		to_chat(M, "<span class='userdanger'>Your skin falls off easily!</span>")
-		M.adjustBruteLoss(50*REAGENTS_EFFECT_MULTIPLIER, 0) // holy shit your skin just FELL THE FUCK OFF
+		M.adjustBruteLoss(50*REM, 0) // holy shit your skin just FELL THE FUCK OFF
 		M.set_species(/datum/species/krokodil_addict)
 	else
-		M.adjustBruteLoss(5*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustBruteLoss(5*REM, 0)
 	..()
 	. = 1
 
@@ -186,14 +186,14 @@
 	if(DT_PROB(2.5, delta_time))
 		to_chat(M, span_notice("[high_message]"))
 	// SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "tweaking", /datum/mood_event/stimulant_medium, name)
-	M.AdjustStun(-40 * REAGENTS_EFFECT_MULTIPLIER * delta_time)
-	M.AdjustKnockdown(-40 * REAGENTS_EFFECT_MULTIPLIER * delta_time)
-	M.AdjustUnconscious(-40 * REAGENTS_EFFECT_MULTIPLIER * delta_time)
-	M.AdjustParalyzed(-40 * REAGENTS_EFFECT_MULTIPLIER * delta_time)
-	M.AdjustImmobilized(-40 * REAGENTS_EFFECT_MULTIPLIER * delta_time)
-	M.adjustStaminaLoss(-2 * REAGENTS_EFFECT_MULTIPLIER * delta_time, 0)
-	M.Jitter(2 * REAGENTS_EFFECT_MULTIPLIER * delta_time)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(1, 4) * REAGENTS_EFFECT_MULTIPLIER * delta_time)
+	M.AdjustStun(-40 * REM * delta_time)
+	M.AdjustKnockdown(-40 * REM * delta_time)
+	M.AdjustUnconscious(-40 * REM * delta_time)
+	M.AdjustParalyzed(-40 * REM * delta_time)
+	M.AdjustImmobilized(-40 * REM * delta_time)
+	M.adjustStaminaLoss(-2 * REM * delta_time, 0)
+	M.Jitter(2 * REM * delta_time)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(1, 4) * REM * delta_time)
 	if(DT_PROB(2.5, delta_time))
 		M.emote(pick("twitch", "shiver"))
 	..()
@@ -201,7 +201,7 @@
 
 /datum/reagent/drug/methamphetamine/overdose_process(mob/living/M, delta_time, times_fired)
 	if(CHECK_MOBILITY(M, MOBILITY_MOVE) && !ismovable(M.loc))
-		for(var/i in 1 to round(4 * REAGENTS_EFFECT_MULTIPLIER * delta_time, 1))
+		for(var/i in 1 to round(4 * REM * delta_time, 1))
 			step(M, pick(GLOB.cardinals))
 	if(DT_PROB(10, delta_time))
 		M.emote("laugh")
@@ -209,8 +209,8 @@
 		M.visible_message(span_danger("[M]'s hands flip out and flail everywhere!"))
 		M.drop_all_held_items()
 	..()
-	M.adjustToxLoss(1 * REAGENTS_EFFECT_MULTIPLIER * delta_time, 0)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, (rand(5, 10) / 10) * REAGENTS_EFFECT_MULTIPLIER * delta_time)
+	M.adjustToxLoss(1 * REM * delta_time, 0)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, (rand(5, 10) / 10) * REM * delta_time)
 	. = TRUE
 
 /datum/reagent/drug/methamphetamine/addiction_act_stage1(mob/living/M)
@@ -486,8 +486,8 @@
 			H.dna.species.punchstunthreshold += 2
 
 /datum/reagent/drug/skooma/on_mob_life(mob/living/carbon/M)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustToxLoss(1*REAGENTS_EFFECT_MULTIPLIER)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1*REM)
+	M.adjustToxLoss(1*REM)
 	if(prob(10))
 		M.adjust_blurriness(2)
 	..()
@@ -531,7 +531,7 @@
 	value = REAGENT_VALUE_VERY_RARE
 
 /datum/reagent/syndicateadrenals/on_mob_life(mob/living/M)
-	M.adjustStaminaLoss(-5*REAGENTS_EFFECT_MULTIPLIER)
+	M.adjustStaminaLoss(-5*REM)
 	. = ..()
 
 /datum/reagent/syndicateadrenals/on_mob_metabolize(mob/living/M)
@@ -568,14 +568,14 @@
 		if((prob(min(current_cycle/2,5))))
 			M.emote(pick("moan","blush"))
 		if(prob(min(current_cycle/4,10)))
-			var/aroused_message = pick("You feel frisky.", "You're having trouble suppressing your urges.", "You feel in the mood.")
-			to_chat(M, span_userlove("[aroused_message]"))
+			var/aroused_message = pick("Вам немного жарко.", "Вы испытываете сильное сексуальное влечение.", "Вы чувствуете себя в хорошем настроении.", "Вы готовы напрыгнуть на кого-то.")
+			to_chat(M, "<span class='userlove'>[aroused_message]</span>")
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
 			var/list/genits = H.adjust_arousal(current_cycle, "crocin", aphro = TRUE) // redundant but should still be here
 			for(var/g in genits)
 				var/obj/item/organ/genital/G = g
-				to_chat(M, span_userlove("[G.arousal_verb]!"))
+				to_chat(M, "<span class='userlove'>[G.arousal_verb]!</span>")
 	..()
 
 /datum/reagent/drug/aphrodisiacplus
@@ -592,23 +592,23 @@
 	if(M && M.client?.prefs.arousable && !(M.client?.prefs.cit_toggles & NO_APHRO))
 		if(prob(5))
 			if(prob(current_cycle))
-				M.say(pick("Hnnnnngghh...", "Ohh...", "Mmnnn..."))
+				M.say(pick("Ох-мхх...", "Ахх-р...", "Амрфпф...", "Мрр-ах..."))
 			else
 				M.emote(pick("moan","blush"))
 		if(prob(5))
 			var/aroused_message
 			if(current_cycle>25)
-				aroused_message = pick("You need to fuck someone!", "You're bursting with sexual tension!", "You can't get sex off your mind!")
+				aroused_message = pick("Тебе нужно кого-нибудь трахнуть!", "В вас бурлит сильное сексуальное напряжение!", "Вы не можете выбросить секс из головы!")
 			else
-				aroused_message = pick("You feel a bit hot.", "You feel strong sexual urges.", "You feel in the mood.", "You're ready to go down on someone.")
-			to_chat(M, span_userlove("[aroused_message]"))
+				aroused_message = pick("Вам немного жарко.", "Вы испытываете сильное сексуальное влечение.", "Вы чувствуете себя в хорошем настроении.", "Вы готовы напрыгнуть на кого-то.")
+			to_chat(M, "<span class='userlove'>[aroused_message]</span>")
 			REMOVE_TRAIT(M,TRAIT_NEVERBONER,APHRO_TRAIT)
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
 			var/list/genits = H.adjust_arousal(100, "hexacrocin", aphro = TRUE) // redundant but should still be here
 			for(var/g in genits)
 				var/obj/item/organ/genital/G = g
-				to_chat(M, span_userlove("[G.arousal_verb]!"))
+				to_chat(M, "<span class='userlove'>[G.arousal_verb]!</span>")
 	..()
 
 /datum/reagent/drug/aphrodisiacplus/addiction_act_stage2(mob/living/M)
@@ -629,7 +629,7 @@
 	if(M && M.client?.prefs.arousable && !(M.client?.prefs.cit_toggles & NO_APHRO) && prob(33))
 		if(prob(5) && ishuman(M) && M.has_dna() && (M.client?.prefs.cit_toggles & BIMBOFICATION))
 			if(!HAS_TRAIT(M,TRAIT_PERMABONER))
-				to_chat(M, span_userlove("Your libido is going haywire!"))
+				to_chat(M, "<span class='userlove'>Ваше либидо сходит с ума!</span>")
 				M.log_message("Made perma-horny by hexacrocin.",LOG_EMOTE)
 				ADD_TRAIT(M,TRAIT_PERMABONER,APHRO_TRAIT)
 	..()
@@ -673,6 +673,6 @@
 
 /datum/reagent/drug/anaphrodisiacplus/overdose_process(mob/living/M)
 	if(M && M.client?.prefs.arousable && prob(5))
-		to_chat(M, span_userlove("You feel like you'll never feel aroused again..."))
+		to_chat(M, "<span class='userlove'>You feel like you'll never feel aroused again...</span>")
 		ADD_TRAIT(M,TRAIT_NEVERBONER,APHRO_TRAIT)
 	..()

@@ -97,6 +97,19 @@
 	suit = /obj/item/clothing/suit/pirate
 	head = /obj/item/clothing/head/pirate
 
+/obj/effect/mob_spawn/human/corpse/german
+	name = "German Soldier"
+	outfit = /datum/outfit/germancorpse
+	hair_style = "Bald"
+	facial_hair_style = "Shaved"
+/datum/outfit/germancorpse
+	name = "German Soldier Corpse"
+	uniform = /obj/item/clothing/under/syndicate/combat
+	suit = /obj/item/clothing/suit/armor/bulletproof
+	shoes = /obj/item/clothing/shoes/combat
+	ears = /obj/item/radio/headset
+	mask = /obj/item/clothing/mask/gas/german
+	head = /obj/item/clothing/head/helmet/swat/ds
 
 /obj/effect/mob_spawn/human/corpse/russian
 	name = "Russian"
@@ -111,8 +124,6 @@
 	head = /obj/item/clothing/head/bearpelt
 	gloves = /obj/item/clothing/gloves/color/black
 	mask = /obj/item/clothing/mask/gas
-
-
 
 /obj/effect/mob_spawn/human/corpse/russian/ranged
 	outfit = /datum/outfit/russiancorpse/ranged
@@ -147,7 +158,6 @@
 	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset
 	head = /obj/item/clothing/head/ushanka
-
 
 /obj/effect/mob_spawn/human/corpse/wizard
 	name = "Space Wizard Corpse"

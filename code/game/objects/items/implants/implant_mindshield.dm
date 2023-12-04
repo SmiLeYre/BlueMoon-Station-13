@@ -4,15 +4,15 @@
 	activated = 0
 
 /obj/item/implant/mindshield/get_data()
-	var/dat = {"<b>Implant Specifications:</b><BR>
-				<b>Name:</b> Nanotrasen Employee Management Implant<BR>
-				<b>Life:</b> Ten years.<BR>
-				<b>Important Notes:</b> Personnel injected with this device are much more resistant to brainwashing.<BR>
+	var/dat = {"<b>Технические характеристики Импланта Защиты Разума:</b><BR>
+				<b>Название:</b> Имплантат для Защиты Разума под производством Мега-Корпорации Nanotrasen<BR>
+				<b>Время Износа:</b> Десять Лет.<BR>
+				<b>Дополнительные Сведения:</b> Лица, которым вводится это микро-устройство, гораздо более устойчивы к "промыванию мозгов".<BR>
 				<HR>
-				<b>Implant Details:</b><BR>
-				<b>Function:</b> Contains a small pod of nanobots that protects the host's mental functions from manipulation.<BR>
-				<b>Special Features:</b> Will prevent and cure most forms of brainwashing.<BR>
-				<b>Integrity:</b> Implant will last so long as the nanobots are inside the bloodstream."}
+				<b>Дополнительная информация по импланту:</b><BR>
+				<b>Функционал:</b> Содержит небольшую капсулу с наноботами, что защищают психологические функции носителя от воздействия со стороны.<BR>
+				<b>Дополнительные Функции:</b> Предотвращает и лечит большинство форм промывания мозгов.<BR>
+				<b>Целостность:</b> Имплантат будет работать до тех пор, пока наноботы и микро-станция подзарядки остаётся в теле."}
 	return dat
 
 
@@ -31,7 +31,7 @@
 
 		if(target.mind.has_antag_datum(/datum/antagonist/rev/head) || (target.mind.unconvertable))
 			if(!silent)
-				target.visible_message("<span class='warning'>[target] seems to resist the implant!</span>", "<span class='warning'>You feel something interfering with your mental conditioning, but you resist it!</span>")
+				target.visible_message("<span class='warning'>[target] сопротивляется Импланту Защиты Разума!</span>", "<span class='warning'>Вы сопротивляетесь Импланту Защиты Разума!</span>")
 			var/obj/item/implanter/I = loc
 			removed(target, 1)
 			qdel(src)
@@ -48,9 +48,9 @@
 			target.mind.remove_antag_datum(/datum/antagonist/gang)
 		if(!silent)
 			if(target.mind in SSticker.mode.cult)
-				to_chat(target, "<span class='warning'>You feel something interfering with your mental conditioning, but you resist it!</span>")
+				to_chat(target, "<span class='warning'>Вы сопротивляетесь Импланту Защиты Разума!</span>")
 			else
-				to_chat(target, "<span class='notice'>You feel a sense of peace and security. You are now protected from brainwashing.</span>")
+				to_chat(target, "<span class='notice'>Вы ощущаете чувство покоя и безопасности. Теперь вы защищены от промывания мозгов.</span>")
 		ADD_TRAIT(target, TRAIT_MINDSHIELD, "implant")
 		target.sec_hud_set_implants()
 		return TRUE
@@ -63,12 +63,12 @@
 			REMOVE_TRAIT(L, TRAIT_MINDSHIELD, "implant")
 			L.sec_hud_set_implants()
 		if(target.stat != DEAD && !silent)
-			to_chat(target, "<span class='boldnotice'>Your mind suddenly feels terribly vulnerable. You are no longer safe from brainwashing.</span>")
+			to_chat(target, "<span class='boldnotice'>Вы ощущаете чувство покоя и безопасности. Теперь вы защищены от промывания мозгов.</span>")
 		return 1
 	return 0
 
 /obj/item/implanter/mindshield
-	name = "implanter (mindshield)"
+	name = "Implanter (mindshield)"
 	imp_type = /obj/item/implant/mindshield
 
 /obj/item/implantcase/mindshield

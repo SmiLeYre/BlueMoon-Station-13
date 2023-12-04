@@ -1,119 +1,117 @@
-Today, Security killed ____.
-Security, the clown's breaking into ____.
-Our last Chaplain believed in nothing but _____.
-What angered the gods this time?
-Why didn't engineering set up the singularity?
-What does the traitor steal this time?
-Cargo: There's a galaxy-wide shortage of _______.
-I don't care what they called me back on the station, I'm not a traitor. I'm a man of _________.
-The Syndicate is offering crew members _________ to defect. 
-What is Nanotrasen's highest-priority bounty?
-What is the gray tide protesting this time?
-If the Space Gods didn't want _________ they wouldn't have given us __________.
-Why was the death squad sent in?
-Current Active Laws: ________ is the only human.
-Today, science found an anomaly that made people ____ and ____.
-______ has been detected on a collision course with the station.
-Today's kitchen menu includes _____ stuffed with _____.
-What's the Captain's fetish?
-___________: more robust than a toolbox to the head!
-________ is the crew's friend. Would you abandon a friend?
-_______ tastes good like a ________ should.
-How did the detective conduct a successful interrogation?
-New in syndicate uplinks: __________!
-Nanotrasen's labor union decided to use _______ to raise employee morale.
-The Chemist's drug of choice is ______
-According to space law, ________ is now punishable by ______.
-________ is why I'm afraid of maintenance.
-________ is the most robust person on the station.
-What made the nuclear operatives fluke?
-Why did the Chief Engineer disable comms?
-Every spaceman receives an internals box and ________.
-What brought the space orgy to a grinding halt?
-Scientists are no longer allowed to make ______.
-What was the clown's best joke?
-The HoP is now hiring assistants for __________.
-What happens when you emag an emag?
-No matter how many lizards you have, _____ is never acceptable.
-No, the AI's second law is NOT to serve _____.
-First CentCom came for the ________. Now they're coming for the __________.
-The borgs are not slaves for your _____.
-You can never have too many _____ on the station.
-Why can't I find a space relationship?
-The assistants gathered around the brig, with toolboxes and ___________.
-Confirmed outbreak of _____ aboard the station.
-The AI was horrified to discover security was executing prisoners via ________.
-Attention crew: the word _____ is now a punishable offense.
-The chemist cackled as he labeled ________ pills as __________.
-The Space Wizard Federation has regrettably begun to summon _____.
-Who's the real seat of power on the station?
-__________ was called into the Captain's office because of ______.
-Deep in the heart of the derelict lies ________.
-My lizard name is _____-And-_____.
-What can solve any station crisis?
-The traitorous atmos tech slowly replaced the station's air with ________.
-_______ and _______ were found together in the dorms.
-What's the Syndicate's real beef with Nanotrasen?
-What finally killed the Head of Security?
-Code Delta: __________ has escaped containment!
-The rogue virologist released a disease with symptoms of __________ and ______.
-How do you drive an assistant to suicide? 
-With no chef on board, the crew was reduced to eating ________.
-Why was the emergency shuttle called?
-In the future, all ERP will involve ____________.
-Law 2 is not to be used for __________!
-What really goes on in the Prisoner Transfer Center?
-What will get you bluespace artilleried every time?
-This isn't omnizine, it's _________!
-What's stopping the Space Station 13 remake?
-When they make a movie about Space Station 13, they better include________.
-What's the worst thing an abductor can give you?
-One day while Andy was __________, Woody got _________.
-A good engineer always carries ________.
-I'm not a space bigot, I just hate _________.
-Why is the station so filthy?
-THE SHUTTLE CANNOT BE CALLED BECAUSE OF ________ ON THE STATION.
-After murdering dozens, the traitor was finally brought down by _________.
-The curator has read a lot of porn, but never about _____________!
-Oh god! There's ________________ outside escape!
-The hottest new space couple is ________ and __________.
-Lord Singulo hungers for _______.
-That was the last time security used ________ to subdue __________.
-What did the ERT find upon arriving on station?
-The bartender's newest recipe: a drink made with _____ and _____.
-SECURITY! Cargo's ordering 20 crates of ________!
-On the nearly empty station, all that could be heard were the sounds of __________.
-I cannot comply with that order, meatbag. My _____ module is malfunctioning.
-_______ was thrown out the airlock after ___________.
-Real men accomplish their objectives by _________.
-How did I pass the time during a slow shift?
-Why did the lizard cross the road?
-Space lag is primarily caused by ___________.
-Back in my day, we had to clone people with ________.
-What's the worst thing a wizard can summon?
-What is the rarest substance known to Nanotrasen?
-The chaplain stopped performing marriages after seeing ___________.
-The gods were too busy with _______ to respond to _______.
-The Roboticist was fired after naming the borgs ______ and _________.
-What's funnier than a dead clown?
-What made the mime speak?
-How do you get an assistant to assist?
-What was I last brigged for?
-Why does Security no longer use the gulag?
-Old versions of Space Law used to authorize __________.
-Our new state-of-the-art station shield is made entirely of ________.
-What's the most terrifying thing about Lavaland?
-Listen. Recent _______ on this station left me very disappointed, OK?
-The auxiliary base was disabled after landing in the middle of _______.
-Xenobiologists have found slimes to be exceptionally responsive to _______.
-Why did the captain give me a medal?
-The curator's new exhibit is devoted solely to _________.
-What made me sell my soul to the devil?
-The engineers are testing an experimental supermatter setup involving _________.
-I'm __________ in the streets, __________ in the sheets.
-What's my family heirloom?
-The Lawyer was fired for messaging the entire station a picture of ___________.
-On Lavaland, it is rumored that ashwalkers roam, worshipping _________.
-How did the traitor die a glorious death?
-Nanotrasen's new state-of-the-art emergency shuttle was repurposed from _________ and _________.
-What caused my brain trauma?
+Сегодня, СБ убило ____.
+СБ, клоун вламывается в ____.
+Наш последний капеллан не верил ни во что, кроме _____.
+Что прогневило богов на этот раз?
+Почему инженеры не запустили сингулярность?
+Что украл предатель на этот раз?
+Карго: Во всей галактике ощущается нехватка _______.
+Мне все равно, как они называли меня там, на станции, я не предатель. Я человек _________.
+Синдикат предлагает членам экипажа _________ за дезертирство.
+Какова самая приоритетная награда Nanotrasen?
+Против чего протестуют грейтайдеры на этот раз?
+Если бы Космические боги не хотели __________, они бы не дали нам __________.
+Почему был послан отряд смерти?
+Текущие законы: ________ - единственный человек.
+Сегодня РнД обнаружила аномалию, которая сделала людей ____ и _____.
+______ был обнаружен на курсе столкновения со станцией.
+Сегодняшнее кухонное меню включает в себя _____ фаршированные ______.
+Какой фетиш у капитана?
+___________: робастнее, чем тулбокс по еблищу!
+________ - друг экипажа. Ты бы бросил друга?
+_______ вкусно, как и должно быть у ________.
+Как детективу удалось успешно провести допрос?
+Новое в аплинках синдиката: __________!
+Профсоюз Nanotrasen решил использовать ________ для поднятия морального духа сотрудников.
+Предпочтительным лекарством в медблоке является ______
+Согласно космическому закону, _________ теперь карается _______.
+________ вот почему я боюсь технического обслуживания.
+________ - самый робастный чел на станции.
+Что заставило нюк оперов действовать по счастливой случайности?
+Почему СЕ обрубил телекомы?
+Каждый космонавт получает коробку с набором воздуха и _________.
+Что привело к резкой остановке космической оргии?
+Ученым больше не разрешается создавать _______.
+Какая была лучшая шутка клоуна?
+ГП сейчас нанимает помощников для __________.
+Что если ты емагнешь емаг?
+Независимо от того, сколько у вас ящериц, _____ никогда не будет приемлемым.
+Нет, второй закон ИИ заключается в том, чтобы НЕ служить _____.
+Первый CentCom пришел за _________. Теперь они идут за __________.
+Борги - не рабы для вашего _____.
+У вас никогда не может быть слишком много _____ на станции.
+Почему я не могу найти космические отношения?
+Ассистенты собрались вокруг брига с тулбоксами и ___________.
+Подтверждена вспышка _____ на борту станции.
+Искусственный интеллект пришел в ужас, обнаружив, что служба безопасности казнит заключенных при помощи ________.
+Вниманию экипажа: слово _____ теперь является наказуемым деянием.
+Аптекарь хихикнул, помечая ________ таблетки как __________.
+Федерация космических волшебников, к сожалению, начала призывать _____.
+Кто на самом деле является центром власти на станции?
+__________ был вызван в кабинет капитана из-за ______.
+Мою ящерицу зовут _____-И-_____.
+Что может разрешить любой кризис на станции?
+Ебучий атмос стал медленно заменять воздух на станции ________.
+_______ и _______ были найдены вместе в дормах.
+В чем настоящая проблема пакта с ИнтеКью?
+Что в конце концов убило начальника службы безопасности?
+Код Дельта: __________ вырвался из-под контроля!
+Тупой вирусолог выпустил болезнь с симптомами __________ и _______.
+Как можно довести ассистента до самоубийства?
+Поскольку на борту не было шеф-повара, экипаж был вынужден питаться _________.
+Почему был вызван аварийный шаттл?
+В будущем все ERP будут включать ____________.
+Второй закон не должен использоваться для __________!
+Что на самом деле происходит в Центре передачи заключенных?
+Что дает вам БСА каждый раз?
+Это не омнизин, это _________!
+Что мешает ремейку "Space Station-13"?
+Когда они снимают фильм о Космической станции 13, им лучше включить _________.
+Что самое худшее, что может дать вам похититель?
+Однажды, когда Энди был __________, Вуди получил _________.
+Хороший инженер всегда носит с собой _________.
+Я не фанатик космоса, я просто ненавижу _________.
+Почему на станции так грязно?
+ТРАНСФЕР НЕ МОЖЕТ БЫТЬ ВЫЗВАН ИЗ-ЗА ________ НА СТАНЦИИ.
+После убийства десятков человек предатель был, наконец, повержен _________.
+Куратор прочитал много порно, но никогда не читал _____________!
+О боже! Там есть ________________ снаружи отбытия!
+Самая горячая новая космическая пара - это ________ и __________.
+Лорд Сингуло жаждет ________.
+Это был последний раз, когда служба безопасности использовала ________ для подавления __________.
+Что обнаружили ОБР по прибытии на станцию?
+Новейший рецепт бармена: напиток, приготовленный из _____ и ______.
+СБ! Карго заказывает 20 ящиков __________!
+На почти пустой станции были слышны только звуки __________.
+Я не могу выполнить этот приказ, мясной мешок. Мой модуль _____ неисправен.
+_______ был выброшен из воздушного шлюза после ___________.
+Настоящие мужчины достигают своих целей с помощью _________.
+Как я проводил время во время медленной смены?
+Почему ящерица перешла дорогу?
+Космо-лаги в первую очередь вызваны ___________.
+В мое время нам приходилось клонировать людей с помощью ________.
+Что самое худшее, что может вызвать волшебник?
+Какое самое редкое вещество известно Nanotrasen?
+Капеллан перестал совершать бракосочетания после того, как увидел ___________.
+Боги были слишком заняты _______, чтобы ответить на _______.
+Роботехник был уволен после того, как назвал боргов ______ и _________.
+Что может быть смешнее мертвого клоуна?
+Что заставило мима заговорить?
+Как вы нанимаете ассистента для ассистирования?
+За что меня в последний раз арестовывали?
+Почему служба безопасности больше не использует Гулаг?
+Старые версии космического закона, используемые для разрешения __________.
+Наш новый ультрасовременный щит станции полностью изготовлен из ________.
+Что самое страшное на Лаваленде?
+Вспомогательная база была отключена после приземления в середине ________.
+Ксенобиологи обнаружили, что слизи исключительно чувствительны к _______.
+Почему капитан наградил меня медалью?
+Новая выставка куратора посвящена исключительно _________.
+Что заставило меня продать свою душу дьяволу?
+Инженеры тестируют экспериментальную установку из суперматерии, включающую _________.
+Какая у меня семейная реликвия?
+НТР был уволен за то, что разослал по всей станции фотографию ___________.
+Ходят слухи, что по Лаваленду бродят эш волкеры, поклоняясь _________.
+Как предатель погиб славной смертью?
+Новый ультрасовременный аварийный шаттл Nanotrasen был переоборудован из _________ и _________.
+Что стало причиной моей черепно-мозговой травмы?
+Из-за _________ я не ношу трусов.

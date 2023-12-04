@@ -25,8 +25,8 @@
 	result = /obj/structure/guillotine
 	time = 150 // Building a functioning guillotine takes time
 	reqs = list(/obj/item/stack/sheet/plasteel = 3,
-		        /obj/item/stack/sheet/mineral/wood = 20,
-		        /obj/item/stack/cable_coil = 10)
+				/obj/item/stack/sheet/mineral/wood = 20,
+				/obj/item/stack/cable_coil = 10)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WRENCH, TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISCELLANEOUS
@@ -36,7 +36,7 @@
 	result = /obj/structure/femur_breaker
 	time = 150
 	reqs = list(/obj/item/stack/sheet/metal = 20,
-		        /obj/item/stack/cable_coil = 30)
+				/obj/item/stack/cable_coil = 30)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WRENCH, TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISCELLANEOUS
@@ -61,7 +61,7 @@
 	name = "Meat Coffin"
 	result =/obj/structure/closet/crate/coffin/meatcoffin
 	tools = list(/obj/item/kitchen/knife,
-				 /obj/item/kitchen/rollingpin)
+				/obj/item/kitchen/rollingpin)
 	reqs = list(/obj/item/reagent_containers/food/snacks/meat/slab = 5,
 				/obj/item/restraints/handcuffs/cable = 1)
 	time = 150
@@ -99,8 +99,8 @@
 		//parts = list(/obj/item/storage/belt = 1
 		//			 )
 	time = 150
-	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISCELLANEOUS
+	subcategory = CAT_OTHER // BLUEMOON CHANGES
+	category = CAT_OTHER // BLUEMOON CHANGES
 	always_availible = FALSE	// Disabled until learned
 
 
@@ -116,8 +116,8 @@
 				/obj/item/candle = 1
 				)
 	time = 100
-	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISCELLANEOUS
+	subcategory = CAT_OTHER // BLUEMOON CHANGES
+	category = CAT_OTHER // BLUEMOON CHANGES
 	always_availible = FALSE	// Disabled til learned
 
 /datum/crafting_recipe/furnace
@@ -520,9 +520,9 @@
 	result = /obj/item/pressure_plate
 	time = 5
 	reqs = list(/obj/item/stack/sheet/metal = 1,
-				  /obj/item/stack/tile/plasteel = 1,
-				  /obj/item/stack/cable_coil = 2,
-				  /obj/item/assembly/igniter = 1)
+				/obj/item/stack/tile/plasteel = 1,
+				/obj/item/stack/cable_coil = 2,
+				/obj/item/assembly/igniter = 1)
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISCELLANEOUS
 
@@ -554,6 +554,15 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISCELLANEOUS
 
+/datum/crafting_recipe/bong
+	name = "Glass Bong"
+	result = /obj/item/bong
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/stack/sheet/glass = 10)
+	time = 70
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISCELLANEOUS
+
 /datum/crafting_recipe/mod_core
 	name = "MOD core"
 	result = /obj/item/mod/construction/core
@@ -562,8 +571,8 @@
 	reqs = list(/obj/item/stack/cable_coil = 5,
 				/obj/item/stack/rods = 2,
 				/obj/item/stack/sheet/glass = 1,
-				/obj/item/organ/heart = 1
-				)
+				/obj/item/organ/heart = 1)
+	time = 70
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISCELLANEOUS
 

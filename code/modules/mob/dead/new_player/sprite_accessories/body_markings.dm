@@ -119,6 +119,11 @@
 	icon_state = "hawk"
 	covered_limbs = list("Head" = MATRIX_RED_GREEN, "Chest" = MATRIX_RED_GREEN, "Left Leg" = MATRIX_ALL, "Right Leg" = MATRIX_ALL, "Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED)
 
+/datum/sprite_accessory/mam_body_markings/heart
+	name = "Heart"
+	icon_state = "heart"
+	covered_limbs = list("Chest" = MATRIX_RED_GREEN)
+
 /datum/sprite_accessory/mam_body_markings/husky
 	name = "Husky"
 	icon_state = "husky"

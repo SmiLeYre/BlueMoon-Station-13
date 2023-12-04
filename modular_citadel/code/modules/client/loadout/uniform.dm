@@ -204,11 +204,11 @@
 
 /datum/gear/uniform/turtleneck
 	name = "Tactitool Turtleneck"
-	path = /obj/item/clothing/under/syndicate/cosmetic
+	path = /obj/item/clothing/under/syndicate/tacticool
 
 /datum/gear/uniform/skirtleneck
 	name = "Tactitool Skirtleneck"
-	path = /obj/item/clothing/under/syndicate/cosmetic/skirt
+	path = /obj/item/clothing/under/syndicate/tacticool/skirt
 
 /datum/gear/uniform/sweater
 	name = "Cream Commando Sweater"
@@ -240,7 +240,7 @@
 	path = /obj/item/clothing/under/misc/keyholesweater
 
 /datum/gear/uniform/tealturtle
-	name = "Teal Turtleneck"
+	name = "Green Turtleneck"
 	path = /obj/item/clothing/under/suit/turtle/teal
 
 /datum/gear/uniform/greyturtle
@@ -258,10 +258,6 @@
 /datum/gear/uniform/blueturtle
 	name = "Blue Turtleneck"
 	path = /obj/item/clothing/under/suit/turtle/blue
-
-/datum/gear/uniform/redturtle
-	name = "Red Turtleneck"
-	path = /obj/item/clothing/under/suit/turtle/red
 
 /datum/gear/uniform/polyjump
 	name = "Polychromic Jumpsuit"
@@ -750,3 +746,11 @@
 	path = /obj/item/clothing/under/rank/civilian/polychromic_clown
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
 	restricted_roles = list("Clown")
+
+/datum/gear/uniform/maid
+	name = "Tactical Maid Outfit"
+	path = /obj/item/clothing/under/syndicate/maid
+
+/datum/gear/uniform/maid_revealing
+	name = "Revealing Tactical Maid Outfit"
+	path = /obj/item/clothing/under/syndicate/maid_revealing

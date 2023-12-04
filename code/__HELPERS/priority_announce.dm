@@ -6,19 +6,29 @@
 	if(!sound)
 		sound = SSstation.announcer.get_rand_alert_sound()
 	else if(SSstation.announcer.event_sounds[sound])
-		sound = SSstation.announcer.event_sounds[sound]
+		sound = pick(SSstation.announcer.event_sounds[sound])
 
 	if(type == "Priority")
-		announcement += "<h1 class='alert'>Priority Announcement</h1>"
+		announcement += "<h1 class='alert'>Приоритетно</h1>"
 		if (title && length(title) > 0)
 			announcement += "<br><h2 class='alert'>[html_encode(title)]</h2>"
 	else if(type == "Captain")
-		announcement += "<h1 class='alert'>Captain Announces</h1>"
-		GLOB.news_network.SubmitArticle(html_encode(text), "Captain's Announcement", "Station Announcements", null)
+		if(usr)
+			announcement += "<h1 class='alert'>Капитан Объявляет (— [usr.name])</h1>"
+		else
+			announcement += "<h1 class='alert'>Капитан Объявляет</h1>"
+		GLOB.news_network.SubmitArticle(html_encode(text), "Капитан Объявляет (— [usr.name])", "Станционные Объявления", null)
+	else if(type == "Syndicate")
+		announcement += "<h1 class='alert'>Синдикат Объявляет</h1>"
+		GLOB.news_network.SubmitArticle(html_encode(text), "Синдикат Объявляет", "Станционные Объявления", null)
+	else if(type == "AI")
+		announcement += "<h1 class='alert'>Искусственный Интеллект</h1>"
+		if (title && length(title) > 0)
+			announcement += "<br><h2 class='alert'>[html_encode(title)]</h2>"
 
 	else
 		if(!sender_override)
-			announcement += "<h1 class='alert'>[command_name()] Update</h1>"
+			announcement += "<h1 class='alert'>[command_name()] Объявляет</h1>"
 		else
 			announcement += "<h1 class='alert'>[sender_override]</h1>"
 		if (title && length(title) > 0)
@@ -26,9 +36,9 @@
 
 		if(!sender_override)
 			if(title == "")
-				GLOB.news_network.SubmitArticle(text, "Central Command Update", "Station Announcements", null)
+				GLOB.news_network.SubmitArticle(text, "Центральное Командование Объявляет", "Станционные Объявления", null)
 			else
-				GLOB.news_network.SubmitArticle(title + "<br><br>" + text, "Central Command", "Station Announcements", null)
+				GLOB.news_network.SubmitArticle(title + "<br><br>" + text, "Центральное Командование Объявляет", "Станционные Объявления", null)
 
 	///If the announcer overrides alert messages, use that message.
 	if(SSstation.announcer.custom_alert_message && !has_important_message)
@@ -55,8 +65,8 @@
 /proc/call_emergency_meeting(mob/living/user, area/button_zone)
 	var/meeting_sound = sound('sound/misc/emergency_meeting.ogg')
 	var/announcement
-	announcement += "<h1 class='alert'>Captain Alert</h1>"
-	announcement += "<br>[span_alert("[user] has called an Emergency Meeting!")]<br><br>"
+	announcement += "<h1 class='alert'>Тревога!</h1>"
+	announcement += "<br>[span_alert("[user] устраивает экстренный сбор!")]<br><br>"
 
 	for(var/mob/mob_to_teleport in GLOB.player_list) //gotta make sure the whole crew's here!
 		if(isnewplayer(mob_to_teleport) || iscameramob(mob_to_teleport))
@@ -78,10 +88,10 @@
 
 /proc/print_command_report(text = "", title = null, announce=TRUE)
 	if(!title)
-		title = "Classified [command_name()] Update"
+		title = "Секретно: [command_name()]"
 
 	if(announce)
-		priority_announce("A report has been downloaded and printed out at all communications consoles.", "Incoming Classified Message", SSstation.announcer.get_rand_report_sound(), has_important_message = TRUE)
+		priority_announce("Отчет был загружен и распечатан на всех коммуникационных консолях.", "Входящее Секретное Сообщение", 'modular_bluemoon/kovac_shitcode/sound/ambience/enc/morse.ogg', has_important_message = TRUE)
 
 	var/datum/comm_message/M  = new
 	M.title = title
@@ -89,7 +99,7 @@
 
 	SScommunications.send_message(M)
 
-/proc/minor_announce(message, title = "Attention:", alert, html_encode = TRUE)
+/proc/minor_announce(message, title = "Внимание!", alert, html_encode = TRUE)
 	if(!message)
 		return
 

@@ -161,6 +161,10 @@
 	// ruins clogging up memory for the whole round.
 	var/is_cached = cached_map
 	var/datum/parsed_map/parsed = is_cached || new(file(mappath))
+
+	var/list/turf_blacklist = list()
+	update_blacklist(T, turf_blacklist)
+
 	cached_map = (force_cache || keep_cached_map) ? parsed : is_cached
 	if(!parsed.load(T.x, T.y, T.z, cropMap=TRUE, no_changeturf=(SSatoms.initialized == INITIALIZATION_INSSATOMS), placeOnTop=TRUE, orientation = orientation, annihilate_tiles = (annihilate == MAP_TEMPLATE_ANNIHILATE_LOADING)))
 		return
@@ -178,6 +182,9 @@
 	on_map_loaded(T.z, parsed.bounds)
 
 	return bounds
+
+/datum/map_template/proc/update_blacklist(turf/T, list/input_blacklist)
+	return
 
 //This, get_affected_turfs, and load() calculations for bounds/center can probably be optimized. Later.
 /datum/map_template/proc/annihilate_bounds(turf/origin, centered = FALSE, orientation = SOUTH)

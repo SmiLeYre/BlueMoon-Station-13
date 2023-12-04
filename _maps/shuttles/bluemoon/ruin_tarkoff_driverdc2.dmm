@@ -1,0 +1,531 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aj" = (
+/obj/structure/shuttle/engine/propulsion/burst{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"bz" = (
+/obj/structure/shuttle/engine/heater{
+	dir = 1
+	},
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"cU" = (
+/obj/structure/shuttle/engine/propulsion/burst,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"er" = (
+/mob/living/simple_animal/hostile/cult/horror,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"eC" = (
+/obj/structure/table/reinforced,
+/obj/item/flashlight/lamp,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"eG" = (
+/obj/structure/window/reinforced/tinted{
+	dir = 1
+	},
+/obj/structure/window/reinforced/tinted{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"ip" = (
+/obj/machinery/door/airlock/titanium/glass,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"jH" = (
+/obj/machinery/door/window/brigdoor/eastright,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"kb" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/shuttle/tarkoff_driver)
+"kC" = (
+/obj/machinery/door/window/brigdoor/westleft,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"kQ" = (
+/obj/machinery/light/dim/directional/west,
+/obj/structure/table/reinforced,
+/obj/effect/spawner/lootdrop/cig_packs,
+/obj/effect/spawner/lootdrop/cig_packs,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"lV" = (
+/turf/template_noop,
+/area/template_noop)
+"mZ" = (
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plasteel/cult,
+/area/shuttle/tarkoff_driver)
+"nd" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/toolbox/emergency,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"oi" = (
+/obj/structure/window/reinforced/tinted{
+	dir = 1
+	},
+/obj/structure/bed/pod{
+	dir = 1
+	},
+/obj/item/bedsheet{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"oo" = (
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"pL" = (
+/obj/structure/window/reinforced/tinted{
+	dir = 8
+	},
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"rT" = (
+/obj/structure/window/reinforced/tinted{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"tk" = (
+/obj/machinery/mech_bay_recharge_port{
+	dir = 2
+	},
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"wt" = (
+/obj/structure/statue/bone/rib,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plasteel/cult,
+/area/shuttle/tarkoff_driver)
+"wZ" = (
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"xg" = (
+/obj/machinery/door/airlock/titanium,
+/obj/structure/fans/tiny/invisible,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"xi" = (
+/obj/machinery/computer/camera_advanced/shuttle_docker/tarkon_driver,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"xy" = (
+/obj/structure/window/reinforced/tinted,
+/obj/structure/table/reinforced,
+/obj/item/tank/internals/emergency_oxygen/double,
+/obj/item/tank/internals/emergency_oxygen/double,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"zb" = (
+/mob/living/simple_animal/hostile/cult/warrior,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"zt" = (
+/mob/living/simple_animal/hostile/cult/magic/elite,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"zR" = (
+/obj/machinery/door/airlock/titanium,
+/obj/structure/fans/tiny/invisible,
+/obj/docking_port/mobile{
+	name = "Tarkoff Driver";
+	port_direction = 2;
+	preferred_direction = 8;
+	id = "tarkoff_driver";
+	height = 16;
+	width = 12
+	},
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"Bv" = (
+/obj/item/tank/jetpack/oxygen,
+/obj/item/tank/jetpack/oxygen,
+/obj/item/tank/jetpack/oxygen,
+/obj/item/tank/jetpack/oxygen,
+/obj/structure/rack,
+/turf/open/floor/plasteel/cult,
+/area/shuttle/tarkoff_driver)
+"Cm" = (
+/obj/machinery/door/poddoor{
+	id = "driverwindows"
+	},
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"Dw" = (
+/obj/machinery/light/dim/directional/east,
+/obj/structure/table/reinforced,
+/obj/effect/spawner/lootdrop/mre,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"Dx" = (
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"DX" = (
+/obj/machinery/computer/shuttle/tarkon_driver,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"Ea" = (
+/obj/item/flashlight/flare,
+/obj/item/flashlight/flare,
+/obj/item/flashlight/flare,
+/obj/structure/rack,
+/turf/open/floor/plasteel/cult,
+/area/shuttle/tarkoff_driver)
+"EM" = (
+/obj/structure/bed/pod,
+/obj/item/bedsheet,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"FA" = (
+/mob/living/simple_animal/hostile/cult/warrior,
+/turf/open/floor/plasteel/cult,
+/area/shuttle/tarkoff_driver)
+"FS" = (
+/obj/structure/window/reinforced/tinted{
+	dir = 1
+	},
+/obj/structure/bed/pod,
+/obj/item/bedsheet,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"Gg" = (
+/obj/effect/spawner/lootdrop/whiteship_cere_ripley,
+/turf/open/floor/iron/recharge_floor,
+/area/shuttle/tarkoff_driver)
+"GC" = (
+/obj/structure/statue/bone/rib{
+	dir = 1
+	},
+/turf/open/floor/plasteel/cult,
+/area/shuttle/tarkoff_driver)
+"HD" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/armory_contraband,
+/obj/effect/spawner/lootdrop/armory_contraband,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"HO" = (
+/obj/structure/bed/pod{
+	dir = 1
+	},
+/obj/item/bedsheet{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"Ms" = (
+/obj/structure/table/reinforced,
+/obj/machinery/button/door{
+	id = "driverwindows";
+	name = "Blast Shield Control"
+	},
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"Oa" = (
+/obj/structure/tank_dispenser/oxygen,
+/turf/open/floor/plasteel/cult,
+/area/shuttle/tarkoff_driver)
+"Op" = (
+/obj/structure/closet/crate/internals,
+/obj/item/clothing/head/helmet/space/eva,
+/obj/item/clothing/suit/space/eva,
+/obj/item/clothing/suit/space/eva,
+/obj/item/clothing/head/helmet/space/eva,
+/obj/item/clothing/mask/gas/glass/alt,
+/obj/item/clothing/mask/gas/glass/alt,
+/turf/open/floor/plasteel/cult,
+/area/shuttle/tarkoff_driver)
+"Qj" = (
+/obj/structure/table/reinforced,
+/obj/item/pickaxe/drill,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"Sd" = (
+/obj/structure/shuttle/engine/heater,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"Sl" = (
+/mob/living/simple_animal/hostile/cult/magic,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"SG" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/cig_packs,
+/obj/effect/spawner/lootdrop/three_course_meal,
+/obj/effect/spawner/lootdrop/three_course_meal,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"Ti" = (
+/obj/structure/table/reinforced,
+/obj/item/crowbar/red/caravan,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"Tt" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"TC" = (
+/obj/structure/destructible/cult/pylon,
+/turf/open/floor/plasteel/cult,
+/area/shuttle/tarkoff_driver)
+"UE" = (
+/obj/structure/window/reinforced/tinted{
+	dir = 1
+	},
+/obj/structure/window/reinforced/tinted{
+	dir = 8
+	},
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"UY" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/healing_kits,
+/obj/effect/spawner/lootdrop/healing_kits,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"VD" = (
+/obj/structure/window/reinforced/tinted,
+/obj/structure/table/reinforced,
+/obj/effect/spawner/lootdrop/mre,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"XQ" = (
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/turf/open/floor/plasteel/cult,
+/area/shuttle/tarkoff_driver)
+"Yh" = (
+/obj/machinery/recharge_station,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/tarkoff_driver)
+"YA" = (
+/turf/open/floor/plasteel/cult,
+/area/shuttle/tarkoff_driver)
+
+(1,1,1) = {"
+aj
+bz
+oo
+oo
+oo
+oo
+oo
+lV
+lV
+aj
+bz
+oo
+oo
+oo
+oo
+oo
+"}
+(2,1,1) = {"
+lV
+aj
+bz
+tk
+Gg
+Yh
+oo
+Cm
+Cm
+oo
+kb
+HO
+eC
+HO
+Sd
+cU
+"}
+(3,1,1) = {"
+lV
+lV
+xg
+Dx
+Dx
+Dx
+oo
+Op
+Op
+Oa
+oi
+Dx
+Dx
+Dx
+Sd
+cU
+"}
+(4,1,1) = {"
+oo
+Cm
+kb
+oo
+ip
+oo
+kb
+YA
+GC
+mZ
+eG
+rT
+jH
+rT
+kb
+oo
+"}
+(5,1,1) = {"
+Cm
+Ms
+kQ
+xy
+Dx
+zt
+wZ
+Sl
+mZ
+TC
+Dx
+Dx
+Dx
+wZ
+nd
+oo
+"}
+(6,1,1) = {"
+Cm
+xi
+Tt
+Dx
+Dx
+Dx
+YA
+Dx
+YA
+mZ
+FA
+Dx
+Dx
+Dx
+Dx
+xg
+"}
+(7,1,1) = {"
+Cm
+DX
+Tt
+er
+Dx
+wZ
+Dx
+mZ
+YA
+Dx
+Dx
+YA
+wZ
+Dx
+Dx
+zR
+"}
+(8,1,1) = {"
+Cm
+Ti
+Dw
+VD
+wZ
+er
+Dx
+TC
+YA
+YA
+wZ
+zb
+Dx
+Dx
+Qj
+oo
+"}
+(9,1,1) = {"
+oo
+Cm
+kb
+oo
+ip
+oo
+kb
+mZ
+wt
+FA
+UE
+pL
+kC
+pL
+oo
+oo
+"}
+(10,1,1) = {"
+lV
+lV
+xg
+Dx
+Dx
+Dx
+oo
+Bv
+Ea
+XQ
+FS
+Dx
+Dx
+Dx
+Sd
+cU
+"}
+(11,1,1) = {"
+lV
+aj
+bz
+HD
+UY
+SG
+oo
+Cm
+Cm
+oo
+kb
+EM
+eC
+EM
+Sd
+cU
+"}
+(12,1,1) = {"
+aj
+bz
+oo
+oo
+oo
+oo
+oo
+lV
+lV
+aj
+bz
+oo
+oo
+oo
+kb
+oo
+"}

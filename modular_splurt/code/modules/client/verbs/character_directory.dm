@@ -28,7 +28,7 @@ GLOBAL_DATUM(character_directory, /datum/character_directory)
 /datum/character_directory/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "CharacterDirectory", "Character Directory")
+		ui = new(user, src, "CharacterDirectory", "Библиотека Персонажей")
 		ui.open()
 
 /datum/character_directory/ui_data(mob/user)

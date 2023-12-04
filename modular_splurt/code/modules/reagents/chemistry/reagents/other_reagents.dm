@@ -26,10 +26,20 @@
 	if(HAS_TRAIT(M,TRAIT_SUCCUBUS))
 		M.adjust_nutrition(1)
 
+	if(iscatperson(M) && HAS_TRAIT(M,TRAIT_DUMB_CUM)) //special "milk" tastes nice for special felinids
+		if(prob(5))
+			to_chat(M, "<span class = 'notice'>[pick("Mmmm~ boy's milk feels so good inside me~", "Ahh~ boy's milk~")]</span>")
+			M.emote("purr")
+
 /datum/reagent/consumable/ethanol/cum_in_a_hot_tub/semen/on_mob_life(mob/living/carbon/M)
 	. = ..()
 	if(HAS_TRAIT(M,TRAIT_SUCCUBUS))
 		M.adjust_nutrition(0.5)
+
+	if(iscatperson(M) && HAS_TRAIT(M,TRAIT_DUMB_CUM))
+		if(prob(5))
+			to_chat(M, "<span class = 'notice'>[pick("Mmmm~ boy's milk feels so good inside me~", "Ahh~ boy's milk~")]</span>")
+			M.emote("purr")
 
 /datum/reagent/consumable/milk/on_mob_life(mob/living/carbon/M)
 	. = ..()
@@ -65,41 +75,10 @@
 
 	// Check for Hallowed.
 	if(HAS_TRAIT(M,TRAIT_HALLOWED))
-		// Alert user of holy water effect.
-		to_chat(M, span_nicegreen("The holy water nourishes and energizes you!"))
-
 		// Add positive mood.
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "fav_food", /datum/mood_event/favorite_food)
 
 /datum/reagent/water/holywater/on_mob_life(mob/living/carbon/M)
-
-	//Makes holy water generally good for Hallowed users.
-	//Holy water is tough to get in comparison to other medicine anyways.
-	if(HAS_TRAIT(M,TRAIT_HALLOWED))
-		// Reduce disgust.
-		M.adjust_disgust(-3)
-
-		// Restore stamina.
-		M.adjustStaminaLoss(3)
-
-		// Reduce hunger and thirst.
-		M.adjust_nutrition(3)
-		M.adjust_thirst(3)
-
-		// Heal brute and burn.
-		// Accounts for robotic limbs.
-		M.heal_overall_damage(2,2)
-		// Heal oxygen.
-		M.adjustOxyLoss(-2)
-		// Heal clone.
-		M.adjustCloneLoss(-2)
-
-		// Need to remove the holy water from consumer eventually.
-		holder.remove_reagent(type, 0.2)
-
-		// Negate all other holy water effects.
-		return
-
 	// Return normally.
 	. = ..()
 
@@ -127,7 +106,7 @@
 			return
 
 		// Character has a seisure
-		M.visible_message(span_danger("[M] starts having a seizure!"), span_userdanger("You have a seizure!"))
+		M.visible_message("<span class='danger'>[M] падает в припадке!</span>", "<span class='userdanger'>У вас начался припадок!</span>")
 		M.Unconscious(120)
 		to_chat(M, "<span class='cultlarge'>[pick("The moon is close. It will be a long hunt tonight.", "Ludwig, why have you forsaken me?", \
 		"The night is near its end...", "Fear the blood...")]</span>")
@@ -174,3 +153,42 @@
 
 	// Add nutrition
 	M.adjust_nutrition(nutriment_factor, max_nutrition)
+
+/datum/reagent/consumable/ethanol/vodka/on_mob_add(mob/living/carbon/M)
+	. = ..()
+
+	// Check for Hallowed.
+	if(HAS_TRAIT(M,TRAIT_RUSSIAN))
+		// Add positive mood.
+		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "fav_food", /datum/mood_event/favorite_food/russian)
+
+/datum/reagent/consumable/ethanol/vodka/on_mob_life(mob/living/carbon/M)
+
+	//Makes holy water generally good for Hallowed users.
+	//Holy water is tough to get in comparison to other medicine anyways.
+	if(HAS_TRAIT(M,TRAIT_RUSSIAN))
+		// Reduce disgust.
+		M.adjust_disgust(-3)
+
+		// Restore stamina.
+		M.adjustStaminaLoss(1)
+
+		// Reduce hunger and thirst.
+		M.adjust_nutrition(1)
+		M.adjust_thirst(1)
+
+		// Heal brute and burn.
+		// Accounts for robotic limbs.
+		M.heal_overall_damage(1,1)
+		// Heal oxygen.
+		M.adjustOxyLoss(-1)
+		// Heal clone.
+		M.adjustCloneLoss(-1)
+
+		holder.remove_reagent(type, 0.2)
+
+		// Negate all other holy water effects.
+		return
+
+	// Return normally.
+	. = ..()

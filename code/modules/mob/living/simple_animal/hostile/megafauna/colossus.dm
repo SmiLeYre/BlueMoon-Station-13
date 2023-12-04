@@ -593,8 +593,8 @@ GLOBAL_VAR(blackbox_smartfridge)
 	if(ready_to_deploy)
 		if(!user.can_reenter_round())
 			return FALSE
-		var/be_helper = alert("Become a Lightgeist? (Warning, You can no longer be cloned!)",,"Yes","No")
-		if(be_helper == "Yes" && !QDELETED(src) && isobserver(user))
+		var/be_helper = alert("Become a Lightgeist? (Warning, You can no longer be cloned!)",,"Да","Нет")
+		if(be_helper == "Да" && !QDELETED(src) && isobserver(user))
 			var/mob/living/simple_animal/hostile/lightgeist/W = new /mob/living/simple_animal/hostile/lightgeist(get_turf(loc))
 			user.transfer_ckey(W, FALSE)
 
@@ -674,7 +674,9 @@ GLOBAL_VAR(blackbox_smartfridge)
 	activation_method = ACTIVATE_TOUCH
 	cooldown_add = 50
 	activation_sound = 'sound/magic/timeparadox2.ogg'
-	var/static/list/banned_items_typecache = typecacheof(list(/obj/item/storage, /obj/item/implant, /obj/item/implanter, /obj/item/disk/nuclear, /obj/item/projectile, /obj/item/spellbook))
+	var/static/list/banned_items_typecache = typecacheof(list(/obj/item/storage, /obj/item/implant, /obj/item/implanter, \
+	/obj/item/disk/nuclear, /obj/item/projectile, /obj/item/spellbook, /obj/item/inteq, /obj/item/syndicate_uplink, /obj/item/syndicate_uplink_high, \
+	/obj/item/dice/d20/fate, /obj/item/wisp_lantern))
 
 /obj/machinery/anomalous_crystal/refresher/ActivationReaction(mob/user, method)
 	if(..())

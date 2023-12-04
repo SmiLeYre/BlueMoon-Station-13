@@ -1,3 +1,14 @@
+/// The default command report announcement sound.
+#define DEFAULT_ANNOUNCEMENT_SOUND "default_announcement"
+
+/// Preset central command names to chose from for centcom reports.
+#define CENTCOM_PRESET "Центральное Командование"
+#define SYNDICATE_PRESET "Триглав"
+#define WIZARD_PRESET "Космическая Федерация Магов"
+#define CUSTOM_PRESET "Введите Текст"
+
+// ^ ^ ^ BlueMoon edit
+
 /client/proc/cmd_admin_drop_everything(mob/M in GLOB.mob_list)
 	set category = null
 	set name = "Drop Everything"
@@ -303,7 +314,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	if(G_found.mind && !G_found.mind.active)	//mind isn't currently in use by someone/something
 		//Check if they were an alien
 		if(G_found.mind.assigned_role == ROLE_ALIEN)
-			if(alert("This character appears to have been an alien. Would you like to respawn them as such?",,"Yes","No")=="Yes")
+			if(alert("This character appears to have been an alien. Would you like to respawn them as such?",,"Да","Нет")=="Yes")
 				var/turf/T
 				if(GLOB.xeno_spawn.len)
 					T = pick(GLOB.xeno_spawn)
@@ -338,7 +349,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 
 		//check if they were a monkey
 		else if(findtext(G_found.real_name,"monkey"))
-			if(alert("This character appears to have been a monkey. Would you like to respawn them as such?",,"Yes","No")=="Yes")
+			if(alert("This character appears to have been a monkey. Would you like to respawn them as such?",,"Да","Нет")=="Yes")
 				var/mob/living/carbon/monkey/new_monkey = new
 				SSjob.SendToLateJoin(new_monkey)
 				G_found.mind.transfer_to(new_monkey)	//be careful when doing stuff like this! I've already checked the mind isn't in use
@@ -406,7 +417,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 			new_character.forceMove(pick(GLOB.wizardstart))
 			var/datum/antagonist/wizard/A = new_character.mind.has_antag_datum(/datum/antagonist/wizard,TRUE)
 			A.equip_wizard()
-		if(ROLE_SYNDICATE)
+		if(ROLE_INTEQ)
 			new_character.forceMove(pick(GLOB.nukeop_start))
 			var/datum/antagonist/nukeop/N = new_character.mind.has_antag_datum(/datum/antagonist/nukeop,TRUE)
 			N.equip_op()
@@ -501,32 +512,137 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	if(!check_rights(R_ADMIN))
 		return
 
-	var/input = input(usr, "Enter a Command Report. Ensure it makes sense IC.", "What?", "") as message|null
-	if(!input)
+	SSblackbox.record_feedback("tally", "admin_verb", 1, "Create Command Report") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	//BlueMoon edit START
+	var/datum/command_report_menu/tgui = new(usr)
+	tgui.ui_interact(usr)
+	//BlueMoon edit END
+
+//BlueMoon edit START
+
+/datum/command_report_menu
+	/// The mob using the UI.
+	var/mob/ui_user
+	/// The name of central command that will accompany our report
+	var/command_name = CENTCOM_PRESET
+	/// Whether we are using a custom name instead of a preset.
+	var/custom_name
+	/// The actual contents of the report we're going to send.
+	var/command_report_content
+	/// Whether the report's contents are announced.
+	var/announce_contents = TRUE
+	/// The sound that's going to accompany our message.
+	var/played_sound = DEFAULT_ANNOUNCEMENT_SOUND
+	/// Custom Sound
+	var/custom_sound
+	/// A static list of preset names that can be chosen.
+	var/list/preset_names = list(CENTCOM_PRESET, SYNDICATE_PRESET, WIZARD_PRESET, CUSTOM_PRESET)
+
+/datum/command_report_menu/New(mob/user)
+	ui_user = user
+	if(command_name() != CENTCOM_PRESET)
+		command_name = command_name()
+		preset_names.Insert(1, command_name())
+
+/datum/command_report_menu/ui_state(mob/user)
+	return GLOB.admin_state
+
+/datum/command_report_menu/ui_close()
+	qdel(src)
+
+/datum/command_report_menu/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "CommandReport")
+		ui.open()
+
+/datum/command_report_menu/ui_data(mob/user)
+	var/list/data = list()
+	data["command_name"] = command_name
+	data["custom_name"] = custom_name
+	data["command_report_content"] = command_report_content
+	data["announce_contents"] = announce_contents
+	data["played_sound"] = played_sound
+
+	return data
+
+/datum/command_report_menu/ui_static_data(mob/user)
+	var/list/data = list()
+	data["command_name_presets"] = preset_names
+	data["announcer_sounds"] = list(DEFAULT_ANNOUNCEMENT_SOUND) + GLOB.announcer_keys
+
+	return data
+
+/datum/command_report_menu/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(.)
 		return
 
-	var/confirm = alert(src, "Do you want to announce the contents of the report to the crew?", "Announce", "Yes", "No", "Cancel")
-	var/announce_command_report = TRUE
-	switch(confirm)
-		if("Yes")
-			priority_announce(input, null, SSstation.announcer.get_rand_report_sound())
-			announce_command_report = FALSE
-		if("Cancel")
-			return
+	switch(action)
+		if("update_command_name")
+			if(params["updated_name"] == CUSTOM_PRESET)
+				custom_name = TRUE
+			else if (params["updated_name"] in preset_names)
+				custom_name = FALSE
 
-	print_command_report(input, "[announce_command_report ? "Classified " : ""][command_name()] Update", announce_command_report)
+			command_name = params["updated_name"]
+		if("set_report_sound")
+			played_sound = params["picked_sound"]
+		if("toggle_announce")
+			announce_contents = !announce_contents
+		if("submit_report")
+			if(!command_name)
+				to_chat(ui_user, span_danger("You can't send a report with no command name."))
+				return
+			if(!params["report"])
+				to_chat(ui_user, span_danger("You can't send a report with no contents."))
+				return
+			command_report_content = params["report"]
+			send_announcement()
 
-	log_admin("[key_name(src)] has created a command report: [input]")
-	message_admins("[key_name_admin(src)] has created a command report")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Create Command Report") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+			// Save this message to be shown on the TGUI command messages panel (centcom_communications.dm)
+			var/list/message_log = list()
+			message_log["message"] = command_report_content
+			message_log["sender_name"] = command_name
+			message_log["time_sent"] = world.time
+			message_log["handled"] = TRUE
+			LAZYADD(GLOB.centcom_communications_messages, list(message_log))
 
-	// Save this message to be shown on the TGUI command messages panel (centcom_communications.dm)
-	var/list/message_log = list()
-	message_log["message"] = input
-	message_log["sender_name"] = command_name()
-	message_log["time_sent"] = world.time
-	message_log["handled"] = TRUE
-	LAZYADD(GLOB.centcom_communications_messages, list(message_log))
+	return TRUE
+
+/*
+ * The actual proc that sends the priority announcement and reports
+ *
+ * Uses the variables set by the user on our datum as the arguments for the report.
+ */
+/datum/command_report_menu/proc/send_announcement()
+	/// Our current command name to swap back to after sending the report.
+	var/original_command_name = command_name()
+	change_command_name(command_name)
+
+	/// The sound we're going to play on report.
+	var/report_sound = played_sound
+	if(played_sound == DEFAULT_ANNOUNCEMENT_SOUND)
+		report_sound = SSstation.announcer.get_rand_report_sound()
+
+	if(announce_contents)
+		priority_announce(command_report_content, null, report_sound, has_important_message = TRUE)
+	print_command_report(command_report_content, "[announce_contents ? "" : "Секретно:"] [command_name]", !announce_contents)
+
+	change_command_name(original_command_name)
+
+	log_admin("[key_name(ui_user)] has created a command report: \"[command_report_content]\", sent from \"[command_name]\" with the sound \"[played_sound]\".")
+	message_admins("[key_name_admin(ui_user)] has created a command report, sent from \"[command_name]\" with the sound \"[played_sound]\"")
+
+
+#undef DEFAULT_ANNOUNCEMENT_SOUND
+
+#undef CENTCOM_PRESET
+#undef SYNDICATE_PRESET
+#undef WIZARD_PRESET
+#undef CUSTOM_PRESET
+
+//BlueMoon edit END
 
 /client/proc/cmd_admin_make_priority_announcement()
 	set category = "Admin.Events"
@@ -842,13 +958,38 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	if(!check_rights(R_ADMIN))
 		return
 
-	var/level = input("Select security level to change to","Set Security Level") as null|anything in list("green","blue","amber","red","delta")
+	var/level = input("Select security level to change to","Set Security Level") as null|anything in list("green","blue","orange","violet","amber","red","lambda","epsilon","delta")
 	if(level)
 		set_security_level(level)
 
 		log_admin("[key_name(usr)] changed the security level to [level]")
 		message_admins("[key_name_admin(usr)] changed the security level to [level]")
 		SSblackbox.record_feedback("tally", "admin_verb", 1, "Set Security Level [capitalize(level)]") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
+/client/proc/admin_hostile_environment()
+	set category = "Admin.Events"
+	set name = "Hostile Environment"
+
+	if(!check_rights(R_ADMIN))
+		return
+
+	switch(tgui_alert(usr, "Select an Option", "Hostile Environment Manager", list("Enable", "Disable", "Clear All")))
+		if("Enable")
+			if (SSshuttle.hostileEnvironments["Admin"] == TRUE)
+				to_chat(usr, span_warning("Error, admin hostile environment already enabled."))
+			else
+				message_admins(span_adminnotice("[key_name_admin(usr)] Enabled an admin hostile environment"))
+				SSshuttle.registerHostileEnvironment("Admin")
+		if("Disable")
+			if (!SSshuttle.hostileEnvironments["Admin"])
+				to_chat(usr, span_warning("Error, no admin hostile environment found."))
+			else
+				message_admins(span_adminnotice("[key_name_admin(usr)] Disabled the admin hostile environment"))
+				SSshuttle.clearHostileEnvironment("Admin")
+		if("Clear All")
+			message_admins(span_adminnotice("[key_name_admin(usr)] Disabled all current hostile environment sources"))
+			SSshuttle.hostileEnvironments.Cut()
+			SSshuttle.checkHostileEnvironment()
 
 /client/proc/toggle_nuke(obj/machinery/nuclearbomb/N in GLOB.nuke_list)
 	set name = "Toggle Nuke"
@@ -929,7 +1070,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	id_select += "</select>"
 
 	var/dat = {"
-	<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>Create Outfit</title></head><body>
+	<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'><title>Create Outfit</title></head><body>
 	<form name="outfit" action="byond://?src=[REF(src)];[HrefToken()]" method="get">
 	<input type="hidden" name="src" value="[REF(src)]">
 	[HrefTokenFormField()]
@@ -1292,6 +1433,8 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	var/list/punishment_list = list(
 		ADMIN_PUNISHMENT_PIE,
 		ADMIN_PUNISHMENT_CUSTOM_PIE,
+		ADMIN_PUNISHMENT_AIKO,
+		ADMIN_PUNISHMENT_CUM_JAR,
 		ADMIN_PUNISHMENT_FIREBALL,
 		ADMIN_PUNISHMENT_LIGHTNING,
 		ADMIN_PUNISHMENT_BRAINDAMAGE,
@@ -1395,6 +1538,41 @@ Traitors and the like can also be revived with the previous role mostly intact.
 					if(amount)
 						A.reagents.add_reagent(chosen_id, amount)
 						A.splat(target)
+		if(ADMIN_PUNISHMENT_AIKO)
+			if(!ishuman(target))
+				alert(usr, "ERROR: This doesn't look like a human now, does it?")
+				return
+			var/mob/living/carbon/human/human_target = target
+			switch(input(usr, "What to do now<br>The GLOBAL currently contains [GLOB.dna_for_copying ? GLOB.dna_for_copying.real_name : "Nothing"]", "Setting appearance") as null|anything in list("Save", "Load"))
+				if("Save")
+					if(!GLOB.dna_for_copying || !istype(GLOB.dna_for_copying, /datum/dna))
+						GLOB.dna_for_copying = new
+					human_target.dna.copy_dna(GLOB.dna_for_copying)
+					message_admins("[key_name(human_target)]'s dna has been saved into the punishment buffer.")
+				if("Load")
+					if(!GLOB.dna_for_copying || !istype(GLOB.dna_for_copying, /datum/dna))
+						alert(usr, "ERROR: There's nothing to copy!")
+						return
+					var/old_name = human_target.real_name
+					GLOB.dna_for_copying.transfer_identity(human_target, TRUE)
+					human_target.real_name = human_target.dna.real_name
+					human_target.updateappearance(mutcolor_update=1)
+					human_target.domutcheck()
+					human_target.visible_message("[old_name] transforms into [human_target.real_name]")
+					message_admins("[key_name(human_target)]'s dna has been loaded from the punishment buffer.")
+
+		if(ADMIN_PUNISHMENT_CUM_JAR)
+			var/ass = tgui_alert(usr, "Ты уверен?","SECURE. CONTAIN. PROTECT.", list("Да.","Нет."))
+			if(ass=="Нет.")
+				return
+
+			log_admin("[usr.ckey] enforced containment protocols after [target.ckey].")
+			to_chat(usr, span_notice("Preparing containment protocols..."))
+			sleep(10 SECONDS)
+			to_chat(usr, span_alert("Enforcing containment protocols..."))
+			new /obj/item/cum_jar(get_turf(target))
+			to_chat(usr, span_alert("Containment protocols enforced."))
+			return
 		if(ADMIN_PUNISHMENT_CRACK)
 			if(!iscarbon(target))
 				to_chat(usr,"<span class='warning'>This must be used on a carbon mob.</span>", confidential = TRUE)
@@ -1726,10 +1904,10 @@ Traitors and the like can also be revived with the previous role mostly intact.
 					if(!source)
 						return
 			REMOVE_TRAIT(D,chosen_trait,source)
-/*
+
 /client/proc/spawn_floor_cluwne()
-	set category = "Admin.Fun"
 	set name = "Unleash Floor Cluwne"
+	set category = "Admin.Fun"
 	set desc = "Pick a specific target or just let it select randomly and spawn the floor cluwne mob on the station. Be warned: spawning more than one may cause issues!"
 	var/target
 
@@ -1738,12 +1916,17 @@ Traitors and the like can also be revived with the previous role mostly intact.
 
 	var/turf/T = get_turf(usr)
 	target = input("Any specific target in mind? Please note only live, non cluwned, human targets are valid.", "Target", target) as null|anything in GLOB.player_list
-	if(target && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		var/mob/living/simple_animal/hostile/floor_cluwne/FC = new /mob/living/simple_animal/hostile/floor_cluwne(T)
+
+	if(target)
+		log_admin("[key_name(usr)] spawned floor cluwne, heading for [target].")
+		message_admins("[key_name(usr)] spawned floor cluwne, heading for [target].")
+	else
+		log_admin("[key_name(usr)] spawned floor cluwne, roaming freely.")
+		message_admins("[key_name(usr)] spawned floor cluwne, roaming freely.")
+
+	var/mob/living/carbon/human/H = target
+	if(istype(H))
+		var/mob/living/simple_animal/hostile/floor_cluwne/FC = new(T)
 		FC.Acquire_Victim(H)
 	else
 		new /mob/living/simple_animal/hostile/floor_cluwne(T)
-	log_admin("[key_name(usr)] spawned floor cluwne.")
-	message_admins("[key_name(usr)] spawned floor cluwne.")
-*/

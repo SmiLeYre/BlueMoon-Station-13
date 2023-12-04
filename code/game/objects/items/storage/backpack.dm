@@ -96,7 +96,7 @@
 	STR.max_combined_w_class = 60
 
 /obj/item/storage/backpack/santabag/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] places [src] over [user.p_their()] head and pulls it tight! It looks like [user.p_they()] [user.p_are()]n't in the Christmas spirit...</span>")
+	user.visible_message("<span class='suicide'>[user] places [src] over [user.ru_ego()] head and pulls it tight! It looks like [user.ru_who()] [user.p_are()]n't in the Christmas spirit...</span>")
 	return (OXYLOSS)
 
 /obj/item/storage/backpack/cultpack
@@ -279,7 +279,7 @@
 	name = "smuggler's satchel"
 	desc = "A very slim satchel that can easily fit into tight spaces."
 	icon_state = "satchel-flat"
-	w_class = WEIGHT_CLASS_BULKY //Can fit in backpacks itself.
+	w_class = WEIGHT_CLASS_NORMAL //Can fit in backpacks itself.
 	level = 1
 	component_type = /datum/component/storage/concrete/secret_satchel
 
@@ -337,7 +337,7 @@
 	desc = "A large duffel bag for holding extra things."
 	icon_state = "duffel"
 	item_state = "duffel"
-	slowdown = 1
+	slowdown = 0.5
 
 /obj/item/storage/backpack/duffelbag/ComponentInitialize()
 	. = ..()
@@ -417,6 +417,7 @@
 		/obj/item/implanter,
 		/obj/item/pinpointer/crew,
 		/obj/item/reagent_containers/chem_pack,
+		/obj/item/razor,
 		/obj/item/stack/sticky_tape
 		))
 	STR.can_hold = can_hold
@@ -502,7 +503,7 @@
 		new /obj/item/reagent_containers/food/snacks/pie/cream(src)
 
 /obj/item/storage/backpack/duffelbag/syndie
-	name = "suspicious looking duffel bag"
+	name = "Suspicious Looking Duffel Bag"
 	desc = "A large duffel bag for holding extra tactical supplies."
 	icon_state = "duffel-syndie"
 	item_state = "duffel-syndieammo"
@@ -677,7 +678,7 @@
 	new /obj/item/clothing/under/syndicate/soviet(src)
 	new /obj/item/watertank/op(src)
 	new /obj/item/clothing/suit/space/hardsuit/syndi/elite(src)
-	new /obj/item/gun/ballistic/automatic/pistol/APS(src)
+	new /obj/item/gun/ballistic/automatic/pistol/aps(src)
 	new /obj/item/ammo_box/magazine/pistolm9mm(src)
 	new /obj/item/ammo_box/magazine/pistolm9mm(src)
 	new /obj/item/reagent_containers/food/drinks/bottle/vodka/badminka(src)
@@ -723,3 +724,24 @@
 	desc = "Granted to the henchmen who deserve it. This probably doesn't include you."
 	icon_state = "henchmen"
 	item_state = "henchmen"
+
+/obj/item/storage/backpack/duffelbag/cursed
+	name = "Cursed Dufflebag"
+	icon_state = "duffel-curse"
+	item_state = "duffel"
+	desc = "A duffelbag painted black with a red stripe. It looks more heavier than normal bags."
+	force = 24
+	throwforce = 38
+
+/obj/item/storage/backpack/duffelbag/cursed/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.silent = TRUE
+
+/obj/item/storage/backpack/duffelbag/cursed/PopulateContents()
+	new /obj/item/screwdriver/ashwalker(src)
+	new /obj/item/wrench/ashwalker(src)
+	new /obj/item/weldingtool/experimental/ashwalker(src)
+	new /obj/item/crowbar/ashwalker(src)
+	new /obj/item/wirecutters/ashwalker(src, "red")
+	new /obj/item/clothing/gloves/tackler/combat/insulated/infiltrator(src)

@@ -73,7 +73,7 @@
 	return {"<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
-		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+		<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
 		<meta http-equiv='X-UA-Compatible' content='IE=edge'>
 		[head_content]
 	</head>
@@ -413,7 +413,7 @@
 			if ("color")
 				settings["mainsettings"][setting]["value"] = input(user, "Enter new value for [settings["mainsettings"][setting]["desc"]]", "Enter new value for [settings["mainsettings"][setting]["desc"]]", settings["mainsettings"][setting]["value"]) as color
 			if ("boolean")
-				settings["mainsettings"][setting]["value"] = input(user, "[settings["mainsettings"][setting]["desc"]]?") in list("Yes","No")
+				settings["mainsettings"][setting]["value"] = input(user, "[settings["mainsettings"][setting]["desc"]]?") in list("Да","Нет")
 			if ("ckey")
 				settings["mainsettings"][setting]["value"] = input(user, "[settings["mainsettings"][setting]["desc"]]?") in list("none") + GLOB.directory
 		if (settings["mainsettings"][setting]["callback"])

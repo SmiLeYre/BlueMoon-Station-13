@@ -35,8 +35,6 @@
 /obj/machinery/door/firedoor/Initialize(mapload)
 	. = ..()
 	CalculateAffectingAreas()
-	UpdateAdjacencyFlags()
-
 
 /obj/machinery/door/firedoor/examine(mob/user)
 	. = ..()
@@ -152,12 +150,12 @@
 				return
 			C.play_tool_sound(src)
 			user.visible_message("<span class='notice'>[user] starts undoing [src]'s bolts...</span>", \
-								 "<span class='notice'>You start unfastening [src]'s floor bolts...</span>")
+								"<span class='notice'>You start unfastening [src]'s floor bolts...</span>")
 			if(!C.use_tool(src, user, 50))
 				return
 			playsound(get_turf(src), 'sound/items/deconstruct.ogg', 50, 1)
 			user.visible_message("<span class='notice'>[user] unfastens [src]'s bolts.</span>", \
-								 "<span class='notice'>You undo [src]'s floor bolts.</span>")
+								"<span class='notice'>You undo [src]'s floor bolts.</span>")
 			deconstruct(TRUE)
 			return
 		if(C.tool_behaviour == TOOL_SCREWDRIVER)
@@ -312,15 +310,18 @@
 
 /obj/machinery/door/firedoor/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
-		var/obj/structure/firelock_frame/F = new assemblytype(get_turf(src))
-		if(disassembled)
-			F.constructionStep = CONSTRUCTION_PANEL_OPEN
+		var/turf/targetloc = get_turf(src)
+		if(disassembled || prob(40))
+			var/obj/structure/firelock_frame/unbuilt_lock = new assemblytype(targetloc)
+			if(disassembled)
+				unbuilt_lock.constructionStep = CONSTRUCTION_PANEL_OPEN
+			else
+				unbuilt_lock.constructionStep = CONSTRUCTION_WIRES_EXPOSED
+				unbuilt_lock.obj_integrity = unbuilt_lock.max_integrity * 0.5
+			unbuilt_lock.update_appearance()
 		else
-			F.constructionStep = CONSTRUCTION_WIRES_EXPOSED
-			F.obj_integrity = F.max_integrity * 0.5
-		F.update_icon()
+			new /obj/item/electronics/firelock (targetloc)
 	qdel(src)
-
 
 /obj/machinery/door/firedoor/proc/latetoggle()
 	if(operating || stat & NOPOWER || !nextstate)
@@ -379,7 +380,7 @@
 	var/status1 = check_door_side(T)
 	var/status2 = check_door_side(T2)
 	if((status1 == 1 && status2 == -1) || (status1 == -1 && status2 == 1))
-		to_chat(user, "<span class='warning'>Access denied. Try closing another firedoor to minimize decompression, or using a crowbar.</span>")
+		to_chat(user, "<span class='warning'>Доступ запрещён. Try closing another firedoor to minimize decompression, or using a crowbar.</span>")
 		return FALSE
 	return TRUE
 
@@ -655,3 +656,69 @@
 #undef CONSTRUCTION_WIRES_EXPOSED
 #undef CONSTRUCTION_GUTTED
 #undef CONSTRUCTION_NOCIRCUIT
+
+/obj/machinery/door/firedoor
+	name = "Emergency Shutter"
+	desc = "Emergency air-tight shutter, capable of sealing off breached areas. This one has a glass panel. It has a mechanism to open it with crowbar."
+	icon = 'modular_bluemoon/SmiLeY/aesthetics/firedoor/icons/firedoor_glass.dmi'
+	var/door_open_sound = 'modular_bluemoon/SmiLeY/aesthetics/firedoor/sound/firedoor_open.ogg'
+	var/door_close_sound = 'modular_bluemoon/SmiLeY/aesthetics/firedoor/sound/firedoor_open.ogg'
+
+/obj/machinery/door/firedoor/open()
+	playsound(loc, door_open_sound, 100, TRUE)
+	return ..()
+
+/obj/machinery/door/firedoor/close()
+	playsound(loc, door_close_sound, 100, TRUE)
+	return ..()
+
+/obj/machinery/door/firedoor/heavy
+	name = "Heavy Emergency Shutter"
+	desc = "Emergency air-tight shutter, capable of sealing off breached areas. It has a mechanism to open it with just your hands."
+	icon = 'modular_bluemoon/SmiLeY/aesthetics/firedoor/icons/firedoor.dmi'
+
+/obj/effect/spawner/structure/window/reinforced/no_firelock
+	spawn_list = list(/obj/structure/grille, /obj/structure/window/reinforced/fulltile)
+
+/obj/machinery/door/firedoor/heavy/closed
+	icon_state = "door_closed"
+	density = TRUE
+
+/obj/machinery/door/firedoor/solid
+	name = "Solid Emergency Shutter"
+	desc = "Emergency air-tight shutter, capable of sealing off breached areas. It has a mechanism to open it with just your hands."
+	icon = 'modular_bluemoon/SmiLeY/aesthetics/firedoor/icons/firedoor.dmi'
+	glass = FALSE
+
+/obj/machinery/door/firedoor/solid/closed
+	icon_state = "door_closed"
+	density = TRUE
+	opacity = TRUE
+
+/obj/machinery/door/firedoor/AltClick(mob/user)
+	. = ..()
+	if(!user.canUseTopic(src, be_close = TRUE))
+		return
+	try_manual_override(user)
+
+/obj/machinery/door/firedoor/examine(mob/user)
+	. = ..()
+	. += span_notice("Alt-click the door to use the manual override.")
+
+/obj/machinery/door/proc/try_manual_override(mob/user)
+	if(density && !welded && !operating)
+		balloon_alert(user, "opening...")
+		if(do_after(user, 10 SECONDS, target = src))
+			try_to_crowbar(null, user)
+			return TRUE
+	return FALSE
+
+/obj/machinery/door/firedoor/try_to_crowbar(obj/item/used_object, mob/user)
+	if(welded || operating)
+		balloon_alert(user, "opening failed!")
+		return
+
+	if(density)
+		open()
+	else
+		close()

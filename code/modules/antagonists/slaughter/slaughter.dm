@@ -30,15 +30,15 @@
 	faction = list("slaughter")
 	attack_verb_continuous = "wildly tears into"
 	attack_verb_simple = "wildly tear into"
-	maxHealth = 200
-	health = 200
+	maxHealth = 333
+	health = 333
 	healable = 0
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
 	obj_damage = 50
 	melee_damage_lower = 30 // buffed back to 30, the wounds don't do much
 	melee_damage_upper = 30
-	wound_bonus = 0
-	bare_wound_bonus = 0
+	wound_bonus = 10
+	bare_wound_bonus = 15
 	sharpness = SHARP_EDGED
 	see_in_dark = 8
 	blood_volume = 0 //No bleeding on getting shot, for skeddadles
@@ -187,7 +187,7 @@
 /obj/item/organ/heart/demon/attack(mob/M, mob/living/carbon/user, obj/target)
 	if(M != user)
 		return ..()
-	user.visible_message("<span class='warning'>[user] raises [src] to [user.p_their()] mouth and tears into it with [user.p_their()] teeth!</span>", \
+	user.visible_message("<span class='warning'>[user] raises [src] to [user.ru_ego()] mouth and tears into it with [user.ru_ego()] teeth!</span>", \
 						 "<span class='danger'>An unnatural hunger consumes you. You raise [src] your mouth and devour it!</span>")
 	playsound(user, 'sound/magic/demon_consume.ogg', 50, 1)
 	for(var/obj/effect/proc_holder/spell/knownspell in user.mind.spell_list)

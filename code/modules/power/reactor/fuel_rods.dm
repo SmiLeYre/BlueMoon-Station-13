@@ -57,6 +57,7 @@
 					R.desc = "NanoTrasen would like to remind you that it is not liable for any permanent radioactive damage done to its employees."
 					R.icon = 'modular_splurt/icons/obj/plushes.dmi' //They forgot ze legionary plushe
 					R.icon_state = "romanian"
+					R.item_state = "romanian"
 					R.fuel_power = 0.25 //Funny easter egg, slightly more powerful too.
 			if("depleted")
 				if(fuel_power < 10)

@@ -114,7 +114,7 @@ GLOBAL_LIST_INIT(diamond_recipes, list ( \
 	new/datum/stack_recipe("diamond door", /obj/structure/mineral_door/transparent/diamond, 10, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("diamond tile", /obj/item/stack/tile/mineral/diamond, 1, 4, 20),  \
 	new/datum/stack_recipe("diamond ingot", /obj/item/ingot/diamond, 6, time = 100), \
-  ))
+    ))
 
 /obj/item/stack/sheet/mineral/diamond/get_main_recipes()
 	. = ..()
@@ -146,6 +146,9 @@ GLOBAL_LIST_INIT(uranium_recipes, list ( \
 /obj/item/stack/sheet/mineral/uranium/get_main_recipes()
 	. = ..()
 	. += GLOB.uranium_recipes
+
+/obj/item/stack/sheet/mineral/uranium/five
+	amount = 5
 
 /*
  * Plasma
@@ -183,7 +186,7 @@ GLOBAL_LIST_INIT(plasma_recipes, list ( \
 	if(W.get_temperature() > 300)//If the temperature of the object is over 300, then ignite
 		var/turf/T = get_turf(src)
 		message_admins("Plasma sheets ignited by [ADMIN_LOOKUPFLW(user)] in [ADMIN_VERBOSEJMP(T)]")
-		log_game("Plasma sheets ignited by [key_name(user)] in [AREACOORD(T)]")
+		log_admin("Plasma sheets ignited by [key_name(user)] in [AREACOORD(T)]")
 		fire_act(W.get_temperature())
 	else
 		return ..()
@@ -262,6 +265,9 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
 	merge_type = /obj/item/stack/sheet/mineral/bananium
 	material_type = /datum/material/bananium
 	walltype = /turf/closed/wall/mineral/bananium
+
+/obj/item/stack/sheet/mineral/bananium/fifty
+	amount = 50
 
 GLOBAL_LIST_INIT(bananium_recipes, list ( \
 	new/datum/stack_recipe("bananium tile", /obj/item/stack/tile/mineral/bananium, 1, 4, 20), \
@@ -402,6 +408,7 @@ GLOBAL_LIST_INIT(adamantine_recipes, list(
 
 GLOBAL_LIST_INIT(snow_recipes, list ( \
 	new/datum/stack_recipe("Snow Wall", /turf/closed/wall/mineral/snow, 5, one_per_turf = 1, on_floor = 1), \
+	new/datum/stack_recipe("snow barricade", /obj/structure/deployable_barricade/snow, 2, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("Snowman", /obj/structure/statue/snow/snowman, 5, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("Snowball", /obj/item/toy/snowball, 1), \
 	))
@@ -422,6 +429,9 @@ GLOBAL_LIST_INIT(snow_recipes, list ( \
 	sheettype = "abductor"
 	merge_type = /obj/item/stack/sheet/mineral/abductor
 	walltype = /turf/closed/wall/mineral/abductor
+
+/obj/item/stack/sheet/mineral/abductor/fifty
+	amount = 50
 
 GLOBAL_LIST_INIT(abductor_recipes, list ( \
 	new/datum/stack_recipe("alien bed", /obj/structure/bed/abductor, 2, one_per_turf = 1, on_floor = 1), \

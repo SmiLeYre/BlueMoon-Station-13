@@ -51,7 +51,7 @@
 
 /mob/living/simple_animal/bot/mulebot/Initialize(mapload)
 	. = ..()
-	wires = new /datum/wires/mulebot(src)
+	set_wires(new /datum/wires/mulebot(src))
 	var/datum/job/cargo_tech/J = new/datum/job/cargo_tech
 	access_card.access = J.get_access()
 	prev_access = access_card.access
@@ -122,6 +122,7 @@
 		locked = !locked
 		if(user)
 			to_chat(user, "<span class='notice'>You [locked ? "lock" : "unlock"] [src]'s controls!</span>")
+			log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	flick("mulebot-emagged", src)
 	playsound(src, "sparks", 100, FALSE)
 

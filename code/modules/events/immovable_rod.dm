@@ -10,8 +10,8 @@ In my current plan for it, 'solid' will be defined as anything with density == 1
 /datum/round_event_control/immovable_rod
 	name = "Immovable Rod"
 	typepath = /datum/round_event/immovable_rod
-	min_players = 15
-	max_occurrences = 5
+	min_players = 50
+	max_occurrences = 1
 	var/atom/special_target
 	category = EVENT_CATEGORY_SPACE
 	description = "The station passes through an immovable rod."
@@ -28,7 +28,7 @@ In my current plan for it, 'solid' will be defined as anything with density == 1
 	announce_when = 5
 
 /datum/round_event/immovable_rod/announce(fake)
-	priority_announce("What the fuck was that?!", "General Alert", has_important_message = TRUE)
+	priority_announce("Что это за хуета?!", "Приоритетная Тревога!", 'sound/announcer/classic/irod.ogg')
 
 /datum/round_event/immovable_rod/start()
 	var/datum/round_event_control/immovable_rod/C = control
@@ -57,6 +57,8 @@ In my current plan for it, 'solid' will be defined as anything with density == 1
 	var/destination
 	var/notify = TRUE
 	var/atom/special_target
+	/// The turf we're looking to coast to.
+	var/turf/destination_turf
 
 /obj/effect/immovablerod/New(atom/start, atom/end, aimed_at)
 	..()
@@ -166,3 +168,13 @@ In my current plan for it, 'solid' will be defined as anything with density == 1
 			new /obj/structure/festivus/anchored(drop_location())
 			new /obj/effect/anomaly/flux(drop_location())
 			qdel(src)
+
+/**
+ * Rod will walk towards edge turf in the specified direction.
+ *
+ * Arguments:
+ * * direction - The direction to walk the rod towards: NORTH, SOUTH, EAST, WEST.
+ */
+/obj/effect/immovablerod/proc/walk_in_direction(direction)
+	destination_turf = get_edge_target_turf(src, direction)
+	SSmove_manager.move_towards(src, destination_turf)

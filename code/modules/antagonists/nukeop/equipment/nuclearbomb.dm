@@ -30,6 +30,7 @@
 	var/interior = ""
 	var/proper_bomb = TRUE //Please
 	var/obj/effect/countdown/nuclearbomb/countdown
+	COOLDOWN_DECLARE(cooldown)
 
 /obj/machinery/nuclearbomb/Initialize(mapload)
 	. = ..()
@@ -73,7 +74,7 @@
 		desc = "For when the whole sector deserves to know a gender. But of whom? Don't ask."
 
 /obj/machinery/nuclearbomb/syndicate
-	//ui_style = "syndicate" // actually the nuke op bomb is a stole nt bomb
+	ui_style = "syndicate" // actually the nuke op bomb is a stole nt bomb
 
 /obj/machinery/nuclearbomb/syndicate/Initialize(mapload)
 	. = ..()
@@ -151,7 +152,7 @@
 				if(!I.tool_start_check(user, amount=20))
 					return
 
-				to_chat(user, "<span class='notice'>You begin repairing [src]'s inner metal plate...</span>")
+				to_chat(user, "<span class='notice'>Вы начинаете чинить [src]'s inner metal plate...</span>")
 				if(I.use_tool(src, user, 100, amount=20))
 					to_chat(user, "<span class='notice'>You repair [src]'s inner metal plate. The radiation is contained.</span>")
 					deconstruction_state = NUKESTATE_PANEL_REMOVED
@@ -388,10 +389,16 @@
 				playsound(src, 'sound/machines/nuke/angry_beep.ogg', 50, FALSE)
 		if("arm")
 			if(auth && yes_code && !safety && !exploded)
-				playsound(src, 'sound/machines/nuke/confirm_beep.ogg', 50, FALSE)
-				set_active()
-				update_ui_mode()
-				. = TRUE
+				if(COOLDOWN_FINISHED(src, cooldown))
+					COOLDOWN_START(src, cooldown, 10 SECONDS)
+					playsound(src, 'sound/machines/nuke/confirm_beep.ogg', 50, FALSE)
+					set_active()
+					update_ui_mode()
+					. = TRUE
+				else
+					playsound(src, 'sound/machines/nuke/angry_beep.ogg', 50, FALSE)
+					visible_message("<span class='danger'>[src] ещё перезаряжается!</span>", null, null, COMBAT_MESSAGE_RANGE)
+					return
 			else
 				playsound(src, 'sound/machines/nuke/angry_beep.ogg', 50, FALSE)
 		if("anchor")
@@ -548,7 +555,7 @@
 		disarm()
 		return
 	if(is_station_level(bomb_location.z))
-		var/datum/round_event_control/E = locate(/datum/round_event_control/vent_clog/beer) in SSevents.control
+		var/datum/round_event_control/E = locate(/datum/round_event_control/scrubber_overflow/beer) in SSevents.control
 		if(E)
 			E.runEvent()
 		addtimer(CALLBACK(src, .proc/really_actually_explode), 110)
@@ -695,9 +702,9 @@ This is here to make the tiles around the station mininuke change when it's arme
 /*
  * You can't accidentally eat the nuke disk, bro
  */
- /*
+/*
 /obj/item/disk/nuclear/on_accidental_consumption(mob/living/carbon/M, mob/living/carbon/user, obj/item/source_item, discover_after = TRUE)
-	M.visible_message("<span class='warning'>[M] looks like [M.p_theyve()] just bitten into something important.</span>", \
+	M.visible_message("<span class='warning'>[M] looks like [M.ru_who()] just bitten into something important.</span>", \
 						"<span class='warning'>Wait, is this the nuke disk?</span>")
 
 	return discover_after

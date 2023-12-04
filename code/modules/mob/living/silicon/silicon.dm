@@ -167,7 +167,7 @@
 
 /mob/living/silicon/can_inject(mob/user, error_msg, target_zone, penetrate_thick = FALSE, bypass_immunity = FALSE)
 	if(error_msg)
-		to_chat(user, "<span class='alert'>[p_their(TRUE)] outer shell is too tough.</span>")
+		to_chat(user, "<span class='alert'>[ru_ego(TRUE)] outer shell is too tough.</span>")
 	return FALSE
 
 /mob/living/silicon/IsAdvancedToolUser()
@@ -227,7 +227,7 @@
 /mob/living/silicon/proc/statelaws(force = 0)
 
 	//"radiomod" is inserted before a hardcoded message to change if and how it is handled by an internal radio.
-	say("[radiomod] Current Active Laws:")
+	say("[radiomod] Текущие законы:")
 	//laws_sanity_check()
 	//laws.show_laws(world)
 	var/number = 1
@@ -410,7 +410,7 @@
 		return
 	client.crew_manifest_delay = world.time + (1 SECONDS)
 
-	var/dat = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>Crew Roster</title></head><body><b>Crew Roster:</b><br><br>"
+	var/dat = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'><title>Crew Roster</title></head><body><b>Crew Roster:</b><br><br>"
 
 	dat += GLOB.data_core.get_manifest()
 	dat += "</body></html>"

@@ -48,7 +48,7 @@
 	return ..()
 
 /datum/game_mode/overthrow/generate_report()
-	return "Some sleeping agents have managed to get aboard. Their objective is to stage a coup and take over the station stealthly."
+	return "На борт Космической Станции удалось проникнуть нескольким Спящим Агентам Профсоюза. Их цель - устроить переворот и незаметно захватить станцию."
 
 // Calculates points for each team and displays the winners.
 /datum/game_mode/overthrow/special_report() // so many for loops, I am deeply sorry

@@ -73,12 +73,13 @@
 	. = ..()
 	if(obj_flags & EMAGGED)
 		return
-	obj_flags |= EMAGGED
 	if(safety_mode)
 		safety_mode = FALSE
 		update_icon()
 	playsound(src, "sparks", 75, 1, -1)
-	to_chat(user, "<span class='notice'>You use the cryptographic sequencer on [src].</span>")
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
+	obj_flags |= EMAGGED
+	to_chat(user, "<span class='notice'>Вы отменяете протоколы безопасности [src].</span>")
 	return TRUE
 
 /obj/machinery/recycler/update_icon_state()
@@ -228,6 +229,6 @@
 
 /obj/item/paper/guides/recycler
 	name = "paper - 'garbage duty instructions'"
-	info = "_New Assignment_\n\n You have been assigned to collect garbage from trash bins, located around the station. The crewmembers will put their trash into it and you will collect the said trash.<br><br>There is a recycling machine near your closet, inside maintenance; use it to recycle the trash for a small chance to get useful minerals. Then deliver these minerals to cargo or engineering. You are our last hope for a clean station, do not screw this up!"
+	default_raw_text = "_New Assignment_\n\n You have been assigned to collect garbage from trash bins, located around the station. The crewmembers will put their trash into it and you will collect the said trash.<br><br>There is a recycling machine near your closet, inside maintenance; use it to recycle the trash for a small chance to get useful minerals. Then deliver these minerals to cargo or engineering. You are our last hope for a clean station, do not screw this up!"
 
 #undef SAFETY_COOLDOWN

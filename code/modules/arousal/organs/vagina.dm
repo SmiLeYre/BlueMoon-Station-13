@@ -1,5 +1,8 @@
 /obj/item/organ/genital/vagina
-	name = "vagina"
+	name = "вагина"
+	ru_name = "вагина" // BLUEMOON ADD
+	ru_name_v = "вагине" // BLUEMOON ADD
+	ru_name_capital = "Вагина" // BLUEMOON ADD
 	desc = "A female reproductive organ."
 	icon = 'icons/obj/genitals/vagina.dmi'
 	icon_state = ORGAN_SLOT_VAGINA
@@ -8,9 +11,9 @@
 	size = 1 //There is only 1 size right now
 	shape = DEF_VAGINA_SHAPE
 	genital_flags = CAN_MASTURBATE_WITH|CAN_CLIMAX_WITH|GENITAL_CAN_AROUSE|GENITAL_UNDIES_HIDDEN|CAN_CUM_INTO|HAS_EQUIPMENT
-	masturbation_verb = "finger"
-	arousal_verb = "You feel wetness on your crotch"
-	unarousal_verb = "You no longer feel wet"
+	masturbation_verb = "мастурбировать"
+	arousal_verb = "Вы чувствуете сильную влагу в вашей промежности"
+	unarousal_verb = "Возбуждение пропадает, влаги становится меньше"
 	fluid_transfer_factor = 0.1 //Yes, some amount is exposed to you, go get your AIDS
 	layer_index = VAGINA_LAYER_INDEX
 	var/cap_length = 8//D   E   P   T   H (cap = capacity)
@@ -29,29 +32,29 @@
 
 	switch(lowershape)
 		if("tentacle")
-			details = "Its opening is lined with several tentacles and "
+			details = "Отверстие закрыто половыми губами, оно покрыто несколькими щупальцами и они "
 		if("dentata")
-			details = "There's teeth inside it and it "
+			details = "Внутри и снаружи есть зубы, и они "
 		if("hairy")
-			details = "It has quite a bit of hair growing on it and "
+			details = "На ней довольно много волос и они "
 		if("human")
-			details = "It is taut with smooth skin, though without much hair and "
+			details = "Она подтянута, не имеет на своей поверхности сильно много волос, обладает особо гладкой и нежной кожей, и её губы "
 		if("gaping")
-			details = "It is gaping slightly open, though without much hair and "
+			details = "Она слегка приоткрыта, не имеет большой растительности и её половые губы "
 		if("spade")
-			details = "It is a plush canine spade, it "
+			details = "По форме она похожа на собачью лопатку и её половые губы "
 		if("furred")
-			details = "It has neatly groomed fur around the outer folds, it "
+			details = "Она имеет аккуратно ухоженный мех вокруг половых губок, которые "
 		if("cloaca")
-			details = "It it a tight, small horizontal vent and "
+			details = "Это узкое, небольшое горизонтальное отверстие и внешние губы "
 		else
-			details = "It has an exotic shape and "
+			details = "Она имеет экзотическую форму и её губы "
 	if(aroused_state)
-		details += "is slick with female arousal."
+		details += "пропитаны женскими секретами."
 	else
-		details += "seems to be dry."
+		details += "кажутся сухими."
 
-	desc = "You see a vagina. [details]"
+	desc = "Вы наблюдаете вагину. [details]"
 
 	if(owner)
 		if(owner.dna.species.use_skintones && owner.dna.features["genitals_use_skintone"])

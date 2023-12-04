@@ -169,8 +169,8 @@
 	if(borrowed_health)
 		var/ratio = (current_cycle > SYNTHTISSUE_DAMAGE_FLIP_CYCLES) ? 0 : (1 - (current_cycle / SYNTHTISSUE_DAMAGE_FLIP_CYCLES))
 		var/payback = 2 * C.metabolism_efficiency	//How much borrowed health we are paying back. Starts as cloneloss, slowly flips over to toxloss.
-		C.adjustToxLoss((1 - ratio) * payback * REAGENTS_EFFECT_MULTIPLIER, forced = TRUE, toxins_type = TOX_OMNI)
-		C.adjustCloneLoss(ratio * payback * REAGENTS_EFFECT_MULTIPLIER)
+		C.adjustToxLoss((1 - ratio) * payback * REM, forced = TRUE, toxins_type = TOX_OMNI)
+		C.adjustCloneLoss(ratio * payback * REM)
 		borrowed_health = max(borrowed_health - payback, 0)
 	..()
 

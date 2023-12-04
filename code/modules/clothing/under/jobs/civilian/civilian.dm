@@ -198,6 +198,9 @@
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	unique_reskin = list(
+		"Purple" = list("icon_state" = "janimaid_p")
+	)
 
 /obj/item/clothing/under/rank/civilian/janitor/maid/polychromic
 	icon_state = "polymaid"

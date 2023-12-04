@@ -34,6 +34,7 @@
 	show_name_in_check_antagonists = TRUE
 	ui_name = "AntagInfoBrainwashed"
 	suicide_cry = "FOR... SOMEONE!!"
+	soft_antag = TRUE //BLUEMOON ADD - дружелюбные, малозначимые гостроли не должны считаться за антагонистов (ломает динамик)
 
 /datum/antagonist/brainwashed/ui_static_data(mob/user)
 	. = ..()
@@ -58,9 +59,9 @@
 		var/objective = stripped_input(admin, "Add an objective, or leave empty to finish.", "Brainwashing", null, MAX_MESSAGE_LEN)
 		if(objective)
 			objectives += objective
-	while(tgui_alert(admin,"Add another objective?","More Brainwashing",list("Yes","No")) == "Yes")
+	while(tgui_alert(admin,"Add another objective?","More Brainwashing",list("Да","Нет")) == "Да")
 
-	if(tgui_alert(admin,"Confirm Brainwashing?","Are you sure?",list("Yes","No")) == "No")
+	if(tgui_alert(admin,"Confirm Brainwashing?","Are you sure?",list("Да","Нет")) == "Нет")
 		return
 
 	if(!LAZYLEN(objectives))

@@ -49,7 +49,9 @@
 				/obj/item/bedsheet/red = 8, /obj/item/bedsheet/yellow = 8, /obj/item/bedsheet/brown = 8,
 				/obj/item/bedsheet/black = 8, /obj/item/bedsheet/patriot = 3, /obj/item/bedsheet/rainbow = 3,
 				/obj/item/bedsheet/ian = 3, /obj/item/bedsheet/runtime = 3, /obj/item/bedsheet/nanotrasen = 3,
-				/obj/item/bedsheet/pirate = 1, /obj/item/bedsheet/cosmos = 1, /obj/item/bedsheet/gondola = 1
+				/obj/item/bedsheet/pirate = 1, /obj/item/bedsheet/cosmos = 1, /obj/item/bedsheet/gondola = 1,
+				/obj/item/bedsheet/vulp = 1, /obj/item/bedsheet/vulp/vulp2 = 1, /obj/item/bedsheet/vulp/vulp3,
+				/obj/item/bedsheet/vulp/vulp4 = 1
 				)
 
 /obj/effect/spawner/lootdrop/armory_contraband
@@ -68,6 +70,23 @@
 				/obj/item/gun/ballistic/revolver/mateba,
 				/obj/item/gun/ballistic/automatic/pistol/deagle,
 				/obj/item/storage/box/syndie_kit/throwing_weapons = 3)
+
+/obj/effect/spawner/lootdrop/syndicate_present
+	name = "Syndicate Present from Technical Tunnels"
+	icon_state = "esword_dual"
+	lootdoubles = FALSE
+	loot = list(
+				/obj/item/poster/random_contraband = 120,
+				/obj/item/reagent_containers/hypospray/medipen/magillitis = 2,
+				/obj/item/storage/box/syndie_kit/space = 4,
+				/obj/item/storage/toolbox/syndicate = 6,
+				/obj/item/clothing/shoes/chameleon/noslip = 6,
+				/obj/item/grenade/clusterbuster/soap = 6,
+				/obj/item/soap/syndie = 12,
+				/obj/item/pen/sleepy = 12,
+				/obj/item/storage/backpack/duffelbag/syndie = 4,
+				/obj/item/storage/box/syndie_kit/chameleon = 4
+				)
 
 /obj/effect/spawner/lootdrop/prison_contraband
 	name = "prison contraband loot spawner"
@@ -180,6 +199,34 @@
 			lootcount_override = round(lootcount * 0.5)
 	. = ..()
 
+/obj/effect/spawner/lootdrop/maintenance/two
+	name = "2 x maintenance loot spawner"
+	lootcount = 2
+
+/obj/effect/spawner/lootdrop/maintenance/three
+	name = "3 x maintenance loot spawner"
+	lootcount = 3
+
+/obj/effect/spawner/lootdrop/maintenance/four
+	name = "4 x maintenance loot spawner"
+	lootcount = 4
+
+/obj/effect/spawner/lootdrop/maintenance/five
+	name = "5 x maintenance loot spawner"
+	lootcount = 5
+
+/obj/effect/spawner/lootdrop/maintenance/six
+	name = "6 x maintenance loot spawner"
+	lootcount = 6
+
+/obj/effect/spawner/lootdrop/maintenance/seven
+	name = "7 x maintenance loot spawner"
+	lootcount = 7
+
+/obj/effect/spawner/lootdrop/maintenance/eight
+	name = "8 x maintenance loot spawner"
+	lootcount = 8
+
 /obj/effect/spawner/lootdrop/glowstick
 	name = "random colored glowstick"
 	icon = 'icons/obj/lighting.dmi'
@@ -267,7 +314,7 @@
 		/obj/item/clothing/head/rabbitears = 1)
 
 /obj/effect/spawner/lootdrop/minor/pirate_or_bandana
-	name = "pirate hat or bandana spawner"
+	name = "Pirate hat or bandana spawner"
 	loot = list(
 		/obj/item/clothing/head/pirate = 1,
 		/obj/item/clothing/head/bandana = 1)
@@ -442,7 +489,8 @@
 	loot = list(/obj/structure/reagent_dispensers/keg/mead = 5,
 		/obj/structure/reagent_dispensers/keg/aphro = 2,
 		/obj/structure/reagent_dispensers/keg/aphro/strong = 2,
-		/obj/structure/reagent_dispensers/keg/gargle = 1)
+		/obj/structure/reagent_dispensers/keg/gargle = 1,
+		/obj/structure/reagent_dispensers/keg/catnip = 3)
 
 /obj/effect/spawner/lootdrop/coin
 	lootcount = 1
@@ -469,7 +517,8 @@
 				/obj/item/storage/fancy/cigarettes/cigpack_xeno = 3,
 				/obj/item/storage/fancy/cigarettes/cigpack_cannabis = 10,
 				/obj/item/storage/fancy/cigarettes/cigpack_mindbreaker = 10,
-				/obj/item/storage/fancy/rollingpapers = 10
+				/obj/item/storage/fancy/rollingpapers = 10,
+				/obj/item/storage/fancy/cigarettes/cigpack_inteq = 2 // Bluemoon Changes
 				)
 
 /obj/effect/spawner/lootdrop/cigars_cases
@@ -775,4 +824,37 @@
 		/obj/item/ammo_casing/shotgun/rubbershot = 9,
 		/obj/item/ammo_casing/shotgun = 8,
 		/obj/item/ammo_casing/shotgun/incendiary = 10,
+		)
+
+/obj/effect/spawner/lootdrop/melee
+	name = "Random Melee Weapon"
+	desc = "This is a random melee weapon."
+	icon_state = "esword_dual"
+	lootcount = 1
+	loot = list(
+		/obj/item/kitchen/knife/combat = 1,
+		/obj/item/kitchen/knife/butcher = 1,
+		/obj/item/kitchen/rollingpin = 1,
+		/obj/item/melee/baton = 1,
+		/obj/item/melee/classic_baton = 1,
+		/obj/item/kitchen/knife = 1,
+		/obj/item/melee/classic_baton/telescopic/contractor_baton = 1,
+		/obj/item/melee/chainofcommand = 1,
+		/obj/item/melee/powerfist = 1,
+		/obj/item/spear = 1,
+		/obj/item/hatchet = 1,
+		/obj/item/melee/transforming/energy/sword = 1,
+		/obj/item/extinguisher = 1,
+		/obj/item/dualsaber = 1,
+		/obj/item/fireaxe = 1,
+		/obj/item/inteq_sledgehammer = 1,
+		/obj/item/circular_saw = 1,
+		/obj/item/claymore = 1,
+		/obj/item/scalpel = 1,
+		/obj/item/broken_bottle = 1,
+		/obj/item/scythe = 1,
+		/obj/item/melee/arm_blade = 1,
+		/obj/item/melee/transforming/energy/axe = 1,
+		/obj/item/melee/transforming/energy/blade = 1,
+		/obj/item/banhammer = 1,
 		)

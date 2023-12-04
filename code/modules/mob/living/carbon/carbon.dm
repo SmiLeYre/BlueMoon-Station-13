@@ -1,5 +1,6 @@
 /mob/living/carbon
 	blood_volume = BLOOD_VOLUME_NORMAL
+	deathsound = list ('sound/voice/deathgasp1.ogg', 'sound/voice/deathgasp2.ogg')
 
 /mob/living/carbon/Initialize(mapload)
 	. = ..()
@@ -29,7 +30,7 @@
 			if(prob(25))
 				audible_message("<span class='warning'>You hear something rumbling inside [src]'s stomach...</span>", \
 								"<span class='warning'>You hear something rumbling.</span>", 4,\
-							    "<span class='userdanger'>Something is rumbling inside your stomach!</span>")
+								"<span class='userdanger'>Something is rumbling inside your stomach!</span>")
 			var/obj/item/I = user.get_active_held_item()
 			if(I && I.force)
 				var/d = rand(round(I.force / 4), I.force)
@@ -104,6 +105,16 @@
 	. = ..()
 	var/hurt = TRUE
 	var/extra_speed = 0
+	// BLUEMOON ADDITION AHEAD - для изменения урона в зависимости от наличия квирка тяжести персонажа
+	var/damage = 10
+	var/combat_knockdown = 20
+	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY)) //жирный мужчина под 150 килограмм летит в вашу сторону
+		damage += 25
+		combat_knockdown += 20
+	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER)) //в лицо успешно влетела акула 12 футов в росте
+		damage += 50
+		combat_knockdown += 40
+	// BLUEMOON ADDITION END
 	if(throwingdatum.thrower != src)
 		extra_speed = min(max(0, throwingdatum.speed - initial(throw_speed)), 3)
 	if(GetComponent(/datum/component/tackler))
@@ -114,17 +125,17 @@
 			hurt = FALSE
 	if(hit_atom.density && isturf(hit_atom))
 		if(hurt)
-			DefaultCombatKnockdown(20)
-			take_bodypart_damage(10 + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5)
+			DefaultCombatKnockdown(combat_knockdown) // BLUEMOON CHANGES
+			take_bodypart_damage(damage + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5) // BLUEMOON CHANGES
 	if(iscarbon(hit_atom) && hit_atom != src)
 		var/mob/living/carbon/victim = hit_atom
 		if(victim.movement_type & FLYING)
 			return
 		if(hurt)
-			victim.take_bodypart_damage(10 + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5)
-			take_bodypart_damage(10 + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5)
-			victim.DefaultCombatKnockdown(20)
-			DefaultCombatKnockdown(20)
+			victim.take_bodypart_damage(damage + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5) // BLUEMOON CHANGES
+			take_bodypart_damage(damage + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5) // BLUEMOON CHANGES
+			victim.DefaultCombatKnockdown(combat_knockdown) // BLUEMOON CHANGES
+			DefaultCombatKnockdown(combat_knockdown) // BLUEMOON CHANGES
 			visible_message("<span class='danger'>[src] crashes into [victim] [extra_speed ? "really hard" : ""], knocking them both over!</span>",\
 				"<span class='userdanger'>You violently crash into [victim] [extra_speed ? "extra hard" : ""]!</span>")
 		playsound(src,'sound/weapons/punch1.ogg',50,1)
@@ -165,24 +176,24 @@
 
 	//CIT CHANGES - makes it impossible to throw while in stamina softcrit
 	if(IS_STAMCRIT(src))
-		to_chat(src, "<span class='warning'>You're too exhausted.</span>")
+		to_chat(src, "<span class='warning'>Вы слишком устали.</span>")
 		return
 
 	var/random_turn = a_intent == INTENT_HARM
 	//END OF CIT CHANGES
 
-	var/obj/item/I = get_active_held_item()
+	var/obj/item/held_item = get_active_held_item()
 
 	var/atom/movable/thrown_thing
 	var/mob/living/throwable_mob
 
-	if(istype(I, /obj/item/clothing/head/mob_holder))
-		var/obj/item/clothing/head/mob_holder/holder = I
+	if(istype(held_item, /obj/item/clothing/head/mob_holder))
+		var/obj/item/clothing/head/mob_holder/holder = held_item
 		if(holder.held_mob)
 			throwable_mob = holder.held_mob
 			holder.release()
 
-	if(!I || throwable_mob)
+	if(!held_item || throwable_mob)
 		if(!throwable_mob && pulling && isliving(pulling) && grab_state >= GRAB_AGGRESSIVE)
 			throwable_mob = pulling
 
@@ -191,7 +202,7 @@
 			if(pulling)
 				stop_pulling()
 			if(HAS_TRAIT(src, TRAIT_PACIFISM))
-				to_chat(src, "<span class='notice'>You gently let go of [throwable_mob].</span>")
+				to_chat(src, "<span class='notice'>Ты осторожно кладёшь [throwable_mob] под себя.</span>")
 				return
 			if(!UseStaminaBuffer(STAM_COST_THROW_MOB * ((throwable_mob.mob_size+1)**2), TRUE))
 				return
@@ -199,24 +210,42 @@
 			var/turf/end_T = get_turf(target)
 			if(start_T && end_T)
 				log_combat(src, throwable_mob, "thrown", addition="grab from tile in [AREACOORD(start_T)] towards tile at [AREACOORD(end_T)]")
+	else
+		thrown_thing = held_item.on_thrown(src, target)
 
-	else if(!(I.item_flags & ABSTRACT) && !HAS_TRAIT(I, TRAIT_NODROP))
-		thrown_thing = I
-		dropItemToGround(I)
+	if(isliving(thrown_thing)) // Благодаря этому и thrown_thing = held_item.on_thrown(src, target) мы можем кидать космонавтиков с плеча.
+		var/turf/start_T = get_turf(loc)
+		var/turf/end_T = get_turf(target)
+		if(start_T && end_T)
+			log_combat(src, thrown_thing, "thrown", addition="grab from tile in [AREACOORD(start_T)] towards tile at [AREACOORD(end_T)]")
 
-		if(HAS_TRAIT(src, TRAIT_PACIFISM) && I.throwforce)
-			to_chat(src, "<span class='notice'>You set [I] down gently on the ground.</span>")
+	else if(!(held_item.item_flags & ABSTRACT) && !HAS_TRAIT(held_item, TRAIT_NODROP))
+		thrown_thing = held_item
+		dropItemToGround(held_item)
+
+		if(HAS_TRAIT(src, TRAIT_PACIFISM) && held_item.throwforce)
+			to_chat(src, "<span class='notice'>You set [held_item] down gently on the ground.</span>")
 			return
 
-		if(!UseStaminaBuffer(I.getweight(src, STAM_COST_THROW_MULT, SKILL_THROW_STAM_COST), warn = TRUE))
+		if(!UseStaminaBuffer(held_item.getweight(src, STAM_COST_THROW_MULT, SKILL_THROW_STAM_COST), warn = TRUE))
 			return
 
 	if(thrown_thing)
 		var/power_throw = 0
 		if(HAS_TRAIT(src, TRAIT_HULK))
 			power_throw++
+		if(HAS_TRAIT(src, TRAIT_DWARF))
+			power_throw--
+		if(HAS_TRAIT(thrown_thing, TRAIT_DWARF))
+			power_throw++
 		if(pulling && grab_state >= GRAB_NECK)
 			power_throw++
+		//BLUEMOON ADDITION AHEAD
+		if(HAS_TRAIT(thrown_thing, TRAIT_BLUEMOON_HEAVY)) // тяжёлый персонаж метается хуже обычного
+			power_throw -= 2
+		if(HAS_TRAIT(thrown_thing, TRAIT_BLUEMOON_HEAVY_SUPER)) // сверхтяжёлого персонажа нельзя кинуть с рук
+			power_throw = -10
+		//BLUEMOON ADDITION END
 		visible_message("<span class='danger'>[src] throws [thrown_thing][power_throw ? " really hard!" : "."]</span>", \
 						"<span class='danger'>You throw [thrown_thing][power_throw ? " really hard!" : "."]</span>")
 		log_message("has thrown [thrown_thing] [power_throw ? "really hard" : ""]", LOG_ATTACK)
@@ -262,19 +291,22 @@
 	if(restrained())
 		// too soon.
 		var/buckle_cd = 600
+		var/obj/item/restraints/O = src.get_item_by_slot(ITEM_SLOT_HANDCUFFED)
+		var/allow_breakout_movement = IGNORE_INCAPACITATED
+		if(O?.allow_breakout_movement)
+			allow_breakout_movement = (IGNORE_INCAPACITATED|IGNORE_USER_LOC_CHANGE|IGNORE_TARGET_LOC_CHANGE)
 		if(handcuffed)
-			var/obj/item/restraints/O = src.get_item_by_slot(ITEM_SLOT_HANDCUFFED)
 			buckle_cd = O.breakouttime
 		MarkResistTime()
-		visible_message("<span class='warning'>[src] attempts to unbuckle [p_them()]self!</span>", \
-					"<span class='notice'>You attempt to unbuckle yourself... (This will take around [round(buckle_cd/600,1)] minute\s, and you need to stay still.)</span>")
-		if(do_after(src, buckle_cd, src, timed_action_flags = IGNORE_HELD_ITEM | IGNORE_INCAPACITATED, extra_checks = CALLBACK(src, .proc/cuff_resist_check)))
+		visible_message("<span class='warning'>[src] пытается выбраться!</span>", \
+					"<span class='notice'>Ты пытаешься выбраться... (Это займёт около [round(buckle_cd/600,1)] минут и тебе не стоит двигаться в процессе.)</span>")
+		if(do_after(src, buckle_cd, target = src, timed_action_flags = allow_breakout_movement, extra_checks = CALLBACK(src, PROC_REF(cuff_resist_check))))
 			if(!buckled)
 				return
 			buckled.user_unbuckle_mob(src, src)
 		else
 			if(src && buckled)
-				to_chat(src, "<span class='warning'>You fail to unbuckle yourself!</span>")
+				to_chat(src, "<span class='warning'>Тебе не удалось выбраться!</span>")
 	else
 		buckled.user_unbuckle_mob(src,src)
 
@@ -282,13 +314,13 @@
 	fire_stacks -= 5
 	DefaultCombatKnockdown(60, TRUE, TRUE)
 	spin(32,2)
-	visible_message("<span class='danger'>[src] rolls on the floor, trying to put [p_them()]self out!</span>", \
-		"<span class='notice'>You stop, drop, and roll!</span>")
+	visible_message("<span class='danger'>[src] падает и крутится, сбрасывая с себя пламя!</span>", \
+		"<span class='notice'>Вы остановились, упали и начали крутиться!</span>")
 	MarkResistTime(30)
 	sleep(30)
 	if(fire_stacks <= 0)
-		visible_message("<span class='danger'>[src] has successfully extinguished [p_them()]self!</span>", \
-			"<span class='notice'>You extinguish yourself.</span>")
+		visible_message("<span class='danger'>[src] успешно сбрасывает с себя пламя!</span>", \
+			"<span class='notice'>Вы успешно потушили себя.</span>")
 		ExtinguishMob()
 
 /mob/living/carbon/resist_restraints()
@@ -303,7 +335,7 @@
 
 /mob/living/carbon/proc/cuff_resist(obj/item/I, breakouttime = 600, cuff_break = 0)
 	if(I.item_flags & BEING_REMOVED)
-		to_chat(src, "<span class='warning'>You're already attempting to remove [I]!</span>")
+		to_chat(src, "<span class='warning'>Вы уже пытаетесь сбросить [I]!</span>")
 		return
 	var/obj/item/restraints/R = istype(I, /obj/item/restraints) ? I : null
 	var/allow_breakout_movement = IGNORE_INCAPACITATED
@@ -312,21 +344,21 @@
 	I.item_flags |= BEING_REMOVED
 	breakouttime = I.breakouttime
 	if(!cuff_break)
-		visible_message("<span class='warning'>[src] attempts to remove [I]!</span>")
-		to_chat(src, "<span class='notice'>You attempt to remove [I]... (This will take around [DisplayTimeText(breakouttime)] and you need to stand still.)</span>")
+		visible_message("<span class='warning'>[src] пытается сбросить [I]!</span>")
+		to_chat(src, "<span class='notice'>Ты пытаешься сбросить [I]... (Это займёт около [DisplayTimeText(breakouttime)]. Тебе не стоит делать лишних движений.)</span>")
 		if(do_after(src, breakouttime, target = src, timed_action_flags = allow_breakout_movement, extra_checks = CALLBACK(src, PROC_REF(cuff_resist_check))))
 			clear_cuffs(I, cuff_break)
 		else
-			to_chat(src, "<span class='warning'>You fail to remove [I]!</span>")
+			to_chat(src, "<span class='warning'>Тебе не удалось сбросить [I]!</span>")
 
 	else if(cuff_break == FAST_CUFFBREAK)
 		breakouttime = 50
-		visible_message("<span class='warning'>[src] is trying to break [I]!</span>")
-		to_chat(src, "<span class='notice'>You attempt to break [I]... (This will take around 5 seconds and you need to stand still.)</span>")
+		visible_message("<span class='warning'>[src] пытается сломать [I]!</span>")
+		to_chat(src, "<span class='notice'>Ты пытаешься сломать [I]... (Это займёт около пяти секунд. Тебе не стоит делать лишних движений.)</span>")
 		if(do_after(src, breakouttime, target = src, timed_action_flags = allow_breakout_movement, extra_checks = CALLBACK(src, PROC_REF(cuff_resist_check))))
 			clear_cuffs(I, cuff_break)
 		else
-			to_chat(src, "<span class='warning'>You fail to break [I]!</span>")
+			to_chat(src, "<span class='warning'>Тебе не удалось сломать [I]!</span>")
 
 	else if(cuff_break == INSTANT_CUFFBREAK)
 		clear_cuffs(I, cuff_break)
@@ -600,12 +632,25 @@
 		var/obj/item/clothing/glasses/G = glasses
 		sight |= G.vision_flags
 		see_in_dark = max(G.darkness_view, see_in_dark)
+
 		if(G.invis_override)
 			see_invisible = G.invis_override
 		else
 			see_invisible = min(G.invis_view, see_invisible)
+
 		if(!isnull(G.lighting_alpha))
 			lighting_alpha = min(lighting_alpha, G.lighting_alpha)
+
+	if(head)
+		var/obj/item/clothing/head/H = head
+		if(!istype(H, /obj/item/clothing/head))
+			return
+		sight |= H.vision_flags
+		see_in_dark = max(H.darkness_view, see_in_dark)
+
+		if(!isnull(H.lighting_alpha))
+			lighting_alpha = min(lighting_alpha, H.lighting_alpha)
+
 	if(dna)
 		for(var/X in dna.mutations)
 			var/datum/mutation/M = X
@@ -823,10 +868,16 @@
 			if(eye_blind <= 1)
 				adjust_blindness(-1)
 		update_mobility()
+	update_crit_status()
 	update_damage_hud()
 	update_health_hud()
 	update_hunger_and_thirst_hud()
 	med_hud_set_status()
+
+/mob/living/carbon/proc/update_crit_status()
+	remove_filter("hardcrit")
+	if(health <= crit_threshold)
+		add_filter("hardcrit", 2, BM_FILTER_HARDCRIT)
 
 //called when we get cuffed/uncuffed
 /mob/living/carbon/proc/update_handcuffed()

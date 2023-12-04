@@ -2,7 +2,7 @@
 /datum/reagent/thermite
 	name = "Thermite"
 	description = "Thermite produces an aluminothermic reaction known as a thermite reaction. Can be used to melt walls."
-	chemical_flags = REAGENT_ALL_PROCESS
+//	chemical_flags = REAGENT_ALL_PROCESS (BLUEMOON REMOVAL - роботы не должны получать эффекты реагента)
 	reagent_state = SOLID
 	color = "#550000"
 	taste_description = "sweet tasting metal"
@@ -47,6 +47,7 @@
 	metabolization_rate = 4
 	chemical_flags = REAGENT_ALL_PROCESS
 	taste_description = "burning"
+	accelerant_quality = 20
 	/* no gaseous CLF3 until i can think of a good way to get it to burn that doesn't destroy matter in mysterious ways
 	boiling_point = 289.4
 	*/
@@ -162,6 +163,7 @@
 	reagent_state = LIQUID
 	color = "#FA00AF"
 	taste_description = "burning"
+	accelerant_quality = 20
 	boiling_point = T20C-10
 	value = REAGENT_VALUE_UNCOMMON
 
@@ -190,10 +192,11 @@
 /datum/reagent/napalm
 	name = "Napalm"
 	description = "Very flammable."
-	chemical_flags = REAGENT_ALL_PROCESS
+//	chemical_flags = REAGENT_ALL_PROCESS (BLUEMOON REMOVAL - роботы не должны получать эффекты реагента)
 	reagent_state = LIQUID
 	color = "#FA00AF"
 	taste_description = "burning"
+	accelerant_quality = 20
 	value = REAGENT_VALUE_COMMON
 
 // Smells like victory...
@@ -220,7 +223,7 @@
 	color = "#0000DC"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	taste_description = "bitterness"
-	chemical_flags = REAGENT_ALL_PROCESS
+//	chemical_flags = REAGENT_ALL_PROCESS (BLUEMOON REMOVAL - роботы не должны получать эффекты реагента)
 	value = REAGENT_VALUE_COMMON
 
 /datum/reagent/cryostylane/on_mob_life(mob/living/carbon/M) //TODO: code freezing into an ice cube
@@ -239,7 +242,7 @@
 	description = "Comes into existence at 20K. As long as there is sufficient oxygen for it to react with, Pyrosium slowly heats all other reagents in the container."
 	color = "#64FAC8"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	chemical_flags = REAGENT_ALL_PROCESS
+//	chemical_flags = REAGENT_ALL_PROCESS (BLUEMOON REMOVAL - роботы не должны получать эффекты реагента)
 	taste_description = "bitterness"
 	value = REAGENT_VALUE_COMMON
 

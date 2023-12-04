@@ -21,11 +21,11 @@
 	toolspeed = 1
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 30)
 
-	wound_bonus = -10
-	bare_wound_bonus = 5
+	wound_bonus = 5
+	bare_wound_bonus = 6
 
 /obj/item/wrench/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is beating [user.p_them()]self to death with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is beating themself to death with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	playsound(loc, 'sound/weapons/genhit.ogg', 50, 1, -1)
 	return (BRUTELOSS)
 
@@ -35,6 +35,47 @@
 	icon = 'icons/obj/items_cyborg.dmi'
 	icon_state = "wrench_cyborg"
 	toolspeed = 0.5
+
+/obj/item/wrench/combat
+	name = "combat wrench"
+	desc = "It's like a normal wrench but edgier. Can be found on the battlefield."
+	icon = 'icons/obj/tools.dmi'
+	icon_state = "wrench_combat"
+	item_state = "wrench_combat"
+	attack_verb_continuous = list("devastates", "brutalizes", "commits a war crime against", "obliterates", "humiliates")
+	attack_verb_simple = list("devastate", "brutalize", "commit a war crime against", "obliterate", "humiliate")
+	tool_behaviour = null
+	toolspeed = null
+
+/obj/item/wrench/combat/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/transforming, \
+		force_on = 10, \
+		throwforce_on = 15, \
+		hitsound_on = hitsound, \
+		w_class_on = WEIGHT_CLASS_NORMAL, \
+		clumsy_check = FALSE)
+	RegisterSignal(src, COMSIG_TRANSFORMING_ON_TRANSFORM, PROC_REF(on_transform))
+
+/*
+ * Signal proc for [COMSIG_TRANSFORMING_ON_TRANSFORM].
+ *
+ * Gives it wrench behaviors when active.
+ */
+/obj/item/wrench/combat/proc/on_transform(obj/item/source, mob/user, active)
+	SIGNAL_HANDLER
+
+	if(active)
+		tool_behaviour = TOOL_WRENCH
+		toolspeed = 1
+	else
+		tool_behaviour = initial(tool_behaviour)
+		toolspeed = initial(toolspeed)
+
+	balloon_alert(user, "[name] [active ? "active, woe!":"restrained"]")
+	playsound(user ? user : src, active ? 'sound/weapons/saberon.ogg' : 'sound/weapons/saberoff.ogg', 5, TRUE)
+	return COMPONENT_NO_DEFAULT_MESSAGE
+
 
 /obj/item/wrench/brass
 	name = "brass wrench"
@@ -91,7 +132,7 @@
 	user.put_in_active_hand(s_drill)
 
 /obj/item/wrench/power/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is pressing [src] against [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is pressing [src] against [user.ru_ego()] head! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return (BRUTELOSS)
 
 /obj/item/wrench/medical
@@ -104,7 +145,7 @@
 	attack_verb = list("wrenched", "medicaled", "tapped", "jabbed", "whacked")
 
 /obj/item/wrench/medical/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] is praying to the medical wrench to take [user.p_their()] soul. It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is praying to the medical wrench to take [user.ru_ego()] soul. It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	// TODO Make them glow with the power of the M E D I C A L W R E N C H
 	// during their ascension
 

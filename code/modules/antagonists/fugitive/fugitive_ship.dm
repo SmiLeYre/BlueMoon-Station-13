@@ -38,7 +38,7 @@
 	possible_destinations = "huntership_home;huntership_custom;whiteship_home;syndicate_nw"
 
 /obj/machinery/computer/camera_advanced/shuttle_docker/syndicate/hunter
-	name = "shuttle navigation computer"
+	name = "Shuttle Navigation Computer"
 	desc = "Used to designate a precise transit location to travel to."
 	shuttleId = "huntership"
 	lock_override = CAMERA_LOCK_STATION

@@ -82,3 +82,8 @@
 /obj/item/storage/photo_album/CE
 	name = "photo album (Chief Engineer)"
 	persistence_id = "CE"
+
+/obj/item/storage/photo_album/syndicate
+	name = "photo album (Syndicate)"
+	icon_state = "album_red"
+	persistence_id = "syndicate"

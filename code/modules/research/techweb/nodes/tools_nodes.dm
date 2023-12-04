@@ -29,7 +29,7 @@
 	display_name = "Advanced Sanitation Technology"
 	description = "Clean things better, faster, stronger, and harder!"
 	prereq_ids = list("adv_engi")
-	design_ids = list("advmop", "buffer", "light_replacer", "spraybottle", "beartrap", "ci-janitor", "paint_remover")
+	design_ids = list("advmop", "advbroom", "buffer", "light_replacer", "spraybottle", "beartrap", "ci-janitor", "paint_remover")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1750) // No longer has its bag
 
 /datum/techweb_node/botany

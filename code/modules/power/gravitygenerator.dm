@@ -354,7 +354,7 @@ GLOBAL_LIST_EMPTY(gravity_generators) // We will keep track of this by adding ne
 // Shake everyone on the z level to let them know that gravity was enagaged/disenagaged.
 /obj/machinery/gravity_generator/main/proc/shake_everyone()
 	var/turf/T = get_turf(src)
-	var/sound/alert_sound = sound('sound/effects/alert.ogg')
+	var/sound/alert_sound = sound('sound/misc/alerts/alert.ogg')
 	for(var/i in GLOB.mob_list)
 		var/mob/M = i
 		if(M.z != z && !(SSmapping.level_trait(z, ZTRAITS_STATION) && SSmapping.level_trait(M.z, ZTRAITS_STATION)))
@@ -363,6 +363,10 @@ GLOBAL_LIST_EMPTY(gravity_generators) // We will keep track of this by adding ne
 		if(M.client)
 			shake_camera(M, 15, 1)
 			M.playsound_local(T, null, 100, 1, 0.5, S = alert_sound)
+	if(on)
+		priority_announce("Гравитационный Генератор успешно перезапустил гравитационное поле Космической Станции, искусственная гравитация возвращена в номинальное состояние.", "Гравитационный Генератор", 'sound/announcer/classic/gravityon.ogg')
+	else
+		priority_announce("Гравитационный Генератор потерял номинальную подачу энергии в Гравитационное Поле Космической Станции, искусственная гравитация отключена.", "Гравитационный Генератор", 'sound/announcer/classic/gravityoff.ogg')
 
 /obj/machinery/gravity_generator/main/proc/gravity_in_level()
 	var/turf/T = get_turf(src)
@@ -399,7 +403,7 @@ GLOBAL_LIST_EMPTY(gravity_generators) // We will keep track of this by adding ne
 
 /obj/item/paper/guides/jobs/engi/gravity_gen
 	name = "paper- 'Generate your own gravity!'"
-	info = {"<h1>Gravity Generator Instructions For Dummies</h1>
+	default_raw_text = {"<h1>Gravity Generator Instructions For Dummies</h1>
 	<p>Surprisingly, gravity isn't that hard to make! All you have to do is inject deadly radioactive minerals into a ball of
 	energy and you have yourself gravity! You can turn the machine on or off when required but you must remember that the generator
 	will EMIT RADIATION when charging or discharging, you can tell it is charging or discharging by the noise it makes, so please WEAR PROTECTIVE CLOTHING.</p>
@@ -411,3 +415,10 @@ GLOBAL_LIST_EMPTY(gravity_generators) // We will keep track of this by adding ne
 	<li>Mend the damaged framework with a welding tool.</li>
 	<li>Add additional plasteel plating.</li>
 	<li>Secure the additional plating with a wrench.</li></ol>"}
+
+/obj/machinery/gravity_generator/main/proc/blackout()
+	charge_count = 0
+	breaker = FALSE
+	set_power()
+	set_state(FALSE)
+	investigate_log("was turned off by blackout event or a gravity anomaly detonation.", INVESTIGATE_GRAVITY)

@@ -107,7 +107,7 @@
 
 /obj/item/stock_parts/cell/pumpaction	//nice number to achieve the amount of shots wanted
 	name = "pump action particle blaster power supply"
-	maxcharge = 1200
+	maxcharge = 2600
 
 //PUMP ACTION DISABLER
 

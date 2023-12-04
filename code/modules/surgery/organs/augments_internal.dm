@@ -165,4 +165,4 @@
 		return
 	if(prob(0.6*severity))
 		to_chat(owner, "<span class='warning'>Your breathing tube suddenly closes!</span>")
-		owner.losebreath += 2
+		owner.losebreath += 8

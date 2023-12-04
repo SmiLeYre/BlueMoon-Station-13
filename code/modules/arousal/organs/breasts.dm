@@ -1,8 +1,11 @@
-#define BREASTS_ICON_MIN_SIZE 1
+#define BREASTS_ICON_MIN_SIZE 0
 #define BREASTS_ICON_MAX_SIZE 6
 
 /obj/item/organ/genital/breasts
-	name = "breasts"
+	name = "Грудь"
+	ru_name = "грудь" // BLUEMOON ADD
+	ru_name_v = "груди" // BLUEMOON ADD
+	ru_name_capital = "Грудь" // BLUEMOON ADD
 	desc = "Female milk producing organs."
 	icon_state = "breasts"
 	icon = 'icons/obj/genitals/breasts.dmi'
@@ -14,8 +17,8 @@
 	shape = DEF_BREASTS_SHAPE
 	genital_flags = CAN_MASTURBATE_WITH|CAN_CLIMAX_WITH|GENITAL_FUID_PRODUCTION|GENITAL_CAN_AROUSE|UPDATE_OWNER_APPEARANCE|GENITAL_UNDIES_HIDDEN|CAN_CUM_INTO|HAS_EQUIPMENT
 	masturbation_verb = "massage"
-	arousal_verb = "Your breasts start feeling sensitive"
-	unarousal_verb = "Your breasts no longer feel sensitive"
+	arousal_verb = "Ваши соски становятся намного более чувствительными и твёрдыми"
+	unarousal_verb = "Ваши соски больше не такие твёрдые и чувствительные"
 	orgasm_verb = "leaking"
 	fluid_transfer_factor = 0.5
 	layer_index = BREASTS_LAYER_INDEX
@@ -27,25 +30,25 @@
 	var/size_state = size_to_state()
 	switch(lowershape)
 		if("pair")
-			desc = "You see a pair of breasts."
+			desc = "Вы видите обычную грудь."
 		if("quad")
-			desc = "You see two pairs of breast, one just under the other."
+			desc = "Вы видите двойную грудь, одна прямо под другой.."
 		if("sextuple")
-			desc = "You see three sets of breasts, running from their chest to their belly."
+			desc = "Вы видите тройную грудь, идущих от груди к животу."
 		else
-			desc = "You see some breasts, they seem to be quite exotic."
-	if(size_state == "huge")
-		desc = "You see [pick("some serious honkers", "a real set of badonkers", "some dobonhonkeros", "massive dohoonkabhankoloos", "two big old tonhongerekoogers", "a couple of giant bonkhonagahoogs", "a pair of humongous hungolomghnonoloughongous")]. Their volume is way beyond cupsize now, measuring in about [round(size*(owner ? get_size(owner) : 1))]cm in diameter."
+			desc = "Перед своими глазами вы наблюдаете довольно экзотичную грудь."
+	if(size_state == "крупного")
+		desc = "Вы наблюдаете [pick("несколько серьезных сисяндр", "настоящий набор бадончиков", "огромную грудь", "пару гигантских бонхонагахугов", "пару хумонгус хунголомгхнонолоугус")]. Их объем уже намного превышает размер стандартной чашки, составляя примерно [round(size_state*(owner ? get_size(owner) : 1))]сантиметров в диаметре."
 	else
-		if (size_state == "flat")
-			desc += " They're very small and flatchested, however."
+		if (size_state == "плоского")
+			desc += " Они очень маленькие и плоскогрудые, как жаль."
 		else
-			desc += " You estimate that they're [uppertext(size_state)]-cups."
+			desc += " По вашим оценкам, грудь примерно [uppertext(size_state)] размера."
 
 	if((genital_flags & GENITAL_FUID_PRODUCTION) && aroused_state)
 		var/datum/reagent/R = GLOB.chemical_reagents_list[fluid_id]
 		if(R)
-			desc += " They're leaking [lowertext(R.name)]."
+			desc += " Соски подтекают '[lowertext(R.name)]'."
 	var/datum/sprite_accessory/S = GLOB.breasts_shapes_list[shape]
 	var/icon_shape = S ? S.icon_state : "pair"
 	var/icon_size = clamp(GLOB.breast_values[size_state], BREASTS_ICON_MIN_SIZE, BREASTS_ICON_MAX_SIZE)
@@ -80,7 +83,7 @@
 	var/str_size
 	switch(rounded)
 		if(0) //flatchested
-			str_size = "flat"
+			str_size = "плоского"
 		if(1 to 8) //modest
 			str_size = GLOB.breast_values[rounded]
 		if(9 to 15) //massive
@@ -88,11 +91,11 @@
 		if(16 to 17) //ridiculous
 			str_size = GLOB.breast_values[rounded]
 		if(18 to 24) //AWOOOOGAAAAAAA
-			str_size = "massive"
+			str_size = "массивного"
 		if(25 to 29) //AWOOOOOOGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-			str_size = "giga"
+			str_size = "гигантского"
 		if(30 to INFINITY) //AWWWWWWWWWWWWWOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOGGGGGAAAAAAAAAAAAAAAAAAAAAA
-			str_size = "impossible"
+			str_size = "неимоверно огромного"
 	return str_size
 
 /obj/item/organ/genital/breasts/update_size()//wah
@@ -100,7 +103,7 @@
 	var/size_state = size_to_state()
 	if(rounded_size < 0)//I don't actually know what round() does to negative numbers, so to be safe!!fixed
 		if(owner)
-			to_chat(owner, "<span class='warning'>You feel your breasts shrinking away from your body as your chest flattens out.</span>")
+			to_chat(owner, "<span class='warning'>Вы чувствуете, что ваша грудь уменьшается по сравнению с телом, так как грудь становится плоской.</span>")
 		QDEL_IN(src, 1)
 		return
 
@@ -108,9 +111,9 @@
 		var/mob/living/carbon/human/H = owner
 		var/r_prev_size = round(prev_size)
 		if (rounded_size > r_prev_size)
-			to_chat(H, "<span class='warning'>Your breasts [pick("swell up to", "flourish into", "expand into", "burst forth into", "grow eagerly into", "amplify into")] a [uppertext(size_state)]-cup.</span>")
+			to_chat(H, "<span class='warning'>Ваша грудь [pick("начинает разбухать", "начинает расцветать", "начинает расширяться", "начинает прорываться", "начинает расти с нетерпением", "начинает увеличиваться в размерах")] вплоть до [uppertext(size_state)].</span>")
 		else if (rounded_size < r_prev_size)
-			to_chat(H, "<span class='warning'>Your breasts [pick("shrink down to", "decrease into", "diminish into", "deflate into", "shrivel regretfully into", "contracts into")] a [uppertext(size_state)]-cup.</span>")
+			to_chat(H, "<span class='warning'>Ваша грудь начинает [pick("уменьшаться до", "уменьшаться до", "сдуваться до", "сморщиваться с сожалением до", "сокращаться до")] [uppertext(size_state)] размера.</span>")
 
 /obj/item/organ/genital/breasts/get_features(mob/living/carbon/human/H)
 	var/datum/dna/D = H.dna

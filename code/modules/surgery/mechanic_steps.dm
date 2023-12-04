@@ -1,6 +1,6 @@
 //open shell
 /datum/surgery_step/mechanic_open
-	name = "unscrew shell"
+	name = "Открутить Винты"
 	implements = list(
 		TOOL_SCREWDRIVER		= 100,
 		TOOL_SCALPEL 		= 75, // med borgs could try to unscrew shell with scalpel
@@ -25,7 +25,7 @@
 
 //close shell
 /datum/surgery_step/mechanic_close
-	name = "screw shell"
+	name = "Прикрутить Винты"
 	implements = list(
 		TOOL_SCREWDRIVER		= 100,
 		TOOL_SCALPELl 		= 75,
@@ -50,7 +50,7 @@
 
 //prepare electronics
 /datum/surgery_step/prepare_electronics
-	name = "prepare electronics (multitool)"
+	name = "Подготовить Электронику (Мультитул)"
 	implements = list(
 		TOOL_MULTITOOL = 100,
 		TOOL_HEMOSTAT = 10) // try to reboot internal controllers via short circuit with some conductor
@@ -65,7 +65,7 @@
 
 //unwrench
 /datum/surgery_step/mechanic_unwrench
-	name = "unwrench bolts"
+	name = "Выкрутить Болты"
 	implements = list(
 		TOOL_WRENCH = 100,
 		TOOL_RETRACTOR = 10)
@@ -85,7 +85,7 @@
 
 //wrench
 /datum/surgery_step/mechanic_wrench
-	name = "wrench bolts"
+	name = "Прикрутить Болты"
 	implements = list(
 		TOOL_WRENCH = 100,
 		TOOL_RETRACTOR = 10)
@@ -124,7 +124,7 @@
 
 //cut wires
 /datum/surgery_step/cut_wires
-	name = "cut wires"
+	name = "Обрезать Провода"
 	implements = list(
 		TOOL_WIRECUTTER		= 100,
 		TOOL_SCALPEL 		= 75,
@@ -144,7 +144,7 @@
 
 //pry off plating
 /datum/surgery_step/pry_off_plating
-	name = "pry off plating"
+	name = "Снять Панель"
 	implements = list(
 		TOOL_CROWBAR = 100,
 		TOOL_HEMOSTAT = 10)
@@ -161,7 +161,7 @@
 
 //weld plating
 /datum/surgery_step/weld_plating
-	name = "weld plating"
+	name = "Нанести сварочные швы"
 	implements = list(
 		TOOL_WELDER = 100)
 	time = 24
@@ -178,7 +178,7 @@
 
 //replace wires
 /datum/surgery_step/replace_wires
-	name = "replace wires"
+	name = "Заменить проводку"
 	implements = list(/obj/item/stack/cable_coil = 100)
 	time = 24
 	var/cableamount = 5
@@ -203,7 +203,7 @@
 
 //add plating
 /datum/surgery_step/add_plating
-	name = "add plating"
+	name = "Добавить дополнительные панели"
 	implements = list(/obj/item/stack/sheet/metal = 100)
 	time = 24
 	var/metalamount = 5

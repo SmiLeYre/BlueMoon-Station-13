@@ -1,5 +1,5 @@
 /datum/interaction/lewd/facefuck
-	description = "Fuck their mouth using your %COCK%."
+	description = "Член. Вытрахать в рот."
 	interaction_sound = null
 	require_target_mouth = TRUE
 	require_user_penis = REQUIRE_EXPOSED
@@ -7,7 +7,7 @@
 	var/fucktarget = "penis"
 
 /datum/interaction/lewd/facefuck/vag
-	description = "Fuck their mouth using your vagina."
+	description = "Вагина. Потереться об рот."
 	require_user_penis = null
 	require_user_vagina = REQUIRE_EXPOSED
 	fucktarget = "vagina"
@@ -17,84 +17,80 @@
 	var/obj/item/organ/genital/genital = null
 	var/retaliation_message = FALSE
 
-	var/u_His = user.p_their()
-	var/t_Him = partner.p_them()
-	var/t_Hes = partner.p_theyre()
-	
 	if(user.is_fucking(partner, CUM_TARGET_MOUTH))
 		var/improv = FALSE
 		switch(fucktarget)
 			if("vagina")
 				if(user.has_vagina())
 					message = pick(
-						"grinds [u_His] pussy into \the <b>[partner]</b>'s face.",
-						"grips the back of \the <b>[partner]</b>'s head, forcing [t_Him] onto [u_His] pussy.",
-						"rolls [u_His] pussy against \the <b>[partner]</b>'s tongue.",
-						"slides \the <b>[partner]</b>'s mouth between [u_His] legs.",
-						"looks \the <b>[partner]</b>'s in the eyes as [u_His] pussy presses into a waiting tongue.",
-						"sways [u_His] hips, pushing [u_His] sex into \the <b>[partner]</b>'s face.",
+						"втирает свою вагину в лицо \the <b>[partner]</b> и громко вздыхает.",
+						"сжимает затылок \the <b>[partner]</b> усилием своих ладоней и начинает тереться о лицо своей киской",
+						"прижимает свою киску к языку \the <b>[partner]</b> и тихо постанывает.",
+						"скользит ротиком \the <b>[partner]</b> в своей промежности и быстро дышит через нос.",
+						"нежно и довольно добродушно смотрит в глаза \the <b>[partner]</b>, когда вдруг его личико накрывается пиздой.",
+						"ехидно ухмыляется и покачивает своими бёдрами перед лицом \the <b>[partner]</b>, после чего вжимается в лицо партнёра своей промежностью.",
 						)
 					if(partner.a_intent == INTENT_HARM)
-						// adjustBruteLoss(5)
+						partner.adjustBruteLoss(2)
 						retaliation_message = pick(
-							"looks deeply displeased to be there.",
-							"struggles to escape from between \the [user]'s thighs.",
+							"испытывает глубокое недовольство от того, что находится там.",
+							"изо всех сил пытается вырваться из-под бедер \the [user].",
 						)
 				else
 					improv = TRUE
 			if("penis")
 				if(user.has_penis() || user.has_strapon())
-					var/genital_name = user.get_penetrating_genital_name()
+					partner.snap_choker(partner, ITEM_SLOT_NECK)	//Snap my choker!~ - Gardelin0
 					message = pick(
-						"roughly fucks \the <b>[partner]</b>'s mouth.",
-						"forces [u_His] [genital_name] down \the <b>[partner]</b>'s throat.",
-						"pushes in against \the <b>[partner]</b>'s tongue until a tight gagging sound comes.",
-						"grips \the <b>[partner]</b>'s hair and draws [t_Him] to the base of the [genital_name].",
-						"looks \the <b>[partner]</b>'s in the eyes as [u_His] [genital_name] presses into a waiting tongue.",
-						"rolls [u_His] hips hard, sinking into \the <b>[partner]</b>'s mouth.",
+						"грубо трахает \the <b>[partner]</b> в рот с громким чавкающим звуком.",
+						"с силой загоняет свои гениталии в самую глотку \the <b>[partner]</b>.",
+						"надавливает на дальнюю часть язычка \the <b>[partner]</b> до тех пор, пока не услышит тугой звук от Рвотного Рефлекса.",
+						"хватается за волосы \the <b>[partner]</b> и начинает тянуть к основанию своего органа.",
+						"смотрит в глаза \the <b>[partner]</b>, когда гениталии прижимается к ожидающему язычку.",
+						"сильно вращает своими бёдрами и погружается в рот \the <b>[partner]</b>.",
 						)
 					if(partner.a_intent == INTENT_HARM)
-						// adjustBruteLoss(5)
+						partner.adjustBruteLoss(2)
 						retaliation_message = pick(
-							"stares up from between \the [user]'s knees, trying to squirm away.",
-							"struggles to escape from between \the [user]'s legs.",
+							"смотрит вверх из-под колен \the [user] и раз за разом пытается вывернуться в попытке выбраться.",
+							"пытается вырваться из-под ног \the [user].",
 						)
 				else
 					improv = TRUE
 		if(improv)
 			message = pick(
-				"grinds against \the <b>[partner]</b>'s face.",
-				"feels \the <b>[partner]</b>'s face between bare legs.",
-				"pushes in against \the <b>[partner]</b>'s tongue.",
-				"grips \the <b>[partner]</b>'s hair, drawing [t_Him] into the strangely sexless spot between [u_His] legs.",
-				"looks \the <b>[partner]</b>'s in the eyes as [t_Hes] caught beneath two thighs.",
-				"rolls [u_His] hips hard against \the <b>[partner]</b>'s face.",
+				"трётся о лицо \the <b>[partner]</b>.",
+				"чувствует лицо \the <b>[partner]</b> между своими ножками.",
+				"толкается против языка \the <b>[partner]</b>.",
+				"хватает \the <b>[partner]</b> за волосы и начинает тянуть к своей собственной промежности",
+				"беспомощно смотрит в глаза \the <b>[partner]</b> и вынужденно держится между бёдрами.",
+				"с силой прижимает свои бёдра к лицу \the <b>[partner]</b>.",
 				)
 			if(partner.a_intent == INTENT_HARM)
-				// adjustBruteLoss(5)
+				partner.adjustBruteLoss(2)
 				retaliation_message = pick(
-					"stares up from between \the [user]'s knees, trying to squirm away.",
-					"struggles to escape from between \the [user]'s legs.",
+					"смотрит вверх из-под колен \the [user] и раз за разом пытается вывернуться в попытке выбраться.",
+					"пытается вырваться из-под ног \the [user].",
 				)
 	else
 		var/improv = FALSE
 		switch(fucktarget)
 			if("vagina")
 				if(user.has_vagina())
-					message = "forces \the <b>[partner]</b>'s face into [u_His] pussy."
+					message = "втирает свою вагину в лицо \the <b>[partner]</b> и громко вздыхает."
 				else
 					improv = TRUE
 			if("penis")
 				if(user.has_penis() || user.has_strapon())
-					var/genital_name = user.get_penetrating_genital_name()
+					partner.snap_choker(partner, ITEM_SLOT_NECK)	//Snap my choker!~ - Gardelin0
 					if(user.is_fucking(partner, CUM_TARGET_THROAT))
-						message = "retracts [u_His] [genital_name] from \the <b>[partner]</b>'s throat."
+						message = "вытягивает свой орган из горла \the <b>[partner]</b>."
 					else
-						message = "shoves [u_His] [genital_name] into \the <b>[partner]</b>'s mouth."
+						message = "засовывает свои гениталии в рот \the <b>[partner]</b>."
 				else
 					improv = TRUE
 		if(improv)
-			message = "shoves [u_His] crotch into \the <b>[partner]</b>'s face."
+			message = "суёт свою промежность в лицо \the <b>[partner]</b>."
 		else
 			switch(fucktarget)
 				if("vagina")
@@ -112,50 +108,47 @@
 		user.handle_post_sex(NORMAL_LUST, CUM_TARGET_MOUTH, partner, genital) //SPLURT edit
 
 /datum/interaction/lewd/throatfuck
-	description = "Fuck their throat. | Does oxy damage."
+	description = "Член. Вытрахать в глотку | Убийственно."
 	interaction_sound = null
 	require_user_penis = REQUIRE_EXPOSED
 	require_target_mouth = TRUE
 	max_distance = 1
+	extreme = TRUE //Stop killing people without their fucking consent! - Gardelin0
 
 /datum/interaction/lewd/throatfuck/display_interaction(mob/living/user, mob/living/partner)
 	var/message
 	var/obj/item/organ/genital/genital = null
 	var/retaliation_message = FALSE
 
-	var/u_His = user.p_their()
-	var/t_His = partner.p_their()
-	var/t_Him = partner.p_them()
-	var/genital_name = user.get_penetrating_genital_name()
-
 	if(user.is_fucking(partner, CUM_TARGET_THROAT))
 		message = "[pick(
-			"brutally shoves [u_His] [genital_name] into \the <b>[partner]</b>'s throat to make [t_Him] gag.",
-			"chokes \the <b>[partner]</b> on [u_His] [genital_name], going in balls deep.",
-			"slams in and out of \the <b>[partner]</b>'s mouth, [u_His] balls slapping off [t_His] face.")]"
+			"жёстко засовывает свой крепкий орган в горло <b>[partner]</b> и тем самым образом своего партнёра затыкает.",
+			"душит <b>[partner]</b>, снова и снова засовывая свой влажный орган по самые яйца.",
+			"молотит рот <b>[partner]</b> с чавкающим звуком и раз за разом приземляется своими яйцами аккурат в лицо.")]"
 		if(rand(3))
-			partner.emote("chokes on \the [user]")
-			/*if(prob(1) && istype(partner)) //Handled on modular_splurt
-				partner.adjustOxyLoss(5)*/
+			partner.emote("кашляет на [user]")
+			if(prob(1) && istype(partner))
+				partner.adjustOxyLoss(rand(2,3))
 		if(partner.a_intent == INTENT_HARM)
-			// adjustBruteLoss(5)
+			partner.adjustBruteLoss(rand(3,6))
 			retaliation_message = pick(
-				"stares up from between \the [user]'s knees, trying to squirm away.",
-				"struggles to escape from between \the [user]'s legs.",
+				"смотрит вверх из-под колен \the [user] и раз за разом пытается вывернуться в попытке выбраться.",
+				"пытается вырваться из-под ног \the [user].",
 			)
 	else if(user.is_fucking(partner, CUM_TARGET_MOUTH))
-		message = "thrusts deeper into \the <b>[partner]</b>'s mouth and down [t_His] throat."
+		message = "проникает глубже в рот \the <b>[partner]</b> и углубляется вниз по самому горлу."
 		var/check = user.getorganslot(ORGAN_SLOT_PENIS)
 		if(check)
 			genital = check
 		user.set_is_fucking(partner, CUM_TARGET_THROAT, genital)
 	else
-		message = "forces [u_His] [genital_name] deep down \the <b>[partner]</b>'s throat."
+		message = "загоняет свои гениталии глубоко в рот \the <b>[partner]</b> и углубляется вниз по самому горлу."
 		var/check = user.getorganslot(ORGAN_SLOT_PENIS)
 		if(check)
 			genital = check
 		user.set_is_fucking(partner, CUM_TARGET_THROAT, genital)
 
+	partner.snap_choker(partner, ITEM_SLOT_NECK)	//Snap my choker!~ - Gardelin0
 	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/oral1.ogg',
 						'modular_sand/sound/interactions/oral2.ogg'), 70, 1, -1)
 	user.visible_message(message = span_lewd("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())

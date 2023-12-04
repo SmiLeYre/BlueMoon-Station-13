@@ -3,7 +3,7 @@
 	config_tag = "clownops"
 	chaos = 8
 	announce_span = "danger"
-	announce_text = "Clown empire forces are approaching the station in an attempt to HONK it!\n\
+	announce_text = "Войско Хонкоматери затеяло набег на станцию с целью ХОНКНУТЬ её!\n\
 	<span class='danger'>Operatives</span>: Secure the nuclear authentication disk and use your bananium fission explosive to HONK the station.\n\
 	<span class='notice'>Crew</span>: Defend the nuclear authentication disk and ensure that it leaves with you on the emergency shuttle."
 
@@ -49,6 +49,7 @@
 	implants = list(/obj/item/implant/sad_trombone)
 
 	uplink_type = /obj/item/uplink/clownop
+	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
 
 /datum/outfit/syndicate/clownop/no_crystals
 	tc = 0
@@ -66,3 +67,12 @@
 	gloves = /obj/item/clothing/gloves/krav_maga/combatglovesplus
 	r_hand = /obj/item/nuclear_challenge/clownops
 	command_radio = TRUE
+
+// BLUEMOON ADD START - командная коробочка для командира
+/datum/outfit/syndicate/clownop/leader/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
+	. = ..()
+	var/list/extra_backpack_items = list(
+		/obj/item/storage/box/pinpointer_squad
+	)
+	LAZYADD(backpack_contents, extra_backpack_items)
+// BLUEMOON ADD END

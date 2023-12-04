@@ -60,6 +60,9 @@
 /obj/item/uplink/clownop
 	uplink_flag = UPLINK_CLOWN_OPS
 
+/obj/item/uplink/syndicate
+	uplink_flag = UPLINK_SYNDICATE
+
 /obj/item/uplink/old
 	name = "dusty radio"
 	desc = "A dusty looking radio."

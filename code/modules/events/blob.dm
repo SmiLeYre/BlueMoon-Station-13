@@ -1,11 +1,11 @@
 /datum/round_event_control/blob
 	name = "Blob"
 	typepath = /datum/round_event/ghost_role/blob
-	weight = 3
+	weight = 5
 	max_occurrences = 1
 
-	earliest_start = 60 MINUTES
-	min_players = 35
+	earliest_start = 90 MINUTES
+	min_players = 40
 	dynamic_should_hijack = TRUE
 	category = EVENT_CATEGORY_ENTITIES
 	description = "Spawns a new blob overmind."
@@ -17,9 +17,9 @@
 
 /datum/round_event/ghost_role/blob/announce(fake)
 	if(prob(75))
-		priority_announce("Confirmed outbreak of level 5 biohazard aboard [station_name()]. All personnel must contain the outbreak.", "Biohazard Alert", "outbreak5", has_important_message = TRUE)
+		priority_announce("Подтвержденная вспышка биологической опасности уровня 5 на борту [station_name()]. Весь персонал должен противостоять эпидемии.", "Биологическая Тревога", "outbreak5", has_important_message = TRUE)
 	else
-		print_command_report("Confirmed outbreak of level 5 biohazard aboard [station_name()]. All personnel must contain the outbreak.", "level 5 biohazard")
+		print_command_report("Подтвержденная вспышка биологической опасности уровня 5 на борту [station_name()]. Весь персонал должен противостоять эпидемии.", "Биологическая Тревога")
 
 /datum/round_event/ghost_role/blob/spawn_role()
 	if(!GLOB.blobstart.len)

@@ -7,6 +7,8 @@
 	var/brightness_on = 3
 	var/sword_color
 	total_mass = 0.4 //Survival flashlights typically weigh around 5 ounces.
+	wound_bonus = 6
+	bare_wound_bonus = 12
 
 /obj/item/melee/transforming/energy/Initialize(mapload)
 	. = ..()
@@ -24,7 +26,7 @@
 /obj/item/melee/transforming/energy/suicide_act(mob/user)
 	if(!active)
 		transform_weapon(user, TRUE)
-	user.visible_message("<span class='suicide'>[user] is [pick("slitting [user.p_their()] stomach open with", "falling on")] [src]! It looks like [user.p_theyre()] trying to commit seppuku!</span>")
+	user.visible_message("<span class='suicide'>[user] is [pick("slitting [user.ru_ego()] stomach open with", "falling on")] [src]! It looks like [user.ru_who()] trying to commit seppuku!</span>")
 	return (BRUTELOSS|FIRELOSS)
 
 /obj/item/melee/transforming/energy/add_blood_DNA(list/blood_dna)
@@ -59,8 +61,8 @@
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(C.wear_mask)
-			in_mouth = ", barely missing [C.p_their()] nose"
-	. = "<span class='warning'>[user] swings [user.p_their()] [name][in_mouth]. [user.p_they(TRUE)] light[user.p_s()] [user.p_their()] [A.name] in the process.</span>"
+			in_mouth = ", barely missing [C.ru_ego()] nose"
+	. = "<span class='warning'>[user] swings [user.ru_ego()] [name][in_mouth]. [user.ru_who(TRUE)] light[user.p_s()] [user.ru_ego()] [A.name] in the process.</span>"
 	playsound(loc, hitsound, get_clamped_volume(), 1, -1)
 	add_fingerprint(user)
 
@@ -85,9 +87,11 @@
 	attack_verb_on = list()
 	light_color = "#40ceff"
 	total_mass = null
+	wound_bonus = 6
+	bare_wound_bonus = 15
 
 /obj/item/melee/transforming/energy/axe/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] swings [src] towards [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] swings [src] towards [user.ru_ego()] head! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return (BRUTELOSS|FIRELOSS)
 
 /obj/item/melee/transforming/energy/sword
@@ -148,6 +152,9 @@
 /obj/item/melee/transforming/energy/sword/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	if(!active)
 		return NONE
+	if(is_energy_reflectable_projectile(object) && (attack_type & ATTACK_TYPE_PROJECTILE))
+		block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_RETURN_TO_SENDER			//no you
+		return BLOCK_SHOULD_REDIRECT | BLOCK_SUCCESS | BLOCK_REDIRECTED
 	return ..()
 
 /obj/item/melee/transforming/energy/sword/on_active_parry(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, list/block_return, parry_efficiency, parry_time)
@@ -211,6 +218,8 @@
 
 /obj/item/melee/transforming/energy/sword/saber/reskin_obj(mob/M)
 	. = ..()
+	if(!.)
+		return
 	switch(current_skin)
 		if("Sword")
 			icon_state = "sword[active ? sword_color : "0"]"

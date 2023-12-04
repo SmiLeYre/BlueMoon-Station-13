@@ -14,6 +14,8 @@ GLOBAL_LIST_EMPTY(objectives)
 	var/completable = TRUE				//Whether this objective shows greentext when completed
 	var/martyr_compatible = FALSE		//If the objective is compatible with martyr objective, i.e. if you can still do it while dead.
 	var/objective_name = "Objective"	//name used in printing this objective (Objective #1)
+	var/reward = 5
+	var/include_superheavy_character = TRUE // BLUEMOON ADD - некоторые задачи практически невыполнимы, если нужно что-то делать со сверхтяжёлыми персонажами
 
 /datum/objective/New(var/text)
 	GLOB.objectives += src // CITADEL EDIT FOR CRYOPODS
@@ -39,7 +41,7 @@ GLOBAL_LIST_EMPTY(objectives)
 
 //Shared by few objective types
 /datum/objective/proc/admin_simple_target_pick(mob/admin)
-	var/list/possible_targets = list("Free objective")
+	var/list/possible_targets = list("Свободная Задача")
 	var/def_value
 	for(var/datum/mind/possible_target in SSticker.minds)
 		if ((possible_target != src) && ishuman(possible_target.current))
@@ -53,7 +55,7 @@ GLOBAL_LIST_EMPTY(objectives)
 	if (!new_target)
 		return
 
-	if (new_target == "Free objective")
+	if (new_target == "Свободная Задача")
 		target = null
 	else
 		target = new_target.mind
@@ -116,7 +118,10 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 	for(var/datum/mind/possible_target in get_crewmember_minds())
 		if(!(possible_target in owners) && ishuman(possible_target.current) && (possible_target.current.stat != DEAD) && is_unique_objective(possible_target))
 			if(!(possible_target in blacklist))
-				possible_targets += possible_target
+				// BLUEMOON ADD START - если персонаж сверхтяжёлый и установлена настройка, что сверхтяжёлые персонажи не могут быть по заданию, персонажа не добавляет в пулл
+				if(!(!include_superheavy_character && HAS_TRAIT(possible_target.current, TRAIT_BLUEMOON_HEAVY_SUPER)))
+					possible_targets += possible_target
+				// BLUEMOON ADD END
 	if(try_target_late_joiners)
 		var/list/all_possible_targets = possible_targets.Copy()
 		for(var/I in all_possible_targets)
@@ -180,20 +185,21 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 	if(!invert)
 		target_role_type = role_type
 	..()
+	target_amount = rand(2,6)
 	return target
 
 /datum/objective/assassinate/check_completion()
-	return !considered_alive(target) || considered_afk(target)
+	return FALSE || ..()
 
 /datum/objective/assassinate/check_midround_completion()
-	return FALSE //They need to be dead at the end of the round, silly!
+	return FALSE
 
 /datum/objective/assassinate/update_explanation_text()
 	..()
 	if(target && target.current)
-		explanation_text = "Assassinate [target.name], the [!target_role_type ? target.assigned_role : target.special_role]."
+		explanation_text = "Наша цель - [target.name], [!target_role_type ? target.assigned_role : target.special_role]. Уничтожь эту цель! Кто бы это не был, эта станция будет ему могилой."
 	else
-		explanation_text = "Free Objective"
+		explanation_text = "Свободная Задача"
 
 /datum/objective/assassinate/admin_edit(mob/admin)
 	admin_simple_target_pick(admin)
@@ -205,10 +211,10 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 /datum/objective/assassinate/once/update_explanation_text()
 	..()
 	if(target && target.current)
-		explanation_text = "Kill [target.name], the [!target_role_type ? target.assigned_role : target.special_role]. You only need to kill them once; if they come back, you've still succeeded."
+		explanation_text = "Убей [target.name], [!target_role_type ? target.assigned_role : target.special_role], один раз!"
 		START_PROCESSING(SSprocessing,src)
 	else
-		explanation_text = "Free Objective"
+		explanation_text = "Свободная Задача"
 
 /datum/objective/assassinate/once/check_completion()
 	return won || ..()
@@ -230,7 +236,7 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 /datum/objective/assassinate/internal/update_explanation_text()
 	..()
 	if(target && !target.current)
-		explanation_text = "Assassinate [target.name], who was obliterated"
+		explanation_text = "Наша цель - [target.name], [!target_role_type ? target.assigned_role : target.special_role]. Уничтожь эту цель! Кто бы это не был, эта станция будет ему могилой."
 
 /datum/objective/mutiny
 	name = "mutiny"
@@ -244,10 +250,8 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 	return target
 
 /datum/objective/mutiny/check_completion()
-	if(!target || !considered_alive(target) || considered_afk(target))
-		return TRUE
 	var/turf/T = get_turf(target.current)
-	return !T || !is_station_level(T.z)
+	return FALSE || !T || !is_station_level(T.z) || ..()
 
 /datum/objective/mutiny/check_midround_completion()
 	return FALSE
@@ -255,9 +259,9 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 /datum/objective/mutiny/update_explanation_text()
 	..()
 	if(target && target.current)
-		explanation_text = "Assassinate or exile [target.name], the [!target_role_type ? target.assigned_role : target.special_role]."
+		explanation_text = "Наша цель - [target.name], [!target_role_type ? target.assigned_role : target.special_role]. Уничтожь эту цель! Кто бы это не был, эта станция будет ему могилой."
 	else
-		explanation_text = "Free Objective"
+		explanation_text = "Свободная Задача"
 
 /datum/objective/maroon
 	name = "maroon"
@@ -278,9 +282,9 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 
 /datum/objective/maroon/update_explanation_text()
 	if(target && target.current)
-		explanation_text = "Prevent [target.name], the [!target_role_type ? target.assigned_role : target.special_role], from escaping alive."
+		explanation_text = "Наша цель - [target.name], [!target_role_type ? target.assigned_role : target.special_role]. Не дай этой цели покинуть станцию!"
 	else
-		explanation_text = "Free Objective"
+		explanation_text = "Свободная Задача"
 
 /datum/objective/maroon/admin_edit(mob/admin)
 	admin_simple_target_pick(admin)
@@ -296,7 +300,7 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 	return target
 
 /datum/objective/debrain/check_completion()
-	if(!target)//If it's a free objective.
+	if(!target)//If it's a свободная задача.
 		return TRUE
 	if(!target.current || !isbrain(target.current))
 		return FALSE
@@ -313,9 +317,9 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 /datum/objective/debrain/update_explanation_text()
 	..()
 	if(target && target.current)
-		explanation_text = "Steal the brain of [target.name], the [!target_role_type ? target.assigned_role : target.special_role]."
+		explanation_text = "Укради мозг [target.name], [!target_role_type ? target.assigned_role : target.special_role]!"
 	else
-		explanation_text = "Free Objective"
+		explanation_text = "Свободная Задача"
 
 /datum/objective/debrain/admin_edit(mob/admin)
 	admin_simple_target_pick(admin)
@@ -341,9 +345,9 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 /datum/objective/protect/update_explanation_text()
 	..()
 	if(target && target.current)
-		explanation_text = "Protect [target.name], the [!target_role_type ? target.assigned_role : target.special_role]."
+		explanation_text = "Держись рядом и защищай [target.name], [!target_role_type ? target.assigned_role : target.special_role]."
 	else
-		explanation_text = "Free Objective"
+		explanation_text = "Свободная Задача"
 
 /datum/objective/protect/admin_edit(mob/admin)
 	admin_simple_target_pick(admin)
@@ -354,8 +358,8 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 
 /datum/objective/hijack
 	name = "hijack"
-	explanation_text = "Hijack the emergency shuttle by hacking its navigational protocols through the control console (alt click emergency shuttle console)."
-	team_explanation_text = "Hijack the emergency shuttle by hacking its navigational protocols through the control console (alt click emergency shuttle console). Leave no team member behind."
+	explanation_text = "Захватите Аварийный Шаттл, взломав его навигационные протоколы через консоль управления (щелкните ALT-ЛКМ по консоли аварийного шаттла)! Мы отправляемся на Станцию ИнтеКью!"
+	team_explanation_text = "Захватите Аварийный Шаттл, взломав его навигационные протоколы через консоль управления (щелкните ALT-ЛКМ по консоли аварийного шаттла)! Мы отправляемся на Станцию ИнтеКью! Не забудьте про своих коллег."
 	martyr_compatible = 0 //Technically you won't get both anyway.
 	/// Overrides the hijack speed of any antagonist datum it is on ONLY, no other datums are impacted.
 	var/hijack_speed_override = 1
@@ -435,8 +439,8 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 
 /datum/objective/escape
 	name = "escape"
-	explanation_text = "Escape on the shuttle or an escape pod alive and without being in custody."
-	team_explanation_text = "Have all members of your team escape on a shuttle or pod alive, without being in custody."
+	explanation_text = "Сбежать на Шаттле или спасательной капсуле живым(-ой) и без каких бы то не было физических ограничений (наручники и так далее)."
+	team_explanation_text = "Сбежать на Шаттле или спасательной капсуле живыми совместно со своими коллегами и без каких бы то не было физических ограничений (наручники и так далее)."
 
 /datum/objective/escape/check_completion()
 	// Require all owners escape safely.
@@ -467,9 +471,9 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 /datum/objective/breakout/update_explanation_text()
 	..()
 	if(target && target.current)
-		explanation_text = "Make sure [target.name], the [!target_role_type ? target.assigned_role : target.special_role] escapes on the shuttle or an escape pod alive and without being in custody."
+		explanation_text = "Будьте уверены, что [target.name], the [!target_role_type ? target.assigned_role : target.special_role] сбежит на Шаттле или спасательной капсуле живым(-ой) и без каких бы то не было физических ограничений (наручники и так далее)."
 	else
-		explanation_text = "Free Objective"
+		explanation_text = "Свободная Задача"
 
 /datum/objective/escape/escape_with_identity
 	name = "escape with identity"
@@ -494,7 +498,7 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 		explanation_text += "." //Proper punctuation is important!
 
 	else
-		explanation_text = "Free Objective."
+		explanation_text = "Свободная Задача."
 
 /datum/objective/escape/escape_with_identity/check_completion()
 	if(!target || !target_real_name)
@@ -516,7 +520,7 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 
 /datum/objective/survive
 	name = "survive"
-	explanation_text = "Stay alive until the end."
+	explanation_text = "Оставайтесь в живых до конца."
 
 /datum/objective/survive/check_completion()
 	var/list/datum/mind/owners = get_owners()
@@ -537,7 +541,7 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 
 /datum/objective/martyr
 	name = "martyr"
-	explanation_text = "Die a glorious death."
+	explanation_text = "Умри Славной Смертью. Мы допускаем использование ЛЮБЫХ инструментов. О тебе и твоих действиях должны знать ВСЕ!"
 
 /datum/objective/martyr/check_completion()
 	var/list/datum/mind/owners = get_owners()
@@ -550,13 +554,23 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 
 /datum/objective/nuclear
 	name = "nuclear"
-	explanation_text = "Destroy the station with a nuclear device."
+	explanation_text = "Уничтожь Космическую Станцию любой ценой."
 	martyr_compatible = 1
 
 /datum/objective/nuclear/check_completion()
 	if(SSticker && SSticker.mode && SSticker.mode.station_was_nuked)
 		return TRUE
 	return FALSE
+
+/datum/objective/nuclear/revert
+	name = "revert_nuclear"
+	explanation_text = "Защити Космическую Станцию и Ядерный Диск любой ценой."
+	martyr_compatible = 1
+
+/datum/objective/nuclear/revert/check_completion()
+	if(SSticker && SSticker.mode && SSticker.mode.station_was_nuked)
+		return FALSE
+	return TRUE
 
 GLOBAL_LIST_EMPTY(possible_items)
 /datum/objective/steal
@@ -597,11 +611,11 @@ GLOBAL_LIST_EMPTY(possible_items)
 	if(item)
 		targetinfo = item
 		steal_target = targetinfo.targetitem
-		explanation_text = "Steal [targetinfo.name]"
+		explanation_text = "Украсть [targetinfo.name]"
 		special_items_given = give_special_equipment(targetinfo.special_equipment)
 		return steal_target
 	else
-		explanation_text = "Free objective"
+		explanation_text = "Свободная Задача"
 		return
 
 /datum/objective/steal/admin_edit(mob/admin)
@@ -620,7 +634,7 @@ GLOBAL_LIST_EMPTY(possible_items)
 		if (!custom_name)
 			return
 		steal_target = custom_target
-		explanation_text = "Steal [custom_name]."
+		explanation_text = "Украсть [custom_name]."
 
 	else
 		set_target(new_target)
@@ -685,7 +699,7 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 	if(target && target.current)
 		explanation_text = "Acquire [targetinfo.name] held by [target.name], the [target.assigned_role] and syndicate agent"
 	else
-		explanation_text = "Free Objective"
+		explanation_text = "Свободная Задача"
 
 
 /datum/objective/steal/exchange/backstab
@@ -709,7 +723,7 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 
 /datum/objective/download/update_explanation_text()
 	..()
-	explanation_text = "Download [target_amount] research node\s."
+	explanation_text = "Скачать [target_amount] технологий из отдела исследований на чистый диск."
 
 /datum/objective/download/check_completion()
 	var/datum/techweb/checking = new
@@ -790,9 +804,9 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 /datum/objective/protect_object/update_explanation_text()
 	. = ..()
 	if(protect_target)
-		explanation_text = "Protect \the [protect_target] at all costs."
+		explanation_text = "Держись рядом и защищай \the [protect_target]. Это очень важно, на кон поставлено всё!"
 	else
-		explanation_text = "Free objective."
+		explanation_text = "Свободная Задача."
 
 /datum/objective/protect_object/check_completion()
 	return !QDELETED(protect_target)
@@ -907,9 +921,9 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 /datum/objective/destroy/update_explanation_text()
 	..()
 	if(target && target.current)
-		explanation_text = "Destroy [target.name], the experimental AI."
+		explanation_text = "Уничтожь или укради, или взломай [target.name], экспериментальный Искусственный Интеллект."
 	else
-		explanation_text = "Free Objective"
+		explanation_text = "Свободная Задача"
 
 /datum/objective/destroy/admin_edit(mob/admin)
 	var/list/possible_targets = active_ais(1)
@@ -925,7 +939,7 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 
 /datum/objective/steal_five_of_type
 	name = "steal five of"
-	explanation_text = "Steal at least five items!"
+	explanation_text = "Украсть пять предметов!"
 	var/list/wanted_items = list(/obj/item)
 
 /datum/objective/steal_five_of_type/New()
@@ -934,12 +948,12 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 
 /datum/objective/steal_five_of_type/summon_guns
 	name = "steal guns"
-	explanation_text = "Steal at least five guns!"
+	explanation_text = "Украсть пять пушек!"
 	wanted_items = list(/obj/item/gun)
 
 /datum/objective/steal_five_of_type/summon_magic
 	name = "steal magic"
-	explanation_text = "Steal at least five magical artefacts!"
+	explanation_text = "Украсть пять магических штук!"
 	wanted_items = list(/obj/item/spellbook, /obj/item/gun/magic, /obj/item/clothing/suit/space/hardsuit/wizard, /obj/item/scrying, /obj/item/antag_spawner/contract, /obj/item/necromantic_stone)
 
 /datum/objective/steal_five_of_type/check_completion()
@@ -1068,7 +1082,7 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 /datum/objective/changeling_team_objective/impersonate_department/update_explanation_text()
 	..()
 	if(!department_real_names.len || !department_minds.len)
-		explanation_text = "Free Objective"
+		explanation_text = "Свободная Задача"
 		return  //Something fucked up, give them a win
 
 	if(command_staff_only)
@@ -1148,7 +1162,7 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 		explanation_text = "Keep [I] on your person at all times."
 		return hoarded_item
 	else
-		explanation_text = "Free objective"
+		explanation_text = "Свободная Задача"
 		return
 
 /datum/objective/hoard/check_completion()
@@ -1243,7 +1257,7 @@ GLOBAL_LIST_EMPTY(possible_sabotages)
 		special_items_given = give_special_equipment(targetinfo.special_equipment)
 		return sabo
 	else
-		explanation_text = "Free objective"
+		explanation_text = "Свободная Задача"
 		return
 
 /datum/objective/sabotage/check_completion()
@@ -1295,6 +1309,7 @@ GLOBAL_LIST_EMPTY(possible_sabotages)
 														/area/ruin/,	//thank you station space ruins
 														/area/science/test_area/,
 														/area/shuttle/))
+	include_superheavy_character = FALSE // BLUEMOON ADD - todo, вернуть задания, но назначить за такого персонажа повышенную награду
 
 /datum/objective/contract/proc/generate_dropoff()	// Generate a random valid area on the station that the dropoff will happen.
 	var/found = FALSE
@@ -1308,3 +1323,135 @@ GLOBAL_LIST_EMPTY(possible_sabotages)
 	var/area/user_area = get_area(user)
 	var/area/target_area = get_area(target)
 	return (istype(user_area, dropoff) && istype(target_area, dropoff))
+
+
+////// BlueMoon. 17.0.2023. Новые цели
+
+// Похищение члена экипажа живьем.
+/datum/objective/kidnap
+	name = "kidnap"
+
+/datum/objective/kidnap/find_target(blacklist)
+	var/list/roles = list("Chief Engineer","Research Director","Chief Medical Officer","Geneticist","Roboticist","Chemist","Station Engineer","Atmospherics Technician","Scientist","Medical Doctor","Paramedic") // Приоритетные цели воксов - дельцы машинерии и медицины
+	var/list/possible_targets = list()
+	var/list/priority_targets = list()
+	var/list/datum/mind/owners = get_owners()
+
+	for(var/datum/mind/M in owners)
+		if(M.has_antag_datum(/datum/antagonist/raiders))
+			roles = list("Captain","NanoTrasen Representative","Head Of Personnel","Research Director","Chief Medical Officer","Chief Engineer","Quartermaster","Bridge Officer","Head Of Security","Warden","Security Officer","Brig Physisician","Detective") // Рейдеры охотятся на глав и силовиков
+			continue
+
+	for(var/datum/mind/possible_target in SSticker.minds)
+		if(possible_target != owners && ishuman(possible_target.current) && (possible_target.current.stat != DEAD) && (possible_target.assigned_role != possible_target.special_role))
+			possible_targets += possible_target
+			for(var/role in roles)
+				if(possible_target.assigned_role == role)
+					priority_targets += possible_target
+					continue
+
+	if(priority_targets.len > 0)
+		target = pick(priority_targets)
+	else if(possible_targets.len > 0)
+		target = pick(possible_targets)
+
+	update_explanation_text()
+	return target
+
+/datum/objective/kidnap/update_explanation_text()
+	..()
+	if(target && target.current)
+		explanation_text = "Необходимо похитить [target.current.real_name], [target.assigned_role]. Цель должна удерживаться на корабле и оставаться живой."
+	else
+		explanation_text = "Свободная задача"
+
+/datum/objective/kidnap/check_completion()
+	if(target && target.current)
+		if(target.current.stat == DEAD)
+			return FALSE
+
+		var/area/shuttle/vox_raiders/A = locate()
+		var/area/shuttle/inteq/collosus/B = locate()
+
+		for(var/mob/living/carbon/human/M in A)
+			if(target.current == M)
+				return TRUE
+		for(var/mob/living/carbon/human/M in B)
+			if(target.current == M)
+				return TRUE
+	else
+		return FALSE
+
+
+////////// Ограбление
+
+/datum/objective/heist
+	name = "heist"
+
+/datum/objective/heist/find_target(blacklist)
+	var/loot = "что-то"
+	switch(rand(1,8))
+		if(1)
+			target = /obj/item/crowbar/power
+			target_amount = 10
+			loot = "десять инженерных гидравлических челюстей"
+		if(2)
+			target = /obj/vehicle/sealed/mecha/combat
+			target_amount = 1
+			loot = "любого боевого меха"
+		if(3)
+			target = /obj/machinery/vending/kink
+			target_amount = 2
+			loot = "два KinkMate"
+		if(4)
+			target = /obj/item/nuke_core
+			target_amount = 1
+			loot = "радиоактивное плутониевое ядро из Бортовой Системы Самоуничтожения"
+		if(5)
+			target = /obj/item/gun
+			target_amount = 5
+			loot = "пять пушек, в том числе нелетальных"
+		if(6)
+			target = /obj/item/gun/ballistic/automatic/wt550
+			target_amount = 2
+			loot = "два пистолета-пулемета WT-550"
+		if(7)
+			target = /obj/item/gun/energy/laser
+			target_amount = 3
+			loot = "три лазерные винтовки"
+		if(8)
+			target = /obj/item/gun/energy/ionrifle
+			target_amount = 1
+			loot = "ионную винтовку"
+
+	explanation_text = "Украдите или выторгуйте [loot]."
+
+	return target
+
+///////////////////////////////////////////// Отметка для Смайли. Не проходит проверка, total_amount всегда остается в значении 0 и не поднимается.
+
+/datum/objective/heist/check_completion()
+	var/total_amount = 0
+	var/area/shuttle/vox_raiders/V = locate()
+
+	if(target)
+		for(var/obj/O in V) // Проверяем наличие украденных предметов в зоне шаттла
+			if(target == O)
+				total_amount++
+			for(var/obj/I in O.contents) // И внутри другого предмета на шаттле (рюкзаки, сумки)
+				if(target == I)
+					total_amount++
+				if(total_amount >= target_amount)
+					return TRUE
+
+
+		for(var/datum/antagonist/vox_scavengers/M in team.members) // Альтернатива - проверяем предметы в инвентаре у самих антагонистов
+			if(M.owner.current)
+				for(var/obj/O in M.owner.current.GetAllContents())
+					if(target == O)
+						total_amount++
+					if(total_amount >= target_amount)
+						return TRUE
+
+	return FALSE
+////////////////////////////////////////

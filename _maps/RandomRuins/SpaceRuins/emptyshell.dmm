@@ -61,6 +61,10 @@
 /obj/machinery/spaceship_navigation_beacon/invion,
 /turf/closed/wall/r_wall,
 /area/ruin/unpowered)
+"W" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating,
+/area/ruin/unpowered)
 
 (1,1,1) = {"
 a
@@ -154,7 +158,7 @@ c
 c
 c
 d
-d
+W
 d
 d
 d
@@ -176,7 +180,7 @@ d
 d
 d
 d
-d
+W
 c
 c
 a
@@ -205,10 +209,10 @@ c
 c
 d
 d
+W
 d
 d
-d
-d
+W
 d
 d
 c
@@ -220,7 +224,7 @@ b
 a
 c
 V
-d
+W
 d
 d
 g
@@ -274,7 +278,7 @@ c
 c
 d
 d
-d
+W
 d
 d
 d

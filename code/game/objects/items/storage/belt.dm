@@ -14,7 +14,7 @@
 	var/onmob_overlays = FALSE //worn counterpart of the above.
 
 /obj/item/storage/belt/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins belting [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins belting себя with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return BRUTELOSS
 
 /obj/item/storage/belt/update_overlays()
@@ -74,7 +74,11 @@
 		/obj/item/carpentry/hammer,
 		/obj/item/carpentry/sandpaper,
 		/obj/item/carpentry/borer,
-		/obj/item/carpentry/glue
+		/obj/item/carpentry/glue,
+		/obj/item/inducer,
+		/obj/item/lightreplacer,
+		/obj/item/healthanalyzer, /// Для робототехников
+		/obj/item/surgical_drapes ///
 		))
 	STR.can_hold = can_hold
 
@@ -83,6 +87,17 @@
 	desc = "Holds tools, looks snazzy."
 	icon_state = "utilitybelt_ce"
 	item_state = "utility_ce"
+
+/obj/item/storage/belt/utility/syndicate
+
+/obj/item/storage/belt/utility/syndicate/PopulateContents()
+	new /obj/item/screwdriver/nuke(src)
+	new /obj/item/wrench/combat(src)
+	new /obj/item/weldingtool/largetank(src)
+	new /obj/item/crowbar(src)
+	new /obj/item/wirecutters(src)
+	new /obj/item/multitool(src)
+	new /obj/item/inducer/syndicate(src)
 
 /obj/item/storage/belt/utility/chief/full/PopulateContents()
 	new /obj/item/screwdriver/power(src)
@@ -240,7 +255,8 @@
 		/obj/item/melee/classic_baton/telescopic,
 		/obj/item/radio,
 		/obj/item/clothing/gloves,
-		/obj/item/restraints/legcuffs/bola
+		/obj/item/restraints/legcuffs/bola,
+		/obj/item/holosign_creator/security
 		))
 
 /obj/item/storage/belt/security/full/PopulateContents()
@@ -416,7 +432,8 @@
 		/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game,
 		/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime,
 		/obj/item/reagent_containers/food/drinks/drinkingglass/filled/nuka_cola,
-		/obj/item/reagent_containers/food/drinks/drinkingglass/filled/syndicatebomb
+		/obj/item/reagent_containers/food/drinks/drinkingglass/filled/syndicatebomb,
+		/obj/item/reagent_containers/food/snacks/intecookies // Bluemoon Changes
 		))
 		new rig_snacks(src)
 
@@ -603,8 +620,22 @@
 		/obj/item/paint/paint_remover,
 		/obj/item/assembly/mousetrap,
 		/obj/item/screwdriver,
-		/obj/item/stack/cable_coil
+		/obj/item/stack/cable_coil,
+		/obj/item/holosign_creator
 		))
+
+/obj/item/storage/belt/janitor/ert_maid
+	name = "tactical janibelt"
+	icon_state = "assaultbelt"
+	item_state = "security"
+
+/obj/item/storage/belt/janitor/ert_maid/PopulateContents()
+	new /obj/item/grenade/chem_grenade/cleaner(src)
+	new /obj/item/grenade/chem_grenade/cleaner(src)
+	new /obj/item/grenade/chem_grenade/cleaner(src)
+	new /obj/item/grenade/chem_grenade/cleaner(src)
+	new /obj/item/soap(src)
+	new /obj/item/soap(src)
 
 /obj/item/storage/belt/bandolier
 	name = "bandolier"
@@ -615,7 +646,7 @@
 /obj/item/storage/belt/bandolier/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 18
+	STR.max_items = 25
 	STR.display_numerical_stacking = TRUE
 	STR.can_hold = typecacheof(list(
 		/obj/item/ammo_casing
@@ -700,6 +731,26 @@
 	item_state = "holster"
 	alternate_worn_layer = UNDER_SUIT_LAYER
 
+/obj/item/storage/belt/holster/nukie
+	name = "operative holster"
+	desc = "A deep shoulder holster capable of holding almost any form of firearm and its ammo."
+	icon_state = "syndicate_holster"
+	item_state = "syndicate_holster"
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/storage/belt/holster/nukie/ComponentInitialize(mapload)
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 5
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.can_hold = typecacheof(list(
+		/obj/item/gun, // ALL guns.
+		/obj/item/ammo_box,
+		/obj/item/ammo_casing, // For shotgun shells, rockets, launcher grenades, and a few other things.
+		/obj/item/grenade, // All regular grenades, the big grenade launcher fires these.
+		))
+
+
 /obj/item/storage/belt/holster/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
@@ -713,7 +764,8 @@
 		/obj/item/gun/energy/e_gun/mini,
 		/obj/item/gun/ballistic/automatic/magrifle/pistol,
 		/obj/item/gun/energy/disabler,
-		/obj/item/gun/energy/taser
+		/obj/item/gun/energy/taser,
+		/obj/item/gun/ballistic/revolver/doublebarrel/sawn
 		))
 
 /obj/item/storage/belt/holster/full/PopulateContents()
@@ -825,6 +877,19 @@
 	attack_verb = list("bashed", "slashes", "prods", "pokes")
 	fitting_swords = list(/obj/item/melee/rapier)
 	starting_sword = /obj/item/melee/rapier
+
+/obj/item/storage/belt/sabre/civil
+	name = "Civil Sabre Sheath"
+	fitting_swords = list(/obj/item/melee/sabre, /obj/item/melee/sabre/civil, /obj/item/melee/baton/stunsword)
+	starting_sword = /obj/item/melee/sabre/civil
+
+/obj/item/melee/sabre/civil
+	name = "Off-duty Officer's Sabre"
+	desc = "Изящное оружие, его мономолекулярная кромка способна с легкостью рассекать плоть и кости."
+	force = 8
+	throwforce = 12
+	armour_penetration = 50
+	block_parry_data = null
 
 /obj/item/storage/belt/sabre/secbelt
 	name = "security sheath"

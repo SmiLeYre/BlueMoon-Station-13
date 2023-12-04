@@ -7,6 +7,7 @@
 	armor = list(MELEE = 30, BULLET = 30, LASER = 30, ENERGY = 0, BOMB = 30, BIO = 0, RAD = 0, FIRE = 60, ACID = 60)
 	density = TRUE
 	anchored = FALSE
+	layer = 5
 	COOLDOWN_DECLARE(cooldown_vehicle_move)
 	var/list/mob/occupants				//mob = bitflags of their control level.
 	var/max_occupants = 1
@@ -175,3 +176,12 @@
 		occupants[1].bullet_act(Proj) // driver dinkage
 		return BULLET_ACT_HIT
 	. = ..()
+
+// BLUEMOON ADDITION AHEAD - предотвращаем множество абузов скорости, не давая сверхтяжёлым персонажам залезать на транспорт
+/obj/vehicle/pre_buckle_mob(mob/living/M)
+	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER))
+		usr.visible_message(span_warning("[usr] tried to get [M] on [src], but it doesn't move. Too much weight!."), span_warning("You tried to get [M] on [src], but it doesn't move. Too much weight!"))
+		unbuckle_mob(M, TRUE)
+		return
+	. = ..()
+// BLUEMOON ADDITION END

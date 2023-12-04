@@ -18,6 +18,7 @@
 	clawfootstep = FOOTSTEP_WOOD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
+	flammability = 3 // yikes, better put that out quick
 
 /turf/open/floor/wood/examine(mob/user)
 	. = ..()
@@ -92,10 +93,14 @@
 	floor_tile = /obj/item/stack/tile/wood/wood_diagonal
 	broken_states = list("diagonal_wood-broken", "diagonal_wood-broken2", "diagonal_wood-broken3")
 
+/turf/open/floor/wood/wood_parquet
+	icon_state = "wood_parquet"
+	floor_tile = /obj/item/stack/tile/wood/wood_parquet
+
 /turf/open/floor/grass
 	name = "grass patch"
 	desc = "You can't tell if this is real grass or just cheap plastic imitation."
-	icon_state = "grass"
+	icon_state = "grass3"
 	floor_tile = /obj/item/stack/tile/grass
 	broken_states = list("sand")
 	flags_1 = NONE
@@ -107,6 +112,7 @@
 	var/ore_type = /obj/item/stack/ore/glass
 	var/turfverb = "uproot"
 	tiled_dirt = FALSE
+	flammability = 2 // california simulator
 
 /turf/open/floor/grass/Initialize(mapload)
 	. = ..()
@@ -188,6 +194,9 @@
 	clawfootstep = FOOTSTEP_SAND
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
+/turf/open/floor/grass/snow/fake
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+
 /turf/open/floor/grass/snow/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
 	return
 
@@ -208,7 +217,6 @@
 	if(prob(15))
 		icon_state = "basalt[rand(0, 12)]"
 		set_basalt_light(src)
-
 
 /turf/open/floor/grass/fakebasalt //Heart is not a real planeteer power
 	name = "aesthetic volcanic flooring"
@@ -247,6 +255,7 @@
 	clawfootstep = FOOTSTEP_CARPET_BAREFOOT
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
+	flammability = 3 // this will be abused and i am all for it
 
 /turf/open/floor/carpet/examine(mob/user)
 	. = ..()
@@ -283,7 +292,7 @@
 /turf/open/floor/carpet/blackred
 	icon = 'icons/turf/floors/carpet_blackred.dmi'
 	floor_tile = /obj/item/stack/tile/carpet/blackred
-	icon_state = "tile-carpet-blackred"
+	icon_state = "carpetstar"
 	smooth = SMOOTH_MORE
 	canSmoothWith = list(/turf/open/floor/carpet/black, /turf/open/floor/carpet/blackred, /turf/open/floor/carpet/monochrome)
 
@@ -422,3 +431,37 @@
 	underlay_appearance.icon_state = SPACE_ICON_STATE
 	underlay_appearance.plane = PLANE_SPACE
 	return TRUE
+
+/turf/open/floor/eighties
+	name = "retro floor"
+	desc = "This one takes you back."
+	icon_state = "eighties"
+	broken_states = list("eighties_damaged")
+	floor_tile = /obj/item/stack/tile/eighties
+
+/turf/open/floor/eighties/red
+	name = "red retro floor"
+	desc = "Totally RED-ICAL!"
+	icon_state = "eightiesred"
+	floor_tile = /obj/item/stack/tile/eighties/red
+
+/obj/item/stack/tile/eighties
+	name = "retro tile"
+	singular_name = "retro floor tile"
+	desc = "A stack of floor tiles that remind you of an age of funk. Use in your hand to pick between a black or red pattern."
+	icon_state = "tile_eighties"
+	turf_type = /turf/open/floor/eighties
+	tile_reskin_types = list(
+		/obj/item/stack/tile/eighties,
+		/obj/item/stack/tile/eighties/red,
+	)
+
+/obj/item/stack/tile/eighties/loaded
+	amount = 15
+
+/obj/item/stack/tile/eighties/red
+	name = "red retro tile"
+	singular_name = "red retro floor tile"
+	desc = "A stack of REDICAL floor tiles! Use in your hand to pick between a black or red pattern!" //i am so sorry
+	icon_state = "tile_eightiesred"
+	turf_type = /turf/open/floor/eighties/red

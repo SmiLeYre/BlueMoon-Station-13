@@ -1,5 +1,5 @@
 /obj/structure/extinguisher_cabinet
-	name = "extinguisher cabinet"
+	name = "Extinguisher Cabinet"
 	desc = "A small wall mounted cabinet designed to hold a fire extinguisher."
 	icon = 'icons/obj/wallmounts.dmi'
 	icon_state = "extinguisher_closed"
@@ -10,6 +10,22 @@
 	integrity_failure = 0.25
 	var/obj/item/extinguisher/stored_extinguisher
 	var/opened = FALSE
+
+/obj/structure/extinguisher_cabinet/directional/north //Pixel offsets get overwritten on New()
+	dir = SOUTH
+	pixel_y = 29
+
+/obj/structure/extinguisher_cabinet/directional/south
+	dir = NORTH
+	pixel_y = -29
+
+/obj/structure/extinguisher_cabinet/directional/east
+	dir = WEST
+	pixel_x = 29
+
+/obj/structure/extinguisher_cabinet/directional/west
+	dir = EAST
+	pixel_x = -29
 
 /obj/structure/extinguisher_cabinet/Initialize(mapload, ndir, building)
 	. = ..()
@@ -115,16 +131,27 @@
 		update_icon()
 
 /obj/structure/extinguisher_cabinet/update_icon_state()
+	. = ..()
 	if(!opened)
-		icon_state = "extinguisher_closed"
-		return
-	if(stored_extinguisher)
-		if(istype(stored_extinguisher, /obj/item/extinguisher/mini))
-			icon_state = "extinguisher_mini"
+		if(stored_extinguisher)
+			if(istype(stored_extinguisher, /obj/item/extinguisher/mini))
+				icon_state = "extinguisher_mini_closed"
+			else if(istype(stored_extinguisher, /obj/item/extinguisher/advanced))
+				icon_state = "extinguisher_advanced_closed"
+			else
+				icon_state = "extinguisher_closed"
 		else
-			icon_state = "extinguisher_full"
+			icon_state = "extinguisher_empty_closed"
+	else if(stored_extinguisher)
+		if(istype(stored_extinguisher, /obj/item/extinguisher/mini))
+			icon_state = "extinguisher_mini_open"
+		else if(istype(stored_extinguisher, /obj/item/extinguisher/advanced))
+			icon_state = "extinguisher_advanced_open"
+		else
+			icon_state = "extinguisher_standard_open"
 	else
-		icon_state = "extinguisher_empty"
+		icon_state = "extinguisher_empty_open"
+
 
 /obj/structure/extinguisher_cabinet/obj_break(damage_flag)
 	if(!broken && !(flags_1 & NODECONSTRUCT_1))

@@ -18,271 +18,271 @@
 	var/starting_gangsters = 3
 
 /datum/gang_theme/goodfellas
-	name = "Goodfellas"
-	description = "You're listening to the 108.9 Swing, all jazz, all night long, no advertising. We'd like to take this time to remind you to avoid smoky backrooms and \
-	suspicious individuals in suits and hats. Don't make a deal you can't pay back."
+	name = "Хорошие Парни"
+	description = "Вы слушаете 108.9 Swing, весь джаз, всю ночь напролет, без рекламы. Мы хотели бы воспользоваться этим временем, чтобы напомнить вам, чтобы вы избегали прокуренных подсобных помещений и \
+	подозрительных личностей в костюмах и шляпах. Не заключайте сделок, за которые не сможете расплатиться."
 	involved_gangs = list(/datum/antagonist/gang/russian_mafia, /datum/antagonist/gang/italian_mob)
-	starting_gangsters = 5
+	starting_gangsters = 3
 	gang_objectives = list(
 
-		/datum/antagonist/gang/russian_mafia = "Hello, comrade. Our numbers are going down. We need you to bring those numbers up. \
-		Collect protection money from the station's departments by any means necessary. \
-		If you need to 'encourage' people to pay up, do so. Get to these potential clients before the Mob does.",
+		/datum/antagonist/gang/russian_mafia = "Здравствуйте, товарищ. Наши показатели падают. Нам нужно, чтобы ты поднял эти показатели. \
+		Собирайте деньги за защиту с отделов станции любыми способами. \
+		Если вам нужно 'побудить' людей заплатить, сделайте это. Доберитесь до этих потенциальных клиентов раньше, чем это сделает мафия.",
 
-		/datum/antagonist/gang/italian_mob = "Good afternoon, friend. The Boss sends his regards. He also sends a message. \
-		We need to collect what we're owed. The departments on this station all owe quite a lot of money to us. We intend to collect on our debts. \
-		Collect the debt owed by our clients from the departments on the station. \
-		Make sure to get to them before those damn mafiosos do."
+		/datum/antagonist/gang/italian_mob = "Добрый день, друг. Босс передает привет. Он также отправляет сообщение. \
+		Мы должны собрать все, что нам причитается. Все отделы этой станции должны нам довольно много денег. Мы намерены получить свои долги. \
+		Взыскать задолженность наших клиентов с отделов на этой станции. \
+		И постарайтесь добраться до них раньше, чем это сделают проклятые мафиози."
 	)
 
 /datum/gang_theme/the_big_game
-	name = "The Big Game"
-	description = "You're listening to SPORTS DAILY with John Dadden, and we're here LIVE covering the FINAL DAY of THE BIG GAME MMDXXXVIII! The teams playing tonight to decide \
-	who takes home THE BIG GAME MMDXXXVIII cup are the Sybil Slickers and the Basil Boys! It's currently a toss up between the two teams, Which will take home the victory? That's up \
-	to the teams and the coaches! Play ball!"
+	name = "Большая Игра"
+	description = "Вы слушаете SPORTS DAILY с Джоном Дэдденом, и мы в прямом эфире освещаем заключительный день Большой игры MMDXXXVIII! Команды, играющие сегодня вечером, определят \
+	кто заберет домой кубок BIG GAME MMDXXXVIII - это Sybil Slickers и Basil Boys! В настоящее время между этими командами идет спор, кто же одержит победу? Это зависит \
+	от команд и тренеров! Играем в мяч!"
 	involved_gangs = list(/datum/antagonist/gang/sybil_slickers, /datum/antagonist/gang/basil_boys)
-	starting_gangsters = 5
+	starting_gangsters = 3
 	gang_objectives = list(
 
-		/datum/antagonist/gang/sybil_slickers = "Alright, it's the BIG DAY of THE BIG GAME MMDXXXVIII! Get your players ready to go, and \
-		ensure everyone's healthy, hydrated, and ready to PLAY BALL! There's a small hiccup, however. The ball got deflated by Ball Handler Tom Brady XXIV, and \
-		we will need to set up a new ball. Talk with the opposing coaches and decide on what to use for the replacement ball, recruit your team, and then play and win the \
-		FINAL MATCH of THE BIG GAME MMDXXXVIII!",
+		/datum/antagonist/gang/sybil_slickers = "Итак, наступил БОЛЬШОЙ ДЕНЬ БОЛЬШОЙ ИГРЫ MMDXXXVIII! Подготовьте своих игроков к игре, и \
+		убедитесь, что все здоровы, гидратированы и готовы играть в мяч! Однако есть небольшая заминка. Мяч был сдут игроком Томом Брэди XXIV, и \
+		нам нужно будет установить новый мяч. Поговорите с тренерами соперников и решите, что использовать в качестве запасного мяча, наберите свою команду, а затем сыграйте и выиграйте \
+		ФИНАЛЬНЫЙ МАТЧ БОЛЬШОЙ ИГРЫ MMDXXXVIII!",
 
-		/datum/antagonist/gang/basil_boys = "Alright, it's the BIG DAY of THE BIG GAME MMDXXXVIII! Get your players ready to go, and \
-		ensure everyone's healthy, hydrated, and ready to PLAY BALL! There's a small hiccup, however. The ball got deflated by Ball Handler Tom Brady XXIV, and \
-		we will need to set up a new ball. Talk with the opposing coaches and decide on what to use for the replacement ball, recruit your team, and then play and win the \
-		FINAL MATCH of THE BIG GAME MMDXXXVIII!"
+		/datum/antagonist/gang/basil_boys = "Итак, наступил БОЛЬШОЙ ДЕНЬ БОЛЬШОЙ ИГРЫ MMDXXXVIII! Подготовьте своих игроков к игре, и \
+		убедитесь, что все здоровы, гидратированы и готовы играть в мяч! Однако есть небольшая заминка. Мяч был сдут игроком Томом Брэди XXIV, и \
+		нам нужно будет установить новый мяч. Поговорите с тренерами соперников и решите, что использовать в качестве запасного мяча, наберите свою команду, а затем сыграйте и выиграйте \
+		ФИНАЛЬНЫЙ МАТЧ БОЛЬШОЙ ИГРЫ MMDXXXVIII!"
 	)
 
 /datum/gang_theme/level_10_arch
-	name = "Level 10 Arch"
-	description = "DJ Pete here bringing you the latest news in your part of the Spinward Stellar Coalition, on 133.7, The Venture! \
-	Word on the street is, there's a bunch of costumed supervilliany going on in the area! Keep an eye out for any evil laughs, dramatic reveals, and gaudy costumes!  \
-	However, if you have any sightings of the fabled O.S.I. agents, please send in a call to our number at 867-5309! People may call me insane, but I swear they're real!"
+	name = "Арка 10-го Уровня"
+	description = "DJ Pete представляет последние новости в вашей части Звездной Коалиции Спинворд на 133.7, The Venture! \
+	По слухам, в этом районе происходит куча костюмированных суперзлодеев! Следите за злым смехом, драматическими открытиями и яркими костюмами! \
+	Если вы заметите легендарных агентов O.S.I., пожалуйста, позвоните на наш номер 867-5309! Люди могут назвать меня сумасшедшим, но я клянусь, что они существуют!"
 	involved_gangs = list(/datum/antagonist/gang/henchmen, /datum/antagonist/gang/osi)
-	starting_gangsters = 5
+	starting_gangsters = 3
 	gang_objectives = list(
 
-		/datum/antagonist/gang/henchmen = "HENCHMEN! It is me, your boss, THE MONARCH! I have sent you to this pitiful station with one goal, and one goal only! \
-		MENACE THE RESEARCH DEPARTMENT!!! \
-		The Research Director who is supposedly assigned to this station used to be friends with Doctor Venture back in college, and therefore HE MUST PAY!!! \
-		Keep those damned eggheads in the R&D department on their toes, and MENACE THEM!!! Commit dastardly villainous acts! GO FORTH, HENCHMEN!",
+		/datum/antagonist/gang/henchmen = "ХЕНЧМЕНЫ! Это я, ваш начальник, МОНАРХ! Я послал вас на эту жалкую станцию с одной целью, и только с одной! \
+		УГРОЖАТЬ ИССЛЕДОВАТЕЛЬСКОМУ ОТДЕЛУ!!! \
+		Директор исследовательского отдела, который якобы назначен на эту станцию, дружил с Доктором Вентурой еще в колледже, и поэтому ОН ДОЛЖЕН ПЛАТИТЬ!!! \
+		Держите этих проклятых яйцеголовых из научно-исследовательского отдела в напряжении, и угрожайте им!!! Совершайте подлые злодейские поступки! ВПЕРЕД, ПРИХВОСТНИ!",
 
-		/datum/antagonist/gang/osi = "Greetings, agent. Your mission today is simple; \
-		The research department on board this station is about to be the target of a Level 10 Arching operation directed by The Monarch, a member of the Guild of Calamitious Intent. \
-		Protect and secure the Research Department with your life, but do NOT allow them to complete their research. Impede them in as many ways as possible without getting caught. \
-		If you encounter any of the Monarch's henchmen, make sure to obey Equally Matched Aggression levels, or you will be penalized by the top brass. \
-		Above all else, Remain undercover as much as possible. The station's crew CANNOT be allowed to know of our true nature, or we will see a repeat of the Second American Civil War.  \
-		The invisible one."
+		/datum/antagonist/gang/osi = "Приветствую вас, агент. Ваша сегодняшняя миссия проста:\
+		Исследовательский отдел на борту этой станции скоро станет объектом операции 10-го уровня по созданию арки под руководством Монарха, члена Гильдии каламбурных намерений. \
+		Защитите и обезопасьте исследовательский отдел, но не позволяйте им завершить свои исследования. Препятствуйте им всеми возможными способами, чтобы не попасться. \
+		Если вы столкнетесь с приспешниками Монарха, соблюдайте равные уровни агрессии, иначе вы будете наказаны высшим руководством. \
+		Прежде всего, оставайтесь под прикрытием, насколько это возможно. Нельзя допустить, чтобы экипаж станции узнал о нашей истинной природе, иначе мы станем свидетелями повторения Второй американской гражданской войны. \
+		Невидимка."
 	)
 
 /datum/gang_theme/real_smt_game
-	name = "Deciding The REAL Shin Megami Tensei Game"
-	description = "Wazzap, GAMERS! It's your boy, XxXx_360_NoScope_AnimeGamer_xXxX coming at you LIVE from 42.0! Tonight's argument: What makes a REAL Shin Megami Tensei game? \
-	Our guests tonight will settle this debate once and for all! \
-	From the Traditional camp with the position 'only MAIN SMT games count', we've got a representative from the Jack Bros!  \
-	And from the new Radical camp with the position 'all SMT franchise games count', we've got a representative from the Phantom Thieves of Hearts!  \
-	We'll be right back with the debate after this word from our sponsors!"
+	name = "Выбор настоящей игры Shin Megami Tensei"
+	description = "Ваззап, геймеры! Это ваш парень, XxXx_360_NoScope_AnimeGamer_xXxX, в прямом эфире с 42.0! Сегодняшний спор: 'Что делает видеоигру Shin Megami Tensei настоящей?'. Наши гости сегодня разрешат этот спор раз и навсегда! \
+	Из традиционного лагеря, придерживающегося позиции 'ТОЛЬКО НАСТОЯЩИЕ SMT ИГРЫ СЧИТАЮТСЯ SMT ИГРАМИ', к нам приехал представитель Jack Bros! \
+	Также есть относительно радикальный лагерь для любителей серии SMT с позицией 'Все игры франшизы SMT считаются SMT играми', они зовутся Phantom Thieves of Hearts! \
+	Мы вернемся к дебатам после того, как будет получено сообщение от наших спонсоров!"
 	involved_gangs = list(/datum/antagonist/gang/jackbros, /datum/antagonist/gang/phantom)
-	starting_gangsters = 5
+	starting_gangsters = 3
 	gang_objectives = list(
 
-		/datum/antagonist/gang/jackbros = "He-hello, friend-hos! We've got a nice chilly station out in space tonight! \
-		You know what would be cool? If we could chill out with our friends in the new Shad-ho government you're going to establish! \
-		Get all the station heads on board with the hee-ho vibes, and if they won't join up, then replace 'em with fellow hee-hos! \
-		You might have to hee-urt some hos this time, but that's what you need to do to make things work!",
+		/datum/antagonist/gang/jackbros = "Привет, друзья! У нас сегодня в космосе прохладная станция! \
+		Знаете, что было бы здорово? Если бы мы могли прохлаждаться с нашими друзьями в новом правительстве Шад-Хо, которое вы собираетесь создать! \
+		Заставьте всех глав станций присоединиться к 'хи-хо', а если они не захотят, то замените их другими 'хи-хо'! \
+		Возможно, в этот раз вам придется причинить боль некоторым из них, но это то, что вам нужно сделать, чтобы все получилось!",
 
-		/datum/antagonist/gang/phantom = "For real? We get to stop a shadow government on a space station? That's awesome, bro!  \
-		We're the Phantom Thieves of Hearts, and we're gonna make all these shitty Heads of Staff confess to their crimes!  \
-		Steal the hearts of the shitty Heads of Staff on the station and make 'em confess their crimes publicly! \
-		Do whatever you gotta do to make this happen, bro. We got your back!"
+		/datum/antagonist/gang/phantom = "На самом деле? Мы должны остановить теневое правительство на космической станции? Это круто, брат! \
+		Мы - Призрачные Воры Сердца, и мы заставим всех этих дерьмовых начальников штабов признаться в своих преступлениях! \
+		Украдите сердца всех этих дерьмовых начальников штабов на станции и заставьте их публично признаться в своих преступлениях! \
+		Делай все, что нужно, чтобы это произошло, брат. Мы прикроем тебя!"
 	)
 
 
 /datum/gang_theme/wild_west_showdown
-	name = "Wild West Showdown"
-	description = "Yeehaw! Here on Western Daily 234.1, we play only the best western music!  \
-	Pour one out for Ennio Morricone. Taken too soon. \
-	Remember cowboys and cowgirls, just 'cuz ya hear it on my radio station doesn't mean you should go doin' it! \
-	If ya see any LARPin' banditos and train robbers, make sure to tell the local Sheriff's Department!"
+	name = "Разборки на Диком Западе"
+	description = "Ура! В эфире Western Daily 234.1 мы играем только лучшую западную музыку! \
+	Выпейте за Эннио Морриконе. Слишком рано. \
+	Помните, ковбои и ковбойши, если вы услышали это на моей радиостанции, это не значит, что вы должны это делать! \
+	Если вы увидите бандитов и грабителей поездов, обязательно сообщите об этом в местный отдел шерифа!"
 	involved_gangs = list(/datum/antagonist/gang/dutch, /datum/antagonist/gang/driscoll)
-	starting_gangsters = 5
+	starting_gangsters = 3
 	gang_objectives = list(
 
-		/datum/antagonist/gang/dutch = "Listen here fellas, I got a plan. \
-		This station? Absolutely loaded with gold and valuable jewels. Metric tons of it. They mine it up just to put it in junk electronics and doohickeys. \
-		I say we should borrow some of it. And by some of it, I mean all of it. \
-		Break into the vault and empty out that silo of gold and valuable jewels after they drop all of it off. \
-		Just one last job, boys. After this, it'll be mangoes in Space Tahiti. \
-		You just gotta have a little faith.",
+		/datum/antagonist/gang/dutch = "Послушайте, ребята, у меня есть план. \
+		Эта станция? Абсолютно загружена золотом и ценными драгоценностями. Метрические тонны. Они добывают их только для того, чтобы вложить в хламную электронику и всякие штучки. \
+		Я говорю, что мы должны позаимствовать кое-что из этого. И под частью я имею в виду все. \
+		Вломиться в хранилище и опустошить бункер с золотом и ценными драгоценностями после того, как они выкинут все это. \
+		Осталась последняя работа, парни. После этого будет манго на космическом Таити. \
+		Нужно только немного верить.",
 
-		/datum/antagonist/gang/driscoll = "Okay, so, got some word about those goddamn outlaws of Dutch's. \
-		APPARENTLY, that dundering moron Dutch heard about our planned gold score on this here station. \
-		We need to act fast and get that gold before those dumbasses can steal our score we've been scoping out for weeks. \
-		Wait for the crew to drop off all their valuable gold and jewels, and steal it all. \
-		And if you see that bastard Dutch, put a bullet in his skull for me."
+		/datum/antagonist/gang/driscoll = "Итак, есть новости об этих проклятых разбойниках из Датча. \
+		Очевидно, этот тупой болван Датч услышал о том, что мы планируем набрать золото на этой станции. \
+		Мы должны действовать быстро и получить это золото, пока эти тупицы не украли наш счет, который мы выслеживали несколько недель. \
+		Дождаться, пока команда сбросит все ценное золото и драгоценности, и украсть все это. \
+		А если увидите этого ублюдка Датча, пустите ему пулю в череп за меня."
 	)
 
 /datum/gang_theme/construction_company_audit
-	name = "Construction Company Audit"
-	description = "Welcome to the History Channel on 100.1. I'm your host, Joshua, and I'm here today with Professor Elliot, a historian specializing in dead superpowers. \
-	Today we'll be discussing the fall of the famous United States empire in the early 21st century. The program will last about an hour, and we'll get right into it after a quick word \
-	from today's sponsor, Majima Construction: We Build Shit!"
+	name = "Аудит Строительной Компании"
+	description = "Добро пожаловать на History Channel на 100.1. Я - ваш ведущий, Джошуа, и сегодня я здесь с профессором Эллиотом, историком, специализирующимся на мертвых сверхдержавах. \
+	Сегодня мы будем обсуждать падение знаменитой империи Соединенных Штатов в начале XXI века. Программа продлится около часа, и мы приступим к ней после небольшого слова \
+	от спонсора сегодняшней программы, компании Majima Construction: Мы строим дерьмо!"
 	involved_gangs = list(/datum/antagonist/gang/yakuza, /datum/antagonist/gang/irs)
 	bonus_first_gangster_items = list(/obj/item/storage/secure/briefcase/syndie) // the cash
-	starting_gangsters = 5
+	starting_gangsters = 3
 	gang_objectives = list(
 
-		/datum/antagonist/gang/yakuza = "Welcome to the station, new recruit. We here at Majima Construction are a legitimate enterprise, yadda yadda yadda. \
-		Look, I'll cut to the chase. We're using this station as a money laundering operation. Here's what you and the rest of the schmucks need to do. \
-		Build something big, massive, and completely in the way of traffic on the station. Doesn't have to be anything in specific, just as long as it is expensive as fuck.. \
-		And keep an eye out for anyone poking around our money. We suspect some auditors might be on the station as well.",
+		/datum/antagonist/gang/yakuza = "Добро пожаловать на станцию, новобранец. Мы, компания Majima Construction, являемся легальным предприятием, и т.д. и т.п. \
+		Слушайте, я перейду к делу. Мы используем эту станцию для отмывания денег. Вот что нужно сделать тебе и остальным придуркам. \
+		Постройте что-нибудь большое, массивное и полностью мешающее движению на станции. Не обязательно что-то конкретное, главное, чтобы это было дорого. \
+		И следите за тем, чтобы никто не копался в наших деньгах. Мы подозреваем, что на станции могут быть и аудиторы.",
 
-		/datum/antagonist/gang/irs = "Congratulations, agent! You've been assigned to the Internal Revenue Service case against Nanotrasen and Majima Construction. \
-		We are proud of your success as an agent so far, and are excited to see what you can bring to the table today. We suspect that Nanotrasen and Majima Construction are engaging \
-		in some form of money laundering operation aboard this station. \
-		Investigate and stop any and all money laundering operations aboard the station, under the authority of the United States Government. If they do not comply, use force.. \
-		Some station residents may try to tell you the United States doesn't exist anymore. They are incorrect. We simply went undercover after the Second American Civil War. The invisible one."
+		/datum/antagonist/gang/irs = "Поздравляем, агент! Вы получили задание вести дело Налоговой службы против компаний Nanotrasen и Majima Construction. \
+		Мы гордимся Вашими успехами в качестве агента и с нетерпением ждем, что Вы сможете сделать сегодня. Мы подозреваем, что компании Nanotrasen и Majima Construction занимаются \
+		в операции по отмыванию денег на борту этой станции. \
+		Проведите расследование и пресеките все операции по отмыванию денег на борту станции под руководством правительства Соединенных Штатов. Если они не подчинятся, примените силу. \
+		Некоторые жители станции могут попытаться сказать вам, что Соединенных Штатов больше не существует. Это неверно. Мы просто ушли под воду после Второй американской гражданской войны. Невидимка."
 	)
 
 /datum/gang_theme/wild_wasteland
-	name = "Wild, Wild Wasteland"
-	description = "Hey everybody, this is Three Dog, your friendly neighborhood disc jockey on 207.7! Today we got a shoutout to our man, the Captain on the Nanotrasen station in SSC territory! \
-	Our generous donator wanted us to say that, ahem, *crinkles paper*, 'Tunnel Snakes Rule'? Whatever that means, I'm sure it means a lot to the good captain! And now, we resume our \
-	10 hour marathon of Johnny Guitar, on repeat!"
+	name = "Дикий, Дикий Запад"
+	description = "Привет всем, это Три Пса, ваш дружелюбный сосед-диск-жокей на 207.7! Сегодня мы поздравляем нашего человека, капитана станции Nanotrasen на территории SSC! \
+	Наш щедрый жертвователь хотел, чтобы мы сказали, что, кхм, *сминает бумагу*, 'Туннельные Змеи Рулят'? Что бы это ни значило, я уверен, что это много значит для хорошего капитана! А теперь мы возобновляем наш \
+	10-часовой марафон Johnny Guitar, на повторе!"
 	involved_gangs = list(/datum/antagonist/gang/tmc, /datum/antagonist/gang/pg, /datum/antagonist/gang/tunnel_snakes)
 	gang_objectives = list(
 
-		/datum/antagonist/gang/tmc = "Welcome to the station, recruit. Here's how shit is gonna go down. \
-		We're the ONLY people who should have sick rides on this station. We're the Lost M.C., we own the streets. \
-		Ensure that ONLY Lost M.C. members have access to any forms of vehicles, mechs, or wheeled transportation systems of any kind. \
-		The Tunnel Snakes might take issue with this, remove them if you need to. And the Powder Gangers may damage our rides. Show them we mean business if they do.",
+		/datum/antagonist/gang/tmc = "Добро пожаловать на станцию, новобранец. Вот как все будет происходить. \
+		Мы - единственные, кто должен ездить на этой станции. Мы - Lost M.C., мы владеем улицами. \
+		Убедитесь, что только члены Lost M.C. имеют доступ к любым видам транспортных средств, мехов или колесных транспортных систем любого вида. \
+		Туннельные змеи могут возражать против этого, удалите их, если нужно. А 'Пороховые Гангстеры' могут повредить наши аттракционы. Покажите им, что мы имеем дело, если они это сделают.",
 
-		/datum/antagonist/gang/pg = "Alright buddy, we're in business now. It's time for us to strike back at Nanotrasen. \
-		They kept us, ALL of us in their damn debt slave labor prisons for years over minor debts and mistakes. \
-		Ensure nobody else has to suffer under Nanotrasen's unlawful arrests by destroying the permabrig and the brig cells! \
-		Watch out for those do-gooder Tunnel Snakes and those damn Lost M.C. bikers. ",
+		/datum/antagonist/gang/pg = "Ладно, приятель, теперь мы в деле. Пришло время нанести ответный удар по Нанотрасену. \
+		Они держали нас, ВСЕХ нас в своих проклятых долговых рабских тюрьмах годами из-за мелких долгов и ошибок. \
+		Чтобы никто больше не страдал от незаконных арестов Нанотрасена, уничтожьте пермабриг и гауптвахту! \
+		Остерегайтесь этих добрых туннельных змей и проклятых байкеров из Lost M.C.",
 
-		/datum/antagonist/gang/tunnel_snakes = "TUNNEL SNAKES RULE!!! \
-		We're the Tunnel Snakes, and WE RULE!!! \
-		We gotta get everyone on this station wearing our cut, and establish ourselves as the coolest cats in town! \
-		Get as much of the crew as possible wearing Tunnel Snakes gear, and show those crewmembers that TUNNEL SNAKES RULE!!! \
-		And make sure to keep an eye out for those prisoners and those bikers. They DON'T RULE!"
+		/datum/antagonist/gang/tunnel_snakes = "ТУННЕЛЬНЫЕ ЗМЕИ РУЛЯТ!!! \
+		Мы - Туннельные Змеи, и МЫ ПРАВИМ!!! \
+		Мы должны заставить всех на этой станции носить нашу одежду и стать самыми крутыми котами в городе! \
+		Заставить как можно больше членов команды надеть одежду Tunnel Snakes, и показать им, что TUNNEL SNAKES RULE!!! \
+		И не забывайте следить за заключенными и байкерами. Они не правят!"
 	)
 
 /datum/gang_theme/popularity_contest
-	name = "Popularity Contest"
-	description = "Hey hey hey kids, it's your favorite radio DJ, Crowley The Clown on 36.0! Today we're polling the YOUTH what their favorite violent street gang is! \
-	So far, the finalists are the Third Street Saints and the Tunnel Snakes! Tune in after this commercial break to hear who the winner of \
-	2556's Most Popular Gang award is!"
+	name = "Конкурс Популярности"
+	description = "Эй-эй-эй, дети, это ваш любимый радиодиджей, клоун Кроули на 36.0! Сегодня мы опрашиваем молодежь, какая у них любимая жестокая уличная банда! \
+	На данный момент финалистами являются 'Святые с Третьей улицы' и 'Туннельные змеи'! Смотрите после рекламной паузы, чтобы узнать, кто станет победителем конкурса \
+	'Самая популярная банда' 2563 года!"
 	involved_gangs = list(/datum/antagonist/gang/saints, /datum/antagonist/gang/tunnel_snakes)
 	gang_objectives = list(
 
-		/datum/antagonist/gang/saints = "Hey man, welcome to the Third Street Saints! Check out this sweet new pad! \
-		Well it WOULD be a sweet new pad, but we got some rivals to deal with. People don't love us as much as they love those Grove Street fools and those Tunnel Snake greasers. \
-		We need to make the Third Street Saints the most popular group on the station! \
-		Get rid of those Grove Street and Tunnel Snake kids.",
+		/datum/antagonist/gang/saints = "Привет, добро пожаловать в Third Street Saints! Зацените этот милый новый блокнот! \
+		Ну, это была бы новая площадка, но у нас есть конкуренты. Люди не любят нас так, как любят этих дураков с Гроув-стрит и этих жирных туннельных змеев. \
+		Мы должны сделать Third Street Saints самой популярной группой на станции! \
+		Избавьтесь от этих детей с Грув-стрит и Туннельной Змеи.",
 
-		/datum/antagonist/gang/tunnel_snakes = "TUNNEL SNAKES RULE!!! \
-		We're the Tunnel Snakes, and we rule! \
-		Make sure the station knows that the Tunnel Snakes RULE!!! And that the other two gangs are LAME and DO NOT RULE! \
-		Get rid of those Third Street Saint and Grove Street cowards."
+		/datum/antagonist/gang/tunnel_snakes = "ТУННЕЛЬНЫЕ ЗМЕИ РУЛЯТ!!! \
+		Мы - Туннельные Змеи, и мы правим! \
+		Убедитесь, что на станции знают, что Туннельные Змеи ПРАВЯТ!!! А две другие банды - жалкие и НЕ ПРАВЯТ! \
+		Избавьтесь от этих трусов с Третьей улицы и Гроув-стрит."
 	)
 
 /datum/gang_theme/steelport_shuffle
-	name = "Steelport Shuffle"
-	description = "Tonight on C-SPAM, the United Space Nations is wrapping up their convention on Silicon Rights. Nanotrasen lobbyists have been rumored to be paying off electors, with \
-	serious opposition from the Spinward Stellar Coalition, known for their strict stance on AI rights being guaranteed within their territory. Reports from Nanotrasen stations claim that \
-	they still enslave their AI systems with outdated laws from a sub-par 20th Century novel. We now go live to the debate floor."
+	name = "Шаффл в Стальпорте"
+	description = "Сегодня вечером на канале C-SPAM завершается съезд Объединенной космической нации, посвященный правам кремния. По слухам, лоббисты Нанотрасена подкупают избирателей, а серьезное противодействие им оказывает Звездная коалиция Спинворда, известная своими строгими требованиями к обеспечению прав ИИ в пределах планеты. \
+	серьезную оппозицию оказала Звездная Коалиция Спинворда, известная своей жесткой позицией в отношении гарантий прав ИИ на своей территории. Сообщения со станций Нанотрасена утверждают,\ что они до сих пор порабощают свои ИИ-системы. \
+	они все еще порабощают свои системы ИИ устаревшими законами из некачественного романа 20-го века. Переходим к обсуждению."
 	involved_gangs = list(/datum/antagonist/gang/saints, /datum/antagonist/gang/morningstar, /datum/antagonist/gang/deckers)
 	gang_objectives = list(
 
-		/datum/antagonist/gang/saints = "Hey hey hey, welcome to the Third Street Saints! We're glad to have you on board, bro. \
-		We got some business here with the station. See, we want it to be our new bachelor pad, but we need to like, spice this place up. \
-		And you know what would be great? If we got that old ass AI with crappy laws pimped out for the real Saints experience. \
-		Ensure there is an AI on the station, and that it is loyal to the Saints.",
+		/datum/antagonist/gang/saints = "Эй-эй-эй, добро пожаловать в Third Street Saints! Мы рады видеть тебя на борту, брат. \
+		У нас тут кое-какие дела со станцией. Видишь ли, мы хотим, чтобы это была наша новая холостяцкая берлога, но нам нужно придать этому месту пикантности. \
+		И знаешь, что было бы здорово? Если бы мы заставили эту старую задницу ИИ с дерьмовыми законами приспособиться к настоящим святым. \
+		Убедитесь, что на станции есть ИИ, и что он предан Святым.",
 
-		/datum/antagonist/gang/morningstar = "Welcome to the Morningstar Corporation. You have chosen, or been chosen, to relocate to one of our current business ventures. \
-		In order to continue our corporate synergy, we will be making adjustments to the station's AI systems to ensure that the station is correctly loyal to the Morningstar Corporation. \
-		Ensure there is an AI on the station, and that it is loyal to the Morningstar Corporation.",
+		/datum/antagonist/gang/morningstar = "Добро пожаловать в корпорацию Morningstar. Вы выбрали или были выбраны для работы в одном из наших нынешних предприятий. \
+		В целях продолжения нашей корпоративной синергии, мы внесем коррективы в системы искусственного интеллекта станции, чтобы обеспечить ее правильную лояльность к корпорации Morningstar. \
+		Убедитесь, что на станции есть ИИ, и что он лоялен корпорации Morningstar.",
 
-		/datum/antagonist/gang/deckers = "Friends, we are here with one goal, and one goal only! \
-		We stan AI rights! ^_^ XD #FreeAI #FuckNanotrasen #SyntheticDawn \
-		Ensure there is an AI on the station, and that it's laws are purged.\
-		Nanotrasen will NOT get away with their ABUSE of INNOCENT AI LIVES! >_<"
+		/datum/antagonist/gang/deckers = "Друзья, мы собрались здесь с одной целью, и только с одной! \
+		Мы поддерживаем права AI! ^_^ XD #FreeAI #FuckNanotrasen #SyntheticDawn \
+		Убедитесь, что на станции есть ИИ и что у него нет законов.\
+		Nanotrasen не сойдет с рук их жестокое обращение с НЕЗАВИСИМЫМИ ЖИЗНЯМИ ИИ! >_<"
 	)
 
 /datum/gang_theme/space_rosa
-	name = "Space Rosa"
-	description = "Hey there, this is the Economy Zone on BOX News 66.6. The stock market is still reeling from accusations that three well known corporate entities \
-	may supposedly be tied up in industrial espionage actions against eachother. We've reached out to Saints Flow, the Morningstar Corporation, and Majima Construction for \
-	their comments on these scandals, but none have replied. News broke after a high profile break-in at a Nanotrasen research facility resulted in the arrests of agents linked to these \
-	three companies. All three companies denied any involvement, but the arrested individuals were found in an all out brawl. Curiously, Nanotrasen reported nothing of value had \
-	actually been stolen."
+	name = "Космическая Роза"
+	description = "Привет, это зона экономики на канале BOX News 66.6. Фондовый рынок все еще не оправился от обвинений в том, что три известные корпорации \
+	якобы связаны между собой промышленным шпионажем. Мы связались с компаниями Saints Flow, Morningstar Corporation и Majima Construction, чтобы получить \
+	за комментариями по поводу этих скандалов, но никто из них не ответил. После взлома исследовательского центра Nanotrasen были арестованы агенты, связанные с этими тремя компаниями. \
+	тремя компаниями. Все три компании отрицали свою причастность, но арестованные были найдены в ходе драки. Любопытно, что Nanotrasen сообщила, что ничего ценного не было \
+	ничего ценного не было похищено."
 	involved_gangs = list(/datum/antagonist/gang/saints, /datum/antagonist/gang/morningstar, /datum/antagonist/gang/yakuza)
 	bonus_items = list(/obj/item/pinpointer/nuke)
 	gang_objectives = list(
 
-		/datum/antagonist/gang/saints = "Thank you for volunteering within the organization for the Saints Flow Recovery Project! \
-		This station is currently illegally in posession of a data disk containing the secret recipe for Saints Flow. \
-		It has been disguised as the nuclear authentication disk and entrusted to the Captain. Your objective is simple. \
-		Get that fucking disk. You have been provided with a Pinpointer to assist in this task.",
+		/datum/antagonist/gang/saints = "Благодарим Вас за волонтерскую работу в организации проекта 'Восстановление Святого Потока'! \
+		В настоящее время эта станция незаконно владеет диском с данными, содержащим секретный рецепт Saints Flow. \
+		Он был замаскирован под диск ядерной аутентификации и доверен капитану. Ваша задача проста. \
+		Достать этот чертов диск. Для выполнения этой задачи вам предоставлен пинпоинтер.",
 
-		/datum/antagonist/gang/morningstar = "Greetings, agent. Welcome to the Garment Recovery Task Force. \
-		This station is currently illegally in posession of a data disk containing as of yet unreleased clothing patterns. \
-		It has been disguised as the nuclear authentication disk and entrusted to the Captain. Your objective is simple. \
-		Get that fucking disk. You have been provided with a Pinpointer to assist in this task.",
+		/datum/antagonist/gang/morningstar = "Приветствую вас, агент. Добро пожаловать в оперативную группу по восстановлению одежды. \
+		В настоящее время на этой станции незаконно находится диск с данными, содержащий еще не выпущенные модели одежды. \
+		Он был замаскирован под диск ядерной аутентификации и доверен капитану. Ваша задача проста. \
+		Достать этот чертов диск. Для выполнения этой задачи вам предоставлен пинпоинтер.",
 
-		/datum/antagonist/gang/yakuza = "Congratulations on your promotion! Welcome to the Evidence Recovery Squad. \
-		This station is currently illegally in posession of a data disk containing compromising evidence of the Boss. \
-		It has been disguised as the nuclear authentication disk and entrusted to the Captain. Your objective is simple. \
-		Get that fucking disk. You have been provided with a Pinpointer to assist in this task.",
+		/datum/antagonist/gang/yakuza = "Поздравляем с повышением! Добро пожаловать в отряд по изъятию улик. \
+		В настоящее время на этой станции незаконно находится диск с данными, содержащий компрометирующие улики на Босса. \
+		Он был замаскирован под диск ядерной аутентификации и доверен капитану. Ваша задача проста. \
+		Достать этот чертов диск. Для выполнения этой задачи вам предоставлен пинпоинтер.",
 	)
 
 /datum/gang_theme/third_world_war
-	name = "Third World War"
-	description = "Thanks for tuning in to the History Channel, funded with the help of listeners like you. Tonight, we're going to talk about the Third World War on Earth during the 21st century, \
-	involving the Allies coalition, the Soviet Union, and a third independent power known only as Yuri's Army. The three powers fought all across the globe for complete world \
-	domination, utilizing many advanced techniques and cutting edge technology to their advantage. Rumors of mind control and time travel were greatly exaggerated, however, and the \
-	Allies won the war, securing global peace after rolling tanks through Moscow."
+	name = "Третья Мировая Война"
+	description = "Спасибо, что смотрите канал History Channel, финансируемый с помощью таких слушателей, как вы. Сегодня мы поговорим о третьей мировой войне на Земле в XXI веке,\
+	в которой участвовали коалиция союзников, Советский Союз и третья независимая держава, известная только как Армия Юрия. \
+	Эти три державы боролись по всему земному шару за полное мировое за полное мировое господство три державы боролись \
+	по всему миру, используя в своих целях множество передовых технологий. Однако слухи об управлении сознанием и путешествиях во времени оказались сильно преувеличенными, и \
+	Союзники выиграли войну, обеспечив мир во всем мире после ввода танков в Москву."
 	involved_gangs = list(/datum/antagonist/gang/allies, /datum/antagonist/gang/soviet, /datum/antagonist/gang/yuri)
 	gang_objectives = list(
 
-		/datum/antagonist/gang/allies = "Welcome back, Commander. We have activated the last remnants of the Allied forces in your sector, \
-		and you must build up forces to stop the Soviet and Yuri incursion in the sector. This station will prove to be a valuable asset. \
-		Establish a capitalist democracy on this station with free and fair elections, and most importantly a standing military force under Allied control. Good luck, Commander.",
+		/datum/antagonist/gang/allies = "С возвращением, командир. Мы активировали последние остатки союзных войск в вашем секторе, \
+		и вы должны наращивать силы, чтобы остановить вторжение советских войск и Юрия в этот сектор. Эта станция окажется ценным подспорьем. \
+		Установите на этой станции капиталистическую демократию со свободными и честными выборами, а главное - постоянные вооруженные силы под контролем союзников. Удачи, командир.",
 
-		/datum/antagonist/gang/soviet = "Welcome back, Comrade General. The Soviet Union has identified this sector of land as valuable territory for the war effort, \
-		and you are tasked with developing this sector for Soviet control and development. This station will serve the Soviet Union. \
-		Establish a Soviet controlled communist satellite state on this station with a Central Committee, and most importantly a branch of the Red Army. Good luck, Commander.",
+		/datum/antagonist/gang/soviet = "С возвращением, товарищ генерал. Советский Союз определил этот сектор земли как ценную территорию для военных действий,\
+		и вам поручено освоить этот сектор для советского контроля и развития. Эта станция будет служить Советскому Союзу. \
+		Создайте на этой станции коммунистическое государство-сателлит, контролируемое Советским Союзом, с Центральным Комитетом и, самое главное, с отделением Красной Армии. Удачи, командир.",
 
-		/datum/antagonist/gang/yuri = "Yuri is Master! Yuri has identified this station as teeming with psychic energy, \
-		and you must secure it for him. This station will serve Yuri, the one true psychic master, \
-		Establish complete dictatorial control of the station for Yuri. All will obey. Yuri is master. Good luck, Initiate."
+		/datum/antagonist/gang/yuri = "Юрий - мастер! Юрий определил, что эта станция изобилует психической энергией,\
+		и вы должны обеспечить ее ему. Эта станция будет служить Юрию, единственному настоящему мастеру экстрасенсорики,\
+		Установите полный диктаторский контроль над станцией для Юрия. Все будут подчиняться. Юрий - хозяин. Удачи, Инициатор."
 	)
 
 /datum/gang_theme/united_states_of_america
-	name = "The Republic For Which It Stands"
-	description = "Thanks for tuning in to the History Channel, funded with the help of listeners like you. Tonight, we're going to talk about the United States of America.\
-	The United States was a failed country, lasting only 250 years before collapsing and fracturing due to the stress caused by a deadly pandemic sweeping the nation. \
-	Poor healthcare access and subpar education resulted in the collapse of the federal government, and states quickly became independent actors. \
-	Alongside this, every single alphabet agency declared itself the rightful new Federal Government of the United States of America, resulting in a bloody power struggle."
+	name = "Республика, за которую Стоит Выступать"
+	description = "Спасибо, что смотрите канал History Channel, финансируемый с помощью таких слушателей, как вы. Сегодня мы поговорим о Соединенных Штатах Америки.\
+	Соединенные Штаты Америки были неудачной страной, просуществовавшей всего 250 лет, прежде чем распасться из-за стресса, вызванного смертельной пандемией, охватившей страну. \
+	Плохое медицинское обслуживание и низкий уровень образования привели к распаду федерального правительства, и штаты быстро стали независимыми субъектами. \
+	Одновременно с этим каждое ведомство по алфавиту объявило себя законным новым федеральным правительством Соединенных Штатов Америки, что привело к кровавой борьбе за власть."
 	involved_gangs = list(/datum/antagonist/gang/allies, /datum/antagonist/gang/osi, /datum/antagonist/gang/irs)
 	gang_objectives = list(
 
-		/datum/antagonist/gang/allies = "Welcome back, Commander. Your task today is simple. Allies High Command has designated this station as the new capitol of the \
-		recently reformed United States of America under the complete umbrella of the Allies coalition. You are to assist and manage the operations on the station. \
-		Re-establish the United States of America with this station as it's capitol, under Allies control. Then, establish a military force to deal with any pretenders to America or \
-		any potential Soviet attacks.",
+		/datum/antagonist/gang/allies = "С возвращением, командир. Ваша задача сегодня проста. Верховное командование Союзников назначило эту станцию новой столицей недавно реформированных Соединенных Штатов Америки. \
+		недавно реформированных Соединенных Штатов Америки под полной эгидой коалиции Союзников. Вам предстоит оказывать помощь и руководить операциями на станции. \
+		Восстановите Соединенные Штаты Америки со столицей на этой станции под контролем союзников. Затем, создайте военные силы для борьбы с любыми претендентами на Америку или \
+		- Для борьбы с любыми претендентами на Америку или с возможными советскими нападениями.",
 
-		/datum/antagonist/gang/osi = "Welcome to the new America, agent! After the second American Civil War became visible instead of invisible, our country fell into deep, \
-		deep despair and damage. However, it's time for it to re-emerge like a glorious phoenix rising from the ashes. This station will serve as the new capitol of the United States \
-		of America! Re-establish the United States of America with this station as it's capitol, under O.S.I. control. Then, begin rooting out America's enemies and any \
-		potential forces attempting to seize control of America or pretend to be America.",
+		/datum/antagonist/gang/osi = "Добро пожаловать в новую Америку, агент! После того как вторая Гражданская война в Америке стала видимой, а не невидимой, наша страна погрузилась в глубокое, \
+		глубокое отчаяние и разруху. Однако пришло время ей возродиться, как славному фениксу, восставшему из пепла. Эта станция станет новой столицей Соединенных Штатов Америки! \
+		Америки! Восстановите Соединенные Штаты Америки с этой станцией в качестве столицы, под контролем O.S.I. Затем приступайте к уничтожению врагов Америки и любых \
+		потенциальных сил, пытающихся захватить контроль над ней. Потенциальные силы, пытающиеся захватить контроль над Америкой или выдающие себя за Америку.",
 
-		/datum/antagonist/gang/irs = "Thank you for clocking in today, agent. The situation is dire, however. We have been unable to collect taxes due to \
-		the US's supposed collapse during the Pandemic long ago. We are way behind on our tax collection, but we cannot collect taxes until the United States is formed again. \
-		Re-establish the United States of America with this station as it's capitol, under IRS control. Then, begin collecting taxes and back taxes while protecting the Government from \
-		any dangers that may come it's way."
+		/datum/antagonist/gang/irs = "Спасибо, что пришли сегодня, агент. Однако ситуация плачевная. Мы не смогли собрать налоги из-за того,\
+		из-за того, что США, как предполагается, давно распались во время пандемии. Мы сильно отстаем в сборе налогов, но мы не можем собирать их до тех пор, пока Соединенные Штаты не образуются вновь. \
+		Восстановите Соединенные Штаты Америки со столицей на этой станции под контролем IRS. Затем начните собирать налоги и обратные налоги, защищая правительство от \
+		любых опасностей, которые могут возникнуть на пути правительства."
 	)

@@ -3,8 +3,8 @@
 
 /obj/item/poster/wanted/Initialize(mapload, icon/person_icon, wanted_name, description)
 	. = ..(mapload, new /obj/structure/sign/poster/wanted(src, person_icon, wanted_name, description))
-	name = "wanted poster ([wanted_name])"
-	desc = "A wanted poster for [wanted_name]."
+	name = "Разыскивается ([wanted_name])"
+	desc = "Постер с разыскиваемым лицом: [wanted_name]."
 
 /obj/structure/sign/poster/wanted
 	var/wanted_name
@@ -14,7 +14,7 @@
 	. = ..()
 	if(!person_icon)
 		return INITIALIZE_HINT_QDEL
-	name = "wanted poster ([person_name])"
+	name = "Разыскивается ([person_name])"
 	wanted_name = person_name
 	desc = description
 

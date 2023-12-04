@@ -66,6 +66,7 @@
 		var/obj/item/organ/genital/G = gpath
 		if(!(initial(G.genital_flags) & GENITAL_BLACKLISTED))
 			GLOB.genitals_list[initial(G.name)] = gpath
+
 //END OF CIT CHANGES
 
 	//Species

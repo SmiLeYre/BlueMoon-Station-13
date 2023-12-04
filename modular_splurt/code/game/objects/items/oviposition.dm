@@ -68,6 +68,13 @@ GLOBAL_LIST_INIT(egg_skins, list( \
 		to_chat(user, span_warning("This genital can't be stuffed!"))
 		return FALSE
 
+	if(locate(src.type) in G.contents)
+		if(user == G.owner)
+			to_chat(user, span_notice("You already have a egg inside your [G]!"))
+		else
+			to_chat(user, span_notice("\The <b>[G.owner]</b>'s [G] already has a egg inside!"))
+		return FALSE
+
 	if(user == G.owner)
 		G.owner.visible_message(span_warning("\The <b>[user]</b> is trying to insert an egg inside themselves!"),\
 					span_warning("You try to insert an egg inside yourself!"))

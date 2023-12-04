@@ -93,6 +93,17 @@
 	pass_flags = PASSMOB
 	mob_size = MOB_SIZE_SMALL
 	collar_type = "kitten"
+	childtype = null // BLUEMOON ADD
+
+/mob/living/simple_animal/pet/cat/floppa
+	name = "Floppa"
+	desc = "He looks like he's about to commit a warcrime..."
+	icon_state = "floppa"
+	icon_living = "floppa"
+	icon_dead = "floppa_dead"
+	held_icon = "floppa"
+	unique_pet = TRUE
+	mob_size = MOB_SIZE_LARGE
 
 //RUNTIME IS ALIVE! SQUEEEEEEEE~
 /mob/living/simple_animal/pet/cat/Runtime

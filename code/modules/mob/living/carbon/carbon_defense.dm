@@ -56,12 +56,12 @@
 		return
 	if (get_active_held_item())
 		if (HAS_TRAIT_FROM(src, TRAIT_AUTO_CATCH_ITEM,RISING_BASS_TRAIT))
-			visible_message("<span class='warning'>[src] chops [I] out of the air!</span>")
+			visible_message("<span class='warning'><b>[src]</b> chops [I] out of the air!</span>")
 			return TRUE
 		return
 	I.attack_hand(src)
 	if(get_active_held_item() == I) //if our attack_hand() picks up the item...
-		visible_message("<span class='warning'>[src] catches [I]!</span>") //catch that sucker!
+		visible_message("<span class='warning'><b>[src]</b> catches [I]!</span>") //catch that sucker!
 		throw_mode_off()
 		return TRUE
 
@@ -165,9 +165,9 @@
 			if(M.powerlevel < 0)
 				M.powerlevel = 0
 
-			visible_message("<span class='danger'>The [M.name] has shocked [src]!</span>", \
+			visible_message("<span class='danger'>The [M.name] has shocked <b>[src]</b>!</span>", \
 			"<span class='userdanger'>The [M.name] has shocked you!</span>", target = M,
-			target_message = "<span class='danger'>You have shocked [src]!</span>")
+			target_message = "<span class='danger'>You have shocked <b>[src]</b>!</span>")
 
 			do_sparks(5, TRUE, src)
 			var/power = M.powerlevel + rand(0,3)
@@ -205,7 +205,7 @@
 	if (stat == DEAD)
 		return
 	else
-		show_message("<span class='userdanger'>The blob attacks!</span>")
+		show_message("<span class='userdanger'>Блоб атакует!</span>")
 		adjustBruteLoss(10)
 
 /mob/living/carbon/emp_act(severity)
@@ -261,30 +261,89 @@
 
 /mob/living/carbon/proc/help_shake_act(mob/living/carbon/M)
 	if(on_fire)
-		to_chat(M, "<span class='warning'>You can't put [p_them()] out with just your bare hands!</span>")
+		to_chat(M, "<span class='warning'>Вы не можете потушить [ru_ego()] голыми руками!!</span>")
 		return
 
 	if(M == src && check_self_for_injuries())
 		return
 
+// BLUEMOON ADD START - девайны для проигрывания определённого звука (вместо 2 или даже 3) при применении интента
+#define SOUND_PAT 1
+#define SOUND_BOOP 2
+
+	var/sound_to_play = SOUND_PAT // чтобы проигрывался только 1 звук, а не 2-3
+// BLUEMOON ADD END
 	if(health >= 0 && !(HAS_TRAIT(src, TRAIT_FAKEDEATH)) || iszombie(src))
 		var/friendly_check = FALSE
 		if(mob_run_block(M, 0, M.name, ATTACK_TYPE_UNARMED, 0, null, null, null))
 			return
 		if(lying)
 			if(buckled)
-				to_chat(M, "<span class='warning'>You need to unbuckle [src] first to do that!")
+				to_chat(M, "<span class='warning'>Для этого вам для начала нужно отстегнуть <b>[src]</b>!")
 				return
-			M.visible_message("<span class='notice'>[M] shakes [src] trying to get [p_them()] up!</span>", \
-							"<span class='notice'>You shake [src] trying to get [p_them()] up!</span>", target = src,
-							target_message = "<span class='notice'>[M] shakes you trying to get you up!</span>")
+			// BLUEMON ADD START - проверка для сверхтяжёлых персонажей
+			if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
+				var/can_shake = FALSE
+				if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER)) // другие сверхтяжёлые персонажи могут поднимать
+					can_shake = TRUE
+				if(ishuman(M))
+					var/mob/living/carbon/human/user = M
+					if(user.dna.check_mutation(HULK)) // халки могут поднимать
+						can_shake = TRUE
+					if(istype(user.back, /obj/item/mod/control)) // обычные персонажи с активированными клешнями из МОДа на спине могут поднимать
+						var/obj/item/mod/control/MOD = user.back
+						if(MOD.active || istype(MOD.selected_module, /obj/item/mod/module/clamp))
+							can_shake = TRUE
+
+				if(!can_shake)
+					M.visible_message(span_warning("<b>[M]</b> пытается поднять <b>[src]</b> на ноги, но [ru_who()] слишком тяжёл[ru_aya()]!"), \
+									span_warning("Вы пытаетесь поднять <b>[src]</b> на ноги, но [ru_who()] слишком тяжёл[ru_aya()]!"), target = src,
+									target_message = span_notice("<b>[M]</b> трясёт тебя в однозначной попытке поднять, но не может!"))
+
+					playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+					return
+			// BLUEMOON ADD END
+
+			M.visible_message("<span class='notice'><b>[M]</b> трясёт <b>[src]</b> в попытке поднять [ru_ego()] на ноги!</span>", \
+							"<span class='notice'>Вы трясёте <b>[src]</b> в попытке поднять [ru_ego()] на ноги!</span>", target = src,
+							target_message = "<span class='notice'><b>[M]</b> трясёт тебя в однозначной попытке поднять!</span>")
 
 		else if(M.zone_selected == BODY_ZONE_PRECISE_MOUTH) // I ADDED BOOP-EH-DEH-NOSEH - Jon
-			M.visible_message( \
-				"<span class='notice'>[M] boops [src]'s nose.</span>", \
-				"<span class='notice'>You boop [src] on the nose.</span>", target = src,
-				target_message = "<span class='notice'>[M] boops your nose.</span>")
-			playsound(src, 'sound/items/Nose_boop.ogg', 50, 0)
+			// BLUEMOON ADD START
+			var/mob/living/carbon/human/H = src
+
+			// Если персонажи слишком сильно различаются в росте, бупать не выйдет
+			if(COMPARE_SIZES(src, M) >= 1.75)
+				M.visible_message( \
+						span_notice("<b>[M]</b> пытается достать до носа <b>[src]</b>, но не может!"), \
+						span_warning("Ты пытаешься бупнуть <b>[src]</b> в нос, но не достаёшь!"), target = src,
+						target_message = span_notice("<b>[M]</b> пытается дотянуть до твоего носа, но не может!"))
+
+			// Если есть квирк "отдалённый", персонажу не нравятся бупы в нос
+			else if(HAS_TRAIT(H, TRAIT_DISTANT)) //No mood buff since you're not really liking it.
+				M.visible_message("<span class='warning'><b>[H]</b> резко осматривается на <b>[M]</b>, когда [ru_ego()] бупает в нос! Кажется, [ru_who()] раздражен[ru_a()]...</span>", \
+					"<span class='warning'>Вы бупаете <b>[H]</b> в нос! Кажется, [ru_ego()] глаза презрительно смещаются в вашу сторону...</span>")
+				sound_to_play = SOUND_BOOP // BLUEMOON EDIT - было playsound(src, 'sound/items/Nose_boop.ogg', 50, 0)
+				H.add_lust(-5) //Why are you touching me?
+				if(prob(20))
+					M.visible_message("<span class='warning'><b>[H]</b> быстро выкручивает руку <b>[M]</b>!</span>", \
+						"<span class='boldwarning'>Твоя рука выкручивается в хватке <b>[H]</b>! Может, тебе следовало понять тот явственный намек...</span>")
+					// playsound(get_turf(H), 'sound/weapons/thudswoosh.ogg', 50, 1, -1) // BLUEMOON REMOVAL - звук проигрывается в конце
+					M.emote("scream")
+					M.dropItemToGround(M.get_active_held_item())
+					var/hand = pick(BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND)
+					M.apply_damage(50, STAMINA, hand)
+					M.apply_damage(5, BRUTE, hand)
+					M.Knockdown(60)//STOP TOUCHING ME! For those spam head pat individuals
+					friendly_check = FALSE
+
+			else
+			// BLUEMOON ADD END
+				M.visible_message( \
+						"<span class='notice'><b>[M]</b> бупает носик <b>[src]</b>.</span>", \
+						"<span class='notice'>Ты бупаешь носик <b>[src]</b>!</span>", target = src,
+						target_message = "<span class='notice'><b>[M]</b> бупает твой носик!</span>")
+				sound_to_play = SOUND_BOOP // BLUEMOON EDIT - было playsound(src, 'sound/items/Nose_boop.ogg', 50, 0)
 
 		else if(check_zone(M.zone_selected) == BODY_ZONE_HEAD)
 			var/mob/living/carbon/human/H = src
@@ -300,15 +359,24 @@
 					H.add_quirk(/datum/quirk/headpat_slut)
 				SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "dom_trained", /datum/mood_event/dominant/good_boy)
 
-			if(HAS_TRAIT(H, TRAIT_DISTANT)) //No mood buff since you're not really liking it.
-				M.visible_message("<span class='warning'>[H] glares at [M] as they give them a pat on the head! They seem annoyed...</span>", \
-					"<span class='warning'>You give [H] a pat on the head to make [p_them()] feel better! Their eyes shift towards you contemptuously...</span>")
+			// BLUEMOON ADD START - Если персонажи слишком сильно различаются в росте, гладить по голове не получится
+			if(COMPARE_SIZES(src, M) >= 1.75)
+				M.visible_message( \
+						span_notice("<b>[M]</b> пытается достать до головы <b>[src]</b>, но не может!"), \
+						span_warning("Ты пытаешься погладить <b>[src]</b> по голове, но не достаёшь!"), target = src,
+						target_message = span_notice("<b>[M]</b> пытается дотянуть до твоей головы, но не может!"))
+			// BLUEMOON ADD END
+
+			else if(HAS_TRAIT(H, TRAIT_DISTANT)) //No mood buff since you're not really liking it. // BLUEMOON ADD - в начало добавлено else
+				M.visible_message("<span class='warning'><b>[H]</b> резко осматривается на <b>[M]</b>, когда [ru_ego()] гладят по голове! Кажется, [ru_who()] раздражен[ru_a()]...</span>", \
+					"<span class='warning'>Вы гладите <b>[H]</b> по голове! Кажется, [ru_ego()] глаза презрительно смещаются в вашу сторону...</span>")
 				H.add_lust(-5) //Why are you touching me?
-				if(prob(5))
-					M.visible_message("<span class='warning'>[H] quickly twists [M]\'s arm!</span>", \
-						"<span class='boldwarning'>Your arm gets twisted in [H]\'s grasp! Maybe you should've taken the hint.</span>")
-					playsound(get_turf(H), 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
-					M.emote("scream")
+				if(prob(20)) // BLUEMOON EDIT - было 5%
+					M.visible_message("<span class='warning'><b>[H]</b> быстро выкручивает руку <b>[M]</b>!</span>", \
+						"<span class='boldwarning'>Твоя рука выкручивается в хватке <b>[H]</b>! Может, тебе следовало понять тот явственный намек...</span>")
+					// playsound(get_turf(H), 'sound/weapons/thudswoosh.ogg', 50, 1, -1) // BLUEMOON REMOVAL - звук проигрывается в конце
+					if(!HAS_TRAIT(M, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+						M.emote("scream")
 					M.dropItemToGround(M.get_active_held_item())
 					var/hand = pick(BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND)
 					M.apply_damage(50, STAMINA, hand)
@@ -318,16 +386,18 @@
 
 			else
 				friendly_check = TRUE
+				if(iscatperson(H)) //felinids love headpats
+					H.emote("purr")
 				if(HAS_TRAIT(H, TRAIT_HEADPAT_SLUT))
-					M.visible_message("<span class='notice'>[M] gives [src] a pat on the head to make [p_them()] feel better! They seem incredibly pleased!</span>", \
-								"<span class='notice'>You give [src] a pat on the head to make [p_them()] feel better! They seem to be way too into it...</span>", target = src,
-								target_message = "<span class='boldnotice'>[M] gives you a pat on the head to make you feel better!</span>")
+					M.visible_message("<span class='notice'><b>[M]</b> похлопывает <b>[src]</b> по голове! Он[ru_a()] выглядит невероятно довольно!</span>", \
+								"<span class='notice'>Ты гладишь <b>[src]</b> по голове, чтобы [ru_who()] почувствовал себя лучше! Кажется, он[ru_a()] принимает эту ласку слишком близко к сердцу...</span>", target = src,
+								target_message = "<span class='boldnotice'><b>[M]</b> гладит вас по голове, чтобы вы почувствовали себя лучше!</span>")
 					SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "lewd_headpat", /datum/mood_event/lewd_headpat)
-					H.handle_post_sex(5, null, null) //Headpats are hot af
+					H.handle_post_sex(5, null, H) //Headpats are hot af
 				else
-					M.visible_message("<span class='notice'>[M] gives [src] a pat on the head to make [p_them()] feel better!</span>", \
-								"<span class='notice'>You give [src] a pat on the head to make [p_them()] feel better!</span>", target = src,
-								target_message = "<span class='notice'>[M] gives you a pat on the head to make you feel better!</span>")
+					M.visible_message("<span class='notice'><b>[M]</b> похлопывает <b>[src]</b> по голове!</span>", \
+								"<span class='notice'>Ты гладишь <b>[src]</b> по голове, чтобы [ru_who()] почувствовал себя лучше!</span>", target = src,
+								target_message = "<span class='boldnotice'><b>[M]</b> гладит вас по голове, чтобы вы почувствовали себя лучше!</span>")
 					SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "headpat", /datum/mood_event/headpat)
 			//SPLURT EDIT END
 
@@ -341,25 +411,26 @@
 		else if(check_zone(M.zone_selected) == BODY_ZONE_R_ARM || check_zone(M.zone_selected) == BODY_ZONE_L_ARM)
 			if((pulling == M) && (grab_state == GRAB_PASSIVE))
 				M.visible_message( \
-					"<span class='notice'>[M] squeezes [src]'s hand.</span>", \
-					"<span class='notice'>You squeeze [src]'s hand.</span>", target = src,
-					target_message = "<span class='notice'>[M] squeezes your hand.</span>")
+					"<span class='notice'><b>[M]</b> сжимает руку <b>[src]</b>.</span>", \
+					"<span class='notice'>Ты сжимаешь руку <b>[src]</b>.</span>", target = src,
+					target_message = "<span class='notice'><b>[M]</b> сжимает твою руку.</span>")
 			else
 				M.visible_message( \
-					"<span class='notice'>[M] shakes [src]'s hand.</span>", \
-					"<span class='notice'>You shake [src]'s hand.</span>", target = src,
-					target_message = "<span class='notice'>[M] shakes your hand.</span>")
+					"<span class='notice'><b>[M]</b> пожимает руку <b>[src]</b>.</span>", \
+					"<span class='notice'>Ты пожимаешь руку <b>[src]</b>.</span>", target = src,
+					target_message = "<span class='notice'><b>[M]</b> пожимает твою руку.</span>")
 
 		else
-			M.visible_message("<span class='notice'>[M] hugs [src] to make [p_them()] feel better!</span>", \
-						"<span class='notice'>You hug [src] to make [p_them()] feel better!</span>", target = src,\
-						target_message = "<span class='notice'>[M] hugs you to make you feel better!</span>")
+			M.visible_message("<span class='notice'><b>[M]</b> обнимает <b>[src]</b>!</span>", \
+						"<span class='notice'>Ты обнимаешь <b>[src]</b>!</span>", target = src,\
+						target_message = "<span class='notice'><b>[M]</b> обнимает тебя!</span>")
 			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/hug)
 			friendly_check = TRUE
 
-		if(friendly_check && HAS_TRAIT(M, TRAIT_FRIENDLY))
+		if(friendly_check && (HAS_TRAIT(M, TRAIT_FRIENDLY) || HAS_TRAIT(src, TRAIT_FRIENDLY)))
 			var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
 			if(mood)
+				new /obj/effect/temp_visual/heart(loc)
 				if (mood.sanity >= SANITY_GREAT)
 					SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "friendly_hug", /datum/mood_event/besthug, M)
 				else if (mood.sanity >= SANITY_DISTURBED)
@@ -373,7 +444,19 @@
 		else
 			set_resting(FALSE, FALSE)
 		update_mobility()
-		playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+		// playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1) // BLUEMOON REMOVAL
+		// BLUEMOON ADD START - проигрышь только 1 звука
+		switch(sound_to_play)
+			if(SOUND_BOOP)
+				playsound(src, 'sound/items/Nose_boop.ogg', 50, 1, -1)
+			if(SOUND_PAT)
+				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+		//BLUEMOON ADD END
+
+// BLUEMOON ADD START
+#undef SOUND_PAT
+#undef SOUND_BOOP
+// BLUEMOON ADD END
 
 /// Check ourselves to see if we've got any shrapnel, return true if we do. This is a much simpler version of what humans do, we only indicate we're checking ourselves if there's actually shrapnel
 /mob/living/carbon/proc/check_self_for_injuries()
@@ -388,12 +471,12 @@
 			if(!embeds)
 				embeds = TRUE
 				// this way, we only visibly try to examine ourselves if we have something embedded, otherwise we'll still hug ourselves :)
-				visible_message("<span class='notice'>[src] examines [p_them()]self.</span>", "")
-				output = "<span class='notice'>You check yourself for shrapnel.</span><hr>"
+				visible_message("<span class='notice'><b>[src]</b> осматривает себя.</span>", "")
+				output = "<span class='notice'>Ты осматриваешь себя.</span><hr>"
 			if(I.isEmbedHarmless())
-				output += "\n\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>There is \a [I] stuck to your [LB.name]!</a>"
+				output += "\n\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>[I] врезался в вашу конечность - [LB.ru_name]!</a>"
 			else
-				output += "\n\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>There is \a [I] embedded in your [LB.name]!</a>"
+				output += "\n\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>[I] застрял в вашей конечности - [LB.ru_name]!</a>"
 
 	if(output)
 		to_chat(src, examine_block(output))
@@ -412,16 +495,31 @@
 			return
 
 		if (damage == 1)
-			to_chat(src, "<span class='warning'>Your eyes sting a little.</span>")
-			if(prob(40))
-				eyes.applyOrganDamage(1)
+			// BLUEMOON ADD START
+			if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
+				to_chat(src, span_warning("Визуальные сенсоры: опасность повреждения ярким светом, искусственная расфокусировка линзы активна. Вред предотвращен."))
+			else
+			// BLUEMOON ADD END
+				to_chat(src, "<span class='warning'>Глаза немного щиплет.</span>")
+				if(prob(40))
+					eyes.applyOrganDamage(1)
 
 		else if (damage == 2)
-			to_chat(src, "<span class='warning'>Your eyes burn.</span>")
+			// BLUEMOON ADD START
+			if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
+				to_chat(src, span_warning("Визуальные сенсоры: опасность повреждения ярким светом, искусственная расфокусировка линзы активна. Возможен минимальный вред."))
+			else
+			// BLUEMOON ADD END
+				to_chat(src, "<span class='warning'>Глаза горят.</span>")
 			eyes.applyOrganDamage(rand(2, 4))
 
 		else if( damage >= 3)
-			to_chat(src, "<span class='warning'>Your eyes itch and burn severely!</span>")
+			// BLUEMOON ADD START
+			if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
+				to_chat(src, span_warning("Визуальные сенсоры: опасность повреждения ярким светом, искусственная расфокусировка линзы активна. Оценка повреждений; средние."))
+			else
+			// BLUEMOON ADD END
+				to_chat(src, "<span class='warning'>Ты ощущаешь сильный зуд и жжение в глазах!</span>")
 			eyes.applyOrganDamage(rand(12, 16))
 
 		if(eyes.damage > 10)
@@ -431,22 +529,37 @@
 			if(eyes.damage > 20)
 				if(prob(eyes.damage - 20))
 					if(!HAS_TRAIT(src, TRAIT_NEARSIGHT))
-						to_chat(src, "<span class='warning'>Your eyes start to burn badly!</span>")
+						// BLUEMOON ADD START
+						if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
+							to_chat(src, span_warning("Визуальные сенсоры: тяжёлое повреждение линзы, необходима замена или ремонт."))
+						else
+						// BLUEMOON ADD END
+							to_chat(src, "<span class='warning'>Глаза начинает сильно жечь!</span>")
 					become_nearsighted(EYE_DAMAGE)
 
 				else if(prob(eyes.damage - 25))
 					if(!HAS_TRAIT(src, TRAIT_BLIND))
-						to_chat(src, "<span class='warning'>You can't see anything!</span>")
+						// BLUEMOON ADD START
+						if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
+							to_chat(src, span_warning("Визуальные сенсоры: выгорание линзы, необходима замена или ремонт."))
+						else
+						// BLUEMOON ADD END
+							to_chat(src, "<span class='warning'>Вы ничего не видите!</span>")
 					eyes.applyOrganDamage(eyes.maxHealth)
 
 			else
-				to_chat(src, "<span class='warning'>Your eyes are really starting to hurt. This can't be good for you!</span>")
+				// BLUEMOON ADD START
+				if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
+					to_chat(src, span_warning("Визуальные сенсоры: обнаружены умеренные повреждения, рекомендуется ремонт или замена."))
+				else
+				// BLUEMOON ADD END
+					to_chat(src, "<span class='warning'>Ваши глаза начинают болеть. Это не хорошо!</span>")
 		if(has_bane(BANE_LIGHT))
 			mind.disrupt_spells(-500)
 		return TRUE
 	else if(damage == 0) // just enough protection
 		if(prob(20))
-			to_chat(src, "<span class='notice'>Something bright flashes in the corner of your vision!</span>")
+			to_chat(src, "<span class='notice'>В углу зрения мелькнуло что-то яркое.</span>")
 		if(has_bane(BANE_LIGHT))
 			mind.disrupt_spells(0)
 
@@ -468,13 +581,13 @@
 			adjustEarDamage(ear_damage,deaf)
 
 			if(ears.damage >= 15)
-				to_chat(src, "<span class='warning'>Your ears start to ring badly!</span>")
+				to_chat(src, "<span class='warning'>В ушах начинает сильно звенеть!</span>")
 				if(prob(ears.damage - 5))
-					to_chat(src, "<span class='userdanger'>You can't hear anything!</span>")
+					to_chat(src, "<span class='userdanger'>Вы ничего не слышите!</span>")
 					ears.damage = min(ears.damage, ears.maxHealth)
 					// you need earmuffs, inacusiate, or replacement
 			else if(ears.damage >= 5)
-				to_chat(src, "<span class='warning'>Your ears start to ring!</span>")
+				to_chat(src, "<span class='warning'>В ушах начинает звенеть!</span>")
 			SEND_SOUND(src, sound('sound/weapons/flash_ring.ogg',0,1,0,250))
 		return effect_amount //how soundbanged we are
 
@@ -540,10 +653,10 @@
 	var/message_hit_area = ""
 	if(hit_area)
 		message_hit_area = " in the [hit_area]"
-	var/attack_message = "[src] is [message_verb][message_hit_area] with [I][extra_wound_details]!"
+	var/attack_message = "<b>[src]</b> is [message_verb][message_hit_area] with [I][extra_wound_details]!"
 	var/attack_message_local = "You're [message_verb][message_hit_area] with [I][extra_wound_details]!"
 	if(user in viewers(src, null))
-		attack_message = "[user] [message_verb] [src][message_hit_area] with [I][extra_wound_details]!"
+		attack_message = "[user] [message_verb] <b>[src]</b>[message_hit_area] with [I][extra_wound_details]!"
 		attack_message_local = "[user] [message_verb] you[message_hit_area] with [I][extra_wound_details]!"
 	if(user == src)
 		attack_message_local = "You [message_verb] yourself[message_hit_area] with [I][extra_wound_details]"

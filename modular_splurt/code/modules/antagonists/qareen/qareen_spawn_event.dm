@@ -3,10 +3,10 @@
 /datum/round_event_control/qareen
 	name = "Spawn Qareen"
 	typepath = /datum/round_event/ghost_role/qareen
-	weight = 7
-	max_occurrences = 0
-	min_players = 200
-
+	weight = 25
+	max_occurrences = 1
+	min_players = 25
+	category = EVENT_CATEGORY_ENTITIES
 
 /datum/round_event/ghost_role/qareen
 	var/ignore_mobcheck = FALSE

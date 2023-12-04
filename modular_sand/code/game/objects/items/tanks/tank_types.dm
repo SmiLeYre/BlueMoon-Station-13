@@ -8,7 +8,7 @@
 	tank_holder_icon_state = "holder_oxygen_fr"
 
 /obj/item/tank/internals/anesthetic
-	tank_holder_icon_state = "holder_oxygen_anesthetic"
+	tank_holder_icon_state = "holder_anesthetic"
 
 /obj/item/tank/internals/plasma
 	tank_holder_icon_state = null

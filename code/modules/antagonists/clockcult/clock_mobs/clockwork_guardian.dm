@@ -33,6 +33,7 @@
 	\n\n\
 	Stay near your host to protect and heal them; being too far from your host will rapidly cause you massive damage. Recall to your host if you are too weak and believe you cannot continue \
 	fighting safely. As a final note, you should probably avoid harming any fellow servants of Ratvar.</span>"
+	typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/clock
 
 /mob/living/simple_animal/hostile/clockwork/guardian/Initialize(mapload)
 	. = ..()
@@ -101,7 +102,7 @@
 	"<span class='userdanger'>Your equipment fades away. You feel a moment of confusion before your fragile form is annihilated.</span>")
 	. = ..()
 
-/mob/living/simple_animal/hostile/clockwork/guardian/Stat()
+/mob/living/simple_animal/hostile/clockwork/guardian/get_status_tab_items()
 	..()
 	if(statpanel("Status"))
 		stat(null, "Current True Name: [true_name]")
@@ -119,6 +120,26 @@
 				else
 					stat(null, "You are [recovering ? "unable to deploy" : "able to deploy to protect your host"]!")
 		stat(null, "You do [melee_damage_upper] damage on melee attacks.")
+
+/mob/living/simple_animal/hostile/clockwork/marauder/get_status_tab_items()
+	..()
+	if(statpanel("Status"))
+		stat(null, "Current True Name: [true_name]")
+		stat(null, "Host: [host ? host : "NONE"]")
+		if(host)
+			var/resulthealth = round((host.health / host.maxHealth) * 100, 0.5)
+			if(iscarbon(host))
+				resulthealth = round((abs(HEALTH_THRESHOLD_DEAD - host.health) / abs(HEALTH_THRESHOLD_DEAD - host.maxHealth)) * 100)
+			stat(null, "Host Health: [resulthealth]%")
+			if(GLOB.ratvar_awakens)
+				stat(null, "You are [recovering ? "un" : ""]able to deploy!")
+			else
+				if(resulthealth > GUARDIAN_EMERGE_THRESHOLD)
+					stat(null, "You are [recovering ? "unable to deploy" : "able to deploy on hearing your True Name"]!")
+				else
+					stat(null, "You are [recovering ? "unable to deploy" : "able to deploy to protect your host"]!")
+		stat(null, "You do [melee_damage_upper] damage on melee attacks.")
+
 
 /mob/living/simple_animal/hostile/clockwork/guardian/Process_Spacemove(movement_dir = 0)
 	return 1

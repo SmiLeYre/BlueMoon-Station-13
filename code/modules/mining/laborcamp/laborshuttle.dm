@@ -15,7 +15,7 @@
 
 /obj/machinery/computer/shuttle/labor/one_way/ui_act(action, params)
 	if(!allowed(usr))
-		to_chat(usr, "<span class='danger'>Access denied.</span>")
+		to_chat(usr, "<span class='danger'>Доступ запрещён.</span>")
 		return
 
 	switch(action)

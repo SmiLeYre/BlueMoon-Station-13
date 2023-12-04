@@ -111,7 +111,7 @@
 		/obj/item/clothing/suit/apron)
 
 /obj/effect/spawner/bundle/costume/pirate
-	name = "pirate costume spawner"
+	name = "Pirate costume spawner"
 	items = list(
 		/obj/item/clothing/under/costume/pirate,
 		/obj/item/clothing/suit/pirate,

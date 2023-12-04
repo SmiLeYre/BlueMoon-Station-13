@@ -75,7 +75,7 @@ export const GenitalArousalPermission = (_: any, context: any) => {
           </Flex.Item>
         </Flex>
       </Section>
-						
+
     </Window.Content>
 
   </Window>

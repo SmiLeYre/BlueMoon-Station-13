@@ -85,6 +85,8 @@
 	/// Internals box. Will be inserted at the start of backpack_contents
 	var/box
 
+	var/id_trim
+
 	/**
 	  * extra types for chameleon outfit changes, mostly guns
 	  *
@@ -119,6 +121,8 @@
 
 	/// Should the toggle helmet proc be called on the helmet during equip
 	var/toggle_helmet = TRUE
+
+	var/give_space_cooler_if_synth = FALSE // BLUEMOON ADD - если это синтетик, ему в руки при спавне (или под него) выдаётся заряжённый космический охладитель
 
 /**
  * Called at the start of the equip proc
@@ -201,6 +205,12 @@
 		H.equip_to_slot_or_del(new wrists(H), ITEM_SLOT_WRISTS, TRUE)
 	//
 
+	//BlueMoon. Надеваем маску и даем баллону в руку, если иных опций изначально не предусмотрено
+	if(!mask && isvox(H))
+		H.equip_to_slot_or_del(new /obj/item/clothing/mask/breath, ITEM_SLOT_MASK, TRUE)
+	if(!l_hand && isvox(H))
+		H.put_in_l_hand(new /obj/item/tank/internals/emergency_nitrogen)
+
 	if(accessory)
 		var/obj/item/clothing/under/U = H.w_uniform
 		if(U)
@@ -236,6 +246,18 @@
 	if(!H.head && toggle_helmet && istype(H.wear_suit, /obj/item/clothing/suit/space/hardsuit))
 		var/obj/item/clothing/suit/space/hardsuit/HS = H.wear_suit
 		HS.ToggleHelmet()
+
+	// BLUEMOON ADD START - выдача охладителя ролям, которым нужно сразу выходить в космос, если они синтетики и не имеют доступа к кулеру
+	if(give_space_cooler_if_synth)
+		if(HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM))
+			if(!r_hand)
+				H.put_in_r_hand(new /obj/item/device/cooler/charged(H))
+			else if(!l_hand)
+				H.put_in_l_hand(new /obj/item/device/cooler/charged(H))
+			else
+				to_chat(H, span_reallybig("Не забудьте забрать космический охладитель под собой.")) // чтобы не упустили из виду при резком спавне
+				new /obj/item/device/cooler/charged(H.loc)
+	// BLUEMOON ADD END
 
 	post_equip(H, visualsOnly, preference_source)
 

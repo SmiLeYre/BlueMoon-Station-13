@@ -2,10 +2,9 @@
 	name = "Wormholes"
 	typepath = /datum/round_event/wormholes
 	max_occurrences = 3
-	weight = 2
-	min_players = 2
-	category = EVENT_CATEGORY_SPACE
-	description = "Space time anomalies appear on the station, randomly teleporting people who walk into them."
+	weight = 25
+	min_players = 20
+	category = EVENT_CATEGORY_ANOMALIES
 
 /datum/round_event/wormholes
 	announce_when = 10
@@ -33,7 +32,7 @@
 		wormholes += new /obj/effect/portal/wormhole(T, 0, null, FALSE)
 
 /datum/round_event/wormholes/announce(fake)
-	priority_announce("Space-time anomalies detected on the station. There is no additional data.", "Anomaly Alert", "spanomalies", has_important_message = TRUE)
+	priority_announce("На станции обнаружены пространственно-временные аномалии. Нет никаких дополнительных данных.", "ВНИМАНИЕ: АНОМАЛИЯ", "spanomalies", has_important_message = TRUE)
 
 /datum/round_event/wormholes/tick()
 	if(activeFor % shift_frequency == 0)

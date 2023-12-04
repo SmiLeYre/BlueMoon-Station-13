@@ -141,20 +141,18 @@
 /mob/proc/get_held_index_name(i)
 	var/list/hand = list()
 	if(i > 2)
-		hand += "upper "
+		hand += "верхней "
 	var/num = 0
 	if(!(i % 2))
 		num = i-2
-		hand += "right hand"
+		hand += "правой руке"
 	else
 		num = i-1
-		hand += "left hand"
+		hand += "левой руке"
 	num -= (num*0.5)
 	if(num > 1) //"upper left hand #1" seems weird, but "upper left hand #2" is A-ok
 		hand += " #[num]"
 	return hand.Join()
-
-
 
 //Returns if a certain item can be equipped to a certain slot.
 // Currently invalid for two-handed items - call obj/item/mob_can_equip() instead.
@@ -319,6 +317,10 @@
 	if(HAS_TRAIT(I, TRAIT_NODROP) && !force)
 		return FALSE
 
+	if(!(I.item_flags & NO_PIXEL_RANDOM_DROP))
+		I.pixel_x = I.base_pixel_x + rand(-6, 6)
+		I.pixel_y = I.base_pixel_y + rand(-6, 6)
+
 	var/hand_index = get_held_index_of_item(I)
 	if(hand_index)
 		held_items[hand_index] = null
@@ -347,7 +349,7 @@
 /mob/proc/equip_to_slot_if_possible(obj/item/W, slot, qdel_on_fail = FALSE, disable_warning = FALSE, redraw_mob = TRUE, bypass_equip_delay_self = FALSE, clothing_check = FALSE)
 	if(!istype(W))
 		return FALSE
-	var/list/warning = list("<span class='warning'>You are unable to equip that!</span>")
+	var/list/warning = list("<span class='warning'>Вы не можете это экипировать!</span>")
 	if(!W.mob_can_equip(src, null, slot, disable_warning, bypass_equip_delay_self, clothing_check, warning))
 		if(qdel_on_fail)
 			qdel(W)
@@ -514,3 +516,19 @@
 
 /mob/canReachInto(atom/user, atom/target, list/next, view_only, obj/item/tool)
 	return ..() && (user == src)
+
+/mob/living/carbon/get_access_locations()
+	. = ..()
+	. |= list(get_active_hand())
+
+/mob/proc/get_id_card()
+	for(var/obj/item/I in get_access_locations())
+		if(I.GetID())
+			return I.GetID()
+
+/mob/proc/get_all_id_cards()
+	var/list/obj/item/card/id/id_cards = list()
+	for(var/obj/item/I in get_access_locations())
+		if(I.GetID())
+			id_cards += I.GetID()
+	return id_cards

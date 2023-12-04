@@ -13,7 +13,7 @@ SUBSYSTEM_DEF(statpanels)
 	if (!resumed)
 		var/datum/map_config/cached = SSmapping.next_map_config
 		var/round_time = world.time - SSticker.round_start_time
-		var/real_round_time = world.timeofday - SSticker.real_round_start_time
+		//var/real_round_time = world.timeofday - SSticker.real_round_start_time
 		var/list/global_data = list(
 			"Map: [SSmapping.config?.map_name || "Loading..."]",
 			cached ? "Next Map: [cached.map_name]" : null,
@@ -25,8 +25,10 @@ SUBSYSTEM_DEF(statpanels)
 			" ",
 			"Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
 			"Round Time: [GAMETIMESTAMP("hh:mm:ss", round_time)]",
-			"Actual Round Timer: [time2text(real_round_time, "hh:mm:ss", 0)]", //A back up control to check the round time to see if round time has descyed as well as properly track round time
+			//"Actual Round Timer: [time2text(real_round_time, "hh:mm:ss", 0)]", //A back up control to check the round time to see if round time has descyed as well as properly track round time
 			"Station Time: [STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)]",
+			"[time2text(world.realtime, "MMM DD")] [GLOB.year_integer]",
+			"Sol System Time: [SOLAR_TIME_TIMESTAMP("hh:mm:ss", world.time)]", //bluemoon add,
 			"Time Dilation: [round(SStime_track.time_dilation_current,1)]% AVG:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)"
 		)
 
@@ -56,7 +58,12 @@ SUBSYSTEM_DEF(statpanels)
 					vote_arry[++vote_arry.len] += list("STATPANEL VOTING DISABLED!", "The current vote system is not supported by statpanel rendering. Please vote manually by opening the vote popup using the action button or chat link.", "disabled")
 					//does not return.
 				else
-					vote_arry[++vote_arry.len] += list("Time Left:", " [DisplayTimeText(SSvote.end_time - world.time)] seconds")
+ //BLUEMOON ADDITION START
+					if(SSvote.mode == "roundtype")
+						vote_arry[++vote_arry.len] += list("Time Left:", " [DisplayTimeText(SSticker.timeLeft - ROUNDTYPE_VOTE_END_PENALTY)] seconds")
+					else
+ //BLUEMOON ADDITION END
+						vote_arry[++vote_arry.len] += list("Time Left:", " [DisplayTimeText(SSticker.timeLeft)] seconds")
 					vote_arry[++vote_arry.len] += list("Choices:", "")
 					for(var/choice in SSvote.choice_statclicks)
 						var/choice_id = SSvote.choice_statclicks[choice]

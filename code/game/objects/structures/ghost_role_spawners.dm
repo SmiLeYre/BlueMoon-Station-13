@@ -1,3 +1,28 @@
+/datum/team/ghost_role
+	name = "Ghost Role"
+	show_roundend_report = FALSE
+	var/list/players_spawned = new
+
+/datum/antagonist/ghost_role
+	name = "\improper Ghost Role"
+	job_rank = ROLE_GHOSTROLE
+	show_in_antagpanel = FALSE
+	soft_antag = TRUE
+	show_name_in_check_antagonists = FALSE
+	show_to_ghosts = TRUE
+	antagpanel_category = "Ghost Role"
+	var/datum/team/ghost_role/ghost_team
+
+/datum/antagonist/ghost_role/create_team(datum/team/team)
+	if(team)
+		ghost_team = team
+		objectives |= ghost_team.objectives
+	else
+		ghost_team = new
+
+/datum/antagonist/ghost_role/get_team()
+	return ghost_team
+
 //Objects that spawn ghosts in as a certain role when they click on it, i.e. away mission bartenders.
 #define spawnOverride TRUE
 //Preserved terrarium/seed vault: Spawns in seed vault structures in lavaland. Ghosts become plantpeople and are advised to begin growing plants in the room near them.
@@ -24,6 +49,7 @@
 	return ..()
 
 /obj/effect/mob_spawn/human/seed_vault/special(mob/living/carbon/human/new_spawn)
+	. = ..()
 	ADD_TRAIT(new_spawn,TRAIT_EXEMPT_HEALTH_EVENTS,GHOSTROLE_TRAIT)
 	var/plant_name = pick("Tomato", "Potato", "Broccoli", "Carrot", "Ambrosia", "Pumpkin", "Ivy", "Kudzu", "Banana", "Moss", "Flower", "Bloom", "Root", "Bark", "Glowshroom", "Petal", "Leaf", \
 	"Venus", "Sprout","Cocoa", "Strawberry", "Citrus", "Oak", "Cactus", "Pepper", "Juniper")
@@ -87,10 +113,16 @@
 	anchored = FALSE
 	move_resist = MOVE_FORCE_NORMAL
 	density = FALSE
-	short_desc = "You are an ash walker. Your tribe worships the Necropolis."
-	flavour_text = "The wastes are sacred ground, its monsters a blessed bounty. You would never willingly leave your homeland behind. \
-	You have seen lights in the distance... they foreshadow the arrival of outsiders to your domain. \
-	Ensure your nest remains protected at all costs."
+	loadout_enabled = FALSE
+	canloadappearance = TRUE
+	short_desc = "Вы Пеплоход."
+	flavour_text = "Ваше племя поклоняется матери Некрополю, как вашей Спасительнице и Наставнице. Священные стены дворца Некрополя \
+	дали вашему Тендрилу и вашему Роду защиту. Испокон веков, ваша священная обитель дарует вам Дар Перерождения, из цикла в цикл за \
+	жертвоприношения матери Некрополю, ради продолжения Великой Охоты. Однако не так давно на ваши земли вторглось Чужеродное Племя. \
+	Несмотря на ваше кровное родство в поклонении Великой Матери, не дайте иноземцам осквернить ваше святилище их изуверскими традициями. \
+	Сверх этого, с небесных крепостей из Холодного Камня, на ваши земли спустились скитальцы с далёких Звёзд. Их рудокопы накладывают \
+	священные пальцы на Некрополь, свои грязные лапы. Не дайте им украсть дары великой матери и лишить вас пищи. Охота должна быть \
+	здравой, цикл должен продолжаться, грядущие поколения должны жить!"
 	assignedrole = "Ash Walker"
 	var/datum/team/ashwalkers/team
 	var/obj/structure/ash_walker_eggshell/eggshell
@@ -194,10 +226,11 @@
 	var/has_owner = FALSE
 	var/can_transfer = TRUE //if golems can switch bodies to this new shell
 	var/mob/living/owner = null //golem's owner if it has one
-	short_desc = "You are a Free Golem. Your family worships The Liberator."
-	flavour_text = "In his infinite and divine wisdom, he set your clan free to \
-	travel the stars with a single declaration: \"Yeah go do whatever.\" Though you are bound to the one who created you, it is customary in your society to repeat those same words to newborn \
-	golems, so that no golem may ever be forced to serve again."
+	short_desc = "Вы - свободный голем. Ваша семья поклоняется Освободителю."
+	flavour_text = "В своей бесконечной и божественной мудрости Освободитель освободил ваш клан, чтобы \
+	путешествовать по звездам с одним единственным заявлением: \ 'Да, делай что хочешь.'\ Хотя вы связаны с тем, кто вас создал, в вашем обществе принято повторять эти же слова новорожденным \
+	големам, чтобы ни один голем никогда не был вынужден служить снова."
+	important_info = "Вы не Антагонист."
 
 /obj/effect/mob_spawn/human/golem/Initialize(mapload, datum/species/golem/species = null, mob/creator = null)
 	if(species) //spawners list uses object name to register so this goes before ..()
@@ -210,10 +243,11 @@
 	if(has_owner && creator)
 		short_desc = "You are a golem."
 		flavour_text = "You move slowly, but are highly resistant to heat and cold as well as blunt trauma. You are unable to wear clothes, but can still use most tools."
-		important_info = "Serve [creator], and assist [creator.p_them()] in completing [creator.p_their()] goals at any cost."
+		important_info = "Serve [creator], and assist [creator.ru_na()] in completing [creator.ru_ego()] goals at any cost."
 		owner = creator
 
 /obj/effect/mob_spawn/human/golem/special(mob/living/new_spawn, name)
+	. = ..()
 	var/datum/species/golem/X = mob_species
 	to_chat(new_spawn, "[initial(X.info_text)]")
 	if(!owner)
@@ -243,13 +277,13 @@
 
 /obj/effect/mob_spawn/human/golem/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(isgolem(user) && can_transfer)
-		var/transfer_choice = alert("Transfer your soul to [src]? (Warning, your old body will die!)",,"Yes","No")
-		if(transfer_choice != "Yes" || QDELETED(src) || uses <= 0 || !user.canUseTopic(src, BE_CLOSE, NO_DEXTERY, NO_TK))
+		var/transfer_choice = alert("Transfer your soul to [src]? (Warning, your old body will die!)",,"Да","Нет")
+		if(transfer_choice != "Да" || QDELETED(src) || uses <= 0 || !user.canUseTopic(src, BE_CLOSE, NO_DEXTERY, NO_TK))
 			return
 		log_game("[key_name(user)] golem-swapped into [src]")
 		user.visible_message("<span class='notice'>A faint light leaves [user], moving to [src] and animating it!</span>","<span class='notice'>You leave your old body behind, and transfer into [src]!</span>")
 		show_flavour = FALSE
-		create(ckey = user.ckey,name = user.real_name)
+		create(ckey = user.ckey, name = user.real_name)
 		user.death()
 		return
 
@@ -278,42 +312,42 @@
 	death = FALSE
 	random = TRUE
 	mob_species = /datum/species/human
-	short_desc = "You've been stranded in this godless prison of a planet for longer than you can remember."
-	flavour_text = "Each day you barely scrape by, and between the terrible conditions of your makeshift shelter, \
-	the hostile creatures, and the ash drakes swooping down from the cloudless skies, all you can wish for is the feel of soft grass between your toes and \
-	the fresh air of Earth. These thoughts are dispelled by yet another recollection of how you got here... "
+	short_desc = "Вы застряли в этом Безбожном Месте."
+	flavour_text = "Каждый день вы еле-еле сводите концы с концами, \
+	враждебными существами и Пепельными Дрейками, слетающими с безоблачного неба. Все, что вы можете пожелать, это почувствовать мягкую траву между пальцами ног и \
+	свежий воздух Земли. Эти мысли развеиваются очередным воспоминанием о том, как вы сюда попали..."
 	assignedrole = "Hermit"
 	canloadappearance = TRUE
+	loadout_enabled = TRUE
 
 /obj/effect/mob_spawn/human/hermit/Initialize(mapload)
 	. = ..()
 	var/arrpee = rand(1,4)
 	switch(arrpee)
 		if(1)
-			flavour_text += "you were a [pick("arms dealer", "shipwright", "docking manager")]'s assistant on a small trading station several sectors from here. Raiders attacked, and there was \
-			only one pod left when you got to the escape bay. You took it and launched it alone, and the crowd of terrified faces crowding at the airlock door as your pod's engines burst to \
-			life and sent you to this hell are forever branded into your memory."
+			flavour_text += "вы были помощником [pick("Оружейника", "Корабельщика", "Финансового Менеджера")] на небольшой торговой станции в нескольких секторах отсюда. Рейдеры напали на ваше судно и в спасательном отсеке оставалась \
+			всего только одна капсула. Вы отбросили или отвлекли, или вас пропустили и в итоге благодаря спасательной капсуле вы... спаслись? Так или иначе, вы не забудете ту кучу испуганных лиц в момент вашего отлёта."
 			outfit.uniform = /obj/item/clothing/under/misc/assistantformal
 			outfit.shoes = /obj/item/clothing/shoes/sneakers/black
 			outfit.back = /obj/item/storage/backpack
 		if(2)
-			flavour_text += "you're an exile from the Tiger Cooperative. Their technological fanaticism drove you to question the power and beliefs of the Exolitics, and they saw you as a \
-			heretic and subjected you to hours of horrible torture. You were hours away from execution when a high-ranking friend of yours in the Cooperative managed to secure you a pod, \
-			scrambled its destination's coordinates, and launched it. You awoke from stasis when you landed and have been surviving - barely - ever since."
+			flavour_text += "вы изгнанник из кооператива 'Тигр'. Их технологический фанатизм заставил вас усомниться в силе и убеждениях Экзолитиков и они сочли вас \
+			еретиком, и подвергли вас многочасовым ужасным пыткам. Вы были в нескольких часах от казни, когда ваш высокопоставленный друг в Кооперативе сумел достать для вас капсулу, \
+			зашифровал координаты места назначения и запустил ее. Вы очнулись от стазиса, когда приземлились... и с тех пор выживаете - с трудом, но выживаете."
 			outfit.uniform = /obj/item/clothing/under/rank/prisoner
 			outfit.shoes = /obj/item/clothing/shoes/sneakers/orange
 			outfit.back = /obj/item/storage/backpack
 		if(3)
-			flavour_text += "you were a doctor on one of Nanotrasen's space stations, but you left behind that damn corporation's tyranny and everything it stood for. From a metaphorical hell \
-			to a literal one, you find yourself nonetheless missing the recycled air and warm floors of what you left behind... but you'd still rather be here than there."
+			flavour_text += "Вы были врачом на одной из космических станций Nanotrasen, но вы оставили позади тиранию этой проклятой корпорации и все то, за что она стояла. Из метафорического ада \
+			в буквальный - вы обнаружили, что вам все же не хватает чистого воздуха и теплых полов из сего того, что вы оставили... но вы все равно предпочтете быть здесь, а не там."
 			outfit.uniform = /obj/item/clothing/under/rank/medical/doctor
 			outfit.suit = /obj/item/clothing/suit/toggle/labcoat
 			outfit.back = /obj/item/storage/backpack/medic
 			outfit.shoes = /obj/item/clothing/shoes/sneakers/black
 		if(4)
-			flavour_text += "you were always joked about by your friends for \"not playing with a full deck\", as they so <i>kindly</i> put it. It seems that they were right when you, on a tour \
-			at one of Nanotrasen's state-of-the-art research facilities, were in one of the escape pods alone and saw the red button. It was big and shiny, and it caught your eye. You pressed \
-			it, and after a terrifying and fast ride for days, you landed here. You've had time to wisen up since then, and you think that your old friends wouldn't be laughing now."
+			flavour_text += "Ваши друзья всегда подшучивали над вами за то, что вы 'Не Играете с Полной Колодой', как они так доброжелательно выражались. Похоже, они были правы, когда вы, находясь на экскурсии \
+			по одному из самых современных исследовательских комплексов Nanotrasen, оказались в одной из спасательных капсул в одиночестве и увидели красную кнопку. Она была большой и блестящей, и это привлекло ваше внимание. Вы нажали на неё \
+			и после ужасающего, и быстрого путешествия в течение нескольких дней вы оказались здесь. С тех пор у вас было время поумнеть и вы думаете, что ваши старые друзья сейчас бы не смеялись."
 			outfit.uniform = /obj/item/clothing/under/color/grey/glorf
 			outfit.shoes = /obj/item/clothing/shoes/sneakers/black
 			outfit.back = /obj/item/storage/backpack
@@ -323,18 +357,20 @@
 	return ..()
 
 /obj/effect/mob_spawn/human/hermit/special(mob/living/carbon/human/new_spawn)
+	. = ..()
 	ADD_TRAIT(new_spawn,TRAIT_EXEMPT_HEALTH_EVENTS,GHOSTROLE_TRAIT)
 
 //Broken rejuvenation pod: Spawns in animal hospitals in lavaland. Ghosts become disoriented interns and are advised to search for help.
 /obj/effect/mob_spawn/human/doctor/alive/lavaland
-	name = "broken rejuvenation pod"
+	name = "Broken Rejuvenation Pod"
 	desc = "A small sleeper typically used to instantly restore minor wounds. This one seems broken, and its occupant is comatose."
 	job_description = "Lavaland Veterinarian"
 	mob_name = "a translocated vet"
-	short_desc = "You are a animal doctor who just woke up in lavaland"
-	flavour_text = "What...? Where are you? Where are the others? This is still the animal hospital - you should know, you've been an intern here for weeks - but \
-	you see them right now. So where is \
-	everyone? Where did they go? What happened to the hospital? And is that <i>smoke</i> you smell? You need to find someone else. Maybe they c	everyone's gone. One of the cats scratched you just a few minutes ago. That's why you were in the pod - to heal the scratch. The scabs are still fresh; an tell you what happened."
+	short_desc = "Вы - врач-животновод, только что проснувшийся в Лаваланде."
+	flavour_text = "Что...? Где вы? Где остальные? Это все еще больница для животных - вы должны знать, вы были здесь интерном в течение нескольких недель - но \
+	вы видите, что очутились где-то в неизвестном месте прямо сейчас. Так где же \
+	все? Куда они делись? Что случилось с больницей? И этот запах дыма? Вам нужно найти кого-нибудь еще. Может быть, они думают, что все ушли. Одна из кошек поцарапала тебя всего несколько минут назад. Поэтому вы и были в капсуле - чтобы залечить царапину. Струпья еще свежие..."
+	important_info = "Вы не Антагонист."
 	assignedrole = "Translocated Vet"
 	canloadappearance = TRUE
 
@@ -361,6 +397,7 @@
 	canloadappearance = TRUE
 
 /obj/effect/mob_spawn/human/prisoner_transport/special(mob/living/L)
+	. = ..()
 	L.real_name = "NTP #LL-0[rand(111,999)]" //Nanotrasen Prisoner #Lavaland-(numbers)
 	L.name = L.real_name
 
@@ -391,16 +428,16 @@
 	job_description = "Hotel Staff"
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_s"
-	objectives = "Cater to visiting guests with your fellow staff. Do not leave your assigned hotel and always remember: The customer is always right!"
 	death = FALSE
 	roundstart = FALSE
 	random = TRUE
 	outfit = /datum/outfit/hotelstaff
-	short_desc = "You are a staff member of a top-of-the-line space hotel!"
-	flavour_text = "You are a staff member of a top-of-the-line space hotel! Cater to guests and make sure the manager doesn't fire you."
-	important_info = "DON'T leave the hotel"
+	short_desc = "Вы - член обслуживающего персонала космического отеля."
+	flavour_text = "Вы нанялись в качестве персонала общего профиля для уборки, готовки, обслуживания гостей и всего, что прикажет менеджер на время пребывания на борту космического отеля. Ни в коем случае не грубите, не хамите и не ругайтесь с посетителями. Помните, что в вашем случае, клиент всегда прав."
+	important_info = "Персоналу отеля запрещается покидать его (кроме неординарных случаев или установки телепада)."
 	assignedrole = "Hotel Staff"
 	canloadappearance = TRUE
+	loadout_enabled = TRUE
 
 /datum/outfit/hotelstaff
 	name = "Hotel Staff"
@@ -416,11 +453,9 @@
 	mob_name = "hotel security member"
 	job_description = "Hotel Security"
 	outfit = /datum/outfit/hotelstaff/security
-	short_desc = "You are a peacekeeper."
-	flavour_text = "You have been assigned to this hotel to protect the interests of the company while keeping the peace between \
-		guests and the staff."
-	important_info = "Do NOT leave the hotel, as that is grounds for contract termination."
-	objectives = "Do not leave your assigned hotel. Try and keep the peace between staff and guests, non-lethal force heavily advised if possible."
+	short_desc = "Вы - охранник космического отеля."
+	flavour_text = "Вы были назначены в этот отель, чтобы защищать интересы компании Nanotrasen, недавно выкупившей его. Ведите себя вежливо, не размахивайте оружием и бронёй, не грубите посетителям - в первую очередь, вы не должны мешать наслаждаться пребыванием и отпугивать адекватных клиентов."
+	important_info = "Персоналу отеля запрещается покидать его (кроме неординарных случаев или установки телепада). Не ведите себя как СБ со станции - вы обычный гражданский и не обучены для борьбы с террористами, предателями, аномалиями и другими неординарными сущностями."
 
 /datum/outfit/hotelstaff/security
 	name = "Hotel Secuirty"
@@ -436,6 +471,7 @@
 	return ..()
 
 /obj/effect/mob_spawn/human/hotel_staff/special(mob/living/carbon/human/new_spawn)
+	. = ..()
 	ADD_TRAIT(new_spawn,TRAIT_EXEMPT_HEALTH_EVENTS,GHOSTROLE_TRAIT)
 
 /obj/effect/mob_spawn/human/demonic_friend
@@ -460,7 +496,7 @@
 	if(!owner_mind)
 		return
 	owner = owner_mind
-	flavour_text = "You have been given a reprieve from your eternity of torment, to be [owner.name]'s friend for [owner.p_their()] short mortal coil."
+	flavour_text = "You have been given a reprieve from your eternity of torment, to be [owner.name]'s friend for [owner.ru_ego()] short mortal coil."
 	important_info = "Be aware that if you do not live up to [owner.name]'s expectations, they can send you back to hell with a single thought. [owner.name]'s death will also return you to hell."
 	var/area/A = get_area(src)
 	if(!mapload && A)
@@ -470,6 +506,7 @@
 
 
 /obj/effect/mob_spawn/human/demonic_friend/special(mob/living/L)
+	. = ..()
 	if(!QDELETED(owner.current) && owner.current.stat != DEAD)
 		L.real_name = "[owner.name]'s best friend"
 		L.name = L.real_name
@@ -483,7 +520,7 @@
 		id.registered_name = L.real_name
 		id.update_label()
 	else
-		to_chat(L, "<span class='userdanger'>Your owner is already dead!  You will soon perish.</span>")
+		to_chat(L, "<span class='userdanger'>Your owner is already dead! You will soon perish.</span>")
 		addtimer(CALLBACK(L, /mob.proc/dust, 150)) //Give em a few seconds as a mercy.
 
 /datum/outfit/demonic_friend
@@ -502,8 +539,30 @@
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_s"
 	outfit = /datum/outfit/syndicate_empty
-	assignedrole = "Space Syndicate"	//I know this is really dumb, but Syndicate operative is nuke ops
+	assignedrole = "Space Syndicate"
 	canloadappearance = TRUE
+
+/obj/effect/mob_spawn/human/solfed
+	name = "Solar Federation Marine"
+	roundstart = FALSE
+	death = FALSE
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "oldpod"
+	outfit = /datum/outfit/ert/sol_soldier
+	assignedrole = "Solar Federation Operative"
+	canloadappearance = TRUE
+
+/obj/effect/mob_spawn/human/solfed/demoman
+	name = "Solar Federation Support"
+	outfit = /datum/outfit/ert/sol_soldier_support
+
+/obj/effect/mob_spawn/human/solfed/field_officer
+	name = "Solar Federation Field Officer"
+	outfit = /datum/outfit/ert/sol_soldier_leader
+
+/obj/effect/mob_spawn/human/solfed/admiral
+	name = "Solar Federation Battle Admiral"
+	outfit = /datum/outfit/sol_diplomacy/consul/admiral
 
 /datum/outfit/syndicate_empty
 	name = "Syndicate Operative Empty"
@@ -512,33 +571,38 @@
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	ears = /obj/item/radio/headset/syndicate/alt
 	back = /obj/item/storage/backpack
-	implants = list(/obj/item/implant/weapons_auth)
+	implants = list(/obj/item/implant/weapons_auth, /obj/item/implant/deathrattle, /obj/item/implant/explosive, /obj/item/implant/mindshield)
 	id = /obj/item/card/id/syndicate
+
+	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
 
 /datum/outfit/syndicate_empty/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	H.faction |= ROLE_SYNDICATE
+
+	var/obj/item/implant/mindshield/L = new //Here you go Deuryn
+	L.implant(H, null, 1)
 
 /obj/effect/mob_spawn/human/syndicate/battlecruiser
 	name = "Syndicate Battlecruiser Ship Operative"
 	short_desc = "You are a crewmember aboard the syndicate flagship: the SBC Starfury."
 	flavour_text = "Your job is to follow your captain's orders, maintain the ship, and keep the engine running. If you are not familiar with how the supermatter engine functions: do not attempt to start it."
 	important_info = "The armory is not a candy store, and your role is not to assault the station directly, leave that work to the assault operatives."
-	outfit = /datum/outfit/syndicate_empty/SBC
-	canloadappearance = TRUE
+	outfit = /datum/outfit/syndicate_empty/battlecruiser
 
-/datum/outfit/syndicate_empty/SBC
+/datum/outfit/syndicate_empty/battlecruiser
 	name = "Syndicate Battlecruiser Ship Operative"
 	l_pocket = /obj/item/gun/ballistic/automatic/pistol
 	r_pocket = /obj/item/kitchen/knife/combat/survival
 	belt = /obj/item/storage/belt/military/assault
+	r_hand = /obj/item/syndicate_uplink_high
 
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/assault
 	short_desc = "You are an assault operative aboard the syndicate flagship: the SBC Starfury."
 	flavour_text = "Your job is to follow your captain's orders, keep intruders out of the ship, and assault Space Station 13. There is an armory, multiple assault ships, and beam cannons to attack the station with."
 	important_info = "Work as a team with your fellow operatives and work out a plan of attack. If you are overwhelmed, escape back to your ship!"
-	outfit = /datum/outfit/syndicate_empty/SBC/assault
+	outfit = /datum/outfit/syndicate_empty/battlecruiser/assault
 
-/datum/outfit/syndicate_empty/SBC/assault
+/datum/outfit/syndicate_empty/battlecruiser/assault
 	name = "Syndicate Battlecruiser Assault Operative"
 	uniform = /obj/item/clothing/under/syndicate/combat
 	l_pocket = /obj/item/ammo_box/magazine/m10mm
@@ -548,17 +612,18 @@
 	suit_store = /obj/item/gun/ballistic/automatic/pistol
 	back = /obj/item/storage/backpack/security
 	mask = /obj/item/clothing/mask/gas/syndicate
+	l_hand = /obj/item/melee/transforming/energy/sword/saber/red
 
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/captain
 	name = "Syndicate Battlecruiser Captain"
 	short_desc = "You are the captain aboard the syndicate flagship: the SBC Starfury."
 	flavour_text = "Your job is to oversee your crew, defend the ship, and destroy Space Station 13. The ship has an armory, multiple ships, beam cannons, and multiple crewmembers to accomplish this goal."
 	important_info = "As the captain, this whole operation falls on your shoulders. You do not need to nuke the station, causing sufficient damage and preventing your ship from being destroyed will be enough."
-	outfit = /datum/outfit/syndicate_empty/SBC/assault/captain
+	outfit = /datum/outfit/syndicate_empty/battlecruiser/assault/captain
 	id_access_list = list(150,151)
 	canloadappearance = TRUE
 
-/datum/outfit/syndicate_empty/SBC/assault/captain
+/datum/outfit/syndicate_empty/battlecruiser/assault/captain
 	name = "Syndicate Battlecruiser Captain"
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber/red
 	r_pocket = /obj/item/melee/classic_baton/telescopic
@@ -568,6 +633,15 @@
 	head = /obj/item/clothing/head/HoS/syndicate
 	mask = /obj/item/clothing/mask/cigarette/cigar/havana
 	glasses = /obj/item/clothing/glasses/thermal/eyepatch
+
+// BLUEMOON ADD START - командная коробочка для командира
+/datum/outfit/syndicate_empty/battlecruiser/assault/captain/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
+	. = ..()
+	var/list/extra_backpack_items = list(
+		/obj/item/storage/box/pinpointer_squad
+	)
+	LAZYADD(backpack_contents, extra_backpack_items)
+// BLUEMOON ADD END
 
 //Ancient cryogenic sleepers. Players become NT crewmen from a hundred year old space station, now on the verge of collapse.
 /obj/effect/mob_spawn/human/oldsec
@@ -654,7 +728,7 @@
 	return ..()
 
 /obj/effect/mob_spawn/human/pirate
-	name = "space pirate sleeper"
+	name = "Space Pirate Sleeper"
 	desc = "A cryo sleeper smelling faintly of rum. The sleeper looks unstable. <i>Perhaps the pirate within can be killed with the right tools...</i>"
 	job_description = "Space Pirate"
 	random = TRUE
@@ -669,10 +743,9 @@
 	density = FALSE
 	show_flavour = FALSE //Flavour only exists for spawners menu
 	short_desc = "You are a space pirate."
-	flavour_text = "The station refused to pay for your protection, protect the ship, siphon the credits from the station and raid it for even more loot."
+	flavour_text = "Станция отказалась платить вам за крышу. Похитьте её ресурсы, обнесите хранилище на кредиты. Избегайте ненужных жертв. Не забывайте следить за своим кораблем."
 	assignedrole = "Space Pirate"
-	var/rank = "Mate"
-	canloadappearance = TRUE
+	var/rank = "Матрос"
 
 /obj/effect/mob_spawn/human/pirate/on_attack_hand(mob/living/user, act_intent = user.a_intent, unarmed_attack_flags)
 	. = ..()
@@ -718,7 +791,7 @@
 	return ..()
 
 /obj/effect/mob_spawn/human/pirate/corpse/captain
-	rank = "Captain"
+	rank = "Капитан"
 	mob_name = "Dead Space Pirate Captain"
 	outfit = /datum/outfit/pirate/space/captain
 
@@ -729,18 +802,18 @@
 /obj/effect/mob_spawn/human/pirate/proc/generate_pirate_name()
 	var/beggings = strings(PIRATE_NAMES_FILE, "beginnings")
 	var/endings = strings(PIRATE_NAMES_FILE, "endings")
-	return "[rank] [pick(beggings)][pick(endings)]"
+	return "[rank] [pick(beggings)] [pick(endings)]"
 
 /obj/effect/mob_spawn/human/pirate/Destroy()
 	new/obj/structure/showcase/machinery/oldpod/used(drop_location())
 	return ..()
 
 /obj/effect/mob_spawn/human/pirate/captain
-	rank = "Captain"
+	rank = "Капитан"
 	outfit = /datum/outfit/pirate/space/captain
 
 /obj/effect/mob_spawn/human/pirate/gunner
-	rank = "Gunner"
+	rank = "Канонир"
 
 /obj/effect/mob_spawn/human/ghostcafe
 	name = "Ghost Cafe Sleeper"
@@ -752,11 +825,13 @@
 	anchored = TRUE
 	density = FALSE
 	death = FALSE
+	loadout_enabled = FALSE
 	assignedrole = "Ghost Cafe Visitor"
-	short_desc = "You are a Ghost Cafe Visitor!"
-	flavour_text = "You know one thing for sure. You arent actually alive. Are you in a simulation?"
+	short_desc = "Вы посетитель Призрачного Кафе!"
+	flavour_text = "Вы совершенно уверены в одном. Вы не живое существо. Вы в симуляции? Заходя за данную роль вы соглашаетесь с тем, что на территории Гост-Кафе полностью отсутствуют какие-либо правила Ролевой Игры. Тем не менее, базовые серверные правила не отменяются. Вы должны вести себя адекватно так, чтобы не мешать другим игрокам и не портить саму локацию. Если в чём-то не уверены или нужна помощь - всегда можете попросить помощи Администратора. Несоблюдение базовых норм поведения повлекут за собой наказание."
 	skip_reentry_check = TRUE
 	banType = ROLE_GHOSTCAFE
+	back = /obj/item/storage/backpack/holding/satchel // BLUEMOON ADD
 
 /datum/action/toggle_dead_chat_mob
 	icon_icon = 'icons/mob/mob.dmi'
@@ -843,6 +918,7 @@
 		currently_disguised = FALSE
 
 /obj/effect/mob_spawn/human/ghostcafe/special(mob/living/carbon/human/new_spawn)
+	. = ..()
 	if(new_spawn.client)
 		new_spawn.client.prefs.copy_to(new_spawn)
 		var/area/A = get_area(src)
@@ -907,3 +983,578 @@
 	new /obj/item/clothing/mask/chameleon(src)
 	new /obj/item/storage/backpack/chameleon(src)
 	new /obj/item/clothing/neck/cloak/chameleon(src)
+
+//Port Tarkof, 6 people trapped in a revamped charlie-station like ghost role. Survive the aliens and threats, Fix the port and/or finish construction
+
+/obj/effect/mob_spawn/human/tarkon
+	name = "P-T Abandoned Crew"
+	mob_name = "an abandoned Port Tarkov member"
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper"
+	roundstart = FALSE
+	death = FALSE
+	random = TRUE
+	mob_species = /datum/species/human
+	short_desc = "Вы - брошенный таинственными работодателями сотрудник Порта 'Тарков' Корпорации, пытающейся создать устойчивые жилые условия внутри крупных астероидов для бедных. По какой-то причине вы понятия не имеете, что такое Синдикат и ваше последнее воспоминание о Nanotrasen - это гадкая Корпорация, предавшая вас тем или иным образом."
+	flavour_text = "Что-то пошло не так. Эксперименты пошли наперекосяк, расширения были сделаны до того, как проверки были полностью завершены. Теперь вы должны разобраться с последствия исхода прошлого экипажа. Приведите порт 'Тарков' к успеху, который планировался, либо умрите - стараясь."
+	important_info = "Не конфликтуйте без особой на то причины, используйте свой корабль для покупки дополнительных предметов или получения помощи. Не обменивайте своё специальное, бесценное оборудование. Непрошеные и незваные гости могут оказаться сотрудником вашей станции."
+	outfit = /datum/outfit/tarkoff
+	assignedrole = "Ancient Crew"
+	job_description = "Oldstation Crew"
+	canloadappearance = TRUE
+	loadout_enabled = TRUE
+	computer_area = /area/ruin/space/has_grav/port_tarkon/centerhall
+
+	give_cooler_to_mob_if_synth = TRUE
+
+/datum/outfit/tarkoff
+	name = "Default Port Tarkov Outfit"
+	uniform = /obj/item/clothing/under/rank/cargo/util
+	back = /obj/item/storage/backpack
+	shoes = /obj/item/clothing/shoes/winterboots
+	gloves = /obj/item/clothing/gloves/fingerless
+	glasses = /obj/item/clothing/glasses/sunglasses
+	id = /obj/item/card/id/away/tarkoff/cargo
+	l_pocket = /obj/item/card/mining_point_card
+	r_pocket = /obj/item/mining_voucher
+	ears = /obj/item/radio/headset/tarkoff
+
+/datum/outfit/tarkoff/post_equip(mob/living/carbon/human/tarkoff, visualsOnly = FALSE)
+	var/obj/item/card/id/id_card = tarkoff.wear_id
+	if(istype(id_card))
+		id_card.registered_name = tarkoff.real_name
+		id_card.update_label()
+		id_card.update_icon()
+	var/obj/item/radio/target_radio = tarkoff.ears
+	target_radio.set_frequency(FREQ_TARKOFF)
+	target_radio.recalculateChannels()
+
+	handlebank(tarkoff)
+	return ..()
+
+/obj/effect/mob_spawn/human/tarkon/sci
+	mob_name = "an abandoned scientist"
+	outfit = /datum/outfit/tarkoff/sci
+
+/datum/outfit/tarkoff/sci
+	name = "Port tarkoff Science Outfit"
+	uniform = /obj/item/clothing/under/rank/rnd/scientist/util
+	glasses = /obj/item/clothing/glasses/hud/diagnostic
+	id = /obj/item/card/id/away/tarkoff/sci
+	l_hand = /obj/item/inducer
+	l_pocket = null
+	r_pocket = /obj/item/stock_parts/cell/high
+
+/obj/effect/mob_spawn/human/tarkon/med
+	mob_name = "an abandoned medical resident"
+	outfit = /datum/outfit/tarkoff/med
+
+/datum/outfit/tarkoff/med
+	name = "Port Tarkov Medical Outfit"
+	uniform = /obj/item/clothing/under/rank/medical/doctor/util
+	glasses = /obj/item/clothing/glasses/hud/health
+	id = /obj/item/card/id/away/tarkoff/med
+	neck = /obj/item/clothing/neck/stethoscope
+	l_pocket = /obj/item/healthanalyzer
+	r_pocket = /obj/item/stack/medical/suture/medicated
+
+/obj/effect/mob_spawn/human/tarkon/engi
+	mob_name = "an abandoned maintenance engineer"
+	outfit = /datum/outfit/tarkoff/engi
+
+/datum/outfit/tarkoff/engi
+	name = "Port tarkoff Engineering Outfit"
+	uniform = /obj/item/clothing/under/rank/engineering/engineer/util
+	glasses = /obj/item/clothing/glasses/meson/engine/tray
+	id = /obj/item/card/id/away/tarkoff/engi
+	gloves = /obj/item/clothing/gloves/combat
+	l_pocket = /obj/item/tank/internals/emergency_oxygen/engi
+	r_pocket = /obj/item/stack/cable_coil
+
+/obj/effect/mob_spawn/human/tarkon/sec
+	mob_name = "an abandoned security deputy"
+	outfit = /datum/outfit/tarkoff/sec
+
+/datum/outfit/tarkoff/sec
+	name = "Port tarkoff Security Outfit"
+	uniform = /obj/item/clothing/under/rank/security/officer/util
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
+	gloves = /obj/item/clothing/gloves/tackler/combat
+	id = /obj/item/card/id/away/tarkoff/sec
+	l_pocket = /obj/item/melee/classic_baton/telescopic
+	r_pocket = /obj/item/grenade/barrier
+
+/obj/effect/mob_spawn/human/tarkon/ensign
+	name = "P-T Abandoned Ensign"
+	mob_name = "an abandoned ensign"
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper-o"
+	short_desc = "Вы получили задание от 'Тарков Индастриз' и были высланы в Порт Тарков в качестве члена командования низшего уровня. Вы, не имея никакого фактического командования, но будучи просто еще одним козлом отпущения, на которого можно свалить вину в случае неудачи... провалились."
+	flavour_text = "Что-то пошло не так. Эксперименты пошли наперекосяк, расширения были сделаны до того, как проверки были полностью завершены. Теперь вы должны разобраться с последствия исхода прошлого экипажа. Приведите порт 'Тарков' к успеху, который планировался, либо умрите - стараясь."
+	important_info = "Не конфликтуйте без особой на то причины, используйте свой корабль для покупки дополнительных предметов или получения помощи. Не обменивайте своё специальное, бесценное оборудование. Непрошеные и незваные гости могут оказаться сотрудником вашей станции."
+	outfit = /datum/outfit/tarkoff/ensign
+
+/datum/outfit/tarkoff/ensign //jack of all trades, master of none, spent all his credits, every last one
+	name = "Port tarkoff Ensigns Outfit"
+	uniform = /obj/item/clothing/under/rank/captain/util
+	ears = /obj/item/radio/headset/tarkoff/ensign
+	id = /obj/item/card/id/away/tarkoff/ensign
+	neck = /obj/item/clothing/neck/cloak/alt/boatcloak/command
+	gloves = /obj/item/clothing/gloves/combat
+	l_pocket = /obj/item/melee/classic_baton/telescopic
+	r_pocket = /obj/item/grenade/barrier
+
+/datum/outfit/proc/handlebank(mob/living/carbon/human/owner)
+	var/datum/bank_account/offstation_bank_account = new(owner.real_name)
+	owner.account_id = offstation_bank_account.account_id
+	if(owner.wear_id)
+		var/obj/item/card/id/id_card = owner.wear_id
+		id_card.registered_account = offstation_bank_account
+	return
+
+/obj/item/radio/headset/tarkoff
+	name = "Tarkov Headset"
+	freerange = TRUE
+	freqlock = TRUE
+	keyslot = new /obj/item/encryptionkey/headset_cargo/tarkoff
+
+/obj/item/radio/headset/tarkoff/ensign
+	name = "Tarkov Ensign headset"
+	desc = "A headset personally handed to trusted crew of tarkoff. It fills you with will to do... Something."
+	command = TRUE
+/obj/item/card/id/away/tarkoff
+	assignment = "P-T Cargo Personell"
+	access = list(ACCESS_AWAY_GENERAL, ACCESS_WEAPONS, ACCESS_TARKOFF)
+
+/obj/item/card/id/away/tarkoff/sec
+	assignment = "P-T Port Guard"
+	access = list(ACCESS_AWAY_GENERAL, ACCESS_WEAPONS, ACCESS_BRIG, ACCESS_TARKOFF, ACCESS_AWAY_SEC)
+
+/obj/item/card/id/away/tarkoff/med
+	assignment = "P-T Trauma Medic"
+	access = list(ACCESS_MEDICAL, ACCESS_AWAY_GENERAL, ACCESS_WEAPONS, ACCESS_TARKOFF)
+
+/obj/item/card/id/away/tarkoff/eng
+	assignment = "P-T Maintenance Crew"
+	access = list(ACCESS_ROBOTICS, ACCESS_AWAY_GENERAL, ACCESS_TARKOFF, ACCESS_ATMOSPHERICS, ACCESS_ENGINE_EQUIP)
+
+/obj/item/card/id/away/tarkoff/sci
+	assignment = "P-T Field Researcher"
+	access = list(ACCESS_ROBOTICS, ACCESS_AWAY_GENERAL, ACCESS_WEAPONS, ACCESS_TARKOFF)
+
+/obj/item/card/id/away/tarkoff/ensign
+	assignment = "Tarkov Ensign"
+	access = list(ACCESS_MEDICAL, ACCESS_ROBOTICS, ACCESS_AWAY_GENERAL, ACCESS_TARKOFF, ACCESS_WEAPONS, ACCESS_BRIG, ACCESS_ATMOSPHERICS, ACCESS_AWAY_SEC, ACCESS_ENGINE_EQUIP)
+
+/obj/item/card/id/away/tarkoff/sci
+	name = "P-T field researcher's access card"
+	desc = "An access card designated for \"The Science Team\". You are forgotten basically immediately when it comes to the lab."
+
+/obj/item/card/id/away/tarkoff/med
+	name = "P-T trauma medic's access card"
+	desc = "An access card designated for \"Medical Staff\". You provide the medic bags."
+
+/obj/item/card/id/away/tarkoff/sec
+	name = "P-T resident deputy's access card"
+	desc = "An access card designated for \"Security Members\". Everyone wants your guns, partner. Yee-haw."
+
+/obj/item/card/id/away/tarkoff/cargo
+	name = "P-T cargo hauler's access card"
+	desc = "An access card designated for \"Cargo's Finest\". You're also a part time space miner, when cargonia is quiet."
+
+
+/obj/item/card/id/away/tarkoff/engi
+	name = "P-T maintenance engineer's access card"
+	desc = "An access card designated for \"engineering staff\". You're going to be the one everyone points at to fix stuff, lets be honest."
+
+/obj/item/card/id/away/tarkoff/ensign
+	name = "Tarkov Ensign's Access Card"
+	desc = "An access card designated for \"Tarkov Ensign\". No one has to listen to you... but you're the closest there is for command around here."
+
+//DS-2.
+/obj/effect/mob_spawn/human/ds2
+	name = "DS-2 personnel"
+	mob_name = "DS-2 personnel"
+	short_desc = "Вы Специалист Синдиката, работающий на Общем Корабле Синдиката из ячейки 'Глубокий Космос Два' под названием 'Благославлённый' под Начальством Адмирала одной из Сторон и изучающий аномальное поле Системы Синих Лун."
+	flavour_text = "Синдикат счел нужным направить передовую оперативную базу в Сектор Тринадцать для наблюдения за операциями NT и Кордоном. Ваш приказ - поддерживать целостность корабля и по возможности не высовываться."
+	important_info = "Вы не Антагонист, но вы можете помогать Станции и тем более с одобрения Администрации."
+	roundstart = FALSE
+	death = FALSE
+	random = TRUE
+	canloadappearance = TRUE
+	loadout_enabled = TRUE
+	use_outfit_name = TRUE
+	computer_area = /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms
+
+/obj/effect/mob_spawn/human/ds2/prisoner
+	name = "Syndicate Prisoner"
+	mob_name = "a Syndicate prisoner"
+	short_desc = "По какой-то причине вы оказались в тюремной части Корабля 'Благославлённый' с неизвестным сроком."
+	flavour_text = "Не осознавая, где вы находитесь, вы знаете только то, что вы в плену. Что касается того, почему вы здесь? Ваша голова раскалывается и вы просто не помните..."
+	important_info = "Вы все еще подчиняетесь стандартной политике заключенных и должны обратиться к администратору, прежде чем враждовать с DS2."
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper_s"
+	outfit = /datum/outfit/ds2/prisoner
+
+/obj/effect/mob_spawn/human/ds2/syndicate
+	name = "Syndicate Operative"
+	mob_name = "a Syndicate operative"
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper_s"
+	short_desc = "Вы Специалист Синдиката, работающий на Оперативной Базе Синдиката из формирования 'Глубокий Космос Два' под названием 'Благославлённый' под Начальством Адмирала одной из Сторон и изучающий аномальное поле Системы Синих Лун."
+	flavour_text = "Синдикат счел нужным направить передовую оперативную базу в Сектор Тринадцать для наблюдения за операциями NT и Кордоном. Ваш приказ - поддерживать целостность корабля и по возможности не высовываться."
+	important_info = "Вы не Антагонист, но вы можете помогать Станции и тем более с одобрения Администрации."
+	outfit = /datum/outfit/ds2/syndicate
+
+/obj/effect/mob_spawn/human/ds2/syndicate_command
+	name = "Syndicate Command Operative"
+	mob_name = "a Syndicate leader"
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper_s"
+	short_desc = "Вы Адмирал одной из ячеек Синдиката, работающий на Корабле Синдиката из ячейки 'Глубокий Космос Два' под названием 'Благославлённый'. Приведите Объект под вашей ответственностью к успеху, который планировался, либо умрите - стараясь."
+	flavour_text = "Синдикат счел нужным направить передовую оперативную базу в Сектор Тринадцать для наблюдения за операциями NT и Кордоном. Ваш приказ - поддерживать целостность корабля и по возможности не высовываться."
+	important_info = "Вы не Антагонист, но вы можете помогать Станции и тем более с одобрения Администрации."
+	outfit = /datum/outfit/ds2/syndicate_command
+
+/obj/effect/mob_spawn/human/ds2/syndicate/special(mob/living/new_spawn)
+	. = ..()
+	new_spawn.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
+
+/obj/effect/mob_spawn/human/ds2/syndicate_command/special(mob/living/new_spawn)
+	. = ..()
+	new_spawn.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
+
+/obj/effect/mob_spawn/human/ds2/syndicate/service
+	outfit = /datum/outfit/ds2/syndicate/service
+
+/obj/effect/mob_spawn/human/ds2/syndicate/miner
+	outfit = /datum/outfit/ds2/syndicate/miner
+
+/obj/effect/mob_spawn/human/ds2/syndicate/enginetech
+	outfit = /datum/outfit/ds2/syndicate/enginetech
+
+/obj/effect/mob_spawn/human/ds2/syndicate/researcher
+	outfit = /datum/outfit/ds2/syndicate/researcher
+
+/obj/effect/mob_spawn/human/ds2/syndicate/stationmed
+	outfit = /datum/outfit/ds2/syndicate/stationmed
+
+/obj/effect/mob_spawn/human/ds2/syndicate/brigoff
+	outfit = /datum/outfit/ds2/syndicate/brigoff
+
+/obj/effect/mob_spawn/human/ds2/syndicate_command/masteratarms
+	outfit = /datum/outfit/ds2/syndicate_command/masteratarms
+
+/obj/effect/mob_spawn/human/ds2/syndicate_command/corporateliaison
+	outfit = /datum/outfit/ds2/syndicate_command/corporateliaison
+
+/obj/effect/mob_spawn/human/ds2/syndicate_command/admiral
+	outfit = /datum/outfit/ds2/syndicate_command/admiral
+
+/datum/outfit/ds2
+	name = "default ds2 outfit"
+
+/datum/outfit/ds2/post_equip(mob/living/carbon/human/syndicate, visualsOnly = FALSE)
+	var/obj/item/card/id/id_card = syndicate.wear_id
+	if(istype(id_card))
+		id_card.registered_name = syndicate.real_name
+		id_card.update_label()
+		id_card.update_icon()
+
+	handlebank(syndicate)
+	return ..()
+
+//DS-2 Hostage
+/datum/outfit/ds2/prisoner
+	name = "Syndicate Prisoner"
+	uniform = /obj/item/clothing/under/rank/prisoner/syndicate
+	shoes = /obj/item/clothing/shoes/sneakers/crimson
+	id = /obj/item/card/id/syndicate/advanced/prisoner
+	id_trim = /datum/id_trim/syndicom/ds2/prisoner
+
+//DS-2 Crew
+/datum/outfit/ds2/syndicate
+	name = "DS-2 Operative"
+	uniform = /obj/item/clothing/under/syndicate
+	shoes = /obj/item/clothing/shoes/combat
+	ears = /obj/item/radio/headset/ds2
+	back = /obj/item/storage/backpack
+	backpack_contents = list(
+		/obj/item/storage/box/survival = 1,
+		/obj/item/crowbar/red = 1,
+		)
+	id = /obj/item/card/id/syndicate/advanced/black
+	id_trim = /datum/id_trim/syndicom/ds2
+	implants = list(/obj/item/implant/weapons_auth)
+
+/datum/outfit/ds2/syndicate/miner
+	name = "DS-2 Mining Officer"
+	uniform = /obj/item/clothing/under/syndicate/overalls
+	belt = /obj/item/storage/bag/ore
+	back = /obj/item/storage/backpack/satchel/explorer
+	backpack_contents = list(
+		/obj/item/storage/box/survival = 1,
+		/obj/item/crowbar/red = 1,
+		/obj/item/kitchen/knife/combat/survival = 1,
+		/obj/item/t_scanner/adv_mining_scanner/lesser = 1,
+		/obj/item/gun/energy/kinetic_accelerator = 1,
+		)
+	l_pocket = /obj/item/card/mining_point_card
+	r_pocket = /obj/item/mining_voucher
+	head = /obj/item/clothing/head/soft/black
+	id = /obj/item/card/id/syndicate/advanced/black/mining
+	id_trim = /datum/id_trim/syndicom/ds2/miner
+
+/obj/item/card/id/syndicate/advanced/black/mining
+	assignment = "DS-2 Mining Officer"
+	icon_state = "card_black"
+
+/datum/outfit/ds2/syndicate/service
+	name = "DS-2 General Staff"
+	uniform = /obj/item/clothing/under/syndicate
+	back = /obj/item/storage/backpack/satchel
+	suit = /obj/item/clothing/suit/apron/chef
+	head = /obj/item/clothing/head/soft/mime
+	id = /obj/item/card/id/syndicate/advanced/black/general
+	id_trim = /datum/id_trim/syndicom/ds2/syndicatestaff
+
+/obj/item/card/id/syndicate/advanced/black/general
+	assignment = "DS-2 General Staff"
+	icon_state = "card_black"
+
+/datum/outfit/ds2/syndicate/enginetech
+	name = "DS-2 Engine Technician"
+	uniform = /obj/item/clothing/under/syndicate/overalls
+	head = /obj/item/clothing/head/soft/sec/syndicate
+	backpack_contents = list(
+		/obj/item/storage/box/survival = 1,
+		)
+	glasses = /obj/item/clothing/glasses/welding
+	belt = /obj/item/storage/belt/utility/syndicate
+	gloves = /obj/item/clothing/gloves/combat
+	id = /obj/item/card/id/syndicate/advanced/black/engine
+	id_trim = /datum/id_trim/syndicom/ds2/enginetechnician
+
+/obj/item/card/id/syndicate/advanced/black/engine
+	assignment = "DS-2 Engine Technician"
+	icon_state = "card_black"
+
+/datum/outfit/ds2/syndicate/researcher
+	name = "DS-2 Researcher"
+	uniform = /obj/item/clothing/under/rank/rnd/scientist/utility/syndicate
+	suit = /obj/item/clothing/suit/toggle/labcoat/science
+	glasses = /obj/item/clothing/glasses/science
+	gloves = /obj/item/clothing/gloves/color/black
+	back = /obj/item/storage/backpack/satchel
+	id = /obj/item/card/id/syndicate/advanced/black/researcher
+	id_trim = /datum/id_trim/syndicom/ds2/researcher
+
+/obj/item/card/id/syndicate/advanced/black/researcher
+	assignment = "DS-2 Researcher"
+	icon_state = "card_black"
+
+/datum/outfit/ds2/syndicate/stationmed
+	name = "DS-2 Medical Officer"
+	uniform = /obj/item/clothing/under/syndicate/scrubs
+	suit = /obj/item/clothing/suit/toggle/labcoat/syndicate
+	belt = /obj/item/storage/belt/medolier/full
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile/hsc
+	back = /obj/item/storage/backpack/satchel
+	id_trim = /datum/id_trim/syndicom/ds2/medicalofficer
+	backpack_contents = list(
+		/obj/item/storage/box/survival = 1,
+		/obj/item/crowbar/red = 1,
+		/obj/item/storage/firstaid/tactical = 1,
+		)
+
+/obj/item/card/id/syndicate/advanced/black/stationmed
+	assignment = "DS-2 Medical Officer"
+	icon_state = "card_black"
+
+/datum/outfit/ds2/syndicate/brigoff
+	name = "DS-2 Brig Officer"
+	uniform = /obj/item/clothing/under/syndicate/combat
+	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
+	suit = /obj/item/clothing/suit/armor/bulletproof/old
+	back = /obj/item/storage/backpack/security
+	head = /obj/item/clothing/head/helmet/swat/ds
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
+	r_pocket = /obj/item/flashlight/seclite
+	mask = /obj/item/clothing/mask/gas/syndicate
+	ears = /obj/item/radio/headset/ds2
+	id = /obj/item/card/id/syndicate/advanced/black/command/brigoff
+	id_trim = /datum/id_trim/syndicom/ds2/brigofficer
+
+/obj/item/card/id/syndicate/advanced/black/command/brigoff
+	assignment = "DS-2 Brig Officer"
+	icon_state = "card_black"
+	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE, ACCESS_SYNDICATE_LEADER)
+
+/datum/outfit/ds2/syndicate/post_equip(mob/living/carbon/human/syndicate)
+	syndicate.faction |= ROLE_SYNDICATE
+	return ..()
+
+//DS-2 Command
+/datum/outfit/ds2/syndicate_command
+	name = "DS-2 Command Operative"
+	uniform = /obj/item/clothing/under/syndicate
+	shoes = /obj/item/clothing/shoes/combat
+	ears = /obj/item/radio/headset/ds2/command
+	back = /obj/item/storage/backpack
+	backpack_contents = list(
+		/obj/item/storage/box/survival = 1,
+		/obj/item/crowbar/red = 1,
+		/obj/item/lighter/gonzofist = 1)
+	id = /obj/item/card/id/syndicate/advanced/black/command
+	implants = list(/obj/item/implant/weapons_auth)
+	id_trim = /datum/id_trim/syndicom/ds2
+
+/obj/item/card/id/syndicate/advanced/black/command
+	assignment = "DS-2 Command Operative"
+	icon_state = "card_black"
+	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE, ACCESS_SYNDICATE_LEADER)
+
+/datum/outfit/ds2/syndicate_command/masteratarms
+	name = "DS-2 Master At Arms"
+	uniform = /obj/item/clothing/under/syndicate/combat
+	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
+	suit = /obj/item/clothing/suit/armor/vest/warden/syndicate
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
+	back = /obj/item/storage/backpack/satchel/sec
+	head = /obj/item/clothing/head/HoS/beret/syndicate
+	r_pocket = /obj/item/flashlight/seclite
+	implants = list(
+		/obj/item/implant/weapons_auth,
+		/obj/item/implant/krav_maga
+		)
+	id = /obj/item/card/id/syndicate/advanced/black/command/masteratarms
+	id_trim = /datum/id_trim/syndicom/ds2/masteratarms
+
+/obj/item/card/id/syndicate/advanced/black/command/masteratarms
+	assignment = "DS-2 Master At Arms"
+	icon_state = "card_black"
+	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE, ACCESS_SYNDICATE_LEADER)
+
+/datum/outfit/ds2/syndicate_command/corporateliaison
+	name = "DS-2 Corporate Liasion"
+	uniform = /obj/item/clothing/under/syndicate/sniper
+	head = /obj/item/clothing/head/fedora
+	shoes = /obj/item/clothing/shoes/laceup
+	back = /obj/item/storage/backpack/satchel
+	id_trim = /datum/id_trim/syndicom/ds2/corporateliasion
+
+/obj/item/card/id/syndicate/advanced/black/command/corporateliaison
+	assignment = "DS-2 Corporate Liasion"
+	icon_state = "card_black"
+	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE, ACCESS_SYNDICATE_LEADER)
+
+/datum/outfit/ds2/syndicate_command/admiral
+	name = "DS-2 Admiral"
+	uniform = /obj/item/clothing/under/rank/captain/utility/syndicate
+	neck = /obj/item/clothing/neck/cloak/syndieadm
+	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
+	back = /obj/item/storage/backpack/satchel
+	belt = /obj/item/gun/ballistic/automatic/pistol/aps
+	head = /obj/item/clothing/head/HoS/syndicate
+	id = /obj/item/card/id/syndicate/advanced/black/gold
+	id_trim = /datum/id_trim/syndicom/ds2/stationadmiral
+
+/obj/item/card/id/syndicate/advanced/black/gold
+	assignment = "DS-2 Admiral"
+	icon_state = "gold"
+	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE, ACCESS_SYNDICATE_LEADER)
+
+/datum/outfit/ds2/syndicate_command/post_equip(mob/living/carbon/human/syndicate)
+	syndicate.faction |= ROLE_SYNDICATE
+	return ..()
+
+/// DS-2
+
+/datum/id_trim/syndicom/ds2
+	assignment = "DS-2 Operative"
+	trim_state = "trim_unknown"
+	department_color = COLOR_ASSEMBLY_BLACK
+	subdepartment_color = COLOR_SYNDIE_RED
+
+/datum/id_trim/syndicom/ds2/prisoner
+	assignment = "DS-2 Hostage"
+	trim_state = "trim_ds2prisoner"
+	subdepartment_color = COLOR_MAROON
+	sechud_icon_state = SECHUD_DS2_PRISONER
+
+/datum/id_trim/syndicom/ds2/miner
+	assignment = "DS-2 Mining Officer"
+	trim_state = "trim_ds2miningofficer"
+	sechud_icon_state = SECHUD_DS2_MININGOFFICER
+
+/datum/id_trim/syndicom/ds2/syndicatestaff
+	assignment = "DS-2 General Staff"
+	trim_state = "trim_ds2generalstaff"
+	sechud_icon_state = SECHUD_DS2_GENSTAFF
+
+/datum/id_trim/syndicom/ds2/researcher
+	assignment = "DS-2 Researcher"
+	trim_state = "trim_ds2researcher"
+	sechud_icon_state = SECHUD_DS2_RESEARCHER
+	access = list(ACCESS_SYNDICATE, ACCESS_ROBOTICS)
+
+/datum/id_trim/syndicom/ds2/enginetechnician
+	assignment = "DS-2 Engine Technician"
+	trim_state = "trim_ds2enginetech"
+	sechud_icon_state = SECHUD_DS2_ENGINETECH
+
+/datum/id_trim/syndicom/ds2/medicalofficer
+	assignment = "DS-2 Medical Officer"
+	trim_state = "trim_ds2medicalofficer"
+	sechud_icon_state = SECHUD_DS2_DOCTOR
+
+/datum/id_trim/syndicom/ds2/masteratarms
+	assignment = "DS-2 Master At Arms"
+	trim_state = "trim_ds2masteratarms"
+	sechud_icon_state = SECHUD_DS2_MASTERATARMS
+	access = list(ACCESS_SYNDICATE, ACCESS_ROBOTICS, ACCESS_SYNDICATE_LEADER)
+
+/datum/id_trim/syndicom/ds2/brigofficer
+	assignment = "DS-2 Brig Officer"
+	trim_state = "trim_ds2brigofficer"
+	sechud_icon_state = SECHUD_DS2_BRIGOFFICER
+	access = list(ACCESS_SYNDICATE, ACCESS_ROBOTICS, ACCESS_SYNDICATE_LEADER)
+
+/datum/id_trim/syndicom/ds2/corporateliasion // DS2 HoP
+	assignment = "DS-2 Corporate Liaison"
+	trim_state = "trim_ds2corporateliaison"
+	sechud_icon_state = SECHUD_DS2_CORPLIAISON
+	access = list(ACCESS_SYNDICATE, ACCESS_ROBOTICS, ACCESS_SYNDICATE_LEADER)
+
+/datum/id_trim/syndicom/ds2/stationadmiral
+	assignment = "DS-2 Admiral"
+	trim_state = "trim_ds2admiral"
+	sechud_icon_state = SECHUD_DS2_ADMIRAL
+	access = list(ACCESS_SYNDICATE, ACCESS_ROBOTICS, ACCESS_SYNDICATE_LEADER)
+
+//Затычка до Id_Trim.
+
+/obj/item/card/id/syndicate/advanced/prisoner
+	name = "Prisoner"
+	assignment = "DS-2 Hostage"
+	icon_state = "card_ds2prisoner"
+
+/obj/item/card/id/syndicate/advanced/black
+	name = "Agent Card"
+	icon_state = "card_black"
+
+//CRYO CONSOLES
+/obj/machinery/computer/cryopod/ds1
+	radio = /obj/item/radio/headset/ds1
+	announcement_channel = RADIO_CHANNEL_DS1
+	req_one_access = list("syndicate_leader")
+
+/obj/machinery/computer/cryopod/ds2
+	radio = /obj/item/radio/headset/ds2
+	announcement_channel = RADIO_CHANNEL_DS2
+	req_one_access = list("syndicate_leader")
+
+/obj/machinery/computer/cryopod/tarkoff
+	radio = /obj/item/radio/headset/tarkoff
+	announcement_channel = RADIO_CHANNEL_TARKOFF
+	req_one_access = list("tarkoff")

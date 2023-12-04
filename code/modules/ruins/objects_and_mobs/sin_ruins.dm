@@ -15,12 +15,17 @@
 	if(obj_flags & IN_USE)
 		return
 	obj_flags |= IN_USE
-	user.adjustCloneLoss(20)
+	// BLUEMOON ADD START - у роботов не должно быть клон-урона, так что, урон внутренним системам
+	if(HAS_TRAIT(user, TRAIT_ROBOTIC_ORGANISM))
+		user.adjustToxLoss(20, toxins_type = TOX_SYSCORRUPT)
+	else
+	// BLUEMOON ADD END
+		user.adjustCloneLoss(20)
 	if(user.stat)
 		to_chat(user, "<span class='userdanger'>No... just one more try...</span>")
 		user.gib()
 	else
-		user.visible_message("<span class='warning'>[user] pulls [src]'s lever with a glint in [user.p_their()] eyes!</span>", "<span class='warning'>You feel a draining as you pull the lever, but you \
+		user.visible_message("<span class='warning'>[user] pulls [src]'s lever with a glint in [user.ru_ego()] eyes!</span>", "<span class='warning'>You feel a draining as you pull the lever, but you \
 		know it'll be worth it.</span>")
 	icon_state = "slots2"
 	playsound(src, 'sound/lavaland/cursed_slot_machine.ogg', 50, 0)
@@ -68,7 +73,7 @@
 		you take one... and the bag vanishes.</span>")
 	var/turf/T = get_turf(user)
 	//SPLURT CHANGE (So long, free wiznerd)
-	var/obj/item/dice/d20/critical_fail = new(T)
+	var/obj/item/dice/d20/fate/one_use/critical_fail = new(T)
 	user.put_in_hands(critical_fail)
 	qdel(src)
 
@@ -99,7 +104,7 @@
 	icon_state = "magic_mirror"
 
 /obj/structure/mirror/magic/pride/curse(mob/user)
-	user.visible_message("<span class='danger'><B>The ground splits beneath [user] as [user.p_their()] hand leaves the mirror!</B></span>", \
+	user.visible_message("<span class='danger'><B>The ground splits beneath [user] as [user.ru_ego()] hand leaves the mirror!</B></span>", \
 	"<span class='notice'>Perfect. Much better! Now <i>nobody</i> will be able to resist yo-</span>")
 
 	var/turf/T = get_turf(user)
@@ -143,6 +148,6 @@
 				user.updateappearance(mutcolor_update=1)
 				user.domutcheck()
 				user.visible_message("<span class='warning'>[user]'s appearance shifts into [H]'s!</span>", \
-				"<span class='boldannounce'>[H.p_they(TRUE)] think[H.p_s()] [H.p_theyre()] <i>sooo</i> much better than you. Not anymore, [H.p_they()] won't.</span>")
+				"<span class='boldannounce'>[H.ru_who(TRUE)] think[H.p_s()] [H.ru_who()] <i>sooo</i> much better than you. Not anymore, [H.ru_who()] won't.</span>")
 		else
 			to_chat(user, "<span class='warning'>You are unable to transform into [H]!</span>")

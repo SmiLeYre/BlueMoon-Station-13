@@ -191,6 +191,7 @@
 		to_chat(user, span_notice("You swipe \the [src]. A console window momentarily fills the screen, with white text rapidly scrolling past."))
 		return TRUE
 	to_chat(user, span_notice("You swipe \the [src]. A console window fills the screen, but it quickly closes itself after only a few lines are written to it."))
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	return FALSE
 
 /obj/item/modular_computer/examine(mob/user)
@@ -504,10 +505,10 @@
 		if(!W.tool_start_check(user, amount=1))
 			return
 
-		to_chat(user, span_notice("You begin repairing damage to \the [src]..."))
+		to_chat(user, span_notice("Вы начинаете чинить [src]..."))
 		if(W.use_tool(src, user, 20, volume=50, amount=1))
 			obj_integrity = max_integrity
-			to_chat(user, span_notice("You repair \the [src]."))
+			to_chat(user, span_notice("Вы починили [src]."))
 		return
 
 	var/obj/item/computer_hardware/card_slot/card_slot = all_components[MC_CARD]

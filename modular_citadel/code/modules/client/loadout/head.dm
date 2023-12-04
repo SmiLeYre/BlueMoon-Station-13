@@ -64,11 +64,6 @@
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION | LOADOUT_CAN_COLOR_POLYCHROMIC
 	loadout_initial_colors = list("#333333", "#FFFFFF")
 
-/datum/gear/head/flakhelm
-	name = "Flak Helmet"
-	path = /obj/item/clothing/head/flakhelm
-	cost = 2
-
 /datum/gear/head/bunnyears
 	name = "Bunny Ears"
 	path = /obj/item/clothing/head/rabbitears
@@ -212,3 +207,7 @@
 /datum/gear/head/kabuto
 	name = "Kabuto helmet"
 	path = /obj/item/clothing/head/kabuto
+
+/datum/gear/head/maid_headband
+	name = "Tactical Maid Headband"
+	path = /obj/item/clothing/head/maid/syndicate

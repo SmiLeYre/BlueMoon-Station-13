@@ -257,7 +257,7 @@
 
 	GLOB.apcs_list += src
 
-	wires = new /datum/wires/apc(src)
+	set_wires(new /datum/wires/apc(src))
 	// offset 24 pixels in direction of dir
 	// this allows the APC to be embedded in a wall, yet still inside an area
 	if (building)
@@ -850,7 +850,7 @@
 			update_appearance()
 			updateUsrDialog()
 		else
-			to_chat(user, "<span class='warning'>Access denied.</span>")
+			to_chat(user, "<span class='warning'>Доступ запрещён.</span>")
 
 /obj/machinery/power/apc/proc/toggle_nightshift_lights(mob/living/user)
 	if(last_nightshift_switch > world.time - 100) //~10 seconds between each toggle to prevent spamming
@@ -896,6 +896,7 @@
 		obj_flags |= EMAGGED
 		locked = FALSE
 		to_chat(user, "<span class='notice'>You emag the APC interface.</span>")
+		log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 		update_appearance()
 	return TRUE
 
@@ -1614,7 +1615,7 @@
 /obj/machinery/power/apc/proc/break_lights()
 	for(var/obj/machinery/light/L in area)
 		L.on = TRUE
-		L.break_light_tube()
+		INVOKE_ASYNC(L, TYPE_PROC_REF(/obj/machinery/light, break_light_tube))
 		L.on = FALSE
 		stoplag()
 
@@ -1648,14 +1649,14 @@
 	for(var/obj/machinery/light/L in area)
 		if(L.nightshift_allowed)
 			L.nightshift_enabled = nightshift_lights
-			L.update(FALSE)
+			INVOKE_ASYNC(L, TYPE_PROC_REF(/obj/machinery/light, break_light_tube), FALSE)
 		CHECK_TICK
 
 /obj/machinery/power/apc/proc/set_hijacked_lighting()
 	set waitfor = FALSE
 	for(var/obj/machinery/light/L in area)
 		L.hijacked = hijackerreturn()
-		L.update(FALSE)
+		INVOKE_ASYNC(L, TYPE_PROC_REF(/obj/machinery/light, break_light_tube), FALSE)
 		CHECK_TICK
 
 /obj/machinery/power/apc/proc/update_nightshift_auth_requirement()

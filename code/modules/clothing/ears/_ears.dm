@@ -23,7 +23,7 @@
 	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS_LEFT, ITEM_SLOT_EARS_RIGHT))
 
 /obj/item/clothing/ears/headphones
-	name = "headphones"
+	name = "Headphones"
 	desc = "Unce unce unce unce. Boop!"
 	icon = 'icons/obj/clothing/accessories.dmi'
 	icon_state = "headphones"

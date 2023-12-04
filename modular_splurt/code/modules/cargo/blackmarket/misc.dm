@@ -1,5 +1,5 @@
 //Normal
-datum/blackmarket_item/consumable/radbgone
+/datum/blackmarket_item/consumable/radbgone
 	name = "radiation treatment kit"
 	desc = "Used to treat minor toxic blood content and major radiation poisoning."
 	item = /obj/item/storage/firstaid/radbgone

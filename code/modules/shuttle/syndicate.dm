@@ -1,47 +1,58 @@
-#define SYNDICATE_CHALLENGE_TIMER 9000		// 15 minutes
+#define SYNDICATE_CHALLENGE_TIMER 9000	// 15 minutes
 
 /obj/machinery/computer/shuttle/syndicate
-	name = "syndicate shuttle terminal"
-	desc = "The terminal used to control the syndicate transport shuttle."
+	name = "InteQ shuttle terminal"
+	desc = "The terminal used to control the InteQ transport shuttle."
 	circuit = /obj/item/circuitboard/computer/syndicate_shuttle
-	icon_screen = "syndishuttle"
-	icon_keyboard = "syndie_key"
-	light_color = LIGHT_COLOR_RED
+	icon_screen = "inteqshuttle"
+	icon_keyboard = "inteq_key"
+	light_color = LIGHT_COLOR_ORANGE
 	req_access = list(ACCESS_SYNDICATE)
 	shuttleId = "syndicate"
-	possible_destinations = "syndicate_away;syndicate_z5;syndicate_ne;syndicate_nw;syndicate_n;syndicate_se;syndicate_sw;syndicate_s;syndicate_custom"
+	possible_destinations = "inteq_away;syndicate_z5;syndicate_ne;syndicate_nw;syndicate_n;syndicate_se;syndicate_sw;syndicate_s;syndicate_custom"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
 /obj/machinery/computer/shuttle/syndicate/allowed(mob/M)
-	if(issilicon(M) && !(ROLE_SYNDICATE in M.faction))
+	if(issilicon(M) && !(ROLE_INTEQ in M.faction))
 		return FALSE
 	return ..()
 
 /obj/machinery/computer/shuttle/syndicate/ui_act(action, params)
 	if(!allowed(usr))
-		to_chat(usr, "<span class='danger'>Access denied.</span>")
+		to_chat(usr, "<span class='danger'>Доступ запрещён.</span>")
 		return
-
 	switch(action)
 		if("move")
 			if(istype(src, /obj/machinery/computer/shuttle/syndicate/drop_pod))
 				if(!is_centcom_level(z))
-					to_chat(usr, "<span class='warning'>Pods are one way!</span>")
+					to_chat(usr, "<span class='warning'>Под уже использован!</span>")
 					return
 			var/obj/item/circuitboard/computer/syndicate_shuttle/board = circuit
 			if(board?.challenge && world.time < SYNDICATE_CHALLENGE_TIMER)
-				to_chat(usr, "<span class='warning'>You've issued a combat challenge to the station! You've got to give them at least [DisplayTimeText(SYNDICATE_CHALLENGE_TIMER - world.time)] more to allow them to prepare.</span>")
+				to_chat(usr, "<span class='warning'>Вы объявили станции Войну! Вы должны прождать [DisplayTimeText(SYNDICATE_CHALLENGE_TIMER - world.time)] перед началом атаки.</span>")
 				return
 			board.moved = TRUE
+			if(board?.challenge && board.moved == TRUE)
+				war_music()
 	return ..()
 
+/obj/machinery/computer/shuttle/syndicate/proc/war_music()
+	var/static/musiclimit = 0
+	for(var/mob/H in GLOB.player_list)
+		if(!(H.client))
+			continue
+		if(musiclimit >= 1)
+			return
+		SEND_SOUND(H, sound('modular_bluemoon/SmiLeY/sounds/Nuclear_Operations.ogg'))
+		musiclimit++
+
 /obj/machinery/computer/shuttle/syndicate/recall
-	name = "syndicate shuttle recall terminal"
+	name = "InteQ shuttle recall terminal"
 	desc = "Use this if your friends left you behind."
-	possible_destinations = "syndicate_away"
+	possible_destinations = "inteq_away"
 
 /obj/machinery/computer/shuttle/syndicate/drop_pod
-	name = "syndicate assault pod control"
+	name = "InteQ assault pod control"
 	desc = "Controls the drop pod's launch system."
 	icon = 'icons/obj/terminals.dmi'
 	icon_state = "dorm_available"
@@ -52,7 +63,7 @@
 	clockwork = TRUE //it'd look weird
 
 /obj/machinery/computer/camera_advanced/shuttle_docker/syndicate
-	name = "syndicate shuttle navigation computer"
+	name = "InteQ Shuttle Navigation Computer"
 	desc = "Used to designate a precise transit location for the syndicate shuttle."
 	icon_screen = "syndishuttle"
 	icon_keyboard = "syndie_key"

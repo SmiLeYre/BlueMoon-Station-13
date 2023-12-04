@@ -51,6 +51,11 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 		RegisterSignal(target, COMSIG_MOB_ON_NEW_MIND, .proc/borged_update_flavor_text)
 		RegisterSignal(target, COMSIG_MOB_CLIENT_JOINED_FROM_LOBBY, .proc/borged_update_flavor_text)
 
+/datum/element/flavor_text/Attach(datum/target, text = "", _name = "Flavor Text", _addendum, _max_len = MAX_FLAVOR_LEN, _always_show = FALSE, _edit = TRUE, _save_key, _examine_no_preview = FALSE, _show_on_naked)
+	. = ..()
+	if(flavor_name == "OOC Notes") //SPLURT EDIT make it so ooc notes are always visible
+		always_show = TRUE
+
 /datum/element/flavor_text/Detach(atom/A)
 	. = ..()
 	UnregisterSignal(A, list(COMSIG_PARENT_EXAMINE, COMSIG_HUMAN_PREFS_COPIED_TO, COMSIG_MOB_ON_NEW_MIND, COMSIG_MOB_CLIENT_JOINED_FROM_LOBBY))
@@ -103,14 +108,14 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 			var/content
 			if(flavor_name == "OOC Notes")
 
-				content += "[L]'s OOC Notes: <br> <b>ERP:</b> [L.client.prefs.erppref] <b>| Non-Con:</b> [L.client.prefs.nonconpref] <b>| Vore:</b> [L.client.prefs.vorepref]"
+				content += "[L]'s OOC Notes: <br> <b>ERP:</b> [L.client.prefs.erppref] <b>| Non-Con:</b> [L.client.prefs.nonconpref] <b>| Vore:</b> [L.client.prefs.vorepref] <b>| Mob-Sex:</b> [L.client.prefs.mobsexpref]"
 
 				if(L.client.prefs.unholypref == "Yes")
 					content += " <b>| Unholy:</b> [L.client.prefs.unholypref]\n"
 				else
 					content += "\n"
 
-				content += " <b>| Stomping Interactions:</b> [L.client.prefs.stomppref ? "Yes" : "No"]\n"
+//				content += " <b>| Stomping Interactions:</b> [L.client.prefs.stomppref ? "Yes" : "No"]\n"
 
 				if(L.client.prefs.extremepref == "Yes")
 					content += "<br><b>Extreme content:</b> [L.client.prefs.extremepref] <b>| Extreme content harm:</b> [L.client.prefs.extremeharm]\n"
@@ -126,10 +131,10 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 				content += "[L]<br>"
 				content += "<img class='icon icon-misc' src='[text]' height=500px width=500px><br>"
 				content += "</center>"
-				usr << browse("<HTML><HEAD><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><TITLE>[isliving(target) ? L.get_visible_name() : target.name]</TITLE></HEAD><BODY><TT>[replacetext(content, "\n", "<BR>")]</TT></BODY></HTML>", "window=[isliving(target) ? L.get_visible_name() : target.name];size=600x500")
+				usr << browse("<HTML><HEAD><meta http-equiv='Content-Type' content='text/html; charset=utf-8'><TITLE>[isliving(target) ? L.get_visible_name() : target.name]</TITLE></HEAD><BODY><TT>[replacetext(content, "\n", "<BR>")]</TT></BODY></HTML>", "window=[isliving(target) ? L.get_visible_name() : target.name];size=600x500")
 				onclose(usr, "[target.name]")
 				return TRUE
-			usr << browse("<HTML><HEAD><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><TITLE>[isliving(target) ? L.get_visible_name() : target.name]</TITLE></HEAD><BODY><TT>[replacetext(content, "\n", "<BR>")]</TT></BODY></HTML>", "window=[isliving(target) ? L.get_visible_name() : target.name];size=500x200")
+			usr << browse("<HTML><HEAD><meta http-equiv='Content-Type' content='text/html; charset=utf-8'><TITLE>[isliving(target) ? L.get_visible_name() : target.name]</TITLE></HEAD><BODY><TT>[replacetext(content, "\n", "<BR>")]</TT></BODY></HTML>", "window=[isliving(target) ? L.get_visible_name() : target.name];size=500x200")
 			onclose(usr, "[target.name]")
 		return TRUE
 

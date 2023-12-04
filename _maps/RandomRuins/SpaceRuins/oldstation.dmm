@@ -1157,7 +1157,7 @@
 /area/ruin/space/has_grav/ancientstation/hydroponics)
 "dp" = (
 /obj/machinery/hydroponics/soil,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/ruin/space/has_grav/ancientstation/hydroponics)
 "dq" = (
 /obj/effect/decal/cleanable/dirt,

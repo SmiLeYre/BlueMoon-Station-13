@@ -45,7 +45,7 @@
 
 /obj/item/reagent_containers/blood/random/Initialize(mapload)
 	icon_state = "bloodpack"
-	blood_type = pick("A+", "A-", "B+", "B-", "O+", "O-", "L", "SY", "HF", "GEL", "BUG")
+	blood_type = pick("A+", "A-", "B+", "B-", "O+", "O-", "L", "SY", "GEL", "BUG") // BLUEMOON EDIT - убрано "HF"
 	return ..()
 
 /obj/item/reagent_containers/blood/APlus
@@ -76,7 +76,10 @@
 	blood_type = "SY"
 
 /obj/item/reagent_containers/blood/oilblood
+	name = "hydraulic fluid pack" // BLUEMOON ADD
+	desc = "Contains hydraulic fluid used in synthetics." // BLUEMOON ADD
 	blood_type = "HF"
+	labelled = TRUE // BLUEMOON ADD
 
 /obj/item/reagent_containers/blood/jellyblood
 	blood_type = "GEL"
@@ -86,7 +89,7 @@
 
 /obj/item/reagent_containers/blood/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/pen) || istype(I, /obj/item/toy/crayon))
-		if(!user.is_literate())
+		if(!user.can_write(I))
 			to_chat(user, "<span class='notice'>You scribble illegibly on the label of [src]!</span>")
 			return
 		var/t = stripped_input(user, "What would you like to label the blood pack?", name, null, 53)
@@ -109,16 +112,16 @@
 
 	if(C.is_mouth_covered())
 		if(user != C)
-			to_chat(user, "<span class='notice'>You can't force [C] to drink from [src] while their mouth is covered.</span>")
+			to_chat(user, "<span class='notice'>Вы не можете силой напоить [C] с помощью [src], пока [C.ru_ego()] рот прикрыт.</span>")
 			return
-		to_chat(user, "<span class='notice'>You can't drink from [src] while your mouth is covered.</span>")
+		to_chat(user, "<span class='notice'>Вы не можете пить из [src] пока ваш рот прикрыт.</span>")
 		return
 
 	if(!user.CheckActionCooldown())
 		return
 	if(user != C)
-		user.visible_message("<span class='danger'>[user] forces [C] to drink from [src].</span>", \
-		"<span class='notice'>You force [C] to drink from [src]</span>")
+		user.visible_message("<span class='danger'>[user] поит [C] из [src]. Часть жидкости вытекает, стоит использовать капельцу.</span>", \
+		"<span class='notice'>Вы поите [C] из [src]. Часть жидкости вытекает, стоит использовать капельцу.</span>")
 		user.DelayNextAction(50)
 		if(do_mob(user, C, 50))
 			do_drink(C, user)
@@ -126,8 +129,8 @@
 	else
 		user.DelayNextAction(10)
 		if(do_mob(user, C, 10))
-			user.visible_message("<span class='notice'>[user] puts [src] up to their mouth.</span>", \
-			"<span class='notice'>You take a sip from [src].</span>")
+			user.visible_message("<span class='notice'>[user] прикладывает [src] к своему рту.</span>", \
+			"<span class='notice'>Вы отпиваете из [src]. Часть жидкости вытекает, стоит использовать капельцу.</span>")
 			do_drink(C, user)
 
 

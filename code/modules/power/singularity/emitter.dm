@@ -60,7 +60,7 @@
 /obj/machinery/power/emitter/Initialize(mapload)
 	. = ..()
 	RefreshParts()
-	wires = new /datum/wires/emitter(src)
+	set_wires(new /datum/wires/emitter(src))
 	if(state == EMITTER_WELDED && anchored)
 		connect_to_network()
 
@@ -303,7 +303,7 @@
 			else
 				to_chat(user, "<span class='warning'>The controls can only be locked when \the [src] is online!</span>")
 		else
-			to_chat(user, "<span class='danger'>Access denied.</span>")
+			to_chat(user, "<span class='danger'>Доступ запрещён.</span>")
 		return
 
 	else if(is_wire_tool(I) && panel_open)
@@ -352,6 +352,7 @@
 	. = ..()
 	if(obj_flags & EMAGGED)
 		return
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	locked = FALSE
 	obj_flags |= EMAGGED
 	user?.visible_message("[user.name] emags [src].","<span class='notice'>You short out the lock.</span>")

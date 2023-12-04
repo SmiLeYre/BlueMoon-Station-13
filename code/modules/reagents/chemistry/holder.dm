@@ -14,7 +14,6 @@
 		GLOB.chemical_reagents_list[path] = D
 
 /proc/build_chemical_reactions_list()
-	message_admins("STARTY START START!")
 	//Chemical Reactions - Initialises all /datum/chemical_reaction into a list
 	// It is filtered into multiple lists within a list.
 	// For example:
@@ -174,6 +173,21 @@
 		update_total()
 		handle_reactions()
 		return amount
+
+///Multiplies the reagents inside this holder by a specific amount
+/datum/reagents/proc/multiply_reagents(multiplier=1)
+	var/list/cached_reagents = reagent_list
+	if(!total_volume)
+		return
+	var/change = (multiplier - 1) //Get the % change
+	for(var/datum/reagent/reagent as anything in cached_reagents)
+		if(change > 0)
+			add_reagent(reagent.type, reagent.volume * change, other_purity = reagent.purity)
+		else
+			remove_reagent(reagent.type, abs(reagent.volume * change)) //absolute value to prevent a double negative situation (removing -50% would be adding 50%)
+
+	update_total()
+	handle_reactions()
 
 /datum/reagents/proc/get_master_reagent_name()
 	var/list/cached_reagents = reagent_list
@@ -1162,8 +1176,9 @@
 	return current_reagent.post_copy_data()
 
 /datum/reagents/proc/get_reagent(type)
-	var/list/cached_reagents = reagent_list
-	. = locate(type) in cached_reagents
+	for(var/datum/reagent/R in reagent_list)
+		if(R.type == type)
+			return R
 
 /datum/reagents/proc/generate_taste_message(minimum_percent=15)
 	var/list/out = list()
@@ -1252,3 +1267,10 @@
 		var/datum/reagent/R = GLOB.chemical_reagents_list[X]
 		if(ckey(chem_name) == ckey(lowertext(R.name)))
 			return X
+
+/datum/reagents/proc/get_total_accelerant_quality()
+	var/quality = 0
+	for(var/datum/reagent/reagent in reagent_list)
+		if(istype(reagent))
+			quality += reagent.volume * reagent.accelerant_quality
+	return quality

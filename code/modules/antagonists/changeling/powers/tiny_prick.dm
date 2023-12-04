@@ -48,6 +48,11 @@
 		return
 	if(!isturf(user.loc))
 		return
+	// BLUEMOON ADD START - жала генокрадов не работают против синтетиков
+	if(HAS_TRAIT(target, TRAIT_ROBOTIC_ORGANISM))
+		to_chat(user, span_warning("Our sting appears ineffective against machines."))
+		return FALSE
+	// BLUEMOON ADD END
 	if(!length(get_path_to(user, target, max_distance = changeling.sting_range, simulated_only = FALSE)))
 		return // no path within the sting's range is found. what a weird place to use the pathfinding system
 	if(target.mind && target.mind.has_antag_datum(/datum/antagonist/changeling))
@@ -65,8 +70,8 @@
 
 
 /datum/action/changeling/sting/transformation
-	name = "Temporary Transformation Sting"
-	desc = "We silently sting a human, injecting a chemical that forces them to transform into a chosen being for a limited time. Additional stings extend the duration. Costs 10 chemicals."
+	name = "Transformation Sting"
+	desc = "We silently sting a human, injecting a chemical that forces them to transform into a chosen being for a limited time. Costs 10 chemicals."
 	helptext = "The victim will transform much like a changeling would for a limited time. Does not provide a warning to others. Mutations will not be transferred, and monkeys will become human. This ability is loud, and might cause our blood to react violently to heat."
 	button_icon_state = "sting_transform"
 	sting_icon = "sting_transform"
@@ -105,10 +110,10 @@
 	. = TRUE
 	if(istype(C))
 		if(C.reagents.has_reagent(/datum/reagent/changeling_string))
-			C.reagents.add_reagent(/datum/reagent/changeling_string,120)
+			C.reagents.add_reagent(/datum/reagent/changeling_string,12000)
 			log_combat(user, target, "stung", "transformation sting", ", extending the duration.")
 		else
-			C.reagents.add_reagent(/datum/reagent/changeling_string,120,list("desired_dna" = selected_dna.dna))
+			C.reagents.add_reagent(/datum/reagent/changeling_string,12000,list("desired_dna" = selected_dna.dna))
 			log_combat(user, target, "stung", "transformation sting", " new identity is '[selected_dna.dna.real_name]'")
 
 /datum/action/changeling/sting/false_armblade
@@ -141,7 +146,7 @@
 
 	var/obj/item/held = target.get_active_held_item()
 	if(held && !target.dropItemToGround(held))
-		to_chat(user, "<span class='warning'>[held] is stuck to [target.p_their()] hand, you cannot grow a false armblade over it!</span>")
+		to_chat(user, "<span class='warning'>[held] is stuck to [target.ru_ego()] hand, you cannot grow a false armblade over it!</span>")
 		return
 
 	if(ismonkey(target))
@@ -158,7 +163,7 @@
 /datum/action/changeling/sting/false_armblade/proc/remove_fake(mob/target, obj/item/melee/arm_blade/false/blade)
 	playsound(target, 'sound/effects/blobattack.ogg', 30, 1)
 	target.visible_message("<span class='warning'>With a sickening crunch, \
-	[target] reforms [target.p_their()] [blade.name] into an arm!</span>",
+	[target] reforms [target.ru_ego()] [blade.name] into an arm!</span>",
 	"<span class='warning'>[blade] reforms back to normal.</span>",
 	"<span class='italics>You hear organic matter ripping and tearing!</span>")
 

@@ -1,52 +1,52 @@
 {
-	"": ["general area"],
+	"": ["всём теле"],
 
 	"head": [
-		"left eyebrow",
-		"cheekbone",
-		"neck",
-		"throat",
-		"jawline",
-		"entire face"
+		"левой брови",
+		"скулах",
+		"шее",
+		"глотке",
+		"челюстях",
+		"лице"
 	],
 
 	"chest": [
-		"upper chest",
-		"lower abdomen",
-		"midsection",
-		"collarbone",
-		"lower back"
+		"груди",
+		"нижней части живота",
+		"животе",
+		"ключице",
+		"нижней части спины"
 	],
 
 	"l_arm": [
-		"outer left forearm",
-		"inner left wrist",
-		"left elbow",
-		"left bicep",
-		"left shoulder"
+		"левом предплечье",
+		"левом запястье",
+		"левом локте",
+		"левом бицепсе",
+		"левом плече"
 	],
 
 	"r_arm": [
-		"outer right forearm",
-		"inner right wrist",
-		"right elbow",
-		"right bicep",
-		"right shoulder"
+		"правом предплечье",
+		"правом запястье",
+		"правом локте",
+		"правом бицепсе",
+		"правом плече"
 	],
 
 	"l_leg": [
-		"inner left thigh",
-		"outer left calf",
-		"outer left hip",
-		"left kneecap",
-		"lower left shin"
+		"левой бедренной кости",
+		"левой голени",
+		"левом бедре",
+		"левом колене",
+		"левой ступне"
 	],
 
 	"r_leg": [
-		"inner right thigh",
-		"outer right calf",
-		"outer right hip",
-		"right kneecap",
-		"lower right shin"
+		"правой бедренной кости",
+		"правой голени",
+		"правом бедре",
+		"правом колене",
+		"правой ступне"
 	]
 }

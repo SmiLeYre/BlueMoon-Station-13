@@ -86,6 +86,9 @@
 	/// A lazy list of statuses to add next to this mind in the traitor panel
 	var/list/special_statuses
 
+	var/list/ambition_objectives = list()
+	var/ambition_limit = 6 //Лимит амбиций
+
 /datum/mind/New(var/key)
 	skill_holder = new(src)
 	src.key = key
@@ -294,7 +297,7 @@
 	remove_antag_equip()
 
 /datum/mind/proc/remove_rev()
-	var/datum/antagonist/rev/rev = has_antag_datum(/datum/antagonist/rev)
+	var/datum/antagonist/rev/rev = has_antag_datum(/datum/antagonist/rev, /datum/antagonist/rev/head)
 	if(rev)
 		remove_antag_datum(rev.type)
 		special_role = null
@@ -372,7 +375,7 @@
 		var/obj/item/implant/uplink/starting/new_implant = new(traitor_mob)
 		new_implant.implant(traitor_mob, null, silent = TRUE)
 		if(!silent)
-			to_chat(traitor_mob, span_boldnotice("Your Syndicate Uplink has been cunningly implanted in you, for a small TC fee. Simply trigger the uplink to access it."))
+			to_chat(traitor_mob, span_boldnotice("Your Uplink has been cunningly implanted in you, for a small CR fee. Simply trigger the uplink to access it."))
 		return new_implant
 
 	. = uplink_loc
@@ -430,10 +433,14 @@
 		message_admins("[ADMIN_LOOKUPFLW(current)] has been created by [ADMIN_LOOKUPFLW(creator)], an antagonist.")
 		to_chat(current, "<span class='userdanger'>Despite your creators current allegiances, your true master remains [creator.real_name]. If their loyalties change, so do yours. This will never change unless your creator's body is destroyed.</span>")
 
-//ambition start
-/datum/mind/proc/show_memory()
-	var/list/output = list("<B>[current.real_name]'s Memories:</B><br>")
-//ambition end
+/datum/mind/proc/show_memory(mob/recipient, window=1)
+	if(!recipient)
+		recipient = current
+	var/output = ""
+	if(window)
+		output += "<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'><title>Воспоминания [current.real_name]</title></head>"
+	else
+		output += "<B>Воспоминания [current.real_name]:</B><br>"
 	output += memory
 
 
@@ -454,15 +461,30 @@
 					output += "<li>Conspirator: [M.name]</li>"
 				output += "</ul>"
 
-//ambition port start
-	if(LAZYLEN(ambitions))
-		for(var/count in 1 to LAZYLEN(ambitions))
-			output += "<br><B>Ambition #[count]</B>: [ambitions[count]]"
+// Кнопки для амбиций и их отображение
+	output += "<HR><B>Амбиции:</B><UL>"
+	if(LAZYLEN(ambition_objectives))
 
-	if(!memory && !length(all_objectives) && !LAZYLEN(ambitions))
-		output += "<ul><li><I><B>NONE</B></I></ul>"
+		var/amb_count = 1
+		for(var/datum/ambition_objective/objective in ambition_objectives)
+			output += "<LI><B>Амбиция #[amb_count]</B>: [objective.description]</LI>"
+			output += "<a href='?src=[REF(src)];amb_delete=[REF(objective)]'>Удалить</a> " // Удалить амбицию
+			output += "<a href='?src=[REF(src)];amb_completed=[REF(objective)]'>" // Определить завершенность амбиции
+			output += "<font color=[objective.completed ? "green" : "red"]>[objective.completed ? "Передумать" : "Выполнить"]</font>"
+			output += "</a>"
+			output += "<br>"
+			amb_count++
 
-	return output.Join()
+	output += "<a href='?src=[REF(src)];amb_add=1'>Добавить амбицию</a><br><br>"
+	output += "</UL>"
+
+	if(window)
+		output += "</body></html>"
+		var/datum/browser/popup = new(recipient, "memory", "Воспоминания [current.real_name]", 350, 350)
+		popup.set_content(output)
+		popup.open()
+	else if(all_objectives.len || memory)
+		to_chat(recipient, "<i>[output]</i>")
 
 
 /datum/mind/proc/show_editable_objectives_and_ambitions()
@@ -580,7 +602,7 @@ GLOBAL_LIST(objective_player_choices)
 		/datum/objective/survive,
 		/datum/objective/martyr,
 		/datum/objective/steal,
-		/datum/objective/download,
+		/datum/objective/download
 		)
 
 	for(var/t in allowed_types)
@@ -607,6 +629,7 @@ GLOBAL_LIST(objective_choices)
 		/datum/objective/steal,
 		/datum/objective/download,
 		/datum/objective/nuclear,
+		/datum/objective/nuclear/revert,
 		/datum/objective/absorb,
 		/datum/objective/rescue_prisoner,
 		/datum/objective/custom
@@ -631,7 +654,10 @@ GLOBAL_LIST(objective_choices)
 //ambition port end
 
 /datum/mind/Topic(href, href_list)
-//ambition start
+	//проверяем на амбиции, после чего прерываем выполнение, иначе он залезет в админский антаг-панель
+	var/ambition_func = ambition_topic(href, href_list)
+	if (ambition_func)
+		return
 
 	if (href_list["refresh_obj_amb"])
 		do_edit_objectives_ambitions()
@@ -1558,6 +1584,56 @@ GLOBAL_LIST(objective_choices)
 		usr = current
 	traitor_panel()
 
+/datum/mind/proc/ambition_topic(href, href_list)
+	var/ambition_func = FALSE
+
+	if(href_list["amb_add"])
+		ambition_func = TRUE
+		if (ambition_objectives.len < ambition_limit)
+			to_chat(usr, "<span class='notice'>Новая амбиция: [assign_random_ambition()].</span>")
+		else
+			to_chat(usr, "<span class='warning'>МНОГОВАТО АМБИЦИЙ!</span>")
+		log_game("[key_name(usr)] has added [key_name(current)]'s ambition.")
+
+	else if(href_list["amb_delete"])
+		ambition_func = TRUE
+		var/datum/ambition_objective/objective = locate(href_list["amb_delete"])
+		if(!istype(objective))
+			return
+		ambition_objectives.Remove(objective)
+
+		log_game("[key_name(usr)] has removed one of [key_name(current)]'s ambitions: [objective]")
+		qdel(objective)
+
+	else if(href_list["amb_completed"])
+		ambition_func = TRUE
+		var/datum/ambition_objective/objective = locate(href_list["amb_completed"])
+		if(!istype(objective))
+			return
+		objective.completed = !objective.completed
+
+		if (objective.completed)
+			to_chat(usr, "<span class='warning'>Амбиция выполнена!</span>")
+		else
+			to_chat(usr, "<span class='warning'>Амбиция не выполнена!</span>")
+		log_game("[key_name(usr)] has toggled the completion of one of [key_name(current)]'s ambitions")
+
+	// Обновляем открытую память
+	if (ambition_func)
+		show_memory()
+
+	return ambition_func
+
+/datum/mind/proc/assign_random_ambition()
+	var/datum/ambition_objective/objective = new /datum/ambition_objective(src)
+	objective.description = objective.get_random_ambition()
+	if (!objective?.description)
+		return FALSE
+	for(var/datum/ambition_objective/amb in ambition_objectives)
+		if (objective.description == amb.description)
+			return objective.description
+	return FALSE
+
 /datum/mind/proc/get_all_objectives()
 	var/list/all_objectives = list()
 	for(var/datum/antagonist/A in antag_datums)
@@ -1590,6 +1666,13 @@ GLOBAL_LIST(objective_choices)
 /datum/mind/proc/make_Contractor_Support()
 	if(!(has_antag_datum(/datum/antagonist/traitor/contractor_support)))
 		add_antag_datum(/datum/antagonist/traitor/contractor_support)
+
+/datum/mind/proc/make_Heretic()
+	var/datum/antagonist/heretic/C = has_antag_datum(/datum/antagonist/heretic)
+	if(!C)
+		C = add_antag_datum(/datum/antagonist/heretic)
+		special_role = ROLE_HERETIC
+	return C
 
 /datum/mind/proc/make_Changeling()
 	var/datum/antagonist/changeling/C = has_antag_datum(/datum/antagonist/changeling)

@@ -441,10 +441,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/engineering/main)
-"Og" = (
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plating,
-/area/engineering/main)
 "Ox" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -974,7 +970,7 @@ ad
 Ch
 rj
 rj
-Og
+rj
 MJ
 MJ
 MJ
@@ -1002,7 +998,7 @@ ZK
 zZ
 ZK
 fH
-Og
+rj
 MJ
 MJ
 MJ
@@ -1030,7 +1026,7 @@ Ox
 Ox
 Zb
 lY
-Og
+rj
 MJ
 MJ
 MJ
@@ -1058,7 +1054,7 @@ ZF
 ZF
 Yd
 lY
-Og
+rj
 MJ
 MJ
 MJ
@@ -1086,7 +1082,7 @@ nW
 nW
 WQ
 lY
-Og
+rj
 MJ
 MJ
 MJ
@@ -1114,7 +1110,7 @@ No
 tT
 No
 LV
-Og
+rj
 MJ
 MJ
 MJ
@@ -1142,7 +1138,7 @@ ad
 Ch
 rj
 rj
-Og
+rj
 MJ
 MJ
 MJ
@@ -1255,7 +1251,7 @@ ac
 Mi
 Ch
 dz
-MJ
+dz
 MJ
 MJ
 MJ
@@ -1283,7 +1279,7 @@ Tr
 rT
 rT
 Qk
-MJ
+dz
 MJ
 MJ
 MJ
@@ -1311,7 +1307,7 @@ Ww
 qH
 yU
 dz
-MJ
+dz
 MJ
 MJ
 MJ
@@ -1339,8 +1335,8 @@ JZ
 BG
 Ch
 dz
-MJ
-MJ
+dz
+dz
 MJ
 MJ
 MJ
@@ -1368,7 +1364,7 @@ kK
 Ch
 Ch
 Ch
-MJ
+dz
 MJ
 MJ
 MJ

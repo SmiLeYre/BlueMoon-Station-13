@@ -32,7 +32,7 @@
 	var/datum/reagent/forkload //used to eat omelette
 
 /obj/item/kitchen/fork/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] stabs \the [src] into [user.p_their()] chest! It looks like [user.p_theyre()] trying to take a bite out of [user.p_them()]self!</span>")
+	user.visible_message("<span class='suicide'>[user] stabs \the [src] into [user.ru_ego()] chest! It looks like [user.ru_who()] trying to take a bite out of себя!</span>")
 	playsound(src, 'sound/items/eatfood.ogg', 50, 1)
 	return BRUTELOSS
 
@@ -64,6 +64,22 @@
 	embedding = list("pain_mult" = 2, "embed_chance" = 100, "fall_chance" = 0, "embed_chance_turf_mod" = 15)
 	sharpness = SHARP_EDGED
 
+/obj/item/kitchen/spoon
+	name = "spoon"
+	desc = "Just be careful your food doesn't melt the spoon first."
+	icon_state = "spoon"
+	w_class = WEIGHT_CLASS_TINY
+	flags_1 = CONDUCT_1
+	force = 2
+	throw_speed = 3
+	throw_range = 5
+	attack_verb_simple = list("whack", "spoon", "tap")
+	attack_verb_continuous = list("whacks", "spoons", "taps")
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 0)
+	custom_materials = list(/datum/material/iron=120)
+	tool_behaviour = TOOL_MINING
+	toolspeed = 25 // Literally 25 times worse than the base pickaxe
+
 /obj/item/kitchen/knife
 	name = "kitchen knife"
 	icon_state = "knife"
@@ -80,7 +96,7 @@
 	sharpness = SHARP_POINTY
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 50)
 	var/bayonet = FALSE	//Can this be attached to a gun?
-	wound_bonus = -5
+	wound_bonus = 6
 	bare_wound_bonus = 10
 	custom_price = PRICE_NORMAL
 
@@ -95,9 +111,9 @@
 		return ..()
 
 /obj/item/kitchen/knife/suicide_act(mob/user)
-	user.visible_message(pick("<span class='suicide'>[user] is slitting [user.p_their()] wrists with the [src.name]! It looks like [user.p_theyre()] trying to commit suicide.</span>", \
-						"<span class='suicide'>[user] is slitting [user.p_their()] throat with the [src.name]! It looks like [user.p_theyre()] trying to commit suicide.</span>", \
-						"<span class='suicide'>[user] is slitting [user.p_their()] stomach open with the [src.name]! It looks like [user.p_theyre()] trying to commit seppuku.</span>"))
+	user.visible_message(pick("<span class='suicide'>[user] is slitting [user.ru_ego()] wrists with the [src.name]! It looks like [user.p_theyre()] trying to commit suicide.</span>", \
+						"<span class='suicide'>[user] is slitting [user.ru_ego()] throat with the [src.name]! It looks like [user.p_theyre()] trying to commit suicide.</span>", \
+						"<span class='suicide'>[user] is slitting [user.ru_ego()] stomach open with the [src.name]! It looks like [user.ru_who()] trying to commit seppuku.</span>"))
 	return (BRUTELOSS)
 
 /obj/item/kitchen/efink
@@ -116,7 +132,7 @@
 	sharpness = SHARP_POINTY
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 50)
 	var/bayonet = FALSE	//Can this be attached to a gun?
-	wound_bonus = -5
+	wound_bonus = 6
 	bare_wound_bonus = 10
 	custom_price = PRICE_NORMAL
 
@@ -131,9 +147,9 @@
 		return ..()
 
 /obj/item/kitchen/efink/suicide_act(mob/user)
-	user.visible_message(pick("<span class='suicide'>[user] is slitting [user.p_their()] wrists with the [src.name]! It looks like [user.p_theyre()] trying to commit suicide.</span>", \
-						"<span class='suicide'>[user] is slitting [user.p_their()] throat with the [src.name]! It looks like [user.p_theyre()] trying to commit suicide.</span>", \
-						"<span class='suicide'>[user] is slitting [user.p_their()] stomach open with the [src.name]! It looks like [user.p_theyre()] trying to commit seppuku.</span>"))
+	user.visible_message(pick("<span class='suicide'>[user] is slitting [user.ru_ego()] wrists with the [src.name]! It looks like [user.p_theyre()] trying to commit suicide.</span>", \
+						"<span class='suicide'>[user] is slitting [user.ru_ego()] throat with the [src.name]! It looks like [user.p_theyre()] trying to commit suicide.</span>", \
+						"<span class='suicide'>[user] is slitting [user.ru_ego()] stomach open with the [src.name]! It looks like [user.ru_who()] trying to commit seppuku.</span>"))
 	return (BRUTELOSS)
 
 /obj/item/kitchen/knife/ritual
@@ -178,6 +194,8 @@
 	custom_materials = list(/datum/material/iron=18000)
 	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	w_class = WEIGHT_CLASS_NORMAL
+	wound_bonus = 6
+	bare_wound_bonus = 13
 	custom_price = PRICE_EXPENSIVE
 
 /obj/item/kitchen/knife/combat
@@ -188,6 +206,8 @@
 	embedding = list("pain_mult" = 4, "embed_chance" = 65, "fall_chance" = 10, "ignore_throwspeed_threshold" = TRUE)
 	force = 16
 	throwforce = 16
+	wound_bonus = 8
+	bare_wound_bonus = 11
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
 	bayonet = TRUE
 
@@ -199,6 +219,8 @@
 	embedding = list("pain_mult" = 4, "embed_chance" = 35, "fall_chance" = 10)
 	force = 15
 	throwforce = 15
+	wound_bonus = 6
+	bare_wound_bonus = 11
 	bayonet = TRUE
 
 /obj/item/kitchen/knife/combat/survival/knuckledagger
@@ -277,8 +299,43 @@
 	desc = "Unlike other carrots, you should probably keep this far away from your eyes."
 	custom_materials = null
 
+/obj/item/kitchen/knife/shiv/plasma
+	name = "plasma shiv"
+	icon_state = "plasmashiv"
+	item_state = "plasmashiv"
+	desc = "A makeshift plasma glass shiv."
+	force = 9
+	throwforce = 13
+	armor = list(MELEE = 25, BULLET = 25, LASER = 25, ENERGY = 25, BOMB = 25, BIO = 0, RAD = 0, FIRE = 50, ACID = 50)
+	custom_materials = list(/datum/material/glass=SHEET_MATERIAL_AMOUNT *4, /datum/material/plasma=SHEET_MATERIAL_AMOUNT * 2)
+
+/obj/item/kitchen/knife/shiv/titanium
+	name = "titanium shiv"
+	icon_state = "titaniumshiv"
+	item_state = "titaniumshiv"
+	desc = "A makeshift titanium-infused glass shiv."
+	throwforce = 14
+	throw_range = 7
+	wound_bonus = 7
+	armor = list(MELEE = 25, BULLET = 25, LASER = 25, ENERGY = 25, BOMB = 25, BIO = 0, RAD = 0, FIRE = 50, ACID = 50)
+	custom_materials = list(/datum/material/glass=SHEET_MATERIAL_AMOUNT * 4, /datum/material/titanium=SHEET_MATERIAL_AMOUNT * 2)
+
+/obj/item/kitchen/knife/shiv/plastitanium
+	name = "plastitanium shiv"
+	icon_state = "plastitaniumshiv"
+	item_state = "plastitaniumshiv"
+	desc = "A makeshift titanium-infused plasma glass shiv."
+	force = 10
+	throwforce = 15
+	throw_speed = 4
+	throw_range = 8
+	wound_bonus = 6
+	bare_wound_bonus = 16
+	armor = list(MELEE = 50, BULLET = 50, LASER = 50, ENERGY = 50, BOMB = 50, BIO = 0, RAD = 0, FIRE = 75, ACID = 75)
+	custom_materials = list(/datum/material/glass= SHEET_MATERIAL_AMOUNT * 4, /datum/material/alloy/plastitanium= SHEET_MATERIAL_AMOUNT * 2)
+
 /obj/item/kitchen/knife/shiv/carrot/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] forcefully drives \the [src] into [user.p_their()] eye! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] forcefully drives \the [src] into [user.ru_ego()] eye! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return BRUTELOSS
 
 /obj/item/kitchen/rollingpin
@@ -295,7 +352,7 @@
 	custom_price = PRICE_ALMOST_CHEAP
 
 /obj/item/kitchen/rollingpin/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins flattening [user.p_their()] head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins flattening [user.ru_ego()] head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return BRUTELOSS
 
 /obj/item/kitchen/unrollingpin
@@ -312,7 +369,7 @@
 	custom_price = PRICE_ALMOST_CHEAP
 
 /obj/item/kitchen/unrollingpin/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins unflattening [user.p_their()] head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins unflattening [user.ru_ego()] head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return BRUTELOSS
 
 /* Trays  moved to /obj/item/storage/bag */

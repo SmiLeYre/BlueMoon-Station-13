@@ -93,6 +93,10 @@
 /obj/item/seeds/grass,
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space)
+"H" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space)
 "J" = (
 /obj/machinery/light,
 /turf/open/floor/plasteel/showroomfloor,
@@ -184,7 +188,7 @@ p
 d
 d
 d
-d
+H
 p
 p
 p
@@ -434,7 +438,7 @@ p
 p
 p
 p
-d
+H
 d
 q
 q

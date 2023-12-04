@@ -227,9 +227,8 @@
 	locked = TRUE //Access denied forever!
 	bot_reset()
 	turn_on() //The bot automatically turns on when emagged, unless recently hit with EMP.
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	to_chat(src, "<span class='userdanger'>(#$*#$^^( OVERRIDE DETECTED</span>")
-	if(user)
-		log_combat(user, src, "emagged")
 	return TRUE
 
 /mob/living/simple_animal/bot/examine(mob/user)
@@ -325,7 +324,7 @@
 			if(open)
 				to_chat(user, "<span class='warning'>Please close the access panel before locking it.</span>")
 			else
-				to_chat(user, "<span class='warning'>Access denied.</span>")
+				to_chat(user, "<span class='warning'>Доступ запрещён.</span>")
 	else if(istype(W, /obj/item/paicard))
 		insertpai(user, W)
 	else if(W.tool_behaviour == TOOL_HEMOSTAT && paicard)
@@ -348,7 +347,7 @@
 
 			if(W.use_tool(src, user, 0, volume=40))
 				adjustHealth(-10)
-				user.visible_message("[user] repairs [src]!","<span class='notice'>You repair [src].</span>")
+				user.visible_message("[user] repairs [src]!","<span class='notice'>Вы починили [src].</span>")
 		else
 			if(W.force) //if force is non-zero
 				do_sparks(5, TRUE, src)

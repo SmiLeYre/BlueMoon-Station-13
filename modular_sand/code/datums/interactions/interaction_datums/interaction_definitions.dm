@@ -1,60 +1,65 @@
 /datum/interaction/handshake
-	description = "Shake their hand."
-	simple_message = "USER shakes the hand of TARGET."
+	description = "Пожать руку."
+	simple_message = "USER пожимает руку TARGET."
+	interaction_sound = 'sound/weapons/thudswoosh.ogg'
 	require_user_hands = TRUE
 	needs_physical_contact = TRUE
 
 /datum/interaction/pat
-	description = "Pat their shoulder."
-	simple_message = "USER pats TARGET's shoulder."
+	description = "Похлопать по плечу."
+	simple_message = "USER похлопал по плечу TARGET."
+	interaction_sound = 'sound/weapons/thudswoosh.ogg'
 	require_user_hands = TRUE
 	needs_physical_contact = TRUE
 
 /datum/interaction/cheer
-	description = "Cheer them on."
+	description = "Подбодрить!"
 	require_user_mouth = TRUE
-	simple_message = "USER cheers TARGET on!"
+	simple_message = "USER подбадривает TARGET радостными выкриками!"
 
 /datum/interaction/highfive
-	description = "Give them a high-five."
+	description = "Дать пять!"
 	require_user_mouth = TRUE
-	simple_message = "USER high fives TARGET!"
+	simple_message = "USER даёт пять TARGET!"
 	interaction_sound = 'modular_sand/sound/interactions/slap.ogg'
 	needs_physical_contact = TRUE
 
 /datum/interaction/headpat
-	description = "Pat their head. Aww..."
+	description = "Погладить по голове."
 	require_user_hands = TRUE
-	simple_message = "USER headpats TARGET!"
+	simple_message = "USER гладит TARGET по макушке головы!"
 	needs_physical_contact = TRUE
+	interaction_sound = 'sound/weapons/thudswoosh.ogg'
 
 /datum/interaction/salute
-	description = "Give them a firm salute!"
+	description = "Исполнить Воинское Приветствие!"
 	require_user_hands = TRUE
-	simple_message = "USER salutes TARGET sharply!"
+	simple_message = "USER исполняет воинское приветствие при виде TARGET!"
+	interaction_sound = 'sound/voice/salute.ogg'
 	max_distance = 25
 
 /datum/interaction/fistbump
-	description = "Bump it!"
+	description = "Удариться кулачками!"
 	require_user_hands = TRUE
-	simple_message = "USER fistbumps TARGET! Yeah!"
+	simple_message = "USER бьётся кулачком о кулачком TARGET! О да!"
 	needs_physical_contact = TRUE
 
 /datum/interaction/pinkypromise
-	description = "Make a pinky promise with them!"
+	description = "Пообещать что-то на мизинчиках."
 	require_user_hands = TRUE
-	simple_message = "USER hooks their pinky with TARGET's! Pinky Promise!"
+	simple_message = "USER хватается своим мизинчиком за мизинчик TARGET! Клятва Мизинчиками! Давно пора!"
 	needs_physical_contact = TRUE
 
 /datum/interaction/bird
-	description = "Flip them the bird!"
+	description = "Показать Средний Палец"
 	require_user_hands = TRUE
-	simple_message = "USER gives TARGET the bird!"
+	simple_message = "USER демонстрирует TARGET средний палец! Туда его!!"
 	max_distance = 25
 
 /datum/interaction/holdhand
-	description = "Hold their hand."
+	description = "Взяться за руку."
 	require_user_hands = TRUE
-	simple_message = "USER holds TARGET's hand."
+	simple_message = "USER хватается за руку TARGET."
+	interaction_sound = 'sound/weapons/thudswoosh.ogg'
 	needs_physical_contact = TRUE
-	max_distance = 25
+	max_distance = 1

@@ -112,3 +112,9 @@
 	path = /obj/item/clothing/neck/maid
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION | LOADOUT_CAN_COLOR_POLYCHROMIC
 	loadout_initial_colors = list("#333333", "#FFFFFF")
+
+/datum/gear/backpack/shockcollar
+	name = "Shock Collar Kit"
+	path = /obj/item/storage/box/shockcollar
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_TOYS
+	cost = 2

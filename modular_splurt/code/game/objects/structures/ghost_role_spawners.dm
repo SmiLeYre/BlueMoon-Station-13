@@ -7,28 +7,38 @@
 	return ..()
 
 /obj/effect/mob_spawn/human/ash_walker/western
-	job_description = "Western Ashwalker"
-	short_desc = "You are a Farlander. Your tribe worships the home tendril."
-	flavour_text = "Your original home and tribe razed by Calamity, whoever remained set off to find a new place to live - \
-	these ashen grounds making for a good staying place, filled with flora and huntmeat alike. You're not alone here however, these grounds' natives \
-	restless about your tribe's arrival. Though surely they can be reasoned with.. right?\n\n\
-	Ensure the safety of your tribe. The elders didn't sacrifice themselves for it to perish here."
+	job_description = "Western Ashwalker's"
+	short_desc = "Вы магмовый скиталец женского пола. Ваше племя поклоняется материнскому Тендрилу."
+	flavour_text = "Ваш прошлый дом и материнский Тендрил были разрушены чужаками с Холодных Звёзд и те из ваших сородичей, кто остались \
+	в живых, покинули южные моря на поиски нового дома. Эти земли хороши для вашего нового дома, ибо обилие Тендрилов дарует этим землям \
+	изобилие пищи и материалов для выживания, а также восстановления утерянных знаний и взращивание нового потомства. Однако вы здесь не \
+	одни, туземные сородичи обеспокоены вашим присутствием, а особенно знаниями, которыми вы обладаете. Может есть возможность с ними \
+	договорится? При этом всём чужаки с Небесных Крепостей добрались и до этих земель. \n\n\
+	Будьте на чеку, не дайте трудам потомков, отдавших свои жизни ради вас, пасть Пеплом за зря. Цикл должен продолжаться!"
+	important_info = "Защищайте Тендрил своего племени. Охота на шахтёров допустима только в Динамик."
 	mob_species = /datum/species/lizard/ashwalker/western
 	gender_bias = FEMALE
+	canloadappearance = TRUE
 
 /obj/effect/mob_spawn/human/ash_walker/eastern
-	job_description = "Eastern Ashwalker"
-	flavour_text = "You've shelter in the Necropolis, it's sacred walls housing your nest, bringing in new kin for your tribe and breathing new life \
-	into your fallen bretheren. Recently however, a foreign tribe came to these grounds, their foul hands threatening your hunt - furthermore, the sky's angels \
-	descend onto these lands, demise of this world as their goal.\n\n\
-	Ensure the safety of your nest, let no abomination even graze your home."
+	job_description = "Eastern Ashwalker's"
+	short_desc = "Вы магмовый скиталец мужского пола. Ваше племя поклоняется материнскому Тендрилу."
+	flavour_text = "Ваше племя поклоняется матери Некрополю, как вашей Спасительнице и Наставнице. Священные стены дворца Некрополя \
+	дали вашему Тендрилу и вашему Роду защиту. Испокон веков, ваша священная обитель дарует вам Дар Перерождения, из цикла в цикл за \
+	жертвоприношения матери Некрополю, ради продолжения Великой Охоты. Однако не так давно на ваши земли вторглось Чужеродное Племя. \
+	Несмотря на ваше кровное родство в поклонении Великой Матери, не дайте иноземцам осквернить ваше святилище их изуверскими традициями. \
+	Сверх этого, с небесных крепостей из Холодного Камня, на ваши земли спустились скитальцы с далёких Звёзд. Их рудокопы накладывают \
+	священные пальцы на Некрополь, свои грязные лапы. Не дайте им украсть дары великой матери и лишить вас пищи. \n\n\
+	Охота должна быть здравой, цикл должен продолжаться, грядущие поколения должны жить!"
+	important_info = "Защищайте Тендрил своего племени. Охота на шахтёров допустима только в Динамик."
 	mob_species = /datum/species/lizard/ashwalker/eastern
 	gender_bias = MALE
+	canloadappearance = TRUE
 
 //Portable dangerous-environment sleepers: Spawns in exposed to ash storms shelter.
 //Characters in this role could have been conscious for a long time, surviving on the planet. They may also know Draconic language by contacting with ashwalkers.
 /obj/effect/mob_spawn/human/wandering_hermit
-	name = "portable dangerous-environment sleeper"
+	name = "Portable Dangerous-Environment Sleeper"
 	desc = "The glass is slightly cracked, but there is still air inside. You can see somebody inside. They seems to be sleeping deeply."
 	job_description = "Wandering Hermit"
 	icon = 'icons/obj/lavaland/spawners.dmi'
@@ -49,26 +59,27 @@
 	return ..()
 
 /obj/effect/mob_spawn/human/wandering_hermit/special(mob/living/carbon/human/new_spawn)
+	. = ..()
 	ADD_TRAIT(new_spawn,TRAIT_EXEMPT_HEALTH_EVENTS,GHOSTROLE_TRAIT)
 	new_spawn.language_holder.understood_languages += /datum/language/draconic
 	new_spawn.language_holder.spoken_languages += /datum/language/draconic
 
 //Splurt-Specific Space Hotel Staff
-/obj/effect/mob_spawn/human/hotel_staff/splurt //not free antag u little shits
-	name = "staff sleeper"
+/obj/effect/mob_spawn/human/hotel_staff/splurt
+	name = "Staff Sleeper"
 	desc = "A sleeper designed for long-term stasis between guest visits."
 	mob_name = "hotel staff member"
 	job_description = "Hotel Staff"
 	icon = 'icons/obj/machines/sleeper.dmi'
-	icon_state = "sleeper_s"
-	objectives = "Cater to visiting guests with your fellow staff. Don't abandon the hotel - you can advertise and link up with potential guests, but always remember who signs your cheques! The customer is always right!"
-	short_desc = "You are a staff member of a top-of-the-line space hotel!"
-	flavour_text = "You are a staff member of a top-of-the-line space hotel! Cater to guests and make sure the manager doesn't fire you."
-	important_info = "Don't abandon the hotel! Brief excursions to pick up guests or set up transit links are permitted, but remember where you work!"
+	icon_state = "sleeper"
+	short_desc = "Вы - член обслуживающего персонала космического отеля."
+	flavour_text = "Вы нанялись в качестве персонала общего профиля для уборки, готовки, обслуживания гостей и всего, что прикажет менеджер на время пребывания на борту космического отеля. Ни в коем случае не грубите, не хамите и не ругайтесь с посетителями. Помните, что в вашем случае, клиент всегда прав."
+	important_info = "Персоналу отеля запрещается покидать его (кроме неординарных случаев или установки телепада)."
 	assignedrole = "Hotel Staff"
 	death = FALSE
 	roundstart = FALSE
 	random = TRUE
+	loadout_enabled = TRUE
 	canloadappearance = TRUE
 	id_job = "Hotel Staff"
 	id = /obj/item/card/id/away/hotel/splurt
@@ -78,16 +89,16 @@
 	r_pocket = /obj/item/pda
 	back = /obj/item/storage/backpack/satchel
 	ears = /obj/item/radio/headset/headset_srv/hotel
+	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
+						/obj/item/storage/ifak=1)
 
 /obj/effect/mob_spawn/human/hotel_staff/splurt/security
-	name = "hotel security sleeper"
+	name = "Hotel Security Sleeper"
 	mob_name = "hotel security member"
 	job_description = "Hotel Security"
-	short_desc = "You are a peacekeeper."
-	flavour_text = "You have been assigned to this hotel to protect the interests of the company while keeping the peace between \
-		guests and the staff."
-	important_info = "Don't abandon the hotel! Brief excursions to pick up guests or set up transit links are permitted, but remember where you work!"
-	objectives = "Do not abandon your assigned hotel. Try and keep the peace between staff and guests, non-lethal force heavily advised if possible."
+	short_desc = "Вы - охранник космического отеля."
+	flavour_text = "Вы были назначены в этот отель, чтобы защищать интересы компании Nanotrasen, недавно выкупившей его. Ведите себя вежливо, не размахивайте оружием и бронёй, не грубите посетителям - в первую очередь, вы не должны мешать наслаждаться пребыванием и отпугивать адекватных клиентов."
+	important_info = "Персоналу отеля запрещается покидать его (кроме неординарных случаев или установки телепада). Не ведите себя как СБ со станции - вы обычный гражданский и не обучены для борьбы с террористами, предателями, аномалиями и другими неординарными сущностями."
 	id_job = "Hotel Security"
 	uniform = /obj/item/clothing/under/rank/security/officer/blueshirt
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -98,16 +109,35 @@
 	id = /obj/item/card/id/away/hotel/splurt/security
 
 /obj/effect/mob_spawn/human/hotel_staff/splurt/manager
-	name = "hotel manager sleeper"
+	name = "Hotel Manager Sleeper"
 	mob_name = "hotel manager"
 	job_description = "Hotel Manager"
-	short_desc = "You are the manager of a space hotel"
-	flavour_text = "You manage one site of a successful chain of space hotels. Your parent company has recently been bought out by Nanotrasen and tasked with servicing some of their stations; you have recieved a selection of fancy tech as a result! Protect the interests of your parent company, ensure your staff are performing to standard and make sure to keep your guests happy!"
-	important_info = "Don't abandon the hotel! Brief excursions to pick up guests or set up transit links are permitted, but remember where you work!"
-	objectives = "Don't abandon your assigned hotel. Cater to visiting guests. Maintain good corporate relations and remember: The customer is always right!"
+	short_desc = "Вы - менеджер космического отеля."
+	flavour_text = "Вы управляете одним из объектов успешной сети Космических Отелей. Недавно ваша материнская компания была выкуплена Nanotrasen и вам поручили обслуживать некоторые из их станций; в результате вы получили в свое распоряжение набор модных технологий! Защищайте интересы своей материнской компании и следите за тем, чтобы ваш персонал работал на должном уровне, и постарайтесь сделать так, чтобы ваши гости были довольны!"
+	important_info = "Персоналу отеля запрещается покидать его (кроме неординарных случаев или установки телепада)."
 	id_job = "Hotel Manager"
 	uniform = /obj/item/clothing/under/suit/black
 	suit = /obj/item/clothing/suit/toggle/lawyer/black
 	head = /obj/item/clothing/head/beret/black
-	id = /obj/item/card/id/away/hotel/splurt/manager
 	ears = /obj/item/radio/headset/headset_srv/hotel/manager
+	id = /obj/item/card/id/away/hotel/splurt/manager
+	l_pocket = /obj/item/door_remote/away
+
+/obj/effect/mob_spawn/human/hotel_staff/splurt/guest
+	name = "Guest Sleeper"
+	desc = "Телепортационная штука для гостей."
+	uses = -1
+	icon = 'icons/obj/telescience.dmi'
+	icon_state = "lpad-idle"
+	short_desc = "Вы - гость дорогого космического отеля."
+	flavour_text = "Вы заплатили кучу денег за пребывание в этом месте и вы ДОЛЖНЫ оторваться по полной!!"
+	job_description = "Hotel Tourist"
+	id_job = "Hotel Tourist"
+	id = /obj/item/card/id/away
+	ears = /obj/item/radio/headset
+	uniform = /obj/item/clothing/under/rank/civilian/util
+	shoes = /obj/item/clothing/shoes/jackboots/tall_default
+	head = /obj/item/clothing/head/beret/black
+	r_pocket = /obj/item/pda
+	back = /obj/item/storage/backpack
+	r_hand = /obj/item/storage/secure/briefcase/syndie

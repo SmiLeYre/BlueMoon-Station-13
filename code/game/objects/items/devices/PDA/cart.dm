@@ -58,34 +58,39 @@
 	if(istype(pda))
 		host_pda = pda
 
+/obj/item/cartridge/civil
+	name = "\improper Civil cartridge"
+	icon_state = "cart"
+	access = CART_MANIFEST
+
 /obj/item/cartridge/engineering
 	name = "\improper Power-ON cartridge"
 	icon_state = "cart-e"
-	access = CART_ENGINE | CART_DRONEPHONE
+	access = CART_ENGINE | CART_DRONEPHONE | CART_MANIFEST
 	bot_access_flags = FLOOR_BOT
 
 /obj/item/cartridge/atmos
 	name = "\improper BreatheDeep cartridge"
 	icon_state = "cart-a"
-	access = CART_ATMOS | CART_DRONEPHONE
+	access = CART_ATMOS | CART_DRONEPHONE | CART_MANIFEST
 	bot_access_flags = FLOOR_BOT | FIRE_BOT
 
 /obj/item/cartridge/medical
 	name = "\improper Med-U cartridge"
 	icon_state = "cart-m"
-	access = CART_MEDICAL
+	access = CART_MEDICAL | CART_MANIFEST
 	bot_access_flags = MED_BOT
 
 /obj/item/cartridge/chemistry
 	name = "\improper ChemWhiz cartridge"
 	icon_state = "cart-chem"
-	access = CART_REAGENT_SCANNER | CART_CHEMISTRY
+	access = CART_REAGENT_SCANNER | CART_CHEMISTRY | CART_MANIFEST
 	bot_access_flags = MED_BOT
 
 /obj/item/cartridge/security
 	name = "\improper R.O.B.U.S.T. cartridge"
 	icon_state = "cart-s"
-	access = CART_SECURITY
+	access = CART_SECURITY | CART_MANIFEST
 	bot_access_flags = SEC_BOT
 
 /obj/item/cartridge/detective
@@ -98,27 +103,27 @@
 	name = "\improper CustodiPRO cartridge"
 	desc = "The ultimate in clean-room design."
 	icon_state = "cart-j"
-	access = CART_JANITOR | CART_DRONEPHONE
+	access = CART_JANITOR | CART_DRONEPHONE | CART_MANIFEST
 	bot_access_flags = CLEAN_BOT
 
 /obj/item/cartridge/lawyer
 	name = "\improper S.P.A.M. cartridge"
 	desc = "Introducing the Station Public Announcement Messenger cartridge, featuring the unique ability to broadcast-mark messages, designed for lawyers across Nanotrasen to advertise their useful and important services."
 	icon_state = "cart-law"
-	access = CART_SECURITY
+	access = CART_SECURITY | CART_MANIFEST
 	spam_enabled = 1
 
 /obj/item/cartridge/curator
 	name = "\improper Lib-Tweet cartridge"
 	icon_state = "cart-lib"
-	access = CART_NEWSCASTER
+	access = CART_NEWSCASTER | CART_MANIFEST
 
 /obj/item/cartridge/roboticist
 	name = "\improper B.O.O.P. Remote Control cartridge"
 	desc = "Packed with heavy duty triple-bot interlink!"
 	icon_state = "cart-robo"
-	bot_access_flags = FLOOR_BOT | CLEAN_BOT | MED_BOT | FIRE_BOT
-	access = CART_DRONEPHONE
+	bot_access_flags = FLOOR_BOT | CLEAN_BOT | MED_BOT | FIRE_BOT | SEC_BOT | MULE_BOT
+	access = CART_DRONEPHONE | CART_MANIFEST
 
 /obj/item/cartridge/signal
 	name = "generic signaler cartridge"
@@ -129,7 +134,7 @@
 	name = "\improper Signal Ace 2 cartridge"
 	desc = "Complete with integrated radio signaler!"
 	icon_state = "cart-tox"
-	access = CART_REAGENT_SCANNER | CART_ATMOS
+	access = CART_REAGENT_SCANNER | CART_ATMOS | CART_MANIFEST
 
 /obj/item/cartridge/signal/Initialize(mapload)
 	. = ..()
@@ -141,13 +146,13 @@
 	name = "space parts & space vendors cartridge"
 	desc = "Perfect for the Quartermaster on the go!"
 	icon_state = "cart-q"
-	access = CART_QUARTERMASTER
+	access = CART_QUARTERMASTER | CART_MANIFEST
 	bot_access_flags = MULE_BOT
 
 /obj/item/cartridge/head
 	name = "\improper Easy-Record DELUXE cartridge"
 	icon_state = "cart-h"
-	access = CART_MANIFEST | CART_STATUS_DISPLAY
+	access = CART_MANIFEST | CART_STATUS_DISPLAY | CART_MANIFEST
 
 /obj/item/cartridge/hop
 	name = "\improper HumanResources9001 cartridge"
@@ -196,7 +201,13 @@
 	name = "\improper B.O.O.Z.E cartridge"
 	desc = "Now with 12% alcohol!"
 	icon_state = "cart-bar"
-	access = CART_BARTENDER
+	access = CART_BARTENDER | CART_MANIFEST
+
+/obj/item/cartridge/chaplain
+	name = "holy cartridge"
+	desc = "Amen!"
+	icon_state = "cart-q"
+	access = CART_MANIFEST
 
 /obj/item/cartridge/captain/New()
 	..()
@@ -244,12 +255,7 @@ Code:
 		if (41) //crew manifest
 
 			menu = "<h4>[PDAIMG(notes)] Crew Manifest</h4>"
-			menu += "Entries cannot be modified from this terminal.<br><br>"
-			if(GLOB.data_core.general)
-				for (var/datum/data/record/t in sortRecord(GLOB.data_core.general))
-					menu += "[t.fields["name"]] - [t.fields["rank"]]<br>"
-			menu += "<br>"
-
+			menu += "<center>[GLOB.data_core.get_manifest(monochrome=TRUE)]</center>"
 
 		if (42) //status displays
 			menu = "<h4>[PDAIMG(status)] Station Status Display Interlink</h4>"
@@ -568,28 +574,6 @@ Code:
 				menu += "ERROR: Unable to determine current location."
 			menu += "<br><br><A href='byond://?src=[REF(src)];choice=49'>Refresh GPS Locator</a>"
 
-		if (53) // Newscaster
-			menu = "<h4>[PDAIMG(notes)] Newscaster Access</h4>"
-			menu += "<br> Current Newsfeed: <A href='byond://?src=[REF(src)];choice=Newscaster Switch Channel'>[current_channel ? current_channel : "None"]</a> <br>"
-			var/datum/news/feed_channel/current
-			for(var/datum/news/feed_channel/chan in GLOB.news_network.network_channels)
-				if (chan.channel_name == current_channel)
-					current = chan
-			if(!current)
-				menu += "<h5> ERROR : NO CHANNEL FOUND </h5>"
-				return
-			var/i = 1
-			for(var/datum/news/feed_message/msg in current.messages)
-				menu +="-[msg.returnBody(-1)] <BR><FONT SIZE=1>\[Story by <FONT COLOR='maroon'>[msg.returnAuthor(-1)]</FONT>\]</FONT><BR>"
-				menu +="<b><font size=1>[msg.comments.len] comment[msg.comments.len > 1 ? "s" : ""]</font></b><br>"
-				if(msg.img)
-					user << browse_rsc(msg.img, "tmp_photo[i].png")
-					menu +="<img src='tmp_photo[i].png' width = '180'><BR>"
-				i++
-				for(var/datum/news/feed_comment/comment in msg.comments)
-					menu +="<font size=1><small>[comment.body]</font><br><font size=1><small><small><small>[comment.author] [comment.time_stamp]</small></small></small></small></font><br>"
-			menu += "<br> <A href='byond://?src=[REF(src)];choice=Newscaster Message'>Post Message</a>"
-
 		if (54) // Beepsky, Medibot, Floorbot, and Cleanbot access
 			menu = "<h4>[PDAIMG(medbot)] Bots Interlink</h4>"
 			bot_control()
@@ -682,26 +666,6 @@ Code:
 		if("Supply Orders")
 			host_pda.mode =47
 			playsound(src, 'sound/machines/terminal_select.ogg', 50, 1)
-
-		if("Newscaster Access")
-			host_pda.mode = 53
-			playsound(src, 'sound/machines/terminal_select.ogg', 50, 1)
-
-		if("Newscaster Message")
-			var/host_pda_owner_name = host_pda.id ? "[host_pda.id.registered_name] ([host_pda.id.assignment])" : "Unknown"
-			var/message = host_pda.msg_input()
-			var/datum/news/feed_channel/current
-			for(var/datum/news/feed_channel/chan in GLOB.news_network.network_channels)
-				if (chan.channel_name == current_channel)
-					current = chan
-			if(current.locked && current.author != host_pda_owner_name)
-				host_pda.mode = 99
-				host_pda.Topic(null,list("choice"="Refresh"))
-				return
-			GLOB.news_network.SubmitArticle(message,host_pda.owner,current_channel)
-			host_pda.Topic(null,list("choice"=num2text(host_pda.mode)))
-			playsound(src, 'sound/machines/terminal_select.ogg', 50, 1)
-			return
 
 		if("Newscaster Switch Channel")
 			current_channel = host_pda.msg_input()

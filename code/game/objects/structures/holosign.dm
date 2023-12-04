@@ -30,8 +30,11 @@
 	. = ..()
 	if(.)
 		return
+	attack_holosign(user)
+
+/obj/structure/holosign/proc/attack_holosign(mob/living/user)
 	user.do_attack_animation(src, ATTACK_EFFECT_PUNCH)
-	user.DelayNextAction(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_MELEE)
 	take_damage(5 , BRUTE, MELEE, 1)
 
 /obj/structure/holosign/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)

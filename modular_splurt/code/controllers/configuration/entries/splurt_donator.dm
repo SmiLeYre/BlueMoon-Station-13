@@ -9,7 +9,7 @@
 	postload_required = TRUE
 
 /datum/config_entry/number/toml_donators_mode/OnPostload()
-	if(config_entry_value != 1 && config_entry_value != 2)
+	if(default != 1 && default != 2)
 		return ..()
 
 	var/list/donators = rustg_read_toml_file(DONATOR_TOML_FILE)
@@ -18,7 +18,7 @@
 
 	for(var/tier in subtypesof(/datum/config_entry/multi_keyed_flag/donator_group))
 		var/datum/config_entry/multi_keyed_flag/donator_group/group = CONFIG_GET_ENTRY_FROM_PATH(tier)
-		group.load_new_donators(donators, config_entry_value)
+		group.load_new_donators(donators, default)
 
 	regenerate_donator_grouping_list()
 
@@ -32,14 +32,14 @@
 		return
 	switch(mode)
 		if(1)
-			LAZYADD(config_entry_value, donators["donators"][toml_tier])
+			LAZYADD(default, donators["donators"][toml_tier])
 		if(2)
-			config_entry_value = donators["donators"][toml_tier]
+			default = donators["donators"][toml_tier]
 		else
 			return
-	for(var/ckey in config_entry_value)
-		if(isnull(config_entry_value[ckey]))
-			config_entry_value[ckey] = TRUE
+	for(var/ckey in default)
+		if(isnull(default[ckey]))
+			default[ckey] = TRUE
 
 /datum/config_entry/multi_keyed_flag/donator_group/tier_1_donators
 	toml_tier = "tier_1"

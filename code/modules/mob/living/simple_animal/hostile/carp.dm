@@ -101,7 +101,7 @@
 	speak_emote = list("squeaks")
 	AIStatus = AI_OFF
 	gold_core_spawnable = NO_SPAWN
-	faction = list(ROLE_SYNDICATE)
+	faction = list(ROLE_INTEQ)
 	/// Keeping track of the nuke disk for the functionality of storing it.
 	var/obj/item/disk/nuclear/disky
 	/// Location of the file storing disk overlays
@@ -131,7 +131,7 @@
 /mob/living/simple_animal/hostile/carp/cayenne/examine(mob/user)
 	. = ..()
 	if(disky)
-		. += span_notice("Wait... is that [disky] in [p_their()] mouth?")
+		. += span_notice("Wait... is that [disky] in [ru_ego()] mouth?")
 
 /mob/living/simple_animal/hostile/carp/cayenne/AttackingTarget(atom/attacked_target)
 	if(istype(attacked_target, /obj/item/disk/nuclear))

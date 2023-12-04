@@ -86,7 +86,7 @@
 		M.apply_damage(10, STAMINA)
 		if(prob(5))
 			M.DefaultCombatKnockdown(60)
-			visible_message("<span class='danger'>[M] is knocked right off [M.p_their()] feet!</span>")
+			visible_message("<span class='danger'>[M] is knocked right off [M.ru_ego()] feet!</span>")
 
 //
 // Structures
@@ -216,8 +216,8 @@
 
 /obj/item/paper/fluff/holodeck/trek_diploma
 	name = "paper - Starfleet Academy Diploma"
-	info = {"__Starfleet Academy__\nOfficial Diploma"}
+	default_raw_text = {"__Starfleet Academy__\nOfficial Diploma"}
 
 /obj/item/paper/fluff/holodeck/disclaimer
 	name = "Holodeck Disclaimer"
-	info = "Bruises sustained in the holodeck can be healed simply by sleeping."
+	default_raw_text = "Bruises sustained in the holodeck can be healed simply by sleeping."

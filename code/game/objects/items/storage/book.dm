@@ -44,7 +44,7 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "bible",  
 	AddComponent(/datum/component/anti_magic, FALSE, TRUE)
 
 /obj/item/storage/book/bible/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is offering [user.p_them()]self to [deity_name]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is offering themself to [deity_name]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return (BRUTELOSS)
 
 /obj/item/storage/book/bible/attack_self(mob/living/carbon/human/user)
@@ -265,3 +265,14 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "bible",  
 
 /obj/item/storage/book/bible/syndicate/empty
 	uses = 0
+
+
+/obj/item/storage/book/bible/fart_act(mob/living/M)
+	if(QDELETED(M) || M.stat == DEAD)
+		return
+	M.visible_message("<span class='danger'>[M] пёрнул на \the [name]!</span>")
+	M.visible_message("<span class='userdanger'>Высшие силы наказали [M]!</span>")
+	do_sparks(3, 1, M)
+	explosion(M.loc,0,1,1,1)
+	M.log_message("triggered a bible explosion")
+	return TRUE

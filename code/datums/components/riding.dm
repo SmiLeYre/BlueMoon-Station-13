@@ -271,7 +271,7 @@
 	AM.unbuckle_mob(user)
 	user.DefaultCombatKnockdown(60)
 	user.Daze(50)
-	user.visible_message("<span class='warning'>[AM] pushes [user] off of [AM.p_them()]!</span>")
+	user.visible_message("<span class='warning'>[AM] pushes [user] off of [AM.ru_na()]!</span>")
 
 /datum/component/riding/cyborg
 	del_on_unbuckle_all = TRUE
@@ -392,3 +392,12 @@
 		if(rider in AM.buckled_mobs)
 			AM.unbuckle_mob(rider)
 	. = ..()
+
+/obj/item/riding_offhand/on_thrown(mob/living/carbon/user, atom/target)
+	if(rider == user)
+		return //Piggyback user.
+	user.unbuckle_mob(rider)
+	if(HAS_TRAIT(user, TRAIT_PACIFISM))
+		to_chat(user, span_notice("Вы аккуратно отпускаете [rider]."))
+		return
+	return rider

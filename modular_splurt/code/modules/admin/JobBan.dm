@@ -37,6 +37,11 @@ GLOBAL_LIST_INIT(jobban_panel_data, list(
 		"roles" = GLOB.civilian_positions
 	),
 	list(
+		"name" = "Law",
+		"color" = "purple",
+		"roles" = GLOB.law_positions
+	),
+	list(
 		"name" = "Silicon",
 		"color" = "purple",
 		"roles" = GLOB.nonhuman_positions
@@ -100,7 +105,7 @@ GLOBAL_LIST_INIT(jobban_panel_data, list(
 		if("Temporary")
 			var/mins = input(usr,"How long (in minutes)?","Ban time",1440) as num|null
 			if(mins <= 0)
-				to_chat(usr, span_danger("[mins] is not a valid duration."))
+				to_chat(usr, "<span class='danger'>[mins] is not a valid duration.</span>")
 				return
 			reason = input(usr,"Please State Reason For Banning [M.key].","Reason") as message|null
 			if(!reason)
@@ -111,7 +116,7 @@ GLOBAL_LIST_INIT(jobban_panel_data, list(
 			var/msg
 			for(var/job in notbannedlist)
 				if(!DB_ban_record(BANTYPE_JOB_TEMP, M, mins, reason, job))
-					to_chat(usr, span_danger("Failed to apply ban."))
+					to_chat(usr, "<span class='danger'>Failed to apply ban.</span>")
 					return
 				if(M.client)
 					jobban_buildcache(M.client)
@@ -122,10 +127,10 @@ GLOBAL_LIST_INIT(jobban_panel_data, list(
 				else
 					msg += ", [job]"
 			create_message("note", M.key, null, "Banned  from [msg] - [reason]", null, null, 0, 0, null, 0, severity)
-			message_admins(span_adminnotice("[key_name_admin(usr)] banned [key_name_admin(M)] from [msg] for [mins] minutes."))
-			to_chat(M, span_boldannounce("<BIG>You have been [((msg == "ooc") || (msg == "appearance") || (msg == "pacifist")) ? "banned" : "jobbanned"] by [usr.client.key] from: [msg == "pacifist" ? "using violence" : msg].</BIG>"))
-			to_chat(M, span_boldannounce("The reason is: [reason]"))
-			to_chat(M, span_danger("This jobban will be lifted in [mins] minutes."))
+			message_admins("<span class='adminnotice'>[key_name_admin(usr)] banned [key_name_admin(M)] from [msg] for [mins] minutes.</span>")
+			to_chat(M, "<span class='boldannounce'><BIG>You have been [((msg == "ooc") || (msg == "appearance") || (msg == "pacifist")) ? "banned" : "jobbanned"] by [usr.client.key] from: [msg == "pacifist" ? "using violence" : msg].</BIG></span>")
+			to_chat(M, "<span class='boldannounce'>The reason is: [reason]</span>")
+			to_chat(M, "<span class='danger'>This jobban will be lifted in [mins] minutes.</span>")
 
 		if("Permanent")
 			reason = input(usr,"Please State Reason For Banning [M.key].","Reason") as message|null
@@ -138,7 +143,7 @@ GLOBAL_LIST_INIT(jobban_panel_data, list(
 			var/msg
 			for(var/job in notbannedlist)
 				if(!DB_ban_record(BANTYPE_JOB_PERMA, M, -1, reason, job))
-					to_chat(usr, span_danger("Failed to apply ban."))
+					to_chat(usr, "<span class='danger'>Failed to apply ban.</span>")
 					return
 				if(M.client)
 					jobban_buildcache(M.client)
@@ -149,10 +154,10 @@ GLOBAL_LIST_INIT(jobban_panel_data, list(
 				else
 					msg += ", [job]"
 			create_message("note", M.key, null, "Banned  from [msg] - [reason]", null, null, 0, 0, null, 0, severity)
-			message_admins(span_adminnotice("[key_name_admin(usr)] banned [key_name_admin(M)] from [msg]."))
-			to_chat(M, span_boldannounce("<BIG>You have been [((msg == "ooc") || (msg == "appearance") || (msg == "pacifist")) ? "banned" : "jobbanned"] by [usr.client.key] from: [msg == "pacifist" ? "using violence" : msg].</BIG>"))
-			to_chat(M, span_boldannounce("The reason is: [reason]"))
-			to_chat(M, span_danger("This jobban can be lifted only upon request."))
+			message_admins("<span class='adminnotice'>[key_name_admin(usr)] banned [key_name_admin(M)] from [msg].</span>")
+			to_chat(M, "<span class='boldannounce'><BIG>You have been [((msg == "ooc") || (msg == "appearance") || (msg == "pacifist")) ? "banned" : "jobbanned"] by [usr.client.key] from: [msg == "pacifist" ? "using violence" : msg].</BIG></span>")
+			to_chat(M, "<span class='boldannounce'>The reason is: [reason]</span>")
+			to_chat(M, "<span class='danger'>This jobban can be lifted only upon request.</span>")
 
 // notbannedlist is just a list of strings of the job titles you want to unban.
 /datum/admins/proc/UnJobban(mob/M, list/bannedlist)
@@ -175,5 +180,5 @@ GLOBAL_LIST_INIT(jobban_panel_data, list(
 			else
 				msg += ", [job]"
 	if(msg)
-		message_admins(span_adminnotice("[key_name_admin(usr)] unbanned [key_name_admin(M)] from [msg]."))
-		to_chat(M, span_boldannounce("<BIG>You have been un-jobbanned by [usr.client.key] from [msg].</BIG>"))
+		message_admins("<span class='adminnotice'>[key_name_admin(usr)] unbanned [key_name_admin(M)] from [msg].</span>")
+		to_chat(M, "<span class='boldannounce'><BIG>You have been un-jobbanned by [usr.client.key] from [msg].</BIG></span>")

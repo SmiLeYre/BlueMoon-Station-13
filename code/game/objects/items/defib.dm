@@ -134,6 +134,7 @@
 	. = ..()
 	always_emagged = TRUE
 	safety = !safety
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	to_chat(user, "<span class='warning'>You silently [safety ? "enable" : "disable"] [src]'s safety protocols with the cryptographic sequencer.</span>")
 	return TRUE
 
@@ -255,10 +256,14 @@
 	disarm_shock_time = 0
 	cell = /obj/item/stock_parts/cell/infinite
 
-/obj/item/defibrillator/compact/combat/loaded/attackby(obj/item/W, mob/user, params)
-	if(W == paddles)
-		toggle_paddles()
-		return
+/obj/item/shockpaddles/syndicate
+	name = "syndicate defibrillator paddles"
+	desc = "A pair of paddles used to revive deceased operatives. It possesses both the ability to penetrate armor and to deliver powerful shocks offensively."
+	combat = TRUE
+	icon = 'icons/obj/defibrillators.dmi'
+	icon_state = "syndiepaddles0"
+	item_state = "syndiepaddles0"
+	base_icon_state = "syndiepaddles"
 
 //paddles
 
@@ -350,7 +355,7 @@
 	update_icon()
 
 /obj/item/shockpaddles/suicide_act(mob/user)
-	user.visible_message("<span class='danger'>[user] is putting the live paddles on [user.p_their()] chest! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='danger'>[user] is putting the live paddles on [user.ru_ego()] chest! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	if(req_defib)
 		defib.deductcharge(revivecost)
 	playsound(src, 'sound/machines/defib_zap.ogg', 50, 1, -1)
@@ -436,8 +441,9 @@
 		return
 	var/mob/living/M = H.pulledby
 	if(M.electrocute_act(30, H))
-		M.visible_message("<span class='danger'>[M] is electrocuted by [M.p_their()] contact with [H]!</span>")
-		M.emote("scream")
+		M.visible_message("<span class='danger'>[M] is electrocuted by [M.ru_ego()] contact with [H]!</span>")
+		if(!HAS_TRAIT(M, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+			M.emote("scream")
 
 /obj/item/shockpaddles/proc/do_disarm(mob/living/M, mob/living/user)
 	if(req_defib && defib.safety)
@@ -500,11 +506,12 @@
 			user.visible_message("<span class='boldannounce'><i>[user] shocks [H] with \the [src]!</span>", "<span class='warning'>You shock [H] with \the [src]!</span>")
 			playsound(src, 'sound/machines/defib_zap.ogg', 100, 1, -1)
 			playsound(src, 'sound/weapons/egloves.ogg', 100, 1, -1)
-			H.emote("scream")
+			if(!HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+				H.emote("scream")
 			shock_touching(45, H)
 			if(H.can_heartattack() && !H.undergoing_cardiac_arrest())
 				if(!H.stat)
-					H.visible_message("<span class='warning'>[H] thrashes wildly, clutching at [H.p_their()] chest!</span>",
+					H.visible_message("<span class='warning'>[H] thrashes wildly, clutching at [H.ru_ego()] chest!</span>",
 						"<span class='userdanger'>You feel a horrible agony in your chest!</span>")
 				H.set_heartattack(TRUE)
 			H.apply_damage(50, BURN, BODY_ZONE_CHEST)
@@ -710,16 +717,6 @@
 		combat = FALSE
 
 	. = ..()
-
-/obj/item/shockpaddles/syndicate
-	name = "syndicate defibrillator paddles"
-	desc = "A pair of paddles used to revive deceased operatives. It possesses both the ability to penetrate armor and to deliver powerful shocks offensively."
-	combat = TRUE
-	icon = 'icons/obj/defibrillators.dmi'
-	icon_state = "syndiepaddles0"
-	item_state = "syndiepaddles0"
-	base_icon_state = "syndiepaddles"
-	req_defib = FALSE
 
 ///////////////////////////////////////////
 /////////Defibrillator Disks//////////////

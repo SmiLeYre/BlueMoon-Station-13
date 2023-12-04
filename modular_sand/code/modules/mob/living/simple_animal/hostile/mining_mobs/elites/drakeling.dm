@@ -57,28 +57,28 @@
 	name = "Lava Moat"
 	icon_icon = 'modular_sand/icons/mob/actions/actions_elites.dmi'
 	button_icon_state = "lava_moat"
-	chosen_message = span_boldwarning("You will attempt to create a lava moat around you.")
+	chosen_message = "<span class='boldwarning'>You will attempt to create a lava moat around you.</span>"
 	chosen_attack_num = LAVA_MOAT
 
 /datum/action/innate/elite_attack/lavaaround
 	name = "Lava Rivers"
 	icon_icon = 'modular_sand/icons/mob/actions/actions_elites.dmi'
 	button_icon_state = "lava_around"
-	chosen_message = span_boldwarning("You will now create lava rivers at your cardinal directions.")
+	chosen_message = "<span class='boldwarning'>You will now create lava rivers at your cardinal directions.</span>"
 	chosen_attack_num = LAVA_AROUND
 
 /datum/action/innate/elite_attack/firespew
 	name = "Fire Spew"
 	icon_icon = 'modular_sand/icons/mob/actions/actions_elites.dmi'
 	button_icon_state = "fire_spew"
-	chosen_message = span_boldwarning("You will now spew fire at your target.")
+	chosen_message = "<span class='boldwarning'>You will now spew fire at your target.</span>"
 	chosen_attack_num = FIRE_SPEW
 
 /datum/action/innate/elite_attack/firemoat
 	name = "Fire Moat"
 	icon_icon = 'modular_sand/icons/mob/actions/actions_elites.dmi'
 	button_icon_state = "fire_moat"
-	chosen_message = span_boldwarning("You will now spew fire at all cardinal directions.")
+	chosen_message = "<span class='boldwarning'>You will now spew fire at all cardinal directions.</span>"
 	chosen_attack_num = FIRE_MOAT
 
 /mob/living/simple_animal/hostile/asteroid/elite/drakeling/OpenFire()
@@ -107,7 +107,7 @@
 //Drakeling actions
 /mob/living/simple_animal/hostile/asteroid/elite/drakeling/proc/lava_moat()
 	ranged_cooldown = world.time + 25
-	visible_message(span_boldwarning("[src] spews lava around themselves! Get back!"))
+	visible_message("<span class='boldwarning'>[src] spews lava around themselves! Get back!</span>")
 	for(var/turf/T in oview(1, src))
 		new /obj/effect/temp_visual/lava_warning/drakeling(T, 40)
 
@@ -118,7 +118,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/elite/drakeling/proc/fire_spew()
 	ranged_cooldown = world.time + 25
-	visible_message(span_boldwarning("[src] spews fire!"))
+	visible_message("<span class='boldwarning'>[src] spews fire!</span>")
 	playsound(src,'sound/magic/Fireball.ogg', 200, 1)
 	sleep(5)
 	fire_wall(src.dir, 10)
@@ -126,7 +126,7 @@
 /mob/living/simple_animal/hostile/asteroid/elite/drakeling/proc/fire_moat()
 	ranged_cooldown = world.time + 100
 	playsound(src,'sound/magic/Fireball.ogg', 200, 1)
-	visible_message(span_boldwarning("[src] violently puffs smoke!They're going to make a fire moat!"))
+	visible_message("<span class='boldwarning'>[src] violently puffs smoke!They're going to make a fire moat!</span>")
 	sleep(5)
 	for(var/d in GLOB.alldirs)
 		INVOKE_ASYNC(src, .proc/fire_wall, d, 10)
@@ -145,7 +145,7 @@
 			else
 				hitlist += L
 				L.adjustFireLoss(20)
-				to_chat(L, span_userdanger("You're hit by [src]'s fire breath!"))
+				to_chat(L, "<span class='userdanger'>You're hit by [src]'s fire breath!</span>")
 		T = get_step(T, dir)
 		sleep(1)
 

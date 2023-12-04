@@ -15,7 +15,9 @@
 	var/on = FALSE
 	var/brightness_on = 4 //range of light when on
 	var/flashlight_power = 0.8 //strength of the light when on
-	light_color = "#FFCC66"
+	var/soundon = 'sound/weapons/magin.ogg' //BM Changes
+	var/soundoff = 'sound/weapons/magout.ogg' //BM Changes
+	light_color = "#ffeecb"
 
 /obj/item/flashlight/Initialize(mapload)
 	. = ..()
@@ -37,7 +39,7 @@
 /obj/item/flashlight/attack_self(mob/user)
 	on = !on
 	update_brightness(user)
-	playsound(src, on ? 'sound/weapons/magin.ogg' : 'sound/weapons/magout.ogg', 40, TRUE)
+	playsound(src, on ? soundon : soundoff, 40, TRUE) //BM Changes (soundon : soundoff)
 	for(var/X in actions)
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
@@ -175,6 +177,7 @@
 	brightness_on = 2
 	light_color = "#FFDDCC"
 	flashlight_power = 0.5
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_EARS
 	var/holo_cooldown = 0
 
 /obj/item/flashlight/pen/afterattack(atom/target, mob/user, proximity_flag)
@@ -194,6 +197,7 @@
 	name = "paramedic penlight"
 	desc = "A high-powered UV penlight intended to help stave off infection in the field on serious burned patients. Probably really bad to look into."
 	icon_state = "penlight_surgical"
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_EARS
 	/// Our current UV cooldown
 	var/uv_cooldown = 0
 	/// How long between UV fryings

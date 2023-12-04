@@ -1,21 +1,21 @@
 ///////////	thederelict items
 
 /obj/item/paper/fluff/ruins/thederelict/equipment
-	info = "If the equipment breaks there should be enough spare parts in our engineering storage near the north east solar array."
+	default_raw_text = "If the equipment breaks there should be enough spare parts in our engineering storage near the north east solar array."
 	name = "Equipment Inventory"
 
 /obj/item/paper/fluff/ruins/thederelict/syndie_mission
 	name = "Mission Objectives"
-	info = "The Syndicate have cunningly disguised a Syndicate Uplink as your PDA. Simply enter the code \"678 Bravo\" into the ringtone select to unlock its hidden features.\n  \n__Objective #1__. Kill the God damn AI in a fire blast that it rocks the station. __Success!__  \n  \n__Objective #2__. Escape alive. __Failed.__"
+	default_raw_text = "The Syndicate have cunningly disguised a Syndicate Uplink as your PDA. Simply enter the code \"678 Bravo\" into the ringtone select to unlock its hidden features.\n  \n__Objective #1__. Kill the God damn AI in a fire blast that it rocks the station. __Success!__  \n  \n__Objective #2__. Escape alive. __Failed.__"
 
 /obj/item/paper/fluff/ruins/thederelict/nukie_objectives
 	name = "Objectives of a Nuclear Operative"
-	info = "__Objective #1__: Destroy the station with a nuclear device."
+	default_raw_text = "__Objective #1__: Destroy the station with a nuclear device."
 
 /obj/item/paper/crumpled/bloody/ruins/thederelict/unfinished
 	name = "unfinished paper scrap"
 	desc = "Looks like someone started shakily writing a will in space common, but were interrupted by something bloody..."
-	info = "__Objectives #1__: Find out what is hidden in Kosmicheskaya Stantsiya 13s Vault"
+	default_raw_text = "__Objectives #1__: Find out what is hidden in Kosmicheskaya Stantsiya 13s Vault"
 
 /// Vault controller for use on the derelict/KS13.
 /obj/machinery/computer/vaultcontroller
@@ -179,7 +179,7 @@
 		if(M.has_language(/datum/language/drone))
 			M.visible_message("<span class='danger'>[user] beats [M] over the head with [src]!</span>", "<span class='userdanger'>[user] beats you over the head with [src]!</span>", "<span class='hear'>You hear smacking.</span>")
 		else
-			M.visible_message("<span class='notice'>[user] teaches [M] by beating [M.p_them()] over the head with [src]!</span>", "<span class='boldnotice'>As [user] hits you with [src], chitters resonate in your mind.</span>", "<span class='hear'>You hear smacking.</span>")
+			M.visible_message("<span class='notice'>[user] teaches [M] by beating [M.ru_na()] over the head with [src]!</span>", "<span class='boldnotice'>As [user] hits you with [src], chitters resonate in your mind.</span>", "<span class='hear'>You hear smacking.</span>")
 			M.grant_language(/datum/language/drone, TRUE, TRUE) //, LANGUAGE_MIND)
 		return
 

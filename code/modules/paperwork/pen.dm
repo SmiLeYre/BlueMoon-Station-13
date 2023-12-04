@@ -32,8 +32,22 @@
 	embedding = list()
 	sharpness = SHARP_POINTY
 
+/obj/item/pen/get_writing_implement_details()
+	return list(
+		interaction_mode = MODE_WRITING,
+		font = font,
+		color = colour,
+		use_bold = FALSE,
+	)
+
+// BLUEMOON ADD START - дополнительное описание
+/obj/item/pen/examine(user, distance)
+	. = ..()
+	. += span_info("Ручкой можно оставлять надписи на частях тела.") // рассказываем о механиках через описания
+// BLUEMOON ADD END
+
 /obj/item/pen/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is scribbling numbers all over [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit sudoku...</span>")
+	user.visible_message("<span class='suicide'>[user] is scribbling numbers all over себя with [src]! It looks like [user.ru_who()] trying to commit sudoku...</span>")
 	return(BRUTELOSS)
 
 /obj/item/pen/blue
@@ -120,6 +134,8 @@
 
 /obj/item/pen/fountain/captain/reskin_obj(mob/M)
 	. = ..()
+	if(!.)
+		return
 	desc = "It's an expensive [current_skin] fountain pen. The nib is quite sharp."
 
 /obj/item/pen/attack_self(mob/living/carbon/user)

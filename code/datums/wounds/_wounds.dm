@@ -16,13 +16,15 @@
 
 /datum/wound
 	/// What it's named
-	var/name = "ouchie"
+	var/name = "Рана"
+	/// Склонение в винительном падеже
+	var/skloname = "Раны"
 	/// The description shown on the scanners
 	var/desc = ""
 	/// The basic treatment suggested by health analyzers
 	var/treat_text = ""
 	/// What the limb looks like on a cursory examine
-	var/examine_desc = "is badly hurt"
+	var/examine_desc = "сильно болит"
 
 	/// needed for "your arm has a compound fracture" vs "your arm has some third degree burns"
 	var/a_or_from = "a"
@@ -79,7 +81,7 @@
 	var/cryo_progress
 
 	/// What kind of scars this wound will create description wise once healed
-	var/scar_keyword = "generic"
+	var/scar_keyword = "уродливые шрамы"
 	/// If we've already tried scarring while removing (since remove_wound calls qdel, and qdel calls remove wound, .....) TODO: make this cleaner
 	var/already_scarred = FALSE
 	/// If we forced this wound through badmin smite, we won't count it towards the round totals
@@ -87,6 +89,9 @@
 
 	/// What flags apply to this wound
 	var/wound_flags = (FLESH_WOUND | BONE_WOUND | ACCEPTS_GAUZE)
+
+	var/ru_name = ""
+	var/ru_name_r = ""
 
 /datum/wound/Destroy()
 	if(limb?.wounds && (src in limb.wounds)) // destroy can call remove_wound() and remove_wound() calls qdel, so we check to make sure there's anything to remove first
@@ -105,6 +110,12 @@
   * * old_wound: If our new wound is a replacement for one of the same time (promotion or demotion), we can reference the old one just before it's removed to copy over necessary vars
   * * smited- If this is a smite, we don't care about this wound for stat tracking purposes (not yet implemented)
   */
+
+// BLUEMOON ADD START - модификатор текста, чтобы у синтетиков не "ломались кости", а были "повреждены приводы", оставляя суть травмы без изменений.
+/datum/wound/proc/apply_typo_modification()
+	return
+// BLUEMOON ADD END
+
 /datum/wound/proc/apply_wound(obj/item/bodypart/L, silent = FALSE, datum/wound/old_wound = null, smited = FALSE)
 	if(!istype(L) || !L.owner || !(L.body_zone in viable_zones) || isalien(L.owner) || !L.is_organic_limb())
 		qdel(src)
@@ -125,6 +136,7 @@
 			return
 
 	victim = L.owner
+	apply_typo_modification() // BLUEMOON ADD, изменяющийся текст для синтетиков
 	RegisterSignal(victim, COMSIG_PARENT_QDELETING, .proc/null_victim)
 	limb = L
 	LAZYADD(victim.all_wounds, src)
@@ -133,7 +145,8 @@
 	if(status_effect_type)
 		victim.apply_status_effect(status_effect_type, src)
 	SEND_SIGNAL(victim, COMSIG_CARBON_GAIN_WOUND, src, limb)
-	victim.emote("pain")
+	if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от получения ран
+		victim.emote("scream")
 	if(!victim.alerts["wound"]) // only one alert is shared between all of the wounds
 		victim.throw_alert("wound", /atom/movable/screen/alert/status_effect/wound)
 
@@ -145,14 +158,14 @@
 		return
 
 	if(!(silent || demoted))
-		var/msg = "<span class='danger'>[victim]'s [limb.name] [occur_text]!</span>"
+		var/msg = "<span class='danger'>[limb.ru_name_capital] персонажа [victim] [occur_text]!</span>"
 		var/vis_dist = COMBAT_MESSAGE_RANGE
 
 		if(severity != WOUND_SEVERITY_MODERATE)
 			msg = "<b>[msg]</b>"
 			vis_dist = DEFAULT_MESSAGE_RANGE
 
-		victim.visible_message(msg, "<span class='userdanger'>Your [limb.name] [occur_text]!</span>", vision_distance = vis_dist)
+		victim.visible_message(msg, "<span class='userdanger'>Моя [limb.ru_name] [occur_text]!</span>", vision_distance = vis_dist)
 		if(sound_effect)
 			playsound(L.owner, sound_effect, 70 + 20 * severity, TRUE)
 
@@ -253,7 +266,7 @@
 
 	// now that we've determined we have a valid attempt at treating, we can stomp on their dreams if we're already interacting with the patient
 	if(INTERACTING_WITH(user, victim))
-		to_chat(user, "<span class='warning'>You're already interacting with [victim]!</span>")
+		to_chat(user, span_warning("Уже взаимодействую с [victim]!"))
 		return TRUE
 
 	// lastly, treat them
@@ -315,19 +328,19 @@
   * * mob/user: The user examining the wound's owner, if that matters
   */
 /datum/wound/proc/get_examine_description(mob/user)
-	. = "[victim.p_their(TRUE)] [limb.name] [examine_desc]"
+	. = "[victim.ru_ego(TRUE)] [limb.ru_name] [examine_desc]"
 	. = severity <= WOUND_SEVERITY_MODERATE ? "[.]." : "<B>[.]!</B>"
 
 /datum/wound/proc/get_scanner_description(mob/user)
-	return "Type: [name]\nSeverity: [severity_text()]\nDescription: [desc]\nRecommended Treatment: [treat_text]"
+	return "Тип: [ru_name]\nТяжесть: [severity_text()]\nОписание: [desc]\nРекомендуемое лечение: [treat_text]"
 
 /datum/wound/proc/severity_text()
 	switch(severity)
 		if(WOUND_SEVERITY_TRIVIAL)
-			return "Trivial"
+			return "Тривиальная"
 		if(WOUND_SEVERITY_MODERATE)
-			return "Moderate"
+			return "Умеренная"
 		if(WOUND_SEVERITY_SEVERE)
-			return "Severe"
+			return "Тяжёлая"
 		if(WOUND_SEVERITY_CRITICAL)
-			return "Critical"
+			return "Критическая"

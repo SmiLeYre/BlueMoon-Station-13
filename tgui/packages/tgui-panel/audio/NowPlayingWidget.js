@@ -23,7 +23,7 @@ export const NowPlayingWidget = (props, context) => {
             shrink={0}
             mx={0.5}
             color="label">
-            Now playing:
+            Сейчас играет:
           </Flex.Item>
           <Flex.Item
             mx={0.5}

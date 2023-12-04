@@ -68,7 +68,7 @@
 
 			var/extras = "None"
 			if(CHECK_BITFIELD(genital.genital_flags, GENITAL_CAN_STUFF))
-				extras = "Allows egg stuffing"
+				extras = "Allows toys and egg stuffing"
 
 			genital_entry["extras"] = extras
 			genital_entry["visibility"] = visibility
@@ -107,7 +107,7 @@
 
 	if(!genital_holder.getorganslot(ORGAN_SLOT_ANUS) && user_is_target)
 		var/simulated_ass = list()
-		simulated_ass["name"] = "Anus"
+		simulated_ass["name"] = "Анус"
 		simulated_ass["key"] = "anus"
 		var/visibility = "Invalid"
 		switch(genital_holder.anus_exposed)

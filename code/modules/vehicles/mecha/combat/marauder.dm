@@ -20,7 +20,6 @@
 /obj/vehicle/sealed/mecha/combat/marauder/generate_actions()
 	. = ..()
 	initialize_passenger_action_type(/datum/action/vehicle/sealed/mecha/mech_smoke)
-	initialize_passenger_action_type(/datum/action/vehicle/sealed/mecha/mech_zoom)
 
 /obj/vehicle/sealed/mecha/combat/marauder/loaded/Initialize(mapload)
 	. = ..()
@@ -65,6 +64,10 @@
 	ME.attach(src)
 	max_ammo()
 
+/obj/vehicle/sealed/mecha/combat/marauder/seraph/generate_actions()
+	. = ..()
+	initialize_passenger_action_type(/datum/action/vehicle/sealed/mecha/mech_zoom)
+
 /obj/vehicle/sealed/mecha/combat/marauder/mauler
 	desc = "Heavy-duty, combat exosuit, developed off of the existing Marauder model."
 	name = "\improper Mauler"
@@ -74,11 +77,17 @@
 	wreckage = /obj/structure/mecha_wreckage/mauler
 	max_equip = 6
 	destruction_sleep_duration = 20
+	nominalphrase = "sound/mecha/nominal_syndicate.ogg"
+	imagenhphrase = "sound/mecha/imag_enh_syndicate.ogg"
 
 /obj/vehicle/sealed/mecha/combat/marauder/mauler/Initialize(mapload)
 	. = ..()
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/thrusters/ion(src)
 	ME.attach(src)
+
+/obj/vehicle/sealed/mecha/combat/marauder/mauler/generate_actions()
+	. = ..()
+	initialize_passenger_action_type(/datum/action/vehicle/sealed/mecha/syndicate/mech_zoom)
 
 /obj/vehicle/sealed/mecha/combat/marauder/mauler/loaded/Initialize(mapload)
 	. = ..()
@@ -93,5 +102,3 @@
 	ME = new /obj/item/mecha_parts/mecha_equipment/antiproj_armor_booster(src)
 	ME.attach(src)
 	max_ammo()
-
-

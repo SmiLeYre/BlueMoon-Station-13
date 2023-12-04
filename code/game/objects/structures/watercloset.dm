@@ -135,6 +135,16 @@
 	else
 		return ..()
 
+// BLUEMOON ADD START - туалет ломается при попытке сесть на него сверхтяжёлым персонажем
+/obj/structure/toilet/post_buckle_mob(mob/living/M)
+	. = ..()
+	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER))
+		visible_message(span_warning("[src] buckles under the weight of [M] causing it to break!"))
+		playsound(src, 'sound/effects/Glassbr2.ogg', 70, TRUE)
+		unbuckle_mob(M, TRUE)
+		deconstruct(FALSE)
+// BLUEMOON ADD END
+
 /obj/structure/toilet/secret
 	var/secret_type = null
 
@@ -262,6 +272,18 @@
 	var/on = FALSE
 	var/watertemp = "normal"	//freezing, normal, or boiling
 	var/datum/looping_sound/showering/soundloop
+
+/obj/machinery/shower/directional/north //Pixel offsets get overwritten on New()
+	dir = NORTH
+
+/obj/machinery/shower/directional/south
+	dir = SOUTH
+
+/obj/machinery/shower/directional/east
+	dir = EAST
+
+/obj/machinery/shower/directional/west
+	dir = WEST
 
 /obj/machinery/shower/Initialize(mapload)
 	. = ..()
@@ -465,10 +487,10 @@
 	if(!healthy_green_glow || QDELETED(healthy_green_glow))
 		return
 	var/strength = healthy_green_glow.strength
-	if(strength <= RAD_BACKGROUND_RADIATION)
+	if(strength <= RAD_BACKGROUND_RADIATION + 20) //BLUEMOON CHANGES
 		qdel(healthy_green_glow)
 		return
-	healthy_green_glow.strength = max(strength-1, 0)
+	healthy_green_glow.strength = max(strength-9, 0) //BLUEMOON CHANGES
 
 /obj/machinery/shower/process()
 	if(on)
@@ -496,11 +518,18 @@
 		to_chat(C, "<span class='danger'>The water is searing!</span>")
 
 /obj/item/bikehorn/rubberducky
-	name = "rubber ducky"
+	name = "Rubber Ducky"
 	desc = "Rubber ducky you're so fine, you make bathtime lots of fuuun. Rubber ducky I'm awfully fooooond of yooooouuuu~"	//thanks doohl
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "rubberducky"
 	item_state = "rubberducky"
+
+/obj/item/bikehorn/rubberducky/captain
+	name = "Rubber Captain Ducky"
+	desc = "Капитан всех уточек на этой станции. Крайне важная и престижная уточка. Выпущены в ограниченных экземплярах и только для капитанов. Ценная находка для коллекционеров."
+	icon = 'icons/obj/watercloset.dmi'
+	icon_state = "captain_rubberducky"
+	item_state = "captain_rubberducky"
 
 /obj/structure/sink
 	name = "sink"
@@ -512,6 +541,22 @@
 	var/dispensedreagent = /datum/reagent/water // for whenever plumbing happens
 	var/buildstacktype = /obj/item/stack/sheet/metal
 	var/buildstackamount = 1
+
+/obj/structure/sink/directional/north //Pixel offsets get overwritten on New()
+	dir = SOUTH
+	pixel_y = 13
+
+/obj/structure/sink/directional/south
+	dir = NORTH
+	pixel_y = 13
+
+/obj/structure/sink/directional/east
+	dir = WEST
+	pixel_x = -13
+
+/obj/structure/sink/directional/west
+	dir = EAST
+	pixel_x = -13
 
 /obj/structure/sink/on_attack_hand(mob/living/user, act_intent = user.a_intent, unarmed_attack_flags)
 	. = ..()
@@ -531,7 +576,7 @@
 	var/washing_face = 0
 	if(selected_area in list(BODY_ZONE_HEAD, BODY_ZONE_PRECISE_MOUTH, BODY_ZONE_PRECISE_EYES))
 		washing_face = 1
-	user.visible_message("<span class='notice'>[user] starts washing [user.p_their()] [washing_face ? "face" : "hands"]...</span>", \
+	user.visible_message("<span class='notice'>[user] starts washing [user.ru_ego()] [washing_face ? "face" : "hands"]...</span>", \
 						"<span class='notice'>You start washing your [washing_face ? "face" : "hands"]...</span>")
 	busy = TRUE
 
@@ -541,7 +586,7 @@
 
 	busy = FALSE
 
-	user.visible_message("<span class='notice'>[user] washes [user.p_their()] [washing_face ? "face" : "hands"] using [src].</span>", \
+	user.visible_message("<span class='notice'>[user] washes [user.ru_ego()] [washing_face ? "face" : "hands"] using [src].</span>", \
 						"<span class='notice'>You wash your [washing_face ? "face" : "hands"] using [src].</span>")
 	if(washing_face)
 		if(ishuman(user))
@@ -580,7 +625,7 @@
 				user.DefaultCombatKnockdown(stunforce * 2)
 				user.stuttering = stunforce/20
 				B.deductcharge(B.hitcost)
-				user.visible_message("<span class='warning'>[user] shocks [user.p_them()]self while attempting to wash the active [B.name]!</span>", \
+				user.visible_message("<span class='warning'>[user] shocks себя while attempting to wash the active [B.name]!</span>", \
 									"<span class='userdanger'>You unwisely attempt to wash [B] while it's still on.</span>")
 				playsound(src, "sparks", 50, 1)
 				return
@@ -652,6 +697,22 @@
 /obj/structure/sink/kitchen
 	name = "kitchen sink"
 	icon_state = "sink_alt"
+
+/obj/structure/sink/kitchen/directional/north //Pixel offsets get overwritten on New()
+	dir = NORTH
+	pixel_y = -13
+
+/obj/structure/sink/kitchen/directional/south
+	dir = SOUTH
+	pixel_y = 13
+
+/obj/structure/sink/kitchen/directional/east
+	dir = EAST
+	pixel_x = -13
+
+/obj/structure/sink/kitchen/directional/west
+	dir = WEST
+	pixel_x = 13
 
 /obj/structure/sink/well
 	name = "well"

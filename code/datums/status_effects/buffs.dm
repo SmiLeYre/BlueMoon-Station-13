@@ -256,7 +256,7 @@
 		if(isliving(B.current))
 			var/mob/living/M = B.current
 			SEND_SOUND(M, sound('sound/hallucinations/veryfar_noise.ogg'))
-			to_chat(M, "<span class='cultlarge'>The Cult's Master, [owner], has fallen in \the [A]!</span>")
+			to_chat(M, "<span class='cultlarge'>Мастер Кровавых Кульистов, [owner], пал где-то в [A]!</span>")
 
 /datum/status_effect/cult_master/tick()
 	if(owner.stat != DEAD && !alive)
@@ -867,3 +867,20 @@
 	name = "Blessing of Wounded Soldier"
 	desc = "Some people seek power through redemption, one thing many people don't know is that battle is the ultimate redemption and wounds let you bask in eternal glory."
 	icon_state = "wounded_soldier"
+
+/datum/status_effect/terror/regeneration
+	id = "terror_regen"
+	duration = 250
+	alert_type = null
+
+/datum/status_effect/terror/regeneration/tick()
+	owner.adjustBruteLoss(-6)
+
+/datum/status_effect/terror/food_regen
+	id = "terror_food_regen"
+	duration = 250
+	alert_type = null
+
+
+/datum/status_effect/terror/food_regen/tick()
+	owner.adjustBruteLoss(-(owner.maxHealth/20))

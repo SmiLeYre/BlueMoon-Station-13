@@ -21,7 +21,7 @@
 
 /obj/machinery/particle_accelerator/control_box/Initialize(mapload)
 	. = ..()
-	wires = new /datum/wires/particle_accelerator/control_box(src)
+	set_wires(new /datum/wires/particle_accelerator/control_box(src))
 	connected_parts = list()
 
 /obj/machinery/particle_accelerator/control_box/Destroy()
@@ -58,7 +58,9 @@
 		connected_parts.Cut()
 
 /obj/machinery/particle_accelerator/control_box/update_icon_state()
-	if(active)
+	if(active && strength == 3)
+		icon_state = "control_boxp3"
+	else if(active)
 		icon_state = "control_boxp1"
 	else
 		if(use_power)

@@ -531,7 +531,6 @@
 	knockdown = 5
 	damage_type = BRUTE
 	hitsound = 'sound/effects/splat.ogg'
-	var/chain
 
 /obj/item/projectile/hook/fire(setAngle)
 	if(firer)
@@ -594,7 +593,7 @@
 		vanish(new_user)
 
 /obj/effect/immortality_talisman/proc/vanish(mob/user)
-	user.visible_message("<span class='danger'>[user] [vanish_description], leaving a hole in [user.p_their()] place!</span>")
+	user.visible_message("<span class='danger'>[user] [vanish_description], leaving a hole in [user.ru_ego()] place!</span>")
 
 	desc = "It's shaped an awful lot like [user.name]."
 	setDir(user.dir)
@@ -719,7 +718,8 @@
 		ADD_TRAIT(C, TRAIT_HOLY, SPECIES_TRAIT) //implying anyone is truly holy in a setting where people throw tantrums when things aren't violent
 		playsound(C.loc, 'sound/items/poster_ripped.ogg', 50, TRUE, -1)
 		C.adjustBruteLoss(20)
-		C.emote("scream")
+		if(!HAS_TRAIT(C, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+			C.emote("scream")
 	..()
 
 
@@ -796,7 +796,7 @@
 	Transforming it immediately after an attack causes the next attack to come out faster.</span>"
 
 /obj/item/melee/transforming/cleaving_saw/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is [active ? "closing [src] on [user.p_their()] neck" : "opening [src] into [user.p_their()] chest"]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is [active ? "closing [src] on [user.ru_ego()] neck" : "opening [src] into [user.ru_ego()] chest"]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	transform_cooldown = 0
 	transform_weapon(user, TRUE)
 	return BRUTELOSS
@@ -957,7 +957,7 @@
 		return
 	to_chat(user, "You call out for aid, attempting to summon spirits to your side.")
 
-	notify_ghosts("[user] is raising [user.p_their()] [src], calling for your help!",
+	notify_ghosts("[user] is raising [user.ru_ego()] [src], calling for your help!",
 		enter_link="<a href=?src=[REF(src)];orbit=1>(Click to help)</a>",
 		source = user, action=NOTIFY_ORBIT, ignore_key = POLL_IGNORE_SPECTRAL_BLADE)
 
@@ -1306,7 +1306,7 @@
 	user.visible_message("<span class='suicide'>[user] holds [src] into the air! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	new/obj/effect/temp_visual/hierophant/telegraph(get_turf(user))
 	playsound(user,'sound/machines/airlockopen.ogg', 75, TRUE)
-	user.visible_message("<span class='hierophant_warning'>[user] fades out, leaving [user.p_their()] belongings behind!</span>")
+	user.visible_message("<span class='hierophant_warning'>[user] fades out, leaving [user.ru_ego()] belongings behind!</span>")
 	for(var/obj/item/I in user)
 		if(I != src)
 			user.dropItemToGround(I)
@@ -1389,7 +1389,7 @@
 				new /obj/effect/temp_visual/hierophant/telegraph/teleport(T, user)
 				beacon = new/obj/effect/hierophant(T)
 				user.update_action_buttons_icon()
-				user.visible_message("<span class='hierophant_warning'>[user] places a strange machine beneath [user.p_their()] feet!</span>", \
+				user.visible_message("<span class='hierophant_warning'>[user] places a strange machine beneath [user.ru_ego()] feet!</span>", \
 				"<span class='hierophant'>You detach the hierophant beacon, allowing you to teleport yourself and any allies to it at any time!</span>\n\
 				<span class='notice'>You can remove the beacon to place it again by striking it with the club.</span>")
 			else

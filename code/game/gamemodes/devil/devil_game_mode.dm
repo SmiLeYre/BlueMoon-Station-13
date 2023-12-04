@@ -4,7 +4,7 @@
 	antag_flag = ROLE_DEVIL
 	false_report_weight = 1
 	chaos = 3
-	protected_jobs = list("Prisoner", "Lawyer", "Curator", "Chaplain", "Head of Security", "Captain", "AI")
+	protected_jobs = list("Prisoner", "Lawyer", "NanoTrasen Representative", "Curator", "Chaplain", "Head of Security", "Captain", "AI")
 	required_players = 0
 	required_enemies = 1
 	recommended_enemies = 4
@@ -58,8 +58,8 @@
 	return 1
 
 /datum/game_mode/devil/generate_report()
-	return "Infernal creatures have been seen nearby offering great boons in exchange for souls.  This is considered theft against Nanotrasen, as all employment contracts contain a lien on the \
-			employee's soul.  If anyone sells their soul in error, contact an attorney to overrule the sale.  Be warned that if the devil purchases enough souls, a gateway to hell may open."
+	return "Поблизости были замечены инфернальные существа, предлагающие великие блага в обмен на души. Это считается нарушением Космического Закона, поскольку все трудовые контракты содержат залог на \
+			душу сотрудника. Если кто-то по ошибке продает свою душу, обратитесь к Адвокату или к Капитану, или в крайнем случае к Священнику, чтобы отменить продажу. Имейте в виду, что если дьявол купит достаточно душ, то могут открыться врата в Инфернальный Мир."
 
 /datum/game_mode/devil/proc/post_setup_finalize(datum/mind/devil)
 	add_devil(devil.current, ascendable = TRUE) //Devil gamemode devils are ascendable.

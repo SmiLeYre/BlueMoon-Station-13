@@ -493,7 +493,7 @@
 /turf/open/floor/mineral/titanium,
 /area/shuttle/escape)
 "br" = (
-/obj/machinery/computer/card,
+/obj/machinery/modular_computer/console/preset/id,
 /turf/open/floor/carpet,
 /area/shuttle/escape)
 "bs" = (

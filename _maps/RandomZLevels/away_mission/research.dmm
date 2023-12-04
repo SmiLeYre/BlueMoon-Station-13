@@ -90,7 +90,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/research/interior/engineering)
 "at" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /turf/open/floor/plating,
 /area/awaymission/research/interior/engineering)
 "au" = (
@@ -1861,8 +1861,8 @@
 /obj/structure/rack,
 /obj/item/clothing/suit/armor/vest,
 /obj/item/clothing/suit/armor/vest,
-/obj/item/clothing/head/helmet,
-/obj/item/clothing/head/helmet,
+/obj/item/clothing/head/helmet/sec,
+/obj/item/clothing/head/helmet/sec,
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
@@ -6156,7 +6156,7 @@
 	dir = 1;
 	layer = 2.9
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/research/interior/escapepods)
 "mL" = (
 /obj/structure/flora/ausbushes/fernybush,
@@ -6165,7 +6165,7 @@
 	dir = 1;
 	layer = 2.9
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/research/interior/escapepods)
 "mM" = (
 /obj/structure/flora/ausbushes/grassybush,
@@ -6174,7 +6174,7 @@
 	dir = 1;
 	layer = 2.9
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/research/interior/escapepods)
 "mN" = (
 /obj/item/kirbyplants{

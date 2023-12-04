@@ -29,7 +29,7 @@ BODY_SIZE_MAX 2.00
 
 ## Allowed visibility toggles
 
-# SAFE_VISIBILITY_TOGGLES Always visible
+SAFE_VISIBILITY_TOGGLES Always visible
 SAFE_VISIBILITY_TOGGLES Hidden by clothes
 SAFE_VISIBILITY_TOGGLES Hidden by underwear
 SAFE_VISIBILITY_TOGGLES Always hidden

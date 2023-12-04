@@ -52,17 +52,17 @@
 	if(!limb.current_gauze)
 		return ..()
 
-	var/list/msg = list("The cuts on [victim.p_their()] [limb.name] are wrapped with")
+	var/list/msg = list("Порезы на [victim.ru_ego()] [limb.ru_name_v] перебинтованы")
 	// how much life we have left in these bandages
 	switch(limb.current_gauze.absorption_capacity)
 		if(0 to 1.25)
-			msg += "nearly ruined "
+			msg += "изношенные "
 		if(1.25 to 2.75)
-			msg += "badly worn "
+			msg += "поношенные "
 		if(2.75 to 4)
-			msg += "slightly bloodied "
+			msg += "покрытые кровью "
 		if(4 to INFINITY)
-			msg += "clean "
+			msg += "чистые "
 	msg += "[limb.current_gauze.name]!"
 
 	return "<B>[msg.Join()]</B>"
@@ -112,7 +112,7 @@
 		if(demotes_to)
 			replace_wound(demotes_to)
 		else
-			to_chat(victim, "<span class='green'>The cut on your [limb.name] has stopped bleeding!</span>")
+			to_chat(victim, "<span class='green'>Ваша [limb.ru_name] перестала истекать [HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM) ? "гидравлической жидкость" : "кровью"] из-за порезов!</span>") // BLUEMOON EDIT - добавлена проверка для роботов
 			qdel(src)
 
 
@@ -151,28 +151,34 @@
 /// if a felinid is licking this cut to reduce bleeding
 /datum/wound/slash/proc/lick_wounds(mob/living/carbon/human/user)
 	if(INTERACTING_WITH(user, victim))
-		to_chat(user, "<span class='warning'>You're already interacting with [victim]!</span>")
+		to_chat(user, "<span class='warning'>Вы уже взаимодействуйте с персонажем [victim]!</span>")
 		return
 
 	if(user.is_mouth_covered())
-		to_chat(user, "<span class='warning'>Your mouth is covered, you can't lick [victim]'s wounds!</span>")
+		to_chat(user, "<span class='warning'>Ваш рот закрыт, вы не можете зализать раны персонажа [victim]!</span>")
 		return
 
 	if(!user.getorganslot(ORGAN_SLOT_TONGUE))
-		to_chat(user, "<span class='warning'>You can't lick wounds without a tongue!</span>") // f in chat
+		to_chat(user, "<span class='warning'>Вы не можете зализывать раны, у вас нет языка!</span>") // f in chat
 		return
 
 	// transmission is one way patient -> felinid since google said cat saliva is antiseptic or whatever, and also because felinids are already risking getting beaten for this even without people suspecting they're spreading a deathvirus
 	for(var/datum/disease/D in victim.diseases)
 		user.ForceContractDisease(D)
 
-	user.visible_message("<span class='notice'>[user] begins licking the wounds on [victim]'s [limb.name].</span>", "<span class='notice'>You begin licking the wounds on [victim]'s [limb.name]...</span>", ignored_mobs=victim)
-	to_chat(victim, "<span class='notice'>[user] begins to lick the wounds on your [limb.name].</span")
+	user.visible_message("<span class='notice'>[user] пытается зализать раны на [limb.ru_name_v] персонажа [victim].</span>", "<span class='notice'>Вы пытаетесь зализать раны на [limb.ru_name_v] персонажа [victim]....</span>", ignored_mobs=victim)
+	to_chat(victim, "<span class='notice'>[user] пытается зализать раны на вашей конечности - [limb.ru_name].</span")
 	if(!do_after(user, base_treat_time, target=victim, extra_checks = CALLBACK(src, .proc/still_exists)))
 		return
 
-	user.visible_message("<span class='notice'>[user] licks the wounds on [victim]'s [limb.name].</span>", "<span class='notice'>You lick some of the wounds on [victim]'s [limb.name]</span>", ignored_mobs=victim)
-	to_chat(victim, "<span class='green'>[user] licks the wounds on your [limb.name]!</span")
+	// BLUEMOON ADD START - попытка зализать языком рану с маслом выглядит ужасно
+	if(HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM) && !HAS_TRAIT(user, TRAIT_ROBOTIC_ORGANISM))
+		user.visible_message("<span class='warning'>[user] резко отстраняется от [victim]!</span>", "<span class='notice'>Противная жидкость попадает на ваш язык. Похоже на сгоревшее масло, вы не можете это зализать!</span>", ignored_mobs=victim)
+		return
+	// BLUEMOON ADD END
+
+	user.visible_message("<span class='notice'>[user] зализывает раны на [limb.ru_name_v] - персонажа [victim].</span>", "<span class='notice'>Вы зализываете некоторые раны на [limb.ru_name_v] персонажа [victim].</span>", ignored_mobs=victim)
+	to_chat(victim, "<span class='green'>[user] зализывает раны на вашей [limb.ru_name_v]!</span")
 	blood_flow -= 0.5
 	if(isinsect(victim) || iscatperson(victim) || ismammal(victim) || isdwarf(victim) || ismonkey(victim)) // Yep you can lick monkeys.
 		user.reagents.add_reagent(/datum/reagent/hairball, 2)
@@ -183,7 +189,7 @@
 	if(blood_flow > minimum_flow)
 		try_handling(user)
 	else if(demotes_to)
-		to_chat(user, "<span class='green'>You successfully lower the severity of [victim]'s cuts.</span>")
+		to_chat(user, "<span class='green'>Вы успешно снижаете тяжесть порезов персонажа [victim].</span>")
 
 /datum/wound/slash/on_xadone(power)
 	. = ..()
@@ -196,7 +202,7 @@
 /// If someone's putting a laser gun up to our cut to cauterize it
 /datum/wound/slash/proc/las_cauterize(obj/item/gun/energy/laser/lasgun, mob/user)
 	var/self_penalty_mult = (user == victim ? 1.25 : 1)
-	user.visible_message("<span class='warning'>[user] begins aiming [lasgun] directly at [victim]'s [limb.name]...</span>", "<span class='userdanger'>You begin aiming [lasgun] directly at [user == victim ? "your" : "[victim]'s"] [limb.name]...</span>")
+	user.visible_message("<span class='warning'>[user] пытается нацелить [lasgun] на рану на [limb.ru_name_v] персонажа [victim]....</span>", "<span class='userdanger'>Вы пытаетесь нацелить [lasgun] на рану на [user == victim ? "вашей конечности" : "конечности персонажа [victim]"]...</span>")
 	if(!do_after(user, base_treat_time  * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, .proc/still_exists)))
 		return
 	var/damage = lasgun.chambered.BB.damage
@@ -204,37 +210,45 @@
 	lasgun.chambered.BB.damage *= self_penalty_mult
 	if(!lasgun.process_fire(victim, victim, TRUE, null, limb.body_zone))
 		return
-	victim.emote("scream")
+	if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+		victim.emote("scream")
 	blood_flow -= damage / (5 * self_penalty_mult) // 20 / 5 = 4 bloodflow removed, p good
-	victim.visible_message("<span class='warning'>The cuts on [victim]'s [limb.name] scar over!</span>")
+	victim.visible_message("<span class='warning'>Порезы на конечности персонажа [victim] затягиваются шрамами!</span>")
 
 /// If someone is using either a cautery tool or something with heat to cauterize this cut
 /datum/wound/slash/proc/tool_cauterize(obj/item/I, mob/user)
 	var/self_penalty_mult = (user == victim ? 1.5 : 1)
-	user.visible_message("<span class='danger'>[user] begins cauterizing [victim]'s [limb.name] with [I]...</span>", "<span class='danger'>You begin cauterizing [user == victim ? "your" : "[victim]'s"] [limb.name] with [I]...</span>")
+	user.visible_message("<span class='danger'>[user] пытается прижечь раны на [limb.ru_name_v] персонажа [victim] с помощью [I]...</span>", "<span class='danger'>Вы пытаетесь прижечь рану [user == victim ? "своей конечности" : "конечности персонажа [victim]"] с помощью [I]...</span>")
 	if(!do_after(user, base_treat_time * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, .proc/still_exists)))
 		return
 
-	user.visible_message("<span class='green'>[user] cauterizes some of the bleeding on [victim].</span>", "<span class='green'>You cauterize some of the bleeding on [victim].</span>")
-	limb.receive_damage(burn = 2 + severity, wound_bonus = CANT_WOUND)
-	if(prob(30))
-		victim.emote("scream")
+	user.visible_message("<span class='green'>[user] прижигает увечия персонажа [victim].</span>", "<span class='green'Вы прижагаете увечия персонажа [victim].</span>")
+	if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+		limb.receive_damage(burn = 2 + severity, wound_bonus = CANT_WOUND)
+		if(prob(30))
+			victim.emote("scream")
 	var/blood_cauterized = (0.6 / self_penalty_mult)
 	blood_flow -= blood_cauterized
 
 	if(blood_flow > minimum_flow)
 		try_treating(I, user)
 	else if(demotes_to)
-		to_chat(user, "<span class='green'>You successfully lower the severity of [user == victim ? "your" : "[victim]'s"] cuts.</span>")
+		to_chat(user, "<span class='green'>Вы успешно снижаете тяжесть порезов [user == victim ? "на вашей [limb.ru_name_v]" : "на [limb.ru_name_v] персонажа [victim]"].</span>")
 
 /// If someone is using a suture to close this cut
 /datum/wound/slash/proc/suture(obj/item/stack/medical/suture/I, mob/user)
+	// BLUEMOON ADD START - нитка и иголка не могут заштопать листы металла
+	if(HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM))
+		to_chat(user, "Это не поможет, это же робот!")
+		return
+	// BLUEMOON ADD END
+
 	var/self_penalty_mult = (user == victim ? 1.4 : 1)
-	user.visible_message("<span class='notice'>[user] begins stitching [victim]'s [limb.name] with [I]...</span>", "<span class='notice'>You begin stitching [user == victim ? "your" : "[victim]'s"] [limb.name] with [I]...</span>")
+	user.visible_message("<span class='notice'>[user] пытается зашить увечия на [limb.ru_name_v] персонажа [victim] с помощью [I]...</span>", "<span class='notice'>Вы пытаетесь зашить [user == victim ? "увечия на вашей [limb.ru_name_v]" : "увечия на [limb.ru_name_v] персонажа [victim]"] с помощью [I]...</span>")
 
 	if(!do_after(user, base_treat_time * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, .proc/still_exists)))
 		return
-	user.visible_message("<span class='green'>[user] stitches up some of the bleeding on [victim].</span>", "<span class='green'>You stitch up some of the bleeding on [user == victim ? "yourself" : "[victim]"].</span>")
+	user.visible_message("<span class='green'>[user] зашивает увечия персонажа [victim].</span>", "<span class='green'>Вы зашиваете некоторые увечия [user == victim ? "на вашей конечности" : "на конечности персонажа [victim]"].</span>")
 	var/blood_sutured = I.stop_bleeding / self_penalty_mult
 	blood_flow -= blood_sutured
 	limb.heal_damage(I.heal_brute, I.heal_burn)
@@ -242,59 +256,109 @@
 	if(blood_flow > minimum_flow)
 		try_treating(I, user)
 	else if(demotes_to)
-		to_chat(user, "<span class='green'>You successfully lower the severity of [user == victim ? "your" : "[victim]'s"] cuts.</span>")
+		to_chat(user, "<span class='green'>Вы успешно снижаете степерь порезов на [user == victim ? "вашей конечности" : "конечности персонажа [victim]"].</span>")
 
 
 /datum/wound/slash/moderate
 	name = "Rough Abrasion"
-	desc = "Patient's skin has been badly scraped, generating moderate blood loss."
-	treat_text = "Application of clean bandages or first-aid grade sutures, followed by food and rest."
-	examine_desc = "has an open cut"
-	occur_text = "is cut open, slowly leaking blood"
+	ru_name = "Сильная царапина"
+	ru_name_r = "сильных царапин"
+	desc = "Кожа пациента сильно поцарапана, что привело к умеренной кровопотере."
+	treat_text = "Наложение повязок или жгутов, с последующим питанием и отдыхом."
+	examine_desc = "порезана"
+	occur_text = "разрезается, что приводит к кровотечению"
 	sound_effect = 'sound/effects/wounds/blood1.ogg'
 	severity = WOUND_SEVERITY_MODERATE
-	initial_flow = 1.25
+	initial_flow = 1.4
 	minimum_flow = 0.375
 	max_per_type = 3
 	clot_rate = 0.12
-	threshold_minimum = 30
-	threshold_penalty = 10
+	threshold_minimum = 40
+	threshold_penalty = 8
 	status_effect_type = /datum/status_effect/wound/slash/moderate
 	scar_keyword = "slashmoderate"
 
+// BLUEMOON ADD START
+/datum/wound/slash/moderate/apply_typo_modification()
+	if(HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM))
+		ru_name = "Прорезь обшивки"
+		ru_name_r = "прорези обшивки"
+		desc = "В обшивке заметный порез, приводящий к умеренной потери жидкостей."
+		treat_text = "Сварить обшивку сваркой."
+		examine_desc = "прорезана"
+		occur_text = "надрывается, образуя прорезь в обшивке, из которой течёт чёрная жижа"
+		clot_rate = 0
+		wound_flags = FLESH_WOUND
+		treatable_tool = TOOL_WELDER
+	return
+// BLUEMOON ADD END
+
 /datum/wound/slash/severe
 	name = "Open Laceration"
-	desc = "Patient's skin is ripped clean open, allowing significant blood loss."
-	treat_text = "Speedy application of first-aid grade sutures and clean bandages, followed by vitals monitoring to ensure recovery."
-	examine_desc = "has a severe cut"
-	occur_text = "is ripped open, veins spurting blood"
+	ru_name = "Рваная рана"
+	ru_name_r = "рваной раны"
+	desc = "Кожа на конечности пациента повреждена и вскрыта, что привело к обильному кровотечению."
+	treat_text = "Немедленное наложение жгутов или чистых повязок, мониторинг состояния пациента."
+	examine_desc = "сильно изрезана"
+	occur_text = "широко раскрывается, что приводит к венозному кровотечению"
 	sound_effect = 'sound/effects/wounds/blood2.ogg'
 	severity = WOUND_SEVERITY_SEVERE
-	initial_flow = 2
+	initial_flow = 1.8
 	minimum_flow = 1.75
 	clot_rate = 0.07
 	max_per_type = 4
-	threshold_minimum = 60
-	threshold_penalty = 25
+	threshold_minimum = 65
+	threshold_penalty = 15
 	demotes_to = /datum/wound/slash/moderate
 	status_effect_type = /datum/status_effect/wound/slash/severe
 	scar_keyword = "slashsevere"
 
+// BLUEMOON ADD START
+/datum/wound/slash/severe/apply_typo_modification()
+	if(HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM))
+		ru_name = "Надорванная Обшивка"
+		ru_name_r = "надорванная обшивки"
+		desc = "В обшивке рваное вскрытие, что приводит к обильной потери жидкостей."
+		treat_text = "Сварить обшивку сваркой."
+		examine_desc = "сильно надорвана"
+		occur_text = "надрывается от удара, расплёскивая чёрную жижу вокруг"
+		clot_rate = 0
+		wound_flags = FLESH_WOUND
+		treatable_tool = TOOL_WELDER
+// BLUEMOON ADD END
+
 /datum/wound/slash/critical
 	name = "Weeping Avulsion"
-	desc = "Patient's skin is completely torn open, along with significant loss of tissue. Extreme blood loss will lead to quick death without intervention."
-	treat_text = "Immediate bandaging and either suturing or cauterization, followed by supervised resanguination."
-	examine_desc = "is carved down to the bone, spraying blood wildly"
-	occur_text = "is torn open, spraying blood wildly"
+	ru_name = "Разрыв сухожилия"
+	ru_name_r = "разрыва сухожилия"
+	desc = "У пациента наблюдается серьезное повреждение кожного покрова. Отсутствие медицинской помощи приведет к смерти в результате сильнейшей кровопотери."
+	treat_text = "Немедленная перевязка, хирургическое вмешательство с наложением швов и прижиганием увечия, переливание крови."
+	examine_desc = "разрезана до костей, кровь брызжет вокруг"
+	occur_text = "разрывается, разбрызгивая кровь"
 	sound_effect = 'sound/effects/wounds/blood3.ogg'
 	severity = WOUND_SEVERITY_CRITICAL
-	initial_flow = 2.75
+	initial_flow = 2.85
 	minimum_flow = 2.5
 	clot_rate = -0.05 // critical cuts actively get worse instead of better
 	max_per_type = 5
-	threshold_minimum = 90
-	threshold_penalty = 40
+	threshold_minimum = 100
+	threshold_penalty = 25
 	demotes_to = /datum/wound/slash/severe
 	status_effect_type = /datum/status_effect/wound/slash/critical
 	scar_keyword = "slashcritical"
 	wound_flags = (FLESH_WOUND | ACCEPTS_GAUZE | MANGLES_FLESH)
+
+// BLUEMOON ADD START
+/datum/wound/slash/critical/apply_typo_modification()
+	if(HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM))
+		ru_name = "Разрыв Обшивки"
+		ru_name_r = "разрыва обшивки"
+		desc = "Обшивка разована. Платформа быстро теряет жидкости, требуется немедленный ремонт."
+		treat_text = "Сварить разрез сваркой и пополнить запасы гидравлической жидкости."
+		examine_desc = "разорвана до внутренностей, искриться"
+		occur_text = "разрывается, показывая провада в снопах искр и разбрызгивая чёрную жижу под напором"
+		clot_rate = 0
+		wound_flags = (FLESH_WOUND | MANGLES_FLESH)
+		treatable_tool = TOOL_WELDER
+
+// BLUEMOON ADD END

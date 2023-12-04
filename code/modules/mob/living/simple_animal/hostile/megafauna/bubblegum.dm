@@ -38,7 +38,7 @@ Difficulty: Hard
 	friendly_verb_simple = "stare down"
 	icon = 'icons/mob/lavaland/96x96megafauna.dmi'
 	speak_emote = list("gurgles")
-	armour_penetration = 40
+	armour_penetration = 75
 	melee_damage_lower = 40
 	melee_damage_upper = 40
 	speed = 1
@@ -236,7 +236,7 @@ Difficulty: Hard
 	color = "#C80000"
 	density = FALSE
 	faction = list("mining", "boss")
-	weather_immunities = list("lava","ash")
+	weather_immunities = list(TRAIT_LAVA_IMMUNE,TRAIT_ASHSTORM_IMMUNE)
 	has_field_of_vision = FALSE
 
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/slaughter/CanPass(atom/movable/mover, turf/target)

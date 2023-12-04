@@ -120,7 +120,7 @@
 
 #define PRESSURE_DAMAGE_COEFFICIENT			4		//The amount of pressure damage someone takes is equal to (pressure / HAZARD_HIGH_PRESSURE)*PRESSURE_DAMAGE_COEFFICIENT, with the maximum of MAX_PRESSURE_DAMAGE
 #define MAX_HIGH_PRESSURE_DAMAGE			16		// CITADEL CHANGES Max to 16, low to 8.
-#define LOW_PRESSURE_DAMAGE					8		//The amount of damage someone takes when in a low pressure area (The pressure threshold is so low that it doesn't make sense to do any calculations, so it just applies this flat value).
+#define LOW_PRESSURE_DAMAGE					12		//The amount of damage someone takes when in a low pressure area (The pressure threshold is so low that it doesn't make sense to do any calculations, so it just applies this flat value).
 
 #define COLD_SLOWDOWN_FACTOR				35		//Humans are slowed by the difference between bodytemp and BODYTEMP_COLD_DAMAGE_LIMIT divided by this
 
@@ -156,6 +156,13 @@
 #define ATMOS_ADJACENT_ANY		(1<<0)
 #define ATMOS_ADJACENT_FIRELOCK	(1<<1)
 
+#ifdef TESTING
+GLOBAL_LIST_INIT(atmos_adjacent_savings, list(0,0))
+#define CALCULATE_ADJACENT_TURFS(T) if (SSadjacent_air.queue[T]) { GLOB.atmos_adjacent_savings[1] += 1 } else { GLOB.atmos_adjacent_savings[2] += 1; SSadjacent_air.queue[T] = 1 }
+#else
+#define CALCULATE_ADJACENT_TURFS(T) SSadjacent_air.queue[T] = 1
+#endif
+
 #define CANATMOSPASS(A, O) ( A.CanAtmosPass == ATMOS_PASS_PROC ? A.CanAtmosPass(O) : ( A.CanAtmosPass == ATMOS_PASS_DENSITY ? !A.density : A.CanAtmosPass ) )
 #define CANVERTICALATMOSPASS(A, O) ( A.CanAtmosPassVertical == ATMOS_PASS_PROC ? A.CanAtmosPass(O, TRUE) : ( A.CanAtmosPassVertical == ATMOS_PASS_DENSITY ? !A.density : A.CanAtmosPassVertical ) )
 
@@ -165,6 +172,9 @@
 #define AIRLESS_ATMOS				"TEMP=2.7" //space
 #define FROZEN_ATMOS				"o2=21.78;n2=82.36;TEMP=180" //-93.15degC snow and ice turfs
 #define BURNMIX_ATMOS				"o2=2500;plasma=5000;TEMP=370" //used in the holodeck burn test program
+
+/// -14°C kitchen coldroom, just might loss your tail; higher amount of mol to reach about 101.3 kpA
+#define KITCHEN_COLDROOM_ATMOS "o2=26;n2=97;TEMP=259.15"
 
 //ATMOSPHERICS DEPARTMENT GAS TANK TURFS
 #define ATMOS_TANK_N2O				"n2o=6000;TEMP=293.15"
@@ -227,6 +237,22 @@
 #define ATMOS_GAS_MONITOR_WASTE_ENGINE "engine-waste_out"
 #define ATMOS_GAS_MONITOR_WASTE_ATMOS "atmos-waste_out"
 
+//BlueMoon Edit Begin.
+#define INCINERATOR_TARKOFF_IGNITER "tarkoff_igniter"
+#define INCINERATOR_TARKOFF_DP_VENTPUMP "tarkoff_airlock_pump"
+#define INCINERATOR_TARKOFF_AIRLOCK_SENSOR "tarkoff_airlock_sensor"
+#define INCINERATOR_TARKOFF_AIRLOCK_CONTROLLER "tarkoff_airlock_controller"
+#define INCINERATOR_TARKOFF_AIRLOCK_INTERIOR "tarkoff_airlock_interior"
+#define INCINERATOR_TARKOFF_AIRLOCK_EXTERIOR "tarkoff_airlock_exterior"
+
+#define ATMOS_GAS_MONITOR_TARKOFF_O2 "tarkoff_o2"
+#define ATMOS_GAS_MONITOR_TARKOFF_PLAS "tarkoff_plas"
+#define ATMOS_GAS_MONITOR_TARKOFF_MIX "tarkoff_mix"
+#define ATMOS_GAS_MONITOR_TARKOFF_N2 "tarkoff_n2"
+#define ATMOS_GAS_MONITOR_TARKOFF_N2O "tarkoff_n2o"
+#define ATMOS_GAS_MONITOR_TARKOFF_CO2 "tarkoff_co2"
+#define ATMOS_GAS_MONITOR_TARKOFF_INCINERATOR "tarkoff_incinerator"
+
 //AIRLOCK CONTROLLER TAGS
 
 //RnD toxins burn chamber
@@ -271,6 +297,10 @@
 #define PIPING_ONE_PER_TURF				(1<<1) 	//can only be built if nothing else with this flag is on the tile already.
 #define PIPING_DEFAULT_LAYER_ONLY		(1<<2)	//can only exist at PIPING_LAYER_DEFAULT
 #define PIPING_CARDINAL_AUTONORMALIZE	(1<<3)	//north/south east/west doesn't matter, auto normalize on build.
+
+///Used to define the temperature of a tile, arg is the temperature it should be at. Should always be put at the end of the atmos list.
+///This is solely to be used after compile-time.
+#define TURF_TEMPERATURE(temperature) "TEMP=[temperature]"
 
 // Gas defines because i hate typepaths
 #define GAS_O2					"o2"

@@ -117,31 +117,28 @@
 	name = "Merp"
 	id = "merp"
 	soundpath = 'modular_citadel/sound/voice/merp.ogg'
-	ignore = TRUE
 
 /datum/bark/bark
 	name = "Bark"
 	id = "bark"
 	soundpath = 'modular_citadel/sound/voice/bark1.ogg'
-	ignore = TRUE
 
 /datum/bark/nya
 	name = "Nya"
 	id = "nya"
 	soundpath = 'modular_citadel/sound/voice/nya.ogg'
-	ignore = TRUE
+	minspeed = 6
+	maxspeed = 12
 
 /datum/bark/moff
 	name = "Moff"
 	id = "moff"
 	soundpath = 'modular_citadel/sound/voice/mothsqueak.ogg'
-	ignore = TRUE
 
 /datum/bark/weh
 	name = "Weh"
 	id = "weh"
 	soundpath = 'modular_citadel/sound/voice/weh.ogg'
-	ignore = TRUE
 
 /datum/bark/honk
 	name = "Annoying Honk"

@@ -16,7 +16,7 @@
 		if(!XW)
 			XW = locate() in R.module
 		if(XW)
-			to_chat(user, span_warning("This unit is already equipped with an experimental welding tool module."))
+			to_chat(user, "<span class='warning'>This unit is already equipped with an experimental welding tool module.</span>")
 			return FALSE
 		XW = new(R.module)
 		qdel(WT)
@@ -83,7 +83,7 @@
 		if(!BD)
 			BD = locate() in R.module //There's gotta be a smarter way to do this.
 		if(BD)
-			to_chat(user, span_warning("This unit is already equipped with a BSRPD module."))
+			to_chat(user, "<span class='warning'>This unit is already equipped with a BSRPD module.</span>")
 			return FALSE
 
 		BD = new(R.module)
@@ -138,11 +138,11 @@
 	if(.)
 
 		if(R.hasExpanded)
-			to_chat(usr, span_notice("This unit already has an expand module installed!"))
+			to_chat(usr, "<span class='notice'>This unit already has an expand module installed!</span>")
 			return FALSE
 
 		if(R.hasShrunk)
-			to_chat(usr, span_notice("This unit already has an shrink module installed!"))
+			to_chat(usr, "<span class='notice'>This unit already has an shrink module installed!</span>")
 			return FALSE
 
 		if(ExpandSize <= 0)
@@ -167,12 +167,14 @@
 		R.update_transform()
 		//R.update_size(ExpandSize/100)
 		R.hasExpanded = TRUE
+		R.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/changed_robot_size) // BLUEMOON ADD
 
 /obj/item/borg/upgrade/expand/deactivate(mob/living/silicon/robot/R, user = usr)
 	. = ..()
 	if (. && R.hasExpanded)
 		R.transform = null
 		R.hasExpanded = FALSE
+		R.remove_movespeed_modifier(/datum/movespeed_modifier/changed_robot_size) // BLUEMOON ADD
 
 /obj/item/borg/upgrade/shrink
 	name = "borg shrinker"
@@ -184,11 +186,11 @@
 	if(.)
 
 		if(R.hasShrunk)
-			to_chat(usr, span_notice("This unit already has an shrink module installed!"))
+			to_chat(usr, "<span class='notice'>This unit already has an shrink module installed!</span>")
 			return FALSE
 
 		if(R.hasExpanded)
-			to_chat(usr, span_notice("This unit already has an expand module installed!"))
+			to_chat(usr, "<span class='notice'>This unit already has an expand module installed!</span>")
 			return FALSE
 
 		if(ShrinkSize == 0)
@@ -211,6 +213,8 @@
 		R.mob_transforming = FALSE
 		R.resize = ShrinkSize/100
 		R.update_transform()
+/*		R.add_movespeed_modifier(/datum/movespeed_modifier/reagent/freon) / BLUEMOON REMOVAL - увеличиваем степень замедления роботов, уменьшенных или увеличенных в размере */
+		R.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/changed_robot_size/shrink) // BLUEMOON ADD
 		//R.update_size(ShrinkSize/100)
 		R.hasShrunk = TRUE
 
@@ -219,6 +223,9 @@
 	if (. && R.hasShrunk)
 		R.transform = null
 		R.hasShrunk = FALSE
+/*		R.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/freon) / BLUEMOON REMOVAL - увеличиваем степень замедления роботов, уменьшенных или увеличенных в размере */
+		R.remove_movespeed_modifier(/datum/movespeed_modifier/changed_robot_size/shrink) // BLUEMOON ADD
+
 
 /obj/item/borg/upgrade/transform/syndicatejack
     name = "borg module picker (Syndicate)"
@@ -246,7 +253,7 @@
 		if(!shuttle_maker)
 			shuttle_maker = locate() in R.module
 		if(shuttle_maker)
-			to_chat(user, span_warning("This unit is already equipped with a rapid shuttle designator module."))
+			to_chat(user, "<span class='warning'>This unit is already equipped with a rapid shuttle designator module.</span>")
 			return FALSE
 		shuttle_maker = new(R.module)
 		R.module.basic_modules += shuttle_maker

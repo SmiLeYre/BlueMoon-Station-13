@@ -3,9 +3,6 @@
 	var/retaliatedcooldowntime = 6000
 	var/retaliatedcooldown
 
-/mob/living/simple_animal/hostile/megafauna
-	var/list/enemies = list()
-
 /mob/living/simple_animal/hostile/megafauna/Found(atom/A)
 	if(isliving(A))
 		var/mob/living/L = A
@@ -25,7 +22,7 @@
 	see &= enemies // Remove all entries that aren't in enemies
 	return see
 
-/mob/living/simple_animal/hostile/megafauna/proc/Retaliate()
+/mob/living/simple_animal/hostile/megafauna/Retaliate()
 	var/list/around = oview(src, vision_range)
 	for(var/atom/movable/A in around)
 		if(isliving(A))
@@ -33,7 +30,7 @@
 			if((faction_check_mob(M) && attack_same) || (!faction_check_mob(M)) || (!ismegafauna(M)))
 				enemies |= M
 				if(!retaliated)
-					src.visible_message(span_userdanger("[src] seems pretty pissed off at [M]!"))
+					src.visible_message("<span class='userdanger'>[src] seems pretty pissed off at [M]!</span>")
 					retaliated = TRUE
 					retaliatedcooldown = world.time + retaliatedcooldowntime
 		else if(ismecha(A))
@@ -46,7 +43,7 @@
 						continue
 					enemies |= living
 					if(!retaliated)
-						visible_message(span_userdanger("[src] seems pretty pissed off at [M]!"))
+						visible_message("<span class='userdanger'>[src] seems pretty pissed off at [M]!</span>")
 						retaliated = TRUE
 						retaliatedcooldown = world.time + retaliatedcooldowntime
 

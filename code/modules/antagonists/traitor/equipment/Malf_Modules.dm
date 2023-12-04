@@ -333,7 +333,7 @@ GLOBAL_LIST_INIT(blacklisted_malf_machines, typecacheof(list(
 		to_chat(owner, "<span class='boldnotice'>Error: Signal transmission failed. Reason: Lost connection to network.</span>")
 		to_chat(owner, "<span class='warning'>You can't activate the doomsday device while inside an intelliCard!</span>")
 		return
-	priority_announce("Hostile runtimes detected in all station systems, please deactivate your AI to prevent possible damage to its morality core.", "Anomaly Alert", "aimalf")
+	priority_announce("Во всех станционных системах зафиксировано вредоносное ПО. Пожалуйста, отключите ИИ чтобы предотвратить возможные неисправности его ядра морали.", "ВНИМАНИЕ: АНОМАЛИЯ", "aimalf")
 	set_security_level("delta")
 	var/obj/machinery/doomsday_device/DOOM = new(owner_AI)
 	owner_AI.nuking = TRUE
@@ -385,7 +385,7 @@ GLOBAL_LIST_INIT(blacklisted_malf_machines, typecacheof(list(
 /obj/machinery/doomsday_device/process()
 	var/turf/T = get_turf(src)
 	if(!T || !is_station_level(T.z))
-		minor_announce("DOOMSDAY DEVICE OUT OF STATION RANGE, ABORTING", "ERROR ER0RR $R0RRO$!R41.%%!!(%$^^__+ @#F0E4", TRUE)
+		minor_announce("УСТРОЙСТВО СУДНОГО ДНЯ НАХОДИТСЯ ВНЕ СТАНЦИИ, ОТМЕНА", "ОШИБКА 0ШИБК0 $Ш0ШШO$!R41.%%!!(%$^^__+ @#F0E4", TRUE)
 		SSshuttle.clearHostileEnvironment(src)
 		qdel(src)
 		return
@@ -397,7 +397,7 @@ GLOBAL_LIST_INIT(blacklisted_malf_machines, typecacheof(list(
 		timing = FALSE
 		detonate()
 	else if(world.time >= next_announce)
-		minor_announce("[sec_left] SECONDS UNTIL DOOMSDAY DEVICE ACTIVATION!", "ERROR ER0RR $R0RRO$!R41.%%!!(%$^^__+ @#F0E4", TRUE)
+		minor_announce("[sec_left] СЕКУНД ДО АКТИВАЦИИ УСТРОЙСТВА СУДНОГО ДНЯ!", "ОШИБКА 0ШИБК0 $Ш0ШШO$!R41.%%!!(%$^^__+ @#F0E4", TRUE)
 		next_announce += DOOMSDAY_ANNOUNCE_INTERVAL
 
 /obj/machinery/doomsday_device/proc/detonate()
@@ -411,9 +411,9 @@ GLOBAL_LIST_INIT(blacklisted_malf_machines, typecacheof(list(
 			continue
 		if(issilicon(L))
 			continue
-		to_chat(L, "<span class='userdanger'>The blast wave from [src] tears you atom from atom!</span>")
+		to_chat(L, "<span class='userdanger'>Взрывная волна от [src] расщепляет вас на атомы!</span>")
 		L.dust()
-	to_chat(world, "<B>The AI cleansed the station of life with the doomsday device!</B>")
+	to_chat(world, "<B>Искусственный интеллект очистил станцию с помощью устройства судного дня!</B>")
 	SSticker.force_ending = 1
 
 
@@ -463,11 +463,11 @@ GLOBAL_LIST_INIT(blacklisted_malf_machines, typecacheof(list(
 	if(C)
 		C.post_status("alert", "lockdown")
 
-	minor_announce("Hostile runtime detected in door controllers. Isolation lockdown protocols are now in effect. Please remain calm.","Network Alert:", TRUE)
+	minor_announce("Вредоносное программное обеспечение обнаружено в системе контроля шл+юзов. Задействованы протоколы изоляции. Пожалуйста, сохраняйте спокойствие.","ВНИМАНИЕ: УЯЗВИМОСТЬ СЕТИ", TRUE)
 	to_chat(owner, "<span class='danger'>Lockdown initiated. Network reset in 90 seconds.</span>")
 	addtimer(CALLBACK(GLOBAL_PROC, .proc/minor_announce,
-		"Automatic system reboot complete. Have a secure day.",
-		"Network reset:"), 900)
+		"Автоматическая перезагрузка системы завершена. Хорошего вам дня.",
+		"ПЕРЕЗАГРУЗКА СЕТИ:"), 900)
 
 
 //Destroy RCDs: Detonates all non-cyborg RCDs on the station.

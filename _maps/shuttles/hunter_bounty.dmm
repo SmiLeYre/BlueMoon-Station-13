@@ -114,6 +114,8 @@
 /area/shuttle/hunter)
 "x" = (
 /obj/structure/table,
+/obj/item/ammo_box/foambox/riot,
+/obj/item/ammo_box/foambox/riot,
 /turf/open/floor/pod/dark,
 /area/shuttle/hunter)
 "y" = (
@@ -178,9 +180,10 @@
 /turf/open/floor/pod/light,
 /area/shuttle/hunter)
 "K" = (
-/obj/machinery/suit_storage_unit/standard_unit{
-	storage_type = /obj/item/tank/internals/oxygen/yellow
-	},
+/obj/structure/table,
+/obj/item/storage/box/syndie_kit/contract_kit,
+/obj/item/gun/ballistic/automatic/l6_saw/toy/unrestricted/riot,
+/obj/item/ammo_box/magazine/toy/m762/riot,
 /turf/open/floor/pod/light,
 /area/shuttle/hunter)
 "L" = (
@@ -200,7 +203,7 @@
 	dwidth = 3;
 	height = 13;
 	id = "huntership";
-	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0);
+	movement_force = list("KNOCKDOWN"=0,"THROW"=0);
 	name = "hunter shuttle";
 	width = 15
 	},
@@ -225,6 +228,12 @@
 /obj/structure/window/plastitanium,
 /obj/structure/window/plastitanium,
 /turf/open/floor/plating,
+/area/shuttle/hunter)
+"X" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/pizzaparty,
+/obj/effect/spawner/lootdrop/pizzaparty,
+/turf/open/floor/pod/dark,
 /area/shuttle/hunter)
 "Z" = (
 /obj/effect/mob_spawn/human/fugitive/bounty/synth{
@@ -389,7 +398,7 @@ a
 a
 b
 J
-x
+X
 x
 s
 K

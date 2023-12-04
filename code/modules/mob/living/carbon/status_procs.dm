@@ -37,6 +37,7 @@
 	. = list()
 	var/obj/item/organ/brain/B = getorganslot(ORGAN_SLOT_BRAIN)
 	if(B)
+		removeNullsFromList(B.traumas)
 		. = B.traumas
 
 /mob/living/carbon/proc/has_trauma_type(brain_trauma_type, resilience)

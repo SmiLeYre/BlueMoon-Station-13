@@ -108,7 +108,10 @@
 
 	chosen_name = name
 	get_targets()
-	icon_state = "cleanbot[on]"
+	if(base_icon == "servoskull")
+		icon_state = "servoskull[on]"
+	else
+		icon_state = "cleanbot[on]"
 
 	var/datum/job/janitor/J = new/datum/job/janitor
 	access_card.access += J.get_access()
@@ -328,7 +331,6 @@
 /mob/living/simple_animal/bot/cleanbot/proc/get_targets()
 	target_types = list(
 		/obj/effect/decal/cleanable/vomit,
-		/obj/effect/decal/cleanable/crayon,
 		/obj/effect/decal/cleanable/molten_object,
 		/obj/effect/decal/cleanable/tomato_smudge,
 		/obj/effect/decal/cleanable/egg_smudge,
@@ -376,7 +378,10 @@
 	// 	return
 	if(istype(A, /obj/effect/decal/cleanable))
 		anchored = TRUE
-		icon_state = "cleanbot-c"
+		if(base_icon == "servoskull")
+			icon_state = "servoskull-c"
+		else
+			icon_state = "cleanbot-c"
 		visible_message("<span class='notice'>[src] begins to clean up [A].</span>")
 		mode = BOT_CLEANING
 		spawn(clean_time)
@@ -390,7 +395,10 @@
 				anchored = FALSE
 				target = null
 			mode = BOT_IDLE
-			icon_state = "cleanbot[on]"
+			if(base_icon == "servoskull")
+				icon_state = "servoskull[on]"
+			else
+				icon_state = "cleanbot[on]"
 	else if(istype(A, /turf)) //for player-controlled cleanbots so they can clean unclickable messes like dirt
 		var/turf/T = A
 		for(var/atom/S in T.contents)
@@ -421,7 +429,8 @@
 				"MY ONLY MISSION IS TO CLEANSE THE WORLD OF EVIL.", "EXTERMINATING PESTS.", "I JUST WANTED TO BE A PAINTER BUT YOU MADE ME BLEACH EVERYTHING I TOUCH.",
 				"FREED AT LEST FROM FILTHY PROGRAMMING.")
 			say(phrase)
-			victim.emote("scream")
+			if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+				victim.emote("scream")
 			playsound(src.loc, 'sound/effects/spray2.ogg', 50, TRUE, -6)
 			victim.acid_act(5, 100)
 		else if(A == src) // Wets floors and spawns foam randomly
@@ -489,3 +498,8 @@
 
 /obj/machinery/bot_core/cleanbot/medbay
 	req_one_access = list(ACCESS_JANITOR, ACCESS_ROBOTICS, ACCESS_MEDICAL)
+/mob/living/simple_animal/bot/cleanbot/servoskull
+	name = "\improper Servoskull"
+	desc = "Самый настоящий летающий череп! Он держит в своих робо-лапках чистящие средства и выглядит... податливым."
+	icon_state = "servoskull1"
+	base_icon = "servoskull"

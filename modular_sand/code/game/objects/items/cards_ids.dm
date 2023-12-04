@@ -1,5 +1,5 @@
 /obj/item/card/id/debug/bst
 	name = "\improper Bluespace Tech"
-	desc = "A Bluespace Tech ID card. Complete access."
-	icon_state = "gold"
-	assignment = "Bluespace Tech"
+	desc = "A Bluespace Technician ID card. Complete access."
+	icon_state = "ert_commander"
+	assignment = "Bluespace Technician"

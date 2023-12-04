@@ -93,7 +93,7 @@ GLOBAL_LIST_EMPTY(plague_rats)
 		var/turf/open/T = src.loc
 		var/datum/gas_mixture/stank = new
 		var/miasma_moles = T.air.get_moles(GAS_MIASMA)
-		stank.set_moles(GAS_MIASMA,5)
+		stank.set_moles(GAS_MIASMA,25)
 		stank.set_temperature(BODYTEMP_NORMAL)
 		if(T.air)
 			if(miasma_moles < 200)

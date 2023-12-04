@@ -3,6 +3,15 @@
 /datum/config_entry/string/new_round_ping
 	default = null
 
+/datum/config_entry/string/active_round_ping
+	default = null
+
+/datum/config_entry/string/passive_round_ping
+	default = null
+
+/datum/config_entry/string/agressive_round_ping
+	default = null
+
 /datum/config_entry/number/max_languages
 	default = 1
 	min_val = -1
@@ -20,11 +29,3 @@
 	min_val = 10
 
 /datum/config_entry/flag/reveal_everything // On Round end, reveal roles and ghosts
-
-/datum/config_entry/flag/allow_silicon_choosing_laws
-
-/datum/config_entry/keyed_list/choosable_laws
-	key_mode = KEY_MODE_TEXT
-	value_mode = VALUE_MODE_TYPE
-	splitter = " | "
-	lowercase_key = FALSE

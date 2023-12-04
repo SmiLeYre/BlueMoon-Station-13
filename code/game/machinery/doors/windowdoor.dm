@@ -164,7 +164,7 @@
 	density = FALSE
 	if(visible)
 		set_opacity(FALSE)
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	update_freelook_sight()
 	if(operating == 1) //emag again
 		operating = FALSE
@@ -184,7 +184,7 @@
 	src.icon_state = src.base_state
 
 	density = TRUE
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	update_freelook_sight()
 	addtimer(CALLBACK(src, .proc/finish_closing), 10)
 	return TRUE
@@ -231,6 +231,7 @@
 	operating = TRUE
 	flick("[src.base_state]spark", src)
 	playsound(src, "sparks", 75, 1)
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	addtimer(CALLBACK(src, .proc/open_windows_me), 6)
 	return TRUE
 

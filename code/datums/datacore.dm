@@ -101,6 +101,7 @@
 		"Science" = GLOB.science_positions,
 		"Supply" = GLOB.supply_positions,
 		"Service" = GLOB.civilian_positions,
+		"Law" = GLOB.law_positions,
 		"Silicon" = GLOB.nonhuman_positions
 	)
 	for(var/datum/data/record/t in GLOB.data_core.general)
@@ -136,6 +137,7 @@
 	var/list/sci = list()
 	var/list/sup = list()
 	var/list/civ = list()
+	var/list/law = list()
 	var/list/bot = list()
 	var/list/misc = list()
 	var/dat = {"
@@ -178,6 +180,9 @@
 		if(department_check in GLOB.civilian_positions)
 			civ[name] = rank
 			department = 1
+		if(department_check in GLOB.law_positions)
+			law[name] = rank
+			department = 1
 		if(department_check in GLOB.nonhuman_positions)
 			bot[name] = rank
 			department = 1
@@ -212,6 +217,11 @@
 		dat += "<tr><th colspan=3>Supply</th></tr>"
 		for(var/name in sup)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[sup[name]]</td></tr>"
+			even = !even
+	if(law.len > 0)
+		dat += "<tr><th colspan=3>Law</th></tr>"
+		for(var/name in law)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[law[name]]</td></tr>"
 			even = !even
 	if(civ.len > 0)
 		dat += "<tr><th colspan=3>Civilian</th></tr>"
@@ -276,7 +286,7 @@
 		G.fields["name"]		= H.real_name
 		G.fields["rank"]		= assignment
 		G.fields["age"]			= H.age
-		G.fields["species"]	= H.dna.species.name
+		G.fields["species"]		= H.dna.species.name
 		G.fields["fingerprint"]	= md5(H.dna.uni_identity)
 		G.fields["p_stat"]		= "Active"
 		G.fields["m_stat"]		= "Stable"
@@ -311,10 +321,13 @@
 		var/datum/data/record/S = new()
 		S.fields["id"]			= id
 		S.fields["name"]		= H.real_name
-		S.fields["criminal"]	= "None"
+		S.fields["criminal"]	= SEC_RECORD_STATUS_NONE
 		S.fields["mi_crim"]		= list()
+		S.fields["mi_crim_d"]	= list()
 		S.fields["ma_crim"]		= list()
+		S.fields["ma_crim_d"]	= "No major crime convictions."
 		S.fields["notes"]		= prefs.security_records || "No notes."
+		LAZYINITLIST(S.fields["comments"])
 		security += S
 
 		//Locked Record

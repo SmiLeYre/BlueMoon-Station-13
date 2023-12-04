@@ -47,7 +47,7 @@
 				/datum/surgery_step/mechanic_close)
 
 /datum/surgery_step/robot_heal
-	name = "repair body (welder/cable)"
+	name = "Отремонтировать (Сварочный Аппарат или Кабель)"
 	implements = list(TOOL_WELDER = 100, /obj/item/stack/cable_coil = 100)
 	repeatable = TRUE
 	time = 15

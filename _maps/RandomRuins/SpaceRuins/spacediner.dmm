@@ -142,6 +142,7 @@
 /area/ruin/space/diner/interior)
 "aA" = (
 /obj/effect/decal/cleanable/cobweb,
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
@@ -422,6 +423,7 @@
 /obj/machinery/firealarm{
 	pixel_y = 24
 	},
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plasteel,
 /area/ruin/space/diner/interior)
 "bs" = (
@@ -437,10 +439,6 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/grill,
-/obj/machinery/light/small/broken{
-	dir = 1;
-	icon_state = "bulb-broken"
-	},
 /obj/machinery/power/apc/highcap/five_k{
 	name = "Space Diner APC";
 	pixel_y = 24
@@ -450,6 +448,10 @@
 "bu" = (
 /obj/machinery/deepfryer,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/broken{
+	dir = 1;
+	icon_state = "bulb-broken"
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/diner/interior)
 "bv" = (
@@ -935,6 +937,7 @@
 	icon_state = "alarm0";
 	pixel_y = -24
 	},
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/diner/interior)
 "cx" = (
@@ -1521,6 +1524,7 @@
 /obj/machinery/button{
 	pixel_y = 24
 	},
+/obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/diner)
 "dG" = (
@@ -1755,6 +1759,37 @@
 /obj/structure/girder/reinforced,
 /turf/open/floor/plating/airless,
 /area/ruin/space/diner)
+"ir" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/engine/airless,
+/area/ruin/space/diner)
+"iv" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating,
+/area/ruin/space/diner/interior)
+"vJ" = (
+/obj/effect/decal/cleanable/dirt{
+	desc = "A thin layer of dust coating the floor.";
+	name = "dust"
+	},
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/carpet,
+/area/ruin/space/diner/interior)
+"CR" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/diner)
+"Yy" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/spawner/lootdrop/salvage,
+/turf/template_noop,
+/area/space/nearstation)
 
 (1,1,1) = {"
 aa
@@ -2055,7 +2090,7 @@ aa
 af
 aa
 aw
-aL
+ir
 aL
 aL
 aL
@@ -2066,7 +2101,7 @@ cz
 ci
 dj
 dv
-aL
+ir
 dS
 av
 af
@@ -2084,7 +2119,7 @@ af
 af
 af
 ax
-aM
+CR
 aM
 aM
 bi
@@ -2389,7 +2424,7 @@ dI
 bw
 ea
 ea
-ea
+Yy
 aa
 aa
 aa
@@ -2403,7 +2438,7 @@ ak
 al
 ag
 aF
-aS
+iv
 bb
 bc
 bo
@@ -2733,7 +2768,7 @@ cO
 cX
 dq
 dC
-dq
+vJ
 dY
 af
 af
@@ -2816,7 +2851,7 @@ aa
 aa
 af
 ag
-aS
+iv
 df
 ds
 ag

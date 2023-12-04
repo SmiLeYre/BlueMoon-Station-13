@@ -54,9 +54,9 @@
 	outfit = /datum/outfit/syndicate_comms_space
 	assignedrole = "Space Syndicate Comms Agent"
 	job_description = "Space Syndicate Comms Agent"
-	short_desc = "You are a syndicate comms agent, employed to listen in on Nanotrasen Comms Chatter."
-	flavour_text = "Use the communication equipment to provide support to any field agents, and sow disinformation to throw Nanotrasen off your trail. Do not let the base fall into enemy hands!"
-	important_info = "DO NOT abandon the base."
+	short_desc = "Вы Специалист Разведки Синдиката, работающий на Аванпосту Прослушки и изучающий аномальное поле Системы Синих Лун."
+	flavour_text = "К сожалению это или к счастью, но сотрудники вашего партнёра, Nanotrasen, начали добычу полезных ископаемых в этом секторе. Следите за вражеской активностью как можно лучше и старайтесь не высовываться. Используйте коммуникационное оборудование для оказания поддержки любым полевым агентам и сотрудникам Космической Станции."
+	important_info = "Вы не Антагонист. Вы можете отправиться на станцию в Эксту. В Динамик вам следует быть ниже травы и тише воды."
 	canloadappearance = TRUE
 
 /datum/outfit/syndicate_comms_space
@@ -84,3 +84,4 @@
 	area_flags = UNIQUE_AREA
 	flags_1 = NONE
 	sound_environment = SOUND_AREA_SPACE
+

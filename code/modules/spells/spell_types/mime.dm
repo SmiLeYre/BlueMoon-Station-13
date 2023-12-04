@@ -22,7 +22,7 @@
 		if(!user.mind.miming)
 			to_chat(usr, "<span class='notice'>You must dedicate yourself to silence first.</span>")
 			return
-		invocation = "<B>[user.real_name]</B> looks as if a wall is in front of [user.p_them()]."
+		invocation = "<B>[user.real_name]</B> looks as if a wall is in front of [user.ru_na()]."
 	else
 		invocation_type ="none"
 	..()
@@ -54,11 +54,13 @@
 	for(var/mob/living/carbon/human/H in targets)
 		H.mind.miming=!H.mind.miming
 		if(H.mind.miming)
-			to_chat(H, "<span class='notice'>You make a vow of silence.</span>")
+			to_chat(H, "<span class='notice'>Вы заключили Обет Молчания... снова?</span>")
 			SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "vow")
 		else
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "vow", /datum/mood_event/broken_vow)
-			to_chat(H, "<span class='notice'>You break your vow of silence.</span>")
+			to_chat(H, "<span class='notice'>Вы нарушили Обет Молчания.</span>")
+			if(!H.mind?.antag_datums)
+				H.add_quirk(/datum/quirk/cursed, STATUS_EFFECT_TRAIT)
 
 // These spells can only be gotten from the "Guide for Advanced Mimery series" for Mime Traitors.
 
@@ -85,7 +87,7 @@
 		if(!user.mind.miming)
 			to_chat(usr, "<span class='notice'>You must dedicate yourself to silence first.</span>")
 			return
-		invocation = "<B>[user.real_name]</B> looks as if a blockade is in front of [user.p_them()]."
+		invocation = "<B>[user.real_name]</B> looks as if a blockade is in front of [user.ru_na()]."
 	else
 		invocation_type ="none"
 	return ..()
@@ -121,7 +123,7 @@
 		if(!user.mind.miming)
 			to_chat(usr, "<span class='notice'>You must dedicate yourself to silence first.</span>")
 			return
-		invocation = "<B>[user.real_name]</B> fires [user.p_their()] finger gun!"
+		invocation = "<B>[user.real_name]</B> fires [user.ru_ego()] finger gun!"
 	else
 		invocation_type ="none"
 	return ..()
@@ -151,7 +153,7 @@
 		if (usr.get_active_held_item())
 			to_chat(usr, "<span class='notice'>Your hands must be free to create the invisible rope.</span>")
 			return
-		invocation = "<B>[usr.real_name]</B> is twirling an invisible rope in [usr.p_their()] hands."
+		invocation = "<B>[usr.real_name]</B> is twirling an invisible rope in [usr.ru_ego()] hands."
 	else
 		invocation_type ="none"
 

@@ -309,7 +309,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		var/list/L
 		S["be_special"] >> L
 		if(islist(L))
-			L -= ROLE_SYNDICATE
+			L -= ROLE_INTEQ
 		S["be_special"] << L
 
 	if(current_version < 51) //humans can have digi legs now, make sure they dont default to them or human players will murder me in my sleep
@@ -472,9 +472,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["menuoptions"] >> menuoptions
 	S["enable_tips"] >> enable_tips
 	S["tip_delay"] >> tip_delay
-	S["pda_style"] >> pda_style
-	S["pda_color"] >> pda_color
-	S["pda_skin"] >> pda_skin
 
 	// Custom hotkeys
 	S["key_bindings"] >> key_bindings
@@ -498,6 +495,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["gfluid_blacklist"]		>> gfluid_blacklist
 	S["new_character_creator"]	>> new_character_creator
 	S["view_pixelshift"]		>> view_pixelshift
+
+	// BlueMoon
+	S["eorg_enabled"]		>> eorg_enabled
 
 	//favorite outfits
 	S["favorite_outfits"] >> favorite_outfits
@@ -551,9 +551,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	ghost_others = sanitize_inlist(ghost_others, GLOB.ghost_others_options, GHOST_OTHERS_DEFAULT_OPTION)
 	menuoptions = SANITIZE_LIST(menuoptions)
 	be_special = SANITIZE_LIST(be_special)
-	pda_style = sanitize_inlist(pda_style, GLOB.pda_styles, initial(pda_style))
-	pda_color = sanitize_hexcolor(pda_color, 6, 1, initial(pda_color))
-	pda_skin = sanitize_inlist(pda_skin, GLOB.pda_reskins, PDA_SKIN_ALT)
 	screenshake = sanitize_integer(screenshake, 0, 800, initial(screenshake))
 	damagescreenshake = sanitize_integer(damagescreenshake, 0, 2, initial(damagescreenshake))
 	autostand = sanitize_integer(autostand, 0, 1, initial(autostand))
@@ -570,6 +567,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//SKYRAT CHANGES BEGIN
 	see_chat_emotes	= sanitize_integer(see_chat_emotes, 0, 1, initial(see_chat_emotes))
 	//SKYRAT CHANGES END
+
+	//BlueMoon
+	eorg_enabled = sanitize_integer(eorg_enabled, 0, 1, initial(eorg_enabled))
 
 	//SPLURT CHANGES BEGIN
 	gfluid_blacklist = sanitize_islist(gfluid_blacklist, list())
@@ -679,9 +679,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["menuoptions"], menuoptions)
 	WRITE_FILE(S["enable_tips"], enable_tips)
 	WRITE_FILE(S["tip_delay"], tip_delay)
-	WRITE_FILE(S["pda_style"], pda_style)
-	WRITE_FILE(S["pda_color"], pda_color)
-	WRITE_FILE(S["pda_skin"], pda_skin)
+
 	WRITE_FILE(S["key_bindings"], key_bindings)
 	WRITE_FILE(S["modless_key_bindings"], modless_key_bindings)
 	WRITE_FILE(S["favorite_outfits"], favorite_outfits)
@@ -706,6 +704,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["gfluid_blacklist"], gfluid_blacklist)
 	WRITE_FILE(S["new_character_creator"], new_character_creator)
 	WRITE_FILE(S["view_pixelshift"], view_pixelshift)
+	WRITE_FILE(S["eorg_enabled"], eorg_enabled)
 
 	var/mob/living/carbon/human/H = parent.mob
 	if(istype(H))
@@ -829,6 +828,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 "butt_visibility"  = GEN_VISIBLE_NO_UNDIES,
 "belly_visibility" = GEN_VISIBLE_NO_UNDIES,
 "anus_visibility" = GEN_VISIBLE_NO_UNDIES,
+"breasts_accessible" = FALSE,
+"cock_accessible" = FALSE,
+"balls_accessible" = FALSE,
+"vag_accessible" = FALSE,
+"butt_accessible" = FALSE,
+"anus_accessible" = FALSE,
 "cock_stuffing" = FALSE,
 "balls_stuffing" = FALSE,
 "vag_stuffing" = FALSE,
@@ -852,8 +857,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 "meat_type" = "Mammalian",
 "body_model" = MALE,
 "body_size" = RESIZE_DEFAULT_SIZE,
+"fuzzy" = FALSE,
 "color_scheme" = OLD_CHARACTER_COLORING,
-
 "neckfire" = FALSE,
 "neckfire_color" = "ffffff"
 )
@@ -883,6 +888,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["gender"] >> gender
 	S["body_model"] >> features["body_model"]
 	S["body_size"] >> features["body_size"]
+	S["feature_fuzzy"] >> features["fuzzy"]
 	S["age"] >> age
 	S["hair_color"] >> hair_color
 	S["facial_hair_color"] >> facial_hair_color
@@ -1058,6 +1064,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//SPLURT edit
 	S["feature_naked_flavor_text"] >> features["naked_flavor_text"]
+	S["feature_custom_species_lore"] >> features["custom_species_lore"]
 	S["feature_neckfire"] >> features["neckfire"]
 	S["feature_neckfire_color"] >> features["neckfire_color"]
 	//end
@@ -1137,6 +1144,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	nameless = sanitize_integer(nameless, 0, 1, initial(nameless))
 	be_random_name = sanitize_integer(be_random_name, 0, 1, initial(be_random_name))
 	be_random_body = sanitize_integer(be_random_body, 0, 1, initial(be_random_body))
+	features["fuzzy"] = sanitize_integer(features["fuzzy"], 0, 1, initial(features["fuzzy"]))
 
 	hair_style = sanitize_inlist(hair_style, GLOB.hair_styles_list)
 	facial_hair_style = sanitize_inlist(facial_hair_style, GLOB.facial_hair_styles_list)
@@ -1228,7 +1236,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	features["breasts_size"] = sanitize_inlist(features["breasts_size"], B_sizes, BREASTS_SIZE_DEF)
 	features["cock_length"] = sanitize_integer(features["cock_length"], min_D, max_D, COCK_SIZE_DEF)
-	features["cock_diameter_ratio"] = sanitize_integer(features["cock_diameter_ratio"], min_diameter_ratio, max_diameter_ratio, COCK_DIAMETER_RATIO_DEF)
+	features["cock_diameter_ratio"] = sanitize_num_clamp(features["cock_diameter_ratio"], min_diameter_ratio, max_diameter_ratio, COCK_DIAMETER_RATIO_DEF) // BLUEMOON EDIT - sanitize_integer заменён на sanitize_num_clamp, т.к. первый округляет значения, а по условиям округление не подходит
 	features["butt_size"] = sanitize_integer(features["butt_size"], min_B, max_B, BUTT_SIZE_DEF)
 	features["belly_size"] = sanitize_integer(features["belly_size"], min_belly, max_belly, BELLY_SIZE_DEF)
 	features["breasts_shape"] = sanitize_inlist(features["breasts_shape"], GLOB.breasts_shapes_list, DEF_BREASTS_SHAPE)
@@ -1253,13 +1261,14 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	custom_speech_verb = sanitize_inlist(custom_speech_verb, GLOB.speech_verbs, "default")
 	custom_tongue = sanitize_inlist(custom_tongue, GLOB.roundstart_tongues, "default")
 
-	security_records = copytext(security_records, 1, MAX_FLAVOR_LEN)
-	medical_records = copytext(medical_records, 1, MAX_FLAVOR_LEN)
+	security_records = copytext_char(security_records, 1, MAX_FLAVOR_LEN)
+	medical_records = copytext_char(medical_records, 1, MAX_FLAVOR_LEN)
 
-	features["flavor_text"]	= copytext(features["flavor_text"], 1, MAX_FLAVOR_LEN)
-	features["naked_flavor_text"] = copytext(features["naked_flavor_text"], 1, MAX_FLAVOR_LEN) //SPLURT edit
-	features["silicon_flavor_text"] = copytext(features["silicon_flavor_text"], 1, MAX_FLAVOR_LEN)
-	features["ooc_notes"] = copytext(features["ooc_notes"], 1, MAX_FLAVOR_LEN)
+	features["flavor_text"]	= copytext_char(features["flavor_text"], 1, MAX_FLAVOR_LEN)
+	features["naked_flavor_text"] = copytext_char(features["naked_flavor_text"], 1, MAX_FLAVOR_LEN) //SPLURT edit
+	features["silicon_flavor_text"] = copytext_char(features["silicon_flavor_text"], 1, MAX_FLAVOR_LEN)
+	features["custom_species_lore"] = copytext_char(features["custom_species_lore"], 1, MAX_FLAVOR_LEN) //SPLURT edit
+	features["ooc_notes"] = copytext_char(features["ooc_notes"], 1, MAX_FLAVOR_LEN)
 
 	//load every advanced coloring mode thing in one go
 	//THIS MUST BE DONE AFTER ALL FEATURE SAVES OR IT WILL NOT WORK
@@ -1353,6 +1362,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	splurt_character_pref_load(S)
 
+	bluemoon_character_pref_load(S)
+
 	return 1
 
 /datum/preferences/proc/save_character(bypass_cooldown = FALSE, export = FALSE)
@@ -1381,6 +1392,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["gender"]					, gender)
 	WRITE_FILE(S["body_model"]				, features["body_model"])
 	WRITE_FILE(S["body_size"]				, features["body_size"])
+	WRITE_FILE(S["feature_fuzzy"]			, features["fuzzy"])
 	WRITE_FILE(S["age"]						, age)
 	WRITE_FILE(S["hair_color"]				, hair_color)
 	WRITE_FILE(S["facial_hair_color"]		, facial_hair_color)
@@ -1441,6 +1453,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_cock_diameter_ratio"], features["cock_diameter_ratio"])
 	WRITE_FILE(S["feature_cock_taur"], features["cock_taur"])
 	WRITE_FILE(S["feature_cock_visibility"], features["cock_visibility"])
+	WRITE_FILE(S["feature_cock_accessible"], features["cock_accessible"])
 	WRITE_FILE(S["feature_cock_stuffing"], features["cock_stuffing"])
 	WRITE_FILE(S["feature_cock_accessible"], features["cock_accessible"])
 
@@ -1449,6 +1462,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_balls_shape"], features["balls_shape"])
 	WRITE_FILE(S["feature_balls_size"], features["balls_size"])
 	WRITE_FILE(S["feature_balls_visibility"], features["balls_visibility"])
+	WRITE_FILE(S["feature_balls_accessible"], features["balls_accessible"])
 	WRITE_FILE(S["feature_balls_stuffing"], features["balls_stuffing"])
 	WRITE_FILE(S["feature_balls_fluid"], features["balls_fluid"])
 	WRITE_FILE(S["feature_balls_accessible"], features["balls_accessible"])
@@ -1460,6 +1474,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_breasts_fluid"], features["breasts_fluid"])
 	WRITE_FILE(S["feature_breasts_producing"], features["breasts_producing"])
 	WRITE_FILE(S["feature_breasts_visibility"], features["breasts_visibility"])
+	WRITE_FILE(S["feature_breasts_accessible"], features["breasts_accessible"])
 	WRITE_FILE(S["feature_breasts_stuffing"], features["breasts_stuffing"])
 	WRITE_FILE(S["feature_breasts_accessible"], features["breasts_accessible"])
 
@@ -1467,6 +1482,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_vag_shape"], features["vag_shape"])
 	WRITE_FILE(S["feature_vag_color"], features["vag_color"])
 	WRITE_FILE(S["feature_vag_visibility"], features["vag_visibility"])
+	WRITE_FILE(S["feature_vag_accessible"], features["vag_accessible"])
 	WRITE_FILE(S["feature_vag_stuffing"], features["vag_stuffing"])
 	WRITE_FILE(S["feature_vag_accessible"], features["vag_accessible"])
 
@@ -1477,6 +1493,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_butt_color"], features["butt_color"])
 	WRITE_FILE(S["feature_butt_size"], features["butt_size"])
 	WRITE_FILE(S["feature_butt_visibility"], features["butt_visibility"])
+	WRITE_FILE(S["feature_butt_accessible"], features["butt_accessible"])
 	WRITE_FILE(S["feature_butt_stuffing"], features["butt_stuffing"])
 	WRITE_FILE(S["feature_butt_accessible"], features["butt_accessible"])
 
@@ -1490,6 +1507,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_has_anus"], features["has_anus"])
 	WRITE_FILE(S["feature_anus_color"], features["anus_color"])
 	WRITE_FILE(S["feature_anus_visibility"], features["anus_visibility"])
+	WRITE_FILE(S["feature_anus_accessible"], features["anus_accessible"])
 	WRITE_FILE(S["feature_anus_shape"], features["anus_shape"])
 	WRITE_FILE(S["feature_anus_stuffing"], features["anus_stuffing"])
 
@@ -1608,6 +1626,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	cit_character_pref_save(S)
 
 	splurt_character_pref_save(S)
+
+	bluemoon_character_pref_save(S)
 
 	return S
 

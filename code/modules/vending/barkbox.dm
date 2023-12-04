@@ -2,7 +2,7 @@
 	name = "Bark Box"
 	desc = "For all your pet needs!"
 	icon_state = "barkbox"
-	product_slogans = "Whuff!;Bark!;Give me a treat!"
+	product_slogans = "Вуф!;Гаф!;Раф-раф!!;Хочу лакомство!!!"
 	products = list(
 				/obj/item/storage/fancy/treat_box = 8,
 				/obj/item/clothing/neck/petcollar = 5,
@@ -23,12 +23,14 @@
 				/obj/item/dildo/knotted = 3
 				)
 	premium = list(
+				/obj/item/bikehorn/rubberducky = 6,
+				/obj/item/toy/fluff/tennis_poly/tri/squeak/rainbow = 1,
 				/obj/item/toy/fluff/tennis_poly/tri/squeak = 1,
 				/obj/item/toy/fluff/bone_poly/squeak = 1
 				)
 	refill_canister = /obj/item/vending_refill/barkbox
-	default_price = PRICE_CHEAP
-	extra_price = PRICE_BELOW_NORMAL
+	default_price = PRICE_NORMAL
+	extra_price = PRICE_ALMOST_ONE_GRAND
 	payment_department = NO_FREEBIES
 
 /obj/item/vending_refill/barkbox

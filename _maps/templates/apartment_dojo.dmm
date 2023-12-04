@@ -1,0 +1,484 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/grass/grass3,
+/area/hilbertshotel)
+"b" = (
+/obj/structure/lattice,
+/obj/machinery/atmospherics/components/unary/outlet_injector/hilbertshotel/layer3{
+	dir = 1
+	},
+/turf/open/space/bluespace,
+/area/hilbertshotel)
+"e" = (
+/obj/structure/flora/tree/jungle{
+	pixel_x = -31;
+	pixel_y = 0
+	},
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/grass/grass3,
+/area/hilbertshotel)
+"f" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/wood/wood_tiled,
+/area/hilbertshotel)
+"g" = (
+/obj/structure/flora/rock,
+/turf/open/floor/grass/grass3,
+/area/hilbertshotel)
+"h" = (
+/obj/effect/turf_decal/siding/dark/end{
+	dir = 8
+	},
+/turf/open/floor/carpet/royalblue,
+/area/hilbertshotel)
+"i" = (
+/obj/structure/lattice,
+/turf/open/space/bluespace,
+/area/hilbertshotel)
+"k" = (
+/obj/structure/flora/tree/spookylog,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/grass/grass3,
+/area/hilbertshotel)
+"l" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/machinery/light/floor,
+/turf/open/floor/grass/grass3,
+/area/hilbertshotel)
+"n" = (
+/turf/open/floor/wood/wood_tiled,
+/area/hilbertshotel)
+"o" = (
+/obj/structure/flora/rock,
+/obj/machinery/light/floor,
+/turf/open/floor/grass/grass3,
+/area/hilbertshotel)
+"p" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/grass/grass3,
+/area/hilbertshotel)
+"q" = (
+/obj/structure/flora/rock,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/hilbertshotel/layer3,
+/turf/open/floor/grass/grass3,
+/area/hilbertshotel)
+"s" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/open/floor/grass/grass3,
+/area/hilbertshotel)
+"u" = (
+/turf/closed/indestructible/wood,
+/area/hilbertshotel)
+"w" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/grass/grass3,
+/area/hilbertshotel)
+"y" = (
+/turf/closed/indestructible/hoteldoor{
+	icon_state = "door_closed";
+	icon = 'icons/obj/doors/puzzledoor/default.dmi'
+	},
+/area/hilbertshotel)
+"z" = (
+/obj/structure/lattice,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/meter,
+/turf/open/space/bluespace,
+/area/hilbertshotel)
+"A" = (
+/obj/effect/turf_decal/siding/dark/end{
+	dir = 1
+	},
+/turf/open/floor/carpet/royalblue,
+/area/hilbertshotel)
+"B" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/open/floor/grass/grass3,
+/area/hilbertshotel)
+"C" = (
+/obj/effect/turf_decal/siding/dark/end{
+	dir = 4
+	},
+/turf/open/floor/carpet/royalblue,
+/area/hilbertshotel)
+"E" = (
+/obj/structure/lattice,
+/obj/machinery/atmospherics/components/unary/tank/air{
+	dir = 8
+	},
+/turf/open/space/bluespace,
+/area/hilbertshotel)
+"F" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 10
+	},
+/turf/closed/indestructible/wood,
+/area/hilbertshotel)
+"H" = (
+/obj/effect/turf_decal/siding/dark/end,
+/turf/open/floor/carpet/royalblue,
+/area/hilbertshotel)
+"J" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/item/lighter/gold,
+/turf/open/floor/grass/grass3,
+/area/hilbertshotel)
+"K" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 5
+	},
+/turf/open/floor/grass/grass3,
+/area/hilbertshotel)
+"M" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/grass/grass3,
+/area/hilbertshotel)
+"O" = (
+/obj/structure/lattice,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/space/bluespace,
+/area/hilbertshotel)
+"P" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/open/floor/grass/grass3,
+/area/hilbertshotel)
+"Q" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 5
+	},
+/turf/open/floor/grass/grass3,
+/area/hilbertshotel)
+"T" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/grass/grass3,
+/area/hilbertshotel)
+"U" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/item/candle/infinite,
+/turf/open/floor/wood/wood_tiled,
+/area/hilbertshotel)
+"W" = (
+/obj/machinery/telecomms/relay/preset/auto,
+/turf/open/floor/catwalk_floor,
+/area/hilbertshotel)
+"X" = (
+/obj/item/candle/infinite,
+/turf/open/floor/wood/wood_tiled,
+/area/hilbertshotel)
+"Z" = (
+/obj/structure/flora/rock,
+/obj/machinery/atmospherics/components/unary/vent_pump/on,
+/turf/open/floor/grass/grass3,
+/area/hilbertshotel)
+
+(1,1,1) = {"
+i
+i
+i
+u
+u
+y
+u
+u
+u
+u
+u
+u
+u
+i
+i
+i
+"}
+(2,1,1) = {"
+i
+i
+u
+a
+a
+s
+J
+P
+a
+a
+s
+a
+a
+u
+i
+i
+"}
+(3,1,1) = {"
+i
+u
+a
+a
+B
+a
+a
+a
+a
+B
+k
+a
+s
+a
+u
+i
+"}
+(4,1,1) = {"
+u
+B
+g
+a
+l
+n
+n
+n
+n
+n
+n
+l
+a
+P
+a
+u
+"}
+(5,1,1) = {"
+u
+a
+a
+l
+n
+n
+X
+A
+H
+X
+n
+n
+l
+a
+a
+u
+"}
+(6,1,1) = {"
+u
+a
+a
+n
+n
+n
+n
+n
+n
+n
+n
+n
+n
+B
+a
+u
+"}
+(7,1,1) = {"
+u
+a
+a
+n
+X
+n
+a
+B
+a
+Z
+f
+U
+f
+M
+Q
+u
+"}
+(8,1,1) = {"
+u
+a
+P
+n
+h
+n
+a
+a
+e
+a
+n
+h
+n
+a
+T
+u
+"}
+(9,1,1) = {"
+u
+a
+a
+n
+C
+n
+a
+a
+a
+s
+n
+C
+n
+a
+w
+u
+"}
+(10,1,1) = {"
+u
+k
+a
+n
+X
+n
+s
+a
+P
+a
+n
+X
+n
+a
+T
+u
+"}
+(11,1,1) = {"
+u
+B
+a
+n
+n
+n
+n
+n
+n
+n
+n
+n
+n
+a
+p
+u
+"}
+(12,1,1) = {"
+u
+a
+a
+l
+n
+n
+X
+A
+H
+X
+n
+n
+l
+a
+T
+u
+"}
+(13,1,1) = {"
+u
+a
+P
+a
+o
+n
+n
+n
+n
+n
+n
+l
+a
+q
+K
+u
+"}
+(14,1,1) = {"
+i
+u
+a
+a
+a
+a
+s
+a
+a
+a
+a
+a
+B
+a
+F
+b
+"}
+(15,1,1) = {"
+i
+i
+u
+a
+s
+a
+a
+a
+P
+a
+k
+a
+a
+u
+O
+W
+"}
+(16,1,1) = {"
+i
+i
+i
+u
+u
+u
+u
+u
+u
+u
+u
+u
+u
+E
+z
+E
+"}

@@ -14,7 +14,7 @@
 	announce_when	= 1
 
 /datum/round_event/radiation_storm/announce(fake)
-	priority_announce("High levels of radiation detected near the station. Maintenance is best shielded from radiation.", "Anomaly Alert", "radiation", has_important_message = TRUE)
+	priority_announce("Вблизи станции обнаружены высокие уровни радиации. Технические тоннели лучше всего защищены от излучения.", "ВНИМАНИЕ: АНОМАЛИЯ", "radiation", has_important_message = TRUE)
 	//sound not longer matches the text, but an audible warning is probably good
 
 /datum/round_event/radiation_storm/start()

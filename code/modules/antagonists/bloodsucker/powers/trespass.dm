@@ -5,8 +5,8 @@
 	desc = "Become mist and advance two tiles in one direction, ignoring all obstacles except for walls. Useful for skipping past doors and barricades."
 	button_icon_state = "power_tres"
 
-	bloodcost = 10
-	cooldown = 80
+	bloodcost = 30
+	cooldown = 180
 	amToggle = FALSE
 	//target_range = 2
 
@@ -87,7 +87,7 @@
 	user.invisibility = INVISIBILITY_MAXIMUM
 
 	// LOSE CUFFS
-	
+
 	// Wait...
 	sleep(mist_delay / 2)
 

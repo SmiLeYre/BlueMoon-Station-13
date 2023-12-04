@@ -1,6 +1,7 @@
 /obj/machinery/computer/pod
 	name = "mass driver launch control"
 	desc = "A combined blastdoor and mass driver control unit."
+	unique_icon = TRUE
 	// processing_flags = START_PROCESSING_MANUALLY
 	/// Connected mass driver
 	var/obj/machinery/mass_driver/connected = null
@@ -84,7 +85,7 @@
 	if(.)
 		return
 	if(!allowed(usr))
-		to_chat(usr, "<span class='warning'>Access denied.</span>")
+		to_chat(usr, "<span class='warning'>Доступ запрещён.</span>")
 		return
 
 	switch(action)

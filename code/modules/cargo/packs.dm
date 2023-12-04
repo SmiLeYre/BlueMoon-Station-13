@@ -18,6 +18,8 @@
 	// this might be all in all unnecessary with current code if some changes are made
 	var/goody = PACK_GOODY_NONE //Small items can be grouped into a single crate.They also come in a closet/lockbox instead of a full crate, so the 700 min doesn't apply
 	var/can_private_buy = TRUE //Can it be purchased privately by each crewmember?
+	/// If this pack comes shipped in a specific pod when launched from the express console
+	var/special_pod
 
 /datum/supply_pack/proc/generate(atom/A, datum/bank_account/paying_account)
 	var/obj/structure/closet/crate/C
@@ -49,3 +51,18 @@
 	else
 		for(var/item in contains)
 			new item(C)
+
+///Easily send a supplypod to an area
+/proc/send_supply_pod_to_area(contents, area_type, pod_type = /obj/structure/closet/supplypod)
+	var/list/areas = get_areas(area_type)
+	if(!LAZYLEN(areas))
+		return FALSE
+	var/list/open_turfs = list()
+	for(var/turf/open/floor/found_turf in get_area_turfs(pick(areas), subtypes = TRUE))
+		open_turfs += found_turf
+
+	if(!length(open_turfs))
+		return FALSE
+
+	new /obj/effect/pod_landingzone (pick(open_turfs), new pod_type (), contents)
+	return TRUE

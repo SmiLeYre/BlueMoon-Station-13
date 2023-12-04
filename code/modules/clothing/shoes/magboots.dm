@@ -73,6 +73,14 @@
 	name = "blood-red magboots"
 	icon_state = "syndiemag0"
 	magboot_state = "syndiemag"
+	slowdown_active = 1
+
+/obj/item/clothing/shoes/magboots/syndie/advance //For the Syndicate Strike Team and Nuclear operative
+	desc = "Reverse-engineered magboots that appear to be based on an advanced model, as they have a lighter magnetic pull. Property of Gorlex Marauders."
+	name = "advanced blood-red magboots"
+	icon_state = "advsyndiemag0"
+	magboot_state = "advsyndiemag"
+	slowdown_active = SHOES_SLOWDOWN
 
 /obj/item/clothing/shoes/magboots/crushing
 	desc = "Normal looking magboots that are altered to increase magnetic pull to crush anything underfoot."
@@ -85,7 +93,8 @@
 		if (A != user && A.lying)
 			A.adjustBruteLoss(rand(10,13))
 			to_chat(A,"<span class='userdanger'>[user]'s magboots press down on you, crushing you!</span>")
-			A.emote("scream")
+			if(!HAS_TRAIT(A, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+				A.emote("scream")
 
 /obj/item/clothing/shoes/magboots/crushing/attack_self(mob/user)
 	. = ..()

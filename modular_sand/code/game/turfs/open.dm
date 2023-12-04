@@ -7,7 +7,7 @@
 /obj/item/wallframe/light_fixture/small/proc/attach_floor(turf/a_floor, mob/user)
 	playsound(src.loc, 'sound/machines/click.ogg', 75, 1)
 	user.visible_message("[user.name] attaches [src] to \the [a_floor].",
-		span_notice("You attach [src] to \the [a_floor]."),
+		"<span class='notice'>You attach [src] to \the [a_floor].</span>",
 		"<span class='italics'>You hear clicking.</span>")
 	a_floor.balloon_alert(user, "attached to floor")
 	var/obj/O = new /obj/structure/light_construct/floor(a_floor, 1, TRUE)

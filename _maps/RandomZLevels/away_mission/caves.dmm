@@ -1197,6 +1197,7 @@
 /area/awaymission/caves/northblock)
 "dL" = (
 /obj/item/stack/sheet/metal,
+/obj/machinery/suit_storage_unit/winter_syndicate,
 /turf/open/floor/plating,
 /area/awaymission/caves/northblock)
 "dM" = (
@@ -1398,13 +1399,10 @@
 /turf/open/floor/plasteel,
 /area/awaymission/caves/listeningpost)
 "ey" = (
-/obj/machinery/suit_storage_unit/mining{
-	desc = "An industrial unit made to hold space suits. Age has seemed to rust the sliding door mechanisms, making it difficult to open.";
-	name = "rusted suit storage unit"
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/suit_storage_unit/winter_syndicate,
 /turf/open/floor/plasteel,
 /area/awaymission/caves/listeningpost)
 "ez" = (
@@ -1510,10 +1508,7 @@
 /area/awaymission/caves/listeningpost)
 "eS" = (
 /obj/machinery/light/small/built,
-/obj/machinery/suit_storage_unit/mining{
-	desc = "An industrial unit made to hold space suits. Age has seemed to rust the sliding door mechanisms, making it difficult to open.";
-	name = "rusted suit storage unit"
-	},
+/obj/machinery/suit_storage_unit/winter_syndicate,
 /turf/open/floor/plasteel,
 /area/awaymission/caves/listeningpost)
 "eT" = (
@@ -2179,6 +2174,19 @@
 /obj/effect/baseturf_helper/asteroid/basalt,
 /turf/closed/wall,
 /area/awaymission/caves/northblock)
+"tO" = (
+/obj/item/clothing/suit/space/hardsuit/wizard,
+/turf/open/floor/plating{
+	initial_gas_mix = "n2=23;o2=14;TEMP=2.7"
+	},
+/area/awaymission/caves/BMP_asteroid)
+"uF" = (
+/obj/item/clothing/suit/space/hardsuit/wizard,
+/turf/open/floor/plasteel/elevatorshaft{
+	initial_gas_mix = "n2=23;o2=14";
+	name = "elevator flooring"
+	},
+/area/awaymission/caves/BMP_asteroid)
 "CY" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2201,6 +2209,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/caves/listeningpost)
+"Jf" = (
+/obj/item/clothing/suit/space/hardsuit/wizard,
+/turf/open/floor/plating/asteroid/basalt{
+	initial_gas_mix = "n2=23;o2=14;TEMP=2.7"
+	},
+/area/awaymission/caves/BMP_asteroid)
 
 (1,1,1) = {"
 aa
@@ -4465,7 +4479,7 @@ bL
 bL
 dX
 fy
-fy
+tO
 dW
 bL
 dW
@@ -7260,7 +7274,7 @@ bL
 bL
 bV
 cj
-bV
+Jf
 bV
 bV
 bV
@@ -14490,7 +14504,7 @@ bV
 bV
 fJ
 fQ
-fQ
+uF
 fQ
 fQ
 fJ

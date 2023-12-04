@@ -12,7 +12,7 @@
 /obj/item/encryptionkey/Initialize(mapload)
 	. = ..()
 	if(!length(channels) && !translate_binary)
-		desc = "An encryption key for a radio headset.  Has no special codes in it. You should probably tell a coder!"
+		desc = "An encryption key for a radio headset. Has no special codes in it. You should probably tell a coder!"
 
 /obj/item/encryptionkey/examine(mob/user)
 	. = ..()
@@ -26,9 +26,22 @@
 		. += "<span class='notice'>It also allows access to the special binary channel used by silicons."
 
 /obj/item/encryptionkey/syndicate
-	name = "syndicate encryption key"
+	name = "illegal encryption key"
 	icon_state = "syn_cypherkey"
 	channels = list(RADIO_CHANNEL_SYNDICATE = 1)
+	syndie = TRUE //Signifies that it de-crypts Syndicate transmissions
+
+/obj/item/encryptionkey/inteq
+	name = "inteQ Encryption Key"
+	icon_state = "inteq_cypherkey"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/sol_misc.dmi'
+	channels = list(RADIO_CHANNEL_INTEQ = 1)
+	syndie = TRUE //Signifies that it de-crypts Syndicate transmissions
+
+/obj/item/encryptionkey/pirate
+	name = "pirate Encryption Key"
+	icon_state = "syn_cypherkey"
+	channels = list(RADIO_CHANNEL_PIRATE = 1)
 	syndie = TRUE //Signifies that it de-crypts Syndicate transmissions
 
 /obj/item/encryptionkey/binary
@@ -123,8 +136,38 @@
 	independent = TRUE
 	channels = list(RADIO_CHANNEL_CENTCOM = 1)
 
+/obj/item/encryptionkey/headset_cargo/tarkoff
+	name = "Tarkof Industry Radio Encryption Key"
+	channels = list(RADIO_CHANNEL_TARKOFF = 1)
+	independent = TRUE
+
+/obj/item/encryptionkey/headset_syndicate/ds1
+	name = "DS1 Radio Encryption Key"
+	channels = list(RADIO_CHANNEL_DS1 = 1)
+	independent = TRUE
+
+/obj/item/encryptionkey/headset_syndicate/ds2
+	name = "DS2 Radio Encryption Key"
+	channels = list(RADIO_CHANNEL_DS2 = 1)
+	independent = TRUE
+
+/obj/item/encryptionkey/headset_syndicate/sol
+	name = "SolFed Encryption Key"
+	channels = list(RADIO_CHANNEL_SOL = 1)
+	icon_state = "solgov_cypherkey"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/sol_misc.dmi'
+	independent = TRUE
+
+/obj/item/encryptionkey/headset_syndicate/nri
+	name = "NRI Encryption Key"
+	channels = list(RADIO_CHANNEL_NRI = 1)
+	icon_state = "rus_cypherkey"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/rus/rus_misc.dmi'
+	independent = TRUE
+
 /obj/item/encryptionkey/ai //ported from NT, this goes 'inside' the AI.
 	channels = list(RADIO_CHANNEL_COMMAND = 1, RADIO_CHANNEL_SECURITY = 1, RADIO_CHANNEL_ENGINEERING = 1, RADIO_CHANNEL_SCIENCE = 1, RADIO_CHANNEL_MEDICAL = 1, RADIO_CHANNEL_SUPPLY = 1, RADIO_CHANNEL_SERVICE = 1, RADIO_CHANNEL_AI_PRIVATE = 1)
 
 /obj/item/encryptionkey/secbot
 	channels = list(RADIO_CHANNEL_AI_PRIVATE = 1, RADIO_CHANNEL_SECURITY = 1)
+

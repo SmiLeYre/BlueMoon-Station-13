@@ -294,6 +294,13 @@
 	extra_color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_GREEN
 
+/datum/sprite_accessory/snouts/mam_snouts/skulldog_alt
+	name = "Skulldog ALT"
+	icon_state = "skulldog ALT"
+	extra = TRUE
+	extra_color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
 /datum/sprite_accessory/snouts/mam_snouts/toucan
 	name = "Toucan"
 	icon_state = "toucan"
@@ -307,6 +314,16 @@
 /datum/sprite_accessory/snouts/mam_snouts/redpandaalt
 	name = "WahCoon ALT"
 	icon_state = "wahalt"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/lcanidalt2
+	name = "Fox ALT2"
+	icon_state = "lcanidalt2"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/huskyalt //this for only one pixel!!!
+	name = "Husky ALT"
+	icon_state = "huskyalt"
 	matrixed_sections = MATRIX_RED_GREEN
 
 /******************************************

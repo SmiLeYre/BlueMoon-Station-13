@@ -1,4 +1,3 @@
-
 /obj/item/clothing/gloves/fingerless
 	name = "fingerless gloves"
 	desc = "Plain black gloves without fingertips for the hard working."
@@ -86,6 +85,8 @@
 
 /obj/item/clothing/gloves/fingerless/pugilist/crafted/reskin_obj(mob/M)
 	. = ..()
+	if(!.)
+		return
 	switch(current_skin)
 		if("Short")
 			item_state = "armwraps"
@@ -337,7 +338,7 @@
 	name = "black gloves"
 	desc = "Gloves made with completely frictionless, insulated cloth, easier to steal from people with."
 	icon_state = "thief"
-	item_state = "blackgloves"
+	item_state = "sprayon"
 	siemens_coefficient = 0
 	permeability_coefficient = 0.05
 	strip_delay = 80
@@ -367,6 +368,9 @@
 	name = "polychromic maid gloves"
 	desc = "Colourable maid gloves!"
 	icon_state = "maid_arms"
+	unique_reskin = list(
+		"Purple" = list("icon_state" = "maid_arms_p")
+	)
 
 /obj/item/clothing/gloves/polymaid/ComponentInitialize()
 	. = ..()

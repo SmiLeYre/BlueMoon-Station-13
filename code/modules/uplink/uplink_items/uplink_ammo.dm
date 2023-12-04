@@ -293,7 +293,7 @@
 			and broca systems, making it impossible for them to move or speak for some time."
 	item = /obj/item/storage/box/syndie_kit/bioterror
 	cost = 6
-	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS
+	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE
 
 /datum/uplink_item/ammo/bolt_action
 	name = "Surplus Rifle Clip"
@@ -314,11 +314,25 @@
 	desc = "A duffel bag containing ammo for three full reloads of the incendiary carbine and flash bang launcher that are equipped on a standard Dark Gygax exosuit."
 	item = /obj/item/storage/backpack/duffelbag/syndie/ammo/dark_gygax
 	cost = 4
-	purchasable_from = UPLINK_NUKE_OPS
+	purchasable_from = UPLINK_SYNDICATE
 
 /datum/uplink_item/ammo/mauler/bag
 	name = "Mauler Ammo Bag"
 	desc = "A duffel bag containing ammo for three full reloads of the LMG, scattershot carbine, and SRM-8 missile laucher that are equipped on a standard Mauler exosuit."
 	item = /obj/item/storage/backpack/duffelbag/syndie/ammo/mauler
+	cost = 6
+	purchasable_from = UPLINK_SYNDICATE
+
+/datum/uplink_item/ammo/hermes/bag
+	name = "Hermes Ammo Bag"
+	desc = "A duffel bag containing ammo for three full reloads of the incendiary carbine and flash bang launcher that are equipped on a standard Hermes exosuit."
+	item = /obj/item/storage/backpack/duffelbag/syndie/inteq/ammo/hermes
+	cost = 4
+	purchasable_from = UPLINK_NUKE_OPS
+
+/datum/uplink_item/ammo/ares/bag
+	name = "Ares Ammo Bag"
+	desc = "A duffel bag containing ammo for three full reloads of the LMG, scattershot carbine, and SRM-8 missile laucher that are equipped on a standard Ares exosuit."
+	item = /obj/item/storage/backpack/duffelbag/syndie/inteq/ammo/ares
 	cost = 6
 	purchasable_from = UPLINK_NUKE_OPS

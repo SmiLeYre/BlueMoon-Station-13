@@ -1,4 +1,3 @@
-//Hyper stuff
 /obj/item/bdsm_whip
 	name = "bdsm whip"
 	desc = "A less lethal version of the whip the librarian has. Still hurts, but just the way you like it."
@@ -9,7 +8,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	damtype = LUST_DAMAGE
 	throwforce = 0
-	force = 5
+	force = 15
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("flogged", "whipped", "lashed", "disciplined")
 	hitsound = 'sound/weapons/whip.ogg'
@@ -19,18 +18,16 @@
 	icon = 'modular_splurt/icons/obj/items_and_weapons.dmi'
 	desc = "For teaching a lesson in a more compact fashion."
 	icon_state = "ridingcrop"
-	force = 10
-
-/obj/item/bdsm_whip/suicide_act(mob/user)
-		user.visible_message(span_suicide("[user] is getting just a little too kinky!"))
-		return (OXYLOSS)
+	force = 30
 
 /obj/item/bdsm_whip/attack(mob/M, mob/user)
-	if(user.zone_selected == BODY_ZONE_PRECISE_GROIN)
-		playsound(loc, 'sound/weapons/whip.ogg', 30)
-		M.visible_message(span_userdanger("[user] has [pick(attack_verb)] [M] on the ass!"))
-	else
-		return ..(M, user)
+	. = ..()
+	M.Jitter(10)
+	M.Dizzy(10)
+
+/obj/item/bdsm_whip/suicide_act(mob/user)
+		user.visible_message("<span class='suicide'>[user] is getting just a little too kinky!</span>")
+		return (OXYLOSS)
 
 /obj/item/khopesh
 	name = "khopesh"
@@ -54,5 +51,5 @@
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
 
 /obj/item/khopesh/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is falling on [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
+	user.visible_message("<span class='suicide'>[user] is falling on [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return(BRUTELOSS)

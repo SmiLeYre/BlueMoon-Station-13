@@ -40,6 +40,8 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 	jobs["Detective"] = 13
 	jobs["Brig Physician"] = 14
 	jobs["Peacekeeper"] = 15
+	jobs["Lawyer"] = 16
+	jobs["NanoTrasen Representative"] = 17
 	// Medical
 	jobs["Chief Medical Officer"] = 20
 	jobs["Chemist"] = 21
@@ -51,6 +53,7 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 	jobs["Research Director"] = 30
 	jobs["Scientist"] = 31
 	jobs["Roboticist"] = 32
+	jobs["Expeditor"] = 33 //BlueMoon edit
 	// Engineering
 	jobs["Chief Engineer"] = 40
 	jobs["Station Engineer"] = 41
@@ -69,9 +72,10 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 	jobs["Clown"] = 66
 	jobs["Mime"] = 67
 	jobs["Janitor"] = 68
-	jobs["Lawyer"] = 69
 	jobs["Psychologist"] = 71
 	jobs["Bridge Officer"] = 72
+	jobs["Bouncer"] = 73
+	jobs["Entertainer"] = 74 // BLUEMOON ADD
 	// Central Command
 	jobs["Admiral"] = 200
 	jobs["CentCom Commander"] = 210
@@ -154,6 +158,8 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 					continue
 
 				I = H.wear_id ? H.wear_id.GetID() : null
+				if(!I)
+					I = H.wear_neck ? H.wear_neck.GetID() : null
 
 				if (I)
 					name = I.registered_name

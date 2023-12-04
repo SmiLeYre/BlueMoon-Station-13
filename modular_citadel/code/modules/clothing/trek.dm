@@ -66,7 +66,7 @@
 		/obj/item/reagent_containers/glass/beaker,
 		/obj/item/storage/pill_bottle,
 		/obj/item/taperecorder)
-	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0)
+	armor = list(MELEE = 35, BULLET = 30, LASER = 30, ENERGY = 40, BOMB = 25, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 10)
 	var/unbuttoned = FALSE
 
 /obj/item/clothing/suit/storage/fluff/fedcoat/verb/toggle()
@@ -95,14 +95,17 @@
 /obj/item/clothing/suit/storage/fluff/fedcoat/medsci
 	icon_state = "fedblue"
 	item_state = "fedblue"
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0)
 
 /obj/item/clothing/suit/storage/fluff/fedcoat/eng
 	icon_state = "fedeng"
 	item_state = "fedeng"
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0)
 
 /obj/item/clothing/suit/storage/fluff/fedcoat/capt
 	icon_state = "fedcapt"
 	item_state = "fedcapt"
+	armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90, "wound" = 10)
 
 //"modern" ones for fancy
 
@@ -122,20 +125,24 @@
 		/obj/item/reagent_containers/glass/bottle/vial,/obj/item/reagent_containers/glass/beaker,
 		/obj/item/reagent_containers/pill,/obj/item/storage/pill_bottle, /obj/item/restraints/handcuffs,/obj/item/hypospray
 		)
-	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0)
+	armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90, "wound" = 10)
 
 //Variants
 /obj/item/clothing/suit/storage/fluff/modernfedcoat/medsci
 	icon_state = "fedmodernblue"
 	item_state = "fedmodernblue"
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0, "wound" = 0)
+	
 
 /obj/item/clothing/suit/storage/fluff/modernfedcoat/eng
 	icon_state = "fedmoderneng"
 	item_state = "fedmoderneng"
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0, "wound" = 0)
 
 /obj/item/clothing/suit/storage/fluff/modernfedcoat/sec
 	icon_state = "fedmodernsec"
 	item_state = "fedmodernsec"
+	armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90, "wound" = 10)
 
 /obj/item/clothing/head/caphat/formal/fedcover
 	name = "Federation Officer's Cap"

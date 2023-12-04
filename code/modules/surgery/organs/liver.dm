@@ -4,6 +4,8 @@
 
 /obj/item/organ/liver
 	name = "liver"
+	ru_name = "печень"
+	ru_name_capital = "Печень"
 	icon_state = "liver"
 	w_class = WEIGHT_CLASS_NORMAL
 	zone = BODY_ZONE_CHEST
@@ -96,6 +98,21 @@
 /obj/item/organ/liver/ipc
 	name = "reagent processing liver"
 	icon_state = "liver-c"
+	organ_flags = ORGAN_SYNTHETIC // BLUEMOON ADD - органы синтетиков не должны гнить и должны быть подвержены ЭМИ
+
+// BLUEMOON ADD START - шанс на перманентный выход из строя
+/obj/item/organ/liver/ipc/emp_act(severity)
+	. = ..()
+	if(. & EMP_PROTECT_SELF)
+		return
+	if(!COOLDOWN_FINISHED(src, severe_cooldown)) //So we cant just spam emp to kill people.
+		owner.adjustToxLoss(10) // Урон только для людей
+		COOLDOWN_START(src, severe_cooldown, 10 SECONDS)
+	if(prob(10)) //Chance of permanent effects
+		organ_flags |= ORGAN_SYNTHETIC_EMP //Starts organ faliure - gonna need replacing soon.
+		if(HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM))
+			to_chat(owner, span_userdanger("Fatal failure detected in [src] - Seek for replace immediately."))
+// BLUEMOON ADD END
 
 /obj/item/organ/liver/cybernetic
 	name = "basic cybernetic liver"

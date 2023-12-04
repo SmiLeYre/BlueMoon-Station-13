@@ -4,6 +4,8 @@
 
 /obj/item/organ/eyes
 	name = BODY_ZONE_PRECISE_EYES
+	ru_name = "глаза"
+	ru_name_capital = "Глаза"
 	icon_state = "eyeballs"
 	desc = "I see you!"
 	zone = BODY_ZONE_PRECISE_EYES
@@ -421,15 +423,22 @@
 /obj/item/organ/eyes/ipc
 	name = "ipc eyes"
 	icon_state = "cybernetic_eyeballs"
+	organ_flags = ORGAN_SYNTHETIC // BLUEMOON ADD - органы синтетиков не должны гнить и должны быть подвержены ЭМИ
 
 /obj/item/organ/eyes/ipc/emp_act(severity)
 	. = ..()
 	if(!owner || . & EMP_PROTECT_SELF)
 		return
-	to_chat(owner, "<span class='warning'>Alert: Perception visuals damaged!</span>")
-	owner.flash_act(visual = 1)
-	if(severity >= 70)
-		owner.adjustOrganLoss(ORGAN_SLOT_EYES, 20)
+	to_chat(owner, "<span class='warning'>Alert: Perception visuals overload!</span>")
+	owner.flash_act(intensity = 0, visual = TRUE)
+
+	// BLUEMOON ADD START - шанс на перманентный выход из строя
+	owner.blur_eyes(rand(5,10))
+	if(prob(10)) //Chance of permanent effects
+		organ_flags |= ORGAN_SYNTHETIC_EMP //Starts organ faliure - gonna need replacing soon.
+		if(HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM))
+			to_chat(owner, span_userdanger("Fatal failure detected in \the [src] - Seek for replace immediately."))
+	// BLUEMOON ADD END
 
 /obj/item/organ/eyes/night_vision/arachnid
 	name = "arachnid eyes"

@@ -24,6 +24,17 @@
 #define AIRLOCK_DENY	5
 #define AIRLOCK_EMAG	6
 
+#define AIRLOCK_FRAME_CLOSED "closed"
+#define AIRLOCK_FRAME_CLOSING "closing"
+#define AIRLOCK_FRAME_OPEN "open"
+#define AIRLOCK_FRAME_OPENING "opening"
+
+#define AIRLOCK_LIGHT_BOLTS "bolts"
+#define AIRLOCK_LIGHT_EMERGENCY "emergency"
+#define AIRLOCK_LIGHT_DENIED "denied"
+#define AIRLOCK_LIGHT_CLOSING "closing"
+#define AIRLOCK_LIGHT_OPENING "opening"
+
 #define AIRLOCK_SECURITY_NONE			0 //Normal airlock				//Wires are not secured
 #define AIRLOCK_SECURITY_METAL			1 //Medium security airlock		//There is a simple metal over wires (use welder)
 #define AIRLOCK_SECURITY_PLASTEEL_I_S	2 								//Sliced inner plating (use crowbar), jumps to 0
@@ -89,6 +100,7 @@
 	var/airlock_material //material of inner filling; if its an airlock with glass, this should be set to "glass"
 	var/overlays_file = 'icons/obj/doors/airlocks/station/overlays.dmi'
 	var/note_overlay_file = 'icons/obj/doors/airlocks/station/overlays.dmi' //Used for papers and photos pinned to the airlock
+	var/cutAiWire = FALSE
 
 	var/cyclelinkeddir = 0
 	var/obj/machinery/door/airlock/cyclelinkedairlock
@@ -105,6 +117,7 @@
 
 	/// sigh
 	var/unelectrify_timerid
+	var/advactivator_action = FALSE
 
 /obj/machinery/door/airlock/Initialize(mapload)
 	. = ..()
@@ -113,7 +126,7 @@
 		set_frequency(frequency)
 
 	if(closeOtherId != null)
-		addtimer(CALLBACK(.proc/update_other_id), 5)
+		addtimer(CALLBACK(src, .proc/update_other_id), 5)
 	if(glass)
 		airlock_material = "glass"
 	if(security_level > AIRLOCK_SECURITY_METAL)
@@ -488,6 +501,9 @@
 					lights_overlay = get_airlock_overlay("lights_bolts", overlays_file, ABOVE_LIGHTING_LAYER, ABOVE_LIGHTING_PLANE)
 				else if(emergency)
 					lights_overlay = get_airlock_overlay("lights_emergency", overlays_file, ABOVE_LIGHTING_LAYER, ABOVE_LIGHTING_PLANE)
+				else
+					lights_overlay = get_airlock_overlay("lights_poweron", overlays_file, ABOVE_LIGHTING_LAYER, ABOVE_LIGHTING_PLANE)
+					light_color = LIGHT_COLOR_BLUE
 			if(note)
 				note_overlay = get_airlock_overlay(notetype, note_overlay_file)
 
@@ -826,9 +842,9 @@
 				H.visible_message("<span class='danger'>[user] headbutts the airlock.</span>", \
 									"<span class='userdanger'>You headbutt the airlock!</span>")
 				H.DefaultCombatKnockdown(100)
-				H.apply_damage(10, BRUTE, BODY_ZONE_HEAD)
+				H.apply_damage(5, BRUTE, BODY_ZONE_HEAD)
 			else
-				visible_message("<span class='danger'>[user] headbutts the airlock. Good thing [user.p_theyre()] wearing a helmet.</span>")
+				visible_message("<span class='danger'>[user] headbutts the airlock. Good thing [user.ru_who()] wearing a helmet.</span>")
 	else
 		return ..()
 
@@ -1051,9 +1067,9 @@
 			if(obj_integrity < max_integrity)
 				if(!W.tool_start_check(user, amount=0))
 					return
-				user.visible_message("[user] is welding the airlock.", \
-								"<span class='notice'>You begin repairing the airlock...</span>", \
-								"<span class='italics'>You hear welding.</span>")
+				user.visible_message("[user] чинит шлюз сваркой.", \
+								"<span class='notice'>Вы начинаете чинить шлюз...</span>", \
+								"<span class='italics'>Вы слышите звук сварки.</span>")
 				if(W.use_tool(src, user, 40, volume=50, extra_checks = CALLBACK(src, .proc/weld_checks, W, user)))
 					obj_integrity = max_integrity
 					stat &= ~BROKEN
@@ -1107,7 +1123,7 @@
 			user.DefaultCombatKnockdown(60)
 			return
 		user.visible_message("<span class='notice'>[user] removes [charge] from [src].</span>", \
-							 "<span class='notice'>You gently pry out [charge] from [src] and unhook its wires.</span>")
+							"<span class='notice'>You gently pry out [charge] from [src] and unhook its wires.</span>")
 		charge.forceMove(get_turf(user))
 		charge = null
 		return
@@ -1201,7 +1217,7 @@
 	update_freelook_sight()
 	sleep(4)
 	density = FALSE
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	sleep(1)
 	layer = OPEN_DOOR_LAYER
 	update_icon(AIRLOCK_OPEN, 1)
@@ -1243,11 +1259,11 @@
 	layer = CLOSED_DOOR_LAYER
 	if(air_tight)
 		density = TRUE
-		air_update_turf(1)
+		air_update_turf(TRUE)
 	sleep(1)
 	if(!air_tight)
 		density = TRUE
-		air_update_turf(1)
+		air_update_turf(TRUE)
 	sleep(4)
 	if(!safe)
 		crush()
@@ -1265,6 +1281,7 @@
 /obj/machinery/door/airlock/proc/prison_open()
 	if(obj_flags & EMAGGED)
 		return
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	locked = FALSE
 	src.open()
 	locked = TRUE
@@ -1305,6 +1322,7 @@
 		return
 	operating = TRUE
 	update_icon(AIRLOCK_EMAG, 1)
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	addtimer(CALLBACK(src, .proc/open_sesame), 6)
 	return TRUE
 
@@ -1402,6 +1420,16 @@
 	if(obj_integrity < (0.75 * max_integrity))
 		update_icon()
 
+/obj/machinery/door/airlock/proc/prepare_deconstruction_assembly(obj/structure/door_assembly/assembly)
+	assembly.heat_proof_finished = heat_proof //tracks whether there's rglass in
+	assembly.set_anchored(TRUE)
+	assembly.glass = glass
+	assembly.state = AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS
+	assembly.created_name = name
+	assembly.previous_assembly = previous_airlock
+	assembly.update_name()
+	assembly.update_icon()
+	assembly.update_appearance()
 
 /obj/machinery/door/airlock/deconstruct(disassembled = TRUE, mob/user)
 	if(!(flags_1 & NODECONSTRUCT_1))
@@ -1411,14 +1439,7 @@
 		else
 			A = new /obj/structure/door_assembly(loc)
 			//If you come across a null assemblytype, it will produce the default assembly instead of disintegrating.
-		A.heat_proof_finished = src.heat_proof //tracks whether there's rglass in
-		A.setAnchored(TRUE)
-		A.glass = src.glass
-		A.state = AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS
-		A.created_name = name
-		A.previous_assembly = previous_airlock
-		A.update_name()
-		A.update_icon()
+		prepare_deconstruction_assembly(A)
 
 		if(!disassembled)
 			if(A)
@@ -1526,6 +1547,8 @@
 /obj/machinery/door/airlock/ui_act(action, params)
 	if(..())
 		return
+	if(params["ic_advactivator"])
+		advactivator_action = TRUE
 	if(!user_allowed(usr))
 		return
 	switch(action)
@@ -1574,9 +1597,10 @@
 		if("open-close")
 			user_toggle_open(usr)
 			. = TRUE
+	advactivator_action = FALSE
 
 /obj/machinery/door/airlock/proc/user_allowed(mob/user)
-	return (hasSiliconAccessInArea(user) && canAIControl(user)) || IsAdminGhost(user)
+	return (hasSiliconAccessInArea(user) && canAIControl(user)) || IsAdminGhost(user) || advactivator_action
 
 /obj/machinery/door/airlock/proc/shock_restore(mob/user)
 	if(!user_allowed(user))

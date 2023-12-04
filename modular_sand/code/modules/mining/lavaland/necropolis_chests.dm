@@ -146,7 +146,6 @@
 	damage_type = BRUTE
 	hitsound = 'sound/effects/splat.ogg'
 	knockdown = 0
-	var/chain
 
 /obj/item/projectile/heckhook/fire(setAngle)
 	if(firer)
@@ -156,7 +155,7 @@
 /obj/item/projectile/heckhook/on_hit(atom/target)
 	. = ..()
 	var/atom/A = target
-	A.visible_message(span_danger("[A] is snagged by [firer]'s hook!"))
+	A.visible_message("<span class='danger'>[A] is snagged by [firer]'s hook!</span>")
 	new /datum/forced_movement(firer, get_turf(A), 1, TRUE)
 
 /obj/item/projectile/heckhook/Destroy()
@@ -184,7 +183,7 @@
 		to_chat(user, "You will now fire normal shotgun rounds.")
 
 /obj/item/gun/ballistic/revolver/doublebarrel/super/sawoff(mob/user)
-	to_chat(user, span_warning("Why would you mutilate this work of art?"))
+	to_chat(user, "<span class='warning'>Why would you mutilate this work of art?</span>")
 	return
 
 /obj/item/gun/ballistic/revolver/doublebarrel/super/upgraded
@@ -235,7 +234,7 @@
 
 /obj/item/crucible/suicide_act(mob/living/carbon/user)
 	if(wielded)
-		user.visible_message(span_suicide("[user] DOOMs themselves with the [src]!"))
+		user.visible_message("<span class='suicide'>[user] DOOMs themselves with the [src]!</span>")
 
 		var/obj/item/bodypart/head/myhead = user.get_bodypart(BODY_ZONE_HEAD)//stole from chainsaw code
 		var/obj/item/organ/brain/B = user.getorganslot(ORGAN_SLOT_BRAIN)
@@ -250,12 +249,12 @@
 					myhead.drop_limb()
 				sleep(3)
 			else
-				user.visible_message(span_suicide("[user] panics and starts choking to death!"))
+				user.visible_message("<span class='suicide'>[user] panics and starts choking to death!</span>")
 				return OXYLOSS
 
 
 	else
-		user.visible_message(span_suicide("[user] begins beating [user.p_them()]self to death with \the [src]'s handle! It probably would've been cooler if [user.p_they()] turned it on first!"))
+		user.visible_message("<span class='suicide'>[user] begins beating themself to death with \the [src]'s handle! It probably would've been cooler if [user.ru_who()] turned it on first!</span>")
 	return BRUTELOSS
 
 /obj/item/crucible/update_icon_state()
@@ -335,8 +334,8 @@
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(C.wear_mask)
-			in_mouth = ", barely missing [user.p_their()] nose"
-	. = span_warning("[user] swings [user.p_their()] [name][in_mouth]. [user.p_they(TRUE)] light[user.p_s()] [user.p_their()] [A.name] in the process.")
+			in_mouth = ", barely missing [user.ru_ego()] nose"
+	. = "<span class='warning'>[user] swings [user.ru_ego()] [name][in_mouth]. [user.ru_who(TRUE)] light[user.p_s()] [user.ru_ego()] [A.name] in the process.</span>"
 	playsound(loc, hitsound, get_clamped_volume(), 1, -1)
 	add_fingerprint(user)
 
@@ -344,29 +343,42 @@
 /obj/item/clothing/suit/space/hardsuit/deathsquad/praetor
 	name = "Praetor Suit"
 	desc = "And those that tasted the bite of his sword named him... The Doom Slayer."
-	armor = list("melee" = 75, "bullet" = 55, "laser" = 55, "energy" = 45, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
+	armor = list(MELEE = 70, BULLET = 40, LASER = 10, ENERGY = 10, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, MAGIC = 50, WOUND = 40)
 	strip_delay = 130
+	slowdown = 0
 	icon = 'modular_sand/icons/obj/clothing/suits.dmi'
 	icon_state = "praetor"
 	mob_overlay_icon = 'modular_sand/icons/mob/clothing/suit.dmi'
 	anthro_mob_worn_overlay = 'modular_sand/icons/mob/clothing/suit_digi.dmi'
 	item_state = "praetor"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/deathsquad/praetor
-	slowdown = 0
-	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
-	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	resistance_flags = FIRE_PROOF | LAVA_PROOF | ACID_PROOF | GOLIATH_RESISTANCE
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	clothing_flags = THICKMATERIAL // no space protection
+	tail_state = "praetor"
 
 /obj/item/clothing/head/helmet/space/hardsuit/deathsquad/praetor
 	name = "Praetor Suit helmet"
 	desc = "That's one doomed space marine."
-	armor = list("melee" = 75, "bullet" = 55, "laser" = 55, "energy" = 45, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
+	armor = list(MELEE = 70, BULLET = 40, LASER = 10, ENERGY = 10, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, MAGIC = 50, WOUND = 40)
 	strip_delay = 130
 	icon = 'modular_sand/icons/obj/clothing/hats.dmi'
 	icon_state = "praetor"
 	mob_overlay_icon = 'modular_sand/icons/mob/clothing/head.dmi'
 	anthro_mob_worn_overlay  = 'modular_sand/icons/mob/clothing/head_muzzled.dmi'
-	mutantrace_variation = STYLE_MUZZLE | STYLE_NO_ANTHRO_ICON
-	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	resistance_flags = FIRE_PROOF | LAVA_PROOF | ACID_PROOF | GOLIATH_RESISTANCE
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	clothing_flags = THICKMATERIAL | ALLOWINTERNALS // no space protection
+
+/obj/item/clothing/head/helmet/space/hardsuit/deathsquad/praetor/equipped(mob/living/carbon/human/user, slot)
+	..()
+	if (slot == ITEM_SLOT_HEAD)
+		ADD_TRAIT(user, TRAIT_ASHSTORM_IMMUNE, "praetor")
+
+/obj/item/clothing/head/helmet/space/hardsuit/deathsquad/praetor/dropped(mob/living/carbon/human/user)
+	..()
+	if (HAS_TRAIT_FROM(user, TRAIT_ASHSTORM_IMMUNE, "praetor"))
+		REMOVE_TRAIT(user, TRAIT_ASHSTORM_IMMUNE, "praetor")
 
 //drake
 /obj/structure/closet/crate/necropolis/dragon/PopulateContents()
@@ -437,12 +449,12 @@
 	sharpness = SHARP_NONE
 	if(ghost_counter >= 4)
 		sharpness = SHARP_POINTY
-	user.visible_message(span_danger("[user] strikes with the force of [ghost_counter] vengeful spirits!"))
+	user.visible_message("<span class='danger'>[user] strikes with the force of [ghost_counter] vengeful spirits!</span>")
 
 /obj/item/melee/ghost_sword/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	var/ghost_counter = ghost_check()
 	final_block_chance = clamp((ghost_counter * 5), 10, 50)
-	owner.visible_message(span_danger("[owner] is protected by a ring of [ghost_counter] ghosts!"))
+	owner.visible_message("<span class='danger'>[owner] is protected by a ring of [ghost_counter] ghosts!</span>")
 	return ..()
 
 /obj/item/clothing/neck/necklace/memento_mori/king
@@ -503,7 +515,7 @@
 	var/choosey = choices[choice]
 	var/obj/machinery/anomalous_crystal/A = new choosey(user.loc)
 	A.activation_method = method
-	to_chat(user, span_userdanger("[A] appears under your feet as the [src] breaks apart!"))
+	to_chat(user, "<span class='userdanger'>[A] appears under your feet as the [src] breaks apart!</span>")
 	qdel(src)
 
 //normal chests
@@ -723,7 +735,7 @@
 
 /obj/item/stock_parts/cell/high/plus/argent/attack_self(mob/user)
 	..()
-	user.visible_message(span_danger("[user] crushes the [src] in his hands, absorbing it's energy!"))
+	user.visible_message("<span class='danger'>[user] crushes the [src] in his hands, absorbing it's energy!</span>")
 	playsound(user.loc, 'sound/effects/hit_on_shattered_glass.ogg', 100, TRUE)
 	var/mob/living/M = user
 	M.apply_status_effect(onuse)
@@ -870,13 +882,13 @@
 /obj/item/clothing/mask/gas/dagoth/ui_action_click(mob/user, action)
 	if(istype(action, /datum/action/item_action/ashstorm))
 		if(storm_cooldown > world.time)
-			to_chat(user, span_warning("The [src] is still recharging!"))
+			to_chat(user, "<span class='warning'>The [src] is still recharging!</span>")
 			return
 
 		var/area/user_area = get_base_area(user)
 		var/turf/user_turf = get_turf(user)
 		if(!user_area || !user_turf || (user_area.type in excluded_areas))
-			to_chat(user, span_warning("Something is preventing you from using the [src] here."))
+			to_chat(user, "<span class='warning'>Something is preventing you from using the [src] here.</span>")
 			return
 		var/datum/weather/A
 		for(var/V in SSweather.processing)
@@ -888,10 +900,10 @@
 		if(A)
 			if(A.stage != END_STAGE)
 				if(A.stage == WIND_DOWN_STAGE)
-					to_chat(user, span_warning("The storm is already ending! It would be a waste to use the [src] now."))
+					to_chat(user, "<span class='warning'>The storm is already ending! It would be a waste to use the [src] now.</span>")
 					return
-				user.visible_message(span_warning("[user] gazes into the sky with [src], seemingly repelling the current storm!"), \
-				span_notice("You gaze intently skyward, dispelling the storm!"))
+				user.visible_message("<span class='warning'>[user] gazes into the sky with [src], seemingly repelling the current storm!</span>", \
+				"<span class='notice'>You gaze intently skyward, dispelling the storm!</span>")
 				playsound(user, 'sound/magic/staff_change.ogg', 200, 0)
 				A.wind_down()
 				log_game("[user] ([key_name(user)]) has dispelled a storm at [AREACOORD(user_turf)]")
@@ -906,8 +918,8 @@
 			A.telegraph_duration = 100
 			A.end_duration = 100
 
-		user.visible_message(span_warning("[user] gazes skyward with his [src], terrible red lightning strikes seem to accompany them!"), \
-		span_notice("You gaze skyward with [src], calling down a terrible storm!"))
+		user.visible_message("<span class='warning'>[user] gazes skyward with his [src], terrible red lightning strikes seem to accompany them!</span>", \
+		"<span class='notice'>You gaze skyward with [src], calling down a terrible storm!</span>")
 		playsound(user, 'sound/magic/staff_change.ogg', 200, 0)
 		A.telegraph()
 		storm_cooldown = world.time + 200
@@ -1034,7 +1046,7 @@
 		return
 	var/mob/living/carbon/C = active_owner
 	active_owner = null
-	to_chat(C, span_userdanger("You feel a scorching burn fill your body and limbs!"))
+	to_chat(C, "<span class='userdanger'>You feel a scorching burn fill your body and limbs!</span>")
 	C.revive(TRUE, FALSE)
 	remove_necklace() //remove buffs
 
@@ -1061,7 +1073,7 @@
 		if(iscarbon(owner))
 			MM.temp_buff(owner)
 		src.desc = "Revive or fully heal yourself, but you can only do this once! Can be used when knocked out or dead."
-		to_chat(MM.active_owner, span_userdanger("You have binded the ember to yourself! The next time you use the necklace it will heal you!"))
+		to_chat(MM.active_owner, "<span class='userdanger'>You have binded the ember to yourself! The next time you use the necklace it will heal you!</span>")
 	else if(MM.numUses >= 1 && MM.active_owner)//revive / heal then remove usage
 		MM.second_chance()
 		MM.numUses = 0

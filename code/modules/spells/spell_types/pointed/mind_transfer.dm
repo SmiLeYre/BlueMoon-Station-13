@@ -32,7 +32,7 @@
 	var/datum/mind/VM = victim.mind
 	if(victim.anti_magic_check(TRUE, FALSE) || VM.has_antag_datum(/datum/antagonist/wizard) || VM.has_antag_datum(/datum/antagonist/cult) || VM.has_antag_datum(/datum/antagonist/changeling) || VM.has_antag_datum(/datum/antagonist/rev) || victim.key[1] == "@")
 		if(!silent)
-			to_chat(user, "<span class='warning'>[victim.p_their(TRUE)] mind is resisting your spell!</span>")
+			to_chat(user, "<span class='warning'>[victim.ru_ego(TRUE)] mind is resisting your spell!</span>")
 		return FALSE
 	if(istype(victim, /mob/living/simple_animal/hostile/guardian))
 		var/mob/living/simple_animal/hostile/guardian/stand = victim
@@ -82,7 +82,7 @@
 		return FALSE
 
 	var/mob/living/victim = target
-	var/t_He = victim.p_they(TRUE)
+	var/t_He = victim.ru_who(TRUE)
 
 	if(ismegafauna(victim))
 		if(!silent)
@@ -94,7 +94,7 @@
 		return FALSE
 	if(!victim.key || !victim.mind)
 		if(!silent)
-			to_chat(user, "<span class='warning'>[t_He] appear[victim.p_s()] to be catatonic! Not even magic can affect [victim.p_their()] vacant mind.</span>")
+			to_chat(user, "<span class='warning'>[t_He] appear[victim.p_s()] to be catatonic! Not even magic can affect [victim.ru_ego()] vacant mind.</span>")
 		return FALSE
 	if(user.suiciding)
 		if(!silent)

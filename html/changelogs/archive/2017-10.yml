@@ -491,7 +491,7 @@
   - tweak: Cleaned up semicolons in Meta and Boxstation's .dmms
 2017-10-25:
   Cruix:
-  - rscadd: Shuttle navigation computers can now place new transit locations over
+  - rscadd: Shuttle Navigation Computers can now place new transit locations over
       the shuttle's current position.
   JJRcop:
   - rscadd: The heart of darkness revives you as a shadowperson if you aren't one

@@ -28,7 +28,7 @@
 	RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/on_walk)
 	RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, .proc/rotate)
 	listeningTo = user
-	user.visible_message("<span class='notice'>[user] holds [src] up to [user.p_their()] eyes.</span>", "<span class='notice'>You hold [src] up to your eyes.</span>")
+	user.visible_message("<span class='notice'>[user] holds [src] up to [user.ru_ego()] eyes.</span>", "<span class='notice'>You hold [src] up to your eyes.</span>")
 	item_state = "binoculars_wielded"
 	user.regenerate_icons()
 	user.client.view_size.zoomOut(zoom_out_amt, zoom_amt, user.dir)

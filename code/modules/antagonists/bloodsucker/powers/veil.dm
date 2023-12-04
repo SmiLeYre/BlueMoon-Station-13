@@ -3,8 +3,8 @@
 	name = "Veil of Many Faces"
 	desc = "Disguise yourself in the illusion of another identity."
 	button_icon_state = "power_veil"
-	bloodcost = 15
-	cooldown = 100
+	bloodcost = 35
+	cooldown = 150
 	amToggle = TRUE
 	bloodsucker_can_buy = TRUE
 	warn_constant_cost = TRUE

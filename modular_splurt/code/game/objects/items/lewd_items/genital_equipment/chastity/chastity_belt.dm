@@ -6,6 +6,8 @@
 	item_flags = NO_UNIFORM_REQUIRED
 	var/obj/item/genital_equipment/chastity_cage/belt
 	var/obj/item/organ/genital/bepis
+	var/break_require = TOOL_WIRECUTTER //Which tool is required to break the chastity_cage
+	var/break_time = 25 SECONDS
 
 /obj/item/clothing/underwear/chastity_belt/Initialize(mapload, obj/item/genital_equipment/chastity_cage/initial_belt)
 	if(initial_belt)
@@ -22,15 +24,39 @@
 	. = ..()
 
 /obj/item/clothing/underwear/chastity_belt/attackby(obj/item/W, mob/user, params)
-	if(!istype(W, /obj/item/genital_equipment/chastity_cage))
-		return ..()
-	if(belt)
-		to_chat(user, span_warning("The belt already has a cage!"))
-		return
+	if(istype(W, /obj/item/genital_equipment/chastity_cage))
+		if(belt)
+			to_chat(user, span_warning("The belt already has a cage!"))
+			return
+		else
+			belt = W
+			belt.belt = src
+			belt.forceMove(src)
 
-	belt = W
-	belt.belt = src
-	belt.forceMove(src)
+	if(belt && loc == user && current_equipped_slot && current_equipped_slot != ITEM_SLOT_HANDS)
+		if(current_equipped_slot in user.check_obscured_slots())
+			to_chat(user, "<span class='warning'>You are unable to unequip that while wearing other garments over it!</span>")
+			return FALSE
+		//var/mob/living/carbon/human/H = istype(G) ? G.owner : G["wearer"]
+		var/obj/item/I = user.get_active_held_item()
+		if(!I)
+			to_chat(user, "<span class='warning'>You need \a [break_require] or its key to take it off!</span>")
+			return FALSE
+		if(I == belt.key)
+			to_chat(user, "<span class='warning'>You wield \the [I.name] and unlock the belt!</span>")
+			src.dropped(user)
+			user.dropItemToGround(src)
+		else if(break_require == TOOL_WIRECUTTER && I.tool_behaviour == break_require)
+			if(!do_mob(user, src, break_time))
+				return FALSE
+			else
+				to_chat(user, "<span class='warning'>You manage to break \the [src] with \the [I.name]!</span>")
+				src.dropped(user)
+				qdel(src)
+		else
+			to_chat(user, "<span class='warning'>You can't take it off with \the [I.name]</span>")
+			return FALSE
+	. = ..()
 
 /obj/item/clothing/underwear/chastity_belt/AltClick(mob/user)
 	if(belt && !bepis)
@@ -61,7 +87,7 @@
 		to_chat(equipper ? equipper : M, "<span class='warning'>\The [M] does not have any genitals exposed!</span>")
 		return FALSE
 
-	var/obj/item/organ/genital/blocked_genital = tgui_input_list(equipper ? equipper : M, "Choose a genital to block.", "Exposed genitals", ((exposed_genitals + list(ORGAN_SLOT_ANUS)) - list(ORGAN_SLOT_BUTT)), null)
+	var/obj/item/organ/genital/blocked_genital = tgui_input_list(equipper ? equipper : M, "Choose a genital to block.", "Exposed genitals", (exposed_genitals - list(ORGAN_SLOT_BUTT)), null)
 	if(!blocked_genital)
 		return FALSE
 
@@ -121,6 +147,12 @@
 
 	if(!. || QDELETED(belt))
 		return null
+
+/obj/item/clothing/underwear/chastity_belt/on_attack_hand(mob/user)
+	if(belt && loc == user && current_equipped_slot && current_equipped_slot != ITEM_SLOT_HANDS)
+		to_chat(user, "<span class='warning'>You need \a [break_require] or its key to take it off!</span>")
+		return FALSE
+	. = ..()
 
 /obj/item/clothing/underwear/chastity_belt/proc/handle_cage_dropping(datum/source, obj/item/organ/genital/G, mob/user)
 	. = TRUE

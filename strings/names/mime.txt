@@ -1,32 +1,24 @@
-Church Mouse
-Hush Foot
-Invisible Man
-Lemon Mime
-Marcel
-Marcel Mime
-Master-Mime
-Mime
-Mr Beret
-Mr Mime
-Mr Mute
-Mute
-Omerta
-Oui Oui
-Pantomime
-Quiet
-Quiet Riot
-See Through
-Silence
+Человек-невидимка
+Лимонный пантомимат
+Марсель
+Марсель Миме
+Пантомимат
+Мистер Берет
+Мистер Мимим
+Мистер Мьюти
+Без звука
+Омерта
+Да Да Да
+Пантомима
+Тихо
+Тихий бунт
+Тишина
 Silencio
-Silent Knight
-Silent Majority
-Silent Night
-Silent Sorrow
-Silent Step
-Silent Mouse
-The Unspeakable
-Transparency
-Unspeakable
-Untouchable
+Молчаливый рыцарь
+Безмолвное большинство
+Тихая ночь
+Тихая печаль
+Прозрачность
+Непередаваемый
+Неприкасаемый
 Wall Runner
-White Face

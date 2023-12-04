@@ -104,7 +104,7 @@
 
 
 /obj/item/implanter/explosive
-	name = "implanter (explosive)"
+	name = "Implanter (explosive)"
 	imp_type = /obj/item/implant/explosive
 
 /obj/item/implantcase/explosive

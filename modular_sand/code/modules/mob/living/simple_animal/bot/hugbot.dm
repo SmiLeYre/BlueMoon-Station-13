@@ -145,7 +145,7 @@
 
 /mob/living/simple_animal/bot/hugbot/attack_hand(mob/living/carbon/human/H)
 	if(H.a_intent == INTENT_DISARM && mode != BOT_TIPPED)
-		H.visible_message(span_danger("[H] begins tipping over [src]."), span_warning("You begin tipping over [src]..."))
+		H.visible_message("<span class='danger'>[H] begins tipping over [src].</span>", "<span class='warning'>You begin tipping over [src]...</span>")
 		balloon_alert(H, "tipping over")
 
 		if(world.time > last_tipping_action_voice + 15 SECONDS)
@@ -159,7 +159,7 @@
 			tip_over(H)
 
 	else if(H.a_intent == INTENT_HELP && mode == BOT_TIPPED)
-		H.visible_message(span_notice("[H] begins righting [src]."), span_notice("You begin righting [src]..."))
+		H.visible_message("<span class='notice'>[H] begins righting [src].</span>", "<span class='notice'>You begin righting [src]...</span>")
 		balloon_alert(H, "righting")
 		if(do_after(H, 3 SECONDS, src))
 			set_right(H)
@@ -170,8 +170,9 @@
 	..()
 	if(emagged == 2)
 		if(user)
-			to_chat(user, span_notice("You short out [src]'s manipulator pressure sensors."))
-		visible_message(span_danger("[src]'s arm twitches violently!"))
+			to_chat(user, "<span class='notice'>You short out [src]'s manipulator pressure sensors.</span>")
+			log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
+		visible_message("<span class='danger'>[src]'s arm twitches violently!</span>")
 		flick("medibot_spark", src)
 		playsound(src, "sparks", 75, 1)
 
@@ -347,9 +348,9 @@
 	// Hey, didyah know that you Han't hug people as non-carbon? Well you can't hug people as non-carbon. Hence this mess
 	if(zone_selected == BODY_ZONE_PRECISE_MOUTH)
 		visible_message( \
-			span_notice("[src] boops [H]'s nose."), \
-			span_notice("You boop [H] on the nose."), target = H,
-		target_message = span_notice("[src] boops your nose."))
+			"<span class='notice'>[src] boops [H]'s nose.</span>", \
+			"<span class='notice'>You boop [H] on the nose.</span>", target = H,
+		target_message = "<span class='notice'>[src] boops your nose.</span>")
 		playsound(H, 'sound/items/Nose_boop.ogg', 50, 0)
 		SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "headpat", /datum/mood_event/headpat)
 	else if(check_zone(zone_selected) == BODY_ZONE_HEAD)
@@ -357,9 +358,9 @@
 		if(ishuman(H))
 			S = H.dna.species
 
-			visible_message(span_notice("[src] gives [H] a pat on the head to make [H.p_them()] feel better!"), \
-						span_notice("You give [src] a pat on the head to make [H.p_them()] feel better!"), target = H,
-						target_message = span_notice("[src] gives you a pat on the head to make you feel better!"))
+			visible_message("<span class='notice'>[src] gives [H] a pat on the head to make [H.ru_na()] feel better!</span>", \
+						"<span class='notice'>You give [src] a pat on the head to make [H.ru_na()] feel better!</span>", target = H,
+						target_message = "<span class='notice'>[src] gives you a pat on the head to make you feel better!</span>")
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "headpat", /datum/mood_event/headpat)
 			if(S?.can_wag_tail(src) && !H.dna.species.is_wagging_tail())
 				var/static/list/many_tails = list("tail_human", "tail_lizard", "mam_tail")
@@ -368,9 +369,9 @@
 						H.emote("wag")
 						break
 	else
-		visible_message(span_notice("[src] hugs [H] to make [H.p_them()] feel better!"), \
-					span_notice("You hug [H] to make [H.p_them()] feel better!"), target = H,\
-					target_message = span_notice("[src] hugs you to make you feel better!"))
+		visible_message("<span class='notice'>[src] hugs [H] to make [H.ru_na()] feel better!</span>", \
+					"<span class='notice'>You hug [H] to make [H.ru_na()] feel better!</span>", target = H,\
+					target_message = "<span class='notice'>[src] hugs you to make you feel better!</span>")
 		SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/hug)
 
 	playsound(H.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
@@ -390,7 +391,7 @@
 
 /mob/living/simple_animal/bot/hugbot/explode()
 	on = FALSE
-	visible_message(span_boldannounce("[src] blows apart!"))
+	visible_message("<span class='boldannounce'>[src] blows apart!</span>")
 	do_sparks(3, TRUE, src)
 	var/atom/Tsec = drop_location()
 	drop_part(/obj/item/storage/box/hug, Tsec)
@@ -416,19 +417,19 @@
 		var/mob/living/simple_animal/bot/hugbot/A = new(drop_location())
 		A.name = created_name
 		A.robot_arm = W.type
-		to_chat(user, span_notice("You add [W] to [src]. Beep boop!"))
+		to_chat(user, "<span class='notice'>You add [W] to [src]. Beep boop!</span>")
 		qdel(W)
 		qdel(src)
 
 /obj/item/storage/box/hug/attackby(obj/item/I, mob/user, params)
 	if((istype(I, /obj/item/bodypart/l_arm/robot)) || (istype(I, /obj/item/bodypart/r_arm/robot)))
 		if(contents.len) //prevent accidently deleting contents
-			to_chat(user, span_warning("You need to empty [src] out first!"))
+			to_chat(user, "<span class='warning'>You need to empty [src] out first!</span>")
 			return
 		if(!user.temporarilyRemoveItemFromInventory(I))
 			return
 		qdel(I)
-		to_chat(user, span_notice("You add [I] to the [src]! You've got a hugbot assembly now!"))
+		to_chat(user, "<span class='notice'>You add [I] to the [src]! You've got a hugbot assembly now!</span>")
 		var/obj/item/bot_assembly/hugbot/A = new
 		qdel(src)
 		user.put_in_hands(A)
@@ -438,7 +439,7 @@
 // Skyrat exclusive: Tipping over hugbots. Because fuck medbots.
 /mob/living/simple_animal/bot/hugbot/proc/tip_over(mob/user)
 	mobility_flags &= ~MOBILITY_MOVE
-	user.visible_message(span_danger("[user] tips over [src]!"), span_danger("You tip [src] over!"))
+	user.visible_message("<span class='danger'>[user] tips over [src]!</span>", "<span class='danger'>You tip [src] over!</span>")
 	balloon_alert(user, "tipped over")
 	mode = BOT_TIPPED
 	tipper_name = user.name // Skyrat fix
@@ -449,14 +450,14 @@
 	mobility_flags &= MOBILITY_MOVE
 	var/list/messagevoice
 	if(user)
-		user.visible_message(span_notice("[user] sets [src] right-side up!"), span_green("You set [src] right-side up!"))
+		user.visible_message("<span class='notice'>[user] sets [src] right-side up!</span>", "<span class='green'>You set [src] right-side up!</span>")
 		balloon_alert(user, "set right")
 		if(user.name == tipper_name)
 			messagevoice = list("I forgive you." = 'sound/voice/medbot/forgive.ogg')
 		else
 			messagevoice = list("Thank you!" = 'sound/voice/medbot/thank_you.ogg', "You are a good person." = 'sound/voice/medbot/youre_good.ogg')
 	else
-		visible_message(span_notice("[src] manages to writhe wiggle enough to right itself."))
+		visible_message("<span class='notice'>[src] manages to writhe wiggle enough to right itself.</span>")
 		messagevoice = list("Fuck you." = 'sound/voice/medbot/fuck_you.ogg', "Your behavior has been reported, have a nice day." = 'sound/voice/medbot/reported.ogg')
 
 	tipper_name = null

@@ -80,13 +80,15 @@
 		else
 			to_chat(user, "<span class='notice'>The light bulb seems fine, no need to replace it.</span>")
 
+//Красный. Red. Blyad.
+/turf/open/floor/light/red
+	coloredlights = list("r")
+	can_modify_colour = FALSE
 
 //Cycles through all of the colours
 /turf/open/floor/light/colour_cycle
 	coloredlights = list("cycle_all")
 	can_modify_colour = FALSE
-
-
 
 //Two different "dancefloor" types so that you can have a checkered pattern
 // (also has a longer delay than colour_cycle between cycling colours)

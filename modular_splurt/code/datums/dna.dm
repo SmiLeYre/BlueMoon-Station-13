@@ -51,9 +51,31 @@
 	if(last_capped_size)
 		old_size = last_capped_size
 		last_capped_size = null
-	var/healthmod_old = ((old_size * 75) - 75) //Get the old value to see what we must change.
-	var/healthmod_new = ((get_size(holder) * 75) - 75) //A size of one would be zero. Big boys get health, small ones lose health.
+
+	var/healthmod_old = ((old_size * 120) - 120) //Get the old value to see what we must change. // BLUEMOON CHANGES
+	var/healthmod_new = ((get_size(holder) * 120) - 120) //A size of one would be zero. Big boys get health, small ones lose health. // BLUEMOON CHANGES
+
+	// BLUEMOON ADDITION AHEAD
+	#define MINIMAL_SIZE_HEALTH 10
+	if(holder.maxHealth == MINIMAL_SIZE_HEALTH)
+		healthmod_old = MINIMAL_SIZE_HEALTH - 100 // переписываем старое значение для возврата от состоянии минимального ХП к любому иному
+	// BLUEMOON ADDITION END
+
 	var/healthchange = healthmod_new - healthmod_old //Get ready to apply the new value, and subtract the old one. (Negative values become positive)
+
+	// BLUEMOON ADDITION AHEAD - если персонаж так мал, что его ХП должно быть ниже MINIMAL_SIZE_HEALTH после всех формул, то оно выставляется таким
+	if((holder.maxHealth + healthchange) < MINIMAL_SIZE_HEALTH)
+		holder.health = (holder.health / holder.maxHealth) * MINIMAL_SIZE_HEALTH
+		holder.maxHealth = MINIMAL_SIZE_HEALTH
+		return
+	if(healthmod_new > healthmod_old) // Больше ли новое максимальное ХП, чем старое
+		if(holder.health < holder.maxHealth * 0.9) // Больше ли урона чем 10%
+			var/damage_formula = abs(holder.health / holder.maxHealth * healthchange - (holder.maxHealth + healthchange)) - holder.health
+			holder.apply_damage(damage_formula, BRUTE, BODY_ZONE_CHEST) // Наносится пропорциональное разнице остатка ХП количество урона
+			holder.visible_message(span_danger("[holder] body damage is getting worse from sudden expansion!"), span_danger("Your body damage is getting worse from sudden expansion!"))
+	#undef MINIMAL_SIZE_HEALTH
+	// BLUEMOON ADDITION END
+
 	holder.maxHealth += healthchange
 	holder.health += healthchange
 

@@ -4,7 +4,7 @@
         var/mob/living/carbon/C = user
         if(src == C.wear_mask)
             if(seamless)
-                to_chat(user, span_warning("You need help taking this off!"))
+                to_chat(user, span_warning("Тебе нужна помощь, чтобы снять ЭТО!"))
                 return
             else
                 if(!do_after(C, 60, target = src))

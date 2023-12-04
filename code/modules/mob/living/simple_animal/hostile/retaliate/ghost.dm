@@ -27,7 +27,7 @@
 	attack_verb_simple = "grip"
 	attack_sound = 'sound/hallucinations/growl1.ogg'
 	speak_emote = list("weeps")
-	deathmessage = "wails, disintegrating into a pile of ectoplasm!"
+	deathmessage = "завывает, распадаясь на кучу эктоплазмы!"
 	loot = list(/obj/item/ectoplasm)
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
@@ -68,3 +68,15 @@
 		ghost_facial_hair.alpha = 200
 		ghost_facial_hair.color = ghost_facial_hair_color
 		add_overlay(ghost_facial_hair)
+
+/// Weaker variant of ghosts. Meant to be summoned in swarms via the ectoplasmic anomaly and associated ghost portal.
+/mob/living/simple_animal/hostile/ghost/swarm
+	name = "vengeful spirit"
+	desc = "Back from the grave, and not happy about it."
+	maxHealth = 30
+	health = 30
+	attack_verb_continuous = "smashes"
+	attack_verb_simple = "smash"
+	melee_damage_lower = 10
+	melee_damage_upper = 10
+	deathmessage = "громко воет, когда его возвращают обратно в царство, из которого он пришел!"

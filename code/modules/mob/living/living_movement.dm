@@ -7,15 +7,19 @@
 	. = ..()
 	if(ismousemovement)
 		update_pixel_shifting()
+	SEND_SIGNAL(src, COMSIG_ATOM_DIR_AFTER_CHANGE, dir, newdir)
 
 /mob/living/proc/update_pixel_shifting(moved = FALSE)
 	if(combat_flags & COMBAT_FLAG_ACTIVE_BLOCKING)
 		animate(src, pixel_x = get_standard_pixel_x_offset(), pixel_y = get_standard_pixel_y_offset(), time = 2.5, flags = ANIMATION_END_NOW)
 	else if(moved)
-		unpixel_shift()
+		if(is_shifted)
+			is_shifted = FALSE
+			pixel_x = get_standard_pixel_x_offset(lying)
+			pixel_y = get_standard_pixel_y_offset(lying)
 		if(is_tilted)
 			transform = transform.Turn(-is_tilted)
-			is_tilted = FALSE
+			is_tilted = 0
 
 /mob/living/proc/update_density()
 	density = !lying && !HAS_TRAIT(src, TRAIT_LIVING_NO_DENSITY)
@@ -66,12 +70,33 @@
 		remove_movespeed_modifier(/datum/movespeed_modifier/turf_slowdown)
 
 /mob/living/proc/update_pull_movespeed()
-	if(pulling && isliving(pulling))
-		var/mob/living/L = pulling
-		if(drag_slowdown && L.lying && !L.buckled && grab_state < GRAB_AGGRESSIVE)
-			add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/bulky_drag, multiplicative_slowdown = PULL_PRONE_SLOWDOWN)
-			return
+	// BLUEMOON ADDITION AHEAD
+	var/modified = FALSE
+	if(pulling)
+
+		if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY_SUPER)) // Сверхтяжёлых персонажей очень сложно тянуть (даже тем, кто на это способен)
+			if(!HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
+				add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/heavy_mob_drag, multiplicative_slowdown = PULL_HEAVY_SUPER_SLOWDOWN)
+			else
+				add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/heavy_mob_drag, multiplicative_slowdown = PULL_HEAVY_SLOWDOWN)
+			modified = TRUE
+
+		if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY)) // Тяжёлых персонажей сложнее тянуть
+			add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/heavy_mob_drag, multiplicative_slowdown = PULL_HEAVY_SLOWDOWN)
+			modified = TRUE
+
+		if(isliving(pulling)) // оригинальный код сплюрта
+			var/mob/living/L = pulling
+			if(drag_slowdown && L.lying && !L.buckled && grab_state < GRAB_AGGRESSIVE)
+				add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/bulky_drag, multiplicative_slowdown = PULL_PRONE_SLOWDOWN)
+				modified = TRUE
+
+	if(modified)
+		return
+
 	remove_movespeed_modifier(/datum/movespeed_modifier/bulky_drag)
+	remove_movespeed_modifier(/datum/movespeed_modifier/heavy_mob_drag)
+	// BLUEMOON ADDITION END
 
 /mob/living/canZMove(dir, turf/target)
 	return can_zTravel(target, dir) && (movement_type & FLYING)

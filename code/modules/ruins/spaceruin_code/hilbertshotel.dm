@@ -7,6 +7,17 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	icon_state = "hilbertshotel"
 	w_class = WEIGHT_CLASS_SMALL
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	//BlueMoon Edit
+	var/list/static/hotel_maps = list("Generic (Don't Use)", "Apartment", "Apartment_1", "Apartment_2", "Apartment_3", "Apartment_bar", "Apartment_syndi", "Apartment_dojo", "Apartment_sauna")
+	var/datum/map_template/ghost_cafe_rooms/ghost_cafe_rooms_apartment
+	var/datum/map_template/ghost_cafe_rooms/one/ghost_cafe_rooms_apartment_one
+	var/datum/map_template/ghost_cafe_rooms/two/ghost_cafe_rooms_apartment_two
+	var/datum/map_template/ghost_cafe_rooms/three/ghost_cafe_rooms_apartment_three
+	var/datum/map_template/ghost_cafe_rooms/bar/ghost_cafe_rooms_apartment_bar
+	var/datum/map_template/ghost_cafe_rooms/syndi/ghost_cafe_rooms_apartment_syndi
+	var/datum/map_template/ghost_cafe_rooms/dojo/ghost_cafe_rooms_apartment_dojo
+	var/datum/map_template/ghost_cafe_rooms/sauna/ghost_cafe_rooms_apartment_sauna
+	//BlueMoon Edit
 	var/datum/map_template/hilbertshotel/hotelRoomTemp
 	var/datum/map_template/hilbertshotel/empty/hotelRoomTempEmpty
 	var/datum/map_template/hilbertshotel/lore/hotelRoomTempLore
@@ -27,6 +38,16 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	hotelRoomTemp = new()
 	hotelRoomTempEmpty = new()
 	hotelRoomTempLore = new()
+	//BlueMoon Edit
+	ghost_cafe_rooms_apartment = new()
+	ghost_cafe_rooms_apartment_one = new()
+	ghost_cafe_rooms_apartment_two = new()
+	ghost_cafe_rooms_apartment_three = new()
+	ghost_cafe_rooms_apartment_bar = new()
+	ghost_cafe_rooms_apartment_syndi = new()
+	ghost_cafe_rooms_apartment_dojo = new()
+	ghost_cafe_rooms_apartment_sauna = new()
+	//BlueMoon Edit
 	var/area/currentArea = get_area(src)
 	if(currentArea.type == /area/ruin/space/has_grav/hilbertresearchfacility)
 		ruinSpawned = TRUE
@@ -38,13 +59,13 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 /obj/item/hilbertshotel/attack(mob/living/M, mob/living/user)
 	if(M.mind)
 		to_chat(user, "<span class='notice'>You invite [M] to the hotel.</span>")
-		promptAndCheckIn(M)
+		promptAndCheckIn(user, M)
 	else
 		to_chat(user, "<span class='warning'>[M] is not intelligent enough to understand how to use this device!</span>")
 
 /obj/item/hilbertshotel/attack_self(mob/user)
 	. = ..()
-	promptAndCheckIn(user)
+	promptAndCheckIn(user, user)
 
 /obj/item/hilbertshotel/proc/promptAndCheckIn(mob/user)
 	//SPLURT EDIT - max infinidorms rooms
@@ -72,6 +93,16 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	if(!isturf(loc))
 		if((loc == user) || (loc.loc == user) || (loc.loc in user.contents) || (loc in user.GetAllContents(type)))		//short circuit, first three checks are cheaper and covers almost all cases (loc.loc covers hotel in box in backpack).
 			forceMove(get_turf(user))
+
+	//BlueMoon Edit
+	var/chosen_room = "Nothing"
+	if(istype(src, /obj/item/hilbertshotel/ghostdojo)) //to don't add another one var
+		chosen_room = tgui_input_list(user, "Choose desired room:", "Time to choose", hotel_maps)
+
+	if(!chosen_room)
+		return FALSE
+
+	//BlueMoon Edit
 	if(!storageTurf) //Blame subsystems for not allowing this to be in Initialize
 		if(!GLOB.hhStorageTurf)
 			var/datum/map_template/hilbertshotelstorage/storageTemp = new()
@@ -83,9 +114,9 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	checked_in_ckeys |= user.ckey		//if anything below runtimes, guess you're outta luck!
 	if(tryActiveRoom(chosenRoomNumber, user))
 		return
-	if(tryStoredRoom(chosenRoomNumber, user))
+	if(tryStoredRoom(chosenRoomNumber, user, chosen_room))
 		return
-	sendToNewRoom(chosenRoomNumber, user)
+	sendToNewRoom(chosenRoomNumber, user, chosen_room)
 
 /obj/item/hilbertshotel/proc/tryActiveRoom(var/roomNumber, var/mob/user)
 	if(activeRooms["[roomNumber]"])
@@ -120,16 +151,31 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 		return FALSE
 
 /// This is a BLOCKING OPERATION. Note the room load call, and the block reservation calls.
-/obj/item/hilbertshotel/proc/sendToNewRoom(var/roomNumber, var/mob/user)
+/obj/item/hilbertshotel/proc/sendToNewRoom(roomNumber, mob/user, chosen_room) //BLUEMOON EDIT ADDITION - GHOST HOTEL UPDATE. Was sendToNewRoom(chosenRoomNumber, target)
 	var/datum/turf_reservation/roomReservation = SSmapping.RequestBlockReservation(hotelRoomTemp.width, hotelRoomTemp.height)
-	if(ruinSpawned)
-		mysteryRoom = GLOB.hhmysteryRoomNumber
-		if(roomNumber == mysteryRoom)
-			hotelRoomTempLore.load(locate(roomReservation.bottom_left_coords[1], roomReservation.bottom_left_coords[2], roomReservation.bottom_left_coords[3]))
-		else
-			hotelRoomTemp.load(locate(roomReservation.bottom_left_coords[1], roomReservation.bottom_left_coords[2], roomReservation.bottom_left_coords[3]))
+	mysteryRoom = GLOB.hhmysteryRoomNumber
+	if(ruinSpawned && roomNumber == mysteryRoom)
+		hotelRoomTempLore.load(locate(roomReservation.bottom_left_coords[1], roomReservation.bottom_left_coords[2], roomReservation.bottom_left_coords[3]))
 	else
-		hotelRoomTemp.load(locate(roomReservation.bottom_left_coords[1], roomReservation.bottom_left_coords[2], roomReservation.bottom_left_coords[3]))
+		switch(chosen_room)
+			if("Apartment")
+				ghost_cafe_rooms_apartment.load(locate(roomReservation.bottom_left_coords[1], roomReservation.bottom_left_coords[2], roomReservation.bottom_left_coords[3]))
+			if("Apartment_1")
+				ghost_cafe_rooms_apartment_one.load(locate(roomReservation.bottom_left_coords[1], roomReservation.bottom_left_coords[2], roomReservation.bottom_left_coords[3]))
+			if("Apartment_2")
+				ghost_cafe_rooms_apartment_two.load(locate(roomReservation.bottom_left_coords[1], roomReservation.bottom_left_coords[2], roomReservation.bottom_left_coords[3]))
+			if("Apartment_3")
+				ghost_cafe_rooms_apartment_three.load(locate(roomReservation.bottom_left_coords[1], roomReservation.bottom_left_coords[2], roomReservation.bottom_left_coords[3]))
+			if("Apartment_bar")
+				ghost_cafe_rooms_apartment_bar.load(locate(roomReservation.bottom_left_coords[1], roomReservation.bottom_left_coords[2], roomReservation.bottom_left_coords[3]))
+			if("Apartment_syndi")
+				ghost_cafe_rooms_apartment_syndi.load(locate(roomReservation.bottom_left_coords[1], roomReservation.bottom_left_coords[2], roomReservation.bottom_left_coords[3]))
+			if("Apartment_dojo")
+				ghost_cafe_rooms_apartment_dojo.load(locate(roomReservation.bottom_left_coords[1], roomReservation.bottom_left_coords[2], roomReservation.bottom_left_coords[3]))
+			if("Apartment_sauna")
+				ghost_cafe_rooms_apartment_sauna.load(locate(roomReservation.bottom_left_coords[1], roomReservation.bottom_left_coords[2], roomReservation.bottom_left_coords[3]))
+			else
+				hotelRoomTemp.load(locate(roomReservation.bottom_left_coords[1], roomReservation.bottom_left_coords[2], roomReservation.bottom_left_coords[3]))
 	activeRooms["[roomNumber]"] = roomReservation
 	linkTurfs(roomReservation, roomNumber)
 	do_sparks(3, FALSE, get_turf(user))
@@ -194,10 +240,6 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	name = "Infinite Dormitories"
 	anchored = TRUE
 	interaction_flags_atom = INTERACT_ATOM_ATTACK_HAND
-
-/obj/item/hilbertshotel/ghostdojo/interact(mob/user)
-	. = ..()
-	promptAndCheckIn(user)
 
 /obj/item/hilbertshotel/ghostdojo/linkTurfs(datum/turf_reservation/currentReservation, currentRoomnumber)
 	. = ..()
@@ -345,11 +387,17 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	has_gravity = TRUE
 	area_flags = NOTELEPORT | HIDDEN_AREA
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
-	ambientsounds = list('sound/ambience/servicebell.ogg')
+	ambientsounds = SPACE
 	var/roomnumber = 0
 	var/obj/item/hilbertshotel/parentSphere
 	var/datum/turf_reservation/reservation
 	var/turf/storageTurf
+
+/area/hilbertshotel/room_one
+	name = "Hilbert's Hotel Room One"
+
+/area/hilbertshotel/room_two
+	name = "Hilbert's Hotel Room Two"
 
 /area/hilbertshotel/Entered(atom/movable/AM)
 	. = ..()
@@ -495,7 +543,7 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 /obj/item/paper/crumpled/docslogs/Initialize(mapload)
 	. = ..()
 	GLOB.hhmysteryRoomNumber = rand(1, SHORT_REAL_LIMIT)
-	info = {"
+	default_raw_text = {"
 ###  Research Logs
 I might just be onto something here!
 The strange space-warping properties of bluespace have been known about for awhile now, but I might be on the verge of discovering a new way of harnessing it.
@@ -521,7 +569,7 @@ Goodbye
 
 /obj/item/paper/crumpled/robertsworkjournal
 	name = "Work Journal"
-	info = {"<h4>First Week!</h4>
+	default_raw_text = {"<h4>First Week!</h4>
 	First week on the new job. It's a secretarial position, but hey, whatever pays the bills. Plus it seems like some interesting stuff goes on here.<br>
 	Doc says its best that I don't openly talk about his research with others, I guess he doesn't want it getting out or something. I've caught myself slipping a few times when talking to others, it's hard not to brag about something this cool!<br>
 	I'm not really sure why I'm choosing to journal this. Doc seems to log everything. He says it's incase he discovers anything important.<br>
@@ -547,7 +595,7 @@ Goodbye
 
 /obj/item/paper/crumpled/bloody/docsdeathnote
 	name = "note"
-	info = {"
+	default_raw_text = {"
 This is it isn't it?
 No one's coming to help, that much has become clear.
 Sure, it's lonely, but do I have much choice? At least I brought the analyzer with me, they shouldn't be able to find me without it.

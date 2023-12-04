@@ -18,8 +18,8 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = SHARP_EDGED
-	wound_bonus = 5
-	bare_wound_bonus = 15
+	wound_bonus = 10
+	bare_wound_bonus = 10
 	total_mass = TOTAL_MASS_HAND_REPLACEMENT
 	var/mob/living/last_attacked
 	var/combo = 0

@@ -10,24 +10,29 @@
 /obj/machinery/computer/shuttle/labor{
 	dir = 4
 	},
-/obj/structure/reagent_dispensers/peppertank{
-	pixel_x = -31
-	},
-/turf/open/floor/mineral/plastitanium/red,
+/obj/effect/turf_decal/bot,
+/turf/open/floor/mineral/plastitanium,
 /area/shuttle/labor)
 "d" = (
-/obj/structure/chair/office/dark{
+/obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium,
 /area/shuttle/labor)
 "e" = (
 /obj/structure/table,
 /obj/item/folder/red,
 /obj/item/restraints/handcuffs,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium,
 /area/shuttle/labor)
 "f" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 9
+	},
+/obj/effect/turf_decal/stripes/corner,
+/obj/structure/reagent_dispensers/peppertank{
+	pixel_x = -31
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/labor)
 "g" = (
@@ -38,6 +43,10 @@
 	req_access_txt = "1"
 	},
 /obj/machinery/light,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line,
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/labor)
 "h" = (
@@ -46,6 +55,10 @@
 	pixel_x = 30;
 	pixel_y = 30
 	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line,
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/labor)
 "i" = (
@@ -53,51 +66,76 @@
 	name = "Labor Shuttle Airlock";
 	req_access_txt = "2"
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/shuttle/labor)
 "j" = (
 /obj/machinery/door/airlock/titanium{
 	name = "Labor Shuttle Airlock";
 	req_access_txt = "2"
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/shuttle/labor)
 "k" = (
 /obj/machinery/mineral/stacking_machine/laborstacker{
 	input_dir = 2;
 	output_dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/shuttle/labor)
 "l" = (
-/turf/open/floor/mineral/titanium,
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/mineral/titanium/yellow,
 /area/shuttle/labor)
 "m" = (
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/mineral/titanium,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/labor)
 "n" = (
-/obj/machinery/mineral/labor_claim_console{
-	machinedir = 1;
-	pixel_x = 30
+/obj/effect/turf_decal/stripes/line{
+	dir = 5
 	},
-/turf/open/floor/mineral/titanium,
+/turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/labor)
 "o" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 8
-	},
 /obj/machinery/flasher{
 	id = "gulagshuttleflasher";
 	pixel_x = 25
 	},
-/turf/open/floor/mineral/titanium,
+/obj/effect/turf_decal/tile/neutral,
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 6
+	},
+/turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/labor)
 "p" = (
 /obj/structure/closet/crate,
-/turf/open/floor/mineral/titanium,
+/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/mineral/titanium/yellow,
 /area/shuttle/labor)
 "q" = (
 /obj/machinery/door/airlock/titanium{
@@ -113,39 +151,76 @@
 	port_direction = 4;
 	width = 9
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/shuttle/labor)
 "r" = (
+/obj/effect/spawner/structure/window/shuttle,
 /obj/structure/shuttle/engine/heater,
-/obj/structure/window/reinforced{
-	dir = 1;
-	layer = 2.9
-	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/shuttle/labor)
 "s" = (
 /obj/structure/shuttle/engine/propulsion,
 /turf/open/floor/plating/airless,
 /area/shuttle/labor)
+"G" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 10
+	},
+/obj/machinery/mineral/labor_claim_console{
+	pixel_x = -30
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/labor)
+"N" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/shuttle/labor)
+"P" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/labor)
+"U" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/labor)
+"Y" = (
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/labor)
 
 (1,1,1) = {"
 a
-a
 b
 a
 a
 b
 a
-a
-a
+b
+N
+P
 "}
 (2,1,1) = {"
 b
 c
 f
 j
-l
-l
+U
+G
 p
 r
 s
@@ -156,7 +231,7 @@ d
 g
 a
 m
-l
+Y
 l
 r
 s
@@ -177,9 +252,9 @@ a
 a
 i
 a
-a
+b
 a
 q
-a
-a
+N
+P
 "}

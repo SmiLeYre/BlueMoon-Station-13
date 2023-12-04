@@ -2,6 +2,8 @@
 
 /obj/item/organ/tongue
 	name = "tongue"
+	ru_name = "язык"
+	ru_name_capital = "Язык"
 	desc = "A fleshy muscle mostly used for lying."
 	icon_state = "tonguenormal"
 	zone = BODY_ZONE_PRECISE_MOUTH
@@ -17,6 +19,8 @@
 		/datum/language/common,
 		/datum/language/machine,
 		/datum/language/draconic,
+		/datum/language/vulpkanin,
+		/datum/language/tajaran,
 		/datum/language/codespeak,
 		/datum/language/monkey,
 		/datum/language/narsie,
@@ -37,6 +41,9 @@
 		/datum/language/modular_sand/solcommon, //Skyrat change - sol common blah blah
 		/datum/language/modular_sand/technorussian, //Skyrat change - russian stereotype language
 		/datum/language/modular_sand/sergal, //Sandstorm change
+		/datum/language/modular_bluemoon/german, // BM German language
+		/datum/language/modular_bluemoon/vox, // BM Vox language
+		/datum/language/modular_bluemoon/felinid, // BM Felinid language
 	))
 	healing_factor = STANDARD_ORGAN_HEALING*5 //Fast!!
 	decay_factor = STANDARD_ORGAN_DECAY/2
@@ -88,9 +95,36 @@
 	desc = "A thin and long muscle typically found in reptilian races, apparently moonlights as a nose."
 	icon_state = "tonguelizard"
 	say_mod = "hisses"
-	taste_sensitivity = 10 // combined nose + tongue, extra sensitive
+	taste_sensitivity = 10 // combined nose extra sensitive
 	maxHealth = 40 //extra sensitivity means tongue is more susceptible to damage
 	initial_accents = list(/datum/accent/lizard)
+
+/obj/item/organ/tongue/canine
+	name = "flat tongue"
+	desc = "A flat and broad muscle commonly found in canine."
+	icon_state = "tonguefluffy"
+	say_mod = "rawrs"
+	taste_sensitivity = 10 // nose extra sensitive
+	maxHealth = 50 //extra sensitivity means tongue is more susceptible to damage
+	initial_accents = list(/datum/accent/canine)
+
+/obj/item/organ/tongue/feline
+	name = "flat rough tongue"
+	desc = "A flat and broad muscle commonly found in feline races."
+	icon_state = "tonguefluffy"
+	say_mod = "mewels"
+	taste_sensitivity = 10 // nose extra sensitive
+	maxHealth = 50 //extra sensitivity means tongue is more susceptible to damage
+	initial_accents = list(/datum/accent/feline)
+
+/obj/item/organ/tongue/bird
+	name = "thin tongue"
+	desc = "A thin tongue whith fringed tip and the root of the tongue have backward-facing barbs"
+	icon_state = "tonguenormal"  // Сделайте иконку плиз
+	say_mod = "chirps"
+	taste_sensitivity = 50 // nose extra sensitive
+	maxHealth = 70 //extra sensitivity means tongue is more susceptible to damage
+	initial_accents = list(/datum/accent/bird)
 
 /obj/item/organ/tongue/fly
 	name = "proboscis"
@@ -158,6 +192,7 @@
 		/datum/language/common,
 		/datum/language/draconic,
 		/datum/language/ratvar,
+		/datum/language/codespeak, //Bluemoon Change - because blyad
 		/datum/language/monkey))
 
 /obj/item/organ/tongue/alien/Initialize(mapload)

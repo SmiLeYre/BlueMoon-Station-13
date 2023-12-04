@@ -1,13 +1,14 @@
 /obj/item/stack/telecrystal
-	name = "telecrystal"
-	desc = "It seems to be pulsing with suspiciously enticing energies."
+	name = "Telecrystal"
+	desc = "Red bluespace crystals..? No... red crystals... what?"
 	singular_name = "telecrystal"
-	icon = 'icons/obj/telescience.dmi'
 	icon_state = "telecrystal"
+	icon = 'icons/obj/telescience.dmi'
 	grind_results = list(/datum/reagent/telecrystal = 20)
 	w_class = WEIGHT_CLASS_TINY
 	max_amount = 50
 	item_flags = NOBLUDGEON
+	novariants = FALSE
 
 /obj/item/stack/telecrystal/attack(mob/target, mob/user)
 	if(target == user && isliving(user)) //You can't go around smacking people with crystals to find out if they have an uplink or not.
@@ -31,10 +32,23 @@
 			return
 		cart.telecrystals += amount
 		use(amount)
-		to_chat(user, "<span class='notice'>You slot [src] into [cart].  The next time it's used, it will also give telecrystals.</span>")
+		to_chat(user, "<span class='notice'>You slot [src] into [cart].  The next time it's used, it will also give credits.</span>")
 
 /obj/item/stack/telecrystal/five
 	amount = 5
 
 /obj/item/stack/telecrystal/twenty
+	amount = 20
+
+/obj/item/stack/telecrystal/inteq
+	name = "Credit"
+	desc = "This is money. Dirty money.."
+	singular_name = "credit"
+	icon_state = "credit"
+	novariants = TRUE
+
+/obj/item/stack/telecrystal/inteq/five
+	amount = 5
+
+/obj/item/stack/telecrystal/inteq/twenty
 	amount = 20

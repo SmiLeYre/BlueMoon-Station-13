@@ -15,10 +15,11 @@
 	/datum/surgery_step/graft_synthtissue,
 	/datum/surgery_step/close
 	)
+	special_surgery_traits = list(OPERATION_NEED_FULL_ANESTHETIC) // BLUEMOON ADD - операция требует, чтобы пациент находился без сознания
 
 //repair organs
 /datum/surgery_step/graft_synthtissue
-	name = "graft synthtissue"
+	name = "Трансплантировать Синтетическую Ткань"
 	implements = list(TOOL_HEMOSTAT = 100, TOOL_SCREWDRIVER = 35, /obj/item/pen = 15)
 	repeatable = TRUE
 	time = 75

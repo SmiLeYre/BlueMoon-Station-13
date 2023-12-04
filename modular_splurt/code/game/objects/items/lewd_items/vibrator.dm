@@ -11,8 +11,10 @@
 	//slot_flags = ITEM_SLOT_DENYPOCKET   //no more pocket shockers
 	var/mode = 1
 	var/style = "long"
-	var/inside = FALSE
 	var/last = 0
+	var/vibing = 0
+	var/vibrate_constant = 0
+	var/inside = FALSE
 
 /obj/item/electropack/vibrator/Initialize() //give the device its own code
 	. = ..()
@@ -96,6 +98,20 @@ Code:
 				to_chat(user, span_notice("You twist the bottom of [src], setting it to the low setting."))
 				return
 
+/obj/item/electropack/vibrator/verb/toggle_constant()
+
+	set name = "Toggle constant vibration"
+	set category = "Object"
+
+	vibrate_constant = !vibrate_constant
+	playsound(usr, 'sound/effects/clock_tick.ogg', 50, 1, -1)
+	if(vibrate_constant)
+		to_chat(usr, "[src] режим постоянной вибрации.")
+	else
+		to_chat(usr, "[src] режим единичной вибрации.")
+
+
+
 /obj/item/electropack/vibrator/receive_signal(datum/signal/signal)
 	if(!signal || signal.data["code"] != code)
 		return
@@ -105,6 +121,13 @@ Code:
 
 	last = world.time + 3 SECONDS //lets stop spam.
 
+	switch(vibrate_constant)
+		if(0)
+			vibrate_once()
+		if(1)
+			vibrate_constant()
+
+/obj/item/electropack/vibrator/proc/vibrate_once()
 	if(inside)
 		if(!istype(loc, /obj/item/organ/genital))
 			return
@@ -146,3 +169,55 @@ Code:
 		icon_state = "vibingsmall"
 		sleep(30)
 		icon_state = "vibesmall"
+
+/obj/item/electropack/vibrator/proc/vibrate_constant()
+	var/obj/item/organ/genital/G = loc
+	var/mob/living/carbon/U = G.owner
+	var/intencity = 6*mode
+
+	vibing = !vibing
+
+	if(inside)
+		while(vibing)
+			if(!istype(loc, /obj/item/organ/genital))
+				return
+
+			else
+				if(activate_after(src, 5))
+					if(G)
+						switch(G.type) //just being fancy
+							if(/obj/item/organ/genital/breasts)
+								to_chat(U, span_love("[src] vibrates against your nipples!"))
+							else
+								to_chat(U, span_love("[src] vibrates against your [G.name]!"))
+
+					U.handle_post_sex(intencity, null, src) //give pleasure
+					playsound(U.loc, 'modular_splurt/sound/lewd/vibrate.ogg', (intencity+5), 1, -1) //vibe intencity scaled up abit for sound
+
+
+					switch(mode)
+						if(1) //low, setting for RP, it wont force your character to do anything.
+							to_chat(U, span_love("You feel pleasure surge through your [G.name]"))
+							U.do_jitter_animation() //do animation without heartbeat
+						if(2) //med, can make you cum
+							to_chat(U, span_love("You feel intense pleasure surge through your [G.name]"))
+							U.do_jitter_animation()
+						if(3) //high, makes you stun
+							to_chat(U, span_userdanger("You feel overpowering pleasure surge through your [G.name]"))
+							U.Jitter(3)
+							U.Stun(30)
+							if(prob(50))
+								U.emote("moan")
+
+
+
+					playsound(src, 'modular_splurt/sound/lewd/vibrate.ogg', 40, 1, -1)
+					if(style == "long") //haha vibrator go brrrrrrr
+						icon_state = "vibing"
+
+						sleep(30)
+						icon_state = "vibe"
+					else
+						icon_state = "vibingsmall"
+						sleep(30)
+						icon_state = "vibesmall"

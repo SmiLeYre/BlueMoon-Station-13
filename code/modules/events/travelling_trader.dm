@@ -1,7 +1,7 @@
 /datum/round_event_control/travelling_trader
 	name = "Travelling Trader"
 	typepath = /datum/round_event/travelling_trader
-	weight = 8
+	weight = 15
 	max_occurrences = 2
 	earliest_start = 0 MINUTES
 	category = EVENT_CATEGORY_FRIENDLY
@@ -18,7 +18,7 @@
 		spawn_location = pick(GLOB.generic_event_spawns)
 	else
 		message_admins("No event spawn landmarks exist on the map while placing a travelling trader, resorting to random station turf. (go yell at a mapper)")
-		spawn_location = get_random_station_turf()
+		spawn_location = get_safe_random_station_turf() //BLUEMOON CHANGES (WAS - get_random_station_turf)
 
 /datum/round_event/travelling_trader/start()
 	//spawn a type of trader
@@ -30,7 +30,7 @@
 	trader.visible_message("<b>[trader]</b> suddenly appears in a puff of smoke!")
 
 /datum/round_event/travelling_trader/announce(fake)
-	priority_announce("A mysterious figure has been detected on sensors at [get_area(spawn_location)]", "Mysterious Figure", has_important_message = !fake)
+	priority_announce("Таинственная фигура была обнаружена на камерах в [get_area(spawn_location)]", "Таинственная Фигура", has_important_message = !fake)
 
 /datum/round_event/travelling_trader/end()
 	if(trader) // the /datum/round_event/travelling_trader has given up on waiting!
@@ -222,7 +222,8 @@
 		/obj/structure/reagent_dispensers/keg/hearty_punch = 3,
 		/obj/structure/reagent_dispensers/keg/red_queen = 3,
 		/obj/structure/reagent_dispensers/keg/narsour = 3,
-		/obj/structure/reagent_dispensers/keg/quintuple_sec = 3)
+		/obj/structure/reagent_dispensers/keg/quintuple_sec = 3,
+		/obj/structure/reagent_dispensers/keg/catnip = 3)
 
 /mob/living/carbon/human/dummy/travelling_trader/bartender/Initialize(mapload) //pick a subtype of ethanol that isn't found in the default set of the booze dispensers reagents
 	. = ..() // RETURN A HINT.

@@ -13,7 +13,7 @@
 	else if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		//if they are holding or wearing a card that has access, that works
-		if(check_access(H.get_active_held_item()) || src.check_access(H.wear_id))
+		if(check_access(H.get_active_held_item()) || src.check_access(H.wear_id) || src.check_access(H.wear_neck))
 			return TRUE
 	else if(ismonkey(M) || isalienadult(M))
 		var/mob/living/carbon/george = M
@@ -99,7 +99,7 @@
 		if("Thunderdome Overseer")
 			return list(ACCESS_CENT_GENERAL, ACCESS_CENT_THUNDER)
 		if("CentCom Official")
-			return list(ACCESS_CENT_GENERAL, ACCESS_CENT_LIVING)
+			return list(ACCESS_CENT_GENERAL, ACCESS_CENT_LIVING, ACCESS_CENT_THUNDER, ACCESS_BRIDGE_OFFICER, ACCESS_HEADS)
 		if("Medical Officer")
 			return list(ACCESS_CENT_GENERAL, ACCESS_CENT_LIVING, ACCESS_CENT_MEDICAL)
 		if("Death Commando")
@@ -107,7 +107,7 @@
 		if("Research Officer")
 			return list(ACCESS_CENT_GENERAL, ACCESS_CENT_SPECOPS, ACCESS_CENT_MEDICAL, ACCESS_CENT_TELEPORTER, ACCESS_CENT_STORAGE)
 		if("Special Ops Officer")
-			return list(ACCESS_CENT_GENERAL, ACCESS_CENT_THUNDER, ACCESS_CENT_SPECOPS, ACCESS_CENT_LIVING, ACCESS_CENT_STORAGE)
+			return get_all_centcom_access()
 		if("Admiral")
 			return get_all_centcom_access()
 		if("CentCom Commander")
@@ -150,8 +150,11 @@
 		if("med")
 			return list(ACCESS_CENT_GENERAL, ACCESS_CENT_SPECOPS, ACCESS_CENT_MEDICAL, ACCESS_CENT_LIVING)
 
+/proc/get_all_ghost_access()
+	return list(ACCESS_AWAY_COMMAND, ACCESS_AWAY_ENGINEERING, ACCESS_AWAY_MEDICAL, ACCESS_AWAY_SUPPLY, ACCESS_AWAY_SCIENCE, ACCESS_AWAY_MAINTENANCE, ACCESS_AWAY_GENERAL , ACCESS_AWAY_MAINT, ACCESS_AWAY_MED, ACCESS_AWAY_SEC, ACCESS_AWAY_ENGINE, ACCESS_AWAY_GENERIC1, ACCESS_AWAY_GENERIC2, ACCESS_AWAY_GENERIC3, ACCESS_AWAY_GENERIC4)
+
 /proc/get_all_syndicate_access()
-	return list(ACCESS_SYNDICATE, ACCESS_SYNDICATE)
+	return list(ACCESS_SYNDICATE, ACCESS_SYNDICATE_LEADER, ACCESS_SLAVER, ACCESS_BLOODCULT, ACCESS_CLOCKCULT)
 
 /proc/get_region_accesses(code)
 	switch(code)
@@ -160,7 +163,7 @@
 		if(1) //station general
 			return list(ACCESS_KITCHEN,ACCESS_BAR, ACCESS_HYDROPONICS, ACCESS_JANITOR, ACCESS_CHAPEL_OFFICE, ACCESS_CREMATORIUM, ACCESS_LIBRARY, ACCESS_THEATRE, ACCESS_LAWYER)
 		if(2) //security
-			return list(ACCESS_SEC_DOORS, ACCESS_WEAPONS, ACCESS_SECURITY, ACCESS_BRIG, ACCESS_ARMORY, ACCESS_FORENSICS_LOCKERS, ACCESS_COURT, ACCESS_HOS, ACCESS_ENTER_GENPOP, ACCESS_LEAVE_GENPOP,)
+			return list(ACCESS_SEC_DOORS, ACCESS_WEAPONS, ACCESS_SECURITY, ACCESS_BRIG, ACCESS_ARMORY, ACCESS_FORENSICS_LOCKERS, ACCESS_COURT, ACCESS_HOS, ACCESS_ENTER_GENPOP, ACCESS_LEAVE_GENPOP, ACCESS_BRIGDOC)
 		if(3) //medbay
 			return list(ACCESS_MEDICAL, ACCESS_GENETICS, ACCESS_CLONING, ACCESS_MORGUE, ACCESS_CHEMISTRY, ACCESS_VIROLOGY, ACCESS_SURGERY, ACCESS_CMO, ACCESS_PSYCH)
 		if(4) //research
@@ -171,6 +174,9 @@
 			return list(ACCESS_MAILSORTING, ACCESS_MINING, ACCESS_MINING_STATION, ACCESS_MINERAL_STOREROOM, ACCESS_CARGO, ACCESS_QM, ACCESS_VAULT)
 		if(7) //command
 			return list(ACCESS_HEADS, ACCESS_RC_ANNOUNCE, ACCESS_KEYCARD_AUTH, ACCESS_CHANGE_IDS, ACCESS_AI_UPLOAD, ACCESS_TELEPORTER, ACCESS_EVA, ACCESS_GATEWAY, ACCESS_ALL_PERSONAL_LOCKERS, ACCESS_HOP, ACCESS_CAPTAIN, ACCESS_VAULT)
+		if(8) //away
+			return list(ACCESS_AWAY_COMMAND, ACCESS_AWAY_ENGINEERING, ACCESS_AWAY_MEDICAL, ACCESS_AWAY_SUPPLY, ACCESS_AWAY_SCIENCE, ACCESS_AWAY_MAINTENANCE, ACCESS_AWAY_GENERAL , ACCESS_AWAY_MAINT, ACCESS_AWAY_MED, ACCESS_AWAY_SEC, ACCESS_AWAY_ENGINE, ACCESS_AWAY_GENERIC1, ACCESS_AWAY_GENERIC2, ACCESS_AWAY_GENERIC3, ACCESS_AWAY_GENERIC4)
+
 
 /proc/get_region_accesses_name(code)
 	switch(code)
@@ -360,10 +366,10 @@
 			return "Code Scotch"
 
 /proc/get_all_jobs()
-	return list("Assistant", "Captain", "Blueshield", "Head of Personnel", "Bridge Officer", "Bartender", "Cook", "Botanist", "Quartermaster", "Cargo Technician",
+	return list("Assistant", "Captain", "Blueshield", "Head of Personnel", "Bridge Officer", "Bartender", "Cook", "Entertainer", "Botanist", "Quartermaster", "Cargo Technician",
 				"Shaft Miner", "Clown", "Mime", "Janitor", "Curator", "Lawyer", "Chaplain", "Chief Engineer", "Station Engineer",
 				"Atmospheric Technician", "Chief Medical Officer", "Medical Doctor", "Chemist", "Geneticist", "Virologist", "Psychologist", "Paramedic",
-				"Research Director", "Scientist", "Roboticist", "Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Peacekeeper", "Prisoner")
+				"Research Director", "Scientist", "Roboticist", "Expeditor", "Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Peacekeeper", "Prisoner", "NanoTrasen Representative", "Bouncer") //BlueMoon edit
 
 /proc/get_all_job_icons() //For all existing HUD icons
 	return get_all_jobs()
@@ -376,6 +382,20 @@
 	return SSjob.real_job_name[jobName] || "Unknown"
 
 /obj/item/proc/get_job_name() //Used in secHUD icon generation
+	if (istype(src, /obj/item/card/id/debug/bst))
+		return "scrambled"
+	if (istype(src, /obj/item/card/id/syndicate))
+		return "scrambled"
+	if (istype(src, /obj/item/card/id/nri))
+		return "nri"
+	if (istype(src, /obj/item/card/id/nri_citizen))
+		return "nri"
+	if (istype(src, /obj/item/card/id/sol))
+		return "sol"
+	if (istype(src, /obj/item/card/id/sol_citizen))
+		return "sol"
+	if (istype(src, /obj/item/card/id/death))
+		return "deathcommando"
 	var/obj/item/card/id/I = GetID()
 	if(!I)
 		return

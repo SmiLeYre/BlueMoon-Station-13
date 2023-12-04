@@ -4,7 +4,7 @@
 
 /obj/item/toy/cards/deck/examine()
 	. = ..()
-	. += span_notice("Alt-click [src] to remove joker cards.")
+	. += "<span class='notice'>Alt-click [src] to remove joker cards.</span>"
 
 /obj/item/toy/cards/deck/populate_deck()
 	. = ..()
@@ -16,9 +16,9 @@
 		return
 	var/jokermono = cards.Remove("Monochrome Joker")
 	var/jokercolor = cards.Remove("Colorful Joker")
-	user.visible_message("[user] searches through the deck to remove joker cards.", span_notice("You search through the deck to remove joker cards."))
+	user.visible_message("[user] searches through the deck to remove joker cards.", "<span class='notice'>You search through the deck to remove joker cards.</span>")
 	if(!(jokermono || jokercolor))
-		to_chat(user, span_warning("There are no joker cards to remove!"))
+		to_chat(user, "<span class='warning'>There are no joker cards to remove!</span>")
 		return
 	if(jokermono && jokercolor)
 		var/obj/item/toy/cards/singlecard/H1 = new/obj/item/toy/cards/singlecard(user.loc)

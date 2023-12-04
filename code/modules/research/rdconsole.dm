@@ -19,10 +19,10 @@ Nothing else in the console has ID requirements.
 	desc = "A console used to interface with R&D tools."
 	icon_screen = "rdcomp"
 	icon_keyboard = "rd_key"
+	circuit = /obj/item/circuitboard/computer/rdconsole
 	var/datum/techweb/stored_research					//Reference to global science techweb.
 	var/obj/item/disk/tech_disk/t_disk	//Stores the technology disk.
 	var/obj/item/disk/design_disk/d_disk	//Stores the design disk.
-	circuit = /obj/item/circuitboard/computer/rdconsole
 
 	var/obj/machinery/rnd/destructive_analyzer/linked_destroy	//Linked Destructive Analyzer
 	var/obj/machinery/rnd/production/protolathe/linked_lathe				//Linked Protolathe
@@ -188,6 +188,7 @@ Nothing else in the console has ID requirements.
 	. = ..()
 	if(obj_flags & EMAGGED)
 		return
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	to_chat(user, "<span class='notice'>You disable the security protocols[locked? " and unlock the console":""].</span>")
 	playsound(src, "sparks", 75, 1)
 	obj_flags |= EMAGGED

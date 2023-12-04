@@ -8,18 +8,18 @@
 //Space Suits and Hardsuits
 
 /datum/uplink_item/suits/turtlenck
-	name = "Tactical Turtleneck"
+	name = "Brown Tactical Turtleneck"
 	desc = "A slightly armored conspicious jumpsuit that has no suit sensors attached to them, if someone sees you in this hope they think its a fake."
-	item = /obj/item/clothing/under/syndicate
+	item = /obj/item/clothing/under/inteq
 	cost = 1
-	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
+	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE)
 
 /datum/uplink_item/suits/turtlenck_skirt
-	name = "Tactical Skirtleneck"
+	name = "Brown Tactical Skirtleneck"
 	desc = "A slightly armored conspicious jumpsuit that has no suit sensors attached to them, if someone sees you in this hope they think its a fake."
-	item = /obj/item/clothing/under/syndicate/skirt
+	item = /obj/item/clothing/under/inteq_skirt
 	cost = 1
-	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
+	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE)
 
 /datum/uplink_item/suits/padding
 	name = "Soft Padding"
@@ -49,6 +49,7 @@
 			sightings, however."
 	item = /obj/item/storage/box/syndie_kit/space
 	cost = 4
+	purchasable_from = ~(UPLINK_TRAITORS | UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
 
 /datum/uplink_item/suits/hardsuit
 	name = "Syndicate Hardsuit"
@@ -59,7 +60,15 @@
 			Nanotrasen crew who spot these suits are known to panic."
 	item = /obj/item/clothing/suit/space/hardsuit/syndi
 	cost = 8
-	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS) //you can't buy it in nuke, because the elite hardsuit costs the same while being better
+	purchasable_from = ~(UPLINK_TRAITORS | UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS) //you can't buy it in nuke, because the elite hardsuit costs the same while being better
+
+/datum/uplink_item/suits/chameleon_hardsuit
+	name = "Chameleon Hardsuit"
+	desc = "A top-tier Hardsuit developed with cooperation of Cybersun Industries and the Gorlex Marauders, a favorite of Syndicate Contractors. \
+	In addition, it has an in-built chameleon system, allowing you to disguise your hardsuit to the most common variations on your mission area. \
+	This one disquised as engineering hardsuit."
+	cost = 10 //reskinned blood-red hardsuit with chameleon
+	item = /obj/item/storage/box/inteq_kit/chameleon_hardsuit
 
 /datum/uplink_item/suits/hardsuit/elite
 	name = "Elite Syndicate Hardsuit"
@@ -67,15 +76,15 @@
 			provides the user with superior armor and mobility compared to the standard Syndicate hardsuit."
 	item = /obj/item/clothing/suit/space/hardsuit/syndi/elite
 	cost = 8
-	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS
+	purchasable_from = ~(UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 
 /datum/uplink_item/suits/hardsuit/shielded
 	name = "Shielded Syndicate Hardsuit"
 	desc = "An upgraded version of the standard Syndicate hardsuit. It features a built-in energy shielding system. \
-			The shields can handle up to three impacts within a short duration and will rapidly recharge while not under fire."
+			The shields can handle up to four impacts within a short duration and will rapidly recharge while not under fire."
 	item = /obj/item/clothing/suit/space/hardsuit/shielded/syndi
 	cost = 30
-	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS
+	purchasable_from = ~(UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 
 /datum/uplink_item/suits/thiefgloves
 	name = "Thieving Gloves"

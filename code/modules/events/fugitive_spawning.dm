@@ -2,7 +2,8 @@
 	name = "Spawn Fugitives"
 	typepath = /datum/round_event/ghost_role/fugitives
 	max_occurrences = 1
-	min_players = 20
+	min_players = 15
+	weight = 45
 	earliest_start = 30 MINUTES //deadchat sink, lets not even consider it early on.
 	category = EVENT_CATEGORY_INVASION
 	description = "Fugitives will hide on the station, followed by hunters."
@@ -115,4 +116,4 @@
 		CRASH("Fugitive Hunters (Created from fugitive event) found no turf to load in")
 	if(!ship.load(T))
 		CRASH("Loading [backstory] ship failed!")
-	priority_announce("Unidentified ship detected near the station.")
+	priority_announce("Неизвестный корабль обнаружен недалеко от станции.")

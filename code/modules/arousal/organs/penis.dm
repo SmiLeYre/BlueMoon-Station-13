@@ -1,13 +1,16 @@
 /obj/item/organ/genital/penis
-	name = "penis"
+	name = "член"
+	ru_name = "член" // BLUEMOON ADD
+	ru_name_v = "члене" // BLUEMOON ADD
+	ru_name_capital = "Член" // BLUEMOON ADD
 	desc = "A male reproductive organ."
 	icon_state = "penis"
 	icon = 'icons/obj/genitals/penis.dmi'
 	zone = BODY_ZONE_PRECISE_GROIN
 	slot = ORGAN_SLOT_PENIS
 	masturbation_verb = "stroke"
-	arousal_verb = "You pop a boner"
-	unarousal_verb = "Your boner goes down"
+	arousal_verb = "У тебя сильный стояк"
+	unarousal_verb = "Твой стояк опускается"
 	genital_flags = CAN_MASTURBATE_WITH|CAN_CLIMAX_WITH|GENITAL_CAN_AROUSE|UPDATE_OWNER_APPEARANCE|GENITAL_UNDIES_HIDDEN|GENITAL_CAN_TAUR|CAN_CUM_INTO|HAS_EQUIPMENT
 	linked_organ_slot = ORGAN_SLOT_TESTICLES
 	fluid_transfer_factor = 0.5
@@ -34,7 +37,7 @@
 /obj/item/organ/genital/penis/update_size(modified = FALSE)
 	if(length <= 0)//I don't actually know what round() does to negative numbers, so to be safe!!
 		if(owner)
-			to_chat(owner, "<span class='warning'>You feel your tallywacker shrinking away from your body as your groin flattens out!</b></span>")
+			to_chat(owner, "<span class='warning'>Вы чувствуете, как ваш пенис уменьшается в размерах по сравнению с вашим телом, а пах становится плоским!</b></span>")
 		QDEL_IN(src, 1)
 		if(linked_organ)
 			QDEL_IN(linked_organ, 1)
@@ -42,15 +45,15 @@
 	var/rounded_length = round(length)
 	var/new_size
 	switch(rounded_length)
-		if(0 to 6) //If modest size
+		if(0 to 12) //If modest size
 			new_size = 1
-		if(7 to 11) //If large
+		if(13 to 24) //If large
 			new_size = 2
-		if(12 to 36) //If massive
+		if(23 to 50) //If massive
 			new_size = 3
-		if(37 to 48) //If comical
+		if(51 to 90) //If comical
 			new_size = 4 //no new sprites for anything larger yet //Now there is :3
-		if(49 to INFINITY)
+		if(91 to INFINITY)
 			new_size = 5
 
 	if(linked_organ)
@@ -60,9 +63,9 @@
 
 	if(owner)
 		if (round(length) > round(prev_length))
-			to_chat(owner, "<span class='warning'>Your [pick(GLOB.dick_nouns)] [pick("swells up to", "flourishes into", "expands into", "bursts forth into", "grows eagerly into", "amplifys into")] a [uppertext(round(length*get_size(owner)))] inch penis.</b></span>")
+			to_chat(owner, "<span class='warning'>Твой [pick(GLOB.dick_nouns)] начинает [pick("разбухать до", "расцветать до", "расширяться до", "пухнуть до", "расти с нетерпением до", "увеличиваться до")] [uppertext(round(length*get_size(owner)))]-см. Да!</b></span>")
 		else if ((round(length) < round(prev_length)) && (length > 0.5))
-			to_chat(owner, "<span class='warning'>Your [pick(GLOB.dick_nouns)] [pick("shrinks down to", "decreases into", "diminishes into", "deflates into", "shrivels regretfully into", "contracts into")] a [uppertext(round(length*get_size(owner)))] inch penis.</b></span>")
+			to_chat(owner, "<span class='warning'>Твой [pick(GLOB.dick_nouns)] начинает [pick("уменьшаться до", "сдуваться до", "колебаться до", "сокращаться до", "сморщиваться с сожалением до", "сдуваться до")] [uppertext(round(length*get_size(owner)))]-см. Не-ет!</b></span>")
 	icon_state = sanitize_text("penis_[shape]_[size]")
 	diameter = (length * diameter_ratio)//Is it just me or is this ludicous, why not make it exponentially decay?
 
@@ -73,6 +76,34 @@
 	var/icon_shape = S ? S.icon_state : "human"
 	icon_state = "penis_[icon_shape]_[size]"
 	var/lowershape = lowertext(shape)
+
+	switch(lowershape)
+		if("penis")
+			lowershape = "человеческий"
+		if("human")
+			lowershape = "человеческий"
+		if("knotted")
+			lowershape = "узловатый"
+		if("flared")
+			lowershape = "конический"
+		if("barbed, knotted")
+			lowershape = "узловатый и немного колючий"
+		if("tapered")
+			lowershape = "утончённый"
+		if("tentacled")
+			lowershape = "тентяклевидный"
+		if("hemi")
+			lowershape = "двойной"
+		if("teshari")
+			lowershape = "тешарьский"
+		if("knotted hemi")
+			lowershape = "двойной узловатый"
+		if("barbed, knotted hemi")
+			lowershape = "двойной, узловатый и немного колючий"
+		if("thick")
+			lowershape = "обрезанный"
+		else
+			lowershape = "членовидный"
 
 	if(owner)
 		if(owner.dna.species.use_skintones && owner.dna.features["genitals_use_skintone"])
@@ -86,12 +117,11 @@
 		if(genital_flags & GENITAL_CAN_TAUR && S?.taur_icon && (!S.feat_taur || owner.dna.features[S.feat_taur]) && owner.dna.species.mutant_bodyparts["taur"])
 			var/datum/sprite_accessory/taur/T = GLOB.taur_list[owner.dna.features["taur"]]
 			if(T.taur_mode & S.accepted_taurs) //looks out of place on those.
-				lowershape = "taur, [lowershape]"
+				lowershape = "крупный таурский, [lowershape]"
 
 	var/adjusted_length = round(length * (owner ? get_size(owner) : 1), 0.25)
 	var/adjusted_diameter = round(diameter * (owner ? get_size(owner) : 1), 0.25)
-
-	desc = "You see [aroused_state ? "an erect" : "a flaccid"] [lowershape] [name]. You estimate it's about [adjusted_length] inch[adjusted_length != 1 ? "es" : ""] long and [adjusted_diameter] inch[adjusted_diameter != 1 ? "es" : ""] in diameter."
+	desc = "Вы наблюдаете [aroused_state ? "эрегированный" : "висящий"] [lowershape] [pick(GLOB.dick_nouns)]. По вашим оценкам, он примерно [adjusted_length] [adjusted_length != 1 ? "" : ""] сантиметров в длину и [adjusted_diameter] [adjusted_diameter != 1 ? "" : ""] сантиметров в ширину."
 
 /obj/item/organ/genital/penis/get_features(mob/living/carbon/human/H)
 	var/datum/dna/D = H.dna

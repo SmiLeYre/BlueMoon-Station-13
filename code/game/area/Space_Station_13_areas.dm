@@ -96,8 +96,8 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	ambientsounds = MINING
 	flags_1 = CAN_BE_DIRTY_1
 	sound_environment = SOUND_AREA_ASTEROID
-	// min_ambience_cooldown = 70 SECONDS
-	// max_ambience_cooldown = 220 SECONDS
+	min_ambience_cooldown = 70 SECONDS
+	max_ambience_cooldown = 220 SECONDS
 
 /area/asteroid/nearstation
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
@@ -213,6 +213,10 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	// airlock_wires = /datum/wires/airlock/maint
 	sound_environment = SOUND_AREA_TUNNEL_ENCLOSED
 	minimap_color = "#454545"
+	forced_ambience = TRUE
+	min_ambience_cooldown = 12 SECONDS
+	max_ambience_cooldown = 20 SECONDS
+	shipambience = 'sound/ambience/maintambience.ogg'
 
 //Maintenance - Departmental
 
@@ -304,19 +308,19 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "prison_maintenance"
 
 /area/maintenance/prison/fore
-	name = "Prison Fore Maintenance"
+	name = "Prison North Maintenance"
 	icon_state = "prison_maintenance"
 
 /area/maintenance/prison/starboard
-	name = "Prison Starboard Maintenance"
+	name = "Prison Eastern Maintenance"
 	icon_state = "prison_maintenance"
 
 /area/maintenance/prison/aft
-	name = "Prison Aft Maintenance"
+	name = "Prison South Maintenance"
 	icon_state = "prison_maintenance"
 
 /area/maintenance/prison/port
-	name = "Prison Port Maintenance"
+	name = "Prison Western Maintenance"
 	icon_state = "prison_maintenance"
 
 //Maintenance - Generic
@@ -330,14 +334,14 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "fpmaint"
 
 /area/maintenance/aft
-	name = "Aft Maintenance"
+	name = "South Maintenance"
 	icon_state = "amaint"
 
 /area/maintenance/aft/upper
-	name = "Upper Aft Maintenance"
+	name = "Upper South Maintenance"
 
 /area/maintenance/aft/secondary
-	name = "Aft Maintenance"
+	name = "South Maintenance"
 	icon_state = "amaint_2"
 
 /area/maintenance/central
@@ -349,57 +353,57 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "maintcentral"
 
 /area/maintenance/fore
-	name = "Fore Maintenance"
+	name = "North Maintenance"
 	icon_state = "fmaint"
 
 /area/maintenance/fore/upper
-	name = "Upper Fore Maintenance"
+	name = "Upper North Maintenance"
 
 /area/maintenance/fore/secondary
-	name = "Fore Maintenance"
+	name = "North Maintenance"
 	icon_state = "fmaint_2"
 
 /area/maintenance/starboard
-	name = "Starboard Maintenance"
+	name = "Eastern Maintenance"
 	icon_state = "smaint"
 
 /area/maintenance/starboard/upper
-	name = "Upper Starboard Maintenance"
+	name = "Upper Eastern Maintenance"
 
 /area/maintenance/starboard/central
-	name = "Central Starboard Maintenance"
+	name = "Central Eastern Maintenance"
 	icon_state = "smaint"
 
 /area/maintenance/starboard/secondary
-	name = "Secondary Starboard Maintenance"
+	name = "Secondary Eastern Maintenance"
 	icon_state = "smaint_2"
 
 /area/maintenance/starboard/aft
-	name = "Starboard Quarter Maintenance"
+	name = "Eastern South Maintenance"
 	icon_state = "asmaint"
 
 /area/maintenance/starboard/aft/secondary
-	name = "Secondary Starboard Quarter Maintenance"
+	name = "Secondary Eastern South Maintenance"
 	icon_state = "asmaint_2"
 
 /area/maintenance/starboard/fore
-	name = "Starboard Bow Maintenance"
+	name = "Eastern North Maintenance"
 	icon_state = "fsmaint"
 
 /area/maintenance/port
-	name = "Port Maintenance"
+	name = "Western Maintenance"
 	icon_state = "pmaint"
 
 /area/maintenance/port/central
-	name = "Central Port Maintenance"
+	name = "Central Western Maintenance"
 	icon_state = "maintcentral"
 
 /area/maintenance/port/aft
-	name = "Port Quarter Maintenance"
+	name = "Western South Maintenance"
 	icon_state = "apmaint"
 
 /area/maintenance/port/fore
-	name = "Port Bow Maintenance"
+	name = "Western North Maintenance"
 	icon_state = "fpmaint"
 
 /area/maintenance/disposal
@@ -437,40 +441,41 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	nightshift_public_area = NIGHTSHIFT_AREA_PUBLIC
 	sound_environment = SOUND_AREA_STANDARD_STATION
 	minimap_color = "#aaaaaa"
+	ambientsounds = GENERIC
 
 /area/hallway/primary
 	name = "Primary Hallway"
 
 /area/hallway/primary/aft
-	name = "Aft Primary Hallway"
+	name = "South Primary Hallway"
 	icon_state = "hallA"
 
 /area/hallway/primary/fore
-	name = "Fore Primary Hallway"
+	name = "North Primary Hallway"
 	icon_state = "hallF"
 
 /area/hallway/primary/starboard
-	name = "Starboard Primary Hallway"
+	name = "Eastern Primary Hallway"
 	icon_state = "hallS"
 
 /area/hallway/primary/starboard/aft
-	name = "Starboard Quarter Primary Hallway"
+	name = "Eastern South Primary Hallway"
 	icon_state = "hallAS"
 
 /area/hallway/primary/starboard/fore
-	name = "Starboard Bow Primary Hallway"
+	name = "Eastern North Primary Hallway"
 	icon_state = "hallFS"
 
 /area/hallway/primary/port
-	name = "Port Primary Hallway"
+	name = "Western Primary Hallway"
 	icon_state = "hallP"
 
 /area/hallway/primary/port/aft
-	name = "Port Quarter Primary Hallway"
+	name = "Western South Primary Hallway"
 	icon_state = "hallAP"
 
 /area/hallway/primary/port/fore
-	name = "Port Bow Primary Hallway"
+	name = "Western North Primary Hallway"
 	icon_state = "hallFP"
 
 /area/hallway/primary/central
@@ -583,6 +588,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/command/heads_quarters/rd
 	name = "Research Director's Office"
 	icon_state = "rd_office"
+	shipambience = 'sound/ambience/zone/sci.ogg'
 
 /area/command/heads_quarters/rd/private
 	name = "Research Director's Private Quarters"
@@ -749,11 +755,11 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "emergencystorage"
 
 /area/commons/storage/emergency/starboard
-	name = "Starboard Emergency Storage"
+	name = "Eastern Emergency Storage"
 	icon_state = "emergency_storage"
 
 /area/commons/storage/emergency/port
-	name = "Port Emergency Storage"
+	name = "Western Emergency Storage"
 	icon_state = "emergency_storage"
 
 /area/commons/storage/mining
@@ -798,7 +804,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "hallFS"
 
 /area/engineering/atmos/aftair
-	name = "Aft Air Hookup"
+	name = "South Air Hookup"
 	icon_state = "atmos"
 	flags_1 = NONE
 
@@ -966,6 +972,8 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	ambientsounds = HOLY
 	flags_1 = NONE
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
+	min_ambience_cooldown = 90 SECONDS
+	max_ambience_cooldown = 180 SECONDS
 
 /area/service/chapel/main
 	name = "Chapel"
@@ -1146,44 +1154,44 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	sound_environment = SOUND_AREA_SPACE
 
 /area/solars/fore
-	name = "Fore Solar Array"
+	name = "North Solar Array"
 	icon_state = "yellow"
 	sound_environment = SOUND_AREA_STANDARD_STATION
 
 /area/solars/aft
-	name = "Aft Solar Array"
+	name = "South Solar Array"
 	icon_state = "yellow"
 
 /area/solars/aux/port
-	name = "Port Bow Auxiliary Solar Array"
+	name = "Western North Auxiliary Solar Array"
 	icon_state = "panelsA"
 
 /area/solars/aux/starboard
-	name = "Starboard Bow Auxiliary Solar Array"
+	name = "Eastern North Auxiliary Solar Array"
 	icon_state = "panelsA"
 
 /area/solars/starboard
-	name = "Starboard Solar Array"
+	name = "Eastern Solar Array"
 	icon_state = "panelsS"
 
 /area/solars/starboard/aft
-	name = "Starboard Quarter Solar Array"
+	name = "Eastern South Solar Array"
 	icon_state = "panelsAS"
 
 /area/solars/starboard/fore
-	name = "Starboard Bow Solar Array"
+	name = "Eastern North Solar Array"
 	icon_state = "panelsFS"
 
 /area/solars/port
-	name = "Port Solar Array"
+	name = "Western Solar Array"
 	icon_state = "panelsP"
 
 /area/solars/port/aft
-	name = "Port Quarter Solar Array"
+	name = "Western South Solar Array"
 	icon_state = "panelsAP"
 
 /area/solars/port/fore
-	name = "Port Bow Solar Array"
+	name = "Western North Solar Array"
 	icon_state = "panelsFP"
 
 /area/solars/aisat
@@ -1198,51 +1206,51 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "yellow"
 
 /area/maintenance/solars/port
-	name = "Port Solar Maintenance"
+	name = "Western Solar Maintenance"
 	icon_state = "SolarcontrolP"
 
 /area/maintenance/solars/port/aft
-	name = "Port Quarter Solar Maintenance"
+	name = "Western South Solar Maintenance"
 	icon_state = "SolarcontrolAP"
 
 /area/maintenance/solars/port/fore
-	name = "Port Bow Solar Maintenance"
+	name = "Western North Solar Maintenance"
 	icon_state = "SolarcontrolFP"
 
 /area/maintenance/solars/starboard
-	name = "Starboard Solar Maintenance"
+	name = "Eastern Solar Maintenance"
 	icon_state = "SolarcontrolS"
 
 /area/maintenance/solars/starboard/aft
-	name = "Starboard Quarter Solar Maintenance"
+	name = "Eastern South Solar Maintenance"
 	icon_state = "SolarcontrolAS"
 
 /area/maintenance/solars/starboard/fore
-	name = "Starboard Bow Solar Maintenance"
+	name = "Eastern North Solar Maintenance"
 	icon_state = "SolarcontrolFS"
 
 /area/maintenance/solars/aux/port
-	name = "Port Auxiliary Solar Maintenance"
+	name = "Western Auxiliary Solar Maintenance"
 	icon_state = "SolarcontrolA"
 
 /area/maintenance/solars/aux/port/aft
-	name = "Port Quarter Auxiliary Solar Maintenance"
+	name = "Western South Auxiliary Solar Maintenance"
 	icon_state = "SolarcontrolAP"
 
 /area/maintenance/solars/aux/port/fore
-	name = "Port Bow Auxiliary Solar Maintenance"
+	name = "Western North Auxiliary Solar Maintenance"
 	icon_state = "SolarcontrolA"
 
 /area/maintenance/solars/aux/starboard
-	name = "Starboard Auxiliary Solar Maintenance"
+	name = "Eastern Auxiliary Solar Maintenance"
 	icon_state = "SolarcontrolA"
 
 /area/maintenance/solars/aux/starboard/aft
-	name = "Starboard Quarter Auxiliary Solar Maintenance"
+	name = "Eastern South Auxiliary Solar Maintenance"
 	icon_state = "SolarcontrolA"
 
 /area/maintenance/solars/aux/starboard/fore
-	name = "Starboard Bow Auxiliary Solar Maintenance"
+	name = "Eastern North Auxiliary Solar Maintenance"
 	icon_state = "SolarcontrolA"
 //MedBay
 
@@ -1252,8 +1260,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	// ambience_index = AMBIENCE_MEDICAL
 	// airlock_wires = /datum/wires/airlock/medbay
 	sound_environment = SOUND_AREA_STANDARD_STATION
-	// min_ambience_cooldown = 90 SECONDS
-	// max_ambience_cooldown = 180 SECONDS
+	min_ambience_cooldown = 90 SECONDS
+	max_ambience_cooldown = 180 SECONDS
+	ambientsounds = MEDICAL
 
 /area/medical/clinic
 	name = "Clinic"
@@ -1282,7 +1291,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	//Medbay is a large area, these additional areas help level out APC load.
 
 /area/medical/medbay/zone2
-	name = "Medbay"
+	name = "Medbay Lounge Zone"
 	icon_state = "medbay2"
 
 /area/medical/medbay/zone3
@@ -1473,6 +1482,8 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Detective's Office"
 	icon_state = "detective"
 	ambientsounds = list('sound/ambience/ambidet1.ogg','sound/ambience/ambidet2.ogg')
+	min_ambience_cooldown = 90 SECONDS
+	max_ambience_cooldown = 180 SECONDS
 
 /area/security/detectives_office/private_investigators_office
 	name = "Private Investigator's Office"
@@ -1601,6 +1612,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/science
 	name = "Science Division"
 	icon_state = "science"
+	shipambience = 'sound/ambience/zone/sci.ogg'
 	// airlock_wires = /datum/wires/airlock/science
 	sound_environment = SOUND_AREA_STANDARD_STATION
 
@@ -1747,13 +1759,13 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "amaint"
 
 /area/maintenance/external/aft
-	name = "Aft External Hull Access"
+	name = "South External Hull Access"
 
 /area/maintenance/external/port
-	name = "Port External Hull Access"
+	name = "Western External Hull Access"
 
 /area/maintenance/external/port/bow
-	name = "Port Bow External Hull Access"
+	name = "Western North External Hull Access"
 
 //Routers (currently exclusive to CogStation)
 
@@ -1781,6 +1793,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/router/eva
 	name = "EVA Router"
 	icon_state = "yellow"
+	ambientsounds = HIGHSEC
 
 /area/router/air
 	name = "Airbridge Router"

@@ -24,8 +24,8 @@
 
 ///// Debride
 /datum/surgery_step/debride
-	name = "excise infection"
-	implements = list(TOOL_HEMOSTAT = 100, TOOL_SCALPEL = 85, TOOL_SAW = 60, TOOL_WIRECUTTER = 40)
+	name = "Вырезать Заражённую Плоть"
+	implements = list(TOOL_SCALPEL = 100, TOOL_HEMOSTAT = 85, TOOL_SAW = 60, TOOL_WIRECUTTER = 40)
 	time = 30
 	repeatable = TRUE
 	preop_sound = 'sound/surgery/scalpel1.ogg'
@@ -79,7 +79,7 @@
 
 ///// Dressing burns
 /datum/surgery_step/dress
-	name = "bandage burns"
+	name = "Перевязать Повреждённую Область"
 	implements = list(/obj/item/stack/medical/gauze = 100, /obj/item/stack/sticky_tape/surgical = 100)
 	time = 40
 

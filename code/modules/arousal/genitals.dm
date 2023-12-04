@@ -5,7 +5,7 @@
 	var/shape
 	var/sensitivity = 1 // wow if this were ever used that'd be cool but it's not but i'm keeping it for my unshit code
 	var/genital_flags //see citadel_defines.dm
-	var/masturbation_verb = "masturbate"
+	var/masturbation_verb = "стимулировать"
 	var/orgasm_verb = "cumming" //present continous
 	var/arousal_verb = "You feel aroused"
 	var/unarousal_verb = "You no longer feel aroused"
@@ -106,7 +106,7 @@
 		if(GEN_ALLOW_EGG_STUFFING)
 			TOGGLE_BITFIELD(genital_flags, GENITAL_CAN_STUFF)
 			if(owner)
-				owner.log_message("Allowed egg stuffing in their [src]",LOG_EMOTE)
+				owner.log_message("Allowed toys and egg stuffing in their [src]",LOG_EMOTE)
 
 	if(update && owner && ishuman(owner)) //recast to use update genitals proc
 		var/mob/living/carbon/human/H = owner
@@ -165,21 +165,21 @@
 	var/obj/item/organ/genital/picked_organ
 	picked_organ = input(src, "Choose which genitalia to toggle arousal on", "Set genital arousal", null) in genital_list
 	if(picked_organ)
-		//SPLURT edit
-		if(CHECK_BITFIELD(picked_organ.genital_flags, GENITAL_CHASTENED))
-			to_chat(src, "<span class='userlove'>Your [pick(GLOB.dick_nouns)] twitches against its cage!</span>")
-			return
-		if(CHECK_BITFIELD(picked_organ.genital_flags, GENITAL_IMPOTENT))
-			if(istype(picked_organ, /obj/item/organ/genital/penis))
+		if(istype(picked_organ, /obj/item/organ/genital/penis))
+			//SPLURT edit
+			if(CHECK_BITFIELD(picked_organ.genital_flags, GENITAL_CHASTENED))
+				to_chat(src, "<span class='userlove'>Your [pick(GLOB.dick_nouns)] twitches against its cage!</span>")
+				return
+			if(CHECK_BITFIELD(picked_organ.genital_flags, GENITAL_IMPOTENT))
 				to_chat(src, "<span class='userlove'>Your [pick(GLOB.dick_nouns)] simply won't go up!</span>")
-			return
-		//
+				return
+			//
 		var/original_state = picked_organ.aroused_state
 		picked_organ.set_aroused_state(!picked_organ.aroused_state)
 		if(original_state != picked_organ.aroused_state)
-			to_chat(src, span_userlove("[picked_organ.aroused_state ? picked_organ.arousal_verb : picked_organ.unarousal_verb]."))
+			to_chat(src,"<span class='userlove'>[picked_organ.aroused_state ? picked_organ.arousal_verb : picked_organ.unarousal_verb].</span>")
 		else
-			to_chat(src, span_userlove("You can't make that genital [picked_organ.aroused_state ? "unaroused" : "aroused"]!"))
+			to_chat(src,"<span class='userlove'>You can't make that genital [picked_organ.aroused_state ? "unaroused" : "aroused"]!</span>")
 		picked_organ.update_appearance()
 		if(ishuman(src))
 			var/mob/living/carbon/human/human = src

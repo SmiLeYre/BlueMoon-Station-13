@@ -10,6 +10,6 @@
 	set desc = "Allows you to eat someone."
 
 	if(!CHECK_BITFIELD(T.vore_flags, DEVOURABLE))
-		to_chat(src, span_warning("System error: Unauthorized operation."))
+		to_chat(src, "<span class='warning'>System error: Unauthorized operation.</span>")
 		return
 	return feed_grabbed_to_self(src,T)

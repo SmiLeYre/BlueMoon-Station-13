@@ -114,7 +114,7 @@
 
 /obj/item/grenade/proc/prime(mob/living/lanced_by)
 	var/turf/T = get_turf(src)
-	log_game("Grenade detonation at [AREACOORD(T)], location [loc]")
+	log_game("Grenade detonation at [AREACOORD(T)], location <b>[loc]</b>")
 
 	if(shrapnel_type && shrapnel_radius && !shrapnel_initialized) // add a second check for adding the component in case whatever triggered the grenade went straight to prime (badminnery for example)
 		shrapnel_initialized = TRUE

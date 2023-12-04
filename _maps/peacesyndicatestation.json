@@ -1,0 +1,11 @@
+{
+    "map_name": "Peace Syndicate Station",
+    "map_path": "map_files/PeaceSyndicateStation",
+    "map_file": "PeaceSyndicateBoxStation.dmm",
+    "shuttles": {
+	    "cargo": "cargo_box",
+	    "ferry": "ferry_fancy",
+	    "whiteship": "whiteship_box",
+	    "emergency": "emergency_box"
+    }
+}

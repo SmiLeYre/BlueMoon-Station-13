@@ -242,8 +242,9 @@
 	return TRUE
 
 /obj/item/gun/proc/shoot_with_empty_chamber(mob/living/user as mob|obj)
-	to_chat(user, "<span class='danger'>*click*</span>")
+	to_chat(user, "<span class='danger'>*щёлк*</span>")
 	playsound(src, "gun_dry_fire", 30, 1)
+	balloon_alert(user, "Щёлк!")
 
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
 	if(recoil)
@@ -279,11 +280,43 @@
 	if(!(. & DISCARD_LAST_ACTION))
 		user.DelayNextAction(melee_attack_speed)
 
+/obj/item/gun
+	var/hole = CUM_TARGET_VAGINA
+
+/obj/item/gun/CtrlShiftClick(mob/living/carbon/human/user as mob)
+	hole = hole == CUM_TARGET_VAGINA ? CUM_TARGET_ANUS : CUM_TARGET_VAGINA
+	to_chat(user, span_notice("Я целюсь в... [hole]."))
+
 /obj/item/gun/afterattack(atom/target, mob/living/user, flag, params)
 	. = ..()
 	if(!CheckAttackCooldown(user, target, TRUE))
 		return
+	if (user.zone_selected == BODY_ZONE_PRECISE_GROIN && user.a_intent == INTENT_HELP)
+		do_eblya(target, user)
 	process_afterattack(target, user, flag, params)
+
+/obj/item/gun/proc/do_eblya(mob/living/target, mob/living/user)
+	var/message = ""
+	var/lust_amt = 0
+	var/mob/living/living_target = target
+	user.DelayNextAction(CLICK_CD_RANGE)
+	if(ishuman(living_target) && (living_target?.client?.prefs?.toggles & VERB_CONSENT))
+		if(user.zone_selected == BODY_ZONE_PRECISE_GROIN)
+			switch(hole)
+				if(CUM_TARGET_VAGINA)
+					if(living_target.has_vagina(REQUIRE_EXPOSED))
+						message = (user == living_target) ? pick("крепко обхватывает '\the [src]' и начинает пихать это прямо в свою киску.", "запихивает '\the [src]' в свою киску", "постанывает и садится на '\the [src]'.") : pick("трахает <b>[target]</b> прямо в киску с помощью '\the [src]'.", "засовывает '\the [src]' прямо в киску <b>[target]</b>.")
+						lust_amt = NORMAL_LUST
+				if(CUM_TARGET_ANUS)
+					if(living_target.has_anus(REQUIRE_EXPOSED))
+						message = (user == living_target) ? pick("крепко обхватывает '\the [src]' и начинает пихать это прямо в свою попку.","запихивает '\the [src]' прямо в свою собственную попку.", "постанывает и садится на '\the [src]'.") : pick("трахает <b>[target]</b> прямо в попку '\the [src]'.", "активно суёт '\the [src]' прямо в попку <b>[target]</b>.")
+						lust_amt = NORMAL_LUST
+	if(message)
+		user.visible_message(span_lewd("<b>[user]</b> [message]"))
+		living_target.handle_post_sex(lust_amt, null, user)
+		playsound(loc, pick('modular_sand/sound/interactions/bang4.ogg',
+							'modular_sand/sound/interactions/bang5.ogg',
+							'modular_sand/sound/interactions/bang6.ogg'), 70, 1, -1)
 
 /obj/item/gun/CheckAttackCooldown(mob/user, atom/target, shooting = FALSE)
 	return user.CheckActionCooldown(shooting? ranged_attack_speed : attack_speed, clickdelay_from_next_action, clickdelay_mod_bypass, clickdelay_ignores_next_action)
@@ -332,9 +365,10 @@
 				user.dropItemToGround(src, TRUE)
 				return
 
-	if(weapon_weight == WEAPON_HEAVY && user.get_inactive_held_item())
-		to_chat(user, "<span class='userdanger'>You need both hands free to fire [src]!</span>")
-		return
+	if (!(HAS_TRAIT(user, TRAIT_AKIMBO)))
+		if(weapon_weight == WEAPON_HEAVY && user.get_inactive_held_item())
+			to_chat(user, "<span class='userdanger'>You need both hands free to fire [src]!</span>")
+			return
 
 	user.DelayNextAction()
 
@@ -727,7 +761,7 @@
 		return
 
 	if(user == target)
-		target.visible_message("<span class='warning'>[user] sticks [src] in [user.p_their()] mouth, ready to pull the trigger...</span>", \
+		target.visible_message("<span class='warning'>[user] sticks [src] in [user.ru_ego()] mouth, ready to pull the trigger...</span>", \
 			"<span class='userdanger'>You stick [src] in your mouth, ready to pull the trigger...</span>")
 	else
 		target.visible_message("<span class='warning'>[user] points [src] at [target]'s head, ready to pull the trigger...</span>", \

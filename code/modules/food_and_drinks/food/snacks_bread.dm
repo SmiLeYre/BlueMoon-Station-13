@@ -182,8 +182,94 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 1)
 	bitesize = 3
 	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT
+	attack_verb = list("touche's", "beats")
 	tastes = list("bread" = 1)
 	foodtype = GRAIN
+	/// whether this is in fake swordplay mode or not
+	var/fake_swordplay = FALSE
+
+/obj/item/reagent_containers/food/snacks/baguette/Initialize()
+	. = ..()
+	register_context()
+
+/obj/item/reagent_containers/food/snacks/baguette/add_context(atom/source, list/context, obj/item/held_item, mob/user)
+	. = ..()
+	if (user.mind?.miming && held_item == src)
+		context[SCREENTIP_CONTEXT_LMB] = "Toggle Swordplay"
+		return CONTEXTUAL_SCREENTIP_SET
+
+/obj/item/reagent_containers/food/snacks/baguette/examine(mob/user)
+	. = ..()
+	if(user.mind?.miming)
+		. += span_notice("You can wield this like a sword by using it in your hand.")
+
+/obj/item/reagent_containers/food/snacks/baguette/attack_self(mob/user, modifiers)
+	. = ..()
+	if(!user.mind?.miming)
+		return
+	if(fake_swordplay)
+		end_swordplay(user)
+	else
+		begin_swordplay(user)
+
+/obj/item/reagent_containers/food/snacks/baguette/proc/begin_swordplay(mob/user)
+	visible_message(
+		span_notice("[user] begins wielding [src] like a sword!"),
+		span_notice("You begin wielding [src] like a sword, with a firm grip on the bottom as an imaginary handle.")
+	)
+	ADD_TRAIT(src, TRAIT_CUSTOM_TAP_SOUND, SWORDPLAY_TRAIT)
+	attack_verb_continuous = list("slashes", "cuts")
+	attack_verb_simple = list("slash", "cut")
+	hitsound = 'sound/weapons/rapierhit.ogg'
+	fake_swordplay = TRUE
+
+	RegisterSignal(src, COMSIG_ITEM_EQUIPPED, .proc/on_sword_equipped)
+	RegisterSignal(src, COMSIG_ITEM_DROPPED, .proc/on_sword_dropped)
+
+/obj/item/reagent_containers/food/snacks/baguette/proc/end_swordplay(mob/user)
+	UnregisterSignal(src, list(COMSIG_ITEM_EQUIPPED, COMSIG_ITEM_DROPPED))
+
+	REMOVE_TRAIT(src, TRAIT_CUSTOM_TAP_SOUND, SWORDPLAY_TRAIT)
+	attack_verb_continuous = initial(attack_verb_continuous)
+	attack_verb_simple = initial(attack_verb_simple)
+	hitsound = initial(hitsound)
+	fake_swordplay = FALSE
+
+	if(user)
+		visible_message(
+			span_notice("[user] no longer holds [src] like a sword!"),
+			span_notice("You go back to holding [src] normally.")
+		)
+
+/obj/item/reagent_containers/food/snacks/baguette/proc/on_sword_dropped(datum/source, mob/user)
+	SIGNAL_HANDLER
+
+	end_swordplay()
+
+/obj/item/reagent_containers/food/snacks/baguette/proc/on_sword_equipped(datum/source, mob/equipper, slot)
+	SIGNAL_HANDLER
+
+	if(!(slot & ITEM_SLOT_HANDS))
+		end_swordplay()
+
+/// Deadly bread used by a mime
+/obj/item/reagent_containers/food/snacks/baguette/combat
+	sharpness = SHARP_EDGED
+	/// Force when wielded as a sword by a mime
+	var/active_force = 20
+	/// Block chance when wielded as a sword by a mime
+	var/active_block = 50
+
+/obj/item/reagent_containers/food/snacks/baguette/combat/begin_swordplay(mob/user)
+	. = ..()
+	force = active_force
+	block_chance = active_block
+
+/obj/item/reagent_containers/food/snacks/baguette/combat/end_swordplay(mob/user)
+	. = ..()
+	force = initial(force)
+	block_chance = initial(block_chance)
 
 /obj/item/reagent_containers/food/snacks/garlicbread
 	name = "garlic bread"

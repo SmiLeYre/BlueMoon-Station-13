@@ -1,26 +1,44 @@
 /datum/config_entry/string/alert_green
-	default = "All threats to the station have passed. Security may not have weapons visible, privacy laws are once again fully enforced."
+	default = "Уровень угрозы понижен до зелёного. Все угрозы для станции устранены. Всё оружие должно быть в кобуре, и законы о конфиденциальности вновь полностью соблюдаются."
 
 /datum/config_entry/string/alert_blue_upto
-	default = "The station has received reliable information about potential threats to the station. Security staff may have weapons visible, random searches are permitted."
+	default = "Уровень угрозы повышен до Синего. Станция получила надежные данные о возможной враждебной активности на борту. Служба безопасности может держать оружие на виду."
 
 /datum/config_entry/string/alert_blue_downto
-	default = "Significant confirmed threats have been neutralized. Security may no longer have weapons drawn at all times, but may continue to have them visible. Random searches are still permitted."
+	default = "Значительные подтвержденные угрозы были нейтрализованы. Служба безопасности больше не может постоянно держать оружие наготове, но может продолжать держать его на виду."
+
+/datum/config_entry/string/alert_orange_upto
+	default = "Уровень угрозы повышен до Оранжевого. Станция получила серьезные повреждения корпуса и машинерии. Часть отделов не может функционировать. Нетехнический персонал обязан выполнять инструкции инженерного персонала. рекомендуется провести эвакуацию с пострадавших отсеков."
+
+/datum/config_entry/string/alert_orange_downto
+	default = "Значительные подтвержденные угрозы были нейтрализованы. Станция получила серьезные повреждения корпуса и машинерии, часть отделов не может функционировать. Нетехнический персонал обязан выполнять инструкции инженерного персонала. рекомендуется провести эвакуацию с пострадавших отсеков."
+
+/datum/config_entry/string/alert_violet_upto
+	default = "Значительные подтвержденные угрозы были нейтрализованы. На станции обнаружены биологические угрозы. Немедицинский персонал обязан подчиняться всем соответствующим инструкциям медицинского персонала. Всему экипажу рекомендуется носить защиту дыхательных путей и минимизировать контакты с живыми существами станции. Медицинский персонал имеет право организовывать карантинные зоны."
+
+/datum/config_entry/string/alert_violet_downto
+	default = "Значительные подтвержденные угрозы были нейтрализованы. Служба безопасности больше не может постоянно держать оружие наготове, но может продолжать держать его на виду."
 
 /datum/config_entry/string/alert_amber_upto
-	default = "There are significant confirmed threats to the station. Security staff may have weapons unholstered at all times. Random searches are allowed and advised."
+	default = "Станции грозит серьезная опасность. Службе безопасности рекомендуется иметь оружие в полной боевой готовности. Выборочные обыски разрешены и рекомендованы."
 
 /datum/config_entry/string/alert_amber_downto
-	default = "The immediate threat has passed. Security is no longer authorized to use lethal force, but may continue to have weapons drawn. Access requirements have been restored."
+	default = "Непосредственная угроза миновала. Служба безопасности больше не имеет права применять летальную силу, но может продолжать держать оружие наготове. Требования к доступу были восстановлены."
 
 /datum/config_entry/string/alert_red_upto
-	default = "There is an immediate serious threat to the station. Security is now authorized to use lethal force. Additionally, access requirements on some machines have been lifted."
+	default = "Служба безопасности должна быть полностью вооружена. Гражданский персонал обязан немедленно обратиться к Главам отделов для получения указаний к эвакуации."
 
 /datum/config_entry/string/alert_red_downto
-	default = "The station's destruction has been averted. There is still however an immediate serious threat to the station. Security is still authorized to use lethal force."
+	default = "Разрушение станции было предотвращено. Однако, по прежнему существует непосредственная серьезная угроза для станции. Служба безопасности уполномочена применять летальную силу."
+
+/datum/config_entry/string/alert_lambda
+	default = "Станция несёт серьезный урон и подвергается разрушению. Персонал станции должен сделать всё от него зависящее для предотвращения окончательной утери станции. Служба безопасности получит усиление."
+
+/datum/config_entry/string/alert_epsilon
+	default = "Центральным командованием был установлен Код ЭПСИЛОН. Система находится под серьёзной угрозой и может быть потеряна. Персонал станции должен сделать всё от него зависящее для предотвращения окончательной утери Системы. Служба безопасности получит усиление. ЦЕЛЬ - ВЫЖИТЬ. ЛЮБОЙ ЦЕНОЙ."
 
 /datum/config_entry/string/alert_delta
-	default = "Destruction of the station is imminent. All crew are instructed to obey all instructions given by heads of staff. Any violations of these orders can be punished by death. This is not a drill."
+	default = "Механизм Самоуничтожения запущен. Все члены экипажа обязаны подчиняться указаниям Глав отделов. Любые нарушения караются смертью. Это не учебная тревога."
 
 /datum/config_entry/number/minimum_secborg_alert	//Minimum alert level for secborgs to be chosen.
 	default = 3

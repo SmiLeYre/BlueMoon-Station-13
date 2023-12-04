@@ -20,6 +20,11 @@
 	icon_state = "rsecurity"
 	item_state = "r_suit"
 	armor = list(MELEE = 10, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 30, ACID = 30, WOUND = 10)
+	unique_reskin = list(
+		"Blue" = list("icon_state" = "security_black"),
+		"White" = list("icon_state" = "security_white")
+	)
+
 
 /obj/item/clothing/under/rank/security/officer/util
 	name = "security utility uniform"
@@ -27,6 +32,10 @@
 	icon_state = "utilsec"
 	item_state = "utilsec"
 	can_adjust = FALSE
+
+/obj/item/clothing/under/rank/security/officer/util/syndicate
+	armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 0)
+	has_sensor = NO_SENSORS
 
 /obj/item/clothing/under/rank/security/officer/grey
 	name = "grey security jumpsuit"
@@ -258,3 +267,14 @@
 	icon_state = "spacepolice_families"
 	item_state = "spacepolice_families"
 	can_adjust = FALSE
+
+
+//navyblue jacket
+
+/obj/item/clothing/suit/armor/navyblue
+	name = "security officer's jacket"
+	desc = "This jacket is for those special occasions when a security officer isn't required to wear their armor."
+	icon_state = "officerbluejacket"
+	item_state = "officerbluejacket"
+	body_parts_covered = CHEST|ARMS
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON

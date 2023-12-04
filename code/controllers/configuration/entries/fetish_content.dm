@@ -1,7 +1,7 @@
 /datum/config_entry/keyed_list/breasts_cups_prefs
 	key_mode = KEY_MODE_TEXT
 	value_mode = VALUE_MODE_FLAG
-	default = list("a", "b", "c", "d", "e") //keep these lowercase
+	default = list("плоского", "a", "b", "c", "d", "e") //keep these lowercase
 
 /datum/config_entry/number/penis_min_inches_prefs
 	default = 1
@@ -12,7 +12,7 @@
 	min_val = 0
 
 /datum/config_entry/number/butt_min_size_prefs
-	default = 1
+	default = BUTT_SIZE_DEF
 	min_val = 0
 	max_val = BUTT_SIZE_MAX
 

@@ -174,7 +174,7 @@
 /area/icemoon/underground/explored)
 "pP" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/chair/sofa/right{
+/obj/structure/chair/sofa/right/brown{
 	dir = 1
 	},
 /turf/open/floor/wood,
@@ -273,7 +273,7 @@
 /turf/open/floor/carpet,
 /area/ruin/powered)
 "yb" = (
-/obj/structure/chair/sofa/left{
+/obj/structure/chair/sofa/left/brown{
 	dir = 1
 	},
 /turf/open/floor/wood,

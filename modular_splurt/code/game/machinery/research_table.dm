@@ -14,27 +14,27 @@
 	obj_flags = CAN_BE_HIT|SHOVABLE_ONTO
 	pass_flags = LETPASSTHROW //You can throw objects over this, despite it's density.")
 	circuit = /obj/item/circuitboard/machine/research_table
-	var/self_unbuckle_time = 3 MINUTES
+	var/self_unbuckle_time = 2 MINUTES
 	var/static/list/users = list()
 	var/tier = 1
 	var/configured = FALSE
 	var/point_type = POINT_TYPE_SCIENCE
-	var/max_repeat_usage = 3
+	var/max_repeat_usage = 6
 	var/slaver_mode = FALSE
 
 /obj/machinery/research_table/examine(mob/user)
 	. = ..()
 	if(configured)
-		. += span_notice("The same person can be used up to [max_repeat_usage * tier] time\s.")
+		. += "<span class='notice'>The same person can be used up to [max_repeat_usage * tier] time\s.</span>"
 	switch(point_type)
 		if(POINT_TYPE_SCIENCE)
-			. += span_notice("The table is set to generate science points.")
+			. += "<span class='notice'>The table is set to generate science points.</span>"
 		else
-			. += span_notice("The table is set to generate money for cargo.")
+			. += "<span class='notice'>The table is set to generate money for cargo.</span>"
 	if(!configured && !panel_open)
-		. += span_notice("It's not configured yet, you could use a <b>multitool</b> to configure it.")
+		. += "<span class='notice'>It's not configured yet, you could use a <b>multitool</b> to configure it.</span>"
 	if(panel_open)
-		. += span_notice("The panel is <b>screwed</b> open and you could change generation type with a <b>multitool</b>.")
+		. += "<span class='notice'>The panel is <b>screwed</b> open and you could change generation type with a <b>multitool</b>.</span>"
 
 /obj/machinery/research_table/multitool_act(mob/living/user, obj/item/I)
 	if(user.a_intent == INTENT_HELP)
@@ -48,17 +48,17 @@
 						generation_message = "generate research points for science"
 					else
 						generation_message = "generate money for cargo"
-				user.visible_message(span_notice("[user] finished changing the generation type on \the [src]."), span_notice("You change the generation type on \the [src] to [generation_message]."))
+				user.visible_message("<span class='notice'>[user] finished changing the generation type on \the [src].</span>", "<span class='notice'>You change the generation type on \the [src] to [generation_message].</span>")
 			else
-				to_chat(user, span_warning("You need to stand still and uninterrupted for 5 seconds!"))
+				to_chat(user, "<span class='warning'>You need to stand still and uninterrupted for 5 seconds!</span>")
 			return STOP_ATTACK_PROC_CHAIN
 		else
 			user.visible_message(span_notice("[user] begins reconfiguring \the [src]."), span_notice("You begin reconfiguring \the [src]."))
 			if(do_after(user, 5 SECONDS, src))
 				configured = !configured
-				user.visible_message(span_notice("[user] finished reconfiguring \the [src]."), span_notice("The research table is now [configured ? "configured" : "not configured"]."))
+				user.visible_message("<span class='notice'>[user] finished reconfiguring \the [src].</span>", "<span class='notice'>The research table is now [configured ? "configured" : "not configured"].</span>")
 			else
-				to_chat(user, span_warning("You need to stand still and uninterrupted for 5 seconds!"))
+				to_chat(user, "<span class='warning'>You need to stand still and uninterrupted for 5 seconds!</span>")
 			return STOP_ATTACK_PROC_CHAIN
 	. = ..()
 
@@ -92,9 +92,9 @@
 		return
 	if(!handle_unbuckling(buckled_mob, user))
 		if(buckled_mob == user)
-			to_chat(user, span_warning("You fail to unbuckle yourself."))
+			to_chat(user, "<span class='warning'>You fail to unbuckle yourself.</span>")
 		else
-			to_chat(user, span_warning("You fail to unbuckle [buckled_mob]."))
+			to_chat(user, "<span class='warning'>You fail to unbuckle [buckled_mob].</span>")
 		return
 	UnregisterSignal(buckled_mob, COMSIG_MOB_POST_CAME)
 	say("User left, resetting scanners.")
@@ -165,6 +165,7 @@
 	slaver_mode = TRUE
 	point_type = POINT_TYPE_CARGO
 	configured = TRUE
+	max_repeat_usage = 20
 
 #undef POINT_TYPE_CARGO
 #undef POINT_TYPE_SCIENCE

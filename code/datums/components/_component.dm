@@ -27,6 +27,17 @@
 	/// Make sure you also implement PostTransfer for any post transfer handling
 	var/can_transfer = FALSE
 
+	/// Option flags for element behaviour
+	var/element_flags = NONE
+	/**
+	  * The index of the first attach argument to consider for duplicate elements
+	  *
+	  * Is only used when flags contains [ELEMENT_BESPOKE]
+	  *
+	  * This is infinity so you must explicitly set this
+	  */
+	var/id_arg_index = INFINITY
+
 /**
   * Create a new component.
   * Additional arguments are passed to `Initialize()`
@@ -34,6 +45,7 @@
   * Arguments:
   * * datum/P the parent datum this component reacts to signals from
   */
+
 /datum/component/New(list/raw_args)
 	parent = raw_args[1]
 	var/list/arguments = raw_args.Copy(2)
@@ -190,6 +202,11 @@
 			lookup[sig_type][src] = TRUE
 
 	signal_enabled = TRUE
+
+/// Registers multiple signals to the same proc.
+/datum/proc/RegisterSignals(datum/target, list/signal_types, proctype, override = FALSE)
+	for (var/signal_type in signal_types)
+		RegisterSignal(target, signal_type, proctype, override)
 
 /**
   * Stop listening to a given signal from target

@@ -270,7 +270,7 @@
 			else
 				return list("mode" = RCD_AIRLOCK, "delay" = 50, "cost" = 16)
 		if(RCD_DECONSTRUCT)
-			return list("mode" = RCD_DECONSTRUCT, "delay" = 50, "cost" = 33)
+			return list("mode" = RCD_DECONSTRUCT, "delay" = 50, "cost" = 26)
 		if(RCD_WINDOWGRILLE)
 			return list("mode" = RCD_WINDOWGRILLE, "delay" = 10, "cost" = 4)
 		if(RCD_MACHINE)
@@ -337,8 +337,22 @@
 	name = "floor"
 	icon_state = "materialfloor"
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
+	floor_tile = /obj/item/stack/tile/material
 
 /turf/open/floor/material/spawn_tile()
 	for(var/i in custom_materials)
 		var/datum/material/M = i
 		new M.sheet_type(src, FLOOR(custom_materials[M] / MINERAL_MATERIAL_AMOUNT, 1))
+
+/**
+ * Replace an open turf with another open turf while avoiding the pitfall of replacing plating with a floor tile, leaving a hole underneath.
+ * This replaces the current turf if it is plating and is passed plating, is tile and is passed tile.
+ * It places the new turf on top of itself if it is plating and is passed a tile.
+ * It also replaces the turf if it is tile and is passed plating, essentially destroying the over turf.
+ * Flags argument is passed directly to ChangeTurf or PlaceOnTop
+ */
+/turf/open/proc/replace_floor(turf/open/new_floor_path, flags)
+	if (!overfloor_placed && initial(new_floor_path.overfloor_placed))
+		PlaceOnTop(new_floor_path, flags = flags)
+		return
+	ChangeTurf(new_floor_path, flags = flags)

@@ -1,6 +1,8 @@
 /obj/item/organ/heart
 	name = "heart"
-	desc = "I feel bad for the heartless bastard who lost this."
+	ru_name = "сердце"
+	ru_name_capital = "Сердце"
+	desc = "Мне жаль бессердечного ублюдка, который потерял это."
 	icon_state = "heart-on"
 	zone = BODY_ZONE_CHEST
 	slot = ORGAN_SLOT_HEART
@@ -8,10 +10,10 @@
 	healing_factor = STANDARD_ORGAN_HEALING
 	decay_factor = 2 * STANDARD_ORGAN_DECAY
 
-	low_threshold_passed = "<span class='info'>Prickles of pain appear then die out from within your chest...</span>"
-	high_threshold_passed = "<span class='warning'>Something inside your chest hurts, and the pain isn't subsiding. You notice yourself breathing far faster than before.</span>"
-	now_fixed = "<span class='info'>Your heart begins to beat again.</span>"
-	high_threshold_cleared = "<span class='info'>The pain in your chest has died down, and your breathing becomes more relaxed.</span>"
+	low_threshold_passed = span_info("Колющая боль появляется и исчезает в груди...")
+	high_threshold_passed = span_warning("Что-то в груди болит, и боль не утихает. Ох, я дышу намного быстрее, чем раньше.")
+	now_fixed = span_info("Сердце снова начинает биться.")
+	high_threshold_cleared = span_info("Боль в груди утихла и дыхание стало более расслабленным.")
 
 	// Heart attack code is in code/modules/mob/living/carbon/human/life.dm
 	var/beating = 1
@@ -22,6 +24,16 @@
 
 	var/failed = FALSE		//to prevent constantly running failing code
 	var/operated = FALSE	//whether the heart's been operated on to fix some of its damages
+	var/key_for_dreamer = null
+
+// BLUEMOON ADD START
+/obj/item/organ/heart/Insert(mob/living/carbon/organ_mob, special, drop_if_replaced)
+	. = ..()
+	if(HAS_TRAIT(organ_mob, TRAIT_ROBOTIC_ORGANISM))
+		low_threshold_passed = span_info("[name]: обнаружены умеренные повреждения. Риск отказа системы. Рекомендуется замена.")
+		high_threshold_passed = span_warning("[name]: обнаружены тяжёлые повреждения. Риск отказа системы. Требуется замена.")
+		now_fixed = span_info("[name]: функционирование системы восстановлено.")
+// BLUEMOON ADD END
 
 /obj/item/organ/heart/update_icon_state()
 	if(beating)
@@ -78,7 +90,12 @@
 		if(owner.health <= owner.crit_threshold && beat != BEAT_SLOW)
 			beat = BEAT_SLOW
 			owner.playsound_local(get_turf(owner), slowbeat,40,0, channel = CHANNEL_HEARTBEAT)
-			to_chat(owner, "<span class = 'notice'>You feel your heart slow down...</span>")
+			// BLUEMOON ADD START - кастомное описание для роботов
+			if(HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM))
+				// TO DO
+			else
+			// BLUEMOON ADD END
+				to_chat(owner, "<span class = 'notice'>Стук вашего сердца замедляется...</span>")
 		if(beat == BEAT_SLOW && owner.health > owner.crit_threshold)
 			owner.stop_sound_channel(CHANNEL_HEARTBEAT)
 			beat = BEAT_NONE
@@ -90,12 +107,24 @@
 		else if(beat == BEAT_FAST)
 			owner.stop_sound_channel(CHANNEL_HEARTBEAT)
 			beat = BEAT_NONE
-
 	if(organ_flags & ORGAN_FAILING)	//heart broke, stopped beating, death imminent
-		if(owner.stat == CONSCIOUS)
-			owner.visible_message("<span class='userdanger'>[owner] clutches at [owner.p_their()] chest as if [owner.p_their()] heart is stopping!</span>")
-		owner.set_heartattack(TRUE)
-		failed = TRUE
+		// BLUEMOON ADD START - фикс для спама сообщениями в чат при остановки кибер-сердца и бесполезности этой остановки
+		if(organ_flags & ORGAN_SYNTHETIC)
+			if(owner.stat == CONSCIOUS && !failed) // синты не падают в обморок от остановки сердца, потому дополнительная проверка
+				if(HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM))
+					to_chat(owner, span_danger("Fatal error detected in the [src] - Seek for replace immediately."))
+				else
+					owner.visible_message(\
+					span_warning("[owner] clutches at [owner.ru_ego()] chest in the heart's area!"), \
+					span_danger("You feel a terrible pain in your heart!"))
+			beating = 0
+			failed = TRUE
+		else
+		// BLUEMOON ADD END
+			if(owner.stat == CONSCIOUS)
+				owner.visible_message("<span class='userdanger'>[owner] clutches at [owner.ru_ego()] chest as if [owner.ru_ego()] heart is stopping!</span>")
+			owner.set_heartattack(TRUE)
+			failed = TRUE
 
 /obj/item/organ/heart/slime
 	name = "mitochondria"
@@ -242,7 +271,7 @@
 	if(prob(severity/emp_vulnerability)) //Chance of permanent effects
 		organ_flags |= ORGAN_SYNTHETIC_EMP //Starts organ faliure - gonna need replacing soon.
 		Stop()
-		owner.visible_message("<span class='danger'>[owner] clutches at [owner.p_their()] chest as if [owner.p_their()] heart is stopping!</span>", \
+		owner.visible_message("<span class='danger'>[owner] clutches at [owner.ru_ego()] chest as if [owner.ru_ego()] heart is stopping!</span>", \
 						"<span class='userdanger'>You feel a terrible pain in your chest, as if your heart has stopped!</span>")
 		addtimer(CALLBACK(src, .proc/Restart), 10 SECONDS)
 
@@ -263,6 +292,22 @@
 	name = "IPC heart"
 	desc = "An electronic pump that regulates hydraulic functions, the electronics have EMP shielding."
 	icon_state = "heart-c"
+	organ_flags = ORGAN_SYNTHETIC // BLUEMOON ADD - органы синтетиков не должны гнить и должны быть подвержены ЭМИ
+
+// BLUEMOON ADD START - шанс на выход из строя
+/obj/item/organ/heart/ipc/emp_act(severity)
+	. = ..()
+	if(. & EMP_PROTECT_SELF)
+		return
+	if(!COOLDOWN_FINISHED(src, severe_cooldown)) //So we cant just spam emp to kill people.
+		owner.Dizzy(10)
+		owner.losebreath += 10
+		COOLDOWN_START(src, severe_cooldown, 20 SECONDS)
+	if(prob(10)) //Chance of permanent effects
+		organ_flags |= ORGAN_SYNTHETIC_EMP //Starts organ faliure - gonna need replacing soon.
+		if(HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM))
+			to_chat(owner, span_userdanger("Fatal failure detected in \the [src] - Emergency mod activated for next 4 minutes - Seek for replace immediately."))
+// BLUEMOON ADD END
 
 /obj/item/organ/heart/freedom
 	name = "heart of freedom"

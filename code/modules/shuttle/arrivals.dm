@@ -132,7 +132,7 @@
 	var/dockTime = CONFIG_GET(number/arrivals_shuttle_dock_window)
 	if(mode == SHUTTLE_CALL && timeLeft(1) > dockTime)
 		if(console)
-			console.say(damaged ? "Initiating emergency docking for repairs!" : "Now approaching: [station_name()].")
+			console.say(damaged ? "Инициирование аварийной стыковки для ремонта!" : "Мы приближаемся, следующая остановка: [station_name()].")
 		hyperspace_sound(HYPERSPACE_LAUNCH, areas)	//for the new guy
 		setTimer(dockTime)
 
@@ -155,7 +155,7 @@
 	. = ..()
 	if(!. && !docked && !damaged)
 		if(console)
-			console.say("Welcome to your new life, employees!")
+			console.say("Добро пожаловать в новую жизнь, сотрудники!")
 		for(var/L in queued_announces)
 			var/datum/callback/C = L
 			C.Invoke()

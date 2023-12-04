@@ -1,9 +1,9 @@
 /datum/round_event_control/spider_infestation
 	name = "Spider Infestation"
 	typepath = /datum/round_event/spider_infestation
-	weight = 5
-	max_occurrences = 1
-	min_players = 15
+	weight = 30
+	max_occurrences = 5
+	min_players = 25
 	category = EVENT_CATEGORY_ENTITIES
 	description = "Spawns spider eggs, ready to hatch."
 
@@ -15,10 +15,10 @@
 
 /datum/round_event/spider_infestation/setup()
 	announce_when = rand(announce_when, announce_when + 50)
-	spawncount = rand(5, 8)
+	spawncount = rand(12, 20)
 
 /datum/round_event/spider_infestation/announce(fake)
-	priority_announce("Unidentified lifesigns detected coming aboard [station_name()]. Secure any exterior access, including ducting and ventilation.", "Lifesign Alert", "aliens")
+	priority_announce("Неизвестные признаки жизни обнаружены на борту [station_name()]. Заблокируйте любой внешний доступ, включая воздуховоды и вентиляцию.", "ВНИМАНИЕ: НЕОПОЗНАННЫЕ ФОРМЫ ЖИЗНИ", "aliens")
 
 
 /datum/round_event/spider_infestation/start()

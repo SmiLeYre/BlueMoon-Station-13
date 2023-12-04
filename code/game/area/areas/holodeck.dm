@@ -14,6 +14,14 @@
 	Asserts are to avoid the inevitable infinite loops
 */
 
+///this is what makes the holodeck not spawn anything on broken tiles (space and non engine plating / non holofloors)
+/datum/map_template/holodeck/update_blacklist(turf/placement, list/input_blacklist)
+	var/datum/map_template/holo
+	for(var/turf/possible_blacklist as anything in holo.get_affected_turfs(placement))
+		if (possible_blacklist.holodeck_compatible)
+			continue
+		input_blacklist[possible_blacklist] = TRUE
+
 /area/holodeck/Initialize(mapload)
 	. = ..()
 	var/list/update_holodeck_cache = SSholodeck?.rejected_areas[type]

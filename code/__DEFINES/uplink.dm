@@ -8,3 +8,6 @@
 
 /// This item is purchasable to clown ops
 #define UPLINK_CLOWN_OPS (1 << 2)
+
+/// Bluemoon added. This item is purchasable to syndicate dudes
+#define UPLINK_SYNDICATE (1 << 3)

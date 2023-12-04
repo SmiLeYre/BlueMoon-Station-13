@@ -94,7 +94,7 @@
 	default = 24
 
 /datum/config_entry/number/movedelay/sprint_stamina_cost
-	default = 1.4
+	default = 5
 
 /datum/config_entry/number/movedelay/sprint_buffer_regen_per_ds
 	default = 0.4

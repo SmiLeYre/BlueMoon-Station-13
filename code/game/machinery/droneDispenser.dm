@@ -63,9 +63,9 @@
 	desc = "A suspicious machine that will create Syndicate exterminator drones when supplied with metal and glass. Disgusting."
 	dispense_type = /obj/item/drone_shell/syndrone
 	//If we're gonna be a jackass, go the full mile - 10 second recharge timer
-	cooldownTime = 100
+	cooldownTime = 1800
 	end_create_message = "dispenses a suspicious drone shell."
-	starting_amount = 25000
+	starting_amount = 10000
 
 /obj/machinery/droneDispenser/syndrone/badass //Please forgive me
 	name = "badass syndrone shell dispenser"

@@ -13,11 +13,13 @@
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/xeno = 20, /obj/item/stack/sheet/animalhide/xeno = 3)
 	can_ventcrawl = FALSE
 
-	meleeKnockdownPower = 125
-	meleeSlashHumanPower = 30
-	meleeSlashSAPower = 60
+	meleeKnockdownPower = 135
+	meleeSlashHumanPower = 45
+	meleeSlashSAPower = 65
 
 	var/alt_inhands_file = 'icons/mob/alienqueen.dmi'
+
+	typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/alien_royal
 
 /mob/living/carbon/alien/humanoid/royal/can_inject(mob/user, error_msg, target_zone, penetrate_thick = FALSE, bypass_immunity = FALSE)
 	return 0
@@ -25,8 +27,8 @@
 /mob/living/carbon/alien/humanoid/royal/queen
 	name = "alien queen"
 	caste = "q"
-	maxHealth = 400
-	health = 400
+	maxHealth = 550
+	health = 550
 	icon_state = "alienq"
 	var/datum/action/small_sprite/smallsprite = new/datum/action/small_sprite/queen()
 	var/obj/effect/proc_holder/alien/royal/queen/promote/promote

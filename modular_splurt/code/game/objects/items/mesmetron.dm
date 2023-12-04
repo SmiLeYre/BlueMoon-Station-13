@@ -21,7 +21,7 @@
 		to_chat(user, "You can't hypnotize [H] whilst they're asleep!")
 		return
 
-	user.visible_message(span_warning("[user] begins to mesmerizingly wave [src] like a pendulum before [H]'s very eyes!"))
+	user.visible_message("<span class='warning'>[user] begins to mesmerizingly wave [src] like a pendulum before [H]'s very eyes!</span>")
 
 	if(!do_mob(user, H, 12 SECONDS))
 		return
@@ -34,7 +34,7 @@
 	var/response = alert(H, "Do you wish to fall into a hypnotic sleep? (This will allow [user] to issue hypnotic suggestions)", "Hypnosis", "Yes", "No")
 
 	if(response == "Yes")
-		H.visible_message(span_warning("[H] falls into a deep slumber!"), "<span class ='danger'>Your eyelids gently shut as you fall into a deep slumber. All you can hear is [user]'s voice as you commit to following all of their suggestions</span>")
+		H.visible_message("<span class='warning'>[H] falls into a deep slumber!</span>", "<span class ='danger'>Your eyelids gently shut as you fall into a deep slumber. All you can hear is [user]'s voice as you commit to following all of their suggestions</span>")
 
 		H.SetSleeping(1200)
 		H.drowsyness = max(H.drowsyness, 40)
@@ -42,7 +42,7 @@
 		return
 
 	//No
-	H.visible_message(span_warning("[H]'s attention breaks, despite your attempts to hypnotize them! They clearly don't want this"), "<span class ='warning'>Your concentration breaks as you realise you have no interest in following [user]'s words!</span>")
+	H.visible_message("<span class='warning'>[H]'s attention breaks, despite your attempts to hypnotize them! They clearly don't want this</span>", "<span class ='warning'>Your concentration breaks as you realise you have no interest in following [user]'s words!</span>")
 
 
 
@@ -76,11 +76,11 @@
 			return
 
 		to_chat(user, "You whisper your suggestion in a smooth calming voice to [subject]")
-		to_chat(subject, span_hypnophrase("...[text]..."))
+		to_chat(subject, "<span class='hypnophrase'>...[text]...</span>")
 		return
 	//Release
 
-	subject.visible_message(span_warning("[subject] wakes up from their deep slumber!"), "<span class ='danger'>Your eyelids gently open as you see [user]'s face staring back at you</span>")
+	subject.visible_message("<span class='warning'>[subject] wakes up from their deep slumber!</span>", "<span class ='danger'>Your eyelids gently open as you see [user]'s face staring back at you</span>")
 	subject.SetSleeping(0)
 	subject = null
 

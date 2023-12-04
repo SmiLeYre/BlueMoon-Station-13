@@ -34,8 +34,8 @@
 	w_class = WEIGHT_CLASS_SMALL
 	force = 15
 	throwforce = 25
-	wound_bonus = -30
-	bare_wound_bonus = 30
+	wound_bonus = 10
+	bare_wound_bonus = 20
 	armour_penetration = 35
 	actions_types = list(/datum/action/item_action/cult_dagger)
 
@@ -57,8 +57,8 @@
 	w_class = WEIGHT_CLASS_BULKY
 	force = 30 // whoever balanced this got beat in the head by a bible too many times good lord
 	throwforce = 10
-	wound_bonus = -80
-	bare_wound_bonus = 30
+	wound_bonus = 20
+	bare_wound_bonus = 15
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "rended")
 
@@ -98,7 +98,7 @@
 		if(!is_servant_of_ratvar(user))
 			to_chat(user, "<span class='cultlarge'>\"I wouldn't advise that.\"</span>")
 		else
-			to_chat(user, "<span class='cultlarge'>\"One of Ratvar's toys is trying to play with things [user.p_they()] shouldn't. Cute.\"</span>")
+			to_chat(user, "<span class='cultlarge'>\"One of Ratvar's toys is trying to play with things [user.ru_who()] shouldn't. Cute.\"</span>")
 			to_chat(user, "<span class='userdanger'>A horrible force yanks at your arm!</span>")
 			user.emote("scream")
 			user.apply_damage(30, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
@@ -172,7 +172,7 @@
 			force = 5
 			return
 		else
-			to_chat(user, "<span class='cultlarge'>\"One of Ratvar's toys is trying to play with things [user.p_they()] shouldn't. Cute.\"</span>")
+			to_chat(user, "<span class='cultlarge'>\"One of Ratvar's toys is trying to play with things [user.ru_who()] shouldn't. Cute.\"</span>")
 			to_chat(user, "<span class='userdanger'>A horrible force yanks at your arm!</span>")
 			user.emote("scream")
 			user.apply_damage(30, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
@@ -307,6 +307,7 @@
 	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
 	heat_protection = HEAD
 	max_heat_protection_temperature = HELMET_MAX_TEMP_PROTECT
+	alternate_screams = BLOOD_SCREAMS
 
 /obj/item/clothing/suit/cultrobes
 	name = "ancient cultist robes"
@@ -321,12 +322,14 @@
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
+	alternate_screams = BLOOD_SCREAMS
 
 /obj/item/clothing/head/culthood/alt
 	name = "cultist hood"
 	desc = "An armored hood worn by the followers of Nar'Sie."
 	icon_state = "cult_hoodalt"
 	item_state = "cult_hoodalt"
+	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/culthood/alt/ghost
 	item_flags = DROPDEL
@@ -358,6 +361,7 @@
 	armor = list(MELEE = 30, BULLET = 30, LASER = 30,ENERGY = 20, BOMB = 0, BIO = 0, RAD = 0, FIRE = 10, ACID = 10)
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	mutantrace_variation = STYLE_MUZZLE
+	alternate_screams = BLOOD_SCREAMS
 
 /obj/item/clothing/suit/magusred
 	name = "magus robes"
@@ -368,15 +372,17 @@
 	allowed = list(/obj/item/tome, /obj/item/melee/cultblade)
 	armor = list(MELEE = 50, BULLET = 30, LASER = 50,ENERGY = 20, BOMB = 25, BIO = 10, RAD = 0, FIRE = 10, ACID = 10)
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
+	alternate_screams = BLOOD_SCREAMS
 
 /obj/item/clothing/head/helmet/space/hardsuit/cult
 	name = "\improper Nar'Sien hardened helmet"
 	desc = "A heavily-armored helmet worn by warriors of the Nar'Sien cult. It can withstand hard vacuum."
 	icon_state = "cult_helmet"
 	item_state = "cult_helmet"
-	armor = list(MELEE = 60, BULLET = 50, LASER = 30,ENERGY = 15, BOMB = 30, BIO = 30, RAD = 30, FIRE = 40, ACID = 75)
+	armor = list(MELEE = 60, BULLET = 50, LASER = 30,ENERGY = 15, BOMB = 30, BIO = 30, RAD = 30, FIRE = 100, ACID = 75)
 	brightness_on = 0
 	actions_types = list()
+	alternate_screams = BLOOD_SCREAMS
 
 
 /obj/item/clothing/head/helmet/space/hardsuit/cult/ComponentInitialize()
@@ -384,14 +390,16 @@
 	AddElement(/datum/element/spellcasting, SPELL_CULT_HELMET, ITEM_SLOT_HEAD)
 
 /obj/item/clothing/suit/space/hardsuit/cult
-	name = "\improper Nar'Sien hardened armor"
+	name = "\improper Nar'Sien Hardened Armor"
 	icon_state = "cult_armor"
 	item_state = "cult_armor"
+	tail_state = "syndicate-blood"
 	desc = "A heavily-armored exosuit worn by warriors of the Nar'Sien cult. It can withstand hard vacuum."
 	w_class = WEIGHT_CLASS_BULKY
 	allowed = list(/obj/item/tome, /obj/item/melee/cultblade, /obj/item/tank/internals/)
-	armor = list(MELEE = 70, BULLET = 50, LASER = 30,ENERGY = 15, BOMB = 30, BIO = 30, RAD = 30, FIRE = 40, ACID = 75)
+	armor = list(MELEE = 70, BULLET = 50, LASER = 30,ENERGY = 15, BOMB = 30, BIO = 30, RAD = 30, FIRE = 100, ACID = 75)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/cult
+	alternate_screams = BLOOD_SCREAMS
 
 /obj/item/clothing/suit/space/hardsuit/cult/ComponentInitialize()
 	. = ..()
@@ -413,24 +421,29 @@
 		playsound(get_turf(src), 'sound/items/unsheath.ogg', 25, 1)
 
 /obj/item/clothing/suit/hooded/cultrobes/cult_shield
-	name = "empowered cultist armor"
-	desc = "Empowered garb which creates a powerful shield around the user."
+	name = "\improper Nar'Sien Empowered Armor"
+	desc = "A heavily-armored Empowered Exosuit worn by warriors of the Nar'Sien cult. It can withstand hard vacuum and creates a powerful shield around the user."
 	icon_state = "cult_armor"
 	item_state = "cult_armor"
 	w_class = WEIGHT_CLASS_BULKY
-	armor = list(MELEE = 50, BULLET = 40, LASER = 50,ENERGY = 30, BOMB = 50, BIO = 30, RAD = 30, FIRE = 50, ACID = 60)
+	armor = list(MELEE = 50, BULLET = 40, LASER = 50, ENERGY = 60, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, MAGIC = 75)
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	allowed = list(/obj/item/tome, /obj/item/melee/cultblade)
 	var/current_charges = 3
 	hoodtype = /obj/item/clothing/head/hooded/cult_hoodie
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | ALLOWINTERNALS
+	alternate_screams = BLOOD_SCREAMS
 
 /obj/item/clothing/head/hooded/cult_hoodie
-	name = "empowered cultist armor"
-	desc = "Empowered garb which creates a powerful shield around the user."
+	name = "\improper Nar'Sien Empowered Helmet"
+	desc = "A heavily-armored Empowered Helmet worn by warriors of the Nar'Sien cult. It can withstand hard vacuum."
 	icon_state = "cult_hoodalt"
-	armor = list(MELEE = 50, BULLET = 40, LASER = 50,ENERGY = 30, BOMB = 50, BIO = 30, RAD = 30, FIRE = 50, ACID = 50)
+	armor = list(MELEE = 50, BULLET = 40, LASER = 50, ENERGY = 60, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, MAGIC = 75)
 	body_parts_covered = HEAD
+	flash_protect = 1
 	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | ALLOWINTERNALS
+	alternate_screams = BLOOD_SCREAMS
 
 /obj/item/clothing/suit/hooded/cultrobes/cult_shield/equipped(mob/living/user, slot)
 	..()
@@ -471,7 +484,7 @@
 		. += mutable_appearance('icons/effects/cult_effects.dmi', "shield-cult", MOB_LAYER + 0.01)
 
 /obj/item/clothing/suit/hooded/cultrobes/berserker
-	name = "flagellant's robes"
+	name = "Flagellant's Robes"
 	desc = "Blood-soaked robes infused with dark magic; allows the user to move at inhuman speeds, but at the cost of increased damage."
 	icon_state = "cultrobes"
 	item_state = "cultrobes"
@@ -483,12 +496,13 @@
 	hoodtype = /obj/item/clothing/head/hooded/berserkerhood
 
 /obj/item/clothing/head/hooded/berserkerhood
-	name = "flagellant's robes"
+	name = "Flagellant's Robes"
 	desc = "Blood-soaked garb infused with dark magic; allows the user to move at inhuman speeds, but at the cost of increased damage."
 	icon_state = "culthood"
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS
 	armor = list(MELEE = -50, BULLET = -50, LASER = -50, ENERGY = -50, BOMB = -50, BIO = -50, RAD = -50, FIRE = 0, ACID = 0)
+	alternate_screams = BLOOD_SCREAMS
 
 /obj/item/clothing/suit/hooded/cultrobes/berserker/equipped(mob/living/user, slot)
 	..()
@@ -512,6 +526,7 @@
 	icon_state = "blindfold"
 	item_state = "blindfold"
 	flash_protect = 1
+	invis_override = INVISIBILITY_OBSERVER
 
 /obj/item/clothing/glasses/hud/health/night/cultblind/equipped(mob/living/user, slot)
 	..()
@@ -531,7 +546,7 @@
 	list_reagents = list(/datum/reagent/fuel/unholywater = 50)
 
 /obj/item/shuttle_curse
-	name = "cursed orb"
+	name = "Проклятая Сфера"
 	desc = "You peer within this smokey orb and glimpse terrible fates befalling the escape shuttle."
 	icon = 'icons/obj/cult.dmi'
 	icon_state ="shuttlecurse"
@@ -541,10 +556,10 @@
 	if(!iscultist(user, TRUE))
 		user.dropItemToGround(src, TRUE)
 		user.DefaultCombatKnockdown(100)
-		to_chat(user, "<span class='warning'>A powerful force shoves you away from [src]!</span>")
+		to_chat(user, "<span class='warning'>Мощная сила отталкивает вас от [src]!</span>")
 		return
 	if(curselimit > 1)
-		to_chat(user, "<span class='notice'>We have exhausted our ability to curse the shuttle.</span>")
+		to_chat(user, "<span class='notice'>Мы исчерпали свою способность проклинать Космическую Станцию.</span>")
 		return
 	if(locate(/obj/singularity/narsie) in GLOB.poi_list)
 		to_chat(user, "<span class='warning'>Nar'Sie is already on this plane, there is no delaying the end of all things.</span>")
@@ -568,28 +583,56 @@
 		SSshuttle.emergency.setTimer(timer)
 		if(surplus > 0)
 			SSshuttle.block_recall(surplus)
-		to_chat(user, "<span class='danger'>You shatter the orb! A dark essence spirals into the air, then disappears.</span>")
+		to_chat(user, "<span class='danger'>Вы разбиваете сферу! Темная сущность поднимается в воздух, затем исчезает.</span>")
 		playsound(user.loc, 'sound/effects/glassbr1.ogg', 50, 1)
 		qdel(src)
 		sleep(20)
 		var/static/list/curses
 		if(!curses)
-			curses = list("A fuel technician just slit his own throat and begged for death.",
-			"The shuttle's navigation programming was replaced by a file containing just two words: IT COMES.",
-			"The shuttle's custodian was found washing the windows with their own blood.",
-			"A shuttle engineer began screaming 'DEATH IS NOT THE END' and ripped out wires until an arc flash seared off her flesh.",
-			"A shuttle inspector started laughing madly over the radio and then threw herself into an engine turbine.",
-			"An assistant was found on the shuttle.",
-			"A medical officer was found pouring out several blood bags onto the shuttle's instrument panels, before slitting both wrists open and screaming 'DEATH IS NOT THE END'.",
-			"A fuel technician was found replacing the fuel with his blood.",
-			"All the lights aboard the shuttle turned a crimson red before blowing out..",
-			"The shuttle dispatcher was found dead with bloody symbols carved into their flesh.",
-			"An engine turbine began leaking blood when it was powered on.",
-			"The shuttle's transponder is emitting the encoded message 'FEAR THE OLD BLOOD' in lieu of its assigned identification signal.")
+			curses = list("Специалист по Заправке Шаттлов только что перерезал себе горло, умоляя о смерти",
+			"Навигационная программа шаттла была заменена файлом, содержащим всего два слова: ОНА ИДЁТ.",
+			"Смотритель Шаттла Эвакуации был найден в Диспетчерской, моющий окна собственной кровью.",
+			"Инженер шаттла начала кричать 'СМЕРТЬ - НЕ КОНЕЦ' и вырвала провода, пока вспышка дуги не сожгла ее плоть.",
+			"Безумная Инспектор начала смеяться по радио, а затем бросилась в турбину двигателя...",
+			"На шаттле был найден... АССИСТЕНТ!",
+			"Сотрудник Медицинского Блока был найден на мостике шаттла с множеством пустых пакетов крови. Он замкнул проводку Консолей этой субстанцией и зачем добавил своей крови, вскрикнув 'СМЕРТЬ - НЕ КОНЕЦ'",
+			"Специалист по Заправке Шаттлов был найден заменяющим топливо своей кровью...",
+			"Все лампы на борту шаттла стали багрово-красными, а затем погасли... нам нужно время разобраться с этим...",
+			"Диспетчер был найден мертвым... прямо на его плоти были вырезаны кровавые символы.",
+			"Из турбины Двигателя хлынул огромный поток крови и нам нужно... время...",
+			"Транспондер шаттла излучает закодированное сообщение 'ОНО ИДЁТ' вместо положенного идентификационного сигнала.")
 		var/message = pick_n_take(curses)
-		message += " The shuttle will be delayed by three minutes."
-		priority_announce("[message]", "System Failure", 'sound/misc/notice1.ogg')
+		message += " Шаттл будет задержан на три минуты."
+		priority_announce("[message]", "Центральное Командование, Отдел Работы с Реальностью", 'sound/announcer/classic/delay.ogg')
 		curselimit++
+
+/obj/item/station_curse
+	name = "Проклятая Сфера"
+	desc = "Эта сфера хранит в себе первородное зло и, наверное, это недопустимо ронять или даже ломать..."
+	icon = 'icons/obj/cult.dmi'
+	icon_state ="shuttlecurse"
+	var/static/curselimit = 0
+
+/obj/item/station_curse/attack_self(mob/living/user)
+	if(!iscultist(user, TRUE))
+		user.dropItemToGround(src, TRUE)
+		user.DefaultCombatKnockdown(100)
+		to_chat(user, "<span class='warning'>Мощная сила отталкивает вас от [src]!</span>")
+		return
+	if(curselimit >= 2)
+		to_chat(user, "<span class='notice'>Мы исчерпали свою способность проклинать Космическую Станцию.</span>")
+		return
+	if(locate(/obj/singularity/narsie) in GLOB.poi_list)
+		to_chat(user, "<span class='warning'>Nar'Sie is already on this plane, there is no delaying the end of all things.</span>")
+		return
+
+	to_chat(user, "<span class='danger'>Вы разбиваете сферу! Темная сущность поднимается в воздух, затем исчезает.</span>")
+	playsound(user.loc, 'sound/effects/glassbr1.ogg', 50, 1)
+	qdel(src)
+	sleep(pick(50, 100, 150, 200, 250))
+	var/datum/round_event_control/portal_storm_narsie/portal_storm_narsie = new/datum/round_event_control/portal_storm_narsie
+	portal_storm_narsie.runEvent()
+	curselimit++
 
 /obj/item/cult_shift
 	name = "veil shifter"
@@ -703,14 +746,14 @@
 		qdel(src)
 
 /obj/item/cult_spear
-	name = "blood halberd"
+	name = "Blood Spear"
 	desc = "A sickening spear composed entirely of crystallized blood."
 	icon_state = "bloodspear0"
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
 	slot_flags = 0
 	force = 17
-	throwforce = 40
+	throwforce = 52
 	throw_speed = 2
 	armour_penetration = 30
 	block_chance = 30
@@ -729,7 +772,7 @@
 /obj/item/cult_spear/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 90)
-	AddComponent(/datum/component/two_handed, force_unwielded=17, force_wielded=24, icon_wielded="bloodspear1")
+	AddComponent(/datum/component/two_handed, force_unwielded=17, force_wielded=25, icon_wielded="bloodspear1")
 
 /// triggered on wield of two handed item
 /obj/item/cult_spear/proc/on_wield(obj/item/source, mob/user)
@@ -746,6 +789,15 @@
 	if(spear_act)
 		qdel(spear_act)
 	return ..()
+
+/obj/item/cult_spear/pickup(mob/living/user)
+	. = ..()
+	if(!iscultist(user))
+		to_chat(user, "<span class='cultlarge'>\"You want to be blind, do you?\"</span>")
+		user.dropItemToGround(src, TRUE)
+		user.Dizzy(30)
+		user.DefaultCombatKnockdown(100)
+		user.blind_eyes(30)
 
 /obj/item/cult_spear/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	var/turf/T = get_turf(hit_atom)
@@ -782,6 +834,109 @@
 	qdel(src)
 
 /obj/item/cult_spear/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if(wielded)
+		final_block_chance *= 2
+	if(prob(final_block_chance))
+		if(attack_type & ATTACK_TYPE_PROJECTILE)
+			owner.visible_message("<span class='danger'>[owner] deflects [attack_text] with [src]!</span>")
+			playsound(src, pick('sound/weapons/effects/ric1.ogg', 'sound/weapons/effects/ric2.ogg', 'sound/weapons/effects/ric3.ogg', 'sound/weapons/effects/ric4.ogg', 'sound/weapons/effects/ric5.ogg'), 100, 1)
+			return BLOCK_SUCCESS | BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_PHYSICAL_EXTERNAL
+		else
+			playsound(src, 'sound/weapons/parry.ogg', 100, 1)
+			owner.visible_message("<span class='danger'>[owner] parries [attack_text] with [src]!</span>")
+			return BLOCK_SUCCESS | BLOCK_PHYSICAL_EXTERNAL
+	return BLOCK_NONE
+
+/obj/item/cult_halberd
+	name = "Blood Halberd"
+	desc = "A sickening halberd composed entirely of crystallized blood."
+	icon_state = "occultpoleaxe0"
+	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
+	slot_flags = 0
+	force = 17
+	throwforce = 28
+	throw_speed = 2
+	armour_penetration = 30
+	block_chance = 45
+	attack_verb = list("attacked", "impaled", "stabbed", "torn", "gored")
+	sharpness = SHARP_EDGED
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	block_parry_data = /datum/block_parry_data/inteq_sledgehammer
+	var/datum/action/innate/cult/spear/halberd_act
+	var/wielded = FALSE // track wielded status on item
+
+
+/obj/item/cult_halberd/Initialize(mapload)
+	. = ..()
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+
+/obj/item/cult_halberd/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/butchering, 100, 90)
+	AddComponent(/datum/component/two_handed, force_unwielded=17, force_wielded=34, icon_wielded="occultpoleaxe1")
+
+/// triggered on wield of two handed item
+/obj/item/cult_halberd/proc/on_wield(obj/item/source, mob/user)
+	wielded = TRUE
+
+/// triggered on unwield of two handed item
+/obj/item/cult_halberd/proc/on_unwield(obj/item/source, mob/user)
+	wielded = FALSE
+
+/obj/item/cult_halberd/update_icon_state()
+	icon_state = "occultpoleaxe0"
+
+/obj/item/cult_halberd/Destroy()
+	if(halberd_act)
+		qdel(halberd_act)
+	return ..()
+
+/obj/item/cult_halberd/pickup(mob/living/user)
+	. = ..()
+	if(!iscultist(user))
+		to_chat(user, "<span class='cultlarge'>\"You want to be blind, do you?\"</span>")
+		user.dropItemToGround(src, TRUE)
+		user.Dizzy(30)
+		user.DefaultCombatKnockdown(100)
+		user.blind_eyes(30)
+
+/obj/item/cult_halberd/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	var/turf/T = get_turf(hit_atom)
+	if(isliving(hit_atom))
+		var/mob/living/L = hit_atom
+		if(iscultist(L))
+			playsound(src, 'sound/weapons/throwtap.ogg', 50)
+			if(L.put_in_active_hand(src))
+				L.visible_message("<span class='warning'>[L] catches [src] out of the air!</span>")
+			else
+				L.visible_message("<span class='warning'>[src] bounces off of [L], as if repelled by an unseen force!</span>")
+		else if(!..())
+			if(!L.anti_magic_check())
+				if(is_servant_of_ratvar(L))
+					to_chat(L, "<span class='cultlarge'>\"Kneel for me, scum\"</span>")
+					L.confused += clamp(10 - L.confused, 0, 5) //confuses and lightly knockdowns + damages hostile cultists instead of hardstunning like before
+					L.DefaultCombatKnockdown(15)
+					L.adjustBruteLoss(10)
+				else
+					L.DefaultCombatKnockdown(50)
+			break_halberd(T)
+	else
+		..()
+
+/obj/item/cult_halberd/proc/break_halberd(turf/T)
+	if(src)
+		if(!T)
+			T = get_turf(src)
+		if(T)
+			T.visible_message("<span class='warning'>[src] shatters and melts back into blood!</span>")
+			new /obj/effect/temp_visual/cult/sparks(T)
+			new /obj/effect/decal/cleanable/blood/splatter(T)
+			playsound(T, 'sound/effects/glassbr3.ogg', 100)
+	qdel(src)
+
+/obj/item/cult_halberd/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	if(wielded)
 		final_block_chance *= 2
 	if(prob(final_block_chance))
@@ -854,11 +1009,11 @@
 		if(ishuman(target))
 			var/mob/living/carbon/human/H = target
 			if(H.stat != DEAD)
-				H.reagents.add_reagent(/datum/reagent/fuel/unholywater, 4)
+				H.reagents.add_reagent(/datum/reagent/fuel/unholywater, 10)
 		if(isshade(target) || isconstruct(target))
 			var/mob/living/simple_animal/M = target
 			if(M.health+5 < M.maxHealth)
-				M.adjustHealth(-5)
+				M.adjustHealth(-25)
 		new /obj/effect/temp_visual/cult/sparks(T)
 		qdel(src)
 	else

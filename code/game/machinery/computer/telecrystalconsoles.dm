@@ -3,7 +3,7 @@
 GLOBAL_LIST_INIT(possible_uplinker_IDs, list("Alfa","Bravo","Charlie","Delta","Echo","Foxtrot","Zero", "Niner"))
 
 /obj/machinery/computer/telecrystals
-	name = "\improper telecrystal assignment station"
+	name = "\improper Credit assignment station"
 	desc = "A device used to manage telecrystals during group operations. You shouldn't be looking at this particular one..."
 	icon_state = "tcstation"
 	icon_keyboard = "tcstation_key"
@@ -15,9 +15,9 @@ GLOBAL_LIST_INIT(possible_uplinker_IDs, list("Alfa","Bravo","Charlie","Delta","E
 
 /////////////////////////////////////////////
 /obj/machinery/computer/telecrystals/uplinker
-	name = "\improper telecrystal upload/receive station"
-	desc = "A device used to manage telecrystals during group operations. To use, simply insert your uplink. With your uplink installed \
-			you can upload your telecrystals to the group's pool using the console, or be assigned additional telecrystals by your lieutenant."
+	name = "\improper Credit upload/receive station"
+	desc = "A device used to manage credits during group operations. To use, simply insert your uplink. With your uplink installed \
+			you can upload your credits to the group's pool using the console, or be assigned additional credits by your lieutenant."
 	var/obj/item/uplinkholder = null
 	var/obj/machinery/computer/telecrystals/boss/linkedboss = null
 
@@ -61,13 +61,13 @@ GLOBAL_LIST_INIT(possible_uplinker_IDs, list("Alfa","Bravo","Charlie","Delta","E
 		if(amt < 0)
 			linkedboss.storedcrystals += hidden_uplink.telecrystals
 			if(addLog)
-				linkedboss.logTransfer("[src] donated [hidden_uplink.telecrystals] telecrystals to [linkedboss].")
+				linkedboss.logTransfer("[src] donated [hidden_uplink.telecrystals] credits to [linkedboss].")
 			hidden_uplink.telecrystals = 0
 		else if(amt <= hidden_uplink.telecrystals)
 			hidden_uplink.telecrystals -= amt
 			linkedboss.storedcrystals += amt
 			if(addLog)
-				linkedboss.logTransfer("[src] donated [amt] telecrystals to [linkedboss].")
+				linkedboss.logTransfer("[src] donated [amt] credits to [linkedboss].")
 
 /obj/machinery/computer/telecrystals/uplinker/proc/giveTC(amt, addLog = 1)
 	if(uplinkholder && linkedboss)
@@ -75,13 +75,13 @@ GLOBAL_LIST_INIT(possible_uplinker_IDs, list("Alfa","Bravo","Charlie","Delta","E
 		if(amt < 0)
 			hidden_uplink.telecrystals += linkedboss.storedcrystals
 			if(addLog)
-				linkedboss.logTransfer("[src] received [linkedboss.storedcrystals] telecrystals from [linkedboss].")
+				linkedboss.logTransfer("[src] received [linkedboss.storedcrystals] credits from [linkedboss].")
 			linkedboss.storedcrystals = 0
 		else if(amt <= linkedboss.storedcrystals)
 			hidden_uplink.telecrystals += amt
 			linkedboss.storedcrystals -= amt
 			if(addLog)
-				linkedboss.logTransfer("[src] received [amt] telecrystals from [linkedboss].")
+				linkedboss.logTransfer("[src] received [amt] credits from [linkedboss].")
 
 ///////
 
@@ -89,19 +89,19 @@ GLOBAL_LIST_INIT(possible_uplinker_IDs, list("Alfa","Bravo","Charlie","Delta","E
 	. = ..()
 	var/dat = ""
 	if(linkedboss)
-		dat += "[linkedboss] has [linkedboss.storedcrystals] telecrystals available for distribution. <BR><BR>"
+		dat += "[linkedboss] has [linkedboss.storedcrystals] credits available for distribution. <BR><BR>"
 	else
 		dat += "No linked management consoles detected. Scan for uplink stations using the management console.<BR><BR>"
 
 	if(uplinkholder)
 		var/datum/component/uplink/hidden_uplink = uplinkholder.GetComponent(/datum/component/uplink)
-		dat += "[hidden_uplink.telecrystals] telecrystals remain in this uplink.<BR>"
+		dat += "[hidden_uplink.telecrystals] credits remain in this uplink.<BR>"
 		if(linkedboss)
 			dat += "Donate TC: <a href='byond://?src=[REF(src)];donate=1'>1</a> | <a href='byond://?src=[REF(src)];donate=5'>5</a> | <a href='byond://?src=[REF(src)];donate=-1'>All</a>"
 		dat += "<br><a href='byond://?src=[REF(src)];eject=1'>Eject Uplink</a>"
 
 
-	var/datum/browser/popup = new(user, "computer", "Telecrystal Upload/Receive Station", 700, 500)
+	var/datum/browser/popup = new(user, "computer", "credits Upload/Receive Station", 700, 500)
 	popup.set_content(dat)
 	popup.open()
 
@@ -121,9 +121,9 @@ GLOBAL_LIST_INIT(possible_uplinker_IDs, list("Alfa","Bravo","Charlie","Delta","E
 
 /////////////////////////////////////////
 /obj/machinery/computer/telecrystals/boss
-	name = "team telecrystal management console"
-	desc = "A device used to manage telecrystals during group operations. To use, simply initialize the machine by scanning for nearby uplink stations. \
-	Once the consoles are linked up, you can assign any telecrystals amongst your operatives; be they donated by your agents or rationed to the squad \
+	name = "team credit management console"
+	desc = "A device used to manage credits during group operations. To use, simply initialize the machine by scanning for nearby uplink stations. \
+	Once the consoles are linked up, you can assign any credits amongst your operatives; be they donated by your agents or rationed to the squad \
 	based on the danger rating of the mission."
 	icon_state = "computer"
 	icon_screen = "tcboss"
@@ -161,7 +161,7 @@ GLOBAL_LIST_INIT(possible_uplinker_IDs, list("Alfa","Bravo","Charlie","Delta","E
 	. = ..()
 	var/dat = ""
 	dat += "<a href='byond://?src=[REF(src)];scan=1'>Scan for TC stations.</a><BR>"
-	dat += "[storedcrystals] telecrystals are available for distribution. <BR>"
+	dat += "[storedcrystals] credits are available for distribution. <BR>"
 	dat += "<BR><BR>"
 
 
@@ -169,7 +169,7 @@ GLOBAL_LIST_INIT(possible_uplinker_IDs, list("Alfa","Bravo","Charlie","Delta","E
 		dat += "[A.name] | "
 		if(A.uplinkholder)
 			var/datum/component/uplink/hidden_uplink = A.uplinkholder.GetComponent(/datum/component/uplink)
-			dat += "[hidden_uplink.telecrystals] telecrystals."
+			dat += "[hidden_uplink.telecrystals] credits."
 		if(storedcrystals)
 			dat+= "<BR>Add TC: <a href ='?src=[REF(src)];target=[REF(A)];give=1'>1</a> | <a href ='?src=[REF(src)];target=[REF(A)];give=5'>5</a> | <a href ='?src=[REF(src)];target=[REF(A)];give=10'>10</a> | <a href ='?src=[REF(src)];target=[REF(A)];give=-1'>All</a>"
 		dat += "<BR>"
@@ -182,7 +182,7 @@ GLOBAL_LIST_INIT(possible_uplinker_IDs, list("Alfa","Bravo","Charlie","Delta","E
 		dat += "<small>[entry]</small><BR>"
 
 
-	var/datum/browser/popup = new(user, "computer", "Team Telecrystal Management Console", 700, 500)
+	var/datum/browser/popup = new(user, "computer", "Team credits Management Console", 700, 500)
 	popup.set_content(dat)
 	popup.open()
 
@@ -205,7 +205,7 @@ GLOBAL_LIST_INIT(possible_uplinker_IDs, list("Alfa","Bravo","Charlie","Delta","E
 			for(var/obj/machinery/computer/telecrystals/uplinker/A in TCstations)
 				A.giveTC(1,0)
 			sanity++
-		logTransfer("[src] evenly distributed telecrystals.")
+		logTransfer("[src] evenly distributed credits.")
 
 	src.updateUsrDialog()
 	return

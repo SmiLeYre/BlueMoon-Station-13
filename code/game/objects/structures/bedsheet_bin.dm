@@ -36,7 +36,8 @@ GLOBAL_LIST_INIT(double_bedsheets, list(/obj/item/bedsheet/double,
 										/obj/item/bedsheet/wiz/double,
 										/obj/item/bedsheet/nanotrasen/double,
 										/obj/item/bedsheet/ian/double,
-										/obj/item/bedsheet/cosmos/double
+										/obj/item/bedsheet/cosmos/double,
+										/obj/item/bedsheet/vulps/double
 										))
 
 /obj/item/bedsheet
@@ -141,6 +142,20 @@ GLOBAL_LIST_INIT(double_bedsheets, list(/obj/item/bedsheet/double,
 	icon_state = "sheetyellow"
 	dream_messages = list("yellow")
 
+/obj/item/bedsheet/vulp
+	name = "vulp bedsheet"
+	icon_state = "sheetvulp1"
+	dream_messages = list("furries", "vulps", "what the heck")
+
+/obj/item/bedsheet/vulp/vulp2
+	icon_state = "sheetvulp2"
+
+/obj/item/bedsheet/vulp/vulp3
+	icon_state = "sheetvulp3"
+
+/obj/item/bedsheet/vulp/vulp4
+	icon_state = "sheetvulp4"
+
 /obj/item/bedsheet/mime
 	name = "mime's blanket"
 	desc = "A very soothing striped blanket.  All the noise just seems to fade out when you're under the covers in this."
@@ -164,6 +179,7 @@ GLOBAL_LIST_INIT(double_bedsheets, list(/obj/item/bedsheet/double,
 	desc = "It appears to have a beaker emblem, and is made out of fire-resistant material, although it probably won't protect you in the event of fires you're familiar with every day."
 	icon_state = "sheetrd"
 	dream_messages = list("authority", "a silvery ID", "a bomb", "a mech", "a facehugger", "maniacal laughter", "the research director")
+
 
 // for Free Golems.
 /obj/item/bedsheet/rd/royal_cape
@@ -223,8 +239,14 @@ GLOBAL_LIST_INIT(double_bedsheets, list(/obj/item/bedsheet/double,
 
 /obj/item/bedsheet/syndie
 	name = "syndicate bedsheet"
-	desc = "It has a syndicate emblem and it has an aura of evil."
+	desc = "It has a syndicate emblem."
 	icon_state = "sheetsyndie"
+	dream_messages = list("a green disc", "a red crystal", "a glowing blade", "a wire-covered ID")
+
+/obj/item/bedsheet/inteq
+	name = "inteq bedsheet"
+	desc = "It has a inteq emblem and it has an aura of evil."
+	icon_state = "sheetinteq"
 	dream_messages = list("a green disc", "a red crystal", "a glowing blade", "a wire-covered ID")
 
 /obj/item/bedsheet/cult
@@ -254,7 +276,7 @@ GLOBAL_LIST_INIT(double_bedsheets, list(/obj/item/bedsheet/double,
 	dream_messages = list("a kitty", "a cat", "meow", "purr", "nya~")
 
 /obj/item/bedsheet/pirate
-	name = "pirate's bedsheet"
+	name = "Pirate's bedsheet"
 	desc = "It has a Jolly Roger emblem on it and has a faint scent of grog."
 	icon_state = "sheetpirate"
 	dream_messages = list("doing whatever oneself wants", "cause a pirate is free", "being a pirate", "stealing", "landlubbers", "gold", "a buried treasure", "yarr", "avast", "a swashbuckler", "sailing the Seven Seas", "a parrot", "a monkey", "an island", "a talking skull")
@@ -446,6 +468,11 @@ GLOBAL_LIST_INIT(double_bedsheets, list(/obj/item/bedsheet/double,
 
 /obj/item/bedsheet/cosmos/double
 	icon_state = "double_sheetcosmos"
+	dying_key = DYE_REGISTRY_DOUBLE_BEDSHEET
+	bedsheet_type = BEDSHEET_DOUBLE
+
+/obj/item/bedsheet/vulps/double
+	icon_state = "double_sheetvulps"
 	dying_key = DYE_REGISTRY_DOUBLE_BEDSHEET
 	bedsheet_type = BEDSHEET_DOUBLE
 

@@ -396,6 +396,14 @@ em {
   color: #8f4a4b;
 }
 
+.inteqradio {
+  color: #e58200;
+}
+
+.pirateradio {
+  color: #fafafa;
+}
+
 .gangradio {
   color: #ac2ea1;
 }
@@ -1166,4 +1174,11 @@ blockquote.brass {
   background: rgba(255, 255, 255, 0.3);
   height: 1px;
   margin: 8px 16px 8px 16px;
+}
+
+/* блюмун */
+
+// для больших персонажей
+.bigtalk {
+  font-size: 110%;
 }

@@ -15,7 +15,7 @@
 		cheeseoverlay.icon_state = "cheesed_snout"
 	else
 		cheeseoverlay.icon_state = "cheesed_human"
-	H.visible_message(span_warning("[H] is cheesed by [src]!"), span_userdanger("You've been cheesed by [src]!"))
+	H.visible_message("<span class='warning'>[H] is cheesed by [src]!</span>", "<span class='userdanger'>You've been cheesed by [src]!</span>")
 	playsound(H, 'modular_splurt/sound/effects/slap.ogg')
 	if(!H.is_mouth_covered())
 		reagents.trans_to(H, 15, log = "cheesed hit") //Cream pie combat

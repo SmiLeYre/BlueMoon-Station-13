@@ -1,23 +1,20 @@
 /datum/round_event_control/meteor_wave/major_dust
 	name = "Major Space Dust"
 	typepath = /datum/round_event/meteor_wave/major_dust
-	weight = 8
-	description = "The station is pelted by sand."
+	weight = 10
+	category = EVENT_CATEGORY_SPACE
 
 /datum/round_event/meteor_wave/major_dust
 	wave_name = "space dust"
 
 /datum/round_event/meteor_wave/major_dust/announce(fake)
 	var/reason = pick(
-		"The station is passing through a debris cloud, expect minor damage \
-		to external fittings and fixtures.",
-		"Nanotrasen Superweapons Division is testing a new prototype \
-		[pick("field","projection","nova","super-colliding","reactive")] \
-		[pick("cannon","artillery","tank","cruiser","\[REDACTED\]")], \
-		some mild debris is expected.",
-		"A neighbouring station is throwing rocks at you. (Perhaps they've \
-		grown tired of your messages.)")
+		"Станция проходит сквозь облако мусора, ожидается незначительное повреждение внешнего оборудования и кострукций.",
+		"Подразделение супероружия NanoTrasen проводит испытания нового прототипа [pick("метафизической","ониксовой","взрывной","супер-коллизионной","реактивной")] \
+		[pick("пушки","артиллерии","боярки","крейсерной обшивки","\[REDACTED\]")], \
+		ожидается небольшой мусор.",
+		"Соседняя станция бросает в вас камни. (Возможно, они устали от ваших сообщений.)")
 	if(prob(50))
-		priority_announce(pick(reason), "Collision Alert", has_important_message = prob(75))
+		priority_announce(pick(reason), "Опасность Столкновения", has_important_message = prob(75))
 	else
-		print_command_report("[pick(reason)]", "Collision Alert")
+		print_command_report("[pick(reason)]", "Опасность Столкновения")

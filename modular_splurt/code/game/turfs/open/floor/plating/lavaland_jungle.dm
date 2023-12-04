@@ -3,7 +3,6 @@
 	desc = "You can't tell if this is real grass or just cheap plastic imitation."
 	icon = 'modular_splurt/icons/turf/smooth/_smooth.dmi'
 	icon_state = "grass"
-	//broken_states = list("sand")
 	flags_1 = NONE
 	bullet_bounce_sound = null
 	footstep = FOOTSTEP_GRASS
@@ -15,8 +14,8 @@
 	canSmoothWith = null
 	layer = 2.1
 	attachment_holes = FALSE
+	smoothing_groups = list(/turf/closed/indestructible)
 	var/smooth_icon = 'modular_splurt/icons/turf/smooth/grass.dmi'
-	var/smoothing_groups = list(/turf/closed/indestructible)
 	var/smooth_offset = 8
 
 /turf/open/floor/plating/smooth/Initialize()

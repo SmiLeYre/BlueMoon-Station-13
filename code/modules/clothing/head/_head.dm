@@ -7,8 +7,12 @@
 	slot_flags = ITEM_SLOT_HEAD
 	var/blockTracking = 0 //For AI tracking
 	var/can_toggle = null
-	dynamic_hair_suffix = "+generic"
+	dynamic_hair_suffix = ""
 	var/datum/beepsky_fashion/beepsky_fashion //the associated datum for applying this to a secbot
+	var/vision_flags = 0
+	var/darkness_view = 2//Base human is 2
+	var/invis_view = SEE_INVISIBLE_LIVING	//admin only for now
+	var/lighting_alpha
 
 /obj/item/clothing/head/Initialize(mapload)
 	. = ..()
@@ -62,3 +66,12 @@
 	if(ismob(loc))
 		var/mob/M = loc
 		M.update_inv_head()
+
+/obj/item/clothing/head/visor_toggling()
+	..()
+	if(visor_vars_to_toggle & VISOR_VISIONFLAGS)
+		vision_flags ^= initial(vision_flags)
+	if(visor_vars_to_toggle & VISOR_DARKNESSVIEW)
+		darkness_view ^= initial(darkness_view)
+	if(visor_vars_to_toggle & VISOR_INVISVIEW)
+		invis_view ^= initial(invis_view)

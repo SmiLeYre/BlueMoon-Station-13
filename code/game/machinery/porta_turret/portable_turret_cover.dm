@@ -59,7 +59,7 @@
 			to_chat(user, "<span class='notice'>Controls are now [parent_turret.locked ? "locked" : "unlocked"].</span>")
 			updateUsrDialog()
 		else
-			to_chat(user, "<span class='notice'>Access denied.</span>")
+			to_chat(user, "<span class='notice'>Доступ запрещён.</span>")
 	else if(I.tool_behaviour == TOOL_MULTITOOL && !parent_turret.locked)
 		I.buffer = parent_turret
 		to_chat(user, "<span class='notice'>You add [parent_turret] to [I]'s buffer.</span>")
@@ -85,6 +85,7 @@
 	. = ..()
 	if(parent_turret.obj_flags & EMAGGED)
 		return
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	to_chat(user, "<span class='notice'>You short out [parent_turret]'s threat assessment circuits.</span>")
 	visible_message("[parent_turret] hums oddly...")
 	parent_turret.obj_flags |= EMAGGED

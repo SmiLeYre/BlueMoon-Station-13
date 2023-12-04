@@ -5,6 +5,7 @@
 	item_state = "labcoat"
 	blood_overlay_type = "coat"
 	body_parts_covered = CHEST|ARMS
+	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
 	allowed = list(
 		/obj/item/analyzer,
 		/obj/item/stack/medical,
@@ -89,7 +90,7 @@
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 50, RAD = 0, FIRE = 0, ACID = 45)
 
 /obj/item/clothing/suit/toggle/labcoat/depjacket/sec
-	name = "security jacket"
+	name = "Security Jacket"
 	desc = "A comfortable jacket in security red."
 	icon_state = "sec_dep_jacket"
 	item_state = "sec_dep_jacket"
@@ -115,3 +116,8 @@
 	item_state = "engi_dep_jacket"
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 20, FIRE = 30, ACID = 45)
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/t_scanner, /obj/item/construction/rcd, /obj/item/pipe_dispenser, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter)
+
+/obj/item/clothing/suit/toggle/labcoat/syndicate
+	name = "DS Labcoat"
+	desc = "More like an eccentric coat than a labcoat. Helps pass off bloodstains as part of the aesthetic. Comes with red shoulder pads."
+	icon_state = "labcoat_robo"

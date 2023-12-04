@@ -338,7 +338,7 @@
 			if((check.clothing_flags & ALLOWINTERNALS))
 				internals = TRUE
 	if(internal)
-		if(internal.loc != src)
+		if(internal.loc != src && !istype(internal.loc, /obj/structure/table/optable)) // BLUEMOON ADD - добавлено проверка на хирургический стол, чтобы можно было пользоваться баллоном из него
 			internal = null
 			update_internals_hud_icon(0)
 		else if (!internals && !getorganslot(ORGAN_SLOT_BREATHING_TUBE))
@@ -365,7 +365,7 @@
 		return
 
 	// Wait a bit before decaying
-	if(world.time - timeofdeath < 1200)
+	if(world.time - timeofdeath < 600)
 		return
 
 	var/deceasedturf = get_turf(src)
@@ -378,7 +378,7 @@
 
 	var/datum/gas_mixture/stank = new
 
-	stank.set_moles(GAS_MIASMA,0.1)
+	stank.set_moles(GAS_MIASMA,1)
 
 	stank.set_temperature(BODYTEMP_NORMAL)
 
@@ -697,9 +697,11 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 
 
 /mob/living/carbon/proc/get_environment_cooling_efficiency()
+/* BLUEMOON REMOVAL START - для защиты от космоса, у синтетиков теперь есть portable cooling unit. Скафандры не должны работать
 	var/suitlink = check_suitlinking()
 	if(suitlink)
 		return suitlink //If you are wearing full EVA or lavaland hazard gear (on lavaland), assume it has been made to accomodate your cooling needs.
+BLUEMOON REMOVAL END */
 	var/datum/gas_mixture/environment = loc.return_air()
 	if(!environment)
 		return 0

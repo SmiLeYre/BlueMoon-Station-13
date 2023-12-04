@@ -104,6 +104,12 @@
 		audible_message("<span class='warning'>[icon2html(src, hearers(src))] *beep*</span>")
 		bomb_active = TRUE
 		START_PROCESSING(SSobj, src)
+	else if(!open && !pizza && !bomb)
+		var/obj/item/stack/sheet/cardboard/cardboard = new /obj/item/stack/sheet/cardboard(user.drop_location())
+		to_chat(user, span_notice("Складываю коробку из-под пиццы в картон."))
+		user.put_in_active_hand(cardboard)
+		qdel(src)
+		return
 	update_icon()
 
 /obj/item/pizzabox/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
@@ -183,7 +189,7 @@
 		if(open && !bomb)
 			if(!user.transferItemToLoc(I, src))
 				return
-			wires = new /datum/wires/explosive/pizza(src)
+			set_wires(new /datum/wires/explosive/pizza(src))
 			bomb = I
 			to_chat(user, "<span class='notice'>You put [I] in [src]. Sneeki breeki...</span>")
 			update_icon()
@@ -192,7 +198,7 @@
 			to_chat(user, "<span class='notice'>[src] already has a bomb in it!</span>")
 	else if(istype(I, /obj/item/pen))
 		if(!open)
-			if(!user.is_literate())
+			if(!user.can_write(I))
 				to_chat(user, "<span class='notice'>You scribble illegibly on [src]!</span>")
 				return
 			var/obj/item/pizzabox/box = boxes.len ? boxes[boxes.len] : src
@@ -264,7 +270,7 @@
 	var/randompizza = pick(subtypesof(/obj/item/reagent_containers/food/snacks/pizza))
 	pizza = new randompizza(src)
 	bomb = new(src)
-	wires = new /datum/wires/explosive/pizza(src)
+	set_wires(new /datum/wires/explosive/pizza(src))
 
 /obj/item/pizzabox/margherita/Initialize(mapload)
 	. = ..()

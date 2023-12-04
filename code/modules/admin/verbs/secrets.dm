@@ -110,6 +110,12 @@
 				for(var/thing in SSdisease.active_diseases)
 					var/datum/disease/D = thing
 					D.cure(0)
+		if("mass_rejuvenate")
+			var/choice = input("Are you sure you want to rejuvenate all players?") in list("Yes", "Cancel")
+			if(choice == "Yes")
+				message_admins("[key_name_admin(holder)] has rejuvenated all players.")
+				for(var/mob/living/M in GLOB.mob_list)
+					M.revive(full_heal = 1, admin_revive = 1)
 		if("list_bombers")
 			var/dat = "<B>Bombing List</B><HR>"
 			for(var/l in GLOB.bombers)
@@ -163,7 +169,7 @@
 		if("ctfbutton")
 			toggle_all_ctf(holder)
 		if("tdomereset")
-			var/delete_mobs = alert("Clear all mobs?","Confirm","Yes","No","Cancel")
+			var/delete_mobs = alert("Clear all mobs?","Confirm","Да","Нет","Cancel")
 			if(delete_mobs == "Cancel")
 				return
 
@@ -331,7 +337,7 @@
 			if(!is_funmin)
 				return
 			if(!SSevents.wizardmode)
-				if(alert("Do you want to toggle summon events on?",,"Yes","No") == "Yes")
+				if(alert("Do you want to toggle summon events on?",,"Да","Нет") == "Да")
 					summonevents()
 					SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Summon Events", "Activate"))
 
@@ -363,20 +369,52 @@
 				priority_announce("The NAP is now in full effect.", null, SSstation.announcer.get_rand_report_sound())
 			else
 				priority_announce("The NAP has been revoked.", null, SSstation.announcer.get_rand_report_sound())
+		if("synd_displays")
+			if(!is_funmin)
+				return
+			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Syndicate Displays on Station"))
+			message_admins("[key_name_admin(holder)] toggled Syndicate Displays")
+			priority_announce("Синдикат берёт Космическую Станцию в свою ответственность.", null, 'sound/machines/AISyndiHack.ogg')
+			var/obj/machinery/computer/communications/C = locate() in GLOB.machines
+			if(C)
+				C.post_status("alert", "synd")
+			for(var/mob/living/silicon/silicon as anything in GLOB.silicon_mobs)
+				var/new_board = new /obj/item/aiModule/core/full/syndicate(src)
+				var/obj/item/aiModule/chosenboard = new_board
+				var/mob/living/silicon/beepboop = silicon
+				chosenboard.install(beepboop.laws, usr)
+				qdel(new_board)
+		if("aikofication")
+			if(!is_funmin)
+				return
+			var/amount_modified = 0
+			for(var/mob/living/carbon/human/H in GLOB.player_list)
+				if(!GLOB.dna_for_copying || !istype(GLOB.dna_for_copying, /datum/dna))
+					alert(usr, "ERROR: There's nothing to copy!")
+					return
+				GLOB.dna_for_copying.transfer_identity(H, TRUE)
+				H.real_name = H.dna.real_name
+				H.updateappearance(mutcolor_update=1)
+				H.domutcheck()
+				amount_modified++
+			message_admins("[key_name_admin(holder)] transformed <b>EVERYONE</b> ([amount_modified] player\s) \
+				into [GLOB.dna_for_copying.real_name]!")
+			log_admin("[key_name(holder)] has transformed everyone ([amount_modified] player\s) into [GLOB.dna_for_copying.real_name].")
+
 		if("blackout")
 			if(!is_funmin)
 				return
 			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Break All Lights"))
 			message_admins("[key_name_admin(holder)] broke all lights")
 			for(var/obj/machinery/light/L in GLOB.machines)
-				L.break_light_tube()
+				INVOKE_ASYNC(L, TYPE_PROC_REF(/obj/machinery/light, break_light_tube))
 		if("whiteout")
 			if(!is_funmin)
 				return
 			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Fix All Lights"))
 			message_admins("[key_name_admin(holder)] fixed all lights")
 			for(var/obj/machinery/light/L in GLOB.machines)
-				L.fix()
+				INVOKE_ASYNC(L, TYPE_PROC_REF(/obj/machinery/light, fix))
 		if("customportal")
 			if(!is_funmin)
 				return
@@ -510,17 +548,18 @@
 			for(var/mob/living/carbon/human/H in GLOB.player_list)
 				to_chat(H, "<span class='boldannounce'>You suddenly feel stupid.</span>", confidential = TRUE)
 				H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 60, 80)
-			message_admins("[key_name_admin(holder)] made everybody brain damaged")
+			message_admins("[key_name_admin(holder)] made everybody brain damaged!")
+			log_admin("[key_name(holder)] made everybody brain damage!")
 		if("floorlava")
 			SSweather.run_weather(/datum/weather/floor_is_lava)
 		if("anime")
 			if(!is_funmin)
 				return
-			var/animetype = alert("Would you like to have the clothes be changed?",,"Yes","No","Cancel")
+			var/animetype = alert("Would you like to have the clothes be changed?",,"Да","Нет","Cancel")
 
 			var/droptype
 			if(animetype =="Yes")
-				droptype = alert("Make the uniforms Nodrop?",,"Yes","No","Cancel")
+				droptype = alert("Make the uniforms Nodrop?",,"Да","Нет","Cancel")
 
 			if(animetype == "Cancel" || droptype == "Cancel")
 				return

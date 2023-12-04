@@ -1,10 +1,17 @@
 /mob/living/carbon/alien/humanoid/drone
 	name = "alien drone"
 	caste = "d"
-	maxHealth = 125
-	health = 125
+	maxHealth = 250
+	health = 250
 	icon_state = "aliend"
 	meleeKnockdownPower = 80
+
+/mob/living/carbon/alien/humanoid/drone/maid
+	name = "Xeno Maid"
+	icon_state = "alienmaid"
+	caste = "maid"
+	has_fine_manipulation = 1
+	initial_language_holder = /datum/language_holder
 
 /mob/living/carbon/alien/humanoid/drone/Initialize(mapload)
 	AddAbility(new/obj/effect/proc_holder/alien/evolve(null))
@@ -19,7 +26,7 @@
 /obj/effect/proc_holder/alien/evolve
 	name = "Evolve to Praetorian"
 	desc = "Praetorian"
-	plasma_cost = 500
+	plasma_cost = 450
 
 	action_icon_state = "alien_evolve_drone"
 

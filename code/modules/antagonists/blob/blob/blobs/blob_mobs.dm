@@ -17,6 +17,7 @@
 	a_intent = INTENT_HARM
 	var/mob/camera/blob/overmind = null
 	var/obj/structure/blob/factory/factory = null
+	typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/blob
 
 /mob/living/simple_animal/hostile/blob/update_icons()
 	if(overmind)
@@ -75,14 +76,14 @@
 	desc = "A floating, fragile spore."
 	icon_state = "blobpod"
 	icon_living = "blobpod"
-	health = 30
-	maxHealth = 30
+	health = 150
+	maxHealth = 150
 	verb_say = "psychically pulses"
 	verb_ask = "psychically probes"
 	verb_exclaim = "psychically yells"
 	verb_yell = "psychically screams"
-	melee_damage_lower = 2
-	melee_damage_upper = 4
+	melee_damage_lower = 10
+	melee_damage_upper = 20
 	obj_damage = 20
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
 	attack_verb_continuous = "hits"
@@ -118,7 +119,7 @@
 	if(H.wear_suit)
 		var/obj/item/clothing/suit/armor/A = H.wear_suit
 		maxHealth += A.armor.melee //That zombie's got armor, I want armor!
-	maxHealth += 40
+	maxHealth += 120
 	health = maxHealth
 	name = "blob zombie"
 	desc = "A shambling corpse animated by the blob."
@@ -200,11 +201,11 @@
 	icon_state = "blobbernaut"
 	icon_living = "blobbernaut"
 	icon_dead = "blobbernaut_dead"
-	health = 200
-	maxHealth = 200
+	health = 500
+	maxHealth = 500
 	damage_coeff = list(BRUTE = 0.5, BURN = 1, TOX = 1, CLONE = 1, STAMINA = 0, OXY = 1)
-	melee_damage_lower = 20
-	melee_damage_upper = 20
+	melee_damage_lower = 40
+	melee_damage_upper = 40
 	obj_damage = 60
 	attack_verb_continuous = "slams"
 	attack_verb_simple = "slam"

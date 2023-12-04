@@ -148,6 +148,14 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Lawyer"
 	icon_state = "Lawyer"
 
+/obj/effect/landmark/start/ntr
+	name = "NanoTrasen Representative"
+	icon_state = "NanoTrasen Representative"
+
+/obj/effect/landmark/start/bouncer
+	name = "Bouncer"
+	icon_state = "Bouncer"
+
 /obj/effect/landmark/start/station_engineer
 	name = "Station Engineer"
 	icon_state = "Station Engineer"
@@ -174,6 +182,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 
 /obj/effect/landmark/start/research_director
 	name = "Research Director"
+	icon_state = "Research Director"
+
+/obj/effect/landmark/start/expeditor
+	name = "Expeditor"
 	icon_state = "Research Director"
 
 /obj/effect/landmark/start/geneticist
@@ -268,6 +280,26 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start/nukeop_leader/Initialize(mapload)
 	..()
 	GLOB.nukeop_leader_start += get_turf(src)
+	return INITIALIZE_HINT_QDEL
+
+/obj/effect/landmark/start/syndiop
+	name = "syndiop"
+	icon = 'icons/effects/landmarks_static.dmi'
+	icon_state = "nukeop_spawn"
+
+/obj/effect/landmark/start/syndiop/Initialize(mapload)
+	..()
+	GLOB.syndiop_start += get_turf(src)
+	return INITIALIZE_HINT_QDEL
+
+/obj/effect/landmark/start/syndiop_leader
+	name = "nukeop leader"
+	icon = 'icons/effects/landmarks_static.dmi'
+	icon_state = "nukeop_leader_spawn"
+
+/obj/effect/landmark/start/syndiop_leader/Initialize(mapload)
+	..()
+	GLOB.syndiop_leader_start += get_turf(src)
 	return INITIALIZE_HINT_QDEL
 
 // Must be immediate because players will

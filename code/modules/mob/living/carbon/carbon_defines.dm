@@ -26,6 +26,7 @@
 	var/obj/item/gloves = null //only used by humans
 	var/obj/item/clothing/shoes/shoes = null //only used by humans.
 	var/obj/item/clothing/glasses/glasses = null //only used by humans.
+	var/obj/item/clothing/head/helmet/helmet = null //only used by humans.
 	var/obj/item/ears = null //only used by humans.
 
 	var/datum/dna/dna = null//Carbon
@@ -45,7 +46,7 @@
 	var/tinttotal = 0	// Total level of visualy impairing items
 
 	var/list/bodyparts = list(/obj/item/bodypart/chest, /obj/item/bodypart/head, /obj/item/bodypart/l_arm,
-					 /obj/item/bodypart/r_arm, /obj/item/bodypart/r_leg, /obj/item/bodypart/l_leg)
+					/obj/item/bodypart/r_arm, /obj/item/bodypart/r_leg, /obj/item/bodypart/l_leg)
 	//Gets filled up in create_bodyparts()
 
 	var/list/hand_bodyparts = list() //a collection of arms (or actually whatever the fug /bodyparts you monsters use to wreck my systems)

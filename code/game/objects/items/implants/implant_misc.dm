@@ -33,8 +33,8 @@
 /obj/item/implant/adrenalin/activate()
 	. = ..()
 	uses--
-	imp_in.do_adrenaline(150, TRUE, 0, 0, TRUE, list(/datum/reagent/medicine/inaprovaline = 3, /datum/reagent/medicine/synaptizine = 10, /datum/reagent/medicine/regen_jelly = 10, /datum/reagent/medicine/stimulants = 10), "<span class='boldnotice'>You feel a sudden surge of energy!</span>")
-	to_chat(imp_in, "<span class='notice'>You feel a sudden surge of energy!</span>")
+	imp_in.do_adrenaline(150, TRUE, 0, 0, TRUE, list(/datum/reagent/medicine/inaprovaline = 10, /datum/reagent/medicine/synaptizine = 15, /datum/reagent/medicine/regen_jelly = 20, /datum/reagent/medicine/stimulants = 20), "<span class='boldnotice'>You feel a sudden surge of energy!</span>")
+	to_chat(imp_in, "<span class='notice'>Вы чувствуете внезапный прилив энергии!</span>")
 	if(!uses)
 		qdel(src)
 
@@ -116,7 +116,7 @@
 		positions.Cut(1, remove + 1)
 
 /obj/item/implanter/warp
-	name = "implanter (warp)"
+	name = "Implanter (warp)"
 	imp_type = /obj/item/implant/warp
 
 /obj/item/implant/emp

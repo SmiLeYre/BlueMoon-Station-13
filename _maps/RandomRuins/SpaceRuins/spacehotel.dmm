@@ -1577,22 +1577,22 @@
 /area/ruin/space/has_grav/hotel)
 "eP" = (
 /obj/structure/flora/ausbushes/fernybush,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/ruin/space/has_grav/hotel)
 "eQ" = (
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/ruin/space/has_grav/hotel)
 "eR" = (
 /obj/machinery/light{
 	dir = 1
 	},
 /obj/structure/flora/ausbushes/fullgrass,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/ruin/space/has_grav/hotel)
 "eS" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/ruin/space/has_grav/hotel)
 "eT" = (
 /turf/open/floor/wood,
@@ -1707,21 +1707,21 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/ruin/space/has_grav/hotel)
 "fn" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/ruin/space/has_grav/hotel)
 "fo" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/ruin/space/has_grav/hotel)
 "fp" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{

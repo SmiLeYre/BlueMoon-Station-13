@@ -1,51 +1,58 @@
 /datum/emote/living/carbon/human/cry
 	key = "cry"
 	key_third_person = "cries"
-	message = "cries."
+	message = "рыдает."
 	emote_type = EMOTE_AUDIBLE
+	emote_cooldown = 4 SECONDS
 
 /datum/emote/living/carbon/human/cry/run_emote(mob/user, params)
 	. = ..()
+	var/mob/living/carbon/C = user
 	if(. && isrobotic(user))
 		do_fake_sparks(5,FALSE,user)
+	if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
+		playsound(C, pick('sound/voice/female_cry1.ogg', 'sound/voice/female_cry2.ogg'), 50, 1)
+	else if(user.gender != FEMALE || (user.gender == PLURAL && ismasculine(user)))
+		playsound(C, pick('sound/voice/male_cry1.ogg', 'sound/voice/male_cry2.ogg'), 50, 1)
 
 /datum/emote/living/carbon/human/dap
 	key = "dap"
 	key_third_person = "daps"
-	message = "sadly can't find anybody to give daps to, and daps themself. Shameful."
-	message_param = "give daps to %t."
+	message = "делает ДЭП и... к сожалению, не может найти никого, кому можно было бы дать DAP. Стыдно."
+	message_param = "ДЭПает при виде %t."
 	restraint_check = TRUE
 
 /datum/emote/living/carbon/human/eyebrow
 	key = "eyebrow"
-	message = "raises an eyebrow."
+	message = "поднимает бровь."
 
 /datum/emote/living/carbon/human/grumble
 	key = "grumble"
 	key_third_person = "grumbles"
-	message = "grumbles!"
+	message = "ворчит что-то себе под нос!"
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/carbon/human/handshake
 	key = "handshake"
-	message = "shakes their own hands."
-	message_param = "shakes hands with %t."
+	message = "пожимает собственные руки."
+	message_param = "пожимает руку %t."
 	restraint_check = TRUE
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/carbon/human/hug
 	key = "hug"
 	key_third_person = "hugs"
-	message = "hugs themself."
-	message_param = "hugs %t."
+	message = "обнимает себя."
+	message_param = "обнимает %t."
 	restraint_check = TRUE
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/carbon/human/mawp
 	key = "mawp"
 	key_third_person = "mawps"
-	message = "mawps annoyingly."
+	message = "раздраженно бормочет что-то на своём."
 	emote_type = EMOTE_AUDIBLE
+	emote_cooldown = 8 SECONDS
 
 /datum/emote/living/carbon/human/mawp/run_emote(mob/living/user, params)
 	. = ..()
@@ -53,39 +60,33 @@
 		if(ishuman(user))
 			if(prob(10))
 				user.adjustEarDamage(-5, -5)
+	playsound(user, 'modular_citadel/sound/voice/purr.ogg', 50, 1, -1)	//почему мурчание?
 
 /datum/emote/living/carbon/human/mumble
 	key = "mumble"
 	key_third_person = "mumbles"
-	message = "mumbles!"
+	message = "бормочет!"
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/carbon/human/pale
 	key = "pale"
-	message = "goes pale for a second."
+	message = "бледнеет на секунду."
 
 /datum/emote/living/carbon/human/raise
 	key = "raise"
 	key_third_person = "raises"
-	message = "raises a hand."
-	restraint_check = TRUE
-
-/datum/emote/living/carbon/human/salute
-	key = "salute"
-	key_third_person = "salutes"
-	message = "salutes."
-	message_param = "salutes to %t."
+	message = "демонстративно поднимает свою руку."
 	restraint_check = TRUE
 
 /datum/emote/living/carbon/human/shrug
 	key = "shrug"
 	key_third_person = "shrugs"
-	message = "shrugs."
+	message = "пожимает плечами."
 
 /datum/emote/living/carbon/human/wag
 	key = "wag"
 	key_third_person = "wags"
-	message = "wags their tail."
+	message = "начинает вилять своим хвостом."
 
 /datum/emote/living/carbon/human/wag/run_emote(mob/user, params)
 	. = ..()
@@ -116,7 +117,7 @@
 /datum/emote/living/carbon/human/wing
 	key = "wing"
 	key_third_person = "wings"
-	message = "their wings."
+	message = "хлопает своими крыльями."
 
 /datum/emote/living/carbon/human/wing/run_emote(mob/user, params)
 	. = ..()
@@ -165,35 +166,56 @@
 	mob_type_allowed_typecache = list(/mob/living/carbon/human)
 	emote_type = EMOTE_AUDIBLE
 
+/datum/emote/sound/human/salute
+	key = "salute"
+	key_third_person = "salutes"
+	message = "исполняет воинское приветствие."
+	message_param = "исполняет воинское приветствие при виде %t."
+	sound = 'sound/voice/salute.ogg'
+	restraint_check = TRUE
+
 /datum/emote/sound/human/buzz
 	key = "buzz"
 	key_third_person = "buzzes"
-	message = "buzzes."
-	message_param = "buzzes at %t."
+	message = "жужжит."
+	message_param = "жужжит при виде %t."
 	sound = 'sound/machines/buzz-sigh.ogg'
 
 /datum/emote/sound/human/buzz2
 	key = "buzz2"
-	message = "buzzes twice."
+	message = "жужжит дважды."
 	sound = 'sound/machines/buzz-two.ogg'
 
 /datum/emote/sound/human/ping
 	key = "ping"
 	key_third_person = "pings"
-	message = "pings."
-	message_param = "pings at %t."
+	message = "звенит."
+	message_param = "звенит при виде %t."
 	sound = 'sound/machines/ping.ogg'
 
 /datum/emote/sound/human/chime
 	key = "chime"
 	key_third_person = "chimes"
-	message = "chimes."
+	message = "издаёт звон."
 	sound = 'sound/machines/chime.ogg'
 
 /datum/emote/sound/human/squeak
 	key = "squeak"
-	message = "squeaks."
+	message = "пищит словно мышка."
 	sound = 'sound/effects/mousesqueek.ogg'
+
+/datum/emote/sound/human/shriek
+	key = "shriek"
+	key_third_person = "shrieks"
+	message = "вскрикивает!"
+	sound = 'sound/voice/shriek1.ogg'
+
+/datum/emote/sound/human/syndicate
+	key = "syndicate"
+	key_third_person = "syndicates"
+	message = "получает миссию со стороны Синдиката."
+	sound = 'sound/voice/syndicate.ogg'
+	emote_cooldown = 8 SECONDS
 
 //rock paper scissors emote handling
 /mob/living/carbon/human/proc/beginRockPaperScissors(var/chosen_move)
@@ -201,7 +223,7 @@
 	do_after(src, ROCKPAPERSCISSORS_TIME_LIMIT, src, extra_checks = CALLBACK(src, .proc/rockpaperscissors_tick))
 	var/new_entry = GLOB.rockpaperscissors_players[src]
 	if(new_entry[2] == ROCKPAPERSCISSORS_NOT_DECIDED)
-		to_chat(src, "You put your hand back down.")
+		to_chat(src, "Вы опускаете руку.")
 	GLOB.rockpaperscissors_players -= src
 
 /mob/living/carbon/human/proc/rockpaperscissors_tick() //called every cycle of the progress bar for rock paper scissors while waiting for an opponent
@@ -229,15 +251,15 @@
 		GLOB.rockpaperscissors_players[opponent][2] = result_them
 
 		//show what happened
-		src.visible_message("<b>[src]</b> makes [GLOB.rockpaperscissors_players[src][1]] with their hand!")
-		opponent.visible_message("<b>[opponent]</b> makes [GLOB.rockpaperscissors_players[opponent][1]] with their hands!")
+		src.visible_message("<b>[src]</b> составляет '[GLOB.rockpaperscissors_players[src][1]]' своей рукой!")
+		opponent.visible_message("<b>[opponent]</b> составляет '[GLOB.rockpaperscissors_players[opponent][1]]' своей рукой!")
 		switch(result_us)
 			if(ROCKPAPERSCISSORS_TIE)
-				src.visible_message("It was a tie!")
+				src.visible_message("Ничья!")
 			if(ROCKPAPERSCISSORS_WIN)
-				src.visible_message("<b>[src]</b> wins!")
+				src.visible_message("<b>[src]</b> побеждает!")
 			if(ROCKPAPERSCISSORS_LOSE)
-				src.visible_message("<b>[opponent]</b> wins!")
+				src.visible_message("<b>[opponent]</b> побеждает!")
 
 		//make the progress bar end so that each player can handle the result
 		return FALSE
@@ -247,7 +269,7 @@
 
 //the actual emotes
 /datum/emote/living/carbon/human/rockpaperscissors
-	message = "is attempting to play rock paper scissors!"
+	message = "пытается играть в 'Камень-Ножницы-Бумага'!"
 
 /datum/emote/living/carbon/human/rockpaperscissors/rock
 	key = "rock"

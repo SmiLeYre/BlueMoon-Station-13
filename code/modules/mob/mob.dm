@@ -109,7 +109,7 @@
 	// voice muffling
 	if(stat == UNCONSCIOUS)
 		if(type & MSG_AUDIBLE) //audio
-			to_chat(src, "<I>... You can almost hear something ...</I>")
+			to_chat(src, "<I>... Вы едва можете что-то услышать ...</I>")
 		return
 	to_chat(src, msg)
 
@@ -135,7 +135,7 @@
   * * runechat_popup (optional) if TRUE, will display a runechat popup using rune_msg if set otherwise it will use message and self_message accordingly.
   * * rune_msg (optional) is the message to display in the runechat popup.
   */
-/atom/proc/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, ignored_mobs, mob/target, target_message, omni = FALSE, runechat_popup, rune_msg)
+/atom/proc/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, ignored_mobs, mob/target, target_message, omni = FALSE, runechat_popup, rune_msg, visible_message_flags = NONE, separation = " ")
 	var/turf/T = get_turf(src)
 	if(!T)
 		return
@@ -160,6 +160,11 @@
 				target.show_message(msg, MSG_VISUAL,blind_message, MSG_AUDIBLE)
 	if(self_message)
 		hearers -= src
+
+	var/raw_msg = message
+	if(visible_message_flags & EMOTE_MESSAGE)
+		message = "<span class='emote'><b>[src]</b>[separation][message]</span>" // SKYRAT EDIT - Better emotes
+
 	for(var/mob/M in hearers)
 		if(!M.client && !M.audiovisual_redirect)
 			continue
@@ -178,11 +183,14 @@
 		if(!msg)
 			continue
 		if(runechat_popup && M.client?.prefs.chat_on_map && (M.client.prefs.see_chat_non_mob || ismob(src)) && M.client.prefs.see_chat_emotes) //SKYRAT CHANGE
-			M.create_chat_message(src, null, rune_msg ? rune_msg : msg, list("emote", "italics"), null) //Skyrat change
+			M.create_chat_message(src, null, rune_msg ? rune_msg : msg, list("emote", "italics"), null)
+		if(visible_message_flags & EMOTE_MESSAGE && !M.is_blind())
+			M.create_chat_message(src, raw_message = raw_msg)
+
 		M.show_message(msg, MSG_VISUAL, blind_message, MSG_AUDIBLE) //SKYRAT CHANGE
 
 ///Adds the functionality to self_message.
-/mob/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, mob/target, target_message, omni = FALSE, runechat_popup, rune_msg)
+/mob/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, mob/target, target_message, omni = FALSE, runechat_popup, rune_msg, visible_message_flags)
 	. = ..()
 	if(self_message && target != src)
 		if(!omni)
@@ -264,8 +272,17 @@
 		var/obj/item/I = get_item_by_slot(slot)
 		if(istype(I))
 			if(slot in check_obscured_slots())
-				to_chat(src, "<span class='warning'>You are unable to unequip that while wearing other garments over it!</span>")
+				to_chat(src, "<span class='warning'>Вы не можете снять это, пока у вас надето что-то поверх!</span>")
 				return FALSE
+
+			var/mob/living/carbon/human/H = usr
+			if(!I.unequip_delay_self)
+				return TRUE
+			H.visible_message("<span class='notice'>[H] снимает с себя [I]...</span>", "<span class='notice'>Вы снимаете с себя [I]...</span>")
+
+			if(!do_after(H, I.unequip_delay_self, target = H))
+				return
+
 			I.attack_hand(src)
 
 	return FALSE
@@ -330,7 +347,7 @@
 		return
 
 	if(is_blind())
-		to_chat(src, "<span class='warning'>Something is there but you can't see it!</span>")
+		to_chat(src, "<span class='warning'>Здесь что-то есть, но вы не можете это увидеть!</span>")
 		return
 
 	face_atom(A)
@@ -489,30 +506,44 @@
 		I.attack_self(src)
 		update_inv_hands()
 
+/**
+ * Get the notes of this mob
+ *
+ * This actually gets the mind datums notes
+ */
 /mob/verb/memory()
-	set name = "Notes"
+	set name = "📘 Заметки"
 	set category = "IC"
 	set desc = "View your character's notes memory."
 	if(mind)
-//ambition start
-		var/datum/browser/popup = new(src, "memory", "Memory and Notes")
-		popup.set_content(mind.show_memory())
-		popup.open()
-//ambition end
+		mind.show_memory(src)
 	else
-		to_chat(src, "You don't have a mind datum for some reason, so you can't look at your notes, if you had any.")
+		to_chat(src, "По какой-то причине у вас нет данных разума, поэтому вы не можете смотреть свои записи, если они у вас были.")
 
-/mob/verb/add_memory(msg as message)
-	set name = "Add Note"
+/**
+ * Add a note to the mind datum
+ */
+/mob/verb/add_memory_wrapper(msg as message)
+	set name = "📘 Добавить заметку"
 	set category = "IC"
 
-	msg = copytext_char(msg, 1, MAX_MESSAGE_LEN)
-	msg = sanitize(msg)
+	msg = input("", "Добавить заметку") as null|message
+	if(msg)
+		add_memory(msg)
 
+/mob/verb/add_memory(msg as message)
+	set name = "📘 Добавить заметку"
+	set hidden = 1
 	if(mind)
+		if (world.time < memory_throttle_time)
+			return
+		memory_throttle_time = world.time + 5 SECONDS
+		msg = copytext_char(msg, 1, MAX_MESSAGE_LEN)
+		msg = sanitize(msg)
+
 		mind.store_memory(msg)
 	else
-		to_chat(src, "You don't have a mind datum for some reason, so you can't add a note to it.")
+		to_chat(src, "По какой-то причине у вас нет данных разума, поэтому вы не можете добавить к нему ещё записи.")
 
 /mob/proc/transfer_ckey(mob/new_mob, send_signal = TRUE)
 	if(!new_mob || (!ckey && new_mob.ckey))
@@ -958,6 +989,19 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 /mob/proc/is_literate()
 	return 0
 
+/**
+ * Can this mob see in the dark
+ *
+ * This checks all traits, glasses, and robotic eyeball implants to see if the mob can see in the dark
+ * this does NOT check if the mob is missing it's eyeballs. Also see_in_dark is a BYOND mob var (that defaults to 2)
+**/
+/mob/proc/has_nightvision()
+	return HAS_TRAIT(src, TRAIT_NIGHT_VISION)
+
+/// Is this mob affected by nearsight
+/mob/proc/is_nearsighted()
+	return HAS_TRAIT(src, TRAIT_NEARSIGHT)
+
 /mob/proc/can_hold_items()
 	return FALSE
 
@@ -1056,6 +1100,10 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 
 /mob/setMovetype(newval)
 	. = ..()
+	// BLUEMOON ADD START - для корректного обновления скорости у парящих сверхтяжёлых персонажей
+	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
+		update_config_movespeed()
+	// BLUEMOON ADD END
 	update_movespeed(FALSE)
 
 /mob/proc/getLAssailant()
@@ -1094,3 +1142,6 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
   */
 /mob/proc/on_item_dropped(obj/item/I)
 	return
+
+/mob/proc/get_access_locations()
+	return list()

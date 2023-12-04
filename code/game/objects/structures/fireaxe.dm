@@ -13,6 +13,18 @@
 	var/open = FALSE
 	var/obj/item/fireaxe/fireaxe
 
+/obj/machinery/airalarm/directional/north //Pixel offsets get overwritten on New()
+	pixel_y = 28
+
+/obj/machinery/airalarm/directional/south
+	pixel_y = -28
+
+/obj/machinery/airalarm/directional/east
+	pixel_x = 28
+
+/obj/machinery/airalarm/directional/west
+	pixel_x = -28
+
 /obj/structure/fireaxecabinet/Initialize(mapload)
 	. = ..()
 	fireaxe = new
@@ -31,11 +43,11 @@
 			if(!I.tool_start_check(user, amount=2))
 				return
 
-			to_chat(user, "<span class='notice'>You begin repairing [src].</span>")
+			to_chat(user, "<span class='notice'>Вы начинаете чинить [src].</span>")
 			if(I.use_tool(src, user, 40, volume=50, amount=2))
 				obj_integrity = max_integrity
 				update_icon()
-				to_chat(user, "<span class='notice'>You repair [src].</span>")
+				to_chat(user, "<span class='notice'>Вы починили [src].</span>")
 		else
 			to_chat(user, "<span class='warning'>[src] is already in good condition!</span>")
 		return
@@ -183,3 +195,18 @@
 		open = !open
 		update_icon()
 		return
+
+/obj/structure/closet/secure_closet/ds2atmos
+	name = "energy axe cabinet"
+	desc = "A cabinet storing an energy fire axe along with basic firefighting tools."
+	icon = 'icons/obj/closet.dmi'
+	icon_state = "riot"
+	req_access = list(ACCESS_SYNDICATE)
+
+/obj/structure/closet/secure_closet/ds2atmos/PopulateContents()
+	..()
+	new /obj/item/fireaxe(src)
+	new /obj/item/extinguisher/advanced(src)
+	new /obj/item/extinguisher/advanced(src)
+	new /obj/item/clothing/suit/fire/atmos(src)
+	new /obj/item/tank/internals/oxygen/red(src)

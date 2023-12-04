@@ -12,7 +12,7 @@
 	if(!C.get_bodypart(user.zone_selected)) //can only start if limb is missing
 		return 1
 /datum/surgery_step/add_prosthetic
-	name = "add prosthetic"
+	name = "Добавить Конечность"
 	implements = list(/obj/item/bodypart = 100, /obj/item/organ_storage = 100, /obj/item/chainsaw = 100, /obj/item/melee/synthetic_arm_blade = 100)
 	time = 32
 	var/organ_rejection_dam = 0

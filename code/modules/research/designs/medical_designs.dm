@@ -183,6 +183,16 @@
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
+/datum/design/sensor_device
+	name = "Handheld Crew Monitor"
+	desc = "A miniature machine that tracks suit sensors across the station."
+	id = "sensor_device"
+	build_path = /obj/item/sensor_device
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 10000, /datum/material/glass = 5000, /datum/material/silver = 5000, /datum/material/gold = 3000)
+	category = list("Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+
 /datum/design/medspray
 	name = "Medical Spray"
 	desc = "A medical spray bottle, designed for precision application, with an unscrewable cap."
@@ -517,16 +527,16 @@
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
-/datum/design/cyberimp_xray
-	name = "X-ray Eyes"
-	desc = "These cybernetic eyes will give you X-ray vision. Blinking is futile."
-	id = "ci-xray"
-	build_type = PROTOLATHE | MECHFAB
-	construction_time = 60
-	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/silver = 600, /datum/material/gold = 600, /datum/material/plasma = 1000, /datum/material/uranium = 1000, /datum/material/diamond = 1000, /datum/material/bluespace = 1000)
-	build_path = /obj/item/organ/eyes/robotic/xray
-	category = list("Misc", "Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+///datum/design/cyberimp_xray
+//	name = "X-ray Eyes"
+//	desc = "These cybernetic eyes will give you X-ray vision. Blinking is futile."
+//	id = "ci-xray"
+//	build_type = PROTOLATHE | MECHFAB
+//	construction_time = 60
+//	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/silver = 600, /datum/material/gold = 600, /datum/material/plasma = 1000, /datum/material/uranium = 1000, /datum/material/diamond = 1000, /datum/material/bluespace = 1000)
+//	build_path = /obj/item/organ/eyes/robotic/xray
+//	category = list("Misc", "Medical Designs")
+//	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/cyberimp_thermals
 	name = "Thermal Eyes"
@@ -538,6 +548,7 @@
 	build_path = /obj/item/organ/eyes/robotic/thermals
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/cyberimp_antidrop
 	name = "Anti-Drop Implant"
@@ -549,6 +560,7 @@
 	build_path = /obj/item/organ/cyberimp/brain/anti_drop
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	min_security_level = SEC_LEVEL_BLUE
 
 /datum/design/cyberimp_antistun
 	name = "CNS Rebooter Implant"
@@ -560,6 +572,7 @@
 	build_path = /obj/item/organ/cyberimp/brain/anti_stun
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	min_security_level = SEC_LEVEL_BLUE
 
 /datum/design/cyberimp_robot_radshielding
 	name = "ECC System Guard Implant"
@@ -604,6 +617,7 @@
 	build_path = /obj/item/organ/cyberimp/chest/reviver
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	min_security_level = SEC_LEVEL_BLUE
 
 /datum/design/cyberimp_thrusters
 	name = "Thrusters Set Implant"
@@ -615,6 +629,7 @@
 	build_path = /obj/item/organ/cyberimp/chest/thrusters
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	min_security_level = SEC_LEVEL_BLUE
 
 /////////////////////////////////////////
 ////////////Regular Implants/////////////
@@ -623,7 +638,7 @@
 /datum/design/implanter
 	name = "Implanter"
 	desc = "A sterile automatic implant injector."
-	id = "implanter"
+	id = "Implanter"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 600, /datum/material/glass = 200)
 	build_path = /obj/item/implanter

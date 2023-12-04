@@ -30,6 +30,24 @@
 	build_path = /obj/item/ammo_box/c38
 	category = list("initial", "Security")
 
+//BlueMoon Edit start
+/datum/design/a556_rubber
+	name = "Ammo Box (5.56mm rubber)"
+	id = "a556_rubber"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 30000)
+	build_path = /obj/item/ammo_box/a556
+	category = list("initial", "Security")
+
+/datum/design/a762x39_rubber
+	name = "Ammo Box (7.62x39 rubber)"
+	id = "a762x39_rubber"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 30000)
+	build_path = /obj/item/ammo_box/a762x39
+	category = list("initial", "Security")
+//BlueMoon Edit end
+
 /////////////////
 ///Hacked Gear //
 /////////////////
@@ -41,6 +59,16 @@
 	materials = list(/datum/material/iron = 70, /datum/material/glass = 60)
 	build_path = /obj/item/weldingtool/largetank
 	category = list("hacked", "Tools")
+
+//BlueMoon Edit. Begin.
+/datum/design/random_contraband
+	name = "Contraband Poster"
+	id = "random_contraband"
+	build_type = AUTOLATHE | NO_PUBLIC_LATHE
+	materials = list(/datum/material/iron = 2000, /datum/material/glass = 2000)
+	build_path = /obj/item/poster/random_contraband
+	category = list("hacked", "Misc")
+//BlueMoon Edit. End.
 
 /datum/design/flamethrower
 	name = "Flamethrower"
@@ -86,7 +114,7 @@
 	name = "Shotgun Slug"
 	id = "shotgun_slug"
 	build_type = AUTOLATHE | NO_PUBLIC_LATHE
-	materials = list(/datum/material/iron = 4000)
+	materials = list(/datum/material/iron = 8000)
 	build_path = /obj/item/ammo_casing/shotgun
 	category = list("hacked", "Security")
 
@@ -110,7 +138,7 @@
 	name = "Incendiary Slug"
 	id = "incendiary_slug"
 	build_type = AUTOLATHE | NO_PUBLIC_LATHE
-	materials = list(/datum/material/iron = 4000)
+	materials = list(/datum/material/iron = 8000)
 	build_path = /obj/item/ammo_casing/shotgun/incendiary
 	category = list("hacked", "Security")
 
@@ -173,6 +201,24 @@
 	materials = list(/datum/material/iron = 30000)
 	build_path = /obj/item/ammo_box/c9mm
 	category = list("hacked", "Security")
+
+//BlueMoon edit start
+/datum/design/a556
+	name = "Ammo Box (5.56mm)"
+	id = "a556"
+	build_type = AUTOLATHE | NO_PUBLIC_LATHE
+	materials = list(/datum/material/iron = 50000)
+	build_path = /obj/item/ammo_box/a556
+	category = list("hacked", "Security")
+
+/datum/design/a762x39
+	name = "Ammo Box (7.62x39)"
+	id = "a762x39"
+	build_type = AUTOLATHE | NO_PUBLIC_LATHE
+	materials = list(/datum/material/iron = 50000)
+	build_path = /obj/item/ammo_box/a762x39
+	category = list("hacked", "Security")
+//BlueMoon edit end
 
 /datum/design/electropack
 	name = "Electropack"

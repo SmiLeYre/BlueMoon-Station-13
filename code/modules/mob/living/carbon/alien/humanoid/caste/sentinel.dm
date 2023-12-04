@@ -1,10 +1,10 @@
 /mob/living/carbon/alien/humanoid/sentinel
 	name = "alien sentinel"
 	caste = "s"
-	maxHealth = 140
-	health = 140
+	maxHealth = 180
+	health = 180
 	icon_state = "aliens"
-	meleeSlashHumanPower = 15
+	meleeSlashHumanPower = 25
 
 /mob/living/carbon/alien/humanoid/sentinel/Initialize(mapload)
 	AddAbility(new /obj/effect/proc_holder/alien/sneak)

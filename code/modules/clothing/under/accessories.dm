@@ -31,6 +31,9 @@
 	//SKYRAT EDIT END
 	forceMove(U)
 
+	layer = NECK_LAYER
+	plane = FLOAT_PLANE
+
 	if (islist(U.armor) || isnull(U.armor)) 										// This proc can run before /obj/Initialize has run for U and src,
 		U.armor = getArmor(arglist(U.armor))	// we have to check that the armor list has been transformed into a datum before we try to call a proc on it
 																					// This is safe to do as /obj/Initialize only handles setting up the datum if actually needed.
@@ -71,7 +74,7 @@
 			attached_accessory.force_unto(U)
 			var/datum/element/polychromic/polychromic = LAZYACCESS(attached_accessory.comp_lookup, "item_worn_overlays")
 			if(!polychromic)
-				var/mutable_appearance/accessory_overlay = mutable_appearance(attached_accessory.mob_overlay_icon, attached_accessory.item_state || attached_accessory.icon_state, ABOVE_HUD_LAYER)
+				var/mutable_appearance/accessory_overlay = mutable_appearance(attached_accessory.mob_overlay_icon, attached_accessory.item_state || attached_accessory.icon_state, -UNIFORM_LAYER)
 				accessory_overlay.alpha = attached_accessory.alpha
 				accessory_overlay.color = attached_accessory.color
 				U.accessory_overlays += accessory_overlay
@@ -464,43 +467,53 @@
 ////////////
 
 /obj/item/clothing/accessory/armband
-	name = "red armband"
+	name = "Red Armband"
 	desc = "An fancy red armband!"
 	icon_state = "redband"
 
 /obj/item/clothing/accessory/armband/deputy
-	name = "security deputy armband"
+	name = "Security Deputy Armband"
 	desc = "An armband, worn by personnel authorized to act as a deputy of station security."
 
 /obj/item/clothing/accessory/armband/cargo
-	name = "cargo bay guard armband"
+	name = "Cargo Bay Guard Armband"
 	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is brown."
 	icon_state = "cargoband"
 
 /obj/item/clothing/accessory/armband/engine
-	name = "engineering guard armband"
+	name = "Engineering Guard Armband"
 	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is orange with a reflective strip!"
 	icon_state = "engieband"
 
 /obj/item/clothing/accessory/armband/science
-	name = "science guard armband"
+	name = "Science Guard Armband"
 	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is purple."
 	icon_state = "rndband"
 
 /obj/item/clothing/accessory/armband/hydro
-	name = "hydroponics guard armband"
+	name = "Hydroponics Guard Armband"
 	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is green and blue."
 	icon_state = "hydroband"
 
 /obj/item/clothing/accessory/armband/med
-	name = "medical guard armband"
+	name = "Medical Guard Armband"
 	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is white."
 	icon_state = "medband"
 
 /obj/item/clothing/accessory/armband/medblue
-	name = "medical guard armband"
+	name = "Medical Guard Armband"
 	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is white and blue."
 	icon_state = "medblueband"
+
+/obj/item/clothing/accessory/armband/hcaarmband
+	name = "HCA Armband"
+	desc = "A black and white armband depicting two swords crossed around the fascia within wreaths representing prosperity. This flag refers to the political party of the Human Commonwealth."
+	icon_state = "hcaarmbanditem"
+	item_state = "hcaarmbanditem"
+	icon = 'modular_bluemoon/rakeideas/hca/icons/hcaarmbanditem.dmi'
+	mob_overlay_icon = 'modular_bluemoon/rakeideas/hca/icons/hcaarmbandchar.dmi'
+	strip_delay = 60
+	dog_fashion = null
 
 //////////////
 //OBJECTION!//
@@ -514,7 +527,7 @@
 /obj/item/clothing/accessory/lawyers_badge/attack_self(mob/user)
 	if(prob(1))
 		user.say("The testimony contradicts the evidence!", forced = "attorney's badge")
-	user.visible_message("[user] shows [user.p_their()] attorney's badge.", "<span class='notice'>You show your attorney's badge.</span>")
+	user.visible_message("[user] shows [user.ru_ego()] attorney's badge.", "<span class='notice'>You show your attorney's badge.</span>")
 
 /obj/item/clothing/accessory/lawyers_badge/on_uniform_equip(obj/item/clothing/under/U, user)
 	var/mob/living/L = user
@@ -623,4 +636,6 @@
 
 /obj/item/clothing/accessory/pride/reskin_obj(mob/M)
 	. = ..()
+	if(!.)
+		return
 	name = "[current_skin] pin"

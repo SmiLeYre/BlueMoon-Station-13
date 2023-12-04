@@ -419,11 +419,11 @@
 	if(M.bodytemperature > BODYTEMP_NORMAL)
 		M.adjust_bodytemperature(-20 * temp_rate * TEMPERATURE_DAMAGE_COEFFICIENT,BODYTEMP_NORMAL)
 		if(prob(5))
-			to_chat(M, "<span class='notice'>You feel less hot.</span>")
+			to_chat(M, "<span class='notice'>Уже не так жарко.</span>")
 	else if(M.bodytemperature < (BODYTEMP_NORMAL + 1))
 		M.adjust_bodytemperature(20 * temp_rate * TEMPERATURE_DAMAGE_COEFFICIENT,0,BODYTEMP_NORMAL)
 		if(prob(5))
-			to_chat(M, "<span class='notice'>You feel warmer.</span>")
+			to_chat(M, "<span class='notice'>Тепло.</span>")
 
 	M.adjustToxLoss(-heal_amt, forced = (temp_rate == 4))
 

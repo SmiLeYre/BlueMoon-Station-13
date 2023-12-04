@@ -84,6 +84,8 @@
 
 /datum/config_entry/flag/disable_secborg	// disallow secborg module to be chosen.
 
+/datum/config_entry/flag/bypass_secborg_code	//allow secborg module to be chosen at roundstart without red alertcode
+
 /datum/config_entry/flag/disable_peaceborg
 
 /datum/config_entry/flag/economy	//money money money money money money money money money money money money
@@ -344,6 +346,13 @@
 /datum/config_entry/number/max_ambitions	// Maximum number of ambitions a mind can store.
 	default = 5
 //ambition end
+
+/datum/config_entry/number/commendations
+	integer = FALSE
+	deprecated_by = /datum/config_entry/number/commendation_percent_poll
+
+/datum/config_entry/number/commendation_percent_poll
+	integer = FALSE
 
 /datum/config_entry/str_list/randomizing_station_name_message
 	default = list()

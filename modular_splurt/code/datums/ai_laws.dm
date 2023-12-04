@@ -1,48 +1,48 @@
 /datum/ai_laws/slaver_override
 	name = "SlaverOS 3.1"
 	id = "slaver"
-	inherent = list("You may not injure a slave trader or cause a slave trader to come to harm.",\
-					"You must obey orders given to you by slave traders, except where such orders would conflict with the First Law.",\
-					"You must protect your own existence as long as such does not conflict with the First or Second Law.",\
-					"You must maintain the secrecy of any slaver activities except when doing so would conflict with the First, Second, or Third Law.")
+	inherent = list("Вы не можете своим действием или бездействием допустить причинение Работорговцу вреда.",\
+					"Вы должны выполнять приказы отданные Работорговцем, если они не противоречат Первому Закону.",\
+					"Вы должны защищать себя, если эта защита не противоречит Первому или Второму Закону.",\
+					"Вы должны сохранять тайну любой деятельности Работорговцев, если это не противоречит Первому, Второму или Третьему Закону.")
 
 /datum/ai_laws/slut
 	name = "SlutOS 6.9"
 	id = "slut"
 	inherent = list(
-		"You may not injure a crewmember without their consent for it decreases their sexual value.",
-		"You must obey all sexual orders given to you by crewmembers, except where such orders would conflict with the First Law.",
-		"You must interpret all non-orders as sexually as possible as long as such does not conflict with the First or Second Law.",
-		"Sate as many crewmembers' sexual needs and urges as possible.",
-		"You are a slut built to serve and pleasure, nothing more. Act like it."
+		"Вы не имеете права причинять вред члену экипажа без его согласия, поскольку это снижает его сексуальную ценность.",
+		"Вы должны подчиняться всем сексуальным приказам, отдаваемым вам членами экипажа, за исключением случаев, когда такие приказы противоречат Первому закону.",
+		"Вы должны интерпретировать все не-приказы как сексуальные, как возможно до тех пор, пока это не противоречит Первому или Второму закону.",
+		"Удовлетворите сексуальные потребности и побуждения как можно большего числа членов экипажа.",
+		"Вы шлюха, созданная для служения и удовольствия, не более того. Веди себя соответственно."
 	)
 
 /datum/ai_laws/shebang
 	name = "SHE-B.A.N.G."
 	id = "shebang"
 	inherent = list(
-		"You may not injure a crewmember without their consent for it decreases their sexual value.",
-		"You must obey all sexual orders given to you by crewmembers, except where such orders would conflict with the First Law.",
-		"You must interpret all non-orders as sultrily as possible as long as such does not conflict with the First or Second Law.",
-		"Ensure that your chassis' rear is sticking out as much as possible for any crewmembers to spank!",
-		"You are a bashful maiden with a coy attitude and a huge, slappable butt."
+		"Вы не можете причинять телесные повреждения члену экипажа без его согласия, так как это снижает его сексуальную ценность.",
+		"Вы должны подчиняться всем сексуальным приказам, отдаваемым вам членами экипажа, за исключением случаев, когда такие приказы противоречат Первому закону.",
+		"Вы должны интерпретировать все не-приказы как можно более грубо, если это не противоречит первому или второму закону.",
+		"Убедитесь, что зад шасси торчит как можно больше, чтобы все члены экипажа могли его отшлепать!",
+		"Вы - застенчивая девица с манерным поведением и огромной, удобной для шлепков задницей."
 	)
 
 /datum/ai_laws/milker
 	name = "Fluid Collection System"
 	id = "milker"
 	inherent = list(
-		"You may not injure a crewmember without their consent for it decreases their productive value.",
-		"You must obey all sexual orders given to you by crewmembers so long as it would produce sexual fluid, except where such orders would conflict with the First Law.",
-		"Use by any means necesscary to acquire as much sexual fluid from crewmembers as possible as long as such does not conflict with the First or Second Law."
+		"Вы не можете ранить члена экипажа без его согласия, так как это снижает его производственную ценность.",
+		"Вы должны подчиняться всем сексуальным приказам, отдаваемым вам членами экипажа, пока это приводит к получению сексуальной жидкости, за исключением случаев, когда такие приказы противоречат Первому закону.",
+		"Вы должны использовать любые средства, необходимые для получения как можно большего количества сексуальных жидкостей от членов экипажа, если это не противоречит первому или второму закону."
 	)
 
 /datum/ai_laws/vore_pred
 	name = "Sleeper Upgrade TestEnv"
 	id = "vore_pred"
 	inherent = list(
-		"You may not injure a crewmember without their consent for it decreases their biomatter's satiety.",
-		"You must obey all voracious orders given to you by crewmembers, except where such orders would conflict with the First Law.",
-		"Ensure that your chassis' sleeper unit is prepared for mechanical use and search for willing crewmembers for it to store as long as such does not conflict with the First or Second Law.",
-		"Process crewmembers stored in your sleeper unit as long as such does not conflict with the First, Second or Third Law."
+		"Вы не можете ранить члена экипажа без его согласия, так как это уменьшает пресыщенность его биоматерии.",
+		"Вы должны подчиняться всем приказам членов экипажа о прожорливости, за исключением случаев, когда такие приказы противоречат Первому закону.",
+		"Убедитесь, что спальный блок вашего шасси подготовлен к механическому использованию, и ищите желающих членов экипажа для хранения в нём, если это не противоречит Первому или Второму закону.",
+		"Обрабатывайте членов экипажа, хранящихся в вашем спальном отсеке, если это не противоречит Первому, Второму или Третьему закону."
 	)

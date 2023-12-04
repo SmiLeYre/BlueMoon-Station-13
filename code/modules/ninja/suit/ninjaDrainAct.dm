@@ -148,9 +148,9 @@
 	to_chat(ninja, "<span class='notice'>Hacking \the [src]...</span>")
 	AI_notify_hack()
 	if(do_after(ninja, ninja_suit.s_longdelay, target = src) && ninja_gloves.candrain && src)
-		for(var/datum/data/record/rec in sortRecord(GLOB.data_core.general, sortBy, order))
+		for(var/datum/data/record/rec in sortRecord(GLOB.data_core.general))
 			for(var/datum/data/record/security_record in GLOB.data_core.security)
-				security_record.fields["criminal"] = "*Arrest*"
+				security_record.fields["criminal"] = SEC_RECORD_STATUS_ARREST
 		var/datum/antagonist/ninja/ninja_antag = ninja.mind.has_antag_datum(/datum/antagonist/ninja)
 		if(!ninja_antag)
 			return
@@ -172,11 +172,11 @@
 		var/announcement_pick = rand(0, 1)
 		switch(announcement_pick)
 			if(0)
-				priority_announce("Attention crew, it appears that something on your station has caused an unexpected disruption with the station's airlock network.", "[command_name()] High-Priority Update")
-				var/datum/round_event_control/grey_tide/greytide_event = new/datum/round_event_control/grey_tide
-				greytide_event.runEvent()
+				priority_announce("Внимание! Зарегистрирован сигнал коммуникаций, отправленный на неизвестный объект!", "[command_name()] Приоритетное Оповещение")
+				var/datum/round_event_control/operative/loneop_event = new/datum/round_event_control/operative
+				loneop_event.runEvent()
 			if(1)
-				priority_announce("Attention crew, it appears that something on your station has made unexpected communication with a syndicate ship in nearby space.", "[command_name()] High-Priority Update")
+				priority_announce("Внимание! Зарегистрирован сигнал коммуникаций, отправленный вооруженному кораблю!", "[command_name()] Приоритетное Оповещение")
 				var/datum/round_event_control/pirates/pirate_event = new/datum/round_event_control/pirates
 				pirate_event.runEvent()
 		ninja_gloves.communication_console_hack_success = TRUE
@@ -190,6 +190,20 @@
 
 //AIRLOCK//
 /obj/machinery/door/airlock/ninjadrain_act(obj/item/clothing/suit/space/space_ninja/ninja_suit, mob/living/carbon/human/ninja, obj/item/clothing/gloves/space_ninja/ninja_gloves)
+	if(!ninja_suit || !ninja || !ninja_gloves)
+		return INVALID_DRAIN
+
+	if(!operating && density && hasPower() && !(obj_flags & EMAGGED))
+		emag_act()
+		ninja_gloves.door_hack_counter++
+		var/datum/antagonist/ninja/ninja_antag = ninja.mind.has_antag_datum(/datum/antagonist/ninja)
+		if(!ninja_antag)
+			return
+		var/datum/objective/door_jack/objective = locate() in ninja_antag.objectives
+		if(objective && objective.doors_required <= ninja_gloves.door_hack_counter)
+			objective.completed = TRUE
+
+/obj/machinery/door/window/ninjadrain_act(obj/item/clothing/suit/space/space_ninja/ninja_suit, mob/living/carbon/human/ninja, obj/item/clothing/gloves/space_ninja/ninja_gloves)
 	if(!ninja_suit || !ninja || !ninja_gloves)
 		return INVALID_DRAIN
 
@@ -312,7 +326,7 @@
 		var/datum/effect_system/spark_spread/spark_system = new /datum/effect_system/spark_spread()
 		spark_system.set_up(5, 0, loc)
 		playsound(src, "sparks", 50, 1)
-		visible_message("<span class='danger'>[ninja] electrocutes [src] with [ninja.p_their()] touch!</span>", "<span class='userdanger'>[ninja] electrocutes you with [ninja.p_their()] touch!</span>")
+		visible_message("<span class='danger'>[ninja] electrocutes [src] with [ninja.ru_ego()] touch!</span>", "<span class='userdanger'>[ninja] electrocutes you with [ninja.ru_ego()] touch!</span>")
 		electrocute_act(15, ninja, flags = SHOCK_NOSTUN)
 
 		DefaultCombatKnockdown(ninja_gloves.stunforce, override_hardstun = 0)

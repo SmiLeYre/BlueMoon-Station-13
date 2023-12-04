@@ -1,31 +1,32 @@
 /datum/round_event_control/mice_migration
 	name = "Mice Migration"
 	typepath = /datum/round_event/mice_migration
-	weight = 10
+	weight = 60
+	min_players = 10
+	max_occurrences = 2
 	category = EVENT_CATEGORY_ENTITIES
-	description = "A horde of mice arrives, and perhaps even the Rat King themselves."
 
 /datum/round_event/mice_migration
-	var/minimum_mice = 5
-	var/maximum_mice = 15
+	var/minimum_mice = 15
+	var/maximum_mice = 30
 
 /datum/round_event/mice_migration/announce(fake)
-	var/cause = pick("space-winter", "budget-cuts", "Ragnarok",
-		"space being cold", "\[REDACTED\]", "climate change",
-		"bad luck")
-	var/plural = pick("a number of", "a horde of", "a pack of", "a swarm of",
-		"a whoop of", "not more than [maximum_mice]")
-	var/name = pick("rodents", "mice", "squeaking things",
-		"wire eating mammals", "\[REDACTED\]", "energy draining parasites")
-	var/movement = pick("migrated", "swarmed", "stampeded", "descended")
-	var/location = pick("maintenance tunnels", "maintenance areas",
-		"\[REDACTED\]", "place with all those juicy wires")
+	var/cause = pick("космозимы", "урезания бюджетов", "Рагнарёка",
+		"холодного космоса", "\[REDACTED\]", "изменения климата",
+		"невезения")
+	var/plural = pick("группа", "стая", "толпа", "свора",
+		"кучка", "не более чем [maximum_mice]")
+	var/name = pick("грызунов", "мышей", "пищащих штук",
+		"пожирателей проводов", "\[REDACTED\]", "паразитирующих уничтожителей энергии")
+	var/movement = pick("мигрировала", "переехала", "приползла", "спустилась")
+	var/location = pick("технические тоннели", "технические зоны",
+		"\[REDACTED\]", "места, где находятся вкусные провода")
 	if(prob(50))
-		priority_announce("Due to [cause], [plural] [name] have [movement] \
-		into the [location].", "Migration Alert",
+		priority_announce("По причине [cause], [plural] [name] [movement] \
+		в [location].", "Миграционная Тревога",
 		'sound/effects/mousesqueek.ogg')
 	else
-		print_command_report("Due to [cause], [plural] [name] have [movement] into the [location].", "Rodent Migration")
+		print_command_report("По причине [cause], [plural] [name] [movement] в [location].", "Миграционная Тревога")
 
 /datum/round_event/mice_migration/start()
 	SSminor_mapping.trigger_migration(rand(minimum_mice, maximum_mice))

@@ -13,7 +13,7 @@
 	return dat
 
 /obj/item/implanter/exile
-	name = "implanter (exile)"
+	name = "Implanter (exile)"
 	imp_type = /obj/item/implant/exile
 
 /obj/item/implantcase/exile

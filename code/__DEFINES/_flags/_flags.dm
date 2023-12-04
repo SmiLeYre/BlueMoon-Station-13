@@ -57,6 +57,15 @@ GLOBAL_LIST_INIT(bitflags, list(
 /// Early returns mob.face_atom()
 #define BLOCK_FACE_ATOM_1			(1<<13)
 
+#define HTML_USE_INITAL_ICON_1 (1<<20)
+/// Can players recolor this in-game via vendors (and maybe more if support is added)?
+#define IS_PLAYER_COLORABLE_1 (1<<21)
+#define KEEP_ON_ARENA_1 (1<<22)
+
+/// Whether or not this atom is storing contents for a disassociated storage object
+#define HAS_DISASSOCIATED_STORAGE_1 (1<<24)
+
+
 //turf-only flags
 #define NOJAUNT_1 (1<<14)
 #define UNUSED_RESERVATION_TURF_1 (1<<15)
@@ -146,6 +155,7 @@ GLOBAL_LIST_INIT(bitflags, list(
 #define ZAP_OBJ_DAMAGE			(1<<2)
 #define ZAP_MOB_DAMAGE			(1<<3)
 #define ZAP_MOB_STUN			(1<<4)
+#define ZAP_GENERATES_POWER		(1<<5)
 
 #define ZAP_DEFAULT_FLAGS ZAP_MOB_STUN | ZAP_MOB_DAMAGE | ZAP_OBJ_DAMAGE
 #define ZAP_FUSION_FLAGS ZAP_OBJ_DAMAGE | ZAP_MOB_DAMAGE | ZAP_MOB_STUN

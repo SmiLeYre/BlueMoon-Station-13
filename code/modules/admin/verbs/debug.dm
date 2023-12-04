@@ -216,7 +216,7 @@
 	set desc = "Direct intervention"
 
 	if(M.ckey)
-		if(alert("This mob is being controlled by [M.key]. Are you sure you wish to assume control of it? [M.key] will be made a ghost.",,"Yes","No") != "Yes")
+		if(alert("This mob is being controlled by [M.key]. Are you sure you wish to assume control of it? [M.key] will be made a ghost.",,"Да","Нет") != "Да")
 			return
 		else
 			var/mob/dead/observer/ghost = new/mob/dead/observer(get_turf(M), M)
@@ -236,12 +236,12 @@
 	if(!M)
 		return
 	if(M.ckey)
-		if(alert("This mob is being controlled by [M.key]. Are you sure you wish to give someone else control of it? [M.key] will be made a ghost.",,"Yes","No") != "Yes")
+		if(alert("This mob is being controlled by [M.key]. Are you sure you wish to give someone else control of it? [M.key] will be made a ghost.",,"Да","Нет") != "Да")
 			return
 	var/client/newkey = input(src, "Pick the player to put in control.", "New player") as null|anything in sortList(GLOB.clients)
 	var/mob/oldmob = newkey.mob
 	var/delmob = FALSE
-	if((isobserver(oldmob) || alert("Do you want to delete [newkey]'s old mob?","Delete?","Yes","No") != "No"))
+	if((isobserver(oldmob) || alert("Do you want to delete [newkey]'s old mob?","Delete?","Да","Нет") != "Нет"))
 		delmob = TRUE
 	if(!M || QDELETED(M))
 		to_chat(usr, "<span class='warning'>The target mob no longer exists, aborting.</span>")
@@ -545,7 +545,7 @@
 	set name = "Start Singularity"
 	set desc = "Sets up the singularity and all machines to get power flowing through the station"
 
-	if(alert("Are you sure? This will start up the engine. Should only be used during debug!",,"Yes","No") != "Yes")
+	if(alert("Are you sure? This will start up the engine. Should only be used during debug!",,"Да","Нет") != "Да")
 		return
 
 	for(var/obj/machinery/power/emitter/E in GLOB.machines)

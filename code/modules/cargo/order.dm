@@ -16,10 +16,10 @@
 		errors |= MANIFEST_ERROR_ITEM
 
 /obj/item/paper/fluff/jobs/cargo/manifest/proc/is_approved()
-	return stamped?.len && !is_denied()
+	return LAZYLEN(stamp_cache) && !is_denied()
 
 /obj/item/paper/fluff/jobs/cargo/manifest/proc/is_denied()
-	return stamped && ("stamp-deny" in stamped)
+	return LAZYLEN(stamp_cache) && ("stamp-deny" in stamp_cache)
 
 /datum/supply_order
 	var/id
@@ -43,80 +43,75 @@
 	src.applied_coupon = coupon
 
 /datum/supply_order/proc/generateRequisition(turf/T)
-	var/obj/item/paper/P = new(T)
+	var/obj/item/paper/requisition_paper = new(T)
 
-	P.name = "requisition form - #[id] ([pack.name])"
-	P.info += "<h2>[station_name()] Supply Requisition</h2>"
-	P.info += "<hr/>"
-	P.info += "Order #[id]<br/>"
-	P.info += "Time of Order: [STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)]<br/>"
-	P.info += "Item: [pack.name]<br/>"
-	P.info += "Access Restrictions: [get_access_desc(pack.access)]<br/>"
-	P.info += "Requested by: [orderer]<br/>"
+	requisition_paper.name = "Requisition Form - #[id] ([pack.name])"
+	var/requisition_text = "<h2>[station_name()] Манифест Запроса</h2>"
+	requisition_text += "<hr/>"
+	requisition_text += "Заказ под Номером #[id]<br/>"
+	requisition_text+= "Время Заказа: [STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)]<br/>"
+	requisition_text += "Объект Заказа: [pack.name]<br/>"
+	requisition_text += "Ограничения на Доступ: [get_access_desc(pack.access)]<br/>"
+	requisition_text += "Приобретено со стороны [orderer]<br/>"
 	if(paying_account)
-		P.info += "Paid by: [paying_account.account_holder]<br/>"
-	P.info += "Rank: [orderer_rank]<br/>"
-	P.info += "Comment: [reason]<br/>"
+		requisition_text += "Оплачено со стороны [paying_account.account_holder]<br/>"
+	requisition_text += "Ранг: [orderer_rank]<br/>"
+	requisition_text += "Комментарий: [reason]<br/>"
 
-	P.update_icon()
-	return P
+	requisition_paper.add_raw_text(requisition_text)
+	requisition_paper.update_appearance()
+	return requisition_paper
 
-/datum/supply_order/proc/generateManifest(obj/container, owner, packname) //generates-the-manifests.
-	var/obj/item/paper/fluff/jobs/cargo/manifest/P = new(container, id, 0)
+/datum/supply_order/proc/generateManifest(obj/container, owner, packname, cost) //generates-the-manifests.
+	var/obj/item/paper/fluff/jobs/cargo/manifest/manifest_paper = new(null, id, cost)
 
-	var/station_name = (P.errors & MANIFEST_ERROR_NAME) ? new_station_name() : station_name()
+	var/station_name = (manifest_paper.errors & MANIFEST_ERROR_NAME) ? new_station_name() : station_name()
 
-	P.name = "shipping manifest - [packname?"#[id] ([pack.name])":"(Grouped Item Crate)"]"
-	P.info += "<h2>[command_name()] Shipping Manifest</h2>"
-	P.info += "<hr/>"
+	manifest_paper.name = "Shipping Nanifest - [packname?"#[id] ([pack.name])":"(Grouped Item Crate)"]"
+
+	var/manifest_text = "<h2>[command_name()] Манифест Отгрузки</h2>"
+	manifest_text += "<hr/>"
 	if(owner && !(owner == "Cargo"))
-		P.info += "Direct purchase from [owner]<br/>"
-		P.name += " - Purchased by [owner]"
-	P.info += "Order[packname?"":"s"]: [id]<br/>"
-	P.info += "Destination: [station_name]<br/>"
+		manifest_text += "Прямая покупка у [owner]<br/>"
+		manifest_paper.name += " - Приобретено со стороны [owner]"
+	manifest_text += "Заказ под Номером #[id]<br/>"
+	manifest_text += "Доставить на [station_name]<br/>"
 	if(packname)
-		P.info += "Item: [packname]<br/>"
-	P.info += "Contents: <br/>"
-	P.info += "<ul>"
-	var/list/ignore_this = list(P)
-	if(istype(container, /obj/structure/closet))
-		var/obj/structure/closet/C = container
-		ignore_this += C.lockerelectronics
-	for(var/atom/movable/AM in container.contents - ignore_this)
-		if((P.errors & MANIFEST_ERROR_CONTENTS))
+		manifest_text += "Заказ в виде [packname]<br/>"
+	manifest_text += "Содержимое: <br/>"
+	manifest_text += "<ul>"
+	for(var/atom/movable/AM in container.contents - manifest_paper)
+		if((manifest_paper.errors & MANIFEST_ERROR_CONTENTS))
 			if(prob(50))
-				P.info += "<li>[AM.name]</li>"
+				manifest_text += "<li>[AM.name]</li>"
 			else
 				continue
-		P.info += "<li>[AM.name]</li>"
-	P.info += "</ul>"
-	P.info += "<h4>Stamp below to confirm receipt of goods:</h4>"
+		manifest_text += "<li>[AM.name]</li>"
+	manifest_text += "</ul>"
+	manifest_text += "<h4>Ниже поставьте штамп, подтверждающий получение товара:</h4>"
 
-	if(P.errors & MANIFEST_ERROR_ITEM)
-		var/static/list/blacklisted_error = typecacheof(list(
-			/obj/structure/closet/crate/secure,
-			/obj/structure/closet/crate/large,
-			/obj/structure/closet/secure_closet/cargo
-		))
-		if(is_type_in_list(container, blacklisted_error))
-			P.errors &= ~MANIFEST_ERROR_ITEM
+	manifest_paper.add_raw_text(manifest_text)
+
+	if(manifest_paper.errors & MANIFEST_ERROR_ITEM)
+		if(prob(50))
+			manifest_paper.errors &= ~MANIFEST_ERROR_ITEM
 		else
 			var/lost = max(round(container.contents.len / 10), 1)
 			while(--lost >= 0)
 				qdel(pick(container.contents))
 
-	P.update_icon()
-	P.forceMove(container)
+
+	manifest_paper.update_appearance()
+	manifest_paper.forceMove(container)
 
 	if(istype(container, /obj/structure/closet/crate))
 		var/obj/structure/closet/crate/C = container
-		C.manifest = P
-		C.update_icon()
+		C.manifest = manifest_paper
+		C.update_appearance()
 	else
-		// manifest goes in if it's not a crate
-		container.contents += P
+		container.contents += manifest_paper
 
-	return P
+	return manifest_paper
 
 /datum/supply_order/proc/generate(atom/A)
 	var/account_holder

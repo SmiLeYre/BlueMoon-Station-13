@@ -13,6 +13,9 @@
 	var/list/sac_targetted = list()		//Which targets did living hearts give them, but they did not sac?
 	var/list/actually_sacced = list()	//Which targets did they actually sac?
 	var/ascended = FALSE
+	var/datum/mind/yandere
+
+	reminded_times_left = 2 // BLUEMOON ADD
 
 /datum/antagonist/heretic/admin_add(datum/mind/new_owner,mob/admin)
 	give_equipment = TRUE
@@ -90,6 +93,7 @@
 		return TRUE
 
 /datum/antagonist/heretic/process()
+	. = ..()
 
 	if(owner.current.stat == DEAD)
 		return
@@ -105,20 +109,17 @@
 		var/datum/eldritch_knowledge/EK = researched_knowledge[X]
 		EK.on_death(owner.current)
 
-/datum/antagonist/heretic/proc/forge_primary_objectives()
-	var/list/assasination = list()
-	var/list/protection = list()
-	for(var/i in 1 to 2)
-		var/pck = pick("assasinate")
-		switch(pck)
-			if("assasinate")
-				var/datum/objective/assassinate/once/A = new
-				A.owner = owner
-				var/list/owners = A.get_owners()
-				A.find_target(owners,protection)
-				assasination += A.target
-				objectives += A
+// needs to be refactored to base /datum/antagonist sometime..
+/datum/antagonist/heretic/proc/add_objective(datum/objective/O)
+	objectives += O
 
+/datum/antagonist/heretic/proc/forge_single_objective(datum/antagonist/heretic/heretic)
+	var/datum/objective/protect/protection_objective = new
+	protection_objective.owner = heretic.owner
+	heretic.add_objective(protection_objective)
+	protection_objective.find_target()
+
+/datum/antagonist/heretic/proc/forge_primary_objectives()
 	var/datum/objective/sacrifice_ecult/SE = new
 	SE.owner = owner
 	SE.update_explanation_text()
@@ -235,12 +236,12 @@
 	parts += ..()
 	parts += "<b>Targets currently assigned by living hearts (Can give a false negative if they stole someone elses living heart):</b>"
 	if(!sac_targetted.len)
-		parts += "None."
+		parts += "Отсутствует."
 	else
 		parts += sac_targetted.Join(",")
-	parts += "<b>Targets actually sacrificed:</b>"
+	parts += "<b>Принесенные в жертву цели:</b>"
 	if(!actually_sacced.len)
-		parts += "None."
+		parts += "Отсутствует."
 	else
 		parts += actually_sacced.Join(",")
 
@@ -256,8 +257,8 @@
 
 /datum/objective/sacrifice_ecult/update_explanation_text()
 	. = ..()
-	target_amount = rand(2,4)
-	explanation_text = "Sacrifice at least [target_amount] people."
+	target_amount = rand(2,3)
+	explanation_text = "Принеси в жертву как минимум [target_amount] живых существ."
 
 /datum/objective/sacrifice_ecult/check_completion()
 	if(!owner)

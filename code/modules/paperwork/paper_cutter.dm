@@ -20,7 +20,7 @@
 
 /obj/item/papercutter/suicide_act(mob/user)
 	if(storedcutter)
-		user.visible_message("<span class='suicide'>[user] is beheading [user.p_them()]self with [src.name]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		user.visible_message("<span class='suicide'>[user] is beheading себя with [src.name]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 		if(iscarbon(user))
 			var/mob/living/carbon/C = user
 			var/obj/item/bodypart/BP = C.get_bodypart(BODY_ZONE_HEAD)
@@ -29,7 +29,7 @@
 				playsound(loc, pick('sound/misc/desceration-01.ogg','sound/misc/desceration-02.ogg','sound/misc/desceration-01.ogg'),50, TRUE, -1)
 		return (BRUTELOSS)
 	else
-		user.visible_message("<span class='suicide'>[user] repeatedly bashes [src.name] against [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		user.visible_message("<span class='suicide'>[user] repeatedly bashes [src.name] against [user.ru_ego()] head! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 		playsound(loc, 'sound/items/gavel.ogg', 50, TRUE, -1)
 		return (BRUTELOSS)
 
@@ -88,8 +88,8 @@
 		to_chat(user, "<span class='notice'>You neatly cut [storedpaper].</span>")
 		storedpaper = null
 		qdel(storedpaper)
-		new /obj/item/paperslip(get_turf(src))
-		new /obj/item/paperslip(get_turf(src))
+		new /obj/item/paper/paperslip(get_turf(src))
+		new /obj/item/paper/paperslip(get_turf(src))
 		update_icon()
 
 /obj/item/papercutter/MouseDrop(atom/over_object)
@@ -106,7 +106,7 @@
 		M.putItemFromInventoryInHandIfPossible(src, H.held_index)
 	add_fingerprint(M)
 
-/obj/item/paperslip
+/obj/item/paper/paperslip
 	name = "paper slip"
 	desc = "A little slip of paper left over after a larger piece was cut. Whoa."
 	icon_state = "paperslip"
@@ -114,13 +114,13 @@
 	resistance_flags = FLAMMABLE
 	max_integrity = 50
 
-/obj/item/paperslip/attackby(obj/item/I, mob/living/user, params)
+/obj/item/paper/paperslip/attackby(obj/item/I, mob/living/user, params)
 	if(burn_paper_product_attackby_check(I, user))
 		return
 	return ..()
 
 
-/obj/item/paperslip/Initialize(mapload)
+/obj/item/paper/paperslip/Initialize(mapload)
 	. = ..()
 	pixel_x = initial(pixel_x) + rand(-5, 5)
 	pixel_y = initial(pixel_y) + rand(-5, 5)

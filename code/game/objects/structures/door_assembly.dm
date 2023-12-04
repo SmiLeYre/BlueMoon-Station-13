@@ -19,6 +19,8 @@
 	var/noglass = FALSE //airlocks with no glass version, also cannot be modified with sheets
 	var/material_type = /obj/item/stack/sheet/metal
 	var/material_amt = 4
+	/// Airlock with glass version, but cannot be modified with sheets
+	var/nomineral = FALSE
 
 /obj/structure/door_assembly/New()
 	update_icon()
@@ -40,10 +42,10 @@
 			. += "<span class='notice'>The maintenance panel is <b>wired</b>, but the circuit slot is <i>empty</i>.</span>"
 		if(AIRLOCK_ASSEMBLY_NEEDS_SCREWDRIVER)
 			. += "<span class='notice'>The circuit is <b>connected loosely</b> to its slot, but the maintenance panel is <i>unscrewed and open</i>.</span>"
-	if(!mineral && !glass && !noglass)
-		. += "<span class='notice'>There is a small <i>paper</i> placard on the assembly[doorname]. There are <i>empty</i> slots for glass windows and mineral covers.</span>"
-	else if(!mineral && glass && !noglass)
-		. += "<span class='notice'>There is a small <i>paper</i> placard on the assembly[doorname]. There are <i>empty</i> slots for mineral covers.</span>"
+	if(!mineral && !nomineral && !glass && !noglass)
+		. += span_notice("There are <i>empty</i> slots for glass windows and mineral covers.")
+	else if(!mineral && !nomineral && glass && !noglass)
+		. += span_notice("There are <i>empty</i> slots for mineral covers.")
 	else if(mineral && !glass && !noglass)
 		. += "<span class='notice'>There is a small <i>paper</i> placard on the assembly[doorname]. There are <i>empty</i> slots for glass windows.</span>"
 	else
@@ -202,7 +204,7 @@
 									name = "near finished window airlock assembly"
 								G.use(1)
 								glass = TRUE
-					if(!mineral)
+					if(!nomineral && !mineral)
 						if(istype(G, /obj/item/stack/sheet/mineral) && G.sheettype)
 							var/M = G.sheettype
 							var/mineralassembly = text2path("/obj/structure/door_assembly/door_assembly_[M]")
@@ -211,7 +213,7 @@
 							if(G.get_amount() >= 2)
 								playsound(src, 'sound/items/crowbar.ogg', 100, 1)
 								user.visible_message("[user] adds [G.name] to the airlock assembly.", \
-												 "<span class='notice'>You start to install [G.name] into the airlock assembly...</span>")
+												"<span class='notice'>You start to install [G.name] into the airlock assembly...</span>")
 								if(do_after(user, 40, target = src))
 									if(G.get_amount() < 2 || mineral)
 										return

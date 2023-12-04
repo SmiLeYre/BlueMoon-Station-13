@@ -2,11 +2,11 @@
 	//Character directory
 	S["show_in_directory"]		>> show_in_directory
 	S["directory_tag"]			>> directory_tag
-	S["directory_erptag"]			>> directory_erptag
+	S["directory_erptag"]		>> directory_erptag
 	S["directory_ad"]			>> directory_ad
 
 	// Get stomping preferences.
-	S["stomp_pref"] >> stomppref
+//	S["stomp_pref"] >> stomppref
 
 	//Fuzzy scaling
 	S["feature_fuzzy"] >> fuzzy
@@ -16,7 +16,7 @@
 	directory_tag			= sanitize_inlist(directory_tag, GLOB.char_directory_tags, initial(directory_tag))
 	directory_erptag		= sanitize_inlist(directory_erptag, GLOB.char_directory_erptags, initial(directory_erptag))
 	directory_ad			= strip_html_simple(directory_ad, MAX_FLAVOR_LEN)
-	stomppref				= sanitize_integer(stomppref, 0, 1, initial(stomppref))
+//	stomppref				= sanitize_integer(stomppref, 0, 1, initial(stomppref))
 	fuzzy 					= sanitize_integer(fuzzy, 0, 1, initial(fuzzy))
 
 /datum/preferences/proc/splurt_character_pref_save(savefile/S) //TODO: modularize our other savefile edits... maybe?
@@ -27,7 +27,7 @@
 	WRITE_FILE(S["directory_ad"], directory_ad)
 
 	// Stomping preferences.
-	WRITE_FILE(S["stomp_pref"], stomppref)
+//	WRITE_FILE(S["stomp_pref"], stomppref)
 
 	//Fuzzy scaling
 	WRITE_FILE(S["feature_fuzzy"]			, fuzzy)
@@ -37,8 +37,8 @@
 	if(current_version < 57.01) //a
 		new_character_creator = TRUE
 
-	if(current_version < 58.01) // Stomp pref.
-		stomppref = TRUE
+//	if(current_version < 58.01) // Stomp pref.
+//		stomppref = TRUE
 
 /datum/preferences/update_character(current_version, savefile/S)
 	. = ..()

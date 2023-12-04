@@ -1,9 +1,16 @@
+/// Engineering Override Access manual toggle
+#define COMSIG_GLOB_FORCE_AIRLOCK_OVERRIDE "force_airlock_override"
+
 //Security levels
 #define SEC_LEVEL_GREEN	1
 #define SEC_LEVEL_BLUE	2
-#define SEC_LEVEL_AMBER 3
-#define SEC_LEVEL_RED	4
-#define SEC_LEVEL_DELTA	5
+#define SEC_LEVEL_ORANGE 3
+#define SEC_LEVEL_VIOLET 4
+#define SEC_LEVEL_AMBER 5
+#define SEC_LEVEL_RED	6
+#define SEC_LEVEL_LAMBDA 7
+#define SEC_LEVEL_EPSILON 8
+#define SEC_LEVEL_DELTA 9
 
 //Macro helpers.
 #define SECLEVEL2NUM(text)	(GLOB.all_security_levels.Find(text))

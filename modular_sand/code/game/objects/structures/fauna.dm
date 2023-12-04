@@ -16,3 +16,9 @@
 //	icon = 'modular_nostra/icons/obj/flora/plants.dmi'
 //	icon_state = "plant-03"
 // not used cause requires lots of respriting which im lazy to do now
+
+/obj/item/kirbyplants/hedge
+	name = "Hedge"
+	desc = "A large bushy hedge."
+	icon = 'modular_sand/icons/obj/flora/plants.dmi'
+	icon_state = "hedge-0"

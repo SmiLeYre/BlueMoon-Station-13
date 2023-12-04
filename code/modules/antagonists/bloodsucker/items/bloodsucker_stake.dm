@@ -103,7 +103,7 @@
 				return
 			else
 				to_chat(target, "<span class='userdanger'>You have been staked! Your powers are useless, your death forever, while it remains in place.</span>")
-				to_chat(user, "<span class='warning'>You missed [C.p_their(TRUE)]'s heart! It would be easier if [C.p_they(TRUE)] weren't struggling so much.</span>")
+				to_chat(user, "<span class='warning'>You missed [C.ru_ego(TRUE)]'s heart! It would be easier if [C.ru_who(TRUE)] weren't struggling so much.</span>")
 
 // Can this target be staked? If someone stands up before this is complete, it fails. Best used on someone stationary.
 /mob/living/carbon/proc/can_be_staked()

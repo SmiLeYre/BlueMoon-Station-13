@@ -51,7 +51,7 @@
 	var/decal = "default" //What kind of extra decals we add to the pod to make it look nice
 	var/door = "pod_door"
 	var/fin_mask  = "topfin"
-	var/obj/effect/supplypod_rubble/rubble
+	var/obj/effect/decal/cleanable/supplypod_rubble/rubble
 	var/obj/effect/engineglow/glow_effect
 	var/effectShrapnel = FALSE
 	var/shrapnel_type = /obj/item/projectile/bullet/shrapnel
@@ -373,7 +373,7 @@
 			return FALSE
 		if(istype(obj_to_insert, /obj/effect/pod_landingzone))
 			return FALSE
-		if(istype(obj_to_insert, /obj/effect/supplypod_rubble))
+		if(istype(obj_to_insert, /obj/effect/decal/cleanable/supplypod_rubble))
 			return FALSE
 		// if((obj_to_insert.comp_lookup && obj_to_insert.comp_lookup[COMSIG_OBJ_HIDE]) && reverse_option_list["Underfloor"])
 		// 	return TRUE
@@ -433,7 +433,7 @@
 		return
 	if (isspaceturf(T) || isclosedturf(T))
 		return
-	rubble = new /obj/effect/supplypod_rubble(T)
+	rubble = new /obj/effect/decal/cleanable/supplypod_rubble(T)
 	rubble.setStyle(rubble_type, src)
 	update_icon()
 
@@ -494,7 +494,7 @@
 /obj/effect/supplypod_smoke/proc/drawSelf(amount)
 	alpha = max(0, 255-(amount*20))
 
-/obj/effect/supplypod_rubble //This is the object that forceMoves the supplypod to it's location
+/obj/effect/decal/cleanable/supplypod_rubble //This is the object that forceMoves the supplypod to it's location
 	name = "Debris"
 	desc = "A small crater of rubble. Closer inspection reveals the debris to be made primarily of space-grade metal fragments. You're pretty sure that this will disperse before too long."
 	icon = 'icons/obj/supplypods.dmi'
@@ -505,17 +505,17 @@
 	var/foreground = "rubble_fg"
 	var/verticle_offset = 0
 
-/obj/effect/supplypod_rubble/proc/getForeground(obj/structure/closet/supplypod/pod)
+/obj/effect/decal/cleanable/supplypod_rubble/proc/getForeground(obj/structure/closet/supplypod/pod)
 	var/mutable_appearance/rubble_overlay = mutable_appearance('icons/obj/supplypods.dmi', foreground)
 	rubble_overlay.appearance_flags = KEEP_APART|RESET_TRANSFORM
 	rubble_overlay.transform = matrix().Translate(SUPPLYPOD_X_OFFSET - pod.pixel_x, verticle_offset)
 	return rubble_overlay
 
-/obj/effect/supplypod_rubble/proc/fadeAway()
+/obj/effect/decal/cleanable/supplypod_rubble/proc/fadeAway()
 	animate(src, alpha=0, time = 30)
 	QDEL_IN(src, 35)
 
-/obj/effect/supplypod_rubble/proc/setStyle(type, obj/structure/closet/supplypod/pod)
+/obj/effect/decal/cleanable/supplypod_rubble/proc/setStyle(type, obj/structure/closet/supplypod/pod)
 	if (type == RUBBLE_WIDE)
 		icon_state += "_wide"
 		foreground += "_wide"

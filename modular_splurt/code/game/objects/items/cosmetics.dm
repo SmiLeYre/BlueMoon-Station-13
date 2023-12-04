@@ -85,22 +85,22 @@
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		if(H.nail_style) //to stop stacking bugs
-			to_chat(user, span_warning("Remove the old nail polish first!"))
+			to_chat(user, "<span class='warning'>Remove the old nail polish first!</span>")
 
 		if(H == user)
-			user.visible_message(span_notice("[user] does [user.p_their()] nails with \the [src]."), \
-								 span_notice("You take a moment to apply \the [src]. Perfect!"))
+			user.visible_message("<span class='notice'>[user] does [user.ru_ego()] nails with \the [src].</span>", \
+								 "<span class='notice'>You take a moment to apply \the [src]. Perfect!</span>")
 			H.nail_style = "nails"
 			H.nail_color = paint
 			H.update_body()
 		else
-			user.visible_message(span_warning("[user] begins to do [H]'s nails with \the [src]."), \
-								 span_notice("You begin to apply \the [src] on [H]'s nails..."))
+			user.visible_message("<span class='warning'>[user] begins to do [H]'s nails with \the [src].</span>", \
+								 "<span class='notice'>You begin to apply \the [src] on [H]'s nails...</span>")
 			if(do_after(user, 20, target = H))
 				user.visible_message("[user] does [H]'s nails with \the [src].", \
-									 span_notice("You apply \the [src] on [H]'s nails."))
+									 "<span class='notice'>You apply \the [src] on [H]'s nails.</span>")
 				H.nail_style = "nails"
 				H.nail_color = paint
 				H.update_body()
 	else
-		to_chat(user, span_warning("Where are the nail on that?"))
+		to_chat(user, "<span class='warning'>Where are the nail on that?</span>")

@@ -9,7 +9,7 @@
 	id = /datum/reagent/drug/crank
 	results = list(/datum/reagent/drug/crank = 5)
 	required_reagents = list(/datum/reagent/medicine/diphenhydramine = 1, /datum/reagent/ammonia = 1, /datum/reagent/lithium = 1, /datum/reagent/toxin/acid = 1, /datum/reagent/fuel = 1)
-	mix_message = "The mixture violently reacts, leaving behind a few crystalline shards."
+	mix_message = "Смесь бурно реагирует, оставляя после себя несколько красных кристаллических осколков."
 	required_temp = 390
 
 

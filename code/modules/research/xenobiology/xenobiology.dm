@@ -648,7 +648,7 @@
 	qdel(src)
 
 /obj/item/slimepotion/slime/sentience
-	name = "intelligence potion"
+	name = "Intelligence Potion"
 	desc = "A miraculous chemical mix that grants human like intelligence to living beings."
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "potpink"
@@ -680,7 +680,7 @@
 		SM.mind.enslave_mind_to_creator(user)
 		SM.sentience_act()
 		to_chat(SM, "<span class='warning'>All at once it makes sense: you know what you are and who you are! Self awareness is yours!</span>")
-		to_chat(SM, "<span class='userdanger'>You are grateful to be self aware and owe [user.real_name] a great debt. Serve [user.real_name], and assist [user.p_them()] in completing [user.p_their()] goals at any cost.</span>")
+		to_chat(SM, "<span class='userdanger'>You are grateful to be self aware and owe [user.real_name] a great debt. Serve [user.real_name], and assist [user.ru_na()] in completing [user.ru_ego()] goals at any cost.</span>")
 		if(SM.flags_1 & HOLOGRAM_1) //Check to see if it's a holodeck creature
 			to_chat(SM, "<span class='userdanger'>You also become depressingly aware that you are not a real creature, but instead a holoform. Your existence is limited to the parameters of the holodeck.</span>")
 		to_chat(user, "<span class='notice'>[SM] accepts [src] and suddenly becomes attentive and aware. It worked!</span>")
@@ -741,7 +741,7 @@
 /obj/item/slimepotion/transference/proc/try_transfer_mind(mob/living/simple_animal/SM, mob/user)
 	set waitfor = FALSE
 	prompted = 1
-	if(alert("This will permanently transfer your consciousness to [SM]. Are you sure you want to do this?",,"Yes","No")=="No")
+	if(alert("This will permanently transfer your consciousness to [SM]. Are you sure you want to do this?",,"Да","Нет")=="Нет")
 		prompted = 0
 		return
 

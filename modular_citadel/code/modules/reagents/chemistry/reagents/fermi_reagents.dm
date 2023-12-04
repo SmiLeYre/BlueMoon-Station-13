@@ -9,7 +9,7 @@
 	impure_chem 			= /datum/reagent/impure/fermiTox // What chemical is metabolised with an inpure reaction
 	inverse_chem_val 		= 0.25		// If the impurity is below 0.5, replace ALL of the chem with inverse_chemupon metabolising
 	inverse_chem			= /datum/reagent/impure/fermiTox
-	chemical_flags = REAGENT_ALL_PROCESS	//Lets just default to robots being able to process these funky chems.
+//	chemical_flags = REAGENT_ALL_PROCESS	//Lets just default to robots being able to process these funky chems. // BLUEMOON CHANGES - реагент не должен взаимодействовать с роботами
 
 
 //This should process fermichems to find out how pure they are and what effect to do.
@@ -40,7 +40,6 @@
 	chemical_flags = REAGENT_DONOTSPLIT | REAGENT_ALL_PROCESS
 	pH = 4
 	can_synth = TRUE
-
 
 /datum/reagent/fermi/hatmium/on_mob_add(mob/living/carbon/human/M)
 	. = ..()
@@ -85,7 +84,7 @@
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	inverse_chem_val 		= 0
 	var/obj/item/organ/tongue/nT
-	chemical_flags = REAGENT_DONOTSPLIT | REAGENT_ALL_PROCESS
+	chemical_flags = REAGENT_DONOTSPLIT | REAGENT_ORGANIC_PROCESS // BLUEMOON CHANGES - только для органиков
 	pH = 5
 	var/obj/item/organ/tongue/T
 	can_synth = TRUE
@@ -206,6 +205,7 @@
 	value = 90
 	can_synth = FALSE
 	var/react_objs = list()
+	chemical_flags = REAGENT_ALL_PROCESS // BLUEMOON ADD - реагент должен взаимодействовать в том числе и с роботами
 
 /datum/reagent/fermi/nanite_b_gone/on_mob_life(mob/living/carbon/C)
 	var/datum/component/nanites/N = C.GetComponent(/datum/component/nanites)
@@ -267,6 +267,7 @@
 	color = "#FFFFFF"
 	pH = 0
 	can_synth = FALSE
+	chemical_flags = REAGENT_ALL_PROCESS // BLUEMOON ADD - реагент должен взаимодействовать в том числе и с роботами
 
 /datum/reagent/fermi/fermiAcid/reaction_mob(mob/living/carbon/C, method)
 	var/target = C.get_bodypart(BODY_ZONE_CHEST)

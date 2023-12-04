@@ -1,11 +1,12 @@
 /obj/item/clothing/mask/gas
-	name = "gas mask"
+	name = "Gas Mask"
 	desc = "A face-covering mask that can be connected to an air supply. While good for concealing your identity, it isn't good for blocking gas flow." //More accurate
 	icon_state = "gas_alt"
 	clothing_flags = BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS
-	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR|HIDESNOUT
+	flags_inv = HIDEEYES|HIDEFACE|HIDEFACIALHAIR|HIDESNOUT
 	w_class = WEIGHT_CLASS_NORMAL
 	item_state = "gas_alt"
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 100, RAD = 0, FIRE = 0, ACID = 0)
 	gas_transfer_coefficient = 0.01
 	permeability_coefficient = 0.01
 	flags_cover = MASKCOVERSEYES | MASKCOVERSMOUTH
@@ -24,18 +25,36 @@
 	if(flavor_adjust && adjustmask(user, TRUE))
 		return TRUE
 
+/obj/item/clothing/mask/gas/atmos
+	name = "Atmospheric Gas Mask"
+	desc = "Improved gas mask utilized by atmospheric technicians. It's flameproof!"
+	icon_state = "gas_atmos"
+	item_state = "gas_atmos"
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 100, RAD = 0, FIRE = 100, ACID = 10)
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/mask/gas/atmos/captain
+	name = "Captain's Gas Mask"
+	desc = "Nanotrasen cut corners and repainted a spare atmospheric gas mask, but don't tell anyone."
+	icon_state = "gas_cap"
+	item_state = "gasmask_captain"
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+
 /obj/item/clothing/mask/gas/glass
-	name = "glass gas mask"
+	name = "Glass Gas Mask"
 	desc = "A face-covering mask that can be connected to an air supply. This one doesn't obscure your face however." //More accurate
 	icon_state = "gas_clear"
 	flags_inv = HIDEEYES
 	flavor_adjust = FALSE
 
+/obj/item/clothing/mask/gas/glass/alt
+	icon_state = "gas_alt2"
+	item_state = "gas_alt2"
 
 // **** Welding gas mask ****
 
 /obj/item/clothing/mask/gas/welding
-	name = "welding mask"
+	name = "Welding Mask"
 	desc = "A gas mask with built-in welding goggles and a face shield. Looks like a skull - clearly designed by a nerd."
 	icon_state = "weldingmask"
 	custom_materials = list(/datum/material/iron=4000, /datum/material/glass=2000)
@@ -43,7 +62,7 @@
 	tint = 2
 	armor = list(MELEE = 10, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 100, ACID = 55)
 	actions_types = list(/datum/action/item_action/toggle)
-	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE
+	flags_inv = HIDEEYES|HIDEFACE //BM Changes
 	flags_cover = MASKCOVERSEYES
 	visor_flags_inv = HIDEEYES
 	visor_flags_cover = MASKCOVERSEYES
@@ -59,25 +78,31 @@
 	. = ..()
 	visor_toggling()
 
-
 // ********************************************************************
 
 //Plague Dr suit can be found in clothing/suits/bio.dm
 /obj/item/clothing/mask/gas/plaguedoctor
-	name = "plague doctor mask"
+	name = "Plague Doctor Mask"
 	desc = "A modernised version of the classic design, this mask will not only filter out toxins but it can also be connected to an air supply."
 	icon_state = "plaguedoctor"
 	item_state = "gas_mask"
-	armor = list(MELEE = 0, BULLET = 0, LASER = 2,ENERGY = 2, BOMB = 0, BIO = 75, RAD = 0, FIRE = 0, ACID = 0)
+	armor = list(MELEE = 0, BULLET = 0, LASER = 5, ENERGY = 5, BOMB = 0, BIO = 100, RAD = 0, FIRE = 0, ACID = 0)
+
+/obj/item/clothing/mask/gas/plaguedoctor/jason
+	name = "Jason Mask"
+	desc = "Маска небезызвестного маньяка."
+	icon_state = "jason"
 
 /obj/item/clothing/mask/gas/syndicate
-	name = "syndicate mask"
+	name = "Syndicate Mask"
 	desc = "A close-fitting tactical mask that can be connected to an air supply."
 	icon_state = "syndicate"
 	strip_delay = 60
+	item_state = "syndicate_gasmask"
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/clothing/mask/gas/clown_hat
-	name = "clown wig and mask"
+	name = "Clown Wig and Mask"
 	desc = "A true prankster's facial attire. A clown is incomplete without his wig and mask."
 	clothing_flags = ALLOWINTERNALS
 	icon_state = "clown"
@@ -98,6 +123,7 @@
 			"The Feminist" = image(icon = src.icon, icon_state = "sexyclown"),
 			"The Jester" = image(icon = src.icon, icon_state = "chaos"),
 			"The Madman" = image(icon = src.icon, icon_state = "joker"),
+			"The Durak" = image(icon = src.icon, icon_state = "durak"),
 			"The Rainbow Color" = image(icon = src.icon, icon_state = "rainbow")
 			)
 
@@ -106,7 +132,7 @@
 		return
 
 	var/static/list/options = list("True Form" = "clown", "The Feminist" = "sexyclown", "The Madman" = "joker",
-								"The Rainbow Color" ="rainbow", "The Jester" = "chaos")
+								"The Rainbow Color" = "rainbow", "The Durak" = "durak", "The Jester" = "chaos")
 
 	var/choice = show_radial_menu(user,src, clownmask_designs, custom_check = FALSE, radius = 36, require_near = TRUE)
 
@@ -290,6 +316,7 @@
 	item_state = "hunter"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEYES|HIDEEARS|HIDEHAIR
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/mask/gas/driscoll
 	name = "driscoll mask"

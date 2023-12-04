@@ -14,6 +14,7 @@
 	var/neutered = FALSE			//can not use round ending, gibbing, converting, or similar things with unmatched round impact
 	var/ignore_eligibility_check = FALSE
 	var/ignore_holy_water = FALSE
+	var/give_equipment = FALSE
 
 /datum/antagonist/clockcult/ui_data(mob/user)
 	. = ..()
@@ -72,6 +73,8 @@
 	SSticker.mode.update_servant_icons_added(owner)
 	owner.special_role = ROLE_SERVANT_OF_RATVAR
 	owner.current.log_message("has been converted to the cult of Ratvar!", LOG_ATTACK, color="#BE8700")
+	if(give_equipment)
+		equip_cultist(TRUE)
 	if(issilicon(current))
 		if(iscyborg(current) && !silent)
 			var/mob/living/silicon/robot/R = current
@@ -88,6 +91,36 @@
 	..()
 	to_chat(current, "<b>This is Ratvar's will:</b> [CLOCKCULT_OBJECTIVE]")
 	antag_memory += "<b>Ratvar's will:</b> [CLOCKCULT_OBJECTIVE]<br>" //Memorize the objectives
+
+/datum/antagonist/clockcult/proc/equip_cultist()
+	var/mob/living/carbon/H = owner.current
+	if(!istype(H))
+		return
+	if (owner.assigned_role == "Clown")
+		to_chat(owner, "Тренировки позволили вам отринуть клоунскую натуру, теперь вы можете использовать оружие без риска ранить себя.")
+		H.dna.remove_mutation(CLOWNMUT)
+	. += cult_give_item(/obj/item/clockwork/slab, H)
+	. += cult_give_item(/obj/item/clockwork/replica_fabricator, H)
+	to_chat(owner, "These will help you start the cult on this station. Use them well, and remember - you are not the only one.</span>")
+
+/datum/antagonist/clockcult/proc/cult_give_item(obj/item/item_path, mob/living/carbon/human/mob)
+	var/list/slots = list(
+		"backpack" = ITEM_SLOT_BACKPACK,
+		"left pocket" = ITEM_SLOT_LPOCKET,
+		"right pocket" = ITEM_SLOT_RPOCKET
+	)
+
+	var/T = new item_path(mob)
+	var/item_name = initial(item_path.name)
+	var/where = mob.equip_in_one_of_slots(T, slots, critical = TRUE)
+	if(!where)
+		to_chat(mob, "<span class='userdanger'>Unfortunately, you weren't able to get a [item_name]. This is very bad and you should adminhelp immediately (press F1).</span>")
+		return 0
+	else
+		to_chat(mob, "<span class='danger'>You have a [item_name] in your [where].</span>")
+		if(where == "backpack")
+			SEND_SIGNAL(mob.back, COMSIG_TRY_STORAGE_SHOW, mob)
+		return TRUE
 
 /datum/antagonist/clockcult/apply_innate_effects(mob/living/mob_override)
 	. = ..()
@@ -179,8 +212,8 @@
 	SSticker.mode.servants_of_ratvar -= owner
 	SSticker.mode.update_servant_icons_removed(owner)
 	if(!silent)
-		owner.current.visible_message("<span class='deconversion_message'>[owner.current] seems to have remembered [owner.current.p_their()] true allegiance!</span>", null, null, null, owner.current)
-		to_chat(owner, "<span class='userdanger'>A cold, cold darkness flows through your mind, extinguishing the Justiciar's light and all of your memories as his servant.</span>")
+		owner.current.visible_message("<span class='deconversion_message'>[owner.current] выглядит так, будто бы верну[owner.current.ru_sya()] в своё исходное состояние!</span>", null, null, null, owner.current)
+		to_chat(owner, "<span class='userdanger'>Холодная, холодная тьма проникает в ваш разум, погасив свет Юстициара Ратвара и все ваши воспоминания как его слуги.</span>")
 	owner.current.log_message("has renounced the cult of Ratvar!", LOG_ATTACK, color="#BE8700")
 	owner.special_role = null
 	if(iscyborg(owner.current))
@@ -189,6 +222,7 @@
 
 
 /datum/antagonist/clockcult/admin_add(datum/mind/new_owner,mob/admin)
+	give_equipment = TRUE
 	add_servant_of_ratvar(new_owner.current, TRUE, override_type = type)
 	message_admins("[key_name_admin(admin)] has made [new_owner.current] into a servant of Ratvar.")
 	log_admin("[key_name(admin)] has made [new_owner.current] into a servant of Ratvar.")

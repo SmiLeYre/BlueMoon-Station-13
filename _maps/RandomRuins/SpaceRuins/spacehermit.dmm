@@ -24,6 +24,10 @@
 	lootcount = 8;
 	name = "8maintenance loot spawner"
 	},
+/obj/effect/spawner/lootdrop/maintenance{
+	lootcount = 8;
+	name = "8maintenance loot spawner"
+	},
 /turf/open/floor/mineral/titanium,
 /area/ruin/powered)
 "ah" = (
@@ -207,7 +211,7 @@
 /turf/open/floor/plating/asteroid,
 /area/ruin/powered)
 "aQ" = (
-/obj/item/circuitboard/machine/circuit_imprinter,
+/obj/item/circuitboard/machine/circuit_imprinter/department,
 /turf/open/floor/plating/asteroid,
 /area/ruin/powered)
 "aR" = (
@@ -245,7 +249,7 @@
 /area/template_noop)
 "aY" = (
 /obj/effect/mob_spawn/human/hermit{
-	flavour_text = "<span class='big bold'>You've been late to awaken from your cryo slumber. Blasted machine, you set it to 10 days not 10 weeks!</span><b> Where have the others gone while we were out? Did they manage to survive? These thoughts are dispelled by yet another recollection of how you got here... ";
+	flavour_text = "Твоя крио-капсула на спасательном судне вышла из строя и ты пробудился от своего долгого сна! Проклятая машина, ты должна была пробудить меня через десять дней, а не десять недель! Куда делись остальные, пока нас не было? Удалось ли им выжить? Эти мысли развеиваются еще одним воспоминанием о том, как вы сюда попали... ";
 	job_description = "Space Hermit"
 	},
 /turf/open/floor/mineral/titanium,
@@ -311,7 +315,7 @@
 "bn" = (
 /obj/structure/table/wood,
 /obj/item/paper/crumpled{
-	info = "</b><br><br>So this is it, I guess.. Always thought I'd go out doing something stupid, but.. not like this.<br>Should anyone find this note, tell Jeremy Clarke he can kiss my ass. Launching the pod unprepared like that..<br>Well. Now that I'm keeling over here, I guess I should write how I came to be the last one standing here.<br>Four of us took this pod.. only three of us woke up though.. fourth pod is locked from the inside, we couldn't figure out how to get it open.<br>Me and the clown set up a farm s'we can survive at least a while.. though, he didn't seem to understand that man cannot live on banana alone.<br>Had a bunch of circuits on him for some reason when he eventually passed, whispered to me something about a chem dispenser.. I.. don't know what he meant by that. I was never good with machinary. Maybe he wanted space lube?<br>The assistant that we gave the space suit to go out and find help never came back.. I'm betting he found salvation and left us behind.. never can trust those grubby greytiders."
+	default_raw_text = "</b><br><br>So this is it, I guess.. Always thought I'd go out doing something stupid, but.. not like this.<br>Should anyone find this note, tell Jeremy Clarke he can kiss my ass. Launching the pod unprepared like that..<br>Well. Now that I'm keeling over here, I guess I should write how I came to be the last one standing here.<br>Four of us took this pod.. only three of us woke up though.. fourth pod is locked from the inside, we couldn't figure out how to get it open.<br>Me and the clown set up a farm s'we can survive at least a while.. though, he didn't seem to understand that man cannot live on banana alone.<br>Had a bunch of circuits on him for some reason when he eventually passed, whispered to me something about a chem dispenser.. I.. don't know what he meant by that. I was never good with machinary. Maybe he wanted space lube?<br>The assistant that we gave the space suit to go out and find help never came back.. I'm betting he found salvation and left us behind.. never can trust those grubby greytiders."
 	},
 /obj/item/pen,
 /obj/item/stock_parts/cell/hyper,
@@ -344,6 +348,18 @@
 /obj/item/pickaxe/titanium,
 /turf/open/floor/plating/asteroid,
 /area/ruin/powered)
+"bT" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/mineral/titanium,
+/area/ruin/powered)
+"cp" = (
+/obj/item/circuitboard/machine/protolathe/department,
+/turf/template_noop,
+/area/template_noop)
+"cw" = (
+/obj/machinery/portable_atmospherics/canister/nitrogen,
+/turf/open/floor/plating/asteroid,
+/area/ruin/powered)
 "fc" = (
 /obj/item/stack/ore/iron,
 /obj/item/stack/sheet/mineral/plasma,
@@ -353,6 +369,10 @@
 "fp" = (
 /turf/closed/mineral/random/high_chance,
 /area/ruin/powered)
+"im" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/unpowered)
 "jx" = (
 /turf/closed/mineral/silver,
 /area/ruin/powered)
@@ -375,6 +395,8 @@
 "nl" = (
 /obj/structure/closet/emcloset,
 /obj/effect/turf_decal/bot,
+/obj/item/tank/internals/emergency_nitrogen,
+/obj/item/tank/internals/emergency_nitrogen/double,
 /turf/open/floor/mineral/titanium,
 /area/ruin/powered)
 "oR" = (
@@ -400,6 +422,10 @@
 	dir = 10
 	},
 /turf/open/floor/mineral/titanium,
+/area/ruin/powered)
+"BE" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/asteroid,
 /area/ruin/powered)
 "CY" = (
 /obj/machinery/portable_atmospherics/canister/air,
@@ -511,6 +537,7 @@
 	},
 /obj/structure/closet/crate/internals,
 /obj/effect/turf_decal/bot,
+/obj/effect/spawner/lootdrop/armory_contraband,
 /turf/open/floor/mineral/titanium,
 /area/ruin/powered)
 "JZ" = (
@@ -545,6 +572,10 @@
 /area/ruin/powered)
 "Ue" = (
 /turf/closed/mineral/diamond,
+/area/ruin/powered)
+"VP" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/asteroid/airless,
 /area/ruin/powered)
 "VS" = (
 /turf/closed/mineral/uranium,
@@ -718,7 +749,7 @@ bb
 aZ
 aZ
 ab
-aA
+im
 aA
 aa
 aa
@@ -828,7 +859,7 @@ aZ
 aA
 aa
 aa
-aa
+cp
 aa
 aa
 aa
@@ -852,7 +883,7 @@ aZ
 aZ
 aZ
 aZ
-aA
+im
 aZ
 aZ
 aZ
@@ -1129,9 +1160,9 @@ aZ
 bb
 bb
 af
+bT
 an
-an
-an
+bT
 af
 aZ
 fp
@@ -1236,7 +1267,7 @@ aY
 ao
 ao
 ao
-ak
+aY
 af
 aZ
 bb
@@ -1418,7 +1449,7 @@ aa
 aa
 aa
 aA
-aA
+im
 ab
 aZ
 bb
@@ -1483,7 +1514,7 @@ ad
 am
 am
 am
-am
+cw
 aZ
 aH
 aJ
@@ -1542,7 +1573,7 @@ am
 am
 aZ
 bb
-am
+BE
 af
 Ft
 zs
@@ -1558,7 +1589,7 @@ bb
 bb
 bb
 aZ
-aA
+im
 aa
 "}
 (20,1,1) = {"
@@ -1591,7 +1622,7 @@ bC
 WH
 am
 am
-am
+BE
 aZ
 bb
 bb
@@ -1897,7 +1928,7 @@ bb
 bb
 ar
 bc
-am
+BE
 ar
 am
 am
@@ -1905,7 +1936,7 @@ am
 am
 aZ
 aZ
-am
+BE
 am
 am
 am
@@ -2071,7 +2102,7 @@ am
 WP
 aP
 bb
-am
+BE
 aZ
 aZ
 aZ
@@ -2339,7 +2370,7 @@ aa
 aA
 ab
 ab
-aA
+im
 "}
 (35,1,1) = {"
 aa
@@ -2379,7 +2410,7 @@ aS
 am
 am
 am
-am
+BE
 aS
 aS
 aZ
@@ -2425,7 +2456,7 @@ bb
 aZ
 aZ
 aZ
-aE
+VP
 aS
 aS
 Lt
@@ -2494,7 +2525,7 @@ aa
 aa
 aa
 aa
-aA
+im
 aA
 "}
 (38,1,1) = {"
@@ -2730,7 +2761,7 @@ aA
 aA
 aA
 aA
-aA
+im
 aA
 aA
 aA

@@ -14,6 +14,11 @@
 	flags_1 = CAN_BE_DIRTY_1
 	// area_limited_icon_smoothing = /area/shuttle
 	sound_environment = SOUND_ENVIRONMENT_ROOM
+	shipambience = 'sound/ambience/zone/shuttle.ogg'
+	forced_ambience = TRUE
+	ambientsounds = SHUTTLE
+	min_ambience_cooldown = 20 SECONDS
+	max_ambience_cooldown = 35 SECONDS
 
 /area/shuttle/Initialize(mapload)
 	if(!canSmoothWithAreas)
@@ -33,10 +38,13 @@
 
 /area/shuttle/syndicate
 	name = "Syndicate Infiltrator"
-	// ambience_index = AMBIENCE_DANGER
-	// area_limited_icon_smoothing = /area/shuttle/syndicate
 	ambientsounds = HIGHSEC
 	canSmoothWithAreas = /area/shuttle/syndicate
+
+/area/shuttle/solfed
+	name = "Solfed Shuttle"
+	ambientsounds = SHUTTLE_MILITARY
+	canSmoothWithAreas = /area/shuttle/solfed
 
 /area/shuttle/syndicate/bridge
 	name = "Syndicate Infiltrator Control"
@@ -54,6 +62,37 @@
 
 /area/shuttle/syndicate/airlock
 	name = "Syndicate Infiltrator Airlock"
+
+/area/shuttle/syndicate/airlock
+	name = "Syndicate Infiltrator Airlock"
+
+////////////////////////////Syndicate infiltrator////////////////////////////
+
+/area/shuttle/inteq
+	name = "InteQ Infiltrator"
+	ambientsounds = SHUTTLE_MILITARY
+	canSmoothWithAreas = /area/shuttle/inteq
+
+/area/shuttle/inteq/bridge
+	name = "InteQ Infiltrator Control"
+
+/area/shuttle/inteq/medical
+	name = "InteQ Infiltrator Medbay"
+
+/area/shuttle/inteq/armory
+	name = "InteQ Infiltrator Armory"
+
+/area/shuttle/inteq/eva
+	name = "InteQ Infiltrator EVA"
+
+/area/shuttle/inteq/hallway
+	name = "InteQ Hallway"
+
+/area/shuttle/inteq/airlock
+	name = "InteQ Infiltrator Airlock"
+
+/area/shuttle/inteq/collosus
+	name = "InteQ Collosus Shuttle"
 
 ////////////////////////////Pirate Shuttle////////////////////////////
 
@@ -157,7 +196,7 @@
 
 /area/shuttle/escape
 	name = "Emergency Shuttle"
-	area_flags = BLOBS_ALLOWED | CULT_PERMITTED
+	area_flags = BLOBS_ALLOWED | CULT_PERMITTED | NO_ALERTS
 	// area_limited_icon_smoothing = /area/shuttle/escape
 	canSmoothWithAreas = /area/shuttle/escape
 	flags_1 = CAN_BE_DIRTY_1
@@ -234,3 +273,9 @@
 
 /area/shuttle/snowtaxi
 	name = "Snow Taxi"
+
+/area/shuttle/tarkoff_driver
+	name = "Tarkoff Driver"
+
+/area/shuttle/lf_haron
+	name = "Haron"

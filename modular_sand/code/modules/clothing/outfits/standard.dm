@@ -26,10 +26,23 @@
 	desc = "A specialised hardsuit for Bluespace agents."
 	armor = list("melee" = 98, "bullet" = 98, "laser" = 98, "energy" = 98, "bomb" = 98, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100) // Skyrat edit
 
+/obj/item/storage/backpack/holding/duffel/debug
+	name = "Special Duffel Bag of Holding"
+	desc = "A special duffel bag that opens into a localized pocket of Blue Space."
+	icon_state = "holdingduffel"
+	item_state = "holdingduffel"
+
+/obj/item/storage/backpack/holding/duffel/debug/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = MAX_WEIGHT_CLASS_BAG_OF_HOLDING
+	STR.storage_flags = STORAGE_FLAGS_VOLUME_DEFAULT
+	STR.max_volume = STORAGE_VOLUME_BAG_OF_HOLDING_DEBUG
+
 /obj/item/clothing/shoes/combat/debug
 	clothing_flags = NOSLIP
 
-/obj/item/storage/belt/utility/chief/full/debug
+/obj/item/storage/belt/military/abductor/full/debug
 	name = "\improper Bluespace Tech's belt"
 
 /datum/outfit/debug/bst //Debug objs
@@ -40,16 +53,21 @@
 	ears = /obj/item/radio/headset/headset_cent/commander/alt/generic
 	mask = null
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
-	belt = /obj/item/storage/belt/utility/chief/full/debug
+	belt = /obj/item/storage/belt/military/abductor/full/debug
 	shoes = /obj/item/clothing/shoes/combat/debug
 	id = /obj/item/card/id/debug/bst
-	back = /obj/item/storage/backpack/holding
+	back = /obj/item/storage/backpack/holding/duffel/debug
 	box = /obj/item/storage/box/debugtools
 	suit_store = /obj/item/gun/energy/pulse
 	backpack_contents = list(
 		/obj/item/melee/transforming/energy/axe=1,\
-		/obj/item/storage/part_replacer/bluespace/tier4=1,\
+		/obj/item/storage/part_replacer/bluespace/tier5=1,\
 		/obj/item/debug/human_spawner=1,\
+		/obj/item/holosign_creator/combifan=1,\
+		/obj/item/analyzer/ranged=1,\
+		/obj/item/extinguisher/advanced=1,\
+		/obj/item/pipe_dispenser/bluespace=1,\
+		/obj/item/lightreplacer/blue=1,\
 		/obj/item/gun/energy/taser/debug=1,\
 		/obj/item/clothing/glasses/debug,\
 		/obj/item/clothing/mask/gas/welding/up,\
@@ -64,16 +82,21 @@
 	ears = /obj/item/radio/headset/headset_cent/commander/alt/generic
 	mask = /obj/item/clothing/mask/gas/welding/up
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
-	belt = /obj/item/storage/belt/utility/chief/full/debug
+	belt = /obj/item/storage/belt/military/abductor/full/debug
 	shoes = /obj/item/clothing/shoes/combat/debug
 	id = /obj/item/card/id/debug/bst
-	back = /obj/item/storage/backpack/holding
+	back = /obj/item/storage/backpack/holding/duffel/debug
 	box = /obj/item/storage/box/debugtools
 	suit_store = /obj/item/tank/internals/oxygen
 	internals_slot = ITEM_SLOT_SUITSTORE
 	backpack_contents = list(
 		/obj/item/melee/transforming/energy/axe=1,\
-		/obj/item/storage/part_replacer/bluespace/tier4=1,\
+		/obj/item/storage/part_replacer/bluespace/tier5=1,\
+		/obj/item/holosign_creator/combifan=1,\
+		/obj/item/analyzer/ranged=1,\
+		/obj/item/extinguisher/advanced=1,\
+		/obj/item/pipe_dispenser/bluespace=1,\
+		/obj/item/lightreplacer/blue=1,\
 		/obj/item/debug/human_spawner=1,\
 		/obj/item/gun/energy/pulse=1,\
 		/obj/item/gun/energy/taser/debug,\

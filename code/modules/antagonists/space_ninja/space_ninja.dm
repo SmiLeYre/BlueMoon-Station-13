@@ -10,7 +10,9 @@
 	///Whether or not this ninja will obtain objectives
 	var/give_objectives = TRUE
 	///Whether or not this ninja receives the standard equipment
-	var/give_equipment = TRUE
+	var/give_equipment = FALSE
+	///
+	var/ninja_outfit
 
 /proc/is_ninja(mob/living/M)
 	return M && M.mind && M.mind.has_antag_datum(/datum/antagonist/ninja)
@@ -31,8 +33,13 @@
   * * ninja - The human to receive the gear
   * * Returns a proc call on the given human which will equip them with all the gear.
   */
+
+/datum/antagonist/ninja/proc/equip_space_ninja_pre(mob/living/carbon/human/ninja = owner.current) // Ниндзя спавнится в космосе. Значит, экипируем его в первичный комплект заранее, чтобы не сдулся.
+	if(!isobserver(ninja))
+		ninja.equipOutfit(/datum/outfit/ninja_pre)
+
 /datum/antagonist/ninja/proc/equip_space_ninja(mob/living/carbon/human/ninja = owner.current)
-	return ninja.equipOutfit(/datum/outfit/ninja)
+	return ninja.equipOutfit(ninja_outfit)
 
 /**
   * Proc that adds the proper memories to the antag datum
@@ -40,11 +47,11 @@
   * Proc that adds the ninja starting memories to the owner of the antagonist datum.
   */
 /datum/antagonist/ninja/proc/addMemories()
-	antag_memory += "I am an elite mercenary of the mighty Spider Clan. A <font color='red'><B>SPACE NINJA</B></font>!<br>"
-	antag_memory += "Surprise is my weapon. Shadows are my armor. Without them, I am nothing. (//initialize your suit by clicking the initialize UI button, to use abilities like stealth)!<br>"
+	antag_memory += "Я - элитный наёмник Клана Паука. <font color='red'><B>КОСМИЧЕСКИЙ НИНДЗЯ</B></font>!<br>"
+	antag_memory += "Сюрприз - моё оружие. Тени - мой доспех. Без них я ничто. (//чтобы использовать свой костюм, подключите его с помощью кнопки на вашем UI)!<br>"
 
 /datum/objective/cyborg_hijack
-	explanation_text = "Use your gloves to convert at least one cyborg to aide you in sabotaging the station."
+	explanation_text = "Конвертируйте одного станционного робота в киборга-саботёра с помощью ваших перчаток."
 
 /datum/objective/door_jack
 	///How many doors that need to be opened using the gloves to pass the objective
@@ -54,10 +61,10 @@
 	var/area/detonation_location
 
 /datum/objective/security_scramble
-	explanation_text = "Use your gloves on a security console to set everyone to arrest at least once.  Note that the AI will be alerted once you begin!"
+	explanation_text = "Взломайте консоль охраны, используя перчатки, чтобы установить арест на весь экипаж. ИИ получит уведомление в тот момент, когда вы начнёте!"
 
 /datum/objective/terror_message
-	explanation_text = "Use your gloves on a communication console in order to bring another threat to the station.  Note that the AI will be alerted once you begin!"
+	explanation_text = "Взломайте консоль капитана, используя перчатки, чтобы наслать на станцию ещё одну угрозу. ИИ получит уведомление в тот момент, когда вы начнёте!"
 
 /**
   * Proc that adds all the ninja's objectives to the antag datum.
@@ -78,7 +85,7 @@
 	//Door jacks, flag will be set to complete on when the last door is hijacked
 	var/datum/objective/door_jack/doorobjective = new /datum/objective/door_jack()
 	doorobjective.doors_required = rand(15,40)
-	doorobjective.explanation_text = "Use your gloves to doorjack [doorobjective.doors_required] airlocks on the station."
+	doorobjective.explanation_text = "Взломайте [doorobjective.doors_required] станционных шлюзов с помощью ваших перчаток."
 	objectives += doorobjective
 
 	//Explosive plant, the bomb will register its completion on priming
@@ -90,7 +97,7 @@
 		bombobjective.detonation_location = selected_area
 		break
 	if(bombobjective.detonation_location)
-		bombobjective.explanation_text = "Detonate your starter bomb in [bombobjective.detonation_location].  Note that the bomb will not work anywhere else!"
+		bombobjective.explanation_text = "Детонируйте взрывпакет в локации: [bombobjective.detonation_location]. В других местах взрывчатка не будет работать!"
 		objectives += bombobjective
 
 	//Security Scramble, set to complete upon using your gloves on a security console
@@ -107,20 +114,24 @@
 	objectives += survival
 
 /datum/antagonist/ninja/greet()
-	SEND_SOUND(owner.current, sound('sound/effects/ninja_greeting.ogg'))
-	to_chat(owner.current, "I am an elite mercenary of the mighty Spider Clan. A <font color='red'><B>SPACE NINJA</B></font>!")
-	to_chat(owner.current, "Surprise is my weapon. Shadows are my armor. Without them, I am nothing. (//initialize your suit by right clicking on it, to use abilities like stealth)!")
+	SEND_SOUND(owner.current, sound('sound/ambience/antag/ninja_greeting.ogg'))
+	to_chat(owner.current, "Я - элитный наёмник могучего Клана Паука. <font color='red'><B>КОСМИЧЕСКИЙ НИНДЗЯ</B></font>!")
+	to_chat(owner.current, "Сюрприз - моё оружие. Тени - мой доспех. Без них я ничто. (//чтобы использовать свой костюм, подключите его с помощью кнопки на вашем UI)!")
 	owner.announce_objectives()
 
 /datum/antagonist/ninja/on_gain()
 	if(give_objectives)
 		addObjectives()
 	addMemories()
-	if(give_equipment)
-		equip_space_ninja(owner.current)
+
+	equip_space_ninja_pre()
+	choosePath()
+
 
 	owner.current.mind.assigned_role = ROLE_NINJA
 	owner.current.mind.special_role = ROLE_NINJA
+	owner.current.canloadappearance = TRUE
+	owner.current.checkloadappearance()
 	return ..()
 
 /datum/antagonist/ninja/admin_add(datum/mind/new_owner,mob/admin)
@@ -129,3 +140,25 @@
 	new_owner.add_antag_datum(src)
 	message_admins("[key_name_admin(admin)] has ninja'ed [key_name_admin(new_owner)].")
 	log_admin("[key_name(admin)] has ninja'ed [key_name(new_owner)].")
+
+
+/datum/antagonist/ninja/proc/choosePath(mob/living/carbon/human/ninja = owner.current)
+	if(!isobserver(ninja))
+		//var/type = tgui_alert(ninja, "Выберите предпочительную экипировку", "Космический ниндзя", list("Путь Ёкая", "Путь Паука", "Путь Мудрости"))
+		var/choices = list("Путь Ёкая", "Путь Паука", "Путь Мудрости")
+		var/choice = input(ninja, "Выберите предпочительную экипировку", "Космический ниндзя") in choices
+		switch(choice)
+			if("Путь Ёкая")
+				give_equipment = TRUE
+				ninja_outfit = /datum/outfit/ninja_ronin
+			if("Путь Паука")
+				give_equipment = TRUE
+				ninja_outfit = /datum/outfit/ninja
+			if("Путь Мудрости")
+				give_equipment = TRUE
+				ninja_outfit = /datum/outfit/ninja_wisdom
+
+	if(give_equipment)
+		ninja.delete_equipment()
+		equip_space_ninja(ninja)
+

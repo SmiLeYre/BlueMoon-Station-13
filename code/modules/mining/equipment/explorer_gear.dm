@@ -4,14 +4,15 @@
 	desc = "An armoured suit for exploring harsh environments."
 	icon_state = "explorer-normal"
 	item_state = "explorer-normal"
+	tail_state = "atmos"
 	var/suit_type = "normal"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	hoodtype = /obj/item/clothing/head/hooded/explorer
-	armor = list(MELEE = 30, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 50, BIO = 100, RAD = 50, FIRE = 50, ACID = 50)
+	armor = list(MELEE = 30, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 50, BIO = 100, RAD = 50, FIRE = 50, ACID = 50, WOUND = 15)
 	flags_inv = HIDEJUMPSUIT|HIDETAUR
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/resonator, /obj/item/mining_scanner, /obj/item/t_scanner/adv_mining_scanner, /obj/item/gun/energy/kinetic_accelerator, /obj/item/pickaxe)
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/resonator, /obj/item/mining_scanner, /obj/item/t_scanner/adv_mining_scanner, /obj/item/gun/energy/kinetic_accelerator, /obj/item/pickaxe, /obj/item/device/cooler/lavaland) // BLUEMOON ADD - добавлен лавалендовский ПОУ
 	resistance_flags = FIRE_PROOF
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC|STYLE_PAW_TAURIC
 	no_t = TRUE
@@ -74,9 +75,10 @@
 			wearer.update_inv_head()
 
 /obj/item/clothing/mask/gas/explorer
-	name = "explorer gas mask"
+	name = "Explorer Gas Mask"
 	desc = "A military-grade gas mask that can be connected to an air supply."
 	icon_state = "gas_mining"
+	item_state = "explorer_gasmask"
 	visor_flags = BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS
 	visor_flags_inv = HIDEFACIALHAIR
 	visor_flags_cover = MASKCOVERSMOUTH
@@ -105,7 +107,7 @@
 	resistance_flags = FIRE_PROOF | LAVA_PROOF | ACID_PROOF | GOLIATH_RESISTANCE
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC|STYLE_PAW_TAURIC
 	slowdown = 0
-	armor = list(MELEE = 70, BULLET = 40, LASER = 10, ENERGY = 10, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100)
+	armor = list(MELEE = 70, BULLET = 40, LASER = 10, ENERGY = 10, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, MAGIC = 50)
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/resonator, /obj/item/mining_scanner, /obj/item/t_scanner/adv_mining_scanner, /obj/item/gun/energy/kinetic_accelerator, /obj/item/pickaxe)
 
 /obj/item/clothing/suit/space/hostile_environment/Initialize(mapload)
@@ -177,7 +179,7 @@
 	icon_state = "heva"
 	item_state = "heva"
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
-	armor = list(MELEE = 20, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 20, BIO = 100, RAD = 20, FIRE = 60, ACID = 20)
+	armor = list(MELEE = 20, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 20, BIO = 100, RAD = 20, FIRE = 100, ACID = 20, WOUND = 15)
 	resistance_flags = FIRE_PROOF | GOLIATH_WEAKNESS
 
 /obj/item/clothing/head/hooded/explorer/heva/equipped(mob/living/carbon/human/user, slot)
@@ -197,7 +199,7 @@
 	icon_state = "heva"
 	item_state = "heva"
 	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEYES|HIDEEARS|HIDEHAIR
-	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 60, FIRE = 40, ACID = 50)
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 60, FIRE = 40, ACID = 50, WOUND = 15)
 
 /****************Exo-Suit and Mask****************/
 
@@ -206,18 +208,24 @@
 	desc = "A robust suit for fighting dangerous animals. Its design and material make it harder for a Goliath to keep their grip on the wearer."
 	icon_state = "exo"
 	item_state = "exo"
+	icon = 'modular_sand/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_sand/icons/mob/clothing/suit.dmi'
+	anthro_mob_worn_overlay = 'modular_sand/icons/mob/clothing/suit_digi.dmi'
 	w_class = WEIGHT_CLASS_BULKY
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	hoodtype = /obj/item/clothing/head/hooded/explorer/exo
-	armor = list(MELEE = 55, BULLET = 5, LASER = 5, ENERGY = 5, BOMB = 40, BIO = 25, RAD = 10, FIRE = 0, ACID = 0)
+	armor = list(MELEE = 55, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 50, BIO = 25, RAD = 25, FIRE = 10, ACID = 10, WOUND = 20)
 	resistance_flags = FIRE_PROOF | GOLIATH_RESISTANCE
 
 /obj/item/clothing/head/hooded/explorer/exo
 	name = "Exo-hood"
 	desc = "A robust helmet for fighting dangerous animals. Its design and material make it harder for a Goliath to keep their grip on the wearer."
+	icon = 'modular_sand/icons/obj/clothing/head.dmi'
+	mob_overlay_icon = 'modular_sand/icons/mob/clothing/head.dmi'
+	anthro_mob_worn_overlay = 'modular_sand/icons/mob/clothing/head_muzzled.dmi'
 	icon_state = "exo"
 	item_state = "exo"
-	armor = list(MELEE = 55, BULLET = 5, LASER = 5, ENERGY = 5, BOMB = 40, BIO = 25, RAD = 10, FIRE = 0, ACID = 0)
+	armor = list(MELEE = 55, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 50, BIO = 25, RAD = 25, FIRE = 10, ACID = 10, WOUND = 20)
 	resistance_flags = FIRE_PROOF | GOLIATH_RESISTANCE
 
 /obj/item/clothing/mask/gas/exo

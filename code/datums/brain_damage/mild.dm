@@ -100,7 +100,12 @@
 			if(11)
 				to_chat(owner, "<span class='warning'>You faint.</span>")
 				owner.Unconscious(80)
+	owner.AdjustConfused(5 SECONDS, 10, 20)
+	..()
 
+/datum/brain_trauma/mild/concussion/on_lose()
+	owner.cut_overlays()
+	owner.regenerate_icons()
 	..()
 
 /datum/brain_trauma/mild/healthy
@@ -243,7 +248,7 @@
 		if(prob(25))
 			var/deja_vu = pick_n_take(hear_dejavu)
 			var/static/regex/quoted_spoken_message = regex("\".+\"", "gi")
-			hearing_args[HEARING_RAW_MESSAGE] = quoted_spoken_message.Replace(hearing_args[HEARING_RAW_MESSAGE], "\"[deja_vu]\"") //Quotes included to avoid cases where someone says part of their name
+			hearing_args[HEARING_RAW_MESSAGE] = quoted_spoken_message.Replace_char(hearing_args[HEARING_RAW_MESSAGE], "\"[deja_vu]\"") //Quotes included to avoid cases where someone says part of their name
 			return
 	if(hear_dejavu.len >= 15)
 		if(prob(50))

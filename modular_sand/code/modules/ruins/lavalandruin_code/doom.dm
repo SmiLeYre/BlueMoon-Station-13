@@ -35,14 +35,14 @@
 /obj/effect/mine/pickup/bloodbath/berserk/mineEffect(mob/living/carbon/victim)
 	if(!victim.client || !istype(victim))
 		return
-	to_chat(victim, span_reallybig(span_redtext("<b>RIP AND TEAR</b>")))
+	to_chat(victim, "<span class='reallybig redtext'><b>RIP AND TEAR</b></span>")
 	var/old_color = victim.client.color
 	var/static/list/red_splash = list(1,0,0,0.8,0.2,0, 0.8,0,0.2,0.1,0,0)
 	var/static/list/pure_red = list(0,0,0,0,0,0,0,0,0,1,0,0)
 
 	victim.log_message("entered a berserk frenzy", LOG_ATTACK)
 	victim.reagents.add_reagent(/datum/reagent/medicine/adminordrazine,50)
-	to_chat(victim, span_warning("KILL, KILL, KILL!"))
+	to_chat(victim, "<span class='warning'>KILL, KILL, KILL!</span>")
 	victim.client.color = pure_red
 	animate(victim.client,color = red_splash, time = 10, easing = SINE_EASING|EASE_OUT)
 	sleep(duration)

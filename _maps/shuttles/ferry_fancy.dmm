@@ -3,10 +3,11 @@
 /turf/template_noop,
 /area/template_noop)
 "b" = (
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/plastitanium,
 /area/shuttle/transport)
 "c" = (
-/obj/effect/spawner/structure/window/shuttle,
+/obj/structure/grille,
+/obj/structure/window/plastitanium,
 /turf/open/floor/plating,
 /area/shuttle/transport)
 "d" = (
@@ -54,17 +55,24 @@
 /turf/open/floor/pod/light,
 /area/shuttle/transport)
 "l" = (
-/obj/machinery/door/airlock/titanium,
+/obj/machinery/door/airlock/centcom{
+	name = "CentCom Security";
+	req_access_txt = "101"
+	},
 /turf/open/floor/pod/light,
 /area/shuttle/transport)
 "m" = (
 /obj/machinery/computer/shuttle/ferry/request{
-	dir = 8
+	dir = 8;
+	pixel_x = -9
+	},
+/obj/machinery/computer/camera_advanced{
+	dir = 4;
+	pixel_x = 8
 	},
 /turf/open/floor/pod/dark,
 /area/shuttle/transport)
 "n" = (
-/obj/machinery/door/airlock/titanium,
 /obj/docking_port/mobile{
 	dir = 8;
 	dwidth = 2;
@@ -76,6 +84,10 @@
 	width = 5
 	},
 /obj/structure/fans/tiny,
+/obj/machinery/door/airlock/centcom{
+	name = "CentCom Security";
+	req_access_txt = "101"
+	},
 /turf/open/floor/pod/light,
 /area/shuttle/transport)
 "o" = (
@@ -103,6 +115,68 @@
 /obj/structure/fans/tiny,
 /turf/open/floor/pod/light,
 /area/shuttle/transport)
+"H" = (
+/obj/machinery/porta_turret/centcom_shuttle{
+	dir = 5
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/transport)
+"K" = (
+/obj/machinery/porta_turret/centcom_shuttle{
+	dir = 10
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/transport)
+"M" = (
+/obj/structure/closet/crate/internals{
+	anchored = 1
+	},
+/obj/item/tank/internals/oxygen/yellow,
+/obj/item/tank/internals/oxygen/yellow,
+/obj/item/tank/internals/oxygen/yellow,
+/obj/item/tank/internals/oxygen/yellow,
+/obj/item/tank/internals/emergency_oxygen/double{
+	pixel_x = 3
+	},
+/obj/item/tank/internals/emergency_oxygen/double{
+	pixel_x = 3
+	},
+/obj/item/tank/internals/emergency_oxygen/double{
+	pixel_x = 3
+	},
+/obj/item/tank/internals/emergency_oxygen/double{
+	pixel_x = 3
+	},
+/obj/item/tank/internals/emergency_oxygen/double{
+	pixel_x = 3
+	},
+/obj/item/tank/internals/emergency_oxygen/double{
+	pixel_x = 3
+	},
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/item/gps,
+/obj/item/gps,
+/obj/item/gps,
+/obj/item/gps,
+/obj/item/tank/jetpack/oxygen/harness,
+/obj/item/tank/jetpack/oxygen/harness,
+/obj/item/tank/jetpack/oxygen/harness,
+/obj/item/tank/jetpack/oxygen/harness,
+/turf/open/floor/pod/light,
+/area/shuttle/transport)
+"O" = (
+/obj/machinery/porta_turret/centcom_shuttle{
+	dir = 6
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/transport)
+"U" = (
+/obj/machinery/porta_turret/centcom_shuttle{
+	dir = 9
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/transport)
 
 (1,1,1) = {"
 a
@@ -121,7 +195,7 @@ a
 (3,1,1) = {"
 a
 f
-i
+M
 o
 a
 "}
@@ -154,11 +228,11 @@ p
 b
 "}
 (8,1,1) = {"
-b
+U
 h
 i
 i
-b
+K
 "}
 (9,1,1) = {"
 d
@@ -168,11 +242,11 @@ i
 r
 "}
 (10,1,1) = {"
-b
+H
 i
 i
 q
-b
+O
 "}
 (11,1,1) = {"
 b

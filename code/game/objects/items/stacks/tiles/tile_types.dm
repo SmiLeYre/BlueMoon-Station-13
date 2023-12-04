@@ -18,8 +18,11 @@
 
 /obj/item/stack/tile/Initialize(mapload, amount)
 	. = ..()
+	if(tile_reskin_types)
+		tile_reskin_types = tile_reskin_list(tile_reskin_types)
 	pixel_x = rand(-3, 3)
 	pixel_y = rand(-3, 3) //randomize a little
+	air_update_turf(TRUE) // Почему.
 
 /obj/item/stack/tile/examine(mob/user)
 	. = ..()
@@ -75,8 +78,8 @@
 				var/sheet_type = text2path("/obj/item/stack/sheet/mineral/[mineralType]")
 				var/obj/item/stack/sheet/mineral/new_item = new sheet_type(user.loc)
 				user.visible_message("[user.name] shaped [src] into a sheet with the welding tool.", \
-							 "<span class='notice'>You shaped [src] into a sheet with the welding tool.</span>", \
-							 "<span class='italics'>You hear welding.</span>")
+							"<span class='notice'>You shaped [src] into a sheet with the welding tool.</span>", \
+							"<span class='italics'>You hear welding.</span>")
 				var/obj/item/stack/rods/R = src
 				src = null
 				var/replace = (user.get_inactive_held_item()==R)
@@ -88,12 +91,66 @@
 
 //Grass
 /obj/item/stack/tile/grass
-	name = "grass tile"
+	name = "Grass Tile"
 	singular_name = "grass floor tile"
 	desc = "A patch of grass like they use on space golf courses."
 	icon_state = "tile_grass"
 	turf_type = /turf/open/floor/grass
 	resistance_flags = FLAMMABLE
+	tile_reskin_types = list(
+	/obj/item/stack/tile/grass,
+	/obj/item/stack/tile/grass/grass0,
+	/obj/item/stack/tile/grass/grass1,
+	/obj/item/stack/tile/grass/grass2,
+	/obj/item/stack/tile/grass/grass3,
+	)
+
+/obj/item/stack/tile/grass
+	name = "Grass Tile 1"
+	singular_name = "grass floor tile"
+	desc = "A patch of grass like they use on space golf courses."
+	turf_type = /turf/open/floor/grass
+	icon_state = "tile_grass"
+
+/obj/item/stack/tile/grass/grass0
+	name = "Grass Tile 2"
+	singular_name = "grass floor tile"
+	desc = "A patch of grass like they use on space golf courses."
+	turf_type = /turf/open/floor/grass/grass0
+	icon_state = "tile_grass"
+
+/obj/item/stack/tile/grass/grass1
+	name = "Grass Tile 3"
+	singular_name = "grass floor tile"
+	desc = "A patch of grass like they use on space golf courses."
+	turf_type = /turf/open/floor/grass/grass1
+	icon_state = "tile_grass"
+
+/obj/item/stack/tile/grass/grass2
+	name = "Grass Tile 4"
+	singular_name = "grass floor tile"
+	desc = "A patch of grass like they use on space golf courses."
+	turf_type = /turf/open/floor/grass/grass2
+	icon_state = "tile_grass"
+
+/obj/item/stack/tile/grass/grass3
+	name = "Grass Tile 5"
+	singular_name = "grass floor tile"
+	desc = "A patch of grass like they use on space golf courses."
+	turf_type = /turf/open/floor/grass/grass3
+	icon_state = "tile_grass_gross"
+
+/turf/open/floor/grass/grass0
+	icon_state = "grass0"
+
+/turf/open/floor/grass/grass1
+	icon_state = "grass1"
+
+/turf/open/floor/grass/grass2
+	icon_state = "grass2"
+
+/turf/open/floor/grass/grass3
+	icon_state = "grass3"
 
 //Fairygrass
 /obj/item/stack/tile/fairygrass
@@ -180,6 +237,12 @@
 	singular_name = "diagonal wooden plank floor tile"
 	icon_state = "tile-wood_diagonal"
 	turf_type = /turf/open/floor/wood/wood_diagonal
+
+/obj/item/stack/tile/wood/wood_parquet
+	name = "parquet wooden plank floor tile"
+	singular_name = "parquet wooden plank floor tile"
+	icon_state = "tile-wood_parquet"
+	turf_type = /turf/open/floor/wood/wood_parquet
 
 //Cloth Floors
 
@@ -457,6 +520,19 @@
 
 /obj/item/stack/tile/fakepit/loaded
 	amount = 30
+
+/turf/open/floor/fakeice
+	desc = "Is it marble, polished to a mirror finish? Or just really, really grippy ice?"
+	icon = 'icons/turf/floors/ice_turf.dmi'
+	icon_state = "ice_turf-0"
+	base_icon_state = "ice_turf-0"
+
+/turf/open/floor/fakeice/slippery
+	desc = "Somehow, it is not melting under these conditions. Must be some very thick ice. Just as slippery too."
+
+/turf/open/floor/fakeice/slippery/Initialize(mapload)
+	. = ..()
+	MakeSlippery(TURF_WET_PERMAFROST, INFINITY, 0, INFINITY, TRUE)
 
 //High-traction
 /obj/item/stack/tile/noslip

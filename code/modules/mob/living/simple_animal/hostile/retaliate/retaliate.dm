@@ -1,6 +1,3 @@
-/mob/living/simple_animal/hostile/retaliate
-	var/list/enemies = list()
-
 /mob/living/simple_animal/hostile/retaliate/Found(atom/A)
 	if(isliving(A))
 		var/mob/living/L = A
@@ -20,7 +17,7 @@
 	see &= enemies // Remove all entries that aren't in enemies
 	return see
 
-/mob/living/simple_animal/hostile/retaliate/proc/Retaliate()
+/mob/living/simple_animal/hostile/proc/Retaliate()
 	var/list/around = view(src, vision_range)
 
 	for(var/atom/movable/A in around)

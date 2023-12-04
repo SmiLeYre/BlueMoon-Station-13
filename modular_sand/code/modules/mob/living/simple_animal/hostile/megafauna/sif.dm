@@ -126,7 +126,7 @@ Difficulty: Medium
 	spawn(30)
 		if(!QDELETED(src))
 			new /mob/living/simple_animal/hostile/megafauna/sif(get_turf(src.loc))
-			visible_message(span_notice("The ground shakes."))
+			visible_message("<span class='notice'>The ground shakes.</span>")
 			playsound(get_turf(src.loc), 'sound/effects/curse3.ogg', 100, 1)
 			playsound(get_turf(src.loc), 'sound/effects/meteorimpact.ogg', 100, 1)
 			qdel(src)
@@ -227,7 +227,7 @@ Difficulty: Medium
 			else
 
 	if(passed == 1)
-		visible_message(span_danger("[src] dodged the projectile!"), span_userdanger("You dodge the projectile!"))
+		visible_message("<span class='danger'>[src] dodged the projectile!</span>", "<span class='userdanger'>You dodge the projectile!</span>")
 		playsound(src, pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 300, 1)
 		return 0
 
@@ -237,7 +237,7 @@ Difficulty: Medium
 /mob/living/simple_animal/hostile/megafauna/sif/proc/angered()
 	src.angered = TRUE
 	src.stageTwo = TRUE
-	src.visible_message(span_userdanger("[src] lets out a ear ripping howl!"), span_userdanger("[src] lets out an ear ripping roar!"))
+	src.visible_message("<span class='userdanger'>[src] lets out a ear ripping howl!</span>", "<span class='userdanger'>[src] lets out an ear ripping roar!</span>")
 	playsound(src, 'modular_sand/sound/sif/howl.ogg', 100, 1)
 	var/mob/living/L = target
 	shake_camera(L, 4, 3)
@@ -251,7 +251,7 @@ Difficulty: Medium
 /mob/living/simple_animal/hostile/megafauna/sif/proc/enraged()
 	src.stageThree = TRUE
 	src.enraged = TRUE
-	src.visible_message(span_userdanger("[src] lets out a ear ripping yelp!"), span_userdanger("[src] lets out an ear ripping yelp!"))
+	src.visible_message("<span class='userdanger'>[src] lets out a ear ripping yelp!</span>", "<span class='userdanger'>[src] lets out an ear ripping yelp!</span>")
 	playsound(src, 'modular_sand/sound/sif/howl.ogg', 100, 1)
 	var/mob/living/L = target
 	shake_camera(L, 8, 6)
@@ -359,7 +359,7 @@ Difficulty: Medium
 		DestroySurroundings()
 		if(isliving(A))
 			var/mob/living/L = A
-			L.visible_message(span_danger("[src] stomps on [L]!"), span_userdanger("[src] stomps on you!"))
+			L.visible_message("<span class='danger'>[src] stomps on [L]!</span>", "<span class='userdanger'>[src] stomps on you!</span>")
 			src.forceMove(get_turf(L))
 			L.apply_damage(20, BRUTE)
 			playsound(get_turf(L), 'modular_sand/sound/sif/sif_stomp.ogg', 400, 1)

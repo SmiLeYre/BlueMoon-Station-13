@@ -48,10 +48,7 @@
 /obj/item/pet_capsule/proc/pet_capsule_triggered(atom/location_atom, is_in_hand = FALSE, mob/user = null)
 	//If pet has not been chosen yet
 	if (!pet_picked && is_in_hand && user != null)
-
-
-		new_name = input(user, "New name :", "Rename your pet(Once per shift!)")
-
+		new_name = input(user, "Новое Имя:", "Переименуйте своего питомца (Один раз за смену!)")
 		var/selected_icon = show_radial_menu(loc, loc , pet_icons,  radius = 42, require_near = TRUE)
 		switch(selected_icon)
 			if("Femclaw")
@@ -120,4 +117,3 @@
 /obj/item/pet_capsule/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	.=..()
 	pet_capsule_triggered(hit_atom)
-

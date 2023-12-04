@@ -650,7 +650,6 @@
 /datum/sprite_accessory/hair/over_eye_fr
 	name = "Over Eye (fract)"
 	icon_state = "hair_shortovereye_1f"
-	ckeys_allowed = list("fractious")
 
 /datum/sprite_accessory/hair/parted
 	name = "Parted"

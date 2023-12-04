@@ -53,7 +53,7 @@
 			to_chat(user, "<span class='notice'>Medical sprays won't work on a biomechanical limb!</span>")
 
 	if(L == user)
-		L.visible_message("<span class='notice'>[user] attempts to [apply_method] [src] on [user.p_them()]self.</span>")
+		L.visible_message("<span class='notice'>[user] attempts to [apply_method] [src] on себя.</span>")
 		if(self_delay)
 			if(!do_mob(user, L, self_delay))
 				return
@@ -99,7 +99,16 @@
 	name = "medical spray (synthflesh)"
 	desc = "A medical spray bottle, designed for precision application, with an unscrewable cap. This one contains synthflesh, an apex brute and burn healing agent."
 	icon_state = "synthspray"
-	list_reagents = list(/datum/reagent/medicine/synthflesh = 60)
+	list_reagents = list(/datum/reagent/medicine/synthflesh = 120)
+
+/obj/item/hypospray/mkii/CMO/combat/synthflesh
+	name = "Combat Hypospray with Synthflesh"
+	icon = 'icons/obj/syringe.dmi'
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	item_state = "holy_hypo"
+	icon_state = "holy_hypo"
+	start_vial = /obj/item/reagent_containers/glass/bottle/vial/large/synthflesh
 
 /obj/item/reagent_containers/medspray/sterilizine
 	name = "sterilizer spray"

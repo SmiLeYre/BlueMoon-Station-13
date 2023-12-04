@@ -77,7 +77,7 @@
 					M.mind.AddSpell(new T)
 				else
 					M.AddSpell(new T)
-					message_admins(span_danger("Spells given to mindless mobs will not be transferred in mindswap or cloning!"))
+					message_admins("<span class='danger'>Spells given to mindless mobs will not be transferred in mindswap or cloning!</span>")
 
 /client/proc/teach_martial_art(mob/living/carbon/C)
 	if (!istype(C))
@@ -99,7 +99,7 @@
 		var/datum/martial_art/MA = new chosenart
 		MA.teach(C)
 		log_admin("[key_name(usr)] has taught [MA] to [key_name(C)].")
-		message_admins(span_notice("[key_name_admin(usr)] has taught [MA] to [key_name_admin(C)]."))
+		message_admins("<span class='notice'>[key_name_admin(usr)] has taught [MA] to [key_name_admin(C)].</span>")
 
 /client/proc/set_species(mob/living/carbon/human/H)
 	if (istype(H))

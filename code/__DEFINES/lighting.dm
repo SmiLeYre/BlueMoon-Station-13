@@ -101,3 +101,102 @@ do { \
 		source.lum_b = 1; \
 	}; \
 } while (FALSE)
+
+//Defines for atom layers and planes
+//KEEP THESE IN A NICE ACSCENDING ORDER, PLEASE
+
+//NEVER HAVE ANYTHING BELOW THIS PLANE ADJUST IF YOU NEED MORE SPACE
+#define LOWEST_EVER_PLANE -100
+
+#define RENDER_PLANE_TRANSPARENT -9 //Transparent plane that shows openspace underneath the floor
+
+#define GAME_PLANE_FOV_HIDDEN -7
+#define GAME_PLANE_UPPER -6
+#define WALL_PLANE_UPPER -5
+#define GAME_PLANE_UPPER_FOV_HIDDEN -4
+
+#define SEETHROUGH_PLANE -3
+#define ABOVE_GAME_PLANE -2
+
+#define AREA_PLANE 2
+#define MASSIVE_OBJ_PLANE 3
+#define GHOST_PLANE 4
+#define POINT_PLANE 5
+
+///---------------- MISC -----------------------
+
+///Pipecrawling images
+#define PIPECRAWL_IMAGES_PLANE 20
+
+///Anything that wants to be part of the game plane, but also wants to draw above literally everything else
+#define HIGH_GAME_PLANE 22
+
+///--------------- FULLSCREEN RUNECHAT BUBBLES ------------
+
+///Popup Chat Messages
+#define RUNECHAT_PLANE 30
+
+//-------------------- HUD ---------------------
+//HUD layer defines
+#define HUD_BACKGROUND_LAYER 1
+#define HUD_BUTTON_BG_LAYER 2
+#define HUD_BUTTON_HIGH_BG_LAYER 3
+#define HUD_ABOVE_BG_LAYER 4
+
+//#define TURF_LAYER 2 //For easy recordkeeping; this is a byond define. Most floors (FLOOR_PLANE) and walls (GAME_PLANE) use this.
+
+// GAME_PLANE layers
+#define CULT_OVERLAY_LAYER 2.01
+#define WIRE_BRIDGE_LAYER 2.44
+#define PLUMBING_PIPE_VISIBILE_LAYER 2.495//layer = initial(layer) + ducting_layer / 3333 in atmospherics/handle_layer() to determine order of duct overlap
+#define HIGH_PIPE_LAYER 2.54
+// Anything aboe this layer is not "on" a turf for the purposes of washing
+// I hate this life of ours
+#define FLOOR_CLEAN_LAYER 2.55
+
+#define CORGI_ASS_PIN_LAYER 3.41
+
+// GAME_PLANE_FOV_HIDDEN layers
+#define LOW_MOB_LAYER 3.75
+#define VEHICLE_LAYER 3.9
+#define MOB_BELOW_PIGGYBACK_LAYER 3.94
+//#define MOB_LAYER 4 //For easy recordkeeping; this is a byond define
+#define MOB_SHIELD_LAYER 4.01
+#define MOB_ABOVE_PIGGYBACK_LAYER 4.06
+#define HITSCAN_PROJECTILE_LAYER 4.09 //above all mob but still hidden by FoV
+
+#define RAD_TEXT_PLANE 90
+
+//---------- LIGHTING -------------
+
+#define LIGHTING_PRIMARY_LAYER 15	//The layer for the main lights of the station
+#define LIGHTING_PRIMARY_DIMMER_LAYER 15.1	//The layer that dims the main lights of the station
+#define LIGHTING_SECONDARY_LAYER 16	//The colourful, usually small lights that go on top
+
+///--------------- SOUND EFFECT VISUALS ------------
+
+/// Bubble for typing indicators
+#define TYPING_LAYER 1
+#define RADIAL_BACKGROUND_LAYER 0
+///1000 is an unimportant number, it's just to normalize copied layers
+#define RADIAL_CONTENT_LAYER 1000
+
+#define ADMIN_POPUP_LAYER 1
+
+///Layer for tooltips
+#define TOOLTIP_LAYER 4
+
+///cinematics are "below" the splash screen
+#define CINEMATIC_LAYER -1
+
+///Plane master controller keys
+#define PLANE_MASTERS_GAME "plane_masters_game"
+#define PLANE_MASTERS_COLORBLIND "plane_masters_colorblind"
+
+#define PLANE_CRITICAL_FUCKO_PARALLAX (PLANE_CRITICAL_DISPLAY|PLANE_CRITICAL_NO_EMPTY_RELAY)
+
+/// We expect at most 11 layers of multiz
+/// Increment this define if you make a huge map. We unit test for it too just to make it easy for you
+/// If you modify this, you'll need to modify the tsx file too
+#define MAX_EXPECTED_Z_DEPTH 11
+

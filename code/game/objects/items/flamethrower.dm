@@ -14,6 +14,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron=500)
 	resistance_flags = FIRE_PROOF
+	var/fire_sound = null						//What sound should play when this ammo is fired
 	var/status = FALSE
 	var/lit = FALSE	//on or off
 	var/operating = FALSE//cooldown
@@ -75,6 +76,7 @@
 		var/turf/target_turf = get_turf(target)
 		if(target_turf)
 			var/turflist = getline(user, target_turf)
+			playsound(user, fire_sound, 50, 1)
 			log_combat(user, target, "flamethrowered", src)
 			flame_turf(turflist)
 

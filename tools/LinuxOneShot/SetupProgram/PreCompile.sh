@@ -15,7 +15,7 @@ cd "$original_dir"
 #find out what we have (+e is important for this)
 set +e
 has_git="$(command -v git)"
-has_cargo="$(command -v ~/.cargo/bin/cargo)"
+has_cargo="$(command -v cargo)"
 has_sudo="$(command -v sudo)"
 has_grep="$(command -v grep)"
 DATABASE_EXISTS="$(mysqlshow --host mariadb --port 3306 --user=root --password=$MYSQL_ROOT_PASSWORD ss13_db| grep -v Wildcard | grep -o ss13_db)"
@@ -26,6 +26,7 @@ if ! [ -x "$has_cargo" ]; then
 	echo "Installing rust..."
 	curl https://sh.rustup.rs -sSf | sh -s -- -y --default-host i686-unknown-linux-gnu
 	. ~/.profile
+	export PATH="/usr/local/.cargo/bin:$PATH"
 fi
 
 # apt packages, libssl needed by rust-g but not included in TGS barebones install
@@ -58,7 +59,7 @@ fi
 echo "Deploying rust-g..."
 cd rust-g
 git checkout "$RUST_G_VERSION"
-env PKG_CONFIG_ALLOW_CROSS=1 ~/.cargo/bin/cargo build --release --target=i686-unknown-linux-gnu
+env PKG_CONFIG_ALLOW_CROSS=1 cargo build --release --target=i686-unknown-linux-gnu
 mv target/i686-unknown-linux-gnu/release/librust_g.so "$1/librust_g.so"
 cd ..
 

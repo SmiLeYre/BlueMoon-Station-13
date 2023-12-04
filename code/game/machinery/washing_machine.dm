@@ -127,7 +127,8 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		DYE_CMO = /obj/item/bedsheet/cmo/double,
 		DYE_COSMIC = /obj/item/bedsheet/cosmos/double,
 		DYE_SYNDICATE = /obj/item/bedsheet/syndie/double,
-		DYE_CENTCOM = /obj/item/bedsheet/centcom/double
+		DYE_CENTCOM = /obj/item/bedsheet/centcom/double,
+		DYE_VULPS = /obj/item/bedsheet/vulps/double
 	)
 ))
 

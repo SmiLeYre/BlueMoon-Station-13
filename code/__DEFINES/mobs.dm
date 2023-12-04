@@ -50,6 +50,11 @@
 /// Mobs that otherwise support nanites
 #define MOB_NANITES		(1 << 10)
 
+/// Helper to figure out if an organ is organic
+#define IS_ORGANIC_ORGAN(organ) (organ.organ_flags & ORGAN_ORGANIC)
+/// Helper to figure out if an organ is robotic
+#define IS_ROBOTIC_ORGAN(organ) (organ.organ_flags & ORGAN_ROBOTIC)
+
 // Organ defines for carbon mobs
 #define ORGAN_ORGANIC   1
 #define ORGAN_ROBOTIC   2
@@ -58,10 +63,10 @@
 #define BODYPART_ROBOTIC   2
 #define BODYPART_HYBRID    3
 #define BODYPART_NANITES   4
-
+// BLUEMOON CHANGES START - повышен порог урона и максимального ремонтируемого урона, 10 до 15
 #define HYBRID_BODYPART_DAMAGE_THRESHHOLD 25 //How much damage has to be suffered until the damage threshhold counts as passed
-#define HYBRID_BODYPART_THESHHOLD_MINDAMAGE 10 //Which damage value this limb cannot be healed out of via easy nonsurgical means if the threshhold has been passed, state resets if damage value goes below mindamage.
-
+#define HYBRID_BODYPART_THESHHOLD_MINDAMAGE 15 //Which damage value this limb cannot be healed out of via easy nonsurgical means if the threshhold has been passed, state resets if damage value goes below mindamage.
+// BLUEMOON CHANGES END
 #define BODYPART_NOT_DISABLED 0
 #define BODYPART_DISABLED_DAMAGE 1
 #define BODYPART_DISABLED_PARALYSIS 2
@@ -307,8 +312,8 @@
 #define	HUNGER_FACTOR			 0.06	// factor at which mob nutrition decreases
 #define THIRST_FACTOR			 0.06	// factor at which mob thirst increases
 #define	ETHEREAL_CHARGE_FACTOR	 0.06	// factor at which ethereal's charge decreases
-#define	REAGENTS_METABOLISM		 0.4	// How many units of reagent are consumed per tick, by default.
-#define REAGENTS_EFFECT_MULTIPLIER (REAGENTS_METABOLISM / 0.4)	// By defining the effect multiplier this way, it'll exactly adjust all effects according to how they originally were with the 0.4 metabolism
+#define	REAGENTS_METABOLISM		 0.2	// How many units of reagent are consumed per tick, by default.
+#define REM (REAGENTS_METABOLISM / 0.4)	// By defining the effect multiplier this way, it'll exactly adjust all effects according to how they originally were with the 0.4 metabolism
 
 // Roundstart trait system
 
@@ -335,11 +340,6 @@
 #define SLEEP_CHECK_DEATH(X) sleep(X); if(QDELETED(src) || stat == DEAD) return;
 #define INTERACTING_WITH(X, Y) (Y in X.do_afters)
 
-// / Field of vision defines.
-#define FOV_90_DEGREES	90
-#define FOV_180_DEGREES	180
-#define FOV_270_DEGREES	270
-
 // / How far away you can be to make eye contact with someone while examining
 #define EYE_CONTACT_RANGE	5
 
@@ -347,6 +347,12 @@
 #define EXAMINE_MORE_TIME	1 SECONDS
 
 #define SILENCE_RANGED_MESSAGE	(1<<0)
+
+// Body position defines.
+/// Mob is standing up, usually associated with lying_angle value of 0.
+#define STANDING_UP 0
+/// Mob is lying down, usually associated with lying_angle values of 90 or 270.
+#define LYING_DOWN 1
 
 ///Define for spawning megafauna instead of a mob for cave gen
 #define SPAWN_MEGAFAUNA "bluh bluh huge boss"
@@ -356,27 +362,30 @@
  * with status displays via emotes.
  */
 
-#define AI_EMOTION_VERY_HAPPY "Very Happy"
-#define AI_EMOTION_HAPPY "Happy"
-#define AI_EMOTION_NEUTRAL "Neutral"
-#define AI_EMOTION_UNSURE "Unsure"
-#define AI_EMOTION_CONFUSED "Confused"
-#define AI_EMOTION_SAD "Sad"
-#define AI_EMOTION_BSOD "BSOD"
-#define AI_EMOTION_BLANK "Blank"
-#define AI_EMOTION_PROBLEMS "Problems?"
-#define AI_EMOTION_AWESOME "Awesome"
-#define AI_EMOTION_FACEPALM "Facepalm"
-#define AI_EMOTION_THINKING "Thinking"
-#define AI_EMOTION_FRIEND_COMPUTER "Friend Computer"
-#define AI_EMOTION_DORFY "Dorfy"
-#define AI_EMOTION_BLUE_GLOW "Blue Glow"
-#define AI_EMOTION_RED_GLOW "Red Glow"
+#define AI_EMOTION_VERY_HAPPY 				"Very Happy"
+#define AI_EMOTION_HAPPY 					"Happy"
+#define AI_EMOTION_NEUTRAL 					"Neutral"
+#define AI_EMOTION_UNSURE					"Unsure"
+#define AI_EMOTION_CONFUSED 				"Confused"
+#define AI_EMOTION_SAD 						"Sad"
+#define AI_EMOTION_BSOD 					"BSOD"
+#define AI_EMOTION_BLANK 					"Blank"
+#define AI_EMOTION_PROBLEMS 				"Problems?"
+#define AI_EMOTION_AWESOME 					"Awesome"
+#define AI_EMOTION_FACEPALM 				"Facepalm"
+#define AI_EMOTION_THINKING 				"Thinking"
+#define AI_EMOTION_FRIEND_COMPUTER 			"Friend Computer"
+#define AI_EMOTION_DORFY 					"Dorfy"
+#define AI_EMOTION_BLUE_GLOW 				"Blue Glow"
+#define AI_EMOTION_RED_GLOW 				"Red Glow"
+#define AI_EMOTION_TRIBUNAL 				"Tribunal"
+#define AI_EMOTION_TRIBUNAL_MALF 			"Trubinal Malf"
 
 // / Breathing types. Lungs can access either by these or by a string, which will be considered a gas ID.
 #define BREATH_OXY		/datum/breathing_class/oxygen
 #define BREATH_PLASMA	/datum/breathing_class/plasma
 #define BREATH_METHANE	/datum/breathing_class/methane
+#define BREATH_NITROGEN	/datum/breathing_class/nitrogen
 
 //Gremlins
 #define NPC_TAMPER_ACT_FORGET 1 //Don't try to tamper with this again
@@ -387,3 +396,11 @@
 #define CURRENT_LIVING_ANTAGS	"living_antags_list"
 #define CURRENT_DEAD_PLAYERS	"dead_players_list"
 #define CURRENT_OBSERVERS		"current_observers_list"
+
+#define STATUS_UPDATE_HEALTH 1
+#define STATUS_UPDATE_STAT 2
+#define STATUS_UPDATE_STAMINA 8
+#define STATUS_UPDATE_BLIND 16
+#define STATUS_UPDATE_NEARSIGHTED 64
+#define STATUS_UPDATE_NONE 0
+#define STATUS_UPDATE_ALL (~0)

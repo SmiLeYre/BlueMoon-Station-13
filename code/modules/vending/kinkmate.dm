@@ -2,7 +2,7 @@
 	name = "KinkMate"
 	desc = "A vending machine for all your unmentionable desires."
 	icon_state = "kink"
-	product_slogans = "Kinky!;Sexy!;Check me out, big boy!"
+	product_slogans = "Извращённый, хи-хи!;Сексуальный, мр!;Осмотри мой Внутренний Мир, большой мальчик!;Загляни в мою душу, милый!;Отругай меня!;Ах, какой брутал!;У тебя есть меч?;Я привяжу тебя к кровати!"
 	vend_reply = "Have fun, you shameless pervert!"
 	products = list(
 				/obj/item/genital_equipment/condom = 10,
@@ -19,6 +19,7 @@
 				/obj/item/restraints/handcuffs/fake/kinky = 5,
 				/obj/item/clothing/glasses/sunglasses/blindfold = 4,
 				/obj/item/clothing/mask/muzzle = 4,
+				/obj/item/clothing/mask/gas/sechailer/slut = 4,
 				/obj/item/clothing/shoes/highheels = 3,
 				/obj/item/clothing/under/misc/stripper = 3,
 				/obj/item/clothing/under/misc/stripper/green = 3,
@@ -27,8 +28,12 @@
 				//redundent /obj/item/clothing/under/latex = 3,
 				/obj/item/clothing/under/misc/gear_harness = 10,
 				/obj/item/dildo/custom = 5,
+				/obj/item/buttplug/small = 5,
+				/obj/item/buttplug/med = 5,
+				/obj/item/buttplug/big = 5,
 				/obj/item/electropack/shockcollar = 3,
 				/obj/item/assembly/signaler = 3,
+				/obj/item/assembly/timer = 3,
 				/obj/item/clothing/under/shorts/polychromic/pantsu = 3,
 				/obj/item/clothing/under/misc/poly_bottomless = 3,
 				/obj/item/clothing/under/misc/poly_tanktop = 3,
@@ -56,7 +61,8 @@
 	premium = list(
 				/obj/item/clothing/accessory/skullcodpiece/fake = 3,
 				/obj/item/reagent_containers/glass/bottle/hexacrocin = 10,
-				/obj/item/clothing/under/pants/chaps = 5
+				/obj/item/clothing/under/pants/chaps = 5,
+				/obj/item/melee/sizetool = 2
 				)
 	refill_canister = /obj/item/vending_refill/kink
 	default_price = PRICE_CHEAP

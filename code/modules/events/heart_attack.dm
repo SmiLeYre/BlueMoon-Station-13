@@ -1,11 +1,10 @@
 /datum/round_event_control/heart_attack
 	name = "Random Heart Attack"
 	typepath = /datum/round_event/heart_attack
-	weight = 10
-	max_occurrences = 2
-	min_players = 10 // To avoid shafting lowpop
+	weight = 50
+	max_occurrences = 5
+	min_players = 35 // To avoid shafting lowpop
 	category = EVENT_CATEGORY_HEALTH
-	description = "A random crewmember's heart gives out."
 
 /datum/round_event_control/heart_attack/canSpawnEvent(var/players_amt, var/gamemode)
 	if(!..()) return FALSE

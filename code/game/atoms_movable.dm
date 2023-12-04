@@ -32,6 +32,15 @@
 	var/generic_canpass = TRUE
 	var/moving_diagonally = 0 //0: not doing a diagonal move. 1 and 2: doing the first/second step of the diagonal move
 	var/atom/movable/moving_from_pull		//attempt to resume grab after moving instead of before.
+	///Holds information about any movement loops currently running/waiting to run on the movable. Lazy, will be null if nothing's going on
+	var/datum/movement_packet/move_packet
+	///contains every client mob corresponding to every client eye in this container. lazily updated by SSparallax and is sparse:
+	///only the last container of a client eye has this list assuming no movement since SSparallax's last fire
+	var/list/client_mobs_in_contents
+	/// String representing the spatial grid groups we want to be held in.
+	/// acts as a key to the list of spatial grid contents types we exist in via SSspatial_grid.spatial_grid_categories.
+	/// We do it like this to prevent people trying to mutate them and to save memory on holding the lists ourselves
+	var/spatial_grid_key
 	var/list/acted_explosions	//for explosion dodging
 	var/datum/forced_movement/force_moving = null	//handled soley by forced_movement.dm
 
@@ -77,6 +86,7 @@
 
 /atom/movable/Initialize(mapload)
 	. = ..()
+	RegisterSignal(src, COMSIG_MOVABLE_BARK, .proc/handle_special_bark) //There must be a better way to do this
 	switch(blocks_emissive)
 		if(EMISSIVE_BLOCK_GENERIC)
 			var/mutable_appearance/gen_emissive_blocker = mutable_appearance(icon, icon_state, plane = EMISSIVE_PLANE, alpha = src.alpha)
@@ -144,12 +154,6 @@
 			em_block = new(src, render_target)
 		return em_block
 
-/atom/movable/update_overlays()
-	. = ..()
-	var/emissive_block = update_emissive_block()
-	if(emissive_block)
-		. += emissive_block
-
 /atom/movable/proc/can_zFall(turf/source, levels = 1, turf/target, direction)
 	if(!direction)
 		direction = DOWN
@@ -162,6 +166,14 @@
 		if(!target)
 			return FALSE
 	return !(movement_type & FLYING) && has_gravity(source) && !throwing
+
+/atom/movable/update_overlays()
+	var/list/overlays = ..()
+	var/emissive_block = update_emissive_block()
+	if(emissive_block)
+		// Emissive block should always go at the beginning of the list
+		overlays.Insert(1, emissive_block)
+	return overlays
 
 /atom/movable/proc/onZImpact(turf/T, levels)
 	var/atom/highest = T
@@ -305,6 +317,35 @@
 	if(pulling.anchored || pulling.move_resist > move_force || !pulling.Adjacent(src))
 		stop_pulling()
 		return FALSE
+	// BLUEMOON ADDITION AHEAD - проверка на возможность тащить мышкой сверхтяжёлого персонажа
+	if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY_SUPER))
+		var/can_pull = FALSE
+		if(isalien(src)) // чужие (с абилками) могут тащить
+			can_pull = TRUE
+		if(issilicon(src)) // киборги могут тащить
+			can_pull = TRUE
+		if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER)) // другие сверхтяжёлые персонажи могут тащить
+			can_pull = TRUE
+		if(ishuman(src))
+			var/mob/living/carbon/human/user = src
+			if(user.dna.check_mutation(HULK)) // халки могут тащить
+				can_pull = TRUE
+			for(var/datum/antagonist/antagonist_role in user.mind?.antag_datums) // некоторые антагонисты могут тащить
+				if(antagonist_role.type in list(/datum/antagonist/heretic, /datum/antagonist/abductor/agent, /datum/antagonist/abductor/scientist))
+					can_pull = TRUE
+					break
+			if(istype(user.back, /obj/item/mod/control)) // обычные персонажи с активированными клешнями из МОДа на спине могут тащить
+				var/obj/item/mod/control/MOD = user.back
+				if(MOD.active && istype(MOD.selected_module, /obj/item/mod/module/clamp))
+					can_pull = TRUE
+			var/item_in_hand = user.get_active_held_item()
+			if(istype(item_in_hand, /obj/item/gun/magic/contractor_hook)) // персонажи с некоторыми предметами в активной руке могут тащить
+				can_pull = TRUE
+		if(!can_pull)
+			to_chat(src, span_warning("[pulling] is too heavy, you cannot move them around!"))
+			stop_pulling()
+			return
+	// BLUEMOON ADDITION END
 	if(isliving(pulling))
 		var/mob/living/L = pulling
 		if(L.buckled && L.buckled.buckle_prevents_pull) //if they're buckled to something that disallows pulling, prevent it
@@ -347,20 +388,45 @@
 		if(pulling.anchored || pulling.move_resist > move_force)
 			stop_pulling()
 			return
+		// BLUEMOON ADDITION AHEAD - Проверка на возможность ТЯНУТЬ сверхтяжёлого персонажа
+		if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY_SUPER))
+			var/can_pull = FALSE
+			if(isalien(src)) // чужие (с абилками) могут тащить
+				can_pull = TRUE
+			if(issilicon(src)) // киборги могут тащить
+				can_pull = TRUE
+			if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER)) // другие сверхтяжёлые персонажи могут тащить
+				can_pull = TRUE
+			if(ishuman(src))
+				var/mob/living/carbon/human/user = src
+				if(user.dna.check_mutation(HULK)) // халки могут тащить
+					can_pull = TRUE
+				for(var/datum/antagonist/antagonist_role in user.mind?.antag_datums) // некоторые антагонисты могут тащить
+					if(antagonist_role.type in list(/datum/antagonist/heretic, /datum/antagonist/abductor/agent, /datum/antagonist/abductor/scientist))
+						can_pull = TRUE
+						break
+				if(istype(user.back, /obj/item/mod/control)) // обычные персонажи с активированными клешнями из МОДа на спине могут тащить
+					var/obj/item/mod/control/MOD = user.back
+					if(MOD.active && istype(MOD.selected_module, /obj/item/mod/module/clamp))
+						can_pull = TRUE
+				var/item_in_hand = user.get_active_held_item()
+				if(istype(item_in_hand, /obj/item/gun/magic/contractor_hook)) // персонажи с некоторыми предметами в активной руке могут тащить
+					can_pull = TRUE
+			if(!can_pull)
+				to_chat(src, span_warning("[pulling] is too heavy, you cannot move them around!"))
+				stop_pulling()
+				return
+		// BLUEMOON ADDITION END
 	if(pulledby && moving_diagonally != FIRST_DIAG_STEP && get_dist(src, pulledby) > 1)		//separated from our puller and not in the middle of a diagonal move.
 		pulledby.stop_pulling()
 
-/atom/movable/proc/set_glide_size(target = 8, recursive = TRUE)
+/atom/movable/proc/set_glide_size(target = 8)
 #ifdef SMOOTH_MOVEMENT
-	// SEND_SIGNAL(src, COMSIG_MOVABLE_UPDATE_GLIDE_SIZE, target)
+	SEND_SIGNAL(src, COMSIG_MOVABLE_UPDATE_GLIDE_SIZE, target)
 	glide_size = target
 
-	for(var/m in buckled_mobs)
-		var/mob/buckled_mob = m
+	for(var/mob/buckled_mob as anything in buckled_mobs)
 		buckled_mob.set_glide_size(target)
-
-	if(recursive)
-		recursive_pulled_glidesize_update()
 #else
 	return
 #endif
@@ -616,6 +682,13 @@
 /obj/item/proc/set_painting_tool_color(chosen_color)
 	SEND_SIGNAL(src, COMSIG_PAINTING_TOOL_SET_COLOR, chosen_color)
 
+/**
+ * Returns null if this object cannot be used to interact with physical writing mediums such as paper.
+ * Returns a list of key attributes for this object interacting with paper otherwise.
+ */
+/obj/item/proc/get_writing_implement_details()
+	return null
+
 /atom/movable/vv_get_dropdown()
 	. = ..()
 	. += "<option value='?_src_=holder;[HrefToken()];adminplayerobservefollow=[REF(src)]'>Follow</option>"
@@ -817,3 +890,49 @@
 	animate(I, alpha = 175, pixel_x = to_x, pixel_y = to_y, time = 3, transform = M, easing = CUBIC_EASING)
 	sleep(1)
 	animate(I, alpha = 0, transform = matrix(), time = 1, flags = ANIMATION_PARALLEL)
+
+/**
+ * Called when a movable changes z-levels.
+ *
+ * Arguments:
+ * * old_turf - The previous turf they were on before.
+ * * new_turf - The turf they have now entered.
+ * * same_z_layer - If their old and new z levels are on the same level of plane offsets or not
+ * * notify_contents - Whether or not to notify the movable's contents that their z-level has changed. NOTE, IF YOU SET THIS, YOU NEED TO MANUALLY SET PLANE OF THE CONTENTS LATER
+ */
+/atom/movable/proc/on_changed_z_level(turf/old_turf, turf/new_turf, same_z_layer, notify_contents = TRUE)
+	SHOULD_CALL_PARENT(TRUE)
+	SEND_SIGNAL(src, COMSIG_MOVABLE_Z_CHANGED, old_turf, new_turf, same_z_layer)
+
+	// If our turfs are on different z "layers", recalc our planes
+	if(!same_z_layer && !QDELETED(src))
+		SET_PLANE(src, PLANE_TO_TRUE(src.plane), new_turf)
+		// a TON of overlays use planes, and thus require offsets
+		// so we do this. sucks to suck
+		update_appearance()
+
+		if(update_on_z)
+			// I so much wish this could be somewhere else. alas, no.
+			for(var/image/update in update_on_z)
+				SET_PLANE(update, PLANE_TO_TRUE(update.plane), new_turf)
+		if(update_overlays_on_z)
+			// This EVEN more so
+			cut_overlay(update_overlays_on_z)
+			// This even more so
+			for(var/mutable_appearance/update in update_overlays_on_z)
+				SET_PLANE(update, PLANE_TO_TRUE(update.plane), new_turf)
+			add_overlay(update_overlays_on_z)
+
+	if(!notify_contents)
+		return
+
+	for (var/atom/movable/content as anything in src) // Notify contents of Z-transition.
+		content.on_changed_z_level(old_turf, new_turf, same_z_layer)
+
+/**
+* A wrapper for setDir that should only be able to fail by living mobs.
+*
+* Called from [/atom/movable/proc/keyLoop], this exists to be overwritten by living mobs with a check to see if we're actually alive enough to change directions
+*/
+/atom/movable/proc/keybind_face_direction(direction)
+	setDir(direction)

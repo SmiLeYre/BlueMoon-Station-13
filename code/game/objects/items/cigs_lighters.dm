@@ -108,6 +108,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	w_class = WEIGHT_CLASS_TINY
 	body_parts_covered = null
 	grind_results = list()
+	slot_flags = ITEM_SLOT_MASK | ITEM_SLOT_EARS
 	var/lit = FALSE
 	var/starts_lit = FALSE
 	var/icon_on = "cigon"  //Note - these are in masks.dmi not in cigarette.dmi
@@ -120,7 +121,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	heat = 1000
 
 /obj/item/clothing/mask/cigarette/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is huffing [src] as quickly as [user.p_they()] can! It looks like [user.p_theyre()] trying to give [user.p_them()]self cancer.</span>")
+	user.visible_message("<span class='suicide'>[user] is huffing [src] as quickly as [user.ru_who()] can! It looks like [user.ru_who()] trying to give себя cancer.</span>")
 	return (TOXLOSS|OXYLOSS)
 
 /obj/item/clothing/mask/cigarette/Initialize(mapload)
@@ -256,7 +257,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		if(M == user)
 			cig.attackby(src, user)
 		else
-			cig.light("<span class='notice'>[user] holds the [name] out for [M], and lights [M.p_their()] [cig.name].</span>")
+			cig.light("<span class='notice'>[user] holds the [name] out for [M], and lights [M.ru_ego()] [cig.name].</span>")
 	else
 		return ..()
 
@@ -359,7 +360,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 // CIGARS //
 ////////////
 /obj/item/clothing/mask/cigarette/cigar
-	name = "premium cigar"
+	name = "Premium Cigar"
 	desc = "A brown roll of tobacco and... well, you're not quite sure. This thing's huge!"
 	icon_state = "cigaroff"
 	icon_on = "cigaron"
@@ -371,7 +372,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	chem_volume = 40
 
 /obj/item/clothing/mask/cigarette/cigar/cohiba
-	name = "\improper Cohiba Robusto cigar"
+	name = "\improper Cohiba Robusto Cigar"
 	desc = "There's little more you could want from a cigar."
 	icon_state = "cigar2off"
 	icon_on = "cigar2on"
@@ -381,7 +382,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 
 /obj/item/clothing/mask/cigarette/cigar/havana
-	name = "premium Havanian cigar"
+	name = "Premium Havanian Cigar"
 	desc = "A cigar fit for only the best of the best."
 	icon_state = "cigar2off"
 	icon_on = "cigar2on"
@@ -509,7 +510,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 //ZIPPO//
 /////////
 /obj/item/lighter
-	name = "\improper Zippo lighter"
+	name = "\improper Zippo Lighter"
 	desc = "The zippo."
 	icon = 'icons/obj/cigarettes.dmi'
 	icon_state = "zippo"
@@ -520,6 +521,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/lit = 0
 	var/fancy = TRUE
 	var/overlay_state
+	var/apply_damage
 	var/overlay_list = list(
 		"plain",
 		"dame",
@@ -543,11 +545,11 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/lighter/suicide_act(mob/living/carbon/user)
 	if (lit)
-		user.visible_message("<span class='suicide'>[user] begins holding \the [src]'s flame up to [user.p_their()] face! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		user.visible_message("<span class='suicide'>[user] begins holding \the [src]'s flame up to [user.ru_ego()] face! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 		playsound(src, 'sound/items/welder.ogg', 50, 1)
 		return FIRELOSS
 	else
-		user.visible_message("<span class='suicide'>[user] begins whacking [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		user.visible_message("<span class='suicide'>[user] begins whacking themself with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 		return BRUTELOSS
 
 /obj/item/lighter/update_icon_state()
@@ -560,7 +562,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/lighter/ignition_effect(atom/A, mob/user)
 	if(get_temperature())
-		. = "<span class='rose'>With a single flick of [user.p_their()] wrist, [user] smoothly lights [A] with [src]. Damn [user.p_theyre()] cool.</span>"
+		. = "<span class='rose'>Одним плавным движением [user] поджигает [A]. Блин, а ты крутой!</span>"
 
 /obj/item/lighter/proc/set_lit(new_lit)
 	lit = new_lit
@@ -580,11 +582,13 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	update_icon()
 
 /obj/item/lighter/attack_self(mob/living/user)
+	user.DelayNextAction(CLICK_CD_MELEE)
 	if(user.is_holding(src))
 		if(!lit)
 			set_lit(TRUE)
 			if(fancy)
-				user.visible_message("Without even breaking stride, [user] flips open and lights [src] in one smooth movement.", "<span class='notice'>Without even breaking stride, you flip open and light [src] in one smooth movement.</span>")
+				user.visible_message("Одним плавным движением <b>[user]</b> открывает и зажигает '[src]'!", "<span class='notice'><b>Вы одним плавным движением открываете и зажигаете '[src]'!</b>.</span>")
+				playsound(src, 'sound/weapons/zippolight.ogg', 40, TRUE)
 			else
 				var/prot = FALSE
 				var/mob/living/carbon/human/H = user
@@ -596,20 +600,23 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 				else
 					prot = TRUE
 
-				if(prot || prob(75))
-					user.visible_message("After a few attempts, [user] manages to light [src].", "<span class='notice'>After a few attempts, you manage to light [src].</span>")
+				if(prob(75) && prot)
+					user.visible_message("Спустя несколько утруждающих попыток <b>[user]</b> наконец-то зажигает '[src]'.", "<span class='notice'><b>Спустя несколько попыток ты наконец-то зажигаешь '[src]'!</b></span>")
+					playsound(src, pick('sound/weapons/lighter1.ogg', 'sound/weapons/lighter2.ogg', 'sound/weapons/lighter3.ogg'), 75, 1)
 				else
 					var/hitzone = user.held_index_to_dir(user.active_hand_index) == "r" ? BODY_ZONE_PRECISE_R_HAND : BODY_ZONE_PRECISE_L_HAND
 					user.apply_damage(5, BURN, hitzone)
-					user.visible_message("<span class='warning'>After a few attempts, [user] manages to light [src] - however, [user.p_they()] burn [user.p_their()] finger in the process.</span>", "<span class='warning'>You burn yourself while lighting the lighter!</span>")
+					user.visible_message("<span class='warning'>После нескольких попыток <b>[user]</b> удается зажечь '[src]', ценой чего становятся обожжённые пальцы!</span>", "<span class='warning'><b>Вы обжигаетесь об зажигалку!</b></span>")
 					SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "burnt_thumb", /datum/mood_event/burnt_thumb)
+					playsound(src, pick('sound/weapons/lighter1.ogg', 'sound/weapons/lighter2.ogg', 'sound/weapons/lighter3.ogg'), 75, 1)
 
 		else
 			set_lit(FALSE)
 			if(fancy)
-				user.visible_message("You hear a quiet click, as [user] shuts off [src] without even looking at what [user.p_theyre()] doing. Wow.", "<span class='notice'>You quietly shut off [src] without even looking at what you're doing. Wow.</span>")
+				user.visible_message("Вы слышите тихий щелчок со стороны <b>[user]</b>.", "<span class='notice'><b>Вы практически бесшумно закрыли '[src]'.</b></span>")
+				playsound(src, 'sound/weapons/zippoclose.ogg', 40, TRUE)
 			else
-				user.visible_message("[user] quietly shuts off [src].", "<span class='notice'>You quietly shut off [src].</span>")
+				user.visible_message("<b>[user]</b> закрыли '[src]' одним плавным движением.", "<span class='notice'><b>Вы закрыли '[src]' одним плавным движением.</b></span>")
 	else
 		. = ..()
 
@@ -625,9 +632,9 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			cig.attackby(src, user)
 		else
 			if(fancy)
-				cig.light("<span class='rose'>[user] whips the [name] out and holds it for [M]. [user.p_their(TRUE)] arm is as steady as the unflickering flame [user.p_they()] light[user.p_s()] \the [cig] with.</span>")
+				cig.light("<span class='rose'>[user] whips the [name] out and holds it for [M]. [user.ru_ego(TRUE)] arm is as steady as the unflickering flame [user.ru_who()] light[user.p_s()] \the [cig] with.</span>")
 			else
-				cig.light("<span class='notice'>[user] holds the [name] out for [M], and lights [M.p_their()] [cig.name].</span>")
+				cig.light("<span class='notice'>[user] holds the [name] out for [M], and lights [M.ru_ego()] [cig.name].</span>")
 	else
 		..()
 
@@ -639,7 +646,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 
 /obj/item/lighter/greyscale
-	name = "cheap lighter"
+	name = "Cheap Lighter"
 	desc = "A cheap-as-free lighter."
 	icon_state = "lighter"
 	fancy = FALSE
@@ -689,9 +696,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	if(get_temperature())
 		. = "<span class='notice'>After some fiddling, [user] manages to light [A] with [src].</span>"
 
-
 /obj/item/lighter/slime
-	name = "slime zippo"
+	name = "Slime Zippo"
 	desc = "A specialty zippo made from slimes and industry. Has a much hotter flame than normal."
 	icon_state = "slighter"
 	heat = 3000 //Blue flame!
@@ -699,12 +705,127 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	overlay_state = "slime"
 	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/medicine/pyroxadone = 5)
 
+//EXTRA LIGHTERS
+/obj/item/lighter/nt_rep
+	name = "Gold Engraved Zippo"
+	desc = "An engraved golden Zippo lighter with the letters NT on it."
+	icon_state = "lighter_overlay_zippo_nt"
+	overlay_state = "zippo_nt"
+	item_state = "ntzippo"
+
+/obj/item/lighter/blue
+	name = "Blue Zippo Lighter"
+	desc = "A zippo lighter made of some blue metal."
+	icon_state = "lighter_overlay_bluezippo"
+	overlay_state = "bluezippo"
+	item_state = "bluezippo"
+
+/obj/item/lighter/purple
+	name = "Purple Engraved Zippo"
+	desc = "All craftsspacemanship is of the highest quality. It is encrusted with refined plasma sheets. On the item is an image of a dwarf and the words 'Strike the Earth!' etched onto the side."
+	icon_state = "lighter_overlay_purple_zippo"
+	overlay_state = "purple_zippo"
+	item_state = "rubysfluffzippo"
+
+/obj/item/lighter/black
+	name = "Black Zippo Lighter"
+	desc = "A black zippo lighter."
+	icon_state = "lighter_overlay_blackzippo"
+	overlay_state = "blackzippo"
+	item_state = "chapzippo"
+
+/obj/item/lighter/engraved
+	name = "QM Engraved Zippo Lighter"
+	desc = "A intricately engraved zippo lighter."
+	icon_state = "lighter_overlay_engravedzippo"
+	overlay_state = "engravedzippo"
+	item_state = "engravedzippo"
+
+/obj/item/lighter/gonzofist
+	name = "Gonzo Fist Zippo"
+	desc = "A Zippo lighter with the iconic Gonzo Fist on a matte black finish."
+	icon_state = "lighter_overlay_gonzozippo"
+	overlay_state = "gonzozippo"
+	item_state = "gonzozippo"
+
+/obj/item/lighter/cap
+	name = "Captain's Zippo"
+	desc = "A limited edition gold Zippo espesially for NT Captains. Looks extremely expensive."
+	icon_state = "lighter_overlay_zippo_cap"
+	overlay_state = "zippo_cap"
+	item_state = "capzippo"
+
+/obj/item/lighter/hop
+	name = "Head of Personnel Zippo"
+	desc = "A limited edition Zippo for NT Heads. Tries it best to look like captain's."
+	icon_state = "lighter_overlay_zippo_hop"
+	overlay_state = "zippo_hop"
+	item_state = "hopzippo"
+
+/obj/item/lighter/hos
+	name = "Head of Security Zippo"
+	desc = "A limited edition Zippo for NT Heads. Fuel it with clown's tears."
+	icon_state = "lighter_overlay_zippo_hos"
+	overlay_state = "zippo_hos"
+	item_state = "hoszippo"
+
+/obj/item/lighter/cmo
+	name = "Chief Medical Officer Zippo"
+	desc = "A limited edition Zippo for NT Heads. Made of hypoallergenic steel."
+	icon_state = "lighter_overlay_zippo_cmo"
+	overlay_state = "zippo_cmo"
+	item_state = "bluezippo"
+
+/obj/item/lighter/ce
+	name = "Chief Engineer Zippo"
+	desc = "A limited edition Zippo for NT Heads. Somebody've tried to repair cover with blue tape."
+	icon_state = "lighter_overlay_zippo_ce"
+	overlay_state = "zippo_ce"
+	item_state = "cezippo"
+
+/obj/item/lighter/rd
+	name = "Research Director Zippo"
+	desc = "A limited edition Zippo for NT Heads. Uses advanced tech to make fire from plasma."
+	icon_state = "lighter_overlay_zippo_rd"
+	overlay_state = "zippo_rd"
+	item_state = "rdzippo"
+
+//Ninja-Zippo//
+/obj/item/lighter/ninja
+	name = "\"Shinobi on a rice field\" Zippo"
+	desc = "A custom made Zippo. It looks almost like a bag of noodles. There is a blood stain on it, and it smells like burnt rice..."
+	icon = 'icons/obj/ninjaobjects.dmi'
+	lefthand_file = 'icons/mob/inhands/antag/ninja_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/antag/ninja_righthand.dmi'
+	icon_state = "lighter_overlay_zippo_ninja"
+	overlay_state = "zippo_ninja"
+	item_state = "zippo_ninja"
+
+/obj/item/lighter/gold
+	name = "\improper Engraved Zippo"
+	desc = "A shiny and relatively expensive zippo lighter. There's a small etched in verse on the bottom that reads, 'No Gods, No Masters, Only Man.'"
+	icon = 'icons/obj/custom.dmi'
+	icon_state = "gold_zippo"
+	item_state = "gold_zippo"
+	w_class = WEIGHT_CLASS_TINY
+	flags_1 = CONDUCT_1
+	slot_flags = ITEM_SLOT_BELT
+	heat = 1500
+	resistance_flags = FIRE_PROOF
+	light_color = LIGHT_COLOR_FIRE
+
+/obj/item/lighter/contractor
+	name = "Contractor Zippo Lighter"
+	desc = "An unique black and gold zippo commonly carried by elite Syndicate agents."
+	icon_state = "lighter_overlay_contractorzippo"
+	overlay_state = "contractorzippo"
+	item_state = "contractorzippo"
 
 ///////////
 //ROLLING//
 ///////////
 /obj/item/rollingpaper
-	name = "rolling paper"
+	name = "Rolling Paper"
 	desc = "A thin piece of paper used to make fine smokeables."
 	icon = 'icons/obj/cigarettes.dmi'
 	icon_state = "cig_paper"
@@ -744,7 +865,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/super = FALSE //for the fattest vapes dude.
 
 /obj/item/clothing/mask/vape/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is puffin hard on dat vape, [user.p_they()] trying to join the vape life on a whole notha plane!</span>")//it doesn't give you cancer, it is cancer
+	user.visible_message("<span class='suicide'>[user] is puffin hard on dat vape, [user.ru_who()] trying to join the vape life on a whole notha plane!</span>")//it doesn't give you cancer, it is cancer
 	return (TOXLOSS|OXYLOSS)
 
 
@@ -807,6 +928,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	super = FALSE
 	to_chat(user, "<span class='warning'>You maximize the voltage of [src].</span>")
 	add_overlay("vapeopen_high")
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	var/datum/effect_system/spark_spread/sp = new /datum/effect_system/spark_spread //for effect
 	sp.set_up(5, 1, src)
 	sp.start()
@@ -902,15 +1024,15 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 ///////////////
 
 /obj/item/bong
-	name = "bong"
+	name = "Bong"
 	desc = "A water bong used for smoking dried plants."
 	icon = 'icons/obj/bongs.dmi'
 	icon_state = null
-	item_state = null
+	item_state = "bongoff"
 	w_class = WEIGHT_CLASS_NORMAL
 	light_color = "#FFCC66"
-	var/icon_off = "bong"
-	var/icon_on = "bong_lit"
+	var/icon_off = "bongoff"
+	var/icon_on = "bongon"
 	var/chem_volume = 100
 	var/last_used_time //for cooldown
 	var/firecharges = 0 //used for counting how many hits can be taken before the flame goes out
@@ -1081,20 +1203,18 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		firecharges = 0
 		bongturnoff()
 
-
-
 /obj/item/bong/proc/bongturnon()
 	icon_state = icon_on
+	item_state = "bongon"
 	set_light(3, 0.8)
 
 /obj/item/bong/proc/bongturnoff()
 	icon_state = icon_off
+	item_state = "bongoff"
 	set_light(0, 0.0)
 
-
-
 /obj/item/bong/coconut
-	name = "coconut bong"
+	name = "Coconut Bong"
 	icon_off = "coconut_bong"
 	icon_on = "coconut_bong_lit"
 	desc = "A water bong used for smoking dried plants. This one's made out of a coconut and some bamboo."

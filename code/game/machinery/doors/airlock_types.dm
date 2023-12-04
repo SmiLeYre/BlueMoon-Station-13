@@ -260,7 +260,7 @@
 /obj/machinery/door/airlock/plasma/attackby(obj/item/C, mob/user, params)
 	if(C.get_temperature() > 300)//If the temperature of the object is over 300, then ignite
 		message_admins("Plasma airlock ignited by [ADMIN_LOOKUPFLW(user)] in [ADMIN_VERBOSEJMP(src)]")
-		log_game("Plasma airlock ignited by [key_name(user)] in [AREACOORD(src)]")
+		log_admin("Plasma airlock ignited by [key_name(user)] in [AREACOORD(src)]")
 		ignite(C.get_temperature())
 	else
 		return ..()
@@ -364,6 +364,9 @@
 /obj/machinery/door/airlock/external/glass
 	opacity = 0
 	glass = TRUE
+
+/// Access free external glass airlock
+/obj/machinery/door/airlock/external/glass/ruin
 
 //////////////////////////////////
 /*
@@ -708,3 +711,29 @@
 
 /obj/machinery/door/airlock/glass_large/narsie_act()
 	return
+
+//////////////////////////////////
+/*
+	Material Airlocks
+*/
+/obj/machinery/door/airlock/material
+	name = "Airlock"
+	material_flags = MATERIAL_COLOR | MATERIAL_ADD_PREFIX | MATERIAL_AFFECT_STATISTICS
+	assemblytype = /obj/structure/door_assembly/door_assembly_material
+
+/obj/machinery/door/airlock/material/close(forced, force_crush)
+	. = ..()
+	if(!.)
+		return
+	for(var/datum/material/mat in custom_materials)
+		if(mat.alpha < 255)
+			set_opacity(FALSE)
+			break
+
+/obj/machinery/door/airlock/material/prepare_deconstruction_assembly(obj/structure/door_assembly/assembly)
+	assembly.set_custom_materials(custom_materials)
+	..()
+
+/obj/machinery/door/airlock/material/glass
+	opacity = FALSE
+	glass = TRUE

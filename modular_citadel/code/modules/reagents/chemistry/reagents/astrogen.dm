@@ -29,15 +29,17 @@ I'd like to point out from my calculations it'll take about 60-80 minutes to die
 	var/sleepytime = 0
 	inverse_chem_val = 0.25
 	can_synth = FALSE
-	var/datum/action/chem/astral/AS = new/datum/action/chem/astral()
+	var/datum/action/astral/AS
 	value = REAGENT_VALUE_AMAZING
 
-/datum/action/chem/astral
+/datum/action/astral
 	name = "Return to body"
+	icon_icon = 'icons/mob/actions/actions_minor_antag.dmi'
+	button_icon_state = "funk"
 	var/mob/living/carbon/origin
 	var/datum/mind/originalmind
 
-/datum/action/chem/astral/Trigger()
+/datum/action/astral/Trigger()
 	if(origin.mind && origin.mind != originalmind)
 		to_chat(originalmind.current, "<span class='warning'><b><i>There's a foreign presence in your body blocking your return!</b></i></span>")
 		return ..()
@@ -72,7 +74,7 @@ I'd like to point out from my calculations it'll take about 60-80 minutes to die
 		if (G == null)
 			G = new(get_turf(M.loc))
 		G.name = "[M]'s astral projection"
-		//var/datum/action/chem/astral/AS = new(G)
+		AS = new /datum/action/astral (G)
 		AS.Grant(G)
 		AS.origin = M
 		AS.originalmind = originalmind

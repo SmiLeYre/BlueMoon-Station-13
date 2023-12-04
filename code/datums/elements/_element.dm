@@ -23,15 +23,25 @@
 		return ELEMENT_INCOMPATIBLE
 	SEND_SIGNAL(target, COMSIG_ELEMENT_ATTACH, src)
 	if(element_flags & ELEMENT_DETACH)
-		RegisterSignal(target, COMSIG_PARENT_QDELETING, .proc/Detach, override = TRUE)
+		RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(OnTargetDelete), override = TRUE)
+
+/datum/element/proc/OnTargetDelete(datum/source, force)
+	SIGNAL_HANDLER
+	Detach(source)
 
 /// Deactivates the functionality defines by the element on the given datum
-/datum/element/proc/Detach(datum/source, force)
+/datum/element/proc/Detach(datum/source, ...)
 	SIGNAL_HANDLER
 
 	SEND_SIGNAL(source, COMSIG_ELEMENT_DETACH, src)
 	SHOULD_CALL_PARENT(TRUE)
 	UnregisterSignal(source, COMSIG_PARENT_QDELETING)
+
+/datum/element/Destroy(force)
+	if(!force)
+		return QDEL_HINT_LETMELIVE
+	SSdcs.elements_by_type -= type
+	return ..()
 
 /datum/element/Destroy(force)
 	if(!force)

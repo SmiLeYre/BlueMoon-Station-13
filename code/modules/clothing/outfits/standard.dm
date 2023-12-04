@@ -8,6 +8,8 @@
 	back = /obj/item/tank/jetpack/oxygen
 	mask = /obj/item/clothing/mask/breath
 
+	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
+
 /datum/outfit/tournament
 	name = "tournament standard red"
 
@@ -89,8 +91,10 @@
 /datum/outfit/pirate/space
 	suit = /obj/item/clothing/suit/space/pirate
 	head = /obj/item/clothing/head/helmet/space/pirate/bandana
-	ears = /obj/item/radio/headset/syndicate
+	ears = /obj/item/radio/headset/pirate
 	id = /obj/item/card/id/pirate
+
+	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
 
 /datum/outfit/pirate/space/captain
 	head = /obj/item/clothing/head/helmet/space/pirate
@@ -100,13 +104,16 @@
 
 	var/obj/item/radio/R = H.ears
 	if(R)
-		R.set_frequency(FREQ_SYNDICATE)
+		R.set_frequency(FREQ_PIRATE)
 		R.freqlock = TRUE
 
 	var/obj/item/card/id/W = H.wear_id
 	if(W)
 		W.registered_name = H.real_name
 		W.update_label(H.real_name)
+
+	var/obj/item/implant/weapons_auth/B = new
+	B.implant(H)
 
 /datum/outfit/tunnel_clown
 	name = "Tunnel Clown"
@@ -213,6 +220,15 @@
 	l_pocket = /obj/item/ammo_box/a357
 	back = /obj/item/storage/backpack/satchel/leather
 	id = /obj/item/card/id
+
+// BLUEMOON ADD START - командная коробочка для командира
+/datum/outfit/centcom_commander/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
+	. = ..()
+	var/list/extra_backpack_items = list(
+		/obj/item/storage/box/pinpointer_squad
+	)
+	LAZYADD(backpack_contents, extra_backpack_items)
+// BLUEMOON ADD END
 
 /datum/outfit/centcom_commander/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	if(visualsOnly)
@@ -367,27 +383,29 @@
 /datum/outfit/death_commando
 	name = "Death Commando"
 
-	uniform = /obj/item/clothing/under/color/green
+	uniform = /obj/item/clothing/under/syndicate
 	suit = /obj/item/clothing/suit/space/hardsuit/deathsquad
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
 	glasses = /obj/item/clothing/glasses/hud/toggle/thermal
-	back = /obj/item/storage/backpack/security
+	back = /obj/item/storage/backpack/rucksack
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber
 	r_pocket = /obj/item/shield/energy
 	suit_store = /obj/item/tank/internals/emergency_oxygen
-	belt = /obj/item/gun/ballistic/revolver/mateba
+	belt = /obj/item/storage/belt/grenade/full
 	r_hand = /obj/item/gun/energy/pulse/loyalpin
-	id = /obj/item/card/id
+	id = /obj/item/card/id/death
 	ears = /obj/item/radio/headset/headset_cent/alt
 
-	backpack_contents = list(/obj/item/storage/box=1,\
-		/obj/item/ammo_box/a357=1,\
-		/obj/item/storage/firstaid/regular=1,\
-		/obj/item/storage/box/flashbangs=1,\
-		/obj/item/flashlight=1,\
+	backpack_contents = list(/obj/item/storage/box/survival/security=1,\
+		/obj/item/storage/box/syndie_kit/revolver=1,\
+		/obj/item/storage/firstaid/tactical/slaver=1,\
+		/obj/item/storage/box/flashbangs/super=1,\
+		/obj/item/pinpointer/nuke=1,\
 		/obj/item/grenade/plastic/x4=1)
+
+	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
 
 /datum/outfit/death_commando/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	if(visualsOnly)
@@ -400,28 +418,25 @@
 	var/obj/item/implant/mindshield/L = new //Here you go Deuryn
 	L.implant(H, null, 1)
 
-
-	var/obj/item/card/id/W = H.wear_id
-	W.icon_state = "centcom"
+	var/obj/item/card/id/death/W = H.wear_id
 	W.access = get_all_accesses()//They get full station access.
 	W.access += get_centcom_access("Death Commando")//Let's add their alloted CentCom access.
-	W.assignment = "Death Commando"
 	W.registered_name = H.real_name
-	W.update_label(W.registered_name, W.assignment)
+	W.update_label(W.registered_name)
 
 /datum/outfit/death_commando/officer
 	name = "Death Commando Officer"
 	head = /obj/item/clothing/head/helmet/space/beret
 
-/* /datum/outfit/chrono_agent //Begone skyrat change on sandstorm
-	name = "Timeline Eradication Agent"
-	uniform = /obj/item/clothing/under/color/white
-	suit = /obj/item/clothing/suit/space/chronos
-	back = /obj/item/chrono_eraser
-	head = /obj/item/clothing/head/helmet/space/chronos
-	mask = /obj/item/clothing/mask/breath
-	suit_store = /obj/item/tank/internals/oxygen
-*/
+// BLUEMOON ADD START - командная коробочка для командира
+/datum/outfit/death_commando/officer/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
+	. = ..()
+	var/list/extra_backpack_items = list(
+		/obj/item/storage/box/pinpointer_squad
+	)
+	LAZYADD(backpack_contents, extra_backpack_items)
+// BLUEMOON ADD END
+
 /datum/outfit/debug //Debug objs plus hardsuit
 	name = "Debug outfit"
 	uniform = /obj/item/clothing/under/misc/patriotsuit
@@ -441,11 +456,13 @@
 	internals_slot = ITEM_SLOT_SUITSTORE
 	backpack_contents = list(
 		/obj/item/melee/transforming/energy/axe=1,\
-		/obj/item/storage/part_replacer/bluespace/tier4=1,\
+		/obj/item/storage/part_replacer/bluespace/tier5=1,\
 		/obj/item/debug/human_spawner=1,\
 		)
 
+	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
+
 /datum/outfit/debug/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	var/obj/item/card/id/W = H.wear_id
+	var/obj/item/card/id/death/W = H.wear_id
 	W.registered_name = H.real_name
 	W.update_label()

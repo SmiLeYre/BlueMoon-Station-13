@@ -12,7 +12,6 @@
 	job_rank = ROLE_CHANGELING
 	antag_moodlet = /datum/mood_event/focused
 	threat = 10
-
 	var/you_are_greet = TRUE
 	var/give_objectives = TRUE
 	var/team_mode = FALSE //Should assign team objectives ?
@@ -51,6 +50,7 @@
 
 	var/static/list/all_powers = typecacheof(/datum/action/changeling,TRUE)
 
+	reminded_times_left = 2 // BLUEMOON ADD
 
 /datum/antagonist/changeling/Destroy()
 	QDEL_NULL(cellular_emporium)
@@ -281,7 +281,7 @@
 		if(verbose)
 			to_chat(user, "<span class='warning'>We already have this DNA in storage!</span>")
 		return
-	if(!target.has_dna())
+	if(!target.has_dna() || HAS_TRAIT(target, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - генокрад не может поглощать ДНКа синтетиков
 		if(verbose)
 			to_chat(user, "<span class='warning'>[target] is not compatible with our biology.</span>")
 		return
@@ -602,3 +602,49 @@
 
 /datum/antagonist/changeling/xenobio/antag_listing_name()
 	return ..() + "(Xenobio)"
+
+/**
+ * Gives a passed changeling power datum to the player
+ *
+ * Is passed a path to a changeling power, and applies it to the user.
+ * If successful, we return TRUE, otherwise not.
+ *
+ * Arguments:
+ * * power_path - The path of the power we will be giving to our attached player.
+ */
+
+/datum/antagonist/changeling/proc/give_power(power_path)
+	var/datum/action/changeling/new_action = new power_path()
+
+	if(!new_action)
+		to_chat(owner.current, "This is awkward. Changeling power purchase failed, please report this bug to a coder!")
+		CRASH("Changeling give_power was unable to grant a new changeling action for path [power_path]!")
+
+	purchasedpowers[power_path] = new_action
+	new_action.on_purchase(owner.current) // Grant() is ran in this proc, see changeling_powers.dm.
+
+	return TRUE
+
+/datum/antagonist/changeling/space
+	name = "\improper Space Changeling"
+
+/datum/antagonist/changeling/space/get_preview_icon()
+	var/icon/final_icon = render_preview_outfit(/datum/outfit/changeling_space)
+	return finish_preview_icon(final_icon)
+
+/datum/antagonist/changeling/space/greet()
+	to_chat(src, span_changeling("Our mind stirs to life, from the depths of an endless slumber..."))
+
+/datum/outfit/changeling
+	name = "Changeling"
+
+	head = /obj/item/clothing/head/helmet/changeling
+	suit = /obj/item/clothing/suit/armor/changeling
+	l_hand = /obj/item/melee/arm_blade
+
+/datum/outfit/changeling_space
+	name = "Changeling (Space)"
+
+	head = /obj/item/clothing/head/helmet/space/changeling
+	suit = /obj/item/clothing/suit/space/changeling
+	l_hand = /obj/item/melee/arm_blade

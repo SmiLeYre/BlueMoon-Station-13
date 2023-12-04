@@ -2,8 +2,8 @@
 	name = "Energy Net (40E)"
 	desc = "Captures a fallen opponent in a net of energy."
 	button_icon_state = "energynet"
-	icon_icon = 'icons/effects/effects.dmi'
-
+	icon_icon = 'icons/mob/actions/actions_ninja.dmi'
+	background_icon_state = "background_green"
 /**
  * Proc called to ensnare a person in a energy net.
  *
@@ -18,7 +18,7 @@
 		return
 
 	if(locate(/obj/structure/energy_net) in get_turf(net_target))//Check if they are already being affected by an energy net.
-		to_chat(ninja, "<span class='warning'>[net_target.p_they(TRUE)] are already trapped inside an energy net!</span>")
+		to_chat(ninja, "<span class='warning'>[net_target.ru_who(TRUE)] are already trapped inside an energy net!</span>")
 		return
 	for(var/turf/between_turf in getline(get_turf(ninja), get_turf(net_target)))
 		if(between_turf.density)//Don't want them shooting nets through walls. It's kind of cheesy.

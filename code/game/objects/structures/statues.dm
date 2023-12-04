@@ -94,6 +94,10 @@
 	name = "statue of a scientist"
 	icon_state = "sci"
 
+/obj/structure/statue/plasma/xeno
+	name = "statue of a xenomorph"
+	icon_state = "xeno"
+
 /obj/structure/statue/plasma/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	if(exposed_temperature > 300)
 		PlasmaBurn(exposed_temperature)
@@ -106,10 +110,10 @@
 		var/turf/T = get_turf(src)
 		if(Proj.firer)
 			message_admins("Plasma statue ignited by [ADMIN_LOOKUPFLW(Proj.firer)] in [ADMIN_VERBOSEJMP(T)]")
-			log_game("Plasma statue ignited by [key_name(Proj.firer)] in [AREACOORD(T)]")
+			log_admin("Plasma statue ignited by [key_name(Proj.firer)] in [AREACOORD(T)]")
 		else
 			message_admins("Plasma statue ignited by [Proj]. No known firer, in [ADMIN_VERBOSEJMP(T)]")
-			log_game("Plasma statue ignited by [Proj] in [AREACOORD(T)]. No known firer.")
+			log_admin("Plasma statue ignited by [Proj] in [AREACOORD(T)]. No known firer.")
 		PlasmaBurn(2500)
 	return ..()
 
@@ -117,7 +121,7 @@
 	if(W.get_temperature() > 300 && !QDELETED(src))//If the temperature of the object is over 300, then ignite
 		var/turf/T = get_turf(src)
 		message_admins("Plasma statue ignited by [ADMIN_LOOKUPFLW(user)] in [ADMIN_VERBOSEJMP(T)]")
-		log_game("Plasma statue ignited by [key_name(user)] in [AREACOORD(T)]")
+		log_admin("Plasma statue ignited by [key_name(user)] in [AREACOORD(T)]")
 		ignite(W.get_temperature())
 	else
 		return ..()
@@ -274,18 +278,6 @@
 	desc = "A bust depicting a certain 19th century economist. You get the feeling a specter is haunting the station."
 	icon_state = "marx"
 	art_type = /datum/element/art/rev
-
-///////////Elder Atmosian///////////////////////////////////////////
-/* Yeah no.
-/obj/structure/statue/elder_atmosian
-	name = "Elder Atmosian"
-	desc = "A statue of an Elder Atmosian, capable of bending the laws of thermodynamics to their will"
-	icon_state = "eng"
-	custom_materials = list(/datum/material/metalhydrogen = MINERAL_MATERIAL_AMOUNT*10)
-	max_integrity = 1000
-	impressiveness = 100
-	abstract_type = /obj/structure/statue/elder_atmosian //This one is uncarvable
-*/
 
 /obj/item/chisel
 	name = "chisel"

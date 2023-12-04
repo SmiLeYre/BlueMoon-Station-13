@@ -114,6 +114,7 @@
 	. = ..()
 	if(obj_flags & EMAGGED)
 		return
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	req_access = list()
 	req_one_access = list()
 	playsound(src, "sparks", 100, 1)
@@ -195,6 +196,22 @@
 	desc = "A door remote control switch."
 	var/normaldoorcontrol = FALSE
 	var/specialfunctions = OPEN // Bitflag, see assembly file
+
+/obj/machinery/button/door/directional/north //Pixel offsets get overwritten on New()
+	dir = SOUTH
+	pixel_y = 28
+
+/obj/machinery/button/door/directional/south
+	dir = NORTH
+	pixel_y = -28
+
+/obj/machinery/button/door/directional/east
+	dir = WEST
+	pixel_x = 28
+
+/obj/machinery/button/door/directional/west
+	dir = EAST
+	pixel_x = -28
 
 /obj/machinery/button/door/setup_device()
 	if(!device)

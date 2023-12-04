@@ -18,6 +18,14 @@ GLOBAL_VAR_INIT(dynamic_stacking_limit, 90)
 GLOBAL_LIST_EMPTY(dynamic_forced_roundstart_ruleset)
 // Forced threat level, setting this to zero or higher forces the roundstart threat to the value.
 GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
+// BLUEMOON ADD
+// Очки для уровней угрозы от различных вариаций динамика
+// Значения изменяются при выборе вариаций динамика
+GLOBAL_VAR_INIT(dynamic_type_threat_min, 40)
+GLOBAL_VAR_INIT(dynamic_type_threat_max, 60)
+// Некоторые пресеты антагонистов не могут выпасть не в свой тип.
+GLOBAL_VAR_INIT(round_type, ROUNDTYPE_DYNAMIC_MEDIUM)
+// BLUEMOON ADD END
 
 /datum/game_mode/dynamic
 	name = "dynamic mode"
@@ -77,19 +85,19 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 	var/latejoin_injection_cooldown = 0
 
 	/// The minimum time the recurring latejoin ruleset timer is allowed to be.
-	var/latejoin_delay_min = (5 MINUTES)
+	var/latejoin_delay_min = (10 MINUTES) //BLUEMOON CHANGES
 
 	/// The maximum time the recurring latejoin ruleset timer is allowed to be.
-	var/latejoin_delay_max = (25 MINUTES)
+	var/latejoin_delay_max = (15 MINUTES)
 
 	/// When world.time is over this number the mode tries to inject a midround ruleset.
 	var/midround_injection_cooldown = 0
 
 	/// The minimum time the recurring midround ruleset timer is allowed to be.
-	var/midround_delay_min = (15 MINUTES)
+	var/midround_delay_min = (20 MINUTES) //BLUEMOON CHANGES
 
 	/// The maximum time the recurring midround ruleset timer is allowed to be.
-	var/midround_delay_max = (35 MINUTES)
+	var/midround_delay_max = (30 MINUTES) //BLUEMOON CHANGES
 
 	/// If above this threat, increase the chance of injection
 	var/higher_injection_chance_minimum_threat = 70
@@ -155,7 +163,7 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 	var/shown_threat
 
 /datum/game_mode/dynamic/admin_panel()
-	var/list/dat = list("<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>Game Mode Panel</title></head><body><h1><B>Game Mode Panel</B></h1>")
+	var/list/dat = list("<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'><title>Game Mode Panel</title></head><body><h1><B>Game Mode Panel</B></h1>")
 	dat += "Dynamic Mode <a href='?_src_=vars;[HrefToken()];Vars=[REF(src)]'>\[VV\]</a> <a href='?src=\ref[src];[HrefToken()]'>\[Refresh\]</a><BR>"
 	dat += "Threat Level: <b>[threat_level]</b><br/>"
 	dat += "Budgets (Roundstart/Midrounds): <b>[initial_round_start_budget]/[threat_level - initial_round_start_budget]</b><br/>"
@@ -165,8 +173,13 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 	dat += "Parameters: centre = [threat_curve_centre] ; width = [threat_curve_width].<br/>"
 	dat += "Split parameters: centre = [roundstart_split_curve_centre] ; width = [roundstart_split_curve_width].<br/>"
 	dat += "<i>On average, <b>[peaceful_percentage]</b>% of the rounds are more peaceful.</i><br/>"
+	/* BLUEMOON CHANGES START - мы используем GLOB.round_type
 	dat += "Forced extended: <a href='?src=\ref[src];[HrefToken()];forced_extended=1'><b>[GLOB.dynamic_forced_extended ? "On" : "Off"]</b></a><br/>"
 	dat += "Dynamic extended: <a href='?src=\ref[src];[HrefToken()];extended=1'><b>[GLOB.dynamic_extended ? "On" : "Off"]</b></a><br/>"
+	/ BLUEMOON CHANGES END */
+	// BLUEMOON ADD START - мы используем GLOB.round_type
+	dat += "Dynamic Round Type: <a href='?src=\ref[src];[HrefToken()];round_type_choose=1'><b>[GLOB.round_type]</b></a><br/>"
+	// BLUEMOON ADD END
 	dat += "No stacking (only one round-ender): <a href='?src=\ref[src];[HrefToken()];no_stacking=1'><b>[GLOB.dynamic_no_stacking ? "On" : "Off"]</b></a><br/>"
 	dat += "Stacking limit: [GLOB.dynamic_stacking_limit] <a href='?src=\ref[src];[HrefToken()];stacking_limit=1'>\[Adjust\]</A>"
 	dat += "<br/>"
@@ -194,10 +207,19 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 		message_admins("[usr.key] has attempted to override the game mode panel!")
 		log_admin("[key_name(usr)] tried to use the game mode panel without authorization.")
 		return
+	/* BLUEMOON ADD START - мы используем GLOB.round_type
 	if (href_list["forced_extended"])
 		GLOB.dynamic_forced_extended = !GLOB.dynamic_forced_extended
-	else if (href_list["extended"])
+	else if (href_list["Extended"])
 		GLOB.dynamic_extended = !GLOB.dynamic_extended
+	/ BLUEMOON ADD END */
+	// BLUEMOON ADD START
+	if (href_list["round_type_choose"])
+		var/chosen_type = input("Выберите вариацию динамика","Round Type Choose") as null|anything in list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT)
+		message_admins("[key_name(usr)] изменяет режим игры [GLOB.round_type] на [chosen_type]. Это повлияет только на доступность появления новых антагонистов.")
+		GLOB.round_type = chosen_type
+		GLOB.master_mode = "[chosen_type] (Changed Midgame)"
+	// BLUEMOON ADD END
 	else if (href_list["no_stacking"])
 		GLOB.dynamic_no_stacking = !GLOB.dynamic_no_stacking
 	else if (href_list["adjustthreat"])
@@ -258,42 +280,40 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 	return ..()
 
 /datum/game_mode/dynamic/send_intercept()
-	. = "<b><i>Central Command Status Summary</i></b><hr>"
+	. = "<b><i>Отчёт от Центрального Командования</i></b><hr>"
 	switch(round(shown_threat))
 		if(0 to 19)
 			if(!current_players[CURRENT_LIVING_ANTAGS].len)
-				. += "<b>Peaceful Waypoint</b></center><BR>"
-				. += "Your station orbits deep within controlled, core-sector systems and serves as a waypoint for routine traffic through Nanotrasen's trade empire. Due to the combination of high security, interstellar traffic, and low strategic value, it makes any direct threat of violence unlikely. Your primary enemies will be incompetence and bored crewmen: try to organize team-building events to keep staffers interested and productive."
+				. += "<b>Мирный Сектор</b></center><BR>"
+				. += "Ваша станция вращается глубоко внутри контролируемых систем центрального сектора и служит путевой точкой для обычных перевозок через торговые пути Нанотрейзен. Из-за сочетания высокой безопасности, межзвездного трафика и низкой стратегической ценности он делает любую прямую угрозу вторжения маловероятной. Вашими главными врагами будут некомпетентность и скучающие члены экипажа: постарайтесь организовать тимбилдинговые мероприятия, чтобы сотрудники были заинтересованы и продуктивны."
 			else
-				. += "<b>Core Territory</b></center><BR>"
-				. += "Your station orbits within reliably mundane, secure space. Although Nanotrasen has a firm grip on security in your region, the valuable resources and strategic position aboard your station make it a potential target for infiltrations. Monitor crew for non-loyal behavior, but expect a relatively tame shift free of large-scale destruction. We expect great things from your station."
+				. += "<b>Центральная Территория</b></center><BR>"
+				. += "Ваша станция вращается в надёжно обыденном, безопасном пространстве. Несмотря на то, что Нанотрейзен крепко контролирует безопасность в вашем регионе, ценные ресурсы и стратегическое положение на борту вашей станции делают ее потенциальной мишенью для вторжения. Следите за нелояльным поведением экипажа, но ожидайте относительно спокойной смены без крупномасштабных разрушений. Мы ожидаем больших успехов от вашей станции."
 		if(20 to 39)
-			. += "<b>Anomalous Exogeology</b></center><BR>"
-			. += "Although your station lies within what is generally considered Nanotrasen-controlled space, the course of its orbit has caused it to cross unusually close to exogeological features with anomalous readings. Although these features offer opportunities for our research department, it is known that these little understood readings are often correlated with increased activity from competing interstellar organizations and individuals, among them the Wizard Federation and Cult of the Geometer of Blood - all known competitors for Anomaly Type B sites. Exercise elevated caution."
+			. += "<b>Аномальная Экзогеология</b></center><BR>"
+			. += "Хотя ваша станция находится в секторе, обычно считающемся контролируемым Нанотрейзеном, курс ее орбиты привел к тому, что она прошла необычно близко к экзогеологическим объектам с аномальными показаниями. Хотя эти особенности открывают возможности для нашего исследовательского отдела, известно, что эти малопонятные показания часто коррелируют с повышенной активностью со стороны конкурирующих межзвездных организаций и отдельных лиц, среди которых Федерация Волшебников и Культ Геометра Крови — все известные конкуренты объектов Аномального Типа Б. Соблюдайте повышенную осторожность."
 		if(40 to 65)
-			. += "<b>Contested System</b></center><BR>"
-			. += "Your station's orbit passes along the edge of Nanotrasen's sphere of influence. While subversive elements remain the most likely threat against your station, hostile organizations are bolder here, where our grip is weaker. Exercise increased caution against elite Syndicate strike forces, or Executives forbid, some kind of ill-conceived unionizing attempt."
+			. += "<b>Оспариваемый Сектор</b></center><BR>"
+			. += "Орбита вашей станции проходит по краю сферы влияния Нанотрейзена. В то время как подрывные элементы остаются наиболее вероятной угрозой для вашей станции, враждебные организации действуют смелее здесь, где наша хватка слабее. Соблюдайте повышенную осторожность в отношении элитных ударных сил ИнтеКью, или запретите какие-либо непродуманные попытки объединения в профсоюзы."
 		if(66 to 79)
-			. += "<b>Uncharted Space</b></center><BR>"
-			. += "Congratulations and thank you for participating in the NT 'Frontier' space program! Your station is actively orbiting a high value system far from the nearest support stations. Little is known about your region of space, and the opportunity to encounter the unknown invites greater glory. You are encouraged to elevate security as necessary to protect Nanotrasen assets."
+			. += "<b>Неизведанный Космос</b></center><BR>"
+			. += "Поздравляем и благодарим вас за участие в космической программе NT Frontier! Ваша станция активно вращается вокруг важной системы вдали от ближайших станций поддержки. Мало что известно о вашем секторе космоса, а возможность столкнуться с неизведанным принесет большую славу. Вам рекомендуется повысить уровень безопасности, если это необходимо для защиты активов Нанотрейзен."
 		if(80 to 99)
-			. += "<b>Black Orbit</b></center><BR>"
-			. += "As part of a mandatory security protocol, we are required to inform you that as a result of your orbital pattern directly behind an astrological body (oriented from our nearest observatory), your station will be under decreased monitoring and support. It is anticipated that your extreme location and decreased surveillance could pose security risks. Avoid unnecessary risks and attempt to keep your station in one piece."
+			. += "<b>Черная Орбита</b></center><BR>"
+			. += "В рамках обязательного протокола безопасности мы должны сообщить вам, что в результате того, что ваша орбитальная схема находится непосредственно за астрологическим телом (ориентируемым из ближайшей к нам обсерватории), ваша станция будет находиться под ограниченным контролем и поддержкой. Ожидается, что ваше экстремальное местоположение и ослабленное наблюдение могут представлять угрозу безопасности. Избегайте неоправданных рисков и старайтесь сохранить свою станцию в целости и сохранности."
 		if(100)
-			. += "<b>Impending Doom</b></center><BR>"
-			. += "Your station is somehow in the middle of hostile territory, in clear view of any enemy of the corporation. Your likelihood to survive is low, and station destruction is expected and almost inevitable. Secure any sensitive material and neutralize any enemy you will come across. It is important that you at least try to maintain the station.<BR>"
-			. += "Good luck."
+			. += "<b>Надвигающаяся Гибель</b></center><BR>"
+			. += "Ваша станция каким-то образом появилась посреди враждебной территории и совсем рядом с Аномалией 'Око Синих Лун', на виду у любого врага корпорации. Ваши шансы выжить малы, а разрушение станции ожидаемо и почти неизбежно. Защитите любой конфиденциальный материал и нейтрализуйте любого врага, с которым вы столкнетесь. Важно, чтобы вы хотя бы попытались сохранить станцию.<BR>"
+			. += "Удачи =)"
 
 	if(station_goals.len)
-		. += "<hr><b>Special Orders for [station_name()]:</b>"
+		. += "<hr><b>Специальные указы для [station_name()]:</b>"
 		for(var/datum/station_goal/G in station_goals)
 			G.on_report()
 			. += G.get_report()
 
-	print_command_report(., "Central Command Status Summary", announce=FALSE)
-	priority_announce("A summary has been copied and printed to all communications consoles.", "Enemy communication intercepted. Security level elevated.", "intercept")
-	if(GLOB.security_level < SEC_LEVEL_BLUE)
-		set_security_level(SEC_LEVEL_BLUE)
+	print_command_report(., "Отдел ССО Пакта Синих Лун", announce=FALSE)
+	priority_announce("Благодаря неустанным усилиям наших специальных оперативных подразделений мы обнаружили несколько возможных угроз для [station_name()]. Будьте осторожней!", "Отдел ССО Пакта Синих Лун", "intercept")
 
 /datum/game_mode/dynamic/proc/show_threatlog(mob/admin)
 	if(!SSticker.HasRoundStarted())
@@ -315,8 +335,31 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 
 /// Generates the threat level using lorentz distribution and assigns peaceful_percentage.
 /datum/game_mode/dynamic/proc/generate_threat()
-	if(GLOB.dynamic_extended)
-		threat_curve_centre = EXTENDED_CURVE_CENTER
+
+	// BLUEMOON ADD START - присвоение минимального и максимального возможного уровня угрозы
+	switch(GLOB.round_type)
+		if(ROUNDTYPE_DYNAMIC_TEAMBASED)
+			GLOB.dynamic_type_threat_min = 75 //от 1 до 2 командных антагов
+			GLOB.dynamic_type_threat_max = 100
+			GLOB.dynamic_no_stacking = FALSE //Welcome To Space Iraq
+		if(ROUNDTYPE_DYNAMIC_HARD)
+			GLOB.dynamic_type_threat_min = 75
+			GLOB.dynamic_type_threat_max = 100
+		if(ROUNDTYPE_DYNAMIC_MEDIUM)
+			GLOB.dynamic_type_threat_min = 40
+			GLOB.dynamic_type_threat_max = 60
+		if(ROUNDTYPE_DYNAMIC_LIGHT)
+			GLOB.dynamic_type_threat_min = 50
+			GLOB.dynamic_type_threat_max = 70
+		if(ROUNDTYPE_EXTENDED)
+			GLOB.dynamic_type_threat_min = 0
+			GLOB.dynamic_type_threat_max = 0
+		if("dynamic")
+			GLOB.master_mode = ROUNDTYPE_DYNAMIC_MEDIUM
+	// BLUEMOON ADD END
+
+	threat_level = round(rand(GLOB.dynamic_type_threat_min, GLOB.dynamic_type_threat_max), 0.1) //BLUEMOON ADDITION
+/*BLUEMOON REMOVAL START - мы не центрируем уровень угрозы по Лоуренцу
 	var/relative_threat = LORENTZ_DISTRIBUTION(threat_curve_centre, threat_curve_width)
 	threat_level = round(lorentz_to_amount(relative_threat), 0.1)
 	peaceful_percentage = round(LORENTZ_CUMULATIVE_DISTRIBUTION(relative_threat, threat_curve_centre, threat_curve_width), 0.01)*100
@@ -325,17 +368,22 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 	SSblackbox.record_feedback("tally","dynamic_threat",threat_curve_centre,"Curve centre")
 	SSblackbox.record_feedback("tally","dynamic_threat",threat_curve_width,"Curve width")
 	SSblackbox.record_feedback("tally","dynamic_threat",peaceful_percentage,"Percent of same-center rounds that are more peaceful")
+BLUEMOON REMOVAL END*/
 
 /// Generates the midround and roundstart budgets
 /datum/game_mode/dynamic/proc/generate_budgets()
+/*BLUEMOON REMOVAL START - динамичная экста не должна жрать весь раундстартовый бюджет
 	if(GLOB.dynamic_extended)
 		mid_round_budget = threat_level
 		round_start_budget = 0
 	else
-		var/relative_round_start_budget_scale = LORENTZ_DISTRIBUTION(roundstart_split_curve_centre, roundstart_split_curve_width)
-		round_start_budget = round((lorentz_to_amount(relative_round_start_budget_scale) / 100) * threat_level, 0.1)
-		initial_round_start_budget = round_start_budget
-		mid_round_budget = threat_level - round_start_budget
+	var/relative_round_start_budget_scale = LORENTZ_DISTRIBUTION(roundstart_split_curve_centre, roundstart_split_curve_width)
+	round_start_budget = round((lorentz_to_amount(relative_round_start_budget_scale) / 100) * threat_level, 0.1)
+BLUEMOON REMOVAL END*/
+	round_start_budget = round(threat_level / 2, 0.1)
+	round_start_budget = min(round_start_budget, 30) //BLUEMOON ADDITION - чтобы динамик не расходился на все деньги с начала раунда и не пугал людей
+	initial_round_start_budget = round_start_budget
+	mid_round_budget = threat_level - round_start_budget
 
 /datum/game_mode/dynamic/proc/setup_parameters()
 	log_game("DYNAMIC: Dynamic mode parameters for the round:")
@@ -357,7 +405,7 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 		shown_threat = clamp(threat_level + rand(REPORT_NEG_DIVERGENCE, REPORT_POS_DIVERGENCE), 0, 100)
 
 /datum/game_mode/dynamic/proc/set_cooldowns()
-	var/coeff = GLOB.dynamic_extended ? 2 : 1
+	var/coeff = 1 //BLUEMOON CHANGES - Removed check for dynamic_extended
 	latejoin_delay_min *= coeff
 	latejoin_delay_max *= coeff
 	var/latejoin_injection_cooldown_middle = 0.5*(latejoin_delay_max + latejoin_delay_min)
@@ -470,12 +518,14 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 			spend_roundstart_budget(picking_roundstart_rule(rule, scaled_times, forced = TRUE))
 
 /datum/game_mode/dynamic/proc/roundstart(list/roundstart_rules)
+	/* BLUEMOON ADD START - мы используем GLOB.round_type
 	if (GLOB.dynamic_forced_extended)
 		log_game("DYNAMIC: Starting a round of forced extended.")
 		return TRUE
 	if (GLOB.dynamic_extended)
 		log_game("DYNAMIC: Starting a round of dynamic extended.")
 		return TRUE
+	/ BLUEMOON ADD END */
 	var/list/drafted_rules = list()
 	for (var/datum/dynamic_ruleset/roundstart/rule in roundstart_rules)
 		if (!rule.weight)
@@ -510,7 +560,11 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 		if (check_blocking(ruleset.blocking_rules, rulesets_picked))
 			drafted_rules[ruleset] = null
 			continue
-
+		// BLUEMOON ADD START - проверки для вариаций динамика
+		if(!(GLOB.round_type in ruleset.required_round_type))
+			drafted_rules[ruleset] = null
+			continue
+		// BLUEMOON ADD END
 		round_start_budget_left -= cost
 
 		rulesets_picked[ruleset] += 1
@@ -583,8 +637,10 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 			return FALSE
 		// Check if the ruleset is high impact and if a high impact ruleset has been executed
 		else if(new_rule.flags & HIGH_IMPACT_RULESET)
+			/* BLUEMOON REMOVAL START - глоб больше не используется, его заменил glob.round_type
 			if(GLOB.dynamic_extended)
 				return FALSE
+			/ BLUEMOON REMOVAL END */
 			if(high_impact_ruleset_executed && threat_level < GLOB.dynamic_stacking_limit && GLOB.dynamic_no_stacking)
 				return FALSE
 
@@ -610,6 +666,10 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 	return FALSE
 
 /datum/game_mode/dynamic/process()
+	// BLUEMOON ADD START - напоминание антагонистам, что они антагонисты
+	for(var/datum/antagonist/A in GLOB.antagonists_to_remind)
+		A.remind_them_they_are_antagonists()
+	// BLUEMOON ADD END
 	for (var/datum/dynamic_ruleset/rule in current_rules)
 		if(rule.rule_process() == RULESET_STOP_PROCESSING) // If rule_process() returns 1 (RULESET_STOP_PROCESSING), stop processing.
 			current_rules -= rule
@@ -636,16 +696,24 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 
 		last_midround_injection_attempt = world.time
 
-		if (prob(get_midround_injection_chance()))
+		var/chance_to_appear = get_midround_injection_chance() // BLUEMOON ADD - берём отсюда шанс для появления антагонистов, чтобы потом вывести его админам
+
+		if(prob(chance_to_appear)) // BLUEMOON CHANGES - было prob(get_midround_injection_chance()
 			var/list/drafted_rules = list()
 			for (var/datum/dynamic_ruleset/midround/rule in midround_rules)
 				if (!rule.weight)
 					continue
+				// BLUEMOON ADD START - в тимбазу некоторые режимы не должны ролиться
+				if(!(GLOB.round_type in rule.required_round_type))
+					continue
+				// BLUEMOON ADD END
 				if(rule.flags & HIGH_IMPACT_RULESET)
 					if (high_impact_ruleset_executed && threat_level < GLOB.dynamic_stacking_limit && GLOB.dynamic_no_stacking)
 						continue
+					/* BLUEMOON REMOVAL START - глоб больше не используется, его заменил glob.round_type
 					if(GLOB.dynamic_extended)
 						continue
+					/ BLUEMOON REMOVAL END */
 				if (rule.acceptable(current_players[CURRENT_LIVING_PLAYERS].len, threat_level) && mid_round_budget >= rule.cost)
 					rule.trim_candidates()
 					if (rule.ready())
@@ -661,6 +729,11 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 			SSevents.spawnEvent()
 			SSevents.reschedule()
 
+		// BLUEMOON ADD START - больше логирования и информации о режиме админам
+		else
+			message_admins("DYNAMIC: Шанс на появление антагонистов в [chance_to_appear] не прошёл.")
+		// BLUEMOON ADD END
+
 		random_event_hijacked = HIJACKED_NOTHING
 
 /// Gets the chance for latejoin injection, the dry_run argument is only used for forced injection.
@@ -670,22 +743,28 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 		return 100
 	var/chance = 0
 	var/effective_living_players = current_players[CURRENT_LIVING_PLAYERS].len
+	/* BLUEMOON REMOVAL START - динамичная экста (лайт динамик) не должны сокращать количество игроков
 	if(GLOB.dynamic_extended)
 		effective_living_players = min(effective_living_players, length(SSjob.get_living_sec())*2 + length(SSjob.get_living_heads()))
+	/ BLUEMOON REMOVAL END*/
 	var/max_pop_per_antag = max(5,15 - round(threat_level/10) - round(effective_living_players/5))
 	if (!current_players[CURRENT_LIVING_ANTAGS].len)
+		/* BLUEMOON REMOVAL START - динамичная экста (лайт динамик) не должны уменьшать шанс появления ролей
 		if(GLOB.dynamic_extended)
 			chance += min(50,effective_living_players*5)
 		else
-			chance += 50 // No antags at all? let's boost those odds!
+		/ BLUEMOON REMOVAL END*/
+		chance += 50 // No antags at all? let's boost those odds!
 	else
 		var/current_pop_per_antag = effective_living_players / current_players[CURRENT_LIVING_ANTAGS].len
 		if (current_pop_per_antag > max_pop_per_antag)
 			chance += min(50, 25+10*(current_pop_per_antag-max_pop_per_antag))
 		else
 			chance += 25-10*(max_pop_per_antag-current_pop_per_antag)
+	/* BLUEMOON REMOVAL START - мёртвыми могут быть в т.ч. игроки не со станции, из-за чего система работает некорректно
 	if (current_players[CURRENT_DEAD_PLAYERS].len > current_players[CURRENT_LIVING_PLAYERS].len)
 		chance -= 30 // More than half the crew died? ew, let's calm down on antags
+	/ BLUEMOON REMOVAL END */
 	if (mid_round_budget > higher_injection_chance_minimum_threat)
 		chance += higher_injection_chance
 	if (mid_round_budget < lower_injection_chance_minimum_threat)
@@ -728,7 +807,7 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 	return FALSE
 
 /datum/game_mode/dynamic/make_antag_chance(mob/living/carbon/human/newPlayer)
-	if (GLOB.dynamic_forced_extended)
+	if(GLOB.round_type == ROUNDTYPE_EXTENDED) // BLUEMOON CHANGES
 		return
 	if(EMERGENCY_ESCAPED_OR_ENDGAMED) // No more rules after the shuttle has left
 		return
@@ -753,7 +832,10 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 				if (threat_level < GLOB.dynamic_stacking_limit && GLOB.dynamic_no_stacking)
 					if(rule.flags & HIGH_IMPACT_RULESET && high_impact_ruleset_executed)
 						continue
-
+				//BLUEMOON ADDITION START
+				if(!(GLOB.round_type in rule.required_round_type))
+					continue
+				//BLUEMOON ADDITION END
 				rule.candidates = list(newPlayer)
 				rule.trim_candidates()
 				if (rule.ready())

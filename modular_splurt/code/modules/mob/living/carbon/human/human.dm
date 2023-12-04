@@ -14,17 +14,12 @@
 		cut_overlay(mutable_appearance('modular_splurt/icons/effects/cheesed.dmi', "cheesed_human"))
 		cheesed = FALSE
 
-/mob/living/carbon/human/ComponentInitialize()
-	. = ..()
-	AddElement(/datum/element/flavor_text/carbon, _name = "Headshot", _save_key = "headshot_link", _examine_no_preview = TRUE, _edit = FALSE)
 /mob/living/carbon/human/species/mammal/shadekin
 	race = /datum/species/mammal/shadekin
 
 /mob/living/carbon/human/species/mammal/teshari
 	race = /datum/species/mammal/teshari
 
-/mob/living/carbon/human/species/mammal/vox
-	race = /datum/species/vox
 
 /mob/living/carbon/human/is_literate()
 	// Check for D4C craving

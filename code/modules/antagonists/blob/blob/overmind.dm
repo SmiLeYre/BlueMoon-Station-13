@@ -109,7 +109,7 @@ GLOBAL_LIST_EMPTY(blob_nodes)
 			qdel(src)
 	else if(!victory_in_progress && (blobs_legit.len >= blobwincount))
 		victory_in_progress = TRUE
-		priority_announce("Biohazard has reached critical mass. Station loss is imminent.", "Biohazard Alert")
+		priority_announce("Biohazard has reached critical mass. Station loss is imminent.", "BНИМАНИЕ БИОУГРОЗА")
 		set_security_level("delta")
 		max_blob_points = INFINITY
 		blob_points = INFINITY
@@ -248,7 +248,7 @@ GLOBAL_LIST_EMPTY(blob_nodes)
 /mob/camera/blob/blob_act(obj/structure/blob/B)
 	return
 
-/mob/camera/blob/Stat()
+/mob/camera/blob/get_status_tab_items()
 	..()
 	if(statpanel("Status"))
 		if(blob_core)

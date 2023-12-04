@@ -1,5 +1,5 @@
 /obj/item/clothing/head/wizard
-	name = "wizard hat"
+	name = "Wizard Hat"
 	desc = "Strange-looking hat-wear that most certainly belongs to a real magic user."
 	icon_state = "wizard"
 	gas_transfer_coefficient = 0.01 // IT'S MAGICAL OKAY JEEZ +1 TO NOT DIE
@@ -56,6 +56,8 @@
 	desc = "A mysterious helmet that hums with an unearthly power."
 	icon_state = "magus"
 	item_state = "magus"
+	flags_cover = HEADCOVERSEYES
+	flags_inv = HIDEHAIR
 	dog_fashion = null
 	magic_flags = SPELL_WIZARD_HAT|SPELL_CULT_HELMET
 
@@ -73,7 +75,7 @@
 	item_state = "wizrobe"
 	gas_transfer_coefficient = 0.01
 	permeability_coefficient = 0.01
-	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	body_parts_covered = CHEST|ARMS|LEGS
 	armor = list(MELEE = 30, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 20, BIO = 20, RAD = 20, FIRE = 100, ACID = 100, WOUND = 20)
 	allowed = list(/obj/item/teleportation_scroll)
 	flags_inv = HIDEJUMPSUIT
@@ -81,7 +83,7 @@
 	equip_delay_other = 50
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-	var/magic_flags = SPELL_WIZARD_ROBE
+	var/magic_flags = SPELL_WIZARD_ROBE|SPELL_CULT_ARMOR|SPELL_WIZARD_HAT|SPELL_CULT_HELMET
 
 /obj/item/clothing/suit/wizrobe/ComponentInitialize()
 	. = ..()
@@ -118,7 +120,6 @@
 	icon_state = "magusblue"
 	item_state = "magusblue"
 	mutantrace_variation = STYLE_DIGITIGRADE
-	magic_flags = SPELL_WIZARD_ROBE|SPELL_CULT_ARMOR
 
 /obj/item/clothing/suit/wizrobe/magusred
 	name = "\improper Magus robe"
@@ -126,7 +127,6 @@
 	icon_state = "magusred"
 	item_state = "magusred"
 	mutantrace_variation = STYLE_DIGITIGRADE
-	magic_flags = SPELL_WIZARD_ROBE|SPELL_CULT_ARMOR
 
 /obj/item/clothing/suit/wizrobe/santa
 	name = "Santa's suit"
@@ -302,20 +302,24 @@
 	desc = "Not all wizards are afraid of getting up close and personal."
 	icon_state = "battlemage"
 	item_state = "battlemage"
-	recharge_rate = 0
-	max_charges = INFINITY
+	tail_state = "wizard_battle"
+	recharge_rate = 0.1
+	max_charges = 15
 	current_charges = 15
 	shield_state = "shield-red"
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/shielded/wizard
-	armor = list(MELEE = 30, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 20, BIO = 20, RAD = 20, FIRE = 100, ACID = 100)
+	armor = list(MELEE = 30, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 20, BIO = 100, RAD = 20, FIRE = 100, ACID = 100)
 	slowdown = 0
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+	var/magic_flags = SPELL_WIZARD_ROBE|SPELL_CULT_ARMOR
+
 
 /obj/item/clothing/suit/space/hardsuit/shielded/wizard/ComponentInitialize()
 	. = ..()
-	AddElement(/datum/element/spellcasting, SPELL_WIZARD_HAT, ITEM_SLOT_HEAD)
+	if(magic_flags)
+		AddElement(/datum/element/spellcasting, magic_flags, ITEM_SLOT_OCLOTHING)
 
 /obj/item/clothing/head/helmet/space/hardsuit/shielded/wizard
 	name = "battlemage helmet"
@@ -327,10 +331,12 @@
 	armor = list(MELEE = 30, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 20, BIO = 20, RAD = 20, FIRE = 100, ACID = 100)
 	actions_types = null //No inbuilt light
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+	var/magic_flags = SPELL_WIZARD_HAT|SPELL_CULT_HELMET
 
 /obj/item/clothing/head/helmet/space/hardsuit/shielded/wizard/ComponentInitialize()
 	. = ..()
-	AddElement(/datum/element/spellcasting, SPELL_WIZARD_ROBE, ITEM_SLOT_OCLOTHING)
+	if(magic_flags)
+		AddElement(/datum/element/spellcasting, magic_flags, ITEM_SLOT_HEAD)
 
 /obj/item/clothing/head/helmet/space/hardsuit/shielded/wizard/attack_self(mob/user)
 	return

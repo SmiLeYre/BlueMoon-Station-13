@@ -23,11 +23,11 @@
 	if(istype(target, /mob/living/simple_animal/hostile/asteroid/elite) && proximity_flag)
 		var/mob/living/simple_animal/hostile/asteroid/elite/E = target
 		if(E.stat != DEAD || E.sentience_type != SENTIENCE_BOSS || !E.key)
-			user.visible_message(span_notice("It appears [E] is unable to be revived right now.  Perhaps try again later."))
+			user.visible_message("<span class='notice'>It appears [E] is unable to be revived right now.  Perhaps try again later.</span>")
 			return
 		E.faction = list("neutral")
 		E.revive(full_heal = TRUE, admin_revive = TRUE)
-		user.visible_message(span_notice("[user] stabs [E] with [src], reviving it."))
+		user.visible_message("<span class='notice'>[user] stabs [E] with [src], reviving it.</span>")
 		E.playsound_local(get_turf(E), 'sound/effects/magic.ogg', 40, 0)
 		to_chat(E, "<span class='userdanger'>You have been revived by [user].  You owe [user] a great debt.  Assist [user.p_them()] in achieving [user.p_their()] goals, regardless of risk.</span")
 		to_chat(E, span_big(span_bold("Note that you now share the loyalties of [user].  You are expected not to intentionally sabotage their faction unless commanded to!")))
@@ -38,4 +38,4 @@
 		E.owner = user
 		qdel(src)
 	else
-		to_chat(user, span_info("[src] only works on the corpse of a sentient lavaland elite."))
+		to_chat(user, "<span class='info'>[src] only works on the corpse of a sentient lavaland elite.</span>")

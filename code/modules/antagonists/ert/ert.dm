@@ -8,7 +8,7 @@
 	var/datum/team/ert/ert_team
 	var/leader = FALSE
 	var/datum/outfit/outfit = /datum/outfit/ert/security
-	var/role = "Security Officer"
+	var/role = "Офицер"
 	var/list/name_source
 	threat = -5
 	var/random_names = TRUE
@@ -18,6 +18,7 @@
 	show_in_antagpanel = FALSE
 	show_to_ghosts = TRUE
 	antag_moodlet = /datum/mood_event/focused
+	soft_antag = TRUE //BLUEMOON ADD - дружелюбные, малозначимые гостроли не должны считаться за антагонистов (ломает динамик)
 
 /datum/antagonist/ert/on_gain()
 	if(random_names)
@@ -45,10 +46,22 @@
 /datum/antagonist/ert/deathsquad/apply_innate_effects(mob/living/mob_override)
 	ADD_TRAIT(owner, TRAIT_DISK_VERIFIER, DEATHSQUAD_TRAIT)
 
+	var/code
+	for (var/obj/machinery/nuclearbomb/selfdestruct/bombue in GLOB.machines)
+		if (length(bombue.r_code) <= 5 && bombue.r_code != initial(bombue.r_code))
+			code = bombue.r_code
+			break
+	if (code)
+		antag_memory += "<B>Коды от Ядерной Боеголовки</B>: [code]<br>"
+		to_chat(owner.current, "Коды от Ядерной Боеголовки: <B>[code]</B>")
+
 /datum/antagonist/ert/deathsquad/remove_innate_effects(mob/living/mob_override)
 	REMOVE_TRAIT(owner, TRAIT_DISK_VERIFIER, DEATHSQUAD_TRAIT)
 
 /datum/antagonist/ert/security // kinda handled by the base template but here for completion
+
+/datum/antagonist/ert/security/green
+	outfit = /datum/outfit/ert/security/green
 
 /datum/antagonist/ert/security/amber
 	outfit = /datum/outfit/ert/security/alert
@@ -57,9 +70,12 @@
 	outfit = /datum/outfit/ert/security/alert/red
 
 /datum/antagonist/ert/engineer
-	role = "Engineer"
+	role = "Инженер"
 	outfit = /datum/outfit/ert/engineer
 	skill_modifiers = list(/datum/skill_modifier/job/level/wiring)
+
+/datum/antagonist/ert/engineer/green
+	outfit = /datum/outfit/ert/engineer/green
 
 /datum/antagonist/ert/engineer/amber
 	outfit = /datum/outfit/ert/engineer/alert
@@ -68,9 +84,12 @@
 	outfit = /datum/outfit/ert/engineer/alert/red
 
 /datum/antagonist/ert/medic
-	role = "Medical Officer"
+	role = "Полевой Медик"
 	outfit = /datum/outfit/ert/medic
 	skill_modifiers = list(/datum/skill_modifier/job/affinity/surgery)
+
+/datum/antagonist/ert/medic/green
+	outfit = /datum/outfit/ert/medic/green
 
 /datum/antagonist/ert/medic/amber
 	outfit = /datum/outfit/ert/medic/alert
@@ -79,19 +98,35 @@
 	outfit = /datum/outfit/ert/medic/alert/red
 
 /datum/antagonist/ert/commander
-	role = "Commander"
+	role = "Командир"
 	outfit = /datum/outfit/ert/commander
 
 /datum/antagonist/ert/commander/amber
 	outfit = /datum/outfit/ert/commander/alert
 
+/datum/antagonist/ert/commander/green
+	outfit = /datum/outfit/ert/commander/green
+
 /datum/antagonist/ert/commander/red
 	outfit = /datum/outfit/ert/commander/alert/red
+
+/datum/antagonist/ert/janitor
+	outfit = /datum/outfit/ert/janitor
 
 /datum/antagonist/ert/deathsquad
 	name = "Deathsquad Trooper"
 	outfit = /datum/outfit/death_commando
-	role = "Trooper"
+	role = "Солдат"
+
+/datum/antagonist/ert/asset_protection
+	name = "Asset Protection Team Trooper"
+	outfit = /datum/outfit/death_commando
+	role = "Солдат"
+
+/datum/antagonist/ert/syndiesquad
+	name = "Syndiesquad Specialist"
+	outfit = /datum/outfit/syndicate/syndiesquad
+	role = "Специалист"
 
 /datum/antagonist/ert/medic/inquisitor
 	outfit = /datum/outfit/ert/medic/inquisitor
@@ -100,7 +135,7 @@
 	outfit = /datum/outfit/ert/security/inquisitor
 
 /datum/antagonist/ert/chaplain
-	role = "Chaplain"
+	role = "Священник"
 	outfit = /datum/outfit/ert/chaplain
 
 /datum/antagonist/ert/chaplain/inquisitor
@@ -119,8 +154,18 @@
 
 /datum/antagonist/ert/deathsquad/leader
 	name = "Deathsquad Officer"
-	outfit = /datum/outfit/death_commando
-	role = "Officer"
+	outfit = /datum/outfit/death_commando/officer
+	role = "Офицер"
+
+/datum/antagonist/ert/asset_protection/leader
+	name = "Asset Protection Team Officer"
+	outfit = /datum/outfit/death_commando/officer
+	role = "Офицер"
+
+/datum/antagonist/ert/syndiesquad/leader
+	name = "Syndiesquad Specialist"
+	outfit = /datum/outfit/syndicate/syndiesquad
+	role = "Мастер-Специалист"
 
 /datum/antagonist/ert/create_team(datum/team/ert/new_team)
 	if(istype(new_team))
@@ -135,7 +180,6 @@
 	if(!istype(H))
 		return
 	H.equipOutfit(outfit)
-
 
 /datum/antagonist/ert/greet()
 	if(!ert_team)
@@ -169,7 +213,6 @@
 	missiondesc += "<BR><B>Your Mission</B> : [ert_team.mission.explanation_text]"
 	to_chat(owner,missiondesc)
 
-
 /datum/antagonist/ert/families
 	name = "Space Police Responder"
 	antag_hud_type = ANTAG_HUD_SPACECOP
@@ -180,22 +223,22 @@
 	..()
 	var/mob/living/M = mob_override || owner.current
 	add_antag_hud(antag_hud_type, antag_hud_name, M)
-	if(M.hud_used)
-		var/datum/hud/H = M.hud_used
-		var/atom/movable/screen/wanted/giving_wanted_lvl = new /atom/movable/screen/wanted()
-		H.wanted_lvl = giving_wanted_lvl
-		giving_wanted_lvl.hud = H
-		H.infodisplay += giving_wanted_lvl
-		H.mymob.client.screen += giving_wanted_lvl
+//	if(M.hud_used)
+//		var/datum/hud/H = M.hud_used
+//		var/atom/movable/screen/wanted/giving_wanted_lvl = new /atom/movable/screen/wanted()
+//		H.wanted_lvl = giving_wanted_lvl
+//		giving_wanted_lvl.hud = H
+//		H.infodisplay += giving_wanted_lvl
+//		H.mymob.client.screen += giving_wanted_lvl
 
 
 /datum/antagonist/ert/families/remove_innate_effects(mob/living/mob_override)
 	var/mob/living/M = mob_override || owner.current
 	remove_antag_hud(antag_hud_type, M)
-	if(M.hud_used)
-		var/datum/hud/H = M.hud_used
-		H.infodisplay -= H.wanted_lvl
-		QDEL_NULL(H.wanted_lvl)
+//	if(M.hud_used)
+//		var/datum/hud/H = M.hud_used
+//		H.infodisplay -= H.wanted_lvl
+//		QDEL_NULL(H.wanted_lvl)
 	..()
 
 /datum/antagonist/ert/families/greet()

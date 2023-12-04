@@ -3,6 +3,7 @@
 	name = "reinforced floor"
 	desc = "Extremely sturdy."
 	icon_state = "engine"
+	holodeck_compatible = TRUE
 	thermal_conductivity = 0.025
 	heat_capacity = INFINITY
 	floor_tile = /obj/item/stack/rods
@@ -11,6 +12,7 @@
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
+	flammability = 0 // nope
 
 /turf/open/floor/engine/examine(mob/user)
 	. = ..()
@@ -24,6 +26,9 @@
 
 /turf/open/floor/engine/burn_tile()
 	return //unburnable
+
+/turf/open/floor/engine/temperature_expose()
+	return //still unburnable
 
 /turf/open/floor/engine/make_plating(force = 0)
 	if(force)
@@ -124,6 +129,25 @@
 	initial_gas_mix = ATMOS_TANK_AIRMIX
 
 
+/turf/open/floor/engine/hull
+	name = "Exterior Hull Plating"
+	desc = "Sturdy exterior hull plating that separates you from the uncaring vacuum of space."
+	icon_state = "regular_hull"
+	initial_gas_mix = AIRLESS_ATMOS
+
+/turf/open/floor/engine/hull/ceiling
+	name = "Shuttle Ceiling Plating"
+	var/old_turf_type
+
+/turf/open/floor/engine/hull/ceiling/AfterChange(flags, oldType)
+	. = ..()
+	old_turf_type = oldType
+
+/turf/open/floor/engine/hull/reinforced
+	name = "Exterior Reinforced Hull Plating"
+	desc = "Extremely sturdy exterior hull plating that separates you from the uncaring vacuum of space."
+	icon_state = "reinforced_hull"
+	heat_capacity = INFINITY
 
 /turf/open/floor/engine/cult
 	name = "engraved floor"

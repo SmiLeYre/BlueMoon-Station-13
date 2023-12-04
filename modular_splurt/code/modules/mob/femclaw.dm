@@ -54,7 +54,6 @@
 	health = 400
 	armour_penetration = 45
 	var/extra_sexxo = 1
-	var/body_colors = "#847559"
 
 /mob/living/simple_animal/hostile/deathclaw/funclaw/femclaw/mommyclaw
 	icon_state = "mommyclaw"
@@ -66,7 +65,6 @@
 	armour_penetration = 80
 	melee_damage_lower = 80
 	melee_damage_upper = 80
-	body_colors = "#6790c2"
 
 /mob/living/simple_animal/hostile/deathclaw/funclaw/femclaw/death()
 	..()

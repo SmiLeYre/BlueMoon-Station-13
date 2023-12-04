@@ -13,7 +13,7 @@
 	density = FALSE
 	layer = EDGED_TURF_LAYER
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-	var/amount = 3
+	var/amount = 10
 	animate_movement = 0
 	var/metal = 0
 	var/lifetime = 40
@@ -94,8 +94,11 @@
 	name = "resin foam"
 	metal = RESIN_FOAM
 
+/obj/effect/particle_effect/foam/short_life
+	lifetime = 1 SECONDS
+
 /obj/effect/particle_effect/foam/long_life
-	lifetime = 150
+	lifetime = 30 SECONDS
 
 /obj/effect/particle_effect/foam/Initialize(mapload)
 	. = ..()
@@ -209,7 +212,7 @@
 ///////////////////////////////////////////////
 //FOAM EFFECT DATUM
 /datum/effect_system/foam_spread
-	var/amount = 10		// the size of the foam spread.
+	var/amount = 25		// the size of the foam spread.
 	var/obj/chemholder
 	effect_type = /obj/effect/particle_effect/foam
 	var/metal = 0
@@ -222,6 +225,8 @@
 /datum/effect_system/foam_spread/metal/smart
 	effect_type = /obj/effect/particle_effect/foam/smart
 
+/datum/effect_system/foam_spread/short
+	effect_type = /obj/effect/particle_effect/foam/short_life
 
 /datum/effect_system/foam_spread/long
 	effect_type = /obj/effect/particle_effect/foam/long_life
@@ -280,7 +285,7 @@
 
 /obj/structure/foamedmetal/Initialize(mapload)
 	. = ..()
-	air_update_turf(1)
+	air_update_turf(TRUE)
 
 /obj/structure/foamedmetal/Move()
 	var/turf/T = loc

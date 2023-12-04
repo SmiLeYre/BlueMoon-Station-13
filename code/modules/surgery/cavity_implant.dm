@@ -6,7 +6,7 @@
 
 //handle cavity
 /datum/surgery_step/handle_cavity
-	name = "implant item"
+	name = "Имплантировать Предмет"
 	accept_hand = 1
 	accept_any_item = 1
 	implements = list(/obj/item = 100)

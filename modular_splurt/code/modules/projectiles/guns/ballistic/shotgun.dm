@@ -101,14 +101,14 @@
 	icon = 'modular_splurt/icons/obj/guns/projectile.dmi'
 	icon_state = "brushgun"
 	item_state = "leveraction"
-	fire_sound = "sound/weapons/revolvershot.ogg"
+	fire_sound = "sound/weapons/revolvershot2.ogg"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/levergun/brush2
 
 /obj/item/gun/ballistic/shotgun/brush2/attack_self(mob/living/user)
 	if(recentpump > world.time)
 		return
 	if(IS_STAMCRIT(user))//CIT CHANGE - makes pumping shotguns impossible in stamina softcrit
-		to_chat(user, span_warning("You're too exhausted for that."))//CIT CHANGE - ditto
+		to_chat(user, "<span class='warning'>You're too exhausted for that.</span>")//CIT CHANGE - ditto
 		return//CIT CHANGE - ditto
 	pump(user, TRUE)
 	if(HAS_TRAIT(user, TRAIT_FAST_PUMP))

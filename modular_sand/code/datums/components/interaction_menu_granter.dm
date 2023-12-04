@@ -84,7 +84,7 @@
 	var/mob/living/self = parent
 	//Getting info
 	.["isTargetSelf"] = target == self
-	.["interactingWith"] = target != self ? "Interacting with \the [target]..." : "Interacting with yourself..."
+	.["interactingWith"] = target != self ? "Взаимодействовать с \the [target]..." : "Взаимодействовать с собой..."
 	.["selfAttributes"] = self.list_interaction_attributes(self)
 	.["lust"] = self.get_lust()
 	.["maxLust"] = self.get_lust_tolerance() * 3
@@ -148,7 +148,7 @@
 			genitals += list(genital_entry)
 		if(!get_genitals.getorganslot(ORGAN_SLOT_ANUS)) //SPLURT Edit
 			var/simulated_ass = list()
-			simulated_ass["name"] = "Anus"
+			simulated_ass["name"] = "Анус"
 			simulated_ass["key"] = "anus"
 			var/visibility = "Invalid"
 			switch(get_genitals.anus_exposed)
@@ -170,6 +170,7 @@
 		.["erp_pref"] = 			pref_to_num(prefs.erppref)
 		.["noncon_pref"] = 			pref_to_num(prefs.nonconpref)
 		.["vore_pref"] = 			pref_to_num(prefs.vorepref)
+		.["mobsex_pref"] = 			pref_to_num(prefs.mobsexpref)	//Hentai
 		.["extreme_pref"] = 		pref_to_num(prefs.extremepref)
 		.["extreme_harm"] = 		pref_to_num(prefs.extremeharm)
 		.["unholy_pref"] =		pref_to_num(prefs.unholypref)
@@ -194,8 +195,9 @@
 		.["belly_inflation"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, BELLY_INFLATION)
 		.["never_hypno"] = 			!CHECK_BITFIELD(prefs.cit_toggles, NEVER_HYPNO)
 		.["no_aphro"] = 			!CHECK_BITFIELD(prefs.cit_toggles, NO_APHRO)
-		.["no_ass_slap"] = 		!CHECK_BITFIELD(prefs.cit_toggles, NO_ASS_SLAP)
-		.["no_auto_wag"] = 		!CHECK_BITFIELD(prefs.cit_toggles, NO_AUTO_WAG)
+		.["no_ass_slap"] = 			!CHECK_BITFIELD(prefs.cit_toggles, NO_ASS_SLAP)
+		.["no_auto_wag"] = 			!CHECK_BITFIELD(prefs.cit_toggles, NO_AUTO_WAG)
+		.["no_disco_dance"] = 		!CHECK_BITFIELD(prefs.cit_toggles, NO_DISCO_DANCE)
 		.["chastity_pref"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, CHASTITY)
 		.["stimulation_pref"] = 	!!CHECK_BITFIELD(prefs.cit_toggles, STIMULATION)
 		.["edging_pref"] =			!!CHECK_BITFIELD(prefs.cit_toggles, EDGING)
@@ -273,6 +275,8 @@
 						prefs.erppref = value
 				if("noncon_pref")
 					if(prefs.nonconpref == value)
+						message_admins("[parent_mob.real_name] меняет параметр Нон-Кон на [value].")
+						log_admin("[parent_mob.real_name] меняет параметр Нон-Кон на [value].")
 						return FALSE
 					else
 						prefs.nonconpref = value
@@ -281,6 +285,13 @@
 						return FALSE
 					else
 						prefs.vorepref = value
+
+				if("mobsex_pref") //Hentai
+					if(prefs.mobsexpref == value)
+						return FALSE
+					else
+						prefs.mobsexpref = value
+
 				if("unholy_pref")
 					if(prefs.unholypref == value)
 						return FALSE
@@ -347,6 +358,8 @@
 					TOGGLE_BITFIELD(prefs.cit_toggles, NO_ASS_SLAP)
 				if("no_auto_wag")
 					TOGGLE_BITFIELD(prefs.cit_toggles, NO_AUTO_WAG)
+				if("no_disco_dance")
+					TOGGLE_BITFIELD(prefs.cit_toggles, NO_DISCO_DANCE)
 				// SPLURT edit
 				if("chastity_pref")
 					TOGGLE_BITFIELD(prefs.cit_toggles, CHASTITY)

@@ -7,7 +7,7 @@
 
 /datum/emote/living/narrate/proc/check_invalid(mob/user, input)
 	if(stop_bad_mime.Find(input, 1, 1))
-		to_chat(user, span_danger("Invalid emote."))
+		to_chat(user, "<span class='danger'>Invalid emote.</span>")
 		return TRUE
 	return FALSE
 
@@ -28,7 +28,7 @@
 		return FALSE
 
 	user.log_message(message, LOG_EMOTE)
-	message = span_name("([user])</span> <span class='pnarrate'>[message]")
+	message = "<span class='name'>([user])</span> <span class='pnarrate'>[message]</span>"
 
 	for(var/mob/M in GLOB.dead_mob_list)
 		if(!M.client || isnewplayer(M))
@@ -44,7 +44,7 @@
 	set name = "Narrate (Player)"
 	set desc = "Narrate an action or event! An alternative to emoting, for when your emote shouldn't start with your name!"
 	if(GLOB.say_disabled)
-		to_chat(usr, span_danger("Speech is currently admin-disabled."))
+		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
 		return
 	message = trim(html_encode(message), MAX_MESSAGE_LEN)
 	emote("narrate", message=message)

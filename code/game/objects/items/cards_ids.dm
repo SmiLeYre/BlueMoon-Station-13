@@ -18,7 +18,7 @@
 	var/list/files = list()
 
 /obj/item/card/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to swipe [user.p_their()] neck with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins to swipe [user.ru_ego()] neck with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return BRUTELOSS
 
 /obj/item/card/data
@@ -78,7 +78,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	item_flags = NO_MAT_REDEMPTION | NOBLUDGEON
 	var/prox_check = TRUE //If the emag requires you to be in range
-	var/uses = 15
+	var/uses = 30
 
 /obj/item/card/emag/bluespace
 	name = "bluespace cryptographic sequencer"
@@ -177,7 +177,7 @@
 	playsound(src, 'sound/items/bikehorn.ogg', 50, 1)
 
 /obj/item/card/id
-	name = "identification card"
+	name = "Identification Card"
 	desc = "A card used to provide ID and determine access across the station."
 	icon_state = "id"
 	item_state = "card-id"
@@ -186,11 +186,12 @@
 	slot_flags = ITEM_SLOT_ID
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 100, ACID = 100)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	var/id_type_name = "identification card"
+	var/id_type_name = "Identification Card"
 	var/mining_points = 0 //For redeeming at mining equipment vendors
 	var/list/access = list()
 	var/registered_name = null // The name registered_name on the card
 	var/assignment = null
+	var/rank = null			//actual job
 	var/access_txt // mapping aid
 	var/bank_support = ID_FREE_BANK_ACCOUNT
 	var/datum/bank_account/registered_account
@@ -219,6 +220,7 @@
 		my_store.my_card = null
 		my_store = null
 	cached_flat_icon = null //SPLURT edit
+	QDEL_NULL(access)
 	return ..()
 
 /obj/item/card/id/vv_edit_var(var_name, var_value)
@@ -418,11 +420,11 @@
 
 /obj/item/card/id/proc/update_label(newname, newjob)
 	if(newname || newjob)
-		name = "[(!newname)	? "identification card"	: "[newname]'s ID Card"][(!newjob) ? "" : " ([newjob])"]"
+		name = "[(!newname)	? "identification card"	: "[newname] - ID Card"][(!newjob) ? "" : " ([newjob])"]"
 		update_icon()
 		return
 
-	name = "[(!registered_name)	? "identification card"	: "[registered_name]'s ID Card"][(!assignment) ? "" : " ([assignment])"]"
+	name = "[(!registered_name)	? "identification card"	: "[registered_name] - ID Card"][(!assignment) ? "" : " ([assignment])"]"
 	update_icon()
 
 /obj/item/card/id/silver
@@ -441,7 +443,7 @@
 	registered_name = "Thirteen"
 
 /obj/item/card/id/gold
-	name = "gold identification card"
+	name = "Gold Identification Card"
 	desc = "A golden card which shows power and might."
 	icon_state = "gold"
 	item_state = "gold_id"
@@ -449,10 +451,16 @@
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 
 /obj/item/card/id/syndicate
-	name = "agent card"
+	name = "Agent Card"
+	icon_state = "syndie"
+	assignment = "Syndicate Operative"
 	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE)
 	var/anyone = FALSE //Can anyone forge the ID or just syndicate?
 	var/forged = FALSE //have we set a custom name and job assignment, or will we use what we're given when we chameleon change?
+
+/obj/item/card/id/syndicate/advanced
+	name = "Agent Card"
+	icon_state = "card_black"
 
 /obj/item/card/id/syndicate/Initialize(mapload)
 	. = ..()
@@ -466,12 +474,16 @@
 /obj/item/card/id/syndicate/afterattack(obj/item/O, mob/user, proximity)
 	if(!proximity)
 		return
+	if(istype(O, /obj/item/card/id) && !uses)
+		to_chat(usr, "<span class='notice'>Микросканеры устройства издают отрицательное жужжание при попытке использовать их ещё раз.</span>")
+		playsound(src, 'sound/effects/light_flicker.ogg', 100, 1)
+		return
 	if(istype(O, /obj/item/card/id))
 		var/obj/item/card/id/I = O
 		src.access |= I.access
-		if(isliving(user) && user.mind)
-			if(user.mind.special_role || anyone)
-				to_chat(usr, "<span class='notice'>The card's microscanners activate as you pass it over the ID, copying its access.</span>")
+		uses = max(uses - 1, 0)
+		to_chat(usr, "<span class='notice'>Микросканеры устройства активизируются при проведении ею по Идентификационной Карте и копируют её доступ.</span>")
+		playsound(src, 'sound/effects/light_flicker.ogg', 100, 1)
 
 /obj/item/card/id/syndicate/attack_self(mob/user)
 	if(isliving(user) && user.mind)
@@ -538,12 +550,18 @@
 
 /obj/item/card/id/syndicate/anyone
 	anyone = TRUE
+	assignment = "Lavaland Syndicate Agent"
 
-/obj/item/card/id/syndicate/nuke_leader
-	name = "lead agent card"
+/obj/item/card/id/syndicate/anyone/comms
+	anyone = TRUE
+	assignment = "Syndicate Comms Agent"
 	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE, ACCESS_SYNDICATE_LEADER)
 
-/obj/item/card/id/syndicate_command
+/obj/item/card/id/syndicate/nuke_leader
+	name = "Lead Agent Card"
+	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE, ACCESS_SYNDICATE_LEADER)
+
+/obj/item/card/id/syndicate/syndicate_command
 	name = "syndicate ID card"
 	desc = "An ID straight from the Syndicate."
 	registered_name = "Syndicate"
@@ -561,6 +579,29 @@
 
 /obj/item/card/id/pirate
 	access = list(ACCESS_SYNDICATE)
+
+/obj/item/card/id/syndicate/vox_scavenger
+	icon_state = "retro"
+	assignment = "Trader"
+	access = list(ACCESS_SYNDICATE)
+
+/obj/item/card/id/syndicate/inteq
+	name = "Mercenary Card"
+	icon_state = "inteq"
+	assignment = "Mercenary"
+	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE)
+
+/obj/item/card/id/syndicate/anyone/inteq
+	name = "Vanguard Mercenary Card"
+	icon_state = "inteq"
+	assignment = "Vanguard Mercenary"
+	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE, ACCESS_SYNDICATE_LEADER)
+
+/obj/item/card/id/syndicate/nuke_leader/inteq
+	name = "Nuclear Vanguard Mercenary Card"
+	icon_state = "inteq"
+	assignment = "Vanguard Mercenary"
+	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE, ACCESS_SYNDICATE_LEADER)
 
 /obj/item/card/id/captains_spare
 	name = "captain's spare ID"
@@ -597,6 +638,7 @@
 
 /obj/item/card/id/ert/Initialize(mapload)
 	access = get_all_accesses()+get_ert_access("commander")-ACCESS_CHANGE_IDS
+	registered_account = SSeconomy.get_dep_account(ACCOUNT_CAR)
 	. = ..()
 
 /obj/item/card/id/ert/Security
@@ -720,8 +762,8 @@
 	access = list(ACCESS_MINING, ACCESS_MINING_STATION, ACCESS_MAILSORTING, ACCESS_MINERAL_STOREROOM)
 
 /obj/item/card/id/away
-	name = "a perfectly generic identification card"
-	desc = "A perfectly generic identification card. Looks like it could use some flavor."
+	name = "A Perfectly Generic Identification Card"
+	desc = "A Perfectly Generic Identification Card. Looks like it could use some flavor."
 	icon_state = "retro"
 	access = list(ACCESS_AWAY_GENERAL)
 
@@ -735,8 +777,8 @@
 	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, ACCESS_AWAY_SEC)
 
 /obj/item/card/id/away/old
-	name = "a perfectly generic identification card"
-	desc = "A perfectly generic identification card. Looks like it could use some flavor."
+	name = "A Perfectly Generic Identification Card"
+	desc = "A Perfectly Generic Identification Card. Looks like it could use some flavor."
 	icon_state = "centcom"
 
 /obj/item/card/id/away/old/sec
@@ -761,6 +803,41 @@
 	name = "APC Access ID"
 	desc = "A special ID card that allows access to APC terminals."
 	access = list(ACCESS_ENGINE_EQUIP)
+
+/obj/item/card/id/away/old/tarkoff
+	name = "Tarkov Visitor's Pass"
+	desc = "A dust-collected visitors pass, A small tagline reading \"Port Tarkof, The first step to Civilian Partnership in Space Homesteading\"."
+	access = list(ACCESS_AWAY_GENERAL, ACCESS_TARKOFF)
+
+/obj/item/card/id/away/old/tarkoff/cargo
+	assignment = "P-T Cargo Personell"
+	desc = "An access card designated for \"cargo's finest\". You're also a part time space miner, when cargonia is quiet."
+	access = list(ACCESS_AWAY_GENERAL, ACCESS_TARKOFF)
+
+/obj/item/card/id/away/old/tarkoff/sec
+	assignment = "P-T Port Guard"
+	desc = "An access card designated for \"security members\". Everyone wants your guns, partner. Yee-haw."
+	access = list(ACCESS_AWAY_GENERAL, ACCESS_WEAPONS, ACCESS_SEC_DOORS, ACCESS_TARKOFF)
+
+/obj/item/card/id/away/old/tarkoff/med
+	assignment = "P-T Trauma Medic"
+	desc = "An access card designated for \"medical staff\". You provide the medic bags."
+	access = list(ACCESS_MEDICAL, ACCESS_AWAY_GENERAL, ACCESS_TARKOFF, ACCESS_SURGERY)
+
+/obj/item/card/id/away/old/tarkoff/eng
+	assignment = "P-T Maintenance Crew"
+	desc = "An access card designated for \"engineering staff\". You're going to be the one everyone points at to fix stuff, lets be honest."
+	access = list(ACCESS_AWAY_GENERAL, ACCESS_TARKOFF, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
+
+/obj/item/card/id/away/old/tarkoff/sci
+	assignment = "P-T Field Researcher"
+	desc = "An access card designated for \"the science team\". You are forgotten basically immediately when it comes to the lab."
+	access = list(ACCESS_ROBOTICS, ACCESS_AWAY_GENERAL, ACCESS_WEAPONS, ACCESS_TARKOFF)
+
+/obj/item/card/id/away/old/tarkoff/ensign
+	assignment = "Tarkov Ensign"
+	desc = "An access card designated for \"tarkoff ensign\". No one has to listen to you... But you're the closest there is for command around here."
+	access = list(ACCESS_MEDICAL, ACCESS_ROBOTICS, ACCESS_AWAY_GENERAL, ACCESS_TARKOFF, ACCESS_WEAPONS, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
 
 /obj/item/card/id/departmental_budget
 	name = "departmental card (FUCK)"
@@ -878,6 +955,12 @@
 	assignment = "Jannie"
 
 /obj/item/card/id/debug/Initialize(mapload)
-	access = get_all_accesses()+get_all_centcom_access()+get_all_syndicate_access()
+	access = get_all_accesses()+get_all_centcom_access()+get_all_syndicate_access()+get_all_ghost_access()
 	registered_account = SSeconomy.get_dep_account(ACCOUNT_CAR)
 	. = ..()
+
+
+/obj/item/card/id/death
+	name = "\improper Death Commando ID"
+	icon_state = "centcom"
+	assignment = "Death Commando"

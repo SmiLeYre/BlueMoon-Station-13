@@ -80,11 +80,12 @@
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	hitsound = 'sound/weapons/rapierhit.ogg'
-	force = 20
-	armour_penetration = 75
+	force = 35
+	armour_penetration = 50
 	block_chance = 50
-	sharpness = SHARP_EDGED
-	max_charges = 4
+	sharpness = SHARP_POINTY
+	max_charges = 5
+	recharge_rate = 4
 
 /obj/item/gun/magic/staff/spellblade/Initialize(mapload)
 	. = ..()
@@ -105,5 +106,3 @@
 	item_state = "locker"
 	max_charges = 6
 	recharge_rate = 4
-
-

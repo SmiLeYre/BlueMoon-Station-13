@@ -251,3 +251,10 @@
 
 /obj/structure/door_assembly/door_assembly_bronze/seethru
 	airlock_type = /obj/machinery/door/airlock/bronze/seethru
+
+/obj/structure/door_assembly/door_assembly_material
+	name = "airlock assembly"
+	airlock_type = /obj/machinery/door/airlock/material
+	glass_type = /obj/machinery/door/airlock/material/glass
+	nomineral = TRUE
+	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS

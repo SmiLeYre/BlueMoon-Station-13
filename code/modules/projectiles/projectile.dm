@@ -23,7 +23,7 @@
 
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	var/def_zone = ""	//Aiming at
-	var/atom/movable/firer = null//Who shot it
+	var/mob/firer = null//Who shot it
 	var/atom/fired_from = null // the atom that the projectile was fired from (gun, turret)	var/suppressed = FALSE	//Attack message
 	var/suppressed = FALSE	//Attack message
 	var/candink = FALSE //Can this projectile play the dink sound when hitting the head?
@@ -174,7 +174,6 @@
 	var/eyeblur = 0
 	var/drowsy = 0
 	var/stamina = 0
-	var/jitter = 0
 	var/dismemberment = 0 //The higher the number, the greater the bonus to dismembering. 0 will not dismember at all.
 	var/impact_effect_type //what type of impact effect to show when hitting something
 	var/log_override = FALSE //is this type spammed enough to not log? (KAs)
@@ -191,6 +190,8 @@
 	var/embed_falloff_tile
 	/// For telling whether we want to roll for bone breaking or lacerations if we're bothering with wounds
 	sharpness = SHARP_NONE
+
+	var/chain = null
 
 /obj/item/projectile/Initialize(mapload)
 	. = ..()
@@ -269,6 +270,14 @@
 		return BULLET_ACT_HIT
 
 	var/mob/living/L = target
+
+	// BLUEMOON ADD START - больших и тяжёлых существ проблематично нормально оглушить
+	if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))
+		stamina *= 0.5
+		knockdown *= 0.5
+		knockdown_stamoverride *= 0.5
+		knockdown_stam_max *= 0.5
+	// BLUEMOON ADD END
 
 	if(blocked != 100) // not completely blocked
 		if(damage && L.blood_volume && damage_type == BRUTE)

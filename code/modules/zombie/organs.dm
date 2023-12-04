@@ -25,6 +25,11 @@
 
 /obj/item/organ/zombie_infection/Insert(var/mob/living/carbon/M, special = 0, drop_if_replaced = TRUE)
 	. = ..()
+	// BLUEMOON ADD START - роботы вообще не могут быть зомби
+	if(owner.mob_biotypes & MOB_ROBOTIC)
+		qdel(src)
+		return
+	// BLUEMOON ADD END
 	START_PROCESSING(SSobj, src)
 
 /obj/item/organ/zombie_infection/Remove(special = FALSE)
@@ -89,7 +94,7 @@
 		return
 
 	owner.grab_ghost()
-	owner.visible_message("<span class='danger'>[owner] suddenly convulses, as [owner.p_they()][stand_up ? " stagger to [owner.p_their()] feet and" : ""] gain a ravenous hunger in [owner.p_their()] eyes!</span>", "<span class='alien'>You HUNGER!</span>")
+	owner.visible_message("<span class='danger'>[owner] suddenly convulses, as [owner.ru_who()][stand_up ? " stagger to [owner.ru_ego()] feet and" : ""] gain a ravenous hunger in [owner.ru_ego()] eyes!</span>", "<span class='alien'>You HUNGER!</span>")
 	playsound(owner.loc, 'sound/hallucinations/far_noise.ogg', 50, 1)
 	owner.do_jitter_animation(living_transformation_time)
 	owner.Stun(living_transformation_time)

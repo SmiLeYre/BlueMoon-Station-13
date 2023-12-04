@@ -1,5 +1,5 @@
 /obj/item/gun/ballistic/automatic/pistol
-	name = "stechkin pistol"
+	name = "\improper Makarov pistol"
 	desc = "A small, easily concealable 10mm handgun. Has a threaded barrel for suppressors."
 	icon_state = "pistol"
 	w_class = WEIGHT_CLASS_SMALL
@@ -9,6 +9,8 @@
 	fire_delay = 0
 	fire_select_modes = list(SELECT_SEMI_AUTOMATIC)
 	automatic_burst_overlay = FALSE
+	reskin_binding = COMSIG_CLICK_ALT
+	fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
 
 /obj/item/gun/ballistic/automatic/pistol/no_mag
 	spawnwithmagazine = FALSE
@@ -21,7 +23,7 @@
 	var/obj/item/suppressor/S = new(src)
 	install_suppressor(S)
 
-//(reskinnable stetchkin)
+//(reskinnable Makarov)
 /obj/item/gun/ballistic/automatic/pistol/modular
 	name = "modular pistol"
 	desc = "A small, easily concealable 10mm handgun. Has a threaded barrel for suppressors."
@@ -78,6 +80,14 @@
 	mag_type = /obj/item/ammo_box/magazine/m50
 	can_suppress = FALSE
 	automatic_burst_overlay = FALSE
+	obj_flags = UNIQUE_RENAME
+	w_class = WEIGHT_CLASS_NORMAL
+	fire_sound = 'modular_bluemoon/kovac_shitcode/sound/weapons/deagle.ogg'
+	unique_reskin = list(
+		"Desert Eagle" = list("icon_state" = "deagle"),
+		"Desert Eagle Gold" = list("icon_state" = "deagleg"),
+		"Desert Eagle Camo" = list("icon_state" = "deaglecamo")
+	)
 
 /obj/item/gun/ballistic/automatic/pistol/deagle/update_overlays()
 	. = ..()
@@ -97,7 +107,7 @@
 	icon_state = "deaglecamo"
 	item_state = "deagleg"
 
-/obj/item/gun/ballistic/automatic/pistol/APS
+/obj/item/gun/ballistic/automatic/pistol/aps
 	name = "stechkin APS pistol"
 	desc = "The original Russian version of a widely used Syndicate sidearm. Uses 9mm ammo. Has a threaded barrel for suppressors."
 	icon_state = "aps"

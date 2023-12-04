@@ -110,3 +110,17 @@
 	if(!R || !owner)
 		return TRUE
 	return ((HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM) && !(R.chemical_flags & REAGENT_ROBOTIC_PROCESS)) || (!HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM) && !(R.chemical_flags & REAGENT_ORGANIC_PROCESS)))
+
+//Creates foam from the reagent. Metaltype is for metal foam, notification is what to show people in textbox
+/datum/reagents/proc/create_foam(foamtype, foam_volume, result_type = null, notification = null, log = FALSE)
+	var/location = get_turf(my_atom)
+
+	var/datum/effect_system/foam_spread/foam = new foamtype()
+	foam.set_up(amt = foam_volume, loca = location, carry = src)
+	foam.start()
+
+	clear_reagents()
+	if(!notification)
+		return
+	for(var/mob/M in viewers(5, location))
+		to_chat(M, notification)

@@ -85,7 +85,98 @@
 		carbon_owner.dream()
 	// 2% per second, tick interval is in deciseconds
 	if(prob((tick_interval+1) * 0.2) && owner.health > owner.crit_threshold)
-		owner.emote("snore")
+		if(!iscatperson(owner))
+			owner.emote("snore")
+		else
+			owner.emote("purr") //cats can purr in their sleep
+
+/**
+ * # Transient Status Effect (basetype)
+ *
+ * A status effect that works off a (possibly decimal) counter before expiring, rather than a specified world.time.
+ * This allows for a more precise tweaking of status durations at runtime (e.g. paralysis).
+ */
+/datum/status_effect/transient
+	tick_interval = 0.2 SECONDS // SSfastprocess interval
+	alert_type = null
+	/// How much strength left before expiring? time in deciseconds.
+	var/strength = 0
+
+/datum/status_effect/transient/on_creation(mob/living/new_owner, set_duration)
+	if(isnum(set_duration))
+		strength = set_duration
+	. = ..()
+
+
+/datum/status_effect/transient/tick()
+	if(QDELETED(src) || QDELETED(owner))
+		return FALSE
+	. = TRUE
+	strength += calc_decay()
+	if(strength <= 0)
+		qdel(src)
+		return FALSE
+
+/**
+ * Returns how much strength should be adjusted per tick.
+ */
+/datum/status_effect/transient/proc/calc_decay()
+	return -0.2 SECONDS // 1 per second by default
+
+//SLOWED - slows down the victim for a duration and a given slowdown value.
+/datum/status_effect/incapacitating/slowed
+	id = "slowed"
+	var/slowdown_value = 10 // defaults to this value if none is specified
+
+/datum/status_effect/incapacitating/slowed/on_creation(mob/living/new_owner, set_duration, _slowdown_value)
+	. = ..()
+	if(isnum(_slowdown_value))
+		slowdown_value = _slowdown_value
+
+/datum/status_effect/transient/silence
+	id = "silenced"
+
+/datum/status_effect/transient/silence/on_apply()
+	. = ..()
+	ADD_TRAIT(owner, TRAIT_MUTE, id)
+
+/datum/status_effect/transient/silence/on_remove()
+	. = ..()
+	REMOVE_TRAIT(owner, TRAIT_MUTE, id)
+
+/**
+ * # Confusion
+ *
+ * Prevents moving straight, sometimes changing movement direction at random.
+ * Decays at a rate of 1 per second.
+ */
+/datum/status_effect/transient/confusion
+	id = "confusion"
+	var/image/overlay
+
+/datum/status_effect/transient/confusion/tick()
+	. = ..()
+	if(!.)
+		return
+	if(!owner.stat) //add or remove the overlay if they are alive or unconscious/dead
+		add_overlay()
+	else if(overlay)
+		owner.cut_overlay(overlay)
+		overlay = null
+
+/datum/status_effect/transient/confusion/proc/add_overlay()
+	if(overlay)
+		return
+	var/matrix/M = matrix()
+	M.Scale(0.6)
+	overlay = image('icons/effects/effects.dmi', "confusion", pixel_y = 20)
+	overlay.transform = M
+	owner.add_overlay(overlay)
+
+/datum/status_effect/transient/confusion/on_remove()
+	owner.cut_overlay(overlay)
+	overlay = null
+	return ..()
 
 /datum/status_effect/staggered
 	id = "staggered"
@@ -282,9 +373,9 @@
 	for(var/obj/item/his_grace/HG in owner.held_items)
 		qdel(src)
 		return
-	owner.adjustBruteLoss(0.1)
-	owner.adjustFireLoss(0.1)
-	owner.adjustToxLoss(0.2, TRUE, TRUE)
+	owner.adjustBruteLoss(0.5)
+	owner.adjustFireLoss(0.5)
+	owner.adjustToxLoss(0.3, TRUE, TRUE)
 
 /datum/status_effect/belligerent
 	id = "belligerent"
@@ -643,7 +734,7 @@
 	var/chance = rand(0,100)
 	switch(chance)
 		if(0 to 19)
-			H.adjustBruteLoss(6)
+			H.adjustBruteLoss(10)
 		if(20 to 29)
 			H.Dizzy(10)
 		if(30 to 39)
@@ -734,7 +825,7 @@
 	underlay_file = 'icons/effects/bleed.dmi'
 	overlay_state = "bleed"
 	underlay_state = "bleed"
-	var/bleed_damage = 200
+	var/bleed_damage = 350
 
 /datum/status_effect/stacking/saw_bleed/fadeout_effect()
 	new /obj/effect/temp_visual/bleed(get_turf(owner))
@@ -751,7 +842,7 @@
 	id = "bloodletting"
 	stack_threshold = 7
 	max_stacks = 7
-	bleed_damage = 20
+	bleed_damage = 40
 
 /datum/status_effect/neck_slice
 	id = "neck_slice"
@@ -766,6 +857,7 @@
 		H.remove_status_effect(/datum/status_effect/neck_slice)
 	if(prob(10))
 		H.emote(pick("gasp", "gag", "choke"))
+		H.adjustBruteLoss(50)
 	var/still_bleeding = FALSE
 	for(var/thing in throat.wounds)
 		var/datum/wound/W = thing
@@ -892,7 +984,7 @@
 	var/health_difference = old_health - owner.health - clamp(owner.getOxyLoss() - old_oxyloss,0, owner.getOxyLoss())
 	if(!health_difference)
 		return
-	owner.visible_message("<span class='warning'>The light in [owner]'s eyes dims as [owner.p_theyre()] harmed!</span>", \
+	owner.visible_message("<span class='warning'>The light in [owner]'s eyes dims as [owner.ru_who()] harmed!</span>", \
 	"<span class='boldannounce'>The dazzling lights dim as you're harmed!</span>")
 	health_difference *= 2 //so 10 health difference translates to 20 deciseconds of stun reduction
 	duration -= health_difference
@@ -921,7 +1013,7 @@
 
 /datum/status_effect/ichorial_stain/on_apply()
 	. = ..()
-	owner.visible_message("<span class='danger'>[owner] gets back up, [owner.p_their()] body dripping blue ichor!</span>", \
+	owner.visible_message("<span class='danger'>[owner] gets back up, [owner.ru_ego()] body dripping blue ichor!</span>", \
 	"<span class='userdanger'>Thick blue ichor covers your body; you can't be revived like this again until it dries!</span>")
 	return TRUE
 
@@ -1031,7 +1123,7 @@
 	RegisterSignal(owner, COMSIG_MOVABLE_HEAR, .proc/hypnotize)
 	ADD_TRAIT(owner, TRAIT_MUTE, "trance")
 	owner.add_client_colour(/datum/client_colour/monochrome/trance)
-	owner.visible_message("[stun ? "<span class='warning'>[owner] stands still as [owner.p_their()] eyes seem to focus on a distant point.</span>" : ""]", \
+	owner.visible_message("[stun ? "<span class='warning'>[owner] stands still as [owner.ru_ego()] eyes seem to focus on a distant point.</span>" : ""]", \
 	"<span class='warning'>[pick("You feel your thoughts slow down...", "You suddenly feel extremely dizzy...", "You feel like you're in the middle of a dream...","You feel incredibly relaxed...")]</span>")
 	return TRUE
 
@@ -1212,3 +1304,13 @@
 	if(ishostile(owner))
 		var/mob/living/simple_animal/hostile/simple_owner = owner
 		simple_owner.ranged_cooldown_time /= 2.5
+
+///Maddly teleports the victim around all of space for 10 seconds
+/datum/status_effect/teleport_madness
+	id = "teleport_madness"
+	duration = 10 SECONDS
+	status_type = STATUS_EFFECT_REPLACE
+	tick_interval = 0.2 SECONDS
+
+/datum/status_effect/teleport_madness/tick(seconds_between_ticks)
+	dump_in_space(owner)

@@ -13,10 +13,11 @@
 		ANNOUNCER_NEWAI = 'sound/announcer/medibot/newai.ogg',
 		ANNOUNCER_OUTBREAK5 = 'sound/announcer/medibot/outbreak5.ogg',
 		ANNOUNCER_OUTBREAK7 = 'sound/announcer/medibot/outbreak7.ogg',
-		ANNOUNCER_POWEROFF = 'sound/announcer/medibot/poweroff.ogg',
-		ANNOUNCER_POWERON = 'sound/announcer/medibot/poweron.ogg',
+		ANNOUNCER_POWEROFF = 'sound/announcer/medibot/poweroff.ogg', //Найтл крутой.
+		ANNOUNCER_POWERON = 'sound/announcer/medibot/poweron.ogg', //Ваще.
 		ANNOUNCER_RADIATION = 'sound/announcer/medibot/radiation.ogg',
 		ANNOUNCER_SHUTTLECALLED = 'sound/announcer/medibot/shuttlecalled.ogg',
 		ANNOUNCER_SHUTTLEDOCK = 'sound/announcer/medibot/shuttledocked.ogg',
 		ANNOUNCER_SHUTTLERECALLED = 'sound/announcer/medibot/shuttlerecalled.ogg',
 		ANNOUNCER_SPANOMALIES = 'sound/announcer/medibot/spanomalies.ogg')
+

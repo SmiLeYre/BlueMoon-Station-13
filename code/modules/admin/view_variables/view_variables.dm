@@ -96,7 +96,7 @@
 	var/html = {"
 <html>
 	<head>
-		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+		<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
 		<title>[title]</title>
 		<link rel="stylesheet" type="text/css" href="[SSassets.transport.get_asset_url("view_variables.css")]">
 	</head>

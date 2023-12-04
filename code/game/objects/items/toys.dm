@@ -193,7 +193,7 @@
 	src.bullets--
 	user.visible_message("<span class='danger'>[user] fires [src] at [target]!</span>", \
 						"<span class='danger'>You fire [src] at [target]!</span>", \
-						 "<span class='italics'>You hear a gunshot!</span>")
+						"<span class='italics'>You hear a gunshot!</span>")
 
 /obj/item/toy/ammo/gun
 	name = "capgun ammo"
@@ -499,7 +499,7 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
 /obj/item/toy/katana/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] is slitting [user.p_their()] stomach open with [src]! It looks like [user.p_theyre()] trying to commit seppuku!</span>")
+	user.visible_message("<span class='suicide'>[user] is slitting [user.ru_ego()] stomach open with [src]! It looks like [user.ru_who()] trying to commit seppuku!</span>")
 	playsound(src, 'sound/weapons/bladeslice.ogg', 50, 1)
 	return(BRUTELOSS)
 
@@ -564,6 +564,7 @@
 /obj/item/toy/prize
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "ripleytoy"
+	w_class = WEIGHT_CLASS_SMALL
 	var/timer = 0
 	var/cooldown = 30
 	var/quiet = 0
@@ -764,7 +765,7 @@
 	var/list/card_attack_verb = list("attacked")
 
 /obj/item/toy/cards/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] is slitting [user.p_their()] wrists with \the [src]! It looks like [user.p_they()] [user.p_have()] a crummy hand!</span>")
+	user.visible_message("<span class='suicide'>[user] is slitting [user.ru_ego()] wrists with \the [src]! It looks like [user.ru_who()] [user.p_have()] a crummy hand!</span>")
 	playsound(src, 'sound/items/cardshuffle.ogg', 50, 1)
 	return BRUTELOSS
 
@@ -874,7 +875,7 @@
 				to_chat(user, "<span class='warning'>The hand of cards is stuck to your hand, you can't add it to the deck!</span>")
 				return
 			cards += CH.currenthand
-			user.visible_message("[user] puts [user.p_their()] hand of cards in the deck.", "<span class='notice'>You put the hand of cards in the deck.</span>")
+			user.visible_message("[user] puts [user.ru_ego()] hand of cards in the deck.", "<span class='notice'>You put the hand of cards in the deck.</span>")
 			qdel(CH)
 		else
 			to_chat(user, "<span class='warning'>You can't mix cards from other decks!</span>")
@@ -935,7 +936,7 @@
 	C.apply_card_vars(C,O)
 	C.pickup(cardUser)
 	cardUser.put_in_hands(C)
-	cardUser.visible_message("<span class='notice'>[cardUser] draws a card from [cardUser.p_their()] hand.</span>", "<span class='notice'>You take the [C.cardname] from your hand.</span>")
+	cardUser.visible_message("<span class='notice'>[cardUser] draws a card from [cardUser.ru_ego()] hand.</span>", "<span class='notice'>You take the [C.cardname] from your hand.</span>")
 
 	interact(cardUser)
 	update_sprite()
@@ -953,7 +954,7 @@
 	if(istype(C))
 		if(C.parentdeck == src.parentdeck)
 			src.currenthand += C.cardname
-			user.visible_message("<span class='notice'>[user] adds a card to [user.p_their()] hand.</span>", "<span class='notice'>You add the [C.cardname] to your hand.</span>")
+			user.visible_message("<span class='notice'>[user] adds a card to [user.ru_ego()] hand.</span>", "<span class='notice'>You add the [C.cardname] to your hand.</span>")
 			qdel(C)
 			interact(user)
 			update_sprite(src)
@@ -1015,7 +1016,7 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/cardUser = user
 		if(cardUser.is_holding(src))
-			cardUser.visible_message("[cardUser] checks [cardUser.p_their()] card.", "<span class='notice'>The card reads: [cardname].</span>")
+			cardUser.visible_message("[cardUser] checks [cardUser.ru_ego()] card.", "<span class='notice'>The card reads: [cardname].</span>")
 		else
 			. += "<span class='warning'>You need to have the card in your hand to check it!</span>"
 
@@ -1061,7 +1062,7 @@
 		var/obj/item/toy/cards/cardhand/H = I
 		if(H.parentdeck == parentdeck)
 			H.currenthand += cardname
-			user.visible_message("[user] adds a card to [user.p_their()] hand.", "<span class='notice'>You add the [cardname] to your hand.</span>")
+			user.visible_message("[user] adds a card to [user.ru_ego()] hand.", "<span class='notice'>You add the [cardname] to your hand.</span>")
 			qdel(src)
 			H.interact(user)
 			if(H.currenthand.len > 4)
@@ -1315,6 +1316,7 @@
 	desc = null
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "nuketoy"
+	w_class = WEIGHT_CLASS_SMALL
 	var/cooldown = 0
 	var/toysay = "What the fuck did you do?"
 	var/toysound = 'sound/machines/click.ogg'
@@ -1496,9 +1498,24 @@
 	toysound = 'sound/effects/explosionfar.ogg'
 
 /obj/item/toy/figure/syndie
-	name = "Nuclear Operative action figure"
+	name = "Syndicate Operative action figure"
 	icon_state = "syndie"
+	toysay = "Protect that fucking disk!"
+
+/obj/item/toy/figure/inteq
+	name = "Nuclear Inteq Operative action figure"
+	icon_state = "inteq"
 	toysay = "Get that fucking disk!"
+
+/obj/item/toy/figure/prisoner
+	name = "prisoner action figure"
+	icon_state = "prisoner"
+	toysay = "Riot!"
+
+/obj/item/toy/figure/paramedic
+	name = "paramedic action figure"
+	icon_state = "paramedic"
+	toysay = "Turn on your sensors."
 
 /obj/item/toy/figure/secofficer
 	name = "Security Officer action figure"
@@ -1559,3 +1576,67 @@
 	icon_state = "shell[rand(1,3)]"
 	color = pickweight(possible_colors)
 	setDir(pick(GLOB.cardinals))
+
+/obj/item/toy/prizeball
+	name = "prize ball"
+	desc = "A toy is a toy, but a prize ball could be anything! It could even be a toy!"
+	icon = 'icons/obj/machines/arcade.dmi'
+	icon_state = "prizeball_1"
+	var/opening = 0
+	var/possible_contents = list(/obj/effect/spawner/lootdrop/figure, /obj/effect/spawner/lootdrop/therapy, /obj/item/toy/syndicateballoon)
+
+/obj/item/toy/prizeball/figure
+	name = "Action Figure Capsule"
+	desc = "Contains one action figure!"
+	possible_contents = list(/obj/effect/spawner/lootdrop/figure)
+
+/obj/item/toy/prizeball/therapy
+	name = "Therapy Doll Capsule"
+	desc = "Contains one squishy therapy doll."
+	possible_contents = list(/obj/effect/spawner/lootdrop/therapy)
+
+/obj/effect/spawner/lootdrop/figure
+	name = "Random Action Figure"
+	desc = "This is a random toy action figure"
+	icon = 'icons/obj/toy.dmi'
+	icon_state = "nuketoy"
+
+/obj/effect/spawner/lootdrop/figure/Initialize(mapload)
+	loot = typecacheof(/obj/item/toy/figure)
+	. = ..()
+
+/obj/effect/spawner/lootdrop/therapy
+	name = "Random Therapy Doll"
+	desc = "This is a random therapy doll."
+	icon = 'icons/obj/toy.dmi'
+	icon_state = "therapyred"
+
+/obj/effect/spawner/lootdrop/therapy/Initialize(mapload)
+	loot = typecacheof(/obj/item/toy/plush/therapy)
+	. = ..()
+
+/obj/item/toy/prizeball/New()
+	..()
+	icon_state = pick("prizeball_1","prizeball_2","prizeball_3")
+
+/obj/item/toy/prizeball/attack_self(mob/user as mob)
+	if(opening)
+		return
+	opening = 1
+	playsound(loc, 'sound/items/bubblewrap.ogg', 30, TRUE)
+	icon_state = "prizeconfetti"
+	src.color = pick(GLOB.random_color_list)
+	var/prize_inside = pick(possible_contents)
+	spawn(10)
+		user.temporarilyRemoveItemFromInventory(src)
+		if(ispath(prize_inside,/obj/item/stack))
+			var/amount = pick(5, 10, 15, 25, 50)
+			new prize_inside(user.loc, amount)
+		else
+			new prize_inside(user.loc)
+		qdel(src)
+
+/obj/item/toy/prizeball/therapy
+	name = "Therapy Doll Capsule"
+	desc = "Contains one squishy therapy doll."
+	possible_contents = list(/obj/effect/spawner/lootdrop/therapy)

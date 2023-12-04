@@ -28,9 +28,38 @@
 		reagents.add_reagent(reagent_id, tank_volume)
 	. = ..()
 
+//BLUEMOON CHANGE - FUELTANK
 /obj/structure/reagent_dispensers/proc/boom()
-	visible_message("<span class='danger'>\The [src] ruptures!</span>")
-	chem_splash(loc, 5, list(reagents))
+	var/datum/reagent/fuel/volatiles = reagents.has_reagent(/datum/reagent/fuel)
+	var/fuel_amt = 0
+	if(istype(volatiles) && volatiles.volume >= 25)
+		fuel_amt = volatiles.volume
+		reagents.del_reagent(/datum/reagent/fuel) // not actually used for the explosion
+	if(reagents.total_volume)
+		if(!fuel_amt)
+			visible_message(span_danger("\The [src] ruptures!"))
+		// Leave it up to future terrorists to figure out the best way to mix reagents with fuel for a useful boom here
+		chem_splash(loc, null, 2 + (reagents.total_volume + fuel_amt) / 1000, list(reagents), extra_heat=(fuel_amt / 50),adminlog=(fuel_amt<25))
+
+	if(fuel_amt) // with that done, actually explode
+		visible_message(span_danger("\The [src] explodes!"))
+		// old code for reference:
+		// standard fuel tank = 1000 units = heavy_impact_range = 1, light_impact_range = 5, flame_range = 5
+		// big fuel tank = 5000 units = devastation_range = 1, heavy_impact_range = 2, light_impact_range = 7, flame_range = 12
+		// It did not account for how much fuel was actually in the tank at all, just the size of the tank.
+		// I encourage others to better scale these numbers in the future.
+		// As it stands this is a minor nerf in exchange for an easy bombing technique working that has been broken for a while.
+		switch(volatiles.volume)
+			if(25 to 150)
+				explosion(src, light_impact_range = 1, flame_range = 2)
+			if(150 to 300)
+				explosion(src, light_impact_range = 2, flame_range = 3)
+			if(300 to 750)
+				explosion(src, heavy_impact_range = 1, light_impact_range = 3, flame_range = 5)
+			if(750 to 1500)
+				explosion(src, heavy_impact_range = 1, light_impact_range = 4, flame_range = 6)
+			if(1500 to INFINITY)
+				explosion(src, devastation_range = 1, heavy_impact_range = 2, light_impact_range = 6, flame_range = 8)
 	qdel(src)
 
 /obj/structure/reagent_dispensers/deconstruct(disassembled = TRUE)
@@ -140,6 +169,16 @@
 	icon_state = "fuel_high"
 	tank_volume = 5000
 
+/obj/structure/reagent_dispensers/fueltank/limitka
+	name = "Топливный Держатель MK. Лимитка"
+	desc = "<font size=+2><b>Пиздец, блядь, нахуй!</b></font>"
+	icon_state = "fuel_pizdec"
+	tank_volume = 100000
+
+/obj/structure/reagent_dispensers/fueltank/limitka/explode()
+	explosion(src, heavy_impact_range = 7, light_impact_range = 14, flame_range = 21, flash_range = 34)
+	qdel(src)
+
 /obj/structure/reagent_dispensers/fueltank/proc/explode()
 	explosion(get_turf(src), 0, 1, 5, flame_range = 5)
 	qdel(src)
@@ -172,7 +211,7 @@
 		GLOB.bombers += boom_message
 		message_admins(boom_message)
 		P.firer.log_message("triggered a fueltank explosion via projectile.", LOG_ATTACK)
-		boom()
+		explode() //Bluemoon change
 
 /obj/structure/reagent_dispensers/fueltank/attackby(obj/item/I, mob/living/user, params)
 	if(I.tool_behaviour == TOOL_WELDER)
@@ -185,7 +224,7 @@
 				to_chat(user, "<span class='warning'>Your [W.name] is already full!</span>")
 				return
 			reagents.trans_to(W, W.max_fuel, log = TRUE)
-			user.visible_message("<span class='notice'>[user] refills [user.p_their()] [W.name].</span>", "<span class='notice'>You refill [W].</span>")
+			user.visible_message("<span class='notice'>[user] refills [user.ru_ego()] [W.name].</span>", "<span class='notice'>You refill [W].</span>")
 			playsound(src, 'sound/effects/refill.ogg', 50, 1)
 			W.update_icon()
 		else
@@ -193,14 +232,14 @@
 				to_chat("<span class='danger'>That would be stupid.</span>")
 				return
 			var/turf/T = get_turf(src)
-			user.visible_message("<span class='warning'>[user] catastrophically fails at refilling [user.p_their()] [W.name]!</span>", "<span class='userdanger'>That was stupid of you.</span>")
+			user.visible_message("<span class='warning'>[user] catastrophically fails at refilling [user.ru_ego()] [W.name]!</span>", "<span class='userdanger'>That was stupid of you.</span>")
 
 			var/message_admins = "[ADMIN_LOOKUPFLW(user)] triggered a fueltank explosion via welding tool at [ADMIN_VERBOSEJMP(T)]."
 			GLOB.bombers += message_admins
 			message_admins(message_admins)
 
 			user.log_message("triggered a fueltank explosion via welding tool.", LOG_ATTACK)
-			boom()
+			explode() //Bluemoon change
 		return
 	return ..()
 
@@ -221,6 +260,22 @@
 	. = ..()
 	if(prob(1))
 		desc = "IT'S PEPPER TIME, BITCH!"
+
+/obj/structure/reagent_dispensers/peppertank/directional/north //Pixel offsets get overwritten on New()
+	dir = SOUTH
+	pixel_y = 24
+
+/obj/structure/reagent_dispensers/peppertank/directional/south
+	dir = NORTH
+	pixel_y = -24
+
+/obj/structure/reagent_dispensers/peppertank/directional/east
+	dir = WEST
+	pixel_x = 24
+
+/obj/structure/reagent_dispensers/peppertank/directional/west
+	dir = EAST
+	pixel_x = -24
 
 /obj/structure/reagent_dispensers/virusfood
 	name = "virus food dispenser"
@@ -251,13 +306,31 @@
 ////////
 
 /obj/structure/reagent_dispensers/beerkeg
-	name = "beer keg"
-	desc = "Beer is liquid bread, it's good for you..."
+	name = "Beer Keg"
+	desc = "Кега с пивом. Кега выглядит совсем немного вздутой."
 	icon_state = "beer"
 	reagent_id = /datum/reagent/consumable/ethanol/beer
 
+/obj/structure/reagent_dispensers/beerkeg/attack_animal(mob/living/simple_animal/M)
+	if(isdog(M))
+		explosion(src, light_impact_range = 3, flame_range = 5, flash_range = 10)
+		playsound(src, 'sound/effects/kega.ogg', 100, 1)
+		if(!QDELETED(src))
+			qdel(src)
+		return TRUE
+	. = ..()
+
+/obj/structure/reagent_dispensers/beerkeg/on_attack_hand(mob/living/carbon/human/M)
+	. = ..()
+	if(ismammal(M))
+		explosion(src, light_impact_range = 3, flame_range = 5, flash_range = 10)
+		playsound(src, 'sound/effects/kega.ogg', 100, 1)
+		if(!QDELETED(src))
+			qdel(src)
+		return TRUE
+
 /obj/structure/reagent_dispensers/beerkeg/blob_act(obj/structure/blob/B)
-	explosion(src.loc,0,3,5,7,10)
+	explosion(src, light_impact_range = 3, flame_range = 5, flash_range = 10)
 	if(!QDELETED(src))
 		qdel(src)
 
@@ -321,3 +394,19 @@
 	icon_state = "bluekeg"
 	reagent_id = /datum/reagent/consumable/ethanol/neurotoxin
 	tank_volume = 100 //2.5x less than the other kegs because it's harder to get
+
+/obj/structure/reagent_dispensers/keg/catnip
+	name = "keg of catnip"
+	desc = "A keg full of hapiness for your cat or felinid."
+	icon_state = "greenkeg"
+	reagent_id = /datum/reagent/pax/catnip
+	tank_volume = 250
+
+/obj/structure/reagent_dispensers/spacecleanertank
+	name = "Space Cleaner Refiller"
+	desc = "Refills space cleaner bottles."
+	icon_state = "cleaner"
+	anchored = 1
+	density = 0
+	tank_volume = 5000
+	reagent_id = /datum/reagent/space_cleaner

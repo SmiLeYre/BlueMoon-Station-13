@@ -12,15 +12,18 @@
 	circuit = /obj/item/circuitboard/machine/bluespace_miner
 	layer = BELOW_OBJ_LAYER
 	init_process = TRUE
+	idle_power_usage = 1000
+	active_power_usage = 2000
 	var/list/ore_rates = list(
-		/datum/material/iron = 0.3,
-		/datum/material/glass = 0.3,
-		/datum/material/plasma = 0.1,
-		/datum/material/silver = 0.1,
-		/datum/material/gold = 0.05,
-		/datum/material/titanium = 0.05,
-		/datum/material/uranium = 0.05,
-		/datum/material/diamond = 0.02
+		/datum/material/iron = 0.05,
+		/datum/material/glass = 0.05,
+		/datum/material/silver = 0.025,
+		/datum/material/titanium = 0.025,
+		/datum/material/uranium = 0.025,
+		/datum/material/plastic = 0.025,
+		/datum/material/gold = 0.01,
+		/datum/material/diamond = 0.01,
+		/datum/material/plasma = 0.01
 		)
 	var/datum/component/remote_materials/materials
 	var/multiplier = 0 //Multiplier by tier, has been made fair and everything
@@ -55,9 +58,11 @@
 		stock_amt++
 	multiplier /= stock_amt
 	if(multiplier >= BLUESPACE_MINER_CRYSTAL_TIER)
-		ore_rates[/datum/material/bluespace] = 0.01
+		ore_rates[/datum/material/bluespace] = 0.005
+		ore_rates[/datum/material/bananium] = 0.005
 	else
 		ore_rates -= /datum/material/bluespace
+		ore_rates -= /datum/material/bananium
 
 	// Apply config multiplier here to not interfere with bluespace material check
 	multiplier *= BLUESPACE_MINER_BONUS_MULT

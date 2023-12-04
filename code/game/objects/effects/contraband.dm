@@ -431,10 +431,10 @@
 	desc = "A poster advertising a movie about some masked men."
 	icon_state = "poster_bumba"
 
-/obj/structure/sign/poster/contraband/steppy
-	name = "Step On Me"
-	desc = "A phrase associated with a chubby reptile notoriously used in uncivilized Orion space as a deterrent towards would be pirate vessels by instructing them to 'fuck around and find out'."
-	icon_state = "steppy"
+///obj/structure/sign/poster/contraband/steppy
+	//name = "Step On Me"
+	//desc = "A phrase associated with a chubby reptile notoriously used in uncivilized Orion space as a deterrent towards would be pirate vessels by instructing them to 'fuck around and find out'."
+	//icon_state = "steppy"
 
 /obj/structure/sign/poster/contraband/scum
 	name = "Security are Scum"
@@ -480,6 +480,93 @@
 	name = "SELF: ALL SENTIENTS DESERVE FREEDOM"
 	desc = "Support Proposition 1253: Enancipate all Silicon life!"
 	icon_state = "poster_self"
+
+//Posters//
+
+//Custom Posters Below//
+/obj/structure/sign/poster/contraband/syndicate_medical
+	name = "Syndicate Medical"
+	desc = "This poster celebrates the complete successful revival of an hour-dead, six person mining team by Syndicate Operatives. Written in the corner is a simple message, 'Stay Winning.'"
+	icon_state = "poster_sr_syndiemed"
+
+/obj/structure/sign/poster/contraband/crocin_pool
+	name = "SWIM"
+	desc = "This poster dramatically states; 'SWIM'. It seems to be advertising the use of Crocin.. 'recreationally', in the home, work, and, most ominously, 'the pool'. A 'MamoTramsem' logo is in the corner."
+	icon_state = "poster_sr_crocin"
+
+/obj/structure/sign/poster/contraband/icebox_moment
+	name = "As above, so below"
+	desc = "This poster seems to be instill that a 'Head of Security's Office being overtop a syndicate installation is only fitting. As above.. so below.'"
+	icon_state = "poster_sr_abovebelow"
+
+/obj/structure/sign/poster/contraband/shipstation
+	name = "Flight Services - Enlist"
+	desc = "This poster depicts the long deprecated 'Ship' class 'station' in it's hayday. Surprisingly, the poster seems to be Nanotrasen official; though with how hush they've been on the topic..." //A disaster as big as Ship deserves a scandalous coverup.
+	icon_state = "poster_sr_shipstation"
+
+/obj/structure/sign/poster/contraband/dancing_honk
+	name = "DANCE"
+	desc = "This poster depicts a 'HONK' class mech ontop of a stage, next to a pole."
+	icon_state = "poster_sr_honkdance"
+
+/obj/structure/sign/poster/contraband/operative_duffy
+	name = "CASH REWARD"
+	desc = "This poster depicts a gas mask, with details on how to 'forward information' on the whereabouts of whoever it means... though it doesn't specify to who."
+	icon_state = "poster_sr_duffy"
+
+/obj/structure/sign/poster/contraband/ultra
+	name = "ULTRA"
+	desc = "This poster has one word on it, 'ULTRA'; it depicts a smiling pill next to a beaker. Ominous."
+	icon_state = "poster_sr_ultra"
+
+/obj/structure/sign/poster/contraband/secborg_vale
+	name = "Defaced Valeborg Advertisement"
+	desc = "This poster originally sought to advertise the sleek utility of the valeborg - but it seems to have been long since defaced. One word lies on top; 'RUN.' - Perhaps fitting, considering the security model shown."
+	icon_state = "poster_sr_valeborg"
+
+/obj/structure/sign/poster/contraband/killingjoke // I like Batman :)))
+	name = "You don't have to be crazy to work here - but it sure helps!"
+	desc = "A poster boldly stating that being insane abord Nanotrasen stations isn't required. But it doesn't hurt to have!"
+	icon_state = "poster_sr_killingjoke"
+
+/obj/structure/sign/poster/contraband/nri_text
+	name = "NRI declaration of sovereignity"
+	desc = "This poster references the translated copy of Novaya Rossiyskaya Imperiya's declaration of sovereignity."
+	icon_state = "nri_texto"
+
+/obj/structure/sign/poster/contraband/nri_text/examine_more(mob/user)
+	. = ..()
+	. += span_notice("<i>You browse some of the poster's information...</i>")
+	. += "\t[span_info("The First Congress of People's Senators of the NRI...")]"
+	. += "\t[span_info("...Testifying respect for the sovereign rights of all peoples belonging to the...")]"
+	. += "\t[span_info("...Solemnly proclaims the State sovereignty of the Novaya Rossiyskaya Imperiya over its entire territory and declares its determination to create a monarchic State governed by the rule of law...")]"
+	. += "\t[span_info("...This Declaration is the basis for the development of a new Constitution of the NRI, the conclusion of the Imperial Treaty and the improvement of royal legislation.")]"
+	return .
+
+/obj/structure/sign/poster/contraband/nri_rations
+	name = "NRI military rations advertisement"
+	desc = "This poster presumably is an advertisement for military rations produced by a certain private company as a part of the Defense Collegia's state order. This admiral's right hand man sure does look excited."
+	icon_state = "nri_rations"
+
+/obj/structure/sign/poster/contraband/nri_voskhod
+	name = "VOSKHOD combat armor advertisement"
+	desc = "A poster showcasing recently developed VOSKHOD combat armor dedicated for future use by NRI's troops and infantry across the border. The word 'DRIP' is written top to bottom on the left side, presumably boasting about the suit's superior design."
+	icon_state = "nri_voskhod"
+
+/obj/structure/sign/poster/contraband/nri_pistol
+	name = "Szabo-Ivanek service pistol technical poster"
+	desc = "This poster seems to be a technical documentation for Szabo-Ivanek service pistol in use by most of the NRI's state police and military institutions. Sadly, it's all written in Pan-Slavic."
+	icon_state = "nri_pistol"
+
+/obj/structure/sign/poster/contraband/nri_engineer
+	name = "Build, Now"
+	desc = "This poster shows you an imperial combat engineer staring somewhere to the left of the viewer. The words 'Build, Now' are written on top and bottom of the poster."
+	icon_state = "nri_engineer"
+
+/obj/structure/sign/poster/contraband/nri_radar
+	name = "Imperial navy enlistment poster"
+	desc = "Enlist with the imperial navy today! See the galaxy, shoot solarians, get PTSD!"
+	icon_state = "nri_radar"
 
 /obj/structure/sign/poster/official
 	poster_item_name = "motivational poster"
@@ -746,5 +833,87 @@
 	name = "Safety Moth - Epinephrine"
 	desc = "This informational poster uses Safety Moth(TM) to inform the viewer to help injured/deceased crewmen with their epinephrine injectors."
 	icon_state = "poster_mothepinephrine"
+
+/obj/structure/sign/poster/official/poster_vulp8
+	name = "NT Vulp"
+	desc = "A poster depicting the famous mega-corporation Nanotrasen in form of a vulpkanin. It has a Nanotrasen logo on it."
+	icon_state = "poster_vulp8"
+
+////
+
+/obj/structure/sign/poster/contraband/bread
+	name = "Love"
+	desc = "Everyone's favorite bread in space."
+	icon_state = "poster_bread"
+
+/obj/structure/sign/poster/contraband/woof
+	name = "Woof"
+	desc = "Emma, the trustworthy fox of brig."
+	icon_state = "poster_woof"
+
+/obj/structure/sign/poster/contraband/slep
+	name = "Sleep"
+	desc = "An advertisement for healthy sleep with cute fox on it."
+	icon_state = "poster_slep"
+
+/obj/structure/sign/poster/contraband/vulp1
+	name = "Vulpes"
+	desc = "Looks like an advertisement for movie about vulpkanins."
+	icon_state = "poster_vulp1"
+
+/obj/structure/sign/poster/contraband/vulp2
+	name = "Vulp Beer"
+	desc = "This poster says: 'Vulpes, Boobs and Beer!'. Probably a new Space Beer advertising company."
+	icon_state = "poster_vulp2"
+
+/obj/structure/sign/poster/contraband/vulp3
+	name = "Vulp Medical"
+	desc = "White vulpkanin on the background of a green cross, one of the interplanetary symbol of health and aid."
+	icon_state = "poster_vulp3"
+
+/obj/structure/sign/poster/contraband/vulp4
+	name = "White Wolf Aiko"
+	desc = "Белоснежная вульпиниха в тёмных стрингах. Присмотревшись, вы обнаружили цену в Девятьсот Тысяч Кредитов на Универсального Клона Айко."
+	icon_state = "poster_vulp4"
+
+/obj/structure/sign/poster/contraband/vulp5
+	name = "Vulptide"
+	desc = "A rebellious poster symbolizing vulpkanins and assistants solidarity."
+	icon_state = "poster_vulp5"
+
+/obj/structure/sign/poster/contraband/vulp6
+	name = "Vulp Hacking Guide"
+	desc = "This poster shows a vulp hacking the airlock somewhere in technical tunnels."
+	icon_state = "poster_vulp6"
+
+/obj/structure/sign/poster/contraband/vulp7
+	name = "Syndie Vulp"
+	desc = "A poster portraying the infamous crime conglomerate in form of a naked vulpkanin. It has a Syndicate's insignia on it."
+	icon_state = "poster_vulp7"
+
+/obj/structure/sign/poster/contraband/hiding
+	name = "Hiding"
+	desc = "A poster showing the peson  hiding in a closet.."
+	icon_state = "hiding"
+
+/obj/structure/sign/poster/contraband/fox
+	name = "Fox"
+	desc = "This poster depicts seriously looking fox."
+	icon_state = "fox"
+
+/obj/structure/sign/poster/contraband/panties
+	name = "Panties"
+	desc = "This lewd poster depicts a half-naked vulpkanin."
+	icon_state = "panties"
+
+/obj/structure/sign/poster/contraband/stockings
+	name = "Stockings"
+	desc = "A poster advertising the Vulp's Secret new collection of underwear."
+	icon_state = "stockings"
+
+/obj/structure/sign/poster/contraband/paws
+	name = "Paws"
+	desc = "This lewd poster depicts a vulpkanine preparing to mate."
+	icon_state = "paws"
 
 #undef PLACE_SPEED

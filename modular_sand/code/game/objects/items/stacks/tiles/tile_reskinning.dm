@@ -39,4 +39,4 @@ GLOBAL_LIST_EMPTY(tile_reskin_lists)
 /obj/item/stack/tile/examine(mob/user)
 	. = ..()
 	if(tile_reskin_types)
-		. += span_notice("These kinds of tiles can be re-skinned! Use it on hand to reskin.")
+		. += "<span class='notice'>These kinds of tiles can be re-skinned! Use it on hand to reskin.</span>"

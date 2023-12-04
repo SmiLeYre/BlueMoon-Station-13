@@ -30,7 +30,7 @@
 	var/dheight = 0
 
 	var/area_type
-	///are we invisible to shuttle navigation computers?
+	///are we invisible to Shuttle Navigation Computers?
 	var/hidden = FALSE
 
 	///Delete this port after ship fly off.

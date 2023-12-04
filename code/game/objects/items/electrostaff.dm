@@ -23,16 +23,17 @@
 	var/lethal_damage = 20
 	var/stun_cost = 333				//10000/333*25 = 750. stunbatons are at time of writing 10000/1000*49 = 490.
 	var/stun_status_effect = STATUS_EFFECT_ELECTROSTAFF			//a small slowdown effect
-	var/stun_stamdmg = 40
+	var/stun_stamdmg = 50
 	var/stun_status_duration = 25
 	var/stam_cost = 3.5
 	var/wielded = FALSE // track wielded status on item
 
 // haha security desword time /s
 /datum/block_parry_data/electrostaff
+	can_block_directions = BLOCK_DIR_NORTH | BLOCK_DIR_NORTHEAST | BLOCK_DIR_NORTHWEST | BLOCK_DIR_WEST | BLOCK_DIR_EAST
 	block_damage_absorption = 0
 	block_damage_multiplier = 1
-	can_block_attack_types = ~ATTACK_TYPE_PROJECTILE		// only able to parry non projectiles
+	can_block_attack_types = ALL
 	block_damage_multiplier_override = list(
 		TEXT_ATTACK_TYPE_MELEE = 0.5,		// only useful on melee and unarmed
 		TEXT_ATTACK_TYPE_UNARMED = 0.3
@@ -242,7 +243,7 @@
 	return TRUE
 
 /obj/item/electrostaff/proc/clowning_around(mob/living/user)
-	user.visible_message("<span class='danger'>[user] accidentally hits [user.p_them()]self with [src]!</span>", \
+	user.visible_message("<span class='danger'>[user] accidentally hits себя with [src]!</span>", \
 						"<span class='userdanger'>You accidentally hit yourself with [src]!</span>")
 	SEND_SIGNAL(user, COMSIG_LIVING_MINOR_SHOCK)
 	harm_act(user, user, TRUE)

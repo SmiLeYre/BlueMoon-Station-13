@@ -9,7 +9,7 @@
 		"yells, ''Hippity hoppity, get off of my property, you @pick(nouns_insult)!''",
 		"yells, ''@pick(curse_words), what am I meant to do with this @pick(adjective_insult) @pick(nouns_objects).''"
 	],
-	
+
     "verbs_use": [
         "touch",
 		"hold",
@@ -39,7 +39,7 @@
 		"choke",
 		"vore"
     ],
-	
+
     "verbs_move": [
 		"run",
         "jog",
@@ -162,7 +162,7 @@
         "okay",
         "stupid"
     ],
-	
+
     "curse_words": [
         "damn",
         "shit",

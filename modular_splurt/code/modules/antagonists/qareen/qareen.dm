@@ -10,9 +10,9 @@
 #define QAREEN_NAME_FILE "qareen_names.json"
 
 /mob/living/simple_animal/qareen
-	name = "qareen"
+	name = "Qareen"
 	desc = "A horny spirit."
-	icon = 'modular_splurt/icons/mob/mob.dmi'
+	icon = 'modular_bluemoon/Gardelin0/icons/mob/qareen.dmi'	//It looks pretty tho! - Gardelin0
 	icon_state = "qareen_idle"
 	var/icon_idle = "qareen_idle"
 	var/icon_reveal = "qareen_revealed"
@@ -86,28 +86,21 @@
 	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/qareen/defile(null))
 	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/qareen/overload(null))
 	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/qareen/bliss(null))
-	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/qareen/malfunction(null))
-	random_qareen_name()
+//	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/qareen/malfunction(null))	Reserved for later. - Gardelin0
 
-/mob/living/simple_animal/qareen/proc/random_qareen_name()
-	var/built_name = ""
-	built_name += pick(strings(QAREEN_NAME_FILE, "spirit_type"))
-	built_name += " of "
-	built_name += pick(strings(QAREEN_NAME_FILE, "adverb"))
-	built_name += pick(strings(QAREEN_NAME_FILE, "theme"))
-	name = built_name
+//Removed random names, because revenant names seem too hostile
 
 /mob/living/simple_animal/qareen/Login()
 	..()
 	var/qareen_greet
-	qareen_greet += span_deadsay("<span class='big bold'>You are a qareen.</span>")
-	qareen_greet += "<b>Your formerly mundane spirit has been infused with alien energies and empowered into a qareen.</b>"
-	qareen_greet += "<b>You are not dead, not alive, but somewhere in between. You are capable of limited interaction with both worlds.</b>"
-	qareen_greet += "<b>You are invincible and invisible to everyone but other ghosts. Most abilities will reveal you, rendering you vulnerable.</b>"
-	qareen_greet += "<b>To function, you are to drain the life essence from creatures. This essence is a resource, as well as your health, and will power all of your abilities.</b>"
-	qareen_greet += "<b><i>You do not remember anything of your past lives, nor will you remember anything about this one after your death.</i></b>"
+	qareen_greet += "<span class='deadsay'><span class='big bold'>Вы есть qareen.</span></span>" //Rough translation by Gardelin0
+	qareen_greet += "<b>Ваш прежде мирской дух был запитан инопланетной энергией и преобразован в qareen.</b>"
+	qareen_greet += "<b>Вы не являетесь ни живым, ни мёртвым, а чем-то посередине. Вы способны взаимодействовать с обоими мирами.</b>"
+	qareen_greet += "<b>Вы неуязвимы и невидимы для живых, но не для призраков. Однако большинство способностей материализуют вас, делая уязвимым.</b>"
+	qareen_greet += "<b>Для своей подпидки вы должны высасывать жизненную эссенцию похоти из существ. Эта эссенция является как ресурсом, так и вашим здоровьем, от которого заряжаются все ваши способности.</b>"
+	qareen_greet += "<b><i>Вы ничего не помните о своих прошлых жизнях и ничего не вспомните о текущей после своей смерти.</i></b>"
 	qareen_greet += "<b>Be sure to read our discord rules for antagonists to learn more.</b>"
-	qareen_greet += "<b>You are also able to telekinetically throw objects by clickdragging them.</b>"
+	qareen_greet += "<b>Вы также можете телекинетически бросать предметы, перетаскивая их с помощью clickdragging.</b>"
 	to_chat(src, qareen_greet)
 	if(!generated_objectives_and_spells)
 		generated_objectives_and_spells = TRUE
@@ -128,11 +121,11 @@
 		revealed = FALSE
 		incorporeal_move = INCORPOREAL_MOVE_JAUNT
 		invisibility = INVISIBILITY_QAREEN
-		to_chat(src, span_revenboldnotice("You are once more concealed."))
+		to_chat(src, "<span class='revenboldnotice'>You are once more concealed.</span>")
 	if(unstun_time && world.time >= unstun_time)
 		unstun_time = 0
 		mob_transforming = FALSE
-		to_chat(src, span_revenboldnotice("You can move again!"))
+		to_chat(src, "<span class='revenboldnotice'>You can move again!</span>")
 	if(essence_regenerating && !inhibited && essence < essence_regen_cap) //While inhibited, essence will not regenerate
 		essence = min(essence_regen_cap, essence+essence_regen_amount)
 		update_action_buttons_icon() //because we update something required by our spells in life, we need to update our buttons
@@ -165,7 +158,7 @@
 	if(!message)
 		return
 	src.log_talk(message, LOG_SAY)
-	var/rendered = span_revennotice("<b>[src]</b> says, \"[message]\"")
+	var/rendered = "<span class='revennotice'><b>[src]</b> says, \"[message]\"</span>"
 	for(var/mob/M in GLOB.mob_list)
 		if(isqareen(M))
 			to_chat(M, rendered)
@@ -199,8 +192,8 @@
 /mob/living/simple_animal/qareen/attackby(obj/item/W, mob/living/user, params)
 	. = ..()
 	if(istype(W, /obj/item/nullrod))
-		visible_message(span_warning("[src] violently flinches!"), \
-						span_revendanger("As \the [W] passes through you, you feel your essence draining away!"))
+		visible_message("<span class='warning'>[src] violently flinches!</span>", \
+						"<span class='revendanger'>As \the [W] passes through you, you feel your essence draining away!</span>")
 		adjustBruteLoss(25) //hella effective
 		inhibited = TRUE
 		update_action_buttons_icon()
@@ -230,17 +223,17 @@
 	if(!revealed || stasis) //qareens cannot die if they aren't revealed //or are already dead
 		return 0
 	stasis = TRUE
-	to_chat(src, span_revendanger("NO! No... it's too late, you can feel your essence [pick("spewing out", "bursting out")]..."))
+	to_chat(src, "<span class='revendanger'>NO! No... it's too late, you can feel your essence [pick("spewing out", "bursting out")]...</span>")
 	mob_transforming = TRUE
 	revealed = TRUE
 	invisibility = 0
 	playsound(src, 'sound/effects/screech.ogg', 100, 1)
-	visible_message(span_warning("[src] lets out a waning screech as violet mist swirls around its dissolving body!"))
+	visible_message("<span class='warning'>[src] lets out a waning screech as violet mist swirls around its dissolving body!</span>")
 	icon_state = icon_drain
 	for(var/i = alpha, i > 0, i -= 10)
 		stoplag()
 		alpha = i
-	visible_message(span_danger("[src]'s body breaks apart into a fine pile of blue dust."))
+	visible_message("<span class='danger'>[src]'s body breaks apart into a fine pile of blue dust.</span>")
 	var/reforming_essence = essence_regen_cap //retain the gained essence capacity
 	var/obj/item/ectoplasm/qareen/R = new(get_turf(src))
 	R.essence = max(reforming_essence - 15 * perfectsouls, 75) //minus any perfect souls
@@ -261,10 +254,10 @@
 	invisibility = 0
 	incorporeal_move = FALSE
 	if(!unreveal_time)
-		to_chat(src, span_revendanger("You have been revealed!"))
+		to_chat(src, "<span class='revendanger'>You have been revealed!</span>")
 		unreveal_time = world.time + time
 	else
-		to_chat(src, span_revenwarning("You have been revealed!"))
+		to_chat(src, "<span class='revenwarning'>You have been revealed!</span>")
 		unreveal_time = unreveal_time + time
 	update_spooky_icon()
 
@@ -275,10 +268,10 @@
 		return
 	mob_transforming = TRUE
 	if(!unstun_time)
-		to_chat(src, span_revendanger("You cannot move!"))
+		to_chat(src, "<span class='revendanger'>You cannot move!</span>")
 		unstun_time = world.time + time
 	else
-		to_chat(src, span_revenwarning("You cannot move!"))
+		to_chat(src, "<span class='revenwarning'>You cannot move!</span>")
 		unstun_time = unstun_time + time
 	update_spooky_icon()
 
@@ -299,17 +292,17 @@
 		return
 	var/turf/T = get_turf(src)
 	if(isclosedturf(T))
-		to_chat(src, span_revenwarning("You cannot use abilities from inside of a wall."))
+		to_chat(src, "<span class='revenwarning'>You cannot use abilities from inside of a wall.</span>")
 		return FALSE
 	for(var/obj/O in T)
 		if(O.density && !O.CanPass(src, T))
-			to_chat(src, span_revenwarning("You cannot use abilities inside of a dense object."))
+			to_chat(src, "<span class='revenwarning'>You cannot use abilities inside of a dense object.</span>")
 			return FALSE
 	if(inhibited)
-		to_chat(src, span_revenwarning("Your powers have been suppressed by nulling energy!"))
+		to_chat(src, "<span class='revenwarning'>Your powers have been suppressed by nulling energy!</span>")
 		return FALSE
 	if(!change_essence_amount(essence_cost, TRUE))
-		to_chat(src, span_revenwarning("You lack the essence to use that ability."))
+		to_chat(src, "<span class='revenwarning'>You lack the essence to use that ability.</span>")
 		return FALSE
 	return TRUE
 
@@ -333,9 +326,9 @@
 	update_action_buttons_icon()
 	if(!silent)
 		if(essence_amt > 0)
-			to_chat(src, span_revennotice("Gained [essence_amt]E[source ? " from [source]":""]."))
+			to_chat(src, "<span class='revennotice'>Gained [essence_amt]E[source ? " from [source]":""].</span>")
 		else
-			to_chat(src, span_revenminor("Lost [essence_amt]E[source ? " from [source]":""]."))
+			to_chat(src, "<span class='revenminor'>Lost [essence_amt]E[source ? " from [source]":""].</span>")
 	return 1
 
 /mob/living/simple_animal/qareen/proc/telekinesis_cooldown_end()
@@ -383,13 +376,13 @@
 		reform()
 	else
 		inert = TRUE
-		visible_message(span_warning("[src] settles down and seems lifeless."))
+		visible_message("<span class='warning'>[src] settles down and seems lifeless.</span>")
 
 /obj/item/ectoplasm/qareen/attack_self(mob/user)
 	if(!reforming || inert)
 		return ..()
-	user.visible_message(span_notice("[user] scatters [src] in all directions."), \
-						 span_notice("You scatter [src] across the area. The particles slowly fade away."))
+	user.visible_message("<span class='notice'>[user] scatters [src] in all directions.</span>", \
+						 "<span class='notice'>You scatter [src] across the area. The particles slowly fade away.</span>")
 	user.dropItemToGround(src)
 	scatter()
 
@@ -397,15 +390,15 @@
 	..()
 	if(inert)
 		return
-	visible_message(span_notice("[src] breaks into particles upon impact, which fade away to nothingness."))
+	visible_message("<span class='notice'>[src] breaks into particles upon impact, which fade away to nothingness.</span>")
 	scatter()
 
 /obj/item/ectoplasm/qareen/examine(mob/user)
 	. = ..()
 	if(inert)
-		. += span_revennotice("It seems inert.")
+		. += "<span class='revennotice'>It seems inert.</span>"
 	else if(reforming)
-		. += span_revenwarning("It is shifting and distorted. It would be wise to destroy this.")
+		. += "<span class='revenwarning'>It is shifting and distorted. It would be wise to destroy this.</span>"
 
 /obj/item/ectoplasm/qareen/proc/reform()
 	if(QDELETED(src) || QDELETED(qareen) || inert)
@@ -427,7 +420,7 @@
 			qdel(qareen)
 			message_admins("No candidates were found for the new qareen. Oh well!")
 			inert = TRUE
-			visible_message(span_revenwarning("[src] settles down and seems lifeless."))
+			visible_message("<span class='revenwarning'>[src] settles down and seems lifeless.</span>")
 			return
 		var/mob/C = pick(candidates)
 		C.transfer_ckey(qareen, FALSE)
@@ -435,12 +428,12 @@
 			qdel(qareen)
 			message_admins("No ckey was found for the new qareen. Oh well!")
 			inert = TRUE
-			visible_message(span_revenwarning("[src] settles down and seems lifeless."))
+			visible_message("<span class='revenwarning'>[src] settles down and seems lifeless.</span>")
 			return
 
 	message_admins("[qareen.key] has been [old_key == qareen.key ? "re":""]made into a qareen by reforming ectoplasm.")
 	log_game("[qareen.key] was [old_key == qareen.key ? "re":""]made as a qareen by reforming ectoplasm.")
-	visible_message(span_revenboldnotice("[src] suddenly rises into the air before fading away."))
+	visible_message("<span class='revenboldnotice'>[src] suddenly rises into the air before fading away.</span>")
 
 	qareen.essence = essence
 	qareen.essence_regen_cap = essence
@@ -449,14 +442,14 @@
 	qdel(src)
 
 /obj/item/ectoplasm/qareen/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is inhaling [src]! It looks like [user.p_theyre()] trying to visit the shadow realm!"))
+	user.visible_message("<span class='suicide'>[user] is inhaling [src]! It looks like [user.ru_who()] trying to visit the shadow realm!</span>")
 	scatter()
 	return (OXYLOSS)
 
 /obj/item/ectoplasm/qareen/Destroy()
 	if(!QDELETED(qareen))
 		qdel(qareen)
-	return ..()
+	..()
 
 /mob/living/simple_animal/qareen/proc/qareenThrow(over, mob/user, obj/item/throwable)
 	var/mob/living/simple_animal/qareen/spooker = user

@@ -1,15 +1,15 @@
 /mob/living/carbon/wendigo/examine(mob/user)
-	var/t_He = p_they(TRUE)
-	var/t_His = p_their(TRUE)
-	var/t_his = p_their()
-	var/t_him = p_them()
+	var/t_He = ru_who(TRUE)
+	var/t_His = ru_ego(TRUE)
+	var/t_his = ru_ego()
+	var/t_him = ru_na()
 
 	. = list("<span class='info'>*---------*\nThis is [icon2html(src, user)] \a <EM>[src]</EM>!")
 
 	if(handcuffed)
-		. += span_warning("[t_He] is [icon2html(handcuffed, user)] handcuffed!")
+		. += "<span class='warning'>[t_He] is [icon2html(handcuffed, user)] handcuffed!</span>"
 	if(legcuffed)
-		. += span_warning("[t_He] has [icon2html(legcuffed, user)] leg cuffs!")
+		. += "<span class='warning'>[t_He] has [icon2html(legcuffed, user)] leg cuffs!</span>"
 	if(head)
 		. += "[t_He] is wearing [head.get_examine_string(user)] on [t_his] head."
 	if(wear_neck)
@@ -23,7 +23,7 @@
 		. += "[t_He] has [back.get_examine_string(user)] on [t_his] back."
 
 	if(stat == DEAD)
-		. += span_deadsay("[t_He] is limp and unresponsive, with no signs of life.")
+		. += "<span class='deadsay'>[t_He] is limp and unresponsive, with no signs of life.</span>"
 
 	var/list/msg = ("<span class='warning'>")
 	var/temp_hp = getBruteLoss()
@@ -66,7 +66,7 @@
 
 	if(connected_link)
 		if(connected_link.souls.len > 5)
-			. += span_warning("<B>[t_His] eyes are glowing a deadly red.</B>")
+			. += "<span class='warning'><B>[t_His] eyes are glowing a deadly red.</B></span>"
 		else
 			var/A = "<span class='deadsay'>"
 			switch(connected_link.souls.len)
@@ -80,7 +80,7 @@
 					A += "[t_His] eyes are glowing red."
 			. += "[A]</span>"
 	else
-		. += span_deadsay("[t_He] looks lost.")
+		. += "<span class='deadsay'>[t_He] looks lost.</span>"
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, .)
 	. += "*---------*</span>"

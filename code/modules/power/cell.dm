@@ -185,7 +185,7 @@
 		return 0
 
 /obj/item/stock_parts/cell/get_part_rating()
-	return rating * maxcharge
+	return self_recharge > 0 ? rating * maxcharge * self_recharge * 5 : rating * maxcharge
 
 /* Cell variants*/
 /obj/item/stock_parts/cell/empty
@@ -222,7 +222,7 @@
 
 /obj/item/stock_parts/cell/lascarbine
 	name = "laser carbine power supply"
-	maxcharge = 1500			//20 laser shots.
+	maxcharge = 2100			//~30 laser shots.
 
 /obj/item/stock_parts/cell/pulse //200 pulse shots
 	name = "pulse rifle power cell"

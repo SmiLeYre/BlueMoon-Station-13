@@ -41,6 +41,9 @@
 	item_state = "engi_suit"
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 10, FIRE = 60, ACID = 20, WOUND = 5)
 	resistance_flags = NONE
+	unique_reskin = list(
+		"Alt" = list("icon_state" = "eng_alt")
+	)
 
 /obj/item/clothing/under/rank/engineering/engineer/mechanic
 	name = "mechanic's jumpsuit"
@@ -55,6 +58,10 @@
 	icon_state = "utileng"
 	item_state = "utileng"
 	can_adjust = FALSE
+
+/obj/item/clothing/under/rank/engineering/engineer/util/syndicate
+	armor = list(MELEE = 10, BULLET = 5, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 50, RAD = 0, FIRE = 50, ACID = 40, WOUND = 10)
+	has_sensor = NO_SENSORS
 
 /obj/item/clothing/under/rank/engineering/engineer/hazard
 	name = "engineer's hazard jumpsuit"

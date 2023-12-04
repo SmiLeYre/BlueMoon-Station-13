@@ -116,7 +116,7 @@
 
 /datum/eldritch_knowledge/spell/nightwatchers_rite/on_gain(mob/user)
 	. = ..()
-	priority_announce("Large heat signatures discovered!  A swelling fiery horror is coming..", sound = 'sound/misc/notice1.ogg')
+	priority_announce("Внимание, [station_name()]. [user.real_name] излучает пространственную нестабильность, в связи с которой обнаружены крупные тепловые сигнатуры! Надвигается разрастающийся пламенный ужас..", sound = 'sound/misc/notice1.ogg')
 
 /datum/eldritch_knowledge/ash_blade_upgrade
 	name = "Fiery Blade"
@@ -186,12 +186,12 @@
 	desc = "Bring 3 corpses onto a transmutation rune, you will become immune to fire, the vacuum of space, cold and other enviromental hazards and become overall sturdier to all other damages. You will gain a spell that passively creates ring of fire around you as well ,as you will gain a powerful ability that lets you create a wave of flames all around you."
 	required_atoms = list(/mob/living/carbon/human)
 	cost = 5
-	sacs_needed = 8
+	sacs_needed = 5
 	route = PATH_ASH
 	var/list/trait_list = list(TRAIT_NOBREATH,TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE)
 
 /datum/eldritch_knowledge/final/ash_final/on_finished_recipe(mob/living/user, list/atoms, loc)
-	priority_announce("$^@&#*$^@(#&$(@&#^$&#^@# Fear the blaze, for the Ashlord, [user.real_name] has ascended! The flames shall consume all! $^@&#*$^@(#&$(@&#^$&#^@#","#$^@&#*$^@(#&$(@&#^$&#^@#", 'sound/announcer/classic/spanomalies.ogg')
+	priority_announce("$^@&#*$^@(#&$(@&#^$&#^@# Бойтесь огня! Князь пепла, [user.real_name] вознёсся! Языки пламени поглотят всё! $^@&#*$^@(#&$(@&#^$&#^@#","#$^@&#*$^@(#&$(@&#^$&#^@#", 'modular_bluemoon/kovac_shitcode/sound/eldritch/ash_lore.ogg')
 	user.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/fire_cascade/big)
 	user.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/fire_sworn)
 	var/mob/living/carbon/human/H = user

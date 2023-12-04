@@ -212,7 +212,7 @@
 			V.unbuckle_mob(L)
 			L.throw_at(landing_turf, 2, 2)
 			L.Knockdown(40)
-			V.visible_message("<span class='danger'>[L] misses the landing and falls on [L.p_their()] face!</span>")
+			V.visible_message("<span class='danger'>[L] misses the landing and falls on [L.ru_ego()] face!</span>")
 		else
 			L.spin(4, 1)
 			animate(L, pixel_y = -6, time = 4)

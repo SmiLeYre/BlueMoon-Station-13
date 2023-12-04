@@ -365,7 +365,7 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/sunnybush,
 /obj/structure/window/shuttle,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/shuttle/escape)
 "aH" = (
 /obj/item/clothing/suit/hazardvest{
@@ -453,7 +453,7 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/fernybush,
 /obj/structure/window/shuttle,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/shuttle/escape)
 "aJ" = (
 /obj/structure/chair/comfy/shuttle{
@@ -499,7 +499,7 @@
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/pointybush,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/shuttle/escape)
 "aP" = (
 /obj/machinery/door/airlock/shuttle{

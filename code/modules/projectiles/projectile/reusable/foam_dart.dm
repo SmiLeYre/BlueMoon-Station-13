@@ -47,3 +47,15 @@
 	ammo_type = /obj/item/ammo_casing/caseless/foam_dart/mag
 	light_range = 2
 	light_color = LIGHT_COLOR_YELLOW
+
+/obj/item/projectile/bullet/reusable/foam_dart/sniper
+	name = "foam sniper dart"
+	icon_state = "foamdartsniper"
+	ammo_type = /obj/item/ammo_casing/caseless/foam_dart/sniper
+	range = 30
+
+/obj/item/projectile/bullet/reusable/foam_dart/sniper/riot
+	name = "riot sniper foam dart"
+	icon_state = "foamdartsniper_riot"
+	ammo_type = /obj/item/ammo_casing/caseless/foam_dart/sniper/riot
+	stamina = 100

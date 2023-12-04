@@ -12,7 +12,7 @@
 
 /datum/movespeed_modifier/dna_vault_speedup
 	blacklisted_movetypes = (FLYING|FLOATING)
-	multiplicative_slowdown = -1
+	multiplicative_slowdown = -0.6
 
 /datum/movespeed_modifier/small_stride
 	blacklisted_movetypes = (FLOATING|CRAWLING)

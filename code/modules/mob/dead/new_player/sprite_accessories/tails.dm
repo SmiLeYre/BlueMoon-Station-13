@@ -463,7 +463,7 @@
 	matrixed_sections = MATRIX_RED
 
 /datum/sprite_accessory/tails/human/skunk
-	name = "skunk"
+	name = "Skunk"
 	icon_state = "skunk"
 	color_src = MATRIXED
 	icon = 'modular_citadel/icons/mob/mam_tails.dmi'

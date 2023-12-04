@@ -7,7 +7,7 @@
 /datum/gear/suit/techpriest
 	name ="Techpriest robes"
 	path = /obj/item/clothing/suit/hooded/techpriest
-	restricted_roles = list("Chief Engineer","Research Director","Scientist", "Roboticist","Atmospheric Technician","Station Engineer")
+	restricted_roles = list("Chief Engineer","Research Director","Scientist", "Roboticist","Atmospheric Technician","Station Engineer", "Chaplain")
 
 // Suggestion #183
 /datum/gear/suit/dracula

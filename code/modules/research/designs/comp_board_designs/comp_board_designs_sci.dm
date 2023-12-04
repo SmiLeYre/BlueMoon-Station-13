@@ -18,6 +18,8 @@
 	category = list("Computer Boards")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
+/* //BlueMoon removal
+
 /datum/design/board/aiupload
 	name = "Computer Design (AI Upload)"
 	desc = "Allows for the construction of circuit boards used to build an AI Upload Console."
@@ -51,6 +53,8 @@
 	build_path = /obj/item/circuitboard/computer/mecha_control
 	category = list("Computer Boards")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
+*/ //BlueMoon removal
 
 /datum/design/board/mechapower
 	name = "Computer Design (Mech Bay Power Control Console)"

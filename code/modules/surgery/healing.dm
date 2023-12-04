@@ -28,7 +28,7 @@
 
 
 /datum/surgery_step/heal
-	name = "repair body"
+	name = "Лечить Повреждения"
 	implements = list(TOOL_HEMOSTAT = 100, TOOL_SCREWDRIVER = 65, /obj/item/pen = 55)
 	repeatable = TRUE
 	time = 15

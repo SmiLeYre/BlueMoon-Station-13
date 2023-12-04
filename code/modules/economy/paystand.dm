@@ -38,7 +38,7 @@
 			if(!msg)
 				return
 			name = msg
-			desc = "Owned by [assistant_mains_need_to_die.registered_account.account_holder], pays directly into [user.p_their()] account."
+			desc = "Owned by [assistant_mains_need_to_die.registered_account.account_holder], pays directly into [user.ru_ego()] account."
 			my_card = assistant_mains_need_to_die
 			to_chat(user, "You link the stand to your account.")
 			return

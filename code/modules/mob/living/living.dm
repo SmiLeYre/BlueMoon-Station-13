@@ -107,7 +107,7 @@
 
 		//Should stop you pushing a restrained person out of the way
 		if(L.pulledby && L.pulledby != src && L.restrained())
-			if(!(world.time % 5))
+			if(!(world.time % 3))
 				to_chat(src, span_warning("[L] is restrained, you cannot push past."))
 			return TRUE
 
@@ -115,7 +115,7 @@
 			if(ismob(L.pulling))
 				var/mob/P = L.pulling
 				if(P.restrained())
-					if(!(world.time % 5))
+					if(!(world.time % 3))
 						to_chat(src, span_warning("[L] is restraining [P], you cannot push past."))
 					return TRUE
 
@@ -151,6 +151,11 @@
 	if(a_intent == INTENT_HELP)
 		if(handle_micro_bump_helping(M))
 			return TRUE
+
+	// BLUEMOON ADDITION AHEAD - нельзя поменяться местами со сверхтяжёлым персонажем
+	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER))
+		return TRUE
+	// BLUEMOON ADDITION END
 
 	if(!M.buckled && !M.has_buckled_mobs())
 		var/mob_swap = FALSE
@@ -343,12 +348,12 @@
 		log_combat(src, M, "grabbed", addition="passive grab")
 		if(!supress_message && !(iscarbon(AM) && HAS_TRAIT(src, TRAIT_STRONG_GRABBER)))
 			if((zone_selected == BODY_ZONE_PRECISE_GROIN) && has_tail() && M.has_tail())
-				visible_message("<span class='warning'>[src] coils [p_their()] tail with [M]'s, pulling [M.p_them()] along!</span>", "You entwine tails with [M], pulling [M.p_them()] along!", ignored_mobs = M)
-				M.show_message("<span class='warning'>[src] has entwined [p_their()] tail with yours, pulling you along!</span>", MSG_VISUAL, "<span class='warning'>You feel <b>something</b> coiling around your tail, pulling you along!</span>")
+				visible_message("<span class='warning'>[src] coils [ru_ego()] tail with [M]'s, pulling [M.ru_na()] along!</span>", "You entwine tails with [M], pulling [M.ru_na()] along!", ignored_mobs = M)
+				M.show_message("<span class='warning'>[src] has entwined [ru_ego()] tail with yours, pulling you along!</span>", MSG_VISUAL, "<span class='warning'>You feel <b>something</b> coiling around your tail, pulling you along!</span>")
 
-			else
-				visible_message("<span class='warning'>[src] has grabbed [M][(zone_selected == "l_arm" || zone_selected == "r_arm")? " by [M.p_their()] hands":" passively"]!</span>",
-					"<span class='warning'>You have grabbed [M][(zone_selected == "l_arm" || zone_selected == "r_arm")? " by [M.p_their()] hands":" passively"]!</span>", target = M,
+			else // BLUEMOON CHANGES
+				visible_message("<span class='warning'>[src] has grabbed [M][(zone_selected == "l_arm" || zone_selected == "r_arm")? " by [M.ru_ego()] hands":" passively"]! [HAS_TRAIT(AM, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(AM, TRAIT_BLUEMOON_HEAVY_SUPER) ? "Looks heavy." : ""]</span>",
+					"<span class='warning'>You have grabbed [M][(zone_selected == "l_arm" || zone_selected == "r_arm")? " by [M.ru_ego()] hands":" passively"]! [HAS_TRAIT(AM, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(AM, TRAIT_BLUEMOON_HEAVY_SUPER) ? "It is hard to pull heavy weight!" : ""]</span>", target = M,
 					target_message = "<span class='warning'>[src] has grabbed you[(zone_selected == "l_arm" || zone_selected == "r_arm")? " by your hands":" passively"]!</span>")
 		if(!iscarbon(src))
 			M.LAssailant = null
@@ -449,7 +454,7 @@
 		return FALSE
 	if(!..())
 		return FALSE
-	visible_message("<b>[src]</b> points at [A].", "<span class='notice'>You point at [A].</span>")
+	visible_message("<b>[src]</b> показывает на [A].", "<span class='notice'>Вы показываете на [A].</span>")
 	return TRUE
 
 /mob/living/verb/succumb()
@@ -525,20 +530,17 @@
 	set name = "Sleep"
 	set category = "IC"
 
+	// BLUEMOON ADD START - невозможно уснуть, пока тебя оперируют
+	if(surgeries.len)
+		to_chat(src, "<span class='danger'>На мне хотят провести операцию, я не могу заставить себя уснуть!</span>")
+		return
+	// BLUEMOON ADD END
 	if(IsSleeping())
 		to_chat(src, "<span class='notice'>You are already sleeping.</span>")
 		return
 	else
 		if(alert(src, "You sure you want to sleep for a while?", "Sleep", "Yes", "No") == "Yes")
 			SetSleeping(400) //Short nap
-
-//Skyrat change start
-/mob/living/proc/surrender()
-	set name = "Surrender"
-	set category = "IC"
-
-	emote("surrender")
-//Skyrat change stop
 
 /mob/proc/get_contents()
 
@@ -694,6 +696,7 @@
 		if(C.internal_organs)
 			for(var/organ in C.internal_organs)
 				var/obj/item/organ/O = organ
+				O.organ_flags &= ~ORGAN_SYNTHETIC_EMP // BLUEMOON ADD
 				O.setOrganDamage(0)
 
 //proc called by revive(), to check if we can actually ressuscitate the mob (we don't want to revive him and have him instantly die again)
@@ -1200,7 +1203,7 @@
 	if(fire_stacks > 0 && !on_fire)
 		on_fire = 1
 		visible_message("<span class='warning'>[src] catches fire!</span>", \
-						"<span class='userdanger'>You're set on fire!</span>")
+						"<span class='userdanger'>Вы горите!</span>")
 		new/obj/effect/dummy/lighting_obj/moblight/fire(src)
 		throw_alert(FIRE, /atom/movable/screen/alert/fire)
 		update_fire()

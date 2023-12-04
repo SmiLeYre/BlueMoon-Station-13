@@ -169,7 +169,7 @@
 	if(path > 2)
 		if(!target)
 			return
-		visible_message(span_boldwarning("[src] raises it's plasma cutter!"))
+		visible_message("<span class='boldwarning'>[src] raises it's plasma cutter!</span>")
 		sleep(3)
 		var/turf/startloc = get_turf(src)
 		var/obj/item/projectile/P = new /obj/item/projectile/plasma/rogue(startloc)
@@ -185,7 +185,7 @@
 	if(theline > 2)
 		if(!target)
 			return
-		visible_message(span_boldwarning("[src] raises it's tri-shot plasma cutter!"))
+		visible_message("<span class='boldwarning'>[src] raises it's tri-shot plasma cutter!</span>")
 		var/ogangle = Get_Angle(src, target)
 		sleep(7)
 		var/turf/startloc = get_turf(src)
@@ -211,7 +211,7 @@
 		Y.fire(otherangle2)
 
 /mob/living/simple_animal/hostile/megafauna/rogueprocess/proc/knockdown(range = 2)
-	visible_message(span_boldwarning("[src] smashes into the ground!"))
+	visible_message("<span class='boldwarning'>[src] smashes into the ground!</span>")
 	playsound(src,'sound/misc/crunch.ogg', 200, 1)
 	var/list/hit_things = list()
 	sleep(7)
@@ -230,7 +230,7 @@
 	sleep(3)
 
 /mob/living/simple_animal/hostile/megafauna/rogueprocess/proc/shockwave(direction, range, wave_duration = 1.5)
-	visible_message(span_boldwarning("[src] smashes the ground in a general direction!!"))
+	visible_message("<span class='boldwarning'>[src] smashes the ground in a general direction!!</span>")
 	playsound(src,'sound/misc/crunch.ogg', 200, 1)
 	sleep(7)
 	var/list/hit_things = list()
@@ -271,7 +271,7 @@
 		sleep(wave_duration)
 
 /mob/living/simple_animal/hostile/megafauna/rogueprocess/proc/ultishockwave(range, iteration_duration = 5)
-	visible_message(span_boldwarning("[src] smashes the ground around them!!"))
+	visible_message("<span class='boldwarning'>[src] smashes the ground around them!!</span>")
 	playsound(src,'sound/misc/crunch.ogg', 200, 1)
 	sleep(10)
 	var/list/hit_things = list()

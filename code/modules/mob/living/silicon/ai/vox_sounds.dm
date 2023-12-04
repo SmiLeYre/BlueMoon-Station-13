@@ -395,6 +395,7 @@ GLOBAL_LIST_INIT(vox_sounds, list("abduction" = 'sound/vox_fem/abduction.ogg',
 "gulf" = 'sound/vox_fem/gulf.ogg',
 "gun" = 'sound/vox_fem/gun.ogg',
 "guthrie" = 'sound/vox_fem/guthrie.ogg',
+"hacked" = 'sound/machines/AISyndiHack.ogg', // BlueMoon change. Крутой, особо пиздатый звук.
 "hacker" = 'sound/vox_fem/hacker.ogg',
 "hackers" = 'sound/vox_fem/hackers.ogg',
 "hall" = 'sound/vox_fem/hall.ogg',

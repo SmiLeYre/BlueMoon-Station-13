@@ -146,6 +146,9 @@
 	verb_say = "moans"
 	verb_yell = "wails"
 
+/obj/item/reagent_containers/food/snacks/burger/ghost/no_icon_for_event
+	icon_state = ""
+
 /obj/item/reagent_containers/food/snacks/burger/ghost/Initialize(mapload)
 	. = ..()
 	START_PROCESSING(SSobj, src)
@@ -383,4 +386,3 @@
 	. = ..()
 	if(prob(33))
 		icon_state = "cheeseburgeralt"
-

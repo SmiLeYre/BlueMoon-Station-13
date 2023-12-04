@@ -16,7 +16,7 @@
 	damtype = "brute"
 	total_mass = TOTAL_MASS_HAND_REPLACEMENT
 	sharpness = SHARP_EDGED
-	wound_bonus = -30
+	wound_bonus = 10
 	bare_wound_bonus = 15
 
 /obj/item/zombie_hand/Initialize(mapload)
@@ -54,6 +54,11 @@
 		// zombies)
 		return
 
+	// BLUEMOON ADD START - роботы не могут быть зомби
+	if(HAS_TRAIT(target, TRAIT_ROBOTIC_ORGANISM))
+		return
+	// BLUEMOON ADD END
+
 	var/obj/item/organ/zombie_infection/infection
 	infection = target.getorganslot(ORGAN_SLOT_ZOMBIE)
 	if(!infection)
@@ -61,7 +66,7 @@
 		infection.Insert(target)
 
 /obj/item/zombie_hand/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is ripping [user.p_their()] brains out! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is ripping [user.ru_ego()] brains out! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	if(isliving(user))
 		var/mob/living/L = user
 		var/obj/item/bodypart/O = L.get_bodypart(BODY_ZONE_HEAD)
@@ -83,7 +88,7 @@
 		user.adjust_nutrition(hp_gained, NUTRITION_LEVEL_FULL)
 
 /obj/item/paper/guides/antag/romerol_instructions
-	info = "How to do necromancy with chemicals:<br>\
+	default_raw_text = "How to do necromancy with chemicals:<br>\
 	<ul>\
 	<li>Use a dropper or syringe (provided) to inject the Romerol (provided) into a target (not provided)</li>\
 	<li>Wait for said target to die, or speed the process up by doing it yourself</li>\

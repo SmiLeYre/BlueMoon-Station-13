@@ -1,0 +1,2719 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/obj/machinery/light/small,
+/obj/machinery/atmospherics/components/unary/tank/nitrogen{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"ab" = (
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -25
+	},
+/obj/machinery/airalarm/all_access{
+	dir = 8;
+	pixel_x = 25
+	},
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"ah" = (
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"al" = (
+/obj/structure/rack,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/item/gun/ballistic/automatic/ak12/pindicate,
+/obj/item/ammo_box/magazine/ak12,
+/obj/item/ammo_box/magazine/ak12,
+/obj/item/ammo_box/magazine/ak12,
+/obj/item/ammo_box/magazine/ak12,
+/obj/structure/window/reinforced/survival_pod{
+	dir = 1
+	},
+/obj/item/gun/ballistic/automatic/ak12/pindicate,
+/obj/item/ammo_box/magazine/ak12,
+/obj/item/ammo_box/magazine/ak12,
+/obj/item/ammo_box/magazine/ak12,
+/obj/item/ammo_box/magazine/ak12,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"aD" = (
+/obj/machinery/airalarm/all_access{
+	pixel_y = 25
+	},
+/obj/item/clothing/head/helmet/space/eva,
+/obj/item/clothing/suit/space/eva,
+/obj/structure/closet/secure_closet{
+	req_access_txt = "150"
+	},
+/obj/item/clothing/under/rank/prisoner,
+/obj/item/clothing/shoes/sneakers/orange,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"aG" = (
+/obj/machinery/atmospherics/components/unary/tank/toxins{
+	dir = 1;
+	piping_layer = 1
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"bl" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/structure/closet/syndicate/inteq/personal_raider,
+/obj/item/storage/box/inteq_box/inteq_clothes,
+/obj/item/storage/box/inteq_box/inteq_clothes,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"bs" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/airlock/hatch{
+	aiControlDisabled = 1;
+	name = "Crew's Quarters";
+	req_access_txt = "150"
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"bO" = (
+/obj/machinery/computer/arcade/orion_trail{
+	dir = 8
+	},
+/turf/open/floor/wood/wood_parquet,
+/area/shuttle/inteq/collosus)
+"cs" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -32
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"cM" = (
+/obj/structure/closet/secure_closet/freezer{
+	anchored = 1;
+	locked = 0;
+	name = "fridge"
+	},
+/obj/item/reagent_containers/food/snacks/icecreamsandwich,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"di" = (
+/obj/structure/table/reinforced,
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/machinery/recharger{
+	pixel_x = -7
+	},
+/obj/machinery/recharger{
+	pixel_x = 7
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"dE" = (
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor{
+	id = "colossus_windows";
+	name = "Window Shield"
+	},
+/obj/structure/window/plastitanium/pirate,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/shuttle/inteq/collosus)
+"dS" = (
+/obj/structure/table,
+/obj/machinery/microwave,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"ej" = (
+/obj/structure/table,
+/obj/item/storage/fancy/donut_box,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"er" = (
+/obj/structure/window/reinforced/tinted/frosted{
+	dir = 4
+	},
+/obj/effect/mob_spawn/human/raider{
+	dir = 8
+	},
+/turf/open/floor/wood/wood_parquet,
+/area/shuttle/inteq/collosus)
+"ev" = (
+/obj/machinery/autolathe,
+/obj/structure/window/reinforced/survival_pod{
+	dir = 1
+	},
+/obj/structure/window/reinforced/survival_pod{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"eH" = (
+/obj/structure/table,
+/obj/item/toy/plush/beeplushie,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"eI" = (
+/obj/effect/turf_decal/box/corners,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"eJ" = (
+/obj/machinery/vending/snack/random,
+/obj/machinery/light,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"eK" = (
+/obj/structure/table,
+/obj/item/storage/box/cups{
+	pixel_y = 10
+	},
+/obj/item/poster/random_inteq,
+/obj/item/poster/random_inteq,
+/obj/item/poster/random_inteq,
+/obj/item/poster/random_inteq,
+/obj/item/poster/random_inteq,
+/obj/item/poster/random_inteq,
+/obj/item/poster/random_inteq,
+/obj/item/poster/random_inteq,
+/obj/item/poster/random_inteq,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"eT" = (
+/obj/structure/reagent_dispensers/water_cooler,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"eX" = (
+/obj/machinery/vending/coffee,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"fj" = (
+/obj/structure/sign/poster/official/soft_cap_pop_art{
+	pixel_y = 32
+	},
+/obj/machinery/vending/boozeomat,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"fQ" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"fT" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/machinery/suit_storage_unit/inteq_spacesuit,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"gg" = (
+/obj/structure/table/reinforced,
+/obj/item/paper_bin,
+/obj/item/stack/sheet/glass,
+/obj/item/stack/sheet/glass,
+/obj/item/stack/cable_coil/yellow,
+/obj/item/screwdriver,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"gm" = (
+/obj/structure/window/reinforced/survival_pod,
+/obj/item/jukebox/emagged,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"gy" = (
+/obj/structure/sign/poster/official/fruit_bowl{
+	pixel_x = 32
+	},
+/obj/machinery/computer/med_data,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"gZ" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"hf" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/structure/closet/syndicate/inteq/personal_raider,
+/obj/item/storage/box/lethalslugs,
+/obj/item/storage/box/lethalshot,
+/obj/item/storage/box/lethalshot,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"hr" = (
+/obj/structure/closet/cardboard,
+/obj/effect/spawner/lootdrop/maintenance/seven,
+/obj/item/mining_scanner,
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"hO" = (
+/obj/machinery/door/airlock/external{
+	req_access_txt = "150"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/structure/fans/tiny,
+/obj/docking_port/mobile{
+	name = "InteQ Collosus";
+	preferred_direction = 4;
+	id = "inteq_collosus";
+	height = 19;
+	width = 35;
+	dir = 2;
+	port_direction = 8;
+	dwidth = 17;
+	movement_force = list("KNOCKDOWN"=0,"THROW"=0)
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"hQ" = (
+/obj/structure/shuttle/engine/propulsion/burst{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/shuttle/inteq/collosus)
+"hX" = (
+/obj/machinery/door/poddoor{
+	id = "colossus_thrusters"
+	},
+/obj/structure/window/reinforced/survival_pod{
+	dir = 8
+	},
+/obj/machinery/door/window/survival_pod{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/shuttle/inteq/collosus)
+"iH" = (
+/obj/structure/sink{
+	dir = 1;
+	pixel_y = -12
+	},
+/obj/structure/mirror{
+	pixel_y = -32
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"iN" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 32
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"ja" = (
+/obj/machinery/atmospherics/pipe/simple/green/visible,
+/obj/structure/window/reinforced/survival_pod{
+	dir = 8
+	},
+/turf/open/floor/engine/hull,
+/area/shuttle/inteq/collosus)
+"jn" = (
+/obj/machinery/button/door{
+	id = "colossus_thrusters";
+	name = "Thruster Shield Control";
+	pixel_x = -6;
+	pixel_y = 25
+	},
+/obj/machinery/atmospherics/components/unary/portables_connector/visible,
+/obj/structure/closet/crate/trashcart,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"jo" = (
+/obj/machinery/atmospherics/components/unary/tank/toxins{
+	piping_layer = 1
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"jy" = (
+/obj/machinery/airalarm/all_access{
+	dir = 4;
+	pixel_x = -25
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/machinery/suit_storage_unit/inteq_spacesuit,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"kq" = (
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 28
+	},
+/obj/structure/bedsheetbin/towel,
+/obj/structure/table,
+/obj/item/reagent_containers/spray/cleaner{
+	pixel_x = 8;
+	pixel_y = 4
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"kK" = (
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"kV" = (
+/obj/structure/window/reinforced/survival_pod{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/vomit/old,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"lr" = (
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = 12
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"lA" = (
+/mob/living/simple_animal/pet/gondola{
+	desc = "Why InteQ keeps this Gondola around is anybody's guess. Something about its peaceful demeanor still manages to put everybody at ease.";
+	name = "Solstice";
+	real_name = "Solstice"
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"lE" = (
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -28
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"lF" = (
+/obj/machinery/vending/cigarette,
+/obj/machinery/airalarm/all_access{
+	dir = 1;
+	pixel_y = -25
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"lV" = (
+/obj/structure/closet/crate/bin,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"lX" = (
+/obj/effect/turf_decal/box/white/corners{
+	dir = 8
+	},
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_x = 28
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"mt" = (
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 28
+	},
+/turf/open/floor/wood/wood_parquet,
+/area/shuttle/inteq/collosus)
+"mP" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -32
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"mT" = (
+/obj/structure/window/reinforced/tinted/frosted{
+	dir = 4
+	},
+/obj/machinery/airalarm/all_access{
+	pixel_y = 25
+	},
+/obj/effect/mob_spawn/human/raider{
+	dir = 8
+	},
+/turf/open/floor/wood/wood_parquet,
+/area/shuttle/inteq/collosus)
+"nb" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/newscaster{
+	pixel_y = 32
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"nm" = (
+/obj/structure/sign/warning/vacuum/external{
+	pixel_x = 32
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"nE" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"nZ" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/item/storage/fancy/cigarettes/cigars/havana,
+/obj/item/lighter{
+	pixel_y = 5
+	},
+/obj/item/inteq_sledgehammer,
+/obj/item/inteq/uplink/radio/nuclear,
+/obj/item/storage/backpack/duffelbag/syndie/inteq/c4,
+/turf/open/floor/wood/wood_parquet,
+/area/shuttle/inteq/collosus)
+"oa" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/window/reinforced/survival_pod{
+	dir = 1
+	},
+/obj/structure/bed/matress,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"oe" = (
+/obj/machinery/shuttle_scrambler,
+/turf/open/floor/wood/wood_parquet,
+/area/shuttle/inteq/collosus)
+"on" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/poddoor{
+	id = "colossus_port"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"oE" = (
+/obj/structure/chair{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"pq" = (
+/obj/machinery/atmospherics/components/unary/shuttle/heater{
+	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	id = "colossus_thrusters"
+	},
+/obj/structure/window/reinforced/survival_pod,
+/obj/structure/window/reinforced/survival_pod{
+	dir = 1
+	},
+/obj/structure/window/reinforced/survival_pod{
+	dir = 4
+	},
+/obj/structure/window/reinforced/survival_pod{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/shuttle/inteq/collosus)
+"ps" = (
+/obj/effect/turf_decal/box/white/corners{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"pv" = (
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 8;
+	name = "engine fuel pump"
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"pw" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/airlock/hatch{
+	aiControlDisabled = 1;
+	name = "Hangar";
+	req_access_txt = "150"
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"pD" = (
+/obj/effect/turf_decal/box/white/corners{
+	dir = 1
+	},
+/obj/structure/closet/crate/freezer/blood,
+/obj/machinery/iv_drip,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"pF" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"pV" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/manifold/orange/hidden/layer1{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"pX" = (
+/obj/machinery/door/poddoor{
+	id = "colossus_starboard"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"qr" = (
+/obj/item/storage/backpack/satchel/inteq,
+/obj/structure/table,
+/obj/item/restraints/handcuffs,
+/obj/item/restraints/handcuffs/cable/zipties,
+/obj/item/restraints/handcuffs/cable/zipties,
+/turf/open/floor/wood/wood_parquet,
+/area/shuttle/inteq/collosus)
+"qw" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/machinery/washing_machine,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"qz" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
+	dir = 9
+	},
+/obj/structure/table/rolling,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/mop,
+/obj/structure/sign/warning/nosmoking/circle{
+	pixel_x = 32
+	},
+/obj/item/reagent_containers/spray/cleaner{
+	pixel_x = 8;
+	pixel_y = 4
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"qM" = (
+/obj/machinery/airalarm/all_access{
+	pixel_y = 25
+	},
+/obj/effect/mob_spawn/human/raider/vanguard{
+	dir = 4
+	},
+/turf/open/floor/wood/wood_parquet,
+/area/shuttle/inteq/collosus)
+"qW" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/airlock/hatch{
+	aiControlDisabled = 1;
+	name = "Prison Cell";
+	req_access_txt = "150"
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"qY" = (
+/obj/machinery/computer/operating,
+/obj/structure/window/reinforced/survival_pod{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"rb" = (
+/obj/machinery/door/poddoor{
+	id = "colossus_port"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"rd" = (
+/obj/machinery/piratepad,
+/obj/structure/window/reinforced/survival_pod,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"rf" = (
+/turf/open/floor/wood/wood_parquet,
+/area/shuttle/inteq/collosus)
+"ry" = (
+/mob/living/simple_animal/bot/medbot{
+	name = "InteQ Hospitality Drone";
+	radio_key = /obj/item/encryptionkey/inteq;
+	radio_channel = "InteQ"
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"rJ" = (
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"rM" = (
+/obj/machinery/button/door{
+	dir = 1;
+	id = "colossus_thrusters";
+	name = "Thruster Shield Control";
+	pixel_x = -6;
+	pixel_y = -25
+	},
+/obj/machinery/atmospherics/components/unary/portables_connector/visible{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"sc" = (
+/obj/structure/table,
+/obj/item/storage/fancy/donut_box,
+/obj/item/reagent_containers/spray/cleaner{
+	pixel_x = 8;
+	pixel_y = 4
+	},
+/obj/item/toy/figure/inteq,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"sm" = (
+/obj/structure/table,
+/obj/item/toy/cards/deck/cas,
+/obj/item/toy/cards/deck/cas/black{
+	pixel_y = 10
+	},
+/obj/machinery/newscaster{
+	dir = 1;
+	pixel_y = -32
+	},
+/turf/open/floor/wood/wood_parquet,
+/area/shuttle/inteq/collosus)
+"sD" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable,
+/obj/machinery/door/poddoor{
+	id = "colossus_starboard"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"sF" = (
+/obj/machinery/airalarm/all_access{
+	dir = 4;
+	pixel_x = -25
+	},
+/obj/machinery/mineral/ore_redemption/inteq{
+	dir = 1;
+	output_dir = 1
+	},
+/obj/structure/window/reinforced/survival_pod,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"sI" = (
+/obj/structure/table/reinforced,
+/obj/item/paper_bin,
+/obj/item/pen/fountain,
+/obj/item/gps{
+	pixel_x = 12
+	},
+/turf/open/floor/wood/wood_parquet,
+/area/shuttle/inteq/collosus)
+"sN" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"sT" = (
+/obj/machinery/firealarm{
+	pixel_y = 28
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/structure/sign/warning/nosmoking{
+	pixel_x = 32
+	},
+/obj/machinery/vending/inteq_vendomat,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"tx" = (
+/obj/structure/table/reinforced,
+/obj/machinery/computer/secure_data/laptop{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"tR" = (
+/obj/item/clothing/glasses/welding,
+/obj/structure/table,
+/obj/structure/sign/warning/nosmoking{
+	pixel_x = -32
+	},
+/obj/structure/sign/departments/engineering{
+	pixel_y = 32;
+	pixel_x = -32
+	},
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 6
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"ue" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4;
+	name = "Helm"
+	},
+/turf/open/floor/wood/wood_parquet,
+/area/shuttle/inteq/collosus)
+"uq" = (
+/obj/machinery/shower{
+	pixel_y = 19
+	},
+/obj/structure/curtain,
+/obj/structure/window/reinforced/tinted/frosted,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"us" = (
+/obj/structure/reagent_dispensers/fueltank,
+/obj/machinery/airalarm/all_access{
+	dir = 8;
+	pixel_x = 25
+	},
+/obj/machinery/firealarm{
+	pixel_y = 28
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"uy" = (
+/obj/machinery/computer/shuttle/inteq_collosus{
+	dir = 8
+	},
+/obj/item/icona_madonna{
+	icon = 'modular_bluemoon/krashly/icons/obj/structures.dmi';
+	pixel_x = 25;
+	layer = 5
+	},
+/turf/open/floor/wood/wood_parquet,
+/area/shuttle/inteq/collosus)
+"uB" = (
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -28
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/reagent_dispensers/fueltank,
+/obj/structure/window/reinforced/survival_pod{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"uF" = (
+/obj/machinery/light/small,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"uH" = (
+/obj/structure/closet/crate/large,
+/obj/item/bodybag/containment/prisoner,
+/obj/item/bodybag/containment/prisoner,
+/obj/item/bodybag/containment/prisoner,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"vc" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/airlock/hatch{
+	aiControlDisabled = 1;
+	name = "Toilet";
+	req_access_txt = "150"
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"vp" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"vs" = (
+/obj/structure/chair/sofa/left/brown{
+	dir = 1
+	},
+/obj/machinery/computer/security/telescreen/entertainment{
+	pixel_y = -32
+	},
+/turf/open/floor/wood/wood_parquet,
+/area/shuttle/inteq/collosus)
+"vx" = (
+/obj/machinery/airalarm/all_access{
+	dir = 8;
+	pixel_x = 25
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -25
+	},
+/obj/structure/reagent_dispensers/watertank,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"wb" = (
+/obj/structure/table,
+/obj/item/folder/yellow,
+/obj/item/pen,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"wg" = (
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -25;
+	pixel_y = -8
+	},
+/turf/open/floor/wood/wood_parquet,
+/area/shuttle/inteq/collosus)
+"wm" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/drinks/coffee,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"wo" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"wr" = (
+/obj/machinery/porta_turret/syndicate/energy/pirate/inteq{
+	dir = 4;
+	faction = list("InteQ");
+	icon_state = "standard_lethal"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/inteq/collosus)
+"wA" = (
+/obj/structure/curtain,
+/obj/structure/table/optable,
+/obj/structure/window/reinforced/survival_pod{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"wE" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"wS" = (
+/obj/structure/toilet{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"xu" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/structure/window/reinforced/survival_pod{
+	dir = 1
+	},
+/obj/structure/table,
+/obj/item/reagent_containers/food/drinks/drinkingglass/filled/cola,
+/obj/item/storage/box/donkpockets,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"xx" = (
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"xD" = (
+/obj/structure/table/reinforced,
+/obj/item/folder/syndicate{
+	desc = "A slick black folder stamped 'Property of InteQ Risk Management Group.'";
+	name = "folder"
+	},
+/obj/item/pen/fourcolor,
+/obj/item/reagent_containers/food/drinks/coffee{
+	pixel_y = 20
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"xF" = (
+/obj/structure/chair{
+	dir = 8
+	},
+/obj/machinery/status_display/shuttle{
+	pixel_x = 32
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"yf" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/window/survival_pod{
+	dir = 1;
+	req_access_txt = "150"
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"yn" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"zg" = (
+/obj/structure/tank_dispenser/oxygen,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"zF" = (
+/obj/structure/table,
+/obj/machinery/chem_dispenser/drinks{
+	dir = 0;
+	pixel_y = 12
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"zZ" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Ao" = (
+/obj/machinery/porta_turret/syndicate/energy/pirate/inteq{
+	dir = 4;
+	faction = list("InteQ");
+	icon_state = "standard_lethal"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/shuttle/inteq/collosus)
+"Aw" = (
+/obj/machinery/status_display/shuttle{
+	pixel_x = 32
+	},
+/obj/item/storage/firstaid/regular{
+	pixel_x = 5
+	},
+/obj/effect/turf_decal/box/white/corners,
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/hypospray/medipen,
+/obj/item/reagent_containers/hypospray/medipen,
+/obj/item/reagent_containers/spray/cleaner{
+	pixel_x = 8;
+	pixel_y = 4
+	},
+/obj/item/storage/backpack/duffelbag/syndie/inteq/surgery,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"AB" = (
+/obj/machinery/turretid{
+	icon_state = "control_kill";
+	lethal = 1;
+	locked = 0;
+	pixel_y = null;
+	req_access_txt = "150";
+	pixel_x = -26
+	},
+/turf/open/floor/wood/wood_parquet,
+/area/shuttle/inteq/collosus)
+"AG" = (
+/obj/machinery/button/door{
+	dir = 1;
+	id = "colossus_windows";
+	name = "Window Lockdown";
+	pixel_x = -6;
+	pixel_y = -25
+	},
+/obj/machinery/computer/camera_advanced/shuttle_docker/inteq_collosus{
+	dir = 8
+	},
+/turf/open/floor/wood/wood_parquet,
+/area/shuttle/inteq/collosus)
+"AL" = (
+/obj/effect/mob_spawn/human/raider{
+	dir = 4
+	},
+/turf/open/floor/wood/wood_parquet,
+/area/shuttle/inteq/collosus)
+"AM" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8;
+	req_access_txt = "150"
+	},
+/obj/machinery/door/window/survival_pod{
+	dir = 1;
+	req_access_txt = "150"
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"AZ" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/airlock/hatch{
+	aiControlDisabled = 1;
+	name = "Engineering";
+	req_access_txt = "150"
+	},
+/turf/open/floor/plating,
+/area/shuttle/inteq/collosus)
+"Ba" = (
+/obj/machinery/status_display/shuttle{
+	pixel_x = -32
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
+/obj/machinery/loot_locator,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"BD" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/button/door{
+	id = "colossus_port";
+	name = "Port Cargo Door Control";
+	pixel_x = 6;
+	pixel_y = 25
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/recharger{
+	pixel_x = 7
+	},
+/obj/machinery/recharger{
+	pixel_x = -7
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Ce" = (
+/obj/item/kirbyplants/random,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Ck" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Cx" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/machinery/newscaster{
+	dir = 4;
+	pixel_x = -32
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"CJ" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/button/door{
+	id = "colossus_port";
+	name = "Port Cargo Door Control";
+	pixel_x = -6;
+	pixel_y = 25
+	},
+/obj/structure/rack,
+/obj/item/storage/box/zipties,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"CO" = (
+/obj/effect/turf_decal/box/corners{
+	dir = 1
+	},
+/obj/structure/sign/departments/cargo{
+	pixel_x = -32
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"CU" = (
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
+/obj/machinery/status_display/shuttle{
+	pixel_x = 32
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/obj/structure/rack,
+/obj/item/pickaxe/mini,
+/obj/item/pickaxe/mini,
+/obj/item/flashlight/seclite{
+	pixel_x = -12;
+	pixel_y = 6
+	},
+/obj/item/flashlight/seclite{
+	pixel_x = -12;
+	pixel_y = 6
+	},
+/obj/item/crowbar/red{
+	pixel_x = -16;
+	pixel_y = -4
+	},
+/obj/item/crowbar/red{
+	pixel_x = -16;
+	pixel_y = -4
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Eo" = (
+/obj/machinery/atmospherics/components/unary/shuttle/heater{
+	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	id = "colossus_thrusters"
+	},
+/obj/structure/window/reinforced/survival_pod{
+	dir = 1
+	},
+/obj/structure/window/reinforced/survival_pod{
+	dir = 4
+	},
+/obj/structure/window/reinforced/survival_pod{
+	dir = 8
+	},
+/obj/structure/window/reinforced/survival_pod,
+/turf/open/floor/plating,
+/area/shuttle/inteq/collosus)
+"Es" = (
+/obj/machinery/computer/piratepad_control{
+	dir = 1
+	},
+/obj/structure/window/reinforced/survival_pod,
+/obj/structure/window/reinforced/survival_pod{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"EC" = (
+/obj/structure/table,
+/obj/item/pen/red,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"EG" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 10
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/machinery/power/smes/engineering{
+	charge = 1e+006
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"EJ" = (
+/obj/machinery/atmospherics/pipe/simple/dark/hidden,
+/obj/machinery/atmospherics/pipe/manifold/orange/hidden/layer1,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"EZ" = (
+/obj/machinery/firealarm{
+	pixel_y = 28
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Fa" = (
+/obj/structure/chair{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Fr" = (
+/obj/structure/dresser,
+/obj/machinery/light,
+/obj/structure/mirror{
+	pixel_y = -32
+	},
+/turf/open/floor/wood/wood_parquet,
+/area/shuttle/inteq/collosus)
+"FQ" = (
+/obj/machinery/computer/camera_advanced/syndie{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"FW" = (
+/obj/structure/sign/poster/official/safety_internals{
+	pixel_x = -32
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"FX" = (
+/obj/machinery/sleeper/syndie{
+	dir = 8
+	},
+/obj/structure/window/reinforced/survival_pod{
+	dir = 1
+	},
+/obj/structure/window/reinforced/survival_pod{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Ga" = (
+/obj/item/kirbyplants/random,
+/turf/open/floor/wood/wood_parquet,
+/area/shuttle/inteq/collosus)
+"Hc" = (
+/obj/item/tank/internals/plasmaman/full,
+/obj/item/tank/internals/plasmaman/full,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/structure/closet/crate/internals,
+/obj/item/tank/internals/doubleoxygen,
+/obj/item/tank/internals/doubleoxygen,
+/obj/item/tank/internals/doubleoxygen,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Hp" = (
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/green/visible,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Hr" = (
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -25;
+	pixel_y = -10
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -28
+	},
+/turf/open/floor/wood/wood_parquet,
+/area/shuttle/inteq/collosus)
+"Hy" = (
+/obj/machinery/porta_turret/syndicate/energy/pirate/inteq{
+	dir = 8;
+	icon_state = "standard_lethal"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/shuttle/inteq/collosus)
+"HB" = (
+/obj/machinery/light,
+/obj/machinery/suit_storage_unit/inteq_spacesuit,
+/turf/open/floor/wood/wood_parquet,
+/area/shuttle/inteq/collosus)
+"HD" = (
+/obj/machinery/door/poddoor{
+	id = "colossus_windows";
+	name = "Window Shield"
+	},
+/obj/structure/window/plastitanium/pirate,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/shuttle/inteq/collosus)
+"HM" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/box/zipties,
+/turf/open/floor/wood/wood_parquet,
+/area/shuttle/inteq/collosus)
+"IZ" = (
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 28
+	},
+/obj/structure/closet/crate/large,
+/obj/item/clothing/gloves/combat{
+	pixel_y = -8
+	},
+/obj/item/card/emag,
+/obj/structure/window/reinforced/survival_pod,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Je" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/turf/open/floor/wood/wood_parquet,
+/area/shuttle/inteq/collosus)
+"Jl" = (
+/obj/structure/chair/sofa/right/brown{
+	dir = 1
+	},
+/turf/open/floor/wood/wood_parquet,
+/area/shuttle/inteq/collosus)
+"Kg" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Kk" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Kq" = (
+/obj/machinery/power/port_gen/pacman/super,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/firealarm{
+	pixel_y = 28
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Lj" = (
+/obj/structure/sign/poster/contraband/inteq/random,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/shuttle/inteq/collosus)
+"Lx" = (
+/obj/structure/reagent_dispensers/watertank,
+/obj/structure/window/reinforced/survival_pod{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"LE" = (
+/obj/machinery/airalarm/all_access{
+	dir = 1;
+	pixel_y = -25
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"MJ" = (
+/obj/machinery/vending/cola/random,
+/obj/machinery/airalarm/all_access{
+	dir = 1;
+	pixel_y = -25
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"ML" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"NP" = (
+/obj/item/kirbyplants/random,
+/obj/structure/sign/poster/official/obey{
+	pixel_y = -32
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"NV" = (
+/obj/machinery/light,
+/obj/machinery/button/door{
+	dir = 1;
+	id = "colossus_starboard";
+	name = "Starboard Cargo Door Control";
+	pixel_x = -6;
+	pixel_y = -25
+	},
+/obj/machinery/vending/medical/syndicate_access,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Ob" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4;
+	req_access_txt = "150"
+	},
+/obj/machinery/door/window/survival_pod{
+	dir = 1;
+	req_access_txt = "150"
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Oc" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Oe" = (
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 5;
+	pixel_y = -25
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Oh" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/item/inteq_sledgehammer,
+/obj/item/inteq_sledgehammer,
+/obj/item/melee/baseball_bat/ablative/syndi,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"OD" = (
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 6
+	},
+/obj/machinery/door/window/survival_pod{
+	dir = 8
+	},
+/turf/open/floor/engine/hull,
+/area/shuttle/inteq/collosus)
+"OW" = (
+/obj/machinery/light,
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -25
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"PK" = (
+/obj/machinery/atmospherics/pipe/simple/dark/hidden,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"PP" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
+	dir = 10
+	},
+/obj/structure/sign/warning/nosmoking/circle{
+	pixel_x = 32
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Qu" = (
+/obj/machinery/atmospherics/pipe/simple/dark/hidden,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/airlock/hatch{
+	aiControlDisabled = 1;
+	name = "Engineering";
+	req_access_txt = "150"
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Qv" = (
+/obj/item/kirbyplants/random,
+/obj/machinery/airalarm/all_access{
+	dir = 8;
+	pixel_x = 25
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"QI" = (
+/obj/machinery/door/airlock/external{
+	req_access_txt = "150"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"QL" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/airlock/hatch{
+	aiControlDisabled = 1;
+	name = "Armory";
+	req_access_txt = "150"
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Rb" = (
+/obj/structure/window/reinforced/survival_pod{
+	dir = 8
+	},
+/obj/item/storage/box/inteq_box,
+/turf/open/floor/engine/hull,
+/area/shuttle/inteq/collosus)
+"Rm" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/shuttle/inteq/collosus)
+"Ru" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/sign/warning/enginesafety{
+	pixel_x = -32
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"RH" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor{
+	id = "colossus_starboard"
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"RJ" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"RP" = (
+/obj/machinery/power/apc/auto_name/east,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/closet/crate{
+	icon_state = "radiation";
+	name = "fuel crate"
+	},
+/obj/item/storage/belt/utility{
+	pixel_x = 2;
+	pixel_y = -4
+	},
+/obj/item/multitool,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/mechanical,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Sb" = (
+/obj/machinery/atmospherics/components/trinary/filter/atmos/o2,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Sf" = (
+/obj/structure/sign/poster/contraband/borg_fancy_2{
+	pixel_x = -32
+	},
+/obj/structure/closet/syndicate/inteq,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/turf/open/floor/wood/wood_parquet,
+/area/shuttle/inteq/collosus)
+"Sp" = (
+/obj/machinery/status_display/shuttle{
+	pixel_y = 32
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Sr" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/airlock/hatch{
+	aiControlDisabled = 1;
+	id_tag = "piratebridgebolt";
+	name = "Bridge";
+	req_access_txt = "150"
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Tk" = (
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Tr" = (
+/obj/effect/turf_decal/box/corners{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"TF" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 1;
+	name = "environmental siphon"
+	},
+/obj/structure/window/reinforced/survival_pod{
+	dir = 8
+	},
+/turf/open/floor/engine/hull,
+/area/shuttle/inteq/collosus)
+"Ur" = (
+/obj/machinery/door/firedoor,
+/obj/structure/window/plastitanium/pirate,
+/obj/structure/grille,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"UN" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/airlock/hatch{
+	aiControlDisabled = 1;
+	name = "Spirits Lounge";
+	req_access_txt = "150"
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"UX" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/inteq/collosus)
+"Ve" = (
+/obj/structure/closet/crate,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"VD" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 32
+	},
+/obj/structure/closet/crate,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"VJ" = (
+/obj/structure/chair{
+	dir = 1
+	},
+/obj/structure/sign/poster/contraband/hacking_guide{
+	pixel_y = -32
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"VK" = (
+/obj/machinery/light,
+/obj/machinery/button/door{
+	dir = 1;
+	id = "colossus_starboard";
+	name = "Starboard Cargo Door Control";
+	pixel_x = 6;
+	pixel_y = -25
+	},
+/obj/structure/closet/crate/large,
+/obj/item/pickaxe,
+/obj/item/pickaxe,
+/obj/item/pickaxe,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"VU" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"VY" = (
+/obj/structure/toilet{
+	dir = 4
+	},
+/obj/structure/curtain,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Wc" = (
+/obj/structure/rack,
+/obj/machinery/airalarm/all_access{
+	dir = 8;
+	pixel_x = 25
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/item/gun/energy/laser/pindicate,
+/obj/item/gun/energy/laser/pindicate,
+/obj/structure/window/reinforced/survival_pod{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Wm" = (
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -25
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Wr" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/machinery/suit_storage_unit/inteq_spacesuit,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"WD" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/firealarm{
+	pixel_y = 28
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Xa" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/item/gun/ballistic/shotgun/automatic/combat/pindicate,
+/obj/item/ammo_box/shotgun,
+/obj/item/ammo_box/shotgun,
+/obj/item/ammo_box/shotgun,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Xn" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 32
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Xo" = (
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	id = "colossus_windows";
+	name = "Window Shield"
+	},
+/obj/structure/window/plastitanium/pirate,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/shuttle/inteq/collosus)
+"Xx" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 32
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Xz" = (
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"XB" = (
+/obj/machinery/atmospherics/pipe/manifold/green/visible{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"XF" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable,
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor{
+	id = "colossus_starboard"
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"XJ" = (
+/turf/template_noop,
+/area/template_noop)
+"Yq" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Yx" = (
+/obj/structure/window/reinforced/survival_pod{
+	dir = 8
+	},
+/turf/open/floor/engine/hull,
+/area/shuttle/inteq/collosus)
+"YE" = (
+/obj/structure/table,
+/obj/item/flashlight/lamp/green,
+/turf/open/floor/wood/wood_parquet,
+/area/shuttle/inteq/collosus)
+"YW" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/airlock/hatch{
+	aiControlDisabled = 1;
+	name = "Engineering";
+	req_access_txt = "150"
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"YY" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/newscaster/security_unit{
+	dir = 8;
+	pixel_x = 32
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"YZ" = (
+/obj/machinery/status_display/shuttle{
+	pixel_x = -32
+	},
+/obj/structure/sign/poster/official/no_erp{
+	pixel_y = -32
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 1
+	},
+/obj/structure/ore_box,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"Zv" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"ZF" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/components/binary/pump/on{
+	name = "Scrubbers to Recycling"
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"ZQ" = (
+/obj/structure/rack,
+/obj/item/storage/box/emptysandbags,
+/obj/item/storage/box/emptysandbags{
+	pixel_x = 5;
+	pixel_y = -5
+	},
+/obj/structure/window/reinforced/survival_pod,
+/obj/structure/window/reinforced/survival_pod{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+"ZT" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/port_gen/pacman,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/item/wrench,
+/turf/open/floor/iron/dark,
+/area/shuttle/inteq/collosus)
+
+(1,1,1) = {"
+XJ
+Rm
+hQ
+hQ
+hQ
+Hy
+XJ
+XJ
+XJ
+XJ
+XJ
+XJ
+XJ
+Hy
+hQ
+hQ
+hQ
+Rm
+XJ
+"}
+(2,1,1) = {"
+XJ
+Rm
+hX
+pq
+hX
+Rm
+UX
+XJ
+XJ
+XJ
+XJ
+XJ
+UX
+Rm
+hX
+Eo
+hX
+Rm
+XJ
+"}
+(3,1,1) = {"
+XJ
+Rm
+Tk
+pv
+Tk
+Rm
+UX
+Rb
+Yx
+OD
+ja
+TF
+UX
+Rm
+Tk
+pv
+Tk
+Rm
+XJ
+"}
+(4,1,1) = {"
+XJ
+Rm
+iN
+xx
+uF
+Lj
+Rm
+Rm
+Rm
+Xo
+Rm
+Rm
+Rm
+Lj
+ML
+xx
+mP
+Rm
+XJ
+"}
+(5,1,1) = {"
+XJ
+Rm
+Tk
+pF
+Tk
+Rm
+Kg
+Ru
+Zv
+zZ
+sN
+tR
+aa
+Rm
+Tk
+pF
+hr
+Rm
+XJ
+"}
+(6,1,1) = {"
+XJ
+Rm
+jn
+pV
+vp
+AZ
+Kk
+RJ
+ZF
+XB
+Hp
+Sb
+PK
+Qu
+PK
+EJ
+rM
+Rm
+XJ
+"}
+(7,1,1) = {"
+XJ
+Rm
+jo
+qz
+vx
+Rm
+Kq
+RP
+ZT
+fQ
+EG
+Xz
+ab
+Rm
+us
+PP
+aG
+Rm
+XJ
+"}
+(8,1,1) = {"
+XJ
+wr
+Rm
+Rm
+Rm
+Rm
+Lj
+Rm
+Rm
+YW
+Rm
+Lj
+Rm
+Rm
+Rm
+Rm
+Rm
+wr
+XJ
+"}
+(9,1,1) = {"
+XJ
+XJ
+XJ
+UX
+Rm
+Ba
+Tk
+CO
+sF
+Tk
+uB
+ah
+Ve
+YZ
+Rm
+UX
+XJ
+XJ
+XJ
+"}
+(10,1,1) = {"
+XJ
+XJ
+XJ
+XJ
+Rm
+BD
+Tk
+Tk
+rd
+Tk
+Lx
+Tk
+uH
+VK
+Rm
+XJ
+XJ
+XJ
+XJ
+"}
+(11,1,1) = {"
+XJ
+XJ
+XJ
+XJ
+on
+kK
+Tk
+eI
+Es
+Tk
+ev
+kK
+Tk
+eI
+XF
+XJ
+XJ
+XJ
+XJ
+"}
+(12,1,1) = {"
+XJ
+XJ
+XJ
+XJ
+rb
+Tk
+Tk
+Tk
+Tk
+Tk
+Tk
+Tk
+Tk
+Tk
+RH
+XJ
+XJ
+XJ
+XJ
+"}
+(13,1,1) = {"
+XJ
+XJ
+XJ
+XJ
+rb
+Tk
+Tk
+Tk
+Tk
+Tk
+Tk
+Tk
+Tk
+Tk
+pX
+XJ
+XJ
+XJ
+XJ
+"}
+(14,1,1) = {"
+XJ
+XJ
+XJ
+XJ
+rb
+ah
+Tk
+Tr
+ZQ
+Tk
+FX
+ps
+Tk
+pD
+sD
+XJ
+XJ
+XJ
+XJ
+"}
+(15,1,1) = {"
+XJ
+XJ
+XJ
+XJ
+Rm
+CJ
+Tk
+Tk
+gm
+Tk
+qY
+ry
+Tk
+NV
+Rm
+XJ
+XJ
+XJ
+XJ
+"}
+(16,1,1) = {"
+XJ
+XJ
+XJ
+XJ
+Rm
+CU
+VD
+eI
+IZ
+Tk
+wA
+lX
+lr
+Aw
+Rm
+XJ
+XJ
+XJ
+XJ
+"}
+(17,1,1) = {"
+Hy
+Rm
+Rm
+Rm
+Rm
+Rm
+Rm
+Lj
+Rm
+pw
+Rm
+Rm
+Lj
+Rm
+Rm
+Rm
+Rm
+Rm
+Hy
+"}
+(18,1,1) = {"
+Rm
+cM
+Cx
+cs
+Tk
+wE
+NP
+Rm
+Ce
+Tk
+lE
+Lj
+fT
+jy
+bl
+hf
+al
+Xa
+Rm
+"}
+(19,1,1) = {"
+HD
+dS
+Tk
+Ck
+Ck
+Ck
+Tk
+Ur
+Tk
+Tk
+Tk
+QL
+nE
+nE
+nE
+nE
+AM
+nE
+Rm
+"}
+(20,1,1) = {"
+Rm
+zF
+Tk
+ej
+wb
+sc
+Tk
+Ur
+Tk
+Tk
+Tk
+QL
+Yq
+Yq
+Yq
+Yq
+Ob
+Yq
+Rm
+"}
+(21,1,1) = {"
+Rm
+eK
+Tk
+Ck
+Ck
+Ck
+Tk
+Ur
+Tk
+Tk
+Tk
+Rm
+sT
+Wr
+di
+Xn
+Wc
+Oh
+Rm
+"}
+(22,1,1) = {"
+Rm
+eT
+Tk
+wb
+wm
+EC
+Oe
+Rm
+gZ
+Tk
+lF
+Rm
+Rm
+Rm
+Rm
+Rm
+Rm
+Lj
+Rm
+"}
+(23,1,1) = {"
+Rm
+eX
+Tk
+Tk
+Tk
+Tk
+Tk
+UN
+Tk
+Tk
+oE
+Rm
+uq
+VY
+Rm
+aD
+xu
+eH
+Rm
+"}
+(24,1,1) = {"
+Rm
+fj
+Tk
+Tk
+Tk
+Tk
+OW
+Rm
+Tk
+Tk
+VJ
+Rm
+ML
+LE
+Rm
+Tk
+yf
+rJ
+HD
+"}
+(25,1,1) = {"
+HD
+gg
+lA
+tx
+xD
+FQ
+Tk
+Rm
+Sp
+Tk
+Tk
+vc
+Tk
+iH
+Rm
+Tk
+kV
+wo
+HD
+"}
+(26,1,1) = {"
+Rm
+gy
+YY
+Tk
+xF
+VU
+Qv
+Rm
+nb
+Oc
+Wm
+Rm
+kq
+qw
+Rm
+EZ
+oa
+wS
+Rm
+"}
+(27,1,1) = {"
+wr
+Rm
+Rm
+Lj
+Rm
+Rm
+Rm
+UX
+Tk
+Tk
+Tk
+UX
+Rm
+Rm
+Rm
+qW
+Rm
+Rm
+wr
+"}
+(28,1,1) = {"
+XJ
+hO
+nm
+Tk
+yn
+FW
+QI
+Tk
+Tk
+Tk
+Tk
+MJ
+Rm
+AL
+wg
+rf
+Sf
+Rm
+XJ
+"}
+(29,1,1) = {"
+XJ
+Rm
+Rm
+Rm
+zg
+Hc
+Rm
+WD
+Tk
+Tk
+Tk
+eJ
+Lj
+YE
+rf
+rf
+qr
+HD
+XJ
+"}
+(30,1,1) = {"
+XJ
+Rm
+qM
+Rm
+Lj
+Rm
+Rm
+Tk
+Tk
+Tk
+Tk
+lV
+Rm
+mT
+rf
+rf
+er
+Rm
+XJ
+"}
+(31,1,1) = {"
+XJ
+HD
+rf
+AB
+rf
+Hr
+Sr
+Tk
+Tk
+Tk
+Tk
+Tk
+bs
+rf
+rf
+rf
+Fr
+Rm
+XJ
+"}
+(32,1,1) = {"
+XJ
+Rm
+nZ
+rf
+rf
+HB
+Lj
+Xx
+Tk
+Tk
+Fa
+Fa
+Lj
+rf
+rf
+rf
+vs
+Rm
+XJ
+"}
+(33,1,1) = {"
+XJ
+HD
+sI
+ue
+rf
+HM
+Rm
+Rm
+dE
+dE
+dE
+Rm
+Rm
+mt
+Je
+rf
+Jl
+HD
+XJ
+"}
+(34,1,1) = {"
+XJ
+Rm
+oe
+uy
+AG
+Rm
+UX
+XJ
+XJ
+XJ
+XJ
+XJ
+UX
+Rm
+Ga
+bO
+sm
+Rm
+XJ
+"}
+(35,1,1) = {"
+XJ
+Ao
+HD
+HD
+HD
+wr
+XJ
+XJ
+XJ
+XJ
+XJ
+XJ
+XJ
+wr
+HD
+HD
+HD
+Ao
+XJ
+"}

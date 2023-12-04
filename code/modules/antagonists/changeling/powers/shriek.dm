@@ -14,9 +14,11 @@
 		if(iscarbon(M))
 			var/mob/living/carbon/C = M
 			if(!C.mind || !C.mind.has_antag_datum(/datum/antagonist/changeling))
-				C.adjustEarDamage(0, 30)
+				C.adjustEarDamage(15, 30)
 				C.confused += 25
 				C.Jitter(50)
+				C.DefaultCombatKnockdown(25)
+				C.apply_damage(8, BRUTE)
 			else
 				SEND_SOUND(C, sound('sound/effects/screech.ogg'))
 
@@ -26,7 +28,8 @@
 
 	for(var/obj/machinery/light/L in range(4, user))
 		L.on = 1
-		L.break_light_tube()
+		INVOKE_ASYNC(L, TYPE_PROC_REF(/obj/machinery/light, break_light_tube))
+
 	playsound(get_turf(user), 'sound/effects/lingscreech.ogg', 75, TRUE, 5)
 	return TRUE
 

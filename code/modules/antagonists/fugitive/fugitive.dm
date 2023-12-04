@@ -7,6 +7,7 @@
 	var/datum/team/fugitive/fugitive_team
 	var/is_captured = FALSE
 	var/backstory = "error"
+	soft_antag = TRUE //BLUEMOON ADD - дружелюбные, малозначимые гостроли не должны считаться за антагонистов (ломает динамик)
 
 /datum/antagonist/fugitive/apply_innate_effects(mob/living/mob_override)
 	var/mob/living/M = mob_override || owner.current
@@ -18,12 +19,15 @@
 
 /datum/antagonist/fugitive/on_gain()
 	forge_objectives()
+	var/mob/living/carbon/human/H = owner.current
+	H.canloadappearance = TRUE
+	H.checkloadappearance()
 	. = ..()
 
 /datum/antagonist/fugitive/proc/forge_objectives() //this isn't the actual survive objective because it's about who in the team survives
 	var/datum/objective/survive = new /datum/objective
 	survive.owner = owner
-	survive.explanation_text = "Avoid capture from the fugitive hunters."
+	survive.explanation_text = "Избегайте Охотников, вы должны быть свободны вплоть до конца смены!"
 	objectives += survive
 
 /datum/antagonist/fugitive/greet(back_story)

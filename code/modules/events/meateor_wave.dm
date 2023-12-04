@@ -4,9 +4,10 @@
 	weight = 2
 	max_occurrences = 1
 	description = "A meteor wave made of meat."
+	category = EVENT_CATEGORY_SPACE
 
 /datum/round_event/meteor_wave/meaty
 	wave_name = "meaty"
 
 /datum/round_event/meteor_wave/meaty/announce(fake)
-	priority_announce("Meaty ores have been detected on collision course with the station.", "Oh crap, get the mop.", "meteors", has_important_message = TRUE)
+	priority_announce("\"Митиоры\" были обнаружены на пути столкновения со станцией.", "Тащи Швабру!", "meteors", has_important_message = TRUE)

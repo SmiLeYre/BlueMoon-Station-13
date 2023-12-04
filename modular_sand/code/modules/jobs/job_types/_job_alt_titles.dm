@@ -58,7 +58,6 @@
 		"Visitor",
 		"Businessman",
 		"Trader",
-		"Entertainer",
 		"Intern",
 		"Off-Duty Civilian"
 		)
@@ -71,17 +70,19 @@
 /datum/job/chaplain
 	alt_titles = list(
 		"Priest",
-		"Cult Leader",
+		"Shaman",
 		"Pope",
+		"Voodo Sorcerer",
+		"Ritualist",
 		"Bishop", // How about you actually say something about it instead of crying on a downstream's comments i won't read.
 		"Pontiff"
 		)
-
+/* BLUEMOON REMOVAL - развлекатель теперь отдельная профессия
 /datum/job/clown //The most useless role in the game, delet this
 	alt_titles = list(
 		"Entertainer"
 		)
-
+*/
 /datum/job/cook
 	alt_titles = list(
 		"Culinary Artist",
@@ -93,7 +94,12 @@
 /datum/job/curator
 	alt_titles = list(
 		"Journalist",
-		"Librarian"
+		"Librarian",
+		"Reporter",
+		"Correspondent",
+		"Newsman",
+		"Questioner",
+		"Occultism Fan"
 		)
 
 /datum/job/hydro
@@ -153,7 +159,7 @@
 		"Surgeon",
 		"Medical Secretary",
 		"Emergency Physician",
-		"Field Surgeon" 
+		"Field Surgeon"
 		)
 
 /datum/job/geneticist
@@ -182,9 +188,7 @@
 
 /datum/job/officer
 	alt_titles = list(
-		"Security Cadet",
 		"Security Guard",
-		"Peacekeeper",
 		"Enforcer"
 		)
 

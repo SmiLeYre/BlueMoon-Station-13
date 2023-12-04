@@ -114,8 +114,8 @@
 	required_count = 5
 	wanted_types = list(/obj/item/stack/ore/bluespace_crystal/artificial)
 	exclude_types = list(/obj/item/stack/ore/bluespace_crystal,
-						 /obj/item/stack/sheet/bluespace_crystal,
-						 /obj/item/stack/ore/bluespace_crystal/refined)
+						/obj/item/stack/sheet/bluespace_crystal,
+						/obj/item/stack/ore/bluespace_crystal/refined)
 
 /datum/bounty/item/science/noneactive_reactivearmor
 	name = "Reactive Armor Shells"
@@ -124,10 +124,10 @@
 	required_count = 5
 	wanted_types = list(/obj/item/reactive_armour_shell, /obj/item/clothing/suit/armor/reactive)
 	exclude_types = list(/obj/item/clothing/suit/armor/reactive/repulse,
-						 /obj/item/clothing/suit/armor/reactive/tesla,
-						 /obj/item/clothing/suit/armor/reactive/teleport,
-						 /obj/item/clothing/suit/armor/reactive/stealth,
-						 /obj/item/clothing/suit/armor/reactive/fire)
+						/obj/item/clothing/suit/armor/reactive/tesla,
+						/obj/item/clothing/suit/armor/reactive/teleport,
+						/obj/item/clothing/suit/armor/reactive/stealth,
+						/obj/item/clothing/suit/armor/reactive/fire)
 
 /datum/bounty/item/science/anomaly_core
 	name = "Anomaly Core"

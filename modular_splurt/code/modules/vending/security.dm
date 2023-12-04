@@ -7,6 +7,7 @@
 		/obj/item/clothing/head/helmet/metrocop = 2,
 		/obj/item/storage/bag/security = 5,
 		/obj/item/clothing/head/helmet/blueshirt = 5,
+		/obj/item/clothing/head/helmet/hephaestus = 5,
 		/obj/item/clothing/under/rank/security/officer/blueshirt = 5,
 		/obj/item/clothing/suit/armor/vest/blueshirt = 5,
 		/obj/item/armorkit/security = 5,
@@ -19,9 +20,8 @@
 		/obj/item/clothing/suit/armor/vest/stripper = 5,
 		/obj/item/clothing/suit/armor/vest/stripper/bikini = 5,
 		/obj/item/clothing/neck/petcollar/locked/security = 5,
-		/obj/item/clothing/mask/gas/sechailer/slut = 5,
 		/obj/item/grenade/secbed = 3,
-		/obj/item/dildo/flared/gigantic = 1
+		/obj/item/dildo/flared/gigantic = 3
 	)
 	LAZYADD(products, extra_products)
 	LAZYADD(contraband, extra_contraband)
@@ -38,16 +38,26 @@
 	var/list/extra_products = list(
 		/obj/item/clothing/head/beret/sec/peacekeeper/cap = 5,
 		/obj/item/clothing/head/beret/sec/peacekeeper = 5,
+		/obj/item/clothing/mask/balaclava/breath = 5,
+		/obj/item/clothing/mask/gas/syndicate/ds/wide = 3,
+		/obj/item/clothing/mask/gas/syndicate/ds/mouth = 3,
+		/obj/item/clothing/mask/gas/syndicate/ds/coif = 2,
 		/obj/item/clothing/under/rank/security/officer/peacekeeper =5,
 		/obj/item/clothing/under/rank/security/officer/metrocop = 2,
 		/obj/item/clothing/under/rank/security/skirt/slut = 5,
 		/obj/item/clothing/under/rank/security/skirt/slut/pink = 5,
 		/obj/item/clothing/under/rank/security/stripper = 5,
-		/obj/item/clothing/suit/hooded/corpus/s = 5
+		/obj/item/clothing/suit/hooded/corpus/s = 5,
+		/obj/item/clothing/head/utilcover = 5,
+		/obj/item/clothing/under/utility/green = 5,
+		/obj/item/clothing/under/utility/navy = 5,
+		/obj/item/clothing/under/utility/tan = 5
 	)
 	var/list/extra_premium = list(
 		/obj/item/clothing/gloves/latexsleeves/security = 5,
 		/obj/item/clothing/shoes/jackboots/tall = 5,
+		/obj/item/clothing/under/custom/mw2_russian_para = 5,
+		/obj/item/clothing/under/bm/sigu = 5,
 		/obj/item/clothing/head/beret/sec/bitch = 5
 	)
 	LAZYADD(products, extra_products)
@@ -67,10 +77,15 @@
 	new /obj/item/radio/headset/headset_brigdoc(src)
 	new /obj/item/radio/headset/headset_brigdoc/alt(src)
 	new /obj/item/flashlight/seclite(src)
+	new /obj/item/clothing/gloves/color/latex/nitrile(src)
 	new /obj/item/clothing/head/brigdoc(src)
 	new /obj/item/defibrillator(src)
-	new /obj/item/clothing/suit/brigdoc(src)
-	new /obj/item/clothing/suit/brigdoc/labcoat(src)
+	new /obj/item/storage/belt/medical(src)
+	new /obj/item/pinpointer/crew(src)
+	new /obj/item/clothing/suit/armor/brigdoc(src)
+	new /obj/item/clothing/suit/armor/brigdoc/labcoat(src)
+	new /obj/item/mod/module/clamp(src) //BLUEMOOB ADDITION - для перемещения сверхтяжёлых персонажей
+	new /obj/item/reagent_containers/glass/bottle/morphine(src) // BLUEMOON ADD - для операций
 
 /obj/structure/closet/secure_closet/blueshield
 	name = "blueshield's locker"
@@ -80,14 +95,24 @@
 
 /obj/structure/closet/secure_closet/blueshield/PopulateContents()
 	..()
-	new /obj/item/clothing/head/helmet/sec/blueshield(src)
+	new /obj/item/clothing/head/helmet/sec(src)
 	new /obj/item/radio/headset/headset_blueshield(src)
 	new /obj/item/flashlight/seclite(src)
-	new /obj/item/clothing/mask/gas/sechailer/swat(src)
+	new /obj/item/clothing/mask/gas/sechailer/swat/blueshield(src)
+	new /obj/item/clothing/mask/gas/sechailer/swat/blueshield(src)
 	new /obj/item/grenade/flashbang(src)
 	new /obj/item/choice_beacon/bsbaton(src)
 	new /obj/item/armorkit/blueshield(src)
 	new /obj/item/armorkit/blueshield/helmet(src)
+	new /obj/item/clothing/head/helmet/sec(src)
+	new /obj/item/radio/headset/headset_blueshield(src)
+	new /obj/item/flashlight/seclite(src)
+	new /obj/item/grenade/flashbang(src)
+	new /obj/item/choice_beacon/bsbaton(src)
+	new /obj/item/armorkit/blueshield(src)
+	new /obj/item/armorkit/blueshield/helmet(src)
+	new /obj/item/clothing/neck/cloak/blueshield(src)
+	new /obj/item/clothing/neck/cloak/blueshield(src)
 
 /obj/structure/closet/secure_closet/bridgesec
 	name = "bridge officer's locker"
@@ -203,16 +228,44 @@
 	new /obj/item/megaphone/sec(src)
 	new /obj/item/holosign_creator/security(src)
 	new /obj/item/storage/lockbox/loyalty(src)
-	new /obj/item/clothing/mask/gas/sechailer/swat(src)
+	new /obj/item/clothing/mask/gas/sechailer/swat/hos(src)
+	new /obj/item/autosurgeon/breathing_tube(src)
 	new /obj/item/storage/box/flashbangs(src)
 	new /obj/item/shield/riot/tele(src)
 	new /obj/item/storage/belt/security/full(src)
-	new /obj/item/choice_beacon/hosgun(src)
 	new /obj/item/flashlight/seclite(src)
 	new /obj/item/pinpointer/nuke(src)
+	new /obj/item/choice_beacon/hos_new_weapon(src)
 	new /obj/item/circuitboard/machine/techfab/department/security(src)
 	new /obj/item/storage/photo_album/HoS(src)
+	new /obj/item/card/id/departmental_budget/sec(src)
+	new /obj/item/lighter/hos(src)
 	new /obj/item/mod/construction/armor/safeguard(src)
 	new /obj/item/mod/module/jetpack(src)
 	new /obj/item/mod/module/holster(src)
-	new /obj/item/card/id/departmental_budget/sec(src)
+
+/obj/structure/closet/secure_closet/ntr
+	name = "representative's locker"
+	req_access = list(ACCESS_HOS)
+	icon_state = "ntr"
+
+/obj/structure/closet/secure_closet/ntr/PopulateContents()
+	..()
+	new /obj/item/clothing/neck/cloak/nanotrasen_representative(src)
+	new /obj/item/clothing/neck/cloak/syndiecap(src)
+	new /obj/item/clothing/under/rank/centcom/officer_alt(src)
+	new /obj/item/clothing/under/syndicate(src)
+	new /obj/item/clothing/head/beret/sec/ntr_beret(src)
+	new /obj/item/clothing/head/HoS/beret/syndicate(src)
+	new /obj/item/megaphone/sec(src)
+	new /obj/item/radio/headset/heads/ntr(src)
+	new /obj/item/stamp/syndicate(src)
+	new /obj/item/stamp/ntr(src)
+	new /obj/item/lighter/nt_rep(src)
+	new /obj/item/clothing/accessory/lawyers_badge(src)
+	new /obj/item/camera/detective(src)
+	new /obj/item/storage/box/evidence(src)
+	new /obj/item/melee/classic_baton/telescopic/centcom(src)
+	new /obj/item/folder(src)
+	new /obj/item/folder(src)
+	new /obj/item/folder(src)

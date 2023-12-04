@@ -8,6 +8,8 @@
 	righthand_file = 'icons/mob/inhands/weapons/chainsaw_righthand.dmi'
 	flags_1 = CONDUCT_1
 	force = 13
+	wound_bonus = 15
+	bare_wound_bonus = 25
 	var/force_on = 24
 	w_class = WEIGHT_CLASS_HUGE
 	throwforce = 13
@@ -44,13 +46,13 @@
 
 /obj/item/chainsaw/suicide_act(mob/living/carbon/user)
 	if(on)
-		user.visible_message("<span class='suicide'>[user] begins to tear [user.p_their()] head off with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		user.visible_message("<span class='suicide'>[user] begins to tear [user.ru_ego()] head off with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 		playsound(src, 'sound/weapons/chainsawhit.ogg', 100, 1)
 		var/obj/item/bodypart/head/myhead = user.get_bodypart(BODY_ZONE_HEAD)
 		if(myhead)
 			myhead.dismember()
 	else
-		user.visible_message("<span class='suicide'>[user] smashes [src] into [user.p_their()] neck, destroying [user.p_their()] esophagus! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		user.visible_message("<span class='suicide'>[user] smashes [src] into [user.ru_ego()] neck, destroying [user.ru_ego()] esophagus! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 		playsound(src, 'sound/weapons/genhit1.ogg', 100, 1)
 	return(BRUTELOSS)
 
@@ -62,6 +64,8 @@
 	update_icon()
 	var/datum/component/butchering/butchering = src.GetComponent(/datum/component/butchering)
 	butchering.butchering_enabled = on
+	if(on)
+		playsound(src, 'sound/weapons/chainsawstart.ogg', 65, 1)
 
 	if(on)
 		hitsound = 'sound/weapons/chainsawhit.ogg'

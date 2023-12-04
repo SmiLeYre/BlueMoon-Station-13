@@ -86,7 +86,7 @@
 
 /obj/machinery/syndicatebomb/Initialize(mapload)
 	. = ..()
-	wires = new /datum/wires/syndicatebomb(src)
+	set_wires(new /datum/wires/syndicatebomb(src))
 	if(payload)
 		payload = new payload(src)
 	update_icon()
@@ -197,7 +197,7 @@
 	if(in_range(src, user) && isliving(user)) //No running off and setting bombs from across the station
 		timer_set = clamp(new_timer, minimum_timer, maximum_timer)
 		loc.visible_message("<span class='notice'>[icon2html(src, viewers(src))] timer set for [timer_set] seconds.</span>")
-	if(alert(user,"Would you like to start the countdown now?",,"Yes","No") == "Yes" && in_range(src, user) && isliving(user))
+	if(alert(user,"Would you like to start the countdown now?",,"Да","Нет") == "Да" && in_range(src, user) && isliving(user))
 		if(defused || active)
 			if(defused)
 				visible_message("<span class='warning'>[icon2html(src, viewers(src))] Device error: User intervention required.</span>")
@@ -359,15 +359,17 @@
 	playsound(src, 'sound/misc/sadtrombone.ogg', 50)
 	..()
 
+//BlueMoon Edit. Begin.
 /obj/item/bombcore/large
-	name = "large bomb payload"
-	range_heavy = 5
-	range_medium = 10
-	range_light = 20
-	range_flame = 20
+	name = "Large Bomb Payload"
+	range_heavy = 20
+	range_medium = 30
+	range_light = 40
+	range_flame = 50
+//BlueMoon Edit. End.
 
 /obj/item/bombcore/miniature
-	name = "small bomb core"
+	name = "Small Bomb Core"
 	w_class = WEIGHT_CLASS_SMALL
 	range_heavy = 1
 	range_medium = 2

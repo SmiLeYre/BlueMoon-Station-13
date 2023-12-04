@@ -16,7 +16,7 @@
 /obj/item/armyknife/attack_self(mob/user)
 	playsound(get_turf(user),'sound/weapons/batonextend.ogg',50,1)
 	var/obj/item/armyknife/ak_screw = new /obj/item/armyknife/screw(drop_location())
-	to_chat(user, span_notice("You unfold the screwdriver."))
+	to_chat(user, "<span class='notice'>You unfold the screwdriver.</span>")
 	qdel(src)
 	user.put_in_active_hand(ak_screw)
 
@@ -42,7 +42,7 @@
 /obj/item/armyknife/screw/attack_self(mob/user)
 	playsound(get_turf(user),'sound/weapons/batonextend.ogg',50,1)
 	var/obj/item/armyknife/ak_cut = new /obj/item/armyknife/cutter(drop_location())
-	to_chat(user, span_notice("You fold the screwdriver and unfold the wirecutters."))
+	to_chat(user, "<span class='notice'>You fold the screwdriver and unfold the wirecutters.</span>")
 	qdel(src)
 	user.put_in_active_hand(ak_cut)
 
@@ -70,7 +70,7 @@
 /obj/item/armyknife/cutter/attack_self(mob/user)
 	playsound(get_turf(user), 'sound/weapons/batonextend.ogg', 50, 1)
 	var/obj/item/armyknife/ak_knife = new /obj/item/armyknife/blade(drop_location())
-	to_chat(user, span_notice("You fold the wirecutters and unfold the knife."))
+	to_chat(user, "<span class='notice'>You fold the wirecutters and unfold the knife.</span>")
 	qdel(src)
 	user.put_in_active_hand(ak_knife)
 
@@ -94,7 +94,7 @@
 /obj/item/armyknife/blade/attack_self(mob/user)
 	playsound(get_turf(user), 'sound/weapons/batonextend.ogg', 50, 1)
 	var/obj/item/armyknife/ak_fold = new /obj/item/armyknife(drop_location())
-	to_chat(user, span_notice("You fold the knife."))
+	to_chat(user, "<span class='notice'>You fold the knife.</span>")
 	qdel(src)
 	user.put_in_active_hand(ak_fold)
 

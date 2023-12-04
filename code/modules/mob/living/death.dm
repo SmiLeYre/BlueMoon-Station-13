@@ -111,3 +111,6 @@
 
 	release_vore_contents(silent = TRUE)
 	return TRUE
+
+/mob/living/proc/can_die()
+	return !(stat == DEAD || (status_flags & GODMODE))

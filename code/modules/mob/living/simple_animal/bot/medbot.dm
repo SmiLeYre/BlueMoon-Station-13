@@ -349,10 +349,10 @@
 	if(assess_patient(H))
 		last_found = world.time
 		if((last_newpatient_speak + 300) < world.time) //Don't spam these messages!
-			var/list/messagevoice = list("Hey, [H.name]! Hold on, I'm coming." = 'sound/voice/medbot/coming.ogg',"Wait [H.name]! I want to help!" = 'sound/voice/medbot/help.ogg',"[H.name], you appear to be injured!" = 'sound/voice/medbot/injured.ogg')
+			var/list/messagevoice = list("Эй, [H.name]! Будь на месте, я иду!" = 'sound/voice/medbot/coming.ogg',"Подожди, [H.name]! Я хочу помочь!" = 'sound/voice/medbot/help.ogg',"[H.name], вы выглядите раненным!" = 'sound/voice/medbot/injured.ogg')
 			var/message = pick(messagevoice)
 			if(prob(1) && ISINRANGE_EX(H.getFireLoss(), 0, 20))
-				message = "Notices your minor burns*OwO what's this?"
+				message = "Замечаю ваши небольшие ожоги... OwO, WoW, что это такое?"
 				messagevoice[message] = 'sound/voice/medbot/owo.ogg'
 			speak(message)
 			playsound(loc, messagevoice[message], 50, 0)
@@ -375,12 +375,12 @@
 	if(user)
 		user.visible_message("<span class='notice'>[user] sets [src] right-side up!</span>", "<span class='green'>You set [src] right-side up!</span>")
 		if(user.name == tipper_name)
-			messagevoice = list("I forgive you." = 'sound/voice/medbot/forgive.ogg')
+			messagevoice = list("Я тебя прощаю." = 'sound/voice/medbot/forgive.ogg')
 		else
-			messagevoice = list("Thank you!" = 'sound/voice/medbot/thank_you.ogg', "You are a good person." = 'sound/voice/medbot/youre_good.ogg')
+			messagevoice = list("Спасибо!" = 'sound/voice/medbot/thank_you.ogg', "Ты хорошая личность." = 'sound/voice/medbot/youre_good.ogg')
 	else
 		visible_message("<span class='notice'>[src] manages to writhe wiggle enough to right itself.</span>")
-		messagevoice = list("Fuck you." = 'sound/voice/medbot/fuck_you.ogg', "Your behavior has been reported, have a nice day." = 'sound/voice/medbot/reported.ogg')
+		messagevoice = list("Иди нахуй." = 'sound/voice/medbot/fuck_you.ogg', "О вашем поведении было сообщено, всего хорошего." = 'sound/voice/medbot/reported.ogg')
 
 	tipper_name = null
 	if(world.time > last_tipping_action_voice + 15 SECONDS)
@@ -398,17 +398,17 @@
 	var/list/messagevoice
 	switch(tipped_status)
 		if(MEDBOT_PANIC_LOW)
-			messagevoice = list("I require assistance." = 'sound/voice/medbot/i_require_asst.ogg')
+			messagevoice = list("Я нуждаюсь в помощи." = 'sound/voice/medbot/i_require_asst.ogg')
 		if(MEDBOT_PANIC_MED)
-			messagevoice = list("Please put me back." = 'sound/voice/medbot/please_put_me_back.ogg')
+			messagevoice = list("Пожалуйста, верните меня на место." = 'sound/voice/medbot/please_put_me_back.ogg')
 		if(MEDBOT_PANIC_HIGH)
-			messagevoice = list("Please, I am scared!" = 'sound/voice/medbot/please_im_scared.ogg')
+			messagevoice = list("Пожалуйста, мне страшно!" = 'sound/voice/medbot/please_im_scared.ogg')
 		if(MEDBOT_PANIC_FUCK)
-			messagevoice = list("I don't like this, I need help!" = 'sound/voice/medbot/dont_like.ogg', "This hurts, my pain is real!" = 'sound/voice/medbot/pain_is_real.ogg')
+			messagevoice = list("Мне это не нравится, мне нужна помощь!!" = 'sound/voice/medbot/dont_like.ogg', "Это больно, моя боль реальна!!!" = 'sound/voice/medbot/pain_is_real.ogg')
 		if(MEDBOT_PANIC_ENDING)
-			messagevoice = list("Is this the end?" = 'sound/voice/medbot/is_this_the_end.ogg', "Nooo!" = 'sound/voice/medbot/nooo.ogg')
+			messagevoice = list("Неужели это конец?" = 'sound/voice/medbot/is_this_the_end.ogg', "Не-е-е-ет!" = 'sound/voice/medbot/nooo.ogg')
 		if(MEDBOT_PANIC_END)
-			speak("PSYCH ALERT: Crewmember [tipper_name] recorded displaying antisocial tendencies torturing bots in [get_area(src)]. Please schedule psych evaluation.", radio_channel)
+			speak("BНИМАНИЕ, ПСИХ: Член Экипажа [tipper_name] проявляет антисоциальные наклонности, пытая ботов в [get_area(src)]. Запишите сотрудника на психологическую экспертизу и обратитесь к СБ.", radio_channel)
 			set_right() // strong independent medbot
 
 	if(prob(tipped_status))
@@ -465,7 +465,7 @@
 				var/list/i_need_scissors = list('sound/voice/medbot/fuck_you.ogg', 'sound/voice/medbot/turn_off.ogg', 'sound/voice/medbot/im_different.ogg', 'sound/voice/medbot/close.ogg', 'sound/voice/medbot/shindemashou.ogg')
 				playsound(src, pick(i_need_scissors), 70)
 			else
-				var/list/messagevoice = list("Radar, put a mask on!" = 'sound/voice/medbot/radar.ogg',"There's always a catch, and I'm the best there is." = 'sound/voice/medbot/catch.ogg',"I knew it, I should've been a plastic surgeon." = 'sound/voice/medbot/surgeon.ogg',"What kind of medbay is this? Everyone's dropping like flies." = 'sound/voice/medbot/flies.ogg',"Delicious!" = 'sound/voice/medbot/delicious.ogg', "Why are we still here? Just to suffer?" = 'sound/voice/medbot/why.ogg')
+				var/list/messagevoice = list("Наденьте маску сейчас же, берегите своё здоровье!" = 'sound/voice/medbot/radar.ogg',"Вокруг заразно. А я - лучшее лекарство!" = 'sound/voice/medbot/catch.ogg',"Я так и знал, мне следовало стать пластическим хирургом." = 'sound/voice/medbot/surgeon.ogg',"Что это за медпункт такой? Все умирают как мухи." = 'sound/voice/medbot/flies.ogg',"Замечательно!" = 'sound/voice/medbot/delicious.ogg', "Почему мы все еще здесь? Только для того, чтобы страдать?" = 'sound/voice/medbot/why.ogg')
 				var/message = pick(messagevoice)
 				speak(message)
 				playsound(src, messagevoice[message], 50)
@@ -588,7 +588,7 @@
 
 		if(world.time > last_tipping_action_voice + 15 SECONDS)
 			last_tipping_action_voice = world.time // message for tipping happens when we start interacting, message for righting comes after finishing
-			var/list/messagevoice = list("Hey, wait..." = 'sound/voice/medbot/hey_wait.ogg',"Please don't..." = 'sound/voice/medbot/please_dont.ogg',"I trusted you..." = 'sound/voice/medbot/i_trusted_you.ogg', "Nooo..." = 'sound/voice/medbot/nooo.ogg', "Oh fuck-" = 'sound/voice/medbot/oh_fuck.ogg')
+			var/list/messagevoice = list("Эй, подожди..." = 'sound/voice/medbot/hey_wait.ogg',"Пожалуйста, не надо..." = 'sound/voice/medbot/please_dont.ogg',"Я доверял тебе..." = 'sound/voice/medbot/i_trusted_you.ogg', "Не-е-ет..." = 'sound/voice/medbot/nooo.ogg', "Bот чёрт!" = 'sound/voice/medbot/oh_fuck.ogg')
 			var/message = pick(messagevoice)
 			speak(message)
 			playsound(src, messagevoice[message], 70, FALSE)
@@ -629,7 +629,7 @@
 		return
 
 	if(C.stat == DEAD || (HAS_TRAIT(C, TRAIT_FAKEDEATH)))
-		var/list/messagevoice = list("No! Stay with me!" = 'sound/voice/medbot/no.ogg',"Live, damnit! LIVE!" = 'sound/voice/medbot/live.ogg',"I...I've never lost a patient before. Not today, I mean." = 'sound/voice/medbot/lost.ogg')
+		var/list/messagevoice = list("Нет! Не закрывай глаза!" = 'sound/voice/medbot/no.ogg',"Живи, чёрт возьми. ЖИBИ!" = 'sound/voice/medbot/live.ogg',"Я... я никогда раньше не терял пациентов. Исключая сегодня, я имею в виду..." = 'sound/voice/medbot/lost.ogg')
 		var/message = pick(messagevoice)
 		speak(message)
 		playsound(loc, messagevoice[message], 50, 0)
@@ -686,7 +686,7 @@
 	if(!reagent_id) //If they don't need any of that they're probably cured!
 		if(C.maxHealth - C.health < heal_threshold)
 			to_chat(src, "<span class='notice'>[C] is healthy! Your programming prevents you from injecting anyone without at least [heal_threshold] damage of any one type ([heal_threshold + 15] for oxygen damage.)</span>")
-		var/list/messagevoice = list("All patched up!" = 'sound/voice/medbot/patchedup.ogg',"An apple a day keeps me away." = 'sound/voice/medbot/apple.ogg',"Feel better soon!" = 'sound/voice/medbot/feelbetter.ogg')
+		var/list/messagevoice = list("Все исправлено!" = 'sound/voice/medbot/patchedup.ogg',"Яблоко в день меня не подведет." = 'sound/voice/medbot/apple.ogg',"Скорейшего выздоровления!" = 'sound/voice/medbot/feelbetter.ogg')
 		var/message = pick(messagevoice)
 		speak(message)
 		playsound(loc, messagevoice[message], 50, 0)
@@ -756,7 +756,7 @@
 	if(declare_cooldown > world.time)
 		return
 	var/area/location = get_area(src)
-	speak("Medical emergency! [crit_patient ? "<b>[crit_patient]</b>" : "A patient"] is in critical condition at [location]!",radio_channel)
+	speak("BНИМАНИЕ, МЕД-ТРЕBОГА! [crit_patient ? "<b>[crit_patient]</b>" : "Пациент"] находится в критическом состоянии в [location]!",radio_channel)
 	declare_cooldown = world.time + 200
 
 /obj/machinery/bot_core/medbot

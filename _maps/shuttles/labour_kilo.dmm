@@ -10,9 +10,6 @@
 /obj/machinery/computer/shuttle/labor{
 	dir = 4
 	},
-/obj/structure/reagent_dispensers/peppertank{
-	pixel_x = -31
-	},
 /obj/effect/turf_decal/bot,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/labor)
@@ -33,6 +30,9 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/stripes/corner,
+/obj/structure/reagent_dispensers/peppertank{
+	pixel_x = -31
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/labor)
 "g" = (
@@ -117,10 +117,6 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/labor)
 "n" = (
-/obj/machinery/mineral/labor_claim_console{
-	machinedir = 1;
-	pixel_x = 30
-	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},
@@ -135,6 +131,9 @@
 	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
+	},
+/obj/machinery/mineral/labor_claim_console{
+	pixel_x = -30
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/labor)
@@ -206,8 +205,8 @@
 
 (1,1,1) = {"
 a
-a
 b
+a
 a
 b
 a
@@ -253,7 +252,7 @@ a
 a
 i
 a
-a
+b
 a
 u
 v

@@ -24,7 +24,7 @@
 	desc = "A first aid kit with the ability to heal common types of injuries."
 
 /obj/item/storage/firstaid/regular/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins giving [user.p_them()]self aids with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins giving себя aids with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return BRUTELOSS
 
 /obj/item/storage/firstaid/regular/PopulateContents()
@@ -81,7 +81,7 @@
 	item_state = "firstaid-brute"
 
 /obj/item/storage/firstaid/brute/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins beating [user.p_them()]self over the head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins beating себя over the head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return BRUTELOSS
 
 /obj/item/storage/firstaid/brute/PopulateContents()
@@ -89,8 +89,8 @@
 		return
 	for(var/i in 1 to 4)
 		new /obj/item/reagent_containers/pill/patch/styptic(src)
-	new /obj/item/stack/medical/gauze(src)
-	new /obj/item/stack/medical/gauze(src)
+	new /obj/item/reagent_containers/hypospray/medipen/salacid(src)
+	new /obj/item/reagent_containers/hypospray/medipen/salacid(src)
 	new /obj/item/healthanalyzer(src)
 
 /obj/item/storage/firstaid/fire
@@ -100,7 +100,7 @@
 	item_state = "firstaid-burn"
 
 /obj/item/storage/firstaid/fire/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins rubbing \the [src] against [user.p_them()]self! It looks like [user.p_theyre()] trying to start a fire!</span>")
+	user.visible_message("<span class='suicide'>[user] begins rubbing \the [src] against себя! It looks like [user.ru_who()] trying to start a fire!</span>")
 	return FIRELOSS
 
 /obj/item/storage/firstaid/fire/PopulateContents()
@@ -108,9 +108,9 @@
 		return
 	for(var/i in 1 to 3)
 		new /obj/item/reagent_containers/pill/patch/silver_sulf(src)
+	new /obj/item/reagent_containers/hypospray/medipen/oxandrolone(src)
+	new /obj/item/reagent_containers/hypospray/medipen/oxandrolone(src)
 	new /obj/item/reagent_containers/pill/oxandrolone(src)
-	new /obj/item/reagent_containers/pill/oxandrolone(src)
-	new /obj/item/reagent_containers/hypospray/medipen(src)
 	new /obj/item/healthanalyzer(src)
 
 /obj/item/storage/firstaid/toxin
@@ -126,8 +126,10 @@
 /obj/item/storage/firstaid/toxin/PopulateContents()
 	if(empty)
 		return
-	for(var/i in 1 to 4)
+	for(var/i in 1 to 2)
 		new /obj/item/reagent_containers/syringe/charcoal(src)
+	for(var/i in 1 to 2)
+		new /obj/item/reagent_containers/hypospray/medipen/penacid(src)
 	for(var/i in 1 to 2)
 		new /obj/item/storage/pill_bottle/charcoal(src)
 	new /obj/item/healthanalyzer(src)
@@ -139,7 +141,7 @@
 	item_state = "firstaid-o2"
 
 /obj/item/storage/firstaid/o2/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins hitting [user.p_their()] neck with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins hitting [user.ru_ego()] neck with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return OXYLOSS
 
 /obj/item/storage/firstaid/o2/PopulateContents()
@@ -147,8 +149,8 @@
 		return
 	for(var/i in 1 to 4)
 		new /obj/item/reagent_containers/pill/salbutamol(src)
-	new /obj/item/reagent_containers/hypospray/medipen(src)
-	new /obj/item/reagent_containers/hypospray/medipen(src)
+	new /obj/item/reagent_containers/hypospray/medipen/salbutamol(src)
+	new /obj/item/reagent_containers/hypospray/medipen/salbutamol(src)
 	new /obj/item/healthanalyzer(src)
 
 /obj/item/storage/firstaid/tactical
@@ -168,12 +170,12 @@
 	if(empty)
 		return
 	new /obj/item/stack/medical/gauze(src)
-	new /obj/item/defibrillator/compact/combat/loaded(src)
+	new /obj/item/defibrillator/compact/combat(src)
 	new /obj/item/reagent_containers/hypospray/combat/omnizine(src)
-	new /obj/item/reagent_containers/medspray/styptic(src)
-	new /obj/item/reagent_containers/medspray/silver_sulf(src)
+	new /obj/item/hypospray/mkii/CMO/combat/synthflesh(src)
+	new /obj/item/hypospray/mkii/CMO/combat/synthflesh(src)
+	new /obj/item/hypospray/mkii/CMO/combat/synthflesh(src)
 	new /obj/item/healthanalyzer/advanced(src)
-	new /obj/item/reagent_containers/syringe/lethal/choral(src) // what the fuck does anyone use this piece of shit for
 	new /obj/item/clothing/glasses/hud/health/night/syndicate(src)
 
 /obj/item/storage/firstaid/tactical/nukeop
@@ -182,12 +184,12 @@
 	if(empty)
 		return
 	new /obj/item/stack/medical/gauze(src)
-	new /obj/item/defibrillator/compact/combat/loaded(src)
-	new /obj/item/reagent_containers/hypospray/combat(src)
-	new /obj/item/reagent_containers/medspray/styptic(src)
-	new /obj/item/reagent_containers/medspray/silver_sulf(src)
+	new /obj/item/defibrillator/compact/combat(src)
+	new /obj/item/reagent_containers/hypospray/combat/omnizine(src)
+	new /obj/item/hypospray/mkii/CMO/combat/synthflesh(src)
+	new /obj/item/hypospray/mkii/CMO/combat/synthflesh(src)
+	new /obj/item/hypospray/mkii/CMO/combat/synthflesh(src)
 	new /obj/item/healthanalyzer/advanced(src)
-	new /obj/item/reagent_containers/syringe/lethal/choral(src) // what the fuck does anyone use this piece of shit for
 	new /obj/item/clothing/glasses/hud/health/night/syndicate(src)
 
 /obj/item/storage/firstaid/radbgone
@@ -563,7 +565,7 @@
 /obj/item/storage/hypospraykit/tactical/PopulateContents()
 	if(empty)
 		return
-	new /obj/item/defibrillator/compact/combat/loaded(src)
+	new /obj/item/defibrillator/compact/combat(src)
 	new /obj/item/hypospray/mkii/CMO/combat(src)
 	new /obj/item/reagent_containers/glass/bottle/vial/large/combat(src)
 	new /obj/item/reagent_containers/glass/bottle/vial/large/combat(src)

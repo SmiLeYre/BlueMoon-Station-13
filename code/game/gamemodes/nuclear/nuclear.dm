@@ -3,14 +3,14 @@
 	config_tag = "nuclear"
 	false_report_weight = 10
 	chaos = 9
-	required_players = 28 // 30 players - 3 players to be the nuke ops = 25 players remaining
+	required_players = 2 // 30 players - 3 players to be the nuke ops = 25 players remaining
 	required_enemies = 2
 	recommended_enemies = 5
 	antag_flag = ROLE_OPERATIVE
-	enemy_minimum_age = 7
+	enemy_minimum_age = 0 // BLUEMOON EDIT - было 7, сделал 0, т.к. на сервере ВЛ и загриферить ролью тяжело
 
 	announce_span = "danger"
-	announce_text = "Syndicate forces are approaching the station in an attempt to destroy it!\n\
+	announce_text = "InteQ forces are approaching the station in an attempt to destroy it!\n\
 	<span class='danger'>Operatives</span>: Secure the nuclear authentication disk and use your nuke to destroy the station.\n\
 	<span class='notice'>Crew</span>: Defend the nuclear authentication disk and ensure that it leaves with you on the emergency shuttle."
 
@@ -109,45 +109,55 @@
 			SSticker.news_report = OPERATIVE_SKIRMISH
 
 /datum/game_mode/nuclear/generate_report()
-	return "One of Central Command's trading routes was recently disrupted by a raid carried out by the Gorlex Marauders. They seemed to only be after one ship - a highly-sensitive \
+	return "One of Central Command's trading routes was recently disrupted by a raid carried out by the Admiral Brown's Chancellery. They seemed to only be after one ship - a highly-sensitive \
 			transport containing a nuclear fission explosive, although it is useless without the proper code and authorization disk. While the code was likely found in minutes, the only disk that \
 			can activate this explosive is on your station. Ensure that it is protected at all times, and remain alert for possible intruders."
 
 /proc/is_nuclear_operative(mob/M)
 	return M && istype(M) && M.mind && M.mind.has_antag_datum(/datum/antagonist/nukeop)
 
-/datum/outfit/syndicate
-	name = "Syndicate Operative - Basic"
+/datum/outfit/inteq
+	name = "InteQ Operative - Basic"
 
-	uniform = /obj/item/clothing/under/syndicate
+	uniform = /obj/item/clothing/under/inteq
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/combat
 	back = /obj/item/storage/backpack
-	ears = /obj/item/radio/headset/syndicate/alt
+	ears = /obj/item/radio/headset/inteq/alt
 	l_pocket = /obj/item/pinpointer/nuke/syndicate
-	id = /obj/item/card/id/syndicate
+	id = /obj/item/card/id/syndicate/inteq
 	belt = /obj/item/gun/ballistic/automatic/pistol
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1,\
 		/obj/item/kitchen/knife/combat/survival)
 
-	var/tc = 25
+	var/tc = 30
 	var/command_radio = FALSE
-	var/uplink_type = /obj/item/uplink/nuclear
+	var/uplink_type = /obj/item/inteq/uplink/radio/nuclear
 
+	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
 
-/datum/outfit/syndicate/leader
-	name = "Syndicate Leader - Basic"
-	id = /obj/item/card/id/syndicate/nuke_leader
+/datum/outfit/inteq/leader
+	name = "InteQ Leader - Basic"
+	id = /obj/item/card/id/syndicate/nuke_leader/inteq
 	gloves = /obj/item/clothing/gloves/krav_maga/combatglovesplus
 	r_hand = /obj/item/nuclear_challenge
 	command_radio = TRUE
 
-/datum/outfit/syndicate/no_crystals
+// BLUEMOON ADD START - командная коробочка для командира
+/datum/outfit/inteq/leader/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
+	. = ..()
+	var/list/extra_backpack_items = list(
+		/obj/item/storage/box/pinpointer_squad
+	)
+	LAZYADD(backpack_contents, extra_backpack_items)
+// BLUEMOON ADD END
+
+/datum/outfit/inteq/no_crystals
 	tc = 0
 
-/datum/outfit/syndicate/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+/datum/outfit/inteq/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	var/obj/item/radio/R = H.ears
-	R.set_frequency(FREQ_SYNDICATE)
+	R.set_frequency(FREQ_INTEQ)
 	R.freqlock = TRUE
 	if(command_radio)
 		R.command = TRUE
@@ -160,37 +170,42 @@
 	W.implant(H)
 	var/obj/item/implant/explosive/E = new
 	E.implant(H)
-	H.faction |= ROLE_SYNDICATE
+
+	H.faction |= ROLE_INTEQ
 	H.update_icons()
 
-/datum/outfit/syndicate/full
-	name = "Syndicate Operative - Full Kit"
+/datum/outfit/inteq/full
+	name = "InteQ Operative - Full Kit"
 
 	glasses = /obj/item/clothing/glasses/night/syndicate
-	mask = /obj/item/clothing/mask/gas/syndicate
-	suit = /obj/item/clothing/suit/space/hardsuit/syndi
+	mask = /obj/item/clothing/mask/gas/sechailer
+	suit = /obj/item/clothing/suit/space/hardsuit/syndi/elite/inteq
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 	internals_slot = ITEM_SLOT_RPOCKET
-	belt = /obj/item/storage/belt/military
-	r_hand = /obj/item/gun/ballistic/automatic/shotgun/bulldog
+	belt = /obj/item/storage/belt/military/inteq
+	r_hand = /obj/item/gun/ballistic/automatic/ak12
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1,\
 		/obj/item/tank/jetpack/oxygen/harness=1,\
 		/obj/item/gun/ballistic/automatic/pistol=1,\
 		/obj/item/kitchen/knife/combat/survival)
 
-/datum/outfit/syndicate/lone
-	name = "Syndicate Operative - Lone"
+/datum/outfit/inteq/lone/inteq
+	name = "InteQ Lone Operative"
 
 	glasses = /obj/item/clothing/glasses/night/syndicate
-	mask = /obj/item/clothing/mask/gas/syndicate
-	suit = /obj/item/clothing/suit/space/syndicate/black/red
-	head = /obj/item/clothing/head/helmet/space/syndicate/black/red
-	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
+	uniform = /obj/item/clothing/under/inteq
+	mask = /obj/item/clothing/mask/gas/sechailer
+	suit = /obj/item/clothing/suit/space/syndicate/inteq
+	head = /obj/item/clothing/head/helmet/space/syndicate/inteq
+	id = /obj/item/card/id/syndicate/inteq
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi/syndi
 	internals_slot = ITEM_SLOT_RPOCKET
-	belt = /obj/item/storage/belt/military
+	belt = /obj/item/storage/belt/military/inteq
+	back = /obj/item/storage/backpack/security/inteq
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1,\
 	/obj/item/tank/jetpack/oxygen/harness=1,\
 	/obj/item/gun/ballistic/automatic/pistol=1,\
 	/obj/item/kitchen/knife/combat/survival)
 
-	tc = 40
+	uplink_type = /obj/item/inteq/uplink/radio/nuclear
+	tc = 60

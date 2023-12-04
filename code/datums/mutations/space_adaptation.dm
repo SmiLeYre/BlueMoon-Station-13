@@ -3,10 +3,10 @@
 	name = "Space Adaptation"
 	desc = "A strange mutation that renders the host immune to the vacuum of space. Will still need an oxygen supply."
 	quality = POSITIVE
-	difficulty = 16
+	difficulty = 32
 	text_gain_indication = "<span class='notice'>Your body feels warm!</span>"
 	time_coeff = 5
-	instability = 30
+	instability = 60
 
 /datum/mutation/human/space_adaptation/on_acquiring(mob/living/carbon/human/owner)
 	if(..())

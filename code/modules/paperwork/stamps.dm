@@ -4,7 +4,6 @@
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "stamp-ok"
 	item_state = "stamp"
-	// item_state = "stamp"
 	throwforce = 0
 	w_class = WEIGHT_CLASS_TINY
 	throw_speed = 3
@@ -12,12 +11,18 @@
 	custom_materials = list(/datum/material/iron=60)
 	pressure_resistance = 2
 	attack_verb = list("stamped")
-	// attack_verb_continuous = list("stamps")
-	// attack_verb_simple = list("stamp")
 
 /obj/item/stamp/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] stamps 'VOID' on [user.p_their()] forehead, then promptly falls over, dead.</span>")
+	user.visible_message("<span class='suicide'>[user] stamps 'VOID' on [user.ru_ego()] forehead, then promptly falls over, dead.</span>")
 	return (OXYLOSS)
+
+/obj/item/stamp/get_writing_implement_details()
+	var/datum/asset/spritesheet/sheet = get_asset_datum(/datum/asset/spritesheet/simple/paper)
+	return list(
+		interaction_mode = MODE_STAMPING,
+		stamp_icon_state = icon_state,
+		stamp_class = sheet.icon_class_name(icon_state)
+	)
 
 /obj/item/stamp/qm
 	name = "quartermaster's rubber stamp"
@@ -88,6 +93,16 @@
 	name = "Syndicate rubber stamp"
 	icon_state = "stamp-syndicate"
 	dye_color = DYE_SYNDICATE
+
+/obj/item/stamp/ntr
+	name = "NanoTrasen rubber stamp"
+	icon_state = "stamp-ntr"
+	dye_color = DYE_CENTCOM
+
+/obj/item/stamp/warden
+	name = "warden's rubber stamp"
+	icon_state = "stamp-warden"
+	dye_color = DYE_RED
 
 /obj/item/stamp/attack_paw(mob/user)
 	return attack_hand(user)

@@ -20,8 +20,8 @@
 	name = "Masquerade"
 	desc = "Feign the vital signs of a mortal, and escape both casual and medical notice as the monster you truly are."
 	button_icon_state = "power_human"
-	bloodcost = 10
-	cooldown = 50
+	bloodcost = 50
+	cooldown = 200
 	amToggle = TRUE
 	bloodsucker_can_buy = TRUE
 	warn_constant_cost = TRUE

@@ -30,7 +30,7 @@
 			L.loot = null
 			L.crusher_loot = null
 			L.faction = user.faction.Copy()
-			user.visible_message(span_notice("[user] revives [target] with [src], as a friendly fauna"))
+			user.visible_message("<span class='notice'>[user] revives [target] with [src], as a friendly fauna</span>")
 			playsound(src,'sound/effects/supermatter.ogg',50,1)
 
 /obj/item/crusher_trophy/golden_skull/on_melee_hit(mob/living/target, mob/living/user)
@@ -53,10 +53,10 @@
 			L.attack_same = 0
 			L.loot = null
 			L.crusher_loot = null
-			user.visible_message(span_notice("[user] revives [target] with [src], as a friendly legion."))
+			user.visible_message("<span class='notice'>[user] revives [target] with [src], as a friendly legion.</span>")
 			playsound(src,'sound/effects/supermatter.ogg',50,1)
 		else
-			(to_chat(user, span_notice("You cancel turning [target] into a legion.")))
+			(to_chat(user, "<span class='notice'>You cancel turning [target] into a legion.</span>"))
 
 //rogue process
 /obj/item/crusher_trophy/brokentech
@@ -237,8 +237,6 @@
 
 			if(user && lavaland_equipment_pressure_check(get_turf(user))) //CIT CHANGE - makes sure below only happens in low pressure environments
 				user.adjustStaminaLoss(-30)//CIT CHANGE - makes crushers heal stamina
-	SEND_SIGNAL(src, COMSIG_ITEM_AFTERATTACK, target, user, proximity_flag, clickparams)
-	SEND_SIGNAL(user, COMSIG_MOB_ITEM_AFTERATTACK, target, user, proximity_flag, clickparams)
 
 //king goat
 /obj/item/crusher_trophy/king_goat
@@ -258,14 +256,14 @@
 	. = ..()
 	if(.)
 		var/datum/component/two_handed/TH = H.GetComponent(/datum/component/two_handed)
-		H.charge_time -= 12
+		H.charge_time -= 8
 		TH.force_wielded -= 15
 
 /obj/item/crusher_trophy/king_goat/remove_from(obj/item/kinetic_crusher/H, mob/living/user)
 	. = ..()
 	if(.)
 		var/datum/component/two_handed/TH = H.GetComponent(/datum/component/two_handed)
-		H.charge_time += 12
+		H.charge_time += 8
 		TH.force_wielded += 15
 
 //hierophant crusher small changes
@@ -328,7 +326,7 @@
 	sharpness = SHARP_EDGED
 	var/list/trophies = list()
 	var/charged = TRUE
-	var/charge_time = 12
+	var/charge_time = 15
 	var/detonation_damage = 65
 	var/backstab_bonus = 40
 	var/brightness = 7
@@ -344,22 +342,22 @@
 
 /obj/item/melee/zweihander/examine(mob/living/user)
 	. = ..()
-	. += span_notice("Mark a large creature with the destabilizing force, then hit them in melee to do <b>[force + detonation_damage]</b> damage.")
-	. += span_notice("Does <b>[force + detonation_damage + backstab_bonus]</b> damage if the target is backstabbed, instead of <b>[force + detonation_damage]</b>.")
+	. += "<span class='notice'>Mark a large creature with the destabilizing force, then hit them in melee to do <b>[force + detonation_damage]</b> damage.</span>"
+	. += "<span class='notice'>Does <b>[force + detonation_damage + backstab_bonus]</b> damage if the target is backstabbed, instead of <b>[force + detonation_damage]</b>.</span>"
 	for(var/t in trophies)
 		var/obj/item/crusher_trophy/T = t
-		. += span_notice("It has \a [T] attached, which causes [T.effect_desc()].")
+		. += "<span class='notice'>It has \a [T] attached, which causes [T.effect_desc()].</span>"
 
 /obj/item/melee/zweihander/attackby(obj/item/I, mob/living/user)
 	if(istype(I, /obj/item/crowbar))
 		if(LAZYLEN(trophies))
-			to_chat(user, span_notice("You remove [src]'s trophies."))
+			to_chat(user, "<span class='notice'>You remove [src]'s trophies.</span>")
 			I.play_tool_sound(src)
 			for(var/t in trophies)
 				var/obj/item/crusher_trophy/T = t
 				T.remove_from(src, user)
 		else
-			to_chat(user, span_warning("There are no trophies on [src]."))
+			to_chat(user, "<span class='warning'>There are no trophies on [src].</span>")
 	else if(istype(I, /obj/item/crusher_trophy))
 		var/obj/item/crusher_trophy/T = I
 		T.add_to(src, user)

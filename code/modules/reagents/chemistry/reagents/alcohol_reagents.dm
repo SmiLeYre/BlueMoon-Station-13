@@ -16,6 +16,7 @@
 	pH = 7.33
 	boiling_point = 351.38
 	value = REAGENT_VALUE_VERY_COMMON //don't bother tweaking all drinks values, way too many can easily be done roundstart or with an upgraded dispenser.
+	accelerant_quality = 5
 
 /*
 Boozepwr Chart
@@ -44,7 +45,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/on_mob_life(mob/living/carbon/C)
 	if(HAS_TRAIT(C, TRAIT_TOXIC_ALCOHOL))
-		C.adjustToxLoss((boozepwr/25)*REAGENTS_EFFECT_MULTIPLIER,forced = TRUE)
+		C.adjustToxLoss((boozepwr/25)*REM,forced = TRUE)
 	else if(C.drunkenness < volume * boozepwr * ALCOHOL_THRESHOLD_MODIFIER)
 		var/booze_power = boozepwr
 		if(HAS_TRAIT(C, TRAIT_ALCOHOL_TOLERANCE)) //we're an accomplished drinker
@@ -58,7 +59,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/reaction_obj(obj/O, reac_volume)
 	if(istype(O, /obj/item/paper))
 		var/obj/item/paper/paperaffected = O
-		paperaffected.clearpaper()
+		paperaffected.clear_paper()
 		to_chat(usr, "<span class='notice'>[paperaffected]'s ink washes away.</span>")
 	if(istype(O, /obj/item/book))
 		if(reac_volume >= 5)
@@ -242,7 +243,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 			M.emote("scream")
 
 	if(prob(3) && iscarbon(M))
-		M.visible_message("<span class='danger'>[M] starts having a seizure!</span>", "<span class='userdanger'>You have a seizure!</span>")
+		M.visible_message("<span class='danger'>[M] падает в припадке!</span>", "<span class='userdanger'>У вас начался припадок!</span>")
 		M.Unconscious(100)
 		M.Jitter(350)
 
@@ -750,9 +751,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		if(HAS_TRAIT(H, TRAIT_DWARF) || HAS_TRAIT(H, TRAIT_ALCOHOL_TOLERANCE || real_dorf))
-			to_chat(H, "<span class='notice'>Now THAT is MANLY!</span>")
+			to_chat(H, "<span class='notice'>Вот это уже по МУЖИЦКИ!</span>")
 			if(real_dorf)
 				boozepwr = 100 // Don't want dwarves to die because of a low booze power
+				if(!(HAS_TRAIT(H, TRAIT_MUTE)) && !H.silent && (H.stat == CONSCIOUS || H.stat == SOFT_CRIT))
+					H.emote("me", EMOTE_VISIBLE, "exclaims: \"ROCK AND STONE!\"")
+					playsound(H, "modular_bluemoon/sound/voice/rock_and_stone[pick("1","2","3")].ogg", 100, FALSE)
 			else
 				boozepwr = 5 //We've had worse in the mines
 			dorf_mode = TRUE
@@ -1303,7 +1307,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	color = rgb(51, 19, 3) //Sickly brown
 	boozepwr = 300 //I warned you
 	taste_description = "a wall of bricks"
-	glass_icon_state = "glass_brown2"
+	glass_icon_state = "bacchusblessing"
 	glass_name = "Bacchus' Blessing"
 	glass_desc = "You didn't think it was possible for a liquid to be so utterly revolting. Are you sure about this...?"
 	value = REAGENT_VALUE_RARE
@@ -1387,7 +1391,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/neurotoxin/on_mob_life(mob/living/carbon/M)
 	M.set_drugginess(50)
 	M.dizziness +=2
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1*REAGENTS_EFFECT_MULTIPLIER, 150)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1*REM, 150)
 	if(prob(20) && !holder.has_reagent(/datum/reagent/consumable/ethanol/neuroweak))
 		M.adjustStaminaLoss(10)
 		M.drop_all_held_items()
@@ -1398,12 +1402,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 			ADD_TRAIT(M, t, type)
 			M.adjustStaminaLoss(10)
 		if(current_cycle > 30)
-			M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REAGENTS_EFFECT_MULTIPLIER)
+			M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM)
 			if(current_cycle > 50 && prob(15))
 				if(!M.undergoing_cardiac_arrest() && M.can_heartattack())
 					M.set_heartattack(TRUE)
 					if(M.stat == CONSCIOUS)
-						M.visible_message("<span class='userdanger'>[M] clutches at [M.p_their()] chest as if [M.p_their()] heart stopped!</span>")
+						M.visible_message("<span class='userdanger'>[M] clutches at [M.ru_ego()] chest as if [M.ru_ego()] heart stopped!</span>")
 	. = TRUE
 	..()
 
@@ -1423,13 +1427,13 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/neuroweak/on_mob_life(mob/living/carbon/M)
 	if(holder.has_reagent(/datum/reagent/consumable/ethanol/neurotoxin))
-		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -1*REAGENTS_EFFECT_MULTIPLIER, 150)
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -1*REM, 150)
 		M.reagents.remove_reagent(/datum/reagent/consumable/ethanol/neurotoxin, 1.5 * REAGENTS_METABOLISM, FALSE)
 	else if(holder.has_reagent(/datum/reagent/toxin/fentanyl))
-		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -1*REAGENTS_EFFECT_MULTIPLIER, 150)
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -1*REM, 150)
 		M.reagents.remove_reagent(/datum/reagent/toxin/fentanyl, 0.75 * REAGENTS_METABOLISM, FALSE)
 	else
-		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -0.5*REAGENTS_EFFECT_MULTIPLIER, 150)
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -0.5*REM, 150)
 		M.dizziness +=2
 	..()
 
@@ -1694,7 +1698,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	L.adjustStaminaLoss(-heal_points)
 	L.visible_message("<span class='warning'>[L] shivers with renewed vigor!</span>", "<span class='notice'>One taste of [lowertext(name)] fills you with energy!</span>")
 	if(!L.stat && L.health > 0) //brought us out of softcrit
-		L.visible_message("<span class='danger'>[L] lurches to [L.p_their()] feet!</span>", "<span class='boldnotice'>Up and at 'em, kid.</span>")
+		L.visible_message("<span class='danger'>[L] lurches to [L.ru_ego()] feet!</span>", "<span class='boldnotice'>Up and at 'em, kid.</span>")
 
 /datum/reagent/consumable/ethanol/bastion_bourbon/on_mob_life(mob/living/L)
 	if(L.health > 0)
@@ -1947,7 +1951,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/fernet/on_mob_life(mob/living/carbon/M)
 	if(M.nutrition <= NUTRITION_LEVEL_STARVING)
-		M.adjustToxLoss(1*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustToxLoss(1*REM, 0)
 	M.adjust_nutrition(-5)
 	M.overeatduration = 0
 	return ..()
@@ -1965,7 +1969,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/fernet_cola/on_mob_life(mob/living/carbon/M)
 	if(M.nutrition <= NUTRITION_LEVEL_STARVING)
-		M.adjustToxLoss(0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustToxLoss(0.5*REM, 0)
 	M.adjust_nutrition(-3)
 	M.overeatduration = 0
 	return ..()
@@ -2505,6 +2509,13 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "cup of Drisky Kitty"
 	glass_desc = "Warm milk and some catnip."
 	species_required = "furry"
+
+/datum/reagent/consumable/ethanol/species_drink/frisky_kitty/on_mob_life(mob/living/carbon/M)
+	if(iscatperson(M))
+		if(prob(5))
+			M.emote(pick("nya","purr"))
+			to_chat(M, "<span class = 'notice'>[pick("So tasty~", "Ahh~ can't hold my hapiness!","Tastes perfectly!")]</span>")
+	return ..()
 
 /datum/reagent/consumable/ethanol/species_drink/jell_wyrm
 	name = "Jell Wyrm"

@@ -174,6 +174,9 @@
 /obj/machinery/modular_computer/console/preset/cargochat/engineering
 	console_department = "Engineering"
 
+/obj/machinery/modular_computer/console/preset/cargochat/law
+	console_department = "Law"
+
 /obj/machinery/modular_computer/console/preset/cargochat/science
 	console_department = "Science"
 

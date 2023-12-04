@@ -87,9 +87,23 @@
 /obj/item/organ/alien/plasmavessel/small,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
+"z" = (
+/obj/structure/alien/weeds,
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered)
+"H" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered)
 "O" = (
 /obj/machinery/spaceship_navigation_beacon/invion,
 /turf/closed/wall,
+/area/ruin/unpowered)
+"T" = (
+/obj/structure/alien/weeds/node,
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/airless,
 /area/ruin/unpowered)
 
 (1,1,1) = {"
@@ -181,7 +195,7 @@ b
 b
 c
 q
-q
+H
 c
 a
 "}
@@ -240,7 +254,7 @@ a
 a
 a
 b
-q
+H
 q
 q
 q
@@ -334,7 +348,7 @@ b
 b
 q
 q
-q
+H
 b
 b
 b
@@ -568,7 +582,7 @@ h
 f
 f
 e
-f
+z
 h
 f
 c
@@ -593,7 +607,7 @@ a
 a
 a
 c
-f
+z
 f
 f
 f
@@ -686,7 +700,7 @@ a
 b
 b
 c
-h
+T
 f
 f
 f
@@ -729,7 +743,7 @@ f
 c
 f
 f
-f
+z
 d
 b
 b
@@ -748,7 +762,7 @@ b
 b
 b
 d
-f
+z
 f
 f
 f

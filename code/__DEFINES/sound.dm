@@ -22,6 +22,7 @@
 
 ///Default range of a sound.
 #define SOUND_RANGE 17
+#define MEDIUM_RANGE_SOUND_EXTRARANGE -5
 ///default extra range for sounds considered to be quieter
 #define SHORT_RANGE_SOUND_EXTRARANGE -9
 ///The range deducted from sound range for things that are considered silent / sneaky
@@ -60,7 +61,7 @@
 										'sound/ambience/ambicha4.ogg', 'sound/ambience/ambiholy.ogg', 'sound/ambience/ambiholy2.ogg',\
 										'sound/ambience/ambiholy3.ogg')
 
-#define HIGHSEC list('sound/ambience/ambidanger.ogg', 'sound/ambience/ambidanger2.ogg')
+#define HIGHSEC list('sound/ambience/ambidanger.ogg', 'sound/ambience/ambidanger2.ogg', 'sound/ambience/ambidanger3.ogg', 'sound/ambience/ambidanger4.ogg', 'sound/ambience/ambidanger5.ogg', 'sound/ambience/ambidanger6.ogg')
 
 #define RUINS list('sound/ambience/ambimine.ogg', 'sound/ambience/ambicave.ogg', 'sound/ambience/ambiruin.ogg',\
 									'sound/ambience/ambiruin2.ogg',  'sound/ambience/ambiruin3.ogg',  'sound/ambience/ambiruin4.ogg',\
@@ -69,7 +70,7 @@
 									'sound/ambience/ambimystery.ogg', 'sound/ambience/ambimaint1.ogg')
 
 #define ENGINEERING list('sound/ambience/ambisin1.ogg','sound/ambience/ambisin2.ogg','sound/ambience/ambisin3.ogg','sound/ambience/ambisin4.ogg',\
-										'sound/ambience/ambiatmos.ogg', 'sound/ambience/ambiatmos2.ogg', 'sound/ambience/ambitech.ogg', 'sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
+										'sound/ambience/ambiatmos.ogg', 'sound/ambience/ambiatmos2.ogg', 'sound/ambience/ambitech.ogg', 'sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg', 'sound/ambience/ambiviro.ogg')
 
 #define MINING list('sound/ambience/ambimine.ogg', 'sound/ambience/ambicave.ogg', 'sound/ambience/ambiruin.ogg',\
 											'sound/ambience/ambiruin2.ogg',  'sound/ambience/ambiruin3.ogg',  'sound/ambience/ambiruin4.ogg',\
@@ -82,11 +83,11 @@
 #define SPOOKY list('sound/ambience/ambimo1.ogg','sound/ambience/ambimo2.ogg','sound/ambience/ambiruin7.ogg','sound/ambience/ambiruin6.ogg',\
 										'sound/ambience/ambiodd.ogg', 'sound/ambience/ambimystery.ogg')
 
-#define SPACE list('sound/ambience/ambispace.ogg', 'sound/ambience/ambispace2.ogg', 'sound/ambience/title2.ogg', 'sound/ambience/ambiatmos.ogg')
+#define SPACE list('sound/ambience/ambispace1.ogg', 'sound/ambience/ambispace2.ogg', 'sound/ambience/ambispace3.ogg', 'sound/ambience/ambispace4.ogg', 'sound/ambience/ambispace5.ogg', 'sound/ambience/title2.ogg', 'sound/ambience/ambiatmos.ogg')
 
 #define MAINTENANCE list('sound/ambience/ambimaint1.ogg', 'sound/ambience/ambimaint2.ogg', 'sound/ambience/ambimaint3.ogg', 'sound/ambience/ambimaint4.ogg',\
 											'sound/ambience/ambimaint5.ogg', 'sound/voice/lowHiss2.ogg', 'sound/voice/lowHiss3.ogg', 'sound/voice/lowHiss4.ogg', 'sound/ambience/ambitech2.ogg',\
-											'sound/ambience/ambimaint10.ogg' )
+											'sound/ambience/ambimaint10.ogg', 'sound/ambience/maintambience.ogg' )
 
 #define AWAY_MISSION list('sound/ambience/ambitech.ogg', 'sound/ambience/ambitech2.ogg', 'sound/ambience/ambiruin.ogg',\
 									'sound/ambience/ambiruin2.ogg',  'sound/ambience/ambiruin3.ogg',  'sound/ambience/ambiruin4.ogg',\
@@ -96,7 +97,16 @@
 
 #define REEBE list('sound/ambience/ambireebe1.ogg', 'sound/ambience/ambireebe2.ogg', 'sound/ambience/ambireebe3.ogg')
 
+#define SHUTTLE list('modular_bluemoon/kovac_shitcode/sound/ambience/enc/alarm_radio.ogg', 'modular_bluemoon/kovac_shitcode/sound/ambience/enc/alarm_small_09.ogg', 'modular_bluemoon/kovac_shitcode/sound/ambience/enc/engine_ignit_int.ogg',\
+							'modular_bluemoon/kovac_shitcode/sound/ambience/enc/env_ship_down.ogg', 'modular_bluemoon/kovac_shitcode/sound/ambience/enc/gear_loop.ogg', 'modular_bluemoon/kovac_shitcode/sound/ambience/enc/gear_start.ogg',\
+							'modular_bluemoon/kovac_shitcode/sound/ambience/enc/gear_stop.ogg', 'modular_bluemoon/kovac_shitcode/sound/ambience/enc/intercom_loop.ogg', 'modular_bluemoon/kovac_shitcode/sound/ambience/enc/morse.ogg' )
 
+#define SHUTTLE_MILITARY list('modular_bluemoon/kovac_shitcode/sound/ambience/enc/alarm_radio.ogg', 'modular_bluemoon/kovac_shitcode/sound/ambience/enc/alarm_small_09.ogg', 'modular_bluemoon/kovac_shitcode/sound/ambience/enc/engine_ignit_int.ogg',\
+							'modular_bluemoon/kovac_shitcode/sound/ambience/enc/env_ship_down.ogg', 'modular_bluemoon/kovac_shitcode/sound/ambience/enc/gear_loop.ogg', 'modular_bluemoon/kovac_shitcode/sound/ambience/enc/gear_start.ogg',\
+							'modular_bluemoon/kovac_shitcode/sound/ambience/enc/gear_stop.ogg', 'modular_bluemoon/kovac_shitcode/sound/ambience/enc/intercom_loop.ogg', 'modular_bluemoon/kovac_shitcode/sound/ambience/enc/morse.ogg',\
+							'modular_bluemoon/kovac_shitcode/sound/ambience/mission_danger_01.ogg', 'modular_bluemoon/kovac_shitcode/sound/ambience/mission_end_02.ogg', 'modular_bluemoon/kovac_shitcode/sound/ambience/mission_start_03.ogg',\
+							'modular_bluemoon/kovac_shitcode/sound/ambience/radio_burn_engine_04.ogg', 'modular_bluemoon/kovac_shitcode/sound/ambience/radio_fuel_20.ogg', 'modular_bluemoon/kovac_shitcode/sound/ambience/radio_fuel_50.ogg',\
+							'modular_bluemoon/kovac_shitcode/sound/ambience/radio_go.ogg', 'modular_bluemoon/kovac_shitcode/sound/ambience/radio_lost_missile_01.ogg', 'modular_bluemoon/kovac_shitcode/sound/ambience/radio_missile_01.ogg' )
 
 #define CREEPY_SOUNDS list('sound/effects/ghost.ogg', 'sound/effects/ghost2.ogg', 'sound/effects/heart_beat.ogg', 'sound/effects/screech.ogg',\
 	'sound/hallucinations/behind_you1.ogg', 'sound/hallucinations/behind_you2.ogg', 'sound/hallucinations/far_noise.ogg', 'sound/hallucinations/growl1.ogg', 'sound/hallucinations/growl2.ogg',\
@@ -104,6 +114,20 @@
 	'sound/hallucinations/look_up1.ogg', 'sound/hallucinations/look_up2.ogg', 'sound/hallucinations/over_here1.ogg', 'sound/hallucinations/over_here2.ogg', 'sound/hallucinations/over_here3.ogg',\
 	'sound/hallucinations/turn_around1.ogg', 'sound/hallucinations/turn_around2.ogg', 'sound/hallucinations/veryfar_noise.ogg', 'sound/hallucinations/wail.ogg')
 
+#define RUSSIAN_SCREAMS list('sound/voice/human/cyka1.ogg', 'sound/voice/human/rus1.ogg', 'sound/voice/human/rus2.ogg', 'sound/voice/human/rus3.ogg',\
+	'sound/voice/human/rus4.ogg', 'sound/voice/human/rus5.ogg', 'sound/voice/human/rus6.ogg')
+
+#define BLOOD_SCREAMS list('modular_bluemoon/kovac_shitcode/sound/blood/cult_1.ogg', 'modular_bluemoon/kovac_shitcode/sound/blood/cult_2.ogg', 'modular_bluemoon/kovac_shitcode/sound/blood/cult_3.ogg',\
+	'modular_bluemoon/kovac_shitcode/sound/blood/cult_4.ogg', 'modular_bluemoon/kovac_shitcode/sound/blood/cult_5.ogg')
+
+#define BLOOD_SCREAMS_PICK pick('modular_bluemoon/kovac_shitcode/sound/blood/cult_1.ogg', 'modular_bluemoon/kovac_shitcode/sound/blood/cult_2.ogg', 'modular_bluemoon/kovac_shitcode/sound/blood/cult_3.ogg',\
+	'modular_bluemoon/kovac_shitcode/sound/blood/cult_4.ogg', 'modular_bluemoon/kovac_shitcode/sound/blood/cult_5.ogg')
+
+#define ARENA_MUSIC list('sound/music/arena/hotline1.ogg', 'sound/music/arena/hotline2.ogg', 'sound/music/arena/hotline3.ogg', 'sound/music/arena/hotline4.ogg',\
+	'sound/music/arena/hotline5.ogg', 'sound/music/arena/hotline6.ogg', 'sound/music/arena/hotline7.ogg', 'sound/music/arena/hotline8.ogg', 'sound/music/arena/hotline9.ogg',\
+	'sound/music/arena/hotline10.ogg', 'sound/music/arena/kat1.ogg', 'sound/music/arena/kat2.ogg', 'sound/music/arena/kat3.ogg', 'sound/music/arena/kat4.ogg',\
+	'sound/music/arena/kat5.ogg', 'sound/music/arena/kat6.ogg', 'sound/music/arena/kat7.ogg', 'sound/music/arena/kat8.ogg', 'sound/music/arena/kat9.ogg',\
+	'sound/music/arena/kat10.ogg')
 
 #define INTERACTION_SOUND_RANGE_MODIFIER -3
 #define EQUIP_SOUND_VOLUME 30
@@ -174,6 +198,18 @@
 #define ANNOUNCER_SHUTTLEDOCK "shuttledock"
 #define ANNOUNCER_SHUTTLERECALLED "shuttlerecalled"
 #define ANNOUNCER_SPANOMALIES "spanomalies"
+#define ANNOUNCER_ADMIN_1 "_admin_cap_gone"
+#define ANNOUNCER_ADMIN_2 "_admin_capitain"
+#define ANNOUNCER_ADMIN_3 "_admin_horror_music"
+#define ANNOUNCER_ADMIN_4 "_admin_hos_gone"
+#define ANNOUNCER_ADMIN_5 "_admin_war_pipisky"
+#define ANNOUNCER_ADMIN_6 "_admin_war_pizdec"
+#define ANNOUNCER_ADMIN_7 "_admin_war_tishina"
+#define ANNOUNCER_BSA "artillery"
+#define ANNOUNCER_XENO "xeno"
+#define ANNOUNCER_IROD "irod"
+#define ANNOUNCER_LAMBDA "lambda"
+
 
 /// Global list of all of our announcer keys.
 GLOBAL_LIST_INIT(announcer_keys, list(
@@ -194,4 +230,15 @@ GLOBAL_LIST_INIT(announcer_keys, list(
 	ANNOUNCER_SHUTTLEDOCK,
 	ANNOUNCER_SHUTTLERECALLED,
 	ANNOUNCER_SPANOMALIES,
+	ANNOUNCER_ADMIN_1,
+	ANNOUNCER_ADMIN_2,
+	ANNOUNCER_ADMIN_3,
+	ANNOUNCER_ADMIN_4,
+	ANNOUNCER_ADMIN_5,
+	ANNOUNCER_ADMIN_6,
+	ANNOUNCER_ADMIN_7,
+	ANNOUNCER_BSA,
+	ANNOUNCER_XENO,
+	ANNOUNCER_IROD,
+	ANNOUNCER_LAMBDA
 ))

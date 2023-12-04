@@ -32,7 +32,7 @@
 
 /datum/uplink_item/bundles_tc/contract_kit
 	name = "Contract Kit"
-	desc = "The Syndicate have offered you the chance to become a contractor, take on kidnapping contracts for TC and cash payouts. Upon purchase,  \
+	desc = "The Nanotrasen enemies have offered you the chance to become a contractor, take on kidnapping contracts for TC and cash payouts. Upon purchase,  \
 			you'll be granted your own contract uplink embedded within the supplied tablet computer. Additionally, you'll be granted \
 			standard contractor gear to help with your mission - comes supplied with the tablet, specialised space suit, chameleon jumpsuit and mask, \
 			specialised contractor baton, and three randomly selected low cost items. Can include otherwise unobtainable items."
@@ -69,7 +69,7 @@
 	item = /obj/item/storage/toolbox/infiltrator
 	cost = 5
 	limited_stock = 1 //you only get one so you don't end up with too many gun cases
-	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
+	purchasable_from = ~(UPLINK_TRAITORS | UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
 
 /datum/uplink_item/bundles_tc/cybernetics_bundle
 	name = "Cybernetic Implants Bundle"
@@ -93,7 +93,7 @@
 	item = /obj/item/storage/briefcase/modularbundle
 	cost = 12
 
-/datum/uplink_item/bundles_tc/shredder
+/datum/uplink_item/bundles_tc/shredderbundle
 	name = "Shredder bundle"
 	desc = "A truly horrific weapon designed simply to maim its victim, the CX Shredder is banned by several intergalactic treaties. \
 			You'll get two of them with this. And spare ammo to boot. And we'll throw in an extra elite hardsuit and chest rig to hold them all!"
@@ -120,19 +120,19 @@
 	purchasable_from = UPLINK_NUKE_OPS
 
 /datum/uplink_item/bundles_tc/bundle
-	name = "Syndicate Bundle"
-	desc = "Syndicate Bundles are specialized groups of items that arrive in a plain box. \
-			These items are collectively worth more than 20 telecrystals, but you do not know which specialization \
+	name = "Operative Bundle"
+	desc = "Operative Bundles are specialized groups of items that arrive in a plain box. \
+			These items are collectively worth more than 20 credits, but you do not know which specialization \
 			you will receive. May contain discontinued and/or exotic items."
 	item = /obj/item/storage/box/syndicate
-	cost = 20
+	cost = 15
 	purchasable_from = ~(UPLINK_NUKE_OPS)
 	cant_discount = TRUE
 
 /datum/uplink_item/bundles_tc/surplus
-	name = "Syndicate Surplus Crate"
-	desc = "A dusty crate from the back of the Syndicate warehouse. Rumored to contain a valuable assortment of items, \
-			but you never know. Contents are sorted to always be worth 50 TC."
+	name = "Surplus Crate"
+	desc = "A dusty crate from the back of the illegal warehouse. Rumored to contain a valuable assortment of items, \
+			but you never know. Contents are sorted to always be worth 50 CR."
 	item = /obj/structure/closet/crate
 	cost = 20
 	player_minimum = 25
@@ -142,8 +142,8 @@
 
 /datum/uplink_item/bundles_tc/surplus/super
 	name = "Super Surplus Crate"
-	desc = "A dusty SUPER-SIZED from the back of the Syndicate warehouse. Rumored to contain a valuable assortment of items, \
-			but you never know. Contents are sorted to always be worth 125 TC."
+	desc = "A dusty SUPER-SIZED from the back of the illegal warehouse. Rumored to contain a valuable assortment of items, \
+			but you never know. Contents are sorted to always be worth 125 CR."
 	cost = 40
 	player_minimum = 40
 	starting_crate_value = 125
@@ -215,7 +215,7 @@
 		U.MakePurchase(user, I)
 
 /datum/uplink_item/bundles_tc/telecrystal
-	name = "1 Raw Telecrystal"
+	name = "1 Telecrystal"
 	desc = "A telecrystal in its rawest and purest form; can be utilized on active uplinks to increase their telecrystal count."
 	item = /obj/item/stack/telecrystal
 	cost = 1
@@ -224,15 +224,40 @@
 	// Don't add telecrystals to the purchase_log since
 	// it's just used to buy more items (including itself!)
 	purchase_log_vis = FALSE
+	purchasable_from = UPLINK_SYNDICATE
 
 /datum/uplink_item/bundles_tc/telecrystal/five
-	name = "5 Raw Telecrystals"
+	name = "5 Telecrystals"
 	desc = "Five telecrystals in their rawest and purest form; can be utilized on active uplinks to increase their telecrystal count."
 	item = /obj/item/stack/telecrystal/five
 	cost = 5
+	purchasable_from = UPLINK_SYNDICATE
 
 /datum/uplink_item/bundles_tc/telecrystal/twenty
-	name = "20 Raw Telecrystals"
+	name = "20 Telecrystals"
 	desc = "Twenty telecrystals in their rawest and purest form; can be utilized on active uplinks to increase their telecrystal count."
 	item = /obj/item/stack/telecrystal/twenty
 	cost = 20
+	purchasable_from = UPLINK_SYNDICATE
+
+/datum/uplink_item/bundles_tc/telecrystal/inteq
+	name = "1 Tele Credit"
+	desc = "Golden credit. Can be inserted into Uplink."
+	item = /obj/item/stack/telecrystal/inteq
+	cost = 1
+	surplus = 0
+	purchasable_from = ~(UPLINK_SYNDICATE)
+
+/datum/uplink_item/bundles_tc/telecrystal/five/inteq
+	name = "5 Tele Credits"
+	desc = "Five golden credits. Can be inserted into Uplink."
+	item = /obj/item/stack/telecrystal/inteq/five
+	cost = 5
+	purchasable_from = ~(UPLINK_SYNDICATE)
+
+/datum/uplink_item/bundles_tc/telecrystal/twenty/inteq
+	name = "20 Tele Credits"
+	desc = "Twenty golden credits. Can be inserted into Uplink."
+	item = /obj/item/stack/telecrystal/inteq/twenty
+	cost = 20
+	purchasable_from = ~(UPLINK_SYNDICATE)

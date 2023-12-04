@@ -93,6 +93,18 @@
 	/// show this while dead
 	var/show_when_dead = FALSE
 
+//Provides darkness to the back of the lighting plane
+/atom/movable/screen/fullscreen/lighting_backdrop/lit
+	invisibility = INVISIBILITY_LIGHTING
+	layer = BACKGROUND_LAYER+21
+	color = "#000"
+	show_when_dead = TRUE
+
+//Provides whiteness in case you don't see lights so everything is still visible
+/atom/movable/screen/fullscreen/lighting_backdrop/unlit
+	layer = BACKGROUND_LAYER+20
+	show_when_dead = TRUE
+
 /atom/movable/screen/fullscreen/proc/SetSeverity(severity)
 	src.severity = clamp(severity, severity_min, severity_max)
 	icon_state = "[initial(icon_state)][severity]"
@@ -231,4 +243,12 @@
 	plane = LIGHTING_PLANE
 	layer = LIGHTING_LAYER
 	blend_mode = BLEND_ADD
+	show_when_dead = TRUE
+
+/atom/movable/screen/fullscreen/bluespace_sparkle
+	icon = 'icons/effects/effects.dmi'
+	screen_loc = "WEST,SOUTH to EAST,NORTH"
+	icon_state = "shieldsparkles"
+	layer = FLASH_LAYER
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	show_when_dead = TRUE

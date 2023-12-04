@@ -32,6 +32,9 @@
   - tweak: Makes the skyrat-like pixelshifting system available again while keeping
       the original pixelshift range
   - tweak: Following your character with the camera when it pixelshifts is now a preference
+2023-05-25:
+  ActuallyALovelyGrave:
+  - rscadd: New capsule for 15000.
 2023-05-22:
   Zattarra:
   - rscadd: Adds decker headphones to the loadout selection.

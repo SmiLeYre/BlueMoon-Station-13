@@ -2,7 +2,7 @@
 	name = "M1911s"
 	desc = "A pack of 3 M1911s with 9 mags of rubber."
 	access = ACCESS_QM
-	cost = 2800
+	cost = 28000
 	contains = list(/obj/item/gun/ballistic/automatic/pistol/m1911/no_mag,
 					/obj/item/gun/ballistic/automatic/pistol/m1911/no_mag,
 					/obj/item/gun/ballistic/automatic/pistol/m1911/no_mag,
@@ -22,7 +22,7 @@
 	name = ".22 Pistols"
 	desc = "A pack of .22 Pistols with 6 spare magazines."
 	access = ACCESS_QM
-	cost = 1700
+	cost = 17000
 	contains = list(/obj/item/gun/ballistic/automatic/pistol/m22pistol,
 					/obj/item/gun/ballistic/automatic/pistol/m22pistol,
 					/obj/item/gun/ballistic/automatic/pistol/m22pistol,
@@ -39,7 +39,7 @@
 	name = ".22 Revolvers"
 	desc = "A pack of .22 Pistols with 3 spare boxes of ammo."
 	access = ACCESS_QM
-	cost = 1700
+	cost = 17000
 	contains = list(/obj/item/gun/ballistic/revolver/r22lr,
 					/obj/item/gun/ballistic/revolver/r22lr,
 					/obj/item/gun/ballistic/revolver/r22lr,
@@ -53,7 +53,7 @@
 	name = "9mm Pistols"
 	desc = "A pack of 9mm Pistols with 6 spare magazines of rubber."
 	access = ACCESS_QM
-	cost = 2800
+	cost = 28000
 	contains = list(/obj/item/gun/ballistic/automatic/pistol/m9mmpistol/nomag,
 					/obj/item/gun/ballistic/automatic/pistol/m9mmpistol/nomag,
 					/obj/item/gun/ballistic/automatic/pistol/m9mmpistol/nomag,
@@ -70,7 +70,7 @@
 	name = "9mm magazines"
 	desc = "A pack of 9 9mm magazines  of rubber for the 9mm Handgun."
 	access = ACCESS_QM
-	cost = 2500
+	cost = 25000
 	contains = list(/obj/item/ammo_box/magazine/m9/rubber,
 					/obj/item/ammo_box/magazine/m9/rubber,
 					/obj/item/ammo_box/magazine/m9/rubber,
@@ -87,7 +87,7 @@
 	name = ".22 ammo boxes"
 	desc = "A pack of 6 boxes of .22 ammo."
 	access = ACCESS_QM
-	cost = 900
+	cost = 9000
 	contains = list(/obj/item/ammo_box/c22lr,
 					/obj/item/ammo_box/c22lr,
 					/obj/item/ammo_box/c22lr,
@@ -101,7 +101,7 @@
 	name = "Varmint Rifles"
 	desc = "A pack of varmint rifles with 3 spare boxes of ammo."
 	access = ACCESS_QM
-	cost = 1700
+	cost = 17000
 	contains = list(/obj/item/gun/ballistic/shotgun/varmintrifle,
 					/obj/item/gun/ballistic/shotgun/varmintrifle,
 					/obj/item/gun/ballistic/shotgun/varmintrifle,
@@ -115,7 +115,7 @@
 	name = "Hunting Rifles"
 	desc = "A pack of hunting rifles with 9 stripper clips."
 	access = ACCESS_QM
-	cost = 2800
+	cost = 28000
 	contains = list(/obj/item/gun/ballistic/shotgun/huntingrifle,
 					/obj/item/gun/ballistic/shotgun/huntingrifle,
 					/obj/item/gun/ballistic/shotgun/huntingrifle,
@@ -135,7 +135,7 @@
 	name = ".308 stripper clips"
 	desc = "A pack of 6 stripper clips of .308 ammo."
 	access = ACCESS_QM
-	cost = 1500
+	cost = 15000
 	contains = list(/obj/item/ammo_box/a308,
 					/obj/item/ammo_box/a308,
 					/obj/item/ammo_box/a308,
@@ -152,7 +152,7 @@
 	name = "Civilian Energy Pistols"
 	desc = "A pack of civlian energy pistols."
 	access = ACCESS_QM
-	cost = 1700
+	cost = 17000
 	contains = list(/obj/item/gun/energy/civilian,
 					/obj/item/gun/energy/civilian,
 					/obj/item/gun/energy/civilian)
@@ -163,7 +163,7 @@
 	name = "Hunting shotguns"
 	desc = "A pack 3 hutning shotguns with slugs and buckshot"
 	access = ACCESS_QM
-	cost = 3500
+	cost = 35000
 	contains = list(/obj/item/gun/ballistic/shotgun/hunting,
 					/obj/item/gun/ballistic/shotgun/hunting,
 					/obj/item/gun/ballistic/shotgun/hunting,
@@ -206,23 +206,14 @@
 /datum/supply_pack/misc/prospacillin //size changing should be hard to achieve; so enjoy the price tag.
 	name = "Prospacillin Bottle"
 	desc = "An extremely expensive solution of growth serum known as Prospacillin. Effects are permanent upon consumption, and growth is slow."
-	cost = 100000
+	cost = 50000
 	contains = list(/obj/item/reagent_containers/food/drinks/prospacillin)
 
 /datum/supply_pack/misc/diminicillin //size changing should be hard to achieve; so enjoy the price tag.
 	name = "Diminicillin Bottle"
 	desc = "An extremely expensive solution of shrinking serum known as Diminicillin. Effects are permanent upon consumption, and shrinking is slow."
-	cost = 100000
+	cost = 50000
 	contains = list(/obj/item/reagent_containers/food/drinks/diminicillin)
-
-/datum/supply_pack/misc/plushmium
-	name = "Plushmium Crate"
-	desc = "Surplus shipment of Stuffing For Spessmen backer rewards. Contains a pre-packaged spray bottle of Plushmium, and toy to use it on."
-	cost = 5000 // Cost of an expensive animal
-	contains = list(
-		/obj/item/storage/box/shipment_plushmium,
-		/obj/item/choice_beacon/box/plushie
-	)
 
 /datum/supply_pack/misc/microbricks
 	name = "Microbricks Crate"
@@ -332,9 +323,9 @@
 	amount = 50
 
 /datum/supply_pack/misc/random10k
-	name = "10k Surplus Crate"
-	desc = "Hello, thank you for taking this random surplus off our hands. We have no idea whats in it just know its worth about 10000 Credits. At least we think so."
-	cost = 10000
+	name = "50k Surplus Crate"
+	desc = "Hello, thank you for taking this random surplus off our hands. We have no idea whats in it just know its worth about 50000 Credits. At least we think so."
+	cost = 50000
 	contains = list(/obj/item/stack/sheet/bluespace_crystal,
 					/obj/item/stock_parts/capacitor/adv,
 					/obj/item/stock_parts/scanning_module/adv,
@@ -356,16 +347,43 @@
 					/obj/item/export/bottle/gin,
 					/obj/item/export/bottle/champagne,
 					/obj/item/circuitboard/machine/cryptominer,
-					/obj/effect/spawner/lootdrop/maintenance,
-					/obj/effect/spawner/lootdrop/maintenance,
-					/obj/effect/spawner/lootdrop/maintenance,
-					/obj/effect/spawner/lootdrop/maintenance,
-					/obj/effect/spawner/lootdrop/maintenance,
-					/obj/effect/spawner/lootdrop/maintenance,
-					/obj/effect/spawner/lootdrop/maintenance,
-					/obj/effect/spawner/lootdrop/maintenance,
-					/obj/effect/spawner/lootdrop/maintenance,
-					/obj/effect/spawner/lootdrop/maintenance,
+					/obj/item/circuitboard/machine/cryptominer/syndie,
+					/obj/effect/spawner/lootdrop/armory_contraband/metastation,
+					/obj/effect/spawner/lootdrop/mre,
+					/obj/effect/spawner/lootdrop/prison_loot_toilet,
+					/obj/effect/spawner/lootdrop/prison_loot_toilet,
+					/obj/effect/spawner/lootdrop/prison_loot_toilet,
+					/obj/effect/spawner/lootdrop/prison_loot_toilet,
+					/obj/effect/spawner/lootdrop/prison_loot_toilet,
+					/obj/effect/spawner/lootdrop/prison_loot_toilet,
+					/obj/effect/spawner/lootdrop/prison_loot_toilet,
+					/obj/effect/spawner/lootdrop/prison_loot_toilet,
+					/obj/effect/spawner/lootdrop/prison_loot_toilet,
+					/obj/effect/spawner/lootdrop/prison_loot_toilet,
+					/obj/effect/spawner/lootdrop/prison_loot_toilet,
+					/obj/effect/spawner/lootdrop/prison_loot_toilet,
+					/obj/effect/spawner/lootdrop/prison_loot_toilet,
+					/obj/effect/spawner/lootdrop/prison_loot_toilet,
+					/obj/effect/spawner/lootdrop/prison_loot_toilet,
+					/obj/effect/spawner/lootdrop/prison_loot_toilet,
+					/obj/effect/spawner/lootdrop/prison_loot_toilet,
+					/obj/effect/spawner/lootdrop/prison_loot_toilet,
+					/obj/effect/spawner/lootdrop/prison_loot_toilet,
+					/obj/effect/spawner/lootdrop/prison_loot_toilet,
+					/obj/effect/spawner/lootdrop/syndicate_present,
+					/obj/effect/spawner/lootdrop/syndicate_present,
+					/obj/effect/spawner/lootdrop/syndicate_present,
+					/obj/effect/spawner/lootdrop/syndicate_present,
+					/obj/effect/spawner/lootdrop/syndicate_present,
+					/obj/effect/spawner/lootdrop/syndicate_present,
+					/obj/effect/spawner/lootdrop/syndicate_present,
+					/obj/effect/spawner/lootdrop/syndicate_present,
+					/obj/effect/spawner/lootdrop/high_loot_toilet,
+					/obj/effect/spawner/lootdrop/high_loot_toilet,
+					/obj/effect/spawner/lootdrop/high_loot_toilet,
+					/obj/effect/spawner/lootdrop/high_loot_toilet,
+					/obj/effect/spawner/lootdrop/high_tools,
+					/obj/effect/spawner/lootdrop/high_tools,
 					/obj/effect/spawner/lootdrop/high_tools,
 					/obj/effect/spawner/lootdrop/high_tools,
 					/obj/item/gunpart/pistol9frame,
@@ -379,12 +397,18 @@
 					/obj/item/ammo_box/c308,
 					/obj/effect/spawner/lootdrop/tool_box,
 					/obj/effect/spawner/lootdrop/prison_contraband,
+					/obj/effect/spawner/lootdrop/prison_contraband,
+					/obj/effect/spawner/lootdrop/prison_contraband,
+					/obj/effect/spawner/lootdrop/prison_contraband,
+					/obj/effect/spawner/lootdrop/prison_contraband,
+					/obj/effect/spawner/lootdrop/prison_contraband,
+					/obj/effect/spawner/lootdrop/prison_contraband,
+					/obj/effect/spawner/lootdrop/prison_contraband,
 					/obj/effect/spawner/lootdrop/cig_packs,
 					/obj/effect/spawner/lootdrop/brokenhuds,
 					/obj/effect/spawner/lootdrop/healing_kits,
 					/obj/effect/spawner/lootdrop/breathing_tanks,
 					/obj/effect/spawner/lootdrop/breathing_masks,
-					/obj/item/circuitboard/machine/cryptominer,
 					/obj/item/stack/sheet/bluespace_crystal
 					)
 	crate_name = "surplus crate"
@@ -577,7 +601,7 @@
 	)
 	crate_name = "plague doctor crate"
 
-/datum/supply_pack/randomised/costumes/tesh_cloaks_vr
+/datum/supply_pack/costumes_toys/randomised/tesh_cloaks_vr
 	name = "Teshari cloaks"
 
 	contains = list(
@@ -598,7 +622,7 @@
 
 
 
-/datum/supply_pack/randomised/costumes/tesh_cloaks_b_vr
+/datum/supply_pack/costumes_toys/randomised/tesh_cloaks_b_vr
 	name = "Teshari cloaks (black)"
 
 	contains = list(
@@ -620,7 +644,7 @@
 
 
 
-/datum/supply_pack/randomised/costumes/tesh_beltcloaks_vr
+/datum/supply_pack/costumes_toys/randomised/tesh_beltcloaks_vr
 	name = "Teshari cloaks (belted)"
 
 	contains = list(
@@ -641,7 +665,7 @@
 
 
 
-/datum/supply_pack/randomised/costumes/tesh_beltcloaks_b_vr
+/datum/supply_pack/costumes_toys/randomised/tesh_beltcloaks_b_vr
 	name = "Teshari cloaks (belted, black)"
 
 	contains = list(
@@ -664,7 +688,7 @@
 
 
 
-/datum/supply_pack/randomised/costumes/tesh_hoodcloaks_vr
+/datum/supply_pack/costumes_toys/randomised/tesh_hoodcloaks_vr
 	name = "Teshari cloaks (hooded)"
 
 	contains = list(
@@ -684,7 +708,7 @@
 
 
 
-/datum/supply_pack/randomised/costumes/tesh_hoodcloaks_b_vr
+/datum/supply_pack/costumes_toys/randomised/tesh_hoodcloaks_b_vr
 	name = "Teshari cloaks (hooded, black)"
 
 	contains = list(

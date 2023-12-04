@@ -281,7 +281,7 @@
 /turf/closed/wall/r_wall,
 /area/science/xenobiology)
 "amq" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 1
 	},
 /obj/machinery/status_display/ai{
@@ -1091,7 +1091,7 @@
 /turf/open/floor/plasteel,
 /area/maintenance/central)
 "aJy" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
@@ -2528,7 +2528,7 @@
 /turf/open/floor/plasteel/dark,
 /area/science/xenobiology)
 "bIc" = (
-/obj/structure/chair/sofa/right{
+/obj/structure/chair/sofa/right/brown{
 	dir = 1
 	},
 /obj/item/radio/intercom{
@@ -4096,7 +4096,7 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
 	},
-/obj/machinery/suit_storage_unit/atmos,
+/obj/machinery/suit_storage_unit/industrial/atmos,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -7643,7 +7643,7 @@
 	pixel_x = -12
 	},
 /obj/item/reagent_containers/glass/bucket,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/security/prison)
 "fyy" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -8290,7 +8290,7 @@
 /obj/structure/chair/pew/left{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/hallway/primary/central)
 "fXT" = (
 /obj/effect/turf_decal/tile/purple{
@@ -11325,7 +11325,7 @@
 /turf/open/floor/plasteel,
 /area/hallway/secondary/entry)
 "ilb" = (
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/left/brown,
 /turf/open/floor/wood,
 /area/service/bar)
 "ilf" = (
@@ -11843,7 +11843,7 @@
 /turf/open/floor/plasteel/freezer,
 /area/maintenance/central)
 "iEU" = (
-/obj/structure/chair/sofa,
+/obj/structure/chair/sofa/middle/brown,
 /turf/open/floor/wood,
 /area/service/bar)
 "iFg" = (
@@ -12447,7 +12447,7 @@
 	pixel_x = 28;
 	pixel_y = 28
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/security/prison)
 "iYO" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible{
@@ -13236,7 +13236,7 @@
 /turf/closed/wall/r_wall,
 /area/security/prison)
 "jBQ" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},
@@ -14972,7 +14972,7 @@
 /turf/open/floor/carpet,
 /area/hallway/primary/port/aft)
 "kOa" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},
@@ -15320,7 +15320,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/hallway/primary/central)
 "laQ" = (
 /obj/structure/disposalpipe/junction/flip{
@@ -16708,7 +16708,7 @@
 /turf/open/floor/plasteel/dark,
 /area/command/gateway)
 "mbj" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 8
 	},
 /obj/machinery/status_display{
@@ -16887,7 +16887,7 @@
 "mjr" = (
 /obj/item/seeds/orange,
 /obj/item/seeds/orange,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/security/prison)
 "mjS" = (
 /turf/open/floor/plasteel/dark/telecomms,
@@ -17668,7 +17668,7 @@
 /turf/open/floor/plating,
 /area/security/brig)
 "mNe" = (
-/obj/structure/chair/sofa,
+/obj/structure/chair/sofa/middle/brown,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 9
 	},
@@ -18161,7 +18161,7 @@
 /turf/open/floor/plasteel,
 /area/medical/medbay/zone3)
 "nfZ" = (
-/obj/machinery/computer/card,
+/obj/machinery/modular_computer/console/preset/id,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -18379,7 +18379,7 @@
 /area/science/xenobiology)
 "nle" = (
 /obj/machinery/hydroponics/soil,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/security/prison)
 "nlJ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -21589,7 +21589,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/aisat)
 "pIl" = (
-/obj/structure/chair/sofa{
+/obj/structure/chair/sofa/middle/brown{
 	dir = 1
 	},
 /turf/open/floor/wood,
@@ -23648,7 +23648,7 @@
 /area/medical/virology)
 "rxl" = (
 /mob/living/simple_animal/mouse/brown/Tom,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/security/prison)
 "ryU" = (
 /obj/structure/disposalpipe/segment{
@@ -24219,7 +24219,7 @@
 "rZz" = (
 /obj/item/seeds/apple,
 /obj/item/seeds/apple,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/security/prison)
 "rZC" = (
 /obj/structure/lattice/catwalk,
@@ -24364,7 +24364,7 @@
 "seY" = (
 /obj/item/seeds/grape,
 /obj/item/seeds/grape,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/security/prison)
 "sfn" = (
 /obj/effect/turf_decal/tile/red{
@@ -25108,7 +25108,7 @@
 /turf/open/floor/plasteel,
 /area/commons/storage/primary)
 "sGQ" = (
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/security/prison)
 "sHx" = (
 /obj/effect/turf_decal/tile/brown{
@@ -26282,7 +26282,7 @@
 /turf/open/floor/plasteel/dark,
 /area/hallway/primary/central)
 "tyx" = (
-/obj/structure/chair/sofa/left{
+/obj/structure/chair/sofa/left/brown{
 	dir = 1
 	},
 /turf/open/floor/wood,
@@ -28497,7 +28497,7 @@
 	pixel_x = -28;
 	pixel_y = 28
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/security/prison)
 "vaC" = (
 /obj/structure/table,
@@ -28860,7 +28860,7 @@
 /area/ai_monitored/turret_protected/aisat_interior)
 "vsK" = (
 /obj/item/cultivator,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/security/prison)
 "vtk" = (
 /obj/structure/disposalpipe/segment{
@@ -29152,7 +29152,7 @@
 	dir = 4
 	},
 /obj/effect/landmark/start/psychologist,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/hallway/primary/central)
 "vDp" = (
 /turf/closed/wall,
@@ -29922,7 +29922,7 @@
 /turf/open/floor/plasteel,
 /area/hallway/primary/central)
 "wlK" = (
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/right/brown,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
@@ -32269,7 +32269,7 @@
 /area/security/brig)
 "xMM" = (
 /obj/item/plant_analyzer,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/security/prison)
 "xNj" = (
 /obj/structure/cable{

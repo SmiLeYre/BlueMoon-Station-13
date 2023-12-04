@@ -1,8 +1,8 @@
 /datum/round_event_control/nightmare
 	name = "Spawn Nightmare"
 	typepath = /datum/round_event/ghost_role/nightmare
-	max_occurrences = 1
-	min_players = 20
+	max_occurrences = 2
+	min_players = 30
 	dynamic_should_hijack = TRUE
 	category = EVENT_CATEGORY_ENTITIES
 	description = "Spawns a nightmare, aiming to darken the station."

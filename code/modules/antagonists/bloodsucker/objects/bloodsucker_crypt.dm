@@ -194,9 +194,9 @@
 							"<span class='danger'>[user] attempts to release you from the rack!</span>") //  For sound if not seen -->  "<span class='italics'>You hear a squishy wet noise.</span>")
 		if(!do_mob(user, M, 200))
 			return
+		unbuckle_mob(M)
 	// Did the time. Now try to do it.
 	..()
-	unbuckle_mob(M)
 
 /obj/structure/bloodsucker/vassalrack/unbuckle_mob(mob/living/buckled_mob, force = FALSE)
 	if(!..())
@@ -289,7 +289,7 @@
 				// SUCCESS: All done!
 				else
 					if(RequireDisloyalty(target))
-						to_chat(user, "<span class='boldwarning'>[target] has external loyalties! [target.p_they(TRUE)] will require more <i>persuasion</i> to break [target.p_them()] to your will!</span>")
+						to_chat(user, "<span class='boldwarning'>[target] has external loyalties! [target.ru_who(TRUE)] will require more <i>persuasion</i> to break [target.ru_na()] to your will!</span>")
 					else
 						to_chat(user, "<span class='notice'>[target] looks ready for the <b>Dark Communion</b>.</span>")
 			// Still Need More Persuasion...
@@ -315,8 +315,8 @@
 	B.AddBloodVolume(-CONVERT_COST)
 	target.add_mob_blood(user, "<span class='danger'>Youve used [CONVERT_COST] amount of blood to gain a new vassal!</span>")
 	to_chat(user, )
-	user.visible_message("<span class='notice'>[user] marks a bloody smear on [target]'s forehead and puts a wrist up to [target.p_their()] mouth!</span>", \
-				  	  "<span class='notice'>You paint a bloody marking across [target]'s forehead, place your wrist to [target.p_their()] mouth, and subject [target.p_them()] to the Dark Communion.</span>")
+	user.visible_message("<span class='notice'>[user] marks a bloody smear on [target]'s forehead and puts a wrist up to [target.ru_ego()] mouth!</span>", \
+				  	  "<span class='notice'>You paint a bloody marking across [target]'s forehead, place your wrist to [target.ru_ego()] mouth, and subject [target.ru_na()] to the Dark Communion.</span>")
 	if(!do_mob(user, src, 50))
 		to_chat(user, "<span class='danger'><i>The ritual has been interrupted!</i></span>")
 		useLock = FALSE
@@ -379,10 +379,11 @@
 	if(I)
 		playsound(loc, I.hitsound, 30, 1, -1)
 		I.play_tool_sound(target)
-	target.visible_message("<span class='danger'>[user] has [method_string] [target]'s [target_string] with [user.p_their()] [weapon_string]!</span>", \
-						   "<span class='userdanger'>[user] has [method_string] your [target_string] with [user.p_their()] [weapon_string]!</span>")
+	target.visible_message("<span class='danger'>[user] has [method_string] [target]'s [target_string] with [user.ru_ego()] [weapon_string]!</span>", \
+						   "<span class='userdanger'>[user] has [method_string] your [target_string] with [user.ru_ego()] [weapon_string]!</span>")
 	if(!target.is_muzzled())
-		target.emote("scream")
+		if(!HAS_TRAIT(target, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+			target.emote("scream")
 	target.Jitter(5)
 	target.apply_damages(brute = torture_dmg_brute, burn = torture_dmg_burn, def_zone = (BP ? BP.body_zone : null)) // take_overall_damage(6,0)
 	return TRUE

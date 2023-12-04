@@ -75,6 +75,9 @@ SUBSYSTEM_DEF(ticker)
 	/// If the gamemode fails to be run too many times, we swap to a preset gamemode, this should give admins time to set their preferred one
 	var/emergency_swap = 0
 
+	/// People who have been commended and will receive a heart
+	var/list/hearts
+
 /datum/controller/subsystem/ticker/Initialize(timeofday)
 	load_mode()
 
@@ -131,6 +134,8 @@ SUBSYSTEM_DEF(ticker)
 	else
 		login_music = "[global.config.directory]/title_music/sounds/[pick(music)]"
 
+	// Setup pregenerated newsfeeds
+	setup_news_feeds()
 
 	if(!GLOB.syndicate_code_phrase)
 		GLOB.syndicate_code_phrase	= generate_code_phrase(return_list=TRUE)
@@ -163,7 +168,7 @@ SUBSYSTEM_DEF(ticker)
 			for(var/client/C in GLOB.clients)
 				window_flash(C, ignorepref = TRUE) //let them know lobby has opened up.
 			to_chat(world, "<span class='boldnotice'>Welcome to [station_name()]!</span>")
-			send2chat(new /datum/tgs_message_content("New round starting on [SSmapping.config.map_name]!"), CONFIG_GET(string/chat_announce_new_game))
+			send2chat(new /datum/tgs_message_content("Новый раунд начинается на [SSmapping.config.map_name], голосование за режим полным ходом!"), CONFIG_GET(string/chat_announce_new_game))
 			current_state = GAME_STATE_PREGAME
 			//SPLURT EDIT - Bring back old panel
 			//Everyone who wants to be an observer is now spawned
@@ -233,6 +238,7 @@ SUBSYSTEM_DEF(ticker)
 			if(!roundend_check_paused && mode.check_finished(force_ending) || force_ending)
 				current_state = GAME_STATE_FINISHED
 				toggle_ooc(TRUE) // Turn it on
+				toggle_aooc(TRUE) // Turn it on
 				toggle_dooc(TRUE)
 				declare_completion(force_ending)
 				Master.SetRunLevel(RUNLEVEL_POSTGAME)
@@ -242,7 +248,7 @@ SUBSYSTEM_DEF(ticker)
 	to_chat(world, "<span class='boldannounce'>Starting game...</span>")
 	var/init_start = world.timeofday
 	if(emergency_swap >= 10)
-		force_gamemode("extended")	// If everything fails extended does not have hard requirements for starting, could be changed if needed.
+		force_gamemode("Extended")	// If everything fails extended does not have hard requirements for starting, could be changed if needed.
 	mode = config.pick_mode(GLOB.master_mode)
 	if(!mode.can_start())
 		to_chat(world, "<B>Unable to start [mode.name].</B> Not enough players, [mode.required_players] players and [mode.required_enemies] eligible antagonists needed. Reverting to pre-game lobby.")
@@ -285,6 +291,7 @@ SUBSYSTEM_DEF(ticker)
 
 	if(!CONFIG_GET(flag/ooc_during_round))
 		toggle_ooc(FALSE) // Turn it off
+		toggle_aooc(FALSE) // Turn it off
 
 	CHECK_TICK
 	GLOB.start_landmarks_list = shuffle(GLOB.start_landmarks_list) //Shuffle the order of spawn points so they dont always predictably spawn bottom-up and right-to-left
@@ -333,10 +340,12 @@ SUBSYSTEM_DEF(ticker)
 			GLOB.master_mode = gamemode
 			SSticker.save_mode(gamemode)
 			message_admins("The gamemode has been set to [gamemode].")
+			to_chat("The gamemode has been set to [gamemode].") //BlueMoon edit !!!
 		else
-			GLOB.master_mode = "extended"
-			SSticker.save_mode("extended")
+			GLOB.master_mode = "Extended"
+			SSticker.save_mode("Extended")
 			message_admins("force_gamemode proc received an invalid gamemode, defaulting to extended.")
+			to_chat("The gamemode has been set to extended.") //BlueMoon edit !!!
 
 /datum/controller/subsystem/ticker/proc/PostSetup()
 	set waitfor = FALSE
@@ -346,9 +355,13 @@ SUBSYSTEM_DEF(ticker)
 
 	var/list/adm = get_admin_counts()
 	var/list/allmins = adm["present"]
-	send2adminchat("Server", "Round [GLOB.round_id ? "#[GLOB.round_id]:" : "of"] [hide_mode ? "secret":"[mode.name]"] has started[allmins.len ? ".":" with no active admins online!"]")
+	send2adminchat("Server", "Round [GLOB.round_id ? "#[GLOB.round_id]:" : "of"] [hide_mode ? "secret":"[GLOB.master_mode]"] has started[allmins.len ? ".":" with no active admins online!"]")
 	if(CONFIG_GET(string/new_round_ping))
-		send2chat(new /datum/tgs_message_content("<@&[CONFIG_GET(string/new_round_ping)]> | A new round has started on [SSmapping.config.map_name]!"), CONFIG_GET(string/chat_announce_new_game))
+		send2chat(new /datum/tgs_message_content("<@&[CONFIG_GET(string/new_round_ping)]> | Новый раунд стартует на [SSmapping.config.map_name]!"), CONFIG_GET(string/chat_announce_new_game))
+		if(GLOB.master_mode == "Extended")
+			send2chat(new /datum/tgs_message_content("<@&[CONFIG_GET(string/passive_round_ping)]> <@&[CONFIG_GET(string/agressive_round_ping)]> | Раунд [GLOB.round_id ? "#[GLOB.round_id]:" : "в режиме"] [hide_mode ? "секретном":"[GLOB.master_mode]"] стартует[allmins.len ? "!":" без администрации!!"]"), CONFIG_GET(string/chat_announce_new_game))
+		else
+			send2chat(new /datum/tgs_message_content("<@&[CONFIG_GET(string/active_round_ping)]> <@&[CONFIG_GET(string/agressive_round_ping)]> | Раунд [GLOB.round_id ? "#[GLOB.round_id]:" : "в режиме"] [hide_mode ? "секретном":"[GLOB.master_mode]"] стартует[allmins.len ? "!":" без администрации!!"]"), CONFIG_GET(string/chat_announce_new_game))
 	setup_done = TRUE
 
 	for(var/i in GLOB.start_landmarks_list)
@@ -513,6 +526,36 @@ SUBSYSTEM_DEF(ticker)
 /datum/controller/subsystem/ticker/proc/IsRoundInProgress()
 	return current_state == GAME_STATE_PLAYING
 
+/datum/controller/subsystem/ticker/proc/setup_news_feeds()
+	var/datum/feed_channel/newChannel = new /datum/feed_channel
+	newChannel.channel_name = "Станционные Объявления"
+	newChannel.author = "Automated Announcement Listing"
+	newChannel.icon = "bullhorn"
+	newChannel.frozen = TRUE
+	newChannel.admin_locked = TRUE
+	GLOB.news_network.channels += newChannel
+
+	newChannel = new /datum/feed_channel
+	newChannel.channel_name = "Nyx Daily"
+	newChannel.author = "CentCom Minister of Information"
+	newChannel.icon = "meteor"
+	newChannel.frozen = TRUE
+	newChannel.admin_locked = TRUE
+	GLOB.news_network.channels += newChannel
+
+	newChannel = new /datum/feed_channel
+	newChannel.channel_name = "The Gibson Gazette"
+	newChannel.author = "Editor Mike Hammers"
+	newChannel.icon = "star"
+	newChannel.frozen = TRUE
+	newChannel.admin_locked = TRUE
+	GLOB.news_network.channels += newChannel
+
+	// for(var/loc_type in subtypesof(/datum/trade_destination))
+		// var/datum/trade_destination/D = new loc_type
+		// GLOB.weighted_randomevent_locations[D] = D.viable_random_events.len
+		// GLOB.weighted_mundaneevent_locations[D] = D.viable_mundane_events.len
+
 /proc/send_gamemode_vote() //CIT CHANGE - adds roundstart gamemode votes
 	if(SSticker.current_state == GAME_STATE_PREGAME)
 		if(SSticker.timeLeft < 900)
@@ -523,7 +566,7 @@ SUBSYSTEM_DEF(ticker)
 			SSvote.initiate_vote("dynamic", "server", display = NONE, votesystem = SCORE_VOTING, forced = TRUE,vote_time = 20 MINUTES)
 		else
 			SSvote.initiate_vote("roundtype", "server", display = NONE, votesystem = PLURALITY_VOTING, forced=TRUE, \
-			vote_time = (CONFIG_GET(flag/modetier_voting) ? 1 MINUTES : 20 MINUTES))
+			vote_time = SSticker.GetTimeLeft() - ROUNDTYPE_VOTE_END_PENALTY) //BLUEMOON CHANGE, WAS vote_time = (CONFIG_GET(flag/modetier_voting) ? 1 MINUTES : 20 MINUTES))
 
 /datum/controller/subsystem/ticker/Recover()
 	current_state = SSticker.current_state
@@ -574,69 +617,69 @@ SUBSYSTEM_DEF(ticker)
 
 /datum/controller/subsystem/ticker/proc/send_news_report()
 	var/news_message
-	var/news_source = "Nanotrasen News Network"
+	var/news_source = "Новости Пакта Синие Луны"
 	switch(news_report)
 		if(NUKE_SYNDICATE_BASE)
-			news_message = "In a daring raid, the heroic crew of [station_name()] detonated a nuclear device in the heart of a terrorist base."
+			news_message = "Во время недавней попытки Рейдерского Захвата [station_name()] со стороны ИнтеКью, станции удалось уничтожить отряд тяжело вооружённых Террористов."
 		if(STATION_DESTROYED_NUKE)
-			news_message = "We would like to reassure all employees that the reports of a Syndicate backed nuclear attack on [station_name()] are, in fact, a hoax. Have a secure day!"
+			news_message = "Мы хотели бы заверить всех сотрудников, что сообщения о ядерной атаке на [station_name()], поддерживаемой Оперативниками ИнтеКью, на самом деле являются мистификацией. Желаем безопасного дня!"
 		if(STATION_EVACUATED)
 			if(emergency_reason)
-				news_message = "[station_name()] has been evacuated after transmitting the following distress beacon:\n\n[emergency_reason]"
+				news_message = "[station_name()] была эвакуирован после передачи следующего сигнала бедствия:\n\n[emergency_reason]"
 			else
-				news_message = "The crew of [station_name()] has been evacuated amid unconfirmed reports of enemy activity."
+				news_message = "Экипаж [station_name()] эвакуирован в связи с неподтвержденными сообщениями об активности противника и ввиду достижения всех поставленных задач."
 		if(BLOB_WIN)
-			news_message = "[station_name()] was overcome by an unknown biological outbreak, killing all crew on board. Don't let it happen to you! Remember, a clean work station is a safe work station."
+			news_message = "[station_name()] была поражена неизвестной Биологической Вспышкой Пятого Уровня, в результате чего погиб весь экипаж. Не допустите, чтобы это случилось с вами! Помните, что чистое рабочее место - это безопасное рабочее место."
 		if(BLOB_NUKE)
-			news_message = "[station_name()] is currently undergoing decontanimation after a controlled burst of radiation was used to remove a biological ooze. All employees were safely evacuated prior, and are enjoying a relaxing vacation."
+			news_message = "[station_name()] в настоящее время проходит дезактивацию после контролируемого всплеска радиации, использованного для удаления Биологической Слизи. Все сотрудники были благополучно эвакуированы до этого и сейчас наслаждаются отдыхом."
 		if(BLOB_DESTROYED)
-			news_message = "[station_name()] is currently undergoing decontamination procedures after the destruction of a biological hazard. As a reminder, any crew members experiencing cramps or bloating should report immediately to security for incineration."
+			news_message = "[station_name()] в настоящее время проходит процедуру дезактивации после уничтожения Биологической Опасности Пятого Уровня. Напоминаем, что все члены экипажа, испытывающие спазмы или вздутие живота, должны немедленно явиться в Отдел Службы Безопасности для последующего решения проблемы."
 		if(CULT_ESCAPE)
-			news_message = "Security Alert: A group of religious fanatics have escaped from [station_name()]."
+			news_message = "ВНИМАНИЕ: Тревога. Группа религиозных фанатиков сбежала с [station_name()]."
 		if(CULT_FAILURE)
-			news_message = "Following the dismantling of a restricted cult aboard [station_name()], we would like to remind all employees that worship outside of the Chapel is strictly prohibited, and cause for termination."
+			news_message = "В связи с ликвидацией запрещенного культа на борту [station_name()], мы хотели бы напомнить всем сотрудникам, что вероисповедание вне часовни строго запрещено и является основанием для увольнения."
 		if(CULT_SUMMON)
-			news_message = "Company officials would like to clarify that [station_name()] was scheduled to be decommissioned following meteor damage earlier this year. Earlier reports of an unknowable eldritch horror were made in error."
+			news_message = "Представители компании хотели бы уточнить, что [station_name()] было запланировано вывести из эксплуатации после разрушения метеоритом в начале этого года. Более ранние сообщения о неизвестном эльдрическом ужасе были сделаны по ошибке."
 		if(NUKE_MISS)
-			news_message = "The Syndicate have bungled a terrorist attack [station_name()], detonating a nuclear weapon in empty space nearby."
+			news_message = "ИнтеКью совершили террористическую атаку на [station_name()], взорвав Ядерную Боеголовку в пустом пространстве поблизости."
 		if(OPERATIVES_KILLED)
-			news_message = "Repairs to [station_name()] are underway after an elite Syndicate death squad was wiped out by the crew."
+			news_message = "На станции [station_name()] ведутся ремонтные работы после уничтожения экипажем Оперативников Террористической Группировки ИнтеКью."
 		if(OPERATIVE_SKIRMISH)
-			news_message = "A skirmish between security forces and Syndicate agents aboard [station_name()] ended with both sides bloodied but intact."
+			news_message = "Перестрелка между силами Отдела СБ и агентами ИнтеКью на борту [station_name()] закончилась тем, что обе стороны понесли потери, но в целом остались невредимы."
 		if(REVS_WIN)
-			news_message = "Company officials have reassured investors that despite a union led revolt aboard [station_name()] there will be no wage increases for workers."
+			news_message = "Представители Корпорации заверили инвесторов, что, несмотря на восстание профсоюза на борту [station_name()], повышения зарплаты рабочим не будет."
 		if(REVS_LOSE)
-			news_message = "[station_name()] quickly put down a misguided attempt at mutiny. Remember, unionizing is illegal!"
+			news_message = "[station_name()] быстро подавили ошибочную попытку Мятежа. Помните, что объединение в профсоюзы незаконно!"
 		if(WIZARD_KILLED)
-			news_message = "Tensions have flared with the Space Wizard Federation following the death of one of their members aboard [station_name()]."
+			news_message = "После гибели одного из космических магов на борту [station_name()] возникла совсем небольшая напряженность в отношениях с Федерацией."
 		if(STATION_NUKED)
-			news_message = "[station_name()] activated its self-destruct device for unknown reasons. Attempts to clone the Captain so he can be arrested and executed are underway."
+			news_message = "[station_name()] по неизвестным причинам активировали устройство самоуничтожения. В настоящее время предпринимаются попытки клонировать капитана, чтобы арестовать и казнить его."
 		if(CLOCK_SUMMON)
-			news_message = "The garbled messages about hailing a mouse and strange energy readings from [station_name()] have been discovered to be an ill-advised, if thorough, prank by a clown."
+			news_message = "Беспорядочные сообщения о вызове Бог-Машины и странные показания энергии с [station_name()] оказались непродуманным, хотя и тщательным розыгрышем клоуна."
 		if(CLOCK_SILICONS)
-			news_message = "The project started by [station_name()] to upgrade their silicon units with advanced equipment have been largely successful, though they have thus far refused to release schematics in a violation of company policy."
+			news_message = "Проект, начатый [station_name()] по модернизации своих кремниевых блоков с помощью современного оборудования, в целом оказался успешным, хотя в нарушение политики компании они до сих пор отказываются публиковать схемы."
 		if(CLOCK_PROSELYTIZATION)
-			news_message = "The burst of energy released near [station_name()] has been confirmed as merely a test of a new weapon. However, due to an unexpected mechanical error, their communications system has been knocked offline."
+			news_message = "Было подтверждено, что вспышка энергии, произошедшая в районе станции [station_name()], была всего лишь испытанием нового оружия. Однако из-за неожиданной механической ошибки система связи была выведена из строя."
 		if(SHUTTLE_HIJACK)
-			news_message = "During routine evacuation procedures, the emergency shuttle of [station_name()] had its navigation protocols corrupted and went off course, but was recovered shortly after."
+			news_message = "Во время плановой эвакуации на аварийном шаттле [station_name()] были повреждены навигационные протоколы и он сбился с курса, но вскоре был восстановлен, а все сотрудники были благополучно эвакуированы и сейчас наслаждаются отдыхом."
 		if(GANG_OPERATING)
-			news_message = "The company would like to state that any rumors of criminal organizing on board stations such as [station_name()] are falsehoods, and not to be emulated."
+			news_message = "Пакт хотел бы заявить, что любые слухи об организации преступного сообщества на станциях типа [station_name()] являются ложью и не подлежат подражанию."
 		if(GANG_DESTROYED)
-			news_message = "The crew of [station_name()] would like to thank the Spinward Stellar Coalition Police Department for quickly resolving a minor terror threat to the station."
+			news_message = "Экипаж [station_name()] благодарит полицейский департамент Звездной Коалиции за оперативное устранение незначительной террористической угрозы для станции."
 
 	if(SSblackbox.first_death)
 		var/list/ded = SSblackbox.first_death
 		if(ded.len)
-			var/last_words = ded["last_words"] ? " Their last words were: \"[ded["last_words"]]\"" : ""
-			news_message += "\nNT Sanctioned Psykers picked up faint traces of someone near the station, allegedly having had died.\nTheir name was: [ded["name"]], [ded["role"]], at [ded["area"]].[last_words]"
+			var/last_words = ded["last_words"] ? " Его последние слова: \"[ded["last_words"]]\"" : ""
+			news_message += "\nNT Sanctioned Psykers засекли слабые следы человека, якобы умершего неподалеку от станции.\nЕго имя было: [ded["name"]], [ded["role"]], и умер он в [ded["area"]].[last_words]"
 		else
-			news_message += "\nNT Sanctioned Psykers proudly confirm reports that nobody died this shift!"
+			news_message += "\nNT Sanctioned Psykers с гордостью подтверждают сообщения о том, что в эту смену никто не умер!"
 
 	if(news_message)
 		send2otherserver(news_source, news_message,"News_Report")
 		return news_message
 	else
-		return "We regret to inform you that shit be whack, yo. None of our reporters have any idea of what may or may not have gone on."
+		return "С прискорбием сообщаем вам, что дело нечисто, йоу. Никто из наших репортеров не имеет ни малейшего представления о том, что могло или не могло произойти."
 
 /datum/controller/subsystem/ticker/proc/GetTimeLeft()
 	if(isnull(SSticker.timeLeft))
@@ -683,7 +726,7 @@ SUBSYSTEM_DEF(ticker)
 
 	var/skip_delay = check_rights()
 	if(delay_end && !skip_delay)
-		to_chat(world, "<span class='boldannounce'>An admin has delayed the round end.</span>")
+		to_chat(world, "<span class='boldwarning'>An admin has delayed the round end.</span>")
 		return
 
 	to_chat(world, "<span class='boldannounce'>Rebooting World in [DisplayTimeText(delay)]. [reason]</span>")
@@ -710,7 +753,6 @@ SUBSYSTEM_DEF(ticker)
 	world.Reboot()
 
 /datum/controller/subsystem/ticker/Shutdown()
-	gather_newscaster() //called here so we ensure the log is created even upon admin reboot
 	save_admin_data()
 	update_everything_flag_in_db()
 	if(!round_end_sound)

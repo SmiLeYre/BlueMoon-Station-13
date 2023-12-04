@@ -89,6 +89,7 @@
 		if(playsound)
 			playsound(source, 'sound/machines/chime.ogg', 10) 	//sandstorm stuff - combat mode indicator
 			flick_emote_popup_on_mob(source, "combat", 10)	//sandstorm stuff - combat mode indicator
+	log_combat(source, source, "включает Комбат Индикатор")
 	RegisterSignal(source, COMSIG_MOB_CLIENT_MOUSEMOVE, .proc/onMouseMove)
 	RegisterSignal(source, COMSIG_MOVABLE_MOVED, .proc/on_move)
 	if(hud_icon)
@@ -112,7 +113,7 @@
 	if(!silent)
 		var/self_message = forced? "<span class='warning'>Your muscles are forcibly relaxed!</span>" : "<span class='warning'>You relax your stance.</span>"
 		if(visible)
-			source.visible_message("<span class='warning'>[source] relaxes [source.p_their()] stance.</span>", self_message)
+			source.visible_message("<span class='warning'>[source] relaxes [source.ru_ego()] stance.</span>", self_message)
 		else
 			to_chat(source, self_message)
 		if(playsound)

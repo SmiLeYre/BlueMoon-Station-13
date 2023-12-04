@@ -45,6 +45,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	name = "bluespace rapid part exchange device"
 	desc = "A version of the RPED that allows for replacement of parts and scanning from a distance, along with higher capacity for parts."
 	icon_state = "BS_RPED"
+	item_state = "BS_RPED"
 	w_class = WEIGHT_CLASS_NORMAL
 	works_from_distance = TRUE
 	pshoom_or_beepboopblorpzingshadashwoosh = 'sound/items/pshoom.ogg'
@@ -54,7 +55,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 /obj/item/storage/part_replacer/bluespace/tier1
 
 /obj/item/storage/part_replacer/bluespace/tier1/PopulateContents()
-	for(var/i in 1 to 10)
+	for(var/i in 1 to 25)
 		new /obj/item/stock_parts/capacitor(src)
 		new /obj/item/stock_parts/scanning_module(src)
 		new /obj/item/stock_parts/manipulator(src)
@@ -65,7 +66,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 /obj/item/storage/part_replacer/bluespace/tier2
 
 /obj/item/storage/part_replacer/bluespace/tier2/PopulateContents()
-	for(var/i in 1 to 10)
+	for(var/i in 1 to 25)
 		new /obj/item/stock_parts/capacitor/adv(src)
 		new /obj/item/stock_parts/scanning_module/adv(src)
 		new /obj/item/stock_parts/manipulator/nano(src)
@@ -76,7 +77,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 /obj/item/storage/part_replacer/bluespace/tier3
 
 /obj/item/storage/part_replacer/bluespace/tier3/PopulateContents()
-	for(var/i in 1 to 10)
+	for(var/i in 1 to 25)
 		new /obj/item/stock_parts/capacitor/super(src)
 		new /obj/item/stock_parts/scanning_module/phasic(src)
 		new /obj/item/stock_parts/manipulator/pico(src)
@@ -87,7 +88,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 /obj/item/storage/part_replacer/bluespace/tier4
 
 /obj/item/storage/part_replacer/bluespace/tier4/PopulateContents()
-	for(var/i in 1 to 10)
+	for(var/i in 1 to 25)
 		new /obj/item/stock_parts/capacitor/quadratic(src)
 		new /obj/item/stock_parts/scanning_module/triphasic(src)
 		new /obj/item/stock_parts/manipulator/femto(src)
@@ -95,10 +96,21 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 		new /obj/item/stock_parts/matter_bin/bluespace(src)
 		new /obj/item/stock_parts/cell/bluespace(src)
 
+/obj/item/storage/part_replacer/bluespace/tier5
+
+/obj/item/storage/part_replacer/bluespace/tier5/PopulateContents()
+	for(var/i in 1 to 25)
+		new /obj/item/stock_parts/capacitor/giga(src)
+		new /obj/item/stock_parts/scanning_module/unilatera_triphasic(src)
+		new /obj/item/stock_parts/manipulator/atto(src)
+		new /obj/item/stock_parts/micro_laser/super_quadultra(src)
+		new /obj/item/stock_parts/matter_bin/darkmatter(src)
+		new /obj/item/stock_parts/cell/vortex(src)
+
 /obj/item/storage/part_replacer/cargo //used in a cargo crate
 
 /obj/item/storage/part_replacer/cargo/PopulateContents()
-	for(var/i in 1 to 10)
+	for(var/i in 1 to 25)
 		new /obj/item/stock_parts/capacitor(src)
 		new /obj/item/stock_parts/scanning_module(src)
 		new /obj/item/stock_parts/manipulator(src)

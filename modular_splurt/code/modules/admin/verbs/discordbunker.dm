@@ -2,7 +2,7 @@
 	set category = "Server"
 	set name = "Toggle Discord Bunker"
 	if(!SSdbcore.IsConnected())
-		to_chat(usr, span_adminnotice("The Database is not connected/enabled!"))
+		to_chat(usr, "<span class='adminnotice'>The Database is not connected/enabled!</span>")
 		return
 
 	var/new_dbun = !CONFIG_GET(flag/need_discord_to_join)
@@ -18,13 +18,13 @@
 	set name = "Add Discord Bypass"
 	set desc = "Allows a given ckey to connect through the discord bunker for the round even if they haven't verified yet."
 	if(!SSdbcore.IsConnected())
-		to_chat(usr, span_adminnotice("The Database is not connected!"))
+		to_chat(usr, "<span class='adminnotice'>The Database is not connected!</span>")
 		return
 	if(!SSdiscord)
-		to_chat(usr, span_adminnotice("The discord subsystem hasn't initialized yet!"))
+		to_chat(usr, "<span class='adminnotice'>The discord subsystem hasn't initialized yet!</span>")
 		return
 	if(!CONFIG_GET(flag/need_discord_to_join))
-		to_chat(usr, span_adminnotice("The Discord Bunker is deactivated!"))
+		to_chat(usr, "<span class='adminnotice'>The Discord Bunker is deactivated!</span>")
 		return
 
 	GLOB.discord_passthrough |= ckey(ckeytobypass)
@@ -38,13 +38,13 @@
 	set name = "Revoke Discord Bypass"
 	set desc = "Revoke's a ckey's permission to bypass the discord bunker for a given round."
 	if(!SSdbcore.IsConnected())
-		to_chat(usr, span_adminnotice("The Database is not connected!"))
+		to_chat(usr, "<span class='adminnotice'>The Database is not connected!</span>")
 		return
 	if(!SSdiscord)
-		to_chat(usr, span_adminnotice("The discord subsystem hasn't initialized yet!"))
+		to_chat(usr, "<span class='adminnotice'>The discord subsystem hasn't initialized yet!</span>")
 		return
 	if(!CONFIG_GET(flag/need_discord_to_join))
-		to_chat(usr, span_adminnotice("The Discord Bunker is deactivated!"))
+		to_chat(usr, "<span class='adminnotice'>The Discord Bunker is deactivated!</span>")
 		return
 
 	GLOB.discord_passthrough -= ckey(ckeytobypass)

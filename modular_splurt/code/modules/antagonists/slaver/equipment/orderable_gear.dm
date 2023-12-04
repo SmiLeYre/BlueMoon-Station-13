@@ -69,13 +69,6 @@ GLOBAL_LIST_INIT(slaver_gear, subtypesof(/datum/slaver_gear))
 	category = "Slaving"
 	cost = 1000
 
-/datum/slaver_gear/x4
-	name = "X4 charges"
-	description = "X4 plastic explosive charge x 3."
-	build_path = /obj/item/storage/box/syndie_kit/x4
-	category = "Advanced"
-	cost = 2500
-
 /datum/slaver_gear/emag
 	name = "Cryptographic Sequencer"
 	description = "A card capable of instantly hacking open most doors."
@@ -172,7 +165,7 @@ GLOBAL_LIST_INIT(slaver_gear, subtypesof(/datum/slaver_gear))
 /datum/slaver_gear/xray
 	name = "X-Ray Implant"
 	description = "An implant that lets you see through solid walls."
-	build_path = /obj/item/autosurgeon/xray_eyes
+	build_path = /obj/item/autosurgeon/syndicate/xray_eyes
 	category = "Implants"
 	cost = 10000
 
@@ -196,97 +189,6 @@ GLOBAL_LIST_INIT(slaver_gear, subtypesof(/datum/slaver_gear))
 	build_path = /obj/item/antag_spawner/slaver_borg/medical
 	category = "Mech"
 	cost = 50000
-
-/datum/slaver_gear/mech
-	name = "Gygax 'Riot-Control' Exosuit"
-	description = "A lightweight, agile mecha. Weapons sold separately."
-	build_path = /obj/vehicle/sealed/mecha/combat/gygax/bluespace
-	category = "Mech"
-	cost = 50000
-
-/datum/slaver_gear/mech_taser
-	name = "PBT \"Pacifier\" Mounted Taser"
-	description = "Shoots non-lethal stunning electrodes."
-	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/taser
-	category = "Mech"
-	cost = 3000
-
-/datum/slaver_gear/mech_ion
-	name = "MKIV Ion Heavy Cannon"
-	description = "Shoots technology-disabling ion beams. Don't catch yourself in the blast!"
-	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/ion
-	category = "Mech"
-	cost = 3000
-
-/datum/slaver_gear/mech_shotgun
-	name = "LBX AC 10 \"Scattershot\""
-	description = "Shoots a spread of pellets."
-	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot
-	category = "Mech"
-	cost = 3000
-
-/datum/slaver_gear/mech_shotgun_ammo
-	name = "LBX AC 10 \"Scattershot\" Ammo"
-	description = "Buckshot for the LBX AC 10 \"Scattershot\" x 40."
-	build_path = /obj/item/mecha_ammo/scattershot
-	category = "Mech"
-	cost = 1000
-
-/datum/slaver_gear/mech_lmg
-	name = "Ultra AC 2"
-	description = "Shoots a rapid, three shot burst."
-	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg
-	category = "Mech"
-	cost = 3000
-
-/datum/slaver_gear/mech_lmg_ammo
-	name = "Ultra AC 2 Ammo"
-	description = "Rounds for the Ultra AC 2 x 300."
-	build_path = /obj/item/mecha_ammo/lmg
-	category = "Mech"
-	cost = 1000
-
-/datum/slaver_gear/mech_laser
-	name = "CH-LC \"Solaris\" Laser Cannon"
-	description = "Shoots heavy lasers."
-	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy
-	category = "Mech"
-	cost = 3000
-
-/datum/slaver_gear/mech_missiles
-	name = "BRM-6 Missile Rack"
-	description = "Launches low-explosive breaching missiles designed to explode only when striking a sturdy target."
-	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/breaching
-	category = "Mech"
-	cost = 1500
-
-/datum/slaver_gear/mech_missiles_ammo
-	name = "BRM-6 Missile Rack Ammo"
-	description = "Missiles for the BRM-6 missile rack x 6."
-	build_path = /obj/item/mecha_ammo/missiles_br
-	category = "Mech"
-	cost = 500
-
-/datum/slaver_gear/mech_cluster
-	name = "SOB-3 Grenade Launcher"
-	description = "Launches primed clusterbangs. You monster."
-	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/flashbang/clusterbang
-	category = "Mech"
-	cost = 3000
-
-/datum/slaver_gear/mech_cluster_ammo
-	name = "SOB-3 Grenade Launcher Ammo"
-	description = "Grenades for the SOB-3 grenade launcher x 3"
-	build_path = /obj/item/mecha_ammo/clusterbang
-	category = "Mech"
-	cost = 1000
-
-/datum/slaver_gear/mech_repair
-	name = "Exosuit Repair Droid"
-	description = "An automated repair droid for exosuits. Scans for damage and repairs it. Can fix almost all types of external or internal damage."
-	build_path = /obj/item/mecha_parts/mecha_equipment/repair_droid
-	category = "Mech"
-	cost = 1500
 
 /datum/slaver_gear/smg22
 	name = "FTU SMG Kit (rubber)"

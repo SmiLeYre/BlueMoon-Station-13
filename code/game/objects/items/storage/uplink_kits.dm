@@ -68,7 +68,7 @@
 			new /obj/item/card/emag(src) //6 tc
 			new /obj/item/clothing/shoes/sneakers/noslip(src) //2tc
 			new /obj/item/encryptionkey/syndicate(src) //1tc
-			new /obj/item/autosurgeon/anti_drop(src) //Lets just say 7~
+			new /obj/item/autosurgeon/syndicate/anti_drop(src) //Lets just say 7~
 			new /obj/item/clothing/under/syndicate/baseball(src) //3tc
 			new /obj/item/clothing/head/soft/baseball(src) //Lets say 4 tc
 			new /obj/item/reagent_containers/hypospray/medipen/stimulants/baseball(src) //lets say 5tc
@@ -173,8 +173,14 @@
 /obj/item/storage/box/syndie_kit
 	name = "box"
 	desc = "A sleek, sturdy box."
+	icon = 'modular_bluemoon/krashly/icons/obj/box.dmi'
 	icon_state = "syndiebox"
-	illustration = "writing_syndie"
+
+/obj/item/storage/box/inteq_kit
+	name = "InteQ Box"
+	desc = "A sleek, sturdy box."
+	icon = 'modular_bluemoon/krashly/icons/obj/box.dmi'
+	icon_state = "inteqbox"
 
 /obj/item/storage/box/syndie_kit/imp_freedom
 	name = "boxed freedom implant (with injector)"
@@ -202,6 +208,7 @@
 
 /obj/item/storage/box/syndie_kit/imp_macrobomb
 	name = "Macrobomb Implant (with injector)"
+	icon_state = "inteqbox"
 
 /obj/item/storage/box/syndie_kit/imp_macrobomb/PopulateContents()
 	var/obj/item/implanter/O = new(src)
@@ -219,6 +226,7 @@
 
 /obj/item/storage/box/syndie_kit/bioterror
 	name = "bioterror syringe box"
+	icon_state = "inteqbox"
 
 /obj/item/storage/box/syndie_kit/bioterror/PopulateContents()
 	for(var/i in 1 to 7)
@@ -239,17 +247,33 @@
 	new /obj/item/implanter/storage(src)
 
 /obj/item/storage/box/syndie_kit/space
-	name = "boxed space suit and helmet"
+	name = "Boxed Syndicate Space Suit and Helmet"
 
 /obj/item/storage/box/syndie_kit/space/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.can_hold = typecacheof(list(/obj/item/clothing/suit/space/syndicate, /obj/item/clothing/head/helmet/space/syndicate))
+	STR.can_hold = typecacheof(list(/obj/item/clothing/suit/space/syndicate, /obj/item/clothing/head/helmet/space/syndicate, /obj/item/tank/internals/emergency_oxygen/engi/syndi))
 
 /obj/item/storage/box/syndie_kit/space/PopulateContents()
-	new /obj/item/clothing/suit/space/syndicate/black/red(src) // Black and red is so in right now
-	new /obj/item/clothing/head/helmet/space/syndicate/black/red(src)
+	new /obj/item/clothing/suit/space/syndicate(src) // Black and red is so in right now
+	new /obj/item/clothing/head/helmet/space/syndicate(src)
+	new /obj/item/tank/internals/emergency_oxygen/engi/syndi(src)
+
+/obj/item/storage/box/syndie_kit/space/inteq
+	name = "Boxed InteQ Space Suit and Helmet"
+	icon_state = "inteqbox"
+
+/obj/item/storage/box/syndie_kit/space/inteq/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.can_hold = typecacheof(list(/obj/item/clothing/suit/space/syndicate/inteq, /obj/item/clothing/head/helmet/space/syndicate/inteq))
+
+/obj/item/storage/box/syndie_kit/space/inteq/PopulateContents()
+	new /obj/item/clothing/suit/space/syndicate/inteq(src) // Black and red is so in right now
+	new /obj/item/clothing/head/helmet/space/syndicate/inteq(src)
+	new /obj/item/tank/internals/emergency_oxygen/engi/syndi(src)
 
 /obj/item/storage/box/syndie_kit/emp
 	name = "boxed EMP kit"
@@ -264,6 +288,7 @@
 
 /obj/item/storage/box/syndie_kit/chemical
 	name = "boxed chemical kit"
+	icon_state = "inteqbox"
 
 /obj/item/storage/box/syndie_kit/chemical/ComponentInitialize()
 	. = ..()
@@ -288,6 +313,7 @@
 
 /obj/item/storage/box/syndie_kit/nuke
 	name = "box"
+	icon_state = "inteqbox"
 
 /obj/item/storage/box/syndie_kit/nuke/PopulateContents()
 	new /obj/item/screwdriver/nuke(src)
@@ -296,6 +322,7 @@
 
 /obj/item/storage/box/syndie_kit/supermatter
 	name = "box"
+	icon_state = "inteqbox"
 
 /obj/item/storage/box/syndie_kit/supermatter/PopulateContents()
 	new /obj/item/scalpel/supermatter(src)
@@ -305,6 +332,7 @@
 
 /obj/item/storage/box/syndie_kit/tuberculosisgrenade
 	name = "boxed virus grenade kit"
+	icon_state = "inteqbox"
 
 /obj/item/storage/box/syndie_kit/tuberculosisgrenade/PopulateContents()
 	new /obj/item/grenade/chem_grenade/tuberculosis(src)
@@ -317,18 +345,18 @@
 	name = "chameleon kit"
 
 /obj/item/storage/box/syndie_kit/chameleon/PopulateContents()
-	new /obj/item/clothing/under/chameleon/syndicate(src)
-	new /obj/item/clothing/suit/chameleon/syndicate(src)
-	new /obj/item/clothing/gloves/chameleon/insulated/syndicate(src)
-	new /obj/item/clothing/shoes/chameleon/syndicate(src)
-	new /obj/item/clothing/glasses/chameleon/syndicate(src)
-	new /obj/item/clothing/head/chameleon/syndicate(src)
-	new /obj/item/clothing/mask/chameleon/syndicate(src)
-	new /obj/item/storage/backpack/chameleon/syndicate(src)
-	new /obj/item/radio/headset/chameleon/syndicate(src)
-	new /obj/item/stamp/chameleon/syndicate(src)
-	new /obj/item/pda/chameleon/syndicate(src)
-	new /obj/item/clothing/neck/cloak/chameleon/syndicate(src)
+	new /obj/item/clothing/under/chameleon(src)
+	new /obj/item/clothing/suit/chameleon(src)
+	new /obj/item/clothing/gloves/chameleon/insulated(src)
+	new /obj/item/clothing/shoes/chameleon(src)
+	new /obj/item/clothing/glasses/chameleon(src)
+	new /obj/item/clothing/head/chameleon(src)
+	new /obj/item/clothing/mask/chameleon(src)
+	new /obj/item/storage/backpack/chameleon(src)
+	new /obj/item/radio/headset/chameleon(src)
+	new /obj/item/stamp/chameleon(src)
+	new /obj/item/pda/chameleon(src)
+	new /obj/item/clothing/neck/cloak/chameleon(src) //ЭТО ПИЗДЕЦ ОНИ ЗАЧЕМ-ТО СЛОМАЛИ ХАМЕЛЕОНКУ И ОТКАЗЫВАЮТСЯ ЕЁ ЧИНИТЬ
 
 //5*(2*4) = 5*8 = 45, 45 damage if you hit one person with all 5 stars.
 //Not counting the damage it will do while embedded (2*4 = 8, at 15% chance)
@@ -436,22 +464,23 @@
 
 /obj/item/storage/box/syndie_kit/contract_kit
 	name = "contractor kit"
-	desc = "Supplied to Syndicate contractors in active mission areas."
+	desc = "Supplied to InteQ contractors in active mission areas."
+	icon_state = "inteqbox"
 
 /obj/item/storage/box/syndicate/contractor_loadout
 	name = "standard loadout"
-	desc = "Supplied to Syndicate contractors, providing their specialised space suit and chameleon uniform."
-	icon_state = "syndiebox"
-	illustration = "writing_syndie"
+	desc = "Supplied to InteQ contractors, providing their specialised space suit and chameleon uniform."
+	icon = 'modular_bluemoon/krashly/icons/obj/box.dmi'
+	icon_state = "inteqbox"
 
 /obj/item/paper/contractor_guide
 	name = "Contractor Guide"
 
 /obj/item/paper/contractor_guide/Initialize(mapload)
-	info = {"<p>Welcome agent, congratulations on your new position as contractor. On top of your already assigned objectives,
+	default_raw_text = {"<p>Welcome agent, congratulations on your new position as contractor. On top of your already assigned objectives,
 			this kit will provide you contracts to take on for TC payments.</p>
 			<p>Provided within, we give your specialist contractor space suit. It's even more compact, being able to fit into a pocket, and faster than the
-			Syndicate space suit available to you on the uplink. We also provide your chameleon jumpsuit and mask, both of which can be changed
+			InteQ space suit available to you on the uplink. We also provide your chameleon jumpsuit and mask, both of which can be changed
 			to any form you need for the moment. The cigarettes are a special blend - it'll heal your injuries slowly overtime.</p>
 			<p>The three additional items, apart from the tablet and loadout box, have been randomly selected from what we had available. We hope
 			they're useful to you for you mission.</p>
@@ -459,7 +488,7 @@
 			with two Rep being provided each time you complete a contract.</p>
 			<h3>Using the tablet</h3>
 			<ol>
-				<li>Open the Syndicate Contract Uplink program.</li>
+				<li>Open the InteQ Contract Uplink program.</li>
 				<li>Assign yourself.</li>
 				<li>Here, you can accept a contract, and redeem your TC payments from completed contracts.</li>
 				<li>The payment number shown in brackets is the bonus you'll recieve when bringing your target <b>alive</b>. You recieve the
@@ -486,13 +515,12 @@
 	return ..()
 
 /obj/item/storage/box/syndicate/contractor_loadout/PopulateContents()
-	new /obj/item/clothing/head/helmet/space/syndicate/contract(src)
-	new /obj/item/clothing/suit/space/syndicate/contract(src)
-	new /obj/item/clothing/under/chameleon(src)
+	new /obj/item/storage/box/inteq_kit/chameleon_hardsuit(src)
+	new /obj/item/pinpointer/crew/contractor(src)
 	new /obj/item/clothing/mask/chameleon(src)
 	new /obj/item/card/id/syndicate(src)
 	new /obj/item/storage/fancy/cigarettes/cigpack_syndicate(src)
-	new /obj/item/lighter(src)
+	new /obj/item/lighter/contractor(src)
 
 /obj/item/storage/box/syndie_kit/contract_kit/PopulateContents()
 	new /obj/item/modular_computer/tablet/syndicate_contract_uplink/preset/uplink(src)
@@ -564,3 +592,21 @@
 	for(var/i in implants)
 		group.register(i)
 	desc += " The implants are registered to the \"[group.name]\" group."
+
+/obj/item/storage/box/inteq_kit/chameleon_hardsuit
+	name = "Oxygen Deprivation First Aid Kit"
+	desc = "A first aid kit that contains four pills of salbutamol, which is able to counter injuries caused by suffocation. Also contains a health analyzer to determine the health of the patient."
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "firstaid-o2"
+	item_state = "firstaid-o2"
+
+/obj/item/storage/box/syndie_kit/space/inteq/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.can_hold = typecacheof(list(/obj/item/clothing/suit/space/hardsuit/contractor, /obj/item/tank/internals/emergency_oxygen, /obj/item/clothing/mask/gas))
+
+/obj/item/storage/box/inteq_kit/chameleon_hardsuit/PopulateContents()
+	new /obj/item/clothing/suit/space/hardsuit/contractor(src)
+	new /obj/item/clothing/mask/gas/syndicate(src)
+	new /obj/item/tank/internals/emergency_oxygen/engi/syndi(src)

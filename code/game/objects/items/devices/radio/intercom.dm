@@ -13,6 +13,11 @@
 	dog_fashion = null
 	var/unfastened = FALSE
 
+	overlay_speaker_idle = "intercom_s"
+	overlay_speaker_active = "intercom_recieve"
+	overlay_mic_idle = "intercom_m"
+	overlay_mic_active = null
+
 /obj/item/radio/intercom/unscrewed
 	unfastened = TRUE
 
@@ -104,7 +109,7 @@
 			return FALSE
 	if(!src.listening)
 		return FALSE
-	if(freq == FREQ_SYNDICATE)
+	if(freq == FREQ_SYNDICATE || freq == FREQ_INTEQ || freq == FREQ_PIRATE)
 		if(!(src.syndie))
 			return FALSE//Prevents broadcast of messages over devices lacking the encryption
 

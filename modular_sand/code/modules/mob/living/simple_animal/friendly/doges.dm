@@ -22,7 +22,7 @@
 	. = ..()
 	if(.)
 		for(var/obj/item/reagent_containers/food/snacks/burger/burbger in view(1, src))
-			visible_message(span_danger("<b>\The [src]</b> consumes the [burbger]!"))
+			visible_message("<span class='danger'><b>\The [src]</b> consumes the [burbger]!</span>")
 			qdel(burbger)
 			revive(full_heal = 1)
 
@@ -33,7 +33,7 @@
 			qdel(I)
 			if(stat == DEAD)
 				visible_message("<b>\The [src]</b> stands right back up after nibbling the [I]!")
-			else
+			else 
 				visible_message("<b>\The [src]</b> swallows the [I] whole!")
 			revive(full_heal = 1)
 

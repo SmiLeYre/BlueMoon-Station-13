@@ -6,7 +6,7 @@
 // There's probably better way to do this but I am terrible at it --Nopeman
 /mob/living/proc/change_gender()
 	if(stat != CONSCIOUS)
-		to_chat(usr, span_warning("You cannot toggle your gender while unconcious!"))
+		to_chat(usr, "<span class='warning'>You cannot toggle your gender while unconcious!</span>")
 		return
 
 	var/choice = tgui_alert(usr, "Select Gender.", "Gender", list("Both", "Male", "Female", "None", "Toggle Breasts", "Toggle Penis", "Toggle Pussy", "Toggle Balls"))
@@ -50,7 +50,7 @@
 		SetStun(0, ignore_canstun = TRUE)
 
 	if(client && admin)
-		to_chat(src, span_userdanger("An admin has [!admin_frozen ? "un" : ""]frozen you."))
+		to_chat(src, "<span class='userdanger'>An admin has [!admin_frozen ? "un" : ""]frozen you.</span>")
 		log_admin("[key_name(admin)] toggled admin-freeze on [key_name(src)].")
 		message_admins("[key_name_admin(admin)] toggled admin-freeze on [key_name_admin(src)].")
 
@@ -64,16 +64,24 @@
 		SetSleeping(0, ignore_canstun = TRUE)
 
 	if(client && admin)
-		to_chat(src, span_userdanger("An admin has [!admin_sleeping ? "un": ""]slept you."))
+		to_chat(src, "<span class='userdanger'>An admin has [!admin_sleeping ? "un": ""]slept you.</span>")
 		log_admin("[key_name(admin)] toggled admin-sleep on [key_name(src)].")
 		message_admins("[key_name_admin(admin)] toggled admin-sleep on [key_name_admin(src)].")
 
 /mob/living/adjust_mobsize()
 	. = ..()
-	if(mob_size == 0)
-		AddElement(/datum/element/smalltalk)
-	else
-		RemoveElement(/datum/element/smalltalk)
+	switch(mob_size)
+		if(MOB_SIZE_TINY)
+			AddElement(/datum/element/smalltalk)
+		// BLUEMOON ADDITION START
+			RemoveElement(/datum/element/bigtalk)
+		if(MOB_SIZE_LARGE)
+			AddElement(/datum/element/bigtalk)
+			RemoveElement(/datum/element/smalltalk)
+		else
+			RemoveElement(/datum/element/bigtalk)
+		 // BLUEMOON ADDITION END
+			RemoveElement(/datum/element/smalltalk)
 
 /mob/living/do_resist_grab(moving_resist, forced, silent = FALSE)
 	. = ..()

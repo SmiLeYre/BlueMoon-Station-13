@@ -27,7 +27,7 @@
 	cost = 2
 
 /datum/uplink_item/device_tools/phantomthief
-	name = "Syndicate Mask"
+	name = "Adrenaline Mask"
 	desc = "A cheap plastic mask fitted with an adrenaline autoinjector, which can be used by simply tensing your muscles"
 	item = /obj/item/clothing/glasses/phantomthief/syndicate
 	cost = 2
@@ -61,12 +61,20 @@
 
 /datum/uplink_item/device_tools/magboots
 	name = "Blood-Red Magboots"
-	desc = "A pair of magnetic boots with a Syndicate paintjob that assist with freer movement in space or on-station \
+	desc = "A pair of magnetic boots with a reddish paintjob that assist with freer movement in space or on-station \
 			during gravitational generator failures. These reverse-engineered knockoffs of Nanotrasen's \
 			'Advanced Magboots' slow you down in simulated-gravity environments much like the standard issue variety."
 	item = /obj/item/clothing/shoes/magboots/syndie
 	cost = 2
-	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS
+	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE
+
+/datum/uplink_item/device_tools/magboots/advance
+	name = "Advanced Blood-Red Magboots"
+	desc = "A pair of magnetic boots with a Syndicate paintjob that assist with freer movement in space or on-station during gravitational generator failures. \
+	These reverse-engineered knockoffs of Nanotrasen's 'Advanced Magboots' not slow you down in simulated-gravity environments and provide protection against slipping on the space lube."
+	item = /obj/item/clothing/shoes/magboots/syndie/advance
+	cost = 6
+	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE
 
 /datum/uplink_item/device_tools/compressionkit
 	name = "Bluespace Compression Kit"
@@ -125,8 +133,8 @@
 	restricted = TRUE
 
 /datum/uplink_item/device_tools/toolbox
-	name = "Full Syndicate Toolbox"
-	desc = "The Syndicate toolbox is a suspicious black and red. It comes loaded with a full tool set including a \
+	name = "Full Illegal Toolbox"
+	desc = "The Illegal toolbox is a suspicious black and red. It comes loaded with a full tool set including a \
 			multitool and combat gloves that are resistant to shocks and heat."
 	item = /obj/item/storage/toolbox/syndicate
 	cost = 1
@@ -165,7 +173,7 @@
 			operatives in the fight, even while under fire. Don't cross the streams!"
 	item = /obj/item/gun/medbeam
 	cost = 15
-	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS
+	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE
 
 /datum/uplink_item/device_tools/nutcracker
 	name = "Nutcracker"
@@ -200,6 +208,13 @@
 	item = /obj/item/healthanalyzer/rad_laser
 	cost = 3
 
+///datum/uplink_item/device_tools/shadowcloak
+//	name = "Cloaker Belt"
+//	desc = "Makes you invisible for short periods of time. Recharges in darkness."
+//	item = /obj/item/shadowcloak
+//	cost = 10
+//	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
+
 /datum/uplink_item/device_tools/riflery_primer
 	name = "Riflery Primer"
 	desc = "An old book with blood and vodka stains on it. Freshly pulled from a dusty crate in some old warehouse, \
@@ -217,35 +232,37 @@
 	surplus = 90
 
 /datum/uplink_item/device_tools/medkit
-	name = "Syndicate Combat Medic Kit"
+	name = "Сombat Medic Kit"
 	desc = "This first aid kit is a suspicious brown and red. Included is a combat stimulant injector \
 			for rapid healing, a medical night vision HUD for quick identification of injured personnel, \
 			and other supplies helpful for a field medic."
 	item = /obj/item/storage/firstaid/tactical/nukeop
 	cost = 4
-	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS
+	surplus = 75
+	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE
 
 /datum/uplink_item/device_tools/surgerybag
-	name = "Syndicate Surgery Duffel Bag"
-	desc = "The Syndicate surgery duffel bag is a toolkit containing all surgery tools, surgical drapes, \
-			a Syndicate brand MMI, a straitjacket, and a muzzle."
+	name = "Illegal Surgery Duffel Bag"
+	desc = "The Illegal surgery duffel bag is a toolkit containing all surgery tools, surgical drapes, \
+			a Syndicate stolen brand MMI, a straitjacket, and a muzzle."
 	item = /obj/item/storage/backpack/duffelbag/syndie/surgery
 	cost = 3
 
 /datum/uplink_item/device_tools/surgerybag_adv
-	name = "Advanced Syndicate Surgery Duffel Bag"
-	desc = "A Syndicate surgery duffel bag, with a set of upgraded surgery tools to boot."
+	name = "Advanced Illegal Surgery Duffel Bag"
+	desc = "A Syndicate stolen surgery duffel bag, with a set of upgraded surgery tools to boot."
 	item = /obj/item/storage/backpack/duffelbag/syndie/surgery_adv
 	cost = 6
 
 /datum/uplink_item/device_tools/encryptionkey
-	name = "Syndicate Encryption Key"
+	name = "InteQ Encryption Key"
 	desc = "A key that, when inserted into a radio headset, allows you to listen to all station department channels \
-			as well as talk on an encrypted Syndicate channel with other agents that have the same key."
-	item = /obj/item/encryptionkey/syndicate
+			as well as talk on an encrypted InteQ channel with other agents that have the same key, and even communicate with raiders and nukies teams."
+	item = /obj/item/encryptionkey/inteq
 	cost = 2
 	surplus = 75
 	restricted = TRUE
+	purchasable_from = ~(UPLINK_SYNDICATE)
 
 /datum/uplink_item/device_tools/syndietome
 	name = "Syndicate Tome"
@@ -266,27 +283,14 @@
 	cost = 4
 
 /datum/uplink_item/device_tools/potion
-	name = "Syndicate Sentience Potion"
+	name = "Sentience Potion"
 	item = /obj/item/slimepotion/slime/sentience/nuclear
 	desc = "A potion recovered at great risk by undercover Syndicate operatives and then subsequently modified with Syndicate technology. \
 			Using it will make any animal sentient, and bound to serve you, as well as implanting an internal radio for communication and an internal ID card for opening doors."
 	cost = 2
-	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS
+	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE
 	restricted = TRUE
 
-//this seems like a terrible idea to me, so commenting it out for now. -Shell
-/*
-/datum/uplink_item/device_tools/tc_rod
-	name = "Telecrystal Fuel Rod"
-	desc = "This special fuel rod has eight material slots that can be inserted with telecrystals, \
-			once the rod has been fully depleted, you will be able to harvest the extra telecrystals. \
-			Please note: This Rod fissiles much faster than it's regular counterpart, it doesn't take \
-			much to overload the reactor with these..."
-	item = /obj/item/twohanded/required/fuel_rod/material/telecrystal
-	cost = 7
-*/
-
-/* for now
 /datum/uplink_item/device_tools/suspiciousphone
 	name = "Protocol CRAB-17 Phone"
 	desc = "The Protocol CRAB-17 Phone, a phone borrowed from an unknown third party, it can be used to crash the space market, funneling the losses of the crew to your bank account.\
@@ -295,5 +299,13 @@
 	cost = 7
 	restricted = TRUE
 	limited_stock = 1
-*/
+	purchasable_from = ~(UPLINK_SYNDICATE)
 
+///datum/uplink_item/device_tools/syndicate_teleporter					ДОДЕЛАТЬ
+//	name = "Experimental Syndicate Teleporter"					ДОДЕЛАТЬ
+//	desc = "The Syndicate teleporter is a handheld device that teleports the user 4-8 meters forward. \					ДОДЕЛАТЬ
+//			Beware, teleporting into a wall will make the teleporter do a parallel emergency teleport, \					ДОДЕЛАТЬ
+//			but if that emergency teleport fails, it will kill you. \					ДОДЕЛАТЬ
+//			Has 4 charges, recharges, warranty voided if exposed to EMP."					ДОДЕЛАТЬ
+//	item = /obj/item/storage/box/syndie_kit/teleporter					ДОДЕЛАТЬ
+//	cost = 8					ДОДЕЛАТЬ

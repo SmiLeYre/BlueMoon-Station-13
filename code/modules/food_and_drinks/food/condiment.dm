@@ -15,22 +15,22 @@
 	volume = 50
 	//Possible_states has the reagent id as key and a list of, in order, the icon_state, the name and the desc as values. Used in the on_reagent_change(changetype) to change names, descs and sprites.
 	var/list/possible_states = list(
-	 /datum/reagent/consumable/ketchup = list("ketchup", "ketchup bottle", "You feel more American already."),
-	 /datum/reagent/consumable/capsaicin = list("hotsauce", "hotsauce bottle", "You can almost TASTE the stomach ulcers now!"),
-	 /datum/reagent/consumable/enzyme = list("enzyme", "universal enzyme bottle", "Used in cooking various dishes"),
-	 /datum/reagent/consumable/soysauce = list("soysauce", "soy sauce bottle", "A salty soy-based flavoring"),
-	 /datum/reagent/consumable/frostoil = list("coldsauce", "coldsauce bottle", "Leaves the tongue numb in its passage"),
-	 /datum/reagent/consumable/sodiumchloride = list("saltshakersmall", "salt shaker", "Salt. From space oceans, presumably"),
-	 /datum/reagent/consumable/blackpepper = list("peppermillsmall", "pepper mill", "Often used to flavor food or make people sneeze"),
-	 /datum/reagent/consumable/cornoil = list("oliveoil", "corn oil bottle", "A delicious oil used in cooking. Made from corn"),
-	 /datum/reagent/consumable/sugar = list("emptycondiment", "sugar bottle", "Tasty spacey sugar!"),
-	 /datum/reagent/consumable/mayonnaise = list("mayonnaise", "mayonnaise jar", "An oily condiment made from egg yolks."),
-	 /datum/reagent/consumable/bbqsauce = list("bbqsauce", "BBQ sauce", "Hand wipes not included."),
-	 /datum/reagent/consumable/peanut_butter = list("peanutbutter", "peanut butter jar", "A deliciously and sticky spread made from peanuts."))
+	/datum/reagent/consumable/ketchup = list("ketchup", "ketchup bottle", "You feel more American already."),
+	/datum/reagent/consumable/capsaicin = list("hotsauce", "hotsauce bottle", "You can almost TASTE the stomach ulcers now!"),
+	/datum/reagent/consumable/enzyme = list("enzyme", "universal enzyme bottle", "Used in cooking various dishes"),
+	/datum/reagent/consumable/soysauce = list("soysauce", "soy sauce bottle", "A salty soy-based flavoring"),
+	/datum/reagent/consumable/frostoil = list("coldsauce", "coldsauce bottle", "Leaves the tongue numb in its passage"),
+	/datum/reagent/consumable/sodiumchloride = list("saltshakersmall", "salt shaker", "Salt. From space oceans, presumably"),
+	/datum/reagent/consumable/blackpepper = list("peppermillsmall", "pepper mill", "Often used to flavor food or make people sneeze"),
+	/datum/reagent/consumable/cornoil = list("oliveoil", "corn oil bottle", "A delicious oil used in cooking. Made from corn"),
+	/datum/reagent/consumable/sugar = list("emptycondiment", "sugar bottle", "Tasty spacey sugar!"),
+	/datum/reagent/consumable/mayonnaise = list("mayonnaise", "mayonnaise jar", "An oily condiment made from egg yolks."),
+	/datum/reagent/consumable/bbqsauce = list("bbqsauce", "BBQ sauce", "Hand wipes not included."),
+	/datum/reagent/consumable/peanut_butter = list("peanutbutter", "peanut butter jar", "A deliciously and sticky spread made from peanuts."))
 	var/originalname = "condiment" //Can't use initial(name) for this. This stores the name set by condimasters.
 
 /obj/item/reagent_containers/food/condiment/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] is trying to eat the entire [src]! It looks like [user.p_they()] forgot how food works!</span>")
+	user.visible_message("<span class='suicide'>[user] is trying to eat the entire [src]! It looks like [user.ru_who()] forgot how food works!</span>")
 	return OXYLOSS
 
 /obj/item/reagent_containers/food/condiment/attack(mob/M, mob/user, def_zone)
@@ -227,8 +227,6 @@
 	list_reagents = list(/datum/reagent/consumable/mayonnaise = 50)
 	possible_states = list()
 
-
-
 //Food packs. To easily apply deadly toxi... delicious sauces to your food!
 
 /obj/item/reagent_containers/food/condiment/pack
@@ -305,11 +303,6 @@
 	originalname = "hotsauce"
 	list_reagents = list(/datum/reagent/consumable/capsaicin = 10)
 
-/obj/item/reagent_containers/food/condiment/pack/astrotame
-	name = "astrotame pack"
-	originalname = "astrotame"
-	list_reagents = list(/datum/reagent/consumable/astrotame = 5)
-
 //Other Sauce
 /obj/item/reagent_containers/food/condiment/pack/bbqsauce
 	name = "bbq sauce pack"
@@ -320,3 +313,27 @@
 	name = "soy sauce pack"
 	originalname = "soy sauce"
 	list_reagents = list(/datum/reagent/consumable/soysauce = 10)
+
+/obj/item/reagent_containers/food/condiment/pack/creamer
+	name = "coffee creamer pack"
+	desc = "Better not think about what they're making this from."
+	icon_state = "condi_creamer"
+	list_reagents = list(/datum/reagent/consumable/creamer = 10)
+
+/obj/item/reagent_containers/food/condiment/pack/sugar
+	name = "sugar pack"
+	desc = "Tasty spacey sugar!"
+	icon_state = "condi_sugar"
+	list_reagents = list(/datum/reagent/consumable/sugar = 10)
+
+/obj/item/reagent_containers/food/condiment/pack/chocolate
+	name = "chocolate sprinkle pack"
+	desc= "The amount of sugar thats already there wasn't enough for you?"
+	icon_state = "condi_chocolate"
+	list_reagents = list(/datum/reagent/consumable/choccyshake = 10)
+
+/obj/item/reagent_containers/food/condiment/pack/astrotame
+	name = "astrotame pack"
+	originalname = "astrotame"
+	icon_state = "condi_astrotame"
+	list_reagents = list(/datum/reagent/consumable/astrotame = 10)

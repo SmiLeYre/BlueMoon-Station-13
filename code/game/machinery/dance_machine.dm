@@ -55,6 +55,7 @@
 	. = ..()
 	if(obj_flags & EMAGGED)
 		return
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	obj_flags |= EMAGGED
 	queuecost = PRICE_FREE
 	req_one_access = null
@@ -126,8 +127,13 @@
 				stop = 0
 			return TRUE
 		if("add_to_queue")
-			if(QDELETED(src))
+			var/list/available = list()
+			for(var/datum/track/S in SSjukeboxes.songs)
+				available[S.song_name] = S
+			var/selected = params["track"]
+			if(QDELETED(src) || !selected || !istype(available[selected], /datum/track))
 				return
+			selectedtrack = available[selected]
 			if(world.time < queuecooldown)
 				return
 			if(!istype(selectedtrack, /datum/track))
@@ -174,9 +180,9 @@
 			else if(new_volume == "min")
 				volume = 0
 			else if(new_volume == "max")
-				volume = ((obj_flags & EMAGGED) ? 210 : 100)
+				volume = ((obj_flags & EMAGGED) ? 1000 : 100)
 			else if(text2num(new_volume) != null)
-				volume = clamp(0, text2num(new_volume), ((obj_flags & EMAGGED) ? 210 : 100))
+				volume = clamp(0, text2num(new_volume), ((obj_flags & EMAGGED) ? 1000 : 100))
 			var/wherejuke = SSjukeboxes.findjukeboxindex(src)
 			if(wherejuke)
 				SSjukeboxes.updatejukebox(wherejuke, jukefalloff = volume/35)
@@ -193,7 +199,7 @@
 		START_PROCESSING(SSobj, src)
 		stop = world.time + playing.song_length
 		queuedplaylist.Cut(1, 2)
-		say("Now playing: [playing.song_name]")
+		say("Сейчас играет: [playing.song_name]")
 		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, TRUE)
 		return TRUE
 	else
@@ -503,15 +509,15 @@
 				update_icon()
 				playing = null
 				stop = 0
-		else if(volume > 140) // BOOM BOOM BOOM BOOM
-			for(var/mob/living/carbon/C in hearers(round(volume/35), src)) // I WANT YOU IN MY ROOM
-				if(istype(C)) // LETS SPEND THE NIGHT TOGETHER
-					C.adjustEarDamage(max((((volume/35) - sqrt(get_dist(C, src) * 4)) - C.get_ear_protection())*0.1, 0)) // FROM NOW UNTIL FOREVER
-
+//		else if(volume > 750) // BOOM BOOM BOOM BOOM
+//			for(var/mob/living/carbon/C in hearers(round(volume/35), src)) // I WANT YOU IN MY ROOM
+//				if(istype(C)) // LETS SPEND THE NIGHT TOGETHER
+//					C.adjustEarDamage(max((((volume/100) - sqrt(get_dist(C, src) * 2)) - C.get_ear_protection())*0.1, 0)) // FROM NOW UNTIL FOREVER
 
 /obj/machinery/jukebox/disco/process()
 	. = ..()
 	if(active)
-		for(var/mob/living/M in rangers)
-			if(prob(5+(allowed(M)*4)) && CHECK_MOBILITY(M, MOBILITY_MOVE))
+		//for(var/mob/living/M in rangers)
+		for(var/mob/living/M in hearers(2, src))
+			if(prob(5+(allowed(M)*4)) && CHECK_MOBILITY(M, MOBILITY_MOVE) && (!M.client || !(M.client.prefs.cit_toggles & NO_DISCO_DANCE)))
 				dance(M)

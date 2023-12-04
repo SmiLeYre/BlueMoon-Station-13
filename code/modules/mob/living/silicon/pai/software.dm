@@ -78,7 +78,7 @@
 	dat = {"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">
 			<html>
 			<head>
-				<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+				<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
 				<style type=\"text/css\">
 					body { background-image:url('html/paigrid.png'); }
 
@@ -399,10 +399,10 @@
 /mob/living/silicon/pai/proc/CheckDNA(mob/living/carbon/M, mob/living/silicon/pai/P)
 	var/answer = input(M, "[P] is requesting a DNA sample from you. Will you allow it to confirm your identity?", "[P] Check DNA", "No") in list("Yes", "No")
 	if(answer == "Yes")
-		M.visible_message("<span class='notice'>[M] presses [M.p_their()] thumb against [P].</span>",\
+		M.visible_message("<span class='notice'>[M] presses [M.ru_ego()] thumb against [P].</span>",\
 						"<span class='notice'>You press your thumb against [P].</span>",\
 						"<span class='notice'>[P] makes a sharp clicking sound as it extracts DNA material from [M].</span>")
-		if(!M.has_dna())
+		if(!M.has_dna()) // TODO BLUEMOON - сделать флафовое описание поинтереснее для синтетиков?
 			to_chat(P, "<b>No DNA detected</b>")
 			return
 		to_chat(P, "<font color = red><h3>[M]'s UE string : [M.dna.unique_enzymes]</h3></font>")
@@ -411,7 +411,7 @@
 		else
 			to_chat(P, "<b>DNA does not match stored Master DNA.</b>")
 	else
-		to_chat(P, "[M] does not seem like [M.p_theyre()] going to provide a DNA sample willingly.")
+		to_chat(P, "[M] does not seem like [M.ru_who()] going to provide a DNA sample willingly.")
 
 // -=-=-=-= Software =-=-=-=-=- //
 

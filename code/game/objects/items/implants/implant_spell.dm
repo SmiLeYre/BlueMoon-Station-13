@@ -33,7 +33,7 @@
 			to_chat(target, "<span class='boldnotice'>The knowledge of how to cast [spell] slips out from your mind.</span>")
 
 /obj/item/implanter/spell
-	name = "implanter (spell)"
+	name = "Implanter (spell)"
 	imp_type = /obj/item/implant/spell
 
 /obj/item/implantcase/spell

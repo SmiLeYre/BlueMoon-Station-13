@@ -88,6 +88,7 @@
 	item = /obj/item/his_grace
 	cost = 20
 	restricted_roles = list("Chaplain")
+	hijack_only = TRUE //This is a murderbone weapon, as such, it should only be available in those scenarios.
 	surplus = 5 //Very low chance to get it in a surplus crate even without being the chaplain
 
 /datum/uplink_item/role_restricted/clockwork_slab
@@ -141,9 +142,9 @@
 
 /datum/uplink_item/role_restricted/oldtoolboxclean // this is the fourth item relating to toolboxes to be placed into this godforsaken bloated uplink
 	name = "Ancient Toolbox"
-	desc = "An iconic toolbox design notorious with Assistants everywhere, this design was especially made to become more robust the more telecrystals it has inside it! Tools and insulated gloves included."
+	desc = "An iconic toolbox design notorious with Assistants everywhere, this design was especially made to become more robust the more credits it has inside it! Tools and insulated gloves included."
 	item = /obj/item/storage/toolbox/mechanical/old/clean
-	cost = 2 // with eighteen telecrystals you are still weaker than a desword and without any of its defenses -- the scary part comes from collaborating with allies for a fifty eight force toolbox oh fuck
+	cost = 2 // with eighteen credits you are still weaker than a desword and without any of its defenses -- the scary part comes from collaborating with allies for a fifty eight force toolbox oh fuck
 	restricted_roles = list("Assistant")
 	surplus = 0
 
@@ -231,7 +232,7 @@
 /datum/uplink_item/role_restricted/taeclowndo_shoes
 	name = "Tae-clown-do Shoes"
 	desc = "A pair of shoes for the most elite agents of the honkmotherland. They grant the mastery of taeclowndo with some honk-fu moves as long as they're worn."
-	cost = 14
+	cost = 7
 	item = /obj/item/clothing/shoes/clown_shoes/taeclowndo
 	restricted_roles = list("Clown")
 
@@ -256,3 +257,25 @@
 	cost = 11
 	restricted_roles = list("Station Engineer")
 
+/datum/uplink_item/role_restricted/combat_rcd
+	name = "Syndicate RCD"
+	desc = "Special RCD capable to destroy reinforced walls and have 500 matter units instead of 100."
+	cost = 6
+	item = /obj/item/construction/rcd/combat
+	restricted_roles = list("Chief Engineer", "Station Engineer", "Atmospheric Technician")
+
+/datum/uplink_item/role_restricted/gbs
+	name = "GBS virus bottle"
+	desc = "A bottle containing Gravitokinetic Bipotential SADS culture. Also known as GBS, extremely deadly virus."
+	item = /obj/item/reagent_containers/glass/bottle/gbs
+	cost = 12
+	restricted_roles = list("Virologist")
+	surplus = 0
+	hijack_only = TRUE
+
+/datum/uplink_item/role_restricted/energizedfireaxe
+	name = "Energized Fire Axe"
+	desc = "A fire axe with a massive energy charge built into it. Upon striking someone while charged it will throw them backwards while stunning them briefly, but will take some time to charge up again. It is also much sharper than a regular axe and can pierce light armor."
+	item = /obj/item/fireaxe/energized
+	cost = 4
+	restricted_roles = list("Chief Engineer", "Station Engineer", "Atmospheric Technician")

@@ -33,7 +33,7 @@
 		if(M.stat != DEAD)
 			ourmegafauna |= M
 	if(!length(ourmegafauna))
-		visible_message(span_warning("[src] shines brightly, turning into [upgradedname]!"))
+		visible_message("<span class='warning'>[src] shines brightly, turning into [upgradedname]!</span>")
 		name = upgradedname
 		desc = upgradeddesc
 		block_chance = 66
@@ -87,10 +87,10 @@
 	if(ishuman(mover))
 		var/mob/living/carbon/human/H = mover
 		if(cmegalist.len <= megalist.len - 2)
-			H.visible_message(span_warning("[H] pushes through [src]!"), span_notice("You deserve your reward. Reap your hunt."))
+			H.visible_message("<span class='warning'>[H] pushes through [src]!</span>", "<span class='notice'>You deserve your reward. Reap your hunt.</span>")
 			return TRUE
 		else
-			to_chat(H, span_warning("Just touching the door burns your hand... You're not ready."))
+			to_chat(H, "<span class='warning'>Just touching the door burns your hand... You're not ready.</span>")
 			H.apply_damage(damage = 5,damagetype = BURN, def_zone = H.get_bodypart(BODY_ZONE_R_ARM), blocked = FALSE, forced = FALSE)
 
 /area/ruin/powered/wrath

@@ -1,29 +1,35 @@
 
 //////////////////////////////////////////////
 //                                          //
-//           SYNDICATE TRAITORS             //
+//           INTEQ TRAITORS             //
 //                                          //
 //////////////////////////////////////////////
 
 /datum/dynamic_ruleset/roundstart/traitor
-	name = "Traitors"
+	name = "InteQ Traitors"
 	persistent = TRUE
 	antag_flag = ROLE_TRAITOR
 	antag_datum = /datum/antagonist/traitor
 	minimum_required_age = 0
-	protected_roles = list("Prisoner","Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
-	restricted_roles = list("AI", "Cyborg")
+	protected_roles = list("Shaft Miner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
+	restricted_roles = list("AI", "Cyborg") //BLUEMOON CHANGES
 	required_candidates = 1
-	weight = 5
+	weight = 13 //BLUEMOON CHANGES
 	cost = 8 // Avoid raising traitor threat above 10, as it is the default low cost ruleset.
 	scaling_cost = 9
-	requirements = list(101,10,10,10,10,10,10,10,10,10)
-	antag_cap = list("denominator" = 24)
-	var/autotraitor_cooldown = (15 MINUTES)
+	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) // BLUEMOON ADD
+	requirements = list(101,10,10,10,10,10,10,10,10,10) //BLUEMOON CHANGES
+	antag_cap = list("denominator" = 20) //BLUEMOON CHANGES
+	var/autotraitor_cooldown = (30 MINUTES) //BLUEMOON CHANGES
 	COOLDOWN_DECLARE(autotraitor_cooldown_check)
 
 /datum/dynamic_ruleset/roundstart/traitor/pre_execute(population)
 	. = ..()
+	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
+	if(candidates.len <= 0)
+		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+		return FALSE
+	// BLUEMOON ADD END
 	COOLDOWN_START(src, autotraitor_cooldown_check, autotraitor_cooldown)
 	var/num_traitors = get_antag_cap(population) * (scaled_times + 1)
 	for (var/i = 1 to num_traitors)
@@ -48,14 +54,15 @@
 /datum/dynamic_ruleset/roundstart/traitorbro
 	name = "Blood Brothers"
 	antag_flag = ROLE_BROTHER
-	antag_datum = /datum/antagonist/brother/
-	protected_roles = list("Prisoner","Security Officer", "Warden", "Detective", "Head of Security", "Captain")
+	antag_datum = /datum/antagonist/brother
+	protected_roles = list("Shaft Miner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
 	restricted_roles = list("Cyborg", "AI")
 	required_candidates = 2
-	weight = 4
+	weight = 6 //BLUEMOON CHANGES
 	cost = 15
 	scaling_cost = 15
-	requirements = list(101,101,101,101,101,101,101,101,101,101)//disabled for now
+	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
+	requirements = list(101,101,101,101,60,50,40,30,20,10) //BLUEMOON CHANGES
 	antag_cap = 2 // Can pick 3 per team, but rare enough it doesn't matter.
 	var/list/datum/team/brother_team/pre_brother_teams = list()
 	var/const/min_team_size = 2
@@ -97,17 +104,23 @@
 	name = "Changelings"
 	antag_flag = ROLE_CHANGELING
 	antag_datum = /datum/antagonist/changeling
-	protected_roles = list("Prisoner","Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
+	protected_roles = list("Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
 	restricted_roles = list("AI", "Cyborg")
 	required_candidates = 1
-	weight = 3
-	cost = 16
+	weight = 8 //BLUEMOON CHANGES
+	cost = 15 //BLUEMOON CHANGES
+	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) // BLUEMOON ADD
 	scaling_cost = 10
-	requirements = list(101,60,50,40,30,20,15,10,10,10)
-	antag_cap = list("denominator" = 29)
+	requirements = list(101,101,60,50,40,30,20,15,10,10) //BLUEMOON CHANGES
+	antag_cap = 1 //BLUEMOON CHANGES
 
 /datum/dynamic_ruleset/roundstart/changeling/pre_execute(population)
 	. = ..()
+	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
+	if(candidates.len <= 0)
+		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+		return FALSE
+	// BLUEMOON ADD END
 	var/num_changelings = get_antag_cap(population) * (scaled_times + 1)
 	for (var/i = 1 to num_changelings)
 		var/mob/M = pick_n_take(candidates)
@@ -115,6 +128,14 @@
 		M.mind.restricted_roles = restricted_roles
 		M.mind.special_role = ROLE_CHANGELING
 	return TRUE
+
+// BLUEMOON ADD START
+/datum/dynamic_ruleset/roundstart/changeling/trim_candidates()
+	. = ..()
+	for(var/mob/P in candidates)
+		if(HAS_TRAIT(P, TRAIT_ROBOTIC_ORGANISM)) // никаких роботов-генокрадов из далекого космоса
+			candidates -= P
+// BLUEMOON ADD END
 
 /datum/dynamic_ruleset/roundstart/changeling/execute()
 	for(var/datum/mind/changeling in assigned)
@@ -132,18 +153,23 @@
 	name = "Heretics"
 	antag_flag = ROLE_HERETIC
 	antag_datum = /datum/antagonist/heretic
-	protected_roles = list("Prisoner","Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
+	protected_roles = list("Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
 	restricted_roles = list("AI", "Cyborg")
 	required_candidates = 1
-	weight = 3
+	weight = 8 //BLUEMOON CHANGES
 	cost = 15
 	scaling_cost = 9
-	requirements = list(101,101,101,50,40,20,20,15,10,10)//higher because of 'round end'
-	antag_cap = list("denominator" = 24)
-
+	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) // BLUEMOON ADD
+	requirements = list(101,101,101,50,40,20,20,15,10,10) //higher because of 'round end'
+	antag_cap = 1 //BLUEMOON CHANGES
 
 /datum/dynamic_ruleset/roundstart/heretics/pre_execute(population)
 	. = ..()
+	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
+	if(candidates.len <= 0)
+		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+		return FALSE
+	// BLUEMOON ADD END
 	var/num_ecult = get_antag_cap(population) * (scaled_times + 1)
 
 	for (var/i = 1 to num_ecult)
@@ -174,12 +200,13 @@
 	antag_flag = ROLE_WIZARD
 	antag_datum = /datum/antagonist/wizard
 	flags = LONE_RULESET
-	minimum_required_age = 14
+	minimum_required_age = 0 // BLUEMOON EDIT
 	restricted_roles = list("Head of Security", "Captain") // Just to be sure that a wizard getting picked won't ever imply a Captain or HoS not getting drafted
 	required_candidates = 1
-	weight = 3
+	weight = 6 //BLUEMOON CHANGES
 	cost = 20
-	requirements = list(101,101,100,60,40,20,20,20,10,10)//100 because of configt, otherwise equal to nukies
+	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
+	requirements = list(101,101,101,60,40,20,20,20,10,10)  //BLUEMOON CHANGES
 	var/list/roundstart_wizards = list()
 
 /datum/dynamic_ruleset/roundstart/wizard/acceptable(population=0, threat=0)
@@ -193,6 +220,11 @@
 	. = ..()
 	if(GLOB.wizardstart.len == 0)
 		return FALSE
+	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
+	if(candidates.len <= 0)
+		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+		return FALSE
+	// BLUEMOON ADD END
 	var/mob/M = pick_n_take(candidates)
 	if (M)
 		assigned += M.mind
@@ -217,13 +249,14 @@
 	name = "Blood Cult"
 	antag_flag = ROLE_CULTIST
 	antag_datum = /datum/antagonist/cult
-	minimum_required_age = 14
-	restricted_roles = list("AI", "Cyborg", "Prisoner", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Chaplain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
+	minimum_required_age = 0 // BLUEMOON EDIT
+	restricted_roles = list("AI", "Cyborg", "Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Chaplain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
 	required_candidates = 2
-	weight = 2 //lower weight because of easy steamroll potential
+	weight = 3  //BLUEMOON CHANGES
 	cost = 20
 	//requirements = list(100,90,80,60,40,30,10,10,10,10)
-	requirements = list(101,101,101,101,50,40,20,10,10,10)
+	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
+	requirements = list(101,101,101,101,101,60,40,20,15,10) //BLUEMOON CHANGES
 	flags = HIGH_IMPACT_RULESET
 	antag_cap = list("denominator" = 20, "offset" = 1)
 	var/datum/team/cult/main_cult
@@ -236,8 +269,11 @@
 	. = ..()
 	var/cultists = get_antag_cap(population)
 	for(var/cultists_number = 1 to cultists)
+		// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
 		if(candidates.len <= 0)
+			message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 			break
+		// BLUEMOON ADD END
 		var/mob/M = pick_n_take(candidates)
 		assigned += M.mind
 		M.mind.special_role = ROLE_CULTIST
@@ -274,12 +310,13 @@
 	antag_flag = ROLE_OPERATIVE
 	antag_datum = /datum/antagonist/nukeop
 	var/datum/antagonist/antag_leader_datum = /datum/antagonist/nukeop/leader
-	minimum_required_age = 14
+	minimum_required_age = 0 // BLUEMOON EDIT
 	restricted_roles = list("Head of Security", "Captain") // Just to be sure that a nukie getting picked won't ever imply a Captain or HoS not getting drafted
 	required_candidates = 5
-	weight = 3
+	weight = 3 //BLUEMOON CHANGES
 	cost = 20
-	requirements = list(101,101,101,60,40,30,20,15,10,10)
+	requirements = list(101,101,101,101,101,101,60,40,30,10) //BLUEMOON CHANGES
+	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
 	flags = HIGH_IMPACT_RULESET
 	antag_cap = list("denominator" = 18, "offset" = 1)
 	var/datum/team/nuclear/nuke_team
@@ -293,8 +330,11 @@
 	// If ready() did its job, candidates should have 5 or more members in it
 	var/operatives = get_antag_cap(population)
 	for(var/operatives_number = 1 to operatives)
+		// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
 		if(candidates.len <= 0)
+			message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 			break
+		// BLUEMOON ADD END
 		var/mob/M = pick_n_take(candidates)
 		assigned += M.mind
 		M.mind.assigned_role = "Nuclear Operative"
@@ -359,18 +399,19 @@
 	antag_flag = ROLE_REV_HEAD
 	antag_flag_override = ROLE_REV
 	antag_datum = /datum/antagonist/rev/head
-	minimum_required_age = 14
-	restricted_roles = list("AI", "Cyborg", "Prisoner", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Chief Engineer", "Chief Medical Officer", "Research Director")
+	minimum_required_age = 0 // BLUEMOON EDIT
+	restricted_roles = list("AI", "Cyborg", "Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
 	required_candidates = 3
-	weight = 2
-	delay = 7 MINUTES
+	weight = 3 //BLUEMOON CHANGES
+	delay = 5 MINUTES //BLUEMOON CHANGES
 	cost = 20
-	requirements = list(101,101,101,101,50,40,20,10,10,10)
+	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
+	requirements = list(101,101,101,101,101,60,50,40,30,20) //BLUEMOON CHANGES
 	antag_cap = 3
 	flags = HIGH_IMPACT_RULESET
 	blocking_rules = list(/datum/dynamic_ruleset/latejoin/provocateur)
 	// I give up, just there should be enough heads with 35 players...
-	minimum_players = 35
+//	minimum_players = 30 //BLUEMOON REMOVAL
 	/// How much threat should be injected when the revolution wins?
 	var/revs_win_threat_injection = 20
 	var/datum/team/revolution/revolution
@@ -378,10 +419,14 @@
 
 /datum/dynamic_ruleset/roundstart/revs/pre_execute(population)
 	. = ..()
+	message_admins("В связи с особенностями игрового режима и заходом игроков после начала раунда, до выдачи ролей революцинерам осталось <b>[delay/10] минут.</b>")
 	var/max_candidates = get_antag_cap(population)
 	for(var/i = 1 to max_candidates)
+		// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
 		if(candidates.len <= 0)
+			message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 			break
+		// BLUEMOON ADD END
 		var/mob/M = pick_n_take(candidates)
 		assigned += M.mind
 		M.mind.restricted_roles = restricted_roles
@@ -440,12 +485,13 @@
 	name = "Clock Cult"
 	antag_flag = ROLE_SERVANT_OF_RATVAR
 	antag_datum = /datum/antagonist/clockcult
-	minimum_required_age = 14
-	restricted_roles = list("AI", "Cyborg", "Prisoner", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Chaplain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
+	minimum_required_age = 0 // BLUEMOON EDIT
+	restricted_roles = list("AI", "Cyborg", "Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Chaplain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
 	required_candidates = 2
-	weight = 3 //higher weight than blood cult and revs because it's more balanced
+	weight = 3
 	cost = 20
-	requirements = list(101,101,101,101,50,40,20,10,10,10) //slightly higher than nukies
+	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
+	requirements = list(101,101,101,101,101,50,40,30,20,15) //BLUEMOON CHANGES
 	flags = HIGH_IMPACT_RULESET
 	antag_cap = list("denominator" = 20, "offset" = 1)
 	var/datum/team/clockcult/main_clockcult
@@ -458,8 +504,11 @@
 	. = ..()
 	var/cultists = get_antag_cap(population)
 	for(var/cultists_number = 1 to cultists)
+		// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
 		if(candidates.len <= 0)
+			message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 			break
+		// BLUEMOON ADD END
 		var/mob/M = pick_n_take(candidates)
 		assigned += M.mind
 		M.mind.special_role = ROLE_SERVANT_OF_RATVAR
@@ -471,6 +520,7 @@
 	for(var/datum/mind/M in assigned)
 		var/datum/antagonist/clockcult/new_cultist = new antag_datum()
 		new_cultist.clock_team = main_clockcult
+		new_cultist.give_equipment = TRUE
 		SSticker.mode.equip_servant(new_cultist)
 		SSticker.mode.greet_servant(new_cultist)
 		M.add_antag_datum(new_cultist)
@@ -496,21 +546,24 @@
 	persistent = TRUE
 	antag_datum = /datum/antagonist/gang
 	antag_flag = ROLE_FAMILIES
-	protected_roles = list("Prisoner", "Head of Personnel")
-	restricted_roles = list("AI", "Cyborg", "Prisoner", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Chaplain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
-	required_candidates = 9
+	restricted_roles = list("AI", "Cyborg", "Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Chaplain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
+	required_candidates = 3 //BLUEMOON CHANGES
 	weight = 3
 	cost = 15
-	requirements = list(101,101,101,50,30,20,10,10,10,10)
+	required_round_type = list(ROUNDTYPE_DYNAMIC_LIGHT) // BLUEMOON ADD
+	requirements = list(0,101,101,101,40,20,20,10,10,10) //BLUEMOON CHANGES
 	flags = HIGH_IMPACT_RULESET
+	antag_cap = list("denominator" = 5, "offset" = 1) //BLUEMOON ADDITION
 	/// A reference to the handler that is used to run pre_execute(), execute(), etc..
 	var/datum/gang_handler/handler
 
 /datum/dynamic_ruleset/roundstart/families/pre_execute()
 	..()
 	handler = new /datum/gang_handler(candidates,restricted_roles)
+/*BLUEMOON REMOVAL START
 	handler.gangs_to_generate = (antag_cap[indice_pop] / 2)
 	handler.gang_balance_cap = clamp((indice_pop - 3), 2, 5) // gang_balance_cap by indice_pop: (2,2,2,2,2,3,4,5,5,5)
+BLUEMOON REMOVAL END*/
 	return handler.pre_setup_analogue()
 
 /datum/dynamic_ruleset/roundstart/families/execute()
@@ -549,8 +602,8 @@
 	. = ..()
 	message_admins("Starting a round of extended.")
 	log_game("Starting a round of extended.")
-	mode.spend_roundstart_budget(mode.round_start_budget)
-	mode.spend_midround_budget(mode.mid_round_budget)
+//	mode.spend_roundstart_budget(mode.round_start_budget) //BLUEMOON REMOVAL
+//	mode.spend_midround_budget(mode.mid_round_budget) //BLUEMOON REMOVAL
 	mode.threat_log += "[worldtime2text()]: Extended ruleset set threat to 0."
 	return TRUE
 
@@ -606,8 +659,11 @@
 	var/carriers_to_make = max(round(mode.roundstart_pop_ready / players_per_carrier, 1), 1)
 
 	for(var/j = 0, j < carriers_to_make, j++)
-		if (!candidates.len)
+		// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
+		if(candidates.len <= 0)
+			message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 			break
+		// BLUEMOON ADD END
 		var/mob/carrier = pick_n_take(candidates)
 		assigned += carrier.mind
 		carrier.mind.special_role = "Monkey Leader"
@@ -678,3 +734,299 @@
 	var/ramp_up_final = clamp(round(meteorminutes/rampupdelta), 1, 10)
 
 	spawn_meteors(ramp_up_final, wavetype)
+//BLUEMOON ADDITION AHEAD - новые раундстартовые роли из мидраунда
+//////////////////////////////////////////////
+//                                          //
+//            SPACE NINJA                   //
+//                                          //
+//////////////////////////////////////////////
+
+/datum/dynamic_ruleset/roundstart/space_ninja
+	name = "Space Ninja"
+	antag_datum = /datum/antagonist/ninja
+	antag_flag = "shiftstart space ninja"
+	antag_flag_override = ROLE_NINJA
+	flags = LONE_RULESET
+	required_candidates = 1
+	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
+	weight = 6 //BLUEMOON CHANGES
+	cost = 20
+	requirements = list(101,101,101,60,40,20,20,20,10,10)
+	var/list/spawn_locs = list()
+
+/datum/dynamic_ruleset/roundstart/space_ninja/pre_execute()
+	. = ..()
+
+	for(var/obj/effect/landmark/carpspawn/carp_spawn in GLOB.landmarks_list)
+		if(!isturf(carp_spawn.loc))
+			stack_trace("Carp spawn found not on a turf: [carp_spawn.type] on [isnull(carp_spawn.loc) ? "null" : carp_spawn.loc.type]")
+			continue
+		spawn_locs += carp_spawn.loc
+	if(!spawn_locs.len)
+		log_game("No valid spawn locations for [name], found, aborting...")
+		message_admins("No valid spawn locations for [name] found, aborting...")
+		return MAP_ERROR
+
+	return TRUE
+
+/datum/dynamic_ruleset/roundstart/space_ninja/execute()
+	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
+	if(candidates.len <= 0)
+		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+		return FALSE
+	// BLUEMOON ADD END
+	var/mob/candidate = pick_n_take(candidates)
+	assigned += candidate.mind
+
+	for(var/datum/mind/M in assigned)
+
+		var/mob/living/carbon/human/ninja = create_space_ninja(pick(spawn_locs))
+		var/current_key = M.current.key
+		qdel(M.current)
+		ninja.key = current_key
+
+		ninja.mind.add_antag_datum(/datum/antagonist/ninja)
+		return ninja
+
+//////////////////////////////////////////////
+//                                          //
+//           XENOMORPH                      //
+//                                          //
+//////////////////////////////////////////////
+
+/datum/dynamic_ruleset/roundstart/xenomorph
+	name = "Alien Infestation"
+	antag_datum = /datum/antagonist/xeno
+	antag_flag = "shiftstart xenomorph"
+	antag_flag_override = ROLE_ALIEN
+	required_candidates = 2
+	weight = 3
+	cost = 20
+	flags = HIGH_IMPACT_RULESET
+	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
+	requirements = list(101,101,101,60,40,20,20,20,10,10)
+	var/list/vents = list()
+	antag_cap = list("denominator" = 20, "offset" = 1)
+
+/datum/dynamic_ruleset/roundstart/xenomorph/pre_execute()
+	. = ..()
+	// 50% chance of being incremented by one
+	required_candidates += prob(50)
+	for(var/obj/machinery/atmospherics/components/unary/vent_pump/temp_vent in GLOB.machines)
+		if(QDELETED(temp_vent))
+			continue
+		if(is_station_level(temp_vent.loc.z) && !temp_vent.welded)
+			var/datum/pipeline/temp_vent_parent = temp_vent.parents[1]
+			if(!temp_vent_parent)
+				continue // No parent vent
+			// Stops Aliens getting stuck in small networks.
+			// See: Security, Virology
+			if(temp_vent_parent.other_atmosmch.len > 20)
+				vents += temp_vent
+	if(!vents.len)
+		log_game("No valid spawn locations for [name], found, aborting...")
+		message_admins("No valid spawn locations for [name], found, aborting...")
+		return FALSE
+
+/datum/dynamic_ruleset/roundstart/xenomorph/execute()
+	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
+	if(candidates.len <= 0)
+		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+		return FALSE
+	// BLUEMOON ADD END
+	var/mob/candidate = pick_n_take(candidates)
+	assigned += candidate.mind
+
+	var/obj/vent = pick_n_take(vents)
+	for(var/datum/mind/M in assigned)
+
+		var/mob/living/carbon/alien/larva/new_xeno = new(vent.loc)
+		var/current_key = M.current.key
+		qdel(M.current)
+		new_xeno.key = current_key
+
+		return new_xeno
+
+//////////////////////////////////////////////
+//                                          //
+//               BLOODSUCKERS               //
+//                                          //
+//////////////////////////////////////////////
+
+/datum/dynamic_ruleset/roundstart/bloodsuckers
+	name = "Bloodsuckers"
+	antag_flag = "shiftstart bloodsucker"
+	antag_flag_override = ROLE_BLOODSUCKER
+	antag_datum = /datum/antagonist/bloodsucker
+	protected_roles = list("Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
+	restricted_roles = list("AI", "Cyborg")
+	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) // BLUEMOON ADD
+	required_candidates = 1
+	weight = 6
+	cost = 15
+	scaling_cost = 10
+	requirements = list(101,101,60,50,40,30,20,15,10,10)
+	antag_cap = list("denominator" = 39, "offset" = 1)
+
+/datum/dynamic_ruleset/roundstart/bloodsuckers/pre_execute(population)
+	. = ..()
+	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
+	if(candidates.len <= 0)
+		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+		return FALSE
+	// BLUEMOON ADD END
+	var/num_bloodsuckers = get_antag_cap(population) * (scaled_times + 1)
+	for (var/i = 1 to num_bloodsuckers)
+		var/mob/M = pick_n_take(candidates)
+		assigned += M.mind
+		M.mind.restricted_roles = restricted_roles
+		M.mind.special_role = antag_flag
+	return TRUE
+
+/datum/dynamic_ruleset/roundstart/bloodsuckers/trim_candidates()
+	. = ..()
+	for(var/mob/P in candidates)
+		if(HAS_TRAIT(P, TRAIT_BLUEMOON_HEAVY_SUPER)) // никаких сверхтяжёлых кровососов
+			candidates -= P
+		else if(HAS_TRAIT(P, TRAIT_ROBOTIC_ORGANISM)) // никаких роботов-вампиров из далекого космоса
+			candidates -= P
+
+//////////////////////////////////////////////
+//                                          //
+//          SLAVERS OF SYNDICATE            //
+//                                          //
+//////////////////////////////////////////////
+
+/datum/dynamic_ruleset/roundstart/slavers
+	name = "Slavers"
+	antag_flag = ROLE_SLAVER
+	antag_datum = /datum/antagonist/slaver
+	var/datum/antagonist/antag_leader_datum = /datum/antagonist/slaver/leader
+	minimum_required_age = 0
+	restricted_roles = list("Head of Security", "Captain") // Just to be sure that a nukie getting picked won't ever imply a Captain or HoS not getting drafted
+	required_candidates = 4
+	weight = 3
+	cost = 20
+	requirements = list(101,101,101,101,101,101,60,40,30,10)
+	required_round_type = list(ROUNDTYPE_DYNAMIC_LIGHT)
+	flags = LONE_RULESET
+	antag_cap = list("denominator" = 18, "offset" = 1)
+	var/datum/team/slavers/slavers_team
+
+/datum/dynamic_ruleset/roundstart/slavers/ready(population, forced = FALSE)
+	required_candidates = get_antag_cap(population)
+	. = ..()
+
+/datum/dynamic_ruleset/roundstart/slavers/pre_execute(population)
+	. = ..()
+	// If ready() did its job, candidates should have 5 or more members in it
+	var/operatives = get_antag_cap(population)
+	for(var/operatives_number = 1 to operatives)
+		// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
+		if(candidates.len <= 0)
+			message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+			break
+		// BLUEMOON ADD END
+		var/mob/M = pick_n_take(candidates)
+		assigned += M.mind
+		M.mind.assigned_role = "Slaver"
+		M.mind.special_role = "Slaver"
+	return TRUE
+
+/datum/dynamic_ruleset/roundstart/slavers/execute()
+	var/leader = TRUE
+	for(var/datum/mind/M in assigned)
+		if (leader)
+			leader = FALSE
+			var/datum/antagonist/slaver/leader/slavers_op = M.add_antag_datum(antag_leader_datum)
+			slavers_team = slavers_op.slaver_team
+		else
+			var/datum/antagonist/slaver/new_op = new antag_datum()
+			M.add_antag_datum(new_op)
+	return TRUE
+
+//////////////////////////////////////////////
+//                                          //
+//               OVERTHROWN                 //
+//                                          //
+//////////////////////////////////////////////
+
+
+/* TODO
+/datum/dynamic_ruleset/roundstart/overthrown
+	name = "Overthrown"
+	antag_flag = ROLE_OVERTHROW
+	antag_datum = /datum/antagonist/overthrow
+	minimum_required_age = 0
+	restricted_roles = list("AI", "Cyborg", "Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
+	required_candidates = 1
+	weight = 38888
+	delay = 5 SECONDS //BLUEMOON CHANGES
+	cost = 0
+	requirements = list(1,101,101,101,101,60,50,40,30,20) //BLUEMOON CHANGES
+	antag_cap = 3
+	flags = HIGH_IMPACT_RULESET
+
+/datum/dynamic_ruleset/roundstart/overthrown/pre_execute(population)
+	. = ..()
+	message_admins("В связи с особенностями игрового режима и заходом игроков после начала раунда, до выдачи ролей путчистов осталось <b>[delay/10] минут.</b>")
+
+
+	var/active_players = 0
+	for(var/mob/dead/new_player/player in GLOB.player_list)
+		if(player.client)
+			active_players++
+
+//	var/max_candidates = required_enemies + round(active_players*0.05) // At 100 players, it'd be 2 + 5 = 7 teams existing.
+	var/max_candidates = 1
+
+	for (var/i in 1 to max_candidates)
+		if(candidates.len <= 0)
+			break
+		var/mob/M = pick_n_take(candidates)
+		assigned += M.mind
+		M.mind.restricted_roles = restricted_roles
+		M.mind.special_role = antag_flag
+	return TRUE
+
+/// Give your candidates or assignees equipment and antag datum here.
+/datum/dynamic_ruleset/oundstart/overthrown/execute()
+	for(var/datum/mind/M in assigned)
+		var/datum/antagonist/overthrow/O = M.add_antag_datum(/datum/antagonist/overthrow) // create_team called on_gain will create the team
+		O.equip_initial_overthrow_agent()
+	return TRUE
+
+*/
+
+/* - TODO (for someone)
+//////////////////////////////////////////////
+//                                          //
+//           ABDUCTORS                      //
+//                                          //
+//////////////////////////////////////////////
+#define ABDUCTOR_MAX_TEAMS 4
+
+/datum/dynamic_ruleset/roundstart/abductors
+	name = "Abductors"
+	antag_flag = "Abductor"
+	antag_flag_override = ROLE_ABDUCTOR
+	required_candidates = 2
+	weight = 3
+	cost = 2
+	requirements = list(0,101,101,60,40,20,20,20,10,10)
+	var/datum/team/abductor_team/new_team
+
+/datum/dynamic_ruleset/roundstart/abductors/execute(mob/new_character, index)
+	if (index == 1) // Our first guy is the scientist.  We also initialize the team here as well since this should only happen once per pair of abductors.
+		new_team = new
+		if(new_team.team_number > ABDUCTOR_MAX_TEAMS)
+			return MAP_ERROR
+		var/datum/antagonist/abductor/scientist/new_role = new
+		new_character.mind.add_antag_datum(new_role, new_team)
+	else // Our second guy is the agent, team is already created, don't need to make another one.
+		var/datum/antagonist/abductor/agent/new_role = new
+		new_character.mind.add_antag_datum(new_role, new_team)
+
+#undef ABDUCTOR_MAX_TEAMS
+*/
+//BLUEMOON ADDITION END

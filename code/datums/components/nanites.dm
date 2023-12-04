@@ -310,7 +310,7 @@
 					var/turf/T = host_mob.drop_location()
 					T.add_vomit_floor(host_mob, VOMIT_NANITE, 0)
 		if((NANITE_EXCESS_BURST + 0.1) to INFINITY) //Way too many nanites, they just leave through the closest exit before they harm/poison the host
-			host_mob.visible_message("<span class='warning'>A torrent of metallic grey slurry violently bursts out of [host_mob]'s face and floods out of [host_mob.p_their()] skin!</span>",
+			host_mob.visible_message("<span class='warning'>A torrent of metallic grey slurry violently bursts out of [host_mob]'s face and floods out of [host_mob.ru_ego()] skin!</span>",
 								"<span class='userdanger'>A torrent of metallic grey slurry violently bursts out of your eyes, ears, and mouth, and floods out of your skin!</span>");
 
 			host_mob.blind_eyes(15) //nanites coming out of your eyes

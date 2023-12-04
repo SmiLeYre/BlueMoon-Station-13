@@ -1,4 +1,5 @@
-#define RANDOM_EVENT_ADMIN_INTERVENTION_TIME 30
+
+#define RANDOM_EVENT_ADMIN_INTERVENTION_TIME 180
 
 //this datum is used by the events controller to dictate how it selects events
 /datum/round_event_control
@@ -7,12 +8,14 @@
 	var/description					//The description of the event
 	var/typepath					//The typepath of the event datum /datum/round_event
 
-	var/weight = 10					//The weight this event has in the random-selection process.
+	var/weight = 5					//The weight this event has in the random-selection process.
 									//Higher weights are more likely to be picked.
 									//10 is the default weight. 20 is twice more likely; 5 is half as likely as this default.
 									//0 here does NOT disable the event, it just makes it extremely unlikely
 
-	var/earliest_start = 20 MINUTES	//The earliest world.time that an event can start (round-duration in deciseconds) default: 20 mins
+
+	var/earliest_start = 30 MINUTES	//The earliest world.time that an event can start (round-duration in deciseconds) default: 20 mins
+
 	var/min_players = 0				//The minimum amount of alive, non-AFK human players on server required to start the event.
 
 	var/occurrences = 0				//How many times this event has occured
@@ -34,10 +37,20 @@
 	/// Whether or not dynamic should hijack this event
 	var/dynamic_should_hijack = FALSE
 
+	/// Datum that will handle admin options for forcing the event.
+	/// If there are no options, just leave it as an empty list.
+	var/list/datum/event_admin_setup/admin_setup = list()
+
 /datum/round_event_control/New()
 	if(config && !wizardevent) // Magic is unaffected by configs
 		earliest_start = CEILING(earliest_start * CONFIG_GET(number/events_min_time_mul), 1)
 		min_players = CEILING(min_players * CONFIG_GET(number/events_min_players_mul), 1)
+	if(!length(admin_setup))
+		return
+	var/list/admin_setup_types = admin_setup.Copy()
+	admin_setup.Cut()
+	for(var/admin_setup_type in admin_setup_types)
+		admin_setup += new admin_setup_type(src)
 
 /datum/round_event_control/wizard
 	category = EVENT_CATEGORY_WIZARD
@@ -118,6 +131,10 @@ Runs the event
 */
 /datum/round_event_control/proc/runEvent(random = FALSE, announce_chance_override = null, admin_forced = FALSE)
 	var/datum/round_event/E = new typepath()
+	if(admin_forced && length(admin_setup))
+		//not part of the signal because it's conditional and relies on usr heavily
+		for(var/datum/event_admin_setup/admin_setup_datum in admin_setup)
+			admin_setup_datum.apply_to_event(E)
 	E.current_players = get_active_player_count(alive_check = 1, afk_check = 1, human_check = 1)
 	E.control = src
 	SSblackbox.record_feedback("tally", "event_ran", 1, "[E]")

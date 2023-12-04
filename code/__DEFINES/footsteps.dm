@@ -36,6 +36,8 @@
 #define FOOTSTEP_MOB_HUMAN 5 //Warning: Only works on /mob/living/carbon/human
 #define FOOTSTEP_MOB_SLIME 6
 #define FOOTSTEP_MOB_CRAWL 7
+#define FOOTSTEP_OBJ_MACHINE 8
+#define FOOTSTEP_OBJ_ROBOT 9
 
 /*
 

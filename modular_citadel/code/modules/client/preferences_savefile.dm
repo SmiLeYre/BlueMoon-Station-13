@@ -31,6 +31,7 @@
 	erppref = sanitize_inlist(S["erp_pref"], GLOB.lewd_prefs_choices, "Ask")
 	nonconpref = sanitize_inlist(S["noncon_pref"], GLOB.lewd_prefs_choices, "Ask")
 	vorepref = sanitize_inlist(S["vore_pref"], GLOB.lewd_prefs_choices, "Ask")
+	mobsexpref = sanitize_inlist(S["mobsex_pref"], GLOB.lewd_prefs_choices, "No") //Hentai
 	unholypref = sanitize_inlist(S["unholypref"], GLOB.lewd_prefs_choices, "Ask") //I AM MENTAL I AM MAD I AM INSANE
 	extremepref = sanitize_inlist(S["extreme_pref"], GLOB.lewd_prefs_choices, "No") //god has forsaken me
 	extremeharm = sanitize_inlist(S["extreme_harm"], (GLOB.lewd_prefs_choices - "Ask"), "No") //hacky for not saving "Ask"
@@ -68,12 +69,14 @@
 	//flavor text
 	WRITE_FILE(S["feature_flavor_text"], features["flavor_text"])
 	WRITE_FILE(S["feature_naked_flavor_text"], features["naked_flavor_text"]) //SPLURT edit
+	WRITE_FILE(S["feature_custom_species_lore"], features["custom_species_lore"])
 	WRITE_FILE(S["feature_silicon_flavor_text"], features["silicon_flavor_text"])
 
 	//sandstorm stuff
 	WRITE_FILE(S["erp_pref"], erppref)
 	WRITE_FILE(S["noncon_pref"], nonconpref)
 	WRITE_FILE(S["vore_pref"], vorepref)
+	WRITE_FILE(S["mobsex_pref"], mobsexpref) //Hentai
 	WRITE_FILE(S["unholypref"], unholypref)
 	WRITE_FILE(S["extreme_pref"], extremepref)
 	WRITE_FILE(S["extreme_harm"], extremeharm)

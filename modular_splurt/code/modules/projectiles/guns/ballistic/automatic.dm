@@ -3,7 +3,7 @@
 	mag_type = /obj/item/ammo_box/magazine/sniper_rounds/soporific
 
 /obj/item/gun/ballistic/automatic/wt550/wtrubber
-	name = "security semi-auto PDW (rubber)"
+	name = "WT-550 PDW (rubber)"
 	desc = "An outdated personal defence weapon. Uses 4.6x30mm rounds and is designated the WT-550 Semi-Automatic SMG. This one seems to only fire rubber bullets."
 	mag_type = /obj/item/ammo_box/magazine/wt550m9/wtrubber
 
@@ -35,11 +35,11 @@
 /obj/item/gun/ballistic/automatic/m2a1/examine(mob/user)
 	. = ..()
 	if(cover_open && magazine)
-		. += span_notice("It seems like you could use an <b>empty hand</b> to remove the magazine.")
+		. += "<span class='notice'>It seems like you could use an <b>empty hand</b> to remove the magazine.</span>"
 
 /obj/item/gun/ballistic/automatic/m2a1/attack_self(mob/user)
 	cover_open = !cover_open
-	to_chat(user, span_notice("You [cover_open ? "open" : "close"] [src]'s cover."))
+	to_chat(user, "<span class='notice'>You [cover_open ? "open" : "close"] [src]'s cover.</span>")
 	if(cover_open)
 		playsound(user, 'sound/weapons/sawopen.ogg', 60, 1)
 	else
@@ -52,7 +52,7 @@
 
 /obj/item/gun/ballistic/automatic/m2a1/afterattack(atom/target as mob|obj|turf, mob/living/user as mob|obj, flag, params)
 	if(cover_open)
-		to_chat(user, span_warning("[src]'s cover is open! Close it before firing!"))
+		to_chat(user, "<span class='warning'>[src]'s cover is open! Close it before firing!</span>")
 	else
 		. = ..()
 		update_icon()
@@ -70,12 +70,12 @@
 		user.put_in_hands(magazine)
 		magazine = null
 		update_icon()
-		to_chat(user, span_notice("You remove the magazine from [src]."))
+		to_chat(user, "<span class='notice'>You remove the magazine from [src].</span>")
 		playsound(user, 'sound/weapons/magout.ogg', 60, 1)
 
 /obj/item/gun/ballistic/automatic/m2a1/attackby(obj/item/A, mob/user, params)
 	if(!cover_open && istype(A, mag_type))
-		to_chat(user, span_warning("[src]'s cover is closed! You can't insert a new mag."))
+		to_chat(user, "<span class='warning'>[src]'s cover is closed! You can't insert a new mag.</span>")
 		return
 	..()
 
@@ -108,7 +108,7 @@
 	if(auto_eject && magazine && magazine.stored_ammo && !magazine.stored_ammo.len && !chambered)
 		magazine.dropped()
 		user.visible_message(
-			span_warning("[magazine] flies out and clatters on the floor!"),
+			"<span class='warning'>[magazine] flies out and clatters on the floor!</span>",
 			to_chat("[magazine] flies out and clatters on the floor!")
 		)
 		if(auto_eject_sound)
@@ -262,11 +262,3 @@
 
 /obj/item/gun/ballistic/automatic/smg22/nomag
 	spawnwithmagazine = FALSE
-
-/datum/supply_pack/security/armory/m46a1
-	name = "Pink M46A1 Full-Auto Rifle Crate"
-	desc = "Contains two high-powered, fully automatic rifles rifles chambered in .5x43mm. Requires Armory access to open."
-	cost = 25000
-	contains = list(/obj/item/gun/ballistic/automatic/m46a1,
-					/obj/item/gun/ballistic/automatic/m46a1)
-	crate_name = "m46a1 rifles crate"

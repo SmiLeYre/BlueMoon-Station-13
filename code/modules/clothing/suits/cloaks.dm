@@ -18,13 +18,18 @@
 	flags_inv = HIDEHAIR|HIDEEARS
 
 /obj/item/clothing/neck/cloak/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is strangling [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is strangling себя with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return(OXYLOSS)
 
 /obj/item/clothing/neck/cloak/hos
 	name = "head of security's cloak"
 	desc = "Worn by Securistan, ruling the station with an iron fist."
 	icon_state = "hoscloak"
+
+/obj/item/clothing/neck/cloak/security
+	name = "security officer's cloak"
+	desc = "Worn by security officers."
+	icon_state = "seccloak"
 
 /obj/item/clothing/neck/cloak/qm
 	name = "quartermaster's cloak"
@@ -34,21 +39,84 @@
 	name = "chief medical officer's cloak"
 	desc = "Worn by Meditopia, the valiant men and women keeping pestilence at bay."
 	icon_state = "cmocloak"
+	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/neck/cloak/ce
-	name = "chief engineer's cloak"
+	name = "Chief Engineer's Cloak"
 	desc = "Worn by Engitopia, wielders of an unlimited power."
 	icon_state = "cecloak"
+	unique_reskin = list(
+		"Basic White" = list(
+			RESKIN_ICON_STATE = "cecloak",
+			RESKIN_ITEM_STATE = "cecloak"
+		),
+		"Not Basic Green" = list(
+			RESKIN_ICON_STATE = "cecloak_green",
+			RESKIN_ITEM_STATE = "cecloak_green"
+		),
+	)
+	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/neck/cloak/rd
 	name = "research director's cloak"
 	desc = "Worn by Sciencia, thaumaturges and researchers of the universe."
 	icon_state = "rdcloak"
+	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/neck/cloak/cap
 	name = "captain's cloak"
 	desc = "Worn by the commander of Space Station 13."
 	icon_state = "capcloak"
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+
+/obj/item/clothing/neck/cloak/cap/Initialize(mapload)
+	. = ..()
+	desc = "Worn by the supreme leader of [station_name()]."
+
+/obj/item/clothing/neck/cloak/nanotrasen_representative
+	name = "NanoTrasen Representative's cloak"
+	desc = "Worn by a NanoTrasen representative. A faint whisper of denunciation can be heard from under the cloak."
+	icon_state = "ntrcloak"
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+
+/obj/item/clothing/neck/cloak/blueshield
+	name = "Blueshield's cloak"
+	desc = "Worn by a Blueshield officer, that faithfully defends its goals."
+	icon_state = "blueshieldcloak"
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+
+/obj/item/clothing/neck/cloak/healer
+	name = "healer's cloak"
+	desc = "Worn by the best and most skilled healers, the handlers of hyposprays, pills and first-aid kits."
+	icon_state = "healercloak"
+
+/obj/item/clothing/neck/cloak/bishop
+	name = "bishop's cloak"
+	desc = "Become the space pope."
+	icon_state = "bishopcloak"
+	item_state = "bishopcloak"
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+
+/obj/item/clothing/neck/cloak/bishopblack
+	name = "black bishop cloak"
+	desc = "Become the space pope."
+	icon_state = "blackbishopcloak"
+	item_state = "blackbishopcloak"
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+
+/obj/item/clothing/neck/cloak/syndiecap
+	name = "syndicate officer's cloak"
+	desc = "A cloak that inspires fear among Nanotrasen employees, worn by the greatest Syndicate officer."
+	icon_state = "syndcapt"
+	item_state = "syndcapt"
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+
+/obj/item/clothing/neck/cloak/syndieadm
+	name = "syndicate admiral's cloak"
+	desc = "A deep red cloak, worn by only the greatest of the Syndicate. If you are looking at this, you probably won't be looking at it for much longer."
+	icon_state = "syndadmiral"
+	item_state = "syndadmiral"
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/neck/cloak/hop
 	name = "head of personnel's cloak"
@@ -62,7 +130,7 @@
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/spear, /obj/item/spear/bonespear, /obj/item/organ/regenerative_core/legion, /obj/item/kitchen/knife/combat/bone, /obj/item/kitchen/knife/combat/survival)
 	armor = list(MELEE = 35, BULLET = 10, LASER = 25, ENERGY = 10, BOMB = 25, BIO = 0, RAD = 0, FIRE = 60, ACID = 60) //a fair alternative to bone armor, requiring alternative materials and gaining a suit slot
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath
-	body_parts_covered = CHEST|ARMS|LEGS
+	body_parts_covered = CHEST|ARMS|GROIN|LEGS
 
 /obj/item/clothing/head/hooded/cloakhood/goliath
 	name = "goliath cloak hood"
@@ -74,6 +142,7 @@
 /obj/item/clothing/suit/hooded/cloak/drake
 	name = "drake armour"
 	icon_state = "dragon"
+	tail_state = "syndicate-winter"
 	desc = "A suit of armour fashioned from the remains of an ash drake."
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/resonator, /obj/item/mining_scanner, /obj/item/t_scanner/adv_mining_scanner, /obj/item/gun/energy/kinetic_accelerator, /obj/item/pickaxe, /obj/item/spear)
 	armor = list(MELEE = 70, BULLET = 20, LASER = 35, ENERGY = 25, BOMB = 25, BIO = 0, RAD = 0, FIRE = 100, ACID = 100)
@@ -82,6 +151,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF | GOLIATH_RESISTANCE
+	flags_inv = HIDETAUR
 
 /obj/item/clothing/head/hooded/cloakhood/drake
 	name = "drake helm"
@@ -130,3 +200,34 @@
 /obj/item/clothing/neck/cloak/alt/polychromic/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/polychromic, poly_colors, 3)
+
+/obj/item/clothing/neck/cloak/ninjascarf
+	name = "Ninja Scarf"
+	desc = "A stealthy, dark scarf."
+	icon_state = "ninja_scarf_classic"
+	item_state = "cloak"
+	strip_delay = 12
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+
+/obj/item/clothing/neck/cloak/ninjascarf_new
+	name = "Newn Ninja Scarf"
+	desc = "A stealthy, more fashion dark scarf."
+	icon_state = "ninja_scarf_new"
+	item_state = "cloak"
+	strip_delay = 12
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+
+/obj/item/clothing/neck/cloak/regal_cap
+	name = "Regal Captain Cloak"
+	desc = "A fancy shawl for nobility, made from high quality materials."
+	icon_state = "royalcapcloak"
+
+/obj/item/clothing/neck/cloak/regal_hos
+	name = "Regal HOS Cloak"
+	desc = "A fancy shawl for nobility, made from high quality materials."
+	icon_state = "royalhoscloak"
+
+/obj/item/clothing/neck/cloak/regal_rd
+	name = "Regal RD Cloak"
+	desc = "A fancy shawl for nobility, made from high quality materials."
+	icon_state = "royalrdcloak"

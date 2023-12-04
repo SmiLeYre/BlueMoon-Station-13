@@ -276,3 +276,9 @@
 
 /turf/open/floor/plating/rust/rust_heretic_act()
 	return
+
+
+/turf/open/floor/plating/elevatorshaft
+	name = "elevator shaft"
+	icon_state = "elevatorshaft"
+	base_icon_state = "elevatorshaft"

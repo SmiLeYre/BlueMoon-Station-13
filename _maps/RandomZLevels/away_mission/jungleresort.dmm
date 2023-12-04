@@ -4,7 +4,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "af" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
@@ -38,14 +38,14 @@
 "ar" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /mob/living/carbon/monkey,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "as" = (
 /obj/structure/flora/junglebush/b,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "at" = (
 /obj/machinery/jukebox,
@@ -69,14 +69,14 @@
 "aG" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/rock,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "aI" = (
 /obj/structure/flora/tree/jungle,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "aL" = (
 /obj/structure/stone_tile/slab/cracked,
@@ -84,7 +84,7 @@
 /area/awaymission/jungleresort)
 "aP" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "aY" = (
 /obj/machinery/vending/autodrobe,
@@ -99,12 +99,12 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "bn" = (
 /obj/structure/flora/tree/jungle/small,
 /obj/structure/flora/rock/jungle,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "bp" = (
 /obj/structure/flora/tree/jungle,
@@ -113,7 +113,7 @@
 "br" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/rock/pile/largejungle,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "bv" = (
 /obj/structure/stone_tile/surrounding_tile,
@@ -134,7 +134,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "by" = (
 /obj/item/kirbyplants/random,
@@ -173,7 +173,7 @@
 /area/awaymission/jungleresort)
 "cn" = (
 /obj/structure/flora/junglebush/c,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "cw" = (
 /obj/structure/flora/rock/pile,
@@ -188,7 +188,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "cH" = (
 /obj/structure/flora/grass/jungle,
@@ -199,7 +199,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "cK" = (
 /obj/structure/closet/crate,
@@ -215,7 +215,7 @@
 "cV" = (
 /obj/structure/flora/junglebush/c,
 /obj/structure/flora/grass/jungle/b,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "cX" = (
 /obj/structure/flora/rock,
@@ -224,7 +224,7 @@
 "cY" = (
 /obj/structure/flora/grass/jungle/b,
 /mob/living/simple_animal/hostile/gorilla/jungle,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "dm" = (
 /obj/structure/table/wood,
@@ -263,7 +263,7 @@
 "dY" = (
 /obj/structure/flora/junglebush/large,
 /obj/structure/flora/rock/jungle,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "ef" = (
 /obj/structure/window/reinforced{
@@ -294,7 +294,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "eD" = (
 /obj/structure/table/wood,
@@ -321,7 +321,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "eK" = (
 /obj/machinery/washing_machine,
@@ -363,6 +363,7 @@
 /area/awaymission/jungleresort)
 "fm" = (
 /obj/structure/reagent_dispensers/keg/mead,
+/obj/structure/reagent_dispensers/beerkeg,
 /turf/open/floor/wood,
 /area/awaymission/jungleresort)
 "fy" = (
@@ -377,12 +378,12 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "fH" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/tree/jungle/small,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "fW" = (
 /obj/structure/chair/comfy/brown{
@@ -395,7 +396,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "gj" = (
 /obj/structure/chair/wood{
@@ -433,7 +434,7 @@
 "gU" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/machinery/light,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "gV" = (
 /obj/structure/table/wood,
@@ -468,38 +469,38 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "hl" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "hp" = (
 /obj/structure/flora/tree/jungle/small,
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "ht" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "hv" = (
 /obj/structure/flora/tree/jungle,
 /obj/structure/flora/ausbushes/fullgrass,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "hw" = (
 /obj/structure/flora/junglebush,
 /obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "hy" = (
 /obj/machinery/light{
@@ -512,12 +513,12 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "hH" = (
 /obj/structure/flora/rock/jungle,
 /obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "hN" = (
 /obj/structure/flora/ausbushes/fullgrass,
@@ -546,14 +547,14 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "ie" = (
 /obj/structure/flora/junglebush,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "ih" = (
 /obj/structure/stone_tile/surrounding/cracked,
@@ -581,7 +582,7 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/rock/pile,
 /obj/structure/flora/ausbushes/stalkybush,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "iv" = (
 /obj/structure/stone_tile/surrounding/cracked{
@@ -629,7 +630,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "iZ" = (
 /obj/item/storage/toolbox/artistic,
@@ -645,21 +646,21 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "jh" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "jj" = (
 /obj/structure/flora/junglebush,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "js" = (
 /obj/structure/flora/ausbushes/ppflowers,
@@ -669,7 +670,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "jw" = (
 /obj/structure/stone_tile/surrounding/cracked,
@@ -681,14 +682,14 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "jB" = (
 /obj/structure/flora/junglebush/large,
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "jD" = (
 /obj/structure/stone_tile/surrounding_tile/cracked,
@@ -703,23 +704,23 @@
 "jF" = (
 /obj/structure/flora/tree/jungle,
 /obj/machinery/light,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "jH" = (
 /obj/structure/flora/junglebush/b,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "jJ" = (
 /obj/structure/flora/grass/jungle,
 /obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "jL" = (
 /obj/structure/flora/ausbushes/brflowers,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "jO" = (
 /obj/structure/stone_tile/cracked{
@@ -733,12 +734,12 @@
 "jQ" = (
 /obj/structure/flora/junglebush/c,
 /obj/machinery/light,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "kf" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/junglebush/c,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "kn" = (
 /obj/structure/reagent_dispensers/beerkeg,
@@ -751,7 +752,7 @@
 /area/awaymission/jungleresort)
 "kr" = (
 /obj/structure/flora/junglebush/large,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "kw" = (
 /obj/structure/flora/junglebush,
@@ -761,7 +762,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "kz" = (
 /obj/structure/table/wood,
@@ -778,7 +779,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "kJ" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -792,7 +793,7 @@
 /turf/closed/wall/rust,
 /area/awaymission/jungleresort)
 "le" = (
-/obj/structure/chair/sofa/corner,
+/obj/structure/chair/sofa/corner/brown,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -803,7 +804,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "ll" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -816,10 +817,10 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "lB" = (
-/obj/structure/chair/sofa/right{
+/obj/structure/chair/sofa/right/brown{
 	dir = 1
 	},
 /turf/open/floor/wood,
@@ -827,14 +828,14 @@
 "lF" = (
 /obj/structure/flora/junglebush,
 /mob/living/simple_animal/hostile/gorilla/jungle,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "lJ" = (
 /obj/structure/flora/junglebush/c,
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "lS" = (
 /obj/structure/toilet/secret/low_loot{
@@ -864,7 +865,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "ml" = (
 /obj/structure/table/wood,
@@ -874,7 +875,7 @@
 "mt" = (
 /obj/structure/flora/junglebush,
 /obj/machinery/light,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "mu" = (
 /obj/machinery/door/window{
@@ -909,11 +910,11 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "mY" = (
 /obj/structure/flora/rock,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "mZ" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -922,19 +923,19 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "ne" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "nm" = (
 /obj/structure/flora/junglebush/c,
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "no" = (
 /obj/item/chair,
@@ -945,7 +946,7 @@
 "np" = (
 /obj/structure/flora/junglebush/c,
 /obj/structure/flora/junglebush,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "nq" = (
 /turf/open/floor/mineral/titanium/yellow,
@@ -954,7 +955,7 @@
 /obj/structure/flora/rock/jungle,
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/junglebush/c,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "nv" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -963,27 +964,27 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "nw" = (
 /obj/structure/flora/grass/jungle,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "nD" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "nJ" = (
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "nU" = (
 /obj/structure/flora/ausbushes/grassybush,
@@ -998,11 +999,11 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "oj" = (
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "op" = (
 /obj/machinery/light/small{
@@ -1026,7 +1027,7 @@
 "ow" = (
 /obj/structure/flora/tree/jungle,
 /obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "oW" = (
 /obj/effect/decal/remains/human,
@@ -1040,7 +1041,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "oZ" = (
 /turf/closed/indestructible/riveted/boss,
@@ -1053,7 +1054,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "pn" = (
 /obj/structure/toilet/secret/low_loot,
@@ -1073,17 +1074,17 @@
 "pC" = (
 /obj/structure/flora/tree/jungle,
 /obj/structure/flora/rock/pile,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "pK" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/rock,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "pN" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/ausbushes/grassybush,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "pP" = (
 /obj/structure/sign/warning,
@@ -1101,7 +1102,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "qa" = (
 /turf/open/floor/plating/rust,
@@ -1120,7 +1121,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "qs" = (
 /obj/item/storage/toolbox/syndicate,
@@ -1136,12 +1137,12 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "qC" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/grass/jungle/b,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "qG" = (
 /obj/item/storage/toolbox/emergency,
@@ -1156,7 +1157,7 @@
 /area/awaymission/jungleresort)
 "rd" = (
 /obj/structure/flora/grass/jungle/b,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "rg" = (
 /obj/structure/stone_tile/center/cracked,
@@ -1171,7 +1172,7 @@
 /turf/open/floor/plating/dirt/jungle,
 /area/awaymission/jungleresort)
 "rt" = (
-/obj/structure/chair/sofa/corner{
+/obj/structure/chair/sofa/corner/brown{
 	dir = 8
 	},
 /turf/open/floor/wood,
@@ -1184,16 +1185,16 @@
 "rx" = (
 /obj/structure/flora/junglebush,
 /obj/structure/flora/junglebush/b,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "rF" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "rH" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "rP" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -1201,12 +1202,12 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "rQ" = (
 /obj/structure/flora/tree/jungle/small,
 /obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "rS" = (
 /obj/structure/table/wood,
@@ -1218,14 +1219,14 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "se" = (
 /obj/structure/flora/junglebush/b,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "sh" = (
 /obj/structure/flora/ausbushes/grassybush,
@@ -1235,7 +1236,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "sn" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
@@ -1263,7 +1264,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "sR" = (
 /obj/structure/table/wood,
@@ -1286,7 +1287,7 @@
 "td" = (
 /obj/structure/flora/tree/jungle,
 /obj/structure/flora/junglebush/c,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "ti" = (
 /obj/effect/turf_decal/sand/plating,
@@ -1309,12 +1310,12 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "tu" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/junglebush,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "tx" = (
 /obj/machinery/door/airlock/wood{
@@ -1358,7 +1359,7 @@
 "tZ" = (
 /obj/structure/flora/rock/pile,
 /obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "uc" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -1367,14 +1368,14 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "ue" = (
 /obj/machinery/light,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "uh" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -1394,28 +1395,28 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "us" = (
 /obj/structure/flora/rock,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "uu" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "uv" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "ux" = (
 /obj/item/stack/sheet/animalhide/monkey,
@@ -1433,7 +1434,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "uG" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -1446,14 +1447,14 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "uS" = (
 /obj/structure/flora/rock/jungle,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "uT" = (
 /obj/structure/table/wood,
@@ -1465,12 +1466,12 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "uX" = (
 /obj/structure/flora/junglebush/large,
 /obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "uZ" = (
 /obj/machinery/vending/boozeomat,
@@ -1481,19 +1482,19 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "vl" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/grass/jungle/b,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "vq" = (
 /obj/structure/barricade/wooden,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "vs" = (
 /obj/structure/table/wood,
@@ -1522,7 +1523,7 @@
 "vy" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "vz" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
@@ -1535,7 +1536,7 @@
 /area/awaymission/jungleresort)
 "vK" = (
 /obj/structure/flora/ausbushes/stalkybush,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "vN" = (
 /obj/structure/chair/wood{
@@ -1560,14 +1561,14 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "wm" = (
 /obj/structure/flora/junglebush/c,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "wo" = (
 /obj/structure/table/wood/fancy,
@@ -1585,7 +1586,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "wv" = (
 /obj/structure/bed,
@@ -1604,21 +1605,21 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "wG" = (
 /obj/structure/flora/rock/jungle,
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "wH" = (
 /obj/structure/flora/junglebush/b,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "wJ" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /obj/structure/flora/ausbushes/grassybush,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "wS" = (
 /obj/structure/stone_tile/surrounding_tile/cracked,
@@ -1656,13 +1657,13 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "xH" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "xL" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -1683,7 +1684,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "xV" = (
 /obj/structure/flora/junglebush,
@@ -1691,7 +1692,7 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "yb" = (
 /obj/structure/cable{
@@ -1702,7 +1703,7 @@
 "yi" = (
 /obj/item/grown/log/tree,
 /obj/item/lighter,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "yr" = (
 /obj/structure/statue/sandstone/venus,
@@ -1712,7 +1713,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "yw" = (
 /obj/item/pickaxe/mini,
@@ -1723,14 +1724,14 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "yy" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "yz" = (
 /obj/machinery/door/airlock/wood{
@@ -1775,7 +1776,7 @@
 /area/awaymission/jungleresort)
 "yQ" = (
 /obj/effect/spawner/lootdrop/cig_packs,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "yS" = (
 /obj/machinery/door/window,
@@ -1809,26 +1810,26 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "zx" = (
 /obj/structure/flora/junglebush/b,
 /obj/structure/flora/rock,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "zA" = (
 /obj/structure/flora/grass/jungle,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "zC" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "zH" = (
 /obj/structure/chair/comfy/shuttle{
@@ -1846,14 +1847,14 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "zP" = (
 /obj/structure/flora/tree/jungle,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "zV" = (
 /obj/machinery/light{
@@ -1869,13 +1870,13 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Aa" = (
 /obj/structure/flora/junglebush/c,
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Ad" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
@@ -1899,7 +1900,7 @@
 /obj/structure/flora/junglebush/large,
 /obj/structure/flora/rock/jungle,
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "An" = (
 /obj/effect/spawner/lootdrop/bedsheet,
@@ -1911,7 +1912,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Az" = (
 /obj/structure/flora/junglebush/b,
@@ -1926,7 +1927,7 @@
 /area/awaymission/jungleresort)
 "AF" = (
 /obj/structure/flora/junglebush,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "AR" = (
 /turf/closed/mineral/random/labormineral/jungle,
@@ -1950,7 +1951,7 @@
 "AU" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/rock,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "AV" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -1973,7 +1974,7 @@
 "Bp" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/rock/jungle,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Bq" = (
 /obj/machinery/vending/cigarette,
@@ -2015,7 +2016,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Cc" = (
 /obj/item/mop,
@@ -2035,7 +2036,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Cv" = (
 /obj/structure/cable{
@@ -2055,7 +2056,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "CH" = (
 /obj/machinery/light{
@@ -2068,18 +2069,18 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "CN" = (
 /obj/structure/flora/tree/jungle,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "CR" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "CT" = (
 /obj/item/storage/toolbox/greyscale,
@@ -2092,7 +2093,7 @@
 /area/awaymission/jungleresort)
 "CV" = (
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "CY" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -2135,7 +2136,7 @@
 "Dz" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/junglebush/b,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "DF" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
@@ -2151,19 +2152,19 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "DO" = (
 /obj/structure/flora/tree/jungle/small,
 /obj/machinery/light,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "DS" = (
 /obj/structure/flora/junglebush/large,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "DU" = (
 /obj/structure/table/wood,
@@ -2181,7 +2182,7 @@
 "El" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/machinery/light,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Eq" = (
 /obj/structure/frame/computer,
@@ -2213,7 +2214,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "EA" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -2247,19 +2248,19 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "EV" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/junglebush,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Fd" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Fl" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
@@ -2273,19 +2274,19 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Fr" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
 /obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Fz" = (
 /obj/structure/flora/tree/jungle,
 /obj/structure/flora/rock/jungle,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "FL" = (
 /obj/effect/decal/cleanable/blood/old,
@@ -2304,7 +2305,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "FQ" = (
 /obj/structure/flora/ausbushes/reedbush,
@@ -2322,7 +2323,7 @@
 "FT" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "FV" = (
 /obj/machinery/door/airlock/freezer{
@@ -2335,7 +2336,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Gd" = (
 /obj/structure/chair/pew{
@@ -2367,7 +2368,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Gv" = (
 /obj/structure/table/wood,
@@ -2382,7 +2383,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "GA" = (
 /obj/structure/flora/tree/jungle/small,
@@ -2392,7 +2393,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "GD" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
@@ -2418,7 +2419,7 @@
 "GU" = (
 /obj/item/reagent_containers/food/snacks/sausage,
 /obj/item/reagent_containers/food/snacks/sausage,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Ha" = (
 /obj/structure/table/wood,
@@ -2434,14 +2435,14 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Hm" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Hr" = (
 /obj/structure/stone_tile/surrounding/cracked,
@@ -2450,7 +2451,7 @@
 "Hs" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /obj/machinery/light,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Hw" = (
 /obj/machinery/door/airlock/wood{
@@ -2461,18 +2462,18 @@
 "Hy" = (
 /obj/structure/flora/rock/pile,
 /mob/living/carbon/monkey,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "HC" = (
 /obj/structure/bonfire/dense,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "HD" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "HI" = (
 /obj/machinery/door/airlock/wood{
@@ -2487,11 +2488,11 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "HT" = (
 /mob/living/simple_animal/hostile/gorilla/jungle,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Ih" = (
 /turf/open/floor/plating,
@@ -2499,7 +2500,7 @@
 "Ii" = (
 /obj/structure/flora/tree/jungle,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Ij" = (
 /obj/structure/chair/pew/left{
@@ -2524,7 +2525,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "IF" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -2533,7 +2534,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "IK" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -2553,12 +2554,12 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "IW" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/machinery/light,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Jb" = (
 /obj/structure/flora/tree/jungle,
@@ -2566,14 +2567,14 @@
 	dir = 5
 	},
 /obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Jc" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Jd" = (
 /turf/open/floor/wood,
@@ -2583,14 +2584,14 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Jh" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Jj" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -2600,7 +2601,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Jq" = (
 /obj/structure/table/wood,
@@ -2659,13 +2660,13 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Ka" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Kk" = (
 /obj/machinery/light/floor,
@@ -2684,7 +2685,7 @@
 "Kr" = (
 /obj/structure/flora/junglebush/b,
 /obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Kw" = (
 /obj/structure/closet/secure_closet/freezer/kitchen,
@@ -2700,32 +2701,32 @@
 "KJ" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/tree/jungle/small,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "KM" = (
 /mob/living/carbon/monkey,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "KO" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "KR" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "KX" = (
 /obj/structure/flora/rock,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "KY" = (
 /obj/machinery/light{
@@ -2747,7 +2748,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Lp" = (
 /obj/structure/barricade/wooden,
@@ -2779,7 +2780,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Lv" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -2828,7 +2829,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Mc" = (
 /obj/structure/flora/ausbushes/fullgrass,
@@ -2839,7 +2840,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Mh" = (
 /obj/structure/table/wood,
@@ -2851,13 +2852,13 @@
 /turf/closed/wall/mineral/wood,
 /area/awaymission/jungleresort)
 "Mx" = (
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/right/brown,
 /turf/open/floor/wood,
 /area/awaymission/jungleresort)
 "MD" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "MF" = (
 /obj/structure/flora/junglebush,
@@ -2865,7 +2866,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "MJ" = (
 /obj/machinery/light/small{
@@ -2881,11 +2882,11 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "MW" = (
 /obj/structure/flora/rock/jungle,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "MX" = (
 /obj/structure/flora/ausbushes/stalkybush,
@@ -2895,7 +2896,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "MY" = (
 /obj/structure/barricade/wooden,
@@ -2906,7 +2907,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Nf" = (
 /obj/structure/stone_tile/cracked,
@@ -2923,7 +2924,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Nn" = (
 /obj/machinery/power/apc/auto_name/west,
@@ -2946,12 +2947,12 @@
 /area/awaymission/jungleresort)
 "Oe" = (
 /obj/machinery/light,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Ol" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Or" = (
 /obj/machinery/vending/coffee,
@@ -2964,7 +2965,7 @@
 "Oz" = (
 /obj/structure/flora/tree/jungle,
 /obj/structure/flora/grass/jungle/b,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "OA" = (
 /obj/structure/table/wood,
@@ -2986,14 +2987,14 @@
 /area/awaymission/jungleresort)
 "OU" = (
 /obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Pb" = (
 /obj/structure/flora/rock/jungle,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Pc" = (
 /obj/machinery/power/terminal{
@@ -3009,11 +3010,11 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Pg" = (
 /obj/structure/flora/ausbushes/grassybush,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Pp" = (
 /obj/structure/flora/junglebush/c,
@@ -3021,36 +3022,36 @@
 /area/awaymission/jungleresort)
 "Pu" = (
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Pv" = (
 /obj/structure/flora/junglebush/large,
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "PB" = (
 /obj/structure/flora/junglebush,
 /obj/structure/flora/grass/jungle/b,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "PD" = (
 /obj/structure/flora/rock/jungle,
 /obj/machinery/light,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "PL" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "PM" = (
 /obj/structure/flora/grass/jungle,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "PN" = (
 /turf/open/floor/mineral/titanium,
@@ -3060,24 +3061,24 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "PS" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "PT" = (
 /obj/structure/flora/rock/pile,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "PW" = (
-/obj/structure/chair/sofa/left{
+/obj/structure/chair/sofa/left/brown{
 	dir = 1
 	},
 /turf/open/floor/wood,
@@ -3087,7 +3088,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Qa" = (
 /obj/effect/decal/cleanable/blood/gibs/limb,
@@ -3102,7 +3103,7 @@
 /turf/open/floor/plating/asteroid,
 /area/awaymission/jungleresort)
 "Qr" = (
-/obj/structure/chair/sofa{
+/obj/structure/chair/sofa/middle/brown{
 	dir = 8
 	},
 /turf/open/floor/wood,
@@ -3131,7 +3132,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "QC" = (
 /obj/structure/flora/ausbushes/grassybush,
@@ -3141,7 +3142,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "QE" = (
 /turf/open/floor/carpet/blue,
@@ -3155,14 +3156,14 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "QX" = (
 /obj/structure/flora/junglebush,
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Rd" = (
 /obj/structure/closet/crate{
@@ -3189,7 +3190,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Rn" = (
 /obj/structure/table/wood,
@@ -3205,7 +3206,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Rp" = (
 /obj/structure/flora/ausbushes/reedbush,
@@ -3216,7 +3217,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "RI" = (
 /obj/structure/table/wood,
@@ -3241,17 +3242,17 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "RX" = (
 /obj/structure/flora/junglebush/c,
 /obj/structure/flora/rock/pile,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Sc" = (
 /obj/structure/flora/rock,
 /obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Se" = (
 /obj/structure/table/wood,
@@ -3261,7 +3262,7 @@
 "Sh" = (
 /obj/structure/flora/junglebush/large,
 /obj/structure/flora/junglebush/c,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Si" = (
 /obj/effect/decal/cleanable/blood/gibs/limb,
@@ -3286,7 +3287,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "SD" = (
 /obj/machinery/light{
@@ -3295,14 +3296,14 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "SF" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "SL" = (
 /obj/effect/decal/cleanable/blood/splatter,
@@ -3316,7 +3317,7 @@
 /obj/effect/decal/cleanable/blood/old,
 /obj/structure/stone_tile/surrounding/cracked,
 /obj/item/clothing/suit/armor/vest,
-/obj/item/clothing/head/helmet,
+/obj/item/clothing/head/helmet/sec,
 /turf/open/floor/plating/dirt/jungle,
 /area/awaymission/jungleresort)
 "SV" = (
@@ -3350,26 +3351,26 @@
 "Tv" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/ausbushes/stalkybush,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Tw" = (
 /obj/structure/flora/tree/jungle,
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Tx" = (
 /obj/machinery/light{
 	dir = 4
 	},
 /obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Ty" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
 	},
 /obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "TC" = (
 /obj/machinery/deepfryer,
@@ -3387,14 +3388,14 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "TI" = (
 /obj/structure/barricade/wooden,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "TM" = (
 /obj/structure/table/wood/fancy,
@@ -3431,7 +3432,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Ud" = (
 /obj/machinery/light/floor,
@@ -3460,7 +3461,7 @@
 "Uv" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "UB" = (
 /obj/structure/flora/junglebush,
@@ -3473,7 +3474,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Vb" = (
 /obj/structure/chair/stool,
@@ -3495,7 +3496,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Vh" = (
 /obj/item/storage/toolbox/electrical,
@@ -3512,7 +3513,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "VI" = (
 /obj/machinery/door/airlock/wood{
@@ -3551,11 +3552,11 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "VU" = (
 /obj/structure/flora/rock/pile/largejungle,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Wa" = (
 /obj/structure/flora/junglebush/c,
@@ -3565,7 +3566,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Wd" = (
 /obj/structure/shuttle/engine/propulsion,
@@ -3576,7 +3577,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Wi" = (
 /obj/structure/chair/stool/bar,
@@ -3585,16 +3586,16 @@
 "Wj" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Wl" = (
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Wo" = (
 /obj/structure/flora/tree/jungle/small,
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "WD" = (
 /obj/effect/decal/remains/human,
@@ -3608,7 +3609,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "WQ" = (
 /obj/effect/decal/remains/human,
@@ -3620,7 +3621,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Xa" = (
 /obj/structure/flora/ausbushes/stalkybush,
@@ -3629,12 +3630,12 @@
 "Xd" = (
 /obj/structure/flora/grass/jungle,
 /obj/machinery/light,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Xh" = (
 /obj/structure/flora/rock/jungle,
 /obj/structure/flora/junglebush,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Xj" = (
 /turf/closed/wall,
@@ -3666,7 +3667,7 @@
 "Xu" = (
 /obj/structure/flora/junglebush/c,
 /mob/living/simple_animal/hostile/gorilla/jungle,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Xz" = (
 /turf/open/floor/carpet/red,
@@ -3675,16 +3676,16 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "XC" = (
 /obj/item/grown/log/tree,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "XK" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "XM" = (
 /obj/structure/table/wood,
@@ -3696,7 +3697,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "XV" = (
 /obj/machinery/shower{
@@ -3725,11 +3726,11 @@
 "Yb" = (
 /obj/structure/bonfire/dense,
 /obj/item/melee/roastingstick,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Yd" = (
 /obj/item/storage/box/marshmallow,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Ye" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
@@ -3740,7 +3741,7 @@
 "Yf" = (
 /obj/structure/flora/junglebush/c,
 /obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Yg" = (
 /obj/effect/decal/cleanable/blood/gibs/limb,
@@ -3761,7 +3762,7 @@
 "Ym" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/rock/pile,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "Yp" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -3786,7 +3787,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "YF" = (
 /obj/machinery/gateway/away,
@@ -3797,7 +3798,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "YK" = (
 /obj/machinery/light/floor,
@@ -3805,24 +3806,24 @@
 /area/awaymission/jungleresort)
 "YM" = (
 /obj/structure/flora/tree/jungle/small,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "YP" = (
 /obj/structure/flora/rock/jungle,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "YQ" = (
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "YU" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
 	},
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 "YW" = (
 /obj/effect/decal/cleanable/blood/gibs/human/core,
@@ -3858,7 +3859,7 @@
 /area/awaymission/jungleresort)
 "ZV" = (
 /obj/structure/flora/rock/pile,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/awaymission/jungleresort)
 
 (1,1,1) = {"

@@ -70,8 +70,8 @@
 
 /mob/living/simple_animal/hostile/mining_drone/examine(mob/user)
 	. = ..()
-	var/t_He = p_they(TRUE)
-	var/t_him = p_them()
+	var/t_He = ru_who(TRUE)
+	var/t_him = ru_na()
 	var/t_s = p_s()
 	if(health < maxHealth)
 		if(health >= maxHealth * 0.5)

@@ -1,11 +1,11 @@
 /mob/living/carbon/alien/humanoid/hunter
 	name = "alien hunter"
 	caste = "h"
-	maxHealth = 170
-	health = 170
+	maxHealth = 180
+	health = 180
 	icon_state = "alienh"
 	meleeKnockdownPower = 75
-	meleeSlashHumanPower = 20
+	meleeSlashHumanPower = 30
 	meleeSlashSAPower = 45
 	var/atom/movable/screen/leap_icon = null
 

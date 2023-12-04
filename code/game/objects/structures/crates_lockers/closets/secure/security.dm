@@ -27,6 +27,7 @@
 /obj/structure/closet/secure_closet/hop/PopulateContents()
 	..()
 	new /obj/item/clothing/neck/cloak/hop(src)
+	new /obj/item/clothing/neck/mantle/head_of_personnel(src)
 	new /obj/item/clothing/under/rank/civilian/head_of_personnel/whimsy(src)
 	new /obj/item/clothing/under/rank/civilian/head_of_personnel(src)
 	new /obj/item/clothing/under/rank/civilian/head_of_personnel/skirt(src)
@@ -82,7 +83,6 @@
 	new /obj/item/storage/box/flashbangs(src)
 	new /obj/item/shield/riot/tele(src)
 	new /obj/item/storage/belt/security/full(src)
-	new /obj/item/choice_beacon/hosgun(src)
 	new /obj/item/flashlight/seclite(src)
 	new /obj/item/pinpointer/nuke(src)
 	new /obj/item/circuitboard/machine/techfab/department/security(src)
@@ -99,6 +99,7 @@
 /obj/structure/closet/secure_closet/warden/PopulateContents()
 	..()
 	new /obj/item/radio/headset/headset_sec(src)
+	new /obj/item/stamp/warden(src)
 	new /obj/item/clothing/suit/armor/vest/warden(src)
 	new /obj/item/clothing/head/warden(src)
 	new /obj/item/clothing/head/warden/drill(src)
@@ -116,19 +117,21 @@
 	new /obj/item/flashlight/seclite(src)
 	new /obj/item/clothing/gloves/krav_maga/sec(src)
 	new /obj/item/door_remote/head_of_security(src)
-	new /obj/item/gun/ballistic/shotgun/automatic/combat/compact(src)
+	new /obj/item/gun/ballistic/shotgun/automatic/combat/warden(src)
 	new /obj/item/clothing/head/beret/sec/corporatewarden(src)
+
 /obj/structure/closet/secure_closet/security
 	name = "security officer's locker"
 	req_access = list(ACCESS_SECURITY)
 	icon_state = "sec"
 /obj/structure/closet/secure_closet/security/PopulateContents()
 	..()
-	new /obj/item/clothing/suit/armor/vest(src)
+	new /obj/item/clothing/suit/armor/vest/alt(src)
 	new /obj/item/clothing/head/helmet/sec(src)
 	new /obj/item/radio/headset/headset_sec(src)
 	new /obj/item/radio/headset/headset_sec/alt(src)
 	new /obj/item/clothing/glasses/hud/security/sunglasses(src)
+	new /obj/item/holosign_creator/security(src)
 	new /obj/item/flashlight/seclite(src)
 /obj/structure/closet/secure_closet/security/sec
 /obj/structure/closet/secure_closet/security/sec/PopulateContents()

@@ -5,7 +5,7 @@
 	item_state = "beret_blueshield"
 	icon = 'modular_splurt/icons/obj/clothing/head.dmi'
 	mob_overlay_icon = 'modular_splurt/icons/mobs/head.dmi'
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60)
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60, "wound" = 20)
 	strip_delay = 80
 	dynamic_hair_suffix = ""
 	dog_fashion = null
@@ -17,7 +17,7 @@
 	soft_type = "blueshield"
 	icon = 'modular_splurt/icons/obj/clothing/head.dmi'
 	mob_overlay_icon = 'modular_splurt/icons/mobs/head.dmi'
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60)
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60, "wound" = 20)
 	strip_delay = 80
 	dog_fashion = null
 
@@ -34,16 +34,16 @@
 	item_state = "beret_brigdoc"
 	icon = 'modular_splurt/icons/obj/clothing/head.dmi'
 	mob_overlay_icon = 'modular_splurt/icons/mobs/head.dmi'
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 30,"energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 30,"energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 	strip_delay = 60
 	dog_fashion = null
 
-/obj/item/clothing/head/helmet/blueshirt
-	icon = 'modular_splurt/icons/obj/clothing/head.dmi'
-	mob_overlay_icon = 'modular_splurt/icons/mobs/head.dmi'
-	icon_state = "blueshift"
-	item_state = "blueshift"
-	can_flashlight = 1
+///obj/item/clothing/head/helmet/blueshirt
+	//icon = 'modular_splurt/icons/obj/clothing/head.dmi'
+	//mob_overlay_icon = 'modular_splurt/icons/mobs/head.dmi'
+	//icon_state = "blueshift"
+//	item_state = "blueshift"
+	//can_flashlight = 1
 
 /obj/item/clothing/head/helmet/blueshirt/blueshield
 	name = "blueshield blue helmet"
@@ -51,17 +51,15 @@
 	icon_state = "blueshieldhelm"
 	item_state = "blueshieldhelm"
 	can_flashlight = 1
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60)
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60, "wound" = 20)
 	strip_delay = 80
 
 /obj/item/clothing/head/helmet/sec/blueshield
 	name = "blueshield helmet"
 	desc = "Reinforced Blueshield Security gear. Protects the head from impacts. You where this because you are boring."
-	icon_state = "bluehelmet"
-	item_state = "bluehelmet"
-	icon = 'modular_splurt/icons/obj/clothing/head.dmi'
-	mob_overlay_icon = 'modular_splurt/icons/mobs/head.dmi'
+	icon_state = "barney_helm"
+	item_state = "barney_helm"
 	can_flashlight = 1
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60)
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60, "wound" = 20)
 	strip_delay = 80
 

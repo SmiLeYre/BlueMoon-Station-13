@@ -61,7 +61,7 @@
 			if(!M.undergoing_cardiac_arrest() && M.can_heartattack() && prob(1))
 				M.set_heartattack(TRUE)
 				if(M.stat == CONSCIOUS)
-					M.visible_message(span_userdanger("[M] clutches at [M.p_their()] chest as if [M.p_their()] heart stopped!")) // too much lean :(
+					M.visible_message("<span class='userdanger'>[M] clutches at [M.ru_ego()] chest as if [M.ru_ego()] heart stopped!</span>") // too much lean :(
 	..()
 
 /datum/reagent/consumable/ethanol/cum_in_a_hot_tub
@@ -81,6 +81,13 @@
 	taste_description = "viscous cream"
 	description = "The name is probably exactly what it is."
 	glass_desc = "The name is probably exactly what it is."
+
+/datum/reagent/consumable/ethanol/cum_in_a_hot_tub/semen/on_mob_metabolize(mob/living/L)
+	if(ishuman(L))
+		var/mob/living/carbon/human/H = L
+		if(HAS_TRAIT(H, TRAIT_DUMB_CUM) || HAS_TRAIT(H, TRAIT_GFLUID_DETECT))
+			to_chat(H, span_love("Незабываемый вкус свежей спермы вы узнаете из тысячи~"))
+	. = ..()
 
 /datum/reagent/consumable/ethanol/mech_rider
 	name = "Mech Rider"
@@ -184,7 +191,7 @@
 	//Stimulant Effects
 	M.AdjustAllImmobility(-60, FALSE)
 	M.AdjustUnconscious(-60, FALSE)
-	M.adjustStaminaLoss(-20*REAGENTS_EFFECT_MULTIPLIER, FALSE)
+	M.adjustStaminaLoss(-20*REM, FALSE)
 	..()
 	. = 1
 
@@ -384,7 +391,7 @@
 	return ..()
 
 /datum/reagent/consumable/ethanol/twinkjuice
-	name = "Twink Juice"
+	name = "Boy Kisser"
 	description = "A long slender fruity drink with a green thick liquid inside. It smells nice and, and probably tastes fruity."
 	color = "#3fd2ff"
 	taste_description = "a concoction of dubious origins, and dubious purposes"

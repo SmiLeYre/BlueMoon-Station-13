@@ -9,6 +9,9 @@
 	ammo_x_offset = 1
 	shaded_charge = 1
 
+/obj/item/gun/energy/laser/pindicate
+	pin = /obj/item/firing_pin/implant/pindicate
+
 /obj/item/gun/energy/laser/practice
 	name = "practice laser gun"
 	icon_state = "laser-p"
@@ -64,10 +67,10 @@
 	name = "laser carbine"
 	desc = "A ruggedized laser carbine featuring much higher capacity and improved handling when compared to a normal laser gun."
 	icon_state = "lasernew"
-	item_state = "lasernew"
+	item_state = "laser-wielded"
 	slot_flags = ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = WEAPON_HEAVY
 	inaccuracy_modifier = 0.7
 	force = 10
 	throwforce = 10
@@ -216,7 +219,7 @@
 		return
 
 	if(user == target)
-		target.visible_message("<span class='warning'>[user] sticks [src] in [user.p_their()] mouth, ready to pull the trigger...</span>", \
+		target.visible_message("<span class='warning'>[user] sticks [src] in [user.ru_ego()] mouth, ready to pull the trigger...</span>", \
 			"<span class='userdanger'>You stick [src] in your mouth, ready to pull the trigger...</span>")
 	else
 		target.visible_message("<span class='warning'>[user] points [src] at [target]'s head, ready to pull the trigger...</span>", \
@@ -246,3 +249,6 @@
 		chambered.BB.damage *= 5
 
 	process_fire(target, user, TRUE, params)
+
+/obj/item/gun/laser/shoot_with_empty_chamber(mob/living/user as mob|obj)
+	playsound(src, 'sound/weapons/laser_no_power.ogg', 30, 1)

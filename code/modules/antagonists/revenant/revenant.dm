@@ -3,7 +3,6 @@
 //Can hear deadchat, but are NOT normal ghosts and do NOT have x-ray vision
 //Admin-spawn or random event
 
-#define INVISIBILITY_REVENANT 50
 #define REVENANT_NAME_FILE "revenant_names.json"
 
 /mob/living/simple_animal/revenant
@@ -29,6 +28,7 @@
 	blood_volume = 0
 	has_field_of_vision = FALSE //we are a spoopy ghost
 	rad_flags = RAD_NO_CONTAMINATE | RAD_PROTECT_CONTENTS
+	typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/phoron
 
 	see_in_dark = 8
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
@@ -89,7 +89,7 @@
 /mob/living/simple_animal/revenant/proc/random_revenant_name()
 	var/built_name = ""
 	built_name += pick(strings(REVENANT_NAME_FILE, "spirit_type"))
-	built_name += " of "
+	built_name += " "
 	built_name += pick(strings(REVENANT_NAME_FILE, "adverb"))
 	built_name += pick(strings(REVENANT_NAME_FILE, "theme"))
 	name = built_name
@@ -446,7 +446,7 @@
 	qdel(src)
 
 /obj/item/ectoplasm/revenant/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is inhaling [src]! It looks like [user.p_theyre()] trying to visit the shadow realm!</span>")
+	user.visible_message("<span class='suicide'>[user] is inhaling [src]! It looks like [user.ru_who()] trying to visit the shadow realm!</span>")
 	scatter()
 	return (OXYLOSS)
 

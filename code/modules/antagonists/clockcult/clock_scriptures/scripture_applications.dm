@@ -125,7 +125,7 @@
 	return create_guardian()
 
 /datum/clockwork_scripture/memory_allocation/proc/create_guardian()
-	invoker.visible_message("<span class='warning'>A purple tendril appears from [invoker]'s [slab.name] and impales itself in [invoker.p_their()] forehead!</span>", \
+	invoker.visible_message("<span class='warning'>A purple tendril appears from [invoker]'s [slab.name] and impales itself in [invoker.ru_ego()] forehead!</span>", \
 	"<span class='sevtug'>A tendril flies from [slab] into your forehead. You begin waiting while it painfully rearranges your thought pattern...</span>")
 	//invoker.notransform = TRUE //Vulnerable during the process
 	slab.busy = "Thought Modification in progress"
@@ -203,17 +203,29 @@
 			human_servants++
 	construct_limit = round(clamp((human_servants / 4), 1, 3))	//1 per 4 human servants, maximum of 3
 
+//Clockwork Marauder: Creates a construct shell for a clockwork marauder, a well-rounded frontline fighter.
+/datum/clockwork_scripture/create_object/construct/clockwork_marauder/clockwork_tank
+	descname = "Well-Rounded Armored Construct"
+	name = "Clockwork Tank"
+	desc = "Creates a shell for a clockwork tank, a balanced frontline construct that can fire his gun."
+	channel_time = 80
+	power_cost = 25000
+	quickbind = TRUE
+	quickbind_desc = "Creates a clockwork tank, used for frontline combat."
+	object_path = /obj/item/clockwork/construct_chassis/clocktank
+	construct_type = /mob/living/simple_animal/hostile/clocktank
+
 //Summon Neovgre: Summon a very powerful combat mech that explodes when destroyed for massive damage.
 /datum/clockwork_scripture/create_object/summon_arbiter
 	descname = "Powerful Assault Mech"
 	name = "Summon Neovgre, the Anima Bulwark"
 	desc = "Calls forth the mighty Anima Bulwark, a two-person mech with superior defensive and offensive capabilities. It will \
-			 steadily regenerate HP and triple its regeneration speed while standing \
-			 on a clockwork tile. It will automatically draw power from nearby sigils of \
-			 transmission should the need arise. Its Arbiter laser cannon can decimate foes \
-			 from a range and is capable of smashing through any barrier presented to it. \
-			 Be warned however, choosing to pilot or man Neovgre is a lifetime commitment, once you are \
-			 in you cannot leave and when it is destroyed it will explode catastrophically, with everyone inside."
+			steadily regenerate HP and triple its regeneration speed while standing \
+			on a clockwork tile. It will automatically draw power from nearby sigils of \
+			transmission should the need arise. Its Arbiter laser cannon can decimate foes \
+			from a range and is capable of smashing through any barrier presented to it. \
+			Be warned however, choosing to pilot or man Neovgre is a lifetime commitment, once you are \
+			in you cannot leave and when it is destroyed it will explode catastrophically, with everyone inside."
 	invocations = list("By the strength of the alloy...!!", "...call forth the Arbiter!!")
 	channel_time = 200 // This is a strong fucking weapon, 20 seconds channel time is getting off light I tell ya.
 	power_cost = 40000 //40 KW. Why the hell did I think making this cost 5k more than the ARK was a good idea-KeRSe

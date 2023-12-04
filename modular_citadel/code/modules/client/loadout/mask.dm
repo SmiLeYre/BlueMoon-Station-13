@@ -28,8 +28,8 @@
 /datum/gear/mask/gas
 	name = "Gas Mask"
 	path = /obj/item/clothing/mask/gas
-	cost = 2
-	restricted_roles = list("Chief Engineer", "Atmospheric Technician", "Station Engineer") //*shrug
+	cost = 4
+	//restricted_roles = list("Chief Engineer", "Atmospheric Technician", "Station Engineer") // BlueMoon edit. No restrictions
 
 /datum/gear/mask/sterile
 	name = "Aesthetic sterile mask"

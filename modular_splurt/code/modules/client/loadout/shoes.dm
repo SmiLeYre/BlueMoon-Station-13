@@ -18,6 +18,11 @@
 /datum/gear/shoes/jackboots/tall
 	name = "Tall Jackboots"
 	path = /obj/item/clothing/shoes/jackboots/tall
+
+/datum/gear/shoes/ducky
+	name = "Rubby Ducky Shoes"
+	path = /obj/item/clothing/shoes/ducky
+
 /datum/gear/shoes/highheels
 	name = "High Heels"
 	path = /obj/item/clothing/shoes/highheels
@@ -34,8 +39,8 @@
 	name = "Dominant Heels"
 	path = /obj/item/clothing/shoes/dominaheels
 
-/datum/gear/shoes/puttee
-	restricted_roles = list("Security Officer", "Warden", "Head of Security", "Brig Physician", "Blueshield")
+///datum/gear/shoes/puttee
+	//restricted_roles = list("Security Officer", "Warden", "Head of Security", "Brig Physician", "Blueshield")
 
 /datum/gear/shoes/highheel_sandals
 	name = "High-heel Sandals"

@@ -5,6 +5,8 @@
 //Filters
 #define CIT_FILTER_STAMINACRIT filter(type="drop_shadow", x=0, y=0, size=-3, color="#04080F")
 
+#define BM_FILTER_HARDCRIT list(type="drop_shadow", x=0, y=0, size=-3, color="#04080F")
+
 //organ defines
 #define BUTT_LAYER_INDEX		1
 #define ANUS_LAYER_INDEX		2
@@ -49,7 +51,7 @@
 #define COCK_DIAMETER_RATIO_DEF		0.25
 #define COCK_DIAMETER_RATIO_MIN		0.15
 
-#define DEF_COCK_SHAPE		"Human"
+#define DEF_COCK_SHAPE		"human"
 
 #define BALLS_VOLUME_BASE	25
 #define BALLS_VOLUME_MULT	1
@@ -78,7 +80,7 @@
 #define MILK_RATE_MULT		1
 #define MILK_EFFICIENCY		1
 
-#define BUTT_SIZE_DEF		1
+#define BUTT_SIZE_DEF		0
 #define BUTT_SIZE_MAX		8  //butt genitals are special in that they have caps. if there's the event there's even bigger butt sprites, raise this number.
 
 #define BELLY_SIZE_MIN		0
@@ -98,6 +100,7 @@
 
 #define ADMIN_MARKREAD(client) "(<a href='?_src_=holder;markedread=\ref[client]'>MARK READ</a>)"//marks an adminhelp as read and under investigation
 #define ADMIN_IC(client) "(<a href='?_src_=holder;icissue=\ref[client]'>IC</a>)"//marks and adminhelp as an IC issue
+#define ADMIN_SI(client) "(<a href='?_src_=holder;skillissue=\ref[client]'>SI</a>)"//marks and adminhelp as an Skill issue
 #define ADMIN_REJECT(client) "(<a href='?_src_=holder;rejectadminhelp=\ref[client]'>REJT</a>)"//Rejects an adminhelp for being unclear or otherwise unhelpful. resets their adminhelp timer
 
 //Citadel istypes
@@ -127,7 +130,8 @@
 #define CHASTITY			(1<<18)
 #define STIMULATION			(1<<19)
 #define EDGING				(1<<20)
-#define CUM_ONTO			(1<<21)
+#define NO_DISCO_DANCE		(1<<21)
+#define CUM_ONTO			(1<<22)
 //Note: reminder, if you're a coder adding more bitflags here in the event we add more horny things, the maximum is (1<<23).
 #define TOGGLES_CITADEL 0
 
@@ -141,7 +145,7 @@
 #define DEFAULT_NO_EYE_STATE		"no_eye"
 
 //special species definitions
-#define MINIMUM_MUTANT_COLOR	"#202020" //this is how dark players mutant parts and skin can be
+#define MINIMUM_MUTANT_COLOR	"#000000" //this is how dark players mutant parts and skin can be
 
 //defines for different matrix sections
 #define MATRIX_RED			"red"

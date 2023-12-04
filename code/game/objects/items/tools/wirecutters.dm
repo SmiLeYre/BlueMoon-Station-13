@@ -37,7 +37,6 @@
 /obj/item/wirecutters/Initialize(mapload)
 	. = ..()
 	if(random_color) //random colors!
-		icon_state = "cutters"
 		var/our_color = pick(wirecutter_colors)
 		add_atom_colour(wirecutter_colors[our_color], FIXED_COLOUR_PRIORITY)
 		update_icon()
@@ -76,7 +75,7 @@
 		..()
 
 /obj/item/wirecutters/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is cutting at [user.p_their()] arteries with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is cutting at [user.ru_ego()] arteries with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	playsound(loc, usesound, 50, 1, -1)
 	return (BRUTELOSS)
 
@@ -135,8 +134,16 @@
 	toolspeed = 0.25
 	random_color = FALSE
 
+/obj/item/wirecutters/power/syndicate
+	name = "Syndicate jaws of life"
+	desc = "A pocket sized re-engineered copy of Nanotrasen's standard jaws of life. Can be used to force open airlocks in its crowbar configuration."
+	icon = 'icons/obj/tools.dmi'
+	icon_state = "jaws_syndie_cutter"
+	item_state = "jawsoflife"
+	toolspeed = 0.20
+
 /obj/item/wirecutters/power/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is wrapping \the [src] around [user.p_their()] neck. It looks like [user.p_theyre()] trying to rip [user.p_their()] head off!</span>")
+	user.visible_message("<span class='suicide'>[user] is wrapping \the [src] around [user.ru_ego()] neck. It looks like [user.ru_who()] trying to rip [user.ru_ego()] head off!</span>")
 	playsound(loc, 'sound/items/jaws_cut.ogg', 50, 1, -1)
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user

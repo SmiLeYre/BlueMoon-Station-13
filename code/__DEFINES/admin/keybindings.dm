@@ -16,3 +16,5 @@
 #define SKIN_MACROSET_CLASSIC_HOTKEYS "oldhotkeys"
 /// Macroset name of classic input mode
 #define SKIN_MACROSET_CLASSIC_INPUT "oldinput"
+
+#define COMSIG_KB_CLIENT_FULLSCREEN "keybinding_client_fullscreen"

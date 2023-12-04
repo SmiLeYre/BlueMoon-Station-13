@@ -11,4 +11,4 @@
 	if(isdwarf(user))
 		return ..()
 	else
-		to_chat(user, span_warning("Ugh! This anvil smells of mushroom beer, and the design is weird. It is inconvenient to use it!"))
+		to_chat(user, "<span class='warning'>Ugh! This anvil smells of mushroom beer, and the design is weird. It is inconvenient to use it!</span>")

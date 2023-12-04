@@ -49,7 +49,7 @@
 				var/atom/I = L.anti_magic_check(check_antimagic, check_holy)
 				if(I)
 					if(isitem(I))
-						L.visible_message("<span class='warning'>[L]'s [I.name] [resist_string], protecting [L.p_them()] from [src]'s effects!</span>", \
+						L.visible_message("<span class='warning'>[L]'s [I.name] [resist_string], protecting [L.ru_na()] from [src]'s effects!</span>", \
 						"<span class='userdanger'>Your [I.name] [resist_string], protecting you!</span>")
 					return
 				sigil_effects(L)
@@ -173,6 +173,7 @@
 		var/mob/living/carbon/C = L
 		C.silent += 5
 	var/message = "[sigil_name] in [get_area(src)] <span class='sevtug'>[is_servant_of_ratvar(L) ? "successfully converted" : "failed to convert"]</span>"
+	new /obj/item/clockwork/slab (get_turf(src))
 	for(var/M in GLOB.mob_list)
 		if(isobserver(M))
 			var/link = FOLLOW_LINK(M, L)

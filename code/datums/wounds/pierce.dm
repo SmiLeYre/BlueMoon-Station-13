@@ -21,7 +21,30 @@
 	/// If we let off blood when hit, the max blood lost is this * the incoming damage
 	var/internal_bleeding_coefficient
 
+	/// If we deal lung traumas, when is the next one due?
+	var/next_trauma_cycle
+
+	/// How long do we wait for the next lung stroke?
+	var/trauma_cycle_cooldown = 1.3 MINUTES
+
+/datum/wound/pierce/apply_wound(obj/item/bodypart/L, silent, datum/wound/old_wound, smited)
+	if(L.body_zone == BODY_ZONE_CHEST && (severity == WOUND_SEVERITY_SEVERE || severity == WOUND_SEVERITY_CRITICAL))
+		if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD
+			ru_name = "Пробитие лёгкого"
+			ru_name_r = "пробития лёгкого"
+			occur_text = "раскалывается, приводя к обильному кашлю"
+			examine_desc = "имеет углубленную выемку, из которой выходит воздух"
+	. = ..()
+
 /datum/wound/pierce/wound_injury(datum/wound/old_wound)
+	if(limb.body_zone == BODY_ZONE_CHEST && (severity == WOUND_SEVERITY_SEVERE || severity == WOUND_SEVERITY_CRITICAL))
+		if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD
+			processes = TRUE
+			victim.adjustOxyLoss(15)
+			victim.adjustOrganLoss(ORGAN_SLOT_LUNGS,15)
+			victim.emote("cough")
+			next_trauma_cycle = world.time + (rand(100-20, 100+20) * 0.01 * trauma_cycle_cooldown)
+
 	blood_flow = initial_flow
 
 /datum/wound/pierce/receive_damage(wounding_type, wounding_dmg, wound_bonus)
@@ -35,33 +58,41 @@
 			if(1 to 6)
 				victim.bleed(blood_bled, TRUE)
 			if(7 to 13)
-				victim.visible_message("<span class='smalldanger'>Blood droplets fly from the hole in [victim]'s [limb.name].</span>", "<span class='danger'>You cough up a bit of blood from the blow to your [limb.name].</span>", vision_distance=COMBAT_MESSAGE_RANGE)
+				victim.visible_message("<span class='smalldanger'>Капли [HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM) ? "чёрной жидкости" : "крови"] стекают по [limb.ru_name_v] персонажа [victim].</span>", "<span class='danger'>Вы откашливаете немного [HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM) ? "чёрной жидкости для защиты внутренних систем" : "крови"].</span>", vision_distance=COMBAT_MESSAGE_RANGE)
 				victim.bleed(blood_bled, TRUE)
 			if(14 to 19)
-				victim.visible_message("<span class='smalldanger'>A small stream of blood spurts from the hole in [victim]'s [limb.name]!</span>", "<span class='danger'>You spit out a string of blood from the blow to your [limb.name]!</span>", vision_distance=COMBAT_MESSAGE_RANGE)
+				victim.visible_message("<span class='smalldanger'>Небольшая струя [HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM) ? "чёрной жидкости" : "крови"] стекает по [limb.ru_name_v] - персонажа [victim]!</span>", "<span class='danger'>Вы откашливаете сгусток [HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM) ? "чёрной жидкости" : "крови"]!</span>", vision_distance=COMBAT_MESSAGE_RANGE)
 				if(ishuman(victim))
 					var/mob/living/carbon/human/H = victim
 					new /obj/effect/temp_visual/dir_setting/bloodsplatter(victim.loc, victim.dir, H.dna.species.exotic_blood_color)
-				else	
+				else
 					new /obj/effect/temp_visual/dir_setting/bloodsplatter(victim.loc, victim.dir)
 				victim.bleed(blood_bled)
 			if(20 to INFINITY)
-				victim.visible_message("<span class='danger'>A spray of blood streams from the gash in [victim]'s [limb.name]!</span>", "<span class='danger'><b>You choke up on a spray of blood from the blow to your [limb.name]!</b></span>", vision_distance=COMBAT_MESSAGE_RANGE)
+				victim.visible_message("<span class='danger'>Струя [HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM) ? "чёрной жидкости" : "крови"] обильно течёт по [limb.ru_name_v] персонажа [victim]!</span>", "<span class='danger'><b>Вы обильно кашляете [HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM) ? "чёрной жидкостью" : "кровью"]!</b></span>", vision_distance=COMBAT_MESSAGE_RANGE)
 				victim.bleed(blood_bled)
 				if(ishuman(victim))
 					var/mob/living/carbon/human/H = victim
 					new /obj/effect/temp_visual/dir_setting/bloodsplatter(victim.loc, victim.dir, H.dna.species.exotic_blood_color)
-				else	
+				else
 					new /obj/effect/temp_visual/dir_setting/bloodsplatter(victim.loc, victim.dir)
 				victim.add_splatter_floor(get_step(victim.loc, victim.dir))
 
 /datum/wound/pierce/handle_process()
+	. = ..()
+	if(limb.body_zone == BODY_ZONE_CHEST && (severity == WOUND_SEVERITY_SEVERE || severity == WOUND_SEVERITY_CRITICAL) && world.time > next_trauma_cycle)
+		next_trauma_cycle = world.time + (rand(100-20, 100+20) * 0.01 * trauma_cycle_cooldown)
+		if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD
+			victim.adjustOxyLoss(20)
+			victim.emote("gasp")
+
 	blood_flow = min(blood_flow, WOUND_SLASH_MAX_BLOODFLOW)
 
-	if(victim.bodytemperature < (BODYTEMP_NORMAL -  10))
-		blood_flow -= 0.2
-		if(prob(5))
-			to_chat(victim, "<span class='notice'>You feel the [lowertext(name)] in your [limb.name] firming up from the cold!</span>")
+	if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM))
+		if(victim.bodytemperature < (BODYTEMP_NORMAL -  10))
+			blood_flow -= 0.2
+			if(prob(5))
+				to_chat(victim, "<span class='notice'>Вы чувствуете, как [lowertext(name)] в вашей [limb.ru_name_v] застывает за счёт холода!</span>")
 
 	if(victim.reagents?.has_reagent(/datum/reagent/toxin/heparin))
 		blood_flow += 0.5 // old herapin used to just add +2 bleed stacks per tick, this adds 0.5 bleed flow to all open cuts which is probably even stronger as long as you can cut them first
@@ -94,11 +125,16 @@
 
 /// If someone is using a suture to close this cut
 /datum/wound/pierce/proc/suture(obj/item/stack/medical/suture/I, mob/user)
+	// BLUEMOON ADD START - нитка и иголка не могут заштопать листы металла
+	if(HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM))
+		to_chat(user, "Это не поможет, это же робот!")
+		return
+	// BLUEMOON ADD END
 	var/self_penalty_mult = (user == victim ? 1.4 : 1)
-	user.visible_message("<span class='notice'>[user] begins stitching [victim]'s [limb.name] with [I]...</span>", "<span class='notice'>You begin stitching [user == victim ? "your" : "[victim]'s"] [limb.name] with [I]...</span>")
+	user.visible_message("<span class='notice'>[user] пытается зашить увечия на [limb.ru_name_v] персонажа [victim] с помощью [I]...</span>", "<span class='notice'>Вы начинаете зашивать [user == victim ? "свои увечия" : "увечия персонажа [victim]"] с помощью [I]...</span>")
 	if(!do_after(user, base_treat_time * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, .proc/still_exists)))
 		return
-	user.visible_message("<span class='green'>[user] stitches up some of the bleeding on [victim].</span>", "<span class='green'>You stitch up some of the bleeding on [user == victim ? "yourself" : "[victim]"].</span>")
+	user.visible_message("<span class='green'>[user] зашивает увечия персонажа [victim].</span>", "<span class='green'>Вы зашиваете увечия на [user == victim ? "своей конечности" : "конечности персонажа [victim]"].</span>")
 	var/blood_sutured = I.stop_bleeding / self_penalty_mult * 0.5
 	blood_flow -= blood_sutured
 	limb.heal_damage(I.heal_brute, I.heal_burn)
@@ -106,19 +142,20 @@
 	if(blood_flow > 0)
 		try_treating(I, user)
 	else
-		to_chat(user, "<span class='green'>You successfully close the hole in [user == victim ? "your" : "[victim]'s"] [limb.name].</span>")
+		to_chat(user, "<span class='green'>Вы успешно закрываете отверстие на [user == victim ? "своей конечности" : "конечности персонажа [victim]"].</span>")
 
 /// If someone is using either a cautery tool or something with heat to cauterize this pierce
 /datum/wound/pierce/proc/tool_cauterize(obj/item/I, mob/user)
 	var/self_penalty_mult = (user == victim ? 1.5 : 1)
-	user.visible_message("<span class='danger'>[user] begins cauterizing [victim]'s [limb.name] with [I]...</span>", "<span class='danger'>You begin cauterizing [user == victim ? "your" : "[victim]'s"] [limb.name] with [I]...</span>")
+	user.visible_message("<span class='danger'>[user] пытается прижечь увечие на [limb.ru_name_v] персонажа [victim] с помощью [I]...</span>", "<span class='danger'>Вы пытаетесь прижечь [user == victim ? "свою конечность" : "конечность персонажа [victim]"] с помощью [I]...</span>")
 	if(!do_after(user, base_treat_time * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, .proc/still_exists)))
 		return
 
-	user.visible_message("<span class='green'>[user] cauterizes some of the bleeding on [victim].</span>", "<span class='green'>You cauterize some of the bleeding on [victim].</span>")
-	limb.receive_damage(burn = 2 + severity, wound_bonus = CANT_WOUND)
-	if(prob(30))
-		victim.emote("scream")
+	user.visible_message("<span class='green'>[user] прижигает увечия персонажа [victim].</span>", "<span class='green'>Вы прижигаете увечия персонажа [victim].</span>")
+	if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+		limb.receive_damage(burn = 2 + severity, wound_bonus = CANT_WOUND)
+		if(prob(30))
+			victim.emote("scream")
 	var/blood_cauterized = (0.6 / self_penalty_mult) * 0.5
 	blood_flow -= blood_cauterized
 
@@ -127,52 +164,94 @@
 
 /datum/wound/pierce/moderate
 	name = "Minor Breakage"
-	desc = "Patient's skin has been broken open, causing severe bruising and minor internal bleeding in affected area."
-	treat_text = "Treat affected site with bandaging or exposure to extreme cold. In dire cases, brief exposure to vacuum may suffice." // space is cold in ss13, so it's like an ice pack!
-	examine_desc = "has a small, circular hole, gently bleeding"
-	occur_text = "spurts out a thin stream of blood"
+	ru_name = "Малая колотая рана"
+	ru_name_r = "малой колотой раны"
+	desc = "Кожа пациента повреждена, что привело к небольшому кровотечению."
+	treat_text = "Перевязать поврежденную кожу или наложить холодный компресс." // space is cold in ss13, so it's like an ice pack!
+	examine_desc = "имеет небольшое отверстие, из которого течёт струйка крови"
+	occur_text = "извергает тонкую струйку крови"
 	sound_effect = 'sound/effects/wounds/pierce1.ogg'
 	severity = WOUND_SEVERITY_MODERATE
-	initial_flow = 1.5
+	initial_flow = 1.4
 	gauzed_clot_rate = 0.8
-	internal_bleeding_chance = 30
-	internal_bleeding_coefficient = 1
+	internal_bleeding_chance = 45
+	internal_bleeding_coefficient = 1.1
 	threshold_minimum = 40
-	threshold_penalty = 15
+	threshold_penalty = 8
 	status_effect_type = /datum/status_effect/wound/pierce/moderate
 	scar_keyword = "piercemoderate"
 
+// BLUEMOON ADD START
+/datum/wound/pierce/moderate/apply_typo_modification()
+	if(HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM))
+		ru_name = "Малая Пробоина Обшивки"
+		ru_name_r = "малой пробоины обшивки"
+		desc = "Обшивка повреждена, что приводит к малой потери жидкостей"
+		treat_text = "Сварить поврежденную область сваркой."
+		examine_desc = "покрыто маленькими отверстиями, из которых течёт жёрная жижа"
+		occur_text = "начинает истекать чёрной жижей"
+		treatable_tool = TOOL_WELDER
+	return
+
 /datum/wound/pierce/severe
 	name = "Open Puncture"
+	ru_name = "Колотая рана"
+	ru_name_r = "колотой раны"
 	desc = "Patient's internal tissue is penetrated, causing sizeable internal bleeding and reduced limb stability."
-	treat_text = "Repair punctures in skin by suture or cautery, extreme cold may also work."
-	examine_desc = "is pierced clear through, with bits of tissue obscuring the open hole"
-	occur_text = "looses a violent spray of blood, revealing a pierced wound"
+	treat_text = "Перекрыть поврежденные участки с помощью жгута или прижигателя. В неординарных ситуациях поможет и воздействие космического вакуума вкупе с сильным холодом."
+	examine_desc = "пробита насквозь, а отверстие проглядывается через остатки кожи"
+	occur_text = "выплескивает струю крови, обнажая сквозную рану"
 	sound_effect = 'sound/effects/wounds/pierce2.ogg'
 	severity = WOUND_SEVERITY_SEVERE
-	initial_flow = 2
+	initial_flow = 1.8
 	gauzed_clot_rate = 0.6
-	internal_bleeding_chance = 60
-	internal_bleeding_coefficient = 1.25
-	threshold_minimum = 60
-	threshold_penalty = 25
+	internal_bleeding_chance = 65
+	internal_bleeding_coefficient = 1.3
+	threshold_minimum = 65
+	threshold_penalty = 15
 	status_effect_type = /datum/status_effect/wound/pierce/severe
 	scar_keyword = "piercesevere"
 
+/datum/wound/pierce/severe/apply_typo_modification()
+	if(HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM))
+		name = "Open Puncture"
+		ru_name = "Пробоина Обшивки"
+		ru_name_r = "пробоины обшивки"
+		desc = "Сквозная рана вызывает умеренную потерю жидкостей."
+		treat_text = "Заварить поврежденную область сваркой."
+		examine_desc = "пробита насквозь, чёрная жидкость вытекает."
+		occur_text = "выплескивает струю чёрной жижи, обнажая сквозную пробоину"
+		treatable_tool = TOOL_WELDER
+	return
+
 /datum/wound/pierce/critical
 	name = "Ruptured Cavity"
-	desc = "Patient's internal tissue and circulatory system is shredded, causing significant internal bleeding and damage to internal organs."
-	treat_text = "Surgical repair of puncture wound, followed by supervised resanguination."
-	examine_desc = "is ripped clear through, barely held together by exposed bone"
-	occur_text = "blasts apart, sending chunks of viscera flying in all directions"
+	ru_name = "Разрыв тканей"
+	ru_name_r = "разрыва тканей"
+	desc = "Ткани и кровеносная система пациента повреждены. Это привело к обильному внутреннему кровотечению."
+	treat_text = "Хирургическое вмешательство с последующим переливанием крови."
+	examine_desc = "буквально разорвана и едва удерживается обнаженными костями"
+	occur_text = "разрывается, разбрасывая вокруг обломки костей и плоти"
 	sound_effect = 'sound/effects/wounds/pierce3.ogg'
 	severity = WOUND_SEVERITY_CRITICAL
-	initial_flow = 2.7
+	initial_flow = 2.75
 	gauzed_clot_rate = 0.4
 	internal_bleeding_chance = 80
-	internal_bleeding_coefficient = 1.5
-	threshold_minimum = 110
-	threshold_penalty = 40
+	internal_bleeding_coefficient = 1.6
+	threshold_minimum = 95
+	threshold_penalty = 20
 	status_effect_type = /datum/status_effect/wound/pierce/critical
 	scar_keyword = "piercecritical"
 	wound_flags = (FLESH_WOUND | ACCEPTS_GAUZE | MANGLES_FLESH)
+
+/datum/wound/pierce/critical/apply_typo_modification()
+	if(HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM))
+		ru_name = "Прорванная Обшивка"
+		ru_name_r = "прорванная обшивка"
+		desc = "обшивка и трубы гидравлической жидкости пробиты, это приводит к обильной потери жидкостей."
+		treat_text = "Заварить поврежденную часть, заменить гидравлическую жидкость"
+		examine_desc = "буквально разорвана и едва удерживается обнаженными приводами"
+		occur_text = "разрывается со всплеском чёрной жижи, разбрасывая вокруг обломки обшивки и приводов"
+		wound_flags = (FLESH_WOUND | MANGLES_FLESH)
+		treatable_tool = TOOL_WELDER
+	return

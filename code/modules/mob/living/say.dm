@@ -20,6 +20,13 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	RADIO_KEY_SYNDICATE = RADIO_CHANNEL_SYNDICATE,
 	RADIO_KEY_CENTCOM = RADIO_CHANNEL_CENTCOM,
 	RADIO_KEY_HOTEL = RADIO_CHANNEL_HOTEL, //SPLURT EDIT ADDITION
+	RADIO_KEY_PIRATE = RADIO_CHANNEL_PIRATE,
+	RADIO_KEY_INTEQ = RADIO_CHANNEL_INTEQ,
+
+	// Ghost-Roles
+	RADIO_KEY_DS1 = RADIO_CHANNEL_DS1,
+	RADIO_KEY_DS2 = RADIO_CHANNEL_DS2,
+	RADIO_KEY_TARKOFF = RADIO_CHANNEL_TARKOFF,
 
 	// Admin
 	MODE_KEY_ADMIN = MODE_ADMIN,
@@ -103,9 +110,9 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	if(ic_blocked)
 		//The filter warning message shows the sanitized message though.
-		to_chat(src, "<span class='warning'>That message contained a word prohibited in IC chat! Consider reviewing the server rules.\n<span replaceRegex='show_filtered_ic_chat'>\"[message]\"</span></span>")
+		to_chat(src, "<span class='warning'>Здравствуйте. Вам следует исключить сказанное слово из своего словесного запаса во время игры на нашем сервере. Вы предупреждены.\n<span replaceRegex='show_filtered_ic_chat'>\"[message]\"</span></span>")
 		SSblackbox.record_feedback("tally", "ic_blocked_words", 1, lowertext(config.ic_filter_regex.match))
-		return
+		src.adjustOrganLoss(ORGAN_SLOT_BRAIN, 25, 75)
 
 	var/datum/saymode/saymode = SSradio.saymodes[talk_key]
 	var/message_mode = get_message_mode(message)
@@ -165,7 +172,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		return
 
 	if(!can_speak_vocal(message))
-		to_chat(src, "<span class='warning'>You find yourself unable to speak!</span>")
+		to_chat(src, "<span class='warning'>Вы не можете говорить!</span>")
 		return
 
 	var/message_range = 7
@@ -256,7 +263,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	var/deaf_type
 	if(speaker != src)
 		if(!radio_freq) //These checks have to be seperate, else people talking on the radio will make "You can't hear yourself!" appear when hearing people over the radio while deaf.
-			deaf_message = "<span class='name'>[speaker]</span> [speaker.verb_say] something but you cannot hear [speaker.p_them()]."
+			deaf_message = "<span class='name'>[speaker]</span> [speaker.verb_say] something but you cannot hear [speaker.ru_na()]."
 			deaf_type = 1
 	else
 		deaf_message = "<span class='notice'>You can't hear yourself!</span>"
@@ -353,7 +360,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		for(var/mob/M as anything in overhearing)
 			overhearing_text += key_name(M)
 		overhearing_text = english_list(overhearing_text)
-	log_say("YELL: [ismob(src)? key_name(src) : src] yelled [message] with overhearing mobs [overhearing_text]")
+	//log_say("YELL: [ismob(src)? key_name(src) : src] yelled [message] with overhearing mobs [overhearing_text]")
 	// overhearing = get_hearers_in_view(35, src) | get_hearers_in_range(5, src)
 	overhearing -= already_heard
 	if(!overhearing.len)
@@ -377,7 +384,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		if(client.prefs.muted & MUTE_IC)
 			to_chat(src, "<span class='danger'>You cannot speak in IC (muted).</span>")
 			return 0
-		if(!ignore_spam && client.handle_spam_prevention(message,MUTE_IC))
+		if(!ignore_spam && client.handle_spam_prevention(message, MUTE_IC))
 			return 0
 
 	return 1
@@ -386,7 +393,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	var/obj/item/bodypart/leftarm = get_bodypart(BODY_ZONE_L_ARM)
 	var/obj/item/bodypart/rightarm = get_bodypart(BODY_ZONE_R_ARM)
 	if(HAS_TRAIT(src, TRAIT_MUTE) && get_selected_language() != /datum/language/signlanguage)
-		return 0
+		return FALSE
 
 	if (get_selected_language() == /datum/language/signlanguage)
 		var/left_disabled = FALSE
@@ -402,15 +409,16 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		else
 			right_disabled = TRUE
 		if (left_disabled && right_disabled) // We want this to only return false if both arms are either missing or disabled since you could technically sign one-handed.
-			return 0
+			return FALSE
 
 	if(is_muzzled())
-		return 0
+		emote("moan")
+		return FALSE
 
 	if(!IsVocal())
-		return 0
+		return FALSE
 
-	return 1
+	return TRUE
 
 /mob/living/proc/get_key(message)
 	var/key = message[1]
@@ -430,6 +438,15 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	if(HAS_TRAIT(src, TRAIT_UNINTELLIGIBLE_SPEECH))
 		message = unintelligize(message)
+
+	if(HAS_TRAIT(src, TRAIT_ASIAT))
+		message = asiatish(message)
+
+	if(HAS_TRAIT(src, TRAIT_UKRAINE))
+		message = ukraine(message)
+
+	if(HAS_TRAIT(src, TRAIT_KARTAVII))
+		message = kartavo(message)
 
 	if(derpspeech)
 		message = derpspeech(message, stuttering)
@@ -487,7 +504,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 /mob/living/say_mod(input, message_mode)
 	. = ..()
 	if(message_mode == MODE_WHISPER_CRIT)
-		. = "[verb_whisper] in [p_their()] last breath"
+		. = "[verb_whisper] in [ru_ego()] last breath"
 	else if(message_mode != MODE_CUSTOM_SAY)
 		if(message_mode == MODE_WHISPER)
 			. = verb_whisper

@@ -1,5 +1,7 @@
 /obj/item/organ/stomach
 	name = "stomach"
+	ru_name = "желудок"
+	ru_name_capital = "Желудок"
 	icon_state = "stomach"
 	w_class = WEIGHT_CLASS_NORMAL
 	zone = BODY_ZONE_CHEST
@@ -132,6 +134,7 @@
 /obj/item/organ/stomach/ipc
 	name = "ipc cell"
 	icon_state = "stomach-ipc"
+	organ_flags = ORGAN_SYNTHETIC // BLUEMOON ADD - органы синтетиков не должны гнить и должны быть подвержены ЭМИ
 
 /obj/item/organ/stomach/ipc/on_life()
 	. = ..()

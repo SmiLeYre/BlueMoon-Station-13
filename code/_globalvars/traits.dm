@@ -60,6 +60,7 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"TRAIT_ANTIMAGIC" = TRAIT_ANTIMAGIC,
 		"TRAIT_HOLY" = TRAIT_HOLY,
 		"TRAIT_DEPRESSION" = TRAIT_DEPRESSION,
+		"TRAIT_ONELIFE" = TRAIT_ONELIFE,
 		"TRAIT_JOLLY" = TRAIT_JOLLY,
 		"TRAIT_NOCRITDAMAGE" = TRAIT_NOCRITDAMAGE,
 		"TRAIT_NOSLIPWATER" = TRAIT_NOSLIPWATER,
@@ -77,6 +78,7 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"TRAIT_PARALYSIS_L_LEG" = TRAIT_PARALYSIS_L_LEG,
 		"TRAIT_PARALYSIS_R_LEG" = TRAIT_PARALYSIS_R_LEG,
 		"TRAIT_DISK_VERIFIER" = TRAIT_DISK_VERIFIER,
+		"TRAIT_NOMOBSWAP" = TRAIT_NOMOBSWAP,
 		"TRAIT_XRAY_VISION" = TRAIT_XRAY_VISION,
 		"TRAIT_THERMAL_VISION" = TRAIT_THERMAL_VISION,
 		"TRAIT_ABDUCTOR_TRAINING" = TRAIT_ABDUCTOR_TRAINING,
@@ -123,7 +125,11 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"TRAIT_MUSICIAN" = TRAIT_MUSICIAN,
 		"TRAIT_MASO" = TRAIT_MASO,
 		"TRAIT_HIGH_BLOOD" = TRAIT_HIGH_BLOOD,
+		"TRAIT_KISS_OF_DEATH" = TRAIT_KISS_OF_DEATH,
 		"TRAIT_EMPATH" = TRAIT_EMPATH,
+		"TRAIT_KARTAVII" = TRAIT_KARTAVII,
+		"TRAIT_ASIAT" = TRAIT_ASIAT,
+		"TRAIT_UKRAINE" = TRAIT_UKRAINE,
 		"TRAIT_FRIENDLY" = TRAIT_FRIENDLY,
 		"TRAIT_IWASBATONED" = TRAIT_IWASBATONED,
 		"TRAIT_SALT_SENSITIVE" = TRAIT_SALT_SENSITIVE,
@@ -141,7 +147,8 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 	/obj/item = list(
 		"TRAIT_NODROP" = TRAIT_NODROP,
 		"TRAIT_NO_TELEPORT" = TRAIT_NO_TELEPORT,
-		"TRAIT_SPOOKY_THROW" = TRAIT_SPOOKY_THROW
+		"TRAIT_SPOOKY_THROW" = TRAIT_SPOOKY_THROW,
+		"TRAIT_HAUNTED" = TRAIT_HAUNTED,
 		),
 	/datum/mind = list(
 		"TRAIT_CLOWN_MENTALITY" = TRAIT_CLOWN_MENTALITY
@@ -158,3 +165,24 @@ GLOBAL_LIST(trait_name_map)
 		for(var/tname in GLOB.traits_by_type[key])
 			var/val = GLOB.traits_by_type[key][tname]
 			.[val] = tname
+
+GLOBAL_LIST_INIT(movement_type_trait_to_flag, list(
+	TRAIT_MOVE_GROUND = GROUND,
+	TRAIT_MOVE_FLYING = FLYING,
+	TRAIT_MOVE_VENTCRAWLING = VENTCRAWLING,
+	TRAIT_MOVE_FLOATING = FLOATING,
+	TRAIT_MOVE_PHASING = PHASING
+	))
+
+GLOBAL_LIST_INIT(movement_type_addtrait_signals, set_movement_type_addtrait_signals())
+GLOBAL_LIST_INIT(movement_type_removetrait_signals, set_movement_type_removetrait_signals())
+
+/proc/set_movement_type_addtrait_signals(signal_prefix)
+	. = list()
+	for(var/trait in GLOB.movement_type_trait_to_flag)
+		. += SIGNAL_ADDTRAIT(trait)
+
+/proc/set_movement_type_removetrait_signals(signal_prefix)
+	. = list()
+	for(var/trait in GLOB.movement_type_trait_to_flag)
+		. += SIGNAL_REMOVETRAIT(trait)

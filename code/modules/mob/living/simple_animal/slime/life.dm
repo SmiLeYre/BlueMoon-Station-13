@@ -201,6 +201,12 @@
 		return
 
 	if(iscarbon(M))
+		// BLUEMOON ADD START - роботы не получают повреждений от того, что ими пытается кормиться слайм
+		if(HAS_TRAIT(M, TRAIT_ROBOTIC_ORGANISM))
+			if(prob(10))
+				to_chat(src, "<i>This subject does not have a strong enough life energy anymore...</i>")
+			return
+		// BLUEMOON ADD END
 		var/mob/living/carbon/C = M
 		C.adjustCloneLoss(rand(2,4))
 		C.adjustToxLoss(rand(1,2))

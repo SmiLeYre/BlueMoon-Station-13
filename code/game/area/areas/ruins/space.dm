@@ -6,6 +6,7 @@
 
 /area/ruin/space/has_grav
 	has_gravity = STANDARD_GRAVITY
+	ambientsounds = AWAY_MISSION
 
 /area/ruin/space/has_grav/powered
 	requires_power = FALSE
@@ -518,6 +519,204 @@
 	power_light = FALSE
 	power_environ = FALSE
 
+//Port Tarkon
+
+/area/ruin/space/has_grav/port_tarkon
+	name = "P-T Cryo-Storage"
+	always_unpowered = FALSE
+	ambientsounds = HIGHSEC
+
+/area/ruin/space/has_grav/port_tarkon/afthall
+	name = "P-T Aft Hallway"
+
+/area/ruin/space/has_grav/port_tarkon/forehall
+	name = "P-T Fore Hallway"
+
+/area/ruin/space/has_grav/port_tarkon/starboardhall
+	name = "P-T Starboard Hallway"
+
+/area/ruin/space/has_grav/port_tarkon/porthall
+	name = "P-T Port Hallway"
+
+/area/ruin/space/has_grav/port_tarkon/trauma
+	name = "P-T Trauma Center"
+	icon_state = "medbay1"
+
+/area/ruin/space/has_grav/port_tarkon/developement
+	name = "P-T Developement Center"
+	icon_state = "research"
+
+/area/ruin/space/has_grav/port_tarkon/comms
+	name = "P-T Communication Center"
+	icon_state = "captain"
+
+/area/ruin/space/has_grav/port_tarkon/power1
+	name = "P-T Solar Control"
+	icon_state = "engine"
+
+/area/ruin/space/has_grav/port_tarkon/centerhall
+	name = "P-T Central Hallway"
+	icon_state = "hallC"
+
+/area/ruin/space/has_grav/port_tarkon/secoff
+	name = "P-T Security Office"
+	icon_state = "security"
+
+/area/ruin/space/has_grav/port_tarkon/atmos
+	name = "P-T Atmospheric Center"
+	icon_state = "engine"
+
+/area/ruin/space/has_grav/port_tarkon/kitchen
+	name = "P-T Kitchen"
+	icon_state = "cafeteria"
+
+/area/ruin/space/has_grav/port_tarkon/garden
+	name = "P-T Garden"
+	icon_state = "garden"
+
+/area/ruin/space/has_grav/port_tarkon/cargo
+	name = "P-T Cargo Center"
+	icon_state = "cargo"
+
+/area/ruin/space/has_grav/port_tarkon/mining
+	name = "P-T Mining Office"
+	icon_state = "cargo"
+
+/area/ruin/space/has_grav/port_tarkon/storage
+	name = "P-T Warehouse"
+	icon_state = "cargo"
+
+/area/ruin/space/has_grav/port_tarkon/toolstorage
+	name = "P-T Tool Storage"
+	icon_state = "tool_storage"
+
+/area/ruin/space/has_grav/port_tarkon/observ
+	name = "P-T Observatory"
+	icon_state = "crew_quarters"
+
+/area/ruin/space/has_grav/port_tarkon/dorms
+	name = "P-T Dorms"
+	icon_state = "crew_quarters"
+
+/area/solars/tarkon
+	name = "\improper P-T Solar Array"
+	icon_state = "solarsS"
+	has_gravity = STANDARD_GRAVITY
+
+//Deep Space 2.
+///DS-2 'Blessed', Forward Operating Base
+/area/ruin/space/has_grav/bluemoon/deepspacetwo
+	name = "DS-2" //If DS-1 is so great...
+	icon = 'icons/area/areas_centcom.dmi'
+	icon_state = "syndie-ship"
+
+//Cargo
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo
+	name = "DS-2 'Blessed' | Warehouse"
+
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo/hangar
+	name = "DS-2 'Blessed' | Hangar"
+
+//Bridge
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge
+	name = "DS-2 'Blessed' | Bridge"
+	icon_state = "syndie-control"
+
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/cl
+	name = "DS-2 'Blessed' | Corporate Liaison's Office"
+	sound_environment = SOUND_AREA_WOODFLOOR
+
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral
+	name = "DS-2 'Blessed' | Station Admiral's Office"
+	sound_environment = SOUND_AREA_WOODFLOOR
+
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/vault
+	name = "DS-2 'Blessed' | Vault"
+
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/eva
+	name = "DS-2 'Blessed' | E.V.A."
+
+//Security
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/security
+	name = "DS-2 'Blessed' | Security"
+	ambientsounds = HIGHSEC
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/armory
+	name = "DS-2 'Blessed' | Armory"
+
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/lawyer
+	name = "DS-2 'Blessed' | Interrogation Office"
+
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison
+	name = "DS-2 'Blessed' | Long-Term Brig"
+
+//Service
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/service
+	name = "DS-2 'Blessed' | Service Wing"
+
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner
+	name = "DS-2 'Blessed' | Diner"
+
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms
+	name = "DS-2 'Blessed' | Dormitories"
+
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness
+	name = "DS-2 'Blessed' | Fitness Room"
+
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/lounge
+	name = "DS-2 'Blessed' | Lounge"
+
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/hydroponics
+	name = "DS-2 'Blessed' | Hydroponics"
+
+//Hallways
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/halls
+	name = "DS-2 'Blessed' | Central Halls"
+
+//Engineering
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering
+	name = "DS-2 'Blessed' | Engineering"
+
+//Research
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/research
+	name = "DS-2 'Blessed' | Research"
+
+//Medbay
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay
+	name = "DS-2 'Blessed' | Medical Bay"
+
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay/chem
+	name = "DS-2 'Blessed' | Chemistry"
+
+/area/ruin/space/has_grav/shuttle8532engineering
+	name = "Shuttle 8532 Engine Room"
+
+/area/ruin/space/has_grav/shuttle8532researchbay
+	name = "Shuttle 8532 Research Bay"
+
+/area/ruin/space/has_grav/shuttle8532cargohall
+	name = "Shuttle 8532 Cargo Hall"
+
+/area/ruin/space/has_grav/shuttle8532crewquarters
+	name = "Shuttle 8532 Crew Quarters"
+
+/area/ruin/space/has_grav/shuttle8532bridge
+	name = "Shuttle 8532 Bridge"
+
+/area/ruin/space/has_grav/vaulttango
+	name = "ARBORLINK Vault Tango"
+
+/area/ruin/space/has_grav/waypoint
+	name = "Abandoned Station"
+
+/area/ruin/space/has_grav/powered/toy_store
+	name = "Toy Store"
+
+/area/ruin/space/has_grav/powered/prison_shuttle
+	name = "Prison Shuttle"
+
+/area/ruin/space/has_grav/powered/posterpandamonium
+	name = "Strange Shuttle"
+
 //DJSTATION
 
 /area/ruin/space/djstation
@@ -589,3 +788,43 @@
 // 	name = "Hell Factory Office"
 // 	icon_state = "red"
 // 	area_flags = VALID_TERRITORY | BLOBS_ALLOWED | UNIQUE_AREA | NOTELEPORT
+
+//SYNDICATE DERELICT STATION
+
+/area/ruin/space/has_grav/syndiederelict
+	name = "Syndicate Derelict Station"
+	icon_state = "red"
+
+/area/ruin/space/has_grav/syndiederelict/engineering
+	name = "Syndicate Derelict Engineering"
+	icon_state = "construction"
+
+/area/ruin/space/has_grav/syndiederelict/solars
+	name = "Syndicate Derelict Solar Array"
+	icon_state = "yellow"
+	requires_power = FALSE
+	dynamic_lighting = DYNAMIC_LIGHTING_IFSTARLIGHT
+
+/area/ruin/space/has_grav/syndiederelict/hydroponics
+	name = "Syndicate Derelict Hydroponics"
+	icon_state = "hydro"
+
+/area/ruin/space/has_grav/syndiederelict/kitchen
+	name = "Syndicate Derelict Kitchen"
+	icon_state = "kitchen"
+
+/area/ruin/space/has_grav/syndiederelict/hallway
+	name = "Syndicate Derelict Hallway"
+	icon_state = "red"
+
+/area/ruin/space/has_grav/syndiederelict/research
+	name = "Syndicate Derelict Research Wing"
+	icon_state = "toxlab"
+
+/area/ruin/space/has_grav/syndiederelict/medbay
+	name = "Syndicate Derelict Medical Bay"
+	icon_state = "medbay"
+
+/area/ruin/space/has_grav/syndiederelict/virology
+	name = "Syndicate Derelict Virology"
+	icon_state = "virology"

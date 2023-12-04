@@ -106,7 +106,7 @@
 /obj/item/melee/transforming/energy/sword/bananium/suicide_act(mob/user)
 	if(!active)
 		transform_weapon(user, TRUE)
-	user.visible_message("<span class='suicide'>[user] is [pick("slitting [user.p_their()] stomach open with", "falling on")] [src]! It looks like [user.p_theyre()] trying to commit seppuku, but the blade slips off of [user.p_them()] harmlessly!</span>")
+	user.visible_message("<span class='suicide'>[user] is [pick("slitting [user.ru_ego()] stomach open with", "falling on")] [src]! It looks like [user.ru_who()] trying to commit seppuku, but the blade slips off of [user.ru_na()] harmlessly!</span>")
 	slipper.lube_flags |= FLYING_DOESNT_HELP|SLIP_WHEN_CRAWLING
 	slipper.Slip(src, user)
 	slipper.lube_flags &= ~(FLYING_DOESNT_HELP|SLIP_WHEN_CRAWLING)

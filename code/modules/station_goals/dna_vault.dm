@@ -32,15 +32,17 @@
 			.++
 
 /datum/station_goal/dna_vault/get_report()
-	return {"Our long term prediction systems indicate a 99% chance of system-wide cataclysm in the near future.
-		We need you to construct a DNA Vault aboard your station.
-
-		The DNA Vault needs to contain samples of:
-		[animal_count] unique animal data
-		[plant_count] unique non-standard plant data
-		[human_count] unique sapient humanoid DNA data
-
-		Base vault parts are available for shipping via cargo."}
+	return {" <b>Создание ДНК-Хранилища</b><br>
+		Наши системы долгосрочного прогнозирования указывают на 99-процентную вероятность межсистемного катаклизма в ближайшем будущем.
+		<br><br>
+		Нам нужно, чтобы вы построили Хранилище ДНК на борту вашей станции.
+		Хранилище ДНК должно содержать образцы:
+		<ul style='margin-top: 10px; margin-bottom: 10px;'>
+		<li>[animal_count] уникальных образцов животных.</li>
+		<li>[plant_count] уникальных образцов нестандартных растений.</li>
+		<li>[human_count] уникальных образцов ДНК разумных гуманоидов.</li>
+		</ul>
+		Основа для хранилища доступна к заказу в карго."}
 
 
 /datum/station_goal/dna_vault/on_report()

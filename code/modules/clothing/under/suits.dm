@@ -47,6 +47,7 @@
 	desc = "A formal trouser suit for women, intended for the station's finest."
 	icon_state = "black_suit_fem"
 	item_state = "black_suit_fem"
+	body_parts_covered = CHEST|GROIN|ARMS
 
 /obj/item/clothing/under/suit/green
 	name = "green suit"
@@ -147,9 +148,9 @@
 	can_adjust = FALSE
 
 /obj/item/clothing/under/suit/turtle/teal
-	name = "teal turtleneck"
-	icon_state = "tealturtle"
-	item_state = "tealturtle"
+	name = "green turtleneck"
+	icon_state = "centcom_t"
+	item_state = "centcom_t"
 	can_adjust = FALSE
 
 /obj/item/clothing/under/suit/turtle/grey
@@ -160,24 +161,18 @@
 
 /obj/item/clothing/under/suit/turtle/purple
 	name = "purple turtleneck"
-	icon_state = "turtle_sci"
-	item_state = "turtle_sci"
-	can_adjust = FALSE
+	icon_state = "rdturtle"
+	item_state = "rdturtle"
+	can_adjust = TRUE
 
 /obj/item/clothing/under/suit/turtle/orange
-	name = "orange turtleneck"
-	icon_state = "turtle_eng"
-	item_state = "turtle_eng"
-	can_adjust = FALSE
-
-/obj/item/clothing/under/suit/turtle/red
-	name = "red turtleneck"
-	icon_state = "turtle_sec"
-	item_state = "turtle_sec"
-	can_adjust = FALSE
+	name = "yellow turtleneck"
+	icon_state = "turtleneck_cargo"
+	item_state = "turtleneck_cargo"
+	can_adjust = TRUE
 
 /obj/item/clothing/under/suit/turtle/blue
 	name = "blue turtleneck"
-	icon_state = "turtle_med"
-	item_state = "turtle_med"
-	can_adjust = FALSE
+	icon_state = "cmoturtle"
+	item_state = "cmoturtle"
+	can_adjust = TRUE

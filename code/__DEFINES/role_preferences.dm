@@ -6,10 +6,11 @@
 
 //These are synced with the Database, if you change the values of the defines
 //then you MUST update the database!
-#define ROLE_SYNDICATE				"Syndicate"
+#define ROLE_INTEQ					"InteQ"
 #define ROLE_TRAITOR				"traitor"
 #define ROLE_OPERATIVE				"operative"
 #define ROLE_CHANGELING				"changeling"
+#define ROLE_CHANGELING_MIDROUND	"Changeling (Meteor)"
 #define ROLE_WIZARD					"wizard"
 #define ROLE_MALF					"malf AI"
 #define ROLE_REV					"revolutionary"
@@ -31,6 +32,7 @@
 #define ROLE_BRAINWASHED			"brainwashed victim"
 #define ROLE_OVERTHROW				"syndicate mutineer"
 #define ROLE_SENTIENCE          	"sentience potion spawn"
+#define ROLE_ANOMALY_GHOST 			"Ectoplasmic Anomaly Ghost"
 #define ROLE_MIND_TRANSFER          "mind transfer potion"
 #define ROLE_POSIBRAIN              "posibrain"
 #define ROLE_DRONE                  "drone"
@@ -41,12 +43,15 @@
 #define ROLE_FAMILY_HEAD_ASPIRANT 	"family head aspirant"
 #define ROLE_BLOODSUCKER			"bloodsucker"
 #define ROLE_SPACE_DRAGON			"Space Dragon"
-#define ROLE_SLAVER					"slaver"
-#define ROLE_SLAVER_LEADER			"slave master"
+#define ROLE_SLAVER					"Slaver"
+#define ROLE_SLAVER_LEADER			"Slave Master"
+#define ROLE_TERROR_SPIDER			"Terror Spider"
 //#define ROLE_MONSTERHUNTER			"monster hunter" Disabled for now
 #define ROLE_GHOSTCAFE				"ghostcafe"
+#define ROLE_GHOSTROLE				"ghostrole"
 #define ROLE_MINOR_ANTAG			"minorantag"
 #define ROLE_RESPAWN				"respawnsystem"
+#define ROLE_SYNDICATE				"Syndicate"
 //Define for disabling individual antagonists for dynamic
 #define HAS_ANTAG_PREF(C,ROLE) (!(NO_ANTAG & C.prefs.toggles) && (ROLE in C.prefs.be_special))
 //Missing assignment means it's not a gamemode specific role, IT'S NOT A BUG OR ERROR.
@@ -58,6 +63,7 @@ GLOBAL_LIST_INIT(special_roles, list(
 	ROLE_OPERATIVE = /datum/game_mode/nuclear,
 	ROLE_SLAVER,
 	ROLE_CHANGELING = /datum/game_mode/changeling,
+	ROLE_CHANGELING_MIDROUND,
 	ROLE_WIZARD = /datum/game_mode/wizard,
 	ROLE_MALF,
 	ROLE_REV = /datum/game_mode/revolution,
@@ -77,7 +83,9 @@ GLOBAL_LIST_INIT(special_roles, list(
 	ROLE_HERETIC = /datum/game_mode/heretics,
 	ROLE_BLOODSUCKER = /datum/game_mode/bloodsucker,
 	ROLE_FAMILIES = /datum/game_mode/gang,
-	ROLE_SPACE_DRAGON
+	ROLE_SPACE_DRAGON,
+	ROLE_TERROR_SPIDER,
+	ROLE_SYNDICATE
 	//ROLE_MONSTERHUNTER Disabled for now
 ))
 

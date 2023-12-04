@@ -1,86 +1,86 @@
 {
-	"generic": ["general disfigurement"],
+	"generic": ["общее обезображивание"],
 
 	"bluntmoderate": [
-		"light discoloring",
-		"a slight blue tint"
+		"легкое обесцвечивание",
+		"легкий синий оттенок"
 	],
 
 	"bluntsevere": [
-		"a faded, fist-sized bruise",
-		"a vaguely triangular peel scar"
+		"выцветший синяк размером с кулак",
+		"смутный треугольный шрам"
 	],
 
 	"bluntcritical": [
-		"a section of janky skin lines and badly healed scars",
-		"a large patch of uneven skin tone",
-		"a cluster of calluses"
+		"участок шершавых линий кожи и плохо заживших шрамов",
+		"большое пятно неровного тона кожи",
+		"скопление мозолей"
 	],
 
 
 
 	"slashmoderate": [
-		"light, faded lines",
-		"minor cut marks",
-		"a small faded slit",
-		"a series of small scars"
+		"лёгкие, блеклые линии",
+		"незначительные шрамы",
+		"маленькая выцветшая линия",
+		"группа маленьких шрамов"
 	],
 
 	"slashsevere": [
-		"a twisted line of faded gashes",
-		"a gnarled sickle-shaped slice scar"
+		"витая линия затухших налетов",
+		"корявый серповидный ломтик шрама"
 	],
 
 	"slashcritical": [
-		"a winding path of very badly healed scar tissue",
-		"a series of peaks and valleys along a gruesome line of cut scar tissue",
-		"a grotesque snake of indentations and stitching scars"
+		"извилистая дорожка очень плохо зажившей рубцовой кожи",
+		"ряд пиков и долин вдоль ужасной линии разреза рубцовой кожи",
+		"гротескная змея из вмятин и швов"
 	],
 
 
 
 	"piercemoderate": [
-		"a small, faded bruise",
-		"a small twist of reformed skin",
-		"a thumb-sized puncture scar"
+		"лёгкие, блеклые шрамы",
+		"небольшие искривления кожи",
+		"шрамовидная щель размером с палец"
 	],
 
 	"piercesevere": [
-		"an ink-splat shaped pocket of scar tissue",
-		"a long-faded puncture wound",
-		"a tumbling puncture hole with evidence of faded stitching"
+		"чернильный шрам в виде рубца",
+		"давно выцветшая глубокая рана",
+		"проколотое отверстие с признаками потертости швов"
 	],
 
 	"piercecritical": [
-		"a rippling shockwave of scar tissue",
-		"a wide, scattered cloud of shrapnel marks",
-		"a gruesome multi-pronged puncture scar"
+		"пульсирующая ударная волна рубцовой ткани",
+		"широкое рассеянное облако осколков",
+		"ужасный колотый рубец"
 	],
 
 
 
 	"burnmoderate": [
-		"small amoeba-shaped skinmarks",
-		"a faded streak of depressed skin"
+		"небольшие следы в форме амеб",
+		"блеклая полоска старой кожи"
 	],
 
 	"burnsevere": [
-		"a large, jagged patch of faded skin",
-		"random spots of shiny, smooth skin",
-		"spots of taut, leathery skin"
+		"большое зазубренное пятно увядшей кожи",
+		"случайные пятна блестящей, гладкой кожи",
+		"пятна тугой кожи"
 	],
 
 	"burncritical": [
-		"massive, disfiguring keloid scars",
-		"several long streaks of badly discolored and malformed skin",
-		"unmistakeable splotches of dead tissue from serious burns"
+		"массивные, обезображивающие келоидные рубцы",
+		"несколько длинных полос сильно обесцвеченной и деформированной кожи",
+		"безошибочные пятна мертвой ткани от серьезных ожогов"
 	],
 
 
 	"dismember": [
-		"is several skintone shades paler than the rest of the body",
-		"is a gruesome patchwork of artificial flesh",
-		"has a large series of attachment scars at the articulation points"
+		"это несколько оттенков кожи более бледные, чем остальная часть тела",
+		"это ужасная мешанина из искусственной плоти",
+		"это большой ряд шрамов прикрепления в точках сочленения"
 	]
 
 }

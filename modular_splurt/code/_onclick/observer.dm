@@ -14,8 +14,8 @@
 		return
 	playsound(src.loc, 'sound/weapons/slap.ogg', 50, 1, -1)
 	if(HAS_TRAIT(src, TRAIT_STEEL_ASS))
-		to_chat(src, span_danger("You feel something bounce off your steely asscheeks, but nothing is there..."))
-		to_chat(user, span_danger("You slap \The [src]'s ass, but your ethereal hand bounces right off!"))
+		to_chat(src, "<span class='danger'>You feel something bounce off your steely asscheeks, but nothing is there...</span>")
+		to_chat(user, "<span class='danger'>You slap \The [src]'s ass, but your ethereal hand bounces right off!</span>")
 		playsound(src.loc, 'sound/weapons/tap.ogg', 50, 1, -1)
 		return
 	if(istype(H))
@@ -26,7 +26,7 @@
 		H.dna.species.stop_wagging_tail(src)
 	playsound(src.loc, 'sound/weapons/slap.ogg', 50, 1, -1)
 	src.visible_message(\
-		span_danger("You hear someone slap \The [src]'s ass, but nobody's there..."),\
-		span_notice("Somebody slaps your ass, but nobody is around..."),\
-		"You hear a slap.", target=user, target_message=span_notice("You manage to will your ethereal hand to slap \The [src]'s ass."))
+		"<span class='danger'>You hear someone slap \The [src]'s ass, but nobody's there...</span>",\
+		"<span class='notice'>Somebody slaps your ass, but nobody is around...</span>",\
+		"You hear a slap.", target=user, target_message="<span class='notice'>You manage to will your ethereal hand to slap \The [src]'s ass.</span>")
 	return

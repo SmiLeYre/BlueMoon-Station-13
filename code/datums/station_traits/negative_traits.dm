@@ -15,7 +15,7 @@
 	blacklist = list(/datum/station_trait/strong_supply_lines)
 
 /datum/station_trait/distant_supply_lines/on_round_start()
-	SSeconomy.pack_price_modifier *= 1.2
+	SSeconomy.pack_price_modifier *= 3
 
 /datum/station_trait/late_arrivals
 	name = "Late Arrivals"
@@ -29,7 +29,7 @@
 /datum/station_trait/random_spawns
 	name = "Drive-by landing"
 	trait_type = STATION_TRAIT_NEGATIVE
-	weight = 2
+	weight = 25
 	show_in_report = TRUE
 	report_message = "Sorry for that, we missed your station by a few miles, so we just launched you towards your station in pods. Hope you don't mind!"
 	trait_to_give = STATION_TRAIT_RANDOM_ARRIVALS
@@ -38,9 +38,9 @@
 /datum/station_trait/hangover
 	name = "Hangover"
 	trait_type = STATION_TRAIT_NEGATIVE
-	weight = 0
+	weight = 50
 	show_in_report = TRUE
-	report_message = "Ohh....Man....That mandatory office party from last shift...God that was awesome..I woke up in some random toilet 3 sectors away..."
+	report_message = "Ох... чувак... та обязательная офисная вечеринка с прошлой смены... боже, это было круто... я проснулся в каком-то случайном туалете в трёх секторах от моего рабочего места..."
 	trait_to_give = STATION_TRAIT_HANGOVER
 	blacklist = list(/datum/station_trait/late_arrivals, /datum/station_trait/random_spawns)
 
@@ -57,7 +57,7 @@
 /datum/station_trait/hangover/proc/on_job_after_spawn(datum/source, datum/job/job, mob/living/spawned_mob)
 	SIGNAL_HANDLER
 
-	if(prob(65)) // most aren't hungover
+	if(prob(15))
 		return
 	if(!iscarbon(spawned_mob)) // don't want silicons or similar to be counted here
 		return
@@ -76,7 +76,6 @@
 		)
 	hat = new hat(spawned_mob)
 	spawned_mob.equip_to_slot_or_del(hat, ITEM_SLOT_HEAD)
-
 
 /datum/station_trait/blackout
 	name = "Blackout"
@@ -104,23 +103,23 @@
 	can_revert = FALSE
 
 /datum/station_trait/overflow_job_bureaucracy
-	name = "Overflow bureaucracy mistake"
+	name = "Overflow Bureaucracy Mistake"
 	trait_type = STATION_TRAIT_NEGATIVE
-	weight = 4
+	weight = 5
 	show_in_report = TRUE
 	var/chosen_job_name
 
 /datum/station_trait/overflow_job_bureaucracy/New()
 	. = ..()
-	RegisterSignal(SSjob, COMSIG_SUBSYSTEM_POST_INITIALIZE, .proc/set_overflow_job_override)
+	RegisterSignal(SSjob, COMSIG_SUBSYSTEM_POST_INITIALIZE, PROC_REF(set_overflow_job_override))
 
 /datum/station_trait/overflow_job_bureaucracy/get_report()
-	return "[name] - It seems for some reason we put out the wrong job-listing for the overflow role this shift...I hope you like [chosen_job_name]s."
+	return "Бюрократическая Ошибка - похоже, мы по какой-то причине разместили не то количество требуемых на вашу станцию сотрудников... надеюсь, вам понравится переизбыток [chosen_job_name]s."
 
 /datum/station_trait/overflow_job_bureaucracy/proc/set_overflow_job_override(datum/source)
 	SIGNAL_HANDLER
-	var/datum/job/picked_job = pick(get_all_jobs())
-	chosen_job_name = lowertext(picked_job.title) // like Chief Engineers vs like chief engineers
+	var/datum/job/picked_job = pick(SSjob.occupations)
+	chosen_job_name = lowertext(picked_job) // like Chief Engineers vs like chief engineers
 	SSjob.set_overflow_role(picked_job.type)
 
 /datum/station_trait/slow_shuttle
@@ -159,7 +158,7 @@
 /datum/station_trait/revenge_of_pun_pun
 	name = "Revenge of Pun Pun"
 	trait_type = STATION_TRAIT_NEGATIVE
-	weight = 2
+	weight = 10
 
 	// Way too much is done on atoms SS to be reverted, and it'd look
 	// kinda clunky on round start. It's not impossible to make this work,
@@ -177,7 +176,7 @@
 			/obj/item/melee/chainofcommand/tailwhip = 15,
 			/obj/item/melee/chainofcommand/tailwhip/kitty = 15,
 			/obj/item/reagent_containers/food/drinks/bottle = 25,
-			/obj/item/gun/ballistic/automatic/pistol = 1,
+			/obj/item/gun/ballistic/automatic/pistol = 10,
 		)
 
 	RegisterSignal(SSatoms, COMSIG_SUBSYSTEM_POST_INITIALIZE, .proc/arm_monke)

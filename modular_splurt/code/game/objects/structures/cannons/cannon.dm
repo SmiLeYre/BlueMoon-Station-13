@@ -25,8 +25,8 @@
 
 /obj/structure/cannon/examine(mob/user)
 	. = ..()
-	. += span_notice("[src] accepts gunpowder or welding fuel.")
-	. += span_warning("Using welding fuel will weaken the force of the projectile fired.")
+	. += "<span class='notice'>[src] accepts gunpowder or welding fuel.</span>"
+	. += "<span class='warning'>Using welding fuel will weaken the force of the projectile fired.</span>"
 
 /obj/structure/cannon/proc/fire()
 	for(var/mob/shaken_mob in urange(10, src))
@@ -48,24 +48,24 @@
 
 /obj/structure/cannon/attackby(obj/item/used_item, mob/user, params)
 	if(charge_ignited)
-		to_chat(user, span_warning("It's gonna fire!"))
+		to_chat(user, "<span class='warning'>It's gonna fire!</span>")
 		return
 	var/ignition_message = used_item.ignition_effect(src, user)
 
 	if(istype(used_item, /obj/item/stack/cannonball))
 		if(loaded_cannonball)
-			to_chat(user, span_warning("[src] is already loaded!"))
+			to_chat(user, "<span class='warning'>[src] is already loaded!</span>")
 		else
 			var/obj/item/stack/cannonball/cannoneers_balls = used_item
 			loaded_cannonball = new cannoneers_balls.type(src, 1)
 			loaded_cannonball.copy_evidences(cannoneers_balls)
-			to_chat(user, span_notice("You load a [cannoneers_balls.singular_name] into \the [src]."))
+			to_chat(user, "<span class='notice'>You load a [cannoneers_balls.singular_name] into \the [src].</span>")
 			cannoneers_balls.use(1, transfer = TRUE)
 		return
 
 	else if(ignition_message)
 		if(!reagents.has_reagent(/datum/reagent/blackpowder,charge_size) && !reagents.has_reagent(/datum/reagent/fuel,charge_size))
-			to_chat(user, span_warning("[src] needs [reagents.maximum_volume]u of charge!"))
+			to_chat(user, "<span class='warning'>[src] needs [reagents.maximum_volume]u of charge!</span>")
 			return
 		visible_message(ignition_message)
 		log_game("Cannon fired by [key_name(user)] in [AREACOORD(src)]")
@@ -81,7 +81,7 @@
 			return ..()
 
 		if(!powder_keg.reagents.total_volume)
-			to_chat(user, span_warning("[powder_keg] is empty!"))
+			to_chat(user, "<span class='warning'>[powder_keg] is empty!</span>")
 			return
 		if(reagents.total_volume >= reagents.maximum_volume)
 			to_chat(user, "<span class='warning'[src] is full!</span>")
@@ -89,15 +89,15 @@
 		var/has_enough_gunpowder = powder_keg.reagents.has_reagent(/datum/reagent/blackpowder, charge_size)
 		var/has_enough_alt_fuel = powder_keg.reagents.has_reagent(/datum/reagent/fuel, charge_size)
 		if(!has_enough_gunpowder && !has_enough_alt_fuel)
-			to_chat(user, span_warning("[powder_keg] doesn't have at least 15u of fuel to fill [src]!"))
+			to_chat(user, "<span class='warning'>[powder_keg] doesn't have at least 15u of fuel to fill [src]!</span>")
 			return
 		if(has_enough_gunpowder)
 			powder_keg.reagents.trans_id_to(src, /datum/reagent/blackpowder, amount = charge_size)
-			to_chat(user, span_notice("You load [src] with gunpowder."))
+			to_chat(user, "<span class='notice'>You load [src] with gunpowder.</span>")
 			return
 		if(has_enough_alt_fuel)
 			powder_keg.reagents.trans_id_to(src, /datum/reagent/fuel, amount = charge_size)
-			to_chat(user, span_notice("You load [src] with welding fuel."))
+			to_chat(user, "<span class='notice'>You load [src] with welding fuel.</span>")
 			return
 	if(anchorable_cannon && used_item.tool_behaviour == TOOL_WRENCH)
 		if(default_unfasten_wrench(user, used_item, time = 2 SECONDS))
@@ -122,11 +122,11 @@
 	if(used_alt_fuel)
 		fires_before_deconstruction--
 	if(prob(explode_chance))
-		visible_message(span_warning("[src] explodes!"))
+		visible_message("<span class='warning'>[src] explodes!</span>")
 		explosion(src, heavy_impact_range = 1, light_impact_range = 5, flame_range = 5)
 		return
 	if(fires_before_deconstruction <= 0)
-		visible_message(span_warning("[src] falls apart from operation!"))
+		visible_message("<span class='warning'>[src] falls apart from operation!</span>")
 		qdel(src)
 
 /obj/structure/cannon/trash/Destroy()

@@ -45,7 +45,7 @@
 		return TRUE
 
 /datum/surgery_step/gland_insert
-	name = "insert gland"
+	name = "Вставить Гланду"
 	implements = list(/obj/item/organ/heart/gland = 100)
 	time = 32
 

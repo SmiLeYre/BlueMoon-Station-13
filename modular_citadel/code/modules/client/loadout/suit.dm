@@ -19,6 +19,11 @@
 	name = "Red cloak"
 	path = /obj/item/clothing/suit/hooded/cloak/david
 
+/datum/gear/suit/harley_jacket
+	name = "Harley Jacket"
+	path = /obj/item/clothing/suit/jacket/harley
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
 /datum/gear/suit/jacketbomber
 	name = "Bomber jacket"
 	path = /obj/item/clothing/suit/jacket
@@ -42,6 +47,41 @@
 /datum/gear/suit/jacketflannelbrown
 	name = "Brown flannel jacket"
 	path = /obj/item/clothing/suit/toggle/jacket/flannel/brown
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/jacketflannelwhite
+	name = "White flannel jacket"
+	path = /obj/item/clothing/suit/toggle/jacket/flannel/white
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/hawaiianshirtblack
+	name = "Black hawaiian shirt"
+	path = /obj/item/clothing/suit/toggle/jacket/hawaiian
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/hawaiianshirtfuch
+	name = "Fuch hawaiian shirt"
+	path = /obj/item/clothing/suit/toggle/jacket/hawaiian/fuch
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/hawaiianshirtvine
+	name = "Vine hawaiian shirt"
+	path = /obj/item/clothing/suit/toggle/jacket/hawaiian/vine
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/hawaiianshirtorange
+	name = "Orange hawaiian shirt"
+	path = /obj/item/clothing/suit/toggle/jacket/hawaiian/orange
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/hawaiianshirtmotu
+	name = "Motu hawaiian shirt"
+	path = /obj/item/clothing/suit/toggle/jacket/hawaiian/motu
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/hawaiianshirtvice
+	name = "Vice hawaiian shirt"
+	path = /obj/item/clothing/suit/toggle/jacket/hawaiian/vice
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
 /datum/gear/suit/jacketleather

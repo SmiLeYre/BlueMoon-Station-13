@@ -143,10 +143,10 @@
 	icon_state = "hunter"
 	icon_living = "hunter"
 	icon_dead = "hunter_dead"
-	maxHealth = 120
-	health = 120
-	melee_damage_lower = 10
-	melee_damage_upper = 20
+	maxHealth = 320
+	health = 320
+	melee_damage_lower = 18
+	melee_damage_upper = 29
 	poison_per_bite = 5
 	move_to_delay = 5
 
@@ -157,8 +157,8 @@
 	icon_state = "viper"
 	icon_living = "viper"
 	icon_dead = "viper_dead"
-	maxHealth = 40
-	health = 40
+	maxHealth = 240
+	health = 240
 	melee_damage_lower = 1
 	melee_damage_upper = 1
 	poison_per_bite = 12

@@ -7,6 +7,9 @@
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	force = 7
+	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = ITEM_SLOT_BELT
+	item_flags = SURGICAL_TOOL
 	var/powertransfer = 1000
 	var/opened = FALSE
 	var/cell_type = /obj/item/stock_parts/cell/high
@@ -187,7 +190,6 @@
 /obj/item/inducer/sci/combat
 	icon_state = "inducer-combat"
 	item_state = "inducer-combat"
-	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BELT
 	desc = "A tool for inductively charging internal power cells. This one has been modified and upgraded to be able to charge into guns as well as normal electronics."
 	cell_type = /obj/item/stock_parts/cell/hyper
@@ -210,3 +212,10 @@
 /obj/item/inducer/sci/supply
 	opened = FALSE
 	cell_type = /obj/item/stock_parts/cell/inducer_supply
+
+/obj/item/inducer/syndicate
+	icon_state = "inducer-syndi"
+	item_state = "inducer-syndi"
+	desc = "A tool for inductively charging internal power cells. This one has a suspicious colour scheme, and seems to be rigged to transfer charge at a much faster rate."
+	powertransfer = 2000
+	cell_type = /obj/item/stock_parts/cell/super

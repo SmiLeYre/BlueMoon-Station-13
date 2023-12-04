@@ -22,6 +22,9 @@
 	var/mob/living/silicon/ai/mainframe = null
 	var/datum/action/innate/undeployment/undeployment_action = new
 
+	///Represents the cyborg's model (engineering, medical, etc.)
+	var/obj/item/robot_module/model = null
+
 	/// the last health before updating - to check net change in health
 	var/previous_health
 //Hud stuff

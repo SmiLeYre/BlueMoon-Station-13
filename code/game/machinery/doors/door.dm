@@ -79,7 +79,7 @@
 	. = ..()
 	set_init_door_layer()
 	update_freelook_sight()
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	register_context()
 	GLOB.airlocks += src
 	spark_system = new /datum/effect_system/spark_spread
@@ -297,7 +297,7 @@
 	update_icon()
 	set_opacity(0)
 	operating = FALSE
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	update_freelook_sight()
 	if(autoclose)
 		spawn(autoclose)
@@ -329,7 +329,7 @@
 	if(visible && !glass)
 		set_opacity(1)
 	operating = FALSE
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	update_freelook_sight()
 	if(safe)
 		CheckForMobs()
@@ -344,7 +344,7 @@
 
 /obj/machinery/door/proc/crush()
 	for(var/mob/living/L in get_turf(src))
-		L.visible_message("<span class='warning'>[src] closes on [L], crushing [L.p_them()]!</span>", "<span class='userdanger'>[src] closes on you and crushes you!</span>")
+		L.visible_message("<span class='warning'>[src] closes on [L], crushing [L.ru_na()]!</span>", "<span class='userdanger'>[src] closes on you and crushes you!</span>")
 		if(iscarbon(L))
 			var/mob/living/carbon/C = L
 			for(var/i in C.all_wounds) // should probably replace with signal
@@ -355,7 +355,8 @@
 			L.emote("roar")
 		else if(ishuman(L)) //For humans
 			L.adjustBruteLoss(DOOR_CRUSH_DAMAGE)
-			L.emote("scream")
+			if(!HAS_TRAIT(L, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+				L.emote("scream")
 			L.DefaultCombatKnockdown(100)
 		else if(ismonkey(L)) //For monkeys
 			L.adjustBruteLoss(DOOR_CRUSH_DAMAGE)
@@ -436,3 +437,20 @@
 			new_unres_sides |= angle2dir_cardinal(rotation+dir2angle(direction))
 	unres_sides = new_unres_sides
 	update_icon()
+
+/**
+ * Signal handler for checking if we notify our surrounding that access requirements are lifted accordingly to a newly set security level
+ *
+ * Arguments:
+ * * source The datum source of the signal
+ * * new_level The new security level that is in effect
+ */
+/obj/machinery/door/proc/check_security_level(datum/source, new_level)
+	SIGNAL_HANDLER
+
+	if(new_level <= SEC_LEVEL_BLUE)
+		return
+	if(!red_alert_access)
+		return
+	audible_message(span_notice("[src] whirr[p_s()] as [p_they()] automatically lift[p_s()] access requirements!"))
+	playsound(src, 'sound/machines/boltsup.ogg', 50, TRUE)

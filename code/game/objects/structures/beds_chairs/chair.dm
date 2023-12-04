@@ -140,6 +140,13 @@
 /obj/structure/chair/post_buckle_mob(mob/living/M)
 	. = ..()
 	handle_layer()
+	// BLUEMOON ADDITION AHEAD - стул ломается при попытке сесть на него сверхтяжёлым персонажем
+	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER))
+		visible_message(span_warning("[src] buckles under the weight of [M] causing it to break!"))
+		playsound(src, 'modular_bluemoon/heavy_and_superheavy_quirks/chair_break.ogg', 70, TRUE)
+		unbuckle_mob(M, TRUE)
+		deconstruct(FALSE)
+	// BLUEMOON ADDITION END
 
 /obj/structure/chair/post_unbuckle_mob()
 	. = ..()
@@ -284,6 +291,18 @@
 	buildstackamount = 1
 	item_chair = /obj/item/chair/stool
 
+/obj/structure/chair/stool/directional/north //Pixel offsets get overwritten on New()
+	dir = NORTH
+
+/obj/structure/chair/stool/directional/south
+	dir = SOUTH
+
+/obj/structure/chair/stool/directional/east
+	dir = EAST
+
+/obj/structure/chair/stool/directional/west
+	dir = WEST
+
 /obj/structure/chair/stool/narsie_act()
 	return
 
@@ -294,7 +313,7 @@
 			return
 		if(!usr.canUseTopic(src, BE_CLOSE, ismonkey(usr)))
 			return
-		usr.visible_message("<span class='notice'>[usr] grabs \the [src.name].</span>", "<span class='notice'>You grab \the [src.name].</span>")
+		usr.visible_message("<span class='notice'>[usr] хватает \the [src.name].</span>", "<span class='notice'>Вы хватаете \the [src.name].</span>")
 		var/obj/item/C = new item_chair(loc)
 		C.set_custom_materials(custom_materials)
 		TransferComponents(C)
@@ -306,6 +325,18 @@
 	desc = "It has some unsavory stains on it..."
 	icon_state = "bar"
 	item_chair = /obj/item/chair/stool/bar
+
+/obj/structure/chair/stool/bar/directional/north //Pixel offsets get overwritten on New()
+	dir = NORTH
+
+/obj/structure/chair/stool/bar/directional/south
+	dir = SOUTH
+
+/obj/structure/chair/stool/bar/directional/east
+	dir = EAST
+
+/obj/structure/chair/stool/bar/directional/west
+	dir = WEST
 
 /obj/item/chair
 	name = "chair"
@@ -359,7 +390,7 @@
 	parry_data = list(PARRY_COUNTERATTACK_MELEE_ATTACK_CHAIN = 2.5)
 
 /obj/item/chair/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins hitting [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] начинает бить себя с помощью \the [src]! Кажется [user.p_theyre()] пытается совершить суицид!</span>")
 	playsound(src,hitsound,50,1)
 	return BRUTELOSS
 
@@ -374,13 +405,13 @@
 /obj/item/chair/proc/plant(mob/user)
 	for(var/obj/A in get_turf(loc))
 		if(istype(A, /obj/structure/chair))
-			to_chat(user, "<span class='danger'>There is already a chair here.</span>")
+			to_chat(user, "<span class='danger'>Тут уже есть стул.</span>")
 			return
 		if(A.density && !(A.flags_1 & ON_BORDER_1))
-			to_chat(user, "<span class='danger'>There is already something here.</span>")
+			to_chat(user, "<span class='danger'>Тут уже есть что-то.</span>")
 			return
 
-	user.visible_message("<span class='notice'>[user] rights \the [src.name].</span>", "<span class='notice'>You right \the [name].</span>")
+	user.visible_message("<span class='notice'>[user] ставит \the [src.name].</span>", "<span class='notice'>Вы ставите \the [name].</span>")
 	var/obj/structure/chair/C = new origin_type(get_turf(loc))
 	C.set_custom_materials(custom_materials)
 	TransferComponents(C)
@@ -408,7 +439,7 @@
 	if(!proximity)
 		return
 	if(prob(break_chance))
-		user.visible_message("<span class='danger'>[user] smashes [src] to pieces against [target]</span>")
+		user.visible_message("<span class='danger'>[user] разбивает [src] на обломки об [target]</span>")
 		if(iscarbon(target))
 			var/mob/living/carbon/C = target
 			if(C.health < C.maxHealth*0.5)

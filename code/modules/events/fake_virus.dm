@@ -1,9 +1,8 @@
 /datum/round_event_control/fake_virus
 	name = "Fake Virus"
 	typepath = /datum/round_event/fake_virus
-	weight = 20
+	weight = 90
 	category = EVENT_CATEGORY_HEALTH
-	description = "Some crewmembers suffer from temporary hypochondria."
 
 /datum/round_event/fake_virus/start()
 	var/list/fake_virus_victims = list()

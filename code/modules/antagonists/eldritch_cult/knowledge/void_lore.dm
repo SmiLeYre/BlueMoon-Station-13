@@ -167,14 +167,14 @@
 
 /datum/eldritch_knowledge/spell/domain_expansion/on_gain(mob/user)
 	. = ..()
-	priority_announce("Echos of the lost in space are heard... An ominous presence is being detected! ", sound = 'sound/misc/notice1.ogg')
+	priority_announce("Внимание, [station_name()]. [user.real_name] излучает пространственную нестабильность, в связи с которой эхо утерянных в космосе душ разносится по округе... вы можете ощутить зловещее присутствие! ", sound = 'sound/misc/notice1.ogg')
 
 /datum/eldritch_knowledge/final/void_final
 	name = "Waltz at the End of Time"
 	desc = "Bring 3 corpses onto the transmutation rune. After you finish the ritual you will automatically silence people around you and will summon a snow storm around you."
 	gain_text = "The world falls into darkness. I stand in an empty plane, small flakes of ice fall from the sky. The Aristocrat stands before me, he motions to me. We will play a waltz to the whispers of dying reality, as the world is destroyed before our eyes."
 	cost = 5
-	sacs_needed = 8
+	sacs_needed = 5
 	required_atoms = list(/mob/living/carbon/human)
 	route = PATH_VOID
 	///soundloop for the void theme
@@ -189,7 +189,7 @@
 	waltzing.physiology.burn_mod *= 0.5
 	ADD_TRAIT(waltzing, TRAIT_RESISTLOWPRESSURE, MAGIC_TRAIT)
 	waltzing.client?.give_award(/datum/award/achievement/misc/void_ascension, waltzing)
-	priority_announce("$^@&#*$^@(#&$(@&#^$&#^@# The nobleman of void [waltzing.real_name] has arrived, step along the Waltz that ends worlds! $^@&#*$^@(#&$(@&#^$&#^@#","#$^@&#*$^@(#&$(@&#^$&#^@#", 'sound/announcer/classic/spanomalies.ogg')
+	priority_announce("$^@&#*$^@(#&$(@&#^$&#^@# Дворянин пустоты, [waltzing.real_name], прибыл к вам, кружась в вальсе кончины миров! $^@&#*$^@(#&$(@&#^$&#^@#","#$^@&#*$^@(#&$(@&#^$&#^@#", 'modular_bluemoon/kovac_shitcode/sound/eldritch/void_lore.ogg')
 	sound_loop = new(user, TRUE, TRUE)
 	return ..()
 

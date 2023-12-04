@@ -1,4 +1,4 @@
-/mob/living/carbon/human/mob_climax_partner(obj/item/organ/genital/G, mob/living/L, spillage, mb_time, obj/item/organ/genital/Lgen, forced = FALSE)
+/mob/living/carbon/human/mob_climax_partner(obj/item/organ/genital/G, mob/living/L, spillage = TRUE, mb_time = 30, obj/item/organ/genital/Lgen = null, forced = FALSE, anonymous = FALSE)
 	. = ..()
 	L.receive_climax(src, Lgen, G, spillage, forced = forced)
 	if(iswendigo(L))
@@ -43,13 +43,12 @@
 		eggo.forceMove(container)
 		eggo.AddComponent(/datum/component/pregnancy, src, partner, baby_type)
 
-/mob/living/carbon/human/do_climax(datum/reagents/R, atom/target, obj/item/organ/genital/sender, spill, cover = FALSE, obj/item/organ/genital/receiver)
+/mob/living/carbon/human/do_climax(datum/reagents/R, atom/target, obj/item/organ/genital/sender, spill, cover = FALSE, obj/item/organ/genital/receiver, anonymous = FALSE)
 	if(!sender)
 		return
 	if(!target || !R)
 		return
-
-	if(SEND_SIGNAL(src, COMSIG_MOB_CLIMAX, R, target, sender, receiver, spill))
+	if(SEND_SIGNAL(src, COMSIG_MOB_CLIMAX, R, target, sender, receiver, spill, anonymous))
 		return
 
 	var/cached_fluid
@@ -65,12 +64,31 @@
 		var/obj/item/organ/genital/penis/bepis = sender
 		if(locate(/obj/item/genital_equipment/sounding) in bepis.contents)
 			spill = TRUE
-			to_chat(src, span_userlove("You feel your sounding rod being pushed out of your cockhole with the burst of jizz!"))
+			to_chat(src, "<span class='userlove'>Ты чувствуешь, как стержень выталкивается из твоей уретры вместе со струей оргазменной жидкости!</span>")
 			var/obj/item/genital_equipment/sounding/rod = locate(/obj/item/genital_equipment/sounding) in bepis.contents
 			rod.forceMove(get_turf(src))
 
-	if(cover)
-		target.add_cum_overlay()
+	if(cover == TRUE)
+		if(istype(sender, /obj/item/organ/genital/penis))
+			var/obj/item/organ/genital/testicles/testicles = sender
+			var/size = testicles.size
+			var/balls_size_0 = list("cum_normal", "cum_normal_1", "cum_normal_2", "cum_normal_3", "cum_normal_4", "", "", "", "", "", "", "", "", "", "")
+			var/balls_size_1 = list("cum_normal", "cum_normal_1", "cum_normal_2", "cum_normal_3", "cum_normal_4", "", "", "", "", "")
+			var/balls_size_2 = list("cum_normal", "cum_normal_1", "cum_normal_2", "cum_normal_3", "cum_normal_4")
+			var/balls_size_3 = list("cum_normal", "cum_normal_1", "cum_normal_2", "cum_normal_3", "cum_normal_4", "cum_large", "cum_large", "cum_large", "cum_large", "cum_large")
+			var/balls_size_4 = list("cum_normal", "cum_normal_1", "cum_normal_2", "cum_normal_3", "cum_normal_4", "cum_large", "cum_large", "cum_large", "cum_large", "cum_large", "cum_large", "cum_large", "cum_large", "cum_large", "cum_large")
+			switch(size)
+				if(BALLS_SIZE_MIN)
+					size = pick(balls_size_0)
+				if(BALLS_SIZE_DEF)
+					size = pick(balls_size_1)
+				if(BALLS_SIZE_2)
+					size = pick(balls_size_2)
+				if(BALLS_SIZE_3)
+					size = pick(balls_size_3)
+				if(BALLS_SIZE_MAX)
+					size = pick(balls_size_4)
+			target.add_cum_overlay(size)
 
 	. = ..()
 
@@ -86,14 +104,14 @@
 		return
 	var/main_fluid = lowertext(fluid_source.get_master_reagent_name())
 	if(mb_time)
-		visible_message(span_love("You hear a strong suction sound coming from the [M.name] on [src]'s [G.name]."), \
-							span_userlove("The [M.name] pumps faster, trying to get you over the edge."), \
-							span_userlove("Something vacuums your [G.name] with a quiet but powerfull vrrrr."))
+		visible_message("<span class='love'>You hear a strong suction sound coming from the [M.name] on [src]'s [G.name].</span>", \
+							"<span class='userlove'>The [M.name] pumps faster, trying to get you over the edge.</span>", \
+							"<span class='userlove'>Something vacuums your [G.name] with a quiet but powerfull vrrrr.</span>")
 		if(!do_after(src, mb_time, target = src) || !in_range(src, container) || !G.climaxable(src, TRUE))
 			return
-	visible_message(span_love("[src] twitches as [p_their()] [main_fluid] trickles into [container]."), \
-								span_userlove("[M] sucks out all the [main_fluid] you had been saving up into [container]."), \
-								span_userlove("You feel a vacuum sucking on your [G.name] as you climax!"))
+	visible_message("<span class='love'>[src] twitches as [ru_ego()] [main_fluid] trickles into <b>[container]</b>.</span>", \
+								"<span class='userlove'>[M] sucks out all the [main_fluid] you had been saving up into <b>[container]</b>.</span>", \
+								"<span class='userlove'>You feel a vacuum sucking on your [G.name] as you climax!</span>")
 	do_climax(fluid_source, container, G, FALSE, cover = TRUE)
 	emote("moan")
 
@@ -102,33 +120,37 @@
 	if(!fluid_source)
 		return
 	if(mb_time) //Skip warning if this is an instant climax.
-		to_chat(src,span_userlove("You're about to climax over [L]!"))
-		to_chat(L,span_userlove("[src] is about to climax over you!"))
+		to_chat(src,"<span class='userlove'>You're about to climax over [L]!</span>")
+		to_chat(L,"<span class='userlove'>[src] is about to climax over you!</span>")
 		if(!do_after(src, mb_time, target = src) || !in_range(src, L) || !G.climaxable(src, TRUE))
 			return
-	to_chat(src,span_userlove("You climax all over [L] using your [G.name]!"))
-	to_chat(L, span_userlove("[src] climaxes all over you using [p_their()] [G.name]!"))
+	to_chat(src,"<span class='userlove'>You climax all over [L] using your [G.name]!</span>")
+	to_chat(L, "<span class='userlove'>[src] climaxes all over you using [ru_ego()] [G.name]!</span>")
 	do_climax(fluid_source, L, G, spillage, cover = TRUE)
+
+/mob/living/carbon/human
+	var/covered_in_cum = FALSE
+
+/atom/proc/add_cum_overlay(size = "cum_normal", cum_color = "#FFFFFF") //This can go in a better spot, for now its here.
+	if(!istype(src, /mob/living/carbon/human))
+		return
+	if(initial(icon) && initial(icon_state))
+		add_overlay(mutable_appearance('modular_splurt/icons/effects/cumoverlay.dmi', size, color = cum_color), ICON_MULTIPLY)
+		var/mob/living/carbon/human/H = src
+		H.covered_in_cum = TRUE
+		to_chat(H, span_love("Кажется тебя немножко забрызгали~"))
 
 /mob/living/carbon/human/proc/getPercentAroused()
     var/percentage = ((get_lust() / (get_lust_tolerance() * 3)) * 100)
     return percentage
 
-/atom/proc/add_cum_overlay(cum_color) //This can go in a better spot, for now its here.
-	wash_cum()
-	cum_splatter_icon = mutable_appearance('modular_splurt/icons/effects/cumoverlay.dmi', "cum_obj", color = cum_color)
-	add_overlay(cum_splatter_icon)
-
-/mob/living/carbon/human/add_cum_overlay(cum_color, large = FALSE)
-	wash_cum()
-	cum_splatter_icon = mutable_appearance('modular_splurt/icons/effects/cumoverlay.dmi', large ? "cum_large" : "cum_normal", color = cum_color)
-	add_overlay(cum_splatter_icon)
-
 /atom/proc/wash_cum()
-	if(cum_splatter_icon)
-		cut_overlay(cum_splatter_icon)
-		QDEL_NULL(cum_splatter_icon)
-		return TRUE
+	cut_overlay(mutable_appearance('modular_splurt/icons/effects/cumoverlay.dmi', "cum_normal"))
+	cut_overlay(mutable_appearance('modular_splurt/icons/effects/cumoverlay.dmi', "cum_large"))
+	if(ishuman(src))
+		var/mob/living/carbon/human/H = src
+		H.covered_in_cum = FALSE
+	return TRUE
 
 //arousal hud display
 

@@ -50,7 +50,7 @@
 
 /obj/structure/destructible/clockwork/examine_status(mob/user)
 	if(is_servant_of_ratvar(user) || isobserver(user))
-		var/t_It = p_they(TRUE)
+		var/t_It = ru_who(TRUE)
 		var/t_is = p_are()
 		var/heavily_damaged = FALSE
 		var/healthpercent = (obj_integrity/max_integrity) * 100

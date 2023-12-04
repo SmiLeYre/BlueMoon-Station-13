@@ -124,6 +124,7 @@ GLOBAL_LIST(labor_sheet_values)
 	if(!(obj_flags & EMAGGED))
 		obj_flags |= EMAGGED
 		to_chat(user, "<span class='warning'>PZZTTPFFFT</span>")
+		log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	return TRUE
 
 /**********************Prisoner Collection Unit**************************/

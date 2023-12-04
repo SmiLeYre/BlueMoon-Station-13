@@ -52,6 +52,7 @@
 	if(LAZYLEN(.) > 1)
 		.[2] = "<hr>[.[2]]"
 
+	//. += span_boldnotice("Профиль Персонажа: <a href='?src=\ref[src];character_profile=1'>\[Осмотреть\]</a>") Доделать.
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, usr, .)
 
 	if(length(.) > 1)

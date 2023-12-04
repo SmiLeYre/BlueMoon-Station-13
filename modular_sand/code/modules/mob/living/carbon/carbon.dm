@@ -14,17 +14,22 @@
 			if(0 to NUTRITION_LEVEL_STARVING)
 				hud_used.hunger.icon_state = "nutrition4"
 	if(hud_used.thirst)
-		switch(get_thirst(src))
-			if(THIRST_LEVEL_FULL to INFINITY)
-				hud_used.thirst.icon_state = "hydration0"
-			if(THIRST_LEVEL_QUENCHED to THIRST_LEVEL_FULL)
-				hud_used.thirst.icon_state = "hydration1"
-			if(THIRST_LEVEL_THIRSTY to THIRST_LEVEL_QUENCHED)
-				hud_used.thirst.icon_state = "hydration2"
-			if(THIRST_LEVEL_PARCHED to THIRST_LEVEL_THIRSTY)
-				hud_used.thirst.icon_state = "hydration3"
-			if(0 to THIRST_LEVEL_PARCHED)
-				hud_used.thirst.icon_state = "hydration4"
+		// BLUEMOON ADD START - персонажи, которые не имеют жажды, вечно полные
+		if(HAS_TRAIT(src, TRAIT_NOTHIRST))
+			hud_used.thirst.icon_state = "hydration0"
+		else
+		// BLUEMOON ADD END
+			switch(get_thirst(src))
+				if(THIRST_LEVEL_FULL to INFINITY)
+					hud_used.thirst.icon_state = "hydration0"
+				if(THIRST_LEVEL_QUENCHED to THIRST_LEVEL_FULL)
+					hud_used.thirst.icon_state = "hydration1"
+				if(THIRST_LEVEL_THIRSTY to THIRST_LEVEL_QUENCHED)
+					hud_used.thirst.icon_state = "hydration2"
+				if(THIRST_LEVEL_PARCHED to THIRST_LEVEL_THIRSTY)
+					hud_used.thirst.icon_state = "hydration3"
+				if(0 to THIRST_LEVEL_PARCHED)
+					hud_used.thirst.icon_state = "hydration4"
 
 //It's here so it doesn't make a big mess on randomverbs.dm,
 //also because of this you can proccall it, why would you if you have smite?

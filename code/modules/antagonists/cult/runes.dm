@@ -10,7 +10,6 @@ They are drawn with a ritual dagger in blood, and are distinguishable to cultist
 Fake runes can be drawn in crayon to fool people.
 Runes can either be invoked by one's self or with many different cultists. Each rune has a specific incantation that the cultists will say when invoking it.
 
-
 */
 
 /obj/effect/rune
@@ -138,6 +137,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 			var/mob/living/L = M
 			if(invocation)
 				L.say(invocation, language = /datum/language/common, ignore_spam = TRUE, forced = "cult invocation")
+				playsound(get_turf(L), BLOOD_SCREAMS_PICK, 65, 1, 1, ignore_walls = FALSE)
 			if(invoke_damage)
 				L.apply_damage(invoke_damage, BRUTE)
 				to_chat(L, "<span class='cult italic'>[src] saps your strength!</span>")
@@ -255,7 +255,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 		convertee.adjustBruteLoss(-(brutedamage * 0.75))
 		convertee.adjustFireLoss(-(burndamage * 0.75))
 	convertee.visible_message("<span class='warning'>[convertee] writhes in pain \
-	[brutedamage || burndamage ? "even as [convertee.p_their()] wounds heal and close" : "as the markings below [convertee.p_them()] glow a bloody red"]!</span>", \
+	[brutedamage || burndamage ? "even as [convertee.ru_ego()] wounds heal and close" : "as the markings below [convertee.ru_na()] glow a bloody red"]!</span>", \
 	"<span class='cultlarge'><i>AAAAAAAAAAAAAA-</i></span>")
 	SSticker.mode.add_cultist(convertee.mind, 1)
 	new /obj/item/melee/cultblade/dagger(get_turf(src))
@@ -535,7 +535,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 	cultist_name = "Revive"
 	cultist_desc = "requires a dead, mindless, or inactive cultist placed upon the rune. Provided there have been sufficient sacrifices, they will be given a new life."
 	invocation = "Pasnar val'keriam usinar. Savrae ines amutan. Yam'toth remium il'tarat." //Depends on the name of the user - see below
-	icon_state = "1"
+	icon_state = "golem"
 	color = RUNE_COLOR_MEDIUMRED
 	var/static/revives_used = -SOULS_TO_REVIVE // Cultists get one "free" revive
 
@@ -543,7 +543,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 	. = ..()
 	if(iscultist(user) || user.stat == DEAD)
 		var/revive_number = LAZYLEN(GLOB.sacrificed) - revives_used
-		. += "<b>Revives Remaining:</b> [revive_number]"
+		. += "<b>Возрождений Осталось:</b> [revive_number]"
 
 /obj/effect/rune/raise_dead/invoke(var/list/invokers)
 	var/turf/T = get_turf(src)
@@ -596,7 +596,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 			return
 	SEND_SOUND(mob_to_revive, 'sound/ambience/antag/bloodcult.ogg')
 	to_chat(mob_to_revive, "<span class='cultlarge'>\"PASNAR SAVRAE YAM'TOTH. Arise.\"</span>")
-	mob_to_revive.visible_message("<span class='warning'>[mob_to_revive] draws in a huge breath, red light shining from [mob_to_revive.p_their()] eyes.</span>", \
+	mob_to_revive.visible_message("<span class='warning'>[mob_to_revive] draws in a huge breath, red light shining from [mob_to_revive.ru_ego()] eyes.</span>", \
 								  "<span class='cultlarge'>You awaken suddenly from the void. You're alive!</span>")
 	rune_in_use = FALSE
 
@@ -660,7 +660,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 	if(density)
 		spread_density()
 	var/carbon_user = iscarbon(user)
-	user.visible_message("<span class='warning'>[user] [carbon_user ? "places [user.p_their()] hands on":"stares intently at"] [src], and [density ? "the air above it begins to shimmer" : "the shimmer above it fades"].</span>", \
+	user.visible_message("<span class='warning'>[user] [carbon_user ? "places [user.ru_ego()] hands on":"stares intently at"] [src], and [density ? "the air above it begins to shimmer" : "the shimmer above it fades"].</span>", \
 						 "<span class='cult italic'>You channel [carbon_user ? "your life ":""]energy into [src], [density ? "temporarily preventing" : "allowing"] passage above it.</span>")
 	if(carbon_user)
 		var/mob/living/carbon/C = user
@@ -691,7 +691,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 
 /obj/effect/rune/wall/proc/update_state()
 	deltimer(density_timer)
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	if(density)
 		var/mutable_appearance/shimmer = mutable_appearance('icons/effects/effects.dmi', "barriershimmer", ABOVE_MOB_LAYER)
 		shimmer.appearance_flags |= RESET_COLOR
@@ -823,7 +823,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 	cultist_name = "Spirit Realm"
 	cultist_desc = "manifests a spirit servant of the Geometer and allows you to ascend as a spirit yourself. The invoker must not move from atop the rune, and will take damage for each summoned spirit."
 	invocation = "Gal'h'rfikk harfrandid mud'gib." //how the fuck do you pronounce this
-	icon_state = "7"
+	icon_state = "golem2"
 	invoke_damage = 10
 	construct_invoke = FALSE
 	color = RUNE_COLOR_DARKRED
@@ -918,11 +918,11 @@ structure_check() searches for nearby cultist structures required for the invoca
 		GM.Grant(G)
 		while(!QDELETED(affecting))
 			if(!(affecting in T))
-				user.visible_message("<span class='warning'>A spectral tendril wraps around [affecting] and pulls [affecting.p_them()] back to the rune!</span>")
+				user.visible_message("<span class='warning'>A spectral tendril wraps around [affecting] and pulls [affecting.ru_na()] back to the rune!</span>")
 				Beam(affecting, icon_state="drainbeam", time=2)
 				affecting.forceMove(get_turf(src)) //NO ESCAPE :^)
 			if(affecting.key)
-				affecting.visible_message("<span class='warning'>[affecting] slowly relaxes, the glow around [affecting.p_them()] dimming.</span>", \
+				affecting.visible_message("<span class='warning'>[affecting] slowly relaxes, the glow around [affecting.ru_na()] dimming.</span>", \
 									 "<span class='danger'>You are re-united with your physical form. [src] releases its hold over you.</span>")
 				affecting.DefaultCombatKnockdown(40)
 				break

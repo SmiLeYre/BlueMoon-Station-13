@@ -35,8 +35,8 @@
 /obj/effect/fun_balloon/attack_ghost(mob/user)
 	if(!user.client || !user.client.holder || popped)
 		return
-	var/confirmation = alert("Pop [src]?","Fun Balloon","Yes","No")
-	if(confirmation == "Yes" && !popped)
+	var/confirmation = alert("Pop [src]?","Fun Balloon","Да","Нет")
+	if(confirmation == "Да" && !popped)
 		popped = TRUE
 		effect()
 		pop()

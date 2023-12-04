@@ -1,4 +1,4 @@
-#define HIJACK_APC_MAX_AMOUNT 5
+#define HIJACK_APC_MAX_AMOUNT 15
 
 /obj/item/implant/hijack
 	name = "hijack implant"

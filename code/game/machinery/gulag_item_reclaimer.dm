@@ -22,6 +22,7 @@
 /obj/machinery/gulag_item_reclaimer/emag_act(mob/user)
 	if(obj_flags & EMAGGED) // emagging lets anyone reclaim all the items
 		return
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	req_access = list()
 	obj_flags |= EMAGGED
 
@@ -69,7 +70,7 @@
 		if("release_items")
 			var/mob/living/carbon/human/H = locate(params["mobref"]) in stored_items
 			if(H != usr && !allowed(usr))
-				to_chat(usr, "<span class='warning'>Access denied.</span>")
+				to_chat(usr, "<span class='warning'>Доступ запрещён.</span>")
 				return
 			drop_items(H)
 			. = TRUE

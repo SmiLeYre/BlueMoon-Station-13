@@ -8,7 +8,7 @@
 	icon_gib = "deathclaw_gib"
 	pixel_x = -16
 	gender = MALE
-	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
+	mob_biotypes = MOB_ORGANIC
 	stat_attack = UNCONSCIOUS
 	speak = list("ROAR!","Rawr!","GRRAAGH!","Growl!")
 	speak_emote = list("growls", "roars")
@@ -54,13 +54,13 @@
 	if(!Proj)
 		return
 	if(prob(10))
-		visible_message(span_danger("\The [src] growls, enraged!"))
+		visible_message("<span class='danger'>\The [src] growls, enraged!</span>")
 		sleep(3)
 		Charge()
 	if(prob(85) || Proj.damage > 26) //prob(x) = chance for proj to actually do something, adjust depending on how OP you want deathclaws to be
 		return ..()
 	else
-		visible_message(span_danger("\The [Proj] bounces off \the [src]'s thick hide!"))
+		visible_message("<span class='danger'>\The [Proj] bounces off \the [src]'s thick hide!</span>")
 		return 0
 
 /mob/living/simple_animal/hostile/deathclaw/do_attack_animation(atom/A, visual_effect_icon, obj/item/used_item, no_effect)
@@ -91,7 +91,7 @@
 	if(!T || T == loc)
 		return
 	charging = TRUE
-	visible_message(span_danger("[src] charges!"))
+	visible_message("<span class='danger'>[src] charges!</span>")
 	DestroySurroundings()
 	walk(src, 0)
 	setDir(get_dir(src, T))
@@ -118,7 +118,7 @@
 
 	else if(isliving(A))
 		var/mob/living/L = A
-		L.visible_message(span_danger("[src] slams into [L]!"), span_userdanger("[src] slams into you!"))
+		L.visible_message("<span class='danger'>[src] slams into [L]!</span>", "<span class='userdanger'>[src] slams into you!</span>")
 		L.apply_damage(melee_damage_lower/2, BRUTE)
 		playsound(get_turf(L), 'sound/effects/meteorimpact.ogg', 100, 1)
 		shake_camera(L, 4, 3)

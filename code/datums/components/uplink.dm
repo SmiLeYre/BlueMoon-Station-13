@@ -10,7 +10,7 @@ GLOBAL_LIST_EMPTY(uplinks)
 **/
 /datum/component/uplink
 	dupe_mode = COMPONENT_DUPE_UNIQUE
-	var/name = "syndicate uplink"
+	var/name = "InteQ uplink"
 	var/active = FALSE
 	var/lockable = TRUE
 	var/locked = TRUE
@@ -159,7 +159,7 @@ GLOBAL_LIST_EMPTY(uplinks)
 	active = TRUE
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "Uplink", name)
+		ui = new(user, src, "UplinkInteQ", name)
 		// This UI is only ever opened by one person,
 		// and never is updated outside of user input.
 		ui.set_autoupdate(FALSE)
@@ -240,6 +240,11 @@ GLOBAL_LIST_EMPTY(uplinks)
 		return
 	if (!user || user.incapacitated())
 		return
+	if(U.hijack_only)
+		if(!(usr.mind.special_role == ROLE_OPERATIVE) || !(usr.mind.special_role == "nukie mid"))//nukies get items that regular traitors only get with hijack. If a hijack-only item is not for nukies, then exclude it via the gamemode list.
+			if(!(locate(/datum/objective/hijack) in usr.mind.get_all_objectives()) || !(locate(/datum/objective/martyr) in usr.mind.get_all_objectives()))
+				to_chat(usr, "<span class='warning'>InteQ выдает этот чрезвычайно опасный предмет только агентам, получившим особо сложное задание.</span>")
+				return
 
 	if(telecrystals < U.cost || U.limited_stock == 0)
 		return

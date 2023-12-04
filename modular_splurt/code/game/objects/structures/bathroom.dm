@@ -21,15 +21,15 @@
 	var/mob/living/carbon/human/H = user
 	if(istype(I, /obj/item/soap))
 		if(!istype(H.gloves, /obj/item/clothing/gloves/color/latex))
-			to_chat(H, span_warning("No! No fucking way I'm touching this shit without at LEAST latex gloves!"))
+			to_chat(H, "<span class='warning'>No! No fucking way I'm touching this shit without at LEAST latex gloves!</span>")
 			return
 		if(!istype(H.get_inactive_held_item(), /obj/item/storage/bag/trash))
-			to_chat(H, span_warning("I'd.. need a trashbag or similar to stash all this shit."))
+			to_chat(H, "<span class='warning'>I'd.. need a trashbag or similar to stash all this shit.</span>")
 			return
 
-		H.visible_message(span_notice("[H] starts cleaning \the [src]![prob(0.1) ? " All for free.." : ""]"), span_notice("You start.. scooping all the shit into the trash bag.. Eugh."))
+		H.visible_message("<span class='notice'>[H] starts cleaning \the [src]![prob(0.1) ? " All for free.." : ""]</span>", "<span class='notice'>You start.. scooping all the shit into the trash bag.. Eugh.</span>")
 		if(!do_after(H, 130, target = src))
-			H.visible_message(span_notice("[H] gives up!"), span_warning("Fuck this shit."))
+			H.visible_message("<span class='notice'>[H] gives up!</span>", "<span class='warning'>Fuck this shit.</span>")
 			return
 		H.visible_message(span_notice("[H] finishes cleaning \the [src]!"), span_notice("You're finally done. Thank fuck."))
 		var /obj/structure/urinal/cleaned = new /obj/structure/urinal(loc, dir, TRUE)

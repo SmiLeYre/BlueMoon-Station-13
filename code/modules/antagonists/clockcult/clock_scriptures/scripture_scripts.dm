@@ -138,6 +138,24 @@
 	quickbind = TRUE
 	quickbind_desc = "Creates a Ratvarian shield, which can absorb energy from attacks for use in powerful bashes."
 
+/datum/clockwork_scripture/create_object/station_clock_curse
+	descname = "Частичка Ратварской освободительной Армии"
+	name = "Ратварское Подкрепление"
+	desc = "Создаёт предмет, который необходимо разбить для призыва Портального Шторма."
+	invocations = list("Я прошу, пришли подкрепление...", "...мы в тебе нуждаемся.")
+	channel_time = 20
+	power_cost = 55000 //Shouldn't be too spammable but not too hard to get either
+	whispered = TRUE
+	creator_message = "Вы сформировали Сферу с Проклятием для Станции."
+	object_path = /obj/item/station_clock_curse
+	usage_tip = "Разбейте это путём использования."
+	tier = SCRIPTURE_SCRIPT
+	space_allowed = TRUE
+	primary_component = VANGUARD_COGWHEEL
+	sort_priority = 7
+	quickbind = TRUE
+	quickbind_desc = "Создаёт предмет, который необходимо разбить для призыва Портального Шторма."
+
 //Clockwork Armaments: Grants the invoker the ability to call forth a Ratvarian spear and clockwork armor.
 /datum/clockwork_scripture/clockwork_armaments
 	descname = "Summonable Armor and Weapons"

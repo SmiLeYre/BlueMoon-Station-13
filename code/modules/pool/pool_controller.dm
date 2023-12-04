@@ -70,7 +70,7 @@
 	create_reagents(1000)
 	if(noreact_reagents)
 		reagents.reagents_holder_flags |= NO_REACT
-	wires = new /datum/wires/poolcontroller(src)
+	set_wires(new /datum/wires/poolcontroller(src))
 	scan_things()
 
 /obj/machinery/pool/controller/Destroy()
@@ -105,8 +105,8 @@
 		obj_flags |= EMAGGED
 		temperature_unlocked = TRUE
 		drainable = TRUE
-		log_game("[key_name(user)] emagged [src]")
-		message_admins("[key_name_admin(user)] emagged [src]")
+		log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
+		message_admins("[key_name_admin(user)] emagged [src] at [AREACOORD(src)]")
 	else
 		to_chat(user, "<span class='warning'>The interface on [src] is already too damaged to short it again.</span>")
 		return

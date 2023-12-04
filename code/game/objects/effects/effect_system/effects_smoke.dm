@@ -320,6 +320,9 @@
 /datum/effect_system/smoke_spread/transparent
 	effect_type = /obj/effect/particle_effect/smoke/transparent
 
+/datum/effect_system/smoke_spread/transparent/small
+	amount = 1
+
 /obj/effect/particle_effect/smoke/transparent
 	opaque = FALSE
 

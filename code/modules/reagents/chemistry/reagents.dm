@@ -22,6 +22,8 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	var/glass_desc = "You can't really tell what this is."
 	var/glass_icon_state = null // Otherwise just sets the icon to a normal glass with the mixture of the reagents in the glass.
 	var/shot_glass_icon_state = null
+	/// fallback icon if  the reagent has no glass or shot glass icon state. Used for restaurants.
+	var/fallback_icon_state = null
 	var/datum/reagents/holder = null
 	var/reagent_state = LIQUID
 	var/list/data
@@ -57,6 +59,7 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	var/boiling_point = null // point at which this gas boils; if null, will never boil (and thus not become a gas)
 	var/condensation_amount = 1
 	var/molarity = 5 // How many units per mole of this reagent. Technically this is INVERSE molarity, but hey.
+	var/accelerant_quality = 0 /// How flammable is this material?
 
 /datum/reagent/New()
 	. = ..()

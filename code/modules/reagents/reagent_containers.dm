@@ -83,7 +83,7 @@
 	else if(C.is_mouth_covered(mask_only = 1))
 		covered = "mask"
 	if(covered)
-		var/who = (isnull(user) || eater == user) ? "your" : "[eater.p_their()]"
+		var/who = (isnull(user) || eater == user) ? "your" : "[eater.ru_ego()]"
 		to_chat(user, "<span class='warning'>You have to remove [who] [covered] first!</span>")
 		return 0
 	return 1
@@ -157,13 +157,13 @@
 		reagents.clear_reagents()
 
 //melts plastic beakers
-/obj/item/reagent_containers/microwave_act(obj/machinery/microwave/M)
+/obj/item/reagent_containers/microwave_act(obj/machinery/microwave/microwave_source, mob/microwaver, randomize_pixel_offset)
 	reagents.expose_temperature(1000)
 	if(container_flags & TEMP_WEAK)
 		visible_message("<span class='notice'>[icon2html(src, viewers(DEFAULT_MESSAGE_RANGE, src))] [src]'s melts from the temperature!</span>")
 		playsound(src, 'sound/FermiChem/heatmelt.ogg', 80, 1)
 		qdel(src)
-	..()
+	return ..() | COMPONENT_MICROWAVE_SUCCESS
 
 //melts plastic beakers
 /obj/item/reagent_containers/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)

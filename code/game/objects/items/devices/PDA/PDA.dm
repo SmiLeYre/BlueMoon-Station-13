@@ -192,31 +192,6 @@ GLOBAL_LIST_EMPTY(PDAs)
 		return
 	update_style(user.client)
 
-/obj/item/pda/proc/update_style(client/C)
-	background_color = C.prefs.pda_color
-	switch(C.prefs.pda_style)
-		if(MONO)
-			font_index = MODE_MONO
-			font_mode = FONT_MONO
-		if(SHARE)
-			font_index = MODE_SHARE
-			font_mode = FONT_SHARE
-		if(ORBITRON)
-			font_index = MODE_ORBITRON
-			font_mode = FONT_ORBITRON
-		if(VT)
-			font_index = MODE_VT
-			font_mode = FONT_VT
-		else
-			font_index = MODE_MONO
-			font_mode = FONT_MONO
-	var/pref_skin = GLOB.pda_reskins[C.prefs.pda_skin]["icon"]
-	if(icon != pref_skin)
-		icon = pref_skin
-		new_overlays = TRUE
-		update_icon()
-	equipped = TRUE
-
 /obj/item/pda/proc/update_label()
 	name = "PDA-[owner] ([ownjob])" //Name generalisation
 
@@ -290,7 +265,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 	user.set_machine(src)
 
-	var/dat = "<!DOCTYPE html><html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>Personal Data Assistant</title><link href=\"https://fonts.googleapis.com/css?family=Orbitron|Share+Tech+Mono|VT323\" rel=\"stylesheet\"></head><body bgcolor=\"" + background_color + "\"><style>body{" + font_mode + "}ul,ol{list-style-type: none;}a, a:link, a:visited, a:active, a:hover { color: #000000;text-decoration:none; }img {border-style:none;}a img{padding-right: 9px;}</style>"
+	var/dat = "<!DOCTYPE html><html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'><title>Personal Data Assistant</title><link href=\"https://fonts.googleapis.com/css?family=Orbitron|Share+Tech+Mono|VT323\" rel=\"stylesheet\"></head><body bgcolor=\"" + background_color + "\"><style>body{" + font_mode + "}ul,ol{list-style-type: none;}a, a:link, a:visited, a:active, a:hover { color: #000000;text-decoration:none; }img {border-style:none;}a img{padding-right: 9px;}</style>"
 	dat += assets.css_tag()
 	dat += emoji_s.css_tag()
 
@@ -1117,10 +1092,10 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 	if (!scanmode && istype(A, /obj/item/paper) && owner)
 		var/obj/item/paper/PP = A
-		if (!PP.info)
+		if (!PP.default_raw_text)
 			to_chat(user, "<span class='warning'>Unable to scan! Paper is blank.</span>")
 			return
-		notehtml = PP.info
+		notehtml = PP.default_raw_text
 		note = replacetext(notehtml, "<BR>", "\[br\]")
 		note = replacetext(note, "<li>", "\[*\]")
 		note = replacetext(note, "<ul>", "\[list\]")
@@ -1188,8 +1163,8 @@ GLOBAL_LIST_EMPTY(PDAs)
 	var/selected = plist[c]
 
 	if(aicamera.stored.len)
-		var/add_photo = input(user,"Do you want to attach a photo?","Photo","No") as null|anything in list("Yes","No")
-		if(add_photo=="Yes")
+		var/add_photo = input(user,"Do you want to attach a photo?","Photo","No") as null|anything in list("Да","Нет")
+		if(add_photo=="Да")
 			var/datum/picture/Pic = aicamera.selectpicture(user)
 			aiPDA.picture = Pic
 
@@ -1226,7 +1201,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	if(incapacitated())
 		return
 	if(!isnull(aiPDA))
-		var/HTML = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>AI PDA Message Log</title></head><body>[aiPDA.tnote]</body></html>"
+		var/HTML = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'><title>AI PDA Message Log</title></head><body>[aiPDA.tnote]</body></html>"
 		user << browse(HTML, "window=log;size=400x444;border=1;can_resize=1;can_close=1;can_minimize=0")
 	else
 		to_chat(user, "You do not have a PDA. You should make an issue report about this.")
@@ -1276,7 +1251,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	var/selected = plist[c]
 
 	if(aicamera.stored.len)
-		var/add_photo = input(user,"Do you want to attach a photo?","Photo","No") as null|anything in list("Yes","No")
+		var/add_photo = input(user,"Do you want to attach a photo?","Photo","No") as null|anything in list("Да","Нет")
 		if(add_photo=="Yes")
 			var/datum/picture/Pic = aicamera.selectpicture(user)
 			aiPDA.picture = Pic
@@ -1291,7 +1266,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	if(incapacitated())
 		return
 	if(!isnull(aiPDA))
-		var/HTML = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>AI PDA Message Log</title></head><body>[aiPDA.tnote]</body></html>"
+		var/HTML = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'><title>AI PDA Message Log</title></head><body>[aiPDA.tnote]</body></html>"
 		user << browse(HTML, "window=log;size=400x444;border=1;can_resize=1;can_close=1;can_minimize=0")
 	else
 		to_chat(user, "You do not have a PDA. You should make an issue report about this.")

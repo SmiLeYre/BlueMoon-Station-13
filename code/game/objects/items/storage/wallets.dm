@@ -43,12 +43,19 @@
 		/obj/item/camera_film,
 		/obj/item/stack/ore/bluespace_crystal,
 		/obj/item/reagent_containers/food/snacks/grown/poppy,
+		/obj/item/reagent_containers/hypospray/medipen,
 		/obj/item/instrument/harmonica,
 		/obj/item/mining_voucher,
 		/obj/item/suit_voucher,
 		/obj/item/reagent_containers/pill,
 		/obj/item/gun/ballistic/derringer,
 		/obj/item/genital_equipment/condom))
+
+/obj/item/storage/wallet/get_examine_string(mob/user, thats)
+	. = ..()
+	if(front_id)
+		//. += " with [icon2html(front_id.get_cached_flat_icon(), user)] \a [front_id] on the front."
+		. += " with \a [front_id.get_examine_string(user)] on the front"
 
 /obj/item/storage/wallet/Exited(atom/movable/AM)
 	. = ..()
@@ -63,6 +70,10 @@
 			front_id = I
 		LAZYINITLIST(combined_access)
 		combined_access |= I.access
+	if(ishuman(loc))
+		var/mob/living/carbon/human/H = loc
+		if(H.wear_id == src)
+			H.sec_hud_set_ID()
 	update_icon()
 
 /obj/item/storage/wallet/Entered(atom/movable/AM)

@@ -114,7 +114,7 @@
 
 /datum/brain_trauma/induced_hypnosis/on_gain()
 	log_game("[key_name(owner)] was hypnogoggled'.")
-	to_chat(owner, span_reallybig_hypnophrase("[hypnotic_phrase]"))
+	to_chat(owner, "<span class='reallybig hypnophrase'>[hypnotic_phrase]</span>")
 	to_chat(owner, span_notice(pick("You feel your thoughts focusing on this phrase... you can't seem to get it out of your head.",
 									"Your head hurts, but this is all you can think of. It must be vitally important.",
 									"You feel a part of your mind repeating this over and over. You need to follow these words.",
@@ -141,4 +141,4 @@
 				new /datum/hallucination/chat(owner, TRUE, FALSE, span_hypnophrase("[hypnotic_phrase]"))
 
 /datum/brain_trauma/induced_hypnosis/handle_hearing(datum/source, list/hearing_args)
-	hearing_args[HEARING_RAW_MESSAGE] = target_phrase.Replace(hearing_args[HEARING_RAW_MESSAGE], span_hypnophrase("$1"))
+	hearing_args[HEARING_RAW_MESSAGE] = target_phrase.Replace_char(hearing_args[HEARING_RAW_MESSAGE], span_hypnophrase("$1"))

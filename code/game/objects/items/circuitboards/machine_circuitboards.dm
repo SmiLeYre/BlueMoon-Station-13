@@ -632,6 +632,7 @@
 		/obj/machinery/vending/clothing = "ClothesMate",
 		/obj/machinery/vending/medical = "NanoMed Plus",
 		/obj/machinery/vending/wallmed = "NanoMed",
+		/obj/machinery/vending/brigdoc_vendomat = "SecMedDrobe",
 		/obj/machinery/vending/assist  = "Vendomat",
 		/obj/machinery/vending/engivend = "Engi-Vend",
 		/obj/machinery/vending/tool = "YouTool",
@@ -685,6 +686,19 @@
 		/obj/item/stack/sheet/glass = 1,
 		/obj/item/vending_refill/donksoft = 1)
 
+/obj/item/circuitboard/machine/vending/syndicate_clothes_vendor
+	name = "SynDrobe Vendor (Machine Board)"
+	build_path = /obj/machinery/vending/wardrobe/syndie_wardrobe
+	req_components = list(
+		/obj/item/stack/sheet/glass = 1,
+		/obj/item/vending_refill/wardrobe/syndie_wardrobe = 1)
+
+/obj/item/circuitboard/machine/vending/syndicate_clothes_vendor/civil
+	name = "Civilian SynDrobe Vendor (Machine Board)"
+	build_path = /obj/machinery/vending/wardrobe/syndie_wardrobe/civil
+	req_components = list(
+		/obj/item/stack/sheet/glass = 1,
+		/obj/item/vending_refill/wardrobe/syndie_wardrobe/civil = 1)
 
 /obj/item/circuitboard/machine/bountypad
 	name = "Civilian Bounty Pad (Machine Board)"
@@ -1094,7 +1108,18 @@
 		/obj/item/stack/ore/bluespace_crystal = 1,
 		/obj/item/stock_parts/capacitor = 1,
 		/obj/item/stock_parts/manipulator = 1,
-		/obj/item/stack/cable_coil = 1)
+		/obj/item/stack/cable_coil = 5)
+	def_components = list(/obj/item/stack/ore/bluespace_crystal = /obj/item/stack/ore/bluespace_crystal/artificial)
+
+/obj/item/circuitboard/machine/quantumpad/fullupgrade
+	name = "Full Upgrade Quantum Pad (Machine Board)"
+	icon_state = "science"
+	build_path = /obj/machinery/quantumpad/fullupgrade
+	req_components = list(
+		/obj/item/stack/ore/bluespace_crystal = 1,
+		/obj/item/stock_parts/capacitor/giga = 1,
+		/obj/item/stock_parts/manipulator/atto = 1,
+		/obj/item/stack/cable_coil = 5)
 	def_components = list(/obj/item/stack/ore/bluespace_crystal = /obj/item/stack/ore/bluespace_crystal/artificial)
 
 /obj/item/circuitboard/machine/rdserver
@@ -1528,3 +1553,13 @@
 	icon_state = "engineering"
 	build_path = /obj/machinery/research/explosive_compressor
 	req_components = list(/obj/item/stock_parts/matter_bin = 3)
+
+/obj/item/circuitboard/machine/fax
+	name = "Fax Machine (Machine Board)"
+	icon_state = "command"
+	build_path = /obj/machinery/fax
+	req_components = list(
+		/obj/item/stock_parts/subspace/crystal = 1,
+		/obj/item/stock_parts/scanning_module = 1,
+		/obj/item/stock_parts/micro_laser = 1,
+		/obj/item/stock_parts/manipulator = 1,)

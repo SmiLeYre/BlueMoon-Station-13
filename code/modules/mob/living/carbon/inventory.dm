@@ -79,8 +79,11 @@
 			head = I
 			head_update(I)
 		if(ITEM_SLOT_NECK)
-			wear_neck = I
-			update_inv_neck(I)
+			if(ishuman(src))
+				not_handled = TRUE
+			else
+				wear_neck = I
+				update_inv_neck(I)
 		if(ITEM_SLOT_HANDCUFFED)
 			handcuffed = I
 			update_handcuffed()
@@ -122,6 +125,8 @@
 		if(!QDELETED(src))
 			wear_mask_update(I, toggle_off = 1)
 	if(I == wear_neck)
+		if(ishuman(src))
+			return TRUE
 		wear_neck = null
 		if(!QDELETED(src))
 			update_inv_neck(I)
@@ -135,6 +140,18 @@
 		legcuffed = null
 		if(!QDELETED(src))
 			update_inv_legcuffed()
+
+/**
+ * Handle stuff to update when a mob equips/unequips a glasses.
+ */
+/mob/living/carbon/human/proc/wear_glasses_update(obj/item/clothing/glasses/glasses)
+	if(istype(glasses))
+		if(glasses.tint || initial(glasses.tint))
+			update_tint()
+		if(glasses.vision_flags || glasses.darkness_view || glasses.invis_override || glasses.invis_view || !isnull(glasses.lighting_alpha))
+			update_sight()
+		update_client_colour()
+	update_inv_glasses()
 
 //handle stuff to update when a mob equips/unequips a mask.
 /mob/living/proc/wear_mask_update(obj/item/clothing/C, toggle_off = 1)
@@ -151,6 +168,7 @@
 		var/obj/item/clothing/C = I
 		if(C.tint || initial(C.tint))
 			update_tint()
+		//if(I.vision_flags || I.darkness_view || I.invis_override || I.invis_view || !isnull(I.lighting_alpha))
 		update_sight()
 	if(I.flags_inv & HIDEMASK || forced)
 		update_inv_wear_mask()

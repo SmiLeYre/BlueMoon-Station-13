@@ -21,25 +21,25 @@
 
 /obj/item/reagent_containers/food/drinks/attack(mob/living/M, mob/user, def_zone)
 	if(!reagents || !reagents.total_volume)
-		to_chat(user, "<span class='warning'>[src] is empty!</span>")
+		to_chat(user, "<span class='warning'><b>[src]</b> is empty!</span>")
 		return 0
 
 	if(!canconsume(M, user))
 		return 0
 
 	if (!is_drainable())
-		to_chat(user, "<span class='warning'>[src]'s lid hasn't been opened!</span>")
+		to_chat(user, "<span class='warning'><b>[src]</b> lid hasn't been opened!</span>")
 		return 0
 
 	if(M == user)
-		user.visible_message("<span class='notice'>[user] swallows a gulp of [src].</span>", "<span class='notice'>You swallow a gulp of [src].</span>")
+		user.visible_message("<span class='notice'><b>[user]</b> swallows a gulp of <b>[src]</b>.</span>", "<span class='notice'>You swallow a gulp of <b>[src]</b>.</span>")
 	else
-		M.visible_message("<span class='danger'>[user] attempts to feed the contents of [src] to [M].</span>", "<span class='userdanger'>[user] attempts to feed the contents of [src] to [M].</span>")
+		M.visible_message("<span class='danger'><b>[user]</b> attempts to feed the contents of <b>[src]</b> to [M].</span>", "<span class='userdanger'><b>[user]</b> attempts to feed the contents of <b>[src]</b> to [M].</span>")
 		if(!do_mob(user, M))
 			return
 		if(!reagents || !reagents.total_volume)
 			return // The drink might be empty after the delay, such as by spam-feeding
-		M.visible_message("<span class='danger'>[user] feeds the contents of [src] to [M].</span>", "<span class='userdanger'>[user] feeds the contents of [src] to [M].</span>")
+		M.visible_message("<span class='danger'><b>[user]</b> feeds the contents of <b>[src]</b> to [M].</span>", "<span class='userdanger'><b>[user]</b> feeds the contents of <b>[src]</b> to [M].</span>")
 		log_combat(user, M, "fed", reagents.log_list())
 
 	var/fraction = min(gulp_size/reagents.total_volume, 1)
@@ -60,16 +60,16 @@
 
 	if(target.is_refillable() && is_drainable()) //Something like a glass. Player probably wants to transfer TO it.
 		if(!reagents.total_volume)
-			to_chat(user, "<span class='warning'>[src] is empty.</span>")
+			to_chat(user, "<span class='warning'><b>[src]</b> is empty.</span>")
 			return
 
 		if(target.reagents.holder_full())
-			to_chat(user, "<span class='warning'>[target] is full.</span>")
+			to_chat(user, "<span class='warning'><b>[target]</b> is full.</span>")
 			return
 
 		var/refill = reagents.get_master_reagent_id()
 		var/trans = src.reagents.trans_to(target, amount_per_transfer_from_this, log = TRUE)
-		to_chat(user, "<span class='notice'>You transfer [trans] units of the solution to [target].</span>")
+		to_chat(user, "<span class='notice'>You transfer [trans] units of the solution to <b>[target]</b>.</span>")
 
 		if(iscyborg(user)) //Cyborg modules that include drinks automatically refill themselves, but drain the borg's cell
 			var/mob/living/silicon/robot/bro = user
@@ -78,19 +78,19 @@
 
 	else if(target.is_drainable()) //A dispenser. Transfer FROM it TO us.
 		if (!is_refillable())
-			to_chat(user, "<span class='warning'>[src]'s tab isn't open!</span>")
+			to_chat(user, "<span class='warning'><b>[src]</b> tab isn't open!</span>")
 			return
 
 		if(!target.reagents.total_volume)
-			to_chat(user, "<span class='warning'>[target] is empty.</span>")
+			to_chat(user, "<span class='warning'><b>[target]</b> is empty.</span>")
 			return
 
 		if(reagents.holder_full())
-			to_chat(user, "<span class='warning'>[src] is full.</span>")
+			to_chat(user, "<span class='warning'><b>[src]</b> is full.</span>")
 			return
 
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, log = TRUE)
-		to_chat(user, "<span class='notice'>You fill [src] with [trans] units of the contents of [target].</span>")
+		to_chat(user, "<span class='notice'>You fill <b>[src]</b> with [trans] units of the contents of <b>[target]</b>.</span>")
 
 /obj/item/reagent_containers/food/drinks/attackby(obj/item/I, mob/user, params)
 	var/hotness = I.get_temperature()
@@ -151,10 +151,10 @@
 		if (!src_location.Adjacent(over_location)) // Regular users can only do short slides.
 			return
 		if (prob(10))
-			user.visible_message("<span class='warning'>\The [user] tries to slide \the [src] down the table, but fails miserably.</span>", "<span class='warning'>You <b>fail</b> to slide \the [src] down the table!</span>")
+			user.visible_message("<span class='warning'>\The <b>[user]</b> tries to slide \the <b>[src]</b> down the table, but fails miserably.</span>", "<span class='warning'>You <b>fail</b> to slide \the <b>[src]</b> down the table!</span>")
 			smash(over_location, user, FALSE)
 			return
-		user.visible_message("<span class='notice'>\The [user] slides \the [src] down the table.</span>", "<span class='notice'>You slide \the [src] down the table!</span>")
+		user.visible_message("<span class='notice'>\The <b>[user]</b> slides \the <b>[src]</b> down the table.</span>", "<span class='notice'>You slide \the <b>[src]</b> down the table!</span>")
 		forceMove(over_location)
 		return
 	var/distance = MANHATTAN_DISTANCE(over_location, src)
@@ -177,15 +177,34 @@
 		if (!locate(/obj/structure/table) in temp_turf)
 			var/datum/vector/V2 = atoms2vector(src, temp_turf)
 			vector_translate(V2, 0.1 SECONDS)
-			user.visible_message("<span class='warning'>\The [user] slides \the [src] down the table... and straight into the ground!</span>", "<span class='warning'>You slide \the [src] down the table, and straight into the ground!</span>")
+			user.visible_message("<span class='warning'>\The <b>[user]</b> slides \the <b>[src]</b> down the table... and straight into the ground!</span>", "<span class='warning'>You slide \the <b>[src]</b> down the table, and straight into the ground!</span>")
 			smash(over_location, user, FALSE)
 			return
 	while (temp_turf != dest)
 
 	vector_translate(V, 0.1 SECONDS)
-	user.visible_message("<span class='notice'>\The [user] expertly slides \the [src] down the table.</span>", "<span class='notice'>You slide \the [src] down the table. What a pro.</span>")
+	user.visible_message("<span class='notice'>\The <b>[user]</b> expertly slides \the <b>[src]</b> down the table.</span>", "<span class='notice'>You slide \the <b>[src]</b> down the table. What a pro.</span>")
 	return
 
+/obj/item/reagent_containers/food/drinks/bullet_act(obj/item/projectile/P)
+	if((isGlass || istype(src, /obj/item/reagent_containers/food/drinks/bottle)) && !QDELING(src) && !QDELETED(src))
+		var/obj/item/broken_bottle/B = new (loc)
+		B.icon_state = icon_state
+		var/icon/I = new('icons/obj/drinks.dmi', src.icon_state)
+		I.Blend(B.broken_outline, ICON_OVERLAY, rand(5), 1)
+		I.SwapColor(rgb(255, 0, 220, 255), rgb(0, 0, 0, 0))
+		B.icon = I
+		B.name = "broken [name]"
+		var/matrix/M = matrix(B.transform)
+		M.Turn(rand(-170, 170))
+		B.transform = M
+		B.pixel_x = rand(-12, 12)
+		B.pixel_y = rand(-12, 12)
+		playsound(src, "shatter", 70, 1)
+		if(prob(33))
+			new/obj/item/shard(drop_location())
+		obj_integrity = 1
+	..()
 
 ////////////////////////////////////////////////////////////////////////////////
 /// Drinks. END
@@ -249,11 +268,16 @@
 	name = "robust coffee"
 	desc = "Careful, the beverage you're about to enjoy is extremely hot."
 	icon_state = "coffee"
+	icon = 'code/modules/food_and_drinks/coffee.dmi'
 	list_reagents = list(/datum/reagent/consumable/coffee = 30)
 	spillable = TRUE
 	resistance_flags = FREEZE_PROOF
 	isGlass = FALSE
 	foodtype = BREAKFAST
+
+/obj/item/reagent_containers/cup/glass/coffee/no_lid
+	icon_state = "coffee_empty"
+	list_reagents = null
 
 //Used by MREs
 /obj/item/reagent_containers/food/drinks/coffee/type2
@@ -344,8 +368,19 @@
 	desc = "Beer. In space."
 	icon_state = "beer"
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer = 30)
+	spillable = FALSE //BlueMoon Edit
+	reagent_flags = NONE //BlueMoon Edit
 	foodtype = GRAIN | ALCOHOL
 	custom_price = PRICE_PRETTY_CHEAP
+
+/obj/item/reagent_containers/food/drinks/beer/attack_self(mob/user) //BlueMoon Edit
+    if(!is_drainable())
+        to_chat(user, "Вы открываете '\the <b>[src]</b>' с тихим, особо приятным хлопком.") //Ahhhhhhhh
+        reagents.reagents_holder_flags |= OPENCONTAINER
+        playsound(src, "can_open", 100, 1)
+        spillable = TRUE
+        return
+    return ..() //BlueMoon Edit
 
 /obj/item/reagent_containers/food/drinks/beer/almost_empty
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer = 1)
@@ -483,7 +518,7 @@
 	custom_price = PRICE_CHEAP_AS_FREE
 
 /obj/item/reagent_containers/food/drinks/soda_cans/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] is trying to eat \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'><b>[user]</b> is trying to eat \the <b>[src]</b>! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	var/obj/item/trash/can/crushed_can = new /obj/item/trash/can(user.loc)
 	crushed_can.icon_state = icon_state
 	qdel(src)
@@ -491,7 +526,7 @@
 
 /obj/item/reagent_containers/food/drinks/soda_cans/attack(mob/M, mob/user)
 	if(M == user && !src.reagents.total_volume && user.a_intent == INTENT_HARM && user.zone_selected == BODY_ZONE_HEAD)
-		user.visible_message("<span class='warning'>[user] crushes the can of [src] on [user.p_their()] forehead!</span>", "<span class='notice'>You crush the can of [src] on your forehead.</span>")
+		user.visible_message("<span class='warning'><b>[user]</b> давит банку '<b>[src]</b>' об свою голову. Круто!</span>", "<span class='notice'>Вы раздавили банку с '<b>[src]</b>' об свою голову. Круто!</span>")
 		playsound(user.loc,'sound/weapons/pierce.ogg', rand(10,50), 1)
 		var/obj/item/trash/can/crushed_can = new /obj/item/trash/can(user.loc)
 		crushed_can.icon_state = icon_state
@@ -502,7 +537,7 @@
 
 /obj/item/reagent_containers/food/drinks/soda_cans/attack_self(mob/user)
 	if(!is_drainable())
-		to_chat(user, "You pull back the tab of \the [src] with a satisfying pop.") //Ahhhhhhhh
+		to_chat(user, "Вы открываете \the <b>[src]</b>, дёргая за ключ-кольцо.") //Ahhhhhhhh
 		reagents.reagents_holder_flags |= OPENCONTAINER
 		playsound(src, "can_open", 50, 1)
 		spillable = TRUE
@@ -626,3 +661,18 @@
 	desc = "An old stained mug used for filling with dwarven ale."
 	icon_state = "manlydorfglass"
 	isGlass = FALSE //it's a wooden mug!
+
+/obj/item/reagent_containers/food/drinks/coffee_cup
+	name = "Coffee Cup"
+	desc = "A heat-formed plastic coffee cup. Can theoretically be used for other hot drinks, if you're feeling adventurous."
+	icon = 'code/modules/food_and_drinks/coffee.dmi'
+	icon_state = "coffee_cup_e"
+	base_icon_state = "coffee_cup"
+	possible_transfer_amounts = list(10)
+	volume = 30
+	spillable = TRUE
+	isGlass = FALSE
+
+/obj/item/reagent_containers/food/drinks/coffee_cup/update_icon_state()
+	icon_state = reagents.total_volume ? base_icon_state : "[base_icon_state]_e"
+	return ..()

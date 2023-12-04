@@ -1,11 +1,11 @@
 /datum/surgery/dental_implant
-	name = "dental implant"
+	name = "Имплантировать Таблетку в Зубы"
 	steps = list(/datum/surgery_step/drill, /datum/surgery_step/insert_pill)
 	possible_locs = list(BODY_ZONE_PRECISE_MOUTH)
 	requires_bodypart_type = BODYPART_ORGANIC
 
 /datum/surgery_step/insert_pill
-	name = "insert pill"
+	name = "Имплантировать Таблетку"
 	implements = list(/obj/item/reagent_containers/pill = 100)
 	time = 16
 

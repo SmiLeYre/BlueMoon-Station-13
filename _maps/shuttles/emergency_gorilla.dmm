@@ -194,6 +194,7 @@
 /area/shuttle/escape)
 "aM" = (
 /obj/structure/reagent_dispensers/keg/mead,
+/obj/structure/reagent_dispensers/beerkeg,
 /turf/open/floor/plating,
 /area/shuttle/escape)
 "aN" = (
@@ -284,25 +285,25 @@
 /turf/open/floor/plating,
 /area/shuttle/escape)
 "be" = (
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/right/brown,
 /turf/open/floor/plating,
 /area/shuttle/escape)
 "bf" = (
-/obj/structure/chair/sofa,
+/obj/structure/chair/sofa/middle/brown,
 /mob/living/simple_animal/hostile/gorilla,
 /turf/open/floor/plating,
 /area/shuttle/escape)
 "bg" = (
-/obj/structure/chair/sofa,
+/obj/structure/chair/sofa/middle/brown,
 /turf/open/floor/plating,
 /area/shuttle/escape)
 "bh" = (
-/obj/structure/chair/sofa,
+/obj/structure/chair/sofa/middle/brown,
 /mob/living/simple_animal/hostile/gorilla,
 /turf/open/floor/plasteel/shuttle,
 /area/shuttle/escape)
 "bi" = (
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/left/brown,
 /mob/living/simple_animal/hostile/gorilla,
 /turf/open/floor/plating,
 /area/shuttle/escape)
@@ -364,7 +365,7 @@
 /turf/open/floor/plating,
 /area/shuttle/escape)
 "Pi" = (
-/obj/structure/chair/sofa,
+/obj/structure/chair/sofa/middle/brown,
 /obj/machinery/light/small{
 	dir = 1
 	},

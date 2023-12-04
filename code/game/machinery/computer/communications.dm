@@ -8,8 +8,8 @@
 
 // The communications computer
 /obj/machinery/computer/communications
-	name = "communications console"
-	desc = "A console used for high-priority announcements and emergencies."
+	name = "Сommunications Сonsole"
+	desc = "Эта консоль используется для объявления важной информации по станции, для связи с ЦК и Синдикатом, или для повышения уровня тревоги."
 	icon_screen = "comm"
 	icon_keyboard = "tech_key"
 	req_access = list(ACCESS_HEADS)
@@ -40,6 +40,24 @@
 
 	/// The last lines used for changing the status display
 	var/static/last_status_display
+
+	/// Whether syndicate mode is enabled or not.
+	var/syndicate = FALSE
+
+/obj/machinery/computer/communications/syndicate
+	name = "Syndicate Communications Console"
+	icon_screen = "commsyndie"
+	icon_keyboard = "syndie_key"
+	req_access = list(ACCESS_SYNDICATE_LEADER)
+	light_color = LIGHT_COLOR_BLOOD_MAGIC
+	obj_flags = EMAGGED
+	syndicate = TRUE
+
+/obj/machinery/computer/communications/syndicate/emag_act(mob/user, obj/item/card/emag/emag_card)
+	return
+
+/obj/machinery/computer/communications/syndicate/authenticated_as_silicon_or_captain(mob/user)
+	return FALSE
 
 /obj/machinery/computer/communications/Initialize(mapload)
 	. = ..()
@@ -77,13 +95,15 @@
 
 /obj/machinery/computer/communications/emag_act(mob/user)
 	. = ..()
-	if (obj_flags & EMAGGED)
+	if ((obj_flags & EMAGGED) || syndicate)
 		return
 	obj_flags |= EMAGGED
 	if (authenticated)
 		authorize_access = get_all_accesses()
-	to_chat(user, span_danger("You scramble the communication routing circuits!"))
+	to_chat(user, span_danger("Вы искажаете схемы маршрутизации коммуникаций!"))
 	playsound(src, 'sound/machines/terminal_alert.ogg', 50, FALSE)
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
+	icon_screen = "commsyndie"
 	SSshuttle.shuttle_purchase_requirements_met["emagged"] = TRUE
 
 /obj/machinery/computer/communications/ui_act(action, list/params)
@@ -137,29 +157,29 @@
 				var/obj/item/held_item = usr.get_active_held_item()
 				var/obj/item/card/id/id_card = held_item?.GetID()
 				if (!istype(id_card))
-					to_chat(usr, span_warning("You need to swipe your ID!"))
+					to_chat(usr, span_warning("Вам нужно провести своим ID!"))
 					playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 					return
 				if (!(ACCESS_CAPTAIN in id_card.access))
-					to_chat(usr, span_warning("You are not authorized to do this!"))
+					to_chat(usr, span_warning("У вас нет доступа!"))
 					playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 					return
 
 			var/new_sec_level = SECLEVEL2NUM(params["newSecurityLevel"])
-			if (new_sec_level != SEC_LEVEL_GREEN && new_sec_level != SEC_LEVEL_BLUE && new_sec_level != SEC_LEVEL_AMBER)
+			if (new_sec_level != SEC_LEVEL_GREEN && new_sec_level != SEC_LEVEL_BLUE && new_sec_level != SEC_LEVEL_ORANGE && new_sec_level != SEC_LEVEL_VIOLET && new_sec_level != SEC_LEVEL_AMBER)
 				return
 			if (GLOB.security_level == new_sec_level)
 				return
 
 			set_security_level(new_sec_level)
 
-			to_chat(usr, span_notice("Authorization confirmed. Modifying security level."))
+			to_chat(usr, span_notice("Доступ разрешён. Обновляю уровень угрозы."))
 			playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 
 			// Only notify people if an actual change happened
 			log_game("[key_name(usr)] has changed the security level to [params["newSecurityLevel"]] with [src] at [AREACOORD(usr)].")
 			message_admins("[ADMIN_LOOKUPFLW(usr)] has changed the security level to [params["newSecurityLevel"]] with [src] at [AREACOORD(usr)].")
-			deadchat_broadcast(" has changed the security level to [params["newSecurityLevel"]] with [src] at [span_name("[get_area_name(usr, TRUE)]")].", span_name("[usr.real_name]"), usr, message_type=DEADCHAT_ANNOUNCEMENT)
+			deadchat_broadcast(" сменил уровень угрозы [params["newSecurityLevel"]] с помощью [src] в [span_name("[get_area_name(usr, TRUE)]")].", span_name("[usr.real_name]"), usr, message_type=DEADCHAT_ANNOUNCEMENT)
 
 			alert_level_tick += 1
 		if ("deleteMessage")
@@ -177,6 +197,8 @@
 			emergency_meeting(usr)
 		if ("makePriorityAnnouncement")
 			if (!authenticated_as_silicon_or_captain(usr))
+				if(syndicate == TRUE)
+					make_announcement(usr)
 				return
 			make_announcement(usr)
 		if ("messageAssociates")
@@ -189,16 +211,22 @@
 			var/message = trim(html_encode(params["message"]), MAX_MESSAGE_LEN)
 
 			var/emagged = obj_flags & EMAGGED
-			if (emagged)
+			if (emagged && GLOB.master_mode == "Extended")
 				message_syndicate(message, usr)
-				to_chat(usr, span_danger("SYSERR @l(19833)of(transmit.dm): !@$ MESSAGE TRANSMITTED TO SYNDICATE COMMAND."))
+				to_chat(usr, span_danger("SYSERR @l(19833)of(transmit.dm): !@$ СООБЩЕНИЕ УСПЕШНО ОТПРАВЛЕНО ПО ПОДПРОСТРАНСТВЕННОЙ СВЯЗИ."))
+			else if (emagged)
+				message_inteq(message, usr)
+				to_chat(usr, span_danger("SYSERR @l(19833)of(transmit.dm): $^#^@#%@== СООБЩЕНИЕ УСПЕШНО БЫЛО ОТПРАВЛЕНО ВСЕГО ЗА 0,523 МИЛЛИСЕКУНД. АДРЕСАТ НАХОДИТСЯ ВСЕГО В $%#^@ КИЛЛОМЕТРАХ $#y%)%&==..."))
+			else if(syndicate)
+				message_syndicate(message, usr)
+				to_chat(usr, span_danger("Сообщение успешно отправлено по Подпространственной Связи."))
 			else
 				message_centcom(message, usr)
-				to_chat(usr, span_notice("Message transmitted to Central Command."))
+				to_chat(usr, span_notice("Сообщение успешно отправлено Центральному Командованию."))
 
-			var/associates = emagged ? "the Syndicate": "CentCom"
-			usr.log_talk(message, LOG_SAY, tag = "message to [associates]")
-			deadchat_broadcast(" has messaged [associates], \"[message]\" at [span_name("[get_area_name(usr, TRUE)]")].", span_name("[usr.real_name]"), usr, message_type = DEADCHAT_ANNOUNCEMENT)
+			var/associates = (emagged || syndicate) ? "the Illegal Channel": "CentCom"
+			usr.log_talk(message, LOG_SAY, tag = "сообщение для [associates]")
+			deadchat_broadcast(" отправляет [associates], \"[message]\" где-то на территории [span_name("[get_area_name(usr, TRUE)]")].", span_name("[usr.real_name]"), usr, message_type = DEADCHAT_ANNOUNCEMENT)
 			COOLDOWN_START(src, important_action_cooldown, IMPORTANT_ACTION_COOLDOWN)
 		if ("purchaseShuttle")
 			var/can_buy_shuttles_or_fail_reason = can_buy_shuttles(usr)
@@ -210,32 +238,32 @@
 			var/datum/map_template/shuttle/shuttle = locate(params["shuttle"]) in shuttles
 			if (!istype(shuttle))
 				return
-			// if (!can_purchase_this_shuttle(shuttle))
-			// 	return
 			if (!shuttle.prerequisites_met())
-				to_chat(usr, span_alert("You have not met the requirements for purchasing this shuttle."))
+				to_chat(usr, span_alert("Требования для покупки этого шаттла - не выполнены!"))
 				return
 			var/datum/bank_account/bank_account = SSeconomy.get_dep_account(ACCOUNT_CAR)
 			if (bank_account.account_balance < shuttle.credit_cost)
 				return
 			SSshuttle.shuttle_purchased = SHUTTLEPURCHASE_PURCHASED
-			// for(var/datum/round_event_control/shuttle_insurance/insurance_event in SSevents.control)
-			// 	insurance_event.weight *= 20
 			SSshuttle.unload_preview()
 			SSshuttle.existing_shuttle = SSshuttle.emergency
 			SSshuttle.action_load(shuttle, replace = TRUE)
 			bank_account.adjust_money(-shuttle.credit_cost)
-			minor_announce("[usr.real_name] has purchased [shuttle.name] for [shuttle.credit_cost] credits.[shuttle.extra_desc ? " [shuttle.extra_desc]" : ""]" , "Shuttle Purchase")
+			minor_announce("[usr.real_name] купил шаттл [shuttle.name] за [shuttle.credit_cost] кредитов.[shuttle.extra_desc ? " [shuttle.extra_desc]" : ""]" , "Shuttle Purchase")
 			message_admins("[ADMIN_LOOKUPFLW(usr)] purchased [shuttle.name].")
 			log_shuttle("[key_name(usr)] has purchased [shuttle.name].")
 			SSblackbox.record_feedback("text", "shuttle_purchase", 1, shuttle.name)
 			state = STATE_MAIN
 		if ("recallShuttle")
 			// AIs cannot recall the shuttle
-			if (!authenticated(usr) || issilicon(usr))
+			if (!authenticated(usr) || issilicon(usr) || syndicate)
 				return
 			SSshuttle.cancelEvac(usr)
 		if ("requestNukeCodes")
+			if (syndicate == TRUE)
+				balloon_alert_to_viewers("ОШИБКА")
+				to_chat(usr, span_danger("ОШИБКА"))
+				return
 			if (!authenticated_as_non_silicon_captain(usr))
 				return
 			if (!COOLDOWN_FINISHED(src, important_action_cooldown))
@@ -243,11 +271,15 @@
 			var/reason = trim(html_encode(params["reason"]), MAX_MESSAGE_LEN)
 			nuke_request(reason, usr)
 			to_chat(usr, span_notice("Request sent."))
-			usr.log_message("has requested the nuclear codes from CentCom with reason \"[reason]\"", LOG_SAY)
-			priority_announce("The codes for the on-station nuclear self-destruct have been requested by [usr]. Confirmation or denial of this request will be sent shortly.", "Nuclear Self-Destruct Codes Requested", SSstation.announcer.get_rand_report_sound())
+			usr.log_message("запросил коды запуска систем ядерного самоуничтожения с причиной \"[reason]\"", LOG_SAY)
+			priority_announce("Запрос на коды от ядерного заряда станции для активации протокола самоуничтожения были запрошены [usr]. Решение будет отправлено в ближайшее время.", "Запрошены коды для запуска систем ядерного самоуничтожения.", SSstation.announcer.get_rand_report_sound())
 			playsound(src, 'sound/machines/terminal_prompt.ogg', 50, FALSE)
 			COOLDOWN_START(src, important_action_cooldown, IMPORTANT_ACTION_COOLDOWN)
 		if ("restoreBackupRoutingData")
+			if (syndicate == TRUE)
+				balloon_alert_to_viewers("ОШИБКА")
+				to_chat(usr, span_danger("ОШИБКА"))
+				return
 			if (!authenticated_as_non_silicon_captain(usr))
 				return
 			if (!(obj_flags & EMAGGED))
@@ -300,6 +332,7 @@
 			var/line_two = reject_bad_text(params["lineTwo"] || "", MAX_STATUS_LINE_LENGTH)
 			post_status("alert", "blank")
 			post_status("message", line_one, line_two)
+			log_admin("[key_name(usr)] меняет текст в строке Статус-Дисплея: [line_one] & [line_two]")
 			last_status_display = list(line_one, line_two)
 			playsound(src, "terminal_type", 50, FALSE)
 		if ("setStatusPicture")
@@ -325,8 +358,8 @@
 			if (obj_flags & EMAGGED)
 				authenticated = TRUE
 				authorize_access = get_all_accesses()
-				authorize_name = "Unknown"
-				to_chat(usr, span_warning("[src] lets out a quiet alarm as its login is overridden."))
+				authorize_name = "NULL"
+				to_chat(usr, span_warning("[src] испускает тихий щелчок, а на консоли высвечивает полный доступ."))
 				playsound(src, 'sound/machines/terminal_alert.ogg', 25, FALSE)
 			else if(isliving(usr))
 				var/mob/living/L = usr
@@ -351,11 +384,12 @@
 				log_game("[key_name(usr)] enabled emergency maintenance access.")
 				message_admins("[ADMIN_LOOKUPFLW(usr)] enabled emergency maintenance access.")
 				deadchat_broadcast(" enabled emergency maintenance access at [span_name("[get_area_name(usr, TRUE)]")].", span_name("[usr.real_name]"), usr, message_type = DEADCHAT_ANNOUNCEMENT)
-			
+
 		if("toggleBought")
 			var/boughtID = params["id"]
 			for(var/tracked_slave in GLOB.tracked_slaves)
 				var/obj/item/electropack/shockcollar/slave/C = tracked_slave
+				var/mob/living/M = C.loc
 				if (REF(C) == boughtID) // Get collar
 
 					var/datum/bank_account/bank = SSeconomy.get_dep_account(ACCOUNT_CAR)
@@ -365,20 +399,23 @@
 							C.setBought(FALSE)
 
 							for(var/obj/machinery/computer/slavery/tracked_slave_console in GLOB.tracked_slave_consoles)
-								tracked_slave_console.radioAnnounce("The station has recalled the ransom funds for [C.loc.name].")
+								priority_announce("Станция отменяет плату в [C.price] кредитов за [M.real_name].", sender_override = GLOB.slavers_team_name)
+								tracked_slave_console.radioAnnounce("Станция отказалась платить за [C.loc.name].")
 
 						else
 							bank.adjust_money(-C.price)
 							C.setBought(TRUE)
 
 							for(var/obj/machinery/computer/slavery/tracked_slave_console in GLOB.tracked_slave_consoles)
-								tracked_slave_console.radioAnnounce("The station has paid the ransom funds for [C.loc.name].")
+								priority_announce("Станция оплачивает возвращение [M.real_name] за [C.price] кредитов.", sender_override = GLOB.slavers_team_name)
+								tracked_slave_console.radioAnnounce("Станция заплатила выкуп за [C.loc.name].")
 					break
 
 /obj/machinery/computer/communications/ui_data(mob/user)
 	var/list/data = list(
 		"authenticated" = FALSE,
 		"emagged" = FALSE,
+		"syndicate" = syndicate,
 	)
 
 	var/ui_state = issilicon(user) ? cyborg_state : state
@@ -424,6 +461,8 @@
 				data["authorizeName"] = authorize_name
 				data["canLogOut"] = !issilicon(user)
 				data["shuttleCanEvacOrFailReason"] = SSshuttle.canEvac(user)
+				if(syndicate)
+					data["shuttleCanEvacOrFailReason"] = "Вы не можете вызвать Шаттл Эвакуации с этой консоли!"
 
 				var/list/slaves = list()
 				data["slaves"] = list()
@@ -486,10 +525,12 @@
 					data["alertLevelTick"] = alert_level_tick
 					data["canMakeAnnouncement"] = TRUE
 					data["canSetAlertLevel"] = issilicon(user) ? "NO_SWIPE_NEEDED" : "SWIPE_NEEDED"
+				else if(syndicate)
+					data["canMakeAnnouncement"] = TRUE
 
 				if (SSshuttle.emergency.mode != SHUTTLE_IDLE && SSshuttle.emergency.mode != SHUTTLE_RECALL)
 					data["shuttleCalled"] = TRUE
-					data["shuttleRecallable"] = SSshuttle.canRecall()
+					data["shuttleRecallable"] = SSshuttle.canRecall() || syndicate
 
 				if (SSshuttle.emergencyCallAmount)
 					data["shuttleCalledPreviously"] = TRUE
@@ -539,8 +580,15 @@
 /obj/machinery/computer/communications/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if (!ui)
-		ui = new(user, src, "CommunicationsConsole")
-		ui.open()
+		if (EMAGGED && GLOB.master_mode == "Extended" || syndicate == TRUE)
+			ui = new(user, src, "CommunicationsConsole")
+			ui.open()
+		else if (EMAGGED)
+			ui = new(user, src, "CommunicationsConsoleInteq")
+			ui.open()
+		else
+			ui = new(user, src, "CommunicationsConsole")
+			ui.open()
 
 /obj/machinery/computer/communications/ui_static_data(mob/user)
 	return list(
@@ -553,6 +601,8 @@
 /obj/machinery/computer/communications/proc/has_communication()
 	var/turf/current_turf = get_turf(src)
 	var/z_level = current_turf.z
+	if(syndicate)
+		return TRUE
 	return is_station_level(z_level) || is_centcom_level(z_level)
 
 /obj/machinery/computer/communications/proc/set_state(mob/user, new_state)
@@ -603,18 +653,18 @@
 /obj/machinery/computer/communications/proc/make_announcement(mob/living/user)
 	var/is_ai = issilicon(user)
 	if(!SScommunications.can_announce(user, is_ai))
-		to_chat(user, span_alert("Intercomms recharging. Please stand by."))
+		to_chat(user, span_alert("Система оповещения испытывает перегрузку. Пожалуйста, подождите."))
 		return
-	var/input = stripped_input(user, "Please choose a message to announce to the station crew.", "What?")
+	var/input = input(user, "Напишите сообщение для объявления экипажу станции.", "Приоритетное оповещение") as message|null
 	if(!input || !user.canUseTopic(src, !issilicon(usr)))
 		return
 	if(!(user.can_speak())) //No more cheating, mime/random mute guy!
 		input = "..."
-		to_chat(user, span_warning("You find yourself unable to speak."))
+		to_chat(user, span_warning("Вы не можете говорить."))
 	else
 		input = user.treat_message(input) //Adds slurs and so on. Someone should make this use languages too.
-	SScommunications.make_announcement(user, is_ai, input)
-	deadchat_broadcast(" made a priority announcement from [span_name("[get_area_name(usr, TRUE)]")].", span_name("[user.real_name]"), user, message_type=DEADCHAT_ANNOUNCEMENT)
+	SScommunications.make_announcement(user, is_ai, input, syndicate)
+	deadchat_broadcast(" делает важное объявление в [span_name("[get_area_name(usr, TRUE)]")].", span_name("[user.real_name]"), user, message_type=DEADCHAT_ANNOUNCEMENT)
 
 /obj/machinery/computer/communications/proc/post_status(command, data1, data2)
 
@@ -628,6 +678,9 @@
 		if("message")
 			status_signal.data["msg1"] = data1
 			status_signal.data["msg2"] = data2
+			if(istype(usr, /mob/living))
+				log_admin("STATUS: [key_name(usr)] set status screen with [src]. Message: [data1] [data2]")
+				message_admins("STATUS: [key_name(usr)] set status screen with [src]. Message: [data1] [data2]")
 		if("alert")
 			status_signal.data["picture_state"] = data1
 

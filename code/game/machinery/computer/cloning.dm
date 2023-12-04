@@ -80,7 +80,7 @@
 			continue	//how though?
 
 		if(pod.growclone(R.fields["ckey"], R.fields["name"], R.fields["UI"], R.fields["SE"], R.fields["mind"], R.fields["blood_type"], R.fields["mrace"], R.fields["features"], R.fields["factions"], R.fields["quirks"], R.fields["bank_account"], R.fields["traumas"]))
-			temp = "[R.fields["name"]] => <font class='good'>Cloning cycle in progress...</font>"
+			temp = "[R.fields["name"]] => Cloning cycle in progress..."
 			records -= R
 
 /obj/machinery/computer/cloning/proc/updatemodules(findfirstcloner)
@@ -506,6 +506,12 @@
 		scantemp = "Unable to locate valid genetic data."
 		playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
 		return
+	// BLUEMOON ADD START - нельзя сканировать синтетиков
+	if(HAS_TRAIT(mob_occupant, TRAIT_ROBOTIC_ORGANISM))
+		scantemp = "ERROR. Insert a living occupant."
+		playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
+		return
+	// BLUEMOON ADD END
 	if(!experimental)
 		if(mob_occupant.suiciding || mob_occupant.hellbound)
 			scantemp = "Subject's brain is not responding to scanning stimuli."

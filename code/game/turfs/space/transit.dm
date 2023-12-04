@@ -142,3 +142,24 @@
 			. = 90
 		if(WEST)
 			. = -90
+
+///Dump a movable in a random valid spacetile
+/proc/dump_in_space(atom/movable/dumpee)
+	if(HAS_TRAIT(dumpee, TRAIT_DEL_ON_SPACE_DUMP))
+		qdel(dumpee)
+		return
+
+	var/max = world.maxx-TRANSITIONEDGE
+	var/min = 1+TRANSITIONEDGE
+
+	var/list/possible_transtitons = list()
+	for(var/datum/space_level/level as anything in SSmapping.z_list)
+		if (level.linkage == CROSSLINKED)
+			possible_transtitons += level.z_value
+	if(!length(possible_transtitons)) //No space to throw them to - try throwing them onto mining
+		possible_transtitons = SSmapping.levels_by_trait(ZTRAIT_MINING)
+		if(!length(possible_transtitons)) //Just throw them back on station, if not just runtime.
+			possible_transtitons = SSmapping.levels_by_trait(ZTRAIT_STATION)
+
+	//move the dumpee to a random coordinate turf
+	dumpee.forceMove(locate(rand(min,max), rand(min,max), pick(possible_transtitons)))

@@ -30,6 +30,14 @@ map metastation
 	#voteweight 0.5
 endmap
 
+map ratvarstation
+	minplayers 120
+endmap
+
+map armystation
+	minplayers 120
+endmap
+
 map pubbystation
 endmap
 
@@ -49,11 +57,11 @@ map runtimestation
 endmap
 
 map spookystation
-	minplayers 150
+	minplayers 15
 endmap
 
 map festivestation
-	minplayers 150
+	minplayers 15
 endmap
 
 map multiz_debug
@@ -69,7 +77,7 @@ endmap
 map smolstation
 endmap
 
-map snaxiteststation
+map smolstation
 endmap
 
 map taustation
@@ -79,7 +87,8 @@ map cogstation
 endmap
 
 map syndicatestation
+	voteweight 2
 endmap
 
-map boxedinstation
-endmap
+#map boxedinstation
+	endmap

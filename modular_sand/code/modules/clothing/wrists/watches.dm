@@ -1,11 +1,20 @@
 /obj/item/clothing/wrists/clockwork_watch
-	name = "steampunk watch"
-	desc = "A stylish steampunk watch made out of thousands of tiny cogwheels."
+	name = "Часы в стиле Стимпанк"
+	desc = "Стильные часы в стиле Стимпанк, сделанные из тысяч крошечных зубчатых колес."
 	gender = MALE
 	icon_state = "clockwork_slab"
 	item_state = "clockwork_slab"
 	body_parts_covered = HAND_LEFT | ARM_LEFT
-	attack_verb = list("showed the time to")
+	attack_verb = list("показывает время")
+
+/obj/item/clothing/wrists/clockwork_watch/red
+	name = "Красные Стильные Часы"
+	desc = "Особо красивые часы красного цвета. Сидят довольно удобно!"
+	gender = MALE
+	icon_state = "redwork_slab"
+	item_state = "redwork_slab"
+	body_parts_covered = HAND_LEFT | ARM_LEFT
+	attack_verb = list("показывает время")
 
 /obj/item/clothing/wrists/clockwork_watch/examine(mob/user)
 	. = ..()

@@ -6,6 +6,7 @@ GLOBAL_LIST_EMPTY(shuttle_caller_list)  		    //list of all communication consol
 GLOBAL_LIST_EMPTY(machines)					        //NOTE: this is a list of ALL machines now. The processing machines list is SSmachine.processing !
 GLOBAL_LIST_EMPTY(navigation_computers)				//list of all /obj/machinery/computer/camera_advanced/shuttle_docker
 GLOBAL_LIST_EMPTY(syndicate_shuttle_boards)	        //important to keep track of for managing nukeops war declarations.
+GLOBAL_LIST_EMPTY(real_syndicate_shuttle_boards)	        //important to keep track of for managing nukeops war declarations.
 GLOBAL_LIST_EMPTY(navbeacons)					    //list of all bot nagivation beacons, used for patrolling.
 GLOBAL_LIST_EMPTY(teleportbeacons)			        //list of all tracking beacons used by teleporters
 GLOBAL_LIST_EMPTY(deliverybeacons)			        //list of all MULEbot delivery beacons.
@@ -14,6 +15,10 @@ GLOBAL_LIST_EMPTY(nuke_list)
 GLOBAL_LIST_EMPTY(alarmdisplay)				        //list of all machines or programs that can display station alerts
 GLOBAL_LIST_EMPTY(singularities)				    //list of all singularities on the station (actually technically all engines)
 GLOBAL_LIST_EMPTY(grounding_rods)					//list of all grounding rods on the station
+
+GLOBAL_LIST_INIT(celltimers_list, list()) // list of all cell timers
+GLOBAL_LIST_INIT(cell_logs, list())
+GLOBAL_LIST_INIT(prisoncomputer_list, list())
 
 GLOBAL_LIST(chemical_reactions_list)				//list of all /datum/chemical_reaction datums. Used during chemical reactions
 GLOBAL_LIST(drink_reactions_list)				//list of all /datum/chemical_reaction datums where the output is of type /datum/reagent/consumable for bartender PDA
@@ -35,6 +40,8 @@ GLOBAL_LIST_EMPTY(active_jammers)             // List of active radio jammers
 GLOBAL_LIST_EMPTY(ladders)
 GLOBAL_LIST_EMPTY(trophy_cases)
 GLOBAL_LIST_EMPTY(coin_values)
+///This is a global list of all signs you can change an existing sign or new sign backing to, when using a pen on them.
+GLOBAL_LIST_INIT(editable_sign_types, populate_editable_sign_types())
 
 GLOBAL_LIST_EMPTY(wire_color_directory)
 GLOBAL_LIST_EMPTY(wire_name_directory)

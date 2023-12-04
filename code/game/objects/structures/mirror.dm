@@ -10,6 +10,22 @@
 	max_integrity = 200
 	integrity_failure = 0.5
 
+/obj/structure/mirror/directional/north //Pixel offsets get overwritten on New()
+	dir = SOUTH
+	pixel_y = 28
+
+/obj/structure/mirror/directional/south
+	dir = NORTH
+	pixel_y = -28
+
+/obj/structure/mirror/directional/east
+	dir = WEST
+	pixel_x = 28
+
+/obj/structure/mirror/directional/west
+	dir = EAST
+	pixel_x = -28
+
 /obj/structure/mirror/Initialize(mapload)
 	. = ..()
 	if(icon_state == "mirror_broke" && !broken)
@@ -94,9 +110,9 @@
 	if(!I.tool_start_check(user, amount=0))
 		return TRUE
 
-	to_chat(user, "<span class='notice'>You begin repairing [src]...</span>")
+	to_chat(user, "<span class='notice'>Вы начинаете чинить [src]...</span>")
 	if(I.use_tool(src, user, 10, volume=50))
-		to_chat(user, "<span class='notice'>You repair [src].</span>")
+		to_chat(user, "<span class='notice'>Вы починили [src].</span>")
 		broken = 0
 		icon_state = initial(icon_state)
 		desc = initial(desc)

@@ -19,7 +19,7 @@
 	playstyle_string = "<span class='big bold'>You are a shade!</span><b> Your job is to survive until you are granted a shell, and help out cultists with casting runes!</b>"
 
 /mob/living/simple_animal/hostile/construct/shade/death()
-	deathmessage = "lets out a contented sigh as [p_their()] form unwinds."
+	deathmessage = "lets out a contented sigh as [ru_ego()] form unwinds."
 	..()
 
 /mob/living/simple_animal/hostile/construct/shade/canSuicide()
@@ -38,7 +38,7 @@
 			M.visible_message("<span class='danger'>[M] heals \the <b>[src]</b>.</span>", \
 					   "<span class='cult'>You heal <b>[src]</b>, leaving <b>[src]</b> at <b>[health]/[maxHealth]</b> health.</span>")
 		else
-			to_chat(M, "<span class='cult'>You cannot heal <b>[src]</b>, as [p_theyre()] unharmed!</span>")
+			to_chat(M, "<span class='cult'>You cannot heal <b>[src]</b>, as [ru_who()] unharmed!</span>")
 	else if(src != M)
 		return ..()
 

@@ -3,8 +3,8 @@
 	desc = "A vending machine for clothing."
 	icon_state = "clothes"
 	icon_deny = "clothes-deny"
-	product_slogans = "Dress for success!;Prepare to look swagalicious!;Look at all this swag!;Why leave style up to fate? Use the ClothesMate!"
-	vend_reply = "Thank you for using the ClothesMate!"
+	product_slogans = "Одевайтесь для успеха!;Вам следует выглядеть шикарно!;Только посмотрите на эту шикарную одежду!;Зачем оставлять стиль на волю судьбы? Используйте ClothesMate!"
+	vend_reply = "Спасибо за использование ClothesMate!"
 	products = list(/obj/item/clothing/head/that = 4,
 					/obj/item/clothing/head/fedora = 3,
 					/obj/item/clothing/head/beret = 3,
@@ -18,6 +18,13 @@
 					/obj/item/clothing/suit/toggle/jacket/flannel/red = 4,
 					/obj/item/clothing/suit/toggle/jacket/flannel/aqua = 4,
 					/obj/item/clothing/suit/toggle/jacket/flannel/brown = 4,
+					/obj/item/clothing/suit/toggle/jacket/flannel/white = 4,
+					/obj/item/clothing/suit/toggle/jacket/hawaiian = 4,
+					/obj/item/clothing/suit/toggle/jacket/hawaiian/fuch = 4,
+					/obj/item/clothing/suit/toggle/jacket/hawaiian/vine = 4,
+					/obj/item/clothing/suit/toggle/jacket/hawaiian/orange = 4,
+					/obj/item/clothing/suit/toggle/jacket/hawaiian/motu = 4,
+					/obj/item/clothing/suit/toggle/jacket/hawaiian/vice = 4,
 					/obj/item/clothing/suit/jacket/puffer/vest = 4,
 					/obj/item/clothing/suit/jacket/puffer = 4,
 					/obj/item/clothing/suit/hooded/cloak/david = 4,
@@ -140,7 +147,7 @@
 					/obj/item/clothing/shoes/wraps/silver = 3,
 					/obj/item/clothing/shoes/wraps/red = 3,
 					/obj/item/clothing/shoes/wraps/blue = 3,
-					/obj/item/clothing/shoes/sandal = 3,
+					/obj/item/clothing/shoes/sandal = 6,
 					/obj/item/clothing/gloves/fingerless = 3,
 					/obj/item/clothing/glasses/orange = 5,
 					/obj/item/clothing/glasses/red = 5,
@@ -253,6 +260,8 @@
 					/obj/item/clothing/under/costume/cheongsam/white = 3,
 					/obj/item/clothing/under/costume/cheongsam/red = 3,
 					/obj/item/storage/backpack/snail = 3,
+					/obj/item/clothing/under/misc/squatter = 5,
+					/obj/item/clothing/under/misc/squatter/pants = 5,
 					/obj/item/umbrella = 5)
 	contraband = list(/obj/item/clothing/accessory/turtleneck/tactifool/syndicate = 3,
 					/obj/item/clothing/under/syndicate/tacticool = 3,
@@ -278,6 +287,8 @@
 					/obj/item/clothing/shoes/swagshoes = 5,
 					/obj/item/clothing/suit/jacket/letterman_nanotrasen = 5,
 					/obj/item/clothing/under/misc/corporateuniform = 5,
+					/obj/item/clothing/suit/hooded/wintercoat/narsie/fake = 5,
+					/obj/item/clothing/suit/hooded/wintercoat/ratvar/fake = 5,
 					/obj/item/clothing/suit/hooded/wintercoat/polychromic = 5,
 					/obj/item/clothing/suit/toggle/wbreakpoly/polychromic = 5,
 					/obj/item/clothing/shoes/sneakers/poly/polychromic = 10,

@@ -1,5 +1,5 @@
 /obj/item/organ/genital/belly //I know, I know a belly aint a genital. but it is in the sake of code.
-	name 					= "belly"
+	name 					= "живот"
 	desc 					= "You see a belly on their midsection."
 	icon_state 				= "belly"
 	icon 					= 'icons/obj/genitals/breasts.dmi' // I have no idea why it's set up like this on hyper
@@ -40,7 +40,7 @@
 	var/list/belly_names = list("stomach", "belly", "gut", "midsection", "rolls")
 	if(size < 0)//I don't actually know what round() does to negative numbers, so to be safe!!fixed
 		if(owner)
-			to_chat(owner, span_warning("You feel your [pick(belly_names)] go completely flat."))
+			to_chat(owner, "<span class='warning'>You feel your [pick(belly_names)] go completely flat.</span>")
 		QDEL_IN(src, 1)
 		return
 
@@ -48,9 +48,9 @@
 		var/mob/living/carbon/human/H = owner
 		var/r_prev_size = round(prev_size)
 		if (rounded_size > r_prev_size)
-			to_chat(H, span_warning("Your guts [pick("swell up to", "gurgle into", "expand into", "plump up into", "grow eagerly into", "fatten up into", "distend into")] a larger midsection."))
+			to_chat(H, "<span class='warning'>Ваш животик начинает [pick("разбухать до", "расцветать до", "расширяться до", "пухнуть до", "расти с нетерпением до", "увеличиваться до")] большего размера.</span>")
 		else if (rounded_size < r_prev_size)
-			to_chat(H, span_warning("Your guts [pick("shrink down to", "decrease into", "wobble down into", "diminish into", "deflate into", "contracts into")] a smaller midsection."))
+			to_chat(H, "<span class='warning'>Ваш животик начинает [pick("уменьшаться до", "сдуваться до", "колебаться до", "сокращаться до", "сморщиваться с сожалением до", "сдуваться до")] меньшего размера.</span>")
 
 /obj/item/organ/genital/belly/update_appearance()
 	var/lowershape = lowertext(shape)
@@ -58,23 +58,23 @@
 	//Reflect the size of dat ass on examine.
 	switch(round(size))
 		if(1)
-			size_name = "average"
+			size_name = "среднего"
 		if(2)
-			size_name = "round"
+			size_name = "большого"
 		if(3)
-			size_name = "squishable"
+			size_name = "сжимательного"
 		if(4)
-			size_name = "fat"
+			size_name = "крупного"
 		if(5)
-			size_name = "sagging"
+			size_name = pick("массивного", "особо крупного")
 		if(6)
-			size_name = "gigantic"
+			size_name = pick("гигантского", "крупнопузырчатого", "огромного")
 		if(7 to BELLY_SIZE_MAX)
-			size_name = pick("massive","unfathomably bulging","enormous","very generous","humongous","big bubbly")
+			size_name = pick("абсолютно огромного", "невероятно гигантского", "THAT'S ULTRA THICC")
 		else
-			size_name = "nonexistent"
+			size_name = "плоского"
 
-	desc = "You see a [size_name] [round(size) >= 4 ? "belly, it bounces around and gurgles as [owner] walks" : "belly in [owner?.p_their() ? owner?.p_their() : "their"] midsection"]."
+	desc = "Вы наблюдаете животик [size_name] размера.[round(size) >= 4 ? " Он подпрыгивает и булькает от того, что [owner] идёт." : ""]."
 
 	var/icon_size = size
 	icon_state = "belly_[lowershape]_[icon_size]"
@@ -134,7 +134,7 @@
 		var/growth_amount = climax_fluids.total_volume / (fluid_max_volume * GENITAL_INFLATION_THRESHOLD)
 		modify_size(growth_amount)
 		if(size > round(previous))
-			owner.visible_message(span_lewd("\The <b>[owner]</b>'s belly bloats outwards as it gets pumped full of[pick(" sweet", "")] [lowertext(source_gen.get_fluid_name())]!"), ignored_mobs = owner.get_unconsenting())
+			owner.visible_message("<span class='lewd'>\The Животик <b>[owner]</b> становится совсем выпуклым и раздувается от наполнения [pick("сладкой", "желанной")] '[lowertext(source_gen.get_fluid_name())]'!</span>", ignored_mobs = owner.get_unconsenting())
 			fluid_id = source_gen.get_fluid_id()
 		if((growth_amount >= 3 || size >= 3) && (owner.client?.prefs.cit_toggles & BUTT_ENLARGEMENT))
 			var/obj/item/organ/genital/butt/ass = owner.getorganslot(ORGAN_SLOT_BUTT)

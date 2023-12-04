@@ -28,7 +28,6 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 	var/wtype = "glass"
 	var/fulltile = FALSE
 	var/obj/item/stack/sheet/glass_type = /obj/item/stack/sheet/glass
-	var/cleanable_type = /obj/effect/decal/cleanable/glass
 	var/glass_amount = 1
 	can_be_unanchored = TRUE
 	resistance_flags = ACID_PROOF
@@ -53,6 +52,9 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 	var/electrochromatic_status = NOT_ELECTROCHROMATIC
 	/// Electrochromatic ID. Set the first character to ! to replace with a SSmapping generated pseudorandom obfuscated ID for mapping purposes.
 	var/electrochromatic_id
+	///Datum that the shard and debris type is pulled from for when the glass is broken.
+	var/cleanable_type = /obj/effect/decal/cleanable/glass
+	var/datum/material/glass_material_datum = /datum/material/glass
 
 /obj/structure/window/examine(mob/user)
 	. = ..()
@@ -103,7 +105,7 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 		electrochromatic_id = SSmapping.get_obfuscated_id(electrochromatic_id)
 
 	ini_dir = dir
-	air_update_turf(1)
+	air_update_turf(TRUE)
 
 	if(fulltile)
 		setDir()
@@ -191,7 +193,8 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 
 /obj/structure/window/attack_tk(mob/user)
 	user.DelayNextAction(CLICK_CD_MELEE)
-	user.visible_message("<span class='notice'>Something knocks on [src].</span>")
+	user.visible_message("<span class='notice'>Что-то стучится в [src].</span>")
+	balloon_alert(user, "Тук-тук!")
 	add_fingerprint(user)
 	playsound(src, 'sound/effects/Glassknock.ogg', 50, 1)
 
@@ -200,12 +203,18 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 		return 1
 	. = ..()
 
-/obj/structure/window/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
+/obj/structure/window/on_attack_hand(mob/user as mob|obj, act_intent = user.a_intent, unarmed_attack_flags)
 	if(!can_be_reached(user))
 		return
-	user.visible_message("[user] knocks on [src].")
+	if(user.a_intent == INTENT_HARM)
+		user.visible_message(span_warning("[user] долбится об [src]!"))
+		balloon_alert_to_viewers("СТУК!!!")
+		playsound(src, 'sound/effects/Glassknock.ogg', 100, 1)
+	else if(user.a_intent != INTENT_HARM)
+		user.visible_message("[user] стучится в [src].")
+		balloon_alert_to_viewers("Тук-тук!")
+		playsound(src, 'sound/effects/Glassknock.ogg', 50, 1)
 	add_fingerprint(user)
-	playsound(src, 'sound/effects/Glassknock.ogg', 50, 1)
 
 /obj/structure/window/attack_paw(mob/user)
 	user.DelayNextAction()
@@ -227,11 +236,11 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 			if(!I.tool_start_check(user, amount=0))
 				return
 
-			to_chat(user, "<span class='notice'>You begin repairing [src]...</span>")
+			to_chat(user, "<span class='notice'>Вы начинаете чинить [src]...</span>")
 			if(I.use_tool(src, user, 40, volume=50))
 				obj_integrity = max_integrity
 				update_nearby_icons()
-				to_chat(user, "<span class='notice'>You repair [src].</span>")
+				to_chat(user, "<span class='notice'>Вы починили [src].</span>")
 		else
 			to_chat(user, "<span class='warning'>[src] is already in good condition!</span>")
 		return
@@ -486,17 +495,21 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 	qdel(src)
 	update_nearby_icons()
 
+///Spawns shard and debris decal based on the glass_material_datum, spawns rods if window is reinforned and number of shards/rods is determined by the window being fulltile or not.
 /obj/structure/window/proc/spawnDebris(location)
-	. = list()
-	var/shard = initial(glass_type.shard_type)
-	if(shard)
-		. += new shard(location)
+	var/datum/material/glass_material_ref = GET_MATERIAL_REF(glass_material_datum)
+	var/obj/item/shard_type = glass_material_ref.shard_type
+	var/obj/effect/decal/debris_type = glass_material_ref.debris_type
+	var/list/dropped_debris = list()
+	if(!isnull(shard_type))
+		dropped_debris += new shard_type(location)
 		if (fulltile)
-			. += new shard(location)
-	if(cleanable_type)
-		. += new cleanable_type(location)
+			dropped_debris += new shard_type(location)
+	if(!isnull(debris_type))
+		dropped_debris += new debris_type(location)
 	if (reinf)
-		. += new /obj/item/stack/rods(location, (fulltile ? 2 : 1))
+		dropped_debris += new /obj/item/stack/rods(location, (fulltile ? 2 : 1))
+	return dropped_debris
 
 /obj/structure/window/proc/can_be_rotated(mob/user,rotation_type)
 	if (get_dist(src,user) > 1)
@@ -518,13 +531,13 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 	return TRUE
 
 /obj/structure/window/proc/after_rotation(mob/user,rotation_type)
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	ini_dir = dir
 	add_fingerprint(user)
 
 /obj/structure/window/Destroy()
 	density = FALSE
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	update_nearby_icons()
 	remove_electrochromatic()
 	return ..()
@@ -605,6 +618,7 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 	wave_explosion_block = EXPLOSION_BLOCK_REINFORCED_WINDOW
 	wave_explosion_multiply = EXPLOSION_DAMPEN_REINFORCED_WINDOW
 	glass_type = /obj/item/stack/sheet/rglass
+	glass_material_datum = /datum/material/glass
 	rad_insulation = RAD_HEAVY_INSULATION
 	ricochet_chance_mod = 0.8
 
@@ -633,6 +647,7 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 	wave_explosion_multiply = EXPLOSION_DAMPEN_BOROSILICATE_WINDOW
 	glass_type = /obj/item/stack/sheet/plasmaglass
 	cleanable_type = /obj/effect/decal/cleanable/glass/plasma
+	glass_material_datum = /datum/material/alloy/plasmaglass
 	rad_insulation = RAD_NO_INSULATION
 
 /obj/structure/window/plasma/spawner/east
@@ -660,6 +675,7 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 	wave_explosion_block = EXPLOSION_BLOCK_EXTREME
 	wave_explosion_multiply = EXPLOSION_BLOCK_EXTREME
 	glass_type = /obj/item/stack/sheet/plasmarglass
+	glass_material_datum = /datum/material/alloy/plasmaglass
 
 /obj/structure/window/plasma/reinforced/spawner/east
 	dir = EAST
@@ -750,6 +766,23 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 	fulltile = TRUE
 	flags_1 = PREVENT_CLICK_UNDER_1
 	smooth = SMOOTH_TRUE
+	// BLUEMOON ADD - фикс соединения со стенами
+	canSmoothWith = list(
+		/turf/closed/wall,
+		/turf/closed/wall/r_wall,
+		/obj/structure/falsewall,
+		/obj/structure/falsewall/brass,
+		/obj/structure/falsewall/reinforced,
+		/turf/closed/wall/rust,
+		/turf/closed/wall/r_wall/rust,
+		/turf/closed/wall/clockwork,
+		/obj/structure/window/fulltile,
+		/obj/structure/window/reinforced/fulltile,
+		/obj/structure/window/reinforced/tinted/fulltile,
+		/obj/structure/window/plasma/fulltile,
+		/obj/structure/window/plasma/reinforced/fulltile
+		)
+	// BLUEMOON ADD END
 	glass_amount = 2
 
 /obj/structure/window/plasma/reinforced/fulltile/unanchored
@@ -835,6 +868,8 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 	explosion_block = 3
 	level = 3
 	glass_type = /obj/item/stack/sheet/titaniumglass
+	cleanable_type = /obj/effect/decal/cleanable/glass/titanium
+	glass_material_datum = /datum/material/alloy/titaniumglass
 	glass_amount = 2
 	ricochet_chance_mod = 0.9
 
@@ -866,6 +901,8 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 	explosion_block = 3
 	level = 3
 	glass_type = /obj/item/stack/sheet/plastitaniumglass
+	cleanable_type = /obj/effect/decal/cleanable/glass/plastitanium
+	glass_material_datum = /datum/material/alloy/plastitaniumglass
 	glass_amount = 2
 
 /obj/structure/window/plastitanium/unanchored
@@ -990,7 +1027,8 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 /obj/structure/window/paperframe/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	add_fingerprint(user)
 	if(user.a_intent != INTENT_HARM)
-		user.visible_message("[user] knocks on [src].")
+		user.visible_message("[user] стучится в [src].")
+		balloon_alert(user, "Тук-тук!")
 		playsound(src, "pageturn", 50, 1)
 	else
 		take_damage(4,BRUTE,MELEE, 0)

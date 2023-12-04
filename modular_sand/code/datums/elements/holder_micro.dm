@@ -61,7 +61,7 @@
 	if(!ishuman(user) || !user.Adjacent(source) || user.incapacitated())
 		return FALSE
 	if(source == user)
-		to_chat(user, span_warning("You can't pick yourself up."))
+		to_chat(user, "<span class='warning'>You can't pick yourself up.</span>")
 		source.balloon_alert(user, "cannot pick yourself!")
 		return FALSE
 	if(COMPARE_SIZES(user, source) < (1 / CONFIG_GET(number/max_pick_ratio)))
@@ -69,33 +69,33 @@
 		source.balloon_alert(user, "too big to pick up!")
 		return FALSE
 	if(user.get_active_held_item())
-		to_chat(user, span_warning("Your hands are full!"))
+		to_chat(user, "<span class='warning'>Your hands are full!</span>")
 		source.balloon_alert(user, "hands are full!")
 		return FALSE
 	if(source.buckled)
-		to_chat(user, span_warning("[source] is buckled to something!"))
+		to_chat(user, "<span class='warning'>[source] is buckled to something!</span>")
 		source.balloon_alert(user, "buckled to something!")
 		return FALSE
-	source.visible_message(span_warning("[user] starts picking up [source]."), \
-					span_userdanger("[user] starts picking you up!"))
+	source.visible_message("<span class='warning'>[user] starts picking up [source].</span>", \
+					"<span class='userdanger'>[user] starts picking you up!</span>")
 	source.balloon_alert(user, "picking up")
 	var/time_required = COMPARE_SIZES(source, user) * 4 SECONDS //Scale how fast the pickup will be depending on size difference
 	if(!do_after(user, time_required, source))
 		return FALSE
 
 	if(user.get_active_held_item())
-		to_chat(user, span_warning("Your hands are full!"))
+		to_chat(user, "<span class='warning'>Your hands are full!</span>")
 		source.balloon_alert(user, "hands full!")
 		return FALSE
 	if(source.buckled)
-		to_chat(user, span_warning("[source] is buckled to something!"))
+		to_chat(user, "<span class='warning'>[source] is buckled to something!</span>")
 		source.balloon_alert(user, "buckled!")
 		return FALSE
 
-	source.visible_message(span_warning("[user] picks up [source]!"),
-					span_userdanger("[user] picks you up!"),
+	source.visible_message("<span class='warning'>[user] picks up [source]!</span>",
+					"<span class='userdanger'>[user] picks you up!</span>",
 					target = user,
-					target_message = span_notice("You pick [source] up."))
+					target_message = "<span class='notice'>You pick [source] up.</span>")
 	source.drop_all_held_items()
 	mob_pickup_micro(source, user)
 	return TRUE
@@ -107,10 +107,11 @@
 	icon_state = ""
 	slot_flags = ITEM_SLOT_FEET | ITEM_SLOT_HEAD | ITEM_SLOT_ID | ITEM_SLOT_BACK | ITEM_SLOT_NECK
 	w_class = null //handled by their size
+	body_parts_covered = FEET // BLUEMOON ADD - чтобы нельзя было брать более 1 персонажа в ноги, TODO - сделать возможность брать несколько маленьких
 
 /obj/item/clothing/head/mob_holder/micro/container_resist(mob/living/user)
 	if(user.incapacitated())
-		to_chat(user, span_warning("You can't escape while you're restrained like this!"))
+		to_chat(user, "<span class='warning'>You can't escape while you're restrained like this!</span>")
 		return
 	var/mob/living/L = get_atom_on_turf(src, /mob/living)
 	visible_message(span_warning("[src] begins to squirm in [L]'s grasp!"))
@@ -118,7 +119,7 @@
 	if(!do_after(user, time_required, L, IGNORE_TARGET_LOC_CHANGE|IGNORE_HELD_ITEM))
 		if(!user || user.stat != CONSCIOUS || user.loc != src)
 			return
-		to_chat(loc, span_warning("[src] stops resisting."))
+		to_chat(loc, "<span class='warning'>[src] stops resisting.</span>")
 		return
 	visible_message("<span class='warning'>[src] escapes [L]!")
 	release()
@@ -144,17 +145,17 @@
 	var/mob/living/carbon/human/M = held_mob
 	if(istype(M))
 		if(user.a_intent == "harm") //TO:DO, rework all of these interactions to be a lot more in depth
-			visible_message(span_danger("[user] slams their fist down on [M]!"), runechat_popup = TRUE, rune_msg = " slams their fist down on [M]!")
+			visible_message("<span class='danger'>[user] slams their fist down on [M]!</span>", runechat_popup = TRUE, rune_msg = " slams their fist down on [M]!")
 			playsound(loc, 'sound/weapons/punch1.ogg', 50, 1)
 			M.adjustBruteLoss(5)
 			return
 		if(user.a_intent == "disarm")
-			visible_message(span_danger("[user] pins [M] down with a finger!"), runechat_popup = TRUE, rune_msg = " pins [M] down with a finger!")
+			visible_message("<span class='danger'>[user] pins [M] down with a finger!</span>", runechat_popup = TRUE, rune_msg = " pins [M] down with a finger!")
 			playsound(loc, 'sound/effects/bodyfall1.ogg', 50, 1)
 			M.adjustStaminaLoss(10)
 			return
 		if(user.a_intent == "grab")
-			visible_message(span_danger("[user] squeezes their fist around [M]!"), runechat_popup = TRUE, rune_msg = " squeezes their fist around [M]!")
+			visible_message("<span class='danger'>[user] squeezes their fist around [M]!</span>", runechat_popup = TRUE, rune_msg = " squeezes their fist around [M]!")
 			playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1)
 			M.adjustOxyLoss(5)
 			return
@@ -197,6 +198,7 @@
 	var/mob/living/carbon/human/human_micro = held_mob
 	if(istype(human_micro))
 		. += human_micro.wear_id?.GetAccess()
+		. += human_micro.wear_neck?.GetAccess()
 
 /obj/item/clothing/head/mob_holder/micro/GetID()
 	. = ..()

@@ -76,6 +76,7 @@
 	charge_delay = 5
 	ammo_x_offset = 2
 	clumsy_check = 1
+	custom_premium_price = 4500
 
 /obj/item/gun/energy/laser/sizeray/update_overlays()
 	. = ..()

@@ -374,9 +374,9 @@
 
 	var/mintime = max(CONFIG_GET(number/respawn_delay), (SSticker.round_start_time + (CONFIG_GET(number/respawn_minimum_delay_roundstart) * 600)) - world.time, 0)
 
-	var/this_is_like_playing_right = alert(src,"Are you sure you wish to observe? You will not be able to respawn for [round(mintime / 600, 0.1)] minutes!!","Player Setup","Yes","No")
+	var/this_is_like_playing_right = alert(src,"Are you sure you wish to observe? You will not be able to respawn for [round(mintime / 600, 0.1)] minutes!!","Player Setup","Да","Нет")
 
-	if(QDELETED(src) || !src.client || this_is_like_playing_right != "Yes")
+	if(QDELETED(src) || !src.client || this_is_like_playing_right != "Да")
 		ready = PLAYER_NOT_READY
 		src << browse(null, "window=playersetup") //closes the player setup window
 		if(!(client?.prefs.toggles & TG_PLAYER_PANEL))
@@ -446,6 +446,8 @@
 		return JOB_UNAVAILABLE_GENERIC
 	if(!job.player_old_enough(client))
 		return JOB_UNAVAILABLE_ACCOUNTAGE
+	if(job.is_species_blacklisted(client)) //BLUE MOON ADDITION - XENO SUPREMACY
+		return JOB_UNAVAILABLE_GENERIC //BLUE MOON ADDITION - XENO SUPREMACY
 	if(job.required_playtime_remaining(client))
 		return JOB_UNAVAILABLE_PLAYTIME
 	if(latejoin && !job.special_check_latejoin(client))
@@ -559,6 +561,12 @@
 
 
 /mob/dead/new_player/proc/LateChoices()
+	// BLUEMOON ADD START - предупреждение, если у игрока включены роли
+	if((client.prefs.toggles & MIDROUND_ANTAG) && !(client.prefs.toggles & NO_ANTAG))
+		if(alert(src, "У вас включена возможность стать антагонистом посреди раунда. Вы уверены, что не хотите выключить её?", "...Клянусь, что не сдам роль...", "Я готов", "Прошу временно отключить") == "Прошу временно отключить")
+			client.prefs.toggles ^= MIDROUND_ANTAG
+			to_chat(src, "<span class='redtext'>На этот раунд, у вас отключена возможность стать антагонистом посреди раунда (её можно включить в Character Setup > Preferences).</span>")
+	// BLUEMOON ADD END
 
 	var/level = "green"
 	switch(GLOB.security_level)
@@ -566,10 +574,18 @@
 			level = "green"
 		if(SEC_LEVEL_BLUE)
 			level = "blue"
+		if(SEC_LEVEL_ORANGE)
+			level = "orange"
+		if(SEC_LEVEL_VIOLET)
+			level = "violet"
 		if(SEC_LEVEL_AMBER)
 			level = "amber"
 		if(SEC_LEVEL_RED)
 			level = "red"
+		if(SEC_LEVEL_LAMBDA)
+			level = "lambda"
+		if(SEC_LEVEL_EPSILON)
+			level = "epsilon"
 		if(SEC_LEVEL_DELTA)
 			level = "delta"
 
@@ -587,7 +603,7 @@
 	dat += "<center><table><tr><td valign='top'>"
 	var/column_counter = 0
 	var/free_space = 0
-	for(var/list/category in list(GLOB.command_positions) + list(GLOB.supply_positions) + list(GLOB.engineering_positions) + list(GLOB.nonhuman_positions - "pAI") + list(GLOB.civilian_positions) + list(GLOB.medical_positions) + list(GLOB.science_positions) + list(GLOB.security_positions))
+	for(var/list/category in list(GLOB.command_positions) + list(GLOB.supply_positions) + list(GLOB.engineering_positions) + list(GLOB.nonhuman_positions - "pAI") + list(GLOB.civilian_positions) + list(GLOB.law_positions) + list(GLOB.medical_positions) + list(GLOB.science_positions) + list(GLOB.security_positions))
 		var/cat_color = "fff" //random default
 		cat_color = SSjob.name_occupations[category[1]].selection_color //use the color of the first job in the category (the department head) as the category color
 		dat += "<fieldset style='width: 185px; border: 2px solid [cat_color]; display: inline'>"
@@ -626,9 +642,9 @@
 		column_counter++
 		if(free_space <=4)
 			free_space++
-			if(column_counter > 0 && (column_counter % 3 == 0))
+			if(column_counter > 0 && (column_counter % 4 == 0))
 				dat += "</td><td valign='top'>"
-		if(free_space >= 5 && (free_space % 5 == 0) && (column_counter % 3 != 0))
+		if(free_space >= 5 && (free_space % 5 == 0) && (column_counter % 4 != 0))
 			free_space = 0
 			column_counter = 0
 			dat += "</td><td valign='top'>"
@@ -738,7 +754,7 @@
 		return
 	client.crew_manifest_delay = world.time + (1 SECONDS)
 
-	var/dat = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'></head><body>"
+	var/dat = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'></head><body>"
 	dat += "<h4>Crew Manifest</h4>"
 	dat += GLOB.data_core.get_manifest(OOC = 1)
 

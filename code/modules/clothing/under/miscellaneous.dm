@@ -37,6 +37,18 @@
 	fitted = FEMALE_UNIFORM_TOP
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
+/obj/item/clothing/under/rank/prisoner/syndicate
+	name = "syndicate prisoner jumpsuit"
+	desc = "A crimson red jumpsuit worn by syndicate captives. Its sensors have been shorted out."
+	color = "#992300"
+	has_sensor = FALSE
+
+/obj/item/clothing/under/rank/prisoner/skirt/syndicate
+	name = "syndicate prisoner jumpskirt"
+	desc = "A crimson red jumpskirt worn by syndicate captives. Its sensors have been shorted out."
+	color = "#992300"
+	has_sensor = FALSE
+
 /obj/item/clothing/under/misc/mailman
 	name = "mailman's jumpsuit"
 	desc = "<i>'Special delivery!'</i>"
@@ -138,7 +150,7 @@
 				return
 			next_extinguish = world.time + extinguish_cooldown
 			extinguishes_left--
-			H.visible_message("<span class='warning'>[H]'s suit automatically extinguishes [H.p_them()]!</span>","<span class='warning'>Your suit automatically extinguishes you.</span>")
+			H.visible_message("<span class='warning'>[H]'s suit automatically extinguishes [H.ru_na()]!</span>","<span class='warning'>Your suit automatically extinguishes you.</span>")
 			H.ExtinguishMob()
 			new /obj/effect/particle_effect/water(get_turf(H))
 	return 0
@@ -163,7 +175,7 @@
 	icon = 'icons/obj/device.dmi'
 
 /obj/item/clothing/under/misc/gear_harness
-	name = "gear harness"
+	name = "Gear Harness"
 	desc = "A simple, inconspicuous harness replacement for a jumpsuit."
 	limb_integrity = 180
 	icon_state = "gear_harness"
@@ -185,7 +197,7 @@
 	desc = "A jumpsuit made from durathread, its resilient fibres provide some protection to the wearer."
 	icon_state = "durathread"
 	item_state = "durathread"
-	can_adjust = TRUE
+	can_adjust = FALSE
 	armor = list(MELEE = 10, LASER = 10, FIRE = 40, ACID = 10, BOMB = 5)
 
 /obj/item/clothing/under/misc/durathread/skirt
@@ -198,20 +210,28 @@
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/under/misc/squatter
-	name = "slav squatter tracksuit"
+	name = "Slav Squatter Tracksuit"
 	desc = "Cyka blyat."
 	icon_state = "squatteroutfit"
 	item_state = "squatteroutfit"
+	alternate_screams = RUSSIAN_SCREAMS
+	can_adjust = TRUE
+	//mutantrace_variation = USE_TAUR_CLIP_MASK|STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/under/misc/squatter/pants
+	name = "Slav Squatter Pants"
+	icon_state = "squatterpants"
+	item_state = "squatterpants"
 	can_adjust = FALSE
-	mutantrace_variation = USE_TAUR_CLIP_MASK
 
 /obj/item/clothing/under/misc/blue_camo
-	name = "russian blue camo"
+	name = "Russian Blue Camo"
 	desc = "Drop and give me dvadtsat!"
 	icon_state = "russobluecamo"
 	item_state = "russobluecamo"
-	can_adjust = FALSE
-	mutantrace_variation = USE_TAUR_CLIP_MASK
+	alternate_screams = RUSSIAN_SCREAMS
+	can_adjust = TRUE
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/under/misc/keyholesweater
 	name = "keyhole sweater"
@@ -219,7 +239,7 @@
 	icon_state = "keyholesweater"
 	item_state = "keyholesweater"
 	can_adjust = FALSE
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/under/misc/stripper
 	name = "pink stripper outfit"

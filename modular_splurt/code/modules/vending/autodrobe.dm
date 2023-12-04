@@ -19,10 +19,10 @@
 		/obj/item/clothing/under/suit/pencil/tan = 3,
 		/obj/item/clothing/under/suit/pencil/green = 3,
 		/obj/item/clothing/under/suit/error = 1,
-		/obj/item/clothing/under/rank/civilian/clown/clussy_outfit = 1,
-		/obj/item/clothing/gloves/clussy_gloves = 1,
-		/obj/item/clothing/head/clussy_wig = 1,
-		/obj/item/clothing/shoes/clown_shoes/clussy_heels = 1
+		/obj/item/clothing/under/rank/civilian/clown/clussy_outfit = 3,
+		/obj/item/clothing/gloves/clussy_gloves = 3,
+		/obj/item/clothing/head/clussy_wig = 3,
+		/obj/item/clothing/shoes/clown_shoes/clussy_heels = 3
 	)
 	var/list/extra_premium = list(
 		/obj/item/clothing/under/suit/tuxedo = 1,

@@ -87,4 +87,3 @@
 		aggro_vision_range = 0
 		vision_range = 0
 		return FALSE
-

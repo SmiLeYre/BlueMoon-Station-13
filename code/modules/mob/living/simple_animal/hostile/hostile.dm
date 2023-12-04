@@ -64,6 +64,7 @@
 	var/knockdown_time = 3 SECONDS
 	///Declares a cooldown for potential charges right off the bat.
 	COOLDOWN_DECLARE(charge_cooldown)
+	var/list/enemies = list()
 
 /mob/living/simple_animal/hostile/Initialize(mapload)
 	. = ..()

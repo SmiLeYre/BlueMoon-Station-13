@@ -10,7 +10,7 @@
  */
 
 /obj/item/clothing/under/rank/security/officer/metrocop
-	name = "civil protection jumpsuit"
+	name = "Civil Protection Jumpsuit"
 	desc = "Pick up that can."
 	icon = 'modular_splurt/icons/obj/clothing/uniforms.dmi'
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/uniform.dmi'
@@ -22,12 +22,12 @@
 /obj/item/clothing/under/rank/security/officer/peacekeeper
 	name = "security peacekeeper jumpsuit"
 	desc = "Keeping the peace, one baton at a time."
-	icon = 'modular_splurt/icons/obj/clothing/uniforms.dmi'
-	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/uniform.dmi'
-	anthro_mob_worn_overlay = 'modular_splurt/icons/mob/clothing/uniform_digi.dmi'
-	icon_state = "security_black"
-	item_state = "security_black"
+	icon_state = "policecadetalt"
+	item_state = "policecadetalt"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_ALL_TAURIC
+	unique_reskin = list(
+		"Jacket" = list("icon_state" = "policecadetalt"),
+	)
 
 /*
  * Head of Security

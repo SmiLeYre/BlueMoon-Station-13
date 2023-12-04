@@ -12,7 +12,7 @@
 	return 0
 //extract brain
 /datum/surgery_step/extract_core
-	name = "extract core"
+	name = "Изъять Ядро"
 	implements = list(TOOL_HEMOSTAT = 100, TOOL_CROWBAR = 100)
 	time = 16
 

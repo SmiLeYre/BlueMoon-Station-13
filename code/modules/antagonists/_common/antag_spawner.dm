@@ -107,16 +107,15 @@
 
 /obj/item/antag_spawner/nuke_ops/proc/check_usability(mob/user)
 	if(used)
-		to_chat(user, "<span class='warning'>[src] is out of power!</span>")
+		to_chat(user, "<span class='warning'>[src] не работает!</span>")
 		return FALSE
 	if(!user.mind.has_antag_datum(/datum/antagonist/nukeop,TRUE))
-		to_chat(user, "<span class='danger'>AUTHENTICATION FAILURE. ACCESS DENIED.</span>")
+		to_chat(user, "<span class='danger'>СБОЙ АУТЕНТИФИКАЦИИ. ДОСТУП ЗАПРЕЩЕН.</span>")
 		return FALSE
 	if(!user.onSyndieBase())
-		to_chat(user, "<span class='warning'>[src] is out of range! It can only be used at your base!</span>")
+		to_chat(user, "<span class='warning'>[src] находится вне зоны действия! Он может быть использован только на вашей базе!</span>")
 		return FALSE
 	return TRUE
-
 
 /obj/item/antag_spawner/nuke_ops/attack_self(mob/user)
 	if(!(check_usability(user)))
@@ -129,7 +128,7 @@
 			return
 		used = TRUE
 		var/mob/dead/observer/G = pick(nuke_candidates)
-		spawn_antag(G.client, get_turf(src), "syndieborg", user.mind)
+		spawn_antag(G.client, get_turf(src), "inteqborg", user.mind)
 		do_sparks(4, TRUE, src)
 		qdel(src)
 	else
@@ -142,7 +141,7 @@
 
 	var/datum/antagonist/nukeop/new_op = new()
 	new_op.send_to_spawnpoint = FALSE
-	new_op.nukeop_outfit = /datum/outfit/syndicate/no_crystals
+	new_op.nukeop_outfit = /datum/outfit/inteq/no_crystals
 
 	var/datum/antagonist/nukeop/creator_op = user.has_antag_datum(/datum/antagonist/nukeop,TRUE)
 	if(creator_op)
@@ -168,39 +167,39 @@
 		M.mind.add_antag_datum(new_op, creator_op.nuke_team)
 		M.mind.special_role = "Clown Operative"
 
-
 //////SYNDICATE BORG
 /obj/item/antag_spawner/nuke_ops/borg_tele
-	name = "syndicate cyborg teleporter"
+	name = "InteQ cyborg teleporter"
 	desc = "A single-use teleporter designed to quickly reinforce operatives in the field."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "locator"
 
 /obj/item/antag_spawner/nuke_ops/borg_tele/assault
-	name = "syndicate assault cyborg teleporter"
-	borg_to_spawn = "Assault"
+	name = "InteQ assault cyborg teleporter"
+	borg_to_spawn = "InteQ-Assault"
 
 /obj/item/antag_spawner/nuke_ops/borg_tele/medical
-	name = "syndicate medical teleporter"
-	borg_to_spawn = "Medical"
+	name = "InteQ medical cyborg teleporter"
+	borg_to_spawn = "InteQ-Medical"
 
 /obj/item/antag_spawner/nuke_ops/borg_tele/saboteur
-	name = "syndicate saboteur teleporter"
-	borg_to_spawn = "Saboteur"
+	name = "InteQ saboteur cyborg teleporter"
+	borg_to_spawn = "InteQ-Saboteur"
 
 /obj/item/antag_spawner/nuke_ops/borg_tele/spawn_antag(client/C, turf/T, kind, datum/mind/user)
 	var/mob/living/silicon/robot/R
 	var/datum/antagonist/nukeop/creator_op = user.has_antag_datum(/datum/antagonist/nukeop,TRUE)
-	if(!creator_op)
+	var/datum/antagonist/raiders/raider = user.has_antag_datum(/datum/antagonist/raiders,TRUE)
+	if(!creator_op || !raider)
 		return
 
 	switch(borg_to_spawn)
-		if("Medical")
-			R = new /mob/living/silicon/robot/modules/syndicate/medical(T)
-		if("Saboteur")
-			R = new /mob/living/silicon/robot/modules/syndicate/saboteur(T)
+		if("InteQ-Medical")
+			R = new /mob/living/silicon/robot/modules/inteq/medical(T)
+		if("InteQ-Saboteur")
+			R = new /mob/living/silicon/robot/modules/inteq/saboteur(T)
 		else
-			R = new /mob/living/silicon/robot/modules/syndicate(T) //Assault borg by default
+			R = new /mob/living/silicon/robot/modules/inteq(T)
 
 	var/brainfirstname = pick(GLOB.first_names_male)
 	if(prob(50))
@@ -221,7 +220,7 @@
 	var/datum/antagonist/nukeop/new_borg = new()
 	new_borg.send_to_spawnpoint = FALSE
 	R.mind.add_antag_datum(new_borg,creator_op.nuke_team)
-	R.mind.special_role = "Syndicate Cyborg"
+	R.mind.special_role = "InteQ Cyborg"
 
 ///////////SLAUGHTER DEMON
 
@@ -280,3 +279,83 @@
 	veil_msg = "<span class='warning'>You sense an adorable presence lurking just beyond the veil...</span>"
 	demon_type = /mob/living/simple_animal/slaughter/laughter
 	antag_type = /datum/antagonist/slaughter/laughter
+
+/obj/item/antag_spawner/synd_borg
+	name = "Syndicate Cyborg Teleporter"
+	desc = "A single-use teleporter designed to quickly reinforce operatives in the field."
+	icon = 'icons/obj/device.dmi'
+	icon_state = "locator"
+	var/borg_to_spawn
+	var/next_attempt_allowed // For some reason none of these antag spawners have an anti-spam mechanic. I'll add one here.
+
+/obj/item/antag_spawner/synd_borg/assault
+	name = "Syndicate Assault Cyborg Teleporter"
+	borg_to_spawn = "Assault"
+
+/obj/item/antag_spawner/synd_borg/medical
+	name = "Syndicate Medical Cyborg Teleporter"
+	borg_to_spawn = "Medical"
+
+/obj/item/antag_spawner/synd_borg/saboteur
+	name = "Syndicate Saboteur Cyborg Teleporter"
+	borg_to_spawn = "Saboteur"
+
+/obj/item/antag_spawner/synd_borg/proc/check_usability(mob/user)
+	if(used)
+		to_chat(user, "<span class='warning'>[src] не работает!</span>")
+		return FALSE
+
+	return TRUE
+
+/obj/item/antag_spawner/synd_borg/attack_self(mob/user)
+	if(!(check_usability(user)))
+		return
+
+	if(!(next_attempt_allowed < world.time))
+		to_chat(user, "<span class='warning'>Запрос уже отправлен! Подождите 1 минуту.</span>")
+		return
+	next_attempt_allowed = world.time + 1 MINUTES
+
+	to_chat(user, "<span class='notice'>Вы активизируете [src] и ожидаете подтверждения.</span>")
+	var/list/borg_candidates = pollGhostCandidates("Хотите ли вы играть за Киборга [uppertext(borg_to_spawn)]?", ROLE_OPERATIVE, null, ROLE_OPERATIVE, 150, POLL_IGNORE_SYNDICATE)
+	if(LAZYLEN(borg_candidates))
+		if(QDELETED(src) || !check_usability(user))
+			return
+		used = TRUE
+		var/mob/dead/observer/G = pick(borg_candidates)
+		spawn_antag(G.client, get_turf(src), "syndieborg", user.mind, user)
+		do_sparks(4, TRUE, src)
+		qdel(src)
+	else
+		to_chat(user, "<span class='warning'>Невозможно подключиться к местному командованию Синдиката. Пожалуйста, подождите и повторите попытку позже.</span>")
+
+/obj/item/antag_spawner/synd_borg/spawn_antag(client/C, turf/T, kind, datum/mind/user, mob/owner)
+	var/mob/living/silicon/robot/R
+
+	switch(borg_to_spawn)
+		if("Saboteur")
+			R = new /mob/living/silicon/robot/modules/syndicate/saboteur(T)
+		if("Medical")
+			R = new /mob/living/silicon/robot/modules/syndicate/medical(T)
+		else
+			R = new /mob/living/silicon/robot/modules/syndicate(T) //Assault borg by default
+
+	var/brainfirstname = pick(GLOB.first_names_female)
+	if(prob(50))
+		brainfirstname = pick(GLOB.first_names_male)
+	var/brainopslastname = pick(GLOB.last_names)
+	var/brainopsname = "[brainfirstname] [brainopslastname]"
+
+	R.mmi.name = "Man-Machine Interface: [brainopsname]"
+	R.mmi.brain.name = "Мозг [brainopsname]"
+	R.mmi.brainmob.real_name = brainopsname
+	R.mmi.brainmob.name = brainopsname
+	R.real_name = R.name
+
+	R.key = C.key
+	R.mind.special_role = "Syndicate Cyborg"
+
+	var/mob/living/silicon/killer = user.current
+	if(!killer || !istype(killer))
+		return
+	killer.set_zeroth_law("Только [owner.real_name] и Агенты, кого [owner.ru_who()] обозначит Агентами являются Агентами.")

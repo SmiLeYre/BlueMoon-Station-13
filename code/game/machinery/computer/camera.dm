@@ -133,14 +133,19 @@
 
 /obj/machinery/computer/security/proc/update_active_camera_screen()
 	// Show static if can't use the camera
-	if(!active_camera?.can_use())
+	if(QDELETED(active_camera) || !active_camera?.can_use())
 		show_camera_static()
 		return
 
 	var/list/visible_turfs = list()
 
 	// Is this camera located in or attached to a living thing? If so, assume the camera's loc is the living thing.
-	var/cam_location = isliving(active_camera.loc) ? active_camera.loc : active_camera
+	var/cam_location = isliving(active_camera.loc) || ismachinery(active_camera.loc) ? active_camera.loc : active_camera // BLUEMOON CHANGES - добавлена проверку на наличие в машинарии
+
+	//if(istype(active_camera.loc, /obj/item/integrated_circuit/output/video_camera))	//Пока что оставлю так. На будущее.
+		//cam_location = (active_camera.loc).loc
+		//if(iscarbon((active_camera.loc).loc))
+			//cam_location = ((active_camera.loc).loc).loc
 
 	// If we're not forcing an update for some reason and the cameras are in the same location,
 	// we don't need to update anything.
@@ -153,6 +158,9 @@
 	last_camera_turf = get_turf(cam_location)
 
 	var/list/visible_things = active_camera.isXRay() ? range(active_camera.view_range, cam_location) : view(active_camera.view_range, cam_location)
+
+	if(istype(active_camera.loc, /obj/item/integrated_circuit/output/video_camera))
+		visible_things = view(active_camera.view_range, newturf)
 
 	for(var/turf/visible_turf in visible_things)
 		visible_turfs += visible_turf
@@ -212,6 +220,7 @@
 	icon_keyboard = "no_keyboard"
 	icon_screen = "detective_tv"
 	pass_flags = PASSTABLE
+	unique_icon = TRUE
 
 /obj/machinery/computer/security/mining
 	name = "outpost camera console"
@@ -257,6 +266,7 @@
 	density = FALSE
 	circuit = null
 	light_power = 0
+	unique_icon = TRUE
 
 /obj/machinery/computer/security/telescreen/update_icon_state()
 	icon_state = initial(icon_state)

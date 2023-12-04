@@ -131,10 +131,10 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 	log_admin("[key_name_admin(admin)] set [owner.current] devil ascendable to [ascendable])")
 
 /datum/antagonist/devil/admin_add(datum/mind/new_owner,mob/admin)
-	switch(alert(admin,"Should the devil be able to ascend",,"Yes","No","Cancel"))
-		if("Yes")
+	switch(alert(admin,"Should the devil be able to ascend",,"Да","Нет","Cancel"))
+		if("Да")
 			ascendable = TRUE
-		if("No")
+		if("Нет")
 			ascendable = FALSE
 		else
 			return
@@ -523,6 +523,7 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 
 /datum/antagonist/devil/on_removal()
 	to_chat(owner.current, "<span class='userdanger'>Your infernal link has been severed! You are no longer a devil!</span>")
+	owner.special_role = null // BLUEMOON ADD
 	.=..()
 
 /datum/antagonist/devil/apply_innate_effects(mob/living/mob_override)

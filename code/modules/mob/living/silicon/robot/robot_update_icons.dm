@@ -66,4 +66,13 @@
 		else
 			icon_state = "[module.cyborg_base_icon]"
 
+	if(client && stat != DEAD && module.canrest == TRUE)	//For the new borgs who are not dogs
+		if(resting)
+			if(sitting)
+				icon_state = "[module.cyborg_base_icon]-sit"
+			else if(!sitting)
+				icon_state = "[module.cyborg_base_icon]-rest"
+			cut_overlays()
+		else
+			icon_state = "[module.cyborg_base_icon]"
 	SEND_SIGNAL(src, COMSIG_ROBOT_UPDATE_ICONS)

@@ -10,7 +10,7 @@
 
 /obj/item/paper/crumpled/awaymissions/jungleresort/notice
 	name = "Resort Notice"
-	info = "Due to unforeseen circumstances and the disappearance of several resort employees and visitors, the resort shall be closed to the public until further notice. - <i>Resort Manager Joe Lawrence</i.>"
+	default_raw_text = "Due to unforeseen circumstances and the disappearance of several resort employees and visitors, the resort shall be closed to the public until further notice. - <i>Resort Manager Joe Lawrence</i.>"
 
 /obj/item/melee/chainofcommand/jungle
 	name = "treasure hunter's whip"

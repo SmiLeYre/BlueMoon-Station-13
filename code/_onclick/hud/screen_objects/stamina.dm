@@ -12,8 +12,8 @@
 	if(isliving(usr))
 		var/mob/living/L = usr
 		CONFIG_CACHE_ENTRY_AND_FETCH_VALUE(number/stamina_combat/buffer_max, buffer_max)
-		to_chat(L, "<span class='notice'>You have <b>[L.getStaminaLoss()]</b> stamina loss.<br>\
-		<br>Your stamina buffer is <b>[round((L.stamina_buffer / buffer_max) * 100, 0.1)]%</b> full.</span>")
+		to_chat(L, "<span class='notice'>Усталость: <b>[L.getStaminaLoss()]</b>.<br>\
+		<br>Ваш запас выносливости составляет <b>[round((L.stamina_buffer / buffer_max) * 100, 0.1)]%</b>.</span>")
 
 /atom/movable/screen/staminas/update_icon_state()
 	var/mob/living/carbon/user = hud?.mymob

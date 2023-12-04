@@ -10,7 +10,9 @@
 	var/static/list/anomaly_armour_types = list(
 		/obj/effect/anomaly/grav	                = /obj/item/clothing/suit/armor/reactive/repulse,
 		/obj/effect/anomaly/flux 	           		= /obj/item/clothing/suit/armor/reactive/tesla,
-		/obj/effect/anomaly/bluespace 	            = /obj/item/clothing/suit/armor/reactive/teleport
+		/obj/effect/anomaly/bluespace 	            = /obj/item/clothing/suit/armor/reactive/teleport,
+		/obj/effect/anomaly/dimensional 			= /obj/item/clothing/suit/armor/reactive/barricade,
+		/obj/effect/anomaly/ectoplasm 				= /obj/item/clothing/suit/armor/reactive/ectoplasm,
 		)
 
 	if(istype(I, /obj/item/assembly/signaler/anomaly))
@@ -251,7 +253,7 @@
 		if(world.time < reactivearmor_cooldown)
 			owner.visible_message("<span class='danger'>The reactive table armor's fabricators are still on cooldown!</span>")
 			return
-		owner.visible_message("<span class='danger'>The reactive teleport system flings [H] clear of [attack_text] and slams [H.p_them()] into a fabricated table!</span>")
+		owner.visible_message("<span class='danger'>The reactive teleport system flings [H] clear of [attack_text] and slams [H.ru_na()] into a fabricated table!</span>")
 		owner.visible_message("<font color='red' size='3'>[H] GOES ON THE TABLE!!!</font>")
 		owner.DefaultCombatKnockdown(40)
 		var/list/turfs = new/list()
@@ -276,3 +278,80 @@
 
 /obj/item/clothing/suit/armor/reactive/table/emp_act()
 	return
+
+// When the wearer gets hit, this armor will push people nearby and spawn some blocking objects.
+/obj/item/clothing/suit/armor/reactive/barricade
+	name = "reactive barricade armor"
+	desc = "An experimental suit of armor that generates barriers from another world when it detects its bearer is in danger."
+	reactivearmor_cooldown_duration = 10 SECONDS
+
+/obj/item/clothing/suit/armor/reactive/barricade/block_action(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0)
+	playsound(get_turf(owner),'sound/magic/repulse.ogg', 100, TRUE)
+	owner.visible_message(span_danger("The reactive armor interposes matter from another world between [src] and [attack_text]!"))
+	for (var/atom/movable/target in repulse_targets(owner))
+		repulse(target, owner)
+
+	var/datum/armour_dimensional_theme/theme = new()
+	theme.apply_random(get_turf(owner), dangerous = FALSE)
+	qdel(theme)
+
+	reactivearmor_cooldown = world.time + reactivearmor_cooldown_duration
+	return TRUE
+
+/**
+ * Returns a list of all atoms around the source which can be moved away from it.
+ *
+ * Arguments
+ * * source - Thing to try to move things away from.
+ */
+/obj/item/clothing/suit/armor/reactive/barricade/proc/repulse_targets(atom/source)
+	var/list/push_targets = list()
+	for (var/atom/movable/nearby_movable in view(1, source))
+		if(nearby_movable == source)
+			continue
+		if(nearby_movable.anchored)
+			continue
+		push_targets += nearby_movable
+	return push_targets
+
+/**
+ * Pushes something one tile away from the source.
+ *
+ * Arguments
+ * * victim - Thing being moved.
+ * * source - Thing to move it away from.
+ */
+/obj/item/clothing/suit/armor/reactive/barricade/proc/repulse(atom/movable/victim, atom/source)
+	var/dist_from_caster = get_dist(victim, source)
+
+	if(dist_from_caster == 0)
+		return
+
+	if (isliving(victim))
+		to_chat(victim, span_userdanger("You're thrown back by a wave of pressure!"))
+	var/turf/throwtarget = get_edge_target_turf(source, get_dir(source, get_step_away(victim, source, 1)))
+	victim.safe_throw_at(throwtarget, 1, 1, source)
+
+/obj/item/clothing/suit/armor/reactive/barricade/emp_act(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0)
+	owner.visible_message(span_danger("The reactive armor shunts matter from an unstable dimension!"))
+	var/datum/armour_dimensional_theme/theme = new()
+	theme.apply_random(get_turf(owner), dangerous = TRUE)
+	qdel(theme)
+	reactivearmor_cooldown = world.time + reactivearmor_cooldown_duration
+	return FALSE
+
+/obj/item/clothing/suit/armor/reactive/ectoplasm
+	name = "reactive possession armor"
+	desc = "An experimental suit of armor that animates nearby objects with a ghostly possession."
+	reactivearmor_cooldown_duration = 40 SECONDS
+
+/obj/item/clothing/suit/armor/reactive/ectoplasm/block_action(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0)
+	playsound(get_turf(owner),'sound/hallucinations/veryfar_noise.ogg', 100, TRUE)
+	owner.visible_message(span_danger("The [src] lets loose a burst of otherworldly energy!"))
+
+	haunt_outburst(epicenter = get_turf(owner), range = 5, haunt_chance = 85, duration = 30 SECONDS)
+
+	reactivearmor_cooldown = world.time + reactivearmor_cooldown_duration
+	return TRUE
+/obj/item/clothing/suit/armor/reactive/ectoplasm/emp_act(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0)
+	owner.reagents?.add_reagent(/datum/reagent/impure/helgrasp, 20)

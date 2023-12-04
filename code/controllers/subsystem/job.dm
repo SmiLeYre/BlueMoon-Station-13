@@ -91,6 +91,8 @@ SUBSYSTEM_DEF(job)
 			return FALSE
 		if(job.required_playtime_remaining(player.client))
 			return FALSE
+		if(job.is_species_blacklisted(player.client)) //BLUEMOON ADDITION - XENO SUPREMACY
+			return FALSE //BLUEMOON ADDITION - XENO SUPREMACY
 		var/position_limit = job.total_positions
 		if(!latejoin)
 			position_limit = job.spawn_positions
@@ -116,6 +118,9 @@ SUBSYSTEM_DEF(job)
 		if(job.required_playtime_remaining(player.client))
 			JobDebug("FOC player not enough xp, Player: [player]")
 			continue
+		if(job.is_species_blacklisted(player.client)) //BLUEMOON ADDITION - XENO SUPREMACY
+			JobDebug("FOC player not enough xp, Player: [player]") //BLUEMOON ADDITION - XENO SUPREMACY
+			continue //BLUEMOON ADDITION - XENO SUPREMACY
 		if(!player.client.prefs.pref_species.qualifies_for_rank(job.title, player.client.prefs.features))
 			JobDebug("FOC non-human failed, Player: [player]")
 			continue
@@ -161,7 +166,11 @@ SUBSYSTEM_DEF(job)
 		if(job.required_playtime_remaining(player.client))
 			JobDebug("GRJ player not enough xp, Player: [player]")
 			continue
-
+		//BLUEMOON ADDITION - XENO SUPREMACY - START
+		if(job.is_species_blacklisted(player.client))
+			JobDebug("GRJ player not enough xp, Player: [player]")
+			continue
+		//BLUEMOON ADDITION - XENO SUPREMACY - END
 		if(player.mind && (job.title in player.mind.restricted_roles))
 			JobDebug("GRJ incompatible with antagonist role, Player: [player], Job: [job.title]")
 			continue
@@ -269,7 +278,7 @@ SUBSYSTEM_DEF(job)
 	//Jobs will have fewer access permissions if the number of players exceeds the threshold defined in game_options.txt
 	var/mat = CONFIG_GET(number/minimal_access_threshold)
 	if(mat)
-		if(mat > unassigned.len)
+		if(mat > GLOB.player_list.len)  // BLUEMOON CHANGES (изменяем, чтобы подсчитывало не количество рэди, а всех игроков в онлайне для skeleton crew) - WAS unassigned.len
 			CONFIG_SET(flag/jobs_have_minimal_access, FALSE)
 		else
 			CONFIG_SET(flag/jobs_have_minimal_access, TRUE)
@@ -339,7 +348,11 @@ SUBSYSTEM_DEF(job)
 				if(job.required_playtime_remaining(player.client))
 					JobDebug("DO player not enough xp, Player: [player], Job:[job.title]")
 					continue
-
+				//BLUEMOON ADDITION - XENO SUPREMACY - START
+				if(job.is_species_blacklisted(player.client))
+					JobDebug("DO player not enough xp, Player: [player], Job:[job.title]")
+					continue
+				//BLUEMOON ADDITION - XENO SUPREMACY - END
 				if(!player.client.prefs.pref_species.qualifies_for_rank(job.title, player.client.prefs.features))
 					JobDebug("DO non-human failed, Player: [player], Job:[job.title]")
 					continue
@@ -367,14 +380,17 @@ SUBSYSTEM_DEF(job)
 	JobDebug("DO, Handling unrejectable unassigned")
 	//Mop up people who can't leave.
 	for(var/mob/dead/new_player/player in unassigned) //Players that wanted to back out but couldn't because they're antags (can you feel the edge case?)
+/* BLUEMOON REMOVAL START - убираем вариант получения рандомной роли при получении антажки, оставляя только ассистента
 		if(player.client.prefs.joblessrole == BERANDOMJOB) //Gives the player a random role if their preferences are set to it
 			if(!GiveRandomJob(player))
 				if(!AssignRole(player, SSjob.overflow_role)) //If everything is already filled, make them the overflow role
 					return FALSE //Living on the edge, the forced antagonist couldn't be assigned to overflow role (bans, client age) - just reroll
+
 		else //If the player prefers to return to lobby or be an assistant, give them assistant
-			if(!AssignRole(player, SSjob.overflow_role))
-				if(!GiveRandomJob(player)) //The forced antagonist couldn't be assigned to overflow role (bans, client age) - give a random role
-					return FALSE //Somehow the forced antagonist couldn't be assigned to the overflow role or the a random role - reroll
+/ BLUEMOON REMOVAL END */
+		if(!AssignRole(player, SSjob.overflow_role))
+			if(!GiveRandomJob(player)) //The forced antagonist couldn't be assigned to overflow role (bans, client age) - give a random role
+				return FALSE //Somehow the forced antagonist couldn't be assigned to the overflow role or the a random role - reroll
 
 	return validate_required_jobs(required_jobs)
 
@@ -441,6 +457,10 @@ SUBSYSTEM_DEF(job)
 			log_world("Couldn't find a round start spawn point for [rank]")
 			SendToLateJoin(H)
 
+	var/ambition_text
+	if(H.mind)
+		H.mind.assigned_role = rank
+		ambition_text = H.mind.assign_random_ambition()
 
 	if(H.mind)
 		H.mind.assigned_role = rank
@@ -514,6 +534,9 @@ SUBSYSTEM_DEF(job)
 		binder.check_for_exodia()
 		if(length(N.client.prefs.tcg_decks))
 			binder.decks = N.client.prefs.tcg_decks
+
+	if(ambition_text)
+		to_chat(M, span_info(ambition_text))
 
 	return H
 
@@ -894,3 +917,41 @@ SUBSYSTEM_DEF(job)
 
 /datum/controller/subsystem/job/proc/JobDebug(message)
 	log_job_debug(message)
+
+/datum/controller/subsystem/job/proc/notify_dept_head(jobtitle, antext)
+	// Used to notify the department head of jobtitle X that their employee was brigged, demoted or terminated
+	if(!jobtitle || !antext)
+		return
+	var/datum/job/tgt_job = GetJob(jobtitle)
+	if(!tgt_job)
+		return
+	if(!tgt_job.department_head[1])
+		return
+	var/boss_title = tgt_job.department_head[1]
+	var/obj/item/pda/target_pda
+	for(var/obj/item/pda/check_pda in GLOB.PDAs)
+		if(check_pda.ownjob == boss_title)
+			target_pda = check_pda
+			break
+	if(!target_pda)
+		return
+	if(target_pda && target_pda.toff)
+		target_pda.send_message("<b>Автоматическое Оповещение: </b>\"[antext]\" (Невозможно Ответить)", 0) // the 0 means don't make the PDA flash
+
+///obj/item/paper/paperslip/corporate/fluff/spare_id_safe_code
+//	name = "Nanotrasen-Approved Spare ID Safe Code"
+//	desc = "Proof that you have been approved for Captaincy, with all its glory and all its horror."
+//
+///obj/item/paper/paperslip/corporate/fluff/spare_id_safe_code/Initialize(mapload)
+//	var/safe_code = SSid_access.spare_id_safe_code
+//	default_raw_text = "Captain's Spare ID safe code combination: [safe_code ? safe_code : "\[REDACTED\]"]<br><br>The spare ID can be found in its dedicated safe on the bridge.<br><br>If your job would not ordinarily have Head of Staff access, your ID card has been specially modified to possess it."
+//	return ..()
+//
+///obj/item/paper/paperslip/corporate/fluff/emergency_spare_id_safe_code
+//	name = "Emergency Spare ID Safe Code Requisition"
+//	desc = "Proof that nobody has been approved for Captaincy. A skeleton key for a skeleton shift."
+//
+///obj/item/paper/paperslip/corporate/fluff/emergency_spare_id_safe_code/Initialize(mapload)
+//	var/safe_code = SSid_access.spare_id_safe_code
+//	default_raw_text = "Captain's Spare ID safe code combination: [safe_code ? safe_code : "\[REDACTED\]"]<br><br>The spare ID can be found in its dedicated safe on the bridge."
+//	return ..()

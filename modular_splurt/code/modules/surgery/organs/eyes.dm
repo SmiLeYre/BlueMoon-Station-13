@@ -74,4 +74,4 @@
 // Organ examine text
 /obj/item/organ/eyes/robotic/hypno/proc/examine_user(atom/examine_target, mob/living/carbon/human/examiner, list/examine_list)
 	// Add examine text
-	examine_list += "[usr.p_their(TRUE)] eyes glimmer with an entrancing power."
+	examine_list += "[usr.ru_ego(TRUE)] глаза необычайно сверкают."

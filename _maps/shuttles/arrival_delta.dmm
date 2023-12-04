@@ -132,8 +132,11 @@
 /area/shuttle/arrival)
 "k" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/toolbox/emergency,
+/obj/item/storage/toolbox/emergency{
+	pixel_y = 10
+	},
 /obj/effect/turf_decal/bot,
+/obj/item/storage/toolbox/emergency,
 /turf/open/floor/plasteel,
 /area/shuttle/arrival)
 "l" = (
@@ -262,7 +265,7 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/sunnybush,
 /obj/structure/window/shuttle,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/shuttle/arrival)
 "y" = (
 /obj/structure/flora/ausbushes/grassybush,
@@ -270,7 +273,7 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/fernybush,
 /obj/structure/window/shuttle,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/shuttle/arrival)
 "z" = (
 /obj/structure/sign/nanotrasen,

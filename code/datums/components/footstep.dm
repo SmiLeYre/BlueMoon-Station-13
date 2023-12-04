@@ -35,6 +35,10 @@
 			footstep_sounds = 'sound/effects/footstep/slime1.ogg'
 		if(FOOTSTEP_MOB_CRAWL)
 			footstep_sounds = 'sound/effects/footstep/crawl1.ogg'
+		if(FOOTSTEP_OBJ_ROBOT)
+			footstep_sounds = 'sound/effects/tank_treads.ogg'
+			RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/play_simplestep_machine)
+			return
 	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/play_simplestep) //Note that this doesn't get called for humans.
 
 ///Prepares a footstep. Determines if it should get played. Returns the turf it should get played on. Note that it is always a /turf/open
@@ -52,7 +56,7 @@
 	if(HAS_TRAIT(LM, TRAIT_SILENT_STEP))
 		return
 
-	if(iscarbon(LM))
+	if(iscarbon(LM) && (!HAS_TRAIT(LM, TRAIT_BLUEMOON_HEAVY) && !HAS_TRAIT(LM, TRAIT_BLUEMOON_HEAVY_SUPER))) // BLUEMOON CHANGES - добавлена проверка для квирков сверхтяжёлого и тяжёлого
 		var/mob/living/carbon/C = LM
 		if(!C.get_bodypart(BODY_ZONE_L_LEG) && !C.get_bodypart(BODY_ZONE_R_LEG))
 			return
@@ -136,3 +140,12 @@
 			L[turf_footstep][2] * volume,
 			TRUE,
 			L[turf_footstep][3] + e_range, falloff_distance = 1)
+
+///Prepares a footstep for machine walking
+/datum/component/footstep/proc/play_simplestep_machine(atom/movable/source)
+	SIGNAL_HANDLER
+
+	var/turf/open/source_loc = get_turf(source)
+	if(!istype(source_loc))
+		return
+	playsound(source_loc, footstep_sounds, 50, falloff_distance = 1)

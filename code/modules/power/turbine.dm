@@ -87,6 +87,7 @@
 	turbine = locate() in get_step(src, get_dir(inturf, src))
 	if(turbine)
 		turbine.locate_machinery()
+		stat &= ~BROKEN
 
 /obj/machinery/power/compressor/RefreshParts()
 	var/E = 0
@@ -188,6 +189,7 @@
 	compressor = locate() in get_step(src, get_dir(outturf, src))
 	if(compressor)
 		compressor.locate_machinery()
+		stat &= ~BROKEN
 
 /obj/machinery/power/turbine/process()
 

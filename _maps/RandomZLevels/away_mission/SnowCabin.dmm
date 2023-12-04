@@ -1442,7 +1442,7 @@
 /turf/open/floor/wood/cold,
 /area/awaymission/cabin/lumbermill)
 "eB" = (
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/right/brown,
 /turf/open/floor/wood,
 /area/awaymission/cabin/caves/mountain)
 "eC" = (
@@ -1536,7 +1536,7 @@
 /turf/open/floor/plating/asteroid/snow,
 /area/awaymission/cabin/snowforest)
 "eP" = (
-/obj/structure/chair/sofa,
+/obj/structure/chair/sofa/middle/brown,
 /turf/open/floor/wood,
 /area/awaymission/cabin/caves/mountain)
 "eQ" = (
@@ -1681,7 +1681,7 @@
 /turf/open/floor/wood/cold,
 /area/awaymission/cabin/lumbermill)
 "fg" = (
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/left/brown,
 /turf/open/floor/wood,
 /area/awaymission/cabin/caves/mountain)
 "fh" = (
@@ -1902,8 +1902,7 @@
 /obj/machinery/vending/sustenance{
 	desc = "A vending machine which vends food.";
 	name = "\improper Snack Machine";
-	product_ads = "Sufficiently healthy.;Mmm! So good!;Have a meal.;You need food to live!";
-	product_slogans = "Enjoy your meal."
+	product_slogans = "Насладись своей едой!"
 	},
 /obj/effect/turf_decal/tile/blue,
 /obj/effect/turf_decal/tile/blue{
@@ -4641,7 +4640,7 @@
 	armor = list("melee" = 2, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 10);
 	desc = "Anyone enjoying their time while working in a megacorporation, planetary government, or band of pirates is under the jurisdiction of the fun police."
 	},
-/obj/item/clothing/head/helmet,
+/obj/item/clothing/head/helmet/sec,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/cabin/caves/mountain)
 "lP" = (
@@ -4665,7 +4664,7 @@
 	name = "wooden box"
 	},
 /obj/item/paper{
-	info = "Moving these crates through a tunnel that isn't even finished yet is really annoying. It's such a pain in the ass to haul even a single crate to the cabin. It made sense to haul food and other goods however these are fake fucking trophies. Why do they even need these fake artifacts for some asshole's trophy case? We'll just leave the crates in the cave that has all those bones inside. Fuck it.";
+	default_raw_text = "Moving these crates through a tunnel that isn't even finished yet is really annoying. It's such a pain in the ass to haul even a single crate to the cabin. It made sense to haul food and other goods however these are fake fucking trophies. Why do they even need these fake artifacts for some asshole's trophy case? We'll just leave the crates in the cave that has all those bones inside. Fuck it.";
 	name = "Shipment Delivery Note"
 	},
 /turf/open/floor/plating/asteroid/snow,

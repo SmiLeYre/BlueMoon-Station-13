@@ -20,6 +20,10 @@
 	/// Dirt level to spawn dirt. Null to use config.
 	var/dirt_spawn_threshold
 
+	/// How much fuel this open turf provides to turf fires
+	var/flammability = 0.2
+	var/obj/effect/abstract/turf_fire/turf_fire
+
 /turf/open/ComponentInitialize()
 	. = ..()
 	if(wet)
@@ -279,18 +283,27 @@
 				if(!(H.combat_flags & COMBAT_FLAG_SPRINT_ACTIVE) && H.getStaminaLoss() <= 20)
 					return FALSE
 	if(!(lube&SLIDE_ICE))
-		to_chat(C, "<span class='notice'>You slipped[ O ? " on the [O.name]" : ""]!</span>")
+		to_chat(C, "<span class='notice'>Ты подскальзываешься[ O ? " на <b>[O.name]</b>" : ""]!</span>")
 		playsound(C.loc, 'sound/misc/slip.ogg', 50, 1, -3)
 
 	SEND_SIGNAL(C, COMSIG_ADD_MOOD_EVENT, "slipped", /datum/mood_event/slipped)
+	SEND_SIGNAL(C, COMSIG_ON_CARBON_SLIP)
 	for(var/obj/item/I in C.held_items)
 		C.accident(I)
 
 	var/olddir = C.dir
 	if(!(lube & SLIDE_ICE))
+		// BLUEMOON ADDITION AHEAD - персонаж сверхтяжёлый, потому падать в два раза неприятнее
+		if(HAS_TRAIT(C, TRAIT_BLUEMOON_HEAVY_SUPER))
+			knockdown_amount *= 2
+		// BLUEMOON ADDITION END
 		C.DefaultCombatKnockdown(knockdown_amount)
 		C.stop_pulling()
 	else
+		// BLUEMOON ADDITION AHEAD - для сверхтяжёлых персонажей, стан в два раза больше
+		if(HAS_TRAIT(C, TRAIT_BLUEMOON_HEAVY_SUPER))
+			C.Stun(20)
+		// BLUEMOON ADDITION END
 		C.Stun(20)
 
 	if(buckled_obj)
@@ -322,3 +335,12 @@
 		air.set_moles(GAS_CO2, max(air.get_moles(GAS_CO2)-(pulse_strength/1000),0))
 		air.set_moles(GAS_O2, max(air.get_moles(GAS_O2)-(pulse_strength/2000),0))
 		air.adjust_moles(GAS_PLUOXIUM, pulse_strength/4000)
+
+/turf/open/IgniteTurf(power, fire_color="red")
+	if(air.get_moles(GAS_O2) < 1)
+		return
+	if(turf_fire)
+		turf_fire.AddPower(power)
+		return
+	if(!isgroundlessturf(src))
+		new /obj/effect/abstract/turf_fire(src, power, fire_color)

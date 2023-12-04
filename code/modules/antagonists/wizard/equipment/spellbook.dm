@@ -22,6 +22,8 @@
 		var/datum/game_mode/dynamic/mode = SSticker.mode
 		if(dynamic_requirement > 0 && mode.threat_level < dynamic_requirement)
 			return 0
+	else if(istype(SSticker.mode,/datum/game_mode/extended) && dynamic_requirement)
+		return 0
 	return 1
 
 /datum/spellbook_entry/proc/CanBuy(mob/living/carbon/human/user,obj/item/spellbook/book) // Specific circumstances
@@ -311,7 +313,7 @@
 	name = "Staff of Change"
 	desc = "An artefact that spits bolts of coruscating energy which cause the target's very form to reshape itself."
 	item_path = /obj/item/gun/magic/staff/change
-	dynamic_requirement = 200
+	dynamic_requirement = 50
 
 /datum/spellbook_entry/item/staffanimation
 	name = "Staff of Animation"
@@ -323,6 +325,19 @@
 	name = "Staff of Chaos"
 	desc = "A caprious tool that can fire all sorts of magic without any rhyme or reason. Using it on people you care about is not recommended."
 	item_path = /obj/item/gun/magic/staff/chaos
+
+/datum/spellbook_entry/item/staffnuclear
+	name = "Staff of Nuclear Bomb"
+	desc = "Федерация Космических Магов запатентовала Ядерные Бомбы ещё задолго до их появления среди так называемых технологий. И мы с лёгкостью это докажем!"
+	item_path = /obj/item/gun/magic/wand/nuclear
+	dynamic_requirement = 80
+	cost = 8
+
+/datum/spellbook_entry/item/staffnuclear/Buy(mob/living/carbon/human/user,obj/item/spellbook/book)
+	. =..()
+	if(.)
+		priority_announce("Мы легализовали Ядерные Бомбы и сейчас мы покажем вам результат наших стараний.", title = "Космическая Федерация Магов", sound = 'sound/machines/nuclear_bomb_announcment.ogg', has_important_message = TRUE)
+	return .
 
 /datum/spellbook_entry/item/spellblade
 	name = "Spellblade"
@@ -378,7 +393,7 @@
 	desc = "A collection of wands that allow for a wide variety of utility. Wands have a limited number of charges, so be conservative in use. Comes in a handy belt."
 	item_path = /obj/item/storage/belt/wands/full
 	category = "Defensive"
-	dynamic_requirement = 200
+	dynamic_requirement = 50
 
 /datum/spellbook_entry/item/armor
 	name = "Mastercrafted Armor Set"
@@ -421,7 +436,7 @@
 	name = "Bottle of Blood"
 	desc = "A bottle of magically infused blood, the smell of which will attract extradimensional beings when broken. Be careful though, the kinds of creatures summoned by blood magic are indiscriminate in their killing, and you yourself may become a victim."
 	item_path = /obj/item/antag_spawner/slaughter_demon
-	limit = 3
+	limit = 2
 	category = "Assistance"
 	dynamic_requirement = 60
 
@@ -452,9 +467,10 @@
 
 /datum/spellbook_entry/item/battlemage
 	name = "Battlemage Armour"
-	desc = "An ensorceled suit of armour, protected by a powerful shield. The shield can completely negate sixteen attacks before being permanently depleted."
+	desc = "An ensorceled suit of armour, protected by a powerful shield. The shield can completely negate twenty attacks before being depleted."
 	item_path = /obj/item/clothing/suit/space/hardsuit/shielded/wizard
 	limit = 1
+	cost = 3
 	category = "Defensive"
 
 /datum/spellbook_entry/item/battlemage_charge
@@ -496,6 +512,7 @@
 /datum/spellbook_entry/summon/ghosts
 	name = "Summon Ghosts"
 	desc = "Spook the crew out by making them see dead people. Be warned, ghosts are capricious and occasionally vindicative, and some will use their incredibly minor abilities to frustrate you."
+	dynamic_requirement = 60
 	cost = 0
 
 /datum/spellbook_entry/summon/ghosts/IsAvailible()
@@ -578,7 +595,7 @@
 /datum/spellbook_entry/summon/curse_of_madness
 	name = "Curse of Madness"
 	desc = "Curses the station, warping the minds of everyone inside, causing lasting traumas. Warning: this spell can affect you if not cast from a safe distance."
-	cost = 4
+	cost = 2
 
 /datum/spellbook_entry/summon/curse_of_madness/Buy(mob/living/carbon/human/user, obj/item/spellbook/book)
 	SSblackbox.record_feedback("tally", "wizard_spell_learned", 1, name)
@@ -685,7 +702,7 @@
 
 /obj/item/spellbook/proc/wrap(content)
 	var/dat = ""
-	dat +="<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>Spellbook</title></head>"
+	dat +="<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'><title>Spellbook</title></head>"
 	dat += {"
 	<head>
 		<style type="text/css">

@@ -15,7 +15,7 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 
 	if(turf_type)
 		var/turf/newT = ChangeTurf(turf_type, baseturf_type, flags)
-		newT.ImmediateCalculateAdjacentTurfs()
+		CALCULATE_ADJACENT_TURFS(newT)
 
 /turf/proc/copyTurf(turf/T)
 	if(T.type != type)
@@ -153,11 +153,18 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 			QDEL_NULL(stashed_air)
 			return
 		var/turf/open/newTurf = .
+		if(turf_fire)
+			if(isgroundlessturf(newTurf))
+				qdel(turf_fire)
+			else
+				newTurf.turf_fire = turf_fire
 		newTurf.air.copy_from(stashed_air)
 		newTurf.update_air_ref(planetary_atmos ? 1 : 2)
 		QDEL_NULL(stashed_air)
 	else
 		flags |= CHANGETURF_RECALC_ADJACENT
+		if(turf_fire)
+			qdel(turf_fire)
 		if(ispath(path,/turf/closed))
 			. = ..()
 			var/turf/open/newTurf = .
@@ -259,6 +266,7 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 			baseturfs += new_baseturfs
 	else
 		change_type = new_baseturfs
+	air_update_turf(TRUE) 						// Почему.
 	return ChangeTurf(change_type, null, flags)
 
 // Copy an existing turf and put it on top
@@ -288,7 +296,10 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 //If you modify this function, ensure it works correctly with lateloaded map templates.
 /turf/proc/AfterChange(flags) //called after a turf has been replaced in ChangeTurf()
 	levelupdate()
-	ImmediateCalculateAdjacentTurfs()
+	if(flags & CHANGETURF_RECALC_ADJACENT)
+		ImmediateCalculateAdjacentTurfs()
+	else
+		CALCULATE_ADJACENT_TURFS(src)
 
 	//update firedoor adjacency
 	var/list/turfs_to_check = get_adjacent_open_turfs(src) | src

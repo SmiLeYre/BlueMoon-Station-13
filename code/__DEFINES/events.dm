@@ -3,6 +3,9 @@
 #define MAP_ERROR 4
 #define WAITING_FOR_SOMETHING 5
 
+/// Event timer in seconds
+#define EVENT_SECONDS *0.5
+
 #define EVENT_CANT_RUN 0
 #define EVENT_READY 1
 #define EVENT_CANCELLED 2

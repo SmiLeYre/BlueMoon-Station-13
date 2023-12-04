@@ -8,6 +8,7 @@
 	random = TRUE
 	show_flavour = FALSE
 	density = TRUE
+	canloadappearance = TRUE
 	var/back_story = "error"
 
 /obj/effect/mob_spawn/human/fugitive/Initialize(mapload)

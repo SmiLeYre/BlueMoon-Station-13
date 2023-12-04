@@ -8,7 +8,7 @@
 	name = "Valentines!"
 	holidayID = VALENTINES
 	typepath = /datum/round_event/valentines
-	weight = -1							//forces it to be called, regardless of weight
+	weight = 100						//forces it to be called, regardless of weight
 	max_occurrences = 1
 	earliest_start = 0 MINUTES
 	category = EVENT_CATEGORY_HOLIDAY
@@ -54,7 +54,7 @@
 /obj/item/valentine/attackby(obj/item/W, mob/user, params)
 	..()
 	if(istype(W, /obj/item/pen) || istype(W, /obj/item/toy/crayon))
-		if(!user.is_literate())
+		if(!user.can_write(W))
 			to_chat(user, "<span class='notice'>You scribble illegibly on [src]!</span>")
 			return
 		var/recipient = stripped_input(user, "Who is receiving this valentine?", "To:", null , 20)
@@ -68,10 +68,10 @@
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
 		if( !(ishuman(user) || isobserver(user) || hasSiliconAccessInArea(user)) )
-			user << browse("<HTML><HEAD><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><TITLE>[name]</TITLE></HEAD><BODY>[stars(message)]</BODY></HTML>", "window=[name]")
+			user << browse("<HTML><HEAD><meta http-equiv='Content-Type' content='text/html; charset=utf-8'><TITLE>[name]</TITLE></HEAD><BODY>[stars(message)]</BODY></HTML>", "window=[name]")
 			onclose(user, "[name]")
 		else
-			user << browse("<HTML><HEAD><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><TITLE>[name]</TITLE></HEAD><BODY>[message]</BODY></HTML>", "window=[name]")
+			user << browse("<HTML><HEAD><meta http-equiv='Content-Type' content='text/html; charset=utf-8'><TITLE>[name]</TITLE></HEAD><BODY>[message]</BODY></HTML>", "window=[name]")
 			onclose(user, "[name]")
 	else
 		. += "<span class='notice'>It is too far away.</span>"

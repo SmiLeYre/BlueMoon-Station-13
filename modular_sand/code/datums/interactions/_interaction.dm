@@ -16,9 +16,9 @@
 /mob/living/list_interaction_attributes()
 	. = ..()
 	if(has_hands())
-		. += "...have hands."
+		. += "...обладает руками."
 	if(has_mouth())
-		. += "...have a mouth, which is [mouth_is_free() ? "uncovered" : "covered"]."
+		. += "...обладает [mouth_is_free() ? "неприкрытым" : "прикрытым"] ртом."
 
 /// The base of all interactions
 /datum/interaction
@@ -51,17 +51,17 @@
 	if(require_user_mouth)
 		if(!user.has_mouth() && !issilicon(user)) //Again, silicons do not have the required parts normally.
 			if(!silent)
-				to_chat(user, span_warning("You don't have a mouth."))
+				to_chat(user, "<span class='warning'>У вас нет рта.</span>")
 			return FALSE
 
 		if(!user.mouth_is_free() && !issilicon(user)) //Borgs cannot wear mouthgear, bypassing the check.
 			if(!silent)
-				to_chat(user, span_warning("Your mouth is covered."))
+				to_chat(user, "<span class='warning'>Ваш рот прикрыт.</span>")
 			return FALSE
 
 	if(require_user_hands && !user.has_hands() && !issilicon(user)) //Edited to allow silicons to interact.
 		if(!silent)
-			to_chat(user, span_warning("You don't have hands."))
+			to_chat(user, "<span class='warning'>У вас нет рук.</span>")
 		return FALSE
 
 	if(COOLDOWN_FINISHED(user, last_interaction_time))
@@ -80,23 +80,23 @@
 	if(!user_is_target)
 		if(user == target)
 			if(!silent)
-				to_chat(user, "<span class = 'warning'>You can't do that to yourself.</span>")
+				to_chat(user, "<span class = 'warning'>Ты не можешь так поступить с собой.</span>")
 			return FALSE
 
 	if(require_target_mouth)
 		if(!target.has_mouth())
 			if(!silent)
-				to_chat(user, "<span class = 'warning'>They don't have a mouth.</span>")
+				to_chat(user, "<span class = 'warning'>Цель не имеет рта.</span>")
 			return FALSE
 
 		if(!target.mouth_is_free() && !issilicon(target))
 			if(!silent)
-				to_chat(user, "<span class = 'warning'>Their mouth is covered.</span>")
+				to_chat(user, "<span class = 'warning'>Рот цели прикрыт.</span>")
 			return FALSE
 
 	if(require_target_hands && !target.has_hands() && !issilicon(target))
 		if(!silent)
-			to_chat(user, "<span class = 'warning'>They don't have hands.</span>")
+			to_chat(user, "<span class = 'warning'>Цель не имеет рук.</span>")
 		return FALSE
 
 	return TRUE
@@ -105,18 +105,23 @@
 /datum/interaction/proc/do_action(mob/living/user, mob/living/target)
 	if(!user_is_target)
 		if(user == target) //tactical href fix
-			to_chat(user, span_warning("You cannot target yourself."))
+			to_chat(user, "<span class='warning'>Вы не можете нацелиться на себя.</span>")
 			return
 	if(get_dist(user, target) > max_distance)
-		to_chat(user, span_warning("They are too far away."))
+		to_chat(user, "<span class='warning'>Слишком далеко.</span>")
 		return
 	if(needs_physical_contact && !(user.Adjacent(target) && target.Adjacent(user)))
-		to_chat(user, span_warning("You cannot get to them."))
+		to_chat(user, "<span class='warning'>Вы не можете добраться до своей цели.</span>")
 		return
 	if(!evaluate_user(user, silent = FALSE))
 		return
 	if(!evaluate_target(user, target, silent = FALSE))
 		return
+
+	// BLUEMOON ADD START - специальные проверки от БМ
+	if(!special_check(user, target))
+		return
+	// BLUEMOON ADD END
 
 	if(write_log_user)
 		user.log_message("[write_log_user] [target]", LOG_ATTACK)

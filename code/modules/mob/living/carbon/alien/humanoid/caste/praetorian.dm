@@ -1,8 +1,8 @@
 /mob/living/carbon/alien/humanoid/royal/praetorian
 	name = "alien praetorian"
 	caste = "p"
-	maxHealth = 250
-	health = 250
+	maxHealth = 280
+	health = 280
 	icon_state = "alienp"
 
 /mob/living/carbon/alien/humanoid/royal/praetorian/Initialize(mapload)
@@ -20,8 +20,8 @@
 
 /obj/effect/proc_holder/alien/royal/praetorian/evolve
 	name = "Evolve"
-	desc = "Produce an internal egg sac capable of spawning children. Only one queen can exist at a time. Costs 500 Plasma."
-	plasma_cost = 500
+	desc = "Produce an internal egg sac capable of spawning children. Only one queen can exist at a time. Costs 450 Plasma."
+	plasma_cost = 450
 
 	action_icon_state = "alien_evolve_praetorian"
 

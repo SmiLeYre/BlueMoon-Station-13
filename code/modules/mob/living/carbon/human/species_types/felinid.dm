@@ -6,6 +6,7 @@
 
 	mutant_bodyparts = list("mam_tail" = "Cat", "mam_ears" = "Cat", "deco_wings" = "None", "mam_body_markings" = list())
 
+	mutanttongue = /obj/item/organ/tongue/feline
 	mutantears = /obj/item/organ/ears/cat
 	mutanttail = /obj/item/organ/tail/cat
 
@@ -14,6 +15,7 @@
 	species_category = SPECIES_CATEGORY_FURRY
 	ass_image = 'icons/ass/asscat.png'
 	family_heirlooms = list(/obj/item/toy/cattoy)
+	species_language_holder = /datum/language_holder/felinid
 
 /datum/species/human/felinid/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 	if(ishuman(C))

@@ -53,7 +53,7 @@
 	item_state = "schoolgirlorange"
 
 /obj/item/clothing/under/costume/pirate
-	name = "pirate outfit"
+	name = "Pirate outfit"
 	desc = "Yarr."
 	icon_state = "pirate"
 	item_state = "pirate"
@@ -62,6 +62,7 @@
 /obj/item/clothing/under/costume/soviet
 	name = "soviet uniform"
 	desc = "For the Motherland!"
+	alternate_screams = RUSSIAN_SCREAMS
 	icon_state = "soviet"
 	item_state = "soviet"
 	can_adjust = FALSE
@@ -177,6 +178,7 @@
 /obj/item/clothing/under/costume/russian_officer
 	name = "\improper Russian officer's uniform"
 	desc = "The latest in fashionable russian outfits."
+	alternate_screams = RUSSIAN_SCREAMS
 	icon_state = "hostanclothes"
 	item_state = "hostanclothes"
 
@@ -185,7 +187,7 @@
 	desc = "Return the slab or suffer my stale references."
 	icon_state = "mummy"
 	item_state = "mummy"
-	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	body_parts_covered = CHEST|ARMS|LEGS
 	fitted = NO_FEMALE_UNIFORM
 	can_adjust = FALSE
 	resistance_flags = NONE
@@ -239,7 +241,7 @@
 	desc = "A black jumpsuit with a white bone pattern printed on it. Spooky!"
 	icon_state = "skeleton"
 	item_state = "skeleton"
-	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	body_parts_covered = CHEST|ARMS|GROIN|LEGS
 	fitted = NO_FEMALE_UNIFORM
 	can_adjust = FALSE
 	resistance_flags = NONE
@@ -429,6 +431,7 @@
 
 /obj/item/clothing/under/costume/soviet_families
 	name = "soviet conscript uniform"
+	alternate_screams = RUSSIAN_SCREAMS
 	icon_state = "soviet_uniform"
 	item_state = "soviet_uniform"
 	can_adjust = FALSE

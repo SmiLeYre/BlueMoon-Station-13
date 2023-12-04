@@ -1,9 +1,14 @@
 /obj/structure/frame/computer
 	name = "computer frame"
-	icon_state = "0"
+	icon_state = "console_frame"
 	state = 0
+	base_icon_state = "console_frame"
+	var/obj/item/stack/sheet/decon_material = /obj/item/stack/sheet/metal
+	var/built_icon = 'icons/obj/computer.dmi'
+	var/built_icon_state = "computer"
+	var/deconpath = /obj/structure/frame/computer
 
-/obj/structure/frame/computer/attackby(obj/item/P, mob/living/user, params)
+/obj/structure/frame/computer/attackby(obj/item/P, mob/user, params)
 	add_fingerprint(user)
 	switch(state)
 		if(0)
@@ -13,6 +18,7 @@
 					to_chat(user, "<span class='notice'>You wrench the frame into place.</span>")
 					set_anchored(TRUE)
 					state = 1
+					icon_state = "0"
 				return
 			if(P.tool_behaviour == TOOL_WELDER)
 				if(!P.tool_start_check(user, amount=0))
@@ -21,8 +27,9 @@
 				to_chat(user, "<span class='notice'>You start deconstructing the frame...</span>")
 				if(P.use_tool(src, user, 20, volume=50))
 					to_chat(user, "<span class='notice'>You deconstruct the frame.</span>")
-					var/obj/item/stack/sheet/metal/M = new (drop_location(), 5)
-					M.add_fingerprint(user)
+
+					var/obj/dropped_sheet = new decon_material(drop_location(), 5)
+					dropped_sheet.add_fingerprint(user)
 					qdel(src)
 				return
 		if(1)
@@ -32,15 +39,17 @@
 					to_chat(user, "<span class='notice'>You unfasten the frame.</span>")
 					set_anchored(FALSE)
 					state = 0
+					icon_state = "0"
 				return
 			if(istype(P, /obj/item/circuitboard/computer) && !circuit)
 				if(!user.transferItemToLoc(P, src))
 					return
 				playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 				to_chat(user, "<span class='notice'>You place [P] inside the frame.</span>")
-				icon_state = "1"
 				circuit = P
 				circuit.add_fingerprint(user)
+				icon_state = "1"
+				update_icon()
 				return
 
 			else if(istype(P, /obj/item/circuitboard) && !circuit)
@@ -51,6 +60,7 @@
 				to_chat(user, "<span class='notice'>You screw [circuit] into place.</span>")
 				state = 2
 				icon_state = "2"
+				update_icon()
 				return
 			if(P.tool_behaviour == TOOL_CROWBAR && circuit)
 				P.play_tool_sound(src)
@@ -60,6 +70,7 @@
 				circuit.forceMove(drop_location())
 				circuit.add_fingerprint(user)
 				circuit = null
+				update_icon()
 				return
 		if(2)
 			if(P.tool_behaviour == TOOL_SCREWDRIVER && circuit)
@@ -67,17 +78,19 @@
 				to_chat(user, "<span class='notice'>You unfasten the circuit board.</span>")
 				state = 1
 				icon_state = "1"
+				update_icon()
 				return
 			if(istype(P, /obj/item/stack/cable_coil))
 				if(!P.tool_start_check(user, amount=5))
 					return
-				if(state != 2)
-					return
 				to_chat(user, "<span class='notice'>You start adding cables to the frame...</span>")
 				if(P.use_tool(src, user, 20, volume=50, amount=5))
+					if(state != 2)
+						return
 					to_chat(user, "<span class='notice'>You add cables to the frame.</span>")
 					state = 3
 					icon_state = "3"
+					update_icon()
 				return
 		if(3)
 			if(P.tool_behaviour == TOOL_WIRECUTTER)
@@ -85,6 +98,7 @@
 				to_chat(user, "<span class='notice'>You remove the cables.</span>")
 				state = 2
 				icon_state = "2"
+				update_icon()
 				var/obj/item/stack/cable_coil/A = new (drop_location(), 5)
 				A.add_fingerprint(user)
 				return
@@ -92,14 +106,15 @@
 			if(istype(P, /obj/item/stack/sheet/glass))
 				if(!P.tool_start_check(user, amount=2))
 					return
-				if(state != 3)
-					return
 				playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 				to_chat(user, "<span class='notice'>You start to put in the glass panel...</span>")
 				if(P.use_tool(src, user, 20, amount=2))
+					if(state != 3)
+						return
 					to_chat(user, "<span class='notice'>You put in the glass panel.</span>")
 					state = 4
-					src.icon_state = "4"
+					icon_state = "4"
+					update_icon()
 				return
 		if(4)
 			if(P.tool_behaviour == TOOL_CROWBAR)
@@ -107,6 +122,7 @@
 				to_chat(user, "<span class='notice'>You remove the glass panel.</span>")
 				state = 3
 				icon_state = "3"
+				update_icon()
 				var/obj/item/stack/sheet/glass/G = new(drop_location(), 2)
 				G.add_fingerprint(user)
 				return
@@ -153,11 +169,15 @@
 					new_computer.on_construction()
 					new_computer.circuit.moveToNullspace()
 
-				qdel(src)
-				return
+					if(!new_computer.unique_icon)
+						new_computer.icon = built_icon
+						new_computer.icon_state = built_icon_state
+					new_computer.deconpath = deconpath
+					new_computer.update_icon()
+					qdel(src)
+					return
 	if(user.a_intent == INTENT_HARM)
 		return ..()
-
 
 /obj/structure/frame/computer/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
@@ -170,7 +190,7 @@
 
 /obj/structure/frame/computer/AltClick(mob/user)
 	..()
-	if(!user.canUseTopic(src, BE_CLOSE, TRUE, FALSE))
+	if(!isliving(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
 
 	if(anchored)

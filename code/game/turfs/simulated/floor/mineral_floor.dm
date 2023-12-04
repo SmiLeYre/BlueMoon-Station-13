@@ -37,6 +37,7 @@
 	icon_state = "plasma"
 	floor_tile = /obj/item/stack/tile/mineral/plasma
 	icons = list("plasma","plasma_dam")
+	flammability = 25 // oh fuck-
 
 /turf/open/floor/mineral/plasma/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	if(exposed_temperature > 300)
@@ -45,7 +46,7 @@
 /turf/open/floor/mineral/plasma/attackby(obj/item/W, mob/user, params)
 	if(W.get_temperature() > 300)//If the temperature of the object is over 300, then ignite
 		message_admins("Plasma flooring was ignited by [ADMIN_LOOKUPFLW(user)] in [ADMIN_VERBOSEJMP(src)]")
-		log_game("Plasma flooring was ignited by [key_name(user)] in [AREACOORD(src)]")
+		log_admin("Plasma flooring was ignited by [key_name(user)] in [AREACOORD(src)]")
 		ignite(W.get_temperature())
 		return
 	..()
@@ -133,7 +134,13 @@
 	initial_gas_mix = AIRLESS_ATMOS
 
 /turf/open/floor/mineral/plastitanium/red/brig
-	name = "brig floor"
+	name = "Brig Floor"
+
+/turf/open/floor/mineral/plastitanium/yellow
+	icon_state = "plastitanium_yellow"
+
+/turf/open/floor/mineral/plastitanium/yellow/airless
+	initial_gas_mix = AIRLESS_ATMOS
 
 //BANANIUM
 

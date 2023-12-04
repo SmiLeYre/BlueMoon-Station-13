@@ -40,8 +40,8 @@
 	heat = 3800
 	tool_behaviour = TOOL_WELDER
 	toolspeed = 1
-	wound_bonus = 0
-	bare_wound_bonus = 5
+	wound_bonus = 5
+	bare_wound_bonus = 10
 
 /obj/item/weldingtool/Initialize(mapload)
 	. = ..()
@@ -103,7 +103,7 @@
 	open_flame()
 
 /obj/item/weldingtool/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] welds [user.p_their()] every orifice closed! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] welds [user.ru_ego()] every orifice closed! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return (FIRELOSS)
 
 /obj/item/weldingtool/attackby(obj/item/I, mob/user, params)
@@ -267,7 +267,7 @@
 // When welding is about to start, run a normal tool_use_check, then flash a mob if it succeeds.
 /obj/item/weldingtool/tool_start_check(mob/living/user, amount=0)
 	. = tool_use_check(user, amount)
-	if(. && user)
+	if(. && user && !HAS_TRAIT(user, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - сварочный аппарат не наносит урон глазам синтетиков
 		user.flash_act(light_intensity)
 
 // Flash the user during welding progress
@@ -275,7 +275,8 @@
 	. = ..()
 	if(. && user)
 		if (progress_flash_divisor == 0)
-			user.flash_act(min(light_intensity,1))
+			if(!HAS_TRAIT(user, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - сварочный аппарат не наносит урон глазам синтетиков
+				user.flash_act(min(light_intensity,1))
 			progress_flash_divisor = initial(progress_flash_divisor)
 		else
 			progress_flash_divisor--

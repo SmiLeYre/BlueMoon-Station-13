@@ -1,5 +1,40 @@
 // Hey! Listen! Update \config\spaceruinblacklist.txt with your new ruins!
 
+// .　　　　　　　　　　 ✦ 　　　　   　
+// 　　　˚　　　　　　　　　　　　　　*　　　　　　 
+//  　　　　　　　　　　　　　　　.　　　　　　　　　　　　　　.
+// 　　 　　　　　　　 ✦ 　　　　　　　　　　 　  　　　　 　　　　　　　　　　　　,　　   　
+//
+// .　　　　　　　　　　　　　.　　　ﾟ　  　　　.　　　　　　　　　　　　　.
+//
+// 　　　　　　,　　　　　　　.　　　　　　    　　　　
+// 　　　　　　　　　　　　　　　　　　💶
+// 　　　　　　　　　　　　　　　　　　    　      　　　　　        　　　　*　　　　　　　　　.
+// 　　　　　　　　　　.　　　　　　　　　　　　　.
+// 　　　　　　　　　　　　　　　　       　   　　　　
+// 　　　　　　　　　　　　　　　　       　   　　　　　　　　　　　　　　　　       　    ✦
+// 　   　　　,　　　　　　　　　*　　   🕸 　　 　　,　　　  　 　　　　　　　　　　　　.　　　　　 　　
+// 　　　.　　　　　　　　　　　　　 　           　　　　　　　　　　　　　　　　　　　˚　　　
+// 　   　　　　,　　　　　　　　　　　       　    　　　　　　　　　　　　　　　　.　　　
+//  　　    　　　　　 　　　　　.　　　　　　　　　　　　　.　　　　　　　　　　　　　　　*
+// 　　   　　　　　 ✦ 　　　　　　　         　        　　　　
+// 　　 　　　　　　　 　　　　　.　　　　　　　　　　　　　　　　　　.　　　　　    　　.
+// 　 　　　　　.　　　　пошел　　　　　   　　　　　.　　　　　　　　　　　.　　　　　　　　　　   　
+//
+// 　˚　　　　　　　　　　　　　　　　　　　　　ﾟ　　　　　.　　　　　　　　　　　　　　　.
+// 　　 　    🕷
+// ,　 　　　　　　　　　　　　　　*       нахуй
+// .　　　　　 　　　　　　　　　　　　　　.　　　　　　　　　　 ✦ 　　　　   　
+// 　　　˚　　　　　　　　　　　　　　*　　　　　　 
+//  　　　　　　　　　　　　　　　.　　　　　　　　　　　　　　.
+// .                                                    .                                                                                                                        .
+// .　　　　　　　　　　 ✦ 　　　　   　
+// 　　　˚　　　　　　　　　　　　　　*　　　　　　 
+//  　　　　　　　　　　　　　　　.　　　　　　　　　　　　　　.
+// 　　 　　　　　　　 ✦ 　　　　　　　　　　 　  　　　　 　　　　　　　　　　　　,　　   　
+//
+// .　　　　　　　　　　　　　.　　　ﾟ　  　　　.　　　　　　　　　　　　　.
+
 /datum/map_template/ruin/space
 	prefix = "_maps/RandomRuins/SpaceRuins/"
 	cost = 1
@@ -208,6 +243,9 @@
 	name = "Syndicate Listening Station"
 	description = "Listening stations form the backbone of the syndicate's information gathering operations. \
 	Assignment to these stations is dreaded by most agents, as it entails long and lonely shifts listening to nearby stations chatter incessently about the most meaningless things."
+	allow_duplicates = FALSE
+	always_place = TRUE
+
 
 /datum/map_template/ruin/space/oldAIsat
 	id = "oldAIsat"
@@ -236,14 +274,14 @@
 	name = "Waylaid Buses"
 	description = "There seems to be a pair of buses that pulled over for repairs. What were they doing..? Their shipment sure  seems to be filled with a strange mix. \
 	Anyway, it looks like some people tried to fix it up for a long time but didn't really get anywhere..."
-
+/* Блюмуновское удаление, потому что Тарков, ебать.
 /datum/map_template/ruin/space/oldstation
 	id = "oldstation"
 	suffix = "oldstation.dmm"
 	name = "Ancient Space Station"
 	description = "The crew of a space station awaken one hundred years after a crisis. Awaking to a derelict space station on the verge of collapse, and a hostile force of invading \
 	hivebots. Can the surviving crew overcome the odds and survive and rebuild, or will the cold embrace of the stars become their new home?"
-
+*/
 /datum/map_template/ruin/space/miracle
 	id = "miracle"
 	suffix = "miracle.dmm"
@@ -312,6 +350,7 @@
 	suffix = "spacehermit.dmm"
 	name = "Space Hermit"
 	description = "A late awakening cryo pod in a crashed escape pod wakes up to find what befell of his fellow survivors. Contains all the necessary resources to actually make it out alive. Good luck."
+	always_place = TRUE
 
 /datum/map_template/ruin/space/clericden
 	id = "clericden"
@@ -403,3 +442,9 @@
 	suffix = "roid10.dmm"
 	name = "Maze Roid"
 	description = "Mineral asteroid. Ft. Brief maze."
+
+/datum/map_template/ruin/space/syndicate_derelict_station
+	id = "syndicatederelictstation"
+	suffix = "syndicate_derelict_station.dmm"
+	name = "Syndicate Derelict Station"
+	description = "A remote station once used to be a syndicate research wing. Due to an unknown issue, it has been since abandoned as a bunch of floating debris."

@@ -5,9 +5,9 @@
 	movedelay = 4
 	dir_in = 1 //Facing North.
 	max_integrity = 400
-	deflect_chance = 20
-	armor = list(MELEE = 40, BULLET = 35, LASER = 15, ENERGY = 10, BOMB = 20, BIO = 0, RAD = 50, FIRE = 100, ACID = 100)
-	max_temperature = 30000
+	deflect_chance = 30
+	armor = list(MELEE = 50, BULLET = 55, LASER = 40, ENERGY = 30, BOMB = 30, BIO = 0, RAD = 60, FIRE = 100, ACID = 100)
+	max_temperature = 50000
 	force = 40
 	wreckage = /obj/structure/mecha_wreckage/durand
 	var/obj/durand_shield/shield

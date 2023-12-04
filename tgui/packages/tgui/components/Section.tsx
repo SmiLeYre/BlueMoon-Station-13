@@ -4,10 +4,10 @@
  * @license MIT
  */
 
-import { canRender, classes } from 'common/react';
-import { Component, createRef, InfernoNode, RefObject } from 'inferno';
-import { addScrollableNode, removeScrollableNode } from '../events';
 import { BoxProps, computeBoxClassName, computeBoxProps } from './Box';
+import { Component, InfernoNode, RefObject, createRef } from 'inferno';
+import { addScrollableNode, removeScrollableNode } from '../events';
+import { canRender, classes } from 'common/react';
 
 interface SectionProps extends BoxProps {
   readonly className?: string;
@@ -25,22 +25,29 @@ interface SectionProps extends BoxProps {
 export class Section extends Component<SectionProps> {
   scrollableRef: RefObject<HTMLDivElement>;
   scrollable: boolean;
+  onScroll?: (this: GlobalEventHandlers, ev: Event) => any;
+  scrollableHorizontal: boolean;
 
   constructor(props) {
     super(props);
-    this.scrollableRef = createRef();
+    this.scrollableRef = props.scrollableRef || createRef();
     this.scrollable = props.scrollable;
+    this.onScroll = props.onScroll;
+    this.scrollableHorizontal = props.scrollableHorizontal;
   }
 
   componentDidMount() {
-    if (this.scrollable) {
-      addScrollableNode(this.scrollableRef.current);
+    if (this.scrollable || this.scrollableHorizontal) {
+      addScrollableNode(this.scrollableRef.current as HTMLElement);
+      if (this.onScroll && this.scrollableRef.current) {
+        this.scrollableRef.current.onscroll = this.onScroll;
+      }
     }
   }
 
   componentWillUnmount() {
-    if (this.scrollable) {
-      removeScrollableNode(this.scrollableRef.current);
+    if (this.scrollable || this.scrollableHorizontal) {
+      removeScrollableNode(this.scrollableRef.current as HTMLElement);
     }
   }
 
@@ -52,7 +59,9 @@ export class Section extends Component<SectionProps> {
       fill,
       fitted,
       scrollable,
+      scrollableHorizontal,
       children,
+      onScroll,
       ...rest
     } = this.props;
     const hasTitle = canRender(title) || canRender(buttons);
@@ -64,22 +73,22 @@ export class Section extends Component<SectionProps> {
           fill && 'Section--fill',
           fitted && 'Section--fitted',
           scrollable && 'Section--scrollable',
+          scrollableHorizontal && 'Section--scrollableHorizontal',
           className,
           computeBoxClassName(rest),
         ])}
         {...computeBoxProps(rest)}>
         {hasTitle && (
           <div className="Section__title">
-            <span className="Section__titleText">
-              {title}
-            </span>
-            <div className="Section__buttons">
-              {buttons}
-            </div>
+            <span className="Section__titleText">{title}</span>
+            <div className="Section__buttons">{buttons}</div>
           </div>
         )}
         <div className="Section__rest">
-          <div ref={this.scrollableRef} className="Section__content">
+          <div
+            ref={this.scrollableRef}
+            onScroll={onScroll}
+            className="Section__content">
             {children}
           </div>
         </div>

@@ -265,21 +265,8 @@
 	build_path = /obj/machinery/computer/holodeck
 
 /obj/item/circuitboard/computer/libraryconsole
-	name = "Library Visitor Console (Computer Board)"
-	build_path = /obj/machinery/computer/libraryconsole
-
-/obj/item/circuitboard/computer/libraryconsole/attackby(obj/item/I, mob/user, params)
-	if(I.tool_behaviour == TOOL_SCREWDRIVER)
-		if(build_path == /obj/machinery/computer/libraryconsole/bookmanagement)
-			name = "Library Visitor Console (Computer Board)"
-			build_path = /obj/machinery/computer/libraryconsole
-			to_chat(user, "<span class='notice'>Defaulting access protocols.</span>")
-		else
-			name = "Book Inventory Management Console (Computer Board)"
-			build_path = /obj/machinery/computer/libraryconsole/bookmanagement
-			to_chat(user, "<span class='notice'>Access protocols successfully updated.</span>")
-	else
-		return ..()
+	name = "Library Check/Out Console (Computer Board)"
+	build_path = /obj/machinery/computer/library/checkout
 
 /obj/item/circuitboard/computer/monastery_shuttle
 	name = "Monastery Shuttle (Computer Board)"
@@ -307,7 +294,7 @@
 	build_path = /obj/machinery/computer/pod/old/swf
 
 /obj/item/circuitboard/computer/syndicate_shuttle
-	name = "Syndicate Shuttle (Computer Board)"
+	name = "InteQ Shuttle (Computer Board)"
 	icon_state = "generic"
 	build_path = /obj/machinery/computer/shuttle/syndicate
 	var/challenge = FALSE
@@ -544,6 +531,7 @@
 		contraband = TRUE
 		obj_flags |= EMAGGED
 		to_chat(user, "<span class='notice'>You adjust [src]'s routing and receiver spectrum, unlocking special supplies and contraband.</span>")
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	return TRUE
 
 /obj/item/circuitboard/computer/cargo/configure_machine(obj/machinery/computer/cargo/machine)
@@ -566,6 +554,7 @@
 		contraband = TRUE
 		obj_flags |= EMAGGED
 		to_chat(user, "<span class='notice'>You change the routing protocols, allowing the Drop Pod to land anywhere on the station.</span>")
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	return TRUE
 
 /obj/item/circuitboard/computer/cargo/express/multitool_act(mob/living/user)
@@ -589,6 +578,11 @@
 	name = "Transport Ferry (Computer Board)"
 	icon_state = "supply"
 	build_path = /obj/machinery/computer/shuttle/ferry
+
+/obj/item/circuitboard/computer/ds_syndicate
+	name = "Syndicate Shuttle (Computer Board)"
+	icon_state = "generic"
+	build_path = /obj/machinery/computer/shuttle/ds_syndicate
 
 /obj/item/circuitboard/computer/ferry/request
 	name = "Transport Ferry Console (Computer Board)"

@@ -26,7 +26,7 @@
 
 /obj/item/bot_assembly/proc/can_finish_build(obj/item/I, mob/user)
 	if(istype(loc, /obj/item/storage/backpack))
-		to_chat(user, "<span class='warning'>You must take [src] out of [loc] first!</span>")
+		to_chat(user, "<span class='warning'>You must take [src] out of <b>[loc]</b> first!</span>")
 		return FALSE
 	if(!I || !user || !user.temporarilyRemoveItemFromInventory(I))
 		return FALSE

@@ -57,28 +57,28 @@
 	name = "Blood Charge"
 	icon_icon = 'modular_sand/icons/mob/actions/actions_elites.dmi'
 	button_icon_state = "blood_charge"
-	chosen_message = span_boldwarning("You will attempt to charge your target.")
+	chosen_message = "<span class='boldwarning'>You will attempt to charge your target.</span>"
 	chosen_attack_num = BLOOD_CHARGE
 
 /datum/action/innate/elite_attack/bloody_trap
 	name = "Bloody Trap"
 	icon_icon = 'modular_sand/icons/mob/actions/actions_elites.dmi'
 	button_icon_state = "bloody_trap"
-	chosen_message = span_boldwarning("You will attempt to trap your target.")
+	chosen_message = "<span class='boldwarning'>You will attempt to trap your target.</span>"
 	chosen_attack_num = BLOODY_TRAP
 
 /datum/action/innate/elite_attack/meat_shield
 	name = "Meat Shield"
 	icon_icon = 'modular_sand/icons/mob/actions/actions_elites.dmi'
 	button_icon_state = "meat_shield"
-	chosen_message = span_boldwarning("You will attempt to shield yourself.")
+	chosen_message = "<span class='boldwarning'>You will attempt to shield yourself.</span>"
 	chosen_attack_num = MEAT_SHIELD
 
 /datum/action/innate/elite_attack/knockdown
 	name = "Knockdown"
 	icon_icon = 'modular_sand/icons/mob/actions/actions_elites.dmi'
 	button_icon_state = "knockdown"
-	chosen_message = span_boldwarning("You will knock down every mob around you.")
+	chosen_message = "<span class='boldwarning'>You will knock down every mob around you.</span>"
 	chosen_attack_num = KNOCKDOWN
 
 
@@ -111,7 +111,7 @@
 	var/dir_to_target = get_dir(get_turf(src), get_turf(target))
 	var/turf/T = get_turf(src)
 	playsound(src,'sound/magic/demon_attack1.ogg', 200, 1)
-	visible_message(span_boldwarning("[src] prepares to charge!"))
+	visible_message("<span class='boldwarning'>[src] prepares to charge!</span>")
 	for(var/i in 1 to 6)
 		new /obj/effect/temp_visual/dir_setting/bloodsplatter/candy(T, get_dir(T, target))
 		T = get_step(T, dir_to_target)
@@ -126,7 +126,7 @@
 	if(bline.len > 6)
 		return FALSE
 	ranged_cooldown = world.time + 100
-	visible_message(span_boldwarning("[src] traps [target]!"))
+	visible_message("<span class='boldwarning'>[src] traps [target]!</span>")
 	for(var/turf/J in view(1, target) - get_turf(target))
 		new /obj/effect/temp_visual/bloodwall(J, src)
 	sleep(5)
@@ -140,13 +140,13 @@
 			for(var/obj/effect/temp_visual/bloodwall/B in N.contents)
 				bloodwalls += B
 	var/obj/effect/temp_visual/bloodwall/chosen = pick(bloodwalls)
-	visible_message(span_boldwarning("One of the blood walls disappear!"))
+	visible_message("<span class='boldwarning'>One of the blood walls disappear!</span>")
 	qdel(chosen)
 
 /mob/living/simple_animal/hostile/asteroid/elite/candy/proc/meatshield()
 	ranged_cooldown = world.time + 25
 	playsound(src,'sound/magic/Blind.ogg', 200, 1)
-	visible_message(span_boldwarning("[src] raises a wall!"))
+	visible_message("<span class='boldwarning'>[src] raises a wall!</span>")
 	var/turf/T = get_turf(get_step(src, src.dir))
 	var/list/hit_things = list()
 	new /obj/effect/temp_visual/bloodwall(T, src)
@@ -178,7 +178,7 @@
 /mob/living/simple_animal/hostile/asteroid/elite/candy/proc/knockdown()
 	ranged_cooldown = world.time + 100
 	playsound(src,'sound/misc/crunch.ogg', 200, 1)
-	visible_message(span_boldwarning("[src] clenches his fists and smashes the ground!"))
+	visible_message("<span class='boldwarning'>[src] clenches his fists and smashes the ground!</span>")
 	var/list/hit_things = list()
 	sleep(10)
 	for(var/turf/T in view(1, src))
@@ -223,8 +223,8 @@
 		if(faction_check_mob(L))
 			return
 		hit_things += L
-		visible_message(span_boldwarning("[src] attacks [L] with much force!"))
-		to_chat(L, span_userdanger("[src] grabs you and throws you with much force!"))
+		visible_message("<span class='boldwarning'>[src] attacks [L] with much force!</span>")
+		to_chat(L, "<span class='userdanger'>[src] grabs you and throws you with much force!</span>")
 		L.safe_throw_at(throwtarget, 10, 1, src)
 		//L.Paralyze(20)
 		L.Stun(20) //substituting this for the Paralyze from the line above, because we don't have tg paralysis stuff
@@ -276,7 +276,7 @@
 	icon_state = "vial"
 
 /obj/item/bloodcrawlbottle/attack_self(mob/user)
-	to_chat(user, span_notice("You drink the bottle's contents."))
+	to_chat(user, "<span class='notice'>You drink the bottle's contents.</span>")
 	var/obj/effect/proc_holder/spell/bloodcrawl/S = new /obj/effect/proc_holder/spell/bloodcrawl/
 	user.mind.AddSpell(S)
 	user.log_message("learned the spell bloodcrawl ([S])", LOG_ATTACK, color="orange")

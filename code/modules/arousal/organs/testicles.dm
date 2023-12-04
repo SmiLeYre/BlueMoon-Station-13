@@ -1,13 +1,16 @@
 /obj/item/organ/genital/testicles
-	name = "testicles"
+	name = "яйца"
+	ru_name = "яйца" // BLUEMOON ADD
+	ru_name_v = "яйцах" // BLUEMOON ADD
+	ru_name_capital = "Яйца" // BLUEMOON ADD
 	desc = "A male reproductive organ."
 	icon_state = "testicles"
 	icon = 'icons/obj/genitals/testicles.dmi'
 	zone = BODY_ZONE_PRECISE_GROIN
 	slot = ORGAN_SLOT_TESTICLES
 	size = BALLS_SIZE_MIN
-	arousal_verb = "Your balls ache a little"
-	unarousal_verb = "Your balls finally stop aching, again"
+	arousal_verb = "Твои яйца немного болят от переполненности"
+	unarousal_verb = "Твои яйца наконец-то перестают болеть от переполненности"
 	linked_organ_slot = ORGAN_SLOT_PENIS
 	genital_flags = CAN_MASTURBATE_WITH|MASTURBATE_LINKED_ORGAN|GENITAL_FUID_PRODUCTION|UPDATE_OWNER_APPEARANCE|GENITAL_UNDIES_HIDDEN|CAN_CUM_INTO|HAS_EQUIPMENT
 	var/size_name = "average"
@@ -30,21 +33,21 @@
 /obj/item/organ/genital/testicles/update_size(modified = FALSE)
 	switch(size)
 		if(BALLS_SIZE_MIN)
-			size_name = "average"
+			size_name = "среднего"
 		if(BALLS_SIZE_DEF)
-			size_name = "enlarged"
+			size_name = "большого"
 		if(BALLS_SIZE_2)
-			size_name = "engorged"
+			size_name = "сжимательного"
 		if(BALLS_SIZE_3)
-			size_name = "massive"
+			size_name = "массивного"
 		if(BALLS_SIZE_MAX)
-			size_name = pick(list("gigantic", "ginormous", "humongous", "unfathomably immense"))
+			size_name = pick(list("гигантского", "экстремального", "невероятного", "абсолютно огромного"))
 		else
-			size_name = "nonexistant"
+			size_name = "плоского"
 
 /obj/item/organ/genital/testicles/update_appearance()
 	. = ..()
-	desc = "You see an [size_name] pair of testicles."
+	desc = "Вы наблюдаете два семенника [size_name] размера."
 	var/datum/sprite_accessory/S = GLOB.balls_shapes_list[shape]
 	var/icon_shape = S ? S.icon_state : "single"
 	icon_state = "testicles_[icon_shape]_[size]"
@@ -73,6 +76,5 @@
 		toggle_visibility(GEN_ALLOW_EGG_STUFFING, FALSE)
 	if(D.features["inert_eggs"])
 		AddComponent(/datum/component/ovipositor)
-
 	if(D.features["balls_accessible"])
 		toggle_accessibility(TRUE)

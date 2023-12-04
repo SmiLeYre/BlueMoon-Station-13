@@ -879,7 +879,7 @@
 /turf/open/floor/wood,
 /area/service/bar)
 "abz" = (
-/obj/structure/chair/sofa/right{
+/obj/structure/chair/sofa/right/brown{
 	dir = 1
 	},
 /obj/structure/sign/poster/official/fruit_bowl{
@@ -5084,7 +5084,7 @@
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/central)
 "ajr" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 4;
 	icon_state = "computer"
 	},
@@ -10198,7 +10198,7 @@
 /turf/open/floor/plating/snowed/smoothed/icemoon,
 /area/icemoon/surface/outdoors)
 "aDX" = (
-/obj/structure/chair/sofa/right{
+/obj/structure/chair/sofa/right/brown{
 	dir = 4
 	},
 /obj/machinery/firealarm{
@@ -10488,6 +10488,10 @@
 	},
 /turf/open/floor/circuit/off,
 /area/ai_monitored/turret_protected/ai)
+"aJW" = (
+/obj/effect/landmark/start/bouncer,
+/turf/open/floor/wood,
+/area/service/bar)
 "aJZ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -10612,7 +10616,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/structure/chair/sofa/corner{
+/obj/structure/chair/sofa/corner/brown{
 	dir = 4
 	},
 /obj/machinery/power/apc{
@@ -10645,7 +10649,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/left/brown,
 /turf/open/floor/plasteel,
 /area/security/checkpoint/medical)
 "aLG" = (
@@ -14210,7 +14214,7 @@
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 6
 	},
-/obj/structure/chair/sofa/corner{
+/obj/structure/chair/sofa/corner/brown{
 	dir = 4
 	},
 /turf/open/floor/wood,
@@ -16047,7 +16051,7 @@
 /turf/open/floor/plasteel,
 /area/service/kitchen)
 "cYq" = (
-/obj/machinery/suit_storage_unit/atmos,
+/obj/machinery/suit_storage_unit/industrial/atmos,
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
 "cYw" = (
@@ -17401,7 +17405,7 @@
 /area/cargo/storage)
 "dWU" = (
 /obj/structure/table/wood,
-/obj/machinery/computer/libraryconsole/bookmanagement,
+/obj/machinery/computer/library/checkout,
 /obj/item/radio/intercom{
 	pixel_x = 25
 	},
@@ -17886,7 +17890,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/left/brown,
 /turf/open/floor/plasteel,
 /area/security/checkpoint/supply)
 "enP" = (
@@ -18270,7 +18274,7 @@
 /area/icemoon/surface/outdoors)
 "eBl" = (
 /obj/structure/cable,
-/obj/machinery/suit_storage_unit/ce,
+/obj/machinery/suit_storage_unit/industrial/ce,
 /obj/machinery/power/apc/highcap/five_k{
 	areastring = "/area/command/heads_quarters/ce";
 	name = "CE Office APC";
@@ -19686,7 +19690,7 @@
 /area/maintenance/aft/secondary)
 "fuX" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple,
-/obj/structure/chair/sofa{
+/obj/structure/chair/sofa/middle/brown{
 	dir = 4
 	},
 /turf/open/floor/wood,
@@ -21247,7 +21251,7 @@
 /turf/open/floor/plasteel/white,
 /area/medical/chemistry)
 "guV" = (
-/obj/structure/chair/sofa/right{
+/obj/structure/chair/sofa/right/brown{
 	dir = 1
 	},
 /turf/open/floor/wood,
@@ -23342,7 +23346,7 @@
 /area/cargo/storage)
 "hNi" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple,
-/obj/structure/chair/sofa{
+/obj/structure/chair/sofa/middle/brown{
 	dir = 8
 	},
 /turf/open/floor/wood,
@@ -24209,7 +24213,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/machinery/computer/libraryconsole/bookmanagement,
+/obj/machinery/computer/library/checkout,
 /obj/structure/table/wood,
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
@@ -27613,7 +27617,7 @@
 /obj/item/book/manual/wiki/barman_recipes,
 /obj/item/reagent_containers/food/drinks/shaker,
 /obj/item/paper/fluff{
-	info = "<b>Renovation Notice</b><br><br>The bar layout for the station is very old. We've decided to give it a facelift after our partnership with IKEA Intergalactic?.</li><li>We added some sweet retro arcade machines and much more seating area. We removed the stage since it hasn't ever been used.</li><li>You can run this place like a restaurant now that you have tables. Go whip up a menu with the Chef. You have a condiments table and your Requests Console has been moved so a noticeboard can be placed there. Take tickets from customers and pin them on the noticeboard for the Chef.</li><li><b>We hope you like the new bar!</ b>";
+	default_raw_text = "<b>Renovation Notice</b><br><br>The bar layout for the station is very old. We've decided to give it a facelift after our partnership with IKEA Intergalactic?.</li><li>We added some sweet retro arcade machines and much more seating area. We removed the stage since it hasn't ever been used.</li><li>You can run this place like a restaurant now that you have tables. Go whip up a menu with the Chef. You have a condiments table and your Requests Console has been moved so a noticeboard can be placed there. Take tickets from customers and pin them on the noticeboard for the Chef.</li><li><b>We hope you like the new bar!</ b>";
 	name = "Renovation Notice - Bar";
 	pixel_x = -5;
 	pixel_y = 3
@@ -29561,7 +29565,7 @@
 /turf/closed/wall/r_wall,
 /area/ai_monitored/turret_protected/aisat/service)
 "lWi" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /turf/open/floor/plating,
 /area/construction/storage_wing)
 "lWo" = (
@@ -30160,7 +30164,7 @@
 /area/hallway/primary/aft)
 "mqd" = (
 /obj/item/paper/fluff{
-	info = "Crystal has been moved to a lockbox in secure storage until further notice.";
+	default_raw_text = "Crystal has been moved to a lockbox in secure storage until further notice.";
 	name = "Note from an engineer";
 	pixel_x = -5;
 	pixel_y = 3
@@ -30239,7 +30243,7 @@
 	dir = 1;
 	pixel_y = -22
 	},
-/obj/structure/chair/sofa/left{
+/obj/structure/chair/sofa/left/brown{
 	dir = 1
 	},
 /turf/open/floor/wood,
@@ -30645,7 +30649,7 @@
 /turf/open/floor/wood,
 /area/maintenance/bar)
 "mJr" = (
-/obj/structure/chair/sofa{
+/obj/structure/chair/sofa/middle/brown{
 	dir = 4
 	},
 /obj/machinery/airalarm{
@@ -31225,7 +31229,7 @@
 /obj/machinery/atmospherics/pipe/heat_exchanging/manifold{
 	dir = 8
 	},
-/obj/structure/chair/sofa/right{
+/obj/structure/chair/sofa/right/brown{
 	dir = 4
 	},
 /turf/open/floor/wood,
@@ -34208,7 +34212,7 @@
 /turf/open/floor/plasteel,
 /area/command/heads_quarters/ce)
 "oUs" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /turf/open/floor/plasteel,
 /area/engineering/main)
 "oUQ" = (
@@ -36966,7 +36970,7 @@
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 9
 	},
-/obj/structure/chair/sofa/left{
+/obj/structure/chair/sofa/left/brown{
 	dir = 8
 	},
 /turf/open/floor/wood,
@@ -38271,7 +38275,7 @@
 /turf/open/floor/plasteel,
 /area/hallway/secondary/exit/departure_lounge)
 "rqG" = (
-/obj/structure/chair/sofa/right{
+/obj/structure/chair/sofa/right/brown{
 	dir = 4
 	},
 /obj/machinery/firealarm{
@@ -39171,7 +39175,7 @@
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 10
 	},
-/obj/structure/chair/sofa/corner,
+/obj/structure/chair/sofa/corner/brown,
 /turf/open/floor/wood,
 /area/maintenance/bar)
 "rZJ" = (
@@ -39646,7 +39650,7 @@
 /area/service/bar)
 "snb" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/computer/card,
+/obj/machinery/modular_computer/console/preset/id,
 /turf/open/floor/wood,
 /area/command/heads_quarters/captain)
 "spa" = (
@@ -41364,7 +41368,7 @@
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 4
 	},
-/obj/structure/chair/sofa,
+/obj/structure/chair/sofa/middle/brown,
 /turf/open/floor/wood,
 /area/maintenance/bar)
 "ttQ" = (
@@ -46021,7 +46025,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/structure/chair/sofa/corner{
+/obj/structure/chair/sofa/corner/brown{
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/red{
@@ -46194,7 +46198,7 @@
 /turf/open/floor/plasteel,
 /area/commons/storage/primary)
 "wqe" = (
-/obj/structure/chair/sofa/left{
+/obj/structure/chair/sofa/left/brown{
 	dir = 1
 	},
 /turf/open/floor/wood,
@@ -47005,7 +47009,7 @@
 /turf/open/floor/plasteel/chapel,
 /area/service/chapel/main)
 "wZJ" = (
-/obj/structure/chair/sofa{
+/obj/structure/chair/sofa/middle/brown{
 	dir = 4
 	},
 /obj/machinery/airalarm{
@@ -95335,7 +95339,7 @@ wgH
 iKV
 iKV
 fPD
-fPD
+aJW
 fPD
 fPD
 jHT

@@ -1,5 +1,3 @@
-/// Painkiller trait, used for self-surgeries.
-#define TRAIT_PAINKILLER        "painkiller"
 /// Prevents the player from getting thirsty at all, usually paired with TRAIT_NOHUNGER.
 #define TRAIT_NOTHIRST			"no_thirst"
 /// Define for the quirk "sheltered", the player does not start with Galactic Common language.

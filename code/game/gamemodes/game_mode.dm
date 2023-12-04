@@ -36,7 +36,7 @@
 	var/round_converted = 0 //0: round not converted, 1: round going to convert, 2: round converted
 	var/reroll_friendly 	//During mode conversion only these are in the running
 	var/continuous_sanity_checked	//Catches some cases where config options could be used to suggest that modes without antagonists should end when all antagonists die
-	var/enemy_minimum_age = 7 //How many days must players have been playing before they can play this antagonist
+	var/enemy_minimum_age = 0 //How many days must players have been playing before they can play this antagonist // BLUEMOON EDIT - было 7, сделал 0, т.к. на сервере ВЛ и загриферить ролью тяжело
 
 	var/announce_span = "warning" //The gamemode's name will be in this span during announcement.
 	var/announce_text = "This gamemode forgot to set a descriptive text! Uh oh!" //Used to describe a gamemode when it's announced.
@@ -175,7 +175,7 @@
 	var/list/antag_candidates = list()
 
 	for(var/mob/living/carbon/human/H in living_crew)
-		if(H.client && H.client.prefs.allow_midround_antag)
+		if(H.client?.prefs.toggles & MIDROUND_ANTAG) // BLUEMOON EDIT - было, чей параметр в коде не изменяется H.client && H.client.prefs.allow_midround_antag
 			antag_candidates += H
 
 	if(!antag_candidates)
@@ -277,12 +277,12 @@
 	return 0
 
 /datum/game_mode/proc/send_intercept()
-	if(flipseclevel && !(config_tag == "extended"))//CIT CHANGE - lets the security level be flipped roundstart
-		priority_announce("Thanks to the tireless efforts of our security and intelligence divisions, there are currently no credible threats to [station_name()]. All station construction projects have been authorized. Have a secure shift!", "Security Report", SSstation.announcer.get_rand_report_sound())
+	if(flipseclevel && !(config_tag == "Extended"))//CIT CHANGE - lets the security level be flipped roundstart
+		priority_announce("Благодаря неустанным усилиям наших специальных оперативных подразделений в настоящее время нет никаких действительных угроз для [station_name()]. Все проекты строительства станции утверждены. Безопасной смены!", "Отчёт о безопасности", SSstation.announcer.get_rand_report_sound())
 		return
-	var/intercepttext = "<b><i>Central Command Status Summary</i></b><hr>"
-	intercepttext += "<b>Central Command has intercepted and partially decoded a Syndicate transmission with vital information regarding their movements. The following report outlines the most \
-	likely threats to appear in your sector.</b>"
+	var/intercepttext = "<b><i>Отчёт от Центрального Командования</i></b><hr>"
+	intercepttext += "<b>Центральное Командование перехватило и частично расшифровало передачу Синдиката с важной информацией о передвижении Войск InteQ. В прилагающемся отчете представлены наиболее \
+	вероятные угрозы в вашем секторе.</b>"
 	var/list/report_weights = config.mode_false_report_weight.Copy()
 	report_weights[config_tag] = 0 //Prevent the current mode from being falsely selected.
 	var/list/reports = list()
@@ -302,16 +302,13 @@
 		intercepttext += report
 
 	if(station_goals.len)
-		intercepttext += "<hr><b>Special Orders for [station_name()]:</b>"
+		intercepttext += "<hr><b>Специальные указы для [station_name()]:</b>"
 		for(var/datum/station_goal/G in station_goals)
 			G.on_report()
 			intercepttext += G.get_report()
 
-	print_command_report(intercepttext, "Central Command Status Summary", announce=FALSE)
-	priority_announce("A summary has been copied and printed to all communications consoles.", "Enemy communication intercepted. Security level elevated.", "intercept")
-	if(GLOB.security_level < SEC_LEVEL_BLUE)
-		set_security_level(SEC_LEVEL_BLUE)
-
+	print_command_report(intercepttext, "Отдел ССО Пакта Синих Лун", announce=FALSE)
+	priority_announce("Благодаря неустанным усилиям наших специальных оперативных подразделений мы обнаружили несколько возможных угроз для [station_name()]. Будьте осторожней!", "Отдел ССО Пакта Синих Лун", "intercept")
 
 // This is a frequency selection system. You may imagine it like a raffle where each player can have some number of tickets. The more tickets you have the more likely you are to
 // "win". The default is 100 tickets. If no players use any extra tickets (earned with the antagonist rep system) calling this function should be equivalent to calling the normal
@@ -427,7 +424,7 @@
 	for(var/mob/dead/new_player/player in players)
 		if(player.client && player.ready == PLAYER_READY_TO_PLAY)
 			if(HAS_ANTAG_PREF(player.client, role))
-				if(!jobban_isbanned(player, ROLE_SYNDICATE) && !QDELETED(player) && !jobban_isbanned(player, role) && !QDELETED(player)) //Nodrak/Carn: Antag Job-bans
+				if(!jobban_isbanned(player, ROLE_INTEQ) && !QDELETED(player) && !jobban_isbanned(player, role) && !QDELETED(player)) //Nodrak/Carn: Antag Job-bans
 					if(age_check(player.client)) //Must be older than the minimum age
 						candidates += player.mind				// Get a list of all the people who want to be the antagonist for this round
 						candidates[player.mind] = player.client.prefs.be_special[role]
@@ -442,7 +439,7 @@
 		for(var/mob/dead/new_player/player in players)
 			if(player.client && player.ready == PLAYER_READY_TO_PLAY)
 				if(!(role in player.client.prefs.be_special)) // We don't have enough people who want to be antagonist, make a separate list of people who don't want to be one
-					if(!jobban_isbanned(player, ROLE_SYNDICATE) && !QDELETED(player)  && !jobban_isbanned(player, role) && !QDELETED(player) ) //Nodrak/Carn: Antag Job-bans
+					if(!jobban_isbanned(player, ROLE_INTEQ) && !QDELETED(player)  && !jobban_isbanned(player, role) && !QDELETED(player) ) //Nodrak/Carn: Antag Job-bans
 						drafted += player.mind
 
 	if(restricted_jobs)
@@ -558,7 +555,7 @@
 		rev.remove_revolutionary(TRUE)
 
 /datum/game_mode/proc/generate_station_goals()
-	if(flipseclevel && !(config_tag == "extended")) //CIT CHANGE - allows the sec level to be flipped roundstart
+	if(flipseclevel && !(config_tag == "Extended")) //CIT CHANGE - allows the sec level to be flipped roundstart
 		for(var/T in subtypesof(/datum/station_goal))
 			var/datum/station_goal/G = new T
 			station_goals += G

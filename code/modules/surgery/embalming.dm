@@ -10,7 +10,7 @@
 	requires_bodypart_type = BODYPART_ORGANIC
 
 /datum/surgery_step/embalming
-	name = "embalming body"
+	name = "Бальмазировать Тело"
 	implements = list(TOOL_HEMOSTAT = 100, TOOL_SCREWDRIVER = 35)
 	chems_needed = list(/datum/reagent/drying_agent, /datum/reagent/space_cleaner/sterilizine)
 	require_all_chems = FALSE

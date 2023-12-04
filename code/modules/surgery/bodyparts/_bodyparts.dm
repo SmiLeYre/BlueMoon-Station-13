@@ -12,6 +12,9 @@
 	var/datum/weakref/original_owner = null
 	var/status = BODYPART_ORGANIC
 	var/needs_processing = FALSE
+	var/ru_name = ""
+	var/ru_name_v = ""
+	var/ru_name_capital = ""
 
 	var/body_zone //BODY_ZONE_CHEST, BODY_ZONE_L_ARM, etc , used for def_zone
 	var/list/aux_icons // associative list, currently used for hands
@@ -66,13 +69,13 @@
 	var/dmg_overlay_type //the type of damage overlay (if any) to use when this bodypart is bruised/burned.
 
 	//Damage messages used by help_shake_act()
-	var/light_brute_msg = "bruised"
-	var/medium_brute_msg = "battered"
-	var/heavy_brute_msg = "mangled"
+	var/light_brute_msg = "немного повреждена"
+	var/medium_brute_msg = "покрыта синяками"
+	var/heavy_brute_msg = "искалечена"
 
-	var/light_burn_msg = "numb"
-	var/medium_burn_msg = "blistered"
-	var/heavy_burn_msg = "peeling away"
+	var/light_burn_msg = "слегка онемела"
+	var/medium_burn_msg = "покрыта волдырями"
+	var/heavy_burn_msg = "отслаивается от костей"
 
 
 	//Some special vars for robotic bodyparts, in the base type to prevent needing typecasting / fancy checks.
@@ -106,6 +109,19 @@
 	// see code\modules\surgery\limb_augmentation.dm, or code\game\machinery\limbgrower.dm
 	var/forcereplace = FALSE
 
+/obj/item/bodypart/New()
+	. = ..()
+	// BLUEMOON ADD START
+	if(is_robotic_limb())
+		light_brute_msg = "искрится"
+		medium_brute_msg = "покрыта множеством вмятин"
+		heavy_brute_msg = "отваливается"
+
+		light_burn_msg = "покрыта сажей"
+		medium_burn_msg = "обуглена"
+		heavy_burn_msg = "расплавлена"
+	// BLUEMOON ADD END
+
 /obj/item/bodypart/examine(mob/user)
 	. = ..()
 	if(brute_dam > DAMAGE_PRECISION)
@@ -128,7 +144,7 @@
 		if(HAS_TRAIT(C, TRAIT_LIMBATTACHMENT))
 			if(!H.get_bodypart(body_zone) && !animal_origin)
 				if(H == user)
-					H.visible_message("<span class='warning'>[H] jams [src] into [H.p_their()] empty socket!</span>",\
+					H.visible_message("<span class='warning'>[H] jams [src] into [H.ru_ego()] empty socket!</span>",\
 					"<span class='notice'>You force [src] into your empty socket, and it locks into place!</span>")
 				else
 					H.visible_message("<span class='warning'>[user] jams [src] into [H]'s empty socket!</span>",\
@@ -536,7 +552,8 @@
 		. = disabled //inertia, to avoid limbs healing 0.1 damage and being re-enabled
 		if(get_damage(TRUE) >= disable_threshold * (HAS_TRAIT(owner, TRAIT_EASYLIMBDISABLE) ? 0.6 : 1)) //Easy limb disable disables the limb at 40% health instead of 0%
 			if(!last_maxed && !silent)
-				owner.emote("scream")
+				if(!HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+					owner.emote("scream")
 				last_maxed = TRUE
 			if(!is_organic_limb(FALSE) || stamina_dam >= disable_threshold)
 				return BODYPART_DISABLED_DAMAGE
@@ -992,7 +1009,7 @@
 	update_disabled()
 
 /obj/item/bodypart/proc/get_bleed_rate()
-	if(!is_organic_limb()) // maybe in the future we can bleed oil from aug parts, but not now
+	if(!is_organic_limb() && !HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON EDIT - добавлена проверка на robotic_organism
 		return
 	var/bleed_rate = 0
 	if(generic_bleedstacks > 0)
@@ -1002,13 +1019,13 @@
 	listclearnulls(embedded_objects)
 	for(var/obj/item/embeddies in embedded_objects)
 		if(!embeddies.isEmbedHarmless())
-			bleed_rate += 0.5
+			bleed_rate += 0.8
 
 	for(var/thing in wounds)
 		var/datum/wound/W = thing
 		bleed_rate += W.blood_flow
 	if(owner.mobility_flags & ~MOBILITY_STAND)
-		bleed_rate *= 0.75
+		bleed_rate *= 1.2
 	return bleed_rate
 
 /**

@@ -12,7 +12,10 @@ export const KeycardAuth = (props, context) => {
         <Section>
           <Box>
             {data.waiting === 1 && (
-              <span>Waiting for another device to confirm your request...</span>
+              <span>
+                Ожидайте подтверждения запроса
+                на втором устройстве...
+              </span>
             )}
           </Box>
           <Box>
@@ -26,7 +29,7 @@ export const KeycardAuth = (props, context) => {
                     lineHeight="60px"
                     fluid
                     onClick={() => act('auth_swipe')}
-                    content="Authorize" />
+                    content="Авторизовать" />
                 )}
                 {data.auth_required === 0 && (
                   <>
@@ -36,17 +39,17 @@ export const KeycardAuth = (props, context) => {
                       onClick={() => {
                         return act('red_alert');
                       }}
-                      content="Red Alert" />
+                      content="Красный код" />
                     <Button
                       icon="wrench"
                       fluid
                       onClick={() => act('emergency_maint')}
-                      content="Emergency Maintenance Access" />
+                      content="Аварийный доступ в тоннели" />
                     <Button
                       icon="meteor"
                       fluid
                       onClick={() => act('bsa_unlock')}
-                      content="Bluespace Artillery Unlock" />
+                      content="Протоколы Блюспейс-Артиллерии" />
                   </>
                 )}
               </>

@@ -1,15 +1,15 @@
 /datum/round_event_control/sentience
 	name = "Random Human-level Intelligence"
 	typepath = /datum/round_event/ghost_role/sentience
-	weight = 10
+	weight = 50
+	max_occurrences = 2
 	category = EVENT_CATEGORY_FRIENDLY
-	description = "An animal or robot becomes sentient!"
 
 /datum/round_event/ghost_role/sentience
 	minimum_required = 1
 	role_name = "random animal"
 	var/animals = 1
-	var/one = "one"
+	var/one = "один"
 	/// Blacklisted mob_biotypes - Hey can we like, not have player controlled megafauna?
 	var/blacklisted_biotypes = MOB_EPIC
 	fakeable = TRUE
@@ -17,13 +17,13 @@
 /datum/round_event/ghost_role/sentience/announce(fake)
 	var/sentience_report = ""
 
-	var/data = pick("scans from our long-range sensors", "our sophisticated probabilistic models", "our omnipotence", "the communications traffic on your station", "energy emissions we detected", "\[REDACTED\]")
-	var/pets = pick("animals/bots", "bots/animals", "pets", "simple animals", "lesser lifeforms", "\[REDACTED\]")
-	var/strength = pick("human", "moderate", "lizard", "security", "command", "clown", "low", "very low", "\[REDACTED\]")
+	var/data = pick("сканирование с наших сенсоров дальнего действия", "наши сложные вероятностные модели", "наше всемогущество", "коммуникационный трафик на вашей станции", "обнаруженные нами выбросы энергии", "\[REDACTED\]")
+	var/pets = pick("животных/ботов", "ботов/животных", "домашних животных", "простых животных", "\[REDACTED\]")
+	var/strength = pick("человеческий", "умеренный", "ящеровидный", "охранный", "командный", "клоунский", "низкий", "очень низкий", "\[REDACTED\]")
 
-	sentience_report += "Based on [data], we believe that [one] of the station's [pets] has developed [strength] level intelligence, and the ability to communicate."
+	sentience_report += "Основываясь на [data], мы считаем, что [one] из [pets] станции развил [strength] уровень интеллекта и способность к общению."
 
-	priority_announce(sentience_report,"[command_name()] Medium-Priority Update")
+	priority_announce(sentience_report, "Отдел Бесполезных Оповещений", 'sound/announcer/classic/sentinence.ogg')
 
 /datum/round_event/ghost_role/sentience/spawn_role()
 	var/list/mob/dead/observer/candidates
@@ -56,7 +56,7 @@
 		SG.transfer_ckey(SA, FALSE)
 
 		SA.grant_all_languages(TRUE, FALSE, FALSE)
-
+		SA.grant_language(/datum/language/common)
 		SA.sentience_act()
 
 		SA.maxHealth = max(SA.maxHealth, 200)

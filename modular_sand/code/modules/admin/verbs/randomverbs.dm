@@ -16,5 +16,5 @@
 	SSshuttle.autoEnd()
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "End Shift") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	log_admin("[key_name(usr)] ended the shift.")
-	message_admins(span_adminnotice("[key_name_admin(usr)] ended the shift."))
+	message_admins("<span class='adminnotice'>[key_name_admin(usr)] ended the shift.</span>")
 	return

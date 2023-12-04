@@ -4,7 +4,7 @@
 /obj/item/razor/proc/new_hairstyle(mob/living/carbon/human/H, mob/user, mirror)
 	var/location = user.zone_selected
 	if (H == user && !mirror)
-		to_chat(user, span_warning("You need a mirror to properly style your own hair!"))
+		to_chat(user, "<span class='warning'>You need a mirror to properly style your own hair!</span>")
 		balloon_alert(user, "need mirror!")
 		return
 	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
@@ -13,7 +13,7 @@
 	if(!new_style)
 		return
 	if(!get_location_accessible(H, location))
-		to_chat(user, span_warning("The headgear is in the way!"))
+		to_chat(user, "<span class='warning'>The headgear is in the way!</span>")
 		balloon_alert(user, "headgear in the way!")
 		return
 	user.visible_message(span_notice("[user] tries to change [H]'s hairstyle using [src]."), span_notice("You try to change [H]'s hairstyle using [src]."))
@@ -26,7 +26,7 @@
 /obj/item/razor/proc/new_facial_hairstyle(mob/living/carbon/human/H, mob/user, var/mirror)
 	var/location = user.zone_selected
 	if(H == user && !mirror)
-		to_chat(user, span_warning("You need a mirror to properly style your own facial hair!"))
+		to_chat(user, "<span class='warning'>You need a mirror to properly style your own facial hair!</span>")
 		balloon_alert(user, "need mirror!")
 		return
 	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
@@ -35,7 +35,7 @@
 	if(!new_style)
 		return
 	if(!get_location_accessible(H, location))
-		to_chat(user, span_warning("The mask is in the way!"))
+		to_chat(user, "<span class='warning'>The mask is in the way!</span>")
 		balloon_alert(user, "mask in the way!")
 		return
 	user.visible_message(span_notice("[user] tries to change [H]'s facial hair style using [src]."), span_notice("You try to change [H]'s facial hair style using [src]."))
@@ -64,7 +64,7 @@
 	var/extended_icon_state = "straightrazor_open"
 
 /obj/item/razor/straightrazor/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is slitting [user.p_their()] own throat with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
+	user.visible_message("<span class='suicide'>[user] is slitting [user.ru_ego()] own throat with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return (BRUTELOSS)
 
 /obj/item/razor/straightrazor/attack_self(mob/user)
@@ -102,6 +102,6 @@
 
 /obj/item/handmirror/attack_self(mob/user)
 	ADD_TRAIT(user, TRAIT_SELF_AWARE, "mirror_trait")
-	to_chat(user, span_notice("You look into the mirror"))
+	to_chat(user, "<span class='notice'>You look into the mirror</span>")
 	sleep(15 SECONDS)
 	REMOVE_TRAIT(user, TRAIT_SELF_AWARE, "mirror_trait")

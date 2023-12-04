@@ -154,20 +154,19 @@
 	has_gravity = STANDARD_GRAVITY
 	area_flags = VALID_TERRITORY | UNIQUE_AREA | NOTELEPORT
 	flags_1 = NONE
-	// ambience_index = AMBIENCE_DANGER
-	ambientsounds = HIGHSEC
-	// network_root_id = SYNDICATE_NETWORK_ROOT
+	ambientsounds = SHUTTLE_MILITARY
+	shipambience = 'sound/ambience/zone/stadium.ogg'
+	min_ambience_cooldown = 15 SECONDS
+	max_ambience_cooldown = 40 SECONDS
 
 /area/syndicate_mothership/control
 	name = "Syndicate Control Room"
 	icon_state = "syndie-control"
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
-	// network_root_id = SYNDICATE_NETWORK_ROOT
 
 /area/syndicate_mothership/elite_squad
 	name = "Syndicate Elite Squad"
 	icon_state = "syndie-elite"
-	// network_root_id = SYNDICATE_NETWORK_ROOT
 
 /area/fabric_of_reality
 	name = "Tear in the Fabric of Reality"
@@ -182,6 +181,7 @@
 	requires_power = FALSE
 	has_gravity = STANDARD_GRAVITY
 	flags_1 = NONE
+	ambientsounds = ARENA_MUSIC
 
 /area/ctf/control_room
 	name = "Control Room A"
@@ -209,6 +209,12 @@
 
 /area/ctf/flag_room2
 	name = "Flag Room B"
+
+/area/ctf/arena
+	name = "Deathmatch Arena"
+	icon_state = "red"
+	requires_power = 0
+	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 
 // REEBE
 

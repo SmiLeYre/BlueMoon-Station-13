@@ -32,6 +32,7 @@
 	var/banType = "lavaland"
 	var/ghost_usable = TRUE
 	var/skip_reentry_check = FALSE //Skips the ghost role blacklist time for people who ghost/suicide/cryo
+	var/loadout_enabled = FALSE
 
 ///override this to add special spawn conditions to a ghost role
 /obj/effect/mob_spawn/proc/allow_spawn(mob/user, silent = FALSE)
@@ -55,8 +56,8 @@
 		var/mob/dead/observer/O = user
 		if(!O.can_reenter_round() && !skip_reentry_check)
 			return FALSE
-	var/ghost_role = alert(latejoinercalling ? "Latejoin as [mob_name]? (This is a ghost role, and as such, it's very likely to be off-station.)" : "Become [mob_name]? (Warning, You can no longer be cloned!)",,"Yes","No")
-	if(ghost_role == "No" || !loc)
+	var/ghost_role = alert(latejoinercalling ? "Latejoin as [mob_name]? (This is a ghost role, and as such, it's very likely to be off-station.)" : "Become [mob_name]? (Warning, You can no longer be cloned!)",,"Да","Нет")
+	if(ghost_role == "Нет" || !loc)
 		return
 	if(QDELETED(src) || QDELETED(user))
 		return
@@ -90,6 +91,9 @@
 	return ghost_usable
 
 /obj/effect/mob_spawn/proc/special(mob/M)
+	return
+
+/obj/effect/mob_spawn/proc/special_post_appearance(mob/H)
 	return
 
 /obj/effect/mob_spawn/proc/equip(mob/M)
@@ -143,8 +147,15 @@
 		if(assignedrole)
 			M.mind.assigned_role = assignedrole
 		special(M, name)
+		if (M.client)
+			if (loadout_enabled == TRUE)
+				M.client.prefs.copy_to(M)
+				SSjob.equip_loadout(null, M)
+				SSjob.post_equip_loadout(null, M)
+				to_chat(M,"<span class='boldwarning'>В Эксту посещать станцию допустимо, в Динамику запрещено!</span>")
 		MM.name = M.real_name
 		M.checkloadappearance()
+		special_post_appearance(M, name) // BLUEMOON ADD
 	if(uses > 0)
 		uses--
 	if(!permanent && !uses)
@@ -153,6 +164,7 @@
 // Base version - place these on maps/templates.
 /obj/effect/mob_spawn/human
 	mob_type = /mob/living/carbon/human
+	icon_state = "corpsegreytider"
 	//Human specific stuff.
 	var/mob_species = null		//Set to make them a mutant race such as lizard or skeleton. Uses the datum typepath instead of the ID.
 	var/datum/outfit/outfit = /datum/outfit	//If this is a path, it will be instanced in Initialize()
@@ -162,7 +174,6 @@
 	var/id_job = null			//Such as "Clown" or "Chef." This just determines what the ID reads as, not their access
 	var/id_access = null		//This is for access. See access.dm for which jobs give what access. Use "Captain" if you want it to be all access.
 	var/id_access_list = null	//Allows you to manually add access to an ID card.
-	assignedrole = "Ghost Role"
 
 	var/husk = null
 	//these vars are for lazy mappers to override parts of the outfit
@@ -191,12 +202,36 @@
 	var/skin_tone
 	var/canloadappearance = FALSE
 
+	assignedrole = "Ghost Role"
+	var/datum/team/ghost_role/ghost_team
+
+	var/give_cooler_to_mob_if_synth = FALSE // BLUEMOON ADD - если персонаж - синтетик, то ему выдаётся заряженный космический охладитель. Для специальных ролей
+
+	/// set this to make the spawner use the outfit.name instead of its name var for things like cryo announcements and ghost records
+	/// modifying the actual name during the game will cause issues with the GLOB.mob_spawners associative list
+	var/use_outfit_name
+
 /obj/effect/mob_spawn/human/Initialize(mapload)
 	if(ispath(outfit))
 		outfit = new outfit()
 	if(!outfit)
 		outfit = new /datum/outfit
 	return ..()
+
+// BLUEMOON ADD START - особые действия после выставления персонажу расы и внешности игрока (ставлю сюда, чтобы повысить читаемость)
+/obj/effect/mob_spawn/human/special_post_appearance(mob/H)
+	// Не добавлено в аутфит, т.к. раса ставится ПОСЛЕ выставления аутфита
+	if(give_cooler_to_mob_if_synth)
+		if(HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM))
+			if(!r_hand)
+				H.put_in_r_hand(new /obj/item/device/cooler/charged(H))
+			else if(!l_hand)
+				H.put_in_l_hand(new /obj/item/device/cooler/charged(H))
+			else
+				to_chat(H, span_reallybig("Не забудьте забрать космический охладитель под собой.")) // чтобы не упустили из виду при резком спавне
+				new /obj/item/device/cooler/charged(H.loc)
+	. = ..()
+// BLUEMOON ADD END
 
 /obj/effect/mob_spawn/human/equip(mob/living/carbon/human/H)
 	if(mob_species)
@@ -424,7 +459,7 @@
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
 	short_desc = "You are a space bartender!"
-	flavour_text = "Time to mix drinks and change lives. Smoking space drugs makes it easier to understand your patrons' odd dialect."
+	flavour_text = "Время смешивать напитки и менять жизни. Курение космических наркотиков облегчает понимание странного диалекта ваших покровителей!"
 	assignedrole = "Space Bartender"
 	id_job = "Bartender"
 	canloadappearance = TRUE
@@ -452,11 +487,11 @@
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
 	short_desc = "You're a spunky lifeguard!"
-	flavour_text = "It's up to you to make sure nobody drowns or gets eaten by sharks and stuff."
+	flavour_text = "Вы посетитель пляжа и вы уже не помните, сколько вы здесь пробыли! Какое же это приятное место."
 	assignedrole = "Beach Bum"
 
 /obj/effect/mob_spawn/human/beach/alive/lifeguard
-	flavour_text = "<span class='big bold'>You're a spunky lifeguard!</span><b> It's up to you to make sure nobody drowns or gets eaten by sharks and stuff.</b>"
+	flavour_text = "Вы - пляжный спасатель! Присматривай за посетителями пляжа, чтобы никто не утонул, не был съеден акулами и так далее."
 	mob_gender = "female"
 	name = "lifeguard sleeper"
 	id_job = "Lifeguard"
@@ -560,7 +595,7 @@
 /obj/effect/mob_spawn/human/skeleton
 	name = "skeletal remains"
 	mob_name = "skeleton"
-	mob_species = /datum/species/skeleton
+	mob_species = /datum/species/skeleton/space
 	mob_gender = NEUTER
 
 /obj/effect/mob_spawn/human/skeleton/alive
@@ -614,8 +649,8 @@
 	job_description = "Space Bar Patron"
 
 /obj/effect/mob_spawn/human/alive/space_bar_patron/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
-	var/despawn = alert("Return to cryosleep? (Warning, Your mob will be deleted!)",,"Yes","No")
-	if(despawn == "No" || !loc || !Adjacent(user))
+	var/despawn = alert("Return to cryosleep? (Warning, Your mob will be deleted!)",,"Да","Нет")
+	if(despawn == "Нет" || !loc || !Adjacent(user))
 		return
 	user.visible_message("<span class='notice'>[user.name] climbs back into cryosleep...</span>")
 	qdel(user)
@@ -647,6 +682,7 @@
 	assignedrole = "Cydonian Knight"
 
 /obj/effect/mob_spawn/human/lavaknight/special(mob/living/new_spawn)
+	. = ..()
 	if(ishuman(new_spawn))
 		var/mob/living/carbon/human/H = new_spawn
 		H.dna.features["mam_ears"] = "Cat, Big"	//cat people

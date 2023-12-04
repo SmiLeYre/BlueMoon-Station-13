@@ -15,7 +15,7 @@
 		if(unwrapped == 0)
 			icon_state 	= "sounding_rod"
 			unwrapped = 1
-			to_chat(user, span_notice("You unwrap the rod."))
+			to_chat(user, "<span class='notice'>You unwrap the rod.</span>")
 			playsound(user, 'sound/items/poster_ripped.ogg', 50, 1, -1)
 			return
 
@@ -51,8 +51,7 @@
 	if(!do_mob(user, G.owner, 4 SECONDS))
 		return FALSE
 
-
 /obj/item/genital_equipment/sounding/item_inserted(datum/source, obj/item/organ/genital/G, mob/user)
 	. = TRUE
 	playsound(G.owner, 'modular_sand/sound/lewd/champ_fingering.ogg', 50, 1, -1)
-	to_chat(G.owner, span_userlove("Your penis feels stuffed and stretched!"))
+	to_chat(G.owner, span_userlove("Ваш половой член кажется заполненным и растянутым!"))

@@ -102,7 +102,7 @@ Difficulty: Medium
 
 /mob/living/simple_animal/hostile/megafauna/dragon/glaurung/AltClickOn(atom/movable/A)
 	if(!istype(A))
-		to_chat(src, span_warning("Your wings are too damaged for old swoop maneuvers."))
+		to_chat(src, "<span class='warning'>Your wings are too damaged for old swoop maneuvers.</span>")
 		return
 
 /obj/item/gps/internal/glaurung

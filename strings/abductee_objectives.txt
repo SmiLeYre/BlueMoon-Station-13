@@ -1,39 +1,40 @@
-Try to get formally executed for a crime you didn't commit, without a false confession.
-Being alone and in large groups are both frightening.  Try to be alone with only one other person whenever possible.
-No matter how they say it, other people keep mispronouncing your name.  Be sure to correct them whenever possible.
-The Syndicate has hired you to compile dossiers on all important members of the crew. Be sure they don't know you're doing it.
-There is only one other person in existence, he is just really good at pretending to be multiple people.
-There are alien parasites masquerading as people's hair.  Save people from this invasion.
-You died back there and went to heaven... or is it hell? No one here seems to know they're dead. Convince them, and maybe you can escape this limbo.
-You are doomed to feel woefully incomplete forever... until you find your true love on this station. They're waiting for you!
-You're the narrator of this tale. Follow around the protagonists to tell their story.
-The leaders of this station are hiding a grand, evil conspiracy. Only you can learn what it is, and expose it to the people!
-All the pets around here suck. You need to make them cooler. Replace them with exotic beasts!
-You're throwing a huge rager. Make it as awesome as possible so the whole crew comes... OR ELSE!
-The clown is not funny. You can do better! Steal his audience and make the crew laugh!
-You burn with passion for music. Share your vision. If anyone hates it, beat them on the head with your instrument!
-Go have a good conversation with the singularity/tesla/supermatter crystal. Bonus points if it responds.
-Expand the station.
-So much lies undiscovered. Look deeper into the machinations of the universe.
-Climb the corporate ladder all the way to the top!
-Fuck the system! Defect from the station and start an independent colony in space, Lavaland or the derelict. Recruit crewmates if you can.
-Nanotrasen is abusing the animals! Save as many as you can!
-It's all an entirely virtual simulation within an underground vault. Convince the crew to escape the shackles of VR.
-This is a secret social experiment conducted by Nanotrasen. Convince the crew that this is the truth.
-Call forth a spirit from the other side.
-You are secretly an android. Interface with as many machines as you can to boost your own power so the AI may acknowledge you at last.
-The elder gods hunger. Gather a cult and conduct a ritual to summon one.
-You have been changed forever. Find the ones that did this to you and give them a taste of their own medicine.
-Ensure your department prospers over all else.
-The crew must get to know one another better. Break down the walls inside the station!
-The CEO of Nanotrasen is coming! Ensure the station is in absolutely pristine condition.
-Flood the station's powernet with as much electricity as you can.
-Replace all the floor tiles with wood, carpeting, grass or bling.
-You must escape the station! Get the shuttle called!
-Don't allow anyone to be cloned.
-Their cold, mindless gaze pierce your soul. They see your every movements, it's merely a question of time before they try to control us further. Deactivate all cameras!
-Your body must be improved. Ingest as many drugs as you can.
-You are hungry. Eat as much food as you can find.
-You see you see what they cannot you see the open door you seeE you SEeEe you SEe yOU seEee SHOW THEM ALL
-Convince the crew that you are a paraplegic.
-Start a collection of corpses. Don't kill people to get these corpses.
+Постарайтесь, чтобы вас официально казнили за преступление, которое вы не совершали, без ложных признаний.
+Быть в одиночестве и в больших группах - это пугает.  Постарайтесь быть наедине только с одним человеком, когда это возможно.
+Неважно, как они это говорят, другие люди продолжают неправильно произносить твое имя.  Обязательно исправляйте их, когда это возможно.
+Синдикат нанял вас для составления досье на всех важных членов экипажа. Убедись, что они не знают, что ты это делаешь.
+Существует только один человек, он просто очень хорошо притворяется множественностью людей.
+Есть инопланетные паразиты, маскирующиеся под волосы людей.  Спасите людей от вторжения.
+Ты там умер и попал в рай.... или это ад? Похоже, никто здесь не знает, что они мертвы. Убедить их, и, возможно, ты сможешь сбежать из этого лимба.
+Ты обречен чувствовать себя несчастливо неполноценным навсегда... пока не найдешь свою настоящую любовь на этой станции. Они ждут тебя!
+Ты рассказчик этой истории. Следуйте за главными героями, чтобы рассказать их историю.
+Руководители этой станции скрывают большой, злой заговор. Только ты можешь узнать в чем дело и рассказать об этом людям!
+Все домашние животные здесь отстой. Ты должен сделать их круче. Замените их экзотическими зверями!
+Ты устраиваешь небывалую тусу. Сделай всё как можно круче, чтобы вся команда пришла.... ИЛИ НЕТ!
+Клоун не смешной. Ты можешь сделать лучше! Укради его аудиторию и заставь экипаж смеяться!
+Ты горишь от страсти к музыке. Поделитесь своим видением. Если кому-то это не нравится, ударьте его своим инструментом по голове!
+Иди поговори с кристаллом сингулярности/теслой/суперматерией. Бонусные очки, если вам ответят.
+Ты беременна и скоро родишь. Найди безопасное место для родов.
+Расширьте станцию.
+Столько лжи нераскрыто. Загляни глубже в козни Вселенной.
+Поднимайтесь по служебной лестнице до самого верха!
+К черту систему! Дезертируйте со станции и создайте независимую колонию в космосе, Лаваленде или заброшенном месте. По возможности наймите товарищей по команде.
+NanoTrasen жестоко обращается с животными! Спасите столько, сколько сможете!
+Все это полностью виртуальная симуляция в подземном хранилище. Убедите экипаж вырваться из оков VR.
+Это секретный социальный эксперимент, проведенный NanoTrasen. Убедите команду, что это правда.
+Вызовите дух с другой стороны.
+Ты втайне андроид. Взаимодействуйте с как можно большим количеством машин, чтобы увеличить свою собственную мощность, чтобы AI наконец-то смог распознать вас.
+Старшие боги голодают. Соберите культ и проведите ритуал для его вызова.
+Ты изменилась навсегда. Найдите тех, кто сделал это с вами, и дайте им попробовать свои лекарства.
+Убедитесь, что ваш департамент процветает больше всего на свете.
+Экипаж должен узнать друг друга получше. Сломай стены внутри участка!
+Генеральный директор NanoTrasen приезжает! Убедитесь, что станция находится в абсолютно безупречном состоянии.
+Наполните электросеть станции как можно большим количеством электричества, чем вы можете.
+Замените всю напольную плитку на деревянную, ковровую, травяную или блестящую.
+Вы должны покинуть станцию! Звоните на шатттл!
+Не позволяйте никому быть клонированным.
+Кислород убивает их всех, и они даже не знают об этом. Убедитесь, что на станции нет кислорода.
+Ваше тело должно быть улучшено. Поглощайте как можно больше наркотиков.
+Ты голоден. Ешь столько еды, сколько сможешь найти.
+Ты видишь, что они не могут видеть открытую дверь, которую ты видишь... Ты видишь, что ты видишь, что они не видят, что ты видишь...
+Убедить команду, что у меня паралич.
+Начните собирать трупы. Не убивайте людей, чтобы получить эти трупы.

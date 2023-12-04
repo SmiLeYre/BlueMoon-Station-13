@@ -24,7 +24,7 @@
 /turf/open/floor/plating/beach/sand,
 /area/ruin/powered)
 "f" = (
-/obj/structure/chair/sofa/left{
+/obj/structure/chair/sofa/left/brown{
 	dir = 4
 	},
 /turf/open/floor/plating/beach/sand,
@@ -43,7 +43,7 @@
 /turf/open/floor/plating/beach/sand,
 /area/ruin/powered)
 "i" = (
-/obj/structure/chair/sofa/right{
+/obj/structure/chair/sofa/right/brown{
 	dir = 4
 	},
 /turf/open/floor/plating/beach/sand,
@@ -53,7 +53,7 @@
 /turf/open/floor/plating/beach/sand,
 /area/ruin/powered)
 "k" = (
-/obj/structure/chair/sofa{
+/obj/structure/chair/sofa/middle/brown{
 	dir = 4
 	},
 /mob/living/simple_animal/hostile/gorilla/familiar{

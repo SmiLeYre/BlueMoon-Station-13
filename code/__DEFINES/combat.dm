@@ -86,7 +86,7 @@
 /// Threshold under for which you are unable to draw from stamina health to replace stamina buffer
 #define STAMINA_NO_OVERDRAW_THRESHOLD		100
 
-#define CRAWLUNDER_DELAY							30 //Delay for crawling under a standing mob
+#define CRAWLUNDER_DELAY					15 //Delay for crawling under a standing mob
 
 //Bitflags defining which status effects could be or are inflicted on a mob
 // This is a bit out of date/inaccurate in light of all the new status effects and is probably pending rework.
@@ -110,6 +110,7 @@
 #define CLICK_CD_RAPID 2
 #define CLICK_CD_CLICK_ABILITY 6
 #define CLICK_CD_HANDCUFFED 10
+#define CLICK_CD_BREAKOUT 100
 #define CLICK_CD_RESIST 20
 #define CLICK_CD_GRABBING 10
 

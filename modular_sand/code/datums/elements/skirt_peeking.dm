@@ -44,17 +44,17 @@
 
 /datum/element/skirt_peeking/proc/on_examine(mob/living/carbon/human/peeked, mob/peeker, list/examine_list)
 	if(can_skirt_peek(peeked, peeker))
-		examine_list += span_purple("[peeked.p_theyre(TRUE)] wearing a skirt! I can probably give it a little peek <b>looking closer</b>.")
+		examine_list += span_purple("[peeked.ru_who(TRUE)] одет[peeked.ru_a()] в юбку! Наверное, под неё можно <b>подсмотреть</b>...")
 
 /datum/element/skirt_peeking/proc/on_closer_look(mob/living/carbon/human/peeked, mob/peeker, list/examine_content)
 	if(can_skirt_peek(peeked, peeker))
 		var/obj/item/clothing/under/worn_uniform = peeked.get_item_by_slot(ITEM_SLOT_ICLOTHING)
-		var/string = "Peeking under [peeked]'s [worn_uniform.name], you can see "
+		var/string = "Ты подсматриваешь под [worn_uniform.name] [peeked]. Ты видишь "
 		var/obj/item/clothing/underwear/worn_underwear = peeked.get_item_by_slot(ITEM_SLOT_UNDERWEAR)
 		if(worn_underwear)
-			string += "a "
+			string += ""
 			if(!is_type_in_typecache(worn_underwear.type, GLOB.pairless_panties)) //a pair of thong
-				string += "pair of "
+				string += ""
 			if(worn_underwear.color)
 				string += "<font color='[worn_underwear.color]'>[worn_underwear.name]</font>."
 			else
@@ -63,12 +63,12 @@
 			var/obj/item/organ/genital/penis/penis = peeked.getorganslot(ORGAN_SLOT_PENIS)
 			var/obj/item/organ/genital/vagina/vagina = peeked.getorganslot(ORGAN_SLOT_VAGINA)
 			if(penis?.aroused_state)
-				string += span_love(" There's a visible bulge on [peeked.p_their()] front.")
+				string += span_love(" На них просматривается выпуклость.")
 			else if(vagina?.aroused_state)
-				string += span_love(" [peeked.p_theyre(TRUE)] wet with arousal.")
+				string += span_love(" Они выглядят влажными.")
 
 		else
-			string += "[peeked.p_theyre()] not wearing anything!\n[peeked.p_their(TRUE)]"
+			string += "абсолютно нагую промежность! [peeked.internal_organs ? "Следом ты замечаешь:" : ""]"
 			var/list/genitals = list()
 			for(var/obj/item/organ/genital/genital in peeked.internal_organs)
 				if(CHECK_BITFIELD(genital.genital_flags, (GENITAL_INTERNAL|GENITAL_HIDDEN)))
@@ -78,30 +78,31 @@
 				switch(genital.type)
 					if(/obj/item/organ/genital/vagina)
 						if(genital.aroused_state)
-							appended += " wet"
+							appended += " влажная"
 						if(lowertext(genital.shape) != "human")
 							appended += " [lowertext(genital.shape)]"
 						if(lowertext(genital.shape) != "cloaca") //their wet cloaca vagina
 							appended += " [lowertext(genital.name)]" // goodbye pussy
+						appended += ","
 
 					if(/obj/item/organ/genital/testicles)
 						var/obj/item/organ/genital/testicles/nuts = genital
-						appended += " [lowertext(nuts.size_name)] [lowertext(nuts.name)]"
+						appended += " [lowertext(nuts.size_name)] размера [lowertext(nuts.name)], "
 					if(/obj/item/organ/genital/penis)
 						if(genital.aroused_state)
-							appended += " fully erect"
+							appended += " стоящий"
 						if(lowertext(genital.shape) != "human")
 							appended += " [lowertext(genital.shape)]"
-						appended += " [lowertext(genital.name)]" // Name it something funny, i dare you.
+						appended += " [lowertext(genital.name)]," // Name it something funny, i dare you.
 					if(/obj/item/organ/genital/butt)
 						var/obj/item/organ/genital/butt/booty = genital
-						appended += " [booty.size_name] [lowertext(booty.name)]" // Maybe " average butt pair" isn't the best for now
+						appended += " [booty.size_name] размера [lowertext(booty.name)]" // Maybe " average butt pair" isn't the best for now
 					else
 						continue
 				genitals += appended
 
-			string += english_list(genitals, " featureless groin", " and", ",")
-			string += " on full display."
+			string += english_list(genitals, "", "", "")
+			string += "."
 
 		examine_content += span_purple(string)
 		// Let's see if we caught them, addtimer so it appears after the peek.
@@ -121,5 +122,5 @@
 		!peeker.is_eyes_covered(FALSE) && !(eye_blocker && eye_blocker.tint > 0) && \
 		!(peeker.invisibility > peeked.invisibility) && !(peeker.alpha <= 30)))
 		return
-	to_chat(peeked, span_warning("You notice [peeker] looking under your [worn_uniform.name]!"))
-	to_chat(peeker, span_warning("[peeked] notices you peeking under [peeked.p_their()] [worn_uniform.name]!"))
+	to_chat(peeked, span_warning("[peeker] подсматривает под твою [worn_uniform.name]!"))
+	to_chat(peeker, span_warning("[peeked] замечает, как ты подсматриваешь под [peeked.ru_ego()] [worn_uniform.name]!"))

@@ -467,6 +467,67 @@
 		else
 			setDir(WEST, ismousemovement)
 
+//debug
+/atom/movable/screen/proc/scale_to(x1,y1)
+	if(!y1)
+		y1 = x1
+	var/matrix/M = new
+	M.Scale(x1,y1)
+	transform = M
+
+/atom/movable/screen/click_catcher
+	icon = 'icons/mob/screen_gen.dmi'
+	icon_state = "catcher"
+	plane = CLICKCATCHER_PLANE
+	mouse_opacity = MOUSE_OPACITY_OPAQUE
+	screen_loc = "CENTER"
+
+#define MAX_SAFE_BYOND_ICON_SCALE_TILES (MAX_SAFE_BYOND_ICON_SCALE_PX / world.icon_size)
+#define MAX_SAFE_BYOND_ICON_SCALE_PX (33 * 32) //Not using world.icon_size on purpose.
+
+/atom/movable/screen/click_catcher/proc/UpdateGreed(view_size_x = 15, view_size_y = 15, special_hud = FALSE)
+	var/icon/newicon = icon('icons/mob/screen_gen.dmi', "catcher")
+	var/ox = min(MAX_SAFE_BYOND_ICON_SCALE_TILES, view_size_x)
+	var/oy = min(MAX_SAFE_BYOND_ICON_SCALE_TILES, view_size_y)
+	var/px = view_size_x * world.icon_size
+	var/py = view_size_y * world.icon_size
+	var/sx = min(MAX_SAFE_BYOND_ICON_SCALE_PX, px)
+	var/sy = min(MAX_SAFE_BYOND_ICON_SCALE_PX, py)
+	newicon.Scale(sx, sy)
+	icon = newicon
+	if(special_hud)
+		if(special_hud == 2)
+			screen_loc = "bottom:LEFT,CENTER"
+		else
+			screen_loc = "hud:LEFT,CENTER"
+	else
+		screen_loc = "CENTER-[(ox-1)*0.5],CENTER-[(oy-1)*0.5]"
+	var/matrix/M = new
+	M.Scale(px/sx, py/sy)
+	transform = M
+
+/atom/movable/screen/click_catcher/Initialize(mapload)
+	. = ..()
+	RegisterSignal(SSmapping, COMSIG_PLANE_OFFSET_INCREASE, PROC_REF(offset_increased))
+	offset_increased(SSmapping, 0, SSmapping.max_plane_offset)
+
+// Draw to the lowest plane level offered
+/atom/movable/screen/click_catcher/proc/offset_increased(datum/source, old_offset, new_offset)
+	SIGNAL_HANDLER
+	SET_PLANE_W_SCALAR(src, initial(plane), new_offset)
+
+/atom/movable/screen/click_catcher/Click(location, control, params)
+	var/list/modifiers = params2list(params)
+	if(LAZYACCESS(modifiers, MIDDLE_CLICK) && iscarbon(usr))
+		var/mob/living/carbon/C = usr
+		C.swap_hand()
+	else
+		var/turf/click_turf = parse_caught_click_modifiers(modifiers, get_turf(usr.client ? usr.client.eye : usr), usr.client)
+		if (click_turf)
+			modifiers["catcher"] = TRUE
+			click_turf.Click(click_turf, control, list2params(modifiers))
+	. = 1
+
 /* MouseWheelOn */
 
 /mob/proc/MouseWheelOn(atom/A, delta_x, delta_y, params)

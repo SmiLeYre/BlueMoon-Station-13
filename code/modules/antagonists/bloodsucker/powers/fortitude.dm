@@ -6,8 +6,8 @@
 	name = "Fortitude"
 	desc = "Withstand egregious physical wounds and walk away from attacks that would stun, pierce, and dismember lesser beings. You cannot run while active."
 	button_icon_state = "power_fortitude"
-	bloodcost = 30
-	cooldown = 80
+	bloodcost = 60
+	cooldown = 200
 	bloodsucker_can_buy = TRUE
 	amToggle = TRUE
 	warn_constant_cost = TRUE
@@ -47,7 +47,7 @@
 			B.AddBloodVolume(-0.5)
 		sleep(20) // Check every few ticks that we haven't disabled this power
 	// Return to Running (if you were before)
-	
+
 /datum/action/bloodsucker/fortitude/DeactivatePower(mob/living/user = owner, mob/living/target)
 	..()
 	// Restore Traits & Effects

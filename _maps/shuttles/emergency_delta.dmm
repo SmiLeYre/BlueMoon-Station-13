@@ -316,7 +316,7 @@
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/leafybush,
 /obj/structure/window/shuttle,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/shuttle/escape)
 "ay" = (
 /obj/machinery/computer/med_data{
@@ -418,7 +418,7 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/genericbush,
 /obj/structure/window/shuttle,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/shuttle/escape)
 "aJ" = (
 /obj/machinery/shower{
@@ -558,7 +558,7 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/sunnybush,
 /obj/structure/window/shuttle,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/shuttle/escape)
 "aY" = (
 /obj/structure/extinguisher_cabinet{
@@ -640,7 +640,7 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/fernybush,
 /obj/structure/window/shuttle,
-/turf/open/floor/grass,
+/turf/open/floor/grass/grass0,
 /area/shuttle/escape)
 "bf" = (
 /obj/structure/reagent_dispensers/watertank,

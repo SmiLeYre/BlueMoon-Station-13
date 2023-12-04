@@ -139,6 +139,8 @@
 	item_state = "redeveninggown"
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
+	flags_inv = HIDESHOES //You can't see shoes under the gown
+	alternate_worn_layer = ABOVE_SHOES_LAYER
 
 /obj/item/clothing/under/dress/skirt/plaid
 	name = "red plaid skirt"
@@ -182,30 +184,40 @@
 	icon_state = "bride_white"
 	item_state = "bride_white"
 	can_adjust = FALSE
+	flags_inv = HIDESHOES //You can't see shoes under the gown
+	alternate_worn_layer = ABOVE_SHOES_LAYER
 
 /obj/item/clothing/under/dress/wedding/orange
 	name = "orange wedding dress"
 	desc = "A big and puffy orange dress."
 	icon_state = "bride_orange"
 	item_state = "bride_orange"
+	flags_inv = HIDESHOES //You can't see shoes under the gown
+	alternate_worn_layer = ABOVE_SHOES_LAYER
 
 /obj/item/clothing/under/dress/wedding/purple
 	name = "purple wedding dress"
 	desc = "A big and puffy purple dress."
 	icon_state = "bride_purple"
 	item_state = "bride_purple"
+	flags_inv = HIDESHOES //You can't see shoes under the gown
+	alternate_worn_layer = ABOVE_SHOES_LAYER
 
 /obj/item/clothing/under/dress/wedding/blue
 	name = "blue wedding dress"
 	desc = "A big and puffy blue dress."
 	icon_state = "bride_blue"
 	item_state = "bride_blue"
+	flags_inv = HIDESHOES //You can't see shoes under the gown
+	alternate_worn_layer = ABOVE_SHOES_LAYER
 
 /obj/item/clothing/under/dress/wedding/red
 	name = "red wedding dress"
 	desc = "A big and puffy red dress."
 	icon_state = "bride_red"
 	item_state = "bride_red"
+	flags_inv = HIDESHOES //You can't see shoes under the gown
+	alternate_worn_layer = ABOVE_SHOES_LAYER
 
 /obj/item/clothing/under/dress/skirt/polychromic
 	name = "polychromic skirt"

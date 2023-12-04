@@ -608,7 +608,7 @@
 	dir = 4;
 	layer = 2.9
 	},
-/obj/machinery/computer/card,
+/obj/machinery/modular_computer/console/preset/id,
 /obj/effect/turf_decal/tile/green,
 /obj/effect/turf_decal/tile/green{
 	dir = 4
@@ -1424,7 +1424,7 @@
 /turf/open/floor/wood,
 /area/command/heads_quarters/captain)
 "aek" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 8
 	},
 /turf/open/floor/wood,
@@ -2307,7 +2307,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -4487,17 +4487,17 @@
 /turf/closed/wall/r_wall,
 /area/ai_monitored/turret_protected/aisat_interior)
 "alC" = (
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/right/brown,
 /obj/effect/landmark/start/cyborg,
 /turf/open/floor/carpet/royalblack,
 /area/ai_monitored/turret_protected/aisat_interior)
 "alD" = (
-/obj/structure/chair/sofa,
+/obj/structure/chair/sofa/middle/brown,
 /obj/effect/landmark/start/cyborg,
 /turf/open/floor/carpet/royalblack,
 /area/ai_monitored/turret_protected/aisat_interior)
 "alE" = (
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/left/brown,
 /obj/effect/landmark/start/cyborg,
 /turf/open/floor/carpet/royalblack,
 /area/ai_monitored/turret_protected/aisat_interior)
@@ -4899,12 +4899,14 @@
 /turf/open/floor/festive/cobblestone,
 /area/edina/street/intersection/princessperimeter/north)
 "amL" = (
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/table,
 /obj/item/poster/random_official,
 /turf/open/floor/festive/alleyway/safe,
 /area/maintenance/starboard/fore)
 "amM" = (
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/closet/wardrobe/mixed,
 /turf/open/floor/festive/alleyway/safe,
@@ -4913,6 +4915,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/table,
 /obj/item/poster/random_official,
@@ -4925,6 +4928,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/closet/emcloset,
 /turf/open/floor/festive/alleyway/safe,
@@ -4936,6 +4940,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/table,
 /obj/item/poster/random_official,
@@ -4948,6 +4953,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/closet/wardrobe/mixed,
 /turf/open/floor/festive/alleyway/safe,
@@ -4959,6 +4965,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/closet/crate{
 	icon_state = "crateopen"
@@ -4969,6 +4976,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/closet/wardrobe/mixed,
 /turf/open/floor/festive/alleyway/safe,
@@ -4996,6 +5004,7 @@
 /turf/open/floor/festive/alleyway/safe,
 /area/maintenance/starboard/fore)
 "amW" = (
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/rack,
 /turf/open/floor/festive/alleyway/safe,
@@ -5005,11 +5014,13 @@
 /turf/open/floor/festive/alleyway/safe,
 /area/maintenance/starboard/fore)
 "amY" = (
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/closet/firecloset,
 /turf/open/floor/festive/alleyway/safe,
 /area/maintenance/starboard/fore)
 "amZ" = (
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/closet/emcloset,
 /turf/open/floor/festive/alleyway/safe,
@@ -5309,14 +5320,14 @@
 	id = "PCell 3";
 	pixel_x = -20
 	},
-/obj/structure/closet/secure_closet/brig,
+/obj/structure/closet/secure_closet/genpop,
 /turf/open/floor/wood,
 /area/security/prison)
 "anP" = (
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/structure/closet/secure_closet/brig,
+/obj/structure/closet/secure_closet/genpop,
 /turf/open/floor/wood,
 /area/security/prison)
 "anQ" = (
@@ -5509,6 +5520,7 @@
 /turf/open/floor/carpet,
 /area/security/detectives_office)
 "aoh" = (
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/rack,
 /turf/open/floor/festive/alleyway/safe,
@@ -6037,7 +6049,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/brig,
+/obj/structure/closet/secure_closet/genpop,
 /turf/open/floor/wood,
 /area/security/prison)
 "apz" = (
@@ -6373,7 +6385,7 @@
 /turf/open/floor/wood,
 /area/security/prison)
 "aqr" = (
-/obj/structure/closet/secure_closet/brig,
+/obj/structure/closet/secure_closet/genpop,
 /turf/open/floor/wood,
 /area/security/prison)
 "aqs" = (
@@ -7398,7 +7410,7 @@
 /area/security/prison)
 "asO" = (
 /obj/structure/table,
-/obj/machinery/computer/libraryconsole/bookmanagement,
+/obj/machinery/computer/library/checkout,
 /turf/open/floor/wood,
 /area/security/prison)
 "asP" = (
@@ -8482,14 +8494,14 @@
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
 "avB" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/structure/window/reinforced{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/engineering/main)
 "avC" = (
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/industrial,
 /obj/structure/window/reinforced{
 	dir = 1
 	},
@@ -8588,6 +8600,7 @@
 /turf/open/floor/grass/snow/edina,
 /area/edina)
 "avQ" = (
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/table,
 /turf/open/floor/festive/alleyway/safe,
@@ -8914,7 +8927,7 @@
 /area/security/processing)
 "awA" = (
 /obj/effect/decal/festive/fairylights,
-/obj/structure/chair/sofa/corner{
+/obj/structure/chair/sofa/corner/brown{
 	dir = 4
 	},
 /turf/open/floor/wood,
@@ -9481,6 +9494,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/rack,
 /turf/open/floor/festive/alleyway/safe,
@@ -9492,9 +9506,12 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/closet/wardrobe/mixed,
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/festive/alleyway/safe,
 /area/maintenance/starboard/fore)
@@ -9505,6 +9522,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/closet/cardboard,
 /turf/open/floor/festive/alleyway/safe,
@@ -9554,6 +9572,7 @@
 /turf/open/floor/festive/alleyway/safe,
 /area/maintenance/starboard/fore)
 "ayh" = (
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/maintenance{
@@ -9563,13 +9582,17 @@
 /turf/open/floor/festive/alleyway/safe,
 /area/maintenance/starboard/fore)
 "ayi" = (
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/closet/wardrobe/mixed,
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/festive/alleyway/safe,
 /area/maintenance/starboard/fore)
 "ayj" = (
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/festive/alleyway/safe,
 /area/maintenance/starboard/fore)
@@ -9837,7 +9860,7 @@
 /area/security/processing)
 "ayY" = (
 /obj/effect/decal/festive/fairylights,
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/left/brown,
 /turf/open/floor/wood,
 /area/command/heads_quarters/ce)
 "ayZ" = (
@@ -9954,7 +9977,7 @@
 /turf/closed/wall/mineral/iron,
 /area/maintenance/starboard/fore)
 "azq" = (
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/right/brown,
 /obj/machinery/flasher{
 	id = "Cell 1";
 	pixel_x = -28
@@ -9962,18 +9985,18 @@
 /turf/open/floor/carpet/red,
 /area/security/brig)
 "azr" = (
-/obj/structure/chair/sofa,
+/obj/structure/chair/sofa/middle/brown,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
 /turf/open/floor/carpet/red,
 /area/security/brig)
 "azs" = (
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/left/brown,
 /turf/open/floor/carpet/red,
 /area/security/brig)
 "azt" = (
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/right/brown,
 /obj/machinery/flasher{
 	id = "Cell 2";
 	pixel_x = -28
@@ -9981,7 +10004,7 @@
 /turf/open/floor/carpet/red,
 /area/security/brig)
 "azu" = (
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/right/brown,
 /obj/machinery/flasher{
 	id = "Cell 3";
 	pixel_x = -28
@@ -9989,7 +10012,7 @@
 /turf/open/floor/carpet/red,
 /area/security/brig)
 "azv" = (
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/right/brown,
 /obj/machinery/flasher{
 	id = "Cell 4";
 	pixel_x = -28
@@ -11462,7 +11485,7 @@
 /turf/open/floor/festive/cobblestone,
 /area/edina/street/primary/princess)
 "aEb" = (
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/right/brown,
 /turf/open/floor/wood,
 /area/commons/storage/tools)
 "aEc" = (
@@ -11477,11 +11500,11 @@
 /turf/open/floor/festive/cobblestone,
 /area/edina/street/intersection/princessperimeter/north)
 "aEf" = (
-/obj/structure/chair/sofa,
+/obj/structure/chair/sofa/middle/brown,
 /turf/open/floor/wood,
 /area/commons/storage/tools)
 "aEg" = (
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/left/brown,
 /turf/open/floor/wood,
 /area/commons/storage/tools)
 "aEi" = (
@@ -13227,13 +13250,13 @@
 /turf/open/floor/plasteel/freezer,
 /area/maintenance/bar)
 "aIB" = (
-/obj/structure/chair/sofa/right{
+/obj/structure/chair/sofa/right/brown{
 	dir = 1
 	},
 /turf/open/floor/wood,
 /area/commons/storage/tools)
 "aIC" = (
-/obj/structure/chair/sofa{
+/obj/structure/chair/sofa/middle/brown{
 	dir = 1
 	},
 /turf/open/floor/wood,
@@ -13623,7 +13646,7 @@
 /turf/open/floor/plasteel/dark,
 /area/science/xenobiology)
 "aJp" = (
-/obj/structure/chair/sofa/left{
+/obj/structure/chair/sofa/left/brown{
 	dir = 1
 	},
 /turf/open/floor/wood,
@@ -13895,8 +13918,10 @@
 /turf/open/floor/carpet/orange,
 /area/maintenance/bar)
 "aJY" = (
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/rack,
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/festive/alleyway/safe,
 /area/service/bar/atrium)
@@ -14155,8 +14180,10 @@
 /turf/open/floor/festive/alleyway,
 /area/science)
 "aKJ" = (
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/closet/wardrobe/mixed,
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/festive/alleyway/safe,
 /area/service/bar/atrium)
@@ -14213,7 +14240,7 @@
 /turf/open/floor/festive/alleyway,
 /area/science)
 "aKV" = (
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/right/brown,
 /turf/open/floor/wood,
 /area/maintenance/bar)
 "aKW" = (
@@ -14416,7 +14443,7 @@
 /turf/open/floor/festive/alleyway,
 /area/science)
 "aLx" = (
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/left/brown,
 /turf/open/floor/wood,
 /area/maintenance/bar)
 "aLy" = (
@@ -14449,7 +14476,7 @@
 /turf/open/floor/festive/alleyway,
 /area/edina)
 "aLD" = (
-/obj/structure/chair/sofa/left{
+/obj/structure/chair/sofa/left/brown{
 	dir = 1
 	},
 /turf/open/floor/wood,
@@ -14464,7 +14491,9 @@
 /turf/open/floor/wood,
 /area/security/prison)
 "aLF" = (
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/rack,
 /turf/open/floor/festive/alleyway/safe,
@@ -15586,11 +15615,13 @@
 /turf/open/floor/festive/stairs/stairssouth,
 /area/service/bar/atrium)
 "aOy" = (
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/table,
 /turf/open/floor/festive/alleyway/safe,
 /area/service/bar/atrium)
 "aOz" = (
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/closet/firecloset,
 /turf/open/floor/festive/alleyway/safe,
@@ -15604,6 +15635,7 @@
 /turf/open/floor/festive/alleyway/safe,
 /area/service/bar/atrium)
 "aOC" = (
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/maintenance{
@@ -15617,6 +15649,7 @@
 /turf/open/floor/festive/alleyway/safe,
 /area/service/bar/atrium)
 "aOE" = (
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/closet/wardrobe/mixed,
 /turf/open/floor/festive/alleyway/safe,
@@ -20992,6 +21025,7 @@
 /area/service/chapel/main/monastery)
 "bcN" = (
 /obj/structure/closet/crate/trashcart,
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/effect/turf_decal/weather/snow/corner{
 	color = "#FFFFFF";
@@ -23101,7 +23135,7 @@
 /turf/open/floor/plasteel/dark,
 /area/commons/fitness/recreation)
 "biM" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	dir = 4
 	},
 /obj/effect/decal/festive/christmas_ivy_string,
@@ -23145,7 +23179,7 @@
 /turf/open/floor/festive/sidewalk,
 /area/edina/street/primary/perimeter)
 "biT" = (
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	dir = 8
 	},
 /obj/structure/window/spawner/east,
@@ -23268,7 +23302,7 @@
 /turf/open/floor/festive/alleyway,
 /area/edina)
 "bjk" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	dir = 4
 	},
 /obj/structure/window/spawner/west,
@@ -23284,7 +23318,7 @@
 /turf/open/floor/carpet/arcade,
 /area/commons/fitness/recreation)
 "bjm" = (
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	dir = 8
 	},
 /obj/effect/decal/festive/christmas_ivy_string,
@@ -23336,7 +23370,7 @@
 /turf/open/floor/plasteel/dark,
 /area/commons/fitness/recreation)
 "bju" = (
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	dir = 4
 	},
 /turf/open/floor/carpet/arcade,
@@ -23346,21 +23380,21 @@
 /turf/open/floor/carpet/arcade,
 /area/commons/fitness/recreation)
 "bjw" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	dir = 8
 	},
 /obj/structure/window/spawner/east,
 /turf/open/floor/carpet/arcade,
 /area/commons/fitness/recreation)
 "bjx" = (
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	dir = 4
 	},
 /obj/structure/window/spawner/west,
 /turf/open/floor/carpet/arcade,
 /area/commons/fitness/recreation)
 "bjy" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	dir = 8
 	},
 /turf/open/floor/carpet/arcade,
@@ -25201,7 +25235,7 @@
 /turf/open/floor/festive/wooden/wooden1,
 /area/maintenance/bar)
 "bnD" = (
-/obj/structure/chair/sofa/corner{
+/obj/structure/chair/sofa/corner/brown{
 	dir = 1
 	},
 /turf/open/floor/festive/wooden/wooden1,
@@ -27999,7 +28033,7 @@
 /turf/open/indestructible/hotelwood,
 /area/service/chapel/main/monastery)
 "btY" = (
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/right/brown,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
@@ -28010,7 +28044,7 @@
 /turf/open/indestructible/hotelwood,
 /area/service/chapel/main/monastery)
 "btZ" = (
-/obj/structure/chair/sofa,
+/obj/structure/chair/sofa/middle/brown,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
@@ -28023,7 +28057,7 @@
 /turf/open/indestructible/hotelwood,
 /area/service/chapel/main/monastery)
 "bua" = (
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/left/brown,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
@@ -30141,6 +30175,7 @@
 /turf/open/floor/plasteel,
 /area/cargo/warehouse)
 "bzB" = (
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -30844,6 +30879,7 @@
 /turf/open/indestructible,
 /area/cargo)
 "bBa" = (
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
 /obj/structure/cable{
@@ -30979,7 +31015,7 @@
 /turf/open/floor/plasteel/white,
 /area/medical/surgery)
 "bBo" = (
-/obj/structure/chair/sofa/right{
+/obj/structure/chair/sofa/right/brown{
 	dir = 4
 	},
 /turf/open/floor/wood,
@@ -31296,6 +31332,7 @@
 /turf/open/floor/plasteel,
 /area/cargo/warehouse)
 "bBO" = (
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plasteel,
 /area/cargo/warehouse)
@@ -32886,6 +32923,7 @@
 /obj/structure/closet/crate{
 	icon_state = "crateopen"
 	},
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/indestructible,
 /area/cargo/warehouse)
@@ -32894,7 +32932,7 @@
 	dir = 8;
 	light_color = "#e8eaff"
 	},
-/obj/structure/chair/sofa/left{
+/obj/structure/chair/sofa/left/brown{
 	dir = 4
 	},
 /turf/open/floor/festive/wooden/wooden1,
@@ -33125,7 +33163,7 @@
 /turf/open/floor/festive/alleyway,
 /area/edina/backstreet/supply)
 "bEW" = (
-/obj/structure/chair/sofa/right{
+/obj/structure/chair/sofa/right/brown{
 	dir = 8
 	},
 /obj/machinery/light{
@@ -33547,7 +33585,7 @@
 /turf/open/floor/plating,
 /area/cargo)
 "bGn" = (
-/obj/structure/chair/sofa/right{
+/obj/structure/chair/sofa/right/brown{
 	dir = 1
 	},
 /turf/open/floor/festive/wooden/wooden1,
@@ -33943,18 +33981,18 @@
 /turf/open/floor/wood,
 /area/service/bar/atrium)
 "bHe" = (
-/obj/structure/chair/sofa/corner{
+/obj/structure/chair/sofa/corner/brown{
 	dir = 4
 	},
 /obj/effect/decal/festive/fairylights,
 /turf/open/floor/wood,
 /area/service/bar/atrium)
 "bHf" = (
-/obj/structure/chair/sofa,
+/obj/structure/chair/sofa/middle/brown,
 /turf/open/floor/wood,
 /area/service/bar/atrium)
 "bHg" = (
-/obj/structure/chair/sofa/corner,
+/obj/structure/chair/sofa/corner/brown,
 /turf/open/floor/wood,
 /area/service/bar/atrium)
 "bHh" = (
@@ -33968,19 +34006,19 @@
 /turf/open/floor/wood,
 /area/service/bar/atrium)
 "bHj" = (
-/obj/structure/chair/sofa/corner{
+/obj/structure/chair/sofa/corner/brown{
 	dir = 4
 	},
 /obj/effect/decal/festive/fairylights,
 /turf/open/floor/carpet/royalblack,
 /area/service/bar/atrium)
 "bHk" = (
-/obj/structure/chair/sofa,
+/obj/structure/chair/sofa/middle/brown,
 /obj/effect/decal/festive/fairylights,
 /turf/open/floor/carpet/royalblack,
 /area/service/bar/atrium)
 "bHl" = (
-/obj/structure/chair/sofa/corner,
+/obj/structure/chair/sofa/corner/brown,
 /obj/effect/decal/festive/fairylights,
 /turf/open/floor/carpet/royalblack,
 /area/service/bar/atrium)
@@ -34058,7 +34096,7 @@
 /turf/open/floor/wood,
 /area/commons/storage/tools)
 "bHx" = (
-/obj/structure/chair/sofa/left{
+/obj/structure/chair/sofa/left/brown{
 	dir = 1
 	},
 /turf/open/floor/festive/wooden/wooden1,
@@ -34341,7 +34379,7 @@
 /turf/open/floor/plasteel,
 /area/cargo)
 "bHU" = (
-/obj/structure/chair/sofa/corner{
+/obj/structure/chair/sofa/corner/brown{
 	dir = 8
 	},
 /turf/open/floor/festive/wooden/wooden1,
@@ -34832,13 +34870,13 @@
 /turf/open/floor/wood,
 /area/service/bar/atrium)
 "bIP" = (
-/obj/structure/chair/sofa{
+/obj/structure/chair/sofa/middle/brown{
 	dir = 4
 	},
 /turf/open/floor/wood,
 /area/service/bar/atrium)
 "bIQ" = (
-/obj/structure/chair/sofa{
+/obj/structure/chair/sofa/middle/brown{
 	dir = 8
 	},
 /turf/open/floor/wood,
@@ -34853,7 +34891,7 @@
 /turf/open/floor/wood,
 /area/service/bar/atrium)
 "bIS" = (
-/obj/structure/chair/sofa{
+/obj/structure/chair/sofa/middle/brown{
 	dir = 4
 	},
 /turf/open/floor/carpet/royalblack,
@@ -34863,7 +34901,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/service/bar/atrium)
 "bIU" = (
-/obj/structure/chair/sofa{
+/obj/structure/chair/sofa/middle/brown{
 	dir = 8
 	},
 /turf/open/floor/carpet/royalblack,
@@ -35509,19 +35547,19 @@
 /turf/open/floor/wood,
 /area/service/bar/atrium)
 "bKr" = (
-/obj/structure/chair/sofa/right{
+/obj/structure/chair/sofa/right/brown{
 	dir = 4
 	},
 /turf/open/floor/wood,
 /area/service/bar/atrium)
 "bKs" = (
-/obj/structure/chair/sofa/left{
+/obj/structure/chair/sofa/left/brown{
 	dir = 8
 	},
 /turf/open/floor/wood,
 /area/service/bar/atrium)
 "bKu" = (
-/obj/structure/chair/sofa/right{
+/obj/structure/chair/sofa/right/brown{
 	dir = 4
 	},
 /obj/machinery/light/small{
@@ -35539,7 +35577,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/service/bar/atrium)
 "bKw" = (
-/obj/structure/chair/sofa/left{
+/obj/structure/chair/sofa/left/brown{
 	dir = 8
 	},
 /obj/machinery/light/small{
@@ -35738,6 +35776,7 @@
 	dir = 4;
 	id = "packageSort2"
 	},
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/machinery/airalarm{
 	dir = 1;
@@ -35750,6 +35789,7 @@
 	dir = 4;
 	id = "packageSort2"
 	},
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/machinery/light{
 	light_color = "#e8eaff"
@@ -35761,6 +35801,7 @@
 	dir = 4;
 	id = "packageSort2"
 	},
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
 /area/cargo)
@@ -38363,7 +38404,7 @@
 /turf/open/floor/wood,
 /area/service/cafeteria)
 "bQe" = (
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/right/brown,
 /turf/open/floor/carpet/green,
 /area/service/cafeteria)
 "bQf" = (
@@ -38377,7 +38418,7 @@
 /turf/open/floor/festive/alleyway,
 /area/edina/street/primary/progress)
 "bQg" = (
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/left/brown,
 /obj/machinery/light{
 	dir = 1;
 	light_color = "#e8eaff"
@@ -38471,15 +38512,15 @@
 /turf/open/floor/wood,
 /area/service/cafeteria/lunchroom)
 "bQq" = (
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/right/brown,
 /turf/open/floor/wood,
 /area/service/cafeteria/lunchroom)
 "bQr" = (
-/obj/structure/chair/sofa,
+/obj/structure/chair/sofa/middle/brown,
 /turf/open/floor/wood,
 /area/service/cafeteria/lunchroom)
 "bQs" = (
-/obj/structure/chair/sofa/corner,
+/obj/structure/chair/sofa/corner/brown,
 /turf/open/floor/wood,
 /area/service/cafeteria/lunchroom)
 "bQt" = (
@@ -39319,7 +39360,7 @@
 /turf/open/floor/wood,
 /area/maintenance/bar)
 "bSk" = (
-/obj/structure/chair/sofa/left{
+/obj/structure/chair/sofa/left/brown{
 	dir = 8
 	},
 /turf/open/floor/wood,
@@ -39503,13 +39544,13 @@
 /turf/open/floor/festive/wooden/wooden1,
 /area/medical/chemistry)
 "bSK" = (
-/obj/structure/chair/sofa/right{
+/obj/structure/chair/sofa/right/brown{
 	dir = 1
 	},
 /turf/open/floor/carpet/green,
 /area/service/cafeteria)
 "bSL" = (
-/obj/structure/chair/sofa/left{
+/obj/structure/chair/sofa/left/brown{
 	dir = 1
 	},
 /turf/open/floor/carpet/green,
@@ -39715,7 +39756,7 @@
 /turf/open/floor/festive/alleyway,
 /area/medical/cryo)
 "bTm" = (
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/left/brown,
 /turf/open/floor/carpet/green,
 /area/service/cafeteria)
 "bTn" = (
@@ -40149,7 +40190,7 @@
 /turf/open/floor/plasteel,
 /area/commons/storage/tools)
 "bUl" = (
-/obj/structure/chair/sofa/left{
+/obj/structure/chair/sofa/left/brown{
 	dir = 4
 	},
 /turf/open/floor/wood,
@@ -40160,7 +40201,7 @@
 /turf/open/floor/wood,
 /area/service/cafeteria/lunchroom)
 "bUn" = (
-/obj/structure/chair/sofa/right{
+/obj/structure/chair/sofa/right/brown{
 	dir = 8
 	},
 /turf/open/floor/wood,
@@ -40443,9 +40484,6 @@
 /turf/open/floor/festive/wooden/wooden1,
 /area/commons/lounge)
 "bUU" = (
-/obj/machinery/computer/libraryconsole{
-	pixel_y = 8
-	},
 /obj/structure/table/wood/fancy/red,
 /turf/open/floor/festive/wooden/wooden1,
 /area/commons/lounge)
@@ -40471,7 +40509,7 @@
 /area/commons/lounge)
 "bUY" = (
 /obj/structure/table/wood/fancy/red,
-/obj/machinery/computer/libraryconsole/bookmanagement{
+/obj/machinery/computer/library/checkout{
 	pixel_y = 8
 	},
 /obj/structure/disposalpipe/segment{
@@ -40609,13 +40647,13 @@
 /turf/open/floor/plasteel/dark,
 /area/service/bar)
 "bVt" = (
-/obj/structure/chair/sofa/right{
+/obj/structure/chair/sofa/right/brown{
 	dir = 4
 	},
 /turf/open/floor/wood,
 /area/service/cafeteria/lunchroom)
 "bVu" = (
-/obj/structure/chair/sofa/left{
+/obj/structure/chair/sofa/left/brown{
 	dir = 8
 	},
 /obj/machinery/light,
@@ -41356,7 +41394,7 @@
 /area/service/cafeteria)
 "bXh" = (
 /obj/machinery/light,
-/obj/structure/chair/sofa/right{
+/obj/structure/chair/sofa/right/brown{
 	dir = 1
 	},
 /turf/open/floor/carpet/green,
@@ -41690,11 +41728,11 @@
 /turf/closed/festive/greybrick/greybrickte,
 /area/service/cafeteria)
 "bXZ" = (
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/right/brown,
 /turf/open/floor/carpet/royalblack,
 /area/commons/dorms)
 "bYa" = (
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/left/brown,
 /turf/open/floor/carpet/royalblack,
 /area/commons/dorms)
 "bYb" = (
@@ -42238,6 +42276,7 @@
 /area/edina/street/intersection/princessservitor)
 "bZu" = (
 /obj/structure/reagent_dispensers/keg/mead,
+/obj/structure/reagent_dispensers/beerkeg,
 /obj/machinery/airalarm{
 	dir = 4;
 	pixel_x = -22
@@ -47814,6 +47853,7 @@
 /obj/item/assembly/igniter,
 /obj/item/assembly/igniter,
 /obj/item/assembly/igniter,
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel,
@@ -49430,11 +49470,11 @@
 /turf/open/floor/wood,
 /area/commons/dorms)
 "cqe" = (
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/right/brown,
 /turf/open/floor/wood,
 /area/commons/dorms)
 "cqf" = (
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/left/brown,
 /turf/open/floor/wood,
 /area/commons/dorms)
 "cqg" = (
@@ -49611,7 +49651,7 @@
 /turf/open/floor/carpet/black,
 /area/commons/dorms)
 "cqG" = (
-/obj/structure/chair/sofa/left{
+/obj/structure/chair/sofa/left/brown{
 	dir = 4
 	},
 /turf/open/floor/wood,
@@ -49630,7 +49670,7 @@
 /turf/open/floor/wood,
 /area/maintenance/bar)
 "cqJ" = (
-/obj/structure/chair/sofa/right{
+/obj/structure/chair/sofa/right/brown{
 	dir = 8
 	},
 /turf/open/floor/wood,
@@ -49640,14 +49680,14 @@
 /turf/open/floor/grass/snow/edina,
 /area/edina/backstreet/supply)
 "cqL" = (
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/right/brown,
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
 	},
 /turf/open/floor/festive/wooden/wooden1,
 /area/cargo/qm)
 "cqM" = (
-/obj/structure/chair/sofa,
+/obj/structure/chair/sofa/middle/brown,
 /turf/open/floor/festive/wooden/wooden1,
 /area/cargo/qm)
 "cqN" = (
@@ -49655,7 +49695,7 @@
 	dir = 8
 	},
 /obj/effect/landmark/start/quartermaster,
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/left/brown,
 /turf/open/floor/festive/wooden/wooden1,
 /area/cargo/qm)
 "cqO" = (
@@ -49663,6 +49703,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/weather/snow/corner,
+/obj/effect/spawner/lootdrop/syndicate_present,
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/festive/alleyway,
 /area/edina/backstreet/med)
@@ -50038,7 +50079,7 @@
 /turf/open/floor/festive/cobblestone,
 /area/edina/street/intersection/princessservitor)
 "crM" = (
-/obj/structure/chair/sofa/right{
+/obj/structure/chair/sofa/right/brown{
 	dir = 4
 	},
 /turf/open/floor/wood,
@@ -50049,7 +50090,7 @@
 /turf/open/floor/wood,
 /area/commons/dorms)
 "crO" = (
-/obj/structure/chair/sofa/left{
+/obj/structure/chair/sofa/left/brown{
 	dir = 8
 	},
 /turf/open/floor/wood,
@@ -51625,7 +51666,7 @@
 /turf/open/floor/festive/alleyway,
 /area/edina/backstreet/supply)
 "cwa" = (
-/obj/structure/chair/sofa/right{
+/obj/structure/chair/sofa/right/brown{
 	dir = 1
 	},
 /turf/open/floor/wood,
@@ -52284,17 +52325,17 @@
 /turf/open/floor/carpet/monochrome,
 /area/maintenance/bar/cafe)
 "cyg" = (
-/obj/structure/chair/sofa/corner{
+/obj/structure/chair/sofa/corner/brown{
 	dir = 1
 	},
 /turf/open/floor/wood,
 /area/maintenance/bar)
 "cyh" = (
-/obj/structure/chair/sofa,
+/obj/structure/chair/sofa/middle/brown,
 /turf/open/floor/wood,
 /area/maintenance/bar)
 "cyi" = (
-/obj/structure/chair/sofa,
+/obj/structure/chair/sofa/middle/brown,
 /obj/machinery/light{
 	dir = 1;
 	light_color = "#706891"
@@ -52302,7 +52343,7 @@
 /turf/open/floor/wood,
 /area/maintenance/bar)
 "cyj" = (
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/left/brown,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
 	},
@@ -52384,7 +52425,7 @@
 	dir = 4
 	},
 /obj/effect/decal/festive/fairylights,
-/obj/structure/chair/sofa/left{
+/obj/structure/chair/sofa/left/brown{
 	dir = 4
 	},
 /turf/open/floor/wood,
@@ -52507,7 +52548,7 @@
 /turf/open/floor/plasteel/checker,
 /area/maintenance/bar/cafe)
 "cyQ" = (
-/obj/structure/chair/sofa{
+/obj/structure/chair/sofa/middle/brown{
 	dir = 4
 	},
 /turf/open/floor/wood,
@@ -52621,7 +52662,7 @@
 /turf/open/floor/plasteel/checker,
 /area/maintenance/bar/cafe)
 "czm" = (
-/obj/structure/chair/sofa{
+/obj/structure/chair/sofa/middle/brown{
 	dir = 4
 	},
 /obj/machinery/light{
@@ -52748,13 +52789,13 @@
 /turf/open/floor/plasteel/checker,
 /area/maintenance/bar/cafe)
 "czH" = (
-/obj/structure/chair/sofa/corner{
+/obj/structure/chair/sofa/corner/brown{
 	dir = 4
 	},
 /turf/open/floor/wood,
 /area/maintenance/bar)
 "czI" = (
-/obj/structure/chair/sofa{
+/obj/structure/chair/sofa/middle/brown{
 	dir = 1
 	},
 /turf/open/floor/wood,
@@ -52801,7 +52842,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/structure/chair/sofa/right{
+/obj/structure/chair/sofa/right/brown{
 	dir = 4
 	},
 /turf/open/floor/wood,
@@ -53681,7 +53722,7 @@
 /turf/open/floor/carpet/blue,
 /area/commons/cryopod)
 "fGL" = (
-/obj/machinery/suit_storage_unit/ce,
+/obj/machinery/suit_storage_unit/industrial/ce,
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},
@@ -53740,7 +53781,7 @@
 /turf/open/floor/plating/dirt/space,
 /area/edina)
 "fZm" = (
-/obj/structure/chair/sofa/left{
+/obj/structure/chair/sofa/left/brown{
 	dir = 1;
 	icon_state = "sofamiddle"
 	},
@@ -53884,7 +53925,7 @@
 	dir = 4
 	},
 /obj/effect/decal/festive/fairylights,
-/obj/structure/chair/sofa/right{
+/obj/structure/chair/sofa/right/brown{
 	dir = 8
 	},
 /turf/open/floor/wood,
@@ -54187,7 +54228,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/structure/chair/sofa/left{
+/obj/structure/chair/sofa/left/brown{
 	dir = 8
 	},
 /turf/open/floor/wood,
@@ -54311,7 +54352,7 @@
 /turf/open/floor/circuit/off,
 /area/science)
 "jCx" = (
-/obj/structure/chair/sofa{
+/obj/structure/chair/sofa/middle/brown{
 	dir = 4
 	},
 /turf/open/floor/wood,
@@ -54480,6 +54521,7 @@
 /area/maintenance/bar)
 "kTw" = (
 /obj/structure/reagent_dispensers/keg/mead,
+/obj/structure/reagent_dispensers/beerkeg,
 /turf/open/floor/wood,
 /area/maintenance/bar)
 "kUD" = (
@@ -55202,7 +55244,7 @@
 /turf/open/floor/carpet/red,
 /area/maintenance/bar)
 "ptp" = (
-/obj/structure/chair/sofa{
+/obj/structure/chair/sofa/middle/brown{
 	dir = 8
 	},
 /turf/open/floor/wood,
@@ -55394,7 +55436,7 @@
 /turf/open/floor/circuit/off,
 /area/science)
 "qzx" = (
-/obj/structure/chair/sofa{
+/obj/structure/chair/sofa/middle/brown{
 	dir = 8
 	},
 /turf/open/floor/wood,
@@ -55488,9 +55530,9 @@
 "rhc" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/toolbox/syndicate,
-/obj/item/storage/toolbox/gold_real,
+/obj/item/storage/toolbox/plastitanium/gold_real,
 /obj/item/storage/toolbox/syndicate,
-/obj/item/storage/toolbox/gold_real,
+/obj/item/storage/toolbox/plastitanium/gold_real,
 /turf/open/floor/circuit/off,
 /area/science)
 "rho" = (
@@ -55697,7 +55739,7 @@
 /turf/closed/wall/mineral/iron,
 /area/security/brig)
 "ssY" = (
-/obj/structure/chair/sofa/right{
+/obj/structure/chair/sofa/right/brown{
 	dir = 1
 	},
 /turf/open/floor/wood,
@@ -55775,13 +55817,13 @@
 /turf/open/floor/wood,
 /area/maintenance/bar)
 "sVW" = (
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	dir = 4
 	},
 /turf/open/floor/grass/snow/edina,
 /area/edina)
 "sYK" = (
-/obj/structure/chair/sofa/left{
+/obj/structure/chair/sofa/left/brown{
 	dir = 1
 	},
 /turf/open/floor/wood,
@@ -55796,7 +55838,7 @@
 /turf/open/floor/festive/alleyway,
 /area/edina)
 "sZL" = (
-/obj/structure/chair/sofa/right{
+/obj/structure/chair/sofa/right/brown{
 	dir = 1
 	},
 /obj/machinery/light/small,

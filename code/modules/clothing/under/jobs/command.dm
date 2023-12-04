@@ -3,15 +3,20 @@
 	name = "captain's jumpsuit"
 	icon_state = "captain"
 	item_state = "b_suit"
-	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0, WOUND = 15)
+	armor = list(MELEE = 10, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 30, ACID = 30, WOUND = 10)
 	sensor_mode = SENSOR_COORDS
 	sensor_flags = NONE
+
+/obj/item/clothing/under/rank/captain/utility/syndicate
+	armor = list(MELEE = 10, BULLET = 5, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 50, RAD = 0, FIRE = 50, ACID = 40, WOUND = 10)
+	has_sensor = NO_SENSORS
 
 /obj/item/clothing/under/rank/captain/util
 	name = "command utility uniform"
 	desc = "A utility uniform for command personnel."
 	icon_state = "utilcom"
 	item_state = "utilcom"
+	armor = list(MELEE = 10, BULLET = 5, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 50, RAD = 0, FIRE = 50, ACID = 40, WOUND = 10)
 	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/captain/skirt

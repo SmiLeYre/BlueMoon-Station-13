@@ -22,7 +22,7 @@
 	M.apply_damage(0.7*reac_volume, TOX)
 
 /datum/reagent/blob/regenerative_materia/on_mob_life(mob/living/carbon/C)
-	C.adjustToxLoss(1*REAGENTS_EFFECT_MULTIPLIER)
+	C.adjustToxLoss(1*REM)
 	C.hal_screwyhud = SCREWYHUD_HEALTHY //fully healed, honest
 	..()
 

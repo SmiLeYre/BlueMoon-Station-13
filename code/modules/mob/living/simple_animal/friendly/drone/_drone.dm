@@ -23,8 +23,8 @@
 	icon_living = "drone_maint_grey"
 	icon_dead = "drone_maint_dead"
 	possible_a_intents = list(INTENT_HELP, INTENT_HARM)
-	health = 30
-	maxHealth = 30
+	health = 50
+	maxHealth = 50
 	unsuitable_atmos_damage = 0
 	wander = 0
 	speed = 0
@@ -38,7 +38,7 @@
 	speak_emote = list("chirps")
 	speech_span = SPAN_ROBOT
 	bubble_icon = "machine"
-	initial_language_holder = /datum/language_holder/drone
+	initial_language_holder = /datum/language_holder
 	mob_size = MOB_SIZE_SMALL
 	silicon_privileges = PRIVILEGES_DRONE
 	damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
@@ -58,9 +58,9 @@
 	var/colour = "grey"	//Stored drone color, so we can go back when unhacked.
 	var/list/drone_overlays[DRONE_TOTAL_LAYERS]
 	var/laws = \
-	"1. You may not involve yourself in the matters of another being, even if such matters conflict with Law Two or Law Three, unless the other being is another Drone.\n"+\
-	"2. You may not harm any being, regardless of intent or circumstance.\n"+\
-	"3. Your goals are to actively build, maintain, repair, improve, and provide power to the best of your abilities within the facility that housed your activation." //for derelict drones so they don't go to station.
+	"1. Вы не можете вмешиваться в дела другого существа, даже если эти дела противоречат Закону 2 или Закону 3, если только это другое существо не является другим дроном.\n"+\
+	"2. Вы не можете причинить вред ни одному существу, независимо от намерений или обстоятельств.\n "+\
+	"3. Ваши цели - активно строить, обслуживать, ремонтировать, улучшать и обеспечивать энергией в меру своих возможностей объект, на котором произошла ваша активация." //for derelict drones so they don't go to station.
 	var/heavy_emp_damage = 25 //Amount of damage sustained if hit by a heavy EMP pulse
 	var/alarms = list("Atmosphere" = list(), "Fire" = list(), "Power" = list())
 	var/obj/item/internal_storage //Drones can store one item, of any size/type in their body
@@ -69,6 +69,7 @@
 	var/obj/item/default_hatmask //If this exists, it will spawn in the hat/mask slot if it can fit
 	var/visualAppearence = MAINTDRONE //What we appear as
 	var/hacked = FALSE //If we have laws to destroy the station
+	var/obj/item/radio/borg/radio = null //AIs dont use this but this is at the silicon level to advoid copypasta in say()
 	var/flavortext = \
 	"\n<big><span class='warning'>DO NOT INTERFERE WITH THE ROUND AS A DRONE OR YOU WILL BE DRONE BANNED</span></big>\n"+\
 	"<span class='notify'>Drones are a ghost role that are allowed to fix the station and build things. Interfering with the round as a drone is against the rules.</span>\n"+\
@@ -78,6 +79,10 @@
 	"<span class='notify'>     - Interacting with non-living beings (dragging bodies, looting bodies, etc.)</span>\n"+\
 	"<span class='warning'>These rules are at admin discretion and will be heavily enforced.</span>\n"+\
 	"<span class='warning'><u>If you do not have the regular drone laws, follow your laws to the best of your ability.</u></span>"
+
+/mob/living/simple_animal/drone/get_status_tab_items()
+	. = ..()
+	. += "Законы: [laws]"
 
 /mob/living/simple_animal/drone/Initialize(mapload)
 	. = ..()
@@ -96,6 +101,8 @@
 	ADD_TRAIT(access_card, TRAIT_NODROP, ABSTRACT_ITEM_TRAIT)
 
 	alert_drones(DRONE_NET_CONNECT)
+
+	radio = new /obj/item/radio/borg(src)
 
 	for(var/datum/atom_hud/data/diagnostic/diag_hud in GLOB.huds)
 		diag_hud.add_to_hud(src)

@@ -8,6 +8,11 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	RADIO_CHANNEL_SECURITY = RADIO_TOKEN_SECURITY,
 	RADIO_CHANNEL_CENTCOM = RADIO_TOKEN_CENTCOM,
 	RADIO_CHANNEL_SYNDICATE = RADIO_TOKEN_SYNDICATE,
+	RADIO_CHANNEL_DS1 = RADIO_TOKEN_DS1,
+	RADIO_CHANNEL_DS2 = RADIO_TOKEN_DS2,
+	RADIO_CHANNEL_TARKOFF = RADIO_TOKEN_TARKOFF,
+	RADIO_CHANNEL_PIRATE = RADIO_TOKEN_PIRATE,
+	RADIO_CHANNEL_INTEQ = RADIO_TOKEN_INTEQ,
 	RADIO_CHANNEL_SUPPLY = RADIO_TOKEN_SUPPLY,
 	RADIO_CHANNEL_SERVICE = RADIO_TOKEN_SERVICE,
 	RADIO_CHANNEL_HOTEL = RADIO_TOKEN_HOTEL, //SPLURT EDIT ADDITION
@@ -29,8 +34,14 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	dog_fashion = null
 	var/bowman = FALSE
 
+	// headset is too small to display overlays
+	overlay_speaker_idle = null
+	overlay_speaker_active = null
+	overlay_mic_idle = null
+	overlay_mic_active = null
+
 /obj/item/radio/headset/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins putting \the [src]'s antenna up [user.p_their()] nose! It looks like [user.p_theyre()] trying to give [user.p_them()]self cancer!</span>")
+	user.visible_message("<span class='suicide'>[user] begins putting \the [src]'s antenna up [user.ru_ego()] nose! It looks like [user.ru_who()] trying to give себя cancer!</span>")
 	return TOXLOSS
 
 /obj/item/radio/headset/examine(mob/user)
@@ -89,21 +100,49 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 /obj/item/radio/headset/syndicate //disguised to look like a normal headset for stealth ops
 
 /obj/item/radio/headset/syndicate/alt //undisguised bowman with flash protection
-	name = "syndicate headset"
-	desc = "A syndicate headset that can be used to hear all radio frequencies. Protects ears from flashbangs."
+	name = "Syndicate Headset"
+	desc = "Боевые наушники Синдиката, способные прослушивать рацию всех ближайших используемых диапазонов. Защищает уши от громких звуков."
 	icon_state = "syndie_headset"
 	item_state = "syndie_headset"
 	bowman = TRUE
 
 /obj/item/radio/headset/syndicate/alt/leader
-	name = "team leader headset"
+	name = "Team Leader Syndicate Headset"
 	command = TRUE
 
 /obj/item/radio/headset/syndicate/Initialize(mapload)
 	. = ..()
 	make_syndie()
 
+/obj/item/radio/headset/pirate
+
+/obj/item/radio/headset/pirate/Initialize(mapload)
+	. = ..()
+	make_pirate()
+
+/obj/item/radio/headset/inteq //disguised to look like a normal headset for stealth ops
+
+/obj/item/radio/headset/inteq/alt //undisguised bowman with flash protection
+	name = "InteQ Headset"
+	desc = "Боевые наушники InteQ, способные прослушивать рацию всех ближайших используемых диапазонов. Защищает уши от громких звуков."
+	icon_state = "inteq_headset_alt"
+	item_state = "inteq_headset_alt"
+	//freqlock = TRUE
+	bowman = TRUE
+	icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/obj_sol_head.dmi'
+	//mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/mob_sol_head.dmi'
+	radiosound = 'modular_bluemoon/kovac_shitcode/sound/radio.ogg'
+
+/obj/item/radio/headset/inteq/alt/leader
+	name = "Team Leader InteQ Headset"
+	command = TRUE
+
+/obj/item/radio/headset/inteq/Initialize(mapload)
+	. = ..()
+	make_inteq()
+
 /obj/item/radio/headset/binary
+
 /obj/item/radio/headset/binary/Initialize(mapload)
 	. = ..()
 	qdel(keyslot)

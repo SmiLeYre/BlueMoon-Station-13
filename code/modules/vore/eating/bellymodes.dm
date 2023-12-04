@@ -111,7 +111,12 @@
 
 				// Deal digestion damage (and feed the pred)
 				if(!(M.status_flags & GODMODE))
-					M.adjustFireLoss(digest_burn)
+					//BLUEMOON EDIT STARTS
+					var/damage_mod = 1
+					if(M.maxHealth < 100) //big guy перевариваются дольше
+						damage_mod = M.maxHealth * 0.01 //1 процент от максимума хп при хп меньше 100
+					M.adjustFireLoss(digest_burn * damage_mod)
+					//BLUEMOON EDIT ENDS
 					owner.adjust_nutrition(1)
 
 			//Contaminate or gurgle items
@@ -226,8 +231,9 @@
 				// Deal digestion damage (and feed the pred)
 				if(!(M.status_flags & GODMODE))
 					M.adjustFireLoss(digest_burn)
-					M.adjustToxLoss(2) // something something plasma based acids
-					M.adjustCloneLoss(1) // eventually this'll kill you if you're healing everything else, you nerds.
+					M.adjustToxLoss(2, toxins_type = TOX_OMNI) // something something plasma based acids // BLUEMOON CHANGES - TOX_OMNI для урона системам синтетика
+					if(!HAS_TRAIT(M, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD START - у роботов не должно быть клон-урона
+						M.adjustCloneLoss(1) // eventually this'll kill you if you're healing everything else, you nerds.
 				//Contaminate or gurgle items
 			var/obj/item/T = pick(touchable_items)
 			if(istype(T))

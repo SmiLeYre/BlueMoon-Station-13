@@ -165,7 +165,7 @@
 			if(!input || !user.canUseTopic(src, !issilicon(usr)))
 				return
 			if(!(user.can_speak())) //No more cheating, mime/random mute guy!
-				to_chat(user, span_warning("You find yourself unable to speak."))
+				to_chat(user, "<span class='warning'>Вы не можете говорить.</span>")
 				return
 
 			input = user.treat_message(input) //Adds slurs and so on. Someone should make this use languages too.
@@ -195,7 +195,7 @@
 		if("recruit")
 			var/mob/living/M = collar.loc
 
-			if(QDELETED(M) || jobban_isbanned(M, ROLE_SLAVER) || jobban_isbanned(M, ROLE_SYNDICATE))
+			if(QDELETED(M) || jobban_isbanned(M, ROLE_SLAVER) || jobban_isbanned(M, ROLE_INTEQ))
 				radioAnnounce("[M.real_name] has failed the background check and cannot join our cause.")
 				collar.nextRecruitChance = INFINITY
 				return
@@ -232,13 +232,13 @@
 			new /obj/effect/temp_visual/dir_setting/ninja(get_turf(collar.loc), collar.loc.dir)
 
 			playsound(get_turf(src.loc), 'sound/effects/bamf.ogg', 50, 1)
-			visible_message(span_notice("[collar.loc] vanishes into the droppod."), \
-			span_notice("You are taken by the droppod."))
+			visible_message("<span class='notice'>[collar.loc] vanishes into the droppod.</span>", \
+			"<span class='notice'>You are taken by the droppod.</span>")
 
 			var/area/pod_storage_area = locate(/area/centcom/supplypod/podStorage) in GLOB.sortedAreas
 			var/mob/living/M = collar.loc
 
-			priority_announce("[M.real_name] has been returned to the station for [collar.price] credits.", sender_override = GLOB.slavers_team_name)
+			priority_announce("Работорговцы вернули [M.real_name] на Космическую Станцию за [collar.price] кредитов. Отлично!", sender_override = GLOB.slavers_team_name)
 			var/obj/structure/closet/supplypod/centcompod/exportPod = new(pick(get_area_turfs(pod_storage_area)))
 			var/obj/effect/landmark/observer_start/dropzone = locate(/obj/effect/landmark/observer_start) in GLOB.landmarks_list
 			M.forceMove(exportPod)

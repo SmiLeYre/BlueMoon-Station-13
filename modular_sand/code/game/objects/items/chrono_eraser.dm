@@ -86,7 +86,7 @@
 	var/mob/living/user = loc
 	if(F.gun)
 		if(isliving(user) && F.captured)
-			to_chat(user, span_alert("<b>FAIL: <i>[F.captured]</i> already has an existing connection.</b>"))
+			to_chat(user, "<span class='alert'><b>FAIL: <i>[F.captured]</i> already has an existing connection.</b></span>")
 		field_disconnect(F)
 	else
 		startpos = get_turf(src)
@@ -94,7 +94,7 @@
 		F.gun = src
 		if(isliving(user) && F.captured)
 			playsound(user,'sound/effects/clock_tick.ogg' , 50, 1)
-			to_chat(user, span_notice("Connection established with target: <b>[F.captured]</b>"))
+			to_chat(user, "<span class='notice'>Connection established with target: <b>[F.captured]</b></span>")
 
 
 /obj/item/gun/energy/chrono_gun/proc/field_disconnect(obj/structure/chrono_field/F)
@@ -104,7 +104,7 @@
 			F.gun = null
 		if(isliving(user) && F.captured)
 			F.captured.adjustOrganLoss(ORGAN_SLOT_BRAIN, 199, 199) //not so fast!
-			to_chat(user, span_alert("Disconnected from target: <b>[F.captured]</b>"))
+			to_chat(user, "<span class='alert'>Disconnected from target: <b>[F.captured]</b></span>")
 	field = null
 	startpos = null
 
@@ -223,9 +223,9 @@
 				AM.forceMove(drop_location())
 			qdel(src)
 		else if(tickstokill <= 0)
-			to_chat(captured, span_boldnotice("As the last essence of your being is erased from time, you are taken back to your most enjoyable memory. You feel happy..."))
+			to_chat(captured, "<span class='boldnotice'>As the last essence of your being is erased from time, you are taken back to your most enjoyable memory. You feel happy...</span>")
 			playsound(captured,'sound/effects/lingreadapt.ogg' , 50, 1)
-			captured.visible_message(span_danger("[captured] dematerialises out of the timestream!"))
+			captured.visible_message("<span class='danger'>[captured] dematerialises out of the timestream!</span>")
 			var/mob/dead/observer/ghost = captured.ghostize(1)
 			if(captured.mind)
 				if(ghost)

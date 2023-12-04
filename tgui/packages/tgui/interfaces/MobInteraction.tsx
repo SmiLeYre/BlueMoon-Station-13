@@ -74,6 +74,7 @@ type ContentPrefsInfo = {
   no_aphro: boolean,
   no_ass_slap: boolean,
   no_auto_wag: boolean,
+  no_disco_dance: boolean,
   chastity_pref: boolean,
   stimulation_pref: boolean,
   edging_pref: boolean,
@@ -548,6 +549,7 @@ const ContentPreferencesTab = (props, context) => {
     no_aphro,
     no_ass_slap,
     no_auto_wag,
+    no_disco_dance,
     chastity_pref,
     stimulation_pref,
     edging_pref,
@@ -788,7 +790,7 @@ const ContentPreferencesTab = (props, context) => {
           <Button
             fluid
             mb={0.3}
-            content="Ass slapping"
+            content="Ass Slapping"
             icon={no_ass_slap ? "toggle-on" : "toggle-off"}
             selected={no_ass_slap}
             onClick={() => act('pref', {
@@ -800,11 +802,23 @@ const ContentPreferencesTab = (props, context) => {
           <Button
             fluid
             mb={0.3}
-            content="Automatic wagging"
+            content="Automatic Wagging"
             icon={no_auto_wag ? "toggle-on" : "toggle-off"}
             selected={no_auto_wag}
             onClick={() => act('pref', {
               pref: 'no_auto_wag',
+            })}
+          />
+        </Table.Row>
+        <Table.Row>
+          <Button
+            fluid
+            mb={0.3}
+            content="Dance Near Disco Ball"
+            icon={no_disco_dance ? "toggle-on" : "toggle-off"}
+            selected={no_disco_dance}
+            onClick={() => act('pref', {
+              pref: 'no_disco_dance',
             })}
           />
         </Table.Row>

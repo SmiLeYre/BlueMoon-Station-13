@@ -24,10 +24,14 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 10
 	attack_sound = 'sound/items/bikehorn.ogg'
-	obj_damage = 0
-	environment_smash = ENVIRONMENT_SMASH_NONE
+	obj_damage = 30
+	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
 	del_on_death = 1
 	loot = list(/obj/effect/mob_spawn/human/clown/corpse)
+
+	faction = list("clown")
+	AIStatus = AI_ON
+	status_flags = CANPUSH
 
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 270
@@ -103,7 +107,7 @@
 	emote_see = list("honks", "bites into the banana", "plucks a banana off its head", "photosynthesizes")
 	maxHealth = 120
 	health = 120
-	speed = -10
+	speed = 0
 	loot = list(/obj/item/clothing/mask/gas/clown_hat, /obj/effect/gibspawner/human, /obj/item/soap, /obj/item/seeds/banana)
 	banana_time = 20
 
@@ -113,7 +117,7 @@
 	icon_state = "honkling"
 	icon_living = "honkling"
 	turns_per_move = 1
-	speed = -10
+	speed = 0
 	harm_intent_damage = 1
 	melee_damage_lower = 1
 	melee_damage_upper = 1
@@ -140,11 +144,11 @@
 	dextrous = TRUE
 	maxHealth = 140
 	health = 140
-	speed = -5
+	speed = 0
 	melee_damage_upper = 15
 	attack_verb_continuous = "limply slaps"
 	attack_verb_simple = "limply slap"
-	obj_damage = 5
+	obj_damage = 15
 	loot = list(/obj/item/clothing/suit/hooded/bloated_human, /obj/item/clothing/mask/gas/clown_hat, /obj/effect/gibspawner/human, /obj/item/soap)
 
 /mob/living/simple_animal/hostile/retaliate/clown/fleshclown/Initialize(mapload)
@@ -220,7 +224,7 @@
 	emote_see = list("asserts his dominance", "emasculates everyone implicitly")
 	maxHealth = 500
 	health = 500
-	speed = -2
+	speed = -1
 	armour_penetration = 20
 	attack_verb_continuous = "steals the girlfriend of"
 	attack_verb_simple = "steal the girlfriend of"
@@ -239,12 +243,12 @@
 	speak = list("honk")
 	emote_see = list("squirms", "writhes")
 	speak_chance = 1
-	maxHealth = 200
-	health = 200
-	speed = -5
+	maxHealth = 450
+	health = 350
+	speed = 0
 	harm_intent_damage = 5
-	melee_damage_lower = 5
-	melee_damage_upper = 10
+	melee_damage_lower = 15
+	melee_damage_upper = 40
 	attack_verb_continuous = "ferociously mauls"
 	attack_verb_simple = "ferociously maul"
 	environment_smash = ENVIRONMENT_SMASH_NONE
@@ -291,13 +295,13 @@
 	speak = list("aaaaaahhhhuuhhhuhhhaaaaa", "AAAaaauuuaaAAAaauuhhh", "huuuuuh... hhhhuuuooooonnnnkk", "HuaUAAAnKKKK")
 	emote_see = list("squirms", "writhes", "pulsates", "froths", "oozes")
 	speak_chance = 10
-	maxHealth = 130
-	health = 130
+	maxHealth = 500
+	health = 450
 	pixel_x = -16
-	speed = -5
+	speed = 0
 	harm_intent_damage = 10
-	melee_damage_lower = 10
-	melee_damage_upper = 20
+	melee_damage_lower = 20
+	melee_damage_upper = 50
 	attack_verb_continuous = "awkwardly flails at"
 	attack_verb_simple = "awkwardly flail at"
 	loot = list(/obj/item/clothing/mask/gas/clown_hat, /obj/effect/gibspawner/xeno/bodypartless, /obj/item/soap, /obj/effect/gibspawner/generic, /obj/effect/gibspawner/generic/animal, /obj/effect/gibspawner/human/bodypartless, /obj/effect/gibspawner/human)
@@ -316,3 +320,24 @@
 	attack_verb_simple = "bounce off of"
 	loot = list(/obj/item/clothing/mask/gas/clown_hat, /obj/effect/gibspawner/xeno/bodypartless, /obj/effect/particle_effect/foam, /obj/item/soap, /obj/effect/gibspawner/generic, /obj/effect/gibspawner/generic/animal, /obj/effect/gibspawner/human/bodypartless, /obj/effect/gibspawner/human)
 	attack_reagent = /datum/reagent/toxin/mindbreaker
+
+/mob/living/simple_animal/hostile/retaliate/clown/mutant/goblin
+	icon = 'icons/mob/animal.dmi'
+	name = "clown goblin"
+	desc = "A tiny walking mask and clown shoes. You want to honk his nose!"
+	icon_state = "clowngoblin"
+	icon_living = "clowngoblin"
+	icon_dead = null
+	response_help_continuous = "honks the"
+	response_help_simple = "honks the"
+	speak = list("Honk!")
+	speak_emote = list("sqeaks")
+	emote_see = list("honks")
+	maxHealth = 100
+	health = 100
+
+	speed = 0
+	turns_per_move = 1
+
+	del_on_death = TRUE
+	loot = list(/obj/item/clothing/mask/gas/clown_hat, /obj/item/clothing/shoes/clown_shoes)
