@@ -31,7 +31,7 @@
 	if(!target.ckey)
 		to_chat(src, "<span class='revennotice'>[target.ru_ego(TRUE)] essence is lacking .. worthless.</span>")
 		// return
-	if(HAS_TRAIT(target, QAREEN_IMMUNITY))	//Has an imnnunity quirk = no harvest. - Gardelin0
+	if(target.client && target.client?.prefs.hornyantagspref == "No")	//No qareen pref = no harvest. - Gardelin0
 		to_chat(src, "<span class='revenwarning'>They are immune!</span>")
 		return
 	if(!target.client?.prefs.nonconpref == "Yes")	//Ask the ones without noncon pref. - Gardelin0

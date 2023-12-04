@@ -28,7 +28,7 @@
 		return
 	if(!affected_mob.client?.prefs.nonconpref == "Yes")	//No noncon pref = no symptoms. - Gardelin0
 		return
-	if(HAS_TRAIT(affected_mob, QAREEN_IMMUNITY))	//Has an imnnunity quirk = no symptoms. - Gardelin0
+	if(affected_mob.client && affected_mob.client?.prefs.hornyantagspref == "No") //No qareen pref = no symptoms. - Gardelin0
 		return
 
 	if(prob(stage*2))

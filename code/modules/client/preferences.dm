@@ -125,6 +125,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/nonconpref = "Ask"
 	var/vorepref = "Ask"
 	var/mobsexpref = "No" //Added by Gardelin0 - Sex(mostly non-con) with hostile mobs(tentacles)
+	var/hornyantagspref = "No" //Added by Gardelin0 - Interactions(mostly non-con) with horny antags(Qareen)
 	var/extremepref = "No" //This is for extreme shit, maybe even literal shit, better to keep it on no by default
 	var/extremeharm = "No" //If "extreme content" is enabled, this option serves as a toggle for the related interactions to cause damage or not
 	var/see_chat_emotes = TRUE
@@ -910,6 +911,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "Non-Con : <a href='?_src_=prefs;preference=noncon_pref'>[nonconpref]</a><br>"
 					dat += "Vore : <a href='?_src_=prefs;preference=vore_pref'>[vorepref]</a><br>"
 					dat += "Mob-Sex : <a href='?_src_=prefs;preference=mobsex_pref'>[mobsexpref]</a><br>"
+					dat += "Horny Antags : <a href='?_src_=prefs;preference=hornyantags_pref'>[hornyantagspref]</a><br>"
 
 					dat += "<h2>Lewd preferences</h2>"
 					dat += "<b>Lust tolerance:</b><a href='?_src_=prefs;preference=lust_tolerance;task=input'>[lust_tolerance]</a><br>"
@@ -3692,6 +3694,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							mobsexpref = "No"
 						if("No")
 							mobsexpref = "Yes"
+				if("hornyantags_pref") //...
+					switch(hornyantagspref)
+						if("Yes")
+							hornyantagspref = "No"
+						if("No")
+							hornyantagspref = "Yes"
 //				if("stomppref") // What the fuck is this?
 //					stomppref = !stomppref
 				//Skyrat edit - *someone* offered me actual money for this shit

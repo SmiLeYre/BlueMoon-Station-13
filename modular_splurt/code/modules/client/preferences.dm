@@ -232,6 +232,7 @@
 
 			//Gardelin0 Addoon
 			dat += 	"Mob-Sex : <a href='?_src_=prefs;preference=mobsex_pref'>[mobsexpref]</a><br>"
+			dat += 	"Horny Antags : <a href='?_src_=prefs;preference=hornyantags_pref'>[hornyantagspref]</a><br>"
 			//END OF Gardelin0 Addoon
 
 			dat += "<h2>Records</h2><br>"
