@@ -322,6 +322,10 @@
 		var/can_pull = FALSE
 		if(isalien(src)) // чужие (с абилками) могут тащить
 			can_pull = TRUE
+		if(islaughter(src)) // демоны смеха могут тащить
+			can_pull = TRUE
+		if(isslaughter(src)) //  демоны резни могут тащить
+			can_pull = TRUE
 		if(issilicon(src)) // киборги могут тащить
 			can_pull = TRUE
 		if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER)) // другие сверхтяжёлые персонажи могут тащить
@@ -392,6 +396,10 @@
 		if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY_SUPER))
 			var/can_pull = FALSE
 			if(isalien(src)) // чужие (с абилками) могут тащить
+				can_pull = TRUE
+			if(islaughter(src)) // демоны смеха могут тащить
+				can_pull = TRUE
+			if(isslaughter(src)) //  демоны резни могут тащить
 				can_pull = TRUE
 			if(issilicon(src)) // киборги могут тащить
 				can_pull = TRUE

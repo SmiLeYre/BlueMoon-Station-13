@@ -112,6 +112,10 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 
 #define isdevil(A) (istype(A, /mob/living/carbon/true_devil))
 
+#define islaughter(A) (istype(A, /mob/living/simple_animal/slaughter/laughter))
+
+#define isslaughter(A) (istype(A, /mob/living/simple_animal/slaughter))
+
 //Silicon mobs
 #define issilicon(A) (istype(A, /mob/living/silicon))
 
