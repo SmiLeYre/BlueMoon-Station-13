@@ -8,9 +8,7 @@
 /area/space)
 "ac" = (
 /turf/closed/indestructible/necropolis,
-/area/awaymission/Killthemall/Level{
-	name = "Level 1"
-	})
+/area/awaymission/Killthemall/Level)
 "ae" = (
 /mob/living/simple_animal/chick{
 	faction = list("hostile");
@@ -20,14 +18,7 @@
 	turns_per_move = 0
 	},
 /turf/open/indestructible/spooknecropolis,
-/area/awaymission/Killthemall/Level{
-	name = "Level 1"
-	})
-"af" = (
-/turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
+/area/awaymission/Killthemall/Level)
 "ai" = (
 /obj/structure/ladder/unbreakable/rune{
 	color = "#ff0000";
@@ -36,29 +27,21 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/floor/holofloor/snow,
-/area/awaymission/Killthemall/Level{
-	name = "Level 2"
-	})
+/area/awaymission/Killthemall/Level)
 "ak" = (
 /obj/structure/shipping_container/deforest,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "al" = (
 /obj/structure/sign/flag/inteq,
 /turf/closed/wall/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "am" = (
 /obj/item/storage/toolbox/gold_fake,
 /obj/item/reagent_containers/food/drinks/flask/gold,
 /obj/structure/closet/crate,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 9"
-	})
+/area/awaymission/Killthemall/Level)
 "aq" = (
 /obj/structure/chair/office{
 	dir = 1
@@ -71,9 +54,7 @@
 /obj/item/trash/candle,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/rust,
-/area/awaymission/Killthemall/Level{
-	name = "Level 3"
-	})
+/area/awaymission/Killthemall/Level)
 "aH" = (
 /obj/structure/closet/crate/necropolis,
 /obj/item/kinetic_crusher,
@@ -82,21 +63,15 @@
 /obj/item/kitchen/knife/ritual,
 /obj/item/kitchen/knife/combat/survival/knuckledagger,
 /turf/open/indestructible/spooknecropolis,
-/area/awaymission/Killthemall/Level{
-	name = "Level 1"
-	})
+/area/awaymission/Killthemall/Level)
 "aJ" = (
 /obj/structure/destructible/cult/tome,
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Level{
-	name = "Level 5"
-	})
+/area/awaymission/Killthemall/Level)
 "aK" = (
 /obj/machinery/recharger,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "aL" = (
 /obj/structure/sign/poster/contraband/nri_pistol,
 /turf/closed/indestructible/wall,
@@ -105,9 +80,7 @@
 /obj/effect/turf_decal/delivery,
 /obj/structure/shipping_container/donk_co,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "aZ" = (
 /mob/living/simple_animal/hostile/jungle/mook{
 	stop_automated_movement = 1;
@@ -115,30 +88,22 @@
 	turns_per_move = 0
 	},
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
+/area/awaymission/Killthemall/Level)
 "bg" = (
 /obj/structure/table,
 /obj/structure/fluff/paper/stack{
 	dir = 6
 	},
 /turf/open/indestructible/sound,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "bn" = (
 /obj/structure/ore_box,
 /turf/open/indestructible/cobble,
-/area/awaymission/Killthemall/Level{
-	name = "Level 7"
-	})
+/area/awaymission/Killthemall/Level)
 "bo" = (
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/circuit/red,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "bB" = (
 /obj/structure/flora/junglebush/c,
 /obj/item/seeds/surik,
@@ -155,9 +120,7 @@
 /obj/structure/closet/crate,
 /obj/item/seeds/kudzu,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 8"
-	})
+/area/awaymission/Killthemall/Level)
 "bK" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/hunter{
 	health = 80;
@@ -166,9 +129,7 @@
 	stop_automated_movement = 1
 	},
 /turf/open/floor/catwalk_floor,
-/area/awaymission/Killthemall/Level{
-	name = "Level 15"
-	})
+/area/awaymission/Killthemall/Level)
 "bQ" = (
 /obj/structure/stone_tile/block/burnt,
 /obj/structure/stone_tile/block/burnt{
@@ -177,29 +138,21 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "bV" = (
 /obj/effect/mob_spawn/human/corpse/damaged,
 /turf/open/floor/padded,
-/area/awaymission/Killthemall/Level{
-	name = "Level 11"
-	})
+/area/awaymission/Killthemall/Level)
 "bW" = (
 /mob/living/simple_animal/hostile/skeleton/plasmaminer/jackhammer{
 	faction = list("shiz")
 	},
 /turf/open/floor/padded,
-/area/awaymission/Killthemall/Level{
-	name = "Level 11"
-	})
+/area/awaymission/Killthemall/Level)
 "bZ" = (
 /obj/structure/shipping_container/cybersun,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "ci" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/open/indestructible,
@@ -212,9 +165,7 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "cq" = (
 /mob/living/simple_animal/hostile/crazysci{
 	melee_damage_lower = 10;
@@ -223,27 +174,21 @@
 	faction = list("shiz")
 	},
 /turf/open/floor/padded,
-/area/awaymission/Killthemall/Level{
-	name = "Level 11"
-	})
+/area/awaymission/Killthemall/Level)
 "cr" = (
 /obj/structure/fluff/drake_statue/falling,
 /obj/structure/stone_tile/slab,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "cs" = (
 /mob/living/simple_animal/hostile/russian/ranged/trooper{
 	stop_automated_movement = 1;
 	stop_automated_movement_when_pulled = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "cJ" = (
 /obj/structure/chair/comfy,
 /mob/living/simple_animal/hostile/russian/ranged/officer{
@@ -252,66 +197,41 @@
 	stop_automated_movement_when_pulled = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "cM" = (
 /mob/living/simple_animal/hostile/sptrooper{
 	stop_automated_movement = 1;
 	stop_automated_movement_when_pulled = 1
 	},
 /turf/open/floor/catwalk_floor,
-/area/awaymission/Killthemall/Level{
-	name = "Level 15"
-	})
+/area/awaymission/Killthemall/Level)
 "cP" = (
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood,
 /turf/open/indestructible/spooknecropolis,
-/area/awaymission/Killthemall/Level{
-	name = "Level 1"
-	})
+/area/awaymission/Killthemall/Level)
 "cQ" = (
 /obj/structure/shipping_container/interdyne,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "cR" = (
 /obj/structure/statue/sandstone/venus{
 	dir = 8
 	},
 /turf/open/indestructible/cobble,
-/area/awaymission/Killthemall/Level{
-	name = "Level 7"
-	})
-"cU" = (
-/obj/structure/flora/junglebush/c,
-/turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "cV" = (
 /obj/structure/showcase/mecha/marauder,
 /turf/open/floor/iron/kitchen/herringbone,
-/area/awaymission/Killthemall/start{
-	name = "End"
-	})
-"cX" = (
-/turf/closed/indestructible/rock,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
+/area/awaymission/Killthemall/start)
 "de" = (
 /obj/machinery/door/keycard,
 /turf/open/indestructible{
 	icon = 'icons/turf/floors/carpet.dmi';
 	icon_state = "carpet"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "df" = (
 /obj/structure/table,
 /obj/structure/window/reinforced{
@@ -325,17 +245,13 @@
 	faction = list("shiz")
 	},
 /turf/open/floor/padded,
-/area/awaymission/Killthemall/Level{
-	name = "Level 11"
-	})
+/area/awaymission/Killthemall/Level)
 "dt" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Level{
-	name = "Level 10"
-	})
+/area/awaymission/Killthemall/Level)
 "dA" = (
 /mob/living/simple_animal/hostile/looter{
 	maxHealth = 160;
@@ -345,42 +261,27 @@
 	},
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/rust,
-/area/awaymission/Killthemall/Level{
-	name = "Level 3"
-	})
+/area/awaymission/Killthemall/Level)
 "dB" = (
 /obj/structure/rack/shelf,
 /obj/item/gun/medbeam,
 /turf/open/floor/padded,
-/area/awaymission/Killthemall/Level{
-	name = "Level 11"
-	})
+/area/awaymission/Killthemall/Level)
 "dC" = (
 /obj/structure/flora/tree/jungle/small{
 	layer = 3
 	},
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
-"ep" = (
-/turf/closed/mineral/ash_rock,
-/area/awaymission/Killthemall/Level{
-	name = "Level 7"
-	})
+/area/awaymission/Killthemall/Level)
 "ew" = (
 /obj/structure/flora/tree/jungle,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "eB" = (
 /obj/machinery/modular_computer/console,
 /turf/open/floor/iron/kitchen,
-/area/awaymission/Killthemall/Level{
-	name = "Level 4"
-	})
+/area/awaymission/Killthemall/Level)
 "eL" = (
 /turf/closed/wall/mineral/titanium/spaceship,
 /area/space)
@@ -389,56 +290,36 @@
 	max_integrity = 40
 	},
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Level{
-	name = "Level 5"
-	})
+/area/awaymission/Killthemall/Level)
 "eV" = (
 /obj/structure/table,
 /obj/item/documents/syndicate,
 /turf/open/floor/iron/kitchen,
-/area/awaymission/Killthemall/Level{
-	name = "Level 4"
-	})
+/area/awaymission/Killthemall/Level)
 "eW" = (
 /obj/structure/table,
 /obj/structure/fluff/paper/stack{
 	dir = 4
 	},
 /turf/open/indestructible/sound,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "eZ" = (
 /turf/closed/indestructible/rock/snow/ice{
 	layer = 111
 	},
-/area/awaymission/Killthemall/Level{
-	name = "Level 2"
-	})
-"fa" = (
-/obj/structure/flora/tree/jungle{
-	layer = 6
-	},
-/turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
+/area/awaymission/Killthemall/Level)
 "fc" = (
 /obj/machinery/door/airlock/medical/glass,
 /obj/effect/mapping_helpers/airlock/access/all/syndicate,
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/item/restraints/legcuffs/beartrap/prearmed,
 /turf/open/floor/padded,
-/area/awaymission/Killthemall/Level{
-	name = "Level 11"
-	})
+/area/awaymission/Killthemall/Level)
 "fi" = (
 /obj/structure/rack/shelf,
 /obj/item/mecha_parts/mecha_equipment/anticcw_armor_booster,
 /turf/open/indestructible/sound,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "fq" = (
 /mob/living/simple_animal/hostile/asteroid/lobstrosity/lava{
 	inertia_move_delay = 0;
@@ -448,9 +329,7 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Level{
-	name = "Level 10"
-	})
+/area/awaymission/Killthemall/Level)
 "ft" = (
 /obj/item/clothing/suit/straight_jacket,
 /mob/living/simple_animal/hostile/gigachad_inteq{
@@ -461,14 +340,10 @@
 	stop_automated_movement = 1
 	},
 /turf/open/floor/padded,
-/area/awaymission/Killthemall/Level{
-	name = "Level 11"
-	})
+/area/awaymission/Killthemall/Level)
 "fv" = (
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 8"
-	})
+/area/awaymission/Killthemall/Level)
 "fw" = (
 /obj/structure/stone_tile/block/burnt{
 	dir = 1
@@ -476,55 +351,30 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "fC" = (
 /obj/structure/spacevine,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 8"
-	})
+/area/awaymission/Killthemall/Level)
 "fD" = (
 /obj/structure/table/wood/poker,
 /obj/item/coin/diamond,
 /obj/item/lighter,
 /obj/item/toy/cards/cardhand,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "fE" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/bearsteak,
 /obj/item/reagent_containers/food/drinks/bottle/vodka,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "fI" = (
 /obj/structure/stone_tile/block/burnt,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
-"fK" = (
-/obj/structure/flora/tree/jungle{
-	layer = 4
-	},
-/obj/structure/flora/ausbushes/fernybush,
-/turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
-"fQ" = (
-/obj/structure/flora/tree/jungle,
-/turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
+/area/awaymission/Killthemall/Boss)
 "fR" = (
 /obj/structure/sign/poster/contraband/syndicate_pistol,
 /turf/closed/indestructible/wall,
@@ -534,15 +384,11 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "fX" = (
 /obj/structure/shipping_container/nthi,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "ga" = (
 /obj/structure/stone_tile/block/burnt{
 	dir = 1
@@ -553,9 +399,7 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "gb" = (
 /mob/living/simple_animal/hostile/syndicate/melee{
 	inertia_move_delay = 0;
@@ -564,15 +408,7 @@
 	turns_per_move = 0
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
-"gf" = (
-/obj/structure/flora/ausbushes/grassybush,
-/turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
+/area/awaymission/Killthemall/Level)
 "gk" = (
 /obj/structure/ladder/unbreakable/rune{
 	color = "#ff0000";
@@ -581,35 +417,25 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/floor/iron/kitchen/herringbone,
-/area/awaymission/Killthemall/start{
-	name = "End"
-	})
+/area/awaymission/Killthemall/start)
 "gm" = (
 /obj/effect/mob_spawn/human/corpse/miner/explorer,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 9"
-	})
+/area/awaymission/Killthemall/Level)
 "gp" = (
 /obj/structure/flora/ausbushes/palebush,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "gr" = (
 /obj/structure/closet/crate/large,
 /obj/effect/spawner/lootdrop/bluespace_tap/food,
 /obj/effect/spawner/lootdrop/bluespace_tap/food,
 /obj/effect/spawner/lootdrop/bluespace_tap/food,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "gE" = (
 /turf/open/floor/festive/cobblestone/safe,
-/area/awaymission/Killthemall/Level{
-	name = "Level 7"
-	})
+/area/awaymission/Killthemall/Level)
 "gO" = (
 /mob/living/simple_animal/hostile/netherworld{
 	faction = list("scienceteam");
@@ -620,9 +446,7 @@
 	turns_per_move = 0
 	},
 /turf/open/floor/iron/kitchen,
-/area/awaymission/Killthemall/Level{
-	name = "Level 4"
-	})
+/area/awaymission/Killthemall/Level)
 "gT" = (
 /obj/structure/stone_tile{
 	dir = 1
@@ -630,81 +454,45 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "gU" = (
 /turf/closed/wall/ice,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "gX" = (
 /turf/closed/indestructible/wall,
 /area/awaymission/Killthemall/start)
 "hg" = (
 /obj/structure/fermenting_barrel,
 /turf/open/indestructible/cobble,
-/area/awaymission/Killthemall/Level{
-	name = "Level 7"
-	})
+/area/awaymission/Killthemall/Level)
 "hl" = (
 /obj/structure/table,
 /obj/machinery/recharger,
 /turf/open/indestructible/sound,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "ho" = (
 /obj/machinery/recharger,
 /turf/open/floor/catwalk_floor,
-/area/awaymission/Killthemall/Level{
-	name = "Level 15"
-	})
+/area/awaymission/Killthemall/Level)
 "hr" = (
 /obj/structure/salvage/metal_frame,
 /turf/open/floor/catwalk_floor,
-/area/awaymission/Killthemall/Level{
-	name = "Level 15"
-	})
-"hs" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 9"
-	})
+/area/awaymission/Killthemall/Level)
 "hu" = (
 /obj/structure/signpost,
 /turf/open/indestructible/cobble,
-/area/awaymission/Killthemall/Level{
-	name = "Level 7"
-	})
+/area/awaymission/Killthemall/Level)
 "hD" = (
 /obj/structure/destructible/cult/talisman,
 /obj/effect/mob_spawn/human/corpse/miner/mod,
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss1"
-	})
-"hL" = (
-/obj/structure/flora/tree/jungle{
-	layer = 3
-	},
-/turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
+/area/awaymission/Killthemall/Boss)
 "hN" = (
 /obj/effect/spawner/lootdrop/pizzaparty,
 /obj/structure/table,
 /obj/item/reagent_containers/food/drinks/beer,
 /turf/open/floor/iron/kitchen/herringbone,
-/area/awaymission/Killthemall/start{
-	name = "End"
-	})
-"hP" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/start)
 "hT" = (
 /obj/structure/chair/office,
 /obj/structure/window/reinforced{
@@ -721,113 +509,79 @@
 	turns_per_move = 0
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "hW" = (
 /obj/structure/chair/stool/bar,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "hX" = (
 /obj/structure/shuttle/engine/large,
 /turf/open/floor/fakespace,
-/area/awaymission/Killthemall/Level{
-	name = "Level 9"
-	})
+/area/awaymission/Killthemall/Level)
 "ia" = (
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "in" = (
 /turf/closed/wall/mineral/cult,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss1"
-	})
+/area/awaymission/Killthemall/Boss)
 "is" = (
 /obj/machinery/sleeper/party{
 	dir = 4
 	},
 /turf/open/floor/iron/kitchen/herringbone,
-/area/awaymission/Killthemall/start{
-	name = "End"
-	})
+/area/awaymission/Killthemall/start)
 "iv" = (
 /obj/structure/flora/rock/icy,
 /turf/open/floor/holofloor/snow,
-/area/awaymission/Killthemall/Level{
-	name = "Level 2"
-	})
+/area/awaymission/Killthemall/Level)
 "iw" = (
 /obj/structure/sign/plaques,
 /turf/closed/wall/mineral/titanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 11"
-	})
+/area/awaymission/Killthemall/Level)
 "ix" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 8"
-	})
+/area/awaymission/Killthemall/Level)
 "iE" = (
 /obj/effect/turf_decal/delivery/blue,
 /obj/structure/rack,
 /obj/item/circuitboard/machine/vending/donksofttoyvendor,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "iN" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/stone_tile/center,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "iR" = (
 /turf/open/floor/circuit/green,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "jf" = (
 /obj/structure/flora/junglebush/large{
 	layer = 3
 	},
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 8"
-	})
+/area/awaymission/Killthemall/Level)
 "jl" = (
 /obj/item/trash/candle,
 /turf/open/floor/plating/rust,
-/area/awaymission/Killthemall/Level{
-	name = "Level 3"
-	})
+/area/awaymission/Killthemall/Level)
 "jn" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/meat/steak/bear,
 /obj/item/lighter,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "jr" = (
 /obj/structure/flora/junglebush/c,
 /obj/machinery/recharger,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 8"
-	})
+/area/awaymission/Killthemall/Level)
 "ju" = (
 /turf/closed/wall/mineral/cult,
-/area/awaymission/Killthemall/Level{
-	name = "Level 5"
-	})
+/area/awaymission/Killthemall/Level)
 "jN" = (
 /mob/living/simple_animal/hostile/syndicate/mecha_pilot{
 	icon_dead = "russianmelee_dead";
@@ -841,9 +595,7 @@
 	stop_automated_movement = 1
 	},
 /turf/open/indestructible,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "jV" = (
 /obj/structure/ladder/unbreakable/rune{
 	color = "#ff0000";
@@ -852,9 +604,7 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/floor/catwalk_floor,
-/area/awaymission/Killthemall/Level{
-	name = "Level 15"
-	})
+/area/awaymission/Killthemall/Level)
 "ka" = (
 /obj/structure/closet/crate/large,
 /obj/item/reagent_containers/food/drinks/bottle/applejack,
@@ -862,14 +612,10 @@
 /obj/item/reagent_containers/food/drinks/bottle/applejack,
 /obj/effect/turf_decal/caution/stand_clear/white,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "kd" = (
 /turf/closed/indestructible/riveted,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "kf" = (
 /obj/structure/table,
 /obj/item/flashlight/lamp{
@@ -879,43 +625,31 @@
 	dir = 9
 	},
 /turf/open/indestructible/sound,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "kv" = (
 /obj/effect/turf_decal/delivery/blue,
 /obj/structure/rack,
 /obj/item/reagent_containers/food/drinks/bottle/applejack,
 /obj/item/reagent_containers/food/drinks/bottle/applejack,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "kB" = (
 /obj/structure/salvage/computer,
 /turf/open/floor/catwalk_floor,
-/area/awaymission/Killthemall/Level{
-	name = "Level 15"
-	})
+/area/awaymission/Killthemall/Level)
 "kH" = (
 /turf/closed/indestructible/rock,
-/area/awaymission/Killthemall/Level{
-	name = "Level 10"
-	})
+/area/awaymission/Killthemall/Level)
 "kU" = (
 /obj/effect/turf_decal/delivery/blue,
 /obj/structure/closet/crate/large,
 /obj/item/ammo_box/c45/hydra,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "kW" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/rust,
-/area/awaymission/Killthemall/Level{
-	name = "Level 3"
-	})
+/area/awaymission/Killthemall/Level)
 "kX" = (
 /mob/living/simple_animal/hostile/pirate/ranged/space{
 	inertia_move_delay = 0;
@@ -923,9 +657,7 @@
 	stop_automated_movement_when_pulled = 1
 	},
 /turf/open/floor/fakespace,
-/area/awaymission/Killthemall/Level{
-	name = "Level 9"
-	})
+/area/awaymission/Killthemall/Level)
 "la" = (
 /obj/structure/ladder/unbreakable/rune{
 	color = "#ff0000";
@@ -934,25 +666,13 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/floor/plating/rust,
-/area/awaymission/Killthemall/Level{
-	name = "Level 3"
-	})
+/area/awaymission/Killthemall/Level)
 "lj" = (
 /turf/open/floor/padded,
-/area/awaymission/Killthemall/Level{
-	name = "Level 11"
-	})
+/area/awaymission/Killthemall/Level)
 "lm" = (
 /turf/closed/indestructible/opshuttle,
-/area/awaymission/Killthemall/Level{
-	name = "Level 9"
-	})
-"lq" = (
-/obj/structure/flora/junglebush/c,
-/turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
+/area/awaymission/Killthemall/Level)
 "lt" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 6
@@ -960,64 +680,41 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "lv" = (
 /obj/structure/closet/crate/large,
 /obj/item/reagent_containers/food/drinks/beer/almost_empty,
 /obj/item/reagent_containers/food/drinks/beer/almost_empty,
 /obj/item/reagent_containers/food/drinks/beer/almost_empty,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "lx" = (
 /obj/item/trash/cheesie,
 /turf/open/floor/plating/rust,
-/area/awaymission/Killthemall/Level{
-	name = "Level 3"
-	})
+/area/awaymission/Killthemall/Level)
 "lK" = (
 /turf/open/floor/fakespace,
-/area/awaymission/Killthemall/Level{
-	name = "Level 9"
-	})
+/area/awaymission/Killthemall/Level)
 "lR" = (
 /obj/structure/window/plastitanium,
 /obj/structure/grille,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 9"
-	})
-"lS" = (
-/obj/structure/flora/tree/jungle/small,
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
+/area/awaymission/Killthemall/Level)
 "mc" = (
 /turf/open/indestructible/cobble{
 	name = "void";
 	icon_state = "black"
 	},
-/area/awaymission/Killthemall/start{
-	name = "???"
-	})
+/area/awaymission/Killthemall/start)
 "mk" = (
 /turf/closed/wall/mineral/titanium/spaceship,
-/area/awaymission/Killthemall/Level{
-	name = "Level 15"
-	})
+/area/awaymission/Killthemall/Level)
 "mp" = (
 /mob/living/simple_animal/hostile/construct/builder/hostile{
 	maxHealth = 40
 	},
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss1"
-	})
+/area/awaymission/Killthemall/Boss)
 "mr" = (
 /obj/machinery/airalarm,
 /turf/closed/indestructible/wall,
@@ -1025,22 +722,16 @@
 "ms" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/plating/rust,
-/area/awaymission/Killthemall/Level{
-	name = "Level 3"
-	})
+/area/awaymission/Killthemall/Level)
 "mt" = (
 /obj/structure/sign/departments/medbay/alt,
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/awaymission/Killthemall/Level{
-	name = "Level 11"
-	})
+/area/awaymission/Killthemall/Level)
 "mD" = (
 /obj/structure/table,
 /obj/item/paper/pamphlet/violent_video_games,
 /turf/open/indestructible/sound,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "mF" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 4
@@ -1048,30 +739,22 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "mO" = (
 /mob/living/simple_animal/hostile/asteroid/wolf{
 	stop_automated_movement = 1;
 	stop_automated_movement_when_pulled = 1
 	},
 /turf/open/floor/holofloor/snow,
-/area/awaymission/Killthemall/Level{
-	name = "Level 2"
-	})
+/area/awaymission/Killthemall/Level)
 "mW" = (
 /obj/structure/salvage/protolathe,
 /turf/open/floor/catwalk_floor,
-/area/awaymission/Killthemall/Level{
-	name = "Level 15"
-	})
+/area/awaymission/Killthemall/Level)
 "nh" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Level{
-	name = "Level 5"
-	})
+/area/awaymission/Killthemall/Level)
 "nn" = (
 /obj/structure/ladder/unbreakable/rune{
 	alpha = 0;
@@ -1083,21 +766,15 @@
 	name = "\improper secret escape route"
 	},
 /turf/open/floor/fakespace,
-/area/awaymission/Killthemall/Level{
-	name = "Level 9"
-	})
+/area/awaymission/Killthemall/Level)
 "np" = (
 /obj/structure/bookcase/random,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "nq" = (
 /obj/structure/barricade/security/murderdome,
 /turf/open/indestructible,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "nB" = (
 /obj/structure/ladder/unbreakable/rune{
 	alpha = 0;
@@ -1109,19 +786,13 @@
 	name = "\improper secret escape route"
 	},
 /turf/open/indestructible/cobble,
-/area/awaymission/Killthemall/Level{
-	name = "Level 7"
-	})
+/area/awaymission/Killthemall/Level)
 "nE" = (
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Level{
-	name = "Level 5"
-	})
+/area/awaymission/Killthemall/Level)
 "nM" = (
 /turf/open/floor/iron/kitchen,
-/area/awaymission/Killthemall/Level{
-	name = "Level 4"
-	})
+/area/awaymission/Killthemall/Level)
 "nP" = (
 /mob/living/simple_animal/hostile/syndicate/ranged/smg{
 	inertia_move_delay = 0;
@@ -1132,9 +803,7 @@
 /obj/effect/turf_decal/delivery/blue,
 /obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "nV" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine,
@@ -1144,33 +813,23 @@
 	turns_per_move = 0
 	},
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 8"
-	})
+/area/awaymission/Killthemall/Level)
 "nX" = (
 /obj/structure/destructible/cult/pylon,
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss1"
-	})
+/area/awaymission/Killthemall/Boss)
 "of" = (
 /obj/machinery/door/keycard/library,
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss1"
-	})
+/area/awaymission/Killthemall/Boss)
 "ol" = (
 /obj/structure/spacevine,
 /obj/structure/flora/junglebush/large,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 8"
-	})
+/area/awaymission/Killthemall/Level)
 "om" = (
 /turf/closed/wall/r_wall/rust,
-/area/awaymission/Killthemall/Level{
-	name = "Level 3"
-	})
+/area/awaymission/Killthemall/Level)
 "oB" = (
 /obj/structure/ladder/unbreakable/rune{
 	color = "#ff0000";
@@ -1179,15 +838,11 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "oN" = (
 /obj/structure/rack,
 /turf/open/indestructible/sound,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "oQ" = (
 /obj/structure/ladder/unbreakable/rune{
 	color = "#ff0000";
@@ -1196,17 +851,13 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Level{
-	name = "Level 5"
-	})
+/area/awaymission/Killthemall/Level)
 "oR" = (
 /obj/structure/flora/tree/jungle{
 	layer = 7
 	},
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "oW" = (
 /obj/machinery/door/window,
 /turf/open/indestructible,
@@ -1218,18 +869,14 @@
 	stop_automated_movement_when_pulled = 1
 	},
 /turf/open/floor/fakespace,
-/area/awaymission/Killthemall/Level{
-	name = "Level 9"
-	})
+/area/awaymission/Killthemall/Level)
 "pd" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/stone_tile/center/cracked,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "pe" = (
 /mob/living/simple_animal/hostile/cult/magic{
 	health = 120;
@@ -1237,15 +884,11 @@
 	stop_automated_movement = 1
 	},
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Level{
-	name = "Level 5"
-	})
+/area/awaymission/Killthemall/Level)
 "pf" = (
 /obj/structure/shipping_container/gorlex/red,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "pn" = (
 /obj/structure/ladder/unbreakable/rune{
 	alpha = 0;
@@ -1257,43 +900,31 @@
 	name = "\improper secret escape route"
 	},
 /turf/open/floor/padded,
-/area/awaymission/Killthemall/Level{
-	name = "Level 11"
-	})
+/area/awaymission/Killthemall/Level)
 "ps" = (
 /obj/structure/flora/junglebush/b,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 8"
-	})
+/area/awaymission/Killthemall/Level)
 "pt" = (
 /obj/structure/rack/shelf,
 /obj/item/storage/toolbox,
 /turf/open/indestructible/sound,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "pA" = (
 /obj/effect/decal/cleanable/vomit/old,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/rust,
-/area/awaymission/Killthemall/Level{
-	name = "Level 3"
-	})
+/area/awaymission/Killthemall/Level)
 "pE" = (
 /obj/effect/spawner/structure/window{
 	max_integrity = 40
 	},
 /turf/open/floor/iron/kitchen,
-/area/awaymission/Killthemall/Level{
-	name = "Level 4"
-	})
+/area/awaymission/Killthemall/Level)
 "pG" = (
 /obj/structure/salvage/remains,
 /turf/open/floor/catwalk_floor,
-/area/awaymission/Killthemall/Level{
-	name = "Level 15"
-	})
+/area/awaymission/Killthemall/Level)
 "pM" = (
 /obj/structure/sign/poster/contraband/bountyhunters,
 /turf/closed/indestructible/wall,
@@ -1301,37 +932,27 @@
 "pX" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "pY" = (
 /obj/effect/turf_decal/delivery/blue,
 /obj/structure/rack,
 /obj/item/vending_refill/donksoft,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "qe" = (
 /turf/closed/indestructible/rock/snow/ice,
-/area/awaymission/Killthemall/Level{
-	name = "Level 2"
-	})
+/area/awaymission/Killthemall/Level)
 "qn" = (
 /obj/structure/rack,
 /obj/item/gun/ballistic/automatic/c20r,
 /obj/item/ammo_box/magazine/smgm45,
 /obj/item/ammo_box/magazine/smgm45,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "qq" = (
 /obj/structure/destructible/cult/pylon,
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Level{
-	name = "Level 5"
-	})
+/area/awaymission/Killthemall/Level)
 "qu" = (
 /obj/structure/table,
 /obj/item/disk/integrated_circuit/upgrade{
@@ -1347,15 +968,11 @@
 	},
 /obj/item/clothing/suit/toggle/labcoat/mad/techcoat,
 /turf/open/floor/iron/kitchen,
-/area/awaymission/Killthemall/Level{
-	name = "Level 4"
-	})
+/area/awaymission/Killthemall/Level)
 "qA" = (
 /mob/living/simple_animal/hostile/russian/ranged/mosin,
 /turf/open/indestructible,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "qC" = (
 /obj/structure/closet/crate/necropolis,
 /obj/item/gun/energy/kinetic_accelerator/premiumka/bdminer,
@@ -1369,71 +986,51 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Level{
-	name = "Level 10"
-	})
+/area/awaymission/Killthemall/Level)
 "qD" = (
 /obj/effect/spawner/lootdrop/pizzaparty,
 /obj/structure/table,
 /turf/open/floor/iron/kitchen/herringbone,
-/area/awaymission/Killthemall/start{
-	name = "End"
-	})
+/area/awaymission/Killthemall/start)
 "qF" = (
 /turf/open/lava,
-/area/awaymission/Killthemall/Level{
-	name = "Level 10"
-	})
+/area/awaymission/Killthemall/Level)
 "qK" = (
 /obj/structure/closet/crate/large,
 /obj/item/reagent_containers/food/snacks/candy,
 /obj/item/reagent_containers/food/snacks/candy,
 /obj/item/reagent_containers/food/snacks/candy,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "qQ" = (
 /obj/vehicle/sealed/mecha/combat/gygax/bluespace,
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/circuit/red,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "qV" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 8"
-	})
+/area/awaymission/Killthemall/Level)
 "rc" = (
 /obj/machinery/gateway/away,
 /turf/open/floor/iron/kitchen/herringbone,
-/area/awaymission/Killthemall/start{
-	name = "End"
-	})
+/area/awaymission/Killthemall/start)
 "rf" = (
 /turf/open/water{
 	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Level{
-	name = "Level 7"
-	})
+/area/awaymission/Killthemall/Level)
 "ro" = (
 /obj/machinery/mech_bay_recharge_port,
 /turf/open/indestructible/sound,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "rp" = (
 /obj/structure/flora/ash/cacti,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Level{
-	name = "Level 10"
-	})
+/area/awaymission/Killthemall/Level)
 "rt" = (
 /obj/structure/stone_tile/block/burnt{
 	dir = 1
@@ -1444,23 +1041,17 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "ru" = (
 /obj/effect/turf_decal/delivery/blue,
 /obj/structure/rack,
 /obj/item/reagent_containers/food/drinks/bottle/champagne/empty,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "rv" = (
 /obj/structure/showcase/horrific_experiment,
 /turf/open/floor/iron/kitchen,
-/area/awaymission/Killthemall/Level{
-	name = "Level 4"
-	})
+/area/awaymission/Killthemall/Level)
 "ry" = (
 /obj/structure/ladder/unbreakable/rune{
 	color = "#ff0000";
@@ -1475,22 +1066,11 @@
 	dir = 8
 	},
 /turf/open/indestructible/sound,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
-"rG" = (
-/obj/structure/flora/tree/jungle,
-/obj/structure/flora/ausbushes/fernybush,
-/turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
+/area/awaymission/Killthemall/Boss)
 "rL" = (
 /obj/effect/decal/cleanable/oil,
 /turf/open/indestructible/sound,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "rQ" = (
 /obj/structure/ladder/unbreakable/rune{
 	alpha = 0;
@@ -1502,27 +1082,21 @@
 	name = "\improper secret escape route"
 	},
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Level{
-	name = "Level 5"
-	})
+/area/awaymission/Killthemall/Level)
 "rS" = (
 /obj/structure/bed/secbed{
 	dir = 4
 	},
 /obj/item/bedsheet/random,
 /turf/open/floor/padded,
-/area/awaymission/Killthemall/Level{
-	name = "Level 11"
-	})
+/area/awaymission/Killthemall/Level)
 "rW" = (
 /obj/structure/closet/crate/large,
 /obj/item/reagent_containers/food/snacks/beans,
 /obj/item/reagent_containers/food/snacks/beans,
 /obj/item/reagent_containers/food/snacks/beans,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "sh" = (
 /obj/structure/stone_tile/block/burnt{
 	dir = 1
@@ -1531,15 +1105,11 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "si" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "sq" = (
 /obj/structure/ladder/unbreakable/rune{
 	color = "#ff0000";
@@ -1550,38 +1120,22 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Level{
-	name = "Level 10"
-	})
+/area/awaymission/Killthemall/Level)
 "sx" = (
 /obj/item/key,
 /turf/open/floor/holofloor/snow,
-/area/awaymission/Killthemall/Level{
-	name = "Level 2"
-	})
-"sI" = (
-/obj/structure/flora/ausbushes/fernybush,
-/turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
+/area/awaymission/Killthemall/Level)
 "sS" = (
 /obj/structure/flora/grass/both,
 /turf/open/floor/holofloor/snow,
-/area/awaymission/Killthemall/Level{
-	name = "Level 2"
-	})
+/area/awaymission/Killthemall/Level)
 "sU" = (
 /turf/closed/wall/r_wall/syndicate/nosmooth,
-/area/awaymission/Killthemall/Level{
-	name = "Level 4"
-	})
+/area/awaymission/Killthemall/Level)
 "ti" = (
 /obj/structure/filingcabinet/chestdrawer,
 /turf/open/indestructible/sound,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "tk" = (
 /obj/structure/chair/office{
 	dir = 1
@@ -1598,9 +1152,7 @@
 	turns_per_move = 0
 	},
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
+/area/awaymission/Killthemall/Level)
 "ts" = (
 /obj/structure/ladder/unbreakable/rune{
 	color = "#ff0000";
@@ -1609,15 +1161,11 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss1"
-	})
+/area/awaymission/Killthemall/Boss)
 "tE" = (
 /obj/structure/cannon/trash,
 /turf/open/floor/plating/rust,
-/area/awaymission/Killthemall/Level{
-	name = "Level 3"
-	})
+/area/awaymission/Killthemall/Level)
 "tG" = (
 /obj/effect/turf_decal/loading_area/red{
 	dir = 4
@@ -1628,37 +1176,24 @@
 /obj/structure/destructible/cult/pylon,
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss1"
-	})
+/area/awaymission/Killthemall/Boss)
 "ue" = (
 /obj/structure/flora/rock,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Level{
-	name = "Level 10"
-	})
+/area/awaymission/Killthemall/Level)
 "uf" = (
 /obj/structure/stone_tile/slab,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
-"ug" = (
-/turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 9"
-	})
+/area/awaymission/Killthemall/Boss)
 "um" = (
 /obj/structure/rack,
 /obj/item/carpentry/hammer,
 /turf/open/indestructible/sound,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "un" = (
 /obj/structure/ladder/unbreakable/rune{
 	alpha = 0;
@@ -1671,15 +1206,11 @@
 	},
 /obj/effect/decal/cleanable/vomit/old,
 /turf/open/floor/plating/rust,
-/area/awaymission/Killthemall/Level{
-	name = "Level 3"
-	})
+/area/awaymission/Killthemall/Level)
 "uv" = (
 /obj/machinery/jukebox,
 /turf/open/floor/iron/kitchen/herringbone,
-/area/awaymission/Killthemall/start{
-	name = "End"
-	})
+/area/awaymission/Killthemall/start)
 "uy" = (
 /obj/structure/sign/poster/contraband/scum,
 /turf/closed/indestructible/wall,
@@ -1688,21 +1219,15 @@
 /obj/structure/closet/crate/large,
 /obj/item/reagent_containers/food/drinks/bottle/molotov,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "uK" = (
 /obj/structure/reagent_dispensers/beerkeg,
 /turf/open/floor/iron/kitchen/herringbone,
-/area/awaymission/Killthemall/start{
-	name = "End"
-	})
+/area/awaymission/Killthemall/start)
 "uL" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/iron/kitchen,
-/area/awaymission/Killthemall/Level{
-	name = "Level 4"
-	})
+/area/awaymission/Killthemall/Level)
 "uO" = (
 /obj/structure/closet/crate/trashcart,
 /obj/item/gun/energy/laser/hellgun,
@@ -1713,22 +1238,16 @@
 /obj/item/trash/tray,
 /obj/item/gun/energy/laser/hellgun,
 /turf/open/floor/plating/rust,
-/area/awaymission/Killthemall/Level{
-	name = "Level 3"
-	})
+/area/awaymission/Killthemall/Level)
 "uS" = (
 /obj/structure/spacevine,
 /obj/structure/flora/junglebush/b,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 8"
-	})
+/area/awaymission/Killthemall/Level)
 "uY" = (
 /obj/structure/flora/bush,
 /turf/open/floor/holofloor/snow,
-/area/awaymission/Killthemall/Level{
-	name = "Level 2"
-	})
+/area/awaymission/Killthemall/Level)
 "va" = (
 /mob/living/simple_animal/hostile/dark_wizard{
 	faction = list("skeleton");
@@ -1738,45 +1257,33 @@
 	turns_per_move = 0
 	},
 /turf/open/indestructible/cobble,
-/area/awaymission/Killthemall/Level{
-	name = "Level 7"
-	})
+/area/awaymission/Killthemall/Level)
 "vd" = (
 /obj/machinery/recharger,
 /turf/open/floor/holofloor/snow,
-/area/awaymission/Killthemall/Level{
-	name = "Level 2"
-	})
+/area/awaymission/Killthemall/Level)
 "vf" = (
 /obj/structure/closet/crate/large,
 /obj/item/reagent_containers/food/drinks/bottle/applejack,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "vj" = (
 /obj/structure/table/wood/poker,
 /obj/item/coin/adamantine,
 /obj/item/toy/cards/cardhand,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "vp" = (
 /mob/living/simple_animal/hostile/retaliate/clown/clownhulk/chlown{
 	faction = list("shiz")
 	},
 /turf/open/floor/padded,
-/area/awaymission/Killthemall/Level{
-	name = "Level 11"
-	})
+/area/awaymission/Killthemall/Level)
 "vC" = (
 /obj/structure/closet/crate/large,
 /obj/item/reagent_containers/food/drinks/bottle/grenadine,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "vH" = (
 /obj/structure/ladder/unbreakable/rune{
 	alpha = 0;
@@ -1788,9 +1295,7 @@
 	name = "\improper secret escape route"
 	},
 /turf/open/floor/catwalk_floor,
-/area/awaymission/Killthemall/Level{
-	name = "Level 15"
-	})
+/area/awaymission/Killthemall/Level)
 "vI" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 5
@@ -1798,22 +1303,16 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "vK" = (
 /obj/item/slime_extract/gold,
 /obj/structure/closet/crate,
 /obj/item/storage/fancy/cigarettes/derringer/gold,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 9"
-	})
+/area/awaymission/Killthemall/Level)
 "vM" = (
 /turf/closed/indestructible/hotelwall,
-/area/awaymission/Killthemall/start{
-	name = "End"
-	})
+/area/awaymission/Killthemall/start)
 "vS" = (
 /obj/structure/chair/sofa/corp,
 /obj/effect/decal/remains/robot,
@@ -1830,9 +1329,7 @@
 	name = "\improper secret escape route"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "vX" = (
 /obj/structure/table,
 /obj/structure/window/reinforced{
@@ -1855,16 +1352,12 @@
 	name = "void";
 	icon_state = "black"
 	},
-/area/awaymission/Killthemall/start{
-	name = "???"
-	})
+/area/awaymission/Killthemall/start)
 "wl" = (
 /obj/structure/flora/tree/jungle,
 /obj/structure/flora/ausbushes/fernybush,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "wA" = (
 /obj/structure/ladder/unbreakable/rune{
 	color = "#ff0000";
@@ -1876,24 +1369,18 @@
 	icon = 'icons/turf/floors/carpet.dmi';
 	icon_state = "carpet"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "wJ" = (
 /obj/machinery/recharger,
 /turf/open/floor/festive/alleyway/safe,
-/area/awaymission/Killthemall/Level{
-	name = "Level 7"
-	})
+/area/awaymission/Killthemall/Level)
 "wK" = (
 /obj/structure/closet/crate/large,
 /obj/item/reagent_containers/food/drinks/bottle/absinthe/premium,
 /obj/item/reagent_containers/food/drinks/bottle/absinthe/premium,
 /obj/item/reagent_containers/food/drinks/bottle/absinthe/premium,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "wN" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/meat/steak/bear,
@@ -1902,40 +1389,25 @@
 	pixel_y = -4
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "wO" = (
 /turf/open/floor/iron/kitchen/herringbone,
-/area/awaymission/Killthemall/start{
-	name = "End"
-	})
+/area/awaymission/Killthemall/start)
 "wP" = (
 /obj/item/trash/cheesie,
 /obj/item/trash/candy,
 /turf/open/floor/plating/rust,
-/area/awaymission/Killthemall/Level{
-	name = "Level 3"
-	})
-"wV" = (
-/turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "xb" = (
 /obj/structure/flora/tree/jungle{
 	layer = 8
 	},
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "xc" = (
 /obj/structure/shipping_container/conarex,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "xg" = (
 /mob/living/simple_animal/hostile/syndicate/ranged/shotgun{
 	inertia_move_delay = 0;
@@ -1944,9 +1416,7 @@
 	turns_per_move = 0
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "xo" = (
 /obj/structure/rack/shelf,
 /obj/item/storage/toolbox/electrical{
@@ -1957,9 +1427,7 @@
 	pixel_y = 8
 	},
 /turf/open/indestructible/sound,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "xq" = (
 /mob/living/simple_animal/hostile/jungle/seedling{
 	inertia_move_delay = 0;
@@ -1968,20 +1436,14 @@
 	turns_per_move = 0
 	},
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
+/area/awaymission/Killthemall/Level)
 "xC" = (
 /obj/structure/sign/warning/securearea,
 /turf/closed/indestructible/rock,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "xD" = (
 /turf/open/floor/plating/rust,
-/area/awaymission/Killthemall/Level{
-	name = "Level 3"
-	})
+/area/awaymission/Killthemall/Level)
 "xH" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 1
@@ -1989,14 +1451,10 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "xL" = (
 /turf/open/floor/festive/stairs/stairseast,
-/area/awaymission/Killthemall/Level{
-	name = "Level 7"
-	})
+/area/awaymission/Killthemall/Level)
 "xO" = (
 /turf/closed/indestructible/necropolis,
 /area/space)
@@ -2007,17 +1465,13 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "yd" = (
 /obj/structure/fluff/paper/stack{
 	dir = 4
 	},
 /turf/open/floor/iron/kitchen,
-/area/awaymission/Killthemall/Level{
-	name = "Level 4"
-	})
+/area/awaymission/Killthemall/Level)
 "ye" = (
 /obj/structure/stone_tile/burnt{
 	dir = 1
@@ -2025,53 +1479,34 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "yf" = (
 /obj/item/stack/sheet/plasteel,
 /obj/item/carpentry/hammer,
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/circuit/green,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "yh" = (
 /obj/structure/sign/poster/contraband/communist_state,
 /turf/closed/wall/ice,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
-"yj" = (
-/turf/closed/indestructible/rock,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "yo" = (
 /obj/structure/shipping_container/kosmologistika,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "yq" = (
 /turf/closed/wall/mineral/titanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 11"
-	})
+/area/awaymission/Killthemall/Level)
 "ys" = (
 /obj/item/trash/candy,
 /turf/open/floor/plating/rust,
-/area/awaymission/Killthemall/Level{
-	name = "Level 3"
-	})
+/area/awaymission/Killthemall/Level)
 "yt" = (
 /obj/structure/fluff/paper/stack{
 	dir = 8
 	},
 /turf/open/floor/iron/kitchen,
-/area/awaymission/Killthemall/Level{
-	name = "Level 4"
-	})
+/area/awaymission/Killthemall/Level)
 "yF" = (
 /obj/structure/ladder/unbreakable/rune{
 	color = "#ff0000";
@@ -2080,108 +1515,72 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "yG" = (
 /obj/structure/shipping_container/donk_co,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "yH" = (
 /obj/structure/flora/tree/spookytimexl,
 /turf/open/floor/holofloor/snow,
-/area/awaymission/Killthemall/Level{
-	name = "Level 2"
-	})
+/area/awaymission/Killthemall/Level)
 "yK" = (
 /obj/structure/flora/ausbushes/fernybush,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "yR" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/catwalk_floor,
-/area/awaymission/Killthemall/Level{
-	name = "Level 15"
-	})
+/area/awaymission/Killthemall/Level)
 "yU" = (
 /obj/structure/salvage/circuit_imprinter,
 /turf/open/floor/catwalk_floor,
-/area/awaymission/Killthemall/Level{
-	name = "Level 15"
-	})
+/area/awaymission/Killthemall/Level)
 "yV" = (
 /obj/item/trash/cheesie,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/rust,
-/area/awaymission/Killthemall/Level{
-	name = "Level 3"
-	})
+/area/awaymission/Killthemall/Level)
 "yY" = (
 /obj/structure/flora/rock/pile/icy,
 /turf/open/floor/holofloor/snow,
-/area/awaymission/Killthemall/Level{
-	name = "Level 2"
-	})
+/area/awaymission/Killthemall/Level)
 "zd" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/padded,
-/area/awaymission/Killthemall/Level{
-	name = "Level 11"
-	})
+/area/awaymission/Killthemall/Level)
 "zk" = (
 /obj/machinery/status_display/syndie,
 /turf/closed/wall/mineral/titanium/spaceship,
-/area/awaymission/Killthemall/Level{
-	name = "Level 15"
-	})
+/area/awaymission/Killthemall/Level)
 "zl" = (
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/open/indestructible/spooknecropolis,
-/area/awaymission/Killthemall/Level{
-	name = "Level 1"
-	})
+/area/awaymission/Killthemall/Level)
 "zs" = (
 /obj/structure/mecha_wreckage/marauder,
 /obj/effect/decal/cleanable/oil,
 /obj/effect/decal/cleanable/robot_debris/gib,
 /turf/open/floor/circuit/green,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "zv" = (
 /obj/item/stack/cable_coil/cut,
 /obj/effect/decal/cleanable/oil,
 /obj/effect/decal/cleanable/robot_debris,
 /turf/open/floor/circuit/green,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "zC" = (
 /obj/structure/shipping_container/nakamura,
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
-"zO" = (
-/obj/machinery/sleeper/syndie/fullupgrade,
-/turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
+/area/awaymission/Killthemall/Level)
 "zU" = (
 /obj/structure/flora/tree/jungle{
 	layer = 9
 	},
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "zY" = (
 /obj/structure/spacevine,
 /mob/living/simple_animal/hostile/venus_human_trap{
@@ -2190,9 +1589,7 @@
 	turns_per_move = 0
 	},
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 8"
-	})
+/area/awaymission/Killthemall/Level)
 "Ah" = (
 /obj/machinery/light{
 	dir = 4
@@ -2200,56 +1597,40 @@
 /obj/machinery/chem_dispenser/drinks/fullupgrade,
 /obj/structure/table,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "Aq" = (
 /obj/machinery/recharger,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "At" = (
 /obj/effect/decal/cleanable/vomit/old,
 /turf/open/floor/plating/rust,
-/area/awaymission/Killthemall/Level{
-	name = "Level 3"
-	})
+/area/awaymission/Killthemall/Level)
 "AC" = (
 /turf/open/indestructible{
 	icon = 'icons/turf/floors/carpet.dmi';
 	icon_state = "carpet"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "AE" = (
 /obj/effect/decal/cleanable/blood/gibs/human/limb,
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/iron/kitchen,
-/area/awaymission/Killthemall/Level{
-	name = "Level 4"
-	})
+/area/awaymission/Killthemall/Level)
 "AK" = (
 /obj/structure/shipping_container/gorlex/red,
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "AM" = (
 /obj/structure/shipping_container/gorlex,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "AR" = (
 /obj/structure/destructible/cult/talisman,
 /obj/effect/mob_spawn/human/corpse/geneticist,
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss1"
-	})
+/area/awaymission/Killthemall/Boss)
 "AS" = (
 /obj/structure/closet/crate/secure/soviet,
 /obj/item/ammo_box/a762,
@@ -2264,59 +1645,35 @@
 /obj/item/storage/box/lethalslugs,
 /obj/item/storage/toolbox/ammo,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "AT" = (
 /obj/structure/shipping_container/kosmologistika,
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
-"AV" = (
-/obj/machinery/recharger,
-/turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
+/area/awaymission/Killthemall/Level)
 "AX" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/space)
 "Bb" = (
 /obj/machinery/vending/sovietsoda,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "Bh" = (
 /obj/structure/flora/tree/jungle{
 	layer = 7;
 	max_integrity = 40
 	},
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "Bi" = (
 /obj/structure/spacevine,
 /obj/structure/punji_sticks,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 8"
-	})
+/area/awaymission/Killthemall/Level)
 "Bs" = (
 /obj/machinery/recharger,
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss1"
-	})
-"Bt" = (
-/obj/machinery/sleeper/syndie/fullupgrade,
-/turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Boss)
 "Bv" = (
 /obj/structure/extinguisher_cabinet,
 /turf/closed/indestructible/wall,
@@ -2325,9 +1682,7 @@
 /obj/machinery/recharger,
 /obj/effect/decal/cleanable/blood,
 /turf/open/indestructible/spooknecropolis,
-/area/awaymission/Killthemall/Level{
-	name = "Level 1"
-	})
+/area/awaymission/Killthemall/Level)
 "Bx" = (
 /obj/structure/ladder/unbreakable/rune{
 	alpha = 0;
@@ -2339,22 +1694,16 @@
 	name = "\improper secret escape route"
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "By" = (
 /obj/structure/bed/secbed,
 /obj/item/bedsheet/runtime,
 /turf/open/floor/padded,
-/area/awaymission/Killthemall/Level{
-	name = "Level 11"
-	})
+/area/awaymission/Killthemall/Level)
 "BC" = (
 /obj/structure/sign/warning/securearea,
 /turf/closed/wall/mineral/cult,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss1"
-	})
+/area/awaymission/Killthemall/Boss)
 "BF" = (
 /obj/structure/stone_tile/slab/cracked,
 /mob/living/simple_animal/hostile/megafauna/rogueprocess{
@@ -2366,55 +1715,39 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "BK" = (
 /obj/structure/barricade/security/murderdome,
 /obj/structure/barricade/security/murderdome,
 /turf/open/indestructible,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "BW" = (
 /obj/effect/decal/cleanable/blood/gibs/core,
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/iron/kitchen,
-/area/awaymission/Killthemall/Level{
-	name = "Level 4"
-	})
+/area/awaymission/Killthemall/Level)
 "BY" = (
 /obj/item/storage/toolbox,
 /turf/open/floor/circuit/green,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "Cl" = (
 /obj/machinery/door/airlock/external,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 9"
-	})
+/area/awaymission/Killthemall/Level)
 "Cn" = (
 /turf/open/floor/circuit/red,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "CE" = (
 /obj/structure/flora/tree/jungle{
 	layer = 3
 	},
 /obj/structure/flora/ausbushes/fernybush,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "CK" = (
 /obj/structure/destructible/cult/talisman,
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss1"
-	})
+/area/awaymission/Killthemall/Boss)
 "CQ" = (
 /obj/structure/closet/crate/bin,
 /obj/item/trash/cheesie,
@@ -2432,9 +1765,7 @@
 	name = "\improper secret escape route"
 	},
 /turf/open/floor/holofloor/snow,
-/area/awaymission/Killthemall/Level{
-	name = "Level 2"
-	})
+/area/awaymission/Killthemall/Level)
 "CV" = (
 /obj/structure/ladder/unbreakable/rune{
 	alpha = 0;
@@ -2446,16 +1777,12 @@
 	name = "\improper secret escape route"
 	},
 /turf/open/indestructible/spooknecropolis,
-/area/awaymission/Killthemall/Level{
-	name = "Level 1"
-	})
+/area/awaymission/Killthemall/Level)
 "CW" = (
 /obj/structure/destructible/cult/talisman,
 /obj/effect/mob_spawn/human/corpse/miner/explorer,
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss1"
-	})
+/area/awaymission/Killthemall/Boss)
 "Dc" = (
 /mob/living/simple_animal/hostile/pirate/ranged/space{
 	inertia_move_delay = 0;
@@ -2463,9 +1790,7 @@
 	stop_automated_movement_when_pulled = 1
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 9"
-	})
+/area/awaymission/Killthemall/Level)
 "Dl" = (
 /mob/living/simple_animal/hostile/skeleton/templar{
 	health = 80;
@@ -2476,30 +1801,22 @@
 	turns_per_move = 0
 	},
 /turf/open/indestructible/cobble,
-/area/awaymission/Killthemall/Level{
-	name = "Level 7"
-	})
+/area/awaymission/Killthemall/Level)
 "Dp" = (
 /obj/effect/turf_decal/delivery/blue,
 /obj/structure/rack,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "Dx" = (
 /obj/structure/shipping_container/nakamura,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "Dy" = (
 /obj/structure/flora/tree/jungle{
 	max_integrity = 40
 	},
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "DF" = (
 /obj/structure/stone_tile/block/burnt{
 	dir = 4
@@ -2507,61 +1824,39 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "DG" = (
 /obj/machinery/vending/boozeomat,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "DJ" = (
 /obj/structure/barricade/wooden/snowed,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "DR" = (
 /obj/structure/anvil,
 /obj/item/nullrod/papal_staff{
 	pixel_x = 8
 	},
 /turf/open/floor/festive/alleyway/safe,
-/area/awaymission/Killthemall/Level{
-	name = "Level 7"
-	})
+/area/awaymission/Killthemall/Level)
 "DV" = (
 /obj/structure/destructible/cult/forge,
 /obj/structure/constructshell,
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss1"
-	})
+/area/awaymission/Killthemall/Boss)
 "Ea" = (
 /obj/structure/sign/flag/skull,
 /turf/closed/indestructible/riveted,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
-"Eh" = (
-/obj/structure/flora/junglebush/large,
-/turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Boss)
 "Ej" = (
 /obj/machinery/recharger,
 /turf/open/floor/fakespace,
-/area/awaymission/Killthemall/Level{
-	name = "Level 9"
-	})
+/area/awaymission/Killthemall/Level)
 "Es" = (
 /obj/structure/flora/junglebush/large,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 8"
-	})
+/area/awaymission/Killthemall/Level)
 "Ew" = (
 /obj/structure/stone_tile/block/cracked,
 /obj/structure/stone_tile/block/cracked{
@@ -2570,31 +1865,23 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "EE" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/bearsteak,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "EI" = (
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "EJ" = (
 /mob/living/simple_animal/hostile/cult/warrior{
 	stop_automated_movement = 1
 	},
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Level{
-	name = "Level 5"
-	})
+/area/awaymission/Killthemall/Level)
 "EK" = (
 /obj/structure/statue/bronze/marx{
 	pixel_y = 15;
@@ -2602,9 +1889,7 @@
 	},
 /obj/structure/table/wood/poker,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "EQ" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/random{
 	inertia_move_delay = 0;
@@ -2614,21 +1899,15 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Level{
-	name = "Level 10"
-	})
+/area/awaymission/Killthemall/Level)
 "ET" = (
 /obj/structure/salvage/server,
 /turf/open/floor/catwalk_floor,
-/area/awaymission/Killthemall/Level{
-	name = "Level 15"
-	})
+/area/awaymission/Killthemall/Level)
 "EV" = (
 /obj/structure/loot_pile/maint,
 /turf/open/floor/plating/rust,
-/area/awaymission/Killthemall/Level{
-	name = "Level 3"
-	})
+/area/awaymission/Killthemall/Level)
 "Fb" = (
 /obj/structure/ladder/unbreakable/rune{
 	color = "#ff0000";
@@ -2637,39 +1916,19 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/floor/iron/kitchen,
-/area/awaymission/Killthemall/Level{
-	name = "Level 4"
-	})
+/area/awaymission/Killthemall/Level)
 "Fc" = (
 /obj/structure/fluff/big_chain,
 /turf/open/indestructible/cobble{
 	name = "void";
 	icon_state = "black"
 	},
-/area/awaymission/Killthemall/start{
-	name = "???"
-	})
-"Fd" = (
-/obj/structure/flora/junglebush/large,
-/turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
+/area/awaymission/Killthemall/start)
 "Ff" = (
 /obj/machinery/clonepod/experimental,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/iron/kitchen,
-/area/awaymission/Killthemall/Level{
-	name = "Level 4"
-	})
-"Fj" = (
-/obj/structure/flora/tree/jungle/small{
-	layer = 3
-	},
-/turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
+/area/awaymission/Killthemall/Level)
 "Fl" = (
 /obj/structure/table,
 /obj/item/disk/tech_disk/major{
@@ -2688,15 +1947,11 @@
 	},
 /obj/machinery/recharger,
 /turf/open/floor/iron/kitchen,
-/area/awaymission/Killthemall/Level{
-	name = "Level 4"
-	})
+/area/awaymission/Killthemall/Level)
 "Fo" = (
 /obj/structure/shipping_container/vitezstvi,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "Fp" = (
 /mob/living/simple_animal/hostile/deth{
 	faction = list("spider");
@@ -2704,9 +1959,7 @@
 	stop_automated_movement_when_pulled = 1
 	},
 /turf/open/floor/catwalk_floor,
-/area/awaymission/Killthemall/Level{
-	name = "Level 15"
-	})
+/area/awaymission/Killthemall/Level)
 "Ft" = (
 /obj/structure/chair/sofa/corp/right,
 /obj/effect/landmark/awaystart,
@@ -2717,9 +1970,7 @@
 	dir = 9
 	},
 /turf/open/floor/iron/kitchen,
-/area/awaymission/Killthemall/Level{
-	name = "Level 4"
-	})
+/area/awaymission/Killthemall/Level)
 "FF" = (
 /obj/structure/ladder/unbreakable/rune{
 	color = "#ff0000";
@@ -2728,29 +1979,18 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 8"
-	})
-"FH" = (
-/turf/closed/indestructible/rock,
-/area/awaymission/Killthemall/Level{
-	name = "Level 8"
-	})
+/area/awaymission/Killthemall/Level)
 "FJ" = (
 /obj/structure/table,
 /obj/item/flashlight/lamp{
 	pixel_y = 9
 	},
 /turf/open/indestructible/sound,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "FM" = (
 /obj/machinery/recharger,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "FN" = (
 /obj/structure/ladder/unbreakable/rune{
 	alpha = 0;
@@ -2762,17 +2002,13 @@
 	name = "\improper secret escape route"
 	},
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
+/area/awaymission/Killthemall/Level)
 "FS" = (
 /obj/structure/stone_tile/block/cracked,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "Gb" = (
 /mob/living/simple_animal/hostile/cult/magic/elite{
 	loot = list(/obj/effect/decal/remains/human,/obj/item/keycard/library);
@@ -2781,9 +2017,7 @@
 	stop_automated_movement_when_pulled = 1
 	},
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss1"
-	})
+/area/awaymission/Killthemall/Boss)
 "Gk" = (
 /obj/structure/ladder/unbreakable/rune{
 	alpha = 0;
@@ -2795,9 +2029,7 @@
 	name = "\improper secret escape route"
 	},
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "Gl" = (
 /obj/structure/chair/sofa/corp,
 /obj/effect/landmark/awaystart,
@@ -2806,9 +2038,7 @@
 "Gm" = (
 /obj/structure/furnace,
 /turf/open/indestructible/cobble,
-/area/awaymission/Killthemall/Level{
-	name = "Level 7"
-	})
+/area/awaymission/Killthemall/Level)
 "Gv" = (
 /obj/structure/table,
 /obj/structure/fluff/paper/stack{
@@ -2816,16 +2046,12 @@
 	},
 /obj/item/clipboard,
 /turf/open/floor/iron/kitchen,
-/area/awaymission/Killthemall/Level{
-	name = "Level 4"
-	})
+/area/awaymission/Killthemall/Level)
 "Gw" = (
 /obj/structure/flora/tree/jungle/small,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "Gy" = (
 /obj/structure/ladder/unbreakable/rune{
 	alpha = 0;
@@ -2839,67 +2065,49 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Level{
-	name = "Level 10"
-	})
+/area/awaymission/Killthemall/Level)
 "GF" = (
 /turf/open/floor/festive/alleyway/safe,
-/area/awaymission/Killthemall/Level{
-	name = "Level 7"
-	})
+/area/awaymission/Killthemall/Level)
 "GG" = (
 /obj/structure/destructible/cult/talisman,
 /obj/effect/mob_spawn/human/corpse/clown,
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Level{
-	name = "Level 5"
-	})
+/area/awaymission/Killthemall/Level)
 "GQ" = (
 /obj/item/chainsaw{
 	force_on = 40;
 	desc = "A versatile power tool. Useful for limbing trees and delimbing humans. This one was improved"
 	},
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "GY" = (
 /obj/structure/spacevine,
 /obj/structure/flora/junglebush/c,
 /obj/structure/flora/junglebush/b,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 8"
-	})
+/area/awaymission/Killthemall/Level)
 "Hk" = (
 /obj/structure/flora/ashtree,
 /turf/open/floor/holofloor/snow,
-/area/awaymission/Killthemall/Level{
-	name = "Level 2"
-	})
+/area/awaymission/Killthemall/Level)
 "Hl" = (
 /obj/structure/shipping_container/nanotrasen,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "Ho" = (
 /obj/structure/fluff/paper/stack{
 	dir = 5
 	},
 /turf/open/floor/iron/kitchen,
-/area/awaymission/Killthemall/Level{
-	name = "Level 4"
-	})
+/area/awaymission/Killthemall/Level)
 "Hq" = (
 /obj/item/stack/ore/gold,
 /obj/item/stack/ore/gold,
 /obj/item/reagent_containers/food/snacks/grown/apple/gold,
 /obj/structure/closet/crate,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 9"
-	})
+/area/awaymission/Killthemall/Level)
 "Hr" = (
 /obj/structure/chair/sofa/corp/left,
 /obj/effect/landmark/awaystart,
@@ -2908,55 +2116,39 @@
 "HB" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/fakespace,
-/area/awaymission/Killthemall/Level{
-	name = "Level 9"
-	})
+/area/awaymission/Killthemall/Level)
 "HG" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine,
 /obj/structure/flora/junglebush/large,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 8"
-	})
+/area/awaymission/Killthemall/Level)
 "HP" = (
 /obj/structure/noticeboard/rd,
 /turf/closed/wall/r_wall/syndicate/nosmooth,
-/area/awaymission/Killthemall/Level{
-	name = "Level 4"
-	})
+/area/awaymission/Killthemall/Level)
 "HT" = (
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "HU" = (
 /obj/structure/destructible/cult/talisman,
 /obj/item/book/granter/spell/random,
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss1"
-	})
+/area/awaymission/Killthemall/Boss)
 "HW" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "HX" = (
 /turf/open/indestructible/spooknecropolis,
-/area/awaymission/Killthemall/Level{
-	name = "Level 1"
-	})
+/area/awaymission/Killthemall/Level)
 "Ii" = (
 /obj/structure/flora/ash/leaf_shroom,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "Io" = (
 /obj/structure/table/wood/poker,
 /obj/item/coin/mythril,
@@ -2964,27 +2156,16 @@
 /obj/item/dice/d6,
 /obj/item/toy/cards/cardhand,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "Ip" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "Iy" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
-"Iz" = (
-/turf/closed/mineral,
-/area/awaymission/Killthemall/Level{
-	name = "Level 9"
-	})
+/area/awaymission/Killthemall/Level)
 "IK" = (
 /obj/structure/ladder/unbreakable/rune{
 	alpha = 0;
@@ -2996,9 +2177,7 @@
 	name = "\improper secret escape route"
 	},
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss1"
-	})
+/area/awaymission/Killthemall/Boss)
 "IL" = (
 /obj/structure/chair/office/dark{
 	dir = 4
@@ -3007,22 +2186,16 @@
 	stop_automated_movement = 1
 	},
 /turf/open/indestructible/sound,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "IO" = (
 /obj/structure/flora/grass/green,
 /turf/open/floor/holofloor/snow,
-/area/awaymission/Killthemall/Level{
-	name = "Level 2"
-	})
+/area/awaymission/Killthemall/Level)
 "IT" = (
 /obj/structure/shipping_container,
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "Jr" = (
 /obj/structure/ladder/unbreakable/rune{
 	color = "#ff0000";
@@ -3031,22 +2204,16 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
+/area/awaymission/Killthemall/Level)
 "Jy" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "JD" = (
 /obj/structure/destructible/cult/talisman,
 /obj/effect/mob_spawn/human/corpse/cook,
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss1"
-	})
+/area/awaymission/Killthemall/Boss)
 "JK" = (
 /obj/structure/ladder/unbreakable/rune{
 	color = "#ff0000";
@@ -3055,9 +2222,7 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/floor/fakespace,
-/area/awaymission/Killthemall/Level{
-	name = "Level 9"
-	})
+/area/awaymission/Killthemall/Level)
 "JN" = (
 /mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/stormtrooper/anthro{
 	inertia_move_delay = 0;
@@ -3068,54 +2233,36 @@
 /obj/effect/turf_decal/delivery/blue,
 /obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
-"JP" = (
-/obj/structure/flora/ausbushes/leafybush,
-/turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
+/area/awaymission/Killthemall/Level)
 "JQ" = (
 /obj/structure/flora/tree/jungle{
 	layer = 4
 	},
 /obj/structure/flora/ausbushes/fernybush,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "JS" = (
 /obj/structure/fluff/paper/stack{
 	dir = 1
 	},
 /turf/open/floor/iron/kitchen,
-/area/awaymission/Killthemall/Level{
-	name = "Level 4"
-	})
+/area/awaymission/Killthemall/Level)
 "JU" = (
 /obj/effect/decal/cleanable/blood,
 /turf/open/indestructible/spooknecropolis,
-/area/awaymission/Killthemall/Level{
-	name = "Level 1"
-	})
+/area/awaymission/Killthemall/Level)
 "JX" = (
 /obj/effect/turf_decal/delivery/blue,
 /obj/structure/rack,
 /obj/item/ammo_box/c45/lethal,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "Ke" = (
 /obj/item/banner/security{
 	desc = "The banner of kingdom, ruling this place with an iron fist."
 	},
 /turf/open/indestructible/cobble,
-/area/awaymission/Killthemall/Level{
-	name = "Level 7"
-	})
+/area/awaymission/Killthemall/Level)
 "Kf" = (
 /obj/structure/rack/shelf,
 /obj/item/ammo_casing/caseless/rocket/hedp{
@@ -3132,9 +2279,7 @@
 	pixel_x = 10
 	},
 /turf/open/indestructible/sound,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "Kq" = (
 /obj/effect/turf_decal/delivery/blue,
 /obj/structure/rack,
@@ -3143,26 +2288,18 @@
 /obj/item/storage/box/donkpockets,
 /obj/item/storage/box/donkpockets,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "Kr" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/holofloor/snow,
-/area/awaymission/Killthemall/Level{
-	name = "Level 2"
-	})
+/area/awaymission/Killthemall/Level)
 "Kt" = (
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "KH" = (
 /obj/machinery/recharger,
 /turf/open/floor/padded,
-/area/awaymission/Killthemall/Level{
-	name = "Level 11"
-	})
+/area/awaymission/Killthemall/Level)
 "KO" = (
 /mob/living/simple_animal/hostile/bear/russian{
 	inertia_move_delay = 0;
@@ -3170,24 +2307,14 @@
 	stop_automated_movement_when_pulled = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
-"KZ" = (
-/obj/structure/flora/ausbushes/lavendergrass,
-/turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
+/area/awaymission/Killthemall/Level)
 "Lb" = (
 /obj/item/pickaxe/diamond,
 /obj/structure/flora/ash/stem_shroom,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Level{
-	name = "Level 10"
-	})
+/area/awaymission/Killthemall/Level)
 "Lc" = (
 /obj/structure/rack/shelf,
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot{
@@ -3198,9 +2325,7 @@
 	},
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser,
 /turf/open/indestructible/sound,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "Lf" = (
 /mob/living/simple_animal/hostile/russian/ranged/officer{
 	inertia_move_delay = 0;
@@ -3208,41 +2333,31 @@
 	stop_automated_movement_when_pulled = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "Lm" = (
 /obj/item/stack/sheet/mineral/gold,
 /obj/item/stack/sheet/mineral/gold,
 /obj/item/lighter/gold,
 /obj/structure/closet/crate,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 9"
-	})
+/area/awaymission/Killthemall/Level)
 "Lo" = (
 /obj/structure/table,
 /obj/structure/fluff/paper/stack,
 /obj/item/pen,
 /turf/open/indestructible/sound,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "Lv" = (
 /obj/structure/flora/ash/tall_shroom,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Level{
-	name = "Level 10"
-	})
+/area/awaymission/Killthemall/Level)
 "Lx" = (
 /obj/structure/destructible/cult/talisman,
 /obj/item/clothing/suit/cultrobes,
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Level{
-	name = "Level 5"
-	})
+/area/awaymission/Killthemall/Level)
 "LA" = (
 /obj/structure/stone_tile/slab/cracked,
 /obj/structure/ladder/unbreakable/rune{
@@ -3254,23 +2369,17 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "LJ" = (
 /turf/closed/mineral/ash_rock,
-/area/awaymission/Killthemall/Level{
-	name = "Level 10"
-	})
+/area/awaymission/Killthemall/Level)
 "LM" = (
 /turf/closed/indestructible{
 	icon = 'icons/turf/floors.dmi';
 	icon_state = "black";
 	name = "void"
 	},
-/area/awaymission/Killthemall/start{
-	name = "???"
-	})
+/area/awaymission/Killthemall/start)
 "LN" = (
 /mob/living/simple_animal/hostile/cultistmelee{
 	health = 80;
@@ -3280,55 +2389,35 @@
 	stop_automated_movement = 1
 	},
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss1"
-	})
+/area/awaymission/Killthemall/Boss)
 "LO" = (
 /obj/structure/flora/ash/stem_shroom,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Level{
-	name = "Level 10"
-	})
+/area/awaymission/Killthemall/Level)
 "LQ" = (
 /obj/structure/table,
 /obj/item/documents/nanotrasen,
 /turf/open/indestructible/sound,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
-"LR" = (
-/obj/structure/flora/tree/jungle/small,
-/turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
+/area/awaymission/Killthemall/Boss)
 "LV" = (
 /obj/effect/turf_decal/delivery/blue,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "Md" = (
 /obj/structure/loot_pile/maint{
 	max_integrity = 40
 	},
 /turf/open/floor/plating/rust,
-/area/awaymission/Killthemall/Level{
-	name = "Level 3"
-	})
+/area/awaymission/Killthemall/Level)
 "Mf" = (
 /turf/open/indestructible/cobble,
-/area/awaymission/Killthemall/Level{
-	name = "Level 7"
-	})
+/area/awaymission/Killthemall/Level)
 "Mg" = (
 /obj/structure/flora/tree/jungle/small,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "Mi" = (
 /obj/structure/table,
 /obj/machinery/door/window{
@@ -3344,9 +2433,7 @@
 	stop_automated_movement_when_pulled = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "Mn" = (
 /obj/structure/stone_tile{
 	dir = 4
@@ -3354,9 +2441,7 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "Mp" = (
 /obj/structure/ladder/unbreakable/rune{
 	alpha = 0;
@@ -3368,20 +2453,14 @@
 	name = "\improper secret escape route"
 	},
 /turf/open/floor/iron/kitchen,
-/area/awaymission/Killthemall/Level{
-	name = "Level 4"
-	})
+/area/awaymission/Killthemall/Level)
 "Mr" = (
 /obj/effect/decal/cleanable/shreds,
 /turf/open/floor/circuit/green,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "MB" = (
 /turf/closed/indestructible/rock,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "MC" = (
 /obj/structure/spacevine,
 /mob/living/simple_animal/hostile/venus_human_trap{
@@ -3391,9 +2470,7 @@
 	},
 /obj/structure/flora/junglebush/large,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 8"
-	})
+/area/awaymission/Killthemall/Level)
 "MP" = (
 /obj/structure/rack/shelf,
 /obj/item/mecha_ammo/lmg,
@@ -3404,27 +2481,11 @@
 	pixel_y = 10
 	},
 /turf/open/indestructible/sound,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "Nh" = (
 /obj/effect/decal/cleanable/blood,
 /turf/closed/indestructible/necropolis,
-/area/awaymission/Killthemall/Level{
-	name = "Level 1"
-	})
-"Nq" = (
-/obj/structure/flora/ausbushes/brflowers,
-/turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
-"Nv" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
+/area/awaymission/Killthemall/Level)
 "NH" = (
 /mob/living/simple_animal/hostile/cultistmelee{
 	health = 80;
@@ -3435,9 +2496,7 @@
 	maxHealth = 80
 	},
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss1"
-	})
+/area/awaymission/Killthemall/Boss)
 "NK" = (
 /obj/structure/anvil,
 /obj/item/nullrod/tribal_knife{
@@ -3445,9 +2504,7 @@
 	pixel_y = 8
 	},
 /turf/open/floor/festive/alleyway/safe,
-/area/awaymission/Killthemall/Level{
-	name = "Level 7"
-	})
+/area/awaymission/Killthemall/Level)
 "NV" = (
 /obj/structure/anvil,
 /obj/item/nullrod/hammmer{
@@ -3455,33 +2512,23 @@
 	pixel_y = 8
 	},
 /turf/open/floor/festive/alleyway/safe,
-/area/awaymission/Killthemall/Level{
-	name = "Level 7"
-	})
+/area/awaymission/Killthemall/Level)
 "Od" = (
 /obj/effect/decal/remains/human,
 /turf/open/indestructible/spooknecropolis,
-/area/awaymission/Killthemall/Level{
-	name = "Level 1"
-	})
+/area/awaymission/Killthemall/Level)
 "Og" = (
 /obj/structure/flora/ausbushes/brflowers,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "Op" = (
 /obj/structure/salvage/protolathe,
 /turf/closed/wall/mineral/titanium/spaceship,
-/area/awaymission/Killthemall/Level{
-	name = "Level 15"
-	})
+/area/awaymission/Killthemall/Level)
 "Ou" = (
 /obj/effect/decal/hammerandsickle,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "Oy" = (
 /mob/living/simple_animal/hostile/megafauna/sand{
 	hud_possible = 0;
@@ -3497,14 +2544,10 @@
 	name = "void";
 	icon_state = "black"
 	},
-/area/awaymission/Killthemall/start{
-	name = "???"
-	})
+/area/awaymission/Killthemall/start)
 "OC" = (
 /turf/closed/mineral,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "OG" = (
 /obj/structure/ladder/unbreakable/rune{
 	alpha = 0;
@@ -3519,59 +2562,43 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "ON" = (
 /turf/closed/mineral,
-/area/awaymission/Killthemall/Level{
-	name = "Level 10"
-	})
+/area/awaymission/Killthemall/Level)
 "OP" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine,
 /obj/structure/punji_sticks,
 /obj/structure/flora/junglebush/large,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 8"
-	})
+/area/awaymission/Killthemall/Level)
 "OT" = (
 /obj/item/trash/pistachios,
 /turf/open/floor/plating/rust,
-/area/awaymission/Killthemall/Level{
-	name = "Level 3"
-	})
+/area/awaymission/Killthemall/Level)
 "Pe" = (
 /obj/structure/spacevine,
 /obj/structure/flora/junglebush/c,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 8"
-	})
+/area/awaymission/Killthemall/Level)
 "Pi" = (
 /obj/effect/turf_decal/loading_area{
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "Pj" = (
 /obj/effect/decal/cleanable/blood/gibs/body,
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/iron/kitchen,
-/area/awaymission/Killthemall/Level{
-	name = "Level 4"
-	})
+/area/awaymission/Killthemall/Level)
 "Pn" = (
 /obj/machinery/recharger,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Level{
-	name = "Level 10"
-	})
+/area/awaymission/Killthemall/Level)
 "Pp" = (
 /obj/structure/table,
 /obj/item/lighter,
@@ -3580,15 +2607,11 @@
 	move_to_delay = 0
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "Px" = (
 /obj/structure/anvil,
 /turf/open/indestructible/cobble,
-/area/awaymission/Killthemall/Level{
-	name = "Level 7"
-	})
+/area/awaymission/Killthemall/Level)
 "PA" = (
 /obj/structure/ladder/unbreakable/rune{
 	alpha = 0;
@@ -3600,27 +2623,19 @@
 	name = "This is the end"
 	},
 /turf/open/floor/iron/kitchen/herringbone,
-/area/awaymission/Killthemall/start{
-	name = "End"
-	})
+/area/awaymission/Killthemall/start)
 "PB" = (
 /obj/machinery/door/airlock/medical/glass,
 /obj/effect/mapping_helpers/airlock/access/all/syndicate,
 /turf/open/floor/padded,
-/area/awaymission/Killthemall/Level{
-	name = "Level 11"
-	})
+/area/awaymission/Killthemall/Level)
 "PG" = (
 /turf/closed/mineral/random,
-/area/awaymission/Killthemall/Level{
-	name = "Level 8"
-	})
+/area/awaymission/Killthemall/Level)
 "PJ" = (
 /obj/machinery/computer/security/telescreen/entertainment,
 /turf/closed/wall/mineral/titanium/spaceship,
-/area/awaymission/Killthemall/Level{
-	name = "Level 15"
-	})
+/area/awaymission/Killthemall/Level)
 "PM" = (
 /obj/structure/chair/office,
 /obj/structure/window/reinforced{
@@ -3637,9 +2652,7 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "Qc" = (
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion{
 	inertia_move_delay = 0;
@@ -3649,40 +2662,28 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Level{
-	name = "Level 10"
-	})
+/area/awaymission/Killthemall/Level)
 "Qd" = (
 /mob/living/simple_animal/hostile/russian/ranged/trooper{
 	stop_automated_movement = 1
 	},
 /turf/open/indestructible,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "Qg" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "Qo" = (
 /obj/structure/flora/tree/spookytimexl,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "Qr" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/awaymission/Killthemall/Level{
-	name = "Level 11"
-	})
+/area/awaymission/Killthemall/Level)
 "Qs" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/padded,
-/area/awaymission/Killthemall/Level{
-	name = "Level 11"
-	})
+/area/awaymission/Killthemall/Level)
 "Qv" = (
 /mob/living/simple_animal/chick{
 	faction = list("hostile");
@@ -3693,22 +2694,16 @@
 	},
 /obj/effect/decal/cleanable/blood,
 /turf/open/indestructible/spooknecropolis,
-/area/awaymission/Killthemall/Level{
-	name = "Level 1"
-	})
+/area/awaymission/Killthemall/Level)
 "Qz" = (
 /obj/effect/turf_decal/caution/stand_clear/white,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "QD" = (
 /obj/structure/table,
 /obj/item/paper_bin,
 /turf/open/indestructible/sound,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "QE" = (
 /obj/structure/sign/poster/contraband/gl,
 /turf/closed/indestructible/wall,
@@ -3717,57 +2712,41 @@
 /obj/structure/rack,
 /obj/item/wrench/power,
 /turf/open/indestructible/sound,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "QN" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/burger/bearger,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "QW" = (
 /obj/structure/stone_tile/slab,
 /obj/machinery/door/keycard/library,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "QX" = (
 /obj/structure/healingfountain,
 /turf/open/indestructible/cobble,
-/area/awaymission/Killthemall/Level{
-	name = "Level 7"
-	})
+/area/awaymission/Killthemall/Level)
 "QY" = (
 /obj/structure/flora/tree/spookylog,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "Ra" = (
 /obj/structure/flora/tree/pine,
 /turf/open/floor/holofloor/snow,
-/area/awaymission/Killthemall/Level{
-	name = "Level 2"
-	})
+/area/awaymission/Killthemall/Level)
 "Rd" = (
 /obj/structure/table/wood/poker,
 /obj/item/coin/antagtoken,
 /obj/item/toy/cards/deck/syndicate,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "Rh" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/indestructible/spooknecropolis,
-/area/awaymission/Killthemall/Level{
-	name = "Level 1"
-	})
+/area/awaymission/Killthemall/Level)
 "Ri" = (
 /turf/open/space/basic,
 /area/space)
@@ -3778,30 +2757,10 @@
 	turns_per_move = 0
 	},
 /turf/open/floor/iron/kitchen,
-/area/awaymission/Killthemall/Level{
-	name = "Level 4"
-	})
+/area/awaymission/Killthemall/Level)
 "Rs" = (
 /turf/open/floor/catwalk_floor,
-/area/awaymission/Killthemall/Level{
-	name = "Level 15"
-	})
-"Rw" = (
-/obj/structure/flora/tree/jungle{
-	layer = 6
-	},
-/turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
-"RB" = (
-/obj/structure/flora/tree/jungle/small{
-	layer = 6
-	},
-/turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
+/area/awaymission/Killthemall/Level)
 "RJ" = (
 /obj/structure/table/wood/poker,
 /obj/item/coin/adamantine,
@@ -3809,14 +2768,10 @@
 /obj/item/reagent_containers/food/drinks/bottle/vodka,
 /obj/item/toy/cards/cardhand,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "RZ" = (
 /turf/open/indestructible,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "Sc" = (
 /obj/structure/sign/poster/contraband/revolver,
 /turf/closed/indestructible/wall,
@@ -3827,26 +2782,20 @@
 	layer = 6
 	},
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 8"
-	})
+/area/awaymission/Killthemall/Level)
 "Sr" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/meat/steak/bear,
 /obj/item/reagent_containers/food/drinks/bottle/vodka,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "Sz" = (
 /obj/structure/salvage/destructive_analyzer,
 /obj/item/clothing/suit/space/hardsuit/syndi/owl{
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 90, "wound" = 50)
 	},
 /turf/open/floor/catwalk_floor,
-/area/awaymission/Killthemall/Level{
-	name = "Level 15"
-	})
+/area/awaymission/Killthemall/Level)
 "SI" = (
 /obj/machinery/firealarm,
 /turf/closed/indestructible/wall,
@@ -3856,39 +2805,29 @@
 /obj/structure/spacevine,
 /obj/structure/flora/junglebush/c,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 8"
-	})
+/area/awaymission/Killthemall/Level)
 "SO" = (
 /obj/structure/stone_tile/cracked,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "SR" = (
 /obj/structure/closet/crate,
 /obj/item/clothing/suit/blackredgold,
 /obj/item/gun/ballistic/revolver/golden,
 /turf/open/floor/fakespace,
-/area/awaymission/Killthemall/Level{
-	name = "Level 9"
-	})
+/area/awaymission/Killthemall/Level)
 "SU" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "SX" = (
 /obj/machinery/modular_computer/console,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 9"
-	})
+/area/awaymission/Killthemall/Level)
 "Tc" = (
 /obj/structure/ladder/unbreakable/rune{
 	alpha = 0;
@@ -3903,9 +2842,7 @@
 	name = "void";
 	icon_state = "black"
 	},
-/area/awaymission/Killthemall/start{
-	name = "???"
-	})
+/area/awaymission/Killthemall/start)
 "Td" = (
 /mob/living/simple_animal/hostile/werewolf{
 	melee_damage_lower = 40;
@@ -3915,9 +2852,7 @@
 	turns_per_move = 0
 	},
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "Tf" = (
 /obj/structure/stone_tile{
 	dir = 8
@@ -3925,15 +2860,11 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "Ti" = (
 /obj/item/trash/rkibble,
 /turf/open/floor/plating/rust,
-/area/awaymission/Killthemall/Level{
-	name = "Level 3"
-	})
+/area/awaymission/Killthemall/Level)
 "Tk" = (
 /obj/structure/chair/stool/bar,
 /mob/living/simple_animal/hostile/russian/ranged/mosin{
@@ -3941,9 +2872,7 @@
 	stop_automated_movement_when_pulled = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "Tl" = (
 /obj/structure/chair/sofa/corp,
 /obj/effect/decal/remains/plasma{
@@ -3951,54 +2880,36 @@
 	},
 /turf/open/indestructible,
 /area/awaymission/Killthemall/start)
-"Tm" = (
-/obj/structure/flora/tree/jungle,
-/turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
 "Tp" = (
 /obj/structure/destructible/cult/tome,
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss1"
-	})
+/area/awaymission/Killthemall/Boss)
 "Tz" = (
 /obj/machinery/door/airlock/medical/glass,
 /obj/effect/mapping_helpers/airlock/access/all/syndicate,
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/padded,
-/area/awaymission/Killthemall/Level{
-	name = "Level 11"
-	})
+/area/awaymission/Killthemall/Level)
 "TB" = (
 /obj/machinery/recharger,
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Level{
-	name = "Level 5"
-	})
+/area/awaymission/Killthemall/Level)
 "TG" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/awaymission/Killthemall/Level)
 "TH" = (
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss1"
-	})
+/area/awaymission/Killthemall/Boss)
 "TK" = (
 /obj/structure/flora/tree/jungle{
 	layer = 3
 	},
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "TQ" = (
 /obj/structure/sacrificealtar,
 /turf/open/indestructible/cobble,
-/area/awaymission/Killthemall/Level{
-	name = "Level 7"
-	})
+/area/awaymission/Killthemall/Level)
 "TY" = (
 /obj/structure/chair/office/dark{
 	dir = 8
@@ -4013,17 +2924,13 @@
 /obj/structure/spacevine,
 /obj/structure/spacevine,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 8"
-	})
+/area/awaymission/Killthemall/Level)
 "Uo" = (
 /obj/structure/stone_tile/burnt,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "Uq" = (
 /obj/structure/ladder/unbreakable/rune{
 	color = "#ff0000";
@@ -4035,15 +2942,11 @@
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "Ux" = (
 /obj/effect/mine/stun,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "UA" = (
 /obj/structure/rack/shelf,
 /obj/item/clothing/glasses/hud/health/night/syndicate,
@@ -4051,15 +2954,11 @@
 /obj/item/clothing/head/soft/inteq_med,
 /obj/item/clothing/under/inteq_med,
 /turf/open/floor/padded,
-/area/awaymission/Killthemall/Level{
-	name = "Level 11"
-	})
+/area/awaymission/Killthemall/Level)
 "UB" = (
 /obj/machinery/chem_master/condimaster,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "UG" = (
 /obj/structure/flora/tree/spookylog,
 /obj/vehicle/ridden/atv,
@@ -4070,15 +2969,11 @@
 	},
 /obj/item/gun/ballistic/shotgun/brush2,
 /turf/open/floor/holofloor/snow,
-/area/awaymission/Killthemall/Level{
-	name = "Level 2"
-	})
+/area/awaymission/Killthemall/Level)
 "UP" = (
 /obj/item/storage/firstaid/tactical/nukeop,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
+/area/awaymission/Killthemall/Level)
 "UV" = (
 /obj/structure/table,
 /obj/structure/window/reinforced{
@@ -4090,32 +2985,24 @@
 "Vf" = (
 /obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "Vh" = (
 /obj/structure/rack,
 /obj/item/weldingtool/hugetank,
 /turf/open/indestructible/sound,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "Vl" = (
 /obj/structure/flora/ashtree,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Level{
-	name = "Level 10"
-	})
+/area/awaymission/Killthemall/Level)
 "Vn" = (
 /obj/structure/stone_tile/slab/cracked,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "Vz" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/grassybush,
@@ -4123,9 +3010,7 @@
 	layer = 3
 	},
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "VC" = (
 /mob/living/simple_animal/hostile/netherworld{
 	faction = list("scienceteam");
@@ -4136,9 +3021,7 @@
 	turns_per_move = 0
 	},
 /turf/open/floor/iron/kitchen,
-/area/awaymission/Killthemall/Level{
-	name = "Level 4"
-	})
+/area/awaymission/Killthemall/Level)
 "VN" = (
 /obj/structure/ladder/unbreakable/rune{
 	color = "#ff0000";
@@ -4149,9 +3032,7 @@
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood/gibs/torso,
 /turf/open/indestructible/spooknecropolis,
-/area/awaymission/Killthemall/Level{
-	name = "Level 1"
-	})
+/area/awaymission/Killthemall/Level)
 "VZ" = (
 /obj/machinery/porta_turret/syndicate/energy/raven{
 	armor = list("melee" = 90, "bullet" = 70, "laser" = 70, "energy" = 50, "bomb" = 100, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 90);
@@ -4162,9 +3043,7 @@
 	pixel_x = 32
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "Wl" = (
 /obj/structure/table,
 /obj/structure/window/reinforced,
@@ -4174,15 +3053,11 @@
 "Wq" = (
 /obj/structure/barricade/sandbags,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "Wt" = (
 /obj/structure/flora/ausbushes/leafybush,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "Wv" = (
 /obj/structure/ladder/unbreakable/rune{
 	alpha = 0;
@@ -4195,49 +3070,35 @@
 	},
 /obj/structure/flora/junglebush/c,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 8"
-	})
+/area/awaymission/Killthemall/Level)
 "WF" = (
 /obj/structure/flora/tree/dead,
 /turf/open/floor/holofloor/snow,
-/area/awaymission/Killthemall/Level{
-	name = "Level 2"
-	})
+/area/awaymission/Killthemall/Level)
 "WG" = (
 /obj/machinery/chem_dispenser/drinks/beer,
 /obj/structure/table,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level{
-	name = "Level 13"
-	})
+/area/awaymission/Killthemall/Level)
 "WH" = (
 /obj/structure/shipping_container/cybersun,
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "WK" = (
 /obj/effect/turf_decal/delivery/blue,
 /obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "WM" = (
 /obj/structure/flora/grass/brown,
 /turf/open/floor/holofloor/snow,
-/area/awaymission/Killthemall/Level{
-	name = "Level 2"
-	})
+/area/awaymission/Killthemall/Level)
 "WN" = (
 /obj/structure/flora/junglebush/large,
 /obj/structure/flora/junglebush/large,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 8"
-	})
+/area/awaymission/Killthemall/Level)
 "WS" = (
 /obj/structure/signpost/salvation{
 	desc = "<span class='neovgre_small'>Allready runing away?</span>";
@@ -4248,28 +3109,20 @@
 	question = "Are you giving up so early? Useless toy"
 	},
 /turf/open/floor/iron/cult,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss1"
-	})
+/area/awaymission/Killthemall/Boss)
 "WV" = (
 /turf/open/floor/mech_bay_recharge_floor,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "WX" = (
 /mob/living/simple_animal/hostile/cat_butcherer{
 	faction = list("shiz")
 	},
 /turf/open/floor/padded,
-/area/awaymission/Killthemall/Level{
-	name = "Level 11"
-	})
+/area/awaymission/Killthemall/Level)
 "WZ" = (
 /obj/structure/salvage/pda,
 /turf/open/floor/catwalk_floor,
-/area/awaymission/Killthemall/Level{
-	name = "Level 15"
-	})
+/area/awaymission/Killthemall/Level)
 "Xg" = (
 /turf/open/indestructible,
 /area/awaymission/Killthemall/start)
@@ -4283,71 +3136,41 @@
 "Xy" = (
 /obj/effect/decal/cleanable/blood/gibs/limb,
 /turf/open/indestructible/spooknecropolis,
-/area/awaymission/Killthemall/Level{
-	name = "Level 1"
-	})
+/area/awaymission/Killthemall/Level)
 "XC" = (
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/open/indestructible/spooknecropolis,
-/area/awaymission/Killthemall/Level{
-	name = "Level 1"
-	})
+/area/awaymission/Killthemall/Level)
 "XM" = (
 /obj/structure/flora/tree/jungle/small{
 	layer = 6
 	},
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "XO" = (
 /turf/open/floor/holofloor/snow,
-/area/awaymission/Killthemall/Level{
-	name = "Level 2"
-	})
+/area/awaymission/Killthemall/Level)
 "XR" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
 /turf/open/floor/festive/alleyway/safe,
-/area/awaymission/Killthemall/Level{
-	name = "Level 7"
-	})
-"XS" = (
-/obj/structure/flora/ausbushes/palebush,
-/turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
-"XU" = (
-/obj/structure/flora/tree/jungle{
-	layer = 4
-	},
-/turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
+/area/awaymission/Killthemall/Level)
 "Yc" = (
 /obj/structure/closet/crate/large,
 /obj/item/reagent_containers/food/drinks/bottle/holywater/hell,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 "Yf" = (
 /obj/structure/flora/ash/stem_shroom,
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Boss{
-	name = "Boss2"
-	})
+/area/awaymission/Killthemall/Boss)
 "Yl" = (
 /obj/structure/flora/junglebush/c,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 8"
-	})
+/area/awaymission/Killthemall/Level)
 "Yq" = (
 /obj/structure/ladder/unbreakable/rune{
 	color = "#ff0000";
@@ -4356,22 +3179,16 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/floor/festive/alleyway/safe,
-/area/awaymission/Killthemall/Level{
-	name = "Level 7"
-	})
+/area/awaymission/Killthemall/Level)
 "Yu" = (
 /turf/open/indestructible/sound,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "YK" = (
 /obj/structure/flora/tree/jungle{
 	layer = 4
 	},
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 6"
-	})
+/area/awaymission/Killthemall/Level)
 "YL" = (
 /obj/structure/ladder/unbreakable/rune{
 	alpha = 0;
@@ -4383,43 +3200,31 @@
 	name = "\improper secret escape route"
 	},
 /turf/open/indestructible/sound,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "YM" = (
 /obj/structure/salvage/destructive_analyzer,
 /turf/open/floor/catwalk_floor,
-/area/awaymission/Killthemall/Level{
-	name = "Level 15"
-	})
+/area/awaymission/Killthemall/Level)
 "YN" = (
 /obj/structure/flora/tree/jungle,
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 8"
-	})
+/area/awaymission/Killthemall/Level)
 "YO" = (
 /obj/structure/loot_pile/maint,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/rust,
-/area/awaymission/Killthemall/Level{
-	name = "Level 3"
-	})
+/area/awaymission/Killthemall/Level)
 "Zr" = (
 /turf/open/floor/plating/asteroid/basalt{
 	initial_gas_mix = "o2=19;n2=32;TEMP=293.15"
 	},
-/area/awaymission/Killthemall/Level{
-	name = "Level 10"
-	})
+/area/awaymission/Killthemall/Level)
 "Zw" = (
 /obj/item/stack/cable_coil/cut,
 /obj/item/stack/sheet/metal,
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/circuit/green,
-/area/awaymission/Killthemall/Boss{
-	name = "Boss3"
-	})
+/area/awaymission/Killthemall/Boss)
 "ZH" = (
 /mob/living/simple_animal/hostile/looter/ranged{
 	maxHealth = 80;
@@ -4428,9 +3233,7 @@
 	stop_automated_movement_when_pulled = 1
 	},
 /turf/open/floor/plating/rust,
-/area/awaymission/Killthemall/Level{
-	name = "Level 3"
-	})
+/area/awaymission/Killthemall/Level)
 "ZI" = (
 /obj/structure/ladder/unbreakable/rune{
 	color = "#ff0000";
@@ -4439,9 +3242,7 @@
 	name = "\improper TOTALLY LEGIT PORTAL OF FUN"
 	},
 /turf/open/floor/padded,
-/area/awaymission/Killthemall/Level{
-	name = "Level 11"
-	})
+/area/awaymission/Killthemall/Level)
 "ZJ" = (
 /obj/item/a_gift/anything{
 	name = "Gift"
@@ -4450,15 +3251,7 @@
 	name = "void";
 	icon_state = "black"
 	},
-/area/awaymission/Killthemall/start{
-	name = "???"
-	})
-"ZK" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 14"
-	})
+/area/awaymission/Killthemall/start)
 "ZQ" = (
 /obj/structure/ladder/unbreakable/rune{
 	alpha = 0;
@@ -4476,9 +3269,7 @@
 	layer = 6
 	},
 /turf/open/misc/grass,
-/area/awaymission/Killthemall/Level{
-	name = "Level 8"
-	})
+/area/awaymission/Killthemall/Level)
 "ZY" = (
 /obj/structure/closet/crate/large,
 /obj/structure/closet/crate/large,
@@ -4486,9 +3277,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/champagne/empty,
 /obj/item/reagent_containers/food/drinks/bottle/champagne/empty,
 /turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level{
-	name = "Level 12"
-	})
+/area/awaymission/Killthemall/Level)
 
 (1,1,1) = {"
 Ri
@@ -4596,23 +3385,23 @@ Ri
 Ri
 Ri
 xO
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
 xO
 Ri
 Ri
@@ -4705,23 +3494,23 @@ Ri
 Ri
 Ri
 xO
-hP
-hP
-hP
-hP
-hP
-hP
-hP
-hP
-hP
-hP
-hP
-hP
-hP
-hP
-hP
-hP
-hP
+TG
+TG
+TG
+TG
+TG
+TG
+TG
+TG
+TG
+TG
+TG
+TG
+TG
+TG
+TG
+TG
+TG
 TG
 xO
 Ri
@@ -4853,23 +3642,23 @@ Ri
 Ri
 Ri
 xO
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
 xO
 Ri
 Ri
@@ -4962,23 +3751,23 @@ Ri
 Ri
 Ri
 xO
-hP
-hP
-hP
-hP
-hP
-hP
-hP
-hP
-hP
-hP
-hP
-hP
-hP
-hP
-hP
-hP
-hP
+TG
+TG
+TG
+TG
+TG
+TG
+TG
+TG
+TG
+TG
+TG
+TG
+TG
+TG
+TG
+TG
+TG
 TG
 xO
 Ri
@@ -5110,8 +3899,8 @@ Ri
 Ri
 Ri
 xO
-ep
-ep
+LJ
+LJ
 Mf
 Mf
 Mf
@@ -5125,8 +3914,8 @@ Mf
 Mf
 Mf
 Mf
-ep
-ep
+LJ
+LJ
 xO
 Ri
 Ri
@@ -5219,8 +4008,8 @@ Ri
 Ri
 Ri
 xO
-hP
-hP
+TG
+TG
 Kt
 xc
 Kt
@@ -5235,7 +4024,7 @@ Kt
 Kt
 Kt
 yG
-hP
+TG
 TG
 xO
 Ri
@@ -5367,8 +4156,8 @@ Ri
 Ri
 Ri
 xO
-ep
-ep
+LJ
+LJ
 Mf
 Mf
 Mf
@@ -5382,8 +4171,8 @@ Mf
 Mf
 Mf
 Mf
-ep
-ep
+LJ
+LJ
 xO
 Ri
 Ri
@@ -5476,8 +4265,8 @@ Ri
 Ri
 Ri
 xO
-hP
-hP
+TG
+TG
 Kt
 Kt
 Kt
@@ -5492,7 +4281,7 @@ Kt
 Kt
 Kt
 Kt
-hP
+TG
 TG
 xO
 Ri
@@ -5624,8 +4413,8 @@ Ri
 Ri
 Ri
 xO
-ep
-ep
+LJ
+LJ
 Mf
 Mf
 Mf
@@ -5639,8 +4428,8 @@ Mf
 Mf
 Mf
 Mf
-ep
-ep
+LJ
+LJ
 xO
 Ri
 Ri
@@ -5664,7 +4453,7 @@ lK
 lK
 lK
 lK
-Iz
+ON
 lK
 lK
 lK
@@ -5733,8 +4522,8 @@ Ri
 Ri
 Ri
 xO
-hP
-hP
+TG
+TG
 Kt
 Kt
 Kt
@@ -5749,7 +4538,7 @@ pY
 Kt
 Kt
 Kt
-hP
+TG
 TG
 xO
 Ri
@@ -5881,8 +4670,8 @@ Ri
 Ri
 Ri
 xO
-ep
-ep
+LJ
+LJ
 Mf
 Mf
 Mf
@@ -5896,8 +4685,8 @@ Mf
 Mf
 Mf
 Mf
-ep
-ep
+LJ
+LJ
 xO
 Ri
 Ri
@@ -5920,15 +4709,15 @@ lm
 lK
 lK
 lK
-Iz
-Iz
-Iz
+ON
+ON
+ON
 lK
 lK
 lK
 lK
 lK
-Iz
+ON
 lK
 lm
 lm
@@ -5990,8 +4779,8 @@ Ri
 Ri
 Ri
 xO
-hP
-hP
+TG
+TG
 Kt
 fX
 Kt
@@ -6006,7 +4795,7 @@ Kq
 Kt
 Kt
 Dx
-hP
+TG
 TG
 xO
 Ri
@@ -6138,8 +4927,8 @@ Ri
 Ri
 Ri
 xO
-ep
-ep
+LJ
+LJ
 Mf
 Mf
 Mf
@@ -6153,8 +4942,8 @@ Mf
 Mf
 Mf
 Mf
-ep
-ep
+LJ
+LJ
 xO
 Ri
 Ri
@@ -6178,14 +4967,14 @@ lK
 lK
 lK
 lK
-Iz
-Iz
-Iz
-Iz
+ON
+ON
+ON
+ON
 lK
 lK
-Iz
-Iz
+ON
+ON
 lK
 lm
 lm
@@ -6247,8 +5036,8 @@ Ri
 Ri
 Ri
 xO
-hP
-hP
+TG
+TG
 Kt
 Kt
 Kt
@@ -6263,7 +5052,7 @@ iE
 Kt
 Kt
 Kt
-hP
+TG
 TG
 xO
 Ri
@@ -6395,8 +5184,8 @@ Ri
 Ri
 Ri
 xO
-ep
-ep
+LJ
+LJ
 Mf
 Mf
 rf
@@ -6410,8 +5199,8 @@ rf
 Mf
 Mf
 rf
-ep
-ep
+LJ
+LJ
 xO
 Ri
 Ri
@@ -6431,18 +5220,18 @@ Ri
 xO
 lm
 lm
-Iz
-Iz
+ON
+ON
 lK
 lK
 lK
 lK
-Iz
+ON
 lK
 lK
 lK
-Iz
-Iz
+ON
+ON
 lK
 lm
 lm
@@ -6504,8 +5293,8 @@ Ri
 Ri
 Ri
 xO
-hP
-hP
+TG
+TG
 Kt
 Kt
 Kt
@@ -6520,7 +5309,7 @@ Kt
 Kt
 Kt
 Kt
-hP
+TG
 TG
 xO
 Ri
@@ -6652,8 +5441,8 @@ Ri
 Ri
 Ri
 xO
-ep
-ep
+LJ
+LJ
 rf
 rf
 rf
@@ -6667,8 +5456,8 @@ rf
 rf
 rf
 rf
-ep
-ep
+LJ
+LJ
 xO
 Ri
 Ri
@@ -6688,8 +5477,8 @@ Ri
 xO
 lm
 lm
-Iz
-Iz
+ON
+ON
 lK
 lK
 lK
@@ -6698,7 +5487,7 @@ lK
 lK
 lK
 lK
-Iz
+ON
 lK
 lK
 lm
@@ -6761,8 +5550,8 @@ Ri
 Ri
 Ri
 xO
-hP
-hP
+TG
+TG
 Kt
 AM
 Kt
@@ -6777,7 +5566,7 @@ Kt
 Kt
 Kt
 yo
-hP
+TG
 TG
 xO
 Ri
@@ -6909,8 +5698,8 @@ Ri
 Ri
 Ri
 xO
-ep
-ep
+LJ
+LJ
 rf
 rf
 rf
@@ -6924,8 +5713,8 @@ rf
 rf
 rf
 rf
-ep
-ep
+LJ
+LJ
 xO
 Ri
 Ri
@@ -6953,7 +5742,7 @@ lK
 lK
 lK
 lK
-Iz
+ON
 lK
 lK
 lK
@@ -7018,8 +5807,8 @@ Ri
 Ri
 Ri
 xO
-hP
-hP
+TG
+TG
 Kt
 Kt
 Kt
@@ -7034,7 +5823,7 @@ Vf
 Kt
 Kt
 Kt
-hP
+TG
 TG
 xO
 Ri
@@ -7166,8 +5955,8 @@ Ri
 Ri
 Ri
 xO
-ep
-ep
+LJ
+LJ
 rf
 rf
 Mf
@@ -7181,8 +5970,8 @@ Mf
 rf
 rf
 rf
-ep
-ep
+LJ
+LJ
 xO
 Ri
 Ri
@@ -7275,8 +6064,8 @@ Ri
 Ri
 Ri
 xO
-hP
-hP
+TG
+TG
 Kt
 Kt
 Kt
@@ -7291,7 +6080,7 @@ Kt
 Kt
 Kt
 Kt
-hP
+TG
 TG
 xO
 Ri
@@ -7423,8 +6212,8 @@ Ri
 Ri
 Ri
 xO
-ep
-ep
+LJ
+LJ
 Mf
 Mf
 Mf
@@ -7438,8 +6227,8 @@ Mf
 Mf
 Mf
 Mf
-ep
-ep
+LJ
+LJ
 xO
 Ri
 Ri
@@ -7532,8 +6321,8 @@ Ri
 Ri
 Ri
 xO
-hP
-hP
+TG
+TG
 Kt
 yG
 Kt
@@ -7548,7 +6337,7 @@ Pi
 Kt
 Kt
 cQ
-hP
+TG
 TG
 xO
 Ri
@@ -7680,8 +6469,8 @@ Ri
 Ri
 Ri
 xO
-ep
-ep
+LJ
+LJ
 Mf
 Mf
 Mf
@@ -7695,8 +6484,8 @@ Mf
 Mf
 Mf
 Mf
-ep
-ep
+LJ
+LJ
 xO
 Ri
 Ri
@@ -7789,8 +6578,8 @@ Ri
 Ri
 Ri
 xO
-hP
-hP
+TG
+TG
 Kt
 Kt
 Kt
@@ -7805,7 +6594,7 @@ zC
 LV
 Kt
 Kt
-hP
+TG
 TG
 xO
 Ri
@@ -7937,8 +6726,8 @@ Ri
 Ri
 Ri
 xO
-ep
-ep
+LJ
+LJ
 Mf
 Mf
 Ke
@@ -7952,8 +6741,8 @@ Mf
 Ke
 Mf
 Mf
-ep
-ep
+LJ
+LJ
 xO
 Ri
 Ri
@@ -7974,17 +6763,17 @@ xO
 lm
 lm
 lK
-hs
-hs
-hs
+TG
+TG
+TG
 lR
 lR
 lR
 lR
-hs
+TG
 Cl
-hs
-hs
+TG
+TG
 lK
 lm
 lm
@@ -8046,8 +6835,8 @@ Ri
 Ri
 Ri
 xO
-hP
-hP
+TG
+TG
 Kt
 Kt
 Kt
@@ -8062,7 +6851,7 @@ HT
 JN
 Kt
 Kt
-hP
+TG
 TG
 xO
 Ri
@@ -8194,8 +6983,8 @@ Ri
 Ri
 Ri
 xO
-ep
-ep
+LJ
+LJ
 Mf
 Mf
 Mf
@@ -8209,8 +6998,8 @@ Mf
 Mf
 Mf
 Mf
-ep
-ep
+LJ
+LJ
 xO
 Ri
 Ri
@@ -8230,18 +7019,18 @@ Ri
 xO
 lm
 lm
-hs
+TG
 SX
 Dc
 gm
-ug
+Kt
 Dc
-ug
-ug
+Kt
+Kt
 gm
-ug
+Kt
 Lm
-ug
+Kt
 hX
 lm
 lm
@@ -8303,8 +7092,8 @@ Ri
 Ri
 Ri
 xO
-hP
-hP
+TG
+TG
 Kt
 pf
 Kt
@@ -8319,7 +7108,7 @@ HT
 WK
 Kt
 ak
-hP
+TG
 TG
 xO
 Ri
@@ -8451,8 +7240,8 @@ Ri
 Ri
 Ri
 xO
-ep
-ep
+LJ
+LJ
 Mf
 Mf
 Mf
@@ -8466,8 +7255,8 @@ Mf
 Mf
 Mf
 Mf
-ep
-ep
+LJ
+LJ
 xO
 Ri
 Ri
@@ -8487,18 +7276,18 @@ Ri
 xO
 lm
 lm
-hs
+TG
 SX
-ug
-ug
-ug
-ug
-ug
-ug
-ug
+Kt
+Kt
+Kt
+Kt
+Kt
+Kt
+Kt
 Dc
 Hq
-ug
+Kt
 lK
 lm
 lm
@@ -8560,8 +7349,8 @@ Ri
 Ri
 Ri
 xO
-hP
-hP
+TG
+TG
 Kt
 Kt
 Kt
@@ -8576,7 +7365,7 @@ Kt
 Kt
 Kt
 Kt
-hP
+TG
 TG
 xO
 Ri
@@ -8708,8 +7497,8 @@ Ri
 Ri
 Ri
 xO
-ep
-ep
+LJ
+LJ
 Mf
 Mf
 Mf
@@ -8723,8 +7512,8 @@ Mf
 Mf
 Mf
 Mf
-ep
-ep
+LJ
+LJ
 xO
 Ri
 Ri
@@ -8744,18 +7533,18 @@ Ri
 xO
 lm
 lm
-hs
+TG
 SX
-ug
-ug
+Kt
+Kt
 Dc
-ug
+Kt
 gm
-ug
-ug
-ug
+Kt
+Kt
+Kt
 vK
-ug
+Kt
 hX
 lm
 lm
@@ -8817,8 +7606,8 @@ Ri
 Ri
 Ri
 xO
-hP
-hP
+TG
+TG
 Kt
 Kt
 Kt
@@ -8833,7 +7622,7 @@ Kt
 Kt
 Kt
 Kt
-hP
+TG
 TG
 xO
 Ri
@@ -8965,8 +7754,8 @@ Ri
 Ri
 Ri
 xO
-ep
-ep
+LJ
+LJ
 Gm
 Mf
 Mf
@@ -8980,8 +7769,8 @@ Mf
 Mf
 Mf
 Gm
-ep
-ep
+LJ
+LJ
 xO
 Ri
 Ri
@@ -9001,18 +7790,18 @@ Ri
 xO
 lm
 lm
-hs
+TG
 SX
-ug
-ug
-ug
-ug
-ug
-ug
-ug
-ug
+Kt
+Kt
+Kt
+Kt
+Kt
+Kt
+Kt
+Kt
 am
-ug
+Kt
 lK
 lm
 lm
@@ -9074,8 +7863,8 @@ Ri
 Ri
 Ri
 xO
-hP
-hP
+TG
+TG
 Kt
 bZ
 Kt
@@ -9090,7 +7879,7 @@ Kt
 Kt
 Kt
 Hl
-hP
+TG
 TG
 xO
 Ri
@@ -9222,8 +8011,8 @@ Ri
 Ri
 Ri
 xO
-ep
-ep
+LJ
+LJ
 Px
 Mf
 Mf
@@ -9237,8 +8026,8 @@ Mf
 Mf
 Mf
 Px
-ep
-ep
+LJ
+LJ
 xO
 Ri
 Ri
@@ -9259,17 +8048,17 @@ xO
 lm
 lm
 lK
-hs
-hs
-hs
+TG
+TG
+TG
 lR
 lR
 lR
 lR
-hs
+TG
 Cl
-hs
-hs
+TG
+TG
 lK
 lm
 lm
@@ -9331,8 +8120,8 @@ Ri
 Ri
 Ri
 xO
-hP
-hP
+TG
+TG
 Kt
 Kt
 Kt
@@ -9347,7 +8136,7 @@ Kt
 Kt
 Kt
 Kt
-hP
+TG
 TG
 xO
 Ri
@@ -9479,8 +8268,8 @@ Ri
 Ri
 Ri
 xO
-ep
-ep
+LJ
+LJ
 TQ
 Mf
 Mf
@@ -9494,8 +8283,8 @@ Mf
 Mf
 Mf
 TQ
-ep
-ep
+LJ
+LJ
 xO
 Ri
 Ri
@@ -9588,8 +8377,8 @@ Ri
 Ri
 Ri
 xO
-hP
-hP
+TG
+TG
 Kt
 Kt
 Kt
@@ -9604,7 +8393,7 @@ Kt
 Kt
 Kt
 Kt
-hP
+TG
 TG
 xO
 Ri
@@ -9736,8 +8525,8 @@ Ri
 Ri
 Ri
 xO
-ep
-ep
+LJ
+LJ
 hg
 Mf
 Mf
@@ -9751,8 +8540,8 @@ Mf
 Mf
 Mf
 bn
-ep
-ep
+LJ
+LJ
 xO
 Ri
 Ri
@@ -9845,8 +8634,8 @@ Ri
 Ri
 Ri
 xO
-hP
-hP
+TG
+TG
 Kt
 Fo
 Kt
@@ -9861,7 +8650,7 @@ Vf
 Kt
 Kt
 fX
-hP
+TG
 TG
 xO
 Ri
@@ -9993,8 +8782,8 @@ Ri
 Ri
 Ri
 xO
-ep
-ep
+LJ
+LJ
 bn
 bn
 Mf
@@ -10008,8 +8797,8 @@ Mf
 Mf
 hg
 bn
-ep
-ep
+LJ
+LJ
 xO
 Ri
 Ri
@@ -10102,8 +8891,8 @@ Ri
 Ri
 Ri
 xO
-hP
-hP
+TG
+TG
 Kt
 Kt
 Kt
@@ -10118,7 +8907,7 @@ Kt
 Kt
 Kt
 Kt
-hP
+TG
 TG
 xO
 Ri
@@ -10250,8 +9039,8 @@ Ri
 Ri
 Ri
 xO
-ep
-ep
+LJ
+LJ
 bn
 bn
 bn
@@ -10265,8 +9054,8 @@ Mf
 Mf
 bn
 bn
-ep
-ep
+LJ
+LJ
 xO
 Ri
 Ri
@@ -10359,8 +9148,8 @@ Ri
 Ri
 Ri
 xO
-hP
-hP
+TG
+TG
 Kt
 Kt
 Kt
@@ -10375,7 +9164,7 @@ Kt
 Kt
 Kt
 Kt
-hP
+TG
 TG
 xO
 Ri
@@ -10507,23 +9296,23 @@ Ri
 Ri
 Ri
 xO
-ep
-ep
-ep
-ep
-ep
-ep
-ep
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
 xL
 xL
 xL
-ep
-ep
-ep
-ep
-ep
-ep
-ep
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
 xO
 Ri
 Ri
@@ -10616,23 +9405,23 @@ Ri
 Ri
 Ri
 xO
-hP
-hP
-hP
-hP
-hP
+TG
+TG
+TG
+TG
+TG
 al
-hP
+TG
 qK
 ZY
 wK
-hP
-hP
+TG
+TG
 al
-hP
-hP
-hP
-hP
+TG
+TG
+TG
+TG
 TG
 xO
 Ri
@@ -10764,23 +9553,23 @@ Ri
 Ri
 Ri
 xO
-ep
-ep
-ep
-ep
-ep
-ep
-ep
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
 xL
 xL
 xL
-ep
-ep
-ep
-ep
-ep
-ep
-ep
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
 xO
 Ri
 Ri
@@ -10878,13 +9667,13 @@ TG
 TG
 TG
 TG
-hP
-hP
+TG
+TG
 uH
 gr
 rW
-hP
-hP
+TG
+TG
 TG
 TG
 TG
@@ -11025,15 +9814,15 @@ xO
 xO
 xO
 xO
-ep
-ep
-ep
+LJ
+LJ
+LJ
 xL
 xL
 xL
-ep
-ep
-ep
+LJ
+LJ
+LJ
 xO
 xO
 xO
@@ -11135,13 +9924,13 @@ xO
 xO
 xO
 AX
-hP
+TG
 Kt
 Kt
 vf
 Kt
 Kt
-hP
+TG
 AX
 xO
 xO
@@ -11282,15 +10071,15 @@ ab
 ab
 ab
 xO
-ep
-ep
+LJ
+LJ
 wJ
 GF
 GF
 GF
 GF
-ep
-ep
+LJ
+LJ
 xO
 ab
 ab
@@ -11392,13 +10181,13 @@ Ri
 Ri
 xO
 AX
-hP
+TG
 aK
 Kt
 Kt
 Kt
 Kt
-hP
+TG
 AX
 xO
 Ri
@@ -11539,15 +10328,15 @@ ab
 ab
 ab
 xO
-ep
-ep
+LJ
+LJ
 NK
 GF
 GF
 GF
 GF
-ep
-ep
+LJ
+LJ
 xO
 ab
 ab
@@ -11649,13 +10438,13 @@ Ri
 Ri
 xO
 AX
-hP
+TG
 qn
 Kt
 yF
 Kt
 Kt
-hP
+TG
 AX
 xO
 Ri
@@ -11796,15 +10585,15 @@ ab
 ab
 ab
 xO
-ep
-ep
+LJ
+LJ
 NV
 GF
 Yq
 GF
 GF
-ep
-ep
+LJ
+LJ
 xO
 ab
 ab
@@ -11906,13 +10695,13 @@ Ri
 Ri
 xO
 AX
-hP
+TG
 qn
 Kt
 Kt
 Kt
 Kt
-hP
+TG
 AX
 xO
 Ri
@@ -12053,15 +10842,15 @@ ab
 ab
 ab
 xO
-ep
-ep
+LJ
+LJ
 DR
 GF
 GF
 GF
 GF
-ep
-ep
+LJ
+LJ
 xO
 ab
 ab
@@ -12163,13 +10952,13 @@ Ri
 Ri
 xO
 AX
-hP
+TG
 si
 Kt
 Kt
 Kt
 Kt
-hP
+TG
 AX
 xO
 Ri
@@ -12310,15 +11099,15 @@ ab
 ab
 ab
 xO
-ep
-ep
+LJ
+LJ
 XR
 GF
 GF
 GF
 GF
-ep
-ep
+LJ
+LJ
 xO
 ab
 ab
@@ -12420,13 +11209,13 @@ Ri
 Ri
 xO
 AX
-hP
-hP
-hP
-hP
-hP
-hP
-hP
+TG
+TG
+TG
+TG
+TG
+TG
+TG
 AX
 xO
 Ri
@@ -12567,15 +11356,15 @@ ab
 ab
 ab
 xO
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
 xO
 ab
 ab
@@ -12824,15 +11613,15 @@ ab
 ab
 ab
 xO
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
-ep
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
+LJ
 xO
 ab
 ab
@@ -16929,23 +15718,23 @@ ab
 ab
 ab
 xO
-FH
-FH
-FH
-FH
-FH
-FH
-FH
-FH
-FH
-FH
-FH
-FH
-FH
-FH
-FH
-FH
-FH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
 xO
 ab
 ab
@@ -17186,7 +15975,7 @@ ab
 ab
 ab
 xO
-FH
+kH
 PG
 PG
 PG
@@ -17202,7 +15991,7 @@ PG
 PG
 PG
 PG
-FH
+kH
 xO
 ab
 ab
@@ -17443,7 +16232,7 @@ ab
 ab
 ab
 xO
-FH
+kH
 PG
 fv
 YN
@@ -17459,7 +16248,7 @@ YN
 fv
 Yl
 PG
-FH
+kH
 xO
 ab
 ab
@@ -17700,7 +16489,7 @@ ab
 ab
 ab
 xO
-FH
+kH
 PG
 Es
 fv
@@ -17716,7 +16505,7 @@ Es
 fv
 Es
 PG
-FH
+kH
 xO
 ab
 ab
@@ -17957,7 +16746,7 @@ ab
 ab
 ab
 xO
-FH
+kH
 PG
 Es
 Es
@@ -17973,7 +16762,7 @@ fv
 fv
 Sg
 PG
-FH
+kH
 xO
 ab
 ab
@@ -18214,7 +17003,7 @@ ab
 ab
 ab
 xO
-FH
+kH
 PG
 fv
 fv
@@ -18230,7 +17019,7 @@ Es
 fv
 Yl
 PG
-FH
+kH
 xO
 ab
 ab
@@ -18471,7 +17260,7 @@ ab
 ab
 ab
 xO
-FH
+kH
 PG
 YN
 fv
@@ -18487,7 +17276,7 @@ fv
 YN
 fv
 PG
-FH
+kH
 xO
 ab
 ab
@@ -18728,7 +17517,7 @@ ab
 ab
 ab
 xO
-FH
+kH
 PG
 fv
 fv
@@ -18744,7 +17533,7 @@ Yl
 fv
 fv
 PG
-FH
+kH
 xO
 ab
 ab
@@ -18985,7 +17774,7 @@ ab
 ab
 ab
 xO
-FH
+kH
 PG
 fv
 Es
@@ -19001,7 +17790,7 @@ Es
 fv
 fv
 PG
-FH
+kH
 xO
 ab
 ab
@@ -19242,7 +18031,7 @@ ab
 ab
 ab
 xO
-FH
+kH
 PG
 Es
 fv
@@ -19258,7 +18047,7 @@ fv
 fv
 Es
 PG
-FH
+kH
 xO
 ab
 ab
@@ -19499,7 +18288,7 @@ ab
 ab
 ab
 xO
-FH
+kH
 PG
 fv
 fv
@@ -19515,7 +18304,7 @@ fv
 Yl
 fv
 PG
-FH
+kH
 xO
 ab
 ab
@@ -19756,7 +18545,7 @@ ab
 ab
 ab
 xO
-FH
+kH
 PG
 fv
 Yl
@@ -19772,7 +18561,7 @@ ps
 Yl
 fv
 PG
-FH
+kH
 xO
 ab
 ab
@@ -19980,25 +18769,25 @@ Ri
 Ri
 Ri
 xO
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
 xO
 ab
 ab
@@ -20013,7 +18802,7 @@ ab
 ab
 ab
 xO
-FH
+kH
 PG
 fv
 Yl
@@ -20029,7 +18818,7 @@ fv
 fv
 Yl
 PG
-FH
+kH
 xO
 ab
 ab
@@ -20237,25 +19026,25 @@ Ri
 Ri
 Ri
 xO
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
 xO
 ab
 ab
@@ -20270,7 +19059,7 @@ ab
 ab
 ab
 xO
-FH
+kH
 PG
 Es
 Yl
@@ -20286,7 +19075,7 @@ fv
 Es
 fv
 PG
-FH
+kH
 xO
 ab
 ab
@@ -20425,25 +19214,25 @@ ab
 ab
 "}
 (63,1,1) = {"
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
 xO
 Ri
 Ri
@@ -20494,25 +19283,25 @@ Ri
 Ri
 Ri
 xO
-yj
-yj
-wV
+kH
+kH
+fv
 Mg
-wV
-wV
+fv
+fv
 XM
 yK
-wV
+fv
 Gk
 Jy
-wV
-wV
-wV
+fv
+fv
+fv
 TK
 Mg
 yK
-yj
-yj
+kH
+kH
 xO
 ab
 ab
@@ -20527,7 +19316,7 @@ ab
 ab
 ab
 xO
-FH
+kH
 PG
 fv
 Yl
@@ -20543,7 +19332,7 @@ Yl
 fv
 fv
 PG
-FH
+kH
 xO
 ab
 ab
@@ -20682,25 +19471,25 @@ ab
 ab
 "}
 (64,1,1) = {"
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
 xO
 Ri
 Ri
@@ -20751,25 +19540,25 @@ Ri
 Ri
 Ri
 xO
-yj
-yj
-wV
-wV
-wV
-Tm
+kH
+kH
+fv
+fv
+fv
+YN
 Jy
 Jy
-wV
+fv
 pX
-wV
-wV
-wV
-wV
-wV
-wV
-Tm
-yj
-yj
+fv
+fv
+fv
+fv
+fv
+fv
+YN
+kH
+kH
 xO
 ab
 ab
@@ -20784,7 +19573,7 @@ ab
 ab
 ab
 xO
-FH
+kH
 PG
 fv
 Es
@@ -20800,7 +19589,7 @@ ps
 fv
 fv
 PG
-FH
+kH
 xO
 ab
 ab
@@ -20939,25 +19728,25 @@ ab
 ab
 "}
 (65,1,1) = {"
-cX
-cX
-af
-LR
-af
-af
-RB
-sI
-af
+kH
+kH
+fv
+Mg
+fv
+fv
+XM
+yK
+fv
 FN
-gf
-af
-af
-af
-hL
-LR
-sI
-cX
-cX
+Jy
+fv
+fv
+fv
+TK
+Mg
+yK
+kH
+kH
 xO
 Ri
 Ri
@@ -21008,25 +19797,25 @@ Ri
 Ri
 Ri
 xO
-yj
-yj
-wV
+kH
+kH
+fv
 YK
-wV
+fv
 Jy
 Jy
 zU
-wV
-wV
-wV
+fv
+fv
+fv
 Ip
-wV
+fv
 dC
-wV
-wV
+fv
+fv
 Mg
-yj
-yj
+kH
+kH
 xO
 ab
 ab
@@ -21041,7 +19830,7 @@ Ri
 ab
 ab
 xO
-FH
+kH
 PG
 Pe
 fv
@@ -21057,7 +19846,7 @@ Es
 fv
 Es
 PG
-FH
+kH
 xO
 ab
 ab
@@ -21196,25 +19985,25 @@ ab
 ab
 "}
 (66,1,1) = {"
-cX
-cX
-af
-af
-af
-fQ
-gf
-gf
-af
-ZK
-af
-af
-af
-af
-af
-af
-fQ
-cX
-cX
+kH
+kH
+fv
+fv
+fv
+YN
+Jy
+Jy
+fv
+pX
+fv
+fv
+fv
+fv
+fv
+fv
+YN
+kH
+kH
 xO
 Ri
 Ri
@@ -21265,25 +20054,25 @@ Ri
 Ri
 Ri
 xO
-yj
-yj
-wV
-wV
+kH
+kH
+fv
+fv
 yK
-Tm
-wV
-cU
-wV
-wV
-wV
-wV
-wV
+YN
+fv
+Yl
+fv
+fv
+fv
+fv
+fv
 Jy
 CE
-wV
-Tm
-yj
-yj
+fv
+YN
+kH
+kH
 xO
 ab
 ab
@@ -21298,7 +20087,7 @@ Ri
 ab
 ab
 xO
-FH
+kH
 PG
 fC
 Pe
@@ -21314,7 +20103,7 @@ Es
 fv
 fv
 PG
-FH
+kH
 xO
 ab
 ab
@@ -21453,94 +20242,94 @@ ab
 ab
 "}
 (67,1,1) = {"
-cX
-cX
-af
-XU
-af
-gf
-gf
-af
-af
-af
-af
-KZ
-af
-af
-af
-af
-LR
-cX
-cX
-xO
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-xO
-mk
-Rs
-Rs
-Rs
-Rs
-Rs
-Rs
-Rs
-Rs
-Rs
-Rs
-Rs
-Rs
-Rs
-Rs
-Rs
-Rs
-mk
-xO
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-xO
-yj
-yj
-wV
-dC
-yK
-wV
-xb
-wV
-wV
+kH
+kH
+fv
+YK
+fv
+Jy
+Jy
+fv
+fv
+fv
+fv
 Ip
-wV
-wV
-wV
-wV
+fv
+fv
+fv
+fv
+Mg
+kH
+kH
+xO
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+xO
+mk
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+mk
+xO
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+xO
+kH
+kH
+fv
+dC
+yK
+fv
+xb
+fv
+fv
+Ip
+fv
+fv
+fv
+fv
 yK
 dC
-wV
-yj
-yj
+fv
+kH
+kH
 xO
 ab
 ab
@@ -21555,7 +20344,7 @@ Ri
 ab
 ab
 xO
-FH
+kH
 PG
 ol
 MC
@@ -21571,7 +20360,7 @@ Bi
 fv
 Yl
 PG
-FH
+kH
 xO
 ab
 ab
@@ -21710,94 +20499,94 @@ ab
 ab
 "}
 (68,1,1) = {"
-cX
-cX
-af
-af
-sI
-af
-af
-lq
-af
-af
-af
-af
-af
-gf
-sI
-af
-fQ
-cX
-cX
-xO
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-xO
-mk
-Rs
-mk
-mk
-mk
-Rs
-Rs
-Rs
-Rs
-Rs
-Rs
-Rs
-Rs
-mk
-mk
-mk
-Rs
-mk
-xO
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-xO
-yj
-yj
-wV
+kH
+kH
+fv
+fv
 yK
-wV
-wV
-Eh
-wV
-wV
-wV
-wV
-wV
-wV
+fv
+fv
+Yl
+fv
+fv
+fv
+fv
+fv
 Jy
-wV
+yK
+fv
+YN
+kH
+kH
+xO
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+xO
+mk
+Rs
+mk
+mk
+mk
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+mk
+mk
+mk
+Rs
+mk
+xO
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+xO
+kH
+kH
+fv
+yK
+fv
+fv
+Es
+fv
+fv
+fv
+fv
+fv
+fv
+Jy
+fv
 yK
 Mg
-yj
-yj
+kH
+kH
 xO
 ab
 ab
@@ -21812,7 +20601,7 @@ ab
 ab
 ab
 xO
-FH
+kH
 PG
 fC
 fC
@@ -21828,7 +20617,7 @@ fv
 Yl
 Pe
 PG
-FH
+kH
 xO
 ab
 ab
@@ -21967,25 +20756,25 @@ ab
 ab
 "}
 (69,1,1) = {"
-cX
-cX
-af
-Fj
-sI
-af
-af
-af
-af
-KZ
-af
-af
-af
-af
-sI
-Fj
-af
-cX
-cX
+kH
+kH
+fv
+dC
+yK
+fv
+fv
+fv
+fv
+Ip
+fv
+fv
+fv
+fv
+yK
+dC
+fv
+kH
+kH
 xO
 Ri
 Ri
@@ -22036,25 +20825,25 @@ Ri
 Ri
 Ri
 xO
-yj
-yj
-wV
+kH
+kH
+fv
 JQ
-wV
+fv
 oR
-wV
+fv
 gp
-wV
-wV
+fv
+fv
 Jy
-wV
-wV
+fv
+fv
 Jy
 Jy
 wl
-wV
-yj
-yj
+fv
+kH
+kH
 xO
 ab
 ab
@@ -22069,7 +20858,7 @@ ab
 ab
 ab
 xO
-FH
+kH
 PG
 Yl
 SM
@@ -22085,7 +20874,7 @@ MC
 ol
 fv
 PG
-FH
+kH
 xO
 ab
 ab
@@ -22224,25 +21013,25 @@ ab
 ab
 "}
 (70,1,1) = {"
-cX
-cX
-af
-sI
-af
-af
-Fd
-af
-af
-af
-af
-af
-af
-gf
-af
-sI
-LR
-cX
-cX
+kH
+kH
+fv
+yK
+fv
+fv
+Es
+fv
+fv
+fv
+fv
+fv
+fv
+Jy
+fv
+yK
+Mg
+kH
+kH
 xO
 Ri
 Ri
@@ -22293,25 +21082,25 @@ Ri
 Ri
 Ri
 xO
-yj
-yj
+kH
+kH
 yK
-wV
-Eh
-wV
-wV
-wV
-wV
-wV
-wV
-wV
-wV
-wV
-wV
+fv
+Es
+fv
+fv
+fv
+fv
+fv
+fv
+fv
+fv
+fv
+fv
 yK
-Tm
-yj
-yj
+YN
+kH
+kH
 xO
 ab
 ab
@@ -22326,7 +21115,7 @@ ab
 ab
 ab
 xO
-FH
+kH
 PG
 fC
 SM
@@ -22342,7 +21131,7 @@ ol
 fC
 fv
 PG
-FH
+kH
 xO
 ab
 ab
@@ -22481,25 +21270,25 @@ ab
 ab
 "}
 (71,1,1) = {"
-cX
-cX
-af
-fK
-af
-af
-af
-XS
-af
-af
-gf
-af
-af
-gf
-gf
-sI
-af
-cX
-cX
+kH
+kH
+fv
+JQ
+fv
+fv
+fv
+gp
+fv
+fv
+Jy
+fv
+fv
+Jy
+Jy
+yK
+fv
+kH
+kH
 xO
 Ri
 Ri
@@ -22550,25 +21339,25 @@ Ri
 Ri
 Ri
 xO
-yj
-yj
-wV
-wV
-Rw
+kH
+kH
+fv
+fv
+ZV
 Wt
-wV
+fv
 Ip
-wV
-wV
-wV
-wV
+fv
+fv
+fv
+fv
 gp
-wV
-wV
-wV
+fv
+fv
+fv
 yK
-yj
-yj
+kH
+kH
 xO
 ab
 ab
@@ -22583,7 +21372,7 @@ ab
 ab
 ab
 xO
-FH
+kH
 PG
 Bi
 qV
@@ -22599,7 +21388,7 @@ fC
 fC
 Pe
 PG
-FH
+kH
 xO
 ab
 ab
@@ -22738,94 +21527,94 @@ ab
 ab
 "}
 (72,1,1) = {"
-cX
-cX
-sI
-af
-Fd
-af
-af
-af
-af
-af
-af
-af
-af
-af
-af
-sI
-fQ
-cX
-cX
-xO
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-xO
-mk
-Rs
-Rs
-Rs
-Rs
-Rs
-Rs
-Rs
-Rs
-Rs
-Rs
-Rs
-Rs
-Rs
-Rs
-Rs
-Rs
-mk
-xO
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-Ri
-xO
-yj
-yj
+kH
+kH
 yK
-Tm
-wV
-wV
-wV
-wV
-wV
-wV
-wV
+fv
+Es
+fv
+fv
+fv
+fv
+fv
+fv
+fv
+fv
+fv
+fv
+yK
+YN
+kH
+kH
+xO
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+xO
+mk
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+Rs
+mk
+xO
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+Ri
+xO
+kH
+kH
+yK
+YN
+fv
+fv
+fv
+fv
+fv
+fv
+fv
 Ip
-wV
-wV
-wV
+fv
+fv
+fv
 HW
-Tm
-yj
-yj
+YN
+kH
+kH
 xO
 ab
 ab
@@ -22840,7 +21629,7 @@ ab
 ab
 ab
 xO
-FH
+kH
 PG
 PG
 PG
@@ -22856,7 +21645,7 @@ PG
 PG
 PG
 PG
-FH
+kH
 xO
 ab
 ab
@@ -22995,25 +21784,25 @@ ab
 ab
 "}
 (73,1,1) = {"
-cX
-cX
-af
-af
-fa
-JP
-af
-KZ
-af
-af
-af
-af
-XS
-af
-af
-af
-sI
-cX
-cX
+kH
+kH
+fv
+fv
+ZV
+Wt
+fv
+Ip
+fv
+fv
+fv
+fv
+gp
+fv
+fv
+fv
+yK
+kH
+kH
 xO
 Ri
 Ri
@@ -23064,25 +21853,25 @@ Ri
 Ri
 Ri
 xO
-yj
-yj
+kH
+kH
 yK
-wV
-wV
-wV
-wV
-wV
-wV
+fv
+fv
+fv
+fv
+fv
+fv
 Qo
-wV
-wV
-wV
-wV
-wV
+fv
+fv
+fv
+fv
+fv
 Vz
 Jy
-yj
-yj
+kH
+kH
 xO
 ab
 ab
@@ -23097,23 +21886,23 @@ ab
 ab
 ab
 xO
-FH
-FH
-FH
-FH
-FH
-FH
+kH
+kH
+kH
+kH
+kH
+kH
 PG
 ol
 ol
 ol
 PG
-FH
-FH
-FH
-FH
-FH
-FH
+kH
+kH
+kH
+kH
+kH
+kH
 xO
 ab
 ab
@@ -23252,25 +22041,25 @@ ab
 ab
 "}
 (74,1,1) = {"
-cX
-cX
-sI
-fQ
-af
-af
-af
-af
-af
-af
-af
-KZ
-af
-af
-af
-Nv
-fQ
-cX
-cX
+kH
+kH
+yK
+YN
+fv
+fv
+fv
+fv
+fv
+fv
+fv
+Ip
+fv
+fv
+fv
+HW
+YN
+kH
+kH
 xO
 Ri
 Ri
@@ -23321,25 +22110,25 @@ Ri
 Ri
 Ri
 xO
-yj
-yj
+kH
+kH
 wl
-cU
-wV
-wV
+Yl
+fv
+fv
 Jy
-wV
-wV
-wV
+fv
+fv
+fv
 QY
-wV
-wV
-wV
-wV
-wV
+fv
+fv
+fv
+fv
+fv
 Mg
-yj
-yj
+kH
+kH
 xO
 ab
 ab
@@ -23358,7 +22147,7 @@ xO
 xO
 xO
 xO
-FH
+kH
 PG
 PG
 Es
@@ -23366,7 +22155,7 @@ ol
 Es
 PG
 PG
-FH
+kH
 xO
 xO
 xO
@@ -23509,25 +22298,25 @@ ab
 ab
 "}
 (75,1,1) = {"
-cX
-cX
-sI
-af
-af
-af
-af
-af
+kH
+kH
+yK
+fv
+fv
+fv
+fv
+fv
 aZ
-af
-af
-af
-af
-af
-af
+fv
+fv
+fv
+fv
+fv
+fv
 Iy
-gf
-cX
-cX
+Jy
+kH
+kH
 xO
 Ri
 Ri
@@ -23578,25 +22367,25 @@ Ri
 Ri
 Ri
 xO
-yj
-yj
+kH
+kH
 yK
-Tm
+YN
 pX
-wV
-wV
-wV
+fv
+fv
+fv
 Og
 Td
-wV
-wV
-wV
-wV
-wV
+fv
+fv
+fv
+fv
+fv
 ew
-wV
-yj
-yj
+fv
+kH
+kH
 xO
 ab
 ab
@@ -23615,7 +22404,7 @@ ab
 ab
 ab
 xO
-FH
+kH
 PG
 Yl
 fv
@@ -23623,7 +22412,7 @@ Es
 fv
 Yl
 PG
-FH
+kH
 xO
 ab
 ab
@@ -23766,25 +22555,25 @@ ab
 ab
 "}
 (76,1,1) = {"
-cX
-cX
-rG
-lq
-af
-af
-gf
-af
-af
-af
-af
+kH
+kH
+wl
+Yl
+fv
+fv
+Jy
+fv
+fv
+fv
+fv
 aZ
-af
-af
-af
-af
-LR
-cX
-cX
+fv
+fv
+fv
+fv
+Mg
+kH
+kH
 xO
 Ri
 Ri
@@ -23835,25 +22624,25 @@ Ri
 Ri
 Ri
 xO
-yj
-yj
+kH
+kH
 JQ
-wV
-wV
-wV
-wV
-wV
-wV
+fv
+fv
+fv
+fv
+fv
+fv
 Ip
-wV
-wV
-wV
-wV
-wV
+fv
+fv
+fv
+fv
+fv
 HW
 Mg
-yj
-yj
+kH
+kH
 xO
 ab
 ab
@@ -23872,7 +22661,7 @@ ab
 ab
 ab
 xO
-FH
+kH
 PG
 Es
 Es
@@ -23880,7 +22669,7 @@ Yl
 Yl
 Es
 PG
-FH
+kH
 xO
 ab
 ab
@@ -24023,25 +22812,25 @@ ab
 ab
 "}
 (77,1,1) = {"
-cX
-cX
-sI
-fQ
-ZK
-af
+kH
+kH
+yK
+YN
+pX
+fv
 aZ
-af
-Nq
+fv
+Og
 xq
-af
-af
-af
-af
-af
-Nv
-af
-cX
-cX
+fv
+fv
+fv
+fv
+fv
+HW
+fv
+kH
+kH
 xO
 Ri
 Ri
@@ -24092,25 +22881,25 @@ Ri
 Ri
 Ri
 xO
-yj
-yj
-wV
-wV
-wV
-wV
+kH
+kH
+fv
+fv
+fv
+fv
 gp
-wV
-wV
-wV
-wV
-wV
-wV
-wV
-wV
+fv
+fv
+fv
+fv
+fv
+fv
+fv
+fv
 HW
-Rw
-yj
-yj
+ZV
+kH
+kH
 xO
 ab
 ab
@@ -24129,7 +22918,7 @@ ab
 ab
 ab
 xO
-FH
+kH
 PG
 jr
 Es
@@ -24137,7 +22926,7 @@ FF
 fv
 Yl
 PG
-FH
+kH
 xO
 ab
 ab
@@ -24280,25 +23069,25 @@ ab
 ab
 "}
 (78,1,1) = {"
-cX
-cX
-fK
-af
-af
-af
-af
-af
-af
-KZ
-af
-af
-af
-af
-af
-Nv
-LR
-cX
-cX
+kH
+kH
+JQ
+fv
+fv
+fv
+fv
+fv
+fv
+Ip
+fv
+fv
+fv
+fv
+fv
+HW
+Mg
+kH
+kH
 xO
 Ri
 Ri
@@ -24349,25 +23138,25 @@ Ri
 Ri
 Ri
 xO
-yj
-yj
-wV
-Tm
-wV
-wV
-wV
-wV
-wV
-wV
-wV
+kH
+kH
+fv
+YN
+fv
+fv
+fv
+fv
+fv
+fv
+fv
 Jy
-wV
-wV
-wV
+fv
+fv
+fv
 Gw
-wV
-yj
-yj
+fv
+kH
+kH
 xO
 ab
 ab
@@ -24386,7 +23175,7 @@ ab
 ab
 ab
 xO
-FH
+kH
 PG
 bB
 fv
@@ -24394,7 +23183,7 @@ Yl
 fv
 Es
 PG
-FH
+kH
 xO
 ab
 ab
@@ -24537,25 +23326,25 @@ ab
 ab
 "}
 (79,1,1) = {"
-cX
-cX
-af
-af
-af
-af
-XS
-af
-af
-af
-af
-af
+kH
+kH
+fv
+fv
+fv
+fv
+gp
+fv
+fv
+fv
+fv
+fv
 aZ
-af
-af
-Nv
-fa
-cX
-cX
+fv
+fv
+HW
+ZV
+kH
+kH
 xO
 Ri
 Ri
@@ -24606,25 +23395,25 @@ Ri
 Ri
 Ri
 xO
-yj
-yj
-wV
-wV
-wV
-wV
-wV
-wV
-wV
+kH
+kH
+fv
+fv
+fv
+fv
+fv
+fv
+fv
 pX
-wV
-wV
-wV
-wV
-wV
-wV
-Tm
-yj
-yj
+fv
+fv
+fv
+fv
+fv
+fv
+YN
+kH
+kH
 xO
 ab
 ab
@@ -24643,7 +23432,7 @@ ab
 ab
 ab
 xO
-FH
+kH
 PG
 ix
 Es
@@ -24651,7 +23440,7 @@ Es
 Yl
 Yl
 PG
-FH
+kH
 xO
 ab
 ab
@@ -24794,25 +23583,25 @@ ab
 ab
 "}
 (80,1,1) = {"
-cX
-cX
-af
-fQ
-af
-af
+kH
+kH
+fv
+YN
+fv
+fv
 aZ
-af
-af
-af
-af
-gf
-af
-af
-af
-lS
-af
-cX
-cX
+fv
+fv
+fv
+fv
+Jy
+fv
+fv
+fv
+Gw
+fv
+kH
+kH
 xO
 Ri
 Ri
@@ -24863,25 +23652,25 @@ Ri
 Ri
 Ri
 xO
-yj
-yj
-Tm
-wV
+kH
+kH
+YN
+fv
 XM
-wV
-wV
+fv
+fv
 Jy
-wV
-wV
-wV
-wV
-wV
-wV
-wV
+fv
+fv
+fv
+fv
+fv
+fv
+fv
 HW
-wV
-yj
-yj
+fv
+kH
+kH
 xO
 ab
 ab
@@ -24900,7 +23689,7 @@ ab
 ab
 ab
 xO
-FH
+kH
 PG
 PG
 PG
@@ -24908,7 +23697,7 @@ PG
 PG
 PG
 PG
-FH
+kH
 xO
 ab
 ab
@@ -25051,25 +23840,25 @@ ab
 ab
 "}
 (81,1,1) = {"
-cX
-cX
-af
-af
-af
-af
-af
-af
-af
-ZK
+kH
+kH
+fv
+fv
+fv
+fv
+fv
+fv
+fv
+pX
 aZ
-af
-af
-af
-af
-af
-fQ
-cX
-cX
+fv
+fv
+fv
+fv
+fv
+YN
+kH
+kH
 xO
 Ri
 Ri
@@ -25120,25 +23909,25 @@ Ri
 Ri
 Ri
 xO
-yj
-yj
-wV
-wV
-Eh
-wV
-wV
-wV
-wV
-wV
-wV
-wV
+kH
+kH
+fv
+fv
+Es
+fv
+fv
+fv
+fv
+fv
+fv
+fv
 pX
-wV
-wV
-Tm
-wV
-yj
-yj
+fv
+fv
+YN
+fv
+kH
+kH
 xO
 ab
 ab
@@ -25157,15 +23946,15 @@ ab
 ab
 ab
 xO
-FH
-FH
-FH
-FH
-FH
-FH
-FH
-FH
-FH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
 xO
 ab
 ab
@@ -25308,25 +24097,25 @@ ab
 ab
 "}
 (82,1,1) = {"
-cX
-cX
-fQ
-af
-RB
-af
-af
-gf
-af
-af
-af
-af
-af
-af
-af
-Nv
-af
-cX
-cX
+kH
+kH
+YN
+fv
+XM
+fv
+fv
+Jy
+fv
+fv
+fv
+fv
+fv
+fv
+fv
+HW
+fv
+kH
+kH
 xO
 Ri
 Ri
@@ -25377,25 +24166,25 @@ Ri
 Ri
 Ri
 xO
-yj
-yj
-wV
-wV
-Tm
-wV
+kH
+kH
+fv
+fv
+YN
+fv
 XM
-wV
-wV
+fv
+fv
 Ip
-wV
-wV
+fv
+fv
 Wt
-wV
-wV
-wV
-wV
-yj
-yj
+fv
+fv
+fv
+fv
+kH
+kH
 xO
 ab
 ab
@@ -25565,25 +24354,25 @@ ab
 ab
 "}
 (83,1,1) = {"
-cX
-cX
-af
-af
-Fd
-af
-af
+kH
+kH
+fv
+fv
+Es
+fv
+fv
 aZ
-af
-af
-af
-af
+fv
+fv
+fv
+fv
 tl
-af
-af
-fQ
-af
-cX
-cX
+fv
+fv
+YN
+fv
+kH
+kH
 xO
 Ri
 Ri
@@ -25634,25 +24423,25 @@ Ri
 Ri
 Ri
 xO
-yj
-yj
-wV
-wV
-Eh
-wV
+kH
+kH
+fv
+fv
+Es
+fv
 Og
-wV
-wV
-wV
-wV
-wV
+fv
+fv
+fv
+fv
+fv
 Mg
-wV
-wV
-wV
-Tm
-yj
-yj
+fv
+fv
+fv
+YN
+kH
+kH
 xO
 ab
 ab
@@ -25822,25 +24611,25 @@ ab
 ab
 "}
 (84,1,1) = {"
-cX
-cX
-af
-af
-fQ
-af
-RB
-af
-af
-KZ
-af
-af
-JP
-af
-af
-af
-af
-cX
-cX
+kH
+kH
+fv
+fv
+YN
+fv
+XM
+fv
+fv
+Ip
+fv
+fv
+Wt
+fv
+fv
+fv
+fv
+kH
+kH
 xO
 Ri
 Ri
@@ -25891,25 +24680,25 @@ Ri
 Ri
 Ri
 xO
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
 Dy
-wV
+fv
 Bh
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
 xO
 ab
 ab
@@ -26079,25 +24868,25 @@ ab
 ab
 "}
 (85,1,1) = {"
-cX
-cX
-af
-af
-Fd
-af
-Nq
-af
-af
-af
-af
-af
-af
-af
-af
-af
-fQ
-cX
-cX
+kH
+kH
+fv
+fv
+Es
+fv
+Og
+fv
+fv
+fv
+fv
+fv
+fv
+fv
+fv
+fv
+YN
+kH
+kH
 xO
 Ri
 Ri
@@ -26148,25 +24937,25 @@ Ri
 Ri
 Ri
 xO
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-wV
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+fv
 Dy
-wV
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
+fv
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
 xO
 ab
 ab
@@ -26336,25 +25125,25 @@ ab
 ab
 "}
 (86,1,1) = {"
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-af
-af
-af
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+fv
+fv
+fv
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
 xO
 Ri
 Ri
@@ -26405,25 +25194,25 @@ Ri
 Ri
 Ri
 xO
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-wV
-wV
-wV
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+fv
+fv
+fv
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
 xO
 ab
 ab
@@ -26593,25 +25382,25 @@ ab
 ab
 "}
 (87,1,1) = {"
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-af
-af
-af
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+fv
+fv
+fv
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
 xO
 Ri
 Ri
@@ -26662,25 +25451,25 @@ Ri
 Ri
 Ri
 xO
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-wV
-wV
-wV
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+fv
+fv
+fv
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
 xO
 ab
 ab
@@ -26850,25 +25639,25 @@ ab
 ab
 "}
 (88,1,1) = {"
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-af
-af
-af
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+fv
+fv
+fv
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
 xO
 Ri
 Ri
@@ -26924,15 +25713,15 @@ xO
 xO
 xO
 xO
-yj
-yj
-wV
-wV
-wV
-wV
-wV
-yj
-yj
+kH
+kH
+fv
+fv
+fv
+fv
+fv
+kH
+kH
 xO
 xO
 xO
@@ -27107,25 +25896,25 @@ ab
 ab
 "}
 (89,1,1) = {"
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-af
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+fv
 xq
-af
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
+fv
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
 xO
 Ri
 Ri
@@ -27181,15 +25970,15 @@ ab
 ab
 ab
 xO
-yj
-yj
+kH
+kH
 FM
-wV
-wV
-wV
-wV
-yj
-yj
+fv
+fv
+fv
+fv
+kH
+kH
 xO
 ab
 ab
@@ -27369,15 +26158,15 @@ xO
 xO
 xO
 xO
-cX
-cX
-af
-af
-af
-af
-af
-cX
-cX
+kH
+kH
+fv
+fv
+fv
+fv
+fv
+kH
+kH
 xO
 xO
 xO
@@ -27438,15 +26227,15 @@ ab
 ab
 ab
 xO
-yj
-yj
+kH
+kH
 GQ
-wV
+fv
 oB
-wV
-wV
-yj
-yj
+fv
+fv
+kH
+kH
 xO
 ab
 ab
@@ -27626,15 +26415,15 @@ ab
 ab
 ab
 xO
-cX
-cX
-af
-af
-af
-af
-af
-cX
-cX
+kH
+kH
+fv
+fv
+fv
+fv
+fv
+kH
+kH
 xO
 ab
 ab
@@ -27695,15 +26484,15 @@ ab
 ab
 ab
 xO
-yj
-yj
+kH
+kH
 QY
-wV
-wV
-wV
-wV
-yj
-yj
+fv
+fv
+fv
+fv
+kH
+kH
 xO
 ab
 ab
@@ -27883,15 +26672,15 @@ ab
 ab
 ab
 xO
-cX
-cX
-AV
-af
+kH
+kH
+FM
+fv
 Jr
-af
-af
-cX
-cX
+fv
+fv
+kH
+kH
 xO
 ab
 ab
@@ -27952,15 +26741,15 @@ ab
 ab
 ab
 xO
-yj
-yj
-Bt
-wV
-wV
-wV
-wV
-yj
-yj
+kH
+kH
+ix
+fv
+fv
+fv
+fv
+kH
+kH
 xO
 ab
 ab
@@ -28140,15 +26929,15 @@ ab
 ab
 ab
 xO
-cX
-cX
+kH
+kH
 UP
-af
-af
-af
-af
-cX
-cX
+fv
+fv
+fv
+fv
+kH
+kH
 xO
 ab
 ab
@@ -28209,15 +26998,15 @@ ab
 ab
 ab
 xO
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
 xO
 ab
 ab
@@ -28397,15 +27186,15 @@ ab
 ab
 ab
 xO
-cX
-cX
-zO
-af
-af
-af
-af
-cX
-cX
+kH
+kH
+ix
+fv
+fv
+fv
+fv
+kH
+kH
 xO
 ab
 ab
@@ -28466,15 +27255,15 @@ ab
 ab
 ab
 xO
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
-yj
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
 xO
 ab
 ab
@@ -28654,15 +27443,15 @@ ab
 ab
 ab
 xO
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
 xO
 ab
 ab
@@ -28911,15 +27700,15 @@ ab
 ab
 ab
 xO
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
-cX
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
+kH
 xO
 ab
 ab
