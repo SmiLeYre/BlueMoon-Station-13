@@ -19,6 +19,9 @@
 	set waitfor = FALSE
 	if(!castcheck(0))
 		return
+	if(!target.client && target.client?.prefs.erppref == "Yes")	//No sex pref = no harvest. - Gardelin0
+		to_chat(src, "<span class='revenwarning'>They have no sexual energy!</span>")
+		return
 	if(draining)
 		to_chat(src, "<span class='revenwarning'>You are already sucking up the essence!</span>")
 		return
@@ -28,6 +31,18 @@
 	if(!target.ckey)
 		to_chat(src, "<span class='revennotice'>[target.ru_ego(TRUE)] essence is lacking .. worthless.</span>")
 		// return
+	if(HAS_TRAIT(target, QAREEN_IMMUNITY))	//Has an imnnunity quirk = no harvest. - Gardelin0
+		to_chat(src, "<span class='revenwarning'>They are immune!</span>")
+		return
+	if(!target.client?.prefs.nonconpref == "Yes")	//Ask the ones without noncon pref. - Gardelin0
+		var/input = tgui_alert(target, "You sense that your sexual energy is being drained, do you wish to accept it?", "Accept?", list("Yes", "No"))
+		if(input == "No")
+			to_chat(usr, "We can not harvest their sexual energy!")
+			to_chat(target, "You have resisted it!")
+			return
+		else
+			to_chat(usr, "They gave up!")
+			to_chat(target, "You give up!")
 	if(prob(10))
 		to_chat(target, "You feel as if you are being watched.")
 	face_atom(target)
@@ -237,51 +252,51 @@
 	if(!L.on) //wait, wait, don't shock me
 		return
 	flick("[L.base_state]2", L)
-	for(var/mob/living/carbon/human/M in view(shock_range, L))
-		if(M == user)
-			continue
-		L.Beam(M,icon_state="purple_lightning",time=5)
-		if(!M.anti_magic_check(FALSE, TRUE))
-			M.electrocute_act(shock_damage, L, flags = SHOCK_NOGLOVES)
-			M.reagents.add_reagent(/datum/reagent/drug/aphrodisiac, 10)
-		do_sparks(4, FALSE, M)
-		playsound(M, 'sound/machines/defib_zap.ogg', 50, 1, -1)
+//	for(var/mob/living/carbon/human/M in view(shock_range, L))
+//		if(M == user)
+//			continue
+//		L.Beam(M,icon_state="purple_lightning",time=5)
+//		if(!M.anti_magic_check(FALSE, TRUE))
+//			M.electrocute_act(shock_damage, L, flags = SHOCK_NOGLOVES)
+//			M.reagents.add_reagent(/datum/reagent/drug/aphrodisiac, 10)
+//		do_sparks(4, FALSE, M)
+//		playsound(M, 'sound/machines/defib_zap.ogg', 50, 1, -1)
 
 
-//Defile: Corrupts nearby stuff, unblesses floor tiles.
-/obj/effect/proc_holder/spell/aoe_turf/qareen/defile
-	name = "Defile"
-	desc = "Covers nearby area in lewd juices as well as dispelling holy auras on floors."
-	charge_max = 150
-	range = 4
-	stun = 20
-	reveal = 40
-	unlock_amount = 10
-	cast_amount = 30
-	action_icon_state = "defile"
+//Defile: Corrupts nearby stuff, unblesses floor tiles.		Reserved for later. - Gardelin0
+//obj/effect/proc_holder/spell/aoe_turf/qareen/defile
+//	name = "Defile"
+//	desc = "Covers nearby area in lewd juices as well as dispelling holy auras on floors."
+//	charge_max = 150
+//	range = 4
+//	stun = 20
+//	reveal = 40
+//	unlock_amount = 10
+//	cast_amount = 30
+//	action_icon_state = "defile"
 
-/obj/effect/proc_holder/spell/aoe_turf/qareen/defile/cast(list/targets, mob/living/simple_animal/qareen/user = usr)
-	if(attempt_cast(user))
-		for(var/turf/T in targets)
-			INVOKE_ASYNC(src, .proc/defile, T)
+//obj/effect/proc_holder/spell/aoe_turf/qareen/defile/cast(list/targets, mob/living/simple_animal/qareen/user = usr)
+//	if(attempt_cast(user))
+//		for(var/turf/T in targets)
+//			INVOKE_ASYNC(src, .proc/defile, T)
 
-/obj/effect/proc_holder/spell/aoe_turf/qareen/defile/proc/defile(turf/T)
-	for(var/obj/effect/blessing/B in T)
-		qdel(B)
-		new /obj/effect/temp_visual/revenant(T)
-	if(!istype(T, /turf/open/floor/engine/cult) && isfloorturf(T) && prob(15))
-		pick(new /obj/effect/decal/cleanable/semen/femcum(T), new /obj/effect/decal/cleanable/semendrip(T), new /obj/effect/decal/cleanable/semen(T))
-
-	for(var/obj/effect/decal/cleanable/salt/salt in T)
-		new /obj/effect/temp_visual/revenant(T)
-		qdel(salt)
-	for(var/obj/structure/closet/closet in T.contents)
-		closet.open()
-	for(var/obj/structure/bodycontainer/corpseholder in T)
-		if(corpseholder.connected.loc == corpseholder)
-			corpseholder.open()
-	for(var/obj/machinery/dna_scannernew/dna in T)
-		dna.open_machine()
+//obj/effect/proc_holder/spell/aoe_turf/qareen/defile/proc/defile(turf/T)
+//	for(var/obj/effect/blessing/B in T)
+//		qdel(B)
+//		new /obj/effect/temp_visual/revenant(T)
+//	if(!istype(T, /turf/open/floor/engine/cult) && isfloorturf(T) && prob(15))
+//		pick(new /obj/effect/decal/cleanable/semen/femcum(T), new /obj/effect/decal/cleanable/semendrip(T), new /obj/effect/decal/cleanable/semen(T))
+//
+//	for(var/obj/effect/decal/cleanable/salt/salt in T)
+//		new /obj/effect/temp_visual/revenant(T)
+//		qdel(salt)
+//	for(var/obj/structure/closet/closet in T.contents)
+//		closet.open()
+//	for(var/obj/structure/bodycontainer/corpseholder in T)
+//		if(corpseholder.connected.loc == corpseholder)
+//			corpseholder.open()
+//	for(var/obj/machinery/dna_scannernew/dna in T)
+//		dna.open_machine()
 
 //Won't destroy anything anymore. - Gardelin0
 
@@ -409,29 +424,43 @@
 			has_balls = TRUE
 			has_vagina = TRUE
 			gender = PLURAL
+			icon_state = "qareen_futa_idle"
+			icon_idle = "qareen_futa_idle"
+			icon_reveal = "qareen_futa_revealed"
+			icon_stun = "qareen_futa_stun"
+			icon_drain = "qareen_futa_draining"
 		if("Male")
 			has_penis = TRUE
 			has_balls = TRUE
 			has_vagina = FALSE
 			gender = MALE
+			icon_state = "qareen_male_idle"
+			icon_idle = "qareen_male_idle"
+			icon_reveal = "qareen_male_revealed"
+			icon_stun = "qareen_male_stun"
+			icon_drain = "qareen_male_draining"
 		if("Female")
 			has_penis = FALSE
 			has_balls = FALSE
 			has_vagina = TRUE
 			gender = FEMALE
+			icon_state = "qareen_female_idle"
+			icon_idle = "qareen_female_idle"
+			icon_reveal = "qareen_female_revealed"
+			icon_stun = "qareen_female_stun"
+			icon_drain = "qareen_female_draining"
 		if("None")
 			has_penis = FALSE
 			has_balls = FALSE
 			has_vagina = FALSE
 			gender = NEUTER
-		if("Toggle Breasts") // Idea/Initial code by @LunarFleet (github)
-			has_breasts = !has_breasts // Simplified line by @Zirok-BYOND (github)
-		if("Toggle Penis")
-			has_penis = !has_penis
-		if("Toggle Pussy")
-			has_vagina = !has_vagina
-		if("Toggle Balls")
-			has_balls = !has_balls
+			icon_state = "qareen_none_idle"
+			icon_idle = "qareen_none_idle"
+			icon_reveal = "qareen_none_revealed"
+			icon_stun = "qareen_none_stun"
+			icon_drain = "qareen_none_draining"
+
+	update_spooky_icon()
 
 /mob/living/simple_animal/qareen/verb/visibility()
 	set name = "Toggle Invisibility"
@@ -458,3 +487,12 @@
 
 	var/choice = input("What was your name?") as text
 	src.name = choice
+
+/mob/living/simple_animal/qareen/verb/changing_color()
+	set name = "Change Color"
+	set desc = "Allows you to change color."
+	set category = "Qareen"
+
+	var/C = input(src, "Select Color", "Select color", "#ffffff") as color|null
+	color = C
+	update_spooky_icon()

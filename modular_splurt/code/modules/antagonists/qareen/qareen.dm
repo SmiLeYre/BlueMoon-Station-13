@@ -13,11 +13,11 @@
 	name = "Qareen"
 	desc = "A horny spirit."
 	icon = 'modular_bluemoon/Gardelin0/icons/mob/qareen.dmi'	//It looks pretty tho! - Gardelin0
-	icon_state = "qareen_idle"
-	var/icon_idle = "qareen_idle"
-	var/icon_reveal = "qareen_revealed"
-	var/icon_stun = "qareen_stun"
-	var/icon_drain = "qareen_draining"
+	icon_state = "qareen_none_idle"
+	var/icon_idle = "qareen_none_idle"
+	var/icon_reveal = "qareen_none_revealed"
+	var/icon_stun = "qareen_none_stun"
+	var/icon_drain = "qareen_none_draining"
 	var/stasis = FALSE
 	mob_biotypes = MOB_SPIRIT
 	incorporeal_move = INCORPOREAL_MOVE_JAUNT
@@ -83,7 +83,7 @@
 	ADD_TRAIT(src, TRAIT_SIXTHSENSE, INNATE_TRAIT)
 	AddSpell(new /obj/effect/proc_holder/spell/targeted/night_vision/qareen(null))
 	AddSpell(new /obj/effect/proc_holder/spell/targeted/telepathy/qareen(null))
-	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/qareen/defile(null))
+//	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/qareen/defile(null))	Reserved for later. - Gardelin0
 	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/qareen/overload(null))
 	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/qareen/bliss(null))
 //	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/qareen/malfunction(null))	Reserved for later. - Gardelin0
@@ -198,6 +198,12 @@
 		inhibited = TRUE
 		update_action_buttons_icon()
 		addtimer(CALLBACK(src, .proc/reset_inhibit), 30)
+
+/datum/reagent/toxin/on_mob_life(mob/living/simple_animal/qareen/Q) //So the holy water will damage it! - Gardelin0
+	if(istype(Q))
+		Q.adjustFireLoss(4)
+		. = TRUE
+	..()
 
 /mob/living/simple_animal/qareen/proc/reset_inhibit()
 	inhibited = FALSE
@@ -506,14 +512,10 @@
 /datum/objective/qareenFluff
 
 /datum/objective/qareenFluff/New()
-	var/list/explanationTexts = list("Assist and exacerbate existing threats at critical moments.", \
-									 "Avoid sucking up essence in plain sight.", \
-									 "Cause as much bliss and chaos as you can without being caught or killed.", \
-									 "Modify and render as much of the station rusted and essennce covered as possible.", \
-									 "Curse the crew while attempting to avoid being attacked.", \
-									 "Make the crew as horny as possible.", \
-									 "Make the clown as horny as possible.", \
-									 "Make the captain as horny as possible.", \
+	var/list/explanationTexts = list("Избеuайте высасывания эссенции у всех на виду.", \
+									 "Распространите заболевание похоти на тех, кого можете.", \
+									 "Оставьте на полу как можно больше следов любовныъ жидкостей.", \
+									 "Возбудите всех, кого можете.", \
 	)
 	explanation_text = pick(explanationTexts)
 	..()

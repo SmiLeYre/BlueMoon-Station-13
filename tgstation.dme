@@ -4113,6 +4113,7 @@
 #include "modular_bluemoon\Gardelin0\code\clothing\underwear\portals.dm"
 #include "modular_bluemoon\Gardelin0\code\clothing\underwear\shirts.dm"
 #include "modular_bluemoon\Gardelin0\code\clothing\underwear\socks.dm"
+#include "modular_bluemoon\Gardelin0\code\interactions\quirks.dm"
 #include "modular_bluemoon\Gardelin0\code\interactions\snapped_choker.dm"
 #include "modular_bluemoon\Gardelin0\code\interactions\stuffed_movement.dm"
 #include "modular_bluemoon\Gardelin0\code\interactions\tentacle_fuck.dm"
