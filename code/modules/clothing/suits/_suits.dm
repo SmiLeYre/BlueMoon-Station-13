@@ -26,7 +26,7 @@
 		var/mob/living/carbon/human/M = loc
 		if(!ishuman(loc))
 			return
-		var/tauric = M.mutant_bodyparts["taur"] && M.dna.features["taur"] && M.dna.features["taur"] != "None"
+		var/tauric = M.dna.species.mutant_bodyparts["taur"] && M.dna.features["taur"] && M.dna.features["taur"] != "None"
 		if(istype(M) || M.dna || M.dna.species || M.dna.species.can_wag_tail(M) || !isvox(M))
 			if(M.dna.features["tail_primary"] && M.dna.features["tail_secondary"])
 				if(!(tauric && (mutantrace_variation & STYLE_ALL_TAURIC)))

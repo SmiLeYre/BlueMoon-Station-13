@@ -432,6 +432,8 @@ Class Procs:
 	. = ..()
 
 /obj/machinery/ui_act(action, params)
+	if(params["ic_advactivator"])
+		return
 	add_fingerprint(usr)
 	return ..()
 

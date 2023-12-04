@@ -546,7 +546,6 @@ GLOBAL_LIST_EMPTY(ghost_records)
 			ghost_team.players_spawned += (spawned_mob.key)
 
 	var/obj/machinery/computer/cryopod/control_computer = find_control_computer()
-	var/datum/data/record/record = new
 	var/alt_name = get_spawner_outfit_name()
 	GLOB.ghost_records.Add(list(list("name" = spawned_mob.real_name, "rank" = alt_name ? alt_name : name)))
 

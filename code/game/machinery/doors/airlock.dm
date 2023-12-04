@@ -117,6 +117,7 @@
 
 	/// sigh
 	var/unelectrify_timerid
+	var/advactivator_action = FALSE
 
 /obj/machinery/door/airlock/Initialize(mapload)
 	. = ..()
@@ -1546,6 +1547,8 @@
 /obj/machinery/door/airlock/ui_act(action, params)
 	if(..())
 		return
+	if(params["ic_advactivator"])
+		advactivator_action = TRUE
 	if(!user_allowed(usr))
 		return
 	switch(action)
@@ -1594,9 +1597,10 @@
 		if("open-close")
 			user_toggle_open(usr)
 			. = TRUE
+	advactivator_action = FALSE
 
 /obj/machinery/door/airlock/proc/user_allowed(mob/user)
-	return (hasSiliconAccessInArea(user) && canAIControl(user)) || IsAdminGhost(user)
+	return (hasSiliconAccessInArea(user) && canAIControl(user)) || IsAdminGhost(user) || advactivator_action
 
 /obj/machinery/door/airlock/proc/shock_restore(mob/user)
 	if(!user_allowed(user))
