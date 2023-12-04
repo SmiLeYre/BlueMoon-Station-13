@@ -56,11 +56,6 @@ export const CharacterProfileForGhosts = (props, context) => {
   return (
     <Window resizable width={950} height={730}>
       <Window.Content scrollable>
-        <Tabs>
-          <Tabs.Tab onClick={() => act("character_directory")}>
-            Библиотека Персонажей
-          </Tabs.Tab>
-        </Tabs>
         <Flex>
           <Flex.Item pl="10px">
             {!data.is_unknown ? (<CharacterProfileImageElement />)
@@ -69,70 +64,47 @@ export const CharacterProfileForGhosts = (props, context) => {
           </Flex.Item>
           <Flex.Item Flex-direction="column" pl="10px" width="100%">
             <Collapsible title="Описание Персонажа" open>
-              <Section>
-                <Flex direction="column">
-                  {data.flavortext
-                    ? (<Flex.Item style={{ "white-space": "pre-line" }}>{data.flavortext}</Flex.Item>)
-                    : (<Box />)}
-                </Flex>
+              <Section style={{ "white-space": "pre-line" }}>
+                {data.flavortext || "———"}
               </Section>
             </Collapsible>
             <Collapsible title="Описание Голого Тела Персонажа" open>
-              <Section>
-                <Flex direction="column">
-                  {data.flavortext_naked
-                    ? (<Flex.Item style={{ "white-space": "pre-line" }}>{data.flavortext_naked}</Flex.Item>)
-                    : (<Box />)}
-                  {!data.flavortext && !data.flavortext_naked ? ("Отсутствует") : (<Box />)}
-                </Flex>
+              <Section style={{ "white-space": "pre-line" }}>
+                {data.flavortext_naked || "———"}
               </Section>
             </Collapsible>
             <Collapsible title="База Данных Службы Безопасности" open>
-              <Section>
-                <Flex direction="column">
-                  {data.security_records
-                    ? (<Flex.Item style={{ "white-space": "pre-line" }}>{data.security_records}</Flex.Item>)
-                    : (<Box />)}
-                  {!data.security_records ? ("Отсутствует") : (<Box />)}
-                </Flex>
+              <Section style={{ "white-space": "pre-line" }}>
+                {data.security_records || "———"}
               </Section>
             </Collapsible>
             <Collapsible title="База Данных Медицинского Отдела" open>
-              <Section>
-                <Flex direction="column">
-                  {data.medical_records
-                    ? (<Flex.Item style={{ "white-space": "pre-line" }}>{data.medical_records}</Flex.Item>)
-                    : (<Box />)}
-                  {!data.medical_records ? ("Отсутствует") : (<Box />)}
-                </Flex>
+              <Section style={{ "white-space": "pre-line" }}>
+                {data.medical_records || "———"}
               </Section>
             </Collapsible>
             <Collapsible title={`Раса - ${data.species_name}`} open>
               <Section style={{ "white-space": "pre-line" }}>
-                {data.custom_species_lore}
+                {data.custom_species_lore || "———"}
               </Section>
             </Collapsible>
             <Collapsible title="Внеигровые заметки" open>
               <Section style={{ "white-space": "pre-line" }}>
-                {data.oocnotes || "Отсутствуют"}
+                {data.oocnotes || "———"}
               </Section>
             </Collapsible>
-            {data.directory_visible ? (
-              <Section title="Преференсы персонажа" width="100%">
-                <LabeledList>
-                  {tags.map(tag => (
-                    <LabeledList.Item
-                      key={tag.name}
-                      color={getTagColor(tag.value)}
-                      label={tag.title}>
-                      <Tooltip content={tag.name}>{tag.value}</Tooltip>
-                    </LabeledList.Item>
-                  ))}
-                </LabeledList>
-              </Section>
-            ) : (
-              <Divider vertical />
-            )}
+            <Section title="Предпочтения персонажа" width="100%">
+              <LabeledList>
+                {tags.map(tag => (
+                  <LabeledList.Item
+                    key={tag.name}
+                    color={getTagColor(tag.value)}
+                    label={tag.title}>
+                    <Tooltip content={tag.name}>{tag.value}</Tooltip>
+                  </LabeledList.Item>
+                ))}
+              </LabeledList>
+            </Section>
           </Flex.Item>
         </Flex>
       </Window.Content>
@@ -159,6 +131,9 @@ const CharacterModelImageElement = (props, context) => {
         <Button onClick={()=>act("char_left")} icon="undo" />
         <Button onClick={()=>act("change_background")}>Сменить фон</Button>
         <Button onClick={()=>act("char_right")} icon="redo" />
+        <Button onClick={()=>act("character_directory")}>
+            Библиотека Персонажей
+        </Button>
       </Box>
     </Section>
   );
