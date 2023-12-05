@@ -74,7 +74,7 @@
 	icon_state = "gshell"
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_buckshot
 	pellets = 6
-	variance = 25
+	variance = 15
 
 /obj/item/ammo_casing/shotgun/rubbershot
 	name = "rubber shot"
@@ -82,7 +82,7 @@
 	icon_state = "bshell"
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_rubbershot
 	pellets = 6
-	variance = 25
+	variance = 15
 	custom_materials = list(/datum/material/iron=4000)
 
 /obj/item/ammo_casing/shotgun/improvised
@@ -92,7 +92,7 @@
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_improvised
 	custom_materials = list(/datum/material/iron=250)
 	pellets = 10
-	variance = 25
+	variance = 15
 
 /obj/item/ammo_casing/shotgun/ion
 	name = "ion shell"
@@ -109,7 +109,7 @@
 	icon_state = "lshell"
 	projectile_type = /obj/item/projectile/beam/scatter
 	pellets = 6
-	variance = 35
+	variance = 20
 
 /obj/item/ammo_casing/shotgun/techshell
 	name = "unloaded technological shell"
@@ -162,5 +162,5 @@
 	icon_state = "bountyshell"
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_incapacitate
 	pellets = 12//double the pellets, but half the stun power of each, which makes this best for just dumping right in someone's face.
-	variance = 25
+	variance = 15
 	custom_materials = list(/datum/material/iron=4000)
