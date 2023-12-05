@@ -71,7 +71,7 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 				crime_issued_by_officer_type = ISSUER_TYPE_INTERN
 
 		if(prob(60))
-			target_records.fields["criminal"] = "*Arrest*"
+			target_records.fields["criminal"] = SEC_RECORD_STATUS_ARREST
 			sec_hud_set_security_status()
 
 		var/know_about_crime_title_shown = FALSE
