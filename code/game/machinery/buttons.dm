@@ -128,12 +128,18 @@
 /obj/machinery/button/attack_robot(mob/user)
 	return attack_ai(user)
 
-/obj/machinery/button/proc/setup_device()
+/obj/machinery/button/proc/setup_device() // для раундстарта
+	var/obj/item/assembly/control/A = device
 	if(istype(device, /obj/item/assembly/control))
-		var/obj/item/assembly/control/A = device
+		A.id = id
+		initialized_button = 1
+
+/obj/machinery/button/proc/setup_button() // для самостроя
+	var/obj/item/assembly/control/A = device
+	if(istype(device, /obj/item/assembly/control))
 		id = A.id
 
-//вредители выключили перегрузку значений переменных у контроллеров
+
 /obj/machinery/button/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override=TRUE)
 	if(istype(device, /obj/item/assembly/control))
 		var/obj/item/assembly/control/A = device
@@ -143,8 +149,8 @@
 	. = ..()
 	if(.)
 		return
-	//if(!initialized_button) убрал проверку запрещающую менять vv после постройки
-	setup_device()
+
+	setup_button()
 	add_fingerprint(user)
 	if(panel_open)
 		if(device || board)

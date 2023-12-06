@@ -33,6 +33,8 @@
 	if(!change_id || QDELETED(usr) || QDELETED(src) || !usr.canUseTopic(src, be_close = TRUE, no_dextery = FALSE, no_tk = TRUE))
 		return
 	id = change_id
+	to_chat(user, span_notice("You change the ID to [id]."))
+	balloon_alert(user, "id changed")
 
 /obj/item/assembly/control/activate()
 	cooldown = TRUE
