@@ -9,7 +9,7 @@
 		to_chat(usr, "<span class='warning'>You cannot toggle your gender while unconcious!</span>")
 		return
 
-	var/choice = tgui_alert(usr, "Select Gender.", "Gender", list("Both", "Male", "Female", "None", "Toggle Breasts", "Toggle Penis", "Toggle Pussy", "Toggle Balls"))
+	var/choice = tgui_alert(usr, "Select Gender.", "Gender", list("None", "Male", "Female", "Both"))
 	switch(choice)
 		if("Both")
 			has_penis = TRUE
@@ -31,14 +31,6 @@
 			has_balls = FALSE
 			has_vagina = FALSE
 			gender = NEUTER
-		if("Toggle Breasts") // Idea/Initial code by @LunarFleet (github)
-			has_breasts = !has_breasts // Simplified line by @Zirok-BYOND (github)
-		if("Toggle Penis")
-			has_penis = !has_penis
-		if("Toggle Pussy")
-			has_vagina = !has_vagina 
-		if("Toggle Balls")
-			has_balls = !has_balls
 
 /// Toggle admin frozen
 /mob/living/proc/toggle_admin_freeze(client/admin)
