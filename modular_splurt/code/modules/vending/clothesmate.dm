@@ -2,6 +2,7 @@
 	var/list/extra_products = list(
 		/obj/item/clothing/suit/assu_suit = 16,
 		/obj/item/clothing/head/assu_helmet = 16,
+		/obj/item/clothing/head/hoodcowl = 4,
 		/obj/item/clothing/glasses/aviators = 10,
 		/obj/item/clothing/glasses/sunglasses = 10,
 		/obj/item/clothing/suit/toggle/rp_jacket = 3,

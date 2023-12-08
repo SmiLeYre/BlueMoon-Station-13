@@ -28,13 +28,13 @@
 	var/trauma_cycle_cooldown = 1.3 MINUTES
 
 /datum/wound/pierce/apply_wound(obj/item/bodypart/L, silent, datum/wound/old_wound, smited)
+	. = ..()
 	if(L.body_zone == BODY_ZONE_CHEST && (severity == WOUND_SEVERITY_SEVERE || severity == WOUND_SEVERITY_CRITICAL))
 		if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD
 			ru_name = "Пробитие лёгкого"
 			ru_name_r = "пробития лёгкого"
 			occur_text = "раскалывается, приводя к обильному кашлю"
 			examine_desc = "имеет углубленную выемку, из которой выходит воздух"
-	. = ..()
 
 /datum/wound/pierce/wound_injury(datum/wound/old_wound)
 	if(limb.body_zone == BODY_ZONE_CHEST && (severity == WOUND_SEVERITY_SEVERE || severity == WOUND_SEVERITY_CRITICAL))

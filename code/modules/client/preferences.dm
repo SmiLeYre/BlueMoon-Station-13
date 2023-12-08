@@ -252,6 +252,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 "naked_flavor_text" = "", //SPLURT edit
 "silicon_flavor_text" = "",
 "custom_species_lore" = "",
+"custom_deathgasp" = "застывает и падает без сил, глаза мертвы и безжизненны...", // BLUEMOON ADD - пользовательский эмоут смерти
 "ooc_notes" = "",
 "meat_type" = "Mammalian",
 "body_model" = MALE,
@@ -665,6 +666,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					else
 						dat += "[TextPreview(html_encode(features["naked_flavor_text"]))]...<BR>"
 					//SPLURT edit end
+					// BLUEMOON ADD START - пользовательский эмоут смерти
+					dat += "<h2>Custom Deathgasp</h2>"
+					dat += "<a href='?_src_=prefs;preference=custom_deathgasp;task=input'><b>Set Custom Deathgasp</b></a><br>"
+					if(length(features["custom_deathgasp"]) <= MAX_FLAVOR_PREVIEW_LEN)
+						if(!length(features["custom_deathgasp"]))
+							dat += "\[...\]<BR>"
+						else
+							dat += "[html_encode(features["custom_deathgasp"])]<BR>"
+					else
+						dat += "[TextPreview(html_encode(features["custom_deathgasp"]))]...<BR>"
+					// BLUEMOON ADD END
 					dat += "<h2>Silicon Flavor Text</h2>"
 					dat += "<a href='?_src_=prefs;preference=silicon_flavor_text;task=input'><b>Set Silicon Examine Text</b></a><br>"
 					if(length(features["silicon_flavor_text"]) <= MAX_FLAVOR_PREVIEW_LEN)
@@ -2332,7 +2344,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/msg = input(usr, "Задайте особую предысторию расы своего персонажа!", "Предыстория Расы Bашего Персонажа", features["silicon_flavor_text"]) as message|null //Skyrat edit, removed stripped_multiline_input()
 					if(!isnull(msg))
 						features["custom_species_lore"] = strip_html_simple(msg, MAX_FLAVOR_LEN, TRUE)
-
+				// BLUEMOON ADD START - пользовательский эмоут смерти
+				if("custom_deathgasp")
+					var/msg = input(usr, "Задайте эмоцию, которая будет проигрываться при смерти вашего персонажа!", "Сообщение О Смерти", features["custom_deathgasp"]) as message|null
+					if(!isnull(msg))
+						features["custom_deathgasp"] = strip_html_simple(msg, MAX_DEATHGASP_LEN, TRUE)
+				// BLUEMOON ADD END
 				if("ooc_notes")
 					var/msg = stripped_multiline_input(usr, "Установите всегда видимые OOC-заметки, связанные с вашими предпочтениями.", "ООС-Заметки", html_decode(features["ooc_notes"]), MAX_FLAVOR_LEN, TRUE)
 					if(!isnull(msg))

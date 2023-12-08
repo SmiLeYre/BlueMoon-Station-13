@@ -4078,6 +4078,7 @@
 #include "modular_bluemoon\dementia\code\modules\clothing\hats.dm"
 #include "modular_bluemoon\dementia\code\modules\clothing\helmets.dm"
 #include "modular_bluemoon\dementia\code\modules\clothing\under.dm"
+#include "modular_bluemoon\Fink\code\vending\engivend.dm"
 #include "modular_bluemoon\fluffs\code\accessories.dm"
 #include "modular_bluemoon\fluffs\code\donator.dm"
 #include "modular_bluemoon\fluffs\code\guns.dm"
