@@ -152,7 +152,7 @@
 	action_icon = 'icons/mob/actions/actions_revenant.dmi'
 	action_icon_state = "r_transmit"
 	action_background_icon_state = "bg_qareen"
-	notice = "reallybig hypnophrase"	//Larger fonts! - Gardelin0
+	notice = "love"	//Larger fonts! - Gardelin0
 	boldnotice = "revennotice"
 	holy_check = TRUE
 	tinfoil_check = FALSE
