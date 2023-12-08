@@ -43,6 +43,10 @@
 #define MODE_KEY_CHANGELING "g"
 #define MODE_TOKEN_CHANGELING ":g"
 
+#define MODE_QAREEN "qareen"
+#define MODE_KEY_QAREEN "q"
+#define MODE_TOKEN_QAREEN ":q"
+
 #define MODE_VOCALCORDS "cords"
 #define MODE_KEY_VOCALCORDS "x"
 
