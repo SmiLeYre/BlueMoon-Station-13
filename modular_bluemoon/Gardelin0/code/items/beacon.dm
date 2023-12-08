@@ -5,4 +5,4 @@
 	new /obj/item/gun/ballistic/shotgun/KS23/Inquisitor(src)
 	new /obj/item/nullrod/crucifix/wooden(src)
 	new /obj/item/ammo_box/buckshot23(src)
-	new /obj/item/ammo_box/slug23(src)
+	new /obj/item/clothing/accessory/permit/chaplain(src)
