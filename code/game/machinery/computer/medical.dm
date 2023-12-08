@@ -377,9 +377,10 @@
   */
 /obj/machinery/computer/med_data/proc/print_finish()
 	var/obj/item/paper/P = new /obj/item/paper(loc)
-	P.default_raw_text = "<center></b>Medical Record</b></center><br>"
+	P.name = "paper - 'Medical Record: [active1.fields["name"]]'"
+	var/report_text = "<center></b>Medical Record</b></center><br>"
 	if(istype(active1, /datum/data/record) && GLOB.data_core.general.Find(active1))
-		P.default_raw_text += {"Имя: [active1.fields["name"]] ИД: [active1.fields["id"]]
+		report_text += {"Имя: [active1.fields["name"]] ИД: [active1.fields["id"]]
 		<br>\nПол: [active1.fields["gender"]]
 		<br>\nВозраст: [active1.fields["age"]]
 		<br>\nРаса: [active1.fields["species"]]
@@ -387,9 +388,9 @@
 		<br>\nФизическое Состояние: [active1.fields["p_stat"]]
 		<br>\nПсихологическое Состояние: [active1.fields["m_stat"]]<br>"}
 	else
-		P.default_raw_text += "</b>General Record Lost!</b><br>"
+		report_text += "</b>General Record Lost!</b><br>"
 	if(istype(active2, /datum/data/record) && GLOB.data_core.medical.Find(active2))
-		P.default_raw_text += {"<br>\n<center></b>Medical Data</b></center>
+		report_text += {"<br>\n<center></b>Medical Data</b></center>
 		<br>\nГруппа Крови: [active2.fields["blood_type"]]
 		<br>\nДНК: [active2.fields["b_dna"]]<br>\n
 		<br>\nMinor Disabilities: [active2.fields["mi_dis"]]
@@ -405,11 +406,13 @@
 		<br>\n
 		<center></b>Comments/Log</b></center><br>"}
 		for(var/c in active2.fields["comments"])
-			P.default_raw_text += "[c]<br>"
+			report_text += "[c]<br>"
 	else
-		P.default_raw_text += "</b>Medical Record Lost!</b><br>"
-	P.default_raw_text += "</tt>"
-	P.name = "paper - 'Medical Record: [active1.fields["name"]]'"
+		report_text += "</b>Medical Record Lost!</b><br>"
+	report_text += "</tt>"
+
+	P.add_raw_text(report_text)
+	P.update_appearance()
 	printing = FALSE
 	SStgui.update_uis(src)
 
