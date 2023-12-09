@@ -10337,7 +10337,6 @@
 	desc = "Keep out the paperwork.";
 	pixel_y = 24;
 	pixel_x = -32
-	req_access_txt = "151"
 	},
 /obj/item/paper_bin/carbon{
 	pixel_x = 6;
