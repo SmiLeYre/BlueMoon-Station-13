@@ -430,10 +430,10 @@
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "bt" = (
-/obj/structure/bed{
+/obj/structure/bed/double{
 	dir = 1
 	},
-/obj/item/bedsheet/syndie{
+/obj/item/bedsheet/syndie/double{
 	name = "station admiral's bedsheet";
 	dir = 1
 	},
@@ -811,11 +811,11 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
 "cG" = (
-/obj/item/bedsheet/qm{
+/obj/item/bedsheet/qm/double{
 	name = "corporate liaison's bedsheet";
 	desc = "It is decorated with the Donk Co. logo."
 	},
-/obj/structure/bed,
+/obj/structure/bed/double,
 /turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/cl)
 "cI" = (
@@ -1933,6 +1933,11 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/structure/frame/machine{
+	anchored = 1;
+	icon_state = "box_1";
+	state = 2
+	},
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "hy" = (
@@ -2494,13 +2499,8 @@
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/cl)
 "jJ" = (
-/obj/structure/frame/machine{
-	anchored = 1;
-	state = 2;
-	icon_state = "box_1"
-	},
-/obj/item/circuitboard/machine/mechfab,
 /obj/effect/turf_decal/trimline/dark_red/filled/line,
+/obj/structure/table,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "jK" = (
@@ -4204,9 +4204,12 @@
 /obj/effect/turf_decal/trimline/purple/filled/line{
 	dir = 4
 	},
-/obj/structure/chair/office/light{
-	dir = 1
+/obj/structure/frame/machine{
+	anchored = 1;
+	icon_state = "box_1";
+	state = 2
 	},
+/obj/item/circuitboard/machine/mechfab,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "qY" = (
@@ -5114,6 +5117,7 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/lawyer)
 "uW" = (
 /obj/structure/tank_holder/anesthetic,
+/obj/item/clothing/mask/breath/medical,
 /turf/open/floor/iron/white/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
 "uZ" = (
@@ -6095,15 +6099,7 @@
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "zD" = (
-/obj/structure/table/wood,
-/obj/item/paper_bin/carbon{
-	pixel_y = 3;
-	pixel_x = -5
-	},
-/obj/item/pen{
-	pixel_y = 3;
-	pixel_x = -5
-	},
+/obj/machinery/photocopier,
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/cl)
 "zH" = (
@@ -7569,6 +7565,11 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/structure/frame/machine{
+	anchored = 1;
+	icon_state = "box_1";
+	state = 2
+	},
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "Gl" = (
@@ -8995,8 +8996,7 @@
 /obj/structure/table/wood,
 /obj/machinery/fax{
 	fax_name = "Unknown Syndicate Fax";
-	name = "DS-2 Fax Machine";
-	syndicate_network = 1
+	name = "DS-2 Fax Machine"
 	},
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
@@ -10337,6 +10337,14 @@
 	desc = "Keep out the paperwork.";
 	pixel_y = 24;
 	pixel_x = -32
+	},
+/obj/item/paper_bin/carbon{
+	pixel_x = 6;
+	pixel_y = 3
+	},
+/obj/item/pen{
+	pixel_x = 5;
+	pixel_y = 3
 	},
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/cl)

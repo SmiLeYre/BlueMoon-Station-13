@@ -92,3 +92,7 @@
 	singular_name = "ten thousand credit bill"
 	value = 10000
 
+/obj/item/stack/spacecash/c100000
+	icon_state = "spacecash10000"
+	singular_name = "one hundreed thousand credit bill"
+	value = 100000
