@@ -13,7 +13,7 @@ SUBSYSTEM_DEF(statpanels)
 	if (!resumed)
 		var/datum/map_config/cached = SSmapping.next_map_config
 		var/round_time = world.time - SSticker.round_start_time
-		//var/real_round_time = world.timeofday - SSticker.real_round_start_time
+		var/real_round_time = world.timeofday - SSticker.real_round_start_time
 		var/list/global_data = list(
 			"Map: [SSmapping.config?.map_name || "Loading..."]",
 			cached ? "Next Map: [cached.map_name]" : null,
@@ -24,8 +24,8 @@ SUBSYSTEM_DEF(statpanels)
 			"OOC: [GLOB.ooc_allowed ? "Enabled" : "Disabled"]",
 			" ",
 			"Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
+			"Actual Round Timer: [time2text(real_round_time, "hh:mm:ss", 0)]", //A back up control to check the round time to see if round time has descyed as well as properly track round time
 			"Round Time: [GAMETIMESTAMP("hh:mm:ss", round_time)]",
-			//"Actual Round Timer: [time2text(real_round_time, "hh:mm:ss", 0)]", //A back up control to check the round time to see if round time has descyed as well as properly track round time
 			"Station Time: [STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)]",
 			"[time2text(world.realtime, "MMM DD")] [GLOB.year_integer]",
 			"Sol System Time: [SOLAR_TIME_TIMESTAMP("hh:mm:ss", world.time)]", //bluemoon add,
