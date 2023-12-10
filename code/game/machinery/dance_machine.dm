@@ -16,6 +16,7 @@
 	var/datum/track/selectedtrack = null
 	var/list/queuedplaylist = list()
 	var/queuecooldown //This var exists solely to prevent accidental repeats of John Mulaney's 'What's New Pussycat?' incident. Intentional, however......
+	var/repeat = FALSE //BLUEMOON ADD зацикливание плейлистов
 
 /obj/machinery/jukebox/disco
 	name = "radiant dance machine mark IV"
@@ -108,6 +109,7 @@
 	data["is_emagged"] = (obj_flags & EMAGGED)
 	data["cost_for_play"] = queuecost
 	data["has_access"] = allowed(user)
+	data["repeat"] = repeat		//BLUEMOON ADD
 	return data
 
 /obj/machinery/jukebox/ui_act(action, list/params)
@@ -126,6 +128,11 @@
 			else
 				stop = 0
 			return TRUE
+		//BLUEMOON ADD зацикливание плейлистов
+		if("repeat")
+			repeat = !repeat
+			return
+		//BLUEMOON ADD END
 		if("add_to_queue")
 			var/list/available = list()
 			for(var/datum/track/S in SSjukeboxes.songs)
@@ -198,6 +205,10 @@
 		update_icon()
 		START_PROCESSING(SSobj, src)
 		stop = world.time + playing.song_length
+		//BLUEMOON ADD повтор плейлиста (трек добавляется в конец плейлиста)
+		if(repeat)
+			queuedplaylist += queuedplaylist[1]
+		//BLUEMOON ADD END
 		queuedplaylist.Cut(1, 2)
 		say("Сейчас играет: [playing.song_name]")
 		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, TRUE)

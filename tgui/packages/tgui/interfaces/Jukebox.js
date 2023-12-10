@@ -27,6 +27,7 @@ export const Jukebox = (props, context) => {
     is_emagged,
     cost_for_play,
     has_access,
+    repeat,
   } = data;
   const [searchText, setSearchText] = useLocalState(context, 'searchText', '');
   const searchFilter = createSearch(searchText, (entry) => entry.name);
@@ -44,14 +45,22 @@ export const Jukebox = (props, context) => {
         <Section
           fluid
           title="Настройки"
-          buttons={
-            <Button
-              icon={active ? 'pause' : 'play'}
-              content={active ? 'Стоп' : 'Играть'}
-              selected={active}
-              disabled={!has_access}
-              onClick={() => act('toggle')}
+          buttons={ //BLUEMOON EDIT
+            <Box>
+              <Button
+                content={repeat ? 'Повтор' : '1 Раз'}
+                selected={repeat}
+                disabled={!has_access}
+                onClick={() => act('repeat')}
+              />
+              <Button
+                icon={active ? 'pause' : 'play'}
+                content={active ? 'Стоп' : 'Играть'}
+                selected={active}
+                disabled={!has_access}
+                onClick={() => act('toggle')}
             />
+            </Box> //BLUEMOON EDIT END
           }>
           <Stack>
             <Stack.Item>
