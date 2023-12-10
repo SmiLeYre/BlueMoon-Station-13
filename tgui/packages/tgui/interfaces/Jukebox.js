@@ -162,7 +162,7 @@ export const Jukebox = (props, context) => {
                   fluid
                   autoFocus
                   placeholder="Найти треки..."
-                  onInput={(e, value) => setSearchText(value)}
+                  onInput={(e, value) => {value.length >= 2 ? setSearchText(value) : setSearchText('') }}
                 />
               </Stack.Item>
             </Stack>
