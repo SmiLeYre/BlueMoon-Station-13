@@ -106,7 +106,7 @@
 	AddComponent(/datum/component/anti_magic, TRUE, TRUE, FALSE, null, null, FALSE)
 
 /obj/item/clothing/gloves/fingerless/pugilist/magic
-	name = "armwraps of mighty fists"
+	name = "Armwraps of Mighty Fists"
 	desc = "A series of armwraps. Makes you pretty keen to go adventuring and punch dragons."
 	resistance_flags = FIRE_PROOF | ACID_PROOF //magic items are harder to damage with energy this is a dnd joke okay?
 	enhancement = 1 //They're +1!

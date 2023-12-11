@@ -77,7 +77,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	where = human_holder.equip_in_one_of_slots(heirloom, slots, FALSE) || "под ногами"
 
 /datum/quirk/family_heirloom/post_add()
-	if(where == "в рюкзаке")
+	if(where == "В рюкзаке")
 		var/mob/living/carbon/human/H = quirk_holder
 		SEND_SIGNAL(H.back, COMSIG_TRY_STORAGE_SHOW, H)
 

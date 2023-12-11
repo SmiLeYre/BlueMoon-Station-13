@@ -511,15 +511,15 @@
 						//weird shit goes here
 						if(CUM_TARGET_EARS)
 							if(partner.has_ears())
-								message = "кончает в \the ухо [partner_name] сквиртом."
+								message = "кончает в \the ухо [partner_name] сквиртом!"
 							else
-								message = "кончает в \the ушную раковину [partner_name] сквиртом."
+								message = "кончает в \the ушную раковину [partner_name] сквиртом!"
 							cumin = TRUE
 						if(CUM_TARGET_EYES)
 							if(partner.has_eyes())
-								message = "кончает на глаз [partner_name] сквиртом."
+								message = "кончает на глаз [partner_name] сквиртом!"
 							else
-								message = "кончает в \the глазницу [partner_name] сквиртом."
+								message = "кончает в \the глазницу [partner_name] сквиртом!"
 							cumin = TRUE
 						//
 						if(CUM_TARGET_PENIS)
@@ -539,35 +539,35 @@
 								message = "кончает прямо в рот [partner_name]."
 								cumin = TRUE
 							else
-								message = "обливает лицо [partner_name] сквиртом."
+								message = "обливает лицо [partner_name] сквиртом!"
 						if(CUM_TARGET_THROAT)
 							if(partner.has_mouth() && partner.mouth_is_free())
 								message = "трется своей киской о рот [partner_name] и кончает."
 								cumin = TRUE
 							else
-								message = "обливает лицо [partner_name] сквиртом."
+								message = "обливает лицо [partner_name] сквиртом!"
 						if(CUM_TARGET_VAGINA)
 							if(partner.has_vagina(REQUIRE_EXPOSED))
-								message = "обливает киску [partner_name] сквиртом."
+								message = "обливает киску [partner_name] сквиртом!"
 								cumin = TRUE
 							else
-								message = "обливает живот [partner_name] сквиртом."
+								message = "обливает живот [partner_name] сквиртом!"
 						if(CUM_TARGET_ANUS)
 							if(partner.has_anus(REQUIRE_EXPOSED))
-								message = "обливает попку [partner_name] сквиртом."
+								message = "обливает попку [partner_name] сквиртом!"
 								cumin = TRUE
 							else
-								message = "обливает спину [partner_name] сквиртом."
+								message = "обливает спину [partner_name] сквиртом!"
 						if(CUM_TARGET_HAND)
 							if(partner.has_hand(REQUIRE_ANY))
-								message = "обливает руку [partner_name] сквиртом."
+								message = "обливает руку [partner_name] сквиртом!"
 							else
 								message = "обливает [partner_name]."
 						if(CUM_TARGET_BREASTS)
 							if(partner.has_breasts(REQUIRE_EXPOSED))
-								message = "обливает грудь [partner_name] сквиртом."
+								message = "обливает грудь [partner_name] сквиртом!"
 							else
-								message = "обливает грудину и торс [partner_name] сквиртом."
+								message = "обливает грудину и торс [partner_name] сквиртом!"
 						if(NUTS_TO_FACE)
 							if(partner.has_mouth() && partner.mouth_is_free())
 								message = "энергично засовывает свои яйца в рот партнёра перед тем, как выпустить густое, липкое семя в глаза и волосы [partner_name]."
@@ -588,15 +588,15 @@
 						//weird shit goes here
 						if(CUM_TARGET_EARS)
 							if(partner.has_ears())
-								message = "обливает ухо [partner_name] сквиртом."
+								message = "обливает ухо [partner_name] сквиртом!"
 							else
-								message = "обливает ушную раковину [partner_name] сквиртом."
+								message = "обливает ушную раковину [partner_name] сквиртом!"
 							cumin = TRUE
 						if(CUM_TARGET_EYES)
 							if(partner.has_eyes())
-								message = "обливает глаз [partner_name] сквиртом."
+								message = "обливает глаз [partner_name] сквиртом!"
 							else
-								message = "обливает глазницу [partner_name] сквиртом."
+								message = "обливает глазницу [partner_name] сквиртом!"
 							cumin = TRUE
 						//
 						if(CUM_TARGET_PENIS)
@@ -687,15 +687,15 @@
 							//weird shit goes here
 							if(CUM_TARGET_EARS)
 								if(partner.has_ears())
-									message = "кончает в \the ухо [partner_name] сквиртом."
+									message = "кончает в \the ухо [partner_name] сквиртом!"
 								else
-									message = "кончает в \the ушную раковину [partner_name] сквиртом."
+									message = "кончает в \the ушную раковину [partner_name] сквиртом!"
 								cumin = TRUE
 							if(CUM_TARGET_EYES)
 								if(partner.has_eyes())
-									message = "кончает на глаз [partner_name] сквиртом."
+									message = "кончает на глаз [partner_name] сквиртом!"
 								else
-									message = "кончает в \the глазницу [partner_name] сквиртом."
+									message = "кончает в \the глазницу [partner_name] сквиртом!"
 								cumin = TRUE
 							//
 							if(CUM_TARGET_PENIS)
@@ -715,35 +715,35 @@
 									message = "кончает прямо в [partner_name] ротик."
 									cumin = TRUE
 								else
-									message = "обливает лицо [partner_name] сквиртом."
+									message = "обливает лицо [partner_name] сквиртом!"
 							if(CUM_TARGET_THROAT)
 								if(partner.has_mouth() && partner.mouth_is_free())
 									message = "трется своей киской о рот [partner_name] и кончает."
 									cumin = TRUE
 								else
-									message = "обливает лицо [partner_name] сквиртом."
+									message = "обливает лицо [partner_name] сквиртом!"
 							if(CUM_TARGET_VAGINA)
 								if(partner.has_vagina(REQUIRE_EXPOSED))
-									message = "обливает киску [partner_name] сквиртом."
+									message = "обливает киску [partner_name] сквиртом!"
 									cumin = TRUE
 								else
-									message = "обливает живот [partner_name] сквиртом."
+									message = "обливает живот [partner_name] сквиртом!"
 							if(CUM_TARGET_ANUS)
 								if(partner.has_anus(REQUIRE_EXPOSED))
-									message = "обливает попку [partner_name] сквиртом."
+									message = "обливает попку [partner_name] сквиртом!"
 									cumin = TRUE
 								else
-									message = "обливает спину [partner_name] сквиртом."
+									message = "обливает спину [partner_name] сквиртом!"
 							if(CUM_TARGET_HAND)
 								if(partner.has_hand())
-									message = "обливает руку [partner_name] сквиртом."
+									message = "обливает руку [partner_name] сквиртом!"
 								else
-									message = "обливает [partner_name] сквиртом."
+									message = "обливает [partner_name] сквиртом!"
 							if(CUM_TARGET_BREASTS)
 								if(partner.has_breasts(REQUIRE_EXPOSED))
-									message = "обливает грудь [partner_name] сквиртом."
+									message = "обливает грудь [partner_name] сквиртом!"
 								else
-									message = "обливает грудь и шейку [partner_name] сквиртом."
+									message = "обливает грудь и шейку [partner_name] сквиртом!"
 							if(NUTS_TO_FACE)
 								if(partner.has_mouth() && partner.mouth_is_free())
 									message = "энергично засовывает свои яйца в рот партнёра перед тем, как выпустить густое, липкое семя в глаза и волосы [partner_name]."
@@ -765,15 +765,15 @@
 							//weird shit goes here
 							if(CUM_TARGET_EARS)
 								if(partner.has_ears())
-									message = "обливает ухо [partner_name] сквиртом."
+									message = "обливает ухо [partner_name] сквиртом!"
 								else
-									message = "обливает ушную раковину [partner_name] сквиртом."
+									message = "обливает ушную раковину [partner_name] сквиртом!"
 								cumin = TRUE
 							if(CUM_TARGET_EYES)
 								if(partner.has_eyes())
-									message = "обливает глаз [partner_name] сквиртом."
+									message = "обливает глаз [partner_name] сквиртом!"
 								else
-									message = "обливает глазницу [partner_name] сквиртом."
+									message = "обливает глазницу [partner_name] сквиртом!"
 								cumin = TRUE
 							//
 							if(CUM_TARGET_PENIS)

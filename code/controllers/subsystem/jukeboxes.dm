@@ -35,12 +35,17 @@ SUBSYSTEM_DEF(jukeboxes)
 	song_beat = beat
 	song_associated_id = assocID
 
-/datum/controller/subsystem/jukeboxes/proc/addjukebox(obj/jukebox, datum/track/T, jukefalloff = 1)
+/datum/controller/subsystem/jukeboxes/proc/addjukebox(obj/jukebox, datum/track/T, jukefalloff = 1, one_area_play = FALSE) //BLUEMOON EDIT
 	if(!istype(T))
 		CRASH("[src] tried to play a song with a nonexistant track")
 	var/channeltoreserve = pick(freejukeboxchannels)
 	if(!channeltoreserve)
 		return FALSE
+	//BLUEMOON ADD START
+	var/area_play
+	if(one_area_play)
+		area_play = get_area(jukebox)
+	//BLUEMOON ADD END
 	var/sound/song_to_init = sound(T.song_path)
 	freejukeboxchannels -= channeltoreserve
 	var/list/youvegotafreejukebox = list(T, channeltoreserve, jukebox, jukefalloff, song_to_init)
@@ -60,6 +65,10 @@ SUBSYSTEM_DEF(jukeboxes)
 			continue
 		if(!(M.client.prefs.toggles & SOUND_JUKEBOXES))
 			continue
+		//BLUEMOON ADD START
+		if(one_area_play && get_area(M) != area_play)
+			continue
+		//BLUEMOON ADD END
 
 		SEND_SOUND(M, song_to_init)
 	return activejukeboxes.len

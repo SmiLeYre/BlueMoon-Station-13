@@ -43,6 +43,10 @@
 #define MODE_KEY_CHANGELING "g"
 #define MODE_TOKEN_CHANGELING ":g"
 
+#define MODE_QAREEN "qareen"
+#define MODE_KEY_QAREEN "q"
+#define MODE_TOKEN_QAREEN ":q"
+
 #define MODE_VOCALCORDS "cords"
 #define MODE_KEY_VOCALCORDS "x"
 
@@ -101,6 +105,7 @@
 #define MAX_NAME_LEN			42
 #define MAX_BROADCAST_LEN		512
 #define MAX_CHARTER_LEN			80
+#define MAX_DEATHGASP_LEN		1024 // BLUEMOON ADD - пользовательский эмоут смерти
 
 //Bark defines
 #define BARK_DEFAULT_MINPITCH 0.6

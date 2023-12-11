@@ -63,8 +63,8 @@
 	for(var/obj/machinery/computer/prisoner/management/C in GLOB.prisoncomputer_list)
 		var/obj/item/paper/P = new /obj/item/paper(C.loc)
 		P.name = "[id] log - [criminal] [STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)]"
-		P.default_raw_text =  "<center><b>[id] - Brig record</b></center><br><hr><br>"
-		P.default_raw_text += {"<center>[station_name()] - Security Department</center><br>
+		var/report_text =  "<center><b>[id] - Brig record</b></center><br><hr><br>"
+		report_text += {"<center>[station_name()] - Security Department</center><br>
 						<center><small><b>Admission data:</b></small></center><br>
 						<small><b>Log generated at:</b>		[STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)]<br>
 						<b>Detainee:</b>		[criminal]<br>
@@ -72,6 +72,9 @@
 						<b>Charge(s):</b>	[crimes]<br>
 						<b>Arresting Officer:</b>		[usr.name]<br><hr><br>
 						<small>This log file was generated automatically upon activation of a cell timer.</small>"}
+
+		P.add_raw_text(report_text)
+		P.update_appearance()
 
 		playsound(C.loc, "sound/goonstation/machines/printer_dotmatrix.ogg", 50, 1)
 		GLOB.cell_logs += P
@@ -124,8 +127,6 @@
 	Radio.subspace_transmission = TRUE
 	Radio.canhear_range = 0 // anything greater will have the bot broadcast the channel as if it were saying it out loud.
 	Radio.recalculateChannels()
-
-	set_pixel_offsets_from_dir(32, -32, 32, -32)
 
 	spawn(20)
 		for(var/obj/machinery/door/window/brigdoor/M in GLOB.airlocks)
@@ -484,42 +485,31 @@
 	name = "Cell 1"
 	id = "Cell 1"
 	dir = 2
-	pixel_y = -32
-
 
 /obj/machinery/door_timer/cell_2
 	name = "Cell 2"
 	id = "Cell 2"
 	dir = 2
-	pixel_y = -32
-
 
 /obj/machinery/door_timer/cell_3
 	name = "Cell 3"
 	id = "Cell 3"
 	dir = 2
-	pixel_y = -32
-
 
 /obj/machinery/door_timer/cell_4
 	name = "Cell 4"
 	id = "Cell 4"
 	dir = 2
-	pixel_y = -32
-
 
 /obj/machinery/door_timer/cell_5
 	name = "Cell 5"
 	id = "Cell 5"
 	dir = 2
-	pixel_y = -32
-
 
 /obj/machinery/door_timer/cell_6
 	name = "Cell 6"
 	id = "Cell 6"
 	dir = 4
-	pixel_x = 32
 
 /obj/machinery/door_timer/cell_7
 	name = "Cell 7"

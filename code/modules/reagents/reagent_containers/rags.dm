@@ -183,7 +183,7 @@
 	possible_colors = list("#FF0000","#FF7F00","#FFFF00","#00FF00","#0000FF","#4B0082","#8F00FF")
 
 /obj/item/reagent_containers/rag/towel/syndicate
-	name = "syndicate towel"
+	name = "Syndicate Towel"
 	desc = "Truly a weapon of mass destruction."
 	possible_colors = list("#DD1A1A", "#DB4325", "#E02700")
 	force = 4

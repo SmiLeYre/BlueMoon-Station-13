@@ -8,7 +8,7 @@
 // -------------: TO FIGHT IT: kill it however you like - just don't die to it!
 // -------------: SPRITES FROM: FoS, https://www.paradisestation.org/forum/profile/335-fos
 
-/mob/living/simple_animal/hostile/poison/terror_spider/healer
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/healer
 	name = "Healer of Terror"
 	desc = "An ominous-looking green spider. It has a small egg-sac attached to it, and dried blood stains on its carapace."
 	ai_target_method = TS_DAMAGE_BRUTE
@@ -27,19 +27,19 @@
 	var/feedings_to_lay = 3
 	var/datum/action/innate/terrorspider/greeneggs/greeneggs_action
 
-/mob/living/simple_animal/hostile/poison/terror_spider/healer/strong
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/healer/strong
 	maxHealth = 220
 	health = 220
 	regeneration = 3
 	melee_damage_lower = 20
 	melee_damage_upper = 25
 
-/mob/living/simple_animal/hostile/poison/terror_spider/healer/New()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/healer/New()
 	..()
 	greeneggs_action = new()
 	greeneggs_action.Grant(src)
 
-/mob/living/simple_animal/hostile/poison/terror_spider/healer/proc/DoLayGreenEggs()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/healer/proc/DoLayGreenEggs()
 	var/obj/structure/spider/eggcluster/E = locate() in get_turf(src)
 	if(E)
 		to_chat(src, "<span class='notice'>There is already a cluster of eggs here!</span>")
@@ -49,9 +49,9 @@
 		return
 	var/list/eggtypes = list(TS_DESC_KNIGHT, TS_DESC_LURKER, TS_DESC_HEALER, TS_DESC_REAPER, TS_DESC_BUILDER)
 	var/list/spider_array = CountSpidersDetailed(FALSE)
-	if(spider_array[/mob/living/simple_animal/hostile/poison/terror_spider/destroyer] < 2)
+	if(spider_array[/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/destroyer] < 2)
 		eggtypes += TS_DESC_DESTROYER
-	if(spider_array[/mob/living/simple_animal/hostile/poison/terror_spider/widow] < 2)
+	if(spider_array[/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/widow] < 2)
 		eggtypes += TS_DESC_WIDOW
 	var/eggtype = pick(eggtypes)
 	if(client)
@@ -69,25 +69,25 @@
 		return
 	visible_message("<span class='notice'>[src] lays a cluster of eggs.</span>")
 	if(eggtype == TS_DESC_KNIGHT)
-		DoLayTerrorEggs(/mob/living/simple_animal/hostile/poison/terror_spider/knight, 1)
+		DoLayTerrorEggs(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/knight, 1)
 	else if(eggtype == TS_DESC_LURKER)
-		DoLayTerrorEggs(/mob/living/simple_animal/hostile/poison/terror_spider/lurker, 1)
+		DoLayTerrorEggs(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/lurker, 1)
 	else if(eggtype == TS_DESC_HEALER)
-		DoLayTerrorEggs(/mob/living/simple_animal/hostile/poison/terror_spider/healer, 1)
+		DoLayTerrorEggs(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/healer, 1)
 	else if(eggtype == TS_DESC_REAPER)
-		DoLayTerrorEggs(/mob/living/simple_animal/hostile/poison/terror_spider/reaper, 1)
+		DoLayTerrorEggs(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/reaper, 1)
 	else if(eggtype == TS_DESC_BUILDER)
-		DoLayTerrorEggs(/mob/living/simple_animal/hostile/poison/terror_spider/builder, 1)
+		DoLayTerrorEggs(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/builder, 1)
 	else if(eggtype == TS_DESC_WIDOW)
-		DoLayTerrorEggs(/mob/living/simple_animal/hostile/poison/terror_spider/widow, 1)
+		DoLayTerrorEggs(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/widow, 1)
 	else if(eggtype == TS_DESC_DESTROYER)
-		DoLayTerrorEggs(/mob/living/simple_animal/hostile/poison/terror_spider/destroyer, 1)
+		DoLayTerrorEggs(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/destroyer, 1)
 	else
 		to_chat(src, "<span class='warning'>Unrecognized egg type!</span>")
 		fed += feedings_to_lay
 	fed -= feedings_to_lay
 
-/mob/living/simple_animal/hostile/poison/terror_spider/healer/spider_special_action()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/healer/spider_special_action()
 	if(cocoon_target)
 		handle_cocoon_target()
 	else if(fed >= feedings_to_lay)
@@ -95,7 +95,7 @@
 	else if(world.time > (last_cocoon_object + freq_cocoon_object))
 		seek_cocoon_target()
 
-/mob/living/simple_animal/hostile/poison/terror_spider/healer/spider_specialattack(mob/living/carbon/human/L, poisonable)
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/healer/spider_specialattack(mob/living/carbon/human/L, poisonable)
 	if(!poisonable)
 		..()
 		return
@@ -108,7 +108,7 @@
 		visible_message("<span class='danger'>[src] bites [target], but cannot inject venom into [target.p_their()] [inject_target]!</span>")
 	L.attack_animal(src)
 
-/mob/living/simple_animal/hostile/poison/terror_spider/healer/AttackingTarget()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/healer/AttackingTarget()
 	. = ..()
 	if(isterrorspider(target) && target != src) //no self healing
 		var/mob/living/L = target

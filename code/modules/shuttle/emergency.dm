@@ -195,7 +195,7 @@
 /obj/machinery/computer/emergency_shuttle/proc/attempt_hijack_stage(mob/living/user)
 	if(!user.CanReach(src))
 		return
-	if(!user?.mind?.get_hijack_speed())
+	if(!user?.mind?.get_hijack_speed() || (!(user.mind.special_role == ROLE_OPERATIVE) || !(user.mind.special_role == "nukie mid")))
 		to_chat(user, "<span class='warning'>You manage to open a user-mode shell on [src], and hundreds of lines of debugging output fly through your vision. It is probably best to leave this alone.</span.")
 		return
 	if(hijack_hacking == TRUE)
@@ -486,11 +486,16 @@
 				// now move the actual emergency shuttle to centcom
 				// unless the shuttle is "hijacked"
 				var/destination_dock = "emergency_away"
-				if(is_hijacked())
+				if(is_hijacked() && GLOB.master_mode == "Extended")
+					destination_dock = "emergency_real_syndicate"
+					minor_announce("Обнаружен взлом в протоколах \
+						автопилота шаттла. Пожалуйста, найдите и поговорите с \
+						местным менеджером.", "СИСТЕМНАЯ ОШИБКА:", alert=TRUE)
+				else if(is_hijacked())
 					destination_dock = "emergency_syndicate"
-					minor_announce("Corruption detected in \
-						shuttle navigation protocols. Please contact your \
-						supervisor.", "SYSTEM ERROR:", alert=TRUE)
+					minor_announce("Обнаружен взлом в протоколах \
+						автопилота шаттла. Мы не видим вас на радаре... \
+						весь экипаж, улетевший на шаттле, объявляется потерянным без вести.", "СИСТЕМНАЯ ОШИБКА:", alert=TRUE)
 
 				dock_id(destination_dock)
 

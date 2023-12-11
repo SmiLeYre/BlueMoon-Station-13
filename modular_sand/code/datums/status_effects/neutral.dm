@@ -3,7 +3,7 @@
 	status_type = STATUS_EFFECT_MULTIPLE
 	// We only end when we run out!
 	duration = -1
-	tick_interval = 1 SECONDS
+	tick_interval = 5 SECONDS
 	alert_type = /atom/movable/screen/alert/status_effect/dripping_cum
 	var/datum/reagents/contents
 	var/list/blood_DNA

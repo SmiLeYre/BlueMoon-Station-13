@@ -216,6 +216,7 @@
 	var/obj/effect/portal/p_orange
 	var/atmos_link = FALSE
 	var/firing_core = FALSE
+	throwforce = 0	//So pacifists can use it. - Gardelin0
 
 /obj/item/gun/energy/wormhole_projector/attackby(obj/item/C, mob/user)
 	if(istype(C, /obj/item/assembly/signaler/anomaly))

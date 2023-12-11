@@ -41720,8 +41720,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/landmark/xmastree,
-/obj/effect/landmark/event_spawn,
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
 	dir = 4
@@ -62782,6 +62780,8 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
 	},
+/obj/effect/landmark/xmastree,
+/obj/effect/landmark/event_spawn,
 /turf/open/floor/wood/airless,
 /area/service/bar)
 "tcU" = (

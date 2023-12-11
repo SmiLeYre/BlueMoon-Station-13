@@ -52,12 +52,12 @@
 /obj/effect/proc_holder/spell/aoe_turf/terror_healing/choose_targets()
 	var/datum/spell_targeting/aoe/T = new()
 	T.range = inner_radius
-	T.allowed_type = /mob/living/simple_animal/hostile/poison/terror_spider
+	T.allowed_type = /mob/living/simple_animal/hostile/retaliate/poison/terror_spider
 	return T
 
 
 /obj/effect/proc_holder/spell/aoe_turf/terror_healing/cast(list/targets, mob/user = usr)
-	for(var/mob/living/simple_animal/hostile/poison/terror_spider/spider in targets)
+	for(var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/spider in targets)
 		visible_message("<span class='green'>[user] exudes feromones and heals spiders around!</span>")
 		spider.adjustBruteLoss(-heal_amount)
 		if(apply_heal_buff)

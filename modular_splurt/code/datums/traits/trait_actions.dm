@@ -497,7 +497,7 @@
 		bite_target = pull_target
 
 	// Or cocooned carbon
-	else if(istype(pull_target,/obj/structure/arachnid/cocoon))
+	else if(istype(pull_target,/obj/structure/spider/stickyweb/arachnid/cocoon))
 		// Define if cocoon has a valid target
 		// This cannot use pull_target
 		var/possible_cocoon_target = locate(/mob/living/carbon/human) in action_owner.pulling.contents

@@ -353,7 +353,7 @@
 		failed = TRUE
 	var/turf/T = get_turf(user)
 	var/obj/structure/spider/stickyweb/W = locate() in T
-	var/obj/structure/arachnid/W2 = locate() in T
+	var/obj/structure/spider/stickyweb/arachnid/W2 = locate() in T
 	if(W || W2)
 		to_chat(user, "<span class='warning'>There's already a web here!</span>")
 		failed = TRUE

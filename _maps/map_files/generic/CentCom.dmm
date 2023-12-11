@@ -35596,7 +35596,6 @@
 /turf/open/floor/bluespace,
 /area/centcom)
 "wZB" = (
-/obj/structure/glowshroom/glowcap,
 /obj/structure/table/wood,
 /obj/item/book/granter/action,
 /obj/item/book/granter/action/drink_fling,

@@ -266,4 +266,4 @@ GLOBAL_LIST_INIT(book_types, typecacheof(list(
 	/obj/item/spellbook,
 	/obj/item/storage/book)))
 
-#define isterrorspider(A) (istype((A), /mob/living/simple_animal/hostile/poison/terror_spider))
+#define isterrorspider(A) (istype((A), /mob/living/simple_animal/hostile/retaliate/poison/terror_spider))
