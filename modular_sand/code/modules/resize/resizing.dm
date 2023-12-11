@@ -80,10 +80,10 @@
 					micro_move_to_target_turf(target) // BLUEMOON ADD
 					log_combat(user, target, "failed (martial art) to step on", addition="[user.a_intent] trample")
 					target.visible_message(\
-						"<span class='danger'>[src] уворачивается от попытки [src] наступить на не[target.gender == MALE ? "го" : "ё"].",\
+						"<span class='danger'>[src] уворачивается от попытки [src] наступить на не[target.gender == MALE ? "го" : "ё"]!",\
 						"<span class='danger'>Вы уворачиваетесь от попытки [src] наступить на вас благодаря своему боевому искусству!</span>",
 						vision_distance = 3,
-						target = user, target_message = span_danger("[target] умело уворачивается вашей попытки наступить на него!"))
+						target = user, target_message = span_danger("[target] умело уворачивается от вашей попытки наступить на него!"))
 					return TRUE // технически, переступил
 			// BLUEMOON ADD END
 
