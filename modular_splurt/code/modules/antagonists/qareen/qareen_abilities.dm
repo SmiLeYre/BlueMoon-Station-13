@@ -4,7 +4,7 @@
 	if(modifiers["middle"] && modifiers["shift"])
 		if(ismob(A))
 			ManualFollow(A)
-			return
+		return
 	// BlueMoon Edit End
 	if(modifiers["shift"])
 		ShiftClickOn(A)
