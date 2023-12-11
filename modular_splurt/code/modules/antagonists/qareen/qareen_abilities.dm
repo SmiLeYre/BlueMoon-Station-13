@@ -18,7 +18,7 @@
 			to_chat(src, "<span class='revenwarning'>[A]'s fluids are almost devoid of any essence, also very bland.. almost tasteless... but beggars can't be choosers.</span>" )
 		if(in_range(src, A))
 			// BlueMood Edit Start: Let's not be hasty here - Flauros
-			if(alert("Would you like to harnest [A]'s essence?",,"Yes","No")!="Yes")
+			if(alert("Would you like to harvest [A]'s essence?",,"Yes","No")!="Yes")
 				return
 			// BlueMoon Edit End - Flauros
 			Harvest(A)
