@@ -39,28 +39,28 @@
 		infestation_type = pick(1, 2)
 	switch(infestation_type)
 		if(1)          //lowpop spawns
-			spider_type = /mob/living/simple_animal/hostile/poison/terror_spider/defiler
+			spider_type = /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/defiler
 			spawncount = 2
 		if(2)
-			spider_type = /mob/living/simple_animal/hostile/poison/terror_spider/queen/princess
+			spider_type = /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/princess
 			spawncount = 2
 		if(3)          //midpop spawns
-			spider_type = /mob/living/simple_animal/hostile/poison/terror_spider/defiler
+			spider_type = /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/defiler
 			spawncount = 3
 		if(4)
-			spider_type = /mob/living/simple_animal/hostile/poison/terror_spider/queen/princess
+			spider_type = /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/princess
 			spawncount = 3
 		if(5)          //highpop spawns
-			spider_type = /mob/living/simple_animal/hostile/poison/terror_spider/queen
+			spider_type = /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen
 			spawncount = 1
 		if(6)
-			spider_type = /mob/living/simple_animal/hostile/poison/terror_spider/prince
+			spider_type = /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/prince
 			spawncount = 1
 	var/list/candidates = get_candidates(ROLE_TERROR_SPIDER, null, ROLE_TERROR_SPIDER)
 	if(length(candidates) < spawncount)
 		message_admins("Warning: not enough players volunteered to be terrors. Could only spawn [length(candidates)] out of [spawncount]!")
 	while(spawncount && length(candidates))
-		var/mob/living/simple_animal/hostile/poison/terror_spider/S = new spider_type(pick(GLOB.xeno_spawn))
+		var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/S = new spider_type(pick(GLOB.xeno_spawn))
 		var/mob/M = pick_n_take(candidates)
 		S.key = M.key
 		S.give_intro_text()

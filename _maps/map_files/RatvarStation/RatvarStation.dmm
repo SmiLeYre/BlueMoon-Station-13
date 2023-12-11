@@ -54123,7 +54123,6 @@
 /area/service/bar)
 "hsi" = (
 /obj/structure/table/wood,
-/obj/machinery/computer/libraryconsole,
 /turf/open/floor/wood,
 /area/service/library)
 "hsq" = (
@@ -55786,6 +55785,17 @@
 /obj/machinery/light/small,
 /turf/open/floor/clockwork/reebe,
 /area/engineering/atmos)
+"iiD" = (
+/obj/structure/table/wood,
+/obj/machinery/computer/library/checkout,
+/obj/structure/noticeboard{
+	desc = "A board for pinning important notices upon. Probably helpful for keeping track of requests.";
+	dir = 8;
+	name = "requests board";
+	pixel_x = 32
+	},
+/turf/open/floor/wood,
+/area/service/library)
 "iiE" = (
 /obj/machinery/firealarm{
 	dir = 8;
@@ -57994,17 +58004,6 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /turf/open/floor/clockwork/reebe,
 /area/engineering/break_room)
-"jtX" = (
-/obj/structure/table/wood,
-/obj/machinery/computer/libraryconsole/bookmanagement,
-/obj/structure/noticeboard{
-	desc = "A board for pinning important notices upon. Probably helpful for keeping track of requests.";
-	dir = 8;
-	name = "requests board";
-	pixel_x = 32
-	},
-/turf/open/floor/wood,
-/area/service/library)
 "jug" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "kitchenhydro";
@@ -62512,15 +62511,6 @@
 	},
 /turf/open/floor/clockwork/reebe,
 /area/cargo/miningoffice)
-"lQK" = (
-/obj/structure/table,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/computer/libraryconsole/bookmanagement,
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
-	},
-/turf/open/floor/clockwork/reebe,
-/area/security/prison/upper)
 "lQV" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -76608,23 +76598,6 @@
 	},
 /turf/open/floor/clockwork/reebe,
 /area/cargo/storage)
-"tqh" = (
-/obj/machinery/newscaster/security_unit{
-	pixel_y = -30
-	},
-/obj/item/folder/red,
-/obj/item/folder/red,
-/obj/structure/table,
-/obj/item/book/manual/splurt_space_law{
-	pixel_x = -3;
-	pixel_y = 5
-	},
-/obj/machinery/light_switch{
-	pixel_x = 16;
-	pixel_y = -26
-	},
-/turf/open/floor/clockwork/reebe,
-/area/security/warden)
 "tqm" = (
 /obj/machinery/photocopier{
 	pixel_y = 3
@@ -78447,6 +78420,15 @@
 	},
 /turf/open/floor/clockwork/reebe,
 /area/construction/storage_wing)
+"uqk" = (
+/obj/structure/table,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/library/checkout,
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/clockwork/reebe,
+/area/security/prison/upper)
 "uqB" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/light_switch{
@@ -85918,6 +85900,23 @@
 	},
 /turf/open/floor/wood,
 /area/service/library)
+"yhO" = (
+/obj/machinery/newscaster/security_unit{
+	pixel_y = -30
+	},
+/obj/item/folder/red,
+/obj/item/folder/red,
+/obj/structure/table,
+/obj/item/book/manual/splurt_space_law{
+	pixel_x = -3;
+	pixel_y = 5
+	},
+/obj/machinery/light_switch{
+	pixel_x = 16;
+	pixel_y = -26
+	},
+/turf/open/floor/clockwork/reebe,
+/area/security/warden)
 "yhY" = (
 /turf/open/floor/carpet,
 /area/service/library)
@@ -106148,7 +106147,7 @@ aaa
 aaa
 aaa
 gec
-lQK
+uqk
 oUR
 xDA
 izT
@@ -107514,7 +107513,7 @@ vXp
 yhY
 fEX
 tfM
-jtX
+iiD
 uiQ
 qbu
 dpM
@@ -112608,7 +112607,7 @@ ahB
 ahB
 apL
 dCh
-tqh
+yhO
 ahB
 auW
 awd

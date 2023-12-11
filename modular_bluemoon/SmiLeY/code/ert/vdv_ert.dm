@@ -108,7 +108,14 @@
 
 	r_hand = /obj/item/gun/ballistic/automatic/ak12
 
-/datum/outfit/ert/vdv/leader/pre_equip(mob/living/carbon/human/H)
+// BLUEMOON ADD START - командная коробочка для командира
+/datum/outfit/ert/vdv/leader/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
+	. = ..()
+	var/list/extra_backpack_items = list(
+		/obj/item/storage/box/pinpointer_squad
+	)
+	LAZYADD(backpack_contents, extra_backpack_items)
+// BLUEMOON ADD END
 
 /datum/outfit/ert/vdv/leader/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()

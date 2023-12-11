@@ -60,12 +60,14 @@
 
 /obj/item/melee/sizetool/examine(mob/user)
 	. = ..()
+	. += "<hr>"
+	. += span_info("You can use it in ghostcafe to make someone even bigger than 200%.")
 	if(cell)
-		. += span_info("[src] is [round(cell.percent())]% charged.")
 		. += span_info("Its cell can be removed with a screwdriver.")
+		. += span_info("[src] is [round(cell.percent())]% charged.")
 	else
-		. += span_warning("[src] does not have a power source installed.")
-	. += span_info("Current prefered size set to [size_set_to * 100]%")
+		. += span_danger("[src] does not have a power source installed.")
+	. += span_info("Current prefered size set to <b>[size_set_to * 100]%</b>.")
 
 /obj/item/melee/sizetool/proc/check_for_ghostcafe() // Вы можете использовать весь функционал (в виде повышения размера до 800%) в госткафе
 	if(istype(get_area(src), /area/centcom/holding))

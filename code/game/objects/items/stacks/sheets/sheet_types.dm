@@ -96,6 +96,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	null, \
 	new/datum/stack_recipe("grenade casing", /obj/item/grenade/chem_grenade), \
 	new/datum/stack_recipe("metal baseball bat", /obj/item/melee/baseball_bat/ablative, 25, time = 100), \
+	new/datum/stack_recipe("ashtray", /obj/item/ashtray, 1), \
 	new/datum/stack_recipe("light fixture frame", /obj/item/wallframe/light_fixture, 2), \
 	new/datum/stack_recipe("small light fixture frame", /obj/item/wallframe/light_fixture/small, 1), \
 	null, \
@@ -727,6 +728,7 @@ GLOBAL_LIST_INIT(bronze_recipes, list ( \
 	new/datum/stack_recipe("bronze anvil",/obj/structure/anvil/obtainable/bronze, 20, time = 110, one_per_turf = TRUE, on_floor = TRUE), \
 	null,
 	new/datum/stack_recipe("bronze ingot", /obj/item/ingot/bronze, 6, time = 100), \
+	new/datum/stack_recipe("ashtray", /obj/item/ashtray/bronze, 1), \
 	new/datum/stack_recipe("bronze floor tiles", /obj/item/stack/tile/bronze, 1, 4, 20), \
 ))
 
@@ -822,7 +824,8 @@ GLOBAL_LIST_INIT(plastic_recipes, list(
 	new /datum/stack_recipe("shower curtain", /obj/structure/curtain, 10, time = 10, one_per_turf = 1, on_floor = 1), \
 	new /datum/stack_recipe("duct", /obj/item/stack/ducts, 1, 5, 50), \
 	new /datum/stack_recipe("laser pointer case", /obj/item/glasswork/glass_base/laserpointer_shell, 3, 1, 1, 30 SECONDS), \
-	new /datum/stack_recipe("wet floor sign", /obj/item/clothing/suit/caution, 2),
+	new /datum/stack_recipe("wet floor sign", /obj/item/clothing/suit/caution, 2), \
+	new/datum/stack_recipe("ashtray", /obj/item/ashtray/plastic, 1), \
 	new /datum/stack_recipe("micro bricks", /obj/item/stack/sheet/micro_bricks, 1, 5, 15,)))
 
 /obj/item/stack/sheet/plastic
@@ -969,3 +972,5 @@ GLOBAL_LIST_INIT(bluemoon_titanium_recipes, list(
 /obj/item/stack/sheet/mineral/titanium/get_main_recipes()
 	. = ..()
 	. += GLOB.bluemoon_titanium_recipes
+
+//Made ashtrays craftable. - Gardelin0

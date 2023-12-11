@@ -152,7 +152,7 @@
 				if(!I.tool_start_check(user, amount=20))
 					return
 
-				to_chat(user, "<span class='notice'>You begin repairing [src]'s inner metal plate...</span>")
+				to_chat(user, "<span class='notice'>Вы начинаете чинить [src]'s inner metal plate...</span>")
 				if(I.use_tool(src, user, 100, amount=20))
 					to_chat(user, "<span class='notice'>You repair [src]'s inner metal plate. The radiation is contained.</span>")
 					deconstruction_state = NUKESTATE_PANEL_REMOVED

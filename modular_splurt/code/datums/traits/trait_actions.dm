@@ -497,7 +497,7 @@
 		bite_target = pull_target
 
 	// Or cocooned carbon
-	else if(istype(pull_target,/obj/structure/arachnid/cocoon))
+	else if(istype(pull_target,/obj/structure/spider/stickyweb/arachnid/cocoon))
 		// Define if cocoon has a valid target
 		// This cannot use pull_target
 		var/possible_cocoon_target = locate(/mob/living/carbon/human) in action_owner.pulling.contents
@@ -804,7 +804,8 @@
 		// Check for masochism
 		if(!HAS_TRAIT(bite_target, TRAIT_MASO))
 			// Force bite_target to play the scream emote
-			bite_target.emote("scream")
+			if(!HAS_TRAIT(bite_target, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+				bite_target.emote("scream")
 
 		// Log the biting action failure
 		log_combat(action_owner,bite_target,"bloodfledge bitten (interrupted)")

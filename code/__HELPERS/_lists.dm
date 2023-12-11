@@ -581,6 +581,8 @@
 			return R
 	return null
 
+/proc/find_security_record(field, value)
+	return find_record(field, value, GLOB.data_core.security)
 
 //Move a single element from position fromIndex within a list, to position toIndex
 //All elements in the range [1,toIndex) before the move will be before the pivot afterwards
@@ -872,3 +874,6 @@
 		if(checked_atom.flags_1 & ignore_flag_1)
 			continue
 		. += checked_atom.contents
+
+/// Returns whether a numerical index is within a given list's bounds. Faster than isnull(LAZYACCESS(L, I)).
+#define ISINDEXSAFE(L, I) (I >= 1 && I <= length(L))

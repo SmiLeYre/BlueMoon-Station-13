@@ -191,6 +191,7 @@
 	var/list/access = list()
 	var/registered_name = null // The name registered_name on the card
 	var/assignment = null
+	var/rank = null			//actual job
 	var/access_txt // mapping aid
 	var/bank_support = ID_FREE_BANK_ACCOUNT
 	var/datum/bank_account/registered_account

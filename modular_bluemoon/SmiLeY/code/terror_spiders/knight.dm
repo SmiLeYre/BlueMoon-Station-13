@@ -9,7 +9,7 @@
 // -------------: TO FIGHT IT: shoot it from range. Kite it.
 // -------------: SPRITES FROM: FoS, https://www.paradisestation.org/forum/profile/335-fos
 
-/mob/living/simple_animal/hostile/poison/terror_spider/knight
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/knight
 	name = "Knight of Terror"
 	desc = "An ominous-looking red spider, it has eight beady red eyes, and nasty, big, pointy fangs! It looks like it has a vicious streak a mile wide."
 	ai_target_method = TS_DAMAGE_BRUTE
@@ -45,14 +45,14 @@
 	var/datum/action/innate/terrorspider/knight/attackm/attackmaction
 	var/datum/action/innate/terrorspider/knight/defencem/defencemaction
 
-/mob/living/simple_animal/hostile/poison/terror_spider/knight/New()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/knight/New()
 	..()
 	attackmaction = new()
 	attackmaction.Grant(src)
 	defencemaction = new()
 	defencemaction.Grant(src)
 
-/mob/living/simple_animal/hostile/poison/terror_spider/knight/Life(seconds, times_fired)
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/knight/Life(seconds, times_fired)
 	. = ..()
 	if(stat != DEAD) // Can't use if(.) for this due to the fact it can sometimes return FALSE even when mob is alive.
 		if(ckey)
@@ -67,7 +67,7 @@
 //MODE CHANGING. Knight has 3 modes, first - default, always active. Second - attack, grants increased speed and damage, but also increases damage you recieve.
 //Third - defence, grants even slower movement speed then default, but you recieve much less damage.
 //Both attack and defence mod lasts for 10 seconds and has a cd of 30. When you are out of non default modes your mode is set to default.
-/mob/living/simple_animal/hostile/poison/terror_spider/knight/proc/activate_mode(n)
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/knight/proc/activate_mode(n)
 	var/t = world.time
 	if	(n==0)
 		playsound(src, 'sound/creatures/terrorspiders/keratosis_out.ogg', 150)

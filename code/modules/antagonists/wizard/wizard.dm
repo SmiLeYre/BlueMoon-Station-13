@@ -22,7 +22,6 @@
 	var/outfit_type = /datum/outfit/wizard
 	var/wiz_age = WIZARD_AGE_MIN /* Wizards by nature cannot be too young. */
 	show_to_ghosts = TRUE
-	soft_antag = FALSE // BLUEMOON ADDITION
 	reminded_times_left = 1 // BLUEMOON ADD - 1 напоминания достаточно, чтобы не играли в мирномага
 	time_needed_to_remind = 5 MINUTES // BLUEMOON ADD
 

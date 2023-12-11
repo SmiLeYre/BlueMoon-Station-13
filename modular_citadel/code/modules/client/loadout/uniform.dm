@@ -654,13 +654,11 @@
 	name = "Green Feminine Christmas Suit"
 	category = ITEM_SLOT_ICLOTHING
 	path = /obj/item/clothing/under/costume/christmas/croptop/green
-
+*/
 /datum/gear/uniform/pinkstripper
 	name = "Pink stripper outfit"
-	category = ITEM_SLOT_ICLOTHING
 	path = /obj/item/clothing/under/misc/stripper
 	cost = 3
-*/
 
 /datum/gear/uniform/greenstripper
 	name = "Green stripper outfit"
@@ -746,3 +744,11 @@
 	path = /obj/item/clothing/under/rank/civilian/polychromic_clown
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
 	restricted_roles = list("Clown")
+
+/datum/gear/uniform/maid
+	name = "Tactical Maid Outfit"
+	path = /obj/item/clothing/under/syndicate/maid
+
+/datum/gear/uniform/maid_revealing
+	name = "Revealing Tactical Maid Outfit"
+	path = /obj/item/clothing/under/syndicate/maid_revealing

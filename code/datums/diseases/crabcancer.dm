@@ -45,7 +45,8 @@
 				"<span class='italics'>You hear a disgusting squelch of flesh being torn.</span>")
 				playsound(affected_mob, 'sound/items/poster_ripped.ogg', 50, TRUE)
 				playsound(get_turf(affected_mob), 'sound/effects/splat.ogg', 20, TRUE)
-				affected_mob.emote("scream")
+				if(!HAS_TRAIT(affected_mob, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+					affected_mob.emote("scream")
 				affected_mob.take_bodypart_damage(rand(15,25))
 				var/humanmeatamount = rand(0,2)
 				var/crabmeatamount = rand(1,2)

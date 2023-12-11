@@ -68,7 +68,6 @@
 	antagpanel_category = "Devil"
 	show_in_roundend = FALSE
 	threat = 10
-	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/imp/on_gain()
 	. = ..()

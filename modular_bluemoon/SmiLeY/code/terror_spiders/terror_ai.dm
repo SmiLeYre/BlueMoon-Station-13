@@ -2,7 +2,7 @@
 // --------------------- TERROR SPIDERS: TARGETING CODE -----------------------
 // --------------------------------------------------------------------------------
 
-/mob/living/simple_animal/hostile/poison/terror_spider/ListTargets()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/ListTargets()
 	var/list/targets1 = list()
 	var/list/targets2 = list()
 	var/list/targets3 = list()
@@ -82,7 +82,7 @@
 		return targets2
 	return targets3
 
-/mob/living/simple_animal/hostile/poison/terror_spider/LoseTarget()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/LoseTarget()
 	if(target && isliving(target))
 		var/mob/living/T = target
 		if(T.stat > 0)
@@ -96,12 +96,12 @@
 // --------------------------------------------------------------------------------
 
 
-/mob/living/simple_animal/hostile/poison/terror_spider/handle_automated_action()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/handle_automated_action()
 	if(target)
 		CreatePath(target)
 	return ..()
 
-/mob/living/simple_animal/hostile/poison/terror_spider/handle_automated_movement()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/handle_automated_movement()
 	// Putting the main terror spider AI code in handle_automated_movement() rather than handle_automated_action() ensures it will still run when the spider AIStatus == AI_IDLE
 	// This is necessary for the terror spiders in the away mission to work properly.
 	if(AIStatus != AI_IDLE)
@@ -167,15 +167,15 @@
 			spider_special_action()
 		..()
 
-/mob/living/simple_animal/hostile/poison/terror_spider/adjustBruteLoss(amount, updating_health = TRUE, forced, only_organic)
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/adjustBruteLoss(amount, updating_health = TRUE, forced, only_organic)
 	. = ..()
 	Retaliate()
 
-/mob/living/simple_animal/hostile/poison/terror_spider/adjustFireLoss(amount, updating_health, forced, only_organic)
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/adjustFireLoss(amount, updating_health, forced, only_organic)
 	. = ..()
 	Retaliate()
 
-/mob/living/simple_animal/hostile/poison/terror_spider/Retaliate()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/Retaliate()
 	var/list/around = oview(src, 7)
 	var/list/ts_nearby = list()
 	for(var/atom/movable/A in around)
@@ -198,7 +198,7 @@
 //			if(M.pilot)
 //				enemies |= M
 //				enemies |= M.pilot
-	for(var/mob/living/simple_animal/hostile/poison/terror_spider/H in ts_nearby)
+	for(var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/H in ts_nearby)
 		var/retaliate_faction_check = 0
 		for(var/F in faction)
 			if(F in H.faction)
@@ -208,7 +208,7 @@
 			H.enemies |= enemies
 	return 0
 
-/mob/living/simple_animal/hostile/poison/terror_spider/proc/handle_cocoon_target()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/proc/handle_cocoon_target()
 	if(cocoon_target)
 		if(get_dist(src, cocoon_target) <= 1)
 			spider_steps_taken = 0
@@ -226,7 +226,7 @@
 				if(spider_debug)
 					visible_message("<span class='notice'>[src] moves towards [cocoon_target] to cocoon it.</span>")
 
-/mob/living/simple_animal/hostile/poison/terror_spider/proc/seek_cocoon_target()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/proc/seek_cocoon_target()
 	last_cocoon_object = world.time
 	var/list/can_see = view(src, 10)
 	for(var/mob/living/C in can_see)
@@ -248,7 +248,7 @@
 // --------------------- TERROR SPIDERS: PATHING CODE -----------------------------
 // --------------------------------------------------------------------------------
 
-/mob/living/simple_animal/hostile/poison/terror_spider/proc/CreatePath(mygoal)
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/proc/CreatePath(mygoal)
 	var/m2 = get_turf(src)
 	if(m2 == mylocation)
 		chasecycles++
@@ -270,14 +270,14 @@
 		mylocation = m2
 		chasecycles = 0
 
-/mob/living/simple_animal/hostile/poison/terror_spider/proc/ClearObstacle(turf/target_turf)
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/proc/ClearObstacle(turf/target_turf)
 	var/list/valid_obstacles = list(/obj/structure/window, /obj/structure/closet, /obj/structure/table, /obj/structure/grille, /obj/structure/rack, /obj/machinery/door/window)
 	for(var/dir in GLOB.cardinals) // North, South, East, West
 		var/obj/structure/obstacle = locate(/obj/structure, get_step(src, dir))
 		if(is_type_in_list(obstacle, valid_obstacles))
 			obstacle.attack_animal(src)
 
-/mob/living/simple_animal/hostile/poison/terror_spider/proc/TSVentCrawlRandom()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/proc/TSVentCrawlRandom()
 	if(entry_vent)
 		if(get_dist(src, entry_vent) <= 2)
 			if(ai_ventbreaker && entry_vent.welded)
@@ -324,7 +324,7 @@
 // --------------------- TERROR SPIDERS: ENVIRONMENT CODE -------------------------
 // --------------------------------------------------------------------------------
 
-/mob/living/simple_animal/hostile/poison/terror_spider/proc/ListValidTurfs()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/proc/ListValidTurfs()
 	var/list/potentials = list()
 	for(var/turf/open/floor/holofloor/T in oview(3,get_turf(src)))
 		if(T.density == 0 && get_dist(get_turf(src),T) == 3)
@@ -337,7 +337,7 @@
 						potentials += T
 	return potentials
 
-/mob/living/simple_animal/hostile/poison/terror_spider/proc/ListWebbedTurfs()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/proc/ListWebbedTurfs()
 	var/list/webbed = list()
 	for(var/turf/open/floor/holofloor/T in oview(3,get_turf(src)))
 		if(T.density == 0 && get_dist(get_turf(src),T) == 3)
@@ -346,14 +346,14 @@
 				webbed += T
 	return webbed
 
-/mob/living/simple_animal/hostile/poison/terror_spider/proc/ListVisibleTurfs()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/proc/ListVisibleTurfs()
 	var/list/vturfs = list()
 	for(var/turf/open/floor/holofloor/T in oview(7,get_turf(src)))
 		if(T.density == 0)
 			vturfs += T
 	return vturfs
 
-/mob/living/simple_animal/hostile/poison/terror_spider/DestroySurroundings()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/DestroySurroundings()
 	if(!target)
 		return
 	. = ..()
@@ -362,7 +362,7 @@
 // --------------------- TERROR SPIDERS: MISC AI CODE -----------------------------
 // --------------------------------------------------------------------------------
 
-/mob/living/simple_animal/hostile/poison/terror_spider/proc/UnlockBlastDoors(target_id_tag)
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/proc/UnlockBlastDoors(target_id_tag)
 	for(var/obj/machinery/door/poddoor/P in GLOB.airlocks)
 		if(P.density && P.id == target_id_tag && P.z == z && !P.operating)
 			P.open()

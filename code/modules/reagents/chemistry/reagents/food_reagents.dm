@@ -159,7 +159,7 @@
 	color = "#FFFFFF" // rgb: 255, 255, 255
 	taste_mult = 1.5 // stop sugar drowning out other flavours
 	nutriment_factor = 3 * REAGENTS_METABOLISM
-	metabolization_rate = 2 * REAGENTS_METABOLISM
+	metabolization_rate = 5 * REAGENTS_METABOLISM
 	overdose_threshold = 200 // Hyperglycaemic shock
 	taste_description = "sweetness"
 	value = REAGENT_VALUE_NONE
@@ -173,7 +173,7 @@
 
 /datum/reagent/consumable/sugar/overdose_start(mob/living/M)
 	to_chat(M, "<span class='userdanger'>You go into hyperglycaemic shock! Lay off the twinkies!</span>")
-	M.AdjustSleeping(600, FALSE)
+	M.AdjustSleeping(20 SECONDS, FALSE)
 	. = 1
 
 /datum/reagent/consumable/sugar/overdose_process(mob/living/M)
@@ -370,7 +370,8 @@
 			return
 		else if ( mouth_covered )	// Reduced effects if partially protected
 			if(prob(50))
-				victim.emote("realagony")
+				if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+					victim.emote("realagony")
 			victim.blur_eyes(6)
 			victim.blind_eyes(4)
 			victim.confused = max(M.confused, 6)
@@ -384,7 +385,7 @@
 			victim.damageoverlaytemp = 60
 			return
 		else // Oh dear :D
-			if(prob(5))
+			if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
 				victim.emote("realagony")
 			victim.blur_eyes(10)
 			victim.blind_eyes(6)

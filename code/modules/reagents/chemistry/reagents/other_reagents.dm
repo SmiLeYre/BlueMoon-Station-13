@@ -63,10 +63,7 @@
 	// BLUEMOON ADD START - синтетики могут пить свою же "кровь" (гидравлическую жидкость), чтобы восполнять её запасы
 	if(HAS_TRAIT(C, TRAIT_ROBOTIC_ORGANISM))
 		if(data && (data["blood_type"] in get_safe_blood(C.dna.blood_type)))
-			if(C.blood_volume > BLOOD_VOLUME_NORMAL) // если крови слишком много, она не восполняет запасы в организме
-				to_chat(C, span_warning("[C] leaks out with hydraulic fluid! It streams from holes in hull parts."))
-			else //восполнение крови в соотношении 1 к 1
-				C.blood_volume = max(C.blood_volume + round(metabolization_rate, 0.1), 0)
+			C.blood_volume = C.blood_volume + clamp(volume, 0, metabolization_rate) //восполнение крови в соотношении 1 к 1
 	// BLUEMOON ADD END
 	..()
 
@@ -2205,7 +2202,7 @@
 
 /datum/reagent/romerol/reaction_mob(mob/living/carbon/human/H, method=TOUCH, reac_volume)
 	// Silently add the zombie infection organ to be activated upon death
-	if(!H.getorganslot(ORGAN_SLOT_ZOMBIE))
+	if(!H.getorganslot(ORGAN_SLOT_ZOMBIE) && !HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - добавлена проверка для роботов
 		var/obj/item/organ/zombie_infection/nodamage/ZI = new()
 		ZI.Insert(H)
 	..()

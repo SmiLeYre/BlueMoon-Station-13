@@ -46,7 +46,12 @@
 				integrating_blood = blood_integrated
 				if(blood_volume < BLOOD_VOLUME_MAXIMUM)
 					blood_volume += blood_diff
-			if(blood_volume < BLOOD_VOLUME_NORMAL)
+
+			// BLUEMOON ADD START - роботы не восстанавливают кровь привычными путями
+			if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
+				blood_volume = min(BLOOD_VOLUME_NORMAL, blood_volume)
+			// BLUEMOON ADD END
+			else if(blood_volume < BLOOD_VOLUME_NORMAL) // BLUEMOON EDIT - в начале добавлено else
 				var/nutrition_ratio = 0
 				if(!HAS_TRAIT(src, TRAIT_NOHUNGER))
 					switch(nutrition)
@@ -108,13 +113,14 @@
 
 		var/temp_bleed = 0
 		//Bleeding out
-		for(var/X in bodyparts)
-			var/obj/item/bodypart/BP = X
-			temp_bleed += BP.get_bleed_rate()
-			BP.generic_bleedstacks = max(0, BP.generic_bleedstacks - 1)
+		if(blood_volume > 0) // BLUEMOON ADD - если в теле есть кровь, то она будет вытекать
+			for(var/X in bodyparts)
+				var/obj/item/bodypart/BP = X
+				temp_bleed += BP.get_bleed_rate()
+				BP.generic_bleedstacks = max(0, BP.generic_bleedstacks - 1)
 
-		if(temp_bleed)
-			bleed(temp_bleed)
+			if(temp_bleed )
+				bleed(temp_bleed)
 
 //Makes a blood drop, leaking amt units of blood from the mob
 /mob/living/carbon/proc/bleed(amt, force)

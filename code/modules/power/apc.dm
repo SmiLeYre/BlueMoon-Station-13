@@ -257,7 +257,7 @@
 
 	GLOB.apcs_list += src
 
-	wires = new /datum/wires/apc(src)
+	set_wires(new /datum/wires/apc(src))
 	// offset 24 pixels in direction of dir
 	// this allows the APC to be embedded in a wall, yet still inside an area
 	if (building)

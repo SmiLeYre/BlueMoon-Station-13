@@ -25,7 +25,7 @@
 
 /obj/machinery/power/tesla_coil/Initialize(mapload)
 	. = ..()
-	wires = new /datum/wires/tesla_coil(src)
+	set_wires(new /datum/wires/tesla_coil(src))
 	linked_techweb = SSresearch.science_tech
 
 /obj/machinery/power/tesla_coil/Destroy()

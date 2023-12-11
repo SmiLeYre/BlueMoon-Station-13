@@ -147,15 +147,15 @@
 	if(moving_diagonally)//no mob swap during diagonal moves.
 		return TRUE
 
-	// BLUEMOON ADDITION AHEAD - нельзя поменяться местами со сверхтяжёлым персонажем
-	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER))
-		return TRUE
-	// BLUEMOON ADDITION END
-
 	//handle micro bumping on help intent
 	if(a_intent == INTENT_HELP)
 		if(handle_micro_bump_helping(M))
 			return TRUE
+
+	// BLUEMOON ADDITION AHEAD - нельзя поменяться местами со сверхтяжёлым персонажем
+	if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER))
+		return TRUE
+	// BLUEMOON ADDITION END
 
 	if(!M.buckled && !M.has_buckled_mobs())
 		var/mob_swap = FALSE
@@ -696,6 +696,7 @@
 		if(C.internal_organs)
 			for(var/organ in C.internal_organs)
 				var/obj/item/organ/O = organ
+				O.organ_flags &= ~ORGAN_SYNTHETIC_EMP // BLUEMOON ADD
 				O.setOrganDamage(0)
 
 //proc called by revive(), to check if we can actually ressuscitate the mob (we don't want to revive him and have him instantly die again)

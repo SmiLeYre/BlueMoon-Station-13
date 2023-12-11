@@ -75,7 +75,7 @@
 		to_chat(user, span_warning("Вы действуете так, что незаметно провалите этот этап!"))
 	// BLUEMOON ADD END
 	var/delay = time * speed_mod
-	if(target == user)
+	if(target == user && !HAS_TRAIT(target, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON EDIT - добавлена проверка на роботизированный организм
 		if(HAS_TRAIT(target, TRAIT_PAINKILLER))
 			display_results(user, self_message = "<span class='notice'>You begin performing a surgery on yourself with painkillers, you'll be able to do it faster than without it.</span>")
 			delay = delay * 7

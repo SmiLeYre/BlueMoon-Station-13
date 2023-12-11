@@ -6744,11 +6744,6 @@
 /obj/item/pen/fountain,
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_b)
-"pW" = (
-/obj/structure/table,
-/obj/machinery/computer/libraryconsole,
-/turf/open/floor/plasteel/dark,
-/area/mine/xenoarch_area_b)
 "pX" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 8
@@ -10862,7 +10857,7 @@
 /area/mine/storage)
 "Bz" = (
 /obj/structure/table,
-/obj/machinery/computer/libraryconsole/bookmanagement,
+/obj/machinery/computer/library/checkout,
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
@@ -62929,7 +62924,7 @@ ps
 pb
 pF
 pb
-pW
+dd
 qi
 xZ
 ab

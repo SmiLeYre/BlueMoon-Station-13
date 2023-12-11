@@ -102,6 +102,10 @@
 /obj/machinery/meter,
 /turf/open/floor/plating,
 /area/engineering/atmos)
+"aA" = (
+/obj/machinery/newscaster,
+/turf/closed/wall/r_wall,
+/area/commons/storage/primary)
 "aB" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/cable{
@@ -876,6 +880,8 @@
 /turf/open/floor/plasteel,
 /area/commons/storage/primary)
 "dl" = (
+/obj/structure/table,
+/obj/machinery/fax,
 /turf/open/floor/plating,
 /area/commons/storage/primary)
 "dm" = (
@@ -944,6 +950,9 @@
 "dx" = (
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/machinery/computer/prisoner/management{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/commons/storage/primary)
@@ -1734,12 +1743,12 @@
 /turf/open/floor/plating,
 /area/commons/storage/primary)
 "fS" = (
-/obj/machinery/power/apc{
-	dir = 1;
-	pixel_y = 23
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
 /area/hallway/secondary/exit/departure_lounge)
@@ -2080,6 +2089,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/engineering/main)
+"lj" = (
+/obj/machinery/door/poddoor/preopen{
+	id = "Secure Gate";
+	name = "brig shutters"
+	},
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/maintenance/aft)
 "lp" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -2142,6 +2159,30 @@
 /obj/effect/landmark/observer_start,
 /turf/open/floor/plasteel/goonplaque,
 /area/commons/storage/primary)
+"mq" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow,
+/obj/item/radio/intercom{
+	desc = "Talk through this. It looks like it has been modified to not broadcast.";
+	name = "Prison Intercom (General)";
+	pixel_x = -27;
+	pixel_y = -27;
+	prison_radio = 1
+	},
+/obj/machinery/flasher{
+	id = "Cell 4";
+	pixel_x = -24;
+	pixel_y = -36
+	},
+/obj/structure/bed,
+/obj/item/bedsheet/yellow,
+/turf/open/floor/plasteel,
+/area/maintenance/aft)
 "mv" = (
 /obj/machinery/atmospherics/components/unary/tank/air,
 /obj/machinery/light{
@@ -2149,6 +2190,9 @@
 	},
 /turf/open/floor/plating,
 /area/engineering/atmos)
+"mz" = (
+/turf/open/floor/plasteel,
+/area/maintenance/aft)
 "mJ" = (
 /obj/machinery/airalarm/unlocked{
 	pixel_y = 23
@@ -2358,6 +2402,9 @@
 	dir = 1
 	},
 /obj/structure/table,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
 /area/hallway/secondary/exit/departure_lounge)
 "sp" = (
@@ -2534,6 +2581,12 @@
 	},
 /turf/open/floor/plating,
 /area/commons/storage/primary)
+"vZ" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/hallway/secondary/exit/departure_lounge)
 "wb" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -2655,6 +2708,9 @@
 	pixel_y = 32
 	},
 /obj/machinery/computer/communications,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
 /area/hallway/secondary/exit/departure_lounge)
 "zB" = (
@@ -2677,6 +2733,18 @@
 	dir = 1
 	},
 /area/medical/medbay)
+"Ae" = (
+/obj/machinery/door_timer{
+	id = "Cell 4";
+	name = "Cell 4";
+	pixel_y = -32
+	},
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/maintenance/aft)
 "Ar" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -2755,6 +2823,20 @@
 /obj/item/gun/ballistic/automatic/pistol,
 /turf/open/floor/plasteel,
 /area/command/bridge)
+"BJ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/closet/secure_closet/brig{
+	id = "Cell 4";
+	name = "Cell 4 Locker"
+	},
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/maintenance/aft)
 "BV" = (
 /obj/effect/landmark/blobstart,
 /turf/open/floor/plasteel,
@@ -2789,16 +2871,13 @@
 	icon_state = "0-2";
 	pixel_y = 1
 	},
-/obj/machinery/power/apc{
-	dir = 1;
-	pixel_y = 23
-	},
 /obj/machinery/airalarm/unlocked{
 	pixel_x = 32
 	},
 /obj/machinery/computer/shuttle/mining{
 	dir = 2
 	},
+/obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plasteel,
 /area/cargo/miningoffice)
 "CV" = (
@@ -2878,6 +2957,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/hallway/primary/central)
+"FE" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/maintenance/aft)
 "Ga" = (
 /obj/machinery/vending/boozeomat,
 /obj/machinery/airalarm{
@@ -3030,6 +3116,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/cargo/miningoffice)
+"Js" = (
+/obj/machinery/computer/secure_data{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/commons/storage/primary)
 "JF" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
@@ -3063,6 +3155,23 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/science/circuit)
+"KR" = (
+/obj/effect/turf_decal/tile/red,
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/machinery/door/window/brigdoor/security/cell{
+	id = "Cell 4";
+	name = "Cell 4"
+	},
+/turf/open/floor/plasteel,
+/area/maintenance/aft)
 "Lg" = (
 /obj/machinery/door/airlock/external{
 	name = "Labor Camp Shuttle Airlock"
@@ -3070,6 +3179,10 @@
 /obj/structure/fans/tiny,
 /turf/open/floor/plasteel,
 /area/security/brig)
+"Ll" = (
+/obj/machinery/newscaster/security_unit,
+/turf/closed/wall/r_wall,
+/area/commons/storage/primary)
 "Lm" = (
 /obj/structure/fans/tiny/invisible,
 /obj/effect/turf_decal/stripes/line{
@@ -3177,6 +3290,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/cargo/miningoffice)
+"Ni" = (
+/obj/machinery/door/poddoor/preopen{
+	id = "Cell Interior Shutters";
+	name = "brig shutters"
+	},
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/maintenance/aft)
 "Nl" = (
 /obj/structure/table,
 /obj/item/integrated_circuit_printer/debug,
@@ -3209,6 +3330,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/science/circuit)
+"NV" = (
+/obj/machinery/door/airlock,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/maintenance/aft)
 "NZ" = (
 /obj/machinery/rnd/production/protolathe/department,
 /turf/open/floor/plasteel,
@@ -3238,6 +3366,12 @@
 /obj/item/disk/tech_disk/debug,
 /turf/open/floor/plasteel,
 /area/science)
+"OZ" = (
+/obj/machinery/computer/med_data{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/commons/storage/primary)
 "PD" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3255,6 +3389,12 @@
 /obj/machinery/vending/dinnerware,
 /turf/open/floor/plasteel/freezer,
 /area/service/cafeteria)
+"PW" = (
+/obj/machinery/computer/account_database{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/commons/storage/primary)
 "PX" = (
 /obj/structure/chair/office/dark{
 	dir = 1
@@ -3370,6 +3510,9 @@
 /obj/item/stack/spacecash/c10000,
 /obj/item/card/id/departmental_budget/car,
 /obj/structure/table,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
 /area/hallway/secondary/exit/departure_lounge)
 "Tm" = (
@@ -3433,6 +3576,9 @@
 	},
 /obj/structure/table,
 /obj/item/card/id/captains_spare,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
 /area/hallway/secondary/exit/departure_lounge)
 "Ut" = (
@@ -8023,10 +8169,10 @@ do
 dM
 cN
 Tt
-Rb
-fg
-aa
-aa
+vm
+Ni
+Ni
+vm
 aa
 aa
 aa
@@ -8116,9 +8262,9 @@ cS
 cS
 Tt
 Rb
-aa
-aa
-aa
+mz
+mq
+lj
 aa
 aa
 aa
@@ -8207,10 +8353,10 @@ ih
 dE
 cS
 Tt
-vm
-aa
-aa
-aa
+KR
+mz
+FE
+lj
 aa
 aa
 aa
@@ -8299,10 +8445,10 @@ dC
 eI
 vv
 Tt
-vm
-aa
-aa
-aa
+Rb
+mz
+BJ
+lj
 aa
 aa
 aa
@@ -8390,11 +8536,11 @@ dJ
 dJ
 eD
 cS
-Tt
+Ae
 vm
-aa
-aa
-aa
+Ni
+Ni
+vm
 aa
 aa
 aa
@@ -8482,7 +8628,7 @@ dJ
 dJ
 ny
 cS
-fI
+NV
 ga
 ga
 ga
@@ -8574,7 +8720,7 @@ dJ
 dJ
 dO
 cS
-fO
+vZ
 lJ
 Ww
 fO
@@ -8666,7 +8812,7 @@ dJ
 dJ
 jU
 cS
-fO
+vZ
 fO
 fO
 fO
@@ -9304,9 +9450,9 @@ dl
 Bz
 ez
 dB
-dl
-dl
-dl
+OZ
+Js
+PW
 dx
 dE
 cS
@@ -9396,10 +9542,10 @@ cS
 cS
 fN
 dG
-cS
-cS
-cS
-cS
+aA
+aA
+aA
+Ll
 cS
 cS
 Un

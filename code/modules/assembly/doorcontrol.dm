@@ -5,8 +5,8 @@
 	attachable = TRUE
 	/// Our ID. Make the first character ! if you want to obfuscate it as a mapper via randomization.
 	var/id
-	/// Can the ID be changed if used in hand?
-	var/can_change_id = FALSE
+	/// Чурки запретили ставить свой айдишник
+	var/can_change_id = TRUE
 	/// Show ID?
 	var/show_id = TRUE
 	var/cooldown = FALSE //Door cooldowns
@@ -28,10 +28,13 @@
 	. = ..()
 	if(!can_change_id)
 		return
-	var/new_id
-	new_id = input(user, "Set ID", "Set ID", show_id? id : null) as text|null
-	if(!isnull(new_id))		//0/"" is considered !, so check null instead of just !.
-		id = new_id
+		// защита от грифа (невозможность тыкать замаппленные бласты, цк в т.ч.)
+	var/change_id = tgui_input_number(user, "Set the door controllers ID", "Door Controller ID", id, 100)
+	if(!change_id || QDELETED(usr) || QDELETED(src) || !usr.canUseTopic(src, be_close = TRUE, no_dextery = FALSE, no_tk = TRUE))
+		return
+	id = change_id
+	to_chat(user, span_notice("You change the ID to [id]."))
+	balloon_alert(user, "id changed")
 
 /obj/item/assembly/control/activate()
 	cooldown = TRUE

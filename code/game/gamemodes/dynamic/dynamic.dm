@@ -335,6 +335,29 @@ GLOBAL_VAR_INIT(round_type, ROUNDTYPE_DYNAMIC_MEDIUM)
 
 /// Generates the threat level using lorentz distribution and assigns peaceful_percentage.
 /datum/game_mode/dynamic/proc/generate_threat()
+
+	// BLUEMOON ADD START - присвоение минимального и максимального возможного уровня угрозы
+	switch(GLOB.round_type)
+		if(ROUNDTYPE_DYNAMIC_TEAMBASED)
+			GLOB.dynamic_type_threat_min = 75 //от 1 до 2 командных антагов
+			GLOB.dynamic_type_threat_max = 100
+			GLOB.dynamic_no_stacking = FALSE //Welcome To Space Iraq
+		if(ROUNDTYPE_DYNAMIC_HARD)
+			GLOB.dynamic_type_threat_min = 75
+			GLOB.dynamic_type_threat_max = 100
+		if(ROUNDTYPE_DYNAMIC_MEDIUM)
+			GLOB.dynamic_type_threat_min = 40
+			GLOB.dynamic_type_threat_max = 60
+		if(ROUNDTYPE_DYNAMIC_LIGHT)
+			GLOB.dynamic_type_threat_min = 50
+			GLOB.dynamic_type_threat_max = 70
+		if(ROUNDTYPE_EXTENDED)
+			GLOB.dynamic_type_threat_min = 0
+			GLOB.dynamic_type_threat_max = 0
+		if("dynamic")
+			GLOB.master_mode = ROUNDTYPE_DYNAMIC_MEDIUM
+	// BLUEMOON ADD END
+
 	threat_level = round(rand(GLOB.dynamic_type_threat_min, GLOB.dynamic_type_threat_max), 0.1) //BLUEMOON ADDITION
 /*BLUEMOON REMOVAL START - мы не центрируем уровень угрозы по Лоуренцу
 	var/relative_threat = LORENTZ_DISTRIBUTION(threat_curve_centre, threat_curve_width)

@@ -117,6 +117,7 @@
 
 	/// sigh
 	var/unelectrify_timerid
+	var/advactivator_action = FALSE
 
 /obj/machinery/door/airlock/Initialize(mapload)
 	. = ..()
@@ -1066,9 +1067,9 @@
 			if(obj_integrity < max_integrity)
 				if(!W.tool_start_check(user, amount=0))
 					return
-				user.visible_message("[user] is welding the airlock.", \
-								"<span class='notice'>You begin repairing the airlock...</span>", \
-								"<span class='italics'>You hear welding.</span>")
+				user.visible_message("[user] чинит шлюз сваркой.", \
+								"<span class='notice'>Вы начинаете чинить шлюз...</span>", \
+								"<span class='italics'>Вы слышите звук сварки.</span>")
 				if(W.use_tool(src, user, 40, volume=50, extra_checks = CALLBACK(src, .proc/weld_checks, W, user)))
 					obj_integrity = max_integrity
 					stat &= ~BROKEN
@@ -1546,6 +1547,8 @@
 /obj/machinery/door/airlock/ui_act(action, params)
 	if(..())
 		return
+	if(params["ic_advactivator"])
+		advactivator_action = TRUE
 	if(!user_allowed(usr))
 		return
 	switch(action)
@@ -1594,9 +1597,10 @@
 		if("open-close")
 			user_toggle_open(usr)
 			. = TRUE
+	advactivator_action = FALSE
 
 /obj/machinery/door/airlock/proc/user_allowed(mob/user)
-	return (hasSiliconAccessInArea(user) && canAIControl(user)) || IsAdminGhost(user)
+	return (hasSiliconAccessInArea(user) && canAIControl(user)) || IsAdminGhost(user) || advactivator_action
 
 /obj/machinery/door/airlock/proc/shock_restore(mob/user)
 	if(!user_allowed(user))

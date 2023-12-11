@@ -128,14 +128,20 @@
 /obj/machinery/button/attack_robot(mob/user)
 	return attack_ai(user)
 
-/obj/machinery/button/proc/setup_device()
-	if(id && istype(device, /obj/item/assembly/control))
-		var/obj/item/assembly/control/A = device
+/obj/machinery/button/proc/setup_device() // для раундстарта
+	var/obj/item/assembly/control/A = device
+	if(istype(device, /obj/item/assembly/control))
 		A.id = id
-	initialized_button = 1
+		initialized_button = 1
 
-/obj/machinery/button/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override=FALSE)
-	if(id && istype(device, /obj/item/assembly/control))
+/obj/machinery/button/proc/setup_button() // для самостроя
+	var/obj/item/assembly/control/A = device
+	if(istype(device, /obj/item/assembly/control))
+		id = A.id
+
+
+/obj/machinery/button/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override=TRUE)
+	if(istype(device, /obj/item/assembly/control))
 		var/obj/item/assembly/control/A = device
 		A.id = "[idnum][id]"
 
@@ -143,8 +149,8 @@
 	. = ..()
 	if(.)
 		return
-	if(!initialized_button)
-		setup_device()
+
+	setup_button()
 	add_fingerprint(user)
 	if(panel_open)
 		if(device || board)

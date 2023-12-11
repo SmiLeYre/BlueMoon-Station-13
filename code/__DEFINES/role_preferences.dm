@@ -43,8 +43,8 @@
 #define ROLE_FAMILY_HEAD_ASPIRANT 	"family head aspirant"
 #define ROLE_BLOODSUCKER			"bloodsucker"
 #define ROLE_SPACE_DRAGON			"Space Dragon"
-#define ROLE_SLAVER					"slaver"
-#define ROLE_SLAVER_LEADER			"slave master"
+#define ROLE_SLAVER					"Slaver"
+#define ROLE_SLAVER_LEADER			"Slave Master"
 #define ROLE_TERROR_SPIDER			"Terror Spider"
 //#define ROLE_MONSTERHUNTER			"monster hunter" Disabled for now
 #define ROLE_GHOSTCAFE				"ghostcafe"

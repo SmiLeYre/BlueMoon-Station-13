@@ -845,11 +845,11 @@
 
 /datum/reagent/medicine/morphine/on_mob_life(mob/living/carbon/M)
 	switch(current_cycle)
-		if(11)
+		if(12)
 			to_chat(M, "<span class='warning'>You start to feel tired...</span>" )
-		if(12 to 24)
+		if(24 to 48)
 			M.drowsyness += 1
-		if(24 to INFINITY)
+		if(48 to INFINITY)
 			M.Sleeping(100, 0) // BLUEMOON EDIT - было 40, сделал 100. Морфин по итогу не накладывает сон и человек просыпается быстро.
 			. = 1
 	..()

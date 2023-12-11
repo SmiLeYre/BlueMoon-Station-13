@@ -7,7 +7,7 @@
 // -------------: TO FIGHT IT: run away screaming?
 // -------------: SPRITES FROM: FoS, https://www.paradisestation.org/forum/profile/335-fos
 
-/mob/living/simple_animal/hostile/poison/terror_spider/queen/empress
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/empress
 	name = "Empress of Terror"
 	desc = "The unholy offspring of spiders, nightmares, and lovecraft fiction."
 	ai_target_method = TS_DAMAGE_SIMPLE
@@ -32,21 +32,21 @@
 	var/datum/action/innate/terrorspider/queen/empress/empresserase/empresserase_action
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 
-/mob/living/simple_animal/hostile/poison/terror_spider/queen/empress/New()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/empress/New()
 	..()
 	empresslings_action = new()
 	empresslings_action.Grant(src)
 	empresserase_action = new()
 	empresserase_action.Grant(src)
 
-/mob/living/simple_animal/hostile/poison/terror_spider/queen/empress/spider_special_action()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/empress/spider_special_action()
 	return
 
-/mob/living/simple_animal/hostile/poison/terror_spider/queen/empress/NestMode()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/empress/NestMode()
 	..()
 	queeneggs_action.button.name = "Empress Eggs"
 
-/mob/living/simple_animal/hostile/poison/terror_spider/queen/empress/LayQueenEggs()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/empress/LayQueenEggs()
 	var/eggtype = input("What kind of eggs?") as null|anything in list(TS_DESC_QUEEN, TS_DESC_MOTHER, TS_DESC_PRINCE, TS_DESC_PRINCESS, TS_DESC_KNIGHT, TS_DESC_LURKER, TS_DESC_HEALER, TS_DESC_WIDOW, TS_DESC_GUARDIAN, TS_DESC_DEFILER, TS_DESC_DESTROYER)
 	var/numlings = input("How many in the batch?") as null|anything in list(1, 2, 3, 4, 5, 10, 15, 20, 30, 40, 50)
 	if(eggtype == null || numlings == null)
@@ -54,40 +54,40 @@
 		return
 	switch(eggtype)
 		if(TS_DESC_KNIGHT)
-			DoLayTerrorEggs(/mob/living/simple_animal/hostile/poison/terror_spider/knight, numlings)
+			DoLayTerrorEggs(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/knight, numlings)
 		if(TS_DESC_LURKER)
-			DoLayTerrorEggs(/mob/living/simple_animal/hostile/poison/terror_spider/lurker, numlings)
+			DoLayTerrorEggs(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/lurker, numlings)
 		if(TS_DESC_HEALER)
-			DoLayTerrorEggs(/mob/living/simple_animal/hostile/poison/terror_spider/healer, numlings)
+			DoLayTerrorEggs(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/healer, numlings)
 		if(TS_DESC_WIDOW)
-			DoLayTerrorEggs(/mob/living/simple_animal/hostile/poison/terror_spider/widow, numlings)
+			DoLayTerrorEggs(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/widow, numlings)
 		if(TS_DESC_GUARDIAN)
-			DoLayTerrorEggs(/mob/living/simple_animal/hostile/poison/terror_spider/guardian, numlings)
+			DoLayTerrorEggs(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/guardian, numlings)
 		if(TS_DESC_DEFILER)
-			DoLayTerrorEggs(/mob/living/simple_animal/hostile/poison/terror_spider/defiler, numlings)
+			DoLayTerrorEggs(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/defiler, numlings)
 		if(TS_DESC_DESTROYER)
-			DoLayTerrorEggs(/mob/living/simple_animal/hostile/poison/terror_spider/destroyer, numlings)
+			DoLayTerrorEggs(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/destroyer, numlings)
 		if(TS_DESC_PRINCE)
-			DoLayTerrorEggs(/mob/living/simple_animal/hostile/poison/terror_spider/prince, numlings)
+			DoLayTerrorEggs(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/prince, numlings)
 		if(TS_DESC_PRINCESS)
-			DoLayTerrorEggs(/mob/living/simple_animal/hostile/poison/terror_spider/queen/princess, numlings)
+			DoLayTerrorEggs(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/princess, numlings)
 		if(TS_DESC_MOTHER)
-			DoLayTerrorEggs(/mob/living/simple_animal/hostile/poison/terror_spider/mother, numlings)
+			DoLayTerrorEggs(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/mother, numlings)
 		if(TS_DESC_QUEEN)
-			DoLayTerrorEggs(/mob/living/simple_animal/hostile/poison/terror_spider/queen, numlings)
+			DoLayTerrorEggs(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen, numlings)
 		else
 			to_chat(src, "<span class='danger'>Unrecognized egg type.</span>")
 
-/mob/living/simple_animal/hostile/poison/terror_spider/queen/empress/proc/EmpressLings()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/empress/proc/EmpressLings()
 	var/numlings = input("How many?") as null|anything in list(10, 20, 30, 40, 50)
 	var/sbpc = input("%chance to be stillborn?") as null|anything in list(0, 25, 50, 75, 100)
 	for(var/i=0, i<numlings, i++)
 		var/obj/structure/spider/spiderling/terror_spiderling/S = new /obj/structure/spider/spiderling/terror_spiderling(get_turf(src))
-		S.grow_as = pick(/mob/living/simple_animal/hostile/poison/terror_spider/knight, \
-		/mob/living/simple_animal/hostile/poison/terror_spider/lurker, \
-		/mob/living/simple_animal/hostile/poison/terror_spider/healer, \
-		/mob/living/simple_animal/hostile/poison/terror_spider/defiler, \
-		/mob/living/simple_animal/hostile/poison/terror_spider/widow)
+		S.grow_as = pick(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/knight, \
+		/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/lurker, \
+		/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/healer, \
+		/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/defiler, \
+		/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/widow)
 		S.spider_myqueen = spider_myqueen
 		S.spider_mymother = src
 		if(prob(sbpc))
@@ -95,9 +95,9 @@
 		if(spider_growinstantly)
 			S.amount_grown = 250
 
-/mob/living/simple_animal/hostile/poison/terror_spider/queen/empress/proc/EraseBrood()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/empress/proc/EraseBrood()
 	for(var/thing in GLOB.ts_spiderlist)
-		var/mob/living/simple_animal/hostile/poison/terror_spider/T = thing
+		var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/T = thing
 		if(T.spider_tier < spider_tier)
 			T.degenerate = TRUE
 			to_chat(T, "<span class='userdanger'>Through the hivemind, the raw power of [src] floods into your body, burning it from the inside out!</span>")

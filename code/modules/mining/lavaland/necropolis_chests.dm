@@ -718,7 +718,8 @@
 		ADD_TRAIT(C, TRAIT_HOLY, SPECIES_TRAIT) //implying anyone is truly holy in a setting where people throw tantrums when things aren't violent
 		playsound(C.loc, 'sound/items/poster_ripped.ogg', 50, TRUE, -1)
 		C.adjustBruteLoss(20)
-		C.emote("scream")
+		if(!HAS_TRAIT(C, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+			C.emote("scream")
 	..()
 
 

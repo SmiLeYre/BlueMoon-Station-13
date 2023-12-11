@@ -60,7 +60,7 @@
 /obj/machinery/power/emitter/Initialize(mapload)
 	. = ..()
 	RefreshParts()
-	wires = new /datum/wires/emitter(src)
+	set_wires(new /datum/wires/emitter(src))
 	if(state == EMITTER_WELDED && anchored)
 		connect_to_network()
 

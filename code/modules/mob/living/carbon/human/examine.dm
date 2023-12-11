@@ -261,7 +261,7 @@
 		if(HAS_TRAIT(body_part, TRAIT_DISABLED_BY_WOUND))
 			continue // skip if it's disabled by a wound (cuz we'll be able to see the bone sticking out!)
 		if(!(body_part.get_damage(include_stamina = FALSE) >= body_part.max_damage)) //we don't care if it's stamcritted
-			damage_text = "выглядит обвисшей и бледноватой"
+			damage_text = "[body_part.is_robotic_limb() ? "висит и болтается" : "обвисла и побледнела"]" // BLUEMOON EDIT - добавлена проверка на роботизированные конечности
 		else
 			damage_text = (body_part.brute_dam >= body_part.burn_dam) ? body_part.heavy_brute_msg : body_part.heavy_burn_msg
 		msg += "<B>[ru_ego(TRUE)] [body_part.ru_name] [damage_text]!</B>\n"
@@ -338,12 +338,11 @@
 	if(nutrition < NUTRITION_LEVEL_STARVING - 50)
 		msg += "[t_on] выглядит смертельно истощённо.\n"
 	else if(nutrition >= NUTRITION_LEVEL_FAT)
-		if(HAS_TRAIT(src, TRAIT_INCUBUS || TRAIT_SUCCUBUS))
-			return //Imagine getting fat from hot load - Gardelin0
-		if(user.nutrition < NUTRITION_LEVEL_STARVING - 50)
-			msg += "[t_on] выглядит довольно толстенько, словно какой-то поросёнок. Очень вкусный поросёнок.\n"
-		else
-			msg += "[t_on] выглядит довольно плотно.\n"
+		if(!HAS_TRAIT(src, TRAIT_SUCCUBUS) || !HAS_TRAIT(src, TRAIT_INCUBUS))	//Imagine getting fat from hot load - Gardelin0
+			if(user.nutrition < NUTRITION_LEVEL_STARVING - 50)
+				msg += "[t_on] выглядит довольно толстенько, словно какой-то поросёнок. Очень вкусный поросёнок.\n"
+			else
+				msg += "[t_on] выглядит довольно плотно.\n"
 	switch(disgust)
 		if(DISGUST_LEVEL_GROSS to DISGUST_LEVEL_VERYGROSS)	//Не он отвратительный, а ему отвратительно.
 			msg += "[ru_emu(TRUE)] слегка неприятно.\n"	//a bit grossed out
@@ -480,7 +479,7 @@
 			if(SOFT_CRIT)
 				msg += "<span class='deadsay'>[t_on] едва в сознании.</span>\n"
 			if(CONSCIOUS)
-				if(HAS_TRAIT(src, TRAIT_DUMB))
+				if(HAS_TRAIT(src, TRAIT_DUMB) && !HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON EDIT - добавлена проверка на роботов
 					msg += "[t_on] имеет глупое выражение лица.\n"
 		if(getorgan(/obj/item/organ/brain))
 			if(ai_controller?.ai_status == AI_STATUS_ON)
@@ -488,7 +487,7 @@
 			if(!key)
 				msg += "<span class='warning'>[t_on] кататоник. Стресс от жизни в глубоком космосе сильно повлиял на н[t_ego]. Восстановление маловероятно.</span>\n"
 			else if(!client)
-				msg += "<span class='warning'><B>Не стоит [ru_ego(TRUE)] трогать.</B> [t_on] имеет пустой, рассеянный взгляд и кажется совершенно не реагирующим ни на что. В этом состоянии [t_on] находится [round(((world.time - lastclienttime) / (1 MINUTES)), 1)] минут. [t_on] может выйти из этого состояни в ближайшее время.\n" //SKYRAT CHANGE - ssd indicator
+				msg += "<span class='warning'><B>Не стоит [ru_ego()] трогать.</B> [t_on] имеет пустой, рассеянный взгляд и кажется совершенно не реагирующим ни на что. В этом состоянии [t_on] находится [round(((world.time - lastclienttime) / (1 MINUTES)), 1)] минут. [t_on] может выйти из этого состояни в ближайшее время.</span>\n"
 
 	var/trait_exam = common_trait_examine()
 	if (!isnull(trait_exam))
@@ -522,12 +521,12 @@
 			if(perpname)
 				var/datum/data/record/R = find_record("name", perpname, GLOB.data_core.general)
 				if(R)
-					. += "<span class='deptradio'>Должность:</span> [R.fields["rank"]]\n<a href='?src=[REF(src)];hud=1;photo_front=1'>\[Фото\]</a><a href='?src=[REF(src)];hud=1;photo_side=1'>\[Альт.\]</a>"
+					. += "<span class='deptradio'>Профессия:</span> [R.fields["rank"]]\n<a href='?src=[REF(src)];hud=1;photo_front=1'>\[Front photo\]</a><a href='?src=[REF(src)];hud=1;photo_side=1'>\[Side photo\]</a>"
 				if(istype(H.glasses, /obj/item/clothing/glasses/hud/health) || istype(CIH, /obj/item/organ/cyberimp/eyes/hud/medical))
 					var/cyberimp_detect
 					for(var/obj/item/organ/cyberimp/CI in internal_organs)
 						if(CI.status == ORGAN_ROBOTIC && !CI.syndicate_implant)
-							cyberimp_detect += "[name] имеет модификацию [CI.name]."
+							cyberimp_detect += "[name] модифицирован[t_a] [CI.name]."
 					if(cyberimp_detect)
 						. += "Обнаружены кибернетические модификации:"
 						. += cyberimp_detect
@@ -538,24 +537,26 @@
 						. += "<a href='?src=[REF(src)];hud=m;m_stat=1'>\[[health_r]\]</a>"
 					R = find_record("name", perpname, GLOB.data_core.medical)
 					if(R)
-						. += "<a href='?src=[REF(src)];hud=m;evaluation=1'>\[Медицинское заключение\]</a>"
+						. += "<a href='?src=[REF(src)];hud=m;evaluation=1'>\[Medical evaluation\]</a>"
 					if(traitstring)
-						. += "<span class='info'>Обнаружены особенности:\n[traitstring]</span>"
+						. += "<span class='info'>Обнаружены Особенности:\n[traitstring]</span>"
+
+
 
 				if(istype(H.glasses, /obj/item/clothing/glasses/hud/security) || istype(CIH, /obj/item/organ/cyberimp/eyes/hud/security))
 					if(!user.stat && user != src)
 					//|| !user.canmove || user.restrained()) Fluff: Sechuds have eye-tracking technology and sets 'arrest' to people that the wearer looks and blinks at.
-						var/criminal = "Отсутствуют"
+						var/criminal = "None"
 
 						R = find_record("name", perpname, GLOB.data_core.security)
 						if(R)
 							criminal = R.fields["criminal"]
 
-						. += jointext(list("<span class='deptradio'>Criminal status:</span> <a href='?src=[REF(src)];hud=s;status=1'>\[[criminal]\] </a>",
-							"<span class='deptradio'>Security record:</span> <a href='?src=[REF(src)];hud=s;view=1'>\[Показать\] </a>",
-							"<a href='?src=[REF(src)];hud=s;add_crime=1'>\[Добавить нарушение\] </a>",
-							"<a href='?src=[REF(src)];hud=s;view_comment=1'>\[Просмотреть комментарии\] </a>",
-							"<a href='?src=[REF(src)];hud=s;add_comment=1'>\[Добавить комментарий\]</a>"), "")
+						. += jointext(list("<span class='deptradio'>Криминальный Статус:</span> <a href='?src=[REF(src)];hud=s;status=1'>\[[criminal]\]</a>",
+							"<span class='deptradio'>База Данных:</span> <a href='?src=[REF(src)];hud=s;view=1'>\[View\]</a>",
+							"<a href='?src=[REF(src)];hud=s;add_crime=1'>\[Add crime\]</a>",
+							"<a href='?src=[REF(src)];hud=s;view_comment=1'>\[View comment log\]</a>",
+							"<a href='?src=[REF(src)];hud=s;add_comment=1'>\[Add comment\]</a>"), "")
 	else if(isobserver(user) && traitstring)
 		. += "<span class='info'><b>Особенности:</b> [traitstring]</span>"
 
@@ -579,3 +580,30 @@
 			dat += "[new_text]\n" //dat.Join("\n") doesn't work here, for some reason
 	if(dat.len)
 		return dat.Join()
+
+//Helper procedure. Called by /mob/living/carbon/human/examine() and /mob/living/carbon/human/Topic() to determine HUD access to security and medical records.
+/proc/hasHUD(mob/M, hudtype)
+	if(istype(M, /mob/living/carbon/human))
+		var/have_hudtypes = list()
+		var/mob/living/carbon/human/H = M
+
+		if(istype(H.glasses, /obj/item/clothing/glasses/hud))
+			var/obj/item/clothing/glasses/hud/hudglasses = H.glasses
+			if(hudglasses?.hud_type)
+				have_hudtypes += hudglasses.hud_type
+
+		var/obj/item/organ/cyberimp/eyes/hud/CIH = H.getorgan(/obj/item/organ/cyberimp/eyes/hud)
+		if(CIH?.HUD_type)
+			have_hudtypes += CIH.HUD_type
+
+		return (hudtype in have_hudtypes)
+
+	else if(iscyborg(M) || isAI(M)) //Stand-in/Stopgap to prevent pAIs from freely altering records, pending a more advanced Records system
+		return (hudtype in list(DATA_HUD_SECURITY_BASIC, DATA_HUD_SECURITY_ADVANCED, DATA_HUD_MEDICAL_ADVANCED))
+
+	else if(isobserver(M))
+		var/mob/dead/observer/O = M
+		if(DATA_HUD_SECURITY_ADVANCED in O.datahuds)
+			return (hudtype in list(DATA_HUD_SECURITY_BASIC, DATA_HUD_SECURITY_ADVANCED))
+
+	return FALSE

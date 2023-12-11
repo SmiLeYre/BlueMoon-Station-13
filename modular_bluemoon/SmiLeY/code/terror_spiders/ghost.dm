@@ -1,14 +1,14 @@
 
-/mob/living/simple_animal/hostile/poison/terror_spider/Topic(href, href_list)
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/Topic(href, href_list)
 	if(href_list["activate"])
 		var/mob/dead/observer/ghost = usr
 		if(istype(ghost))
 			humanize_spider(ghost)
 
-/mob/living/simple_animal/hostile/poison/terror_spider/attack_ghost(mob/user)
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/attack_ghost(mob/user)
 	humanize_spider(user)
 
-/mob/living/simple_animal/hostile/poison/terror_spider/proc/humanize_spider(mob/user)
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/proc/humanize_spider(mob/user)
 	if(key)//Someone is in it
 		return
 	var/error_on_humanize = ""

@@ -46,7 +46,7 @@
 
 /obj/machinery/autolathe/Initialize(mapload)
 	. = ..()
-	wires = new /datum/wires/autolathe(src)
+	set_wires(new /datum/wires/autolathe(src))
 	stored_research = new /datum/techweb/specialized/autounlocking/autolathe
 	matching_designs = list()
 

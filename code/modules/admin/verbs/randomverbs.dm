@@ -966,6 +966,31 @@ Traitors and the like can also be revived with the previous role mostly intact.
 		message_admins("[key_name_admin(usr)] changed the security level to [level]")
 		SSblackbox.record_feedback("tally", "admin_verb", 1, "Set Security Level [capitalize(level)]") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
+/client/proc/admin_hostile_environment()
+	set category = "Admin.Events"
+	set name = "Hostile Environment"
+
+	if(!check_rights(R_ADMIN))
+		return
+
+	switch(tgui_alert(usr, "Select an Option", "Hostile Environment Manager", list("Enable", "Disable", "Clear All")))
+		if("Enable")
+			if (SSshuttle.hostileEnvironments["Admin"] == TRUE)
+				to_chat(usr, span_warning("Error, admin hostile environment already enabled."))
+			else
+				message_admins(span_adminnotice("[key_name_admin(usr)] Enabled an admin hostile environment"))
+				SSshuttle.registerHostileEnvironment("Admin")
+		if("Disable")
+			if (!SSshuttle.hostileEnvironments["Admin"])
+				to_chat(usr, span_warning("Error, no admin hostile environment found."))
+			else
+				message_admins(span_adminnotice("[key_name_admin(usr)] Disabled the admin hostile environment"))
+				SSshuttle.clearHostileEnvironment("Admin")
+		if("Clear All")
+			message_admins(span_adminnotice("[key_name_admin(usr)] Disabled all current hostile environment sources"))
+			SSshuttle.hostileEnvironments.Cut()
+			SSshuttle.checkHostileEnvironment()
+
 /client/proc/toggle_nuke(obj/machinery/nuclearbomb/N in GLOB.nuke_list)
 	set name = "Toggle Nuke"
 	set category = "Admin.Events"

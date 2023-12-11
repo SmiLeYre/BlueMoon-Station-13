@@ -505,10 +505,10 @@
 		if(!W.tool_start_check(user, amount=1))
 			return
 
-		to_chat(user, span_notice("You begin repairing damage to \the [src]..."))
+		to_chat(user, span_notice("Вы начинаете чинить [src]..."))
 		if(W.use_tool(src, user, 20, volume=50, amount=1))
 			obj_integrity = max_integrity
-			to_chat(user, span_notice("You repair \the [src]."))
+			to_chat(user, span_notice("Вы починили [src]."))
 		return
 
 	var/obj/item/computer_hardware/card_slot/card_slot = all_components[MC_CARD]

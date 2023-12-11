@@ -248,10 +248,15 @@
 /obj/effect/mob_spawn/human/ash_walkers_slave/special_post_appearance(mob/living/new_spawn)
 	. = ..()
 	new_spawn.grant_language(/datum/language/draconic, TRUE, TRUE, LANGUAGE_MIND)
-	var/obj/item/organ/lungs/ashwalker/lungs = new /obj/item/organ/lungs/ashwalker()
-	lungs.Insert(new_spawn)
-	var/obj/item/organ/eyes/night_vision/eyes = new /obj/item/organ/eyes/night_vision()
-	eyes.Insert(new_spawn)
+	if(!HAS_TRAIT(new_spawn, TRAIT_ROBOTIC_ORGANISM))
+		var/obj/item/organ/lungs/ashwalker/lungs = new /obj/item/organ/lungs/ashwalker()
+		lungs.Insert(new_spawn)
+		var/obj/item/organ/eyes/night_vision/eyes = new /obj/item/organ/eyes/night_vision()
+		eyes.Insert(new_spawn)
+	else
+		if(!new_spawn.put_in_hands(new /obj/item/device/cooler/lavaland/charged(new_spawn)))
+			to_chat(new_spawn, span_reallybig("Не забудьте забрать охладитель под собой.")) // чтобы не упустили из виду при резком спавне
+		new_spawn.put_in_hands(new /obj/item/stock_parts/cell/bluespace(new_spawn))
 
 /obj/effect/temp_visual/dragon_swoop/priest
 	duration = 5

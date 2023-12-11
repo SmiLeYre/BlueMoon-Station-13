@@ -917,3 +917,41 @@ SUBSYSTEM_DEF(job)
 
 /datum/controller/subsystem/job/proc/JobDebug(message)
 	log_job_debug(message)
+
+/datum/controller/subsystem/job/proc/notify_dept_head(jobtitle, antext)
+	// Used to notify the department head of jobtitle X that their employee was brigged, demoted or terminated
+	if(!jobtitle || !antext)
+		return
+	var/datum/job/tgt_job = GetJob(jobtitle)
+	if(!tgt_job)
+		return
+	if(!tgt_job.department_head[1])
+		return
+	var/boss_title = tgt_job.department_head[1]
+	var/obj/item/pda/target_pda
+	for(var/obj/item/pda/check_pda in GLOB.PDAs)
+		if(check_pda.ownjob == boss_title)
+			target_pda = check_pda
+			break
+	if(!target_pda)
+		return
+	if(target_pda && target_pda.toff)
+		target_pda.send_message("<b>Автоматическое Оповещение: </b>\"[antext]\" (Невозможно Ответить)", 0) // the 0 means don't make the PDA flash
+
+///obj/item/paper/paperslip/corporate/fluff/spare_id_safe_code
+//	name = "Nanotrasen-Approved Spare ID Safe Code"
+//	desc = "Proof that you have been approved for Captaincy, with all its glory and all its horror."
+//
+///obj/item/paper/paperslip/corporate/fluff/spare_id_safe_code/Initialize(mapload)
+//	var/safe_code = SSid_access.spare_id_safe_code
+//	default_raw_text = "Captain's Spare ID safe code combination: [safe_code ? safe_code : "\[REDACTED\]"]<br><br>The spare ID can be found in its dedicated safe on the bridge.<br><br>If your job would not ordinarily have Head of Staff access, your ID card has been specially modified to possess it."
+//	return ..()
+//
+///obj/item/paper/paperslip/corporate/fluff/emergency_spare_id_safe_code
+//	name = "Emergency Spare ID Safe Code Requisition"
+//	desc = "Proof that nobody has been approved for Captaincy. A skeleton key for a skeleton shift."
+//
+///obj/item/paper/paperslip/corporate/fluff/emergency_spare_id_safe_code/Initialize(mapload)
+//	var/safe_code = SSid_access.spare_id_safe_code
+//	default_raw_text = "Captain's Spare ID safe code combination: [safe_code ? safe_code : "\[REDACTED\]"]<br><br>The spare ID can be found in its dedicated safe on the bridge."
+//	return ..()

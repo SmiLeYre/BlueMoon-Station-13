@@ -15,6 +15,7 @@
 	одни, туземные сородичи обеспокоены вашим присутствием, а особенно знаниями, которыми вы обладаете. Может есть возможность с ними \
 	договорится? При этом всём чужаки с Небесных Крепостей добрались и до этих земель. \n\n\
 	Будьте на чеку, не дайте трудам потомков, отдавших свои жизни ради вас, пасть Пеплом за зря. Цикл должен продолжаться!"
+	important_info = "Защищайте Тендрил своего племени. Охота на шахтёров допустима только в Динамик."
 	mob_species = /datum/species/lizard/ashwalker/western
 	gender_bias = FEMALE
 	canloadappearance = TRUE
@@ -29,6 +30,7 @@
 	Сверх этого, с небесных крепостей из Холодного Камня, на ваши земли спустились скитальцы с далёких Звёзд. Их рудокопы накладывают \
 	священные пальцы на Некрополь, свои грязные лапы. Не дайте им украсть дары великой матери и лишить вас пищи. \n\n\
 	Охота должна быть здравой, цикл должен продолжаться, грядущие поколения должны жить!"
+	important_info = "Защищайте Тендрил своего племени. Охота на шахтёров допустима только в Динамик."
 	mob_species = /datum/species/lizard/ashwalker/eastern
 	gender_bias = MALE
 	canloadappearance = TRUE
@@ -36,7 +38,7 @@
 //Portable dangerous-environment sleepers: Spawns in exposed to ash storms shelter.
 //Characters in this role could have been conscious for a long time, surviving on the planet. They may also know Draconic language by contacting with ashwalkers.
 /obj/effect/mob_spawn/human/wandering_hermit
-	name = "portable dangerous-environment sleeper"
+	name = "Portable Dangerous-Environment Sleeper"
 	desc = "The glass is slightly cracked, but there is still air inside. You can see somebody inside. They seems to be sleeping deeply."
 	job_description = "Wandering Hermit"
 	icon = 'icons/obj/lavaland/spawners.dmi'
@@ -70,10 +72,9 @@
 	job_description = "Hotel Staff"
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
-	objectives = "Обслуживайте приезжающих гостей вместе со своими сотрудниками. Не бросайте отель - вы можете рекламировать его и налаживать связи с потенциальными гостями, но всегда помните, кто подписывает ваши чеки! Клиент всегда прав!!"
-	short_desc = "Вы сотрудник Космического Отеля!"
-	flavour_text = "Вы - сотрудник первоклассного космического отеля! Ухаживайте за гостями и следите за тем, чтобы менеджер не уволил вас."
-	important_info = "Не покидайте Космический Отель ни в коем случае! Не конфликтуйте с кем бы то не было, вы в первую очередь мирняк!"
+	short_desc = "Вы - член обслуживающего персонала космического отеля."
+	flavour_text = "Вы нанялись в качестве персонала общего профиля для уборки, готовки, обслуживания гостей и всего, что прикажет менеджер на время пребывания на борту космического отеля. Ни в коем случае не грубите, не хамите и не ругайтесь с посетителями. Помните, что в вашем случае, клиент всегда прав."
+	important_info = "Персоналу отеля запрещается покидать его (кроме неординарных случаев или установки телепада)."
 	assignedrole = "Hotel Staff"
 	death = FALSE
 	roundstart = FALSE
@@ -95,10 +96,9 @@
 	name = "Hotel Security Sleeper"
 	mob_name = "hotel security member"
 	job_description = "Hotel Security"
-	short_desc = "Вы Миротворец."
-	flavour_text = "Вы были назначены в этот отель, чтобы защищать интересы компании, сохраняя мир между гостями и персоналом."
-	important_info = "Не покидайте Космический Отель ни в коем случае! Не конфликтуйте с кем бы то не было, вы в первую очередь мирняк!"
-	objectives = "Не покидайте Ваше Рабочее Место в виде Космического Отеля. Постарайтесь сохранить мир между персоналом и гостями, по возможности используйте язык и/или нелетальную силу."
+	short_desc = "Вы - охранник космического отеля."
+	flavour_text = "Вы были назначены в этот отель, чтобы защищать интересы компании Nanotrasen, недавно выкупившей его. Ведите себя вежливо, не размахивайте оружием и бронёй, не грубите посетителям - в первую очередь, вы не должны мешать наслаждаться пребыванием и отпугивать адекватных клиентов."
+	important_info = "Персоналу отеля запрещается покидать его (кроме неординарных случаев или установки телепада). Не ведите себя как СБ со станции - вы обычный гражданский и не обучены для борьбы с террористами, предателями, аномалиями и другими неординарными сущностями."
 	id_job = "Hotel Security"
 	uniform = /obj/item/clothing/under/rank/security/officer/blueshirt
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -112,10 +112,9 @@
 	name = "Hotel Manager Sleeper"
 	mob_name = "hotel manager"
 	job_description = "Hotel Manager"
-	short_desc = "Вы Менеджер Космического Отеля."
+	short_desc = "Вы - менеджер космического отеля."
 	flavour_text = "Вы управляете одним из объектов успешной сети Космических Отелей. Недавно ваша материнская компания была выкуплена Nanotrasen и вам поручили обслуживать некоторые из их станций; в результате вы получили в свое распоряжение набор модных технологий! Защищайте интересы своей материнской компании и следите за тем, чтобы ваш персонал работал на должном уровне, и постарайтесь сделать так, чтобы ваши гости были довольны!"
-	important_info = "Staff, including you, are NOT to abandon the hotel."
-	objectives = "Don't abandon your assigned hotel. Cater to visiting guests. Maintain good corporate relations and remember: The customer is always right!"
+	important_info = "Персоналу отеля запрещается покидать его (кроме неординарных случаев или установки телепада)."
 	id_job = "Hotel Manager"
 	uniform = /obj/item/clothing/under/suit/black
 	suit = /obj/item/clothing/suit/toggle/lawyer/black
@@ -130,10 +129,8 @@
 	uses = -1
 	icon = 'icons/obj/telescience.dmi'
 	icon_state = "lpad-idle"
-	objectives = "Вы заплатили кучу денег за пребывание в этом месте и вы ДОЛЖНЫ оторваться по полной!"
-	short_desc = "Вы гость дорогого Космического Отеля!"
-	flavour_text = "Вы - гость первоклассного космического отеля! Развлекайтесь!"
-	important_info = "Развлекайтесь, как только можете!"
+	short_desc = "Вы - гость дорогого космического отеля."
+	flavour_text = "Вы заплатили кучу денег за пребывание в этом месте и вы ДОЛЖНЫ оторваться по полной!!"
 	job_description = "Hotel Tourist"
 	id_job = "Hotel Tourist"
 	id = /obj/item/card/id/away
