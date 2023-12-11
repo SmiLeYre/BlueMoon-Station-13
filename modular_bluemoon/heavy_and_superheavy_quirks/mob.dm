@@ -1,11 +1,28 @@
+// ПЕРЕМЕННЫЕ ДЛЯ МОБОВ
+
+/mob
+	var/can_pull_superheavy_entities = FALSE // сокращаем количество проверок
+
+/mob/living/carbon/alien // Чужие могут тянуть сверхтяжёлых персонажей
+	can_pull_superheavy_entities = TRUE
+
+/mob/living/silicon // Киборгам хватает сил тянуть сверхтяжей
+	can_pull_superheavy_entities = TRUE
+
+/mob/living/silicon/pai // Это наследник киборгов, ему нельзя тянуть сверхтяжей. ПИИ-мышка, нет-нет
+	can_pull_superheavy_entities = FALSE
+
+/mob/living/simple_animal/slaughter // Демон резни должен мочь тянуть, чтобы затаскивать их в кровь
+	can_pull_superheavy_entities = TRUE
+
+// ВОЗМОЖНОСТЬ ВЗЯТЬ В PULL СВЕРХТЯЖЁЛОГО ПЕРСОНАЖА
+
 /mob/can_be_pulled(user)
 	if(ismob(user))
 		var/mob/user_mob = user
 		if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER)) // сверхтяжёлых персонажей нельзя тащить, не соблюдая определённые условия
 			var/can_pull = FALSE
-			if(isalien(user_mob)) // чужие (мобы) могут тащить
-				can_pull = TRUE
-			if(issilicon(user_mob)) // киборги могут тащить
+			if(user_mob.can_pull_superheavy_entities) // Моб простой и может тащить такого персонажа
 				can_pull = TRUE
 			if(HAS_TRAIT(user_mob, TRAIT_BLUEMOON_HEAVY_SUPER)) // другие сверхтяжёлые персонажи могут тащить
 				can_pull = TRUE
