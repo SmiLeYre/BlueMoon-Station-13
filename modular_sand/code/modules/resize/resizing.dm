@@ -67,10 +67,26 @@
 	//Both small
 		if(get_size(user) <= RESIZE_A_TINYMICRO && get_size(target) <= RESIZE_A_TINYMICRO)
 			now_pushing = 0
-			user.forceMove(target.loc)
+			//user.forceMove(target.loc) BLUEMOON REMOVAL - пересено в micro_move_to_target_turf
+			micro_move_to_target_turf(target) // BLUEMOON ADD
 			return TRUE
 
 		if(COMPARE_SIZES(user, target) >= 1.6) // BLUEMOON CHANGES
+
+			// BLUEMOON ADD START
+			if(target.mind?.martial_art?.can_use(target)) // нельзя давить тех, кто обучен и может применять боевые искусства
+				if(target.a_intent != INTENT_HELP)
+					now_pushing = 0
+					micro_move_to_target_turf(target) // BLUEMOON ADD
+					log_combat(user, target, "failed (martial art) to step on", addition="[user.a_intent] trample")
+					target.visible_message(\
+						"<span class='danger'>[src] уворачивается от попытки [src] наступить на не[target.gender == MALE ? "го" : "ё"].",\
+						"<span class='danger'>Вы уворачиваетесь от попытки [src] наступить на вас благодаря своему боевому искусству!</span>",
+						vision_distance = 3,
+						target = user, target_message = span_danger("[target] умело уворачивается вашей попытки наступить на него!"))
+					return TRUE // технически, переступил
+			// BLUEMOON ADD END
+
 			log_combat(user, target, "stepped on", addition="[user.a_intent] trample")
 			if(user.a_intent == "disarm" && CHECK_MOBILITY(user, MOBILITY_MOVE) && !user.buckled)
 				now_pushing = 0
