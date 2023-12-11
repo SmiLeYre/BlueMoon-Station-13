@@ -552,6 +552,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(isrevenant(usr))
 		if(RevenantThrow(over, usr, src))
 			return
+	// BlueMoon Edit Start: Qareens are supposed to have this too, apparently - Flauros
+	if(isqareen(usr))
+		if(QareenThrow(over, usr, src))
+			return
+	// BlueMoon Edit End
 
 	if(!Adjacent(usr) || !over.Adjacent(usr))
 		return // should stop you from dragging through windows
