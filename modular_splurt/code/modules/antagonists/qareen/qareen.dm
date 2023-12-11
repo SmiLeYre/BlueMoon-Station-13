@@ -516,9 +516,9 @@
 /datum/objective/qareenFluff
 
 /datum/objective/qareenFluff/New()
-	var/list/explanationTexts = list("Избеuайте высасывания эссенции у всех на виду.", \
+	var/list/explanationTexts = list("Избегайте высасывания эссенции у всех на виду.", \
 									 "Распространите заболевание похоти на тех, кого можете.", \
-									 "Оставьте на полу как можно больше следов любовныъ жидкостей.", \
+									 "Оставьте на полу как можно больше следов любовных жидкостей.", \
 									 "Возбудите всех, кого можете.", \
 	)
 	explanation_text = pick(explanationTexts)
