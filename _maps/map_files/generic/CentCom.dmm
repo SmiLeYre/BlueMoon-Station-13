@@ -4102,13 +4102,6 @@
 	icon_state = "alien24"
 	},
 /area/abductor_ship)
-"akt" = (
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
-	},
-/turf/open/floor/plating/asteroid/snow/airless,
-/area/syndicate_mothership)
 "aku" = (
 /turf/closed/indestructible/fakeglass,
 /area/syndicate_mothership)
@@ -6957,11 +6950,6 @@
 /obj/item/chair,
 /turf/open/floor/plasteel,
 /area/slavers)
-"aqa" = (
-/obj/structure/flora/tree/pine,
-/obj/effect/light_emitter,
-/turf/open/floor/plating/asteroid/snow/airless,
-/area/syndicate_mothership)
 "aqb" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 1
@@ -8429,7 +8417,9 @@
 "atf" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/effect/decal/cleanable/blood/gibs/body,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/wizard_station)
 "ath" = (
 /obj/structure/bed,
@@ -9177,7 +9167,9 @@
 /area/centcom/ferry)
 "auL" = (
 /obj/machinery/hydroponics/soil,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/slavers)
 "auN" = (
 /obj/item/kirbyplants/random,
@@ -9416,7 +9408,9 @@
 /mob/living/simple_animal/hostile/netherworld{
 	name = "Experiment 35b"
 	},
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/wizard_station)
 "avr" = (
 /obj/machinery/mech_bay_recharge_port,
@@ -11219,7 +11213,9 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/genericbush,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/tdome/tdomeadmin)
 "azT" = (
 /obj/effect/turf_decal/tile/red{
@@ -12111,7 +12107,9 @@
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/pointybush,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/tdome/tdomeadmin)
 "aBX" = (
 /obj/effect/turf_decal/tile/red{
@@ -12641,14 +12639,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
-"aCQ" = (
-/obj/machinery/light/floor,
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
-	},
-/turf/open/floor/pod/light,
-/area/slavers)
 "aCR" = (
 /obj/machinery/computer/security{
 	dir = 8
@@ -13709,11 +13699,6 @@
 "aFe" = (
 /turf/closed/indestructible/wood,
 /area/centcom/holding)
-"aFg" = (
-/obj/structure/flora/grass/brown,
-/obj/effect/light_emitter,
-/turf/open/floor/plating/asteroid/snow/airless,
-/area/syndicate_mothership)
 "aFi" = (
 /obj/machinery/computer/slavery{
 	dir = 4
@@ -16650,7 +16635,9 @@
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/leafybush,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/centcom/ferry)
 "aLp" = (
 /obj/structure/chair{
@@ -16661,7 +16648,9 @@
 "aLr" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood/splatter,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/wizard_station)
 "aLs" = (
 /obj/docking_port/stationary{
@@ -17074,10 +17063,6 @@
 /turf/open/floor/plasteel,
 /area/centcom/supplypod)
 "aMD" = (
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
-	},
 /obj/structure/sign/warning/securearea{
 	desc = "A warning sign which reads 'FOURTH WALL'.";
 	name = "\improper FOURTH WALL";
@@ -17656,7 +17641,9 @@
 /area/centcom/evac)
 "aPb" = (
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/lizard,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/wizard_station)
 "aPc" = (
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -17664,7 +17651,9 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/pointybush,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/centcom/ferry)
 "aPd" = (
 /obj/structure/sign/map/right{
@@ -17930,7 +17919,9 @@
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/pointybush,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/centcom/ferry)
 "aQi" = (
 /obj/effect/turf_decal/tile/red,
@@ -17980,7 +17971,9 @@
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/pointybush,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/tdome/tdomeobserve)
 "aQv" = (
 /obj/effect/turf_decal/tile/green,
@@ -18231,7 +18224,9 @@
 /area/syndicate_mothership)
 "aRt" = (
 /obj/effect/decal/cleanable/blood/splatter,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/wizard_station)
 "aRv" = (
 /obj/effect/turf_decal/stripes/line{
@@ -18494,7 +18489,9 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/genericbush,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/tdome/tdomeobserve)
 "aSx" = (
 /obj/docking_port/stationary{
@@ -18554,7 +18551,9 @@
 /area/centcom/supplypod)
 "aSG" = (
 /obj/effect/decal/remains/xeno,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/wizard_station)
 "aSH" = (
 /obj/effect/turf_decal/tile/green{
@@ -18744,15 +18743,6 @@
 /obj/machinery/vending/kink,
 /turf/open/floor/padded,
 /area/slavers)
-"aTv" = (
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
-	},
-/turf/open/floor/plating/asteroid/layenia/garden{
-	icon_state = "layenia2"
-	},
-/area/slavers)
 "aTw" = (
 /obj/item/paper/fluff/stations/centcom/disk_memo,
 /obj/structure/noticeboard{
@@ -18769,10 +18759,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/slavers)
-"aTz" = (
-/obj/effect/light_emitter,
-/turf/open/floor/plating/asteroid/snow/airless,
-/area/syndicate_mothership)
 "aTA" = (
 /obj/structure/chair{
 	dir = 8
@@ -18787,7 +18773,9 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/pointybush,
 /obj/machinery/light,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/tdome/tdomeadmin)
 "aTF" = (
 /obj/effect/turf_decal/tile/red{
@@ -18848,15 +18836,6 @@
 "aTT" = (
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /turf/open/floor/plating,
-/area/slavers)
-"aTU" = (
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
-	},
-/turf/open/floor/plating/asteroid/layenia/garden{
-	icon_state = "layenia1"
-	},
 /area/slavers)
 "aTX" = (
 /obj/effect/turf_decal/stripes/line{
@@ -18999,11 +18978,6 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/evac)
-"aUy" = (
-/obj/structure/flora/bush,
-/obj/effect/light_emitter,
-/turf/open/floor/plating/asteroid/snow/airless,
-/area/syndicate_mothership)
 "aUz" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 1
@@ -19041,12 +19015,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/slavers)
-"aUG" = (
-/obj/structure/flora/tree/pine,
-/obj/effect/light_emitter,
-/obj/effect/light_emitter,
-/turf/open/floor/plating/asteroid/snow/airless,
-/area/syndicate_mothership)
 "aUH" = (
 /obj/machinery/door/airlock/external{
 	req_one_access_txt = "150"
@@ -19194,17 +19162,10 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/genericbush,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/centcom/ferry)
-"aVi" = (
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
-	},
-/turf/open/floor/plating/asteroid/layenia/garden{
-	icon_state = "layenia0"
-	},
-/area/slavers)
 "aVm" = (
 /obj/structure/table/wood,
 /obj/item/pizzabox,
@@ -19650,14 +19611,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/ferry)
-"aWS" = (
-/obj/structure/flora/grass/jungle,
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
-	},
-/turf/open/floor/grass/grass0,
-/area/centcom/holding/exterior)
 "aWT" = (
 /obj/structure/sign/flag/goldring,
 /turf/closed/indestructible/riveted,
@@ -19859,7 +19812,9 @@
 /turf/open/floor/plasteel,
 /area/slavers)
 "aXF" = (
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/wizard_station)
 "aXG" = (
 /obj/effect/turf_decal/stripes/corner{
@@ -19948,7 +19903,9 @@
 /area/centcom/evac)
 "aXV" = (
 /obj/item/reagent_containers/food/snacks/meat/slab/corgi,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/wizard_station)
 "aYb" = (
 /obj/effect/turf_decal/tile/bar{
@@ -20107,7 +20064,9 @@
 /area/slavers)
 "aYE" = (
 /obj/item/reagent_containers/food/snacks/meat/slab/xeno,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/wizard_station)
 "aYG" = (
 /turf/open/floor/plasteel/showroomfloor,
@@ -20230,7 +20189,9 @@
 /area/slavers)
 "aZb" = (
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/slime,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/wizard_station)
 "aZc" = (
 /turf/open/indestructible/binary,
@@ -20303,7 +20264,9 @@
 /area/holodeck/rec_center/chapelcourt)
 "aZm" = (
 /obj/effect/decal/remains/xeno/larva,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/wizard_station)
 "aZn" = (
 /obj/effect/turf_decal/stripes/white/line,
@@ -20603,11 +20566,9 @@
 /area/centcom/holding/exterior)
 "bhn" = (
 /obj/structure/furnace,
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
+/turf/open/floor/grass/grass0{
+	light_range = 3
 	},
-/turf/open/floor/grass/grass0,
 /area/centcom/holding/exterior)
 "bhN" = (
 /obj/effect/turf_decal/loading_area,
@@ -21217,11 +21178,9 @@
 /obj/structure/flora/tree/jungle/small{
 	icon_state = "tree4"
 	},
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
+/turf/open/floor/grass/grass0{
+	light_range = 3
 	},
-/turf/open/floor/grass/grass0,
 /area/centcom/holding/exterior)
 "clR" = (
 /obj/effect/turf_decal/box,
@@ -21237,7 +21196,9 @@
 /obj/structure/flora/tree/jungle/small{
 	icon_state = "tree3"
 	},
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "cmn" = (
 /obj/effect/turf_decal/tile/neutral{
@@ -21500,10 +21461,6 @@
 	},
 /turf/open/floor/iron/white,
 /area/syndicate_mothership/control)
-"cDI" = (
-/obj/effect/turf_decal/sand,
-/turf/open/floor/plating/beach/sand,
-/area/centcom/holding/exterior)
 "cEf" = (
 /obj/machinery/mineral/ore_redemption,
 /turf/open/floor/iron/dark,
@@ -21528,10 +21485,6 @@
 "cHm" = (
 /turf/closed/indestructible/riveted,
 /area/syndicate_mothership/control)
-"cHD" = (
-/obj/machinery/light/directional/west,
-/turf/open/indestructible/hotelwood,
-/area/centcom/holding)
 "cHF" = (
 /obj/structure/table/wood,
 /obj/item/gun/magic/staff/locker,
@@ -21582,14 +21535,6 @@
 /obj/item/storage/box/syndicate/contractor_loadout,
 /turf/open/floor/plasteel,
 /area/centcom)
-"cKo" = (
-/obj/structure/flora/grass/jungle/b,
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
-	},
-/turf/open/floor/grass/grass0,
-/area/centcom/holding/exterior)
 "cNb" = (
 /obj/structure/table/wood,
 /obj/item/smithing/stundild,
@@ -21756,7 +21701,9 @@
 /area/centcom/holding)
 "dby" = (
 /obj/structure/flora/grass/jungle/b,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "dbD" = (
 /obj/effect/turf_decal/tile/neutral{
@@ -22297,13 +22244,6 @@
 /obj/effect/turf_decal/tile/red/opposingcorners,
 /turf/open/floor/iron/white,
 /area/centcom/holding)
-"dJi" = (
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
-	},
-/turf/closed/indestructible/opshuttle,
-/area/centcom/holding/exterior)
 "dKe" = (
 /obj/structure/kitchenspike,
 /turf/open/floor/mineral/abductor,
@@ -22351,11 +22291,9 @@
 "dOK" = (
 /obj/effect/turf_decal/sand,
 /obj/machinery/vending/cigarette/beach,
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
+/turf/open/floor/plating/beach/sand{
+	light_range = 3
 	},
-/turf/open/floor/plating/beach/sand,
 /area/centcom/holding/exterior)
 "dOU" = (
 /obj/structure/table/wood,
@@ -22913,7 +22851,9 @@
 	name = "thick vines";
 	opacity = 1
 	},
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "eIy" = (
 /obj/machinery/door/airlock/sandstone{
@@ -23113,7 +23053,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/syndicate_mothership/control)
 "eUM" = (
 /obj/effect/spawner/structure/window/hollow/directional{
@@ -23122,7 +23064,9 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/centcom/holding)
 "eUU" = (
 /obj/machinery/research_table,
@@ -23243,11 +23187,9 @@
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 8
 	},
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
+/turf/open/floor/plating/beach/sand{
+	light_range = 3
 	},
-/turf/open/floor/plating/beach/sand,
 /area/centcom/holding/exterior)
 "fhB" = (
 /obj/structure/showcase/fakeid{
@@ -23363,11 +23305,9 @@
 /turf/open/floor/wood,
 /area/centcom/holding)
 "fph" = (
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
+/turf/open/floor/mineral/plastitanium{
+	light_range = 3
 	},
-/turf/open/floor/mineral/plastitanium,
 /area/centcom/holding/exterior)
 "fpy" = (
 /obj/structure/sign/poster/contraband/inteq/random{
@@ -23403,7 +23343,9 @@
 /area/centcom)
 "frl" = (
 /obj/machinery/light/floor,
-/turf/open/floor/plating/beach/sand,
+/turf/open/floor/plating/beach/sand{
+	light_range = 3
+	},
 /area/centcom/holding)
 "fsm" = (
 /obj/effect/turf_decal/tile/neutral{
@@ -23512,16 +23454,16 @@
 /obj/structure/flora/tree/jungle/small{
 	icon_state = "tree6"
 	},
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
+/turf/open/floor/grass/grass0{
+	light_range = 3
 	},
-/turf/open/floor/grass/grass0,
 /area/centcom/holding/exterior)
 "fwN" = (
 /obj/item/megaphone,
 /obj/item/binoculars,
-/turf/open/floor/plating/beach/sand,
+/turf/open/floor/plating/beach/sand{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "fwW" = (
 /obj/effect/turf_decal/tile/neutral,
@@ -23681,7 +23623,9 @@
 	dir = 1
 	},
 /obj/structure/chair/pew/right,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/syndicate_mothership/control)
 "fFG" = (
 /obj/structure/sauna_oven,
@@ -23799,7 +23743,9 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "fON" = (
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "fRP" = (
 /obj/machinery/button/door{
@@ -24439,11 +24385,9 @@
 "gLj" = (
 /obj/effect/turf_decal/sand,
 /obj/machinery/vending/snack,
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
+/turf/open/floor/plating/beach/sand{
+	light_range = 3
 	},
-/turf/open/floor/plating/beach/sand,
 /area/centcom/holding/exterior)
 "gLP" = (
 /obj/effect/turf_decal/stripes/line{
@@ -24570,12 +24514,9 @@
 /turf/open/floor/plasteel,
 /area/centcom/evac)
 "gVR" = (
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
-	},
 /turf/open/indestructible/cobble/side{
-	dir = 1
+	dir = 1;
+	light_range = 3
 	},
 /area/centcom/holding/exterior)
 "gWd" = (
@@ -24585,7 +24526,9 @@
 /obj/item/clothing/under/shorts/red,
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/clothing/under/shorts/red,
-/turf/open/floor/plating/beach/sand,
+/turf/open/floor/plating/beach/sand{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "gWA" = (
 /obj/machinery/vending/wardrobe/det_wardrobe,
@@ -24621,12 +24564,9 @@
 "gYm" = (
 /obj/structure/bed,
 /obj/item/bedsheet/vulp/vulp4,
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
-	},
 /turf/open/indestructible/cobble/side{
-	dir = 4
+	dir = 4;
+	light_range = 3
 	},
 /area/centcom/holding/exterior)
 "gYx" = (
@@ -24900,7 +24840,9 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/syndicate_mothership/control)
 "hwr" = (
 /obj/effect/turf_decal/tile/brown/fourcorners,
@@ -25238,7 +25180,9 @@
 /obj/item/toy/beach_ball{
 	pixel_y = 10
 	},
-/turf/open/floor/plating/beach/sand,
+/turf/open/floor/plating/beach/sand{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "hRp" = (
 /obj/structure/closet/crate,
@@ -25556,7 +25500,9 @@
 	dir = 1
 	},
 /obj/structure/chair/pew,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/syndicate_mothership/control)
 "ijI" = (
 /obj/machinery/vending/cola/red,
@@ -25645,14 +25591,6 @@
 	},
 /turf/open/floor/plating,
 /area/syndicate_mothership)
-"ioC" = (
-/obj/structure/flora/tree/jungle/small,
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
-	},
-/turf/open/floor/grass/grass0,
-/area/centcom/holding/exterior)
 "ipi" = (
 /obj/machinery/light,
 /obj/structure/target_stake,
@@ -25975,7 +25913,9 @@
 /area/syndicate_mothership/control)
 "iOc" = (
 /obj/structure/fluff/beach_umbrella/engine,
-/turf/open/floor/plating/beach/sand,
+/turf/open/floor/plating/beach/sand{
+	light_range = 3
+	},
 /area/centcom/holding)
 "iOC" = (
 /obj/structure/curtain{
@@ -26201,7 +26141,9 @@
 /area/syndicate_mothership/control)
 "jhk" = (
 /obj/structure/table/wood,
-/turf/open/floor/plating/beach/sand,
+/turf/open/floor/plating/beach/sand{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "jjI" = (
 /obj/structure/chair/comfy/black{
@@ -26213,17 +26155,6 @@
 /obj/effect/turf_decal/tile/brown,
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
-"jkx" = (
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
-	},
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
-	},
-/turf/open/floor/grass/grass0,
-/area/centcom/holding/exterior)
 "jlc" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -26386,7 +26317,9 @@
 /area/syndicate_mothership/control)
 "jyC" = (
 /obj/structure/spacevine,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "jyM" = (
 /obj/effect/turf_decal/tile/brown,
@@ -26471,11 +26404,9 @@
 "jFN" = (
 /obj/effect/turf_decal/sand,
 /obj/machinery/light/directional/east,
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
+/turf/open/floor/plating/beach/sand{
+	light_range = 3
 	},
-/turf/open/floor/plating/beach/sand,
 /area/centcom/holding/exterior)
 "jGl" = (
 /turf/open/floor/wood/wood_parquet,
@@ -26639,7 +26570,9 @@
 /area/syndicate_mothership/control)
 "jQd" = (
 /obj/structure/flora/rock/pile,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "jQH" = (
 /obj/structure/table/reinforced,
@@ -26983,12 +26916,9 @@
 /turf/open/floor/wood,
 /area/syndicate_mothership/control)
 "kql" = (
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
-	},
 /turf/open/indestructible/cobble/corner{
-	dir = 4
+	dir = 4;
+	light_range = 3
 	},
 /area/centcom/holding/exterior)
 "kqY" = (
@@ -27028,7 +26958,9 @@
 /area/centcom/holding)
 "ktB" = (
 /obj/machinery/vending/kink,
-/turf/open/floor/plating/beach/sand,
+/turf/open/floor/plating/beach/sand{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "ktC" = (
 /obj/effect/turf_decal/tile/brown/fourcorners,
@@ -27059,7 +26991,9 @@
 /area/syndicate_mothership/control)
 "kvp" = (
 /obj/structure/fluff/beach_umbrella/security,
-/turf/open/floor/plating/beach/sand,
+/turf/open/floor/plating/beach/sand{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "kvX" = (
 /obj/structure/chair/comfy/black,
@@ -27080,11 +27014,9 @@
 /obj/structure/shuttle/engine/large{
 	dir = 4
 	},
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
+/turf/open/floor/mineral/plastitanium{
+	light_range = 3
 	},
-/turf/open/floor/mineral/plastitanium/yellow,
 /area/centcom/holding/exterior)
 "kwY" = (
 /obj/machinery/portable_atmospherics/canister/nob,
@@ -27309,11 +27241,9 @@
 /area/centcom/holding)
 "kGh" = (
 /obj/structure/anvil/obtainable/basic,
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
+/turf/open/floor/grass/grass0{
+	light_range = 3
 	},
-/turf/open/floor/grass/grass0,
 /area/centcom/holding/exterior)
 "kHs" = (
 /obj/machinery/light{
@@ -27420,7 +27350,9 @@
 /area/syndicate_mothership/control)
 "kNK" = (
 /obj/structure/fence/door/opened,
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/mineral/plastitanium{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "kOj" = (
 /obj/effect/turf_decal/siding{
@@ -27622,12 +27554,9 @@
 "ldr" = (
 /obj/structure/bed,
 /obj/item/bedsheet/vulp,
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
-	},
 /turf/open/indestructible/cobble/side{
-	dir = 4
+	dir = 4;
+	light_range = 3
 	},
 /area/centcom/holding/exterior)
 "lel" = (
@@ -27954,7 +27883,9 @@
 "lvA" = (
 /obj/structure/flora/rock/pile,
 /obj/structure/fans/tiny/invisible,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "lxk" = (
 /obj/machinery/vending/wallmed/directional/north,
@@ -28141,7 +28072,9 @@
 /area/syndicate_mothership/control)
 "lIv" = (
 /obj/structure/dead_ratvar,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "lIV" = (
 /obj/effect/turf_decal/tile/green,
@@ -28770,11 +28703,9 @@
 	},
 /obj/effect/turf_decal/stripes/asteroid/line,
 /obj/effect/turf_decal/stripes/asteroid/line,
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
+/turf/open/floor/plating/beach/sand{
+	light_range = 3
 	},
-/turf/open/floor/plating/beach/sand,
 /area/centcom/holding/exterior)
 "mQg" = (
 /obj/item/storage/box/inteq_box/inteq_clothes,
@@ -28951,7 +28882,9 @@
 /area/centcom)
 "ncu" = (
 /obj/structure/fluff/beach_umbrella/cap,
-/turf/open/floor/plating/beach/sand,
+/turf/open/floor/plating/beach/sand{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "ncv" = (
 /obj/effect/turf_decal/tile/brown,
@@ -28991,7 +28924,9 @@
 /obj/structure/chair/office/light{
 	dir = 1
 	},
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "nec" = (
 /obj/structure/healingfountain{
@@ -29250,11 +29185,9 @@
 /area/shuttle/inteq/collosus)
 "nva" = (
 /obj/structure/anvil/obtainable/dwarfvil,
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
+/turf/open/floor/grass/grass0{
+	light_range = 3
 	},
-/turf/open/floor/grass/grass0,
 /area/centcom/holding/exterior)
 "nwc" = (
 /obj/machinery/light/warm/dim/directional/east,
@@ -29297,11 +29230,9 @@
 /obj/structure/fence{
 	dir = 4
 	},
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
+/turf/open/floor/mineral/plastitanium{
+	light_range = 3
 	},
-/turf/open/floor/mineral/plastitanium,
 /area/centcom/holding/exterior)
 "nzk" = (
 /obj/effect/turf_decal/tile/brown/opposingcorners,
@@ -29405,7 +29336,9 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "nIA" = (
-/turf/open/floor/mineral/plastitanium/yellow,
+/turf/open/floor/mineral/plastitanium/yellow{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "nJH" = (
 /obj/effect/turf_decal/siding/wood{
@@ -29431,7 +29364,9 @@
 	},
 /obj/structure/chair/pew/left,
 /obj/machinery/light/floor,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/syndicate_mothership/control)
 "nMH" = (
 /obj/structure/sink/kitchen/directional/east,
@@ -29525,7 +29460,9 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "nWY" = (
-/turf/open/floor/plating/beach/sand,
+/turf/open/floor/plating/beach/sand{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "nXA" = (
 /obj/structure/flora/grass/jungle/b,
@@ -29665,7 +29602,9 @@
 /area/syndicate_mothership/control)
 "oiE" = (
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "oiH" = (
 /obj/machinery/portable_atmospherics/canister/toxins,
@@ -29741,11 +29680,9 @@
 "ona" = (
 /obj/effect/turf_decal/sand,
 /obj/effect/turf_decal/stripes/asteroid/line,
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
+/turf/open/floor/plating/beach/sand{
+	light_range = 3
 	},
-/turf/open/floor/plating/beach/sand,
 /area/centcom/holding/exterior)
 "onq" = (
 /obj/machinery/door/window/survival_pod{
@@ -29816,7 +29753,9 @@
 /area/syndicate_mothership/control)
 "ovj" = (
 /obj/structure/flora/tree/palm,
-/turf/open/floor/plating/beach/sand,
+/turf/open/floor/plating/beach/sand{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "ovZ" = (
 /obj/structure/chair/office/dark,
@@ -29963,7 +29902,9 @@
 /area/centcom/holding)
 "oFl" = (
 /obj/structure/flora/tree/palm,
-/turf/open/floor/plating/beach/sand,
+/turf/open/floor/plating/beach/sand{
+	light_range = 3
+	},
 /area/centcom/holding)
 "oGq" = (
 /obj/structure/table/wood,
@@ -30191,11 +30132,9 @@
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/clothing/glasses/sunglasses/big,
 /obj/item/clothing/glasses/sunglasses,
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
+/turf/open/floor/plating/beach/sand{
+	light_range = 3
 	},
-/turf/open/floor/plating/beach/sand,
 /area/centcom/holding/exterior)
 "oYd" = (
 /turf/open/floor/plating/beach/coastline_t/sandwater_inner{
@@ -30260,15 +30199,9 @@
 /area/centcom/holding)
 "pbN" = (
 /obj/structure/flora/tree/jungle/small,
-/turf/open/floor/grass/grass0,
-/area/centcom/holding/exterior)
-"pbO" = (
-/obj/structure/flora/tree/jungle,
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
+/turf/open/floor/grass/grass0{
+	light_range = 3
 	},
-/turf/open/floor/grass/grass0,
 /area/centcom/holding/exterior)
 "pcf" = (
 /obj/machinery/firealarm{
@@ -30374,12 +30307,6 @@
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
-"pjZ" = (
-/obj/structure/fence{
-	dir = 4
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/centcom/holding/exterior)
 "pkl" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 8
@@ -30635,7 +30562,9 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/syndicate_mothership/control)
 "pze" = (
 /obj/structure/chair/stool/bar/directional/west,
@@ -30697,7 +30626,9 @@
 	name = "thick vines";
 	opacity = 1
 	},
-/turf/open/floor/plating/beach/sand,
+/turf/open/floor/plating/beach/sand{
+	light_range = 3
+	},
 /area/centcom/holding)
 "pDY" = (
 /obj/structure/sign/warning/fire,
@@ -31037,17 +30968,11 @@
 	},
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
-"qrr" = (
-/obj/structure/fans/tiny/invisible,
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
-	},
-/turf/open/floor/grass/grass0,
-/area/centcom/holding/exterior)
 "qrw" = (
 /obj/structure/light_prism,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "qrx" = (
 /obj/structure/table/reinforced,
@@ -31085,7 +31010,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/syndicate_mothership/control)
 "qtu" = (
 /obj/effect/turf_decal/tile/dark_green/half/contrasted,
@@ -31587,7 +31514,9 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/syndicate_mothership/control)
 "rgt" = (
 /obj/effect/turf_decal/bluemoon_decals/enclave/top/left,
@@ -31785,7 +31714,9 @@
 /obj/structure/shuttle/engine/large{
 	dir = 4
 	},
-/turf/open/floor/mineral/plastitanium/yellow,
+/turf/open/floor/mineral/plastitanium/yellow{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "rsW" = (
 /obj/structure/rack/shelf,
@@ -31795,11 +31726,9 @@
 "rtB" = (
 /obj/effect/turf_decal/sand,
 /obj/machinery/vending/cola,
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
+/turf/open/floor/plating/beach/sand{
+	light_range = 3
 	},
-/turf/open/floor/plating/beach/sand,
 /area/centcom/holding/exterior)
 "rtJ" = (
 /obj/structure/table/wood,
@@ -31989,7 +31918,9 @@
 /area/centcom/holding)
 "rJg" = (
 /obj/structure/spacevine,
-/turf/open/floor/plating/beach/sand,
+/turf/open/floor/plating/beach/sand{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "rJh" = (
 /obj/effect/turf_decal/siding/wood,
@@ -32034,11 +31965,9 @@
 	dir = 2
 	},
 /obj/effect/turf_decal/stripes/asteroid/line,
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
+/turf/open/floor/plating/beach/sand{
+	light_range = 3
 	},
-/turf/open/floor/plating/beach/sand,
 /area/centcom/holding/exterior)
 "rNT" = (
 /obj/effect/turf_decal/tile/neutral{
@@ -32267,13 +32196,6 @@
 	},
 /turf/open/floor/plasteel/bluespace,
 /area/centcom)
-"sef" = (
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
-	},
-/turf/open/floor/grass/grass0,
-/area/centcom/holding/exterior)
 "sen" = (
 /obj/structure/toilet{
 	dir = 8
@@ -32444,7 +32366,9 @@
 	},
 /obj/structure/chair/pew/right,
 /obj/machinery/light/floor,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/syndicate_mothership/control)
 "soI" = (
 /obj/structure/dresser{
@@ -32522,16 +32446,16 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership)
 "suT" = (
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/centcom/holding)
 "svK" = (
 /obj/structure/bed,
 /obj/item/bedsheet/vulp/vulp3,
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
+/turf/open/indestructible/cobble/corner{
+	light_range = 3
 	},
-/turf/open/indestructible/cobble/corner,
 /area/centcom/holding/exterior)
 "svX" = (
 /obj/effect/turf_decal/tile/brown/fourcorners,
@@ -32744,12 +32668,9 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "sIU" = (
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
-	},
 /turf/open/indestructible/cobble/corner{
-	dir = 1
+	dir = 1;
+	light_range = 3
 	},
 /area/centcom/holding/exterior)
 "sJf" = (
@@ -32834,7 +32755,9 @@
 /turf/open/indestructible/hoteltile,
 /area/centcom/holding)
 "sOh" = (
-/turf/open/floor/plating/beach/sand,
+/turf/open/floor/plating/beach/sand{
+	light_range = 3
+	},
 /area/centcom/holding)
 "sOV" = (
 /obj/effect/turf_decal/tile/brown/fourcorners,
@@ -32872,11 +32795,9 @@
 	name = "thick vines";
 	opacity = 1
 	},
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
+/turf/open/floor/plating/beach/sand{
+	light_range = 3
 	},
-/turf/open/floor/plating/beach/sand,
 /area/centcom/holding/exterior)
 "sQg" = (
 /obj/machinery/light{
@@ -33124,7 +33045,9 @@
 /area/centcom/holding)
 "tqp" = (
 /obj/structure/fluff/beach_umbrella/science,
-/turf/open/floor/plating/beach/sand,
+/turf/open/floor/plating/beach/sand{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "tqJ" = (
 /obj/effect/turf_decal/tile/neutral{
@@ -33287,12 +33210,9 @@
 /turf/open/indestructible/hoteltile,
 /area/centcom/holding)
 "tJf" = (
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
-	},
 /turf/open/indestructible/cobble/side{
-	dir = 4
+	dir = 4;
+	light_range = 3
 	},
 /area/centcom/holding/exterior)
 "tJx" = (
@@ -33409,12 +33329,6 @@
 /obj/item/paper_bin,
 /turf/open/indestructible/hoteltile,
 /area/centcom/holding)
-"tRT" = (
-/obj/structure/flora/tree/jungle/small{
-	icon_state = "tree4"
-	},
-/turf/open/floor/grass/grass0,
-/area/centcom/holding/exterior)
 "tSb" = (
 /obj/machinery/vending/cigarette/syndicate,
 /obj/machinery/vending/cigarette/syndicate,
@@ -34189,13 +34103,6 @@
 /obj/structure/girder,
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
-"vbR" = (
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
-	},
-/turf/open/indestructible/hotelwood,
-/area/centcom/holding/exterior)
 "vch" = (
 /obj/structure/statue/bone/rib,
 /obj/effect/turf_decal/stripes{
@@ -34259,11 +34166,9 @@
 	desc = "A cute toy that resembles an even cuter bee.... They don't smell very good";
 	name = "Bin Bee"
 	},
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
+/turf/open/floor/plating/beach/sand{
+	light_range = 3
 	},
-/turf/open/floor/plating/beach/sand,
 /area/centcom/holding/exterior)
 "vfw" = (
 /obj/effect/turf_decal/stripes/line{
@@ -34275,11 +34180,9 @@
 /obj/structure/flora/rock/pile{
 	icon_state = "basalt3"
 	},
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
+/turf/open/floor/grass/grass0{
+	light_range = 3
 	},
-/turf/open/floor/grass/grass0,
 /area/centcom/holding/exterior)
 "vfS" = (
 /obj/item/kirbyplants/hedge{
@@ -34319,18 +34222,13 @@
 /obj/structure/flora/tree/jungle/small{
 	icon_state = "tree5"
 	},
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "viE" = (
 /turf/open/pool,
 /area/centcom/holding)
-"viP" = (
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
-	},
-/turf/open/floor/mineral/plastitanium/yellow,
-/area/centcom/holding/exterior)
 "viS" = (
 /obj/machinery/atmospherics/components/binary/pump/on{
 	dir = 4
@@ -34392,7 +34290,26 @@
 	dir = 9
 	},
 /obj/item/toy/plush/gondola,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
+/area/centcom/holding)
+"vlT" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 1
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/iron/white,
 /area/centcom/holding)
 "vmG" = (
 /obj/structure/table/abductor,
@@ -34457,7 +34374,9 @@
 /area/space)
 "vpn" = (
 /obj/structure/flora/tree/jungle,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "vpz" = (
 /obj/effect/turf_decal/tile/brown{
@@ -34639,13 +34558,6 @@
 /obj/item/clothing/shoes/sandal,
 /turf/open/floor/plasteel/showroomfloor,
 /area/centcom/holding)
-"vGx" = (
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
-	},
-/turf/open/floor/plating/beach/sand,
-/area/centcom/holding/exterior)
 "vHr" = (
 /obj/item/pizzabox/meat{
 	pixel_y = 10
@@ -34998,7 +34910,9 @@
 /area/centcom/holding)
 "wcO" = (
 /obj/structure/fence/door,
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/mineral/plastitanium{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "wcR" = (
 /obj/machinery/vending/cola/random,
@@ -35048,6 +34962,11 @@
 	},
 /turf/open/indestructible,
 /area/centcom)
+"wfL" = (
+/obj/structure/table/abductor,
+/obj/machinery/light/directional/north,
+/turf/open/floor/mineral/abductor,
+/area/centcom/holding)
 "wfN" = (
 /obj/structure/table/abductor,
 /obj/item/dildo,
@@ -35211,7 +35130,9 @@
 /area/centcom/control)
 "wsN" = (
 /obj/structure/easel,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "wsQ" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible,
@@ -35386,11 +35307,9 @@
 "wGK" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/anvil,
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
+/turf/open/floor/grass/grass0{
+	light_range = 3
 	},
-/turf/open/floor/grass/grass0,
 /area/centcom/holding/exterior)
 "wGP" = (
 /obj/structure/lattice,
@@ -35398,18 +35317,6 @@
 /obj/structure/lattice,
 /turf/open/space/basic,
 /area/syndicate_mothership/control)
-"wHT" = (
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
-	},
-/turf/open/floor/spooktime/beach/coasts/watercoastN{
-	footstep = "water";
-	heavyfootstep = "water";
-	barefootstep = "water";
-	clawfootstep = "water"
-	},
-/area/centcom/holding/exterior)
 "wIk" = (
 /obj/machinery/vending/engivend,
 /turf/open/floor/plating,
@@ -35419,7 +35326,9 @@
 	density = 1
 	},
 /obj/effect/decal/fakelattice,
-/turf/open/floor/plating/beach/sand,
+/turf/open/floor/plating/beach/sand{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "wIy" = (
 /turf/closed/indestructible/necropolis,
@@ -35539,12 +35448,9 @@
 "wTR" = (
 /obj/structure/bed,
 /obj/item/bedsheet/vulp/vulp2,
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
-	},
 /turf/open/indestructible/cobble/side{
-	dir = 4
+	dir = 4;
+	light_range = 3
 	},
 /area/centcom/holding/exterior)
 "wTX" = (
@@ -35589,7 +35495,9 @@
 /area/centcom/holding)
 "wWs" = (
 /obj/structure/fluff/beach_umbrella/syndi,
-/turf/open/floor/plating/beach/sand,
+/turf/open/floor/plating/beach/sand{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "wWV" = (
 /obj/effect/turf_decal/tile/neutral{
@@ -35951,9 +35859,6 @@
 /obj/structure/fans/tiny/invisible,
 /turf/open/floor/iron/stairs,
 /area/centcom/holding)
-"xqC" = (
-/turf/open/floor/mineral/plastitanium,
-/area/centcom/holding/exterior)
 "xqS" = (
 /obj/structure/bed,
 /obj/item/bedsheet/inteq,
@@ -36009,7 +35914,9 @@
 /area/syndicate_mothership/control)
 "xvd" = (
 /obj/structure/fans/tiny/invisible,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/centcom/holding/exterior)
 "xvG" = (
 /obj/structure/table/wood,
@@ -36112,14 +36019,6 @@
 	},
 /turf/open/floor/grass,
 /area/centcom)
-"xAJ" = (
-/obj/structure/flora/rock/pile,
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
-	},
-/turf/open/floor/grass/grass0,
-/area/centcom/holding/exterior)
 "xBf" = (
 /obj/structure/chair/stool/directional/south{
 	dir = 1
@@ -36171,11 +36070,9 @@
 /area/syndicate_mothership/control)
 "xDK" = (
 /obj/effect/turf_decal/sand,
-/obj/effect/light_emitter{
-	set_cap = 1;
-	set_luminosity = 4
+/turf/open/floor/plating/beach/sand{
+	light_range = 3
 	},
-/turf/open/floor/plating/beach/sand,
 /area/centcom/holding/exterior)
 "xDR" = (
 /obj/effect/turf_decal/tile/brown/half/contrasted{
@@ -36201,9 +36098,6 @@
 /obj/item/clothing/under/dress/redeveninggown,
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding)
-"xGx" = (
-/turf/closed/indestructible/opshuttle,
-/area/centcom/holding/exterior)
 "xHl" = (
 /obj/structure/closet/crate,
 /obj/effect/spawner/lootdrop/maintenance,
@@ -36277,7 +36171,9 @@
 	dir = 1
 	},
 /obj/structure/chair/pew/left,
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/syndicate_mothership/control)
 "xOw" = (
 /obj/effect/turf_decal/stripes/line{
@@ -36535,6 +36431,10 @@
 /obj/item/lightreplacer,
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding)
+"yhn" = (
+/obj/machinery/light/directional/east,
+/turf/open/floor/iron/dark/smooth_large,
+/area/centcom/holding)
 "yhR" = (
 /obj/structure/chair/sofa/corp/left{
 	dir = 1
@@ -36562,7 +36462,9 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/open/floor/grass/grass0,
+/turf/open/floor/grass/grass0{
+	light_range = 3
+	},
 /area/syndicate_mothership/control)
 "yim" = (
 /obj/item/kirbyplants/hedge{
@@ -45358,17 +45260,17 @@ aFe
 aFe
 aFe
 aFe
-sef
-aWS
-sef
-cKo
-sef
+fON
+oiE
+fON
+dby
+fON
 ncJ
 ncJ
 ncJ
 ncJ
 ncJ
-aWS
+oiE
 fON
 lVP
 lVP
@@ -45385,7 +45287,7 @@ lVP
 lVP
 lVP
 jVl
-vmG
+wfL
 tNq
 vmG
 rrP
@@ -45604,27 +45506,27 @@ ncJ
 ncJ
 kGh
 wGK
-sef
-sef
-sef
-sef
-sef
-pbO
+fON
+fON
+fON
+fON
+fON
+vpn
 aFe
 gQj
 meC
 xBK
 aFe
-sef
 fON
 fON
 fON
 fON
-sef
-sef
-pbO
-sef
-sef
+fON
+fON
+fON
+vpn
+fON
+fON
 fON
 fON
 fON
@@ -45866,13 +45768,13 @@ fON
 dby
 fON
 fON
-sef
+fON
 aFe
 dlw
 gQj
 iDu
 aFe
-sef
+fON
 fON
 fON
 fON
@@ -46123,13 +46025,13 @@ fON
 fON
 fON
 fON
-sef
+fON
 aFe
 gCx
 gQj
 gQj
 aFe
-sef
+fON
 fON
 fON
 fON
@@ -46380,13 +46282,13 @@ fON
 fON
 fON
 fON
-sef
+fON
 aFe
 kYL
 gQj
 iDu
 aFe
-sef
+fON
 fON
 fON
 fON
@@ -46413,7 +46315,7 @@ lVP
 lVP
 lVP
 jVl
-vmG
+wfL
 tNq
 hYi
 rrP
@@ -46628,22 +46530,22 @@ iUm
 okd
 ncJ
 ncJ
-sef
-sef
-sef
-sef
-sef
-sef
 fON
 fON
 fON
-sef
+fON
+fON
+fON
+fON
+fON
+fON
+fON
 aFe
 aFe
 cot
 aFe
 aFe
-sef
+fON
 fON
 dby
 fON
@@ -46891,15 +46793,15 @@ aFe
 ryB
 aFe
 aFe
-sef
+fON
 fON
 fON
 dby
-sef
-sef
-sef
-sef
-sef
+fON
+fON
+fON
+fON
+fON
 fON
 fON
 fON
@@ -46918,7 +46820,7 @@ fON
 jQd
 fON
 fON
-sef
+fON
 aFe
 aFe
 aFe
@@ -47148,7 +47050,7 @@ whd
 oom
 oom
 aFe
-sef
+fON
 fON
 fON
 fON
@@ -47175,7 +47077,7 @@ fON
 fON
 fON
 fON
-sef
+fON
 aFe
 dOU
 xYG
@@ -47405,7 +47307,7 @@ whd
 oom
 xpu
 aFe
-sef
+fON
 fON
 fON
 fON
@@ -47432,7 +47334,7 @@ dby
 fON
 fON
 fON
-sef
+fON
 uFL
 rnA
 rnA
@@ -47662,7 +47564,7 @@ oom
 oom
 oom
 vzK
-sef
+fON
 fON
 fON
 fON
@@ -47689,7 +47591,7 @@ fON
 fON
 fON
 fON
-sef
+fON
 aFe
 iSO
 rnA
@@ -47919,7 +47821,7 @@ tnw
 oom
 oom
 aFe
-cKo
+dby
 fON
 fON
 fON
@@ -47946,7 +47848,7 @@ fON
 fON
 fON
 fON
-sef
+fON
 aFe
 aFe
 aFe
@@ -48176,7 +48078,7 @@ dji
 oom
 fjw
 aFe
-sef
+fON
 fON
 fON
 fON
@@ -48204,7 +48106,7 @@ vpn
 fON
 fON
 fON
-sef
+fON
 ncJ
 ncJ
 ncJ
@@ -48433,7 +48335,7 @@ aFe
 who
 aFe
 aFe
-sef
+fON
 fON
 fON
 fON
@@ -48461,7 +48363,7 @@ fON
 fON
 fON
 fON
-sef
+fON
 ncJ
 iPk
 iPk
@@ -48689,7 +48591,7 @@ xjJ
 mkh
 uYX
 fmk
-sef
+fON
 fON
 fON
 fON
@@ -48718,7 +48620,7 @@ dby
 fON
 fON
 fON
-sef
+fON
 ncJ
 iPk
 iPk
@@ -48946,7 +48848,7 @@ uiZ
 lpv
 uYX
 fmk
-sef
+fON
 fON
 fON
 fON
@@ -48975,7 +48877,7 @@ fON
 fON
 fON
 fON
-sef
+fON
 ncJ
 ncJ
 iPk
@@ -48988,11 +48890,11 @@ vXs
 tNq
 waX
 hPY
+yhn
 hPY
 hPY
 hPY
-hPY
-hPY
+yhn
 hPY
 jVl
 djZ
@@ -49203,21 +49105,12 @@ lpv
 lpv
 uYX
 fmk
-sef
 fON
 fON
 fON
 fON
 fON
 fON
-fON
-fON
-fON
-fON
-fON
-fON
-fON
-pbN
 fON
 fON
 fON
@@ -49233,7 +49126,16 @@ fON
 fON
 fON
 fON
-aWS
+fON
+fON
+pbN
+fON
+fON
+fON
+fON
+fON
+fON
+oiE
 ncJ
 iPk
 rmc
@@ -49460,7 +49362,7 @@ uYX
 uYX
 uYX
 fmk
-sef
+fON
 fON
 fON
 dby
@@ -49471,8 +49373,8 @@ fON
 fON
 fON
 fON
-tRT
-tRT
+clt
+clt
 fON
 fON
 fON
@@ -49490,7 +49392,7 @@ fON
 fON
 fON
 fON
-sef
+fON
 ncJ
 iPk
 iPk
@@ -49717,7 +49619,7 @@ aFe
 aFe
 aFe
 aFe
-sef
+fON
 oiE
 fON
 fON
@@ -49747,7 +49649,7 @@ fON
 fON
 fON
 dby
-sef
+fON
 ncJ
 iPk
 iPk
@@ -49968,23 +49870,23 @@ ncJ
 iPk
 iPk
 ncJ
-sef
-sef
-sef
-jkx
-sef
-sef
-cKo
-sef
-sef
-sef
-sef
-sef
-sef
-sef
-sef
-sef
-sef
+fON
+fON
+fON
+fON
+fON
+fON
+dby
+fON
+fON
+fON
+fON
+fON
+fON
+fON
+fON
+fON
+fON
 fON
 fON
 fON
@@ -50004,7 +49906,7 @@ iPB
 iPB
 fON
 fON
-sef
+fON
 ncJ
 ncJ
 iPk
@@ -50225,11 +50127,11 @@ ncJ
 iPk
 iPk
 ncJ
-sef
 fON
 fON
 fON
-sef
+fON
+fON
 aFe
 aFe
 aFe
@@ -50262,7 +50164,7 @@ iPB
 fON
 fON
 fON
-sef
+fON
 ncJ
 ncJ
 ncJ
@@ -50482,11 +50384,11 @@ ncJ
 iPk
 iPk
 ncJ
-sef
+fON
 fON
 fON
 oiE
-sef
+fON
 aFe
 fKO
 idJ
@@ -50520,8 +50422,8 @@ fON
 fON
 fON
 fON
-sef
-pbO
+fON
+vpn
 ncJ
 ncJ
 ncJ
@@ -50743,7 +50645,7 @@ vfG
 fON
 fON
 fON
-sef
+fON
 aFe
 qZx
 qZx
@@ -50779,15 +50681,15 @@ fON
 fON
 fON
 fON
-sef
-sef
-qrr
-sef
 fON
-sef
-sef
-sef
-sef
+fON
+xvd
+fON
+fON
+fON
+fON
+fON
+fON
 ncJ
 ncJ
 ncJ
@@ -50996,11 +50898,11 @@ ncJ
 iPk
 iUm
 ncJ
-sef
 fON
 fON
 fON
-sef
+fON
+fON
 aFe
 lXR
 fUm
@@ -51045,10 +50947,10 @@ fON
 fON
 fON
 fON
-sef
-sef
-sef
-sef
+fON
+fON
+fON
+fON
 fON
 lVP
 aaa
@@ -51253,11 +51155,11 @@ ncJ
 iUm
 iUm
 ncJ
-sef
-sef
-ioC
-sef
-sef
+fON
+fON
+pbN
+fON
+fON
 aFe
 aFe
 aFe
@@ -52591,7 +52493,7 @@ ncJ
 clV
 fON
 fON
-sef
+fON
 aFe
 aFe
 aFe
@@ -52823,7 +52725,7 @@ wTR
 tJf
 tJf
 kql
-sef
+fON
 fON
 fON
 fON
@@ -52848,7 +52750,7 @@ ncJ
 ncJ
 jQd
 fON
-sef
+fON
 aFe
 xwL
 lFP
@@ -53081,16 +52983,16 @@ aFe
 aFe
 aFe
 aFe
-sef
-sef
-sef
-sef
+fON
+fON
+fON
+fON
 fON
 fON
 fON
 ncJ
 meb
-cHD
+oom
 oom
 oom
 oom
@@ -53105,7 +53007,7 @@ ncJ
 ncJ
 fON
 fON
-sef
+fON
 aFe
 xwL
 lFP
@@ -53342,7 +53244,7 @@ aFe
 qOl
 aFe
 aFe
-qrr
+xvd
 xvd
 xvd
 ncJ
@@ -53362,7 +53264,7 @@ ncJ
 ncJ
 fON
 fON
-sef
+fON
 aFe
 xwL
 lFP
@@ -53599,7 +53501,7 @@ xfS
 oom
 wAY
 aFe
-sef
+fON
 fON
 fON
 ncJ
@@ -53619,7 +53521,7 @@ ncJ
 ncJ
 dby
 fON
-sef
+fON
 aFe
 xwL
 lFP
@@ -53856,7 +53758,7 @@ xfS
 oom
 qcq
 aFe
-sef
+fON
 fON
 fON
 oiE
@@ -53876,7 +53778,7 @@ ncJ
 ncJ
 ncJ
 fON
-sef
+fON
 ubf
 lFP
 lFP
@@ -54113,7 +54015,7 @@ bNy
 oom
 kJC
 aFe
-sef
+fON
 fON
 fON
 fON
@@ -54133,7 +54035,7 @@ ncJ
 ncJ
 ncJ
 fON
-sef
+fON
 aFe
 xwL
 lFP
@@ -54370,7 +54272,7 @@ bNy
 oom
 kJC
 aFe
-sef
+fON
 fON
 fON
 fON
@@ -54390,7 +54292,7 @@ ncJ
 ncJ
 ncJ
 fON
-sef
+fON
 aFe
 xwL
 lFP
@@ -54627,7 +54529,7 @@ aFe
 oom
 aFe
 aFe
-sef
+fON
 fON
 fON
 fON
@@ -54647,7 +54549,7 @@ ncJ
 ncJ
 ncJ
 fON
-sef
+fON
 aFe
 eZG
 eZG
@@ -54884,7 +54786,7 @@ xVA
 oom
 xXp
 aFe
-sef
+fON
 fON
 fON
 fON
@@ -54904,7 +54806,7 @@ ncJ
 ncJ
 ncJ
 fON
-sef
+fON
 aFe
 eZG
 eZG
@@ -55141,7 +55043,7 @@ oom
 oom
 kJC
 aFe
-sef
+fON
 fON
 fON
 ncJ
@@ -55161,7 +55063,7 @@ ncJ
 ncJ
 ncJ
 fON
-sef
+fON
 aFe
 aFe
 aFe
@@ -55382,7 +55284,7 @@ pze
 pze
 pze
 wJH
-oFh
+vlT
 qZx
 qZx
 qZx
@@ -55398,7 +55300,7 @@ deS
 oom
 kJC
 aFe
-sef
+fON
 fON
 fON
 ncJ
@@ -55655,7 +55557,7 @@ oom
 oom
 bNy
 aFe
-sef
+fON
 fON
 fON
 ncJ
@@ -55912,7 +55814,7 @@ oom
 oom
 bNy
 aFe
-sef
+fON
 fON
 fON
 ncJ
@@ -56169,7 +56071,7 @@ oom
 bNy
 aFe
 aFe
-sef
+fON
 fON
 dby
 fON
@@ -56410,13 +56312,13 @@ ieD
 aBU
 jMU
 wJH
-sef
-sef
-vbR
-vbR
-vbR
-sef
-sef
+fON
+fON
+tmb
+tmb
+tmb
+fON
+fON
 aFe
 mvp
 mqD
@@ -56425,7 +56327,7 @@ oom
 oom
 oJZ
 aFe
-aWS
+oiE
 fON
 fON
 fON
@@ -56667,13 +56569,13 @@ ryB
 ryB
 wJH
 wJH
-sef
+fON
 fON
 tmb
 tmb
 tmb
 fON
-sef
+fON
 aFe
 aFe
 aFe
@@ -56682,7 +56584,7 @@ oom
 vbm
 aFe
 aFe
-sef
+fON
 fON
 fON
 fON
@@ -56931,14 +56833,14 @@ tmb
 tmb
 fON
 fON
-sef
+fON
 aFe
 mvp
 mqD
 oom
 pgm
 aFe
-sef
+fON
 fON
 fON
 fON
@@ -57169,18 +57071,18 @@ iPk
 ncJ
 lVP
 lVP
-xqC
-xqC
-xqC
-xqC
 fph
 fph
 fph
-xqC
-xqC
-xqC
-xqC
-pjZ
+fph
+fph
+fph
+fph
+fph
+fph
+fph
+fph
+nyV
 oiE
 fON
 tmb
@@ -57188,14 +57090,14 @@ tmb
 tmb
 fON
 fON
-sef
+fON
 aFe
 aFe
 aFe
 ryB
 aFe
 aFe
-sef
+fON
 fON
 fON
 fON
@@ -57393,18 +57295,18 @@ ahl
 ahl
 ahl
 ahl
-akt
+ahl
 aMD
-akt
-akt
-akt
-akt
-akt
-akt
-akt
-akt
-akt
-akt
+ahl
+ahl
+ahl
+ahl
+ahl
+ahl
+ahl
+ahl
+ahl
+ahl
 ahl
 ahh
 aaa
@@ -57424,20 +57326,20 @@ iUm
 iPk
 iPk
 iPk
-sef
-pjZ
-xqC
-xqC
-xqC
+fON
+nyV
+fph
+fph
+fph
 fph
 ryB
 ryB
 ryB
 fph
-xqC
-xqC
-xqC
-pjZ
+fph
+fph
+fph
+nyV
 fON
 tmb
 tmb
@@ -57446,12 +57348,12 @@ tmb
 fON
 jQd
 fON
-sef
-sef
-sef
-sef
-sef
-xAJ
+fON
+fON
+fON
+fON
+fON
+jQd
 fON
 fON
 fON
@@ -57644,13 +57546,13 @@ ahl
 ahl
 ahl
 ahl
-akt
-akt
-akt
-akt
-akt
-akt
-akt
+ahl
+ahl
+ahl
+ahl
+ahl
+ahl
+ahl
 avs
 avs
 avs
@@ -57661,7 +57563,7 @@ avs
 avs
 avs
 avs
-akt
+ahl
 ahl
 ahh
 aaa
@@ -57681,20 +57583,20 @@ iUm
 iUm
 iUm
 iPk
-sef
-pjZ
-xqC
-xqC
+fON
+nyV
+fph
 nIA
+fph
 fph
 ryB
 fhB
 ryB
 fph
-xqC
+fph
 nIA
-xqC
-pjZ
+fph
+nyV
 tmb
 tmb
 tmb
@@ -57901,7 +57803,7 @@ ahl
 amy
 ahl
 ahl
-akt
+ahl
 avs
 avs
 avs
@@ -57918,7 +57820,7 @@ aRP
 aRP
 aRP
 avs
-akt
+ahl
 ahl
 ahh
 aaa
@@ -57938,19 +57840,19 @@ iUm
 iUm
 iUm
 ncJ
-sef
-pjZ
-xqC
-xqC
+fON
+nyV
+fph
 nIA
+fph
 fph
 gQH
 lNX
 gQH
 fph
-xqC
+fph
 nIA
-xqC
+fph
 kNK
 tmb
 tmb
@@ -58158,7 +58060,7 @@ ahl
 ahl
 ahl
 ahl
-akt
+ahl
 avs
 aRP
 aRP
@@ -58175,7 +58077,7 @@ aRP
 aRP
 aRP
 avs
-akt
+ahl
 ahl
 ahh
 aaa
@@ -58195,11 +58097,11 @@ okd
 iUm
 iUm
 ncJ
-sef
-pjZ
-xqC
-xqC
-viP
+fON
+nyV
+fph
+nIA
+fph
 gQH
 gQH
 bBr
@@ -58207,8 +58109,8 @@ gQH
 gQH
 fph
 nIA
-xqC
-pjZ
+fph
+nyV
 tmb
 tmb
 tmb
@@ -58409,13 +58311,13 @@ ahl
 ahl
 ahl
 ahl
-akt
-akt
-akt
-akt
-akt
-akt
-akt
+ahl
+ahl
+ahl
+ahl
+ahl
+ahl
+ahl
 avs
 aRP
 aRP
@@ -58432,7 +58334,7 @@ aRP
 aRP
 aRP
 avs
-akt
+ahl
 ahl
 ahh
 aaa
@@ -58452,11 +58354,11 @@ okd
 okd
 ncJ
 ncJ
-sef
+fON
 wcO
-xqC
-xqC
-viP
+fph
+nIA
+fph
 gQH
 sNz
 tHJ
@@ -58464,8 +58366,8 @@ gYc
 bpW
 fph
 nIA
-xqC
-pjZ
+fph
+nyV
 fON
 tmb
 tmb
@@ -58689,7 +58591,7 @@ aRP
 aRP
 avs
 avs
-akt
+ahl
 ahl
 ahh
 aaa
@@ -58708,21 +58610,21 @@ iPk
 iUm
 ncJ
 ncJ
-sef
-sef
-pjZ
-xqC
-xqC
-dJi
+fON
+fON
+nyV
+fph
+nIA
+gQH
 gQH
 wXP
 gYc
 nTx
 gQH
-dJi
+gQH
 nIA
-xqC
-pjZ
+fph
+nyV
 fON
 fON
 tmb
@@ -58743,8 +58645,8 @@ fON
 fON
 fON
 fON
-tRT
-tRT
+clt
+clt
 fON
 fON
 fON
@@ -58945,8 +58847,8 @@ aRP
 aRP
 aRP
 avs
-akt
-akt
+ahl
+ahl
 ahl
 ahh
 aaa
@@ -58965,21 +58867,21 @@ nec
 iUm
 ncJ
 ncJ
-aWS
+oiE
 fON
-pjZ
-xqC
-xGx
-dJi
+nyV
+fph
+gQH
+gQH
 gQH
 xDl
 gYc
 mFh
 gQH
-dJi
-xGx
-xqC
-pjZ
+gQH
+gQH
+fph
+nyV
 fON
 fON
 dby
@@ -59006,11 +58908,11 @@ fON
 fON
 fON
 fON
-sef
-ioC
-sef
-sef
-sef
+fON
+pbN
+fON
+fON
+fON
 fON
 fON
 fON
@@ -59202,7 +59104,7 @@ aRP
 aRP
 aRP
 avs
-akt
+ahl
 ahl
 ahl
 ahh
@@ -59222,21 +59124,21 @@ iPk
 iUm
 iUm
 ncJ
-sef
 fON
-pjZ
-xqC
-xGx
-dJi
+fON
+nyV
+fph
+gQH
+gQH
 gQH
 wXP
 gYc
 nTx
 gQH
-dJi
-xGx
-xqC
-pjZ
+gQH
+gQH
+fph
+nyV
 fON
 fON
 fON
@@ -59268,7 +59170,7 @@ hmY
 hmY
 hmY
 hmY
-sef
+fON
 fON
 fON
 fON
@@ -59459,7 +59361,7 @@ aRP
 aRP
 aRP
 avs
-akt
+ahl
 ahl
 ahl
 ahh
@@ -59479,11 +59381,11 @@ iUm
 iUm
 okd
 ncJ
-sef
 fON
-pjZ
-xqC
-xqC
+fON
+nyV
+fph
+nIA
 kwJ
 gQH
 yia
@@ -59492,8 +59394,8 @@ gYc
 gQH
 fph
 rsH
-xqC
-pjZ
+fph
+nyV
 fON
 fON
 fON
@@ -59519,13 +59421,13 @@ fON
 fON
 fON
 fON
-sef
+fON
 hmY
 jWJ
 wnZ
 cHL
 hmY
-cKo
+dby
 fON
 fON
 fON
@@ -59716,7 +59618,7 @@ aRP
 aRP
 aRP
 avs
-akt
+ahl
 ahl
 ahl
 ahh
@@ -59736,12 +59638,12 @@ iUm
 iUm
 iUm
 ncJ
-sef
 fON
-pjZ
-xqC
-xqC
-viP
+fON
+nyV
+fph
+nIA
+fph
 gQH
 hLa
 hLa
@@ -59749,8 +59651,8 @@ hLa
 gQH
 fph
 nIA
-xqC
-pjZ
+fph
+nyV
 fON
 fON
 fON
@@ -59763,26 +59665,26 @@ fON
 fON
 fON
 fON
-sef
-sef
-sef
-sef
-sef
-sef
-aWS
 fON
 fON
 fON
 fON
 fON
 fON
-sef
+oiE
+fON
+fON
+fON
+fON
+fON
+fON
+fON
 hmY
 csM
 pLM
 pLM
 hmY
-sef
+fON
 fON
 fON
 fON
@@ -59973,7 +59875,7 @@ aRP
 aRP
 aRP
 avs
-akt
+ahl
 ahl
 amy
 ahh
@@ -59993,12 +59895,12 @@ iUm
 iUm
 ncJ
 ncJ
-sef
 fON
-pjZ
-xqC
-xqC
-viP
+fON
+nyV
+fph
+nIA
+fph
 gQH
 gQH
 gQH
@@ -60006,8 +59908,8 @@ gQH
 gQH
 fph
 nIA
-xqC
-pjZ
+fph
+nyV
 fON
 fON
 fON
@@ -60019,7 +59921,7 @@ fON
 fON
 fON
 fON
-sef
+fON
 aFe
 aFe
 aFe
@@ -60027,19 +59929,19 @@ aFe
 aFe
 aFe
 aFe
-sef
 fON
 fON
-tRT
+fON
+clt
 fON
 fON
-sef
+fON
 hmY
 ptm
 pLM
 xvV
 hmY
-sef
+fON
 fON
 fON
 fON
@@ -60230,7 +60132,7 @@ aRP
 aRP
 aRP
 avs
-akt
+ahl
 ahl
 ahl
 ahh
@@ -60250,21 +60152,21 @@ iUm
 okd
 ncJ
 ncJ
-sef
 fON
-pjZ
-xqC
-xqC
+fON
+nyV
+fph
 nIA
 fph
 fph
 fph
 fph
 fph
-xqC
+fph
+fph
 nIA
-xqC
-pjZ
+fph
+nyV
 fON
 fON
 jQd
@@ -60276,7 +60178,7 @@ fON
 fON
 fON
 fON
-sef
+fON
 aFe
 jJp
 aFe
@@ -60284,19 +60186,19 @@ bar
 xjo
 sps
 aFe
-sef
+fON
 fON
 fON
 fON
 dby
-sef
+fON
 hmY
 hmY
 hmY
 bdH
 hmY
 hmY
-sef
+fON
 fON
 fON
 lVP
@@ -60487,8 +60389,8 @@ aRP
 aRP
 aRP
 avs
-akt
-akt
+ahl
+ahl
 ahl
 ahh
 aaa
@@ -60507,21 +60409,21 @@ iUm
 okd
 okd
 ncJ
-sef
-sef
-pjZ
-xqC
-xqC
-xqC
-xqC
-xqC
-xqC
-xqC
-xqC
-xqC
-xqC
-xqC
-pjZ
+fON
+fON
+nyV
+fph
+fph
+fph
+fph
+fph
+fph
+fph
+fph
+fph
+fph
+fph
+nyV
 fON
 fON
 pbN
@@ -60533,7 +60435,7 @@ dby
 fON
 fON
 fON
-sef
+fON
 aFe
 saC
 ueZ
@@ -60541,19 +60443,19 @@ rnA
 rnA
 iqo
 fmk
-sef
 fON
 fON
 fON
 fON
-sef
+fON
+fON
 hmY
 sZu
 pWE
 oom
 ebM
 hmY
-sef
+fON
 fON
 fON
 lVP
@@ -60745,7 +60647,7 @@ aRP
 aRP
 avs
 avs
-akt
+ahl
 ahl
 ahh
 aaa
@@ -60765,20 +60667,20 @@ iUm
 iUm
 ncJ
 ncJ
-sef
-pjZ
-xqC
-xqC
-xqC
-xqC
-xqC
-xqC
-xqC
-xqC
-xqC
-xqC
-xqC
-pjZ
+fON
+nyV
+fph
+fph
+fph
+fph
+fph
+fph
+fph
+fph
+fph
+fph
+fph
+nyV
 fON
 fON
 dby
@@ -60790,7 +60692,7 @@ fON
 fON
 fON
 dby
-sef
+fON
 aFe
 aFe
 aFe
@@ -60798,19 +60700,19 @@ aFe
 uTC
 aFe
 aFe
-sef
+fON
 fON
 fON
 oiE
 fON
-sef
+fON
 dbo
 wRJ
 oom
 kAR
 vgC
 dbo
-sef
+fON
 fON
 lVP
 nWY
@@ -60979,13 +60881,13 @@ ahl
 ahl
 ahl
 ahl
-akt
-akt
-akt
-akt
-akt
-akt
-akt
+ahl
+ahl
+ahl
+ahl
+ahl
+ahl
+ahl
 avs
 aRP
 aRP
@@ -61002,7 +60904,7 @@ aRP
 aRP
 aRP
 avs
-akt
+ahl
 ahl
 ahh
 aaa
@@ -61022,20 +60924,20 @@ iPt
 iUm
 iUm
 ncJ
-sef
-pjZ
-xqC
-xqC
-xqC
-xqC
-xqC
-xqC
-xqC
-xqC
-xqC
-xqC
-xqC
-pjZ
+fON
+nyV
+fph
+fph
+fph
+fph
+fph
+fph
+fph
+fph
+fph
+fph
+fph
+nyV
 fON
 fON
 fON
@@ -61048,26 +60950,26 @@ fON
 pbN
 fON
 fON
-aWS
+oiE
 aFe
 qtI
 oom
 oom
 oom
 aFe
-sef
 fON
 fON
 fON
 fON
-sef
+fON
+fON
 tYG
 iOM
 oom
 oom
 dlI
 dbo
-sef
+fON
 dby
 lVP
 nWY
@@ -61242,7 +61144,7 @@ ahl
 ahl
 ahl
 ahl
-akt
+ahl
 avs
 aRP
 aRP
@@ -61259,7 +61161,7 @@ aRP
 aRP
 aRP
 avs
-akt
+ahl
 ahl
 ahh
 aaa
@@ -61305,26 +61207,26 @@ tmb
 tmb
 tmb
 tmb
-vbR
+tmb
 iSp
 oom
 fkv
 uDO
 jMs
 aFe
-sef
 fON
 fON
 fON
 fON
-sef
+fON
+fON
 tYG
 iOM
 oom
 oom
 oom
 sGG
-sef
+fON
 fON
 lVP
 nWY
@@ -61499,7 +61401,7 @@ ahl
 amy
 ahl
 ahl
-akt
+ahl
 avs
 avs
 avs
@@ -61516,7 +61418,7 @@ aRP
 aRP
 aRP
 avs
-akt
+ahl
 ahl
 ahh
 aaa
@@ -61562,26 +61464,26 @@ fON
 fON
 fON
 fON
-vbR
+tmb
 aFe
 oom
 edT
 eoG
 umz
 aFe
-sef
 fON
 fON
 fON
 fON
-sef
+fON
+fON
 tYG
 iOM
 oom
 oom
 kOj
 dbo
-sef
+fON
 fON
 lVP
 rJg
@@ -61738,16 +61640,16 @@ ahl
 ahl
 ahl
 ahl
-aTz
-aTz
-aTz
-aTz
-aTz
-aTz
-aTz
-aTz
-aTz
-aTz
+ahl
+ahl
+ahl
+ahl
+ahl
+ahl
+ahl
+ahl
+ahl
+ahl
 ahl
 ahl
 ahl
@@ -61756,13 +61658,13 @@ ahl
 ahl
 amz
 ahl
-akt
-akt
-akt
+ahl
+ahl
+ahl
 aku
 aWP
 aku
-akt
+ahl
 avs
 avs
 avs
@@ -61773,7 +61675,7 @@ avs
 avs
 avs
 avs
-akt
+ahl
 ahl
 ahh
 aaa
@@ -61819,26 +61721,26 @@ fON
 fON
 fON
 fON
-vbR
+tmb
 aFe
 aFe
 aFe
 aFe
 aFe
 aFe
-sef
 fON
 fON
 fON
 fON
-sef
+fON
+fON
 dbo
 iOM
 oom
 oom
 kOj
 sJw
-sef
+fON
 oiE
 lVP
 rJg
@@ -62004,7 +61906,7 @@ aQV
 aQV
 aQV
 aQV
-aUy
+anx
 ahl
 ahl
 amz
@@ -62015,22 +61917,22 @@ ahl
 amA
 ahl
 ahl
-akt
+ahl
 aku
 amU
 aku
-akt
-akt
-akt
-akt
-akt
-akt
-akt
-akt
-akt
-akt
-akt
-akt
+ahl
+ahl
+ahl
+ahl
+ahl
+ahl
+ahl
+ahl
+ahl
+ahl
+ahl
+ahl
 ahl
 ahh
 aaa
@@ -62077,25 +61979,25 @@ fON
 fON
 fON
 tmb
-sef
-sef
-sef
-sef
-sef
-sef
+fON
+fON
+fON
+fON
+fON
+fON
 fON
 fON
 fON
 vpn
 fON
-sef
+fON
 hmY
 mRm
 hIZ
 oMr
 rXY
 hmY
-sef
+fON
 fON
 lVP
 rJg
@@ -62261,32 +62163,32 @@ aKm
 any
 aSp
 aQV
-aTz
+ahl
 ahl
 ahl
 ahl
 ahl
 amz
 anx
-aTz
-aTz
-akt
-akt
-akt
+ahl
+ahl
+ahl
+ahl
+ahl
 aku
 aUH
 aku
-aTz
-aTz
-aTz
-aTz
+ahl
+ahl
+ahl
+ahl
 aQV
 aQV
 aQV
 aQV
 aQV
 aQV
-aTz
+ahl
 amz
 ahl
 ahh
@@ -62326,13 +62228,13 @@ fON
 fON
 tmb
 tmb
-sef
-sef
-aWS
-sef
-sef
-sef
-sef
+fON
+fON
+oiE
+fON
+fON
+fON
+fON
 tmb
 fON
 fON
@@ -62345,14 +62247,14 @@ fON
 fON
 fON
 fON
-sef
+fON
 hmY
 hmY
 rSb
 rSb
 hmY
 hmY
-sef
+fON
 dby
 lVP
 rJg
@@ -62518,14 +62420,14 @@ amU
 amU
 asg
 aQV
-aTz
+ahl
 ahl
 amz
 anx
 ahl
 ahl
-aTz
-aTz
+ahl
+ahl
 aQV
 aQV
 aQV
@@ -62543,7 +62445,7 @@ aFU
 aJY
 aqP
 aQV
-aUy
+anx
 ahl
 ahh
 ahh
@@ -62582,7 +62484,7 @@ fON
 fON
 fON
 tmb
-vbR
+tmb
 aFe
 aFe
 aFe
@@ -62590,7 +62492,7 @@ aFe
 aFe
 aFe
 aFe
-vbR
+tmb
 fON
 fON
 fON
@@ -62603,12 +62505,12 @@ fON
 fON
 fON
 fON
-sef
-sef
-sef
-sef
-sef
-sef
+fON
+fON
+fON
+fON
+fON
+fON
 fON
 fON
 lVP
@@ -62775,13 +62677,13 @@ amU
 amU
 asg
 aQV
-aTz
-aUG
-aTz
-aTz
-aTz
-aqa
-aTz
+ahl
+amz
+ahl
+ahl
+ahl
+amz
+ahl
 aQV
 auJ
 aRH
@@ -62839,7 +62741,7 @@ fON
 fON
 fON
 tmb
-vbR
+tmb
 aFe
 bcu
 gaR
@@ -62847,7 +62749,7 @@ oRZ
 wUA
 scb
 aFe
-vbR
+tmb
 fON
 fON
 pbN
@@ -63032,13 +62934,13 @@ amU
 amU
 aRj
 aQV
-aTz
-aTz
+ahl
+ahl
 aku
 aUJ
 aku
-aFg
-aTz
+amy
+ahl
 aQV
 aPq
 amU
@@ -63081,8 +62983,8 @@ ncJ
 ncJ
 lVP
 lVP
-sef
-sef
+fON
+fON
 fON
 fON
 fON
@@ -63096,7 +62998,7 @@ fON
 fON
 fON
 tmb
-vbR
+tmb
 reY
 tGh
 puP
@@ -63104,7 +63006,7 @@ pJe
 rnA
 rnA
 aFe
-vbR
+tmb
 fON
 fON
 fON
@@ -63289,13 +63191,13 @@ amU
 amU
 asg
 aQV
-aTz
-aFg
+ahl
+amy
 aku
 aNY
 aku
-aTz
-aTz
+ahl
+ahl
 aku
 aPq
 amU
@@ -63340,7 +63242,7 @@ jVl
 cBG
 jVl
 jVl
-sef
+fON
 fON
 fON
 fON
@@ -63353,7 +63255,7 @@ fON
 fON
 fON
 tmb
-vbR
+tmb
 aFe
 mAW
 dcj
@@ -63361,7 +63263,7 @@ vfo
 rnA
 rnA
 aFe
-vbR
+tmb
 fON
 fON
 fON
@@ -63597,7 +63499,7 @@ hAx
 hAx
 hAx
 jVl
-sef
+fON
 fON
 fON
 fON
@@ -63610,7 +63512,7 @@ fON
 fON
 fON
 tmb
-vbR
+tmb
 aFe
 aFe
 aFe
@@ -63618,7 +63520,7 @@ rnA
 rnA
 rnA
 plP
-vbR
+tmb
 fON
 fON
 fON
@@ -63855,7 +63757,7 @@ sav
 dpn
 jVl
 jVl
-sef
+fON
 fON
 fON
 fON
@@ -63867,7 +63769,7 @@ fON
 vpn
 fON
 tmb
-vbR
+tmb
 aFe
 dRs
 ueZ
@@ -63875,7 +63777,7 @@ rnA
 rnA
 rnA
 aFe
-vbR
+tmb
 fON
 fON
 fON
@@ -64112,7 +64014,7 @@ sav
 sav
 itf
 hua
-sef
+fON
 fON
 fON
 fON
@@ -64124,7 +64026,7 @@ fON
 fON
 fON
 tmb
-vbR
+tmb
 aFe
 pNQ
 aFe
@@ -64132,7 +64034,7 @@ hFZ
 pbF
 dBN
 aFe
-vbR
+tmb
 fON
 pbN
 jQd
@@ -64317,14 +64219,14 @@ amU
 amU
 asg
 aQV
-aTz
-aTz
-aTz
-aqa
-aFg
-aTz
-aTz
-aqa
+ahl
+ahl
+ahl
+amz
+amy
+ahl
+ahl
+amz
 aQV
 aQi
 aQi
@@ -64369,7 +64271,7 @@ sav
 sav
 itf
 kLu
-sef
+fON
 fON
 fON
 fON
@@ -64381,7 +64283,7 @@ fON
 fON
 fON
 tmb
-vbR
+tmb
 aFe
 aFe
 aFe
@@ -64389,7 +64291,7 @@ aFe
 aFe
 aFe
 aFe
-vbR
+tmb
 fON
 fON
 fON
@@ -64574,14 +64476,14 @@ amU
 amU
 aRj
 aQV
-aTz
+ahl
 amz
 ahl
 ahl
 ahl
-aqa
-aTz
-aTz
+amz
+ahl
+ahl
 aQV
 aCm
 aQi
@@ -64626,7 +64528,7 @@ sav
 sav
 itf
 jVl
-sef
+fON
 fON
 fON
 fON
@@ -64639,13 +64541,13 @@ fON
 fON
 tmb
 tmb
-sef
-sef
-sef
-sef
-ioC
-sef
-sef
+fON
+fON
+fON
+fON
+pbN
+fON
+fON
 tmb
 fON
 fON
@@ -64831,7 +64733,7 @@ amU
 amU
 asg
 aQV
-aUy
+anx
 ahl
 amz
 ahl
@@ -64884,7 +64786,7 @@ sav
 itf
 jVl
 jVl
-sef
+fON
 fON
 fON
 fON
@@ -65088,7 +64990,7 @@ amU
 amU
 asg
 aQV
-aTz
+ahl
 amz
 ahl
 anx
@@ -65141,7 +65043,7 @@ pUL
 itf
 rLo
 jVl
-sef
+fON
 fON
 fON
 fON
@@ -65194,11 +65096,11 @@ bSM
 bSM
 bSM
 oJk
-cDI
-cDI
-cDI
-cDI
-cDI
+xDK
+xDK
+xDK
+xDK
+xDK
 oXK
 qjq
 qjq
@@ -65345,7 +65247,7 @@ aKm
 aWA
 aSp
 aQV
-aTz
+ahl
 amA
 ahl
 ahl
@@ -65399,7 +65301,7 @@ sav
 rLo
 hua
 jVl
-sef
+fON
 fON
 oiE
 fON
@@ -65451,11 +65353,11 @@ sTJ
 sTJ
 sTJ
 gNl
-cDI
-cDI
-cDI
-cDI
-cDI
+xDK
+xDK
+xDK
+xDK
+xDK
 xDK
 eIy
 pft
@@ -65602,7 +65504,7 @@ aQV
 aQV
 aQV
 aQV
-aTz
+ahl
 ahl
 amz
 ahl
@@ -65656,7 +65558,7 @@ sav
 itf
 rLo
 jVl
-sef
+fON
 fON
 fON
 fON
@@ -65708,11 +65610,11 @@ bgH
 bgH
 bgH
 bUc
-cDI
-cDI
-cDI
-cDI
-cDI
+xDK
+xDK
+xDK
+xDK
+xDK
 xDK
 qjq
 qjq
@@ -65850,16 +65752,16 @@ ahl
 ahl
 ahl
 ahl
-aTz
-aTz
-aTz
-aTz
-aTz
-aTz
-aTz
-aTz
-aTz
-aFg
+ahl
+ahl
+ahl
+ahl
+ahl
+ahl
+ahl
+ahl
+ahl
+amy
 ahl
 ahl
 anx
@@ -65914,7 +65816,7 @@ sav
 rLo
 hua
 jVl
-sef
+fON
 fON
 fON
 fON
@@ -65965,11 +65867,11 @@ bgH
 bgH
 bgH
 bUc
-cDI
-cDI
-cDI
-cDI
-cDI
+xDK
+xDK
+xDK
+xDK
+xDK
 xDK
 jLv
 sen
@@ -66171,7 +66073,7 @@ sav
 itf
 itf
 jVl
-sef
+fON
 fON
 fON
 fON
@@ -66222,11 +66124,11 @@ bgH
 rGH
 doF
 oYd
-cDI
-cDI
-cDI
-cDI
-cDI
+xDK
+xDK
+xDK
+xDK
+xDK
 xDK
 qjq
 qjq
@@ -66428,7 +66330,7 @@ sav
 sav
 itf
 jVl
-sef
+fON
 fON
 fON
 fON
@@ -66479,7 +66381,7 @@ doF
 oYd
 nWY
 nWY
-cDI
+xDK
 xDK
 vfr
 gLj
@@ -66685,7 +66587,7 @@ sav
 sav
 itf
 hua
-sef
+fON
 fON
 eIc
 fON
@@ -66942,7 +66844,7 @@ sav
 sav
 itf
 jVl
-sef
+fON
 fON
 fON
 fON
@@ -67199,7 +67101,7 @@ sav
 sav
 itf
 jVl
-sef
+fON
 fON
 fON
 fON
@@ -67456,7 +67358,7 @@ jGx
 itf
 itf
 jVl
-sef
+fON
 fON
 fON
 fON
@@ -67715,9 +67617,9 @@ tOU
 jVl
 lVP
 lVP
-sef
-sef
-sef
+fON
+fON
+fON
 lVP
 lVP
 lVP
@@ -68242,7 +68144,7 @@ jRM
 sjH
 ibD
 aFe
-sef
+fON
 fON
 oiE
 fON
@@ -68499,10 +68401,10 @@ viE
 viE
 sFf
 reY
-sef
-sef
-sef
-sef
+fON
+fON
+fON
+fON
 fON
 fON
 fON
@@ -68535,7 +68437,7 @@ nWY
 nWY
 nWY
 nWY
-cDI
+xDK
 xDK
 xDK
 fge
@@ -68760,7 +68662,7 @@ aFe
 vLs
 aFe
 aFe
-sef
+fON
 fON
 fON
 fON
@@ -68793,10 +68695,10 @@ nWY
 nWY
 nWY
 nWY
-cDI
-cDI
-cDI
-cDI
+xDK
+xDK
+xDK
+xDK
 xDK
 jRt
 jRt
@@ -69017,7 +68919,7 @@ fRP
 pXv
 jwQ
 aFe
-sef
+fON
 bgH
 bgH
 oHg
@@ -69050,7 +68952,7 @@ nWY
 nWY
 nWY
 nWY
-cDI
+xDK
 tKA
 tKA
 tKA
@@ -69274,7 +69176,7 @@ pXv
 pXv
 pXv
 ryB
-wHT
+oHg
 bgH
 bgH
 oHg
@@ -69307,7 +69209,7 @@ jhk
 nWY
 jhk
 jhk
-cDI
+xDK
 tKA
 wQH
 tKA
@@ -69531,7 +69433,7 @@ pXv
 pXv
 pXv
 ryB
-wHT
+oHg
 bgH
 bgH
 oHg
@@ -69564,7 +69466,7 @@ nWY
 nWY
 nWY
 nWY
-cDI
+xDK
 tKA
 tKA
 tKA
@@ -69788,7 +69690,7 @@ pXv
 pXv
 pXv
 ryB
-wHT
+oHg
 bgH
 bgH
 oHg
@@ -69806,14 +69708,14 @@ gDM
 sOh
 pDz
 sPY
-vGx
-vGx
-vGx
-vGx
-vGx
-vGx
-vGx
-vGx
+nWY
+nWY
+nWY
+nWY
+nWY
+nWY
+nWY
+nWY
 xDK
 jFN
 xDK
@@ -70045,7 +69947,7 @@ pXv
 pXv
 pXv
 aFe
-sef
+fON
 fON
 oiE
 fON
@@ -84885,21 +84787,21 @@ aZS
 aYZ
 aZS
 aYZ
-aTv
-aTv
-aTv
-aTv
-aTv
+aZS
+aZS
+aZS
+aZS
+aZS
 aMV
 aZS
 aZS
 aZS
 aZS
-aTv
-aTv
-aTv
-aTU
-aTv
+aZS
+aZS
+aZS
+aNm
+aZS
 aZS
 aZS
 aZS
@@ -85141,23 +85043,23 @@ aZg
 azw
 aZS
 aZS
-aTU
 aNm
 aNm
+aNm
 aZS
 aZS
 aZS
-aTv
-aTv
-aTU
-aTv
-aTv
+aZS
 aZS
 aNm
 aZS
+aZS
+aZS
 aNm
 aZS
-aTv
+aNm
+aZS
+aZS
 aNm
 aZS
 aZS
@@ -85398,13 +85300,8 @@ aZg
 aZS
 aBj
 aZS
-aTU
 aNm
 aNm
-aZS
-aZS
-aNm
-aZS
 aNm
 aZS
 aZS
@@ -85414,7 +85311,12 @@ aNm
 aZS
 aZS
 aNm
-aTv
+aZS
+aNm
+aZS
+aZS
+aNm
+aZS
 aNm
 aBj
 ayS
@@ -85655,23 +85557,23 @@ aZS
 aZS
 aZS
 aZS
-aTU
 aNm
 aNm
-aZS
-aZS
 aNm
 aZS
 aZS
 aNm
 aZS
+aZS
+aNm
+aZS
 aNm
 aNm
 aNm
 aZS
 aNm
 aZS
-aTU
+aNm
 aNm
 aZS
 aZS
@@ -85911,25 +85813,25 @@ aYS
 awo
 aZS
 aZS
-aTv
-aNm
-aZS
-aZS
-aZS
-aZS
-aNm
-aZS
 aZS
 aNm
 aZS
 aZS
 aZS
+aZS
+aNm
+aZS
+aZS
+aNm
+aZS
+aZS
+aZS
 aNm
 aNm
 aNm
 aZS
 aZS
-aTU
+aNm
 aZS
 aZS
 aZS
@@ -86167,18 +86069,18 @@ aZg
 aYS
 aqh
 aNm
-aTv
+aZS
 aZS
 aZS
 aNm
-aNm
-aZS
 aNm
 aZS
 aNm
 aZS
 aNm
 aZS
+aNm
+aZS
 aZS
 aZS
 aNm
@@ -86187,7 +86089,7 @@ aNm
 aZS
 aNm
 aZS
-aTv
+aZS
 aZS
 aZS
 aZg
@@ -86424,27 +86326,27 @@ aZg
 aYS
 aYS
 awo
-aTv
+aZS
 aZS
 aNm
 aNm
-aNm
-aZS
-aZS
 aNm
 aZS
 aZS
 aNm
 aZS
 aZS
-aZS
-aNm
 aNm
 aZS
 aZS
 aZS
 aNm
-aTv
+aNm
+aZS
+aZS
+aZS
+aNm
+aZS
 aZS
 aYZ
 aYS
@@ -86680,29 +86582,29 @@ aaa
 aZg
 atQ
 aNm
-aTU
-aZS
-aZS
 aNm
 aZS
 aZS
 aNm
-aNm
 aZS
-aNm
+aZS
 aNm
 aNm
 aZS
 aNm
 aNm
 aNm
+aZS
+aNm
+aNm
+aNm
 aNm
 aNm
 aZS
 aZS
 aNm
 aZS
-aTv
+aZS
 aZS
 aZS
 atQ
@@ -86937,20 +86839,20 @@ aaa
 aZg
 aYS
 aZS
-aTU
+aNm
 aZS
-aZS
-aZS
-aNm
-aNm
-aNm
-aNm
-aNm
 aZS
 aZS
 aNm
 aNm
 aNm
+aNm
+aNm
+aZS
+aZS
+aNm
+aNm
+aNm
 aZS
 aNm
 aNm
@@ -86959,7 +86861,7 @@ aNm
 aZS
 aNm
 aZS
-aTv
+aZS
 aZS
 aZS
 aYS
@@ -87194,15 +87096,8 @@ aaa
 aZg
 atQ
 aYZ
-aTU
-aZS
-aZS
-aZS
 aNm
 aZS
-aNm
-aNm
-aNm
 aZS
 aZS
 aNm
@@ -87210,13 +87105,20 @@ aZS
 aNm
 aNm
 aNm
+aZS
+aZS
+aNm
+aZS
+aNm
+aNm
+aNm
 aNm
 aNm
 aZS
 aZS
 aNm
 aZS
-aTv
+aZS
 aNm
 axO
 atQ
@@ -87451,29 +87353,29 @@ aaa
 aZg
 aYS
 aYS
-aTU
-aZS
-aZS
-aNm
-aNm
-aZS
-aNm
-aZS
-aNm
-aZS
-aZS
-aNm
-aZS
-aZS
-aZS
-aNm
 aNm
 aZS
 aZS
 aNm
 aNm
 aZS
-aTv
+aNm
+aZS
+aNm
+aZS
+aZS
+aNm
+aZS
+aZS
+aZS
+aNm
+aNm
+aZS
+aZS
+aNm
+aNm
+aZS
+aZS
 aZS
 aYS
 aYS
@@ -87709,27 +87611,27 @@ aZg
 aYS
 aZS
 awo
-aTv
-aNm
-aNm
-aNm
-aNm
-aZS
-aZS
-aZS
-aZS
 aZS
 aNm
-aZS
-aZS
-aZS
 aNm
 aNm
 aNm
 aZS
 aZS
+aZS
+aZS
+aZS
 aNm
-aTv
+aZS
+aZS
+aZS
+aNm
+aNm
+aNm
+aZS
+aZS
+aNm
+aZS
 aNm
 aNm
 aNm
@@ -87966,7 +87868,7 @@ aZg
 aYS
 aYZ
 awo
-aCQ
+aBj
 aZS
 aZS
 aZS
@@ -87986,7 +87888,7 @@ aNm
 aNm
 aZS
 aNm
-aCQ
+aBj
 aNm
 aMV
 aZS
@@ -88224,11 +88126,11 @@ aYS
 aNm
 aNm
 aZS
-aTv
-aTU
-aTU
+aZS
 aNm
-aTv
+aNm
+aNm
+aZS
 aZS
 aNm
 aZS
@@ -88238,11 +88140,11 @@ aXw
 aZS
 aZS
 aNm
-aTU
 aNm
-aTv
-aTv
-aTU
+aNm
+aZS
+aZS
+aNm
 aZS
 axO
 aZS
@@ -88484,19 +88386,19 @@ aZO
 aNm
 aNm
 awo
-aVi
 awo
-aTU
-aTv
-aTv
+awo
+aNm
+aZS
+aZS
 aXw
 aDA
 aXw
-aTv
-aTv
-aTU
+aZS
+aZS
 aNm
-aTU
+aNm
+aNm
 aZS
 aZS
 aNm
