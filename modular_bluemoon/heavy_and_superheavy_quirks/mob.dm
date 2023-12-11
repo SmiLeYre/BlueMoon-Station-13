@@ -1,6 +1,6 @@
 // ПЕРЕМЕННЫЕ ДЛЯ МОБОВ
 
-/mob
+/mob/living
 	var/can_pull_superheavy_entities = FALSE // сокращаем количество проверок
 
 /mob/living/carbon/alien // Чужие могут тянуть сверхтяжёлых персонажей
@@ -18,8 +18,8 @@
 // ВОЗМОЖНОСТЬ ВЗЯТЬ В PULL СВЕРХТЯЖЁЛОГО ПЕРСОНАЖА
 
 /mob/can_be_pulled(user)
-	if(ismob(user))
-		var/mob/user_mob = user
+	if(isliving(user))
+		var/mob/living/user_mob = user
 		if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER)) // сверхтяжёлых персонажей нельзя тащить, не соблюдая определённые условия
 			var/can_pull = FALSE
 			if(user_mob.can_pull_superheavy_entities) // Моб простой и может тащить такого персонажа
