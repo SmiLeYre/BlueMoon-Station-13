@@ -205,7 +205,7 @@
 	. = ..()
 
 /datum/job/clown // Sorry, but no TWO entertainer titles.
-	alt_titles = list("Jester", "Comedian", "Cumedian", "Sexy Clown")
+	alt_titles = list("Jester", "Comedian", "Cumedian", "Sexy Clown", "Performer")	//Just another tittle. - Gardelin0
 
 /datum/job/cook/New()
 	var/list/extra_titles = list(

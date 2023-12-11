@@ -26,22 +26,27 @@
 /obj/effect/qareen_rune/attack_hand(mob/living/carbon/M)
 	if(!isliving(M))
 		return
+	var/list/creatures = list()
+	for(var/mob/living/simple_animal/qareen/Q in world)
+		creatures += Q
 	var/choice = tgui_alert(usr, "Do you want to attempt to summon Qareen?", "Attempt to summon Qareen?", list("Yes", "No"))
 	switch(choice)
 		if("No")
 			return
 		if("Yes")
-			for(var/mob/living/simple_animal/qareen/Q in world)
-				var/qareen_choice = tgui_alert(Q, "You have been summoned! Do you want to answer?", "Do you want to answer?", list("Yes", "No"))
+			var/mob/living/simple_animal/qareen/target = input("Please, select a qareen!", "Select", null, null) as null|anything in creatures
+			if(isnull(target))
+				return
+			else
+				var/qareen_choice = tgui_alert(target, "You have been summoned! Do you want to answer?", "Do you want to answer?", list("Yes", "No"))
 				switch(qareen_choice)
 					if("No")
 						to_chat(M, span_userdanger("It refuses to answer!"))
 					if("Yes")
 						new /obj/item/ectoplasm/qareen(src.loc)
 						to_chat(M, span_userdanger("Something is happening!"))
-						Q.forceMove(src.loc)
+						target.forceMove(src.loc)
 						playsound(loc, "modular_bluemoon/Gardelin0/sound/effect/spook.ogg", 50, 1)
 						for(var/obj/machinery/light/L in loc)
 							L.flicker(20)
 						qdel(src)
-

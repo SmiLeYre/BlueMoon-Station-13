@@ -10,7 +10,7 @@
 	name = "23 rubber slug"
 	desc = "A 23 gauge rubber slug."
 	icon = 'modular_bluemoon/Gardelin0/icons/items/weapons/ammo.dmi'
-	icon_state = "23rubershot"
+	icon_state = "23ruberslug"
 	caliber = "23"
 	projectile_type = /obj/item/projectile/bullet/slug_rubber23
 
@@ -18,7 +18,7 @@
 	name = "23 buckshot shell"
 	desc = "A 23 gauge buckshot shell."
 	icon = 'modular_bluemoon/Gardelin0/icons/items/weapons/ammo.dmi'
-	icon_state = "23buckslug"
+	icon_state = "23buckshot"
 	caliber = "23"
 	projectile_type = /obj/item/projectile/bullet/pellet/buckshot23
 	pellets = 8
@@ -28,7 +28,7 @@
 	name = "23 rubbershot shell"
 	desc = "A 23 gauge rubbershot shell."
 	icon = 'modular_bluemoon/Gardelin0/icons/items/weapons/ammo.dmi'
-	icon_state = "23buckshot"
+	icon_state = "23rubershot"
 	caliber = "23"
 	projectile_type = /obj/item/projectile/bullet/pellet/rubbershot23
 	pellets = 8
