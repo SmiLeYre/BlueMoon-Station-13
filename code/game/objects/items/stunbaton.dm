@@ -352,14 +352,14 @@
 	item_state = "prod"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_BULKY
 	force = 3
 	throwforce = 5
 	stamina_loss_amount = 30
 	armor_pen = 35
 	hitcost = 1000
 	throw_hit_chance = 10
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BELT
 	cooldown_duration = 7 SECONDS //It's a little on the weak side
 	status_duration = 3 //Slows someone for a tiny bit
 	var/obj/item/assembly/igniter/sparkler

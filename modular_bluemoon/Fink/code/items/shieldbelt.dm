@@ -1,6 +1,4 @@
 // Inteq type
-#define IS_INTEQ(mob) (mob.mind?.has_antag_datum(/datum/antagonist/traitor) || mob.mind?.has_antag_datum(/datum/antagonist/raiders) || mob.mind?.has_antag_datum(/datum/antagonist/nukeop))
-
 /obj/item/shieldbelt
 	name = "shielded belt"
 	desc = "A belt with built in energy shielding. Will rapidly recharge when not under fire."
