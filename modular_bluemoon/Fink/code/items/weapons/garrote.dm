@@ -177,8 +177,8 @@
 /obj/item/garrote/process()
 	var/mob/living/carbon/human/user = loc
 	if(!strangling)
-		//usr.visible_message("<span class='info'>[usr] removes the [src] from [strangling]'s neck.</span>", \
-				"<span class='warning'>You remove the [src] from [strangling]'s neck.</span>")
+		//usr.visible_message("<span class='info'>[usr] removes the [src] from [strangling]'s neck.</span>",
+				//"<span class='warning'>You remove the [src] from [strangling]'s neck.</span>")
 		//strangling.garroted_by.Remove(src)
 		// Our mark got gibbed or similar
 		//update_icon_state()
@@ -188,8 +188,8 @@
 
 
 	if(!istype(loc, /mob/living/carbon/human))
-		//usr.visible_message("<span class='info'>[usr] removes the [src] from [strangling]'s neck.</span>", \
-				"<span class='warning'>You remove the [src] from [strangling]'s neck.</span>")
+		//usr.visible_message("<span class='info'>[usr] removes the [src] from [strangling]'s neck.</span>",
+				//"<span class='warning'>You remove the [src] from [strangling]'s neck.</span>")
 		//strangling.garroted_by.Remove(src)
 		strangling = null
 		//update_icon_state()
@@ -198,8 +198,8 @@
 		return
 
 	if(strangling && !wielded)
-		//usr.visible_message("<span class='info'>[usr] removes the [src] from [strangling]'s neck.</span>", \
-				"<span class='warning'>You remove the [src] from [strangling]'s neck.</span>")
+		//usr.visible_message("<span class='info'>[usr] removes the [src] from [strangling]'s neck.</span>",
+				//"<span class='warning'>You remove the [src] from [strangling]'s neck.</span>")
 		//strangling.garroted_by.Remove(src)
 		strangling = null
 		//update_icon_state()
@@ -209,8 +209,8 @@
 
 
 	if(!user.pulling)
-		//usr.visible_message("<span class='info'>[usr] removes the [src] from [strangling]'s neck.</span>", \
-				"<span class='warning'>You remove the [src] from [strangling]'s neck.</span>")
+		//usr.visible_message("<span class='info'>[usr] removes the [src] from [strangling]'s neck.</span>",
+				//"<span class='warning'>You remove the [src] from [strangling]'s neck.</span>")
 		//strangling.garroted_by.Remove(src)
 		strangling = null
 		//update_icon_state()
