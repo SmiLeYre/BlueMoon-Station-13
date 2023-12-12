@@ -8,7 +8,7 @@
 // -------------: TO FIGHT IT: shoot it, it will die quickly
 // -------------: SPRITES FROM: FoS, https://www.paradisestation.org/forum/profile/335-fos
 
-/mob/living/simple_animal/hostile/poison/terror_spider/mother
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/mother
 	name = "Mother of Terror"
 	desc = "An enormous spider. Tiny spiderlings are crawling all over it. Their beady little eyes all stare at you. The horror!"
 	ai_target_method = TS_DAMAGE_SIMPLE
@@ -29,14 +29,14 @@
 	var/datum/action/innate/terrorspider/ventsmash/ventsmash_action
 	var/datum/action/innate/terrorspider/remoteview/remoteview_action
 
-/mob/living/simple_animal/hostile/poison/terror_spider/mother/New()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/mother/New()
 	..()
 	ventsmash_action = new()
 	ventsmash_action.Grant(src)
 	remoteview_action = new()
 	remoteview_action.Grant(src)
 
-/mob/living/simple_animal/hostile/poison/terror_spider/mother/AttackingTarget()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/mother/AttackingTarget()
 	. = ..()
 	if(isterrorspider(target) && target != src) //no self healing
 		var/mob/living/L = target
@@ -45,7 +45,7 @@
 			new /obj/effect/temp_visual/heal(get_turf(L), "#8c00ff")
 			new /obj/effect/temp_visual/heal(get_turf(L), "#8c00ff")
 
-/mob/living/simple_animal/hostile/poison/terror_spider/mother/Life(seconds)
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/mother/Life(seconds)
 	. = ..()
 	for(var/mob/living/simple_animal/S in view(7, src))
 		if(S.health < S.maxHealth && src.stat != DEAD)
@@ -57,6 +57,6 @@
 			L.adjustToxLoss(3)
 			L.adjustStaminaLoss(3)
 
-/mob/living/simple_animal/hostile/poison/terror_spider/mother/consume_jelly(obj/structure/spider/royaljelly/J)
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/mother/consume_jelly(obj/structure/spider/royaljelly/J)
 	to_chat(src, "<span class='warning'>Mothers cannot consume royal jelly.</span>")
 	return

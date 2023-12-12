@@ -40,9 +40,6 @@
 		B.item_state = GLOB.bible_item_state
 		to_chat(H, "There is already an established religion onboard the station. You are an acolyte of [GLOB.deity]. Defer to the Chaplain.")
 		H.equip_to_slot_or_del(B, ITEM_SLOT_BACKPACK)
-		var/nrt = GLOB.holy_weapon_type || /obj/item/nullrod
-		var/obj/item/nullrod/N = new nrt(H)
-		H.put_in_hands(N)
 		return
 
 	var/new_religion = DEFAULT_RELIGION
@@ -126,6 +123,7 @@
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/chaplain
 	backpack_contents = list(/obj/item/camera/spooky = 1,
+							/obj/item/choice_beacon/holy = 1,
 							/obj/item/stamp/chap = 1)
 	backpack = /obj/item/storage/backpack/cultpack
 	satchel = /obj/item/storage/backpack/cultpack

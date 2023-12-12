@@ -470,6 +470,13 @@
 	ckeywhitelist = list("arvard")
 	subcategory = LOADOUT_SUBCATEGORIES_DON01
 
+/datum/gear/donator/bm/armwraps_of_n1ght1ngale
+	name = "Armwraps of Mighty Fists"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/gloves/fingerless/pugilist/magic
+	ckeywhitelist = list("n1ght1ngale")
+	subcategory = LOADOUT_SUBCATEGORIES_DON01
+
 /datum/gear/donator/bm/p940
 	name = "P940 Kit"
 	slot = ITEM_SLOT_BACKPACK

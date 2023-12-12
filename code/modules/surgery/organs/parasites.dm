@@ -100,11 +100,11 @@
 	var/obj/structure/spider/spiderling/terror_spiderling/S = new(get_turf(owner))
 	switch(eggs_hatched)
 		if(0) // 1st spiderling
-			S.grow_as = pick(/mob/living/simple_animal/hostile/poison/terror_spider/lurker, /mob/living/simple_animal/hostile/poison/terror_spider/knight, /mob/living/simple_animal/hostile/poison/terror_spider/reaper)
+			S.grow_as = pick(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/lurker, /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/knight, /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/reaper)
 		if(1) // 2nd
-			S.grow_as = pick(/mob/living/simple_animal/hostile/poison/terror_spider/destroyer, /mob/living/simple_animal/hostile/poison/terror_spider/reaper, /mob/living/simple_animal/hostile/poison/terror_spider/knight, /mob/living/simple_animal/hostile/poison/terror_spider/healer, /mob/living/simple_animal/hostile/poison/terror_spider/builder)
+			S.grow_as = pick(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/destroyer, /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/reaper, /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/knight, /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/healer, /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/builder)
 		if(2) // 3d spiderling. can only grow if egg owner is being healed, and/or eggs isnt removed by surgeons
-			S.grow_as = pick(/mob/living/simple_animal/hostile/poison/terror_spider/widow, /mob/living/simple_animal/hostile/poison/terror_spider/lurker, /mob/living/simple_animal/hostile/poison/terror_spider/builder, /mob/living/simple_animal/hostile/poison/terror_spider/knight, /mob/living/simple_animal/hostile/poison/terror_spider/knight)
+			S.grow_as = pick(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/widow, /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/lurker, /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/builder, /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/knight, /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/knight)
 			owner.adjustBruteLoss(200)
 			owner.death()
 			infection_completed = TRUE

@@ -1,5 +1,11 @@
 /mob/living/simple_animal/qareen/ClickOn(atom/A, params) //qareens can't interact with the world directly.
 	var/list/modifiers = params2list(params)
+	// BlueMoon Edit Start: Let qareens orbit things. Key combination chosen to avoid accidental orbiting - Flauros
+	if(modifiers["middle"] && modifiers["shift"])
+		if(ismob(A))
+			ManualFollow(A)
+		return
+	// BlueMoon Edit End
 	if(modifiers["shift"])
 		ShiftClickOn(A)
 		return
@@ -11,6 +17,10 @@
 		if(A in drained_mobs)
 			to_chat(src, "<span class='revenwarning'>[A]'s fluids are almost devoid of any essence, also very bland.. almost tasteless... but beggars can't be choosers.</span>" )
 		if(in_range(src, A))
+			// BlueMood Edit Start: Let's not be hasty here - Flauros
+			if(alert("Would you like to harvest [A]'s essence?",,"Yes","No")!="Yes")
+				return
+			// BlueMoon Edit End - Flauros
 			Harvest(A)
 
 

@@ -310,6 +310,7 @@ SUBSYSTEM_DEF(ticker)
 
 	SEND_SIGNAL(src, COMSIG_TICKER_ROUND_STARTING)
 	real_round_start_time = world.timeofday
+	SSautotransfer.new_shift(real_round_start_time) // BLUEMOON ADD
 
 	log_world("Game start took [(world.timeofday - init_start)/10]s")
 	round_start_time = world.time
