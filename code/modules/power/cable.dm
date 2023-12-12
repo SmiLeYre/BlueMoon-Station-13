@@ -569,7 +569,8 @@ By design, d1 is the smallest direction and d2 is the highest
 			heal_amount = min(heal_amount, damage - affecting.threshhold_passed_mindamage)
 
 			if(!heal_amount)
-				to_chat(user, "<span class='notice'>[user == H ? "Your" : "[H]'s"] [affecting.name] appears to have suffered severe internal damage and requires surgery to repair further.</span>")
+//				to_chat(user, "<span class='notice'>[user == H ? "Your" : "[H]'s"] [affecting.name] appears to have suffered severe internal damage and requires surgery to repair further.</span>") - BLUEMOON REMOVAL
+				to_chat(user, span_notice("[user == H ? "Ваша [affecting.ru_name]" : "[affecting.ru_name_capital] [H]"] подверглась сильным внутренним повреждениям. Требуется углубленный ремонт с хирургической точностью.")) // BLUEMOON ADD
 				return
 		if(item_heal_robotic(H, user, 0, heal_amount))
 			use(1)
