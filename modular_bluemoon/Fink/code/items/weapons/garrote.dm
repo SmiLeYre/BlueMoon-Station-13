@@ -114,7 +114,7 @@
 
 	var/mob/living/carbon/human/U = user
 	var/victimdir = M.dir
-	if((!istype(M, /mob/living/carbon/human))||(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER)) )
+	if((!istype(M, /mob/living/carbon/human))||((HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER))&&(!HAS_TRAIT(U, TRAIT_BLUEMOON_HEAVY_SUPER))) )
 		to_chat(user, "<span class = 'warning'>You don't think that garroting [M] would be very effective...</span>")
 		return
 
