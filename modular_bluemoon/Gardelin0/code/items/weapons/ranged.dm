@@ -3,7 +3,6 @@
 	ammo_type = /obj/item/ammo_casing/buckshot23
 	caliber = "23"
 	max_ammo = 3
-	multiload = 1
 
 /obj/item/gun/ballistic/shotgun/KS23
 	name = "KS-23 shotgun"

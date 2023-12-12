@@ -87,3 +87,18 @@
 	var/C = input(src, "Select Color", "Select color", "#ffffff") as color|null
 	color = C
 	update_spooky_icon()
+
+/mob/living/simple_animal/qareen/verb/return_home()
+	set name = "Return to Spawn"
+	set desc = "Allows you to return to your spawn position."
+	set category = "Qareen"
+
+	var/choice = tgui_alert(usr, "Do you wish to return to spawn? It will take a minute.", "Return to spawn?", list("Yes", "No"))
+	switch(choice)
+		if("Yes")
+			if(do_after(usr, 60, usr))
+				for(var/area/horny_antags/A in GLOB.sortedAreas)
+					usr.forceMove(A)
+					playsound(src.loc, get_sfx("spark"), 100, 1)
+		else
+			return

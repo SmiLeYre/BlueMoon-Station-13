@@ -84,7 +84,7 @@
 	SEND_SIGNAL(user, COMSIG_MOB_ITEM_ATTACK, M, user)
 	if(item_flags & NOBLUDGEON)
 		return
-	if(force && damtype != STAMINA && HAS_TRAIT(user, TRAIT_PACIFISM))
+	if(force && damtype != STAMINA && damtype != LUST_DAMAGE && HAS_TRAIT(user, TRAIT_PACIFISM))	//So pacifists can use horny items. - Gardelin0
 		to_chat(user, "<span class='warning'>You don't want to harm other living beings!</span>")
 		return
 
