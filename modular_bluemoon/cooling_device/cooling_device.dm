@@ -142,6 +142,7 @@
 /obj/item/device/cooler/proc/drain_power(atom/target, mob/user, var/is_apc = FALSE)
 	var/maxcapacity = FALSE // Если достигнут максимальный заряд, прекращаем заряжаться
 	var/drain = 500 // Дж
+	is_charging = TRUE
 
 	if(is_apc)
 		var/obj/machinery/power/apc/apc = target
@@ -168,6 +169,7 @@
 				if(charge > max_charge)
 					charge = max_charge
 				user.visible_message(span_notice("[user] takes back the PCU's magnetic charger."), span_notice("You take back the magnetic charger as it beep and place it in the socket on the PCU."))
+	is_charging = FALSE
 
 	if(istype(target, /obj/item/stock_parts/cell))
 		var/obj/item/stock_parts/cell/cell = target
@@ -198,6 +200,9 @@
 
 /obj/item/device/cooler/attack_obj(atom/target, mob/user)
 	if(istype(target, /obj/machinery/power/apc))
+		if(is_charging)
+			to_chat(user, span_warning("You are already charging [src]!"))
+			return
 		drain_power(target, user, is_apc = TRUE)
 		return
 	. = ..()
@@ -208,6 +213,9 @@
 		return
 
 	if(istype(target, /obj/item/stock_parts/cell))
+		if(is_charging)
+			to_chat(user, span_warning("You are already charging [src]!"))
+			return
 		drain_power(target, user)
 		return
 
