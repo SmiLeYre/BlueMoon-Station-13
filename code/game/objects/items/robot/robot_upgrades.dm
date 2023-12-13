@@ -710,7 +710,7 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 
 
 /obj/effect/proc_holder/silicon/cyborg/vtecControl/Trigger(mob/living/silicon/robot/user)
-	if(!(user.cell?.charge) || (user.cell?.charge <= 600))
+	if(!(user.cell?.charge) || (!user.cell?.self_recharge && (user.cell?.charge <= 500)) || (user.cell?.self_recharge && (user.cell?.charge <= max(user.cell?.chargerate, 500))))
 		to_chat(user, "<span class='warning'>Critical cell charge! VTEC is temporarily disabled.</span>")
 		currentState = 0
 	else
