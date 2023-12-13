@@ -22,6 +22,13 @@
 		uneq_all()
 		low_power_mode = TRUE
 		toggle_headlamp(TRUE)
+	//VTEC power drain
+	if((vtec <= -3) && (!vtec_disabled))	//"vtec" is a negative value and the lesser it is the faster we move.
+		if((cell?.charge) && (cell?.charge > 600))
+			cell.self_recharge ? cell.use(cell.chargerate) : cell.use(500) //default cell maxcharge is 10.000. 1/2 per 10 seconds of superspeed
+		else
+			to_chat(src, "<span class='warning'>Critical cell charge! VTEC is temporarily disabled.</span>")
+			vtec = initial(vtec)
 	diag_hud_set_borgcell()
 
 /mob/living/silicon/robot/proc/handle_robot_hud_updates()
