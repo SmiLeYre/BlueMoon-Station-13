@@ -32,8 +32,7 @@
 	. = ..()
 	if (.)
 		RegisterSignal(target, COMSIG_LIVING_LIFE, .proc/on_life)
-		var/base_z_level = target.z
-	return base_z_level
+
 
 /obj/item/implant/anchor/proc/on_life(mob/living/owner, base_z_level)
 	if((owner.z != base_z_level) && (owner.z != 1)) // не сектор спавна и не сектор цк?
