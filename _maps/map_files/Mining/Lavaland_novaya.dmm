@@ -22636,7 +22636,7 @@
 	name = "Base turret controls";
 	pixel_y = 30;
 	req_access = null;
-	req_access_txt = "150"
+	req_access_txt = "151"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/main)

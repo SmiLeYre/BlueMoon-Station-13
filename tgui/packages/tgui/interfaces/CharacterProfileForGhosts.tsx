@@ -29,6 +29,8 @@ interface CharacterProfileContext {
   oocnotes: string;
   species_name: string;
   custom_species_lore: string;
+  security_records: string;
+  medical_records: string;
   vore_tag: string;
   erp_tag: string;
   mob_tag: string;
@@ -39,7 +41,7 @@ interface CharacterProfileContext {
   very_extreme_tag: string;
 }
 
-export const CharacterProfile = (props, context) => {
+export const CharacterProfileForGhosts = (props, context) => {
   const { act, data } = useBackend<CharacterProfileContext>(context);
 
   const tags = [
@@ -75,6 +77,16 @@ export const CharacterProfile = (props, context) => {
             <Collapsible title="Описание Голого Тела Персонажа" open>
               <Section style={{ "white-space": "pre-line" }}>
                 {data.flavortext_naked || "———"}
+              </Section>
+            </Collapsible>
+            <Collapsible title="База Данных Службы Безопасности" open>
+              <Section style={{ "white-space": "pre-line" }}>
+                {data.security_records || "———"}
+              </Section>
+            </Collapsible>
+            <Collapsible title="База Данных Медицинского Отдела" open>
+              <Section style={{ "white-space": "pre-line" }}>
+                {data.medical_records || "———"}
               </Section>
             </Collapsible>
             <Collapsible title={`Раса - ${data.species_name}`} open>

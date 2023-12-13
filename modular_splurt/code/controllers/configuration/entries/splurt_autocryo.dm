@@ -12,6 +12,3 @@
 	default = 10 MINUTES
 	min_val = 600
 	integer = TRUE
-
-// Should the system check for ghosts to delete too?
-/datum/config_entry/flag/ghost_checking

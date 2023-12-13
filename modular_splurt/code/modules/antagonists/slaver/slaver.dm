@@ -62,7 +62,7 @@ GLOBAL_LIST_INIT(slavers_ransom_values, list(
 	antag_moodlet = /datum/mood_event/focused
 	threat = 7
 	show_to_ghosts = TRUE
-	var/datum/team/slavers/slaver_team = new /datum/team/slavers
+	var/static/datum/team/slavers/slaver_team = new /datum/team/slavers
 	var/slaver_outfit = /datum/outfit/slaver
 	var/send_to_spawnpoint = TRUE //Should the user be moved to default spawnpoint.
 	var/equip_outfit = TRUE
