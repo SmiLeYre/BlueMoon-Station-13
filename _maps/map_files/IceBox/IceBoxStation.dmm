@@ -2004,7 +2004,7 @@
 /area/tcommsat/server)
 "aID" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "aII" = (
 /obj/structure/table,
@@ -2733,7 +2733,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "aZk" = (
 /obj/effect/turf_decal/tile/purple{
@@ -9991,7 +9991,7 @@
 /turf/open/floor/wood/wood_large,
 /area/service/chapel/main)
 "dqd" = (
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "dqr" = (
 /obj/structure/cable{
@@ -12756,7 +12756,7 @@
 /obj/machinery/pool/filter{
 	pixel_y = -17
 	},
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "epj" = (
 /obj/structure/disposalpipe/segment{
@@ -17546,7 +17546,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "fXv" = (
 /obj/structure/girder,
@@ -22363,7 +22363,7 @@
 	dir = 8;
 	pixel_x = 23
 	},
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "hHr" = (
 /obj/machinery/button/door{
@@ -22439,7 +22439,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "hJa" = (
 /obj/machinery/door/firedoor,
@@ -24823,7 +24823,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "izq" = (
 /obj/effect/turf_decal/tile/neutral{
@@ -25326,7 +25326,7 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc/auto_name/north,
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "iIg" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
@@ -28937,7 +28937,7 @@
 /obj/structure/window/reinforced/tinted{
 	dir = 1
 	},
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "jUk" = (
 /obj/structure/cable{
@@ -30622,7 +30622,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "kAz" = (
 /obj/structure/table/wood,
@@ -41974,7 +41974,7 @@
 /obj/item/clothing/shoes/sandal,
 /obj/item/clothing/shoes/sandal,
 /obj/item/clothing/shoes/sandal,
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "oCD" = (
 /obj/structure/disposalpipe/segment{
@@ -42484,7 +42484,7 @@
 /obj/structure/bed{
 	dir = 8
 	},
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "oLW" = (
 /obj/structure/cable{
@@ -46227,7 +46227,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "qaG" = (
 /obj/machinery/door/window/eastright{
@@ -48744,7 +48744,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 9
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "qQp" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible{
@@ -49751,7 +49751,7 @@
 	pixel_x = 13;
 	pixel_y = 3
 	},
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "rjL" = (
 /obj/machinery/camera{
@@ -51829,7 +51829,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "rUb" = (
 /obj/effect/landmark/event_spawn,
@@ -57687,7 +57687,7 @@
 /area/medical/virology)
 "tWN" = (
 /obj/machinery/light,
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "tWP" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -58486,7 +58486,7 @@
 /turf/open/floor/wood,
 /area/command/meeting_room)
 "ujO" = (
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "ukr" = (
 /obj/machinery/cryopod/tele,
@@ -62721,7 +62721,7 @@
 /obj/structure/mineral_door/paperframe{
 	name = "Changing Room"
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "vKu" = (
 /obj/effect/turf_decal/tile/red{
@@ -66686,7 +66686,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "xfe" = (
 /obj/structure/closet/wardrobe/white,
@@ -67539,7 +67539,7 @@
 /obj/structure/window/reinforced/tinted{
 	dir = 1
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "xwS" = (
 /obj/structure/chair{
@@ -69674,7 +69674,7 @@
 	c_tag = "Sauna Room";
 	dir = 8
 	},
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "yhK" = (
 /obj/structure/chair/stool{
@@ -69860,7 +69860,7 @@
 /area/engineering/atmos)
 "ylK" = (
 /obj/structure/closet/athletic_mixed,
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "ylL" = (
 /obj/machinery/computer/atmos_alert{

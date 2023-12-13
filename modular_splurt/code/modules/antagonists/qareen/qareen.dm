@@ -97,10 +97,10 @@
 	qareen_greet += "<b>Ваш прежде мирской дух был запитан инопланетной энергией и преобразован в qareen.</b>"
 	qareen_greet += "<b>Вы не являетесь ни живым, ни мёртвым, а чем-то посередине. Вы способны взаимодействовать с обоими мирами.</b>"
 	qareen_greet += "<b>Вы неуязвимы и невидимы для живых, но не для призраков. Однако большинство способностей материализуют вас, делая уязвимым.</b>"
-	qareen_greet += "<b>Для своей подпидки вы должны высасывать жизненную эссенцию похоти из существ. Эта эссенция является как ресурсом, так и вашим здоровьем, от которого заряжаются все ваши способности.</b>"
+	qareen_greet += "<b>Для своей подпитки вы должны высасывать жизненную эссенцию похоти из существ. Эта эссенция является как ресурсом, так и вашим здоровьем, от которого заряжаются все ваши способности.</b>"
 	qareen_greet += "<b><i>Вы ничего не помните о своих прошлых жизнях и ничего не вспомните о текущей после своей смерти.</i></b>"
-	qareen_greet += "<b>Be sure to read our discord rules for antagonists to learn more.</b>"
-	qareen_greet += "<b>Вы также можете телекинетически бросать предметы, перетаскивая их с помощью clickdragging.</b>"
+	qareen_greet += "<b>Не забывайте следовать правилам для антагонистов.</b>"
+	qareen_greet += "<b>Вы также можете телекинетически бросать предметы, перетаскивая их с помощью мыши.</b>"
 	to_chat(src, qareen_greet)
 	if(!generated_objectives_and_spells)
 		generated_objectives_and_spells = TRUE
@@ -457,7 +457,11 @@
 		qdel(qareen)
 	..()
 
+/* BlueMoon Edit Start: Qareens are stated to be able to do this too so I'm fixing this - Flauros
 /mob/living/simple_animal/qareen/proc/qareenThrow(over, mob/user, obj/item/throwable)
+*/
+/proc/QareenThrow(over, mob/user, obj/item/throwable)
+// BlueMoon Edit End
 	var/mob/living/simple_animal/qareen/spooker = user
 	if(!istype(throwable))
 		return
@@ -512,9 +516,9 @@
 /datum/objective/qareenFluff
 
 /datum/objective/qareenFluff/New()
-	var/list/explanationTexts = list("Избеuайте высасывания эссенции у всех на виду.", \
+	var/list/explanationTexts = list("Избегайте высасывания эссенции у всех на виду.", \
 									 "Распространите заболевание похоти на тех, кого можете.", \
-									 "Оставьте на полу как можно больше следов любовныъ жидкостей.", \
+									 "Оставьте на полу как можно больше следов любовных жидкостей.", \
 									 "Возбудите всех, кого можете.", \
 	)
 	explanation_text = pick(explanationTexts)

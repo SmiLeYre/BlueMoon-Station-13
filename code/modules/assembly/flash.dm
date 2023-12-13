@@ -218,13 +218,6 @@
 /obj/item/assembly/flash/cyborg/screwdriver_act(mob/living/user, obj/item/I)
 	return
 
-/obj/item/assembly/flash/memorizer
-	name = "memorizer"
-	desc = "If you see this, you're not likely to remember it any time soon."
-	icon = 'icons/obj/device.dmi'
-	icon_state = "memorizer"
-	item_state = "nullrod"
-
 /obj/item/assembly/flash/handheld //this is now the regular pocket flashes
 
 /obj/item/assembly/flash/armimplant
