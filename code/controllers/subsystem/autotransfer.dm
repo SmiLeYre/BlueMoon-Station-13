@@ -20,7 +20,7 @@ SUBSYSTEM_DEF(autotransfer)
 	targettime = starttime + init_vote
 	voteinterval = CONFIG_GET(number/vote_autotransfer_interval)
 	maxvotes = CONFIG_GET(number/vote_autotransfer_maximum)
-	return SS_INIT_SUCCESS // BLUEMOON EDIT - было ..()
+	return ..()
 
 /datum/controller/subsystem/autotransfer/Recover()
 	starttime = SSautotransfer.starttime
