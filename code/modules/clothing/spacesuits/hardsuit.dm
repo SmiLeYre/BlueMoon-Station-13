@@ -627,6 +627,19 @@
 	armor = list(MELEE = 40, BULLET = 35, LASER = 35, ENERGY = 45, BOMB = 25, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 30)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_ALL_TAURIC
+	//BLUEMOON ADD вариация хардсьюта сб
+	unique_reskin = list(
+		"Alt" = list(RESKIN_ICON_STATE = "hardsuit-sec2")
+	)
+
+/obj/item/clothing/suit/space/hardsuit/security/reskin_obj(mob/user)
+	if(current_skin == "Alt")
+		mutantrace_variation = NONE
+		if(helmet)
+			var/obj/item/clothing/head/helmet/space/hardsuit/Helm = helmet
+			Helm.hardsuit_type = "sec2"
+			Helm.update_icon_state()
+	//BLUEMOON ADD END
 
 /obj/item/clothing/suit/space/hardsuit/security/Initialize(mapload)
 	. = ..()
