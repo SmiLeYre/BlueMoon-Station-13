@@ -144,7 +144,13 @@
 		U.grab_state = GRAB_AGGRESSIVE
 		M.grabbedby(U, 1)
 		M.dir = victimdir
+		M.drop_all_held_items()
 		U.setGrabState(GRAB_AGGRESSIVE)
+		if(do_after(user,garrote_time, target = src))
+			U.grab_state = GRAB_NECK
+			M.grabbedby(U, 1)
+			M.dir = victimdir
+			U.setGrabState(GRAB_NECK)
 
 	else
 		U.grab_state = GRAB_KILL
