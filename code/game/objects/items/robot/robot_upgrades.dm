@@ -710,7 +710,7 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 
 
 /obj/effect/proc_holder/silicon/cyborg/vtecControl/Trigger(mob/living/silicon/robot/user)
-	if(!(user.cell?.charge) || (user.cell?.charge <= 600))
+	if(!(user.cell?.charge) || (!user.cell?.self_recharge && (user.cell?.charge <= 500)) || (user.cell?.self_recharge && (user.cell?.charge <= max(user.cell?.chargerate, 500))))
 		to_chat(user, "<span class='warning'>Critical cell charge! VTEC is temporarily disabled.</span>")
 		currentState = 0
 	else
@@ -721,9 +721,9 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 			if (0) //default speed
 				user.vtec = initial(user.vtec) //"vtec" value is negative and the lesser it is the faster we move.
 			if (1) //slightly faster than runnung
-				user.vtec = initial(user.vtec) - 2.25 //cyborg sprinting is roughly -2. don't forget we can't sprint with vtec.
+				user.vtec = initial(user.vtec) - 1.5 //cyborg sprinting is roughly -2. don't forget we can't sprint with vtec.
 			if (2) //overclocking module
-				user.vtec = initial(user.vtec) - 3 //while changing this value check /mob/living/silicon/robot/proc/use_power() to maintain proper power drain
+				user.vtec = initial(user.vtec) - 2 //while changing this value check /mob/living/silicon/robot/proc/use_power() to maintain proper power drain
 
 	action.button_icon_state = "Chevron_State_[currentState]"
 	action.UpdateButtonIcon()

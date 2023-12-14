@@ -16,7 +16,7 @@ SUBSYSTEM_DEF(autotransfer)
 	if(!init_vote) //Autotransfer voting disabled.
 		can_fire = FALSE
 		return ..()
-	starttime = world.time
+	starttime = REALTIMEOFDAY // BLUEMOON EDIT - было world.time
 	targettime = starttime + init_vote
 	voteinterval = CONFIG_GET(number/vote_autotransfer_interval)
 	maxvotes = CONFIG_GET(number/vote_autotransfer_maximum)
@@ -28,7 +28,7 @@ SUBSYSTEM_DEF(autotransfer)
 	curvotes = SSautotransfer.curvotes
 
 /datum/controller/subsystem/autotransfer/fire()
-	if(world.time < targettime)
+	if(REALTIMEOFDAY < targettime) // BLUEMOON EDIT - было if(world.time < targettime)
 		return
 	if(maxvotes == NO_MAXVOTES_CAP || maxvotes > curvotes)
 		SSvote.initiate_vote("transfer","server", votesystem=APPROVAL_VOTING)
