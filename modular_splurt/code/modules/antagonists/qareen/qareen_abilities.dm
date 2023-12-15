@@ -368,7 +368,7 @@
 /obj/effect/proc_holder/spell/aoe_turf/qareen/bliss
 	name = "Bliss"
 	desc = "Causes nearby living things to loose themselves in lustful throes."
-	charge_max = 200
+	charge_max = 120 SECONDS
 	range = 3
 	cast_amount = 30
 	unlock_amount = 30
