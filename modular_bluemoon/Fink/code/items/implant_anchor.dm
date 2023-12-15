@@ -1,7 +1,7 @@
 /obj/item/implant/anchor
 	name = "anchor implant"
 	desc = "Prevents you from leaving local sector, guarded by you."
-	var/base_z_level
+	var/list/allowed_z_levels
 
 /obj/item/implant/anchor/get_data()
 	var/dat = {"<b>Implant Specifications:</b><BR>
@@ -19,25 +19,27 @@
 	imp_type = /obj/item/implant/anchor
 
 /obj/item/implant/anchor/Initialize()
-	. = ..()
-	var/base_z_level = imp_in.z
-	return base_z_level
-
-	//шаблон имплантации раундстартом, вставить в желаемую гостроль
-	//var/mob/living/M = mob_override || owner.current
-	//M.faction |= ROLE_???
-	//var/obj/item/implant/anchor/Implant = new/obj/item/implant/anchor(M)
+	.=..()
+	allowed_z_levels = list(1,12,imp_in.z) // dynamic набор: цк, межшатолье, инфдормы, сектор имплантации
+	if(GLOB.master_mode == "Extended")
+		allowed_z_levels.Add(2,5,6) // экстовая добавка: станционный, шахта, ксено
+	return allowed_z_levels
 
 /obj/item/implant/anchor/implant(mob/living/target, mob/user, silent, force)
 	. = ..()
-	if (.)
-		RegisterSignal(target, COMSIG_LIVING_LIFE, .proc/on_life)
-		var/base_z_level = target.z
-	return base_z_level
+	RegisterSignal(imp_in, COMSIG_LIVING_LIFE, .proc/on_life)
+	ADD_TRAIT(target, TRAIT_ANCHOR, "implant")
+	target.sec_hud_set_implants()
+	return TRUE
 
-/obj/item/implant/anchor/proc/on_life(mob/living/owner, base_z_level)
-	if((owner.z != base_z_level) && (owner.z != 1)) // не сектор спавна и не сектор цк?
-		to_chat(owner, "<span class='rose'>It hurts!</span>")
+
+/obj/item/implant/anchor/proc/on_life(mob/living/owner)
+	if(!(allowed_z_levels))
+		allowed_z_levels = Initialize()
+//	to_chat(owner, "<span class='rose'>allowed_z_levels [allowed_z_levels], owner.z [owner.z] </span>")
+//	to_chat(owner, "<span class='rose'>Tick</span>")
+	if(!(owner.z in allowed_z_levels))
+		to_chat(owner, "<span class='warning'>It hurts!</span>")
 		owner.adjustBruteLoss(0.5, FALSE) //Provides slow harassing for both brute and burn damage.
 		owner.adjustFireLoss(0.5, FALSE)
-		to_chat(owner, "<span class='rose'>I don`t feeling well leaving my local sector.</span>")
+		to_chat(owner, "<span class='warning'>I don`t feeling well leaving my local sector.</span>")
