@@ -3,34 +3,28 @@
 	stage_prob = 3
 	max_stages = 7
 	spread_flags = DISEASE_SPREAD_NON_CONTAGIOUS
-	cure_text = "Holy Water, or Milk, or Semen, or Female Semen."
+	cure_text = "Holy Water, or Milk, or Semen, or Female Semen, or Spaceacillin."
 	spread_text = "A fog of pink unholy energy"
-	cures = list(/datum/reagent/water/holywater, /datum/reagent/consumable/semen,  /datum/reagent/consumable/semen/femcum,  /datum/reagent/consumable/milk)
-	cure_chance = 80
+	cures = list(/datum/reagent/water/holywater, /datum/reagent/consumable/semen, /datum/reagent/consumable/semen/femcum, /datum/reagent/consumable/milk, /datum/reagent/medicine/spaceacillin)
+	cure_chance = 100
 	agent = "Unholy Forces"
 	viable_mobtypes = list(/mob/living/carbon/human)
-	disease_flags = CURABLE
 	permeability_mod = 1
 	severity = DISEASE_SEVERITY_MEDIUM
+	needs_all_cures = FALSE
 	var/bliss_stage_1 = FALSE
 	var/bliss_stage_2 = FALSE
 	//Removed pink coloring - was making vicitm's sprite
 
 /datum/disease/qarbliss/cure()
 	if(affected_mob)
+		if(affected_mob.dna && affected_mob.dna.species)
+			affected_mob.dna.species.handle_mutant_bodyparts(affected_mob)
+			affected_mob.dna.species.handle_hair(affected_mob)
 		SEND_SIGNAL(affected_mob, COMSIG_CLEAR_MOOD_EVENT, "qar_bliss")
 	..()
 
 /datum/disease/qarbliss/stage_act()
-	if(affected_mob.client?.prefs.cit_toggles & NO_APHRO) //No aphrodisiac pref = no symptoms. - Gardelin0
-		return
-	if(!affected_mob.client && affected_mob.client?.prefs.erppref == "Yes")	//No sex pref = no symptoms. - Gardelin0
-		return
-	if(!affected_mob.client?.prefs.nonconpref == "Yes")	//No noncon pref = no symptoms. - Gardelin0
-		return
-	if(affected_mob.client && affected_mob.client?.prefs.hornyantagspref == "No") //No qareen pref = no symptoms. - Gardelin0
-		return
-
 	if(prob(stage*2))
 		if(prob(5))
 			to_chat(affected_mob, "<span class='revennotice'>You feel [pick("hot and bothered", "horny", "lusty", "like you're in a rut", "the need to breed", "breedable", "slimy")]...</span>")
