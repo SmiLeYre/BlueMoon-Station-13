@@ -27,18 +27,10 @@
 
 /obj/item/implant/anchor/implant(mob/living/target, mob/user, silent, force)
 	. = ..()
-<<<<<<< HEAD
 	RegisterSignal(imp_in, COMSIG_LIVING_LIFE, .proc/on_life)
 	ADD_TRAIT(target, TRAIT_ANCHOR, "implant")
 	target.sec_hud_set_implants()
 	return TRUE
-=======
-
-	RegisterSignal(target, COMSIG_LIVING_LIFE, .proc/on_life)
-	var/base_z_level = target.z
-
-	return base_z_level
->>>>>>> 541567bf6384c258e45facf227a043771dabcc99
 
 
 /obj/item/implant/anchor/proc/on_life(mob/living/owner)
