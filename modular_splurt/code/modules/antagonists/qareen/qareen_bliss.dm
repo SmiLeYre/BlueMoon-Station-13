@@ -12,6 +12,7 @@
 	disease_flags = CURABLE
 	permeability_mod = 1
 	severity = DISEASE_SEVERITY_MEDIUM
+	needs_all_cures = FALSE
 	var/bliss_stage_1 = FALSE
 	var/bliss_stage_2 = FALSE
 	//Removed pink coloring - was making vicitm's sprite

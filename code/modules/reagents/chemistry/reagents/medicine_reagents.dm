@@ -827,7 +827,7 @@
 	reagent_state = LIQUID
 	color = "#A9FBFB"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	overdose_threshold = 30
+	overdose_threshold = 20
 	addiction_threshold = 25
 	pH = 8.96
 
@@ -844,17 +844,17 @@
 	..()
 
 /datum/reagent/medicine/morphine/on_mob_life(mob/living/carbon/M)
-	switch(current_cycle)
-		if(12)
-			to_chat(M, "<span class='warning'>You start to feel tired...</span>" )
-		if(24 to 48)
-			M.drowsyness += 1
-		if(48 to INFINITY)
-			M.Sleeping(100, 0) // BLUEMOON EDIT - было 40, сделал 100. Морфин по итогу не накладывает сон и человек просыпается быстро.
-			. = 1
 	..()
 
 /datum/reagent/medicine/morphine/overdose_process(mob/living/M)
+	switch(current_cycle)
+		if(12)
+			to_chat(M, "<span class='warning'>Вы ощущаете себя устало...</span>" )
+		if(24 to 48)
+			M.drowsyness += 1
+		if(96 to INFINITY)
+			M.Sleeping(100, 0) // BLUEMOON EDIT - было 40, сделал 100. Морфин по итогу не накладывает сон и человек просыпается быстро.
+			. = 1
 	if(prob(33))
 		M.drop_all_held_items()
 		M.Dizzy(2)
