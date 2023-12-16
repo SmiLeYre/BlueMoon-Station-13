@@ -34,3 +34,12 @@
   - refactor: Small refactor of card code.
   - balance: Decreased cost of clothing items in loadout menu, certain items like
       modular computers and laptops, and some accessories.
+2023-12-14:
+  Anonymous:
+  - imageadd: 'Added new emojis for the PDA/OOC: clueless, dawgnotdoin, ratdoin, kisser,
+      painb (pain but larger), listening, ebin (:DD), fun, wew, eyebrow, terror, affliction,
+      payne, weh, wehh (larger), squeep, mosqueep, mosblep, malceiling.'
+  CEO of Mememotes:
+  - rscdel: my will to be productive and handle real problems
+  Yawet330:
+  - bugfix: 'EZfix: Sanitises prisoner names on old lockers.'

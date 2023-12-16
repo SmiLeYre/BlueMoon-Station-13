@@ -4117,6 +4117,7 @@
 #include "modular_bluemoon\dementia\code\modules\clothing\helmets.dm"
 #include "modular_bluemoon\dementia\code\modules\clothing\under.dm"
 #include "modular_bluemoon\Fink\code\items\weapons\garrote.dm"
+#include "modular_bluemoon\Fink\code\items\implant_anchor.dm"
 #include "modular_bluemoon\Fink\code\items\shieldbelt.dm"
 #include "modular_bluemoon\Fink\code\items\memorizer.dm"
 #include "modular_bluemoon\Fink\code\uplink.dm"
