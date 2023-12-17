@@ -208,16 +208,15 @@
 	antag_datum = /datum/antagonist/bloodsucker
 	protected_roles = list("Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain")
 	restricted_roles = list("AI", "Cyborg")
-	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGES
+	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain")
 	required_enemies = list(2,2,1,1,1,1,1,0,0,0)
 	required_candidates = 1
-	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) // BLUEMOON ADD
+	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT)
 	weight = 4
 	cost = 10
 	scaling_cost = 10
 	requirements = list(101,101,60,50,40,30,20,15,10,10)
-	antag_cap = list("denominator" = 39, "offset" = 1)
-	repeatable = TRUE
+	blocking_rules = list(/datum/dynamic_ruleset/midround/bloodsuckers) // если прилетел 1 вампир, блокировать появление через мидраунд
 
 /datum/dynamic_ruleset/latejoin/bloodsuckers/trim_candidates()
 	. = ..()

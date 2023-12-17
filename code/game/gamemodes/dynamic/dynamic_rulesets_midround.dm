@@ -1094,15 +1094,16 @@
 	antag_datum = /datum/antagonist/bloodsucker
 	protected_roles = list("Prisoner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain")
 	restricted_roles = list("AI", "Cyborg")
-	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain") //BLUEMOON CHANGES
+	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain")
 	required_enemies = 3
 	required_candidates = 1
-	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) // BLUEMOON ADD
+	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT)
 	weight = 6
-	cost = 15
+	cost = 10
 	scaling_cost = 10
 	requirements = list(101,101,60,50,40,30,20,15,10,10)
-	antag_cap = list("denominator" = 39, "offset" = 1)
+	antag_cap = 1 // list("denominator" = 39, "offset" = 1) - изменено в связи с проблемами балансировки, верните как кто-то займётся ими
+	blocking_rules = list(/datum/dynamic_ruleset/latejoin/bloodsuckers) // если выпал мидраундовый 1 вампир, блокировать появление через шаттл
 
 /datum/dynamic_ruleset/midround/bloodsuckers/trim_candidates()
 	. = ..()
@@ -1123,11 +1124,9 @@
 
 /datum/dynamic_ruleset/midround/bloodsuckers/pre_execute(population)
 	. = ..()
-	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
 	if(candidates.len <= 0)
 		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
 		return FALSE
-	// BLUEMOON ADD END
 	var/num_bloodsuckers = get_antag_cap(population) * (scaled_times + 1)
 	for (var/i = 1 to num_bloodsuckers)
 		var/mob/M = pick_n_take(candidates)
