@@ -55,7 +55,6 @@
 	AssignStarterPowersAndStats()// Give Powers & Stats
 	forge_bloodsucker_objectives()// Objectives & Team
 	update_bloodsucker_icons_added(owner.current, "bloodsucker")	// Add Antag HUD
-
 	. = ..()
 
 
@@ -66,7 +65,6 @@
 	clear_bloodsucker_objectives()	// Objectives
 	update_bloodsucker_icons_removed(owner.current)// Clear Antag HUD
 	owner.special_role = null // BLUEMOON ADD
-
 	. = ..()
 
 
