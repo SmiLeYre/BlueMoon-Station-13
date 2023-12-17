@@ -55,6 +55,15 @@
 	AssignStarterPowersAndStats()// Give Powers & Stats
 	forge_bloodsucker_objectives()// Objectives & Team
 	update_bloodsucker_icons_added(owner.current, "bloodsucker")	// Add Antag HUD
+
+	// BLUEMOON ADD START
+	if(owner.current)
+		if(ishuman(owner.current))
+			var/mob/living/carbon/human/vampire = owner.current
+
+			var/modular_inherent_traits = list(TRAIT_NOTHIRST, TRAIT_NOHUNGER)
+			LAZYADD(vampire.dna.species.inherent_traits, modular_inherent_traits)
+	// BLUEMOON ADD END
 	. = ..()
 
 
@@ -65,14 +74,28 @@
 	clear_bloodsucker_objectives()	// Objectives
 	update_bloodsucker_icons_removed(owner.current)// Clear Antag HUD
 	owner.special_role = null // BLUEMOON ADD
+
+	// BLUEMOON ADD START
+	if(owner.current)
+		if(ishuman(owner.current))
+			var/mob/living/carbon/human/vampire = owner.current
+
+			var/modular_inherent_traits = list(TRAIT_NOTHIRST, TRAIT_NOHUNGER)
+			LAZYREMOVE(vampire.dna.species.inherent_traits, modular_inherent_traits)
+
+			var/datum/species/old_species = new vampire.dna.species.type
+
+			vampire.dna.species.inherent_traits = old_species.inherent_traits
+	// BLUEMOON ADD END
 	. = ..()
 
 
 
 /datum/antagonist/bloodsucker/greet()
 	var/fullname = ReturnFullName(TRUE)
-	to_chat(owner, "<span class='userdanger'>You are [fullname], a strain of vampire dubbed bloodsucker!</span><br>")
+	to_chat(owner, "<span class='userdanger'>Ты - [fullname], потомок одного из древних вампиров!</span><br>")
 	owner.announce_objectives()
+	/* BLUEMOON REMOVAL START
 	to_chat(owner, "<span class='boldannounce'>* You regenerate your health slowly, you're weak to fire, and you depend on blood to survive. Allow your stolen blood to run too low, and you will find yourself at \
 	risk of being discovered!</span><br>")
 	//to_chat(owner, "<span class='boldannounce'>As an immortal, your power is linked to your age. The older you grow, the more abilities you will have access to.<span>")
@@ -82,10 +105,21 @@
 	bloodsucker_greet += "<span class='announce'>Bloodsucker Tip: Rest in a <i>Coffin</i> to claim it, and that area, as your lair.</span><br>"
 	bloodsucker_greet += "<span class='announce'>Bloodsucker Tip: Fear the daylight! Solar flares will bombard the station periodically, and only your coffin can guarantee your safety.</span><br>"
 	bloodsucker_greet += "<span class='announce'>Bloodsucker Tip: You wont loose blood if you are unconcious or sleeping. Use this to your advantage to conserve blood.</span><br>"
+	/ BLUEMOON REMOVAL END */
+	// BLUEMOON ADD START - адаптация предыдущего
+	var/bloodsucker_greet
+	bloodsucker_greet += "<span class='boldannounce'>* Ты медленно восстанавливаешь своё здоровье, обладаешь слабостью к огню и зависишь от крови для выживания. Если крови останется слишком мало, станет невозможным поддерживать твою маскировку и тебя раскроют!</span><br>"
+	bloodsucker_greet += "<span class='boldannounce'>* Сородичи не обязательно твои друзья, но выживание может зависить от кооперации с ними. Предавай их на своё усмотрение.</span><br>"
+	bloodsucker_greet += "<span class='boldannounce'>* Будучи бессмертным существом, твоя сила зависит от поколения. Чтобы повысить его, нужно пережидать солнечные вспышки в гробу. Становось сильнее, чтобы открывать в себе новые способности..<span><br>"
+	bloodsucker_greet += "<span class='boldannounce'><i>* Используй \",b\" для общения на древнем языке сородичей.</span><br>"
+	bloodsucker_greet += "<span class='announce'>Подсказка: Спи в <i>гробу</i>, чтобы разметить зону как своё логово.</span><br>"
+	bloodsucker_greet += "<span class='announce'>Подсказка: Бойся света дня! Солнечные вспышки периодически достигают станции. Единственное спасение от них - твой гроб.</span><br>"
+	bloodsucker_greet += "<span class='announce'>Подсказка: Ты не теряешь кровь, если спишь или без сознания. Используй это преимущество для сохранения крови.</span><br>"
+	// BLUEMOON ADD END
 	to_chat(owner, bloodsucker_greet)
 
 	owner.current.playsound_local(null, 'sound/bloodsucker/BloodsuckerAlert.ogg', 100, FALSE, pressure_affected = FALSE)
-	antag_memory += "Although you were born a mortal, in un-death you earned the name <b>[fullname]</b>.<br>"
+	antag_memory += "Не смотря на то, что рождие было в смертном теле, в не-жизни ты носишь имя <b>[fullname]</b>.<br>"
 
 
 /datum/antagonist/bloodsucker/farewell()
@@ -184,7 +218,8 @@
 	BuyPower(new /datum/action/bloodsucker/feed)
 	BuyPower(new /datum/action/bloodsucker/masquerade)
 	BuyPower(new /datum/action/bloodsucker/veil)
-	BuyPower(new /datum/action/bloodsucker/levelup)
+//	BuyPower(new /datum/action/bloodsucker/levelup) // BLUEMOON REMOVAL - возвращаем фазы дня и убираем форсированную эволюцию
+	BuyPower(new /datum/action/bloodsucker/tutorial) // BLUEMOON ADD - обучение для самых маленьких неофит
 	// Traits
 	for(var/T in defaultTraits)
 		ADD_TRAIT(owner.current, T, BLOODSUCKER_TRAIT)

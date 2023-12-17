@@ -1,6 +1,6 @@
 #define TIME_BLOODSUCKER_DAY_WARN	90 		// 1.5 minutes
 #define TIME_BLOODSUCKER_DAY_FINAL_WARN	25 	// 25 sec
-#define TIME_BLOODSUCKER_DAY	60 			// 1.5 minutes // 10 is a second, 600 is a minute.
+#define TIME_BLOODSUCKER_DAY	90 			// 1.5 minutes // 10 is a second, 600 is a minute.
 #define TIME_BLOODSUCKER_BURN_INTERVAL	40 	// 4 sec
 
 
@@ -13,11 +13,18 @@
 	var/issued_XP = FALSE
 
 /obj/effect/sunlight/Initialize(mapload)
+	start_countdown() // BLUEMOON ADD
 	. = ..()
 
 /obj/effect/sunlight/proc/start_countdown()
-	START_PROCESSING(SSweather, src) //it counts as weather right
+	START_PROCESSING(SSprocessing, src) // BLUEMOON EDIT - было SSweather, что создаёт рантаймы
 	time_til_cycle = nighttime_duration
+
+// BLUEMOON ADD START
+/obj/effect/sunlight/Destroy(force)
+	STOP_PROCESSING(SSprocessing, src)
+	. = ..()
+// BLUEMOON ADD END
 
 /obj/effect/sunlight/process()
 	// Update all Bloodsucker sunlight huds
@@ -37,9 +44,19 @@
 				for(var/datum/mind/M in SSticker.mode.bloodsuckers)
 					if(!istype(M) || !istype(M.current))
 						continue
+					// BLUEMOON ADD START
+					if(!istype(M.current.loc, /obj/structure/closet/crate/coffin))
+						to_chat(M, span_danger("Чтобы повышать своё поколение, днём нужно спать в гробу. Ты останешься слабым, если не приспособишься."))
+						continue
+					// BLUEMOON ADD END
 					var/datum/antagonist/bloodsucker/bloodsuckerdatum = M.has_antag_datum(ANTAG_DATUM_BLOODSUCKER)
 					if(istype(bloodsuckerdatum))
 						bloodsuckerdatum.RankUp()	// Rank up! Must still be in a coffin to level!
+
+		// BLUEMOON ADD START - фикс резкого пропуска фазы дня
+		if(!(time_til_cycle <= 0))
+			return
+		// BLUEMOON ADD END
 
 		warn_daylight(5,"<span class = 'announce'>The solar flare has ended, and the daylight danger has passed...for now.</span>",\
 				  	  "<span class = 'announce'>The solar flare has ended, and the daylight danger has passed...for now.</span>")

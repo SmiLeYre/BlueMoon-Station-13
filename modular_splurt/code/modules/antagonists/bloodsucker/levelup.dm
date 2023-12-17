@@ -21,7 +21,7 @@
 	var/total_uses = 1
 	bloodcost = 50
 	cooldown = 50
-	bloodsucker_can_buy = TRUE
+	bloodsucker_can_buy = FALSE // BLUEMOON EDIT - было TRUE
 
 
 /datum/action/bloodsucker/levelup/CheckCanUse(display_error)

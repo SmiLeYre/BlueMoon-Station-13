@@ -359,8 +359,8 @@
 	new /obj/item/clothing/shoes/workboots/mining(src)
 	new /obj/item/storage/backpack/satchel/explorer(src)
 
-/obj/structure/closet/coffin/handle_lock_addition()
+/obj/structure/closet/crate/coffin/handle_lock_addition() // BLUEMOON EDIT - изначальный путь был /obj/structure/closet/coffin, которого уже не существует
 	return
 
-/obj/structure/closet/coffin/handle_lock_removal()
+/obj/structure/closet/crate/coffin/handle_lock_removal() // BLUEMOON EDIT - изначальный путь был /obj/structure/closet/coffin, которого уже не существует
 	return
