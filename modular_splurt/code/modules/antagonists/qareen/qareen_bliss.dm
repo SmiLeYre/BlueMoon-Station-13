@@ -9,6 +9,7 @@
 	cure_chance = 100
 	agent = "Unholy Forces"
 	viable_mobtypes = list(/mob/living/carbon/human)
+	disease_flags = CURABLE
 	permeability_mod = 1
 	severity = DISEASE_SEVERITY_MEDIUM
 	needs_all_cures = FALSE
