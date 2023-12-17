@@ -93,8 +93,8 @@
 			if(user.a_intent == "disarm" && CHECK_MOBILITY(user, MOBILITY_MOVE) && !user.buckled)
 				now_pushing = 0
 				//user.forceMove(target.loc) BLUEMOON REMOVAL - пересено в micro_move_to_target_turf
-				user.sizediffStamLoss(target)
 				micro_move_to_target_turf(target) // BLUEMOON ADD
+				user.sizediffStamLoss(target)
 				user.add_movespeed_modifier(/datum/movespeed_modifier/stomp, TRUE) //Full stop
 				addtimer(CALLBACK(user, /mob/.proc/remove_movespeed_modifier, MOVESPEED_ID_STOMP, TRUE), 3) //0.3 seconds
 				if(iscarbon(user))
@@ -107,9 +107,9 @@
 			if(user.a_intent == "harm" && CHECK_MOBILITY(user, MOBILITY_MOVE) && !user.buckled)
 				now_pushing = 0
 				//user.forceMove(target.loc) BLUEMOON REMOVAL - пересено в micro_move_to_target_turf
+				micro_move_to_target_turf(target) // BLUEMOON ADD
 				user.sizediffStamLoss(target)
 				user.sizediffBruteloss(target)
-				micro_move_to_target_turf(target) // BLUEMOON ADD
 				playsound(loc, 'sound/misc/splort.ogg', 50, 1)
 				user.add_movespeed_modifier(/datum/movespeed_modifier/stomp, TRUE)
 				addtimer(CALLBACK(user, /mob/.proc/remove_movespeed_modifier, MOVESPEED_ID_STOMP, TRUE), 10) //1 second
@@ -130,8 +130,8 @@
 			if(user.a_intent == "grab" && CHECK_MOBILITY(user, MOBILITY_MOVE) && !user.buckled)
 				now_pushing = 0
 				//user.forceMove(target.loc) BLUEMOON REMOVAL - пересено в micro_move_to_target_turf
-				user.sizediffStamLoss(target)
 				micro_move_to_target_turf(target) // BLUEMOON ADD
+				user.sizediffStamLoss(target)
 				user.sizediffStun(target)
 				user.add_movespeed_modifier(/datum/movespeed_modifier/stomp, TRUE)
 				addtimer(CALLBACK(user, /mob/.proc/remove_movespeed_modifier, MOVESPEED_ID_STOMP, TRUE), 7)//About 3/4th a second
