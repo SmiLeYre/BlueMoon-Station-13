@@ -74,7 +74,8 @@
 		if(COMPARE_SIZES(user, target) >= 1.6) // BLUEMOON CHANGES
 
 			// BLUEMOON ADD START
-			if(target.mind?.martial_art?.can_use(target)) // нельзя давить тех, кто обучен и может применять боевые искусства
+			if(target.mind?.martial_art?.id && target.mind.martial_art.can_use(target)) // нельзя давить тех, кто обучен и может применять боевые искусства
+			// У людей по умолчанию есть плейсходерное боевое искусство, но у него нет ID. Потому проверка на него, т.к. любое другое ID изменяет
 				if(target.a_intent != INTENT_HELP)
 					now_pushing = 0
 					micro_move_to_target_turf(target) // BLUEMOON ADD
@@ -84,6 +85,7 @@
 						span_danger("Вы уворачиваетесь от попытки [src] наступить на вас благодаря своему боевому искусству!"),
 						vision_distance = 3,
 						target = user, target_message = span_danger("[target] умело уворачивается от вашей попытки наступить на него!"))
+					playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
 					return TRUE // технически, переступил
 			// BLUEMOON ADD END
 
