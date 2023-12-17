@@ -16,6 +16,7 @@
 	var/improvised = 0
 	var/garrote_time = 30
 	var/wielded = FALSE
+	var/oxydamage = 6
 
 	var/list/obj/item/garrote/garroted_by = list()
 
@@ -103,13 +104,13 @@
 
 	if(!(strangling) && !(user.pulling))
 		strangling = M
+		ADD_TRAIT(strangling, TRAIT_GARROTED, "garroted")
 		if(do_after(user,garrote_time, target = src))
 
-			if(improvised) // Not a trash anymore:|
+			if(improvised) // Not a trash anymore :[
 				U.grab_state = GRAB_AGGRESSIVE
 				M.grabbedby(U, 1)
 				M.dir = victimdir
-				M.drop_all_held_items()
 				U.setGrabState(GRAB_AGGRESSIVE)
 
 			else
@@ -133,6 +134,7 @@
 
 /obj/item/garrote/process()
 	var/mob/living/carbon/human/user = loc
+
 	if(!strangling)
 		//usr.visible_message("<span class='info'>[usr] removes the [src] from [strangling]'s neck.</span>",
 				//"<span class='warning'>You remove the [src] from [strangling]'s neck.</span>")
@@ -148,6 +150,8 @@
 		//usr.visible_message("<span class='info'>[usr] removes the [src] from [strangling]'s neck.</span>",
 				//"<span class='warning'>You remove the [src] from [strangling]'s neck.</span>")
 		//strangling.garroted_by.Remove(src)
+		if(HAS_TRAIT(strangling, TRAIT_GARROTED))
+			REMOVE_TRAIT(strangling, TRAIT_GARROTED, "garroted")
 		strangling = null
 		//update_icon_state()
 		STOP_PROCESSING(SSobj, src)
@@ -158,6 +162,8 @@
 		//usr.visible_message("<span class='info'>[usr] removes the [src] from [strangling]'s neck.</span>",
 				//"<span class='warning'>You remove the [src] from [strangling]'s neck.</span>")
 		//strangling.garroted_by.Remove(src)
+		if(HAS_TRAIT(strangling, TRAIT_GARROTED))
+			REMOVE_TRAIT(strangling, TRAIT_GARROTED, "garroted")
 		strangling = null
 		//update_icon_state()
 		STOP_PROCESSING(SSobj, src)
@@ -169,6 +175,8 @@
 		//usr.visible_message("<span class='info'>[usr] removes the [src] from [strangling]'s neck.</span>",
 				//"<span class='warning'>You remove the [src] from [strangling]'s neck.</span>")
 		//strangling.garroted_by.Remove(src)
+		if(HAS_TRAIT(strangling, TRAIT_GARROTED))
+			REMOVE_TRAIT(strangling, TRAIT_GARROTED, "garroted")
 		strangling = null
 		//update_icon_state()
 		STOP_PROCESSING(SSobj, src)
@@ -177,12 +185,12 @@
 
 	if(improvised)
 
-		strangling.adjustOxyLoss(6) // было 2
+		strangling.adjustOxyLoss(oxydamage)
 
 	else
 
 		strangling.Silence(6 SECONDS) // Non-improvised effects
-		strangling.adjustOxyLoss(20) // было 20
+		strangling.adjustOxyLoss(oxydamage*3)
 
 
 /obj/item/garrote/suicide_act(mob/user)
