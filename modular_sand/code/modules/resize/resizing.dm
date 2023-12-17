@@ -78,7 +78,7 @@
 			// У людей по умолчанию есть плейсходерное боевое искусство, но у него нет ID. Потому проверка на него, т.к. любое другое ID изменяет
 				if(target.a_intent != INTENT_HELP)
 					now_pushing = 0
-					micro_move_to_target_turf(target) // BLUEMOON ADD
+					micro_move_to_target_turf(target)
 					log_combat(user, target, "failed (martial art) to step on", addition="[user.a_intent] trample")
 					target.visible_message(\
 						span_danger("[target] уворачивается от попытки [src] наступить на не[target.gender == MALE ? "го" : "ё"]!"),\
@@ -86,7 +86,7 @@
 						vision_distance = 3,
 						target = user, target_message = span_danger("[target] умело уворачивается от вашей попытки наступить на него!"))
 					playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
-					return TRUE // технически, переступил
+					return TRUE
 			// BLUEMOON ADD END
 
 			log_combat(user, target, "stepped on", addition="[user.a_intent] trample")
