@@ -45,9 +45,11 @@
 					if(!istype(M) || !istype(M.current))
 						continue
 					// BLUEMOON ADD START
+					/* - временно убрано, чтобы не слишком сильно душить вампиров
 					if(!istype(M.current.loc, /obj/structure/closet/crate/coffin))
-						to_chat(M, span_userdanger("Чтобы повышать своё поколение, днём нужно спать днём в гробу. Ты останешься слабым, если не приспособишься."))
+						to_chat(M, span_userdanger("Чтобы повышать своё поколение, днём нужно спать в гробу. Ты останешься слабым, если не приспособишься."))
 						continue
+					*/
 					// BLUEMOON ADD END
 					var/datum/antagonist/bloodsucker/bloodsuckerdatum = M.has_antag_datum(ANTAG_DATUM_BLOODSUCKER)
 					if(istype(bloodsuckerdatum))
