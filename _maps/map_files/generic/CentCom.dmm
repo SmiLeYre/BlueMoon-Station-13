@@ -20438,9 +20438,6 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/centcom/holding)
-"bbu" = (
-/turf/open/floor/plating/dirt,
-/area/centcom/holding)
 "bcu" = (
 /obj/structure/chair/sofa/corp/corner{
 	dir = 4
@@ -22447,7 +22444,9 @@
 /area/centcom)
 "ebI" = (
 /obj/structure/flora/ausbushes/genericbush,
-/turf/open/floor/plating/dirt,
+/turf/open/floor/plating/dirt/dark/jungle{
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
+	},
 /area/centcom/holding)
 "ebM" = (
 /obj/effect/turf_decal/siding{
@@ -22700,7 +22699,9 @@
 "ezY" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/biolumi/mine,
-/turf/open/floor/plating/dirt,
+/turf/open/floor/plating/dirt/dark/jungle{
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
+	},
 /area/centcom/holding)
 "eAr" = (
 /obj/structure/spacevine,
@@ -28236,7 +28237,9 @@
 /obj/structure/fence/cut/medium{
 	dir = 1
 	},
-/turf/open/floor/plating/dirt,
+/turf/open/floor/plating/dirt/dark/jungle{
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
+	},
 /area/centcom/holding)
 "lWp" = (
 /obj/effect/turf_decal/tile/neutral{
@@ -28715,7 +28718,9 @@
 /obj/structure/fence/cut/medium{
 	dir = 8
 	},
-/turf/open/floor/plating/dirt,
+/turf/open/floor/plating/dirt/dark/jungle{
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
+	},
 /area/centcom/holding)
 "mIH" = (
 /obj/machinery/vending/wardrobe/chem_wardrobe,
@@ -29277,7 +29282,9 @@
 /area/syndicate_mothership/control)
 "nyV" = (
 /mob/living/simple_animal/hostile/retaliate/frog,
-/turf/open/floor/plating/dirt,
+/turf/open/floor/plating/dirt/dark/jungle{
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
+	},
 /area/centcom/holding)
 "nzk" = (
 /obj/effect/turf_decal/tile/brown/opposingcorners,
@@ -30110,7 +30117,9 @@
 "oSK" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/pointybush,
-/turf/open/floor/plating/dirt,
+/turf/open/floor/plating/dirt/dark/jungle{
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
+	},
 /area/centcom/holding)
 "oTl" = (
 /obj/structure/spacevine,
@@ -32715,7 +32724,9 @@
 "sHG" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/plating/dirt,
+/turf/open/floor/plating/dirt/dark/jungle{
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
+	},
 /area/centcom/holding)
 "sIq" = (
 /obj/machinery/door/airlock/centcom{
@@ -33274,7 +33285,9 @@
 /area/centcom)
 "tMy" = (
 /obj/structure/closet/crate/trashcart,
-/turf/open/floor/plating/dirt,
+/turf/open/floor/plating/dirt/dark/jungle{
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
+	},
 /area/centcom/holding)
 "tMM" = (
 /obj/machinery/atmospherics/components/unary/cryo_cell,
@@ -33882,7 +33895,9 @@
 /area/syndicate_mothership/control)
 "uDH" = (
 /obj/structure/fence,
-/turf/open/floor/plating/dirt,
+/turf/open/floor/plating/dirt/dark/jungle{
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
+	},
 /area/centcom/holding)
 "uDO" = (
 /obj/structure/table/wood,
@@ -34164,7 +34179,9 @@
 /obj/structure/fence/door/opened{
 	dir = 4
 	},
-/turf/open/floor/plating/dirt,
+/turf/open/floor/plating/dirt/dark/jungle{
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
+	},
 /area/centcom/holding)
 "vbm" = (
 /obj/vehicle/ridden/janicart/upgraded,
@@ -34902,7 +34919,9 @@
 /area/centcom)
 "vYD" = (
 /obj/structure/fence/door/opened,
-/turf/open/floor/plating/dirt,
+/turf/open/floor/plating/dirt/dark/jungle{
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
+	},
 /area/centcom/holding)
 "vYO" = (
 /obj/docking_port/stationary{
@@ -36493,7 +36512,9 @@
 /area/centcom/holding)
 "ygX" = (
 /obj/structure/flora/ausbushes/fernybush,
-/turf/open/floor/plating/dirt,
+/turf/open/floor/plating/dirt/dark/jungle{
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
+	},
 /area/centcom/holding)
 "yhn" = (
 /obj/machinery/light/directional/east,
@@ -56372,7 +56393,7 @@ jMU
 wJH
 tMy
 mID
-bbu
+iPk
 pKy
 tbC
 fON
@@ -56627,9 +56648,9 @@ geH
 geH
 wJH
 wJH
-bbu
+iPk
 vYD
-bbu
+iPk
 pKy
 tbC
 fON
@@ -56871,8 +56892,8 @@ ncJ
 ncJ
 ncJ
 wJH
-bbu
-bbu
+iPk
+iPk
 tMy
 wJH
 npl
@@ -57385,9 +57406,9 @@ iPk
 iPk
 ncJ
 fON
-bbu
-bbu
-bbu
+iPk
+iPk
+iPk
 fON
 dea
 fON
@@ -57643,7 +57664,7 @@ iUm
 ncJ
 fON
 fON
-bbu
+iPk
 fON
 fON
 fON
