@@ -28686,6 +28686,12 @@
 	},
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding)
+"mFQ" = (
+/obj/machinery/light/directional/east,
+/turf/open/indestructible/cobble/side{
+	dir = 4
+	},
+/area/centcom/holding)
 "mGx" = (
 /obj/structure/filingcabinet/filingcabinet,
 /turf/open/floor/plating,
@@ -35143,6 +35149,12 @@
 	},
 /turf/open/floor/iron/freezer,
 /area/syndicate_mothership/control)
+"woL" = (
+/obj/machinery/light/directional/north,
+/turf/open/indestructible/cobble/side{
+	dir = 1
+	},
+/area/centcom/holding)
 "wqm" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/item/storage/pill_bottle/aranesp,
@@ -51475,7 +51487,7 @@ lpH
 oom
 oom
 aFe
-pKy
+woL
 gMA
 viE
 viE
@@ -52768,7 +52780,7 @@ bQT
 bQT
 ldr
 wTR
-bQT
+mFQ
 bQT
 iGk
 fON
