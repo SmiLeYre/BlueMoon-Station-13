@@ -391,6 +391,7 @@
 /obj/structure/flora/rock/pile
 	icon_state = "lavarocks"
 	desc = "A pile of rocks."
+	density = FALSE //BLUEMOON ADD это реально куча косточек на полу, оно проходимо по всей логике
 
 //Jungle grass
 

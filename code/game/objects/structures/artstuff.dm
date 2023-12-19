@@ -36,7 +36,7 @@
 		painting = null
 
 /obj/item/canvas
-	name = "canvas"
+	name = "Small Сanvas"
 	desc = "Draw out your soul on this canvas!"
 	icon = 'icons/obj/artstuff.dmi'
 	icon_state = "11x11"
@@ -194,6 +194,7 @@
 		SStgui.update_uis(src)
 
 /obj/item/canvas/nineteenXnineteen
+	name = "Medium Canvas"
 	icon_state = "19x19"
 	width = 19
 	height = 19
@@ -203,6 +204,7 @@
 	framed_offset_y = 9
 
 /obj/item/canvas/twentythreeXnineteen
+	name = "Big Canvas"
 	icon_state = "23x19"
 	width = 23
 	height = 19
@@ -212,6 +214,7 @@
 	framed_offset_y = 8
 
 /obj/item/canvas/twentythreeXtwentythree
+	name = "B-Big Canvas"
 	icon_state = "23x23"
 	width = 23
 	height = 23

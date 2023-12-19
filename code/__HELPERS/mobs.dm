@@ -268,6 +268,7 @@
 		"flavor_text"		= "",
 		"silicon_flavor_text"		= "",
 		"naked_flavor_text" = "", //SPLURT edit
+		"custom_deathgasp" = "застывает и падает без сил, глаза мертвы и безжизненны...", // BLUEMOON ADD - пользовательский эмоут смерти
 		"custom_species_lore" = "",
 		"headshot_link"		= "", //SPLURT edit
 		"meat_type"			= "Mammalian",

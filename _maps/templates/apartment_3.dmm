@@ -853,7 +853,8 @@
 /area/hilbertshotel)
 "OY" = (
 /obj/machinery/jukebox{
-	req_one_access = null
+	req_one_access = null;
+	one_area_play = 1
 	},
 /obj/machinery/light{
 	dir = 1

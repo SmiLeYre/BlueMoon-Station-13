@@ -172,7 +172,7 @@
 			else
 				message = "cums on \the [M]'s backside."
 		else
-			message = "cums on the floor!"
+			message = "кончает, заполняя пространство под собой!"
 
 	if(deathclaw_mode == "abomination" && M.client?.prefs.unholypref == "Yes")
 		message = "cums all over [M]'s body"

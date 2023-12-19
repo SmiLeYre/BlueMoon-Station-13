@@ -8,7 +8,7 @@
 // -------------: TO FIGHT IT: shoot it from range, bring friends!
 // -------------: SPRITES FROM: FoS, https://www.paradisestation.org/forum/profile/335-fos
 
-/mob/living/simple_animal/hostile/poison/terror_spider/guardian
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/guardian
 	name = "Guardian of Terror"
 	desc = "An ominous-looking purple spider. It looks about warily, as if waiting for something."
 	ai_target_method = TS_DAMAGE_BRUTE
@@ -44,7 +44,7 @@
 	var/cycles_noqueen = 0
 	var/max_queen_range = 15
 
-/mob/living/simple_animal/hostile/poison/terror_spider/guardian/spider_specialattack(mob/living/carbon/human/L)
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/guardian/spider_specialattack(mob/living/carbon/human/L)
 	L.adjustStaminaLoss(15)
 	if(prob(20))
 		playsound(src, 'sound/creatures/terrorspiders/bite2.ogg', 120, 1)
@@ -54,26 +54,26 @@
 	else
 		..()
 
-/mob/living/simple_animal/hostile/poison/terror_spider/guardian/death(gibbed)
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/guardian/death(gibbed)
 	if(can_die() && spider_myqueen)
 		if(spider_myqueen.stat != DEAD && !spider_myqueen.ckey)
 			if(get_dist(src, spider_myqueen) > max_queen_range)
 				if(!degenerate && !spider_myqueen.degenerate)
 					degenerate = TRUE
-					spider_myqueen.DoLayTerrorEggs(/mob/living/simple_animal/hostile/poison/terror_spider/guardian, 1)
+					spider_myqueen.DoLayTerrorEggs(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/guardian, 1)
 					visible_message("<span class='notice'>[src] chitters in the direction of [spider_myqueen]!</span>")
 	return ..()
 
-/mob/living/simple_animal/hostile/poison/terror_spider/guardian/Life(seconds, times_fired)
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/guardian/Life(seconds, times_fired)
 	. = ..()
 	if(stat != DEAD) // Can't use if(.) for this due to the fact it can sometimes return FALSE even when mob is alive.
 		if(!degenerate && spider_myqueen)
 			if(times_fired % 5 == 0)
 				purple_distance_check()
 
-/mob/living/simple_animal/hostile/poison/terror_spider/guardian/proc/purple_distance_check()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/guardian/proc/purple_distance_check()
 	if(spider_myqueen)
-		var/mob/living/simple_animal/hostile/poison/terror_spider/queen/Q = spider_myqueen
+		var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/Q = spider_myqueen
 		if(Q)
 			if(Q.stat == DEAD)
 				spider_myqueen = null
@@ -109,7 +109,7 @@
 					melee_damage_lower = 5
 					melee_damage_upper = 10
 
-/mob/living/simple_animal/hostile/poison/terror_spider/guardian/Stat()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/guardian/Stat()
 	..()
 	// Provides a status panel indicator, showing purples how long they can be away from their queen before their hivemind link breaks, and they die.
 	// Uses <font color='#X'> because the status panel does NOT accept <span class='X'>.

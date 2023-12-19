@@ -125,6 +125,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/nonconpref = "Ask"
 	var/vorepref = "Ask"
 	var/mobsexpref = "No" //Added by Gardelin0 - Sex(mostly non-con) with hostile mobs(tentacles)
+	var/hornyantagspref = "No" //Added by Gardelin0 - Interactions(mostly non-con) with horny antags(Qareen)
 	var/extremepref = "No" //This is for extreme shit, maybe even literal shit, better to keep it on no by default
 	var/extremeharm = "No" //If "extreme content" is enabled, this option serves as a toggle for the related interactions to cause damage or not
 	var/see_chat_emotes = TRUE
@@ -251,6 +252,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 "naked_flavor_text" = "", //SPLURT edit
 "silicon_flavor_text" = "",
 "custom_species_lore" = "",
+"custom_deathgasp" = "застывает и падает без сил, глаза мертвы и безжизненны...", // BLUEMOON ADD - пользовательский эмоут смерти
 "ooc_notes" = "",
 "meat_type" = "Mammalian",
 "body_model" = MALE,
@@ -664,6 +666,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					else
 						dat += "[TextPreview(html_encode(features["naked_flavor_text"]))]...<BR>"
 					//SPLURT edit end
+					// BLUEMOON ADD START - пользовательский эмоут смерти
+					dat += "<h2>Custom Deathgasp</h2>"
+					dat += "<a href='?_src_=prefs;preference=custom_deathgasp;task=input'><b>Set Custom Deathgasp</b></a><br>"
+					if(length(features["custom_deathgasp"]) <= MAX_FLAVOR_PREVIEW_LEN)
+						if(!length(features["custom_deathgasp"]))
+							dat += "\[...\]<BR>"
+						else
+							dat += "[html_encode(features["custom_deathgasp"])]<BR>"
+					else
+						dat += "[TextPreview(html_encode(features["custom_deathgasp"]))]...<BR>"
+					// BLUEMOON ADD END
 					dat += "<h2>Silicon Flavor Text</h2>"
 					dat += "<a href='?_src_=prefs;preference=silicon_flavor_text;task=input'><b>Set Silicon Examine Text</b></a><br>"
 					if(length(features["silicon_flavor_text"]) <= MAX_FLAVOR_PREVIEW_LEN)
@@ -727,7 +740,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 					dat += "<h2>Body</h2>"
 					dat += "<b>Gender:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=gender;task=input'>[gender == MALE ? "Male" : (gender == FEMALE ? "Female" : (gender == PLURAL ? "Non-binary" : "Object"))]</a><BR>"
-					if(gender != NEUTER && pref_species.sexes)
+					if(pref_species.sexes)
 						dat += "<b>Body Model:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=body_model'>[features["body_model"] == MALE ? "Masculine" : "Feminine"]</a><BR>"
 					dat += "<b>Limb Modification:</b><BR>"
 					dat += "<a href='?_src_=prefs;preference=modify_limbs;task=input'>Modify Limbs</a><BR>"
@@ -910,6 +923,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "Non-Con : <a href='?_src_=prefs;preference=noncon_pref'>[nonconpref]</a><br>"
 					dat += "Vore : <a href='?_src_=prefs;preference=vore_pref'>[vorepref]</a><br>"
 					dat += "Mob-Sex : <a href='?_src_=prefs;preference=mobsex_pref'>[mobsexpref]</a><br>"
+					dat += "Horny Antags : <a href='?_src_=prefs;preference=hornyantags_pref'>[hornyantagspref]</a><br>"
 
 					dat += "<h2>Lewd preferences</h2>"
 					dat += "<b>Lust tolerance:</b><a href='?_src_=prefs;preference=lust_tolerance;task=input'>[lust_tolerance]</a><br>"
@@ -1322,6 +1336,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 												loadout_color_non_poly = loadout_item[LOADOUT_COLOR][1]
 											extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_color=1;loadout_gear_name=[html_encode(gear.name)];'>Color</a>"
 											extra_loadout_data += "<span style='border: 1px solid #161616; background-color: [loadout_color_non_poly];'><font color='[color_hex2num(loadout_color_non_poly) < 200 ? "FFFFFF" : "000000"]'>[loadout_color_non_poly]</font></span>"
+											extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_color_HSV=1;loadout_gear_name=[html_encode(gear.name)];'>HSV Color</a>" // SPLURT EDIT
 										if(gear.loadout_flags & LOADOUT_CAN_NAME)
 											extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_rename=1;loadout_gear_name=[html_encode(gear.name)];'>Name</a> [loadout_item[LOADOUT_CUSTOM_NAME] ? loadout_item[LOADOUT_CUSTOM_NAME] : "N/A"]"
 										if(gear.loadout_flags & LOADOUT_CAN_DESCRIPTION)
@@ -2330,7 +2345,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/msg = input(usr, "Задайте особую предысторию расы своего персонажа!", "Предыстория Расы Bашего Персонажа", features["silicon_flavor_text"]) as message|null //Skyrat edit, removed stripped_multiline_input()
 					if(!isnull(msg))
 						features["custom_species_lore"] = strip_html_simple(msg, MAX_FLAVOR_LEN, TRUE)
-
+				// BLUEMOON ADD START - пользовательский эмоут смерти
+				if("custom_deathgasp")
+					var/msg = input(usr, "Задайте эмоцию, которая будет проигрываться при смерти вашего персонажа!", "Сообщение О Смерти", features["custom_deathgasp"]) as message|null
+					if(!isnull(msg))
+						features["custom_deathgasp"] = strip_html_simple(msg, MAX_DEATHGASP_LEN, TRUE)
+				// BLUEMOON ADD END
 				if("ooc_notes")
 					var/msg = stripped_multiline_input(usr, "Установите всегда видимые OOC-заметки, связанные с вашими предпочтениями.", "ООС-Заметки", html_decode(features["ooc_notes"]), MAX_FLAVOR_LEN, TRUE)
 					if(!isnull(msg))
@@ -3692,6 +3712,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							mobsexpref = "No"
 						if("No")
 							mobsexpref = "Yes"
+				if("hornyantags_pref") //...
+					switch(hornyantagspref)
+						if("Yes")
+							hornyantagspref = "No"
+						if("No")
+							hornyantagspref = "Yes"
 //				if("stomppref") // What the fuck is this?
 //					stomppref = !stomppref
 				//Skyrat edit - *someone* offered me actual money for this shit
@@ -4177,7 +4203,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					sanitize_current_slot.Remove(list(entry))
 					break
 
-		if(href_list["loadout_color"] || href_list["loadout_color_polychromic"] || href_list["loadout_rename"] || href_list["loadout_redescribe"] || href_list["loadout_freqcode"])
+		if(href_list["loadout_color"] || href_list["loadout_color_polychromic"] || href_list["loadout_color_HSV"] || href_list["loadout_rename"] || href_list["loadout_redescribe"])
 			//if the gear doesn't exist, or they don't have it, ignore the request
 			var/name = html_decode(href_list["loadout_gear_name"])
 			var/datum/gear/G = GLOB.loadout_items[gear_category][gear_subcategory][name]
@@ -4197,6 +4223,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				var/current_color = user_gear[LOADOUT_COLOR][1]
 				var/new_color = input(user, "Polychromic options", "Choose Color", current_color) as color|null
 				user_gear[LOADOUT_COLOR][1] = sanitize_hexcolor(new_color, 6, TRUE, current_color)
+
+			// HSV Coloring (SPLURT EDIT)
+			if(href_list["loadout_color_HSV"] && !(G.loadout_flags & LOADOUT_CAN_COLOR_POLYCHROMIC))
+				var/hue = input(user, "Enter Hue (0-360)", "HSV options") as num|null
+				var/saturation = input(user, "Enter Saturation (-10 to 10)", "HSV options") as num|null
+				var/value = input(user, "Enter Value (-10 to 10)", "HSV options") as num|null
+				if(hue && saturation && value)
+					saturation = clamp(saturation, -10, 10)
+					value = clamp(value, -10, 10)
+					var/color_to_use = color_matrix_hsv(hue, saturation, value)
+					user_gear[LOADOUT_COLOR][1] = color_to_use
 
 			//poly coloring can only be done by poly items
 			if(href_list["loadout_color_polychromic"] && (G.loadout_flags & LOADOUT_CAN_COLOR_POLYCHROMIC))

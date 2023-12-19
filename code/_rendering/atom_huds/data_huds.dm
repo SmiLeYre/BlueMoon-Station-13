@@ -187,7 +187,7 @@
 	else if(stat == DEAD || (HAS_TRAIT(src, TRAIT_FAKEDEATH)))
 		if(tod)
 			var/tdelta = round(world.time - timeofdeath)
-			if(tdelta < (DEFIB_TIME_LIMIT * 10))
+			if(tdelta < (DEFIB_TIME_LIMIT * 100))
 				var/obj/item/organ/heart/He = getorgan(/obj/item/organ/heart)
 				if(He)
 					holder.icon_state = "huddefib"
@@ -271,6 +271,11 @@
 		var/icon/IC = icon(icon, icon_state, dir)
 		holder.pixel_y = IC.Height() - world.icon_size
 		holder.icon_state = "hud_imp_loyal"
+	if(HAS_TRAIT(src, TRAIT_ANCHOR))
+		holder = hud_list[IMPLOYAL_HUD]
+		var/icon/IC = icon(icon, icon_state, dir)
+		holder.pixel_y = IC.Height() - world.icon_size
+		holder.icon_state = "hud_imp_anchor"
 
 /mob/living/carbon/human/proc/sec_hud_set_security_status()
 	var/image/holder = hud_list[WANTED_HUD]

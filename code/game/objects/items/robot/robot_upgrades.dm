@@ -95,6 +95,7 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 		VC = new /obj/effect/proc_holder/silicon/cyborg/vtecControl
 		R.AddAbility(VC)
 		R.cansprint = 0
+		R.disable_intentional_sprint_mode()
 
 /obj/item/borg/upgrade/vtec/deactivate(mob/living/silicon/robot/R, user = usr)
 	. = ..()
@@ -706,22 +707,9 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 	action_icon_state = "Chevron_State_0"
 
 	var/currentState = 0
-	var/maxReduction = 0.5
 
 
 /obj/effect/proc_holder/silicon/cyborg/vtecControl/Trigger(mob/living/silicon/robot/user)
-<<<<<<< Updated upstream
-	currentState = (currentState + 1) % 3
-
-	if(istype(user))
-		switch(currentState)
-			if (0)
-				user.vtec = initial(user.vtec)
-			if (1)
-				user.vtec = initial(user.vtec) - maxReduction * 0.5
-			if (2)
-				user.vtec = initial(user.vtec) - maxReduction * 1
-=======
 	if(!(user.cell?.charge) || (!user.cell?.self_recharge && (user.cell?.charge <= 500)) || (user.cell?.self_recharge && (user.cell?.charge <= max(user.cell?.chargerate, 500))))
 		to_chat(user, "<span class='warning'>Critical cell charge! VTEC is temporarily disabled.</span>")
 		currentState = 0
@@ -736,7 +724,6 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 				user.vtec = initial(user.vtec) - 1.5 //cyborg sprinting is roughly -2. don't forget we can't sprint with vtec.
 			if (2) //overclocking module
 				user.vtec = initial(user.vtec) - 2 //while changing this value check /mob/living/silicon/robot/proc/use_power() to maintain proper power drain
->>>>>>> Stashed changes
 
 	action.button_icon_state = "Chevron_State_[currentState]"
 	action.UpdateButtonIcon()

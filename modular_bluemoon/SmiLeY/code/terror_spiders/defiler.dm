@@ -7,7 +7,7 @@
 // -------------: TO FIGHT IT: blast it before it can get away
 // -------------: SPRITES FROM: FoS, https://www.paradisestation.org/forum/profile/335-fos
 
-/mob/living/simple_animal/hostile/poison/terror_spider/defiler
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/defiler
 	name = "Defiler of Terror"
 	desc = "An ominous-looking white spider, its ghostly eyes and vicious-looking fangs are the stuff of nightmares."
 	ai_target_method = TS_DAMAGE_POISON
@@ -31,18 +31,18 @@
 	spider_intro_text = "Будучи Осквернителем Ужаса, ваша цель - атаковать ничего не подозревающих гуманоидов, чтобы заразить их яйцами. Вы наносите мало урона, но можете парализовать цель за три укуса, а ваш яд заставит её замолчать. Вы также можете генерировать различные дымы вредящие противникам. И помните, не нужно убивать заражённых, они послужат носителями для новых пауков!"
 
 
-/mob/living/simple_animal/hostile/poison/terror_spider/defiler/LoseTarget()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/defiler/LoseTarget()
 	stop_automated_movement = 0
 	attackstep = 0
 	attackcycles = 0
 	..()
 
-/mob/living/simple_animal/hostile/poison/terror_spider/defiler/death(gibbed)
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/defiler/death(gibbed)
 	if(can_die() && !hasdied && spider_uo71)
 		UnlockBlastDoors("UO71_Bridge")
 	return ..(gibbed)
 
-/mob/living/simple_animal/hostile/poison/terror_spider/defiler/spider_specialattack(mob/living/carbon/human/L, poisonable)
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/defiler/spider_specialattack(mob/living/carbon/human/L, poisonable)
 	L.AdjustSilence(20 SECONDS)
 	L.adjustStaminaLoss(39)
 	L.attack_animal(src)

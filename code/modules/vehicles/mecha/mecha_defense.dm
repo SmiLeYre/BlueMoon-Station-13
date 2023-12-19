@@ -296,6 +296,9 @@
 	if(user.a_intent == INTENT_HARM)
 		return
 	. = TRUE
+	if (user in occupants)
+		to_chat(user, "<span class='notice'>You can't reach damaged parts from inside!</span>")
+		return
 	if(internal_damage & MECHA_INT_TANK_BREACH)
 		if(!W.use_tool(src, user, 0, volume=50, amount=1))
 			return

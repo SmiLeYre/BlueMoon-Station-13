@@ -359,7 +359,7 @@
 	armor_pen = 35
 	hitcost = 1000
 	throw_hit_chance = 10
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	cooldown_duration = 7 SECONDS //It's a little on the weak side
 	status_duration = 3 //Slows someone for a tiny bit
 	var/obj/item/assembly/igniter/sparkler

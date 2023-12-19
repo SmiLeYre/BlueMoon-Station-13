@@ -501,6 +501,7 @@ GLOBAL_LIST_EMPTY(antagonists_to_remind) // BLUEMOON ADD - список анта
 
 //This one is created by admin tools for custom objectives
 /datum/antagonist/custom
+	name = "Custom Antagonist" // BLUEMOON ADD
 	antagpanel_category = "Custom"
 	show_name_in_check_antagonists = TRUE //They're all different
 	var/datum/team/custom_team

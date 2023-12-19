@@ -797,4 +797,4 @@
 	slot = ITEM_SLOT_MASK
 	path = /obj/item/clothing/mask/gas/plaguedoctor/jason
 	ckeywhitelist = list("goblin335", "mixalic")
-	subcategory = LOADOUT_SUBCATEGORIES_DON12
+	subcategory = LOADOUT_SUBCATEGORIES_DON04

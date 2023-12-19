@@ -63,7 +63,22 @@
 
 	var/healthchange = healthmod_new - healthmod_old //Get ready to apply the new value, and subtract the old one. (Negative values become positive)
 
-	// BLUEMOON ADDITION AHEAD - если персонаж так мал, что его ХП должно быть ниже MINIMAL_SIZE_HEALTH после всех формул, то оно выставляется таким
+	// BLUEMOON ADD START
+	// Увеличиваем или уменьшаем ХП у торса в зависимости от размера персонажа
+	for(var/obj/item/bodypart/chest/chest in C.bodyparts)
+		if(get_size(holder) >= 1)
+			chest.max_damage = initial(chest.max_damage) + (get_size(holder) - 1) * 100
+		else
+			chest.max_damage = initial(chest.max_damage) - (1 - get_size(holder)) * 100
+
+	// Увеличиваем или уменьшаем ХП у головы в зависимости от размера персонажа
+	for(var/obj/item/bodypart/head/head in C.bodyparts)
+		if(get_size(holder) >= 1)
+			head.max_damage = initial(head.max_damage) + (get_size(holder) - 1) * 100
+		else
+			head.max_damage = initial(head.max_damage) - (1 - get_size(holder)) * 100
+
+	// Если персонаж так мал, что его ХП должно быть ниже MINIMAL_SIZE_HEALTH после всех формул, то оно выставляется таким
 	if((holder.maxHealth + healthchange) < MINIMAL_SIZE_HEALTH)
 		holder.health = (holder.health / holder.maxHealth) * MINIMAL_SIZE_HEALTH
 		holder.maxHealth = MINIMAL_SIZE_HEALTH

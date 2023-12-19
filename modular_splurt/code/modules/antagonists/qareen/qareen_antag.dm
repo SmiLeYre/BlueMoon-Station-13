@@ -2,7 +2,7 @@
 	name = "Qareen"
 	show_in_antagpanel = FALSE
 	show_name_in_check_antagonists = TRUE
-	threat = 3 //Just a horny antag, threat reduced. - Gardelin0
+	soft_antag = TRUE // BLUEMOON ADD - это антагонист для ЕРП, он не должен мешать спавну обычных антагонистов
 	show_to_ghosts = TRUE
 
 /datum/antagonist/qareen/greet()

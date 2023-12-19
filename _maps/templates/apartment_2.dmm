@@ -404,7 +404,8 @@
 /area/hilbertshotel)
 "bA" = (
 /obj/machinery/jukebox{
-	req_one_access = null
+	req_one_access = null;
+	one_area_play = 1
 	},
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood/wood_tiled,

@@ -249,3 +249,13 @@
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
+
+/obj/item/clothing/under/commissar
+	name = "Commissar Uniform"
+	desc = "A great way to cosplay the hero of the Imperium!"
+	icon = 'modular_bluemoon/Gardelin0/icons/clothing/object/uniforms.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Gardelin0/icons/clothing/worn/uniform.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/Gardelin0/icons/clothing/worn/uniform_digi.dmi'
+	icon_state = "commissar"
+	item_state = "commissar"
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_ALL_TAURIC

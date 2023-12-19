@@ -49,11 +49,20 @@ GLOBAL_LIST_EMPTY(cached_previews)
 		data["flavortext"] = M?.client?.prefs.features["silicon_flavor_text"] || ""
 
 	data["oocnotes"] = M?.client?.prefs?.features["ooc_notes"] || ""
-	data["species_name"] = M?.client?.prefs?.custom_species || "Космонавтик"
-	data["custom_species_lore"] = M?.client?.prefs.features["custom_species_lore"] || "Не имеющий описания своей расы космонавтик. Просто космонавтик!"
+	// BLUEMOON ADD START
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		data["species_name"] = M?.client?.prefs?.custom_species || H.dna.species
+	else
+	// BLUEMOON ADD END
+		data["species_name"] = M?.client?.prefs?.custom_species || M // BLUEMOON EDIT - после || замениил "космонавтик" на имя самого моба
+	data["custom_species_lore"] = M?.client?.prefs.features["custom_species_lore"] || "" // BLUEMOON EDIT - если нет кастомного лора, то там 3 чёрточки
+	data["security_records"] = M?.client?.prefs.security_records || "" //BLUEMOON ADD - призраки видят базы данных в описании персонажей
+	data["medical_records"] = M?.client?.prefs.medical_records || "" //BLUEMOON ADD - призраки видят базы данных в описании персонажей
 	data["vore_tag"] = M?.client?.prefs?.vorepref || "No"
 	data["erp_tag"] = M?.client?.prefs?.erppref || "No"
 	data["mob_tag"] = M?.client?.prefs?.mobsexpref || "No"
+	data["hornyantags_tag"] = M?.client?.prefs?.hornyantagspref || "No"
 	data["nc_tag"] = M?.client?.prefs?.nonconpref || "No"
 	data["unholy_tag"] = M?.client?.prefs?.unholypref || "No"
 	data["extreme_tag"] = M?.client?.prefs?.extremepref || "No"
@@ -117,7 +126,12 @@ GLOBAL_LIST_EMPTY(cached_previews)
 	if (!ui)
 		user.client.register_map_obj(examine_panel_screen)
 		examine_panel_screen.setDir(SOUTH)
-		ui = new(user, src, "CharacterProfile", "Профиль персонажа [M]")
+		// BLUEMOON ADD START - призраки видят базы данных в описании персонажей
+		if(isobserver(user))
+			ui = new(user, src, "CharacterProfileForGhosts", "Профиль персонажа [M]")
+		else
+		// BLUEMOON ADD END
+			ui = new(user, src, "CharacterProfile", "Профиль персонажа [M]")
 		ui.open()
 
 /datum/description_profile/ui_act(action, list/params)

@@ -7,6 +7,7 @@
 		/obj/item/sybian_kit = 5,
 		/obj/item/dildo_machine_kit = 5,
 		/obj/item/gloryhole_kit = 5,
+		/obj/item/qareen_chalk = 5,
 	)
 	var/list/extra_contraband = list(
 		/obj/item/storage/box/tentaclescubes = 1, //Just one, because someone is going to spam it, I swear to Azura

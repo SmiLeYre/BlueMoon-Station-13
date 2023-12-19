@@ -317,35 +317,6 @@
 	if(pulling.anchored || pulling.move_resist > move_force || !pulling.Adjacent(src))
 		stop_pulling()
 		return FALSE
-	// BLUEMOON ADDITION AHEAD - проверка на возможность тащить мышкой сверхтяжёлого персонажа
-	if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY_SUPER))
-		var/can_pull = FALSE
-		if(isalien(src)) // чужие (с абилками) могут тащить
-			can_pull = TRUE
-		if(issilicon(src)) // киборги могут тащить
-			can_pull = TRUE
-		if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER)) // другие сверхтяжёлые персонажи могут тащить
-			can_pull = TRUE
-		if(ishuman(src))
-			var/mob/living/carbon/human/user = src
-			if(user.dna.check_mutation(HULK)) // халки могут тащить
-				can_pull = TRUE
-			for(var/datum/antagonist/antagonist_role in user.mind?.antag_datums) // некоторые антагонисты могут тащить
-				if(antagonist_role.type in list(/datum/antagonist/heretic, /datum/antagonist/abductor/agent, /datum/antagonist/abductor/scientist))
-					can_pull = TRUE
-					break
-			if(istype(user.back, /obj/item/mod/control)) // обычные персонажи с активированными клешнями из МОДа на спине могут тащить
-				var/obj/item/mod/control/MOD = user.back
-				if(MOD.active && istype(MOD.selected_module, /obj/item/mod/module/clamp))
-					can_pull = TRUE
-			var/item_in_hand = user.get_active_held_item()
-			if(istype(item_in_hand, /obj/item/gun/magic/contractor_hook)) // персонажи с некоторыми предметами в активной руке могут тащить
-				can_pull = TRUE
-		if(!can_pull)
-			to_chat(src, span_warning("[pulling] is too heavy, you cannot move them around!"))
-			stop_pulling()
-			return
-	// BLUEMOON ADDITION END
 	if(isliving(pulling))
 		var/mob/living/L = pulling
 		if(L.buckled && L.buckled.buckle_prevents_pull) //if they're buckled to something that disallows pulling, prevent it
@@ -388,35 +359,6 @@
 		if(pulling.anchored || pulling.move_resist > move_force)
 			stop_pulling()
 			return
-		// BLUEMOON ADDITION AHEAD - Проверка на возможность ТЯНУТЬ сверхтяжёлого персонажа
-		if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY_SUPER))
-			var/can_pull = FALSE
-			if(isalien(src)) // чужие (с абилками) могут тащить
-				can_pull = TRUE
-			if(issilicon(src)) // киборги могут тащить
-				can_pull = TRUE
-			if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER)) // другие сверхтяжёлые персонажи могут тащить
-				can_pull = TRUE
-			if(ishuman(src))
-				var/mob/living/carbon/human/user = src
-				if(user.dna.check_mutation(HULK)) // халки могут тащить
-					can_pull = TRUE
-				for(var/datum/antagonist/antagonist_role in user.mind?.antag_datums) // некоторые антагонисты могут тащить
-					if(antagonist_role.type in list(/datum/antagonist/heretic, /datum/antagonist/abductor/agent, /datum/antagonist/abductor/scientist))
-						can_pull = TRUE
-						break
-				if(istype(user.back, /obj/item/mod/control)) // обычные персонажи с активированными клешнями из МОДа на спине могут тащить
-					var/obj/item/mod/control/MOD = user.back
-					if(MOD.active && istype(MOD.selected_module, /obj/item/mod/module/clamp))
-						can_pull = TRUE
-				var/item_in_hand = user.get_active_held_item()
-				if(istype(item_in_hand, /obj/item/gun/magic/contractor_hook)) // персонажи с некоторыми предметами в активной руке могут тащить
-					can_pull = TRUE
-			if(!can_pull)
-				to_chat(src, span_warning("[pulling] is too heavy, you cannot move them around!"))
-				stop_pulling()
-				return
-		// BLUEMOON ADDITION END
 	if(pulledby && moving_diagonally != FIRST_DIAG_STEP && get_dist(src, pulledby) > 1)		//separated from our puller and not in the middle of a diagonal move.
 		pulledby.stop_pulling()
 

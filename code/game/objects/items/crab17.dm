@@ -20,6 +20,8 @@
 		var/turf/targetturf = get_safe_random_station_turf()
 		if (!targetturf)
 			return FALSE
+		message_admins("[ADMIN_LOOKUPFLW(user)] активировал КРАБ-17.")
+		log_admin("[key_name(user)] активировал КРАБ-17.")
 		new /obj/effect/dumpeetTarget(targetturf, user)
 		dumped = TRUE
 

@@ -100,3 +100,7 @@
 /datum/gear/uniform/dress/turtledress
 	name = "Turtleneck dress"
 	path = /obj/item/clothing/under/dress/turtledress
+
+/datum/gear/uniform/commissar
+	name = "Commissar uniform"
+	path = /obj/item/clothing/under/commissar

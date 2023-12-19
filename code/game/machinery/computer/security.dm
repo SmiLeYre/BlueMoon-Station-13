@@ -370,18 +370,18 @@ What a mess.*/
 					playsound(loc, 'sound/items/poster_being_created.ogg', 100, 1)
 					sleep(30)
 					var/obj/item/paper/P = new /obj/item/paper( loc )
-					P.default_raw_text = "<CENTER><B>Security Record - (SR-[GLOB.data_core.securityPrintCount])</B></CENTER><BR>"
+					var/report_text = "<CENTER><B>Security Record - (SR-[GLOB.data_core.securityPrintCount])</B></CENTER><BR>"
 					if((istype(active1, /datum/data/record) && GLOB.data_core.general.Find(active1)))
-						P.default_raw_text += text("Name: [] ID: []<BR>\nGender: []<BR>\nAge: []<BR>", active1.fields["name"], active1.fields["id"], active1.fields["gender"], active1.fields["age"])
-						P.default_raw_text += "\nSpecies: [active1.fields["species"]]<BR>"
-						P.default_raw_text += text("\nFingerprint: []<BR>\nPhysical Status: []<BR>\nMental Status: []<BR>", active1.fields["fingerprint"], active1.fields["p_stat"], active1.fields["m_stat"])
+						report_text += text("Name: [] ID: []<BR>\nGender: []<BR>\nAge: []<BR>", active1.fields["name"], active1.fields["id"], active1.fields["gender"], active1.fields["age"])
+						report_text += "\nSpecies: [active1.fields["species"]]<BR>"
+						report_text += text("\nFingerprint: []<BR>\nPhysical Status: []<BR>\nMental Status: []<BR>", active1.fields["fingerprint"], active1.fields["p_stat"], active1.fields["m_stat"])
 					else
-						P.default_raw_text += "<B>General Record Lost!</B><BR>"
+						report_text += "<B>General Record Lost!</B><BR>"
 					if((istype(active2, /datum/data/record) && GLOB.data_core.security.Find(active2)))
-						P.default_raw_text += text("<BR>\n<CENTER><B>Security Data</B></CENTER><BR>\nCriminal Status: []", active2.fields["criminal"])
+						report_text += text("<BR>\n<CENTER><B>Security Data</B></CENTER><BR>\nCriminal Status: []", active2.fields["criminal"])
 
-						P.default_raw_text += "<BR>\n<BR>\nMinor Crimes:<BR>\n"
-						P.default_raw_text +={"<table style="text-align:center;" border="1" cellspacing="0" width="100%">
+						report_text += "<BR>\n<BR>\nMinor Crimes:<BR>\n"
+						report_text +={"<table style="text-align:center;" border="1" cellspacing="0" width="100%">
 <tr>
 <th>Crime</th>
 <th>Details</th>
@@ -389,15 +389,15 @@ What a mess.*/
 <th>Time Added</th>
 </tr>"}
 						for(var/datum/data/crime/c in active2.fields["mi_crim"])
-							P.default_raw_text += "<tr><td>[c.crimeName]</td>"
-							P.default_raw_text += "<td>[c.crimeDetails]</td>"
-							P.default_raw_text += "<td>[c.author]</td>"
-							P.default_raw_text += "<td>[c.time]</td>"
-							P.default_raw_text += "</tr>"
-						P.default_raw_text += "</table>"
+							report_text += "<tr><td>[c.crimeName]</td>"
+							report_text += "<td>[c.crimeDetails]</td>"
+							report_text += "<td>[c.author]</td>"
+							report_text += "<td>[c.time]</td>"
+							report_text += "</tr>"
+						report_text += "</table>"
 
-						P.default_raw_text += "<BR>\nMajor Crimes: <BR>\n"
-						P.default_raw_text +={"<table style="text-align:center;" border="1" cellspacing="0" width="100%">
+						report_text += "<BR>\nMajor Crimes: <BR>\n"
+						report_text +={"<table style="text-align:center;" border="1" cellspacing="0" width="100%">
 <tr>
 <th>Crime</th>
 <th>Details</th>
@@ -405,24 +405,26 @@ What a mess.*/
 <th>Time Added</th>
 </tr>"}
 						for(var/datum/data/crime/c in active2.fields["ma_crim"])
-							P.default_raw_text += "<tr><td>[c.crimeName]</td>"
-							P.default_raw_text += "<td>[c.crimeDetails]</td>"
-							P.default_raw_text += "<td>[c.author]</td>"
-							P.default_raw_text += "<td>[c.time]</td>"
-							P.default_raw_text += "</tr>"
-						P.default_raw_text += "</table>"
+							report_text += "<tr><td>[c.crimeName]</td>"
+							report_text += "<td>[c.crimeDetails]</td>"
+							report_text += "<td>[c.author]</td>"
+							report_text += "<td>[c.time]</td>"
+							report_text += "</tr>"
+						report_text += "</table>"
 
 
-						P.default_raw_text += text("<BR>\nImportant Notes:<BR>\n\t[]<BR>\n<BR>\n<CENTER><B>Comments/Log</B></CENTER><BR>", active2.fields["notes"])
+						report_text += text("<BR>\nImportant Notes:<BR>\n\t[]<BR>\n<BR>\n<CENTER><B>Comments/Log</B></CENTER><BR>", active2.fields["notes"])
 						var/counter = 1
 						while(active2.fields[text("com_[]", counter)])
-							P.default_raw_text += text("[]<BR>", active2.fields[text("com_[]", counter)])
+							report_text += text("[]<BR>", active2.fields[text("com_[]", counter)])
 							counter++
 						P.name = text("SR-[] '[]'", GLOB.data_core.securityPrintCount, active1.fields["name"])
 					else
-						P.default_raw_text += "<B>Security Record Lost!</B><BR>"
+						report_text += "<B>Security Record Lost!</B><BR>"
 						P.name = text("SR-[] '[]'", GLOB.data_core.securityPrintCount, "Record Lost")
-					P.default_raw_text += "</TT>"
+					report_text += "</TT>"
+					P.add_raw_text(report_text)
+					P.update_appearance()
 					P.update_icon()
 					printing = null
 			if("Print Poster")

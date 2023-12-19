@@ -102,7 +102,7 @@
 	var/datum/reagents/fluid_source = G.climaxable(src)
 	if(!fluid_source)
 		return
-	var/main_fluid = lowertext(fluid_source.get_master_reagent_name())
+	var/main_fluid = lowertext(G.get_fluid_name())
 	if(mb_time)
 		visible_message("<span class='love'>You hear a strong suction sound coming from the [M.name] on [src]'s [G.name].</span>", \
 							"<span class='userlove'>The [M.name] pumps faster, trying to get you over the edge.</span>", \
