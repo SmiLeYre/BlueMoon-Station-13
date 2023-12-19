@@ -286,7 +286,7 @@
 //BLUEMOON ADD контраргументы всем бс юзерам, теперь нужно чистить место преступления после себя
 /obj/effect/decal/cleanable/bluespace_remains
 	name = "bluespace dust"
-	desc = "Остатки блюспейс пыли, которую легко можно смахнуть или проанализировать."
+	desc = "Остатки блюспейс пыли. Похоже можно проанализировать."
 	icon = 'icons/effects/atmospherics.dmi'
 	icon_state = "freon_old"
 	var/source_x
