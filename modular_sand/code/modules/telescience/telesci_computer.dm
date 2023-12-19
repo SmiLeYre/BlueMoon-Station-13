@@ -285,9 +285,9 @@
 					log_msg += ", "
 				//BLUEMOON ADD ОКО ВСЁ ВИДИТ
 				if(sending)
-					new /obj/effect/decal/cleanable/glitter/blue/bluespace_remains(dest, telepad.x, telepad.y, telepad.z, telepad)
+					new /obj/effect/decal/cleanable/bluespace_remains(dest, telepad.x, telepad.y, telepad.z, telepad)
 				else
-					new /obj/effect/decal/cleanable/glitter/blue/bluespace_remains(target, telepad.x, telepad.y, telepad.z, telepad)
+					new /obj/effect/decal/cleanable/bluespace_remains(target, telepad.x, telepad.y, telepad.z, telepad)
 				//BLUEMOON ADD END
 				do_teleport(ROI, dest)
 
