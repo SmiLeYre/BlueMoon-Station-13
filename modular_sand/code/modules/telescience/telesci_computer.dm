@@ -283,6 +283,12 @@
 							log_msg = dd_limittext(log_msg, length(log_msg) - 2)
 							log_msg += ")"
 					log_msg += ", "
+				//BLUEMOON ADD ОКО ВСЁ ВИДИТ
+				if(sending)
+					new /obj/effect/decal/cleanable/glitter/blue/bluespace_remains(dest, telepad.x, telepad.y, telepad.z, telepad)
+				else
+					new /obj/effect/decal/cleanable/glitter/blue/bluespace_remains(target, telepad.x, telepad.y, telepad.z, telepad)
+				//BLUEMOON ADD END
 				do_teleport(ROI, dest)
 
 			if (dd_hassuffix(log_msg, ", "))
