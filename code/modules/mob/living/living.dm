@@ -886,8 +886,13 @@
 
 /mob/living/do_resist_grab(moving_resist, forced, silent = FALSE)
 	. = ..()
+	var/escchance
+	if(HAS_TRAIT(usr, TRAIT_GARROTED))
+		escchance = 3
+	else 
+		escchance = 30
 	if(pulledby.grab_state > GRAB_PASSIVE)
-		if(CHECK_MOBILITY(src, MOBILITY_RESIST) && prob(30/pulledby.grab_state))
+		if(CHECK_MOBILITY(src, MOBILITY_RESIST) && prob(escchance/pulledby.grab_state))
 			pulledby.visible_message("<span class='danger'>[src] has broken free of [pulledby]'s grip!</span>",
 				"<span class='danger'>[src] has broken free of your grip!</span>", target = src,
 				target_message = "<span class='danger'>You have broken free of [pulledby]'s grip!</span>")
