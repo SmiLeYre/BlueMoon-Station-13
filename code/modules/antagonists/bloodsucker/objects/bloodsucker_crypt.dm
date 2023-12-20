@@ -64,7 +64,7 @@
 
 
 /obj/structure/bloodsucker
-	var/mob/living/owner
+	var/mob/living/carbon/human/owner // BLUEMOON EDIT - было var/mob/living/owner, нужно в таком виде для проверки на хозяина маскировки
 
 /*
 /obj/structure/bloodsucker/bloodthrone
@@ -165,6 +165,7 @@
 	// Standard Buckle Check
 	if(!buckle_mob(M)) // force=TRUE))
 		return
+	remove_disguise() // BLUEMOON ADD - маскировка пропадает при размещении жертвы
 	// Attempt Buckle
 	user.visible_message("<span class='notice'>[user] straps [M] into the rack, immobilizing them.</span>", \
 			  		 "<span class='boldnotice'>You secure [M] tightly in place. They won't escape you now.</span>")
@@ -482,6 +483,7 @@
 		toggle()
 
 /obj/structure/bloodsucker/candelabrum/proc/toggle(mob/user)
+	remove_disguise() // BLUEMOON ADD - маскировка пропадает при активации или деактивации
 	lit = !lit
 	if(lit)
 		set_light(2, 3, "#66FFFF")

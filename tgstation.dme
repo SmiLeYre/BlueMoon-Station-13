@@ -4102,6 +4102,7 @@
 #include "modular_bluemoon\code\game\objects\items\plushes.dm"
 #include "modular_bluemoon\code\modules\admin\verbs\one_click_antag.dm"
 #include "modular_bluemoon\code\modules\antagonists\bloodsucker.dm"
+#include "modular_bluemoon\code\modules\antagonists\bloodsucker_crypt.dm"
 #include "modular_bluemoon\code\modules\client\preferences_savefile.dm"
 #include "modular_bluemoon\code\modules\client\loadout\uniform.dm"
 #include "modular_bluemoon\code\modules\clothing\suits\miscellaneous.dm"
