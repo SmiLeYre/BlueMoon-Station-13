@@ -4112,6 +4112,7 @@
 #include "modular_bluemoon\code\modules\reagents\chemistry\recipes\recipes.dm"
 #include "modular_bluemoon\code\modules\resize\resizing.dm"
 #include "modular_bluemoon\cooling_device\cooling_device.dm"
+#include "modular_bluemoon\criminal_quirk\criminal_quirk.dm"
 #include "modular_bluemoon\DarwickTheDork\skyrat_ported\code\modules\mob\dead\new_player\sprite_accessories\body_markings.dm"
 #include "modular_bluemoon\dementia\code\modules\clothing\hats.dm"
 #include "modular_bluemoon\dementia\code\modules\clothing\helmets.dm"
