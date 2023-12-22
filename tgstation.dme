@@ -4362,6 +4362,7 @@
 #include "modular_bluemoon\vagabond\code\tyler_durden.dm"
 #include "modular_bluemoon\vagabond\code\wheelchair_resprite.dm"
 #include "modular_bluemoon\vagabond\code\modules\mob\dead\new_player\sprite_accessories\tails.dm"
+#include "modular_bluemoon\vlad0s_staff\code\robot_purge_reagents.dm"
 #include "modular_citadel\code\datums\components\souldeath.dm"
 #include "modular_citadel\code\datums\status_effects\chems.dm"
 #include "modular_citadel\code\game\objects\effects\temporary_visuals\souldeath.dm"
