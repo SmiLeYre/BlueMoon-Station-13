@@ -20,7 +20,7 @@
 	desc = "A glass case containing an anchor implant."
 	imp_type = /obj/item/implant/anchor
 
-/obj/item/implant/anchor/Initialize()
+/obj/item/implant/anchor/proc/Setsectors()
 	.=..()
 	allowed_z_levels = list(1,6,12,src.z) // dynamic набор: цк, ксено межшатолье, инфдормы, сектор имплантации
 	if(GLOB.master_mode == "Extended")
@@ -34,19 +34,14 @@
 	target.sec_hud_set_implants()
 	return TRUE
 
-	RegisterSignal(imp_in, COMSIG_LIVING_LIFE, .proc/on_life)
-	ADD_TRAIT(target, TRAIT_ANCHOR, "implant")
-	target.sec_hud_set_implants()
-	return TRUE
-
 
 /obj/item/implant/anchor/proc/on_life(mob/living/owner)
 	if(!(allowed_z_levels))
-		allowed_z_levels = Initialize()
+		allowed_z_levels = Setsectors()
 //	to_chat(owner, "<span class='rose'>allowed_z_levels [allowed_z_levels], owner.z [owner.z] </span>")
 //	to_chat(owner, "<span class='rose'>Tick</span>")
 	if(!(owner.z in allowed_z_levels))
-		to_chat(owner, "<span class='warning'>It hurts!</span>")
-		owner.adjustBruteLoss(0.5, FALSE) //Provides slow harassing for both brute and burn damage.
-		owner.adjustFireLoss(0.5, FALSE)
-		to_chat(owner, "<span class='warning'>I don`t feeling well leaving my local sector.</span>")
+		to_chat(owner, "<span class='warning'>Больно!</span>")
+		owner.adjustBruteLoss(2.5, FALSE) //Provides slow harassing for both brute and burn damage.
+		owner.adjustFireLoss(2.5, FALSE)
+		to_chat(owner, "<span class='warning'>Мне становится плохо при отдалении от своего родного сектора....</span>")
