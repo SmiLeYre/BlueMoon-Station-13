@@ -1051,7 +1051,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/secure/weapon,
-/obj/item/gun/ballistic/automatic/pistol/aps,
+/obj/item/gun/ballistic/automatic/pistol/APS,
 /obj/item/tcg_card/special/spess_pirate,
 /turf/open/floor/plasteel/airless/dark,
 /area/shuttle/caravan/freighter2)

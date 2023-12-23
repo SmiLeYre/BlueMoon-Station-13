@@ -34,6 +34,11 @@
 	target.sec_hud_set_implants()
 	return TRUE
 
+	RegisterSignal(imp_in, COMSIG_LIVING_LIFE, .proc/on_life)
+	ADD_TRAIT(target, TRAIT_ANCHOR, "implant")
+	target.sec_hud_set_implants()
+	return TRUE
+
 
 /obj/item/implant/anchor/proc/on_life(mob/living/owner)
 	if(!(allowed_z_levels))

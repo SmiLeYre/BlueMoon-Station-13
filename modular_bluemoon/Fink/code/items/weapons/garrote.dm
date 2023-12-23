@@ -2,20 +2,21 @@
  * Contains:
  * 	Traitor garrotes
  * 	Improvised fiber wire
- *  Переписывалось с нуля
- *  С комментариями тут пиздец.
+ *  Писалось с нуля
  */
 
-/obj/item/garrote // 6TC traitor item //  12
+/obj/item/garrote // 6TC traitor item //  12TC Bluemoon edition
 	name = "Garrote"
 	desc = "A length of razor-thin wire with an elegant wooden handle on either end.<br>You suspect you'd have to be behind the target to use this weapon effectively."
 	icon = 'modular_bluemoon/Fink/icons/obj/garrote.dmi'
 	icon_state = "garrot_wrap"
 	w_class = WEIGHT_CLASS_TINY
-	var/mob/living/carbon/human/strangling //D.grabbedby(A, 1)
+	var/mob/living/carbon/human/strangling
+	var/mob/living/carbon/human/strangler
 	var/improvised = 0
 	var/garrote_time = 30
 	var/wielded = FALSE
+	var/oxydamage = 6
 
 	var/list/obj/item/garrote/garroted_by = list()
 
@@ -38,9 +39,8 @@
 	wielded = TRUE
 
 /// triggered on unwield of two handed item
-/obj/item/garrote/proc/on_unwield(obj/item/source, mob/user)
+/obj/item/garrote/proc/on_unwield(obj/item/source, mob/user,mob/strangling)
 	wielded = FALSE
-	strangling = null
 
 /obj/item/garrote/update_icon_state()
 	//.=..()
@@ -64,16 +64,11 @@
 /obj/item/garrote/improvised/update_icon_state()
 
 	icon_state = "garrot_I_wrap"
-	//return
-	//icon_state = "garrot_I_[wielded ? "un" : ""]wrap"
 
 
 
+/obj/item/garrote/attack(mob/living/carbon/M, mob/user)
 
-/obj/item/garrote/attack(mob/living/carbon/M as mob, mob/user as mob)
-
-	if(garrote_time > world.time) // Cooldown
-		return
 
 	if(!wielded)
 		to_chat(user, "<span class = 'warning'>You must unwield the garrote to start straggling [M]!</span>")
@@ -84,7 +79,7 @@
 
 	var/mob/living/carbon/human/U = user
 	var/victimdir = M.dir
-	if((!istype(M, /mob/living/carbon/human))||((HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER))&&(!HAS_TRAIT(U, TRAIT_BLUEMOON_HEAVY_SUPER))) )
+	if((!istype(M, /mob/living/carbon))||((HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER))&&(!HAS_TRAIT(U, TRAIT_BLUEMOON_HEAVY_SUPER))) )
 		to_chat(user, "<span class = 'warning'>You don't think that garroting [M] would be very effective...</span>")
 		return
 
@@ -103,13 +98,14 @@
 
 	if(!(strangling) && !(user.pulling))
 		strangling = M
+		strangler = U
+		ADD_TRAIT(strangling, TRAIT_GARROTED,"garroted")
 		if(do_after(user,garrote_time, target = src))
 
-			if(improvised) // Not a trash anymore:|
+			if(improvised) // Not a trash anymore :[
 				U.grab_state = GRAB_AGGRESSIVE
 				M.grabbedby(U, 1)
 				M.dir = victimdir
-				M.drop_all_held_items()
 				U.setGrabState(GRAB_AGGRESSIVE)
 
 			else
@@ -127,62 +123,48 @@
 						"<span class='userdanger'>[U] begins garroting you with the [src]![improvised ? "" : " You are unable to speak!"]</span>", \
 						"You hear struggling and wire strain against flesh!")
 			START_PROCESSING(SSobj, src)
+
+
+
 			return
 
 	return
 
 /obj/item/garrote/process()
-	var/mob/living/carbon/human/user = loc
-	if(!strangling)
-		//usr.visible_message("<span class='info'>[usr] removes the [src] from [strangling]'s neck.</span>",
-				//"<span class='warning'>You remove the [src] from [strangling]'s neck.</span>")
-		//strangling.garroted_by.Remove(src)
-		// Our mark got gibbed or similar
-		//update_icon_state()
-		STOP_PROCESSING(SSobj, src)
-		pulledby.stop_pulling()
-		return
 
-
-	if(!istype(loc, /mob/living/carbon/human))
-		//usr.visible_message("<span class='info'>[usr] removes the [src] from [strangling]'s neck.</span>",
-				//"<span class='warning'>You remove the [src] from [strangling]'s neck.</span>")
-		//strangling.garroted_by.Remove(src)
+	if(!istype(strangler, /mob/living/carbon/human)) // умер
+		strangling.visible_message("<span class='info'>[strangler] removes the [src] from [strangling]'s neck.</span>")
+		if(HAS_TRAIT(strangling, TRAIT_GARROTED))
+			REMOVE_TRAIT(strangling, TRAIT_GARROTED, "garroted")
 		strangling = null
-		//update_icon_state()
+		strangler.stop_pulling()
 		STOP_PROCESSING(SSobj, src)
-		pulledby.stop_pulling()
-		return
 
-	if(strangling && !wielded)
-		//usr.visible_message("<span class='info'>[usr] removes the [src] from [strangling]'s neck.</span>",
-				//"<span class='warning'>You remove the [src] from [strangling]'s neck.</span>")
-		//strangling.garroted_by.Remove(src)
+
+	if(strangling && !src.wielded) // свернул гарроту
+		strangling.visible_message("<span class='info'>[strangler] removes the [src] from [strangling]'s neck.</span>")
+		if(HAS_TRAIT(strangling, TRAIT_GARROTED))
+			REMOVE_TRAIT(strangling, TRAIT_GARROTED, "garroted")
 		strangling = null
-		//update_icon_state()
+		strangler.stop_pulling()
 		STOP_PROCESSING(SSobj, src)
-		pulledby.stop_pulling()
-		return
 
 
-	if(!user.pulling)
-		//usr.visible_message("<span class='info'>[usr] removes the [src] from [strangling]'s neck.</span>",
-				//"<span class='warning'>You remove the [src] from [strangling]'s neck.</span>")
-		//strangling.garroted_by.Remove(src)
+	if(!strangler.pulling) // отпустил
+		strangling.visible_message("<span class='info'>[strangler] removes the [src] from [strangling]'s neck.</span>")
+		if(HAS_TRAIT(strangling, TRAIT_GARROTED))
+			REMOVE_TRAIT(strangling, TRAIT_GARROTED, "garroted")
 		strangling = null
-		//update_icon_state()
+		strangler.stop_pulling()
 		STOP_PROCESSING(SSobj, src)
-		return
 
 
 	if(improvised)
-
-		strangling.adjustOxyLoss(6) // было 2
+		strangling.adjustOxyLoss(oxydamage)
 
 	else
-
 		strangling.Silence(6 SECONDS) // Non-improvised effects
-		strangling.adjustOxyLoss(20) // было 20
+		strangling.adjustOxyLoss(oxydamage*3)
 
 
 /obj/item/garrote/suicide_act(mob/user)

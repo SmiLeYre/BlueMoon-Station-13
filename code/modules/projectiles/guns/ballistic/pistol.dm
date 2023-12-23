@@ -25,7 +25,7 @@
 
 //(reskinnable Makarov)
 /obj/item/gun/ballistic/automatic/pistol/modular
-	name = "modular pistol"
+	name = "Modular Pistol"
 	desc = "A small, easily concealable 10mm handgun. Has a threaded barrel for suppressors."
 	icon = 'modular_citadel/icons/obj/guns/cit_guns.dmi'
 	icon_state = "cde"
@@ -107,7 +107,7 @@
 	icon_state = "deaglecamo"
 	item_state = "deagleg"
 
-/obj/item/gun/ballistic/automatic/pistol/aps
+/obj/item/gun/ballistic/automatic/pistol/APS
 	name = "stechkin APS pistol"
 	desc = "The original Russian version of a widely used Syndicate sidearm. Uses 9mm ammo. Has a threaded barrel for suppressors."
 	icon_state = "aps"
