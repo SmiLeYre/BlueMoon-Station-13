@@ -242,9 +242,9 @@
 	},
 /obj/structure/closet/crate/secure/gear,
 /obj/item/ammo_box/magazine/smgm45,
-/obj/item/melee/transforming/energy/sword,
 /obj/item/gun/ballistic/automatic/c20r/unrestricted,
 /obj/item/ammo_box/magazine/smgm45,
+/obj/item/melee/transforming/energy/sword/saber,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/syndiederelict/virology)
 "eE" = (

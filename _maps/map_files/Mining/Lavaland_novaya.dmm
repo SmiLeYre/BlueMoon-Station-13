@@ -15446,21 +15446,6 @@
 /obj/item/weldingtool/hugetank,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
-"oxl" = (
-/obj/effect/turf_decal/tile/bar{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/bar{
-	dir = 8
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/mob/living/carbon/monkey/punpun{
-	faction = list("Syndicate")
-	},
-/turf/open/floor/plasteel,
-/area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "oxp" = (
 /obj/structure/stone_tile{
 	dir = 1
@@ -20924,10 +20909,10 @@
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "tRc" = (
-/mob/living/simple_animal/hostile/syndicate{
+/mob/living/simple_animal/hostile/syndicate/real_syndicate{
 	desc = "It's HIM.";
-	environment_smash = 0;
-	name = "John Syndicate"
+	name = "John Syndicate";
+	environment_smash = 0
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
@@ -100700,7 +100685,7 @@ tRc
 xRp
 jIO
 pBl
-oxl
+nzT
 qOm
 tHn
 tfw
