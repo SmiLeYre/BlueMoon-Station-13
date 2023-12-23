@@ -7,6 +7,7 @@
 	var/mob/living/imp_in = null
 	var/implant_color = "b"
 	var/allow_multiple = FALSE
+	var/removable = TRUE // BLUEMOON add
 	var/uses = -1
 	item_flags = DROPDEL
 

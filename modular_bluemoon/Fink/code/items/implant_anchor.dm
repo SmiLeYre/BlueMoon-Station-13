@@ -1,7 +1,9 @@
 /obj/item/implant/anchor
 	name = "anchor implant"
 	desc = "Prevents you from leaving local sector, guarded by you."
+	removable = FALSE
 	var/list/allowed_z_levels
+
 
 /obj/item/implant/anchor/get_data()
 	var/dat = {"<b>Implant Specifications:</b><BR>
@@ -20,9 +22,9 @@
 
 /obj/item/implant/anchor/Initialize()
 	.=..()
-	allowed_z_levels = list(1,12,imp_in.z) // dynamic набор: цк, межшатолье, инфдормы, сектор имплантации
+	allowed_z_levels = list(1,6,12,src.z) // dynamic набор: цк, ксено межшатолье, инфдормы, сектор имплантации
 	if(GLOB.master_mode == "Extended")
-		allowed_z_levels.Add(2,5,6) // экстовая добавка: станционный, шахта, ксено
+		allowed_z_levels.Add(2,5) // экстовая добавка: станционный, шахта
 	return allowed_z_levels
 
 /obj/item/implant/anchor/implant(mob/living/target, mob/user, silent, force)
