@@ -1,3 +1,3 @@
 /datum/gear/head/turban
-	name = "Polychromic Turban"
+	name = "Turban"
 	path = /obj/item/clothing/head/turban
