@@ -447,7 +447,7 @@
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/head/cowboyhat/polychromic
-	name = "polychromic cowboy hat"
+	name = "Polychromic Cowboy Hat"
 	desc = "A polychromic cowboy hat, perfect for your indecisive rancher"
 	icon_state = "cowboyhat_poly"
 	item_state= "cowboyhat_poly"
