@@ -241,3 +241,11 @@
 	else
 		message = "издает крайне громкий звук."
 	. = ..()
+
+/datum/emote/living/audio/rawr2
+	key = "rawr2"
+	key_third_person = "rawr2"
+	message = "издаёт звук - <b>RAWR!</b>"
+	message_mime = "строит грозную мину!"
+	emote_sound = 'sound/voice/rawr2.ogg'
+	emote_cooldown = 1 SECONDS

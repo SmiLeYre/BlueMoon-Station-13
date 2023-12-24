@@ -121,8 +121,9 @@
 		medipen_type = null
 		new /obj/item/stack/cable_coil/random/five(src)
 		new /obj/item/weldingtool/mini(src)
+	if(!isnull(mask_type))
 	// BLUEMOON ADD END
-	new mask_type(src)
+		new mask_type(src)
 	if(!isnull(medipen_type))
 		new medipen_type(src)
 
@@ -131,7 +132,8 @@
 	else if (isvox(loc))
 		new /obj/item/tank/internals/emergency_nitrogen(src)
 	else
-		new internal_type(src)
+		if(!isnull(internal_type)) // BLUEMOON ADD
+			new internal_type(src)
 
 	if(HAS_TRAIT(SSstation, STATION_TRAIT_PREMIUM_INTERNALS))
 		new /obj/item/flashlight/flare(src)

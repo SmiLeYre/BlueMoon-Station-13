@@ -141,3 +141,99 @@
 	r_pocket = /obj/item/pda
 	back = /obj/item/storage/backpack
 	r_hand = /obj/item/storage/secure/briefcase/syndie
+
+//Forgotten syndicate ship
+
+/obj/effect/mob_spawn/human/inteqspace
+	name = "InteQ Ship Crew Member"
+	roundstart = FALSE
+	death = FALSE
+	show_flavour = FALSE
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper_s"
+	short_desc = "Вы - Оперативник Авангарда ИнтеКью на старом корабле, застрявшем во враждебном космосе."
+	flavour_text = "Ваш корабль причалил после долгого перерыва где-то во враждебном пространстве, сообщив о неисправности. Вы застряли здесь, зная, что рядом находится станция Nanotrasen. Почините корабль, найдите способ обеспечить его энергией и выполняйте приказы Капитана."
+	important_info = "Выполняйте приказы своего капитана. Не позвольте кораблю попасть в руки врага! | Экста - грубоватые наёмники, не знающие положения дел в Туманности Синие Луны. Динамика - полноценные оперативники ИнтеКью с поставленной задачей на защиту своего корабля и сектора."
+	canloadappearance = TRUE
+	outfit = /datum/outfit/inteqspace/inteq_crew
+	assignedrole = ROLE_GHOSTROLE_INTEQ
+
+/datum/outfit/inteqspace/inteq_crew/post_equip(mob/living/carbon/human/H)
+	H.faction |= ROLE_INTEQ
+
+	var/obj/item/radio/R = H.ears
+	R.set_frequency(FREQ_GHOST_INTEQ)
+	R.freqlock = TRUE
+	R.independent = TRUE
+
+/obj/effect/mob_spawn/human/inteqspace/special(mob/living/new_spawn)
+	. = ..()
+	new_spawn.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
+
+	var/obj/item/implant/anchor/ghost_anchor = new
+	ghost_anchor.allowed_z_levels = list(1, 6, 12, src.z) // dynamic набор: цк, ксено межшатолье, инфдормы, сектор имплантации
+	if(GLOB.master_mode == "Extended")
+		ghost_anchor.allowed_z_levels.Add(2,5) // экстовая добавка: станционный, шахта
+	ghost_anchor.implant(new_spawn, null, TRUE)
+
+/obj/effect/mob_spawn/human/inteqspace/captain
+	name = "InteQ Ship Captain"
+	short_desc = "Вы - Лидер Авангарда ИнтеКью на старом корабле, застрявшем во враждебном космосе."
+	flavour_text = "Ваш корабль причалил после долгого перерыва где-то во враждебном пространстве, сообщив о неисправности. Вы застряли здесь, зная, что рядом находится станция Nanotrasen. Командуйте своим экипажем и исследуйте свой территорию, чтобы закрепить свое местоположение."
+	important_info = "Защитите корабль и секретные документы в рюкзаке ценой своей жизни. | Экста - грубоватые наёмники, не знающие положения дел в Туманности Синие Луны. Динамика - полноценные оперативники ИнтеКью с поставленной задачей на защиту своего корабля и сектора."
+	canloadappearance = TRUE
+	outfit = /datum/outfit/inteqspace/inteq_captain
+
+/datum/outfit/inteqspace/inteq_captain/post_equip(mob/living/carbon/human/H)
+	H.faction |= ROLE_INTEQ
+
+	var/obj/item/radio/R = H.ears
+	R.set_frequency(FREQ_GHOST_INTEQ)
+	R.freqlock = TRUE
+	R.independent = TRUE
+
+/obj/effect/mob_spawn/human/inteqspace/captain/Destroy()
+	new/obj/structure/fluff/empty_sleeper/syndicate/captain(get_turf(src))
+	return ..()
+
+/datum/outfit/inteqspace
+	implants = list(/obj/item/implant/weapons_auth)
+	back = /obj/item/storage/backpack/duffelbag/syndie/inteq
+
+/datum/outfit/inteqspace/inteq_crew
+	name = "InteQ Ship Crew Member"
+
+	suit = /obj/item/clothing/suit/armor/inteq
+	uniform = /obj/item/clothing/under/inteq
+	shoes = /obj/item/clothing/shoes/combat/swat/knife
+	gloves = /obj/item/clothing/gloves/combat
+
+	head = /obj/item/clothing/head/helmet/swat/inteq
+	mask = /obj/item/clothing/mask/balaclava/breath/inteq
+	ears = /obj/item/radio/headset/ghost_inteq
+	belt = /obj/item/storage/belt/military/assault/inteq_crew
+
+	l_pocket = /obj/item/extinguisher/mini
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
+
+	id = /obj/item/card/id/inteq_command/crew_id
+	backpack_contents = list(/obj/item/paper/fluff/ruins/forgottenship/password)
+
+/datum/outfit/inteqspace/inteq_captain
+	name = "InteQ Ship Captain"
+
+	suit = /obj/item/clothing/suit/armor/inteq/honorable_vanguard
+	uniform = /obj/item/clothing/under/inteq
+	shoes = /obj/item/clothing/shoes/combat/swat/knife
+	gloves = /obj/item/clothing/gloves/combat
+
+	head = /obj/item/clothing/head/HoS/pmc_leader_beret
+	mask = /obj/item/clothing/mask/balaclava/breath/inteq
+	ears = /obj/item/radio/headset/ghost_inteq/leader
+	belt = /obj/item/storage/belt/military/assault/inteq_captain
+
+	l_pocket = /obj/item/extinguisher/mini
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
+
+	id = /obj/item/card/id/inteq_command/captain_id
+	backpack_contents = list(/obj/item/documents/syndicate/red, /obj/item/paper/fluff/ruins/forgottenship/password)

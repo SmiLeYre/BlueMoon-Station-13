@@ -11,7 +11,7 @@
 	turns_per_move = 5
 	speed = 0
 	stat_attack = UNCONSCIOUS
-	robust_searching = 1
+	robust_searching = TRUE
 	maxHealth = 100
 	health = 100
 	harm_intent_damage = 5
@@ -27,7 +27,8 @@
 	faction = list("nanotrasenprivate")
 	status_flags = CANPUSH
 	speak = list("Stop resisting!", "I AM THE LAW!", "Face the wrath of the golden bolt!", "Stop breaking the law, asshole!")
-	search_objects = 1
+	search_objects = TRUE
+	del_on_death = TRUE
 
 	footstep_type = FOOTSTEP_MOB_SHOE
 

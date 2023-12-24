@@ -286,7 +286,7 @@
 	name = "Syndicate jacket"
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/toggle/noonar
-	ckeywhitelist = list("noonar")
+	ckeywhitelist = list("noonar", "dasani2879")
 	subcategory = LOADOUT_SUBCATEGORIES_DON01
 
 /datum/gear/donator/bm/pchelik

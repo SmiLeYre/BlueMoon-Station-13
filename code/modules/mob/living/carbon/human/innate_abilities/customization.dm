@@ -23,7 +23,7 @@
 /datum/action/innate/ability/humanoid_customization/proc/change_form()
 	var/mob/living/carbon/human/H = owner
 
-	var/select_alteration = input(owner, "Select what part of your form to alter", "Form Alteration", "cancel") in list("Body Color", "Eye Color","Hair Style", "Genitals", "Tail", "Snout", "Wings", "Markings", "Ears", "Taur body", "Penis", "Vagina", "Penis Length", "Breast Size", "Breast Shape", "Butt Size", "Belly Size", /* BLUEMOON REMOVAL START "Body Size", BLUEMOON REMOVAL END */ "Genital Color", "Horns", "Hair Color", "Skin Tone (Non-Mutant)", "Cancel")
+	var/select_alteration = input(owner, "Select what part of your form to alter", "Form Alteration", "cancel") in list("Body Color", "Eye Color","Hair Style", "Genitals", "Tail", "Snout", "Wings", "Markings", "Ears", "Taur body", "Penis", "Vagina", "Penis Length", "Breast Size", "Breast Shape", "Butt Size", "Belly Size", "Body Size", "Genital Color", "Horns", "Hair Color", "Skin Tone (Non-Mutant)", "Cancel")
 
 	if(select_alteration == "Body Color")
 		var/new_color = input(owner, "Choose your skin color:", "Race change","#"+H.dna.features["mcolor"]) as color|null
@@ -271,7 +271,7 @@
 		H.apply_overlay()
 		H.give_genital(/obj/item/organ/genital/belly)
 
-	/* BLUEMOON REMOVAL START - размер персонажа на блюмуне слишком сильно отличается в особенностях механик от сплюрта, как и в тематике сервера, чтобы давать возможность его так легко изменять
+	//BLUEMOON CHANGE изменение размера требует время, сколько слишком сильно отличается в особенностях механик от сплюрта, как и в тематике сервера, чтобы давать возможность его так легко изменять
 	else if (select_alteration == "Body Size")
 		// Check if the user has the size_normalized component attached, to avoid body size accumulation bug
 		var/datum/component/size_normalized = H.GetComponent(/datum/component/size_normalized)
@@ -279,11 +279,18 @@
 			to_chat(owner, "<span class='warning'>The normalizer prevents you from adjusting your entire body's size.</span>")
 			return
 		else
+			var/owner_size = get_size(H)
 			var/new_body_size = input(owner, "Choose your desired sprite size: ([CONFIG_GET(number/body_size_min)*100]-[CONFIG_GET(number/body_size_max)*100]%)\nWarning: This may make your character look distorted. Additionally, any size under 100% takes a 10% maximum health penalty", "Character Preference", H.dna.features["body_size"]*100) as num|null
 			if(new_body_size)
 				var/chosen_size = clamp(new_body_size * 0.01, CONFIG_GET(number/body_size_min), CONFIG_GET(number/body_size_max))
-				H.update_size(chosen_size)
-	/ BLUEMOON REMOVAL END */
+				var/diff = abs(chosen_size - owner_size)
+				if(diff)
+					var/time_to_use = diff * 40 //10 секунд на 25% размера
+					to_chat(H, span_warning("You need [time_to_use] seconds to change own size."))
+					if(do_after(owner, time_to_use SECONDS, target = owner))
+						H.update_size(chosen_size)
+	//BLUEMOON CHANGE END
+
 	else if (select_alteration == "Genital Color")
 		var/genital_part = input(owner, "Select what part of your genitals to alter", "Genital Color", "cancel") in list("Penis", "Butt", "Balls", "Anus", "Vagina", "Breasts", "Belly", "Toggle genitals using skintone", "Cancel")
 		if(genital_part == "Toggle genitals using skintone")

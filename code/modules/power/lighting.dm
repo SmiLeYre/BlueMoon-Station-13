@@ -920,14 +920,6 @@
 
 /obj/machinery/light/proc/emergency_lights_off(area/current_area, obj/machinery/power/apc/current_apc)
 	set_light(0, 0, 0) //you, sir, are off!
-	for(var/area/A as anything in GLOB.sortedAreas)
-		if(!is_station_level(A.z))
-			continue
-		for(var/obj/machinery/light/L in A)
-			if(L.status)
-				continue
-			L.fire_mode = FALSE
-			INVOKE_ASYNC(L, TYPE_PROC_REF(/obj/machinery/light, update))
 	if(current_apc)
 		RegisterSignal(current_area, COMSIG_AREA_POWER_CHANGE, PROC_REF(update), override = TRUE)
 

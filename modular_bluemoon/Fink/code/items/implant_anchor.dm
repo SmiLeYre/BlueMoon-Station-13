@@ -1,7 +1,9 @@
 /obj/item/implant/anchor
 	name = "anchor implant"
 	desc = "Prevents you from leaving local sector, guarded by you."
+	removable = FALSE
 	var/list/allowed_z_levels
+
 
 /obj/item/implant/anchor/get_data()
 	var/dat = {"<b>Implant Specifications:</b><BR>
@@ -18,11 +20,10 @@
 	desc = "A glass case containing an anchor implant."
 	imp_type = /obj/item/implant/anchor
 
-/obj/item/implant/anchor/Initialize()
-	.=..()
-	allowed_z_levels = list(1,12,imp_in.z) // dynamic набор: цк, межшатолье, инфдормы, сектор имплантации
+/obj/item/implant/anchor/proc/Setsectors()
+	allowed_z_levels = list(1,6,12) // dynamic набор: цк, ксено межшатолье, инфдормы, сектор имплантации
 	if(GLOB.master_mode == "Extended")
-		allowed_z_levels.Add(2,5,6) // экстовая добавка: станционный, шахта, ксено
+		allowed_z_levels.Add(2,5) // экстовая добавка: станционный, шахта
 	return allowed_z_levels
 
 /obj/item/implant/anchor/implant(mob/living/target, mob/user, silent, force)
@@ -35,11 +36,11 @@
 
 /obj/item/implant/anchor/proc/on_life(mob/living/owner)
 	if(!(allowed_z_levels))
-		allowed_z_levels = Initialize()
+		allowed_z_levels = Setsectors()
 //	to_chat(owner, "<span class='rose'>allowed_z_levels [allowed_z_levels], owner.z [owner.z] </span>")
 //	to_chat(owner, "<span class='rose'>Tick</span>")
-	if(!(owner.z in allowed_z_levels))
-		to_chat(owner, "<span class='warning'>It hurts!</span>")
-		owner.adjustBruteLoss(0.5, FALSE) //Provides slow harassing for both brute and burn damage.
-		owner.adjustFireLoss(0.5, FALSE)
-		to_chat(owner, "<span class='warning'>I don`t feeling well leaving my local sector.</span>")
+	if(!(owner.loc.z in allowed_z_levels))
+		to_chat(owner, "<span class='warning'>Больно!</span>")
+		owner.adjustBruteLoss(2.5, FALSE) //Provides slow harassing for both brute and burn damage.
+		owner.adjustFireLoss(2.5, FALSE)
+		to_chat(owner, "<span class='warning'>Мне становится плохо при отдалении от своего родного сектора....</span>")

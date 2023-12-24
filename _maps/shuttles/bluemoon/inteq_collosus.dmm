@@ -54,7 +54,7 @@
 /obj/item/clothing/head/helmet/space/eva,
 /obj/item/clothing/suit/space/eva,
 /obj/structure/closet/secure_closet{
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /obj/item/clothing/under/rank/prisoner,
 /obj/item/clothing/shoes/sneakers/orange,
@@ -87,7 +87,7 @@
 /obj/machinery/door/airlock/hatch{
 	aiControlDisabled = 1;
 	name = "Crew's Quarters";
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq/collosus)
@@ -276,7 +276,7 @@
 /area/shuttle/inteq/collosus)
 "hO" = (
 /obj/machinery/door/airlock/external{
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/structure/fans/tiny,
@@ -564,7 +564,7 @@
 /obj/machinery/door/airlock/hatch{
 	aiControlDisabled = 1;
 	name = "Hangar";
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq/collosus)
@@ -649,7 +649,7 @@
 /obj/machinery/door/airlock/hatch{
 	aiControlDisabled = 1;
 	name = "Prison Cell";
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq/collosus)
@@ -862,7 +862,7 @@
 /obj/machinery/door/airlock/hatch{
 	aiControlDisabled = 1;
 	name = "Toilet";
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq/collosus)
@@ -988,7 +988,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/window/survival_pod{
 	dir = 1;
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq/collosus)
@@ -1054,7 +1054,7 @@
 	lethal = 1;
 	locked = 0;
 	pixel_y = null;
-	req_access_txt = "150";
+	req_access_txt = "152";
 	pixel_x = -26
 	},
 /turf/open/floor/wood/wood_parquet,
@@ -1084,11 +1084,11 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8;
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /obj/machinery/door/window/survival_pod{
 	dir = 1;
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq/collosus)
@@ -1102,7 +1102,7 @@
 /obj/machinery/door/airlock/hatch{
 	aiControlDisabled = 1;
 	name = "Engineering";
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /turf/open/floor/plating,
 /area/shuttle/inteq/collosus)
@@ -1124,7 +1124,8 @@
 	id = "colossus_port";
 	name = "Port Cargo Door Control";
 	pixel_x = 6;
-	pixel_y = 25
+	pixel_y = 25;
+	req_access_txt = "152"
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/recharger{
@@ -1163,7 +1164,8 @@
 	id = "colossus_port";
 	name = "Port Cargo Door Control";
 	pixel_x = -6;
-	pixel_y = 25
+	pixel_y = 25;
+	req_access_txt = "152"
 	},
 /obj/structure/rack,
 /obj/item/storage/box/zipties,
@@ -1467,7 +1469,8 @@
 	id = "colossus_starboard";
 	name = "Starboard Cargo Door Control";
 	pixel_x = -6;
-	pixel_y = -25
+	pixel_y = -25;
+	req_access_txt = "152"
 	},
 /obj/machinery/vending/medical/syndicate_access,
 /turf/open/floor/iron/dark,
@@ -1478,11 +1481,11 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4;
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /obj/machinery/door/window/survival_pod{
 	dir = 1;
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq/collosus)
@@ -1554,7 +1557,7 @@
 /obj/machinery/door/airlock/hatch{
 	aiControlDisabled = 1;
 	name = "Engineering";
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq/collosus)
@@ -1568,7 +1571,7 @@
 /area/shuttle/inteq/collosus)
 "QI" = (
 /obj/machinery/door/airlock/external{
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
@@ -1587,7 +1590,7 @@
 /obj/machinery/door/airlock/hatch{
 	aiControlDisabled = 1;
 	name = "Armory";
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq/collosus)
@@ -1675,7 +1678,7 @@
 	aiControlDisabled = 1;
 	id_tag = "piratebridgebolt";
 	name = "Bridge";
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq/collosus)
@@ -1712,7 +1715,7 @@
 /obj/machinery/door/airlock/hatch{
 	aiControlDisabled = 1;
 	name = "Spirits Lounge";
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq/collosus)
@@ -1751,7 +1754,8 @@
 	id = "colossus_starboard";
 	name = "Starboard Cargo Door Control";
 	pixel_x = 6;
-	pixel_y = -25
+	pixel_y = -25;
+	req_access_txt = "152"
 	},
 /obj/structure/closet/crate/large,
 /obj/item/pickaxe,
@@ -1908,7 +1912,7 @@
 /obj/machinery/door/airlock/hatch{
 	aiControlDisabled = 1;
 	name = "Engineering";
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq/collosus)
