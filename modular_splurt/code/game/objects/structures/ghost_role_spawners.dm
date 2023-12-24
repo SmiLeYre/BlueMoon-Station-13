@@ -180,7 +180,7 @@
 	return ..()
 
 /datum/outfit/inteqspace
-	implants = list(/obj/item/implant/weapons_auth)
+	implants = list(/obj/item/implant/weapons_auth, /obj/item/implant/anchor)
 	back = /obj/item/storage/backpack/duffelbag/syndie/inteq
 
 /datum/outfit/inteqspace/inteq_crew
