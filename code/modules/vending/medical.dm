@@ -105,9 +105,10 @@
 					/obj/item/storage/firstaid/o2 = 2,
 					/obj/item/defibrillator/loaded = 1,
 					/obj/item/wallframe/defib_mount = 1,
-					/obj/item/sensor_device = 2,
-					/obj/item/clothing/glasses/hud/health/sunglasses = 4,
-					/obj/item/pinpointer/crew = 2)
+					/obj/item/clothing/glasses/hud/health/sunglasses = 6,
+					/obj/item/sensor_device = 3,
+					/obj/item/reagent_containers/blood/oilblood = 6,
+					/obj/item/pinpointer/crew = 3)
 
 /obj/machinery/vending/medical/syndicate_access/Initialize(mapload)
 	. = ..()

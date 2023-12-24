@@ -163,7 +163,7 @@
 /datum/blackmarket_item/syndi/weapon/aps
 	name = "Stechkin APS pistol"
 	desc = "The original Russian version of a widely used Syndicate sidearm. Uses 9mm ammo. Has a threaded barrel for suppressors."
-	item = /obj/item/gun/ballistic/automatic/pistol/aps
+	item = /obj/item/gun/ballistic/automatic/pistol/APS
 	price_min = 250000
 	price_max = 450000
 	stock_min = 1

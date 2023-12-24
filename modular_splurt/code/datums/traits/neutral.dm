@@ -288,7 +288,7 @@
 	value = 0
 	mob_trait = TRAIT_HYDRA_HEADS
 	gain_text = span_notice("Вы слышите два других голоса внутри головы(ов).")
-	lose_text = span_danger("Ваш разум становится единым.")
+	lose_text = span_danger(" становится единым.")
 	medical_record_text = "Пациент имеет несколько голов и личностей, присоединенных к телу."
 
 /datum/quirk/hydra/on_spawn()
