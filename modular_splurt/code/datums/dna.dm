@@ -59,7 +59,7 @@
 
 	//BLUEMOON CHANGE
 	#define MINIMAL_SIZE_HEALTH 10
-	if(HMaxHealth == MINIMAL_SIZE_HEALTH)
+	if(HMaxHealth == MINIMAL_SIZE_HEALTH) //BLUEMOON CHANGE HMaxHealth
 		healthmod_old = MINIMAL_SIZE_HEALTH - 100 // переписываем старое значение для возврата от состоянии минимального ХП к любому иному
 
 	var/healthchange = healthmod_new - healthmod_old //Get ready to apply the new value, and subtract the old one. (Negative values become positive)
