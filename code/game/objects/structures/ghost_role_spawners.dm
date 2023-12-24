@@ -1285,7 +1285,7 @@
 		)
 	id = /obj/item/card/id/syndicate/advanced/black
 	id_trim = /datum/id_trim/syndicom/ds2
-	implants = list(/obj/item/implant/weapons_auth)
+	implants = list(/obj/item/implant/weapons_auth, /obj/item/implant/anchor)
 
 /datum/outfit/ds2/syndicate/miner
 	name = "DS-2 Mining Officer"
@@ -1406,7 +1406,7 @@
 		/obj/item/crowbar/red = 1,
 		/obj/item/lighter/gonzofist = 1)
 	id = /obj/item/card/id/syndicate/advanced/black/command
-	implants = list(/obj/item/implant/weapons_auth)
+	implants = list(/obj/item/implant/weapons_auth, /obj/item/implant/anchor)
 	id_trim = /datum/id_trim/syndicom/ds2
 
 /obj/item/card/id/syndicate/advanced/black/command
@@ -1425,7 +1425,8 @@
 	r_pocket = /obj/item/flashlight/seclite
 	implants = list(
 		/obj/item/implant/weapons_auth,
-		/obj/item/implant/krav_maga
+		/obj/item/implant/krav_maga,
+		/obj/item/implant/anchor
 		)
 	id = /obj/item/card/id/syndicate/advanced/black/command/masteratarms
 	id_trim = /datum/id_trim/syndicom/ds2/masteratarms
@@ -1454,7 +1455,7 @@
 	neck = /obj/item/clothing/neck/cloak/syndieadm
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
 	back = /obj/item/storage/backpack/satchel
-	belt = /obj/item/gun/ballistic/automatic/pistol/aps
+	belt = /obj/item/gun/ballistic/automatic/pistol/APS
 	head = /obj/item/clothing/head/HoS/syndicate
 	id = /obj/item/card/id/syndicate/advanced/black/gold
 	id_trim = /datum/id_trim/syndicom/ds2/stationadmiral

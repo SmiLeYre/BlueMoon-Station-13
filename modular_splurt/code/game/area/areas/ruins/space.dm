@@ -84,4 +84,3 @@
 	area_flags = UNIQUE_AREA
 	flags_1 = NONE
 	sound_environment = SOUND_AREA_SPACE
-

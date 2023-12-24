@@ -587,7 +587,7 @@
 	icon_dead = "russianmelee_dead";
 	icon_living = "russianofficer";
 	icon_state = "russianofficer";
-	loot = list(/obj/effect/mob_spawn/human/corpse/russian/ranged/officer,/obj/item/gun/ballistic/automatic/pistol/aps,/obj/item/keycard);
+	loot = list(/obj/effect/mob_spawn/human/corpse/russian/ranged/officer,/obj/item/gun/ballistic/automatic/pistol/APS,/obj/item/keycard);
 	spawn_mecha_type = /obj/vehicle/sealed/mecha/combat/durand/tu802;
 	name = "Russian Officer";
 	faction = list("russian");

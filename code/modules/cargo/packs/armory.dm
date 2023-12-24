@@ -336,7 +336,7 @@
 	contains = list(/obj/item/gun/ballistic/shotgun/leveraction,
 					/obj/item/storage/fancy/cigarettes/derringer/gold,
 					/obj/item/gun/ballistic/revolver/nagant,
-					/obj/item/gun/ballistic/automatic/pistol/aps,
+					/obj/item/gun/ballistic/automatic/pistol/APS,
 					/obj/item/gun/ballistic/revolver/golden)
 
 /datum/supply_pack/security/armory/esoteric_arms/fill(obj/structure/closet/crate/C)
