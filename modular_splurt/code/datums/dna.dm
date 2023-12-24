@@ -57,7 +57,7 @@
 	var/healthmod_old = ((old_size * 120) - 120) //Get the old value to see what we must change. // BLUEMOON CHANGES
 	var/healthmod_new = ((HSize * 120) - 120) //A size of one would be zero. Big boys get health, small ones lose health. // BLUEMOON CHANGES + HSize
 
-	//BLUEMOON CHANGE
+	// BLUEMOON ADDITION AHEAD
 	#define MINIMAL_SIZE_HEALTH 10
 	if(HMaxHealth == MINIMAL_SIZE_HEALTH)
 		healthmod_old = MINIMAL_SIZE_HEALTH - 100 // переписываем старое значение для возврата от состоянии минимального ХП к любому иному
