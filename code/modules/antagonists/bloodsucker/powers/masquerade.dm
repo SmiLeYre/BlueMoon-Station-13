@@ -18,7 +18,7 @@
 
 /datum/action/bloodsucker/masquerade
 	name = "Masquerade"
-	desc = "Feign the vital signs of a mortal, and escape both casual and medical notice as the monster you truly are."
+	desc = "Имитировать жизненные особенности бытия смертных, чтобы скрыть, каким монстром на самом деле являешься."
 	button_icon_state = "power_human"
 	bloodcost = 20 // BLUEMOON EDIT - было 50
 	cooldown = 200

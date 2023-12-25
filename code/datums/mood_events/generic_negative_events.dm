@@ -312,7 +312,7 @@
 	description = "<span class='boldwarning'>Я выпил[owner_mob.ru_a()] синтетическую кровь. Да что со мной не так?</span>\n"
 
 /datum/mood_event/drankkilled
-	description = "<span class='boldwarning'>Моя жертва умерла от потери крови. Ощущаю себя...не очень гуманно.</span>\n"
+	description = "<span class='boldwarning'>Моя жертва умерла от потери крови! Что я творю!?</span>\n"
 	mood_change = -12
 	timeout = 25 MINUTES
 

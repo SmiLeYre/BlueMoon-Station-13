@@ -4097,6 +4097,8 @@
 #include "modular_bluemoon\bigtalk\bigtalk.dm"
 #include "modular_bluemoon\code\controllers\configuration\entries\silicon.dm"
 #include "modular_bluemoon\code\datums\interactions\_interaction.dm"
+#include "modular_bluemoon\code\datums\mood_events\negative_mood_events.dm"
+#include "modular_bluemoon\code\datums\mood_events\positive_mood_events.dm"
 #include "modular_bluemoon\code\datums\traits\neutral.dm"
 #include "modular_bluemoon\code\game\objects\items\pinpointer.dm"
 #include "modular_bluemoon\code\game\objects\items\plushes.dm"
