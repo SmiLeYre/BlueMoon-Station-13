@@ -53,7 +53,8 @@
 	REMOVE_TRAIT(user, TRAIT_NOHARDCRIT, "bloodsucker")
 	REMOVE_TRAIT(user, TRAIT_NOSOFTCRIT, "bloodsucker")
 	REMOVE_TRAIT(user, TRAIT_VIRUSIMMUNE, "bloodsucker")
-	REMOVE_TRAIT(user, TRAIT_NOBREATH, "bloodsucker")
+	if(!HAS_TRAIT(user, TRAIT_DEATHCOMA)) // BLUEMOON ADD если вампир в торпоре, то он не начнет задыхаться, пока маскируется под живого
+		REMOVE_TRAIT(user, TRAIT_NOBREATH, "bloodsucker")
 	var/obj/item/organ/heart/vampheart/H = user.getorganslot(ORGAN_SLOT_HEART)
 	var/obj/item/organ/eyes/vassal/bloodsucker/E = user.getorganslot(ORGAN_SLOT_EYES)
 	E.flash_protect = 0
