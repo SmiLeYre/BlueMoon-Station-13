@@ -1177,7 +1177,7 @@
 	mob_name = "DS-2 personnel"
 	short_desc = "Вы Специалист Синдиката, работающий на Общем Корабле Синдиката из ячейки 'Глубокий Космос Два' под названием 'Благославлённый' под Начальством Адмирала одной из Сторон и изучающий аномальное поле Системы Синих Лун."
 	flavour_text = "Синдикат счел нужным направить передовую оперативную базу в Сектор Тринадцать для наблюдения за операциями NT и Кордоном. Ваш приказ - поддерживать целостность корабля и по возможности не высовываться."
-	important_info = "Вы не Антагонист, но вы можете помогать Станции и тем более с одобрения Администрации."
+	important_info = "Вы не Антагонист. Вы можете отправиться на станцию в Эксту. В Динамик вам следует быть ниже травы и тише воды."
 	roundstart = FALSE
 	death = FALSE
 	random = TRUE
@@ -1203,7 +1203,7 @@
 	icon_state = "sleeper_s"
 	short_desc = "Вы Специалист Синдиката, работающий на Оперативной Базе Синдиката из формирования 'Глубокий Космос Два' под названием 'Благославлённый' под Начальством Адмирала одной из Сторон и изучающий аномальное поле Системы Синих Лун."
 	flavour_text = "Синдикат счел нужным направить передовую оперативную базу в Сектор Тринадцать для наблюдения за операциями NT и Кордоном. Ваш приказ - поддерживать целостность корабля и по возможности не высовываться."
-	important_info = "Вы не Антагонист, но вы можете помогать Станции и тем более с одобрения Администрации."
+	important_info = "Вы не Антагонист. Вы можете отправиться на станцию в Эксту. В Динамик вам следует быть ниже травы и тише воды."
 	outfit = /datum/outfit/ds2/syndicate
 
 /obj/effect/mob_spawn/human/ds2/syndicate_command
@@ -1213,16 +1213,28 @@
 	icon_state = "sleeper_s"
 	short_desc = "Вы Адмирал одной из ячеек Синдиката, работающий на Корабле Синдиката из ячейки 'Глубокий Космос Два' под названием 'Благославлённый'. Приведите Объект под вашей ответственностью к успеху, который планировался, либо умрите - стараясь."
 	flavour_text = "Синдикат счел нужным направить передовую оперативную базу в Сектор Тринадцать для наблюдения за операциями NT и Кордоном. Ваш приказ - поддерживать целостность корабля и по возможности не высовываться."
-	important_info = "Вы не Антагонист, но вы можете помогать Станции и тем более с одобрения Администрации."
+	important_info = "Вы не Антагонист. Вы можете отправиться на станцию в Эксту. В Динамик вам следует быть ниже травы и тише воды."
 	outfit = /datum/outfit/ds2/syndicate_command
 
 /obj/effect/mob_spawn/human/ds2/syndicate/special(mob/living/new_spawn)
 	. = ..()
 	new_spawn.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
 
+	var/obj/item/implant/anchor/ghost_anchor = new
+	ghost_anchor.allowed_z_levels = list(1, 6, 12, src.z) // dynamic набор: цк, ксено межшатолье, инфдормы, сектор имплантации
+	if(GLOB.master_mode == "Extended")
+		ghost_anchor.allowed_z_levels.Add(2,5) // экстовая добавка: станционный, шахта
+	ghost_anchor.implant(new_spawn, null, TRUE)
+
 /obj/effect/mob_spawn/human/ds2/syndicate_command/special(mob/living/new_spawn)
 	. = ..()
 	new_spawn.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
+
+	var/obj/item/implant/anchor/ghost_anchor = new
+	ghost_anchor.allowed_z_levels = list(1, 6, 12, src.z) // dynamic набор: цк, ксено межшатолье, инфдормы, сектор имплантации
+	if(GLOB.master_mode == "Extended")
+		ghost_anchor.allowed_z_levels.Add(2,5) // экстовая добавка: станционный, шахта
+	ghost_anchor.implant(new_spawn, null, TRUE)
 
 /obj/effect/mob_spawn/human/ds2/syndicate/service
 	outfit = /datum/outfit/ds2/syndicate/service
@@ -1454,11 +1466,10 @@
 	neck = /obj/item/clothing/neck/cloak/syndieadm
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
 	back = /obj/item/storage/backpack/satchel
-	belt = /obj/item/gun/ballistic/automatic/pistol/aps
+	belt = /obj/item/gun/ballistic/automatic/pistol/APS
 	head = /obj/item/clothing/head/HoS/syndicate
 	id = /obj/item/card/id/syndicate/advanced/black/gold
 	id_trim = /datum/id_trim/syndicom/ds2/stationadmiral
-
 /obj/item/card/id/syndicate/advanced/black/gold
 	assignment = "DS-2 Admiral"
 	icon_state = "gold"
@@ -1542,6 +1553,7 @@
 /obj/item/card/id/syndicate/advanced/black
 	name = "Agent Card"
 	icon_state = "card_black"
+	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE)
 
 //CRYO CONSOLES
 /obj/machinery/computer/cryopod/ds1

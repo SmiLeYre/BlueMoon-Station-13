@@ -211,7 +211,7 @@ SUBSYSTEM_DEF(security_level)
 			continue
 		A.emergency_lights = FALSE
 		AR.area_emergency_mode = TRUE
-		INVOKE_ASYNC(A, TYPE_PROC_REF(/obj/machinery/power/apc, update), FALSE)
+		addtimer(CALLBACK(A, TYPE_PROC_REF(/obj/machinery/power/apc, update), FALSE), rand(5, 10) SECONDS)
 	for(var/area/A as anything in GLOB.sortedAreas)
 		if(!is_station_level(A.z))
 			continue
@@ -223,7 +223,7 @@ SUBSYSTEM_DEF(security_level)
 			if(GLOB.security_level == SEC_LEVEL_RED || SEC_LEVEL_LAMBDA || SEC_LEVEL_EPSILON || SEC_LEVEL_DELTA)
 				L.fire_mode = TRUE
 			L.on = FALSE
-			INVOKE_ASYNC(L, TYPE_PROC_REF(/obj/machinery/light, update), FALSE)
+			addtimer(CALLBACK(L, TYPE_PROC_REF(/obj/machinery/light, update), FALSE), rand(5, 10) SECONDS)
 
 /proc/unset_stationwide_emergency_lighting()
 	for(var/area/A as anything in GLOB.sortedAreas)
@@ -240,14 +240,14 @@ SUBSYSTEM_DEF(security_level)
 			L.fire_mode = FALSE
 			L.emergency_mode = FALSE
 			L.on = TRUE
-			INVOKE_ASYNC(L, TYPE_PROC_REF(/obj/machinery/light, update), FALSE)
+			addtimer(CALLBACK(L, TYPE_PROC_REF(/obj/machinery/light, update), FALSE), rand(5, 10) SECONDS)
 	for(var/obj/machinery/power/apc/A in GLOB.apcs_list)
 		var/area/AR = get_area(A)
 		if(!is_station_level(A.z))
 			continue
 		A.emergency_lights = TRUE
 		AR.area_emergency_mode = FALSE
-		INVOKE_ASYNC(A, TYPE_PROC_REF(/obj/machinery/power/apc, update), FALSE)
+		addtimer(CALLBACK(A, TYPE_PROC_REF(/obj/machinery/power/apc, update), FALSE), rand(5, 10) SECONDS)
 
 /proc/epsilon_process()
 	minor_announce(CONFIG_GET(string/alert_epsilon), "Внимание! Код - ЭПСИЛОН!")

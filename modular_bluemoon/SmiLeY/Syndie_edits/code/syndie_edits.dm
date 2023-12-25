@@ -46,7 +46,7 @@
 	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS|HIDEFACIALHAIR
 
 /obj/item/clothing/mask/gas/sechailer/syndicate
-	name = "neck gaiter"
+	name = "Neck Gaiter"
 	desc = "For the agent wanting to keep a low profile whilst concealing their identity. Has a small respirator to be used with internals."
 	actions_types = list(/datum/action/item_action/adjust)
 	icon_state = "half_mask"

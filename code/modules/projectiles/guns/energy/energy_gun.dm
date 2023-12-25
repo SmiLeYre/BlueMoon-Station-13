@@ -114,6 +114,9 @@
 	var/fail_tick = 0
 	var/fail_chance = 0
 
+/obj/item/gun/energy/e_gun/nuclear/pin
+	pin = /obj/item/firing_pin
+
 /obj/item/gun/energy/e_gun/nuclear/process()
 	if(fail_tick > 0)
 		fail_tick--

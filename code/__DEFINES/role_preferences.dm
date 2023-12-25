@@ -52,6 +52,7 @@
 #define ROLE_MINOR_ANTAG			"minorantag"
 #define ROLE_RESPAWN				"respawnsystem"
 #define ROLE_SYNDICATE				"Syndicate"
+#define ROLE_GHOSTROLE_INTEQ		"Space InteQ"
 //Define for disabling individual antagonists for dynamic
 #define HAS_ANTAG_PREF(C,ROLE) (!(NO_ANTAG & C.prefs.toggles) && (ROLE in C.prefs.be_special))
 //Missing assignment means it's not a gamemode specific role, IT'S NOT A BUG OR ERROR.

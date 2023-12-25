@@ -35,7 +35,7 @@
 	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/misc.dmi'
 	flags_inv = HIDEFACE|HIDEFACIALHAIR
 	visor_flags_inv = HIDEFACE|HIDEFACIALHAIR
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	mutantrace_variation = STYLE_MUZZLE|STYLE_NO_ANTHRO_ICON
 	clothing_flags = ALLOWINTERNALS
 
 /obj/item/clothing/mask/balaclava/breath/redscarf/bluescarf

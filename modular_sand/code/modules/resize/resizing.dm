@@ -67,16 +67,34 @@
 	//Both small
 		if(get_size(user) <= RESIZE_A_TINYMICRO && get_size(target) <= RESIZE_A_TINYMICRO)
 			now_pushing = 0
-			user.forceMove(target.loc)
+			//user.forceMove(target.loc) BLUEMOON REMOVAL - пересено в micro_move_to_target_turf
+			micro_move_to_target_turf(target) // BLUEMOON ADD
 			return TRUE
 
 		if(COMPARE_SIZES(user, target) >= 1.6) // BLUEMOON CHANGES
+
+			// BLUEMOON ADD START
+			if(target.mind?.martial_art?.id && target.mind.martial_art.can_use(target)) // нельзя давить тех, кто обучен и может применять боевые искусства
+			// У людей по умолчанию есть плейсходерное боевое искусство, но у него нет ID. Потому проверка на него, т.к. любое другое ID изменяет
+				if(target.a_intent != INTENT_HELP)
+					now_pushing = 0
+					micro_move_to_target_turf(target)
+					log_combat(user, target, "failed (martial art) to step on", addition="[user.a_intent] trample")
+					target.visible_message(\
+						span_danger("[target] уворачивается от попытки [src] наступить на не[target.gender == MALE ? "го" : "ё"]!"),\
+						span_danger("Вы уворачиваетесь от попытки [src] наступить на вас благодаря своему боевому искусству!"),
+						vision_distance = 3,
+						target = user, target_message = span_danger("[target] умело уворачивается от вашей попытки наступить на него!"))
+					playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
+					return TRUE
+			// BLUEMOON ADD END
+
 			log_combat(user, target, "stepped on", addition="[user.a_intent] trample")
 			if(user.a_intent == "disarm" && CHECK_MOBILITY(user, MOBILITY_MOVE) && !user.buckled)
 				now_pushing = 0
 				//user.forceMove(target.loc) BLUEMOON REMOVAL - пересено в micro_move_to_target_turf
-				user.sizediffStamLoss(target)
 				micro_move_to_target_turf(target) // BLUEMOON ADD
+				user.sizediffStamLoss(target)
 				user.add_movespeed_modifier(/datum/movespeed_modifier/stomp, TRUE) //Full stop
 				addtimer(CALLBACK(user, /mob/.proc/remove_movespeed_modifier, MOVESPEED_ID_STOMP, TRUE), 3) //0.3 seconds
 				if(iscarbon(user))
@@ -89,9 +107,9 @@
 			if(user.a_intent == "harm" && CHECK_MOBILITY(user, MOBILITY_MOVE) && !user.buckled)
 				now_pushing = 0
 				//user.forceMove(target.loc) BLUEMOON REMOVAL - пересено в micro_move_to_target_turf
+				micro_move_to_target_turf(target) // BLUEMOON ADD
 				user.sizediffStamLoss(target)
 				user.sizediffBruteloss(target)
-				micro_move_to_target_turf(target) // BLUEMOON ADD
 				playsound(loc, 'sound/misc/splort.ogg', 50, 1)
 				user.add_movespeed_modifier(/datum/movespeed_modifier/stomp, TRUE)
 				addtimer(CALLBACK(user, /mob/.proc/remove_movespeed_modifier, MOVESPEED_ID_STOMP, TRUE), 10) //1 second
@@ -112,8 +130,8 @@
 			if(user.a_intent == "grab" && CHECK_MOBILITY(user, MOBILITY_MOVE) && !user.buckled)
 				now_pushing = 0
 				//user.forceMove(target.loc) BLUEMOON REMOVAL - пересено в micro_move_to_target_turf
-				user.sizediffStamLoss(target)
 				micro_move_to_target_turf(target) // BLUEMOON ADD
+				user.sizediffStamLoss(target)
 				user.sizediffStun(target)
 				user.add_movespeed_modifier(/datum/movespeed_modifier/stomp, TRUE)
 				addtimer(CALLBACK(user, /mob/.proc/remove_movespeed_modifier, MOVESPEED_ID_STOMP, TRUE), 7)//About 3/4th a second

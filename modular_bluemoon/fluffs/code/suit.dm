@@ -99,7 +99,7 @@
 	)
 
 /obj/item/clothing/suit/toggle/noonar // Наследуем от suit/toggle, чтобы можно было переключать состояние
-	name = "syndicate jacket"
+	name = "Syndicate Jacket"
 	desc = "A syndicate jacket."
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
