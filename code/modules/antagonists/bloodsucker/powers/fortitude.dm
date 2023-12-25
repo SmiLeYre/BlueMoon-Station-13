@@ -18,7 +18,7 @@
 /datum/action/bloodsucker/fortitude/ActivatePower()
 	var/datum/antagonist/bloodsucker/B = owner.mind.has_antag_datum(ANTAG_DATUM_BLOODSUCKER)
 	var/mob/living/user = owner
-	to_chat(user, "<span class='notice'>Your flesh, skin, and muscles become as steel.</span>")
+//	to_chat(user, "<span class='notice'>Your flesh, skin, and muscles become as steel.</span>") // BLUEMOON REMOVAL - передвинуто ниже
 	// Traits & Effects
 	ADD_TRAIT(user, TRAIT_PIERCEIMMUNE, "fortitude")
 	ADD_TRAIT(user, TRAIT_NODISMEMBER, "fortitude")
@@ -29,6 +29,7 @@
 		fortitude_resist = max(0.3, 0.7 - level_current * 0.1)
 		H.physiology.brute_mod *= fortitude_resist
 		H.physiology.burn_mod *= fortitude_resist
+		to_chat(user, "<span class='notice'>Your flesh, skin, and muscles become as steel. You have [(1 - fortitude_resist) * 100]% resist to brute and burn damage.</span>") // BLUEMOON ADD
 	was_running = (user.m_intent == MOVE_INTENT_RUN)
 	if(was_running)
 		user.toggle_move_intent()
