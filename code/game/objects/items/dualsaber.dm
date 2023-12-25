@@ -26,7 +26,7 @@
 	wound_bonus = 7
 	bare_wound_bonus = 13
 	block_parry_data = /datum/block_parry_data/dual_esword
-	block_chance = 0 // Bluemoon edit (from 60)
+	block_chance = 60
 	var/hacked = FALSE
 	/// Can this reflect all energy projectiles?
 	var/can_reflect = TRUE
@@ -204,6 +204,8 @@
 	if(can_reflect && is_energy_reflectable_projectile(object) && (attack_type & ATTACK_TYPE_PROJECTILE))
 		block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_RETURN_TO_SENDER			//no you
 		return BLOCK_SHOULD_REDIRECT | BLOCK_SUCCESS | BLOCK_REDIRECTED
+	if((attack_type & ATTACK_TYPE_PROJECTILE) && !is_energy_reflectable_projectile(object))
+		return BLOCK_NONE
 	return ..()
 
 /obj/item/dualsaber/attack_hulk(mob/living/carbon/human/user, does_attack_animation = 0)  //In case thats just so happens that it is still activated on the groud, prevents hulk from picking it up
