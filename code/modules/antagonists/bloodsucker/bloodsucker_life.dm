@@ -166,7 +166,7 @@
 
 // I am thirsty for blud!
 /datum/antagonist/bloodsucker/proc/HandleStarving()
-
+/* BLUEMOON REMOVAL - старая механика голода
 	// High: 	Faster Healing
 	// Med: 	Pale
 	// Low: 	Twitch
@@ -190,6 +190,45 @@
 		additional_regen = 0.2
 	else if(owner.current.blood_volume < BLOOD_VOLUME_BAD)
 		additional_regen  = 0.1
+/ BLUEMOON REMOVAL END */
+// BLUEMOON ADD START - новая механика голода
+	// Nutrition - The amount of blood is how full we are.
+	owner.current.set_nutrition(min(owner.current.blood_volume, NUTRITION_LEVEL_FED))
+
+	// BLOOD_VOLUME_GOOD: [336] - Pale
+	//handled in bloodsucker_integration.dm
+
+	// BLOOD_VOLUME_EXIT: [250] - Exit Frenzy (If in one) This is high because we want enough to kill the poor soul they feed off of.
+	if(owner.current.blood_volume >= FRENZY_THRESHOLD_EXIT + (bloodsucker_level * 10) && frenzied)
+		owner.current.remove_status_effect(STATUS_EFFECT_FRENZY)
+	// BLOOD_VOLUME_BAD: [224] - Jitter
+	if(owner.current.blood_volume < BLOOD_VOLUME_BAD && !prob(0.5 && HAS_TRAIT(owner, TRAIT_FAKEDEATH)) && !poweron_masquerade)
+		owner.current.Jitter(4)
+	// BLOOD_VOLUME_SURVIVE: [122] - Blur Vision
+	if(owner.current.blood_volume < BLOOD_VOLUME_SURVIVE)
+		owner.current.blur_eyes(20 - 20 * (owner.current.blood_volume / BLOOD_VOLUME_SURVIVE))
+
+
+
+	// The more blood, the better the Regeneration, get too low blood, and you enter Frenzy.
+	if(owner.current.blood_volume < (FRENZY_THRESHOLD_ENTER + (bloodsucker_level * 10)) && !frenzied) // if(owner.current.blood_volume < (FRENZY_THRESHOLD_ENTER + (bloodsucker_level * 10)) && !frenzied)
+		owner.current.apply_status_effect(STATUS_EFFECT_FRENZY)
+	else if(owner.current.blood_volume < BLOOD_VOLUME_BAD)
+		additional_regen = 0.1
+	else if(owner.current.blood_volume < BLOOD_VOLUME_OKAY)
+		additional_regen = 0.2
+	else if(owner.current.blood_volume < BLOOD_VOLUME_NORMAL)
+		additional_regen = 0.3
+	else if(owner.current.blood_volume < 700)
+		additional_regen = 0.4
+	else
+		additional_regen = 0.5
+
+	if(owner.current.blood_volume <= 0)
+		owner.current.adjustFireLoss(1 * (bloodsucker_level))
+
+// BLUEMOON ADD END
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //			DEATH
