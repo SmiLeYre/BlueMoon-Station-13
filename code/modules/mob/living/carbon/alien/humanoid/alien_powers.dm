@@ -183,6 +183,35 @@ Doesn't work on other aliens/AI.*/
 	if(user.getPlasma() > A.plasma_cost && A.corrode(O))
 		user.adjustPlasma(-A.plasma_cost)
 
+//BLUEMOON EDIT START
+/obj/effect/proc_holder/alien/set_genital
+	name = "Set genital"
+	desc = "Пробуждает в вашем ксеноморфском организме мужское, или женское начало. Или оба сразу."
+	active = TRUE
+	var/list/genitals = list(
+		"Член" = /obj/item/organ/genital/penis,
+		"Семенники" = /obj/item/organ/genital/testicles,
+		"Вагина" = /obj/item/organ/genital/vagina,
+		"Матка" = /obj/item/organ/genital/womb
+	)
+/obj/effect/proc_holder/alien/set_genital/fire(mob/living/carbon/user)
+	if(active)
+		var/genital = input("Выберите тип гениталий","Выбор гениталий") as null|anything in genitals
+		var/obj/item/organ/genital/genital_path = genitals[genital]
+		if(!user.internal_organs.Find(genital_path)) //Позволяет убрать генетали, если она уже есть
+			user.internal_organs += genital_path
+			if(genital_path == /obj/item/organ/genital/womb) //Было бы странно, если бы появление/убирание матки было видно визуально
+				return
+			to_chat(user,"<span class='lewd'>Вы ощущаете, как у вас между ног вырастает [genital]</span>")
+			visible_message("<span class='danger'>У [usr] между ног вырастает [genital]!</span>")
+		else
+			user.internal_organs -= genital_path //Убирается вот тут
+			if(genital_path == /obj/item/organ/genital/womb)
+				return
+			to_chat(user,"<span class='lewd'>[genital] пропадает, всасываясь обратно вглубь вашего гибкого тела</span>")
+			visible_message("<span class='danger'>У [usr] [genital] исчезает куда-то внутрь, больше не представляя угрозы</span>")
+
+//BLUEMOON EDIT END
 /obj/effect/proc_holder/alien/neurotoxin
 	name = "Spit Neurotoxin"
 	desc = "Activates your Neurotoxin glands. You can shoot paralyzing shots. Each shot costs 50 Plasma."
