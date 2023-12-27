@@ -2202,7 +2202,9 @@
 /turf/open/floor/plasteel,
 /area/tdome/arena_source)
 "afR" = (
-/obj/machinery/vending/boozeomat/syndicate_access,
+/obj/machinery/vending/boozeomat/syndicate_access{
+	shut_up = 1
+	},
 /turf/open/floor/wood,
 /area/slavers)
 "afS" = (
@@ -3506,7 +3508,9 @@
 /turf/open/floor/plasteel,
 /area/centcom/control)
 "aji" = (
-/obj/machinery/vending/security,
+/obj/machinery/vending/security{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
@@ -5220,7 +5224,9 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership)
 "amV" = (
-/obj/machinery/vending/cola,
+/obj/machinery/vending/cola{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -5691,7 +5697,9 @@
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "anP" = (
-/obj/machinery/vending/snack,
+/obj/machinery/vending/snack{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -5779,7 +5787,9 @@
 /turf/open/floor/plasteel,
 /area/centcom/control)
 "anW" = (
-/obj/machinery/vending/cola,
+/obj/machinery/vending/cola{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel,
 /area/centcom/control)
@@ -6001,7 +6011,8 @@
 /obj/machinery/vending/wallmed{
 	name = "Emergency NanoMed";
 	pixel_y = 32;
-	use_power = 0
+	use_power = 0;
+	shut_up = 1
 	},
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -6311,7 +6322,9 @@
 /turf/open/floor/plasteel,
 /area/centcom/control)
 "aoQ" = (
-/obj/machinery/vending/snack,
+/obj/machinery/vending/snack{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel,
 /area/centcom/control)
@@ -6674,7 +6687,9 @@
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "apt" = (
-/obj/machinery/vending/coffee,
+/obj/machinery/vending/coffee{
+	shut_up = 1
+	},
 /obj/machinery/newscaster{
 	pixel_y = -32
 	},
@@ -6707,7 +6722,9 @@
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "apv" = (
-/obj/machinery/vending/cigarette,
+/obj/machinery/vending/cigarette{
+	shut_up = 1
+	},
 /obj/machinery/newscaster{
 	pixel_y = -32
 	},
@@ -7903,7 +7920,9 @@
 /turf/open/floor/wood/wood_parquet,
 /area/syndicate_mothership)
 "ase" = (
-/obj/machinery/vending/cigarette/syndicate,
+/obj/machinery/vending/cigarette/syndicate{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
 	dir = 1
@@ -9814,7 +9833,9 @@
 /turf/open/floor/grass,
 /area/centcom)
 "awk" = (
-/obj/machinery/vending/kink,
+/obj/machinery/vending/kink{
+	shut_up = 1
+	},
 /turf/open/floor/plating/abductor,
 /area/abductor_ship)
 "awn" = (
@@ -9823,7 +9844,9 @@
 	name = "privacy shutters";
 	pixel_y = -26
 	},
-/obj/machinery/vending/security,
+/obj/machinery/vending/security{
+	shut_up = 1
+	},
 /turf/open/floor/padded,
 /area/slavers)
 "awo" = (
@@ -10123,7 +10146,9 @@
 /obj/effect/turf_decal/tile/bar{
 	dir = 4
 	},
-/obj/machinery/vending/coffee,
+/obj/machinery/vending/coffee{
+	shut_up = 1
+	},
 /obj/machinery/newscaster{
 	pixel_y = 32
 	},
@@ -10326,11 +10351,15 @@
 /turf/open/floor/wood,
 /area/wizard_station)
 "axw" = (
-/obj/machinery/vending/magivend,
+/obj/machinery/vending/magivend{
+	shut_up = 1
+	},
 /turf/open/floor/engine/cult,
 /area/wizard_station)
 "axx" = (
-/obj/machinery/vending/snack,
+/obj/machinery/vending/snack{
+	shut_up = 1
+	},
 /turf/open/floor/engine/cult,
 /area/wizard_station)
 "axy" = (
@@ -10347,7 +10376,9 @@
 /turf/open/floor/carpet,
 /area/wizard_station)
 "axC" = (
-/obj/machinery/vending/coffee,
+/obj/machinery/vending/coffee{
+	shut_up = 1
+	},
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership)
 "axD" = (
@@ -10367,7 +10398,9 @@
 /obj/effect/turf_decal/tile/bar{
 	dir = 4
 	},
-/obj/machinery/vending/snack/green,
+/obj/machinery/vending/snack/green{
+	shut_up = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/slavers)
 "axO" = (
@@ -10485,7 +10518,9 @@
 /turf/open/floor/engine/cult,
 /area/wizard_station)
 "ayc" = (
-/obj/machinery/vending/snack,
+/obj/machinery/vending/snack{
+	shut_up = 1
+	},
 /turf/open/floor/plasteel,
 /area/centcom/supplypod)
 "aye" = (
@@ -11470,7 +11505,8 @@
 	dir = 4
 	},
 /obj/machinery/vending/medical{
-	pixel_x = -2
+	pixel_x = -2;
+	shut_up = 1
 	},
 /turf/open/floor/iron/white,
 /area/centcom/holding)
@@ -11725,7 +11761,9 @@
 /turf/open/floor/wood,
 /area/slavers)
 "aBq" = (
-/obj/machinery/vending/clothing,
+/obj/machinery/vending/clothing{
+	shut_up = 1
+	},
 /turf/open/floor/wood,
 /area/slavers)
 "aBs" = (
@@ -11738,7 +11776,9 @@
 /obj/effect/turf_decal/tile/bar{
 	dir = 8
 	},
-/obj/machinery/vending/tool,
+/obj/machinery/vending/tool{
+	shut_up = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/slavers)
 "aBt" = (
@@ -12103,7 +12143,9 @@
 /obj/effect/turf_decal/tile/bar{
 	dir = 4
 	},
-/obj/machinery/vending/cigarette/syndicate,
+/obj/machinery/vending/cigarette/syndicate{
+	shut_up = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/slavers)
 "aBZ" = (
@@ -12452,7 +12494,8 @@
 /obj/machinery/vending/wallmed{
 	name = "Emergency NanoMed";
 	pixel_y = -32;
-	use_power = 0
+	use_power = 0;
+	shut_up = 1
 	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
@@ -13350,12 +13393,16 @@
 /turf/open/floor/plasteel,
 /area/tdome/tdomeobserve)
 "aEr" = (
-/obj/machinery/vending/cola,
+/obj/machinery/vending/cola{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel,
 /area/tdome/tdomeobserve)
 "aEs" = (
-/obj/machinery/vending/snack,
+/obj/machinery/vending/snack{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel,
 /area/tdome/tdomeobserve)
@@ -14510,7 +14557,9 @@
 /turf/open/floor/plasteel/dark,
 /area/tdome/tdomeobserve)
 "aGT" = (
-/obj/machinery/vending/cigarette,
+/obj/machinery/vending/cigarette{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -15070,7 +15119,9 @@
 /turf/open/floor/plasteel,
 /area/tdome/tdomeobserve)
 "aHX" = (
-/obj/machinery/vending/boozeomat,
+/obj/machinery/vending/boozeomat{
+	shut_up = 1
+	},
 /obj/machinery/light{
 	dir = 4
 	},
@@ -15374,7 +15425,9 @@
 /obj/machinery/sleeper/syndie/fullupgrade{
 	dir = 8
 	},
-/obj/machinery/vending/wallmed/directional/east,
+/obj/machinery/vending/wallmed/directional/east{
+	shut_up = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/slavers)
 "aIt" = (
@@ -16181,7 +16234,9 @@
 /turf/open/floor/plasteel/dark,
 /area/slavers)
 "aKm" = (
-/obj/machinery/vending/snack/random,
+/obj/machinery/vending/snack/random{
+	shut_up = 1
+	},
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership)
 "aKn" = (
@@ -17040,7 +17095,9 @@
 /turf/open/indestructible/binary,
 /area/fabric_of_reality)
 "aMC" = (
-/obj/machinery/vending/cigarette,
+/obj/machinery/vending/cigarette{
+	shut_up = 1
+	},
 /turf/open/floor/plasteel,
 /area/centcom/supplypod)
 "aMD" = (
@@ -17142,7 +17199,9 @@
 /turf/open/floor/engine/cult,
 /area/wizard_station)
 "aNb" = (
-/obj/machinery/vending/wardrobe/syndie_wardrobe,
+/obj/machinery/vending/wardrobe/syndie_wardrobe{
+	shut_up = 1
+	},
 /turf/open/floor/wood,
 /area/slavers)
 "aNc" = (
@@ -17203,7 +17262,9 @@
 /obj/effect/turf_decal/tile/bar{
 	dir = 4
 	},
-/obj/machinery/vending/cola/black,
+/obj/machinery/vending/cola/black{
+	shut_up = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/slavers)
 "aNu" = (
@@ -17569,7 +17630,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/machinery/vending/wardrobe/syndie_wardrobe,
+/obj/machinery/vending/wardrobe/syndie_wardrobe{
+	shut_up = 1
+	},
 /turf/open/floor/wood/wood_parquet,
 /area/syndicate_mothership)
 "aOT" = (
@@ -17929,7 +17992,9 @@
 /obj/effect/turf_decal/tile/bar{
 	dir = 8
 	},
-/obj/machinery/vending/assist,
+/obj/machinery/vending/assist{
+	shut_up = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/slavers)
 "aQr" = (
@@ -18705,7 +18770,9 @@
 /turf/open/floor/plasteel,
 /area/slavers)
 "aTt" = (
-/obj/machinery/vending/kink,
+/obj/machinery/vending/kink{
+	shut_up = 1
+	},
 /turf/open/floor/padded,
 /area/slavers)
 "aTw" = (
@@ -18966,7 +19033,9 @@
 	},
 /area/slavers)
 "aUC" = (
-/obj/machinery/vending/cola,
+/obj/machinery/vending/cola{
+	shut_up = 1
+	},
 /turf/open/floor/plasteel,
 /area/centcom/supplypod)
 "aUD" = (
@@ -19285,7 +19354,9 @@
 /turf/open/floor/plasteel,
 /area/centcom/supplypod)
 "aVS" = (
-/obj/machinery/vending/medical/syndicate_access,
+/obj/machinery/vending/medical/syndicate_access{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
 	},
@@ -19460,7 +19531,9 @@
 /obj/machinery/sleeper/syndie/fullupgrade{
 	dir = 8
 	},
-/obj/machinery/vending/wallmed/directional/east,
+/obj/machinery/vending/wallmed/directional/east{
+	shut_up = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/slavers)
 "aWz" = (
@@ -19818,7 +19891,9 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership)
 "aXQ" = (
-/obj/machinery/vending/wallmed/directional/north,
+/obj/machinery/vending/wallmed/directional/north{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
@@ -19902,7 +19977,9 @@
 /turf/closed/indestructible/riveted,
 /area/syndicate_mothership)
 "aYl" = (
-/obj/machinery/vending/sustenance,
+/obj/machinery/vending/sustenance{
+	shut_up = 1
+	},
 /turf/open/floor/plasteel,
 /area/slavers)
 "aYn" = (
@@ -20110,7 +20187,9 @@
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding)
 "aYW" = (
-/obj/machinery/vending/cola/red,
+/obj/machinery/vending/cola/red{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/tile/bar{
 	dir = 8
 	},
@@ -20268,7 +20347,9 @@
 /turf/open/floor/carpet/red,
 /area/slavers)
 "aZy" = (
-/obj/machinery/vending/tool,
+/obj/machinery/vending/tool{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /turf/open/floor/iron/dark,
@@ -20461,7 +20542,9 @@
 	},
 /area/syndicate_mothership/control)
 "bdi" = (
-/obj/machinery/vending/engineering,
+/obj/machinery/vending/engineering{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "bdH" = (
@@ -20679,7 +20762,9 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "btp" = (
-/obj/machinery/vending/boozeomat/all_access,
+/obj/machinery/vending/boozeomat/all_access{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/abductor,
 /area/centcom/holding)
 "bvt" = (
@@ -21245,7 +21330,9 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "crd" = (
-/obj/machinery/vending/kink,
+/obj/machinery/vending/kink{
+	shut_up = 1
+	},
 /turf/open/floor/iron/showroomfloor,
 /area/centcom/holding)
 "cry" = (
@@ -21263,7 +21350,8 @@
 	dir = 1
 	},
 /obj/machinery/vending/games{
-	onstation = 0
+	onstation = 0;
+	shut_up = 1
 	},
 /turf/open/floor/iron/white,
 /area/centcom/holding)
@@ -21317,7 +21405,9 @@
 /area/centcom/holding)
 "cun" = (
 /obj/effect/turf_decal/tile/brown/half/contrasted,
-/obj/machinery/vending/cigarette,
+/obj/machinery/vending/cigarette{
+	shut_up = 1
+	},
 /obj/machinery/light,
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
@@ -21467,7 +21557,9 @@
 /turf/open/floor/sepia,
 /area/centcom/holding)
 "cIm" = (
-/obj/machinery/vending/cigarette/syndicate,
+/obj/machinery/vending/cigarette/syndicate{
+	shut_up = 1
+	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq/collosus)
 "cJr" = (
@@ -21661,7 +21753,9 @@
 /turf/open/floor/plasteel,
 /area/centcom)
 "dat" = (
-/obj/machinery/vending/games,
+/obj/machinery/vending/games{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/centcom/holding)
 "daZ" = (
@@ -21816,7 +21910,9 @@
 /turf/open/floor/iron/white,
 /area/centcom/holding)
 "djZ" = (
-/obj/machinery/vending/kink,
+/obj/machinery/vending/kink{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/abductor,
 /area/centcom/holding)
 "dlp" = (
@@ -21838,7 +21934,9 @@
 /turf/open/indestructible/hoteltile,
 /area/centcom/holding)
 "dlA" = (
-/obj/machinery/vending/wardrobe/hydro_wardrobe,
+/obj/machinery/vending/wardrobe/hydro_wardrobe{
+	shut_up = 1
+	},
 /turf/open/indestructible/hoteltile,
 /area/centcom/holding)
 "dlI" = (
@@ -21855,7 +21953,9 @@
 /obj/effect/turf_decal/tile/brown{
 	dir = 1
 	},
-/obj/machinery/vending/tool,
+/obj/machinery/vending/tool{
+	shut_up = 1
+	},
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "dms" = (
@@ -21935,7 +22035,9 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
-/obj/machinery/vending/wardrobe/medi_wardrobe,
+/obj/machinery/vending/wardrobe/medi_wardrobe{
+	shut_up = 1
+	},
 /turf/open/floor/iron/white,
 /area/centcom/holding)
 "doF" = (
@@ -22193,7 +22295,9 @@
 /turf/open/floor/iron,
 /area/centcom/holding)
 "dHf" = (
-/obj/machinery/vending/wardrobe/jani_wardrobe,
+/obj/machinery/vending/wardrobe/jani_wardrobe{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "dHl" = (
@@ -22214,7 +22318,9 @@
 /turf/open/floor/plating,
 /area/centcom/holding)
 "dIA" = (
-/obj/machinery/vending/snack/random,
+/obj/machinery/vending/snack/random{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
@@ -22294,7 +22400,9 @@
 /area/centcom)
 "dOK" = (
 /obj/effect/turf_decal/sand,
-/obj/machinery/vending/cigarette/beach,
+/obj/machinery/vending/cigarette/beach{
+	shut_up = 1
+	},
 /turf/open/floor/plating/beach/sand,
 /area/centcom/holding)
 "dOU" = (
@@ -22844,16 +22952,21 @@
 /turf/open/floor/wood/wood_parquet,
 /area/syndicate_mothership/control)
 "eGj" = (
-/obj/machinery/vending/inteq_vendomat,
+/obj/machinery/vending/inteq_vendomat{
+	shut_up = 1
+	},
 /turf/open/floor/wood/wood_parquet,
 /area/syndicate_mothership/control)
 "eGw" = (
-/obj/machinery/vending/wardrobe/atmos_wardrobe,
+/obj/machinery/vending/wardrobe/atmos_wardrobe{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/centcom/holding)
 "eHY" = (
 /obj/machinery/vending/tool{
-	onstation = 0
+	onstation = 0;
+	shut_up = 1
 	},
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding)
@@ -22906,7 +23019,9 @@
 /turf/open/floor/iron/white,
 /area/centcom/holding)
 "eKT" = (
-/obj/machinery/vending/donksofttoyvendor,
+/obj/machinery/vending/donksofttoyvendor{
+	shut_up = 1
+	},
 /obj/machinery/light{
 	dir = 1
 	},
@@ -23029,11 +23144,15 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "eTF" = (
-/obj/machinery/vending/cola/starkist,
+/obj/machinery/vending/cola/starkist{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "eTK" = (
-/obj/machinery/vending/cola/shamblers,
+/obj/machinery/vending/cola/shamblers{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "eUi" = (
@@ -23056,7 +23175,9 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},
-/obj/machinery/vending/engivend,
+/obj/machinery/vending/engivend{
+	shut_up = 1
+	},
 /obj/machinery/light{
 	dir = 1
 	},
@@ -23121,7 +23242,9 @@
 /turf/open/floor/wood/wood_parquet,
 /area/syndicate_mothership/control)
 "eYl" = (
-/obj/machinery/vending/sustenance,
+/obj/machinery/vending/sustenance{
+	shut_up = 1
+	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq/collosus)
 "eZb" = (
@@ -23220,7 +23343,9 @@
 /area/syndicate_mothership/control)
 "fiq" = (
 /obj/effect/turf_decal/tile/brown/fourcorners,
-/obj/machinery/vending/medical/syndicate_access,
+/obj/machinery/vending/medical/syndicate_access{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
@@ -23248,7 +23373,9 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "fjr" = (
-/obj/machinery/vending/cola/buzz_fuzz,
+/obj/machinery/vending/cola/buzz_fuzz{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "fjw" = (
@@ -23336,7 +23463,9 @@
 /turf/open/floor/wood/wood_parquet,
 /area/syndicate_mothership/control)
 "fpD" = (
-/obj/machinery/vending/cigarette/syndicate,
+/obj/machinery/vending/cigarette/syndicate{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
@@ -23377,7 +23506,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
-/obj/machinery/vending/boozeomat/all_access,
+/obj/machinery/vending/boozeomat/all_access{
+	shut_up = 1
+	},
 /turf/open/floor/wood/wood_parquet,
 /area/syndicate_mothership/control)
 "ftA" = (
@@ -23500,7 +23631,8 @@
 	default_price = 0;
 	extended_inventory = 1;
 	extra_price = 0;
-	fair_market_price = 0
+	fair_market_price = 0;
+	shut_up = 1
 	},
 /turf/open/floor/iron/white,
 /area/centcom/holding)
@@ -23569,7 +23701,8 @@
 	},
 /obj/machinery/light/directional/east,
 /obj/machinery/vending/wardrobe/sec_wardrobe{
-	onstation = 0
+	onstation = 0;
+	shut_up = 1
 	},
 /turf/open/floor/iron,
 /area/centcom/holding)
@@ -23656,7 +23789,9 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "fGC" = (
-/obj/machinery/vending/cola/red,
+/obj/machinery/vending/cola/red{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "fHq" = (
@@ -23714,7 +23849,9 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "fKO" = (
-/obj/machinery/vending/drugs,
+/obj/machinery/vending/drugs{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
@@ -24384,7 +24521,9 @@
 /area/centcom)
 "gLj" = (
 /obj/effect/turf_decal/sand,
-/obj/machinery/vending/snack,
+/obj/machinery/vending/snack{
+	shut_up = 1
+	},
 /turf/open/floor/plating/beach/sand,
 /area/centcom/holding)
 "gLP" = (
@@ -24519,7 +24658,9 @@
 /turf/open/floor/plating/beach/sand,
 /area/centcom/holding)
 "gWA" = (
-/obj/machinery/vending/wardrobe/det_wardrobe,
+/obj/machinery/vending/wardrobe/det_wardrobe{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/centcom/holding)
 "gWV" = (
@@ -24756,7 +24897,9 @@
 /turf/open/indestructible/hoteltile,
 /area/centcom/holding)
 "hri" = (
-/obj/machinery/vending/wardrobe/cargo_wardrobe,
+/obj/machinery/vending/wardrobe/cargo_wardrobe{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "hrl" = (
@@ -24887,7 +25030,9 @@
 /turf/open/floor/iron/white,
 /area/centcom/holding)
 "hyi" = (
-/obj/machinery/vending/cola/space_up,
+/obj/machinery/vending/cola/space_up{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "hyj" = (
@@ -25160,7 +25305,9 @@
 /turf/open/floor/wood/wood_parquet,
 /area/syndicate_mothership/control)
 "hPX" = (
-/obj/machinery/vending/cigarette/syndicate,
+/obj/machinery/vending/cigarette/syndicate{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "hPY" = (
@@ -25467,7 +25614,9 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "iis" = (
-/obj/machinery/vending/hydronutrients,
+/obj/machinery/vending/hydronutrients{
+	shut_up = 1
+	},
 /turf/open/indestructible/hoteltile,
 /area/centcom/holding)
 "iiY" = (
@@ -25503,7 +25652,9 @@
 /turf/open/floor/grass/grass0,
 /area/syndicate_mothership/control)
 "ijI" = (
-/obj/machinery/vending/cola/red,
+/obj/machinery/vending/cola/red{
+	shut_up = 1
+	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq/collosus)
 "ikJ" = (
@@ -25661,7 +25812,9 @@
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding)
 "itN" = (
-/obj/machinery/vending/wardrobe/gene_wardrobe,
+/obj/machinery/vending/wardrobe/gene_wardrobe{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/centcom/holding)
 "iuy" = (
@@ -26068,7 +26221,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/vending/cola/random,
+/obj/machinery/vending/cola/random{
+	shut_up = 1
+	},
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "iWY" = (
@@ -26087,11 +26242,15 @@
 /turf/open/floor/bluespace,
 /area/centcom)
 "iYH" = (
-/obj/machinery/vending/wardrobe/chap_wardrobe,
+/obj/machinery/vending/wardrobe/chap_wardrobe{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/centcom/holding)
 "iZe" = (
-/obj/machinery/vending/tool,
+/obj/machinery/vending/tool{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /turf/open/floor/iron/dark,
@@ -26107,7 +26266,9 @@
 /turf/open/floor/plasteel,
 /area/centcom)
 "jah" = (
-/obj/machinery/vending/liberationstation,
+/obj/machinery/vending/liberationstation{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "jar" = (
@@ -26367,7 +26528,9 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/machinery/vending/magivend,
+/obj/machinery/vending/magivend{
+	shut_up = 1
+	},
 /turf/open/floor/plasteel,
 /area/centcom)
 "jCS" = (
@@ -26420,7 +26583,9 @@
 /turf/open/floor/wood/wood_parquet,
 /area/syndicate_mothership/control)
 "jGx" = (
-/obj/machinery/vending/barkbox,
+/obj/machinery/vending/barkbox{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "jHE" = (
@@ -26445,7 +26610,9 @@
 /turf/open/indestructible/hoteltile,
 /area/centcom/holding)
 "jJv" = (
-/obj/machinery/vending/wardrobe/science_wardrobe,
+/obj/machinery/vending/wardrobe/science_wardrobe{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "jJC" = (
@@ -26558,7 +26725,9 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/machinery/vending/liberationstation,
+/obj/machinery/vending/liberationstation{
+	shut_up = 1
+	},
 /turf/open/floor/plasteel,
 /area/centcom)
 "jPn" = (
@@ -26708,7 +26877,9 @@
 /turf/open/floor/plasteel,
 /area/centcom)
 "kbq" = (
-/obj/machinery/vending/wardrobe/engi_wardrobe,
+/obj/machinery/vending/wardrobe/engi_wardrobe{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/centcom/holding)
 "kcf" = (
@@ -26806,7 +26977,8 @@
 	extended_inventory = 1;
 	extra_price = 0;
 	fair_market_price = 0;
-	onstation = 0
+	onstation = 0;
+	shut_up = 1
 	},
 /turf/open/floor/iron/white,
 /area/centcom/holding)
@@ -26964,11 +27136,15 @@
 /turf/open/floor/iron,
 /area/centcom/holding)
 "kta" = (
-/obj/machinery/vending/wardrobe/medi_wardrobe,
+/obj/machinery/vending/wardrobe/medi_wardrobe{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/centcom/holding)
 "ktB" = (
-/obj/machinery/vending/kink,
+/obj/machinery/vending/kink{
+	shut_up = 1
+	},
 /turf/open/floor/plating/beach/sand,
 /area/centcom/holding)
 "ktC" = (
@@ -27115,7 +27291,8 @@
 	extended_inventory = 1;
 	extra_price = 0;
 	fair_market_price = 0;
-	onstation = 0
+	onstation = 0;
+	shut_up = 1
 	},
 /turf/open/floor/iron/white,
 /area/centcom/holding)
@@ -27155,7 +27332,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
-/obj/machinery/vending/wardrobe/bar_wardrobe,
+/obj/machinery/vending/wardrobe/bar_wardrobe{
+	shut_up = 1
+	},
 /turf/open/floor/wood/wood_parquet,
 /area/syndicate_mothership/control)
 "kBg" = (
@@ -27197,7 +27376,9 @@
 /turf/open/floor/mineral/abductor,
 /area/centcom/holding)
 "kCB" = (
-/obj/machinery/vending/donksofttoyvendor,
+/obj/machinery/vending/donksofttoyvendor{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "kCR" = (
@@ -27209,7 +27390,9 @@
 	},
 /area/centcom/holding)
 "kDm" = (
-/obj/machinery/vending/cigarette,
+/obj/machinery/vending/cigarette{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/tile/brown/anticorner/contrasted{
 	dir = 4
 	},
@@ -27348,7 +27531,9 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "kMo" = (
-/obj/machinery/vending/cola/random,
+/obj/machinery/vending/cola/random{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "kMG" = (
@@ -27550,7 +27735,9 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/machinery/vending/syndichem,
+/obj/machinery/vending/syndichem{
+	shut_up = 1
+	},
 /turf/open/floor/plasteel,
 /area/centcom)
 "lbR" = (
@@ -27594,7 +27781,9 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/machinery/vending/autodrobe/all_access,
+/obj/machinery/vending/autodrobe/all_access{
+	shut_up = 1
+	},
 /turf/open/floor/plasteel,
 /area/centcom)
 "lfH" = (
@@ -27667,7 +27856,9 @@
 /turf/open/floor/grass,
 /area/centcom)
 "liN" = (
-/obj/machinery/vending/kink,
+/obj/machinery/vending/kink{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/centcom/holding)
 "ljw" = (
@@ -27851,7 +28042,9 @@
 /turf/open/floor/iron/showroomfloor,
 /area/syndicate_mothership/control)
 "ltx" = (
-/obj/machinery/vending/toyliberationstation,
+/obj/machinery/vending/toyliberationstation{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "luh" = (
@@ -27906,7 +28099,9 @@
 /turf/open/floor/grass/grass0,
 /area/centcom/holding)
 "lxk" = (
-/obj/machinery/vending/wallmed/directional/north,
+/obj/machinery/vending/wallmed/directional/north{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/tile/brown/opposingcorners,
 /obj/effect/turf_decal/tile/brown/opposingcorners,
 /mob/living/simple_animal/bot/medbot{
@@ -27959,7 +28154,9 @@
 /turf/open/floor/plasteel,
 /area/shuttle/inteq/collosus)
 "lBy" = (
-/obj/machinery/vending/cola/random,
+/obj/machinery/vending/cola/random{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/tile/brown/half/contrasted{
 	dir = 8
 	},
@@ -28070,7 +28267,9 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/vending/coffee,
+/obj/machinery/vending/coffee{
+	shut_up = 1
+	},
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership)
 "lFP" = (
@@ -28168,7 +28367,9 @@
 /turf/open/floor/plasteel,
 /area/centcom)
 "lPV" = (
-/obj/machinery/vending/wardrobe/sec_wardrobe,
+/obj/machinery/vending/wardrobe/sec_wardrobe{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/centcom/holding)
 "lRg" = (
@@ -28276,7 +28477,9 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/machinery/vending/inteq_vendomat,
+/obj/machinery/vending/inteq_vendomat{
+	shut_up = 1
+	},
 /turf/open/floor/wood/wood_parquet,
 /area/syndicate_mothership/control)
 "lXR" = (
@@ -28309,7 +28512,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/brown,
-/obj/machinery/vending/cigarette/syndicate,
+/obj/machinery/vending/cigarette/syndicate{
+	shut_up = 1
+	},
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "mbJ" = (
@@ -28444,7 +28649,9 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership)
 "mkh" = (
-/obj/machinery/vending/games,
+/obj/machinery/vending/games{
+	shut_up = 1
+	},
 /turf/open/floor/carpet,
 /area/centcom/holding)
 "mkz" = (
@@ -28662,7 +28869,9 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/machinery/vending/toyliberationstation,
+/obj/machinery/vending/toyliberationstation{
+	shut_up = 1
+	},
 /turf/open/floor/plasteel,
 /area/centcom)
 "mFh" = (
@@ -28711,7 +28920,9 @@
 	},
 /area/centcom/holding)
 "mIH" = (
-/obj/machinery/vending/wardrobe/chem_wardrobe,
+/obj/machinery/vending/wardrobe/chem_wardrobe{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "mKy" = (
@@ -28733,7 +28944,8 @@
 	extended_inventory = 1;
 	extra_price = 0;
 	fair_market_price = 0;
-	onstation = 0
+	onstation = 0;
+	shut_up = 1
 	},
 /obj/machinery/light/directional/north,
 /turf/open/floor/iron/white,
@@ -28861,7 +29073,9 @@
 /turf/open/floor/plasteel/bluespace,
 /area/centcom)
 "mWs" = (
-/obj/machinery/vending/inteq_vendomat,
+/obj/machinery/vending/inteq_vendomat{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/centcom/holding)
 "mWR" = (
@@ -28989,7 +29203,9 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "ngt" = (
-/obj/machinery/vending/wardrobe/cap_wardrobe,
+/obj/machinery/vending/wardrobe/cap_wardrobe{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/centcom/holding)
 "ngN" = (
@@ -29016,7 +29232,8 @@
 	default_price = 0;
 	extended_inventory = 1;
 	extra_price = 0;
-	fair_market_price = 0
+	fair_market_price = 0;
+	shut_up = 1
 	},
 /obj/machinery/light/directional/east,
 /turf/open/indestructible/hotelwood,
@@ -29247,12 +29464,15 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "nwJ" = (
-/obj/machinery/vending/dinnerware,
+/obj/machinery/vending/dinnerware{
+	shut_up = 1
+	},
 /turf/open/indestructible/hoteltile,
 /area/centcom/holding)
 "nxA" = (
 /obj/machinery/vending/clothing{
-	extended_inventory = 1
+	extended_inventory = 1;
+	shut_up = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
@@ -29373,7 +29593,9 @@
 /turf/open/floor/plasteel,
 /area/centcom)
 "nId" = (
-/obj/machinery/vending/wardrobe/bar_wardrobe,
+/obj/machinery/vending/wardrobe/bar_wardrobe{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "nIA" = (
@@ -29459,7 +29681,9 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "nRT" = (
-/obj/machinery/vending/inteq_vendomat,
+/obj/machinery/vending/inteq_vendomat{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "nSA" = (
@@ -29656,7 +29880,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/brown,
-/obj/machinery/vending/coffee,
+/obj/machinery/vending/coffee{
+	shut_up = 1
+	},
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "okd" = (
@@ -29986,7 +30212,9 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/vending/coffee,
+/obj/machinery/vending/coffee{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
@@ -30008,7 +30236,9 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "oJZ" = (
-/obj/machinery/vending/kink,
+/obj/machinery/vending/kink{
+	shut_up = 1
+	},
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding)
 "oKy" = (
@@ -30018,7 +30248,9 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "oLl" = (
-/obj/machinery/vending/wardrobe/syndie_wardrobe,
+/obj/machinery/vending/wardrobe/syndie_wardrobe{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/centcom/holding)
 "oLP" = (
@@ -30126,7 +30358,9 @@
 /area/centcom/holding)
 "oTO" = (
 /obj/effect/turf_decal/tile/red/opposingcorners,
-/obj/machinery/vending/boozeomat/syndicate_access,
+/obj/machinery/vending/boozeomat/syndicate_access{
+	shut_up = 1
+	},
 /turf/open/floor/iron/white,
 /area/centcom/holding)
 "oUg" = (
@@ -30299,12 +30533,15 @@
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding)
 "pgn" = (
-/obj/machinery/vending/cola/pwr_game,
+/obj/machinery/vending/cola/pwr_game{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "pgx" = (
 /obj/machinery/vending/autodrobe{
-	extended_inventory = 1
+	extended_inventory = 1;
+	shut_up = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
@@ -30328,7 +30565,9 @@
 /obj/structure/sign/poster/contraband/inteq/random{
 	pixel_y = 32
 	},
-/obj/machinery/vending/boozeomat/all_access,
+/obj/machinery/vending/boozeomat/all_access{
+	shut_up = 1
+	},
 /turf/open/floor/wood/wood_parquet,
 /area/syndicate_mothership/control)
 "phk" = (
@@ -30394,7 +30633,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/brown,
-/obj/machinery/vending/snack/random,
+/obj/machinery/vending/snack/random{
+	shut_up = 1
+	},
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "poV" = (
@@ -30678,7 +30919,9 @@
 /turf/closed/indestructible/syndicate,
 /area/syndicate_mothership/control)
 "pEo" = (
-/obj/machinery/vending/wardrobe/robo_wardrobe,
+/obj/machinery/vending/wardrobe/robo_wardrobe{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "pJe" = (
@@ -30781,7 +31024,9 @@
 /turf/open/floor/bluespace,
 /area/centcom)
 "pQU" = (
-/obj/machinery/vending/medical,
+/obj/machinery/vending/medical{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/centcom/holding)
 "pRV" = (
@@ -30988,7 +31233,9 @@
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding)
 "qkA" = (
-/obj/machinery/vending/cola/blue,
+/obj/machinery/vending/cola/blue{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "qkH" = (
@@ -31320,7 +31567,9 @@
 /turf/open/floor/grass/grass0,
 /area/centcom/holding)
 "qMf" = (
-/obj/machinery/vending/wardrobe/bridgeofficer_wardrobe,
+/obj/machinery/vending/wardrobe/bridgeofficer_wardrobe{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/centcom/holding)
 "qNs" = (
@@ -31375,7 +31624,9 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/machinery/vending/inteq_vendomat,
+/obj/machinery/vending/inteq_vendomat{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
@@ -31492,7 +31743,9 @@
 /turf/open/floor/plating,
 /area/syndicate_mothership/control)
 "rbI" = (
-/obj/machinery/vending/wallmed/directional/north,
+/obj/machinery/vending/wallmed/directional/north{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/tile/brown/opposingcorners,
 /obj/effect/turf_decal/tile/brown/opposingcorners,
 /turf/open/floor/iron/white,
@@ -31544,7 +31797,8 @@
 	dir = 1
 	},
 /obj/machinery/vending/clothing{
-	onstation = 0
+	onstation = 0;
+	shut_up = 1
 	},
 /turf/open/floor/iron/white,
 /area/centcom/holding)
@@ -31598,7 +31852,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/brown,
-/obj/machinery/vending/cola/random,
+/obj/machinery/vending/cola/random{
+	shut_up = 1
+	},
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "rid" = (
@@ -31689,7 +31945,9 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/machinery/vending/coffee,
+/obj/machinery/vending/coffee{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
@@ -31706,7 +31964,9 @@
 /turf/open/floor/wood/wood_parquet,
 /area/syndicate_mothership/control)
 "rqD" = (
-/obj/machinery/vending/inteq_vendomat,
+/obj/machinery/vending/inteq_vendomat{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
@@ -31746,7 +32006,9 @@
 /turf/open/floor/mineral/abductor,
 /area/centcom/holding)
 "rrY" = (
-/obj/machinery/vending/sovietsoda,
+/obj/machinery/vending/sovietsoda{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "rsl" = (
@@ -31765,7 +32027,9 @@
 /area/syndicate_mothership/control)
 "rtB" = (
 /obj/effect/turf_decal/sand,
-/obj/machinery/vending/cola,
+/obj/machinery/vending/cola{
+	shut_up = 1
+	},
 /turf/open/floor/plating/beach/sand,
 /area/centcom/holding)
 "rtJ" = (
@@ -31775,7 +32039,9 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "rtQ" = (
-/obj/machinery/vending/coffee,
+/obj/machinery/vending/coffee{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/tile/dark_green/half/contrasted{
 	dir = 4
 	},
@@ -32237,7 +32503,8 @@
 /area/centcom)
 "scb" = (
 /obj/machinery/vending/kink{
-	onstation = 0
+	onstation = 0;
+	shut_up = 1
 	},
 /turf/open/floor/carpet/royalblack,
 /area/centcom/holding)
@@ -32303,7 +32570,9 @@
 /turf/open/floor/plasteel,
 /area/centcom)
 "seI" = (
-/obj/machinery/vending/snack/random,
+/obj/machinery/vending/snack/random{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/tile/brown/anticorner/contrasted{
 	dir = 8
 	},
@@ -32507,7 +32776,9 @@
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding)
 "suQ" = (
-/obj/machinery/vending/cola/random,
+/obj/machinery/vending/cola/random{
+	shut_up = 1
+	},
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership)
 "svK" = (
@@ -32919,7 +33190,9 @@
 /turf/open/floor/plasteel/bluespace,
 /area/centcom)
 "sXf" = (
-/obj/machinery/vending/sustenance,
+/obj/machinery/vending/sustenance{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "sXp" = (
@@ -33022,7 +33295,9 @@
 /turf/open/floor/iron/white,
 /area/syndicate_mothership/control)
 "tkK" = (
-/obj/machinery/vending/cola/sodie,
+/obj/machinery/vending/cola/sodie{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "tlR" = (
@@ -33156,7 +33431,9 @@
 /area/syndicate_mothership/control)
 "tug" = (
 /obj/effect/turf_decal/tile/dark_green/fourcorners,
-/obj/machinery/vending/snack/random,
+/obj/machinery/vending/snack/random{
+	shut_up = 1
+	},
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "tvK" = (
@@ -33179,7 +33456,9 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/machinery/vending/medical/syndicate_access,
+/obj/machinery/vending/medical/syndicate_access{
+	shut_up = 1
+	},
 /turf/open/floor/plasteel,
 /area/centcom)
 "tzq" = (
@@ -33374,7 +33653,9 @@
 /turf/open/floor/iron/white,
 /area/syndicate_mothership/control)
 "tQq" = (
-/obj/machinery/vending/wardrobe/syndie_wardrobe,
+/obj/machinery/vending/wardrobe/syndie_wardrobe{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "tRR" = (
@@ -33383,12 +33664,15 @@
 /turf/open/indestructible/hoteltile,
 /area/centcom/holding)
 "tSb" = (
-/obj/machinery/vending/cigarette/syndicate,
-/obj/machinery/vending/cigarette/syndicate,
+/obj/machinery/vending/cigarette/syndicate{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "tSl" = (
-/obj/machinery/vending/wardrobe/law_wardrobe,
+/obj/machinery/vending/wardrobe/law_wardrobe{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "tSr" = (
@@ -33440,7 +33724,9 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "tUL" = (
-/obj/machinery/vending/wardrobe/hos_wardrobe,
+/obj/machinery/vending/wardrobe/hos_wardrobe{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "tVc" = (
@@ -34038,7 +34324,9 @@
 /turf/open/indestructible/hoteltile,
 /area/centcom/holding)
 "uTp" = (
-/obj/machinery/vending/tool,
+/obj/machinery/vending/tool{
+	shut_up = 1
+	},
 /turf/open/floor/plating,
 /area/syndicate_mothership/control)
 "uTC" = (
@@ -34482,7 +34770,9 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/machinery/vending/coffee,
+/obj/machinery/vending/coffee{
+	shut_up = 1
+	},
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership)
 "vtq" = (
@@ -34503,7 +34793,9 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "vuv" = (
-/obj/machinery/vending/wallmed/directional/north,
+/obj/machinery/vending/wallmed/directional/north{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/tile/brown,
 /obj/effect/turf_decal/tile/brown{
 	dir = 1
@@ -34790,7 +35082,9 @@
 /turf/open/floor/wood,
 /area/centcom)
 "vQz" = (
-/obj/machinery/vending/hydroseeds,
+/obj/machinery/vending/hydroseeds{
+	shut_up = 1
+	},
 /turf/open/indestructible/hoteltile,
 /area/centcom/holding)
 "vQH" = (
@@ -34891,7 +35185,8 @@
 /obj/effect/turf_decal/trimline/blue/filled/line,
 /obj/machinery/light,
 /obj/machinery/vending/autodrobe{
-	onstation = 0
+	onstation = 0;
+	shut_up = 1
 	},
 /turf/open/floor/iron/white,
 /area/centcom/holding)
@@ -34980,7 +35275,9 @@
 /turf/open/floor/iron/dark/smooth_large,
 /area/centcom/holding)
 "wcR" = (
-/obj/machinery/vending/cola/random,
+/obj/machinery/vending/cola/random{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
@@ -34994,7 +35291,9 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "weh" = (
-/obj/machinery/vending/engivend,
+/obj/machinery/vending/engivend{
+	shut_up = 1
+	},
 /obj/machinery/light{
 	dir = 1
 	},
@@ -35085,7 +35384,9 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "wjh" = (
-/obj/machinery/vending/wardrobe/blueshield_wardrobe,
+/obj/machinery/vending/wardrobe/blueshield_wardrobe{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "wkB" = (
@@ -35322,7 +35623,9 @@
 /turf/open/floor/plasteel,
 /area/centcom)
 "wBW" = (
-/obj/machinery/vending/wardrobe/chef_wardrobe,
+/obj/machinery/vending/wardrobe/chef_wardrobe{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/centcom/holding)
 "wDq" = (
@@ -35360,7 +35663,9 @@
 /obj/effect/turf_decal/tile/brown{
 	dir = 1
 	},
-/obj/machinery/vending/inteq_vendomat,
+/obj/machinery/vending/inteq_vendomat{
+	shut_up = 1
+	},
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "wGK" = (
@@ -35375,7 +35680,9 @@
 /turf/open/space/basic,
 /area/syndicate_mothership/control)
 "wIk" = (
-/obj/machinery/vending/engivend,
+/obj/machinery/vending/engivend{
+	shut_up = 1
+	},
 /turf/open/floor/plating,
 /area/syndicate_mothership/control)
 "wIn" = (
@@ -35408,7 +35715,9 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "wKP" = (
-/obj/machinery/vending/cigarette/syndicate,
+/obj/machinery/vending/cigarette/syndicate{
+	shut_up = 1
+	},
 /obj/machinery/light{
 	dir = 1
 	},
@@ -35738,7 +36047,9 @@
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding)
 "xiv" = (
-/obj/machinery/vending/cigarette/syndicate,
+/obj/machinery/vending/cigarette/syndicate{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/tile/dark_red/fourcorners,
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
@@ -35958,7 +36269,9 @@
 /turf/open/floor/plasteel/bluespace,
 /area/centcom)
 "xsI" = (
-/obj/machinery/vending/coffee,
+/obj/machinery/vending/coffee{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/tile/dark_blue/fourcorners,
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
@@ -36479,7 +36792,9 @@
 /turf/open/floor/iron/white,
 /area/centcom/holding)
 "yeC" = (
-/obj/machinery/vending/medical/syndicate_access,
+/obj/machinery/vending/medical/syndicate_access{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/tile/brown/opposingcorners,
 /obj/effect/turf_decal/tile/brown/opposingcorners,
 /turf/open/floor/iron/white,
@@ -36552,7 +36867,9 @@
 /turf/open/indestructible,
 /area/centcom)
 "ylF" = (
-/obj/machinery/vending/wardrobe/hydro_wardrobe,
+/obj/machinery/vending/wardrobe/hydro_wardrobe{
+	shut_up = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "yma" = (

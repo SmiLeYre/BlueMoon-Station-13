@@ -29,7 +29,9 @@
 /turf/open/floor/carpet/royalblack,
 /area/hilbertshotel)
 "fo" = (
-/obj/machinery/vending/boozeomat,
+/obj/machinery/vending/boozeomat{
+	shut_up = 1
+	},
 /turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "hi" = (
@@ -345,7 +347,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/vending/games,
+/obj/machinery/vending/games{
+	shut_up = 1
+	},
 /turf/open/floor/carpet/black,
 /area/hilbertshotel)
 "Mz" = (
@@ -430,7 +434,9 @@
 /turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "We" = (
-/obj/machinery/vending/snack/orange,
+/obj/machinery/vending/snack/orange{
+	shut_up = 1
+	},
 /obj/structure/sign/poster/contraband/random{
 	pixel_x = 32
 	},

@@ -117,7 +117,9 @@
 /turf/open/floor/iron/white/textured,
 /area/hilbertshotel)
 "gS" = (
-/obj/machinery/vending/games,
+/obj/machinery/vending/games{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
@@ -366,7 +368,8 @@
 /area/hilbertshotel)
 "tF" = (
 /obj/machinery/vending/boozeomat{
-	onstation = 0
+	onstation = 0;
+	shut_up = 1
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -549,7 +552,8 @@
 	dir = 1
 	},
 /obj/machinery/vending/kink{
-	onstation = 0
+	onstation = 0;
+	shut_up = 1
 	},
 /turf/open/floor/carpet/royalblue,
 /area/hilbertshotel)
@@ -723,7 +727,9 @@
 /turf/closed/indestructible/wood,
 /area/hilbertshotel)
 "LP" = (
-/obj/machinery/vending/cigarette,
+/obj/machinery/vending/cigarette{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
@@ -818,7 +824,8 @@
 /area/hilbertshotel)
 "Ph" = (
 /obj/machinery/vending/dinnerware{
-	contraband = list(/obj/item/kitchen/rollingpin=2,/obj/item/kitchen/knife/butcher=2,/obj/item/reagent_containers/food/condiment/flour=4)
+	contraband = list(/obj/item/kitchen/rollingpin=2,/obj/item/kitchen/knife/butcher=2,/obj/item/reagent_containers/food/condiment/flour=4);
+	shut_up = 1
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 5

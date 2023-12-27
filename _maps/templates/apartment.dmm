@@ -10,7 +10,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/machinery/vending/games,
+/obj/machinery/vending/games{
+	shut_up = 1
+	},
 /turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "aS" = (
@@ -341,7 +343,8 @@
 	contraband = list(/obj/item/reagent_containers/food/condiment/flour=4);
 	desc = "This vendor is full of condiments to put on food.";
 	name = "\improper Condiments Vendor";
-	products = list(/obj/item/storage/bag/tray=8,/obj/item/reagent_containers/food/drinks/drinkingglass=10,/obj/item/storage/box/cups=5,/obj/item/reagent_containers/food/condiment/pack/ketchup=20,/obj/item/reagent_containers/food/condiment/pack/mustard=20,/obj/item/reagent_containers/food/condiment/pack/hotsauce=20,/obj/item/reagent_containers/food/condiment/pack/astrotame=20,/obj/item/reagent_containers/food/condiment/saltshaker=20,/obj/item/reagent_containers/food/condiment/peppermill=20)
+	products = list(/obj/item/storage/bag/tray=8,/obj/item/reagent_containers/food/drinks/drinkingglass=10,/obj/item/storage/box/cups=5,/obj/item/reagent_containers/food/condiment/pack/ketchup=20,/obj/item/reagent_containers/food/condiment/pack/mustard=20,/obj/item/reagent_containers/food/condiment/pack/hotsauce=20,/obj/item/reagent_containers/food/condiment/pack/astrotame=20,/obj/item/reagent_containers/food/condiment/saltshaker=20,/obj/item/reagent_containers/food/condiment/peppermill=20);
+	shut_up = 1
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/hilbertshotel)
@@ -369,7 +372,9 @@
 /turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "wv" = (
-/obj/machinery/vending/boozeomat,
+/obj/machinery/vending/boozeomat{
+	shut_up = 1
+	},
 /turf/closed/indestructible/wood,
 /area/hilbertshotel)
 "wx" = (
@@ -532,7 +537,9 @@
 /turf/open/floor/carpet/purple,
 /area/hilbertshotel)
 "Ea" = (
-/obj/machinery/vending/kink,
+/obj/machinery/vending/kink{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
@@ -686,7 +693,9 @@
 /turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "Oh" = (
-/obj/machinery/vending/wallmed/directional/west,
+/obj/machinery/vending/wallmed/directional/west{
+	shut_up = 1
+	},
 /obj/structure/table,
 /obj/structure/bedsheetbin,
 /turf/open/indestructible/hoteltile,
