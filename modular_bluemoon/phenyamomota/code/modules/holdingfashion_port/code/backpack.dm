@@ -21,7 +21,7 @@
 
 /obj/item/storage/backpack/holding/Initialize(mapload)
 	. = ..()
-	desc += "<br>Can be recolabrated with anomaly neutralizer."
+	desc += "<br>Can be recolabrated on solid surface with anomaly neutralizer."
 
 /obj/item/storage/backpack/holding/examine()
 	. = ..()
