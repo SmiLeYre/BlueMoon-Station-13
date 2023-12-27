@@ -12869,15 +12869,15 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/external{
-	req_access_txt = "101";
-	name = "CentCom External Airlock"
+	name = "CentCom External Airlock";
+	req_access_txt = "101"
 	},
 /turf/open/floor/plasteel,
 /area/centcom/control)
 "aDr" = (
 /obj/machinery/door/airlock/external{
-	req_access_txt = "101";
-	name = "CentCom External Airlock"
+	name = "CentCom External Airlock";
+	req_access_txt = "101"
 	},
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -13344,8 +13344,8 @@
 "aEq" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/door/airlock/external{
-	req_access_txt = "101";
-	name = "CentCom External Airlock"
+	name = "CentCom External Airlock";
+	req_access_txt = "101"
 	},
 /turf/open/floor/plasteel,
 /area/tdome/tdomeobserve)
@@ -18487,8 +18487,8 @@
 "aSz" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Leader's Room";
-	req_one_access_txt = "151";
-	req_access_txt = "151"
+	req_access_txt = "151";
+	req_one_access_txt = "151"
 	},
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership)
@@ -18980,15 +18980,15 @@
 /area/slavers)
 "aUH" = (
 /obj/machinery/door/airlock/external{
-	req_one_access_txt = "150";
-	req_access_txt = "150"
+	req_access_txt = "150";
+	req_one_access_txt = "150"
 	},
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership)
 "aUJ" = (
 /obj/machinery/door/airlock/external{
-	req_one_access_txt = "150";
-	req_access_txt = "150"
+	req_access_txt = "150";
+	req_one_access_txt = "150"
 	},
 /obj/effect/turf_decal/tile/red/opposingcorners,
 /turf/open/floor/iron/dark,
@@ -20510,10 +20510,10 @@
 /area/syndicate_mothership/control)
 "bgH" = (
 /turf/open/floor/plating/beach/water{
-	footstep = "water";
-	heavyfootstep = "water";
 	barefootstep = "water";
-	clawfootstep = "water"
+	clawfootstep = "water";
+	footstep = "water";
+	heavyfootstep = "water"
 	},
 /area/centcom/holding)
 "bhn" = (
@@ -21210,8 +21210,8 @@
 /obj/effect/turf_decal/tile/brown,
 /obj/machinery/door/airlock/centcom{
 	name = "Nuke Ops Barracks";
-	req_one_access_txt = "152";
-	req_access_txt = "152"
+	req_access_txt = "152";
+	req_one_access_txt = "152"
 	},
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
@@ -21951,20 +21951,20 @@
 "dpn" = (
 /obj/structure/table/wood,
 /obj/item/toy/crayon/spraycan/infinite{
-	pixel_y = 12;
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = 12
 	},
 /obj/item/toy/crayon/spraycan/infinite{
-	pixel_y = 12;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = 12
 	},
 /obj/item/toy/crayon/spraycan/infinite{
-	pixel_y = 12;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 12
 	},
 /obj/item/toy/crayon/spraycan/infinite{
-	pixel_y = 12;
-	pixel_x = -10
+	pixel_x = -10;
+	pixel_y = 12
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
@@ -22045,8 +22045,8 @@
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /obj/structure/showcase/mecha/marauder{
-	icon_state = "hermes";
-	icon = 'modular_bluemoon/krashly/icons/obj/mecha/hermes.dmi'
+	icon = 'modular_bluemoon/krashly/icons/obj/mecha/hermes.dmi';
+	icon_state = "hermes"
 	},
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
@@ -22941,8 +22941,8 @@
 	},
 /obj/structure/chair/pew/right,
 /obj/machinery/pool/filter{
-	pixel_y = 15;
-	pixel_x = 14
+	pixel_x = 14;
+	pixel_y = 15
 	},
 /turf/open/pool,
 /area/centcom/holding)
@@ -22984,10 +22984,10 @@
 "eQO" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor{
+	dir = 4;
 	name = "Arrivals Security Checkpoint";
 	pixel_y = null;
-	req_access_txt = "63";
-	dir = 4
+	req_access_txt = "63"
 	},
 /obj/structure/window/reinforced,
 /obj/effect/turf_decal/tile/brown/fourcorners,
@@ -23515,10 +23515,10 @@
 /obj/item/pen/fountain,
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /obj/machinery/door/window/brigdoor{
+	dir = 8;
 	name = "Arrivals Security Checkpoint";
 	pixel_y = null;
-	req_access_txt = "63";
-	dir = 8
+	req_access_txt = "63"
 	},
 /obj/structure/window/reinforced,
 /turf/open/floor/iron/dark,
@@ -25398,9 +25398,9 @@
 "ibW" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/westleft{
+	dir = 1;
 	name = "Cargo Desk";
-	req_access_txt = "50";
-	dir = 1
+	req_access_txt = "50"
 	},
 /obj/item/paper_bin,
 /obj/item/pen,
@@ -25579,13 +25579,13 @@
 /area/syndicate_mothership/control)
 "ioq" = (
 /obj/docking_port/stationary{
+	dheight = 1;
 	dir = 2;
+	dwidth = 7;
+	height = 19;
 	id = "raiders_away";
 	name = "InteQ raiders port";
-	height = 19;
-	width = 35;
-	dwidth = 7;
-	dheight = 1
+	width = 35
 	},
 /turf/open/floor/plating,
 /area/syndicate_mothership)
@@ -26882,16 +26882,16 @@
 "kmE" = (
 /obj/structure/table/abductor,
 /obj/item/dildo/flared/huge{
-	pixel_y = 7;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 7
 	},
 /obj/item/dildo/flared/huge{
-	pixel_y = 10;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 10
 	},
 /obj/item/dildo/flared/huge{
-	pixel_y = -6;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = -6
 	},
 /turf/open/floor/mineral/abductor,
 /area/centcom/holding)
@@ -27755,17 +27755,17 @@
 "loP" = (
 /obj/machinery/light/directional/west,
 /obj/item/stack/sheet/glass/fifty{
-	pixel_y = 7;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 7
 	},
 /obj/item/stack/sheet/glass/fifty{
-	pixel_y = 7;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 7
 	},
 /obj/structure/table,
 /obj/item/stack/sheet/metal/fifty{
-	pixel_y = 7;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 7
 	},
 /obj/item/stack/sheet/metal/fifty{
 	pixel_x = 6;
@@ -27892,12 +27892,12 @@
 "luY" = (
 /obj/structure/table/abductor,
 /obj/item/dildo/flared/gigantic{
-	pixel_y = -2;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = -2
 	},
 /obj/item/dildo/flared/gigantic{
-	pixel_y = 9;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 9
 	},
 /turf/open/floor/mineral/abductor,
 /area/centcom/holding)
@@ -27911,8 +27911,8 @@
 /obj/effect/turf_decal/tile/brown/opposingcorners,
 /mob/living/simple_animal/bot/medbot{
 	name = "InteQ Hospitality Drone";
-	radio_key = /obj/item/encryptionkey/inteq;
-	radio_channel = "InteQ"
+	radio_channel = "InteQ";
+	radio_key = /obj/item/encryptionkey/inteq
 	},
 /turf/open/floor/iron/white,
 /area/syndicate_mothership/control)
@@ -28922,8 +28922,8 @@
 /area/centcom)
 "nbL" = (
 /obj/machinery/door/airlock/centcom{
-	req_access_txt = "152";
-	name = "Prison"
+	name = "Prison";
+	req_access_txt = "152"
 	},
 /turf/open/floor/plating,
 /area/shuttle/inteq/collosus)
@@ -29969,10 +29969,10 @@
 /area/shuttle/inteq/collosus)
 "oHg" = (
 /turf/open/floor/spooktime/beach/coasts/watercoastN{
-	footstep = "water";
-	heavyfootstep = "water";
 	barefootstep = "water";
-	clawfootstep = "water"
+	clawfootstep = "water";
+	footstep = "water";
+	heavyfootstep = "water"
 	},
 /area/centcom/holding)
 "oHi" = (
@@ -30118,10 +30118,10 @@
 "oTl" = (
 /obj/structure/spacevine,
 /turf/open/floor/plating/beach/water{
-	footstep = "water";
-	heavyfootstep = "water";
 	barefootstep = "water";
-	clawfootstep = "water"
+	clawfootstep = "water";
+	footstep = "water";
+	heavyfootstep = "water"
 	},
 /area/centcom/holding)
 "oTO" = (
@@ -30147,8 +30147,8 @@
 "oWo" = (
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /obj/machinery/door/airlock/public/glass{
-	req_access_txt = "152";
-	name = "Bar"
+	name = "Bar";
+	req_access_txt = "152"
 	},
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
@@ -30537,9 +30537,9 @@
 	pixel_x = 32
 	},
 /obj/machinery/computer/shuttle/syndicate/recall{
-	name = "Molot Shuttle recall terminal";
 	icon_keyboard = "inteq_key";
-	icon_screen = "inteqshuttle"
+	icon_screen = "inteqshuttle";
+	name = "Molot Shuttle recall terminal"
 	},
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
@@ -30835,10 +30835,10 @@
 "qba" = (
 /obj/structure/fans/tiny/invisible,
 /turf/open/floor/spooktime/beach/coasts/watercoastN{
-	footstep = "water";
-	heavyfootstep = "water";
 	barefootstep = "water";
-	clawfootstep = "water"
+	clawfootstep = "water";
+	footstep = "water";
+	heavyfootstep = "water"
 	},
 /area/centcom/holding)
 "qcq" = (
@@ -31576,8 +31576,8 @@
 /obj/item/slimepotion/slime/mutator,
 /obj/item/slimepotion/slime/mutator,
 /obj/item/book/manual/wiki/medical_cloning{
-	pixel_y = 7;
-	pixel_x = 14
+	pixel_x = 14;
+	pixel_y = 7
 	},
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /obj/structure/table/reinforced,
@@ -31821,28 +31821,28 @@
 "rzf" = (
 /obj/structure/table/abductor,
 /obj/item/dildo/knotted{
-	pixel_y = 10;
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = 10
 	},
 /obj/item/dildo/human{
-	pixel_y = 10;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = 10
 	},
 /obj/item/dildo/flared/huge{
-	pixel_y = 10;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 10
 	},
 /obj/item/dildo/flared/gigantic{
-	pixel_y = -2;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = -2
 	},
 /obj/item/dildo/flared{
-	pixel_y = -2;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = -2
 	},
 /obj/item/dildo/custom{
-	pixel_y = -1;
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = -1
 	},
 /obj/machinery/light/directional/south,
 /turf/open/floor/mineral/abductor,
@@ -31910,17 +31910,17 @@
 "rGa" = (
 /obj/machinery/light/directional/west,
 /obj/item/stack/sheet/glass/fifty{
-	pixel_y = 7;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 7
 	},
 /obj/item/stack/sheet/glass/fifty{
-	pixel_y = 7;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 7
 	},
 /obj/structure/table,
 /obj/item/stack/sheet/metal/fifty{
-	pixel_y = 7;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 7
 	},
 /obj/item/stack/sheet/metal/fifty{
 	pixel_x = 6;
@@ -31989,7 +31989,7 @@
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding)
 "rLe" = (
-/obj/structure/chair/sofa/corner/brown{
+/obj/structure/chair/sofa/corner{
 	dir = 4
 	},
 /turf/open/floor/mineral/abductor,
@@ -32743,10 +32743,10 @@
 	opacity = 1
 	},
 /turf/open/floor/plating/beach/water{
-	footstep = "water";
-	heavyfootstep = "water";
 	barefootstep = "water";
-	clawfootstep = "water"
+	clawfootstep = "water";
+	footstep = "water";
+	heavyfootstep = "water"
 	},
 /area/centcom/holding)
 "sJw" = (
@@ -33394,8 +33394,8 @@
 "tSr" = (
 /mob/living/simple_animal/bot/medbot{
 	name = "InteQ Hospitality Drone";
-	radio_key = /obj/item/encryptionkey/inteq;
-	radio_channel = "InteQ"
+	radio_channel = "InteQ";
+	radio_key = /obj/item/encryptionkey/inteq
 	},
 /obj/effect/turf_decal/tile/brown,
 /obj/effect/turf_decal/tile/brown{
@@ -34487,8 +34487,8 @@
 /area/syndicate_mothership)
 "vtq" = (
 /obj/item/toy/plush/mammal{
-	name = "Rozgo plushie";
-	desc = "ГАНДОЛЛА!!"
+	desc = "ГАНДОЛЛА!!";
+	name = "Rozgo plushie"
 	},
 /turf/open/floor/carpet/red,
 /area/centcom/holding)
@@ -34914,13 +34914,13 @@
 /area/centcom/holding)
 "vYO" = (
 /obj/docking_port/stationary{
+	dheight = 5;
+	dwidth = 5;
+	height = 10;
 	id = "lambda_away";
 	name = "Lambda Shuttle Dock";
-	dwidth = 5;
-	width = 10;
 	roundstart_template = /datum/map_template/shuttle/lambda/code;
-	dheight = 5;
-	height = 10
+	width = 10
 	},
 /turf/open/space/basic,
 /area/space)
@@ -35872,8 +35872,8 @@
 "xnU" = (
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /obj/machinery/door/airlock/centcom{
-	req_access_txt = "152";
-	name = "Prison"
+	name = "Prison";
+	req_access_txt = "152"
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq/collosus)
@@ -35909,8 +35909,8 @@
 	dir = 1
 	},
 /obj/structure/showcase/mecha/marauder{
-	icon_state = "ares";
-	icon = 'modular_bluemoon/krashly/icons/obj/mecha/ares.dmi'
+	icon = 'modular_bluemoon/krashly/icons/obj/mecha/ares.dmi';
+	icon_state = "ares"
 	},
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
@@ -36396,8 +36396,8 @@
 /area/syndicate_mothership/control)
 "xYh" = (
 /obj/machinery/computer{
-	name = "Colossus Shuttle recall terminal";
-	dir = 1
+	dir = 1;
+	name = "Colossus Shuttle recall terminal"
 	},
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /turf/open/floor/iron/dark,
