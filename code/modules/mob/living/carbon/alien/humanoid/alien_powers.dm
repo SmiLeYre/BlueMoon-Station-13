@@ -193,8 +193,7 @@ Doesn't work on other aliens/AI.*/
 		"Член" = 		new /obj/item/organ/genital/penis,
 		"Семенники" =	new /obj/item/organ/genital/testicles,
 		"Вагина" = 		new /obj/item/organ/genital/vagina,
-		"Матка" = 		new /obj/item/organ/genital/womb,
-		"Параметры гениталий"
+		"Матка" = 		new /obj/item/organ/genital/womb
 	)
 
 /obj/effect/proc_holder/alien/set_genital/fire(mob/living/carbon/user)
@@ -205,30 +204,33 @@ Doesn't work on other aliens/AI.*/
 			genital_path.Insert(usr)
 			genital_path.shape = "knotted"
 			if(genital_path == /obj/item/organ/genital/womb) //Было бы странно, если бы появление/убирание матки было видно визуально
-				to_chat(user,"<span class='lewd'>Вы ощущаете, как у вас между ног вырастает [genital]</span>") //Но самому юзеру можно об этом сказать
+				to_chat(user,"<span class='lewd'>Вы ощущаете, как ваше лоно обретает матку</span>") //Но самому юзеру можно об этом сказать
 				return
+			to_chat(user,"<span class='lewd'>У вас между ног вырастает[genital]</span>")
 			user.visible_message("<span class='danger'>У [usr] между ног вырастает [genital]!</span>")
+			if(genital == "Член")
+				var/obj/item/organ/genital/penis/P = user.getorganslot(ORGAN_SLOT_PENIS)
+				P.max_length = 120
+				var/size = input(user, "Введите желаемый размер полового органа в пределах([P.min_length]-[P.max_length])", "Параметры члена") as null|num
+				if(size == null)
+					return
+				if(size >= P.max_length)
+					size = P.max_length
+				P.length = size
+				var/diameter = input(user, "Введите желаемый диаметр полового органа в пределах ([COCK_DIAMETER_RATIO_DEF]-2)", "Параметры члена") as null|num
+				if(diameter == null && diameter <= COCK_DIAMETER_RATIO_DEF)
+					diameter = COCK_DIAMETER_RATIO_DEF
+				if(diameter >= 2)
+					diameter = 2
+				P.diameter = diameter
+				P.update()
 		else
 			genital_path.Remove(usr)//Убирается вот тут
 			if(genital_path == /obj/item/organ/genital/womb)
-				to_chat(user,"<span class='lewd'>[genital] пропадает, всасываясь обратно вглубь вашего гибкого тела</span>")
+				to_chat(user,"<span class='lewd'>Ваша матка сокращается, прекращая выполнять свои функции</span>")
 				return
+			to_chat(user,"<span class='lewd'>[genital] пропадает, всасываясь обратно вглубь вашего гибкого тела</span>")
 			user.visible_message("<span class='danger'>У [usr] [genital] исчезает куда-то внутрь, больше не представляя угрозы</span>")
-		if(user.getorganslot(ORGAN_SLOT_PENIS) || genital == "Член")
-			var/size = input(user, "Введите желаемый размер полового органа в пределах(1-120)", "Параметры члена") as null|num
-			var/obj/item/organ/genital/penis/P = user.getorganslot(ORGAN_SLOT_PENIS)
-			if(size == null)
-				return
-			if(size >= 120)
-				size = 120
-			P.length = size
-			var/diameter = input(user, "Введите желаемый диаметр полового органа в пределах (0.25-2)", "Параметры члена") as null|num
-			if(diameter == null && diameter <= 0.25)
-				diameter = 0.25
-			if(diameter >= 2)
-				diameter = 2
-			P.diameter = diameter
-			P.update()
 //BLUEMOON EDIT END
 /obj/effect/proc_holder/alien/neurotoxin
 	name = "Spit Neurotoxin"
