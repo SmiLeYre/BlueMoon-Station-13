@@ -219,6 +219,20 @@
 		if(start_T && end_T)
 			log_combat(src, thrown_thing, "thrown", addition="grab from tile in [AREACOORD(start_T)] towards tile at [AREACOORD(end_T)]")
 
+	if(!held_item)
+		return
+
+	else if(!(held_item.item_flags & ABSTRACT) && !HAS_TRAIT(held_item, TRAIT_NODROP))
+		thrown_thing = held_item
+		dropItemToGround(held_item)
+
+		if(HAS_TRAIT(src, TRAIT_PACIFISM) && held_item.throwforce)
+			to_chat(src, "<span class='notice'>Ты осторожно кладёшь [held_item] под себя.</span>")
+			return
+
+		if(!UseStaminaBuffer(held_item.getweight(src, STAM_COST_THROW_MULT, SKILL_THROW_STAM_COST), warn = TRUE))
+			return
+
 	if(thrown_thing)
 		var/power_throw = 0
 		if(HAS_TRAIT(src, TRAIT_HULK))
@@ -242,19 +256,6 @@
 		playsound(loc, 'sound/weapons/punchmiss.ogg', 50, 1, -1)
 		newtonian_move(get_dir(target, src))
 		thrown_thing.safe_throw_at(target, thrown_thing.throw_range, thrown_thing.throw_speed + power_throw, src, null, null, null, move_force, random_turn)
-
-	if(!held_item)
-		return
-
-	else if(!(held_item.item_flags & ABSTRACT) && !HAS_TRAIT(held_item, TRAIT_NODROP))
-		thrown_thing = held_item
-		dropItemToGround(held_item)
-		if(HAS_TRAIT(src, TRAIT_PACIFISM) && held_item.throwforce)
-			to_chat(src, "<span class='notice'>Ты осторожно кладёшь [held_item] под себя.</span>")
-			return
-
-		if(!UseStaminaBuffer(held_item.getweight(src, STAM_COST_THROW_MULT, SKILL_THROW_STAM_COST), warn = TRUE))
-			return
 
 /mob/living/carbon/restrained(ignore_grab)
 	. = (handcuffed || (!ignore_grab && pulledby && pulledby.grab_state >= GRAB_AGGRESSIVE))
