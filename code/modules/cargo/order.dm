@@ -67,7 +67,7 @@
 
 	var/station_name = (manifest_paper.errors & MANIFEST_ERROR_NAME) ? new_station_name() : station_name()
 
-	manifest_paper.name = "Shipping Nanifest - [packname?"#[id] ([pack.name])":"(Grouped Item Crate)"]"
+	manifest_paper.name = "Shipping Manifest - [packname?"#[id] ([pack.name])":"(Grouped Item Crate)"]"
 
 	var/manifest_text = "<h2>[command_name()] Манифест Отгрузки</h2>"
 	manifest_text += "<hr/>"

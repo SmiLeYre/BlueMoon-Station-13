@@ -1,11 +1,5 @@
 /mob/living/simple_animal/qareen/ClickOn(atom/A, params) //qareens can't interact with the world directly.
 	var/list/modifiers = params2list(params)
-	// BlueMoon Edit Start: Let qareens orbit things. Key combination chosen to avoid accidental orbiting - Flauros
-	if(modifiers["middle"] && modifiers["shift"])
-		if(ismob(A))
-			ManualFollow(A)
-		return
-	// BlueMoon Edit End
 	if(modifiers["shift"])
 		ShiftClickOn(A)
 		return

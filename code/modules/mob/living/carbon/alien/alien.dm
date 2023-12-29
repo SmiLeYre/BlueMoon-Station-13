@@ -1,7 +1,7 @@
 /mob/living/carbon/alien
 	name = "alien"
 	icon = 'icons/mob/alien.dmi'
-	gender = FEMALE //All xenos are girls!!
+	gender = FEMALE
 	dna = null
 	faction = list(ROLE_ALIEN)
 	sight = SEE_MOBS
@@ -10,10 +10,14 @@
 	initial_language_holder = /datum/language_holder/alien
 	bubble_icon = "alien"
 	type_of_meat = /obj/item/reagent_containers/food/snacks/meat/slab/xeno
-
+//BLUEMOON EDIT START
+//Дальше бога нет
 	has_anus = TRUE
 	has_vagina = TRUE
+	has_penis = TRUE
+	has_balls = TRUE
 
+//BLUEMOON EDIT END
 	typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/alien
 
 	/// Whether they can ventcrawl; this is set individually for 'humanoid' and 'royal' types

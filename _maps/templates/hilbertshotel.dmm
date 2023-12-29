@@ -173,7 +173,9 @@
 /turf/open/space/bluespace,
 /area/hilbertshotel)
 "Ii" = (
-/obj/machinery/vending/kink,
+/obj/machinery/vending/kink{
+	shut_up = 1
+	},
 /turf/open/indestructible/hotelwood,
 /area/hilbertshotel)
 "Ir" = (

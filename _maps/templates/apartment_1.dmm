@@ -33,7 +33,9 @@
 /turf/open/floor/plating/airless,
 /area/hilbertshotel)
 "ao" = (
-/obj/machinery/vending/kink,
+/obj/machinery/vending/kink{
+	shut_up = 1
+	},
 /turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "ap" = (
@@ -129,7 +131,9 @@
 /turf/open/floor/grass/grass0,
 /area/hilbertshotel)
 "aI" = (
-/obj/machinery/vending/games,
+/obj/machinery/vending/games{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
@@ -165,7 +169,9 @@
 /turf/open/floor/carpet,
 /area/hilbertshotel)
 "aV" = (
-/obj/machinery/vending/snack/orange,
+/obj/machinery/vending/snack/orange{
+	shut_up = 1
+	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
@@ -770,7 +776,9 @@
 /turf/closed/indestructible/wall,
 /area/hilbertshotel)
 "Oe" = (
-/obj/machinery/vending/boozeomat,
+/obj/machinery/vending/boozeomat{
+	shut_up = 1
+	},
 /turf/open/floor/plasteel/cafeteria,
 /area/hilbertshotel)
 "Os" = (
