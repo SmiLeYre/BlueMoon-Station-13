@@ -14,16 +14,16 @@
 #define DECEMBER	12
 
 //Select holiday names -- If you test for a holiday in the code, make the holiday's name a define and test for that instead
-#define NEW_YEAR				"Новый Год 2023"
-#define VALENTINES				"День Святого Валентина"
-#define APRIL_FOOLS				"День дурака"
-#define EASTER					"Пасха"
-#define PRIDE_MONTH				"Гейский День Гейских Геев"
-#define HALLOWEEN				"Хэллоуин"
-#define CHRISTMAS				"Рождество"
-#define FESTIVE_SEASON			"Праздничный сезон"
-#define GARBAGEDAY				"Мусорный День"
-#define MONKEYDAY				"День обезьяны"
+#define NEW_YEAR				"Новогодний Сектор |"
+#define VALENTINES				"Сектор - День Святого Валентина |"
+#define APRIL_FOOLS				"Сектор - День дурака |"
+#define EASTER					"Сектор - Пасха |"
+#define PRIDE_MONTH				"Сектор - Гейский День Гейских Геев |"
+#define HALLOWEEN				"Сектор - Хэллоуин |"
+#define CHRISTMAS				"Сектор - Рождество |"
+#define FESTIVE_SEASON			"Сектор - Праздничный сезон |"
+#define GARBAGEDAY				"Сектор - Мусорный День |"
+#define MONKEYDAY				"Сектор - День Обезьяны |"
 /*
 
 Days of the week to make it easier to reference them.

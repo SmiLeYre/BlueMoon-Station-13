@@ -16,4 +16,4 @@
 	desc = "Лучшие умы ЧВК додумались использовать портативные генераторы щита не только в скафандрах."
 	item = /obj/item/shieldbelt
 	cost = 12
-	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
+	purchasable_from = (UPLINK_TRAITORS)

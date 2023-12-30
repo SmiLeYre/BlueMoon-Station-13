@@ -1,11 +1,5 @@
 /mob/living/simple_animal/qareen/ClickOn(atom/A, params) //qareens can't interact with the world directly.
 	var/list/modifiers = params2list(params)
-	// BlueMoon Edit Start: Let qareens orbit things. Key combination chosen to avoid accidental orbiting - Flauros
-	if(modifiers["middle"] && modifiers["shift"])
-		if(ismob(A))
-			ManualFollow(A)
-		return
-	// BlueMoon Edit End
 	if(modifiers["shift"])
 		ShiftClickOn(A)
 		return
@@ -390,6 +384,16 @@
 			if(ishuman(mob))
 				var/mob/living/carbon/human/H = mob //Also removed hair color change. It causes hair to turn darker. - Gardelin0
 				var/blissfound = FALSE
+
+				if(H.client?.prefs.cit_toggles & NO_APHRO) //No aphrodisiac pref = no symptoms. - Gardelin0
+					return	FALSE
+				if(!H.client && H.client?.prefs.erppref == "Yes")	//No sex pref = no symptoms. - Gardelin0
+					return	FALSE
+				if(!H.client && !H.client?.prefs.nonconpref == "Yes")	//No noncon pref = no symptoms. - Gardelin0
+					return	FALSE
+				if(H.client && H.client?.prefs.hornyantagspref == "No") //No qareen pref = no symptoms. - Gardelin0
+					return	FALSE
+
 				for(var/datum/disease/qarbliss/bliss in H.diseases)
 					blissfound = TRUE
 					if(bliss.stage < 5)

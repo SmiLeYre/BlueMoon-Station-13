@@ -82,7 +82,7 @@
 
 /obj/item/fireaxe/energized/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=12, force_wielded=30, icon_wielded="fireaxe2")
+	AddComponent(/datum/component/two_handed, force_unwielded=12, force_wielded=30, icon_wielded="fireaxe1")
 
 /obj/item/fireaxe/energized/update_icon_state()
 		icon_state = "fireaxe0"

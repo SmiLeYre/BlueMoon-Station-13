@@ -1649,7 +1649,7 @@
 	for(var/obj/machinery/light/L in area)
 		if(L.nightshift_allowed)
 			L.nightshift_enabled = nightshift_lights
-			INVOKE_ASYNC(L, TYPE_PROC_REF(/obj/machinery/light, break_light_tube), FALSE)
+			INVOKE_ASYNC(L, TYPE_PROC_REF(/obj/machinery/light, update), FALSE)
 		CHECK_TICK
 
 /obj/machinery/power/apc/proc/set_hijacked_lighting()

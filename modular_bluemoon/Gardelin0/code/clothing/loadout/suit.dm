@@ -10,8 +10,3 @@
 /datum/gear/suit/poly_labcoat
 	name = "polychromic labcoat"
 	path = /obj/item/clothing/suit/toggle/poly_labcoat
-
-/datum/gear/suit/commissar
-	name = "Commissar coat"
-	path = /obj/item/clothing/suit/commissar
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_COATS

@@ -44,10 +44,6 @@
 	else
 		H.equipOutfit(nukeop_outfit)
 
-	if(name == "Lone Operative")
-		H.canloadappearance = TRUE
-		H.checkloadappearance()
-
 	return TRUE
 
 /datum/antagonist/syndicate_op/greet()
@@ -487,7 +483,7 @@
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	back = /obj/item/storage/backpack
 	id = /obj/item/card/id/syndicate/locked_banking
-	belt = /obj/item/gun/ballistic/automatic/pistol/aps
+	belt = /obj/item/gun/ballistic/automatic/pistol/APS
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1,
 	/obj/item/kitchen/knife/combat/survival)
 

@@ -142,12 +142,12 @@
 	update_icon()
 
 /obj/item/folder/documents
-	name = "folder- 'TOP SECRET'"
+	name = "folder - 'TOP SECRET'"
 	desc = "Папка с грифом \"Совершенно Секретно - собственность корпорации 'Nanotrasen'. Несанкционированное распространение карается смертной казнью.\""
 
 /obj/item/folder/syndicate
 	icon_state = "folder_syndie"
-	name = "folder- 'TOP SECRET'"
+	name = "folder - 'TOP SECRET'"
 	desc = "Папка с грифом \"Совершенно секретно - собственность Синдиката.\""
 
 /obj/item/folder/syndicate/red

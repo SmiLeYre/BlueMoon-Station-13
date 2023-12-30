@@ -59,7 +59,7 @@
 	skill_mod = -2
 
 /obj/item/clothing/gloves/tackler/combat
-	name = "gorilla gloves"
+	name = "Gorilla Gloves"
 	desc = "Premium quality combative gloves, heavily reinforced to give the user an edge in close combat tackles, though they are more taxing to use than normal gripper gloves. Fireproof to boot!"
 	icon_state = "combat"
 	item_state = "blackgloves"
@@ -91,14 +91,14 @@
 	skill_mod = 1
 
 /obj/item/clothing/gloves/tackler/combat/insulated
-	name = "guerrilla gloves"
+	name = "Guerrilla Gloves"
 	desc = "Superior quality combative gloves, good for performing tackle takedowns as well as absorbing electrical shocks."
 	siemens_coefficient = 0
 	permeability_coefficient = 0.05
 	strip_mod = 1.5 // and combat gloves had this??
 
 /obj/item/clothing/gloves/tackler/combat/insulated/infiltrator
-	name = "insidious guerrilla gloves"
+	name = "Insidious Guerrilla Gloves"
 	desc = "Specialized combat gloves for carrying people around. Transfers tactical kidnapping and tackling knowledge to the user via the use of nanochips."
 	icon_state = "infiltrator"
 	item_state = "infiltrator"

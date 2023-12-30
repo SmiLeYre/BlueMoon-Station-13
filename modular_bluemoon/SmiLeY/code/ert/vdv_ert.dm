@@ -96,7 +96,7 @@
 /datum/outfit/ert/vdv/leader
 	name = "NRI VDV Leader"
 
-	suit_store = /obj/item/gun/ballistic/automatic/pistol/aps
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/APS
 	gloves = /obj/item/clothing/gloves/color/black
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	belt = /obj/item/storage/belt/military/army/vdv

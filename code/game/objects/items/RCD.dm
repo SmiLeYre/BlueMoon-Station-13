@@ -619,6 +619,7 @@ RLD
 	max_matter = 500
 	matter = 500
 	canRturf = TRUE
+	upgrade = TRUE
 
 /obj/item/construction/rcd/industrial
 	name = "industrial RCD"

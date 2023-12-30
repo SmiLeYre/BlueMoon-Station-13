@@ -5,6 +5,7 @@
 	icon_state = "Cola_Machine"
 	product_slogans = "Robust Softdrinks: прочнее, чем ящиком с инструментами по голове!;Освежающие!;Надеюсь, вы хотите пить!;Продано более одного миллиона напитков за сутки!;Хотите пить? Почему не кола?;Пожалуйста, выпейте!;Выпейте!;Лучшие напитки в космосе."
 	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/cola = 10,
+					/obj/item/reagent_containers/food/drinks/soda_cans/synthdrink = 10,
 					/obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind = 10,
 					/obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb = 10,
 					/obj/item/reagent_containers/food/drinks/soda_cans/starkist = 10,

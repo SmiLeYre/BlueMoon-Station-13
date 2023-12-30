@@ -31,6 +31,7 @@
 					/obj/item/reagent_containers/food/drinks/bottle/cream = 4,
 					/obj/item/reagent_containers/food/drinks/soda_cans/tonic = 8,
 					/obj/item/reagent_containers/food/drinks/soda_cans/cola = 8,
+					/obj/item/reagent_containers/food/drinks/soda_cans/synthdrink = 15,
 					/obj/item/reagent_containers/food/drinks/soda_cans/sodawater = 15,
 					/obj/item/reagent_containers/food/drinks/soda_cans/sol_dry = 8,
 					/obj/item/reagent_containers/food/drinks/ice = 10,

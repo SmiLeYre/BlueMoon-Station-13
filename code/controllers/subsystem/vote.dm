@@ -660,7 +660,7 @@ SUBSYSTEM_DEF(vote)
 			. += "<br>Вариация [ROUNDTYPE_DYNAMIC] из прошлого раунда в новом выпасть не может (кроме эксты)."
 			if(SSpersistence.last_dynamic_gamemode)
 				. += "<br>Последняя вариация: <b>[SSpersistence.last_dynamic_gamemode]</b>."
-			. += "<h4>Проходит Эксперимент - чередование режимов. Если Режим выпадает три раза подряд - форсится обратный.</h4>"
+			. += "<h4>Если Режим выпадает три раза подряд - форсится обратный.</h4>"
 			if (length(SSpersistence.saved_modes))
 				. += "<br>Последние режимы: <b>[jointext(SSpersistence.saved_modes, ", ")]</b>."
 			. += "<br>Осталось времени: [DisplayTimeText((SSticker.timeLeft - ROUNDTYPE_VOTE_END_PENALTY))]<hr><ul>"

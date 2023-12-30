@@ -613,7 +613,8 @@
 		/datum/reagent/consumable/limejuice,
 		/datum/reagent/consumable/tomatojuice,
 		/datum/reagent/consumable/lemonjuice,
-		/datum/reagent/consumable/menthol
+		/datum/reagent/consumable/menthol,
+		/datum/reagent/consumable/synthdrink // BLUEMOON ADD - напитки для синтов
 	)
 	upgrade_reagents = list(
 		/datum/reagent/consumable/banana,
@@ -677,7 +678,8 @@
 	)
 	upgrade_reagents = list(
 		/datum/reagent/consumable/ethanol,
-		/datum/reagent/consumable/ethanol/fernet
+		/datum/reagent/consumable/ethanol/fernet,
+		/datum/reagent/consumable/synthdrink/synthanol // BLUEMOON ADD - напитки для синтов
 	)
 	upgrade_reagents2 = null
 	upgrade_reagents3 = null

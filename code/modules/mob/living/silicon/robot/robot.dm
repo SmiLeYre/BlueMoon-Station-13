@@ -392,29 +392,29 @@
 		INVOKE_ASYNC(src, .proc/attempt_cable_repair, W, user)
 		return
 
-	else if(W.tool_behaviour == TOOL_CROWBAR)	// crowbar means open or close the cover
+	else if(W.tool_behaviour == TOOL_CROWBAR && (user.a_intent != INTENT_HARM))	// crowbar means open or close the cover
 		if(opened)
-			to_chat(user, "<span class='notice'>You close the cover.</span>")
+			to_chat(user, "<span class='notice'>Вы закрываете заслонку.</span>")
 			opened = 0
 			update_icons()
 		else
 			if(locked)
-				to_chat(user, "<span class='warning'>The cover is locked and cannot be opened!</span>")
+				to_chat(user, "<span class='warning'>Заслынка болтирована и не может быть открыта!</span>")
 			else
-				to_chat(user, "<span class='notice'>You open the cover.</span>")
+				to_chat(user, "<span class='notice'>Вы открываете заслонку.</span>")
 				opened = 1
 				update_icons()
 
 	else if(istype(W, /obj/item/stock_parts/cell) && opened)	// trying to put a cell inside
 		if(wiresexposed)
-			to_chat(user, "<span class='warning'>Close the cover first!</span>")
+			to_chat(user, "<span class='warning'>Для начала закройте заслонку!</span>")
 		else if(cell)
-			to_chat(user, "<span class='warning'>There is a power cell already installed!</span>")
+			to_chat(user, "<span class='warning'>Батарейка уже установлена!</span>")
 		else
 			if(!user.transferItemToLoc(W, src))
 				return
 			cell = W
-			to_chat(user, "<span class='notice'>You insert the power cell.</span>")
+			to_chat(user, "<span class='notice'>Вы помещаете батарейку внутрь.</span>")
 		update_icons()
 		diag_hud_set_borgcell()
 
@@ -422,20 +422,20 @@
 		if (wiresexposed)
 			wires.interact(user)
 		else
-			to_chat(user, "<span class='warning'>You can't reach the wiring!</span>")
+			to_chat(user, "<span class='warning'>Вы не можете достичь проводки!</span>")
 
 	else if(W.tool_behaviour == TOOL_SCREWDRIVER && opened && !cell)	// haxing
 		wiresexposed = !wiresexposed
-		to_chat(user, "The wires have been [wiresexposed ? "exposed" : "unexposed"]")
+		to_chat(user, "Проводка [wiresexposed ? "прикрыта" : "скрыта"].")
 		update_icons()
 
 	else if((W.tool_behaviour == TOOL_SCREWDRIVER) && opened && cell)	// radio
 		if(shell)
-			to_chat(user, "You cannot seem to open the radio compartment")	//Prevent AI radio key theft
+			to_chat(user, "Вы не можете открыть радиоотсек.")	//Prevent AI radio key theft
 		else if(radio)
 			radio.attackby(W,user)//Push it to the radio to let it handle everything
 		else
-			to_chat(user, "<span class='warning'>Unable to locate a radio!</span>")
+			to_chat(user, "<span class='warning'>Вы не можете найти радио-ключ!</span>")
 		update_icons()
 
 	else if(W.tool_behaviour == TOOL_WRENCH && opened && !cell) //Deconstruction. The flashes break from the fall, to prevent this from being a ghetto reset module.

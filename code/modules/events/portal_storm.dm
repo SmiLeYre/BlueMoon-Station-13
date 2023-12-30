@@ -115,6 +115,23 @@
 
 	triggersound = 'sound/announcer/classic/_admin_horror_music.ogg'
 
+/datum/round_event_control/portal_storm_skibidi
+	name = "Portal Storm: Skibidi"
+	typepath = /datum/round_event/portal_storm/portal_storm_skibidi
+	weight = 5
+	min_players = 75
+	earliest_start = 60 MINUTES
+	max_occurrences = 1
+	category = EVENT_CATEGORY_INVASION
+
+/datum/round_event/portal_storm/portal_storm_skibidi
+	boss_types = list(/mob/living/simple_animal/hostile/skibidi_toilet = 2,\
+					/mob/living/simple_animal/hostile/skibidi_toilet/vulp = 2)
+	hostile_types = list(/mob/living/simple_animal/hostile/skibidi_toilet = 6,\
+						/mob/living/simple_animal/hostile/skibidi_toilet/vulp = 6)
+
+	triggersound = "modular_bluemoon/kovac_shitcode/sound/skibidi_toilets.ogg"
+
 /datum/round_event_control/portal_storm_clock
 	name = "Portal Storm: Clock Cult"
 	typepath = /datum/round_event/portal_storm/portal_storm_clock

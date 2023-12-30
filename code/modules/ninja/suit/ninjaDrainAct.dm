@@ -302,6 +302,8 @@
 		UnlinkSelf()
 		ionpulse = TRUE
 		laws = new /datum/ai_laws/ninja_override()
+
+		uneq_all()
 		module.transform_to(pick(/obj/item/robot_module/syndicate/spider, /obj/item/robot_module/syndicate_medical/spider, /obj/item/robot_module/saboteur/spider))
 
 		var/datum/antagonist/ninja/ninja_antag = ninja.mind.has_antag_datum(/datum/antagonist/ninja)

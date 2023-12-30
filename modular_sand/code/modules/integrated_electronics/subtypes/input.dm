@@ -40,7 +40,7 @@
 	power_draw_idle = 0
 	spawn_flags = IC_SPAWN_RESEARCH
 	var/obj/machinery/telecomms/receiver/circuit/receiver
-	var/list/freq_blacklist = list(FREQ_CENTCOM,FREQ_SYNDICATE,FREQ_INTEQ,FREQ_PIRATE,FREQ_CTF_RED,FREQ_CTF_BLUE)
+	var/list/freq_blacklist = list(FREQ_CENTCOM,FREQ_SYNDICATE,FREQ_INTEQ,FREQ_GHOST_INTEQ,FREQ_PIRATE,FREQ_CTF_RED,FREQ_CTF_BLUE)
 
 /obj/item/integrated_circuit/input/tcomm_interceptor/Initialize(mapload)
 	. = ..()

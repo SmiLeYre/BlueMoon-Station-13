@@ -19,6 +19,7 @@
 					/obj/item/bodypart/r_arm/alien, /obj/item/bodypart/r_leg/alien, /obj/item/bodypart/l_leg/alien)
 	can_ventcrawl = TRUE
 	var/obj/effect/proc_holder/alien/regurgitate/regurg
+	var/obj/effect/proc_holder/alien/set_genital/set_genital //BLUEMOON ADD
 
 GLOBAL_LIST_INIT(strippable_alien_humanoid_items, create_strippable_list(list(
 	/datum/strippable_item/hand/left,
@@ -30,12 +31,16 @@ GLOBAL_LIST_INIT(strippable_alien_humanoid_items, create_strippable_list(list(
 //This is fine right now, if we're adding organ specific damage this needs to be updated
 /mob/living/carbon/alien/humanoid/Initialize(mapload)
 	regurg = new(null)
+	set_genital = new(null) //BLUEMOON ADD
 	AddAbility(regurg)
+	AddAbility(set_genital) //BLUEMOON ADD
 	. = ..()
 
 /mob/living/carbon/alien/humanoid/Destroy()
 	RemoveAbility(regurg)
+	RemoveAbility(set_genital) //BLUEMOON ADD
 	QDEL_NULL(regurg)
+	QDEL_NULL(set_genital) //BLUEMOON ADD
 	. = ..()
 
 /mob/living/carbon/alien/humanoid/ComponentInitialize()

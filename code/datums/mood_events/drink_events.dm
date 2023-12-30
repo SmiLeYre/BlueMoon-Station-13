@@ -3,6 +3,12 @@
 	description = "<span class='nicegreen'>После одной или двух стопок всё вокруг ощущается чуточку лучше.</span>\n"
 	timeout = 3000
 
+// BLUEMOON ADD START - напитки для синтетиков
+/datum/mood_event/drunk_synth
+	mood_change = 3
+	description = "<span class='synth'>Вы чувствуете приятное ускорение своих систем после выпитой жидкости...</span>\n"
+	timeout = 3000
+// BLUEMOON ADD END
 /datum/mood_event/quality_nice
 	description = "<span class='nicegreen'>Этот напиток был довольно неплох.</span>\n"
 	mood_change = 1

@@ -60,15 +60,15 @@
 	loot = list(
 				/obj/item/gun/ballistic/automatic/pistol = 8,
 				/obj/item/gun/ballistic/shotgun/automatic/combat = 5,
-				/obj/item/gun/ballistic/revolver/mateba,
-				/obj/item/gun/ballistic/automatic/pistol/deagle
-				)
+				/obj/item/kitchen/knife/combat = 5,
+				/obj/item/clothing/gloves/tackler/combat/insulated = 3,
+				/obj/item/storage/box/syndie_kit/throwing_weapons = 3)
 
 /obj/effect/spawner/lootdrop/armory_contraband/metastation
-	loot = list(/obj/item/gun/ballistic/automatic/pistol = 5,
+	loot = list(/obj/item/gun/ballistic/automatic/pistol = 8,
 				/obj/item/gun/ballistic/shotgun/automatic/combat = 5,
-				/obj/item/gun/ballistic/revolver/mateba,
-				/obj/item/gun/ballistic/automatic/pistol/deagle,
+				/obj/item/kitchen/knife/combat = 5,
+				/obj/item/clothing/gloves/tackler/combat/insulated = 3,
 				/obj/item/storage/box/syndie_kit/throwing_weapons = 3)
 
 /obj/effect/spawner/lootdrop/syndicate_present

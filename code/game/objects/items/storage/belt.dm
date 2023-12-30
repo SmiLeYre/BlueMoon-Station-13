@@ -885,7 +885,7 @@
 
 /obj/item/melee/sabre/civil
 	name = "Off-duty Officer's Sabre"
-	desc = "Изящное оружие, его мономолекулярная кромка способна с легкостью рассекать плоть и кости."
+	desc = "Изящное оружие."
 	force = 8
 	throwforce = 12
 	armour_penetration = 50

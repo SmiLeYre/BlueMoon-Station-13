@@ -414,7 +414,8 @@
 /area/hilbertshotel)
 "sV" = (
 /obj/machinery/vending/dinnerware{
-	contraband = list(/obj/item/kitchen/rollingpin=2,/obj/item/kitchen/knife/butcher=2,/obj/item/reagent_containers/food/condiment/flour=4)
+	contraband = list(/obj/item/kitchen/rollingpin=2,/obj/item/kitchen/knife/butcher=2,/obj/item/reagent_containers/food/condiment/flour=4);
+	shut_up = 1
 	},
 /turf/open/floor/iron/white,
 /area/hilbertshotel)
@@ -715,7 +716,9 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 4
 	},
-/obj/machinery/vending/coffee,
+/obj/machinery/vending/coffee{
+	shut_up = 1
+	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4
 	},
@@ -815,7 +818,8 @@
 /area/hilbertshotel)
 "Oc" = (
 /obj/machinery/vending/kink{
-	onstation = 0
+	onstation = 0;
+	shut_up = 1
 	},
 /obj/machinery/light{
 	dir = 8;
@@ -829,7 +833,8 @@
 	layer = 2.9
 	},
 /obj/machinery/vending/boozeomat{
-	onstation = 0
+	onstation = 0;
+	shut_up = 1
 	},
 /turf/open/floor/iron/white,
 /area/hilbertshotel)
@@ -930,7 +935,9 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 4
 	},
-/obj/machinery/vending/cigarette,
+/obj/machinery/vending/cigarette{
+	shut_up = 1
+	},
 /turf/open/floor/festive/alleyway/safe,
 /area/hilbertshotel)
 "Si" = (
@@ -1105,7 +1112,9 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 4
 	},
-/obj/machinery/vending/games,
+/obj/machinery/vending/games{
+	shut_up = 1
+	},
 /turf/open/floor/festive/alleyway/safe,
 /area/hilbertshotel)
 "Wy" = (
