@@ -634,7 +634,8 @@
 
 /obj/item/clothing/suit/space/hardsuit/security/reskin_obj(mob/user)
 	if(current_skin == "Alt")
-		mutantrace_variation = NONE
+		mutantrace_variation = STYLE_DIGITIGRADE
+		tail_state = "sec2"
 		if(helmet)
 			var/obj/item/clothing/head/helmet/space/hardsuit/Helm = helmet
 			Helm.hardsuit_type = "sec2"
