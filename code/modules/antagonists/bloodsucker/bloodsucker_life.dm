@@ -17,7 +17,7 @@
 		AddBloodVolume(passive_blood_drain) // -.1 currently
 	if(HandleHealing(1)) 		// Heal
 		if(!notice_healing && owner.current.blood_volume > 0)
-			to_chat(owner, "<span class='notice'>The power of your blood begins knitting your wounds...</span>")
+			to_chat(owner, "<span class='cult'>Сила крови начинает затягивать ваши раны...</span>")
 			notice_healing = TRUE
 	else if(notice_healing)
 		notice_healing = FALSE 	// Apply Low Blood Effects
@@ -147,7 +147,7 @@
 		AddBloodVolume(50)
 		var/obj/item/bodypart/L = C.get_bodypart(targetLimbZone) // 2) Limb returns Damaged
 		L.brute_dam = 60
-		to_chat(C, "<span class='notice'>Your flesh knits as it regrows your [L]!</span>")
+		to_chat(C, "<span class='cult'>Ваша плоть срастается, [L] снова на месте!</span>")
 		playsound(C, 'sound/magic/demon_consume.ogg', 50, TRUE)
 		return TRUE
 
@@ -265,10 +265,10 @@
 	// Died? Convert to Torpor (fake death)
 	if(owner.current.stat >= DEAD)
 		Torpor_Begin()
-		to_chat(owner, "<span class='danger'>Your immortal body will not yet relinquish your soul to the abyss. You enter Torpor.</span>")
+		to_chat(owner, "<span class='cult'>Ваше бессмертное тело еще не отпускает вашу душу бездне. Вы впадаете в Торпор.</span>")
 		sleep(30) //To avoid spam
 		if(poweron_masquerade)
-			to_chat(owner, "<span class='warning'>Your wounds will not heal until you disable the <span class='boldnotice'>Masquerade</span> power.</span>")
+			to_chat(owner, "<span class='cult'>Ваши раны не начнут исцеляться пока <span class='boldnotice'>Маскарад</span> активен.</span>")
 	// End Torpor:
 	else	// No damage, OR toxin healed AND brute healed and NOT in coffin (since you cannot heal burn)
 		if(total_damage <= 0 || total_toxloss <= 0 && total_brute <= 0 && !istype(owner.current.loc, /obj/structure/closet/crate/coffin))
@@ -297,7 +297,7 @@
 			power.DeactivatePower()
 	if(owner.current.suiciding)
 		owner.current.suiciding = FALSE //Youll die but not for long.
-		to_chat(owner.current, "<span class='warning'>Your body keeps you going, even as you try to end yourself.</span>")
+		to_chat(owner.current, "<span class='cult'>Ваше тело еще держится, вопреки попытке покончить с собой.</span>")
 
 /datum/antagonist/bloodsucker/proc/Torpor_End()
 	owner.current.stat = SOFT_CRIT
@@ -307,7 +307,7 @@
 	REMOVE_TRAIT(owner.current, TRAIT_NODEATH, "bloodsucker")
 	REMOVE_TRAIT(owner.current, TRAIT_RESISTHIGHPRESSURE, "bloodsucker")
 	REMOVE_TRAIT(owner.current, TRAIT_RESISTLOWPRESSURE, "bloodsucker")
-	to_chat(owner, "<span class='warning'>You have recovered from Torpor.</span>")
+	to_chat(owner, "<span class='cult'>Вы пробудились от Торпора.</span>")
 
 
 /datum/antagonist/proc/AmFinalDeath()
@@ -339,16 +339,16 @@
 	FreeAllVassals()
 	// Elders get Dusted
 	if(bloodsucker_level >= 4) // (bloodsucker_title)
-		owner.current.visible_message("<span class='warning'>[owner.current]'s skin crackles and dries, their skin and bones withering to dust. A hollow cry whips from what is now a sandy pile of remains.</span>", \
-			 "<span class='userdanger'>Your soul escapes your withering body as the abyss welcomes you to your Final Death.</span>", \
-			 "<span class='italics'>You hear a dry, crackling sound.</span>")
+		owner.current.visible_message("<span class='warning'>Кожа [owner.current] сохнет и трескается, плоть и кости увядают в пыль. Пустой крик вырывается из того, что теперь всего лишь горстка песчаных останков.</span>", \
+			 "<span class='cult'>Ваша душа покидает увядающее тело, бездна зовёт вас к Окончательной Смерти.</span>", \
+			 "<span class='italics'>Вы слышите сухой, трескающийся звук.</span>")
 		sleep(50)
 		owner.current.dust()
 	// Fledglings get Gibbed
 	else
-		owner.current.visible_message("<span class='warning'>[owner.current]'s skin bursts forth in a spray of gore and detritus. A horrible cry echoes from what is now a wet pile of decaying meat.</span>", \
-			 "<span class='userdanger'>Your soul escapes your withering body as the abyss welcomes you to your Final Death.</span>", \
-			 "<span class='italics'>You hear a wet, bursting sound.</span>")
+		owner.current.visible_message("<span class='warning'> Кожа [owner.current] разрывается каскадом крови и внутренностей. Ужасающий крик доносится из того, что теперь всего лишь влажная горстка разлагающейся плоти.</span>", \
+			 "<span class='cult'>Ваша душа покидает увядающее тело, бездна зовёт вас к Окончательной Смерти.</span>", \
+			 "<span class='italics'>Вы слышите мокрый, разрвающийся звук.</span>")
 		owner.current.gib(TRUE, FALSE, FALSE) //Brain cloning is wierd and allows hellbounds. Lets destroy the brain for safety.
 	playsound(owner.current, 'sound/effects/tendril_destroyed.ogg', 40, TRUE)
 
@@ -385,7 +385,7 @@
 		return
 	// Haven't eaten, but I'm in a Human Disguise.
 	else if(poweron_masquerade && !masquerade_override)
-		to_chat(C, "<span class='notice'>Your stomach turns, but your \"human disguise\" keeps the food down...for now.</span>")
+		to_chat(C, "<span class='cult'>Ваш желудок скрутило, но \"маскировка\" не даёт еде вырваться... пока что.</span>")
 	// Keep looping until we purge. If we have activated our Human Disguise, we ignore the food. But it'll come up eventually...
 	var/sickphase = 0
 	while(foodInGut)
@@ -399,19 +399,19 @@
 		// Put up disguise? Then hold off the vomit.
 		if(poweron_masquerade && !masquerade_override)
 			if(sickphase > 0)
-				to_chat(C, "<span class='notice'>Your stomach settles temporarily. You regain your composure...for now.</span>")
+				to_chat(C, "<span class='cult'>Ваш желудок временно успокаивается. Вы взяли себя в руки... пока что.</span>")
 			sickphase = 0
 			continue
 		switch(sickphase)
 			if(1)
-				to_chat(C, "<span class='warning'>You feel unwell. You can taste ash on your tongue.</span>")
+				to_chat(C, "<span class='cult'>Вы ощущаете себя скудно. На языке появился привкус пепла.</span>")
 				C.Stun(10)
 			if(2)
-				to_chat(C, "<span class='warning'>Your stomach turns. Whatever you ate tastes of grave dirt and brimstone.</span>")
+				to_chat(C, "<span class='cult'>Ваш желудок скрутило. Что бы вы не съели, по вкусу как могильная грязь и сера.</span>")
 				C.Dizzy(15)
 				C.Stun(13)
 			if(3)
-				to_chat(C, "<span class='warning'>You purge the food of the living from your viscera! You've never felt worse.</span>")
+				to_chat(C, "<span class='cult'>Вы изрыгаете пищу Живых из своих внутренностей. Никогда себя хуже не ощущали.</span>")
 				 //Puke blood only if puke_blood is true, and loose some blood, else just puke normally.
 				if(puke_blood)
 					C.blood_volume = max(0, C.blood_volume - foodInGut * 2)
