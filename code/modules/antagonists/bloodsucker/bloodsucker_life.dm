@@ -271,7 +271,7 @@
 			to_chat(owner, "<span class='cult'>Ваши раны не начнут исцеляться пока <span class='boldnotice'>Маскарад</span> активен.</span>")
 	// End Torpor:
 	else	// No damage, OR toxin healed AND brute healed and NOT in coffin (since you cannot heal burn)
-		if(total_damage <= 0 || total_toxloss <= 0 && total_brute <= 0 && !istype(owner.current.loc, /obj/structure/closet/crate/coffin))
+		if(total_damage <= 0 || total_toxloss <= 0 && total_brute <= 0 /* BLUEMOON REMOVAL START && !istype(owner.current.loc, /obj/structure/closet/crate/coffin) BLUEMOON REMOVAL END*/)
 			// Not Daytime, Not in Torpor, enough health to not die the moment you end torpor
 			if(!SSticker.mode.is_daylight() && HAS_TRAIT_FROM(owner.current, TRAIT_FAKEDEATH, "bloodsucker") && total_damage < owner.current.getMaxHealth())
 				Torpor_End()
