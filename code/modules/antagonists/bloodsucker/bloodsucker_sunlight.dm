@@ -60,8 +60,8 @@
 			return
 		// BLUEMOON ADD END
 
-		warn_daylight(5,"<span class = 'announce'>The solar flare has ended, and the daylight danger has passed...for now.</span>",\
-				  	  "<span class = 'announce'>The solar flare has ended, and the daylight danger has passed...for now.</span>")
+		warn_daylight(5,"<span class = 'cult'>Солнечные вспышки окончились, и угроза дневного света прошла... на какое то время.</span>",\
+						"<span class = 'cult'>Солнечные вспышки окончились, и угроза дневного света прошла... на какое то время.</span>")
 		amDay = FALSE
 		issued_XP = FALSE
 		for(var/datum/mind/M in SSticker.mode.bloodsuckers)
@@ -80,24 +80,24 @@
 					P.Remove(M.current)
 		nighttime_duration += 100 //Each day makes the night a minute longer.
 		time_til_cycle = nighttime_duration
-		message_admins("BLOODSUCKER NOTICE: Daylight Ended. Resetting to Night (Lasts for [nighttime_duration / 60] minutes.)")
+		message_admins("ВАМПИРСКОЕ НАПОМИНАНИЕ: Дневное время закончилось. Сброс на Ночное время. (Продлится [nighttime_duration / 60] минут.)")
 	else
 		switch(time_til_cycle)
 			if(TIME_BLOODSUCKER_DAY_WARN)
 				//sleep(TIME_BLOODSUCKER_NIGHT - TIME_BLOODSUCKER_DAY_WARN)
-				warn_daylight(1,"<span class = 'danger'>Solar Flares will bombard the station with dangerous UV in [TIME_BLOODSUCKER_DAY_WARN / 60] minutes. <b>Prepare to seek cover in a coffin or closet.</b></span>")  // time2text <-- use Help On
+				warn_daylight(1,"<span class = 'cult'>Солнечные вспышки обрушат на станцию опасное УФ излучение через [TIME_BLOODSUCKER_DAY_WARN / 60] минут. <b>Приготовьтесь искать укрытие в гробу или шкафах.</b></span>")  // time2text <-- use Help On
 				give_home_power() // Give VANISHING ACT power to all vamps with a lair!
 			if(TIME_BLOODSUCKER_DAY_FINAL_WARN)
-				message_admins("BLOODSUCKER NOTICE: Daylight beginning in [TIME_BLOODSUCKER_DAY_FINAL_WARN] seconds.)")
-				warn_daylight(2,"<span class = 'userdanger'>Solar Flares are about to bombard the station! You have [TIME_BLOODSUCKER_DAY_FINAL_WARN] seconds to find cover!</span>",\
-							"<span class = 'danger'>In [TIME_BLOODSUCKER_DAY_FINAL_WARN / 10], your master will be at risk of a Solar Flare. Make sure they find cover!</span>")
+				message_admins("ВАМПИРСКОЕ НАПОМИНАНИЕ: Дневное время начнётся через [TIME_BLOODSUCKER_DAY_FINAL_WARN] секунд.")
+				warn_daylight(2,"<span class = 'userdanger'>Солнечные вспышки скоро обрушатся на станцию! У вас есть [TIME_BLOODSUCKER_DAY_FINAL_WARN] секунд чтобы найти укрытие!</span>",\
+								"<span class = 'cult'>Через [TIME_BLOODSUCKER_DAY_FINAL_WARN / 10], ваш хозяин будет под опасностью солнечных вспышек. Убедитесь что хозяин нашел укрытие!</span>")
 			if(5)
-				warn_daylight(3,"<span class = 'userdanger'>Seek cover, for Sol rises!</span>")
+				warn_daylight(3,"<span class = 'userdanger'>Ищи укрытие, нечисть, ибо Светочь восстаёт!</span>")
 			if(0)
-				warn_daylight(4,"<span class = 'userdanger'>Solar flares bombard the station with deadly UV light!</span><br><span class = ''>Stay in cover for the next [TIME_BLOODSUCKER_DAY / 60] minutes or risk Final Death!</span>",\
-				"<span class = 'danger'>Solar flares bombard the station with UV light!</span>")
+				warn_daylight(4,"<span class = 'userdanger'>Солнечные вспышки обрушились на станцию смертельное ультрафиолетовое излучение!</span><br><span class = ''>Оставайтесь в укрытии следующие[TIME_BLOODSUCKER_DAY / 60] минут или рискуете встретить Окончательную Смерть!</span>",\
+								"<span class = 'cult'>Солнечные вспышки обрушивают на станцию ультрафиолетовое излучение!</span>")
 				amDay = TRUE
-				message_admins("BLOODSUCKER NOTICE: Daylight Beginning (Lasts for [TIME_BLOODSUCKER_DAY / 60] minutes.)")
+				message_admins("ВАМПИРСКОЕ НАПОМИНАНИЕ: Дневное время началось и продлится [TIME_BLOODSUCKER_DAY / 60] минут.")
 				time_til_cycle = TIME_BLOODSUCKER_DAY
 
 /obj/effect/sunlight/proc/warn_daylight(danger_level =0, vampwarn = "", vassalwarn = "")
@@ -140,7 +140,7 @@
 				continue
 			else
 				if(!bloodsuckerdatum.warn_sun_locker)
-					to_chat(M, "<span class='warning'>Your skin sizzles. The [M.current.loc] doesn't protect well against UV bombardment.</span>")
+					to_chat(M, "<span class='warning'>Ваша кожа обжигается. [M.current.loc] не очень хорошо защищает от ультрафиолетового излучения.</span>")
 					bloodsuckerdatum.warn_sun_locker = TRUE
 				M.current.adjustFireLoss(0.5 + bloodsuckerdatum.bloodsucker_level / 2) // M.current.fireloss += 0.5 + bloodsuckerdatum.bloodsucker_level / 2  //  Do DIRECT damage. Being spaced was causing this to not occur. setFireLoss(bloodsuckerdatum.bloodsucker_level)
 				M.current.updatehealth()
@@ -149,9 +149,9 @@
 		else
 			if(!bloodsuckerdatum.warn_sun_burn)
 				if(bloodsuckerdatum.bloodsucker_level > 0)
-					to_chat(M, "<span class='userdanger'>The solar flare sets your skin ablaze!</span>")
+					to_chat(M, "<span class='userdanger'>Солнечные вспышки поджигают твою плоть!</span>")
 				else
-					to_chat(M, "<span class='userdanger'>The solar flare scalds your neophyte skin!</span>")
+					to_chat(M, "<span class='userdanger'>Солнечные вспышки обожгли твою неофитовую кожу!</span>")
 				bloodsuckerdatum.warn_sun_burn = TRUE
 			if(M.current.fire_stacks <= 0)
 				M.current.fire_stacks = 0
