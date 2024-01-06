@@ -19,6 +19,7 @@
 		if(HAS_TRAIT(L, TRAIT_PROSOPAGNOSIA) || HAS_TRAIT(L, TRAIT_INVISIBLE_MAN))
 			obscure_name = TRUE
 	var/obj/item/clothing/neck/petcollar/collar = wear_neck
+	var/collar_tagname = ""
 	var/collar_tagname = (collar && collar.tagname) ? " \[[collar.tagname]\]" : ""
 	. = list("<span class='info'>Это - <EM>[!obscure_name ? name : "Неизвестный"][collar_tagname]</EM>!")
 	if(skipface || get_visible_name() == "Unknown")
