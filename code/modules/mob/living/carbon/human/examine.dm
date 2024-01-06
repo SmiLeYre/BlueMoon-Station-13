@@ -18,10 +18,11 @@
 		var/mob/living/L = user
 		if(HAS_TRAIT(L, TRAIT_PROSOPAGNOSIA) || HAS_TRAIT(L, TRAIT_INVISIBLE_MAN))
 			obscure_name = TRUE
-	var/obj/item/clothing/neck/petcollar/collar = wear_neck
 	var/collar_tagname = ""
-	if(collar && collar.tagname)
-		collar_tagname = " \[[collar.tagname]\]"
+	if(istype(wear_neck, /obj/item/clothing/neck/petcollar))
+		var/obj/item/clothing/neck/petcollar/collar = wear_neck
+		if(collar.tagname)
+			collar_tagname = " \[[collar.tagname]\]"
 	. = list("<span class='info'>Это - <EM>[!obscure_name ? name : "Неизвестный"][collar_tagname]</EM>!")
 	if(skipface || get_visible_name() == "Unknown")
 		. += "Вы не можете разобрать, к какому виду относится находящееся перед вами существо."

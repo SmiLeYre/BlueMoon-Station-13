@@ -1585,8 +1585,10 @@
 
 	if(ishuman(src))
 		var/mob/living/carbon/human/H = src
-		var/obj/item/clothing/neck/petcollar/collar = H.wear_neck
-		auxiliary_name = (collar && collar.tagname) ? "\[[collar.tagname]\]" : ""
+		if(istype(H.wear_neck, /obj/item/clothing/neck/petcollar))
+			var/obj/item/clothing/neck/petcollar/collar = H.wear_neck
+			if(collar.tagname)
+				auxiliary_name = "\[[collar.tagname]\]"
 
 	if ((isliving(user) || isovermind(user) || isaicamera(user)) && (user.client.prefs.screentip_pref != SCREENTIP_PREFERENCE_NO_CONTEXT))
 		var/obj/item/held_item = user.get_active_held_item()
