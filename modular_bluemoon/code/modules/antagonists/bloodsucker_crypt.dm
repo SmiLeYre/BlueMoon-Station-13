@@ -10,6 +10,10 @@
 	remove_disguise()
 	. = ..()
 
+/obj/structure/closet/crate/coffin/open(mob/living/user, force)
+	remove_disguise()
+	. = ..()
+
 /obj/structure/closet/crate/coffin/examine(mob/user)
 	if(disguise)
 		. += disguise.examine(user)
