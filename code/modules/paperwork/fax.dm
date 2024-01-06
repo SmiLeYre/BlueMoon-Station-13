@@ -470,48 +470,48 @@ GLOBAL_VAR_INIT(nt_fax_department, pick("NT HR Department", "NT Legal Department
 	. = ..()
 	if (!held_item)
 		if (!panel_open)
-			context[SCREENTIP_CONTEXT_LMB] = "Open interface"
+			LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_ANY, "Open interface")
 			return CONTEXTUAL_SCREENTIP_SET
-		context[SCREENTIP_CONTEXT_LMB] = "Manipulate wires"
+		LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_ANY, "Manipulate wires")
 		return CONTEXTUAL_SCREENTIP_SET
 
 	switch (held_item.tool_behaviour)
 		if (TOOL_SCREWDRIVER)
 			if (panel_open)
-				context[SCREENTIP_CONTEXT_LMB] = "Close maintenance panel"
+				LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_ANY, "Close maintenance panel")
 				return CONTEXTUAL_SCREENTIP_SET
-			context[SCREENTIP_CONTEXT_LMB] = "Open maintenance panel"
+			LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_ANY, "Open maintenance panel")
 			return CONTEXTUAL_SCREENTIP_SET
 		if (TOOL_WRENCH)
 			if (anchored)
-				context[SCREENTIP_CONTEXT_LMB] = "Unsecure"
+				LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_ANY, "Unsecure")
 				return CONTEXTUAL_SCREENTIP_SET
-			context[SCREENTIP_CONTEXT_LMB] = "Secure"
+			LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_ANY, "Secure")
 			return CONTEXTUAL_SCREENTIP_SET
 		if (TOOL_MULTITOOL)
 			if (panel_open)
-				context[SCREENTIP_CONTEXT_LMB] = "Pulse wires"
+				LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_ANY, "Pulse wires")
 				return CONTEXTUAL_SCREENTIP_SET
-			context[SCREENTIP_CONTEXT_LMB] = "Rename in network"
+			LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_ANY, "Rename in network")
 			return CONTEXTUAL_SCREENTIP_SET
 		if (TOOL_WIRECUTTER)
 			if (!panel_open)
 				return .
-			context[SCREENTIP_CONTEXT_LMB] = "Manipulate wires"
+			LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_ANY, "Manipulate wires")
 			return CONTEXTUAL_SCREENTIP_SET
 
 	if (jammed && is_type_in_list(held_item, list(/obj/item/reagent_containers/spray, /obj/item/soap, /obj/item/reagent_containers/rag)))
-		context[SCREENTIP_CONTEXT_LMB] = "Clean output tray"
+		LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_ANY, "Clean output tray")
 		return CONTEXTUAL_SCREENTIP_SET
 
 	if (panel_open)
 		if (istype(held_item, /obj/item/card/emag))
-			context[SCREENTIP_CONTEXT_LMB] = "Remove network safeties"
+			LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_ANY, "Remove network safeties")
 			return CONTEXTUAL_SCREENTIP_SET
 		return .
 
 	if (is_allowed_type(held_item))
-		context[SCREENTIP_CONTEXT_LMB] = "Insert into fax machine"
+		LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_ANY, "Insert into fax machine")
 		return CONTEXTUAL_SCREENTIP_SET
 
 	return .
