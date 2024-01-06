@@ -596,7 +596,7 @@ Class Procs:
 		if(!can_be_unfasten || can_be_unfasten == FAILED_UNFASTEN)
 			return can_be_unfasten
 		if(time)
-			to_chat(user, "<span class='notice'>Вы начинаете [anchored ? "un" : ""]вкручивать [src]...</span>")
+			to_chat(user, "<span class='notice'>Вы начинаете [anchored ? "от" : ""]кручивать [src]...</span>")
 		I.play_tool_sound(src, 50)
 		var/prev_anchored = anchored
 		//as long as we're the same anchored state and we're either on a floor or are anchored, toggle our anchored state
