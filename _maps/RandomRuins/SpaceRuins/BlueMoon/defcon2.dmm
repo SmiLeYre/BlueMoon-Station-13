@@ -1,4 +1,30 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/structure/chair/sofa/corp{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/construct/proteon/hostile,
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/observ)
+"ab" = (
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/cult/magic{
+	health = 160;
+	maxHealth = 160
+	},
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/observ)
+"ac" = (
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/construct/proteon/hostile,
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/observ)
 "ad" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 8
@@ -9,6 +35,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/atmos)
+"ae" = (
+/obj/machinery/light/dim/directional/north,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/construct/wraith/hostile{
+	health = 125;
+	maxHealth = 125
+	},
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/forehall)
 "af" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
@@ -19,6 +54,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/mineral/cult/artificer,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/forehall)
+"ag" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/construct/proteon/hostile,
+/turf/open/floor/plasteel/cult,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/observ)
 "ah" = (
 /obj/effect/turf_decal/tile/blue/half,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -64,6 +104,25 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/comms)
+"ao" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/construct/wraith/hostile{
+	health = 125;
+	maxHealth = 125
+	},
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/forehall)
+"ap" = (
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/construct/wraith/hostile{
+	health = 125;
+	maxHealth = 125
+	},
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/forehall)
 "aq" = (
 /obj/structure/toilet{
 	dir = 8
@@ -74,6 +133,15 @@
 /obj/machinery/door/window/brigdoor/westright,
 /turf/open/floor/iron/white,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall)
+"ar" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/cult/magic{
+	health = 160;
+	maxHealth = 160
+	},
+/turf/open/floor/plasteel/cult,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/forehall)
 "as" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
@@ -99,11 +167,93 @@
 	},
 /turf/open/floor/plasteel/cult,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall)
-"aA" = (
-/mob/living/simple_animal/hostile/construct/proteon/hostile,
+"av" = (
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/construct/wraith/hostile{
+	health = 125;
+	maxHealth = 125
+	},
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/forehall)
+"aw" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/construct/wraith/hostile{
+	health = 125;
+	maxHealth = 125
+	},
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/porthall)
+"ax" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/cult/magic,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
+"ay" = (
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/cult/ghost,
 /turf/open/floor/plasteel/cult,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/observ)
+/area/ruin/space/has_grav/bluemoon/port_tarkon/trauma)
+"az" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/construct/proteon/hostile,
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/porthall)
+"aA" = (
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/effect/decal/cleanable/glass,
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/cult/magic/elite{
+	health = 400;
+	maxHealth = 400;
+	name = "The Veilbreaker"
+	},
+/turf/open/floor/plasteel/cult,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
+"aB" = (
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/cult/ghost,
+/turf/open/floor/plasteel/cult,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/trauma)
+"aC" = (
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/structure/curtain,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/cult/horror{
+	health = 150;
+	maxHealth = 150
+	},
+/turf/open/floor/plasteel/cult,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/trauma)
+"aD" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/construct/wraith/hostile{
+	health = 125;
+	maxHealth = 125
+	},
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/porthall)
+"aE" = (
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/cult/spear{
+	health = 125;
+	maxHealth = 125
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
 "aF" = (
 /obj/machinery/atmospherics/components/binary/pump/on,
 /obj/machinery/light/small{
@@ -121,28 +271,100 @@
 	},
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/atmos)
+"aG" = (
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/effect/turf_decal/loading_area,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/cult/magic{
+	health = 160;
+	maxHealth = 160
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
+"aH" = (
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/construct/wraith/hostile{
+	health = 125;
+	maxHealth = 125
+	},
+/turf/open/floor/plasteel/cult,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/porthall)
+"aI" = (
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/construct/proteon/hostile,
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/porthall)
+"aJ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/construct/wraith/hostile{
+	health = 125;
+	maxHealth = 125
+	},
+/turf/open/floor/plasteel/cult,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/porthall)
 "aK" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/hydroponics/soil,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/grass,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/garden)
+"aL" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 8
+	},
+/obj/machinery/light/small/directional/east,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/cult,
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/secoff)
 "aM" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/cult,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/porthall)
+"aN" = (
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/cult/mannequin,
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/secoff)
 "aO" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
+/obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/hostile/construct/wraith/hostile{
 	health = 125;
 	maxHealth = 125
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/iron,
+/turf/open/floor/plasteel/cult,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/porthall)
 "aP" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/storage)
+"aQ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/cult/spear{
+	health = 125;
+	maxHealth = 125
+	},
+/turf/open/floor/plasteel/cult,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/atmos)
+"aR" = (
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/machinery/firealarm/directional/east,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/construct/wraith/hostile,
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/starboardhall)
 "aS" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 8
@@ -170,6 +392,11 @@
 "aV" = (
 /turf/closed/wall/mineral/cult/artificer,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/power1)
+"aW" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/cult/assassin,
+/turf/open/floor/plasteel/cult,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/atmos)
 "aX" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/airalarm/directional/north,
@@ -219,6 +446,21 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/storage)
+"bd" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/construct/wraith/hostile,
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/starboardhall)
+"be" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/cult/magic,
+/turf/open/floor/plasteel/cult,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/atmos)
+"bf" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/cult/ghost,
+/turf/open/floor/plasteel/cult,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/mining)
 "bg" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
@@ -230,6 +472,11 @@
 	},
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/secoff)
+"bh" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/construct/proteon/hostile,
+/turf/open/floor/plasteel/cult,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/afthall)
 "bi" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
@@ -248,6 +495,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/cult,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
+"bk" = (
+/obj/effect/turf_decal/sand,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/cult/ghost,
+/turf/open/floor/plasteel/cult,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/mining)
 "bl" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
@@ -280,6 +536,17 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/cargo)
+"bp" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/cult/ghost,
+/turf/open/floor/plasteel/cult,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/afthall)
+"bq" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/cult,
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/cargo)
 "br" = (
 /obj/machinery/firealarm/directional/west,
 /obj/effect/turf_decal/tile/neutral/half{
@@ -299,6 +566,38 @@
 "bt" = (
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/forehall)
+"bu" = (
+/obj/effect/eldritch/huge,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/cult/spear,
+/turf/open/floor/plasteel/cult,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/comms)
+"bv" = (
+/obj/effect/eldritch/huge,
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/cult/warrior{
+	health = 175;
+	maxHealth = 175
+	},
+/turf/open/floor/plasteel/cult,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/storage)
+"bw" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/cult/magic,
+/turf/open/floor/plasteel/cult,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/comms)
+"bx" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/cult/spear{
+	health = 125;
+	maxHealth = 125
+	},
+/turf/open/floor/plasteel/cult,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/storage)
 "by" = (
 /obj/item/solar_assembly,
 /obj/item/solar_assembly,
@@ -634,15 +933,6 @@
 /obj/item/clothing/mask/gas/sechailer/swat,
 /turf/open/floor/mineral/titanium,
 /area/ruin/space/has_grav)
-"dt" = (
-/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/structure/chair/sofa/corp{
-	dir = 8
-	},
-/mob/living/simple_animal/hostile/construct/proteon/hostile,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/iron,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/observ)
 "dv" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
@@ -728,14 +1018,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/cult,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/forehall)
-"dP" = (
-/mob/living/simple_animal/hostile/cult/spear{
-	health = 125;
-	maxHealth = 125
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/cult,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/storage)
 "dR" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 1
@@ -884,16 +1166,6 @@
 /obj/item/stack/sheet/metal/fifty,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/atmos)
-"eU" = (
-/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/mob/living/simple_animal/hostile/cult/spear{
-	health = 125;
-	maxHealth = 125
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/iron/dark,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
 "eW" = (
 /obj/structure/lattice,
 /turf/open/floor/plating/asteroid,
@@ -1006,16 +1278,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/trauma)
-"fJ" = (
-/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
-/obj/effect/turf_decal/loading_area,
-/mob/living/simple_animal/hostile/cult/magic{
-	health = 160;
-	maxHealth = 160
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/iron/dark,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
 "fL" = (
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
@@ -1068,12 +1330,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
-"ga" = (
-/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
-/mob/living/simple_animal/hostile/cult/ghost,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/cult,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/trauma)
 "gb" = (
 /obj/structure/reagent_dispensers/watertank/high,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1297,11 +1553,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/toolstorage)
-"hz" = (
-/mob/living/simple_animal/hostile/cult/assassin,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/cult,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/atmos)
 "hA" = (
 /obj/machinery/door/airlock/public/glass{
 	name = "Port Primary Hallway"
@@ -1420,15 +1671,6 @@
 /obj/item/stack/sheet/glass/fifty,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/secoff)
-"id" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
-/mob/living/simple_animal/hostile/construct/wraith/hostile{
-	health = 125;
-	maxHealth = 125
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/cult,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/porthall)
 "ii" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
@@ -1765,15 +2007,6 @@
 "jY" = (
 /turf/closed/wall/mineral/cult/artificer,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/observ)
-"ka" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
-/obj/machinery/firealarm/directional/east,
-/mob/living/simple_animal/hostile/construct/wraith/hostile,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/iron,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/starboardhall)
 "kd" = (
 /obj/item/wrench,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2454,16 +2687,6 @@
 /obj/effect/turf_decal/sand/plating,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav)
-"nB" = (
-/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
-/mob/living/simple_animal/hostile/cult/magic{
-	health = 160;
-	maxHealth = 160
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/iron,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/observ)
 "nD" = (
 /obj/machinery/airalarm/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2923,17 +3146,6 @@
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/closed/wall/mineral/cult/artificer,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
-"qa" = (
-/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/mob/living/simple_animal/hostile/construct/wraith/hostile{
-	health = 125;
-	maxHealth = 125
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/iron,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/forehall)
 "qb" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
@@ -3030,15 +3242,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/atmos)
-"qF" = (
-/obj/effect/turf_decal/sand,
-/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
-/obj/effect/decal/cleanable/blood,
-/mob/living/simple_animal/hostile/cult/ghost,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/cult,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/mining)
 "qH" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
@@ -3065,16 +3268,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall)
-"qO" = (
-/obj/effect/eldritch/huge,
-/mob/living/simple_animal/hostile/cult/warrior{
-	health = 175;
-	maxHealth = 175
-	},
-/obj/effect/decal/cleanable/blood,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/cult,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/storage)
 "qQ" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/power/apc/auto_name/north{
@@ -3451,11 +3644,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/starboardhall)
-"tj" = (
-/mob/living/simple_animal/hostile/cult/magic,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/cult,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/atmos)
 "tk" = (
 /obj/structure/table/reinforced,
 /obj/machinery/vending/boozeomat,
@@ -3767,14 +3955,6 @@
 /obj/effect/spawner/lootdrop/crate_spawner,
 /turf/open/floor/plasteel/cult,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/storage)
-"uN" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
-	dir = 4
-	},
-/mob/living/simple_animal/hostile/cult/magic,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/cult,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/comms)
 "uR" = (
 /turf/open/floor/iron/freezer,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/kitchen)
@@ -3783,12 +3963,6 @@
 /obj/machinery/door/firedoor/solid,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/secoff)
-"uW" = (
-/obj/effect/decal/cleanable/blood/tracks,
-/mob/living/simple_animal/hostile/cult,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/iron,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/cargo)
 "vc" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
@@ -4415,11 +4589,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/trauma)
-"yT" = (
-/mob/living/simple_animal/hostile/construct/proteon/hostile,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/iron,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/porthall)
 "yU" = (
 /obj/effect/spawner/structure/window/reinforced/no_firelock,
 /obj/machinery/door/firedoor/solid/closed,
@@ -4459,11 +4628,6 @@
 "zi" = (
 /turf/closed/wall/mineral/cult/artificer,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/secoff)
-"zj" = (
-/mob/living/simple_animal/hostile/cult/magic,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/iron/dark,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
 "zm" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/power/terminal{
@@ -4588,14 +4752,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/cult,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/trauma)
-"Ae" = (
-/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
-/obj/effect/decal/cleanable/blood/tracks,
-/mob/living/simple_animal/hostile/cult/ghost,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/cult,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/trauma)
 "Ak" = (
 /obj/machinery/atmospherics/components/binary/pump/on{
 	dir = 1
@@ -4625,15 +4781,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/atmos)
-"Ap" = (
-/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/effect/decal/cleanable/blood,
-/mob/living/simple_animal/hostile/construct/proteon/hostile,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/iron,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/porthall)
 "Aq" = (
 /turf/closed/wall/mineral/titanium,
 /area/ruin/space/has_grav)
@@ -5480,11 +5627,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall)
-"Fd" = (
-/mob/living/simple_animal/hostile/cult/ghost,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/cult,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/mining)
 "Fe" = (
 /obj/machinery/door/airlock/public/glass{
 	name = "Crew Storage"
@@ -6112,11 +6254,6 @@
 	},
 /turf/open/space/basic,
 /area/solars/tarkon)
-"Ir" = (
-/mob/living/simple_animal/hostile/cult/ghost,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/cult,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/afthall)
 "Iw" = (
 /turf/closed/wall,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/power1)
@@ -6149,13 +6286,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall)
-"IF" = (
-/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
-/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/mob/living/simple_animal/hostile/cult/mannequin,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/iron,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/secoff)
 "IG" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/gloves/color/yellow,
@@ -6166,16 +6296,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/atmos)
-"IH" = (
-/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/structure/curtain,
-/mob/living/simple_animal/hostile/cult/horror{
-	health = 150;
-	maxHealth = 150
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/cult,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/trauma)
 "IJ" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
@@ -6246,14 +6366,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/porthall)
-"Jb" = (
-/mob/living/simple_animal/hostile/cult/spear{
-	health = 125;
-	maxHealth = 125
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/cult,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/atmos)
 "Ji" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
@@ -6436,15 +6548,6 @@
 	},
 /turf/open/floor/carpet/black,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/dorms)
-"JQ" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
-	dir = 8
-	},
-/obj/machinery/light/small/directional/east,
-/mob/living/simple_animal/hostile/cult,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/iron,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/secoff)
 "JR" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
@@ -6489,16 +6592,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/trauma)
-"Kb" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
-/obj/effect/decal/cleanable/blood,
-/mob/living/simple_animal/hostile/construct/wraith/hostile{
-	health = 125;
-	maxHealth = 125
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/iron,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/forehall)
 "Kc" = (
 /obj/structure/rack,
 /obj/item/clothing/head/helmet/sec,
@@ -6564,15 +6657,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/cult,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/comms)
-"Kp" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
-/mob/living/simple_animal/hostile/cult/magic{
-	health = 160;
-	maxHealth = 160
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/cult,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/forehall)
 "Ks" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
@@ -6915,17 +6999,6 @@
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/atmos)
-"Mg" = (
-/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/mob/living/simple_animal/hostile/construct/wraith/hostile{
-	health = 125;
-	maxHealth = 125
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/cult,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/porthall)
 "Mi" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -7227,13 +7300,6 @@
 /obj/item/gun/energy/e_gun/mini,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/secoff)
-"NZ" = (
-/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
-/mob/living/simple_animal/hostile/construct/proteon/hostile,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/iron,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/observ)
 "Oa" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -7244,14 +7310,6 @@
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/atmos)
-"Od" = (
-/mob/living/simple_animal/hostile/construct/wraith/hostile{
-	health = 125;
-	maxHealth = 125
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/cult,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/porthall)
 "Oi" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
@@ -7287,12 +7345,6 @@
 /obj/machinery/vending/dinnerware,
 /turf/open/floor/iron/cafeteria,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/kitchen)
-"OC" = (
-/obj/effect/eldritch/huge,
-/mob/living/simple_animal/hostile/cult/spear,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/cult,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/comms)
 "OD" = (
 /obj/machinery/light/dim/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -7988,17 +8040,6 @@
 "Sw" = (
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/dorms)
-"Sz" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
-	dir = 8
-	},
-/mob/living/simple_animal/hostile/construct/wraith/hostile{
-	health = 125;
-	maxHealth = 125
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/iron,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/porthall)
 "SD" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
@@ -8329,15 +8370,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
-"Uh" = (
-/obj/effect/decal/cleanable/blood,
-/mob/living/simple_animal/hostile/construct/wraith/hostile{
-	health = 125;
-	maxHealth = 125
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/iron,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/forehall)
 "Uj" = (
 /turf/closed/wall,
 /area/ruin/space/has_grav)
@@ -8384,19 +8416,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/cult,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/storage)
-"Uz" = (
-/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
-/obj/effect/decal/cleanable/glass,
-/obj/effect/decal/cleanable/blood,
-/mob/living/simple_animal/hostile/cult/magic/elite{
-	health = 400;
-	maxHealth = 400;
-	name = "The Veilbreaker"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/cult,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
 "UI" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -8642,11 +8661,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/secoff)
-"Wi" = (
-/mob/living/simple_animal/hostile/construct/wraith/hostile,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/iron,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/starboardhall)
 "Wn" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
@@ -8715,11 +8729,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/forehall)
-"WK" = (
-/mob/living/simple_animal/hostile/construct/proteon/hostile,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/cult,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/afthall)
 "WL" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
@@ -9066,15 +9075,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/cult,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/trauma)
-"Zt" = (
-/obj/machinery/light/dim/directional/north,
-/mob/living/simple_animal/hostile/construct/wraith/hostile{
-	health = 125;
-	maxHealth = 125
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/iron,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/forehall)
 "Zu" = (
 /obj/structure/window/reinforced/tinted,
 /obj/effect/decal/cleanable/blood,
@@ -9871,9 +9871,9 @@ oe
 RB
 rY
 wi
-Mg
+aH
 XY
-Ap
+aI
 RB
 Kf
 XY
@@ -9934,13 +9934,13 @@ jF
 qe
 AN
 rW
-Sz
+aw
 AN
 wt
 UZ
 AN
 hN
-aO
+aD
 UZ
 AN
 aM
@@ -9948,7 +9948,7 @@ Eg
 UZ
 Mv
 UZ
-Od
+aJ
 xI
 Zf
 PK
@@ -10008,13 +10008,13 @@ tL
 vz
 do
 pj
-yT
+az
 UZ
 UZ
 FC
 AN
 UZ
-yT
+az
 UZ
 aM
 UZ
@@ -10076,7 +10076,7 @@ yl
 La
 jF
 Gh
-aA
+ag
 hH
 nP
 nP
@@ -10145,7 +10145,7 @@ zo
 EQ
 EQ
 NH
-dt
+aa
 at
 Uw
 jF
@@ -10226,7 +10226,7 @@ Uw
 qe
 nP
 Uf
-zj
+ax
 lF
 On
 BX
@@ -10291,11 +10291,11 @@ EQ
 EQ
 jF
 bX
-nB
-NZ
+ab
+ac
 Oi
 Oi
-NZ
+ac
 qe
 nP
 ef
@@ -10314,7 +10314,7 @@ xY
 vB
 nP
 mY
-id
+aO
 uI
 xt
 pW
@@ -10322,7 +10322,7 @@ PW
 ez
 il
 pb
-hz
+aW
 ez
 ez
 il
@@ -10399,7 +10399,7 @@ ri
 ez
 ez
 il
-tj
+be
 ez
 SM
 dy
@@ -10453,7 +10453,7 @@ Er
 sr
 db
 PM
-eU
+aE
 YI
 YI
 Am
@@ -10540,7 +10540,7 @@ ez
 KI
 ez
 oh
-Jb
+aQ
 ez
 oF
 oh
@@ -10672,7 +10672,7 @@ On
 Su
 db
 PM
-fJ
+aG
 Ig
 ca
 dx
@@ -10806,7 +10806,7 @@ sv
 sv
 kf
 sI
-Kb
+ao
 VV
 nP
 oc
@@ -10825,7 +10825,7 @@ On
 Sn
 nP
 ra
-yT
+az
 RZ
 xt
 vO
@@ -11026,7 +11026,7 @@ sv
 yd
 kv
 ma
-qa
+av
 db
 YB
 WQ
@@ -11176,7 +11176,7 @@ VV
 db
 Zi
 kx
-Uz
+aA
 iU
 Kj
 Xy
@@ -11462,7 +11462,7 @@ sv
 Wa
 sv
 kf
-Zt
+ae
 ma
 pC
 db
@@ -11787,12 +11787,12 @@ ZM
 Ue
 xS
 tI
-WK
+bh
 Lk
 LN
 LN
 Eq
-Ir
+bp
 yv
 of
 of
@@ -11901,7 +11901,7 @@ sv
 Wa
 yd
 VO
-Uh
+ap
 tp
 yd
 kf
@@ -12232,11 +12232,11 @@ OM
 vo
 EY
 sA
-OC
+bu
 Yt
 Yt
 sA
-uN
+bw
 oS
 hL
 YK
@@ -12345,7 +12345,7 @@ iA
 xi
 tJ
 tJ
-Ae
+aB
 zD
 DH
 yS
@@ -12412,16 +12412,16 @@ sv
 Wa
 kf
 VO
-Kp
+ar
 Yh
 Lr
 gd
-ga
+ay
 QO
 gd
 jy
 FV
-IH
+aC
 ah
 Ki
 Kl
@@ -12668,7 +12668,7 @@ vm
 jV
 Wq
 JI
-uW
+bq
 bo
 ng
 MV
@@ -12821,7 +12821,7 @@ DY
 PR
 Gm
 jD
-dP
+bx
 rK
 RE
 qh
@@ -12950,7 +12950,7 @@ rg
 Es
 LS
 tv
-Wi
+bd
 zp
 Ux
 ND
@@ -13038,7 +13038,7 @@ pl
 ng
 SQ
 PR
-qO
+bv
 PR
 Fr
 cE
@@ -13095,7 +13095,7 @@ qS
 MF
 py
 MF
-ka
+aR
 eK
 fT
 zM
@@ -13246,7 +13246,7 @@ CS
 Hy
 in
 zy
-Fd
+bf
 zy
 wZ
 le
@@ -13306,7 +13306,7 @@ RN
 nk
 Fv
 gD
-JQ
+aL
 EH
 vC
 Vx
@@ -13525,7 +13525,7 @@ Nx
 Wh
 CE
 hY
-IF
+aN
 cY
 vC
 sD
@@ -13685,7 +13685,7 @@ bH
 Lp
 Pp
 Zl
-qF
+bk
 Xz
 iu
 Cs
@@ -14337,6 +14337,663 @@ WY
 WY
 WY
 ts
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+"}
+(72,1,1) = {"
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+"}
+(73,1,1) = {"
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+"}
+(74,1,1) = {"
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+"}
+(75,1,1) = {"
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+"}
+(76,1,1) = {"
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+"}
+(77,1,1) = {"
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+"}
+(78,1,1) = {"
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+"}
+(79,1,1) = {"
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+"}
+(80,1,1) = {"
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
 WY
 WY
 WY
