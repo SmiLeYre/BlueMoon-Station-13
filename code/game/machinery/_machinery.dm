@@ -601,7 +601,7 @@ Class Procs:
 		var/prev_anchored = anchored
 		//as long as we're the same anchored state and we're either on a floor or are anchored, toggle our anchored state
 		if(I.use_tool(src, user, time, extra_checks = CALLBACK(src, .proc/unfasten_wrench_check, prev_anchored, user)))
-			to_chat(user, "<span class='notice'>You [вкручивать  ? "от" : ""]кручивать [src].</span>")
+			to_chat(user, "<span class='notice'>Вы начинаете [вкручивать ? "от" : ""]кручивать [src].</span>")
 			setAnchored(!anchored)
 			check_on_table()
 			playsound(src, 'sound/items/deconstruct.ogg', 50, 1)
