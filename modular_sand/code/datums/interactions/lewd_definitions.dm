@@ -456,13 +456,13 @@
 							if(partner.has_vagina(REQUIRE_EXPOSED))
 								if(partner_carbon_check)
 									target_gen = c_partner.getorganslot(ORGAN_SLOT_VAGINA)
-								message = "кончает на киску [partner_name] семенем."
+								message = "кончает в киску [partner_name] семенем."
 								cumin = TRUE
 							else
 								message = "кончает на живот [partner_name] семенем."
 						if(CUM_TARGET_ANUS)
 							if(partner.has_anus(REQUIRE_EXPOSED))
-								message = "кончает на попку [partner_name] семенем."
+								message = "кончает в попку [partner_name] семенем."
 								cumin = TRUE
 							else
 								message = "кончает на спину [partner_name] семенем."
