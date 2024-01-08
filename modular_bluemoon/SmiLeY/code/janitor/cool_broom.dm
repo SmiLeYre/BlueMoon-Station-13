@@ -107,6 +107,10 @@
 		var/mob/M = AM
 		if(M.mind?.assigned_role == CLOWN)
 			return TRUE*2
+		// BLUEMOON ADD START - сверхтяжёлых персонажей нельзя перемещать этой метлой
+		if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER))
+			return FALSE
+		// BLUEMOON ADD END
 	if(isclown(AM)  || isdrone(AM) || isswarmer(AM) || isdead(AM) || ismouse(AM) || ishuman(AM) )
 		return TRUE*2 // reserved for mob/living //refactor later, this is ugly
 
