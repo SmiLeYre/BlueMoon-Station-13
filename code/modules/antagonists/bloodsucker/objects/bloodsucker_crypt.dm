@@ -267,7 +267,7 @@
 	if(user.blood_volume < CONVERT_COST + 5)
 		to_chat(user, "<span class='notice'>You don't have enough blood to initiate the Dark Communion with [target].</span>")
 		return
-	if(B.count_vassals(user.mind) > B.bloodsucker_level)
+	if(B.count_vassals(user.mind) + 1 > B.bloodsucker_level) // BLUEMOON EDIT - добавлено +1, т.к. ранее можно было иметь на 1 вассала больше, чем уровень вампира
 		to_chat(user, "<span class='notice'>Your power is yet too weak to bring more vassals under your control....</span>")
 		return
 	// Prep...

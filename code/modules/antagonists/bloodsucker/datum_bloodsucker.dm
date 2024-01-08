@@ -384,6 +384,14 @@
 	lair_objective.generate_objective()
 	add_objective(lair_objective)
 
+	// BLUEMOON ADD START
+	// Gain Vassals Objective
+	var/datum/objective/bloodsucker/gain_vassals/gain_vassals_objective = new
+	gain_vassals_objective.owner = owner
+	gain_vassals_objective.generate_objective()
+	add_objective(gain_vassals_objective)
+	// BLUEMOON ADD END
+
 	// Protege Objective
 	var/datum/objective/bloodsucker/protege/protege_objective = new
 	protege_objective.owner = owner
