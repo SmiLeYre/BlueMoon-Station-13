@@ -179,7 +179,7 @@
 		fullname = bloodsucker_title + " " + fullname
 	// Rep
 	if(include_rep && bloodsucker_reputation)
-		fullname = fullname + " the " + bloodsucker_reputation
+		fullname = fullname + " " + bloodsucker_reputation
 
 	return fullname
 
@@ -307,7 +307,7 @@
 	options["\[ Not Now \]"] = null
 	// Abort?
 	if(options.len > 1)
-		var/choice = input(owner.current, "У вас есть возможность стать более древним ценой [level_bloodcost] едениц крови. Выберите силу чтобы продвинуть свой Ранг.", "Ваша кровь сгущается...") in options
+		var/choice = input(owner.current, "У вас есть возможность стать более древним ценой [level_bloodcost] единиц крови. Выберите силу чтобы продвинуть свой Ранг.", "Ваша кровь сгущается...") in options
 		// Cheat-Safety: Can't keep opening/closing coffin to spam levels
 		if(bloodsucker_level_unspent <= 0) // Already spent all your points, and tried opening/closing your coffin, pal.
 			return
@@ -354,6 +354,11 @@
 	to_chat(owner.current, "<span class='warning'>Все ваши изученые способности так же усилились!</span>")
 	update_hud(TRUE)
 	owner.current.playsound_local(null, 'sound/effects/pope_entry.ogg', 25, TRUE, pressure_affected = FALSE)
+
+	// BLUEMOON ADD START - вампир тратит все уровни без необходимости открыть-закрывать гроб
+	if(bloodsucker_level_unspent)
+		SpendRank()
+	// BLUEMOON ADD END
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
