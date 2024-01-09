@@ -68,12 +68,20 @@
 	"phazon_peri", "phazon_targ", "phazon_armor")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3000)
 
+/datum/techweb_node/medigax
+	id = "mech_medigax"
+	display_name = "EXOSUIT: Medical-Spec Gygax"
+	description = "Medical-Spec Gygax designs"
+	prereq_ids = list("mech_gygax", "mecha_odysseus", "mech_durand", "adv_mecha")
+	design_ids = list("combat_mech_beacon", "medical_mech_beacon", "engineer_mech_beacon", "cargo_mech_beacon")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3000)
+
 /datum/techweb_node/adv_mecha_tools
 	id = "adv_mecha_tools"
 	display_name = "Advanced Exosuit Equipment"
 	description = "Tools for high level mech suits"
 	prereq_ids = list("adv_mecha")
-	design_ids = list("mech_rcd")
+	design_ids = list("mech_rcd", "mech_thrusters")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
 /datum/techweb_node/med_mech_tools

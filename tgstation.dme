@@ -4319,6 +4319,8 @@
 #include "modular_bluemoon\SmiLeY\code\noose.dm"
 #include "modular_bluemoon\SmiLeY\code\space.dm"
 #include "modular_bluemoon\SmiLeY\code\tentacle.dm"
+#include "modular_bluemoon\SmiLeY\code\titanfall.dm"
+#include "modular_bluemoon\SmiLeY\code\titanfall_mechs.dm"
 #include "modular_bluemoon\SmiLeY\code\ert\party_ert.dm"
 #include "modular_bluemoon\SmiLeY\code\ert\pizza_ert.dm"
 #include "modular_bluemoon\SmiLeY\code\ert\vdv_ert.dm"

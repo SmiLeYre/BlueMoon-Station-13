@@ -1,5 +1,5 @@
 /obj/item/gun/energy/broom
-	name = "Энергетическая Супер-Метла"
+	name = "Energy Super Broom"
 	desc = "Новейшая разработка отдела РнД. Позволяет вам эффективно подметать мусор, не вставая с кресла."
 	icon = 'modular_bluemoon/SmiLeY/code/janitor/broom.dmi'
 	icon_state = "broomgun"
@@ -106,8 +106,8 @@
 	if(ismob(AM))
 		var/mob/M = AM
 		if(M.mind?.assigned_role == CLOWN)
-			return TRUE*2
-	if(isclown(AM)  || isdrone(AM) || isswarmer(AM) || isdead(AM) || ismouse(AM) || ishuman(AM) )
+			return TRUE*4
+	if(isdrone(AM) || isswarmer(AM) || isdead(AM) || ismouse(AM) || iscatperson(AM) )
 		return TRUE*2 // reserved for mob/living //refactor later, this is ugly
 
 #undef PUSHING

@@ -83,7 +83,6 @@
 	max_integrity = 250
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	armor = list(MELEE = 40, BULLET = 30, LASER = 30, ENERGY = 30, BOMB = 60, BIO = 0, RAD = 70, FIRE = 100, ACID = 100)
-	max_equip = 5 // More armor, less tools
 	enclosed = TRUE
 	enter_delay = 40
 
