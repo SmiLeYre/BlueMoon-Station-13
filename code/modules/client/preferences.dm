@@ -2012,6 +2012,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	else
 		dat += "<center><b>Choose quirk setup</b></center><br>"
+		// BLUEMOON ADD START - настройки для отдельных квирков
+		dat += "Настройки для отдельных квирков. Если нужный квирк не будет выставлен, то они работать не будут.<br>"
+		dat += "<a href='?_src_=prefs;preference=traits_setup;task=change_shriek_option'>([BLUEMOON_TRAIT_NAME_SHRIEK]) Тип Крика: [shriek_type]</a>"
+		dat += "<hr>"
+		// BLUEMOON ADD END
 		dat += "<div align='center'>Left-click to add or remove quirks. You need negative quirks to have positive ones.<br>\
 		Quirks are applied at roundstart and cannot normally be removed.</div>"
 		dat += "<center><a href='?_src_=prefs;preference=trait;task=close'>Done</a></center>"
@@ -2195,6 +2200,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				SetQuirks(user)
 			else
 				SetQuirks(user)
+	// BLUEMOON ADD START - возможность настраивать квирки
+	else if(href_list["preference"] == "traits_setup")
+		switch(href_list["task"])
+			if("change_shriek_option") // изменение вида крика от квирка крикуна
+				var/client/C = usr.client
+				if(C)
+					var/new_shriek_type = input(user, "Choose your character's shriek type.", "Character Preference") as null|anything in GLOB.shriek_types
+					if(new_shriek_type)
+						shriek_type = new_shriek_type
+						SetQuirks(user)
+	// BLUEMOON ADD END
 		return TRUE
 
 	else if(href_list["quirk_category"])
