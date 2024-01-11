@@ -128,3 +128,23 @@
 	name = "A waistcoat"
 	path = /obj/item/clothing/accessory/waistcoat_color
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION | LOADOUT_CAN_COLOR_POLYCHROMIC
+
+/datum/gear/accessory/poly_sweater
+	name = "polychromic sweater"
+	path = /obj/item/clothing/accessory/poly_sweater
+	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION | LOADOUT_CAN_COLOR_POLYCHROMIC
+
+/datum/gear/accessory/poly_sweater_shoulderless
+	name = "shoulderless polychromic sweater"
+	path = /obj/item/clothing/accessory/poly_sweater_shoulderless
+	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION | LOADOUT_CAN_COLOR_POLYCHROMIC
+
+/datum/gear/accessory/poly_sweater_shoulderlessalt
+	name = "shoulderless polychromic sweater alt"
+	path = /obj/item/clothing/accessory/poly_sweater_shoulderlessalt
+	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION | LOADOUT_CAN_COLOR_POLYCHROMIC
+
+/datum/gear/accessory/poly_keyholesweater
+	name = "polychromic keyhole sweater"
+	path = /obj/item/clothing/accessory/poly_keyholesweater
+	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION | LOADOUT_CAN_COLOR_POLYCHROMIC

@@ -1,144 +1,144 @@
-/mob/living/simple_animal/qareen/ClickOn(atom/A, params) //qareens can't interact with the world directly.
-	var/list/modifiers = params2list(params)
-	if(modifiers["shift"])
-		ShiftClickOn(A)
-		return
-	if(modifiers["alt"])
-		AltClickNoInteract(src, A)
-		return
-
-	if(ishuman(A))
-		if(A in drained_mobs)
-			to_chat(src, "<span class='revenwarning'>[A]'s fluids are almost devoid of any essence, also very bland.. almost tasteless... but beggars can't be choosers.</span>" )
-		if(in_range(src, A))
-			// BlueMood Edit Start: Let's not be hasty here - Flauros
-			if(alert("Would you like to harvest [A]'s essence?",,"Yes","No")!="Yes")
-				return
-			// BlueMoon Edit End - Flauros
-			Harvest(A)
+//mob/living/simple_animal/qareen/ClickOn(atom/A, params) //qareens can't interact with the world directly.		Reserved for later. - Gardelin0
+//	var/list/modifiers = params2list(params)
+//	if(modifiers["shift"])
+//		ShiftClickOn(A)
+//		return
+//	if(modifiers["alt"])
+//		AltClickNoInteract(src, A)
+//		return
+//
+//	if(ishuman(A))
+//		if(A in drained_mobs)
+//			to_chat(src, "<span class='revenwarning'>[A]'s fluids are almost devoid of any essence, also very bland.. almost tasteless... but beggars can't be choosers.</span>" )
+//		if(in_range(src, A))
+//			// BlueMood Edit Start: Let's not be hasty here - Flauros
+//			if(alert("Would you like to harvest [A]'s essence?",,"Yes","No")!="Yes")
+//				return
+//			// BlueMoon Edit End - Flauros
+//			Harvest(A)
 
 
 //Harvest; activated ly clicking the target, will try to drain their essence.
-/mob/living/simple_animal/qareen/proc/Harvest(mob/living/carbon/human/target)
-	set waitfor = FALSE
-	if(!castcheck(0))
-		return
-	if(!target.client && target.client?.prefs.erppref == "Yes")	//No sex pref = no harvest. - Gardelin0
-		to_chat(src, "<span class='revenwarning'>They have no sexual energy!</span>")
-		return
-	if(draining)
-		to_chat(src, "<span class='revenwarning'>You are already sucking up the essence!</span>")
-		return
-	if(target.stat)
-		to_chat(src, "<span class='revennotice'>[target.ru_ego(TRUE)] essence is too faded to harvest.</span>")
-		return
-	if(!target.ckey)
-		to_chat(src, "<span class='revennotice'>[target.ru_ego(TRUE)] essence is lacking .. worthless.</span>")
-		// return
-	if(target.client && target.client?.prefs.hornyantagspref == "No")	//No qareen pref = no harvest. - Gardelin0
-		to_chat(src, "<span class='revenwarning'>They are immune!</span>")
-		return
-	if(!target.client?.prefs.nonconpref == "Yes")	//Ask the ones without noncon pref. - Gardelin0
-		var/input = tgui_alert(target, "You sense that your sexual energy is being drained, do you wish to accept it?", "Accept?", list("Yes", "No"))
-		if(input == "No")
-			to_chat(usr, "We can not harvest their sexual energy!")
-			to_chat(target, "You have resisted it!")
-			return
-		else
-			to_chat(usr, "They gave up!")
-			to_chat(target, "You give up!")
-	if(prob(10))
-		to_chat(target, "You feel as if you are being watched.")
-	face_atom(target)
-	draining = TRUE
-	to_chat(src, "<span class='revennotice'>You search for the lifespring of [target].</span>")
-	if(do_after(src, rand(10, 20), target)) //did they get deleted in that second?
-		for(var/obj/item/organ/genital/G in target.internal_organs)
-			if(!(G.genital_flags & GENITAL_FUID_PRODUCTION))
-				continue
-			// var/datum/reagents/fluid_source = G.climaxable(target)
-			if(do_after(src, rand(10, 20), target)) //did they get deleted in that second?
-				// var/main_fluid = lowertext(fluid_source.get_master_reagent_name())  // doesn't work no more (should delete probably)
-				var/main_fluid = G.get_fluid_name()
-				var/fluid_ammount = G.get_fluid()
-				if (fluid_ammount <= 2)
-					to_chat(src, "<span class='revennotice'>[target.ru_ego(TRUE)] [G.name] spasms pitifully, almost nothing will come out.</span>")
-				else
-					to_chat(src, "<span class='revennotice'>[target.ru_ego(TRUE)] [G.name] are brimming with [main_fluid].</span>")
-					if (fluid_ammount > 5)
-						fluid_ammount = 5 // For balancing reasons
-				if ((target in drained_mobs) || !target.ckey)
-					essence_drained += fluid_ammount
-				else if (!target.IsSleeping())
-					essence_drained += fluid_ammount*rand(2, 3)
-				else
-					essence_drained += fluid_ammount*3
-
-		if(do_after(src, rand(15, 20), target)) //did they get deleted NOW?
-			switch(essence_drained)
-				if(0 to 4)
-					to_chat(src, "<span class='revennotice'>[target] is almost barren of essence. Still, every bit counts.</span>")
-				if(5 to 10)
-					to_chat(src, "<span class='revennotice'>[target] will yield an average amount of essence.</span>")
-				if(11 to 20)
-					to_chat(src, "<span class='revenboldnotice'>Such a feast! [target] will yield much essence to you.</span>")
-				if(30 to INFINITY)
-					to_chat(src, "<span class='revenbignotice'>Ah, a sexually furstrated person. [target] will yield massive amounts of essence to you.</span>")
-			if(do_after(src, rand(15, 25), target)) //how about now
-				if(target.stat)
-					to_chat(src, "<span class='revenwarning'>[target.ru_who(TRUE)] now too weak to provide anything of worth.</span>")
-					to_chat(target, "<span class='boldannounce'>You feel something tugging across your body before subsiding.</span>")
-					draining = 0
-					essence_drained = 0
-					return //hey, wait a minute...
-				to_chat(src, "<span class='revenminor'>You begin sucking up essence from [target]'s genitals and body.</span>")
-				if(target.stat != DEAD)
-					to_chat(target, "<span class='warning'>You feel an unholy euphoria as as something sucks at every part your body, your fluids flowing out...</span>")
-				if(target.stat == SOFT_CRIT)
-					target.Stun(150)
-				reveal(46)
-				stun(100)
-				target.visible_message("<span class='warning'>[target] suddenly rises slightly into the air, [target.ru_ego()] skin turning an ashy gray.</span>")
-				if(target.anti_magic_check(FALSE, TRUE))
-					to_chat(src, "<span class='revenminor'>Something's wrong! [target] seems to be resisting the sucking, leaving you vulnerable!</span>")
-					target.set_resting(TRUE,TRUE)
-					target.visible_message("<span class='warning'>[target] slumps onto the ground.</span>", \
-											   "<span class='revenwarning'>Violet lights, dancing in your vision, receding--</span>")
-					draining = FALSE
-					return
-				var/datum/beam/B = Beam(target,icon_state="drain_life",time=INFINITY)
-				if(do_after(src, 46, target)) //As one cannot prove the existance of ghosts, ghosts cannot prove the existance of the target they were draining.
-					change_essence_amount(essence_drained, FALSE, target)
-					for(var/obj/item/organ/genital/G in target.internal_organs)
-						var/datum/reagents/fluid_source = G.climaxable(target)
-						if(!fluid_source)
-							continue
-						target.do_climax(fluid_source, src, G, TRUE, FALSE)
-					if(essence_drained > 30)
-						essence_regen_cap += 15
-						perfectsouls++
-						to_chat(src, "<span class='revenboldnotice'>The ammount of [target]'s fluids has increased your maximum essence level. Your new maximum essence is [essence_regen_cap].</span>")
-					else if(essence_drained >= 5)
-						essence_regen_cap += 5
-						to_chat(src, "<span class='revenboldnotice'>The absorption of [target]'s fluids has increased your maximum essence level. Your new maximum essence is [essence_regen_cap].</span>")
-					target.set_resting(TRUE,TRUE)
-					target.visible_message("<span class='warning'>[target] slumps onto the ground.</span>", \
-										   "<span class='revenwarning'>Violets lights, dancing in your vision, getting clo--</span>")
-					drained_mobs.Add(target)
-					target.setStaminaLoss(150)
-					target.cum() //Oh wow an actual orgasm! - Gardelin0
-					// target.death(0)
-				else
-					to_chat(src, "<span class='revenwarning'>[target ? "[target] has":"[target.ru_who(TRUE)]"] been drawn out of your grasp. The link has been broken.</span>")
-					if(target) //Wait, target is WHERE NOW?
-						target.set_resting(TRUE,TRUE)
-						target.visible_message("<span class='warning'>[target] slumps onto the ground.</span>", \
-											   "<span class='revenwarning'>Violets lights, dancing in your vision, receding--</span>")
-				qdel(B)
-			else
-				to_chat(src, "<span class='revenwarning'>You are not close enough to suck on [target ? "[target]'s":"[target.ru_ego()]"] fluids. The link has been broken.</span>")
-	draining = FALSE
-	essence_drained = 0
+//mob/living/simple_animal/qareen/proc/Harvest(mob/living/carbon/human/target)
+//	set waitfor = FALSE
+//	if(!castcheck(0))
+//		return
+//	if(!target.client && target.client?.prefs.erppref == "Yes")	//No sex pref = no harvest. - Gardelin0
+//		to_chat(src, "<span class='revenwarning'>They have no sexual energy!</span>")
+//		return
+//	if(draining)
+//		to_chat(src, "<span class='revenwarning'>You are already sucking up the essence!</span>")
+//		return
+//	if(target.stat)
+//		to_chat(src, "<span class='revennotice'>[target.ru_ego(TRUE)] essence is too faded to harvest.</span>")
+//		return
+//	if(!target.ckey)
+//		to_chat(src, "<span class='revennotice'>[target.ru_ego(TRUE)] essence is lacking .. worthless.</span>")
+//		// return
+//	if(target.client && target.client?.prefs.hornyantagspref == "No")	//No qareen pref = no harvest. - Gardelin0
+//		to_chat(src, "<span class='revenwarning'>They are immune!</span>")
+//		return
+//	if(!target.client?.prefs.nonconpref == "Yes")	//Ask the ones without noncon pref. - Gardelin0
+//		var/input = tgui_alert(target, "You sense that your sexual energy is being drained, do you wish to accept it?", "Accept?", list("Yes", "No"))
+//		if(input == "No")
+//			to_chat(usr, "We can not harvest their sexual energy!")
+//			to_chat(target, "You have resisted it!")
+//			return
+//		else
+//			to_chat(usr, "They gave up!")
+//			to_chat(target, "You give up!")
+//	if(prob(10))
+//		to_chat(target, "You feel as if you are being watched.")
+//	face_atom(target)
+//	draining = TRUE
+//	to_chat(src, "<span class='revennotice'>You search for the lifespring of [target].</span>")
+//	if(do_after(src, rand(10, 20), target)) //did they get deleted in that second?
+//		for(var/obj/item/organ/genital/G in target.internal_organs)
+//			if(!(G.genital_flags & GENITAL_FUID_PRODUCTION))
+//				continue
+//			// var/datum/reagents/fluid_source = G.climaxable(target)
+//			if(do_after(src, rand(10, 20), target)) //did they get deleted in that second?
+//				// var/main_fluid = lowertext(fluid_source.get_master_reagent_name())  // doesn't work no more (should delete probably)
+//				var/main_fluid = G.get_fluid_name()
+//				var/fluid_ammount = G.get_fluid()
+//				if (fluid_ammount <= 2)
+//					to_chat(src, "<span class='revennotice'>[target.ru_ego(TRUE)] [G.name] spasms pitifully, almost nothing will come out.</span>")
+//				else
+//					to_chat(src, "<span class='revennotice'>[target.ru_ego(TRUE)] [G.name] are brimming with [main_fluid].</span>")
+//					if (fluid_ammount > 5)
+//						fluid_ammount = 5 // For balancing reasons
+//				if ((target in drained_mobs) || !target.ckey)
+//					essence_drained += fluid_ammount
+//				else if (!target.IsSleeping())
+//					essence_drained += fluid_ammount*rand(2, 3)
+//				else
+//					essence_drained += fluid_ammount*3
+//
+//		if(do_after(src, rand(15, 20), target)) //did they get deleted NOW?
+//			switch(essence_drained)
+//				if(0 to 4)
+//					to_chat(src, "<span class='revennotice'>[target] is almost barren of essence. Still, every bit counts.</span>")
+//				if(5 to 10)
+//					to_chat(src, "<span class='revennotice'>[target] will yield an average amount of essence.</span>")
+//				if(11 to 20)
+//					to_chat(src, "<span class='revenboldnotice'>Such a feast! [target] will yield much essence to you.</span>")
+//				if(30 to INFINITY)
+//					to_chat(src, "<span class='revenbignotice'>Ah, a sexually furstrated person. [target] will yield massive amounts of essence to you.</span>")
+//			if(do_after(src, rand(15, 25), target)) //how about now
+//				if(target.stat)
+//					to_chat(src, "<span class='revenwarning'>[target.ru_who(TRUE)] now too weak to provide anything of worth.</span>")
+//					to_chat(target, "<span class='boldannounce'>You feel something tugging across your body before subsiding.</span>")
+//					draining = 0
+//					essence_drained = 0
+//					return //hey, wait a minute...
+//				to_chat(src, "<span class='revenminor'>You begin sucking up essence from [target]'s genitals and body.</span>")
+//				if(target.stat != DEAD)
+//					to_chat(target, "<span class='warning'>You feel an unholy euphoria as as something sucks at every part your body, your fluids flowing out...</span>")
+//				if(target.stat == SOFT_CRIT)
+//					target.Stun(150)
+//				reveal(46)
+//				stun(100)
+//				target.visible_message("<span class='warning'>[target] suddenly rises slightly into the air, [target.ru_ego()] skin turning an ashy gray.</span>")
+//				if(target.anti_magic_check(FALSE, TRUE))
+//					to_chat(src, "<span class='revenminor'>Something's wrong! [target] seems to be resisting the sucking, leaving you vulnerable!</span>")
+//					target.set_resting(TRUE,TRUE)
+//					target.visible_message("<span class='warning'>[target] slumps onto the ground.</span>", \
+//											   "<span class='revenwarning'>Violet lights, dancing in your vision, receding--</span>")
+//					draining = FALSE
+//					return
+//				var/datum/beam/B = Beam(target,icon_state="drain_life",time=INFINITY)
+//				if(do_after(src, 46, target)) //As one cannot prove the existance of ghosts, ghosts cannot prove the existance of the target they were draining.
+//					change_essence_amount(essence_drained, FALSE, target)
+//					for(var/obj/item/organ/genital/G in target.internal_organs)
+//						var/datum/reagents/fluid_source = G.climaxable(target)
+//						if(!fluid_source)
+//							continue
+//						target.do_climax(fluid_source, src, G, TRUE, FALSE)
+//					if(essence_drained > 30)
+//						essence_regen_cap += 15
+//						perfectsouls++
+//						to_chat(src, "<span class='revenboldnotice'>The ammount of [target]'s fluids has increased your maximum essence level. Your new maximum essence is [essence_regen_cap].</span>")
+//					else if(essence_drained >= 5)
+//						essence_regen_cap += 5
+//						to_chat(src, "<span class='revenboldnotice'>The absorption of [target]'s fluids has increased your maximum essence level. Your new maximum essence is [essence_regen_cap].</span>")
+//					target.set_resting(TRUE,TRUE)
+//					target.visible_message("<span class='warning'>[target] slumps onto the ground.</span>", \
+//										   "<span class='revenwarning'>Violets lights, dancing in your vision, getting clo--</span>")
+//					drained_mobs.Add(target)
+//					target.setStaminaLoss(150)
+//					target.cum() //Oh wow an actual orgasm! - Gardelin0
+//					// target.death(0)
+//				else
+//					to_chat(src, "<span class='revenwarning'>[target ? "[target] has":"[target.ru_who(TRUE)]"] been drawn out of your grasp. The link has been broken.</span>")
+//					if(target) //Wait, target is WHERE NOW?
+//						target.set_resting(TRUE,TRUE)
+//						target.visible_message("<span class='warning'>[target] slumps onto the ground.</span>", \
+//											   "<span class='revenwarning'>Violets lights, dancing in your vision, receding--</span>")
+//				qdel(B)
+//			else
+//				to_chat(src, "<span class='revenwarning'>You are not close enough to suck on [target ? "[target]'s":"[target.ru_ego()]"] fluids. The link has been broken.</span>")
+//	draining = FALSE
+//	essence_drained = 0
 
 //Toggle night vision: lets the qareen toggle its night vision
 /obj/effect/proc_holder/spell/targeted/night_vision/qareen
@@ -170,8 +170,8 @@
 	var/reveal = 80 //How long it reveals the qareen in deciseconds
 	var/stun = 20 //How long it stuns the qareen in deciseconds
 	var/locked = TRUE //If it's locked and needs to be unlocked before use
-	var/unlock_amount = 100 //How much essence it costs to unlock
-	var/cast_amount = 50 //How much essence it costs to use
+	var/unlock_amount = 0 //How much essence it costs to unlock
+	var/cast_amount = 0 //How much essence it costs to use
 
 /obj/effect/proc_holder/spell/aoe_turf/qareen/New()
 	..()
@@ -228,8 +228,8 @@
 	charge_max = 200
 	range = 5
 	stun = 30
-	cast_amount = 40
-	unlock_amount = 25
+	cast_amount = 0
+	unlock_amount = 0
 	var/shock_range = 2
 	var/shock_damage = 0
 	action_icon_state = "overload_lights"
@@ -358,65 +358,64 @@
 		// 3) Provide as few non-sexual services to your crew as you deem necessary
 		// ??? prob. nah
 
-//Bliss: Infects nearby humans and in general messes living stuff up.
-/obj/effect/proc_holder/spell/aoe_turf/qareen/bliss
-	name = "Bliss"
-	desc = "Causes nearby living things to loose themselves in lustful throes."
-	charge_max = 120 SECONDS
-	range = 3
-	cast_amount = 30
-	unlock_amount = 30
-	action_icon_state = "blight"
+//Bliss: Infects nearby humans and in general messes living stuff up.	Reserved for later. - Gardelin0
+//obj/effect/proc_holder/spell/aoe_turf/qareen/bliss
+//	name = "Bliss"
+//	desc = "Causes nearby living things to loose themselves in lustful throes."
+//	charge_max = 120 SECONDS
+//	range = 3
+//	cast_amount = 30
+//	unlock_amount = 30
+//	action_icon_state = "blight"
 
-/obj/effect/proc_holder/spell/aoe_turf/qareen/bliss/cast(list/targets, mob/living/simple_animal/qareen/user = usr)
-	if(attempt_cast(user))
-		for(var/turf/T in targets)
-			INVOKE_ASYNC(src, .proc/bliss, T, user)
+//obj/effect/proc_holder/spell/aoe_turf/qareen/bliss/cast(list/targets, mob/living/simple_animal/qareen/user = usr)
+//	if(attempt_cast(user))
+//		for(var/turf/T in targets)
+//			INVOKE_ASYNC(src, .proc/bliss, T, user)
 
-/obj/effect/proc_holder/spell/aoe_turf/qareen/bliss/proc/bliss(turf/T, mob/user)
-	for(var/mob/living/mob in T)
-		if(mob == user)
-			continue
-		if(mob.anti_magic_check(FALSE, TRUE))
-			continue
-		new /obj/effect/temp_visual/revenant(mob.loc)
-		if(iscarbon(mob))
-			if(ishuman(mob))
-				var/mob/living/carbon/human/H = mob //Also removed hair color change. It causes hair to turn darker. - Gardelin0
-				var/blissfound = FALSE
-
-				if(H.client?.prefs.cit_toggles & NO_APHRO) //No aphrodisiac pref = no symptoms. - Gardelin0
-					return	FALSE
-				if(!H.client && H.client?.prefs.erppref == "Yes")	//No sex pref = no symptoms. - Gardelin0
-					return	FALSE
-				if(!H.client && !H.client?.prefs.nonconpref == "Yes")	//No noncon pref = no symptoms. - Gardelin0
-					return	FALSE
-				if(H.client && H.client?.prefs.hornyantagspref == "No") //No qareen pref = no symptoms. - Gardelin0
-					return	FALSE
-
-				for(var/datum/disease/qarbliss/bliss in H.diseases)
-					blissfound = TRUE
-					if(bliss.stage < 5)
-						bliss.stage++
-				if(!blissfound)
-					H.ForceContractDisease(new /datum/disease/qarbliss(), FALSE, TRUE)
-					mob.adjust_bodytemperature(5)
-					to_chat(H, "<span class='revenminor'>You feel [pick("suddenly hot", "a surge of warmth", "like your crotch is <i>tingling</i>")].</span>")
-			mob.reagents.add_reagent(/datum/reagent/drug/aphrodisiac, 5)
-		else
-			mob.adjust_bodytemperature(5)
-			mob.adjustBruteLoss(-5)
-			mob.adjustToxLoss(-5)
-	for(var/obj/structure/spacevine/vine in T) //Fucking with botanists, the ability.
-		vine.add_atom_colour("#823abb", TEMPORARY_COLOUR_PRIORITY)
-		new /obj/effect/temp_visual/revenant(vine.loc)
-		QDEL_IN(vine, 10)
-	for(var/obj/structure/glowshroom/shroom in T)
-		shroom.add_atom_colour("#823abb", TEMPORARY_COLOUR_PRIORITY)
-		new /obj/effect/temp_visual/revenant(shroom.loc)
-		QDEL_IN(shroom, 10)
-	for(var/obj/machinery/hydroponics/tray in T)
-		new /obj/effect/temp_visual/revenant(tray.loc)
-		tray.pestlevel = rand(-8, -10)
-		tray.weedlevel = rand(-8, -10)
-		tray.toxic = rand(-45, -55)
+//obj/effect/proc_holder/spell/aoe_turf/qareen/bliss/proc/bliss(turf/T, mob/user)
+//	for(var/mob/living/mob in T)
+//		if(mob == user)
+//			continue
+//		if(mob.anti_magic_check(FALSE, TRUE))
+//			continue
+//		new /obj/effect/temp_visual/revenant(mob.loc)
+//		if(iscarbon(mob))
+//		if(ishuman(mob))
+//				var/mob/living/carbon/human/H = mob //Also removed hair color change. It causes hair to turn darker. - Gardelin0
+//				var/blissfound = FALSE
+//
+//				if(H.client?.prefs.cit_toggles & NO_APHRO) //No aphrodisiac pref = no symptoms. - Gardelin0
+//					return	FALSE
+//				if(!H.client && H.client?.prefs.erppref == "Yes")	//No sex pref = no symptoms. - Gardelin0
+//					return	FALSE
+//				if(!H.client && !H.client?.prefs.nonconpref == "Yes")	//No noncon pref = no symptoms. - Gardelin0
+//					return	FALSE
+//				if(H.client && H.client?.prefs.hornyantagspref == "No") //No qareen pref = no symptoms. - Gardelin0
+//					return	FALSE
+//
+//				for(var/datum/disease/qarbliss/bliss in H.diseases)
+//					blissfound = TRUE
+//					if(bliss.stage < 5)
+//						bliss.stage++
+//				if(!blissfound)
+//					H.ForceContractDisease(new /datum/disease/qarbliss(), FALSE, TRUE)
+//					mob.adjust_bodytemperature(5)
+//					to_chat(H, "<span class='revenminor'>You feel [pick("suddenly hot", "a surge of warmth", "like your crotch is <i>tingling</i>")].</span>")
+//			mob.reagents.add_reagent(/datum/reagent/drug/aphrodisiac, 5)
+//		else
+//			mob.adjust_bodytemperature(5)
+//			mob.adjustBruteLoss(-5)
+//			mob.adjustToxLoss(-5)
+//		vine.add_atom_colour("#823abb", TEMPORARY_COLOUR_PRIORITY)
+//		new /obj/effect/temp_visual/revenant(vine.loc)
+//		QDEL_IN(vine, 10)
+//	for(var/obj/structure/glowshroom/shroom in T)
+//		shroom.add_atom_colour("#823abb", TEMPORARY_COLOUR_PRIORITY)
+//		new /obj/effect/temp_visual/revenant(shroom.loc)
+//		QDEL_IN(shroom, 10)
+//	for(var/obj/machinery/hydroponics/tray in T)
+//		new /obj/effect/temp_visual/revenant(tray.loc)
+//		tray.pestlevel = rand(-8, -10)
+//		tray.weedlevel = rand(-8, -10)
+//		tray.toxic = rand(-45, -55)
