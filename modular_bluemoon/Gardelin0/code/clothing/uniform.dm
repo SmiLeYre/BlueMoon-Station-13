@@ -284,26 +284,26 @@
 		switch(choice)
 			if("Accessory")
 				new /obj/item/clothing/accessory/poly_sweater(usr.loc)
-					for(var/obj/item/clothing/accessory/poly_sweater/C in usr.loc)
-						C.color = src.color
-						C.name = src.name
-						C.desc = src.desc
+				for(var/obj/item/clothing/accessory/poly_sweater/C in usr.loc)
+					C.color = src.color
+					C.name = src.name
+					C.desc = src.desc
 				to_chat(usr, span_notice("Now wearing as undershirt!"))
 				qdel(src)
 			if("Undershirt")
 				new /obj/item/clothing/underwear/shirt/poly_sweater(usr.loc)
-					for(var/obj/item/clothing/underwear/shirt/poly_sweater/A in usr.loc)
-						A.color = src.color
-						A.name = src.name
-						A.desc = src.desc
+				for(var/obj/item/clothing/underwear/shirt/poly_sweater/A in usr.loc)
+					A.color = src.color
+					A.name = src.name
+					A.desc = src.desc
 				to_chat(usr, span_notice("Now wearing as undershirt!"))
 				qdel(src)
 			if("Uniform")
 				new /obj/item/clothing/under/poly_sweater(usr.loc)
-					for(var/obj/item/clothing/under/poly_sweater/U in usr.loc)
-						U.color = src.color
-						U.name = src.name
-						U.desc = src.desc
+				for(var/obj/item/clothing/under/poly_sweater/U in usr.loc)
+					U.color = src.color
+					U.name = src.name
+					U.desc = src.desc
 				to_chat(usr, span_notice("Now wearing as uniform!"))
 				qdel(src)
 
@@ -331,26 +331,26 @@
 		switch(choice)
 			if("Accessory")
 				new /obj/item/clothing/accessory/poly_sweater_shoulderless(usr.loc)
-					for(var/obj/item/clothing/accessory/poly_sweater_shoulderless/C in usr.loc)
-						C.color = src.color
-						C.name = src.name
-						C.desc = src.desc
+				for(var/obj/item/clothing/accessory/poly_sweater_shoulderless/C in usr.loc)
+					C.color = src.color
+					C.name = src.name
+					C.desc = src.desc
 				to_chat(usr, span_notice("Now wearing as undershirt!"))
 				qdel(src)
 			if("Undershirt")
 				new /obj/item/clothing/underwear/shirt/poly_sweater_shoulderless(usr.loc)
-					for(var/obj/item/clothing/underwear/shirt/poly_sweater_shoulderless/A in usr.loc)
-						A.color = src.color
-						A.name = src.name
-						A.desc = src.desc
+				for(var/obj/item/clothing/underwear/shirt/poly_sweater_shoulderless/A in usr.loc)
+					A.color = src.color
+					A.name = src.name
+					A.desc = src.desc
 				to_chat(usr, span_notice("Now wearing as undershirt!"))
 				qdel(src)
 			if("Uniform")
 				new /obj/item/clothing/under/poly_sweater_shoulderless(usr.loc)
-					for(var/obj/item/clothing/under/poly_sweater_shoulderless/U in usr.loc)
-						U.color = src.color
-						U.name = src.name
-						U.desc = src.desc
+				for(var/obj/item/clothing/under/poly_sweater_shoulderless/U in usr.loc)
+					U.color = src.color
+					U.name = src.name
+					U.desc = src.desc
 				to_chat(usr, span_notice("Now wearing as uniform!"))
 				qdel(src)
 
@@ -378,26 +378,26 @@
 		switch(choice)
 			if("Accessory")
 				new /obj/item/clothing/accessory/poly_sweater_shoulderlessalt(usr.loc)
-					for(var/obj/item/clothing/accessory/poly_sweater_shoulderlessalt/C in usr.loc)
-						C.color = src.color
-						C.name = src.name
-						C.desc = src.desc
+				for(var/obj/item/clothing/accessory/poly_sweater_shoulderlessalt/C in usr.loc)
+					C.color = src.color
+					C.name = src.name
+					C.desc = src.desc
 				to_chat(usr, span_notice("Now wearing as undershirt!"))
 				qdel(src)
 			if("Undershirt")
 				new /obj/item/clothing/underwear/shirt/poly_sweater_shoulderlessalt(usr.loc)
-					for(var/obj/item/clothing/underwear/shirt/poly_sweater_shoulderlessalt/A in usr.loc)
-						A.color = src.color
-						A.name = src.name
-						A.desc = src.desc
+				for(var/obj/item/clothing/underwear/shirt/poly_sweater_shoulderlessalt/A in usr.loc)
+					A.color = src.color
+					A.name = src.name
+					A.desc = src.desc
 				to_chat(usr, span_notice("Now wearing as undershirt!"))
 				qdel(src)
 			if("Uniform")
 				new /obj/item/clothing/under/poly_sweater_shoulderlessalt(usr.loc)
-					for(var/obj/item/clothing/under/poly_sweater_shoulderlessalt/U in usr.loc)
-						U.color = src.color
-						U.name = src.name
-						U.desc = src.desc
+				for(var/obj/item/clothing/under/poly_sweater_shoulderlessalt/U in usr.loc)
+					U.color = src.color
+					U.name = src.name
+					U.desc = src.desc
 				to_chat(usr, span_notice("Now wearing as uniform!"))
 				qdel(src)
 
@@ -425,25 +425,25 @@
 		switch(choice)
 			if("Accessory")
 				new /obj/item/clothing/accessory/poly_keyholesweater(usr.loc)
-					for(var/obj/item/clothing/accessory/poly_keyholesweater/C in usr.loc)
-						C.color = src.color
-						C.name = src.name
-						C.desc = src.desc
+				for(var/obj/item/clothing/accessory/poly_keyholesweater/C in usr.loc)
+					C.color = src.color
+					C.name = src.name
+					C.desc = src.desc
 				to_chat(usr, span_notice("Now wearing as undershirt!"))
 				qdel(src)
 			if("Undershirt")
 				new /obj/item/clothing/underwear/shirt/poly_keyholesweater(usr.loc)
-					for(var/obj/item/clothing/underwear/shirt/poly_keyholesweater/A in usr.loc)
-						A.color = src.color
-						A.name = src.name
-						A.desc = src.desc
+				for(var/obj/item/clothing/underwear/shirt/poly_keyholesweater/A in usr.loc)
+					A.color = src.color
+					A.name = src.name
+					A.desc = src.desc
 				to_chat(usr, span_notice("Now wearing as undershirt!"))
 				qdel(src)
 			if("Uniform")
 				new /obj/item/clothing/under/poly_keyholesweater(usr.loc)
-					for(var/obj/item/clothing/under/poly_keyholesweater/U in usr.loc)
-						U.color = src.color
-						U.name = src.name
-						U.desc = src.desc
+				for(var/obj/item/clothing/under/poly_keyholesweater/U in usr.loc)
+					U.color = src.color
+					U.name = src.name
+					U.desc = src.desc
 				to_chat(usr, span_notice("Now wearing as uniform!"))
 				qdel(src)

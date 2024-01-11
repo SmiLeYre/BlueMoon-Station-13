@@ -102,7 +102,7 @@
 //				if(target.anti_magic_check(FALSE, TRUE))
 //					to_chat(src, "<span class='revenminor'>Something's wrong! [target] seems to be resisting the sucking, leaving you vulnerable!</span>")
 //					target.set_resting(TRUE,TRUE)
-//					target.visible_message("<span class='warning'>[target] slumps onto the ground.</span>", \
+//					target.visible_message("<span class='warning'>[target] slumps onto the ground.</span>",
 //											   "<span class='revenwarning'>Violet lights, dancing in your vision, receding--</span>")
 //					draining = FALSE
 //					return
@@ -122,7 +122,7 @@
 //						essence_regen_cap += 5
 //						to_chat(src, "<span class='revenboldnotice'>The absorption of [target]'s fluids has increased your maximum essence level. Your new maximum essence is [essence_regen_cap].</span>")
 //					target.set_resting(TRUE,TRUE)
-//					target.visible_message("<span class='warning'>[target] slumps onto the ground.</span>", \
+//					target.visible_message("<span class='warning'>[target] slumps onto the ground.</span>",
 //										   "<span class='revenwarning'>Violets lights, dancing in your vision, getting clo--</span>")
 //					drained_mobs.Add(target)
 //					target.setStaminaLoss(150)
@@ -132,7 +132,7 @@
 //					to_chat(src, "<span class='revenwarning'>[target ? "[target] has":"[target.ru_who(TRUE)]"] been drawn out of your grasp. The link has been broken.</span>")
 //					if(target) //Wait, target is WHERE NOW?
 //						target.set_resting(TRUE,TRUE)
-//						target.visible_message("<span class='warning'>[target] slumps onto the ground.</span>", \
+//						target.visible_message("<span class='warning'>[target] slumps onto the ground.</span>",
 //											   "<span class='revenwarning'>Violets lights, dancing in your vision, receding--</span>")
 //				qdel(B)
 //			else
