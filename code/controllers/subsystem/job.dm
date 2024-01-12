@@ -765,6 +765,11 @@ SUBSYSTEM_DEF(job)
 				if(i[LOADOUT_CUSTOM_DESCRIPTION])
 					var/custom_description = i[LOADOUT_CUSTOM_DESCRIPTION]
 					I.desc = custom_description
+				if(i["loadout_custom_tagname"]) //for collars with tagnames
+					var/custom_tagname = i["loadout_custom_tagname"]
+					var/obj/item/clothing/neck/petcollar/collar = I
+					collar.tagname = custom_tagname
+					collar.name = "[initial(collar.name)] - [collar.tagname]"
 			if(!M.equip_to_slot_if_possible(I, G.slot, disable_warning = TRUE, bypass_equip_delay_self = TRUE)) // If the job's dresscode compliant, try to put it in its slot, first
 				if(iscarbon(M))
 					var/mob/living/carbon/C = M
@@ -828,6 +833,11 @@ SUBSYSTEM_DEF(job)
 				if(i[LOADOUT_CUSTOM_DESCRIPTION])
 					var/custom_description = i[LOADOUT_CUSTOM_DESCRIPTION]
 					I.desc = custom_description
+				if(i["loadout_custom_tagname"]) //for collars with tagnames
+					var/custom_tagname = i["loadout_custom_tagname"]
+					var/obj/item/clothing/neck/petcollar/collar = I
+					collar.tagname = custom_tagname
+					collar.name = "[initial(collar.name)] - [collar.tagname]"
 			if(!M.equip_to_slot_if_possible(I, G.slot, disable_warning = TRUE, bypass_equip_delay_self = TRUE)) // If the job's dresscode compliant, try to put it in its slot, first
 				if(iscarbon(M))
 					var/mob/living/carbon/C = M

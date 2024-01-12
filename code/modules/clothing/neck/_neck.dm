@@ -199,7 +199,7 @@
 		. += " with \a [access_id.get_examine_string(user)] clipped onto it"
 
 /obj/item/clothing/neck/petcollar/attack_self(mob/user)
-	tagname = stripped_input(user, "Would you like to change the name on the tag?", "Name your new pet", "Spot", MAX_NAME_LEN)
+	tagname = stripped_input(user, "Would you like to change the name on the tag?", "Name your new pet", tagname, MAX_NAME_LEN)
 	name = tagname ? "[initial(name)] - [tagname]" : initial(name)
 
 /obj/item/clothing/neck/petcollar/Entered(atom/movable/AM)
