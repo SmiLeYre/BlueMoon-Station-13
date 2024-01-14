@@ -293,9 +293,10 @@
 	if(bloodsucker_level_unspent <= 0 || !owner || !owner.current || !owner.current.client || !isliving(owner.current))
 		return
 	// BLUEMOON ADD START
-	if(vassals.len < bloodsucker_level - 1) // для прогресса, вампиру необходимо набирать слуг
-		to_chat(owner.current, span_warning("Нужно больше вассалов, чтобы повысить своё могущество!"))
-		return
+	if(bloodsucker_level >= 2)
+		if(vassals.len <= bloodsucker_level / 2) // для прогресса, вампиру необходимо набирать слуг, по 1 за каждые 2 уровня
+			to_chat(owner.current, span_warning("Нужно больше вассалов, чтобы повысить своё могущество!"))
+			return
 	// BLUEMOON ADD END
 	var/mob/living/L = owner.current
 	level_bloodcost = max_blood_volume * 0.2
