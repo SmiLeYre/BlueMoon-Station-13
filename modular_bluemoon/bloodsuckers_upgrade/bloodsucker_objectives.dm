@@ -6,7 +6,7 @@
 	explanation_text = "Подчините себе не менее [target_amount] слуг."
 
 /datum/objective/bloodsucker/gain_vassals/generate_objective()
-	target_amount = rand(4,6)
+	target_amount = rand(3,5)
 	update_explanation_text()
 
 //	УСЛОВИЯ ПОБЕДЫ
