@@ -12,7 +12,7 @@
 	antag_datum = /datum/antagonist/traitor
 	minimum_required_age = 0
 	protected_roles = list("Expeditor", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
-	restricted_roles = list("AI", "Cyborg") //BLUEMOON CHANGES
+	restricted_roles = list("AI", "Cyborg", "Positronic Brain") //BLUEMOON CHANGES
 	required_candidates = 1
 	weight = 13 //BLUEMOON CHANGES
 	cost = 8 // Avoid raising traitor threat above 10, as it is the default low cost ruleset.
@@ -105,7 +105,7 @@
 	antag_flag = ROLE_CHANGELING
 	antag_datum = /datum/antagonist/changeling
 	protected_roles = list("Expeditor", "Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
-	restricted_roles = list("AI", "Cyborg")
+	restricted_roles = list("AI", "Cyborg", "Positronic Brain")
 	required_candidates = 1
 	weight = 8 //BLUEMOON CHANGES
 	cost = 15 //BLUEMOON CHANGES
@@ -154,7 +154,7 @@
 	antag_flag = ROLE_HERETIC
 	antag_datum = /datum/antagonist/heretic
 	protected_roles = list("Expeditor", "Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
-	restricted_roles = list("AI", "Cyborg")
+	restricted_roles = list("AI", "Cyborg", "Positronic Brain")
 	required_candidates = 1
 	weight = 8 //BLUEMOON CHANGES
 	cost = 15

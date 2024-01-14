@@ -1123,7 +1123,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		loadout_data = safe_json_decode(S["loadout"])
 	else
 		loadout_data = list()
-
 	//try to fix any outdated data if necessary
 	//preference updating will handle saving the updated data for us.
 	if(needs_update >= 0)

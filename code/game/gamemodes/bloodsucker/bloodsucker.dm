@@ -26,7 +26,7 @@
 	false_report_weight = 1
 	chaos = 4
 	protected_jobs = list("Prisoner", "Shaft Miner",  "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain") // BLUEMOON EDIT
-	restricted_jobs = list("AI", "Cyborg") // BLUEMOON EDIT
+	restricted_jobs = list("AI", "Cyborg", "Positronic Brain") // BLUEMOON EDIT
 	required_players = 2
 	required_enemies = 2
 	recommended_enemies = 4

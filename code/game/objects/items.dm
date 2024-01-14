@@ -316,6 +316,22 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		var/datum/block_parry_data/data = return_block_parry_datum(block_parry_data)
 		. += "[src] has the capacity to be used to block and/or parry. <a href='?src=[REF(data)];name=[name];block=[item_flags & ITEM_CAN_BLOCK];parry=[item_flags & ITEM_CAN_PARRY];render=1'>\[Show Stats\]</a>"
 
+	// BLUEMOON ADD START - выбор вещей из лодаута как family heirloom
+	if(item_flags & FAMILY_HEIRLOOM)
+		var/my_heirloom = FALSE
+		if(istype(user, /mob/living))
+			var/mob/living/examiner = user
+			for(var/datum/quirk/Q in examiner.roundstart_quirks)
+				if(istype(Q, /datum/quirk/family_heirloom))
+					var/datum/quirk/family_heirloom/heirloom_quirk = Q
+					if(src == heirloom_quirk.heirloom)
+						my_heirloom = TRUE // МОЯ ПРЕЛЕСТЬ!
+		if(my_heirloom)
+			. += "<span class='boldnotice'>[src] - это моя реликвия! Нужно её беречь!</span>"
+		else
+			. += "<span class='notice'>[src] выглядит очень ухоженно. Видимо, этот предмет кому-то ценен...</span>"
+	// BLUEMOON ADD END
+
 	if(!user.research_scanner)
 		return
 

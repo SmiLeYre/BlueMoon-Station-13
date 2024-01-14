@@ -1041,6 +1041,12 @@
 								extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_rename=1;loadout_gear_name=[html_encode(gear.name)];'>Name</a> [loadout_item[LOADOUT_CUSTOM_NAME] ? loadout_item[LOADOUT_CUSTOM_NAME] : "N/A"]"
 							if(gear.loadout_flags & LOADOUT_CAN_DESCRIPTION)
 								extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_redescribe=1;loadout_gear_name=[html_encode(gear.name)];'>Description</a>"
+							else
+								extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_addheirloom=1;loadout_gear_name=[html_encode(gear.name)];'>Select as Heirloom</a><BR>"
+							// BLUEMOON ADD START - выбор вещей из лодаута как family heirloom
+							if(loadout_item[LOADOUT_IS_HEIRLOOM])
+								extra_loadout_data += "<BR><a class='linkOn' href='?_src_=prefs;preference=gear;loadout_removeheirloom=1;loadout_gear_name=[html_encode(gear.name)];'>Select as Heirloom</a><BR>"
+							// BLUEMOON ADD END
 						else if((gear_points - gear.cost) < 0)
 							class_link = "style='white-space:normal;' class='linkOff'"
 						else if(donoritem)

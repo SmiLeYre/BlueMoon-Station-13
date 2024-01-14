@@ -1,4 +1,27 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/obj/item/stack/ore/uranium,
+/mob/living/simple_animal/hostile/alien,
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/has_grav)
+"ab" = (
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/machinery/power/apc/auto_name/south{
+	locked = 0;
+	start_charge = 0
+	},
+/obj/structure/alien/weeds/node,
+/mob/living/simple_animal/hostile/alien/sentinel,
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/forehall)
+"ac" = (
+/obj/item/stack/ore/gold,
+/mob/living/simple_animal/hostile/alien,
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/has_grav)
 "ad" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 8
@@ -9,6 +32,25 @@
 	},
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/atmos)
+"ae" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/purple/half{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 5
+	},
+/mob/living/simple_animal/hostile/alien,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
+"af" = (
+/obj/effect/decal/cleanable/glass,
+/obj/effect/turf_decal/tile/purple/half{
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/alien/sentinel,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
 "ag" = (
 /obj/structure/mirror/directional/west,
 /obj/structure/sink/directional/east,
@@ -27,6 +69,14 @@
 	},
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall)
+"aj" = (
+/obj/effect/turf_decal/tile/purple/half{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/alien/sentinel,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
 "ak" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
@@ -38,6 +88,14 @@
 	},
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/toolstorage)
+"al" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/alien/drone,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
 "am" = (
 /obj/item/mop,
 /obj/item/soap/nanotrasen,
@@ -53,6 +111,18 @@
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/comms)
+"ao" = (
+/obj/effect/decal/cleanable/blood/gibs/old,
+/obj/effect/decal/cleanable/glass,
+/obj/effect/turf_decal/tile/purple/half,
+/mob/living/simple_animal/hostile/alien/drone,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
+"ap" = (
+/obj/effect/turf_decal/tile/purple/anticorner,
+/mob/living/simple_animal/hostile/alien/queen,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
 "aq" = (
 /obj/structure/toilet{
 	dir = 8
@@ -84,6 +154,11 @@
 	},
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/observ)
+"au" = (
+/obj/item/stack/ore/uranium,
+/mob/living/simple_animal/hostile/alien/drone,
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/has_grav)
 "av" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/mob_spawn/human/corpse/cargo_tech,
@@ -96,6 +171,28 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/port_tarkon)
+"ax" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/sand,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
+/mob/living/simple_animal/hostile/alien/drone,
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/mining)
+"ay" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
+/obj/effect/turf_decal/tile/brown/half,
+/mob/living/simple_animal/hostile/alien,
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/mining)
+"az" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/caution/stand_clear,
+/obj/effect/turf_decal/tile/brown/half,
+/mob/living/simple_animal/hostile/carp,
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/storage)
 "aF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/gibspawner/human/bodypartless,
@@ -938,11 +1035,6 @@
 /obj/effect/turf_decal/loading_area,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
-"fK" = (
-/mob/living/simple_animal/hostile/alien/drone,
-/obj/item/stack/ore/uranium,
-/turf/open/floor/plating/asteroid,
-/area/ruin/space/has_grav)
 "fL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
@@ -1456,14 +1548,6 @@
 "iq" = (
 /turf/open/floor/iron/white,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall)
-"iu" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/alien,
-/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
-/obj/effect/turf_decal/tile/brown/half,
-/turf/open/floor/iron,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/mining)
 "iv" = (
 /mob/living/simple_animal/hostile/carp/megacarp,
 /turf/open/space/basic,
@@ -2824,11 +2908,6 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/engine/vacuum,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/atmos)
-"pD" = (
-/mob/living/simple_animal/hostile/alien,
-/obj/item/stack/ore/uranium,
-/turf/open/floor/plating/asteroid,
-/area/ruin/space/has_grav)
 "pE" = (
 /obj/machinery/airalarm/directional/north,
 /obj/effect/turf_decal/tile/purple/half{
@@ -3647,11 +3726,6 @@
 "uv" = (
 /turf/closed/wall,
 /area/ruin/space/has_grav/bluemoon/port_tarkon)
-"uw" = (
-/mob/living/simple_animal/hostile/alien,
-/obj/item/stack/ore/gold,
-/turf/open/floor/plating/asteroid,
-/area/ruin/space/has_grav)
 "ux" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 4
@@ -3914,14 +3988,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/atmos)
-"vQ" = (
-/mob/living/simple_animal/hostile/alien/drone,
-/obj/effect/decal/cleanable/blood/tracks{
-	dir = 5
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/dark,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
 "vR" = (
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/iron/white,
@@ -3972,14 +4038,6 @@
 /obj/effect/gibspawner/human/bodypartless,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/atmos)
-"wl" = (
-/obj/effect/decal/cleanable/glass,
-/mob/living/simple_animal/hostile/alien/sentinel,
-/obj/effect/turf_decal/tile/purple/half{
-	dir = 1
-	},
-/turf/open/floor/iron/dark,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
 "wm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stock_parts/matter_bin,
@@ -5882,13 +5940,6 @@
 	},
 /turf/open/floor/carpet/cyan,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/dorms)
-"Io" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/carp,
-/obj/effect/turf_decal/caution/stand_clear,
-/obj/effect/turf_decal/tile/brown/half,
-/turf/open/floor/iron,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/storage)
 "Iw" = (
 /turf/closed/wall,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/power1)
@@ -6640,11 +6691,6 @@
 /obj/machinery/atmospherics/miner/toxins,
 /turf/open/floor/engine/plasma,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/atmos)
-"ME" = (
-/mob/living/simple_animal/hostile/alien/queen,
-/obj/effect/turf_decal/tile/purple/anticorner,
-/turf/open/floor/iron/dark,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
 "MF" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/decal/cleanable/dirt,
@@ -6980,19 +7026,6 @@
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/dorms)
-"Pc" = (
-/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/machinery/power/apc/auto_name/south{
-	locked = 0;
-	start_charge = 0
-	},
-/mob/living/simple_animal/hostile/alien/sentinel,
-/obj/structure/alien/weeds/node,
-/turf/open/floor/iron,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/forehall)
 "Pf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
@@ -7434,17 +7467,6 @@
 /mob/living/simple_animal/hostile/carp,
 /turf/open/space/basic,
 /area/template_noop)
-"RO" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/alien,
-/obj/effect/turf_decal/tile/purple/half{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/blood/tracks{
-	dir = 5
-	},
-/turf/open/floor/iron/dark,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
 "RP" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/tile/brown/half{
@@ -8049,14 +8071,6 @@
 /obj/machinery/light/dim/directional/west,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/port_tarkon)
-"Vl" = (
-/mob/living/simple_animal/hostile/alien/sentinel,
-/obj/effect/turf_decal/tile/purple/half{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/dark,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
 "Vm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
@@ -8320,13 +8334,6 @@
 "WU" = (
 /turf/closed/wall,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/porthall)
-"WW" = (
-/obj/effect/decal/cleanable/blood/gibs/old,
-/mob/living/simple_animal/hostile/alien/drone,
-/obj/effect/decal/cleanable/glass,
-/obj/effect/turf_decal/tile/purple/half,
-/turf/open/floor/iron/dark,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
 "WY" = (
 /turf/open/space/basic,
 /area/template_noop)
@@ -8624,13 +8631,6 @@
 /obj/structure/alien/weeds/node,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
-"Zl" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/sand,
-/mob/living/simple_animal/hostile/alien/drone,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
-/turf/open/floor/iron,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/mining)
 "Zm" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 4
@@ -10500,7 +10500,7 @@ jN
 yi
 wo
 nP
-RO
+ae
 fC
 iZ
 Uc
@@ -10577,7 +10577,7 @@ nS
 Nh
 pa
 VU
-WW
+ao
 Xy
 mi
 rh
@@ -10719,7 +10719,7 @@ zK
 DG
 FF
 db
-wl
+af
 pr
 Gn
 hD
@@ -10940,7 +10940,7 @@ FF
 db
 DO
 wx
-vQ
+al
 YB
 Yf
 Xy
@@ -11009,7 +11009,7 @@ Wa
 kf
 yi
 yi
-Pc
+ab
 db
 QX
 Ua
@@ -11158,10 +11158,10 @@ hB
 FF
 db
 HY
-Vl
+aj
 jM
 GU
-ME
+ap
 Xy
 wC
 rh
@@ -12512,7 +12512,7 @@ ZV
 EO
 PR
 EO
-Io
+az
 cE
 hu
 Lo
@@ -12616,7 +12616,7 @@ ed
 ed
 DK
 un
-uw
+ac
 ta
 ta
 rE
@@ -12687,7 +12687,7 @@ Wa
 ta
 ta
 gt
-pD
+aa
 ta
 ta
 ta
@@ -13059,7 +13059,7 @@ ta
 ta
 ta
 ta
-fK
+au
 TM
 ta
 Wa
@@ -13302,10 +13302,10 @@ Wa
 bH
 Lp
 Pp
-Zl
+ax
 qF
 gy
-iu
+ay
 Cs
 qr
 HH
@@ -13955,6 +13955,663 @@ WY
 WY
 WY
 iv
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+"}
+(72,1,1) = {"
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+"}
+(73,1,1) = {"
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+"}
+(74,1,1) = {"
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+"}
+(75,1,1) = {"
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+"}
+(76,1,1) = {"
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+"}
+(77,1,1) = {"
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+"}
+(78,1,1) = {"
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+"}
+(79,1,1) = {"
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+"}
+(80,1,1) = {"
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
+WY
 WY
 WY
 WY

@@ -125,7 +125,8 @@
 	if(!istype(M) || M.stat == DEAD || M.mob_transforming || (GODMODE & M.status_flags))
 		return
 
-	tgui_alert_async(M, "ВНИМАНИЕ! ВЫ БЫЛИ ОБРАЩЕНЫ В ДРУГОЕ СУЩЕСТВО!! ИЗУЧИТЕ СВОЮ НОВУЮ ОБОЛОЧКУ И ИГРАЙТЕ!!")
+	to_chat(M, span_reallybig("ВНИМАНИЕ! ВЫ БЫЛИ ОБРАЩЕНЫ В ДРУГОЕ СУЩЕСТВО, ВАША ПРОШЛАЯ ЛИЧНОСТЬ ЗАБЫТА!! ИЗУЧИТЕ СВОЮ НОВУЮ ОБОЛОЧКУ И ИГРАЙТЕ!!"))
+	tgui_alert_async(M, "ВНИМАНИЕ! ВЫ БЫЛИ ОБРАЩЕНЫ В ДРУГОЕ СУЩЕСТВО, ВАША ПРОШЛАЯ ЛИЧНОСТЬ ЗАБЫТА!! ИЗУЧИТЕ СВОЮ НОВУЮ ОБОЛОЧКУ И ИГРАЙТЕ!!!")
 	M.mob_transforming = TRUE
 	M.Paralyze(INFINITY)
 	M.icon = null

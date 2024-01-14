@@ -10,7 +10,7 @@
 	config_tag = "traitor"
 	antag_flag = ROLE_TRAITOR
 	false_report_weight = 20 //Reports of traitors are pretty common.
-	restricted_jobs = list("AI", "Cyborg") //BLUEMOON CHANGES
+	restricted_jobs = list("AI", "Cyborg", "Positronic Brain") //BLUEMOON CHANGES
 	protected_jobs = list("Shaft Miner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
 	required_players = 0
 	required_enemies = 1

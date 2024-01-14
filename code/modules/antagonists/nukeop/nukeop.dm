@@ -52,6 +52,8 @@
 		H.canloadappearance = TRUE
 		H.checkloadappearance()
 
+	give_alias()
+
 	return TRUE
 
 /datum/antagonist/nukeop/greet()
@@ -60,7 +62,6 @@
 	owner.announce_objectives()
 
 /datum/antagonist/nukeop/on_gain()
-	give_alias()
 	forge_objectives()
 	. = ..()
 	equip_op()

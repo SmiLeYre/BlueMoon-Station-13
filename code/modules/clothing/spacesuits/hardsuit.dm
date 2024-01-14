@@ -496,10 +496,11 @@
 	hardsuit_type = "wiz"
 	resistance_flags = FIRE_PROOF | ACID_PROOF //No longer shall our kind be foiled by lone chemists with spray bottles!
 	armor = list(MELEE = 40, BULLET = 40, LASER = 40, ENERGY = 40, BOMB = 35, BIO = 100, RAD = 50, FIRE = 100, ACID = 100, WOUND = 30)
-	heat_protection = HEAD												//Uncomment to enable firesuit protection
-	slowdown = -0.25
-	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	var/magic_flags = SPELL_WIZARD_HAT|SPELL_CULT_HELMET
+
+	heat_protection = HEAD
+	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/head/helmet/space/hardsuit/wizard/ComponentInitialize()
 	. = ..()
@@ -512,15 +513,17 @@
 	desc = "A bizarre gem-encrusted suit that radiates magical energies."
 	item_state = "wiz_hardsuit"
 	tail_state = "wizard"
+	slowdown = -0.5
 	w_class = WEIGHT_CLASS_NORMAL
-	resistance_flags = FIRE_PROOF | ACID_PROOF
 	armor = list(MELEE = 40, BULLET = 40, LASER = 40, ENERGY = 40, BOMB = 35, BIO = 100, RAD = 50, FIRE = 100, ACID = 100, WOUND = 30)
 	allowed = list(/obj/item/teleportation_scroll, /obj/item/tank/internals)
-	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS					//Uncomment to enable firesuit protection
-	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/wizard
 	mutantrace_variation = STYLE_DIGITIGRADE
 	var/magic_flags = SPELL_WIZARD_ROBE|SPELL_CULT_ARMOR
+
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/suit/space/hardsuit/wizard/ComponentInitialize()
 	. = ..()
