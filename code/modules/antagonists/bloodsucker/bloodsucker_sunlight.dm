@@ -26,6 +26,7 @@
 	. = ..()
 // BLUEMOON ADD END
 
+/* BLUEMOON REMOVAL START
 /obj/effect/sunlight/process()
 	// Update all Bloodsucker sunlight huds
 	for(var/datum/mind/M in SSticker.mode.bloodsuckers)
@@ -38,6 +39,7 @@
 	if(amDay)
 		if(time_til_cycle > 0 && time_til_cycle % 4 == 0)
 			punish_vamps()
+			give_home_power()
 			if(!issued_XP && time_til_cycle <= 5)
 				issued_XP = TRUE
 				// Cycle through all vamp antags and check if they're inside a closet.
@@ -55,8 +57,9 @@
 					if(istype(bloodsuckerdatum))
 						bloodsuckerdatum.RankUp()	// Rank up! Must still be in a coffin to level!
 
+
 		// BLUEMOON ADD START - фикс резкого пропуска фазы дня
-		if(!(time_til_cycle <= 0))
+		if(!(time_til_cycle < 0))
 			return
 		// BLUEMOON ADD END
 
@@ -99,6 +102,31 @@
 				amDay = TRUE
 				message_admins("ВАМПИРСКОЕ НАПОМИНАНИЕ: Дневное время началось и продлится [TIME_BLOODSUCKER_DAY / 60] минут.")
 				time_til_cycle = TIME_BLOODSUCKER_DAY
+/ BLUEMOON REMOVAL END */
+
+// BLUEMOON ADD START - переписываем процесс дня. Оставляю здесь для облегчения поиска и отслеживания изменений
+/obj/effect/sunlight/process()
+	// Update all Bloodsucker sunlight huds
+	for(var/datum/mind/M in SSticker.mode.bloodsuckers)
+		if(!istype(M) || !istype(M.current))
+			continue
+		var/datum/antagonist/bloodsucker/bloodsuckerdatum = M.has_antag_datum(ANTAG_DATUM_BLOODSUCKER)
+		if(istype(bloodsuckerdatum))
+			bloodsuckerdatum.update_sunlight(max(0, time_til_cycle), amDay) // This pings all HUDs
+	time_til_cycle--
+	if(time_til_cycle <= 0)
+		for(var/datum/mind/M in SSticker.mode.bloodsuckers)
+			if(!istype(M) || !istype(M.current))
+				continue
+			var/datum/antagonist/bloodsucker/bloodsuckerdatum = M.has_antag_datum(ANTAG_DATUM_BLOODSUCKER)
+			if(istype(bloodsuckerdatum))
+				bloodsuckerdatum.RankUp()	// Rank up! Must still be in a coffin to level!
+		give_home_power()
+		time_til_cycle = nighttime_duration
+		warn_daylight(5,"<span class = 'cult'>Вы пережили очередной цикл. Сила растёт!</span>",\
+							"<span class = 'cult'>Очередной цикл прошёл, ваш владыка стал сильнее!</span>")
+
+// BLUEMOON ADD END
 
 /obj/effect/sunlight/proc/warn_daylight(danger_level =0, vampwarn = "", vassalwarn = "")
 	for(var/datum/mind/M in SSticker.mode.bloodsuckers)
