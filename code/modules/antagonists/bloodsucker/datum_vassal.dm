@@ -39,6 +39,11 @@
 	owner.current.apply_status_effect(/datum/status_effect/agent_pinpointer/vassal_edition)
 	// Powers
 	var/datum/action/bloodsucker/vassal/recuperate/new_Recuperate = new ()
+	// BLUEMOON ADD START
+	var/datum/action/bloodsucker/tutorial/vassal/new_Tutorial = new()
+	new_Tutorial.Grant(owner.current)
+	powers += new_Tutorial
+	// BLUEMOON ADD END
 	new_Recuperate.Grant(owner.current)
 	powers += new_Recuperate
 	// Give Vassal Objective
@@ -91,6 +96,8 @@
 	to_chat(owner, "<span class='cult'>Вы теперь смертный слуга [master.owner.current], кровососущего вампира!</span>")
 	to_chat(owner, "<span class='boldannounce'>Сила бессмертной крови обязывает вас слушаться [master.owner.current.ru_ego()] во всём, даже жертвовать собой ради жизни вампира.<br>\
 			Вы не обязаны слушаться какого-либо другого кровососа, ведь только [master.owner.current] владеет вами. Законы Пакта теперь для вас ничто; только воля вашего хозяина или хозяйки превыше всего.<span>")
+	to_chat(owner, "<span class='userdanger'>Вы - антагонист! Не игнорируйте своего хоязина и тем более не действуйте против него!<span>") // BLUEMOON ADD
+
 	// Effects...
 	owner.current.playsound_local(null, 'sound/magic/mutate.ogg', 100, FALSE, pressure_affected = FALSE)
 	//owner.store_memory("You became the mortal servant of [master.owner.current], a bloodsucking vampire!")
