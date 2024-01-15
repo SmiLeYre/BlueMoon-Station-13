@@ -317,13 +317,18 @@ All ShuttleMove procs go here
 /mob/living/lateShuttleMove(turf/oldT, list/movement_force, move_dir)
 	if(buckled)
 		return
+	// BLUEMOON ADD START - Персонажи с размером более 150% не падают на пол
+	if(get_size(src) >= 1.5)
+		to_chat(src, span_notice("Вас тряхнуло, но вы устояли на ногах благодаря своему размеру."))
+		Stun(movement_force["KNOCKDOWN"])
+		return
+	// BLUEMOON ADD END
 
 	. = ..()
 
 	var/knockdown = movement_force["KNOCKDOWN"]
 	if(knockdown)
 		DefaultCombatKnockdown(knockdown)
-
 
 /mob/living/simple_animal/hostile/megafauna/onShuttleMove(turf/newT, turf/oldT, list/movement_force, move_dir, obj/docking_port/stationary/old_dock, obj/docking_port/mobile/moving_dock)
 	. = ..()
