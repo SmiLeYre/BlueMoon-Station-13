@@ -9,7 +9,7 @@
 	name = "AI core"
 	icon_state = "ai_core"
 
-/atom/movable/screen/ai/aicore/Click()
+/atom/movable/screen/ai/ai_core/Click()
 	if(..())
 		return
 	var/mob/living/silicon/ai/AI = usr
