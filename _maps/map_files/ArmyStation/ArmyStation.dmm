@@ -320,7 +320,7 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/structure/ai_core/latejoin_inactive,
+/obj/structure/AIcore/latejoin_inactive,
 /turf/open/floor/festive/cobblestone/safe,
 /area/hilbertshotel)
 "dL" = (
