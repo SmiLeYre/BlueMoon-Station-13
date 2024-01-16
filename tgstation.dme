@@ -4278,6 +4278,8 @@
 #include "modular_bluemoon\rakeideas\hca\code\hca_forms.dm"
 #include "modular_bluemoon\rbmk_modification\rbmk_modification.dm"
 #include "modular_bluemoon\real_round_time\real_round_time.dm"
+#include "modular_bluemoon\Ren\Code\inventory.dm"
+#include "modular_bluemoon\Ren\Code\mobs.dm"
 #include "modular_bluemoon\Ren\Code\weapons.dm"
 #include "modular_bluemoon\service_staff\service_staff.dm"
 #include "modular_bluemoon\size_tool\size_tool.dm"
