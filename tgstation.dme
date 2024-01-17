@@ -4261,6 +4261,7 @@
 #include "modular_bluemoon\krashly\code\modules\mobs\simple\brown_carp.dm"
 #include "modular_bluemoon\krashly\code\uplink\uplink.dm"
 #include "modular_bluemoon\krashly\code\uplink\uplink_items.dm"
+#include "modular_bluemoon\lazybodia\code\snout.dm"
 #include "modular_bluemoon\loadout_rings\rings.dm"
 #include "modular_bluemoon\phenyamomota\code\modules\cargo\packs\engineering.dm"
 #include "modular_bluemoon\phenyamomota\code\modules\clothing\labcoat.dm"
