@@ -10,23 +10,26 @@
 
 /datum/quirk/onelife/add()
 	RegisterSignal(quirk_holder, COMSIG_MOB_DEATH, .proc/get_rid_of_them)
-	RegisterSignal(quirk_holder, COMSIG_MOB_EMOTE, .proc/get_rid_of_them_emote)
+	//RegisterSignal(quirk_holder, COMSIG_MOB_EMOTE, .proc/get_rid_of_them_emote) //чтобы самоубиться можно использовать suicide
 
 /datum/quirk/onelife/remove()
 	remove_signals()
 
 /datum/quirk/onelife/proc/remove_signals()
 	if(!QDELETED(quirk_holder))
-		UnregisterSignal(quirk_holder, list(COMSIG_MOB_DEATH, COMSIG_MOB_EMOTE))
+		UnregisterSignal(quirk_holder, list(COMSIG_MOB_DEATH/*, COMSIG_MOB_EMOTE (чтобы самоубиться можно использовать suicide)*/))
 
 /datum/quirk/onelife/proc/get_rid_of_them(mob/user, list/emote_args)
 	if(quirk_holder.stat == DEAD)
 		remove_signals()
 		quirk_holder.dust(TRUE, TRUE)
 
+
+/*чтобы самоубиться можно использовать suicide
 /datum/quirk/onelife/proc/get_rid_of_them_emote(mob/user, list/emote_args)
 	var/datum/emote/E
 	E = E.emote_list[lowertext(emote_args[EMOTE_ACT])]
 	if(E.key == "deathgasp")
 		remove_signals()
 		quirk_holder.dust(TRUE, TRUE)
+*/
