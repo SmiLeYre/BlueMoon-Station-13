@@ -389,7 +389,8 @@
 		"Feline" = image(icon = 'modular_splurt/icons/mob/widerobot.dmi', icon_state = "vixmed-b"), // SPLURT Addon (ChompS Port)
 		"Raptor V-4" = image(icon = 'modular_splurt/icons/mob/robots_64x45.dmi', icon_state = "medraptor-b"), // SPLURT Addon (ChompS Port)
 		"Raptor V-4 (alt)" = image(icon = 'modular_splurt/icons/mob/robots_64x45.dmi', icon_state = "traumaraptor-b"), // SPLURT Addon (ChompS Port)
-		"Handy" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "handy_medical") // SPLURT Addon (Fallout 13)
+		"Handy" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "handy_medical"), // SPLURT Addon (Fallout 13)
+		"Mechoid" = image(icon = 'modular_bluemoon/leesuro/icons/mob/widerobot_mechoid.dmi', icon_state = "wide-mechoid-medical") // Danaiyka request
 		)
 		var/list/L = list("Medihound" = "medihound", "Medihound Dark" = "medihounddark", "Vale" = "valemed")
 		for(var/a in L)
@@ -568,6 +569,12 @@
 			moduleselect_icon = "medihound"
 			moduleselect_alternate_icon = 'modular_citadel/icons/ui/screen_cyborg.dmi'
 			dogborg = TRUE
+		if("Mechoid") //Danaiyka request
+			cyborg_base_icon = "wide-mechoid-medical"
+			cyborg_icon_override = 'modular_bluemoon/leesuro/icons/mob/widerobot_mechoid.dmi'
+			special_light_key = "wide-mechoid-medical"
+			sleeper_overlay = "medraptor_sleeper"
+			dogborg = TRUE
 		else
 			return FALSE
 	return ..()
@@ -651,7 +658,8 @@
 		"Haydee" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "haydeeengi"), // SPLURT Addon
 		"Feline" = image(icon = 'modular_splurt/icons/mob/widerobot.dmi', icon_state = "vixengi-b"), // SPLURT Addon (ChompS Port)
 		"Raptor V-4" = image(icon = 'modular_splurt/icons/mob/robots_64x45.dmi', icon_state = "engiraptor-b"), // SPLURT Addon (ChompS Port)
-		"Handy" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "handy_engineer") // SPLURT Addon (Fallout 13)
+		"Handy" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "handy_engineer"), // SPLURT Addon (Fallout 13)
+		"Mechoid" = image(icon = 'modular_bluemoon/leesuro/icons/mob/widerobot_mechoid.dmi', icon_state = "wide-mechoid-engineer") // Danaiyka request
 		)
 		var/list/L = list("Pup Dozer" = "pupdozer", "Vale" = "valeeng")
 		for(var/a in L)
@@ -824,6 +832,12 @@
 			cyborg_icon_override = 'modular_splurt/icons/mob/robots_64x45.dmi'
 			sleeper_overlay = "engiraptor-sleeper"
 			dogborg = TRUE
+		if("Mechoid") //Danaiyka request
+			cyborg_base_icon = "wide-mechoid-engineer"
+			cyborg_icon_override = 'modular_bluemoon/leesuro/icons/mob/widerobot_mechoid.dmi'
+			special_light_key = "wide-mechoid-engineer"
+			sleeper_overlay = "engiraptor-sleeper"
+			dogborg = TRUE
 		else
 			return FALSE
 	return ..()
@@ -892,7 +906,8 @@
 		"Handy" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "handy_security"), // SPLURT Addon (Fallout 13)
 		"Sentry Bot" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "sentrybot"), // SPLURT Addon (Fallout 13)
 		"Securitron" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "securitron"), // SPLURT Addon (Fallout 13)
-		"FMeka Syndie" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "fmekasyndi") // Lyoll Request (Skyrat Port) & Добавлен дополнительно в СБ-борги по запросу SmiLeY
+		"FMeka Syndie" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "fmekasyndi"), // Lyoll Request (Skyrat Port) & Добавлен дополнительно в СБ-борги по запросу SmiLeY
+		"Mechoid" = image(icon = 'modular_bluemoon/leesuro/icons/mob/widerobot_mechoid.dmi', icon_state = "wide-mechoid-security") // Danaiyka request
 		)
 		var/list/L = list("K9" = "k9", "Vale" = "valesec", "K9 Dark" = "k9dark")
 		for(var/a in L)
@@ -1069,6 +1084,12 @@
 			cyborg_base_icon = "fmekasyndi"
 			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
 			hasrest = TRUE
+		if("Mechoid") //Danaiyka request
+			cyborg_base_icon = "wide-mechoid-security"
+			cyborg_icon_override = 'modular_bluemoon/leesuro/icons/mob/widerobot_mechoid.dmi'
+			special_light_key = "wide-mechoid-security"
+			sleeper_overlay = "secraptor-sleeper"
+			dogborg = TRUE
 		else
 			return FALSE
 	return ..()
@@ -1403,7 +1424,9 @@
 		"(Janitor) MMeka" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "mmekajani"), // Lyoll Request (Skyrat Port)
 		"(Service) Handy" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "handy_service"), // SPLURT Addon (Fallout 13)
 		"(Janitor) Handy" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "handy_janitor"), // SPLURT Addon (Fallout 13)
-		"(Pleasure) Handy" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "handy_pleasure") // SPLURT Addon (Fallout 13)
+		"(Pleasure) Handy" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "handy_pleasure"), // SPLURT Addon (Fallout 13)
+		"(Service) Mechoid" = image(icon = 'modular_bluemoon/leesuro/icons/mob/widerobot_mechoid.dmi', icon_state = "wide-mechoid-civi"), // Danaiyka request
+		"(Janitor) Mechoid" = image(icon = 'modular_bluemoon/leesuro/icons/mob/widerobot_mechoid.dmi', icon_state = "wide-mechoid-janitor") // Danaiyka request
 		)
 		var/list/L = list("(Service) DarkK9" = "k50", "(Service) Vale" = "valeserv", "(Service) ValeDark" = "valeservdark",
 						"(Janitor) Scrubpuppy" = "scrubpup")
@@ -1701,6 +1724,18 @@
 			cyborg_base_icon = "handy_pleasure"
 			cyborg_icon_override = 'modular_splurt/icons/mob/robots.dmi'
 			hat_offset = 3
+		if("(Service) Mechoid") //Danaiyka request
+			cyborg_base_icon = "wide-mechoid-civi"
+			cyborg_icon_override = 'modular_bluemoon/leesuro/icons/mob/widerobot_mechoid.dmi'
+			special_light_key = "wide-mechoid-civi"
+			sleeper_overlay = "serviraptor-sleeper"
+			dogborg = TRUE
+		if("(Janitor) Mechoid") //Danaiyka request
+			cyborg_base_icon = "wide-mechoid-janitor"
+			cyborg_icon_override = 'modular_bluemoon/leesuro/icons/mob/widerobot_mechoid.dmi'
+			special_light_key = "wide-mechoid-janitor"
+			sleeper_overlay = "janiraptor-sleeper"
+			dogborg = TRUE
 		else
 			return FALSE
 	return ..()
@@ -1773,7 +1808,8 @@
 		"Meka" = image(icon = 'modular_splurt/icons/mob/robots_32x64.dmi', icon_state = "mekamine"), // SPLURT Addon
 		"Feline" = image(icon = 'modular_splurt/icons/mob/widerobot.dmi', icon_state = "vixmine-b"), // SPLURT Adoon (ChompS Port)
 		"Raptor V-4" = image(icon = 'modular_splurt/icons/mob/robots_64x45.dmi', icon_state = "mineraptor-b"), // SPLURT Adoon (ChompS Port)
-		"Handy" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "handy_miner") // SPLURT Addon (Fallout 13)
+		"Handy" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "handy_miner"), // SPLURT Addon (Fallout 13)
+		"Mechoid" = image(icon = 'modular_bluemoon/leesuro/icons/mob/widerobot_mechoid.dmi', icon_state = "wide-mechoid-mining") // Danaiyka request
 		)
 		var/list/L = list("Blade" = "blade", "Vale" = "valemine")
 		for(var/a in L)
@@ -1919,6 +1955,12 @@
 		if("Raptor V-4") // SPLURT Addon (ChompS Port)
 			cyborg_base_icon = "mineraptor"
 			cyborg_icon_override = 'modular_splurt/icons/mob/robots_64x45.dmi'
+			sleeper_overlay = "mineraptor-sleeper"
+			dogborg = TRUE
+		if("Mechoid") //Danaiyka request
+			cyborg_base_icon = "wide-mechoid-mining"
+			cyborg_icon_override = 'modular_bluemoon/leesuro/icons/mob/widerobot_mechoid.dmi'
+			special_light_key = "wide-mechoid-mining"
 			sleeper_overlay = "mineraptor-sleeper"
 			dogborg = TRUE
 		else
