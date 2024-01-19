@@ -203,6 +203,24 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "AI Sat Ext"
 	icon_state = "ai_sat_west"
 
+//Command - AI Monitored
+
+/area/ai_monitored/command/storage/eva
+	name = "EVA Storage"
+	icon_state = "eva"
+	// ambience_index = AMBIENCE_DANGER
+	clockwork_warp_allowed = FALSE
+	ambientsounds = HIGHSEC
+
+/area/ai_monitored/command/storage/eva/upper
+	name = "Upper EVA Storage"
+
+/area/ai_monitored/command/nuke_storage
+	name = "Vault"
+	icon_state = "nuke_storage"
+	// airlock_wires = /datum/wires/airlock/command
+	ambientsounds = HIGHSEC
+
 //Maintenance
 
 /area/maintenance
@@ -608,25 +626,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	// ambience_index = AMBIENCE_ENGI
 	ambientsounds = ENGINEERING
 
-//Command - AI Monitored
-
-/area/ai_monitored/command/storage/eva
-	name = "EVA Storage"
-	icon_state = "eva"
-	// ambience_index = AMBIENCE_DANGER
-	clockwork_warp_allowed = FALSE
-	ambientsounds = HIGHSEC
-
-/area/ai_monitored/command/storage/eva/upper
-	name = "Upper EVA Storage"
-
-/area/ai_monitored/command/nuke_storage
-	name = "Vault"
-	icon_state = "nuke_storage"
-	// airlock_wires = /datum/wires/airlock/command
-	ambientsounds = HIGHSEC
 //Commons
-
 /area/commons
 	name = "Crew Quarters"
 	sound_environment = SOUND_AREA_STANDARD_STATION

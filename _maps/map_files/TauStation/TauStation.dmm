@@ -1529,7 +1529,7 @@
 /area/hallway/primary/port)
 "aCK" = (
 /obj/structure/table,
-/obj/item/aiModule/supplied/quarantine,
+/obj/item/ai_module/supplied/quarantine,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/ai_upload)
 "aCM" = (
@@ -10283,11 +10283,11 @@
 	name = "High-Risk Modules";
 	req_access_txt = "20"
 	},
-/obj/effect/spawner/lootdrop/aimodule_harmful,
-/obj/item/aiModule/supplied/oxygen,
-/obj/item/aiModule/supplied/protectStation,
-/obj/item/aiModule/zeroth/oneHuman,
-/obj/item/aiModule/reset/purge,
+/obj/effect/spawner/lootdrop/ai_module_harmful,
+/obj/item/ai_module/supplied/oxygen,
+/obj/item/ai_module/supplied/protectStation,
+/obj/item/ai_module/zeroth/oneHuman,
+/obj/item/ai_module/reset/purge,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/ai_upload)
 "dBj" = (
@@ -15337,17 +15337,17 @@
 	dir = 4
 	},
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/aimodule_neutral,
-/obj/effect/spawner/lootdrop/aimodule_harmless,
-/obj/effect/spawner/lootdrop/aimodule_lewd,
-/obj/item/aiModule/core/full/custom,
-/obj/item/aiModule/core/full/asimov,
-/obj/item/aiModule/core/freeformcore,
+/obj/effect/spawner/lootdrop/ai_module_neutral,
+/obj/effect/spawner/lootdrop/ai_module_harmless,
+/obj/effect/spawner/lootdrop/ai_module_lewd,
+/obj/item/ai_module/core/full/custom,
+/obj/item/ai_module/core/full/asimov,
+/obj/item/ai_module/core/freeformcore,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/ai_upload)
 "fmi" = (
 /obj/structure/table,
-/obj/item/aiModule/supplied/freeform,
+/obj/item/ai_module/supplied/freeform,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/ai_upload)
 "fmr" = (
@@ -46192,7 +46192,7 @@
 /area/security/brig)
 "pZz" = (
 /obj/structure/table,
-/obj/item/aiModule/reset,
+/obj/item/ai_module/reset,
 /obj/machinery/camera/motion{
 	c_tag = "AI Upload Chamber - Fore";
 	dir = 4;
@@ -67898,7 +67898,7 @@
 "xkc" = (
 /obj/structure/table,
 /obj/item/aicard,
-/obj/item/aiModule/reset,
+/obj/item/ai_module/reset,
 /obj/machinery/airalarm{
 	dir = 8;
 	pixel_x = 23

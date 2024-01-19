@@ -71,7 +71,7 @@
 		hitsound = 'sound/weapons/chainsawhit.ogg'
 	else
 		hitsound = "swing_hit"
-
+//
 /obj/item/chainsaw/update_icon_state()
 	icon_state = "chainsaw_[on ? "on" : "off"]"
 
@@ -86,7 +86,7 @@
 	return ..()
 
 /obj/item/chainsaw/doomslayer/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
-	if(attack_type & ATTACK_TYPE_PROJECTILE)
+	if((attack_type & ATTACK_TYPE_PROJECTILE) && !is_energy_reflectable_projectile(object))  // BLUEMOON edit. Reflects ballistics only
 		owner.visible_message("<span class='danger'>Ranged attacks just make [owner] angrier!</span>")
 		playsound(src, pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, 1)
 		return BLOCK_SUCCESS | BLOCK_PHYSICAL_EXTERNAL

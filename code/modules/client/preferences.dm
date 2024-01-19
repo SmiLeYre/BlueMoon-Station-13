@@ -1340,6 +1340,16 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 											extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_rename=1;loadout_gear_name=[html_encode(gear.name)];'>Name</a> [loadout_item[LOADOUT_CUSTOM_NAME] ? loadout_item[LOADOUT_CUSTOM_NAME] : "N/A"]"
 										if(gear.loadout_flags & LOADOUT_CAN_DESCRIPTION)
 											extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_redescribe=1;loadout_gear_name=[html_encode(gear.name)];'>Description</a>"
+										else
+											extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_addheirloom=1;loadout_gear_name=[html_encode(gear.name)];'>Select as Heirloom</a><BR>"
+										// BLUEMOON ADD START - выбор вещей из лодаута как family heirloom
+										if(loadout_item[LOADOUT_IS_HEIRLOOM])
+											extra_loadout_data += "<BR><a class='linkOn' href='?_src_=prefs;preference=gear;loadout_removeheirloom=1;loadout_gear_name=[html_encode(gear.name)];'>Select as Heirloom</a><BR>"
+										else
+											extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_addheirloom=1;loadout_gear_name=[html_encode(gear.name)];'>Select as Heirloom</a><BR>"
+										if(ispath(gear.path, /obj/item/clothing/neck/petcollar)) //"name tag" sounds better for me, but in petcollar code "tagname" is used so let it be.
+											extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_tagname=1;loadout_gear_name=[html_encode(gear.name)];'>Name tag</a> [loadout_item["loadout_custom_tagname"] ? loadout_item["loadout_custom_tagname"] : "Name tag is visible for everyone looking at wearer."]"
+									  // BLUEMOON ADD END
 									else if((gear_points - gear.cost) < 0)
 										class_link = "style='white-space:normal;' class='linkOff'"
 									else if(donoritem)
@@ -1361,8 +1371,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 												dat += gear.restricted_roles.Join(";")
 												dat += "</font>"
 									if(!istype(gear, /datum/gear/unlockable))
+										var/is_heirloom_string = loadout_item ? (loadout_item[LOADOUT_IS_HEIRLOOM] ? "<br><br><center><b>Ваша семейная реликвия!</b></center>" : "") : "" // BLUEMOON EDIT - выбор вещей из лодаута как family heirloom
 										// the below line essentially means "if the loadout item is picked by the user and has a custom description, give it the custom description, otherwise give it the default description"
-										dat += "</td><td><font size=2><i>[loadout_item ? (loadout_item[LOADOUT_CUSTOM_DESCRIPTION] ? loadout_item[LOADOUT_CUSTOM_DESCRIPTION] : gear.description) : gear.description]</i></font></td></tr>"
+										dat += "</td><td><font size=2><i>[loadout_item ? (loadout_item[LOADOUT_CUSTOM_DESCRIPTION] ? loadout_item[LOADOUT_CUSTOM_DESCRIPTION] : gear.description) : gear.description]</i> [is_heirloom_string]</font></td></tr>" // BLUEMOON EDIT - выбор вещей из лодаута как family heirloom
 									else
 										//we add the user's progress to the description assuming they have progress
 										var/datum/gear/unlockable/unlockable = gear
@@ -1829,7 +1840,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		//The job before the current job. I only use this to get the previous jobs color when I'm filling in blank rows.
 		var/datum/job/lastJob
 
-		for(var/datum/job/job in sortList(SSjob.occupations, /proc/cmp_job_display_asc))
+		for(var/datum/job/job in sort_list(SSjob.occupations, /proc/cmp_job_display_asc))
 
 			index += 1
 			if((index >= limit) || (job.title in splitJobs))
@@ -2215,7 +2226,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					return
 				if(!toggle_language(lang))
 					return
-				language = sortList(language)
+				language = sort_list(language)
 			if("reset")
 				language = list()
 		SetLanguage(user)
@@ -2944,9 +2955,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(lust_tol)
 						lust_tolerance = clamp(lust_tol, 75, 200)
 				if("sexual_potency")
-					var/sexual_pot = input(user, "Set your sexual potency. \n(10 = minimum, 25 = maximum.)", "Character Preference", sexual_potency) as num|null
+					var/sexual_pot = input(user, "Set your sexual potency. \n(-1 = minimum, 25 = maximum.) This determines the number of times your character can orgasm before becoming impotent, use -1 for no impotency.", "Character Preference", sexual_potency) as num|null
 					if(sexual_pot)
-						sexual_potency = clamp(sexual_pot, 10, 25)
+						sexual_potency = clamp(sexual_pot, -1, 25)
 
 				if("cock_color")
 					var/new_cockcolor = input(user, "Penis color:", "Character Preference","#"+features["cock_color"]) as color|null
@@ -3308,8 +3319,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/pickedui = input(user, "Choose your UI style.", "Character Preference", UI_style)  as null|anything in GLOB.available_ui_styles
 					if(pickedui)
 						UI_style = pickedui
-						if (parent && parent.mob && parent.mob.hud_used)
-							parent.mob.hud_used.update_ui_style(ui_style2icon(UI_style))
+						if (pickedui && parent && parent.mob && parent.mob.hud_used)
+							QDEL_NULL(parent.mob.hud_used)
+							parent.mob.create_mob_hud()
+							parent.mob.hud_used.show_hud(1, parent.mob)
 				if("pda_style")
 					var/pickedPDAStyle = input(user, "Выбирайте стиль своего КПК.", "Character Preference", pda_style)  as null|anything in GLOB.pda_styles
 					if(pickedPDAStyle)
@@ -3810,7 +3823,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							if(!length(key_bindings[old_key]))
 								key_bindings -= old_key
 						key_bindings[full_key] += list(kb_name)
-						key_bindings[full_key] = sortList(key_bindings[full_key])
+						key_bindings[full_key] = sort_list(key_bindings[full_key])
 					if(href_list["special"])		// special keys need a full reset
 						user.client.ensure_keys_set(src)
 					user << browse(null, "window=capturekeypress")
@@ -3852,7 +3865,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					outline_enabled = !outline_enabled
 				if("outline_color")
 					var/pickedOutlineColor = input(user, "Choose your outline color.", "General Preference", outline_color) as color|null
-					if(pickedOutlineColor != pickedOutlineColor)
+					if(pickedOutlineColor != outline_color)
 						outline_color = pickedOutlineColor // nullable
 				if("screentip_pref")
 					var/choice = input(user, "Choose your screentip preference", "Screentipping?", screentip_pref) as null|anything in GLOB.screentip_pref_options
@@ -4171,6 +4184,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				return
 			var/toggle = text2num(href_list["toggle_gear"])
 			if(!toggle && has_loadout_gear(loadout_slot, "[G.type]"))//toggling off and the item effectively is in chosen gear)
+				var/gear = has_loadout_gear(loadout_slot, "[G.type]")
+				// BLUEMOON EDIT START - выбор вещей из лодаута как family heirloom
+				if (gear[LOADOUT_IS_HEIRLOOM])
+					gear[LOADOUT_IS_HEIRLOOM] = FALSE
+				// BLUEMOON EDIT END - выбор вещей из лодаута как family heirloom
 				remove_gear_from_loadout(loadout_slot, "[G.type]")
 			else if(toggle && !(has_loadout_gear(loadout_slot, "[G.type]")))
 				if(!is_loadout_slot_available(G.category))
@@ -4202,7 +4220,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					sanitize_current_slot.Remove(list(entry))
 					break
 
-		if(href_list["loadout_color"] || href_list["loadout_color_polychromic"] || href_list["loadout_color_HSV"] || href_list["loadout_rename"] || href_list["loadout_redescribe"])
+		if(href_list["loadout_color"] || href_list["loadout_color_polychromic"] || href_list["loadout_color_HSV"] || href_list["loadout_rename"] || href_list["loadout_redescribe"] || href_list["loadout_addheirloom"] || href_list["loadout_removeheirloom"] || href_list["loadout_tagname"])
+
 			//if the gear doesn't exist, or they don't have it, ignore the request
 			var/name = html_decode(href_list["loadout_gear_name"])
 			var/datum/gear/G = GLOB.loadout_items[gear_category][gear_subcategory][name]
@@ -4260,6 +4279,23 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				var/new_description = stripped_input(user, "Enter new description for item. Maximum 500 characters.", "Loadout Item Redescribing", null, 500)
 				if(new_description)
 					user_gear[LOADOUT_CUSTOM_DESCRIPTION] = new_description
+			// BLUEMOON ADD START - выбор вещей из лодаута как family heirloom
+			if(href_list["loadout_addheirloom"])
+				// Выбран ли какой-либо другой предмет как семейная реликвия, и если да, то какой?
+				var/existing = find_gear_with_property(loadout_slot, LOADOUT_IS_HEIRLOOM, TRUE)
+				if(!existing)
+					user_gear[LOADOUT_IS_HEIRLOOM] = TRUE
+				else
+					to_chat(user, "<font color='red'>У вас уже выбрана ваша семейная реликвия!</font>")
+			if(href_list["loadout_removeheirloom"])
+				user_gear[LOADOUT_IS_HEIRLOOM] = FALSE
+			// BLUEMOON ADD END
+
+			//for collars with tagnames
+			if(href_list["loadout_tagname"])
+				var/new_tagname = stripped_input(user, "Would you like to change the name on the tag?", "Name your new pet", null, MAX_NAME_LEN)
+				if(new_tagname)
+					user_gear["loadout_custom_tagname"] = new_tagname
 
 	ShowChoices(user)
 	return 1
@@ -4508,6 +4544,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		else
 			if(L[slot] < DEFAULT_SLOT_AMT)
 				return TRUE
+
+// BLUEMOON ADD START - выбор вещей из лодаута как семейной реликвии
+///Searching for loadout item which `property` ([LOADOUT_ITEM], [LOADOUT_COLOR], etc) equals to `value`; returns this items, or FALSE if no gear matched conditions
+/datum/preferences/proc/find_gear_with_property(save_slot, property, value)
+	var/list/gear_list = loadout_data["SAVE_[save_slot]"]
+	for(var/loadout_gear in gear_list)
+		if(loadout_gear[property] == value)
+			return loadout_gear
+	return FALSE
 
 /datum/preferences/proc/has_loadout_gear(save_slot, gear_type)
 	var/list/gear_list = loadout_data["SAVE_[save_slot]"]

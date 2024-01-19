@@ -12,7 +12,7 @@ GLOBAL_VAR(changeling_team_objective_type) //If this is not null, we hand our th
 	false_report_weight = 10
 	chaos = 5
 	protected_jobs = list("Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
-	restricted_jobs = list("AI", "Cyborg") // BLUEMOON EDIT
+	restricted_jobs = list("AI", "Cyborg", "Positronic Brain") // BLUEMOON EDIT
 
 	required_players = 2
 	required_enemies = 1

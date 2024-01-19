@@ -39,6 +39,7 @@
 		var/obj/item/projectile/A = new projectile(get_turf(src))
 		A.preparePixelProjectile(target, source, params, spread)
 
+		A.firer = source // BLUEMOON ADD - если не отметить стрелка, то мех будет попадать снарядами сам в себя
 		A.fire()
 		if(!A.suppressed && firing_effect_type)
 			new firing_effect_type(get_turf(src), chassis.dir)

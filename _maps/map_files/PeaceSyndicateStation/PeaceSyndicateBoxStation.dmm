@@ -1859,12 +1859,12 @@
 	},
 /obj/item/storage/barricade,
 /obj/item/storage/barricade{
-	pixel_y = -10;
-	pixel_x = -10
+	pixel_x = -10;
+	pixel_y = -10
 	},
 /obj/item/storage/barricade{
-	pixel_y = -10;
-	pixel_x = 10
+	pixel_x = 10;
+	pixel_y = -10
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ai_monitored/security/armory)
@@ -20363,7 +20363,7 @@
 /area/command/meeting_room)
 "bbj" = (
 /obj/structure/table,
-/obj/item/aiModule/reset,
+/obj/item/ai_module/reset,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -20647,7 +20647,7 @@
 /area/command/meeting_room)
 "bce" = (
 /obj/structure/table,
-/obj/item/aiModule/supplied/quarantine,
+/obj/item/ai_module/supplied/quarantine,
 /obj/machinery/camera/motion{
 	dir = 4;
 	network = list("aiupload")
@@ -20663,7 +20663,7 @@
 /area/ai_monitored/turret_protected/ai_upload)
 "bcg" = (
 /obj/structure/table,
-/obj/item/aiModule/supplied/freeform,
+/obj/item/ai_module/supplied/freeform,
 /obj/structure/sign/plaques/kiddie{
 	pixel_x = 32
 	},
@@ -21341,8 +21341,8 @@
 /area/maintenance/port)
 "beb" = (
 /obj/structure/table,
-/obj/item/aiModule/core/full/asimov,
-/obj/item/aiModule/core/freeformcore,
+/obj/item/ai_module/core/full/asimov,
+/obj/item/ai_module/core/freeformcore,
 /obj/machinery/door/window{
 	base_state = "right";
 	dir = 4;
@@ -21351,16 +21351,16 @@
 	req_access_txt = "20"
 	},
 /obj/structure/window/reinforced,
-/obj/effect/spawner/lootdrop/aimodule_harmless,
-/obj/effect/spawner/lootdrop/aimodule_lewd,
-/obj/effect/spawner/lootdrop/aimodule_neutral,
+/obj/effect/spawner/lootdrop/ai_module_harmless,
+/obj/effect/spawner/lootdrop/ai_module_lewd,
+/obj/effect/spawner/lootdrop/ai_module_neutral,
 /obj/structure/window/reinforced{
 	dir = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/item/aiModule/core/full/custom,
+/obj/item/ai_module/core/full/custom,
 /turf/open/floor/mineral/plastitanium,
 /area/ai_monitored/turret_protected/ai_upload)
 "bec" = (
@@ -21402,23 +21402,23 @@
 /area/ai_monitored/turret_protected/ai_upload)
 "beg" = (
 /obj/structure/table,
-/obj/item/aiModule/supplied/oxygen,
-/obj/item/aiModule/zeroth/oneHuman,
+/obj/item/ai_module/supplied/oxygen,
+/obj/item/ai_module/zeroth/oneHuman,
 /obj/machinery/door/window{
 	dir = 8;
 	name = "High-Risk Modules";
 	req_access_txt = "20"
 	},
-/obj/item/aiModule/reset/purge,
+/obj/item/ai_module/reset/purge,
 /obj/structure/window/reinforced,
-/obj/effect/spawner/lootdrop/aimodule_harmful,
+/obj/effect/spawner/lootdrop/ai_module_harmful,
 /obj/structure/window/reinforced{
 	dir = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/item/aiModule/supplied/protectStation,
+/obj/item/ai_module/supplied/protectStation,
 /turf/open/floor/mineral/plastitanium,
 /area/ai_monitored/turret_protected/ai_upload)
 "beh" = (
@@ -32528,7 +32528,7 @@
 "bEX" = (
 /obj/structure/table,
 /obj/item/aicard,
-/obj/item/aiModule/reset,
+/obj/item/ai_module/reset,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -35891,8 +35891,8 @@
 	},
 /obj/item/melee/breaching_hammer,
 /obj/item/melee/breaching_hammer{
-	pixel_y = -3;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = -3
 	},
 /obj/item/melee/breaching_hammer{
 	pixel_x = 6;
@@ -48657,8 +48657,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 10
 	},
 /turf/open/floor/plating,
 /area/maintenance/port/fore)
@@ -51171,9 +51171,6 @@
 	},
 /area/engineering/gravity_generator)
 "dhh" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
 /obj/machinery/door/airlock/hos{
 	name = "Representative Office"
 	},
@@ -51231,8 +51228,8 @@
 /obj/structure/disposalpipe/segment,
 /obj/structure/closet/secure_closet/medical2,
 /obj/machinery/airalarm{
-	pixel_x = -24;
-	dir = 4
+	dir = 4;
+	pixel_x = -24
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/medical/surgery)
@@ -53850,8 +53847,8 @@
 /obj/structure/table,
 /obj/machinery/button/electrochromatic{
 	id = "operating_room2";
-	pixel_x = 6;
-	name = "windows to the outside"
+	name = "windows to the outside";
+	pixel_x = 6
 	},
 /obj/machinery/button/electrochromatic{
 	id = "operating_room";
@@ -54500,9 +54497,9 @@
 /area/cargo/storage)
 "hnU" = (
 /obj/item/radio/intercom{
+	dir = 8;
 	frequency = 1455;
 	name = "listening to the interrogation room";
-	dir = 8;
 	pixel_x = -28
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -55229,13 +55226,13 @@
 	dir = 4
 	},
 /obj/item/radio/intercom{
-	frequency = 1455;
-	name = "listening to the interrogation room";
-	pixel_y = 23;
-	canhear_range = 3;
 	broadcasting = 1;
+	canhear_range = 3;
+	dir = 8;
+	frequency = 1455;
 	listening = 0;
-	dir = 8
+	name = "listening to the interrogation room";
+	pixel_y = 23
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/security/warden)
@@ -58260,6 +58257,9 @@
 /area/construction/mining/aux_base)
 "lXL" = (
 /obj/machinery/photocopier,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 4
+	},
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "lYC" = (
@@ -60690,8 +60690,8 @@
 /area/hallway/primary/port)
 "pgn" = (
 /obj/structure/chair{
-	name = "Crew Station";
-	dir = 4
+	dir = 4;
+	name = "Crew Station"
 	},
 /obj/machinery/camera{
 	c_tag = "Brig Interrogation 2";
@@ -63486,6 +63486,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/closed/wall/r_wall/syndicate{
 	smooth = 2
 	},
@@ -65265,12 +65268,12 @@
 /area/maintenance/starboard/fore)
 "vCF" = (
 /obj/docking_port/stationary{
+	dheight = 5;
+	dwidth = 5;
+	height = 10;
 	id = "lambda_station";
 	name = "Lambda Shuttle Dock";
-	dwidth = 5;
-	width = 10;
-	dheight = 5;
-	height = 10
+	width = 10
 	},
 /turf/open/space/basic,
 /area/space)
@@ -66874,6 +66877,14 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/security/brig)
+"xHf" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 9
+	},
+/turf/closed/wall/r_wall/syndicate{
+	smooth = 2
+	},
+/area/ai_monitored/command/storage/eva)
 "xJa" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light/small{
@@ -94102,7 +94113,7 @@ apW
 aqZ
 aqZ
 awh
-axz
+xHf
 ayO
 azE
 aBp
@@ -94359,7 +94370,7 @@ wnh
 auf
 auf
 fJo
-axy
+ayW
 sgT
 lxF
 fEF
@@ -94617,7 +94628,7 @@ fmH
 gmR
 gWf
 gkH
-gLj
+aph
 kaM
 cGM
 nwp
@@ -94874,7 +94885,7 @@ plP
 uFT
 eRj
 wWk
-gLj
+aph
 fub
 arY
 dLT
@@ -95388,7 +95399,7 @@ lIe
 uSq
 jJs
 lXL
-gLj
+aph
 xpf
 lnB
 ata

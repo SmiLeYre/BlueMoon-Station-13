@@ -15,6 +15,7 @@
 	volume = 50
 	resistance_flags = NONE
 	var/isGlass = TRUE //Whether the 'bottle' is made of glass or not so that milk cartons dont shatter when someone gets hit by it
+	var/beingChugged = FALSE //We don't want people downing 100u super fast with drinking glasses
 
 /obj/item/reagent_containers/food/drinks/on_reagent_change(changetype)
 	gulp_size = max(round(reagents.total_volume / 5), 5)
@@ -31,8 +32,23 @@
 		to_chat(user, "<span class='warning'><b>[src]</b> lid hasn't been opened!</span>")
 		return 0
 
+	var/gulp_amount = gulp_size
 	if(M == user)
-		user.visible_message("<span class='notice'><b>[user]</b> swallows a gulp of <b>[src]</b>.</span>", "<span class='notice'>You swallow a gulp of <b>[src]</b>.</span>")
+		if(user.zone_selected == BODY_ZONE_PRECISE_MOUTH && !beingChugged)
+			beingChugged = TRUE
+			user.visible_message("<span class='notice'>[user] starts chugging [src].</span>", \
+				"<span class='notice'>You start chugging [src].</span>")
+			if(!do_mob(user, M))
+				return
+			if(!reagents || !reagents.total_volume)
+				return
+			gulp_amount = 50
+			user.visible_message("<span class='notice'>[user] chugs [src].</span>", \
+				"<span class='notice'>You chug [src].</span>")
+			beingChugged = FALSE
+		else
+			user.visible_message("<span class='notice'>[user] swallows a gulp of [src].</span>", \
+				"<span class='notice'>You swallow a gulp of [src].</span>")
 	else
 		M.visible_message("<span class='danger'><b>[user]</b> attempts to feed the contents of <b>[src]</b> to [M].</span>", "<span class='userdanger'><b>[user]</b> attempts to feed the contents of <b>[src]</b> to [M].</span>")
 		if(!do_mob(user, M))
@@ -42,10 +58,10 @@
 		M.visible_message("<span class='danger'><b>[user]</b> feeds the contents of <b>[src]</b> to [M].</span>", "<span class='userdanger'><b>[user]</b> feeds the contents of <b>[src]</b> to [M].</span>")
 		log_combat(user, M, "fed", reagents.log_list())
 
-	var/fraction = min(gulp_size/reagents.total_volume, 1)
+	var/fraction = min(gulp_amount/reagents.total_volume, 1)
 	checkLiked(fraction, M)
 	reagents.reaction(M, INGEST, fraction)
-	reagents.trans_to(M, gulp_size, log = TRUE)
+	reagents.trans_to(M, gulp_amount, log = TRUE)
 	playsound(M.loc,'sound/items/drink.ogg', rand(10,50), 1)
 	return 1
 

@@ -172,7 +172,7 @@
 	special_run_option = "Random Single Reagent"
 
 /datum/event_admin_setup/listed_options/scrubber_overflow/get_list()
-	return sortList(subtypesof(/datum/reagent), /proc/cmp_typepaths_asc)
+	return sort_list(subtypesof(/datum/reagent), /proc/cmp_typepaths_asc)
 
 /datum/event_admin_setup/listed_options/scrubber_overflow/apply_to_event(datum/round_event/scrubber_overflow/event)
 	if(chosen == special_run_option)

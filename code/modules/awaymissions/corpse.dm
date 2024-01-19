@@ -66,7 +66,7 @@
 		if(istype(NP))
 			NP.close_spawn_windows()
 			NP.stop_sound_channel(CHANNEL_LOBBYMUSIC)
-	log_game("[key_name(user)] became [mob_name]")
+	log_game("[key_name(user)] становится [mob_name]!")
 	create(ckey = user.ckey)
 	return TRUE
 

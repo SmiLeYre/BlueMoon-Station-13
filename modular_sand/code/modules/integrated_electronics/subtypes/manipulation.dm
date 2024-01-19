@@ -31,7 +31,10 @@
 	complexity = 10
 
 	inputs = list("target" = IC_PINTYPE_REF, "action" = IC_PINTYPE_STRING, "param_key_1" = IC_PINTYPE_STRING, "param_value_1" = IC_PINTYPE_ANY, "param_key_2" = IC_PINTYPE_STRING, "param_value_2" = IC_PINTYPE_ANY, "param_key_3" = IC_PINTYPE_STRING, "param_value_3" = IC_PINTYPE_ANY)
-	activators = list("pulse in" = IC_PINTYPE_PULSE_IN,"pulse out" = IC_PINTYPE_PULSE_OUT)
+	activators = list(
+		"pulse in" = IC_PINTYPE_PULSE_IN,
+		"pulse out" = IC_PINTYPE_PULSE_OUT
+		)
 	spawn_flags = IC_SPAWN_RESEARCH
 	power_draw_per_use = 50
 	ext_cooldown = 1
@@ -51,5 +54,6 @@
 		var/value = get_pin_data(IC_INPUT, i+1)
 		if(key && value)
 			params["[key]"] = value
-	acting_object.ui_act(action, params)
-	activate_pin(1)
+	if(acting_object)
+		acting_object.ui_act(action, params)
+		activate_pin(2)

@@ -123,13 +123,17 @@
 	name = "Blueshield's Quarters"
 	icon_state = "bridge"
 
-///Subtype of CQC. Only used for the Blueshit.
+///Subtype of CQC. Only used for the Blueshield.
 /datum/martial_art/cqc/blueshield
-	name = "Close Quarters Combat, Blueshield edition"
-	var/list/valid_areas = list(/area/command/bridge, /area/command/heads_quarters/captain, /area/command/heads_quarters/captain/private)
+	name = "Close Quarters Combat, Blueshield Edition"
+	var/list/valid_areas = list(/area/command, /area/command/bridge, /area/command/meeting_room, /area/command/meeting_room/council,
+								/area/command/heads_quarters/captain, /area/command/heads_quarters/ce, /area/command/heads_quarters/ce/private,
+								/area/command/heads_quarters/cmo, /area/command/heads_quarters/cmo/private, /area/command/heads_quarters/hop,
+								/area/command/heads_quarters/hop/private, /area/command/heads_quarters/hos, /area/command/heads_quarters/hos/private,
+								/area/command/heads_quarters/rd, /area/command/heads_quarters/rd/private, /area/command/teleporter, /area/command/gateway,
+								/area/command/corporate_showroom)
 
-///Prevents use if the Blueshit  is not on the bridge or the captain'soffice .
-/datum/martial_art/cqc/blueshield/can_use(mob/living/owner) //this is used to make Bluehsield CQC only work in bridge
+/datum/martial_art/cqc/blueshield/can_use(mob/living/owner)
 	if(!is_type_in_list(get_area(owner), valid_areas))
 		return FALSE
 	return ..()

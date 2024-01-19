@@ -3,7 +3,6 @@
 	var/hole = CUM_TARGET_VAGINA
 
 /obj/item/dildo/attack(mob/living/carbon/human/M, mob/living/carbon/human/user)
-	//var/possessive_verb = user.ru_ego()
 	user.DelayNextAction(CLICK_CD_RANGE)
 	var/message = ""
 	var/lust_amt = 0

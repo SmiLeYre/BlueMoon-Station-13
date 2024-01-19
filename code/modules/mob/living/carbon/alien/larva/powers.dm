@@ -48,13 +48,18 @@
 			return
 
 		var/mob/living/carbon/alien/humanoid/new_xeno
-		switch(alien_caste)
-			if("Hunter")
-				new_xeno = new /mob/living/carbon/alien/humanoid/hunter(L.loc)
-			if("Sentinel")
-				new_xeno = new /mob/living/carbon/alien/humanoid/sentinel(L.loc)
-			if("Drone")
-				new_xeno = new /mob/living/carbon/alien/humanoid/drone(L.loc)
+		if(GLOB.master_mode == "Extended")
+			switch(alien_caste)
+				if("Maid-Drone")
+					new_xeno = new /mob/living/carbon/alien/humanoid/drone/maid(L.loc)
+		else
+			switch(alien_caste)
+				if("Hunter")
+					new_xeno = new /mob/living/carbon/alien/humanoid/hunter(L.loc)
+				if("Sentinel")
+					new_xeno = new /mob/living/carbon/alien/humanoid/sentinel(L.loc)
+				if("Drone")
+					new_xeno = new /mob/living/carbon/alien/humanoid/drone(L.loc)
 
 		L.alien_evolve(new_xeno)
 		return 0

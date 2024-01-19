@@ -4,7 +4,7 @@
 	antag_flag = ROLE_HERETIC
 	false_report_weight = 5
 	chaos = 5
-	restricted_jobs = list("AI", "Cyborg") // BLUEMOON EDIT
+	restricted_jobs = list("AI", "Cyborg", "Positronic Brain") // BLUEMOON EDIT
 	protected_jobs = list("Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
 	required_players = 15
 	required_enemies = 1

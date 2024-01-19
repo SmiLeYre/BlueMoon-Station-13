@@ -713,7 +713,7 @@
 			dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=tongue;task=input'>[custom_tongue]</a><BR>"
 			//SANDSTORM EDIT - additional language + runechat color
 			dat += "<b>Additional Language</b><br>"
-			var/list/languages_sorted = sortList(language)
+			var/list/languages_sorted = sort_list(language)
 			dat += "<a href='?_src_=prefs;preference=language;task=menu'>[language.len ? languages_sorted.Join(", ") : "None"]</a></center><br>"
 			dat += "<b>Custom runechat color:</b> <a href='?_src_=prefs;preference=enable_personal_chat_color'>[enable_personal_chat_color ? "Enabled" : "Disabled"]</a><br> [enable_personal_chat_color ? "<span style='border: 1px solid #161616; background-color: [personal_chat_color];'><font color='[color_hex2num(personal_chat_color) < 200 ? "FFFFFF" : "000000"]'>[personal_chat_color]</font></span> <a href='?_src_=prefs;preference=personal_chat_color;task=input'>Change</a>" : ""]<br>"
 			dat += "</td>"
@@ -1041,6 +1041,12 @@
 								extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_rename=1;loadout_gear_name=[html_encode(gear.name)];'>Name</a> [loadout_item[LOADOUT_CUSTOM_NAME] ? loadout_item[LOADOUT_CUSTOM_NAME] : "N/A"]"
 							if(gear.loadout_flags & LOADOUT_CAN_DESCRIPTION)
 								extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_redescribe=1;loadout_gear_name=[html_encode(gear.name)];'>Description</a>"
+							else
+								extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_addheirloom=1;loadout_gear_name=[html_encode(gear.name)];'>Select as Heirloom</a><BR>"
+							// BLUEMOON ADD START - выбор вещей из лодаута как family heirloom
+							if(loadout_item[LOADOUT_IS_HEIRLOOM])
+								extra_loadout_data += "<BR><a class='linkOn' href='?_src_=prefs;preference=gear;loadout_removeheirloom=1;loadout_gear_name=[html_encode(gear.name)];'>Select as Heirloom</a><BR>"
+							// BLUEMOON ADD END
 						else if((gear_points - gear.cost) < 0)
 							class_link = "style='white-space:normal;' class='linkOff'"
 						else if(donoritem)

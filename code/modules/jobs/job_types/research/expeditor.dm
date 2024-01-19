@@ -36,7 +36,7 @@
 	head = /obj/item/clothing/head/helmet/exp
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	glasses = /obj/item/clothing/glasses/sunglasses
-	shoes = /obj/item/clothing/shoes/combat
+	shoes = /obj/item/clothing/shoes/jackboots/tall_default
 	suit_store = /obj/item/gun/energy/e_gun/mini/expeditor
 	r_pocket = /obj/item/kitchen/knife/combat
 	l_pocket = /obj/item/pda

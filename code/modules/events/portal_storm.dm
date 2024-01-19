@@ -145,8 +145,8 @@
 	boss_types = list(/mob/living/simple_animal/hostile/boss/clockcultistboss = 1)
 	hostile_types = list(/mob/living/simple_animal/hostile/clockcultistmelee = 8,\
 						/mob/living/simple_animal/hostile/clockcultistranged = 5,\
-						/mob/living/simple_animal/hostile/clocktank/weak = 3,\
-						/mob/living/simple_animal/hostile/clocktank = 2)
+						/mob/living/simple_animal/hostile/clockwork/clocktank/weak = 3,\
+						/mob/living/simple_animal/hostile/clockwork/clocktank = 2)
 	triggersound = 'modular_bluemoon/kovac_shitcode/sound/clock_storm.ogg'
 
 /datum/round_event/portal_storm

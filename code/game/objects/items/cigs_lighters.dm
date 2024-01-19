@@ -109,6 +109,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	body_parts_covered = null
 	grind_results = list()
 	slot_flags = ITEM_SLOT_MASK | ITEM_SLOT_EARS
+	throw_verb = "швыряет"
 	var/lit = FALSE
 	var/starts_lit = FALSE
 	var/icon_on = "cigon"  //Note - these are in masks.dmi not in cigarette.dmi

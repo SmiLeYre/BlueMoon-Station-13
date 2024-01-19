@@ -17,7 +17,7 @@
 	crate_type = /obj/structure/closet/secure_closet/cargo
 	name = "50 Cardboard Sheets"
 	desc = "Создайте кучу коробок."
-	cost = 300 //thrice their export value
+	cost = 3000
 	contains = list(/obj/item/stack/sheet/cardboard/fifty)
 
 /datum/supply_pack/materials/license50
@@ -31,14 +31,14 @@
 	crate_type = /obj/structure/closet/secure_closet/cargo
 	name = "50 Стеклянных листов"
 	desc = "Let some nice light in with fifty glass sheets!"
-	cost = 300 //double their export value
+	cost = 3000
 	contains = list(/obj/item/stack/sheet/glass/fifty)
 
 /datum/supply_pack/materials/metal50
 	crate_type = /obj/structure/closet/secure_closet/cargo
 	name = "50 Metal Sheets"
 	desc = "Любой строительный проект начинается с хорошей стопки из пятидесяти металлических листов!"
-	cost = 300 //double their export value
+	cost = 3000
 	contains = list(/obj/item/stack/sheet/metal/fifty)
 
 /datum/supply_pack/materials/plasteel20
@@ -52,21 +52,21 @@
 	crate_type = /obj/structure/closet/secure_closet/cargo
 	name = "20 Plastic Sheets"
 	desc = "Соберите неограниченное количество игрушек из пятидесяти пластиковых листов!"
-	cost = 200 // double their export
+	cost = 2000
 	contains = list(/obj/item/stack/sheet/plastic/twenty)
 
 /datum/supply_pack/materials/sandstone30
 	crate_type = /obj/structure/closet/secure_closet/cargo
 	name = "30 Sandstone Blocks"
 	desc = "Ни песчаные, ни каменные, эти тридцать блоков все равно выполнят свою работу."
-	cost = 150 // five times their export
+	cost = 1500
 	contains = list(/obj/item/stack/sheet/mineral/sandstone/thirty)
 
 /datum/supply_pack/materials/wood20
 	crate_type = /obj/structure/closet/secure_closet/cargo
 	name = "20 Wood Planks"
 	desc = "Превратите скучную плитку в красивый панельный пол и многое другое с помощью двадцати деревянных досок!"
-	cost = 400 // 6-7 planks shy from having equal import/export prices
+	cost = 4000 // 6-7 planks shy from having equal import/export prices
 	contains = list(/obj/item/stack/sheet/mineral/wood/twenty)
 
 /datum/supply_pack/materials/rcdammo

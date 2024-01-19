@@ -1,4 +1,4 @@
-/mob/living/simple_animal/hostile/clocktank
+/mob/living/simple_animal/hostile/clockwork/clocktank
 	name = "Clockwork Mini-Tank"
 	desc = "Small as a cat, as powerful as the real deal."
 	icon = 'modular_splurt/icons/mobs/vharmob.dmi'
@@ -35,7 +35,7 @@
 	move_to_delay = 4
 	loot = list(/obj/effect/gibspawner/robot)
 
-/mob/living/simple_animal/hostile/clocktank/weak
+/mob/living/simple_animal/hostile/clockwork/clocktank/weak
 	name = "Weakened Clockwork Mini-Tank"
 	desc = "Even weaker variants of the mini-tank, don't get cocky tho."
 	maxHealth = 30

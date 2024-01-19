@@ -187,3 +187,8 @@
 	name = "Laser Pointer"
 	path = /obj/item/laser_pointer
 	cost = 1
+
+/datum/gear/backpack/tts_device
+	name = "TTS Device"
+	path = /obj/item/ttsdevice
+	cost = 2

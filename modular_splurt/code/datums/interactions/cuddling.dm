@@ -2,7 +2,7 @@
 	description = "Обнимашки!"
 	simple_message = "USER обнимает TARGET."
 	simple_style = "lewd"
-	needs_physical_contact = TRUE
+	interaction_flags = INTERACTION_FLAG_ADJACENT
 	interaction_sound = 'sound/weapons/thudswoosh.ogg'
 
 /datum/interaction/cuddle/display_interaction(mob/living/user, mob/living/target)

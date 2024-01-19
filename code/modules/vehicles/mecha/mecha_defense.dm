@@ -105,7 +105,7 @@
 
 /obj/vehicle/sealed/mecha/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum) //wrapper
 	log_message("Hit by [AM].", LOG_MECHA, color="red")
-	. = ..()
+	return ..()
 
 /obj/vehicle/sealed/mecha/bullet_act(obj/item/projectile/Proj) //wrapper
 	if(!enclosed && LAZYLEN(occupants) && !(mecha_flags  & SILICON_PILOT) && !Proj.force_hit && (Proj.def_zone == BODY_ZONE_HEAD || Proj.def_zone == BODY_ZONE_CHEST)) //allows bullets to hit the pilot of open-canopy mechs
@@ -158,7 +158,8 @@
 			occupant.update_mouse_pointer()
 	if(!equipment_disabled && occupants) //prevent spamming this message with back-to-back EMPs
 		to_chat(occupants, "<span=danger>Error -- Connection to equipment control unit has been lost.</span>")
-	addtimer(CALLBACK(src, /obj/vehicle/sealed/mecha/proc/restore_equipment), 3 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
+	if(!QDELETED(src))
+		addtimer(CALLBACK(src, /obj/vehicle/sealed/mecha/proc/restore_equipment), 3 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
 	equipment_disabled = 1
 
 /obj/vehicle/sealed/mecha/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)

@@ -51,9 +51,9 @@
 #define MOB_NANITES		(1 << 10)
 
 /// Helper to figure out if an organ is organic
-#define IS_ORGANIC_ORGAN(organ) (organ.organ_flags & ORGAN_ORGANIC)
+#define IS_ORGANIC_ORGAN(organ) (!IS_ROBOTIC_ORGAN(organ)) // BLUEMOON EDIT - фикс прока (кривое, но и так сойдёт) [БЫЛО: #define IS_ORGANIC_ORGAN(organ) (organ.organ_flags & ORGAN_ORGANIC)]
 /// Helper to figure out if an organ is robotic
-#define IS_ROBOTIC_ORGAN(organ) (organ.organ_flags & ORGAN_ROBOTIC)
+#define IS_ROBOTIC_ORGAN(organ) (organ.organ_flags & ORGAN_SYNTHETIC)  // BLUEMOON EDIT - фикс прока [БЫЛО: #define IS_ROBOTIC_ORGAN(organ) (organ.organ_flags & ORGAN_ROBOTIC)]
 
 // Organ defines for carbon mobs
 #define ORGAN_ORGANIC   1

@@ -285,7 +285,7 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 
 ///////////	AI Laws
 
-/obj/item/aiModule/core/full/inteq
+/obj/item/ai_module/core/full/inteq
 	name = "'InteQ' Core AI Module"
 	law_id = "inteq"
 
@@ -341,6 +341,8 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	rapid_melee = 1
 	retreat_distance = 2
 	minimum_distance = 4
+	melee_damage_lower = 15
+	melee_damage_upper = 30
 	casingtype = /obj/item/ammo_casing/c46x30mm
 	projectilesound = 'sound/weapons/heavy_shot_suppressed.ogg'
 	loot = list(/obj/effect/mob_spawn/human/corpse/nanotrasenassaultsoldier, /obj/item/gun/ballistic/automatic/pistol/m1911, /obj/item/ammo_box/magazine/m45, /obj/item/ammo_box/magazine/m45)
@@ -353,8 +355,8 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	icon_living = "nanotrasen_ert"
 	maxHealth = 250
 	health = 250
-	melee_damage_lower = 13
-	melee_damage_upper = 18
+	melee_damage_lower = 20
+	melee_damage_upper = 40
 	ranged = TRUE
 	rapid = 3
 	rapid_fire_delay = 5
@@ -376,8 +378,8 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	icon_living = "nanotrasen_ert"
 	maxHealth = 350
 	health = 350
-	melee_damage_lower = 15
-	melee_damage_upper = 20
+	melee_damage_lower = 30
+	melee_damage_upper = 50
 	ranged = TRUE
 	rapid = 3
 	rapid_fire_delay = 5

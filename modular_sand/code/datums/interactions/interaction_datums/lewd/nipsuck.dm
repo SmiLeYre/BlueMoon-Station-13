@@ -1,11 +1,10 @@
 /datum/interaction/lewd/nipsuck
 	description = "Рот. Пососать соски."
-	require_target_breasts = REQUIRE_EXPOSED
-	require_user_mouth = TRUE
+	required_from_user = INTERACTION_REQUIRE_MOUTH
+	required_from_target_exposed = INTERACTION_REQUIRE_BREASTS
 	write_log_user = "sucked nipples"
 	write_log_target = "had their nipples sucked by"
 	interaction_sound = null
-	max_distance = 1
 
 /datum/interaction/lewd/nipsuck/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	var/obj/item/organ/genital/breasts/B = target.getorganslot(ORGAN_SLOT_BREASTS)

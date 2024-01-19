@@ -722,6 +722,10 @@ SUBSYSTEM_DEF(job)
 	if(!the_mob)
 		the_mob = M // cause this doesn't get assigned if player is a latejoiner
 	var/list/chosen_gear = the_mob.client.prefs.loadout_data["SAVE_[the_mob.client.prefs.loadout_slot]"]
+	var/heirloomer = FALSE
+	var/list/my_quirks = the_mob.client.prefs.all_quirks.Copy()
+	if("Семейная реликвия" in my_quirks)
+		heirloomer = TRUE
 	if(the_mob.client && the_mob.client.prefs && (chosen_gear && chosen_gear.len))
 		if(!ishuman(M))//no silicons allowed
 			return
@@ -740,6 +744,10 @@ SUBSYSTEM_DEF(job)
 			if(G.handle_post_equip)
 				permitted = FALSE
 			if(!permitted)
+				// BLUEMOON ADD START - выбор вещей из лодаута как family heirloom
+				if(i[LOADOUT_IS_HEIRLOOM] && heirloomer)
+					to_chat(M, "<span class='warning'>Вы не смогли взять с собой свой любимый предмет, [G.name], из-за ограничений вашей профессии или других проблем, но у вас была и другая семейная ценность, поэтому вы прихватили её!</span>")
+				// BLUEMOON END
 				continue
 			var/obj/item/I = new G.path
 			if(I)
@@ -765,6 +773,11 @@ SUBSYSTEM_DEF(job)
 				if(i[LOADOUT_CUSTOM_DESCRIPTION])
 					var/custom_description = i[LOADOUT_CUSTOM_DESCRIPTION]
 					I.desc = custom_description
+				if(i["loadout_custom_tagname"]) //for collars with tagnames
+					var/custom_tagname = i["loadout_custom_tagname"]
+					var/obj/item/clothing/neck/petcollar/collar = I
+					collar.tagname = custom_tagname
+					collar.name = "[initial(collar.name)] - [collar.tagname]"
 			if(!M.equip_to_slot_if_possible(I, G.slot, disable_warning = TRUE, bypass_equip_delay_self = TRUE)) // If the job's dresscode compliant, try to put it in its slot, first
 				if(iscarbon(M))
 					var/mob/living/carbon/C = M
@@ -779,6 +792,14 @@ SUBSYSTEM_DEF(job)
 						I.forceMove(get_turf(M)) // If everything fails, just put it on the floor under the mob.
 					else
 						qdel(I)
+			// BLUEMOON ADD START - выбор вещей из лодаута как family heirloom
+			if(i[LOADOUT_IS_HEIRLOOM] && !QDELETED(I) && heirloomer)
+				I.item_flags |= FAMILY_HEIRLOOM
+				if(!i[LOADOUT_CUSTOM_NAME])
+					var/list/family_name = splittext(M.real_name, " ")
+					I.name = "\improper [family_name[family_name.len]] family [I.name]"
+			// BLUEMOON END
+
 
 /datum/controller/subsystem/job/proc/post_equip_loadout(mob/dead/new_player/N, mob/living/M, bypass_prereqs = FALSE, can_drop = TRUE)
 	var/mob/the_mob = N
@@ -828,6 +849,11 @@ SUBSYSTEM_DEF(job)
 				if(i[LOADOUT_CUSTOM_DESCRIPTION])
 					var/custom_description = i[LOADOUT_CUSTOM_DESCRIPTION]
 					I.desc = custom_description
+				if(i["loadout_custom_tagname"]) //for collars with tagnames
+					var/custom_tagname = i["loadout_custom_tagname"]
+					var/obj/item/clothing/neck/petcollar/collar = I
+					collar.tagname = custom_tagname
+					collar.name = "[initial(collar.name)] - [collar.tagname]"
 			if(!M.equip_to_slot_if_possible(I, G.slot, disable_warning = TRUE, bypass_equip_delay_self = TRUE)) // If the job's dresscode compliant, try to put it in its slot, first
 				if(iscarbon(M))
 					var/mob/living/carbon/C = M
@@ -842,7 +868,6 @@ SUBSYSTEM_DEF(job)
 						I.forceMove(get_turf(M)) // If everything fails, just put it on the floor under the mob.
 					else
 						qdel(I)
-
 /datum/controller/subsystem/job/proc/FreeRole(rank)
 	if(!rank)
 		return

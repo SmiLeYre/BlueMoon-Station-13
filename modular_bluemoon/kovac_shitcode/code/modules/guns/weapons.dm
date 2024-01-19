@@ -321,6 +321,7 @@
 	desc = "<span class='warning'>VRRRRRRR!!!</span>"
 	armour_penetration = 100
 	force_on = 55
+	block_parry_data = /datum/block_parry_data/inteq_sledgehammer
 
 ///InteQ Uplink additions
 
@@ -336,7 +337,7 @@
 	name = "High Powered Chainsaw"
 	desc = "A high powered chainsaw for cutting up ...you know...."
 	item = /obj/item/chainsaw/doomslayer/inteq_chainsaw
-	cost = 22
+	cost = 18
 	purchasable_from = ~(UPLINK_SYNDICATE)
 
 /// Clown Ops Uplink additions

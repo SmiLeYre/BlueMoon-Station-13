@@ -61,8 +61,8 @@
 	hud_possible = list(ANTAG_HUD)
 	hud_type = /datum/hud/qareen
 
-	var/essence = 75 //The resource, and health, of qareens.
-	var/essence_regen_cap = 75 //The regeneration cap of essence (go figure); regenerates every Life() tick up to this amount.
+	var/essence = 150 //The resource, and health, of qareens.
+	var/essence_regen_cap = 150 //The regeneration cap of essence (go figure); regenerates every Life() tick up to this amount.
 	var/essence_regenerating = TRUE //If the qareen regenerates essence or not
 	var/essence_regen_amount = 5 //How much essence regenerates
 	var/essence_accumulated = 0 //How much essence the qareen has stolen
@@ -85,7 +85,7 @@
 	AddSpell(new /obj/effect/proc_holder/spell/targeted/telepathy/qareen(null))
 //	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/qareen/defile(null))	Reserved for later. - Gardelin0
 	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/qareen/overload(null))
-	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/qareen/bliss(null))
+//	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/qareen/bliss(null))		Reserved for later. - Gardelin0
 //	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/qareen/malfunction(null))	Reserved for later. - Gardelin0
 
 //Removed random names, because revenant names seem too hostile
@@ -96,8 +96,7 @@
 	qareen_greet += "<span class='deadsay'><span class='big bold'>Вы есть qareen.</span></span>" //Rough translation by Gardelin0
 	qareen_greet += "<b>Ваш прежде мирской дух был запитан инопланетной энергией и преобразован в qareen.</b>"
 	qareen_greet += "<b>Вы не являетесь ни живым, ни мёртвым, а чем-то посередине. Вы способны взаимодействовать с обоими мирами.</b>"
-	qareen_greet += "<b>Вы неуязвимы и невидимы для живых, но не для призраков. Однако большинство способностей материализуют вас, делая уязвимым.</b>"
-	qareen_greet += "<b>Для своей подпитки вы должны высасывать жизненную эссенцию похоти из существ. Эта эссенция является как ресурсом, так и вашим здоровьем, от которого заряжаются все ваши способности.</b>"
+	qareen_greet += "<b>Вы неуязвимы и невидимы для живых, но не для призраков.</b>"
 	qareen_greet += "<b><i>Вы ничего не помните о своих прошлых жизнях и ничего не вспомните о текущей после своей смерти.</i></b>"
 	qareen_greet += "<b>Не забывайте следовать правилам для антагонистов.</b>"
 	qareen_greet += "<b>Вы также можете телекинетически бросать предметы, перетаскивая их с помощью мыши.</b>"
@@ -363,7 +362,7 @@
 	icon = 'modular_splurt/icons/effects/effects.dmi'
 	icon_state = "qareenEctoplasm"
 	w_class = WEIGHT_CLASS_SMALL
-	var/essence = 75 //the maximum essence of the reforming qareen
+	var/essence = 150 //the maximum essence of the reforming qareen
 	var/reforming = TRUE
 	var/inert = FALSE
 	var/old_key //key of the previous qareen, will have first pick on reform.
@@ -493,36 +492,36 @@
 /obj/item/proc/DoQareenThrowEffects(atom/target)
 	return TRUE
 
-//objectives
-/datum/objective/qareen
-	var/targetAmount = 100
-
-/datum/objective/qareen/New()
-	targetAmount = rand(150,300)
-	explanation_text = "Absorb [targetAmount] of essence from this sector of space."
-	..()
-
-/datum/objective/qareen/check_completion()
-	if(!isqareen(owner.current))
-		return FALSE
-	var/mob/living/simple_animal/qareen/R = owner.current
-	if(!R || R.stat == DEAD)
-		return FALSE
-	var/essence_stolen = R.essence_accumulated
-	if(essence_stolen < targetAmount)
-		return FALSE
-	return TRUE
-
-/datum/objective/qareenFluff
-
-/datum/objective/qareenFluff/New()
-	var/list/explanationTexts = list("Избегайте высасывания эссенции у всех на виду.", \
-									 "Распространите заболевание похоти на тех, кого можете.", \
-									 "Оставьте на полу как можно больше следов любовных жидкостей.", \
-									 "Возбудите всех, кого можете.", \
-	)
-	explanation_text = pick(explanationTexts)
-	..()
-
-/datum/objective/qareenFluff/check_completion()
-	return TRUE
+//objectives		Reserved for later. - Gardelin0
+//datum/objective/qareen
+//	var/targetAmount = 100
+//
+//datum/objective/qareen/New()
+//	targetAmount = rand(150,300)
+//	explanation_text = "Absorb [targetAmount] of essence from this sector of space."
+//	..()
+//
+//datum/objective/qareen/check_completion()
+//	if(!isqareen(owner.current))
+//		return FALSE
+//	var/mob/living/simple_animal/qareen/R = owner.current
+//	if(!R || R.stat == DEAD)
+//		return FALSE
+//	var/essence_stolen = R.essence_accumulated
+//	if(essence_stolen < targetAmount)
+//		return FALSE
+//	return TRUE
+//
+//datum/objective/qareenFluff
+//
+//datum/objective/qareenFluff/New()
+//	var/list/explanationTexts = list("Избегайте высасывания эссенции у всех на виду.",
+//									 "Распространите заболевание похоти на тех, кого можете.",
+//									 "Оставьте на полу как можно больше следов любовных жидкостей.",
+//									 "Возбудите всех, кого можете.",
+//	)
+//	explanation_text = pick(explanationTexts)
+//	..()
+//
+//datum/objective/qareenFluff/check_completion()
+//	return TRUE

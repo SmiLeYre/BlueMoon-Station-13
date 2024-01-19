@@ -558,8 +558,6 @@
 /obj/item/mecha_parts/mecha_equipment/thrusters/ion //for mechs with built-in thrusters, should never really exist un-attached to a mech
 	name = "Ion thruster package"
 	desc = "A set of thrusters that allow for exosuit movement in zero-gravity environments."
-	detachable = FALSE
-	salvageable = FALSE
 	effect_type = /obj/effect/particle_effect/ion_trails
 
 /obj/item/mecha_parts/mecha_equipment/thrusters/ion/thrust(movement_dir)

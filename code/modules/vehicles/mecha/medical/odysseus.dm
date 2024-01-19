@@ -22,7 +22,12 @@
 	if(isliving(M))
 		var/mob/living/L = M
 		var/datum/atom_hud/hud = GLOB.huds[DATA_HUD_MEDICAL_ADVANCED]
-		hud.remove_hud_from(L)
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/cyberimp/eyes/hud/CIH = M.getorgan(/obj/item/organ/cyberimp/eyes/hud)
+		if(istype(H.glasses, /obj/item/clothing/glasses/hud/health) || istype(CIH, /obj/item/organ/cyberimp/eyes/hud/medical))
+			return ..()
+		else
+			hud.remove_hud_from(L)
 	return ..()
 
 /obj/vehicle/sealed/mecha/medical/odysseus/mmi_moved_inside(obj/item/mmi/M, mob/user)

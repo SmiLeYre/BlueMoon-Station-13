@@ -1,221 +1,72 @@
-// Globals
-/// The feed network singleton. Contains all channels (which contain all stories).
-GLOBAL_DATUM_INIT(news_network, /datum/feed_network, new)
-/// Global list that contains all existing newscasters in the world.
-GLOBAL_LIST_EMPTY(allNewscasters)
+GLOBAL_DATUM_INIT(news_network, /datum/news_network, new)
 
-// Screen indexes
-/// Headlines screen index.
-#define NEWSCASTER_HEADLINES	0
-/// Available Jobs screen index.
-#define NEWSCASTER_JOBS			1
-/// View Channel screen index.
-#define NEWSCASTER_CHANNEL		2
+/// Contains all the news datum of a newscaster system.
+/datum/news_network
+	var/list/datum/news/feed_channel/network_channels = list()
+	var/datum/news/wanted_message/wanted_issue
+	var/lastAction
+	var/redactedText = "\[REDACTED\]"
 
-// Censor flags
-/// Censor author name.
-#define CENSOR_AUTHOR (1 << 0)
-/// Censor story title, body and image.
-#define CENSOR_STORY (1 << 1)
+/datum/news_network/New()
+	CreateFeedChannel("Станционные Объявления", "Пакт Туманности Синие Луны", 1)
+	wanted_issue = new /datum/news/wanted_message
 
-/**
-  * # Feed Network
-  *
-  * Singleton that contains all informations related to newscasters (channels, stories).
-  */
-/datum/feed_network
-	/// Contains all of the feed channels created during the round.
-	var/list/datum/feed_channel/channels = list()
-	/// Contains all of the feed stories created during the round.
-	var/list/datum/feed_message/stories = list()
-	/// The current wanted issue.
-	var/datum/feed_message/wanted_issue
+/datum/news_network/proc/CreateFeedChannel(channel_name, author, locked, adminChannel = 0)
+	var/datum/news/feed_channel/newChannel = new /datum/news/feed_channel
+	newChannel.channel_name = channel_name
+	newChannel.author = author
+	newChannel.locked = locked
+	newChannel.is_admin_channel = adminChannel
+	network_channels += newChannel
 
-/**
-  * Returns the [/datum/feed_channel] with the given name, or null if not found.
-  *
-  * Arguments:
-  * * name - The name
-  */
-/datum/feed_network/proc/get_channel_by_name(name)
-	RETURN_TYPE(/datum/feed_channel)
-	for(var/fc in channels)
-		var/datum/feed_channel/FC = fc
-		if(FC.channel_name == name)
-			return FC
-
-/**
-  * Returns the [/datum/feed_channel] with the given author, or null if not found.
-  *
-  * Arguments:
-  * * author - The author
-  */
-/datum/feed_network/proc/get_channel_by_author(author)
-	RETURN_TYPE(/datum/feed_channel)
-	for(var/fc in channels)
-		var/datum/feed_channel/FC = fc
-		if(FC.author == author)
-			return FC
-
-/datum/feed_network/proc/SubmitArticle(msg, author, channel_name, datum/picture/picture, frozen = 0, admin_locked = 0)
-	var/datum/feed_message/newMsg = new /datum/feed_message
-	newMsg.body = msg
+/datum/news_network/proc/SubmitArticle(msg, author, channel_name, datum/picture/picture, adminMessage = 0, allow_comments = 1)
+	var/datum/news/feed_message/newMsg = new /datum/news/feed_message
 	newMsg.author = author
-	newMsg.title = channel_name
-	newMsg.admin_locked = admin_locked
-
+	newMsg.body = msg
+	newMsg.time_stamp = STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)
+	newMsg.is_admin_message = adminMessage
+	newMsg.locked = !allow_comments
 	if(picture)
 		newMsg.img = picture.picture_image
+		newMsg.caption = picture.caption
+		newMsg.photo_file = save_photo(picture.picture_image)
+	for(var/datum/news/feed_channel/FC in network_channels)
+		if(FC.channel_name == channel_name)
+			FC.messages += newMsg
+			break
+	for(var/obj/machinery/newscaster/NEWSCASTER in GLOB.allCasters)
+		NEWSCASTER.newsAlert(channel_name)
+	lastAction ++
+	newMsg.creationTime = lastAction
 
-	var/datum/feed_channel/News = new /datum/feed_channel
-	News.add_message(newMsg)
-	GLOB.news_network.channels += newMsg
+/datum/news_network/proc/submitWanted(criminal, body, scanned_user, datum/picture/picture, adminMsg = 0, newMessage = 0)
+	wanted_issue.active = 1
+	wanted_issue.criminal = criminal
+	wanted_issue.body = body
+	wanted_issue.scannedUser = scanned_user
+	wanted_issue.isAdminMsg = adminMsg
+	if(picture)
+		wanted_issue.img = picture.picture_image
+		wanted_issue.photo_file = save_photo(picture.picture_image)
+	if(newMessage)
+		for(var/obj/machinery/newscaster/N in GLOB.allCasters)
+			N.newsAlert()
+			N.update_icon()
 
-/**
-  * Returns the [/datum/feed_channel] at the given index, or null if not found.
-  *
-  * Arguments:
-  * * idx - The index
-  */
-/datum/feed_network/proc/get_channel_by_idx(idx)
-	RETURN_TYPE(/datum/feed_channel)
-	if(!ISINDEXSAFE(channels, idx))
-		return
-	return channels[idx]
+/datum/news_network/proc/deleteWanted()
+	wanted_issue.active = 0
+	wanted_issue.criminal = null
+	wanted_issue.body = null
+	wanted_issue.scannedUser = null
+	wanted_issue.img = null
+	for(var/obj/machinery/newscaster/NEWSCASTER in GLOB.allCasters)
+		NEWSCASTER.update_icon()
 
-
-/**
-  * # Feed Message
-  *
-  * Describes a single feed story. Always owned by a [/datum/feed_channel].
-  */
-/datum/feed_message
-	/// The author of the story.
-	var/author = ""
-	/// The title of the story.
-	var/title = ""
-	/// The textual contents of the story.
-	var/body = ""
-	/// The story's icon.
-	var/icon/img = null
-	/// Flags that dictate the story should be censored.
-	var/censor_flags = 0
-	/// Whether the story is admin-locked.
-	var/admin_locked = FALSE
-	/// The number of views the story has.
-	var/view_count = 0
-	/// The world.time at which the story was published.
-	var/publish_time = 0
-
-/datum/feed_message/New()
-	publish_time = world.time
-
-/**
-  * Clears the story's information.
-  *
-  * Does not delete it from the owning channel.
-  */
-/datum/feed_message/proc/clear()
-	author = ""
-	title = ""
-	body = ""
-	img = null
-	censor_flags = 0
-	admin_locked = 0
-	view_count = 0
-	publish_time = 0
-
-/**
-  * # Feed Channel
-  *
-  * Describes a single feed channel. Owns a list of [/datum/feed_message].
-  */
-/datum/feed_channel
-	/// The name of the channel.
-	var/channel_name = ""
-	/// The author of the channel.
-	var/author = ""
-	/// The description of the channel.
-	var/description = ""
-	/// The channel's icon.
-	var/icon = "newspaper"
-	/// The fallback author name to display if the channel is censored.
-	var/backup_author = ""
-	/// Lazy list. Contains all [/datum/feed_message] pertaining to the channel.
-	var/list/datum/feed_message/messages
-	/// Whether the channel is public or not.
-	var/is_public = FALSE
-	/// Whether the channel is frozen or not.
-	var/frozen = FALSE
-	/// Whether the channel is censored or not.
-	var/censored = FALSE
-	/// Whether the channel is admin-locked.
-	var/admin_locked = FALSE
-
-/datum/feed_channel/Destroy()
-	for(var/m in messages)
-		GLOB.news_network.stories -= m
-	return ..()
-
-/**
-  * Returns whether the given user can publish new stories to this channel.
-  *
-  * Arguments:
-  * * user - The user
-  * * scanned_user - The user's identifying information on the newscaster
-  */
-/datum/feed_channel/proc/can_publish(mob/user, scanned_user = "Unknown")
-	return (!frozen && (is_public || (author == scanned_user))) || user?.can_admin_interact()
-
-/**
-  * Returns whether the given user can edit or delete this channel.
-  *
-  * Arguments:
-  * * user - The user
-  * * scanned_user - The user's identifying information on the newscaster
-  */
-/datum/feed_channel/proc/can_modify(mob/user, scanned_user = "Unknown")
-	return (!frozen && author == scanned_user) || user?.can_admin_interact()
-
-/**
-  * Clears the channel's information.
-  *
-  * Discards all owned stories.
-  */
-/datum/feed_channel/proc/clear()
-	channel_name = ""
-	author = ""
-	backup_author = ""
-	messages = list()
-	is_public = FALSE
-	frozen = FALSE
-	censored = FALSE
-	admin_locked = FALSE
-
-/**
-  * Adds a new [story][/datum/feed_message] to the channel and network singleton.
-  *
-  * Arguments:
-  * * M - The story to add.
-  */
-/datum/feed_channel/proc/add_message(datum/feed_message/M)
-	ASSERT(istype(M))
-
-	if(!length(M.title))
-		M.title = "[channel_name] Story #[length(messages) + 1]"
-	LAZYADD(messages, M)
-	GLOB.news_network.stories += M
-	// Update all newscaster TGUIs
-	for(var/nc in GLOB.allNewscasters)
-		SStgui.update_uis(nc)
-
-/**
-  * Returns the text to be said by newscasters when announcing new news from a channel.
-  *
-  * Arguments:
-  * * title - Optional. The headline to announce along with the channel's name. Typically the newest story's title.
-  */
-/datum/feed_channel/proc/get_announce_text(title)
-	if(length(title))
-		return "Свежие новости от [channel_name]: [title]"
-	return "Свежие новости от [channel_name]"
+/datum/news_network/proc/save_photo(icon/photo)
+	var/photo_file = copytext_char(md5("\icon[photo]"), 1, 6)
+	if(!fexists("[GLOB.log_directory]/photos/[photo_file].png"))
+		//Clean up repeated frames
+		var/icon/clean = new /icon()
+		clean.Insert(photo, "", SOUTH, 1, 0)
+		fcopy(clean, "[GLOB.log_directory]/photos/[photo_file].png")
+	return photo_file

@@ -236,7 +236,7 @@
 	ears = /obj/item/radio/headset/nri/bowman/command
 	r_hand = /obj/item/gun/ballistic/automatic/vss
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-	    /obj/item/choice_beacon/nri_mech=1,\
+		/obj/item/choice_beacon/nri_mech=1,\
 		/obj/item/storage/box/syndie_kit/revolver=1,\
 		/obj/item/storage/ifak=1,\
 		/obj/item/ammo_box/magazine/vss_mag=4)

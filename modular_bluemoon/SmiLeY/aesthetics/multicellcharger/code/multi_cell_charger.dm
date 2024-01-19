@@ -186,11 +186,3 @@
 	build_path = /obj/machinery/cell_charger_multi
 	req_components = list(/obj/item/stock_parts/capacitor = 4)
 	needs_anchored = FALSE
-
-/datum/design/board/cell_charger_multi
-	name = "Machine Design (Multi-Cell Charger Board)"
-	desc = "The circuit board for a multi-cell charger."
-	id = "multi_cell_charger"
-	build_path = /obj/item/circuitboard/machine/cell_charger_multi
-	category = list ("Misc. Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING

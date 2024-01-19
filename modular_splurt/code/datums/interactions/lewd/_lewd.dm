@@ -1,9 +1,9 @@
 /mob/living
 	var/has_belly = FALSE
 
-/mob/living/has_anus(visibility = REQUIRE_ANY)
+/mob/living/has_anus()
 	if(getorganslot(ORGAN_SLOT_ANUS))
-		return has_genital(ORGAN_SLOT_ANUS, visibility)
+		return has_genital(ORGAN_SLOT_ANUS)
 	. = ..()
 
 /mob/living/add_lust(add)
@@ -42,29 +42,11 @@
 	else
 		return dif
 
-/mob/living/proc/has_belly(var/nintendo = REQUIRE_ANY)
+/mob/living/proc/has_belly()
 	var/mob/living/carbon/C = src
-	if(has_belly && !istype(C))
+	if(has_belly || !istype(C))
 		return TRUE
-	if(istype(C))
-		var/obj/item/organ/genital/peepee = C.getorganslot(ORGAN_SLOT_BELLY)
-		if(peepee)
-			switch(nintendo)
-				if(REQUIRE_ANY)
-					return TRUE
-				if(REQUIRE_EXPOSED)
-					if(peepee.is_exposed())
-						return TRUE
-					else
-						return FALSE
-				if(REQUIRE_UNEXPOSED)
-					if(!peepee.is_exposed())
-						return TRUE
-					else
-						return FALSE
-				else
-					return TRUE
-	return FALSE
+	return has_genital(ORGAN_SLOT_BELLY)
 
 /mob/living/cum(mob/living/partner, target_orifice)
 	var/message //if this doesn't exist it calls ..()
@@ -106,7 +88,7 @@
 							message = "кончает... как-то..."
 					if(CUM_TARGET_BELLY)
 						cumin = TRUE
-						if(partner.has_belly(REQUIRE_EXPOSED))
+						if(partner.has_belly() == HAS_EXPOSED_GENITAL)
 							message = "кончает в декольте <b>[partner]</b>, [pick(list("создавая там липкую лужу", "жидкость забавно фонтанирует наружу"))]."
 							if(c_partner)
 								target_gen = c_partner.getorganslot(ORGAN_SLOT_BELLY)
@@ -170,7 +152,7 @@
 								message = "кончает... как-то..."
 						if(CUM_TARGET_BELLY)
 							cumin = TRUE
-							if(partner.has_belly(REQUIRE_EXPOSED))
+							if(partner.has_belly() == HAS_EXPOSED_GENITAL)
 								message = "кончает в пупок <b>[partner]</b>, [pick(list("создавая там липкую лужу", "жидкость забавно фонтанирует наружу"))]."
 								if(c_partner)
 									target_gen = c_partner.getorganslot(ORGAN_SLOT_BELLY)
@@ -227,13 +209,13 @@
 	visible_message(message = "<span class='userlove'><b>\The [src]</b> [message]</span>", ignored_mobs = get_unconsenting())
 	multiorgasms += 1
 
-	if(multiorgasms > (get_sexual_potency() * 0.34)) //AAAAA, WE DONT WANT NEGATIVES HERE, RE
-		refractory_period = world.time + rand(300, 900) - get_sexual_potency()//sex cooldown
+	if(get_sexual_potency() == -1 || multiorgasms > (get_sexual_potency() * 0.34)) //AAAAA, WE DONT WANT NEGATIVES HERE, RE
+		refractory_period = world.time + rand(300, 900) //sex cooldown
 		// set_drugginess(rand(20, 30))
 	else
 		refractory_period = world.time + rand(300, 900) - get_sexual_potency()
 		// set_drugginess(rand(5, 10))
-	if(multiorgasms < get_sexual_potency())
+	if(get_sexual_potency() == -1 || multiorgasms < get_sexual_potency()) // Climax limit | SPLURT EDIT: -1 sexual potency = no limit
 		if(ishuman(src))
 			var/mob/living/carbon/human/H = src
 			if(!partner)
@@ -659,14 +641,13 @@
 	var/message
 	var/list/lines
 	var/genital_name = get_penetrating_genital_name()
-	//var/t_His = target.ru_ego()
-	if(is_fucking(target, CUM_TARGET_NIPPLE) && target.has_breasts(REQUIRE_EXPOSED))
+	if(is_fucking(target, CUM_TARGET_NIPPLE) && target.has_breasts() == HAS_EXPOSED_GENITAL)
 		lines = list(
 			"вводит его член внутрь соска <b>[target]</b> и двигается в обратном направлении.",
 			"двигается внутри текущего и пухлого сосочка <b>[target]</b>, вынуждая его хлюпать и протекать.",
 			"шлепает своими семянниками по груди <b>[target]</b>, как в то же время сосок прогладывает всю длинну члена."
 		)
-	else if(target.has_breasts(REQUIRE_EXPOSED))
+	else if(target.has_breasts() == HAS_EXPOSED_GENITAL)
 		lines = list(
 			"прижимает свой пульсирующий конец к пухлому соску <b>[target]</b>, вдавливая всю длину до упора с влажным шлепком.",
 			"обхватывает сосок <b>[target]</b> вводит в него свой палец, после чего вводит внутрь свой [genital_name]."
@@ -791,9 +772,9 @@
 	visible_message(message, ignored_mobs = get_unconsenting(unholy = TRUE))
 	playlewdinteractionsound(loc, pick(GLOB.brap_noises), 50, 1, -1, ignored_mobs = get_unconsenting(unholy = TRUE))
 	if(!target.is_fucking(src, CUM_TARGET_ANUS))
-		var/obj/item/organ/genital/genital = target.has_penis(REQUIRE_EXPOSED) ? target.getorganslot(ORGAN_SLOT_PENIS) : (target.has_vagina(REQUIRE_EXPOSED) ? target.getorganslot(ORGAN_SLOT_VAGINA) : null)
+		var/obj/item/organ/genital/genital = target.has_penis() == HAS_EXPOSED_GENITAL ? target.getorganslot(ORGAN_SLOT_PENIS) : (target.has_vagina() == HAS_EXPOSED_GENITAL ? target.getorganslot(ORGAN_SLOT_VAGINA) : null)
 		target.set_is_fucking(src, CUM_TARGET_ANUS, genital)
-	if(!target.has_strapon(REQUIRE_EXPOSED))
+	if(!target.has_strapon() == HAS_EXPOSED_GENITAL)
 		target.handle_post_sex(NORMAL_LUST, CUM_TARGET_ANUS, src)
 	handle_post_sex(NORMAL_LUST, null, target)
 
@@ -909,10 +890,10 @@
 	visible_message(message, ignored_mobs = get_unconsenting(unholy = TRUE))
 	playlewdinteractionsound(loc, pick(GLOB.brap_noises), 50, 1, -1, ignored_mobs = get_unconsenting(unholy = TRUE))
 
-	var/obj/item/organ/genital/G = target.has_penis(REQUIRE_EXPOSED) ? target.getorganslot(ORGAN_SLOT_PENIS) : (target.has_vagina(REQUIRE_EXPOSED) ? target.getorganslot(ORGAN_SLOT_VAGINA) : null)
+	var/obj/item/organ/genital/G = target.has_penis() == HAS_EXPOSED_GENITAL ? target.getorganslot(ORGAN_SLOT_PENIS) : (target.has_vagina() == HAS_EXPOSED_GENITAL ? target.getorganslot(ORGAN_SLOT_VAGINA) : null)
 	if(!target.is_fucking(src, CUM_TARGET_ANUS))
 		target.set_is_fucking(src, CUM_TARGET_ANUS, G)
-	if(!target.has_strapon(REQUIRE_EXPOSED))
+	if(!target.has_strapon() == HAS_EXPOSED_GENITAL)
 		target.handle_post_sex(NORMAL_LUST, CUM_TARGET_ANUS, src, G)
 	handle_post_sex(NORMAL_LUST, null, target)
 
@@ -1001,8 +982,6 @@
 /mob/living/carbon/proc/piss_mouth(mob/living/target)
 	var/message
 	var/pee_pee = (has_penis(REQUIRE_EXPOSED) ? getorganslot(ORGAN_SLOT_PENIS) : (has_vagina(REQUIRE_EXPOSED) ? getorganslot(ORGAN_SLOT_VAGINA) : null))
-	//var/u_His = ru_ego()
-	//var/t_Him = target.ru_na()
 	var/list/hell = list(
 		"опустошает свой мочевой пузырь в рот <b>[target]</b> наполняя его тёплой мочёй",
 		"покрывает глотку <b>[target]</b> золотым дождём ",

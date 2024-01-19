@@ -747,13 +747,29 @@
 	SEND_SIGNAL(src, COMSIG_ATOM_FIRE_ACT, exposed_temperature, exposed_volume)
 	return
 
-/atom/proc/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
-	if(density && !has_gravity(AM)) //thrown stuff bounces off dense stuff in no grav, unless the thrown stuff ends up inside what it hit(embedding, bola, etc...).
-		addtimer(CALLBACK(src, .proc/hitby_react, AM), 2)
+/**
+ * React to being hit by a thrown object
+ *
+ * Default behaviour is to call [hitby_react][/atom/proc/hitby_react] on ourselves after 2 seconds if we are dense
+ * and under normal gravity.
+ *
+ * Im not sure why this the case, maybe to prevent lots of hitby's if the thrown object is
+ * deleted shortly after hitting something (during explosions or other massive events that
+ * throw lots of items around - singularity being a notable example)
+ */
+/atom/proc/hitby(atom/movable/hitting_atom, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
+	SEND_SIGNAL(src, COMSIG_ATOM_HITBY, hitting_atom, skipcatch, hitpush, blocked, throwingdatum)
+	if(density && !has_gravity(hitting_atom)) //thrown stuff bounces off dense stuff in no grav, unless the thrown stuff ends up inside what it hit(embedding, bola, etc...).
+		addtimer(CALLBACK(src, .proc/hitby_react, hitting_atom), 2)
 
-/atom/proc/hitby_react(atom/movable/AM)
-	if(AM && isturf(AM.loc))
-		step(AM, turn(AM.dir, 180))
+/**
+ * We have have actually hit the passed in atom
+ *
+ * Default behaviour is to move back from the item that hit us
+ */
+/atom/proc/hitby_react(atom/movable/harmed_atom)
+	if(harmed_atom && isturf(harmed_atom.loc))
+		step(harmed_atom, turn(harmed_atom.dir, 180))
 
 /atom/proc/handle_slip(mob/living/carbon/C, knockdown_amount, obj/O, lube)
 	return
@@ -1426,6 +1442,11 @@
 	if(filter_data && filter_data[name])
 		return filters[filter_data.Find(name)]
 
+/// Returns the indice in filters of the given filter name.
+/// If it is not found, returns null.
+/atom/proc/get_filter_index(name)
+	return filter_data?.Find(name)
+
 /atom/proc/remove_filter(name_or_names)
 	if(!filter_data)
 		return
@@ -1581,6 +1602,14 @@
 	var/shift_lmb_ctrl_shift_lmb_line = ""
 	var/extra_lines = 0
 	var/extra_context = ""
+	var/auxiliary_name = ""
+
+	if(ishuman(src))
+		var/mob/living/carbon/human/H = src
+		if(istype(H.wear_neck, /obj/item/clothing/neck/petcollar))
+			var/obj/item/clothing/neck/petcollar/collar = H.wear_neck
+			if(collar.tagname)
+				auxiliary_name = "\[[collar.tagname]\]"
 
 	if ((isliving(user) || isovermind(user) || isaicamera(user)) && (user.client.prefs.screentip_pref != SCREENTIP_PREFERENCE_NO_CONTEXT))
 		var/obj/item/held_item = user.get_active_held_item()
@@ -1651,7 +1680,7 @@
 		active_hud.screentip_text.maptext = ""
 	else
 		//We inline a MAPTEXT() here, because there's no good way to statically add to a string like this
-		active_hud.screentip_text.maptext = "<span class='context' style='text-align: center; color: [user.client.prefs.screentip_color]'>[name][extra_context]</span>"
+		active_hud.screentip_text.maptext = "<span class='context' style='text-align: center; color: [user.client.prefs.screentip_color]'>[name] [auxiliary_name][extra_context]</span>"
 
 /**
  * Recursive getter method to return a list of all ghosts orbitting this atom

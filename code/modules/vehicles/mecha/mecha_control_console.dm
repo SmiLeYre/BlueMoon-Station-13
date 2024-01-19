@@ -129,6 +129,11 @@
 	M.diag_hud_set_mechtracking()
 	chassis = M
 
+/obj/item/mecha_parts/mecha_tracking/proc/attach(obj/vehicle/sealed/mecha/M)
+	LAZYADD(M.trackers, src)
+	M.diag_hud_set_mechtracking()
+	chassis = M
+
 /**
   * Attempts to EMP mech that the tracker is attached to, if there is one and tracker is not on cooldown
   */
@@ -136,7 +141,7 @@
 	if(recharging)
 		return
 	if(chassis)
-		chassis.emp_act(80)
+		chassis.emp_act(160)
 		addtimer(CALLBACK(src, /obj/item/mecha_parts/mecha_tracking/proc/recharge), 5 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
 		recharging = TRUE
 

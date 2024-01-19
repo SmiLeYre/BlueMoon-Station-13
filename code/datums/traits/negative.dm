@@ -39,6 +39,7 @@
 	medical_record_text = "Пациент демонстрирует неестественную привязанность к семейной реликвии."
 	var/obj/item/heirloom
 	var/where
+	var/loadout_heirloom = FALSE // BLUEMOON EDIT - выбор вещей из лодаута как family heirloom
 	processing_quirk = TRUE
 
 GLOBAL_LIST_EMPTY(family_heirlooms)
@@ -47,43 +48,52 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	// Define holder and type
 	var/mob/living/carbon/human/human_holder = quirk_holder
 	var/obj/item/heirloom_type
+	// BLUEMOON EDIT START - выбор вещей из лодаута как family heirloom
+	for (var/obj/item/item in quirk_holder.GetAllContents())
+		if(item.item_flags & FAMILY_HEIRLOOM)
+			loadout_heirloom = TRUE
+			heirloom = item
+	if(!loadout_heirloom)
+		// The quirk holder's species - we have a 50% chance, if we have a species with a set heirloom, to choose a species heirloom.
+		var/datum/species/holder_species = human_holder.dna?.species
+		if(holder_species && LAZYLEN(holder_species.family_heirlooms) && prob(50))
+			heirloom_type = pick(holder_species.family_heirlooms)
+		else
+			// Our quirk holder's job
+			var/datum/job/holder_job = SSjob.GetJob(human_holder.last_mind?.assigned_role)
+			if(holder_job && LAZYLEN(holder_job.family_heirlooms))
+				heirloom_type = pick(holder_job.family_heirlooms)
 
-	// The quirk holder's species - we have a 50% chance, if we have a species with a set heirloom, to choose a species heirloom.
-	var/datum/species/holder_species = human_holder.dna?.species
-	if(holder_species && LAZYLEN(holder_species.family_heirlooms) && prob(50))
-		heirloom_type = pick(holder_species.family_heirlooms)
-	else
-		// Our quirk holder's job
-		var/datum/job/holder_job = SSjob.GetJob(human_holder.last_mind?.assigned_role)
-		if(holder_job && LAZYLEN(holder_job.family_heirlooms))
-			heirloom_type = pick(holder_job.family_heirlooms)
-
-	// If we didn't find an heirloom somehow, throw them a generic one
-	if(!heirloom_type)
-		heirloom_type = pick(/obj/item/toy/cards/deck, /obj/item/lighter, /obj/item/dice/d20)
-
-	// Create the heirloom item
-	heirloom = new heirloom_type(get_turf(quirk_holder))
-
+		// If we didn't find an heirloom somehow, throw them a generic one
+		if(!heirloom_type)
+			heirloom_type = pick(/obj/item/toy/cards/deck, /obj/item/lighter, /obj/item/dice/d20)
+		// Create the heirloom item
+		heirloom = new heirloom_type(get_turf(quirk_holder))
+		heirloom.item_flags |= FAMILY_HEIRLOOM
+		// Determine and assign item location
+		var/list/slots = list(
+			"В левом кармане" = ITEM_SLOT_LPOCKET,
+			"В правом кармане" = ITEM_SLOT_RPOCKET,
+			"В рюкзаке" = ITEM_SLOT_BACKPACK
+		)
+		where = human_holder.equip_in_one_of_slots(heirloom, slots, FALSE) || "под ногами"
+	// BLUEMOON EDIT END
 	// Add to global list
 	GLOB.family_heirlooms += heirloom
 
-	// Determine and assign item location
-	var/list/slots = list(
-		"В левом кармане" = ITEM_SLOT_LPOCKET,
-		"В правом кармане" = ITEM_SLOT_RPOCKET,
-		"В рюкзаке" = ITEM_SLOT_BACKPACK
-	)
-	where = human_holder.equip_in_one_of_slots(heirloom, slots, FALSE) || "под ногами"
-
 /datum/quirk/family_heirloom/post_add()
-	if(where == "В рюкзаке")
-		var/mob/living/carbon/human/H = quirk_holder
-		SEND_SIGNAL(H.back, COMSIG_TRY_STORAGE_SHOW, H)
+	// BLUEMOON EDIT START - выбор вещей из лодаута как family heirloom
+	if(!loadout_heirloom)
+		if(where == "В рюкзаке")
+			var/mob/living/carbon/human/H = quirk_holder
+			SEND_SIGNAL(H.back, COMSIG_TRY_STORAGE_SHOW, H)
 
-	to_chat(quirk_holder, "<span class='boldnotice'>[where] находится [heirloom.name], передающаяся из поколения в поколение. Береги её!</span>")
-	var/list/family_name = splittext(quirk_holder.real_name, " ")
-	heirloom.name = "\improper [family_name[family_name.len]] family [heirloom.name]"
+		to_chat(quirk_holder, "<span class='boldnotice'>[where] находится [heirloom.name], передающаяся из поколения в поколение. Береги её!</span>")
+		var/list/family_name = splittext(quirk_holder.real_name, " ")
+		heirloom.name = "\improper [family_name[family_name.len]] family [heirloom.name]"
+	else
+		to_chat(quirk_holder, "<span class='boldnotice'>Ты прихватил с собой свою любимую вещь, [heirloom.name]. Береги её!</span>")
+	// BLUEMOON EDIT END
 
 /datum/quirk/family_heirloom/on_process()
 	// Ignore for dead holder

@@ -17039,7 +17039,7 @@
 /turf/open/floor/plasteel/dark,
 /area/eventmap/mountaininside)
 "kUJ" = (
-/obj/item/aiModule/reset/purge,
+/obj/item/ai_module/reset/purge,
 /turf/open/floor/plasteel,
 /area/eventmap/mountaininside)
 "ldj" = (
@@ -17253,7 +17253,7 @@
 /turf/open/floor/plasteel/dark/telecomms,
 /area/tcommsat/server)
 "oKW" = (
-/obj/item/aiModule/supplied/freeform,
+/obj/item/ai_module/supplied/freeform,
 /turf/open/floor/plasteel,
 /area/eventmap/mountaininside)
 "oWw" = (

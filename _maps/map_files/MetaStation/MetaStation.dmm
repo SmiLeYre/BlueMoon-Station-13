@@ -36,12 +36,12 @@
 	},
 /obj/item/storage/barricade,
 /obj/item/storage/barricade{
-	pixel_y = -10;
-	pixel_x = -10
+	pixel_x = -10;
+	pixel_y = -10
 	},
 /obj/item/storage/barricade{
-	pixel_y = -10;
-	pixel_x = 10
+	pixel_x = 10;
+	pixel_y = -10
 	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
@@ -9757,10 +9757,10 @@
 /area/security/prison/cells)
 "aMG" = (
 /obj/structure/table,
-/obj/item/aiModule/core/full/asimov,
-/obj/effect/spawner/lootdrop/aimodule_harmless,
-/obj/effect/spawner/lootdrop/aimodule_lewd,
-/obj/item/aiModule/core/freeformcore,
+/obj/item/ai_module/core/full/asimov,
+/obj/effect/spawner/lootdrop/ai_module_harmless,
+/obj/effect/spawner/lootdrop/ai_module_lewd,
+/obj/item/ai_module/core/freeformcore,
 /obj/machinery/door/window{
 	base_state = "right";
 	dir = 4;
@@ -9769,8 +9769,8 @@
 	req_access_txt = "20"
 	},
 /obj/structure/window/reinforced,
-/obj/effect/spawner/lootdrop/aimodule_neutral,
-/obj/item/aiModule/core/full/custom,
+/obj/effect/spawner/lootdrop/ai_module_neutral,
+/obj/item/ai_module/core/full/custom,
 /obj/machinery/flasher{
 	id = "AI";
 	pixel_y = 24
@@ -9792,11 +9792,11 @@
 	id = "AI";
 	pixel_y = 24
 	},
-/obj/effect/spawner/lootdrop/aimodule_harmful,
-/obj/item/aiModule/supplied/oxygen,
-/obj/item/aiModule/supplied/protectStation,
-/obj/item/aiModule/zeroth/oneHuman,
-/obj/item/aiModule/reset/purge,
+/obj/effect/spawner/lootdrop/ai_module_harmful,
+/obj/item/ai_module/supplied/oxygen,
+/obj/item/ai_module/supplied/protectStation,
+/obj/item/ai_module/zeroth/oneHuman,
+/obj/item/ai_module/reset/purge,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/ai_upload)
 "aMJ" = (
@@ -10100,7 +10100,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/item/aiModule/supplied/quarantine,
+/obj/item/ai_module/supplied/quarantine,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/ai_upload)
 "aPu" = (
@@ -10120,7 +10120,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/item/aiModule/supplied/freeform,
+/obj/item/ai_module/supplied/freeform,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/ai_upload)
 "aPy" = (
@@ -10200,7 +10200,7 @@
 /area/maintenance/fore)
 "aQz" = (
 /obj/structure/table,
-/obj/item/aiModule/reset,
+/obj/item/ai_module/reset,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -19001,8 +19001,8 @@
 /area/hallway/secondary/entry)
 "bCV" = (
 /obj/machinery/photocopier{
-	pixel_y = 3;
-	dir = 1
+	dir = 1;
+	pixel_y = 3
 	},
 /turf/open/floor/wood,
 /area/service/lawoffice)
@@ -20904,6 +20904,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/security/brig)
 "bNs" = (
@@ -25619,16 +25622,16 @@
 /obj/machinery/button/door{
 	id = "gateshutter";
 	name = "Gateway Shutter Control";
-	req_access_txt = "19";
 	pixel_x = 26;
-	pixel_y = 5
+	pixel_y = 5;
+	req_access_txt = "19"
 	},
 /obj/machinery/button/door{
 	id = "gatewinroom";
 	name = "Gateway Windows Shutter Control";
-	req_access_txt = "19";
 	pixel_x = 26;
-	pixel_y = -5
+	pixel_y = -5;
+	req_access_txt = "19"
 	},
 /obj/effect/turf_decal/tile/purple/opposingcorners,
 /turf/open/floor/plasteel/white,
@@ -25679,10 +25682,10 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
-	dir = 1
-	},
 /obj/effect/turf_decal/stripes/line,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
 "cfc" = (
@@ -25704,11 +25707,11 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 1
 	},
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
@@ -26251,8 +26254,8 @@
 /obj/machinery/button/door{
 	id = "gateshutter";
 	name = "Gateway Shutter Control";
-	req_access_txt = "19";
-	pixel_x = 26
+	pixel_x = 26;
+	req_access_txt = "19"
 	},
 /obj/effect/turf_decal/stripes/corner{
 	dir = 8
@@ -27248,8 +27251,8 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Research Division - Airlock";
-	network = list("ss13","rd");
-	dir = 9
+	dir = 9;
+	network = list("ss13","rd")
 	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
@@ -28668,8 +28671,8 @@
 /area/security/execution/education)
 "cmy" = (
 /obj/machinery/door/airlock/maintenance{
-	req_one_access_txt = "12;5;9";
-	name = "Medbay Maintenance"
+	name = "Medbay Maintenance";
+	req_one_access_txt = "12;5;9"
 	},
 /turf/open/floor/plating,
 /area/medical/medbay/central)
@@ -29897,9 +29900,9 @@
 	name = "research shutters"
 	},
 /obj/machinery/door/window/eastright{
+	dir = 8;
 	name = "Research and Development Desk";
-	req_one_access_txt = "7;29";
-	dir = 8
+	req_one_access_txt = "7;29"
 	},
 /turf/open/floor/plating,
 /area/science/lab)
@@ -31437,8 +31440,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/maintenance{
-	req_one_access_txt = "12;5;9";
-	name = "Medbay Maintenance"
+	name = "Medbay Maintenance";
+	req_one_access_txt = "12;5;9"
 	},
 /turf/open/floor/plating,
 /area/maintenance/aft)
@@ -52011,8 +52014,8 @@
 	id = "caproom";
 	name = "Shutters Control";
 	normaldoorcontrol = 1;
-	specialfunctions = 4;
-	pixel_y = -25
+	pixel_y = -25;
+	specialfunctions = 4
 	},
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
@@ -52537,8 +52540,8 @@
 	id = "Cabin8";
 	name = "Cabin Bolt Control";
 	normaldoorcontrol = 1;
-	specialfunctions = 4;
-	pixel_y = -25
+	pixel_y = -25;
+	specialfunctions = 4
 	},
 /obj/structure/table/wood,
 /turf/open/floor/wood,
@@ -54799,8 +54802,8 @@
 /obj/effect/turf_decal/tile/red/half/contrasted,
 /obj/item/radio/intercom{
 	name = "Station Intercom (General)";
-	pixel_y = -29;
-	pixel_x = 29
+	pixel_x = 29;
+	pixel_y = -29
 	},
 /turf/open/floor/plasteel,
 /area/security/checkpoint/engineering)
@@ -55306,8 +55309,8 @@
 	},
 /obj/item/melee/breaching_hammer,
 /obj/item/melee/breaching_hammer{
-	pixel_y = -3;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = -3
 	},
 /obj/item/melee/breaching_hammer{
 	pixel_x = 6;
@@ -55745,8 +55748,8 @@
 /area/science/research/abandoned)
 "hqK" = (
 /obj/machinery/door/airlock/maintenance/external{
-	name = "Sauna";
-	id_tag = "saunab"
+	id_tag = "saunab";
+	name = "Sauna"
 	},
 /obj/machinery/door/firedoor,
 /obj/structure/fans/tiny,
@@ -56043,31 +56046,31 @@
 /obj/effect/turf_decal/tile/purple/opposingcorners,
 /obj/structure/table/glass,
 /obj/item/dyespray/hairspray/black{
-	pixel_y = 6;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 6
 	},
 /obj/item/dyespray/hairspray/blond{
-	pixel_y = 6;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 6
 	},
 /obj/item/dyespray/hairspray/blue{
-	pixel_y = 6;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 6
 	},
 /obj/item/dyespray/hairspray/brown{
 	pixel_y = 6
 	},
 /obj/item/dyespray/hairspray/green{
-	pixel_y = 6;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = 6
 	},
 /obj/item/dyespray/hairspray/red{
-	pixel_y = 6;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 6
 	},
 /obj/item/dyespray/hairspray/white{
-	pixel_y = 6;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/dark,
 /area/service/barbershop)
@@ -56708,8 +56711,8 @@
 /area/commons/dorms)
 "hLa" = (
 /obj/machinery/door/airlock/maintenance{
-	req_one_access_txt = "20;12";
-	id_tag = "magaz_bolt"
+	id_tag = "magaz_bolt";
+	req_one_access_txt = "20;12"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -58162,8 +58165,8 @@
 	id = "coffee_counter";
 	name = "Shutters Control";
 	normaldoorcontrol = 1;
-	specialfunctions = 4;
-	pixel_y = -25
+	pixel_y = -25;
+	specialfunctions = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/wood,
@@ -61512,7 +61515,7 @@
 "kbk" = (
 /obj/structure/table,
 /obj/item/aicard,
-/obj/item/aiModule/reset,
+/obj/item/ai_module/reset,
 /turf/open/floor/plasteel/dark,
 /area/engineering/storage/tech)
 "kbB" = (
@@ -63155,13 +63158,13 @@
 "kMS" = (
 /obj/structure/lattice/catwalk,
 /obj/docking_port/stationary{
+	dheight = 5;
+	dir = 4;
+	dwidth = 5;
+	height = 10;
 	id = "lambda_station";
 	name = "Lambda Shuttle Dock";
-	dwidth = 5;
-	width = 10;
-	dheight = 5;
-	height = 10;
-	dir = 4
+	width = 10
 	},
 /turf/open/space/basic,
 /area/space/nearstation)
@@ -64434,7 +64437,7 @@
 /area/engineering/main)
 "lso" = (
 /obj/structure/bodycontainer/morgue{
-	dir = 2
+	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
@@ -66650,8 +66653,8 @@
 	},
 /obj/machinery/shower{
 	dir = 8;
-	pixel_y = -8;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = -8
 	},
 /obj/machinery/door/window{
 	dir = 8
@@ -67830,9 +67833,9 @@
 	icon_state = "grassb2"
 	},
 /obj/structure/streetdecor/lamp{
+	light_color = "#ffd6aa";
 	light_power = 1;
-	light_range = 4;
-	light_color = "#ffd6aa"
+	light_range = 4
 	},
 /turf/open/floor/spooktime/cobble/roadsideW,
 /area/service/park)
@@ -68801,9 +68804,9 @@
 /area/engineering/main)
 "nxs" = (
 /obj/structure/streetdecor/lamp{
+	light_color = "#ffd6aa";
 	light_power = 1;
-	light_range = 4;
-	light_color = "#ffd6aa"
+	light_range = 4
 	},
 /turf/open/floor/spooktime/cobble/roadmid,
 /area/service/park)
@@ -71323,8 +71326,8 @@
 	id = "magaz_counter";
 	name = "Shutters Control";
 	normaldoorcontrol = 1;
-	specialfunctions = 4;
-	pixel_x = -25
+	pixel_x = -25;
+	specialfunctions = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/wood/wood_parquet,
@@ -75607,8 +75610,8 @@
 	id = "saunab";
 	name = "Cabin Bolt Control";
 	normaldoorcontrol = 1;
-	specialfunctions = 4;
-	pixel_y = 25
+	pixel_y = 25;
+	specialfunctions = 4
 	},
 /turf/open/floor/wood,
 /area/service/sauna)
@@ -75694,12 +75697,12 @@
 /obj/machinery/power/apc/auto_name/west,
 /obj/item/storage/fancy/coffee_condi_display,
 /obj/item/reagent_containers/glass/bottle/syrup_bottle/caramel{
-	pixel_y = 20;
-	pixel_x = -10
+	pixel_x = -10;
+	pixel_y = 20
 	},
 /obj/item/reagent_containers/glass/bottle/syrup_bottle/korta_nectar{
-	pixel_y = 20;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 20
 	},
 /obj/item/reagent_containers/glass/bottle/syrup_bottle/laughsyrup{
 	pixel_y = 20
@@ -80150,8 +80153,8 @@
 	id = "magaz_bolt";
 	name = "Door Bolts Control";
 	normaldoorcontrol = 1;
-	specialfunctions = 4;
-	pixel_x = -25
+	pixel_x = -25;
+	specialfunctions = 4
 	},
 /obj/machinery/photocopier,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
@@ -81075,8 +81078,8 @@
 	},
 /obj/machinery/shower{
 	dir = 8;
-	pixel_y = -8;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = -8
 	},
 /obj/structure/curtain,
 /obj/machinery/door/window{
@@ -82265,8 +82268,8 @@
 /area/command/heads_quarters/captain/private)
 "tEv" = (
 /obj/machinery/door/airlock/maintenance/external{
-	name = "Sauna";
-	id_tag = "saunab"
+	id_tag = "saunab";
+	name = "Sauna"
 	},
 /obj/structure/fans/tiny,
 /obj/machinery/door/firedoor,
@@ -83648,9 +83651,9 @@
 /area/command/heads_quarters/ce)
 "ufx" = (
 /obj/structure/streetdecor/lamp{
+	light_color = "#ffd6aa";
 	light_power = 1;
-	light_range = 4;
-	light_color = "#ffd6aa"
+	light_range = 4
 	},
 /turf/open/floor/spooktime/spooktimegrass,
 /area/service/park)
@@ -84375,8 +84378,8 @@
 	id = "Cabin5";
 	name = "Cabin Bolt Control";
 	normaldoorcontrol = 1;
-	specialfunctions = 4;
-	pixel_y = -25
+	pixel_y = -25;
+	specialfunctions = 4
 	},
 /obj/structure/table/wood,
 /turf/open/floor/wood,
@@ -85889,7 +85892,7 @@
 /area/cargo/office)
 "vkj" = (
 /obj/structure/bodycontainer/morgue{
-	dir = 2
+	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,

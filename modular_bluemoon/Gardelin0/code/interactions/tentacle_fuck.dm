@@ -15,7 +15,7 @@
 
 /datum/interaction/lewd/tentacle/female
 	description = "Затентаклить её!"
-	require_target_vagina = REQUIRE_EXPOSED
+	required_from_user_exposed = INTERACTION_REQUIRE_VAGINA
 	require_user_tentacles = TRUE
 	write_log_user = "tentacled"
 	write_log_target = "was tentacled by"
@@ -49,8 +49,7 @@
 
 /datum/interaction/lewd/tentacle/female_double
 	description = "Затентаклить её ВДВОЙНЕ!"
-	require_target_vagina = REQUIRE_EXPOSED
-	require_target_anus = REQUIRE_EXPOSED
+	required_from_user_exposed = INTERACTION_REQUIRE_VAGINA | INTERACTION_REQUIRE_ANUS
 	require_user_tentacles = TRUE
 	write_log_user = "tentacled"
 	write_log_target = "was tentacled by"
@@ -84,7 +83,7 @@
 
 /datum/interaction/lewd/tentacle/male
 	description = "Затентаклить его!"
-	require_target_penis = REQUIRE_EXPOSED
+	required_from_user_exposed = INTERACTION_REQUIRE_ANUS
 	require_user_tentacles = TRUE
 	write_log_user = "tentacled"
 	write_log_target = "was tentacled by"
@@ -119,8 +118,7 @@
 
 /datum/interaction/lewd/tentacle/male_double
 	description = "Затентаклить его ВДВОЙНЕ!"
-	require_target_penis = REQUIRE_EXPOSED
-	require_target_anus = REQUIRE_EXPOSED
+	required_from_user_exposed = INTERACTION_REQUIRE_ANUS | INTERACTION_REQUIRE_PENIS
 	require_user_tentacles = TRUE
 	write_log_user = "tentacled"
 	write_log_target = "was tentacled by"
@@ -155,7 +153,7 @@
 
 /datum/interaction/lewd/tentacle/anus
 	description = "Затентаклить в попу!"
-	require_target_anus = REQUIRE_EXPOSED
+	required_from_user_exposed = INTERACTION_REQUIRE_ANUS
 	require_user_tentacles = TRUE
 	write_log_user = "tentacled"
 	write_log_target = "was tentacled by"

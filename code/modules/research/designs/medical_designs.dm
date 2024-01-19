@@ -548,7 +548,7 @@
 	build_path = /obj/item/organ/eyes/robotic/thermals
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-	min_security_level = SEC_LEVEL_AMBER
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/cyberimp_antidrop
 	name = "Anti-Drop Implant"
@@ -560,7 +560,7 @@
 	build_path = /obj/item/organ/cyberimp/brain/anti_drop
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-	min_security_level = SEC_LEVEL_BLUE
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/cyberimp_antistun
 	name = "CNS Rebooter Implant"
@@ -572,7 +572,7 @@
 	build_path = /obj/item/organ/cyberimp/brain/anti_stun
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-	min_security_level = SEC_LEVEL_BLUE
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/cyberimp_robot_radshielding
 	name = "ECC System Guard Implant"
@@ -617,7 +617,7 @@
 	build_path = /obj/item/organ/cyberimp/chest/reviver
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-	min_security_level = SEC_LEVEL_BLUE
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/cyberimp_thrusters
 	name = "Thrusters Set Implant"
@@ -629,7 +629,7 @@
 	build_path = /obj/item/organ/cyberimp/chest/thrusters
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-	min_security_level = SEC_LEVEL_BLUE
+	min_security_level = SEC_LEVEL_AMBER
 
 /////////////////////////////////////////
 ////////////Regular Implants/////////////

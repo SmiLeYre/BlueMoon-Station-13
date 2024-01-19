@@ -230,14 +230,14 @@
 	name = "Flektarn Montur"
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/donator/bm/flektarn_montur
-	ckeywhitelist = list("vulpshiro", "dolbajob", "stgs", "leony24")
+	ckeywhitelist = list("vulpshiro", "dolbajob", "stgs", "leony24", "dcp9371")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/flektarn_beret
 	name = "Flektarn Beret"
 	slot = ITEM_SLOT_HEAD
 	path = /obj/item/clothing/head/donator/bm/flektarn_beret
-	ckeywhitelist = list("vulpshiro", "dolbajob", "stgs", "leony24")
+	ckeywhitelist = list("vulpshiro", "dolbajob", "stgs", "leony24", "dcp9371")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/skull_patch
@@ -510,6 +510,13 @@
 	slot = ITEM_SLOT_BELT
 	path = /obj/item/storage/belt/sabre/civil
 	ckeywhitelist = list("sketchyirishman")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/summon_tentacle
+	name = "Book for Summon Tentacle"
+	slot = ITEM_SLOT_BELT
+	path = /obj/item/book/granter/spell/summon_tentacle
+	ckeywhitelist = list("roboticus")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/p940

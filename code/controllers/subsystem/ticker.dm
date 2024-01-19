@@ -134,9 +134,6 @@ SUBSYSTEM_DEF(ticker)
 	else
 		login_music = "[global.config.directory]/title_music/sounds/[pick(music)]"
 
-	// Setup pregenerated newsfeeds
-	setup_news_feeds()
-
 	if(!GLOB.syndicate_code_phrase)
 		GLOB.syndicate_code_phrase	= generate_code_phrase(return_list=TRUE)
 
@@ -284,7 +281,7 @@ SUBSYSTEM_DEF(ticker)
 		var/list/modes = new
 		for (var/datum/game_mode/M in runnable_modes)
 			modes += M.name
-		modes = sortList(modes)
+		modes = sort_list(modes)
 		to_chat(world, "<b>The gamemode is: secret!\nPossibilities:</B> [english_list(modes)]")
 	else
 		mode.announce()*/
@@ -527,36 +524,6 @@ SUBSYSTEM_DEF(ticker)
 /datum/controller/subsystem/ticker/proc/IsRoundInProgress()
 	return current_state == GAME_STATE_PLAYING
 
-/datum/controller/subsystem/ticker/proc/setup_news_feeds()
-	var/datum/feed_channel/newChannel = new /datum/feed_channel
-	newChannel.channel_name = "Станционные Объявления"
-	newChannel.author = "Automated Announcement Listing"
-	newChannel.icon = "bullhorn"
-	newChannel.frozen = TRUE
-	newChannel.admin_locked = TRUE
-	GLOB.news_network.channels += newChannel
-
-	newChannel = new /datum/feed_channel
-	newChannel.channel_name = "Nyx Daily"
-	newChannel.author = "CentCom Minister of Information"
-	newChannel.icon = "meteor"
-	newChannel.frozen = TRUE
-	newChannel.admin_locked = TRUE
-	GLOB.news_network.channels += newChannel
-
-	newChannel = new /datum/feed_channel
-	newChannel.channel_name = "The Gibson Gazette"
-	newChannel.author = "Editor Mike Hammers"
-	newChannel.icon = "star"
-	newChannel.frozen = TRUE
-	newChannel.admin_locked = TRUE
-	GLOB.news_network.channels += newChannel
-
-	// for(var/loc_type in subtypesof(/datum/trade_destination))
-		// var/datum/trade_destination/D = new loc_type
-		// GLOB.weighted_randomevent_locations[D] = D.viable_random_events.len
-		// GLOB.weighted_mundaneevent_locations[D] = D.viable_mundane_events.len
-
 /proc/send_gamemode_vote() //CIT CHANGE - adds roundstart gamemode votes
 	if(SSticker.current_state == GAME_STATE_PREGAME)
 		if(SSticker.timeLeft < 900)
@@ -754,6 +721,7 @@ SUBSYSTEM_DEF(ticker)
 	world.Reboot()
 
 /datum/controller/subsystem/ticker/Shutdown()
+	gather_newscaster() //called here so we ensure the log is created even upon admin reboot
 	save_admin_data()
 	update_everything_flag_in_db()
 	if(!round_end_sound)

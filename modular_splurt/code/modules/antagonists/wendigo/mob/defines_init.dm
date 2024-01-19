@@ -39,6 +39,10 @@
 
 	var/list/slaves = list() //people enslaved
 
+/mob/living/carbon/wendigo/man
+	icon_state = "werefox"
+	gender = MALE
+
 /mob/living/carbon/wendigo/Initialize()
 	/*		//TODO: Uncomment when objectives + forest get finished
 	if(!connected_link)
@@ -50,6 +54,7 @@
 	*/
 	if(gender == MALE)
 		fake_breast_size = 0
+		fake_penis_size = rand(10, 60)
 	else
 		fake_penis_size = 0
 	real_name = name
