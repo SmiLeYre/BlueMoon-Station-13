@@ -10,6 +10,7 @@
 				/obj/item/clothing/under/costume/maid = 5,
 				/obj/item/clothing/under/rank/civilian/janitor/maid = 5,
 				/obj/item/clothing/under/centcomdress = 5,
+				/obj/item/clothing/under/centcomdress/vk = 5,
 				/obj/item/clothing/under/raccveralls = 5,
 				/obj/item/clothing/under/raccveralls/flush_shirt = 5,
 				/obj/item/clothing/under/misc/stripper = 3,

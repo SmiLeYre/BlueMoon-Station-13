@@ -72,3 +72,29 @@
   - rscadd: More RNG drops to Bepis so it's actually more useful.
   - rscadd: New genital stimulator reagent (vaginal vigour).
   - rscadd: And most important added a good base to inspire new modular changes!
+2024-01-20:
+  Tree-Tetrarch:
+  - balance: Citadel Expansion Chem value reduced.
+2024-01-21:
+  Zattarra:
+  - bugfix: Fixes the invisifiber jacket icon.
+2024-01-22:
+  Anonymous:
+  - rscadd: Added *coo, *facewing and *ruffle (wings' ruffle).
+  - rscadd: Added Avian language. It's quite basic, though.
+  Vhariik:
+  - rscadd: Icebox!
+2024-01-24:
+  MysteryMan21333:
+  - tweak: Tweaks the land mines and places mining equipment near skeleton spawn.
+  - bugfix: Fixes skeletons freezing and suffocating to death.
+2024-01-27:
+  Vhariik:
+  - rscdel: Removed miscarriages
+  ariaworld:
+  - rscadd: Unicode characters compatibility for books. (Write in non-ASCII characters,
+      for example other languages).
+  - bugfix: Books now showing apostrophes and other characters correctly (They'd break
+      and show &apos, for example).
+  - rscadd: An important sanitization check for the DNA Console.
+  - tweak: Books now have 10 extra characters available for their Title.

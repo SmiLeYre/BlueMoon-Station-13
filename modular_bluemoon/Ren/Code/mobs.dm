@@ -60,7 +60,7 @@
 	mind.transfer_to(B)
 
 ///Инвентарь
-/mob/living/simple_animal/hostile/morph/sandman/doUnEquip(obj/item/I, force, silent = FALSE)
+/mob/living/simple_animal/hostile/morph/sandman/doUnEquip(obj/item/I, force, newloc, no_move, invdrop = TRUE, silent)
 	if(..())
 		update_inv_hands()
 		if(I == internal_storage)

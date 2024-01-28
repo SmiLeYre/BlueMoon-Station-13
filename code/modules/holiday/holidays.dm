@@ -250,6 +250,7 @@
 /datum/holiday/lgbt/russianday
 	name = "Russian Day"
 	begin_day = 16
+	end_day = 17
 	begin_month = JANUARY
 
 	holiday_colors = list(

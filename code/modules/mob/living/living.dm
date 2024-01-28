@@ -887,7 +887,7 @@
 /mob/living/do_resist_grab(moving_resist, forced, silent = FALSE)
 	. = ..()
 	var/escchance
-	if(HAS_TRAIT(usr, TRAIT_GARROTED))
+	if(HAS_TRAIT(src, TRAIT_GARROTED))
 		escchance = 3
 	else
 		escchance = 30

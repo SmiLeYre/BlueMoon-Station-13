@@ -2830,9 +2830,7 @@
 	},
 /area/awaymission/caves/BMP_asteroid/level_two)
 "Wx" = (
-/obj/structure/destructible/clockwork/ocular_warden{
-	faction = list("skeleton")
-	},
+/obj/structure/destructible/clockwork/ocular_warden,
 /turf/open/lava/smooth{
 	desc = "Looks hot.";
 	initial_gas_mix = "n2=23;o2=14";
