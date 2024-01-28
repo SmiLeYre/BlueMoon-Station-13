@@ -230,6 +230,10 @@
 			else
 				to_chat(H, span_reallybig("Не забудьте забрать космический охладитель под собой.")) // чтобы не упустили из виду при резком спавне
 				new /obj/item/device/cooler/charged(H.loc)
+	if (canloadappearance)
+		H.canloadappearance = TRUE
+	else
+		H.canloadappearance = FALSE
 	. = ..()
 // BLUEMOON ADD END
 
@@ -293,10 +297,6 @@
 			W.assignment = id_job
 		W.registered_name = H.real_name
 		W.update_label()
-	if (canloadappearance)
-		H.canloadappearance = TRUE
-	else
-		H.canloadappearance = FALSE
 
 //Instant version - use when spawning corpses during runtime
 /obj/effect/mob_spawn/human/corpse
