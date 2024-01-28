@@ -2718,13 +2718,10 @@
 	},
 /area/awaymission/caves/BMP_asteroid/level_two)
 "LE" = (
-/obj/structure/destructible/clockwork/ocular_warden,
-/turf/open/lava/smooth{
-	desc = "Looks hot.";
-	initial_gas_mix = "n2=23;o2=14";
-	luminosity = 5
-	},
-/area/awaymission/caves/BMP_asteroid/level_four)
+/obj/effect/decal/cleanable/robot_debris/old,
+/obj/machinery/suit_storage_unit/mining/eva,
+/turf/open/floor/plasteel,
+/area/awaymission/caves/listeningpost)
 "LJ" = (
 /mob/living/simple_animal/hostile/skeleton/plasmaminer/jackhammer{
 	stop_automated_movement = 1
@@ -12560,7 +12557,7 @@ bV
 bV
 bL
 eF
-eg
+LE
 eq
 LJ
 eJ
@@ -50939,7 +50936,7 @@ ad
 ad
 ad
 ad
-LE
+Wx
 ad
 ad
 ad
@@ -51202,7 +51199,7 @@ ai
 ai
 ad
 ad
-LE
+Wx
 ad
 ad
 ad
@@ -52737,7 +52734,7 @@ ad
 ad
 ad
 ad
-LE
+Wx
 ad
 ad
 ai
@@ -52999,7 +52996,7 @@ ad
 ad
 ad
 ad
-LE
+Wx
 ad
 ad
 ad
