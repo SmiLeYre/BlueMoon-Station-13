@@ -42019,6 +42019,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/wood,
 /area/service/theater)
+"ddK" = (
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/plating,
+/area/maintenance/port/aft)
 "ddM" = (
 /obj/structure/sign/poster/official/the_owl{
 	pixel_x = 32
@@ -42072,12 +42076,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/office)
-"dec" = (
-/obj/effect/spawner/lootdrop/crate_spawner,
-/turf/open/floor/plating{
-	icon_state = "platingdmg1"
-	},
-/area/maintenance/port/aft)
 "dem" = (
 /obj/structure/disposalpipe/trunk{
 	dir = 8
@@ -49562,13 +49560,6 @@
 /obj/structure/chair/comfy/plywood,
 /turf/open/floor/grass/grass0,
 /area/commons/dorms)
-"iQy" = (
-/obj/machinery/light/small,
-/obj/structure/disposalpipe/segment{
-	dir = 5
-	},
-/turf/open/floor/plating,
-/area/maintenance/port/aft)
 "iQP" = (
 /obj/effect/turf_decal/tile/brown/opposingcorners,
 /obj/structure/closet{
@@ -52064,10 +52055,6 @@
 /obj/effect/landmark/xeno_spawn,
 /turf/open/floor/wood,
 /area/maintenance/bar)
-"kyK" = (
-/obj/structure/disposalpipe/segment,
-/turf/open/floor/plating,
-/area/maintenance/port/aft)
 "kyT" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -55634,12 +55621,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/office)
-"neQ" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/open/space/basic,
-/area/space)
 "neT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -55848,6 +55829,13 @@
 	icon_state = "wood-broken4"
 	},
 /area/maintenance/starboard/aft)
+"nps" = (
+/obj/structure/disposalpipe/segment,
+/obj/structure/loot_pile/maint,
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/maintenance/port/aft)
 "nqo" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
@@ -57231,6 +57219,12 @@
 "orj" = (
 /turf/open/floor/engine,
 /area/maintenance/port/aft)
+"orq" = (
+/obj/effect/spawner/lootdrop/crate_spawner,
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/maintenance/port/aft)
 "orB" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 8
@@ -57611,13 +57605,6 @@
 /obj/machinery/hydroponics/soil,
 /turf/open/floor/grass/grass0,
 /area/security/prison/upper)
-"oDW" = (
-/obj/structure/disposalpipe/segment,
-/obj/structure/loot_pile/maint,
-/turf/open/floor/plating{
-	icon_state = "platingdmg1"
-	},
-/area/maintenance/port/aft)
 "oEt" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 10
@@ -58301,14 +58288,6 @@
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
 /area/maintenance/fore)
-"pjn" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/open/floor/plating{
-	icon_state = "platingdmg1"
-	},
-/area/maintenance/port/aft)
 "pjO" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -58884,6 +58863,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/hallway/secondary/entry)
+"pGa" = (
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/maintenance/port/aft)
 "pGc" = (
 /obj/machinery/door/poddoor/preopen{
 	id = "Cell Interior Shutters";
@@ -59634,6 +59619,13 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/security/prison/cells)
+"qjc" = (
+/obj/machinery/light/small,
+/obj/structure/disposalpipe/segment{
+	dir = 5
+	},
+/turf/open/floor/plating,
+/area/maintenance/port/aft)
 "qje" = (
 /obj/structure/sign/mining{
 	pixel_y = 7
@@ -60185,6 +60177,12 @@
 /obj/effect/landmark/event_spawn,
 /turf/open/floor/plasteel,
 /area/security/prison/upper)
+"qHn" = (
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
+/turf/open/space/basic,
+/area/space)
 "qHr" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/disposalpipe/segment{
@@ -61344,6 +61342,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/prison/upper)
+"rCh" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/space/basic,
+/area/space)
 "rCl" = (
 /obj/machinery/door/firedoor,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -62387,12 +62391,6 @@
 /obj/structure/chair/office/dark,
 /turf/open/floor/wood,
 /area/service/lawoffice)
-"sqy" = (
-/obj/structure/disposalpipe/segment,
-/turf/open/floor/plating{
-	icon_state = "platingdmg1"
-	},
-/area/maintenance/port/aft)
 "sra" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/cultivator,
@@ -63005,6 +63003,14 @@
 /obj/structure/grille,
 /turf/open/space/basic,
 /area/space/nearstation)
+"sMF" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/maintenance/port/aft)
 "sMG" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 4
@@ -68066,12 +68072,6 @@
 /obj/machinery/cryopod/tele,
 /turf/open/floor/carpet,
 /area/commons/cryopod)
-"woU" = (
-/obj/structure/disposalpipe/segment{
-	dir = 6
-	},
-/turf/open/space/basic,
-/area/space)
 "wph" = (
 /obj/docking_port/stationary{
 	area_type = /area/construction/mining/aux_base;
@@ -86589,13 +86589,13 @@ tXJ
 bCq
 aaa
 aaa
-woU
+qHn
 lia
-oDW
-sqy
-sqy
-kyK
-iQy
+nps
+pGa
+pGa
+ddK
+qjc
 bCq
 aoV
 aaa
@@ -86846,9 +86846,9 @@ nkP
 bLv
 aaa
 aaa
-neQ
+rCh
 bCq
-dec
+orq
 bHE
 bCq
 bHE
@@ -87103,13 +87103,13 @@ lcf
 bLv
 aaa
 aaa
-neQ
+rCh
 bLv
 xdq
 bHE
 tXJ
 bHE
-pjn
+sMF
 bLv
 aoV
 aaa
@@ -87360,7 +87360,7 @@ bHE
 bLv
 aaa
 aaa
-neQ
+rCh
 bLv
 cAK
 bCq
@@ -87617,7 +87617,7 @@ tXJ
 bLv
 aaa
 aaa
-neQ
+rCh
 bCq
 bHE
 bCq
