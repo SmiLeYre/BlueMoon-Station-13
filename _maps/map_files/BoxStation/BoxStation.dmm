@@ -44635,6 +44635,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/commons/fitness)
+"eYp" = (
+/obj/structure/disposalpipe/segment,
+/obj/structure/barricade/wooden{
+	name = "wooden barricade (CLOSED)"
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/maintenance/port/aft)
 "eYP" = (
 /obj/structure/reagent_dispensers/watertank/high,
 /obj/item/reagent_containers/glass/bucket,
@@ -61216,6 +61225,12 @@
 /mob/living/simple_animal/opossum,
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
+"rtY" = (
+/obj/structure/barricade/wooden{
+	name = "wooden barricade (CLOSED)"
+	},
+/turf/open/floor/plating,
+/area/maintenance/port/aft)
 "rtZ" = (
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -86593,7 +86608,7 @@ qHn
 lia
 nps
 pGa
-pGa
+eYp
 ddK
 qjc
 bCq
@@ -87874,9 +87889,9 @@ bSp
 bCq
 aaa
 aoV
-kAk
+rCh
 bCq
-xYN
+rtY
 bCq
 nkP
 bCq
@@ -88131,7 +88146,7 @@ bHE
 bCq
 aaa
 aoV
-kAk
+rCh
 bCq
 bHE
 tXJ
