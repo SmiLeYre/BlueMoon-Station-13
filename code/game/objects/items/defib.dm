@@ -594,9 +594,9 @@
 					var/obj/item/organ/brain/BR = H.getorgan(/obj/item/organ/brain)
 					if(BR) //BUG_PROBABLE_CAUSE - slight difference between us and tg
 						if(BR.organ_flags & ORGAN_FAILING)
-							failed = "<span class='warning'>[req_defib ? "[defib]" : "[src]"] жужжит: Реанимация не удалась - ткани мозга пациента повреждены, что делает невозможным его восстановление с помощью дефибриллятора. Дальнейшие попытки бесполезны.</span>"
+							failed = "<span class='warning'>[req_defib ? "[defib]" : "[src]"] жужжит: Реанимация не удалась - ткани мозга пациента повреждены, что делает невозможным его восстановление с помощью дефибриллятора. Проведите хирургическое восстановление и повторите попытку.</span>"
 						if(BR.brain_death)
-							failed = "<span class='warning'>[req_defib ? "[defib]" : "[src]"] жужжит: Реанимация не удалась - мозг пациента поврежден до неузнаваемости. Дальнейшие попытки бесполезны.</span>"
+							failed = "<span class='warning'>[req_defib ? "[defib]" : "[src]"] жужжит: Реанимация не удалась - мозг пациента поврежден до неузнаваемости. Воспользуйтесь нейрином и повторите попытку.</span>"
 						if(H.suiciding || BR.brainmob?.suiciding)
 							failed = "<span class='warning'>[req_defib ? "[defib]" : "[src]"] жужжит: Реанимация не удалась - мозг пациента переживает сильнейший, кататоническсий стресс. Дальнейшие попытки бесполезны.</span>"
 					else
