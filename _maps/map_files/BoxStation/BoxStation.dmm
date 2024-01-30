@@ -5417,8 +5417,10 @@
 /turf/open/floor/plating,
 /area/maintenance/port/fore)
 "atr" = (
-/obj/structure/disposalpipe/segment,
 /obj/machinery/light/small,
+/obj/structure/disposalpipe/segment{
+	dir = 10
+	},
 /turf/open/floor/plating,
 /area/maintenance/port/aft)
 "atv" = (
@@ -31443,9 +31445,9 @@
 /area/maintenance/port/aft)
 "bZm" = (
 /obj/structure/disposalpipe/segment{
-	dir = 6
+	dir = 4
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/maintenance/port/aft)
 "bZn" = (
 /obj/structure/cable{
@@ -42070,6 +42072,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/office)
+"dec" = (
+/obj/effect/spawner/lootdrop/crate_spawner,
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/maintenance/port/aft)
 "dem" = (
 /obj/structure/disposalpipe/trunk{
 	dir = 8
@@ -47029,6 +47037,7 @@
 /obj/structure/closet/l3closet/scientist,
 /obj/item/clothing/mask/gas,
 /obj/item/clothing/mask/gas,
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/plasteel/damturf/scorched,
 /area/maintenance/port/aft)
 "gMl" = (
@@ -49553,6 +49562,13 @@
 /obj/structure/chair/comfy/plywood,
 /turf/open/floor/grass/grass0,
 /area/commons/dorms)
+"iQy" = (
+/obj/machinery/light/small,
+/obj/structure/disposalpipe/segment{
+	dir = 5
+	},
+/turf/open/floor/plating,
+/area/maintenance/port/aft)
 "iQP" = (
 /obj/effect/turf_decal/tile/brown/opposingcorners,
 /obj/structure/closet{
@@ -52048,6 +52064,10 @@
 /obj/effect/landmark/xeno_spawn,
 /turf/open/floor/wood,
 /area/maintenance/bar)
+"kyK" = (
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/plating,
+/area/maintenance/port/aft)
 "kyT" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -55072,7 +55092,6 @@
 /area/maintenance/aft)
 "mFI" = (
 /obj/structure/table/reinforced,
-/obj/item/slime_scanner,
 /obj/item/clothing/glasses/science{
 	pixel_x = -3
 	},
@@ -55615,6 +55634,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/office)
+"neQ" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/space/basic,
+/area/space)
 "neT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -55884,10 +55909,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/brig)
-"nrz" = (
-/obj/machinery/light/broken/directional/west,
-/turf/open/floor/plasteel/shuttle,
-/area/maintenance/port/aft)
 "nrJ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -57590,6 +57611,13 @@
 /obj/machinery/hydroponics/soil,
 /turf/open/floor/grass/grass0,
 /area/security/prison/upper)
+"oDW" = (
+/obj/structure/disposalpipe/segment,
+/obj/structure/loot_pile/maint,
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/maintenance/port/aft)
 "oEt" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 10
@@ -58273,6 +58301,14 @@
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
 /area/maintenance/fore)
+"pjn" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/maintenance/port/aft)
 "pjO" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -62351,6 +62387,12 @@
 /obj/structure/chair/office/dark,
 /turf/open/floor/wood,
 /area/service/lawoffice)
+"sqy" = (
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/maintenance/port/aft)
 "sra" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/cultivator,
@@ -68024,6 +68066,12 @@
 /obj/machinery/cryopod/tele,
 /turf/open/floor/carpet,
 /area/commons/cryopod)
+"woU" = (
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
+/turf/open/space/basic,
+/area/space)
 "wph" = (
 /obj/docking_port/stationary{
 	area_type = /area/construction/mining/aux_base;
@@ -70059,7 +70107,6 @@
 /turf/open/floor/plasteel/dark,
 /area/commons/dorms)
 "xYN" = (
-/obj/structure/disposalpipe/segment,
 /obj/machinery/door/airlock/maintenance/abandoned{
 	req_access_txt = "12"
 	},
@@ -81419,7 +81466,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+gDl
 aaS
 aaS
 aaS
@@ -81666,7 +81713,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+sSK
 aaa
 aaa
 aaa
@@ -81917,13 +81964,13 @@ bLv
 yhZ
 gXs
 aaa
+aaa
 bCq
 bCq
 bCq
 bCq
 bCq
 bCq
-gDl
 aaa
 aaa
 aaa
@@ -82174,13 +82221,13 @@ bLv
 aaa
 aaa
 gXs
-bCq
-eUy
-tAG
-eUy
-tAG
-bCq
 aaa
+bCq
+eUy
+nkP
+eUy
+tAG
+bCq
 aaa
 aaa
 aaa
@@ -82431,13 +82478,13 @@ bLv
 aaa
 aaa
 aaa
+aaa
 bCq
 bSn
 bHE
 tXJ
 bJP
 bCq
-aaa
 aaa
 aaa
 aaa
@@ -82686,13 +82733,13 @@ bCq
 bkz
 bCq
 bCq
-bCq
+bLv
+bLv
+bLv
 bCq
 bCq
 bCq
 cTF
-bCq
-bCq
 bCq
 bCq
 aaa
@@ -82942,8 +82989,8 @@ cUR
 bYu
 bHE
 cTF
-bHE
 ckv
+bHE
 puz
 bHE
 bHE
@@ -83200,10 +83247,10 @@ puz
 bHE
 bCq
 bCq
+bLv
+bLv
+bLv
 bCq
-bLv
-bLv
-bLv
 bCq
 bCq
 bCq
@@ -83457,13 +83504,13 @@ alZ
 tXJ
 bCq
 gLI
-nrz
+kFy
 fLg
 qWE
 nXr
 lOQ
 jFc
-bLv
+bCq
 tXJ
 bLv
 aaa
@@ -83720,7 +83767,7 @@ kFy
 kFy
 kjo
 kyY
-bLv
+bCq
 tXJ
 bCq
 aaa
@@ -83977,7 +84024,7 @@ vQK
 kFy
 kFy
 mFI
-bLv
+bCq
 tXJ
 bCq
 bCq
@@ -84480,7 +84527,7 @@ aaa
 aaa
 bCq
 bCq
-bLv
+bCq
 bHE
 cAK
 bCq
@@ -84753,7 +84800,7 @@ bHE
 bCq
 oXP
 nkP
-bLv
+bCq
 aaf
 aaS
 aaf
@@ -85010,7 +85057,7 @@ cAK
 bCq
 tXJ
 pwh
-bLv
+bCq
 aaa
 aaS
 aaa
@@ -86542,13 +86589,13 @@ tXJ
 bCq
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-gXs
-bCq
-cAK
+woU
+lia
+oDW
+sqy
+sqy
+kyK
+iQy
 bCq
 aoV
 aaa
@@ -86795,17 +86842,17 @@ gft
 ceY
 bCq
 bHE
-bHE
+nkP
 bLv
 aaa
 aaa
-aaa
+neQ
 bCq
-bCq
-bCq
-bCq
+dec
+bHE
 bCq
 bHE
+bZm
 bLv
 aoV
 aaa
@@ -87056,13 +87103,13 @@ lcf
 bLv
 aaa
 aaa
-aaa
+neQ
 bLv
 xdq
 bHE
 tXJ
 bHE
-tXJ
+pjn
 bLv
 aoV
 aaa
@@ -87313,13 +87360,13 @@ bHE
 bLv
 aaa
 aaa
-aaa
+neQ
 bLv
 cAK
 bCq
 nkP
 bCq
-bHE
+bZm
 bLv
 aaa
 aaa
@@ -87570,13 +87617,13 @@ tXJ
 bLv
 aaa
 aaa
-aaa
+neQ
 bCq
 bHE
 bCq
 bCq
 bCq
-bHE
+bZm
 bLv
 aaa
 aaa
@@ -87827,12 +87874,12 @@ bSp
 bCq
 aaa
 aoV
-bZm
-lia
+kAk
+bCq
 xYN
-lia
-lia
-lia
+bCq
+nkP
+bCq
 atr
 lia
 diH
@@ -90142,7 +90189,7 @@ bHE
 bCq
 bVy
 bCq
-cTF
+xYN
 bCq
 bCq
 bCq
