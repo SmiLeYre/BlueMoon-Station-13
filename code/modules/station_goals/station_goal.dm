@@ -47,6 +47,8 @@
 		send_report()
 	else if(href_list["remove"])
 		qdel(src)
+	else if(href_list["complete"])
+		completed = TRUE
 
 /*
 //Crew has to create alien intelligence detector

@@ -20957,6 +20957,10 @@
 	dir = 4
 	},
 /area/centcom/holding)
+"bRX" = (
+/obj/item/toy/plush/mammal/fox/emma/taliza,
+/turf/open/floor/carpet/red,
+/area/centcom/holding)
 "bSc" = (
 /obj/item/storage/box/donkpockets{
 	pixel_x = 7
@@ -30939,6 +30943,10 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
+"pEN" = (
+/obj/item/toy/plush/mammal/fox/emma/rozgo,
+/turf/open/floor/carpet/red,
+/area/centcom/holding)
 "pJe" = (
 /obj/structure/table/wood,
 /obj/item/flashlight{
@@ -34790,13 +34798,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership)
-"vtq" = (
-/obj/item/toy/plush/mammal{
-	desc = "ГАНДОЛЛА!!";
-	name = "Rozgo plushie"
-	},
-/turf/open/floor/carpet/red,
-/area/centcom/holding)
 "vts" = (
 /obj/structure/chair/stool,
 /turf/open/floor/iron/dark,
@@ -63371,9 +63372,9 @@ aaa
 ncJ
 iPk
 vHr
+pEN
 wwK
-vtq
-gDM
+bRX
 ncJ
 ncJ
 ncJ

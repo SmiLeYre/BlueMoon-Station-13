@@ -469,7 +469,7 @@
 	add_fingerprint(user)
 
 /obj/item/shield/makeshift
-	name = "metal shield"
+	name = "Metal Shield"
 	desc = "A large shield made of wired and welded sheets of metal. The handle is made of cloth and leather, making it unwieldy."
 	armor = list(MELEE = 25, BULLET = 25, LASER = 5, ENERGY = 0, BOMB = 30, BIO = 0, RAD = 0, FIRE = 70, ACID = 80)
 	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
@@ -477,7 +477,8 @@
 	item_state = "metal"
 	icon_state = "makeshift_shield"
 	custom_materials = list(/datum/material/iron = 18000)
-	slot_flags = null
+	slot_flags = ITEM_SLOT_BACK
+	w_class = WEIGHT_CLASS_BULKY
 	max_integrity = 300 //Made of metal welded together its strong but not unkillable
 	force = 10
 	throwforce = 7

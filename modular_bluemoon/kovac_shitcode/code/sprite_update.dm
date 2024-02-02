@@ -603,6 +603,16 @@
 	icon_state = "aiko"
 	item_state = "aiko"
 
+/obj/item/toy/plush/mammal/fox/emma/rozgo
+	name = "Rozgo Plushie"
+	icon_state = "rozgo"
+	item_state = "aiko"
+
+/obj/item/toy/plush/mammal/fox/emma/taliza
+	name = "Siya Taliza Plushie"
+	icon_state = "siya"
+	item_state = "aiko"
+
 /obj/item/toy/plush/mammal/fox/emma/red
 	name = "Red plushie"
 	icon_state = "red"
