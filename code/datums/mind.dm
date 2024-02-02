@@ -70,7 +70,7 @@
 	///has this mind ever been an AI
 	var/has_ever_been_ai = FALSE
 
-
+	var/assigned_heirloom = null // BLUEMOON EDIT - лодаутные реликвии. Дерьмовейшее решение, но по-другому не знаю, как сделать, чтобы спавнящиеся под ногами лодаутные предметы мог обрабатывать квирк
 	var/force_escaped = FALSE  // Set by Into The Sunset command of the shuttle manipulator
 	var/list/learned_recipes //List of learned recipe TYPES.
 

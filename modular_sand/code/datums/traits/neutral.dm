@@ -56,7 +56,8 @@
 
 /datum/quirk/estrous_active/remove()
 	// Remove signals
-	UnregisterSignal(quirk_holder, list(COMSIG_MOB_ORGAN_ADD, COMSIG_MOB_ORGAN_REMOVE, COMSIG_PARENT_EXAMINE))
+	if(!QDELETED(quirk_holder))
+		UnregisterSignal(quirk_holder, list(COMSIG_MOB_ORGAN_ADD, COMSIG_MOB_ORGAN_REMOVE, COMSIG_PARENT_EXAMINE))
 
 /datum/quirk/estrous_active/post_add()
 	// Update text used by message

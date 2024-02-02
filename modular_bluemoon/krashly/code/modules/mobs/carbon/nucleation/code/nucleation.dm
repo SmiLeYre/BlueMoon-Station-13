@@ -31,15 +31,7 @@
 	icon = 'modular_bluemoon/krashly/code/modules/mobs/carbon/nucleation/icons/surgery.dmi'
 	icon_state = "crystal-brain"
 
-// ПРОВЕРКА ММИ, ЧТОБЫ МОЗГ НУКЛЕАТИДА ПОШЁЛ НАХУЙ.
-
-/obj/item/mmi/attackby(var/obj/item/O as obj, var/mob/user as mob, params)
-	if(istype(O, /obj/item/organ/brain/crystal))
-		to_chat(user, "<span class='warning'> Мозг слишком деформирован, для использования в [src].</span>")
-		return
-
 // БОМБЕЗНЫЕ ЧУРКИ.
-
 /datum/species/nucleation
 	name = "Nucleation"
 	id = SPECIES_NUCLEATION

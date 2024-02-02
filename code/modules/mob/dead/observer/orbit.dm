@@ -56,7 +56,7 @@
 	var/list/misc = list()
 	var/list/npcs = list()
 
-	var/list/pois = getpois(skip_mindless = TRUE, specify_dead_role = FALSE)
+	var/list/pois = getpois(skip_mindless = FALSE, specify_dead_role = FALSE)
 	for (var/name in pois)
 		var/list/serialized = list()
 		serialized["name"] = name

@@ -771,7 +771,7 @@
 	playlewdinteractionsound(target, 'sound/items/bikehorn.ogg', 40, 1, -1)
 
 /datum/interaction/lewd/clothesplosion
-	description = "Explode out of your clothes"
+	description = "Резко снять всю свою одежду!"
 	interaction_flags = INTERACTION_FLAG_ADJACENT | INTERACTION_FLAG_OOC_CONSENT | INTERACTION_FLAG_USER_IS_TARGET
 	interaction_sound = null
 	max_distance = 0

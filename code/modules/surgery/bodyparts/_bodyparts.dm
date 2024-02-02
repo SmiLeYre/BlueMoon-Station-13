@@ -259,20 +259,20 @@
 		if(BIO_JUST_BONE)
 			if(wounding_type == WOUND_SLASH)
 				wounding_type = WOUND_BLUNT
-				wounding_dmg *= (easy_dismember ? 1 : 0.5)
-				wounding_dmg *= (glass_bones ? 1.5 : 1)
+				wounding_dmg *= (easy_dismember ? 3 : 1.5)
+				wounding_dmg *= (glass_bones ? 3 : 1.5)
 			else if(wounding_type == WOUND_PIERCE)
 				wounding_type = WOUND_BLUNT
-				wounding_dmg *= (easy_dismember ? 1 : 0.75)
-				wounding_dmg *= (glass_bones ? 1.5 : 1)
+				wounding_dmg *= (easy_dismember ? 3 : 1.5)
+				wounding_dmg *= (glass_bones ? 3 : 1.5)
 			if((mangled_state & BODYPART_MANGLED_BONE) && try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus))
 				return
 		// if we're flesh only, all blunt attacks become weakened slashes in terms of wound damage
 		if(BIO_JUST_FLESH)
 			if(wounding_type == WOUND_BLUNT)
 				wounding_type = WOUND_SLASH
-				wounding_dmg *= (easy_dismember ? 1 : 0.5)
-				wounding_dmg *= (paper_skin ? 1.5 : 1)
+				wounding_dmg *= (easy_dismember ? 3 : 1.5)
+				wounding_dmg *= (paper_skin ? 3 : 1.5)
 			if((mangled_state & BODYPART_MANGLED_FLESH) && try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus))
 				return
 		// standard humanoids
@@ -280,9 +280,9 @@
 			// if we've already mangled the skin (critical slash or piercing wound), then the bone is exposed, and we can damage it with sharp weapons at a reduced rate
 			// So a big sharp weapon is still all you need to destroy a limb
 			if(wounding_type == WOUND_SLASH || wounding_type == WOUND_PIERCE)
-				wounding_dmg *= (paper_skin ? 1.5 : 1)
+				wounding_dmg *= (paper_skin ? 3 : 1.5)
 			else
-				wounding_dmg *= (glass_bones ? 1.5 : 1)
+				wounding_dmg *= (glass_bones ? 3 : 1.5)
 			if(mangled_state == BODYPART_MANGLED_FLESH && sharpness)
 				playsound(src, "sound/effects/wounds/crackandbleed.ogg", 100)
 				if(wounding_type == WOUND_SLASH && !easy_dismember)

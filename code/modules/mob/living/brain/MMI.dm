@@ -42,13 +42,16 @@
 	if(!user.CheckActionCooldown(CLICK_CD_MELEE))
 		return
 	user.DelayNextAction()
+	if(istype(O, /obj/item/organ/brain/crystal))
+		to_chat(user, "<span class='warning'>Мозг слишком деформирован для использования в [src].</span>")
+		return
 	if(istype(O, /obj/item/organ/brain)) //Time to stick a brain in it --NEO
 		var/obj/item/organ/brain/newbrain = O
 		if(brain)
-			to_chat(user, "<span class='warning'>There's already a brain in the MMI!</span>")
+			to_chat(user, "<span class='warning'>В [src] уже есть мозг-вместилище!</span>")
 			return
 		if(newbrain.brainmob?.suiciding)
-			to_chat(user, span_warning("[newbrain] is completely useless."))
+			to_chat(user, span_warning("[newbrain] признан суицидником, в связи с чем абсолютно бесполезный."))
 			return
 		if(!newbrain.brainmob?.mind || !newbrain.brainmob)
 			var/install = tgui_alert(user, "[newbrain] is inactive, slot it in anyway?", "Installing Brain", list("Yes", "No"))
