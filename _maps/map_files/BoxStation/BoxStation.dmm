@@ -63209,10 +63209,6 @@
 /obj/structure/chair/wood/wings,
 /turf/open/floor/carpet/black,
 /area/service/chapel/main)
-"sSK" = (
-/turf/open/space/basic,
-/area/space,
-/area/space)
 "sSW" = (
 /obj/structure/chair/office/light,
 /turf/open/floor/plasteel/white,
@@ -81728,7 +81724,7 @@ aaa
 aaa
 aaa
 aaa
-sSK
+aaa
 aaa
 aaa
 aaa
@@ -81747,7 +81743,7 @@ aaS
 aaa
 aaa
 aaa
-sSK
+aaa
 aaa
 aaa
 cNd
