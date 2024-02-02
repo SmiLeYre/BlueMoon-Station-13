@@ -43376,6 +43376,13 @@
 	},
 /turf/open/floor/wood/wood_diagonal,
 /area/maintenance/port/fore)
+"edo" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating/airless,
+/area/maintenance/port/aft)
 "edM" = (
 /obj/structure/flora/tree/jungle,
 /turf/open/floor/spooktime/spooktimegrass,
@@ -46025,16 +46032,11 @@
 /area/security/office)
 "gbT" = (
 /obj/item/storage/box/lights/mixed,
-/obj/machinery/power/apc{
-	areastring = "/area/commons/storage/emergency/starboard";
-	dir = 1;
-	name = "Starboard Emergency Storage APC";
-	pixel_y = 23
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /obj/machinery/portable_atmospherics/canister/air,
+/obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plating,
 /area/maintenance/department/medical/morgue)
 "gbW" = (
@@ -50597,6 +50599,10 @@
 /area/maintenance/port)
 "jxK" = (
 /obj/structure/closet,
+/obj/effect/spawner/lootdrop/maintenance{
+	lootcount = 8;
+	name = "8maintenance loot spawner"
+	},
 /turf/open/floor/plating,
 /area/maintenance/port)
 "jxN" = (
@@ -52168,6 +52174,11 @@
 	},
 /turf/open/floor/wood,
 /area/service/sauna)
+"kDd" = (
+/obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/maintenance,
+/turf/open/floor/plating,
+/area/maintenance/port)
 "kEe" = (
 /obj/effect/landmark/start/stowaway,
 /turf/open/floor/plating,
@@ -53669,6 +53680,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
+"lJM" = (
+/obj/machinery/door/airlock/maintenance/abandoned{
+	req_access_txt = "12"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/maintenance/port/aft)
 "lJQ" = (
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
@@ -61557,6 +61575,10 @@
 	},
 /turf/open/floor/plating,
 /area/construction)
+"rKW" = (
+/obj/structure/reagent_dispensers/beerkeg,
+/turf/open/floor/plating,
+/area/maintenance/port)
 "rLu" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos,
 /turf/open/floor/engine,
@@ -84519,8 +84541,8 @@ gHl
 uJf
 beO
 aPz
-bkD
-bkD
+aSg
+aPz
 aPz
 aaa
 aaa
@@ -84775,10 +84797,10 @@ pNC
 cAF
 blV
 beO
-aaa
-aaa
-aaa
-aaa
+swL
+aSg
+jxK
+aPz
 aaa
 aaa
 aaa
@@ -85032,10 +85054,10 @@ cJE
 bkC
 bhL
 beO
-aaa
-aaa
-aaa
-aaa
+aSg
+aSg
+aSg
+aPz
 aaa
 aaa
 aaa
@@ -85289,10 +85311,10 @@ bjf
 beO
 beO
 beO
-aaa
-aaa
-aaa
-aaa
+aSg
+aSg
+kDd
+bkD
 aaa
 aaa
 aaa
@@ -85543,13 +85565,13 @@ bdt
 bdR
 aSg
 aYf
+aSg
+aSg
+aSg
+aSg
+aSg
+kDd
 bkD
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
 aaa
 aaa
 aaa
@@ -85800,13 +85822,13 @@ bdB
 aWv
 aTu
 bjg
+aPz
+jxK
+aSg
+rKW
+rKW
+rKW
 bkD
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
 aaa
 aaa
 aaa
@@ -86058,12 +86080,12 @@ gop
 bfh
 aPz
 aPz
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+aPz
+aPz
+bkD
+bkD
+bkD
+aPz
 aaa
 aaa
 aaa
@@ -88653,7 +88675,7 @@ aaa
 bCq
 kWy
 bHE
-cTF
+lJM
 hmr
 puz
 kAk
@@ -88913,7 +88935,7 @@ bHE
 miv
 bCq
 djd
-bVz
+edo
 djd
 cAK
 bCq
@@ -89425,7 +89447,7 @@ bCq
 bHE
 bHE
 bLv
-bCq
+aaa
 aoV
 cbj
 bCq
@@ -89681,7 +89703,7 @@ aaa
 bCq
 bHE
 bHE
-bSn
+bCq
 bCq
 bCq
 cbj
