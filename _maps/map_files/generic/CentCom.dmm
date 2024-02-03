@@ -24838,6 +24838,13 @@
 	},
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
+"hln" = (
+/mob/living/simple_animal/hostile/tentacles,
+/obj/structure/tentacles/node,
+/turf/open/floor/plating/dirt/dark/jungle{
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
+	},
+/area/centcom/holding)
 "hmY" = (
 /turf/closed/wall/mineral/snow,
 /area/centcom/holding)
@@ -36191,6 +36198,14 @@
 	dir = 1
 	},
 /turf/open/floor/iron,
+/area/centcom/holding)
+"xnG" = (
+/obj/item/toy/plush/mammal/fox/emma/taliza,
+/obj/item/storage/box/tentaclescubes,
+/obj/structure/tentacles/node,
+/turf/open/floor/plating/dirt/dark/jungle{
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
+	},
 /area/centcom/holding)
 "xnU" = (
 /obj/effect/turf_decal/tile/brown/fourcorners,
@@ -62081,7 +62096,7 @@ aaa
 aaa
 aaa
 ncJ
-iPk
+hln
 iPk
 iUm
 iUm
@@ -62338,8 +62353,8 @@ aaa
 aaa
 aaa
 ncJ
-iPk
-iPk
+xnG
+hln
 iPk
 iUm
 iUm
@@ -62595,7 +62610,7 @@ aaa
 aaa
 aaa
 ncJ
-iPk
+hln
 iPk
 iPk
 iPk
