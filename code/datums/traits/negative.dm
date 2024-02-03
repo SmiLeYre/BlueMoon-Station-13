@@ -49,10 +49,10 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	var/mob/living/carbon/human/human_holder = quirk_holder
 	var/obj/item/heirloom_type
 	// BLUEMOON EDIT START - выбор вещей из лодаута как family heirloom
-	for (var/obj/item/item in quirk_holder.GetAllContents())
-		if(item.item_flags & FAMILY_HEIRLOOM)
+	if(human_holder && istype(human_holder) && human_holder.mind && !isnull(human_holder.mind.assigned_heirloom))
+		heirloom = human_holder.mind.assigned_heirloom
+		if(heirloom && istype(heirloom))
 			loadout_heirloom = TRUE
-			heirloom = item
 	if(!loadout_heirloom)
 		// The quirk holder's species - we have a 50% chance, if we have a species with a set heirloom, to choose a species heirloom.
 		var/datum/species/holder_species = human_holder.dna?.species

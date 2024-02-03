@@ -12218,7 +12218,7 @@
 "efp" = (
 /obj/structure/table,
 /obj/item/aicard,
-/obj/item/aiModule/reset,
+/obj/item/ai_module/reset,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -28125,7 +28125,7 @@
 /area/maintenance/fore)
 "jGw" = (
 /obj/structure/table,
-/obj/item/aiModule/supplied/quarantine,
+/obj/item/ai_module/supplied/quarantine,
 /obj/machinery/camera/motion{
 	c_tag = "AI Upload Chamber - West";
 	dir = 4;
@@ -55719,7 +55719,7 @@
 /area/security/office)
 "tln" = (
 /obj/structure/table,
-/obj/item/aiModule/reset,
+/obj/item/ai_module/reset,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -57927,23 +57927,23 @@
 /area/commons/locker)
 "uaT" = (
 /obj/structure/table,
-/obj/item/aiModule/supplied/oxygen,
-/obj/item/aiModule/zeroth/oneHuman,
+/obj/item/ai_module/supplied/oxygen,
+/obj/item/ai_module/zeroth/oneHuman,
 /obj/machinery/door/window{
 	dir = 8;
 	name = "High-Risk Modules";
 	req_access_txt = "20"
 	},
-/obj/item/aiModule/reset/purge,
+/obj/item/ai_module/reset/purge,
 /obj/structure/window/reinforced,
-/obj/effect/spawner/lootdrop/aimodule_harmful,
+/obj/effect/spawner/lootdrop/ai_module_harmful,
 /obj/structure/window/reinforced{
 	dir = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/item/aiModule/supplied/protectStation,
+/obj/item/ai_module/supplied/protectStation,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/ai_upload)
 "uaZ" = (
@@ -67463,7 +67463,7 @@
 /area/hallway/primary/central)
 "xvH" = (
 /obj/structure/table,
-/obj/item/aiModule/supplied/freeform,
+/obj/item/ai_module/supplied/freeform,
 /obj/structure/sign/plaques/kiddie{
 	pixel_x = 32
 	},
@@ -69138,8 +69138,8 @@
 /area/security/warden)
 "xYh" = (
 /obj/structure/table,
-/obj/item/aiModule/core/full/asimov,
-/obj/item/aiModule/core/freeformcore,
+/obj/item/ai_module/core/full/asimov,
+/obj/item/ai_module/core/freeformcore,
 /obj/machinery/door/window{
 	base_state = "right";
 	dir = 4;
@@ -69148,16 +69148,16 @@
 	req_access_txt = "20"
 	},
 /obj/structure/window/reinforced,
-/obj/effect/spawner/lootdrop/aimodule_harmless,
-/obj/effect/spawner/lootdrop/aimodule_lewd,
-/obj/effect/spawner/lootdrop/aimodule_neutral,
+/obj/effect/spawner/lootdrop/ai_module_harmless,
+/obj/effect/spawner/lootdrop/ai_module_lewd,
+/obj/effect/spawner/lootdrop/ai_module_neutral,
 /obj/structure/window/reinforced{
 	dir = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/item/aiModule/core/full/custom,
+/obj/item/ai_module/core/full/custom,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/ai_upload)
 "xYt" = (

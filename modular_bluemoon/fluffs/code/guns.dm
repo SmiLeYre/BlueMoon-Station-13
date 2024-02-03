@@ -316,6 +316,16 @@
 	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
 	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
 	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+	mag_type = /obj/item/ammo_box/magazine/ak12/r
 	//chosen_icon = 'icons/mob/clothing/back.dmi'
 	icon_state = "G36"
+	fire_delay = 3
 	fire_sound = 'modular_bluemoon/fluffs/sound/shoot.ogg'
+
+/obj/item/gun/ballistic/automatic/ak12/g36/update_icon_state()
+	if(magazine)
+		icon_state = "G36"
+		item_state = "G36"
+	else
+		icon_state = "G36_e"
+		item_state = "G36_e"

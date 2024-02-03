@@ -285,7 +285,7 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 
 ///////////	AI Laws
 
-/obj/item/aiModule/core/full/inteq
+/obj/item/ai_module/core/full/inteq
 	name = "'InteQ' Core AI Module"
 	law_id = "inteq"
 

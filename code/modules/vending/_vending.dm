@@ -534,11 +534,15 @@ GLOBAL_LIST_EMPTY(vending_products)
 	if(in_range(fatty, src))
 		for(var/mob/living/L in get_turf(fatty))
 			var/was_alive = (L.stat != DEAD)
-			var/mob/living/carbon/C = L
+			//var/mob/living/carbon/C = L  (BLUEMOON CHANGE никогда не доверяй такой конструкции (причина рантаймов на 3 типе падения))
 
 			// SEND_SIGNAL(L, COMSIG_ON_VENDOR_CRUSH)
 
-			if(istype(C))
+			//BLUEMOON CHANGE START 100% проверяем, что мы пытаемся это сделать с карбном, а не кем-либо ещё
+			if(istype(L, /mob/living/carbon))
+
+				var/mob/living/carbon/C = L
+			//BLUEMOON CHANGE END
 				var/crit_rebate = 0 // lessen the normal damage we deal for some of the crits
 
 				if(crit_case < 5) // the body/head asplode case has its own description
@@ -1087,7 +1091,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 
 ///Crush the mob that the vending machine got thrown at
 /obj/machinery/vending/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
-	if(isliving(hit_atom))
+	if(isliving(hit_atom) && !tilted) //BLUEMOON EDIT вендор не падает когда он уже упал
 		tilt(fatty=hit_atom)
 	return ..()
 

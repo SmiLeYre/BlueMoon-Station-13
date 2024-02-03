@@ -195,8 +195,18 @@
 	else						 // /atom/proc/visible_message(message, self_message, blind_message, vision_distance, ignored_mobs)
 		user.visible_message("<span class='warning'>[user] closes [user.ru_ego()] mouth around [target]'s neck!</span>", \
 						 "<span class='warning'>You sink your fangs into [target]'s neck.</span>")
+		tgui_alert_async(target, "Ты не сможешь детально вспомнить обстоятельства, которые привели происходящему, как и саму ситуацию... Тем не менее, в шее ощущается приятное покалывание, а ощущения сравнимы с соитием.", "Что произошло?") // BLUEMOON ADD
+
 	// My mouth is full!
 	ADD_TRAIT(user, TRAIT_MUTE, "bloodsucker_feed")
+
+	// BLUEMOON ADD - жертве приятен укус вампира
+	var/datum/antagonist/vassal/V = target.mind?.has_antag_datum(ANTAG_DATUM_VASSAL)
+	if(V)
+		SEND_SIGNAL(target, COMSIG_ADD_MOOD_EVENT, "gave_blood_to_bloodsucker", /datum/mood_event/gave_blood_to_bloodsucker/vassal) // вассал получает меньший баф, чем обычный смертный
+	else
+		SEND_SIGNAL(target, COMSIG_ADD_MOOD_EVENT, "gave_blood_to_bloodsucker", /datum/mood_event/gave_blood_to_bloodsucker)
+	// BLUEMOON ADD END
 
 	// Begin Feed Loop
 	var/warning_target_inhuman = FALSE
@@ -314,7 +324,18 @@
 /datum/action/bloodsucker/feed/proc/CheckKilledTarget(mob/living/user, mob/living/target)
 	// Bad Bloodsucker. You shouldn't do that.
 	if(target && target.stat >= DEAD && ishuman(target))
-		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "drankkilled", /datum/mood_event/drankkilled) // BAD // in bloodsucker_life.dm
+		// BLUEMOON ADD START
+		var/datum/antagonist/bloodsucker/bloodsuckerdatum = user.mind.has_antag_datum(ANTAG_DATUM_BLOODSUCKER)
+		switch(bloodsuckerdatum.bloodsucker_level)
+			if(-INFINITY to 2)
+				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "drankkilled", /datum/mood_event/drankkilled) // BAD // in bloodsucker_life.dm
+			if(3 to 4)
+				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "drankkilled", /datum/mood_event/drankkilled/lesser)
+			if(5 to 6)
+				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "drankkilled", /datum/mood_event/drankkilled/minimal)
+			if(7 to INFINITY)
+				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "drankkilled", /datum/mood_event/drankkilled/positive) // где-от здесь человечность на 1-3
+		// BLUEMOON ADD END
 
 /datum/action/bloodsucker/feed/ContinueActive(mob/living/user, mob/living/target)
 	return ..()  && target && (!target_grappled || user.pulling == target) && blood_sucking_checks(target, TRUE, TRUE) // Active, and still antag,

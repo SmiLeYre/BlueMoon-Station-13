@@ -9757,10 +9757,10 @@
 /area/security/prison/cells)
 "aMG" = (
 /obj/structure/table,
-/obj/item/aiModule/core/full/asimov,
-/obj/effect/spawner/lootdrop/aimodule_harmless,
-/obj/effect/spawner/lootdrop/aimodule_lewd,
-/obj/item/aiModule/core/freeformcore,
+/obj/item/ai_module/core/full/asimov,
+/obj/effect/spawner/lootdrop/ai_module_harmless,
+/obj/effect/spawner/lootdrop/ai_module_lewd,
+/obj/item/ai_module/core/freeformcore,
 /obj/machinery/door/window{
 	base_state = "right";
 	dir = 4;
@@ -9769,8 +9769,8 @@
 	req_access_txt = "20"
 	},
 /obj/structure/window/reinforced,
-/obj/effect/spawner/lootdrop/aimodule_neutral,
-/obj/item/aiModule/core/full/custom,
+/obj/effect/spawner/lootdrop/ai_module_neutral,
+/obj/item/ai_module/core/full/custom,
 /obj/machinery/flasher{
 	id = "AI";
 	pixel_y = 24
@@ -9792,11 +9792,11 @@
 	id = "AI";
 	pixel_y = 24
 	},
-/obj/effect/spawner/lootdrop/aimodule_harmful,
-/obj/item/aiModule/supplied/oxygen,
-/obj/item/aiModule/supplied/protectStation,
-/obj/item/aiModule/zeroth/oneHuman,
-/obj/item/aiModule/reset/purge,
+/obj/effect/spawner/lootdrop/ai_module_harmful,
+/obj/item/ai_module/supplied/oxygen,
+/obj/item/ai_module/supplied/protectStation,
+/obj/item/ai_module/zeroth/oneHuman,
+/obj/item/ai_module/reset/purge,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/ai_upload)
 "aMJ" = (
@@ -10100,7 +10100,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/item/aiModule/supplied/quarantine,
+/obj/item/ai_module/supplied/quarantine,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/ai_upload)
 "aPu" = (
@@ -10120,7 +10120,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/item/aiModule/supplied/freeform,
+/obj/item/ai_module/supplied/freeform,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/ai_upload)
 "aPy" = (
@@ -10200,7 +10200,7 @@
 /area/maintenance/fore)
 "aQz" = (
 /obj/structure/table,
-/obj/item/aiModule/reset,
+/obj/item/ai_module/reset,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -12844,11 +12844,6 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/port/fore)
-"bao" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/structure/barricade/wooden,
-/turf/open/space/basic,
-/area/maintenance/aft)
 "baz" = (
 /obj/machinery/computer/cargo/request,
 /obj/effect/turf_decal/delivery,
@@ -35748,6 +35743,13 @@
 /area/medical/virology)
 "cBS" = (
 /obj/effect/spawner/structure/window/reinforced,
+/obj/structure/cable/yellow,
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plating,
 /area/medical/virology)
 "cBT" = (
@@ -37576,6 +37578,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
 /area/medical/virology)
 "cFL" = (
@@ -38091,6 +38096,12 @@
 	},
 /obj/machinery/light/small{
 	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/virology)
@@ -40538,17 +40549,11 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
-	},
 /turf/open/floor/plasteel/white,
 /area/medical/virology)
 "cKY" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/virology)
@@ -40556,9 +40561,6 @@
 /obj/structure/sink{
 	dir = 4;
 	pixel_x = 11
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/tile/green,
 /obj/effect/turf_decal/tile/green{
@@ -44000,8 +44002,14 @@
 /area/commons/storage/primary)
 "cZU" = (
 /obj/effect/spawner/structure/window/reinforced,
-/turf/open/space,
-/area/maintenance/aft)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/medical/virology)
 "cZV" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/atmospherics/pipe/simple/green/visible,
@@ -61515,7 +61523,7 @@
 "kbk" = (
 /obj/structure/table,
 /obj/item/aicard,
-/obj/item/aiModule/reset,
+/obj/item/ai_module/reset,
 /turf/open/floor/plasteel/dark,
 /area/engineering/storage/tech)
 "kbB" = (
@@ -77405,8 +77413,20 @@
 /area/hallway/primary/central)
 "rmj" = (
 /obj/effect/spawner/structure/window/reinforced,
-/turf/open/space/basic,
-/area/maintenance/aft)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating,
+/area/medical/virology)
 "rms" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/effect/turf_decal/bot,
@@ -106495,7 +106515,7 @@ apx
 bTs
 fFJ
 lFF
-bao
+qXY
 aaa
 aaa
 aaa
@@ -106752,7 +106772,7 @@ dsh
 bTs
 qBq
 oCi
-bao
+qXY
 aac
 lMJ
 aaa
@@ -107009,7 +107029,7 @@ tao
 wEs
 ehn
 gVJ
-bao
+qXY
 aaa
 lMJ
 aaa
@@ -107523,7 +107543,7 @@ gaB
 bTs
 wsf
 frX
-bao
+qXY
 aaa
 lMJ
 aaa
@@ -107780,7 +107800,7 @@ wRg
 wEs
 byI
 mAx
-bao
+qXY
 aaa
 aaa
 aaa
@@ -108037,7 +108057,7 @@ gaB
 bTs
 ngb
 qgZ
-bao
+qXY
 aaa
 aaa
 aaa
@@ -108551,7 +108571,7 @@ kDP
 bTs
 eZL
 wan
-bao
+qXY
 aaa
 lMJ
 aaa
@@ -108808,7 +108828,7 @@ eHA
 wEs
 krn
 lhR
-bao
+qXY
 aaa
 xwj
 aaa
@@ -111879,7 +111899,7 @@ cBR
 cBR
 cBR
 cBR
-dBU
+cBR
 cBR
 cBR
 cBR
@@ -112132,9 +112152,9 @@ aaa
 aaa
 cFK
 cGC
-cBS
+cDE
 cIy
-cZU
+hOD
 vxL
 qeV
 qeV
@@ -112387,11 +112407,11 @@ aaa
 aaf
 aaa
 aaa
-cFK
+rmj
 cGD
 cBS
 aaa
-rmj
+hOD
 lpZ
 pKY
 xmQ
@@ -112644,11 +112664,11 @@ dux
 dux
 dux
 aaa
-cFK
+cZU
 cGE
-cBS
+dBU
 aaa
-rmj
+hOD
 dIy
 ker
 ker

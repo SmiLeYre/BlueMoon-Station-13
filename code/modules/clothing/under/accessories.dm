@@ -515,6 +515,16 @@
 	strip_delay = 60
 	dog_fashion = null
 
+/obj/item/clothing/accessory/armband/sfparmband
+	name = "SFP Department Armpatch"
+	desc = "Armpatch one of superior forces of Federal Agencies on territory of SolGov. This one belongs to Agent."
+	icon_state = "sfp_patch"
+	item_state = "sfp_patch"
+	icon = 'modular_bluemoon/SmiLeY/icons/sfp_armpatch_obj.dmi'
+	mob_overlay_icon = 'modular_bluemoon/SmiLeY/icons/sfp_armpatch.dmi'
+	strip_delay = 60
+	dog_fashion = null
+
 //////////////
 //OBJECTION!//
 //////////////

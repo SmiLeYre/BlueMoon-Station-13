@@ -252,7 +252,7 @@
 					var/datum/round_event_control/disease_outbreak/DC = locate(/datum/round_event_control/disease_outbreak) in SSevents.control
 					E = DC.runEvent()
 				if("Choose")
-					var/virus = input("Choose the virus to spread", "BIOHAZARD") as null|anything in sortList(typesof(/datum/disease), /proc/cmp_typepaths_asc)
+					var/virus = input("Choose the virus to spread", "BIOHAZARD") as null|anything in sort_list(typesof(/datum/disease), /proc/cmp_typepaths_asc)
 					var/datum/round_event_control/disease_outbreak/DC = locate(/datum/round_event_control/disease_outbreak) in SSevents.control
 					var/datum/round_event/disease_outbreak/DO = DC.runEvent()
 					DO.virus_type = virus
@@ -379,8 +379,8 @@
 			if(C)
 				C.post_status("alert", "synd")
 			for(var/mob/living/silicon/silicon as anything in GLOB.silicon_mobs)
-				var/new_board = new /obj/item/aiModule/core/full/syndicate(src)
-				var/obj/item/aiModule/chosenboard = new_board
+				var/new_board = new /obj/item/ai_module/core/full/syndicate(src)
+				var/obj/item/ai_module/chosenboard = new_board
 				var/mob/living/silicon/beepboop = silicon
 				chosenboard.install(beepboop.laws, usr)
 				qdel(new_board)

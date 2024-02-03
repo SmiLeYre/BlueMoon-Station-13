@@ -745,7 +745,7 @@ SUBSYSTEM_DEF(job)
 				permitted = FALSE
 			if(!permitted)
 				// BLUEMOON ADD START - выбор вещей из лодаута как family heirloom
-				if(i[LOADOUT_IS_HEIRLOOM] && heirloomer)
+				if(i[LOADOUT_IS_HEIRLOOM] && heirloomer && !G.handle_post_equip)
 					to_chat(M, "<span class='warning'>Вы не смогли взять с собой свой любимый предмет, [G.name], из-за ограничений вашей профессии или других проблем, но у вас была и другая семейная ценность, поэтому вы прихватили её!</span>")
 				// BLUEMOON END
 				continue
@@ -795,10 +795,11 @@ SUBSYSTEM_DEF(job)
 			// BLUEMOON ADD START - выбор вещей из лодаута как family heirloom
 			if(i[LOADOUT_IS_HEIRLOOM] && !QDELETED(I) && heirloomer)
 				I.item_flags |= FAMILY_HEIRLOOM
+				M.mind.assigned_heirloom = I
 				if(!i[LOADOUT_CUSTOM_NAME])
 					var/list/family_name = splittext(M.real_name, " ")
 					I.name = "\improper [family_name[family_name.len]] family [I.name]"
-			// BLUEMOON END
+			// BLUEMOON ADD END
 
 
 /datum/controller/subsystem/job/proc/post_equip_loadout(mob/dead/new_player/N, mob/living/M, bypass_prereqs = FALSE, can_drop = TRUE)
@@ -806,6 +807,10 @@ SUBSYSTEM_DEF(job)
 	if(!the_mob)
 		the_mob = M // cause this doesn't get assigned if player is a latejoiner
 	var/list/chosen_gear = the_mob.client.prefs.loadout_data["SAVE_[the_mob.client.prefs.loadout_slot]"]
+	var/heirloomer = FALSE
+	var/list/my_quirks = the_mob.client.prefs.all_quirks.Copy()
+	if("Семейная реликвия" in my_quirks)
+		heirloomer = TRUE
 	if(the_mob.client && the_mob.client.prefs && (chosen_gear && chosen_gear.len))
 		if(!ishuman(M))//no silicons allowed
 			return
@@ -824,6 +829,10 @@ SUBSYSTEM_DEF(job)
 			if(!G.handle_post_equip)
 				permitted = FALSE
 			if(!permitted)
+				// BLUEMOON ADD START - выбор вещей из лодаута как family heirloom
+				if(i[LOADOUT_IS_HEIRLOOM] && heirloomer && G.handle_post_equip)
+					to_chat(M, "<span class='warning'>Вы не смогли взять с собой свой любимый предмет, [G.name], из-за ограничений вашей профессии или других проблем, но у вас была и другая семейная ценность, поэтому вы прихватили её!</span>")
+				// BLUEMOON ADD END
 				continue
 			var/obj/item/I = new G.path
 			if(I)
@@ -868,6 +877,15 @@ SUBSYSTEM_DEF(job)
 						I.forceMove(get_turf(M)) // If everything fails, just put it on the floor under the mob.
 					else
 						qdel(I)
+			// BLUEMOON ADD START - выбор вещей из лодаута как family heirloom
+			if(i[LOADOUT_IS_HEIRLOOM] && !QDELETED(I) && heirloomer)
+				I.item_flags |= FAMILY_HEIRLOOM
+				M.mind.assigned_heirloom = I
+				if(!i[LOADOUT_CUSTOM_NAME])
+					var/list/family_name = splittext(M.real_name, " ")
+					I.name = "\improper [family_name[family_name.len]] family [I.name]"
+			// BLUEMOON ADD END
+
 /datum/controller/subsystem/job/proc/FreeRole(rank)
 	if(!rank)
 		return

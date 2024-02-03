@@ -287,13 +287,6 @@ Peacekeeper Hypospray // BlueMoon 16.08 2023 - передано Вардену. 
 	new /obj/item/melee/baton/prova(src)
 	new /obj/item/stock_parts/cell/high/plus(src)
 
-/obj/item/storage/secure/briefcase/pkbaton/tbaton
-	name = "\improper Telescopic Baton box"
-	desc = "Storage box containing a single telescopic baton, just like the big boy riot police get!"
-
-/obj/item/storage/secure/briefcase/pkbaton/tbaton/PopulateContents()
-	new /obj/item/melee/classic_baton/telescopic(src)
-
 // Peacekeeper Locker
 
 /obj/structure/closet/secure_closet/peacekeeper

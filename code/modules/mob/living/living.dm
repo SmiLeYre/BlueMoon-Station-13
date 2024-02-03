@@ -887,7 +887,7 @@
 /mob/living/do_resist_grab(moving_resist, forced, silent = FALSE)
 	. = ..()
 	var/escchance
-	if(HAS_TRAIT(usr, TRAIT_GARROTED))
+	if(HAS_TRAIT(src, TRAIT_GARROTED))
 		escchance = 3
 	else
 		escchance = 30
@@ -1101,7 +1101,7 @@
 /mob/living/proc/harvest(mob/living/user) //used for extra objects etc. in butchering
 	return
 
-/mob/living/canUseTopic(atom/movable/M, be_close=FALSE, no_dextery=FALSE, no_tk=FALSE)
+/mob/living/canUseTopic(atom/movable/M, be_close=FALSE, no_dextery=FALSE, no_tk=FALSE, check_resting=FALSE)
 	if(incapacitated())
 		to_chat(src, "<span class='warning'>Вы не можете этого сделать в нынешнем состоянии!</span>")
 		return FALSE

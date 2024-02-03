@@ -95,6 +95,7 @@
 		/obj/item/reagent_containers/food/snacks/breadslice/plain = 2,
 	)
 	result = /obj/item/reagent_containers/food/snacks/peanutbutter_sandwich
+	category = CAT_FOOD
 	subcategory = CAT_SANDWICH
 
 /datum/crafting_recipe/food/notasandwich

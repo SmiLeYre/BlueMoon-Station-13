@@ -39,7 +39,7 @@
 		if(!fuel_amt)
 			visible_message(span_danger("\The [src] ruptures!"))
 		// Leave it up to future terrorists to figure out the best way to mix reagents with fuel for a useful boom here
-		chem_splash(loc, null, 2 + (reagents.total_volume + fuel_amt) / 1000, list(reagents), extra_heat=(fuel_amt / 50),adminlog=(fuel_amt<25))
+		chem_splash(loc, 2 + (reagents.total_volume + fuel_amt) / 1000, list(reagents), extra_heat=(fuel_amt / 50), adminlog=(fuel_amt<25))
 
 	if(fuel_amt) // with that done, actually explode
 		visible_message(span_danger("\The [src] explodes!"))
@@ -228,9 +228,9 @@
 			playsound(src, 'sound/effects/refill.ogg', 50, 1)
 			W.update_icon()
 		else
-			if(!HAS_TRAIT(user, TRAIT_DUMB))
-				to_chat("<span class='danger'>That would be stupid.</span>")
-				return
+			// if(!HAS_TRAIT(user, TRAIT_DUMB))
+			// 	to_chat(user, "<span class='danger'>That would be stupid.</span>")
+			// 	return
 			var/turf/T = get_turf(src)
 			user.visible_message("<span class='warning'>[user] catastrophically fails at refilling [user.ru_ego()] [W.name]!</span>", "<span class='userdanger'>That was stupid of you.</span>")
 

@@ -1,9 +1,8 @@
 /datum/interaction/lewd/nuts
 	description = "Яйца. Потереться о лицо."
 	interaction_sound = null
-	require_user_balls = REQUIRE_EXPOSED
-	require_target_mouth = TRUE
-	max_distance = 1
+	required_from_user_exposed = INTERACTION_REQUIRE_BALLS
+	required_from_target = INTERACTION_REQUIRE_MOUTH
 	write_log_user = "make-them-suck-their-nuts"
 	write_log_target = "was made to suck nuts by"
 
@@ -33,9 +32,8 @@
 /datum/interaction/lewd/nut_smack
 	description = "Яйца. Шлёпнуть по яйцам."
 	interaction_sound = 'modular_sand/sound/interactions/slap.ogg'
-	simple_message = "USER с ухмылкой бьёт семенники TARGET!"
-	require_target_balls = REQUIRE_EXPOSED
-	needs_physical_contact = TRUE
-	max_distance = 1
+	simple_message = "USER шлёпает семенники TARGET!"
+	required_from_user = INTERACTION_REQUIRE_HANDS
+	required_from_target_exposed = INTERACTION_REQUIRE_BALLS
 	write_log_user = "slapped-nuts"
 	write_log_target = "had their nuts slapped by"

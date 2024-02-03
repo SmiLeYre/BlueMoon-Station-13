@@ -368,13 +368,13 @@
 		icon_state = "[base_icon_state][wielded]_cooldown"
 
 /obj/item/shockpaddles/dropped(mob/user)
-	if(!req_defib)
-		return ..()
+	. = ..()
 	if(user)
 		UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
-		if(user != loc)
-			to_chat(user, "<span class='notice'>The paddles snap back into the main unit.</span>")
-			snap_back()
+	if(req_defib)
+		if(user)
+			to_chat(user, span_notice("The paddles snap back into the main unit."))
+		snap_back()
 
 /obj/item/shockpaddles/proc/snap_back()
 	if(!defib)
@@ -594,9 +594,9 @@
 					var/obj/item/organ/brain/BR = H.getorgan(/obj/item/organ/brain)
 					if(BR) //BUG_PROBABLE_CAUSE - slight difference between us and tg
 						if(BR.organ_flags & ORGAN_FAILING)
-							failed = "<span class='warning'>[req_defib ? "[defib]" : "[src]"] жужжит: Реанимация не удалась - ткани мозга пациента повреждены, что делает невозможным его восстановление с помощью дефибриллятора. Дальнейшие попытки бесполезны.</span>"
+							failed = "<span class='warning'>[req_defib ? "[defib]" : "[src]"] жужжит: Реанимация не удалась - ткани мозга пациента повреждены, что делает невозможным его восстановление с помощью дефибриллятора. Проведите хирургическое восстановление и повторите попытку.</span>"
 						if(BR.brain_death)
-							failed = "<span class='warning'>[req_defib ? "[defib]" : "[src]"] жужжит: Реанимация не удалась - мозг пациента поврежден до неузнаваемости. Дальнейшие попытки бесполезны.</span>"
+							failed = "<span class='warning'>[req_defib ? "[defib]" : "[src]"] жужжит: Реанимация не удалась - мозг пациента поврежден до неузнаваемости. Воспользуйтесь нейрином и повторите попытку.</span>"
 						if(H.suiciding || BR.brainmob?.suiciding)
 							failed = "<span class='warning'>[req_defib ? "[defib]" : "[src]"] жужжит: Реанимация не удалась - мозг пациента переживает сильнейший, кататоническсий стресс. Дальнейшие попытки бесполезны.</span>"
 					else
@@ -717,6 +717,15 @@
 		combat = FALSE
 
 	. = ..()
+
+/obj/item/shockpaddles/syndicate
+	name = "syndicate defibrillator paddles"
+	desc = "A pair of paddles used to revive deceased operatives. It possesses both the ability to penetrate armor and to deliver powerful shocks offensively."
+	combat = TRUE
+	icon = 'icons/obj/defibrillators.dmi'
+	icon_state = "syndiepaddles0"
+	item_state = "syndiepaddles0"
+	base_icon_state = "syndiepaddles"
 
 ///////////////////////////////////////////
 /////////Defibrillator Disks//////////////

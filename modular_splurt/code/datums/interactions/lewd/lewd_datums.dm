@@ -401,9 +401,11 @@
 /datum/interaction/lewd/oral/selfsuck
 	description = "Член. Отсосать самому себе."
 	interaction_sound = null
-	require_target_vagina = REQUIRE_NONE
-	require_user_penis = REQUIRE_EXPOSED
-	user_is_target = TRUE
+	required_from_target_exposed = NONE
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = INTERACTION_REQUIRE_PENIS
+	required_from_user_unexposed = NONE
+	interaction_flags = INTERACTION_FLAG_ADJACENT | INTERACTION_FLAG_OOC_CONSENT | INTERACTION_FLAG_USER_IS_TARGET
 	max_distance = 0
 	write_log_user = "Отсосал(а) сам(а) себе"
 	write_log_target = null
@@ -422,8 +424,11 @@
 /datum/interaction/lewd/oral/suckvagself
 	description = "Вагина. Отлизать свою киску."
 	interaction_sound = null
-	require_user_penis = REQUIRE_NONE
-	user_is_target = TRUE
+	required_from_target_exposed = NONE
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = INTERACTION_REQUIRE_VAGINA
+	required_from_user_unexposed = NONE
+	interaction_flags = INTERACTION_FLAG_ADJACENT | INTERACTION_FLAG_OOC_CONSENT | INTERACTION_FLAG_USER_IS_TARGET
 	max_distance = 0
 	write_log_user = "отлизал(а) свою собственную киску"
 	write_log_target = null
@@ -434,9 +439,11 @@
 /datum/interaction/lewd/breastfuckself
 	description = "Грудь. Трахнуть свои сиськи."
 	interaction_sound = null
-	require_user_penis = REQUIRE_EXPOSED
-	require_user_breasts = REQUIRE_EXPOSED
-	user_is_target = TRUE
+	required_from_target_exposed = NONE
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = INTERACTION_REQUIRE_PENIS | INTERACTION_REQUIRE_BREASTS
+	required_from_user_unexposed = NONE
+	interaction_flags = INTERACTION_FLAG_ADJACENT | INTERACTION_FLAG_OOC_CONSENT | INTERACTION_FLAG_USER_IS_TARGET
 	max_distance = 0
 	write_log_user = "Трахнул(а) свои сиськи."
 	write_log_target = null
@@ -453,10 +460,12 @@
 
 /datum/interaction/lewd/fuck/belly
 	description = "Живот. Трахнуть в пупок."
-	require_target_vagina = REQUIRE_NONE
-	require_target_belly = REQUIRE_EXPOSED
-	write_log_user = "трахнул(а) в пупок"
-	write_log_target = "был(а) трахнут(а) в пупок"
+	required_from_target_exposed = INTERACTION_REQUIRE_BELLY
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = INTERACTION_REQUIRE_PENIS
+	required_from_user_unexposed = NONE
+	write_log_user = "belly fucked"
+	write_log_target = "was belly fucked by"
 
 /datum/interaction/lewd/fuck/belly/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	user.do_bellyfuck(target)
@@ -471,11 +480,14 @@
 
 /datum/interaction/lewd/deflate_belly
 	description = "Живот. Уменьшить свой живот."
-	require_user_belly = REQUIRE_EXPOSED
+	required_from_target_exposed = NONE
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = INTERACTION_REQUIRE_BELLY
+	required_from_user_unexposed = NONE
 	interaction_sound = null
 	max_distance = 0
-	user_is_target = TRUE
-	write_log_user = "уменьшил(а) свой живот."
+	interaction_flags = INTERACTION_FLAG_ADJACENT | INTERACTION_FLAG_OOC_CONSENT | INTERACTION_FLAG_USER_IS_TARGET
+	write_log_user = "deflated their belly"
 	write_log_target = null
 
 /datum/interaction/lewd/deflate_belly/display_interaction(mob/living/carbon/user)
@@ -485,10 +497,13 @@
 
 /datum/interaction/lewd/inflate_belly
 	description = "Живот. Надуть свой живот."
-	require_user_belly = REQUIRE_EXPOSED
+	required_from_target_exposed = NONE
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = INTERACTION_REQUIRE_BELLY
+	required_from_user_unexposed = NONE
 	interaction_sound = null
 	max_distance = 0
-	user_is_target = TRUE
+	interaction_flags = INTERACTION_FLAG_ADJACENT | INTERACTION_FLAG_OOC_CONSENT | INTERACTION_FLAG_USER_IS_TARGET
 	write_log_user = "inflated their belly"
 	write_log_target = null
 
@@ -499,7 +514,10 @@
 
 /datum/interaction/lewd/nuzzle_belly
 	description = "Живот. Тыкнуться носом."
-	require_target_belly = REQUIRE_EXPOSED
+	required_from_target_exposed = INTERACTION_REQUIRE_BELLY
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = NONE
+	required_from_user_unexposed = NONE
 	interaction_sound = null
 	max_distance = 1
 	write_log_target = "К её/его животу прижался носом"
@@ -509,8 +527,11 @@
 	user.nuzzle_belly(target)
 
 /datum/interaction/lewd/do_breastsmother
-	description = "Грудь. Придушить лицо."
-	require_user_breasts = REQUIRE_EXPOSED
+	description = "Грудь. Придушить партнёра."
+	required_from_target_exposed = NONE
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = INTERACTION_REQUIRE_BREASTS
+	required_from_user_unexposed = NONE
 	max_distance = 1
 	interaction_sound = null
 	write_log_target = "был(а) придушен(а) грудью"
@@ -529,7 +550,10 @@
 
 /datum/interaction/lewd/lick_sweat
 	description = "Подмышки. Слизывать пот."
-	require_user_mouth = TRUE
+	required_from_target_exposed = NONE
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = INTERACTION_REQUIRE_MOUTH
+	required_from_user_unexposed = NONE
 	max_distance = 1
 	interaction_sound = null
 	write_log_target = "Её/его пот был слизан"
@@ -550,7 +574,10 @@
 
 /datum/interaction/lewd/lick_armpit
 	description = "Подмышки. Вылизать подмышку."
-	require_user_mouth = TRUE
+	required_from_target_exposed = NONE
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = INTERACTION_REQUIRE_MOUTH
+	required_from_user_unexposed = NONE
 	max_distance = 1
 	interaction_sound = null
 	write_log_target = "Её/его подмышка была вылизана"
@@ -561,7 +588,10 @@
 
 /datum/interaction/lewd/fuck_armpit
 	description = "Подмышки. Трахнуть в подмышку."
-	require_user_penis = REQUIRE_EXPOSED
+	required_from_target_exposed = NONE
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = INTERACTION_REQUIRE_PENIS
+	required_from_user_unexposed = NONE
 	interaction_sound = null
 	write_log_target = "был(-а) трахнут(-а) в подмышку"
 	write_log_user = "трахнул(-а) подмышку"
@@ -580,7 +610,10 @@
 
 /datum/interaction/lewd/do_pitjob
 	description = "Подмышки. Вздрочнуть пенис партнёра."
-	require_target_penis = REQUIRE_EXPOSED
+	required_from_target_exposed = INTERACTION_REQUIRE_PENIS
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = NONE
+	required_from_user_unexposed = NONE
 	interaction_sound = null
 	write_log_target = "получил(-а) мастурбацию подмышкой от"
 	write_log_user = "вздрочнул(-а) своей подмышкой пенис"
@@ -599,8 +632,10 @@
 
 /datum/interaction/lewd/do_boobjob
 	description = "Грудь. Вздрочнуть пенис партнёра."
-	require_user_breasts = REQUIRE_EXPOSED
-	require_target_penis = REQUIRE_EXPOSED
+	required_from_target_exposed = INTERACTION_REQUIRE_PENIS
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = INTERACTION_REQUIRE_BREASTS
+	required_from_user_unexposed = NONE
 	interaction_sound = null
 	max_distance = 1
 	write_log_target = "получил(-а) мастурбацию сиськами от"
@@ -619,8 +654,10 @@
 
 /datum/interaction/lewd/lick_nuts
 	description = "Яйца. Полизать яички партнёра."
-	require_user_mouth = TRUE
-	require_target_balls = REQUIRE_EXPOSED
+	required_from_target_exposed = INTERACTION_REQUIRE_BALLS
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = INTERACTION_REQUIRE_MOUTH
+	required_from_user_unexposed = NONE
 	interaction_sound = null
 	max_distance = 1
 	write_log_target = "Её/его яйца были вылизаны"
@@ -632,7 +669,10 @@
 /datum/interaction/lewd/grope_ass
 	description = "Попа. Полапать задницу."
 	simple_message = "USER сжимает задницу TARGET!"
-	require_user_hands = TRUE
+	required_from_target_exposed = NONE
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = INTERACTION_REQUIRE_HANDS
+	required_from_user_unexposed = NONE
 	max_distance = 1
 	interaction_sound = null
 	write_log_target = "Был(а) потискан(а) за задницу"
@@ -640,8 +680,10 @@
 
 /datum/interaction/lewd/fuck_cock
 	description = "Член. Трахнуть в уретру."
-	require_user_penis = REQUIRE_EXPOSED
-	require_target_penis = REQUIRE_EXPOSED
+	required_from_target_exposed = INTERACTION_REQUIRE_PENIS
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = INTERACTION_REQUIRE_PENIS
+	required_from_user_unexposed = NONE
 	interaction_sound = null
 	max_distance = 1
 	write_log_target = "Был трахнут(-а) в уретру"
@@ -657,10 +699,13 @@
 
 /datum/interaction/lewd/nipple_fuck
 	description = "Грудь. Трахнуть в сосок."
-	require_target_topless = TRUE
-	require_user_penis = REQUIRE_EXPOSED
-	write_log_user = "трахнул(а) соски"
-	write_log_target = "был(а) трахнут(а) в соски"
+	required_from_target = INTERACTION_REQUIRE_TOPLESS
+	required_from_target_exposed = NONE
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = INTERACTION_REQUIRE_PENIS
+	required_from_user_unexposed = NONE
+	write_log_user = "fucked nipples"
+	write_log_target = "got their nipples fucked by"
 	interaction_sound = null
 	max_distance = 1
 
@@ -677,11 +722,14 @@
 
 /datum/interaction/lewd/fuck_thighs
 	description = "Член. Проникнуть между бёдрами."
-	require_user_penis = REQUIRE_EXPOSED
 	require_target_legs = REQUIRE_ANY
 	require_target_num_legs = 2
-	write_log_user = "трахнул бёдра"
-	write_log_target = "был(а) трахнут(а) между бёдрами"
+	required_from_target_exposed = NONE
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = INTERACTION_REQUIRE_PENIS
+	required_from_user_unexposed = NONE
+	write_log_user = "fucked thighs"
+	write_log_target = "got their thighs fucked by"
 	interaction_sound = null
 	max_distance = 1
 
@@ -699,11 +747,14 @@
 
 /datum/interaction/lewd/do_thighjob
 	description = "Бёдра. Подрочить член бёдрами."
-	require_target_penis = REQUIRE_EXPOSED
 	require_user_legs = REQUIRE_ANY
 	require_user_num_legs = 2
-	write_log_user = "вздрочнул(-а) бёдрами пенис"
-	write_log_target = "получил(-а) мастурбацию бёдрами от"
+	required_from_target_exposed = NONE
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = INTERACTION_REQUIRE_PENIS
+	required_from_user_unexposed = NONE
+	write_log_user = "Gave a thighjob"
+	write_log_target = "Got a thighjob from"
 	interaction_sound = null
 	max_distance = 1
 
@@ -720,8 +771,8 @@
 	playlewdinteractionsound(target, 'sound/items/bikehorn.ogg', 40, 1, -1)
 
 /datum/interaction/lewd/clothesplosion
-	description = "Explode out of your clothes"
-	user_is_target = TRUE
+	description = "Резко снять всю свою одежду!"
+	interaction_flags = INTERACTION_FLAG_ADJACENT | INTERACTION_FLAG_OOC_CONSENT | INTERACTION_FLAG_USER_IS_TARGET
 	interaction_sound = null
 	max_distance = 0
 	write_log_user = "Exploded out of their clothes"
@@ -737,41 +788,50 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /datum/interaction/lewd/unholy
-	unholy = TRUE
+	description = null
+
+/datum/interaction/lewd/unholy/New()
+	. = ..()
+	interaction_flags |= INTERACTION_FLAG_UNHOLY_CONTENT
 
 /datum/interaction/lewd/unholy/do_facefart
 	description = "Напердеть на лицо."
-	require_user_anus = REQUIRE_EXPOSED
+	required_from_target_exposed = NONE
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = INTERACTION_REQUIRE_ANUS
+	required_from_user_unexposed = NONE
 	max_distance = 1
 	interaction_sound = null
 	write_log_target = "на его промежность напердел"
 	write_log_user = "перданул на лицо"
-	extreme = TRUE
 
 /datum/interaction/lewd/unholy/do_facefart/display_interaction(mob/living/user, mob/living/target)
 	user.do_facefart(target)
 
 /datum/interaction/lewd/unholy/do_crotchfart
 	description = "Напердеть на промежность."
-	require_user_anus = REQUIRE_EXPOSED
+	required_from_target_exposed = NONE
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = INTERACTION_REQUIRE_ANUS
+	required_from_user_unexposed = NONE
 	max_distance = 1
 	interaction_sound = null
 	write_log_target = "на его промежность напердел"
 	write_log_user = "перданул на промежность"
-	extreme = TRUE
 
 /datum/interaction/lewd/unholy/do_crotchfart/display_interaction(mob/living/user, mob/living/target)
 	user.do_crotchfart(target)
 
 /datum/interaction/lewd/unholy/do_fartfuck
-	description = "Трахнуть в задницу с пердежом"
-	require_target_anus = REQUIRE_EXPOSED
-	require_user_penis = REQUIRE_EXPOSED
+	description = "Трахнуть в задницу с пердежом."
+	required_from_target_exposed = INTERACTION_REQUIRE_ANUS
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = INTERACTION_REQUIRE_PENIS
+	required_from_user_unexposed = NONE
 	max_distance = 1
 	interaction_sound = null
 	write_log_target = "был(а) трахнут(а) в задницу с пердежом"
 	write_log_user = "трахнул(а) в задницу с пердежом"
-	extreme = TRUE
 
 /datum/interaction/lewd/unholy/do_fartfuck/display_interaction(mob/living/user, mob/living/target)
 	user.do_fartfuck(target)
@@ -786,50 +846,56 @@
 
 /datum/interaction/lewd/unholy/suck_fart
 	description = "Высосать газы из задницы ртом."
-	require_user_mouth = TRUE
-	require_target_anus = REQUIRE_EXPOSED
+	required_from_target_exposed = INTERACTION_REQUIRE_ANUS
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = INTERACTION_REQUIRE_MOUTH
+	required_from_user_unexposed = NONE
 	max_distance = 1
 	interaction_sound = null
 	write_log_target = "его газы высосал из задницы"
 	write_log_user = "высосал газы из задницы"
-	extreme = TRUE
 
 /datum/interaction/lewd/unholy/suck_fart/display_interaction(mob/living/user, mob/living/target)
 	user.suck_fart(target)
 
 /datum/interaction/lewd/unholy/do_faceshit
 	description = "Насрать на лицо."
-	require_user_anus = TRUE
+	required_from_target_exposed = NONE
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = INTERACTION_REQUIRE_ANUS
+	required_from_user_unexposed = NONE
 	max_distance = 1
 	interaction_sound = null
 	write_log_target = "его лицо было обосрано"
 	write_log_user = "насрал на лицо"
-	extreme = TRUE
 
 /datum/interaction/lewd/unholy/do_faceshit/display_interaction(mob/living/user, mob/living/target)
 	user.do_faceshit(target)
 
 /datum/interaction/lewd/unholy/do_crotchshit/
 	description = "Насрать на промежность."
-	require_user_anus = REQUIRE_EXPOSED
+	required_from_target_exposed = NONE
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = INTERACTION_REQUIRE_ANUS
+	required_from_user_unexposed = NONE
 	max_distance = 1
 	interaction_sound = null
 	write_log_target = "его промежность была обосрана"
 	write_log_user = "насрал на промежность"
-	extreme = TRUE
 
 /datum/interaction/lewd/unholy/do_crotchshit/display_interaction(mob/living/user, mob/living/target)
 	user.do_crotchshit(target)
 
 /datum/interaction/lewd/unholy/do_shitfuck
-	description = "Трахнуть в задницу с говнецом"
-	require_target_anus = REQUIRE_EXPOSED
-	require_user_penis = REQUIRE_EXPOSED
+	description = "Трахнуть в задницу с говнецом."
+	required_from_target_exposed = INTERACTION_REQUIRE_ANUS
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = INTERACTION_REQUIRE_PENIS
+	required_from_user_unexposed = NONE
 	max_distance = 1
 	interaction_sound = null
 	write_log_target = "трахнут в задницу с говнецом"
 	write_log_user = "трахнул в задницу с говнецом"
-	extreme = TRUE
 
 /datum/interaction/lewd/unholy/do_shitfuck/display_interaction(mob/living/user, mob/living/target)
 	user.do_shitfuck(target)
@@ -844,25 +910,29 @@
 
 /datum/interaction/lewd/unholy/suck_shit
 	description = "Высосать говно из задницы."
-	require_user_mouth = TRUE
-	require_target_anus = REQUIRE_EXPOSED
+	required_from_target_exposed = INTERACTION_REQUIRE_ANUS
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = INTERACTION_REQUIRE_MOUTH
+	required_from_user_unexposed = NONE
 	max_distance = 1
 	interaction_sound = null
 	write_log_target = "его говно высосал из задницы"
 	write_log_user = "высосал говно из задницы"
-	extreme = TRUE
 
 /datum/interaction/lewd/unholy/suck_shit/display_interaction(mob/living/user, mob/living/target)
 	user.suck_shit(target)
 
 /datum/interaction/lewd/unholy/piss_over
 	description = "Обоссать с ног до головы."
-	require_user_bottomless = TRUE
+	required_from_user = INTERACTION_REQUIRE_BOTTOMLESS
+	required_from_target_exposed = NONE
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = NONE
+	required_from_user_unexposed = NONE
 	max_distance = 1
 	interaction_sound = null
 	write_log_target = "получает золотой дождь от"
 	write_log_user = "нассал на"
-	extreme = TRUE
 
 /datum/interaction/lewd/unholy/piss_over/display_interaction(mob/living/user, mob/living/target)
 	user.piss_over(target)
@@ -871,14 +941,16 @@
 	description = "Нассать в рот."
 	max_distance = 1
 	interaction_sound = null
-	require_user_bottomless = TRUE
-	require_target_mouth = TRUE
-	write_log_user = "ссыт в чей-то рот"
-	write_log_target = "наполняет свой рот мочой"
-	extreme = TRUE
+	required_from_user = INTERACTION_REQUIRE_BOTTOMLESS
+	required_from_target_exposed = INTERACTION_REQUIRE_MOUTH
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = NONE
+	required_from_user_unexposed = NONE
+	write_log_user = "pissed in someone's mouth"
+	write_log_target = "got their mouth filled with piss by"
 
 /datum/interaction/lewd/unholy/piss_mouth/display_interaction(mob/living/carbon/user, mob/living/target)
 	if(!istype(user))
-		to_chat(user, "<span class='warning'>Ты уверен что твоя физиология позволяет это?</span>")
+		to_chat(user, span_warning("You're not a carbon entity."))
 		return
 	user.piss_mouth(target)

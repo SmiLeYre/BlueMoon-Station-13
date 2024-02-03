@@ -93,8 +93,6 @@
 		return TRUE
 
 /datum/antagonist/heretic/process()
-	. = ..()
-
 	if(owner.current.stat == DEAD)
 		return
 

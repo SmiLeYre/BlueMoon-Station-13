@@ -56,7 +56,7 @@
 	if(ishuman(M) && (M?.client?.prefs?.toggles & VERB_CONSENT))
 		switch(user.zone_selected)
 			if(BODY_ZONE_PRECISE_GROIN)
-				if(M.has_penis(REQUIRE_EXPOSED) || M.has_strapon(REQUIRE_EXPOSED))
+				if(M.has_penis() == HAS_EXPOSED_GENITAL || M.has_strapon() == HAS_EXPOSED_GENITAL)
 					var/genital_name = (user == M) ? user.get_penetrating_genital_name() : M.get_penetrating_genital_name()
 					message = (user == M) ? "использует <b>'[src]'</b> по прямому назначению и трахает, натягивая [possessive_verb] прямо на свой [genital_name]" : "использует <b>'[src]'</b> по прямому назначению и трахает, натягивая прямо на свой <b>[M]</b> [genital_name]"
 					lust_amt = NORMAL_LUST
@@ -164,7 +164,7 @@
 			if(BODY_ZONE_PRECISE_GROIN)
 				switch(targetting)
 					if(CUM_TARGET_PENIS)
-						if(M.has_penis(REQUIRE_EXPOSED) || M.has_strapon(REQUIRE_EXPOSED))
+						if(M.has_penis() == HAS_EXPOSED_GENITAL || M.has_strapon() == HAS_EXPOSED_GENITAL)
 							switch(portalunderwear.targetting)
 								if(CUM_TARGET_PENIS)
 									user_message = (user == M) ? "трётся о [penis_names[3]], используя [name]" : "использует <b>'[src]'</b> по прямому назначению и стимулирует член кого-то на другой стороне усилиями члена <b>[M]</b>, таким образом заставляя потираться о [penis_names[3]] [name]"
@@ -199,7 +199,7 @@
 						else
 							to_chat(user, "<span class='warning'>Пенис закрыт или его нет!</span>")
 					if(CUM_TARGET_VAGINA)
-						if(M.has_vagina(REQUIRE_EXPOSED))
+						if(M.has_vagina() == HAS_EXPOSED_GENITAL)
 							switch(portalunderwear.targetting)
 								if(CUM_TARGET_PENIS)
 									user_message = (user == M) ? "стимулирует [penis_names[3]] через [name]" : "трахает <b>[M]</b> при помощи [penis_names[3]] [name]"
@@ -236,7 +236,7 @@
 						else
 							to_chat(user, "<span class='warning'>Влагалище закрыто или его нет!</span>")
 					if(CUM_TARGET_ANUS)
-						if(M.has_anus(REQUIRE_EXPOSED))
+						if(M.has_anus() == HAS_EXPOSED_GENITAL)
 							switch(portalunderwear.targetting)
 								if(CUM_TARGET_PENIS)
 									user_message = (user == M) ? "использует свой сокрытый в <b>'[src]'</b> [penis_names[3]] [name] по прямому назначению и трахает себя в анальное колечко" : "трахает <b>[M]</b> анально при помощи [penis_names[3]] [name]"
@@ -265,7 +265,7 @@
 						else
 							to_chat(user, "<span class='warning'>Анус закрыт или отсутствует!</span>")
 					if(CUM_TARGET_URETHRA)
-						if(M.has_penis(REQUIRE_EXPOSED) || M.has_strapon(REQUIRE_EXPOSED))
+						if(M.has_penis() == HAS_EXPOSED_GENITAL || M.has_strapon() == HAS_EXPOSED_GENITAL)
 							switch(portalunderwear.targetting)
 								if(CUM_TARGET_PENIS)
 									user_message = (user == M) ? "трахает твою уретру своим членом" : "трахает чужую уретру своим членом"
@@ -622,8 +622,6 @@
 	var/targetting = CUM_TARGET_VAGINA
 	equip_delay_self = 2 SECONDS
 	equip_delay_other = 5 SECONDS
-	body_parts_covered = NONE
-	is_edible = 0
 
 /obj/item/clothing/underwear/briefs/panties/portalpanties/attack_self(mob/user)
 	. = ..()
@@ -687,19 +685,19 @@
 		var/mob/living/carbon/human/human = M
 		switch(targetting)
 			if(CUM_TARGET_VAGINA)
-				if(!human.has_vagina(REQUIRE_EXPOSED))
-					to_chat(human, "<span class='warning'>Влагалище закрыто или отсутствует!</span>")
+				if(!human.has_vagina() == HAS_EXPOSED_GENITAL)
+					to_chat(human, span_warning("Влагалище закрыто или отсутствует!"))
 					return FALSE
 			if(CUM_TARGET_ANUS)
-				if(!human.has_anus(REQUIRE_EXPOSED))
-					to_chat(human, "<span class='warning'>Анус закрыт или отсутствует!</span>")
+				if(!human.has_anus() == HAS_EXPOSED_GENITAL)
+					to_chat(human, span_warning("Анус закрыт или отсутствует!"))
 					return FALSE
 			if(CUM_TARGET_PENIS)
-				if(!human.has_penis(REQUIRE_EXPOSED) && !human.has_strapon(REQUIRE_EXPOSED))
+				if(!human.has_penis() == HAS_EXPOSED_GENITAL && !human.has_strapon() == HAS_EXPOSED_GENITAL)
 					to_chat(human, "<span class='warning'>Пенис закрыт или отсутствует!</span>")
 					return FALSE
 			if(CUM_TARGET_URETHRA)
-				if(!human.has_penis(REQUIRE_EXPOSED) && !human.has_strapon(REQUIRE_EXPOSED))
+				if(!human.has_penis() == HAS_EXPOSED_GENITAL && !human.has_strapon() == HAS_EXPOSED_GENITAL)
 					to_chat(human, "<span class='warning'>Уретра закрыта или отсутствует!</span>")
 					return FALSE
 			if(CUM_TARGET_MOUTH)

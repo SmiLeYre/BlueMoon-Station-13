@@ -466,7 +466,7 @@
 		if(target)
 			return new childspawn(target)
 
-/mob/living/simple_animal/canUseTopic(atom/movable/M, be_close=FALSE, no_dextery=FALSE, no_tk=FALSE)
+/mob/living/simple_animal/canUseTopic(atom/movable/M, be_close=FALSE, no_dextery=FALSE, no_tk=FALSE, check_resting=FALSE)
 	if(incapacitated())
 		to_chat(src, "<span class='warning'>You can't do that right now!</span>")
 		return FALSE
@@ -605,7 +605,7 @@
 
 //ANIMAL RIDING
 
-/mob/living/simple_animal/user_buckle_mob(mob/living/M, mob/user)
+/mob/living/simple_animal/user_buckle_mob(mob/living/M, mob/user, check_loc)
 	var/datum/component/riding/riding_datum = GetComponent(/datum/component/riding)
 	if(riding_datum)
 		if(user.incapacitated())

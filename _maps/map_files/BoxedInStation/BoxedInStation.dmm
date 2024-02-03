@@ -5145,8 +5145,8 @@
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
 	},
-/obj/item/aiModule/core/freeformcore,
-/obj/item/aiModule/core/full/custom,
+/obj/item/ai_module/core/freeformcore,
+/obj/item/ai_module/core/full/custom,
 /turf/open/floor/plating,
 /area/ai_monitored/turret_protected/aisat/service)
 "cDr" = (
@@ -12336,7 +12336,7 @@
 	},
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/computer/upload/borg,
-/obj/item/aiModule/reset,
+/obj/item/ai_module/reset,
 /turf/open/floor/plating,
 /area/ai_monitored/turret_protected/aisat/service)
 "grT" = (
@@ -33992,7 +33992,7 @@
 /area/security/warden)
 "rFf" = (
 /obj/structure/table/reinforced,
-/obj/item/aiModule/reset,
+/obj/item/ai_module/reset,
 /turf/open/floor/plasteel,
 /area/engineering/storage/tech)
 "rFB" = (

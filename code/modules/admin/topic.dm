@@ -1428,7 +1428,7 @@
 		for (var/rule in subtypesof(/datum/dynamic_ruleset/roundstart))
 			var/datum/dynamic_ruleset/roundstart/newrule = new rule()
 			roundstart_rules[newrule.name] = newrule
-		var/added_rule = input(usr,"What ruleset do you want to force? This will bypass threat level and population restrictions.", "Rigging Roundstart", null) as null|anything in sortList(roundstart_rules)
+		var/added_rule = input(usr,"What ruleset do you want to force? This will bypass threat level and population restrictions.", "Rigging Roundstart", null) as null|anything in sort_list(roundstart_rules)
 		if (added_rule)
 			GLOB.dynamic_forced_roundstart_ruleset += roundstart_rules[added_rule]
 			log_admin("[key_name(usr)] set [added_rule] to be a forced roundstart ruleset.")
@@ -2825,6 +2825,12 @@
 		if(!paper_to_show)
 			return
 		paper_to_show.ui_interact(usr)
+
+	else if(href_list["movepod"])
+		var/obj/docking_port/mobile/pod/pod = src
+		pod.request()
+		message_admins("[key_name_admin(usr)] moved the Escape Pod.")
+		log_admin("[key_name(usr)] moved the Escape Pod.")
 
 /datum/admins/proc/HandleCMode()
 	if(!check_rights(R_ADMIN))

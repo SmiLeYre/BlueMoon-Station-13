@@ -1,15 +1,13 @@
 /datum/interaction/lewd/facefuck
 	description = "Член. Вытрахать в рот."
 	interaction_sound = null
-	require_target_mouth = TRUE
-	require_user_penis = REQUIRE_EXPOSED
-	max_distance = 1
+	required_from_user_exposed = INTERACTION_REQUIRE_PENIS
+	required_from_target = INTERACTION_REQUIRE_MOUTH
 	var/fucktarget = "penis"
 
 /datum/interaction/lewd/facefuck/vag
 	description = "Вагина. Потереться об рот."
-	require_user_penis = null
-	require_user_vagina = REQUIRE_EXPOSED
+	required_from_user_exposed = INTERACTION_REQUIRE_VAGINA
 	fucktarget = "vagina"
 
 /datum/interaction/lewd/facefuck/display_interaction(mob/living/user, mob/living/partner)
@@ -110,10 +108,8 @@
 /datum/interaction/lewd/throatfuck
 	description = "Член. Вытрахать в глотку | Убийственно."
 	interaction_sound = null
-	require_user_penis = REQUIRE_EXPOSED
-	require_target_mouth = TRUE
-	max_distance = 1
-	extreme = TRUE //Stop killing people without their fucking consent! - Gardelin0
+	required_from_user_exposed = INTERACTION_REQUIRE_PENIS
+	required_from_target = INTERACTION_REQUIRE_MOUTH
 
 /datum/interaction/lewd/throatfuck/display_interaction(mob/living/user, mob/living/partner)
 	var/message

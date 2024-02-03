@@ -17,6 +17,7 @@
 		/obj/item/clothing/suit/goner/fake/poly = 10,
 		/obj/item/clothing/head/helmet/goner/fake/poly = 10,
 		/obj/item/clothing/under/raccveralls = 3,
+		/obj/item/clothing/under/raccveralls/flush_shirt = 3,
 		/obj/item/clothing/under/officesexy = 3,
 		/obj/item/clothing/suit/toggle/tunnelfox = 3,
 		/obj/item/clothing/under/performer = 2,
@@ -38,7 +39,10 @@
 		/obj/item/clothing/wrists/armwarmer = 3,
 		/obj/item/clothing/wrists/armwarmer/long = 3,
 		/obj/item/clothing/wrists/armwarmer_striped = 3,
-		/obj/item/clothing/wrists/armwarmer_striped/long = 3
+		/obj/item/clothing/wrists/armwarmer_striped/long = 3,
+		/obj/item/clothing/under/pants/yoga = 3,
+		/obj/item/clothing/under/blutigen_undergarment = 3,
+		/obj/item/clothing/glasses/contact = 3
 	)
 	var/list/extra_contraband = list(
 		/obj/item/clothing/under/rank/civilian/lawyer/galaxy_red = 3,

@@ -125,7 +125,7 @@
 			to_chat(user, "<span class='notice'>\the [src] is recharging.</span>")
 			return
 		var/mob/living/silicon/robot/R = loc
-		var/static/list/module_icons = sortList(list(
+		var/static/list/module_icons = sort_list(list(
 		"Standard" = image(icon = 'icons/mob/robots.dmi', icon_state = "robot"),
 		"Medical" = image(icon = 'icons/mob/robots.dmi', icon_state = "medical"),
 		"Engineer" = image(icon = 'icons/mob/robots.dmi', icon_state = "engineer"),
@@ -142,7 +142,7 @@
 
 		switch(module_selection)
 			if("Standard")
-				var/static/list/standard_icons = sortList(list(
+				var/static/list/standard_icons = sort_list(list(
 					"Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "robot")
 				))
 				var/borg_icon = show_radial_menu(R, R , standard_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
@@ -172,7 +172,7 @@
 					var/image/wide = image(icon = 'modular_citadel/icons/mob/widerobot.dmi', icon_state = L[a])
 					wide.pixel_x = -16
 					med_icons[a] = wide
-				med_icons = sortList(med_icons)
+				med_icons = sort_list(med_icons)
 				var/borg_icon = show_radial_menu(R, R , med_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
 				if(!borg_icon)
 					return FALSE
@@ -244,7 +244,7 @@
 					var/image/wide = image(icon = 'modular_citadel/icons/mob/widerobot.dmi', icon_state = L[a])
 					wide.pixel_x = -16
 					engi_icons[a] = wide
-				engi_icons = sortList(engi_icons)
+				engi_icons = sort_list(engi_icons)
 				var/borg_icon = show_radial_menu(R, R , engi_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
 				if(!borg_icon)
 					return FALSE
@@ -321,7 +321,7 @@
 					var/image/wide = image(icon = 'modular_citadel/icons/mob/widerobot.dmi', icon_state = L[a])
 					wide.pixel_x = -16
 					sec_icons[a] = wide
-				sec_icons = sortList(sec_icons)
+				sec_icons = sort_list(sec_icons)
 				var/borg_icon = show_radial_menu(R, R , sec_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
 				if(!borg_icon)
 					return FALSE
@@ -404,7 +404,7 @@
 					var/image/wide = image(icon = 'modular_citadel/icons/mob/widerobot.dmi', icon_state = L[a])
 					wide.pixel_x = -16
 					service_icons[a] = wide
-				service_icons = sortList(service_icons)
+				service_icons = sort_list(service_icons)
 				var/borg_icon = show_radial_menu(R, R , service_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
 				if(!borg_icon)
 					return FALSE
@@ -505,7 +505,7 @@
 					var/image/wide = image(icon = 'modular_citadel/icons/mob/widerobot.dmi', icon_state = L[a])
 					wide.pixel_x = -16
 					mining_icons[a] = wide
-				mining_icons = sortList(mining_icons)
+				mining_icons = sort_list(mining_icons)
 				var/borg_icon = show_radial_menu(R, R , mining_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
 				if(!borg_icon)
 					return FALSE
@@ -558,7 +558,7 @@
 					else
 						return FALSE
 			if("Peacekeeper")
-				var/static/list/peace_icons = sortList(list(
+				var/static/list/peace_icons = sort_list(list(
 					"Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "peace"),
 					"Borgi" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "borgi"),
 					"Spider" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "whitespider"),
@@ -593,7 +593,7 @@
 					else
 						return FALSE
 			if("Clown")
-				var/static/list/clown_icons = sortList(list(
+				var/static/list/clown_icons = sort_list(list(
 					"Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "clown")
 				))
 				var/borg_icon = show_radial_menu(R, R , clown_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
@@ -606,7 +606,7 @@
 					else
 						return FALSE
 			if("Syndicate")
-				var/static/list/syndicatejack_icons = sortList(list(
+				var/static/list/syndicatejack_icons = sort_list(list(
 					"Saboteur" = image(icon = 'icons/mob/robots.dmi', icon_state = "synd_engi"),
 					"Medical" = image(icon = 'icons/mob/robots.dmi', icon_state = "synd_medical"),
 					"Assault" = image(icon = 'icons/mob/robots.dmi', icon_state = "synd_sec"),

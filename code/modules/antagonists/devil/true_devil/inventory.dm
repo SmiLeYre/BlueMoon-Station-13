@@ -1,4 +1,4 @@
-/mob/living/carbon/true_devil/doUnEquip(obj/item/I, force, silent = FALSE)
+/mob/living/carbon/true_devil/doUnEquip(obj/item/I, force, newloc, no_move, invdrop = TRUE, silent)
 	if(..())
 		update_inv_hands()
 		return 1

@@ -40,7 +40,8 @@
 //	to_chat(owner, "<span class='rose'>Tick</span>")
 	if(get_area(owner) in GLOB.areas_by_type[/area/ruin/space/has_grav/bluemoon])
 		return
-	if(!(owner.loc.z in allowed_z_levels))
+	var/turf/my_location = get_turf(owner)
+	if(!(my_location.z in allowed_z_levels))
 		to_chat(owner, "<span class='warning'>Больно!</span>")
 		owner.adjustBruteLoss(2.5, FALSE) //Provides slow harassing for both brute and burn damage.
 		owner.adjustFireLoss(2.5, FALSE)

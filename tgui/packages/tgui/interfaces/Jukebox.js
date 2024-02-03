@@ -5,7 +5,6 @@ import { useBackend, useLocalState, useSharedState } from '../backend';
 import {
   Box,
   Button,
-  Dropdown,
   Input,
   Section,
   Knob,
@@ -13,7 +12,6 @@ import {
   LabeledList,
   Stack,
   Tabs,
-  Table,
 } from '../components';
 import { Window } from '../layouts';
 

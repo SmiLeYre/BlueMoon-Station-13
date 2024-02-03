@@ -2132,7 +2132,9 @@
 /obj/structure/disposalpipe/segment,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/obj/structure/chair/sofa/corp/corner,
+/obj/structure/chair/sofa/corp/left{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel)
 "kG" = (
@@ -2960,7 +2962,7 @@
 /turf/open/floor/wood/wood_tiled,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "oM" = (
-/obj/structure/chair/sofa/corp/right{
+/obj/structure/chair/sofa/corp/left{
 	dir = 1
 	},
 /turf/open/floor/carpet/royalblack,
@@ -3348,7 +3350,6 @@
 	name = "Hotel Maintenance";
 	req_access_txt = "200,201"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plating,
@@ -6599,7 +6600,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/hotel)
 "Ft" = (
-/obj/structure/chair/sofa/corp/left{
+/obj/structure/chair/sofa/corp/right{
 	dir = 1
 	},
 /turf/open/floor/carpet/royalblack,
@@ -7008,10 +7009,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/hotel/security)
 "Hh" = (
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/chair/sofa/corp/left{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel)
 "Hj" = (
@@ -7115,7 +7116,9 @@
 /turf/open/floor/plasteel/cafeteria,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "HD" = (
-/obj/structure/chair/stool/bar,
+/obj/structure/chair/stool/bar{
+	dir = 8
+	},
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "HE" = (
@@ -7948,6 +7951,12 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel)
+"Lj" = (
+/obj/structure/chair/stool/bar{
+	dir = 8
+	},
+/turf/open/floor/carpet/black,
+/area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Lo" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 8
@@ -10357,7 +10366,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel)
 "WQ" = (
-/obj/structure/chair/sofa/corp{
+/obj/structure/chair/sofa/corp/right{
 	dir = 8
 	},
 /turf/open/floor/plating,
@@ -10430,7 +10439,9 @@
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "Xa" = (
-/obj/structure/chair/stool,
+/obj/structure/chair/stool{
+	dir = 1
+	},
 /turf/open/floor/carpet/black,
 /area/ruin/space/has_grav/bluemoon/hotel)
 "Xb" = (
@@ -12487,8 +12498,8 @@ AQ
 AQ
 AQ
 AQ
-Ts
-Ts
+Lj
+Lj
 Fy
 nf
 Oz
@@ -13585,7 +13596,7 @@ Fx
 pO
 ES
 Sb
-bv
+gM
 Mk
 pt
 pJ
@@ -13655,7 +13666,7 @@ Mk
 Lp
 Gl
 WY
-gM
+bv
 Mk
 hz
 pX

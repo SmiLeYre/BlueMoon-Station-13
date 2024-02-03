@@ -58,7 +58,7 @@
 		if(!initial(potential_sign.is_editable))
 			continue
 		output[initial(potential_sign.sign_change_name)] = potential_sign
-	output = sortList(output) //Alphabetizes the results.
+	output = sort_list(output) //Alphabetizes the results.
 	return output
 
 /obj/item/sign/proc/set_sign_type(obj/structure/sign/fake_type)

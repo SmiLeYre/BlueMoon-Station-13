@@ -1,6 +1,6 @@
 /****************Explorer's Suit and Mask****************/
 /obj/item/clothing/suit/hooded/explorer
-	name = "explorer suit"
+	name = "Explorer Suit"
 	desc = "An armoured suit for exploring harsh environments."
 	icon_state = "explorer-normal"
 	item_state = "explorer-normal"
@@ -17,8 +17,21 @@
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC|STYLE_PAW_TAURIC
 	no_t = TRUE
 
+/obj/item/clothing/suit/hooded/explorer/standard/improved
+	name = "E.D.N IV Suit"
+	desc = "Укрепленная зимняя одежда с противоударными пластинами. Баллон на спине с некой субстанцией разносит по всему костюму оранжевую слабо-светящуюся жидкость. На плечевой пластине нанесена надпись: E.D.N IV."
+	icon_state = "explorer-improved"
+	item_state = "explorer-normal"
+	hoodtype = /obj/item/clothing/head/hooded/explorer/standard/improved
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	armor = list(MELEE = 60, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 50, BIO = 100, RAD = 50, FIRE = 100, ACID = 50, WOUND = 15)
+
+/obj/item/clothing/suit/hooded/explorer/standard/improved/upgrade_icon(datum/source, amount, maxamount)
+	return
+
 /obj/item/clothing/head/hooded/explorer
-	name = "explorer hood"
+	name = "Explorer Hood"
 	desc = "An armoured hood for exploring harsh environments."
 	icon_state = "explorer-normal"
 	item_state = "explorer-normal"
@@ -30,6 +43,29 @@
 	cold_protection = HEAD
 	armor = list(MELEE = 30, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 50, BIO = 100, RAD = 50, FIRE = 50, ACID = 50, WOUND = 10)
 	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/head/hooded/explorer/standard/improved
+	name = "E.D.N IV Helmet"
+	desc = "Укрепленный зимний шлем с противоударными пластинами."
+	icon_state = "explorer-improved"
+	item_state = "explorer-normal"
+	heat_protection = HEAD
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	actions_types = list(/datum/action/item_action/toggle_helmet_light)
+	armor = list(MELEE = 60, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 50, BIO = 100, RAD = 50, FIRE = 100, ACID = 50, WOUND = 10)
+
+/obj/item/clothing/suit/hooded/explorer/standard/improved/upgrade_icon(datum/source, amount, maxamount)
+	return
+
+/obj/item/clothing/suit/hooded/explorer/standard/improved/equipped(mob/living/carbon/human/user, slot)
+	..()
+	if (slot == ITEM_SLOT_HEAD)
+		ADD_TRAIT(user, TRAIT_ASHSTORM_IMMUNE, "improved_suit")
+
+/obj/item/clothing/suit/hooded/explorer/standard/improved/dropped(mob/living/carbon/human/user)
+	..()
+	if (HAS_TRAIT_FROM(user, TRAIT_ASHSTORM_IMMUNE, "improved_suit"))
+		REMOVE_TRAIT(user, TRAIT_ASHSTORM_IMMUNE, "improved_suit")
 
 /obj/item/clothing/suit/hooded/explorer/standard
 	hoodtype = /obj/item/clothing/head/hooded/explorer/standard

@@ -223,21 +223,38 @@
 	name = "Бездонный Желудок"
 	desc = "В вас быстрее просыпаются голод и жажда. Необходимо есть и пить в два раза больше."
 	value = -1
-	gain_text = "<span class='danger'>Вы хотите есть и пить чаще.</span>"
-	lose_text = "<span class='notice'>Жор идёт на спад.</span>"
+	gain_text = span_danger("Вы хотите есть и пить чаще.")
+	lose_text = span_notice("Жор идёт на спад.")
 	medical_record_text = "Пациенту требуется вдвое большее количество еды, по сравнению с типичным представителем их вида."
 
 /datum/quirk/hungry/add()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/datum/physiology/P = H.physiology
 	P.hunger_mod *= 2
-	P.thirst_mod *= 2
 
 /datum/quirk/hungry/remove()
 	var/mob/living/carbon/human/H = quirk_holder
 	if(H)
 		var/datum/physiology/P = H.physiology
 		P.hunger_mod /= 2
+
+/datum/quirk/thirsty
+	name = "Thirsty"
+	desc = "You find yourself unusually thirsty. Gotta drink twice as much as normal."
+	value = -1
+	gain_text = span_danger("You're starting to feel thirstier a lot faster.")
+	lose_text = span_notice("Your elevated craving for water begins dying down.")
+	medical_record_text = "Patient reports drinking twice as many liquids per day than usual for their species."
+
+/datum/quirk/thirsty/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/physiology/P = H.physiology
+	P.thirst_mod *= 2
+
+/datum/quirk/thirsty/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		var/datum/physiology/P = H.physiology
 		P.thirst_mod /= 2
 
 /datum/quirk/less_nightmare

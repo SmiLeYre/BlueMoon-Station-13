@@ -5,6 +5,8 @@
 	var/begin_month = 0
 	var/end_day = 0 // Default of 0 means the holiday lasts a single day
 	var/end_month = 0
+	var/begin_week = FALSE //If set to a number, then this holiday will begin on certain week
+	var/begin_weekday = FALSE //If set to a weekday, then this will trigger the holiday on the above week
 	var/always_celebrate = FALSE // for christmas neverending, or testing.
 	var/current_year = 0
 	var/year_offset = 0
@@ -24,8 +26,8 @@
 	var/i = findtext(name, "  Сектор |")
 	return copytext(name, 1, i)
 
-// Return 1 if this holidy should be celebrated today
-/datum/holiday/proc/shouldCelebrate(dd, mm, yyyy, ddd)
+// Return 1 if this holiday should be celebrated today
+/datum/holiday/proc/shouldCelebrate(dd, mm, yy, ww, ddd)
 	if(always_celebrate)
 		return TRUE
 
@@ -33,6 +35,9 @@
 		end_day = begin_day
 	if(!end_month)
 		end_month = begin_month
+	if(begin_week && begin_weekday)
+		if(begin_week == ww && begin_weekday == ddd && begin_month == mm)
+			return TRUE
 	if(end_month > begin_month) //holiday spans multiple months in one year
 		if(mm == end_month) //in final month
 			if(dd <= end_day)
@@ -206,6 +211,57 @@
 	begin_day = 22
 	begin_month = APRIL
 
+/datum/holiday/lgbt
+	name = "Pride Week"
+	begin_month = JUNE
+	begin_day = 23
+	end_day = 29
+	//Will take place during pride month for one week. Stonewall was June 28th, so this captures its week.
+
+	var/list/holiday_colors = list(
+		COLOR_PRIDE_PURPLE,
+		COLOR_PRIDE_BLUE,
+		COLOR_PRIDE_GREEN,
+		COLOR_PRIDE_YELLOW,
+		COLOR_PRIDE_ORANGE,
+		COLOR_PRIDE_RED
+	)
+
+/datum/holiday/lgbt/proc/get_floor_tile_color(atom/atom)
+	var/turf/turf = get_turf(atom)
+	return holiday_colors[(turf.y % holiday_colors.len) + 1]
+
+/datum/holiday/lgbt/lesbianvisibility
+	name = "Lesbian Visibility Day"
+	begin_day = 26
+	begin_month = APRIL
+
+	holiday_colors = list( //using the 2018 5-pattern flag
+		COLOR_LESBIAN_ORANGERED,
+		COLOR_LESBIAN_SANDYBROWN,
+		COLOR_WHITE,
+		COLOR_LESBIAN_PALEVIOLETRED,
+		COLOR_LESBIAN_DARKMAGENTA
+	)
+
+/datum/holiday/lgbt/lesbianvisibility/greet()
+	return "Today is Lesbian Visibility Day!"
+
+/datum/holiday/lgbt/russianday
+	name = "Russian Day"
+	begin_day = 16
+	end_day = 17
+	begin_month = JANUARY
+
+	holiday_colors = list(
+		COLOR_WHITE,
+		RUNE_COLOR_RED,
+		COLOR_BLUE
+	)
+
+/datum/holiday/lgbt/lesbianvisibility/greet()
+	return "С днём России, ебать!"
+
 /datum/holiday/labor
 	name = "день Труда"
 	begin_day = 1
@@ -340,6 +396,22 @@
 /datum/holiday/programmers/getStationPrefix()
 	return pick("</span> |","DEBUG |","NULL |","/list |","EVENT PREFIX NOT FOUND |") //Portability
 
+/datum/holiday/lgbt/bivisibility
+	name = "Bisexual Visibility Day"
+	begin_day = 23
+	begin_month = SEPTEMBER
+
+	holiday_colors = list(
+		COLOR_BISEXUAL_MEDIUMVIOLETRED,
+		COLOR_BISEXUAL_MEDIUMVIOLETRED,
+		COLOR_BISEXUAL_DARKORCHID,
+		COLOR_BISEXUAL_DARKBLUE,
+		COLOR_BISEXUAL_DARKBLUE
+	)
+
+/datum/holiday/lgbt/bivisibility/greet()
+	return "Today is Bisexual Visibility Day!"
+
 /datum/holiday/questions
 	name = "день Глупых Вопросов"
 	begin_day = 28
@@ -367,6 +439,20 @@
 	begin_day = 16
 	begin_month = OCTOBER
 	drone_hat = /obj/item/clothing/head/that
+
+/datum/holiday/lgbt/intersexawareness
+	name = "Intersex Awareness Day"
+	begin_day = 26
+	begin_month = OCTOBER
+
+	holiday_colors = list( //Intersex's flag isn't a striped pattern so this is the best we got
+		COLOR_INTERSEX_GOLD,
+		COLOR_INTERSEX_DARKMAGENTA,
+		COLOR_INTERSEX_GOLD
+	)
+
+/datum/holiday/lgbt/intersexawareness/greet()
+	return "Today is Intersex Awareness Day! It has been [text2num(time2text(world.timeofday, "YYYY")) - 1996] years since the first public protest speaking out against the human rights issues faced by intersex people."
 
 /datum/holiday/halloween
 	name = HALLOWEEN
@@ -408,6 +494,37 @@
 	begin_day = 19
 	begin_month = NOVEMBER
 	drone_hat = /obj/item/clothing/head/peaceflower
+
+/datum/holiday/lgbt/transawareness
+	name = "Transgender Awareness Week"
+	begin_day = 13
+	begin_month = NOVEMBER
+	end_day = 19
+
+	holiday_colors = list(
+		COLOR_TRANS_BLUE,
+		COLOR_TRANS_PINK,
+		COLOR_WHITE,
+		COLOR_TRANS_PINK //loops back to blue
+	)
+
+/datum/holiday/lgbt/transawareness/greet()
+	return "This week is Transgender Awareness Week!"
+
+/datum/holiday/lgbt/transremembrance
+	name = "Transgender Day of Remembrance"
+	begin_day = 20
+	begin_month = NOVEMBER
+
+	holiday_colors = list(
+		COLOR_TRANS_BLUE,
+		COLOR_TRANS_PINK,
+		COLOR_WHITE,
+		COLOR_TRANS_PINK //loops back to blue
+	)
+
+/datum/holiday/lgbt/transremembrance/greet()
+	return "Today is the Transgender Day of Remembrance."
 
 /datum/holiday/hello
 	name = "день ПРИВЕТОВ"
@@ -454,6 +571,113 @@
 /datum/holiday/lifeday/getStationPrefix()
 	return pick("Зудящий Сектор |", "Комковатый Сектор |", "Маллайий Сектор |", "Казучий Сектор |") //he really pronounced it "Kazook Сектор |", I wish I was making shit up
 
+/datum/holiday/columbus
+	name = "День Колумба"
+	begin_week = 2
+	begin_month = OCTOBER
+	begin_weekday = MONDAY
+
+/datum/holiday/lgbt/aceawareness
+	name = "Asexual Awareness Week"
+	begin_month = OCTOBER
+
+	holiday_colors = list(
+		COLOR_BLACK,
+		COLOR_ACE_DARKGRAY,
+		COLOR_ACE_PURPLE,
+		COLOR_WHITE
+	)
+
+/datum/holiday/lgbt/aceawareness/greet()
+	return "This week is Asexual Awareness Week!"
+
+/datum/holiday/lgbt/aceawareness/shouldCelebrate(dd, mm, yy, ww, ddd) //Ace awareness week falls on the last full week of October.
+	if(mm != begin_month)
+		return FALSE //it's not even the right month
+	var/daypointer = world.timeofday - ((WEEKDAY2NUM(ddd) - 1) * 24 HOURS)
+	if(text2num(time2text(daypointer, "MM")) != mm)
+		return FALSE //it's the beginning of the month and it isn't even a full week
+	daypointer += (24 HOURS * 6)
+	if(text2num(time2text(daypointer, "MM")) != mm)
+		return FALSE //this is the end of the month, and it is not a full week.
+	daypointer += (24 HOURS * 7)
+	if(text2num(time2text(daypointer, "MM")) != mm)
+		return TRUE //the end of next week falls on a different month, meaning that the current week is the last full week
+
+/datum/holiday/mother
+	name = "Mother's Day"
+	begin_week = 2
+	begin_month = MAY
+	begin_weekday = SUNDAY
+
+/datum/holiday/mother/greet()
+	return "Happy Mother's Day in most of the Americas, Asia, and Oceania!"
+
+/datum/holiday/father
+	name = "Father's Day"
+	begin_week = 3
+	begin_month = JUNE
+	begin_weekday = SUNDAY
+
+/datum/holiday/pride //Won't be typing this as /lgbt/ because the typing is meant for LGBT holidays that will change the station's decals. Having a full month of pride decals seems a bit long.
+	name = PRIDE_MONTH
+	begin_day = 1
+	begin_month = JUNE
+	end_day = 30
+
+/datum/holiday/pride/getStationPrefix()
+	return pick("Pride", "Gay", "Bi", "Trans", "Lesbian", "Ace", "Aro", "Agender", pick("Enby", "Enbie"), "Pan", "Intersex", "Demi", "Poly", "Closeted", "Genderfluid")
+
+/datum/holiday/stonewall //decal patterns covered in "Pride Week"
+	name = "Stonewall Riots Anniversary"
+	begin_day = 28
+	begin_month = JUNE
+
+/datum/holiday/stonewall/greet() //Not gonna lie, I was fairly tempted to make this use the IC year instead of the IRL year, but I was worried that it would have caused too much confusion.
+	return "Today marks the [text2num(time2text(world.timeofday, "YYYY")) - 1969]\th anniversary of the riots at the Stonewall Inn!"
+
+/datum/holiday/lgbt/pan
+	name = "Pansexual and Panromantic Awareness Day"
+	begin_day = 24
+	begin_month = MAY
+
+	holiday_colors = list(
+		COLOR_PAN_DEEPPINK,
+		COLOR_PAN_GOLD,
+		COLOR_PAN_DODGERBLUE
+	)
+
+/datum/holiday/lgbt/pan/greet()
+	return "Today is Pansexual and Panromantic Awareness Day!"
+
+/datum/holiday/lgbt/pan/getStationPrefix()
+	return pick("Pansexual","Panromantic")
+
+/datum/holiday/moth
+	name = "Moth Week"
+	begin_month = JULY
+
+/datum/holiday/moth/shouldCelebrate(dd, mm, yy, ww, ddd) //National Moth Week falls on the last full week of July
+	if(mm != begin_month)
+		return FALSE //it's not even the right month
+	var/daypointer = world.timeofday - ((WEEKDAY2NUM(ddd) - 1) * 24 HOURS)
+	if(text2num(time2text(daypointer, "MM")) != mm)
+		return FALSE //it's the beginning of the month and it isn't even a full week
+	daypointer += (24 HOURS * 6)
+	if(text2num(time2text(daypointer, "MM")) != mm)
+		return FALSE //this is the end of the month, and it is not a full week.
+	daypointer += (24 HOURS * 7)
+	if(text2num(time2text(daypointer, "MM")) != mm)
+		return TRUE //the end of next week falls on a different month, meaning that the current week is the last full week
+
+/datum/holiday/moth/getStationPrefix()
+	return pick("Mothball","Lepidopteran","Lightbulb","Moth","Giant Atlas","Twin-spotted Sphynx","Madagascan Sunset","Luna","Death's Head","Emperor Gum","Polyphenus","Oleander Hawk","Io","Rosy Maple","Cecropia","Noctuidae","Giant Leopard","Dysphania Militaris","Garden Tiger")
+
+/*
+
+This used to be a comment about ramadan but it got deleted because we don't preach false religions here. Long Live the One True God.
+
+*/
 /datum/holiday/doomsday
 	name = "Годовщина Судного Дня Майя"
 	begin_day = 21

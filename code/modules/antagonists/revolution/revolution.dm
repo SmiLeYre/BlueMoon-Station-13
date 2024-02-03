@@ -443,8 +443,8 @@
 			dynamic.threat_log += "[worldtime2text()]: Revolution victory. Added [revs_win_injection_amount] threat."
 
 		priority_announce("В результате недавней оценки состояния вашей станции она была отмечена как зона повышенного риска для высокопоставленных представителей NanoTrasen  \
-		В целях безопасности мы заблокировали прибытие на станцию новых сотрудников службы безопасности и командования. \
-		[pick(world.file2list("strings/anti_union_propaganda.txt"))]", null, 'sound/announcer/classic/attention.ogg', null, "Отдел ЦК по мониторингу лояльности")
+		В целях безопасности мы заблокировали прибытие на станцию новых сотрудников службы безопасности и командования", null, 'sound/announcer/classic/attention.ogg', \
+		null, "Отдел ЦК по мониторингу лояльности")
 
 /// Mutates the ticker to report that the revs have won
 /datum/team/revolution/proc/round_result(finished)

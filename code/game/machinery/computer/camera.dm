@@ -139,13 +139,8 @@
 
 	var/list/visible_turfs = list()
 
-	// Is this camera located in or attached to a living thing? If so, assume the camera's loc is the living thing.
-	var/cam_location = isliving(active_camera.loc) || ismachinery(active_camera.loc) ? active_camera.loc : active_camera // BLUEMOON CHANGES - добавлена проверку на наличие в машинарии
-
-	//if(istype(active_camera.loc, /obj/item/integrated_circuit/output/video_camera))	//Пока что оставлю так. На будущее.
-		//cam_location = (active_camera.loc).loc
-		//if(iscarbon((active_camera.loc).loc))
-			//cam_location = ((active_camera.loc).loc).loc
+	// Need to get camera's location or it
+	var/cam_location = get_atom_on_turf(active_camera)
 
 	// If we're not forcing an update for some reason and the cameras are in the same location,
 	// we don't need to update anything.
@@ -275,7 +270,7 @@
 
 /obj/machinery/computer/security/telescreen/entertainment
 	name = "entertainment monitor"
-	desc = "Damn, they better have the /tg/ channel on these things."
+	desc = "Damn, they better have Bluemoon TV on these things.."
 	icon = 'icons/obj/status_display.dmi'
 	icon_state = "entertainment_blank"
 	network = list("thunder")

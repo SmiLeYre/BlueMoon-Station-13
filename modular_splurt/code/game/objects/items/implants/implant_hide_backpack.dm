@@ -58,6 +58,9 @@
 	// Set owner
 	var/mob/living/carbon/human/action_owner = owner
 
+	if(!owner)
+		return
+
 	// Toggle trait status
 	if(state)
 		ADD_TRAIT(action_owner, TRAIT_HIDE_BACKPACK, TRAIT_GENERIC)

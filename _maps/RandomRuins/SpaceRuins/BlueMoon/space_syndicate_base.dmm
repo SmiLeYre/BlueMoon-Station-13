@@ -8351,18 +8351,18 @@
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
 	dir = 8
 	},
-/obj/item/aiModule/reset{
+/obj/item/ai_module/reset{
 	pixel_x = -2;
 	pixel_y = -7
 	},
-/obj/item/aiModule/reset/purge{
+/obj/item/ai_module/reset/purge{
 	pixel_y = -4
 	},
-/obj/item/aiModule/supplied/freeform{
+/obj/item/ai_module/supplied/freeform{
 	pixel_x = -2;
 	pixel_y = 4
 	},
-/obj/item/aiModule/core/full/syndicate{
+/obj/item/ai_module/core/full/syndicate{
 	pixel_y = 7
 	},
 /turf/open/floor/iron/dark,
