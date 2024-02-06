@@ -797,11 +797,10 @@
 /obj/structure/table/optable/process()
 	var/turf/T = get_turf(src)
 	if(!mask || !tank || (mask && get_turf(mask) != T) || (tank && get_turf(tank) != T))
-		if(tank && patient?.internal == tank)
-			patient.internal = null
 		if(mask && get_turf(mask) != T)
 			visible_message(span_notice("[mask] срывается и возвращается на место по втягивающемуся шлангу."))
 			patient.transferItemToLoc(mask, src, TRUE)
+		patient.internal = null
 		STOP_PROCESSING(SSobj, src)
 
 /obj/structure/table/optable/AltClick(mob/living/user)
