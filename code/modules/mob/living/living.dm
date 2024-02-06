@@ -559,6 +559,7 @@
 		return
 	if(stat == CONSCIOUS)
 		activity = stripped_input(src, "Опиши свою нынешнюю продолжительную деятельность, видимую другими. Например: Сидит за столом, попивает чай и смотрит в окно.", "Опиши свою деятельность", "", MAX_FLAVOR_LEN)
+		emote("me", EMOTE_VISIBLE, activity)
 	else
 		to_chat(src, "<span class='warning'>Недоступно в твоем нынешнем состоянии.</span>")
 
