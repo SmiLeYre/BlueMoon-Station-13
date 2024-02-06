@@ -542,6 +542,8 @@
 		if(alert(src, "You sure you want to sleep for a while?", "Sleep", "Yes", "No") == "Yes")
 			SetSleeping(400) //Short nap
 
+
+//SET_ACTIVITY START
 /mob/living
 	var/activity = ""
 	tooltips = TRUE
@@ -560,6 +562,16 @@
 	else
 		to_chat(src, "<span class='warning'>Недоступно в твоем нынешнем состоянии.</span>")
 
+/datum/keybinding/client/communication/activity
+	hotkey_keys = list("ShiftM")
+	name = "set_activity"
+	full_name = "Set Activity"
+
+/datum/keybinding/client/communication/activity/down(client/user)
+	var/mob/living/L = user.mob
+	L.set_activity()
+	return TRUE
+
 /mob/living/update_stat()
 	if(stat != CONSCIOUS)
 		activity = ""
@@ -568,6 +580,8 @@
 	if(activity)
 		. = list()
 		. += activity
+
+//SET_ACTIVITY END
 
 
 /mob/proc/get_contents()
