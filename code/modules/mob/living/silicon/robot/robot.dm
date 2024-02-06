@@ -1000,6 +1000,7 @@
 	diag_hud_set_health()
 	diag_hud_set_aishell()
 	update_health_hud()
+	..()
 
 /mob/living/silicon/robot/revive(full_heal = FALSE, admin_revive = FALSE)
 	if(..()) //successfully ressuscitated from death
@@ -1433,4 +1434,6 @@
 		borg_type = "Engineering"
 */
 	. += "[t_He] [t_is] a [borg_type] unit"
+	if(activity)
+		. += activity
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, usr, .)

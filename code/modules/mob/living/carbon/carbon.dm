@@ -853,6 +853,7 @@
 	update_health_hud()
 	update_hunger_and_thirst_hud()
 	med_hud_set_status()
+	..()
 
 /mob/living/carbon/proc/update_crit_status()
 	remove_filter("hardcrit")

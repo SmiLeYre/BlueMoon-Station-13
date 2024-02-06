@@ -29,3 +29,4 @@
 			update_mobility()
 	update_damage_hud()
 	update_health_hud()
+	..()

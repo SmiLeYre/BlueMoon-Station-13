@@ -203,6 +203,7 @@
 		else
 			stat = CONSCIOUS
 	med_hud_set_status()
+	..()
 
 /mob/living/simple_animal/proc/handle_automated_action()
 	set waitfor = FALSE

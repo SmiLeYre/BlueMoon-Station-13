@@ -542,6 +542,34 @@
 		if(alert(src, "You sure you want to sleep for a while?", "Sleep", "Yes", "No") == "Yes")
 			SetSleeping(400) //Short nap
 
+/mob/living
+	var/activity = ""
+	tooltips = TRUE
+
+/mob/living/verb/set_activity()
+	set name = "Деятельность"
+	set desc = "Описывает то, что вы сейчас делаете."
+	set category = "IC"
+
+	if(activity)
+		activity = ""
+		to_chat(src, "<span class='notice'>Деятельность сброшена.</span>")
+		return
+	if(stat == CONSCIOUS)
+		activity = stripped_input(src, "Опиши свою нынешнюю продолжительную деятельность, видимую другими. Например: Сидит за столом, попивает чай и смотрит в окно.", "Опиши свою деятельность", "", MAX_FLAVOR_LEN)
+	else
+		to_chat(src, "<span class='warning'>Недоступно в твоем нынешнем состоянии.</span>")
+
+/mob/living/update_stat()
+	if(stat != CONSCIOUS)
+		activity = ""
+
+/mob/living/get_tooltip_data()
+	if(activity)
+		. = list()
+		. += activity
+
+
 /mob/proc/get_contents()
 
 /*CIT CHANGE - comments out lay_down proc to be modified in modular_citadel

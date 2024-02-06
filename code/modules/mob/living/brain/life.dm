@@ -17,6 +17,7 @@
 			BR = loc
 		if(BR)
 			BR.brain_death = TRUE
+	..()
 
 /mob/living/brain/proc/handle_emp_damage()
 	if(emp_damage)
