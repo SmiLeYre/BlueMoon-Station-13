@@ -2,16 +2,13 @@
 
 /datum/interaction/lewd/display_interaction(mob/living/user, mob/living/target)
 	. = ..()
-	if((iscatperson(target) && type == /datum/interaction/lewd))
+	if((iscatperson(target) && (type == /datum/interaction/lewd/slap)))
 		target.emote(pick("nya","meow")) //W-what are you doing S-senpai? >///<
 
-	if(!(isclownjob(target) && type == /datum/interaction/lewd))
-		return
-
-	if(prob(50))
-		target.visible_message("<span class='lewd'>Задница <b>[target]</b> смешно хонкает!</span>")
-
-	playlewdinteractionsound(target, 'sound/items/bikehorn.ogg', 40, 1, -1)
+	if((isclownjob(target) && (type == /datum/interaction/lewd/slap)))
+		if(prob(50))
+			target.visible_message("<span class='lewd'>Задница <b>[target]</b> смешно хонкает!</span>")
+		playlewdinteractionsound(target, 'sound/items/bikehorn.ogg', 40, 1, -1)
 
 /datum/interaction/lewd/titgrope/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	. = ..()
