@@ -542,12 +542,7 @@
 		if(alert(src, "You sure you want to sleep for a while?", "Sleep", "Yes", "No") == "Yes")
 			SetSleeping(400) //Short nap
 
-
 //SET_ACTIVITY START
-/mob/living
-	var/activity = ""
-	tooltips = TRUE
-
 /mob/living/verb/set_activity()
 	set name = "Деятельность"
 	set desc = "Описывает то, что вы сейчас делаете."
@@ -558,22 +553,14 @@
 		to_chat(src, "<span class='notice'>Деятельность сброшена.</span>")
 		return
 	if(stat == CONSCIOUS)
-		activity = stripped_input(src, "Опиши свою нынешнюю продолжительную деятельность, видимую другими. Например: Сидит за столом, попивает чай и смотрит в окно.", "Опиши свою деятельность", "", MAX_FLAVOR_LEN)
+		display_typing_indicator()
+		activity = stripped_input(src, "Опиши свою нынешнюю продолжительную деятельность, видимую другими. Например: Сидит за столом, попивает чай и смотрит в окно.", "Опиши свою деятельность", "", MAX_MESSAGE_LEN)
+		clear_typing_indicator()
 		if(activity)
 			activity = capitalize(activity)
-			emote("me", EMOTE_VISIBLE, activity)
+			return me_verb(activity)
 	else
 		to_chat(src, "<span class='warning'>Недоступно в твоем нынешнем состоянии.</span>")
-
-/datum/keybinding/client/communication/activity
-	hotkey_keys = list("ShiftM")
-	name = "set_activity"
-	full_name = "Set Activity"
-
-/datum/keybinding/client/communication/activity/down(client/user)
-	var/mob/living/L = user.mob
-	L.set_activity()
-	return TRUE
 
 /mob/living/update_stat()
 	if(stat != CONSCIOUS)
