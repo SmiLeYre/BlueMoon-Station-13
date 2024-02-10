@@ -4138,7 +4138,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(!findtext(usr_input, link_regex, 1, 29))
 						to_chat(usr, span_warning("The link needs to be an unshortened Gyazo or Discordapp link!"))
 						return
-					if(!findtext(usr_input, end_regex, -8))
+					if(!findtext(usr_input, end_regex))
 						to_chat(usr, span_warning("You need either \".png\", \".jpg\", or \".jpeg\" in the link!"))
 						return
 
