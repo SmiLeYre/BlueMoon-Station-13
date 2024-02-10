@@ -554,7 +554,7 @@
 		return
 	if(stat == CONSCIOUS)
 		display_typing_indicator()
-		activity = stripped_input(src, "Опиши свою нынешнюю продолжительную деятельность, видимую другими. Например: Сидит за столом, попивает чай и смотрит в окно.", "Опиши свою деятельность", "", MAX_MESSAGE_LEN)
+		activity = stripped_input(src, "Здесь можно описать продолжительную (долго длящуюся) деятельность, которая будет отображаться столько, сколько тебе нужно.", "Опиши свою деятельность", "", MAX_MESSAGE_LEN)
 		clear_typing_indicator()
 		if(activity)
 			activity = capitalize(activity)
