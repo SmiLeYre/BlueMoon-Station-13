@@ -17,7 +17,24 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 /datum/controller/subsystem/processing/quirks/Initialize(timeofday)
 	if(!quirks.len)
 		SetupQuirks()
-		quirk_blacklist = list(list("Blind","Nearsighted"),list("Jolly","Depression","Apathetic"),list("Ageusia","Deviant Tastes"),list("Ananas Affinity","Ananas Aversion"),list("Alcohol Tolerance","Alcohol Intolerance"),list("Alcohol Intolerance","Drunken Resilience"))
+		//BLUEMOON ADD чиним под русский текст и добавляем всё в одном листе
+		quirk_blacklist = list(
+						  list("Слепота","Близорукость"),
+						  list("Жизнерадостный","Депрессия","Равнодушный"),
+						  list("Агевзия","Извращенные Вкусы"),
+						  list("Пристрастие к Ананасам","Неприязнь к Ананасам"),
+						  list("Устойчивость к Алкоголю","Непереносимость Алкоголя"),
+						  list("Непереносимость Алкоголя","Пьяный Угар"),
+						  list("Сверхтяжёлый", "Тяжёлый"),
+						  list("Тактилофилия", "Отстраненность"),
+						  list("Азиат", "Украиновый"),
+						  list("Толстые пальцы","Ужасный стрелок"),
+						  list("Отпрыск Ночного Кошмара", "Светочувствительность"),
+						  list("Святой Дух","Проклятая Кровь"),
+						  list("Святой Дух","Отпрыск Кровопийцы"),
+						  list("Thirsty","Отпрыск Кровопийцы")
+						  )
+		//BLUEMOON ADD END
 	return ..()
 
 /datum/controller/subsystem/processing/quirks/proc/SetupQuirks()
