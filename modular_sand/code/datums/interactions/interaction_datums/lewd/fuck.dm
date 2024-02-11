@@ -30,6 +30,7 @@
 
 /datum/interaction/lewd/fuck/anal
 	description = "Член. Проникнуть в задницу."
+	required_from_user_exposed = INTERACTION_REQUIRE_PENIS
 	required_from_target_exposed = INTERACTION_REQUIRE_ANUS
 
 /datum/interaction/lewd/fuck/anal/display_interaction(mob/living/user, mob/living/partner)
@@ -151,6 +152,8 @@
 	description = "Вагина. Потереться о ботинок."
 	interaction_sound = null
 	required_from_user_exposed = INTERACTION_REQUIRE_VAGINA
+	required_from_target_exposed = INTERACTION_REQUIRE_FEET
+	required_from_target_unexposed = INTERACTION_REQUIRE_FEET
 	require_target_num_feet = 1
 
 /datum/interaction/lewd/footfuck/vag/display_interaction(mob/living/user, mob/living/partner)

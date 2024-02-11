@@ -83,6 +83,7 @@
 	var/list/procs_list = list(
 		"before_inserting" = CALLBACK(src, .proc/item_inserting),
 		"after_inserting" = CALLBACK(src, .proc/item_inserted),
+		"after_removing" = CALLBACK(src, .proc/item_removed),
 	)
 	AddComponent(/datum/component/genital_equipment, list(ORGAN_SLOT_PENIS, ORGAN_SLOT_WOMB, ORGAN_SLOT_VAGINA, ORGAN_SLOT_BREASTS, ORGAN_SLOT_ANUS), procs_list)
 
@@ -127,11 +128,18 @@
 	playsound(G.owner, 'modular_sand/sound/lewd/champ_fingering.ogg', 50, 1, -1)
 	inside = TRUE
 
+/obj/item/buttplug/proc/item_removed(datum/source, obj/item/organ/genital/G, mob/user)
+	. = TRUE
+	to_chat(user, span_userlove("You retrieve [src] from <b>\The [G.owner]</b>'s [G]."))
+	playsound(G.owner, 'modular_sand/sound/lewd/champ_fingering.ogg', 50, 1, -1)
+	inside = FALSE
+
 /obj/item/dildo/ComponentInitialize()
 	. = ..()
 	var/list/procs_list = list(
 		"before_inserting" = CALLBACK(src, .proc/item_inserting),
 		"after_inserting" = CALLBACK(src, .proc/item_inserted),
+		"after_removing" = CALLBACK(src, .proc/item_removed),
 	)
 	AddComponent(/datum/component/genital_equipment, list(ORGAN_SLOT_PENIS, ORGAN_SLOT_WOMB, ORGAN_SLOT_VAGINA, ORGAN_SLOT_BREASTS, ORGAN_SLOT_ANUS), procs_list)
 
@@ -175,6 +183,12 @@
 	to_chat(user, span_userlove("You attach [src] to <b>\The [G.owner]</b>'s [G]."))
 	playsound(G.owner, 'modular_sand/sound/lewd/champ_fingering.ogg', 50, 1, -1)
 	inside = TRUE
+
+/obj/item/dildo/proc/item_removed(datum/source, obj/item/organ/genital/G, mob/user)
+	. = TRUE
+	to_chat(user, span_userlove("You retrieve [src] from <b>\The [G.owner]</b>'s [G]."))
+	playsound(G.owner, 'modular_sand/sound/lewd/champ_fingering.ogg', 50, 1, -1)
+	inside = FALSE
 
 /obj/item/dildo/MouseDrop_T(mob/living/M, mob/living/user)
 	var/message = ""

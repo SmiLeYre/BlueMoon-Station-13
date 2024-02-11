@@ -400,6 +400,7 @@
 	interaction_sound = null
 	required_from_target_exposed = NONE
 	required_from_target_unexposed = NONE
+	required_from_user = INTERACTION_REQUIRE_MOUTH
 	required_from_user_exposed = INTERACTION_REQUIRE_PENIS
 	required_from_user_unexposed = NONE
 	interaction_flags = INTERACTION_FLAG_ADJACENT | INTERACTION_FLAG_OOC_CONSENT | INTERACTION_FLAG_USER_IS_TARGET
@@ -423,6 +424,7 @@
 	interaction_sound = null
 	required_from_target_exposed = NONE
 	required_from_target_unexposed = NONE
+	required_from_user = INTERACTION_REQUIRE_MOUTH
 	required_from_user_exposed = INTERACTION_REQUIRE_VAGINA
 	required_from_user_unexposed = NONE
 	interaction_flags = INTERACTION_FLAG_ADJACENT | INTERACTION_FLAG_OOC_CONSENT | INTERACTION_FLAG_USER_IS_TARGET
@@ -549,7 +551,7 @@
 	description = "Подмышки. Слизывать пот."
 	required_from_target_exposed = NONE
 	required_from_target_unexposed = NONE
-	required_from_user_exposed = INTERACTION_REQUIRE_MOUTH
+	required_from_user = INTERACTION_REQUIRE_MOUTH
 	required_from_user_unexposed = NONE
 	max_distance = 1
 	interaction_sound = null
@@ -573,7 +575,7 @@
 	description = "Подмышки. Вылизать подмышку."
 	required_from_target_exposed = NONE
 	required_from_target_unexposed = NONE
-	required_from_user_exposed = INTERACTION_REQUIRE_MOUTH
+	required_from_user = INTERACTION_REQUIRE_MOUTH
 	required_from_user_unexposed = NONE
 	max_distance = 1
 	interaction_sound = null
@@ -653,7 +655,7 @@
 	description = "Яйца. Полизать яички партнёра."
 	required_from_target_exposed = INTERACTION_REQUIRE_BALLS
 	required_from_target_unexposed = NONE
-	required_from_user_exposed = INTERACTION_REQUIRE_MOUTH
+	required_from_user = INTERACTION_REQUIRE_MOUTH
 	required_from_user_unexposed = NONE
 	interaction_sound = null
 	max_distance = 1
@@ -734,9 +736,9 @@
 	description = "Бёдра. Подрочить член бёдрами."
 	require_user_legs = REQUIRE_ANY
 	require_user_num_legs = 2
-	required_from_target_exposed = NONE
+	required_from_target_exposed = INTERACTION_REQUIRE_PENIS
 	required_from_target_unexposed = NONE
-	required_from_user_exposed = INTERACTION_REQUIRE_PENIS
+	required_from_user_exposed = NONE
 	required_from_user_unexposed = NONE
 	write_log_user = "Gave a thighjob"
 	write_log_target = "Got a thighjob from"
@@ -833,7 +835,7 @@
 	description = "Высосать газы из задницы ртом."
 	required_from_target_exposed = INTERACTION_REQUIRE_ANUS
 	required_from_target_unexposed = NONE
-	required_from_user_exposed = INTERACTION_REQUIRE_MOUTH
+	required_from_user = INTERACTION_REQUIRE_MOUTH
 	required_from_user_unexposed = NONE
 	max_distance = 1
 	interaction_sound = null
@@ -897,7 +899,7 @@
 	description = "Высосать говно из задницы."
 	required_from_target_exposed = INTERACTION_REQUIRE_ANUS
 	required_from_target_unexposed = NONE
-	required_from_user_exposed = INTERACTION_REQUIRE_MOUTH
+	required_from_user = INTERACTION_REQUIRE_MOUTH
 	required_from_user_unexposed = NONE
 	max_distance = 1
 	interaction_sound = null
@@ -927,7 +929,7 @@
 	max_distance = 1
 	interaction_sound = null
 	required_from_user = INTERACTION_REQUIRE_BOTTOMLESS
-	required_from_target_exposed = INTERACTION_REQUIRE_MOUTH
+	required_from_target = INTERACTION_REQUIRE_MOUTH
 	required_from_target_unexposed = NONE
 	required_from_user_exposed = NONE
 	required_from_user_unexposed = NONE

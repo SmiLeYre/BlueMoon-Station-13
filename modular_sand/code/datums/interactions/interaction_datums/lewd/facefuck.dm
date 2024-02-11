@@ -8,6 +8,7 @@
 /datum/interaction/lewd/facefuck/vag
 	description = "Вагина. Потереться об рот."
 	required_from_user_exposed = INTERACTION_REQUIRE_VAGINA
+	required_from_target = INTERACTION_REQUIRE_MOUTH
 	fucktarget = "vagina"
 
 /datum/interaction/lewd/facefuck/display_interaction(mob/living/user, mob/living/partner)
