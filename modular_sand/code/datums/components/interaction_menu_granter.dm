@@ -118,7 +118,7 @@
 	var/required_from_user_exposed = NONE
 	var/required_from_user_unexposed = NONE
 
-	var/user_has_penis = self.has_penis()
+	var/user_has_penis = self.has_penis() || self.has_strapon()
 	switch(user_has_penis)
 		if(HAS_EXPOSED_GENITAL)
 			required_from_user_exposed |= INTERACTION_REQUIRE_PENIS
@@ -260,7 +260,7 @@
 		var/required_from_target_exposed = NONE
 		var/required_from_target_unexposed = NONE
 
-		var/target_has_penis = target.has_penis()
+		var/target_has_penis = target.has_penis() || target.has_strapon()
 		switch(target_has_penis)
 			if(HAS_EXPOSED_GENITAL)
 				required_from_target_exposed |= INTERACTION_REQUIRE_PENIS
