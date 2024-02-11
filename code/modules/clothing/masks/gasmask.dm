@@ -44,7 +44,7 @@
 	name = "Glass Gas Mask"
 	desc = "A face-covering mask that can be connected to an air supply. This one doesn't obscure your face however." //More accurate
 	icon_state = "gas_clear"
-	flags_inv = HIDEEYES
+	flags_inv = 0
 	flavor_adjust = FALSE
 
 /obj/item/clothing/mask/gas/glass/alt
