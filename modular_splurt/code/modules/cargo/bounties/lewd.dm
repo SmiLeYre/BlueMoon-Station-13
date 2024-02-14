@@ -45,28 +45,28 @@
             wanted_reagent = new reagent_type
             name = wanted_reagent.name
             description = "CentCom is in need of donors for their fertility program."
-            reward += rand(2, 7) * 500
+            reward += rand(4, 9) * 500
         if(6,7) //Big cum bounty
             required_volume = 1000
             reagent_type = /datum/reagent/consumable/semen
             wanted_reagent = new reagent_type
             name = wanted_reagent.name
             description = "Yes. We really need that much. We hear you're the best suppliers around."
-            reward += rand(10, 17) * 500
+            reward += rand(10, 17) * 600
         if(8,9,10,11,12) //Milk
             required_volume = 200
             reagent_type = /datum/reagent/consumable/milk
             wanted_reagent = new reagent_type
             name = wanted_reagent.name
             description = "CentCom's kitchen is low on dairy, and this station always seems to have plenty for some reason. Mind sending us some?"
-            reward += rand(2, 7) * 500
+            reward += rand(4, 9) * 500
         if(13,14) //Mega Milk
             required_volume = 1000
-            reagent_type = /datum/reagent/consumable/milk
+            reagent_type = /datum/reagent/consuma	ble/milk
             wanted_reagent = new reagent_type
             name = wanted_reagent.name
             description = "The Nanotrasen annual bake sale is soon, and all of our milk has expired. Help us out."
-            reward += rand(10, 17) * 500 //Milk is generally easier to get. Make the reward a little lower.
+            reward += rand(10, 17) * 550 //Milk is generally easier to get. Make the reward a little lower.
         if(15,16,17,18,19) //A little romance
             var/static/list/possible_reagents = list(\
                 /datum/reagent/drug/aphrodisiac,\
@@ -78,14 +78,14 @@
             wanted_reagent = new reagent_type
             name = wanted_reagent.name
             description = "A CentCom official wants something to spice up the bedroom. We told them this was a misuse of their power. It went through anyways."
-            reward += rand(0, 5) * 500
+            reward += 200 + rand(0, 5) * 500
         if(20) //Not as popular of a fluid, so we will leave it the lowest chance.
             required_volume = 30
             reagent_type = /datum/reagent/consumable/semen/femcum
             wanted_reagent = new reagent_type
             name = wanted_reagent.name
             description = "A CentCom official requested this for undisclosed research purposes."
-            reward += rand(2, 7) * 500
+            reward += rand(4, 9) * 500
 
 /* //Just not getting this to work.
 //Freeform sales
