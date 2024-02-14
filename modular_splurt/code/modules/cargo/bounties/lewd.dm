@@ -62,7 +62,7 @@
             reward += rand(4, 9) * 500
         if(13,14) //Mega Milk
             required_volume = 1000
-            reagent_type = /datum/reagent/consuma	ble/milk
+            reagent_type = /datum/reagent/consumable/milk
             wanted_reagent = new reagent_type
             name = wanted_reagent.name
             description = "The Nanotrasen annual bake sale is soon, and all of our milk has expired. Help us out."
