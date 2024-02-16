@@ -31,12 +31,12 @@
 
 /datum/bounty/item/mech/gygax
 	name = "Gygax"
-	reward = 45000
+	reward = 55000
 	wanted_types = list(/obj/vehicle/sealed/mecha/combat/gygax)
 
 /datum/bounty/item/mech/durand
 	name = "Durand"
-	reward = 43000
+	reward = 53000
 	wanted_types = list(/obj/vehicle/sealed/mecha/combat/durand)
 
 /datum/bounty/item/mech/phazon

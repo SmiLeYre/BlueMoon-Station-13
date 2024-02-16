@@ -1,7 +1,7 @@
 /datum/bounty/item/alien_organs
 	name = "Alien Organs"
 	description = "Nanotrasen is interested in studying Xenomorph biology. Ship a set of organs to be thoroughly compensated."
-	reward = 25000
+	reward = 35000
 	required_count = 3
 	wanted_types = list(/obj/item/organ/brain/alien, /obj/item/organ/alien, /obj/item/organ/body_egg/alien_embryo)
 

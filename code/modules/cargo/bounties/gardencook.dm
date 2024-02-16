@@ -1,13 +1,13 @@
 /datum/bounty/item/chef/birthday_cake
 	name = "Birthday Cake"
 	description = "Nanotrasen's birthday is coming up! Ship them a birthday cake to celebrate!"
-	reward = 2400
+	reward = 3400
 	wanted_types = list(/obj/item/reagent_containers/food/snacks/store/cake/birthday, /obj/item/reagent_containers/food/snacks/cakeslice/birthday)
 
 /datum/bounty/item/gardencook/carrotfries
 	name = "Carrot Fries"
 	description = "Night sight can mean life or death! A shipment of carrot fries is the order."
-	reward = 1900
+	reward = 2900
 	required_count = 3
 	wanted_types = list(/obj/item/reagent_containers/food/snacks/carrotfries)
 
@@ -21,21 +21,21 @@
 /datum/bounty/item/gardencook/popcorn
 	name = "Popcorn Bags"
 	description = "Upper management wants to host a movie night. Ship bags of popcorn for the occasion."
-	reward = 1900
+	reward = 2900
 	required_count = 3
 	wanted_types = list(/obj/item/reagent_containers/food/snacks/popcorn)
 
 /datum/bounty/item/gardencook/onionrings
 	name = "Onion Rings"
 	description = "Nanotrasen is remembering Saturn day. Ship onion rings to show the station's support."
-	reward = 1900
+	reward = 3900
 	required_count = 3
 	wanted_types = list(/obj/item/reagent_containers/food/snacks/onionrings)
 
 /datum/bounty/item/gardencook/bakedbeans
 	name = "Beans"
 	description = "Management wants to make sure we have a fallback shelter to rely on. Prepare some beans to stock it with."
-	reward = 2350
+	reward = 3350
 	required_count = 8
 	wanted_types = list(/obj/item/reagent_containers/food/snacks/beans)
 
@@ -60,6 +60,6 @@
 /datum/bounty/item/chef/fiestaskewer
 	name = "Fiesta Skewer"
 	description = "Apparently people are putting vegetables on kebabs now. Central Command has taken an interest in this turn of events and would like to know more."
-	reward = 3800
+	reward = 4800
 	required_count = 3
 	wanted_types = list(/obj/item/reagent_containers/food/snacks/kebab/fiesta)

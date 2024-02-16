@@ -35,7 +35,7 @@
 /datum/bounty/item/silly/shoes
 	name = "Shoes"
 	description = "An assistant stole a clown's shoes, the clown incinerated every pair we had. Send us some new footwear please."
-	reward = 2200
+	reward = 3200
 	required_count = 8
 	wanted_types = list(/obj/item/clothing/shoes)
 	exclude_types = list(/obj/item/clothing/shoes/wraps, /obj/item/clothing/shoes/wraps/silver, /obj/item/clothing/shoes/wraps/red, /obj/item/clothing/shoes/wraps/blue)
@@ -62,5 +62,5 @@
 /datum/bounty/item/silly/toy_swords
 	name = "Toy Swords"
 	description = "Nanotrasen has secured a contract in a reenactment of a famous movie, but we only have lethal energy based swords. Send us some convincing replicas so we save on medical costs."
-	reward = 4200
+	reward = 5200
 	required_count = 3

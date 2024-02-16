@@ -1,7 +1,7 @@
 /datum/bounty/item/medical/heart
 	name = "Heart"
 	description = "Commander Johnson is in critical condition after suffering yet another heart attack. Doctors say he needs a new heart fast. Ship one, pronto!"
-	reward = 5000
+	reward = 3000
 	wanted_types = list(/obj/item/organ/heart)
 
 /datum/bounty/item/medical/lung
@@ -34,7 +34,7 @@
 /datum/bounty/item/medical/eye
 	name = "Organic Eyes"
 	description = "Station 5's Research Director Willem is requesting a few pairs of non-robotic eyes. Don't ask questions, just ship them."
-	reward = 4000
+	reward = 6000
 	required_count = 3
 	wanted_types = list(/obj/item/organ/eyes)
 	exclude_types = list(/obj/item/organ/eyes/robotic)
@@ -42,7 +42,7 @@
 /datum/bounty/item/medical/tongue
 	name = "Tongues"
 	description = "A recent attack by Mime extremists has left staff at Station 23 speechless. Ship some spare tongues."
-	reward = 4500
+	reward = 6500
 	required_count = 3
 	wanted_types = list(/obj/item/organ/tongue)
 
@@ -108,7 +108,7 @@
 /datum/bounty/item/medical/advhealthscaner
 	name = "Advanced Health Analyzer"
 	description = "A ERT Medical unit needs the new 'advanced health analyzer', for a mission at a Station 4. Can you send some?."
-	reward = 4700
+	reward = 6700
 	required_count = 5
 	wanted_types = list(/obj/item/healthanalyzer/advanced)
 
@@ -122,14 +122,14 @@
 /datum/bounty/item/medical/defibrillator
 	name = "New defibillators"
 	description = "After years of storage our defibrillation units have worn out. Please send us some new ones."
-	reward = 2800
+	reward = 6800
 	required_count = 5
 	wanted_types = list(/obj/item/defibrillator)
 
 /datum/bounty/item/medical/chainsaw
 	name = "Chainsaw"
 	description = "A CMO at CentCom is having trouble operating on golems. She requests one chainsaw, please."
-	reward = 2500
+	reward = 15500
 	wanted_types = list(/obj/item/chainsaw)
 
 /datum/bounty/item/medical/tail_whip //Like the cat tail bounties, with more processing.

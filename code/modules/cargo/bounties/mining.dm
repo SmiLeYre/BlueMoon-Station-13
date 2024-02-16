@@ -14,7 +14,7 @@
 /datum/bounty/item/mining/bone_oar
 	name = "Bone Oars"
 	description = "Commander Menkov requires oars to participate in the annual Lavaland Regatta. Ship a pair over."
-	reward = 3000
+	reward = 6000
 	required_count = 2
 	wanted_types = list(/obj/item/oar)
 
@@ -39,21 +39,21 @@
 /datum/bounty/item/mining/bone_talisman
 	name = "Bone Talismans"
 	description = "Station 14's Research Director claims that pagan bone talismans protect their wearer. Ship them a few so they can start testing."
-	reward = 3500
+	reward = 4500
 	required_count = 3
 	wanted_types = list(/obj/item/clothing/accessory/talisman)
 
 /datum/bounty/item/mining/bone_dagger
 	name = "Bone Daggers"
 	description = "Central Command's canteen is undergoing budget cuts. Ship over some bone daggers so our Chef can keep working."
-	reward = 1000
+	reward = 5000
 	required_count = 3
 	wanted_types = list(/obj/item/kitchen/knife/combat/bone)
 
 /datum/bounty/item/mining/basalt
 	name = "Artificial Basalt Tiles"
 	description = "Central Command's Ash Walker exhibit needs to be expanded again, we just need some more basalt flooring."
-	reward = 3200
+	reward = 6200
 	required_count = 60
 	wanted_types = list(/obj/item/stack/tile/basalt)
 
