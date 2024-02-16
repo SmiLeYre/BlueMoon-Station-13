@@ -36,4 +36,5 @@
 	var/profit_loss = 0
 	for(var/datum/bank_account/payee in payees)
 		profit_loss += payees[payee]
-	return profit_loss * 100
+	return min(profit_loss * 100 , 100)
+// BLUEMOON CHANGE END
