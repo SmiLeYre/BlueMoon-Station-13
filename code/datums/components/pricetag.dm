@@ -32,4 +32,8 @@
 		return TRUE
 
 /datum/component/pricetag/proc/return_ratio()
-	return default_profit_ratio
+// BLUEMOON CHANGE реальный срез профита выгодаполучателям за отсканирование товаров
+	var/profit_loss = 0
+	for(var/datum/bank_account/payee in payees)
+		profit_loss += payees[payee]
+	return profit_loss * 100
