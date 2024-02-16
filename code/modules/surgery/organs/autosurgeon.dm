@@ -134,31 +134,37 @@
 		new implant(src)
 
 /obj/item/autosurgeon/penis
+	name = "autosurgeon (penis)"
 	desc = "A single use autosurgeon that contains a penis. A screwdriver can be used to remove it, but implants can't be placed back in."
 	uses = 1
 	starting_organ = /obj/item/organ/genital/penis
 
 /obj/item/autosurgeon/testicles
+	name = "autosurgeon (testicles)"
 	desc = "A single use autosurgeon that contains a set of testicles. A screwdriver can be used to remove it, but implants can't be placed back in."
 	uses = 1
 	starting_organ = /obj/item/organ/genital/testicles
 
 /obj/item/autosurgeon/vagina
+	name = "autosurgeon (vagina)"
 	desc = "A single use autosurgeon that contains a vagina. A screwdriver can be used to remove it, but implants can't be placed back in."
 	uses = 1
 	starting_organ = /obj/item/organ/genital/vagina
 
 /obj/item/autosurgeon/breasts
+	name = "autosurgeon (breasts)"
 	desc = "A single use autosurgeon that contains a set of breasts. A screwdriver can be used to remove it, but implants can't be placed back in."
 	uses = 1
 	starting_organ = /obj/item/organ/genital/breasts
 
 /obj/item/autosurgeon/womb
+	name = "autosurgeon (womb)"
 	desc = "A single use autosurgeon that contains a womb. A screwdriver can be used to remove it, but implants can't be placed back in."
 	uses = 1
 	starting_organ = /obj/item/organ/genital/womb
 
 /obj/item/autosurgeon/breathing_tube
+	name = "autosurgeon (breathing_tube)"
 	desc = "A single use autosurgeon that contains a breathing tube. A screwdriver can be used to remove it, but implants can't be placed back in."
 	uses = 1
 	starting_organ = /obj/item/organ/cyberimp/mouth/breathing_tube

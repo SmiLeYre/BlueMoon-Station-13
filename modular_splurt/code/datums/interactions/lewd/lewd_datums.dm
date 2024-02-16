@@ -239,12 +239,16 @@
 	playlewdinteractionsound(user, 'sound/items/bikehorn.ogg', 40, 1, -1)
 
 /datum/interaction/lewd/bite/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
+	if (istype(user.wear_mask, /obj/item/clothing/mask/muzzle/mouthring))
+		to_chat(user, "<span class='warning'> Вы безуспешно пытаетесь сомкнуть свои челюсти. </span>")
+		return
 	. = ..()
+
 	if(!isclownjob(user))
 		return
-
+	//
 	if(prob(50))
-		//var/genital_name = user.get_penetrating_genital_name(TRUE)
+			//var/genital_name = user.get_penetrating_genital_name(TRUE)
 		user.visible_message("<span class='lewd'>\ <b>[user]</b> забавно хонкает!</span>")
 
 	playlewdinteractionsound(user, 'sound/items/bikehorn.ogg', 40, 1, -1)
