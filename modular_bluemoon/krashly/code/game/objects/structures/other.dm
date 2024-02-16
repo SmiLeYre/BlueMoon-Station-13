@@ -41,21 +41,28 @@
 	. = ..()
 	register_context()
 
+/obj/structure/desk_bell/examine(mob/user)
+	. = ..()
+	. += "It is [anchored ? "<b>wrenched</b> to the surface." : "unsecured. A wrench should fix that."]"
+	if(broken_ringer)
+		. += "It is broken. Use a <b>screwdriver</b> to fix it."
+
 /obj/structure/desk_bell/add_context(atom/source, list/context, obj/item/held_item, mob/user)
 	. = ..()
 
 	if(held_item?.tool_behaviour == TOOL_WRENCH)
-		context[SCREENTIP_CONTEXT_RMB] = "Откручено"
+		LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_HELP, "Открутить")
+		LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_HARM, "Разобрать")
 		return CONTEXTUAL_SCREENTIP_SET
 
 	if(broken_ringer)
 		if(held_item?.tool_behaviour == TOOL_SCREWDRIVER)
-			context[SCREENTIP_CONTEXT_LMB] = "Починено"
+			LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_ANY, "Починить")
 	else
 		var/click_context = "Дзынь"
 		if(prob(1))
 			click_context = "Бзык"
-		context[SCREENTIP_CONTEXT_LMB] = click_context
+		LAZYSET(context[SCREENTIP_CONTEXT_LMB], INTENT_ANY, click_context)
 	return CONTEXTUAL_SCREENTIP_SET
 
 /obj/structure/desk_bell/attack_hand(mob/living/user, list/modifiers)
@@ -87,33 +94,41 @@
 			broken_ringer = FALSE
 			times_rang = 0
 			return TOOL_ACT_TOOLTYPE_SUCCESS
-		return FALSE
+		return TRUE //don't attack after cancelling fixing
 	return ..()
 
 // Deconstruct
 /obj/structure/desk_bell/wrench_act(mob/living/user, obj/item/tool)
-	balloon_alert(user, "разбираю...")
-	tool.play_tool_sound(src)
-	if(tool.use_tool(src, user, 5 SECONDS))
-		balloon_alert(user, "разобрано")
-		playsound(user, 'sound/items/deconstruct.ogg', 50, vary = TRUE)
-		if(!broken_ringer)
-			new/obj/item/stack/sheet/metal(drop_location())
-		new/obj/item/stack/sheet/metal(drop_location())
-		qdel(src)
-		return TOOL_ACT_TOOLTYPE_SUCCESS
+	if(user.a_intent == INTENT_HARM)
+		balloon_alert(user, "разбираю...")
+		tool.play_tool_sound(src)
+		if(tool.use_tool(src, user, 5 SECONDS))
+			balloon_alert(user, "разобрано")
+			playsound(user, 'sound/items/deconstruct.ogg', 50, vary = TRUE)
+			new /obj/item/stack/sheet/metal(loc, 2)
+			qdel(src)
+			return TOOL_ACT_TOOLTYPE_SUCCESS
+		return TRUE
+	if(user.a_intent == INTENT_HELP)
+		default_unfasten_wrench(user, tool)
+		return TRUE
 	return ..()
 
 /// Check if the clapper breaks, and if it does, break it
 /obj/structure/desk_bell/proc/check_clapper(mob/living/user)
 	if(((times_rang >= 10000) || prob(times_rang/100)) && ring_cooldown_length)
-		to_chat(user, span_notice("Вы слышите как [src]'s молоточек срывается с пружины. Отличная работа, ты его сломал."))
+		to_chat(user, span_warning("Вы слышите как [src]'s молоточек срывается с пружины. Отличная работа, ты его сломал."))
 		broken_ringer = TRUE
 
 /// Ring the bell
 /obj/structure/desk_bell/proc/ring_bell(mob/living/user)
 	if(broken_ringer)
 		return FALSE
+	if(user.a_intent == INTENT_HARM)
+		to_chat(user, span_warning("Со всей силы бьет кулаком по [src]."))
+		times_rang += 50
+		if(prob(20)) //every fifth hard punch
+			times_rang = INFINITY //this punch surely breaks it
 	check_clapper(user)
 	playsound(src, ring_sound, 70, vary = broken_ringer, extrarange = SHORT_RANGE_SOUND_EXTRARANGE)
 	flick("table-bell_ding", src)

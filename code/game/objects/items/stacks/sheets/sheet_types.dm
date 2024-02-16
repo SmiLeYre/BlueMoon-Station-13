@@ -134,6 +134,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	null, \
 	new/datum/stack_recipe("tiny fan", /obj/structure/fans/tiny, 2, time = 4, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("Metal Barricade", /obj/structure/deployable_barricade/metal, 2, time = 1 SECONDS, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("desk bell", /obj/structure/desk_bell, 2, time = 50, one_per_turf = TRUE, on_floor = TRUE), \
 ))
 
 /obj/item/stack/sheet/metal
