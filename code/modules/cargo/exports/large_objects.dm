@@ -15,7 +15,7 @@
 
 /datum/export/large/crate/wooden
 	cost = 100
-	k_elasticity = 1/50 //BLUEMOON CHANGE "Anti-floods"
+	k_elasticity = 1/50 //BLUEMOON ADD "Anti-floods"
 	unit_name = "large wooden crate"
 	export_types = list(/obj/structure/closet/crate/large)
 	exclude_types = list()
@@ -26,20 +26,20 @@
 
 /datum/export/large/crate/wood
 	cost = 140
-	k_elasticity = 1/50 //BLUEMOON CHANGE "Anti-floods"
+	k_elasticity = 1/50 //BLUEMOON ADD "Anti-floods"
 	unit_name = "wooden crate"
 	export_types = list(/obj/structure/closet/crate/wooden)
 	exclude_types = list()
 
 /datum/export/large/barrel
 	cost = 300 //double the wooden cost of a coffin.
-	k_elasticity = 1/50 //BLUEMOON CHANGE "Anti-floods"
+	k_elasticity = 1/50 //BLUEMOON ADD "Anti-floods"
 	unit_name = "wooden barrel"
 	export_types = list(/obj/structure/fermenting_barrel)
 
 /datum/export/large/crate/coffin
 	cost = 150
-	k_elasticity = 1/50 //BLUEMOON CHANGE "Anti-floods"
+	k_elasticity = 1/50 //BLUEMOON ADD "Anti-floods"
 	unit_name = "coffin"
 	export_types = list(/obj/structure/closet/crate/coffin)
 	exclude_types = list() //BLUEMOON CHANGE фикс засчитывания гробов как ящик
