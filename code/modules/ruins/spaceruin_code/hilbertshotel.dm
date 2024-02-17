@@ -8,7 +8,7 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	w_class = WEIGHT_CLASS_SMALL
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	//BlueMoon Edit
-	var/list/static/hotel_maps = list("Generic (Don't Use)", "Apartment", "Apartment_1", "Apartment_2", "Apartment_3", "Apartment_bar", "Apartment_syndi", "Apartment_dojo", "Apartment_sauna")
+	var/list/static/hotel_maps = list("Generic (Don't Use)", "Apartment", "Apartment_1", "Apartment_2", "Apartment_3", "Apartment_bar", "Apartment_syndi", "Apartment_dojo", "Apartment_sauna", "Apartment_beach")
 	var/datum/map_template/ghost_cafe_rooms/ghost_cafe_rooms_apartment
 	var/datum/map_template/ghost_cafe_rooms/one/ghost_cafe_rooms_apartment_one
 	var/datum/map_template/ghost_cafe_rooms/two/ghost_cafe_rooms_apartment_two
@@ -17,6 +17,7 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	var/datum/map_template/ghost_cafe_rooms/syndi/ghost_cafe_rooms_apartment_syndi
 	var/datum/map_template/ghost_cafe_rooms/dojo/ghost_cafe_rooms_apartment_dojo
 	var/datum/map_template/ghost_cafe_rooms/sauna/ghost_cafe_rooms_apartment_sauna
+	var/datum/map_template/ghost_cafe_rooms/beach/ghost_cafe_rooms_apartment_beach
 	//BlueMoon Edit
 	var/datum/map_template/hilbertshotel/hotelRoomTemp
 	var/datum/map_template/hilbertshotel/empty/hotelRoomTempEmpty
@@ -47,6 +48,7 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	ghost_cafe_rooms_apartment_syndi = new()
 	ghost_cafe_rooms_apartment_dojo = new()
 	ghost_cafe_rooms_apartment_sauna = new()
+	ghost_cafe_rooms_apartment_beach = new()
 	//BlueMoon Edit
 	var/area/currentArea = get_area(src)
 	if(currentArea.type == /area/ruin/space/has_grav/hilbertresearchfacility)
@@ -174,6 +176,8 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 				ghost_cafe_rooms_apartment_dojo.load(locate(roomReservation.bottom_left_coords[1], roomReservation.bottom_left_coords[2], roomReservation.bottom_left_coords[3]))
 			if("Apartment_sauna")
 				ghost_cafe_rooms_apartment_sauna.load(locate(roomReservation.bottom_left_coords[1], roomReservation.bottom_left_coords[2], roomReservation.bottom_left_coords[3]))
+			if("Apartment_beach")
+				ghost_cafe_rooms_apartment_beach.load(locate(roomReservation.bottom_left_coords[1], roomReservation.bottom_left_coords[2], roomReservation.bottom_left_coords[3]))
 			else
 				hotelRoomTemp.load(locate(roomReservation.bottom_left_coords[1], roomReservation.bottom_left_coords[2], roomReservation.bottom_left_coords[3]))
 	activeRooms["[roomNumber]"] = roomReservation
@@ -392,6 +396,9 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	var/obj/item/hilbertshotel/parentSphere
 	var/datum/turf_reservation/reservation
 	var/turf/storageTurf
+
+/area/hilbertshotel/illuminated
+	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
 
 /area/hilbertshotel/room_one
 	name = "Hilbert's Hotel Room One"

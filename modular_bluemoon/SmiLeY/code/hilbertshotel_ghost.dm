@@ -47,3 +47,7 @@
 /datum/map_template/ghost_cafe_rooms/sauna
 	name = "Apartment_sauna"
 	mappath = '_maps/templates/apartment_sauna.dmm'
+
+/datum/map_template/ghost_cafe_rooms/beach
+	name = "Apartment_beach"
+	mappath = '_maps/templates/apartment_beach.dmm'
