@@ -73,7 +73,7 @@
 		visible_message("<span class='danger'>[user] cо всей силы бьет кулаком по [src].</span>")
 		if(!broken_ringer)
 			times_rang += 50
-			if(prob(20)) //every fifth hard punch
+			if(prob(10)) //every tenth hard punch
 				times_rang = INFINITY //this punch surely breaks it
 	if(!ring_bell(user))
 		to_chat(user, span_notice("[src] молчит. Кажется какой-то идиот его сломал."))
@@ -122,7 +122,7 @@
 
 /// Check if the clapper breaks, and if it does, break it
 /obj/structure/desk_bell/proc/check_clapper(mob/living/user)
-	if(((times_rang >= 10000) || prob(times_rang/100)) && ring_cooldown_length)
+	if(((times_rang >= 10000) || prob(times_rang/20)) && ring_cooldown_length) //0.05% per ding
 		to_chat(user, span_danger("Вы слышите как [src]'s молоточек срывается с пружины. Отличная работа, ты его сломал."))
 		broken_ringer = TRUE
 
@@ -131,7 +131,8 @@
 	if(broken_ringer)
 		return FALSE
 	check_clapper(user)
-	playsound(src, ring_sound, 70, vary = broken_ringer, extrarange = SHORT_RANGE_SOUND_EXTRARANGE)
+	//11 tiles of ding. The sound was specifically calibrated to be rather quiet, but far-spreading.
+	playsound(src, ring_sound, 50, vary = broken_ringer, extrarange = MEDIUM_RANGE_SOUND_EXTRARANGE, falloff_exponent = 1, distance_multiplier_min_range = 12)
 	flick("table-bell_ding", src)
 	times_rang++
 	return TRUE

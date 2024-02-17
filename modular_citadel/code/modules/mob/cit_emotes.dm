@@ -131,7 +131,7 @@
 	. = ..()
 	if(!.)
 		return
-	playsound(user, 'modular_citadel/sound/voice/awoo.ogg', 100, 1, -1)
+	playsound(user, 'modular_citadel/sound/voice/awoo.ogg', 100, 1, extrarange = MEDIUM_RANGE_SOUND_EXTRARANGE, falloff_exponent = 1, distance_multiplier_min_range = 12)
 	if (HAS_TRAIT(user, TRAIT_AWOO))
 		var/datum/quirk/awoo/quirk_target = locate() in user.roundstart_quirks
 		quirk_target.last_awoo = world.time
