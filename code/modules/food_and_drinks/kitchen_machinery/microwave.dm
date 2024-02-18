@@ -505,12 +505,13 @@
 	dirty_anim_playing = FALSE
 	operating = FALSE
 
+	dump_inventory_contents()
 	after_finish_loop()
 
 /obj/machinery/microwave/proc/after_finish_loop()
 	set_light(0)
 	soundloop.stop()
-	eject()
+	open()
 
 /obj/machinery/microwave/proc/open()
 	open = TRUE
