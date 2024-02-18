@@ -310,7 +310,8 @@
 		for(var/obj/S in T.contents)
 			if(ingredients.len >= max_n_of_items)
 				balloon_alert(user, "it's full!")
-				return TRUE
+				if(loaded)
+					break
 			if(SEND_SIGNAL(T, COMSIG_TRY_STORAGE_TAKE, S, src))
 				loaded++
 				ingredients += S
@@ -509,7 +510,7 @@
 /obj/machinery/microwave/proc/after_finish_loop()
 	set_light(0)
 	soundloop.stop()
-	open()
+	eject()
 
 /obj/machinery/microwave/proc/open()
 	open = TRUE
