@@ -213,13 +213,13 @@
 /obj/item/clothing/under/misc/gear_harness/Entered(atom/movable/AM, atom/oldLoc)
 	. = ..()
 	var/obj/item/genital_equipment/condom/C = AM
-	if(C.reagents.total_volume >= 1)
+	if(C.reagents?.total_volume >= 1)
 		filled_condoms_counter++
 
 /obj/item/clothing/under/misc/gear_harness/Exited(atom/movable/AM, atom/newLoc)
 	. = ..()
 	var/obj/item/genital_equipment/condom/C = AM
-	if(C.reagents.total_volume >= 1)
+	if(C.reagents?.total_volume >= 1)
 		filled_condoms_counter--
 
 /obj/item/clothing/under/misc/gear_harness/toggle_jumpsuit_adjust()
