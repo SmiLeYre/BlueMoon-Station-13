@@ -310,8 +310,10 @@
 		for(var/obj/S in T.contents)
 			if(ingredients.len >= max_n_of_items)
 				balloon_alert(user, "it's full!")
+				//BLUEMOON CHANGE ранее был return, но там столько важного кода дальше
 				if(loaded)
 					break
+				//BLUEMOON CHANGE END
 			if(SEND_SIGNAL(T, COMSIG_TRY_STORAGE_TAKE, S, src))
 				loaded++
 				ingredients += S
@@ -505,7 +507,7 @@
 	dirty_anim_playing = FALSE
 	operating = FALSE
 
-	dump_inventory_contents()
+	dump_inventory_contents() //BlUEMOON ADD грязная микроволновка выкидывает из себя вещи
 	after_finish_loop()
 
 /obj/machinery/microwave/proc/after_finish_loop()
