@@ -345,9 +345,6 @@
 	desc = "An utilitarian uniform of rugged warfare, with yellow insignias."
 	icon_state = "goner_uniform_y"
 
-/obj/item/clothing/under/misc/gear_harness
-	body_parts_covered = NONE
-
 /obj/item/clothing/under/misc/leia_outfit
 	name = "space princess outfit"
 	desc = "Chain for your Master's erotic asphyxiation not included."

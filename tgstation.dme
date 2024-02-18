@@ -4683,7 +4683,6 @@
 #include "modular_sand\code\modules\clothing\suits\miscellaneous.dm"
 #include "modular_sand\code\modules\clothing\under\_under.dm"
 #include "modular_sand\code\modules\clothing\under\costumes.dm"
-#include "modular_sand\code\modules\clothing\under\miscellaneous.dm"
 #include "modular_sand\code\modules\clothing\under\uniform.dm"
 #include "modular_sand\code\modules\clothing\underwear\_underwear.dm"
 #include "modular_sand\code\modules\clothing\underwear\boxers.dm"

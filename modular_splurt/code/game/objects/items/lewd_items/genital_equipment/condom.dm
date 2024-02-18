@@ -48,7 +48,7 @@
 
 /obj/item/genital_equipment/condom/update_icon()
 	switch(reagents.total_volume)
-		if(0 to 49)
+		if(1 to 49)
 			icon_state = "b_condom_inflated"
 		if(50 to 100)
 			icon_state = "b_condom_inflated_med"
@@ -56,6 +56,8 @@
 			icon_state = "b_condom_inflated_large"
 		if(250 to 300)
 			icon_state = "b_condom_inflated_huge"
+		else
+			icon_state = "b_condom"
 	..()
 
 /obj/item/genital_equipment/condom/on_reagent_change()
