@@ -804,6 +804,14 @@
 		var/obj/item/gun/G = target
 		G.zoom(owner, owner.dir, FALSE)
 
+/* BLUEMOON DELETE тригер прока zoom() происходит в ui_action_click
+/datum/action/item_action/toggle_scope_zoom/Trigger()
+	. = ..()
+	if(.)
+		var/obj/item/gun/G = target
+		G.zoom(owner, owner.dir)
+*/
+
 /datum/action/item_action/toggle_scope_zoom/Remove(mob/living/L)
 	var/obj/item/gun/G = target
 	G.zoom(L, L.dir, FALSE)
