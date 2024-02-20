@@ -15,6 +15,7 @@
 /*
  * SNOUTS
  */
+
 /datum/sprite_accessory/snouts/mam_snouts/acrador
 	name = "Acrador 1 (Short)"
 	icon = 'modular_bluemoon/acradors/acradors_snouts.dmi'
@@ -36,3 +37,35 @@
 /datum/sprite_accessory/snouts/mam_snouts/acrador/fifth
 	name = "Acrador 5 (Normal)"
 	icon_state = "acrador_5"
+
+/*
+ * TAILS
+ */
+
+/datum/sprite_accessory/tails/mam_tails/acrador
+	icon = 'modular_bluemoon/acradors/acradors_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/mam_tails/acrador/femine
+	name = "Acrador (Femine)"
+	icon_state = "acrador_Fe"
+
+/datum/sprite_accessory/tails/mam_tails/acrador/femine_long
+	name = "Acrador (Femine and Long)"
+	icon_state = "acrador_FeLo"
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/acrador/femine_long
+	name = "Acrador (Femine and Long)"
+	icon = 'modular_bluemoon/acradors/acradors_tails.dmi'
+	icon_state = "acrador_FeLo"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/mam_tails/acrador/normal
+	name = "Acrador (Manly)"
+	icon_state = "acrador_No"
+
+/datum/sprite_accessory/tails/mam_tails/acrador/big
+	name = "Acrador (Big)"
+	icon_state = "acrador_Bi"
+
+
