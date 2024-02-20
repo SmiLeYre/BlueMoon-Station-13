@@ -4103,6 +4103,7 @@
 #include "interface\fonts\vcr_osd_mono.dm"
 #include "modular_bluemoon\0451\code\modules\mining\shelters.dm"
 #include "modular_bluemoon\0451\code\modules\mining\equipment\survival_pod.dm"
+#include "modular_bluemoon\0451\code\modules\reagents\chemistry\recipes\recipes.dm"
 #include "modular_bluemoon\0451\code\modules\research\designs\medical_designs.dm"
 #include "modular_bluemoon\0451\code\modules\research\techweb\nodes\medical_nodes.dm"
 #include "modular_bluemoon\0451\code\modules\surgery\organs\augments_arms.dm"
