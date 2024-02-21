@@ -4215,6 +4215,7 @@
 #include "modular_bluemoon\Gardelin0\code\obj\lewd_devices\sybian.dm"
 #include "modular_bluemoon\Gardelin0\code\vending\clothesmate.dm"
 #include "modular_bluemoon\Gardelin0\code\vending\kinkmate.dm"
+#include "modular_bluemoon\Gran\code\gun\Anabel.dm"
 #include "modular_bluemoon\heavy_and_superheavy_quirks\mob.dm"
 #include "modular_bluemoon\heavy_and_superheavy_quirks\traits.dm"
 #include "modular_bluemoon\icons\code\under.dm"
