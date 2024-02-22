@@ -73,10 +73,6 @@
 
 ///Космодесантские приколы
 
-///Новый вид криков. Можно использовать для крутых хардсьютов.
-#define SPASEMAR_SCREAMS list('modular_bluemoon/Ren/Sound/screams/he_die.ogg', 'modular_bluemoon/Ren/Sound/screams/aah_1.ogg', 'modular_bluemoon/Ren/Sound/screams/nooh.ogg', 'modular_bluemoon/Ren/Sound/screams/nyaahaa.ogg',\
-	'modular_bluemoon/Ren/Sound/screams/oh.ogg')
-
 ///Самоподрыв костюма для не трейторов. Никакого манча СБ
 /obj/item/clothing/suit/space/syndicate/darktemplar/equipped(mob/user, slot)
 	..()
