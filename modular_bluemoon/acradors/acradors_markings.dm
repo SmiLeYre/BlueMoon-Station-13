@@ -46,22 +46,32 @@
 	icon = 'modular_bluemoon/acradors/acradors_tails.dmi'
 	matrixed_sections = MATRIX_RED_GREEN
 
+/datum/sprite_accessory/tails_animated/mam_tails_animated/acrador
+	icon = 'modular_bluemoon/acradors/acradors_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
+
 /datum/sprite_accessory/tails/mam_tails/acrador/femine
-	name = "Acrador (Femine)"
+	name = "Acrador (Narrow)"
 	icon_state = "acrador_Fe"
 
 /datum/sprite_accessory/tails/mam_tails/acrador/femine_long
-	name = "Acrador (Femine and Long)"
+	name = "Acrador (Narrow and Long)"
 	icon_state = "acrador_FeLo"
 
 /datum/sprite_accessory/tails_animated/mam_tails_animated/acrador/femine_long
-	name = "Acrador (Femine and Long)"
-	icon = 'modular_bluemoon/acradors/acradors_tails.dmi'
+	name = "Acrador (Narrow and Long)"
 	icon_state = "acrador_FeLo"
-	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/mam_tails/acrador/femine_very_long
+	name = "Acrador (Narrow and Very Long)"
+	icon_state = "acrador_FeVeLo"
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/acrador/femine_very_long
+	name = "Acrador (Narrow and Very Long)"
+	icon_state = "acrador_FeVeLo"
 
 /datum/sprite_accessory/tails/mam_tails/acrador/normal
-	name = "Acrador (Manly)"
+	name = "Acrador (Medium)"
 	icon_state = "acrador_No"
 
 /datum/sprite_accessory/tails/mam_tails/acrador/big
