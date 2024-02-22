@@ -430,10 +430,8 @@
 	casing_ejector = FALSE
 
 /obj/item/gun/ballistic/automatic/laser/update_icon_state()
-	if(magazine)
-		icon_state = "oldrifle-32"
-	else
-		icon_state = "oldrifle"
+	icon_state = "oldrifle[magazine ? "-[CEILING(get_ammo(0)/4, 1)*4]" : ""]"
+
 /obj/item/gun/ballistic/automatic/laser/lasgun
 	name = "Thilium Boarding Lascarbine"
 	desc = "The Thilium-pattern lascarbine, Is a special type of larcarbines used for CQC."
@@ -448,6 +446,3 @@
 	actions_types = list()
 	fire_sound = 'sound/weapons/lasgun.ogg'
 	casing_ejector = FALSE
-
-/obj/item/gun/ballistic/automatic/laser/update_icon_state()
-	icon_state = "boarding"
