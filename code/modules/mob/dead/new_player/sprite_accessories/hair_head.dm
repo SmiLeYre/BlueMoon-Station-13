@@ -78,6 +78,10 @@
 	name = "Bedhead"
 	icon_state = "hair_bedhead"
 
+/datum/sprite_accessory/hair/bedhead_short
+	name = "Bedhead (short)"
+	icon_state = "hair_short_bedhead"
+
 /datum/sprite_accessory/hair/bedhead_long
 	name = "Bedhead (Long)"
 	icon_state = "hair_long_bedhead"
