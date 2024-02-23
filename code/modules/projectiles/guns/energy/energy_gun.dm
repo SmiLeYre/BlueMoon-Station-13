@@ -112,7 +112,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser)
 	selfcharge = EGUN_SELFCHARGE
 	var/fail_tick = 0
-	var/fail_chance = 0
+	var/fail_chance = 1
 
 /obj/item/gun/energy/e_gun/nuclear/pin
 	pin = /obj/item/firing_pin

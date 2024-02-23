@@ -12,8 +12,8 @@
 	circuit = /obj/item/circuitboard/machine/bluespace_miner
 	layer = BELOW_OBJ_LAYER
 	init_process = TRUE
-	idle_power_usage = 1000
-	active_power_usage = 2000
+	idle_power_usage = 5000
+	active_power_usage = 10000
 	var/list/ore_rates = list(
 		/datum/material/iron = 0.05,
 		/datum/material/glass = 0.05,
@@ -75,10 +75,15 @@
 	. = ..()
 	if(!M.buffer || !istype(M.buffer, /obj/machinery/ore_silo))
 		to_chat(user, span_warning("You need to multitool the ore silo first."))
-		balloon_alert(user, "invalid buffer!")
+		balloon_alert(user, "Данные отсутствуют!")
 		return TRUE
 
 /obj/machinery/mineral/bluespace_miner/process()
+	for(var/obj/machinery/bluespace_miner as anything in SSmachines.get_machines_by_type_and_subtypes(/obj/machinery/mineral/bluespace_miner))
+		if(length(bluespace_miner) >= 5)
+			if(prob(0.0005))
+				var/datum/round_event_control/anomaly/anomaly_bluespace/bluespace_anomaly = new/datum/round_event_control/anomaly/anomaly_bluespace
+				bluespace_anomaly.runEvent()
 	update_icon_state()
 	if(!materials?.silo || materials?.on_hold())
 		return

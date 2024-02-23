@@ -1061,8 +1061,8 @@
 	var/revive_failed
 
 	// Condition: Mob isn't in a closed coffin
-	if(!istype(action_owner.loc, /obj/structure/closet/crate/coffin))
-		revive_failed += "\n- You need to be in a closed coffin!"
+	// if(!istype(action_owner.loc, /obj/structure/closet/crate/coffin))
+	// 	revive_failed += "\n- You need to be in a closed coffin!"
 
 	// Condition: Insufficient nutrition (blood)
 	if(action_owner.nutrition <= NUTRITION_LEVEL_STARVING)

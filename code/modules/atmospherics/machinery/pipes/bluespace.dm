@@ -12,11 +12,6 @@ GLOBAL_LIST_EMPTY(bluespace_pipe_networks)
 	construction_type = /obj/item/pipe/bluespace/directional
 	var/bluespace_network_name
 
-/obj/machinery/atmospherics/pipe/simple/update_icon()
-	icon_state = "pipe-[piping_layer]"
-	update_layer()
-	update_alpha()
-
 /obj/machinery/atmospherics/pipe/bluespace/New()
 	icon_state = "pipe"
 	if(bluespace_network_name) // in case someone maps one in for some reason

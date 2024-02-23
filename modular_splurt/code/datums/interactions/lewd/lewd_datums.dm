@@ -339,10 +339,13 @@
 		return
 	. = ..()
 
+
 	if(!isclownjob(user))
 		return
 	//
+	//
 	if(prob(50))
+			//var/genital_name = user.get_penetrating_genital_name(TRUE)
 			//var/genital_name = user.get_penetrating_genital_name(TRUE)
 		user.visible_message("<span class='lewd'>\ <b>[user]</b> забавно хонкает!</span>")
 

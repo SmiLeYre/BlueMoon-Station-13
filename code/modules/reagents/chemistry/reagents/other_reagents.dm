@@ -375,7 +375,7 @@
 		to_chat(L, "<span class='userdanger'>Священный Туман распространяется по вашему сознанию, ослабляя связь с Красным Измерением и очищая вас от влияния Нар-Си</span>")
 	else if(HAS_TRAIT(L,TRAIT_RUSSIAN))
 		// Alert user of holy water effect.
-		to_chat(L, span_nicegreen("Святая вода питает и заряжает энергией!"))
+		to_chat(L, span_nicegreen("Святая водица питает и заряжает энергией!"))
 	else
 		to_chat(L, span_nicegreen("Священный Туман распространяется по вашему сознанию."))
 

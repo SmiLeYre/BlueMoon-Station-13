@@ -341,7 +341,7 @@
 			else
 				H.dna.features["horns_color"] = sanitize_hexcolor(new_horn_color, 6)
 
-		H.update_body()
+			H.update_body()
 
 	else if (select_alteration == "Hair Color")
 		var/new_hair_color = input(owner, "Choose your character's hair color:", "Character Preference", "#" + H.dna.features["hair_color"]) as color|null
@@ -366,6 +366,7 @@
 						H.skin_tone = custom_tone
 			else
 				H.skin_tone = new_s_tone
+			H.update_body()
 
 	else if (select_alteration == "Gender & Lewd")
 		var/lewd_selection = input(owner, "Select what aspect of gender and lewd preferences to alter", "Gender & Lewd", "cancel") in list("Gender", "Body Model", "Cancel")

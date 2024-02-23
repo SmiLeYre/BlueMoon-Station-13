@@ -93,6 +93,7 @@
 	desc = "Standart combat turtleneck with printed expiditionary marks."
 	icon_state = "exp_corps"
 	item_state = "exp_corps"
+	has_sensor = HAS_SENSORS //BLUEMOON CHANGE они являются станционным персоналом
 	mutantrace_variation = STYLE_DIGITIGRADE|USE_SNEK_CLIP_MASK|USE_QUADRUPED_CLIP_MASK
 
 /obj/item/clothing/shoes/combat/exp

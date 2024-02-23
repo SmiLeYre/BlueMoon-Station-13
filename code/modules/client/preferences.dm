@@ -2200,7 +2200,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						return
 					all_quirks -= quirk
 				else
-					if(GetPositiveQuirkCount() >= MAX_QUIRKS)
+					if(GetPositiveQuirkCount() >= MAX_QUIRKS && value > 0)
 						to_chat(user, "<span class='warning'>You can't have more than [MAX_QUIRKS] positive quirks!</span>")
 						return
 					if(balance - value < 0)

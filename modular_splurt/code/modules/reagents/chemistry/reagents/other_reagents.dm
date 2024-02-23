@@ -174,8 +174,8 @@
 		M.adjustStaminaLoss(1)
 
 		// Reduce hunger and thirst.
-		M.adjust_nutrition(1)
-		M.adjust_thirst(1)
+		// M.adjust_nutrition(1)
+		// M.adjust_thirst(1)
 
 		// Heal brute and burn.
 		// Accounts for robotic limbs.

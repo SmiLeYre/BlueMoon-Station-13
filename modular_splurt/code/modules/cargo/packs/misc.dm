@@ -620,8 +620,6 @@
 			)
 	cost = 40
 
-
-
 /datum/supply_pack/costumes_toys/randomised/tesh_cloaks_b_vr
 	name = "Teshari cloaks (black)"
 
@@ -642,8 +640,6 @@
 			)
 	cost = 40
 
-
-
 /datum/supply_pack/costumes_toys/randomised/tesh_beltcloaks_vr
 	name = "Teshari cloaks (belted)"
 
@@ -662,8 +658,6 @@
 			/obj/item/clothing/suit/hooded/teshari/beltcloak/standard/brown_grey
 			)
 	cost = 40
-
-
 
 /datum/supply_pack/costumes_toys/randomised/tesh_beltcloaks_b_vr
 	name = "Teshari cloaks (belted, black)"
@@ -686,8 +680,6 @@
 			)
 	cost = 40
 
-
-
 /datum/supply_pack/costumes_toys/randomised/tesh_hoodcloaks_vr
 	name = "Teshari cloaks (hooded)"
 
@@ -705,8 +697,6 @@
 			/obj/item/clothing/suit/hooded/teshari/standard/brown_grey
 			)
 	cost = 40
-
-
 
 /datum/supply_pack/costumes_toys/randomised/tesh_hoodcloaks_b_vr
 	name = "Teshari cloaks (hooded, black)"
@@ -729,4 +719,8 @@
 			)
 	cost = 40
 
-
+/datum/supply_pack/misc/sauna_oven
+	name = "Sauna Oven"
+	desc = "A humble sauna oven adorned with stones. Add some fuel, pour water, and relish the tranquil moment."
+	contains = list(/obj/structure/sauna_oven)
+	cost = 1000

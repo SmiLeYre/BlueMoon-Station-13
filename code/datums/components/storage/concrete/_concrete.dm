@@ -137,6 +137,10 @@
 	if(isitem(AM))
 		var/obj/item/removed_item = AM
 		removed_item.item_flags &= ~IN_STORAGE
+		if(istype(removed_item, /obj/item/clothing/accessory)) //evading quantum entanglement of accessories
+			var/obj/item/clothing/accessory/acc = removed_item
+			if(acc.current_uniform)
+				acc.detach(acc.current_uniform, usr) //Это полный пиздос, вообще всю одежду чинить надо, usr вообще не доложно тут быть
 		if(ismob(parent.loc))
 			var/mob/carrying_mob = parent.loc
 			removed_item.dropped(carrying_mob, TRUE)

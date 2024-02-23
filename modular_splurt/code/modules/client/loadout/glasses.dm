@@ -60,5 +60,5 @@
 //NON-RESTRICTED 
 
 /datum/gear/glasses/contact
-	name = "contact lenses"
+	name = "Contact Lenses"
 	path = /obj/item/clothing/glasses/contact

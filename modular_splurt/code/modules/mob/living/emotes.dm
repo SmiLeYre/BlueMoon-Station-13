@@ -814,6 +814,9 @@
 	emote_sound = 'modular_splurt/sound/voice/wolfhowl.ogg'
 	emote_cooldown = 5 SECONDS
 	emote_volume = 100
+	emote_range = MEDIUM_RANGE_SOUND_EXTRARANGE
+	emote_falloff_exponent = 1
+	emote_distance_multiplier_min_range = 12
 
 /datum/emote/living/audio/howl/run_emote(mob/user, params)
 	if (HAS_TRAIT(user, TRAIT_AWOO))

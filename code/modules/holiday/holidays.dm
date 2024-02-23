@@ -137,7 +137,7 @@
 	return "Скажи 'С Днём Рождения' Space Station 13, первой версии от 16 Февраля, 2003 года![Fact]"
 
 /datum/holiday/random_kindness
-	name = "Случайные Акты Дня Доброты"
+	name = "Случайные Акты Дня Доброты |"
 	begin_day = 17
 	begin_month = FEBRUARY
 
@@ -145,12 +145,12 @@
 	return "Пойди сделай несколько случайных актов доброты для незнакомца!" //haha yeah right
 
 /datum/holiday/leap
-	name = "Високосный день"
+	name = "Високосный день |"
 	begin_day = 29
 	begin_month = FEBRUARY
 
 /datum/holiday/pi
-	name = "день Пи"
+	name = "День Пи |"
 	begin_day = 14
 	begin_month = MARCH
 
@@ -158,7 +158,7 @@
 	return pick("Синусоидный Сектор |","Косинусоидный Сектор |","Тангенсный Сектор |","Пересекающий Сектор |", "Не пересекающий Сектор |", "Котангенсный Сектор |")
 
 /datum/holiday/no_this_is_patrick
-	name = "день Святого Патрика"
+	name = "День Святого Патрика |"
 	begin_day = 17
 	begin_month = MARCH
 	drone_hat = /obj/item/clothing/head/soft/green
@@ -182,7 +182,7 @@
 			P.client.playtitlemusic()
 
 /datum/holiday/spess
-	name = "день Космонавта"
+	name = "День Космонавта |"
 	begin_day = 12
 	begin_month = APRIL
 	drone_hat = /obj/item/clothing/head/syndicatefake
@@ -191,7 +191,7 @@
 	return "В этот день более 600 лет назад товарищ Юрий Гагарин впервые отправился в космос!"
 
 /datum/holiday/fourtwenty
-	name = "день Четыре Двадцать"
+	name = "День Четыре Двадцать |"
 	begin_day = 20
 	begin_month = APRIL
 
@@ -199,7 +199,7 @@
 	return pick("Шпионский Сектор |","Туповатый Сектор |","Затяжной Сектор |","Промозглый Сектор |","Чичевый Сектор |","Чонговый Сектор |")
 
 /datum/holiday/tea
-	name = "Национальный День Чая"
+	name = "Национальный День Чая |"
 	begin_day = 21
 	begin_month = APRIL
 
@@ -207,12 +207,12 @@
 	return pick("Пышечный Сектор |","Ассамский Сектор |","Улунгский Сектор |","Пу-эрский Сектор |","Сладкочаевый Сектор |","Зелёный Сектор |","Чёрный Сектор |")
 
 /datum/holiday/earth
-	name = "день Земли"
+	name = "День Земли |"
 	begin_day = 22
 	begin_month = APRIL
 
 /datum/holiday/lgbt
-	name = "Pride Week"
+	name = "Pride Week |"
 	begin_month = JUNE
 	begin_day = 23
 	end_day = 29
@@ -232,7 +232,7 @@
 	return holiday_colors[(turf.y % holiday_colors.len) + 1]
 
 /datum/holiday/lgbt/lesbianvisibility
-	name = "Lesbian Visibility Day"
+	name = "Lesbian Visibility Day |"
 	begin_day = 26
 	begin_month = APRIL
 
@@ -248,7 +248,7 @@
 	return "Today is Lesbian Visibility Day!"
 
 /datum/holiday/lgbt/russianday
-	name = "Russian Day"
+	name = "Russian Day |"
 	begin_day = 16
 	end_day = 17
 	begin_month = JANUARY
@@ -259,17 +259,17 @@
 		COLOR_BLUE
 	)
 
-/datum/holiday/lgbt/lesbianvisibility/greet()
+/datum/holiday/lgbt/russianday/greet()
 	return "С днём России, ебать!"
 
 /datum/holiday/labor
-	name = "день Труда"
+	name = "День Труда |"
 	begin_day = 1
 	begin_month = MAY
 	drone_hat = /obj/item/clothing/head/hardhat
 
 /datum/holiday/firefighter
-	name = "день Пожарника"
+	name = "День Пожарника |"
 	begin_day = 4
 	begin_month = MAY
 	drone_hat = /obj/item/clothing/head/hardhat/red

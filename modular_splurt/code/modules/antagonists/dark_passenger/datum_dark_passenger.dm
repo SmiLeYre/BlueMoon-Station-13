@@ -3,11 +3,10 @@
 	job_rank = ROLE_TRAITOR
 
 /datum/antagonist/dark_passenger/greet()
-	to_chat(owner, span_warning("You feel the intrusive thoughts taking over your mind..."))
-	to_chat(owner, span_boldwarning("Ahelp IMMEDIATELY if you got this antag in any way that wasn't through admin intervention."))
+	to_chat(owner, span_warning("Вы чувствуете, как навязчивые мысли овладевают вашим сознанием..."))
 	owner.announce_objectives()
-	antag_memory += "I just know there's something dark in me. I hide it. I certainly don't talk about it. But it's there. Always. This 'Dark Passenger.' And when he's driving, I feel...alive. Half sick with the thrill of complete wrongness. I don't fight him. I don't want to."
+	antag_memory += "Я просто знаю, что во мне есть что-то темное. Я скрываю это. Я не говорю об этом. Но оно есть. Всегда. Этот тёмный пассажир моего сознания... и когда он за рулем, я чувствую себя... живым существом. Полубольным существом от ощущения полной неправильности. Я не борюсь с ним. Я не хочу. Мне всё нравится."
 
 /datum/antagonist/dark_passenger/farewell()
-	to_chat(owner, span_warning("The intrusive thoughts begin to fade away..."))
+	to_chat(owner, span_warning("Навязчивые мысли начинают исчезать..."))
 

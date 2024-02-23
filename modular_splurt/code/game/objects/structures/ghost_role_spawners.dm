@@ -114,7 +114,11 @@
 	uniform = /obj/item/clothing/under/suit/red
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/hotel
+	/* BlueMoon Edit Start: Giving hotel staff their own version of bartender PDA - Flauros
 	r_pocket = /obj/item/pda
+	*/ 
+	r_pocket = /obj/item/pda/hotelstaff
+	// BlueMoon Edit End
 	back = /obj/item/storage/backpack/satchel
 	ears = /obj/item/radio/headset/headset_srv/hotel
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\

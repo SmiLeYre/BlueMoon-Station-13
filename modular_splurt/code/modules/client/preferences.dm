@@ -1726,7 +1726,19 @@
 		// Causes arousal
 		// Allowed for ERP reasons
 		/datum/reagent/drug/aphrodisiac,
+		/datum/reagent/drug/aphrodisiacplus,
 
+		// Allowed for expansion reasons
+		/datum/reagent/fermi/breast_enlarger,
+		/datum/reagent/fermi/penis_enlarger,
+		/datum/reagent/fermi/butt_enlarger,
+
+		// Allowed for reduction reasons
+		/datum/reagent/fermi/BEsmaller,
+		/datum/reagent/fermi/PEsmaller,
+		/datum/reagent/fermi/AEsmaller_hypo,
+		// Code comment here, whoever named the AEsmaller_hypo needs to understand the chem shouldn't be named after the fact it's found in a hypo
+		
 		// Causes positive mood bonus
 		// On overdose: Causes negative mood penalty and disgust
 		/datum/reagent/drug/copium/gfluid,

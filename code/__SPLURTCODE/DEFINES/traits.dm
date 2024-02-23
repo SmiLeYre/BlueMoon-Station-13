@@ -1,25 +1,25 @@
 // General traits
-#define TRAIT_PREGNANT				"pregnant"
-#define TRAIT_FLOORED				"floored"
-#define IGNORE_FAKE_Z_AXIS			"ignore_fake_z_axis"
-#define TRAIT_TONGUELESS_SPEECH 	"tongueless_speech"
+#define TRAIT_PREGNANT					"pregnant"
+#define TRAIT_FLOORED					"floored"
+#define IGNORE_FAKE_Z_AXIS				"ignore_fake_z_axis"
+#define TRAIT_TONGUELESS_SPEECH 		"tongueless_speech"
 
 // Trait types
-#define SLAVER_TRAIT				"slaver"
-#define PREGNANCY_TRAIT				"pregnancy"
-#define DUMB_CUM_TRAIT				"dumb4cum"
+#define SLAVER_TRAIT					"slaver"
+#define PREGNANCY_TRAIT					"pregnancy"
+#define DUMB_CUM_TRAIT					"dumb4cum"
 
 // Quirk traits
-#define TRAIT_HYPNOTIC_GAZE			"hypnotic_gaze"
-#define TRAIT_GFLUID_DETECT			"genital_fluid_detect"
-#define TRAIT_ASHRESISTANCE			"ash_resistance"
+#define TRAIT_HYPNOTIC_GAZE				"hypnotic_gaze"
+#define TRAIT_GFLUID_DETECT				"genital_fluid_detect"
+#define TRAIT_ASHRESISTANCE				"ash_resistance"
 
-#define TRAIT_CHASTENED_ANUS 		"chastened_anus"
-#define TRAIT_IMPOTENT_ANUS		 	"impotent_anus"
-#define TRAIT_EDGINGONLY_ANUS		"edgingonly_anus"
-#define TRAIT_DISAPPOINTING_ANUS 	"disappointing_anus"
-#define TRAIT_OVERSTIM_ANUS 		"overstim_anus"
-#define TRAIT_HYPERSENS_ANUS 		"hypersens_anus"
+#define TRAIT_CHASTENED_ANUS 			"chastened_anus"
+#define TRAIT_IMPOTENT_ANUS		 		"impotent_anus"
+#define TRAIT_EDGINGONLY_ANUS			"edgingonly_anus"
+#define TRAIT_DISAPPOINTING_ANUS 		"disappointing_anus"
+#define TRAIT_OVERSTIM_ANUS 			"overstim_anus"
+#define TRAIT_HYPERSENS_ANUS 			"hypersens_anus"
 
 // Hyperstation traits
 #define TRAIT_PHARMA            "hepatic_pharmacokinesis"

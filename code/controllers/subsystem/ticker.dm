@@ -747,6 +747,14 @@ SUBSYSTEM_DEF(ticker)
 		'sound/roundend/gondolabridge.ogg',
 		'sound/roundend/haveabeautifultime.ogg',
 		'sound/roundend/CitadelStationHasSeenBetterDays.ogg',
+		'sound/roundend/not_working.ogg',
+		'sound/roundend/lovko_pridumal.ogg',
+		'sound/roundend/punk.ogg',
+		'sound/roundend/tupye.ogg',
+		'sound/roundend/get_up.ogg',
+		'sound/roundend/phonk_cats.ogg',
+		'sound/roundend/russian_fear.ogg',
+		'sound/roundend/gandon.ogg',
 		'sound/roundend/approachingbaystation.ogg'\
 		)
 

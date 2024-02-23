@@ -98,7 +98,7 @@
 /datum/reagent/consumable/nutriment/vitamin
 	name = "Vitamin"
 	description = "All the best vitamins, minerals, and carbohydrates the body needs in pure form."
-	value = REAGENT_VALUE_COMMON
+	value = REAGENT_VALUE_VERY_COMMON //BLUEMOON CHANGE он есть в чистом виде в овощах
 	nutriment_factor = 15 * REAGENTS_METABOLISM //The are the best food for you!
 	brute_heal = 1
 	burn_heal = 1

@@ -121,12 +121,14 @@
 
 /datum/export/stack/cloth
 	cost = 20
+	k_elasticity = 1/200 //BLUEMOON CHANGE "Anti-floods"
 	unit_name = "sheets"
 	message = "of cloth"
 	export_types = list(/obj/item/stack/sheet/cloth)
 
 /datum/export/stack/duracloth
 	cost = 40
+	k_elasticity = 1/200 //BLUEMOON CHANGE "Anti-floods"
 	unit_name = "sheets"
 	message = "of duracloth"
 	export_types = list(/obj/item/stack/sheet/durathread)

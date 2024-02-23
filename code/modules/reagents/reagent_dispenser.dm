@@ -202,15 +202,12 @@
 	if(ZAP_OBJ_DAMAGE & zap_flags)
 		explode()
 
-/obj/structure/reagent_dispensers/fueltank/bullet_act(obj/item/projectile/P)
-	. = ..()
-	if(QDELETED(src)) //wasn't deleted by the projectile's effects.
-		return
-	if(!P.nodamage && (P.damage_type == BURN) || (P.damage_type == BRUTE))
-		var/boom_message = "[ADMIN_LOOKUPFLW(P.firer)] triggered a fueltank explosion via projectile."
+/obj/structure/reagent_dispensers/fueltank/bullet_act(obj/item/projectile/hitting_projectile)
+	if(hitting_projectile.damage > 0 && ((hitting_projectile.damage_type == BURN) || (hitting_projectile.damage_type == BRUTE)))
+		var/boom_message = "[ADMIN_LOOKUPFLW(hitting_projectile.firer)] triggered a fueltank explosion via projectile."
 		GLOB.bombers += boom_message
 		message_admins(boom_message)
-		P.firer.log_message("triggered a fueltank explosion via projectile.", LOG_ATTACK)
+		hitting_projectile.firer.log_message("triggered a fueltank explosion via projectile.", LOG_ATTACK)
 		explode() //Bluemoon change
 
 /obj/structure/reagent_dispensers/fueltank/attackby(obj/item/I, mob/living/user, params)

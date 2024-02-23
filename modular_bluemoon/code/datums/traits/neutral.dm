@@ -38,7 +38,7 @@
 
 /datum/quirk/awoo/proc/do_awoo()
 	if(quirk_holder)
-		if((last_awoo + 5 SECONDS) > world.time)
+		if((last_awoo + 10 SECONDS) > world.time)
 			return
 		// Check if conscious
 		if(quirk_holder.stat == CONSCIOUS)
