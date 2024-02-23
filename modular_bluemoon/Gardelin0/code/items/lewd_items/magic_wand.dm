@@ -89,7 +89,8 @@
 				M.Stun(3)
 				if(prob(50))
 					M.emote("moan")
-
+		if(!HAS_TRAIT(M, TRAIT_LEWD_JOB))
+			new /obj/effect/temp_visual/heart(M.loc)
 	else if(user.a_intent == INTENT_HARM)
 		return ..()
 
@@ -129,6 +130,9 @@
 				M.Stun(3)
 				if(prob(50))
 					M.emote("moan")
+
+		if(!HAS_TRAIT(M, TRAIT_LEWD_JOB))
+			new /obj/effect/temp_visual/heart(M.loc)
 
 /obj/item/magicwand/equipped(mob/living/carbon/M)
 	. = ..()

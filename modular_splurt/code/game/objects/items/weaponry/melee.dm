@@ -27,7 +27,8 @@
 			playsound(loc, pick('modular_sand/sound/interactions/bang4.ogg',
 								'modular_sand/sound/interactions/bang5.ogg',
 								'modular_sand/sound/interactions/bang6.ogg'), 70, 1, -1)
-
+			if(!HAS_TRAIT(target, TRAIT_LEWD_JOB))
+				new /obj/effect/temp_visual/heart(target.loc)
 	else //Standart code
 		. = ..()
 		if(HAS_TRAIT(user, TRAIT_PACIFISM))
