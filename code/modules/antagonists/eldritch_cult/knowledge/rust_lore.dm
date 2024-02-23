@@ -1,11 +1,11 @@
 /datum/eldritch_knowledge/base_rust
 	name = "Blacksmith's Tale"
-	desc = "Inducts you into the Path of Rust. Allows you to transmute a spear with any trash item into a Blade of Rust."
+	desc = "Inducts you into the Path of Rust. Allows you to transmute a shiv (glass shard + cloth) with any trash item into a Blade of Rust."
 	gain_text = "'Let me tell you a story', said the Blacksmith, as he gazed deep into his rusty blade."
 	banned_knowledge = list(/datum/eldritch_knowledge/base_ash,/datum/eldritch_knowledge/base_flesh,/datum/eldritch_knowledge/final/ash_final,/datum/eldritch_knowledge/final/flesh_final,/datum/eldritch_knowledge/final/void_final,/datum/eldritch_knowledge/base_void)
 	next_knowledge = list(/datum/eldritch_knowledge/rust_fist)
 	required_atoms = list(
-		/obj/item/spear = 1,
+		/obj/item/kitchen/knife/shiv = 1,
 		/obj/item/trash = 1,
 	)
 	result_atoms = list(/obj/item/melee/sickly_blade/rust)
