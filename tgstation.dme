@@ -4147,6 +4147,7 @@
 #include "modular_bluemoon\Fink\code\clothing\mouthring.dm"
 #include "modular_bluemoon\Fink\code\clothing\loadout\hat.dm"
 #include "modular_bluemoon\Fink\code\clothing\loadout\mask.dm"
+#include "modular_bluemoon\Fink\code\datums\traits\neutral.dm"
 #include "modular_bluemoon\Fink\code\items\implant_anchor.dm"
 #include "modular_bluemoon\Fink\code\items\memorizer.dm"
 #include "modular_bluemoon\Fink\code\items\shieldbelt.dm"

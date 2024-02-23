@@ -44,3 +44,7 @@
 	user.visible_message(span_lewd("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	partner.handle_post_sex(NORMAL_LUST, CUM_TARGET_VAGINA, user, ORGAN_SLOT_VAGINA) //SPLURT edit
 	user.handle_post_sex(NORMAL_LUST, CUM_TARGET_VAGINA, partner, ORGAN_SLOT_VAGINA) //SPLURT edit
+	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(user.loc)
+	if(!HAS_TRAIT(partner, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(partner.loc)

@@ -50,3 +50,5 @@
 #define TRAIT_RUSSIAN			"russian"
 #define TRAIT_HARD_SOLES 		"hard_soles"
 #define TRAIT_MESSY				"messy"
+//BLUEMOON ADD
+#define TRAIT_LEWD_JOB			"lewd_job"

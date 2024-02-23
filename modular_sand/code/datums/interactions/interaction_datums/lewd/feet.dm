@@ -49,6 +49,10 @@
 						'modular_sand/sound/interactions/foot_dry4.ogg'), 70, 1, -1)
 	user.visible_message(message = span_lewd("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	partner.handle_post_sex(LOW_LUST, null, user)
+	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(user.loc)
+	if(!HAS_TRAIT(partner, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(partner.loc)
 
 /datum/interaction/lewd/grindmouth
 	description = "Ножки. Углубиться в ротик."
@@ -104,6 +108,10 @@
 						'modular_sand/sound/interactions/foot_wet3.ogg'), 70, 1, -1)
 	user.visible_message(message = span_lewd("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	partner.handle_post_sex(LOW_LUST, null, user)
+	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(user.loc)
+	if(!HAS_TRAIT(partner, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(partner.loc)
 
 /datum/interaction/lewd/footjob
 	description = "Ножки. Подрочить одной ногой."
@@ -191,3 +199,7 @@
 						'modular_sand/sound/interactions/foot_wet2.ogg'), 70, 1, -1)
 	user.visible_message(message = span_lewd("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	partner.handle_post_sex(NORMAL_LUST, CUM_TARGET_FEET, user, ORGAN_SLOT_VAGINA) //SPLURT edit
+	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(user.loc)
+	if(!HAS_TRAIT(partner, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(partner.loc)
