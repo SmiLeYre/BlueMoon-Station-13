@@ -4,7 +4,7 @@
 	gain_text = "Hundreds of us starved, but not me... I found strength in my greed."
 	banned_knowledge = list(/datum/eldritch_knowledge/base_ash,/datum/eldritch_knowledge/base_rust,/datum/eldritch_knowledge/final/ash_final,/datum/eldritch_knowledge/final/rust_final,/datum/eldritch_knowledge/final/void_final,/datum/eldritch_knowledge/base_void)
 	next_knowledge = list(/datum/eldritch_knowledge/flesh_grasp)
-	required_atoms = list(/obj/item/kitchen/knife/shiv,/obj/effect/decal/cleanable/blood) //BLUEMOON CHANGES, WAS /obj/item/spear
+	required_atoms = list(/obj/item/kitchen/knife/shiv,/obj/effect/decal/cleanable/blood) //BLUEMOON CHANGES, WAS required_atoms = list(/obj/item/spear,/obj/effect/decal/cleanable/blood)
 	result_atoms = list(/obj/item/melee/sickly_blade/flesh)
 	cost = 0
 	route = PATH_FLESH

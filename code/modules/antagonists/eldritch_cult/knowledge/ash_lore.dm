@@ -4,7 +4,7 @@
 	gain_text = "The City Guard know their watch. If you ask them at night, they may tell you about the ashy lantern."
 	banned_knowledge = list(/datum/eldritch_knowledge/base_rust,/datum/eldritch_knowledge/base_flesh,/datum/eldritch_knowledge/final/rust_final,/datum/eldritch_knowledge/final/flesh_final,/datum/eldritch_knowledge/final/void_final,/datum/eldritch_knowledge/base_void)
 	next_knowledge = list(/datum/eldritch_knowledge/ashen_grasp)
-	required_atoms = list(/obj/item/kitchen/knife/shiv,/obj/item/match) //BLUEMOON CHANGES, WAS /obj/item/spear
+	required_atoms = list(/obj/item/kitchen/knife/shiv,/obj/item/match) //BLUEMOON CHANGES, WAS required_atoms = list(/obj/item/spear,/obj/item/match)
 	result_atoms = list(/obj/item/melee/sickly_blade/ash)
 	cost = 0
 	route = PATH_ASH
