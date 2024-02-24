@@ -21,7 +21,7 @@
 /datum/eldritch_knowledge/ashen_grasp
 	name = "Grasp of Ash"
 	gain_text = "He knew how to walk between the planes."
-	desc = "Empowers your mansus grasp to knock enemies down and throw them away."
+	desc = "Empowers your Mansus Grasp to blind opponents you touch with it."
 	cost = 1
 	next_knowledge = list(/datum/eldritch_knowledge/spell/ashen_shift)
 	route = PATH_ASH
@@ -30,23 +30,22 @@
 	. = ..()
 	if(!iscarbon(target))
 		return
+	var/mob/living/carbon/blind_victim = target
+	to_chat(blind_victim, span_danger("Your eyes burn horrifically!")) //pocket sand! also, this is the message that changeling blind stings use, and no, I'm not ashamed about reusing it
+	blind_victim.become_nearsighted(EYE_DAMAGE)
+	blind_victim.blind_eyes(5)
+	blind_victim.blur_eyes(10)
 
-	var/mob/living/carbon/C = target
-	var/datum/status_effect/eldritch/E = C.has_status_effect(/datum/status_effect/eldritch/rust) || C.has_status_effect(/datum/status_effect/eldritch/ash) || C.has_status_effect(/datum/status_effect/eldritch/flesh) || C.has_status_effect(/datum/status_effect/eldritch/void)
-	if(E)
-		. = TRUE
-		E.on_effect()
-		for(var/X in user.mind.spell_list)
-			if(!istype(X,/obj/effect/proc_holder/spell/targeted/touch/mansus_grasp))
-				continue
-			var/obj/effect/proc_holder/spell/targeted/touch/mansus_grasp/MG = X
-			MG.charge_counter = min(round(MG.charge_counter + MG.charge_max * 0.75),MG.charge_max) // refunds 75% of charge.
-	var/atom/throw_target = get_edge_target_turf(C, user.dir)
-	if(!C.anchored)
-		. = TRUE
-		C.throw_at(throw_target, rand(4,8), 14, user)
-	return
-
+/datum/eldritch_knowledge/ashen_grasp/on_eldritch_blade(atom/target, mob/user, proximity_flag, click_parameters)
+	. = ..()
+	if(!iscarbon(target))
+		return
+	var/mob/living/carbon/victim = target
+	var/datum/status_effect/eldritch/effect = victim.has_status_effect(/datum/status_effect/eldritch/rust) || victim.has_status_effect(/datum/status_effect/eldritch/ash) || victim.has_status_effect(/datum/status_effect/eldritch/flesh) || victim.has_status_effect(/datum/status_effect/eldritch/void)
+	if(effect)
+		effect.on_effect()
+		for(var/obj/effect/proc_holder/spell/targeted/touch/mansus_grasp/grasp in user.mind.spell_list)
+			grasp.charge_counter = min(round(grasp.charge_counter + grasp.charge_max * 0.75), grasp.charge_max) // refunds 75% of charge.
 /datum/eldritch_knowledge/ashen_eyes
 	name = "Ashen Eyes"
 	gain_text = "Piercing eyes, guide me through the mundane."
