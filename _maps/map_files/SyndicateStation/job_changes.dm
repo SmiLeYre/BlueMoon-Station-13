@@ -1,5 +1,3 @@
-#define JOB_MODIFICATION_MAP_NAME "SyndicateBoxStation"
-
 /datum/job/captain/New()
 	. = ..()
 	if(SSmapping.config?.map_name == "Syndicate Station")

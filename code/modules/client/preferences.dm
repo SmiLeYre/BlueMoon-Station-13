@@ -255,6 +255,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 "silicon_flavor_text" = "",
 "custom_species_lore" = "",
 "custom_deathgasp" = "застывает и падает без сил, глаза мертвы и безжизненны...", // BLUEMOON ADD - пользовательский эмоут смерти
+"custom_deathsound" = "По умолчанию", // BLUEMOON ADD - пользовательский эмоут смерти
 "ooc_notes" = "",
 "meat_type" = "Mammalian",
 "body_model" = MALE,
@@ -278,6 +279,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/bark_pitch = 1
 	var/bark_variance = 0.2
 	COOLDOWN_DECLARE(bark_previewing)
+	COOLDOWN_DECLARE(deathsound_preview) // BLUEMOON ADD - пользовательский эмоут смерти
 
 	/// Security record note section
 	var/security_records
@@ -677,6 +679,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							dat += "[html_encode(features["custom_deathgasp"])]<BR>"
 					else
 						dat += "[TextPreview(html_encode(features["custom_deathgasp"]))]...<BR>"
+					dat += "<h2>Custom Deathgasp Sound</h2>"
+					dat += "<a href='?_src_=prefs;preference=custom_deathsound;task=input'><b>Set Custom Deathsound</b></a><br>"
+					dat += "[features["custom_deathsound"]]<BR>"
+					dat += "<BR><a href='?_src_=prefs;preference=deathsoundpreview;task=input''>Preview Deathsound</a><BR>"
 					// BLUEMOON ADD END
 					dat += "<h2>Silicon Flavor Text</h2>"
 					dat += "<a href='?_src_=prefs;preference=silicon_flavor_text;task=input'><b>Set Silicon Examine Text</b></a><br>"
@@ -2378,6 +2384,32 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/msg = input(usr, "Задайте эмоцию, которая будет проигрываться при смерти вашего персонажа!", "Сообщение О Смерти", features["custom_deathgasp"]) as message|null
 					if(!isnull(msg))
 						features["custom_deathgasp"] = strip_html_simple(msg, MAX_DEATHGASP_LEN, TRUE)
+				if("custom_deathsound")
+					var/sound_name = input(user, "Выберите звук смерти персонажа!", "Звук Смерти") as null|anything in GLOB.deathgasp_sounds
+					if(sound_name)
+						features["custom_deathsound"] = sound_name
+				if("deathsoundpreview")
+					if(SSticker.current_state == GAME_STATE_STARTUP) //Timers don't tick at all during game startup, so let's just give an error message
+						to_chat(user, "<span class='warning'>Deathgasp sound previews can't play during initialization!</span>")
+						return
+					if(!COOLDOWN_FINISHED(src, deathsound_preview))
+						return
+					if(!user)
+						return
+					COOLDOWN_START(src, deathsound_preview, (3 SECONDS))
+					var/picked_deathsound_name = features["custom_deathsound"]
+					var/picked_deathsound_path
+					if(picked_deathsound_name)
+						if(picked_deathsound_name == "По умолчанию")
+							picked_deathsound_path = pick('sound/voice/deathgasp1.ogg', 'sound/voice/deathgasp2.ogg')
+						if(picked_deathsound_name == "Беззвучный")
+							picked_deathsound_path = 0
+						if(GLOB.deathgasp_sounds[picked_deathsound_name])
+							picked_deathsound_path = GLOB.deathgasp_sounds[picked_deathsound_name]
+					if(picked_deathsound_path)
+						user.playsound_local(user, picked_deathsound_path, 60)
+					else
+						to_chat(user, "<span class='warning'>Вы выбрали беззвучный deathgasp или выбранный вами звук отсутствует!</span>")
 				// BLUEMOON ADD END
 				if("ooc_notes")
 					var/msg = stripped_multiline_input(usr, "Установите всегда видимые OOC-заметки, связанные с вашими предпочтениями.", "ООС-Заметки", html_decode(features["ooc_notes"]), MAX_FLAVOR_LEN, TRUE)

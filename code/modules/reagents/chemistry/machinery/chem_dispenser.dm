@@ -184,6 +184,9 @@
 		update_icon()
 
 /obj/machinery/chem_dispenser/ui_interact(mob/user, datum/tgui/ui)
+	if(HAS_TRAIT(user, TRAIT_PACIFISM))
+		to_chat(user, span_notice("Я боюсь использовать [src]... вдруг это приведёт к катастрофическим последствиям?"))
+		return
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "ChemDispenser", name)

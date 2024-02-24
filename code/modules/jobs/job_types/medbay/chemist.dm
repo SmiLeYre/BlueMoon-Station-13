@@ -24,6 +24,8 @@
 	threat = 1.5
 
 	starting_modifiers = list(/datum/skill_modifier/job/surgery, /datum/skill_modifier/job/affinity/surgery)
+	blacklisted_quirks = list(/datum/quirk/nonviolent)
+
 
 	family_heirlooms = list(
 		/obj/item/book/manual/wiki/chemistry,

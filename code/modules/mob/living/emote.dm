@@ -107,27 +107,37 @@
 	message_larva = "выпускает воздух с тошнотворным шипением и падает на пол...."
 	message_monkey = "издает свой последний крик, когда последние частицы души уходят из тела и наконец-то... перестает двигаться..."
 	message_simple =  "прекращает всякое движение..."
+	emote_cooldown = 9 SECONDS // BLUEMOON EDIT - повысил кулдаун эмоута в связи с возможно слишком долгими/громкими кастомными звуками
 	stat_allowed = UNCONSCIOUS
 
+// BLUEMOON EDIT START - настройки эмоута смерти в преференсах
 /datum/emote/living/deathgasp/run_emote(mob/user, params)
-    var/mob/living/simple_animal/S = user
-	// BLUEMOON ADD START - пользовательский эмоут смерти
-    if(user?.client?.prefs?.features["custom_deathgasp"])
-        message = user.client.prefs.features["custom_deathgasp"]
-	// BLUEMOON ADD END
-    if(istype(S) && S.deathmessage)
-        message_simple = S.deathmessage
-    . = ..()
-    message = initial(message) // BLUEMOON ADD - пользовательский эмоут смерти
-    message_simple = initial(message_simple)
-    if(. && user.deathsound)
-        if(isliving(user))
-            var/mob/living/L = user
-            if(!L.can_speak_vocal() || L.oxyloss >= 50)
-                return //stop the sound if oxyloss too high/cant speak
-        playsound(user, pick(user.deathsound), 200, 0, 0)
-    if(. && isalienadult(user))
-        playsound(user.loc, 'sound/voice/hiss6.ogg', 80, 1, 1)
+	var/mob/living/simple_animal/S = user
+	if(user?.client?.prefs?.features["custom_deathgasp"])
+		message = user.client.prefs.features["custom_deathgasp"]
+	if(istype(S) && S.deathmessage)
+		message_simple = S.deathmessage
+	. = ..()
+	message = initial(message)
+	message_simple = initial(message_simple)
+	if(!.)
+		return
+	var/deathsound = pick(user.deathsound)
+	if(isalienadult(user))
+		deathsound = 'sound/voice/hiss6.ogg'
+	if(user?.client?.prefs?.features["custom_deathsound"]) // Если у клиента выбран соответствующий преференс - он приоритетнее всего
+		var/preference_deathsound = GLOB.deathgasp_sounds[user.client.prefs.features["custom_deathsound"]]
+		if(preference_deathsound == -1) // Беззвучный
+			return
+		if(preference_deathsound)
+			deathsound = preference_deathsound
+	if(deathsound)
+		if(isliving(user))
+			var/mob/living/L = user
+			if(!L.can_speak_vocal() || (L.oxyloss >= 50 && !HAS_TRAIT(L, TRAIT_NOBREATH)))
+				return //stop the sound if oxyloss too high/cant speak
+		playsound(user, deathsound, 200, 0, 0)
+// BLUEMOON EDIT END
 
 /datum/emote/living/drool
 	key = "drool"
