@@ -1,5 +1,3 @@
-#define JOB_MODIFICATION_MAP_NAME "PrisonStation"
-
 /datum/job/captain/New()
 	. = ..()
 	if(SSmapping.config?.map_name == "PrisonStation")
