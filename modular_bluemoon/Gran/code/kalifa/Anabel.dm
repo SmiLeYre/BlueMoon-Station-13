@@ -1,7 +1,7 @@
 /obj/item/gun/energy/e_gun/hos/Anabel
 	name = "\improper Anabel"
 	desc = "This is an expensive, modern recreation of an antique laser gun. This gun has several unique firemodes, but lacks the ability to recharge over time in exchange for inbuilt advanced firearm EMP shielding. <span class='boldnotice'>Right click in combat mode to fire a taser shot with a cooldown.</span>"
-	icon = 'modular_bluemoon/Gran/code/kalifa/Anabel.dmi'
+	icon = 'modular_bluemoon/Gran/code/kalifa/icons/Anabel.dmi'
 	icon_state = "Anabel"
 	cell_type = /obj/item/stock_parts/cell{charge = 1500; maxcharge = 1500}
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser/lightliz)

@@ -551,5 +551,5 @@
 	name = "Miniature Energy Gun into Anabel Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/modkit/Anabel_kit
-	ckeywhitelist = list("kalidasilf")
+	ckeywhitelist = list("kalidasilf", "dofalt")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
