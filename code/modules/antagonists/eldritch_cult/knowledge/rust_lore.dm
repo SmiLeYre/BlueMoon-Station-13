@@ -5,7 +5,7 @@
 	banned_knowledge = list(/datum/eldritch_knowledge/base_ash,/datum/eldritch_knowledge/base_flesh,/datum/eldritch_knowledge/final/ash_final,/datum/eldritch_knowledge/final/flesh_final,/datum/eldritch_knowledge/final/void_final,/datum/eldritch_knowledge/base_void)
 	next_knowledge = list(/datum/eldritch_knowledge/rust_fist)
 	required_atoms = list(
-		/obj/item/kitchen/knife/shiv = 1, //BLUEMOON CHANGES, WAS /obj/item/spear = 1,
+		/obj/item/kitchen/knife/shiv = 1, //BLUEMOON CHANGES, WAS /obj/item/spear
 		/obj/item/trash = 1,
 	)
 	result_atoms = list(/obj/item/melee/sickly_blade/rust)

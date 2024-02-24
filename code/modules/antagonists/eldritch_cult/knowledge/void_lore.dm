@@ -4,7 +4,7 @@
 	gain_text = "I feel a shimmer in the air, atmosphere around me gets colder. I feel my body realizing the emptiness of existance. Something's watching me"
 	banned_knowledge = list(/datum/eldritch_knowledge/base_ash,/datum/eldritch_knowledge/base_flesh,/datum/eldritch_knowledge/final/ash_final,/datum/eldritch_knowledge/final/flesh_final,/datum/eldritch_knowledge/base_rust,/datum/eldritch_knowledge/final/rust_final)
 	next_knowledge = list(/datum/eldritch_knowledge/void_grasp)
-	required_atoms = list(/obj/item/kitchen/knife/shiv) //BLUEMOON CHANGES, WAS required_atoms = list(/obj/item/spear)
+	required_atoms = list(/obj/item/kitchen/knife/shiv) //BLUEMOON CHANGES, WAS /obj/item/spear
 	result_atoms = list(/obj/item/melee/sickly_blade/void)
 	cost = 0
 	route = PATH_VOID
