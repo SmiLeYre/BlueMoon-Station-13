@@ -18,6 +18,7 @@
 	next_knowledge = list(/datum/eldritch_knowledge/ash_mark,/datum/eldritch_knowledge/essence,/datum/eldritch_knowledge/ashen_eyes)
 	route = PATH_ASH
 
+// Bluemoon changes. Deleted knock + sthrow, added blind + cd reduction
 /datum/eldritch_knowledge/ashen_grasp
 	name = "Grasp of Ash"
 	gain_text = "He knew how to walk between the planes."
