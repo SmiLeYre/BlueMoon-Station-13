@@ -173,7 +173,7 @@
 	owner.adjustToxLoss(-5, TRUE, TRUE)
 	..()
 
-/obj/item/organ/heart/gland/heal/ossmodula/Insert(mob/living/carbon/M)
+/obj/item/organ/heart/gland/heal/ossmodula/Insert(mob/living/carbon/M, drop_if_replaced = TRUE)
 	..()
 	ADD_TRAIT(owner, TRAIT_GIANT, GENETIC_MUTATION)
 	var/size = get_size(owner)
