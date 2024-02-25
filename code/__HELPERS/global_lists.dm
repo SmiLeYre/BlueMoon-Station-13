@@ -62,6 +62,40 @@
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/testicles, GLOB.balls_shapes_list)
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/anus, GLOB.anus_shapes_list)
 
+	// BLUEMOON ADD START - сортировка всех маркингов
+	GLOB.hair_styles_list = sort_list(GLOB.hair_styles_list)
+	GLOB.facial_hair_styles_list = sort_list(GLOB.facial_hair_styles_list)
+
+	GLOB.tails_list_lizard = sort_list(GLOB.tails_list_lizard)
+	GLOB.tails_list_human = sort_list(GLOB.tails_list_human)
+	GLOB.snouts_list = sort_list(GLOB.snouts_list)
+	GLOB.horns_list = sort_list(GLOB.horns_list)
+	GLOB.ears_list = sort_list(GLOB.ears_list)
+
+	GLOB.wings_list = sort_list(GLOB.wings_list)
+	GLOB.frills_list = sort_list(GLOB.frills_list)
+	GLOB.spines_list = sort_list(GLOB.spines_list)
+
+	GLOB.caps_list = sort_list(GLOB.caps_list)
+
+	GLOB.insect_wings_list = sort_list(GLOB.insect_wings_list)
+	GLOB.insect_fluffs_list = sort_list(GLOB.insect_fluffs_list)
+
+	GLOB.mam_body_markings_list = sort_list(GLOB.mam_body_markings_list)
+	GLOB.mam_tails_list = sort_list(GLOB.mam_tails_list)
+	GLOB.mam_ears_list = sort_list(GLOB.mam_ears_list)
+	GLOB.mam_snouts_list = sort_list(GLOB.mam_snouts_list)
+
+	GLOB.taur_list = sort_list(GLOB.taur_list)
+
+	GLOB.xeno_head_list = sort_list(GLOB.xeno_head_list)
+	GLOB.xeno_tail_list = sort_list(GLOB.xeno_tail_list)
+	GLOB.xeno_dorsal_list = sort_list(GLOB.xeno_dorsal_list)
+
+	GLOB.ipc_screens_list = sort_list(GLOB.ipc_screens_list)
+	GLOB.ipc_antennas_list = sort_list(GLOB.ipc_antennas_list)
+	// BLUEMOON ADD END
+
 	for(var/gpath in subtypesof(/obj/item/organ/genital))
 		var/obj/item/organ/genital/G = gpath
 		if(!(initial(G.genital_flags) & GENITAL_BLACKLISTED))
