@@ -845,6 +845,11 @@
 
 	var/list/markings_list = list()
 	if(is_organic_limb())
+		// BLUEMOON ADD START - красивые ноги
+		if(istype(src, /obj/item/bodypart/l_leg) || istype(src, /obj/item/bodypart/r_leg))
+			if(species_id in list(SPECIES_HUMAN, SPECIES_MAMMAL, SPECIES_XENOHYBRID, SPECIES_SLIME_LUMI, SPECIES_SLIME, SPECIES_SYNTH_LIZARD, SPECIES_STARGAZER, SPECIES_JELLY)) // заносим только те расы, у которых есть свои прорисованные ноги. Иначе используется бэкап ниже
+				base_bp_icon = 'modular_bluemoon/icons/mob/species_legs.dmi'
+		// BLUEMOON ADD END
 		limb.icon = base_bp_icon || 'icons/mob/human_parts.dmi'
 		if(should_draw_gender)
 			limb.icon_state = "[species_id]_[body_zone]_[icon_gender]"
