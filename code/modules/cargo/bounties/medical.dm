@@ -7,34 +7,34 @@
 /datum/bounty/item/medical/lung
 	name = "Lungs"
 	description = "A recent explosion at Central Command has left multiple staff with punctured lungs. Ship spare lungs to be rewarded."
-	reward = 3000
+	reward = 7000
 	required_count = 3
 	wanted_types = list(/obj/item/organ/lungs)
 
 /datum/bounty/item/medical/appendix
 	name = "Appendix"
 	description = "Chef Gibb of Central Command wants to prepare a meal using a very special delicacy: an appendix. If you ship one, he'll pay."
-	reward = 3500 //there are no synthetic appendixes
+	reward = 4500 //there are no synthetic appendixes
 	wanted_types = list(/obj/item/organ/appendix)
 
 /datum/bounty/item/medical/ears
 	name = "Ears"
 	description = "Multiple staff at Station 12 have been left deaf due to unauthorized clowning. Ship them new ears."
-	reward = 5000
+	reward = 8000
 	required_count = 3
 	wanted_types = list(/obj/item/organ/ears)
 
 /datum/bounty/item/medical/liver
 	name = "Livers"
 	description = "Multiple high-ranking CentCom diplomats have been hospitalized with liver failure after a recent meeting with Third Soviet Union ambassadors. Help us out, will you?"
-	reward = 5500
+	reward = 8500
 	required_count = 3
 	wanted_types = list(/obj/item/organ/liver)
 
 /datum/bounty/item/medical/eye
 	name = "Organic Eyes"
 	description = "Station 5's Research Director Willem is requesting a few pairs of non-robotic eyes. Don't ask questions, just ship them."
-	reward = 3000
+	reward = 6000
 	required_count = 3
 	wanted_types = list(/obj/item/organ/eyes)
 	exclude_types = list(/obj/item/organ/eyes/robotic)
@@ -42,26 +42,26 @@
 /datum/bounty/item/medical/tongue
 	name = "Tongues"
 	description = "A recent attack by Mime extremists has left staff at Station 23 speechless. Ship some spare tongues."
-	reward = 4500
+	reward = 6500
 	required_count = 3
 	wanted_types = list(/obj/item/organ/tongue)
 
 /datum/bounty/item/medical/lizard_tail
 	name = "Lizard Tail"
 	description = "The Wizard Federation has made off with Nanotrasen's supply of lizard tails. While CentCom is dealing with the wizards, can the station spare a tail of their own?"
-	reward = 3000
+	reward = 6000
 	wanted_types = list(/obj/item/organ/tail/lizard)
 
 /datum/bounty/item/medical/cat_tail
 	name = "Cat Tail"
 	description = "Central Command has run out of heavy duty pipe cleaners. Can you ship over a cat tail to help us out?"
-	reward = 3000
+	reward = 6000
 	wanted_types = list(/obj/item/organ/tail/cat)
 
 /datum/bounty/item/medical/blood
 	name = "Generic Blood"
 	description = "Nanotrasen's annual blood drive is back up to full speed, following the garlic incident. Good blood in good volumes accepted for Credit returns."
-	reward = 3500
+	reward = 4500
 	required_count = 600
 	wanted_types = list(/datum/reagent/blood)
 
@@ -95,7 +95,7 @@
 /datum/bounty/item/medical/surgery
 	name = "Surgery tool implants"
 	description = "Our medical interns keep dropping their Shambler's Juice while they're performing open heart surgery. One of them even had the audacity to say he only had two hands!"
-	reward = 7000
+	reward = 9500
 	required_count = 3
 	wanted_types = list(/obj/item/organ/cyberimp/arm/surgery)
 
@@ -108,28 +108,28 @@
 /datum/bounty/item/medical/advhealthscaner
 	name = "Advanced Health Analyzer"
 	description = "A ERT Medical unit needs the new 'advanced health analyzer', for a mission at a Station 4. Can you send some?."
-	reward = 3000
+	reward = 6700
 	required_count = 5
 	wanted_types = list(/obj/item/healthanalyzer/advanced)
 
 /datum/bounty/item/medical/wallmounts
 	name = "Defibrillator wall mounts"
 	description = "New Space OSHA regulation state that are new cloning medical wing needs a few 'Easy to access defibrillartors'. Can you send a few before we get a lawsuit?"
-	reward = 2000
+	reward = 3600
 	required_count = 3
 	wanted_types = list(/obj/machinery/defibrillator_mount)
 
 /datum/bounty/item/medical/defibrillator
 	name = "New defibillators"
 	description = "After years of storage our defibrillation units have worn out. Please send us some new ones."
-	reward = 2250
+	reward = 6800
 	required_count = 5
 	wanted_types = list(/obj/item/defibrillator)
 
 /datum/bounty/item/medical/chainsaw
 	name = "Chainsaw"
 	description = "A CMO at CentCom is having trouble operating on golems. She requests one chainsaw, please."
-	reward = 2500
+	reward = 15500
 	wanted_types = list(/obj/item/chainsaw)
 
 /datum/bounty/item/medical/tail_whip //Like the cat tail bounties, with more processing.

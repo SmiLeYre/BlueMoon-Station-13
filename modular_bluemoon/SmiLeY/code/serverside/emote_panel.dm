@@ -642,3 +642,13 @@
 	set name = "< Мияу >"
 	set category = "Эмоции.1: Специальные Действия"
 	emote("mewo")
+
+/mob/living/verb/emote_affirmative()
+	set name = "< Утвердительный сигнал >"
+	set category = "Эмоции.2: Звуковые Действия"
+	emote("affirmative")
+
+/mob/living/verb/emote_negative()
+	set name = "< Отрицательный сигнал >"
+	set category = "Эмоции.2: Звуковые Действия"
+	emote("negative")

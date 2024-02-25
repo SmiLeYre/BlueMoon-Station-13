@@ -35,7 +35,7 @@
 	starting_modifiers = list(/datum/skill_modifier/job/level/wiring/expert, /datum/skill_modifier/job/affinity/wiring)
 
 	display_order = JOB_DISPLAY_ORDER_CHIEF_ENGINEER
-	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/insanity)
+	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/insanity, /datum/quirk/bluemoon_criminal)
 	threat = 2
 
 	family_heirlooms = list(

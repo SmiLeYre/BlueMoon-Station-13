@@ -8,6 +8,10 @@
 	user.visible_message("<span class='lewd'><b>[user]</b> вылизывает попку <b>[partner]</b>.</span>", ignored_mobs = user.get_unconsenting())
 	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1)
 	partner.handle_post_sex(NORMAL_LUST, null, user, "anus") //SPLURT edit
+	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(user.loc)
+	if(!HAS_TRAIT(partner, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(partner.loc)
 
 /datum/interaction/lewd/lickfeet
 	description = "Ножка. Вылизать."
@@ -30,3 +34,7 @@
 	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1)
 	user.visible_message(span_lewd("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	user.handle_post_sex(LOW_LUST, null, user)
+	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(user.loc)
+	if(!HAS_TRAIT(partner, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(partner.loc)

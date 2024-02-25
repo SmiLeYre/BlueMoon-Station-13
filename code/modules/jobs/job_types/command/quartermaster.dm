@@ -31,7 +31,7 @@
 	bounty_types = CIV_JOB_RANDOM
 
 	display_order = JOB_DISPLAY_ORDER_QUARTERMASTER
-	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/insanity)
+	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/insanity, /datum/quirk/bluemoon_criminal)
 	threat = 0.5
 
 	family_heirlooms = list(

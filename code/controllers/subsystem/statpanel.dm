@@ -37,6 +37,7 @@ SUBSYSTEM_DEF(statpanels)
 			cached ? "Следующая карта: [cached.map_name]" : null,
 			"ID раунда: [GLOB.round_id ? GLOB.round_id : "NULL"]",
 			"Игровой Режим: [GLOB.master_mode]",
+			"Предыдущие Режимы: [jointext(SSpersistence.saved_modes, ", ")]", // Because some of us want to know when our favorite mode becomes forced - Flauros
 			"Подключено Игроков: [GLOB.clients.len]",
 			"Отклонения Во Времени: [round(SStime_track.time_dilation_current,1)]% AVG:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)",
 			"Время Сервера: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",

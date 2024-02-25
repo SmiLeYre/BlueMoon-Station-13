@@ -1,5 +1,3 @@
-#define JOB_MODIFICATION_MAP_NAME "SpookyStation"
-
 /turf
 	baseturfs = /turf/open/misc/grass
 

@@ -6,6 +6,7 @@
 
 /obj/machinery/rnd/production/ui_interact(mob/user)
 	if(isobserver(user))
+		to_chat(user, span_red("<B>Протолат недопустим к использованию со стороны гостов!</B>"))
 		return
 	// Check if user can use machine
 	if(!user.can_use_production(src))

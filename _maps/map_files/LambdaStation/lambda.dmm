@@ -26971,13 +26971,6 @@
 /obj/structure/table,
 /obj/item/folder/red,
 /obj/item/taperecorder,
-/obj/item/radio/intercom{
-	broadcasting = 1;
-	frequency = 1423;
-	listening = 0;
-	name = "Interrogation Intercom";
-	pixel_y = -24
-	},
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
@@ -26987,6 +26980,15 @@
 	},
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
+	},
+/obj/item/radio/intercom{
+	frequency = 1455;
+	name = "listening to the interrogation room";
+	pixel_y = -32;
+	canhear_range = 3;
+	broadcasting = 1;
+	listening = 0;
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/brig)
@@ -70685,6 +70687,15 @@
 /obj/effect/turf_decal/tile/red,
 /turf/open/floor/plasteel,
 /area/hallway/secondary/exit/departure_lounge)
+"rfh" = (
+/obj/item/radio/intercom{
+	frequency = 1455;
+	name = "listening to the interrogation room";
+	dir = 8;
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/grimy,
+/area/security/brig)
 "rgo" = (
 /obj/machinery/power/apc{
 	areastring = "/area/security/brig";
@@ -115784,7 +115795,7 @@ aqG
 aKS
 aLB
 cQM
-aKR
+rfh
 axa
 bap
 aPY

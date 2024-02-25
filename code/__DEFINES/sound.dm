@@ -245,3 +245,20 @@ GLOBAL_LIST_INIT(announcer_keys, list(
 	ANNOUNCER_IROD,
 	ANNOUNCER_LAMBDA
 ))
+
+// Возможные звуки эмоции *deathgasp
+GLOBAL_LIST_INIT(deathgasp_sounds, list(
+	"По умолчанию" =		null,
+	"Беззвучный" =			-1,
+	"Классический (1)" =	'sound/voice/deathgasp1.ogg',
+	"Классический (2)" =	'sound/voice/deathgasp2.ogg',
+	"Киборг" =				'sound/voice/borg_deathsound.ogg',
+	"Демон" =				'sound/magic/demon_dies.ogg',
+	"Имп" =					'modular_sand/sound/misc/impdies.wav',
+	"Гладиатор" =			'modular_sand/sound/effects/gladiatordeathsound.ogg',
+	"Посох Смерти" =		'sound/magic/WandODeath.ogg',
+	"Проклятие" =			'sound/magic/curse.ogg',
+	"Конструкт Ратвара" =	'sound/magic/clockwork/anima_fragment_death.ogg',
+	"Ксеноморф" =			'sound/voice/hiss6.ogg',
+	"Свинья" =				'modular_bluemoon/SmiLeY/code/mob/pig/death.ogg'
+	))

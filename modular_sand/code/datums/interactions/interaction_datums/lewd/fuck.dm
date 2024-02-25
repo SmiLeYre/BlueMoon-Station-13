@@ -175,3 +175,7 @@
 						'modular_sand/sound/interactions/foot_wet2.ogg'), 70, 1, -1)
 	user.visible_message(span_lewd("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	user.handle_post_sex(NORMAL_LUST, CUM_TARGET_FEET, partner, ORGAN_SLOT_VAGINA) //SPLURT edit
+	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(user.loc)
+	if(!HAS_TRAIT(partner, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(partner.loc)
