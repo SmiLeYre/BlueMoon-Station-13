@@ -118,7 +118,7 @@
 	'sound/voice/human/rus4.ogg', 'sound/voice/human/rus5.ogg', 'sound/voice/human/rus6.ogg')
 
 #define SPASEMAR_SCREAMS list('modular_bluemoon/Ren/Sound/screams/he_die.ogg', 'modular_bluemoon/Ren/Sound/screams/aah_1.ogg', 'modular_bluemoon/Ren/Sound/screams/nooh.ogg', 'modular_bluemoon/Ren/Sound/screams/nyaahaa.ogg',\
-	'modular_bluemoon/Ren/Sound/screams/oh.ogg')
+	'modular_bluemoon/Ren/Sound/screams/oh.ogg') // BLUEMOON CHANGE
 
 #define BLOOD_SCREAMS list('modular_bluemoon/kovac_shitcode/sound/blood/cult_1.ogg', 'modular_bluemoon/kovac_shitcode/sound/blood/cult_2.ogg', 'modular_bluemoon/kovac_shitcode/sound/blood/cult_3.ogg',\
 	'modular_bluemoon/kovac_shitcode/sound/blood/cult_4.ogg', 'modular_bluemoon/kovac_shitcode/sound/blood/cult_5.ogg')
