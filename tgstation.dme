@@ -4132,6 +4132,7 @@
 #include "modular_bluemoon\code\modules\jobs\job_types\synthetics\cyborg.dm"
 #include "modular_bluemoon\code\modules\language\felinid.dm"
 #include "modular_bluemoon\code\modules\mob\bluemoon_emotes.dm"
+#include "modular_bluemoon\code\modules\mob\dead\new_player\sprite_accesories\body_markings.dm"
 #include "modular_bluemoon\code\modules\reagents\chemistry\recipes\recipes.dm"
 #include "modular_bluemoon\code\modules\resize\resizing.dm"
 #include "modular_bluemoon\code\modules\surgery\amputation_robotic.dm"
