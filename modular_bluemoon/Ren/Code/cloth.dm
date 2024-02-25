@@ -97,8 +97,9 @@
 	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
 	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
 	equip_delay_self = 50
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	alternate_screams = SPASEMAR_SCREAMS
-	armor = list(MELEE = 40, BULLET = 60, LASER = 40, ENERGY = 30, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 20)
+	armor = list(MELEE = 50, BULLET = 50, LASER = 40, ENERGY = 30, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 20)
 	equip_sound = 'modular_bluemoon/Ren/Sound/equp1.ogg'
 	mutantrace_variation = NONE
 	unique_reskin = list("Dark Power Armour helmet holy patern" = list(RESKIN_ICON_STATE = "darktemplar_chaplai_helm"), "Dark Power Armour helmet InteQ patern MKI" = list(RESKIN_ICON_STATE = "darktemplar_helm_inteq"), "Dark Power Armour helmet InteQ patern MKII" = list(RESKIN_ICON_STATE = "darktemplar_helm_inteq_alt"))
@@ -111,8 +112,9 @@
 	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
 	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
 	equip_delay_self = 50
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	alternate_screams = SPASEMAR_SCREAMS
-	armor = list(MELEE = 40, BULLET = 60, LASER = 40, ENERGY = 30, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 20)
+	armor = list(MELEE = 50, BULLET = 50, LASER = 40, ENERGY = 30, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 20)
 	equip_sound = 'modular_bluemoon/Ren/Sound/equp.ogg'
 	mutantrace_variation = NONE
 	unique_reskin = list("Dark Power Armour holy patern" = list(RESKIN_ICON_STATE = "darktemplar_chaplai"), "Dark Power Armour InteQ patern MKI" = list(RESKIN_ICON_STATE = "darktemplar_inteq"), "Dark Power Armour InteQ patern MKII" = list(RESKIN_ICON_STATE = "darktemplar_inteq_alt") )
@@ -133,6 +135,7 @@
 /obj/item/clothing/mask/gas/sechailer/angrymarin
 	name = "Space Marine Gas Mask"
 	desc = "Древняя система подачи кислорода объединёная с вокс системой, усиливающей голос пользователя"
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	actions_types = list(/datum/action/item_action/halt)
 	aggressiveness = 999 ///Очень злой
 	recent_uses = -10
@@ -142,6 +145,7 @@
 	name = "Power boots"
 	desc = "Тяжёлые латные ботинки созданые, что бы ходить по трупам поверженых врагов."
 	clothing_flags = NOSLIP
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	armor = list(MELEE = 15, BULLET = 15, LASER = 15, ENERGY = 15, BOMB = 0, BIO = 0, RAD = 0, FIRE = 40, ACID = 75)
 
 /obj/item/clothing/shoes/jackboots/powerbots/Initialize(mapload)
@@ -165,7 +169,7 @@
 	var/list/possible_reagents = list()
 
 /obj/item/organ/heart/gland/heal/ossmodula/activate()
-	owner.reagents.add_reagent(/datum/reagent/medicine/omnizine, 0.5)
+	owner.reagents.add_reagent(/datum/reagent/medicine/lesser_syndicate_nanites, 1)
 	owner.adjustToxLoss(-5, TRUE, TRUE)
 	..()
 
