@@ -80,6 +80,7 @@
 
 	GLOB.insect_wings_list = sort_list(GLOB.insect_wings_list)
 	GLOB.insect_fluffs_list = sort_list(GLOB.insect_fluffs_list)
+	GLOB.deco_wings_list = sort_list(GLOB.deco_wings_list)
 
 	GLOB.mam_body_markings_list = sort_list(GLOB.mam_body_markings_list)
 	GLOB.mam_tails_list = sort_list(GLOB.mam_tails_list)
