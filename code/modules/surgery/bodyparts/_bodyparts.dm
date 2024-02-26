@@ -846,15 +846,16 @@
 	var/list/markings_list = list()
 	if(is_organic_limb())
 		// BLUEMOON ADD START - красивые ноги
+		var/use_racial_sprite = FALSE
 		if(istype(src, /obj/item/bodypart/l_leg) || istype(src, /obj/item/bodypart/r_leg))
-			if(species_id in list(SPECIES_HUMAN, SPECIES_MAMMAL, SPECIES_XENOHYBRID, SPECIES_SLIME_LUMI, SPECIES_SLIME, SPECIES_SYNTH_LIZARD, SPECIES_STARGAZER, SPECIES_JELLY)) // заносим только те расы, у которых есть свои прорисованные ноги. Иначе используется бэкап ниже
-				base_bp_icon = 'modular_bluemoon/icons/mob/species_legs.dmi'
+			if(species_id in list(SPECIES_HUMAN, SPECIES_MAMMAL, SPECIES_XENOHYBRID, SPECIES_SLIME_LUMI, SPECIES_SLIME, SPECIES_SYNTH_LIZARD, SPECIES_STARGAZER, SPECIES_JELLY, "vox")) // заносим только те расы, у которых есть свои прорисованные ноги. Иначе используется бэкап ниже
+				use_racial_sprite = TRUE
 		// BLUEMOON ADD END
 		limb.icon = base_bp_icon || 'icons/mob/human_parts.dmi'
 		if(should_draw_gender)
 			limb.icon_state = "[species_id]_[body_zone]_[icon_gender]"
 		else if (use_digitigrade)
-			if(base_bp_icon == DEFAULT_BODYPART_ICON_ORGANIC) //Compatibility hack for the current iconset.
+			if(!use_racial_sprite) // BLUEMOON CHANGES - was if(base_bp_icon == DEFAULT_BODYPART_ICON_ORGANIC) - чтобы использовались наши спрайты ног
 				limb.icon_state = "[digitigrade_type]_[use_digitigrade]_[body_zone]"
 			else
 				limb.icon_state = "[species_id]_[digitigrade_type]_[use_digitigrade]_[body_zone]"
@@ -862,7 +863,7 @@
 			limb.icon_state = "[species_id]_[body_zone]"
 
 		if(istype(src, /obj/item/bodypart/l_leg) || istype(src, /obj/item/bodypart/r_leg))
-			second_limb = image(layer = -BODYPARTS_LAYER, dir = image_dir)
+			second_limb = image(layer = -BODYPARTS_LAYER-0.1, dir = image_dir) // BLUEMOON CHANGES - WAS second_limb = image(layer = -BODYPARTS_LAYER, dir = image_dir) - фикс для отображения ног (РАБОТАЕТ ТОЛЬКО ЕСЛИ ИСПОЛЬЗУЕТСЯ НАШ GREYSCALE ФАЙЛ КОНЕЧНОСТЕЙ)
 			second_limb.icon = limb.icon
 			. += second_limb
 
