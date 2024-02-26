@@ -25,7 +25,7 @@
 
 						trait_flag = TRAIT_IMPOTENT_ANUS
 					if("Edging-Only")
-						if(!(target.client?.prefs.cit_toggles & CHASTITY))
+						if(!(target.client?.prefs.cit_toggles & CHASTITY)) // BLUEMOON CHANGES - was if(!(target.client?.prefs.cit_toggles & EDGING))
 							continue
 
 						trait_flag = TRAIT_EDGINGONLY_ANUS
@@ -65,7 +65,7 @@
 				if(istype(genital, /obj/item/organ/genital/penis))
 					genital.set_aroused_state(0, "impotence") //Pp goes wooon
 			if("Edging-Only")
-				if(!(target.client?.prefs.cit_toggles & CHASTITY))
+				if(!(target.client?.prefs.cit_toggles & CHASTITY)) // BLUEMOON CHANGES - was if(!(target.client?.prefs.cit_toggles & EDGING))
 					continue
 
 				hypno_flag = GENITAL_EDGINGONLY
