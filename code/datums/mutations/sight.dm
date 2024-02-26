@@ -66,7 +66,7 @@
 	text_gain_indication = "<span class='notice'>The walls suddenly disappear!</span>"
 	instability = 75
 	locked = TRUE
-	visionflag = TRAIT_THERMAL_VISION
+	visionflag = TRAIT_XRAY_VISION
 
 
 //Laser Eyes lets you shoot lasers from your eyes!
