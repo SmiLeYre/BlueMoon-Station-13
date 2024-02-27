@@ -237,7 +237,6 @@
 
 ///InteQ Uplink additions
 
-/obj/item/spear/grey_tide
 
 /datum/uplink_item/suits/inteq_infiltrator_bundle
 	name = "SpecOps Infiltration Gear Case"
