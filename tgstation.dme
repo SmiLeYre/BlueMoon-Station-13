@@ -4134,6 +4134,7 @@
 #include "modular_bluemoon\code\modules\mob\bluemoon_emotes.dm"
 #include "modular_bluemoon\code\modules\mob\dead\new_player\sprite_accesories\akulas.dm"
 #include "modular_bluemoon\code\modules\mob\dead\new_player\sprite_accesories\body_markings.dm"
+#include "modular_bluemoon\code\modules\mob\dead\new_player\sprite_accesories\plain.dm"
 #include "modular_bluemoon\code\modules\mob\dead\new_player\sprite_accesories\secondry.dm"
 #include "modular_bluemoon\code\modules\mob\dead\new_player\sprite_accesories\synth_lizard.dm"
 #include "modular_bluemoon\code\modules\mob\dead\new_player\sprite_accesories\tertiary.dm"

@@ -16,11 +16,6 @@
 	icon_state = "flushed_cheeks"
 	covered_limbs = list("Head" =  MATRIX_RED)
 
-/datum/sprite_accessory/mam_body_markings/other/cyclops
-	name = "Partial - Cyclopean Eye"
-	icon_state = "cyclops"
-	covered_limbs = list("Head" =  MATRIX_RED)
-
 /datum/sprite_accessory/mam_body_markings/other/blank_face
 	name = "Partial - Blank round face (use with monster mouth)"
 	icon_state = "blankface"
