@@ -169,7 +169,7 @@
 	to_chat(ninja, "<span class='notice'>Hacking \the [src]...</span>")
 	AI_notify_hack()
 	if(do_after(ninja, ninja_suit.s_longdelay, target = src) && ninja_gloves.candrain && src)
-		var/announcement_pick = rand(0, 1, 2)
+		var/announcement_pick = rand(0, 2)
 		switch(announcement_pick)
 			if(0)
 				priority_announce("Внимание! Зарегистрирован сигнал коммуникаций, отправленный на неизвестный объект!", "[command_name()] Приоритетное Оповещение")
