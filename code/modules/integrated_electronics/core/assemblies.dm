@@ -80,7 +80,9 @@
 		. += "You can <a href='?src=[REF(src)];ghostscan=1'>scan</a> this circuit."
 
 	for(var/obj/item/integrated_circuit/I in assembly_components)
-		I.external_examine(user)
+		var/examine_data = I.external_examine(user)
+		if(examine_data)
+			. += examine_data
 	if(opened)
 		interact(user)
 

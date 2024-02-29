@@ -206,7 +206,7 @@
 			var/damage = weapon.w_class * remove_pain_mult
 			limb.receive_damage(brute=(1-pain_stam_pct) * damage, stamina=pain_stam_pct * damage, wound_bonus = CANT_WOUND) //It hurts to rip it out, get surgery you dingus.
 			if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
-				victim.emote("scream")
+				victim.emote("realagony")
 			victim.visible_message("<span class='notice'>[victim] достает [weapon] из [victim.ru_ego()] конечности - [limb.ru_name]!</span>", "<span class='notice'>Вы успешно удаляете [weapon] из своей конечности - [limb.ru_name].</span>")
 		else
 			victim.visible_message("<span class='notice'>[victim] достает [weapon] из [victim.ru_ego()] конечности -  [limb.ru_name]!</span>", "<span class='notice'>Вы успешно удаляете [weapon] из своей конечности -  [limb.ru_name].</span>")

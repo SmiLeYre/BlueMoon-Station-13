@@ -169,7 +169,7 @@
 	to_chat(ninja, "<span class='notice'>Hacking \the [src]...</span>")
 	AI_notify_hack()
 	if(do_after(ninja, ninja_suit.s_longdelay, target = src) && ninja_gloves.candrain && src)
-		var/announcement_pick = rand(0, 1)
+		var/announcement_pick = rand(0, 1, 2)
 		switch(announcement_pick)
 			if(0)
 				priority_announce("Внимание! Зарегистрирован сигнал коммуникаций, отправленный на неизвестный объект!", "[command_name()] Приоритетное Оповещение")
@@ -179,6 +179,10 @@
 				priority_announce("Внимание! Зарегистрирован сигнал коммуникаций, отправленный вооруженному кораблю!", "[command_name()] Приоритетное Оповещение")
 				var/datum/round_event_control/pirates/pirate_event = new/datum/round_event_control/pirates
 				pirate_event.runEvent()
+			if(2)
+				priority_announce("Внимание! Зарегистрирован сигнал коммуникаций, отправленный на соседнюю станцию! Они очень злятся!!", "[command_name()] Приоритетное Оповещение")
+				var/datum/round_event_control/meteor_wave/threatening/meteor_event = new/datum/round_event_control/meteor_wave/threatening
+				meteor_event.runEvent()
 		ninja_gloves.communication_console_hack_success = TRUE
 		var/datum/antagonist/ninja/ninja_antag = ninja.mind.has_antag_datum(/datum/antagonist/ninja)
 		if(!ninja_antag)

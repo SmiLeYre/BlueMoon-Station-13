@@ -37,7 +37,7 @@
 			if(1)
 				owner.say("HONK")
 			if(2 to 5)
-				owner.emote("scream")
+				owner.emote("realagony")
 			if(6)
 				owner.Stun(1)
 				owner.Knockdown(20)
