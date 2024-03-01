@@ -195,6 +195,10 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 			message_mode = MODE_WHISPER_CRIT
 			succumbed = TRUE
 	// BLUEMOON EDIT END
+	else if(message_mode == MODE_WHISPER)
+		message_range = 1
+		message_mode = MODE_WHISPER
+		src.log_talk(message, LOG_WHISPER)
 	else
 		src.log_talk(message, LOG_SAY, forced_by=forced)
 
