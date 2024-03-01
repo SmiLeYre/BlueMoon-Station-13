@@ -349,6 +349,7 @@ GLOBAL_LIST(topic_status_cache)
 	maxz++
 	SSmobs.MaxZChanged()
 	SSidlenpcpool.MaxZChanged()
+	SSmachines.MaxZChanged() //BLUEMOON ADD счётчик бс майнеров на z уровне
 	world.refresh_atmos_grid()
 
 /// Auxtools atmos
