@@ -87,13 +87,13 @@
 /obj/machinery/mineral/bluespace_miner/process()
 	update_icon_state()
 	if(!materials?.silo || materials?.on_hold())
+//BLUEMOON ADD майнеры недовольны когда их много, майнеры делают аномалии
 		if(registered_z)
 			SSmachines.bluespaceminer_by_zlevel[registered_z] -= src
 			registered_z = 0
 		return
 	var/datum/component/material_container/mat_container = materials.mat_container
 	if(!mat_container || panel_open || !powered() || !anchored)
-	//BLUEMOON ADD майнеры недовольны когда их много, майнеры делают аномалии
 		process_while_unused_counter++
 		if(registered_z && process_while_unused_counter >= 10)
 			SSmachines.bluespaceminer_by_zlevel[registered_z] -= src
