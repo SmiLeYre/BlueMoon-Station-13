@@ -87,6 +87,9 @@
 /obj/machinery/mineral/bluespace_miner/process()
 	update_icon_state()
 	if(!materials?.silo || materials?.on_hold())
+		if(registered_z)
+			SSmachines.bluespaceminer_by_zlevel[registered_z] -= src
+			registered_z = 0
 		return
 	var/datum/component/material_container/mat_container = materials.mat_container
 	if(!mat_container || panel_open || !powered() || !anchored)
