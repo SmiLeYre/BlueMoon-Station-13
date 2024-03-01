@@ -106,7 +106,7 @@
 	D.visible_message("<span class='warning'>[A] flips [D] over their shoulder, slamming them into the ground!</span>", \
 					  "<span class='userdanger'>[A] flips you over their shoulder, slamming you into the ground!</span>")
 	playsound(get_turf(A), 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
-	D.emote("scream")
+	D.emote("realagony")
 	D.apply_damage(damage + 10, BRUTE, BODY_ZONE_CHEST)
 	D.apply_damage(damage + 10, BRUTE, BODY_ZONE_HEAD)
 	if(damage >= stunthreshold)

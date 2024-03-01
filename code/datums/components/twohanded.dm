@@ -299,7 +299,7 @@
 	name = "offhand"
 	icon_state = "offhand"
 	w_class = WEIGHT_CLASS_HUGE
-	item_flags = ABSTRACT
+	item_flags = ABSTRACT | DROPDEL //BLUEMOON CHANGE взрыв мог выбить двуручник из рук и удалить его, а offhand оставался
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	var/wielded = FALSE // Off Hand tracking of wielded status
 

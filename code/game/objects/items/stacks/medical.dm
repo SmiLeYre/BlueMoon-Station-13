@@ -422,7 +422,7 @@
 		var/mob/living/carbon/C = user
 		C.visible_message("<span class='suicide'>[C] is squirting all of \the [src] into [C.ru_ego()] mouth! That's not proper procedure! It looks like [C.p_theyre()] trying to commit suicide!</span>")
 		if(do_after(C, 2 SECONDS))
-			C.emote("scream")
+			C.emote("realagony")
 			for(var/i in C.bodyparts)
 				var/obj/item/bodypart/bone = i
 				var/datum/wound/blunt/severe/oof_ouch = new

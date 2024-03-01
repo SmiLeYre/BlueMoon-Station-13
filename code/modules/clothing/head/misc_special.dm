@@ -23,9 +23,9 @@
 	flash_protect = 2
 	tint = 2
 	armor = list(MELEE = 10, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 100, ACID = 60)
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
+	flags_inv = HIDEMASK|HIDEEYES|HIDEFACE
 	actions_types = list(/datum/action/item_action/toggle)
-	visor_flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
+	visor_flags_inv = HIDEMASK|HIDEEYES|HIDEFACE
 	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	resistance_flags = FIRE_PROOF
 	mutantrace_variation = STYLE_MUZZLE

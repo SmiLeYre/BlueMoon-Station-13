@@ -29,7 +29,6 @@
 	faction = list("malf_drone")
 	deathmessage = "suddenly breaks apart."
 	del_on_death = 1
-	var/passive_mode = TRUE // if true, don't target anything.
 
 /mob/living/simple_animal/hostile/malf_drone/Initialize(mapload)
 	. = ..()
@@ -38,18 +37,11 @@
 /mob/living/simple_animal/hostile/malf_drone/Process_Spacemove(check_drift = 0)
 	return 1
 
-/mob/living/simple_animal/hostile/malf_drone/ListTargets()
-	if(passive_mode)
-		return list()
-	return ..()
-
 /mob/living/simple_animal/hostile/malf_drone/AttackingTarget()
 	OpenFire(target) // prevents it pointlessly nuzzling its target in melee if its cornered
 
 /mob/living/simple_animal/hostile/malf_drone/update_icons()
-	if(passive_mode)
-		icon_state = "drone_dead"
-	else if(health / maxHealth > 0.9)
+	if(health / maxHealth > 0.9)
 		icon_state = "drone3"
 	else if(health / maxHealth > 0.7)
 		icon_state = "drone2"
@@ -60,7 +52,6 @@
 
 /mob/living/simple_animal/hostile/malf_drone/adjustHealth(damage, updating_health)
 	do_sparks(3, 1, src)
-	passive_mode = FALSE
 	update_icons()
 	. = ..() // this will handle finding a target if there is a valid one nearby
 
@@ -73,11 +64,9 @@
 /mob/living/simple_animal/hostile/malf_drone/proc/scramble_settings()
 	if(prob(50))
 		do_sparks(3, 1, src)
-		passive_mode = !passive_mode
-		if(passive_mode)
-			visible_message("<span class='notice'>[src] retracts several targetting vanes.</span>")
-			if(target)
-				LoseTarget()
+		visible_message("<span class='notice'>[src] retracts several targetting vanes.</span>")
+		if(target)
+			LoseTarget()
 		else
 			visible_message("<span class='warning'>[src] suddenly lights up, and additional targetting vanes slide into place.</span>")
 		update_icons()

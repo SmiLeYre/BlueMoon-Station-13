@@ -446,6 +446,3 @@
 	actions_types = list()
 	fire_sound = 'sound/weapons/lasgun.ogg'
 	casing_ejector = FALSE
-
-/obj/item/gun/ballistic/automatic/laser/update_icon_state()
-	icon_state = "boarding"

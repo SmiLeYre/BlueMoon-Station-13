@@ -168,7 +168,7 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 // New proc to handle headshot flavor text specifically (In manage-flavour-texts while in-game)
 /mob/proc/handle_headshot_flavor(datum/element/flavor_text/F)
 	var/old_headshot = F.texts_by_atom[src]
-	var/new_headshot = input(src, "Input the image link:", "Headshot Image", old_headshot) as text|null
+	var/new_headshot = input(src, "Input the image link: (For Discord links, try putting the file's type at the end of the link, after the '&'. For example: '&.jpg/.png/.jpeg')", "Headshot Image", old_headshot) as text|null
 	if(isnull(new_headshot))
 		return
 	if(!new_headshot)

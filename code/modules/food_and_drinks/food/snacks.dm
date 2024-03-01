@@ -80,6 +80,13 @@ All foods are distributed among various categories. Use common sense.
 					reagents.add_reagent(rid, amount, tastes.Copy())
 				else
 					reagents.add_reagent(rid, amount)
+		if(bonus_reagents)
+			for(var/rid in bonus_reagents)
+				var/amount = bonus_reagents[rid]
+				if(rid == /datum/reagent/consumable/nutriment || rid == /datum/reagent/consumable/nutriment/vitamin)
+					reagents.add_reagent(rid, amount, tastes.Copy())
+				else
+					reagents.add_reagent(rid, amount)
 	else
 		..()
 

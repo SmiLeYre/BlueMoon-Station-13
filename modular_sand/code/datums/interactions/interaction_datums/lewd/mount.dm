@@ -158,3 +158,7 @@
 						'modular_sand/sound/interactions/oral2.ogg'), 70, 1, -1)
 	if(fucktarget != "penis" || user.can_penetrating_genital_cum())
 		user.handle_post_sex(NORMAL_LUST, CUM_TARGET_MOUTH, partner, genital) //SPLURT edit
+	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(user.loc)
+	if(!HAS_TRAIT(partner, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(partner.loc)

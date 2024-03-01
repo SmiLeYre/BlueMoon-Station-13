@@ -6,7 +6,7 @@
 	extended_desc = " use &lt;br&gt; to start a new line"
 	desc = "Takes any data type as an input, and displays it to the user upon examining."
 	icon_state = "screen"
-	inputs = list("displayed data" = IC_PINTYPE_ANY)
+	inputs = list("displayed data" = IC_PINTYPE_STRING)
 	outputs = list()
 	activators = list("load data" = IC_PINTYPE_PULSE_IN)
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
@@ -18,12 +18,16 @@
 	..()
 	stuff_to_display = null
 
+/obj/item/integrated_circuit/output/screen/power_fail()
+	. = ..()
+	stuff_to_display = null
+
 /obj/item/integrated_circuit/output/screen/any_examine(mob/user)
 	var/shown_label = ""
 	if(displayed_name && displayed_name != name)
 		shown_label = " labeled '[displayed_name]'"
 
-	return "There is \a [src][shown_label], which displays [!isnull(stuff_to_display) ? "'[stuff_to_display]'" : "nothing"]."
+	return "There is \a [src][shown_label], which displays [stuff_to_display ? "'[stuff_to_display]'" : "nothing"]."
 
 /obj/item/integrated_circuit/output/screen/do_work()
 	var/datum/integrated_io/I = inputs[1]
@@ -36,32 +40,23 @@
 
 /obj/item/integrated_circuit/output/screen/large
 	name = "medium screen"
-	desc = "Takes any data type as an input and displays it to anybody near the device when pulsed. \
-	It can also be examined to see the last thing it displayed."
+	desc = "Takes string data type as an input and displays it to the user upon examining, and to all nearby beings in a small area when pulsed."
 	icon_state = "screen_medium"
 	power_draw_per_use = 20
 
 /obj/item/integrated_circuit/output/screen/large/do_work()
 	..()
 
-	var/list/mobs = list()
-	if(isliving(assembly.loc))
-		mobs += assembly.loc
-		var/mob/living/L = assembly.loc
-		if(L.is_holding(src))
-			for(var/mob/M in range(1, get_turf(src)))
-				mobs += M
-	else
-		for(var/mob/M in range(2, get_turf(src)))
-			mobs += M
-
 	var/atom/host = assembly || src
+	var/list/mobs = list()
+	for(var/mob/M in viewers(2, host.loc))
+		mobs += M
 	to_chat(mobs, "<span class='notice'>[icon2html(host.icon, world, host.icon_state)] flashes a message: [stuff_to_display]</span>")
 	host.investigate_log("displayed \"[html_encode(stuff_to_display)]\" as [type].", INVESTIGATE_CIRCUIT)
 
 /obj/item/integrated_circuit/output/screen/extralarge // the subtype is called "extralarge" because tg brought back medium screens and they named the subtype /screen/large
 	name = "large screen"
-	desc = "Takes any data type as an input and displays it to the user upon examining, and to all nearby beings when pulsed."
+	desc = "Takes string data type as an input and displays it to the user upon examining, and to all nearby beings when pulsed."
 	icon_state = "screen_large"
 	power_draw_per_use = 40
 	cooldown_per_use = 10
@@ -70,7 +65,7 @@
 	..()
 	var/atom/host = assembly || src
 	var/list/mobs = list()
-	for(var/mob/M in viewers(7, get_turf(src)))
+	for(var/mob/M in viewers(7, host.loc))
 		mobs += M
 	to_chat(mobs, "<span class='notice'>[icon2html(host.icon, world, host.icon_state)] flashes a message: [stuff_to_display]</span>")
 	host.investigate_log("displayed \"[html_encode(stuff_to_display)]\" as [type].", INVESTIGATE_CIRCUIT)
@@ -105,6 +100,11 @@
 /obj/item/integrated_circuit/output/light/power_fail() // Turns off the flashlight if there's no power left.
 	light_toggled = FALSE
 	update_lighting()
+
+/obj/item/integrated_circuit/output/light/disconnect_all()
+	light_toggled = FALSE
+	update_lighting()
+	. = ..()
 
 /obj/item/integrated_circuit/output/light/advanced
 	name = "advanced light"
@@ -319,6 +319,12 @@
 		set_camera_status(0)
 		set_pin_data(IC_INPUT, 2, FALSE)
 
+/obj/item/integrated_circuit/output/video_camera/disconnect_all()
+	if(camera)
+		set_camera_status(0)
+		set_pin_data(IC_INPUT, 2, FALSE)
+	. = ..()
+
 /obj/item/integrated_circuit/output/video_camera/ext_moved(oldLoc, dir)
 	. = ..()
 	update_camera_location(oldLoc)
@@ -359,6 +365,10 @@
 
 /obj/item/integrated_circuit/output/led/power_fail()
 	set_pin_data(IC_INPUT, 1, FALSE)
+
+/obj/item/integrated_circuit/output/led/disconnect_all()
+	set_pin_data(IC_INPUT, 1, FALSE)
+	. = ..()
 
 /obj/item/integrated_circuit/output/led/external_examine(mob/user)
 	. = "There is "

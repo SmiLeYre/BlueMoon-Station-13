@@ -272,7 +272,7 @@
 
 /datum/mutation/human/paranoia/on_life()
 	if(prob(5) && owner.stat == CONSCIOUS)
-		owner.emote("scream")
+		owner.emote("realagony")
 		owner.jitteriness = min(max(0, owner.jitteriness + 5), 30)
 		if(prob(25))
 			to_chat(owner,"<span class='warning'>You feel someone creeping in on you...</span>")

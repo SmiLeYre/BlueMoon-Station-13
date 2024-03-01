@@ -493,6 +493,7 @@ Contains:
 	icon_state = "hardsuit-beserker"
 	item_state = "hardsuit-beserker"
 	tail_state = "syndicate-blood"
+	alternate_screams = SPASEMAR_SCREAMS // BLUEMOON CHANGE
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal/beserker
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal/beserker

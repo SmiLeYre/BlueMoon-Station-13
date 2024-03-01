@@ -52,3 +52,4 @@
 #define TRAIT_HARD_SOLES 				"hard_soles"
 #define TRAIT_MESSY						"messy"
 #define TRAIT_RESTORATIVE_METABOLISM	"restorative_metabolism"
+#define TRAIT_LEWD_JOB					"lewd_job"

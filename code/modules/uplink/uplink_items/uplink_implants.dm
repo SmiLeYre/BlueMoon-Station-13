@@ -22,6 +22,13 @@
 	cost = 12
 	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE
 
+/datum/uplink_item/implants/antistun
+	name = "Anti-Drop Implant"
+	desc = "This cybernetic brain implant will allow you to force your hand muscles to contract, preventing item dropping. Twitch ear to toggle."
+	item = /obj/item/autosurgeon/syndicate/anti_drop
+	cost = 12
+	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE
+
 /datum/uplink_item/implants/deathrattle
 	name = "Box of Deathrattle Implants"
 	desc = "A collection of implants (and one reusable implanter) that should be injected into the team. When one of the team \

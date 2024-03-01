@@ -8,7 +8,7 @@
 			return
 		resting = new_resting
 		if(!silent)
-			to_chat(src, "<span class='notice'>You are now [resting? "resting" : "getting up"].</span>")
+			to_chat(src, "<span class='notice'>Вы [resting? "устало падаете" : "поднимаетесь"].</span>")
 		if(resting == 1)
 			SEND_SIGNAL(src, COMSIG_LIVING_RESTING)
 		update_resting(updating)
@@ -16,7 +16,10 @@
 /mob/living/proc/update_resting(update_mobility = TRUE)
 	if(update_mobility)
 		update_mobility()
+
+	update_icon()
 	update_rest_hud_icon()
+	update_action_buttons()
 
 //Force mob to rest, does NOT do stamina damage.
 //It's really not recommended to use this proc to give feedback, hence why silent is defaulting to true.
@@ -40,7 +43,6 @@
 	else
 		if(!resting)
 			set_resting(TRUE, FALSE)
-			to_chat(src, "<span class='notice'>Вы ложитесь.</span>")
 		else
 			resist_a_rest()
 

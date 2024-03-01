@@ -481,10 +481,9 @@
 
 /obj/machinery/light/attackby(obj/item/W, mob/living/user, params)
 
-	//Light replacer code
+	//fully implemented in "lightreplacer.dm"
 	if(istype(W, /obj/item/lightreplacer))
-		var/obj/item/lightreplacer/LR = W
-		LR.ReplaceLight(src, user)
+		return //to avoid hitting it
 
 	// attempt to insert light
 	else if(istype(W, /obj/item/light))

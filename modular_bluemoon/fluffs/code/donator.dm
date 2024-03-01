@@ -546,3 +546,10 @@
 	path = /obj/item/modkit/g36_kit
 	ckeywhitelist = list("lodagn")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/Anabel_kit
+	name = "Miniature Energy Gun into Anabel Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/modkit/Anabel_kit
+	ckeywhitelist = list("kalifasun", "dofalt")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02

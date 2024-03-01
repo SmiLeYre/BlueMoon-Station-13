@@ -31,7 +31,7 @@
 	bounty_types = CIV_JOB_MED
 
 	display_order = JOB_DISPLAY_ORDER_CHIEF_MEDICAL_OFFICER
-	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/insanity)
+	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/insanity, /datum/quirk/bluemoon_criminal)
 	threat = 2
 
 	starting_modifiers = list(/datum/skill_modifier/job/surgery, /datum/skill_modifier/job/affinity/surgery)

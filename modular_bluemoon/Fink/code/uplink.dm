@@ -11,6 +11,12 @@
 	item = /obj/item/garrote
 	cost = 6
 
+/datum/uplink_item/stealthy_weapons/backstabber_kit
+	name = "Backstabber Knife"
+	desc = "Набор, включающий в себя новейший нож для убийств в спину! Чувствуется какое-то дежа вю."
+	item = /obj/item/storage/box/backstabber_kit
+	cost = 12
+
 /datum/uplink_item/inteq/shieldbelt
 	name = "Shieldbelt"
 	desc = "Лучшие умы ЧВК додумались использовать портативные генераторы щита не только в скафандрах."
