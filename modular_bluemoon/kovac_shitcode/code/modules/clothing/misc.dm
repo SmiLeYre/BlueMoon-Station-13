@@ -191,6 +191,25 @@
 	subcategory = LOADOUT_SUBCATEGORY_NECK_GENERAL
 	path = /obj/item/clothing/neck/cloak/nri_cape
 
+// start bluemoon edit - Katana Zero
+
+/datum/gear/head/chronos_beret
+	name = "New Mecca Beret"
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	path = /obj/item/clothing/head/beret/chronos
+
+/datum/gear/uniform/chronos_uniform
+	name = "New Mecca Uniform"
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
+	path = /obj/item/clothing/under/chronos
+
+/datum/gear/neck/chronos_cape
+	name = "New Mecca Cape"
+	subcategory = LOADOUT_SUBCATEGORY_NECK_GENERAL
+	path = /obj/item/clothing/neck/cloak/chronos
+
+// end bluemoon edit - Katana Zero
+
 /datum/gear/backpack/flag
 	name = "Flag"
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_GENERAL
