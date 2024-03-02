@@ -1,5 +1,5 @@
 /// The damage healed per tick while sleeping without any modifiers
-#define HEALING_SLEEP_DEFAULT 0.005
+#define HEALING_SLEEP_DEFAULT -0.005
 
 //Largely negative status effects go here, even if they have small benificial effects
 //STUN EFFECTS
@@ -84,20 +84,20 @@
 		var/health_ratio = owner.health / owner.maxHealth
 		var/healing = HEALING_SLEEP_DEFAULT
 		if((locate(/obj/structure/bed) in owner.loc))
-			healing -= 0.005
+			healing -= -0.005
 		else if((locate(/obj/structure/table) in owner.loc))
-			healing -= 0.0025
+			healing -= -0.0025
 		else if((locate(/obj/structure/chair) in owner.loc))
-			healing -= 0.0025
+			healing -= -0.0025
 		if(locate(/obj/item/bedsheet) in owner.loc)
-			healing -= 0.005
+			healing -= -0.005
 		if(health_ratio > 0.75) // Only heal when above 75% health
 			owner.adjustBruteLoss(healing)
 			owner.adjustFireLoss(healing)
 			owner.adjustToxLoss(healing * 0.5, forced = TRUE)
 		owner.adjustStaminaLoss(healing)
 	if(human_owner && human_owner.drunkenness)
-		human_owner.drunkenness *= 0.997 //reduce drunkenness by 0.3% per tick, 6% per 2 seconds
+		human_owner.drunkenness *= -0.997 //reduce drunkenness by 0.3% per tick, 6% per 2 seconds
 	if(carbon_owner && !carbon_owner.dreaming && prob(2))
 		carbon_owner.dream()
 	// 2% per second, tick interval is in deciseconds

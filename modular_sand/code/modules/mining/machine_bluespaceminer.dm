@@ -14,6 +14,8 @@
 	init_process = TRUE
 	idle_power_usage = 5000
 	active_power_usage = 10000
+	var/registered_z = 0 //BLUEMOON ADD подтверждаем где бс майнер
+	var/process_while_unused_counter = 10 //BLUEMOON ADD для подсчёта в списке генераторов аномалий (10 сколько изначально он незарегестрирован)
 	var/list/ore_rates = list(
 		/datum/material/iron = 0.05,
 		/datum/material/glass = 0.05,
@@ -69,6 +71,10 @@
 
 /obj/machinery/mineral/bluespace_miner/Destroy()
 	materials = null
+	//BLUEMOON ADD считаем бс майнеры на z уровне
+	if(registered_z)
+		SSmachines.bluespaceminer_by_zlevel[registered_z] -= src
+	//BLUEMOON ADD END
 	return ..()
 
 /obj/machinery/mineral/bluespace_miner/multitool_act(mob/living/user, obj/item/M)
@@ -79,17 +85,29 @@
 		return TRUE
 
 /obj/machinery/mineral/bluespace_miner/process()
-	for(var/obj/machinery/bluespace_miner as anything in SSmachines.get_machines_by_type_and_subtypes(/obj/machinery/mineral/bluespace_miner))
-		if(length(bluespace_miner) >= 5)
-			if(prob(0.0005))
-				var/datum/round_event_control/anomaly/anomaly_bluespace/bluespace_anomaly = new/datum/round_event_control/anomaly/anomaly_bluespace
-				bluespace_anomaly.runEvent()
 	update_icon_state()
 	if(!materials?.silo || materials?.on_hold())
+//BLUEMOON ADD майнеры недовольны когда их много, майнеры делают аномалии
+		if(registered_z)
+			SSmachines.bluespaceminer_by_zlevel[registered_z] -= src
+			registered_z = 0
 		return
 	var/datum/component/material_container/mat_container = materials.mat_container
 	if(!mat_container || panel_open || !powered() || !anchored)
+		process_while_unused_counter++
+		if(registered_z && process_while_unused_counter >= 10)
+			SSmachines.bluespaceminer_by_zlevel[registered_z] -= src
+			registered_z = 0
 		return
+
+	if(!registered_z)
+		SSmachines.bluespaceminer_by_zlevel[src.z] += src
+		registered_z = src.z
+	if(length(SSmachines.bluespaceminer_by_zlevel[src.z]) >= 5 && prob(0.0005))
+		var/datum/round_event_control/anomaly/anomaly_bluespace/bluespace_anomaly = new/datum/round_event_control/anomaly/anomaly_bluespace
+		bluespace_anomaly.runEvent()
+
+	//BLUEMOON ADD END магический счётсчки неуспешных процессов
 	var/datum/material/ore = pick(ore_rates)
 	mat_container.bsm_insert(((ore_rates[ore] * 1000) * multiplier), ore)
 

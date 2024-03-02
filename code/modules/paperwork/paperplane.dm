@@ -128,7 +128,7 @@
 		H.adjust_blurriness(12 SECONDS)
 		eyes?.applyOrganDamage(rand(impact_eye_damage_lower, impact_eye_damage_higher))
 		H.Knockdown(40)
-		H.emote("scream")
+		H.emote("realagony")
 
 	if(delete_on_impact)
 		qdel(src)

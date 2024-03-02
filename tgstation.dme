@@ -4911,6 +4911,7 @@
 #include "modular_splurt\code\controllers\subsystem\discord.dm"
 #include "modular_splurt\code\controllers\subsystem\shuttle.dm"
 #include "modular_splurt\code\controllers\subsystem\ticker.dm"
+#include "modular_splurt\code\controllers\subsystem\shuttle.dm"
 #include "modular_splurt\code\controllers\subsystem\processing\quirks.dm"
 #include "modular_splurt\code\controllers\subsystem\processing\station.dm"
 #include "modular_splurt\code\datums\ai_laws.dm"

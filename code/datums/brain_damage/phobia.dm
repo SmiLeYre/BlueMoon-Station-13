@@ -131,10 +131,16 @@
 			if(reason)
 				owner.pointed(reason)
 		if(3)
+			owner.emote("realagony")
+			owner.Jitter(5)
+			owner.say("AAAAH!!", forced = "phobia")
+			if(reason)
+				owner.pointed(reason)
+		if(4)
 			to_chat(owner, "<span class='warning'>You shut your eyes in terror!</span>")
 			owner.Jitter(5)
 			owner.blind_eyes(10)
-		if(4)
+		if(5)
 			owner.dizziness += 10
 			owner.confused += 10
 			owner.Jitter(10)

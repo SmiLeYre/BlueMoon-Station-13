@@ -97,9 +97,11 @@
 	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
 	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
 	equip_delay_self = 50
-	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	heat_protection = HEAD
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	alternate_screams = SPASEMAR_SCREAMS
-	armor = list(MELEE = 50, BULLET = 50, LASER = 40, ENERGY = 30, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 20)
+	armor = list(MELEE = 50, BULLET = 60, LASER = 40, ENERGY = 30, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 20)
 	equip_sound = 'modular_bluemoon/Ren/Sound/equp1.ogg'
 	mutantrace_variation = NONE
 	unique_reskin = list("Dark Power Armour helmet holy patern" = list(RESKIN_ICON_STATE = "darktemplar_chaplai_helm"), "Dark Power Armour helmet InteQ patern MKI" = list(RESKIN_ICON_STATE = "darktemplar_helm_inteq"), "Dark Power Armour helmet InteQ patern MKII" = list(RESKIN_ICON_STATE = "darktemplar_helm_inteq_alt"))
@@ -112,9 +114,11 @@
 	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
 	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
 	equip_delay_self = 50
-	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	alternate_screams = SPASEMAR_SCREAMS
-	armor = list(MELEE = 50, BULLET = 50, LASER = 40, ENERGY = 30, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 20)
+	armor = list(MELEE = 50, BULLET = 60, LASER = 40, ENERGY = 30, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 20)
 	equip_sound = 'modular_bluemoon/Ren/Sound/equp.ogg'
 	mutantrace_variation = NONE
 	unique_reskin = list("Dark Power Armour holy patern" = list(RESKIN_ICON_STATE = "darktemplar_chaplai"), "Dark Power Armour InteQ patern MKI" = list(RESKIN_ICON_STATE = "darktemplar_inteq"), "Dark Power Armour InteQ patern MKII" = list(RESKIN_ICON_STATE = "darktemplar_inteq_alt") )
@@ -135,7 +139,7 @@
 /obj/item/clothing/mask/gas/sechailer/angrymarin
 	name = "Space Marine Gas Mask"
 	desc = "Древняя система подачи кислорода объединёная с вокс системой, усиливающей голос пользователя"
-	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	resistance_flags = FIRE_PROOF | ACID_PROOF
 	actions_types = list(/datum/action/item_action/halt)
 	aggressiveness = 999 ///Очень злой
 	recent_uses = -10
@@ -145,7 +149,7 @@
 	name = "Power boots"
 	desc = "Тяжёлые латные ботинки созданые, что бы ходить по трупам поверженых врагов."
 	clothing_flags = NOSLIP
-	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	resistance_flags = FIRE_PROOF | ACID_PROOF
 	armor = list(MELEE = 15, BULLET = 15, LASER = 15, ENERGY = 15, BOMB = 0, BIO = 0, RAD = 0, FIRE = 40, ACID = 75)
 
 /obj/item/clothing/shoes/jackboots/powerbots/Initialize(mapload)
@@ -162,33 +166,50 @@
 	REMOVE_TRAIT(user, TRAIT_SILENT_STEP, SHOES_TRAIT)
 
 ///Осмодула
-/obj/item/organ/heart/gland/heal/ossmodula
+/obj/item/organ/heart/gland/ossmodula
 	name = "Ossmodula"
 	desc = "Its fells strong"
+	item_flags = DROPDEL
+	cooldown_low = 200
+	cooldown_high = 200
 	uses = -1
-	var/list/possible_reagents = list()
 
-/obj/item/organ/heart/gland/heal/ossmodula/activate()
-	owner.reagents.add_reagent(/datum/reagent/medicine/lesser_syndicate_nanites, 1)
+/obj/item/organ/heart/gland/ossmodula/activate()
+	owner.reagents.add_reagent(/datum/reagent/medicine/lesser_syndicate_nanites, 2)
 	owner.adjustToxLoss(-5, TRUE, TRUE)
 	..()
 
-/obj/item/organ/heart/gland/heal/ossmodula/Insert(mob/living/carbon/M, drop_if_replaced = TRUE)
+/obj/item/organ/heart/gland/ossmodula/Insert(mob/living/carbon/M, drop_if_replaced = TRUE)
 	..()
 	ADD_TRAIT(owner, TRAIT_GIANT, GENETIC_MUTATION)
+	ADD_TRAIT(owner, TRAIT_NOSOFTCRIT, GENETIC_MUTATION)
+	ADD_TRAIT(owner, TRAIT_NOHARDCRIT, GENETIC_MUTATION)
+	ADD_TRAIT(owner, TRAIT_STUNIMMUNE, GENETIC_MUTATION)
+	ADD_TRAIT(owner, TRAIT_PUSHIMMUNE, GENETIC_MUTATION)
 	var/size = get_size(owner)
 	owner.update_size(size * 1.35)
 	owner.visible_message("<span class='danger'>[owner] Внезапно становится больше!</span>", "<span class='notice'>Всё вокруг неожиданно уменьшается..</span>")
 
+/obj/item/organ/heart/gland/ossmodula/Remove(special = FALSE)
+	if(!QDELETED(owner))
+		REMOVE_TRAIT(owner, TRAIT_NOSOFTCRIT, GENETIC_MUTATION)
+		REMOVE_TRAIT(owner, TRAIT_NOHARDCRIT, GENETIC_MUTATION)
+		REMOVE_TRAIT(owner, TRAIT_STUNIMMUNE, GENETIC_MUTATION)
+		REMOVE_TRAIT(owner, TRAIT_PUSHIMMUNE, GENETIC_MUTATION)
+	return ..()
+
 /obj/item/autosurgeon/astartes
 	desc = "Последний шаг, разделяющий жизнь человека от жизни ангела смерти"
 	uses = 1
-	starting_organ = /obj/item/organ/heart/gland/heal/ossmodula
+	starting_organ = /obj/item/organ/heart/gland/ossmodula
 
 ///Набор космодесантника
 /obj/item/storage/box/syndie_kit/spacehero
 	name = "Death Angel armor kit"
 	icon_state = "inteqbox"
+
+/obj/item/nullrod/claymore/chainsaw_sword/real
+	force = 20
 
 /obj/item/storage/box/syndie_kit/spacehero/PopulateContents()
 	new /obj/item/autosurgeon/astartes(src)
@@ -198,36 +219,23 @@
 	new /obj/item/clothing/head/helmet/space/syndicate/darktemplar(src)
 	new /obj/item/clothing/under/syndicate/combat(src)
 	new /obj/item/clothing/gloves/tackler/combat(src)
-//безумие
+	new	/obj/item/nullrod/claymore/chainsaw_sword/real(src)
 
-/obj/item/clothing/suit/hank
-	name = "Old black coat"
-	desc = "Поношеный временем костюм. Его чернота отдаёт красным оттенком, а сам он удивительно хорошо прилегает к телу."
-	icon_state = "hank"
-	item_state = "hank"
-	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
-	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
-	var/reaction = 0
+//Великий грейтайдер
+/obj/item/storage/box/syndie_kit/grayhero
+	name = "Grey tide"
+	icon_state = "inteqbox"
 
-/obj/item/clothing/suit/hank/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/wearertargeting/phantomthief)
-
-/obj/item/clothing/suit/hank/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
-	if((attack_type & ATTACK_TYPE_PROJECTILE) && (rand(5) != 1) && reaction == 1)
-		owner.visible_message(src, pick("<span class='his_grace'>[owner] чудом уворачивается от пули, выгнувшись спиной в последний момент!</span>", "<span class='phobia'>[owner] ловко уходит в сторону, предугадав траекторию выстрела!</span>", "<span class='suicide'>[owner] делает резкий рывок, едва успевая уйти из под огня!</span>" ))
-		playsound(src, pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, 1)
-		return BLOCK_SUCCESS | BLOCK_PHYSICAL_EXTERNAL
-	return ..()
-
-/obj/item/clothing/suit/hank/proc/concentration(mob/living/user, was_forced = FALSE)
-	if(!SEND_SIGNAL(user, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_ACTIVE))
-		reaction = 0
-	else
-		reaction = 1
+/obj/item/storage/box/syndie_kit/grayhero/PopulateContents()
+	new /obj/item/clothing/under/color/grey/glorf(src)
+	new	/obj/item/clothing/shoes/chameleon/noslip(src)
+	new	/obj/item/clothing/gloves/color/yellow(src)
+	new	/obj/item/storage/belt/utility/full(src)
+	new	/obj/item/clothing/mask/gas(src)
+	new	/obj/item/clothing/glasses/phantomthief/syndicate(src)
+	new	/obj/item/spear/grey_tide(src)
 
 ///InteQ Uplink additions
-
 /datum/uplink_item/suits/inteq_infiltrator_bundle
 	name = "SpecOps Infiltration Gear Case"
 	desc = "Тактический костюм разработки Мародёров Горлекса, слегка изменённый внутренними предприятиями inteQ для собственных нужд. Лёгкий, прочный и тихий костюм совершенно не сковывает движений владельца. Покрывает всё тело носителя и использует внутренний блок шифровки голоса, гарантируя, что никто не узнает вашу личность. Набор содержит в себе костюм, бронежилет, ботинки, перчатки, шлем и балаклаву. Не предназначен для использования в условиях пониженного давления."
@@ -235,10 +243,16 @@
 	cost = 5
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 
-/datum/uplink_item/suits/angel
+/datum/uplink_item/bundles_tc/angel
 	name = "Angel of death"
 	desc = "Набор очень древней брони, использовавшейся в первых космических войнах Солнечной федерацией. Для полного раскрытия потенциала этого полутонного куска керамита необходимо вживить специальный орган, значительно увеличивающий выживаемость и силу владельца. Пришло время доказать, что ты достоин зваться 'Ангелом смерти'."
 	item = /obj/item/storage/box/syndie_kit/spacehero
 	cost = 20
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 
+/datum/uplink_item/bundles_tc/grey
+	name = "The Greatest of the Greys"
+	desc = "Вещи величайшего грейтайдера. Его копьё впитало в себя столько крови, страха и превозмогания, что стало великим артефактом равным которому нет в бою. С этим даже один человек сможет стать целым тайфуном."
+	item = /obj/item/storage/box/syndie_kit/grayhero
+	cost = 20
+	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)

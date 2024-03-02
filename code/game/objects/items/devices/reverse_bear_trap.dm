@@ -107,7 +107,7 @@
 	else
 		var/mob/living/carbon/human/jill = loc
 		jill.visible_message("<span class='boldwarning'>[src] goes off in [jill]'s mouth, ripping [jill.ru_ego()] head apart!</span>", "<span class='userdanger'>[src] goes off!</span>")
-		jill.emote("scream")
+		jill.emote("realagony")
 		playsound(src, 'sound/effects/snap.ogg', 75, TRUE, frequency = 0.5)
 		playsound(src, 'sound/effects/splat.ogg', 50, TRUE, frequency = 0.5)
 		jill.apply_damage(9999, BRUTE, BODY_ZONE_HEAD)

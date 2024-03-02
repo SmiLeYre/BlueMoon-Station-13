@@ -244,6 +244,16 @@
 			playsound(src,pick('modular_bluemoon/kovac_shitcode/sound/weapons/sledge.ogg') ,50, 1, -1)
 	return (BRUTELOSS)
 
+/obj/item/inteq_sledgehammer/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if(wielded)
+		final_block_chance *= 1.5
+	if(prob(final_block_chance))
+		if(attack_type & ATTACK_TYPE_MELEE)
+			playsound(src, 'sound/weapons/parry.ogg', 100, 1)
+			owner.visible_message("<span class='danger'>[owner] parries [attack_text] with [src]!</span>")
+			return BLOCK_SUCCESS | BLOCK_PHYSICAL_EXTERNAL
+	return BLOCK_NONE
+
 /obj/item/inteq_sledgehammer/pre_attack(atom/A, mob/living/user, params, attackchain_flags, damage_multiplier)
 	. = ..()
 	if(. & STOP_ATTACK_PROC_CHAIN)
@@ -292,7 +302,7 @@
 	block_damage_absorption = 3
 	block_damage_multiplier = 0.1
 	block_damage_multiplier_override = list(
-		ATTACK_TYPE_MELEE = 0.1
+		ATTACK_TYPE_MELEE = 0.25
 	)
 	block_start_delay = 0.5
 	block_stamina_cost_per_second = 6.5

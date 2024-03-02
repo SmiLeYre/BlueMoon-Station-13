@@ -137,7 +137,7 @@
 		if(boiling)
 			M.visible_message("<span class='warning'>The boiling oil sizzles as it covers [M]!</span>", \
 			"<span class='userdanger'>You're covered in boiling oil!</span>")
-			M.emote("scream")
+			M.emote("realagony")
 			playsound(M, 'sound/machines/fryer/deep_fryer_emerge.ogg', 25, TRUE)
 			var/oil_damage = min((holder.chem_temp / fry_temperature) * 0.33,1) //Damage taken per unit
 			M.adjustFireLoss(oil_damage * min(reac_volume,20)) //Damage caps at 20

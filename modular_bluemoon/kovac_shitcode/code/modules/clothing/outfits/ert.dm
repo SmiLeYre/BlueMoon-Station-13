@@ -146,7 +146,63 @@
 	R.keyslot = new /obj/item/encryptionkey/heads/hos
 	R.recalculateChannels()
 
-//Русская ОБР. Костюмы.
+//Zeal Team ERT. Костюмы.
+/datum/outfit/zeal_team
+	name = "Zeal Team Commando"
+
+	uniform = /obj/item/clothing/under/syndicate
+	head = /obj/item/clothing/head/helmet/juggernaut
+	suit = /obj/item/clothing/suit/armor/heavy/juggernaut
+	shoes = /obj/item/clothing/shoes/combat/swat
+	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
+	mask = /obj/item/clothing/mask/gas/sechailer/swat
+	glasses = /obj/item/clothing/glasses/hud/toggle/thermal
+	back = /obj/item/storage/backpack/rucksack
+	l_pocket = /obj/item/melee/transforming/energy/sword/saber
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
+	belt = /obj/item/storage/belt/grenade/full
+	r_hand = /obj/item/gun/ballistic/automatic/l6_saw/unrestricted
+	id = /obj/item/card/id/ert
+	ears = /obj/item/radio/headset/headset_cent/alt
+
+	backpack_contents = list(/obj/item/storage/box/survival/security=1,\
+		/obj/item/storage/firstaid/tactical=1,\
+		/obj/item/pinpointer/nuke=1,\
+		/obj/item/grenade/plastic/x4=1,\
+		/obj/item/ammo_box/magazine/mm712x82=2)
+
+	give_space_cooler_if_synth = TRUE
+
+/datum/outfit/zeal_team/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+	if(visualsOnly)
+		return
+
+	var/obj/item/radio/R = H.ears
+	R.set_frequency(FREQ_CENTCOM)
+	R.freqlock = TRUE
+
+	var/obj/item/implant/mindshield/MS = new
+	MS.implant(H, null, 1)
+	var/obj/item/organ/cyberimp/brain/anti_stun/AS = new
+	AS.Insert(H, null, 1)
+
+	var/obj/item/card/id/death/W = H.wear_id
+	W.access = get_all_accesses()//They get full station access.
+	W.access += get_centcom_access("Emergency Response Team Commander")//Let's add their alloted CentCom access.
+	W.registered_name = H.real_name
+	W.update_label(W.registered_name)
+
+/datum/outfit/zeal_team/officer
+	name = "Zeal Team Officer"
+
+/datum/outfit/zeal_team/officer/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
+	. = ..()
+	var/list/extra_backpack_items = list(
+		/obj/item/storage/box/pinpointer_squad
+	)
+	LAZYADD(backpack_contents, extra_backpack_items)
+
+//Русский ОБР. Костюмы.
 /datum/outfit/ert/ert_russian_soldier
 	name = "NRI Spetsnaz Soldier"
 
