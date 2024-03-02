@@ -198,6 +198,33 @@
 	new /obj/item/clothing/head/helmet/space/syndicate/darktemplar(src)
 	new /obj/item/clothing/under/syndicate/combat(src)
 	new /obj/item/clothing/gloves/tackler/combat(src)
+//безумие
+
+/obj/item/clothing/suit/hank
+	name = "Old black coat"
+	desc = "Поношеный временем костюм. Его чернота отдаёт красным оттенком, а сам он удивительно хорошо прилегает к телу."
+	icon_state = "hank"
+	item_state = "hank"
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
+	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
+	var/reaction = 0
+
+/obj/item/clothing/suit/hank/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/wearertargeting/phantomthief)
+
+/obj/item/clothing/suit/hank/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if((attack_type & ATTACK_TYPE_PROJECTILE) && (rand(5) != 1) && reaction == 1)
+		owner.visible_message(src, pick("<span class='his_grace'>[owner] чудом уворачивается от пули, выгнувшись спиной в последний момент!</span>", "<span class='phobia'>[owner] ловко уходит в сторону, предугадав траекторию выстрела!</span>", "<span class='suicide'>[owner] делает резкий рывок, едва успевая уйти из под огня!</span>" ))
+		playsound(src, pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, 1)
+		return BLOCK_SUCCESS | BLOCK_PHYSICAL_EXTERNAL
+	return ..()
+
+/obj/item/clothing/suit/hank/proc/concentration(mob/living/user, was_forced = FALSE)
+	if(!SEND_SIGNAL(user, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_ACTIVE))
+		reaction = 0
+	else
+		reaction = 1
 
 ///InteQ Uplink additions
 

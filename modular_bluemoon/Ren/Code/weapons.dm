@@ -63,6 +63,65 @@
 	if(istype(target_turf))
 		new /obj/effect/decal/cleanable/plasma(drop_location(target_turf))
 
+/// AA12
+/obj/item/ammo_box/magazine/aa12
+	name = "AA12 magazine (12g buckshot)"
+	desc = "Здоровый коробчатый магазин для патрон 12 калибра"
+	icon_state = "m12gb"
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	caliber = "shotgun"
+	max_ammo = 8
+
+/obj/item/ammo_box/magazine/aa12
+	name = "AA12 drum magazine (12g buckshot)"
+	desc = "Здоровый коробчатый магазин для патрон 12 калибра"
+	icon_state = "m12gb"
+	w_class = WEIGHT_CLASS_NORMAL
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	caliber = "shotgun"
+	max_ammo = 20
+
+/obj/item/gun/ballistic/automatic/shotgun/aa12
+	name = "\improper AA12"
+	desc = "Древняя, но очень грозная оружейная система. Почему то на ней отсутствует одиночный огонь."
+	icon_state = "bulldog"
+	item_state = "bulldog"
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	recoil = 20
+	mag_type = /obj/item/ammo_box/magazine/m12g
+	fire_sound = 'sound/weapons/gunshotshotgunshot.ogg'
+	automatic_burst_overlay = FALSE
+	can_suppress = FALSE
+	burst_size = 1
+	actions_types = list()
+	pin = /obj/item/firing_pin
+
+
+
+/obj/item/ammo_box/magazine/m12g/update_icon()
+	..()
+	icon_state = "[initial(icon_state)]-[CEILING(ammo_count(0)/8, 1)*8]"
+
+/obj/item/gun/ballistic/automatic/shotgun/bulldog/Initialize(mapload)
+	. = ..()
+	update_icon()
+
+/obj/item/gun/ballistic/automatic/shotgun/bulldog/update_icon_state()
+	return
+
+/obj/item/gun/ballistic/automatic/shotgun/bulldog/update_overlays()
+	. = ..()
+	if(magazine)
+		. += "[magazine.icon_state]"
+	icon_state = "bulldog[chambered ? "" : "-e"]"
+
+/obj/item/gun/ballistic/automatic/shotgun/bulldog/afterattack()
+	. = ..()
+	empty_alarm()
+	return
+
+
 ///Sandman
 /obj/item/reagent_containers/syringe/sand
 	name = "Sand parasite"
