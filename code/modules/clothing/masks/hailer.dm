@@ -172,7 +172,7 @@ GLOBAL_LIST_EMPTY(sechailers)
 	var/phrase = 0	//selects which phrase to use
 	var/phrase_text = null
 	var/phrase_sound = null
-
+	var/phrase_path = "sound/voice/complionator/"  // BLUEMOON ADD
 
 	if(cooldown < world.time - 30) // A cooldown, to stop people being jerks
 		recent_uses++
@@ -202,9 +202,9 @@ GLOBAL_LIST_EMPTY(sechailers)
 				phrase = rand(1,18)	// user has unlocked all phrases, set upper limit to last phrase. The mask will play all phrases
 			if(4)
 				phrase = rand(12,18)	// user has broke the restrictor, it will now only play shitcurity phrases
-			if(999)
-				phrase = rand(35,41)	// BLUEMOON CHANGE
-
+			if(999)  	 				// BLUEMOON ADD START
+				phrase_path = "modular_bluemoon/ren/sound/spacemarin/"
+				phrase = rand(35,41)	// BLUEMOON ADD END
 		if(!safety)
 			phrase_text = "ТЫ, СУКА, ОХУЕЛ? ДУМАЕШЬ САМЫЙ КРУТОЙ? Я ТЕБЕ СЕЙЧАС ЕБАЛО НАБЬЮ!!"
 			phrase_sound = "emag"
@@ -339,7 +339,7 @@ GLOBAL_LIST_EMPTY(sechailers)
 			usr.audible_message("[usr]'s Slut-o-Nator: <font color=#D45592 size='2'><b>[phrase_text]</b></font>")
 		else
 			usr.audible_message("[usr]'s Compli-o-Nator: <font color='red' size='4'><b>[phrase_text]</b></font>")
-		playsound(src.loc, "sound/voice/complionator/[phrase_sound].ogg", 100, 0, 4)
+		playsound(src.loc, "[phrase_path][phrase_sound].ogg", 100, 0, 4) // BLUEMOON CHANGES - WAS playsound(src.loc, "[sound/voice/complionator/][phrase_sound].ogg", 100, 0, 4)
 		cooldown = world.time
 		cooldown_special = world.time
 
