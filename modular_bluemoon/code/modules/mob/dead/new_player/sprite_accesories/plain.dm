@@ -12,7 +12,7 @@
 	covered_limbs = list("Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED)
 
 /datum/sprite_accessory/mam_body_markings/plain_style/arms_outer/reversed
-	name = "Partial - Plain - Arms Outerline - Reversed"
+	name = "Partial - Plain - Arms Outerline (Reversed)"
 	icon_state = "arms_outerline_reversed"
 
 /datum/sprite_accessory/mam_body_markings/plain_style/torso
@@ -36,6 +36,22 @@
 	name = "Partial - Plain - Upper Abdomen Gradient (light)"
 	icon_state = "upper_abdomen_gradient_light"
 
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/upper_chest_gradient
+	name = "Partial - Plain - Upper Chest Gradient"
+	icon_state = "upper_chest_gradient"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/upper_chest_gradient_alt_1
+	name = "Partial - Plain - Upper Chest Gradient (Alt 1)"
+	icon_state = "upper_chest_gradient_alt_1"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/upper_chest_gradient_alt_2
+	name = "Partial - Plain - Upper Chest Gradient (Alt 2)"
+	icon_state = "upper_chest_gradient_alt_2"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/upper_chest_gradient_alt_3
+	name = "Partial - Plain - Upper Chest Gradient (Alt 3)"
+	icon_state = "upper_chest_gradient_alt_3"
+
 /datum/sprite_accessory/mam_body_markings/plain_style/torso/abdominals
 	name = "Partial - Plain - Light Abdominals"
 	icon_state = "light_abdominals"
@@ -44,28 +60,42 @@
 	name = "Partial - Plain - Nipples"
 	icon_state = "nipples"
 
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/nipples/alt
+	name = "Partial - Plain - Nipples (Alt)"
+	icon_state = "nipples_alt"
+
 /datum/sprite_accessory/mam_body_markings/plain_style/inner_thighs
 	name = "Partial - Plain - Inner Thighs"
 	icon_state = "inner_thighs"
 	covered_limbs = list("Chest" = MATRIX_RED, "Left Leg" = MATRIX_RED, "Right Leg" = MATRIX_RED)
 
 /datum/sprite_accessory/mam_body_markings/plain_style/inner_thighs/wide
-	name = "Partial - Plain - Inner Thighs Wide"
+	name = "Partial - Plain - Inner Thighs (Wide)"
 	icon_state = "inner_thighs_wide"
 
 /datum/sprite_accessory/mam_body_markings/plain_style/inner_thighs/narrow
-	name = "Partial - Plain - Inner Thighs Narrow"
+	name = "Partial - Plain - Inner Thighs (Narrow)"
 	icon_state = "inner_thighs_narrow"
 
 /datum/sprite_accessory/mam_body_markings/plain_style/inner_thighs/line
-	name = "Partial - Plain - Inner Thighs Line"
-	icon_state = "inner_thighs_line"
-
-/datum/sprite_accessory/mam_body_markings/plain_style/inner_thighs/line
-	name = "Partial - Plain - Inner Thighs Line"
+	name = "Partial - Plain - Inner Thighs (Line)"
 	icon_state = "inner_thighs_line"
 
 /datum/sprite_accessory/mam_body_markings/plain_style/tattoo
 	name = "Tattoo - Shoulder Lines"
-	icon_state = "tat_shoulder_lines"
+	icon_state = "tattoo_shoulder_lines"
 	covered_limbs = list("Chest" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/plain_style/tattoo/upper_torso_lines
+	name = "Tattoo - Upper Torso Lines"
+	icon_state = "tattoo_upper_torso_lines"
+	covered_limbs = list("Chest" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/plain_style/tattoo/upper_torso_lines/short
+	name = "Tattoo - Upper Torso Lines (Short)"
+	icon_state = "tattoo_upper_torso_lines_short"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/tattoo/arms_lines
+	name = "Tattoo - Arms Lines"
+	icon_state = "tattoo_arm_lines"
+	covered_limbs = list("Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED)
