@@ -246,6 +246,7 @@
 "bd" = (
 /obj/structure/table,
 /obj/item/weldingtool/experimental,
+/obj/item/multitool/tricorder,
 /obj/item/inducer,
 /obj/item/storage/belt/utility/chief/full,
 /turf/open/floor/plasteel,
