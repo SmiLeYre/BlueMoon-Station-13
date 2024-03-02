@@ -68,59 +68,62 @@
 	name = "AA12 magazine (12g buckshot)"
 	desc = "Здоровый коробчатый магазин для патрон 12 калибра"
 	icon_state = "m12gb"
+	icon = 'modular_bluemoon/Ren/Icons/Obj/USM.dmi'
+	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/ushm_r.dmi'
+	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/ushm_r.dmi'
+	item_state = "mag-aa-small"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	caliber = "shotgun"
 	max_ammo = 8
 
-/obj/item/ammo_box/magazine/aa12
+/obj/item/ammo_box/magazine/aa12/update_icon()
+	..()
+	icon_state = "mag-aa-small-[ammo_count() ? "1" : "0"]"
+
+/obj/item/ammo_box/magazine/aa12/big
 	name = "AA12 drum magazine (12g buckshot)"
 	desc = "Здоровый коробчатый магазин для патрон 12 калибра"
-	icon_state = "m12gb"
+	icon_state = "mag-aa"
 	w_class = WEIGHT_CLASS_NORMAL
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	caliber = "shotgun"
 	max_ammo = 20
 
+/obj/item/ammo_box/magazine/aa12/big/update_icon()
+	..()
+	icon_state = "mag-aa-[ammo_count() ? "1" : "0"]"
+
 /obj/item/gun/ballistic/automatic/shotgun/aa12
 	name = "\improper AA12"
 	desc = "Древняя, но очень грозная оружейная система. Почему то на ней отсутствует одиночный огонь."
-	icon_state = "bulldog"
-	item_state = "bulldog"
+	icon_state = "minotaur"
+	item_state = "minotaur"
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	recoil = 20
-	mag_type = /obj/item/ammo_box/magazine/m12g
+	mag_type = /obj/item/ammo_box/magazine/aa12
 	fire_sound = 'sound/weapons/gunshotshotgunshot.ogg'
 	automatic_burst_overlay = FALSE
 	can_suppress = FALSE
 	burst_size = 1
 	actions_types = list()
-	pin = /obj/item/firing_pin
 
+/obj/item/gun/ballistic/automatic/shotgun/aa12/update_icon_state()
+	if(ammo_count() > 0)
+		if(magazine)
+			icon_state = "minotaur-mag"
+		else
+			icon_state = "minotaur-nomag"
+	else
+		if(magazine)
+			icon_state = "minotaur-mag-e"
+		else
+			icon_state = "minotaur-nomag-e"
 
-
-/obj/item/ammo_box/magazine/m12g/update_icon()
-	..()
-	icon_state = "[initial(icon_state)]-[CEILING(ammo_count(0)/8, 1)*8]"
-
-/obj/item/gun/ballistic/automatic/shotgun/bulldog/Initialize(mapload)
-	. = ..()
-	update_icon()
-
-/obj/item/gun/ballistic/automatic/shotgun/bulldog/update_icon_state()
-	return
-
-/obj/item/gun/ballistic/automatic/shotgun/bulldog/update_overlays()
-	. = ..()
-	if(magazine)
-		. += "[magazine.icon_state]"
-	icon_state = "bulldog[chambered ? "" : "-e"]"
-
-/obj/item/gun/ballistic/automatic/shotgun/bulldog/afterattack()
+/obj/item/gun/ballistic/automatic/shotgun/aa12/afterattack()
 	. = ..()
 	empty_alarm()
 	return
-
 
 ///Sandman
 /obj/item/reagent_containers/syringe/sand
