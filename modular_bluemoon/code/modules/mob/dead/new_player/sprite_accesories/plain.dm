@@ -20,8 +20,24 @@
 	icon_state = "nape_base"
 
 /datum/sprite_accessory/mam_body_markings/plain_style/head/lower/alt
-	name = "Pertial - Plain - Nape Lower Alt"
+	name = "Pertial - Plain - Nape Lower (Alt)"
 	icon_state = "nape_lower_alt"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/head/ears_merge
+	name = "Pertial - Plain - Nape Ears Merge"
+	icon_state = "nape_ears_merge"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/head/ears_merge/alt
+	name = "Pertial - Plain - Nape Ears Merge (Alt)"
+	icon_state = "nape_ears_merge_alt"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/head/ears_addition
+	name = "Pertial - Plain - Nape Ears Addition"
+	icon_state = "nape_ears_addition"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/head/ears_addition/alt
+	name = "Pertial - Plain - Nape Ears Addition (Alt)"
+	icon_state = "nape_ears_addition_alt"
 
 /*
  * TORSO
