@@ -16,7 +16,7 @@
 	name = "Acrador Long Side"
 	icon_state = "acrador_long_side"
 
-/datum/sprite_accessory/ears/mam_ears/acrador/side
+/datum/sprite_accessory/ears/mam_ears/acrador/side/alt
 	name = "Acrador Long Side (Alt)"
 	icon_state = "acrador_long_side_alt"
 
