@@ -28,9 +28,13 @@
 	name = "Partial - Plain - Abdomen Sides"
 	icon_state = "abdomen_sides"
 
-/datum/sprite_accessory/mam_body_markings/plain_style/torso/abdomen_sides_back
-	name = "Partial - Plain - Abdomen Sides (back)"
-	icon_state = "abdomen_to_spine"
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/back
+	name = "Partial - Plain - Back"
+	icon_state = "back"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/back_upper
+	name = "Partial - Plain - Back (Upper)"
+	icon_state = "back_upper"
 
 /datum/sprite_accessory/mam_body_markings/plain_style/torso/upper_abdoment_gradient
 	name = "Partial - Plain - Upper Abdomen Gradient (light)"
@@ -51,6 +55,58 @@
 /datum/sprite_accessory/mam_body_markings/plain_style/torso/upper_chest_gradient_alt_3
 	name = "Partial - Plain - Upper Chest Gradient (Alt 3)"
 	icon_state = "upper_chest_gradient_alt_3"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/spine_wide
+	name = "Partial - Plain - Spine Wide"
+	icon_state = "spine_wide"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/spine_wide_alt
+	name = "Partial - Plain - Spine Wide (Alt)"
+	icon_state = "spine_wide_alt"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/spine_wide_up
+	name = "Partial - Plain - Spine Wide Up"
+	icon_state = "spine_wide_up"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/spine_wide_up_alt
+	name = "Partial - Plain - Spine Wide Up (Alt)"
+	icon_state = "spine_wide_up_alt"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/spine_wide_shoulders
+	name = "Partial - Plain - Spine Wide Shoulders"
+	icon_state = "spine_wide_shoulders"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/spine_wide_shoulders_alt
+	name = "Partial - Plain - Spine Wide Shoulders (Alt)"
+	icon_state = "spine_wide_shoulders_alt"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/spine_wide_low
+	name = "Partial - Plain - Spine Wide Low"
+	icon_state = "spine_wide_low"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/spine_wide_low_alt
+	name = "Partial - Plain - Spine Wide Low"
+	icon_state = "spine_wide_low_alt"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/spine_narrow
+	name = "Partial - Plain - Spine Narrow"
+	icon_state = "spine_narrow"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/spine_narrow_alt
+	name = "Partial - Plain - Spine Narrow (Alt)"
+	icon_state = "spine_narrow_alt"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/spine_line
+	name = "Partial - Plain - Spine Line"
+	icon_state = "spine_line"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/spine_line_alt
+	name = "Partial - Plain - Spine Line (Alt)"
+	icon_state = "spine_line_alt"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/spine_deepth
+	name = "Partial - Plain - Spine Deepth"
+	icon_state = "spine_deepth"
 
 /datum/sprite_accessory/mam_body_markings/plain_style/torso/abdominals
 	name = "Partial - Plain - Light Abdominals"
