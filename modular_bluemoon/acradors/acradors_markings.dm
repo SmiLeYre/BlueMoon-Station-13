@@ -6,7 +6,7 @@
 	name = "Acrador Long"
 	icon = 'modular_bluemoon/acradors/acradors_ears.dmi'
 	icon_state = "acrador_long"
-	matrixed_sections = MATRIX_RED_GREEN
+	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/ears/mam_ears/acrador/alt
 	name = "Acrador Long (Alt)"
