@@ -85,7 +85,7 @@
 	icon_state = "spine_wide_low"
 
 /datum/sprite_accessory/mam_body_markings/plain_style/torso/spine_wide_low_alt
-	name = "Partial - Plain - Spine Wide Low"
+	name = "Partial - Plain - Spine Wide Low (Alt)"
 	icon_state = "spine_wide_low_alt"
 
 /datum/sprite_accessory/mam_body_markings/plain_style/torso/spine_narrow
@@ -107,6 +107,10 @@
 /datum/sprite_accessory/mam_body_markings/plain_style/torso/spine_deepth
 	name = "Partial - Plain - Spine Deepth"
 	icon_state = "spine_deepth"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/spine_deepth_light
+	name = "Partial - Plain - Spine Deepth (Light)"
+	icon_state = "spine_deepth_light"
 
 /datum/sprite_accessory/mam_body_markings/plain_style/torso/abdominals
 	name = "Partial - Plain - Light Abdominals"
