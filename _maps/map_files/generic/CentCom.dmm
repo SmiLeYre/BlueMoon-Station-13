@@ -31060,6 +31060,10 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/plating,
 /area/centcom/holding)
+"pSf" = (
+/obj/effect/baseturf_helper/beach/sand,
+/turf/closed/indestructible/rock,
+/area/centcom/holding)
 "pSQ" = (
 /obj/structure/fluff/metalpole{
 	dir = 1
@@ -44428,7 +44432,7 @@ ncJ
 ncJ
 ncJ
 ncJ
-ncJ
+pSf
 aaa
 aaa
 aaa
