@@ -40,6 +40,26 @@
 	name = "Partial - Plain - Abdomen Sides"
 	icon_state = "abdomen_sides"
 
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/abdomen_sides/alt
+	name = "Partial - Plain - Abdomen Sides (Alt)"
+	icon_state = "abdomen_sides_alt"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/abdomen_sides/wide
+	name = "Partial - Plain - Abdomen Sides Wide"
+	icon_state = "abdomen_sides_wide"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/abdomen_sides/wide/alt
+	name = "Partial - Plain - Abdomen Sides Wide (Alt)"
+	icon_state = "abdomen_sides_wide_alt"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/abdomen_sides/narrow
+	name = "Partial - Plain - Abdomen Sides Narrow"
+	icon_state = "abdomen_sides_narrow"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/abdomen_sides/line
+	name = "Partial - Plain - Abdomen Sides Line"
+	icon_state = "abdomen_sides_line"
+
 /datum/sprite_accessory/mam_body_markings/plain_style/torso/upper_abdoment_gradient
 	name = "Partial - Plain - Upper Abdomen Gradient (light)"
 	icon_state = "upper_abdomen_gradient_light"
