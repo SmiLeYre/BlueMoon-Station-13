@@ -6,14 +6,26 @@
 /datum/sprite_accessory/mam_body_markings/plain_style
 	icon = 'modular_bluemoon/icons/mob/body_markings/plain.dmi'
 
-/datum/sprite_accessory/mam_body_markings/plain_style/arms_outer
-	name = "Partial - Plain - Arms Outerline"
-	icon_state = "arms_outerline"
-	covered_limbs = list("Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED)
+/*
+ * HEAD
+ */
 
-/datum/sprite_accessory/mam_body_markings/plain_style/arms_outer/reversed
-	name = "Partial - Plain - Arms Outerline (Reversed)"
-	icon_state = "arms_outerline_reversed"
+/datum/sprite_accessory/mam_body_markings/plain_style/head
+	name = "Pertial - Plain - Nape Base"
+	icon_state = "nape_base"
+	covered_limbs = list("Head" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/plain_style/head/lower
+	name = "Pertial - Plain - Nape Lower"
+	icon_state = "nape_base"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/head/lower/alt
+	name = "Pertial - Plain - Nape Lower Alt"
+	icon_state = "nape_lower_alt"
+
+/*
+ * TORSO
+ */
 
 /datum/sprite_accessory/mam_body_markings/plain_style/torso
 	name = "Partial - Plain - Torso Highlight 1"
@@ -27,14 +39,6 @@
 /datum/sprite_accessory/mam_body_markings/plain_style/torso/abdomen_sides
 	name = "Partial - Plain - Abdomen Sides"
 	icon_state = "abdomen_sides"
-
-/datum/sprite_accessory/mam_body_markings/plain_style/torso/back
-	name = "Partial - Plain - Back"
-	icon_state = "back"
-
-/datum/sprite_accessory/mam_body_markings/plain_style/torso/back_upper
-	name = "Partial - Plain - Back (Upper)"
-	icon_state = "back_upper"
 
 /datum/sprite_accessory/mam_body_markings/plain_style/torso/upper_abdoment_gradient
 	name = "Partial - Plain - Upper Abdomen Gradient (light)"
@@ -55,6 +59,30 @@
 /datum/sprite_accessory/mam_body_markings/plain_style/torso/upper_chest_gradient_alt_3
 	name = "Partial - Plain - Upper Chest Gradient (Alt 3)"
 	icon_state = "upper_chest_gradient_alt_3"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/abdominals
+	name = "Partial - Plain - Light Abdominals"
+	icon_state = "light_abdominals"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/nipples
+	name = "Partial - Plain - Nipples"
+	icon_state = "nipples"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/nipples/alt
+	name = "Partial - Plain - Nipples (Alt)"
+	icon_state = "nipples_alt"
+
+/*
+ * BACK
+ */
+
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/back
+	name = "Partial - Plain - Back"
+	icon_state = "back"
+
+/datum/sprite_accessory/mam_body_markings/plain_style/torso/back_upper
+	name = "Partial - Plain - Back (Upper)"
+	icon_state = "back_upper"
 
 /datum/sprite_accessory/mam_body_markings/plain_style/torso/spine_wide
 	name = "Partial - Plain - Spine Wide"
@@ -112,17 +140,22 @@
 	name = "Partial - Plain - Spine Deepth (Light)"
 	icon_state = "spine_deepth_light"
 
-/datum/sprite_accessory/mam_body_markings/plain_style/torso/abdominals
-	name = "Partial - Plain - Light Abdominals"
-	icon_state = "light_abdominals"
+/*
+ * ARMS
+ */
 
-/datum/sprite_accessory/mam_body_markings/plain_style/torso/nipples
-	name = "Partial - Plain - Nipples"
-	icon_state = "nipples"
+/datum/sprite_accessory/mam_body_markings/plain_style/arms_outer
+	name = "Partial - Plain - Arms Outerline"
+	icon_state = "arms_outerline"
+	covered_limbs = list("Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED)
 
-/datum/sprite_accessory/mam_body_markings/plain_style/torso/nipples/alt
-	name = "Partial - Plain - Nipples (Alt)"
-	icon_state = "nipples_alt"
+/datum/sprite_accessory/mam_body_markings/plain_style/arms_outer/reversed
+	name = "Partial - Plain - Arms Outerline (Reversed)"
+	icon_state = "arms_outerline_reversed"
+
+/*
+ * THIGHS/LEGS
+ */
 
 /datum/sprite_accessory/mam_body_markings/plain_style/inner_thighs
 	name = "Partial - Plain - Inner Thighs"
@@ -140,6 +173,10 @@
 /datum/sprite_accessory/mam_body_markings/plain_style/inner_thighs/line
 	name = "Partial - Plain - Inner Thighs (Line)"
 	icon_state = "inner_thighs_line"
+
+/*
+ * TATTOO
+ */
 
 /datum/sprite_accessory/mam_body_markings/plain_style/tattoo
 	name = "Tattoo - Shoulder Lines"
