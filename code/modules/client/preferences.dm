@@ -3366,7 +3366,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						clientfps = desiredfps
 						parent.fps = desiredfps
 				if("ui")
-					var/pickedui = tgui_input_list(user, "Choose your UI style.", "Character Preference", UI_style, GLOB.available_ui_styles)
+					var/pickedui = tgui_input_list(user, "Choose your UI style.", "Character Preference", GLOB.available_ui_styles, UI_style)
 					if(pickedui)
 						UI_style = pickedui
 						if (pickedui && parent && parent.mob && parent.mob.hud_used)
