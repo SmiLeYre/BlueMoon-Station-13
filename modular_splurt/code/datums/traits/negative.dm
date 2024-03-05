@@ -142,6 +142,10 @@
 										"Было бы неплохо сейчас потребить спермы!",\
 										"Ты начинаешь тосковать по сперме..."
 									  )
+	var/list/uncrave_phrases = list("Вы узнаете хорошо знакомый вам вкус свежей спермы~",\
+									"Незабываемый вкус свежей спермы вы узнаете из тысячи~",\
+									"Ммм~, мне так не хватало этой восхитительной спермы~"
+									)
 
 /datum/quirk/dumb4cum/add()
 	// Set timer
@@ -155,7 +159,6 @@
 	// Remove penalty traits
 	REMOVE_TRAIT(quirk_holder, TRAIT_ILLITERATE, DUMB_CUM_TRAIT)
 	REMOVE_TRAIT(quirk_holder, TRAIT_DUMB, DUMB_CUM_TRAIT)
-	REMOVE_TRAIT(quirk_holder, TRAIT_PACIFISM, DUMB_CUM_TRAIT)
 
 	// Remove mood event
 	SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, QMOOD_DUMB_CUM)
@@ -167,16 +170,6 @@
 /datum/quirk/dumb4cum/proc/crave()
 	// Check if conscious
 	if(quirk_holder.stat == CONSCIOUS)
-		// Display emote
-		//quirk_holder.emote("sigh")	//это происходит настолько не к месту... пусть игрок сам отыгрывает.
-
-		// Define list of phrases
-		var/list/trigger_phrases = list(
-										"В животе слегка урчит, а на ум приходит сперма.",\
-										"Уф, тебе действительно стоит выпить немного спермы...",\
-										"Немного спермы сейчас не помешало бы.!",\
-										"Ты желаешь выпить хоть немного спермы..."
-									)
 		// Alert user in chat
 		to_chat(quirk_holder, span_love("[pick(trigger_phrases)]"))
 
@@ -189,7 +182,6 @@
 	// Add illiterate, dumb, and pacifist
 	ADD_TRAIT(quirk_holder, TRAIT_ILLITERATE, DUMB_CUM_TRAIT)
 	ADD_TRAIT(quirk_holder, TRAIT_DUMB, DUMB_CUM_TRAIT)
-	ADD_TRAIT(quirk_holder, TRAIT_PACIFISM, DUMB_CUM_TRAIT)
 
 	// Add negative mood effect
 	SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, QMOOD_DUMB_CUM, /datum/mood_event/cum_craving)
@@ -201,14 +193,13 @@
 	reminder_trigger = rand(3000, 9000)
 	reminder_timer = addtimer(CALLBACK(src, .proc/reminder), reminder_trigger, TIMER_STOPPABLE)
 
-/datum/quirk/dumb4cum/proc/uncrave()
+/datum/quirk/dumb4cum/proc/uncrave(print_text = FALSE)
 	// Remove active status trait
 	REMOVE_TRAIT(quirk_holder, TRAIT_DUMB_CUM_CRAVE, DUMB_CUM_TRAIT)
 
 	// Remove penalty traits
 	REMOVE_TRAIT(quirk_holder, TRAIT_ILLITERATE, DUMB_CUM_TRAIT)
 	REMOVE_TRAIT(quirk_holder, TRAIT_DUMB, DUMB_CUM_TRAIT)
-	REMOVE_TRAIT(quirk_holder, TRAIT_PACIFISM, DUMB_CUM_TRAIT)
 
 	// Add positive mood event
 	SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, QMOOD_DUMB_CUM, /datum/mood_event/cum_stuffed)
@@ -221,6 +212,9 @@
 	timer_trigger = rand(9000, 18000)
 	// Add new timer
 	timer = addtimer(CALLBACK(src, .proc/crave), timer_trigger, TIMER_STOPPABLE)
+
+	if(print_text)
+		to_chat(quirk_holder, span_love("[pick(uncrave_phrases)]"))
 
 // Small issue with this. If the quirk holder has NO_HUNGER or NO_THIRST, this trait can still be taken and they will still get the benefits of it.
 // It's unlikely that someone will be both, especially at round start, but vampirism makes me wary of having these separate.

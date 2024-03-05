@@ -94,6 +94,17 @@
 	bumpopen(M)
 
 /obj/machinery/door/window/bumpopen(mob/user)
+	if(ishuman(user) && prob(5) && src.density)
+		var/mob/living/carbon/human/H = user
+		if((HAS_TRAIT(H, TRAIT_DUMB)) && Adjacent(user))
+			playsound(src.loc, 'sound/effects/bang.ogg', 25, 1)
+			if(!istype(H.head, /obj/item/clothing/head/helmet))
+				H.visible_message("<span class='danger'>[user] headbutts the airlock.</span>", \
+									"<span class='userdanger'>You headbutt the airlock!</span>")
+				H.DefaultCombatKnockdown(100)
+				H.apply_damage(1, BRUTE, BODY_ZONE_HEAD)
+			else
+				visible_message("<span class='danger'>[user] headbutts the airlock. Good thing [user.ru_who()] wearing a helmet.</span>")
 	if( operating || !src.density )
 		return
 	src.add_fingerprint(user)
