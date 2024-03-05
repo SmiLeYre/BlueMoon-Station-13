@@ -17,6 +17,9 @@
 	var/pugilist = FALSE
 	var/datum/weakref/holder //owner of the martial art
 	var/display_combos = FALSE //shows combo meter if true
+	var/combo_timer = 6 SECONDS
+
+	var/timerid
 
 /datum/martial_art/proc/disarm_act(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	return FALSE
@@ -37,11 +40,14 @@
 	if(length(streak) > max_streak_length)
 		streak = copytext(streak, 1 + length(streak[1]))
 	if(display_combos)
+		timerid = addtimer(CALLBACK(src, PROC_REF(reset_streak), null, FALSE), combo_timer, TIMER_UNIQUE | TIMER_STOPPABLE)
 		var/mob/living/holder_living = holder.resolve()
-		holder_living?.hud_used?.combo_display.update_icon_state(streak)
+		holder_living?.hud_used?.combo_display.update_icon_state(streak, combo_timer - 2 SECONDS)
 	return
 
 /datum/martial_art/proc/reset_streak(mob/living/carbon/human/new_target)
+	if(timerid)
+		deltimer(timerid)
 	current_target = new_target
 	streak = ""
 	var/mob/living/holder_living = holder.resolve()

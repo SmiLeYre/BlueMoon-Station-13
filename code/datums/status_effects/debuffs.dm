@@ -29,9 +29,33 @@
 /datum/status_effect/incapacitating/stun
 	id = "stun"
 
+/datum/status_effect/incapacitating/stun/on_apply()
+	. = ..()
+	if(!.)
+		return
+	ADD_TRAIT(owner, TRAIT_INCAPACITATED, id)
+	ADD_TRAIT(owner, TRAIT_IMMOBILIZED, id)
+	ADD_TRAIT(owner, TRAIT_HANDS_BLOCKED, id)
+
+/datum/status_effect/incapacitating/stun/on_remove()
+	REMOVE_TRAIT(owner, TRAIT_INCAPACITATED, id)
+	REMOVE_TRAIT(owner, TRAIT_IMMOBILIZED, id)
+	REMOVE_TRAIT(owner, TRAIT_HANDS_BLOCKED, id)
+	return ..()
+
 //KNOCKDOWN
 /datum/status_effect/incapacitating/knockdown
 	id = "knockdown"
+
+/datum/status_effect/incapacitating/knockdown/on_apply()
+	. = ..()
+	if(!.)
+		return
+	ADD_TRAIT(owner, TRAIT_FLOORED, id)
+
+/datum/status_effect/incapacitating/knockdown/on_remove()
+	REMOVE_TRAIT(owner, TRAIT_FLOORED, id)
+	return ..()
 
 //IMMOBILIZED
 /datum/status_effect/incapacitating/immobilized
