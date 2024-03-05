@@ -844,8 +844,7 @@
 		if(isElectrified())
 			if(shock(user, 100))
 				return
-	else
-		return ..()
+	return ..()
 
 /obj/machinery/door/airlock/attempt_wire_interaction(mob/user)
 	if(security_level)
