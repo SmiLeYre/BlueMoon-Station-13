@@ -2170,7 +2170,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				for(var/i in J.alt_titles)
 					titles_list += i
 				var/chosen_title
-				chosen_title = input(user, "Choose your job's title:", "Job Preference") as null|anything in titles_list
+				chosen_title = tgui_input_list(user, "Choose your job's title:", "Job Preference", titles_list)
 				if(chosen_title)
 					if(chosen_title == job_title)
 						if(alt_titles_preferences[job_title])
@@ -2225,7 +2225,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if("change_shriek_option") // изменение вида крика от квирка крикуна
 				var/client/C = usr.client
 				if(C)
-					var/new_shriek_type = input(user, "Choose your character's shriek type.", "Character Preference") as null|anything in GLOB.shriek_types
+					var/new_shriek_type = tgui_input_list(user, "Choose your character's shriek type.", "Character Preference", GLOB.shriek_types)
 					if(new_shriek_type)
 						shriek_type = new_shriek_type
 						SetQuirks(user)
@@ -2305,12 +2305,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			switch(href_list["preference"])
 				if("ghostform")
 					if(unlock_content)
-						var/new_form = input(user, "Thanks for supporting BYOND - Choose your ghostly form:","Thanks for supporting BYOND",null) as null|anything in GLOB.ghost_forms
+						var/new_form = tgui_input_list(user, "Thanks for supporting BYOND - Choose your ghostly form:","Thanks for supporting BYOND", GLOB.ghost_forms, null)
 						if(new_form)
 							ghost_form = new_form
 				if("ghostorbit")
 					if(unlock_content)
-						var/new_orbit = input(user, "Thanks for supporting BYOND - Choose your ghostly orbit:","Thanks for supporting BYOND", null) as null|anything in GLOB.ghost_orbits
+						var/new_orbit = tgui_input_list(user, "Thanks for supporting BYOND - Choose your ghostly orbit:","Thanks for supporting BYOND",  GLOB.ghost_orbits, null)
 						if(new_orbit)
 							ghost_orbit = new_orbit
 
@@ -2385,7 +2385,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(!isnull(msg))
 						features["custom_deathgasp"] = strip_html_simple(msg, MAX_DEATHGASP_LEN, TRUE)
 				if("custom_deathsound")
-					var/sound_name = input(user, "Выберите звук смерти персонажа!", "Звук Смерти") as null|anything in GLOB.deathgasp_sounds
+					var/sound_name = tgui_input_list(user, "Выберите звук смерти персонажа!", "Звук Смерти", GLOB.deathgasp_sounds)
 					if(sound_name)
 						features["custom_deathsound"] = sound_name
 				if("deathsoundpreview")
@@ -2431,7 +2431,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					fertility = clamp(fert, 0, 100)
 
 				if("egg_shell")
-					var/shell = input(user, "Pick a shell for your eggs", "Character Preferences") as null|anything in GLOB.egg_skins
+					var/shell = tgui_input_list(user, "Pick a shell for your eggs", "Character Preferences", GLOB.egg_skins)
 					if(shell)
 						egg_shell = shell
 
@@ -2450,7 +2450,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("hair_style")
 					var/new_hair_style
-					new_hair_style = input(user, "Choose your character's hair style:", "Character Preference")  as null|anything in GLOB.hair_styles_list
+					new_hair_style = tgui_input_list(user, "Choose your character's hair style:", "Character Preference", GLOB.hair_styles_list)
 					if(new_hair_style)
 						hair_style = new_hair_style
 
@@ -2467,7 +2467,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("facial_hair_style")
 					var/new_facial_hair_style
-					new_facial_hair_style = input(user, "Choose your character's facial-hair style:", "Character Preference")  as null|anything in GLOB.facial_hair_styles_list
+					new_facial_hair_style = tgui_input_list(user, "Choose your character's facial-hair style:", "Character Preference", GLOB.facial_hair_styles_list)
 					if(new_facial_hair_style)
 						facial_hair_style = new_facial_hair_style
 
@@ -2484,7 +2484,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("grad_style")
 					var/new_grad_style
-					new_grad_style = input(user, "Choose your character's hair gradient style:", "Character Preference") as null|anything in GLOB.hair_gradients_list
+					new_grad_style = tgui_input_list(user, "Choose your character's hair gradient style:", "Character Preference", GLOB.hair_gradients_list)
 					if(new_grad_style)
 						grad_style = new_grad_style
 
@@ -2498,12 +2498,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					bgstate = next_list_item(bgstate, bgstate_options)
 
 				if("modify_limbs")
-					var/limb_type = input(user, "Choose the limb to modify:", "Character Preference") as null|anything in LOADOUT_ALLOWED_LIMB_TARGETS
+					var/limb_type = tgui_input_list(user, "Choose the limb to modify:", "Character Preference", LOADOUT_ALLOWED_LIMB_TARGETS)
 					if(limb_type)
-						var/modification_type = input(user, "Choose the modification to the limb:", "Character Preference") as null|anything in LOADOUT_LIMBS
+						var/modification_type = tgui_input_list(user, "Choose the modification to the limb:", "Character Preference", LOADOUT_LIMBS)
 						if(modification_type)
 							if(modification_type == LOADOUT_LIMB_PROSTHETIC)
-								var/prosthetic_type = input(user, "Choose the type of prosthetic", "Character Preference") as null|anything in (list("prosthetic") + GLOB.prosthetic_limb_types)
+								var/prosthetic_type = tgui_input_list(user, "Choose the type of prosthetic", "Character Preference", (list("prosthetic") + GLOB.prosthetic_limb_types))
 								if(prosthetic_type)
 									var/number_of_prosthetics = 0
 									for(var/modified_limb in modified_limbs)
@@ -2569,7 +2569,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						right_eye_color = sanitize_hexcolor(new_eyes, 6)
 
 				if("eye_type")
-					var/new_eye_type = input(user, "Choose your character's eye type.", "Character Preference") as null|anything in GLOB.eye_types
+					var/new_eye_type = tgui_input_list(user, "Choose your character's eye type.", "Character Preference", GLOB.eye_types)
 					if(new_eye_type)
 						eye_type = new_eye_type
 
@@ -2578,7 +2578,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					right_eye_color = left_eye_color
 
 				if("species")
-					var/result = input(user, "Select a species", "Species Selection") as null|anything in GLOB.roundstart_race_names
+					var/result = tgui_input_list(user, "Select a species", "Species Selection", GLOB.roundstart_race_names)
 					if(result)
 						var/newtype = GLOB.species_list[GLOB.roundstart_race_names[result]]
 						pref_species = new newtype()
@@ -2665,7 +2665,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("ipc_screen")
 					var/new_ipc_screen
-					new_ipc_screen = input(user, "Choose your character's screen:", "Character Preference") as null|anything in GLOB.ipc_screens_list
+					new_ipc_screen = tgui_input_list(user, "Choose your character's screen:", "Character Preference", GLOB.ipc_screens_list)
 					if(new_ipc_screen)
 						features["ipc_screen"] = new_ipc_screen
 
@@ -2681,31 +2681,31 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							if((!S.ckeys_allowed) || (S.ckeys_allowed.Find(user.client.ckey)))
 								snowflake_antenna_list[S.name] = path
 					var/new_ipc_antenna
-					new_ipc_antenna = input(user, "Choose your character's antenna:", "Character Preference") as null|anything in snowflake_antenna_list
+					new_ipc_antenna = tgui_input_list(user, "Choose your character's antenna:", "Character Preference", snowflake_antenna_list)
 					if(new_ipc_antenna)
 						features["ipc_antenna"] = new_ipc_antenna
 
 				if("arachnid_legs")
 					var/new_arachnid_legs
-					new_arachnid_legs = input(user, "Choose your character's variant of arachnid legs:", "Character Preference") as null|anything in GLOB.arachnid_legs_list
+					new_arachnid_legs = tgui_input_list(user, "Choose your character's variant of arachnid legs:", "Character Preference", GLOB.arachnid_legs_list)
 					if(new_arachnid_legs)
 						features["arachnid_legs"] = new_arachnid_legs
 
 				if("arachnid_spinneret")
 					var/new_arachnid_spinneret
-					new_arachnid_spinneret = input(user, "Choose your character's spinneret markings:", "Character Preference") as null|anything in GLOB.arachnid_spinneret_list
+					new_arachnid_spinneret = tgui_input_list(user, "Choose your character's spinneret markings:", "Character Preference", GLOB.arachnid_spinneret_list)
 					if(new_arachnid_spinneret)
 						features["arachnid_spinneret"] = new_arachnid_spinneret
 
 				if("arachnid_mandibles")
 					var/new_arachnid_mandibles
-					new_arachnid_mandibles = input(user, "Choose your character's variant of mandibles:", "Character Preference") as null|anything in GLOB.arachnid_mandibles_list
+					new_arachnid_mandibles = tgui_input_list(user, "Choose your character's variant of mandibles:", "Character Preference", GLOB.arachnid_mandibles_list)
 					if (new_arachnid_mandibles)
 						features["arachnid_mandibles"] = new_arachnid_mandibles
 
 				if("tail_lizard")
 					var/new_tail
-					new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in GLOB.tails_list_lizard
+					new_tail = tgui_input_list(user, "Choose your character's tail:", "Character Preference", GLOB.tails_list_lizard)
 					if(new_tail)
 						features["tail_lizard"] = new_tail
 						if(new_tail != "None")
@@ -2724,7 +2724,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							if((!S.ckeys_allowed) || (S.ckeys_allowed.Find(user.client.ckey)))
 								snowflake_tails_list[S.name] = path
 					var/new_tail
-					new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in snowflake_tails_list
+					new_tail = tgui_input_list(user, "Choose your character's tail:", "Character Preference", snowflake_tails_list)
 					if(new_tail)
 						features["tail_human"] = new_tail
 						if(new_tail != "None")
@@ -2743,7 +2743,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							if((!S.ckeys_allowed) || (S.ckeys_allowed.Find(user.client.ckey)))
 								snowflake_tails_list[S.name] = path
 					var/new_tail
-					new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in snowflake_tails_list
+					new_tail = tgui_input_list(user, "Choose your character's tail:", "Character Preference", snowflake_tails_list)
 					if(new_tail)
 						features["mam_tail"] = new_tail
 						if(new_tail != "None")
@@ -2753,7 +2753,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("meat_type")
 					var/new_meat
-					new_meat = input(user, "Choose your character's meat type:", "Character Preference") as null|anything in GLOB.meat_types
+					new_meat = tgui_input_list(user, "Choose your character's meat type:", "Character Preference", GLOB.meat_types)
 					if(new_meat)
 						features["meat_type"] = new_meat
 
@@ -2768,7 +2768,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							if((!S.ckeys_allowed) || (S.ckeys_allowed.Find(user.client.ckey)))
 								snowflake_snouts_list[S.name] = path
 					var/new_snout
-					new_snout = input(user, "Choose your character's snout:", "Character Preference") as null|anything in snowflake_snouts_list
+					new_snout = tgui_input_list(user, "Choose your character's snout:", "Character Preference", snowflake_snouts_list)
 					if(new_snout)
 						features["snout"] = new_snout
 						features["mam_snouts"] = "None"
@@ -2785,14 +2785,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							if((!S.ckeys_allowed) || (S.ckeys_allowed.Find(user.client.ckey)))
 								snowflake_mam_snouts_list[S.name] = path
 					var/new_mam_snouts
-					new_mam_snouts = input(user, "Choose your character's snout:", "Character Preference") as null|anything in snowflake_mam_snouts_list
+					new_mam_snouts = tgui_input_list(user, "Choose your character's snout:", "Character Preference", snowflake_mam_snouts_list)
 					if(new_mam_snouts)
 						features["mam_snouts"] = new_mam_snouts
 						features["snout"] = "None"
 
 				if("horns")
 					var/new_horns
-					new_horns = input(user, "Choose your character's horns:", "Character Preference") as null|anything in GLOB.horns_list
+					new_horns = tgui_input_list(user, "Choose your character's horns:", "Character Preference", GLOB.horns_list)
 					if(new_horns)
 						features["horns"] = new_horns
 
@@ -2806,7 +2806,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("wings")
 					var/new_wings
-					new_wings = input(user, "Choose your character's wings:", "Character Preference") as null|anything in GLOB.r_wings_list
+					new_wings = tgui_input_list(user, "Choose your character's wings:", "Character Preference", GLOB.r_wings_list)
 					if(new_wings)
 						features["wings"] = new_wings
 
@@ -2820,61 +2820,61 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("frills")
 					var/new_frills
-					new_frills = input(user, "Choose your character's frills:", "Character Preference") as null|anything in GLOB.frills_list
+					new_frills = tgui_input_list(user, "Choose your character's frills:", "Character Preference", GLOB.frills_list)
 					if(new_frills)
 						features["frills"] = new_frills
 
 				if("spines")
 					var/new_spines
-					new_spines = input(user, "Choose your character's spines:", "Character Preference") as null|anything in GLOB.spines_list
+					new_spines = tgui_input_list(user, "Choose your character's spines:", "Character Preference", GLOB.spines_list)
 					if(new_spines)
 						features["spines"] = new_spines
 
 				if("legs")
 					var/new_legs
-					new_legs = input(user, "Choose your character's legs:", "Character Preference") as null|anything in GLOB.legs_list
+					new_legs = tgui_input_list(user, "Choose your character's legs:", "Character Preference", GLOB.legs_list)
 					if(new_legs)
 						features["legs"] = new_legs
 
 				if("insect_wings")
 					var/new_insect_wings
-					new_insect_wings = input(user, "Choose your character's wings:", "Character Preference") as null|anything in GLOB.insect_wings_list
+					new_insect_wings = tgui_input_list(user, "Choose your character's wings:", "Character Preference", GLOB.insect_wings_list)
 					if(new_insect_wings)
 						features["insect_wings"] = new_insect_wings
 
 				if("deco_wings")
 					var/new_deco_wings
-					new_deco_wings = input(user, "Choose your character's wings:", "Character Preference") as null|anything in GLOB.deco_wings_list
+					new_deco_wings = tgui_input_list(user, "Choose your character's wings:", "Character Preference", GLOB.deco_wings_list)
 					if(new_deco_wings)
 						features["deco_wings"] = new_deco_wings
 
 				if("insect_fluff")
 					var/new_insect_fluff
-					new_insect_fluff = input(user, "Choose your character's wings:", "Character Preference") as null|anything in GLOB.insect_fluffs_list
+					new_insect_fluff = tgui_input_list(user, "Choose your character's wings:", "Character Preference", GLOB.insect_fluffs_list)
 					if(new_insect_fluff)
 						features["insect_fluff"] = new_insect_fluff
 
 				if("insect_markings")
 					var/new_insect_markings
-					new_insect_markings = input(user, "Choose your character's markings:", "Character Preference") as null|anything in GLOB.insect_markings_list
+					new_insect_markings = tgui_input_list(user, "Choose your character's markings:", "Character Preference", GLOB.insect_markings_list)
 					if(new_insect_markings)
 						features["insect_markings"] = new_insect_markings
 
 				if("arachnid_legs")
 					var/new_arachnid_legs
-					new_arachnid_legs = input(user, "Choose your character's variant of arachnid legs:", "Character Preference") as null|anything in GLOB.arachnid_legs_list
+					new_arachnid_legs = tgui_input_list(user, "Choose your character's variant of arachnid legs:", "Character Preference", GLOB.arachnid_legs_list)
 					if(new_arachnid_legs)
 						features["arachnid_legs"] = new_arachnid_legs
 
 				if("arachnid_spinneret")
 					var/new_arachnid_spinneret
-					new_arachnid_spinneret = input(user, "Choose your character's spinneret markings:", "Character Preference") as null|anything in GLOB.arachnid_spinneret_list
+					new_arachnid_spinneret = tgui_input_list(user, "Choose your character's spinneret markings:", "Character Preference", GLOB.arachnid_spinneret_list)
 					if(new_arachnid_spinneret)
 						features["arachnid_spinneret"] = new_arachnid_spinneret
 
 				if("arachnid_mandibles")
 					var/new_arachnid_mandibles
-					new_arachnid_mandibles = input(user, "Choose your character's variant of mandibles:", "Character Preference") as null|anything in GLOB.arachnid_mandibles_list
+					new_arachnid_mandibles = tgui_input_list(user, "Choose your character's variant of mandibles:", "Character Preference", GLOB.arachnid_mandibles_list)
 					if (new_arachnid_mandibles)
 						features["arachnid_mandibles"] = new_arachnid_mandibles
 
@@ -2882,7 +2882,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/list/choices = GLOB.skin_tones - GLOB.nonstandard_skin_tones
 					if(CONFIG_GET(flag/allow_custom_skintones))
 						choices += "custom"
-					var/new_s_tone = input(user, "Choose your character's skin tone:", "Character Preference")  as null|anything in choices
+					var/new_s_tone = tgui_input_list(user, "Choose your character's skin tone:", "Character Preference", choices)
 					if(new_s_tone)
 						if(new_s_tone == "custom")
 							var/default = use_custom_skin_tone ? skin_tone : null
@@ -2911,7 +2911,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							if((!S.ckeys_allowed) || (S.ckeys_allowed.Find(user.client.ckey)))
 								snowflake_taur_list[S.name] = path
 					var/new_taur
-					new_taur = input(user, "Choose your character's tauric body:", "Character Preference") as null|anything in snowflake_taur_list
+					new_taur = tgui_input_list(user, "Choose your character's tauric body:", "Character Preference", snowflake_taur_list)
 					if(new_taur)
 						features["taur"] = new_taur
 						if(new_taur != "None")
@@ -2932,7 +2932,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							if((!S.ckeys_allowed) || (S.ckeys_allowed.Find(user.client.ckey)))
 								snowflake_ears_list[S.name] = path
 					var/new_ears
-					new_ears = input(user, "Choose your character's ears:", "Character Preference") as null|anything in snowflake_ears_list
+					new_ears = tgui_input_list(user, "Choose your character's ears:", "Character Preference", snowflake_ears_list)
 					if(new_ears)
 						features["ears"] = new_ears
 
@@ -2947,20 +2947,20 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							if((!S.ckeys_allowed) || (S.ckeys_allowed.Find(user.client.ckey)))
 								snowflake_ears_list[S.name] = path
 					var/new_ears
-					new_ears = input(user, "Choose your character's ears:", "Character Preference") as null|anything in snowflake_ears_list
+					new_ears = tgui_input_list(user, "Choose your character's ears:", "Character Preference", snowflake_ears_list)
 					if(new_ears)
 						features["mam_ears"] = new_ears
 
 				//Xeno Bodyparts
 				if("xenohead")//Head or caste type
 					var/new_head
-					new_head = input(user, "Choose your character's caste:", "Character Preference") as null|anything in GLOB.xeno_head_list
+					new_head = tgui_input_list(user, "Choose your character's caste:", "Character Preference", GLOB.xeno_head_list)
 					if(new_head)
 						features["xenohead"] = new_head
 
 				if("xenotail")//Currently one one type, more maybe later if someone sprites them. Might include animated variants in the future.
 					var/new_tail
-					new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in GLOB.xeno_tail_list
+					new_tail = tgui_input_list(user, "Choose your character's tail:", "Character Preference", GLOB.xeno_tail_list)
 					if(new_tail)
 						features["xenotail"] = new_tail
 						if(new_tail != "None")
@@ -2971,7 +2971,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("xenodorsal")
 					var/new_dors
-					new_dors = input(user, "Choose your character's dorsal tube type:", "Character Preference") as null|anything in GLOB.xeno_dorsal_list
+					new_dors = tgui_input_list(user, "Choose your character's dorsal tube type:", "Character Preference", GLOB.xeno_dorsal_list)
 					if(new_dors)
 						features["xenodorsal"] = new_dors
 
@@ -3036,7 +3036,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							var/datum/sprite_accessory/penis/P = GLOB.cock_shapes_list[A]
 							if(P.taur_icon && T.taur_mode & P.accepted_taurs)
 								LAZYSET(hockeys, "[A] (Taur)", A)
-					new_shape = input(user, "Penis shape:", "Character Preference") as null|anything in (GLOB.cock_shapes_list + hockeys)
+					new_shape = tgui_input_list(user, "Penis shape:", "Character Preference", (GLOB.cock_shapes_list + hockeys))
 					if(new_shape)
 						features["cock_taur"] = FALSE
 						if(hockeys[new_shape])
@@ -3052,7 +3052,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						features["cock_diameter_ratio"] = clamp(round(new_ratio, 0.01), min_diameter_ratio, max_diameter_ratio)
 
 				if("cock_visibility")
-					var/n_vis = input(user, "Penis Visibility", "Character Preference") as null|anything in CONFIG_GET(str_list/safe_visibility_toggles)
+					var/n_vis = tgui_input_list(user, "Penis Visibility", "Character Preference", CONFIG_GET(str_list/safe_visibility_toggles))
 					if(n_vis)
 						features["cock_visibility"] = n_vis
 
@@ -3069,12 +3069,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("balls_shape")
 					var/new_shape
-					new_shape = input(user, "Testicle Shape", "Character Preference") as null|anything in GLOB.balls_shapes_list
+					new_shape = tgui_input_list(user, "Testicle Shape", "Character Preference", GLOB.balls_shapes_list)
 					if(new_shape)
 						features["balls_shape"] = new_shape
 
 				if("balls_visibility")
-					var/n_vis = input(user, "Testicles Visibility", "Character Preference") as null|anything in CONFIG_GET(str_list/safe_visibility_toggles)
+					var/n_vis = tgui_input_list(user, "Testicles Visibility", "Character Preference", CONFIG_GET(str_list/safe_visibility_toggles))
 					if(n_vis)
 						features["balls_visibility"] = n_vis
 
@@ -3089,13 +3089,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						features["balls_fluid"] = new_fluid.type
 
 				if("breasts_size")
-					var/new_size = input(user, "Breast Size", "Character Preference") as null|anything in CONFIG_GET(keyed_list/breasts_cups_prefs)
+					var/new_size = tgui_input_list(user, "Breast Size", "Character Preference", CONFIG_GET(keyed_list/breasts_cups_prefs))
 					if(new_size)
 						features["breasts_size"] = new_size
 
 				if("breasts_shape")
 					var/new_shape
-					new_shape = input(user, "Breast Shape", "Character Preference") as null|anything in GLOB.breasts_shapes_list
+					new_shape = tgui_input_list(user, "Breast Shape", "Character Preference", GLOB.breasts_shapes_list)
 					if(new_shape)
 						features["breasts_shape"] = new_shape
 
@@ -3111,7 +3111,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							to_chat(user,"<span class='danger'>Invalid color. Your color is not bright enough.</span>")
 
 				if("breasts_visibility")
-					var/n_vis = input(user, "Breasts Visibility", "Character Preference") as null|anything in CONFIG_GET(str_list/safe_visibility_toggles)
+					var/n_vis = tgui_input_list(user, "Breasts Visibility", "Character Preference", CONFIG_GET(str_list/safe_visibility_toggles))
 					if(n_vis)
 						features["breasts_visibility"] = n_vis
 
@@ -3127,7 +3127,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("vag_shape")
 					var/new_shape
-					new_shape = input(user, "Vagina Type", "Character Preference") as null|anything in GLOB.vagina_shapes_list
+					new_shape = tgui_input_list(user, "Vagina Type", "Character Preference", GLOB.vagina_shapes_list)
 					if(new_shape)
 						features["vag_shape"] = new_shape
 
@@ -3143,7 +3143,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							to_chat(user,"<span class='danger'>Invalid color. Your color is not bright enough.</span>")
 
 				if("vag_visibility")
-					var/n_vis = input(user, "Vagina Visibility", "Character Preference") as null|anything in CONFIG_GET(str_list/safe_visibility_toggles)
+					var/n_vis = tgui_input_list(user, "Vagina Visibility", "Character Preference", CONFIG_GET(str_list/safe_visibility_toggles))
 					if(n_vis)
 						features["vag_visibility"] = n_vis
 
@@ -3192,7 +3192,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("anus_shape")
 					var/new_shape
-					new_shape = input(user, "Butthole Shape", "Character Preference") as null|anything in GLOB.anus_shapes_list
+					new_shape = tgui_input_list(user, "Butthole Shape", "Character Preference", GLOB.anus_shapes_list)
 					if(new_shape)
 						features["anus_shape"] = new_shape
 
@@ -3211,17 +3211,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						features["butt_size"] = clamp(round(new_length), min_B, max_B)
 
 				if("butt_visibility")
-					var/n_vis = input(user, "Butt Visibility", "Character Preference") as null|anything in CONFIG_GET(str_list/safe_visibility_toggles)
+					var/n_vis = tgui_input_list(user, "Butt Visibility", "Character Preference", CONFIG_GET(str_list/safe_visibility_toggles))
 					if(n_vis)
 						features["butt_visibility"] = n_vis
 
 				if("anus_visibility")
-					var/n_vis = input(user, "Butthole Visibility", "Character Preference") as null|anything in CONFIG_GET(str_list/safe_visibility_toggles)
+					var/n_vis = tgui_input_list(user, "Butthole Visibility", "Character Preference", CONFIG_GET(str_list/safe_visibility_toggles))
 					if(n_vis)
 						features["anus_visibility"] = n_vis
 
 				if("belly_visibility")
-					var/n_vis = input(user, "Belly Visibility", "Character Preference") as null|anything in CONFIG_GET(str_list/safe_visibility_toggles)
+					var/n_vis = tgui_input_list(user, "Belly Visibility", "Character Preference", CONFIG_GET(str_list/safe_visibility_toggles))
 					if(n_vis)
 						features["belly_visibility"] = n_vis
 
@@ -3241,7 +3241,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						features -= "balls_max_size"
 
 				if("breasts_max_size")
-					var/new_size = input(user, "Breast Max Size (cancel to disable)", "Character Preference") as null|anything in GLOB.breast_values
+					var/new_size = tgui_input_list(user, "Breast Max Size (cancel to disable)", "Character Preference", GLOB.breast_values)
 					if(new_size)
 						features["breasts_max_size"] = new_size
 					else
@@ -3279,7 +3279,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						features -= "balls_min_size"
 
 				if("breasts_min_size")
-					var/new_size = input(user, "Breast Min Size (cancel to disable)", "Character Preference") as null|anything in GLOB.breast_values
+					var/new_size = tgui_input_list(user, "Breast Min Size (cancel to disable)", "Character Preference", GLOB.breast_values)
 					if(new_size)
 						features["breasts_min_size"] = new_size
 					else
@@ -3312,7 +3312,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						aooccolor = sanitize_ooccolor(new_aooccolor)
 
 				if("bag")
-					var/new_backbag = input(user, "Choose your character's style of bag:", "Character Preference")  as null|anything in GLOB.backbaglist
+					var/new_backbag = tgui_input_list(user, "Choose your character's style of bag:", "Character Preference", GLOB.backbaglist)
 					if(new_backbag)
 						backbag = new_backbag
 
@@ -3324,17 +3324,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 
 				if("uplink_loc")
-					var/new_loc = input(user, "Choose your character's traitor uplink spawn location:", "Character Preference") as null|anything in GLOB.uplink_spawn_loc_list
+					var/new_loc = tgui_input_list(user, "Choose your character's traitor uplink spawn location:", "Character Preference", GLOB.uplink_spawn_loc_list)
 					if(new_loc)
 						uplink_spawn_loc = new_loc
 
 				if("ai_core_icon")
-					var/ai_core_icon = input(user, "Choose your preferred AI core display screen:", "AI Core Display Screen Selection") as null|anything in GLOB.ai_core_display_screens
+					var/ai_core_icon = tgui_input_list(user, "Choose your preferred AI core display screen:", "AI Core Display Screen Selection", GLOB.ai_core_display_screens)
 					if(ai_core_icon)
 						preferred_ai_core_display = ai_core_icon
 
 				if("sec_dept")
-					var/department = input(user, "Choose your preferred security department:", "Security Departments") as null|anything in GLOB.security_depts_prefs
+					var/department = tgui_input_list(user, "Choose your preferred security department:", "Security Departments", GLOB.security_depts_prefs)
 					if(department)
 						prefered_security_department = department
 
@@ -3350,15 +3350,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							friendlyname += " (disabled)"
 						maplist[friendlyname] = VM.map_name
 					maplist[default] = null
-					var/pickedmap = input(user, "Choose your preferred map. This will be used to help weight random map selection.", "Character Preference")  as null|anything in maplist
+					var/pickedmap = tgui_input_list(user, "Choose your preferred map. This will be used to help weight random map selection.", "Character Preference", maplist)
 					if (pickedmap)
 						preferred_map = maplist[pickedmap]
 
 				if ("preferred_chaos")
-					var/pickedchaos = input(user, "Choose your preferred level of chaos. This will help with dynamic threat level ratings.", "Character Preference") as null|anything in list(CHAOS_NONE,CHAOS_LOW,CHAOS_MED,CHAOS_HIGH,CHAOS_MAX)
+					var/pickedchaos = tgui_input_list(user, "Choose your preferred level of chaos. This will help with dynamic threat level ratings.", "Character Preference", list(CHAOS_NONE,CHAOS_LOW,CHAOS_MED,CHAOS_HIGH,CHAOS_MAX))
 					preferred_chaos = pickedchaos
 				if ("be_victim")
-					var/pickedvictim = input(user, "Are you ok with antagonists interacting with you (e.g. kidnapping)? ERP consent is seperate: This setting does NOT mean they are allowed to rape you.", "Antag Victim Consent") as null|anything in list(BEVICTIM_NO,BEVICTIM_ASK,BEVICTIM_YES)
+					var/pickedvictim = tgui_input_list(user, "Are you ok with antagonists interacting with you (e.g. kidnapping)? ERP consent is seperate: This setting does NOT mean they are allowed to rape you.", "Antag Victim Consent", list(BEVICTIM_NO,BEVICTIM_ASK,BEVICTIM_YES))
 					be_victim = pickedvictim
 				if ("clientfps")
 					var/desiredfps = input(user, "Choose your desired fps. (0 = synced with server tick rate (currently:[world.fps]))", "Character Preference", clientfps)  as null|num
@@ -3366,7 +3366,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						clientfps = desiredfps
 						parent.fps = desiredfps
 				if("ui")
-					var/pickedui = input(user, "Choose your UI style.", "Character Preference", UI_style)  as null|anything in GLOB.available_ui_styles
+					var/pickedui = tgui_input_list(user, "Choose your UI style.", "Character Preference", UI_style, GLOB.available_ui_styles)
 					if(pickedui)
 						UI_style = pickedui
 						if (pickedui && parent && parent.mob && parent.mob.hud_used)
@@ -3380,7 +3380,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(pickedBloodColor)
 						blood_color = pickedBloodColor
 				if("pda_style")
-					var/pickedPDAStyle = input(user, "Выбирайте стиль своего КПК.", "Character Preference", pda_style)  as null|anything in GLOB.pda_styles
+					var/pickedPDAStyle = tgui_input_list(user, "Выбирайте стиль своего КПК.", "Character Preference", GLOB.pda_styles, pda_style)
 					if(pickedPDAStyle)
 						pda_style = pickedPDAStyle
 				if("pda_color")
@@ -3388,7 +3388,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(pickedPDAColor)
 						pda_color = pickedPDAColor
 				if("pda_skin")
-					var/pickedPDASkin = input(user, "Выбирайте модель своего КПК.", "Character Preference", pda_skin) as null|anything in GLOB.pda_reskins
+					var/pickedPDASkin = tgui_input_list(user, "Выбирайте модель своего КПК.", "Character Preference", GLOB.pda_reskins, pda_skin)
 					if(pickedPDASkin)
 						pda_skin = pickedPDASkin
 				if("pda_ringtone")
@@ -3396,7 +3396,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(pickedPDARingtone)
 						pda_ringtone = pickedPDARingtone
 				if("silicon_lawset")
-					var/picked_lawset = input(user, "Выбирайте предпочитаемый список законов", "Silicon preference", silicon_lawset) as null|anything in list("None") + CONFIG_GET(keyed_list/choosable_laws)
+					var/picked_lawset = tgui_input_list(user, "Выбирайте предпочитаемый список законов", "Silicon preference", list("None") + CONFIG_GET(keyed_list/choosable_laws), silicon_lawset)
 					if(picked_lawset)
 						if(picked_lawset == "None")
 							picked_lawset = null
@@ -3422,7 +3422,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						hud_toggle_color = new_toggle_color
 
 				if("gender")
-					var/chosengender = input(user, "Select your character's gender.", "Gender Selection", gender) as null|anything in list(MALE,FEMALE,"nonbinary","object")
+					var/chosengender = tgui_input_list(user, "Select your character's gender.", "Gender Selection", list(MALE,FEMALE,"nonbinary","object"), gender)
 					if(!chosengender)
 						return
 					switch(chosengender)
@@ -3445,11 +3445,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					fuzzy = !fuzzy
 
 				if("tongue")
-					var/selected_custom_tongue = input(user, "Choose your desired tongue (none means your species tongue)", "Character Preference") as null|anything in GLOB.roundstart_tongues
+					var/selected_custom_tongue = tgui_input_list(user, "Choose your desired tongue (none means your species tongue)", "Character Preference", GLOB.roundstart_tongues)
 					if(selected_custom_tongue)
 						custom_tongue = selected_custom_tongue
 				if("speech_verb")
-					var/selected_custom_speech_verb = input(user, "Choose your desired speech verb (none means your species speech verb)", "Character Preference") as null|anything in GLOB.speech_verbs
+					var/selected_custom_speech_verb = tgui_input_list(user, "Choose your desired speech verb (none means your species speech verb)", "Character Preference", GLOB.speech_verbs)
 					if(selected_custom_speech_verb)
 						custom_speech_verb = selected_custom_speech_verb
 
@@ -3464,7 +3464,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							if(!allowed.Find(user.client.ckey))
 								continue
 						woof_woof[initial(B.name)] = initial(B.id)
-					var/new_bork = input(user, "Choose your desired vocal bark", "Character Preference") as null|anything in woof_woof
+					var/new_bork = tgui_input_list(user, "Choose your desired vocal bark", "Character Preference", woof_woof)
 					if(new_bork)
 						bark_id = woof_woof[new_bork]
 						var/datum/bark/B = GLOB.bark_list[bark_id] //Now we need sanitization to take into account bark-specific min/max values
@@ -3491,7 +3491,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						bark_variance = clamp(borkset, initial(B.minvariance), initial(B.maxvariance))
 
 				if("bodysprite")
-					var/selected_body_sprite = input(user, "Choose your desired body sprite", "Character Preference") as null|anything in pref_species.allowed_limb_ids
+					var/selected_body_sprite = tgui_input_list(user, "Choose your desired body sprite", "Character Preference", pref_species.allowed_limb_ids)
 					if(selected_body_sprite)
 						chosen_limb_id = selected_body_sprite //this gets sanitized before loading
 
@@ -3532,7 +3532,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					// add a marking
 					var/marking_type = href_list["marking_type"]
 					if(marking_type && features[marking_type])
-						var/selected_limb = input(user, "Choose the limb to apply to.", "Character Preference") as null|anything in list("Head", "Chest", "Left Arm", "Right Arm", "Left Leg", "Right Leg", "All")
+						var/selected_limb = tgui_input_list(user, "Choose the limb to apply to.", "Character Preference", list("Head", "Chest", "Left Arm", "Right Arm", "Left Leg", "Right Leg", "All"))
 						if(selected_limb)
 							var/list/marking_list = GLOB.mam_body_markings_list
 							var/list/snowflake_markings_list = list()
@@ -3546,8 +3546,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 									if((!S.ckeys_allowed) || (S.ckeys_allowed.Find(user.client.ckey)))
 										snowflake_markings_list[S.name] = path
-
-							var/selected_marking = input(user, "Select the marking to apply to the limb.") as null|anything in snowflake_markings_list
+							var/selected_marking = tgui_input_list(user, "Select the marking to apply to the limb.", "Character Preference", snowflake_markings_list)
 							if(selected_marking)
 								if(selected_limb != "All")
 									var/limb_value = text2num(GLOB.bodypart_values[selected_limb])
@@ -3924,7 +3923,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(pickedOutlineColor != outline_color)
 						outline_color = pickedOutlineColor // nullable
 				if("screentip_pref")
-					var/choice = input(user, "Choose your screentip preference", "Screentipping?", screentip_pref) as null|anything in GLOB.screentip_pref_options
+					var/choice = tgui_input_list(user, "Choose your screentip preference", "Screentipping?", GLOB.screentip_pref_options, screentip_pref)
 					if(choice)
 						screentip_pref = choice
 				if("screentip_color")
@@ -4314,7 +4313,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				var/list/color_options = list()
 				for(var/i=1, i<=length(G.loadout_initial_colors), i++)
 					color_options += "Color [i]"
-				var/color_to_change = input(user, "Polychromic options", "Recolor [name]") as null|anything in color_options
+				var/color_to_change = tgui_input_list(user, "Polychromic options", "Recolor [name]", color_options)
 				if(color_to_change)
 					var/color_index = text2num(copytext(color_to_change, 7))
 					var/current_color = user_gear[LOADOUT_COLOR][color_index]
