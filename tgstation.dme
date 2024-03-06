@@ -4326,6 +4326,7 @@
 #include "modular_bluemoon\Ren\Code\weapons.dm"
 #include "modular_bluemoon\sanecman\code\lifeweb\flags.dm"
 #include "modular_bluemoon\sanecman\code\lifeweb\obj.dm"
+#include "modular_bluemoon\sanecman\code\plush_toys.dm"
 #include "modular_bluemoon\sanecman\code\lifeweb\turf.dm"
 #include "modular_bluemoon\sanecman\code\tools\tricoder.dm"
 #include "modular_bluemoon\service_staff\service_staff.dm"
