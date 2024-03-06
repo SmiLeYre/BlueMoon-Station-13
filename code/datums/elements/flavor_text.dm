@@ -177,11 +177,11 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 		return
 
 	// Validate the headshot URL
-	var/static/link_regex = regex("https://i\\.gyazo\\.com|https://media\\.discordapp\\.net|https://cdn\\.discordapp\\.com|https://media\\.discordapp\\.net$")
+	var/static/link_regex = regex("https://i\\.gyazo\\.com|https://media\\.discordapp\\.net|https://cdn\\.discordapp\\.com|https://media\\.discordapp\\.net$|https://static1\\.e621\\.net")
 	var/static/end_regex = regex("\\.jpg|\\.png|\\.jpeg$")
 
 	if(!findtext(new_headshot, link_regex))
-		to_chat(src, span_warning("The link needs to be an unshortened Gyazo or Discordapp link!"))
+		to_chat(src, span_warning("The link needs to be an unshortened Gyazo, E621, or Discordapp link!"))
 		return
 	if(!findtext(new_headshot, end_regex))
 		to_chat(src, span_warning("You need either \".png\", \".jpg\", or \".jpeg\" in the link!"))

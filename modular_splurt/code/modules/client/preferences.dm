@@ -98,6 +98,7 @@
 				dat += "<b>You are banned from using custom names and appearances. You can continue to adjust your characters, but you will be randomised once you join the game.</b><br>"
 			dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=name;task=random'>Random Name</A> "
 			dat += "<b>Always Random Name:</b><a style='display:block;width:30px' href='?_src_=prefs;preference=name'>[be_random_name ? "Yes" : "No"]</a><BR>"
+			dat += "<b>Hardsuit With Tail:</b><a style='display:block;width:30px' href='?_src_=prefs;preference=hardsuit'>[features["hardsuit_with_tail"] == TRUE ? "Yes" : "No"]</a><BR>"
 
 			dat += "<b>[nameless ? "Default designation" : "Name"]:</b>"
 			dat += "<a href='?_src_=prefs;preference=name;task=input'>[real_name]</a><BR>"
@@ -1738,7 +1739,7 @@
 		/datum/reagent/fermi/PEsmaller,
 		/datum/reagent/fermi/AEsmaller_hypo,
 		// Code comment here, whoever named the AEsmaller_hypo needs to understand the chem shouldn't be named after the fact it's found in a hypo
-		
+
 		// Causes positive mood bonus
 		// On overdose: Causes negative mood penalty and disgust
 		/datum/reagent/drug/copium/gfluid,

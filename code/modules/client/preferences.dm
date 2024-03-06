@@ -111,25 +111,27 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/pda_skin = PDA_SKIN_ALT
 	var/pda_ringtone = "beep"
 
+	var/hardsuit_tail_style = null // Пока не используется. Вскоре нужно будет бахнуть новых спрайтов.
+
 	var/blood_color = "#ff0000"
 
 	var/uses_glasses_colour = 0
 
 	//character preferences
-	var/real_name						//our character's name
-	var/nameless = FALSE				//whether or not our character is nameless
-	var/be_random_name = 0				//whether we'll have a random name every round
-	var/be_random_body = 0				//whether we'll have a random body every round
-	var/gender = MALE					//gender of character (well duh)
-	var/age = 30						//age of character
+	var/real_name							//our character's name
+	var/nameless = FALSE					//whether or not our character is nameless
+	var/be_random_name = FALSE				//whether we'll have a random name every round
+	var/be_random_body = FALSE				//whether we'll have a random body every round
+	var/gender = MALE						//gender of character (well duh)
+	var/age = 30							//age of character
 	//Sandstorm CHANGES BEGIN
 	var/erppref = "Ask"
 	var/nonconpref = "Ask"
 	var/vorepref = "Ask"
-	var/mobsexpref = "No" //Added by Gardelin0 - Sex(mostly non-con) with hostile mobs(tentacles)
-	var/hornyantagspref = "No" //Added by Gardelin0 - Interactions(mostly non-con) with horny antags(Qareen)
-	var/extremepref = "No" //This is for extreme shit, maybe even literal shit, better to keep it on no by default
-	var/extremeharm = "No" //If "extreme content" is enabled, this option serves as a toggle for the related interactions to cause damage or not
+	var/mobsexpref = "No" 					//Added by Gardelin0 - Sex(mostly non-con) with hostile mobs(tentacles)
+	var/hornyantagspref = "No" 				//Added by Gardelin0 - Interactions(mostly non-con) with horny antags(Qareen)
+	var/extremepref = "No" 					//This is for extreme shit, maybe even literal shit, better to keep it on no by default
+	var/extremeharm = "No" 					//If "extreme content" is enabled, this option serves as a toggle for the related interactions to cause damage or not
 	var/see_chat_emotes = TRUE
 	var/view_pixelshift = FALSE
 	var/eorg_enabled = TRUE
@@ -191,6 +193,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 "xenohead" = "Standard",
 "xenotail" = "Xenomorph Tail",
 "taur" = "None",
+"hardsuit_with_tail" = FALSE,
 "genitals_use_skintone" = FALSE,
 "has_cock" = FALSE,
 "cock_shape" = DEF_COCK_SHAPE,
@@ -599,6 +602,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=name;task=random'>Random Name</a><br>"
 					dat += "<a href='?_src_=prefs;preference=nameless'>Be nameless: [nameless ? "Yes" : "No"]</a><BR>"
 					dat += "<b>Always Random Name:</b><a style='display:block;width:30px' href='?_src_=prefs;preference=name'>[be_random_name ? "Yes" : "No"]</a><BR>"
+					dat += "<b>Hardsuit With Tail:</b><a style='display:block;width:30px' href='?_src_=prefs;preference=hardsuit_with_tail'>[features["hardsuit_with_tail"] == TRUE ? "Yes" : "No"]</a><BR>"
 
 					dat += "<b>Age:</b> <a style='display:block;width:30px' href='?_src_=prefs;preference=age;task=input'>[age]</a><BR>"
 					dat += "<b>Blood Color:</b> <span style='border:1px solid #161616; background-color: [blood_color];'><font color='[color_hex2num(blood_color) < 200 ? "FFFFFF" : "000000"]'>[blood_color]</font></span> <a href='?_src_=prefs;preference=blood_color;task=input'>Change</a><BR>"
@@ -3622,6 +3626,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					features["genitals_use_skintone"] = !features["genitals_use_skintone"]
 				if("arousable")
 					arousable = !arousable
+				if("hardsuit_with_tail")
+					features["hardsuit_with_tail"] = !features["hardsuit_with_tail"]
 				if("has_cock")
 					features["has_cock"] = !features["has_cock"]
 					if(features["has_cock"] == FALSE)
@@ -4164,11 +4170,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						features["headshot_link"] = null
 						return
 
-					var/static/link_regex = regex("https://i.gyazo.com|https://media.discordapp.net|https://cdn.discordapp.com|https://media.discordapp.net$") //Do not touch the damn duplicates.
+					var/static/link_regex = regex("https://i.gyazo.com|https://media.discordapp.net|https://cdn.discordapp.com|https://media.discordapp.net$|https://static1.e621.net") //Do not touch the damn duplicates.
 					var/static/end_regex = regex(".jpg|.jpg|.png|.jpeg|.jpeg") //Regex is terrible, don't touch the duplicate extensions
 
 					if(!findtext(usr_input, link_regex, 1, 29))
-						to_chat(usr, span_warning("The link needs to be an unshortened Gyazo or Discordapp link!"))
+						to_chat(usr, span_warning("The link needs to be an unshortened Gyazo, E621, or Discordapp link!"))
 						return
 					if(!findtext(usr_input, end_regex))
 						to_chat(usr, span_warning("You need either \".png\", \".jpg\", or \".jpeg\" in the link!"))

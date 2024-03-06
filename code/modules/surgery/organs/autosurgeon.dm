@@ -113,6 +113,9 @@
 /obj/item/autosurgeon/syndicate/anti_drop
 	starting_organ = /obj/item/organ/cyberimp/brain/anti_drop
 
+/obj/item/autosurgeon/syndicate/revitilzer
+	starting_organ = /obj/item/organ/cyberimp/chest/revitilzer
+
 //BOX O' IMPLANTS
 
 /obj/item/storage/box/cyber_implants

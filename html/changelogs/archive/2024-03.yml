@@ -1,0 +1,19 @@
+2024-03-02:
+  xhianil:
+  - rscadd: Use of E621 for headshots, because literally why not?
+2024-03-03:
+  Just-Sim:
+  - rscdel: Removed old *meow.
+  - sounddel: Removed old *meow.ogg
+  - rscadd: Added new *meow
+  - soundadd: Re-added old meow soundfile as it's needed by vocal barks.
+  - rscadd: Added new scream for Felinid subrace.
+  - rscdel: Deleted new felinid screams as emote_pitch_variance cannot be changed
+      without completely porting the *scream emote to the splurt_module emote.dm
+  - tweak: Turned down emote delay from 1 second to 0.5 so players can spam *meow
+      obnoxiously.
+  ariaworld:
+  - rscadd: Added chugging to any type of liquid container, not just drinking glasses.
+  - tweak: Removed old citadelcode from reagent container drinking, for more clean
+      and readable code.
+  - bugfix: Fixes a few bugs related to chugging.

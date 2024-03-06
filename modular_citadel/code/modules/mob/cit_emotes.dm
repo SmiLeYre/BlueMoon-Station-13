@@ -154,20 +154,6 @@
 		return
 	playsound(user, 'modular_citadel/sound/voice/hiss.ogg', 50, 1, -1)
 
-/datum/emote/living/meow
-	key = "meow"
-	key_third_person = "mrowls"
-	message = "мяукает!"
-	emote_type = EMOTE_AUDIBLE
-	muzzle_ignore = FALSE
-	restraint_check = FALSE
-
-/datum/emote/living/meow/run_emote(mob/living/user, params)
-	. = ..()
-	if(!.)
-		return
-	playsound(user, 'modular_citadel/sound/voice/meow1.ogg', 50, 1, -1)
-
 /datum/emote/living/purr
 	key = "purr"
 	key_third_person = "purrs softly"

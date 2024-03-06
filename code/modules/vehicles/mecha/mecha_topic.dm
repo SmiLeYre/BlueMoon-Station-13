@@ -393,14 +393,20 @@
 	if(href_list["dna_lock"])
 		var/mob/living/carbon/user = usr
 		if(!istype(user) || !user.dna)
-			to_chat(user, "[icon2html(src, occupants)]<span class='notice'>You can't create a DNA lock with no DNA!.</span>")
+			to_chat(user, "[icon2html(src, occupants)]<span class='notice'>Вы не можете воспользоваться ДНК-замком, не имея ДНК!</span>")
 			return
+		if(dna_lock)
+			to_chat(user, "[icon2html(src, occupants)]<span class='notice'>Эта техника уже заблокирована ДНК-замком.</span>")
 		dna_lock = user.dna.unique_enzymes
-		to_chat(user, "[icon2html(src, occupants)]<span class='notice'>You feel a prick as the needle takes your DNA sample.</span>")
+		var/dna_lock_examine = " Этот мех заблокирован ДНК - [user.name]."
+		if(dna_lock)
+			desc += dna_lock_examine
+		to_chat(user, "[icon2html(src, occupants)]<span class='notice'>Вы чувствуете колкое ощущение, когда игла внутри меха берет ваш образец ДНК...</span>")
 		return
 
 	//Resets the DNA lock
 	if(href_list["reset_dna"])
+		desc = desc
 		dna_lock = null
 		return
 

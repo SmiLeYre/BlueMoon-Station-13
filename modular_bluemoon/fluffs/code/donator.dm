@@ -216,35 +216,35 @@
 	name = "Flektarn Combat Uniform"
 	slot = ITEM_SLOT_ICLOTHING
 	path = /obj/item/clothing/under/donator/bm/flektarn
-	ckeywhitelist = list("vulpshiro", "dolbajob", "stgs", "leony24")
+	ckeywhitelist = list("vulpshiro", "dolbajob", "stgs", "leony24", "sodastrike", "lonofera", "hellsinggc")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/flektarn_casual
 	name = "Flektarn Casual Uniform"
 	slot = ITEM_SLOT_ICLOTHING
 	path = /obj/item/clothing/under/donator/bm/flektarn_casual
-	ckeywhitelist = list("vulpshiro", "dolbajob", "stgs", "leony24")
+	ckeywhitelist = list("vulpshiro", "dolbajob", "stgs", "leony24", "sodastrike", "lonofera", "hellsinggc")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/flektarn_montur
 	name = "Flektarn Montur"
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/donator/bm/flektarn_montur
-	ckeywhitelist = list("vulpshiro", "dolbajob", "stgs", "leony24", "dcp9371")
+	ckeywhitelist = list("vulpshiro", "dolbajob", "stgs", "leony24", "sodastrike", "lonofera", "hellsinggc")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/flektarn_beret
 	name = "Flektarn Beret"
 	slot = ITEM_SLOT_HEAD
 	path = /obj/item/clothing/head/donator/bm/flektarn_beret
-	ckeywhitelist = list("vulpshiro", "dolbajob", "stgs", "leony24", "dcp9371")
+	ckeywhitelist = list("vulpshiro", "dolbajob", "stgs", "leony24", "sodastrike", "lonofera", "hellsinggc")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/skull_patch
 	name = "PMC Skull Patch"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/accessory/skull_patch
-	ckeywhitelist = list("krashly", "stgs", "hazzi", "dolbajob", "leony24", "snacksman")
+	ckeywhitelist = list("krashly", "stgs", "hazzi", "dolbajob", "leony24", "snacksman", "sodastrike", "vulpshiro", "lonofera", "hellsinggc", "mihana964")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/SH_jacket
@@ -349,14 +349,14 @@
 	name = "Covert Ops Tactical Uniform"
 	slot = ITEM_SLOT_ICLOTHING
 	path = /obj/item/clothing/under/donator/bm/nri_drg
-	ckeywhitelist = list("vulpshiro", "dolbajob", "stgs", "leony24", "krashly")
+	ckeywhitelist = list("vulpshiro", "dolbajob", "stgs", "leony24", "krashly", "sodastrike")
 	subcategory = LOADOUT_SUBCATEGORIES_DON04
 
 /datum/gear/donator/bm/nri_drg_head
 	name = "Covert Ops Headgear"
 	slot = ITEM_SLOT_HEAD
 	path = /obj/item/clothing/head/donator/bm/nri_drg_head
-	ckeywhitelist = list("vulpshiro", "dolbajob", "stgs", "leony24", "krashly")
+	ckeywhitelist = list("vulpshiro", "dolbajob", "stgs", "leony24", "krashly", "sodastrike")
 	subcategory = LOADOUT_SUBCATEGORIES_DON04
 
 /datum/gear/donator/bm/booma_patch

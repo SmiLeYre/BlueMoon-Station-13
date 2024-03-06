@@ -271,27 +271,30 @@ GLOBAL_LIST(topic_status_cache)
 		if(do_hard_reboot)
 			log_world("Игровой Мир будет перезагружен в [TIME_STAMP("hh:mm:ss", FALSE)]")
 			shutdown_logging() // See comment below.
-			AUXTOOLS_SHUTDOWN(AUXMOS)
+			auxcleanup()
 			TgsEndProcess()
 			return ..()
 
 	log_world("Игровой Мир будет перезагружен в [TIME_STAMP("hh:mm:ss", FALSE)]")
 
 	shutdown_logging() // Past this point, no logging procs can be used, at risk of data loss.
-	AUXTOOLS_SHUTDOWN(AUXMOS)
+	auxcleanup()
 
 	TgsReboot() // TGS can decide to kill us right here, so it's important to do it last
 
 	..()
 	#endif
 
-/world/Del()
-	shutdown_logging() // makes sure the thread is closed before end, else we terminate
+/world/proc/auxcleanup()
 	AUXTOOLS_SHUTDOWN(AUXMOS)
 	var/debug_server = world.GetConfig("env", "AUXTOOLS_DEBUG_DLL")
 	if (debug_server)
 		call(debug_server, "auxtools_shutdown")()
-	..()
+
+/world/Del()
+	shutdown_logging() // makes sure the thread is closed before end, else we terminate
+	auxcleanup()
+	. = ..()
 
 /world/proc/update_status()
 	. = ""

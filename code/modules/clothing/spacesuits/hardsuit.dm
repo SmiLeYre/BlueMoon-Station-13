@@ -632,7 +632,8 @@
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_ALL_TAURIC
 	//BLUEMOON ADD вариация хардсьюта сб
 	unique_reskin = list(
-		"Alt" = list(RESKIN_ICON_STATE = "hardsuit-sec2")
+		"Alt" = list(RESKIN_ICON_STATE = "hardsuit-sec2"),
+		"Blue Variation" = list(RESKIN_ICON_STATE = "hardsuit-sec3")
 	)
 
 /obj/item/clothing/suit/space/hardsuit/security/reskin_obj(mob/user)
@@ -642,6 +643,13 @@
 		if(helmet)
 			var/obj/item/clothing/head/helmet/space/hardsuit/Helm = helmet
 			Helm.hardsuit_type = "sec2"
+			Helm.update_icon_state()
+	if(current_skin == "Blue Variation")
+		mutantrace_variation = STYLE_DIGITIGRADE
+		tail_state = "ert-commander"
+		if(helmet)
+			var/obj/item/clothing/head/helmet/space/hardsuit/Helm = helmet
+			Helm.hardsuit_type = "sec3"
 			Helm.update_icon_state()
 	//BLUEMOON ADD END
 
