@@ -363,7 +363,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 			else
 				to_chat(user, "<span class='notice'>You are trying to help. It might take a while...</span>")
 				user_unbuckle_mob(buckled_mobs[1], user)
-		else if(ishuman(user) && TryStuck(user, 40, 10))
+		else if(ishuman(user) && TryStuck(user, 10, 5))
 			to_chat(user, "<span class='warning'>You were trying to get items from [src], but ended up being stuck in it somehow...</span>")
 			if(iscatperson(user))
 				stoplag(1 SECONDS)
@@ -395,8 +395,10 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	density = TRUE //because machinery/open_machine() sets it to 0
 	can_buckle = TRUE
 
-/obj/machinery/washing_machine/proc/TryStuck(mob/living/carbon/human/user, unusual_chance = 15, usual_chance = 5)
+/obj/machinery/washing_machine/proc/TryStuck(mob/living/carbon/human/user, unusual_chance = 5, usual_chance = 2)
 	var/stuck_chance = (iscatperson(user) || HAS_TRAIT(user, TRAIT_CLUMSY) || HAS_TRAIT(user, TRAIT_FAT) || HAS_TRAIT(user, TRAIT_CURSED) || HAS_TRAIT(user, TRAIT_NYMPHO) || isclownjob(user)) ? unusual_chance : usual_chance
+	if((user.client && user.client?.prefs.erppref == "Yes" && CHECK_BITFIELD(user.client?.prefs.toggles, VERB_CONSENT) && user.client?.prefs.nonconpref == "Yes"))
+		stuck_chance = stuck_chance * 2 //non-con enjoyers will get what they want.
 	if(prob(stuck_chance))
 		buckle_mob(user)
 		return TRUE
