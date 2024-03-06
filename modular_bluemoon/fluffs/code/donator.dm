@@ -553,3 +553,10 @@
 	path = /obj/item/modkit/Anabel_kit
 	ckeywhitelist = list("kalifasun", "dofalt")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/Doctor_K
+	name = "Doctor K plushie"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/toy/plush/doctor_k
+	ckeywhitelist = list("sanecman")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
