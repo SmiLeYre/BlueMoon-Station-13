@@ -4132,6 +4132,7 @@
 #include "modular_bluemoon\code\modules\antagonists\bloodsucker_crypt.dm"
 #include "modular_bluemoon\code\modules\client\preferences_savefile.dm"
 #include "modular_bluemoon\code\modules\client\loadout\eyes.dm"
+#include "modular_bluemoon\code\modules\client\loadout\shoes.dm"
 #include "modular_bluemoon\code\modules\client\loadout\uniform.dm"
 #include "modular_bluemoon\code\modules\clothing\suits\eyes.dm"
 #include "modular_bluemoon\code\modules\clothing\suits\miscellaneous.dm"
