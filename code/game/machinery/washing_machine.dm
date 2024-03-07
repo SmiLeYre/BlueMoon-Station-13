@@ -150,6 +150,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	obj_flags = CAN_BE_HIT|SHOVABLE_ONTO
 	var/mutable_appearance/upper_half
 	var/mob_is_immobilized = FALSE //to avoid healing miracles
+	var/mob_size_limit = 1.20 //too big creatures won't fit inside
 
 /obj/machinery/washing_machine/Initialize(mapload)
 	. = ..()
@@ -396,6 +397,8 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	can_buckle = TRUE
 
 /obj/machinery/washing_machine/proc/TryStuck(mob/living/carbon/human/user, unusual_chance = 5, usual_chance = 2)
+	if(get_size(user) >= mob_size_limit)
+		return
 	var/stuck_chance = (iscatperson(user) || HAS_TRAIT(user, TRAIT_CLUMSY) || HAS_TRAIT(user, TRAIT_FAT) || HAS_TRAIT(user, TRAIT_CURSED) || HAS_TRAIT(user, TRAIT_NYMPHO) || isclownjob(user)) ? unusual_chance : usual_chance
 	if((user.client && user.client?.prefs.erppref == "Yes" && CHECK_BITFIELD(user.client?.prefs.toggles, VERB_CONSENT) && user.client?.prefs.nonconpref == "Yes"))
 		stuck_chance = stuck_chance * 2 //non-con enjoyers will get what they want.
@@ -407,6 +410,9 @@ GLOBAL_LIST_INIT(dye_registry, list(
 
 /obj/machinery/washing_machine/user_buckle_mob(mob/living/carbon/human/H, mob/living/user, check_loc)
 	if(!ishuman(H))
+		return
+	if(get_size(H) >= mob_size_limit)
+		to_chat(user, "<span class='notice'>[H] is too big for [src].")
 		return
 	if(H != user)
 		H.visible_message("<span class='danger'>[user] is shoving [H] into [src]!</span>", \
