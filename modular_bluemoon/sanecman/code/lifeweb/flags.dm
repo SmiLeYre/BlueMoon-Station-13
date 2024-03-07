@@ -78,8 +78,8 @@
 	icon_state = "poster_pray"
 
 /obj/structure/sign/poster/contraband/ravenheart/lana
-	name = "First Servant"
-	desc = "Первая женщина что пошла против веры грешников." // Придумайте сами умный текст
+	name = "Lana Aiko"
+	desc = "Первая женщина-патриарх."
 	icon = 'modular_bluemoon/sanecman/icons/lifeweb/poster.dmi'
 	icon_state = "lana"
 

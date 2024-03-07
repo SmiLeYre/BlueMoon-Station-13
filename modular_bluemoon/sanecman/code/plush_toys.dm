@@ -8,7 +8,7 @@
 
 /obj/item/toy/plush/cirno
 	name = "Cirno plushie"
-	desc = "Чирно? Сырно? Даже она не знает как правильно проиносить."
+	desc = "Чирно? Сырно? Даже она не знает как правильно произносить."
 	icon = 'modular_bluemoon/sanecman/icons/plushes.dmi'
 	icon_state = "cirno"
 	item_state = "cirno"

@@ -1,6 +1,5 @@
 // Тут содержатся все вещи Ординаторов Трибунала
 /obj/item/clothing/under/syndicate/ordinator
-/obj/item/clothing/under/syndicate
 	name = "tribunal enlisted uniform"
 	desc = "Standard uniform for Nanotrasen Ordinator Tribunal."
 	icon = 'modular_bluemoon/sanecman/icons/lifeweb/clothing_lfwb.dmi'

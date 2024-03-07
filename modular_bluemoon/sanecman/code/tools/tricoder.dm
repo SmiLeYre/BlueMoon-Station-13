@@ -11,7 +11,7 @@ TRICORDER
 //The tricorder is a child of a multitool for the sole purpose to make it work with Tcomms
 
 /obj/item/multitool/tricorder
-	name = "трикодер"
+	name = "tricorder"
 	desc = "Многофункциональное устройство, которое может выполнять огромный спектр задач."
 	icon_state = "tricorder"
 	item_state = "multitool"
