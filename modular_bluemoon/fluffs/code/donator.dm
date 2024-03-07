@@ -560,3 +560,11 @@
 	path = /obj/item/toy/plush/doctor_k
 	ckeywhitelist = list("sanecman")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/legax_kit
+	name = "Legax Gravpulser Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/modkit/legax
+	ckeywhitelist = list("sanecman")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+

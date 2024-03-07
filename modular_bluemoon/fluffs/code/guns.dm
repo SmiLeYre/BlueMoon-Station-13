@@ -329,3 +329,9 @@
 	else
 		icon_state = "G36_e"
 		item_state = "G36_e"
+
+/obj/item/modkit/legax
+	name = "Legax Gravpulser Kit"
+	desc = "Модифицирует стандартную лазерную винтовку в эксперментальный гравпульсер."
+	product = /obj/item/gun/energy/taser/legax
+	fromitem = list(/obj/item/gun/energy/laser)
