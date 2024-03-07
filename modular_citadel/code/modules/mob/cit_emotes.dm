@@ -162,7 +162,7 @@
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
 	stat_allowed = UNCONSCIOUS //cats can purr in their sleep
-	emote_cooldown = 3 SECONDS
+	emote_cooldown = 0.5 SECONDS
 
 /datum/emote/living/purr/run_emote(mob/living/user, params)
 	. = ..()
