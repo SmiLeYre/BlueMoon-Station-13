@@ -411,7 +411,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	if(H != user)
 		H.visible_message("<span class='danger'>[user] is shoving [H] into [src]!</span>", \
 							"<span class='userdanger'>[user] is shoving [H] into [src]!</span>")
-	if(!do_after(user, 2 SECONDS, src))
+	if(!do_after(user, 5 SECONDS, H))
 		return FALSE
 	. = ..()
 	if(iscatperson(H))
