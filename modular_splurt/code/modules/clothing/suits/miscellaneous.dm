@@ -136,7 +136,7 @@
 	name = "Enforcer Voidsuit"
 	desc = "Deluxe issue armored voidsuit. Let the middle class bask in your grofit!"
 	icon_state = "corpuss"
-	armor = list(MELEE = 30, BULLET = 30, LASER = 30, ENERGY = 10, BOMB = 25, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 10)
+	armor = list(MELEE = 30, BULLET = 30, LASER = 30, ENERGY = 20, BOMB = 20, BIO = 20, RAD = 0, FIRE = 50, ACID = 50, WOUND = 10)
 	hoodtype = /obj/item/clothing/head/hooded/corpus/s //Enjoy this nice red outfit Nanotrasen! There is NO NEED for a pink one! xoxo -VivI Fanteriso
 
 /obj/item/clothing/suit/hooded/corpus/s/Initialize(mapload)
