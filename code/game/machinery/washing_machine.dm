@@ -396,9 +396,14 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	density = TRUE //because machinery/open_machine() sets it to 0
 	can_buckle = TRUE
 
+/obj/machinery/washing_machine/can_be_pulled(user, grab_state, force)
+	. = ..()
+	if(has_buckled_mobs() && (buckled_mobs[1] == user))
+		return FALSE
+
 /obj/machinery/washing_machine/proc/TryStuck(mob/living/carbon/human/user, unusual_chance = 5, usual_chance = 2)
 	if(get_size(user) >= mob_size_limit)
-		return
+		return FALSE
 	var/stuck_chance = (iscatperson(user) || HAS_TRAIT(user, TRAIT_CLUMSY) || HAS_TRAIT(user, TRAIT_FAT) || HAS_TRAIT(user, TRAIT_CURSED) || HAS_TRAIT(user, TRAIT_NYMPHO) || isclownjob(user)) ? unusual_chance : usual_chance
 	if((user.client && user.client?.prefs.erppref == "Yes" && CHECK_BITFIELD(user.client?.prefs.toggles, VERB_CONSENT) && user.client?.prefs.nonconpref == "Yes"))
 		stuck_chance = stuck_chance * 2 //non-con enjoyers will get what they want.
@@ -412,7 +417,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	if(!ishuman(H))
 		return
 	if(get_size(H) >= mob_size_limit)
-		to_chat(user, "<span class='notice'>[H] is too big for [src].")
+		to_chat(user, "<span class='danger'>[H] is too big for [src].")
 		return
 	if(H != user)
 		H.visible_message("<span class='danger'>[user] is shoving [H] into [src]!</span>", \
