@@ -419,10 +419,12 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	if(get_size(H) >= mob_size_limit)
 		to_chat(user, "<span class='danger'>[H] is too big for [src].")
 		return
+	var/shoving_time = 2 SECONDS
 	if(H != user)
+		shoving_time = 5 SECONDS
 		H.visible_message("<span class='danger'>[user] is shoving [H] into [src]!</span>", \
 							"<span class='userdanger'>[user] is shoving [H] into [src]!</span>")
-	if(!do_after(user, 5 SECONDS, H))
+	if(!do_after(user, shoving_time, H))
 		return FALSE
 	. = ..()
 	if(iscatperson(H))
