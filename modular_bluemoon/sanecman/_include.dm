@@ -5,4 +5,6 @@
 #include "code\plush_toys.dm"
 #include "code\lifeweb\turf.dm"
 #include "code\tools\tricoder.dm"
+#include "code\lifeweb\ordinator.dm"
+#include "code\lifeweb\gun.dm"
 #include "code\lifeweb\ert.dm"
