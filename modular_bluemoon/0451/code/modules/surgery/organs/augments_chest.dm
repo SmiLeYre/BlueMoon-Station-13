@@ -86,7 +86,7 @@
 
 //Ultimate version of healer
 /obj/item/organ/cyberimp/chest/revitilzer
-	name = "Revitalizing cortex"
+	name = "Revitalizing Cortex"
 	desc = "This attachable to the torso cortex optimizes the body's processes in order to preserve the body. Provides overall basic mending."
 	icon = 'modular_bluemoon/0451/icons/implants/internal_HA.dmi'
 	icon_state = "revitilizer"

@@ -30,6 +30,16 @@
 /obj/item/clothing/suit/hooded/explorer/standard/improved/upgrade_icon(datum/source, amount, maxamount)
 	return
 
+/obj/item/clothing/suit/hooded/explorer/standard/improved/equipped(mob/living/carbon/human/user, slot)
+	..()
+	if (slot == ITEM_SLOT_HEAD)
+		ADD_TRAIT(user, TRAIT_ASHSTORM_IMMUNE, "improved_suit")
+
+/obj/item/clothing/suit/hooded/explorer/standard/improved/dropped(mob/living/carbon/human/user)
+	..()
+	if (HAS_TRAIT_FROM(user, TRAIT_ASHSTORM_IMMUNE, "improved_suit"))
+		REMOVE_TRAIT(user, TRAIT_ASHSTORM_IMMUNE, "improved_suit")
+
 /obj/item/clothing/head/hooded/explorer
 	name = "Explorer Hood"
 	desc = "An armoured hood for exploring harsh environments."
@@ -54,18 +64,18 @@
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	armor = list(MELEE = 60, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 50, BIO = 100, RAD = 50, FIRE = 100, ACID = 50, WOUND = 10)
 
-/obj/item/clothing/suit/hooded/explorer/standard/improved/upgrade_icon(datum/source, amount, maxamount)
+/obj/item/clothing/head/hooded/explorer/standard/improved/upgrade_icon(datum/source, amount, maxamount)
 	return
 
-/obj/item/clothing/suit/hooded/explorer/standard/improved/equipped(mob/living/carbon/human/user, slot)
+/obj/item/clothing/head/hooded/explorer/standard/improved/equipped(mob/living/carbon/human/user, slot)
 	..()
 	if (slot == ITEM_SLOT_HEAD)
-		ADD_TRAIT(user, TRAIT_ASHSTORM_IMMUNE, "improved_suit")
+		ADD_TRAIT(user, TRAIT_ASHSTORM_IMMUNE, "improved_hood")
 
-/obj/item/clothing/suit/hooded/explorer/standard/improved/dropped(mob/living/carbon/human/user)
+/obj/item/clothing/head/hooded/explorer/standard/improved/dropped(mob/living/carbon/human/user)
 	..()
-	if (HAS_TRAIT_FROM(user, TRAIT_ASHSTORM_IMMUNE, "improved_suit"))
-		REMOVE_TRAIT(user, TRAIT_ASHSTORM_IMMUNE, "improved_suit")
+	if (HAS_TRAIT_FROM(user, TRAIT_ASHSTORM_IMMUNE, "improved_hood"))
+		REMOVE_TRAIT(user, TRAIT_ASHSTORM_IMMUNE, "improved_hood")
 
 /obj/item/clothing/suit/hooded/explorer/standard
 	hoodtype = /obj/item/clothing/head/hooded/explorer/standard

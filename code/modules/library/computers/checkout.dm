@@ -393,12 +393,13 @@
 						alert("Connection to Archive has been severed. Aborting.")
 					else
 						var/datum/db_query/query = SSdbcore.NewQuery({"
-							INSERT INTO [format_table_name("library")] (author, title, content, category, ckey, flagged)
-							VALUES (:author, :title, :content, :category, :ckey, 0)"}, list(
+							INSERT INTO [format_table_name("library")] (author, title, content, category, ckey, flagged, datetime, round_id_created)
+							VALUES (:author, :title, :content, :category, :ckey, Now(), :round_id, 0)"}, list(
 								"author" = scanner.cache.author,
 								"title" = scanner.cache.name,
 								"content" = scanner.cache.dat,
 								"category" = upload_category,
+								"round_id" = GLOB.round_id,
 								"ckey" = usr.ckey
 							))
 

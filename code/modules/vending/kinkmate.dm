@@ -66,7 +66,8 @@
 				/obj/item/clothing/under/pants/chaps = 5,
 				/obj/item/clothing/accessory/skullcodpiece/fake = 3,
 				/obj/item/reagent_containers/glass/bottle/hexacrocin = 10,
-				/obj/item/melee/sizetool = 2
+				/obj/item/melee/sizetool = 2,
+				/obj/item/lewd_spellbook = 1
 				)
 	refill_canister = /obj/item/vending_refill/kink
 	default_price = PRICE_CHEAP

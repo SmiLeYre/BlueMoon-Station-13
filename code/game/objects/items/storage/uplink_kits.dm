@@ -461,6 +461,14 @@
 /obj/item/storage/box/syndie_kit/pistol/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol(src)
 	new /obj/item/ammo_box/magazine/m10mm(src)
+	new /obj/item/ammo_box/magazine/m10mm(src)
+
+/obj/item/storage/box/syndie_kit/aps_pistol
+
+/obj/item/storage/box/syndie_kit/aps_pistol/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/APS(src)
+	new /obj/item/ammo_box/magazine/pistolm9mm(src)
+	new /obj/item/ammo_box/magazine/pistolm9mm(src)
 
 /obj/item/storage/box/syndie_kit/contract_kit
 	name = "contractor kit"

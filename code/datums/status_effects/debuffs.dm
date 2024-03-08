@@ -29,9 +29,33 @@
 /datum/status_effect/incapacitating/stun
 	id = "stun"
 
+/datum/status_effect/incapacitating/stun/on_apply()
+	. = ..()
+	if(!.)
+		return
+	ADD_TRAIT(owner, TRAIT_INCAPACITATED, id)
+	ADD_TRAIT(owner, TRAIT_IMMOBILIZED, id)
+	ADD_TRAIT(owner, TRAIT_HANDS_BLOCKED, id)
+
+/datum/status_effect/incapacitating/stun/on_remove()
+	REMOVE_TRAIT(owner, TRAIT_INCAPACITATED, id)
+	REMOVE_TRAIT(owner, TRAIT_IMMOBILIZED, id)
+	REMOVE_TRAIT(owner, TRAIT_HANDS_BLOCKED, id)
+	return ..()
+
 //KNOCKDOWN
 /datum/status_effect/incapacitating/knockdown
 	id = "knockdown"
+
+/datum/status_effect/incapacitating/knockdown/on_apply()
+	. = ..()
+	if(!.)
+		return
+	ADD_TRAIT(owner, TRAIT_FLOORED, id)
+
+/datum/status_effect/incapacitating/knockdown/on_remove()
+	REMOVE_TRAIT(owner, TRAIT_FLOORED, id)
+	return ..()
 
 //IMMOBILIZED
 /datum/status_effect/incapacitating/immobilized
@@ -84,13 +108,13 @@
 		var/health_ratio = owner.health / owner.maxHealth
 		var/healing = HEALING_SLEEP_DEFAULT
 		if((locate(/obj/structure/bed) in owner.loc))
-			healing -= -0.005
+			healing += -0.005
 		else if((locate(/obj/structure/table) in owner.loc))
-			healing -= -0.0025
+			healing += -0.0025
 		else if((locate(/obj/structure/chair) in owner.loc))
-			healing -= -0.0025
+			healing += -0.0025
 		if(locate(/obj/item/bedsheet) in owner.loc)
-			healing -= -0.005
+			healing += -0.005
 		if(health_ratio > 0.75) // Only heal when above 75% health
 			owner.adjustBruteLoss(healing)
 			owner.adjustFireLoss(healing)

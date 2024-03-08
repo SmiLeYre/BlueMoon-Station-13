@@ -174,6 +174,13 @@
 	item_state = "chickensuit"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
 
+/obj/item/clothing/head/richard
+	name = "Richard Head"
+	desc = "Bkaw!"
+	icon_state = "richard"
+	item_state = "chickensuit"
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
+
 /obj/item/clothing/head/griffin
 	name = "griffon head"
 	desc = "Why not 'eagle head'? Who knows."

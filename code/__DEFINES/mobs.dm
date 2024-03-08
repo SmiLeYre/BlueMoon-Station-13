@@ -73,7 +73,7 @@
 #define BODYPART_DISABLED_WOUND 3
 
 #define DEFAULT_BODYPART_ICON 'icons/mob/human_parts.dmi'
-#define DEFAULT_BODYPART_ICON_ORGANIC 'icons/mob/human_parts_greyscale.dmi'
+#define DEFAULT_BODYPART_ICON_ORGANIC 'modular_bluemoon/icons/mob/species_legs.dmi' // BLUEMOON CHANGES - was 'icons/mob/human_parts_greyscale.dmi'
 #define DEFAULT_BODYPART_ICON_ROBOTIC 'icons/mob/augmentation/augments.dmi'
 
 #define MONKEY_BODYPART "monkey"

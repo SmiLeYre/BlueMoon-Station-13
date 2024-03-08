@@ -279,6 +279,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			qdel(S)
 	if(!GLOB.roundstart_races.len)
 		GLOB.roundstart_races += "human"
+	GLOB.roundstart_race_names = sort_list(GLOB.roundstart_race_names) // BLUEMOON ADD - сортировка названий рас для выбора в меню создания персонажа
 
 /**
  * Checks if a species is eligible to be picked at roundstart.

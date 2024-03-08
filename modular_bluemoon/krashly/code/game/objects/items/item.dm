@@ -67,7 +67,7 @@
 	name = "PMC Skull flag"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/sign/flag/skull
-	ckeywhitelist = list("krashly", "stgs", "hazzi", "dolbajob")
+	ckeywhitelist = list("krashly", "stgs", "hazzi", "dolbajob", "vulpshiro", "sodastrike", "lonofera", "mihana964", "hellsinggc")
 	subcategory = LOADOUT_SUBCATEGORIES_DON01
 
 //InteQ

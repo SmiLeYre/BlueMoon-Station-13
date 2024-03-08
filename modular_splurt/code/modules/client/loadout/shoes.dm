@@ -16,7 +16,7 @@
 	path = /obj/item/clothing/shoes/jackboots/toeless
 
 /datum/gear/shoes/jackboots/tall
-	name = "Tall Jackboots"
+	name = "Tall Heels Jackboots" // BLUEMOON EDIT - was "Tall Jackboots"
 	path = /obj/item/clothing/shoes/jackboots/tall
 
 /datum/gear/shoes/ducky

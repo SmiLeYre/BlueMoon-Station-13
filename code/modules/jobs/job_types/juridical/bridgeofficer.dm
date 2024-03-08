@@ -18,8 +18,8 @@
 	plasma_outfit = /datum/outfit/plasmaman/bridgeofficer
 	//SPLURT CHANGES (Changes the custom spawn text for the Bridge Officer)
 	custom_spawn_text = "<font color='red'>You are an assistant who's primary focus is serving the Heads of Staff. Nothing more. Nothing less.</font>"
-	access = list(ACCESS_HEADS, ACCESS_MAINT_TUNNELS, ACCESS_BRIDGE_OFFICER, ACCESS_RC_ANNOUNCE, ACCESS_KEYCARD_AUTH)
-	minimal_access = list(ACCESS_HEADS, ACCESS_MAINT_TUNNELS, ACCESS_BRIDGE_OFFICER, ACCESS_RC_ANNOUNCE, ACCESS_KEYCARD_AUTH)
+	access = list(ACCESS_HEADS, ACCESS_MAINT_TUNNELS, ACCESS_BRIDGE_OFFICER, ACCESS_RC_ANNOUNCE, ACCESS_KEYCARD_AUTH, ACCESS_SEC_DOORS, ACCESS_SECURITY)
+	minimal_access = list(ACCESS_HEADS, ACCESS_MAINT_TUNNELS, ACCESS_BRIDGE_OFFICER, ACCESS_RC_ANNOUNCE, ACCESS_KEYCARD_AUTH, ACCESS_SEC_DOORS, ACCESS_SECURITY)
 	paycheck = PAYCHECK_MEDIUM
 	paycheck_department = ACCOUNT_CIV
 	alt_titles = list("Command Secretary", "Command Officer", "Bridge Secretary", "Ensign", "Bridge Bitch", "Bridge Canine", "Captain Pet", "Command Pet", "Dick Attachment", "Pussy Attachment", "Bridge Advisor", "Bridge Intern", "Bridge Pet")

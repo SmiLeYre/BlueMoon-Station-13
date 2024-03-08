@@ -196,7 +196,7 @@
 	light_color = LIGHT_COLOR_ORANGE
 	circuit = /obj/item/circuitboard/computer/inteq_collosus
 	shuttleId = "inteq_collosus"
-	possible_destinations = "inteq_collosus_custom;pirateship_home;raiders_away"
+	possible_destinations = "syndicate_z5;syndicate_ne;syndicate_nw;syndicate_n;syndicate_se;syndicate_sw;syndicate_s;inteq_collosus_custom;pirateship_home;raiders_away"
 
 /obj/item/circuitboard/computer/inteq_collosus
 	name = "Collosus Control Console (Computer Board)"

@@ -44,6 +44,8 @@
 	else
 		H.equipOutfit(nukeop_outfit)
 
+	give_alias()
+
 	return TRUE
 
 /datum/antagonist/syndicate_op/greet()
@@ -52,7 +54,6 @@
 	owner.announce_objectives()
 
 /datum/antagonist/syndicate_op/on_gain()
-	give_alias()
 	forge_objectives()
 	. = ..()
 	equip_op()

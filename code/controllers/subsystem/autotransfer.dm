@@ -31,7 +31,7 @@ SUBSYSTEM_DEF(autotransfer)
 	if(world.time < targettime) // BLUEMOON EDIT - было if(REALTIMEOFDAY < targettime)
 		return
 	if(maxvotes == NO_MAXVOTES_CAP || maxvotes > curvotes)
-		SSvote.initiate_vote("transfer","server", votesystem=APPROVAL_VOTING)
+		SSvote.initiate_vote("transfer","server", votesystem=APPROVAL_VOTING, vote_time = 1800)
 		targettime = targettime + voteinterval
 		curvotes++
 	else

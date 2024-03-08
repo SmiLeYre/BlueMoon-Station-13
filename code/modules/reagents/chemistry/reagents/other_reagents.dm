@@ -2582,6 +2582,12 @@
 	if(!istype(location))
 		return
 
+	if(istype(src, /datum/reagent/consumable/semen/femcum)) //let it be here
+		var/obj/effect/decal/cleanable/semen/femcum/F = (locate(/obj/effect/decal/cleanable/semen/femcum) in location) || new(location)
+		if(F.reagents.add_reagent(type, volume, data))
+			F.update_icon()
+			return
+
 	var/obj/effect/decal/cleanable/semen/S = locate(/obj/effect/decal/cleanable/semen) in location
 	if(S)
 		if(S.reagents.add_reagent(type, volume, data))

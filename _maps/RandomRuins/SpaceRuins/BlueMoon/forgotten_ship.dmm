@@ -49,6 +49,9 @@
 /obj/item/ammo_box/c10mm,
 /obj/item/flashlight/seclite,
 /obj/item/paper/fluff/ruins/forgottenship/missionobj,
+/obj/item/gun/ballistic/automatic/pistol,
+/obj/item/ammo_box/magazine/pistolm9mm,
+/obj/item/ammo_box/magazine/pistolm9mm,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
 "ag" = (
@@ -304,6 +307,9 @@
 /obj/item/ammo_box/c10mm,
 /obj/item/flashlight/seclite,
 /obj/item/paper/fluff/ruins/forgottenship/missionobj,
+/obj/item/gun/ballistic/automatic/pistol,
+/obj/item/ammo_box/magazine/pistolm9mm,
+/obj/item/ammo_box/magazine/pistolm9mm,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
 "aL" = (

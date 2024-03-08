@@ -189,6 +189,7 @@
 		"xenodorsal" 		= "Standard",
 		"xenohead" 			= "Standard",
 		"xenotail" 			= "Xenomorph Tail",
+		"hardsuit_with_tail" = FALSE,
 		"genitals_use_skintone"	= FALSE,
 		"has_cock"			= FALSE,
 		"cock_shape"		= pick(GLOB.cock_shapes_list),

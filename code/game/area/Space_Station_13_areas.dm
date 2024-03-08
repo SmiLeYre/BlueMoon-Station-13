@@ -1282,7 +1282,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/medical/medbay/front_office
 	name = "Medbay Front Office"
 	icon_state = "medbay"
-	music = 'sound/ambience/signal.ogg'
+	music = MEDICAL
 
 /area/medical/medbay/lobby
 	name = "Medbay Lobby"
@@ -1297,7 +1297,12 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/medical/medbay/zone3
 	name = "Medbay"
 	icon_state = "medbay3"
-	music = 'sound/ambience/signal.ogg'
+	music = MEDICAL
+
+/area/medical/medbay/factory
+	name = "Medbay Factory"
+	icon_state = "medbay_factory"
+	music = MEDICAL
 
 /area/medical/medbay/aft
 	name = "Medbay Aft"

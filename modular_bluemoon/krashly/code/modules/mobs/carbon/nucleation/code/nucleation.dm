@@ -37,7 +37,7 @@
 	id = SPECIES_NUCLEATION
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	mutant_bodyparts = list("mcolor" = "F8F8F8", "mcolor2" = "F8F8F8", "mcolor3" = "F8F8F8", "mam_snouts" = "None",  "mam_tail" = "None", "deco_wings" = "None",
-						"horns" = "None", "legs" = "Plantigrade")
+						"horns" = "None")
 	override_bp_icon = 'modular_bluemoon/krashly/code/modules/mobs/carbon/nucleation/icons/r_nucleation.dmi'
 
 	limbs_id = SPECIES_NUCLEATION
