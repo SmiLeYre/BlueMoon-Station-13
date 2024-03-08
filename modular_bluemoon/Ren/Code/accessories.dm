@@ -13,4 +13,4 @@
 /datum/sprite_accessory/hair/veryveryshort
 	name = "Very short"
 	icon_state = "hair_shorter"
-	icon = 'modular_bluemoon/Ren/Icons/Mob/accessories.dmi'
+	icon = 'modular_bluemoon/Ren/Icons/Mob/accessories/accessories.dmi'
