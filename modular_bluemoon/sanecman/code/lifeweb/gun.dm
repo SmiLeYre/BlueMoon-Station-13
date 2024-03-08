@@ -3,7 +3,7 @@
 	projectile_type = /obj/item/projectile/energy/electrode/security/hos/legax
 	select_name = "weak gravpulse"
 	fire_sound = 'modular_bluemoon/sanecman/sound/effects/gravpulser.ogg'
-	e_cost = 50
+	e_cost = 25
 	harmful = FALSE
 
 /obj/item/projectile/energy/electrode/security/hos/legax
@@ -17,23 +17,26 @@
 	impact_type = null
 
 // Сильный выстрел который дамажит
-/obj/item/ammo_casing/energy/laser/legax
-	projectile_type = /obj/item/projectile/beam/laser/heavylaser/legax
+/obj/item/ammo_casing/energy/bolt/legax
+	projectile_type = /obj/item/projectile/energy/bolt/legax
 	select_name = "heavy gravpulse"
 	fire_sound = 'modular_bluemoon/sanecman/sound/effects/gravpulser_alt.ogg'
-	e_cost = 200
+	e_cost = 50
 
-/obj/item/projectile/beam/laser/heavylaser/legax
+/obj/item/projectile/energy/bolt/legax
 	name = "heavy gravpulse"
 	icon = 'icons/effects/cult_effects.dmi'
 	icon_state = "rune4center"
-	color = COLOR_BLUE_LIGHT
+	color = COLOR_MOSTLY_PURE_PINK
 	hitsound = 'modular_bluemoon/sanecman/sound/effects/gravcut_alt.ogg'
 	damage = 20
 	damage_type = BRUTE
-	tracer_type = null
-	muzzle_type = null
-	impact_type = null
+	nodamage = 0
+	eyeblur = 0
+	slur = 0
+	knockdown = 0
+	stamina = 5
+	knockdown_stamoverride = 0
 
 // Гравпульсер
 // Два режима:
@@ -49,4 +52,4 @@
 	righthand_file = 'modular_bluemoon/sanecman/icons/lifeweb/gravpulser/items_righthand.dmi'
 	icon_state = "gravpulser"
 	item_state = null
-	ammo_type = list(/obj/item/ammo_casing/energy/electrode/legax, /obj/item/projectile/beam/laser/heavylaser/legax)
+	ammo_type = list(/obj/item/ammo_casing/energy/electrode/legax, /obj/item/ammo_casing/energy/bolt/legax)
