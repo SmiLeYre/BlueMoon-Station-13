@@ -8,7 +8,7 @@
 	name = "Mouse Alt"
 	icon = 'modular_bluemoon/Ren/Icons/Mob/accessories/m_snout_mouse_JAW.dmi'
 	icon_state = "fhusky"
-	matrixed_sections = MATRIX_RED_GREEN
+	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/hair/veryveryshort
 	name = "Very short"
