@@ -64,7 +64,7 @@
 		new /obj/effect/decal/cleanable/plasma(drop_location(target_turf))
 
 /// AA12
-/obj/item/ammo_box/magazine/aa12
+/obj/item/ammo_box/magazine/aa12/small
 	name = "AA12 magazine (12g buckshot)"
 	desc = "Здоровый коробчатый магазин для патрон 12 калибра"
 	icon_state = "m12gb"
@@ -72,24 +72,26 @@
 	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/ushm_r.dmi'
 	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/ushm_r.dmi'
 	item_state = "mag-aa-small"
+	icon = 'modular_bluemoon/Ren/Icons/Obj/guns.dmi'
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	caliber = "shotgun"
 	max_ammo = 8
 
-/obj/item/ammo_box/magazine/aa12/update_icon()
+/obj/item/ammo_box/magazine/aa12/small/update_icon()
 	..()
 	icon_state = "mag-aa-small-[ammo_count() ? "1" : "0"]"
 
-/obj/item/ammo_box/magazine/aa12/big
+/obj/item/ammo_box/magazine/aa12
 	name = "AA12 drum magazine (12g buckshot)"
 	desc = "Здоровый коробчатый магазин для патрон 12 калибра"
 	icon_state = "mag-aa"
+	icon = 'modular_bluemoon/Ren/Icons/Obj/guns.dmi'
 	w_class = WEIGHT_CLASS_NORMAL
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	caliber = "shotgun"
 	max_ammo = 20
 
-/obj/item/ammo_box/magazine/aa12/big/update_icon()
+/obj/item/ammo_box/magazine/aa12/update_icon()
 	..()
 	icon_state = "mag-aa-[ammo_count() ? "1" : "0"]"
 
@@ -98,32 +100,142 @@
 	desc = "Древняя, но очень грозная оружейная система. Почему то на ней отсутствует одиночный огонь."
 	icon_state = "minotaur"
 	item_state = "minotaur"
+	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
+	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
+	icon = 'modular_bluemoon/Ren/Icons/Obj/guns.dmi'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	recoil = 20
+	recoil = 5
 	mag_type = /obj/item/ammo_box/magazine/aa12
 	fire_sound = 'sound/weapons/gunshotshotgunshot.ogg'
 	automatic_burst_overlay = FALSE
 	can_suppress = FALSE
+	fire_select = 1
 	burst_size = 1
 	actions_types = list()
 
 /obj/item/gun/ballistic/automatic/shotgun/aa12/update_icon_state()
-	if(ammo_count() > 0)
-		if(magazine)
+	..()
+	if(magazine)
+		if(magazine.ammo_count(0))
 			icon_state = "minotaur-mag"
 		else
-			icon_state = "minotaur-nomag"
-	else
-		if(magazine)
 			icon_state = "minotaur-mag-e"
-		else
+	else
+		if(magazine.ammo_count(0))
 			icon_state = "minotaur-nomag-e"
+		else
+			icon_state = "minotaur-nomag"
 
 /obj/item/gun/ballistic/automatic/shotgun/aa12/afterattack()
 	. = ..()
 	empty_alarm()
 	return
+
+//Огнемёт крутой
+/obj/item/projectile/bullet/incendiary/m2a100
+	name = "Fire"
+	damage = 7
+	fire_stacks = 10
+	damage_type = BURN
+	icon_state = ""
+	hitsound_wall = ""
+	projectile_piercing = PASSMOB
+	range = 15
+
+/obj/item/ammo_casing/energy/laser/m2a100
+	projectile_type = /obj/item/projectile/bullet/incendiary/m2a100
+	pellets = 6
+	variance = 35
+	e_cost = 50
+	select_name = "Fire"
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/flamethrower.ogg'
+
+/obj/item/gun/energy/m2a100
+	name = "M2A100"
+	desc = "Удачная модернизация старых моделей огнемётов из солнечной системы. Совмещает в себе компактность, простоту использования и использование твёрдой плазмы в качестве топлива."
+	icon_state = "m240"
+	item_state = "m240_0"
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+	icon = 'modular_bluemoon/Ren/Icons/Obj/guns.dmi'
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/m2a100)
+	attack_verb = list("attacked", "bumped", "hited")
+	force = 12
+	inaccuracy_modifier = 0.25
+	can_charge = 0
+	var/cover_open = FALSE
+
+/obj/item/gun/energy/m2a100/examine(mob/user)
+	. = ..()
+	if(cell)
+		. += "<span class='notice'>[src] is [round(cell.percent())]% of fuel.</span>"
+
+/obj/item/gun/energy/m2a100/attack_self(mob/user)
+	cover_open = !cover_open
+	to_chat(user, "<span class='notice'>You [cover_open ? "open" : "close"] [src]'s cover.</span>")
+	if(cover_open)
+		playsound(user, 'sound/weapons/sawopen.ogg', 60, 1)
+	else
+		playsound(user, 'sound/weapons/sawclose.ogg', 60, 1)
+	update_icon()
+
+/obj/item/gun/energy/m2a100/update_icon_state()
+	if(cell.percent() > 0)
+		icon_state = "m240[cover_open ? "-open" : "-closed"]"
+	else
+		icon_state = "m240[cover_open ? "-open" : "-closed"]-empty"
+
+/obj/item/gun/energy/m2a100/attackby(obj/item/I, mob/user)
+	if(istype(I, /obj/item/stack/sheet/mineral/plasma) && cover_open == TRUE)
+		I.use(1)
+		cell.give(500)
+		to_chat(user, "<span class='notice'>You insert [I] in [src], recharging it.</span>")
+	else if(istype(I, /obj/item/stack/ore/plasma) && cover_open == TRUE)
+		I.use(1)
+		cell.give(100)
+		to_chat(user, "<span class='notice'>You insert [I] in [src], recharging it.</span>")
+	else
+		..()
+
+/obj/item/gun/energy/m2a100/afterattack(atom/target as mob|obj|turf, mob/living/user as mob|obj, flag, params) //what I tried to do here is just add a check to see if the cover is open or not and add an icon_state change because I can't figure out how c-20rs do it with overlays
+	if(cover_open)
+		to_chat(user, "<span class='warning'>[src]'s cover is open! Close it before firing!</span>")
+	else
+		. = ..()
+		update_icon()
+
+///ГАРАНД
+/obj/item/gun/ballistic/automatic/m1garand/scope
+	name = "Marksmans rifle"
+	desc = "Лёгкая, мобильная винтовка для марксманской стрельбы. Открытые прицельные приспособления не ограничивают обзор, а деревянная фурнитура никогда не перестанет быть классикой. НЕТ, ЭТО НЕ СТАРЬЁ."
+	zoomable = TRUE
+	zoom_amt = 7
+	zoom_out_amt = 5
+///Мультилазер
+
+/obj/item/gun/energy/powerlaser
+	name = "laser gatling gun"
+	desc = "An advanced laser cannon with an incredible rate of fire. Requires a bulky backpack power source to use."
+	icon = 'icons/obj/guns/minigun.dmi'
+	icon_state = "minigun_spin"
+	item_state = "minigun"
+	flags_1 = CONDUCT_1
+	slowdown = 1
+	selfcharge = EGUN_SELFCHARGE
+	slot_flags = null
+	w_class = WEIGHT_CLASS_HUGE
+	custom_materials = null
+	ammo_type = list(/obj/item/ammo_casing/energy/laser, /obj/item/ammo_casing/energy/laser/accelerator)
+	cell_type =	/obj/item/stock_parts/cell/lascarbine
+	weapon_weight = WEAPON_HEAVY
+	fire_sound = 'sound/weapons/laser.ogg'
+	charge_sections = 0
+	shaded_charge = 0
+	can_charge = 0
+	item_flags = NEEDS_PERMIT | SLOWS_WHILE_IN_HAND
+
+
 
 ///Sandman
 /obj/item/reagent_containers/syringe/sand
