@@ -3853,6 +3853,7 @@
 /obj/item/storage/belt/utility,
 /obj/item/crowbar/power,
 /obj/item/weldingtool/experimental,
+/obj/item/multitool/tricorder,
 /obj/item/screwdriver/power,
 /obj/machinery/light/small,
 /turf/open/floor/plating,
@@ -5273,6 +5274,7 @@
 /obj/item/storage/belt/utility,
 /obj/item/crowbar/power,
 /obj/item/weldingtool/experimental,
+/obj/item/multitool/tricorder,
 /obj/item/screwdriver/power,
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 8
