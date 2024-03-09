@@ -102,3 +102,62 @@
 /mob/living/simple_animal/hostile/morph/sandman/regenerate_icons()
 	..()
 	update_inv_internal_storage()
+
+///inteq mobs
+
+/mob/living/simple_animal/hostile/syndicate/ranged/sniper
+	name = "InteQ Sniper"
+	desc = "Он очень хочет, что бы ты сдох"
+	ranged = 1
+	retreat_distance = 7
+	minimum_distance = 7
+	icon = 'modular_bluemoon/Ren/Icons/Mob/mobs.dmi'
+	icon_state = "infiltrator_sniper"
+	icon_living = "infiltrator_sniper"
+	casingtype = /obj/item/ammo_casing/p50
+	projectilesound = "sound/weapons/noscope.ogg"
+	ranged_cooldown = 90
+	check_friendly_fire = 1
+	loot = list(/obj/effect/gibspawner/human)
+	dodging = TRUE
+	rapid_melee = 1
+	speak_chance = 12
+	speak = list("Я попал? Я попал, да?!", "Это там твои мозги вытекают?!", "Да куда я положил магазин, сука где он, где он?!", "Я буду убивать тебя медленно, отстреливая кусочек за кусочком~")
+
+/mob/living/simple_animal/hostile/syndicate/ranged/sniper/Aggro()
+	..()
+	summon_backup(15)
+	say("Парни, у нас тут мишень нарисовалась. Работаем, работаем!")
+
+/mob/living/simple_animal/hostile/syndicate/melee/ushm
+	name = "InteQ Breacher"
+	melee_damage_lower = 10
+	melee_damage_upper = 10
+	wound_bonus = 40
+	bare_wound_bonus = 10
+	sharpness = SHARP_EDGED
+	icon = 'modular_bluemoon/Ren/Icons/Mob/mobs.dmi'
+	icon_state = "infiltrator_mele"
+	icon_living = "infiltrator_mele"
+	loot = list(/obj/effect/gibspawner/human)
+	attack_verb_continuous = "slashes"
+	attack_verb_simple = "slash"
+	attack_sound = 'modular_bluemoon/Ren/Sound/USHM_hit.ogg'
+	status_flags = 0
+
+/mob/living/simple_animal/hostile/skeleton/meatguy
+	melee_damage_lower = 10
+	melee_damage_upper = 20
+	sharpness = SHARP_EDGED
+	wound_bonus = 10
+	bare_wound_bonus = 10
+	icon = 'modular_bluemoon/Ren/Icons/Mob/mobs.dmi'
+	var/number
+
+/mob/living/simple_animal/hostile/skeleton/meatguy/Initialize(mapload)
+	. = ..()
+	if(!number)
+		number = rand(4)
+	AddElement(/datum/element/mob_holder, "gremlin_[number]", alt_worn = icon)
+	icon_state = "fleshling[number]"
+	icon_living = "fleshling[number]"
