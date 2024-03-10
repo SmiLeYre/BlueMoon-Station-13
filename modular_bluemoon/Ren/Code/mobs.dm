@@ -107,7 +107,7 @@
 
 /mob/living/simple_animal/hostile/syndicate/ranged/sniper
 	name = "InteQ Sniper"
-	desc = "Он очень хочет, что бы ты сдох"
+	desc = "Он очень сильно хочет, что бы ты сдох"
 	ranged = 1
 	retreat_distance = 7
 	minimum_distance = 7
@@ -146,6 +146,8 @@
 	status_flags = 0
 
 /mob/living/simple_animal/hostile/skeleton/meatguy
+	name = "Living meat"
+	desc = "Отвратительная пародия на человека из мяса и костей"
 	melee_damage_lower = 10
 	melee_damage_upper = 20
 	sharpness = SHARP_EDGED
@@ -157,7 +159,6 @@
 /mob/living/simple_animal/hostile/skeleton/meatguy/Initialize(mapload)
 	. = ..()
 	if(!number)
-		number = rand(4)
-	AddElement(/datum/element/mob_holder, "gremlin_[number]", alt_worn = icon)
+		number = rand(3)
 	icon_state = "fleshling[number]"
 	icon_living = "fleshling[number]"
