@@ -236,18 +236,28 @@
 	new	/obj/item/spear/grey_tide(src)
 
 //безумие
+/obj/item/clothing/head/helmet/hank
+	name = "Black old bandana"
+	desc = "Чёрные повязки на голову, призваные скрывать бинты. В этих красных очках виднелось отражение не одной сотни смертей."
+	icon_state = "hank_m"
+	item_state = "hank_m"
+	icon = 'modular_bluemoon/Ren/Icons/Mob/cloth.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/cloth.dmi'
+	mutantrace_variation = NONE
+
 /obj/item/clothing/suit/hank
 	name = "Old black coat"
 	desc = "Поношеный временем костюм. Его чернота отдаёт красным оттенком, а сам он удивительно хорошо прилегает к телу."
 	icon_state = "hank"
 	item_state = "hank"
-	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
-	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/cloth.dmi'
+	icon = 'modular_bluemoon/Ren/Icons/Mob/cloth.dmi'
+	mutantrace_variation = NONE
 
 
 /obj/item/clothing/suit/hank/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	if((attack_type & ATTACK_TYPE_PROJECTILE) && (rand(5) != 1))
-		owner.visible_message(src, pick("<span class='phobia'>[owner] чудом уворачивается от пули, выгнувшись спиной в последний момент!</span>" 1, "<span class='phobia'>[owner] ловко уходит в сторону, предугадав траекторию выстрела!</span>" 1, "<span class='phobia'>[owner] делает резкий рывок, едва успевая уйти из под огня!</span>" 1))
+		owner.visible_message(src, pick("<span class='phobia'>[owner] чудом уворачивается от пули, выгнувшись спиной в последний момент!</span>", "<span class='phobia'>[owner] ловко уходит в сторону, предугадав траекторию выстрела!</span>", "<span class='phobia'>[owner] делает резкий рывок, едва успевая уйти из под огня!</span>"))
 		playsound(src, pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, 1)
 		return BLOCK_SUCCESS | BLOCK_PHYSICAL_EXTERNAL
 	return ..()
