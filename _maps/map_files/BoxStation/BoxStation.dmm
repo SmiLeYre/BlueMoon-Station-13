@@ -25467,10 +25467,10 @@
 /turf/open/floor/plasteel/white,
 /area/medical/virology)
 "bIM" = (
-/obj/machinery/computer/camera_advanced/xenobio{
+/obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/machinery/computer/camera_advanced/xenobio{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -50628,6 +50628,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/service/hydroponics)
+"jsh" = (
+/obj/item/kirbyplants/random,
+/turf/open/floor/plasteel/white,
+/area/science/xenobiology)
 "jst" = (
 /obj/structure/table/reinforced,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
@@ -52579,6 +52583,18 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/prison/cells)
+"kMo" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/medical/morgue)
 "kMt" = (
 /obj/machinery/computer/prisoner/gulag_teleporter_computer,
 /turf/open/floor/plasteel,
@@ -58850,10 +58866,6 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/service/library)
-"ptA" = (
-/obj/machinery/vending/cigarette,
-/turf/open/floor/plasteel/white,
-/area/science/xenobiology)
 "ptE" = (
 /obj/machinery/door/airlock{
 	id_tag = "Dorm5";
@@ -59425,18 +59437,6 @@
 /obj/machinery/holopad,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/command/storage/eva)
-"pOO" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/medical/morgue)
 "pPm" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/disposalpipe/segment,
@@ -64016,7 +64016,7 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/service/kitchen)
 "tbY" = (
-/obj/item/kirbyplants/random,
+/obj/machinery/vending/cigarette,
 /turf/open/floor/plasteel/white,
 /area/science/xenobiology)
 "tcn" = (
@@ -110937,7 +110937,7 @@ bhp
 biB
 ouf
 nyi
-pOO
+kMo
 bmZ
 bKQ
 bsL
@@ -111194,7 +111194,7 @@ bhq
 rWg
 bkb
 nyi
-pOO
+kMo
 bmZ
 bpH
 owT
@@ -111708,7 +111708,7 @@ hZR
 fNm
 bkd
 nyi
-pOO
+kMo
 bmZ
 bpJ
 brc
@@ -116370,7 +116370,7 @@ amP
 aaa
 aaa
 ccQ
-tbY
+jsh
 bMi
 bMi
 bMi
@@ -116630,7 +116630,7 @@ ccQ
 bMi
 bMi
 bZb
-ptA
+tbY
 bJN
 rFR
 ryO
@@ -118169,7 +118169,7 @@ bTl
 cbb
 bTl
 bQZ
-tbY
+jsh
 bMi
 bJN
 cgp
