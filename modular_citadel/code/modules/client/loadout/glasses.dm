@@ -49,3 +49,7 @@
 /datum/gear/glasses/modern
 	name = "Modern prescription glasses"
 	path = /obj/item/clothing/glasses/regular/modern
+
+/datum/gear/glasses/raper
+	name = "Raper Sunglasses"
+	path = /obj/item/clothing/glasses/hud/slaver

@@ -32,6 +32,7 @@
 				/obj/item/clothing/neck/stole/black = 2,
 				/obj/item/restraints/handcuffs/fake/kinky = 5,
 				/obj/item/clothing/glasses/sunglasses/blindfold = 4,
+				/obj/item/clothing/glasses/hud/slaver = 8,
 				/obj/item/clothing/mask/muzzle = 4,
 				/obj/item/clothing/mask/gas/sechailer/slut = 4,
 				/obj/item/clothing/shoes/highheels = 3,

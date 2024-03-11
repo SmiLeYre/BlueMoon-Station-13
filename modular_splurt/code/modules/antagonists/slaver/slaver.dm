@@ -237,3 +237,19 @@ GLOBAL_LIST_INIT(slavers_ransom_values, list(
 
 /proc/is_slaver(mob/M)
 	return M && istype(M) && M.mind && M.mind.has_antag_datum(/datum/antagonist/slaver)
+
+/obj/item/clothing/glasses/hud/slaver
+	name = "Raper Sunglasses"
+	desc = "Солнцезащитные очки тёмного цвета, дающие способность увидеть, подвергался ли определённый сотрудник сексуальному насилию ранее и каковой была его реакция."
+
+/obj/item/clothing/glasses/hud/equipped(mob/living/carbon/human/user, slot)
+	. = ..()
+	var/datum/atom_hud/antag/slaverhud = GLOB.huds[ANTAG_HUD_SLAVER]
+	slaverhud.join_hud(user)
+	set_antag_hud(user, "slaver")
+
+/obj/item/clothing/glasses/hud/dropped(mob/living/carbon/human/user)
+	. = ..()
+	var/datum/atom_hud/antag/slaverhud = GLOB.huds[ANTAG_HUD_SLAVER]
+	slaverhud.leave_hud(user)
+	set_antag_hud(user, null)
