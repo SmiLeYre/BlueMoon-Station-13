@@ -241,8 +241,8 @@
 	desc = "Чёрные повязки на голову, призваные скрывать бинты. В этих красных очках виднелось отражение не одной сотни смертей."
 	icon_state = "hank_m"
 	item_state = "hank_m"
-	icon = 'modular_bluemoon/Ren/Icons/Mob/cloth.dmi'
-	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/cloth.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
+	icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
 	mutantrace_variation = NONE
 
 /obj/item/clothing/suit/hank
@@ -250,8 +250,8 @@
 	desc = "Поношеный временем костюм. Его чернота отдаёт красным оттенком, а сам он удивительно хорошо прилегает к телу."
 	icon_state = "hank"
 	item_state = "hank"
-	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/cloth.dmi'
-	icon = 'modular_bluemoon/Ren/Icons/Mob/cloth.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
+	icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
 	mutantrace_variation = NONE
 
 
