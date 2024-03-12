@@ -121,20 +121,20 @@
 	loot = list(/obj/effect/gibspawner/human)
 	dodging = TRUE
 	rapid_melee = 1
-	speak_chance = 12
-	speak = list("Я попал? Я попал, да?!", "Это там твои мозги вытекают?!", "Да куда я положил магазин, сука где он, где он?!", "Я буду убивать тебя медленно, отстреливая кусочек за кусочком~")
+	speak_chance = 25
+	speak = list("Я попал? Я попал, да?!", "Это там твои мозги вытекают?!", "Да куда я положил магазин, сука где он, где он?!", "Я буду убивать тебя медленно, отстреливая кусочек за кусочком~", "Нужно будет купить себе новые очки", "Да я тебя на сквозь вижу, ХАХ!")
 
 /mob/living/simple_animal/hostile/syndicate/ranged/sniper/Aggro()
 	..()
-	summon_backup(15)
-	say("Парни, у нас тут мишень нарисовалась. Работаем, работаем!")
+	summon_backup(25)
+	say("Может мне кто нибудь поможет?. У нас тут мишень нарисовалась, работаем!")
 
 /mob/living/simple_animal/hostile/syndicate/melee/ushm
 	name = "InteQ Breacher"
 	melee_damage_lower = 10
 	melee_damage_upper = 10
 	wound_bonus = 40
-	bare_wound_bonus = 10
+	bare_wound_bonus = 15
 	sharpness = SHARP_EDGED
 	icon = 'modular_bluemoon/Ren/Icons/Mob/mobs.dmi'
 	icon_state = "infiltrator_mele"
