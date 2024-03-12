@@ -235,7 +235,7 @@
 	with your fists, and be able to slam people through tables with immense force. \
 	Unfortunately, due to the size of the gloves you will be unable to wield firearms with them equipped."
 	item = /obj/item/clothing/gloves/fingerless/pugilist/mauler
-	cost = 8
+	cost = 10
 
 /datum/uplink_item/dangerous/powerfist
 	name = "Power Fist"
