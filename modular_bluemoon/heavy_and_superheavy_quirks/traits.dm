@@ -109,6 +109,48 @@
 	update_size_movespeed()
 	check_mob_size()
 
+/datum/quirk/bluemoon_robust_body
+	name = "Крепкое тело"
+	desc = "ВНИМАНИЕ! Это тестовая версия трейта, он может работать некорректно и вероятнее всего будет изменёе, обо всех проблемах пишите в баг-репорт \
+	Благодаря вашим огромным размерам вы менее подвержены повреждениям, а ваше тело двигается чуть быстрее"
+	value = 4
+	mob_trait = TRAIT_BLUEMOON_ROBUST_BODY
+	medical_record_text = "Биологические показатели пациента свидетельствуют об крайне крепком кожном покрове и повышенной подвижности."
+	gain_text = span_notice("Вы чувствуете, что ваше тело стало значительно крепче и подвижнее.")
+	lose_text = span_notice("Ваше тело потеряло свою прочность и подвижность...")
+
+/datum/quirk/bluemoon_robust_body/proc/update_size_modifiers(new_size, cur_size)
+	if(!isliving(quirk_holder))
+		return
+
+	var/mob/living/carbon/human/H= quirk_holder
+	if(new_size < 1.5)
+		H.remove_movespeed_modifier(/datum/movespeed_modifier/robust_quirk_boost)
+		H.physiology.brute_mod *= cur_size / max(new_size, 1)
+		H.physiology.burn_mod *= cur_size / max(new_size, 1)
+		return
+	H.physiology.brute_mod *= cur_size / new_size
+	H.physiology.burn_mod *= cur_size / new_size
+	var/user_slowdown = (abs(new_size - 1) * CONFIG_GET(number/body_size_slowdown_multiplier))
+
+	H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/robust_quirk_boost, TRUE, user_slowdown * -0.5)
+
+
+/datum/quirk/bluemoon_robust_body/proc/check_mob_size()
+	if(!isliving(quirk_holder))
+		return
+	var/mob/living/owner = quirk_holder
+	if(get_size(owner) < 1.5)
+		to_chat(owner, "Вы поняли, что особенности вашей анатомии делают невозможным становление слишком маленьким.")
+		owner.update_size(1.5)
+
+/datum/quirk/bluemoon_robust_body/on_spawn()
+	. = ..()
+	var/mob/living/H = quirk_holder
+	check_mob_size()
+	update_size_modifiers(get_size(H), 1)
+
+
 /*
 ПЕРЕМЕННЫЕ ДЛЯ МОДИФИКАТОРОВ СКОРОСТИ
 */
@@ -117,4 +159,7 @@
 	variable = TRUE
 
 /datum/movespeed_modifier/heavy_quirk_slowdown
+	variable = TRUE
+
+/datum/movespeed_modifier/robust_quirk_boost
 	variable = TRUE
