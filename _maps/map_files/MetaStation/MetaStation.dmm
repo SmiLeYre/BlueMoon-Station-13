@@ -20061,7 +20061,7 @@
 /turf/open/floor/grass/grass0,
 /area/hallway/secondary/command)
 "bGH" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood,
 /obj/item/candle,
 /turf/open/floor/grass/grass0,
 /area/hallway/secondary/command)
@@ -49354,7 +49354,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -27
 	},
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood,
 /obj/machinery/chem_dispenser/drinks{
 	dir = 4
 	},
@@ -57260,7 +57260,7 @@
 /turf/open/floor/plasteel,
 /area/commons/toilet/auxiliary)
 "hVw" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood,
 /obj/item/storage/box/donkpockets,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -65186,7 +65186,7 @@
 /turf/open/floor/plasteel,
 /area/engineering/break_room)
 "lLy" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/meat/rawcutlet/plain/salo{
 	pixel_y = 5
 	},
@@ -68740,7 +68740,7 @@
 	},
 /area/maintenance/starboard/fore)
 "nvr" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 1;
@@ -75705,7 +75705,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood,
 /obj/machinery/power/apc/auto_name/west,
 /obj/item/storage/fancy/coffee_condi_display,
 /obj/item/reagent_containers/glass/bottle/syrup_bottle/caramel{
@@ -78230,7 +78230,7 @@
 /turf/open/floor/plasteel,
 /area/service/hydroponics)
 "rJc" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood,
 /obj/item/toy/figure/ninja,
 /turf/open/floor/grass/grass0,
 /area/hallway/secondary/command)
@@ -92032,7 +92032,7 @@
 /turf/open/floor/plasteel,
 /area/commons/fitness/recreation)
 "xXS" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood,
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = -26

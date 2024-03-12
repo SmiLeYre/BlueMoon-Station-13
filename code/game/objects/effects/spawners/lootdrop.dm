@@ -655,7 +655,7 @@
 		/obj/item/weldingtool/experimental = 1,
 		/obj/item/crowbar/power = 1,
 		/obj/item/analyzer = 1,
-		/obj/item/multitool = 1
+		/obj/item/multitool/tricorder = 1
 		)
 
 /obj/effect/spawner/lootdrop/welder_tools

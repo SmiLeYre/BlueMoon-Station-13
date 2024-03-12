@@ -7537,6 +7537,7 @@
 "arr" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/item/weldingtool/experimental,
+/obj/item/multitool/tricorder,
 /obj/effect/decal/cleanable/oil,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/stripes/line,
@@ -31059,6 +31060,10 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/plating,
 /area/centcom/holding)
+"pSf" = (
+/obj/effect/baseturf_helper/beach/sand,
+/turf/closed/indestructible/rock,
+/area/centcom/holding)
 "pSQ" = (
 /obj/structure/fluff/metalpole{
 	dir = 1
@@ -44427,7 +44432,7 @@ ncJ
 ncJ
 ncJ
 ncJ
-ncJ
+pSf
 aaa
 aaa
 aaa
