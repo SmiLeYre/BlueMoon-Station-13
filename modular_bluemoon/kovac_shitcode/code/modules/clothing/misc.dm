@@ -239,11 +239,11 @@
 	assignment = "NRI"
 	uses_overlays = FALSE
 
-/obj/item/card/id/blumland_citizen
-	name = "Blumland Citizen ID"
-	desc = "An ID made to recognize Blumland Confederation habbitants and tourists."
-	icon_state = "blumland"
-	assignment = "Blumland Citizen"
+/obj/item/card/id/blumenland_citizen
+	name = "Blumenland Citizen ID"
+	desc = "An ID made to recognize Blumenland Confederation habbitants and tourists."
+	icon_state = "blumenland"
+	assignment = "Blumenland Citizen"
 	uses_overlays = FALSE
 
 /datum/gear/hands/sol_citizen
@@ -256,10 +256,10 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/card/id/nri_citizen
 
-/datum/gear/hands/blumland_citizen
-	name = "Blumland Citizen ID"
+/datum/gear/hands/blumenland_citizen
+	name = "Blumenland Citizen ID"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/card/id/blumland_citizen
+	path = /obj/item/card/id/blumenland_citizen
 
 //// The default nun robe change to uniform slot
 
