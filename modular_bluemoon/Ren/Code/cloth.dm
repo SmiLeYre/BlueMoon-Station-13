@@ -203,6 +203,34 @@
 	uses = 1
 	starting_organ = /obj/item/organ/heart/gland/ossmodula
 
+///Ошейники для заложников.
+/obj/item/electropack/shockcollar/bomb
+	name = "Bomb collar"
+	desc = "Металлический ошейник с покрытием из кожи. В центре красуется странное устройство с мигающей лампочкой. Он.. точно должен пикать?"
+	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
+	icon_state = "bombcollar"
+	item_state = "bombcollar"
+	equip_delay_other = 40
+	strip_delay = 360
+
+/obj/item/electropack/shockcollar/bomb/receive_signal(datum/signal/signal)
+	if(!signal || signal.data["code"] != code)
+		return
+
+	if(isliving(loc))
+		playsound(get_turf(src), 'sound/machines/nuke/confirm_beep.ogg', 65, 1, 1)
+		addtimer(CALLBACK(src, .proc/explode), 3 SECONDS)
+
+	if(master)
+		master.receive_signal()
+
+/obj/item/electropack/shockcollar/bomb/proc/explode()
+	do_sparks(3, 1, src)
+	explosion(src.loc,1,0,2,0)
+	qdel(src)
+
+
 ///Набор космодесантника
 /obj/item/storage/box/syndie_kit/spacehero
 	name = "Death Angel armor kit"
@@ -276,4 +304,11 @@
 	desc = "Вещи величайшего грейтайдера. Его копьё впитало в себя столько крови, страха и превозмогания, что стало великим артефактом равным которому нет в бою. С этим даже один человек сможет стать целым тайфуном."
 	item = /obj/item/storage/box/syndie_kit/grayhero
 	cost = 20
+	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
+
+/datum/uplink_item/explosives/bombcollar
+	name = "Bomb collar"
+	desc = "Ошейник с бомбой. Больше нечего добавить. Сигналлер в комплект не входит."
+	item = /obj/item/electropack/shockcollar/bomb
+	cost = 1
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
