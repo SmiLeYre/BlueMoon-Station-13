@@ -927,6 +927,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_wings_color"] 				>> features["wings_color"]
 	S["feature_color_scheme"] 				>> features["color_scheme"]
 	S["headshot"] 							>> features["headshot_link"] //SPLURT edit
+	S["headshot1"] 							>> features["headshot_link1"] //BLUEMOON edit
+	S["headshot2"] 							>> features["headshot_link2"] //BLUEMOON edit
 	S["shriek_type"] 						>> shriek_type // BLUEMOON ADD - выбор вида крика для квирка
 	S["feature_hardsuit_with_tail"] 		>> features["hardsuit_with_tail"]
 	S["persistent_scars"] 					>> persistent_scars
@@ -1611,6 +1613,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["pregnancy_inflation"], pregnancy_inflation)
 	WRITE_FILE(S["pregnancy_breast_growth"], pregnancy_breast_growth)
 	WRITE_FILE(S["headshot"], features["headshot_link"])
+	WRITE_FILE(S["headshot1"], features["headshot_link1"])
+	WRITE_FILE(S["headshot2"], features["headshot_link2"])
 	//SPLURT EDIT END
 
 	//gear loadout

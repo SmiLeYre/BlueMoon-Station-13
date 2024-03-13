@@ -717,11 +717,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					else
 						dat += "[TextPreview(features["ooc_notes"])]..."
 					//SPLURT EDIT
+					// BLUEMOON REMOVE
+					/*
 					dat += "<h2>Headshot Image</h2>"
 					dat += "<a href='?_src_=prefs;preference=headshot'><b>Set Headshot Image</b></a><br>"
 					if(features["headshot_link"])
 						dat += "<img src='[features["headshot_link"]]' width='160px' height='120px'>"
 					dat += "<br><br>"
+					*/
+					// BLUEMOON REMOVE END
 					//SPLURT EDIT END
 					dat += "</td>"
 
@@ -744,6 +748,26 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							dat += "[medical_records]"
 					else
 						dat += "[TextPreview(medical_records)]..."
+
+					// BLUEMOON ADD
+					dat += "<h2>Headshot 1 Image</h2>"
+					dat += "<a href='?_src_=prefs;preference=headshot'><b>Set Headshot 1 Image</b></a><br>"
+					if(features["headshot_link"])
+						dat += "<img src='[features["headshot_link"]]' style='border: 1px solid black' width='140px' height='140px'>"
+					dat += "<br><br>"
+
+					dat += "<h2>Headshot 2 Image</h2>"
+					dat += "<a href='?_src_=prefs;preference=headshot1'><b>Set Headshot 2 Image</b></a><br>"
+					if(features["headshot_link1"])
+						dat += "<img src='[features["headshot_link1"]]' style='border: 1px solid black' width='140px' height='140px'>"
+					dat += "<br><br>"
+
+					dat += "<h2>Headshot 2 Image</h2>"
+					dat += "<a href='?_src_=prefs;preference=headshot2'><b>Set Headshot 3 Image</b></a><br>"
+					if(features["headshot_link2"])
+						dat += "<img src='[features["headshot_link2"]]' style='border: 1px solid black' width='140px' height='140px'>"
+					dat += "<br><br>"
+					// BLUEMOON ADD END
 					dat += "</td></tr></table>"
 				//Character Appearance
 				if(APPEARANCE_CHAR_TAB)
@@ -4161,6 +4185,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(href_list["tab"])
 						current_tab = text2num(href_list["tab"])
 				//SPLURT edit
+				// BLUEMOON REMOVE - Ищи в `modular_bluemoon/code/modules/client/preferences.dm`
+				/*
 				if("headshot")
 					var/usr_input = input(user, "Input the image link: (For Discord links, try putting the file's type at the end of the link, after the '&'. for example '&.jpg/.png/.jpeg')", "Headshot Image", features["headshot_link"]) as text|null
 					if(isnull(usr_input))
@@ -4169,7 +4195,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						features["headshot_link"] = null
 						return
 
-					var/static/link_regex = regex("https://i.gyazo.com|https://media.discordapp.net|https://cdn.discordapp.com|https://media.discordapp.net$|https://static1.e621.net") //Do not touch the damn duplicates.
+					var/static/link_regex = regex("https://i.gyazo.com|https://static1.e621.net") //Do not touch the damn duplicates.
 					var/static/end_regex = regex(".jpg|.jpg|.png|.jpeg|.jpeg") //Regex is terrible, don't touch the duplicate extensions
 
 					if(!findtext(usr_input, link_regex, 1, 29))
@@ -4183,6 +4209,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						to_chat(usr, span_notice("If the photo doesn't show up properly in-game, ensure that it's a direct image link that opens properly in a browser."))
 						to_chat(usr, span_notice("Keep in mind that the photo will be downsized to 250x250 pixels, so the more square the photo, the better it will look."))
 					features["headshot_link"] = usr_input
+				*/
+				// BLUEMOON REMOVE END
 
 				if("character_preview")
 					preview_pref = href_list["tab"]
