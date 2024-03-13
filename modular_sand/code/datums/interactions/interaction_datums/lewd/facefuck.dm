@@ -124,8 +124,8 @@
 			"молотит рот <b>[partner]</b> с чавкающим звуком и раз за разом приземляется своими яйцами аккурат в лицо.")]"
 		if(prob(10))
 			partner.emote("cough")
-			if(prob(1) && istype(partner))
-				partner.adjustOxyLoss(rand(2,3))
+			//if(prob(1) && istype(partner)) BLUEMOON DELETE не имеет смысла, сколько смотри modular_splurt\code\datums\interactions\lewd\lewd_datums.dm
+			//	partner.adjustOxyLoss(rand(2,3)) да-да, оно даёт и так 6 окси урона, шанс в 1 процент ради ещё 2-3 окси урона не имеет смысла
 		if(partner.a_intent == INTENT_HARM)
 			partner.adjustBruteLoss(rand(3,6))
 			retaliation_message = pick(
