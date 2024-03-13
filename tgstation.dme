@@ -4332,6 +4332,7 @@
 #include "modular_bluemoon\Ren\Code\accessories.dm"
 #include "modular_bluemoon\Ren\Code\cloth.dm"
 #include "modular_bluemoon\Ren\Code\inventory.dm"
+#include "modular_bluemoon\Ren\Code\misc.dm"
 #include "modular_bluemoon\Ren\Code\mobs.dm"
 #include "modular_bluemoon\Ren\Code\weapons.dm"
 #include "modular_bluemoon\sanecman\_include.dm"

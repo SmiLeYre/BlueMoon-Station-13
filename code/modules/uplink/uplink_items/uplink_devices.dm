@@ -137,6 +137,7 @@
 	desc = "The Illegal toolbox is a suspicious black and red. It comes loaded with a full tool set including a \
 			multitool and combat gloves that are resistant to shocks and heat."
 	item = /obj/item/storage/toolbox/syndicate
+	purchasable_from = UPLINK_SYNDICATE
 	cost = 1
 
 /datum/uplink_item/device_tools/syndie_glue
@@ -246,13 +247,13 @@
 	desc = "The Illegal surgery duffel bag is a toolkit containing all surgery tools, surgical drapes, \
 			a Syndicate stolen brand MMI, a straitjacket, and a muzzle."
 	item = /obj/item/storage/backpack/duffelbag/syndie/surgery
-	cost = 3
+	cost = 1  ///bluemoon change
 
 /datum/uplink_item/device_tools/surgerybag_adv
 	name = "Advanced Illegal Surgery Duffel Bag"
 	desc = "A Syndicate stolen surgery duffel bag, with a set of upgraded surgery tools to boot."
 	item = /obj/item/storage/backpack/duffelbag/syndie/surgery_adv
-	cost = 6
+	cost = 3  ///bluemoon change
 
 /datum/uplink_item/device_tools/encryptionkey
 	name = "InteQ Encryption Key"

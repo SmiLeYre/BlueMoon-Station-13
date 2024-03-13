@@ -552,7 +552,7 @@
 		/obj/item/gun/ballistic/automatic/c20r/toy/unrestricted/riot,
 		/obj/item/reagent_containers/syringe/stimulants,
 		/obj/item/storage/box/syndie_kit/imp_freedom,
-		/obj/item/storage/toolbox/infiltrator
+		/obj/item/storage/toolbox/infiltrator/inteq   ///bluemoon change
 	)
 	var/obj/item1 = pick_n_take(item_list)
 	var/obj/item2 = pick_n_take(item_list)
