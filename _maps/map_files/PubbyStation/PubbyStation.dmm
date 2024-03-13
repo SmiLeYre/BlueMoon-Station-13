@@ -51040,7 +51040,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
-/obj/item/clothing/suit/armor/brigdoc/armor,
+/obj/item/clothing/suit/armor/brigdoc,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "dYe" = (
@@ -62054,7 +62054,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/item/clothing/suit/armor/brigdoc/armor,
+/obj/item/clothing/suit/armor/brigdoc,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "tyL" = (

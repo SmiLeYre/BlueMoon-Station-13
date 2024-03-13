@@ -1,20 +1,29 @@
-/obj/item/clothing/suit/armor/brigdoc
-	name = "brig physician vest"
-	desc = "A dark red vests for brig physicians."
-	icon_state = "secmed_vest"
-	item_state = "secmed_vest"
+/obj/item/clothing/suit/brigdoc
+	name = "Brig Physician Armored Vest"
+	desc = "A bullet proof vest, designed for brig physicians."
+	icon = 'modular_splurt/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_splurt/icons/mobs/suits.dmi'
+	icon_state = "brigphysicianvest"
+	item_state = "brigphysicianvest"
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "energy" = 10, "bomb" = 0, "bio" = 40, "rad" = 0, "fire" = 50, "acid" = 40)
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/suit/armor/brigdoc/labcoat
-	name = "brig physician lab coat"
+	name = "Brig Physician Lab Coat"
 	desc = "A dark red lab coat for brig physicians."
+	icon = 'modular_splurt/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_splurt/icons/mobs/suits.dmi'
 	icon_state = "secmed_labcoat"
 	item_state = "secmed_labcoat"
+	unique_reskin = list(
+		"Old" = list("icon_state" = "old_brigphysicianvest")
+	)
 
-/obj/item/clothing/suit/armor/brigdoc/armor
-	name = "brig physician armored coat"
+/obj/item/clothing/suit/armor/brigdoc
+	name = "Brig Physician Armored Coat"
 	desc = "A dark red lab coat with armored vest for brig physicians. Used for hostile work environments."
+	icon = 'modular_splurt/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_splurt/icons/mobs/suits.dmi'
 	icon_state = "secmed_armor"
 	item_state = "secmed_armor"
 	unique_reskin = list(

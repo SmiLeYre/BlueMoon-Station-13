@@ -342,6 +342,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	gain_text = "<span class='danger'>Вы начинаете волноваться о своих словах.</span>"
 	lose_text = "<span class='notice'>Вам становится легче говорить.</span>" //if only it were that easy!
 	medical_record_text = "Пациент предпочитает избегать социальных взаимодействий."
+	mob_trait = TRAIT_ANXIOUS
 	var/dumb_thing = TRUE
 	processing_quirk = TRUE
 

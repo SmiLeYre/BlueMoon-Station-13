@@ -54543,7 +54543,7 @@
 	pixel_y = 10
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/clothing/suit/armor/brigdoc/armor,
+/obj/item/clothing/suit/armor/brigdoc,
 /obj/item/clothing/head/helmet/brigdoc,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)

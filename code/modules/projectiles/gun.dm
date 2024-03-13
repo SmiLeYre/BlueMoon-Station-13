@@ -299,6 +299,8 @@
 	var/message = ""
 	var/lust_amt = 0
 	var/mob/living/living_target = target
+	if(!user.canUseTopic(user, BE_CLOSE))
+		return
 	user.DelayNextAction(CLICK_CD_RANGE)
 	if(ishuman(living_target) && (living_target?.client?.prefs?.toggles & VERB_CONSENT))
 		if(user.zone_selected == BODY_ZONE_PRECISE_GROIN)

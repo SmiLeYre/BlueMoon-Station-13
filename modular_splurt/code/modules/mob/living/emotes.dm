@@ -131,6 +131,9 @@
 	// Accepts all possible parameters
 	playsound(user.loc, emote_sound, emote_volume, emote_pitch_variance, emote_range, emote_falloff_exponent, emote_frequency, emote_channel, emote_check_pressure, emote_ignore_walls, emote_falloff_distance, emote_wetness, emote_dryness, emote_distance_multiplier, emote_distance_multiplier_min_range)
 
+ 	// Set cooldown
+	user.nextsoundemote = world.time + emote_cooldown
+
 /datum/emote/living/surrender/run_emote(mob/user, params, type_override, intentional)
 	// Set message with pronouns
 	message = "puts [user.p_their()] hands on [user.p_their()] head and falls to the ground, [user.p_they()] surrender[user.p_s()]!"

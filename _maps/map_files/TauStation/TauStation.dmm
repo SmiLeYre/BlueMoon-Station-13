@@ -3399,7 +3399,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/red,
-/obj/item/clothing/suit/armor/brigdoc/armor,
+/obj/item/clothing/suit/armor/brigdoc,
 /turf/open/floor/plasteel/showroomfloor,
 /area/security/brig)
 "bhU" = (
@@ -41332,7 +41332,7 @@
 /turf/open/floor/plasteel,
 /area/cargo/storage)
 "omF" = (
-/obj/item/circlegame,
+/obj/item/hand_item/circlegame,
 /turf/open/floor/wood{
 	icon_state = "wood-broken2"
 	},
@@ -50490,7 +50490,7 @@
 /obj/machinery/newscaster/security_unit{
 	pixel_y = -30
 	},
-/obj/item/clothing/suit/armor/brigdoc/armor,
+/obj/item/clothing/suit/armor/brigdoc,
 /turf/open/floor/plasteel/showroomfloor,
 /area/security/brig)
 "ryJ" = (

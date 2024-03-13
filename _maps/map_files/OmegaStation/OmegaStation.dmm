@@ -35841,7 +35841,7 @@
 	},
 /obj/structure/closet/secure_closet/brigdoc,
 /obj/item/clothing/head/helmet/brigdoc,
-/obj/item/clothing/suit/armor/brigdoc/armor,
+/obj/item/clothing/suit/armor/brigdoc,
 /obj/machinery/light{
 	dir = 8
 	},

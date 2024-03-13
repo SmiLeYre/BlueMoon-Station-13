@@ -50609,7 +50609,7 @@
 	c_tag = "Brig Infirmary";
 	dir = 4
 	},
-/obj/item/clothing/suit/armor/brigdoc/armor,
+/obj/item/clothing/suit/armor/brigdoc,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "jva" = (
@@ -50674,7 +50674,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/item/clothing/suit/armor/brigdoc/armor,
+/obj/item/clothing/suit/armor/brigdoc,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "jwW" = (
