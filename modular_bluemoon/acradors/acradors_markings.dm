@@ -98,30 +98,30 @@
 
 /datum/sprite_accessory/tails/mam_tails/acrador/femine
 	name = "Acrador (Narrow)"
-	icon_state = "acrador_Fe"
-
-/datum/sprite_accessory/tails/mam_tails/acrador/femine_long
-	name = "Acrador (Narrow and Long)"
-	icon_state = "acrador_FeLo"
-
-/datum/sprite_accessory/tails_animated/mam_tails_animated/acrador/femine_long
-	name = "Acrador (Narrow and Long)"
-	icon_state = "acrador_FeLo"
-
-/datum/sprite_accessory/tails/mam_tails/acrador/femine_very_long
-	name = "Acrador (Narrow and Very Long)"
-	icon_state = "acrador_FeVeLo"
-
-/datum/sprite_accessory/tails_animated/mam_tails_animated/acrador/femine_very_long
-	name = "Acrador (Narrow and Very Long)"
-	icon_state = "acrador_FeVeLo"
+	icon_state = "acrador_1"
 
 /datum/sprite_accessory/tails/mam_tails/acrador/normal
 	name = "Acrador (Medium)"
-	icon_state = "acrador_No"
+	icon_state = "acrador_2"
 
 /datum/sprite_accessory/tails/mam_tails/acrador/big
 	name = "Acrador (Big)"
-	icon_state = "acrador_Bi"
+	icon_state = "acrador_3"
+
+/datum/sprite_accessory/tails/mam_tails/acrador/femine_long
+	name = "Acrador (Narrow and Long)"
+	icon_state = "acrador_4"
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/acrador/femine_long
+	name = "Acrador (Narrow and Long)"
+	icon_state = "acrador_4"
+
+/datum/sprite_accessory/tails/mam_tails/acrador/femine_very_long
+	name = "Acrador (Narrow and Very Long)"
+	icon_state = "acrador_5"
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/acrador/femine_very_long
+	name = "Acrador (Narrow and Very Long)"
+	icon_state = "acrador_5"
 
 
