@@ -122,8 +122,8 @@
 			"жёстко засовывает свой крепкий орган в горло <b>[partner]</b> и тем самым образом своего партнёра затыкает.",
 			"душит <b>[partner]</b>, снова и снова засовывая свой влажный орган по самые яйца.",
 			"молотит рот <b>[partner]</b> с чавкающим звуком и раз за разом приземляется своими яйцами аккурат в лицо.")]"
-		if(rand(3))
-			partner.emote("кашляет на [user]")
+		if(prob(10))
+			partner.emote("cough")
 			if(prob(1) && istype(partner))
 				partner.adjustOxyLoss(rand(2,3))
 		if(partner.a_intent == INTENT_HARM)
