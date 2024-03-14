@@ -213,7 +213,7 @@
 	required_enemies = list(2,2,1,1,1,1,1,0,0,0)
 	required_candidates = 1
 	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) // BLUEMOON ADD
-	weight = 4
+	weight = 0 // Было 4, отключено до переработки вампиров
 	cost = 10
 	scaling_cost = 10
 	requirements = list(101,101,60,50,40,30,20,15,10,10)
