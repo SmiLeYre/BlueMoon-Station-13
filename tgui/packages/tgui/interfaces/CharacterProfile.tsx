@@ -145,7 +145,7 @@ const CharacterProfileImageElement = (props, context) => {
       {headshot_links.length > 1 ? (
         <Box>
           <Button onClick={prevHeadshot} icon="arrow-left" />
-          <span style={"margin: 0 8px"}><b>{selectedHeadshot + 1} / {headshot_links.length}</b></span>
+          <span style={{margin: "0 8px"}}><b>{selectedHeadshot + 1} / {headshot_links.length}</b></span>
           <Button onClick={nextHeadshot} icon="arrow-right" />
         </Box>
       ) : (<Box />)}
