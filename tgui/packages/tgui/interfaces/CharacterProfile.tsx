@@ -121,12 +121,21 @@ export const CharacterProfile = (props, context) => {
 
 const CharacterProfileImageElement = (props, context) => {
   const { data } = useBackend<CharacterProfileContext>(context);
-  const headshot_links = data.headshot_links?.filter(link => link?.length) || [];
 
-  const [ selectedHeadshot, selectHeadshot ] = useLocalState(context, 'selectedHeadshot', 0);
+  const headshot_links =
+    data.headshot_links?.filter(link => link?.length) || [];
 
-  const prevHeadshot = () => selectHeadshot((selectedHeadshot + headshot_links.length - 1) % headshot_links.length);
-  const nextHeadshot = () => selectHeadshot((selectedHeadshot + 1) % headshot_links.length);
+  const [
+    selectedHeadshot,
+    selectHeadshot
+  ] = useLocalState(context, 'selectedHeadshot', 0);
+
+  const prevHeadshot = () => selectHeadshot(
+    (selectedHeadshot + headshot_links.length - 1) % headshot_links.length
+  );
+  const nextHeadshot = () => selectHeadshot(
+    (selectedHeadshot + 1) % headshot_links.length
+  );
 
   if (headshot_links.length) return (
     <Section title="Арт персонажа" pb="12" textAlign="center">
@@ -136,7 +145,7 @@ const CharacterProfileImageElement = (props, context) => {
       {headshot_links.length > 1 ? (
         <Box>
           <Button onClick={prevHeadshot} icon="arrow-left" />
-          <span style="margin: 0 8px"><b>{selectedHeadshot + 1} / {headshot_links.length}</b></span>
+          <span style={"margin: 0 8px"}><b>{selectedHeadshot + 1} / {headshot_links.length}</b></span>
           <Button onClick={nextHeadshot} icon="arrow-right" />
         </Box>
       ) : (<Box />)}
@@ -157,11 +166,11 @@ const CharacterModelImageElement = (props, context) => {
         />
       </Box>
       <Box>
-        <Button onClick={()=>act("char_left")} icon="undo" />
-        <Button onClick={()=>act("change_background")}>Сменить фон</Button>
-        <Button onClick={()=>act("char_right")} icon="redo" />
-        <Button onClick={()=>act("character_directory")}>
-            Библиотека Персонажей
+        <Button onClick={() => act("char_left")} icon="undo" />
+        <Button onClick={() => act("change_background")}>Сменить фон</Button>
+        <Button onClick={() => act("char_right")} icon="redo" />
+        <Button onClick={() => act("character_directory")}>
+          Библиотека Персонажей
         </Button>
       </Box>
     </Section>
