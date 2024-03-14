@@ -166,6 +166,7 @@
 
 	//Makes holy water generally good for Hallowed users.
 	//Holy water is tough to get in comparison to other medicine anyways.
+	/* BLUEMOON REMOVAL START - убираем имбалансные механики
 	if(HAS_TRAIT(M,TRAIT_RUSSIAN))
 		// Reduce disgust.
 		M.adjust_disgust(-3)
@@ -189,6 +190,6 @@
 
 		// Negate all other holy water effects.
 		return
-
+	/ BLUEMOON REMOVAL END */
 	// Return normally.
 	. = ..()

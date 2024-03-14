@@ -1,3 +1,4 @@
+/* BLUEMOON REMOVAL START - убираем дизбалансные перки
 /datum/quirk/tough
 	name = "Стойкость"
 	desc = "Ваше аномально крепкое тело может вынести на 20% больше урона."
@@ -13,7 +14,7 @@
 	if(!quirk_holder)
 		return
 	quirk_holder.maxHealth *= 0.909 //close enough
-
+/ BLUEMOON REMOVAL END */
 /datum/quirk/ashresistance
 	name = "Пепельная Устойчивость"
 	desc = "Ваше тело адаптировалось к пылающим покровам пепла, которые застилают вулканические миры, но это не значит, что вы не будете уставать."
@@ -198,8 +199,8 @@
 
 /datum/quirk/hallowed
 	name = "Святой Дух"
-	desc = "Вы были благословлены высшими силами или каким-то иным образом наделены святой энергией. Святая вода восстановит ваше здоровье!"
-	value = 2
+	desc = "Вы были благословлены высшими силами или каким-то иным образом наделены святой энергией." // BLUEMOON EDIT - WAS desc = "Вы были благословлены высшими силами или каким-то иным образом наделены святой энергией. Святая вода восстановит ваше здоровье!"
+	value = 1 // BLUEMOON EDIT - WAS 2 (убираем реген у всех, кроме священника, оставляя только смешную надпись)
 	mob_trait = TRAIT_HALLOWED
 	gain_text = span_notice("Вы чувствуете, как святая энергия начинает течь по вашему телу.")
 	lose_text = span_notice("Вы чувствуете, как угасает ваша святая энергия...")
@@ -220,7 +221,7 @@
 /datum/quirk/russian
 	name = "Русский дух"
 	desc = "Вы были благословлены высшими силами или каким-то иным образом наделены святой энергией. С вами Бог!"
-	value = 2
+	value = 1 // BLUEMOON EDIT - WAS 2 (убираем регенерацию, оставляем только смешную надпись)
 	mob_trait = TRAIT_RUSSIAN
 	gain_text = span_notice("Вы чувствуете, как Бог следит за вами!")
 	lose_text = span_notice("Вы чувствуете, как угасает ваша вера в Бога...")
@@ -283,7 +284,7 @@
 	var/mob/living/carbon/human/H = quirk_holder //person who'll be healed
 	var/consumed_damage = H.getFireLoss() * 2 + H.getBruteLoss() // the damage, the person have. Burn is bad for regeneration, so its multiplied
 	var/heal_multiplier = quirk_holder.getMaxHealth() / 100 // the heal is scaled by persons health, big guys heals faster
-	var/bruteheal = -0.6
+	var/bruteheal = -0.25 // BLUEMOON EDIT - WAS 0.6 (или больше, поздно задокументированно)
 	var/burnheal = -0.2
 	var/toxheal = -0.2
 	if (consumed_damage > 50 * heal_multiplier) // if the damage exceeds the threshold the speed of healing significantly reduse

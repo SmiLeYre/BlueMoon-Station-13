@@ -379,7 +379,7 @@
 	else
 		to_chat(L, span_nicegreen("Священный Туман распространяется по вашему сознанию."))
 
-	if(HAS_TRAIT(L, TRAIT_HALLOWED) || usr.job == "Chaplain")
+	if(usr.job == "Chaplain")
 		L.drowsyness = max(L.drowsyness-5, 0)
 		L.AdjustUnconscious(-20, FALSE)
 		L.AdjustAllImmobility(-40, FALSE)
