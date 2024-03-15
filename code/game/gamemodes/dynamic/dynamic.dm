@@ -215,7 +215,7 @@ GLOBAL_VAR_INIT(round_type, ROUNDTYPE_DYNAMIC_MEDIUM)
 	/ BLUEMOON ADD END */
 	// BLUEMOON ADD START
 	if (href_list["round_type_choose"])
-		var/chosen_type = input("Выберите вариацию динамика","Round Type Choose") as null|anything in list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT)
+		var/chosen_type = input("Выберите вариацию динамика","Round Type Choose") as null|anything in list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) // Убран ROUNDTYPE_DYNAMIC_HARD
 		message_admins("[key_name(usr)] изменяет режим игры [GLOB.round_type] на [chosen_type]. Это повлияет только на доступность появления новых антагонистов.")
 		GLOB.round_type = chosen_type
 		GLOB.master_mode = "[chosen_type] (Changed Midgame)"

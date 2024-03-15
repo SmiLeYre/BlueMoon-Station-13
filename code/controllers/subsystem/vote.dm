@@ -388,8 +388,8 @@ SUBSYSTEM_DEF(vote)
 						if(ROUNDTYPE_PLAYERCOUNT_DYNAMIC_MEDIUMPOP_MIN to ROUNDTYPE_PLAYERCOUNT_DYNAMIC_MEDIUMPOP_MAX)
 							dynamic_pick = list(ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) - SSpersistence.last_dynamic_gamemode
 
-						if(ROUNDTYPE_PLAYERCOUNT_DYNAMIC_HIGHPOP_MIN to INFINITY)
-							dynamic_pick = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) - SSpersistence.last_dynamic_gamemode
+						if(ROUNDTYPE_PLAYERCOUNT_DYNAMIC_HIGHPOP_MIN to INFINITY) // Убрать dynamic hard
+							dynamic_pick = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) - SSpersistence.last_dynamic_gamemode
 
 					if(dynamic_pick.len > 0)
 						. = pick(dynamic_pick)
@@ -647,8 +647,8 @@ SUBSYSTEM_DEF(vote)
 			. += "<br><font size=1><small><b>[ROUNDTYPE_DYNAMIC_TEAMBASED]:</b></font></small>"
 			. += "<br><font size=1><small>55-100 угрозы, только командные и особые одиночные антагонисты, необходим минимум [ROUNDTYPE_PLAYERCOUNT_DYNAMIC_HIGHPOP_MIN] игрок;</font></small>"
 
-			. += "<br><font size=1><small><b>[ROUNDTYPE_DYNAMIC_HARD]:</b></font></small>"
-			. += "<br><font size=1><small>75-100 угрозы, необходим минимум [ROUNDTYPE_PLAYERCOUNT_DYNAMIC_HIGHPOP_MIN] игрок;</font></small>"
+			//. += "<br><font size=1><small><b>[ROUNDTYPE_DYNAMIC_HARD]:</b></font></small>"
+			//. += "<br><font size=1><small>75-100 угрозы, необходим минимум [ROUNDTYPE_PLAYERCOUNT_DYNAMIC_HIGHPOP_MIN] игрок;</font></small>"
 
 			. += "<br><font size=1><small><b>[ROUNDTYPE_DYNAMIC_MEDIUM]:</b></font></small>"
 			. += "<br><font size=1><small>40-60 угрозы, необходим минимум [ROUNDTYPE_PLAYERCOUNT_DYNAMIC_MEDIUMPOP_MIN] игрок;</font></small>"
