@@ -743,7 +743,7 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 					unequip_everything()
 					drop_all_held_items()
 					gib()
-
+/* BLUEMOON CHANGE полное переписывание этого чудовища (modular_bluemoon\code\datums\dna.dm)
 /datum/dna/proc/update_body_size(old_size)
 	if(!holder || features["body_size"] == old_size)
 		return
@@ -762,5 +762,5 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 			if(old_size < penalty_threshold && features["body_size"] >= penalty_threshold)
 				C.maxHealth  += 10 //give the maxhealth back
 				holder.remove_movespeed_modifier(/datum/movespeed_modifier/small_stride) //remove the slowdown
-
+*/
 
