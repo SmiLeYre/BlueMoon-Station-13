@@ -67,7 +67,7 @@
 
 /datum/action/innate/beastchange/Activate()
 	. = ..()
-	var/appearances = list("Default", "Black", "White", "Skull", "Werecat", "Panther", "Garfield")
+	var/appearances = list("Default", "Black", "White", "Skull", "Aiko", "Werecat", "Panther", "Garfield", "Mouse")
 	var/skin = input(owner, "Pick appearance for your beast", "Change Appearance") as null|anything in appearances
 	switch(skin)
 		if("Default")
@@ -82,6 +82,9 @@
 		if("Skull")
 			beastskin = "skull_"
 			beastsound = 'modular_bluemoon/vagabond/sound/wolf.ogg'
+		if("Aiko")
+			beastskin = "aiko_"
+			beastsound = 'modular_bluemoon/vagabond/sound/wolf.ogg'
 		if("Werecat")
 			beastskin = "werecat_"
 			beastsound = 'modular_bluemoon/vagabond/sound/cat.ogg'
@@ -91,6 +94,9 @@
 		if("Garfield")
 			beastskin = "garfield_"
 			beastsound = 'modular_bluemoon/vagabond/sound/cat.ogg'
+		if("Mouse")
+			beastskin = "mouse_"
+			beastsound = 'sound/effects/mousesqueek.ogg'
 	if(skin)
 		to_chat(owner, "<span class='notice'>Your inner Beast's skin now will be [skin].</span>")
 

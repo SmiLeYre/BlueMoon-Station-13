@@ -56,7 +56,7 @@
 	ammo_x_offset = 4
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	var/last_altfire = 0
-	var/altfire_delay = 0
+	var/altfire_delay = CLICK_CD_RANGE // BLUEMOON EDIT - WAS 0 (фикс отсутствия КД при стрельбе оружия ГСБ)
 
 /obj/item/gun/energy/e_gun/hos/altafterattack(atom/target, mob/user, proximity_flag, params)
 	. = TRUE
