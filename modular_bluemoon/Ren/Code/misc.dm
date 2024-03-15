@@ -68,7 +68,7 @@
 	force = 15
 	toolspeed = 0.30
 
-/obj/item/crowbar/power/attack_self(mob/user)
+/obj/item/crowbar/power/inteq/attack_self(mob/user)
 	playsound(get_turf(user), 'sound/items/change_jaws.ogg', 50, 1)
 	var/obj/item/wirecutters/power/inteq/cutjaws = new /obj/item/wirecutters/power/inteq(drop_location())
 	cutjaws.name = name
@@ -87,7 +87,7 @@
 	force = 15
 	toolspeed = 0.30
 
-/obj/item/wirecutters/power/attack_self(mob/user)
+/obj/item/wirecutters/power/inteq/attack_self(mob/user)
 	playsound(get_turf(user), 'sound/items/change_jaws.ogg', 50, 1)
 	var/obj/item/crowbar/power/inteq/pryjaws = new /obj/item/crowbar/power/inteq(drop_location())
 	pryjaws.name = name
@@ -106,6 +106,8 @@
 	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
 	desc = "Перекраска твёрдого света повысила уровень военных преступлений на 20%"
 	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
+	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
+	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
 
 /obj/item/inducer/inteq
 	icon_state = "inducer"
@@ -136,7 +138,7 @@
 	new /obj/item/screwdriver/power/inteq(src)
 	new /obj/item/crowbar/power/inteq(src)
 	new /obj/item/weldingtool/experimental/inteq(src)
-	new /obj/item/multitool(src)
+	new /obj/item/multitool/tricorder(src)
 	new /obj/item/inducer/inteq(src)
 	new /obj/item/clothing/gloves/tackler/combat/insulated(src)
 
