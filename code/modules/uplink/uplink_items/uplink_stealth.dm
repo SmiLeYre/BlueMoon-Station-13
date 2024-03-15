@@ -80,7 +80,7 @@
 	player_minimum = 25
 	surplus = 0
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
-
+/* BLUEMOON REMOVAL START - убираем басс из аплинка до его реворка, т.к. с щитом это неубиваемый чел
 /datum/uplink_item/stealthy_weapons/martialartstwo
 	name = "Rising Bass Scroll"
 	desc = "This scroll contains the secrets of an ancient martial arts technique. You will become proficient in fleeing situations, \
@@ -90,7 +90,7 @@
 	player_minimum = 25
 	surplus = 0
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
-
+/ BLUEMOON REMOVAL END */
 /datum/uplink_item/stealthy_weapons/martialartsthree
 	name = "Krav Maga Scroll"
 	desc = "This scroll contains the secrets of an ancient martial arts technique. You will gain special unarmed attacks for \
