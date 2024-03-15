@@ -418,3 +418,31 @@
 /datum/gear/socks/socks_line
 	name = "Polychromic Line Socks"
 	path = /obj/item/clothing/underwear/socks/socks_line
+
+///Аутфиты
+/obj/item/card/id/syndicate/inteq_fake
+	name = "InteQ Vanguard ID card"
+	id_type_name = "InteQ ID card"
+	desc = "An ID straight from the InteQ."
+	registered_name = "InteQ"
+	assignment = "InteQ Operative"
+	icon_state = "inteq"
+
+/datum/outfit/inteq_dead
+	back = /obj/item/storage/backpack
+	name = "InteQ corps"
+	suit = /obj/item/clothing/suit/armor/inteq
+	uniform = /obj/item/clothing/under/inteq
+	shoes = /obj/item/clothing/shoes/combat/swat/knife
+	gloves = /obj/item/clothing/gloves/combat
+	head = /obj/item/clothing/head/helmet/swat/inteq
+	mask = /obj/item/clothing/mask/balaclava/breath/inteq
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
+	id = /obj/item/card/id/syndicate/inteq_fake
+
+/obj/effect/mob_spawn/human/corpse/inteq_dead
+	name = "InteQ Operative"
+	id_job = "Operative"
+	hair_style = "Bald"
+	facial_hair_style = "Shaved"
+	outfit = /datum/outfit/inteq_dead
