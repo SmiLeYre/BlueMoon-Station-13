@@ -61,6 +61,7 @@ export const DmTarget = new Juke.Target({
     'html/**',
     'icons/**',
     'interface/**',
+    "modular_*/**", // BLUEMOON ADD
     `${DME_NAME}.dme`,
   ],
   outputs: [

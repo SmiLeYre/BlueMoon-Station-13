@@ -35501,7 +35501,7 @@
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq/collosus)
 "wrt" = (
-/obj/effect/immovablerod,
+/obj/effect/immortality_talisman,
 /turf/open/floor/engine,
 /area/centcom)
 "wso" = (

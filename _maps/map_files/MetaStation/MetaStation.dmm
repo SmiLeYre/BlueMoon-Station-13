@@ -78066,10 +78066,6 @@
 	dir = 1
 	},
 /area/engineering/main)
-"rCU" = (
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plating,
-/area/space)
 "rDr" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/drinks/sillycup{
@@ -107531,9 +107527,9 @@ dux
 dux
 dux
 dux
-rCU
-rCU
-cEA
+ckN
+ckN
+ckN
 dux
 dux
 dux
