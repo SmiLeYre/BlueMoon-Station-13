@@ -212,30 +212,6 @@
 	zoomable = TRUE
 	zoom_amt = 7
 	zoom_out_amt = 5
-///Мультилазер
-
-/obj/item/gun/energy/powerlaser
-	name = "laser gatling gun"
-	desc = "An advanced laser cannon with an incredible rate of fire. Requires a bulky backpack power source to use."
-	icon = 'icons/obj/guns/minigun.dmi'
-	icon_state = "minigun_spin"
-	item_state = "minigun"
-	flags_1 = CONDUCT_1
-	slowdown = 1
-	selfcharge = EGUN_SELFCHARGE
-	slot_flags = null
-	w_class = WEIGHT_CLASS_HUGE
-	custom_materials = null
-	ammo_type = list(/obj/item/ammo_casing/energy/laser, /obj/item/ammo_casing/energy/laser/accelerator)
-	cell_type =	/obj/item/stock_parts/cell/lascarbine
-	weapon_weight = WEAPON_HEAVY
-	fire_sound = 'sound/weapons/laser.ogg'
-	charge_sections = 0
-	shaded_charge = 0
-	can_charge = 0
-	item_flags = NEEDS_PERMIT | SLOWS_WHILE_IN_HAND
-
-
 
 ///Sandman
 /obj/item/reagent_containers/syringe/sand
@@ -274,6 +250,63 @@
 	new_form = /mob/living/simple_animal/hostile/morph/sandman
 	infectable_biotypes = MOB_ORGANIC|MOB_MINERAL|MOB_UNDEAD
 
+///Электро копьё
+/obj/item/spear/electrospear
+	icon_state = "electrospear0"
+	icon = 'modular_bluemoon/Ren/Icons/Obj/misc.dmi'
+	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
+	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
+	name = "Electrospear"
+	desc = "Невероятно древнее оружие в современном исполнении."
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	reach = 2
+	damtype = "stamina"
+	throwforce = 45
+	embedding = list("embedded_impact_pain_multiplier" = 3)
+	armour_penetration = 15
+	custom_materials = null
+	hitsound = 'sound/weapons/staff.ogg'
+	attack_verb = list("attacked", "poked", "jabbed", "torn", "gored")
+	icon_prefix = "electrospear"
+
+/obj/item/spear/electrospear/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed, force_unwielded=11, force_wielded=20, icon_wielded="[icon_prefix]1", wieldsound="sparks", unwieldsound="sparks")
+
+/obj/item/spear/electrospear/attack(mob/living/target, mob/living/user)
+	var/list/return_list = list()
+	if(target.mob_run_block(src, 0, "[user]'s [name]", ATTACK_TYPE_MELEE, 0, user, null, return_list) & BLOCK_SUCCESS) //No message; run_block() handles that
+		playsound(target, 'sound/weapons/genhit.ogg', 50, 1)
+		return FALSE
+	if (!wielded)
+		user.do_attack_animation(target)
+		target.adjustBruteLoss(8)
+		playsound(src, 'sound/weapons/bladeslice.ogg', 50, 1, -1)
+		target.visible_message("<span class='danger'>[user] целится в открытые места [target] и наносит удар с помощью [src]!</span>", \
+								"<span class='userdanger'>[user] has torn you with [src]!</span>")
+		log_combat(user, target, "harm with an electrostaff")
+		return TRUE
+	if(user.a_intent != INTENT_HARM)
+		user.do_attack_animation(target)
+		target.adjustStaminaLoss(20)
+		playsound(src, 'sound/weapons/staff.ogg', 50, 1, -1)
+		target.visible_message("<span class='danger'>[user] целится в уязвимые места [target] с помощью [src] и бьёт электричеством!</span>", \
+								"<span class='userdanger'>[user] has shocked you with [src]!</span>")
+		log_combat(user, target, "stunned with an electrospear")
+		target.apply_effect(EFFECT_STUTTER, 20)
+		SEND_SIGNAL(target, COMSIG_LIVING_MINOR_SHOCK)
+		return TRUE
+	if(user.a_intent == INTENT_HARM)
+		user.do_attack_animation(target)
+		target.adjustFireLoss(18)
+		playsound(src, 'sound/weapons/sear.ogg', 50, 1, -1)
+		target.visible_message("<span class='danger'>[user] целится в уязвимые места и поджаривает [target] с помощью [src]!</span>", \
+								"<span class='userdanger'>[user] has burns you with [src]!</span>")
+		log_combat(user, target, "harm with an electrostaff")
+		return TRUE
+
 ///InteQ Uplink additions
 /datum/uplink_item/inteq/angle_grinder
 	name = "USHM"
@@ -295,3 +328,10 @@
 	item = /obj/item/reagent_containers/syringe/sand
 	cost = 15
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
+
+/datum/supply_pack/security/armory/electrospear
+	name = "Electrospear Crate"
+	desc = "Электро-копьё для сдерживания бунтов. Поможет когда ты очень сильно не хочешь подходить к своему противнику."
+	cost = 5500
+	contains = list(/obj/item/spear/electrospear)
+	crate_name = "electrospear crate"
