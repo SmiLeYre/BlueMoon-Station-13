@@ -28,7 +28,10 @@
 			holder.release()
 
 /datum/element/mob_holder/micro/on_examine(mob/living/source, mob/user, list/examine_list)
-	if(ishuman(user) && !istype(source.loc, /obj/item/clothing/head/mob_holder) && (COMPARE_SIZES(user, source)) >= (1 / CONFIG_GET(number/max_pick_ratio)))
+	var/compare_size = 1
+	if(HAS_TRAIT(micro, TRAIT_BLUEMOON_LIGHT))
+		compare_size = 0.8
+	if(ishuman(user) && !istype(source.loc, /obj/item/clothing/head/mob_holder) && (COMPARE_SIZES(user, source)) >= (compare_size / CONFIG_GET(number/max_pick_ratio)))
 		examine_list += span_notice("Looks like [source.p_they(FALSE)] can be picked up using <b>Alt+Click and grab intent</b>!")
 
 /// Do not inherit from /mob_holder, interactions are different.
