@@ -306,8 +306,6 @@
 	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
 	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
 
-/obj/item/storage/box/inteq_kit/revolver
-
 /obj/item/storage/box/inteq_kit/revolver/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/inteq(src)
 	new /obj/item/ammo_box/a357(src)
