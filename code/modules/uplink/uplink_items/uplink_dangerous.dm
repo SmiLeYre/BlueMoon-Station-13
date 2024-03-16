@@ -29,7 +29,16 @@
 	cost = 13
 	player_minimum = 15
 	surplus = 50
-	purchasable_from = ~UPLINK_CLOWN_OPS
+	purchasable_from = UPLINK_SYNDICATE
+
+/datum/uplink_item/dangerous/revolver_inteq
+	name = "InteQ Revolver Kit"
+	desc = "Простой и брутальный револьвер под патрон .357 Magnum. 7 выстрелов для 7 трупов, скорозарядник с дополнительным боезопасом в комплекте."
+	item = /obj/item/storage/box/inteq_kit/revolver
+	cost = 13
+	player_minimum = 15
+	surplus = 50
+	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 
 /datum/uplink_item/dangerous/rawketlawnchair
 	name = "84mm Rocket Propelled Grenade Launcher"

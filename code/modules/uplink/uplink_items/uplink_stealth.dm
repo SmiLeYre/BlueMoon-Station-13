@@ -11,6 +11,14 @@
 	name = "Telescopic Baseball Bat"
 	desc = "A robust telescopic baseball bat that hits like a truck and can be concealed when collapsed."
 	item = /obj/item/melee/baseball_bat/telescopic
+	purchasable_from = UPLINK_SYNDICATE
+	cost = 2
+
+/datum/uplink_item/stealthy_weapons/telescopicbat_inteq
+	name = "Telescopic Baseball Bat"
+	desc = "Раскладная бейсбольная бита с шипованым навершием. Для тех, кто в душе не ебёт какие правила у бейсбола."
+	item = /obj/item/melee/baseball_bat/telescopic/inteq
+	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 	cost = 2
 
 /datum/uplink_item/stealthy_weapons/combatglovesplus

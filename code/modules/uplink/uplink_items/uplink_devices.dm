@@ -106,7 +106,11 @@
 	desc = "A robust seven-slot set of webbing that is capable of holding all manner of tactical equipment."
 	item = /obj/item/storage/belt/military
 	cost = 1
-	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
+	purchasable_from = UPLINK_SYNDICATE
+
+/datum/uplink_item/device_tools/military_belt/inteq
+	item = /obj/item/storage/belt/military/inteq
+	purchasable_from = UPLINK_TRAITORS
 
 /datum/uplink_item/device_tools/ammo_pouch
 	name = "Ammo Pouch"
@@ -139,6 +143,20 @@
 	item = /obj/item/storage/toolbox/syndicate
 	purchasable_from = UPLINK_SYNDICATE
 	cost = 1
+
+/datum/uplink_item/device_tools/tools_inteq
+	name = "Brown toolbox"
+	desc = "Набор базовых инструментов."
+	item = /obj/item/storage/toolbox/inteq
+	cost = 1
+	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
+
+/datum/uplink_item/device_tools/tools_inteq_coller
+	name = "Deluxe Brown toolbox"
+	desc = "Улучшеный набор инструментов. Для тех, кто знает себе цену"
+	item = /obj/item/storage/toolbox/inteq/cooler
+	cost = 3
+	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 
 /datum/uplink_item/device_tools/syndie_glue
 	name = "Glue"
@@ -248,12 +266,22 @@
 			a Syndicate stolen brand MMI, a straitjacket, and a muzzle."
 	item = /obj/item/storage/backpack/duffelbag/syndie/surgery
 	cost = 1  ///bluemoon change
+	purchasable_from = UPLINK_SYNDICATE
+
+/datum/uplink_item/device_tools/surgerybag/inteq
+	item = /obj/item/storage/backpack/duffelbag/syndie/inteq/surgery
+	purchasable_from = ~UPLINK_SYNDICATE
 
 /datum/uplink_item/device_tools/surgerybag_adv
 	name = "Advanced Illegal Surgery Duffel Bag"
 	desc = "A Syndicate stolen surgery duffel bag, with a set of upgraded surgery tools to boot."
 	item = /obj/item/storage/backpack/duffelbag/syndie/surgery_adv
 	cost = 3  ///bluemoon change
+	purchasable_from = UPLINK_SYNDICATE
+
+/datum/uplink_item/device_tools/surgerybag_adv/inteq
+	item = /obj/item/storage/backpack/duffelbag/syndie/inteq/surgery_adv
+	purchasable_from = ~UPLINK_SYNDICATE
 
 /datum/uplink_item/device_tools/encryptionkey
 	name = "InteQ Encryption Key"
@@ -272,7 +300,17 @@
 			of the originals, these inferior copies are still quite useful, being able to provide \
 			both weal and woe on the battlefield, even if they do occasionally bite off a finger."
 	item = /obj/item/storage/book/bible/syndicate
+	purchasable_from = UPLINK_SYNDICATE
 	cost = 9
+
+/datum/uplink_item/device_tools/inteqtome
+	name = "InteQ Tome"
+	desc = "Магический том, позволяющий использовать силу божеств даже самым неверующим и грешным существам.\
+			 Проведи пальцем по острию страниц, окрапи их своей кровью и книга будет связана со своим хозяином до самой смерти, \
+			а замен божества одолжат частичку своей силы, позволяя залечивать любые раны своих товарищей, \"аккуратно\" прикладывая её к голове пострадавшего. (Лучше бы ему быть в шлеме)."
+	item = /obj/item/storage/book/bible/syndicate/inteq
+	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
+	cost = 7
 
 /datum/uplink_item/device_tools/thermal
 	name = "Thermal Imaging Glasses"

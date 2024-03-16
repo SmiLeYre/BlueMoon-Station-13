@@ -107,13 +107,13 @@
 /obj/item/autosurgeon/syndicate/anti_stun
 	starting_organ = /obj/item/organ/cyberimp/brain/anti_stun
 
-/obj/item/autosurgeon/syndicate/reviver
+/obj/item/autosurgeon/syndicate/inteq/reviver
 	starting_organ = /obj/item/organ/cyberimp/chest/reviver
 
 /obj/item/autosurgeon/syndicate/anti_drop
 	starting_organ = /obj/item/organ/cyberimp/brain/anti_drop
 
-/obj/item/autosurgeon/syndicate/revitilzer
+/obj/item/autosurgeon/syndicate/inteq/revitilzer
 	starting_organ = /obj/item/organ/cyberimp/chest/revitilzer
 
 //BOX O' IMPLANTS
@@ -127,7 +127,7 @@
 		/obj/item/autosurgeon/syndicate/thermal_eyes,
 		/obj/item/autosurgeon/syndicate/xray_eyes,
 		/obj/item/autosurgeon/syndicate/anti_stun,
-		/obj/item/autosurgeon/syndicate/reviver)
+		/obj/item/autosurgeon/syndicate/inteq/reviver)
 	var/amount = 5
 
 /obj/item/storage/box/cyber_implants/PopulateContents()

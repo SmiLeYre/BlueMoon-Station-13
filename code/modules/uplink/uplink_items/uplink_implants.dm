@@ -91,15 +91,17 @@
 /datum/uplink_item/implants/reviver
 	name = "Reviver Implant"
 	desc = "This implant will attempt to revive and heal you if you lose consciousness. Comes with an autosurgeon."
-	item = /obj/item/autosurgeon/syndicate/reviver
+	item = /obj/item/autosurgeon/syndicate/inteq/reviver
 	cost = 5
+	purchasable_from = (~UPLINK_SYNDICATE)
 	//purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE
 
 /datum/uplink_item/implants/revitilzer
 	name = "Revitalizing Cortex Implant"
 	desc = "This attachable to the torso cortex optimizes the body's processes in order to preserve the body. Provides overall basic mending. Comes with an autosurgeon."
-	item = /obj/item/autosurgeon/syndicate/revitilzer
-	cost = 10
+	item = /obj/item/autosurgeon/syndicate/inteq/revitilzer
+	cost = 8
+	purchasable_from = (~UPLINK_SYNDICATE)
 	//purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE
 
 /datum/uplink_item/implants/stealthimplant
