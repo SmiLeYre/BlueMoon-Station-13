@@ -48,7 +48,7 @@
 
 	//Новое замедление с учётом максимального учитываемого размера
 	var/size_cap = CONFIG_GET(number/macro_health_cap) //3.5 (350%) в базовой настройке
-	else if(size_cap > 0)
+	if(size_cap > 0)
 		if(HSize > size_cap)
 			HSize = size_cap
 		if(old_size > size_cap)
