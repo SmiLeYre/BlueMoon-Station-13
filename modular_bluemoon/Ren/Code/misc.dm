@@ -118,8 +118,6 @@
 	powertransfer = 2000
 	cell_type = /obj/item/stock_parts/cell/super
 
-
-
 /obj/item/storage/toolbox/syndicate/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
@@ -142,16 +140,50 @@
 	new /obj/item/inducer/inteq(src)
 	new /obj/item/clothing/gloves/tackler/combat/insulated(src)
 
-/datum/uplink_item/device_tools/tools_inteq
-	name = "Brown toolbox"
-	desc = "Набор базовых инструментов."
-	item = /obj/item/storage/toolbox/inteq
-	cost = 1
-	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
+/obj/item/storage/backpack/duffelbag/syndie/inteq/surgery/PopulateContents()
+	new /obj/item/scalpel(src)
+	new /obj/item/hemostat(src)
+	new /obj/item/retractor(src)
+	new /obj/item/circular_saw(src)
+	new /obj/item/surgicaldrill(src)
+	new /obj/item/cautery(src)
+	new /obj/item/bonesetter(src)
+	new /obj/item/surgical_drapes(src)
+	new /obj/item/clothing/suit/straight_jacket(src)
+	new /obj/item/clothing/mask/muzzle(src)
+	new /obj/item/mmi/syndie(src)
+	new /obj/item/implantcase(src)
+	new /obj/item/implanter(src)
+	new /obj/item/reagent_containers/medspray/sterilizine(src)
 
-/datum/uplink_item/device_tools/tools_inteq_coller
-	name = "Deluxe Brown toolbox"
-	desc = "Улучшеный набор инструментов. Для тех, кто знает себе цену"
-	item = /obj/item/storage/toolbox/inteq/cooler
-	cost = 3
-	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
+/obj/item/storage/backpack/duffelbag/syndie/inteq/surgery_adv/PopulateContents()
+	new /obj/item/scalpel/advanced(src)
+	new /obj/item/retractor/advanced(src)
+	new /obj/item/surgicaldrill/advanced(src)
+	new /obj/item/bonesetter(src)
+	new /obj/item/surgical_drapes(src)
+	new /obj/item/clothing/suit/straight_jacket(src)
+	new /obj/item/clothing/mask/muzzle(src)
+	new /obj/item/mmi/syndie(src)
+	new /obj/item/implantcase(src)
+	new /obj/item/implanter(src)
+	new /obj/item/reagent_containers/medspray/sterilizine(src)
+
+/obj/item/toy/inteqballoon
+	name = "InteQ balloon"
+	desc = "Сзади видна странная бирка \"НАХУЙ ПАКТ!!1111\"."
+	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
+	icon_state = "inteqballoon"
+	item_state = "inteqballoon"
+	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
+	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/autosurgeon/syndicate/inteq
+	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
+
+/obj/item/storage/book/bible/syndicate/inteq
+	name = "InteQ Tome"
+	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
+	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
+	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'

@@ -252,21 +252,18 @@
 
 ///Электро копьё
 /obj/item/spear/electrospear
+	name = "Electrospear"
+	desc = "Невероятно древнее оружие в современном исполнении."
 	icon_state = "electrospear0"
 	icon = 'modular_bluemoon/Ren/Icons/Obj/misc.dmi'
 	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
 	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
-	name = "Electrospear"
-	desc = "Невероятно древнее оружие в современном исполнении."
 	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	reach = 2
 	damtype = "stamina"
 	throwforce = 45
-	embedding = list("embedded_impact_pain_multiplier" = 3)
-	armour_penetration = 15
-	custom_materials = null
 	hitsound = 'sound/weapons/staff.ogg'
 	attack_verb = list("attacked", "poked", "jabbed", "torn", "gored")
 	icon_prefix = "electrospear"
@@ -276,10 +273,6 @@
 	AddComponent(/datum/component/two_handed, force_unwielded=11, force_wielded=20, icon_wielded="[icon_prefix]1", wieldsound="sparks", unwieldsound="sparks")
 
 /obj/item/spear/electrospear/attack(mob/living/target, mob/living/user)
-	var/list/return_list = list()
-	if(target.mob_run_block(src, 0, "[user]'s [name]", ATTACK_TYPE_MELEE, 0, user, null, return_list) & BLOCK_SUCCESS) //No message; run_block() handles that
-		playsound(target, 'sound/weapons/genhit.ogg', 50, 1)
-		return FALSE
 	if (!wielded)
 		user.do_attack_animation(target)
 		target.adjustBruteLoss(8)
@@ -307,6 +300,30 @@
 		log_combat(user, target, "harm with an electrostaff")
 		return TRUE
 
+///Ретекстуры
+/obj/item/melee/baseball_bat/telescopic/inteq
+	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
+	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
+	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
+
+/obj/item/storage/box/inteq_kit/revolver
+
+/obj/item/storage/box/inteq_kit/revolver/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/inteq(src)
+	new /obj/item/ammo_box/a357(src)
+
+/obj/item/storage/box/inteq_kit/doorgoboom/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/doorCharge(src)
+
+/obj/item/storage/backpack/duffelbag/syndie/inteq/c4/PopulateContents()
+	for(var/i in 1 to 10)
+		new /obj/item/grenade/plastic/c4(src)
+
+/obj/item/storage/backpack/duffelbag/syndie/inteq/x4/PopulateContents()
+	for(var/i in 1 to 3)
+		new /obj/item/grenade/plastic/x4(src)
+
 ///InteQ Uplink additions
 /datum/uplink_item/inteq/angle_grinder
 	name = "USHM"
@@ -329,6 +346,7 @@
 	cost = 15
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 
+///карго приколы
 /datum/supply_pack/security/armory/electrospear
 	name = "Electrospear Crate"
 	desc = "Электро-копьё для сдерживания бунтов. Поможет когда ты очень сильно не хочешь подходить к своему противнику."

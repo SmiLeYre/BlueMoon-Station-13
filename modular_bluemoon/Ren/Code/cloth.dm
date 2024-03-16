@@ -198,7 +198,7 @@
 		REMOVE_TRAIT(owner, TRAIT_PUSHIMMUNE, GENETIC_MUTATION)
 	return ..()
 
-/obj/item/autosurgeon/astartes
+/obj/item/autosurgeon/syndicate/inteq/astartes
 	desc = "Последний шаг, разделяющий жизнь человека от жизни ангела смерти"
 	uses = 1
 	starting_organ = /obj/item/organ/heart/gland/ossmodula
@@ -212,7 +212,7 @@
 	force = 20
 
 /obj/item/storage/box/syndie_kit/spacehero/PopulateContents()
-	new /obj/item/autosurgeon/astartes(src)
+	new /obj/item/autosurgeon/syndicate/inteq/astartes(src)
 	new /obj/item/clothing/shoes/jackboots/powerbots(src)
 	new /obj/item/clothing/mask/gas/sechailer/angrymarin(src)
 	new /obj/item/clothing/suit/space/syndicate/darktemplar(src)
