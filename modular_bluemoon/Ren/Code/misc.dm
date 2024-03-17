@@ -155,6 +155,7 @@
 	new /obj/item/implantcase(src)
 	new /obj/item/implanter(src)
 	new /obj/item/reagent_containers/medspray/sterilizine(src)
+	new /obj/item/tank/internals/anesthetic(src)
 
 /obj/item/storage/backpack/duffelbag/syndie/inteq/surgery_adv/PopulateContents()
 	new /obj/item/scalpel/advanced(src)
@@ -168,6 +169,7 @@
 	new /obj/item/implantcase(src)
 	new /obj/item/implanter(src)
 	new /obj/item/reagent_containers/medspray/sterilizine(src)
+	new /obj/item/tank/internals/anesthetic(src)
 
 /obj/item/toy/inteqballoon
 	name = "InteQ balloon"
