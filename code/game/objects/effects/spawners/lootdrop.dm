@@ -81,7 +81,7 @@
 				/obj/item/storage/box/syndie_kit/space = 3,
 				/obj/item/storage/toolbox/syndicate = 5,
 				/obj/item/clothing/shoes/chameleon/noslip = 6,
-				/obj/item/grenade/clusterbuster/soap = 6,
+				/obj/item/grenade/clusterbuster/soap/inteq = 6,
 				/obj/item/soap/syndie = 8,
 				/obj/item/pen/sleepy = 12,
 				/obj/item/storage/backpack/duffelbag/syndie = 3,
