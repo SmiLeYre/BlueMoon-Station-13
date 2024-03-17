@@ -189,6 +189,6 @@
 	cost = 3
 	purchasable_from = UPLINK_SYNDICATE
 
-/datum/uplink_item/stealthy_weapons/soap_clusterbang
+/datum/uplink_item/stealthy_weapons/soap_clusterbang/inteq
 	item = /obj/item/grenade/clusterbuster/soap/inteq
 	purchasable_from = ~(UPLINK_SYNDICATE)
