@@ -268,7 +268,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.can_hold = typecacheof(list(/obj/item/clothing/suit/space/syndicate/inteq, /obj/item/clothing/head/helmet/space/syndicate/inteq))
+	STR.can_hold = typecacheof(list(/obj/item/clothing/suit/space/syndicate/inteq, /obj/item/clothing/head/helmet/space/syndicate/inteq, /obj/item/tank/internals/emergency_oxygen/engi/syndi))
 
 /obj/item/storage/box/syndie_kit/space/inteq/PopulateContents()
 	new /obj/item/clothing/suit/space/syndicate/inteq(src) // Black and red is so in right now
