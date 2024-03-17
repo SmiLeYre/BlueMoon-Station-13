@@ -187,3 +187,8 @@
 	desc = "A traditional clusterbang grenade with a payload consisting entirely of soap. Useful in any scenario!"
 	item = /obj/item/grenade/clusterbuster/soap
 	cost = 3
+	purchasable_from = UPLINK_SYNDICATE
+
+/datum/uplink_item/stealthy_weapons/soap_clusterbang
+	item = /obj/item/grenade/clusterbuster/soap/inteq
+	purchasable_from = ~(UPLINK_SYNDICATE)
