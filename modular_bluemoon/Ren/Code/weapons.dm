@@ -322,6 +322,14 @@
 	for(var/i in 1 to 3)
 		new /obj/item/grenade/plastic/x4(src)
 
+/obj/item/grenade/spawnergrenade/syndiesoap/inteq
+	name = "Mister Scrubby"
+	spawner_type = /obj/item/soap/inteq
+
+/obj/item/grenade/clusterbuster/soap/inteq
+	name = "Slipocalypse"
+	payload = /obj/item/grenade/spawnergrenade/syndiesoap/inteq
+
 ///InteQ Uplink additions
 /datum/uplink_item/inteq/angle_grinder
 	name = "USHM"
