@@ -454,6 +454,8 @@
 
 /datum/emote/living/sigh/run_emote(mob/user, params)
 	. = ..()
+	if(!iscarbon(user) || !.)
+		return
 	var/mob/living/carbon/C = user
 	if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
 		playsound(C, pick('sound/voice/sigh_female.ogg'), 50, 1)
@@ -486,6 +488,8 @@
 
 /datum/emote/living/sneeze/run_emote(mob/user, params)
 	. = ..()
+	if(!iscarbon(user) || !.)
+		return
 	var/mob/living/carbon/C = user
 	if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
 		playsound(C, pick('sound/voice/sneezef1.ogg', 'sound/voice/sneezef2.ogg'), 50, 1)
@@ -607,6 +611,8 @@
 
 /datum/emote/living/yawn/run_emote(mob/user, params)
 	. = ..()
+	if(!iscarbon(user) || !.)
+		return
 	var/mob/living/carbon/C = user
 	if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
 		playsound(C, pick('sound/voice/female_yawn1.ogg', 'sound/voice/female_yawn2.ogg'), 50, 1)

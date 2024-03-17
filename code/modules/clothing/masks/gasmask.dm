@@ -101,6 +101,12 @@
 	item_state = "syndicate_gasmask"
 	w_class = WEIGHT_CLASS_SMALL
 
+/obj/item/clothing/mask/gas/syndicate/cool_version
+	name = "Tactical Gasmask"
+	desc = "A mask with a red visor and special filters. It seems to have a kind of cat whiskers on it."
+	icon_state = "syndicate_cool"
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
 /obj/item/clothing/mask/gas/clown_hat
 	name = "Clown Wig and Mask"
 	desc = "A true prankster's facial attire. A clown is incomplete without his wig and mask."

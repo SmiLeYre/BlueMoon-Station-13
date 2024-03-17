@@ -82,6 +82,7 @@
 	new /obj/item/defibrillator(src)
 	new /obj/item/storage/belt/medical(src)
 	new /obj/item/pinpointer/crew(src)
+	new /obj/item/clothing/suit/brigdoc(src)
 	new /obj/item/clothing/suit/armor/brigdoc(src)
 	new /obj/item/clothing/suit/armor/brigdoc/labcoat(src)
 	new /obj/item/mod/module/clamp(src) //BLUEMOOB ADDITION - для перемещения сверхтяжёлых персонажей

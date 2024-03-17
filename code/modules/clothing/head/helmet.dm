@@ -276,7 +276,7 @@
 	icon_state = "altyn"
 	actions_types = list(/datum/action/item_action/toggle)
 	active_sound = 'sound/machines/closet_open.ogg'
-	mutantrace_variation = STYLE_NO_ANTHRO_ICON
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	unique_reskin = list(
 		"Black Variant" = list(
 			RESKIN_ICON_STATE = "altyn_black"

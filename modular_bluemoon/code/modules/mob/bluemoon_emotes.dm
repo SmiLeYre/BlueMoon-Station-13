@@ -273,3 +273,11 @@
 	message_mime = "быстро мотает головой"
 	emote_sound = 'sound/machines/synth_no.ogg'
 	emote_cooldown = 1 SECONDS
+
+/datum/emote/living/audio/negative
+	key = "snores"
+	key_third_person = "snores"
+	message = "храпит."
+	message_mime = "храпит с необычным звуком."
+	emote_sound = 'sound/voice/snore_mimimimimimi.ogg'
+	emote_cooldown = 1 SECONDS

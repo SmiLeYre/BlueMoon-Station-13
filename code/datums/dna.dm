@@ -10,6 +10,7 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 	var/real_name //Stores the real name of the person who originally got this dna datum. Used primarely for changelings,
 	var/nameless = FALSE
 	var/custom_species	//siiiiigh I guess this is important
+	var/custom_species_lore // BLUEMOON EDIT - привязка лора кастомных рас к ДНК
 	var/list/mutations = list()   //All mutations are from now on here
 	var/list/temporary_mutations = list() //Temporary changes to the UE
 	var/list/previous = list() //For temporary name/ui/ue/blood_type modifications
@@ -20,6 +21,11 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 	var/stability = 100
 	var/scrambled = FALSE //Did we take something like mutagen? In that case we cant get our genes scanned to instantly cheese all the powers.
 	var/skin_tone_override //because custom skin tones are not found in the skin_tones global list.
+	// BLUEMOON EDIT START - привязка флавора к ДНК
+	var/flavor_text
+	var/naked_flavor_text
+	var/headshot_link
+	// BLUEMOON EDIT END
 
 /datum/dna/New(mob/living/new_holder)
 	if(istype(new_holder))
@@ -57,6 +63,7 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 	destination.dna.real_name = real_name
 	destination.dna.nameless = nameless
 	destination.dna.custom_species = custom_species
+	destination.dna.custom_species_lore = custom_species_lore // BLUEMOON EDIT - привязка лора рас к ДНК
 	destination.dna.temporary_mutations = temporary_mutations.Copy()
 	if(destination.client)
 		SSquirks.AssignQuirks(destination, destination.client, TRUE, TRUE, null, FALSE, destination)
@@ -65,6 +72,11 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 		H.give_genitals(TRUE)//This gives the body the genitals of this DNA. Used for any transformations based on DNA
 		H.grad_style = H.grad_style
 		H.grad_color = H.grad_color
+		// BLUEMOON EDIT START - привязка флавора к ДНК
+		destination.dna.flavor_text = flavor_text
+		destination.dna.naked_flavor_text = naked_flavor_text
+		destination.dna.headshot_link = headshot_link
+		// BLUEMOON EDIT END
 	if(transfer_SE)
 		destination.dna.mutation_index = mutation_index
 		destination.dna.default_mutation_genes = default_mutation_genes
@@ -90,7 +102,13 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 	new_dna.real_name = real_name
 	new_dna.nameless = nameless
 	new_dna.custom_species = custom_species
+	new_dna.custom_species_lore = custom_species_lore // BLUEMOON EDIT - привязка лора рас к ДНК
 	new_dna.mutations = mutations.Copy()
+	// BLUEMOON EDIT START - привязка флавора к ДНК
+	new_dna.flavor_text = flavor_text
+	new_dna.naked_flavor_text = naked_flavor_text
+	new_dna.headshot_link = headshot_link
+	// BLUEMOON EDIT END
 
 //See mutation.dm for what 'class' does. 'time' is time till it removes itself in decimals. 0 for no timer
 /datum/dna/proc/add_mutation(mutation, class = MUT_OTHER, time)

@@ -47,7 +47,7 @@
 	/// The time between shots in burst.
 	var/burst_shot_delay = 3
 	/// The time between firing actions, this means between bursts if this is burst weapon. The reason this is 0 is because you are still, by default, limited by clickdelay.
-	var/fire_delay = 0
+	var/fire_delay = 2 // BLUEMOON EDIT - was 0 (фикс для слишком высокой скорострельности части оружия и отсутвия КД на клики у автоматического режима огня)
 	/// Last world.time this was fired
 	var/last_fire = 0
 	/// Currently firing, whether or not it's a burst or not.
@@ -218,6 +218,7 @@
 			to_chat(user, "<span class='notice'>You switch [src] to [burst_size]-round burst.</span>")
 		if(SELECT_FULLY_AUTOMATIC)
 			burst_size = 1
+			fire_delay = initial(fire_delay) // BLUEMOON ADD - чиним отсутствие КД на скорость стрельбы у целой кучи оружия без SELECT_BURST_FIRE
 			SEND_SIGNAL(src, COMSIG_GUN_AUTOFIRE_SELECTED, user)
 			to_chat(user, "<span class='notice'>You switch [src] to automatic.</span>")
 

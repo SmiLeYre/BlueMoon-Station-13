@@ -4,7 +4,7 @@
 	icon = 'modular_bluemoon/smiley/syndie_edits/icons/obj.dmi'
 	mob_overlay_icon = 'modular_bluemoon/smiley/syndie_edits/icons/worn.dmi'
 	icon_state = "syndievest_t"
-	mutantrace_variation = STYLE_NO_ANTHRO_ICON|STYLE_DIGITIGRADE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/suit/armor/vest/capcarapace/syndicate/winter
 	name = "syndicate captain's winter vest"
@@ -106,7 +106,7 @@
 	desc = "A pair of spiffy overalls with a turtleneck underneath, this one is a skirt instead, breezy."
 	icon_state = "syndicate_overallskirt"
 	dying_key = DYE_REGISTRY_JUMPSKIRT
-	mutantrace_variation = STYLE_NO_ANTHRO_ICON|STYLE_DIGITIGRADE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/head/maid/syndicate
 	name = "Tactical Maid Headband"
@@ -124,7 +124,7 @@
 	name = "Tactical Maid Outfit"
 	desc = "A 'tactical' skirtleneck fashioned to the likeness of a maid outfit. Why the Syndicate has these, you'll never know."
 	icon_state = "syndimaid"
-	mutantrace_variation = STYLE_NO_ANTHRO_ICON|STYLE_DIGITIGRADE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	dying_key = DYE_REGISTRY_JUMPSKIRT
 	can_adjust = FALSE
 
@@ -141,7 +141,7 @@
 	icon_state = "maid_revealing"
 	item_state = "maid_revealing"
 	fitted = NO_FEMALE_UNIFORM
-	mutantrace_variation = STYLE_NO_ANTHRO_ICON|STYLE_DIGITIGRADE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	dying_key = DYE_REGISTRY_JUMPSKIRT
 	can_adjust = FALSE
 

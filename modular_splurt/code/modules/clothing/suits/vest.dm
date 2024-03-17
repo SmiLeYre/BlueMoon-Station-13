@@ -36,7 +36,6 @@
 	icon_state = "guard_armor"
 	item_state = "guard_armor"
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90, "wound" = 20)
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/suit/armor/vest/bluesheid/spacecoat
 	name = "Blueshield Peacekeeper Spacecoat"
@@ -91,7 +90,6 @@
 	desc = "A heavy trench coat with a armored vest sown into it. Used by the peace minded warden"
 	icon_state = "peacekeeper_trench_warden"
 	item_state = "peacekeeper_trench_warden"
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	icon = 'modular_splurt/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/suit.dmi'
 

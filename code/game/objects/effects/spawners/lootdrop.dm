@@ -90,6 +90,8 @@
 				/obj/item/storage/backpack/duffelbag/syndie/inteq = 1,
 				/obj/item/storage/box/syndie_kit/space/inteq = 1,
 				/obj/item/soap/inteq = 4,
+				/obj/item/sign/flag/inteq = 1,
+				/obj/item/storage/fancy/cigarettes/cigpack_inteq = 1,
 				)
 
 /obj/effect/spawner/lootdrop/prison_contraband

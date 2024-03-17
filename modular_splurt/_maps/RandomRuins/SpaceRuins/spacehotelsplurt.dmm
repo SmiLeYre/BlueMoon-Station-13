@@ -5838,6 +5838,9 @@
 /obj/structure/table/wood,
 /mob/living/simple_animal/pet/cat,
 /obj/item/clothing/neck/petcollar,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 8
+	},
 /turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
 "Cw" = (
