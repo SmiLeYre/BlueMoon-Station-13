@@ -4467,7 +4467,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		character.dna.species.mutant_bodyparts["limbs_id"] = chosen_limb_id
 	character.dna.real_name = character.real_name
 	character.dna.nameless = character.nameless
-	character.dna.custom_species = character.custom_species
+	// BLUEMOON EDIT START - привязка флавора и лора кастомных рас к ДНК
+	character.dna.custom_species = custom_species
+	character.dna.custom_species_lore = features["custom_species_lore"]
+	character.dna.flavor_text = features["flavor_text"]
+	character.dna.naked_flavor_text = features["naked_flavor_text"]
+	character.dna.headshot_link = features["headshot_link"]
+	// BLUEMOON EDIT END
 
 	var/old_size = RESIZE_DEFAULT_SIZE
 	if(isdwarf(character))

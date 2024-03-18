@@ -105,7 +105,7 @@
 	name = "Tactical Gasmask"
 	desc = "A mask with a red visor and special filters. It seems to have a kind of cat whiskers on it."
 	icon_state = "syndicate_cool"
-	mutantrace_variation = STYLE_NO_ANTHRO_ICON
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/mask/gas/clown_hat
 	name = "Clown Wig and Mask"

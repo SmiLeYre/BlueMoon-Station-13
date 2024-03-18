@@ -6,7 +6,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/modsuit/mod_clothing.dmi'
 	icon_state = "standard-control"
 	item_state = "standard-control"
-	mutantrace_variation = STYLE_NO_ANTHRO_ICON
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/mod/control
 	name = "MOD control unit"

@@ -58,7 +58,7 @@
 	desc = "A head-up display that scans people in the field of view and provides accurate data about their identification status and security records."
 	icon = 'modular_bluemoon/sanecman/icons/lifeweb/clothing_lfwb.dmi'
 	mob_overlay_icon = 'modular_bluemoon/sanecman/icons/lifeweb/lfwb_mob.dmi'
-	mutantrace_variation = STYLE_NO_ANTHRO_ICON
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	icon_state = "securityhud"
 
 /obj/item/clothing/head/helmet/knight/ordinator

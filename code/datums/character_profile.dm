@@ -59,12 +59,13 @@ GLOBAL_LIST_EMPTY(cached_previews)
 		data["flavortext"] = M?.client?.prefs.features["silicon_flavor_text"] || ""
 
 	data["oocnotes"] = M?.client?.prefs?.features["ooc_notes"] || ""
-	// BLUEMOON ADD START
+
+	// BLUEMOON EDIT START
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		data["species_name"] = M?.client?.prefs?.custom_species || H.dna.species
+		data["species_name"] = H.dna?.custom_species || H.dna?.species
+		data["custom_species_lore"] = H.dna?.custom_species_lore || ""
 	else
-	// BLUEMOON ADD END
 		data["species_name"] = M?.client?.prefs?.custom_species || M // BLUEMOON EDIT - после || замениил "космонавтик" на имя самого моба
 	data["custom_species_lore"] = M?.client?.prefs.features["custom_species_lore"] || "" // BLUEMOON EDIT - если нет кастомного лора, то там 3 чёрточки
 	if (isobserver(user))
@@ -89,11 +90,12 @@ GLOBAL_LIST_EMPTY(cached_previews)
 	if (iscarbon(M))
 		var/mob/living/carbon/C = M
 		unknown = (C.wear_mask && (C.wear_mask.flags_inv & HIDEEYES) && !isobserver(user)) || (C.head && (C.head.flags_inv & HIDEEYES) && !isobserver(user))
-		data["flavortext"] = (!unknown) ? (M?.client?.prefs?.features["flavor_text"] || "") : "Скрыто"
+		data["flavortext"] = (!unknown) ? (C.dna?.flavor_text || "") : "Скрыто"
+		data["headshot_link"] = (!unknown) ? (C.dna?.headshot_link || "") : ""
 		if (istype(M, /mob/living/carbon/human))
 			var/mob/living/carbon/human/H = C
 			var/can_see_naked = !(unknown || (H.w_uniform || H.wear_suit))
-			data["flavortext_naked"] = (can_see_naked && M?.client?.prefs?.features["naked_flavor_text"]) || ""
+			data["flavortext_naked"] = can_see_naked ? (C.dna?.naked_flavor_text || "") : ""
 
 	data["is_unknown"] = unknown
 

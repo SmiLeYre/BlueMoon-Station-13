@@ -41,7 +41,7 @@ Key procs
 	/// Next two variables depend on this: Should we do advanced calculations?
 	var/complex_calculation = FALSE
 	/// Absolute max tiles we can boost to
-	var/absolute_max_tiles_per_second = INFINITY
+	var/absolute_max_tiles_per_second = 10
 	/// Max tiles per second we can boost
 	var/max_tiles_per_second_boost = INFINITY
 

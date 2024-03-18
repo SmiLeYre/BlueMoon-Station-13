@@ -144,10 +144,12 @@
 		destination.set_species(species.type, FALSE)
 		destination.dna.species.say_mod = species.say_mod
 		destination.dna.custom_species = custom_species
+		destination.dna.custom_species_lore = custom_species_lore
 	else
 		destination.set_species(second_set.species.type, FALSE)
 		destination.dna.species.say_mod = second_set.species.say_mod
 		destination.dna.custom_species = second_set.custom_species
+		destination.dna.custom_species_lore = second_set.custom_species_lore
 
 	destination.update_size(get_size(destination), old_size)
 

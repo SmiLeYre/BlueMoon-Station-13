@@ -45913,6 +45913,7 @@
 /obj/machinery/door/airlock/public/glass{
 	name = "Prison Common Room"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/dark,
 /area/security/prison/upper)
 "fZg" = (
@@ -54203,7 +54204,6 @@
 	name = "Permabrig Transfer";
 	req_access_txt = "2"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -58546,6 +58546,7 @@
 	name = "Prison Common Room"
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel/dark,
 /area/security/prison/upper)
 "pgv" = (
@@ -65796,7 +65797,6 @@
 	req_access_txt = "2"
 	},
 /obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
