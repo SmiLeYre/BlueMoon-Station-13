@@ -357,5 +357,5 @@
 	name = "Electrospear Crate"
 	desc = "Электро-копьё для сдерживания бунтов. Поможет когда ты очень сильно не хочешь подходить к своему противнику."
 	cost = 5500
-	contains = list(/obj/item/spear/electrospear)
+	contains = list(/obj/item/spear/electrospear, /obj/item/spear/electrospear)
 	crate_name = "electrospear crate"
