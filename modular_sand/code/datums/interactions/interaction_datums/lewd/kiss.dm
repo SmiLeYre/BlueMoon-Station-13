@@ -34,4 +34,6 @@
 			pick(span_lewd("\The <b>[user]</b> облизывает губы \the <b>[partner]</b>, проникая языком сквозь сжатые зубы."),
 			span_lewd("\The <b>[user]</b> бъёт по щеке \the <b>[partner]</b>, и заглушает любой звук из рта своим поцелуем."),
 			span_lewd("\The <b>[user]</b> душит \the <b>[partner]</b>, целуя в распухшие губы.")))
-
+		if(HAS_TRAIT(user, TRAIT_KISS_OF_DEATH))
+			partner.reagents.add_reagent(/datum/reagent/toxin/amanitin , 4)
+			user.reagents.add_reagent(/datum/reagent/toxin/amanitin , 1)
