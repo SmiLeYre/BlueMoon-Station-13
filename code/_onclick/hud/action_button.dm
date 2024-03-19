@@ -10,6 +10,7 @@
 
 	var/id
 	var/ordered = TRUE //If the button gets placed into the default bar
+	var/mutable_appearance/keybind_maptext
 
 /atom/movable/screen/movable/action_button/proc/can_use(mob/user)
 	if (linked_action)
@@ -43,6 +44,9 @@
 		return
 
 	var/list/modifiers = params2list(params)
+	if(modifiers["shift"] && modifiers["ctrl"])
+		begin_creating_bind(usr)
+		return TRUE
 	if(modifiers["shift"])
 		if(locked)
 			to_chat(usr, "<span class='warning'>Action button \"[name]\" is locked, unlock it first.</span>")
@@ -58,6 +62,23 @@
 		return TRUE
 	linked_action.Trigger()
 	return TRUE
+
+/atom/movable/screen/movable/action_button/proc/begin_creating_bind(mob/user)
+	if(!isnull(linked_action.full_key))
+		linked_action.full_key = null
+		linked_action.update_button_status(src)
+		return
+	linked_action.full_key = input(user, "What keybind do you want to set this action button to? You can use non-single keys, but they must be in the correct case, f.e. \"Space\" or \"CtrlE\"") as text//tgui_input_keycombo(user, "Please bind a key for this action.")
+	linked_action.update_button_status(src)
+
+/atom/movable/screen/movable/action_button/proc/update_keybind_maptext(key)
+	cut_overlay(keybind_maptext)
+	if(!key)
+		return
+	keybind_maptext = new
+	keybind_maptext.maptext = MAPTEXT("<span style='text-align: right'>[key]</span>")
+	keybind_maptext.transform = keybind_maptext.transform.Translate(-4, length(key) > 1 ? -6 : 2) //with modifiers, its placed lower so cooldown is visible
+	add_overlay(keybind_maptext)
 
 //Hide/Show Action Buttons ... Button
 /atom/movable/screen/movable/action_button/hide_toggle
