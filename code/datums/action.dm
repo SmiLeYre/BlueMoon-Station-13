@@ -163,7 +163,7 @@
 			button.cut_overlays()
 			button.add_overlay(M)
 			button.appearance_cache = target.appearance
-
+	button.update_keybind_maptext(full_key)
 	if(!IsAvailable(TRUE))
 		button.color = transparent_when_unavailable ? rgb(128,0,0,128) : rgb(128,0,0)
 	else
