@@ -94,7 +94,7 @@
 	restricted_roles = list("Medical Doctor", "Virologist", "Chemist", "Geneticist", "Paramedic", "Brig Physician")
 
 /datum/gear/uniform/grey/com
-	restricted_roles = list("Quartermaster", "Research Director", "Chief Medical Officer", "Head Of Security", "Head Of Personnel", "Captain", "Blueshield", "Bridge Officer")
+	restricted_roles = list("Quartermaster", "Research Director", "Chief Medical Officer", "Head Of Security", "Head Of Personnel","Bridge Officer", "Captain", "Blueshield", "Bridge Officer")
 
 /datum/gear/uniform/trekcmdtos
 	restricted_roles = list("Head of Security","Captain","Head of Personnel","Chief Engineer","Research Director","Chief Medical Officer","Quartermaster","Bridge Officer")
