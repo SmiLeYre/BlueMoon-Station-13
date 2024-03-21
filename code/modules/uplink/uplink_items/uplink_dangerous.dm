@@ -315,3 +315,10 @@
 	item = /obj/item/gun/magic/staff/motivation
 	cost = 10
 	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE
+
+/datum/uplink_item/dangerous/kudzu_seeds
+	name = "Pack of Kudzu Seeds"
+	desc = "These seeds grow into a weed that grows incredibly fast."
+	item = /obj/item/seeds/kudzu
+	cost = 4
+	surplus = 10

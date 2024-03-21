@@ -167,12 +167,12 @@
         REMOVE_TRAIT(H,zperks[A], null)
 
 /datum/quirk/undead/on_process()
-    . = ..()
-    var/mob/living/carbon/human/H = quirk_holder
-    H.adjust_nutrition(-0.025)
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.adjust_nutrition(-0.025)
 	H.adjust_thirst(-0.025)
-    H.set_screwyhud(SCREWYHUD_HEALTHY)
-    H.adjustOxyLoss(-3) //Stops a defibrilator bug. Note to future self: Fix defib bug.
+	H.set_screwyhud(SCREWYHUD_HEALTHY)
+	H.adjustOxyLoss(-3) //Stops a defibrilator bug. Note to future self: Fix defib bug.
 
 /datum/quirk/cum_plus
 	name = "Сверхпродуктивные Гениталии"

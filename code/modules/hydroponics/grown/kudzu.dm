@@ -1,7 +1,7 @@
 // A very special plant, deserving it's own file.
 
 /obj/item/seeds/kudzu
-	name = "pack of kudzu seeds"
+	name = "Pack of Kudzu Seeds"
 	desc = "These seeds grow into a weed that grows incredibly fast."
 	icon_state = "seed-kudzu"
 	species = "kudzu"

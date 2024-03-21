@@ -801,3 +801,6 @@
 
 /// Used by /obj/item/melee/breaching_hammer
 #define COMSIG_BREACHING "breaching_signal_woop_woop"
+
+/// from /mob/proc/key_down(): (key, client/client, full_key)
+#define COMSIG_MOB_KEYDOWN "mob_key_down"

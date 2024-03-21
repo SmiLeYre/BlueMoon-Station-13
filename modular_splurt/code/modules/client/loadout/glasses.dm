@@ -33,9 +33,9 @@
 	path = /obj/item/clothing/glasses/hud/blueshield/aviators/prescription
 	restricted_roles = list("Blueshield")
 
-/datum/gear/glasses/aviators
-	name = "Aviators"
-	path = /obj/item/clothing/glasses/aviators
+// /datum/gear/glasses/aviators убираем очередную защиту от флешек
+// 	name = "Aviators"
+// 	path = /obj/item/clothing/glasses/aviators
 
 /datum/gear/glasses/blueshield/holo
 	name = "Holo Blueshield HUD Glasses"
@@ -57,7 +57,7 @@
 	path = /obj/item/clothing/glasses/hud/security/sunglasses/holo/prescription
 	restricted_roles = list("Security Officer", "Warden", "Head of Security")
 
-//NON-RESTRICTED 
+//NON-RESTRICTED
 
 /datum/gear/glasses/contact
 	name = "Contact Lenses"
