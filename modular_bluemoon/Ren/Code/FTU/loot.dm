@@ -80,7 +80,7 @@
 
 /obj/effect/spawner/lootdrop/trader/under
 	name = "under product"
-	lootcount = 30
+	lootcount = 29
 	loot = list(
 			/obj/item/clothing/under/syndicate/baseball,
 			/obj/item/clothing/under/costume/skeleton,
@@ -228,7 +228,7 @@
 
 /obj/effect/spawner/lootdrop/trader/cool
 	name = "cool product"
-	lootcount = 30
+	lootcount = 29
 	loot = list(
 			/obj/item/debug/omnitool,
 			/obj/item/soapstone,
