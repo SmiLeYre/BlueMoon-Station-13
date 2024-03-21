@@ -1152,6 +1152,7 @@
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	overdose_threshold = 60
 	pH = 8.7
+	can_synth = FALSE //BLUEMOON CHANGE ролькоприколы остаются у ролек
 //	chemical_flags = REAGENT_ALL_PROCESS (BLUEMOON REMOVAL - роботы не должны получать эффекты реагента)
 	value = REAGENT_VALUE_GLORIOUS
 
@@ -1346,6 +1347,7 @@
 	pH = 11
 	chemical_flags = REAGENT_ALL_PROCESS
 	value = REAGENT_VALUE_EXCEPTIONAL
+	can_synth = FALSE //BLUEMOON CHANGE ролькоприколы остаются у ролек
 
 /datum/reagent/medicine/syndicate_nanites/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(-5*REM, FALSE) //A ton of healing - this is a 50 telecrystal investment.
@@ -1368,6 +1370,7 @@
 	pH = 11
 	chemical_flags = REAGENT_ALL_PROCESS
 	value = REAGENT_VALUE_VERY_RARE
+	can_synth = FALSE //BLUEMOON CHANGE ролькоприколы остаются у ролек
 
 /datum/reagent/medicine/lesser_syndicate_nanites/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(-4*REM, FALSE)
@@ -1501,6 +1504,7 @@
 	color = "#C1151D"
 	overdose_threshold = 30
 	value = REAGENT_VALUE_VERY_RARE
+	can_synth = FALSE //BLUEMOON CHANGE ролькоприколы остаются у ролек
 //	chemical_flags = REAGENT_ALL_PROCESS (BLUEMOON REMOVAL - роботы не должны получать эффекты реагента)
 
 /datum/reagent/medicine/changelingadrenaline/on_mob_life(mob/living/carbon/metabolizer, delta_time, times_fired)
@@ -1535,6 +1539,7 @@
 	description = "Drastically increases movement speed."
 	color = "#AE151D"
 	metabolization_rate = 2.5 * REAGENTS_METABOLISM
+	can_synth = FALSE //BLUEMOON CHANGE ролькоприколы остаются у ролек
 //	chemical_flags = REAGENT_ALL_PROCESS (BLUEMOON REMOVAL - роботы не должны получать эффекты реагента)
 
 /datum/reagent/medicine/changelinghaste/on_mob_metabolize(mob/living/L)
@@ -1569,6 +1574,7 @@
 	name = "Muscle Stimulant"
 	description = "A potent chemical that allows someone under its influence to be at full physical ability even when under massive amounts of pain."
 	value = REAGENT_VALUE_RARE
+	can_synth = FALSE //BLUEMOON CHANGE смешной картофел только имеет право иметь такой реагент (hot potato)
 
 /datum/reagent/medicine/muscle_stimulant/on_mob_metabolize(mob/living/M)
 	. = ..()
