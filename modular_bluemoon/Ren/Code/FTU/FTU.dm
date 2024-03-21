@@ -83,7 +83,7 @@
 	var/ship_template
 
 /datum/round_event/ftu_trader/announce(fake)
-	priority_announce("Корабль Свободного торгового объединения получил разрешение на стыковку и пересёк границы сектора. Можете потратить свои честно заработанные деньги на их товары.",'modular_bluemoon/Ren/Sound/traider_announce.ogg', sender_override="Бюрократический отдел ЦК", has_important_message = TRUE)
+	priority_announce("Корабль Свободного торгового объединения получил разрешение на стыковку и пересёк границы сектора. Можете потратить свои честно заработанные деньги на их товары.","Бюрократический отдел ЦК")
 
 /datum/round_event_control/ftu_trader/preRunEvent()
 	if (!SSmapping.empty_space)
