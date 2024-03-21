@@ -4339,6 +4339,8 @@
 #include "modular_bluemoon\Ren\Code\misc.dm"
 #include "modular_bluemoon\Ren\Code\mobs.dm"
 #include "modular_bluemoon\Ren\Code\weapons.dm"
+#include "modular_bluemoon\Ren\Code\FTU\FTU.dm"
+#include "modular_bluemoon\Ren\Code\FTU\loot.dm"
 #include "modular_bluemoon\sanecman\_include.dm"
 #include "modular_bluemoon\sanecman\code\katana_zero\outfit.dm"
 #include "modular_bluemoon\service_staff\service_staff.dm"
