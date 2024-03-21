@@ -337,6 +337,11 @@
 	heat_protection = CHEST|GROIN|ARMS
 	armor = list(MELEE = 30, BULLET = 60, LASER = 25, ENERGY = 20, BOMB = 25, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 30)
 
+/obj/item/clothing/suit/armor/vest/ftu/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/concrete/storage = AddComponent(/datum/component/storage/concrete)
+	storage.max_items = 5
+
 /obj/item/clothing/under/inteq/tactical_gorka/ftu
 	name = "Cargo gorka"
 
@@ -345,13 +350,93 @@
 	desc = "Бронированая маска из полимеров стилизованая под череп. Вселяет страх в каждого пирата."
 	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/clothing_digi.dmi'
 	armor = list(MELEE = 30, BULLET = 60, LASER = 25, ENERGY = 20, BOMB = 25, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 30)
-	visor_flags_inv = HIDEFACE
+	flags_inv = HIDEEYES | HIDEFACE | HIDEMASK
 
 /obj/item/card/id/away/ftu
 	name = "Ship access card"
 	desc = "Личная карта каждого члена экипажа карабля"
 	icon_state = "retro"
 	access = list(ACCESS_AWAY_GENERIC4)
+
+///Инженерный риг
+/obj/item/clothing/head/helmet/space/hardsuit/engine/ftu
+	name = "Ship engineering hardsuit helmet"
+	desc = "Стандартный шлем инженерного костюма для техническогл обслуживания судов торгового флота."
+	icon_state = "hardsuit0-odst"
+	item_state = "hardsuit0-odst"
+	hardsuit_type = "odst"
+	mob_overlay_icon = 'modular_sand/icons/mob/clothing/head.dmi'
+	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
+	anthro_mob_worn_overlay = 'modular_sand/icons/mob/clothing/head_muzzled.dmi'
+	heat_protection = HEAD
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	armor = list(MELEE = 30, BULLET = 5, LASER = 10, ENERGY = 5, BOMB = 60, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 15)
+
+/obj/item/clothing/suit/space/hardsuit/engine/ftu
+	name = "Ship engineering hardsuit"
+	desc = "Стандартный инженерный костюм для технического обслуживания судов торгового флота."
+	icon_state = "hardsuit-odst"
+	item_state = "hardsuit-odst"
+	mob_overlay_icon = 'modular_sand/icons/mob/clothing/suit.dmi'
+	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/engine/ftu
+	anthro_mob_worn_overlay = 'modular_sand/icons/mob/clothing/suit_digi.dmi'
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	armor = list(MELEE = 30, BULLET = 5, LASER = 10, ENERGY = 5, BOMB = 60, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 15)
+	unique_reskin = list()
+	jetpack = /obj/item/tank/jetpack/suit
+
+///Исследовательский риг
+/obj/item/tank/jetpack/suit/fast
+	full_speed = TRUE
+
+/obj/item/clothing/head/helmet/space/hardsuit/security/explorer
+	name = "Expedition hardsuit helmet"
+	desc = "Армированый шлем, в котором не страшно засунуть свой нос даже в самые опасные заброшеные станции и обломки кораблей."
+	icon_state = "hardsuit0-explorer"
+	item_state = "hardsuit0-explorer"
+	hardsuit_type = "explorer"
+	mob_overlay_icon = 'modular_sand/icons/mob/clothing/head.dmi'
+	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
+	anthro_mob_worn_overlay = 'modular_sand/icons/mob/clothing/head_muzzled.dmi'
+
+/obj/item/clothing/suit/space/hardsuit/security/explorer
+	name = "Expedition hardsuit"
+	desc = "Армированый костюм, в котором не страшно ступить даже в самые опасные заброшеные станции и обломки кораблей."
+	icon_state = "hardsuit-explorer"
+	item_state = "hardsuit-explorer"
+	mob_overlay_icon = 'modular_sand/icons/mob/clothing/suit.dmi'
+	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/explorer
+	anthro_mob_worn_overlay = 'modular_sand/icons/mob/clothing/suit_digi.dmi'
+	jetpack = /obj/item/tank/jetpack/suit/fast
+	unique_reskin = list()
+
+///FTU риг
+/obj/item/clothing/head/helmet/space/hardsuit/security/ftu
+	name = "Fleet security hardsuit helmet"
+	desc = "Носи с гордостью."
+	icon_state = "hardsuit0-ftu_combat"
+	item_state = "hardsuit0-ftu_combat"
+	hardsuit_type = "ftu_combat"
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
+	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/clothing_digi.dmi'
+
+/obj/item/clothing/suit/space/hardsuit/security/ftu
+	name = "Fleet security hardsuit"
+	desc = "Боевой костюм, расчитаный на длительные сражения в космосе с превосходящими силами противника. После многолетних чисток целых секторов от пиратства, теперь заставляет многих нервно сглотнуть от одного своего вида."
+	icon_state = "hardsuit-ftu_combat"
+	item_state = "hardsuit-ftu_combat"
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
+	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/ftu
+	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/clothing_digi.dmi'
+	equip_sound = 'modular_bluemoon/Ren/Sound/equp.ogg'
+	slowdown = 0.1
+	jetpack = /obj/item/tank/jetpack/suit/fast
+	unique_reskin = list()
 
 ///Чулки чулки чулки блять
 	/obj/item/clothing/underwear/socks/thigh/stockings/socks_garterbelt
@@ -455,43 +540,70 @@
 		path = /obj/item/clothing/underwear/socks/socks_line
 
 ///Аутфиты
-/obj/item/card/id/syndicate/inteq_fake
-	name = "InteQ Vanguard ID card"
-	id_type_name = "InteQ ID card"
-	desc = "An ID straight from the InteQ."
-	registered_name = "InteQ"
-	assignment = "InteQ Operative"
-	icon_state = "inteq"
+	/obj/item/card/id/syndicate/inteq_fake
+		name = "InteQ Vanguard ID card"
+		id_type_name = "InteQ ID card"
+		desc = "An ID straight from the InteQ."
+		registered_name = "InteQ"
+		assignment = "InteQ Operative"
+		icon_state = "inteq"
 
-/datum/outfit/inteq_dead
-	back = /obj/item/storage/backpack
-	name = "InteQ corps"
-	suit = /obj/item/clothing/suit/armor/inteq
-	uniform = /obj/item/clothing/under/inteq
-	shoes = /obj/item/clothing/shoes/combat/swat/knife
-	gloves = /obj/item/clothing/gloves/combat
-	head = /obj/item/clothing/head/helmet/swat/inteq
-	mask = /obj/item/clothing/mask/balaclava/breath/inteq
-	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
-	id = /obj/item/card/id/syndicate/inteq_fake
+	/datum/outfit/inteq_dead
+		back = /obj/item/storage/backpack
+		name = "InteQ corps"
+		suit = /obj/item/clothing/suit/armor/inteq
+		uniform = /obj/item/clothing/under/inteq
+		shoes = /obj/item/clothing/shoes/combat/swat/knife
+		gloves = /obj/item/clothing/gloves/combat
+		head = /obj/item/clothing/head/helmet/swat/inteq
+		mask = /obj/item/clothing/mask/balaclava/breath/inteq
+		r_pocket = /obj/item/tank/internals/emergency_oxygen/double
+		id = /obj/item/card/id/syndicate/inteq_fake
 
-/obj/effect/mob_spawn/human/corpse/inteq_dead
-	name = "InteQ Operative"
-	id_job = "Operative"
-	hair_style = "Bald"
-	facial_hair_style = "Shaved"
-	outfit = /datum/outfit/inteq_dead
+	/obj/effect/mob_spawn/human/corpse/inteq_dead
+		name = "InteQ Operative"
+		id_job = "Operative"
+		hair_style = "Bald"
+		facial_hair_style = "Shaved"
+		outfit = /datum/outfit/inteq_dead
 
-/datum/outfit/ftu/solder
-	name = "FTU Solder"
-	uniform = /obj/item/clothing/under/inteq/tactical_gorka
-	belt = /obj/item/storage/belt/military/assault
-	shoes = /obj/item/clothing/shoes/workboots/mining
-	gloves = /obj/item/clothing/gloves/fingerless
-	suit = /obj/item/clothing/suit/armor/vest/ftu
-	head = /obj/item/clothing/head/helmet/skull/ftu
-	neck = /obj/item/clothing/neck/cloak/ftu
-	l_pocket = /obj/item/choice_beacon
-	r_pocket = /obj/item/kitchen/knife/combat/survival/knuckledagger
-	head = /obj/item/clothing/head/soft/black
-	id = /obj/item/card/id/away/ftu
+	/datum/outfit/ftu/solder
+		name = "FTU Solder"
+		uniform = /obj/item/clothing/under/inteq/tactical_gorka
+		belt = /obj/item/storage/belt/military/assault
+		shoes = /obj/item/clothing/shoes/workboots/mining
+		gloves = /obj/item/clothing/gloves/fingerless
+		glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
+		suit = /obj/item/clothing/suit/armor/vest/ftu
+		head = /obj/item/clothing/head/helmet/skull/ftu
+		neck = /obj/item/clothing/neck/cloak/ftu
+		l_hand = /obj/item/choice_beacon/ftu
+		r_pocket = /obj/item/kitchen/knife/combat/survival/knuckledagger
+		id = /obj/item/card/id/away/ftu
+
+	/datum/outfit/ftu/crew
+		name = "FTU Crew"
+		uniform = /obj/item/clothing/under/inteq/tactical_gorka/ftu
+		belt = /obj/item/storage/belt/military/assault
+		shoes = /obj/item/clothing/shoes/workboots/mining
+		gloves = /obj/item/clothing/gloves/fingerless
+		head = /obj/item/clothing/head/soft/orange
+		back = /obj/item/storage/backpack/satchel/inteq
+		l_pocket = /obj/item/choice_beacon/ftu
+		r_pocket = /obj/item/kitchen/knife/combat/survival/knuckledagger
+		id = /obj/item/card/id/away/ftu
+		backpack_contents = list(/obj/item/storage/box/survival/security/radio)
+
+	/datum/outfit/ftu/qm
+		name = "FTU QM"
+		uniform = /obj/item/clothing/under/rank/cargo/qm
+		belt = /obj/item/storage/belt/military/assault
+		neck = /obj/item/clothing/neck/cloak
+		back = /obj/item/storage/backpack/satchel/inteq
+		shoes = /obj/item/clothing/shoes/jackboots/tall_default
+		suit = /obj/item/clothing/suit/armor/vest
+		head = /obj/item/clothing/head/beret/qm
+		glasses = /obj/item/clothing/glasses/sunglasses
+		l_pocket = /obj/item/gun/energy/pulse/pistol/inteq
+		id = /obj/item/card/id/away/ftu
+		backpack_contents = list(/obj/item/storage/box/survival/security/radio, /obj/item/paper/fluff/traid_ship/qm)

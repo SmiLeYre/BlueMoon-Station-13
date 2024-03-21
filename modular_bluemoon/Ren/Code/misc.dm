@@ -201,8 +201,9 @@
 		for(var/i in 1 to 3)
 			new /obj/item/ammo_box/magazine/aa12/small(src)
 		new /obj/item/storage/belt/utility/syndicate(src)
+		new /obj/item/clothing/gloves/tackler/combat/insulated(src)
 
-		/obj/item/storage/backpack/satchel/inteq/ftu/fire
+	/obj/item/storage/backpack/satchel/inteq/ftu/fire
 		name = "Набор №343. Спецификация: Чистильщик. Основное оружие: M2a100"
 
 	/obj/item/storage/backpack/satchel/inteq/ftu/fire/PopulateContents()
@@ -221,7 +222,7 @@
 		new /obj/item/storage/box/survival/security/radio(src)
 		new /obj/item/gun/ballistic/automatic/m1garand/scope(src)
 		for(var/i in 1 to 5)
-			/obj/item/ammo_box/magazine/garand(src)
+			new /obj/item/ammo_box/magazine/garand(src)
 		new /obj/item/chameleon(src)
 
 	/obj/item/storage/backpack/satchel/inteq/ftu/med
@@ -235,16 +236,30 @@
 		new /obj/item/storage/belt/medical/surgery_belt_adv(src)
 		new /obj/item/storage/firstaid/tactical(src)
 
-	/obj/item/choice_beacon
+	/obj/item/choice_beacon/ftu
 	name = "FTU sec kit"
 	desc = "Маяк для выбора снаряжения охраниками торговых кораблей"
 
 	/obj/item/choice_beacon/ftu/generate_display_names()
-	var/static/list/ftu_item_list
-	if(!ftu_item_list)
-		ftu_item_list = list()
-		var/list/templist = typesof(/obj/item/storage/backpack/satchel/inteq/ftu) //we have to convert type = name to name = type, how lovely!
-		for(var/V in templist)
-			var/atom/A = V
-			ftu_item_list[initial(A.name)] = A
-	return ftu_item_list
+		var/static/list/ftu_item_list
+		if(!ftu_item_list)
+			ftu_item_list = list()
+			var/list/templist = typesof(/obj/item/storage/backpack/satchel/inteq/ftu)
+			for(var/V in templist)
+				var/atom/A = V
+				ftu_item_list[initial(A.name)] = A
+		return ftu_item_list
+
+	/obj/item/choice_beacon/ftu/generate_display_names()
+		var/static/list/ftu_item_list
+		if(!ftu_item_list)
+			ftu_item_list = list()
+			var/list/templist = list(
+			/obj/item/storage/backpack/satchel/inteq/ftu/shootgun,
+			/obj/item/storage/backpack/satchel/inteq/ftu/fire,
+			/obj/item/storage/backpack/satchel/inteq/ftu/sniper,
+			/obj/item/storage/backpack/satchel/inteq/ftu/med)
+			for(var/V in templist)
+				var/atom/A = V
+				ftu_item_list[initial(A.name)] = A
+		return ftu_item_list
