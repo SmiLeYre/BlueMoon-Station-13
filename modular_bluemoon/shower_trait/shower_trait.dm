@@ -16,8 +16,8 @@
 	mood_quirk = TRUE
 
 	var/cleanse_level = CLEAN //уровень чистоты персонажа
-	var/warning_level = 0 // предупреждения для игрока в чат. Обнуляются при достижении чистоты в 100 и меньше
 	var/doing_shower = FALSE // оповещение, что персонаж вошёл в душ и игроку нужно подождать, пока он не станет чистым
+	var/warning_level = 0 // предупреждения для игрока в чат. Обнуляются при достижении чистоты в 100 и меньше
 
 /datum/quirk/bluemoon_shower_need/on_spawn()
 	. = ..()
@@ -42,7 +42,7 @@
 		if(DIRTY to VERY_DIRTY)
 			SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "need_shower", /datum/mood_event/need_shower/dirty)
 			if(warning_level < 2)
-				to_chat(quirk_holder, span_warning("Мне нужно сходить в душ."))
+				to_chat(quirk_holder, span_phobia("Мне нужно сходить в душ."))
 				warning_level = 2
 		if(VERY_DIRTY to INFINITY)
 			SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "need_shower", /datum/mood_event/need_shower/very_dirty)
@@ -60,17 +60,20 @@
 	SIGNAL_HANDLER
 	var/cleaning_efficiency = 10 // 3.5~ минуты с 1000
 
+	if(cleanse_level <= 10) // снижение нагрузки, чтобы стояние куклы под душем с этим квирком не генерило постоянно все проверки внизу
+		return
+
 	if(!check_for_clothing())
 		to_chat(quirk_holder, span_warning("Нужно снять одежду, не подходящую для душа! Бюстгалтер и трусы допустимы."))
 		return
 
 	var/area/A = get_area(quirk_holder)
-	if(A in typesof(/area/security/prison, /area/commons/toilet, /area/command/heads_quarters/captain, /area/commons/dorms, /area/command/blueshielquarters, /area/service/chapel/main/monastery, /area/mine/laborcamp))
+	if(A.type in typesof(/area/security/prison, /area/commons/toilet, /area/command/heads_quarters/captain, /area/commons/dorms, /area/command/blueshielquarters, /area/service/chapel/main/monastery, /area/mine/laborcamp))
 		if(!doing_shower && warning_level != 0)
-			to_chat(quirk_holder, span_notice("Теперь постоять под душем и помыться..."))
+			to_chat(quirk_holder, span_notice("Теперь только подождать... Есть время разгрузить голову и расслабиться."))
 			doing_shower = TRUE
 		cleaning_efficiency = 20 // 1.7~ минут с 1000
-	else
+	else // За поставленный в  неподходящей зоне душ и мытьё там штраф
 		if(!doing_shower && warning_level != 0)
 			to_chat(quirk_holder, span_warning("Я смогу помыться, но это место плохо подходит для душевой и это будет в два раза дольше. Дормиторий, уборные, личные каюты подходят куда лучше..."))
 			doing_shower = TRUE
@@ -83,26 +86,27 @@
 
 		if(holder.w_shirt) // мыться в футболках нельзя
 			if(!(holder.w_shirt.type in typesof(/obj/item/clothing/underwear/shirt/bra, /obj/item/clothing/underwear/shirt/top))) // мыться в лифчике можно
-				return FALSE
+				return
 
 		if(holder.back) // мыться с рюкзаком нельзя
-			return FALSE
+			return
 
 		if(holder.gloves) // мыться в перчатках нельзя
 			if(!(holder.gloves.type in typesof(/obj/item/clothing/accessory/ring))) // с кольцами можно
-				return FALSE
+				return
 
 		if(holder.w_uniform) // мыться в униформе нельзя
 			if(holder.w_uniform.body_parts_covered & CHEST) // можно, если униформа закрывает грудь
-				return FALSE
+				return
 
 		if(holder.wear_suit) // мыться в костюме нельзя
-			return FALSE
+			return
 
 		if(!get_location_accessible(holder, BODY_ZONE_HEAD)) // мыться в шапочке нельзя
-			return FALSE
+			return
+
 		if(!get_location_accessible(holder, BODY_ZONE_PRECISE_L_FOOT)) // мыться в обуви нельзя
-			return FALSE
+			return
 
 	return TRUE // в наушниках, очках, галстуках, части нижнего белья можно мыться
 
@@ -120,7 +124,7 @@
 	mood_change = -2
 
 /datum/mood_event/need_shower/very_dirty
-	description = span_phobia("Мне ОЧЕНЬ нужно сходить в душ!\n")
+	description = span_boldwarning("Мне ОЧЕНЬ нужно сходить в душ!\n")
 	mood_change = -4
 
 /*
@@ -147,7 +151,7 @@
 		return
 	var/matrix/M = matrix()
 	M.Scale(0.6)
-	overlay = image('modular_bluemoon/shower_trait/steam.dmi', "steam_single", pixel_y = 12, layer = -FIRE_LAYER)
+	overlay = image('modular_bluemoon/shower_trait/stink.dmi', "steam_single", pixel_y = 12, layer = -FIRE_LAYER)
 	overlay.transform = M
 	owner.add_overlay(overlay)
 
@@ -155,3 +159,11 @@
 	owner.cut_overlay(overlay)
 	overlay = null
 	return ..()
+
+#undef STATUS_EFFECT_STINK
+
+#undef CLEAN
+#undef FINE_CLEAN
+#undef FIRST_WARNING
+#undef DIRTY
+#undef VERY_DIRTY
