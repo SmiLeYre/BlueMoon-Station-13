@@ -237,8 +237,8 @@
 	new /obj/item/storage/firstaid/tactical(src)
 
 /obj/item/choice_beacon/ftu
-name = "FTU sec kit"
-desc = "Маяк для выбора снаряжения охраниками торговых кораблей"
+	name = "FTU sec kit"
+	desc = "Маяк для выбора снаряжения охраниками торговых кораблей"
 
 /obj/item/choice_beacon/ftu/generate_display_names()
 	var/static/list/ftu_item_list
