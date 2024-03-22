@@ -210,7 +210,7 @@
 	new /obj/item/storage/box/survival/security/radio(src)
 	new /obj/item/gun/energy/m2a100(src)
 	for(var/i in 1 to 10)
-	new /obj/item/stack/sheet/mineral/plasma(src)
+		new /obj/item/stack/sheet/mineral/plasma(src)
 	new /obj/item/extinguisher (src)
 	new /obj/item/grenade/stingbang/shred(src)
 	new /obj/item/grenade/stingbang/shred(src)
