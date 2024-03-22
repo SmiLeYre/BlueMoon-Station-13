@@ -439,171 +439,171 @@
 	unique_reskin = list()
 
 ///Чулки чулки чулки блять
-	/obj/item/clothing/underwear/socks/thigh/stockings/socks_garterbelt
-		name = "Socks garterbelt"
-		icon_state = "socks_garterbelt"
-		icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
-		mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
-		anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings_digi.dmi'
+/obj/item/clothing/underwear/socks/thigh/stockings/socks_garterbelt
+	name = "Socks garterbelt"
+	icon_state = "socks_garterbelt"
+	icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings_digi.dmi'
 
-	/obj/item/clothing/underwear/socks/thigh/stockings/stocking_2strip
-		name = "Two strip stocking"
-		icon_state = "stocking_2strip"
-		icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
-		mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
-		anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings_digi.dmi'
+/obj/item/clothing/underwear/socks/thigh/stockings/stocking_2strip
+	name = "Two strip stocking"
+	icon_state = "stocking_2strip"
+	icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings_digi.dmi'
 
-	/obj/item/clothing/underwear/socks/thigh/stockings/stocking_checkered
-		name = "Checkered stocking"
-		icon_state = "stocking_checkered"
-		icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
-		mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
-		anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings_digi.dmi'
+/obj/item/clothing/underwear/socks/thigh/stockings/stocking_checkered
+	name = "Checkered stocking"
+	icon_state = "stocking_checkered"
+	icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings_digi.dmi'
 
-	/obj/item/clothing/underwear/socks/thigh/stockings/stocking_1strip
-		name = "One strip stocking"
-		icon_state = "stocking_1strip"
-		icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
-		mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
-		anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings_digi.dmi'
+/obj/item/clothing/underwear/socks/thigh/stockings/stocking_1strip
+	name = "One strip stocking"
+	icon_state = "stocking_1strip"
+	icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings_digi.dmi'
 
-	/obj/item/clothing/underwear/socks/thigh/stockings/stocking_line
-		name = "Line stocking"
-		icon_state = "stocking_line"
-		icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
-		mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
-		anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings_digi.dmi'
+/obj/item/clothing/underwear/socks/thigh/stockings/stocking_line
+	name = "Line stocking"
+	icon_state = "stocking_line"
+	icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings_digi.dmi'
 
-	/obj/item/clothing/underwear/socks/socks_2strip
-		name = "Two strip socks"
-		icon_state = "socks_2strip"
-		icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
-		mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
-		anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings_digi.dmi'
+/obj/item/clothing/underwear/socks/socks_2strip
+	name = "Two strip socks"
+	icon_state = "socks_2strip"
+	icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings_digi.dmi'
 
-	/obj/item/clothing/underwear/socks/socks_checkered
-		name = "Checkered socks"
-		icon_state = "socks_checkered"
-		icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
-		mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
-		anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings_digi.dmi'
+/obj/item/clothing/underwear/socks/socks_checkered
+	name = "Checkered socks"
+	icon_state = "socks_checkered"
+	icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings_digi.dmi'
 
-	/obj/item/clothing/underwear/socks/socks_2strip
-		name = "Two strip socks"
-		icon_state = "socks_2strip"
-		icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
-		mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
-		anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings_digi.dmi'
+/obj/item/clothing/underwear/socks/socks_2strip
+	name = "Two strip socks"
+	icon_state = "socks_2strip"
+	icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings_digi.dmi'
 
-	/obj/item/clothing/underwear/socks/socks_line
-		name = "Line socks"
-		icon_state = "socks_line"
-		icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
-		mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
-		anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings_digi.dmi'
+/obj/item/clothing/underwear/socks/socks_line
+	name = "Line socks"
+	icon_state = "socks_line"
+	icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings_digi.dmi'
 
 ///Сука, чулки в лодауте. Пиздец чулков.
-	/datum/gear/socks/socks_garterbelt
-		name = "Polychromic Socks Garterbelt"
-		path = /obj/item/clothing/underwear/socks/thigh/stockings/socks_garterbelt
+/datum/gear/socks/socks_garterbelt
+	name = "Polychromic Socks Garterbelt"
+	path = /obj/item/clothing/underwear/socks/thigh/stockings/socks_garterbelt
 
-	/datum/gear/socks/stocking_2strip
-		name = "Polychromic Two Strip Stocking"
-		path = /obj/item/clothing/underwear/socks/thigh/stockings/stocking_2strip
+/datum/gear/socks/stocking_2strip
+	name = "Polychromic Two Strip Stocking"
+	path = /obj/item/clothing/underwear/socks/thigh/stockings/stocking_2strip
 
-	/datum/gear/socks/stocking_checkered
-		name = "Polychromic Checkered Stocking"
-		path = /obj/item/clothing/underwear/socks/thigh/stockings/stocking_checkered
+/datum/gear/socks/stocking_checkered
+	name = "Polychromic Checkered Stocking"
+	path = /obj/item/clothing/underwear/socks/thigh/stockings/stocking_checkered
 
-	/datum/gear/socks/stocking_1strip
-		name = "Polychromic One Strip Stocking"
-		path = /obj/item/clothing/underwear/socks/thigh/stockings/stocking_1strip
+/datum/gear/socks/stocking_1strip
+	name = "Polychromic One Strip Stocking"
+	path = /obj/item/clothing/underwear/socks/thigh/stockings/stocking_1strip
 
-	/datum/gear/socks/stocking_line
-		name = "Polychromic Line Stocking"
-		path = /obj/item/clothing/underwear/socks/thigh/stockings/stocking_line
+/datum/gear/socks/stocking_line
+	name = "Polychromic Line Stocking"
+	path = /obj/item/clothing/underwear/socks/thigh/stockings/stocking_line
 
-	/datum/gear/socks/socks_2strip
-		name = "Polychromic Two Strip Socks"
-		path = /obj/item/clothing/underwear/socks/socks_2strip
+/datum/gear/socks/socks_2strip
+	name = "Polychromic Two Strip Socks"
+	path = /obj/item/clothing/underwear/socks/socks_2strip
 
-	/datum/gear/socks/socks_checkered
-		name = "Polychromic Checkered Socks"
-		path = /obj/item/clothing/underwear/socks/socks_checkered
+/datum/gear/socks/socks_checkered
+	name = "Polychromic Checkered Socks"
+	path = /obj/item/clothing/underwear/socks/socks_checkered
 
-	/datum/gear/socks/socks_2strip
-		name = "Polychromic Two Strip Socks"
-		path = /obj/item/clothing/underwear/socks/socks_2strip
+/datum/gear/socks/socks_2strip
+	name = "Polychromic Two Strip Socks"
+	path = /obj/item/clothing/underwear/socks/socks_2strip
 
-	/datum/gear/socks/socks_line
-		name = "Polychromic Line Socks"
-		path = /obj/item/clothing/underwear/socks/socks_line
+/datum/gear/socks/socks_line
+	name = "Polychromic Line Socks"
+	path = /obj/item/clothing/underwear/socks/socks_line
 
 ///Аутфиты
-	/obj/item/card/id/syndicate/inteq_fake
-		name = "InteQ Vanguard ID card"
-		id_type_name = "InteQ ID card"
-		desc = "An ID straight from the InteQ."
-		registered_name = "InteQ"
-		assignment = "InteQ Operative"
-		icon_state = "inteq"
+/obj/item/card/id/syndicate/inteq_fake
+	name = "InteQ Vanguard ID card"
+	id_type_name = "InteQ ID card"
+	desc = "An ID straight from the InteQ."
+	registered_name = "InteQ"
+	assignment = "InteQ Operative"
+	icon_state = "inteq"
 
-	/datum/outfit/inteq_dead
-		back = /obj/item/storage/backpack
-		name = "InteQ corps"
-		suit = /obj/item/clothing/suit/armor/inteq
-		uniform = /obj/item/clothing/under/inteq
-		shoes = /obj/item/clothing/shoes/combat/swat/knife
-		gloves = /obj/item/clothing/gloves/combat
-		head = /obj/item/clothing/head/helmet/swat/inteq
-		mask = /obj/item/clothing/mask/balaclava/breath/inteq
-		r_pocket = /obj/item/tank/internals/emergency_oxygen/double
-		id = /obj/item/card/id/syndicate/inteq_fake
+/datum/outfit/inteq_dead
+	back = /obj/item/storage/backpack
+	name = "InteQ corps"
+	suit = /obj/item/clothing/suit/armor/inteq
+	uniform = /obj/item/clothing/under/inteq
+	shoes = /obj/item/clothing/shoes/combat/swat/knife
+	gloves = /obj/item/clothing/gloves/combat
+	head = /obj/item/clothing/head/helmet/swat/inteq
+	mask = /obj/item/clothing/mask/balaclava/breath/inteq
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
+	id = /obj/item/card/id/syndicate/inteq_fake
 
-	/obj/effect/mob_spawn/human/corpse/inteq_dead
-		name = "InteQ Operative"
-		id_job = "Operative"
-		hair_style = "Bald"
-		facial_hair_style = "Shaved"
-		outfit = /datum/outfit/inteq_dead
+/obj/effect/mob_spawn/human/corpse/inteq_dead
+	name = "InteQ Operative"
+	id_job = "Operative"
+	hair_style = "Bald"
+	facial_hair_style = "Shaved"
+	outfit = /datum/outfit/inteq_dead
 
-	/datum/outfit/ftu/solder
-		name = "FTU Solder"
-		uniform = /obj/item/clothing/under/inteq/tactical_gorka
-		belt = /obj/item/storage/belt/military/assault
-		shoes = /obj/item/clothing/shoes/workboots/mining
-		gloves = /obj/item/clothing/gloves/fingerless
-		glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
-		suit = /obj/item/clothing/suit/armor/vest/ftu
-		head = /obj/item/clothing/head/helmet/skull/ftu
-		neck = /obj/item/clothing/neck/cloak/ftu
-		l_hand = /obj/item/choice_beacon/ftu
-		r_pocket = /obj/item/kitchen/knife/combat/survival/knuckledagger
-		id = /obj/item/card/id/away/ftu
+/datum/outfit/ftu/solder
+	name = "FTU Solder"
+	uniform = /obj/item/clothing/under/inteq/tactical_gorka
+	belt = /obj/item/storage/belt/military/assault
+	shoes = /obj/item/clothing/shoes/workboots/mining
+	gloves = /obj/item/clothing/gloves/fingerless
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
+	suit = /obj/item/clothing/suit/armor/vest/ftu
+	head = /obj/item/clothing/head/helmet/skull/ftu
+	neck = /obj/item/clothing/neck/cloak/ftu
+	l_hand = /obj/item/choice_beacon/ftu
+	r_pocket = /obj/item/kitchen/knife/combat/survival/knuckledagger
+	id = /obj/item/card/id/away/ftu
 
-	/datum/outfit/ftu/crew
-		name = "FTU Crew"
-		uniform = /obj/item/clothing/under/inteq/tactical_gorka/ftu
-		belt = /obj/item/storage/belt/military/assault
-		shoes = /obj/item/clothing/shoes/workboots/mining
-		gloves = /obj/item/clothing/gloves/fingerless
-		head = /obj/item/clothing/head/soft/orange
-		back = /obj/item/storage/backpack/satchel/inteq
-		l_pocket = /obj/item/choice_beacon/ftu
-		r_pocket = /obj/item/kitchen/knife/combat/survival/knuckledagger
-		id = /obj/item/card/id/away/ftu
-		backpack_contents = list(/obj/item/storage/box/survival/security/radio)
+/datum/outfit/ftu/crew
+	name = "FTU Crew"
+	uniform = /obj/item/clothing/under/inteq/tactical_gorka/ftu
+	belt = /obj/item/storage/belt/military/assault
+	shoes = /obj/item/clothing/shoes/workboots/mining
+	gloves = /obj/item/clothing/gloves/fingerless
+	head = /obj/item/clothing/head/soft/orange
+	back = /obj/item/storage/backpack/satchel/inteq
+	l_pocket = /obj/item/choice_beacon/ftu
+	r_pocket = /obj/item/kitchen/knife/combat/survival/knuckledagger
+	id = /obj/item/card/id/away/ftu
+	backpack_contents = list(/obj/item/storage/box/survival/security/radio)
 
-	/datum/outfit/ftu/qm
-		name = "FTU QM"
-		uniform = /obj/item/clothing/under/rank/cargo/qm
-		belt = /obj/item/storage/belt/military/assault
-		neck = /obj/item/clothing/neck/cloak
-		back = /obj/item/storage/backpack/satchel/inteq
-		shoes = /obj/item/clothing/shoes/jackboots/tall_default
-		suit = /obj/item/clothing/suit/armor/vest
-		head = /obj/item/clothing/head/beret/qm
-		glasses = /obj/item/clothing/glasses/sunglasses
-		l_pocket = /obj/item/gun/energy/pulse/pistol/inteq
-		id = /obj/item/card/id/away/ftu
-		backpack_contents = list(/obj/item/storage/box/survival/security/radio, /obj/item/paper/fluff/traid_ship/qm)
+/datum/outfit/ftu/qm
+	name = "FTU QM"
+	uniform = /obj/item/clothing/under/rank/cargo/qm
+	belt = /obj/item/storage/belt/military/assault
+	neck = /obj/item/clothing/neck/cloak
+	back = /obj/item/storage/backpack/satchel/inteq
+	shoes = /obj/item/clothing/shoes/jackboots/tall_default
+	suit = /obj/item/clothing/suit/armor/vest
+	head = /obj/item/clothing/head/beret/qm
+	glasses = /obj/item/clothing/glasses/sunglasses
+	l_pocket = /obj/item/gun/energy/pulse/pistol/inteq
+	id = /obj/item/card/id/away/ftu
+	backpack_contents = list(/obj/item/storage/box/survival/security/radio, /obj/item/paper/fluff/traid_ship/qm)
