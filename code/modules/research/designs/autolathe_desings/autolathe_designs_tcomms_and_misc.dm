@@ -40,6 +40,13 @@
 /////////////
 ////MISC/////
 /////////////
+/datum/design/toner
+	name = "Printer Toner"
+	id = "toner"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 10, /datum/material/glass = 20)
+	build_path = /obj/item/toner
+	category = list("initial", "Misc")
 
 /datum/design/camera
 	name = "Camera"

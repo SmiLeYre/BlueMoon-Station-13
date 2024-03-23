@@ -6,9 +6,9 @@
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the NanoTrasen Representative"
+	supervisors = "the Corporation Representative"
 	selection_color = "#7e3d48"
-	considered_combat_role = FALSE
+	considered_combat_role = TRUE
 	exp_requirements = 100
 	exp_type = EXP_TYPE_SECURITY
 
