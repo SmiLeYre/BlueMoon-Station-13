@@ -306,7 +306,7 @@
 /turf/open/floor/mineral/titanium,
 /area/shuttle/ftu_trade)
 "uM" = (
-/obj/ftu_display,
+/obj/structure/sign/ftu_display,
 /turf/closed/wall/r_wall/syndicate/pirate,
 /area/shuttle/ftu_trade)
 "uV" = (
@@ -409,6 +409,11 @@
 /obj/structure/table,
 /turf/open/floor/iron/smooth_large,
 /area/shuttle/ftu_trade)
+"Fb" = (
+/obj/effect/turf_decal/bot,
+/obj/effect/spawner/lootdrop/trader/mech,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/ftu_trade)
 "Fg" = (
 /obj/structure/tank_dispenser/oxygen,
 /obj/structure/sign/flag/terragov{
@@ -454,6 +459,8 @@
 	pixel_y = 1;
 	pixel_x = -31
 	},
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/metal/fifty,
 /turf/open/floor/pod/light,
 /area/shuttle/ftu_trade)
 "JD" = (
@@ -697,7 +704,8 @@
 "WJ" = (
 /obj/effect/turf_decal/bot,
 /obj/structure/closet/secure_closet{
-	req_access_txt = "208"
+	req_access_txt = "208";
+	name = "Бронежилеты"
 	},
 /obj/effect/spawner/lootdrop/trader/armor,
 /turf/open/floor/mineral/titanium,
@@ -1005,7 +1013,7 @@ Se
 bz
 YA
 Ua
-Kz
+Fb
 YA
 bz
 YA
