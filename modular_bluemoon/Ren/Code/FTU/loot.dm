@@ -3,7 +3,7 @@
 	lootcount = 10
 	loot = list(
 			/obj/item/clothing/suit/space/hardsuit/syndi/inteq = 20,
-			/obj/item/clothing/suit/space/hardsuit/engine/elite= 30,
+			/obj/item/clothing/suit/space/hardsuit/engine/elite= 20,
 			/obj/item/clothing/suit/space/hardsuit/cybersun= 20,
 			/obj/item/clothing/suit/space/hardsuit/powerarmor= 30,
 			/obj/item/clothing/suit/space/hardsuit/shielded= 5,
@@ -12,9 +12,9 @@
 			/obj/item/clothing/suit/space/hardsuit/security/explorer= 30,
 			/obj/item/clothing/suit/space/hardsuit/engine/ftu= 30,
 			/obj/item/clothing/suit/space/hardsuit/security/kikimora= 20,
-			/obj/item/clothing/suit/space/hardsuit/clown= 20,
-			/obj/item/clothing/suit/space/hardsuit/ancient/mason= 30,
-			/obj/item/clothing/suit/space/hardsuit/rd/hev= 50,
+			/obj/item/clothing/suit/space/hardsuit/clown= 10,
+			/obj/item/clothing/suit/space/hardsuit/ancient/mason= 10,
+			/obj/item/clothing/suit/space/hardsuit/rd/hev= 10,
 			/obj/item/clothing/suit/space/hardsuit/syndi/elite/winter = 5,
 			/obj/item/clothing/suit/space/hardsuit/ert/paranormal/beserker = 5
 	)
@@ -29,7 +29,7 @@
 			/obj/item/clothing/suit/armor/nri_coat,
 			/obj/item/clothing/suit/armor/vest/warden/sol_robe,
 			/obj/item/clothing/suit/armor/solfed_coat,
-			/obj/item/clothing/suit/armor/vest/agent= 3,
+			/obj/item/clothing/suit/armor/vest/agent= 2,
 			/obj/item/clothing/suit/armor/riot/knight/greyscale,
 			/obj/item/clothing/suit/armor/vest/russian_coat/liquidator,
 			/obj/item/clothing/suit/armor/vest/russian_winter_coat,
@@ -37,14 +37,14 @@
 			/obj/item/clothing/suit/armor/reactive/stealth,
 			/obj/item/clothing/suit/armor/reactive/fire,
 			/obj/item/clothing/suit/armor/abductor/vest,
-			/obj/item/clothing/suit/armor/bulletproof = 3,
+			/obj/item/clothing/suit/armor/bulletproof = 1.5,
 			/obj/item/clothing/suit/armor/vest/leather,
-			/obj/item/clothing/suit/armor/laserproof = 3,
+			/obj/item/clothing/suit/armor/laserproof = 1.5,
 			/obj/item/clothing/suit/armor/riot/chaplain/teutonic/alt,
 			/obj/item/clothing/suit/armor/vest/infiltrator/inteq,
-			/obj/item/clothing/suit/armor/vest/infiltrator/gorlex_harness = 3,
+			/obj/item/clothing/suit/armor/vest/infiltrator/gorlex_harness ,
 			/obj/item/clothing/suit/armor/hos/platecarrier,
-			/obj/item/clothing/suit/armor/heavy/adamantine,
+			/obj/item/clothing/suit/armor/heavy/adamantine = 0.1,
 			/obj/item/clothing/suit/armor/brigdoc,
 			/obj/item/clothing/suit/fakearmor/press
 	)
@@ -102,7 +102,7 @@
 			/obj/item/clothing/under/rank/blueshield/formal/pmc_leader_jumpsuit,
 			/obj/item/clothing/under/color/grey/glorf,
 			/obj/item/clothing/under/misc/psyche,
-			/obj/item/clothing/under/dress/vintage,
+			/obj/item/clothing/neck/cloak/miner,
 			/obj/item/clothing/under/dress/party,
 			/obj/item/clothing/under/suit/lobotomy/rabbit,
 			/obj/item/clothing/under/suit/scarface,
@@ -129,11 +129,6 @@
 			/obj/item/clothing/under/domina
 	)
 
-
-/obj/item/gun/medbeam
-
-
-
 /obj/effect/spawner/lootdrop/trader/weapons
 	name = "weapons product"
 	lootcount = 15
@@ -151,28 +146,24 @@
 			/obj/item/gun/energy/taser/bolestrel,
 			/obj/item/gun/energy/broom,
 			/obj/item/gun/energy/pumpaction/defender,
-			/obj/item/gun/energy/goatgun,
+			/obj/item/gun/energy/goatgun = 0.1,
 			/obj/item/gun/ballistic/shotgun/riot/ks_23,
 			/obj/item/gun/ballistic/shotgun/eshotgun,
 			/obj/item/gun/ballistic/automatic/pistol/deagle,
 			/obj/item/gun/ballistic/automatic/pistol/suppressed,
-			/obj/item/gun/ballistic/automatic/laser,
 			/obj/item/gun/ballistic/automatic/surplus,
-			/obj/item/gun/ballistic/automatic/vss,
 			/obj/item/gun/ballistic/automatic/m16a4/tactical,
 			/obj/item/gun/ballistic/automatic/m1garand,
 			/obj/item/gun/ballistic/automatic/m9smg,
 			/obj/item/gun/ballistic/revolver/detective,
 			/obj/item/gun/ballistic/revolver/r45l,
-			/obj/item/gun/ballistic/rocketlauncher/unrestricted,
 			/obj/item/gun/syringe/rapidsyringe,
 			/obj/item/gun/energy/e_gun/old,
 			/obj/item/gun/ballistic/automatic/wt550,
-			/obj/item/gun/ballistic/automatic/pistol/m1911/kitchengun,
 			/obj/item/gun/ballistic/automatic/proto/unrestricted,
-			/obj/item/gun/energy/e_gun/nuclear
+			/obj/item/gun/energy/e_gun/nuclear,
+			/obj/item/gun/medbeam
 	)
-
 
 /obj/effect/spawner/lootdrop/trader/ammo
 	name = "ammo product"
@@ -186,14 +177,14 @@
 			/obj/item/ammo_box/magazine/m16,
 			/obj/item/ammo_box/magazine/garand,
 			/obj/item/ammo_box/magazine/m9smgmag,
-			/obj/item/ammo_casing/caseless/rocket/hedp = 0.001,
+			/obj/item/ammo_casing/caseless/rocket/hedp = 0.01,
 			/obj/item/ammo_box/magazine/wt550m9/wttx,
 			/obj/item/ammo_box/magazine/smgm9mm
 	)
 
 /obj/effect/spawner/lootdrop/trader/illigal
 	name = "illigal product"
-	lootcount = 15
+	lootcount = 12
 	loot = list(
 			/obj/item/grenade/clusterbuster/smoke,
 			/obj/item/grenade/clusterbuster/metalfoam,
@@ -215,7 +206,7 @@
 			/obj/item/storage/belt/sabre/rapier,
 			/obj/item/firing_pin/clown/ultra,
 			/obj/item/construction/rcd/combat,
-			/obj/item/reverse_bear_trap,
+			/obj/item/reverse_bear_trap = 0.1,
 			/obj/item/storage/firstaid/tactical/nukeop,
 			/obj/item/clothing/gloves/krav_maga/combatglovesplus,
 			/obj/item/storage/backpack/duffelbag/syndie/inteq/surgery_adv,
@@ -228,7 +219,7 @@
 
 /obj/effect/spawner/lootdrop/trader/cool
 	name = "cool product"
-	lootcount = 29
+	lootcount = 17
 	loot = list(
 			/obj/item/debug/omnitool,
 			/obj/item/soapstone,
@@ -239,17 +230,35 @@
 			/obj/item/slimepotion/spaceproof,
 			/obj/item/slimepotion/speed,
 			/obj/item/book/granter/spell/blind,
-			/obj/item/gun/magic/staff/honk = 0.01,
+			/obj/item/gun/magic/staff/honk = 0.1,
 			/obj/item/gun/magic/wand/arcane,
 			/obj/item/melee/transforming/energy/sword/bananium,
 			/obj/item/melee/transforming/energy/blade = 0.01,
 			/obj/item/kitchen/knife/rainbowknife,
 			/obj/item/cookiesynth,
-			/obj/item/construction/rcd/arcd = 0.01,
+			/obj/item/construction/rcd/arcd = 0.1,
 			/obj/item/construction/rld,
 			/obj/item/paint/anycolor,
 			/obj/item/clothing/head/peaceflower,
 			/obj/item/book/granter/spell/asura,
 			/obj/item/storage/belt/utility/chief/full,
 			/obj/item/slime_extract/rainbow,
+	)
+
+/obj/effect/spawner/lootdrop/trader/mech
+	name = "mech product"
+	lootcount = 1
+	loot = list(
+			/obj/vehicle/sealed/mecha/combat/durand/tu802,
+			/obj/vehicle/sealed/mecha/combat/gygax/dark/loaded,
+			/obj/vehicle/sealed/mecha/combat/durand/zeus,
+			/obj/vehicle/sealed/mecha/combat/savannah_ivanov,
+			/obj/vehicle/sealed/mecha/combat/durand,
+			/obj/vehicle/sealed/mecha/combat/gygax,
+			/obj/vehicle/sealed/mecha/combat/honker,
+			/obj/vehicle/sealed/mecha/working/ripley/deathripley,
+			/obj/vehicle/sealed/mecha/combat/phazon,
+			/obj/vehicle/sealed/mecha/combat/reticence,
+			/obj/vehicle/sealed/mecha/working/ripley/firefighter,
+			/obj/vehicle/ridden/space/speedbike
 	)
