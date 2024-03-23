@@ -47,7 +47,7 @@
 /obj/item/paper/fluff/traid_ship/qm
 	name = "Отчёт о мисии"
 
-/obj/ftu_display
+/obj/structure/sign/ftu_display
 	name = "Ship display"
 	desc = "Дисплей с логотипом Объединения Свободных Торговцев."
 	icon = 'modular_bluemoon/Ren/Icons/Obj/decale.dmi'
@@ -83,7 +83,7 @@
 	var/ship_template
 
 /datum/round_event/ftu_trader/announce(fake)
-	priority_announce("Корабль Свободного торгового объединения получил разрешение на стыковку и пересёк границы сектора. Можете потратить свои честно заработанные деньги на их товары.","Бюрократический отдел ЦК")
+	priority_announce("Корабль Свободного торгового объединения получил разрешение на стыковку и пересёк границы сектора. Можете потратить свои честно заработанные деньги на их товары.","Бюрократический отдел ЦК", 'sound/announcer/classic/traider_announce.ogg')
 
 /datum/round_event_control/ftu_trader/preRunEvent()
 	if (!SSmapping.empty_space)
