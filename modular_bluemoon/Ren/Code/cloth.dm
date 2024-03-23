@@ -318,6 +318,26 @@
 	cost = 1
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 
+///Чехол гитары
+/obj/item/storage/backpack/guitarbag
+	name = "Guitar bag"
+	desc = "Обычный чехол от гитары. В него поместится много всего."
+	icon_state = "guitarbag"
+	item_state = "guitarbag"
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
+	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
+	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
+	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
+
+/obj/item/clothing/neck/cloak/miner
+	name = "Miner Cape"
+	desc = "Мой бур пронзит небеса!"
+	icon_state = "kaminacape"
+	item_state = "kaminacape"
+	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/suit.dmi'
+	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
+
+
 /obj/item/clothing/neck/cloak/ftu
 	name = "FTU Cape"
 	desc = "Плащ флота объединённых свободных торговцев. Теперь и ты стал частью чего-то великого."
