@@ -166,6 +166,10 @@
 
 	var/mob/living/carbon/human/human_caster = caster
 	var/mob/living/shape = new shapeshift_type(caster.loc)
+	if(isanimal(shape)) //BLUEMOON ADD шейпы не двигаются и не пытаются кого-то убить если выйти
+		var/mob/living/simple_animal/s_a = shape
+		s_a.AIStatus = AI_OFF
+		s_a.wander = FALSE //BLUEMOON ADD END
 	H = new(shape,src,human_caster)
 	if(istype(H, /mob/living/simple_animal))
 		var/mob/living/simple_animal/SA = H

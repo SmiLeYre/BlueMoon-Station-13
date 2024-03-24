@@ -56,6 +56,10 @@
 		return
 
 	var/mob/living/shape = new shapeshift_type(caster.loc)
+	if(isanimal(shape)) //BLUEMOON ADD шейпы не двигаются и не пытаются кого-то убить если выйти
+		var/mob/living/simple_animal/s_a = shape
+		s_a.AIStatus = AI_OFF
+		s_a.wander = FALSE //BLUEMOON ADD END
 	H = new(shape,src,caster)
 
 	clothes_req = NONE
