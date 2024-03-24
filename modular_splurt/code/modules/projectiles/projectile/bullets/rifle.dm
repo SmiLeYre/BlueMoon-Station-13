@@ -34,14 +34,14 @@
 	desc = "A .308 bullet casing."
 	icon_state = "762-casing"
 	caliber = ".308"
-	projectile_type = /obj/item/projectile/bullet/a308
+	projectile_type = /obj/item/projectile/bullet/a308/rubber //bluemoon change
 
 /obj/item/projectile/bullet/a308/rubber
 	name = ".308 Rubber bullet"
 	damage = 3
 	armour_penetration = 0
 	wound_bonus = 5
-	stamina = 30
+	stamina = 50        //bluemoon change
 	sharpness = SHARP_NONE
 	embedding = null
 
