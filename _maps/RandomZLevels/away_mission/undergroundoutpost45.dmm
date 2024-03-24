@@ -5331,7 +5331,7 @@
 	dir = 1
 	},
 /obj/structure/spider/terrorweb/black,
-/obj/item/organ/internal/body_egg/terror_eggs,
+/obj/item/organ/body_egg/terror_eggs,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -6329,7 +6329,7 @@
 /area/awaymission/undergroundoutpost45/gateway)
 "mc" = (
 /obj/structure/spider/terrorweb/black,
-/obj/item/organ/internal/body_egg/terror_eggs,
+/obj/item/organ/body_egg/terror_eggs,
 /turf/open/floor/plasteel{
 	dir = 8;
 	heat_capacity = 1e+006;
@@ -6607,7 +6607,7 @@
 	dir = 8
 	},
 /obj/structure/spider/terrorweb/black,
-/obj/item/organ/internal/body_egg/terror_eggs,
+/obj/item/organ/body_egg/terror_eggs,
 /turf/open/floor/plasteel/dark{
 	heat_capacity = 1e+006
 	},
