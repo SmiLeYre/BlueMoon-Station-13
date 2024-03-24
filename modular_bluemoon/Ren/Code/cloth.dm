@@ -337,7 +337,6 @@
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/suit.dmi'
 	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
 
-
 /obj/item/clothing/neck/cloak/ftu
 	name = "FTU Cape"
 	desc = "Плащ флота объединённых свободных торговцев. Теперь и ты стал частью чего-то великого."
