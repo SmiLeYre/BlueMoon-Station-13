@@ -97,8 +97,6 @@
 		stack_trace("shapeshift holder created outside mob/living")
 		return INITIALIZE_HINT_QDEL
 	stored = caster
-	if(stored.mind)
-		stored.mind.transfer_to(shape)
 	stored.forceMove(src)
 	stored.mob_transforming = TRUE
 	if(source.convert_damage)
@@ -108,6 +106,8 @@
 		shape.apply_damage(damapply, source.convert_damage_type, forced = TRUE, wound_bonus=CANT_WOUND);
 	slink = soullink(/datum/soullink/shapeshift, stored , shape)
 	slink.source = src
+	if(stored.mind)
+		stored.mind.transfer_to(shape)
 
 /obj/shapeshift_holder/Destroy()
 	if(!restoring)
