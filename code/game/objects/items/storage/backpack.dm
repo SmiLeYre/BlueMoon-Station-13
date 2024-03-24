@@ -744,4 +744,4 @@
 	new /obj/item/weldingtool/experimental/ashwalker(src)
 	new /obj/item/crowbar/ashwalker(src)
 	new /obj/item/wirecutters/ashwalker(src, "red")
-	new /obj/item/clothing/gloves/tackler/combat/insulated/infiltrator(src)
+  // /obj/item/clothing/gloves/tackler/combat/insulated/infiltrator bluemoon removal
