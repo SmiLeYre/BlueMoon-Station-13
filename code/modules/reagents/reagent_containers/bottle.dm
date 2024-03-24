@@ -254,7 +254,7 @@
 // Viro bottles
 
 /obj/item/reagent_containers/glass/bottle/romerol
-	name = "romerol bottle"
+	name = "Romerol Bottle"
 	desc = "A small bottle of Romerol. The REAL zombie powder."
 	list_reagents = list(/datum/reagent/romerol = 30)
 

@@ -157,7 +157,7 @@
 	mob_trait = TRAIT_SALT_SENSITIVE
 
 /datum/quirk/dullahan
-	name = "Дюллахан"
+	name = "Дуллахан"
 	desc = "Ваша голова отделена от тела."
 	value = 0
 	medical_record_text = "Пациент имеет неизвестного рода пространственную связь с собственной отделенной головой."

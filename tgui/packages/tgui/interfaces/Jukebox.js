@@ -1,7 +1,4 @@
-import { filter, map, sortBy, uniq } from 'common/collections';
-import { createSearch } from 'common/string';
-import { flow } from 'common/fp';
-import { useBackend, useLocalState, useSharedState } from '../backend';
+import { useBackend, useSharedState } from '../backend';
 import {
   Box,
   Button,
@@ -147,6 +144,13 @@ export const Jukebox = (props, context) => {
           <Tabs.Tab selected={tab === 2} onClick={() => setTab(2)}>
             Очередь
           </Tabs.Tab>
+          <Stack.Item grow />
+          <Button
+            color="transparent"
+            icon="shuffle"
+            tooltip="Случайная песня"
+            onClick={() => act('random_song')}
+          />
         </Tabs>
         {tab === 1 && (
           <Section fluid vertical>
@@ -162,32 +166,38 @@ export const Jukebox = (props, context) => {
             </Stack>
 
             <Section fluid>
-              <Tabs vertical style={{ 'pointer-events': 'none' }}>
-                {(songs || []).map((track) => (
-                  <Tabs.Tab key={track}>
-                    <Stack>
-                      <Stack.Item grow>{track}</Stack.Item>
-                      <Stack.Item>
-                        <Button
-                          icon="play"
-                          content="Queue"
-                          style={{ 'pointer-events': 'auto' }}
-                          onClick={() => {
-                            act('add_to_queue', { track });
-                          }}
-                        />
-                      </Stack.Item>
-                    </Stack>
-                  </Tabs.Tab>
-                ))}
-              </Tabs>
-            </Section>
+              { songs && songs.length ? (
+                <Tabs vertical style={{ 'pointer-events': 'none' }}>
+                  {songs.map((track) => (
+                    <Tabs.Tab key={track}>
+                      <Stack>
+                        <Stack.Item grow>{track}</Stack.Item>
+                        <Stack.Item>
+                          <Button
+                            icon="play"
+                            content="Queue"
+                            style={{ 'pointer-events': 'auto' }}
+                            onClick={() => {
+                              act('add_to_queue', { track });
+                            }}
+                          />
+                        </Stack.Item>
+                      </Stack>
+                    </Tabs.Tab>
+                  ))}
+                </Tabs>
+              ) : (
+                <Box textColor="gray" textAlign="center" mt={2}>Треков нет</Box>
+              )}
 
-            <Stack align="center" justify="center">
-              <Stack.Item><Button icon="chevron-left" onClick={() => act('prev_page')} /></Stack.Item>
-              <Stack.Item>Страница {current_page}/{pages}</Stack.Item>
-              <Stack.Item><Button icon="chevron-right" onClick={() => act('next_page')} /></Stack.Item>
-            </Stack>
+            </Section>
+            { pages > 1 ? (
+              <Stack align="center" justify="center">
+                <Stack.Item><Button icon="chevron-left" onClick={() => act('prev_page')} /></Stack.Item>
+                <Stack.Item>Страница {current_page}/{pages}</Stack.Item>
+                <Stack.Item><Button icon="chevron-right" onClick={() => act('next_page')} /></Stack.Item>
+              </Stack>
+            ) : (<Box />)}
           </Section>
         )}
         {tab === 2 && (
