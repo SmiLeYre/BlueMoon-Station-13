@@ -46,6 +46,6 @@
 /datum/reagent/terror_eggs/on_mob_life(mob/living/M)
 	if(volume > 5)
 		if(iscarbon(M))
-			if(!M.getorgan(/obj/item/organ/internal/body_egg))
-				new/obj/item/organ/internal/body_egg/terror_eggs(M)
+			if(!M.getorgan(/obj/item/organ/body_egg))
+				new/obj/item/organ/body_egg/terror_eggs(M)
 	return ..()
