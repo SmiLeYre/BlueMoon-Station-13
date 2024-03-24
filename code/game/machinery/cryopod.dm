@@ -508,7 +508,7 @@ GLOBAL_LIST_EMPTY(ghost_records)
 		for(var/i in storing)
 			var/obj/item/I = i
 			I.forceMove(O)
-		O.forceMove(drop_to_ground ? control_computer.drop_location() : control_computer)
+		O.forceMove(drop_to_ground ? mob_occupant.drop_location() : control_computer) //BLUEMOON CHANGE было control_computer.drop_location (не работало при отсутсвии контроль компьютера)
 		if((control_computer == control_computer) && !drop_to_ground)
 			control_computer.stored_packages += O
 	/* ============================= */
