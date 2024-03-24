@@ -32,8 +32,8 @@
 		for(var/datum/quirk/bluemoon_heavy/quirk in roundstart_quirks)
 			quirk.update_size_movespeed()
 
-	if(HAS_TRAIT(src, TRAIT_BLUEMOON_ROBUST_BODY))
-		for(var/datum/quirk/bluemoon_robust_body/quirk in roundstart_quirks)
+	if(HAS_TRAIT(src, TRAIT_BLUEMOON_GIANT_BODY))
+		for(var/datum/quirk/bluemoon_giant_body/quirk in roundstart_quirks)
 			quirk.update_size_modifiers(new_size, cur_size)
 	// BLUEMOON ADDITION END
 
