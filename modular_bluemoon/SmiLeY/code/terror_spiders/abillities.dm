@@ -398,6 +398,10 @@
 	cast_sound = 'sound/creatures/terrorspiders/jelly.ogg'
 	summon_type = list(/obj/structure/spider/royaljelly)
 
+/obj/structure/spider/royaljelly
+	name = "royal jelly"
+	desc = "A pulsating mass of slime, jelly, blood, and or liquified human organs considered delicious and highly nutritious by terror spiders."
+	icon_state = "spiderjelly"
 
 //MASS HEAL
 /obj/effect/proc_holder/spell/aoe_turf/terror_healing/greater
