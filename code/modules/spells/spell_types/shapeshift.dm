@@ -27,7 +27,7 @@
 		user.mob_spell_list.Remove(src)
 		user.mind.AddSpell(src)
 	if(user.buckled)
-		user.buckled.unbuckle_mob(src,force=TRUE)
+		user.buckled.unbuckle_mob(user,force=TRUE)
 	for(var/mob/living/M in targets)
 		if(!shapeshift_type)
 			var/list/animal_list = list()
