@@ -394,6 +394,8 @@
 	QDEL_LIST(debris)
 	. = ..()
 
+
+//BLUEMOON ADD стол из стекла можно осмотреть на предмет выдерживания на нём персонажа
 /obj/structure/table/glass/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) && isliving(user))
@@ -402,6 +404,7 @@
 			. += span_notice("It looks like it will break if you try to climb on it.")
 		else
 			. += span_notice("It seems that it can be crossed safely.")
+//BLUEMOON ADD END
 
 /obj/structure/table/glass/Crossed(atom/movable/AM)
 	. = ..()

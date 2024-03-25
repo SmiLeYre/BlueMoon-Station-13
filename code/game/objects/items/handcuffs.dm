@@ -280,7 +280,7 @@
 	desc = "A trap used to catch bears and other legged creatures."
 	var/armed = FALSE
 	var/trap_damage = 60
-	var/ignore_weight = FALSE
+	var/ignore_weight = FALSE //BLUEMOON ADD капканы реагируют на вес карбонов
 
 /obj/item/restraints/legcuffs/beartrap/prearmed
 	armed = TRUE
@@ -305,6 +305,7 @@
 	if(armed && isturf(src.loc))
 		if(isliving(AM))
 			var/mob/living/L = AM
+//BLUEMOON CHANGE переписывание прока для взаимодействия карбонов с полётом и учитыванием их веса
 			var/snap = TRUE
 			var/def_zone = BODY_ZONE_CHEST
 			if(L.movement_type & (FLYING | FLOATING))
@@ -322,6 +323,7 @@
 					C.update_equipment_speed_mods()
 					C.update_inv_legcuffed()
 					SSblackbox.record_feedback("tally", "handcuffs", 1, type)
+//BLUEMOON CHANGE END
 			if(snap)
 				armed = FALSE
 				icon_state = "[initial(icon_state)][armed]"
@@ -339,7 +341,7 @@
 	item_flags = DROPDEL
 	flags_1 = NONE
 	breakouttime = 50
-	ignore_weight = TRUE
+	ignore_weight = TRUE //BLUEMOON ADD энерголовушкам плевать на вес персонажа
 
 /obj/item/restraints/legcuffs/beartrap/energy/New()
 	..()
