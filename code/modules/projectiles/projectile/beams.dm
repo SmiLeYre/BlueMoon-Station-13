@@ -132,6 +132,11 @@
 	if(istype(target_turf))
 		target_turf.IgniteTurf(rand(8, 22), "blue")
 
+/obj/item/projectile/beam/pulse/safe/on_hit(atom/target, blocked = FALSE) //bluemoon add
+	. = ..()
+	if (!QDELETED(target) && (isturf(target) || istype(target, /obj/structure/)))
+		target.ex_act(EXPLODE_HEAVY)
+
 /obj/item/projectile/beam/pulse/shotgun
 	damage = 40
 
