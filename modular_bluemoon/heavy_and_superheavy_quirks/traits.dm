@@ -129,6 +129,7 @@
 	H.physiology.hunger_mod *= 2
 	H.physiology.brute_mod *= 1.6 // убираем 60% от доп ХП (этап 1)
 	H.physiology.burn_mod *= 1.6  // убираем 60% от доп ХП (этап 1)
+	H.physiology.tox_mod *= 1.25
 	// Действие на сборс сытости
 	var/datum/action/innate/vomit/act_vomit = new
 	act_vomit.Grant(H)
@@ -166,6 +167,7 @@
 
 		H.physiology.brute_mod *= 0.625 * (get_size(H) / 2)
 		H.physiology.burn_mod *= 0.625 * (get_size(H) / 2)
+		H.physiology.tox_mod *= 0.8 * (get_size(H) / 2)
 
 		var/datum/action/innate/vomit/act_vomit = locate() in H.actions
 		act_vomit.Remove(H)
@@ -185,6 +187,7 @@
 		//чем больше существо, тем больше модификатор урона, начиная 2 и т.д., таким образом нивилируется эффект размера. Модификатор в 0.8 даётся изначально, что бы не ломать умножение тут
 		H.physiology.brute_mod *= max(new_size,2) / max(cur_size,2)
 		H.physiology.burn_mod *=  max(new_size,2) / max(cur_size,2)
+		H.physiology.tox_mod *=  max(new_size,2) / max(cur_size,2)
 
 		var/user_slowdown = (abs(new_size - 1) * CONFIG_GET(number/body_size_slowdown_multiplier))
 
