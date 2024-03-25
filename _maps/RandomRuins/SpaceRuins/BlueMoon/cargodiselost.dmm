@@ -256,9 +256,7 @@
 "dB" = (
 /mob/living/simple_animal/hostile/looter/ranged/space,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/ftu_cargo{
-	name = "Pirate boat"
-	})
+/area/ruin/space/has_grav/powered/ancient_shuttle)
 "dC" = (
 /obj/machinery/power/terminal{
 	dir = 4
@@ -324,9 +322,7 @@
 "ej" = (
 /obj/machinery/door/poddoor/shutters/old,
 /turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/ftu_cargo{
-	name = "Pirate boat"
-	})
+/area/ruin/space/has_grav/powered/ancient_shuttle)
 "ek" = (
 /obj/machinery/vending/hydronutrients,
 /turf/open/floor/iron/dark/smooth_large,
@@ -438,9 +434,7 @@
 	faction = list("hostile")
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/space/has_grav/ftu_cargo{
-	name = "Pirate boat"
-	})
+/area/ruin/space/has_grav/powered/ancient_shuttle)
 "gf" = (
 /obj/machinery/computer/operating{
 	dir = 1
@@ -620,9 +614,7 @@
 "jd" = (
 /obj/structure/showcase/machinery/oldpod/used/oldpod,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/ftu_cargo{
-	name = "Pirate boat"
-	})
+/area/ruin/space/has_grav/powered/ancient_shuttle)
 "jo" = (
 /obj/effect/turf_decal/tile/green/half/contrasted{
 	dir = 4
@@ -680,9 +672,7 @@
 /area/ruin/space/has_grav/ftu_cargo)
 "kM" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/space/has_grav/ftu_cargo{
-	name = "Pirate boat"
-	})
+/area/ruin/space/has_grav/powered/ancient_shuttle)
 "kW" = (
 /obj/structure/closet/crate/secure/gear,
 /obj/item/stack/sheet/plastic/fifty,
@@ -1025,9 +1015,7 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/ftu_cargo{
-	name = "Pirate boat"
-	})
+/area/ruin/space/has_grav/powered/ancient_shuttle)
 "qK" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
@@ -1127,9 +1115,7 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/ftu_cargo{
-	name = "Pirate boat"
-	})
+/area/ruin/space/has_grav/powered/ancient_shuttle)
 "sV" = (
 /obj/effect/turf_decal/tile/yellow/anticorner/contrasted{
 	dir = 4
@@ -1370,9 +1356,7 @@
 /area/ruin/space/has_grav/ftu_cargo)
 "xo" = (
 /turf/closed/wall/r_wall/syndicate,
-/area/ruin/space/has_grav/ftu_cargo{
-	name = "Pirate boat"
-	})
+/area/ruin/space/has_grav/powered/ancient_shuttle)
 "xs" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
@@ -1712,9 +1696,7 @@
 "CI" = (
 /obj/machinery/door/airlock/hatch,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/ftu_cargo{
-	name = "Pirate boat"
-	})
+/area/ruin/space/has_grav/powered/ancient_shuttle)
 "CQ" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 1
@@ -1985,18 +1967,14 @@
 	dir = 8
 	},
 /turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/ftu_cargo{
-	name = "Pirate boat"
-	})
+/area/ruin/space/has_grav/powered/ancient_shuttle)
 "Ha" = (
 /obj/machinery/light/directional/west,
 /turf/open/floor/iron/kitchen,
 /area/ruin/space/has_grav/ftu_cargo)
 "Hd" = (
 /turf/closed/wall/r_wall/lf_haron/diagonal,
-/area/ruin/space/has_grav/ftu_cargo{
-	name = "Pirate boat"
-	})
+/area/ruin/space/has_grav/powered/ancient_shuttle)
 "Hi" = (
 /obj/effect/turf_decal/trimline/blue/corner{
 	dir = 4
@@ -2318,9 +2296,7 @@
 "LK" = (
 /obj/machinery/door/poddoor/shutters/preopen,
 /turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/ftu_cargo{
-	name = "Pirate boat"
-	})
+/area/ruin/space/has_grav/powered/ancient_shuttle)
 "LM" = (
 /mob/living/simple_animal/hostile/vox/ranged/space/laser,
 /turf/template_noop,
@@ -2367,9 +2343,7 @@
 /turf/closed/wall/r_wall/lf_haron/diagonal{
 	dir = 8
 	},
-/area/ruin/space/has_grav/ftu_cargo{
-	name = "Pirate boat"
-	})
+/area/ruin/space/has_grav/powered/ancient_shuttle)
 "MM" = (
 /obj/effect/turf_decal/tile/yellow/half{
 	dir = 8
@@ -2704,9 +2678,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/ftu_cargo{
-	name = "Pirate boat"
-	})
+/area/ruin/space/has_grav/powered/ancient_shuttle)
 "St" = (
 /obj/effect/turf_decal/siding/wood/corner,
 /obj/structure/chair/sofa/left/maroon{
@@ -2806,9 +2778,7 @@
 "UN" = (
 /mob/living/simple_animal/hostile/looter/ranged/space/laser,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/ftu_cargo{
-	name = "Pirate boat"
-	})
+/area/ruin/space/has_grav/powered/ancient_shuttle)
 "UP" = (
 /obj/effect/turf_decal/trimline/blue/line,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -3011,9 +2981,7 @@
 "Yb" = (
 /obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/ftu_cargo{
-	name = "Pirate boat"
-	})
+/area/ruin/space/has_grav/powered/ancient_shuttle)
 "Ym" = (
 /obj/structure/window/shuttle/survival_pod,
 /obj/structure/grille{
@@ -3099,9 +3067,7 @@
 /area/ruin/space/has_grav/ftu_cargo)
 "YY" = (
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/ftu_cargo{
-	name = "Pirate boat"
-	})
+/area/ruin/space/has_grav/powered/ancient_shuttle)
 "Ze" = (
 /obj/machinery/door/airlock/command/glass{
 	name = "Freighter Boss's Quarters"
