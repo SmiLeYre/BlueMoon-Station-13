@@ -27092,6 +27092,11 @@
 	name = "research shutters"
 	},
 /obj/item/folder/white,
+/obj/machinery/door/window/eastright{
+	dir = 1;
+	name = "Research and Development Desk";
+	req_one_access_txt = "7;29"
+	},
 /turf/open/floor/plating,
 /area/science/lab)
 "bqd" = (

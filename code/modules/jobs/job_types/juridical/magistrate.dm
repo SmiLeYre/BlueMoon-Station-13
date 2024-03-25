@@ -105,7 +105,6 @@
 	suit = /obj/item/clothing/suit/armor/ntr
 	head = /obj/item/clothing/head/beret/sec/ntr
 	shoes = /obj/item/clothing/shoes/laceup/ntr
-	l_pocket = /obj/item/melee/classic_baton/telescopic
 	r_pocket = /obj/item/clothing/accessory/lawyers_badge
 
 	backpack = /obj/item/storage/backpack/security
@@ -115,6 +114,8 @@
 	chameleon_extras = /obj/item/stamp/law
 
 	backpack_contents = list(/obj/item/gun/energy/e_gun=1, /obj/item/stamp/law=1)
+
+	box = /obj/item/storage/box/survival/command
 
 	implants = list(/obj/item/implant/mindshield)
 

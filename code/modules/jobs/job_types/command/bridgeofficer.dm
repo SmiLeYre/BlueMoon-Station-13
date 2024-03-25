@@ -56,10 +56,10 @@
 	glasses = /obj/item/clothing/glasses/sunglasses
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	l_pocket = /obj/item/pda
-	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced = 1, /obj/item/stamp/command=1, /obj/item/gun/energy/civilian=1, /obj/item/assembly/flash/handheld=1)
 
+	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced = 1, /obj/item/stamp/command=1, /obj/item/gun/energy/civilian=1)
+	box = /obj/item/storage/box/survival/command
 	accessory = /obj/item/clothing/accessory/permit/head
-	implants = list(/obj/item/implant/mindshield)
 
 /datum/outfit/job/bridgeofficer/syndicate
 	name = "Syndicate Bridge Officer"

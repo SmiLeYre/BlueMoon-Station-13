@@ -54,9 +54,10 @@
 
 	chameleon_extras = /obj/item/stamp/law
 
-	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced = 1, /obj/item/stamp/law=1, /obj/item/gun/energy/civilian=1, /obj/item/assembly/flash/handheld=1)
-
+	backpack_contents = list(/obj/item/stamp/law=1, /obj/item/gun/energy/civilian=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
+	box = /obj/item/storage/box/survival/security
 	accessory = /obj/item/clothing/accessory/permit/staff
+
 	implants = list(/obj/item/implant/mindshield)
 
 /datum/outfit/job/lawyer/syndicate
