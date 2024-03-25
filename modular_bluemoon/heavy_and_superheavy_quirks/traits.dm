@@ -144,11 +144,10 @@
 		var/reg_add = 0.1 * cur_size
 		H.reagents.add_reagent(/datum/reagent/medicine/salglu_solution, reg_add) // немного полезного реагента
 		H.reagents.add_reagent(/datum/reagent/drug/aphrodisiac, reg_add) // тут всё понятно, накормили персонажа, он захотел... ну вы поняли)
-		H.add_lust(4) // бует возбуждаться
+		
 
-		if (H.get_lust() >= H.get_lust_tolerance())
-			H.mob_climax(forced_climax=TRUE)
-			H.adjust_nutrition(-20)
+		if (H.get_lust() >= H.get_lust_tolerance() * 0.4) // небольшое возбуждение, но не более
+			H.add_lust(2)
 
 		H.adjust_nutrition(-0.02) //голод будет падать быстрее
 
