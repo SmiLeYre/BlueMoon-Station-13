@@ -4,6 +4,7 @@
 	new /obj/item/tank/internals/emergency_oxygen/double(src)
 	new /obj/item/bikehorn/rubberducky/captain(src)
 	new /obj/item/lighter/cap(src)
+	new /obj/item/megaphone/command(src)
 
 /obj/structure/closet/secure_closet/hop/PopulateContents()
 	..()
