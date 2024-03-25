@@ -168,3 +168,15 @@
 	view_range = 14
 	x_offset = 7
 	y_offset = 1
+
+/datum/map_template/ruin/space/ftuship
+	name = "Cargo ship"
+	description = "Захваченый пиратами корабль."
+	prefix = "_maps/RandomRuins/SpaceRuins/BlueMoon/"
+	suffix = "cargodiselost.dmm"
+	allow_duplicates = FALSE
+	always_place = TRUE
+	id = "cargodiselost"
+
+/area/ruin/space/has_grav/ftu_cargo
+	name = "FTU Cargo ship"
