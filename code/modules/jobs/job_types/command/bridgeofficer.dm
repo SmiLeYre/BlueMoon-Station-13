@@ -81,6 +81,7 @@
 	pda_slot = ITEM_SLOT_BELT
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced = 1, /obj/item/gun/energy/e_gun=1, /obj/item/stamp/command=1, /obj/item/syndicate_uplink=1)
 
+	implants = list(/obj/item/implant/mindshield)
 
 /datum/outfit/plasmaman/bridgeofficer
 	name = "Bridge Officer Plasmaman"
