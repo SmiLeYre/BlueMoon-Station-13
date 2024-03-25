@@ -176,7 +176,7 @@
 
 // Quirk examine text
 /datum/quirk/bluemoon_giant_body/proc/on_examine_holder(atom/examine_target, mob/living/carbon/human/examiner, list/examine_list)
-	examine_list += "[quirk_holder.ru_ego(TRUE)] явно испытывает голод."
+	examine_list += "[quirk_holder.ru_ego(TRUE)] явно мучает голод."
 
 
 /datum/quirk/bluemoon_giant_body/proc/update_size_modifiers(new_size, cur_size)
