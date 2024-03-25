@@ -139,7 +139,7 @@
 /datum/quirk/bluemoon_giant_body/on_process()
 	var/mob/living/carbon/human/H = quirk_holder
 	//если персонаж объелся, он не толстеет, но начинаются очень весёлые последствия
-	if(H.nutrition >= NUTRITION_LEVEL_FAT)
+	if(H.nutrition >= NUTRITION_LEVEL_FULL)
 		var/cur_size = get_size(H)
 		var/reg_add = 0.1 * cur_size
 		H.reagents.add_reagent(/datum/reagent/medicine/salglu_solution, reg_add) // немного полезного реагента
