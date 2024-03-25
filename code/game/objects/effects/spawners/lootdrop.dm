@@ -78,14 +78,20 @@
 	loot = list(
 				/obj/item/poster/random_contraband = 120,
 				/obj/item/reagent_containers/hypospray/medipen/magillitis = 2,
-				/obj/item/storage/box/syndie_kit/space = 4,
-				/obj/item/storage/toolbox/syndicate = 6,
+				/obj/item/storage/box/syndie_kit/space = 3,
+				/obj/item/storage/toolbox/syndicate = 5,
 				/obj/item/clothing/shoes/chameleon/noslip = 6,
-				/obj/item/grenade/clusterbuster/soap = 6,
-				/obj/item/soap/syndie = 12,
+				/obj/item/grenade/clusterbuster/soap/inteq = 6,
+				/obj/item/soap/syndie = 8,
 				/obj/item/pen/sleepy = 12,
-				/obj/item/storage/backpack/duffelbag/syndie = 4,
-				/obj/item/storage/box/syndie_kit/chameleon = 4
+				/obj/item/storage/backpack/duffelbag/syndie = 3,
+				/obj/item/storage/box/syndie_kit/chameleon = 4,
+				/obj/item/storage/toolbox/inteq = 1,
+				/obj/item/storage/backpack/duffelbag/syndie/inteq = 1,
+				/obj/item/storage/box/syndie_kit/space/inteq = 1,
+				/obj/item/soap/inteq = 4,
+				/obj/item/sign/flag/inteq = 1,
+				/obj/item/storage/fancy/cigarettes/cigpack_inteq = 1,
 				)
 
 /obj/effect/spawner/lootdrop/prison_contraband

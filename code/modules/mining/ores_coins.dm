@@ -149,7 +149,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	C.adjustStaminaLoss(15)//the pain from your eyes burning does stamina damage
 	C.confused += 5
 	to_chat(C, "<span class='userdanger'>\The [src] gets into your eyes! The pain, it burns!</span>")
-	C.forcesay("*scream")
+	C.forcesay("*realagony")
 	qdel(src)
 
 /obj/item/stack/ore/glass/ex_act(severity, target, origin)

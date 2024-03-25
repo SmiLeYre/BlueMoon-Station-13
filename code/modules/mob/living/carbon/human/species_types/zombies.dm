@@ -33,13 +33,15 @@
 	name = "Infectious Zombie"
 	id = "memezombies"
 	limbs_id = SPECIES_ZOMBIE
-	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE,TRAIT_EASYDISMEMBER,TRAIT_LIMBATTACHMENT,TRAIT_NOBREATH,TRAIT_NODEATH,TRAIT_NOSOFTCRIT, TRAIT_FAKEDEATH)
+	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE,TRAIT_EASYDISMEMBER,TRAIT_LIMBATTACHMENT,TRAIT_NOBREATH,TRAIT_NODEATH,TRAIT_NOSOFTCRIT,TRAIT_FAKEDEATH)
 	mutanthands = /obj/item/zombie_hand
 	armor = 20 // 120 damage to KO a zombie, which kills it
 	speedmod = 1.6 // they're very slow
+	burnmod = 0.75
+	brutemod = 0.75
 	mutanteyes = /obj/item/organ/eyes/night_vision/zombie
 	blacklisted_quirks = list(/datum/quirk/nonviolent)
-	var/heal_rate = 1
+	var/heal_rate = 5
 	var/regen_cooldown = 0
 
 /datum/species/zombie/infectious/check_roundstart_eligible()

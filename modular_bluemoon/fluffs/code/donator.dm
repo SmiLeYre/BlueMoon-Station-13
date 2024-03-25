@@ -156,6 +156,13 @@
 	ckeywhitelist = list("friskis")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
+/datum/gear/donator/bm/oni_mask
+	name = "Tactical Gasmask"
+	slot = ITEM_SLOT_MASK
+	path = /obj/item/clothing/mask/gas/syndicate/cool_version
+	ckeywhitelist = list("oni3288", "smileycom")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
 /datum/gear/donator/bm/Rar_Suit
 	name = "HEV Suit"
 	slot = ITEM_SLOT_OCLOTHING

@@ -53137,7 +53137,7 @@
 	c_tag = "Brig Infirmary";
 	dir = 4
 	},
-/obj/item/clothing/suit/armor/brigdoc/armor,
+/obj/item/clothing/suit/armor/brigdoc,
 /turf/open/floor/mineral/plastitanium/red,
 /area/security/brig)
 "fFR" = (
@@ -56600,7 +56600,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/item/clothing/suit/armor/brigdoc/armor,
+/obj/item/clothing/suit/armor/brigdoc,
 /turf/open/floor/mineral/plastitanium/red,
 /area/security/brig)
 "kmw" = (

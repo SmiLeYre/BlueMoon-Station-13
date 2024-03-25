@@ -102,3 +102,111 @@
 /mob/living/simple_animal/hostile/morph/sandman/regenerate_icons()
 	..()
 	update_inv_internal_storage()
+
+///inteq mobs
+
+/mob/living/simple_animal/hostile/syndicate/ranged/sniper
+	name = "InteQ Mad Shooter"
+	desc = "Ему очень нравится звук выстрела его винтовки"
+	ranged = 1
+	retreat_distance = 4
+	minimum_distance = 4
+	icon = 'modular_bluemoon/Ren/Icons/Mob/mobs.dmi'
+	icon_state = "infiltrator_sniper"
+	icon_living = "infiltrator_sniper"
+	casingtype = /obj/item/ammo_casing/p50
+	projectilesound = "sound/weapons/noscope.ogg"
+	ranged_cooldown = 120
+	check_friendly_fire = 1
+	loot = list(/obj/effect/gibspawner/human, /obj/item/clothing/head/helmet/infiltrator/inteq, /obj/item/storage/belt/military/inteq)
+	dodging = TRUE
+	rapid_melee = 1
+	speak_chance = 30
+	speak = list("Я попал? Я попал, да?!", "Это там твои мозги вытекают?!", "Да куда я положил магазин, сука где он, где он?!", "Я буду убивать тебя медленно, отстреливая кусочек за кусочком~", "Нужно будет купить себе новые очки", "Да я тебя на сквозь вижу, ХАХ!", "Да я не бузумный стрелок. Я убийца!")
+
+/mob/living/simple_animal/hostile/syndicate/ranged/sniper/Aggro()
+	..()
+	summon_backup(25)
+	say("Может мне кто нибудь поможет? У нас тут мишень нарисовалась, работаем!")
+
+/mob/living/simple_animal/hostile/syndicate/melee/ushm
+	name = "InteQ Breacher"
+	melee_damage_lower = 10
+	melee_damage_upper = 10
+	wound_bonus = 40
+	bare_wound_bonus = 15
+	sharpness = SHARP_EDGED
+	icon = 'modular_bluemoon/Ren/Icons/Mob/mobs.dmi'
+	icon_state = "infiltrator_mele"
+	icon_living = "infiltrator_mele"
+	loot = list(/obj/effect/gibspawner/human)
+	attack_verb_continuous = "slashes"
+	attack_verb_simple = "slash"
+	attack_sound = 'modular_bluemoon/Ren/Sound/USHM_hit.ogg'
+	status_flags = 0
+
+/mob/living/simple_animal/hostile/skeleton/meatguy
+	name = "Living meat"
+	desc = "Отвратительная пародия на человека из мяса и костей"
+	melee_damage_lower = 10
+	melee_damage_upper = 20
+	sharpness = SHARP_EDGED
+	wound_bonus = 10
+	bare_wound_bonus = 10
+	icon = 'modular_bluemoon/Ren/Icons/Mob/mobs.dmi'
+	var/number
+
+/mob/living/simple_animal/hostile/skeleton/meatguy/Initialize(mapload)
+	. = ..()
+	if(!number)
+		number = rand(3)
+	icon_state = "fleshling[number]"
+	icon_living = "fleshling[number]"
+
+///безумный стрелок.
+/datum/round_event_control/sniper
+	name = "Mad shooter"
+	typepath = /datum/round_event/sniper
+	max_occurrences = 2
+	weight = 5
+	category = EVENT_CATEGORY_ENTITIES
+
+/datum/round_event/sniper/announce(fake)
+	priority_announce("Один из наших... кхм... особых заключённых сбежал. Так получилось, что его последнее известное местонахождение до того, как их маячок заглох, - это ваша станция, так что будьте осторожней и остерегайтесь Технических Тоннелей. И еще... никто не знает, куда подевались ключи от оружейного сейфа?",
+	sender_override = "Психиатрический Отдел Nanotrasen", has_important_message = TRUE)
+
+/datum/round_event/sniper/start()
+	var/list/spawn_locs = list()
+	var/list/unsafe_spawn_locs = list()
+	for(var/X in GLOB.xeno_spawn)
+		if(!isfloorturf(X))
+			unsafe_spawn_locs += X
+			continue
+		var/turf/open/floor/F = X
+		var/datum/gas_mixture/A = F.air
+		var/oxy_moles = A.get_moles(GAS_O2)
+		if((oxy_moles < 16 || oxy_moles > 50) || A.get_moles(GAS_PLASMA) || A.get_moles(GAS_CO2) >= 10)
+			unsafe_spawn_locs += F
+			continue
+		if((A.return_temperature() <= 270) || (A.return_temperature() >= 360))
+			unsafe_spawn_locs += F
+			continue
+		var/pressure = A.return_pressure()
+		if((pressure <= 20) || (pressure >= 550))
+			unsafe_spawn_locs += F
+			continue
+		spawn_locs += F
+
+	if(!spawn_locs.len)
+		spawn_locs += unsafe_spawn_locs
+
+	if(!spawn_locs.len)
+		message_admins("No valid spawn locations found, aborting...")
+		return MAP_ERROR
+
+	var/turf/T = get_turf(pick(spawn_locs))
+	var/mob/living/simple_animal/hostile/syndicate/ranged/sniper/S = new(T)
+	playsound(S, 'modular_bluemoon/Ren/Sound/rifle-loading.ogg', 120, 1, 1000)
+	message_admins("A mad shooter has been spawned at [COORD(T)][ADMIN_JMP(T)]")
+	log_game("A mad shooter has been spawned at [COORD(T)]")
+	return SUCCESSFUL_SPAWN

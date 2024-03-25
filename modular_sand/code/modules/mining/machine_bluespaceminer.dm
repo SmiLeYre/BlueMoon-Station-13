@@ -43,6 +43,11 @@
 		. += span_notice("A small screen on the machine reads, \"Efficiency at [multiplier * 100]%\"")
 		if(multiplier >= BLUESPACE_MINER_CRYSTAL_TIER)
 			. += span_notice("Bluespace generation is active.")
+		var/instability_text = "Bluespace mining instability in region is [min(length(SSmachines.bluespaceminer_by_zlevel[src.z]) * 20, 100)]%"
+		if(length(SSmachines.bluespaceminer_by_zlevel[src.z]) >= 5)
+			. += span_danger(instability_text)
+		else
+			. += span_notice(instability_text)
 	if(!anchored)
 		. += span_warning("The machine won't work while not firmly secured to the ground.")
 	if(!materials?.silo)

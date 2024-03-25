@@ -810,7 +810,7 @@ DEFINE_BITFIELD(turret_flags, list(
 
 /obj/machinery/porta_turret/syndicate/pod
 	integrity_failure = 0.5
-	max_integrity = 40
+	max_integrity = 240
 	stun_projectile = /obj/item/projectile/bullet/syndicate_turret
 	lethal_projectile = /obj/item/projectile/bullet/syndicate_turret
 
@@ -824,7 +824,13 @@ DEFINE_BITFIELD(turret_flags, list(
 	armor = list(MELEE = 50, BULLET = 30, LASER = 30, ENERGY = 30, BOMB = 80, BIO = 0, RAD = 0, FIRE = 90, ACID = 90)
 
 /obj/machinery/porta_turret/syndicate/pod/toolbox
-	max_integrity = 100
+	icon_state = "toolbox_off"
+	base_icon_state = "toolbox"
+	max_integrity = 220
+
+/obj/machinery/porta_turret/syndicate/pod/toolbox/Initialize(mapload)
+	. = ..()
+	underlays += image(icon = icon, icon_state = "[base_icon_state]_frame")
 
 /obj/machinery/porta_turret/syndicate/shuttle/target(atom/movable/target)
 	if(target)

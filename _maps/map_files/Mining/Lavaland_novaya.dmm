@@ -3966,6 +3966,7 @@
 	dir = 4
 	},
 /obj/structure/table,
+/obj/item/xenoarch/help/scanner,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "dGC" = (
@@ -6042,6 +6043,7 @@
 	name = "Station Intercom (General)";
 	pixel_x = 28
 	},
+/obj/item/xenoarch/help/scanner,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "fMi" = (

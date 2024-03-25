@@ -27092,6 +27092,11 @@
 	name = "research shutters"
 	},
 /obj/item/folder/white,
+/obj/machinery/door/window/eastright{
+	dir = 1;
+	name = "Research and Development Desk";
+	req_one_access_txt = "7;29"
+	},
 /turf/open/floor/plating,
 /area/science/lab)
 "bqd" = (
@@ -51040,7 +51045,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
-/obj/item/clothing/suit/armor/brigdoc/armor,
+/obj/item/clothing/suit/armor/brigdoc,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "dYe" = (
@@ -62054,7 +62059,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/item/clothing/suit/armor/brigdoc/armor,
+/obj/item/clothing/suit/armor/brigdoc,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "tyL" = (

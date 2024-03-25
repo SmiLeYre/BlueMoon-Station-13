@@ -321,6 +321,7 @@
 			unbuilt_lock.update_appearance()
 		else
 			new /obj/item/electronics/firelock (targetloc)
+			new /obj/item/stack/sheet/metal/five (targetloc)
 	qdel(src)
 
 /obj/machinery/door/firedoor/proc/latetoggle()

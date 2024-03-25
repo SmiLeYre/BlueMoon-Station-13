@@ -55,9 +55,10 @@
 	suit = /obj/item/clothing/suit/toggle/labcoat
 	l_hand = /obj/item/clipboard
 	l_pocket = /obj/item/laser_pointer
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced=1)
+	backpack_contents = list( /obj/item/modular_computer/tablet/preset/advanced=1)
 
 	backpack = /obj/item/storage/backpack/science
+	box = /obj/item/storage/box/survival/command
 	satchel = /obj/item/storage/backpack/satchel/tox
 
 	chameleon_extras = /obj/item/stamp/rd

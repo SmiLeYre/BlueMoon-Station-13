@@ -178,7 +178,7 @@
 	mob_trait = TRAIT_CLOTH_EATER
 
 /datum/quirk/ropebunny
-	name = "Rope Bunny"
+	name = "Верёвочный Кролик"
 	desc = "Вы обучены искусно вязать верёвки любой формы. Вы можете создавать веревку из ткани, а из этой веревки - болы!"
 	value = 2
 

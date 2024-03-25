@@ -43,22 +43,34 @@ GLOBAL_LIST_EMPTY(cached_previews)
 
 	data["character_ref"] = examine_panel_screen.assigned_map
 	data["directory_visible"] = M?.client?.prefs?.show_in_directory
-	data["headshot_link"] = M?.client?.prefs?.features["headshot_link"]
+
+	var/list/headshots = list()
+	if (M?.client?.prefs)
+		if (M.client.prefs.features["headshot_link"])
+			headshots.Add(M.client.prefs.features["headshot_link"])
+		if (M.client.prefs.features["headshot_link1"])
+			headshots.Add(M.client.prefs.features["headshot_link1"])
+		if (M.client.prefs.features["headshot_link2"])
+			headshots.Add(M.client.prefs.features["headshot_link2"])
+
+	data["headshot_links"] = headshots
 
 	if (istype(M, /mob/living/silicon))
 		data["flavortext"] = M?.client?.prefs.features["silicon_flavor_text"] || ""
 
 	data["oocnotes"] = M?.client?.prefs?.features["ooc_notes"] || ""
-	// BLUEMOON ADD START
+
+	// BLUEMOON EDIT START
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		data["species_name"] = M?.client?.prefs?.custom_species || H.dna.species
+		data["species_name"] = H.dna?.custom_species || H.dna?.species
+		data["custom_species_lore"] = H.dna?.custom_species_lore || ""
 	else
-	// BLUEMOON ADD END
 		data["species_name"] = M?.client?.prefs?.custom_species || M // BLUEMOON EDIT - после || замениил "космонавтик" на имя самого моба
 	data["custom_species_lore"] = M?.client?.prefs.features["custom_species_lore"] || "" // BLUEMOON EDIT - если нет кастомного лора, то там 3 чёрточки
-	data["security_records"] = M?.client?.prefs.security_records || "" //BLUEMOON ADD - призраки видят базы данных в описании персонажей
-	data["medical_records"] = M?.client?.prefs.medical_records || "" //BLUEMOON ADD - призраки видят базы данных в описании персонажей
+	if (isobserver(user))
+		data["security_records"] = M?.client?.prefs.security_records || "" //BLUEMOON ADD - призраки видят базы данных в описании персонажей
+		data["medical_records"] = M?.client?.prefs.medical_records || "" //BLUEMOON ADD - призраки видят базы данных в описании персонажей
 	data["vore_tag"] = M?.client?.prefs?.vorepref || "No"
 	data["erp_tag"] = M?.client?.prefs?.erppref || "No"
 	data["mob_tag"] = M?.client?.prefs?.mobsexpref || "No"
@@ -78,11 +90,12 @@ GLOBAL_LIST_EMPTY(cached_previews)
 	if (iscarbon(M))
 		var/mob/living/carbon/C = M
 		unknown = (C.wear_mask && (C.wear_mask.flags_inv & HIDEEYES) && !isobserver(user)) || (C.head && (C.head.flags_inv & HIDEEYES) && !isobserver(user))
-		data["flavortext"] = (!unknown) ? (M?.client?.prefs?.features["flavor_text"] || "") : "Скрыто"
+		data["flavortext"] = (!unknown) ? (C.dna?.flavor_text || "") : "Скрыто"
+		data["headshot_link"] = (!unknown) ? (C.dna?.headshot_link || "") : ""
 		if (istype(M, /mob/living/carbon/human))
 			var/mob/living/carbon/human/H = C
 			var/can_see_naked = !(unknown || (H.w_uniform || H.wear_suit))
-			data["flavortext_naked"] = (can_see_naked && M?.client?.prefs?.features["naked_flavor_text"]) || ""
+			data["flavortext_naked"] = can_see_naked ? (C.dna?.naked_flavor_text || "") : ""
 
 	data["is_unknown"] = unknown
 
@@ -126,12 +139,7 @@ GLOBAL_LIST_EMPTY(cached_previews)
 	if (!ui)
 		user.client.register_map_obj(examine_panel_screen)
 		examine_panel_screen.setDir(SOUTH)
-		// BLUEMOON ADD START - призраки видят базы данных в описании персонажей
-		if(isobserver(user))
-			ui = new(user, src, "CharacterProfileForGhosts", "Профиль персонажа [M]")
-		else
-		// BLUEMOON ADD END
-			ui = new(user, src, "CharacterProfile", "Профиль персонажа [M]")
+		ui = new(user, src, "CharacterProfile", "Профиль персонажа [M]")
 		ui.open()
 
 /datum/description_profile/ui_act(action, list/params)

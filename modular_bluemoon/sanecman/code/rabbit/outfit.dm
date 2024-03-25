@@ -4,6 +4,7 @@
 /obj/item/clothing/under/suit/lobotomy/rabbit
 	name = "\improper r-corp uniform"
 	desc = "A black uniform with a orange line worn by R-corps mercenaries."
+	armor = list(MELEE = 40, BULLET = 30, LASER = 20,ENERGY = 30, BOMB = 30, BIO = 30, RAD = 30, FIRE = 100, ACID = 100)
 	icon = 'modular_bluemoon/sanecman/icons/lcorp/obj/lcuniform.dmi'
 	mob_overlay_icon = 'modular_bluemoon/sanecman/icons/lcorp/mob/under.dmi'
 	mutantrace_variation = STYLE_DIGITIGRADE|USE_TAUR_CLIP_MASK|STYLE_NO_ANTHRO_ICON
@@ -18,6 +19,7 @@
 /obj/item/clothing/head/rabbit_helmet //No armor since the ego-gears do it's job.
 	name = "\improper rabbit team command helmet"
 	desc = "An Combat helmet worn by R-Corporation mercenaries in the field, this one look rather unique"
+	armor = list(MELEE = 40, BULLET = 30, LASER = 20,ENERGY = 30, BOMB = 30, BIO = 30, RAD = 30, FIRE = 100, ACID = 100)
 	icon_state = "rabbit"
 	icon = 'modular_bluemoon/sanecman/icons/lcorp/obj/head.dmi'
 	mob_overlay_icon = 'modular_bluemoon/sanecman/icons/lcorp/mob/head.dmi'
@@ -28,6 +30,7 @@
 /obj/item/clothing/head/rabbit_helmet/grunt
 	name = "\improper rabbit team helmet"
 	desc = "An Combat helmet worn by R-Corporation mercenaries in the field."
+	armor = list(MELEE = 40, BULLET = 30, LASER = 20,ENERGY = 30, BOMB = 30, BIO = 30, RAD = 30, FIRE = 100, ACID = 100)
 	icon_state = "rabbit"
 
 /obj/item/clothing/head/rabbit_helmet/grunt/Initialize(mapload)

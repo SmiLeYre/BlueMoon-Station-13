@@ -45,6 +45,14 @@
 	illegal_tech = FALSE
 	purchasable_from = UPLINK_SYNDICATE
 
+/datum/uplink_item/badass/balloon/inteq_ballon
+	name = "InteQ Balloon"
+	desc = "Для тех, кто хочет заявить о своём причастии к InteQ: Бесполезный оранжевый шар с логотипом ЧВК. \
+			Может подорвать даже самое идеальное прикрытие. Серьёзно, это бесполезный шарик."
+	item = /obj/item/toy/inteqballoon
+	cost = 30
+	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
+
 /datum/uplink_item/badass/syndiecash
 	name = "Briefcase Full of Cash"
 	desc = "A secure briefcase containing 5000 space credits. Useful for bribing personnel, or purchasing goods \

@@ -130,6 +130,11 @@
 	desc = "A card indicating that the barkeep is allowed to carry a weapon, most likely their shotgun."
 	icon_state = "permit"
 
+/obj/item/clothing/accessory/permit/guard
+	name = "guard weapon permit"
+	desc = "A card indicating that the department guard is allowed to carry limited list of non-lethal weapons."
+	icon_state = "permit"
+
 //Hyper stuff
 // Bouquets
 /obj/item/bouquet

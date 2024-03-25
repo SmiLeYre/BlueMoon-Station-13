@@ -83,7 +83,7 @@
 	item_flags = IMMUTABLE_SLOW
 	var/obj/item/mod/control/mod
 	var/obj/item/clothing/overslot
-	mutantrace_variation = STYLE_NO_ANTHRO_ICON
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/gloves/mod/Destroy()
 	if(!QDELETED(mod))

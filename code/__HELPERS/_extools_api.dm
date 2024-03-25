@@ -7,6 +7,9 @@
 /proc/auxtools_stack_trace(msg)
 	CRASH(msg)
 
+/proc/auxtools_expr_stub()
+	return
+
 //glob doesn't exist yet at some gas new calls, imma use it anyways
 GLOBAL_REAL_VAR(list/__auxtools_initialized) = list()
 
