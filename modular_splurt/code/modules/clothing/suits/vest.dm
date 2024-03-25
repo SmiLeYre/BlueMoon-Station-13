@@ -92,6 +92,7 @@
 	item_state = "peacekeeper_trench_warden"
 	icon = 'modular_splurt/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/suit.dmi'
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON // BLUEMOON ADD - фикс отсутствия спрайта для персонажей с альтернативными ногами
 
 /obj/item/clothing/suit/armor/hos/peacekeeper
 	name = "head of security's peacekeeper armored trench coat"

@@ -241,10 +241,9 @@ GLOBAL_LIST_EMPTY(uplinks)
 	if (!user || user.incapacitated())
 		return
 	if(U.hijack_only)
-		if(!(usr.mind.special_role == ROLE_OPERATIVE) || !(usr.mind.special_role == "nukie mid") || !(usr.mind.special_role == "Lone Operative"))//nukies get items that regular traitors only get with hijack. If a hijack-only item is not for nukies, then exclude it via the gamemode list.
-			if(!(locate(/datum/objective/hijack) in usr.mind.get_all_objectives()) || !(locate(/datum/objective/martyr) in usr.mind.get_all_objectives()))
-				to_chat(usr, "<span class='warning'>InteQ выдает этот чрезвычайно опасный предмет только агентам, получившим особо сложное задание.</span>")
-				return
+		if(!(usr.mind.special_role == ROLE_OPERATIVE) || !(usr.mind.special_role == "nukie mid") || !(usr.mind.special_role == "Lone Operative") || !(locate(/datum/objective/hijack) in usr.mind.get_all_objectives()) || !(locate(/datum/objective/martyr) in usr.mind.get_all_objectives()))//nukies get items that regular traitors only get with hijack. If a hijack-only item is not for nukies, then exclude it via the gamemode list.
+			to_chat(usr, "<span class='warning'>InteQ выдает этот чрезвычайно опасный предмет только агентам, получившим особо сложное задание.</span>")
+			return
 
 	if(telecrystals < U.cost || U.limited_stock == 0)
 		return

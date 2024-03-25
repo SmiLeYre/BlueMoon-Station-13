@@ -19,7 +19,7 @@
 
 
 /obj/machinery/jukebox/proc/get_songs()
-	if (!queried_songs || !length(queried_songs))
+	if (isnull(queried_songs))
 		return get_cached_songs()
 	return queried_songs
 
@@ -65,7 +65,7 @@
 
 
 /obj/machinery/jukebox/proc/do_search_query(query)
-	queried_songs = fuzzy_search(query, get_cached_songs(), amount = JUKEBOX_MAX_SONGS_PER_PAGE, case_sensitive = FALSE)
+	queried_songs = simple_search(query, get_cached_songs(), case_sensitive = FALSE)
 	ui_page = 0
 
 

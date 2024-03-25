@@ -8,7 +8,6 @@
 		"Syndicate Admiral",
 		"Station Mistress",
 		"Station Master",
-		"Syndicate Admiral",
 		"Cockpitain",
 		"Cuntpitain",
 		"Senator",
@@ -44,8 +43,6 @@
 		"Headpat Of Personnel",
 		"Headgiver To Personnel",
 		"Personnel Manager",
-		"Syndicate Administrator",
-		"Personnel Manager of Syndicate",
 		"Staff Administrator",
 		"Records Administrator",
 		"Syndicate Administrator",
@@ -60,10 +57,10 @@
 		"Security Commander",
 		"Head of Slutcurity",
 		"Division Leader",
-		"Syndicate Field Commander",
 		"Cerberus Leader",
 		"Syndicate Field Commander",
 		"Head of Studcurity",
+		"Big Iron",
 		"Commissar"
 	)
 	if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
@@ -76,7 +73,6 @@
 		"Supply Chief",
 		"Cargonia Chief",
 		"Brigadier",
-		"Logistics Syndicate Supervisor",
 		"Manager of Shipping Sex"
 	)
 	LAZYADD(alt_titles, extra_titles)
@@ -88,7 +84,6 @@
 		"Cybersun Lead Specialist",
 		"CEO of Sex",
 		"Sex Research Director",
-		"Cybersun Lead Specialist",
 		"Research Manager"
 	)
 	LAZYADD(alt_titles, extra_titles)
@@ -101,7 +96,6 @@
 		"Specialist Of Interdyne",
 		"Healing Fleshlight Mistress",
 		"Healing Fleshlight Master",
-		"Specialist Of Interdyne",
 		"Chief Heal Stud",
 		"Chief Heal Slut"
 	) // Sandcode do not have alt titles for CMO at the moment.
@@ -113,7 +107,6 @@
 		"Atmos Plumber",
 		"Syndicate Atmospherics Master",
 		"Anal Plumber",
-		"Syndicate Atmospherics Master",
 		"Atmos-Slut",
 		"Buttplug",
 		"Disposals Technician"
@@ -128,7 +121,6 @@
 		"Syndicate Constructing Master",
 		"Station Architect",
 		"Hazardous Material Operator",
-		"Syndicate Constructing Master",
 		"Junior Engineer",
 		"Engi-Slut",
 		"Apprentice Engineer",
@@ -217,7 +209,6 @@
 		"Syndicate Techpriest",
 		"Counselor",
 		"Techpriest",
-		"Syndicate Techpriest"
 	)
 	LAZYADD(alt_titles, extra_titles)
 	LAZYREMOVE(alt_titles, rem_titles)
@@ -273,7 +264,6 @@
 	var/list/extra_titles = list(
 		"Syndicate Attorney",
 		"Law-Slut",
-		"Syndicate Attorney",
 		"Internal Affairs Agent",
 		"Attorney"
 	)
@@ -415,7 +405,6 @@
 		"Gumshoe",
 		"Slutective",
 		"Studective",
-		"Syndicate Survey Specialist",
 		"Van Dorn Agent",
 		"Forensic Investigator",
 		"Cinder Dick",
@@ -459,9 +448,7 @@
 		"Prison Administrator",
 		"Dungeon Master",
 		"Brig Superintendent",
-		"High-Ranked Security Officer",
 		"Brig Overwatch",
-		"Syndicate Supervisor",
 		"Slutcurity Captain",
 		"Voreden"
 	)

@@ -24,7 +24,7 @@
  */
 
 /obj/item/storage/box
-	name = "box"
+	name = "Box"
 	desc = "It's just an ordinary box."
 	icon_state = "box"
 	item_state = "syringe_kit"
@@ -105,7 +105,7 @@
 
 // Ordinary survival box
 /obj/item/storage/box/survival
-	name = "survival box"
+	name = "Survival Box"
 	desc = "A box with the bare essentials of ensuring the survival of you and others."
 	icon_state = "internals"
 	illustration = "emergencytank"
@@ -160,8 +160,9 @@
 
 // Engineer survival box
 /obj/item/storage/box/survival/engineer
-	name = "extended-capacity survival box"
+	name = "Extended-Capacity Survival Box"
 	desc = "A box with the bare essentials of ensuring the survival of you and others. This one is labelled to contain an extended-capacity tank."
+	icon_state = "engibox"
 	illustration = "extendedtank"
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
 
@@ -171,7 +172,7 @@
 
 // Syndie survival box
 /obj/item/storage/box/survival/syndie //why is this its own thing if it's just the engi box with a syndie mask and medipen?
-	name = "extended-capacity survival box"
+	name = "Extended-Capacity Survival Box"
 	desc = "A box with the bare essentials of ensuring the survival of you and others. This one is labelled to contain an extended-capacity tank."
 	illustration = "extendedtank"
 	mask_type = /obj/item/clothing/mask/gas/syndicate
@@ -180,6 +181,8 @@
 
 // Security survival box
 /obj/item/storage/box/survival/security
+	name = "Extended-Capacity Survival Box"
+	icon_state = "secbox_xl"
 	mask_type = /obj/item/clothing/mask/gas/sechailer
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi/sec
 
@@ -191,6 +194,19 @@
 	..() // we want the regular stuff too
 	new /obj/item/radio/off(src)
 	new /obj/item/flashlight/glowstick/red(src)
+
+//Command survival box
+/obj/item/storage/box/survival/command
+	name = "Extended-Capacity Survival Box"
+	icon_state = "ghostcostuming"
+	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
+	medipen_type = /obj/item/reagent_containers/hypospray/medipen/atropine
+
+/obj/item/storage/box/survival/command/PopulateContents()
+	..() // we want the regular stuff too
+	new /obj/item/crowbar/red/sec(src)
+	new /obj/item/reagent_containers/spray/pepper(src)
+	new /obj/item/melee/classic_baton/telescopic(src)
 
 /obj/item/storage/box/seclooking
 	icon_state = "secbox"

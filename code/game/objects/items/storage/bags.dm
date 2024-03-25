@@ -403,7 +403,7 @@
 	icon_state = "bag"
 	item_state = "bag"
 	desc = "A bag for storing pills, patches, and bottles."
-	slot_flags = ITEM_SLOT_BELT|ITEM_SLOT_POCKETS
+	slot_flags = ITEM_SLOT_BELT
 	resistance_flags = FLAMMABLE
 
 /obj/item/storage/bag/chemistry/ComponentInitialize()
@@ -424,7 +424,7 @@
 	icon_state = "biobag"
 	item_state = "biobag"
 	desc = "A bag for the safe transportation and disposal of biowaste and other biological materials."
-	slot_flags = ITEM_SLOT_BELT|ITEM_SLOT_POCKETS
+	slot_flags = ITEM_SLOT_BELT
 	resistance_flags = FLAMMABLE
 
 /obj/item/storage/bag/bio/ComponentInitialize()

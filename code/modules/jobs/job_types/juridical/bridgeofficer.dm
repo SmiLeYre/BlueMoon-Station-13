@@ -40,6 +40,7 @@
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	l_pocket = /obj/item/pda
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced = 1)
+	box = /obj/item/storage/box/survival/command
 
 /datum/outfit/job/bridgeofficer/syndicate
 	name = "Syndicate Bridge Officer"

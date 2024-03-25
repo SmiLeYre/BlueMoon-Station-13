@@ -4439,6 +4439,11 @@
 /area/abductor_ship)
 "alj" = (
 /obj/structure/closet/abductor,
+/obj/item/reagent_containers/glass/bottle/chloralhydrate,
+/obj/item/reagent_containers/glass/bottle/chloralhydrate,
+/obj/item/reagent_containers/glass/bottle/morphine,
+/obj/item/reagent_containers/glass/bottle/morphine,
+/obj/item/reagent_containers/glass/bottle/morphine,
 /turf/open/floor/plating/abductor,
 /area/abductor_ship)
 "alk" = (
