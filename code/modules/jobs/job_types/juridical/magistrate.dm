@@ -10,7 +10,7 @@
 	spawn_positions = 1
 	minimal_player_age = 35
 	supervisors = "Представители Центрального Командования и Космический Закон"
-	selection_color = "#7e3d48"
+	selection_color = "#aac1ee"
 	considered_combat_role = FALSE
 	exp_requirements = 180
 	exp_type = EXP_TYPE_COMMAND

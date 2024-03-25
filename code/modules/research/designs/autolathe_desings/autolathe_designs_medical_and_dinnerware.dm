@@ -223,3 +223,12 @@
 	build_path = /obj/item/reagent_containers/glass/bottle/vial/large
 	category = list("initial","Medical","Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+
+/datum/design/spray_bottle
+	name = "Spray Bottle"
+	id = "spray_bottle"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 200, /datum/material/glass = 1000)
+	build_path = /obj/item/reagent_containers/spray
+	category = list("initial","Medical","Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL

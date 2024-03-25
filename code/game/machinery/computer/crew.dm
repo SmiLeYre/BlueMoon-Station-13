@@ -33,6 +33,7 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 	// Command
 	jobs["Captain"] = 00
 	jobs["Blueshield"] = 01
+	jobs["Bridge Officer"] = 03
 	// Security
 	jobs["Head of Security"] = 10
 	jobs["Warden"] = 11
@@ -40,7 +41,7 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 	jobs["Detective"] = 13
 	jobs["Brig Physician"] = 14
 	jobs["Peacekeeper"] = 15
-	jobs["Lawyer"] = 16
+	jobs["Internal Affairs Agent"] = 16
 	jobs["NanoTrasen Representative"] = 17
 	// Medical
 	jobs["Chief Medical Officer"] = 20
@@ -73,7 +74,6 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 	jobs["Mime"] = 67
 	jobs["Janitor"] = 68
 	jobs["Psychologist"] = 71
-	jobs["Bridge Officer"] = 72
 	jobs["Bouncer"] = 73
 	jobs["Entertainer"] = 74 // BLUEMOON ADD
 	// Central Command
