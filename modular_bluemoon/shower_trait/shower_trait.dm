@@ -7,28 +7,42 @@
 #define VERY_DIRTY 1000 // негативное настроение, визуальный эффект, сообщение при экзейме окружающим
 
 /datum/quirk/bluemoon_shower_need
-	name = "Потребность в душе"
+	name = BLUEMOON_TRAIT_NAME_SHOWER_NEED
 	desc = "Вам нужно периодически ходить в душ. Хотя бы на станции. Из-за особенностей здешних мест, делать это нужно хотя бы раз в час на пару минут."
-	value = -2
-	gain_text = span_warning("Чистота - залог хорошего настроения! ()")
+	gain_text = span_warning("Чистота - залог хорошего настроения!")
 	lose_text = span_notice("Мне достаточно мыться раз в неделю, ведь в среднем на 10-минутный душ расходуется 60 литров воды. Использование нагревателя повышает расход в три раза, а на ванну нужно как минимум 200 литров. Получается, что семья из четырех человек, которые каждый день принимают 10-минутный душ, расходует 25 куб. м воды каждый год (традиционно в Великобритании установлены отдельные краны с холодной и горячей водой без смесителя, и для теплого душа нужен проточный нагреватель — прим. ред.). Цена электричества повышает стоимость гигиены такой семьи с 400 £ до 1200 £ в год. И это еще не все: любители душа оказываются ответственными за выброс в атмосферу 3,5 тонн углекислого газа. Чтобы остановить глобальное потепление, мы можем позволить себе только 1 тонну СО2 на человека, с учетом всей его жизнедеятельности от еды до транспорта.")
+	value = -2
+	mob_trait = TRAIT_BLUEMOON_SHOWER_NEED
 	processing_quirk = TRUE
 	mood_quirk = TRUE
 
 	var/cleanse_level = CLEAN //уровень чистоты персонажа
 	var/doing_shower = FALSE // оповещение, что персонаж вошёл в душ и игроку нужно подождать, пока он не станет чистым
-	var/warning_level = 0 // предупреждения для игрока в чат. Обнуляются при достижении чистоты в 100 и меньше
+	var/hide_visual_effect = FALSE // если игрок хочет, он может отключить визуальное отображение, но при этом будет сильное падение настроения
+	var/cleaned_times = 0 // счётчик, сколько тиков игрок постоял под душем
+	var/warning_level = 0 // предупреждения для игрока в чат. Обнуляются при достижении чистоты
 
 /datum/quirk/bluemoon_shower_need/on_spawn()
 	. = ..()
 	RegisterSignal(quirk_holder, COMSIG_COMPONENT_CLEAN_ACT, .proc/cleaning) // реакция, когда персонаж встаёт под душ
 	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/examine) // реакция, когда персонажа осматривают
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!H)
+		return
+	var/datum/action/cooldown/change_stink_overlay/C = new // выдача способности для изменения оверлея вони
+	C.Grant(H)
+
+/datum/quirk/bluemoon_shower_need/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/action/cooldown/change_stink_overlay/C = locate() in H.actions
+	C.Remove(H) // забираем способность изменения оверлея вони
+	. = ..()
 
 /datum/quirk/bluemoon_shower_need/process()
 	. = ..()
-	cleanse_level = min(cleanse_level + 0.28, 1001) // около 1 игрового часа нужно (без учёта лагов), чтобы требование к мытью поднялось до 1001
+	cleanse_level = clamp(cleanse_level + 0.28, 0, 1001) // около 1 игрового часа нужно (без учёта лагов), чтобы требование к мытью поднялось до 1001
 	switch(cleanse_level)
-		if(CLEAN to FINE_CLEAN)
+		if(-INFINITY to FINE_CLEAN)
 			if(warning_level > 0)
 				to_chat(quirk_holder, span_notice("Моё тело чистое, можно выходить."))
 				quirk_holder.remove_status_effect(/datum/status_effect/transient/stink)
@@ -45,16 +59,24 @@
 				to_chat(quirk_holder, span_phobia("Мне нужно сходить в душ."))
 				warning_level = 2
 		if(VERY_DIRTY to INFINITY)
-			SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "need_shower", /datum/mood_event/need_shower/very_dirty)
+			if(hide_visual_effect)
+				SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "need_shower", /datum/mood_event/need_shower/very_dirty_catastrophic)
+			else
+				SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "need_shower", /datum/mood_event/need_shower/very_dirty)
+				quirk_holder.apply_status_effect(STATUS_EFFECT_STINK, 50)
 			if(warning_level < 3)
 				to_chat(quirk_holder, span_phobia("Мне ОЧЕНЬ нужно сходить в душ!"))
-				quirk_holder.apply_status_effect(STATUS_EFFECT_STINK, 100000)
 				warning_level = 3
 
 /datum/quirk/bluemoon_shower_need/proc/examine(atom/examine_target, mob/living/carbon/human/examiner, list/examine_list)
 	SIGNAL_HANDLER
-	if(cleanse_level >= DIRTY) // если персонаж достаточно грязный, об этом пишется в экзейм
-		examine_list += span_warning("[quirk_holder.p_they_ru(TRUE)] плохо пахнет.")
+	if(HAS_TRAIT(examiner, /datum/quirk/no_smell) || examiner.internal) // персонажи с аносмией и с включенным кислородным баллоном всё ещё могут понять, что кто-то грязный (там оверлей, это уже мета уровень)
+		examine_list += span_notice("[quirk_holder.p_they_ru(TRUE)] давно не мы[quirk_holder.ru_sya()].")
+		return
+
+	if(!hide_visual_effect) // игрок не пытается скрыть вонь персонажа
+		if(cleanse_level >= DIRTY) // если персонаж достаточно грязный, об этом пишется в экзейм
+			examine_list += span_warning("[quirk_holder.p_they_ru(TRUE)] плохо пахнет.")
 
 /datum/quirk/bluemoon_shower_need/proc/cleaning()
 	SIGNAL_HANDLER
@@ -73,11 +95,16 @@
 			to_chat(quirk_holder, span_notice("Теперь только подождать... Есть время разгрузить голову и расслабиться."))
 			doing_shower = TRUE
 		cleaning_efficiency = 20 // 1.7~ минут с 1000
-	else // За поставленный в  неподходящей зоне душ и мытьё там штраф
+	else // за поставленный в неподходящей зоне душ и мытьё там штраф
 		if(!doing_shower && warning_level != 0)
 			to_chat(quirk_holder, span_warning("Я смогу помыться, но это место плохо подходит для душевой и это будет в два раза дольше. Дормиторий, уборные, личные каюты подходят куда лучше..."))
 			doing_shower = TRUE
 
+	cleaned_times++
+	if(!(cleaned_times % 10)) // каждые 10 тиков новый сон в чат
+		if(iscarbon(quirk_holder))
+			var/mob/living/carbon/holder = quirk_holder
+			holder.dream(dreaming_in_shower = TRUE)
 	cleanse_level = max(0, cleanse_level - cleaning_efficiency)
 
 /datum/quirk/bluemoon_shower_need/proc/check_for_clothing()
@@ -111,6 +138,29 @@
 	return TRUE // в наушниках, очках, галстуках, части нижнего белья можно мыться
 
 /*
+ * СПОСОБНОСТЬ
+ */
+
+/datum/action/cooldown/change_stink_overlay
+	name = "Change Stink Overlay"
+	desc = "Вы можете убрать отображение того, что персонаж плохо пахнет (облачко над ним и сообщение при осмотре), но это будет стоить катастрофического падения настроения."
+	icon_icon = 'icons/obj/watercloset.dmi'
+	button_icon_state = "shower"
+	cooldown_time = 5 SECONDS
+	transparent_when_unavailable = TRUE
+
+/datum/action/cooldown/change_stink_overlay/Trigger()
+	. = ..()
+	if(!.) // Что-то мешает, например не прошёл КД или персонаж без сознания
+		return FALSE
+
+	if(ishuman(owner)) //roundstart_quirks только у хуманов
+		var/mob/living/carbon/human/action_holder = owner
+		for(var/datum/quirk/bluemoon_shower_need/quirk in action_holder.roundstart_quirks)
+			quirk.hide_visual_effect = !quirk.hide_visual_effect // скрываем визуальный эффект
+			to_chat(owner, span_notice("Теперь окружающие [quirk.hide_visual_effect ? "не будут" : "будут"] замечать плохой запах. [quirk.hide_visual_effect ? "Однако, настроение будет контролировать намного сложнее..." : ""]"))
+
+/*
  * ИВЕНТЫ НАСТРОЕНИЯ
  */
 
@@ -127,14 +177,19 @@
 	description = span_boldwarning("Мне ОЧЕНЬ нужно сходить в душ!\n")
 	mood_change = -4
 
+/datum/mood_event/need_shower/very_dirty_catastrophic
+	description = span_phobia("МНЕ КРИТИЧЕСКИ НУЖНО СХОДИТЬ В ДУШ!\n")
+	mood_change = -16 // игрок скрывает визуальный негативный эффект, но от этого персонаж сильно страдает
+
 /*
  * ОВЕРЛЕЙ
  */
 
 /datum/status_effect/transient/stink //cope-paste from confusion
 	id = "stink"
-	var/image/overlay
 	on_remove_on_mob_delete = TRUE
+	status_type = STATUS_EFFECT_REFRESH
+	var/image/overlay
 
 /datum/status_effect/transient/stink/tick()
 	. = ..()
@@ -151,7 +206,7 @@
 		return
 	var/matrix/M = matrix()
 	M.Scale(0.6)
-	overlay = image('modular_bluemoon/shower_trait/stink.dmi', "steam_single", pixel_y = 12, layer = -FIRE_LAYER)
+	overlay = image('modular_bluemoon/shower_trait/stink.dmi', "steam_double", pixel_y = 12, layer = -FIRE_LAYER)
 	overlay.transform = M
 	owner.add_overlay(overlay)
 
