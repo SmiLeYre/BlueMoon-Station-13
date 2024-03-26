@@ -498,26 +498,26 @@ All effects don't start immediately, but rather get worse over time; the rate is
 91-100: Dangerously toxic - swift death
 */
 #define BALLMER_POINTS 5
-GLOBAL_LIST_INIT(ballmer_good_msg, list("Hey guys, what if we rolled out a bluespace wiring system so mice can't destroy the powergrid anymore?",
-										"Hear me out here. What if, and this is just a theory, we made R&D controllable from our PDAs?",
-										"I'm thinking we should roll out a git repository for our research under the AGPLv3 license so that we can share it among the other stations freely.",
-										"I dunno about you guys, but IDs and PDAs being separate is clunky as fuck. Maybe we should merge them into a chip in our arms? That way they can't be stolen easily.",
-										"Why the fuck aren't we just making every pair of shoes into galoshes? We have the technology.",
-										"We can link the Ore Silo to our protolathes, so why don't we also link it to autolathes?",
-										"If we can make better bombs with heated plasma, oxygen, and tritium, then why do station nukes still use plutonium?",
- 										"We should port all our NT programs to modular consoles and do away with computers. They're way more customizable, support cross-platform usage, and would allow crazy amounts of multitasking.",
-										"Wait, if we use more manipulators in something, then it prints for cheaper, right? So what if we just made a new type of printer that has like 12 manipulators inside of it to print stuff for really cheap?"
+GLOBAL_LIST_INIT(ballmer_good_msg, list("Эй, народ, а что, если мы заменим обычную проводку на блюспейсовую и тогда мыши не смогут перегрызть электросети?",
+										"Послушайте. А что если в теории, мы бы смогли управлять НИО с наших ПДА?",
+										"Я думаю, нам стоит создать git-репозиторий для наших исследований под лицензией AGPLv3, так бы мы смогли свободно раздавать их другим станциям.",
+										"Не знаю как насчёт вас, но ID и ПДА по отдельности - это чертовски неудобно. Может нам, стоит объеденить их в чип и вживить его в руку? Тогда, их перестанут так легко красть.",
+										"Почему мы просто не превратим каждую пару обуви в галоши? У нас есть же технология!",
+										"Мы можем связать СИЛО с нашими протолатами, так почему бы нам не связать его и с автолатами?",
+										"Если мы можем делать лучшие бомбы с помощью нагретой плазмы, кислорода и трития, то почему в станционных ядерных бомбах до сих пор используется плутоний?",
+ 										"Мы должны перенести весь наш NT-софт на модульные консоли и выкинуть компьютеры. Они гораздо лучше настраиваются, поддерживают кросс-платформенное использование и позволяют использовать безумное количество многозадачности.",
+										"Подождите, если мы используем больше манипуляторов в чем-то, то это печатается дешевле, верно? А если мы просто сделаем новый тип принтера с 12 манипуляторами внутри, чтобы печатать вещи очень дешево?"
 										))
-GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put a webserver that's automatically turned on with default admin passwords into every PDA?",
-											"So like, you know how we separate our codebase from the master copy that runs on our consumer boxes? What if we merged the two and undid the separation between codebase and server?",
-											"Dude, radical idea: H.O.N.K mechs but with no bananium required.",
-											"Best idea ever: Disposal pipes instead of hallways.",
-											"What if we use a language that was written on a napkin and created over 1 weekend for all of our servers?",
-											"What if we took a locker, some random trash, and made an exosuit out of it? Wouldn't that be like, super cool and stuff?",
-											"Okay, hear me out, what if we make illegal things not illegal, so that sec stops arresting us for having it?",
-											"I have a crazy idea, guys. Rather than having monkeys to test on, what if we only used apes?",
-											"Woh man ok, what if we took slime cores and smashed them into other slimes, be kinda cool to see what happens.",
-											"We're NANOtrasen but we need to unlock nano parts, what's the deal with that?"
+GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Йоу, а что, если мы поставим в каждый КПК автоматически включаемый веб-сервер с паролями администраторов по умолчанию?",
+											"Итак, вы знаете, как мы отделяем нашу кодовую базу от мастер-ветки, которая запускается на наших потребительских устройствах? Что, если мы объединим их и отменим разделение между кодовой базой и сервером?",
+											"Чувак, радикальная идея: мехи H.O.N.K, но без требуемого бананиума.",
+											"Просто идеальная идея. Заместо ходьбы по коридорам, установить мусорные трубы.",
+											"Что, если мы будем использовать язык, написанный на салфетке и созданный за одну неделю, для всех наших серверов?",
+											"Что, если мы возьмем шкафчик, случайный мусор и сделаем из него экзокостюм? Разве это не было бы супер круто и все такое?",
+											"Окей, послушай меня, что если мы начнём делать незаконные вещи, законными, чтобы охрана перестала нас донимать, за их наличие?",
+											"У меня есть безумная идея, ребята. Что если вместо обезьян для испытаний, мы будем использовать только горилл?",
+											"Воу, ладно, а что если мы возьмём чуток ядер слаймов и смешаем их в другого слайма, было бы круто посмотреть, что получится.",
+											"Мы НАНОтрайзен, и нам нужно разблокировать наночасти, что с этим не так?"
 											))
 
 //this updates all special effects: stun, sleeping, knockdown, druggy, stuttering, etc..
