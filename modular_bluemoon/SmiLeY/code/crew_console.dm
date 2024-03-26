@@ -21,7 +21,7 @@
 	canalarm = FALSE
 	var/injuredcount = 0
 
-	for(var/mob/living/carbon/human/mob in GLOB.suit_sensors_list) //BLUEMOON CHANGE был carbon_list, в котором были лишние мобы
+	for(var/mob/living/carbon/human/mob in GLOB.carbon_list)
 		if(mob.z != src.z)
 			continue
 		else if(!istype(mob.w_uniform, /obj/item/clothing/under)) //BLUEMOON CHANGE проверка на существование униформы, сколько её может быть и не быть
