@@ -401,7 +401,7 @@
 	if(in_range(user, src) && isliving(user))
 		var/mob/living/M = user
 		if(M.has_gravity() && !(M.movement_type & FLYING) && ((M.mob_size > MOB_SIZE_SMALL && !HAS_TRAIT(M, TRAIT_BLUEMOON_LIGHT)) || M.mob_size > MOB_SIZE_HUMAN))
-			. += span_notice("It looks like it will break if you try to climb on it.")
+			. += span_danger("It looks like it will break if you try to climb on it.")
 		else
 			. += span_notice("It seems that it can be crossed safely.")
 //BLUEMOON ADD END
