@@ -52,7 +52,7 @@
 	name = "Vox Scavengers"
 	antag_flag = "Vox Scavengers"
 	required_type = /mob/dead/observer
-	enemy_roles = list("Security Officer", "Detective", "Head of Security", "Captain")
+	enemy_roles = list("Security Officer", "Detective", "Head of Security","Bridge Officer", "Captain")
 	required_enemies = list(0,0,0,0,0,0,0,0,0,0)
 	required_candidates = 0
 	weight = 3

@@ -202,7 +202,7 @@
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
 	medipen_type = /obj/item/reagent_containers/hypospray/medipen/atropine
 
-/obj/item/storage/box/survival/security/PopulateContents()
+/obj/item/storage/box/survival/command/PopulateContents()
 	..() // we want the regular stuff too
 	new /obj/item/crowbar/red/sec(src)
 	new /obj/item/reagent_containers/spray/pepper(src)

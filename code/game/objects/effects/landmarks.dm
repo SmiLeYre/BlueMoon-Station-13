@@ -145,8 +145,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "Curator"
 
 /obj/effect/landmark/start/lawyer
-	name = "Lawyer"
-	icon_state = "Lawyer"
+	name = "Internal Affairs Agent"
+	icon_state = "Internal Affairs Agent"
 
 /obj/effect/landmark/start/ntr
 	name = "NanoTrasen Representative"

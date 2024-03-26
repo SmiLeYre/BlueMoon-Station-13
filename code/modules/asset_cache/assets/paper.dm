@@ -10,6 +10,7 @@
 		"stamp-hos" = 'icons/stamp_icons/large_stamp-hos.png',
 		"stamp-rd" = 'icons/stamp_icons/large_stamp-rd.png',
 		"stamp-cap" = 'icons/stamp_icons/large_stamp-cap.png',
+		"stamp-com" = 'icons/stamp_icons/large_stamp-com.png',
 		"stamp-qm" = 'icons/stamp_icons/large_stamp-qm.png',
 		"stamp-law" = 'icons/stamp_icons/large_stamp-law.png',
 		"stamp-chap" = 'icons/stamp_icons/large_stamp-chap.png',

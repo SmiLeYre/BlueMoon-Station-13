@@ -4,13 +4,17 @@
 	luminosity = 1
 	light_power = 3
 	var/canalarm = FALSE
-	var/obj/item/radio/radio
+	var/obj/item/radio/Radio
+	var/radio_key = /obj/item/encryptionkey/headset_med
 
 /obj/machinery/computer/crew/Initialize(mapload, obj/item/circuitboard/C)
 	. = ..()
-	radio = new/obj/item/radio(src)
-	radio.listening = FALSE
-	radio.recalculateChannels()
+	Radio = new/obj/item/radio(src)
+	if(radio_key)
+		Radio.keyslot = new radio_key
+	Radio.subspace_transmission = TRUE
+	Radio.canhear_range = 0 // anything greater will have the bot broadcast the channel as if it were saying it out loud.
+	Radio.recalculateChannels()
 	alarm()
 
 /obj/machinery/computer/crew/proc/alarm()
@@ -42,7 +46,6 @@
 
 /obj/machinery/computer/crew/proc/alert_radio(canalarm, injuredcount)
 	if(canalarm)
-		radio.set_frequency(FREQ_MEDICAL)
-		radio.talk_into(src, "[injuredcount] нуждаются в оказании срочной медицинской помощи.", RADIO_CHANNEL_MEDICAL)
+		Radio.talk_into(src, "Внимание. Сотрудники Космической Станции нуждаются в срочной медицинской помощи. Количество: [injuredcount]", RADIO_CHANNEL_MEDICAL, list(z))
 
 #undef SENSORS_UPDATE_PERIOD

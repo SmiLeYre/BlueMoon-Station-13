@@ -16,7 +16,8 @@
 					/obj/item/flashlight/seclite = 4,
 					/obj/item/restraints/legcuffs/bola/energy = 12,
 					/obj/item/evidencebag = 20,
-					/obj/item/secbat = 5)
+					/obj/item/secbat = 5,
+					/obj/item/fee_terminal = 10)
 	contraband = list(/obj/item/clothing/glasses/sunglasses = 2,
 					/obj/item/storage/fancy/donut_box = 2,
 					/obj/item/storage/belt/sabre/secbelt = 1)
