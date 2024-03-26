@@ -15,6 +15,7 @@ GLOBAL_LIST_INIT(slavers_ransom_values, list(
 	"Research Director" 		= 120000,
 	"Chief Medical Officer" 	= 120000,
 	"Blueshield" 				= 100000,
+	"Bridge Officer" 			= 80000,
 
 	"Warden" 					= 80000,
 	"Brig Physician" 			= 40000,
@@ -33,7 +34,7 @@ GLOBAL_LIST_INIT(slavers_ransom_values, list(
 	"Clown"						= SLAVER_STANDARD_RANSOM,
 	"Mime"						= SLAVER_STANDARD_RANSOM,
 	"Curator"					= SLAVER_STANDARD_RANSOM,
-	"Internal Affairs Agent"					= SLAVER_STANDARD_RANSOM,
+	"Internal Affairs Agent"	= SLAVER_STANDARD_RANSOM,
 	"Chaplain"					= SLAVER_STANDARD_RANSOM,
 	"Station Engineer"			= SLAVER_STANDARD_RANSOM,
 	"Atmospheric Technician"	= SLAVER_STANDARD_RANSOM,
@@ -47,7 +48,6 @@ GLOBAL_LIST_INIT(slavers_ransom_values, list(
 	"Prisoner"					= SLAVER_STANDARD_RANSOM,
 	"Stowaway"					= SLAVER_STANDARD_RANSOM,
 	"Curator"					= SLAVER_STANDARD_RANSOM,
-	"Internal Affairs Agent"					= SLAVER_STANDARD_RANSOM,
 	"Chaplain"					= SLAVER_STANDARD_RANSOM,
 	"Bouncer"					= SLAVER_STANDARD_RANSOM,
 ))
