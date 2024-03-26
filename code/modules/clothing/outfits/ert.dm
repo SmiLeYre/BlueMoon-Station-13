@@ -178,7 +178,7 @@
 
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
 	r_hand = /obj/item/gun/ballistic/automatic/ar
-	suit_store = /obj/item/gun/energy/e_gun/stun
+	suit_store = /obj/item/gun/energy/pulse/pistol/loyalpin
 	internals_slot = ITEM_SLOT_SUITSTORE
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/crowbar/power=1,
@@ -257,7 +257,7 @@
 
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
 	r_hand = /obj/item/gun/ballistic/automatic/ar
-	suit_store = /obj/item/gun/energy/e_gun/stun
+	suit_store = /obj/item/gun/energy/pulse/pistol/loyalpin
 	internals_slot = ITEM_SLOT_SUITSTORE
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/crowbar/power=1,\
@@ -335,7 +335,7 @@
 
 	r_hand = /obj/item/gun/ballistic/automatic/laser
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
-	suit_store = /obj/item/gun/energy/e_gun/stun
+	suit_store = /obj/item/gun/energy/pulse/pistol/loyalpin
 	internals_slot = ITEM_SLOT_SUITSTORE
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/melee/baton/loaded=1,\
