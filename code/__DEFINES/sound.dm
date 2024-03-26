@@ -260,5 +260,6 @@ GLOBAL_LIST_INIT(deathgasp_sounds, list(
 	"Проклятие" =			'sound/magic/curse.ogg',
 	"Конструкт Ратвара" =	'sound/magic/clockwork/anima_fragment_death.ogg',
 	"Ксеноморф" =			'sound/voice/hiss6.ogg',
-	"Свинья" =				'modular_bluemoon/SmiLeY/code/mob/pig/death.ogg'
+	"Свинья" =				'modular_bluemoon/SmiLeY/code/mob/pig/death.ogg',
+	"Офицер ГО" =			'modular_bluemoon/SmiLeY/sounds/combine_death.ogg'
 	))

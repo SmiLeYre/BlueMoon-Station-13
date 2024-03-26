@@ -659,7 +659,7 @@
 
 	//Head of Security hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/security/hos
-	name = "head of security's hardsuit helmet"
+	name = "Head of Security's Hardsuit Helmet"
 	desc = "A special bulky helmet designed for work in a hazardous, low pressure environment. Has an additional layer of armor."
 	icon_state = "hardsuit0-hos"
 	hardsuit_type = "hos"
@@ -667,13 +667,33 @@
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/suit/space/hardsuit/security/hos
+	name = "Head of Security's Hardsuit"
+	desc = "A special bulky suit that protects against hazardous, low pressure environments. Has an additional layer of armor."
 	icon_state = "hardsuit-hos"
 	tail_state = "hos"
-	name = "head of security's hardsuit"
-	desc = "A special bulky suit that protects against hazardous, low pressure environments. Has an additional layer of armor."
 	armor = list(MELEE = 45, BULLET = 50, LASER = 40, ENERGY = 50, BOMB = 25, BIO = 100, RAD = 50, FIRE = 95, ACID = 95, WOUND = 40)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/hos
 	jetpack = /obj/item/tank/jetpack/suit
+	unique_reskin = list(
+		"Standart Variation" = list(RESKIN_ICON_STATE = "hardsuit-hos"),
+		"OTA Variation" = list(RESKIN_ICON_STATE = "hardsuit-alliance")
+	)
+
+/obj/item/clothing/suit/space/hardsuit/security/reskin_obj(mob/user)
+	if(current_skin == "OTA Variation")
+		mutantrace_variation = STYLE_DIGITIGRADE
+		tail_state = "syndicate-winter"
+		if(helmet)
+			var/obj/item/clothing/head/helmet/space/hardsuit/Helm = helmet
+			Helm.hardsuit_type = "alliance"
+			Helm.update_icon_state()
+	if(current_skin == "Standart Variation")
+		mutantrace_variation = STYLE_DIGITIGRADE
+		tail_state = "hos"
+		if(helmet)
+			var/obj/item/clothing/head/helmet/space/hardsuit/Helm = helmet
+			Helm.hardsuit_type = "hos"
+			Helm.update_icon_state()
 
 	//Captain
 /obj/item/clothing/head/helmet/space/hardsuit/captain

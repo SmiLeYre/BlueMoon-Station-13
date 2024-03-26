@@ -18,7 +18,7 @@
 
 /datum/supply_pack/goody/sunglasses_single
 	name = "Sunglasses Single-Pack"
-	desc = "Стильные очки, что защитят вас от вас от палящих лучшей слонца и флешеров СБ"
+	desc = "Стильные очки, что защитят вас от палящих лучей Солнца и флешеров."
 	cost = 500
 	contains = list(/obj/item/clothing/glasses/sunglasses)
 

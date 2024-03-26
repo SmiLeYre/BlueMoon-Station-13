@@ -247,6 +247,7 @@
 	automatic_burst_overlay = FALSE
 	can_suppress = FALSE
 	burst_size = 1
+	fire_delay = 5 // BLUEMOON EDIT - was NOTHING
 	pin = /obj/item/firing_pin/implant/pindicate
 	actions_types = list()
 

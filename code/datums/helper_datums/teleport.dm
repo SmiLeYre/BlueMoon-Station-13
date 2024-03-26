@@ -31,16 +31,16 @@
 
 	switch(channel)
 		if(TELEPORT_CHANNEL_BLUESPACE)
+			//BLUEMOON CHANGE телепортация с БСоХом ломает БСоХ, а не лицо персонажа
 			if(istype(teleatom, /obj/item/storage/backpack/holding))
-				precision = rand(1,100)
+				var/obj/item/storage/backpack/holding/BH = teleatom
+				BH.teleport_damage(rand(50,100), FALSE)
 
 			var/static/list/bag_cache = typecacheof(/obj/item/storage/backpack/holding)
 			var/list/bagholding = typecache_filter_list(teleatom.GetAllContents(), bag_cache)
-			if(bagholding.len)
-				precision = max(rand(1,100)*bagholding.len,100)
-				if(isliving(teleatom))
-					var/mob/living/MM = teleatom
-					to_chat(MM, "<span class='warning'>The bluespace interface on your bag of holding interferes with the teleport!</span>")
+			for(var/obj/item/storage/backpack/holding/BH in bagholding)
+				BH.teleport_damage(rand(50,100), FALSE)
+			//BLUEMOON CHANGE END
 
 			// if effects are not specified and not explicitly disabled, sparks
 			if ((!effectin || !effectout) && !no_effects)

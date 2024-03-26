@@ -32,6 +32,14 @@
 		log_game("[src] ignored auto-cryo by being: In a VR sleeper.")
 		return
 
+	// BLUEMOON ADD
+	// Звериная форма и другие специфичные "пары" с которыми автокрио играет злую шутку
+	if(src.ownedSoullinks || src.sharedSoullinks)
+		// Log event and return
+		log_game("[src] ignored auto-cryo by being: Soullinked.")
+		return
+	// BLUEMOON ADD END
+
 	// Avoid adding deleted mobs to the list
 	if(!QDELETED(src))
 		// Add to SSD list

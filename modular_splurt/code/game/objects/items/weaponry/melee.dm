@@ -6,6 +6,8 @@
 	to_chat(user, "<span class='notice'>Я целюсь в... [hole].</span>")
 
 /obj/item/melee/baseball_bat/attack(mob/living/target, mob/living/user)
+	if(!user.canUseTopic(user, BE_CLOSE))
+		return
 	user.DelayNextAction(CLICK_CD_RANGE)
 	if (user.zone_selected == BODY_ZONE_PRECISE_GROIN && user.a_intent == INTENT_HELP)
 		var/message = ""

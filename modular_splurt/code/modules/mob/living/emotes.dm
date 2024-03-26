@@ -131,6 +131,9 @@
 	// Accepts all possible parameters
 	playsound(user.loc, emote_sound, emote_volume, emote_pitch_variance, emote_range, emote_falloff_exponent, emote_frequency, emote_channel, emote_check_pressure, emote_ignore_walls, emote_falloff_distance, emote_wetness, emote_dryness, emote_distance_multiplier, emote_distance_multiplier_min_range)
 
+ 	// Set cooldown
+	user.nextsoundemote = world.time + emote_cooldown
+
 /datum/emote/living/surrender/run_emote(mob/user, params, type_override, intentional)
 	// Set message with pronouns
 	message = "puts [user.p_their()] hands on [user.p_their()] head and falls to the ground, [user.p_they()] surrender[user.p_s()]!"
@@ -165,6 +168,18 @@
 	if(TIMER_COOLDOWN_CHECK(user, COOLDOWN_EMOTE_FART))
 		to_chat(user, span_warning("You try your hardest, but no shart comes out."))
 		return
+
+	var/deceasedturf = get_turf(src)
+	// Closed turfs don't have any air in them, so no gas building up
+	if(!istype(deceasedturf,/turf/open))
+		return
+	var/turf/open/miasma_turf = deceasedturf
+	var/datum/gas_mixture/stank = new
+	stank.set_moles(GAS_MIASMA,2.5)
+	stank.set_temperature(BODYTEMP_NORMAL)
+	miasma_turf.assume_air(stank)
+	miasma_turf.air_update_turf()
+
 	var/list/fart_emotes = list( //cope goonies
 		"lets out a girly little 'toot' from [user.p_their()] butt.",
 		"farts loudly!",

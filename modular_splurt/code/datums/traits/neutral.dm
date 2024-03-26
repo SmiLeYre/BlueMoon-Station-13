@@ -142,9 +142,9 @@
 //Zombies + Cumplus Fix\\
 
 /datum/quirk/undead
-    name = "Undeath"
-    desc = "Your body, be it anomalous, or just outright refusing to die - has indeed become undead. Due to this you may be hungrier."
-    value = 0
+    name = "Не-мёртвый"
+    desc = "Ваше тело, будь то аномальное или просто отказывающееся умирать, действительно стало нежитью. Из-за этого вы не можете быть голодным."
+    value = 2
     mob_trait = TRAIT_UNDEAD
     processing_quirk = TRUE
 	// Note: The Undead cannot take advantage of healing viruses and genetic mutations, since they have no DNA.
@@ -167,11 +167,12 @@
         REMOVE_TRAIT(H,zperks[A], null)
 
 /datum/quirk/undead/on_process()
-    . = ..()
-    var/mob/living/carbon/human/H = quirk_holder
-    H.adjust_nutrition(-0.025)//The Undead are Hungry.
-    H.set_screwyhud(SCREWYHUD_HEALTHY)
-    H.adjustOxyLoss(-3) //Stops a defibrilator bug. Note to future self: Fix defib bug.
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.adjust_nutrition(-0.025)
+	H.adjust_thirst(-0.025)
+	H.set_screwyhud(SCREWYHUD_HEALTHY)
+	H.adjustOxyLoss(-3) //Stops a defibrilator bug. Note to future self: Fix defib bug.
 
 /datum/quirk/cum_plus
 	name = "Сверхпродуктивные Гениталии"

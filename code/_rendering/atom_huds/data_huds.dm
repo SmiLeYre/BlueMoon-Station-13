@@ -155,6 +155,17 @@
 	var/datum/atom_hud/data/human/medical/basic/B = GLOB.huds[DATA_HUD_MEDICAL_BASIC]
 	B.update_suit_sensors(src)
 
+/mob/living/carbon/human/update_suit_sensors()
+	. = ..()
+	update_sensor_list()
+
+/mob/living/carbon/human/proc/update_sensor_list()
+	var/obj/item/clothing/under/U = w_uniform
+	if(istype(U) && U.has_sensor > NO_SENSORS && U.sensor_mode)
+		GLOB.suit_sensors_list |= src
+	else
+		GLOB.suit_sensors_list -= src
+
 //called when a living mob changes health
 /mob/living/proc/med_hud_set_health()
 	var/image/holder = hud_list[HEALTH_HUD]

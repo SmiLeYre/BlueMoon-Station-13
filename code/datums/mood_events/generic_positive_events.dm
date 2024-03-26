@@ -263,6 +263,11 @@
 	mood_change = 5
 	timeout = 3 MINUTES
 
+/datum/mood_event/kiss
+	description = span_nicegreen("Кто-то поцеловал меня. Должно быть, я настоящая находка!\n")
+	mood_change = 4.5
+	timeout = 2 MINUTES
+
 /datum/mood_event/hide_in_box
 	description = "<span class='nicegreen'>В коробочке на удивление приятно</span>\n"
 	mood_change = 3
@@ -271,4 +276,3 @@
 /datum/mood_event/to_awoo
 	description = "<span class='nicegreen'>Обожаю выть!</span>\n"
 	mood_change = 2
-	timeout = 2 MINUTES

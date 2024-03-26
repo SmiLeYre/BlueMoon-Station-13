@@ -342,6 +342,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	gain_text = "<span class='danger'>Вы начинаете волноваться о своих словах.</span>"
 	lose_text = "<span class='notice'>Вам становится легче говорить.</span>" //if only it were that easy!
 	medical_record_text = "Пациент предпочитает избегать социальных взаимодействий."
+	mob_trait = TRAIT_ANXIOUS
 	var/dumb_thing = TRUE
 	processing_quirk = TRUE
 
@@ -542,3 +543,21 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 
 /datum/quirk/cursed/remove(client/client_source)
 	qdel(quirk_holder.GetComponent(/datum/component/omen/quirk))
+
+/datum/quirk/alcohol_intolerance
+	name = "Непереносимость Алкоголя"
+	desc = "Вы получаете урон токсинами вместо того, чтобы пьянеть при употреблении алкоголя."
+	value = -1
+	mob_trait = TRAIT_TOXIC_ALCOHOL
+	medical_record_text = "Организм пациента не усваивает этиловый спирт."
+
+/datum/quirk/alcohol_intolerance/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/species/species = H.dna.species
+	species.disliked_food |= ALCOHOL
+
+/datum/quirk/alcohol_intolerance/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		var/datum/species/species = H.dna.species
+		species.disliked_food &= ~ALCOHOL

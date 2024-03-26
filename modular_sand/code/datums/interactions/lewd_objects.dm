@@ -3,10 +3,13 @@
 	var/hole = CUM_TARGET_VAGINA
 
 /obj/item/dildo/attack(mob/living/carbon/human/M, mob/living/carbon/human/user)
-	user.DelayNextAction(CLICK_CD_RANGE)
 	var/message = ""
 	var/lust_amt = 0
 	var/organ //SPLURT edit
+
+	if(!user.canUseTopic(user, BE_CLOSE))
+		return
+	user.DelayNextAction(CLICK_CD_RANGE)
 
 	if(ishuman(M) && (M?.client?.prefs?.toggles & VERB_CONSENT))
 		switch(user.zone_selected)

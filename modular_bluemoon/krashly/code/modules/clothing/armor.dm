@@ -305,19 +305,3 @@ obj/item/clothing/suit/donator/bm/cerberus_suit/armored/inkvd
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/suits_digidrated.dmi'
-
-/////////////////
-
-////InteQ spacesuit box
-/obj/item/storage/box/syndie_kit/space/inteq
-	name = "boxed space suit and helmet"
-
-/obj/item/storage/box/syndie_kit/space/inteq/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.can_hold = typecacheof(list(/obj/item/clothing/suit/space/syndicate/inteq, /obj/item/clothing/head/helmet/space/syndicate/inteq))
-
-/obj/item/storage/box/syndie_kit/space/inteq/PopulateContents()
-	new /obj/item/clothing/suit/space/syndicate/inteq(src) // Black and red is so in right now
-	new /obj/item/clothing/head/helmet/space/syndicate/inteq(src)

@@ -53,8 +53,9 @@
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/syndicate/tacticool
 	//suit =
-	backpack_contents = list(/obj/item/reagent_containers/spray/pepper=1, /obj/item/restraints/handcuffs/cable/zipties=2)
-	shoes = /obj/item/clothing/shoes/laceup
+	backpack_contents = list(/obj/item/reagent_containers/spray/pepper=1, /obj/item/gun/energy/civilian=1, /obj/item/restraints/legcuffs/bola/energy=1, /obj/item/restraints/handcuffs/cable/zipties=2)
+	shoes = /obj/item/clothing/shoes/jackboots
+	accessory = /obj/item/clothing/accessory/permit/guard
 
 /datum/outfit/job/bouncer/syndicate
 	name = "Syndicate Bouncer"

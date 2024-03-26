@@ -175,7 +175,7 @@
 
 		var/turf/U = get_turf(target)
 		to_chat(ranged_ability_user, "<span class='brass'>You release the light of Ratvar!</span>")
-		clockwork_say(ranged_ability_user, text2ratvar("Purge all untruths and honor Engine!"))
+		clockwork_say(ranged_ability_user, text2ratvar("Purge all untruths and honor Engine"))
 		log_combat(ranged_ability_user, U, "fired at with Kindle")
 		playsound(ranged_ability_user, 'sound/magic/blink.ogg', 50, TRUE, frequency = 0.5)
 		var/obj/item/projectile/kindle/A = new(T)

@@ -249,7 +249,7 @@
 //Here lies green glasses, so ugly they died. RIP
 
 /obj/item/clothing/glasses/sunglasses
-	name = "sunglasses"
+	name = "Sunglasses"
 	desc = "Strangely ancient technology used to help provide rudimentary eye cover. Enhanced shielding blocks flashes."
 	icon_state = "sun"
 	item_state = "sunglasses"
@@ -258,6 +258,11 @@
 	tint = 1
 	glass_colour_type = /datum/client_colour/glass_colour/gray
 	dog_fashion = /datum/dog_fashion/head
+
+/obj/item/clothing/glasses/sunglasses/fake
+	name = "Cheap Sunglasses"
+	desc = "Cheap, plastic sunglasses. They don't even have UV protection."
+	flash_protect = 0
 
 /obj/item/clothing/glasses/sunglasses/reagent
 	name = "beer goggles"

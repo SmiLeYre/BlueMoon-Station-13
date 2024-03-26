@@ -129,6 +129,7 @@
 	H.physiology.hunger_mod *= 2
 	H.physiology.brute_mod *= 1.6 // убираем 60% от доп ХП (этап 1)
 	H.physiology.burn_mod *= 1.6  // убираем 60% от доп ХП (этап 1)
+	H.physiology.tox_mod *= 1.25
 	// Действие на сборс сытости
 	var/datum/action/innate/vomit/act_vomit = new
 	act_vomit.Grant(H)
@@ -138,16 +139,15 @@
 /datum/quirk/bluemoon_giant_body/on_process()
 	var/mob/living/carbon/human/H = quirk_holder
 	//если персонаж объелся, он не толстеет, но начинаются очень весёлые последствия
-	if(H.nutrition >= NUTRITION_LEVEL_WELL_FED)
+	if(H.nutrition >= NUTRITION_LEVEL_FAT)
 		var/cur_size = get_size(H)
 		var/reg_add = 0.1 * cur_size
 		H.reagents.add_reagent(/datum/reagent/medicine/salglu_solution, reg_add) // немного полезного реагента
 		H.reagents.add_reagent(/datum/reagent/drug/aphrodisiac, reg_add) // тут всё понятно, накормили персонажа, он захотел... ну вы поняли)
-		H.add_lust(4) // бует возбуждаться
+		
 
-		if (H.get_lust() >= H.get_lust_tolerance())
-			H.mob_climax(forced_climax=TRUE)
-			H.adjust_nutrition(-20)
+		if (H.get_lust() >= H.get_lust_tolerance() * 0.4) // небольшое возбуждение, но не более
+			H.add_lust(2)
 
 		H.adjust_nutrition(-0.02) //голод будет падать быстрее
 
@@ -166,6 +166,7 @@
 
 		H.physiology.brute_mod *= 0.625 * (get_size(H) / 2)
 		H.physiology.burn_mod *= 0.625 * (get_size(H) / 2)
+		H.physiology.tox_mod *= 0.8 * (get_size(H) / 2)
 
 		var/datum/action/innate/vomit/act_vomit = locate() in H.actions
 		act_vomit.Remove(H)
@@ -174,7 +175,7 @@
 
 // Quirk examine text
 /datum/quirk/bluemoon_giant_body/proc/on_examine_holder(atom/examine_target, mob/living/carbon/human/examiner, list/examine_list)
-	examine_list += "[quirk_holder.ru_ego(TRUE)] явно испытывает голод."
+	examine_list += "[quirk_holder.ru_ego(TRUE)] явно мучает голод."
 
 
 /datum/quirk/bluemoon_giant_body/proc/update_size_modifiers(new_size, cur_size)
@@ -185,6 +186,7 @@
 		//чем больше существо, тем больше модификатор урона, начиная 2 и т.д., таким образом нивилируется эффект размера. Модификатор в 0.8 даётся изначально, что бы не ломать умножение тут
 		H.physiology.brute_mod *= max(new_size,2) / max(cur_size,2)
 		H.physiology.burn_mod *=  max(new_size,2) / max(cur_size,2)
+		H.physiology.tox_mod *=  max(new_size,2) / max(cur_size,2)
 
 		var/user_slowdown = (abs(new_size - 1) * CONFIG_GET(number/body_size_slowdown_multiplier))
 

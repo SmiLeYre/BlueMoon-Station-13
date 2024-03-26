@@ -4,7 +4,7 @@
 	icon = 'modular_sand/icons/obj/clothing/hats.dmi'
 	icon_state = "goatpelt"
 	mob_overlay_icon = 'modular_sand/icons/mob/clothing/head.dmi'
-	mutantrace_variation = STYLE_NO_ANTHRO_ICON
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	item_state = "goatpelt"
 
 /obj/item/clothing/head/goatpelt/king
@@ -32,7 +32,7 @@
 	name = "goat pope hat"
 	desc = "And on the seventh day King Goat said there will be cabbage!"
 	mob_overlay_icon = 'modular_sand/icons/mob/large-worn-icons/64x64/head.dmi'
-	mutantrace_variation = STYLE_NO_ANTHRO_ICON
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	icon = 'modular_sand/icons/obj/clothing/hats.dmi'
 	icon_state = "goatpope"
 	item_state = "goatpope"

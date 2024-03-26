@@ -158,11 +158,6 @@
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("msqueak")
 
-/mob/living/verb/emote_kiss()
-	set name = "> Поцеловать "
-	set category = "Эмоции.3: Простые Действия"
-	emote("kiss")
-
 /mob/living/verb/emote_uwu()
 	set name = "> Увукнуть "
 	set category = "Эмоции.2: Звуковые Действия"
@@ -652,6 +647,11 @@
 	set name = "< Мияу >"
 	set category = "Эмоции.1: Специальные Действия"
 	emote("mewo")
+
+/mob/living/verb/emote_kiss()
+	set name = "< Поцеловать >"
+	set category = "Эмоции.1: Специальные Действия"
+	emote("kiss")
 
 /mob/living/verb/emote_affirmative()
 	set name = "< Утвердительный сигнал >"

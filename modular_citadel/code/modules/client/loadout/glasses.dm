@@ -14,6 +14,10 @@
 	name = "Cold goggles"
 	path = /obj/item/clothing/glasses/cold
 
+/datum/gear/glasses/sunglasses
+	name = "Cheap Sunglasses"
+	path = /obj/item/clothing/glasses/sunglasses/fake
+
 /datum/gear/glasses/eyepatch
 	name = "Eyepatch"
 	path = /obj/item/clothing/glasses/eyepatch

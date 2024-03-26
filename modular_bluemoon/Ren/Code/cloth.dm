@@ -198,7 +198,7 @@
 		REMOVE_TRAIT(owner, TRAIT_PUSHIMMUNE, GENETIC_MUTATION)
 	return ..()
 
-/obj/item/autosurgeon/astartes
+/obj/item/autosurgeon/syndicate/inteq/astartes
 	desc = "Последний шаг, разделяющий жизнь человека от жизни ангела смерти"
 	uses = 1
 	starting_organ = /obj/item/organ/heart/gland/ossmodula
@@ -212,7 +212,7 @@
 	force = 20
 
 /obj/item/storage/box/syndie_kit/spacehero/PopulateContents()
-	new /obj/item/autosurgeon/astartes(src)
+	new /obj/item/autosurgeon/syndicate/inteq/astartes(src)
 	new /obj/item/clothing/shoes/jackboots/powerbots(src)
 	new /obj/item/clothing/mask/gas/sechailer/angrymarin(src)
 	new /obj/item/clothing/suit/space/syndicate/darktemplar(src)
@@ -235,6 +235,60 @@
 	new	/obj/item/clothing/glasses/phantomthief/syndicate(src)
 	new	/obj/item/spear/grey_tide(src)
 
+//безумие
+/obj/item/clothing/head/helmet/hank
+	name = "Black old bandana"
+	desc = "Чёрные повязки на голову, призваные скрывать бинты. В этих красных очках виднелось отражение не одной сотни смертей."
+	icon_state = "hank_m"
+	item_state = "hank_m"
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
+	icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
+	mutantrace_variation = NONE
+
+/obj/item/clothing/suit/hank
+	name = "Old black coat"
+	desc = "Поношеный временем костюм. Его чернота отдаёт красным оттенком, а сам он удивительно хорошо прилегает к телу."
+	icon_state = "hank"
+	item_state = "hank"
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
+	icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
+	mutantrace_variation = NONE
+
+
+/obj/item/clothing/suit/hank/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if((attack_type & ATTACK_TYPE_PROJECTILE) && (rand(5) != 1))
+		owner.visible_message(src, pick("<span class='phobia'>[owner] чудом уворачивается от пули, выгнувшись спиной в последний момент!</span>", "<span class='phobia'>[owner] ловко уходит в сторону, предугадав траекторию выстрела!</span>", "<span class='phobia'>[owner] делает резкий рывок, едва успевая уйти из под огня!</span>"))
+		playsound(src, pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, 1)
+		return BLOCK_SUCCESS | BLOCK_PHYSICAL_EXTERNAL
+	return ..()
+
+///Ошейники для заложников.
+/obj/item/electropack/shockcollar/bomb
+	name = "Bomb collar"
+	desc = "Металлический ошейник с покрытием из кожи. В центре красуется странное устройство с мигающей лампочкой. Он.. точно должен пикать?"
+	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
+	icon_state = "bombcollar"
+	item_state = "bombcollar"
+	equip_delay_other = 40
+	strip_delay = 360
+
+/obj/item/electropack/shockcollar/bomb/receive_signal(datum/signal/signal)
+	if(!signal || signal.data["code"] != code)
+		return
+
+	if(isliving(loc))
+		playsound(get_turf(src), 'sound/machines/nuke/confirm_beep.ogg', 65, 1, 1)
+		addtimer(CALLBACK(src, .proc/explode), 3 SECONDS)
+
+	if(master)
+		master.receive_signal()
+
+/obj/item/electropack/shockcollar/bomb/proc/explode()
+	do_sparks(3, 1, src)
+	explosion(src.loc,1,0,2,0)
+	qdel(src)
+
 ///InteQ Uplink additions
 /datum/uplink_item/suits/inteq_infiltrator_bundle
 	name = "SpecOps Infiltration Gear Case"
@@ -256,3 +310,139 @@
 	item = /obj/item/storage/box/syndie_kit/grayhero
 	cost = 20
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
+
+/datum/uplink_item/explosives/bombcollar
+	name = "Bomb collar"
+	desc = "Ошейник с бомбой. Больше нечего добавить. Сигналлер в комплект не входит."
+	item = /obj/item/electropack/shockcollar/bomb
+	cost = 1
+	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
+
+///Чулки чулки чулки блять
+/obj/item/clothing/underwear/socks/thigh/stockings/socks_garterbelt
+	name = "Socks garterbelt"
+	icon_state = "socks_garterbelt"
+	icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings_digi.dmi'
+
+/obj/item/clothing/underwear/socks/thigh/stockings/stocking_2strip
+	name = "Two strip stocking"
+	icon_state = "stocking_2strip"
+	icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings_digi.dmi'
+
+/obj/item/clothing/underwear/socks/thigh/stockings/stocking_checkered
+	name = "Checkered stocking"
+	icon_state = "stocking_checkered"
+	icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings_digi.dmi'
+
+/obj/item/clothing/underwear/socks/thigh/stockings/stocking_1strip
+	name = "One strip stocking"
+	icon_state = "stocking_1strip"
+	icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings_digi.dmi'
+
+/obj/item/clothing/underwear/socks/thigh/stockings/stocking_line
+	name = "Line stocking"
+	icon_state = "stocking_line"
+	icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings_digi.dmi'
+
+/obj/item/clothing/underwear/socks/socks_2strip
+	name = "Two strip socks"
+	icon_state = "socks_2strip"
+	icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings_digi.dmi'
+
+/obj/item/clothing/underwear/socks/socks_checkered
+	name = "Checkered socks"
+	icon_state = "socks_checkered"
+	icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings_digi.dmi'
+
+/obj/item/clothing/underwear/socks/socks_2strip
+	name = "Two strip socks"
+	icon_state = "socks_2strip"
+	icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings_digi.dmi'
+
+/obj/item/clothing/underwear/socks/socks_line
+	name = "Line socks"
+	icon_state = "socks_line"
+	icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/random_cloth/more_stockings_digi.dmi'
+
+///Сука, чулки в лодауте. Пиздец чулков.
+/datum/gear/socks/socks_garterbelt
+	name = "Polychromic Socks Garterbelt"
+	path = /obj/item/clothing/underwear/socks/thigh/stockings/socks_garterbelt
+
+/datum/gear/socks/stocking_2strip
+	name = "Polychromic Two Strip Stocking"
+	path = /obj/item/clothing/underwear/socks/thigh/stockings/stocking_2strip
+
+/datum/gear/socks/stocking_checkered
+	name = "Polychromic Checkered Stocking"
+	path = /obj/item/clothing/underwear/socks/thigh/stockings/stocking_checkered
+
+/datum/gear/socks/stocking_1strip
+	name = "Polychromic One Strip Stocking"
+	path = /obj/item/clothing/underwear/socks/thigh/stockings/stocking_1strip
+
+/datum/gear/socks/stocking_line
+	name = "Polychromic Line Stocking"
+	path = /obj/item/clothing/underwear/socks/thigh/stockings/stocking_line
+
+/datum/gear/socks/socks_2strip
+	name = "Polychromic Two Strip Socks"
+	path = /obj/item/clothing/underwear/socks/socks_2strip
+
+/datum/gear/socks/socks_checkered
+	name = "Polychromic Checkered Socks"
+	path = /obj/item/clothing/underwear/socks/socks_checkered
+
+/datum/gear/socks/socks_2strip
+	name = "Polychromic Two Strip Socks"
+	path = /obj/item/clothing/underwear/socks/socks_2strip
+
+/datum/gear/socks/socks_line
+	name = "Polychromic Line Socks"
+	path = /obj/item/clothing/underwear/socks/socks_line
+
+///Аутфиты
+/obj/item/card/id/syndicate/inteq_fake
+	name = "InteQ Vanguard ID card"
+	id_type_name = "InteQ ID card"
+	desc = "An ID straight from the InteQ."
+	registered_name = "InteQ"
+	assignment = "InteQ Operative"
+	icon_state = "inteq"
+
+/datum/outfit/inteq_dead
+	back = /obj/item/storage/backpack
+	name = "InteQ corps"
+	suit = /obj/item/clothing/suit/armor/inteq
+	uniform = /obj/item/clothing/under/inteq
+	shoes = /obj/item/clothing/shoes/combat/swat/knife
+	gloves = /obj/item/clothing/gloves/combat
+	head = /obj/item/clothing/head/helmet/swat/inteq
+	mask = /obj/item/clothing/mask/balaclava/breath/inteq
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
+	id = /obj/item/card/id/syndicate/inteq_fake
+
+/obj/effect/mob_spawn/human/corpse/inteq_dead
+	name = "InteQ Operative"
+	id_job = "Operative"
+	hair_style = "Bald"
+	facial_hair_style = "Shaved"
+	outfit = /datum/outfit/inteq_dead

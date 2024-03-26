@@ -314,7 +314,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/suit/chameleon)
 	item_state = "armor"
 	blood_overlay_type = "armor"
 	resistance_flags = NONE
-	mutantrace_variation = STYLE_NO_ANTHRO_ICON | STYLE_DIGITIGRADE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	armor = list(MELEE = 10, BULLET = 10, LASER = 10, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 50)
 
 	var/datum/action/item_action/chameleon/change/chameleon_action

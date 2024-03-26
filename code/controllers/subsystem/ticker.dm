@@ -567,7 +567,7 @@ SUBSYSTEM_DEF(ticker)
 	queue_delay = SSticker.queue_delay
 	queued_players = SSticker.queued_players
 	maprotatechecked = SSticker.maprotatechecked
-	round_start_time = SSticker.round_start_time
+	// round_start_time = SSticker.round_start_time
 
 	queue_delay = SSticker.queue_delay
 	queued_players = SSticker.queued_players

@@ -63,10 +63,12 @@
 /obj/item/jukebox/ui_data(mob/user)
 	var/list/data = list()
 	data["active"] = active
-	data["songs"] = list()
-	for(var/datum/track/S in SSjukeboxes.songs)
-		var/list/track_data = list(name = S.song_name)
-		data["songs"] += list(track_data)
+	// BLUEMOON DEL -- ищи в modular_bluemoon/jukebox
+	// data["songs"] = list()
+	// for(var/datum/track/S in SSjukeboxes.songs)
+	// 	var/list/track_data = list(name = S.song_name)
+	// 	data["songs"] += list(track_data)
+	// BLUEMOON DEL END
 	data["queued_tracks"] = list()
 	for(var/datum/track/S in queuedplaylist)
 		var/list/track_data = list(name = S.song_name)

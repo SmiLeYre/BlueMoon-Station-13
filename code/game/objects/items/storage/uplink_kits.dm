@@ -268,12 +268,12 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.can_hold = typecacheof(list(/obj/item/clothing/suit/space/syndicate/inteq, /obj/item/clothing/head/helmet/space/syndicate/inteq))
+	STR.can_hold = typecacheof(list(/obj/item/clothing/suit/space/syndicate/inteq, /obj/item/clothing/head/helmet/space/syndicate/inteq, /obj/item/tank/internals/emergency_oxygen/double))
 
 /obj/item/storage/box/syndie_kit/space/inteq/PopulateContents()
 	new /obj/item/clothing/suit/space/syndicate/inteq(src) // Black and red is so in right now
 	new /obj/item/clothing/head/helmet/space/syndicate/inteq(src)
-	new /obj/item/tank/internals/emergency_oxygen/engi/syndi(src)
+	new /obj/item/tank/internals/emergency_oxygen/double(src)
 
 /obj/item/storage/box/syndie_kit/emp
 	name = "boxed EMP kit"
@@ -552,7 +552,7 @@
 		/obj/item/gun/ballistic/automatic/c20r/toy/unrestricted/riot,
 		/obj/item/reagent_containers/syringe/stimulants,
 		/obj/item/storage/box/syndie_kit/imp_freedom,
-		/obj/item/storage/toolbox/infiltrator
+		/obj/item/storage/toolbox/infiltrator/inteq   ///bluemoon change
 	)
 	var/obj/item1 = pick_n_take(item_list)
 	var/obj/item2 = pick_n_take(item_list)
@@ -607,12 +607,6 @@
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "firstaid-o2"
 	item_state = "firstaid-o2"
-
-/obj/item/storage/box/syndie_kit/space/inteq/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.can_hold = typecacheof(list(/obj/item/clothing/suit/space/hardsuit/contractor, /obj/item/tank/internals/emergency_oxygen, /obj/item/clothing/mask/gas))
 
 /obj/item/storage/box/inteq_kit/chameleon_hardsuit/PopulateContents()
 	new /obj/item/clothing/suit/space/hardsuit/contractor(src)
