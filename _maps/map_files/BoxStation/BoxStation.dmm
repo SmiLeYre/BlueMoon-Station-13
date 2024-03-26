@@ -68117,7 +68117,7 @@
 /obj/machinery/power/apc{
 	areastring = "/area/security/brig";
 	dir = 1;
-	name = Evidence room;
+	name = "Evidence room";
 	pixel_y = 23
 	},
 /turf/open/floor/plasteel/dark,
