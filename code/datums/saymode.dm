@@ -80,6 +80,10 @@
 		user.terror_talk(message)
 	return FALSE
 
+/datum/saymode/terror/alternative
+	key = "е"
+	mode = MODE_TERROR
+
 /datum/saymode/qareen
 	key = "q"
 	mode = MODE_QAREEN

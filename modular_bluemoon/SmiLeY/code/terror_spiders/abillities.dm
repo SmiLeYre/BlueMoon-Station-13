@@ -260,7 +260,7 @@
 	create_reagents(2000)
 	reagents.add_reagent(/datum/reagent/consumable/ethanol/neurotoxin, 1000)
 	reagents.add_reagent(/datum/reagent/toxin/mutetoxin, 1000)
-	smoke.set_up(reagents, 4, T, TRUE)
+	smoke.set_up(reagents, 3, T, TRUE)
 	smoke.start()
 
 
@@ -328,7 +328,7 @@
 			to_chat(target, "<span class='danger'><b>A spike of pain drives into your head and scrambles your thoughts!</b></span>")
 			target.adjustStaminaLoss(30)
 			target.Slowed(10 SECONDS)
-			target.Jitter(300 SECONDS)
+			target.Jitter(30 SECONDS)
 
 		if(issilicon(target))
 			var/mob/living/silicon/robot/R = target
