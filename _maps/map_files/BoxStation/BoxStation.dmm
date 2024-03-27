@@ -175,9 +175,7 @@
 	dir = 10
 	},
 /turf/open/floor/plasteel/dark,
-/area/security/detectives_office/private_investigators_office{
-	name = "Private Investigator"
-	})
+/area/security/detectives_office/private_investigators_office)
 "abP" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /turf/open/floor/plasteel/dark,
@@ -942,9 +940,7 @@
 	pixel_x = -9
 	},
 /turf/open/floor/plasteel/dark,
-/area/security/detectives_office/private_investigators_office{
-	name = "Private Investigator"
-	})
+/area/security/detectives_office/private_investigators_office)
 "aeY" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -1254,9 +1250,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
-/area/security/detectives_office/private_investigators_office{
-	name = "Private Investigator"
-	})
+/area/security/detectives_office/private_investigators_office)
 "agC" = (
 /obj/machinery/holopad,
 /obj/structure/cable{
@@ -1300,9 +1294,7 @@
 	pixel_x = -22
 	},
 /turf/open/floor/plasteel/dark,
-/area/security/detectives_office/private_investigators_office{
-	name = "Private Investigator"
-	})
+/area/security/detectives_office/private_investigators_office)
 "agF" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -2736,9 +2728,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/security/detectives_office/private_investigators_office{
-	name = "Private Investigator"
-	})
+/area/security/detectives_office/private_investigators_office)
 "akV" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
@@ -42877,9 +42867,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel/dark,
-/area/security/detectives_office/private_investigators_office{
-	name = "Private Investigator"
-	})
+/area/security/detectives_office/private_investigators_office)
 "dKP" = (
 /turf/closed/wall,
 /area/maintenance/bar)
@@ -42942,9 +42930,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/dark,
-/area/security/detectives_office/private_investigators_office{
-	name = "Private Investigator"
-	})
+/area/security/detectives_office/private_investigators_office)
 "dNT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -43855,9 +43841,7 @@
 	pixel_x = 24
 	},
 /turf/open/floor/plasteel/dark,
-/area/security/detectives_office/private_investigators_office{
-	name = "Private Investigator"
-	})
+/area/security/detectives_office/private_investigators_office)
 "etV" = (
 /obj/machinery/hydroponics/soil,
 /turf/open/floor/grass/grass0,
@@ -45508,9 +45492,7 @@
 	dir = 9
 	},
 /turf/open/floor/plasteel/dark,
-/area/security/detectives_office/private_investigators_office{
-	name = "Private Investigator"
-	})
+/area/security/detectives_office/private_investigators_office)
 "fvf" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 4
@@ -45522,9 +45504,7 @@
 	pixel_y = -2
 	},
 /turf/open/floor/plasteel/dark,
-/area/security/detectives_office/private_investigators_office{
-	name = "Private Investigator"
-	})
+/area/security/detectives_office/private_investigators_office)
 "fvk" = (
 /obj/structure/disposalpipe/segment,
 /turf/closed/wall,
@@ -45766,9 +45746,7 @@
 	req_access_txt = "2"
 	},
 /turf/open/floor/plasteel/dark,
-/area/security/detectives_office/private_investigators_office{
-	name = "Private Investigator"
-	})
+/area/security/detectives_office/private_investigators_office)
 "fDn" = (
 /obj/structure/table,
 /obj/item/trash/chips{
@@ -45953,9 +45931,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel/dark,
-/area/security/detectives_office/private_investigators_office{
-	name = "Private Investigator"
-	})
+/area/security/detectives_office/private_investigators_office)
 "fLz" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 1
@@ -47134,9 +47110,7 @@
 	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/dark,
-/area/security/detectives_office/private_investigators_office{
-	name = "Private Investigator"
-	})
+/area/security/detectives_office/private_investigators_office)
 "gCt" = (
 /obj/machinery/status_display/ai{
 	pixel_x = -32
@@ -52078,6 +52052,9 @@
 	},
 /turf/open/floor/plating,
 /area/engineering/storage/tech)
+"kfy" = (
+/turf/closed/wall/r_wall,
+/area/security/detectives_office/evidence_room)
 "kfI" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor{
@@ -53485,9 +53462,7 @@
 	name = "Interrogation room"
 	},
 /turf/open/floor/plasteel/dark,
-/area/security/detectives_office/private_investigators_office{
-	name = "Private Investigator"
-	})
+/area/security/detectives_office/private_investigators_office)
 "ldA" = (
 /obj/effect/landmark/event_spawn,
 /obj/effect/turf_decal/stripes/line{
@@ -54078,9 +54053,7 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/dark,
-/area/security/detectives_office/private_investigators_office{
-	name = "Private Investigator"
-	})
+/area/security/detectives_office/private_investigators_office)
 "lzk" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/junction{
 	dir = 8
@@ -54231,9 +54204,7 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
 /turf/open/floor/plasteel/dark,
-/area/security/detectives_office/private_investigators_office{
-	name = "Private Investigator"
-	})
+/area/security/detectives_office/private_investigators_office)
 "lFv" = (
 /obj/machinery/light_switch{
 	pixel_y = -23
@@ -55314,9 +55285,7 @@
 	},
 /obj/effect/turf_decal/tile/red,
 /turf/open/floor/plasteel/dark,
-/area/security/detectives_office/private_investigators_office{
-	name = "Private Investigator"
-	})
+/area/security/detectives_office/private_investigators_office)
 "mqH" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/poddoor/shutters{
@@ -56381,9 +56350,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/security/detectives_office/private_investigators_office{
-	name = "Private Investigator"
-	})
+/area/security/detectives_office/private_investigators_office)
 "neT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -57677,9 +57644,7 @@
 	pixel_x = -9
 	},
 /turf/open/floor/plasteel/dark,
-/area/security/detectives_office/private_investigators_office{
-	name = "Private Investigator"
-	})
+/area/security/detectives_office/private_investigators_office)
 "oce" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 1
@@ -59405,9 +59370,7 @@
 	pixel_y = -2
 	},
 /turf/open/floor/plasteel/dark,
-/area/security/detectives_office/private_investigators_office{
-	name = "Private Investigator"
-	})
+/area/security/detectives_office/private_investigators_office)
 "prd" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -60683,9 +60646,7 @@
 /area/commons/toilet/locker)
 "qkv" = (
 /turf/closed/wall/r_wall,
-/area/security/detectives_office/private_investigators_office{
-	name = "Private Investigator"
-	})
+/area/security/detectives_office/private_investigators_office)
 "qkC" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -61336,9 +61297,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/security/detectives_office/private_investigators_office{
-	name = "Private Investigator"
-	})
+/area/security/detectives_office/private_investigators_office)
 "qIY" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
@@ -64970,9 +64929,7 @@
 	pixel_x = 24
 	},
 /turf/open/floor/plasteel/dark,
-/area/security/detectives_office/private_investigators_office{
-	name = "Private Investigator"
-	})
+/area/security/detectives_office/private_investigators_office)
 "tiv" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -65977,9 +65934,6 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /turf/open/floor/plasteel/cafeteria,
 /area/service/kitchen)
-"tPq" = (
-/turf/closed/wall/r_wall,
-/area/security/detectives_office/evidence_room)
 "tPT" = (
 /obj/machinery/chem_dispenser/drinks/beer,
 /obj/structure/table/wood,
@@ -66232,9 +66186,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/security/detectives_office/private_investigators_office{
-	name = "Private Investigator"
-	})
+/area/security/detectives_office/private_investigators_office)
 "tYR" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
@@ -67833,9 +67785,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/security/detectives_office/private_investigators_office{
-	name = "Private Investigator"
-	})
+/area/security/detectives_office/private_investigators_office)
 "vkS" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -68170,9 +68120,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel/dark,
-/area/security/detectives_office/private_investigators_office{
-	name = "Private Investigator"
-	})
+/area/security/detectives_office/private_investigators_office)
 "vxh" = (
 /obj/effect/spawner/lootdrop/syndicate_present,
 /turf/open/floor/plating{
@@ -72025,9 +71973,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
-/area/security/detectives_office/private_investigators_office{
-	name = "Private Investigator"
-	})
+/area/security/detectives_office/private_investigators_office)
 "yaV" = (
 /obj/machinery/vending/wardrobe/chef_wardrobe,
 /turf/open/floor/plasteel/dark,
@@ -100694,7 +100640,7 @@ aaa
 bXt
 gXs
 wUH
-tPq
+kfy
 rIB
 fxx
 rIB
@@ -100951,7 +100897,7 @@ aaa
 aaT
 gXs
 uPL
-tPq
+kfy
 xkk
 rnR
 vrg
@@ -101722,7 +101668,7 @@ aaf
 aaT
 gXs
 uPL
-tPq
+kfy
 vwr
 ffl
 rIB
@@ -101979,7 +101925,7 @@ gXs
 abY
 gXs
 uPL
-tPq
+kfy
 fpO
 qll
 cZe
