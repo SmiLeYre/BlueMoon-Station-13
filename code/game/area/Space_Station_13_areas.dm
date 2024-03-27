@@ -1494,7 +1494,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	max_ambience_cooldown = 180 SECONDS
 
 /area/security/detectives_office/evidence_room
-	name = "Evidence room"
+	name = "Evidence Room"
 	icon_state = "investigate_office"
 
 /area/security/detectives_office/private_investigators_office
@@ -1503,7 +1503,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	sound_environment = SOUND_AREA_SMALL_SOFTFLOOR
 
 /area/security/detectives_office/private_investigators_office/investigators_room
-	name = "investigator Room"
+	name = "Investigator Room"
 
 /area/security/range
 	name = "Firing Range"
