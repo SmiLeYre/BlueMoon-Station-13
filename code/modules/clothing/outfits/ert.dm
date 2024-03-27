@@ -363,14 +363,14 @@
 	l_hand = /obj/item/clipboard
 	id = /obj/item/card/id
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-		/obj/item/pda/heads=1,
+		/obj/item/modular_computer/pda/heads=1,
 		/obj/item/pen=1)
 
 /datum/outfit/centcom_official/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	if(visualsOnly)
 		return
 
-	var/obj/item/pda/heads/pda = H.r_store
+	var/obj/item/modular_computer/pda/heads/pda = H.r_store
 	pda.owner = H.real_name
 	pda.ownjob = "CentCom Official"
 	pda.update_label()
