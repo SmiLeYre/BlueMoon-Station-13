@@ -299,6 +299,9 @@
 	pixel_x = 10
 	},
 /obj/item/storage/barricade,
+/obj/effect/turf_decal/stripes/line{
+	dir = 9
+	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "acp" = (
@@ -50569,13 +50572,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/zone2)
-"jff" = (
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/stripes/corner{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/ai_monitored/security/armory)
 "jfL" = (
 /obj/machinery/airalarm{
 	pixel_y = 25
@@ -61984,9 +61980,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 9
-	},
 /obj/structure/table/reinforced,
 /obj/item/storage/lockbox/loyalty,
 /obj/item/storage/box/trackimp{
@@ -62000,6 +61993,9 @@
 	},
 /obj/item/storage/box/firingpins{
 	pixel_x = 6
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
@@ -70156,9 +70152,8 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},
-/obj/structure/safe{
-	id_tag = "safe armory"
-	},
+/obj/machinery/flasher/portable,
+/obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "wMD" = (
@@ -71191,9 +71186,6 @@
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/factory)
 "xzM" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
 /obj/item/radio/intercom{
 	pixel_x = -30
 	},
@@ -97822,7 +97814,7 @@ vNp
 acp
 aaZ
 rfE
-jff
+aho
 ahK
 ahK
 ahK
