@@ -4415,7 +4415,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.nameless = nameless
 	character.custom_species = custom_species
 
-	character.dna.species.exotic_blood_color = blood_color
 	character.gender = gender
 	character.age = age
 
@@ -4473,6 +4472,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.dna.flavor_text = features["flavor_text"]
 	character.dna.naked_flavor_text = features["naked_flavor_text"]
 	character.dna.headshot_link = features["headshot_link"]
+	character.dna.species.exotic_blood_color = blood_color //а раньше эта строчка была немного выше и всё ломалось, думайте, когда делаете врезки
 	// BLUEMOON EDIT END
 
 	var/old_size = RESIZE_DEFAULT_SIZE
