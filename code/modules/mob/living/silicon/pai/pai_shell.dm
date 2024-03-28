@@ -18,8 +18,8 @@
 
 	emitter_next_use = world.time + emittercd
 	density = TRUE
-	if(istype(card.loc, /obj/item/pda))
-		var/obj/item/pda/P = card.loc
+	if(istype(card.loc, /obj/item/modular_computer/pda))
+		var/obj/item/modular_computer/pda/P = card.loc
 		P.pai = null
 		P.visible_message("<span class='notice'>[src] ejects itself from [P]!</span>")
 	if(isliving(card.loc))

@@ -43,7 +43,7 @@
 	var/obj/controlled_equipment //A piece of equipment, to determine whether to relaymove or use the AI eye.
 	var/radio_enabled = TRUE //Determins if a carded AI can speak with its built in radio or not.
 	radiomod = ";" //AIs will, by default, state their laws on the internal radio.
-	var/obj/item/pda/ai/aiPDA
+	var/obj/item/modular_computer/pda/ai/aiPDA
 	var/obj/item/multitool/aiMulti
 	var/mob/living/simple_animal/bot/Bot
 	var/tracking = FALSE //this is 1 if the AI is currently tracking somebody, but the track has not yet been completed.
@@ -160,7 +160,7 @@
 
 	add_verb(src, /mob/living/silicon/ai/proc/show_laws_verb)
 
-	aiPDA = new/obj/item/pda/ai(src)
+	aiPDA = new/obj/item/modular_computer/pda/ai(src)
 	aiPDA.owner = name
 	aiPDA.ownjob = "AI"
 	aiPDA.name = name + " (" + aiPDA.ownjob + ")"

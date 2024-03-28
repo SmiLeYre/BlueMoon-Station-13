@@ -228,10 +228,10 @@
 		qdel(PCL)
 	target.icon = initial(picked_item.icon)
 
-/datum/action/item_action/chameleon/change/pda/update_item(obj/item/pda/picked_item)
-	if(!istype(target, /obj/item/pda))
+/datum/action/item_action/chameleon/change/pda/update_item(obj/item/modular_computer/pda/picked_item)
+	if(!istype(target, /obj/item/modular_computer/pda))
 		return ..()
-	var/obj/item/pda/P = target
+	var/obj/item/modular_computer/pda/P = target
 	P.name = initial(picked_item.name)
 	P.desc = initial(picked_item.desc)
 	P.icon_state = initial(picked_item.icon_state)
@@ -602,25 +602,25 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/radio/headset/chameleon)
 	. = ..()
 	chameleon_action.emp_randomise(INFINITY)
 
-CHAMELEON_CLOTHING_DEFINE(/obj/item/pda/chameleon)
+CHAMELEON_CLOTHING_DEFINE(/obj/item/modular_computer/pda/chameleon)
 	name = "PDA"
 	var/datum/action/item_action/chameleon/change/pda/chameleon_action
 
-/obj/item/pda/chameleon/Initialize(mapload)
+/obj/item/modular_computer/pda/chameleon/Initialize(mapload)
 	. = ..()
 	chameleon_action = new(src)
-	chameleon_action.chameleon_type = /obj/item/pda
+	chameleon_action.chameleon_type = /obj/item/modular_computer/pda
 	chameleon_action.chameleon_name = "PDA"
-	chameleon_action.chameleon_blacklist = typecacheof(list(/obj/item/pda/heads, /obj/item/pda/ai, /obj/item/pda/ai/pai), only_root_path = TRUE)
+	chameleon_action.chameleon_blacklist = typecacheof(list(/obj/item/modular_computer/pda/heads, /obj/item/modular_computer/pda/ai, /obj/item/modular_computer/pda/ai/pai), only_root_path = TRUE)
 	chameleon_action.initialize_disguises()
 
-/obj/item/pda/chameleon/emp_act(severity)
+/obj/item/modular_computer/pda/chameleon/emp_act(severity)
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
 		return
 	chameleon_action.emp_randomise()
 
-/obj/item/pda/chameleon/broken/Initialize(mapload)
+/obj/item/modular_computer/pda/chameleon/broken/Initialize(mapload)
 	. = ..()
 	chameleon_action.emp_randomise(INFINITY)
 

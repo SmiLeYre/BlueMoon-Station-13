@@ -38,7 +38,7 @@
 	name = "Internal Affairs Agent"
 	jobtype = /datum/job/lawyer
 
-	belt = /obj/item/pda/lawyer
+	belt = /obj/item/modular_computer/pda/lawyer
 	ears = /obj/item/radio/headset/headset_sec
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	uniform = /obj/item/clothing/under/rank/civilian/lawyer/really_black
@@ -64,9 +64,9 @@
 	name = "Syndicate Internal Affairs Agent"
 	jobtype = /datum/job/lawyer
 
-	//belt = /obj/item/pda/syndicate/no_deto
+	//belt = /obj/item/modular_computer/pda/syndicate/no_deto
 
-	belt = /obj/item/pda/lawyer
+	belt = /obj/item/modular_computer/pda/lawyer
 	ears = /obj/item/radio/headset/headset_sec
 	gloves = /obj/item/clothing/gloves/combat
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses

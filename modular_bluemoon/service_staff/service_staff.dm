@@ -44,7 +44,7 @@
 		/obj/item/reagent_containers/rag/towel
 	)
 
-/obj/item/pda/entertainer
+/obj/item/modular_computer/pda/entertainer
 	name = "entertainer PDA"
 	icon_state = "pda-bartender"
 	//default_cartridge = /obj/item/cartridge/bartender
@@ -54,7 +54,7 @@
 	name = "Entertainer"
 	jobtype = /datum/job/entertainer
 
-	belt = /obj/item/pda/entertainer
+	belt = /obj/item/modular_computer/pda/entertainer
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/misc/assistantformal
 
@@ -62,7 +62,7 @@
 	name = "Syndicate Entertainer"
 	jobtype = /datum/job/entertainer
 
-	//belt = /obj/item/pda/syndicate/no_deto
+	//belt = /obj/item/modular_computer/pda/syndicate/no_deto
 
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/util

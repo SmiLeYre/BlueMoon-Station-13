@@ -245,7 +245,7 @@
 	uniform = /obj/item/clothing/under/color/grey
 	id = /obj/item/card/id
 	ears = /obj/item/radio/headset
-	belt = /obj/item/pda
+	belt = /obj/item/modular_computer/pda
 	back = /obj/item/storage/backpack
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	box = /obj/item/storage/box/survival
@@ -321,7 +321,7 @@
 					break
 		H.sec_hud_set_ID()
 
-	var/obj/item/pda/PDA = H.get_item_by_slot(pda_slot)
+	var/obj/item/modular_computer/pda/PDA = H.get_item_by_slot(pda_slot)
 	if(istype(PDA))
 		PDA.owner = H.real_name
 		//Skyrat change

@@ -38,7 +38,7 @@
 	/obj/item/restraints/handcuffs,
 	/obj/item/assembly/flash,
 	/obj/item/laser_pointer,
-	/obj/item/pda,
+	/obj/item/modular_computer/pda,
 	/obj/item/paicard
 	))
 

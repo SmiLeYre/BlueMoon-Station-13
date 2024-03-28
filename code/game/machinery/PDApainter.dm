@@ -40,8 +40,8 @@
 		/obj/item/modular_computer/pda/chameleon,
 		/obj/item/modular_computer/pda/chameleon/broken)
 
-	for(var/A in typesof(/obj/item/pda) - blocked)
-		var/obj/item/pda/P = A
+	for(var/A in typesof(/obj/item/modular_computer/pda) - blocked)
+		var/obj/item/modular_computer/pda/P = A
 		var/PDA_name = initial(P.name)
 		colorlist += PDA_name
 		colorlist[PDA_name] = list(initial(P.icon_state), initial(P.desc), initial(P.overlays_offsets), initial(P.overlays_icons))
@@ -69,7 +69,7 @@
 		power_change()
 		return
 
-	else if(istype(O, /obj/item/pda))
+	else if(istype(O, /obj/item/modular_computer/pda))
 		if(storedpda)
 			to_chat(user, "<span class='warning'>There is already a PDA inside!</span>")
 			return

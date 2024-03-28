@@ -1014,7 +1014,7 @@
 /area/awaymission/cabin/snowforest/sovietsurface)
 "dm" = (
 /obj/structure/table/reinforced,
-/obj/item/pda/syndicate{
+/obj/item/modular_computer/pda/syndicate{
 	background_color = "#0039A6";
 	default_cartridge = /obj/item/cartridge/virus/mime;
 	desc = "A portable microcomputer by Thinktronic Systems, LTD. Seems like it may have useful information on it.";
@@ -5167,7 +5167,7 @@
 /area/awaymission/cabin/caves)
 "nb" = (
 /obj/effect/turf_decal/weather/snow,
-/obj/item/pda/syndicate{
+/obj/item/modular_computer/pda/syndicate{
 	background_color = "#0039A6";
 	default_cartridge = /obj/item/cartridge/virus/clown;
 	desc = "A portable microcomputer by Thinktronic Systems, LTD. Seems like it may have useful information on it.";

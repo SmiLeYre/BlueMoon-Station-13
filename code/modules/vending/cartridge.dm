@@ -5,7 +5,7 @@
 	product_slogans = "Картриджи!!!"
 	icon_state = "cart"
 	icon_deny = "cart-deny"
-	products = list(/obj/item/pda/heads = 10, // PDA
+	products = list(/obj/item/modular_computer/pda/heads = 10, // PDA
 					// Normal staff cards
 					/obj/item/cartridge/medical = 10,
 					/obj/item/cartridge/engineering = 10,

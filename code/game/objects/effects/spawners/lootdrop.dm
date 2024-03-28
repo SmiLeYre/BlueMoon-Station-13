@@ -133,7 +133,7 @@
 				/obj/item/kitchen/knife/shiv/carrot = 1,
 				/obj/item/kitchen/knife = 1,
 				/obj/item/storage/wallet/random = 1,
-				/obj/item/pda = 1
+				/obj/item/modular_computer/pda = 1
 				)
 
 /obj/effect/spawner/lootdrop/gambling

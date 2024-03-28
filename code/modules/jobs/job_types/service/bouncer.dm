@@ -38,7 +38,7 @@
 
 /////////////////////////////
 
-/obj/item/pda/bouncer
+/obj/item/modular_computer/pda/bouncer
 	name = "bouncer PDA"
 	icon_state = "pda-bartender"
 	//default_cartridge = /obj/item/cartridge/bartender
@@ -49,7 +49,7 @@
 	jobtype = /datum/job/bouncer
 
 	glasses = /obj/item/clothing/glasses/sunglasses
-	belt = /obj/item/pda/bouncer
+	belt = /obj/item/modular_computer/pda/bouncer
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/syndicate/tacticool
 	//suit =
@@ -61,7 +61,7 @@
 	name = "Syndicate Bouncer"
 	jobtype = /datum/job/bouncer
 
-	belt = /obj/item/pda/bouncer
+	belt = /obj/item/modular_computer/pda/bouncer
 
 	glasses = /obj/item/clothing/glasses/sunglasses
 	ears = /obj/item/radio/headset/headset_srv

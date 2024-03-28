@@ -50,7 +50,7 @@
 	jobtype = /datum/job/captain
 
 	id = /obj/item/card/id/gold
-	belt = /obj/item/pda/captain
+	belt = /obj/item/modular_computer/pda/captain
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	ears = /obj/item/radio/headset/heads/captain/alt
 	gloves = /obj/item/clothing/gloves/color/captain
@@ -75,7 +75,7 @@
 	name = "Syndicate Captain"
 	jobtype = /datum/job/captain
 
-	//belt = /obj/item/pda/syndicate/no_deto
+	//belt = /obj/item/modular_computer/pda/syndicate/no_deto
 
 	glasses = /obj/item/clothing/glasses/sunglasses
 	ears = /obj/item/radio/headset/heads/captain/alt

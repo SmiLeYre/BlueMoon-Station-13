@@ -7,33 +7,25 @@
 	icon_state_powered = "laptop"
 	icon_state_unpowered = "laptop-off"
 	icon_state_menu = "menu"
-	display_overlays = FALSE
 
 	hardware_flag = PROGRAM_LAPTOP
-	max_hardware_size = 2
+	max_idle_programs = 3
 	w_class = WEIGHT_CLASS_NORMAL
-	max_bays = 4
 
 	// No running around with open laptops in hands.
 	item_flags = SLOWS_WHILE_IN_HAND
 
+	drag_slowdown = 0
 	screen_on = FALSE // Starts closed
 	var/start_open = TRUE // unless this var is set to 1
 	var/icon_state_closed = "laptop-closed"
 	var/w_class_open = WEIGHT_CLASS_BULKY
-	var/slowdown_open = TRUE
+	var/slowdown_open = 1
 
 /obj/item/modular_computer/laptop/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Drag it in your hand or on yourself to pick it up.</span>"
-	. += "<span class='notice'>Ctrl+Shift-click to [screen_on ? "close" : "open"] it.</span>"
-	var/obj/item/computer_hardware/card_slot/card_slot = all_components[MC_CARD]
-	var/obj/item/computer_hardware/card_slot/card_slot2 = all_components[MC_CARD2]
-	if(card_slot || card_slot2)
-		if(card_slot.stored_card)
-			. += "<span class='notice'>\The [src] has \a [card_slot] with an id inside, Alt-click to remove the id.</span>"
-		if(card_slot2.stored_card)
-			. += "<span class='notice'>\The [src] has \a [card_slot2] with an id inside, Alt-click to remove the id.</span>"
+	if(screen_on)
+		. += span_notice("Alt-click to close it.")
 
 /obj/item/modular_computer/laptop/Initialize(mapload)
 	. = ..()
@@ -68,54 +60,67 @@
 
 /obj/item/modular_computer/laptop/MouseDrop(obj/over_object, src_location, over_location)
 	. = ..()
+	if(over_object == usr || over_object == src)
+		try_toggle_open(usr)
+		return
 	if(istype(over_object, /atom/movable/screen/inventory/hand))
 		var/atom/movable/screen/inventory/hand/H = over_object
 		var/mob/M = usr
 
-		if(!istype(over_object, /atom/movable/screen/inventory/hand))
-			M.put_in_active_hand(src)
-			return
-
-		if(M.stat != CONSCIOUS || M.restrained())
+		if(M.stat != CONSCIOUS || HAS_TRAIT(M, TRAIT_HANDS_BLOCKED))
 			return
 		if(!isturf(loc) || !Adjacent(M))
 			return
 		M.put_in_hand(src, H.held_index)
 
-/obj/item/modular_computer/laptop/on_attack_hand(mob/user)
+/obj/item/modular_computer/laptop/attack_hand(mob/user, list/modifiers)
+	. = ..()
+	if(.)
+		return
 	if(screen_on && isturf(loc))
 		return attack_self(user)
-	..()
 
 /obj/item/modular_computer/laptop/proc/try_toggle_open(mob/living/user)
 	if(issilicon(user))
 		return
 	if(!isturf(loc) && !ismob(loc)) // No opening it in backpack.
 		return
-	if(!user.canUseTopic(src, BE_CLOSE))
+	if(!user.can_perform_action(src))
 		return
 
 	toggle_open(user)
 
 
-/obj/item/modular_computer/laptop/CtrlShiftClick(mob/user)
-	try_toggle_open(user)
+/obj/item/modular_computer/laptop/AltClick(mob/user)
+	. = ..()
+	if(!can_interact(user))
+		return
+	if(screen_on) // Close it.
+		try_toggle_open(user)
+	else
+		return ..()
 
 /obj/item/modular_computer/laptop/proc/toggle_open(mob/living/user=null)
 	if(screen_on)
 		to_chat(user, span_notice("You close \the [src]."))
 		slowdown = initial(slowdown)
 		w_class = initial(w_class)
+		drag_slowdown = initial(drag_slowdown)
 	else
 		to_chat(user, span_notice("You open \the [src]."))
 		slowdown = slowdown_open
 		w_class = w_class_open
+		drag_slowdown = slowdown_open
+	if(isliving(loc))
+		var/mob/living/localmob = loc
+		localmob.update_equipment_speed_mods()
+		localmob.update_pull_movespeed()
 
 	screen_on = !screen_on
-	display_overlays = screen_on
 	update_appearance()
 
-
+/obj/item/modular_computer/laptop/get_messenger_ending()
+	return "Sent from my UNIX Laptop"
 
 // Laptop frame, starts empty and closed.
 /obj/item/modular_computer/laptop/buildable

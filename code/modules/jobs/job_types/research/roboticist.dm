@@ -34,7 +34,7 @@
 	jobtype = /datum/job/roboticist
 
 	belt = /obj/item/storage/belt/utility/full
-	l_pocket = /obj/item/pda/roboticist
+	l_pocket = /obj/item/modular_computer/pda/roboticist
 	ears = /obj/item/radio/headset/headset_sci
 	uniform = /obj/item/clothing/under/rank/rnd/roboticist
 	suit = /obj/item/clothing/suit/toggle/labcoat/roboticist
@@ -48,9 +48,9 @@
 	name = "Syndicate Roboticist"
 	jobtype = /datum/job/roboticist
 
-	//belt = /obj/item/pda/syndicate/no_deto
+	//belt = /obj/item/modular_computer/pda/syndicate/no_deto
 
-	l_pocket = /obj/item/pda/roboticist
+	l_pocket = /obj/item/modular_computer/pda/roboticist
 	ears = /obj/item/radio/headset/headset_sci
 	uniform = /obj/item/clothing/under/rank/rnd/scientist/util
 	suit = /obj/item/clothing/suit/toggle/labcoat/roboticist

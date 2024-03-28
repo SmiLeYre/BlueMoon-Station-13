@@ -976,11 +976,11 @@ SUBSYSTEM_DEF(job)
 	if(!tgt_job.department_head[1])
 		return
 	var/boss_title = tgt_job.department_head[1]
-	var/obj/item/pda/target_pda
-	for(var/obj/item/pda/check_pda in GLOB.PDAs)
-		if(check_pda.ownjob == boss_title)
-			target_pda = check_pda
-			break
+	// var/obj/item/modular_computer/pda/target_pda
+	// for(var/obj/item/modular_computer/pda/check_pda in GLOB.PDAs)
+	// 	if(check_pda.ownjob == boss_title)
+	// 		target_pda = check_pda
+	// 		break
 	if(!target_pda)
 		return
 	if(target_pda && target_pda.toff)

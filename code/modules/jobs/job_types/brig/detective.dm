@@ -36,7 +36,7 @@
 	name = "Detective"
 	jobtype = /datum/job/detective
 
-	belt = /obj/item/pda/detective
+	belt = /obj/item/modular_computer/pda/detective
 	ears = /obj/item/radio/headset/headset_sec/alt
 	uniform = /obj/item/clothing/under/rank/security/detective
 	neck = /obj/item/clothing/neck/tie/black
@@ -59,7 +59,7 @@
 	name = "Syndicate Detective"
 	jobtype = /datum/job/detective
 
-	//belt = /obj/item/pda/syndicate/no_deto
+	//belt = /obj/item/modular_computer/pda/syndicate/no_deto
 
 	ears = /obj/item/radio/headset/headset_sec/alt
 	uniform = /obj/item/clothing/under/rank/security/officer/util

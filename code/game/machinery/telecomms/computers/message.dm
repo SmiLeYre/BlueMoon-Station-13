@@ -29,7 +29,7 @@
 	var/auth = FALSE 		// Are they authenticated?
 
 	// Custom Message Properties
-	var/obj/item/pda/customrecepient = null
+	var/obj/item/modular_computer/pda/customrecepient = null
 	var/customsender = "System Administrator"
 	var/customjob		= "Admin"
 	var/custommessage 	= "This is a test, please ignore."
@@ -314,7 +314,7 @@
 
 			if("recepient" in params)
 				// Get out list of viable PDAs
-				var/list/obj/item/pda/sendPDAs = get_viewable_pdas()
+				var/list/obj/item/modular_computer/pda/sendPDAs = get_viewable_pdas()
 				if(GLOB.PDAs && LAZYLEN(GLOB.PDAs) > 0)
 					customrecepient = input(usr, "Select a PDA from the list.") as null|anything in sortNames(sendPDAs)
 				else

@@ -4,7 +4,7 @@
 	icon = 'icons/mob/robots.dmi'
 	icon_state = "robot"
 	bubble_icon = "robot"
-	var/obj/item/pda/ai/aiPDA
+	var/obj/item/modular_computer/pda/ai/aiPDA
 	var/flash_protect = FALSE
 
 /mob/living/silicon/robot/get_cell()
@@ -32,7 +32,7 @@
 	ident = rand(1, 999)
 
 	if(!shell)
-		aiPDA = new/obj/item/pda/ai(src)
+		aiPDA = new/obj/item/modular_computer/pda/ai(src)
 		aiPDA.owner = real_name
 		aiPDA.ownjob = "Cyborg"
 		aiPDA.name = real_name + " ([aiPDA.ownjob])"

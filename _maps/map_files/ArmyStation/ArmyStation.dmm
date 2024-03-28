@@ -64,7 +64,7 @@
 /turf/open/floor/wood/wood_large,
 /area/hilbertshotel)
 "bf" = (
-/obj/item/pda,
+/obj/item/modular_computer/pda,
 /turf/open/floor/wood{
 	icon_state = "wood-broken3"
 	},
@@ -515,7 +515,7 @@
 /turf/open/floor/wood/wood_large,
 /area/hilbertshotel)
 "fi" = (
-/obj/item/pda,
+/obj/item/modular_computer/pda,
 /turf/open/floor/wood,
 /area/hilbertshotel)
 "fn" = (
@@ -819,7 +819,7 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/item/pda,
+/obj/item/modular_computer/pda,
 /turf/open/floor/festive/cobblestone/safe,
 /area/hilbertshotel)
 "im" = (
@@ -871,7 +871,7 @@
 /turf/open/floor/wood/wood_large,
 /area/hilbertshotel)
 "iA" = (
-/obj/item/pda,
+/obj/item/modular_computer/pda,
 /turf/open/floor/festive/alleyway/safe,
 /area/hilbertshotel)
 "iB" = (
@@ -1514,7 +1514,7 @@
 /turf/open/floor/iron/dark,
 /area/hilbertshotel)
 "nU" = (
-/obj/item/pda,
+/obj/item/modular_computer/pda,
 /turf/open/floor/wood{
 	icon_state = "wood-broken5"
 	},
@@ -1530,7 +1530,7 @@
 "oc" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/fullgrass,
-/obj/item/pda,
+/obj/item/modular_computer/pda,
 /turf/open/misc/grass,
 /area/hilbertshotel)
 "oh" = (
@@ -1607,7 +1607,7 @@
 /area/hilbertshotel)
 "oG" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/obj/item/pda,
+/obj/item/modular_computer/pda,
 /turf/open/misc/grass,
 /area/hilbertshotel)
 "oJ" = (
@@ -1655,7 +1655,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/item/pda,
+/obj/item/modular_computer/pda,
 /turf/open/floor/festive/cobblestone/safe,
 /area/hilbertshotel)
 "pf" = (
@@ -2142,7 +2142,7 @@
 /area/hilbertshotel)
 "tm" = (
 /obj/item/reagent_containers/food/drinks/beer,
-/obj/item/pda,
+/obj/item/modular_computer/pda,
 /turf/open/floor/festive/cobblestone/safe,
 /area/hilbertshotel)
 "tn" = (
@@ -5299,7 +5299,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/item/pda,
+/obj/item/modular_computer/pda,
 /mob/living/simple_animal/hostile/faithless,
 /turf/open/floor/festive/cobblestone/safe,
 /area/hilbertshotel)
@@ -5647,7 +5647,7 @@
 "VN" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/item/ammo_box/magazine/e45/lethal,
-/obj/item/pda,
+/obj/item/modular_computer/pda,
 /turf/open/misc/grass,
 /area/hilbertshotel)
 "VP" = (

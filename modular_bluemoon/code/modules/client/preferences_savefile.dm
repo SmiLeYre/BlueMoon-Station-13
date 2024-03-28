@@ -27,7 +27,7 @@
 
 	WRITE_FILE(S["silicon_lawset"], silicon_lawset)
 
-/obj/item/pda/proc/update_style(client/C)
+/obj/item/modular_computer/pda/proc/update_style(client/C)
 	background_color = C.prefs.pda_color
 	ttone = C.prefs.pda_ringtone || ttone
 	switch(C.prefs.pda_style)

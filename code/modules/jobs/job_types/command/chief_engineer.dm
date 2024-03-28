@@ -53,7 +53,7 @@
 
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/belt/utility/chief/full
-	l_pocket = /obj/item/pda/heads/ce
+	l_pocket = /obj/item/modular_computer/pda/heads/ce
 	ears = /obj/item/radio/headset/heads/ce
 	uniform = /obj/item/clothing/under/rank/engineering/chief_engineer
 	shoes = /obj/item/clothing/shoes/sneakers/brown
@@ -72,7 +72,7 @@
 	name = "Syndicate Chief Engineer"
 	jobtype = /datum/job/chief_engineer
 
-	//l_pocket = /obj/item/pda/syndicate/no_deto
+	//l_pocket = /obj/item/modular_computer/pda/syndicate/no_deto
 
 	belt = /obj/item/storage/belt/utility/chief/full
 	ears = /obj/item/radio/headset/heads/ce

@@ -543,10 +543,10 @@
 	illustration = "pda"
 
 /obj/item/storage/box/PDAs/PopulateContents()
-	new /obj/item/pda(src)
-	new /obj/item/pda(src)
-	new /obj/item/pda(src)
-	new /obj/item/pda(src)
+	new /obj/item/modular_computer/pda(src)
+	new /obj/item/modular_computer/pda(src)
+	new /obj/item/modular_computer/pda(src)
+	new /obj/item/modular_computer/pda(src)
 	new /obj/item/cartridge/head(src)
 
 	var/newcart = pick(	/obj/item/cartridge/engineering,
@@ -1529,7 +1529,7 @@
 /obj/item/storage/box/debugtools/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/flashlight/emp/debug=1,\
-		/obj/item/pda=1,\
+		/obj/item/modular_computer/pda=1,\
 		/obj/item/modular_computer/tablet/preset/advanced=1,\
 		/obj/item/geiger_counter=1,\
 		/obj/item/construction/rcd/combat/admin=1,\

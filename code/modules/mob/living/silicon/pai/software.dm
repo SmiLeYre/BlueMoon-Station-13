@@ -647,7 +647,7 @@
 	[(pda.silent) ? "<font color='red'>\[Off\]</font>" : "<font color='green'>\[On\]</font>"]</a><br><br>"}
 	dat += "<ul>"
 	if(!pda.toff)
-		for (var/obj/item/pda/P in sortNames(get_viewable_pdas()))
+		for (var/obj/item/modular_computer/pda/P in sortNames(get_viewable_pdas()))
 			if (P == pda)
 				continue
 			dat += "<li><a href='byond://?src=[REF(src)];software=pdamessage;target=[REF(P)]'>[P]</a>"
