@@ -197,7 +197,7 @@
 /obj/item/paper/proc/add_field_input(user, field_id, text, font, color, bold, signature_name, overwrite = FALSE)
 	var/datum/paper_field/field_data_datum = null
 
-	var/is_signature = (text == "%s")
+	var/is_signature = ((text == "%sign") || (text == "%s"))
 	var/is_time = (text == "%t")
 	var/is_date = (text == "%d")
 	var/is_job = (text == "%j")
