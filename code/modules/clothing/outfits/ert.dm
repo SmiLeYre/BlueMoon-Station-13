@@ -12,6 +12,10 @@
 
 	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
 
+	implants = list(/obj/item/implant/mindshield, /obj/item/implant/deathrattle, /obj/item/implant/weapons_auth)
+	cybernetic_implants = list(/obj/item/organ/cyberimp/eyes/hud/security,/obj/item/organ/cyberimp/chest/nutrimentextreme, /obj/item/organ/cyberimp/chest/chem_implant)
+
+
 /datum/outfit/ert/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	if(visualsOnly)
 		return
@@ -61,6 +65,13 @@
 		/obj/item/crowbar/power=1,\
 		/obj/item/ammo_box/magazine/wt550m9=3)
 
+	cybernetic_implants = list(
+		/obj/item/organ/cyberimp/eyes/hud/security,
+		/obj/item/organ/cyberimp/chest/nutrimentextreme,
+		/obj/item/organ/cyberimp/chest/chem_implant,
+		/obj/item/organ/cyberimp/arm/shield,
+	)
+
 // BLUEMOON ADD START - командная коробочка для командира
 /datum/outfit/ert/commander/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
 	. = ..()
@@ -95,6 +106,14 @@
 		/obj/item/crowbar/power=1,\
 		/obj/item/ammo_box/magazine/recharge/lasgun=3)
 
+	cybernetic_implants = list(
+		/obj/item/organ/cyberimp/eyes/hud/security,
+		/obj/item/organ/cyberimp/chest/nutrimentextreme,
+		/obj/item/organ/cyberimp/chest/chem_implant/plus,
+		/obj/item/organ/cyberimp/arm/shield,
+		/obj/item/organ/eyes/robotic/thermals,
+	)
+
 /datum/outfit/ert/commander/alert/red
 	name = "ERT Commander - Red Alert"
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
@@ -108,6 +127,13 @@
 		/obj/item/storage/firstaid/regular=1,\
 		/obj/item/crowbar/power=1
 		)
+	cybernetic_implants = list(
+		/obj/item/organ/cyberimp/eyes/hud/security,
+		/obj/item/organ/cyberimp/chest/nutrimentextreme,
+		/obj/item/organ/cyberimp/chest/chem_implant/plus,
+		/obj/item/organ/cyberimp/arm/shield,
+		/obj/item/organ/eyes/robotic/thermals,
+	)
 
 /datum/outfit/ert/security/green
 	name = "ERT Security - Green Alert"
@@ -146,6 +172,13 @@
 		/obj/item/storage/firstaid/regular=1,\
 		/obj/item/kitchen/knife/combat=1)
 
+	cybernetic_implants = list(
+		/obj/item/organ/cyberimp/eyes/hud/security,
+		/obj/item/organ/cyberimp/chest/nutrimentextreme,
+		/obj/item/organ/cyberimp/chest/chem_implant,
+		/obj/item/organ/cyberimp/arm/shield,
+	)
+
 /datum/outfit/ert/security/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()
 
@@ -173,6 +206,14 @@
 		/obj/item/kitchen/knife/combat=1,\
 		/obj/item/ammo_box/magazine/smgm9mm =4)
 
+	cybernetic_implants = list(
+		/obj/item/organ/cyberimp/eyes/hud/security,
+		/obj/item/organ/cyberimp/chest/nutrimentextreme,
+		/obj/item/organ/cyberimp/chest/chem_implant/plus,
+		/obj/item/organ/cyberimp/arm/shield,
+		/obj/item/organ/eyes/robotic/thermals,
+	)
+
 /datum/outfit/ert/security/alert/red
 	name = "ERT Security - Red Alert"
 
@@ -186,6 +227,14 @@
 		/obj/item/ammo_box/magazine/m556=3,\
 		/obj/item/kitchen/knife/combat=1,\
 		/obj/item/storage/firstaid/regular=1)
+
+	cybernetic_implants = list(
+		/obj/item/organ/cyberimp/eyes/hud/security,
+		/obj/item/organ/cyberimp/chest/nutrimentextreme,
+		/obj/item/organ/cyberimp/chest/chem_implant/plus,
+		/obj/item/organ/cyberimp/arm/shield,
+		/obj/item/organ/eyes/robotic/thermals,
+	)
 
 /datum/outfit/ert/medic/green
 	name = "ERT Medic - Green Alert"
@@ -206,6 +255,13 @@
 		/obj/item/crowbar/power=1,
 		/obj/item/gun/medbeam=1)
 
+	cybernetic_implants = list(
+		/obj/item/organ/cyberimp/eyes/hud/security,
+		/obj/item/organ/cyberimp/chest/nutrimentextreme,
+		/obj/item/organ/cyberimp/chest/chem_implant,
+		/obj/item/organ/cyberimp/arm/surgery,
+	)
+
 /datum/outfit/ert/medic
 	name = "ERT Medic - Blue Alert"
 
@@ -225,6 +281,14 @@
 		/obj/item/ammo_box/magazine/wt550m9=3,\
 		/obj/item/reagent_containers/hypospray/combat=1,\
 		/obj/item/gun/medbeam=1)
+
+	cybernetic_implants = list(
+		/obj/item/organ/cyberimp/eyes/hud/security,
+		/obj/item/organ/cyberimp/chest/nutrimentextreme,
+		/obj/item/organ/cyberimp/chest/chem_implant,
+		/obj/item/organ/cyberimp/arm/surgery/advanced,
+	)
+
 
 /datum/outfit/ert/medic/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	ADD_TRAIT(H, TRAIT_SURGEON, TRAIT_GENERIC)
@@ -252,6 +316,13 @@
 		/obj/item/gun/medbeam=1,\
 		/obj/item/kitchen/knife/combat=1)
 
+	cybernetic_implants = list(
+		/obj/item/organ/cyberimp/eyes/hud/security,
+		/obj/item/organ/cyberimp/chest/nutrimentextreme,
+		/obj/item/organ/cyberimp/chest/chem_implant,
+		/obj/item/organ/cyberimp/arm/surgery/advanced,
+	)
+
 /datum/outfit/ert/medic/alert/red
 	name = "ERT Medic - Red Alert"
 
@@ -266,6 +337,14 @@
 		/obj/item/kitchen/knife/combat=1,\
 		/obj/item/shield/riot/tele = 1,\
 		/obj/item/gun/medbeam=1)
+
+	cybernetic_implants = list(
+		/obj/item/organ/cyberimp/eyes/hud/security,
+		/obj/item/organ/cyberimp/chest/nutrimentextreme,
+		/obj/item/organ/cyberimp/chest/chem_implant/plus,
+		/obj/item/organ/cyberimp/arm/surgery/advanced,
+		/obj/item/organ/eyes/robotic/thermals,
+	)
 
 /datum/outfit/ert/engineer/green
 	name = "ERT Engineer - Green Alert"
@@ -287,6 +366,14 @@
 		/obj/item/rcd_ammo/large=2)
 	l_hand = /obj/item/construction/rcd/combat
 
+	cybernetic_implants = list(
+		/obj/item/organ/cyberimp/eyes/hud/security,
+		/obj/item/organ/cyberimp/chest/nutrimentextreme,
+		/obj/item/organ/cyberimp/chest/chem_implant,
+		/obj/item/organ/cyberimp/arm/toolset,
+	)
+
+
 /datum/outfit/ert/engineer
 	name = "ERT Engineer - Blue Alert"
 
@@ -305,6 +392,13 @@
 		/obj/item/storage/firstaid/regular=1,\
 		/obj/item/rcd_ammo/large=2)
 	l_hand = /obj/item/construction/rcd/combat
+
+	cybernetic_implants = list(
+		/obj/item/organ/cyberimp/eyes/hud/security,
+		/obj/item/organ/cyberimp/chest/nutrimentextreme,
+		/obj/item/organ/cyberimp/chest/chem_implant,
+		/obj/item/organ/cyberimp/arm/toolset/advanced,
+	)
 
 /datum/outfit/ert/engineer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()
@@ -330,6 +424,13 @@
 		/obj/item/storage/firstaid/regular=1,\
 		/obj/item/construction/rcd/combat=1)
 
+	cybernetic_implants = list(
+		/obj/item/organ/cyberimp/eyes/hud/security,
+		/obj/item/organ/cyberimp/chest/nutrimentextreme,
+		/obj/item/organ/cyberimp/chest/chem_implant,
+		/obj/item/organ/cyberimp/arm/toolset/advanced,
+	)
+
 /datum/outfit/ert/engineer/alert/red
 	name = "ERT Engineer - Red Alert"
 
@@ -342,6 +443,14 @@
 		/obj/item/ammo_box/magazine/recharge=4,\
 		/obj/item/storage/firstaid/regular=1,\
 		/obj/item/construction/rcd/combat=1)
+
+	cybernetic_implants = list(
+		/obj/item/organ/cyberimp/eyes/hud/security,
+		/obj/item/organ/cyberimp/chest/nutrimentextreme,
+		/obj/item/organ/cyberimp/chest/chem_implant/plus,
+		/obj/item/organ/cyberimp/arm/toolset/advanced,
+		/obj/item/organ/eyes/robotic/thermals,
+	)
 
 /datum/outfit/ert/janitor
 	name = "ERT Janitor"
