@@ -826,7 +826,7 @@
 	description = "A painkiller that allows the patient to move at full speed even in bulky objects. Causes drowsiness and eventually unconsciousness in high doses. Overdose will cause a variety of effects, ranging from minor to lethal."
 	reagent_state = LIQUID
 	color = "#A9FBFB"
-	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	metabolization_rate = 0.1
 	overdose_threshold = 20
 	addiction_threshold = 25
 	pH = 8.96
@@ -849,7 +849,7 @@
 /datum/reagent/medicine/morphine/overdose_process(mob/living/M)
 	switch(current_cycle)
 		if(12)
-			to_chat(M, "<span class='warning'>Вы ощущаете себя устало...</span>" )
+			to_chat(M, "<span class='warning'>Вы чувствуете себя устало...</span>" )
 		if(24 to 48)
 			M.drowsyness += 1
 		if(96 to INFINITY)

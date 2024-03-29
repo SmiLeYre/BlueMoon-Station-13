@@ -134,18 +134,20 @@
 	var/propability = 0.5
 	var/turf/T = get_turf(target)
 
-	if(locate(/obj/structure/table/optable, T))
-		propability = 1
+	if(locate(/obj/structure/table/optable/abductor, T))
+		propability += 1
+	else if(locate(/obj/structure/table/optable, T))
+		propability += 0.5
 	else if(locate(/obj/machinery/stasis))
-		propability = 0.9
+		propability += 0.4
 	else if(locate(/obj/structure/table, T))
-		propability = 0.8
+		propability += 0.3
 	else if(locate(/obj/structure/bed, T))
-		propability = 0.7
+		propability += 0.1
 
 	// BLUEMOON ADDITION AHEAD - сверх-большие персонажи ломают собой столы. Поблажка, дабы с ними всё ещё можно было проводить нормально операции
 	if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))
-		propability = 0.8
+		propability -= 0.3
 
 	// Шансы на операции в зависимости от состояния пациента
 	var/check_for_painkillers = FALSE

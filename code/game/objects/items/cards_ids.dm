@@ -592,13 +592,13 @@
 	assignment = "Mercenary"
 	access = list(ACCESS_MAINT_TUNNELS, ACCESS_INTEQ)
 
-/obj/item/card/id/syndicate/anyone/inteq
+/obj/item/card/id/syndicate/inteq/anyone
 	name = "Vanguard Mercenary Card"
 	icon_state = "inteq"
 	assignment = "Vanguard Mercenary"
 	access = list(ACCESS_MAINT_TUNNELS, ACCESS_INTEQ, ACCESS_INTEQ_LEADER)
 
-/obj/item/card/id/syndicate/nuke_leader/inteq
+/obj/item/card/id/syndicate/inteq/nuke_leader
 	name = "Nuclear Vanguard Mercenary Card"
 	icon_state = "inteq"
 	assignment = "Vanguard Mercenary"

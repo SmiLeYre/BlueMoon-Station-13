@@ -108,7 +108,7 @@ GLOBAL_LIST_EMPTY(ghost_records)
 		if(COOLDOWN_FINISHED(src, cooldown))
 			COOLDOWN_START(src, cooldown, 120 SECONDS)
 		else
-			to_chat(usr, "<span class='warning'>ОЖИДАЙТЕ В ТЕЧЕНИИ [120] СЕКУНД.</span>")
+			to_chat(usr, "<span class='warning'>ОЖИДАЙТЕ В ТЕЧЕНИИ [cooldown] СЕКУНД.</span>")
 			playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
 			return
 

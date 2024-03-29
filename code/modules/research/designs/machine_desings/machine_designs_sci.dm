@@ -74,13 +74,13 @@
 	category = list("Research Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
-/datum/design/board/protolathe
-	name = "Machine Design (Protolathe Board)"
-	desc = "The circuit board for a protolathe."
-	id = "protolathe"
-	build_path = /obj/item/circuitboard/machine/protolathe
-	category = list("Research Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+// /datum/design/board/protolathe
+// 	name = "Machine Design (Protolathe Board)"
+// 	desc = "The circuit board for a protolathe."
+// 	id = "protolathe"
+// 	build_path = /obj/item/circuitboard/machine/protolathe
+// 	category = list("Research Machinery")
+// 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/rdservercontrol
 	name = "Computer Design (R&D Server Control Console Board)"

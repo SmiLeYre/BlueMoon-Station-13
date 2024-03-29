@@ -191,6 +191,20 @@
 	ckeywhitelist = list("snacksman", "krashly")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
+/datum/gear/donator/bm/syndiecloak
+	name = "Syndicate Officer's Cloak"
+	slot = ITEM_SLOT_NECK
+	path = /obj/item/clothing/neck/cloak/syndiecap
+	ckeywhitelist = list("architect0r")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/sencloak
+	name = "Senior Commander's Trenchcloak"
+	slot = ITEM_SLOT_NECK
+	path = /obj/item/clothing/neck/cloak/sencloak
+	ckeywhitelist = list("romontesque")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
 /datum/gear/donator/bm/angelo
 	name = "Angelo's Coat"
 	slot = ITEM_SLOT_OCLOTHING

@@ -1025,7 +1025,7 @@ var/static/list/ukraine_replacements = list(
 		examine_list += span_warning(examine_hunger_public)
 
 /datum/quirk/kiss_slut
-	name = "Губная Тактилофилия"
+	name = "Чувствительные Губы"
 	desc = "Одна только мысль о поцелуе заставляет вас краснеть и возбуждаться, эффективно усиляя ваше возбуждение с каждым поцелуем."
 	value = 0
 	mob_trait = TRAIT_KISS_SLUT

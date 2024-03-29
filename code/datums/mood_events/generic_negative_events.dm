@@ -398,3 +398,8 @@
 	description = span_warning("Проклятые дикари!</span>\n")
 	mood_change = -5
 	timeout = 2 MINUTES
+
+/datum/mood_event/uncomfortably
+	description = span_warning("Я что-то защемил!</span>\n")
+	mood_change = -12
+	timeout = 6 MINUTES

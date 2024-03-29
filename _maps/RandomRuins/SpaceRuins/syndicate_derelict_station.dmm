@@ -2118,7 +2118,6 @@
 /obj/item/electronics/apc,
 /obj/item/electronics/apc,
 /obj/item/electronics/apc,
-/obj/item/circuitboard/machine/protolathe,
 /obj/item/circuitboard/machine/circuit_imprinter,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/syndiederelict/engineering)

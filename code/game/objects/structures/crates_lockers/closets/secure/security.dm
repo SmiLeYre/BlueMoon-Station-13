@@ -280,6 +280,8 @@
 	new /obj/item/electrostaff(src)
 	for(var/i in 1 to 3)
 		new /obj/item/storage/box/lethalshot(src)
+	for(var/k in 1 to 9)
+		new /obj/item/kitchen/knife/combat(src)
 
 /obj/structure/closet/secure_closet/labor_camp_security
 	name = "labor camp security locker"

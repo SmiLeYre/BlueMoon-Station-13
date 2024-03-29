@@ -679,7 +679,7 @@
 		"OTA Variation" = list(RESKIN_ICON_STATE = "hardsuit-alliance")
 	)
 
-/obj/item/clothing/suit/space/hardsuit/security/reskin_obj(mob/user)
+/obj/item/clothing/suit/space/hardsuit/security/hos/reskin_obj(mob/user)
 	if(current_skin == "OTA Variation")
 		mutantrace_variation = STYLE_DIGITIGRADE
 		tail_state = "syndicate-winter"

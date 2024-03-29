@@ -446,6 +446,12 @@ AI MODULES
 	name = "Syndicate Core AI Module"
 	law_id = "syndie"
 
+/******************** Syndicate ********************/
+
+/obj/item/ai_module/core/full/inteq
+	name = "InteQ Core AI Module"
+	law_id = "inteq"
+
 /********************    SOL    ********************/
 
 /obj/item/ai_module/core/full/solfed

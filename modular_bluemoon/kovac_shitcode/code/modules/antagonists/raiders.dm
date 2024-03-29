@@ -147,7 +147,7 @@
 
 /datum/outfit/inteq_raider/vanguard
 	name = "InteQ Vanguard"
-	id = /obj/item/card/id/syndicate/anyone/inteq
+	id = /obj/item/card/id/syndicate/inteq/anyone
 	suit = /obj/item/clothing/suit/armor/inteq/vanguard
 	head = /obj/item/clothing/head/HoS/inteq_vanguard
 	l_pocket = /obj/item/clothing/gloves/krav_maga/combatglovesplus

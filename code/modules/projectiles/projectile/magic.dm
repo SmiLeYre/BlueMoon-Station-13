@@ -153,11 +153,9 @@
 
 		if("robot")
 			var/robot = pick(200;/mob/living/silicon/robot,
-							/mob/living/silicon/robot/modules/inteq, //BM Changes /Krashly
-							/mob/living/silicon/robot/modules/inteq/medical, //BM Changes /Krashly
-							/mob/living/silicon/robot/modules/inteq/saboteur, //BM Changes /Krashly
-							200;/mob/living/simple_animal/drone/polymorphed,
-							/mob/living/simple_animal/drone/syndrone/badass/inteq)
+							/mob/living/silicon/robot/modules/inteq,
+							/mob/living/silicon/robot/modules/inteq/medical,
+							/mob/living/silicon/robot/modules/inteq/saboteur)
 
 			new_mob = new robot(M.loc)
 			if(issilicon(new_mob))
@@ -242,6 +240,8 @@
 	M.log_message("became [new_mob.real_name]", LOG_ATTACK, color="orange")
 
 	new_mob.a_intent = INTENT_HARM
+
+	new_mob.fully_replace_character_name("[pick(GLOB.nightmare_names)]")
 
 	M.wabbajack_act(new_mob)
 

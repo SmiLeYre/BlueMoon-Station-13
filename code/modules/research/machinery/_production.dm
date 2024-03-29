@@ -22,6 +22,9 @@
 
 	var/lathe_prod_time = 0.5
 
+	/// What color is this machine's stripe? Leave null to not have a stripe.
+	var/stripe_color = null
+
 /obj/machinery/rnd/production/Initialize(mapload)
 	if(mapload && offstation_security_levels)
 		log_mapping("Depricated var named \"offstation_security_levels\" at ([x], [y], [z])!")
@@ -42,6 +45,16 @@
 	QDEL_NULL(stored_research)
 	host_research = null
 	return ..()
+
+/obj/machinery/rnd/production/update_overlays()
+	. = ..()
+
+	if(!stripe_color)
+		return
+
+	var/mutable_appearance/stripe = mutable_appearance('icons/obj/machines/research.dmi', "protolathe_stripe[panel_open ? "_t" : ""]")
+	stripe.color = stripe_color
+	. += stripe
 
 /obj/machinery/rnd/production/proc/update_research()
 	set waitfor = FALSE

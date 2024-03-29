@@ -3,8 +3,8 @@
 	desc = "Cast spells that will cause the target to feel the power of lewd chemistry."
 	include_user = TRUE
 	clothes_req = NONE
-	invocation_type = "shout"
-	invocation = "BIGGUS DICKUS"
+	invocation_type = "whisper"
+	invocation = "Et invoco..."
 	charge_max = 10 SECONDS
 	cooldown_min = 5 SECONDS
 	icon = 'modular_splurt/icons/obj/syringe.dmi'

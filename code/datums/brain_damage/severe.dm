@@ -171,16 +171,17 @@
 		stress = max(stress - 4, 0)
 
 /datum/brain_trauma/severe/monophobia/proc/check_alone()
-//SANDSTORM EDIT
 	var/check_radius = 7
+
 	if(!owner)
+		return FALSE
+	if(istype(owner.loc, /obj/item/clothing/head/mob_holder/micro))
 		return FALSE
 	if(istype(owner.loc, /obj/belly))
 		return FALSE
 	if(HAS_TRAIT(owner, TRAIT_BLIND))
 		check_radius = 1
 	for(var/mob/M in oview(owner, check_radius))
-//SANDSTORM EDIT END
 		if(!isliving(M)) //ghosts ain't people
 			continue
 		if((istype(M, /mob/living/simple_animal/pet)) || M.ckey)

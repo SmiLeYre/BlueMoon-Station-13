@@ -30,6 +30,7 @@
 					/obj/item/clothing/head/soft/sec = 5,
 					/obj/item/clothing/mask/bandana/red = 5,
 					/obj/item/clothing/mask/balaclava/breath/redscarf = 4,
+					/obj/item/clothing/mask/balaclava/breath/alliance = 6,
 					/obj/item/clothing/mask/gas/sechailer = 4,
 					/obj/item/clothing/mask/gas/nri = 2,
 					/obj/item/clothing/under/rank/security/officer/skirt = 5,
