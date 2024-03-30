@@ -1,4 +1,4 @@
-#define STATUS_EFFECT_STINK /datum/status_effect/transient/stink // оверлей вони
+#define STATUS_EFFECT_STINK /datum/status_effect/transient/stink/short // оверлей вони
 
 #define CLEAN 0
 #define FINE_CLEAN 50 // ресет предупреждений о необходимости сходить в душ
@@ -63,7 +63,7 @@
 				SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "need_shower", /datum/mood_event/need_shower/very_dirty_catastrophic)
 			else
 				SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "need_shower", /datum/mood_event/need_shower/very_dirty)
-				quirk_holder.apply_status_effect(STATUS_EFFECT_STINK, 50)
+				quirk_holder.apply_status_effect(STATUS_EFFECT_STINK, 100)
 			if(warning_level < 3)
 				to_chat(quirk_holder, span_phobia("Мне ОЧЕНЬ нужно сходить в душ!"))
 				warning_level = 3
@@ -190,6 +190,9 @@
 	on_remove_on_mob_delete = TRUE
 	status_type = STATUS_EFFECT_REFRESH
 	var/image/overlay
+
+/datum/status_effect/transient/stink/short
+	duration = 10 SECONDS // Если оставить STATUS_EFFECT_REFRESH и не обозначить продолжительность, то может забаговаться в бесконечный эффект
 
 /datum/status_effect/transient/stink/tick()
 	. = ..()
