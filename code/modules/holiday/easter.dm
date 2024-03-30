@@ -94,7 +94,7 @@
 	icon_state = "bunnyhead"
 	item_state = "bunnyhead"
 	desc = "Considerably more cute than 'Frank'."
-	slowdown = -1
+	slowdown = -0.1 //BLUEMOON CHANGE было -1 (это фактически ускорение от тапок нинзи, но в слотах костюма и головы)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
 /obj/item/clothing/suit/bunnysuit
@@ -102,7 +102,7 @@
 	desc = "Hop Hop Hop!"
 	icon_state = "bunnysuit"
 	item_state = "bunnysuit"
-	slowdown = -1
+	slowdown = -0.1 //BLUEMOON CHANGE было -1 (это фактически ускорение от тапок нинзи, но в слотах костюма и головы)
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
 
