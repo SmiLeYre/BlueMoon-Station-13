@@ -262,11 +262,7 @@
 "dq" = (
 /obj/effect/decal/cleanable/glass,
 /obj/structure/alien/weeds,
-/obj/structure/alien/weeds/node{
-	maximum_growtime = 240000;
-	minimum_growtime = 120000;
-	growtime = 150000
-	},
+/obj/structure/alien/weeds/node,
 /obj/machinery/power/terminal{
 	dir = 8
 	},
@@ -495,11 +491,7 @@
 	})
 "hI" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
-/obj/structure/alien/weeds/node{
-	maximum_growtime = 240000;
-	minimum_growtime = 120000;
-	growtime = 150000
-	},
+/obj/structure/alien/weeds/node,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/inteq_forgotten_vault{
@@ -741,11 +733,7 @@
 	name = "InteQ transport ship"
 	})
 "mk" = (
-/obj/structure/alien/weeds/node{
-	maximum_growtime = 240000;
-	minimum_growtime = 120000;
-	growtime = 150000
-	},
+/obj/structure/alien/weeds/node,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/inteq_forgotten_vault{
 	name = "InteQ transport ship"
@@ -1461,11 +1449,7 @@
 /obj/effect/decal/cleanable/blood/gibs{
 	icon_state = "gib3-old"
 	},
-/obj/structure/alien/weeds/node{
-	maximum_growtime = 240000;
-	minimum_growtime = 120000;
-	growtime = 150000
-	},
+/obj/structure/alien/weeds/node,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/inteq_forgotten_vault{
 	name = "InteQ transport ship"
@@ -1577,11 +1561,7 @@
 	icon_state = "warningline_white";
 	dir = 4
 	},
-/obj/structure/alien/weeds/node{
-	maximum_growtime = 240000;
-	minimum_growtime = 120000;
-	growtime = 150000
-	},
+/obj/structure/alien/weeds/node,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/inteq_forgotten_vault{
 	name = "InteQ transport ship"
@@ -1893,11 +1873,7 @@
 	loot = list(/obj/effect/gibspawner/xeno);
 	faction = list("syndicate","xenomorph")
 	},
-/obj/structure/alien/weeds/node{
-	maximum_growtime = 240000;
-	minimum_growtime = 120000;
-	growtime = 150000
-	},
+/obj/structure/alien/weeds/node,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/inteq_forgotten_vault{
 	name = "InteQ transport ship"
@@ -2500,11 +2476,7 @@
 	})
 "OC" = (
 /obj/effect/decal/cleanable/glass,
-/obj/structure/alien/weeds/node{
-	maximum_growtime = 240000;
-	minimum_growtime = 120000;
-	growtime = 150000
-	},
+/obj/structure/alien/weeds/node,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/inteq_forgotten_vault{
 	name = "InteQ transport ship"
@@ -2527,11 +2499,7 @@
 	desc = "Resin just thin enough to let light pass through, but it's congealing in the same way as the thicker stuff.";
 	name = "viscous resin membrane"
 	},
-/obj/structure/alien/weeds/node{
-	maximum_growtime = 240000;
-	minimum_growtime = 120000;
-	growtime = 150000
-	},
+/obj/structure/alien/weeds/node,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/inteq_forgotten_vault{
 	name = "InteQ transport ship"
@@ -2666,11 +2634,7 @@
 	})
 "RS" = (
 /obj/structure/barricade/security,
-/obj/structure/alien/weeds/node{
-	maximum_growtime = 240000;
-	minimum_growtime = 120000;
-	growtime = 150000
-	},
+/obj/structure/alien/weeds/node,
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
@@ -2763,7 +2727,7 @@
 	},
 /mob/living/simple_animal/hostile/alien/queen/large{
 	del_on_death = 1;
-	loot = list(/obj/effect/gibspawner/xeno,/obj/item/ammo_box/magazine/plastikov9mm,/obj/effect/mob_spawn/corpse/human/syndicatecommando/soft_suit);
+	loot = list(/obj/effect/gibspawner/xeno,/obj/effect/mob_spawn/corpse/human/syndicatecommando/soft_suit);
 	desc = "What you saw in your dreams last night.";
 	faction = list("syndicate","xenomorph")
 	},
@@ -3027,11 +2991,7 @@
 /obj/structure/fans/tiny,
 /obj/structure/alien/resin/membrane,
 /obj/structure/alien/weeds,
-/obj/structure/alien/weeds/node{
-	maximum_growtime = 240000;
-	minimum_growtime = 120000;
-	growtime = 150000
-	},
+/obj/structure/alien/weeds/node,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/inteq_forgotten_vault{
 	name = "InteQ transport ship"
