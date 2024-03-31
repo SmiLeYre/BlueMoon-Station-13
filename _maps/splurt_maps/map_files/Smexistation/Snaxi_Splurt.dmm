@@ -38,16 +38,16 @@
 /obj/item/clothing/glasses/meson{
 	pixel_y = 4
 	},
-/obj/item/cartridge/atmos,
-/obj/item/cartridge/engineering{
+
+
 	pixel_x = -3;
 	pixel_y = 2
 	},
-/obj/item/cartridge/engineering{
+
 	pixel_x = -3;
 	pixel_y = 2
 	},
-/obj/item/cartridge/engineering{
+
 	pixel_x = -3;
 	pixel_y = 2
 	},
@@ -8919,18 +8919,6 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
-	},
-/obj/item/cartridge/signal/toxins{
-	pixel_x = 4;
-	pixel_y = 6
-	},
-/obj/item/cartridge/signal/toxins{
-	pixel_x = 4;
-	pixel_y = 6
-	},
-/obj/item/cartridge/signal/toxins{
-	pixel_x = 4;
-	pixel_y = 6
 	},
 /obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plasteel/checker,
@@ -28137,15 +28125,15 @@
 	icon_state = "1-4"
 	},
 /obj/structure/table/glass,
-/obj/item/cartridge/chemistry{
+
 	pixel_y = 2
 	},
-/obj/item/cartridge/medical,
-/obj/item/cartridge/medical{
+
+
 	pixel_x = -2;
 	pixel_y = 6
 	},
-/obj/item/cartridge/medical{
+
 	pixel_x = 6;
 	pixel_y = 3
 	},
@@ -29117,7 +29105,7 @@
 "lmm" = (
 /obj/structure/table/wood,
 /obj/item/folder/yellow,
-/obj/item/cartridge/lawyer,
+
 /turf/open/floor/plasteel/grimy,
 /area/service/lawoffice)
 "lmu" = (
@@ -32111,7 +32099,7 @@
 "mGe" = (
 /obj/structure/rack,
 /obj/item/storage/box/masks,
-/obj/item/cartridge/medical,
+
 /turf/open/floor/plating,
 /area/maintenance/port/fore)
 "mGl" = (
@@ -37041,15 +37029,15 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/brown,
-/obj/item/cartridge/quartermaster{
+
 	pixel_x = 6;
 	pixel_y = 5
 	},
-/obj/item/cartridge/quartermaster{
+
 	pixel_x = 6;
 	pixel_y = 5
 	},
-/obj/item/cartridge/quartermaster{
+
 	pixel_x = 6;
 	pixel_y = 5
 	},
@@ -55203,7 +55191,6 @@
 /area/icemoon/surface/outdoors)
 "wxw" = (
 /obj/structure/table,
-/obj/item/cartridge/signal/toxins,
 /obj/item/paicard{
 	pixel_x = 4
 	},

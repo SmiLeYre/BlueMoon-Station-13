@@ -4819,15 +4819,6 @@
 /area/science/research)
 "cvJ" = (
 /obj/structure/table,
-/obj/item/cartridge/signal/toxins{
-	pixel_x = 6
-	},
-/obj/item/cartridge/signal/toxins{
-	pixel_x = -6
-	},
-/obj/item/cartridge/signal/toxins{
-	pixel_y = 6
-	},
 /obj/machinery/firealarm{
 	dir = 8;
 	pixel_x = 24
@@ -13432,15 +13423,15 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
-/obj/item/cartridge/medical{
+
 	pixel_x = 6;
 	pixel_y = 3
 	},
-/obj/item/cartridge/medical{
+
 	pixel_x = 6;
 	pixel_y = 3
 	},
-/obj/item/cartridge/medical{
+
 	pixel_x = 6;
 	pixel_y = 3
 	},
@@ -15075,7 +15066,7 @@
 /area/science/mixing)
 "hQW" = (
 /obj/structure/table/reinforced,
-/obj/item/cartridge/engineering{
+
 	pixel_x = -6
 	},
 /obj/item/extinguisher/advanced,
@@ -16556,7 +16547,7 @@
 "iCS" = (
 /obj/structure/table/wood,
 /obj/item/taperecorder,
-/obj/item/cartridge/lawyer,
+
 /obj/item/stamp/law,
 /obj/item/toy/figure/lawyer,
 /obj/structure/cable{
@@ -28683,7 +28674,7 @@
 "oYT" = (
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/pill/patch/silver_sulf,
-/obj/item/cartridge/engineering{
+
 	pixel_x = -6
 	},
 /turf/open/floor/glass/reinforced,
@@ -39605,7 +39596,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
-/obj/item/cartridge/chemistry{
+
 	pixel_y = 2
 	},
 /obj/structure/disposalpipe/segment{

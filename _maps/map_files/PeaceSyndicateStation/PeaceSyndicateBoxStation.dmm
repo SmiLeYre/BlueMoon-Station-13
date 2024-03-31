@@ -29590,15 +29590,15 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/item/cartridge/quartermaster{
+
 	pixel_x = 6;
 	pixel_y = 5
 	},
-/obj/item/cartridge/quartermaster{
+
 	pixel_x = -4;
 	pixel_y = 7
 	},
-/obj/item/cartridge/quartermaster,
+
 /obj/item/coin/silver,
 /obj/effect/turf_decal/tile/brown,
 /obj/effect/turf_decal/tile/brown{
@@ -31337,15 +31337,6 @@
 /area/command/heads_quarters/rd)
 "bCg" = (
 /obj/structure/table,
-/obj/item/cartridge/signal/toxins,
-/obj/item/cartridge/signal/toxins{
-	pixel_x = -4;
-	pixel_y = 2
-	},
-/obj/item/cartridge/signal/toxins{
-	pixel_x = 4;
-	pixel_y = 6
-	},
 /obj/machinery/camera{
 	c_tag = "Research Director's Office";
 	dir = 1;
@@ -32053,15 +32044,15 @@
 	dir = 8
 	},
 /obj/structure/table,
-/obj/item/cartridge/chemistry{
+
 	pixel_y = 2
 	},
-/obj/item/cartridge/medical{
+
 	pixel_x = -2;
 	pixel_y = 6
 	},
-/obj/item/cartridge/medical,
-/obj/item/cartridge/medical{
+
+
 	pixel_x = 6;
 	pixel_y = 3
 	},
@@ -44088,7 +44079,7 @@
 /area/maintenance/disposal/incinerator)
 "ciF" = (
 /obj/structure/table,
-/obj/item/cartridge/medical,
+
 /turf/open/floor/plating,
 /area/maintenance/aft)
 "ciG" = (
@@ -44645,18 +44636,18 @@
 /area/command/heads_quarters/ce)
 "cjY" = (
 /obj/structure/table/reinforced,
-/obj/item/cartridge/engineering{
+
 	pixel_x = 4;
 	pixel_y = 5
 	},
-/obj/item/cartridge/engineering{
+
 	pixel_x = -3;
 	pixel_y = 2
 	},
-/obj/item/cartridge/engineering{
+
 	pixel_x = 3
 	},
-/obj/item/cartridge/atmos,
+
 /obj/structure/disposalpipe/segment{
 	dir = 9
 	},
@@ -52882,7 +52873,7 @@
 /area/service/abandoned_gambling_den)
 "fmH" = (
 /obj/structure/table/wood,
-/obj/item/cartridge/lawyer,
+
 /obj/item/taperecorder,
 /turf/open/floor/wood,
 /area/service/lawoffice)

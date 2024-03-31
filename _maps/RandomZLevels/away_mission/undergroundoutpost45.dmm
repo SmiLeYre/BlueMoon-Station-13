@@ -6998,11 +6998,6 @@
 /area/awaymission/undergroundoutpost45/research)
 "nk" = (
 /obj/structure/table,
-/obj/item/cartridge/signal/toxins,
-/obj/item/cartridge/signal/toxins{
-	pixel_x = -4;
-	pixel_y = 2
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/broken/directional/west,
 /obj/structure/spider/terrorweb/white,

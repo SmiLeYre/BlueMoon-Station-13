@@ -73089,15 +73089,6 @@
 /area/ai_monitored/security/armory)
 "fGY" = (
 /obj/structure/table,
-/obj/item/cartridge/signal/toxins{
-	pixel_x = 6
-	},
-/obj/item/cartridge/signal/toxins{
-	pixel_x = -6
-	},
-/obj/item/cartridge/signal/toxins{
-	pixel_y = 6
-	},
 /obj/machinery/firealarm{
 	dir = 8;
 	pixel_x = 24
@@ -99837,13 +99828,13 @@
 "nRl" = (
 /obj/structure/table/glass,
 /obj/item/folder/blue,
-/obj/item/cartridge/medical{
+
 	pixel_x = -3
 	},
-/obj/item/cartridge/medical{
+
 	pixel_x = 3
 	},
-/obj/item/cartridge/chemistry{
+
 	pixel_y = 6
 	},
 /obj/effect/turf_decal/tile/blue{
@@ -111620,13 +111611,13 @@
 /area/command/heads_quarters/ce)
 "rJr" = (
 /obj/structure/table/reinforced,
-/obj/item/cartridge/quartermaster{
+
 	pixel_x = -6
 	},
-/obj/item/cartridge/quartermaster{
+
 	pixel_x = 6
 	},
-/obj/item/cartridge/quartermaster{
+
 	pixel_y = 6
 	},
 /obj/item/gps/mining,
@@ -126978,10 +126969,10 @@
 	dir = 8
 	},
 /obj/structure/rack,
-/obj/item/cartridge/atmos{
+
 	pixel_x = -3
 	},
-/obj/item/cartridge/engineering{
+
 	pixel_x = 6
 	},
 /obj/item/storage/secure/briefcase,

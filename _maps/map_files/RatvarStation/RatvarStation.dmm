@@ -51752,19 +51752,19 @@
 /turf/open/floor/clockwork/reebe,
 /area/service/hydroponics)
 "gaa" = (
-/obj/item/cartridge/engineering{
+
 	pixel_x = 4;
 	pixel_y = 5
 	},
-/obj/item/cartridge/engineering{
+
 	pixel_x = -3;
 	pixel_y = 2
 	},
-/obj/item/cartridge/engineering{
+
 	pixel_x = 3
 	},
 /obj/structure/table/reinforced,
-/obj/item/cartridge/atmos,
+
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
@@ -54630,7 +54630,7 @@
 /area/security/prison)
 "hEm" = (
 /obj/item/taperecorder,
-/obj/item/cartridge/lawyer,
+
 /obj/structure/table/wood,
 /obj/machinery/button/door{
 	id = "lawyer_shutters";
@@ -56740,15 +56740,6 @@
 /area/engineering/main)
 "iGV" = (
 /obj/structure/table,
-/obj/item/cartridge/signal/toxins,
-/obj/item/cartridge/signal/toxins{
-	pixel_x = -4;
-	pixel_y = 2
-	},
-/obj/item/cartridge/signal/toxins{
-	pixel_x = 4;
-	pixel_y = 6
-	},
 /obj/machinery/camera{
 	c_tag = "Research Director's Office";
 	dir = 1;
@@ -69330,16 +69321,16 @@
 /turf/open/floor/wood,
 /area/command/blueshieldoffice)
 "pyW" = (
-/obj/item/cartridge/medical{
+
 	pixel_x = -2;
 	pixel_y = 6
 	},
-/obj/item/cartridge/medical{
+
 	pixel_x = 6;
 	pixel_y = 3
 	},
-/obj/item/cartridge/medical,
-/obj/item/cartridge/chemistry{
+
+
 	pixel_y = 2
 	},
 /obj/structure/table/glass,
@@ -75107,7 +75098,7 @@
 	pixel_x = -2
 	},
 /obj/item/book/manual/splurt_space_law,
-/obj/item/cartridge/detective,
+
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
@@ -76486,15 +76477,15 @@
 /area/command/bridge)
 "tmr" = (
 /obj/structure/table,
-/obj/item/cartridge/quartermaster{
+
 	pixel_x = -4;
 	pixel_y = 7
 	},
-/obj/item/cartridge/quartermaster{
+
 	pixel_x = 6;
 	pixel_y = 5
 	},
-/obj/item/cartridge/quartermaster,
+
 /obj/item/gps{
 	gpstag = "QM0"
 	},

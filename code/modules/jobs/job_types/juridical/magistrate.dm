@@ -57,7 +57,7 @@
 
 /obj/item/modular_computer/pda/heads/ntr
 	name = "NanoTrasen Representative PDA"
-	default_cartridge = /obj/item/cartridge/hos
+
 	icon_state = "pda-security"
 
 /obj/item/clothing/suit/armor/ntr

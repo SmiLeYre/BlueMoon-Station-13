@@ -26726,18 +26726,18 @@
 	},
 /obj/effect/turf_decal/tile/yellow,
 /obj/structure/table/reinforced,
-/obj/item/cartridge/engineering{
+
 	pixel_x = 4;
 	pixel_y = 5
 	},
-/obj/item/cartridge/engineering{
+
 	pixel_x = -3;
 	pixel_y = 2
 	},
-/obj/item/cartridge/engineering{
+
 	pixel_x = 3
 	},
-/obj/item/cartridge/atmos,
+
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},

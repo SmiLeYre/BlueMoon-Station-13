@@ -583,18 +583,18 @@
 /area/awaymission)
 "aqa" = (
 /obj/structure/table/reinforced,
-/obj/item/cartridge/engineering{
+
 	pixel_x = 4;
 	pixel_y = 5
 	},
-/obj/item/cartridge/engineering{
+
 	pixel_x = -3;
 	pixel_y = 2
 	},
-/obj/item/cartridge/engineering{
+
 	pixel_x = 3
 	},
-/obj/item/cartridge/atmos,
+
 /obj/structure/disposalpipe/segment{
 	dir = 9
 	},
@@ -2761,16 +2761,16 @@
 /turf/open/floor/plasteel/dark,
 /area/engineering/main)
 "bmv" = (
-/obj/item/cartridge/medical{
+
 	pixel_x = -2;
 	pixel_y = 6
 	},
-/obj/item/cartridge/medical{
+
 	pixel_x = 6;
 	pixel_y = 3
 	},
-/obj/item/cartridge/medical,
-/obj/item/cartridge/chemistry{
+
+
 	pixel_y = 2
 	},
 /obj/structure/table/glass,
@@ -9421,7 +9421,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/item/cartridge/lawyer,
+
 /obj/item/taperecorder,
 /turf/open/floor/wood{
 	icon_state = "wood-broken5"
@@ -25762,18 +25762,18 @@
 /area/service/park)
 "mMD" = (
 /obj/structure/table/reinforced,
-/obj/item/cartridge/engineering{
+
 	pixel_x = 4;
 	pixel_y = 5
 	},
-/obj/item/cartridge/engineering{
+
 	pixel_x = -3;
 	pixel_y = 2
 	},
-/obj/item/cartridge/engineering{
+
 	pixel_x = 3
 	},
-/obj/item/cartridge/atmos,
+
 /obj/structure/window{
 	dir = 4
 	},
@@ -38119,19 +38119,19 @@
 /area/hilbertshotel)
 "sVP" = (
 /obj/structure/table/glass,
-/obj/item/cartridge/medical{
+
 	pixel_x = 6;
 	pixel_y = 3
 	},
-/obj/item/cartridge/medical{
+
 	pixel_x = 2;
 	pixel_y = 3
 	},
-/obj/item/cartridge/medical{
+
 	pixel_x = -2;
 	pixel_y = 3
 	},
-/obj/item/cartridge/chemistry{
+
 	pixel_x = -6;
 	pixel_y = 3
 	},
@@ -45356,15 +45356,6 @@
 /area/awaymission)
 "wTE" = (
 /obj/structure/table,
-/obj/item/cartridge/signal/toxins,
-/obj/item/cartridge/signal/toxins{
-	pixel_x = -4;
-	pixel_y = 2
-	},
-/obj/item/cartridge/signal/toxins{
-	pixel_x = 4;
-	pixel_y = 6
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},

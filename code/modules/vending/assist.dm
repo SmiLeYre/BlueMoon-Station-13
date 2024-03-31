@@ -7,8 +7,7 @@
 					/obj/item/assembly/playback = 4,
 					/obj/item/assembly/signaler = 6,
 					/obj/item/wirecutters = 3,
-					/obj/item/stock_parts/cell/crap = 6,
-					/obj/item/cartridge/signal = 6)
+					/obj/item/stock_parts/cell/crap = 6)
 	contraband = list(/obj/item/assembly/timer = 4,
 					/obj/item/assembly/voice = 4,
 					/obj/item/assembly/health = 4,

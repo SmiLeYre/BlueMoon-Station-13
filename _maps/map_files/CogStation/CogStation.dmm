@@ -24332,10 +24332,10 @@
 /obj/item/rcl/pre_loaded,
 /obj/item/stock_parts/cell/high/plus,
 /obj/item/clothing/glasses/meson,
-/obj/item/cartridge/atmos,
-/obj/item/cartridge/engineering,
-/obj/item/cartridge/engineering,
-/obj/item/cartridge/engineering,
+
+
+
+
 /obj/machinery/camera{
 	c_tag = "Chief Engineer's Office";
 	dir = 8;
@@ -39821,7 +39821,7 @@
 /area/service/lawoffice)
 "bWi" = (
 /obj/structure/table/wood,
-/obj/item/cartridge/lawyer{
+
 	pixel_x = 2;
 	pixel_y = 8
 	},
@@ -47896,7 +47896,7 @@
 /area/engineering/atmos)
 "cpN" = (
 /obj/structure/closet/secure_closet/atmospherics,
-/obj/item/cartridge/atmos,
+
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
 	},
@@ -47907,7 +47907,7 @@
 /area/engineering/atmos)
 "cpO" = (
 /obj/structure/closet/secure_closet/atmospherics,
-/obj/item/cartridge/atmos,
+
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 4

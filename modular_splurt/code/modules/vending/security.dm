@@ -223,7 +223,7 @@
 /obj/structure/closet/secure_closet/hosnew/PopulateContents()
 	..()
 	new /obj/item/storage/bag/ammo(src)
-	new /obj/item/cartridge/hos(src)
+
 	new /obj/item/radio/headset/heads/hos(src)
 	new /obj/item/storage/lockbox/medal/sec(src)
 	new /obj/item/megaphone/sec(src)

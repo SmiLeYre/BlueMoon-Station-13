@@ -15584,15 +15584,6 @@
 "aBN" = (
 /obj/machinery/light,
 /obj/structure/table,
-/obj/item/cartridge/signal/toxins,
-/obj/item/cartridge/signal/toxins{
-	pixel_x = -4;
-	pixel_y = 2
-	},
-/obj/item/cartridge/signal/toxins{
-	pixel_x = 4;
-	pixel_y = 6
-	},
 /turf/open/floor/plasteel/cafeteria,
 /area/command/heads_quarters/rd)
 "aBO" = (
@@ -21886,7 +21877,7 @@
 	},
 /obj/item/pen,
 /obj/item/taperecorder,
-/obj/item/cartridge/lawyer,
+
 /turf/open/floor/plasteel/grimy,
 /area/service/lawoffice)
 "aNC" = (
@@ -65566,13 +65557,13 @@
 /area/command/heads_quarters/ce)
 "hof" = (
 /obj/structure/table/reinforced,
-/obj/item/cartridge/engineering{
+
 	pixel_x = 6
 	},
-/obj/item/cartridge/engineering{
+
 	pixel_x = -6
 	},
-/obj/item/cartridge/engineering{
+
 	pixel_y = 6
 	},
 /obj/item/reagent_containers/pill/patch/silver_sulf,
@@ -73089,7 +73080,7 @@
 	pixel_x = -2
 	},
 /obj/item/book/manual/splurt_space_law,
-/obj/item/cartridge/detective,
+
 /obj/machinery/power/apc{
 	areastring = "/area/command/heads_quarters/hos";
 	dir = 1;

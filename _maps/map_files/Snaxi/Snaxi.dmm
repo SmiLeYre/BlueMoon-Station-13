@@ -64,16 +64,16 @@
 /obj/item/clothing/glasses/meson{
 	pixel_y = 4
 	},
-/obj/item/cartridge/atmos,
-/obj/item/cartridge/engineering{
+
+
 	pixel_x = -3;
 	pixel_y = 2
 	},
-/obj/item/cartridge/engineering{
+
 	pixel_x = -3;
 	pixel_y = 2
 	},
-/obj/item/cartridge/engineering{
+
 	pixel_x = -3;
 	pixel_y = 2
 	},
@@ -24899,7 +24899,6 @@
 /area/hallway/secondary/entry)
 "iFq" = (
 /obj/structure/table,
-/obj/item/cartridge/signal/toxins,
 /obj/item/paicard{
 	pixel_x = 4
 	},
@@ -25513,7 +25512,7 @@
 "jcR" = (
 /obj/structure/table/wood,
 /obj/item/taperecorder,
-/obj/item/cartridge/lawyer,
+
 /obj/item/clothing/glasses/sunglasses/big{
 	pixel_x = 3;
 	pixel_y = 3
@@ -27881,15 +27880,15 @@
 	icon_state = "1-4"
 	},
 /obj/structure/table/glass,
-/obj/item/cartridge/chemistry{
+
 	pixel_y = 2
 	},
-/obj/item/cartridge/medical,
-/obj/item/cartridge/medical{
+
+
 	pixel_x = -2;
 	pixel_y = 6
 	},
-/obj/item/cartridge/medical{
+
 	pixel_x = 6;
 	pixel_y = 3
 	},
@@ -33938,15 +33937,15 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/brown,
-/obj/item/cartridge/quartermaster{
+
 	pixel_x = 6;
 	pixel_y = 5
 	},
-/obj/item/cartridge/quartermaster{
+
 	pixel_x = 6;
 	pixel_y = 5
 	},
-/obj/item/cartridge/quartermaster{
+
 	pixel_x = 6;
 	pixel_y = 5
 	},
@@ -38064,15 +38063,6 @@
 "rlW" = (
 /obj/structure/table,
 /obj/machinery/computer/security/telescreen/rd,
-/obj/item/cartridge/signal/toxins{
-	pixel_x = 4;
-	pixel_y = 6
-	},
-/obj/item/cartridge/signal/toxins{
-	pixel_x = -4;
-	pixel_y = 2
-	},
-/obj/item/cartridge/signal/toxins,
 /turf/open/floor/plasteel/checker,
 /area/command/heads_quarters/rd)
 "rmo" = (

@@ -22826,12 +22826,12 @@
 /obj/machinery/light_switch{
 	pixel_y = -24
 	},
-/obj/item/cartridge/quartermaster{
+
 	pixel_x = 6;
 	pixel_y = 5
 	},
-/obj/item/cartridge/quartermaster,
-/obj/item/cartridge/quartermaster{
+
+
 	pixel_x = -4;
 	pixel_y = 7
 	},
@@ -34000,16 +34000,16 @@
 /turf/open/floor/plasteel/white,
 /area/command/heads_quarters/cmo)
 "bEF" = (
-/obj/item/cartridge/medical{
+
 	pixel_x = -2;
 	pixel_y = 6
 	},
-/obj/item/cartridge/medical{
+
 	pixel_x = 6;
 	pixel_y = 3
 	},
-/obj/item/cartridge/medical,
-/obj/item/cartridge/chemistry{
+
+
 	pixel_y = 2
 	},
 /obj/structure/table,
@@ -34166,15 +34166,6 @@
 /turf/open/floor/plasteel/dark,
 /area/command/heads_quarters/rd)
 "bEU" = (
-/obj/item/cartridge/signal/toxins,
-/obj/item/cartridge/signal/toxins{
-	pixel_x = -4;
-	pixel_y = 2
-	},
-/obj/item/cartridge/signal/toxins{
-	pixel_x = 4;
-	pixel_y = 6
-	},
 /obj/structure/table/glass,
 /obj/machinery/computer/security/telescreen/rd{
 	dir = 1;
@@ -36210,7 +36201,7 @@
 /area/maintenance/department/engine)
 "bJj" = (
 /obj/structure/rack,
-/obj/item/cartridge/medical,
+
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 6
 	},
@@ -41094,19 +41085,19 @@
 /turf/closed/wall/r_wall,
 /area/command/heads_quarters/ce)
 "bUI" = (
-/obj/item/cartridge/engineering{
+
 	pixel_x = 4;
 	pixel_y = 5
 	},
-/obj/item/cartridge/engineering{
+
 	pixel_x = -3;
 	pixel_y = 2
 	},
-/obj/item/cartridge/engineering{
+
 	pixel_x = 3
 	},
 /obj/structure/table/reinforced,
-/obj/item/cartridge/atmos,
+
 /obj/machinery/requests_console{
 	announcementConsole = 1;
 	department = "Chief Engineer's Desk";
@@ -57217,7 +57208,7 @@
 /area/service/library/lounge)
 "mXq" = (
 /obj/item/taperecorder,
-/obj/item/cartridge/lawyer,
+
 /obj/structure/table/wood,
 /obj/item/paper_bin,
 /obj/item/pen/blue,

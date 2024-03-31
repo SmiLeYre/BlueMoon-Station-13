@@ -41,7 +41,6 @@
 /obj/item/modular_computer/pda/bouncer
 	name = "bouncer PDA"
 	icon_state = "pda-bartender"
-	//default_cartridge = /obj/item/cartridge/bartender
 	inserted_item = /obj/item/pen/fountain
 
 /datum/outfit/job/bouncer

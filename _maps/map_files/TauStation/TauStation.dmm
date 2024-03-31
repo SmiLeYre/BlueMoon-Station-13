@@ -27135,7 +27135,6 @@
 /turf/open/floor/plasteel/white,
 /area/science/xenobiology)
 "jrS" = (
-/obj/item/cartridge/virus/mime,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 1
 	},
@@ -32508,7 +32507,7 @@
 /turf/open/space,
 /area/solars/port/fore)
 "loq" = (
-/obj/item/cartridge/lawyer,
+
 /obj/item/encryptionkey/headset_sec,
 /obj/item/clothing/accessory/armband/deputy,
 /obj/item/clothing/accessory/lawyers_badge,
@@ -35366,7 +35365,7 @@
 	pixel_x = 5;
 	pixel_y = 32
 	},
-/obj/item/cartridge/lawyer{
+
 	pixel_x = 10
 	},
 /turf/open/floor/plasteel/dark,
@@ -40540,16 +40539,16 @@
 /area/maintenance/starboard/fore)
 "nXL" = (
 /obj/structure/table,
-/obj/item/cartridge/medical{
+
 	pixel_x = -2;
 	pixel_y = 6
 	},
-/obj/item/cartridge/medical{
+
 	pixel_x = 6;
 	pixel_y = 3
 	},
-/obj/item/cartridge/medical,
-/obj/item/cartridge/chemistry{
+
+
 	pixel_y = 2
 	},
 /obj/effect/turf_decal/tile/blue{
@@ -54945,9 +54944,9 @@
 /obj/item/gps{
 	gpstag = "QM0"
 	},
-/obj/item/cartridge/quartermaster,
-/obj/item/cartridge/quartermaster,
-/obj/item/cartridge/quartermaster,
+
+
+
 /obj/item/clothing/accessory/armband/cargo,
 /obj/item/clothing/accessory/armband/cargo,
 /obj/effect/turf_decal/tile/brown{
@@ -55023,11 +55022,6 @@
 /area/service/janitor)
 "tff" = (
 /obj/structure/rack,
-/obj/item/cartridge/janitor{
-	pixel_x = 4;
-	pixel_y = 3
-	},
-/obj/item/cartridge/janitor,
 /obj/item/radio/headset/headset_srv,
 /obj/item/key/janitor,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -70082,16 +70076,16 @@
 /area/maintenance/department/cargo)
 "xSC" = (
 /obj/structure/table/reinforced,
-/obj/item/cartridge/atmos,
-/obj/item/cartridge/engineering{
+
+
 	pixel_x = 4;
 	pixel_y = 5
 	},
-/obj/item/cartridge/engineering{
+
 	pixel_x = -3;
 	pixel_y = 2
 	},
-/obj/item/cartridge/engineering{
+
 	pixel_x = 3
 	},
 /obj/effect/turf_decal/tile/yellow{
@@ -70572,15 +70566,6 @@
 	dir = 1
 	},
 /obj/structure/table,
-/obj/item/cartridge/signal/toxins,
-/obj/item/cartridge/signal/toxins{
-	pixel_x = -4;
-	pixel_y = 2
-	},
-/obj/item/cartridge/signal/toxins{
-	pixel_x = 4;
-	pixel_y = 6
-	},
 /obj/machinery/light_switch{
 	pixel_x = -5;
 	pixel_y = 26

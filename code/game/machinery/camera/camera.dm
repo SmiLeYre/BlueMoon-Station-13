@@ -225,14 +225,14 @@
 
 		var/itemname = ""
 		var/info = ""
-		if(istype(I, /obj/item/paper))
-			X = I
-			itemname = X.name
-			info = X.default_raw_text
-		else
-			P = I
-			itemname = P.name
-			info = P.notehtml
+		// if(istype(I, /obj/item/paper))
+		X = I
+		itemname = X.name
+		info = X.default_raw_text
+		// else
+		// 	P = I
+		// 	itemname = P.name
+		// 	info = P.notehtml
 		to_chat(U, "<span class='notice'>You hold \the [itemname] up to the camera...</span>")
 		U.DelayNextAction(CLICK_CD_MELEE)
 		for(var/mob/O in GLOB.player_list)

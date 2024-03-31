@@ -547,14 +547,6 @@
 	new /obj/item/modular_computer/pda(src)
 	new /obj/item/modular_computer/pda(src)
 	new /obj/item/modular_computer/pda(src)
-	new /obj/item/cartridge/head(src)
-
-	var/newcart = pick(	/obj/item/cartridge/engineering,
-						/obj/item/cartridge/security,
-						/obj/item/cartridge/medical,
-						/obj/item/cartridge/signal/toxins,
-						/obj/item/cartridge/quartermaster)
-	new newcart(src)
 
 /obj/item/storage/box/silver_ids
 	name = "box of spare silver IDs"
@@ -586,9 +578,9 @@
 	illustration = "pda"
 
 /obj/item/storage/box/seccarts/PopulateContents()
-	new /obj/item/cartridge/detective(src)
+
 	for(var/i in 1 to 6)
-		new /obj/item/cartridge/security(src)
+
 
 /obj/item/storage/box/firingpins
 	name = "box of standard firing pins"

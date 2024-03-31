@@ -6188,18 +6188,18 @@
 /area/command/heads_quarters/ce)
 "apT" = (
 /obj/structure/table/reinforced,
-/obj/item/cartridge/engineering{
+
 	pixel_x = 4;
 	pixel_y = 5
 	},
-/obj/item/cartridge/engineering{
+
 	pixel_x = -3;
 	pixel_y = 2
 	},
-/obj/item/cartridge/engineering{
+
 	pixel_x = 3
 	},
-/obj/item/cartridge/atmos,
+
 /obj/structure/disposalpipe/segment{
 	dir = 9
 	},
@@ -10149,7 +10149,7 @@
 "azP" = (
 /obj/structure/table/wood,
 /obj/item/taperecorder,
-/obj/item/cartridge/lawyer,
+
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "azQ" = (
@@ -26957,13 +26957,13 @@
 "brz" = (
 /obj/structure/table/glass,
 /obj/item/folder/blue,
-/obj/item/cartridge/medical{
+
 	pixel_x = -3
 	},
-/obj/item/cartridge/medical{
+
 	pixel_x = 3
 	},
-/obj/item/cartridge/chemistry{
+
 	pixel_y = 6
 	},
 /obj/effect/turf_decal/tile/blue{
@@ -55217,7 +55217,7 @@
 /obj/item/taperecorder{
 	pixel_x = -4
 	},
-/obj/item/cartridge/detective,
+
 /turf/open/floor/carpet,
 /area/command/heads_quarters/hos)
 "poQ" = (

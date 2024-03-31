@@ -26,29 +26,3 @@
 	WRITE_FILE(S["blood_color"], blood_color)
 
 	WRITE_FILE(S["silicon_lawset"], silicon_lawset)
-
-/obj/item/modular_computer/pda/proc/update_style(client/C)
-	background_color = C.prefs.pda_color
-	ttone = C.prefs.pda_ringtone || ttone
-	switch(C.prefs.pda_style)
-		if(MONO)
-			font_index = MODE_MONO
-			font_mode = FONT_MONO
-		if(SHARE)
-			font_index = MODE_SHARE
-			font_mode = FONT_SHARE
-		if(ORBITRON)
-			font_index = MODE_ORBITRON
-			font_mode = FONT_ORBITRON
-		if(VT)
-			font_index = MODE_VT
-			font_mode = FONT_VT
-		else
-			font_index = MODE_MONO
-			font_mode = FONT_MONO
-	var/pref_skin = GLOB.pda_reskins[C.prefs.pda_skin]["icon"]
-	if(icon != pref_skin)
-		icon = pref_skin
-		new_overlays = TRUE
-		update_icon()
-	equipped = TRUE

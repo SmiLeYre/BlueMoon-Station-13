@@ -611,7 +611,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/modular_computer/pda/chameleon)
 	chameleon_action = new(src)
 	chameleon_action.chameleon_type = /obj/item/modular_computer/pda
 	chameleon_action.chameleon_name = "PDA"
-	chameleon_action.chameleon_blacklist = typecacheof(list(/obj/item/modular_computer/pda/heads, /obj/item/modular_computer/pda/ai, /obj/item/modular_computer/pda/ai/pai), only_root_path = TRUE)
+	chameleon_action.chameleon_blacklist = typecacheof(list(/obj/item/modular_computer/pda/heads), only_root_path = TRUE)
 	chameleon_action.initialize_disguises()
 
 /obj/item/modular_computer/pda/chameleon/emp_act(severity)

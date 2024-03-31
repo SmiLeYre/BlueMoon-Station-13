@@ -14,7 +14,7 @@
 	new /obj/item/clothing/head/hardhat/weldhat/white(src)
 	new /obj/item/clothing/gloves/color/yellow(src)
 	new /obj/item/tank/jetpack/suit(src)
-	new /obj/item/cartridge/ce(src)
+
 	new /obj/item/radio/headset/heads/ce(src)
 	new /obj/item/megaphone/command(src)
 	new /obj/item/areaeditor/blueprints(src)
@@ -81,7 +81,7 @@
 	new /obj/item/clothing/mask/gas/glass/alt(src)
 	new /obj/item/clothing/glasses/meson/engine(src)
 	new /obj/item/storage/box/emptysandbags(src)
-	new /obj/item/cartridge/engineering(src)
+
 	new /obj/item/extinguisher/mini(src)
 	new /obj/item/storage/bag/construction(src)
 	new /obj/item/storage/bag/material(src)
@@ -106,7 +106,7 @@
 	new /obj/item/clothing/head/hardhat/atmos(src)
 	new /obj/item/clothing/glasses/meson/engine/tray(src)
 	new /obj/item/extinguisher/advanced(src)
-	new /obj/item/cartridge/atmos(src)
+
 	new /obj/item/storage/bag/construction(src)
 	new /obj/item/storage/bag/material(src)
 

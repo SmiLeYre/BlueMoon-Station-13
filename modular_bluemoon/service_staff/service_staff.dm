@@ -47,7 +47,6 @@
 /obj/item/modular_computer/pda/entertainer
 	name = "entertainer PDA"
 	icon_state = "pda-bartender"
-	//default_cartridge = /obj/item/cartridge/bartender
 	inserted_item = /obj/item/pen/fountain
 
 /datum/outfit/job/entertainer

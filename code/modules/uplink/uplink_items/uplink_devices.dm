@@ -126,16 +126,6 @@
 	cost = 1
 	surplus = 1
 
-/datum/uplink_item/device_tools/frame
-	name = "F.R.A.M.E. PDA Cartridge"
-	desc = "When inserted into a personal digital assistant, this cartridge gives you five PDA viruses which \
-			when used cause the targeted PDA to become a new uplink with zero TCs, and immediately become unlocked. \
-			You will receive the unlock code upon activating the virus, and the new uplink may be charged with \
-			telecrystals normally."
-	item = /obj/item/cartridge/virus/frame
-	cost = 2
-	restricted = TRUE
-
 /datum/uplink_item/device_tools/toolbox
 	name = "Full Illegal Toolbox"
 	desc = "The Illegal toolbox is a suspicious black and red. It comes loaded with a full tool set including a \

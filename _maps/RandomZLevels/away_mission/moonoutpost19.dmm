@@ -3727,11 +3727,6 @@
 /area/awaymission/moonoutpost19/research)
 "hr" = (
 /obj/structure/table,
-/obj/item/cartridge/signal/toxins,
-/obj/item/cartridge/signal/toxins{
-	pixel_x = -4;
-	pixel_y = 2
-	},
 /obj/machinery/firealarm{
 	pixel_y = 24
 	},

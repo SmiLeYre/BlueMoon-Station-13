@@ -9,7 +9,7 @@
 	new /obj/item/clothing/suit/armor/vest/capcarapace(src)
 	new /obj/item/clothing/suit/toggle/captains_parade(src)
 	new /obj/item/clothing/head/crown/fancy(src)
-	new /obj/item/cartridge/captain(src)
+
 	new /obj/item/storage/box/silver_ids(src)
 	new /obj/item/radio/headset/heads/captain/alt(src)
 	new /obj/item/radio/headset/heads/captain(src)
@@ -33,7 +33,6 @@
 	new /obj/item/clothing/under/rank/civilian/head_of_personnel/skirt(src)
 	new /obj/item/clothing/head/hopcap(src)
 	new /obj/item/clothing/head/hopcap/beret(src)
-	new /obj/item/cartridge/hop(src)
 	new /obj/item/radio/headset/heads/hop(src)
 	new /obj/item/clothing/shoes/sneakers/brown(src)
 	new /obj/item/storage/box/ids(src)
@@ -60,7 +59,7 @@
 	..()
 	new /obj/item/clothing/neck/cloak/hos(src)
 	new /obj/item/clothing/suit/toggle/armor/hos/hos_formal(src)
-	new /obj/item/cartridge/hos(src)
+
 	new /obj/item/radio/headset/heads/hos(src)
 	new /obj/item/clothing/under/rank/security/head_of_security/parade/female(src)
 	new /obj/item/clothing/under/rank/security/head_of_security/parade(src)

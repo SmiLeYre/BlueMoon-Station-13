@@ -80,7 +80,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
 	},
-/obj/item/cartridge/atmos,
+
 /turf/open/floor/plating,
 /area/engineering/main)
 "av" = (

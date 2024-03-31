@@ -9876,15 +9876,15 @@
 "bAS" = (
 /obj/structure/table,
 /obj/item/clipboard,
-/obj/item/cartridge/quartermaster{
+
 	pixel_x = 6;
 	pixel_y = 5
 	},
-/obj/item/cartridge/quartermaster{
+
 	pixel_x = -4;
 	pixel_y = 7
 	},
-/obj/item/cartridge/quartermaster,
+
 /obj/item/coin/silver,
 /obj/effect/turf_decal/tile/brown,
 /obj/effect/turf_decal/tile/brown{
@@ -25324,18 +25324,18 @@
 /area/service/bar)
 "dLl" = (
 /obj/structure/table/reinforced,
-/obj/item/cartridge/engineering{
+
 	pixel_x = 4;
 	pixel_y = 5
 	},
-/obj/item/cartridge/engineering{
+
 	pixel_x = -3;
 	pixel_y = 2
 	},
-/obj/item/cartridge/engineering{
+
 	pixel_x = 3
 	},
-/obj/item/cartridge/atmos,
+
 /obj/structure/window{
 	dir = 4
 	},
@@ -71117,15 +71117,15 @@
 /area/maintenance/solars/aux/port)
 "ksm" = (
 /obj/structure/table,
-/obj/item/cartridge/medical{
+
 	pixel_x = 6;
 	pixel_y = 3
 	},
-/obj/item/cartridge/medical{
+
 	pixel_x = -2;
 	pixel_y = 6
 	},
-/obj/item/cartridge/chemistry{
+
 	pixel_y = 2
 	},
 /obj/item/reagent_containers/spray/cleaner,
@@ -109755,7 +109755,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/item/cartridge/lawyer,
+
 /obj/item/taperecorder,
 /turf/open/floor/wood,
 /area/service/lawoffice)
@@ -156613,15 +156613,6 @@
 /area/medical/medbay/central)
 "wKW" = (
 /obj/structure/table,
-/obj/item/cartridge/signal/toxins,
-/obj/item/cartridge/signal/toxins{
-	pixel_x = -4;
-	pixel_y = 2
-	},
-/obj/item/cartridge/signal/toxins{
-	pixel_x = 4;
-	pixel_y = 6
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
