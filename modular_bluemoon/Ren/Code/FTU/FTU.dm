@@ -172,6 +172,8 @@
 /area/ruin/space/has_grav/ftu_cargo
 	name = "FTU Cargo ship"
 
+/area/ruin/space/has_grav/powered/infestedship
+	name = "Warbringer"
 
 /datum/map_template/ruin/space/ftuship
 	name = "Cargo ship"
