@@ -1,6 +1,5 @@
-#define STATUS_EFFECT_STINK /datum/status_effect/transient/stink/short // оверлей вони
+#define STATUS_EFFECT_STINK /datum/status_effect/stink // оверлей вони
 
-#define CLEAN 0
 #define FINE_CLEAN 50 // ресет предупреждений о необходимости сходить в душ
 #define FIRST_WARNING 750 // предупреждение, что пора сходить в душ
 #define DIRTY 900 // негативное настроение
@@ -16,7 +15,7 @@
 	processing_quirk = TRUE
 	mood_quirk = TRUE
 
-	var/cleanse_level = CLEAN //уровень чистоты персонажа
+	var/cleanse_level = 0 // уровень загрязнения персонажа
 	var/doing_shower = FALSE // оповещение, что персонаж вошёл в душ и игроку нужно подождать, пока он не станет чистым
 	var/hide_visual_effect = FALSE // если игрок хочет, он может отключить визуальное отображение, но при этом будет сильное падение настроения
 	var/cleaned_times = 0 // счётчик, сколько тиков игрок постоял под душем
@@ -33,9 +32,12 @@
 	C.Grant(H)
 
 /datum/quirk/bluemoon_shower_need/remove()
-	var/mob/living/carbon/human/H = quirk_holder
-	var/datum/action/cooldown/change_stink_overlay/C = locate() in H.actions
-	C.Remove(H) // забираем способность изменения оверлея вони
+	UnregisterSignal(quirk_holder, COMSIG_COMPONENT_CLEAN_ACT)
+	UnregisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE)
+	if(quirk_holder)
+		var/mob/living/carbon/human/H = quirk_holder
+		var/datum/action/cooldown/change_stink_overlay/C = locate() in H.actions
+		C.Remove(H) // забираем способность изменения оверлея вони
 	. = ..()
 
 /datum/quirk/bluemoon_shower_need/process()
@@ -43,9 +45,9 @@
 	cleanse_level = clamp(cleanse_level + 0.28, 0, 1001) // около 1 игрового часа нужно (без учёта лагов), чтобы требование к мытью поднялось до 1001
 	switch(cleanse_level)
 		if(-INFINITY to FINE_CLEAN)
+			quirk_holder.remove_status_effect(/datum/status_effect/stink)
 			if(warning_level > 0)
 				to_chat(quirk_holder, span_notice("Моё тело чистое, можно выходить."))
-				quirk_holder.remove_status_effect(/datum/status_effect/transient/stink)
 				doing_shower = FALSE
 				warning_level = 0
 		if(FIRST_WARNING to DIRTY)
@@ -63,19 +65,32 @@
 				SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "need_shower", /datum/mood_event/need_shower/very_dirty_catastrophic)
 			else
 				SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "need_shower", /datum/mood_event/need_shower/very_dirty)
-				quirk_holder.apply_status_effect(STATUS_EFFECT_STINK, 100)
+				quirk_holder.apply_status_effect(STATUS_EFFECT_STINK)
 			if(warning_level < 3)
 				to_chat(quirk_holder, span_phobia("Мне ОЧЕНЬ нужно сходить в душ!"))
 				warning_level = 3
 
-/datum/quirk/bluemoon_shower_need/proc/examine(atom/examine_target, mob/living/carbon/human/examiner, list/examine_list)
+/datum/quirk/bluemoon_shower_need/proc/examine(atom/examine_target, mob/examiner, list/examine_list)
 	SIGNAL_HANDLER
-	if(HAS_TRAIT(examiner, /datum/quirk/no_smell) || examiner.internal) // персонажи с аносмией и с включенным кислородным баллоном всё ещё могут понять, что кто-то грязный (там оверлей, это уже мета уровень)
-		examine_list += span_notice("[quirk_holder.p_they_ru(TRUE)] давно не мы[quirk_holder.ru_sya()].")
+
+	if(hide_visual_effect) // игрок скрывает статус персонажа
 		return
 
-	if(!hide_visual_effect) // игрок не пытается скрыть вонь персонажа
-		if(cleanse_level >= DIRTY) // если персонаж достаточно грязный, об этом пишется в экзейм
+	var/cannot_smell = FALSE // некоторые персонажи могут не замечать вон, но всё ещё будут понимать, что следует принять душ
+
+
+	if(HAS_TRAIT(examiner, /datum/quirk/no_smell))  // персонажи с аносмией не замечают вонь
+		cannot_smell = TRUE
+
+	if(iscarbon(examiner))
+		var/mob/living/carbon/C = examiner
+		if(C.internal) // персонажи со включенными баллоном не замечают вонь
+			cannot_smell = TRUE
+
+	if(cleanse_level >= DIRTY) // если персонаж достаточно грязный, об этом пишется в экзейм
+		if(cannot_smell)
+			examine_list += span_notice("[quirk_holder.p_they_ru(TRUE)] давно не мы[quirk_holder.ru_sya()].") // т.к. облачко в таком исходе всё ещё существует, на глаз можно определить, что персонаж давно не мылся
+		else
 			examine_list += span_warning("[quirk_holder.p_they_ru(TRUE)] плохо пахнет.")
 
 /datum/quirk/bluemoon_shower_need/proc/cleaning()
@@ -85,22 +100,23 @@
 	if(cleanse_level <= 10) // снижение нагрузки, чтобы стояние куклы под душем с этим квирком не генерило постоянно все проверки внизу
 		return
 
+	cleaned_times++
 	if(!check_for_clothing())
-		to_chat(quirk_holder, span_warning("Нужно снять одежду, не подходящую для душа! Бюстгалтер и трусы допустимы."))
+		if(!(cleaned_times % 10)) // каждые 10 тиков сообщение, если одежда не подходит
+			to_chat(quirk_holder, span_warning("Нужно снять одежду, не подходящую для душа! Бюстгалтер и трусы допустимы."))
 		return
 
 	var/area/A = get_area(quirk_holder)
-	if(A.type in typesof(/area/security/prison, /area/commons/toilet, /area/command/heads_quarters/captain, /area/commons/dorms, /area/command/blueshielquarters, /area/service/chapel/main/monastery, /area/mine/laborcamp))
+	if(A.type in typesof(/area/security/prison, /area/commons/toilet, /area/command/heads_quarters/captain, /area/commons/dorms, /area/command/blueshielquarters, /area/service/chapel/main/monastery, /area/mine/laborcamp, /area/survivalpod, /area/mine/living_quarters))
 		if(!doing_shower && warning_level != 0)
 			to_chat(quirk_holder, span_notice("Теперь только подождать... Есть время разгрузить голову и расслабиться."))
 			doing_shower = TRUE
 		cleaning_efficiency = 20 // 1.7~ минут с 1000
 	else // за поставленный в неподходящей зоне душ и мытьё там штраф
 		if(!doing_shower && warning_level != 0)
-			to_chat(quirk_holder, span_warning("Я смогу помыться, но это место плохо подходит для душевой и это будет в два раза дольше. Дормиторий, уборные, личные каюты подходят куда лучше..."))
+			to_chat(quirk_holder, span_warning("Я смогу помыться, но это место плохо подходит для душевой и это будет в два раза дольше. Жилые зоны, в том числе дормиторий, уборные, личные каюты подходят куда лучше..."))
 			doing_shower = TRUE
 
-	cleaned_times++
 	if(!(cleaned_times % 10)) // каждые 10 тиков новый сон в чат
 		if(iscarbon(quirk_holder))
 			var/mob/living/carbon/holder = quirk_holder
@@ -146,19 +162,22 @@
 	desc = "Вы можете убрать отображение того, что персонаж плохо пахнет (облачко над ним и сообщение при осмотре), но это будет стоить катастрофического падения настроения."
 	icon_icon = 'icons/obj/watercloset.dmi'
 	button_icon_state = "shower"
-	cooldown_time = 5 SECONDS
+	cooldown_time = 15 SECONDS // чтобы игрок не кликал изменение оверлея туда-сюда без понимания, почему он не исчезает
 	transparent_when_unavailable = TRUE
 
 /datum/action/cooldown/change_stink_overlay/Trigger()
-	. = ..()
-	if(!.) // Что-то мешает, например не прошёл КД или персонаж без сознания
+	if(!..()) // Что-то мешает, например персонаж без сознания
+		return FALSE
+
+	if(!IsAvailable()) // КД не прошёл
 		return FALSE
 
 	if(ishuman(owner)) //roundstart_quirks только у хуманов
 		var/mob/living/carbon/human/action_holder = owner
 		for(var/datum/quirk/bluemoon_shower_need/quirk in action_holder.roundstart_quirks)
 			quirk.hide_visual_effect = !quirk.hide_visual_effect // скрываем визуальный эффект
-			to_chat(owner, span_notice("Теперь окружающие [quirk.hide_visual_effect ? "не будут" : "будут"] замечать плохой запах. [quirk.hide_visual_effect ? "Однако, настроение будет контролировать намного сложнее..." : ""]"))
+			to_chat(owner, span_notice("Теперь окружающие [quirk.hide_visual_effect ? "не будут" : "будут"] замечать плохой запах. [quirk.hide_visual_effect ? "Однако, настроение будет контролировать намного сложнее, если долго не ходить в душ..." : ""]"))
+			StartCooldown() // начала отчёта для КД на способность
 
 /*
  * ИВЕНТЫ НАСТРОЕНИЯ
@@ -185,42 +204,32 @@
  * ОВЕРЛЕЙ
  */
 
-/datum/status_effect/transient/stink //cope-paste from confusion
+/datum/status_effect/stink
 	id = "stink"
 	on_remove_on_mob_delete = TRUE
-	status_type = STATUS_EFFECT_REFRESH
-	var/image/overlay
+	status_type = STATUS_EFFECT_REFRESH // обновлять таймер
+	alert_type = null
+	var/image/overlay // оверлей вони
+	duration = 10 SECONDS
 
-/datum/status_effect/transient/stink/short
-	duration = 10 SECONDS // Если оставить STATUS_EFFECT_REFRESH и не обозначить продолжительность, то может забаговаться в бесконечный эффект
-
-/datum/status_effect/transient/stink/tick()
+/datum/status_effect/stink/on_apply()
 	. = ..()
-	if(!.)
-		return
-	if(!owner.stat) //add or remove the overlay if they are alive or unconscious/dead
-		add_overlay()
-	else if(overlay)
-		owner.cut_overlay(overlay)
-		overlay = null
+	add_overlay()
 
-/datum/status_effect/transient/stink/proc/add_overlay()
-	if(overlay)
-		return
+/datum/status_effect/stink/proc/add_overlay()
 	var/matrix/M = matrix()
 	M.Scale(0.6)
 	overlay = image('modular_bluemoon/shower_trait/stink.dmi', "steam_double", pixel_y = 12, layer = -FIRE_LAYER)
 	overlay.transform = M
 	owner.add_overlay(overlay)
 
-/datum/status_effect/transient/stink/on_remove()
+/datum/status_effect/stink/on_remove()
 	owner.cut_overlay(overlay)
 	overlay = null
 	return ..()
 
 #undef STATUS_EFFECT_STINK
 
-#undef CLEAN
 #undef FINE_CLEAN
 #undef FIRST_WARNING
 #undef DIRTY
