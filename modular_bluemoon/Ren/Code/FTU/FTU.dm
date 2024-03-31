@@ -169,14 +169,42 @@
 	x_offset = 7
 	y_offset = 1
 
+/area/ruin/space/has_grav/ftu_cargo
+	name = "FTU Cargo ship"
+
+
 /datum/map_template/ruin/space/ftuship
 	name = "Cargo ship"
 	description = "Захваченый пиратами корабль."
 	prefix = "_maps/RandomRuins/SpaceRuins/BlueMoon/"
 	suffix = "cargodiselost.dmm"
 	allow_duplicates = FALSE
-	always_place = TRUE
 	id = "cargodiselost"
 
-/area/ruin/space/has_grav/ftu_cargo
-	name = "FTU Cargo ship"
+datum/map_template/ruin/space/vaulttango
+	name = "Vault Tango"
+	description = "Малый пункт базирования интека"
+	prefix = "_maps/RandomRuins/SpaceRuins/BlueMoon/"
+	suffix = "vaulttango.dmm"
+	id = "vaulttango"
+
+/datum/map_template/ruin/space/rusprison
+	name = "Russuan prison ship"
+	description = "Корабль русских, перевозящщий заключёных"
+	prefix = "_maps/RandomRuins/SpaceRuins/BlueMoon/"
+	suffix = "rusprison.dmm"
+	id = "rusprison"
+
+/datum/map_template/ruin/space/infested_frigate
+	name = "Infested frigate"
+	description = "Корабль русских, перевозящщий заключёных"
+	prefix = "_maps/RandomRuins/SpaceRuins/BlueMoon/"
+	suffix = "infested_frigate.dmm"
+	id = "infested_frigate"
+
+/datum/map_template/ruin/space/shuttle8532
+	name = "shuttle8532"
+	description = "Обломки корабля"
+	prefix = "_maps/RandomRuins/SpaceRuins/BlueMoon/"
+	suffix = "shuttle8532.dmm"
+	id = "shuttle8532"
