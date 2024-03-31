@@ -7,7 +7,7 @@
 
 /datum/quirk/bluemoon_shower_need
 	name = BLUEMOON_TRAIT_NAME_SHOWER_NEED
-	desc = "Вам нужно периодически ходить в душ. Хотя бы на станции. Из-за особенностей здешних мест, делать это нужно хотя бы раз в час на пару минут."
+	desc = "Вам нужно периодически ходить в душ. Хотя бы на станции. Из-за особенностей здешних мест, делать это нужно хотя бы раз в час на пару минут. Можно мыться в душевых, сауне и бассейне. Лучше всего подходят душевые в жилых зонах, а также личных каютах."
 	gain_text = span_warning("Чистота - залог хорошего настроения!")
 	lose_text = span_notice("Мне достаточно мыться раз в неделю, ведь в среднем на 10-минутный душ расходуется 60 литров воды. Использование нагревателя повышает расход в три раза, а на ванну нужно как минимум 200 литров. Получается, что семья из четырех человек, которые каждый день принимают 10-минутный душ, расходует 25 куб. м воды каждый год (традиционно в Великобритании установлены отдельные краны с холодной и горячей водой без смесителя, и для теплого душа нужен проточный нагреватель — прим. ред.). Цена электричества повышает стоимость гигиены такой семьи с 400 £ до 1200 £ в год. И это еще не все: любители душа оказываются ответственными за выброс в атмосферу 3,5 тонн углекислого газа. Чтобы остановить глобальное потепление, мы можем позволить себе только 1 тонну СО2 на человека, с учетом всей его жизнедеятельности от еды до транспорта.")
 	value = -2
@@ -42,7 +42,14 @@
 
 /datum/quirk/bluemoon_shower_need/process()
 	. = ..()
-	cleanse_level = clamp(cleanse_level + 0.28, 0, 1001) // около 1 игрового часа нужно (без учёта лагов), чтобы требование к мытью поднялось до 1001
+	cleanse_level = clamp(cleanse_level + 0.23, 0, 1001) // около 70 минут (без учёта лагов) нужно, чтобы требование к мытью поднялось до максимума (оверлея)
+
+	var/turf/open/T = get_turf(quirk_holder)
+	if(T.air)
+		var/datum/gas_mixture/G = T.air
+		if(HAS_TRAIT(quirk_holder, TRAIT_SWIMMING) || G.get_moles(GAS_H2O) > 0) // персонаж находится в бассейне или сауне, происходит мытьё
+			cleaning(TRUE)
+
 	switch(cleanse_level)
 		if(-INFINITY to FINE_CLEAN)
 			quirk_holder.remove_status_effect(/datum/status_effect/stink)
@@ -93,7 +100,7 @@
 		else
 			examine_list += span_warning("[quirk_holder.p_they_ru(TRUE)] плохо пахнет.")
 
-/datum/quirk/bluemoon_shower_need/proc/cleaning()
+/datum/quirk/bluemoon_shower_need/proc/cleaning(var/hide_clothing_warning = FALSE)
 	SIGNAL_HANDLER
 	var/cleaning_efficiency = 10 // 3.5~ минуты с 1000
 
@@ -102,12 +109,12 @@
 
 	cleaned_times++
 	if(!check_for_clothing())
-		if(!(cleaned_times % 10)) // каждые 10 тиков сообщение, если одежда не подходит
+		if(!(cleaned_times % 10) && !hide_clothing_warning) // каждые 10 тиков сообщение, если одежда не подходит
 			to_chat(quirk_holder, span_warning("Нужно снять одежду, не подходящую для душа! Бюстгалтер и трусы допустимы."))
 		return
 
 	var/area/A = get_area(quirk_holder)
-	if(A.type in typesof(/area/security/prison, /area/commons/toilet, /area/command/heads_quarters/captain, /area/commons/dorms, /area/command/blueshielquarters, /area/service/chapel/main/monastery, /area/mine/laborcamp, /area/survivalpod, /area/mine/living_quarters))
+	if(A.type in typesof(/area/security/prison, /area/commons/toilet, /area/command/heads_quarters/captain, /area/commons/dorms, /area/command/blueshielquarters, /area/service/chapel/main/monastery, /area/mine/laborcamp, /area/survivalpod, /area/mine/living_quarters, /area/hilbertshotel))
 		if(!doing_shower && warning_level != 0)
 			to_chat(quirk_holder, span_notice("Теперь только подождать... Есть время разгрузить голову и расслабиться."))
 			doing_shower = TRUE
