@@ -5,7 +5,7 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "af" = (
@@ -15,7 +15,7 @@
 /obj/structure/barricade/security,
 /obj/structure/alien/resin/membrane,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "aA" = (
@@ -33,7 +33,7 @@
 /obj/item/ammo_casing/spent,
 /obj/structure/alien/weeds,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "aB" = (
@@ -56,7 +56,7 @@
 	pixel_y = -21
 	},
 /turf/open/floor/mineral/plastitanium/airless,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "aY" = (
@@ -82,7 +82,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "be" = (
@@ -98,7 +98,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "bE" = (
@@ -107,7 +107,7 @@
 	},
 /obj/machinery/suit_storage_unit/open,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "bJ" = (
@@ -117,7 +117,7 @@
 	},
 /obj/machinery/power/rtg,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "bM" = (
@@ -125,7 +125,7 @@
 	icon_state = "warningline_white"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "bS" = (
@@ -133,7 +133,7 @@
 	icon_state = "larva_head_s"
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "cj" = (
@@ -148,7 +148,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "cw" = (
@@ -165,7 +165,7 @@
 	pixel_x = 5
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "cA" = (
@@ -177,7 +177,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "cB" = (
@@ -185,7 +185,7 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "cP" = (
@@ -193,7 +193,7 @@
 	id = "brutus exterior bolts"
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "cU" = (
@@ -210,7 +210,7 @@
 	},
 /obj/effect/mob_spawn/human/corpse/cargo_tech,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "df" = (
@@ -222,7 +222,7 @@
 /obj/structure/alien/egg/burst,
 /obj/item/clothing/mask/facehugger/dead,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "di" = (
@@ -243,7 +243,7 @@
 	},
 /obj/structure/table_frame/wood,
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "dn" = (
@@ -256,7 +256,7 @@
 	dir = 1
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "dq" = (
@@ -268,14 +268,14 @@
 	},
 /obj/structure/alien/egg/burst,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "dx" = (
 /obj/machinery/door/airlock/hatch,
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "dy" = (
@@ -292,7 +292,7 @@
 	},
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "ef" = (
@@ -302,7 +302,7 @@
 	},
 /obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/floor/iron/freezer,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "eo" = (
@@ -323,7 +323,7 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "ep" = (
@@ -334,7 +334,7 @@
 /obj/effect/mob_spawn/human/corpse/doctor,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "er" = (
@@ -355,7 +355,7 @@
 	layer = 2.8
 	},
 /turf/template_noop,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "eX" = (
@@ -373,7 +373,7 @@
 	desc = "These are particularly boring for what they entail."
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "eZ" = (
@@ -381,7 +381,7 @@
 /obj/item/storage/box/ingredients/american,
 /obj/item/storage/box/monkeycubes,
 /turf/open/floor/iron/freezer,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "fc" = (
@@ -399,7 +399,7 @@
 	},
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "fl" = (
@@ -416,7 +416,7 @@
 	pixel_y = 32
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "fM" = (
@@ -428,7 +428,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "gW" = (
@@ -446,7 +446,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "hm" = (
@@ -456,7 +456,7 @@
 	faction = list("xenomorph")
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "hA" = (
@@ -465,7 +465,7 @@
 	icon_state = "floor4-old"
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "hB" = (
@@ -486,7 +486,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "hI" = (
@@ -494,7 +494,7 @@
 /obj/structure/alien/weeds/node,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "hK" = (
@@ -510,7 +510,7 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "hW" = (
@@ -524,7 +524,7 @@
 	},
 /obj/item/kirbyplants/random,
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "hX" = (
@@ -533,7 +533,7 @@
 	desc = "Waffle co. actually ordered these guys to steal one of these just to be sure."
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "ie" = (
@@ -547,7 +547,7 @@
 	dir = 9
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "ip" = (
@@ -556,7 +556,7 @@
 	icon_state = "floor1-old"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "iy" = (
@@ -568,7 +568,7 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "iL" = (
@@ -585,7 +585,7 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "iY" = (
@@ -594,7 +594,7 @@
 	},
 /obj/machinery/portable_atmospherics/canister/air,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "jk" = (
@@ -603,7 +603,7 @@
 	anchored = 1
 	},
 /turf/open/floor/mineral/plastitanium/airless,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "jx" = (
@@ -611,7 +611,7 @@
 	layer = 3.1
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "jy" = (
@@ -627,7 +627,7 @@
 	layer = 3.1
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "kg" = (
@@ -636,7 +636,7 @@
 	},
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "kh" = (
@@ -648,7 +648,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/sign/flag/inteq,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "ku" = (
@@ -664,13 +664,13 @@
 /obj/structure/bed/nest,
 /obj/effect/mob_spawn/human/corpse/engineer,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "kw" = (
 /obj/machinery/vending/boozeomat/syndicate_access,
 /turf/open/floor/iron/freezer,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "kS" = (
@@ -680,7 +680,7 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "kT" = (
@@ -700,7 +700,7 @@
 	},
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "lx" = (
@@ -711,7 +711,7 @@
 /obj/item/ammo_casing/spent,
 /obj/machinery/light/red/dim/directional/north,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "lU" = (
@@ -729,13 +729,13 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "mk" = (
 /obj/structure/alien/weeds/node,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "mn" = (
@@ -744,7 +744,7 @@
 	},
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "mp" = (
@@ -752,7 +752,7 @@
 	icon_state = "gibhead"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "mw" = (
@@ -768,7 +768,7 @@
 	desc = "The resin is thick and it keeps collapsing on itself."
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "mG" = (
@@ -777,7 +777,7 @@
 	},
 /obj/structure/sink/directional/south,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "nk" = (
@@ -798,7 +798,7 @@
 /obj/item/storage/firstaid/fire,
 /obj/item/storage/firstaid/regular,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "nm" = (
@@ -808,7 +808,7 @@
 	dir = 1
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "nG" = (
@@ -816,7 +816,7 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "nN" = (
@@ -826,7 +826,7 @@
 	desc = "The resin is thick and it keeps collapsing on itself."
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "nU" = (
@@ -839,7 +839,7 @@
 	},
 /obj/item/gun/ballistic/automatic/pistol/modular,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "oj" = (
@@ -848,7 +848,7 @@
 	id = "brutus exterior bolts"
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "oo" = (
@@ -864,7 +864,7 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "or" = (
@@ -873,19 +873,19 @@
 	icon_state = "drip1"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "oV" = (
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "oW" = (
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/hatch,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "pk" = (
@@ -903,7 +903,7 @@
 	},
 /obj/machinery/light/broken/directional/east,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "pl" = (
@@ -918,7 +918,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "pq" = (
@@ -947,7 +947,7 @@
 	plasmatanks = 0
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "qu" = (
@@ -961,7 +961,7 @@
 	layer = 3.4
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "qC" = (
@@ -975,14 +975,14 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "qE" = (
 /obj/machinery/airalarm/directional/west,
 /obj/structure/alien/weeds,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "qF" = (
@@ -998,7 +998,7 @@
 "qR" = (
 /obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/floor/mineral/plastitanium/airless,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "rd" = (
@@ -1008,13 +1008,13 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/alien/weeds,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "rm" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "rs" = (
@@ -1035,7 +1035,7 @@
 	lootcount = 2
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "rz" = (
@@ -1056,7 +1056,7 @@
 	icon_state = "warningline_white"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "rL" = (
@@ -1069,13 +1069,13 @@
 	},
 /obj/machinery/vending/inteq_vendomat,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "so" = (
 /obj/item/broken_missile,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "st" = (
@@ -1085,7 +1085,7 @@
 /obj/item/ammo_casing/spent,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "sA" = (
@@ -1095,13 +1095,13 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "sE" = (
 /obj/machinery/door/airlock/hatch,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "sQ" = (
@@ -1117,7 +1117,7 @@
 /obj/structure/alien/egg/burst,
 /obj/item/clothing/mask/facehugger/dead,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "sT" = (
@@ -1133,7 +1133,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "ti" = (
@@ -1146,7 +1146,7 @@
 	},
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "tO" = (
@@ -1154,7 +1154,7 @@
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/external/abandoned_brown,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "ug" = (
@@ -1163,7 +1163,7 @@
 	},
 /obj/machinery/computer/arcade/amputation,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "uy" = (
@@ -1176,7 +1176,7 @@
 	},
 /obj/machinery/vending/medical/syndicate_access,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "uC" = (
@@ -1185,7 +1185,7 @@
 	icon_state = "borgdecon2"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "uG" = (
@@ -1202,7 +1202,7 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "vj" = (
@@ -1211,14 +1211,14 @@
 	closingLayer = 2.65
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "vm" = (
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/external/abandoned_brown,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "vo" = (
@@ -1236,13 +1236,13 @@
 	pixel_x = 3
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "vx" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "vz" = (
@@ -1250,7 +1250,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "vH" = (
@@ -1262,14 +1262,14 @@
 	dir = 10
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "vM" = (
 /obj/item/ammo_casing/spent,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "vR" = (
@@ -1285,7 +1285,7 @@
 	dir = 1
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "wc" = (
@@ -1301,7 +1301,7 @@
 	},
 /obj/effect/mob_spawn/human/corpse/cargo_tech,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "wi" = (
@@ -1329,7 +1329,7 @@
 	req_access = list("syndicate")
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "wj" = (
@@ -1338,7 +1338,7 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "wq" = (
@@ -1357,7 +1357,7 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "wx" = (
@@ -1375,7 +1375,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "wE" = (
@@ -1384,7 +1384,7 @@
 	icon_state = "warningline_white"
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "wJ" = (
@@ -1395,7 +1395,7 @@
 /obj/structure/alien/weeds,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "wO" = (
@@ -1409,13 +1409,13 @@
 	},
 /obj/structure/alien/weeds,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "wP" = (
 /obj/structure/sign/poster/contraband/inteq/inteq_better_dead,
 /turf/closed/wall/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "wX" = (
@@ -1424,7 +1424,7 @@
 /area/template_noop)
 "xi" = (
 /turf/open/floor/mineral/plastitanium/airless,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "xo" = (
@@ -1439,7 +1439,7 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "xp" = (
@@ -1451,12 +1451,12 @@
 	},
 /obj/structure/alien/weeds/node,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "xt" = (
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "xB" = (
@@ -1470,7 +1470,7 @@
 	},
 /obj/item/chair/greyscale,
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "xR" = (
@@ -1478,7 +1478,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "xT" = (
@@ -1505,7 +1505,7 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "yb" = (
@@ -1517,7 +1517,7 @@
 	lootcount = 2
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "yt" = (
@@ -1530,7 +1530,7 @@
 	pixel_y = 33
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "yx" = (
@@ -1540,7 +1540,7 @@
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/external/abandoned_brown,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "yG" = (
@@ -1552,7 +1552,7 @@
 	},
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "yJ" = (
@@ -1563,7 +1563,7 @@
 	},
 /obj/structure/alien/weeds/node,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "yP" = (
@@ -1577,13 +1577,13 @@
 /obj/item/ammo_casing/spent,
 /obj/item/storage/belt/military/inteq,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "yZ" = (
 /obj/structure/window/shuttle/survival_pod/spawner,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "zg" = (
@@ -1598,7 +1598,7 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "zK" = (
@@ -1611,7 +1611,7 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "zN" = (
@@ -1627,7 +1627,7 @@
 	icon_state = "warningline_white"
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Ah" = (
@@ -1648,7 +1648,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Ai" = (
@@ -1671,7 +1671,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "AM" = (
@@ -1680,7 +1680,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Bh" = (
@@ -1693,14 +1693,14 @@
 	},
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Bw" = (
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "BA" = (
@@ -1720,14 +1720,14 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "BI" = (
 /obj/item/ammo_casing/spent,
 /obj/machinery/light/broken/directional/south,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Cp" = (
@@ -1751,7 +1751,7 @@
 /obj/item/clothing/under/inteq_skirt,
 /obj/item/clothing/under/inteq_skirt,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "CE" = (
@@ -1768,7 +1768,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "DR" = (
@@ -1780,7 +1780,7 @@
 /obj/structure/bed/nest,
 /obj/effect/mob_spawn/human/corpse/doctor,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Eg" = (
@@ -1799,7 +1799,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Et" = (
@@ -1809,7 +1809,7 @@
 /obj/effect/turf_decal/tile/bar,
 /obj/structure/table/reinforced,
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Ez" = (
@@ -1818,7 +1818,7 @@
 	icon_state = "floor7-old"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "EB" = (
@@ -1845,7 +1845,7 @@
 	pixel_y = 5
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "EQ" = (
@@ -1864,7 +1864,7 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "ER" = (
@@ -1875,7 +1875,7 @@
 	},
 /obj/structure/alien/weeds/node,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Ff" = (
@@ -1884,7 +1884,7 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Fi" = (
@@ -1897,7 +1897,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/kirbyplants/random,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Fs" = (
@@ -1915,7 +1915,7 @@
 	dir = 4
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "FJ" = (
@@ -1927,14 +1927,14 @@
 	icon_state = "warningline_white"
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "FP" = (
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/hatch,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Gt" = (
@@ -1955,7 +1955,7 @@
 	dir = 4
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Hc" = (
@@ -1966,7 +1966,7 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Hp" = (
@@ -1975,7 +1975,7 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Hu" = (
@@ -1995,7 +1995,7 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Hx" = (
@@ -2007,7 +2007,7 @@
 /obj/structure/bed/nest,
 /obj/effect/mob_spawn/human/corpse/inteq_dead,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "HA" = (
@@ -2016,7 +2016,7 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Iu" = (
@@ -2026,7 +2026,7 @@
 /obj/effect/turf_decal,
 /obj/structure/mecha_wreckage/hermes,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "IC" = (
@@ -2038,7 +2038,7 @@
 	icon_state = "cola_black-broken"
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "IN" = (
@@ -2047,7 +2047,7 @@
 	},
 /obj/machinery/power/smes,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "IS" = (
@@ -2055,7 +2055,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Jh" = (
@@ -2066,7 +2066,7 @@
 	icon_state = "bot_red"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Jp" = (
@@ -2083,7 +2083,7 @@
 	icon_state = "warningline_white"
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Jw" = (
@@ -2098,7 +2098,7 @@
 	lootcount = 3
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Jx" = (
@@ -2106,7 +2106,7 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Jy" = (
@@ -2123,7 +2123,7 @@
 	},
 /obj/machinery/light/broken/directional/west,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "JZ" = (
@@ -2131,13 +2131,13 @@
 	icon_state = "titaniumtiny"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Kl" = (
 /obj/structure/mecha_wreckage/ares,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "KA" = (
@@ -2154,7 +2154,7 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "KB" = (
@@ -2169,7 +2169,7 @@
 	desc = "The resin is thick and it keeps collapsing on itself."
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "KC" = (
@@ -2179,7 +2179,7 @@
 	icon_state = "armorblood"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "KD" = (
@@ -2190,7 +2190,7 @@
 /obj/structure/barricade/security,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "KF" = (
@@ -2198,7 +2198,7 @@
 /obj/item/ammo_casing/spent,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "KG" = (
@@ -2207,7 +2207,7 @@
 	pixel_x = -31
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "KK" = (
@@ -2221,7 +2221,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "KT" = (
@@ -2233,7 +2233,7 @@
 /obj/effect/decal/cleanable/glass,
 /obj/effect/mob_spawn/human/corpse/doctor,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "KZ" = (
@@ -2241,7 +2241,7 @@
 /obj/effect/decal/cleanable/glass,
 /obj/machinery/power/rtg,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Lf" = (
@@ -2250,7 +2250,7 @@
 /obj/item/ammo_casing/spent,
 /obj/structure/alien/weeds,
 /turf/open/floor/mineral/plastitanium/airless,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Ln" = (
@@ -2258,12 +2258,12 @@
 /obj/item/ammo_casing/spent,
 /obj/structure/alien/weeds,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "LF" = (
 /turf/closed/wall/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "LO" = (
@@ -2275,7 +2275,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Ml" = (
@@ -2292,7 +2292,7 @@
 /obj/item/bodypart/head,
 /obj/machinery/light/broken/directional/north,
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Mp" = (
@@ -2303,7 +2303,7 @@
 	icon_state = "bot_right_red"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "My" = (
@@ -2313,7 +2313,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "ME" = (
@@ -2331,7 +2331,7 @@
 	},
 /obj/structure/alien/egg/burst,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "MH" = (
@@ -2349,7 +2349,7 @@
 /obj/structure/barricade/security,
 /obj/machinery/light/small/red/dim/directional/east,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "ML" = (
@@ -2369,7 +2369,7 @@
 	dir = 1
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "MW" = (
@@ -2382,7 +2382,7 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Ne" = (
@@ -2391,7 +2391,7 @@
 	icon_state = "warningline_white"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Nu" = (
@@ -2400,7 +2400,7 @@
 	},
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "NU" = (
@@ -2413,7 +2413,7 @@
 	},
 /obj/machinery/computer/operating,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "NX" = (
@@ -2443,7 +2443,7 @@
 	},
 /obj/item/folder/inteq,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Or" = (
@@ -2456,7 +2456,7 @@
 /obj/item/ammo_casing/spent,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Oy" = (
@@ -2471,14 +2471,14 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "OC" = (
 /obj/effect/decal/cleanable/glass,
 /obj/structure/alien/weeds/node,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "OW" = (
@@ -2490,7 +2490,7 @@
 	},
 /obj/structure/alien/weeds,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Pb" = (
@@ -2501,7 +2501,7 @@
 	},
 /obj/structure/alien/weeds/node,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Pj" = (
@@ -2510,7 +2510,7 @@
 /obj/structure/alien/weeds,
 /obj/structure/alien/resin,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Po" = (
@@ -2525,7 +2525,7 @@
 	},
 /obj/machinery/door/airlock/freezer,
 /turf/open/floor/iron/freezer,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "PD" = (
@@ -2535,7 +2535,7 @@
 	loot = list( /obj/item/cigbutt = 1, /obj/item/trash/cheesie = 1, /obj/item/trash/candy = 1, /obj/item/trash/chips = 1, /obj/item/reagent_containers/food/snacks/deadmouse = 1, /obj/item/trash/pistachios = 1, /obj/item/trash/plate = 1, /obj/item/trash/popcorn = 1, /obj/item/trash/raisins = 1, /obj/item/trash/sosjerky = 1, /obj/item/trash/syndi_cakes = 1)
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "PV" = (
@@ -2543,12 +2543,12 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Qg" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Qj" = (
@@ -2564,7 +2564,7 @@
 	name = "viscous resin membrane"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "QA" = (
@@ -2573,7 +2573,7 @@
 	},
 /obj/machinery/suit_storage_unit/open,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Ru" = (
@@ -2600,13 +2600,13 @@
 	lootcount = 1
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Rw" = (
 /obj/machinery/door/airlock/hatch,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Rx" = (
@@ -2616,7 +2616,7 @@
 	},
 /obj/machinery/vending/snack/random,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "RG" = (
@@ -2629,7 +2629,7 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "RS" = (
@@ -2643,7 +2643,7 @@
 	name = "SYN-C Brutus Bridge"
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "RW" = (
@@ -2651,7 +2651,7 @@
 /obj/structure/fans/tiny,
 /obj/structure/alien/resin,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Sr" = (
@@ -2660,7 +2660,7 @@
 	dir = 1
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "St" = (
@@ -2679,7 +2679,7 @@
 	pixel_y = 10
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "SB" = (
@@ -2687,7 +2687,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "SE" = (
@@ -2695,7 +2695,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "SL" = (
@@ -2714,7 +2714,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "SM" = (
@@ -2727,13 +2727,13 @@
 	},
 /mob/living/simple_animal/hostile/alien/queen/large{
 	del_on_death = 1;
-	loot = list(/obj/effect/gibspawner/xeno,/obj/effect/mob_spawn/corpse/human/syndicatecommando/soft_suit);
+	loot = list(/obj/effect/gibspawner/xeno);
 	desc = "What you saw in your dreams last night.";
 	faction = list("syndicate","xenomorph")
 	},
 /obj/structure/alien/egg/burst,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "SS" = (
@@ -2745,7 +2745,7 @@
 	dir = 4
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "SX" = (
@@ -2759,7 +2759,7 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Tb" = (
@@ -2768,7 +2768,7 @@
 /obj/item/ammo_casing/spent,
 /obj/structure/alien/egg/burst,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Td" = (
@@ -2786,7 +2786,7 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "TL" = (
@@ -2803,7 +2803,7 @@
 	dir = 1
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Ux" = (
@@ -2822,7 +2822,7 @@
 	pixel_y = 32
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "UV" = (
@@ -2834,7 +2834,7 @@
 	pixel_y = -32
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "UX" = (
@@ -2845,7 +2845,7 @@
 	},
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Vb" = (
@@ -2855,7 +2855,7 @@
 	faction = list("xenomorph")
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Vf" = (
@@ -2865,7 +2865,7 @@
 /obj/machinery/suit_storage_unit/open,
 /obj/machinery/light/red/dim/directional/north,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Vt" = (
@@ -2876,7 +2876,7 @@
 	},
 /obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/iron/freezer,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "VQ" = (
@@ -2891,7 +2891,7 @@
 	},
 /obj/item/storage/backpack/duffelbag/syndie/inteq/surgery,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "VR" = (
@@ -2902,7 +2902,7 @@
 /obj/effect/decal/cleanable/vomit/old,
 /obj/item/broken_bottle,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "VV" = (
@@ -2911,7 +2911,7 @@
 	name = "SYN-C Brutus Bridge"
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Wk" = (
@@ -2935,7 +2935,7 @@
 /obj/item/toy/plush/hank,
 /obj/item/book/granter/crafting_recipe/trash_cannon,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "WG" = (
@@ -2952,7 +2952,7 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium/airless,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "WS" = (
@@ -2967,7 +2967,7 @@
 	lootcount = 15
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Xc" = (
@@ -2976,14 +2976,14 @@
 /obj/machinery/cell_charger,
 /obj/item/clothing/mask/facehugger/impregnated,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Xm" = (
 /obj/effect/mob_spawn/human/corpse/inteq_dead,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Xw" = (
@@ -2993,7 +2993,7 @@
 /obj/structure/alien/weeds,
 /obj/structure/alien/weeds/node,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "XG" = (
@@ -3022,7 +3022,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Yd" = (
@@ -3035,7 +3035,7 @@
 	pixel_y = 32
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "YV" = (
@@ -3044,7 +3044,7 @@
 	},
 /obj/item/kirbyplants/random,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "YW" = (
@@ -3063,7 +3063,7 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "YY" = (
@@ -3075,7 +3075,7 @@
 	dir = 1
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Ze" = (
@@ -3085,7 +3085,7 @@
 /obj/structure/alien/weeds,
 /obj/machinery/power/smes,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Zp" = (
@@ -3098,7 +3098,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "Zt" = (
@@ -3112,7 +3112,7 @@
 	pixel_y = -32
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "ZI" = (
@@ -3126,7 +3126,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 "ZN" = (
@@ -3140,7 +3140,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault{
+/area/ruin/space/has_grav/powered/authorship{
 	name = "InteQ transport ship"
 	})
 
