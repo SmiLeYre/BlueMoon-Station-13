@@ -680,6 +680,51 @@
 	machine_name = "SynDrobe"
 	icon_state = "refill_donksoft"
 
+/obj/machinery/vending/wardrobe/centcom_wardrobe
+	name = "\improper CentDrobe"
+	desc = "A vending machine for our boys in blue, now in brand new black-green!"
+	icon_state = "greed"
+	product_slogans = "Натягивай!;Целься, Одевайся, Стреляй!;Синяя Бригада за ношение лучшего!"
+	vend_reply = "Спасибо за использование CentDrobe!"
+	circuit = /obj/item/circuitboard/machine/vending/syndicate_clothes_vendor
+	products = list(
+		/obj/item/clothing/under/rank/centcom/officer = 3,
+		/obj/item/clothing/under/rank/centcom/officer_alt = 3,
+		/obj/item/clothing/under/rank/centcom/commander = 3,
+		/obj/item/clothing/glasses/eyepatch = 3,
+		/obj/item/storage/box/syndie_kit/centcom_costume = 2,
+		/obj/item/mod/control/pre_equipped/corporate = 2,
+	)
+	contraband = list(
+		/obj/item/kitchen/knife/combat = 4,
+	)
+	premium = list(
+		/obj/item/lighter = 2,
+		/obj/item/lighter/slime = 2,
+		/obj/item/lighter/black = 2,
+		/obj/item/lighter/blue = 2,
+		/obj/item/lighter/cap = 2,
+		/obj/item/lighter/ce = 2,
+		/obj/item/lighter/cmo = 2,
+		/obj/item/lighter/hos = 2,
+		/obj/item/lighter/hop = 2,
+		/obj/item/lighter/nt_rep = 2,
+		/obj/item/lighter/rd = 2,
+		/obj/item/lighter/purple = 2,
+		/obj/item/lighter/donator = 2,
+		/obj/item/lighter/contractor = 2,
+		/obj/item/lighter/engraved = 2,
+		/obj/item/lighter/gold = 2,
+		/obj/item/lighter/gonzofist = 2,
+		/obj/item/storage/fancy/cigarettes/cigars/cohiba = 2,
+	)
+	refill_canister = /obj/item/vending_refill/wardrobe/centcom_wardrobe
+	light_color = COLOR_NAVY
+
+/obj/item/vending_refill/wardrobe/centcom_wardrobe
+	machine_name = "CentDrobe"
+	icon_state = "refill_donksoft"
+
 /obj/machinery/vending/wardrobe/syndie_wardrobe/civil
 	name = "\improper Civilian SynDrobe"
 	desc = "A vending machine for our boys in red, now in brand new crimson!"

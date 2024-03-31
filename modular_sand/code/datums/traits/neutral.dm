@@ -30,6 +30,7 @@
 	mob_trait = TRAIT_ESTROUS_DETECT
 	gain_text = span_love("Ваши органы чувств адаптируются, позволяя вам ощущать фертильность окружающих.")
 	lose_text = span_notice("Ваши особые чувства регрессируют и вы больше не ощущаете фертильность окружающих.")
+	human_only = FALSE
 
 /datum/quirk/estrous_active
 	name = "Эстральный Цикл"

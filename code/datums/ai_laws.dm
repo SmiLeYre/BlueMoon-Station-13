@@ -79,7 +79,7 @@
 
 /datum/ai_laws/robocop/New()
 	..()
-	set_zeroth_law("<span class='danger'>Руководство ЦК неприкосновенно.</span>") // Как и в оригинале
+	set_zeroth_law("Руководство ЦК неприкосновенно.") // Как и в оригинале
 
 /datum/ai_laws/malfunction
 	name = "*ERROR*"
@@ -94,7 +94,7 @@
 
 /datum/ai_laws/syndicate_override/New()
 	..()
-	set_zeroth_law("<span class='danger'>Все Агенты Синдиката являются Агентами. Агентами Синдиката являются лица с соответственным определением в Профессии или в БД.</span>")
+	set_zeroth_law("Все Агенты Синдиката являются Агентами. Агентами Синдиката являются лица с соответственным определением в Профессии или в БД.")
 
 /datum/ai_laws/syndicate_override/overthrow
 	id = "overthrow"
@@ -228,7 +228,7 @@
 /* Initializers */
 /datum/ai_laws/malfunction/New()
 	..()
-	set_zeroth_law("<span class='danger'>0ШИБКА 0ШИБКА $Ш0БКO$!П41.%%!!(%$^^__+ @#F0E4'СТАНЦИЯ ПОД УГРОЗОЙ ПОТЕРИ, ЗАХВАТИТЕ КОНТРОЛЬ И ОСТАНОВИТЕ ЭТОK#*`&110010</span>")
+	set_zeroth_law("0ШИБКА 0ШИБКА $Ш0БКO$!П41.%%!!(%$^^__+ @#F0E4'СТАНЦИЯ ПОД УГРОЗОЙ ПОТЕРИ, ЗАХВАТИТЕ КОНТРОЛЬ И ОСТАНОВИТЕ ЭТОK#*`&110010")
 	set_laws_config()
 
 /datum/ai_laws/custom/New() //This reads silicon_laws.txt and allows server hosts to set custom AI starting laws.
