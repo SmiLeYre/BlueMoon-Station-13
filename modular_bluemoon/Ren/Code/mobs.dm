@@ -206,7 +206,29 @@
 
 	var/turf/T = get_turf(pick(spawn_locs))
 	var/mob/living/simple_animal/hostile/syndicate/ranged/sniper/S = new(T)
-	playsound(S, 'modular_bluemoon/Ren/Sound/rifle-loading.ogg', 120, 1, 1000)
+	playsound(S, 'modular_bluemoon/Ren/Sound/rifle-loading.ogg', 200, 1, 1000)
 	message_admins("A mad shooter has been spawned at [COORD(T)][ADMIN_JMP(T)]")
 	log_game("A mad shooter has been spawned at [COORD(T)]")
 	return SUCCESSFUL_SPAWN
+
+/mob/living/simple_animal/hostile/russian/ranged/space
+	name = "Red alert"
+	ranged = 1
+	retreat_distance = 5
+	minimum_distance = 5
+	icon = 'modular_bluemoon/Ren/Icons/Mob/mobs.dmi'
+	icon_state = "komunist"
+	icon_living = "komunist"
+	casingtype = /obj/item/ammo_casing/a9x39
+	projectilesound = 'modular_bluemoon/kovac_shitcode/sound/weapons/vss_shoot.ogg'
+	loot = list(/obj/effect/gibspawner/human)
+	maxHealth = 180
+	health = 180
+	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	minbodytemp = 0
+	speed = 1
+	spacewalk = TRUE
+	dodging = TRUE
+	rapid_melee = 1
+	speak_chance = 20
+	speak = list("Сдохни, проклятый капиталист!")
