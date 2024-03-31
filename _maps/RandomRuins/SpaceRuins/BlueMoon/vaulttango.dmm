@@ -128,9 +128,7 @@
 /area/ruin/space/has_grav/vaulttango)
 "eh" = (
 /obj/structure/table/reinforced,
-/obj/item/flashlight/lamp{
-	light_on = 1
-	},
+/obj/item/flashlight/lamp,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/vaulttango)
 "ek" = (
