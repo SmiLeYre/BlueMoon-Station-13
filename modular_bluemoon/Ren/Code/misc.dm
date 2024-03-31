@@ -137,6 +137,21 @@
 	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
 	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
 
+/obj/item/documents/inteq
+	name = "orange secret documents"
+	desc = "\"Совершенно Секретно\". Документы, содержащие разрозненые координаты, имена, наборы шифров и схем. Эти документы заверены оранжевой сургучной печатью."
+	icon_state = "docs_orange"
+
+/obj/item/folder/inteq
+	name = "folder - 'TOP SECRET'"
+	icon_state = "folder_sorange"
+	bg_color = "#331414"
+
+/obj/item/folder/inteq/Initialize(mapload)
+	. = ..()
+	new /obj/item/documents/inteq(src)
+	update_icon()
+
 ///inteq наборы
 /obj/item/storage/toolbox/syndicate/ComponentInitialize()
 	. = ..()
@@ -216,13 +231,13 @@
 	new /obj/item/grenade/stingbang/shred(src)
 
 /obj/item/storage/backpack/satchel/inteq/ftu/sniper
-	name = "Набор №476. Спецификация: Снайпер. Основное оружие: M1 Garand"
+	name = "Набор №476. Спецификация: Солдат. Основное оружие: FAL"
 
 /obj/item/storage/backpack/satchel/inteq/ftu/sniper/PopulateContents()
 	new /obj/item/storage/box/survival/security/radio(src)
-	new /obj/item/gun/ballistic/automatic/m1garand/scope(src)
-	for(var/i in 1 to 5)
-		new /obj/item/ammo_box/magazine/garand(src)
+	new /obj/item/gun/ballistic/automatic/fal(src)
+	for(var/i in 1 to 3)
+		new /obj/item/ammo_box/magazine/fal(src)
 	new /obj/item/chameleon(src)
 
 /obj/item/storage/backpack/satchel/inteq/ftu/med
