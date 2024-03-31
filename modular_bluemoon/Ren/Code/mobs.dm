@@ -213,22 +213,22 @@
 
 /mob/living/simple_animal/hostile/russian/ranged/space
 	name = "Red alert"
-	ranged = 1
-	retreat_distance = 5
-	minimum_distance = 5
-	icon = 'modular_bluemoon/Ren/Icons/Mob/mobs.dmi'
 	icon_state = "komunist"
 	icon_living = "komunist"
+	icon = 'modular_bluemoon/Ren/Icons/Mob/mobs.dmi'
+	maxHealth = 180
+	health = 180
 	casingtype = /obj/item/ammo_casing/a9x39
 	projectilesound = 'modular_bluemoon/kovac_shitcode/sound/weapons/vss_shoot.ogg'
 	loot = list(/obj/effect/gibspawner/human)
-	maxHealth = 180
-	health = 180
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
 	speed = 1
-	spacewalk = TRUE
-	dodging = TRUE
+	ranged = 1
+	retreat_distance = 5
+	minimum_distance = 5
 	rapid_melee = 1
 	speak_chance = 20
+	spacewalk = TRUE
+	dodging = TRUE
 	speak = list("Сдохни, проклятый капиталист!")

@@ -276,9 +276,7 @@
 /turf/open/floor/iron/airless,
 /area/ruin/space/has_grav/shuttle8532researchbay)
 "fV" = (
-/obj/item/flashlight/glowstick/red{
-	light_on = 1
-	},
+/obj/item/flashlight/glowstick/red,
 /turf/open/floor/plating/airless,
 /area/template_noop)
 "fW" = (
@@ -306,9 +304,7 @@
 /turf/open/floor/iron/airless,
 /area/ruin/space/has_grav/shuttle8532cargohall)
 "gR" = (
-/obj/item/flashlight/glowstick/red{
-	light_on = 1
-	},
+/obj/item/flashlight/glowstick/red,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/shuttle8532researchbay)
 "ha" = (
@@ -388,9 +384,7 @@
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 8
 	},
-/obj/item/flashlight/glowstick/red{
-	light_on = 1
-	},
+/obj/item/flashlight/glowstick/red,
 /turf/open/floor/iron/airless,
 /area/ruin/space/has_grav/shuttle8532researchbay)
 "iN" = (
@@ -512,9 +506,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/gibs/core,
 /obj/effect/decal/cleanable/blood/tracks,
-/obj/item/flashlight/glowstick/red{
-	light_on = 1
-	},
+/obj/item/flashlight/glowstick/red,
 /turf/open/floor/iron/airless,
 /area/ruin/space/has_grav/shuttle8532cargohall)
 "lS" = (
@@ -547,9 +539,7 @@
 /turf/open/floor/iron/airless,
 /area/ruin/space/has_grav/shuttle8532crewquarters)
 "nd" = (
-/obj/item/flashlight{
-	light_on = 1
-	},
+/obj/item/flashlight,
 /turf/open/floor/iron/airless,
 /area/ruin/space/has_grav/shuttle8532bridge)
 "ne" = (
@@ -838,9 +828,7 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/shuttle8532crewquarters)
 "uY" = (
-/obj/item/flashlight/glowstick/red{
-	light_on = 1
-	},
+/obj/item/flashlight/glowstick/red,
 /obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
 /turf/open/floor/iron/airless,
 /area/ruin/space/has_grav/shuttle8532engineering)
@@ -882,9 +870,7 @@
 /turf/open/floor/iron/airless,
 /area/ruin/space/has_grav/shuttle8532engineering)
 "wP" = (
-/obj/item/flashlight/glowstick/red{
-	light_on = 1
-	},
+/obj/item/flashlight/glowstick/red,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/shuttle8532engineering)
 "wQ" = (
@@ -1083,9 +1069,7 @@
 /area/ruin/space/has_grav/shuttle8532crewquarters)
 "BL" = (
 /obj/machinery/porta_turret/syndicate{
-	dir = 9;
-	system_id = "ship_outer_turrets"
-	},
+	dir = 9},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/space/has_grav/shuttle8532researchbay)
 "BR" = (
@@ -1127,9 +1111,7 @@
 /turf/template_noop,
 /area/template_noop)
 "CO" = (
-/obj/item/flashlight/glowstick/red{
-	light_on = 1
-	},
+/obj/item/flashlight/glowstick/red,
 /turf/template_noop,
 /area/template_noop)
 "Di" = (
@@ -1141,9 +1123,7 @@
 /area/ruin/space/has_grav/shuttle8532crewquarters)
 "Du" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/flashlight/glowstick/red{
-	light_on = 1
-	},
+/obj/item/flashlight/glowstick/red,
 /obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
 /turf/open/floor/iron/airless,
 /area/ruin/space/has_grav/shuttle8532cargohall)
@@ -1473,9 +1453,7 @@
 /area/ruin/space/has_grav/shuttle8532researchbay)
 "NU" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/flashlight/glowstick/red{
-	light_on = 1
-	},
+/obj/item/flashlight/glowstick/red,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/shuttle8532researchbay)
 "NX" = (
@@ -1606,9 +1584,7 @@
 /area/ruin/space/has_grav/shuttle8532crewquarters)
 "RO" = (
 /obj/machinery/porta_turret/syndicate{
-	dir = 5;
-	system_id = "ship_outer_turrets"
-	},
+	dir = 5},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/space/has_grav/shuttle8532researchbay)
 "RY" = (
@@ -1663,9 +1639,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood,
-/obj/item/flashlight/glowstick/red{
-	light_on = 1
-	},
+/obj/item/flashlight/glowstick/red,
 /turf/open/floor/iron/airless,
 /area/ruin/space/has_grav/shuttle8532crewquarters)
 "Ub" = (
@@ -1837,9 +1811,7 @@
 /obj/machinery/turretid{
 	lethal = 1;
 	name = "Outer Turret Control";
-	pixel_x = -33;
-	system_id = "ship_outer_turrets"
-	},
+	pixel_x = -33},
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/iron/airless,
 /area/ruin/space/has_grav/shuttle8532bridge)
