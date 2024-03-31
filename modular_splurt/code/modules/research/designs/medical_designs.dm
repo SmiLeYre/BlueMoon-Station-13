@@ -95,6 +95,9 @@
 /datum/design/cyberimp_shield
 	category = list("Implants", "Medical Designs")
 
+/datum/design/cyberimp_chem
+	category = list("Implants", "Medical Designs")
+
 /datum/design/cyberimp_janitor
 	category = list("Implants", "Medical Designs")
 
