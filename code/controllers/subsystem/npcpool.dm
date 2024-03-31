@@ -22,10 +22,15 @@ SUBSYSTEM_DEF(npcpool)
 
 	//cache for sanic speed (lists are references anyways)
 	var/list/currentrun = src.currentrun
-
+	var/removes_nulls = FALSE
 	while(currentrun.len)
 		var/mob/living/simple_animal/SA = currentrun[currentrun.len]
 		--currentrun.len
+		if(QDELETED(SA))
+			if(!removes_nulls)
+				removeNullsFromList(GLOB.simple_animals[AI_ON])
+				removes_nulls = TRUE
+			continue
 
 		invoking = TRUE
 		invoke_start = world.time
