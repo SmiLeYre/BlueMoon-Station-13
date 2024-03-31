@@ -5,8 +5,8 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "af" = (
 /obj/structure/door_assembly/door_assembly_hatch{
@@ -15,8 +15,8 @@
 /obj/structure/barricade/security,
 /obj/structure/alien/resin/membrane,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "aA" = (
 /obj/structure/table_frame,
@@ -33,8 +33,8 @@
 /obj/item/ammo_casing/spent,
 /obj/structure/alien/weeds,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "aB" = (
 /obj/item/shard,
@@ -56,8 +56,8 @@
 	pixel_y = -21
 	},
 /turf/open/floor/mineral/plastitanium/airless,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "aY" = (
 /obj/structure/table/reinforced,
@@ -82,8 +82,8 @@
 /obj/item/ammo_casing/spent,
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "be" = (
 /obj/item/ammo_casing/spent,
@@ -98,8 +98,8 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "bE" = (
 /obj/effect/turf_decal{
@@ -107,8 +107,8 @@
 	},
 /obj/machinery/suit_storage_unit/open,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "bJ" = (
 /obj/structure/alien/weeds/node,
@@ -117,24 +117,24 @@
 	},
 /obj/machinery/power/rtg,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "bM" = (
 /obj/effect/turf_decal{
 	icon_state = "warningline_white"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "bS" = (
 /obj/effect/decal/cleanable/blood/gibs{
 	icon_state = "larva_head_s"
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "cj" = (
 /obj/effect/decal/cleanable/blood/gibs{
@@ -148,8 +148,8 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "cw" = (
 /obj/structure/table/reinforced,
@@ -165,8 +165,8 @@
 	pixel_x = 5
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "cA" = (
 /obj/effect/turf_decal{
@@ -177,24 +177,24 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "cB" = (
 /obj/effect/turf_decal{
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "cP" = (
 /obj/machinery/door/poddoor{
 	id = "brutus exterior bolts"
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "cU" = (
 /obj/structure/alien/weeds,
@@ -210,8 +210,8 @@
 	},
 /obj/effect/mob_spawn/human/corpse/cargo_tech,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "df" = (
 /obj/structure/alien/weeds,
@@ -222,8 +222,8 @@
 /obj/structure/alien/egg/burst,
 /obj/item/clothing/mask/facehugger/dead,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "di" = (
 /obj/effect/turf_decal/tile/bar{
@@ -243,8 +243,8 @@
 	},
 /obj/structure/table_frame/wood,
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "dn" = (
 /obj/structure/table/optable,
@@ -256,8 +256,8 @@
 	dir = 1
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "dq" = (
 /obj/effect/decal/cleanable/glass,
@@ -268,15 +268,15 @@
 	},
 /obj/structure/alien/egg/burst,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "dx" = (
 /obj/machinery/door/airlock/hatch,
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "dy" = (
 /obj/effect/turf_decal,
@@ -292,8 +292,8 @@
 	},
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "ef" = (
 /obj/structure/kitchenspike{
@@ -302,8 +302,8 @@
 	},
 /obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/floor/iron/freezer,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "eo" = (
 /obj/effect/turf_decal{
@@ -323,8 +323,8 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "ep" = (
 /obj/effect/decal/cleanable/glass,
@@ -334,8 +334,8 @@
 /obj/effect/mob_spawn/human/corpse/doctor,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "er" = (
 /obj/structure/lattice,
@@ -355,8 +355,8 @@
 	layer = 2.8
 	},
 /turf/template_noop,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "eX" = (
 /obj/structure/table/glass,
@@ -373,16 +373,16 @@
 	desc = "These are particularly boring for what they entail."
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "eZ" = (
 /obj/item/clothing/mask/facehugger/impregnated,
 /obj/item/storage/box/ingredients/american,
 /obj/item/storage/box/monkeycubes,
 /turf/open/floor/iron/freezer,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "fc" = (
 /obj/effect/turf_decal{
@@ -399,8 +399,8 @@
 	},
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "fl" = (
 /turf/template_noop,
@@ -416,8 +416,8 @@
 	pixel_y = 32
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "fM" = (
 /obj/structure/door_assembly/door_assembly_ext,
@@ -428,8 +428,8 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "gW" = (
 /obj/effect/turf_decal{
@@ -446,8 +446,8 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "hm" = (
 /obj/machinery/porta_turret/syndicate/pod{
@@ -456,8 +456,8 @@
 	faction = list("xenomorph")
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "hA" = (
 /obj/effect/decal/cleanable/dirt,
@@ -465,8 +465,8 @@
 	icon_state = "floor4-old"
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "hB" = (
 /obj/item/chair/stool{
@@ -486,16 +486,16 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "hI" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /obj/structure/alien/weeds/node,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "hK" = (
 /obj/effect/turf_decal{
@@ -510,8 +510,8 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "hW" = (
 /obj/effect/turf_decal/tile/bar{
@@ -524,8 +524,8 @@
 	},
 /obj/item/kirbyplants/random,
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "hX" = (
 /obj/machinery/airalarm/directional/north,
@@ -533,8 +533,8 @@
 	desc = "Waffle co. actually ordered these guys to steal one of these just to be sure."
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "ie" = (
 /obj/structure/showcase/machinery{
@@ -547,8 +547,8 @@
 	dir = 9
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "ip" = (
 /obj/structure/alien/egg/burst,
@@ -556,8 +556,8 @@
 	icon_state = "floor1-old"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "iy" = (
 /obj/effect/decal/cleanable/blood/gibs{
@@ -568,8 +568,8 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "iL" = (
 /obj/effect/turf_decal{
@@ -585,8 +585,8 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "iY" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
@@ -594,8 +594,8 @@
 	},
 /obj/machinery/portable_atmospherics/canister/air,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "jk" = (
 /obj/structure/barricade/security,
@@ -603,16 +603,16 @@
 	anchored = 1
 	},
 /turf/open/floor/mineral/plastitanium/airless,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "jx" = (
 /obj/effect/decal/cleanable/glass{
 	layer = 3.1
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "jy" = (
 /obj/effect/turf_decal{
@@ -627,8 +627,8 @@
 	layer = 3.1
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "kg" = (
 /obj/effect/decal/cleanable/blood/gibs{
@@ -636,8 +636,8 @@
 	},
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "kh" = (
 /obj/effect/turf_decal{
@@ -648,8 +648,8 @@
 /obj/item/ammo_casing/spent,
 /obj/item/sign/flag/inteq,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "ku" = (
 /obj/effect/turf_decal{
@@ -664,14 +664,14 @@
 /obj/structure/bed/nest,
 /obj/effect/mob_spawn/human/corpse/engineer,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "kw" = (
 /obj/machinery/vending/boozeomat/syndicate_access,
 /turf/open/floor/iron/freezer,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "kS" = (
 /obj/effect/decal/cleanable/dirt,
@@ -680,8 +680,8 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "kT" = (
 /obj/effect/turf_decal/tile/bar{
@@ -700,8 +700,8 @@
 	},
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "lx" = (
 /obj/structure/barricade/security,
@@ -711,8 +711,8 @@
 /obj/item/ammo_casing/spent,
 /obj/machinery/light/red/dim/directional/north,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "lU" = (
 /obj/effect/decal/cleanable/blood/gibs{
@@ -729,14 +729,14 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "mk" = (
 /obj/structure/alien/weeds/node,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "mn" = (
 /obj/effect/turf_decal{
@@ -744,16 +744,16 @@
 	},
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "mp" = (
 /obj/effect/decal/cleanable/blood/gibs{
 	icon_state = "gibhead"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "mw" = (
 /obj/effect/turf_decal/tile/red{
@@ -768,8 +768,8 @@
 	desc = "The resin is thick and it keeps collapsing on itself."
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "mG" = (
 /obj/effect/decal/cleanable/blood{
@@ -777,8 +777,8 @@
 	},
 /obj/structure/sink/directional/south,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "nk" = (
 /obj/item/clothing/glasses/hud/health/night,
@@ -798,8 +798,8 @@
 /obj/item/storage/firstaid/fire,
 /obj/item/storage/firstaid/regular,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "nm" = (
 /obj/machinery/vending/cigarette/syndicate,
@@ -808,16 +808,16 @@
 	dir = 1
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "nG" = (
 /mob/living/simple_animal/hostile/alien{
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "nN" = (
 /obj/structure/alien/resin{
@@ -826,8 +826,8 @@
 	desc = "The resin is thick and it keeps collapsing on itself."
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "nU" = (
 /obj/effect/decal/cleanable/dirt,
@@ -839,8 +839,8 @@
 	},
 /obj/item/gun/ballistic/automatic/pistol/modular,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "oj" = (
 /obj/structure/fans/tiny,
@@ -848,8 +848,8 @@
 	id = "brutus exterior bolts"
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "oo" = (
 /obj/effect/turf_decal{
@@ -864,8 +864,8 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "or" = (
 /obj/item/ammo_casing/spent,
@@ -873,20 +873,20 @@
 	icon_state = "drip1"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "oV" = (
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "oW" = (
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/hatch,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "pk" = (
 /obj/structure/closet/firecloset/full{
@@ -903,8 +903,8 @@
 	},
 /obj/machinery/light/broken/directional/east,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "pl" = (
 /obj/item/shard,
@@ -918,8 +918,8 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "pq" = (
 /obj/structure/lattice,
@@ -947,8 +947,8 @@
 	plasmatanks = 0
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "qu" = (
 /obj/effect/decal/cleanable/blood{
@@ -961,8 +961,8 @@
 	layer = 3.4
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "qC" = (
 /obj/effect/turf_decal/tile/bar{
@@ -975,15 +975,15 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "qE" = (
 /obj/machinery/airalarm/directional/west,
 /obj/structure/alien/weeds,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "qF" = (
 /obj/item/ammo_casing/spent,
@@ -998,8 +998,8 @@
 "qR" = (
 /obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/floor/mineral/plastitanium/airless,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "rd" = (
 /obj/effect/decal/cleanable/blood/gibs/old{
@@ -1008,14 +1008,14 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/alien/weeds,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "rm" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "rs" = (
 /obj/item/storage/toolbox/electrical,
@@ -1035,8 +1035,8 @@
 	lootcount = 2
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "rz" = (
 /obj/machinery/airalarm/directional/west,
@@ -1056,8 +1056,8 @@
 	icon_state = "warningline_white"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "rL" = (
 /obj/effect/turf_decal{
@@ -1069,14 +1069,14 @@
 	},
 /obj/machinery/vending/inteq_vendomat,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "so" = (
 /obj/item/broken_missile,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "st" = (
 /obj/effect/decal/cleanable/blood/gibs{
@@ -1085,8 +1085,8 @@
 /obj/item/ammo_casing/spent,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "sA" = (
 /obj/item/clothing/mask/surgical,
@@ -1095,14 +1095,14 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "sE" = (
 /obj/machinery/door/airlock/hatch,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "sQ" = (
 /obj/structure/alien/weeds,
@@ -1117,8 +1117,8 @@
 /obj/structure/alien/egg/burst,
 /obj/item/clothing/mask/facehugger/dead,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "sT" = (
 /obj/structure/lattice,
@@ -1133,8 +1133,8 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "ti" = (
 /obj/effect/turf_decal{
@@ -1146,16 +1146,16 @@
 	},
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "tO" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/external/abandoned_brown,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "ug" = (
 /obj/effect/turf_decal{
@@ -1163,8 +1163,8 @@
 	},
 /obj/machinery/computer/arcade/amputation,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "uy" = (
 /obj/effect/turf_decal{
@@ -1176,8 +1176,8 @@
 	},
 /obj/machinery/vending/medical/syndicate_access,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "uC" = (
 /obj/effect/turf_decal,
@@ -1185,8 +1185,8 @@
 	icon_state = "borgdecon2"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "uG" = (
 /obj/effect/turf_decal{
@@ -1202,8 +1202,8 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "vj" = (
 /obj/machinery/door/poddoor{
@@ -1211,15 +1211,15 @@
 	closingLayer = 2.65
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "vm" = (
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/external/abandoned_brown,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "vo" = (
 /obj/effect/turf_decal{
@@ -1236,22 +1236,22 @@
 	pixel_x = 3
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "vx" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "vz" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "vH" = (
 /obj/effect/turf_decal{
@@ -1262,15 +1262,15 @@
 	dir = 10
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "vM" = (
 /obj/item/ammo_casing/spent,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "vR" = (
 /obj/effect/turf_decal{
@@ -1285,8 +1285,8 @@
 	dir = 1
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "wc" = (
 /obj/structure/alien/weeds,
@@ -1301,8 +1301,8 @@
 	},
 /obj/effect/mob_spawn/human/corpse/cargo_tech,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "wi" = (
 /obj/effect/mapping_helpers/airlock/locked,
@@ -1329,8 +1329,8 @@
 	req_access = list("syndicate")
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "wj" = (
 /obj/effect/turf_decal{
@@ -1338,8 +1338,8 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "wq" = (
 /obj/structure/lattice,
@@ -1347,7 +1347,9 @@
 	amount = 25
 	},
 /turf/template_noop,
-/area/template_noop)
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
+	})
 "wt" = (
 /obj/effect/turf_decal{
 	icon_state = "warningline_white";
@@ -1357,8 +1359,8 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "wx" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
@@ -1375,8 +1377,8 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "wE" = (
 /obj/machinery/vending/donksofttoyvendor,
@@ -1384,8 +1386,8 @@
 	icon_state = "warningline_white"
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "wJ" = (
 /obj/effect/turf_decal{
@@ -1395,8 +1397,8 @@
 /obj/structure/alien/weeds,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "wO" = (
 /obj/structure/frame/computer{
@@ -1409,14 +1411,14 @@
 	},
 /obj/structure/alien/weeds,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "wP" = (
 /obj/structure/sign/poster/contraband/inteq/inteq_better_dead,
 /turf/closed/wall/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "wX" = (
 /obj/effect/spawner/lootdrop/maintenance/three,
@@ -1424,8 +1426,8 @@
 /area/template_noop)
 "xi" = (
 /turf/open/floor/mineral/plastitanium/airless,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "xo" = (
 /obj/effect/decal/cleanable/glass,
@@ -1439,8 +1441,8 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "xp" = (
 /obj/effect/decal/cleanable/glass{
@@ -1451,13 +1453,13 @@
 	},
 /obj/structure/alien/weeds/node,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "xt" = (
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "xB" = (
 /obj/effect/turf_decal/tile/bar{
@@ -1470,16 +1472,16 @@
 	},
 /obj/item/chair/greyscale,
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "xR" = (
 /obj/structure/shuttle/engine/propulsion{
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "xT" = (
 /obj/effect/turf_decal/tile/bar{
@@ -1505,8 +1507,8 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "yb" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1517,8 +1519,8 @@
 	lootcount = 2
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "yt" = (
 /obj/effect/turf_decal/tile/bar{
@@ -1530,8 +1532,8 @@
 	pixel_y = 33
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "yx" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -1540,8 +1542,8 @@
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/external/abandoned_brown,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "yG" = (
 /obj/effect/decal/cleanable/robot_debris{
@@ -1552,8 +1554,8 @@
 	},
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "yJ" = (
 /obj/effect/decal/cleanable/glass,
@@ -1563,8 +1565,8 @@
 	},
 /obj/structure/alien/weeds/node,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "yP" = (
 /obj/effect/decal/cleanable/glass{
@@ -1577,14 +1579,14 @@
 /obj/item/ammo_casing/spent,
 /obj/item/storage/belt/military/inteq,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "yZ" = (
 /obj/structure/window/shuttle/survival_pod/spawner,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "zg" = (
 /obj/effect/turf_decal/tile/bar{
@@ -1598,8 +1600,8 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "zK" = (
 /obj/effect/turf_decal{
@@ -1611,8 +1613,8 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "zN" = (
 /obj/item/shard{
@@ -1620,15 +1622,17 @@
 	},
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/airless,
-/area/template_noop)
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
+	})
 "zV" = (
 /obj/machinery/suit_storage_unit/open,
 /obj/effect/turf_decal{
 	icon_state = "warningline_white"
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Ah" = (
 /obj/effect/turf_decal{
@@ -1648,8 +1652,8 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Ai" = (
 /obj/effect/decal/cleanable/blood/gibs{
@@ -1671,8 +1675,8 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "AM" = (
 /obj/item/ammo_casing/spent,
@@ -1680,8 +1684,8 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Bh" = (
 /obj/effect/turf_decal{
@@ -1693,15 +1697,15 @@
 	},
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Bw" = (
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "BA" = (
 /obj/effect/decal/cleanable/blood/gibs{
@@ -1720,15 +1724,21 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "BI" = (
 /obj/item/ammo_casing/spent,
 /obj/machinery/light/broken/directional/south,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
+	})
+"BR" = (
+/obj/structure/lattice,
+/turf/template_noop,
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Cp" = (
 /obj/item/coin/antagtoken{
@@ -1751,8 +1761,8 @@
 /obj/item/clothing/under/inteq_skirt,
 /obj/item/clothing/under/inteq_skirt,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "CE" = (
 /obj/item/stack/cable_coil/cut,
@@ -1768,8 +1778,8 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "DR" = (
 /obj/effect/turf_decal{
@@ -1780,8 +1790,8 @@
 /obj/structure/bed/nest,
 /obj/effect/mob_spawn/human/corpse/doctor,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Eg" = (
 /obj/item/stack/rods,
@@ -1799,8 +1809,8 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Et" = (
 /obj/effect/turf_decal/tile/bar{
@@ -1809,8 +1819,8 @@
 /obj/effect/turf_decal/tile/bar,
 /obj/structure/table/reinforced,
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Ez" = (
 /obj/structure/alien/weeds,
@@ -1818,8 +1828,8 @@
 	icon_state = "floor7-old"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "EB" = (
 /obj/structure/girder/displaced,
@@ -1845,8 +1855,8 @@
 	pixel_y = 5
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "EQ" = (
 /obj/item/restraints/handcuffs/cable/zipties/used,
@@ -1864,8 +1874,8 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "ER" = (
 /mob/living/simple_animal/hostile/alien/sentinel{
@@ -1875,8 +1885,8 @@
 	},
 /obj/structure/alien/weeds/node,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Ff" = (
 /obj/effect/decal/cleanable/glass,
@@ -1884,8 +1894,8 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Fi" = (
 /obj/effect/decal/cleanable/glass{
@@ -1897,8 +1907,8 @@
 /obj/item/ammo_casing/spent,
 /obj/item/kirbyplants/random,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Fs" = (
 /mob/living/simple_animal/bot/firebot{
@@ -1915,8 +1925,8 @@
 	dir = 4
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "FJ" = (
 /obj/machinery/suit_storage_unit/open,
@@ -1927,15 +1937,15 @@
 	icon_state = "warningline_white"
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "FP" = (
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/hatch,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Gt" = (
 /obj/machinery/airalarm/directional/south,
@@ -1955,8 +1965,8 @@
 	dir = 4
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Hc" = (
 /obj/effect/decal/cleanable/blood/gibs{
@@ -1966,8 +1976,8 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Hp" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1975,8 +1985,8 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Hu" = (
 /obj/effect/turf_decal{
@@ -1995,8 +2005,8 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Hx" = (
 /obj/structure/alien/weeds,
@@ -2007,8 +2017,8 @@
 /obj/structure/bed/nest,
 /obj/effect/mob_spawn/human/corpse/inteq_dead,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "HA" = (
 /obj/item/ammo_casing/spent,
@@ -2016,8 +2026,8 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Iu" = (
 /obj/effect/turf_decal{
@@ -2026,8 +2036,8 @@
 /obj/effect/turf_decal,
 /obj/structure/mecha_wreckage/hermes,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "IC" = (
 /obj/effect/turf_decal{
@@ -2038,8 +2048,8 @@
 	icon_state = "cola_black-broken"
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "IN" = (
 /obj/item/shard{
@@ -2047,16 +2057,16 @@
 	},
 /obj/machinery/power/smes,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "IS" = (
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Jh" = (
 /obj/effect/turf_decal{
@@ -2066,8 +2076,8 @@
 	icon_state = "bot_red"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Jp" = (
 /obj/item/stack/sheet/glass{
@@ -2083,8 +2093,8 @@
 	icon_state = "warningline_white"
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Jw" = (
 /obj/effect/turf_decal{
@@ -2098,16 +2108,16 @@
 	lootcount = 3
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Jx" = (
 /mob/living/simple_animal/hostile/alien{
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Jy" = (
 /obj/effect/spawner/lootdrop/armory_contraband,
@@ -2123,22 +2133,22 @@
 	},
 /obj/machinery/light/broken/directional/west,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "JZ" = (
 /obj/item/shard{
 	icon_state = "titaniumtiny"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Kl" = (
 /obj/structure/mecha_wreckage/ares,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "KA" = (
 /obj/effect/turf_decal/tile/bar{
@@ -2154,8 +2164,8 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "KB" = (
 /obj/effect/decal/cleanable/glass,
@@ -2169,8 +2179,8 @@
 	desc = "The resin is thick and it keeps collapsing on itself."
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "KC" = (
 /obj/item/ammo_casing/spent,
@@ -2179,8 +2189,8 @@
 	icon_state = "armorblood"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "KD" = (
 /obj/effect/turf_decal{
@@ -2190,16 +2200,16 @@
 /obj/structure/barricade/security,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "KF" = (
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "KG" = (
 /obj/machinery/power/rtg,
@@ -2207,8 +2217,8 @@
 	pixel_x = -31
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "KK" = (
 /obj/effect/turf_decal{
@@ -2221,8 +2231,8 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "KT" = (
 /obj/structure/alien/weeds,
@@ -2233,16 +2243,16 @@
 /obj/effect/decal/cleanable/glass,
 /obj/effect/mob_spawn/human/corpse/doctor,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "KZ" = (
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/glass,
 /obj/machinery/power/rtg,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Lf" = (
 /obj/effect/decal/cleanable/glass,
@@ -2250,21 +2260,21 @@
 /obj/item/ammo_casing/spent,
 /obj/structure/alien/weeds,
 /turf/open/floor/mineral/plastitanium/airless,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Ln" = (
 /obj/effect/decal/cleanable/glass,
 /obj/item/ammo_casing/spent,
 /obj/structure/alien/weeds,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "LF" = (
 /turf/closed/wall/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "LO" = (
 /obj/effect/turf_decal{
@@ -2275,8 +2285,8 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Ml" = (
 /obj/effect/turf_decal/tile/bar{
@@ -2292,8 +2302,8 @@
 /obj/item/bodypart/head,
 /obj/machinery/light/broken/directional/north,
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Mp" = (
 /obj/effect/turf_decal{
@@ -2303,8 +2313,8 @@
 	icon_state = "bot_right_red"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "My" = (
 /obj/item/ammo_casing/spent,
@@ -2313,8 +2323,8 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "ME" = (
 /obj/effect/turf_decal{
@@ -2331,8 +2341,8 @@
 	},
 /obj/structure/alien/egg/burst,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "MH" = (
 /obj/effect/turf_decal{
@@ -2349,8 +2359,8 @@
 /obj/structure/barricade/security,
 /obj/machinery/light/small/red/dim/directional/east,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "ML" = (
 /obj/item/grenade/smokebomb{
@@ -2369,8 +2379,8 @@
 	dir = 1
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "MW" = (
 /obj/effect/turf_decal{
@@ -2382,8 +2392,8 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Ne" = (
 /obj/machinery/door/airlock/hatch,
@@ -2391,8 +2401,8 @@
 	icon_state = "warningline_white"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Nu" = (
 /obj/effect/decal/cleanable/glass{
@@ -2400,8 +2410,8 @@
 	},
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "NU" = (
 /obj/effect/turf_decal{
@@ -2413,8 +2423,8 @@
 	},
 /obj/machinery/computer/operating,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "NX" = (
 /obj/structure/table/glass,
@@ -2443,8 +2453,8 @@
 	},
 /obj/item/folder/inteq,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Or" = (
 /obj/item/stack/rods{
@@ -2456,8 +2466,8 @@
 /obj/item/ammo_casing/spent,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Oy" = (
 /obj/effect/turf_decal{
@@ -2471,15 +2481,15 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "OC" = (
 /obj/effect/decal/cleanable/glass,
 /obj/structure/alien/weeds/node,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "OW" = (
 /obj/effect/turf_decal{
@@ -2490,8 +2500,8 @@
 	},
 /obj/structure/alien/weeds,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Pb" = (
 /obj/structure/alien/resin/membrane{
@@ -2501,8 +2511,8 @@
 	},
 /obj/structure/alien/weeds/node,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Pj" = (
 /obj/machinery/door/poddoor/preopen,
@@ -2510,8 +2520,8 @@
 /obj/structure/alien/weeds,
 /obj/structure/alien/resin,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Po" = (
 /obj/effect/turf_decal{
@@ -2525,8 +2535,8 @@
 	},
 /obj/machinery/door/airlock/freezer,
 /turf/open/floor/iron/freezer,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "PD" = (
 /obj/structure/closet/crate/trashcart,
@@ -2535,21 +2545,21 @@
 	loot = list( /obj/item/cigbutt = 1, /obj/item/trash/cheesie = 1, /obj/item/trash/candy = 1, /obj/item/trash/chips = 1, /obj/item/reagent_containers/food/snacks/deadmouse = 1, /obj/item/trash/pistachios = 1, /obj/item/trash/plate = 1, /obj/item/trash/popcorn = 1, /obj/item/trash/raisins = 1, /obj/item/trash/sosjerky = 1, /obj/item/trash/syndi_cakes = 1)
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "PV" = (
 /mob/living/carbon/alien/larva{
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Qg" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Qj" = (
 /obj/item/ammo_casing/spent,
@@ -2564,8 +2574,8 @@
 	name = "viscous resin membrane"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "QA" = (
 /obj/effect/turf_decal{
@@ -2573,8 +2583,8 @@
 	},
 /obj/machinery/suit_storage_unit/open,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Ru" = (
 /obj/effect/turf_decal/delivery,
@@ -2600,14 +2610,14 @@
 	lootcount = 1
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Rw" = (
 /obj/machinery/door/airlock/hatch,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Rx" = (
 /obj/effect/turf_decal{
@@ -2616,8 +2626,8 @@
 	},
 /obj/machinery/vending/snack/random,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "RG" = (
 /obj/effect/turf_decal/tile/bar{
@@ -2629,8 +2639,8 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "RS" = (
 /obj/structure/barricade/security,
@@ -2643,16 +2653,16 @@
 	name = "SYN-C Brutus Bridge"
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "RW" = (
 /obj/machinery/door/poddoor/preopen,
 /obj/structure/fans/tiny,
 /obj/structure/alien/resin,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Sr" = (
 /obj/effect/turf_decal{
@@ -2660,8 +2670,8 @@
 	dir = 1
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "St" = (
 /obj/effect/turf_decal{
@@ -2679,24 +2689,24 @@
 	pixel_y = 10
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "SB" = (
 /obj/structure/shuttle/engine/large{
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "SE" = (
 /obj/structure/alien/egg/burst,
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "SL" = (
 /obj/machinery/iv_drip,
@@ -2714,8 +2724,8 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "SM" = (
 /obj/structure/alien/weeds,
@@ -2733,8 +2743,8 @@
 	},
 /obj/structure/alien/egg/burst,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "SS" = (
 /obj/structure/table_frame,
@@ -2745,8 +2755,8 @@
 	dir = 4
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "SX" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2759,8 +2769,8 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Tb" = (
 /obj/machinery/light/small/red/dim/directional/south,
@@ -2768,8 +2778,8 @@
 /obj/item/ammo_casing/spent,
 /obj/structure/alien/egg/burst,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Td" = (
 /obj/effect/turf_decal{
@@ -2786,8 +2796,8 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "TL" = (
 /obj/structure/table/optable,
@@ -2803,8 +2813,8 @@
 	dir = 1
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Ux" = (
 /obj/effect/turf_decal/tile/bar{
@@ -2822,8 +2832,8 @@
 	pixel_y = 32
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "UV" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2834,8 +2844,8 @@
 	pixel_y = -32
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "UX" = (
 /obj/machinery/door/airlock/hatch,
@@ -2845,8 +2855,8 @@
 	},
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Vb" = (
 /obj/machinery/porta_turret/syndicate/pod{
@@ -2855,8 +2865,8 @@
 	faction = list("xenomorph")
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Vf" = (
 /obj/effect/turf_decal{
@@ -2865,8 +2875,8 @@
 /obj/machinery/suit_storage_unit/open,
 /obj/machinery/light/red/dim/directional/north,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Vt" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -2876,8 +2886,8 @@
 	},
 /obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/iron/freezer,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "VQ" = (
 /obj/structure/table/glass,
@@ -2891,8 +2901,8 @@
 	},
 /obj/item/storage/backpack/duffelbag/syndie/inteq/surgery,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "VR" = (
 /obj/item/tank/internals/oxygen/empty,
@@ -2902,8 +2912,8 @@
 /obj/effect/decal/cleanable/vomit/old,
 /obj/item/broken_bottle,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "VV" = (
 /obj/structure/barricade/security,
@@ -2911,8 +2921,8 @@
 	name = "SYN-C Brutus Bridge"
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Wk" = (
 /obj/structure/alien/weeds,
@@ -2935,8 +2945,8 @@
 /obj/item/toy/plush/hank,
 /obj/item/book/granter/crafting_recipe/trash_cannon,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "WG" = (
 /obj/effect/decal/cleanable/blood/gibs{
@@ -2952,9 +2962,12 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium/airless,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
+"WP" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ruin/space/has_grav/vaulttango)
 "WS" = (
 /obj/item/stack/rods{
 	amount = 50
@@ -2967,8 +2980,8 @@
 	lootcount = 15
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Xc" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2976,15 +2989,15 @@
 /obj/machinery/cell_charger,
 /obj/item/clothing/mask/facehugger/impregnated,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Xm" = (
 /obj/effect/mob_spawn/human/corpse/inteq_dead,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Xw" = (
 /obj/machinery/door/poddoor/preopen,
@@ -2993,8 +3006,8 @@
 /obj/structure/alien/weeds,
 /obj/structure/alien/weeds/node,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "XG" = (
 /obj/effect/turf_decal{
@@ -3022,8 +3035,8 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Yd" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3035,8 +3048,8 @@
 	pixel_y = 32
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "YV" = (
 /obj/effect/turf_decal{
@@ -3044,8 +3057,8 @@
 	},
 /obj/item/kirbyplants/random,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "YW" = (
 /obj/effect/turf_decal/tile/bar{
@@ -3063,8 +3076,8 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "YY" = (
 /obj/effect/decal/cleanable/glass,
@@ -3075,8 +3088,8 @@
 	dir = 1
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Ze" = (
 /obj/item/shard{
@@ -3085,8 +3098,8 @@
 /obj/structure/alien/weeds,
 /obj/machinery/power/smes,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Zp" = (
 /obj/effect/turf_decal/tile/bar{
@@ -3098,8 +3111,8 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "Zt" = (
 /obj/item/ammo_casing/spent,
@@ -3112,8 +3125,8 @@
 	pixel_y = -32
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "ZI" = (
 /obj/structure/girder/reinforced,
@@ -3126,8 +3139,8 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 "ZN" = (
 /obj/effect/decal/cleanable/robot_debris{
@@ -3140,8 +3153,8 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/authorship{
-	name = "InteQ transport ship"
+/area/ruin/space/has_grav/vaulttango{
+	name = "Warbringer"
 	})
 
 (1,1,1) = {"
@@ -3242,7 +3255,7 @@ LF
 xt
 LF
 LF
-LF
+WP
 LF
 LF
 xt
@@ -3643,7 +3656,7 @@ Or
 fl
 be
 zN
-sT
+BR
 Lf
 wP
 VQ
