@@ -78,3 +78,9 @@
 /obj/item/vending_refill/kink
 	machine_name 	= "KinkMate"
 	icon_state 		= "refill_kink"
+
+/obj/item/vending_refill/kink/Initialize(mapload)
+	. = ..()
+	if(prob(1))
+		qdel(src)
+		new /obj/machinery/vending/sexmachine(src)

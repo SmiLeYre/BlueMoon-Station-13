@@ -812,7 +812,7 @@
 /mob/living/silicon/robot/modules/inteq/Initialize(mapload)
 	. = ..()
 	radio = new /obj/item/radio/borg/inteq(src)
-	laws = new /datum/ai_laws/syndicate_override()
+	laws = new /datum/ai_laws/inteq_override()
 	addtimer(CALLBACK(src, .proc/show_playstyle), 5)
 
 /mob/living/silicon/robot/modules/inteq/create_modularInterface()

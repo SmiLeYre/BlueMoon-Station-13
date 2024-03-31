@@ -109,6 +109,108 @@
 	update_size_movespeed()
 	check_mob_size()
 
+/datum/quirk/bluemoon_giant_body
+	name = "Пожиратель"
+	desc = "Вы крупны и очень прожорливы. Из-за особенностей вашей анатомии ваше тело крайне чувствительно к урону, однако передвигается на порядок быстрее. \
+	В дополнение к этому вы можете есть любую пищу и не толстеть, однако ваш голод силён, а переедание вызывает выделение в кровь особой смеси реагентов. \
+	Так же, по неизвестным науке причинам вы не можете быть сверхтяжёлым."
+	value = 3
+	mob_trait = TRAIT_BLUEMOON_GIANT_BODY
+	medical_record_text = "Субъект проявляет признаки гигантизма и аномальной прожорливости, а также способность усваивать любую пищу."
+	gain_text = span_notice("Вы чувствуете неумалимый голод.")
+	lose_text = span_notice("Ваш голод проходит.")
+	processing_quirk = TRUE
+
+/datum/quirk/bluemoon_giant_body/add()
+	// да, кушать можно всё, но нужно сильно больше
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/species/species = H.dna.species
+	species.disliked_food = null
+	H.physiology.hunger_mod *= 2
+	H.physiology.brute_mod *= 1.6 // убираем 60% от доп ХП (этап 1)
+	H.physiology.burn_mod *= 1.6  // убираем 60% от доп ХП (этап 1)
+	H.physiology.tox_mod *= 1.25
+	// Действие на сборс сытости
+	var/datum/action/innate/vomit/act_vomit = new
+	act_vomit.Grant(H)
+	// Add examine text
+	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/on_examine_holder)
+
+/datum/quirk/bluemoon_giant_body/on_process()
+	var/mob/living/carbon/human/H = quirk_holder
+	//если персонаж объелся, он не толстеет, но начинаются очень весёлые последствия
+	if(H.nutrition >= NUTRITION_LEVEL_FAT)
+		var/cur_size = get_size(H)
+		var/reg_add = 0.1 * cur_size
+		H.reagents.add_reagent(/datum/reagent/medicine/salglu_solution, reg_add) // немного полезного реагента
+		H.reagents.add_reagent(/datum/reagent/drug/aphrodisiac, reg_add) // тут всё понятно, накормили персонажа, он захотел... ну вы поняли)
+		
+
+		if (H.get_lust() >= H.get_lust_tolerance() * 0.4) // небольшое возбуждение, но не более
+			H.add_lust(4)
+
+		H.adjust_nutrition(-0.02) //голод будет падать быстрее
+
+/datum/quirk/bluemoon_giant_body/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		var/datum/species/species = H.dna.species
+
+		species.liked_food = initial(species.liked_food)
+		species.disliked_food = initial(species.disliked_food)
+
+		//удаляем все модификаторы урона и скорости
+		H.remove_movespeed_modifier(/datum/movespeed_modifier/giant_quirk_boost)
+
+		H.physiology.hunger_mod *= 0.5
+
+		H.physiology.brute_mod *= 0.625 * (get_size(H) / 2)
+		H.physiology.burn_mod *= 0.625 * (get_size(H) / 2)
+		H.physiology.tox_mod *= 0.8 * (get_size(H) / 2)
+
+		var/datum/action/innate/vomit/act_vomit = locate() in H.actions
+		act_vomit.Remove(H)
+
+		UnregisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE)
+
+// Quirk examine text
+/datum/quirk/bluemoon_giant_body/proc/on_examine_holder(atom/examine_target, mob/living/carbon/human/examiner, list/examine_list)
+	examine_list += "[quirk_holder.ru_ego(TRUE)] явно мучает голод."
+
+
+/datum/quirk/bluemoon_giant_body/proc/update_size_modifiers(new_size, cur_size)
+	if (check_mob_size() && new_size != cur_size) // не даём уменьшиться, в т.ч. если мёртв
+		var/mob/living/carbon/human/H= quirk_holder
+
+		// убираем 80% от доп ХП (этап 2)
+		//чем больше существо, тем больше модификатор урона, начиная 2 и т.д., таким образом нивилируется эффект размера. Модификатор в 0.8 даётся изначально, что бы не ломать умножение тут
+		H.physiology.brute_mod *= max(new_size,2) / max(cur_size,2)
+		H.physiology.burn_mod *=  max(new_size,2) / max(cur_size,2)
+		H.physiology.tox_mod *=  max(new_size,2) / max(cur_size,2)
+
+		var/user_slowdown = (abs(new_size - 1) * CONFIG_GET(number/body_size_slowdown_multiplier))
+
+		H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/giant_quirk_boost, TRUE, user_slowdown * -0.8) // убираем 80% от замедления
+
+
+/datum/quirk/bluemoon_giant_body/proc/check_mob_size()
+	if(!isliving(quirk_holder))
+		return FALSE
+
+	var/mob/living/owner = quirk_holder
+
+	if(get_size(owner) < 2)
+		to_chat(owner, "Ваш размер невозможно изменить")
+		owner.update_size(2)
+		return FALSE
+	return TRUE
+
+/datum/quirk/bluemoon_giant_body/on_spawn()
+	. = ..()
+	var/mob/living/H = quirk_holder
+	update_size_modifiers(get_size(H), 1)
+
+
 /*
 ПЕРЕМЕННЫЕ ДЛЯ МОДИФИКАТОРОВ СКОРОСТИ
 */
@@ -118,3 +220,21 @@
 
 /datum/movespeed_modifier/heavy_quirk_slowdown
 	variable = TRUE
+
+/datum/movespeed_modifier/giant_quirk_boost
+	variable = TRUE
+
+
+/*
+Действия
+*/
+
+/datum/action/innate/vomit
+	name = "Vomit"
+	desc = "Vomit some digested food from your body."
+	icon_icon = 'icons/mob/actions/actions_xeno.dmi'
+	button_icon_state = "alien_barf"
+
+/datum/action/innate/vomit/Activate()
+	var/mob/living/carbon/human/H = owner
+	H.vomit(lost_nutrition = 50, stun = FALSE)

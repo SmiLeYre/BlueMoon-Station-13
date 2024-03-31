@@ -67,3 +67,4 @@
 	flags_1 = NONE
 	icon_state = "tentacle_end"
 	icon = 'icons/obj/projectiles.dmi'
+	ignore_weight = TRUE

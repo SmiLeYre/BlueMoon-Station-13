@@ -116,12 +116,12 @@
 	var/area/A = get_area(quirk_holder)
 	if(A.type in typesof(/area/security/prison, /area/commons/toilet, /area/command/heads_quarters/captain, /area/commons/dorms, /area/command/blueshielquarters, /area/service/chapel/main/monastery, /area/mine/laborcamp, /area/survivalpod, /area/mine/living_quarters, /area/hilbertshotel))
 		if(!doing_shower && warning_level != 0)
-			to_chat(quirk_holder, span_notice("Теперь только подождать... Есть время разгрузить голову и расслабиться."))
+			to_chat(quirk_holder, span_notice("Теперь только подождать... Есть время разгрузить голову и расслабиться. Это займёт до пары минут."))
 			doing_shower = TRUE
 		cleaning_efficiency = 20 // 1.7~ минут с 1000
 	else // за поставленный в неподходящей зоне душ и мытьё там штраф
 		if(!doing_shower && warning_level != 0)
-			to_chat(quirk_holder, span_warning("Я смогу помыться, но это место плохо подходит для душевой и это будет в два раза дольше. Жилые зоны, в том числе дормиторий, уборные, личные каюты подходят куда лучше..."))
+			to_chat(quirk_holder, span_warning("Я смогу помыться, но это место плохо подходит для душевой и это будет в два раза дольше, до четырёх минут. Жилые зоны, в том числе дормиторий, уборные и личные каюты подходят куда лучше..."))
 			doing_shower = TRUE
 
 	if(!(cleaned_times % 10)) // каждые 10 тиков новый сон в чат

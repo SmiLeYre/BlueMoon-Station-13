@@ -286,6 +286,52 @@
 			priority_announce("Запрос на коды от ядерного заряда станции для активации протокола самоуничтожения были запрошены [usr]. Решение будет отправлено в ближайшее время.", "Запрошены коды для запуска систем ядерного самоуничтожения.", SSstation.announcer.get_rand_report_sound())
 			playsound(src, 'sound/machines/terminal_prompt.ogg', 50, FALSE)
 			COOLDOWN_START(src, important_action_cooldown, IMPORTANT_ACTION_COOLDOWN)
+		if ("declareTheExistenceOfSyndicate")
+			if (syndicate == TRUE)
+				balloon_alert_to_viewers("ОШИБКА")
+				to_chat(usr, span_danger("ОШИБКА"))
+				return
+			if (!authenticated_as_non_silicon_captain(usr))
+				return
+			if (!(obj_flags & EMAGGED))
+				return
+			to_chat(usr, span_notice("Backup routing data restored."))
+			playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
+
+			message_admins("[ADMIN_LOOKUPFLW(usr)] toggled Syndicate Displays")
+			priority_announce("Синдикат берёт Космическую Станцию в свою ответственность.", null, 'sound/machines/AISyndiHack.ogg')
+			var/obj/machinery/computer/communications/C = locate() in GLOB.machines
+			if(C)
+				C.post_status("alert", "synd")
+			for(var/mob/living/silicon/silicon as anything in GLOB.silicon_mobs)
+				var/new_board = new /obj/item/ai_module/core/full/syndicate(src)
+				var/obj/item/ai_module/chosenboard = new_board
+				var/mob/living/silicon/beepboop = silicon
+				chosenboard.install(beepboop.laws, usr)
+				qdel(new_board)
+		if ("declareTheExistenceOfInteQ")
+			if (syndicate == TRUE)
+				balloon_alert_to_viewers("ОШИБКА")
+				to_chat(usr, span_danger("ОШИБКА"))
+				return
+			if (!authenticated_as_non_silicon_captain(usr))
+				return
+			if (!(obj_flags & EMAGGED))
+				return
+			to_chat(usr, span_notice("Backup routing data restored."))
+			playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
+
+			message_admins("[ADMIN_LOOKUPFLW(usr)] toggled InteQ Displays")
+			priority_announce("InteQ открыто объявляет притязание на [station_name()].", null, 'sound/announcer/classic/_admin_war_pizdec.ogg')
+			var/obj/machinery/computer/communications/C = locate() in GLOB.machines
+			if(C)
+				C.post_status("alert", "inteq")
+			for(var/mob/living/silicon/silicon as anything in GLOB.silicon_mobs)
+				var/new_board = new /obj/item/ai_module/core/full/inteq(src)
+				var/obj/item/ai_module/chosenboard = new_board
+				var/mob/living/silicon/beepboop = silicon
+				chosenboard.install(beepboop.laws, usr)
+				qdel(new_board)
 		if ("restoreBackupRoutingData")
 			if (syndicate == TRUE)
 				balloon_alert_to_viewers("ОШИБКА")

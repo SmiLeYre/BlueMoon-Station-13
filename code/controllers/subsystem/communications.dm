@@ -26,7 +26,7 @@ SUBSYSTEM_DEF(communications)
 		priority_announce(html_decode(input), "[user.name] объявляет:", 'sound/announcer/ai_tone.ogg', "AI", has_important_message = TRUE)
 		COOLDOWN_START(src, silicon_message_cooldown, COMMUNICATION_COOLDOWN_AI)
 	else
-		priority_announce(html_decode(user.treat_message(input)), null, 'sound/misc/announce.ogg',"Bridge Officer", "Captain", has_important_message = TRUE)
+		priority_announce(html_decode(user.treat_message(input)), "[user.name] объявляет:", 'sound/misc/announce.ogg', "Captain", has_important_message = TRUE)
 		COOLDOWN_START(src, nonsilicon_message_cooldown, COMMUNICATION_COOLDOWN)
 	user.log_talk(input, LOG_SAY, tag="priority announcement")
 	message_admins("[ADMIN_LOOKUPFLW(user)] has made a priority announcement.")

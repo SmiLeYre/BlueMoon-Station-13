@@ -299,6 +299,7 @@
 	gain_text = span_notice("Вы начинаете ощущать специфические запахи, исходящие от чужих промежностей...")
 	lose_text = span_notice("Чужие гениталии начинают пахнуть для вас одинаково...")
 	medical_record_text = "Пациент добивался того, чтобы доктор провёл яйцами по его лицу."
+	human_only = FALSE
 
 /datum/quirk/fluid_infuser
 	name = "Тядзин"
@@ -1025,7 +1026,7 @@ var/static/list/ukraine_replacements = list(
 		examine_list += span_warning(examine_hunger_public)
 
 /datum/quirk/kiss_slut
-	name = "Губная Тактилофилия"
+	name = "Чувствительные Губы"
 	desc = "Одна только мысль о поцелуе заставляет вас краснеть и возбуждаться, эффективно усиляя ваше возбуждение с каждым поцелуем."
 	value = 0
 	mob_trait = TRAIT_KISS_SLUT

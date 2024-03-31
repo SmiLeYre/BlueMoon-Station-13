@@ -67,14 +67,9 @@
 /obj/item/ammo_box/magazine/aa12/small
 	name = "AA12 magazine (12g buckshot)"
 	desc = "Здоровый коробчатый магазин для патрон 12 калибра"
-	icon_state = "m12gb"
-	icon = 'modular_bluemoon/Ren/Icons/Obj/USM.dmi'
-	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/ushm_r.dmi'
-	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/ushm_r.dmi'
-	item_state = "mag-aa-small"
+	icon_state = "mag-aa-small"
 	icon = 'modular_bluemoon/Ren/Icons/Obj/guns.dmi'
-	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
-	caliber = "shotgun"
+	w_class = WEIGHT_CLASS_SMALL
 	max_ammo = 8
 
 /obj/item/ammo_box/magazine/aa12/small/update_icon()
@@ -83,7 +78,7 @@
 
 /obj/item/ammo_box/magazine/aa12
 	name = "AA12 drum magazine (12g buckshot)"
-	desc = "Здоровый коробчатый магазин для патрон 12 калибра"
+	desc = "Здоровый барабанный магазин для патрон 12 калибра"
 	icon_state = "mag-aa"
 	icon = 'modular_bluemoon/Ren/Icons/Obj/guns.dmi'
 	w_class = WEIGHT_CLASS_NORMAL
@@ -100,8 +95,8 @@
 	desc = "Древняя, но очень грозная оружейная система. Почему то на ней отсутствует одиночный огонь."
 	icon_state = "minotaur"
 	item_state = "minotaur"
-	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
-	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
+	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
+	righthand_file =  'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
 	icon = 'modular_bluemoon/Ren/Icons/Obj/guns.dmi'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
@@ -213,6 +208,40 @@
 	zoom_amt = 7
 	zoom_out_amt = 5
 
+/obj/item/disk/design_disk/adv/ammo/garand
+	name = "Ammo desine disk"
+	desc = "Вставь в автолат, что-бы печатать крутые патроны"
+
+/obj/item/disk/design_disk/adv/ammo/garand/Initialize(mapload)
+	. = ..()
+	var/datum/design/ammo_garand/A = new
+	var/datum/design/ammo_garand_rubber/H = new
+	blueprints[1] = A
+	blueprints[2] = H
+
+/datum/design/ammo_garand
+	name = "Enbloc clip (.308)."
+	desc = "An enbloc clip for a Mars Service Rifle."
+	id = "ammo_garand"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 28000)
+	build_path = /obj/item/ammo_box/magazine/garand
+	category = list("Imported")
+
+/datum/design/ammo_garand_rubber
+	name = "Enbloc clip (.308) rubber."
+	desc = "An enbloc clip for a Mars Service Rifle. Now non lethal"
+	id = "ammo_garand_rubber"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 28000)
+	build_path = /obj/item/ammo_box/magazine/garand/rubber
+	category = list("Imported")
+
+/obj/item/storage/backpack/guitarbag/sniper/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/m1garand/scope(src)
+	new /obj/item/ammo_box/magazine/garand(src)
+	new /obj/item/disk/design_disk/adv/ammo/garand(src)
+
 ///Sandman
 /obj/item/reagent_containers/syringe/sand
 	name = "Sand parasite"
@@ -275,7 +304,7 @@
 /obj/item/spear/electrospear/attack(mob/living/target, mob/living/user)
 	if (!wielded)
 		user.do_attack_animation(target)
-		target.adjustBruteLoss(8)
+		target.adjustBruteLoss(13)
 		playsound(src, 'sound/weapons/bladeslice.ogg', 50, 1, -1)
 		target.visible_message("<span class='danger'>[user] целится в открытые места [target] и наносит удар с помощью [src]!</span>", \
 								"<span class='userdanger'>[user] has torn you with [src]!</span>")
@@ -283,7 +312,7 @@
 		return TRUE
 	if(user.a_intent != INTENT_HARM)
 		user.do_attack_animation(target)
-		target.adjustStaminaLoss(20)
+		target.adjustStaminaLoss(30)
 		playsound(src, 'sound/weapons/staff.ogg', 50, 1, -1)
 		target.visible_message("<span class='danger'>[user] целится в уязвимые места [target] с помощью [src] и бьёт электричеством!</span>", \
 								"<span class='userdanger'>[user] has shocked you with [src]!</span>")
@@ -293,7 +322,7 @@
 		return TRUE
 	if(user.a_intent == INTENT_HARM)
 		user.do_attack_animation(target)
-		target.adjustFireLoss(18)
+		target.adjustFireLoss(20)
 		playsound(src, 'sound/weapons/sear.ogg', 50, 1, -1)
 		target.visible_message("<span class='danger'>[user] целится в уязвимые места и поджаривает [target] с помощью [src]!</span>", \
 								"<span class='userdanger'>[user] has burns you with [src]!</span>")
@@ -352,10 +381,17 @@
 	cost = 15
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 
+/datum/uplink_item/dangerous/garand
+	name = "Old, but gold rifle"
+	desc = "Классическая полуавтоматическая винтовка с деревянной фурнитурой под калибр .308 winchester. Мы знаем как трудно достать в наше время сменные клипсы, по этому в комплекте идёт диск с чертежами патронов для автолата."
+	item = /obj/item/storage/backpack/guitarbag/sniper
+	cost = 12
+	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
+
 ///карго приколы
-/datum/supply_pack/security/armory/electrospear
+/datum/supply_pack/security/electrospear
 	name = "Electrospear Crate"
 	desc = "Электро-копьё для сдерживания бунтов. Поможет когда ты очень сильно не хочешь подходить к своему противнику."
-	cost = 5500
+	cost = 2200
 	contains = list(/obj/item/spear/electrospear, /obj/item/spear/electrospear)
 	crate_name = "electrospear crate"

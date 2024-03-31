@@ -118,6 +118,26 @@
 	powertransfer = 2000
 	cell_type = /obj/item/stock_parts/cell/super
 
+/obj/item/toy/inteqballoon
+	name = "InteQ balloon"
+	desc = "Сзади видна странная бирка \"НАХУЙ ПАКТ!!1111\"."
+	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
+	icon_state = "inteqballoon"
+	item_state = "inteqballoon"
+	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
+	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/autosurgeon/syndicate/inteq
+	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
+
+/obj/item/storage/book/bible/syndicate/inteq
+	name = "InteQ Tome"
+	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
+	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
+	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
+
+///inteq наборы
 /obj/item/storage/toolbox/syndicate/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
@@ -171,21 +191,90 @@
 	new /obj/item/reagent_containers/medspray/sterilizine(src)
 	new /obj/item/tank/internals/anesthetic(src)
 
-/obj/item/toy/inteqballoon
-	name = "InteQ balloon"
-	desc = "Сзади видна странная бирка \"НАХУЙ ПАКТ!!1111\"."
-	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
-	icon_state = "inteqballoon"
-	item_state = "inteqballoon"
-	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
-	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
-	w_class = WEIGHT_CLASS_BULKY
+///FTU наборы
+/obj/item/storage/backpack/satchel/inteq/ftu/shootgun
+	name = "Набор №473. Спецификация: Инженер. Основное оружие: AA12"
 
-/obj/item/autosurgeon/syndicate/inteq
-	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
+/obj/item/storage/backpack/satchel/inteq/ftu/shootgun/PopulateContents()
+	new /obj/item/storage/box/survival/security/radio(src)
+	new /obj/item/gun/ballistic/automatic/shotgun/aa12(src)
+	for(var/i in 1 to 3)
+		new /obj/item/ammo_box/magazine/aa12/small(src)
+	new /obj/item/storage/belt/utility/syndicate(src)
+	new /obj/item/clothing/gloves/tackler/combat/insulated(src)
 
-/obj/item/storage/book/bible/syndicate/inteq
-	name = "InteQ Tome"
-	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
-	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
-	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
+/obj/item/storage/backpack/satchel/inteq/ftu/fire
+	name = "Набор №343. Спецификация: Чистильщик. Основное оружие: M2a100"
+
+/obj/item/storage/backpack/satchel/inteq/ftu/fire/PopulateContents()
+	new /obj/item/storage/box/survival/security/radio(src)
+	new /obj/item/gun/energy/m2a100(src)
+	for(var/i in 1 to 10)
+		new /obj/item/stack/sheet/mineral/plasma(src)
+	new /obj/item/extinguisher (src)
+	new /obj/item/grenade/stingbang/shred(src)
+	new /obj/item/grenade/stingbang/shred(src)
+
+/obj/item/storage/backpack/satchel/inteq/ftu/sniper
+	name = "Набор №476. Спецификация: Снайпер. Основное оружие: M1 Garand"
+
+/obj/item/storage/backpack/satchel/inteq/ftu/sniper/PopulateContents()
+	new /obj/item/storage/box/survival/security/radio(src)
+	new /obj/item/gun/ballistic/automatic/m1garand/scope(src)
+	for(var/i in 1 to 5)
+		new /obj/item/ammo_box/magazine/garand(src)
+	new /obj/item/chameleon(src)
+
+/obj/item/storage/backpack/satchel/inteq/ftu/med
+	name = "Набор №678. Спецификация: Медик. Основное оружие: SMG .22"
+
+/obj/item/storage/backpack/satchel/inteq/ftu/med/PopulateContents()
+	new /obj/item/storage/box/survival/security/radio(src)
+	new /obj/item/gun/ballistic/automatic/smg22(src)
+	for(var/i in 1 to 5)
+		new/obj/item/ammo_box/magazine/smg22(src)
+	new /obj/item/storage/belt/medical/surgery_belt_adv(src)
+	new /obj/item/storage/firstaid/tactical(src)
+
+/obj/item/choice_beacon/ftu
+	name = "FTU sec kit"
+	desc = "Маяк для выбора снаряжения охраниками торговых кораблей"
+
+/obj/item/choice_beacon/ftu/generate_display_names()
+	var/static/list/ftu_item_list
+	if(!ftu_item_list)
+		ftu_item_list = list()
+		var/list/templist = typesof(/obj/item/storage/backpack/satchel/inteq/ftu)
+		for(var/V in templist)
+			var/atom/A = V
+			ftu_item_list[initial(A.name)] = A
+	return ftu_item_list
+
+/obj/item/choice_beacon/ftu/generate_display_names()
+	var/static/list/ftu_item_list
+	if(!ftu_item_list)
+		ftu_item_list = list()
+		var/list/templist = list(
+		/obj/item/storage/backpack/satchel/inteq/ftu/shootgun,
+		/obj/item/storage/backpack/satchel/inteq/ftu/fire,
+		/obj/item/storage/backpack/satchel/inteq/ftu/sniper,
+		/obj/item/storage/backpack/satchel/inteq/ftu/med)
+		for(var/V in templist)
+			var/atom/A = V
+			ftu_item_list[initial(A.name)] = A
+	return ftu_item_list
+
+/obj/item/storage/backpack/guitarbag/loaded/PopulateContents()
+	new /obj/item/instrument/guitar(src)
+
+/datum/supply_pack/goody/guitarbag
+	name = "Guitar bag"
+	desc = "Гитара вместе с чехлом. Очень быстро окупит вложеные в неё кредиты."
+	cost = 500
+	contains = list(/obj/item/storage/backpack/guitarbag/loaded)
+
+/datum/supply_pack/goody/cloak
+	name = "Cloak of true miner"
+	desc = "Красный плащ с чёрным силуэтом черепа в очках. Ходят слухи, что он принадлежал величайшему шахтёру, чей бур мог пронзить небеса. А теперь это ещё один символ победившего капитализма."
+	cost = 3000
+	contains = list(/obj/item/clothing/neck/cloak/miner)

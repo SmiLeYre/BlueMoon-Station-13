@@ -762,7 +762,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						dat += "<img src='[features["headshot_link1"]]' style='border: 1px solid black' width='140px' height='140px'>"
 					dat += "<br><br>"
 
-					dat += "<h2>Headshot 2 Image</h2>"
+					dat += "<h2>Headshot 3 Image</h2>"
 					dat += "<a href='?_src_=prefs;preference=headshot2'><b>Set Headshot 3 Image</b></a><br>"
 					if(features["headshot_link2"])
 						dat += "<img src='[features["headshot_link2"]]' style='border: 1px solid black' width='140px' height='140px'>"
@@ -4415,7 +4415,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.nameless = nameless
 	character.custom_species = custom_species
 
-	character.dna.species.exotic_blood_color = blood_color
 	character.gender = gender
 	character.age = age
 
@@ -4473,6 +4472,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.dna.flavor_text = features["flavor_text"]
 	character.dna.naked_flavor_text = features["naked_flavor_text"]
 	character.dna.headshot_link = features["headshot_link"]
+	character.dna.species.exotic_blood_color = blood_color //а раньше эта строчка была немного выше и всё ломалось, думайте, когда делаете врезки
 	// BLUEMOON EDIT END
 
 	var/old_size = RESIZE_DEFAULT_SIZE

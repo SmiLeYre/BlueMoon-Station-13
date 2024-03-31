@@ -138,7 +138,7 @@
 
 /datum/outfit/inteq/leader
 	name = "InteQ Leader - Basic"
-	id = /obj/item/card/id/syndicate/nuke_leader/inteq
+	id = /obj/item/card/id/syndicate/inteq/nuke_leader
 	gloves = /obj/item/clothing/gloves/krav_maga/combatglovesplus
 	r_hand = /obj/item/nuclear_challenge
 	command_radio = TRUE

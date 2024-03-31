@@ -5,21 +5,15 @@
 
 
 /datum/preferences/process_link(mob/user, list/href_list)
-	. = ..()
-
-	if (href_list["task"] == "input" || href_list["task"] == "random")
-		return
-
 	switch(href_list["preference"])
 		if ("headshot")
 			set_headshot_link(user, "headshot_link")
-			return TRUE
 		if ("headshot1")
 			set_headshot_link(user, "headshot_link1")
-			return TRUE
 		if ("headshot2")
 			set_headshot_link(user, "headshot_link2")
-			return TRUE
+
+	return ..()
 
 
 /datum/preferences/proc/set_headshot_link(mob/user, link_id)

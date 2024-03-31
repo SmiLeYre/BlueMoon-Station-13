@@ -242,7 +242,7 @@
 /obj/item/card/id/blumenland_citizen
 	name = "Blumenland Citizen ID"
 	desc = "An ID made to recognize Blumenland Confederation habbitants and tourists."
-	icon_state = "blumenland"
+	icon_state = "blumland"
 	assignment = "Blumenland Citizen"
 	uses_overlays = FALSE
 

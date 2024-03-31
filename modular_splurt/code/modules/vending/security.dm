@@ -56,6 +56,7 @@
 	var/list/extra_premium = list(
 		/obj/item/clothing/gloves/latexsleeves/security = 5,
 		/obj/item/clothing/shoes/jackboots/tall = 5,
+		/obj/item/clothing/shoes/jackboots/alliance = 5,
 		/obj/item/clothing/under/custom/mw2_russian_para = 5,
 		/obj/item/clothing/under/bm/sigu = 5,
 		/obj/item/clothing/head/beret/sec/bitch = 5

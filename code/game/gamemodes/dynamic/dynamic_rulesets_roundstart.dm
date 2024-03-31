@@ -799,58 +799,58 @@ BLUEMOON REMOVAL END*/
 //                                          //
 //////////////////////////////////////////////
 
-/datum/dynamic_ruleset/roundstart/xenomorph
-	name = "Alien Infestation"
-	antag_datum = /datum/antagonist/xeno
-	antag_flag = "shiftstart xenomorph"
-	antag_flag_override = ROLE_ALIEN
-	required_candidates = 2
-	weight = 3
-	cost = 20
-	flags = HIGH_IMPACT_RULESET
-	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
-	requirements = list(101,101,101,60,40,20,20,20,10,10)
-	var/list/vents = list()
-	antag_cap = list("denominator" = 20, "offset" = 1)
+// /datum/dynamic_ruleset/roundstart/xenomorph
+// 	name = "Alien Infestation"
+// 	antag_datum = /datum/antagonist/xeno
+// 	antag_flag = "shiftstart xenomorph"
+// 	antag_flag_override = ROLE_ALIEN
+// 	required_candidates = 2
+// 	weight = 3
+// 	cost = 20
+// 	flags = HIGH_IMPACT_RULESET
+// 	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
+// 	requirements = list(101,101,101,60,40,20,20,20,10,10)
+// 	var/list/vents = list()
+// 	antag_cap = list("denominator" = 20, "offset" = 1)
 
-/datum/dynamic_ruleset/roundstart/xenomorph/pre_execute()
-	. = ..()
-	// 50% chance of being incremented by one
-	required_candidates += prob(50)
-	for(var/obj/machinery/atmospherics/components/unary/vent_pump/temp_vent in GLOB.machines)
-		if(QDELETED(temp_vent))
-			continue
-		if(is_station_level(temp_vent.loc.z) && !temp_vent.welded)
-			var/datum/pipeline/temp_vent_parent = temp_vent.parents[1]
-			if(!temp_vent_parent)
-				continue // No parent vent
-			// Stops Aliens getting stuck in small networks.
-			// See: Security, Virology
-			if(temp_vent_parent.other_atmosmch.len > 20)
-				vents += temp_vent
-	if(!vents.len)
-		log_game("No valid spawn locations for [name], found, aborting...")
-		message_admins("No valid spawn locations for [name], found, aborting...")
-		return FALSE
+// /datum/dynamic_ruleset/roundstart/xenomorph/pre_execute()
+// 	. = ..()
+// 	// 50% chance of being incremented by one
+// 	required_candidates += prob(50)
+// 	for(var/obj/machinery/atmospherics/components/unary/vent_pump/temp_vent in GLOB.machines)
+// 		if(QDELETED(temp_vent))
+// 			continue
+// 		if(is_station_level(temp_vent.loc.z) && !temp_vent.welded)
+// 			var/datum/pipeline/temp_vent_parent = temp_vent.parents[1]
+// 			if(!temp_vent_parent)
+// 				continue // No parent vent
+// 			// Stops Aliens getting stuck in small networks.
+// 			// See: Security, Virology
+// 			if(temp_vent_parent.other_atmosmch.len > 20)
+// 				vents += temp_vent
+// 	if(!vents.len)
+// 		log_game("No valid spawn locations for [name], found, aborting...")
+// 		message_admins("No valid spawn locations for [name], found, aborting...")
+// 		return FALSE
 
-/datum/dynamic_ruleset/roundstart/xenomorph/execute()
-	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
-	if(candidates.len <= 0)
-		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
-		return FALSE
-	// BLUEMOON ADD END
-	var/mob/candidate = pick_n_take(candidates)
-	assigned += candidate.mind
+// /datum/dynamic_ruleset/roundstart/xenomorph/execute()
+// 	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
+// 	if(candidates.len <= 0)
+// 		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+// 		return FALSE
+// 	// BLUEMOON ADD END
+// 	var/mob/candidate = pick_n_take(candidates)
+// 	assigned += candidate.mind
 
-	var/obj/vent = pick_n_take(vents)
-	for(var/datum/mind/M in assigned)
+// 	var/obj/vent = pick_n_take(vents)
+// 	for(var/datum/mind/M in assigned)
 
-		var/mob/living/carbon/alien/larva/new_xeno = new(vent.loc)
-		var/current_key = M.current.key
-		qdel(M.current)
-		new_xeno.key = current_key
+// 		var/mob/living/carbon/alien/larva/new_xeno = new(vent.loc)
+// 		var/current_key = M.current.key
+// 		qdel(M.current)
+// 		new_xeno.key = current_key
 
-		return new_xeno
+// 		return new_xeno
 
 //////////////////////////////////////////////
 //                                          //
@@ -1003,7 +1003,6 @@ BLUEMOON REMOVAL END*/
 
 */
 
-/* - TODO (for someone)
 //////////////////////////////////////////////
 //                                          //
 //           ABDUCTORS                      //
@@ -1015,9 +1014,11 @@ BLUEMOON REMOVAL END*/
 	name = "Abductors"
 	antag_flag = "Abductor"
 	antag_flag_override = ROLE_ABDUCTOR
+	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_TEAMBASED) // BLUEMOON ADD
 	required_candidates = 2
 	weight = 3
 	cost = 2
+	scaling_cost = 9
 	requirements = list(0,101,101,60,40,20,20,20,10,10)
 	var/datum/team/abductor_team/new_team
 
@@ -1033,5 +1034,3 @@ BLUEMOON REMOVAL END*/
 		new_character.mind.add_antag_datum(new_role, new_team)
 
 #undef ABDUCTOR_MAX_TEAMS
-*/
-//BLUEMOON ADDITION END

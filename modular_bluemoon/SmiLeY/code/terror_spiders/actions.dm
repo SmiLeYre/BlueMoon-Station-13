@@ -182,6 +182,7 @@
 		if(prob(80))
 			to_chat(mover, "<span class='danger'>You get stuck in [src] for a moment.</span>")
 			M.Slowed(10 SECONDS)
+			M.Paralyze(2 SECONDS)
 			if(iscarbon(mover))
 				var/mob/living/carbon/C = mover
 				web_special_ability(C)
@@ -310,4 +311,3 @@
 				C.visible_message("<span class='danger'>[src] smashes the welded cover off [C]!</span>")
 				return
 		to_chat(src, "<span class='danger'>There is no welded vent or scrubber close enough to do this.</span>")
-

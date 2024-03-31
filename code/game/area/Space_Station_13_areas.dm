@@ -1424,6 +1424,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/security/brig/upper
 	name = "Brig Overlook"
 
+/area/security/brig/brig_medical
+	name = "Brig Medical"
+
 /area/security/courtroom
 	name = "Courtroom"
 	icon_state = "courtroom"
@@ -1490,10 +1493,17 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	min_ambience_cooldown = 90 SECONDS
 	max_ambience_cooldown = 180 SECONDS
 
+/area/security/detectives_office/evidence_room
+	name = "Evidence Room"
+	icon_state = "investigate_office"
+
 /area/security/detectives_office/private_investigators_office
 	name = "Private Investigator's Office"
 	icon_state = "investigate_office"
 	sound_environment = SOUND_AREA_SMALL_SOFTFLOOR
+
+/area/security/detectives_office/private_investigators_office/investigators_room
+	name = "Investigator Room"
 
 /area/security/range
 	name = "Firing Range"

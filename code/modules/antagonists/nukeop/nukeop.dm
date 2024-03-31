@@ -17,7 +17,7 @@
 /datum/antagonist/nukeop/proc/update_synd_icons_added(mob/living/M)
 	var/datum/atom_hud/antag/opshud = GLOB.huds[ANTAG_HUD_OPS]
 	opshud.join_hud(M)
-	set_antag_hud(M, "synd")
+	set_antag_hud(M, "inteq")
 
 /datum/antagonist/nukeop/proc/update_synd_icons_removed(mob/living/M)
 	var/datum/atom_hud/antag/opshud = GLOB.huds[ANTAG_HUD_OPS]

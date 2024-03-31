@@ -110,7 +110,7 @@ Behavior that's still missing from this component that original food items had t
 		if(!do_mob(feeder, eater, eat_time)) //Gotta pass the minimal eat time
 			return
 		var/eatverb = pick(eatverbs)
-		if(junkiness && eater.satiety < -150 && eater.nutrition > NUTRITION_LEVEL_STARVING + 50 && !HAS_TRAIT(eater, TRAIT_VORACIOUS))
+		if(junkiness && eater.satiety < -150 && eater.nutrition > NUTRITION_LEVEL_STARVING + 50 && !HAS_TRAIT(eater, TRAIT_VORACIOUS || TRAIT_BLUEMOON_GIANT_BODY))
 			to_chat(eater, span_warning("Не хочу я жрать эти отбросы!"))
 			return
 		else if(fullness <= 50)

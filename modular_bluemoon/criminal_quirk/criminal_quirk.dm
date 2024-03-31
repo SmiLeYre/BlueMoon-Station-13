@@ -410,7 +410,7 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 					crime_description = "[pick(crime_number, "я кушать хочу...", "???", "Накажите там", "---")]"
 
 			// Добавление записи в БД
-			crime = GLOB.data_core.createCrimeEntry(crime_number, crime_description, crime_issued_by_officer, crime_time)
+			crime = GLOB.data_core.createCrimeEntry(crime_number, crime_description, crime_issued_by_officer, crime_time, TRUE)
 			GLOB.data_core.addMinorCrime(target_records.fields["id"], crime)
 			// Когда i = 0, добавление новых нарушений прекращается
 			i -= 1
