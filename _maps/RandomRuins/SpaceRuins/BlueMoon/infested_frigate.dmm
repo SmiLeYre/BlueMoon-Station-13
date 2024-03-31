@@ -5,9 +5,7 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "af" = (
 /obj/structure/door_assembly/door_assembly_hatch{
 	anchored = 1
@@ -15,9 +13,7 @@
 /obj/structure/barricade/security,
 /obj/structure/alien/resin/membrane,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "aA" = (
 /obj/structure/table_frame,
 /obj/item/shard,
@@ -33,9 +29,7 @@
 /obj/item/ammo_casing/spent,
 /obj/structure/alien/weeds,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "aB" = (
 /obj/item/shard,
 /turf/template_noop,
@@ -56,9 +50,7 @@
 	pixel_y = -21
 	},
 /turf/open/floor/mineral/plastitanium/airless,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "aY" = (
 /obj/structure/table/reinforced,
 /obj/item/flashlight/flare{
@@ -82,9 +74,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "be" = (
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
@@ -98,18 +88,14 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "bE" = (
 /obj/effect/turf_decal{
 	icon_state = "warningline_white"
 	},
 /obj/machinery/suit_storage_unit/open,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "bJ" = (
 /obj/structure/alien/weeds/node,
 /obj/effect/decal/cleanable/glass{
@@ -117,25 +103,19 @@
 	},
 /obj/machinery/power/rtg,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "bM" = (
 /obj/effect/turf_decal{
 	icon_state = "warningline_white"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "bS" = (
 /obj/effect/decal/cleanable/blood/gibs{
 	icon_state = "larva_head_s"
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "cj" = (
 /obj/effect/decal/cleanable/blood/gibs{
 	icon_state = "gib2-old"
@@ -148,9 +128,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "cw" = (
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/glass,
@@ -165,9 +143,7 @@
 	pixel_x = 5
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "cA" = (
 /obj/effect/turf_decal{
 	icon_state = "warningline_white";
@@ -177,25 +153,19 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "cB" = (
 /obj/effect/turf_decal{
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "cP" = (
 /obj/machinery/door/poddoor{
 	id = "brutus exterior bolts"
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "cU" = (
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/glass{
@@ -210,9 +180,7 @@
 	},
 /obj/effect/mob_spawn/human/corpse/cargo_tech,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "df" = (
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/glass,
@@ -222,9 +190,7 @@
 /obj/structure/alien/egg/burst,
 /obj/item/clothing/mask/facehugger/dead,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "di" = (
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
@@ -243,9 +209,7 @@
 	},
 /obj/structure/table_frame/wood,
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "dn" = (
 /obj/structure/table/optable,
 /obj/effect/turf_decal{
@@ -256,9 +220,7 @@
 	dir = 1
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "dq" = (
 /obj/effect/decal/cleanable/glass,
 /obj/structure/alien/weeds,
@@ -268,16 +230,12 @@
 	},
 /obj/structure/alien/egg/burst,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "dx" = (
 /obj/machinery/door/airlock/hatch,
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "dy" = (
 /obj/effect/turf_decal,
 /obj/effect/turf_decal{
@@ -292,9 +250,7 @@
 	},
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "ef" = (
 /obj/structure/kitchenspike{
 	icon_state = "spikebloodymonkey";
@@ -302,9 +258,7 @@
 	},
 /obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/floor/iron/freezer,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "eo" = (
 /obj/effect/turf_decal{
 	icon_state = "arrows_red";
@@ -323,9 +277,7 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "ep" = (
 /obj/effect/decal/cleanable/glass,
 /obj/item/ammo_casing/spent,
@@ -334,9 +286,7 @@
 /obj/effect/mob_spawn/human/corpse/doctor,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "er" = (
 /obj/structure/lattice,
 /obj/structure/alien/resin/membrane{
@@ -355,9 +305,7 @@
 	layer = 2.8
 	},
 /turf/template_noop,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "eX" = (
 /obj/structure/table/glass,
 /obj/item/pen{
@@ -373,17 +321,13 @@
 	desc = "These are particularly boring for what they entail."
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "eZ" = (
 /obj/item/clothing/mask/facehugger/impregnated,
 /obj/item/storage/box/ingredients/american,
 /obj/item/storage/box/monkeycubes,
 /turf/open/floor/iron/freezer,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "fc" = (
 /obj/effect/turf_decal{
 	dir = 4
@@ -399,9 +343,7 @@
 	},
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "fl" = (
 /turf/template_noop,
 /area/template_noop)
@@ -416,9 +358,7 @@
 	pixel_y = 32
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "fM" = (
 /obj/structure/door_assembly/door_assembly_ext,
 /turf/template_noop,
@@ -428,9 +368,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "gW" = (
 /obj/effect/turf_decal{
 	dir = 4
@@ -446,9 +384,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "hm" = (
 /obj/machinery/porta_turret/syndicate/pod{
 	dir = 10;
@@ -456,18 +392,14 @@
 	faction = list("xenomorph")
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "hA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/gibs{
 	icon_state = "floor4-old"
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "hB" = (
 /obj/item/chair/stool{
 	dir = 1
@@ -486,17 +418,13 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "hI" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /obj/structure/alien/weeds/node,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "hK" = (
 /obj/effect/turf_decal{
 	dir = 8
@@ -510,9 +438,7 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "hW" = (
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
@@ -524,18 +450,14 @@
 	},
 /obj/item/kirbyplants/random,
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "hX" = (
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/icecream_vat{
 	desc = "Waffle co. actually ordered these guys to steal one of these just to be sure."
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "ie" = (
 /obj/structure/showcase/machinery{
 	icon_state = "autolathe";
@@ -547,18 +469,14 @@
 	dir = 9
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "ip" = (
 /obj/structure/alien/egg/burst,
 /obj/effect/decal/cleanable/blood/gibs{
 	icon_state = "floor1-old"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "iy" = (
 /obj/effect/decal/cleanable/blood/gibs{
 	icon_state = "u_guilty_l"
@@ -568,9 +486,7 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "iL" = (
 /obj/effect/turf_decal{
 	icon_state = "arrows_red";
@@ -585,35 +501,27 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "iY" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 8
 	},
 /obj/machinery/portable_atmospherics/canister/air,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "jk" = (
 /obj/structure/barricade/security,
 /obj/structure/door_assembly/door_assembly_ext{
 	anchored = 1
 	},
 /turf/open/floor/mineral/plastitanium/airless,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "jx" = (
 /obj/effect/decal/cleanable/glass{
 	layer = 3.1
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "jy" = (
 /obj/effect/turf_decal{
 	icon_state = "warningline_white"
@@ -627,18 +535,14 @@
 	layer = 3.1
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "kg" = (
 /obj/effect/decal/cleanable/blood/gibs{
 	icon_state = "drip1"
 	},
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "kh" = (
 /obj/effect/turf_decal{
 	dir = 8
@@ -648,9 +552,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/sign/flag/inteq,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "ku" = (
 /obj/effect/turf_decal{
 	dir = 1
@@ -664,15 +566,11 @@
 /obj/structure/bed/nest,
 /obj/effect/mob_spawn/human/corpse/engineer,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "kw" = (
 /obj/machinery/vending/boozeomat/syndicate_access,
 /turf/open/floor/iron/freezer,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "kS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
@@ -680,9 +578,7 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "kT" = (
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
@@ -700,9 +596,7 @@
 	},
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "lx" = (
 /obj/structure/barricade/security,
 /obj/effect/decal/cleanable/blood/gibs{
@@ -711,9 +605,7 @@
 /obj/item/ammo_casing/spent,
 /obj/machinery/light/red/dim/directional/north,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "lU" = (
 /obj/effect/decal/cleanable/blood/gibs{
 	icon_state = "u_madman_l"
@@ -729,32 +621,24 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "mk" = (
 /obj/structure/alien/weeds/node,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "mn" = (
 /obj/effect/turf_decal{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "mp" = (
 /obj/effect/decal/cleanable/blood/gibs{
 	icon_state = "gibhead"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "mw" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 4
@@ -768,18 +652,14 @@
 	desc = "The resin is thick and it keeps collapsing on itself."
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "mG" = (
 /obj/effect/decal/cleanable/blood{
 	icon_state = "floor1-old"
 	},
 /obj/structure/sink/directional/south,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "nk" = (
 /obj/item/clothing/glasses/hud/health/night,
 /obj/item/storage/pill_bottle/stimulant,
@@ -798,9 +678,7 @@
 /obj/item/storage/firstaid/fire,
 /obj/item/storage/firstaid/regular,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "nm" = (
 /obj/machinery/vending/cigarette/syndicate,
 /obj/effect/turf_decal{
@@ -808,17 +686,13 @@
 	dir = 1
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "nG" = (
 /mob/living/simple_animal/hostile/alien{
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "nN" = (
 /obj/structure/alien/resin{
 	max_integrity = 2000;
@@ -826,9 +700,7 @@
 	desc = "The resin is thick and it keeps collapsing on itself."
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "nU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood{
@@ -839,18 +711,14 @@
 	},
 /obj/item/gun/ballistic/automatic/pistol/modular,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "oj" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
 	id = "brutus exterior bolts"
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "oo" = (
 /obj/effect/turf_decal{
 	icon_state = "arrows_red";
@@ -864,30 +732,22 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "or" = (
 /obj/item/ammo_casing/spent,
 /obj/effect/decal/cleanable/blood{
 	icon_state = "drip1"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "oV" = (
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "oW" = (
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/hatch,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "pk" = (
 /obj/structure/closet/firecloset/full{
 	anchored = 1
@@ -903,9 +763,7 @@
 	},
 /obj/machinery/light/broken/directional/east,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "pl" = (
 /obj/item/shard,
 /obj/effect/decal/cleanable/glass,
@@ -918,9 +776,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "pq" = (
 /obj/structure/lattice,
 /obj/item/storage/belt/bandolier{
@@ -947,9 +803,7 @@
 	plasmatanks = 0
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "qu" = (
 /obj/effect/decal/cleanable/blood{
 	icon_state = "floor7-old"
@@ -961,9 +815,7 @@
 	layer = 3.4
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "qC" = (
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
@@ -975,16 +827,12 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "qE" = (
 /obj/machinery/airalarm/directional/west,
 /obj/structure/alien/weeds,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "qF" = (
 /obj/item/ammo_casing/spent,
 /turf/template_noop,
@@ -998,9 +846,7 @@
 "qR" = (
 /obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/floor/mineral/plastitanium/airless,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "rd" = (
 /obj/effect/decal/cleanable/blood/gibs/old{
 	icon_state = "gibmid1"
@@ -1008,15 +854,11 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/alien/weeds,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "rm" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "rs" = (
 /obj/item/storage/toolbox/electrical,
 /obj/item/storage/box/lights/bulbs,
@@ -1035,9 +877,7 @@
 	lootcount = 2
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "rz" = (
 /obj/machinery/airalarm/directional/west,
 /obj/effect/decal/cleanable/blood/gibs{
@@ -1056,9 +896,7 @@
 	icon_state = "warningline_white"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "rL" = (
 /obj/effect/turf_decal{
 	icon_state = "bot_red"
@@ -1069,15 +907,11 @@
 	},
 /obj/machinery/vending/inteq_vendomat,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "so" = (
 /obj/item/broken_missile,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "st" = (
 /obj/effect/decal/cleanable/blood/gibs{
 	icon_state = "gibdown1"
@@ -1085,9 +919,7 @@
 /obj/item/ammo_casing/spent,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "sA" = (
 /obj/item/clothing/mask/surgical,
 /obj/effect/turf_decal{
@@ -1095,15 +927,11 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "sE" = (
 /obj/machinery/door/airlock/hatch,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "sQ" = (
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/glass,
@@ -1117,9 +945,7 @@
 /obj/structure/alien/egg/burst,
 /obj/item/clothing/mask/facehugger/dead,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "sT" = (
 /obj/structure/lattice,
 /turf/template_noop,
@@ -1133,9 +959,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "ti" = (
 /obj/effect/turf_decal{
 	icon_state = "arrows_red";
@@ -1146,26 +970,20 @@
 	},
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "tO" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/external/abandoned_brown,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "ug" = (
 /obj/effect/turf_decal{
 	icon_state = "warningline_white"
 	},
 /obj/machinery/computer/arcade/amputation,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "uy" = (
 /obj/effect/turf_decal{
 	icon_state = "warningline_white"
@@ -1176,18 +994,14 @@
 	},
 /obj/machinery/vending/medical/syndicate_access,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "uC" = (
 /obj/effect/turf_decal,
 /obj/machinery/recharge_station{
 	icon_state = "borgdecon2"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "uG" = (
 /obj/effect/turf_decal{
 	icon_state = "warningline_red";
@@ -1202,25 +1016,19 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "vj" = (
 /obj/machinery/door/poddoor{
 	id = "Brutusexterior";
 	closingLayer = 2.65
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "vm" = (
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/external/abandoned_brown,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "vo" = (
 /obj/effect/turf_decal{
 	icon_state = "warningline_white";
@@ -1236,23 +1044,17 @@
 	pixel_x = 3
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "vx" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "vz" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "vH" = (
 /obj/effect/turf_decal{
 	dir = 8
@@ -1262,16 +1064,12 @@
 	dir = 10
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "vM" = (
 /obj/item/ammo_casing/spent,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "vR" = (
 /obj/effect/turf_decal{
 	icon_state = "warningline_white";
@@ -1285,9 +1083,7 @@
 	dir = 1
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "wc" = (
 /obj/structure/alien/weeds,
 /obj/item/shard{
@@ -1301,9 +1097,7 @@
 	},
 /obj/effect/mob_spawn/human/corpse/cargo_tech,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "wi" = (
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/effect/turf_decal{
@@ -1329,27 +1123,21 @@
 	req_access = list("syndicate")
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "wj" = (
 /obj/effect/turf_decal{
 	icon_state = "caution_red";
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "wq" = (
 /obj/structure/lattice,
 /obj/item/stack/rods{
 	amount = 25
 	},
 /turf/template_noop,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "wt" = (
 /obj/effect/turf_decal{
 	icon_state = "warningline_white";
@@ -1359,9 +1147,7 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "wx" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
@@ -1377,18 +1163,14 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "wE" = (
 /obj/machinery/vending/donksofttoyvendor,
 /obj/effect/turf_decal{
 	icon_state = "warningline_white"
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "wJ" = (
 /obj/effect/turf_decal{
 	icon_state = "arrows_red";
@@ -1397,9 +1179,7 @@
 /obj/structure/alien/weeds,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "wO" = (
 /obj/structure/frame/computer{
 	dir = 1;
@@ -1411,24 +1191,18 @@
 	},
 /obj/structure/alien/weeds,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "wP" = (
 /obj/structure/sign/poster/contraband/inteq/inteq_better_dead,
 /turf/closed/wall/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "wX" = (
 /obj/effect/spawner/lootdrop/maintenance/three,
 /turf/template_noop,
 /area/template_noop)
 "xi" = (
 /turf/open/floor/mineral/plastitanium/airless,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "xo" = (
 /obj/effect/decal/cleanable/glass,
 /obj/item/ammo_casing/spent,
@@ -1441,9 +1215,7 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "xp" = (
 /obj/effect/decal/cleanable/glass{
 	icon_state = "plastitaniumtiny"
@@ -1453,14 +1225,10 @@
 	},
 /obj/structure/alien/weeds/node,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "xt" = (
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "xB" = (
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
@@ -1472,17 +1240,13 @@
 	},
 /obj/item/chair/greyscale,
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "xR" = (
 /obj/structure/shuttle/engine/propulsion{
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "xT" = (
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
@@ -1507,9 +1271,7 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "yb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/secure/weapon,
@@ -1519,9 +1281,7 @@
 	lootcount = 2
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "yt" = (
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
@@ -1532,9 +1292,7 @@
 	pixel_y = 33
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "yx" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
@@ -1542,9 +1300,7 @@
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/external/abandoned_brown,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "yG" = (
 /obj/effect/decal/cleanable/robot_debris{
 	icon_state = "gib4"
@@ -1554,9 +1310,7 @@
 	},
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "yJ" = (
 /obj/effect/decal/cleanable/glass,
 /obj/effect/turf_decal{
@@ -1565,9 +1319,7 @@
 	},
 /obj/structure/alien/weeds/node,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "yP" = (
 /obj/effect/decal/cleanable/glass{
 	dir = 4
@@ -1579,15 +1331,11 @@
 /obj/item/ammo_casing/spent,
 /obj/item/storage/belt/military/inteq,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "yZ" = (
 /obj/structure/window/shuttle/survival_pod/spawner,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "zg" = (
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
@@ -1600,9 +1348,7 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "zK" = (
 /obj/effect/turf_decal{
 	icon_state = "arrows_red";
@@ -1613,27 +1359,21 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "zN" = (
 /obj/item/shard{
 	icon_state = "medium"
 	},
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "zV" = (
 /obj/machinery/suit_storage_unit/open,
 /obj/effect/turf_decal{
 	icon_state = "warningline_white"
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Ah" = (
 /obj/effect/turf_decal{
 	icon_state = "warn_end_white";
@@ -1652,9 +1392,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Ai" = (
 /obj/effect/decal/cleanable/blood/gibs{
 	icon_state = "gibleg";
@@ -1675,18 +1413,14 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "AM" = (
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Bh" = (
 /obj/effect/turf_decal{
 	dir = 4
@@ -1697,16 +1431,12 @@
 	},
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Bw" = (
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "BA" = (
 /obj/effect/decal/cleanable/blood/gibs{
 	icon_state = "gibup1"
@@ -1724,22 +1454,16 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "BI" = (
 /obj/item/ammo_casing/spent,
 /obj/machinery/light/broken/directional/south,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "BR" = (
 /obj/structure/lattice,
 /turf/template_noop,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Cp" = (
 /obj/item/coin/antagtoken{
 	pixel_y = 4;
@@ -1761,9 +1485,7 @@
 /obj/item/clothing/under/inteq_skirt,
 /obj/item/clothing/under/inteq_skirt,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "CE" = (
 /obj/item/stack/cable_coil/cut,
 /turf/template_noop,
@@ -1778,9 +1500,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "DR" = (
 /obj/effect/turf_decal{
 	dir = 1
@@ -1790,9 +1510,7 @@
 /obj/structure/bed/nest,
 /obj/effect/mob_spawn/human/corpse/doctor,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Eg" = (
 /obj/item/stack/rods,
 /turf/template_noop,
@@ -1809,9 +1527,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Et" = (
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
@@ -1819,18 +1535,14 @@
 /obj/effect/turf_decal/tile/bar,
 /obj/structure/table/reinforced,
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Ez" = (
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/blood{
 	icon_state = "floor7-old"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "EB" = (
 /obj/structure/girder/displaced,
 /turf/template_noop,
@@ -1855,9 +1567,7 @@
 	pixel_y = 5
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "EQ" = (
 /obj/item/restraints/handcuffs/cable/zipties/used,
 /obj/effect/decal/cleanable/blood{
@@ -1874,9 +1584,7 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "ER" = (
 /mob/living/simple_animal/hostile/alien/sentinel{
 	del_on_death = 1;
@@ -1885,18 +1593,14 @@
 	},
 /obj/structure/alien/weeds/node,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Ff" = (
 /obj/effect/decal/cleanable/glass,
 /mob/living/simple_animal/hostile/alien{
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Fi" = (
 /obj/effect/decal/cleanable/glass{
 	dir = 8
@@ -1907,9 +1611,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/kirbyplants/random,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Fs" = (
 /mob/living/simple_animal/bot/firebot{
 	faction = list("syndicate","xenomorph");
@@ -1925,9 +1627,7 @@
 	dir = 4
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "FJ" = (
 /obj/machinery/suit_storage_unit/open,
 /obj/effect/turf_decal{
@@ -1937,16 +1637,12 @@
 	icon_state = "warningline_white"
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "FP" = (
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/hatch,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Gt" = (
 /obj/machinery/airalarm/directional/south,
 /obj/effect/decal/cleanable/blood/gibs{
@@ -1965,9 +1661,7 @@
 	dir = 4
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Hc" = (
 /obj/effect/decal/cleanable/blood/gibs{
 	icon_state = "larva_chest_s"
@@ -1976,18 +1670,14 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Hp" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Hu" = (
 /obj/effect/turf_decal{
 	icon_state = "arrows_red";
@@ -2005,9 +1695,7 @@
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Hx" = (
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/glass,
@@ -2017,18 +1705,14 @@
 /obj/structure/bed/nest,
 /obj/effect/mob_spawn/human/corpse/inteq_dead,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "HA" = (
 /obj/item/ammo_casing/spent,
 /mob/living/simple_animal/hostile/alien{
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Iu" = (
 /obj/effect/turf_decal{
 	icon_state = "delivery_red"
@@ -2036,9 +1720,7 @@
 /obj/effect/turf_decal,
 /obj/structure/mecha_wreckage/hermes,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "IC" = (
 /obj/effect/turf_decal{
 	icon_state = "warningline_white";
@@ -2048,26 +1730,20 @@
 	icon_state = "cola_black-broken"
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "IN" = (
 /obj/item/shard{
 	icon_state = "titaniumtiny"
 	},
 /obj/machinery/power/smes,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "IS" = (
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Jh" = (
 /obj/effect/turf_decal{
 	dir = 4
@@ -2076,9 +1752,7 @@
 	icon_state = "bot_red"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Jp" = (
 /obj/item/stack/sheet/glass{
 	pixel_y = 3
@@ -2093,9 +1767,7 @@
 	icon_state = "warningline_white"
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Jw" = (
 /obj/effect/turf_decal{
 	icon_state = "warningline_white";
@@ -2108,17 +1780,13 @@
 	lootcount = 3
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Jx" = (
 /mob/living/simple_animal/hostile/alien{
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Jy" = (
 /obj/effect/spawner/lootdrop/armory_contraband,
 /turf/template_noop,
@@ -2133,23 +1801,17 @@
 	},
 /obj/machinery/light/broken/directional/west,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "JZ" = (
 /obj/item/shard{
 	icon_state = "titaniumtiny"
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Kl" = (
 /obj/structure/mecha_wreckage/ares,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "KA" = (
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
@@ -2164,9 +1826,7 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "KB" = (
 /obj/effect/decal/cleanable/glass,
 /obj/effect/decal/cleanable/dirt,
@@ -2179,9 +1839,7 @@
 	desc = "The resin is thick and it keeps collapsing on itself."
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "KC" = (
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
@@ -2189,9 +1847,7 @@
 	icon_state = "armorblood"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "KD" = (
 /obj/effect/turf_decal{
 	icon_state = "warningline_white";
@@ -2200,26 +1856,20 @@
 /obj/structure/barricade/security,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "KF" = (
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "KG" = (
 /obj/machinery/power/rtg,
 /obj/structure/sign/poster/contraband/inteq/inteq_vulp{
 	pixel_x = -31
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "KK" = (
 /obj/effect/turf_decal{
 	icon_state = "arrows_red";
@@ -2231,9 +1881,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "KT" = (
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/glass{
@@ -2243,39 +1891,26 @@
 /obj/effect/decal/cleanable/glass,
 /obj/effect/mob_spawn/human/corpse/doctor,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "KZ" = (
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/glass,
 /obj/machinery/power/rtg,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Lf" = (
 /obj/effect/decal/cleanable/glass,
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /obj/structure/alien/weeds,
 /turf/open/floor/mineral/plastitanium/airless,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Ln" = (
 /obj/effect/decal/cleanable/glass,
 /obj/item/ammo_casing/spent,
 /obj/structure/alien/weeds,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
-"LF" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "LO" = (
 /obj/effect/turf_decal{
 	dir = 8
@@ -2285,9 +1920,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Ml" = (
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
@@ -2302,9 +1935,7 @@
 /obj/item/bodypart/head,
 /obj/machinery/light/broken/directional/north,
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Mp" = (
 /obj/effect/turf_decal{
 	dir = 4
@@ -2313,9 +1944,7 @@
 	icon_state = "bot_right_red"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "My" = (
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
@@ -2323,9 +1952,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "ME" = (
 /obj/effect/turf_decal{
 	dir = 8
@@ -2341,9 +1968,7 @@
 	},
 /obj/structure/alien/egg/burst,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "MH" = (
 /obj/effect/turf_decal{
 	icon_state = "warningline_white";
@@ -2359,9 +1984,7 @@
 /obj/structure/barricade/security,
 /obj/machinery/light/small/red/dim/directional/east,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "ML" = (
 /obj/item/grenade/smokebomb{
 	pixel_x = 5
@@ -2379,9 +2002,7 @@
 	dir = 1
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "MW" = (
 /obj/effect/turf_decal{
 	icon_state = "arrows_red";
@@ -2392,27 +2013,21 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Ne" = (
 /obj/machinery/door/airlock/hatch,
 /obj/effect/turf_decal{
 	icon_state = "warningline_white"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Nu" = (
 /obj/effect/decal/cleanable/glass{
 	dir = 4
 	},
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "NU" = (
 /obj/effect/turf_decal{
 	icon_state = "warningline_white"
@@ -2423,9 +2038,7 @@
 	},
 /obj/machinery/computer/operating,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "NX" = (
 /obj/structure/table/glass,
 /obj/effect/decal/cleanable/glass,
@@ -2453,9 +2066,7 @@
 	},
 /obj/item/folder/inteq,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Or" = (
 /obj/item/stack/rods{
 	amount = 23
@@ -2466,9 +2077,7 @@
 /obj/item/ammo_casing/spent,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Oy" = (
 /obj/effect/turf_decal{
 	dir = 4
@@ -2481,16 +2090,12 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "OC" = (
 /obj/effect/decal/cleanable/glass,
 /obj/structure/alien/weeds/node,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "OW" = (
 /obj/effect/turf_decal{
 	dir = 4
@@ -2500,9 +2105,7 @@
 	},
 /obj/structure/alien/weeds,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Pb" = (
 /obj/structure/alien/resin/membrane{
 	max_integrity = 1600;
@@ -2511,18 +2114,14 @@
 	},
 /obj/structure/alien/weeds/node,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Pj" = (
 /obj/machinery/door/poddoor/preopen,
 /obj/structure/fans/tiny,
 /obj/structure/alien/weeds,
 /obj/structure/alien/resin,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Po" = (
 /obj/effect/turf_decal{
 	icon_state = "loadingarea_white";
@@ -2535,9 +2134,7 @@
 	},
 /obj/machinery/door/airlock/freezer,
 /turf/open/floor/iron/freezer,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "PD" = (
 /obj/structure/closet/crate/trashcart,
 /obj/effect/spawner/lootdrop/grille_or_trash{
@@ -2545,22 +2142,16 @@
 	loot = list( /obj/item/cigbutt = 1, /obj/item/trash/cheesie = 1, /obj/item/trash/candy = 1, /obj/item/trash/chips = 1, /obj/item/reagent_containers/food/snacks/deadmouse = 1, /obj/item/trash/pistachios = 1, /obj/item/trash/plate = 1, /obj/item/trash/popcorn = 1, /obj/item/trash/raisins = 1, /obj/item/trash/sosjerky = 1, /obj/item/trash/syndi_cakes = 1)
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "PV" = (
 /mob/living/carbon/alien/larva{
 	faction = list("syndicate","xenomorph")
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Qg" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Qj" = (
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
@@ -2574,18 +2165,14 @@
 	name = "viscous resin membrane"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "QA" = (
 /obj/effect/turf_decal{
 	dir = 1
 	},
 /obj/machinery/suit_storage_unit/open,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Ru" = (
 /obj/effect/turf_decal/delivery,
 /obj/effect/decal/cleanable/dirt,
@@ -2610,15 +2197,11 @@
 	lootcount = 1
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Rw" = (
 /obj/machinery/door/airlock/hatch,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Rx" = (
 /obj/effect/turf_decal{
 	icon_state = "warningline_white";
@@ -2626,9 +2209,7 @@
 	},
 /obj/machinery/vending/snack/random,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "RG" = (
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
@@ -2639,9 +2220,7 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "RS" = (
 /obj/structure/barricade/security,
 /obj/structure/alien/weeds/node,
@@ -2653,26 +2232,20 @@
 	name = "SYN-C Brutus Bridge"
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "RW" = (
 /obj/machinery/door/poddoor/preopen,
 /obj/structure/fans/tiny,
 /obj/structure/alien/resin,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Sr" = (
 /obj/effect/turf_decal{
 	icon_state = "warningline_white";
 	dir = 1
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "St" = (
 /obj/effect/turf_decal{
 	icon_state = "warningline_white";
@@ -2689,25 +2262,19 @@
 	pixel_y = 10
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "SB" = (
 /obj/structure/shuttle/engine/large{
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "SE" = (
 /obj/structure/alien/egg/burst,
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "SL" = (
 /obj/machinery/iv_drip,
 /obj/item/clothing/mask/facehugger/dead,
@@ -2724,9 +2291,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "SM" = (
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/blood/gibs{
@@ -2743,9 +2308,7 @@
 	},
 /obj/structure/alien/egg/burst,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "SS" = (
 /obj/structure/table_frame,
 /obj/effect/decal/cleanable/glass,
@@ -2755,9 +2318,7 @@
 	dir = 4
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "SX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal{
@@ -2769,18 +2330,14 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Tb" = (
 /obj/machinery/light/small/red/dim/directional/south,
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /obj/structure/alien/egg/burst,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Td" = (
 /obj/effect/turf_decal{
 	icon_state = "warningline_white"
@@ -2796,9 +2353,7 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "TL" = (
 /obj/structure/table/optable,
 /obj/effect/turf_decal{
@@ -2813,9 +2368,7 @@
 	dir = 1
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Ux" = (
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
@@ -2832,9 +2385,7 @@
 	pixel_y = 32
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "UV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/alien/egg/burst,
@@ -2844,9 +2395,7 @@
 	pixel_y = -32
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "UX" = (
 /obj/machinery/door/airlock/hatch,
 /obj/effect/decal/cleanable/blood{
@@ -2855,9 +2404,7 @@
 	},
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Vb" = (
 /obj/machinery/porta_turret/syndicate/pod{
 	dir = 10;
@@ -2865,9 +2412,7 @@
 	faction = list("xenomorph")
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Vf" = (
 /obj/effect/turf_decal{
 	dir = 1
@@ -2875,9 +2420,7 @@
 /obj/machinery/suit_storage_unit/open,
 /obj/machinery/light/red/dim/directional/north,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Vt" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	desc = "Your instincts say you shouldn't be following these.";
@@ -2886,9 +2429,7 @@
 	},
 /obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/iron/freezer,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "VQ" = (
 /obj/structure/table/glass,
 /obj/item/surgical_drapes,
@@ -2901,9 +2442,7 @@
 	},
 /obj/item/storage/backpack/duffelbag/syndie/inteq/surgery,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "VR" = (
 /obj/item/tank/internals/oxygen/empty,
 /turf/template_noop,
@@ -2912,18 +2451,14 @@
 /obj/effect/decal/cleanable/vomit/old,
 /obj/item/broken_bottle,
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "VV" = (
 /obj/structure/barricade/security,
 /obj/structure/door_assembly/door_assembly_hatch{
 	name = "SYN-C Brutus Bridge"
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Wk" = (
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/glass{
@@ -2945,9 +2480,7 @@
 /obj/item/toy/plush/hank,
 /obj/item/book/granter/crafting_recipe/trash_cannon,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "WG" = (
 /obj/effect/decal/cleanable/blood/gibs{
 	icon_state = "floor7-old"
@@ -2962,12 +2495,10 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium/airless,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "WP" = (
 /turf/closed/wall/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango)
+/area/ruin/space/has_grav/powered/infestedship)
 "WS" = (
 /obj/item/stack/rods{
 	amount = 50
@@ -2980,25 +2511,19 @@
 	lootcount = 15
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Xc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/reinforced,
 /obj/machinery/cell_charger,
 /obj/item/clothing/mask/facehugger/impregnated,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Xm" = (
 /obj/effect/mob_spawn/human/corpse/inteq_dead,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Xw" = (
 /obj/machinery/door/poddoor/preopen,
 /obj/structure/fans/tiny,
@@ -3006,9 +2531,7 @@
 /obj/structure/alien/weeds,
 /obj/structure/alien/weeds/node,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "XG" = (
 /obj/effect/turf_decal{
 	icon_state = "arrows_red";
@@ -3035,9 +2558,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Yd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/alien/egg/burst,
@@ -3048,18 +2569,14 @@
 	pixel_y = 32
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "YV" = (
 /obj/effect/turf_decal{
 	icon_state = "warningline_white"
 	},
 /obj/item/kirbyplants/random,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "YW" = (
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
@@ -3076,9 +2593,7 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "YY" = (
 /obj/effect/decal/cleanable/glass,
 /obj/structure/table_frame,
@@ -3088,9 +2603,7 @@
 	dir = 1
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Ze" = (
 /obj/item/shard{
 	icon_state = "titaniumtiny"
@@ -3098,9 +2611,7 @@
 /obj/structure/alien/weeds,
 /obj/machinery/power/smes,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Zp" = (
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
@@ -3111,9 +2622,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "Zt" = (
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
@@ -3125,9 +2634,7 @@
 	pixel_y = -32
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "ZI" = (
 /obj/structure/girder/reinforced,
 /obj/structure/alien/resin/membrane{
@@ -3139,9 +2646,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 "ZN" = (
 /obj/effect/decal/cleanable/robot_debris{
 	icon_state = "gibup"
@@ -3153,9 +2658,7 @@
 /obj/item/ammo_casing/spent,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/vaulttango{
-	name = "Warbringer"
-	})
+/area/ruin/space/has_grav/powered/infestedship)
 
 (1,1,1) = {"
 fl
@@ -3224,7 +2727,7 @@ fl
 fl
 fl
 Jy
-LF
+WP
 xt
 SB
 xR
@@ -3232,7 +2735,7 @@ fl
 xR
 xt
 SB
-LF
+WP
 fl
 fl
 fl
@@ -3251,15 +2754,15 @@ fl
 fl
 fl
 fl
-LF
-xt
-LF
-LF
 WP
-LF
-LF
 xt
-LF
+WP
+WP
+WP
+WP
+WP
+xt
+WP
 fl
 fl
 fl
@@ -3278,15 +2781,15 @@ fl
 fl
 fl
 hm
-LF
-LF
-LF
+WP
+WP
+WP
 IN
 JZ
 Ze
-LF
-LF
-LF
+WP
+WP
+WP
 hm
 fl
 fl
@@ -3304,17 +2807,17 @@ fl
 fl
 fl
 fl
-LF
+WP
 fX
-LF
+WP
 KG
 cU
 Wk
 dq
-LF
-LF
+WP
+WP
 eZ
-LF
+WP
 fl
 fl
 fl
@@ -3331,17 +2834,17 @@ fl
 fl
 fl
 fl
-LF
+WP
 mG
-LF
+WP
 bJ
 wc
 sQ
 KZ
-LF
+WP
 ef
 Vt
-LF
+WP
 fl
 fl
 fl
@@ -3358,17 +2861,17 @@ Or
 fl
 fl
 fl
-LF
+WP
 EQ
-LF
+WP
 hX
 SM
 ME
 KT
-LF
+WP
 kw
 Po
-LF
+WP
 fl
 fl
 fl
@@ -3385,17 +2888,17 @@ fl
 fl
 fl
 fl
-LF
+WP
 qu
-LF
+WP
 Ru
 df
 DR
 Hx
-LF
+WP
 fr
 kT
-LF
+WP
 fl
 fl
 fl
@@ -3412,17 +2915,17 @@ fl
 fl
 fl
 fl
-LF
+WP
 KF
-LF
+WP
 yb
 ER
 ku
 PD
-LF
+WP
 Ux
 zg
-LF
+WP
 fl
 fl
 fl
@@ -3441,12 +2944,12 @@ fl
 fl
 Qg
 Ln
-LF
+WP
 iY
 Xc
 Hu
 rs
-LF
+WP
 yt
 YW
 vj
@@ -3468,8 +2971,8 @@ fl
 fl
 vj
 yJ
-LF
-LF
+WP
+WP
 Qg
 dy
 Qg
@@ -3499,7 +3002,7 @@ OC
 qE
 JO
 zK
-LF
+WP
 Et
 KA
 RG
@@ -3577,8 +3080,8 @@ fl
 Qg
 nN
 rd
-LF
-LF
+WP
+WP
 RS
 Qg
 Qg
@@ -3604,11 +3107,11 @@ Vb
 Qg
 nN
 mw
-LF
+WP
 uy
 sA
 SL
-LF
+WP
 dx
 Qg
 Qg
@@ -3631,11 +3134,11 @@ sT
 fl
 xi
 KB
-LF
+WP
 nk
 ep
 wx
-LF
+WP
 cA
 vm
 qR
@@ -3662,11 +3165,11 @@ wP
 VQ
 Ff
 YY
-LF
+WP
 Tb
-LF
+WP
 aV
-LF
+WP
 fl
 fl
 "}
@@ -3685,11 +3188,11 @@ fl
 pq
 wq
 Pb
-LF
+WP
 TL
 bS
 dn
-LF
+WP
 oV
 tO
 WG
@@ -3712,11 +3215,11 @@ fl
 Qj
 er
 Qm
-LF
+WP
 NU
 Hc
 vR
-LF
+WP
 wt
 Qg
 Qg
@@ -3739,11 +3242,11 @@ fl
 ZI
 Qm
 Fi
-LF
-LF
+WP
+WP
 FP
-LF
-LF
+WP
+WP
 oW
 Qg
 Qg
@@ -3820,11 +3323,11 @@ fl
 vj
 YV
 Er
-LF
-LF
-LF
-LF
-LF
+WP
+WP
+WP
+WP
+WP
 iL
 nm
 vj
@@ -3847,11 +3350,11 @@ fl
 Qg
 bM
 Ne
-LF
+WP
 bE
 nU
 ML
-LF
+WP
 UX
 Sr
 Qg
@@ -3874,13 +3377,13 @@ fl
 Vb
 Qg
 MW
-LF
+WP
 zV
 VU
 St
-LF
+WP
 XG
-LF
+WP
 Vb
 fl
 fl
@@ -3899,15 +3402,15 @@ fl
 fl
 fl
 fl
-LF
+WP
 cj
-LF
+WP
 FJ
 vx
 Jw
-LF
+WP
 or
-LF
+WP
 fl
 fl
 fl
@@ -3926,15 +3429,15 @@ fl
 fl
 fl
 fl
-LF
+WP
 bD
-LF
+WP
 zV
 kS
 vo
-LF
+WP
 oV
-LF
+WP
 fl
 fl
 fl
@@ -3953,15 +3456,15 @@ fl
 fl
 fl
 fl
-LF
+WP
 CK
-LF
+WP
 wE
 Hp
 Cp
-LF
+WP
 Zt
-LF
+WP
 fl
 fl
 fl
@@ -3982,13 +3485,13 @@ fl
 fl
 Qg
 lx
-LF
-LF
+WP
+WP
 wi
-LF
-LF
+WP
+WP
 BI
-LF
+WP
 fl
 fl
 fl
@@ -4063,11 +3566,11 @@ fl
 fl
 vj
 vM
-LF
-LF
+WP
+WP
 VV
-LF
-LF
+WP
+WP
 oV
 vj
 fl
@@ -4090,11 +3593,11 @@ wX
 fl
 vj
 oV
-LF
+WP
 jy
 PV
 Gt
-LF
+WP
 oV
 vj
 fl
@@ -4117,11 +3620,11 @@ fl
 fl
 vj
 oV
-LF
+WP
 Jp
 xo
 wO
-LF
+WP
 oV
 vj
 fl
@@ -4144,11 +3647,11 @@ fl
 fl
 vj
 KK
-LF
+WP
 eX
 aA
 NX
-LF
+WP
 oo
 vj
 fl
@@ -4196,7 +3699,7 @@ fl
 fl
 fl
 fl
-LF
+WP
 KD
 rL
 cw
@@ -4204,7 +3707,7 @@ SS
 aY
 ie
 eo
-LF
+WP
 fl
 fl
 fl
@@ -4223,7 +3726,7 @@ fl
 fl
 fl
 fl
-LF
+WP
 Yd
 hA
 My
@@ -4231,7 +3734,7 @@ jx
 yG
 nG
 UV
-LF
+WP
 fl
 fl
 fl
@@ -4250,7 +3753,7 @@ fl
 fl
 fl
 fl
-LF
+WP
 qb
 cB
 kh
@@ -4258,7 +3761,7 @@ mn
 hK
 LO
 vH
-LF
+WP
 fl
 fl
 fl
@@ -4277,7 +3780,7 @@ fl
 fl
 fl
 fl
-LF
+WP
 Vf
 SE
 vz
@@ -4285,7 +3788,7 @@ Xm
 oV
 wj
 Iu
-LF
+WP
 fl
 fl
 fl
@@ -4304,7 +3807,7 @@ fl
 fl
 fl
 fl
-LF
+WP
 QA
 ZN
 IS
@@ -4312,7 +3815,7 @@ so
 Kl
 kg
 uC
-LF
+WP
 fl
 fl
 fl
@@ -4331,7 +3834,7 @@ fl
 fl
 fl
 fl
-LF
+WP
 fc
 Oy
 OW
@@ -4339,7 +3842,7 @@ Jh
 Mp
 Bh
 gW
-LF
+WP
 fl
 fl
 fl
@@ -4359,13 +3862,13 @@ fl
 fl
 fl
 hm
-LF
+WP
 cP
 Xw
 Pj
 RW
 oj
-LF
+WP
 hm
 fl
 fl
