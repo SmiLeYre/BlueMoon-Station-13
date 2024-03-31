@@ -57,10 +57,10 @@
 	select_name = "DESTROY"
 	fire_sound = 'sound/weapons/pulse.ogg'
 
-/obj/item/ammo_casing/energy/laser/pulse/safe  //bluemoon add
-	projectile_type = /obj/item/projectile/beam/pulse/safe
+/obj/item/ammo_casing/energy/laser/pulse/danger  //bluemoon add
+	projectile_type = /obj/item/projectile/beam/pulse/danger
 	e_cost = 200
-	select_name = "DESTROY, but safe"
+	select_name = "DESTROY, but more destroy"
 	fire_sound = 'sound/weapons/pulse.ogg'
 
 
