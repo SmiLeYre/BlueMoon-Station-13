@@ -33,7 +33,7 @@
 /obj/item/projectile/bullet/mm712x82_ap
 	name = "7.12x82mm armor-piercing bullet"
 	damage = 40
-	armour_penetration = 75
+	armour_penetration = 50
 
 /obj/item/projectile/bullet/mm712x82_hp
 	name = "7.12x82mm hollow-point bullet"
