@@ -169,7 +169,6 @@
 	name = "ERT energy pistol"
 	desc = "Advanced energy pistol with an experimental miniaturized nuclear reactor that automatically charges the internal power cell."
 	icon_state = "nucgun_ert"
-	item_state = "item_state"
 	item_state = "gun"
 	charge_delay = 5
 	w_class = WEIGHT_CLASS_SMALL
