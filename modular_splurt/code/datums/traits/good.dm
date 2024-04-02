@@ -1,18 +1,19 @@
 /datum/quirk/tough
 	name = "Стойкость"
-	desc = "Ваше аномально крепкое тело может вынести на 20% больше урона."
+	desc = "Ваше аномально крепкое тело не воспринимает физический урон ниже 10 единиц"
 	value = 3
+	mob_trait = TRAIT_TOUGHT
 	medical_record_text = "Пациент продемонстрировал аномально высокую устойчивость к травмам."
 	gain_text = "<span class='notice'>Вы чувствуете крепость в мышцах.</span>"
 	lose_text = "<span class='notice'>Вы чувствуете себя менее крепким.</span>"
 
-/datum/quirk/tough/add()
-	quirk_holder.maxHealth *= 1.20
+// /datum/quirk/tough/add()
+// 	quirk_holder.maxHealth *= 1.20
 
-/datum/quirk/tough/remove()
-	if(!quirk_holder)
-		return
-	quirk_holder.maxHealth *= 0.909 //close enough
+// /datum/quirk/tough/remove()
+// 	if(!quirk_holder)
+// 		return
+// 	quirk_holder.maxHealth *= 0.909 //close enough
 
 /datum/quirk/ashresistance
 	name = "Пепельная Устойчивость"
