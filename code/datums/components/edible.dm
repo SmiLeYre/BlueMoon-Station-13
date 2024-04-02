@@ -119,7 +119,7 @@ Behavior that's still missing from this component that original food items had t
 			eater.visible_message(span_notice("[eater] жадно [eatverb] [parent].") , span_notice("Жадно пожираю [parent]."))
 		else if(fullness > 150 && fullness < 500)
 			eater.visible_message(span_notice("[eater] [eatverb] [parent].") , span_notice("Кушаю [parent]."))
-		else if(fullness > 500 && fullness < 600)
+		else if((fullness > 500 && fullness < 600) || HAS_TRAIT(eater, TRAIT_BLUEMOON_DEVOURER))
 			eater.visible_message(span_notice("[eater] нехотя [eatverb] кусочек [parent].") , span_notice("Нямкаю кусочек [parent]."))
 		else if(fullness > (600 * (1 + eater.overeatduration / (4000 SECONDS))))	// The more you eat - the more you can eat
 			eater.visible_message(span_warning("[eater] не может запихнуть [parent] в свою глотку!") , span_warning("В меня больше не лезет [parent]!"))

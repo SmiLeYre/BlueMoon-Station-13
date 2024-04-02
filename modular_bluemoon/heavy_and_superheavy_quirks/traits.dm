@@ -111,9 +111,8 @@
 
 /datum/quirk/bluemoon_devourer
 	name = "Пожиратель"
-	desc = "Вы крупны и очень прожорливы. Из-за особенностей вашей анатомии ваше тело крайне чувствительно к урону, однако передвигается на порядок быстрее. \
-	В дополнение к этому вы можете есть любую пищу и не толстеть, однако ваш голод силён, а переедание вызывает выделение в кровь особой смеси реагентов. \
-	Так же, по неизвестным науке причинам вы не можете быть сверхтяжёлым."
+	desc = "Ваши размеры огромны, а голод неутолим. Всё, что съедобно, для вас еда, а ожирение не помеха. Особенности вашей физиологии позволяют вам \
+	передвигаться на порядок быстрее, однако тело более восприимчиво к повреждениям. Вы не можете быть лёгким или сверхтяжёлым, а нормалазер на вас не действует."
 	value = 3
 	mob_trait = TRAIT_BLUEMOON_DEVOURER
 	medical_record_text = "Субъект проявляет признаки гигантизма и аномальной прожорливости, а также способность усваивать любую пищу."
@@ -127,27 +126,17 @@
 	var/datum/species/species = H.dna.species
 	species.disliked_food = null
 	H.physiology.hunger_mod *= 2
-	H.maxHealth *= 0.8
+	H.maxHealth *= 0.75 // -50% от доп хп.
 	// Действие на сборс сытости
 	var/datum/action/innate/vomit/act_vomit = new
 	act_vomit.Grant(H)
+
+	var/datum/action/innate/secrete_chemicals/act_secrete_chemicals = new
+	act_secrete_chemicals.Grant(H)
 	// Add examine text
 	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/on_examine_holder)
+	ADD_TRAIT(H,TRAIT_BLUEMOON_ANTI_NORMALIZER, ROUNDSTART_TRAIT)
 
-// /datum/quirk/bluemoon_devourer/on_process()
-// 	var/mob/living/carbon/human/H = quirk_holder
-// 	//если персонаж объелся, он не толстеет, но начинаются очень весёлые последствия
-// 	if(H.nutrition >= NUTRITION_LEVEL_FAT)
-// 		var/cur_size = get_size(H)
-// 		var/reg_add = 0.1 * cur_size
-// 		H.reagents.add_reagent(/datum/reagent/medicine/salglu_solution, reg_add) // немного полезного реагента
-// 		H.reagents.add_reagent(/datum/reagent/drug/aphrodisiac, reg_add) // тут всё понятно, накормили персонажа, он захотел... ну вы поняли)
-
-
-// 		if (H.get_lust() <= H.get_lust_tolerance() * 0.4) // небольшое возбуждение, но не более
-// 			H.add_lust(4)
-
-// 		H.adjust_nutrition(-0.02) //голод будет падать быстрее
 
 /datum/quirk/bluemoon_devourer/remove()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -161,12 +150,16 @@
 		H.remove_movespeed_modifier(/datum/movespeed_modifier/giant_quirk_boost)
 
 		H.physiology.hunger_mod *= 0.5
-		H.maxHealth *= 1.25
+		H.maxHealth *= 1.34
 
 		var/datum/action/innate/vomit/act_vomit = locate() in H.actions
 		act_vomit.Remove(H)
 
+		var/datum/action/innate/secrete_chemicals/act_secrete_chemicals = locate() in H.actions
+		act_secrete_chemicals.Remove(H)
+
 		UnregisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE)
+		REMOVE_TRAIT(H,TRAIT_BLUEMOON_ANTI_NORMALIZER, ROUNDSTART_TRAIT)
 
 // Quirk examine text
 /datum/quirk/bluemoon_devourer/proc/on_examine_holder(atom/examine_target, mob/living/carbon/human/examiner, list/examine_list)
@@ -179,7 +172,7 @@
 
 		var/user_slowdown = (abs(new_size - 1) * CONFIG_GET(number/body_size_slowdown_multiplier))
 
-		H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/giant_quirk_boost, TRUE, user_slowdown * -0.6) // убираем 80% от замедления
+		H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/giant_quirk_boost, TRUE, user_slowdown * -0.6) // убираем 60% от замедления
 
 
 /datum/quirk/bluemoon_devourer/proc/check_mob_size()
@@ -230,13 +223,18 @@
 	H.adjustToxLoss(-10)
 
 /datum/action/innate/secrete_chemicals
-	name = "Vomit"
-	desc = "Vomit some digested food from your body."
+	name = "Screte Chemicals"
+	desc = "Screte some chemicals into your blood."
 	icon_icon = 'icons/mob/actions/actions_xeno.dmi'
-	button_icon_state = "alien_barf"
+	button_icon_state = "alien_acid"
 
 /datum/action/innate/secrete_chemicals/Activate()
 	var/mob/living/carbon/human/H = owner
-	H.reagents.add_reagent(/datum/reagent/medicine/salglu_solution, 10)
-	H.reagents.add_reagent(/datum/reagent/drug/aphrodisiac, 10)
-	H.add_lust(20)
+	if(H.nutrition >= NUTRITION_LEVEL_WELL_FED)
+		H.reagents.add_reagent(/datum/reagent/medicine/salglu_solution, 10)
+		H.reagents.add_reagent(/datum/reagent/drug/aphrodisiac, 5)
+		H.add_lust(20)
+		H.adjust_nutrition(100)
+		to_chat(owner, "<span class='notice'>Вы разлагаете часть ваших пищевых запасов, выпуская в кровь смесь реагентов.</span>")
+	else
+		to_chat(owner, "<span class='notice'>Вы слишком голодны для этого.</span>")
