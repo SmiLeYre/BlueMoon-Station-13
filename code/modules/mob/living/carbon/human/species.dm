@@ -1618,7 +1618,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	else
 		if(HAS_TRAIT(H, TRAIT_INCUBUS || TRAIT_SUCCUBUS))
 			return //SPLURT EDIT: Incubi and succubi don't get fat drawbacks (but can still be seen on examine)
-		if(H.overeatduration >= 100 && !HAS_TRAIT(H, TRAIT_BLUEMOON_GIANT_BODY))
+		if(H.overeatduration >= 100 && !HAS_TRAIT(H, TRAIT_BLUEMOON_DEVOURER))
 			to_chat(H, span_danger("Кажется, вы объелись!"))
 			ADD_TRAIT(H, TRAIT_FAT, OBESITY)
 			H.add_movespeed_modifier(/datum/movespeed_modifier/obesity)
