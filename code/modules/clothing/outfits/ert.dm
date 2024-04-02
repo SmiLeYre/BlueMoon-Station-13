@@ -1,10 +1,3 @@
-/*
-//Кролики
-1. Нормальные статы для одежды (защита до 5)
-2. Добавить пушке кроликов возможность заряжаться
-3. Убрать мусор из карманов
-
-*/
 /datum/outfit/ert
 	name = "ERT Common"
 
@@ -199,7 +192,6 @@
 	belt = /obj/item/storage/belt/military/ert_max
 
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
-
 		/obj/item/storage/box/handcuffs=1,\
 		/obj/item/storage/firstaid/regular=1,\
 		/obj/item/storage/box/ammo/smgap=1,)
@@ -248,8 +240,8 @@
 	l_hand = null
 	internals_slot = ITEM_SLOT_SUITSTORE
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
-		/obj/item/storage/firstaid/regular=1,
-
+		/obj/item/storage/firstaid/tactical/ert_first = 1,
+		/obj/item/storage/firstaid/tactical/ert_second = 1,
 		/obj/item/gun/medbeam=1,
 		/obj/item/roller=1,)
 
@@ -272,6 +264,8 @@
 	internals_slot = ITEM_SLOT_SUITSTORE
 	l_hand = /obj/item/gun/ballistic/automatic/wt550
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
+		/obj/item/storage/firstaid/tactical/ert_first = 1,
+		/obj/item/storage/firstaid/tactical/ert_second = 1,
 		/obj/item/storage/box/ammo/wt=1,
 		/obj/item/reagent_containers/hypospray/combat=1,\
 		/obj/item/gun/medbeam=1,
@@ -304,6 +298,8 @@
 	internals_slot = ITEM_SLOT_SUITSTORE
 	l_hand = /obj/item/gun/ballistic/automatic/proto/unrestricted
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
+		/obj/item/storage/firstaid/tactical/ert_first = 1,
+		/obj/item/storage/firstaid/tactical/ert_second = 1,
 		/obj/item/storage/box/ammo/smgap=1,\
 		/obj/item/reagent_containers/hypospray/combat=1,\
 		/obj/item/gun/medbeam=1,\
@@ -325,6 +321,8 @@
 	suit_store = /obj/item/gun/energy/pulse/pistol/loyalpin
 	internals_slot = ITEM_SLOT_SUITSTORE
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
+		/obj/item/storage/firstaid/tactical/ert_first = 1,
+		/obj/item/storage/firstaid/tactical/ert_second = 1,
 		/obj/item/storage/box/ammo/m556=1,\
 		/obj/item/reagent_containers/hypospray/combat/nanites=1,\
 		/obj/item/gun/medbeam=1,

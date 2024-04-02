@@ -170,7 +170,9 @@
 	desc = "Advanced energy pistol with an experimental miniaturized nuclear reactor that automatically charges the internal power cell."
 	icon_state = "nucgun_ert"
 	item_state = "item_state"
+	item_state = "gun"
 	charge_delay = 5
+	w_class = WEIGHT_CLASS_SMALL
 	pin = /obj/item/firing_pin/implant/mindshield
 	cell_type = /obj/item/stock_parts/cell{charge = 6000; maxcharge = 6000}
 	can_charge = 0

@@ -350,7 +350,7 @@
 		if("secreteChemicals")
 			for(var/data in subtypesof(/datum/chem_implant))
 				var/datum/chem_implant/C = new data
-				if(C.chemname == params["key"])
+				if(C.chemname == params["key"] && charge > 0)
 					to_chat(owner, "<span class='notice'>You inject [C.chemname] from your chemical sequncer implant into your bloodstream.</span>")
 					owner.reagents.add_reagent(C.key, C.quantity)
 					charge -= C.chemuse

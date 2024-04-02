@@ -28,7 +28,7 @@
 	uniform = /obj/item/clothing/under/suit/lobotomy/rabbit
 	head = /obj/item/clothing/head/rabbit_helmet
 	suit = /obj/item/clothing/suit/armor/ego_gear/rabbit
-	r_hand = /obj/item/gun/energy/e_gun/rabbit/captain
+	l_hand = /obj/item/gun/energy/e_gun/rabbit/captain
 	glasses = /obj/item/clothing/glasses/hud/health/night/syndicate
 	belt = /obj/item/storage/belt/military/ert_max
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1)
@@ -57,7 +57,7 @@
 	uniform = /obj/item/clothing/under/suit/lobotomy/rabbit
 	head = /obj/item/clothing/head/rabbit_helmet/grunt
 	suit = /obj/item/clothing/suit/armor/ego_gear/rabbit/grunts
-	r_hand = /obj/item/gun/energy/e_gun/rabbit
+	l_hand = /obj/item/gun/energy/e_gun/rabbit
 	glasses = /obj/item/clothing/glasses/hud/health/night/syndicate
 	belt = /obj/item/storage/belt/military/ert_max
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1)
