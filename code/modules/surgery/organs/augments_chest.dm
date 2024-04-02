@@ -235,7 +235,7 @@
 	var/charge_tick = 0
 	var/charge_delay = 16
 	var/implant_level = 0
-	actions_types = list(/datum/action/item_action/explosive_implant) ///datum/action/item_action/organ_action/use
+	actions_types = list(/datum/action/item_action/chem_implant) ///datum/action/item_action/organ_action/use
 	var/available_c = list()
 
 /obj/item/organ/cyberimp/chest/chem_implant/plus

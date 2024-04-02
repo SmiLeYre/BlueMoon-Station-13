@@ -9,10 +9,10 @@
 
 	// BLUEMOON ADD START
 	if(dreaming_in_shower)
-		dream_fragments += "Вспоминаю..." // BLUEMOON EDIT
+		dream_fragments += "Вспоминаю"
 	else
 	// BLUEMOON ADD END
-		dream_fragments += "Вижу..." // BLUEMOON EDIT
+		dream_fragments += "Вижу"
 
 	//NIGHTMARE
 	var/datum/component/mood/mood = src.GetComponent(/datum/component/mood)

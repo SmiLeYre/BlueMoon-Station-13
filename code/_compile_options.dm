@@ -103,3 +103,8 @@
 #warn In order to build, run BUILD.bat in the root directory.
 #warn Consider switching to VSCode editor instead, where you can press Ctrl+Shift+B to build.
 #endif
+
+// Uncomment this to enable profiling via Tracy.
+// You will need to compile your own copy of prof.dll in order to use it.
+// Find the source code and build instructions here: https://github.com/mafemergency/byond-tracy/
+// #define TRACY_PROFILING

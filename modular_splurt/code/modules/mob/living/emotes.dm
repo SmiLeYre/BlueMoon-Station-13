@@ -169,13 +169,13 @@
 		to_chat(user, span_warning("You try your hardest, but no shart comes out."))
 		return
 
-	var/deceasedturf = get_turf(src)
+	var/deceasedturf = get_turf(usr)
 	// Closed turfs don't have any air in them, so no gas building up
 	if(!istype(deceasedturf,/turf/open))
 		return
 	var/turf/open/miasma_turf = deceasedturf
 	var/datum/gas_mixture/stank = new
-	stank.set_moles(GAS_MIASMA,2.5)
+	stank.set_moles(GAS_MIASMA,25)
 	stank.set_temperature(BODYTEMP_NORMAL)
 	miasma_turf.assume_air(stank)
 	miasma_turf.air_update_turf()

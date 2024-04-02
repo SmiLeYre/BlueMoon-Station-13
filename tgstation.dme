@@ -5185,6 +5185,7 @@
 #include "modular_splurt\code\modules\atmospherics\machinery\components\unary_devices\vent_scrubber.dm"
 #include "modular_splurt\code\modules\atmospherics\machinery\other\miner.dm"
 #include "modular_splurt\code\modules\awaymissions\mission_code\academy.dm"
+#include "modular_splurt\code\modules\awaymissions\mission_code\AGRComplex.dm"
 #include "modular_splurt\code\modules\cargo\supplypod.dm"
 #include "modular_splurt\code\modules\cargo\blackmarket\clothing.dm"
 #include "modular_splurt\code\modules\cargo\blackmarket\misc.dm"
