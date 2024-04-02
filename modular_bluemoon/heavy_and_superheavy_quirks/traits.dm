@@ -172,7 +172,7 @@
 
 		var/user_slowdown = (abs(new_size - 1) * CONFIG_GET(number/body_size_slowdown_multiplier))
 
-		H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/giant_quirk_boost, TRUE, user_slowdown * -0.6) // убираем 60% от замедления
+		H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/giant_quirk_boost, TRUE, user_slowdown * -0.8) // убираем 80% от замедления
 
 
 /datum/quirk/bluemoon_devourer/proc/check_mob_size()
