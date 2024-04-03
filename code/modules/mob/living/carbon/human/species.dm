@@ -2415,7 +2415,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			if (HAS_TRAIT(H, TRAIT_TOUGHT) && !forced) // проверка на трейт стойкости
 				if (damage <= 10) //если урон до применения модификаторов не привышает 10, то он не учитывается
 					return 0
-				damage_amount = forced ? damage : damage * hit_percent * brutemod * H.physiology.brute_mod
+				damage_amount = damage * hit_percent * brutemod * H.physiology.brute_mod
 				if (damage_amount <= 5) //если урон после применения модификаторов не привышает 5, то он не учитывается
 					return 0
 			else
@@ -2434,7 +2434,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			if (HAS_TRAIT(H, TRAIT_TOUGHT) && !forced) // проверка на трейт стойкости
 				if (damage <= 10) //если урон до применения модификаторов не привышает 10, то он не учитывается
 					return 0
-				damage_amount = forced ? damage : damage * hit_percent * burnmod * H.physiology.burn_mod
+				damage_amount = damage * hit_percent * burnmod * H.physiology.burn_mod
 				if (damage_amount <= 5) //если урон после применения модификаторов не привышает 5, то он не учитывается
 					return 0
 			else
